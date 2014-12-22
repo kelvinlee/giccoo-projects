@@ -1,0 +1,90 @@
+extends ../libs/jade/layout-ng
+block title
+	| 送你一个 Iwatch
+block css
+	link(rel="stylesheet",href="/iwatch/css/base.css")
+
+block content
+	div.wrap(ng-controller="MainController")
+		div.loading(ng-show="loading") 
+			span 努力加载中...
+		ng-view.app-content(ng-hide="loading")
+
+block ng-template
+	script(type="text/ng-template",id="home.html")
+		div(ng-controller="HomeController as homepage") 
+			//- |HomePage {{homepage.product.a}} {{loading}}
+			//- input(type="button", ng-click="homepage.change()",value="test")
+			//- ul
+			//- 	li(ng-animate="'animate'",ng-repeat="song in homepage.songs | filter:search") {{song}}
+			//- button(ng-click="homepage.gotoNext()",ng-class="homepage.getClass()") 下一页
+			div.sharewechat(ng-show="ShareWechat",ng-click="homepage.showShare(false)")
+
+			div(sliders-list,id="iwatchTabs",ng-controller="SlideController as sliders")
+			div.btn-list.clearfix
+				div.btn.share(ng-click="homepage.showShare(true)")
+					img(src="img/btn-share.png")
+				div.btn.share
+					a(href="http://mp.weixin.qq.com/s?__biz=MzA3MTEzMjM3Mw==&mid=201960346&idx=1&sn=44f1f85dc8872fefce13ab70a2826499#rd")
+						img(src="img/btn-follow.png")
+
+	script(type="text/ng-template",id="share.html")
+		div(ng-controller="ShareController as share")
+			div.slider-normal
+				div.slide-normal-group
+					div.box
+						div(class="watchband",id="sharebg",ng-class="share.watchband")
+						img.dial(ng-src="{{share.watch}}",class="dial")
+						div.dialscreen
+							//- div.timer(ng-class="dialscreen.timerSH",ng-click="dial.timerfun()")
+								div.hour(style="transform: rotate({{getHours}}deg);-webkit-transform: rotate({{getHours}}deg);")
+								div.minute(style="transform: rotate({{getMinutes}}deg);-webkit-transform: rotate({{getMinutes}}deg);")
+								div.second
+							div.wall.sharewall#wallpager
+								div.date {{Hours}}
+									span.point :
+									| {{Minutes}}
+								//- div.noteText {{noteText}}
+			div.watchname
+				img(ng-src="{{share.nurl}}")
+			div.btn-list.clearfix
+				div.btn.share(ng-click="share.buy()")
+					img(src="img/btn-buy.png")
+				div.btn.share
+					a(href="http://mp.weixin.qq.com/s?__biz=MzA3MTEzMjM3Mw==&mid=201960346&idx=1&sn=44f1f85dc8872fefce13ab70a2826499#rd")
+						img(src="img/btn-follow.png")
+
+	script(type="text/ng-template",id="slider.html")
+		div.slide-normal-group
+			div.slide-normal(ng-repeat="slide in sliders.slider")
+				div.box
+					div.watchband(id="{{slide.name}}bg",ng-class="sliders.watchbandimg[slide.name]")
+					img.dial(ng-click="sliders.watchband(slide.name)",ng-src="{{slide.url}}")
+					div.notePoint(ng-click="sliders.watchband(slide.name)",ng-class="sliders.note")
+					div.dialscreen(ng-controller="DailController as dial")
+						div.timer(ng-class="dialscreen.timerSH",ng-click="dial.timerfun()")
+							div.hour(style="transform: rotate({{getHours}}deg);-webkit-transform: rotate({{getHours}}deg);")
+							div.minute(style="transform: rotate({{getMinutes}}deg);-webkit-transform: rotate({{getMinutes}}deg);")
+							div.second
+						div.wall(ng-class="dialscreen.wallSH",ng-click="dial.wallfun()")
+							div.date {{Hours}}
+								span.point :
+								| {{Minutes}}
+							div.noteText {{noteText}}
+							div.upimage(ng-show="android4",ng-class="android4show",ng-click="sliders.selectBGShow()")
+								-for (var i=1;i<5;i++)
+									div(class="box box#{i}",ng-click="sliders.selectBG(#{i})")
+				div.watchname
+					img(ng-src="{{slide.nurl}}")
+		div.noteLeft
+		div.upload(ng-show="uploadFile")
+			file(id="image",name="image",ng-model="inputFile",accept="image/png,image/jpg,image/jpeg")
+
+
+block js
+	script(src="/libs/js/Zepto.min.js",type="text/javascript")
+	script(src="/libs/js/angular.min.js",type="text/javascript")
+	script(src="/libs/js/angular-route.min.js",type="text/javascript")
+	script(src="/libs/js/angular-touch.min.js",type="text/javascript")
+	script(src="/libs/js/angular-animate.min.js",type="text/javascript")
+	script(src="/iwatch/js/base.js",type="text/javascript")

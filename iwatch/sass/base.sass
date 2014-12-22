@@ -1,0 +1,269 @@
+@import sass/base
+@import sass/animation
+@import sass/slider
+
+img
+	max-width: 100%
+body
+	background: #f2f2f2
+.animate-enter, .animate-leave
+	+tran
+	+posr
+.animate-enter.animate-enter-active, .animate-leave
+	left: 0px
+.animate-leave.animate-leave-active, .animate-enter
+	left: 500px
+
+.wrap
+	+posr
+	max-width: 640px
+	margin: 0 auto
+
+
+.box
+	+posr
+.slider-normal
+	+w(100%)
+.slide-normal
+	+posr
+.watchband
+	+tran($time: 1s)
+	+posa
+	+wh(100%,100%)
+	z-index: -1
+	@for $i from 1 to 10
+		&.watchband-#{$i}
+			background: url(../img/watchband-#{$i}.jpg) center center no-repeat
+			background-size: cover
+.watchband.hide
+	+transform(scale(0.5))
+	opacity: 0
+.watchband.show
+	transition-duration: 0.2s
+.notePoint
+	+tran
+	+posa
+	+bl(24px,50%)
+	+wh(20px,20px)
+	background: #fff
+	margin-left: -7px
+	z-index: 12
+	border-radius: 50%
+	+large
+		bottom: 40px
+	&:after
+		content: " "
+		+show
+		+wh(30px,30px)
+		border: solid 3px rgba(255,255,255,0.7)
+		// +transform(translate3d(-29%,-29%,0))
+		margin-left: -8px
+		margin-top: -8px
+		border-radius: 50%
+		+animation("StampSmall",$count:infinite)
+	&.hide
+		opacity: 0
+.noteLeft
+	+posa
+	+tr(30%,45px)
+	z-index: 100
+	+large
+		top: 44%
+
+	&:after
+		+transform(rotate(45deg))
+		content: " "
+		+posa
+		+wh(1em,1em)
+		left: .2em
+		border-right: 2px solid #696969
+		border-top: 2px solid #696969
+		+animation(Flash,1s,$count:infinite)
+		// -webkit-animation-iteration-count: infinite
+
+.dial
+	+posr
+
+
+.dialscreen,.upload
+	$w: 270
+	$h: 325
+	$t: 200
+	$l: 186
+	+posa
+	+w($w/640*100%)
+	+tl($t/714*100%,$l/640*100%)
+	bottom: 100%-($t+$h)/714*100%
+.dialscreen
+	
+	// background: #fff
+	overflow: hidden
+	
+	.timer
+		+tran(all,.5s,linear)
+		+posa
+		+tl
+		+wh(100%,100%)
+		background: url("../img/dial-screen-timer.png") no-repeat center center
+		background-size: contain
+		opacity: 1
+		&.hide
+			left: -100%
+			+transform(scale(0.8))
+			opacity: 0.5
+		.hour, .minute, .second
+			+posa
+			+tl(50%,50%)
+			transform	:
+				origin: 50% 0%
+		.hour, .minute 
+			&:before
+				content: " "
+				+posa
+				+bl()
+				+wh(4px,70%)
+				border-radius: 4px
+				border: solid 1px #000
+			&:after
+				content: " "
+				+posa
+				+tl(0px,50%)
+				+wh(2px,29%)
+				margin-left: -1px
+				// border: solid 2px #000
+				background: #000
+		.hour
+			+wh(6px,22%)
+			margin-left: -2px
+			// border: solid 1px #000
+			+transform(rotate(180deg))
+			
+		.minute
+			+wh(6px,32%)
+			margin-left: -2px
+			// border: solid 1px #000
+			+transform(rotate(180deg))
+		.second
+			+wh(2px,37%)
+			background: #ee920b
+			// +transform(rotate(120deg))
+			+animation(second,60s,linear,infinite)
+	.wall
+		$top: 100
+		$bottom: 50
+		+tran(all,.5s,linear)
+		+posa
+		+tl
+		+wh(100%,100%)
+		background: url("../img/dial-screen-bg.jpg") no-repeat center center
+		background-size: cover
+		opacity: 1
+		&.sharewall
+			background-image: none
+		&.hide
+			left: 100%
+			+transform(scale(0.8))
+			opacity: 0.5
+		.date
+			+posa
+			+tr(5%,5%)
+			z-index: $top
+			font-size: 2rem
+			color: #fff
+			text-shadow: 1px 1px 5px rgba(0,0,0,0.6)
+			span
+				display: inline-block
+				+animation(Flicker,1s,ease,infinite)
+		.noteText
+			z-index: $top
+			+posa
+			+w(100%)
+			+text-center
+			+animation(fadeInOut,3s,ease,infinite)
+			opacity: 1
+			bottom: 0px
+			font-size: 0.8rem
+			color: #fff
+			text-shadow: 1px 1px 5px rgba(0,0,0,0.6)
+			padding-bottom: 0.5rem
+		.upimage
+			+tran
+			+posa
+			+wh(100%,100%)
+			z-index: $top*2
+			opacity: 0
+			&.show
+				opacity: 1
+			.box
+				+wh(50%,50%)
+				float: left
+				&.box1
+					background: url(../img/dial-screen-bg-1.jpg) no-repeat center center
+					background: cover
+				&.box2
+					background: url(../img/dial-screen-bg-2.jpg) no-repeat center center
+					background: cover
+				&.box3
+					background: url(../img/dial-screen-bg-3.jpg) no-repeat center center
+					background: cover
+				&.box4
+					background: url(../img/dial-screen-bg.jpg) no-repeat center center
+					background: cover
+		.upload
+			z-index: $top*2
+			+posa
+			+tl
+			+wh(100%,100%)
+			label
+				z-index: $top*2
+				+show
+				+wh(100%,100%)
+				+posa
+				+tl
+				font-size: 120px
+
+.upload
+	input
+		+posa
+		+tl
+		+wh(100%,100%)
+		opacity: 0
+
+.btn-list
+	+w(100%)
+	padding-top: 1em
+	.btn 
+		+w(50%)
+		float: left
+		+text-center
+		img
+			+w(80%)
+
+.sharewechat
+	+posf
+	+tl
+	+w(100%)
+	bottom: 0px
+	z-index: 9999
+	background: url("../img/note-share.png") no-repeat top center
+	background-color: rgba(0,0,0,0.8)
+	background-size: contain
+	+tran
+	opacity: 1
+	&.ng-hide
+		opacity: 0
+
+.loading
+	+tran
+	+posf
+	+tl
+	bottom: 0px
+	+w(100%)
+	opacity: 1
+	.ng-hide
+		opacity: 0
+	span
+		+posa
+		+tl(45%)
+		+w(100%)
+		+text-center
