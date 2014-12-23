@@ -68,7 +68,7 @@ block ng-template
 							div.hour(style="transform: rotate({{getHours}}deg);-webkit-transform: rotate({{getHours}}deg);")
 							div.minute(style="transform: rotate({{getMinutes}}deg);-webkit-transform: rotate({{getMinutes}}deg);")
 							div.second
-						div.wall(ng-class="dialscreen.wallSH",ng-click="dial.wallfun()")
+						div.wall(ng-class="dialscreen.wallSH",ng-click="dial.wallfun(true)")
 							div.date {{Hours}}
 								span.point :
 								| {{Minutes}}

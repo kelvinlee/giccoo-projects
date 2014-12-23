@@ -149,10 +149,12 @@ app.controller "DailController", ($scope,$rootScope,$http)->
 		$rootScope.dialscreen.wallSH = "show"
 		$rootScope.uploadFile = true if not $rootScope.android4
 	tis = this
+	this.wallfun = (bool)->
+		$rootScope.ShareWechat = bool
 	setTimeout ->
 		tis.timerfun()
 		$scope.$apply()
-	,3000
+	,5000
 	
 
 CreateImg = (file,$scope)->
@@ -259,6 +261,8 @@ app.controller "SlideController",($scope,$location,$rootScope,$http,$animate)->
 			# console.log $scope.imgData
 			uploadIMG $scope.imgData
 			$rootScope.uploadFile = false
+
+	
 	uploadIMG = (data)->
 		data = data.replace "data:image/png;base64,",""
 		$http.post "#{hosts}/image/upload", {data:data}

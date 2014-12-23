@@ -1370,10 +1370,13 @@ app.controller("DailController", function($scope, $rootScope, $http) {
     }
   };
   tis = this;
+  this.wallfun = function(bool) {
+    return $rootScope.ShareWechat = bool;
+  };
   return setTimeout(function() {
     tis.timerfun();
     return $scope.$apply();
-  }, 3000);
+  }, 5000);
 });
 
 CreateImg = function(file, $scope) {

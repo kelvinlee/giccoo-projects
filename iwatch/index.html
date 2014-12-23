@@ -70,7 +70,7 @@
                 <div style="transform: rotate({{getMinutes}}deg);-webkit-transform: rotate({{getMinutes}}deg);" class="minute"></div>
                 <div class="second"></div>
               </div>
-              <div ng-class="dialscreen.wallSH" ng-click="dial.wallfun()" class="wall">
+              <div ng-class="dialscreen.wallSH" ng-click="dial.wallfun(true)" class="wall">
                 <div class="date">{{Hours}}<span class="point">:</span>{{Minutes}}</div>
                 <div class="noteText">{{noteText}}</div>
                 <div ng-show="android4" ng-class="android4show" ng-click="sliders.selectBGShow()" class="upimage">
