@@ -94,6 +94,7 @@ body
 	+w($w/640*100%)
 	+tl($t/714*100%,$l/640*100%)
 	bottom: 100%-($t+$h)/714*100%
+
 .dialscreen
 	
 	// background: #fff
@@ -223,6 +224,8 @@ body
 				font-size: 120px
 
 .upload
+	bottom: 40%
+	top: 23%
 	input
 		+posa
 		+tl
@@ -254,16 +257,64 @@ body
 		opacity: 0
 
 .loading
-	+tran
+	+tran(all,1s,linear)
 	+posf
 	+tl
 	bottom: 0px
 	+w(100%)
-	opacity: 1
+	opacity: 0
+	background-color: #fff
+	z-index: -1
 	.ng-hide
 		opacity: 0
-	span
+	&.loaded
+		+tran(all,0s,linear)
+		opacity: 1
+		z-index: 99999
+	&.finished
+		.loading-logo
+			opacity: 1	
+			+transform(scale(1,1))
+		span
+			+transform(scale(0.2,0.2))
+			opacity: 0
+	.loading-logo
+		+tran
 		+posa
-		+tl(45%)
-		+w(100%)
+		+tl(50%,50%)
 		+text-center
+		+show
+		+wh(5em,5em)
+		+transform(translate(-50%,-50%))
+		overflow: hidden
+	.loading-logo-bg
+		+posa
+		+tl()
+		bottom: 0
+		+w(100%)
+		z-index: 1
+		background-image: linear-gradient(-179deg, #06503C 0%, #1EC08E 50%, #A9F4A1 100%)
+		+animation(second,1s,linear,infinite)
+	.loading-logo
+		img
+			+posr
+			z-index: 2
+
+.view-animate.ng-enter + .loading
+	z-index: 99999
+	opacity: 1
+
+.view-animate
+	+tran(all,0.5s,ease)
+	z-index: 1
+	+posa
+	+tl
+	min-height: 100%
+	&.ng-enter
+		+tran(all,0.1s,ease)
+		opacity: 1
+		+transform(scale(1,1))
+	&.ng-leave
+		+tran(all,0.1s,ease)
+		opacity: 0
+		+transform(scale(0,0))

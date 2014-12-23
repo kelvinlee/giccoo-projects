@@ -6,9 +6,11 @@ block css
 
 block content
 	div.wrap(ng-controller="MainController")
-		div.loading(ng-show="loading") 
-			span 努力加载中...
-		ng-view.app-content(ng-hide="loading")
+		ng-view.view-animate
+		div#loading.loading.loaded
+			div.loading-logo
+				div.loading-logo-bg
+				img(src="../libs/img/loading.png")
 
 block ng-template
 	script(type="text/ng-template",id="home.html")

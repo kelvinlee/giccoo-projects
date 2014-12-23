@@ -45,15 +45,13 @@ refreshShare = ->
 
 app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 
-app.config ($routeProvider, $locationProvider)->
-	$routeProvider.when('/',{templateUrl: "home.html"});
-	$routeProvider.when('/share/:watch/:watchband/:wallpaper',{templateUrl: "share.html"});
-
+app.config ["$routeProvider", "$locationProvider" ,($routeProvider, $locationProvider)->
+	$routeProvider.when('/',{templateUrl: "home.html"})
+	$routeProvider.when('/share/:watch/:watchband/:wallpaper',{templateUrl: "share.html"})
+]
 app.controller 'MainController', ($rootScope, $scope)->
-	$rootScope.$on "$routeChangeStart", ->
-		$rootScope.loading = true
 	$rootScope.$on "$routeChangeSuccess", ->
-		$rootScope.loading = false
+		$(".loaded").removeClass "loaded"
 
 app.controller "ShareController" ,($scope,$location,$routeParams)->
 	
@@ -71,10 +69,10 @@ app.controller "ShareController" ,($scope,$location,$routeParams)->
 		$("#wallpager").removeClass "sharewall"
 	else if this.wall.indexOf("dial-screen-bg") > -1
 		$("#wallpager").css
-			"background-image": "url(img/#{this.wall}.jpg)"
+			"background-image": "url(img/#{this.wall}.png)"
 	else
 		$("#wallpager").css
-			"background-image": "url(http://g.giccoo.com/uploadDir/#{this.wall}.jpg)"
+			"background-image": "url(http://g.giccoo.com/uploadDir/#{this.wall}.png)"
 	this.buy = ->
 		$location.path "/"
 	CheckTime = ($scope)->
