@@ -37,12 +37,12 @@ block ng-template
 					div.box
 						div(class="watchband",id="sharebg",ng-class="share.watchband")
 						img.dial(ng-src="{{share.watch}}",class="dial")
-						div.dialscreen
-							//- div.timer(ng-class="dialscreen.timerSH",ng-click="dial.timerfun()")
+						div.dialscreen(ng-click="share.timerfun()")
+							div.timer(ng-class="dialscreen.timerSH")
 								div.hour(style="transform: rotate({{getHours}}deg);-webkit-transform: rotate({{getHours}}deg);")
 								div.minute(style="transform: rotate({{getMinutes}}deg);-webkit-transform: rotate({{getMinutes}}deg);")
 								div.second
-							div.wall.sharewall#wallpager
+							div.wall#wallpager(ng-class="dialscreen.wallSH")
 								div.date {{Hours}}
 									span.point :
 									| {{Minutes}}

@@ -38,8 +38,13 @@
           <div class="slide-normal-group">
             <div class="box">
               <div id="sharebg" ng-class="share.watchband" class="watchband"></div><img ng-src="{{share.watch}}" class="dial dial">
-              <div class="dialscreen">
-                <div id="wallpager" class="wall sharewall">
+              <div ng-click="share.timerfun()" class="dialscreen">
+                <div ng-class="dialscreen.timerSH" class="timer">
+                  <div style="transform: rotate({{getHours}}deg);-webkit-transform: rotate({{getHours}}deg);" class="hour"></div>
+                  <div style="transform: rotate({{getMinutes}}deg);-webkit-transform: rotate({{getMinutes}}deg);" class="minute"></div>
+                  <div class="second"></div>
+                </div>
+                <div id="wallpager" ng-class="dialscreen.wallSH" class="wall">
                   <div class="date">{{Hours}}<span class="point">:</span>{{Minutes}}</div>
                 </div>
               </div>

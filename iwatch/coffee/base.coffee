@@ -53,8 +53,12 @@ app.controller 'MainController', ($rootScope, $scope)->
 	$rootScope.$on "$routeChangeSuccess", ->
 		$(".loaded").removeClass "loaded"
 
-app.controller "ShareController" ,($scope,$location,$routeParams)->
-	
+app.controller "ShareController" ,($rootScope,$scope,$location,$routeParams)->
+	$rootScope.dialscreen = 
+		timer : false
+		wall : true
+		timerSH: "hide"
+		wallSH: "show"
 	shareContent.watch = $routeParams.watch
 	shareContent.watchband = $routeParams.watchband
 	shareContent.wall = $routeParams.wallpaper
@@ -73,6 +77,13 @@ app.controller "ShareController" ,($scope,$location,$routeParams)->
 	else
 		$("#wallpager").css
 			"background-image": "url(http://g.giccoo.com/uploadDir/#{this.wall}.png)"
+	this.timerfun = ->
+		if $rootScope.dialscreen.timerSH is "show"
+			$rootScope.dialscreen.timerSH = "hide"
+			$rootScope.dialscreen.wallSH = "show"
+		else
+			$rootScope.dialscreen.timerSH = "show"
+			$rootScope.dialscreen.wallSH = "hide"
 	this.buy = ->
 		$location.path "/"
 	CheckTime = ($scope)->

@@ -1264,8 +1264,14 @@ app.controller('MainController', function($rootScope, $scope) {
   });
 });
 
-app.controller("ShareController", function($scope, $location, $routeParams) {
+app.controller("ShareController", function($rootScope, $scope, $location, $routeParams) {
   var CheckTime;
+  $rootScope.dialscreen = {
+    timer: false,
+    wall: true,
+    timerSH: "hide",
+    wallSH: "show"
+  };
   shareContent.watch = $routeParams.watch;
   shareContent.watchband = $routeParams.watchband;
   shareContent.wall = $routeParams.wallpaper;
@@ -1286,6 +1292,15 @@ app.controller("ShareController", function($scope, $location, $routeParams) {
       "background-image": "url(http://g.giccoo.com/uploadDir/" + this.wall + ".png)"
     });
   }
+  this.timerfun = function() {
+    if ($rootScope.dialscreen.timerSH === "show") {
+      $rootScope.dialscreen.timerSH = "hide";
+      return $rootScope.dialscreen.wallSH = "show";
+    } else {
+      $rootScope.dialscreen.timerSH = "show";
+      return $rootScope.dialscreen.wallSH = "hide";
+    }
+  };
   this.buy = function() {
     return $location.path("/");
   };
