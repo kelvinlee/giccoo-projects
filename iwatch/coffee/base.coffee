@@ -69,7 +69,7 @@ app.controller "ShareController" ,($scope,$location,$routeParams)->
 		$("#wallpager").removeClass "sharewall"
 	else if this.wall.indexOf("dial-screen-bg") > -1
 		$("#wallpager").css
-			"background-image": "url(img/#{this.wall}.png)"
+			"background-image": "url(img/#{this.wall}.jpg)"
 	else
 		$("#wallpager").css
 			"background-image": "url(http://g.giccoo.com/uploadDir/#{this.wall}.png)"
