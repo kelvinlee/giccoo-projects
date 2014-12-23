@@ -49,7 +49,7 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 ]
 .controller 'MainController', ($rootScope, $scope)->
 	$rootScope.$on "$routeChangeSuccess", ->
-		$(".loaded").removeClass "loaded"
+		# $(".loaded").removeClass "loaded"
 
 
 

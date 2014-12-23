@@ -10,8 +10,8 @@ block content
 		div.view-animate(ng-view)
 		div#loading.loading.loaded
 			div.loading-logo
-				div.loading-logo-bg
-				img(src="../libs/img/loading.png")
+				div.loading-logo-bg(style="display:none")
+				img(src="../libs/img/loading.png",onload="showLoad()")
 
 
 block ng-template
@@ -26,6 +26,10 @@ block ng-template
 
 
 block js
+	script.
+		function showLoad() {
+			 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
+		}
 	script(src="/libs/js/Zepto.min.js",type="text/javascript")
 	script(src="/libs/js/angular.min.js",type="text/javascript")
 	script(src="/libs/js/angular-route.min.js",type="text/javascript")

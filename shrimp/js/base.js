@@ -1257,9 +1257,7 @@ app = angular.module('kelvin', ["ngRoute", "ngTouch", "ngAnimate"]).config([
     });
   }
 ]).controller('MainController', function($rootScope, $scope) {
-  return $rootScope.$on("$routeChangeSuccess", function() {
-    return $(".loaded").removeClass("loaded");
-  });
+  return $rootScope.$on("$routeChangeSuccess", function() {});
 });
 
 app.controller("HomeController", function($scope, $rootScope, $location) {

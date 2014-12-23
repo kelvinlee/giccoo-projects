@@ -12,10 +12,15 @@
       <ng-view class="view-animate"></ng-view>
       <div id="loading" class="loading loaded">
         <div class="loading-logo">
-          <div class="loading-logo-bg"></div><img src="../libs/img/loading.png">
+          <div style="display:none" class="loading-logo-bg"></div><img src="../libs/img/loading.png" onload="showLoad()">
         </div>
       </div>
     </div>
+    <script>
+      function showLoad() {
+      	 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
+      }
+    </script>
     <script src="/libs/js/Zepto.min.js" type="text/javascript"></script>
     <script src="/libs/js/angular.min.js" type="text/javascript"></script>
     <script src="/libs/js/angular-route.min.js" type="text/javascript"></script>
