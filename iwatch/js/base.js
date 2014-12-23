@@ -1214,8 +1214,8 @@ _wechat_f = {
   "img_width": 200,
   "img_height": 200,
   "link": "",
-  "desc": "各种表带,表盘我都挑花眼了.",
-  "title": "刚买了个 Apple Watch , 用着还不错, 你也要来一个吗?"
+  "desc": "定制自己喜欢的款式，让Ta知道，你懂的！",
+  "title": "Apple Watch 已入手，别告诉我还没上市，圣诞，任性！"
 };
 
 _wechat = {
@@ -1224,8 +1224,8 @@ _wechat = {
   "img_width": 200,
   "img_height": 200,
   "link": "",
-  "desc": "各种表带,表盘我都挑花眼了.",
-  "title": "刚买了个 Apple Watch , 用着还不错, 你也要来一个吗?"
+  "desc": "定制自己喜欢的款式，让Ta知道，你懂的！",
+  "title": "Apple Watch 已入手，别告诉我还没上市，圣诞，任性！"
 };
 
 hosts = "http://g.giccoo.com";
@@ -1276,7 +1276,6 @@ app.controller("ShareController", function($rootScope, $scope, $location, $route
   shareContent.watchband = $routeParams.watchband;
   shareContent.wall = $routeParams.wallpaper;
   refreshShare();
-  console.log($routeParams);
   this.watch = "img/dial-" + $routeParams.watch + ".png";
   this.watchband = $routeParams.watchband;
   this.wall = $routeParams.wallpaper;
