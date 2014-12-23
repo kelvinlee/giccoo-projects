@@ -1231,8 +1231,8 @@ _wechat = {
 hosts = "http://g.giccoo.com";
 
 shareContent = {
-  watchband: "watchband-2",
-  watch: "watch",
+  watchband: "watchband-1",
+  watch: "edition",
   wall: "default",
   screen: "image"
 };
@@ -1326,8 +1326,8 @@ app.controller("ShareController", function($rootScope, $scope, $location, $route
 
 app.controller("HomeController", function($scope, $rootScope, $location) {
   $scope.share = {
-    watch: "watch",
-    watchband: "watchband-2",
+    watch: "edition",
+    watchband: "watchband-1",
     screen: "timer"
   };
   $rootScope.noteText = "轻触屏幕更换壁纸";
@@ -1646,13 +1646,13 @@ app.directive("file", function() {
 
 _slider = [
   {
-    name: "watch",
-    nurl: "img/dial-watch-name.png",
-    url: "img/dial-watch.png"
-  }, {
     name: "edition",
     nurl: "img/dial-edition-name.png",
     url: "img/dial-edition.png"
+  }, {
+    name: "watch",
+    nurl: "img/dial-watch-name.png",
+    url: "img/dial-watch.png"
   }, {
     name: "sport",
     nurl: "img/dial-sport-name.png",
@@ -1661,7 +1661,7 @@ _slider = [
 ];
 
 _watchbandimgs = {
-  "watch": ["watchband-2", "watchband-4", "watchband-8", "watchband-3"],
   "edition": ["watchband-1", "watchband-7", "watchband-9", "watchband-5"],
+  "watch": ["watchband-2", "watchband-4", "watchband-8", "watchband-3"],
   "sport": ["watchband-7", "watchband-9", "watchband-6", "watchband-5"]
 };
