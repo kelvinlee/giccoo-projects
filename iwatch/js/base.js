@@ -1265,7 +1265,7 @@ app.controller('MainController', function($rootScope, $scope) {
 });
 
 app.controller("ShareController", function($rootScope, $scope, $location, $routeParams) {
-  var CheckTime;
+  var CheckTime, e;
   $rootScope.dialscreen = {
     timer: false,
     wall: true,
@@ -1290,6 +1290,12 @@ app.controller("ShareController", function($rootScope, $scope, $location, $route
     $("#wallpager").css({
       "background-image": "url(http://g.giccoo.com/uploadDir/" + this.wall + ".png)"
     });
+  }
+  try {
+    _hmt.push(['_trackEvent', shareContent.watch, shareContent.watchband, shareContent.wall]);
+  } catch (_error) {
+    e = _error;
+    console.log(e);
   }
   this.timerfun = function() {
     if ($rootScope.dialscreen.timerSH === "show") {

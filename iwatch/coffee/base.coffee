@@ -77,6 +77,12 @@ app.controller "ShareController" ,($rootScope,$scope,$location,$routeParams)->
 	else
 		$("#wallpager").css
 			"background-image": "url(http://g.giccoo.com/uploadDir/#{this.wall}.png)"
+
+	try
+		_hmt.push ['_trackEvent',shareContent.watch,shareContent.watchband,shareContent.wall]
+	catch e
+		console.log e
+	
 	this.timerfun = ->
 		if $rootScope.dialscreen.timerSH is "show"
 			$rootScope.dialscreen.timerSH = "hide"
