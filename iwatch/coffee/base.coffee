@@ -36,17 +36,11 @@ refreshShare = ->
 	# console.log url
 	reloadWechat()
 
-
-
-
-
-
-
-
 app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 
 app.config ["$routeProvider", "$locationProvider" ,($routeProvider, $locationProvider)->
 	$routeProvider.when('/',{templateUrl: "home.html"})
+	$routeProvider.when('/rd',{templateUrl: "home.html"})
 	$routeProvider.when('/share/:watch/:watchband/:wallpaper',{templateUrl: "share.html"})
 ]
 app.controller 'MainController', ($rootScope, $scope)->

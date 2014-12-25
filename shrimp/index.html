@@ -9,6 +9,7 @@
   </head>
   <body>
     <div ng-controller="MainController" class="wrap">
+      <div class="hideView"></div>
       <div ng-view class="view-animate"></div>
       <div id="loading" class="loading loaded">
         <div class="loading-logo">
@@ -22,18 +23,57 @@
       }
     </script>
     <script src="/libs/js/Zepto.min.js" type="text/javascript"></script>
-    <script src="/libs/js/angular.min.js" type="text/javascript"></script>
-    <script src="/libs/js/angular-route.min.js" type="text/javascript"></script>
-    <script src="/libs/js/angular-touch.min.js" type="text/javascript"></script>
-    <script src="/libs/js/angular-animate.min.js" type="text/javascript"></script>
-    <script src="/iwatch/js/base.js" type="text/javascript"></script>
-    <script type="text/ng-template" id="home.html">
-      <div>Homepage</div><a href="#/share">goto share</a>
+    <script src="/libs/js/angular.js" type="text/javascript"></script>
+    <script src="/libs/js/angular-route.js" type="text/javascript"></script>
+    <script src="/libs/js/angular-touch.js" type="text/javascript"></script>
+    <script src="/libs/js/angular-animate.js" type="text/javascript"></script>
+    <script src="/shrimp/js/base.js" type="text/javascript"></script>
+    <script type="text/ng-template" id="home.html"><a href="#/select"><img src="img/first-frame.png"></a></script>
+    <script type="text/ng-template" id="select.html">
+      <div class="game">
+        <div ng-hide="selectFinished" class="plane-list">
+          <div ng-show="select.shrimp" ng-hide="select.movend" class="plane selectShrimp"><img src="img/plane.png">
+            <div class="title"></div>
+            <div class="shrimp-list"><span ng-click="select.selectShrimp(1)" ng-class="select.Shrimplist[0]"><img src="img/shrimp-live.png"></span><span ng-click="select.selectShrimp(2)" ng-class="select.Shrimplist[1]"><img src="img/shrimp-live.png"></span><span ng-click="select.selectShrimp(3)" ng-class="select.Shrimplist[2]"><img src="img/shrimp-live.png"></span>
+            </div>
+          </div>
+          <div ng-hide="select.movend" class="shrimp-moving"><span ng-class="select.Shrimplist[0]" class="movingShrimp"><img src="img/shrimp-live.png"></span><span ng-class="select.Shrimplist[1]" class="movingShrimp"><img src="img/shrimp-live.png"></span><span ng-class="select.Shrimplist[2]" class="movingShrimp"><img src="img/shrimp-live.png"></span>
+          </div>
+          <div ng-show="select.movend" class="plane selectVegetable"><img src="img/plane.png">
+            <div class="title"></div>
+            <div class="vegetable-list"><span ng-click="select.selectVegetable(0)" ng-class="select.Vegetablelist[0]" class="vegetable-Broccoli"><img src="img/vegetable-Broccoli.png"></span><span ng-click="select.selectVegetable(1)" ng-class="select.Vegetablelist[1]" class="vegetable-Carrot"><img src="img/vegetable-Carrot.png"></span><span ng-click="select.selectVegetable(2)" ng-class="select.Vegetablelist[2]" class="vegetable-Garlic"><img src="img/vegetable-Garlic.png"></span><span ng-click="select.selectVegetable(3)" ng-class="select.Vegetablelist[3]" class="vegetable-Green-pepper"><img src="img/vegetable-Green-pepper.png"></span><span ng-click="select.selectVegetable(4)" ng-class="select.Vegetablelist[4]" class="vegetable-Mushroom"><img src="img/vegetable-Mushroom.png"></span><span ng-click="select.selectVegetable(5)" ng-class="select.Vegetablelist[5]" class="vegetable-Red-pepper"><img src="img/vegetable-Red-pepper.png"></span>
+            </div>
+          </div>
+          <div class="vegetable-moving"><span ng-class="select.Vegetablelist[0]" class="movingVegetable vegetable-Broccoli"><img src="img/vegetable-Broccoli.png"></span><span ng-class="select.Vegetablelist[1]" class="movingVegetable vegetable-Carrot"><img src="img/vegetable-Carrot.png"></span><span ng-class="select.Vegetablelist[2]" class="movingVegetable vegetable-Garlic"><img src="img/vegetable-Garlic.png"></span><span ng-class="select.Vegetablelist[3]" class="movingVegetable vegetable-Green-pepper"><img src="img/vegetable-Green-pepper.png"></span><span ng-class="select.Vegetablelist[4]" class="movingVegetable vegetable-Mushroom"><img src="img/vegetable-Mushroom.png"></span><span ng-class="select.Vegetablelist[5]" class="movingVegetable vegetable-Red-pepper"><img src="img/vegetable-Red-pepper.png"></span>
+          </div>
+        </div>
+        <div ng-show="selectFinished" class="plane-game">
+          <div class="note"></div>
+          <div class="game-canvas">
+            <div ng-class="select.blur" class="timer"><img src="img/timer.png"><span>{{select.TimerText}}</span></div>
+            <div ng-class="select.blur" class="score"><img src="img/score.png"><span>{{select.ScoreText}}</span></div>
+            <div ng-class="select.progress" class="progress"><img src="img/progress-bg.png">
+              <div ng-class="select.RandomProgress" class="progress-green">
+                <div class="line"></div>
+                <div class="line end"></div>
+              </div>
+              <div class="timer-shrimp"><img src="img/timer-shrimp.png"></div>
+            </div>
+          </div>
+        </div>
+        <div ng-class="select.blur" class="Stoves"><img src="img/stoves-bg.png">
+          <div class="ScoreList">
+            <div class="score-item-up"><img src="img/score-up.png"></div>
+            <div class="score-item-down"><img src="img/score-down.png"></div>
+          </div>
+          <div ng-show="select.fireon" class="Deadshrimp"><span class="s0 shrimp-item"><img src="img/shrimp-dead.png"></span><span class="s1 shrimp-item"><img src="img/shrimp-dead.png"></span><span class="s2 shrimp-item"><img src="img/shrimp-dead.png"></span>
+          </div>
+          <div ng-class="select.rock" ng-click="select.CheckShrimp()" class="stove"><img src="img/stoves.png"></div>
+        </div>
+        <div ng-show="selectFinished &amp;&amp; !gameStar" ng-click="select.GameStar()" class="note"><img src="img/note.png"></div>
+      </div>
     </script>
-    <script type="text/ng-template" id="share.html">
-      <div>Share</div><a href="#/">goto Homepage</a>
-    </script>
-    <script type="text/ng-template" id="slider.html"></script>
+    <script type="text/ng-template" id="share.html"></script>
     <script>
       var _hmt = _hmt || [];
       (function() {

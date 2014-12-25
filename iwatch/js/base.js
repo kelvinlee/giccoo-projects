@@ -1252,6 +1252,9 @@ app.config([
     $routeProvider.when('/', {
       templateUrl: "home.html"
     });
+    $routeProvider.when('/rd', {
+      templateUrl: "home.html"
+    });
     return $routeProvider.when('/share/:watch/:watchband/:wallpaper', {
       templateUrl: "share.html"
     });

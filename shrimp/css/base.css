@@ -607,14 +607,138 @@ img {
       display: inline-block;
       vertical-align: topd; }
 
+@-webkit-keyframes stove {
+  0%,20% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  40% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg); }
+  60% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg); }
+  100%,80% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); } }
+
+@keyframes stove {
+  0%,20% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  40% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg); }
+  60% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg); }
+  100%,80% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); } }
+@-webkit-keyframes Cooking {
+  0% {
+    -webkit-transform: translate(-50%, 0) scale(1, 1) rotate(0deg);
+            transform: translate(-50%, 0) scale(1, 1) rotate(0deg); }
+  50% {
+    -webkit-transform: translate(-20%, -400%) scale(1.5, 1.5) rotate(290deg);
+            transform: translate(-20%, -400%) scale(1.5, 1.5) rotate(290deg); }
+  100% {
+    -webkit-transform: translate(-50%, 0) scale(1, 1) rotate(720deg);
+            transform: translate(-50%, 0) scale(1, 1) rotate(720deg); } }
+@keyframes Cooking {
+  0% {
+    -webkit-transform: translate(-50%, 0) scale(1, 1) rotate(0deg);
+            transform: translate(-50%, 0) scale(1, 1) rotate(0deg); }
+  50% {
+    -webkit-transform: translate(-20%, -400%) scale(1.5, 1.5) rotate(290deg);
+            transform: translate(-20%, -400%) scale(1.5, 1.5) rotate(290deg); }
+  100% {
+    -webkit-transform: translate(-50%, 0) scale(1, 1) rotate(720deg);
+            transform: translate(-50%, 0) scale(1, 1) rotate(720deg); } }
+@-webkit-keyframes Cooking2 {
+  0% {
+    -webkit-transform: translate(-50%, 0) scale(1, 1) rotate(0deg);
+            transform: translate(-50%, 0) scale(1, 1) rotate(0deg); }
+  50% {
+    -webkit-transform: translate(-80%, -350%) scale(1.5, 1.5) rotate(290deg);
+            transform: translate(-80%, -350%) scale(1.5, 1.5) rotate(290deg); }
+  100% {
+    -webkit-transform: translate(-50%, 0) scale(1, 1) rotate(720deg);
+            transform: translate(-50%, 0) scale(1, 1) rotate(720deg); } }
+@keyframes Cooking2 {
+  0% {
+    -webkit-transform: translate(-50%, 0) scale(1, 1) rotate(0deg);
+            transform: translate(-50%, 0) scale(1, 1) rotate(0deg); }
+  50% {
+    -webkit-transform: translate(-80%, -350%) scale(1.5, 1.5) rotate(290deg);
+            transform: translate(-80%, -350%) scale(1.5, 1.5) rotate(290deg); }
+  100% {
+    -webkit-transform: translate(-50%, 0) scale(1, 1) rotate(720deg);
+            transform: translate(-50%, 0) scale(1, 1) rotate(720deg); } }
+@-webkit-keyframes Score {
+  0% {
+    -webkit-transform: translate(0, 100%);
+            transform: translate(0, 100%);
+    opacity: 0; }
+  30% {
+    opacity: 1; }
+  60% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+    opacity: 0; } }
+@keyframes Score {
+  0% {
+    -webkit-transform: translate(0, 100%);
+            transform: translate(0, 100%);
+    opacity: 0; }
+  30% {
+    opacity: 1; }
+  60% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+    opacity: 0; } }
+@-webkit-keyframes ScoreDown {
+  0% {
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+    opacity: 0; }
+  30% {
+    opacity: 1; }
+  60% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(0, 100%);
+            transform: translate(0, 100%);
+    opacity: 0; } }
+@keyframes ScoreDown {
+  0% {
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+    opacity: 0; }
+  30% {
+    opacity: 1; }
+  60% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(0, 100%);
+            transform: translate(0, 100%);
+    opacity: 0; } }
+html, body {
+  height: 100%; }
+
 .wrap {
   position: relative;
   max-width: 640px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  min-height: 440px;
+  height: 100%; }
 
 .loading {
-  -webkit-transition: all 1s linear;
-          transition: all 1s linear;
+  -webkit-transition: all 0.5s linear;
+          transition: all 0.5s linear;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -673,7 +797,7 @@ img {
     position: relative;
     z-index: 2; }
 
-.view-animate.ng-enter + .loading {
+.hideView + .loading {
   z-index: 99999;
   opacity: 1; }
 
@@ -682,15 +806,335 @@ img {
   position: absolute;
   top: 0px;
   left: 0px;
-  -webkit-transition: all ease 0.5s;
-          transition: all ease 0.5s; }
+  width: 100%;
+  min-height: 100%;
+  background: url(../img/bg.jpg) no-repeat center center;
+  background-size: cover;
+  -webkit-transition: all 0.5s ease-out;
+          transition: all 0.5s ease-out; }
   .view-animate.ng-enter {
-    opacity: 1;
-    -webkit-transform: scale(1, 1);
-        -ms-transform: scale(1, 1);
-            transform: scale(1, 1); }
+    -webkit-transform: translate(100%, 0);
+        -ms-transform: translate(100%, 0);
+            transform: translate(100%, 0); }
+  .view-animate.ng-enter-active {
+    -webkit-transform: translate(0%, 0);
+        -ms-transform: translate(0%, 0);
+            transform: translate(0%, 0); }
   .view-animate.ng-leave {
-    opacity: 0;
-    -webkit-transform: scale(0, 0);
-        -ms-transform: scale(0, 0);
-            transform: scale(0, 0); }
+    -webkit-transform: translate(0%, 0);
+        -ms-transform: translate(0%, 0);
+            transform: translate(0%, 0); }
+  .view-animate.ng-leave-active {
+    -webkit-transform: translate(-80%, 0);
+        -ms-transform: translate(-80%, 0);
+            transform: translate(-80%, 0); }
+
+.plane {
+  position: absolute;
+  top: 20%;
+  left: 0px;
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+  opacity: 1; }
+  .plane.ng-show {
+    -webkit-transform: translate(50%, 0) scale(0.5, 0.5);
+        -ms-transform: translate(50%, 0) scale(0.5, 0.5);
+            transform: translate(50%, 0) scale(0.5, 0.5);
+    opacity: 0; }
+  .plane.ng-hide {
+    -webkit-transform: translate(-50%, 0) scale(0.5, 0.5);
+        -ms-transform: translate(-50%, 0) scale(0.5, 0.5);
+            transform: translate(-50%, 0) scale(0.5, 0.5);
+    opacity: 0; }
+
+.selectShrimp .shrimp-list {
+  position: absolute;
+  top: 40%;
+  left: 17%;
+  width: 66%; }
+  .selectShrimp .shrimp-list span {
+    display: inline-block;
+    width: 30%;
+    margin-right: 5%;
+    background: url(../img/shrimp-bg.png) no-repeat center center;
+    background-size: cover; }
+    .selectShrimp .shrimp-list span:last-child {
+      margin-right: 0; }
+    .selectShrimp .shrimp-list span.hide img {
+      visibility: hidden; }
+
+.shrimp-moving, .vegetable-moving {
+  position: absolute; }
+  .shrimp-moving span, .vegetable-moving span {
+    display: none;
+    -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+    position: absolute; }
+    .shrimp-moving span.hide, .vegetable-moving span.hide {
+      display: block; }
+
+.selectVegetable.ng-animate {
+  -webkit-transform: translate(50%, 0) scale(0.5, 0.5);
+      -ms-transform: translate(50%, 0) scale(0.5, 0.5);
+          transform: translate(50%, 0) scale(0.5, 0.5);
+  opacity: 0; }
+.selectVegetable .vegetable-list {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  width: 60%; }
+  .selectVegetable .vegetable-list span {
+    display: inline-block;
+    width: 30%;
+    margin-right: 4.9%; }
+    .selectVegetable .vegetable-list span.vegetable-Broccoli {
+      background: url(../img/vegetable-bg-Broccoli.png) no-repeat center center;
+      background-size: cover; }
+    .selectVegetable .vegetable-list span.vegetable-Carrot {
+      background: url(../img/vegetable-bg-Carrot.png) no-repeat center center;
+      background-size: cover; }
+    .selectVegetable .vegetable-list span.vegetable-Garlic {
+      background: url(../img/vegetable-bg-Garlic.png) no-repeat center center;
+      background-size: cover; }
+    .selectVegetable .vegetable-list span.vegetable-Green-pepper {
+      background: url(../img/vegetable-bg-Green-pepper.png) no-repeat center center;
+      background-size: cover; }
+    .selectVegetable .vegetable-list span.vegetable-Mushroom {
+      background: url(../img/vegetable-bg-Mushroom.png) no-repeat center center;
+      background-size: cover; }
+    .selectVegetable .vegetable-list span.vegetable-Red-pepper {
+      background: url(../img/vegetable-bg-Red-pepper.png) no-repeat center center;
+      background-size: cover; }
+    .selectVegetable .vegetable-list span:nth-child(3n+0) {
+      margin-right: 0; }
+    .selectVegetable .vegetable-list span.hide img {
+      visibility: hidden; }
+
+.plane-list {
+  -webkit-transition: all 1s ease;
+          transition: all 1s ease;
+  opacity: 1; }
+  .plane-list.ng-hide {
+    opacity: 0; }
+
+.plane-game {
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+  .plane-game.ng-show {
+    opacity: 0; }
+  .plane-game.ng-show-active {
+    opacity: 1; }
+
+.game-canvas {
+  position: relative; }
+  .game-canvas .timer, .game-canvas .score {
+    -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+    position: absolute;
+    width: 40%; }
+    .game-canvas .timer span, .game-canvas .score span {
+      position: absolute;
+      top: 0;
+      right: 1.5rem;
+      display: inline-block;
+      color: #fff;
+      padding: 10% 0;
+      font-size: 1.1rem; }
+  .game-canvas .timer {
+    top: 1em;
+    left: 5%; }
+  .game-canvas .score {
+    top: 1em;
+    right: 5%; }
+  .game-canvas .progress {
+    position: absolute;
+    top: 0%;
+    left: 5%;
+    width: 90%;
+    margin-top: 30%; }
+    .game-canvas .progress .progress-green {
+      position: absolute;
+      top: 0;
+      left: 35%;
+      background: url(../img/progress-green.png) repeat left top;
+      background-size: contain;
+      height: 92%;
+      width: 30%; }
+      .game-canvas .progress .progress-green .line {
+        position: absolute;
+        top: -100%;
+        left: -2px;
+        width: 6px;
+        height: 300%;
+        background: url(../img/progress-line.png) repeat-y center top;
+        background-size: contain; }
+        .game-canvas .progress .progress-green .line.end {
+          left: auto;
+          right: -2px; }
+      .game-canvas .progress .progress-green.l0 {
+        left: 20%;
+        width: 20%; }
+      .game-canvas .progress .progress-green.l1 {
+        left: 25%;
+        width: 30%; }
+      .game-canvas .progress .progress-green.l2 {
+        left: 30%;
+        width: 15%; }
+      .game-canvas .progress .progress-green.l3 {
+        left: 35%;
+        width: 20%; }
+      .game-canvas .progress .progress-green.l4 {
+        left: 40%;
+        width: 10%; }
+      .game-canvas .progress .progress-green.l5 {
+        left: 45%;
+        width: 30%; }
+      .game-canvas .progress .progress-green.l6 {
+        left: 50%;
+        width: 20%; }
+      .game-canvas .progress .progress-green.l7 {
+        left: 55%;
+        width: 20%; }
+      .game-canvas .progress .progress-green.l8 {
+        left: 60%;
+        width: 15%; }
+      .game-canvas .progress .progress-green.l9 {
+        left: 65%;
+        width: 20%; }
+    .game-canvas .progress .timer-shrimp {
+      -webkit-transition: all 0.5s linear;
+              transition: all 0.5s linear;
+      position: absolute;
+      top: -2rem;
+      left: 10%;
+      width: 3rem;
+      height: 3rem;
+      margin-left: -1.5rem; }
+      .game-canvas .progress .timer-shrimp.on {
+        -webkit-transition: all 4s linear;
+                transition: all 4s linear; }
+    .game-canvas .progress.stop .timer-shrimp {
+      -webkit-transition: all 0s linear;
+              transition: all 0s linear; }
+    .game-canvas .progress.slow .timer-shrimp {
+      -webkit-transition: all 4s linear;
+              transition: all 4s linear; }
+    .game-canvas .progress.readyStar .timer-shrimp {
+      -webkit-transition: all 0.4s ease;
+              transition: all 0.4s ease; }
+    .game-canvas .progress.note-pop .timer-shrimp {
+      -webkit-transition: all 0.5s ease;
+              transition: all 0.5s ease;
+      left: 50%; }
+
+.Deadshrimp, .ScoreList {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%; }
+
+.Deadshrimp .shrimp-item {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  display: block;
+  width: 4em;
+  height: 4em;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  margin-top: 2em;
+  z-index: -1; }
+
+.ScoreList .score-item-up, .ScoreList .score-item-down {
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+  position: absolute;
+  top: 0%;
+  right: 20%;
+  display: none;
+  width: 5em;
+  -webkit-animation: Score 1s ease;
+          animation: Score 1s ease;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial;
+  z-index: -1;
+  margin-top: -8rem; }
+  .ScoreList .score-item-up.on, .ScoreList .score-item-down.on {
+    display: block; }
+.ScoreList .score-item-down {
+  -webkit-animation: ScoreDown 1s ease;
+          animation: ScoreDown 1s ease;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial;
+  margin-top: -6rem; }
+
+.Stoves {
+  position: absolute;
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+  bottom: 0; }
+  .Stoves .stove {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    width: 44.53125%;
+    margin-left: -22%; }
+    .Stoves .stove.rock {
+      -webkit-animation: stove 0.2s linear;
+              animation: stove 0.2s linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial; }
+  .Stoves.fire {
+    -webkit-transition: all 1.6s ease;
+            transition: all 1.6s ease; }
+    .Stoves.fire .stove {
+      -webkit-animation: stove 0.2s linear;
+              animation: stove 0.2s linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: 3;
+              animation-iteration-count: 3; }
+    .Stoves.fire .Deadshrimp .shrimp-item.s0 {
+      -webkit-animation: Cooking 1s linear;
+              animation: Cooking 1s linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: 1;
+              animation-iteration-count: 1; }
+    .Stoves.fire .Deadshrimp .shrimp-item.s1 {
+      -webkit-animation: Cooking2 1.2s ease-in;
+              animation: Cooking2 1.2s ease-in;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: 1;
+              animation-iteration-count: 1; }
+    .Stoves.fire .Deadshrimp .shrimp-item.s2 {
+      -webkit-animation: Cooking 1.6s linear;
+              animation: Cooking 1.6s linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: 1;
+              animation-iteration-count: 1; }
+
+.note {
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+  position: absolute;
+  bottom: 18%;
+  left: 0px;
+  width: 100%; }
+  .note.ng-animate {
+    opacity: 0; }
+  .note.ng-show {
+    opacity: 1; }
+
+.blur-show {
+  -webkit-filter: blur(5px);
+          filter: blur(5px); }

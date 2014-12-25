@@ -6,7 +6,7 @@ block css
 
 block content
 	div.wrap(ng-controller="MainController")
-		
+		div.hideView
 		div.view-animate(ng-view)
 		div#loading.loading.loaded
 			div.loading-logo
@@ -16,12 +16,71 @@ block content
 
 block ng-template
 	script(type="text/ng-template",id="home.html")
-		div Homepage
-		a(href="#/share") goto share
+		a(href="#/select")
+			img(src="img/first-frame.png")
+
+	script(type="text/ng-template",id="select.html")
+		div.game
+			div.plane-list(ng-hide="selectFinished")
+				div.plane.selectShrimp(ng-show="select.shrimp",ng-hide="select.movend")
+					img(src="img/plane.png")
+					div.title
+					div.shrimp-list
+						-for (var i=1;i<4;i++)
+							span(ng-click="select.selectShrimp(#{i})",ng-class="select.Shrimplist[#{i-1}]")
+								img(src="img/shrimp-live.png")
+				div.shrimp-moving(ng-hide="select.movend")
+					-for (var i=1;i<4;i++)
+						span.movingShrimp(ng-class="select.Shrimplist[#{i-1}]")
+							img(src="img/shrimp-live.png")
+				div.plane.selectVegetable(ng-show="select.movend")
+					img(src="img/plane.png")
+					div.title
+					div.vegetable-list
+						-var vegetable = ["Broccoli","Carrot","Garlic","Green-pepper","Mushroom","Red-pepper"]
+						-for (var i=0;i<vegetable.length;i++)
+							span(ng-click="select.selectVegetable(#{i})",class="vegetable-#{vegetable[i]}",ng-class="select.Vegetablelist[#{i}]")
+								img(src="img/vegetable-#{vegetable[i]}.png")
+				div.vegetable-moving
+					-for (var i=0;i<vegetable.length;i++)
+						span.movingVegetable(class="vegetable-#{vegetable[i]}",ng-class="select.Vegetablelist[#{i}]")
+							img(src="img/vegetable-#{vegetable[i]}.png")
+			div.plane-game(ng-show="selectFinished")
+				div.note
+				div.game-canvas
+					div.timer(ng-class="select.blur")
+						img(src="img/timer.png")
+						span {{select.TimerText}}
+					div.score(ng-class="select.blur")
+						img(src="img/score.png")
+						span {{select.ScoreText}}
+					div.progress(ng-class="select.progress")
+						img(src="img/progress-bg.png")
+						div.progress-green(ng-class="select.RandomProgress")
+							div.line
+							div.line.end
+						div.timer-shrimp
+							img(src="img/timer-shrimp.png")
+			div.Stoves(ng-class="select.blur")
+				img(src="img/stoves-bg.png")
+				div.ScoreList
+					div.score-item-up
+						img(src="img/score-up.png")
+					div.score-item-down
+						img(src="img/score-down.png")
+				div.Deadshrimp(ng-show="select.fireon")
+					- for (var i=0;i<3;i++)
+						span(class="s#{i} shrimp-item")
+							img(src="img/shrimp-dead.png")
+				div.stove(ng-class="select.rock",ng-click="select.CheckShrimp()")
+					img(src="img/stoves.png")
+			div.note(ng-show="selectFinished && !gameStar",ng-click="select.GameStar()")
+				img(src="img/note.png")
+
+
 	script(type="text/ng-template",id="share.html")
-		div Share
-		a(href="#/") goto Homepage
-	script(type="text/ng-template",id="slider.html")
+		
+	
 		
 
 
@@ -30,9 +89,11 @@ block js
 		function showLoad() {
 			 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
 		}
+	- var debug = ".min"
+	- debug = ""
 	script(src="/libs/js/Zepto.min.js",type="text/javascript")
-	script(src="/libs/js/angular.min.js",type="text/javascript")
-	script(src="/libs/js/angular-route.min.js",type="text/javascript")
-	script(src="/libs/js/angular-touch.min.js",type="text/javascript")
-	script(src="/libs/js/angular-animate.min.js",type="text/javascript")
-	script(src="/iwatch/js/base.js",type="text/javascript")
+	script(src="/libs/js/angular#{debug}.js",type="text/javascript")
+	script(src="/libs/js/angular-route#{debug}.js",type="text/javascript")
+	script(src="/libs/js/angular-touch#{debug}.js",type="text/javascript")
+	script(src="/libs/js/angular-animate#{debug}.js",type="text/javascript")
+	script(src="/shrimp/js/base.js",type="text/javascript")
