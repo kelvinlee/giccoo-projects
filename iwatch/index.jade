@@ -3,7 +3,10 @@ block title
 	| 送你一个 Apple Watch
 block css
 	link(rel="stylesheet",href="/iwatch/css/base.css")
-
+	script.
+		function showLoad() {
+			 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
+		}
 block content
 	div.qrcode
 		div.text 建议您使用手机浏览
@@ -87,10 +90,6 @@ block ng-template
 
 
 block js
-	script.
-		function showLoad() {
-			 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
-		}
 	script(src="/libs/js/Zepto.min.js",type="text/javascript")
 	script(src="/libs/js/angular.min.js",type="text/javascript")
 	script(src="/libs/js/angular-route.min.js",type="text/javascript")

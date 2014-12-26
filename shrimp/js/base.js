@@ -1346,9 +1346,9 @@ loadList = [
 _wechat_f = {
   "appid": "",
   "img_url": "http://m.giccoo.com/shrimp/img/share.jpg",
-  "img_width": 200,
-  "img_height": 200,
-  "link": "",
+  "img_width": 300,
+  "img_height": 300,
+  "link": "http://m.giccoo.com/shrimp",
   "desc": "这道菜的关键是选择阿根廷红虾.",
   "title": "我刚做了一道'红焖大虾'快来尝尝."
 };
@@ -1356,9 +1356,9 @@ _wechat_f = {
 _wechat = {
   "appid": "",
   "img_url": "http://m.giccoo.com/shrimp/img/share.jpg",
-  "img_width": 200,
-  "img_height": 200,
-  "link": "",
+  "img_width": 300,
+  "img_height": 300,
+  "link": "http://m.giccoo.com/shrimp",
   "desc": "这道菜的关键是选择阿根廷红虾.",
   "title": "我刚做了一道'红焖大虾'快来尝尝."
 };

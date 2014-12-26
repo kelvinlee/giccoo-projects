@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>送你一个 Apple Watch</title>
     <link rel="stylesheet" href="/iwatch/css/base.css">
+    <script>
+      function showLoad() {
+      	 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
+      }
+    </script>
   </head>
   <body>
     <div class="qrcode">
@@ -19,11 +24,6 @@
         </div>
       </div>
     </div>
-    <script>
-      function showLoad() {
-      	 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
-      }
-    </script>
     <script src="/libs/js/Zepto.min.js" type="text/javascript"></script>
     <script src="/libs/js/angular.min.js" type="text/javascript"></script>
     <script src="/libs/js/angular-route.min.js" type="text/javascript"></script>
