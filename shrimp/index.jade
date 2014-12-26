@@ -1,10 +1,17 @@
 extends ../libs/jade/layout-ng
 block title
-	| 送你一个 Iwatch
+	| 情暖冬日 为爱"虾"厨
 block css
 	link(rel="stylesheet",href="/shrimp/css/base.css")
+	script.
+		function showLoad() {
+			 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
+		}
 
 block content
+	div.qrcode
+		div.text 建议您使用手机浏览
+		img(src="../libs/img/qr.jpg")
 	div.wrap(ng-controller="MainController")
 		div.hideView
 		div.view-animate(ng-view)
@@ -114,10 +121,6 @@ block ng-template
 
 
 block js
-	script.
-		function showLoad() {
-			 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
-		}
 	- var debug = ".min"
 	- debug = ""
 	script(src="/libs/js/Zepto.min.js",type="text/javascript")

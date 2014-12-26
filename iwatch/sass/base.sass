@@ -19,7 +19,6 @@ body
 	max-width: 640px
 	margin: 0 auto
 
-
 .box
 	+posr
 .slider-normal
@@ -318,3 +317,22 @@ body
 		+tran(all,0.1s,ease)
 		opacity: 0
 		+transform(scale(0,0))
+
+.qrcode
+	margin: 0 auto
+	padding-top: 100px
+	+w(640px)
+	+text-center
+	+hide
+	+large
+		+show
+	+small
+		+hide
++large
+	body
+		background: #fff
+	.wrap
+		+hide
++small
+	.wrap
+		+show

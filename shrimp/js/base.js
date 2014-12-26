@@ -1335,26 +1335,11 @@ loadList = [
     id: "note",
     src: "img/note.png"
   }, {
-    id: "success-img",
-    src: "img/success-img.png"
-  }, {
     id: "title-success",
     src: "img/title-success.png"
   }, {
     id: "star",
     src: "img/star.png"
-  }, {
-    id: "success-text",
-    src: "img/success-text.png"
-  }, {
-    id: "share-plane",
-    src: "img/share-plane.png"
-  }, {
-    id: "btns",
-    src: "img/btns.png"
-  }, {
-    id: "followus",
-    src: "img/followus.png"
   }
 ];
 

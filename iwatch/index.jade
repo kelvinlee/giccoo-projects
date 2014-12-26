@@ -5,6 +5,9 @@ block css
 	link(rel="stylesheet",href="/iwatch/css/base.css")
 
 block content
+	div.qrcode
+		div.text 建议您使用手机浏览
+		img(src="../libs/img/qr.jpg")
 	div.wrap(ng-controller="MainController")
 		ng-view.view-animate
 		div#loading.loading.loaded

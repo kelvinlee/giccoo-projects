@@ -24,13 +24,13 @@ loadList = [
 	{id: "shrimp-dead", src: "img/shrimp-dead.png"}
 	{id: "stoves", src: "img/stoves.png"}
 	{id: "note", src: "img/note.png"}
-	{id: "success-img", src: "img/success-img.png"}
+	# {id: "success-img", src: "img/success-img.png"}
 	{id: "title-success", src: "img/title-success.png"}
 	{id: "star", src: "img/star.png"}
-	{id: "success-text", src: "img/success-text.png"}
-	{id: "share-plane", src: "img/share-plane.png"}
-	{id: "btns", src: "img/btns.png"}
-	{id: "followus", src: "img/followus.png"}
+	# {id: "success-text", src: "img/success-text.png"}
+	# {id: "share-plane", src: "img/share-plane.png"}
+	# {id: "btns", src: "img/btns.png"}
+	# {id: "followus", src: "img/followus.png"}
 
 	# {id: "", src: ""}
 ]
