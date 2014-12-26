@@ -51,7 +51,34 @@
 		+transform(translate(0,100%))
 		opacity: 0
 
++keyframes(starShow)
+	0%
+		+transform(scale(1,1))
+	40%
+		+transform(scale(1.3,1.3))
+	80%
+		+transform(scale(0.8,0.8))
+	90%
+		+transform(scale(1.1,1.1))
+	100%
+		+transform(scale(1,1))
 
++keyframes(firemove)
+	0%
+		+transform(skew(0deg,0deg) translate(0,0))
+		opacity: 1
+	25%
+		+transform(skew(0deg,1deg) translate(0%,-1%))
+		opacity: 0.9
+	50%
+		+transform(skew(0deg,0deg) translate(0,0))
+		opacity: 1
+	75%
+		+transform(skew(1deg,0deg) translate(0%,1%))
+		opacity: 0.9
+	100%
+		+transform(skew(0deg,0deg) translate(0,0))
+		opacity: 1
 
 html,body
 	+h(100%)
@@ -134,7 +161,7 @@ html,body
 		+transform(translate(-80%,0))
 .plane
 	+posa
-	+tl(20%)
+	+tl(25%)
 	+tran($time:0.5s)
 	opacity: 1
 	&.ng-show
@@ -143,8 +170,15 @@ html,body
 	&.ng-hide
 		+transform(translate(-50%,0) scale(0.5,0.5))
 		opacity: 0
+	.title
+		+posa
+		+tl(1%,50%)
+		+transform(translate(-50%,0))
+		+w(6em)
 
 .selectShrimp
+	.title
+		top: 3%
 	.shrimp-list
 		+posa
 		+tl(40%,17%)
@@ -169,6 +203,8 @@ html,body
 		&.hide
 			+show
 .selectVegetable
+	.title
+		top: 3%
 	&.ng-animate
 		+transform(translate(50%,0) scale(0.5,0.5))
 		opacity: 0
@@ -361,4 +397,97 @@ html,body
 		opacity: 1
 .blur-show
 	+blur
+.star-list
+	+posa
+	+tl(17%)
+	+w(100%)
+	+text-center
+	span
+		+posr
+		display: inline-block
+		+w(3em)
+		+animation(starShow)
+		&.star0,&.star4
+			top: 0.8em
+			+w(2em)
+		&.star1,&.star3
+			top: 0.2em
+			+w(2.5em)
+			+delay(0.5s)
+		&.star3
+			+transform(rotate(10deg))
+		&.star4
+			+transform(rotate(20deg))
+		&.star0
+			+transform(rotate(-20deg))
+		&.star1
+			+transform(rotate(-10deg))
+		&.star2
+			+delay(1s)
+.success-img
+	+posa
+	+tl(-40%)
+	z-index: -1
+.success-text
+	+posa
+	+bl(35%,20%)
+	+w(60%)
+.btns
+	+posr
+	padding-top: 2%
+	.shareplanebtn,.shareplanelink
+		+show
+		+posa
+		+tl()
+		+wh(50%,100%)
+	.shareplanelink
+		left: auto
+		right: 0
+	.sharePlane
+		+posa
+		+tl
+		+transform(translate(0,-100%))
+.followus
+	+posa
+	+bl(5%)
+.flame
+	+tran
+	+wh(150px,75px)
+	+animation(firemove,0.2s,ease,infinite)
+	background: url(../img/fire.png) no-repeat center 0px
+	background-size: 150px 600%
+	+posa
+	+tl(5%,50%)
+	z-index: 1
+	margin-left: -19%
+.sharePlane
+	+tran
+	opacity: 1
+	&.ng-hide
+		opacity: 0
+	span,a
+		+posa
+		+tl
+		+show
+		+wh(20%,100%)
+		text-indent: -9999rem
+	.wechat
+		+tl(0,10%)
+	.weibo
+		+tl(0,30%)
+	.qweibo
+		+tl(0,50%)
+	.douban
+		+tl(0,70%)
 
+.shareWechat
+	+tran
+	+posf
+	+tl
+	+wh(100%,100%)
+	background: rgba(0,0,0,0.7) url(../img/wechat-share.png) no-repeat top center
+	background-size: contain
+	z-index: 9999
+	opacity: 1
+	&.ng-hide
+		opacity: 0

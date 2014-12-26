@@ -2,13 +2,6 @@ preload = null
 # 必要加载的图片
 loadList = [
 	{id: "logo", src:"../libs/img/loading.png"}
-	{id: "bg", src:"img/bg.jpg"}
-	{id: "plane", src:"img/plane.png"}
-	{id: "stoves", src:"img/stoves.png"}
-	{id: "stoves-bg", src:"img/stoves-bg.png"}
-	{id: "shrimp-live", src:"img/shrimp-live.png"}
-	{id: "shrimp-bg", src:"img/shrimp-bg.png"}
-	# {id: "stoves-bg", src:"img/stoves-bg.png"}
 ]
 beginload = ($scope)->
 	return "" if preload?

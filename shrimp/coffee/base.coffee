@@ -4,32 +4,64 @@
 # @codekit-prepend "js/vendor/exif.js"
 # @codekit-prepend "../../libs/js/megapix-image.js"
 # @codekit-prepend "../../libs/coffee/share"
-# @codekit-prepend "load"
+# @codekit-prepend "../../libs/coffee/load"
+
+# load list
+loadList = [
+	{id: "logo", src:"../libs/img/loading.png"}
+	{id: "first-frame", src: "img/first-frame.png"}
+	{id: "plane", src: "img/plane.png"}
+	{id: "title-shrimp", src: "img/title-shrimp.png"}
+	{id: "title-vegetable", src: "img/title-vegetable.png"}
+	{id: "vegetable-Broccoli", src: "img/vegetable-Broccoli.png"}
+	{id: "vegetable-Carrot", src: "img/vegetable-Carrot.png"}
+	{id: "timer", src: "img/timer.png"}
+	{id: "score", src: "img/score.png"}
+	{id: "progress-bg", src: "img/progress-bg.png"}
+	{id: "stoves-bg", src: "img/stoves-bg.png"}
+	{id: "score-up", src: "img/score-up.png"}
+	{id: "score-down", src: "img/score-down.png"}
+	{id: "shrimp-dead", src: "img/shrimp-dead.png"}
+	{id: "stoves", src: "img/stoves.png"}
+	{id: "note", src: "img/note.png"}
+	{id: "success-img", src: "img/success-img.png"}
+	{id: "title-success", src: "img/title-success.png"}
+	{id: "star", src: "img/star.png"}
+	{id: "success-text", src: "img/success-text.png"}
+	{id: "share-plane", src: "img/share-plane.png"}
+	{id: "btns", src: "img/btns.png"}
+	{id: "followus", src: "img/followus.png"}
+
+	# {id: "", src: ""}
+]
 
 _wechat_f = 
 	"appid": ""
-	"img_url": "http://m.giccoo.com/iwatch/img/share.jpg"
+	"img_url": "http://m.giccoo.com/shrimp/img/share.jpg"
 	"img_width": 200
 	"img_height": 200
 	"link": ""
-	"desc": "各种表带,表盘我都挑花眼了."
-	"title": "刚买了个 Apple Watch , 用着还不错, 你也要来一个吗?"
+	"desc": "这道菜的关键是选择阿根廷红虾."
+	"title": "我刚做了一道'红焖大虾'快来尝尝."
 _wechat =
 	"appid": ""
-	"img_url": "http://m.giccoo.com/iwatch/img/share.jpg"
+	"img_url": "http://m.giccoo.com/shrimp/img/share.jpg"
 	"img_width": 200
 	"img_height": 200
 	"link": ""
-	"desc": "各种表带,表盘我都挑花眼了."
-	"title": "刚买了个 Apple Watch , 用着还不错, 你也要来一个吗?"
+	"desc": "这道菜的关键是选择阿根廷红虾."
+	"title": "我刚做了一道'红焖大虾'快来尝尝."
 
 hosts = "http://g.giccoo.com"
 
-refreshShare = ->
+refreshShare = (title,desc)->
 	# url = "http://m.giccoo.com/iwatch/#/share/#{shareContent.watch}/#{shareContent.watchband}/#{shareContent.wall}"
-	_wechat_f.link = url
-	_wechat.link = url
-	# console.log url
+	arr = ["日式炸虾","DIY麻辣虾","油焖大虾","清蒸大虾","椒盐虾","麻辣虾","香辣虾","红酒番茄虾","红烧大虾","油闷大虾","白灼虾","油爆大虾","日式鲜虾饭团","玉米香菇虾肉饺","美国烤虾串"]
+	cm = arr[Math.floor Math.random()*arr.length]
+	_wechat_f.title = title.replace "{cm}",cm
+	_wechat.title = title.replace "{cm}",cm
+	_wechat_f.desc = desc
+	_wechat.desc = desc
 	reloadWechat()
 
 
@@ -51,7 +83,6 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 		controllerAs: "share"
 	}
 ]
-
 # 主要加载
 app.controller 'MainController', ($rootScope, $scope)->
 	beginload $scope
@@ -60,21 +91,25 @@ app.controller 'MainController', ($rootScope, $scope)->
 	$scope.$watch "loaded", ->
 		$(".loaded").removeClass "loaded" if $scope.loaded
 
+	refreshShare "我刚做了一道'{cm}'快来尝尝.","这道菜的关键是选择阿根廷红虾."
+
 # 选择菜品
-app.controller "SelectController", ($rootScope, $scope, $animate, $timeout)->
+app.controller "SelectController", ($rootScope, $scope, $animate, $timeout, $location)->
 	this.Shrimplist = ["","",""]
 	this.Vegetablelist = ["","","","","",""]
 	this.progress = "note-pop"
 	this.starTime = null
 	this.RandomProgress = ""
 	this.TimerText = "20'00"
-	this.ScoreText = "0000"
+	this.ScoreText = 0
+	this.OverScore = 0
+	this.flame = 0
 	this.animateCache = null
 	acc = {x:0,y:0,z:0}
 	SHAKE_THRESHOLD = 800
 	last_update = 0
 	# false
-	$scope.selectFinished = true
+	$scope.selectFinished = false
 	$scope.gameStar = false
 	tis = this
 	$scope.$watch "selectFinished", ->
@@ -88,6 +123,7 @@ app.controller "SelectController", ($rootScope, $scope, $animate, $timeout)->
 		tis.Shrimplist[n-1] = "hide"
 		e = $(".shrimp-moving span").eq(n-1)[0]
 		st = $(".stove")
+		tis.ScoreText += 50 + parseInt Math.random()*300
 		$animate.addClass e, 'on', {
 			from: {
 				"top": os.top+"px"
@@ -119,6 +155,7 @@ app.controller "SelectController", ($rootScope, $scope, $animate, $timeout)->
 		tis.Vegetablelist[n] = "hide"
 		e = $(".vegetable-moving span").eq(n)[0]
 		st = $(".stove")
+		tis.ScoreText += 100 + parseInt Math.random()*200
 		$animate.addClass e, 'on', {
 			from: {
 				"top": os.top+"px"
@@ -150,8 +187,9 @@ app.controller "SelectController", ($rootScope, $scope, $animate, $timeout)->
 			tis.progress = "slow"
 		,500
 		setTimeout ->
-			console.log "game start"
+			# console.log "game start"
 			tis.starTime = new Date().getTime()
+			tis.OverScore = tis.ScoreText
 			tis.TimerStart()
 			tis.TimerRun()
 			tis.StarMotion true
@@ -191,11 +229,22 @@ app.controller "SelectController", ($rootScope, $scope, $animate, $timeout)->
 	this.TimerRun = ->
 		return "" if tis.stop is true
 		$timeout ->
+			if tis.flame >= 5
+				tis.flame = 0
+			else
+				tis.flame += 1
 			t = parseInt((20000 - (new Date().getTime() - tis.starTime))/10)
 			if t < 50
 				tis.TimerText = "0'00"
 			else
 				tis.TimerText = parseInt(t/100)+"'"+if t%100 < 10 then "0"+t%100 else t%100
+			if tis.OverScore > tis.ScoreText
+				tis.ScoreText += parseInt (tis.OverScore-tis.ScoreText)/20
+			else if tis.OverScore < tis.ScoreText + 20
+				tis.ScoreText -= parseInt (tis.ScoreText-tis.OverScore)/10
+			else
+				tis.ScoreText = tis.OverScore
+
 			tis.TimerRun()
 		,1000/30
 	this.StarMotion = (bool)->
@@ -203,7 +252,6 @@ app.controller "SelectController", ($rootScope, $scope, $animate, $timeout)->
 			window.addEventListener('devicemotion',tis.deviceMotionHandler, false) if window.DeviceMotionEvent?
 		else
 			window.removeEventListener('devicemotion',tis.deviceMotionHandler, false) if window.DeviceMotionEvent?
-
 	this.deviceMotionHandler = (eventData)->
 		acceleration = eventData.accelerationIncludingGravity
 		curTime = new Date().getTime()
@@ -223,9 +271,8 @@ app.controller "SelectController", ($rootScope, $scope, $animate, $timeout)->
 		tis.fireon = true
 		es = $(".timer-shrimp").offset()
 		eg = $(".progress-green").offset()
-
-		console.log es.left > eg.left && es.left < eg.left+eg.width
-		if es.left > eg.left && es.left < eg.left+eg.width+es.width
+		# console.log es.left > eg.left-es.width && es.left < eg.left+eg.width-es.width
+		if es.left > eg.left-es.width && es.left < eg.left+eg.width-es.width
 			tis.ScoreRun true
 		else
 			tis.ScoreRun false
@@ -236,12 +283,17 @@ app.controller "SelectController", ($rootScope, $scope, $animate, $timeout)->
 				$animate.removeClass elem, "fire"
 				tis.fireon = false
 	this.ScoreRun = (bool)->
+		return "" if tis.stop
 		elem = if bool then $(".score-item-up")[0] else $(".score-item-down")[0]
+		if bool
+			tis.OverScore += 600
+		else
+			tis.OverScore -= 200
+		# console.log tis.OverScore
 		$animate.addClass elem, "on"
 		.then ->
 			$scope.$apply ->
 				$animate.removeClass elem, "on"
-
 	this.stopAll = ->
 		$scope.$apply ->
 			tis.stop = true
@@ -253,13 +305,33 @@ app.controller "SelectController", ($rootScope, $scope, $animate, $timeout)->
 			tis.progress = "stop"
 			$animate.cancel tis.animateCache
 			# setTimeout ->
+			refreshShare "我刚做了一道价值#{tis.ScoreText}元的'{cm}'快来尝尝.","这道菜的关键是选择阿根廷红虾."
+			$rootScope.sharetext = "我刚做了一道价值#{tis.ScoreText}元的'{cm}'快来尝尝."
+			$rootScope.sharedesc = "这道菜的关键是选择阿根廷红虾."
 			$(".timer-shrimp").css
 				left: (lc+6)+"%"
-
-		
+			$timeout ->
+				$location.path "/share"
+			, 500
 	# this.StarMotion true
 	this.shrimp = true
 
-
 # 分享
 app.controller "ShareController", ($rootScope, $scope)->
+	if not $rootScope.sharetext? 
+		$rootScope.sharetext = "我刚做了一道'红焖大虾'快来尝尝."
+		$rootScope.sharedesc = "这道菜的关键是选择阿根廷红虾."
+	BindShare $rootScope.sharetext,"http://m.giccoo.com/shrimp",""
+	tis = this
+	this.showWechat = (bool)->
+		tis.shareWechat = bool
+	this.showPlane = ->
+		if tis.sharePlane
+			tis.sharePlane = false
+		else
+			tis.sharePlane = true
+	this.shareWechat = false
+	this.sharePlane = false		
+	
+
+

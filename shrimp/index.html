@@ -33,14 +33,14 @@
       <div class="game">
         <div ng-hide="selectFinished" class="plane-list">
           <div ng-show="select.shrimp" ng-hide="select.movend" class="plane selectShrimp"><img src="img/plane.png">
-            <div class="title"></div>
+            <div class="title"><img src="img/title-shrimp.png"></div>
             <div class="shrimp-list"><span ng-click="select.selectShrimp(1)" ng-class="select.Shrimplist[0]"><img src="img/shrimp-live.png"></span><span ng-click="select.selectShrimp(2)" ng-class="select.Shrimplist[1]"><img src="img/shrimp-live.png"></span><span ng-click="select.selectShrimp(3)" ng-class="select.Shrimplist[2]"><img src="img/shrimp-live.png"></span>
             </div>
           </div>
           <div ng-hide="select.movend" class="shrimp-moving"><span ng-class="select.Shrimplist[0]" class="movingShrimp"><img src="img/shrimp-live.png"></span><span ng-class="select.Shrimplist[1]" class="movingShrimp"><img src="img/shrimp-live.png"></span><span ng-class="select.Shrimplist[2]" class="movingShrimp"><img src="img/shrimp-live.png"></span>
           </div>
           <div ng-show="select.movend" class="plane selectVegetable"><img src="img/plane.png">
-            <div class="title"></div>
+            <div class="title"><img src="img/title-vegetable.png"></div>
             <div class="vegetable-list"><span ng-click="select.selectVegetable(0)" ng-class="select.Vegetablelist[0]" class="vegetable-Broccoli"><img src="img/vegetable-Broccoli.png"></span><span ng-click="select.selectVegetable(1)" ng-class="select.Vegetablelist[1]" class="vegetable-Carrot"><img src="img/vegetable-Carrot.png"></span><span ng-click="select.selectVegetable(2)" ng-class="select.Vegetablelist[2]" class="vegetable-Garlic"><img src="img/vegetable-Garlic.png"></span><span ng-click="select.selectVegetable(3)" ng-class="select.Vegetablelist[3]" class="vegetable-Green-pepper"><img src="img/vegetable-Green-pepper.png"></span><span ng-click="select.selectVegetable(4)" ng-class="select.Vegetablelist[4]" class="vegetable-Mushroom"><img src="img/vegetable-Mushroom.png"></span><span ng-click="select.selectVegetable(5)" ng-class="select.Vegetablelist[5]" class="vegetable-Red-pepper"><img src="img/vegetable-Red-pepper.png"></span>
             </div>
           </div>
@@ -68,12 +68,27 @@
           </div>
           <div ng-show="select.fireon" class="Deadshrimp"><span class="s0 shrimp-item"><img src="img/shrimp-dead.png"></span><span class="s1 shrimp-item"><img src="img/shrimp-dead.png"></span><span class="s2 shrimp-item"><img src="img/shrimp-dead.png"></span>
           </div>
-          <div ng-class="select.rock" ng-click="select.CheckShrimp()" class="stove"><img src="img/stoves.png"></div>
+          <div ng-show="gameStar" class="flame"></div>
+          <div ng-class="select.rock" class="stove"><img src="img/stoves.png"></div>
         </div>
         <div ng-show="selectFinished &amp;&amp; !gameStar" ng-click="select.GameStar()" class="note"><img src="img/note.png"></div>
       </div>
     </script>
-    <script type="text/ng-template" id="share.html"></script>
+    <script type="text/ng-template" id="share.html">
+      <div ng-show="share.shareWechat" ng-click="share.showWechat(false)" class="shareWechat"></div>
+      <div class="plane">
+        <div class="success-img"><img src="img/success-img.png"></div><img src="img/plane.png">
+        <div class="title"><img src="img/title-success.png"></div>
+        <div class="star-list"><span class="star0"><img src="img/star.png"></span><span class="star1"><img src="img/star.png"></span><span class="star2"><img src="img/star.png"></span><span class="star3"><img src="img/star.png"></span><span class="star4"><img src="img/star.png"></span>
+        </div>
+        <div class="success-text"><img src="img/success-text.png"></div>
+        <div class="btns">
+          <div ng-show="share.sharePlane" class="sharePlane"><img src="img/share-plane.png"><span ng-click="share.showWechat(true)" class="wechat">微信分享</span><a href="" data-share="weibo" class="weibo">微博分享</a><a href="" data-share="qweibo" class="qweibo">腾讯微博分享</a><a href="" data-share="douban" class="douban">豆瓣分享</a></div><img src="img/btns.png">
+          <div ng-click="share.showPlane()" class="shareplanebtn"></div><a href="" class="shareplanelink"></a>
+        </div>
+      </div>
+      <div class="followus"><a href="http://mp.weixin.qq.com/s?__biz=MzA3MTEzMjM3Mw==&amp;mid=201960346&amp;idx=1&amp;sn=44f1f85dc8872fefce13ab70a2826499#rd"><img src="img/followus.png"></a></div>
+    </script>
     <script>
       var _hmt = _hmt || [];
       (function() {

@@ -44,11 +44,9 @@ BindShare = (content,url = window.location.href,pic)->
 		"twitter":"https://twitter.com/intent/tweet?text={title}&pic={pic}"
 		"kaixin":"http://www.kaixin001.com/rest/records.php?content={title}&url={url}&pic={pic}"
 		"douban": "http://www.douban.com/share/service?bm=&image={pic}&href={url}&updated=&name={title}"
-	# $("a[data-share]").off('click').on 'click', ->
+
 	$("a[data-share]").each (e)->
 		$(this).attr "href",fShare list[$(this).data('share')],content,url,pic
-	# $("a[data-share]").click (e)->
-		# _hmt.push(['_trackEvent', 'home', 'share', $(this).data('share')])
 
 fShare = (url,content,sendUrl,pic = "")->
 	# 分享内容

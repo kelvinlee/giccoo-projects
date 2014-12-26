@@ -25,6 +25,7 @@ block ng-template
 				div.plane.selectShrimp(ng-show="select.shrimp",ng-hide="select.movend")
 					img(src="img/plane.png")
 					div.title
+						img(src="img/title-shrimp.png")
 					div.shrimp-list
 						-for (var i=1;i<4;i++)
 							span(ng-click="select.selectShrimp(#{i})",ng-class="select.Shrimplist[#{i-1}]")
@@ -36,6 +37,7 @@ block ng-template
 				div.plane.selectVegetable(ng-show="select.movend")
 					img(src="img/plane.png")
 					div.title
+						img(src="img/title-vegetable.png")
 					div.vegetable-list
 						-var vegetable = ["Broccoli","Carrot","Garlic","Green-pepper","Mushroom","Red-pepper"]
 						-for (var i=0;i<vegetable.length;i++)
@@ -72,14 +74,41 @@ block ng-template
 					- for (var i=0;i<3;i++)
 						span(class="s#{i} shrimp-item")
 							img(src="img/shrimp-dead.png")
-				div.stove(ng-class="select.rock",ng-click="select.CheckShrimp()")
+				div.flame(ng-show="gameStar")
+				//- ,ng-click="select.CheckShrimp()"
+				div.stove(ng-class="select.rock")
 					img(src="img/stoves.png")
 			div.note(ng-show="selectFinished && !gameStar",ng-click="select.GameStar()")
 				img(src="img/note.png")
 
-
 	script(type="text/ng-template",id="share.html")
-		
+		div.shareWechat(ng-show="share.shareWechat",ng-click="share.showWechat(false)")
+			
+		div.plane
+			div.success-img
+				img(src="img/success-img.png")
+			img(src="img/plane.png")
+			div.title
+				img(src="img/title-success.png")
+			div.star-list
+				-for (var i=0;i<5;i++)
+					span(class="star#{i}")
+						img(src="img/star.png")
+			div.success-text
+				img(src="img/success-text.png")
+			div.btns
+				div.sharePlane(ng-show="share.sharePlane")
+					img(src="img/share-plane.png")
+					span.wechat(ng-click="share.showWechat(true)") 微信分享
+					a.weibo(href="",data-share="weibo") 微博分享
+					a.qweibo(href="",data-share="qweibo") 腾讯微博分享
+					a.douban(href="",data-share="douban") 豆瓣分享
+				img(src="img/btns.png")
+				div.shareplanebtn(ng-click="share.showPlane()")
+				a.shareplanelink(href="")
+		div.followus
+			a(href="http://mp.weixin.qq.com/s?__biz=MzA3MTEzMjM3Mw==&mid=201960346&idx=1&sn=44f1f85dc8872fefce13ab70a2826499#rd")
+				img(src="img/followus.png")
 	
 		
 
