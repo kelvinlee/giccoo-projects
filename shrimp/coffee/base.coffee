@@ -321,6 +321,7 @@ app.controller "ShareController", ($rootScope, $scope)->
 	if not $rootScope.sharetext? 
 		$rootScope.sharetext = "我刚做了一道'红焖大虾'快来尝尝."
 		$rootScope.sharedesc = "这道菜的关键是选择阿根廷红虾."
+		$location.path "/"
 	BindShare $rootScope.sharetext,"http://m.giccoo.com/shrimp",""
 	tis = this
 	this.showWechat = (bool)->
