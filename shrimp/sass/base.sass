@@ -1,7 +1,12 @@
 @import sass/base
 @import sass/animation
 @import sass/slider
-
+.wechat-share-hide
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+	
 +keyframes(stove)
 	0%,20%
 		+transform(rotate(0deg))
@@ -507,3 +512,6 @@ html,body
 		background: #fff
 	.wrap
 		+hide
+
+
+

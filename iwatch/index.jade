@@ -8,15 +8,17 @@ block css
 			 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
 		}
 block content
-	div.qrcode
-		div.text 建议您使用手机浏览
-		img(src="../libs/img/qr.jpg")
+	div.wechat-share-hide
+		img(src="http://m.giccoo.com/iwatch/img/share.jpg")
 	div.wrap(ng-controller="MainController")
 		ng-view.view-animate
 		div#loading.loading.loaded
 			div.loading-logo
 				div.loading-logo-bg(style="display:none")
 				img(src="../libs/img/loading.png",onload="showLoad()")
+	div.qrcode
+		div.text 建议您使用手机浏览
+		img(src="../libs/img/qr.jpg")
 
 block ng-template
 	script(type="text/ng-template",id="home.html")

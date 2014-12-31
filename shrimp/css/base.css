@@ -607,6 +607,13 @@ img {
       display: inline-block;
       vertical-align: topd; }
 
+.wechat-share-hide {
+  position: absolute;
+  top: -1000px;
+  left: 0px;
+  display: none;
+  width: 1px; }
+
 @-webkit-keyframes stove {
   0%,20% {
     -webkit-transform: rotate(0deg);

@@ -1151,26 +1151,26 @@ reloadWechat = function() {
 
 shareFriend = function() {
   if (window.WeixinJSBridge) {
-    return WeixinJSBridge.invoke('sendAppMessage', _wechat_f);
+    WeixinJSBridge.invoke('sendAppMessage', _wechat_f);
   }
+  return document.title = _wechat_f.title;
 };
 
 shareTimeline = function() {
   if (window.WeixinJSBridge) {
-    return WeixinJSBridge.invoke('shareTimeline', _wechat);
+    WeixinJSBridge.invoke('shareTimeline', _wechat);
   }
+  return document.title = _wechat.title;
 };
 
 document.addEventListener('WeixinJSBridgeReady', function() {
-  var nav;
   _wechat_bool = true;
   WeixinJSBridge.on('menu:share:appmessage', function(argv) {
     return shareFriend();
   });
-  WeixinJSBridge.on('menu:share:timeline', function(argv) {
+  return WeixinJSBridge.on('menu:share:timeline', function(argv) {
     return shareTimeline();
   });
-  return nav = navigator.userAgent.toLowerCase();
 });
 
 BindShare = function(content, url, pic) {

@@ -22,9 +22,11 @@ reloadWechat = ->
 shareFriend = ->
 	if window.WeixinJSBridge
 		WeixinJSBridge.invoke 'sendAppMessage', _wechat_f
+	document.title = _wechat_f.title
 shareTimeline = ->
 	if window.WeixinJSBridge
 		WeixinJSBridge.invoke 'shareTimeline', _wechat
+	document.title = _wechat.title
 
 document.addEventListener 'WeixinJSBridgeReady', ->
 	_wechat_bool = true
@@ -32,7 +34,7 @@ document.addEventListener 'WeixinJSBridgeReady', ->
 		shareFriend()
 	WeixinJSBridge.on 'menu:share:timeline', (argv)->
 		shareTimeline()
-	nav = navigator.userAgent.toLowerCase()
+	# nav = navigator.userAgent.toLowerCase()
 
 BindShare = (content,url = window.location.href,pic)->
 	list = 
