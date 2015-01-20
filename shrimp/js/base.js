@@ -1698,11 +1698,12 @@ app.controller("SelectController", function($rootScope, $scope, $animate, $timeo
   return this.shrimp = true;
 });
 
-app.controller("ShareController", function($rootScope, $scope) {
+app.controller("ShareController", function($rootScope, $scope, $location) {
   var tis;
   if ($rootScope.sharetext == null) {
     $rootScope.sharetext = "我刚做了一道'红焖大虾'快来尝尝.";
     $rootScope.sharedesc = "这道菜的关键是选择阿根廷红虾.";
+    $location.path("/");
   }
   BindShare($rootScope.sharetext, "http://m.giccoo.com/shrimp", "");
   tis = this;

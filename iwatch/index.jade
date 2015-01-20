@@ -37,7 +37,6 @@ block ng-template
 				div.btn.share
 					a(href="http://mp.weixin.qq.com/s?__biz=MzA3MTEzMjM3Mw==&mid=201960346&idx=1&sn=44f1f85dc8872fefce13ab70a2826499#rd")
 						img(src="img/btn-follow.png")
-
 	script(type="text/ng-template",id="share.html")
 		div(ng-controller="ShareController as share")
 			div.slider-normal
@@ -63,7 +62,6 @@ block ng-template
 				div.btn.share
 					a(href="http://mp.weixin.qq.com/s?__biz=MzA3MTEzMjM3Mw==&mid=201960346&idx=1&sn=44f1f85dc8872fefce13ab70a2826499#rd")
 						img(src="img/btn-follow.png")
-
 	script(type="text/ng-template",id="slider.html")
 		div.slide-normal-group
 			div.slide-normal(ng-repeat="slide in sliders.slider")
@@ -92,9 +90,9 @@ block ng-template
 
 
 block js
-	script(src="/libs/js/Zepto.min.js",type="text/javascript")
-	script(src="/libs/js/angular.min.js",type="text/javascript")
-	script(src="/libs/js/angular-route.min.js",type="text/javascript")
-	script(src="/libs/js/angular-touch.min.js",type="text/javascript")
-	script(src="/libs/js/angular-animate.min.js",type="text/javascript")
+	script(src="/libs/js/min/Zepto.min.js",type="text/javascript")
+	script(src="/libs/js/min/angular.min.js",type="text/javascript")
+	script(src="/libs/js/min/angular-route.min.js",type="text/javascript")
+	script(src="/libs/js/min/angular-touch.min.js",type="text/javascript")
+	script(src="/libs/js/min/angular-animate.min.js",type="text/javascript")
 	script(src="/iwatch/js/base.js",type="text/javascript")

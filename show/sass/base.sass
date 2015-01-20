@@ -1,0 +1,517 @@
+@import sass/base
+@import sass/animation
+@import sass/slider
+.wechat-share-hide
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+	
++keyframes(stove)
+	0%,20%
+		+transform(rotate(0deg))
+	40%
+		+transform(rotate(12deg))
+	60%
+		+transform(rotate(-12deg))
+	100%,80%
+		+transform(rotate(0deg))
+
++keyframes(Cooking)
+	0%
+		+transform(translate(-50%,0) scale(1,1) rotate(0deg))
+	50%
+		+transform(translate(-20%,-400%) scale(1.5,1.5) rotate(290deg))
+	100%
+		+transform(translate(-50%,0) scale(1,1) rotate(720deg))
++keyframes(Cooking2)
+	0%
+		+transform(translate(-50%,0) scale(1,1) rotate(0deg))
+	50%
+		+transform(translate(-80%,-350%) scale(1.5,1.5) rotate(290deg))
+	100%
+		+transform(translate(-50%,0) scale(1,1) rotate(720deg))
+
++keyframes(Score)
+	0%
+		+transform(translate(0,100%))
+		opacity: 0
+	30%
+		opacity: 1
+	60%
+		opacity: 1
+	100%
+		+transform(translate(0,-100%))
+		opacity: 0
+
++keyframes(ScoreDown)
+	0%
+		+transform(translate(0,-100%))
+		opacity: 0
+	30%
+		opacity: 1
+	60%
+		opacity: 1
+	100%
+		+transform(translate(0,100%))
+		opacity: 0
+
++keyframes(starShow)
+	0%
+		+transform(scale(1,1))
+	40%
+		+transform(scale(1.3,1.3))
+	80%
+		+transform(scale(0.8,0.8))
+	90%
+		+transform(scale(1.1,1.1))
+	100%
+		+transform(scale(1,1))
+
++keyframes(firemove)
+	0%
+		+transform(skew(0deg,0deg) translate(0,0))
+		opacity: 1
+	25%
+		+transform(skew(0deg,1deg) translate(0%,-1%))
+		opacity: 0.9
+	50%
+		+transform(skew(0deg,0deg) translate(0,0))
+		opacity: 1
+	75%
+		+transform(skew(1deg,0deg) translate(0%,1%))
+		opacity: 0.9
+	100%
+		+transform(skew(0deg,0deg) translate(0,0))
+		opacity: 1
+
+html,body
+	+h(100%)
+
+.wrap
+	+posr
+	max-width: 640px
+	margin: 0 auto
+	min-height: 440px
+	height: 100%
+
+.loading
+	+tran(all,0.5s,linear)
+	+posf
+	+tl
+	bottom: 0px
+	+w(100%)
+	opacity: 0
+	background-color: #fff
+	z-index: -1
+	.ng-hide
+		opacity: 0
+	&.loaded
+		+tran(all,0s,linear)
+		opacity: 1
+		z-index: 99999
+	&.finished
+		.loading-logo
+			opacity: 1	
+			+transform(scale(1,1))
+		span
+			+transform(scale(0.2,0.2))
+			opacity: 0
+	.loading-logo
+		+tran
+		+posa
+		+tl(50%,50%)
+		+text-center
+		+show
+		+wh(5em,5em)
+		+transform(translate(-50%,-50%))
+		overflow: hidden
+	.loading-logo-bg
+		+posa
+		+tl()
+		bottom: 0
+		+w(100%)
+		z-index: 1
+		background-image: linear-gradient(-179deg, #06503C 0%, #1EC08E 50%, #A9F4A1 100%)
+		+animation(second,1s,linear,infinite)
+	.loading-logo
+		img
+			+posr
+			z-index: 2
+
+	
+.view-animate.ng-enter + .loading
+	// z-index: 99999
+	// opacity: 1
+.hideView + .loading
+	z-index: 99999
+	opacity: 1
+.view-animate
+	z-index: 1
+	+posa
+	+tl
+	+w(100%)
+	min-height: 100%
+	background: url(../img/bg.jpg) no-repeat center center
+	background-size: cover
+	+tran(all,0.5s,ease-out)
+	// view-animate ng-scope ng-animate ng-leave ng-leave-active
+	&.ng-enter
+		+transform(translate(100%,0))
+	&.ng-enter-active
+		+transform(translate(0%,0))
+	&.ng-leave
+		+transform(translate(0%,0))
+	&.ng-leave-active
+		+transform(translate(-80%,0))
+.plane
+	+posa
+	+tl(25%)
+	+tran($time:0.5s)
+	opacity: 1
+	&.ng-show
+		+transform(translate(50%,0) scale(0.5,0.5))
+		opacity: 0
+	&.ng-hide
+		+transform(translate(-50%,0) scale(0.5,0.5))
+		opacity: 0
+	.title
+		+posa
+		+tl(1%,50%)
+		+transform(translate(-50%,0))
+		+w(6em)
+
+.selectShrimp
+	.title
+		top: 3%
+	.shrimp-list
+		+posa
+		+tl(40%,17%)
+		+w(66%)
+		span
+			display: inline-block
+			+w(30%)
+			margin-right: 5%
+			background: url(../img/shrimp-bg.png) no-repeat center center
+			background-size: cover
+			&:last-child
+				margin-right: 0
+			&.hide
+				img
+					visibility: hidden
+.shrimp-moving,.vegetable-moving
+	+posa
+	span
+		+hide
+		+tran
+		+posa
+		&.hide
+			+show
+.selectVegetable
+	.title
+		top: 3%
+	&.ng-animate
+		+transform(translate(50%,0) scale(0.5,0.5))
+		opacity: 0
+	.vegetable-list
+		+posa
+		+tl(30%,20%)
+		+w(60%)
+		span
+			display: inline-block
+			+w(30%)
+			margin-right: 4.9%
+			$list : "Broccoli","Carrot","Garlic","Green-pepper","Mushroom","Red-pepper"
+			@each $i in $list
+				&.vegetable-#{$i}
+					background: url(../img/vegetable-bg-#{$i}.png) no-repeat center center
+					background-size: cover
+			&:nth-child(3n+0)
+				margin-right: 0
+			&.hide
+				img
+					visibility: hidden
+.plane-list
+	+tran($time:1s)
+	opacity: 1
+	&.ng-hide
+		opacity: 0
+.plane-game
+	+tran
+	&.ng-show
+		opacity: 0
+	&.ng-show-active
+		opacity: 1
+.game-canvas
+	+posr
+	.timer,.score
+		+tran
+		+posa
+		+w(40%)
+		span
+			+posa
+			+tr(0,1.5rem)
+			display: inline-block
+			color: #fff
+			padding: 10% 0
+			font-size: 1.1rem
+	.timer
+		+tl(1em,5%)
+	.score
+		+tr(1em,5%)
+	.progress
+		+posa
+		+tl(0%,5%)
+		+w(90%)
+		margin-top: 30%
+		.progress-green
+			+posa
+			+tl(0,35%)
+			background: url(../img/progress-green.png) repeat left top
+			background-size: contain
+			+h(92%)
+			+w(30%)
+			.line
+				+posa
+				+tl(-100%,-2px)
+				+wh(6px,300%)
+				background: url(../img/progress-line.png) repeat-y center top
+				background-size: contain
+				&.end
+					left: auto
+					right: -2px
+			&.l0
+				left: 20%
+				+w(20%)
+			&.l1
+				left: 25%
+				+w(30%)
+			&.l2
+				left: 30%
+				+w(15%)
+			&.l3
+				left: 35%
+				+w(20%)
+			&.l4
+				left: 40%
+				+w(10%)
+			&.l5
+				left: 45%
+				+w(30%)
+			&.l6
+				left: 50%
+				+w(20%)
+			&.l7
+				left: 55%
+				+w(20%)
+			&.l8
+				left: 60%
+				+w(15%)
+			&.l9
+				left: 65%
+				+w(20%)
+
+
+
+		.timer-shrimp
+			+tran(all,0.5s,linear)
+			+posa
+			+tl(-2rem,10%)
+			+wh(3rem,3rem)
+			margin-left: -1.5rem
+			&.on
+				+tran(all,4s,linear)
+		&.stop
+			.timer-shrimp
+				+tran(all,0s,linear)
+		&.slow
+			.timer-shrimp
+				+tran(all,4s,linear)
+		&.readyStar
+			.timer-shrimp
+				+tran(all,0.4s,ease)
+		&.note-pop
+			.timer-shrimp
+				+tran(all,0.5s,ease)
+				left: 50%
+.Deadshrimp,.ScoreList
+	+posa
+	+tl
+	+w(100%)
+.Deadshrimp
+	.shrimp-item
+		+posa
+		+tl(0%,50%)
+		+show
+		+wh(4em,4em)
+		+transform(translate(-50%,0))
+		margin-top: 2em
+		z-index: -1
+
+.ScoreList
+	.score-item-up,.score-item-down
+		+tran
+		+posa
+		+tr(0%,20%)
+		+hide
+		+w(5em)
+		+animation(Score)
+		z-index: -1
+		margin-top: -8rem
+		&.on
+			+show
+	.score-item-down
+		+animation(ScoreDown)
+		margin-top: -6rem
+
+
+		
+
+
+.Stoves
+	+posa
+	+tran
+	bottom: 0
+	.stove
+		+posa
+		+tl(28%,50%)
+		+w(285/640*100%)
+		margin-left: -22%
+		&.rock
+			+animation(stove,0.2s,linear)
+	&.fire
+		+tran($time:1.6s)
+		.stove
+			+animation(stove,0.2s,linear,3)
+		.Deadshrimp
+			.shrimp-item
+				&.s0
+					+animation(Cooking,1s,linear,1)
+				&.s1
+					+animation(Cooking2,1.2s,ease-in,1)
+				&.s2
+					+animation(Cooking,1.6s,linear,1)
+.note
+	+tran
+	+posa
+	+bl(18%)
+	+w(100%)
+	&.ng-animate
+		opacity: 0
+	&.ng-show
+		opacity: 1
+.blur-show
+	+blur
+.star-list
+	+posa
+	+tl(17%)
+	+w(100%)
+	+text-center
+	span
+		+posr
+		display: inline-block
+		+w(3em)
+		+animation(starShow)
+		&.star0,&.star4
+			top: 0.8em
+			+w(2em)
+		&.star1,&.star3
+			top: 0.2em
+			+w(2.5em)
+			+delay(0.5s)
+		&.star3
+			+transform(rotate(10deg))
+		&.star4
+			+transform(rotate(20deg))
+		&.star0
+			+transform(rotate(-20deg))
+		&.star1
+			+transform(rotate(-10deg))
+		&.star2
+			+delay(1s)
+.success-img
+	+posa
+	+tl(-40%)
+	z-index: -1
+.success-text
+	+posa
+	+bl(35%,20%)
+	+w(60%)
+.btns
+	+posr
+	padding-top: 2%
+	.shareplanebtn,.shareplanelink
+		+show
+		+posa
+		+tl()
+		+wh(50%,100%)
+	.shareplanelink
+		left: auto
+		right: 0
+	.sharePlane
+		+posa
+		+tl
+		+transform(translate(0,-100%))
+.followus
+	+posa
+	+bl(5%)
+.flame
+	+tran
+	+wh(150px,75px)
+	+animation(firemove,0.2s,ease,infinite)
+	background: url(../img/fire.png) no-repeat center 0px
+	background-size: 150px 600%
+	+posa
+	+tl(5%,50%)
+	z-index: 1
+	margin-left: -19%
+.sharePlane
+	+tran
+	opacity: 1
+	&.ng-hide
+		opacity: 0
+	span,a
+		+posa
+		+tl
+		+show
+		+wh(20%,100%)
+		text-indent: -9999rem
+	.wechat
+		+tl(0,10%)
+	.weibo
+		+tl(0,30%)
+	.qweibo
+		+tl(0,50%)
+	.douban
+		+tl(0,70%)
+
+.shareWechat
+	+tran
+	+posf
+	+tl
+	+wh(100%,100%)
+	background: rgba(0,0,0,0.7) url(../img/wechat-share.png) no-repeat top center
+	background-size: contain
+	z-index: 9999
+	opacity: 1
+	&.ng-hide
+		opacity: 0
+
+.qrcode
+	margin: 0 auto
+	padding-top: 100px
+	+w(640px)
+	+text-center
+	+hide
+	+large
+		+show
+	+small
+		+hide
++large
+	body
+		background: #fff
+	.wrap
+		+hide
+
+
+
