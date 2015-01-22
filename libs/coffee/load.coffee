@@ -3,10 +3,10 @@ preload = null
 loadList = [
 	{id: "logo", src:"../libs/img/loading.png"}
 ]
-beginload = ($scope)->
+beginload = ($scope,callback)->
 	return "" if preload?
 	handleComplete = ->
-		LoadFinished "img",$scope
+		LoadFinished "img",$scope,callback
 	preload = new createjs.LoadQueue()
 	preload.on('fileload',handleFileLoad,this)
 	preload.on('complete',handleComplete,this)
@@ -18,7 +18,7 @@ handleFileLoad = ->
 	# console.log Percentage
 	
 _finishedlist = [{name:"img",load:false},{name:"angular",load:false}]
-LoadFinished = (name,$scope)->
+LoadFinished = (name,$scope,callback)->
 	for a in _finishedlist
 		if a.name is name
 			a.load = true
@@ -29,4 +29,6 @@ LoadFinished = (name,$scope)->
 			break
 	if gotoNext
 		$scope.loaded = true 
-		$scope.$apply() if name isnt "angular"
+		if name isnt "angular"
+			$scope.$apply ->
+				callback.call() if typeof(callback) is "function"

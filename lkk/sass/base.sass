@@ -1,0 +1,269 @@
+@import sass/base
+@import sass/animation
+@import sass/slider
+@import ../../libs/sass/loading
+
++keyframes(drop)
+	0%
+		transform: (scale(0,0) translate3d(-50%,0,0))
+		opacity: 0
+	5%
+		opacity: 1
+	15%
+		transform: (scale(1,1) translate3d(-50%,0,0))
+	100%
+		transform: (scale(1,1) translate3d(-50%,600px,0))
+		opacity: 1
+
++keyframes(dishmove)
+	0%
+		transform: (translate3d(0,0%,0))
+	50%
+		transform: (translate3d(-200%,60px,0))
+	100%
+		transform: (translate3d(-420%, 0%, 0))
+
++keyframes(forbox)
+	0%
+		+transform(scale(1, 1))
+	50%
+		+transform(scale(1, 1))
+	60%
+		+transform(scale(1.2, 1.2))
+	70%
+		+transform(scale(0.8, 0.8))
+	80%
+		+transform(scale(1.1, 1.1))
+	90%
+		+transform(scale(0.9, 0.9))
+	100%
+		+transform(scale(1, 1))
+
+
+body 
+	// background: url(../img/bg.jpg) no-repeat top center
+	// background-size: cover
+	+b("../img/bg.jpg",$size: cover)
+.logo
+	+posa
+	+tl
+	+w(100%)
+	z-index: 99
+.wrap,.view-animate
+	+h(100%)
+.wrap
+	+tran($time:0.1s)
+.view-animate
+	+tran
+	+posa
+	+w(100%)
+	&.ng-enter
+		// +transform(translate(100%,0))
+		+transform(scale(0,0))
+		opacity: 0
+	&.ng-enter-active
+		// +transform(translate(0%,0))
+		+transform(scale(1,1))
+		opacity: 1
+	&.ng-leave
+		// +transform(translate(0%,0))
+		+transform(scale(1,1))
+		opacity: 1
+	&.ng-leave-active
+		// +transform(translate(-80%,0))
+		+transform(scale(0,0))
+		opacity: 0
+.homepage
+	// +posa
+	// +tl
+	// +br
+	min-height: 100%
+	// background: url(../img/bg.jpg) no-repeat top center
+	+b("../img/star-bottom.png",$top:bottom,$left:left,$size: contain)
+	.banner
+		padding-top: 15%
+		.iphone4 &
+			padding-top: 10%
+	.btn-star
+		+show
+		+iw(417)
+		+animation(fadeIn)
+
+.games
+	+h(100%)
+.page-select
+	+posr
+	+h(100%)
+	.banner
+		+iw(640)
+		padding-top: 10%
+	.select-dish
+		+posa
+		+w(100%)
+		+b("../img/page-2-select.png",$top:top,$left:center,$size:cover)
+		top: 30%
+		bottom: 0%
+		overflow: hidden
+		.choose
+			display: inline-block
+			+wh(49%,50%)
+
+.page-game
+	+posr
+	+h(100%)
+	overflow: hidden
+	.log
+		+posa
+		+tl(30%,30%)
+	.drop
+		+iw(62)
+		+posa
+		+tl
+		+transform(translate3d(-50%,0,0))
+		opacity: 0
+		z-index: 99
+		&.dropping
+			+animation(drop,3s)
+	.note
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+		+iw(214)
+	.timer
+		+posa
+		+tl(25%,10%)
+		+iw(100)
+		+text-center
+		.box
+			+posr
+			.time-text
+				+posa
+				+tl(50%,50%)
+				+transform(translate3d(-50%,-50%,0))
+				color: white
+				font-size: 1.4rem
+				line-height: 1rem
+			.progress
+				transform-origin: center center
+				font-size: 0
+				&.run
+					+animation(second,1s,linear,infinite)
+
+	.Bottle
+		+tran($time: 0.2s)
+		+posa
+		+tr(-20%,-10%)
+		+transform(rotate(-90deg))
+		+iw(165)
+		transform-origin: center center
+	.road
+		+posa
+		+bl(20%)
+		.dishs
+			+posa
+			+tl
+			+wh(100%,100%)
+			z-index: 100
+			.item
+				+iw(210)
+				+posa
+				+tl(5%,100%)
+				// +transform(translate3d(0,0,0))
+				+tran
+				+animation(dishmove,5s,linear)
+				filter: grayscale(1)
+				&.hit
+					filter: grayscale(0)
+		.roadbg
+			+posr
+			z-index: 1
+		.point
+			+posa
+			+iw(32)
+			// +animation()
+			z-index: 9
+		.point1
+			+tl(52%,20%)
+			// +transform(rotate(30deg))
+		.point2
+			+tr(52%,20%)
+	.score
+		+posa
+		+bl(2%,50%)
+		+iw(500)
+		+transform(translate3d(-50%,0%,0))
+		padding: 1rem
+		font-size: 1rem
+		border: solid 1px #ec8e1f
+		border-radius: 1rem
+		background-color: rgba(173,119,60,0.5)
+		color: white
+		text-shadow: 1px 1px 3px rgba(0,0,0,0.6)
+		.title
+			+iw(204,500)
+			display: inline-block
+			font-size: 0
+		span
+			font-size: 1.4rem
+			margin-left: 1rem
+			vertical-align: top
+			line-height: 1.6rem
+
+.share-page
+	.bg
+		+iw(640)
+		+posr
+		padding-top: 5%
+	.text
+		+posa
+		+tl(17%)
+		+w(100%)
+		+text-center
+		font-size: 1.6rem
+		color: #749135
+		text-shadow: 0px 0px 5px #fff
+		font-weight: bold
+	.box
+		+posa
+		+tl(63%,34%)
+		+w(40%)
+		+animation(forbox,2s,ease,infinite)
+		transform-origin: center center
+	.pop
+		+tran
+		+posf
+		+tl
+		+br
+		background-color: rgba(0,0,0,0.7)
+		z-index: 1001
+		opacity: 1
+		&.ng-hide
+			opacity: 0
+		.content
+			+posa
+			+tl(50%,50%)
+			+iw(542)
+			+transform(translate3d(-50%,-50%,0))
+			.code
+				+posa
+				+tl(33%)
+				+w(100%)
+				+text-center
+				font-size: 0.6rem
+				color: #fff
+			.download,.sharebtn
+				+posa
+				+w(70%)
+				margin: 0 auto
+			.download
+				+tl(64%,15%)
+				.download-img
+					+posa
+					+tl
+					+br
+					z-index: 999
+					img
+						opacity: 0	
+			.sharebtn
+				+bl(5%,15%)
+	
