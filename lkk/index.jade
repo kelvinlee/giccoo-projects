@@ -1,0 +1,98 @@
+extends ../libs/jade/layout-ng
+block title
+	| 李锦记
+block css
+	link(rel="stylesheet",href="/lkk/css/base.css")
+	script.
+		function showLoad() {
+			 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
+		}
+
+block content
+	div.wechat-share-hide
+		img(src="http://m.giccoo.com/lkk/img/share.jpg")
+	div.wrap(ng-controller="MainController")
+		div.hideView
+		div.view-animate(ng-view)
+		div#loading.loading.loaded
+			div.loading-logo
+				div.loading-logo-bg(style="display:none")
+				img(src="../libs/img/loading.png",onload="showLoad()")
+		div.logo
+			img(src="/lkk/img/logo.png")
+	div.qrcode
+		div.text 建议您使用手机浏览
+		img(src="../libs/img/qr.jpg")
+
+
+block ng-template
+	script(type="text/ng-template",id="home.html")
+		.homepage
+			.banner
+				img(src="img/star-page.png")
+			a.btn-star(href="#/game")
+				img(src="img/star-btn.png")
+	script(type="text/ng-template",id="game.html")
+		.games(ng-controller="gameController as game")
+			.page-select(ng-hide="game.gameStar")
+				.banner
+					img(src="img/page-2-title.png")
+				.select-dish(ng-show="game.dish")
+					//- img(src="img/page-2-select.png")
+					-for (var i=1;i<=4;i++)
+						.choose(ng-click="game.choose(#{i})")
+			.page-game(ng-show="game.gameStar")
+				.log
+				.drop#drop
+					img(src="img/game-point.png")
+				.note
+					img(src="img/game-note.png")
+				.Bottle#Bottle(moved="true")
+					img(src="img/game-bottle.png")
+				.timer
+					.text TIME
+					.box
+						.progress(ng-class="run")
+							img(src="img/game-timer-box.png")
+						.time-text {{timer}}
+				.road
+					.dishs#dishs
+						//- .item
+							img(src="img/dish-1.png")
+					.roadbg
+						img(src="img/game-road.png")
+				.score
+					.title
+						img(src="img/game-score.png")
+					span#score {{score}}
+
+	script(type="text/ng-template",id="share.html")
+		div.share-page(ng-controller="ShareController as share")
+			div.bg(ng-click="share.getPrize()")
+				img(src="img/success.png")
+				.text 你击败了{{share.text}}%的网友<br/>{{share.text2}}
+				div.box
+					img(src="img/success-box.png")
+			div.pop(ng-show="share.showpop")
+				div.content
+					img(src="img/pop-bg.png")
+					.code 兑换码: {{share.recode}}
+					.download
+						img(src="img/pop-download-btn.png")
+						.download-img
+					.sharebtn
+						img(src="img/pop-share-btn.png")
+
+
+block js
+	- var debug = ".min"
+	//- - debug = ""
+	script(src="/libs/js/min/Zepto.min.js",type="text/javascript")
+	script(src="/libs/js/min/angular.min.js",type="text/javascript")
+	script(src="/libs/js/min/angular-route.min.js",type="text/javascript")
+	script(src="/libs/js/min/angular-touch.min.js",type="text/javascript")
+	script(src="/libs/js/min/angular-animate.min.js",type="text/javascript")
+	//- script(src="/libs/js/megapix-image.js",type="text/javascript")
+	//- script(src="/libs/js/exif.js",type="text/javascript")
+	//- script(src="/libs/js/min/preloadjs-0.4.1.min.js",type="text/javascript")
+	script(src="/lkk/js/base.js",type="text/javascript")
