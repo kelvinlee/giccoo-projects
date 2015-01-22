@@ -1,0 +1,44 @@
+extends ../libs/jade/layout-ng
+block title
+	| 情暖冬日 为爱"虾"厨
+block css
+	link(rel="stylesheet",href="/shrimp/css/base.css")
+	script.
+		function showLoad() {
+			document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
+		}
+
+block content
+	div.wechat-share-hide
+		img(src="http://m.giccoo.com/shrimp/img/share.jpg")
+	div.wrap(ng-controller="MainController")
+		div.hideView
+		div.view-animate(ng-view)
+		div#loading.loading.loaded
+			div.loading-logo
+				div.loading-logo-bg(style="display:none")
+				img(src="../libs/img/loading.png",onload="showLoad()")
+	div.qrcode
+		div.text 建议您使用手机浏览
+		img(src="../libs/img/qr.jpg")
+
+
+block ng-template
+	script(type="text/ng-template",id="home.html")
+		
+	script(type="text/ng-template",id="create.html")
+		
+	script(type="text/ng-template",id="share.html")
+
+block js
+	- var debug = ".min"
+	//- - debug = ""
+	script(src="/libs/js/Zepto.min.js",type="text/javascript")
+	script(src="/libs/js/angular#{debug}.js",type="text/javascript")
+	script(src="/libs/js/angular-route#{debug}.js",type="text/javascript")
+	script(src="/libs/js/angular-touch#{debug}.js",type="text/javascript")
+	script(src="/libs/js/angular-animate#{debug}.js",type="text/javascript")
+	script(src="/libs/js/megapix-image.js",type="text/javascript")
+	script(src="/libs/js/exif.js",type="text/javascript")
+	script(src="/libs/js/preloadjs-0.4.1.min.js",type="text/javascript")
+	script(src="/shrimp/js/base.js",type="text/javascript")

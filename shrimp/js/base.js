@@ -1690,7 +1690,7 @@ app.controller("SelectController", function($rootScope, $scope, $animate, $timeo
   return this.shrimp = true;
 });
 
-app.controller("ShareController", function($rootScope, $scope) {
+app.controller("ShareController", function($rootScope, $scope, $location) {
   var tis;
   if ($rootScope.sharetext == null) {
     $rootScope.sharetext = "我刚做了一道'红焖大虾'快来尝尝.";

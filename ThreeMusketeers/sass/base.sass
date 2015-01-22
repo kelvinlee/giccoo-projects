@@ -1,0 +1,39 @@
+@import sass/base
+@import sass/animation
+@import sass/slider
+@import ../../libs/sass/normal
+
+
+html,body
+	+wh(100%,100%)
+
+.wrap
+	+wh(100%,100%)
+.view-animate
+	+wh(100%,100%)
+	font-size: 0
+	+posr
+
+.gameCtrl
+	+posa
+	+tl
+	+wh(100%,100%)
+	z-index: 100
+	.moveBox
+		+posa
+		+tl
+		+wh(50%,100%)
+		.point
+			+posa
+			+tl(-2rem,-2rem)
+			+wh(2rem,2rem)
+			+transform(translate3d(-50%,-50%,0))
+			border-radius: 50%
+			font-size: 0
+			background: rgba(0,0,0,0.4)
+	.attackBox
+		+posa
+		+tr
+		+wh(50%,100%)
+canvas
+	+wh(100%,100%)
