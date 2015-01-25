@@ -40,6 +40,8 @@ _wechat =
 hosts = "http://g.giccoo.com"
 
 refreshShare = (title,desc)->
+	_wechat.title = "我用财神耗油完成了n盘菜，打败了n%的人，不服来战！"
+	_wechat_f.title = "我用财神耗油完成了n盘菜，打败了n%的人，不服来战！"
 	reloadWechat()
 
 
@@ -60,7 +62,20 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 	}
 ]
 # 主要加载
-app.controller 'MainController', ($rootScope, $scope, $location)->
+app.controller 'MainController', ($rootScope, $scope, $location, $http)->
+	$scope.formData = {}
+	$scope.processForm = ->
+		$http {
+			method: 'POST'
+			url: 'http://api.giccoo.com/lkk/insert'
+			data: $.param($scope.formData)
+		}
+		.success (data)->
+			console.log data
+
+
+
+
 	if $("body").height() <= 440
 		$("body").addClass "iphone4"
 	beginload $scope,()->
