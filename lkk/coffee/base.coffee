@@ -66,7 +66,7 @@ app.controller 'MainController', ($rootScope, $scope, $location, $http)->
 	$scope.formData = {}
 	$scope.processForm = ->
 		$http
-		.post "http://kelvin-air.local:8881/lkk/insert/", $scope.formData
+		.post "http://api.giccoo.com/lkk/insert/", $scope.formData
 		.success (data)->
 			console.log data
 		.error (data)->

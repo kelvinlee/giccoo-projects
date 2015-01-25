@@ -330,7 +330,7 @@ app = angular.module('kelvin', ["ngRoute", "ngTouch", "ngAnimate"]).config([
 app.controller('MainController', function($rootScope, $scope, $location, $http) {
   $scope.formData = {};
   $scope.processForm = function() {
-    return $http.post("http://kelvin-air.local:8881/lkk/insert/", $scope.formData).success(function(data) {
+    return $http.post("http://api.giccoo.com/lkk/insert/", $scope.formData).success(function(data) {
       return console.log(data);
     }).error(function(data) {
       return console.log($.param($scope.formData));
