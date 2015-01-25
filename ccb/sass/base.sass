@@ -1,0 +1,472 @@
+@import sass/base
+@import sass/animation
+@import sass/slider
+@import ../../libs/sass/loading
+
+$cdn : "../"
+
++keyframes(movebg)
+	0%
+		+transform(translate3d(-600%,0,0))
+	40%
+		+transform(translate3d(-365%,0,0))
+	70%
+		+transform(translate3d(-365%,0,0))
+	100%
+		+transform(translate3d(0,0,0))
+
++keyframes(yyy0)
+	0%
+		+transform(translate3d(0,0,0) rotate(0deg))
+	5%
+		+transform(translate3d(100%,20%,0) rotate(0deg))
+	10%
+		+transform(translate3d(100%,20%,0) rotate(0deg))
+	15%
+		+transform(translate3d(100%,20%,0) rotate(10deg))
+	20%
+		+transform(translate3d(100%,20%,0) rotate(5deg))
+	24%
+		+transform(translate3d(100%,20%,0) rotate(10deg))
+	26%
+		+transform(translate3d(100%,20%,0) rotate(5deg))
+	30%
+		+transform(translate3d(100%,20%,0) rotate(0deg))
+	// 跳河运动.
+	40%
+		+transform(translate3d(100%,20%,0) rotate(-5deg))
+	42%
+		+transform(translate3d(100%,20%,0) rotate(0deg))
+	44%
+		+transform(translate3d(130%,20%,0) rotate(0deg))
+	46%
+		+transform(translate3d(100%,25%,0) rotate(0deg))
+	48%
+		+transform(translate3d(-30%,-5%,0) rotate(-5deg) scale(1.1,1.1))
+	50%
+		+transform(translate3d(-100%,25%,0) rotate(-10deg))
+	60%
+		+transform(translate3d(-200%,25%,0) rotate(0deg))
+	70%
+		+transform(translate3d(-100%,25%,0) rotate(0deg))
+	80%
+		+transform(translate3d(-200%,15%,0) rotate(0deg))
+	90%
+		+transform(translate3d(60%,5%,0) rotate(0deg))
+	100%
+		+transform(translate3d(0,0,0) rotate(0deg))
+
++keyframes(yyy1)
+	0%
+		+transform(translate3d(0,0,0) rotate(0deg))
+	5%
+		+transform(translate3d(-50%,20%,0) rotate(0deg))
+	10%
+		+transform(translate3d(-50%,20%,0) rotate(0deg))
+	15%
+		+transform(translate3d(-50%,20%,0) rotate(-10deg))
+	20%
+		+transform(translate3d(-50%,20%,0) rotate(-5deg))
+	24%
+		+transform(translate3d(-50%,20%,0) rotate(-10deg))
+	26%
+		+transform(translate3d(-50%,20%,0) rotate(-5deg))
+	30%
+		+transform(translate3d(-50%,20%,0) rotate(0deg))
+	// 跳河运动.
+	40%
+		+transform(translate3d(0%,20%,0) rotate(-5deg))
+	41%
+		+transform(translate3d(0%,20%,0) rotate(0deg))
+	58%
+		+transform(translate3d(-30%,20%,0) rotate(-5deg))
+	60%
+		+transform(translate3d(-200%,20%,0) rotate(0deg))
+	62%
+		+transform(translate3d(-230%,-5%,0) rotate(-5deg) scale(1.1,1.1))
+	64%
+		+transform(translate3d(-330%,25%,0) rotate(-10deg))
+	70%
+		+transform(translate3d(-360%,20%,0) rotate(0deg))
+	80%
+		+transform(translate3d(-300%,15%,0) rotate(0deg))
+	85%
+		+transform(translate3d(-100%,20%,0) rotate(0deg))
+	90%
+		+transform(translate3d(40%,5%,0) rotate(0deg))
+	95%
+		+transform(translate3d(-10%,2%,0) rotate(0deg))
+	100%
+		+transform(translate3d(0,0,0) rotate(0deg))
+
++keyframes(yyy)
+	0%
+		+transform(translate3d(0,0,0))
+	10%
+		+transform(translate3d(10%,0,0))
+	20%
+		+transform(translate3d(-100%,0%,0))
+	30%
+		+transform(translate3d(0%,10%,0))
+	40%
+		+transform(translate3d(-250%,0%,0))
+	50%
+		+transform(translate3d(-150%,10%,0))
+	60%
+		+transform(translate3d(-100%,0%,0))
+	70%
+		+transform(translate3d(-200%,10%,0))
+	80%
+		+transform(translate3d(-100%,0%,0))
+	90%
+		+transform(translate3d(-70%,10%,0))
+	100%
+		+transform(translate3d(0%,0%,0))
+		// +w(16%)
+		opacity: 1
+
++keyframes(jump)
+	0%
+		+transform(translate3d(0%,0%,0))
+	10%
+		+transform(translate3d(0%,-20%,0))
+	16%
+		+transform(translate3d(0%,0%,0))
+	100%
+		+transform(translate3d(0%,0%,0))
+
++keyframes(shakeY)
+	0%
+		+transform( rotate(0deg))
+	10%,30%,50%,70%,90%
+		+transform( rotate(-10deg) scale(0.8,1))
+	20%,40%,60%,80%
+		+transform( rotate(10deg) scale(1,1))
+	100%
+		+transform( rotate(0deg))
+
++keyframes(dropdown)
+	0%
+		+transform(translate3d(0,0,0))
+	20%
+		+transform(translate3d(10%,-10%,0))
+	50%
+		+transform(translate3d(20%,50%,0) rotate(180deg))
+	90%
+		opacity: 1
+	100%
+		opacity: 0
+		+transform(translate3d(20%,50%,0) rotate(180deg))
++keyframes(dropdown2)
+	0%
+		+transform(translate3d(0,0,0))
+	20%
+		+transform(translate3d(-10%,-10%,0))
+	50%
+		+transform(translate3d(-20%,50%,0) rotate(-180deg))
+	90%
+		opacity: 1
+	100%
+		opacity: 0
+		+transform(translate3d(-20%,50%,0) rotate(-180deg))
+		
+
+body 
+	// background: url(../img/bg.jpg) no-repeat top center
+	// background-size: cover
+
+.wrap,.view-animate
+	+h(100%)
+.wrap
+	+tran($time:0.1s)
+.view-animate
+	+tran
+	+posa
+	+w(100%)
+	&.ng-enter
+		// +transform(translate(100%,0))
+		+transform(scale(0,0))
+		opacity: 0
+	&.ng-enter-active
+		// +transform(translate(0%,0))
+		+transform(scale(1,1))
+		opacity: 1
+	&.ng-leave
+		// +transform(translate(0%,0))
+		+transform(scale(1,1))
+		opacity: 1
+	&.ng-leave-active
+		// +transform(translate(-80%,0))
+		+transform(scale(0,0))
+		opacity: 0
+.homepage
+	// +posa
+	// +tl
+	// +br
+	min-height: 100%
+	+h(100%)
+	+posr
+	+w(100%)
+	// background: url(../img/bg.jpg) no-repeat top center
+	background-color: #f91200
+	.bg
+		// +b($cdn+"img/bg.jpg",no-repeat,100%,0%,700% 100%)
+		+wh(100%,100%)
+		overflow: hidden
+		img.bgimg
+			width: 700%
+			max-width: none
+		.move
+			height: 100%
+			+animation(movebg,20s,linear)
+			// animation-delay: 3s
+			// +transform(translate3d(-350%,0,0))
+	.ctrlPage
+		+posa
+		+tl
+		+wh(100%,100%)
+		z-index: 99
+		.pass
+			+iw(126,640,100%)
+			+posa
+			+tr(16px,16px)
+		.sound
+			+iw(79,640,100%)
+			+posa
+			+br(16px,16px)
+			overflow: hidden
+			img
+				+w(200%)
+				max-width: none
+			&.off
+				img
+					margin-left: -100%
+	.mubus
+		// +animation(movebg,20s,linear)
+		// animation-delay: 1s
+		+posa
+		+tl
+		+wh(100%,100%)
+		.mubu
+			+wh(100%,100%)
+			+posa
+			+tl
+			&.mubu1
+				left: 30%
+			&.shakeAll
+				.yyy
+					+animation(none)
+					.body
+						+animation("shakeY",1s,linear)
+					.y1,.y2
+						+show
+		.yyy
+			+posa
+			// +tr(34%,10%)
+			+w(0%)
+			transform-origin: bottom center
+			.body
+				transform-origin: bottom center
+			.money
+				+posa
+				+tl
+				+w(100%)
+				.y1,.y2
+					+hide
+					+posa
+					+tl
+					+w(100%)
+					+animation(dropdown,1s)
+				.y2
+					+animation(dropdown2,1s)
+			.jump
+				+animation(jump,2s,ease,infinite)
+			@for $i from 0 through 10
+				&.y#{$i}
+					@if $i < 2
+						+animation(yyy#{$i},5s,linear)
+					@else
+						+animation(yyy,10s,linear,infinite)
+					.jump
+						animation-delay: 100*$i+ms
+			&.y0
+				+w(19%)
+				top: 46%
+				right: 55%
+				animation-duration: 19s
+				transform-origin: bottom center
+				+transform(translate3d(0,0%,0) rotate(0deg))
+				.jump
+					+animation(nojump)
+			&.y1
+				+w(17%)
+				top: 47%
+				right: 5%
+				animation-duration: 19s
+				transform-origin: bottom center
+				.jump
+					+animation(nojump)
+
+			&.y2
+				+w(14%)
+				top: 42%
+				right: 35%
+				animation-duration: 10s
+				animation-delay: 500ms
+				transform-origin: bottom center
+			&.y3
+				+w(16%)
+				top: 42%
+				right: 45%
+				animation-duration: 7s
+				transform-origin: bottom center
+			&.y4
+				+w(11%)
+				top: 42%
+				right: 25%
+				animation-delay: 1000ms
+				animation-duration: 10s
+			&.y5
+				+w(10%)
+				top: 41%
+				right: 5%
+				animation-delay: 300ms
+				animation-duration: 8s
+			&.y6
+				+w(8%)
+				top: 40%
+				right: 15%
+				animation-delay: 700ms
+				animation-duration: 5s
+			&.y7
+				+w(6%)
+				top: 36%
+				right: 35%
+				animation-delay: 100ms
+				animation-duration: 9s
+			&.y8
+				+w(4%)
+				top: 32%
+				right: 25%
+				animation-delay: 500ms
+				animation-duration: 6s
+			&.y9
+				+w(3%)
+				top: 30%
+				right: 30%
+				animation-delay: 200ms
+				animation-duration: 8s
+			&.y10
+				+w(5%)
+				top: 35%
+				right: 5%
+				animation-delay: 300ms
+				animation-duration: 6s
+
+.game-page
+	+wh(100%,100%)
+	background-color: #e4001d
+	.weiban
+		+wh(100%,100%)
+		+b("../img/weiban.jpg",no-repeat,center,center,contain,#e4001d)
+	.game
+		+wh(100%,100%)
+	.gameOver
+		+posr
+		+wh(100%,100%)
+		color: #d4b251
+		.logo
+			+posa
+			+bl
+		.title
+			padding-top: 15%
+			+text-center
+			h1
+				font-size: 2.2rem
+				margin-bottom: 0.1rem
+			h2
+				font-size: 1.2rem
+				margin: 0
+		.btn
+			padding-top: 5%
+			+posr
+			.sharebtn
+				+posa
+				+tl()
+				+w(50%)
+				bottom: 0
+				z-index: 99
+			.regame
+				+posa
+				+tr()
+				+w(50%)
+				bottom: 0
+				z-index: 99
+		.subtitle
+			+text-center
+			padding-top: 15%
+			font-size: 1rem
+	.gameStar
+		+posr
+		+wh(100%,100%)
+		.title
+			padding-top: 10%
+		.subtitle
+			padding-top: 20%
+		.logo
+			+posa
+			+bl
+
+	.gameCanvas
+		+posr
+		+wh(100%,100%)
+		.timer,.score
+			color: #fff
+			font-size: 0.8rem
+		.timer
+			+posa
+			+tl(16px,16px)
+		.score
+			+posa
+			+tr(16px,16px)
+		.item
+			+tran($time:0.2s)
+			transform-origin: center center
+			+iw(64,640,100%)
+			+posa
+			&.ng-enter
+				// +transform(translate(100%,0))
+				+transform(scale(0,0))
+				opacity: 0
+			&.ng-enter-active
+				// +transform(translate(0%,0))
+				+transform(scale(1,1))
+				opacity: 1
+			&.ng-leave
+				// +transform(translate(0%,0))
+				+transform(scale(1,1))
+				opacity: 1
+			&.ng-leave-active
+				// +transform(translate(-80%,0))
+				+transform(scale(0,0))
+				opacity: 0
+
+		// item ng-scope yyy ng-animate ng-enter ng-enter-active
+
+.wechat
+	+tran
+	+posf
+	+tl
+	+br
+	+b("../img/wechat.png",no-repeat,top,center,contain,rgba(0,0,0,0.6))
+	z-index: 999
+	// ng-animate ng-hide-animate ng-hide-remove ng-hide-remove-active
+	// ng-animate ng-hide-animate ng-hide-add ng-hide ng-hide-add-active
+	&.ng-hide-remove
+		opacity: 0
+	&.ng-hide-remove-active
+		opacity: 1
+	&.ng-hide-add
+		opacity: 1
+	&.ng-hide-add-active
+		opacity: 0

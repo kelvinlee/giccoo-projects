@@ -27,7 +27,11 @@ block content
 
 block ng-template
 	script(type="text/ng-template",id="home.html")
-		.homepage
+		form.test(ng-submit="processForm()",style="margin-top:20%")
+			input(name="username",type="text",ng-model="formData.username")
+			input(name="mobile",type="text",ng-model="formData.mobile")
+			input(name="submit",type="submit",value="Submit")
+		//- .homepage
 			.banner
 				img(src="img/star-page.png")
 			a.btn-star(href="#/game")
