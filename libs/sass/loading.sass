@@ -1,6 +1,6 @@
 html,body
 	+h(100%)
-	
+
 .wechat-share-hide
 	+posa
 	+tl(-1000px)
@@ -30,7 +30,7 @@ html,body
 		span
 			+transform(scale(0.2,0.2))
 			opacity: 0
-	.loading-logo
+	.loading-logo,.loading-normal
 		+tran
 		+posa
 		+tl(50%,50%)
@@ -39,6 +39,11 @@ html,body
 		+wh(5em,5em)
 		+transform(translate(-50%,-50%))
 		overflow: hidden
+	.loading-normal
+		+wh(3rem,3rem)
+		margin-top: -1.5rem
+		margin-left: -1.5rem
+		+animation(second,1.5s,linear,infinite)
 	.loading-logo-bg
 		+posa
 		+tl()

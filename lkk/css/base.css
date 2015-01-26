@@ -652,7 +652,7 @@ html, body {
         -ms-transform: scale(0.2, 0.2);
             transform: scale(0.2, 0.2);
     opacity: 0; }
-  .loading .loading-logo {
+  .loading .loading-logo, .loading .loading-normal {
     -webkit-transition: all 0.5s ease;
             transition: all 0.5s ease;
     position: absolute;
@@ -666,6 +666,17 @@ html, body {
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     overflow: hidden; }
+  .loading .loading-normal {
+    width: 3rem;
+    height: 3rem;
+    margin-top: -1.5rem;
+    margin-left: -1.5rem;
+    -webkit-animation: second 1.5s linear;
+            animation: second 1.5s linear;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
   .loading .loading-logo-bg {
     position: absolute;
     top: 0px;
@@ -814,7 +825,7 @@ html, body {
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1); } }
 body {
-  background: url("../img/bg.jpg") no-repeat top left;
+  background: url("http://disk.giccoo.com/projects/lkk/img/bg.jpg") no-repeat top left;
   background-size: cover;
   background-color: transparent; }
 
@@ -860,7 +871,7 @@ body {
 
 .homepage {
   min-height: 100%;
-  background: url("../img/star-bottom.png") no-repeat bottom left;
+  background: url("http://disk.giccoo.com/projects/lkk/img/star-bottom.png") no-repeat bottom left;
   background-size: contain;
   background-color: transparent; }
   .homepage .banner {
@@ -895,7 +906,7 @@ body {
   .page-select .select-dish {
     position: absolute;
     width: 100%;
-    background: url("../img/page-2-select.png") no-repeat top center;
+    background: url("http://disk.giccoo.com/projects/lkk/img/page-2-select.png") no-repeat top center;
     background-size: cover;
     background-color: transparent;
     top: 30%;
@@ -1121,6 +1132,8 @@ body {
   .share-page .pop.ng-hide {
     opacity: 0; }
   .share-page .pop .content {
+    -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1130,6 +1143,57 @@ body {
             transform: translate3d(-50%, -50%, 0); }
     .iphone4 .share-page .pop .content {
       width: 67.75%; }
+    .share-page .pop .content.ng-hide-remove {
+      opacity: 0; }
+    .share-page .pop .content.ng-hide-remove-active {
+      opacity: 1; }
+    .share-page .pop .content.ng-hide-add {
+      opacity: 1; }
+    .share-page .pop .content.ng-hide-add-active {
+      opacity: 0; }
+    .share-page .pop .content .formPage {
+      position: absolute;
+      top: 45%;
+      left: 0px;
+      width: 100%;
+      bottom: 0; }
+      .share-page .pop .content .formPage .form-group {
+        margin-bottom: 0.4rem; }
+        .share-page .pop .content .formPage .form-group label {
+          font-size: 0.8rem;
+          text-align: right;
+          margin-right: 5%;
+          display: inline-block;
+          color: #fbe151;
+          width: 30%; }
+        .share-page .pop .content .formPage .form-group input {
+          display: inline-block;
+          outline: none;
+          border-radius: 5px;
+          width: 50%; }
+      .share-page .pop .content .formPage .submit {
+        opacity: 0;
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 40%;
+        padding: 0; }
+    .share-page .pop .content .goto {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 30%;
+      display: block; }
+    .share-page .pop .content .close {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 11.6236162362%;
+      -webkit-transform: translate3d(30%, -30%, 0);
+              transform: translate3d(30%, -30%, 0); }
     .share-page .pop .content .code {
       position: absolute;
       top: 33%;

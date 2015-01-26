@@ -290,7 +290,7 @@ loadList = [
 
 _wechat_f = {
   "appid": "",
-  "img_url": "http://m.giccoo.com/lkk/img/share.jpg",
+  "img_url": "http://disk.giccoo.com/projects/lkk/img/share.jpg",
   "img_width": 300,
   "img_height": 300,
   "link": "http://m.giccoo.com/lkk",
@@ -300,7 +300,7 @@ _wechat_f = {
 
 _wechat = {
   "appid": "",
-  "img_url": "http://m.giccoo.com/lkk/img/share.jpg",
+  "img_url": "http://disk.giccoo.com/projects/lkk/img/share.jpg",
   "img_width": 300,
   "img_height": 300,
   "link": "http://m.giccoo.com/lkk",
@@ -339,6 +339,7 @@ app = angular.module('kelvin', ["ngRoute", "ngTouch", "ngAnimate"]).config([
 ]);
 
 app.controller('MainController', function($rootScope, $scope, $location, $http) {
+  $rootScope.CanRun = false;
   if ($("body").height() <= 440) {
     $("body").addClass("iphone4");
   }
@@ -355,7 +356,7 @@ app.controller('MainController', function($rootScope, $scope, $location, $http) 
 });
 
 app.controller('gameController', function($rootScope, $scope, $location) {
-  var Dripping, addNewDish, android, backtoNormal, checkHit, deviceMotionHandler, dishs, newdish, putTime, starTime, starUp, tis, _checkDrop, _lastTime;
+  var Dripping, addNewDish, android, backtoNormal, checkHit, deviceMotionHandler, dishs, newdish, putTime, starTime, starUp, tis, _lastTime;
   android = navigator.userAgent.indexOf('iPhone') > -1 ? false : true;
   dishs = ['1', '2', '3', '4'];
   starUp = false;
@@ -366,12 +367,14 @@ app.controller('gameController', function($rootScope, $scope, $location) {
   $scope.score = 0;
   $scope.timer = 20;
   $scope.run = "run";
+  $("#dishs").html("");
   this.choose = function(i) {
     this.starFrom = i - 1;
     this.gameStar = true;
     starTime = new Date().getTime();
     window.addEventListener('devicemotion', deviceMotionHandler, false);
-    return _checkDrop();
+    $rootScope.CanRun = true;
+    return tis._checkDrop();
   };
   _lastTime = {
     x: 0,
@@ -439,14 +442,14 @@ app.controller('gameController', function($rootScope, $scope, $location) {
     return _lastTime.x = parseInt(acceleration.x * 100);
   };
   newdish = 0;
-  _checkDrop = function() {
+  this._checkDrop = function() {
     checkHit();
     if (new Date().getTime() - newdish > 1200) {
       newdish = new Date().getTime();
       addNewDish();
     }
-    if (!starUp) {
-      return window.requestAnimationFrame(_checkDrop);
+    if (!starUp && $rootScope.CanRun) {
+      return window.requestAnimationFrame(tis._checkDrop);
     }
   };
   addNewDish = function() {
@@ -454,7 +457,7 @@ app.controller('gameController', function($rootScope, $scope, $location) {
     if (tis.starFrom >= dishs.length) {
       tis.starFrom = 0;
     }
-    lostTime = 5000 - (new Date().getTime() - starTime) / 5;
+    lostTime = 2000;
     item = $("<div>").addClass("item");
     if (preload.getResult("dish-" + (tis.starFrom + 1)) != null) {
       e = $(preload.getResult("dish-" + (tis.starFrom + 1)));
@@ -515,12 +518,12 @@ app.controller('gameController', function($rootScope, $scope, $location) {
 
 app.controller('ShareController', function($rootScope, $scope, $location) {
   var tis;
+  $rootScope.jd = false;
   this.showpop = false;
   this.recode = "test";
   this.score = $rootScope.score != null ? $rootScope.score : -1;
   if (this.score === -1) {
-    $location.path("/");
-    return false;
+
   } else {
     this.text = parseInt((this.score / 1500) * 100);
     if (this.text >= 100) {
@@ -537,8 +540,11 @@ app.controller('ShareController', function($rootScope, $scope, $location) {
   }
   refreshShare($rootScope.score / 100, this.text);
   tis = this;
-  return this.getPrize = function() {
+  this.getPrize = function() {
     return this.showpop = true;
+  };
+  return this.close = function() {
+    return this.showpop = false;
   };
 });
 
@@ -546,9 +552,13 @@ app.controller('FormController', function($rootScope, $scope, $location, $http) 
   $scope.formData = {};
   return $scope.processForm = function() {
     return $http.post("http://api.giccoo.com/lkk/insert/", $scope.formData).success(function(data) {
-      return console.log(data);
+      if (data.recode !== 200) {
+        return alert(data.reason);
+      } else {
+        return $rootScope.jd = true;
+      }
     }).error(function(data) {
-      return console.log($.param($scope.formData));
+      return alert("服务器连接出错了");
     });
   };
 });

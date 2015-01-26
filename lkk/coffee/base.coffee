@@ -28,7 +28,7 @@ loadList = [
 
 _wechat_f = 
 	"appid": ""
-	"img_url": "http://m.giccoo.com/lkk/img/share.jpg"
+	"img_url": "http://disk.giccoo.com/projects/lkk/img/share.jpg"
 	"img_width": 300
 	"img_height": 300
 	"link": "http://m.giccoo.com/lkk"
@@ -36,7 +36,7 @@ _wechat_f =
 	"title": "李锦记"
 _wechat =
 	"appid": ""
-	"img_url": "http://m.giccoo.com/lkk/img/share.jpg"
+	"img_url": "http://disk.giccoo.com/projects/lkk/img/share.jpg"
 	"img_width": 300
 	"img_height": 300
 	"link": "http://m.giccoo.com/lkk"
@@ -73,6 +73,7 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 ]
 # 主要加载
 app.controller 'MainController', ($rootScope, $scope, $location, $http)->
+	$rootScope.CanRun = false
 	if $("body").height() <= 440
 		$("body").addClass "iphone4"
 	beginload $scope
@@ -95,12 +96,14 @@ app.controller 'gameController', ($rootScope, $scope, $location)->
 	$scope.score = 0
 	$scope.timer = 20
 	$scope.run = "run"
+	$("#dishs").html ""
 	this.choose = (i)->
 		this.starFrom = i - 1
 		this.gameStar = true
 		starTime = new Date().getTime()
 		window.addEventListener('devicemotion',deviceMotionHandler, false)
-		_checkDrop()
+		$rootScope.CanRun = true
+		tis._checkDrop()
 	_lastTime = {
 		x: 0
 		y: 0
@@ -159,19 +162,19 @@ app.controller 'gameController', ($rootScope, $scope, $location)->
 
 		_lastTime.x = parseInt(acceleration.x*100)
 	newdish = 0
-	_checkDrop = ->
+	this._checkDrop = ->
+		# console.log starUp,tis.gameStar
 		checkHit()
 		if new Date().getTime()-newdish > 1200
 			newdish = new Date().getTime()
 			addNewDish()
-		window.requestAnimationFrame _checkDrop	unless starUp
+		window.requestAnimationFrame tis._checkDrop	if not starUp and $rootScope.CanRun
 	addNewDish = ->
 		if tis.starFrom >= dishs.length
 			tis.starFrom = 0
-		lostTime = 5000 - (new Date().getTime()-starTime)/5
-		# console.log lostTime
+		# lostTime = 5000 - (new Date().getTime()-starTime)/5
+		lostTime = 2000
 		item = $("<div>").addClass "item"
-		# item.append "<img src=\"img/dish-#{tis.starFrom+1}.png\" />"
 		if preload.getResult("dish-#{tis.starFrom+1}")?
 			e = $ preload.getResult "dish-#{tis.starFrom+1}"
 			item.append e.clone()
@@ -218,13 +221,14 @@ app.controller 'gameController', ($rootScope, $scope, $location)->
 	backtoNormal()
 
 app.controller 'ShareController', ($rootScope, $scope, $location)->
+	$rootScope.jd = false
 	this.showpop = false
 	this.recode = "test"
 	this.score = if $rootScope.score? then $rootScope.score else -1
 
 	if this.score is -1
-		$location.path "/"
-		return false
+		# $location.path "/"
+		# return false
 	else
 		this.text = parseInt (this.score/1500)*100
 		if this.text >= 100
@@ -239,6 +243,8 @@ app.controller 'ShareController', ($rootScope, $scope, $location)->
 	tis = this
 	this.getPrize = ->
 		this.showpop = true
+	this.close = ->
+		this.showpop = false
 
 app.controller 'FormController', ($rootScope, $scope, $location, $http)->
 	$scope.formData = {}
@@ -246,6 +252,11 @@ app.controller 'FormController', ($rootScope, $scope, $location, $http)->
 		$http
 		.post "http://api.giccoo.com/lkk/insert/", $scope.formData
 		.success (data)->
-			console.log data
+			if data.recode isnt 200
+				alert data.reason
+			else
+				$rootScope.jd = true
 		.error (data)->
-			console.log $.param($scope.formData)
+			# console.log $.param($scope.formData)
+			alert "服务器连接出错了"
+

@@ -3,6 +3,8 @@
 @import sass/slider
 @import ../../libs/sass/loading
 
+$cdn : "http://disk.giccoo.com/projects/"	
+
 +keyframes(drop)
 	0%
 		// transform: (scale3d(0,0,0) translate3d(-50%,0,0))
@@ -52,7 +54,7 @@
 body 
 	// background: url(../img/bg.jpg) no-repeat top center
 	// background-size: cover
-	+b("../img/bg.jpg",$size: cover)
+	+b($cdn+"lkk/img/bg.jpg",$size: cover)
 .logo
 	+posa
 	+tl
@@ -88,7 +90,7 @@ body
 	// +br
 	min-height: 100%
 	// background: url(../img/bg.jpg) no-repeat top center
-	+b("../img/star-bottom.png",$top:bottom,$left:left,$size: contain)
+	+b($cdn+"lkk/img/star-bottom.png",$top:bottom,$left:left,$size: contain)
 	.banner
 		padding-top: 15%
 		.iphone4 &
@@ -109,7 +111,7 @@ body
 	.select-dish
 		+posa
 		+w(100%)
-		+b("../img/page-2-select.png",$top:top,$left:center,$size:cover)
+		+b($cdn+"lkk/img/page-2-select.png",$top:top,$left:center,$size:cover)
 		top: 30%
 		bottom: 0%
 		overflow: hidden
@@ -255,10 +257,56 @@ body
 		&.ng-hide
 			opacity: 0
 		.content
+			+tran
 			+posa
 			+tl(50%,50%)
 			+iw(542)
 			+transform(translate3d(-50%,-50%,0))
+			// content ng-animate ng-hide-animate ng-hide-add ng-hide ng-hide-add-active
+			&.ng-hide-remove
+				opacity: 0
+			&.ng-hide-remove-active
+				opacity: 1
+			&.ng-hide-add
+				opacity: 1
+			&.ng-hide-add-active
+				opacity: 0
+			.formPage
+				+posa
+				+tl(45%)
+				+w(100%)
+				bottom: 0
+				.form-group
+					margin-bottom: 0.4rem
+					label
+						font-size: 0.8rem
+						text-align: right
+						margin-right: 5%
+						display: inline-block
+						color: #fbe151
+						+w(30%)
+					input
+						display: inline-block
+						outline: none
+						border-radius: 5px
+						+w(50%)
+				.submit
+					opacity: 0
+					+show
+					+posa
+					+bl
+					+wh(100%,40%)
+					padding: 0
+			.goto
+				+posa
+				+bl
+				+wh(100%,30%)
+				+show
+			.close
+				+posa
+				+tr()
+				+w(63/542*100%)
+				+transform(translate3d(30%,-30%,0))
 			.code
 				+posa
 				+tl(33%)

@@ -652,7 +652,7 @@ html, body {
         -ms-transform: scale(0.2, 0.2);
             transform: scale(0.2, 0.2);
     opacity: 0; }
-  .loading .loading-logo {
+  .loading .loading-logo, .loading .loading-normal {
     -webkit-transition: all 0.5s ease;
             transition: all 0.5s ease;
     position: absolute;
@@ -666,6 +666,17 @@ html, body {
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     overflow: hidden; }
+  .loading .loading-normal {
+    width: 3rem;
+    height: 3rem;
+    margin-top: -1.5rem;
+    margin-left: -1.5rem;
+    -webkit-animation: second 1.5s linear;
+            animation: second 1.5s linear;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
   .loading .loading-logo-bg {
     position: absolute;
     top: 0px;

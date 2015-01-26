@@ -19,14 +19,14 @@
       <div class="hideView"></div>
       <div ng-view class="view-animate"></div>
       <div id="loading" class="loading loaded">
-        <div class="loading-logo"><img src="http://disk.giccoo.com/projects/libs/img/loading.png" onload="showLoad()">
-          <div style="display:none" class="loading-logo-bg"></div>
+        <div class="loading-logo">
+          <div class="loading-normal"><img src="http://disk.giccoo.com/projects/libs/img/loading-normal.png"></div>
         </div>
       </div>
       <div class="logo"><img src="http://disk.giccoo.com/projects/lkk/img/logo.png"></div>
     </div>
     <div class="qrcode">
-      <div class="text">建议您使用手机浏览</div><img src="http://disk.giccoo.com/projects/libs/img/qr.jpg">
+      <div class="text">建议您使用手机浏览</div><img src="http://disk.giccoo.com/projects/lkk/img/qr.png">
     </div>
     <script src="http://disk.giccoo.com/projects/libs/js/min/Zepto.min.js" type="text/javascript"></script>
     <script src="http://disk.giccoo.com/projects/libs/js/min/angular.min.js" type="text/javascript"></script>
@@ -80,13 +80,27 @@
           <div class="box"><img src="http://disk.giccoo.com/projects/lkk/img/success-box.png"></div>
         </div>
         <div ng-show="share.showpop" class="pop">
-          <div class="content"><img src="http://disk.giccoo.com/projects/lkk/img/pop-bg.png">
-            <div class="code">兑换码: {{share.recode}}</div>
-            <div class="download"><img src="http://disk.giccoo.com/projects/lkk/img/pop-download-btn.png">
-              <div class="download-img"></div>
+          <div ng-hide="jd" class="content"><img src="http://disk.giccoo.com/projects/lkk/img/pop-form.png">
+            <div ng-click="share.close()" class="close"><img src="http://disk.giccoo.com/projects/lkk/img/close.png"></div>
+            <div ng-controller="FormController as form" class="formPage">
+              <form ng-submit="processForm()">
+                <div class="form-group">
+                  <label for="username">姓名</label>
+                  <input name="username" type="text" ng-model="formData.username">
+                </div>
+                <div class="form-group">
+                  <label for="mobile">手机</label>
+                  <input name="mobile" type="text" ng-model="formData.mobile">
+                </div>
+                <div class="form-group">
+                  <label for="adr">邮寄地址</label>
+                  <input name="adr" type="text" ng-model="formData.adr">
+                </div>
+                <input name="submit" type="submit" value="Submit" class="submit">
+              </form>
             </div>
-            <div class="sharebtn"><img src="http://disk.giccoo.com/projects/lkk/img/pop-share-btn.png"></div>
           </div>
+          <div ng-show="jd" class="content"><img src="http://disk.giccoo.com/projects/lkk/img/pop-jd.png"><a href="http://sale.jd.com/act/0riL47NR8PZqEX.html" class="goto"></a></div>
         </div>
       </div>
     </script>

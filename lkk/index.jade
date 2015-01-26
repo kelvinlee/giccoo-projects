@@ -18,13 +18,15 @@ block content
 		div.view-animate(ng-view)
 		div#loading.loading.loaded
 			div.loading-logo
-				img(src="#{url}libs/img/loading.png",onload="showLoad()")
-				div.loading-logo-bg(style="display:none")
+				//- img(src="#{url}libs/img/loading.png",onload="showLoad()")
+				//- div.loading-logo-bg(style="display:none")
+				.loading-normal
+					img(src="#{url}libs/img/loading-normal.png")
 		div.logo
 			img(src="#{url}lkk/img/logo.png")
 	div.qrcode
 		div.text 建议您使用手机浏览
-		img(src="#{url}libs/img/qr.jpg")
+		img(src="#{url}lkk/img/qr.png")
 
 
 block ng-template
@@ -77,15 +79,34 @@ block ng-template
 				div.box
 					img(src="#{url}lkk/img/success-box.png")
 			div.pop(ng-show="share.showpop")
-				div.content
-					img(src="#{url}lkk/img/pop-bg.png")
-					.code 兑换码: {{share.recode}}
-					.download
+				div.content(ng-hide="jd")
+					img(src="#{url}lkk/img/pop-form.png")
+					.close(ng-click="share.close()")
+						img(src="#{url}lkk/img/close.png")
+					.formPage(ng-controller="FormController as form")
+						form(ng-submit="processForm()")
+							.form-group
+								label(for="username") 姓名
+								input(name="username",type="text",ng-model="formData.username")
+							.form-group
+								label(for="mobile") 手机
+								input(name="mobile",type="text",ng-model="formData.mobile")
+							.form-group
+								label(for="adr") 邮寄地址
+								input(name="adr",type="text",ng-model="formData.adr")
+
+
+							input.submit(name="submit",type="submit",value="Submit")
+					//- img(src="#{url}lkk/img/pop-form.png")
+					//- .code 兑换码: {{share.recode}}
+					//- .download
 						img(src="#{url}lkk/img/pop-download-btn.png")
 						.download-img
-					.sharebtn
+					//- .sharebtn
 						img(src="#{url}lkk/img/pop-share-btn.png")
-
+				div.content(ng-show="jd")
+					img(src="#{url}lkk/img/pop-jd.png")
+					a.goto(href="http://sale.jd.com/act/0riL47NR8PZqEX.html")
 		//- .formPage(ng-controller="FormController as form")
 			form.test(ng-submit="processForm()")
 				input(name="username",type="text",ng-model="formData.username")
