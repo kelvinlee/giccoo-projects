@@ -13,6 +13,7 @@ loadList = [
 	{id: "logo", src: "#{cdn}libs/img/loading.png"}
 	{id: "logo", src: "#{cdn}lkk/img/logo.png"}
 	{id: "star-page", src: "#{cdn}lkk/img/star-page.png"}
+	# {id: "page-2-select", src: "#{cdn}lkk/img/page-2-select.png"}
 	{id: "star-btn", src: "#{cdn}lkk/img/star-btn.png"}
 	{id: "dish-1", src: "#{cdn}lkk/img/dish-1.png"}
 	{id: "dish-2", src: "#{cdn}lkk/img/dish-2.png"}
@@ -74,9 +75,9 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 app.controller 'MainController', ($rootScope, $scope, $location, $http)->
 	if $("body").height() <= 440
 		$("body").addClass "iphone4"
-	beginload $scope,()->
-		for a in loadList
-			$("img[data-lz=#{a.id}]").attr "src", a.src
+	beginload $scope
+		# for a in loadList
+			# $("img[data-lz=#{a.id}]").attr "src", a.src
 	$rootScope.$on "$routeChangeSuccess", ->
 		LoadFinished "angular",$scope
 	$scope.$watch "loaded", ->
@@ -135,7 +136,7 @@ app.controller 'gameController', ($rootScope, $scope, $location)->
 		# backtoNormal()
 	deviceMotionHandler = (eventData)->
 		acceleration = eventData.accelerationIncludingGravity
-		$(".log").html android+","+(90-acceleration.x*6)
+		# $(".log").html android+","+(90-acceleration.x*6)
 		# acceleration.x = -acceleration.x if android
 		return backtoNormal() if (Math.abs(parseInt(acceleration.x*100)) < 100) and (Math.abs(parseInt(acceleration.x*100)) > -100)
 			# backtoNormal()

@@ -342,15 +342,7 @@ app.controller('MainController', function($rootScope, $scope, $location, $http) 
   if ($("body").height() <= 440) {
     $("body").addClass("iphone4");
   }
-  beginload($scope, function() {
-    var a, _j, _len1, _results;
-    _results = [];
-    for (_j = 0, _len1 = loadList.length; _j < _len1; _j++) {
-      a = loadList[_j];
-      _results.push($("img[data-lz=" + a.id + "]").attr("src", a.src));
-    }
-    return _results;
-  });
+  beginload($scope);
   $rootScope.$on("$routeChangeSuccess", function() {
     return LoadFinished("angular", $scope);
   });
@@ -422,7 +414,6 @@ app.controller('gameController', function($rootScope, $scope, $location) {
   deviceMotionHandler = function(eventData) {
     var acceleration;
     acceleration = eventData.accelerationIncludingGravity;
-    $(".log").html(android + "," + (90 - acceleration.x * 6));
     if ((Math.abs(parseInt(acceleration.x * 100)) < 100) && (Math.abs(parseInt(acceleration.x * 100)) > -100)) {
       return backtoNormal();
     }
