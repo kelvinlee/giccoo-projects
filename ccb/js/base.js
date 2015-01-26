@@ -348,9 +348,12 @@ app.controller('MainController', function($rootScope, $scope, $location, $timeou
             $timeout(function() {
               return $scope.src = "yy";
             }, 100);
-            return $timeout(function() {
+            $timeout(function() {
               return $scope.src = "y";
             }, 500);
+            return $timeout(function() {
+              return $location.path("/game");
+            }, 2000);
           });
         });
       }

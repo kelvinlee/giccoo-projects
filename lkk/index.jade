@@ -1,6 +1,8 @@
+
 extends ../libs/jade/layout-ng
+//- -var url = "/"
 block title
-	| 李锦记
+	| 新春送财神，过个滋味年！
 block css
 	link(rel="stylesheet",href="/lkk/css/base.css")
 	script.
@@ -10,37 +12,34 @@ block css
 
 block content
 	div.wechat-share-hide
-		img(src="http://m.giccoo.com/lkk/img/share.jpg")
+		img(src="#{url}lkk/img/share.jpg")
 	div.wrap(ng-controller="MainController")
 		div.hideView
 		div.view-animate(ng-view)
 		div#loading.loading.loaded
 			div.loading-logo
+				img(src="#{url}libs/img/loading.png",onload="showLoad()")
 				div.loading-logo-bg(style="display:none")
-				img(src="../libs/img/loading.png",onload="showLoad()")
 		div.logo
-			img(src="/lkk/img/logo.png")
+			img(src="#{url}lkk/img/logo.png")
 	div.qrcode
 		div.text 建议您使用手机浏览
-		img(src="../libs/img/qr.jpg")
+		img(src="#{url}libs/img/qr.jpg")
 
 
 block ng-template
 	script(type="text/ng-template",id="home.html")
-		form.test(ng-submit="processForm()",style="margin-top:20%")
-			input(name="username",type="text",ng-model="formData.username")
-			input(name="mobile",type="text",ng-model="formData.mobile")
-			input(name="submit",type="submit",value="Submit")
-		//- .homepage
+		.homepage
 			.banner
-				img(src="img/star-page.png")
+				img(src="#{url}lkk/img/star-page.png")
 			a.btn-star(href="#/game")
-				img(src="img/star-btn.png")
+				img(src="#{url}lkk/img/star-btn.png")
+
 	script(type="text/ng-template",id="game.html")
 		.games(ng-controller="gameController as game")
 			.page-select(ng-hide="game.gameStar")
 				.banner
-					img(src="img/page-2-title.png")
+					img(src="#{url}lkk/img/page-2-title.png")
 				.select-dish(ng-show="game.dish")
 					//- img(src="img/page-2-select.png")
 					-for (var i=1;i<=4;i++)
@@ -48,54 +47,59 @@ block ng-template
 			.page-game(ng-show="game.gameStar")
 				.log
 				.drop#drop
-					img(src="img/game-point.png")
+					img(src="#{url}lkk/img/game-point.png")
 				.note
-					img(src="img/game-note.png")
+					img(src="#{url}lkk/img/game-note.png")
 				.Bottle#Bottle(moved="true")
-					img(src="img/game-bottle.png")
+					img(src="#{url}lkk/img/game-bottle.png")
 				.timer
 					.text TIME
 					.box
 						.progress(ng-class="run")
-							img(src="img/game-timer-box.png")
+							img(src="#{url}lkk/img/game-timer-box.png")
 						.time-text {{timer}}
 				.road
 					.dishs#dishs
 						//- .item
 							img(src="img/dish-1.png")
 					.roadbg
-						img(src="img/game-road.png")
+						img(src="#{url}lkk/img/game-road.png")
 				.score
 					.title
-						img(src="img/game-score.png")
+						img(src="#{url}lkk/img/game-score.png")
 					span#score {{score}}
 
 	script(type="text/ng-template",id="share.html")
 		div.share-page(ng-controller="ShareController as share")
 			div.bg(ng-click="share.getPrize()")
-				img(src="img/success.png")
+				img(src="#{url}lkk/img/success.png")
 				.text 你击败了{{share.text}}%的网友<br/>{{share.text2}}
 				div.box
-					img(src="img/success-box.png")
+					img(src="#{url}lkk/img/success-box.png")
 			div.pop(ng-show="share.showpop")
 				div.content
-					img(src="img/pop-bg.png")
+					img(src="#{url}lkk/img/pop-bg.png")
 					.code 兑换码: {{share.recode}}
 					.download
-						img(src="img/pop-download-btn.png")
+						img(src="#{url}lkk/img/pop-download-btn.png")
 						.download-img
 					.sharebtn
-						img(src="img/pop-share-btn.png")
+						img(src="#{url}lkk/img/pop-share-btn.png")
 
+		//- .formPage(ng-controller="FormController as form")
+			form.test(ng-submit="processForm()")
+				input(name="username",type="text",ng-model="formData.username")
+				input(name="mobile",type="text",ng-model="formData.mobile")
+				input(name="submit",type="submit",value="Submit")
 
 block js
 	- var debug = ".min"
 	//- - debug = ""
-	script(src="/libs/js/min/Zepto.min.js",type="text/javascript")
-	script(src="/libs/js/min/angular.min.js",type="text/javascript")
-	script(src="/libs/js/min/angular-route.min.js",type="text/javascript")
-	script(src="/libs/js/min/angular-touch.min.js",type="text/javascript")
-	script(src="/libs/js/min/angular-animate.min.js",type="text/javascript")
+	script(src="#{url}libs/js/min/Zepto.min.js",type="text/javascript")
+	script(src="#{url}libs/js/min/angular.min.js",type="text/javascript")
+	script(src="#{url}libs/js/min/angular-route.min.js",type="text/javascript")
+	script(src="#{url}libs/js/min/angular-touch.min.js",type="text/javascript")
+	script(src="#{url}libs/js/min/angular-animate.min.js",type="text/javascript")
 	//- script(src="/libs/js/megapix-image.js",type="text/javascript")
 	//- script(src="/libs/js/exif.js",type="text/javascript")
 	//- script(src="/libs/js/min/preloadjs-0.4.1.min.js",type="text/javascript")

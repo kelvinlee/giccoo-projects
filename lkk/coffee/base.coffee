@@ -5,19 +5,24 @@
 # @codekit-prepend "../../libs/coffee/share"
 # @codekit-prepend "../../libs/coffee/load"
 
+cdn = "http://disk.giccoo.com/projects/"
+# cdn = "/"
+
 # load list
 loadList = [
-	{id: "logo", src:"../libs/img/loading.png"}
-	{id: "logo", src: "img/logo.png"}
-	{id: "star-page", src:"img/star-page.png"}
-	{id: "star-btn", src:"img/star-btn.png"}
-	{id: "dish-1", src:"img/dish-1.png"}
-	{id: "dish-2", src:"img/dish-2.png"}
-	{id: "dish-3", src:"img/dish-3.png"}
-	{id: "dish-4", src:"img/dish-4.png"}
-	{id: "dish-select", src:"img/page-2-select.png"}
-
+	{id: "logo", src: "#{cdn}libs/img/loading.png"}
+	{id: "logo", src: "#{cdn}lkk/img/logo.png"}
+	{id: "star-page", src: "#{cdn}lkk/img/star-page.png"}
+	{id: "star-btn", src: "#{cdn}lkk/img/star-btn.png"}
+	{id: "dish-1", src: "#{cdn}lkk/img/dish-1.png"}
+	{id: "dish-2", src: "#{cdn}lkk/img/dish-2.png"}
+	{id: "dish-3", src: "#{cdn}lkk/img/dish-3.png"}
+	{id: "dish-4", src: "#{cdn}lkk/img/dish-4.png"}
+	{id: "dish-select", src: "#{cdn}lkk/img/page-2-select.png"}
+	{id: "game-point", src: "#{cdn}lkk/img/game-point.png"}
 ]
+
+# console.log loadList
 
 
 _wechat_f = 
@@ -40,8 +45,12 @@ _wechat =
 hosts = "http://g.giccoo.com"
 
 refreshShare = (title,desc)->
-	_wechat.title = "我用财神耗油完成了n盘菜，打败了n%的人，不服来战！"
-	_wechat_f.title = "我用财神耗油完成了n盘菜，打败了n%的人，不服来战！"
+	_wechat.title = "我用财神耗油完成了#{title}盘菜，打败了#{desc}%的人，不服来战！"
+	_wechat_f.title = "我用财神耗油完成了#{title}盘菜，打败了#{desc}%的人，不服来战！"
+	reloadWechat()
+defaultShare = ->
+	_wechat.title = "新春送财神，过个滋味年！"
+	_wechat_f.title = "新春送财神，过个滋味年！"
 	reloadWechat()
 
 
@@ -63,19 +72,6 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 ]
 # 主要加载
 app.controller 'MainController', ($rootScope, $scope, $location, $http)->
-	$scope.formData = {}
-	$scope.processForm = ->
-		$http
-		.post "http://api.giccoo.com/lkk/insert/", $scope.formData
-		.success (data)->
-			console.log data
-		.error (data)->
-			console.log $.param($scope.formData)
-
-
-
-
-
 	if $("body").height() <= 440
 		$("body").addClass "iphone4"
 	beginload $scope,()->
@@ -85,8 +81,10 @@ app.controller 'MainController', ($rootScope, $scope, $location, $http)->
 		LoadFinished "angular",$scope
 	$scope.$watch "loaded", ->
 		$(".loaded").removeClass "loaded" if $scope.loaded
-	refreshShare()
+	defaultShare()
+	
 app.controller 'gameController', ($rootScope, $scope, $location)->
+	android = if navigator.userAgent.indexOf('iPhone') > -1 then false else yes
 	dishs = ['1','2','3','4']
 	starUp = false
 	starTime = 0
@@ -122,7 +120,11 @@ app.controller 'gameController', ($rootScope, $scope, $location)->
 		if time-putTime > 600
 			# $(".log").html $("#Bottle").height()+","+$("#Bottle").offset().top+","
 			putTime = time
-			clone = $("#drop").clone()
+			if preload.getResult("game-point")?
+				e = $ preload.getResult "game-point"
+				clone = $("#drop").clone().html e.clone()
+			else
+				clone = $("#drop").clone().html "<img src='#{cdn}lkk/img/game-point.png' />"
 			clone[0].addEventListener ANIMATION_END_NAME, (e)->
 				$(this).remove()
 			$(".page-game").append clone
@@ -133,7 +135,8 @@ app.controller 'gameController', ($rootScope, $scope, $location)->
 		# backtoNormal()
 	deviceMotionHandler = (eventData)->
 		acceleration = eventData.accelerationIncludingGravity
-		# $(".log").html 90-acceleration.x*6
+		$(".log").html android+","+(90-acceleration.x*6)
+		# acceleration.x = -acceleration.x if android
 		return backtoNormal() if (Math.abs(parseInt(acceleration.x*100)) < 100) and (Math.abs(parseInt(acceleration.x*100)) > -100)
 			# backtoNormal()
 			
@@ -142,10 +145,16 @@ app.controller 'gameController', ($rootScope, $scope, $location)->
 			# $(".wrap").css
 			# 	"transform":"rotate(#{-acceleration.x*6}deg)"
 			# 	"-webkit-transform":"rotate(#{-acceleration.x*6}deg)"
-			$("#Bottle").css
-				"transform":"rotate(#{-(90-acceleration.x*6)}deg)"
-				"-webkit-transform":"rotate(#{-(90-acceleration.x*6)}deg)"
-			Dripping new Date().getTime() if (90-acceleration.x*6)>110
+			if android
+				$("#Bottle").css
+					"transform":"rotate(#{-(90+acceleration.x*6)}deg)"
+					"-webkit-transform":"rotate(#{-(90+acceleration.x*6)}deg)"
+				Dripping new Date().getTime() if (90+acceleration.x*6)>100
+			else
+				$("#Bottle").css
+					"transform":"rotate(#{-(90-acceleration.x*6)}deg)"
+					"-webkit-transform":"rotate(#{-(90-acceleration.x*6)}deg)"
+				Dripping new Date().getTime() if (90-acceleration.x*6)>100
 
 		_lastTime.x = parseInt(acceleration.x*100)
 	newdish = 0
@@ -161,7 +170,12 @@ app.controller 'gameController', ($rootScope, $scope, $location)->
 		lostTime = 5000 - (new Date().getTime()-starTime)/5
 		# console.log lostTime
 		item = $("<div>").addClass "item"
-		item.append "<img src=\"img/dish-#{tis.starFrom+1}.png\" />"
+		# item.append "<img src=\"img/dish-#{tis.starFrom+1}.png\" />"
+		if preload.getResult("dish-#{tis.starFrom+1}")?
+			e = $ preload.getResult "dish-#{tis.starFrom+1}"
+			item.append e.clone()
+		else
+			item.append "<img src=\"#{cdn}lkk/img/dish-#{tis.starFrom+1}.png\" />"
 		item.css
 			"animation-duration": "#{lostTime}ms"
 			"-webkit-animation-duration": "#{lostTime}ms"
@@ -206,8 +220,10 @@ app.controller 'ShareController', ($rootScope, $scope, $location)->
 	this.showpop = false
 	this.recode = "test"
 	this.score = if $rootScope.score? then $rootScope.score else -1
+
 	if this.score is -1
 		$location.path "/"
+		return false
 	else
 		this.text = parseInt (this.score/1500)*100
 		if this.text >= 100
@@ -218,7 +234,17 @@ app.controller 'ShareController', ($rootScope, $scope, $location)->
 			this.text2 = "你是接财神的高手"
 		else
 			this.text2 = "要不要再试一次?"
-
+	refreshShare $rootScope.score/100,this.text
 	tis = this
 	this.getPrize = ->
 		this.showpop = true
+
+app.controller 'FormController', ($rootScope, $scope, $location, $http)->
+	$scope.formData = {}
+	$scope.processForm = ->
+		$http
+		.post "http://api.giccoo.com/lkk/insert/", $scope.formData
+		.success (data)->
+			console.log data
+		.error (data)->
+			console.log $.param($scope.formData)

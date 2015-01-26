@@ -82,9 +82,9 @@ app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 						$timeout ->
 							$scope.src = "y"
 						,500
-						# $timeout ->
-						# 	$location.path "/game"
-						# ,2000
+						$timeout ->
+							$location.path "/game"
+						,2000
 						# $scope.
 	$scope.closeSound = ->
 		if $scope.soundoff is "on"

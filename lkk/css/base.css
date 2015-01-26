@@ -672,7 +672,7 @@ html, body {
     left: 0px;
     bottom: 0;
     width: 100%;
-    z-index: 1;
+    z-index: -1;
     background-image: -webkit-linear-gradient(269deg, #06503C 0%, #1EC08E 50%, #A9F4A1 100%);
     background-image: linear-gradient(-179deg, #06503C 0%, #1EC08E 50%, #A9F4A1 100%);
     -webkit-animation: second 1s linear;
@@ -709,32 +709,46 @@ html, body {
     display: none; } }
 @-webkit-keyframes drop {
   0% {
-    -webkit-transform: scale(0, 0) translate3d(-50%, 0, 0);
-            transform: scale(0, 0) translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
     opacity: 0; }
   5% {
     opacity: 1; }
   15% {
-    -webkit-transform: scale(1, 1) translate3d(-50%, 0, 0);
-            transform: scale(1, 1) translate3d(-50%, 0, 0); }
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0); }
   100% {
-    -webkit-transform: scale(1, 1) translate3d(-50%, 600px, 0);
-            transform: scale(1, 1) translate3d(-50%, 600px, 0);
+    -webkit-transform: translate3d(-50%, 600px, 0);
+            transform: translate3d(-50%, 600px, 0);
     opacity: 1; } }
 @keyframes drop {
   0% {
-    -webkit-transform: scale(0, 0) translate3d(-50%, 0, 0);
-            transform: scale(0, 0) translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
     opacity: 0; }
   5% {
     opacity: 1; }
   15% {
-    -webkit-transform: scale(1, 1) translate3d(-50%, 0, 0);
-            transform: scale(1, 1) translate3d(-50%, 0, 0); }
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0); }
   100% {
-    -webkit-transform: scale(1, 1) translate3d(-50%, 600px, 0);
-            transform: scale(1, 1) translate3d(-50%, 600px, 0);
+    -webkit-transform: translate3d(-50%, 600px, 0);
+            transform: translate3d(-50%, 600px, 0);
     opacity: 1; } }
+@-webkit-keyframes showbig {
+  from {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0); }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
+@keyframes showbig {
+  from {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0); }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
 @-webkit-keyframes dishmove {
   0% {
     -webkit-transform: translate3d(0, 0%, 0);
@@ -899,19 +913,26 @@ body {
   .page-game .log {
     position: absolute;
     top: 30%;
-    left: 30%; }
+    left: 30%;
+    z-index: 10000; }
   .page-game .drop {
     width: 9.6875%;
     margin: 0 auto;
     position: absolute;
     top: 0px;
     left: 0px;
-    -webkit-transform: translate3d(-50%, 0, 0);
-            transform: translate3d(-50%, 0, 0);
     opacity: 0;
     z-index: 99; }
     .iphone4 .page-game .drop {
       width: 7.75%; }
+    .page-game .drop img {
+      width: 100%;
+      -webkit-animation: showbig 1s ease;
+              animation: showbig 1s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial; }
     .page-game .drop.dropping {
       -webkit-animation: drop 3s ease;
               animation: drop 3s ease;
