@@ -248,8 +248,8 @@ app.controller 'ShareController', ($rootScope, $scope, $location)->
 	this.score = if $rootScope.score? then $rootScope.score else -1
 
 	if this.score is -1
-		# $location.path "/"
-		# return false
+		$location.path "/"
+		return false
 	else
 		this.text = parseInt (this.score/1500)*100
 		if this.text >= 100

@@ -252,12 +252,12 @@ LoadFinished = function(name, $scope, callback) {
   }
 };
 
-cdn = "";
+cdn = "http://disk.giccoo.com/projects";
 
 loadList = [
   {
     id: "logo",
-    src: "../libs/img/loading.png"
+    src: "" + cdn + "/libs/img/loading.png"
   }, {
     id: "bg",
     src: "" + cdn + "/ccb/img/bg.jpg"

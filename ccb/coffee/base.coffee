@@ -6,9 +6,9 @@
 # @codekit-prepend "../../libs/coffee/load"
 
 # load list
-cdn = ""
+cdn = "http://disk.giccoo.com/projects"
 loadList = [
-	{id: "logo", src:"../libs/img/loading.png"}
+	{id: "logo", src:"#{cdn}/libs/img/loading.png"}
 	{id: "bg", src: "#{cdn}/ccb/img/bg.jpg"}
 	{id: "btn-pass", src: "#{cdn}/ccb/img/btn-pass.png"}
 	{id: "icon-sound", src: "#{cdn}/ccb/img/icon-sound.png"}

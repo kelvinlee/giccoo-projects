@@ -3,28 +3,28 @@ extends ../libs/jade/layout-ng
 block title
 	| 羊年抓羊财
 block css
-	- var cdn = "/ccb/";
-	link(rel="stylesheet",href="#{cdn}css/base.css")
+	link(rel="stylesheet",href="/ccb/css/base.css")
 	script.
 		function showLoad() {
 			 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
 		}
 
 block content
-	- var cdn = "/ccb/";
 	div.wechat-share-hide
-		img(src="#{cdn}img/share.jpg")
+		img(src="#{url}ccb/img/share.png")
 	div.wrap(ng-controller="MainController")
 		div.hideView
 		div.view-animate(ng-view)
 		div#loading.loading.loaded
 			div.loading-logo
-				div.loading-logo-bg(style="display:none")
-				img(src="#{cdn}../libs/img/loading.png",onload="showLoad()")
+				//- div.loading-logo-bg(style="display:none")
+				//- img(src="#{url}../libs/img/loading.png",onload="showLoad()")
+				.loading-normal
+					img(src="#{url}libs/img/loading-normal.png")
 		
 	div.qrcode
 		div.text 建议您使用手机浏览
-		img(src="#{cdn}../libs/img/qr.jpg")
+		img(src="#{url}ccb/img/qr.jpg")
 
 
 block ng-template
@@ -33,43 +33,43 @@ block ng-template
 		.homepage(ng-show="starPage")
 			.bg
 				.move
-					img.bgimg(src="#{cdn}img/bg.jpg")
+					img.bgimg(src="#{url}ccb/img/bg.jpg")
 			.mubus
 				.mubu(ng-class="shakeYYY")
 					-for (var i=0;i<11;i++)
 						.yyy(class="y#{i}")
 							.body
 								.jump
-									img(ng-src="#{cdn}img/{{src}}.png")
+									img(ng-src="#{url}ccb/img/{{src}}.png")
 							.money
 								.y1
-									img(src="#{cdn}img/y1.png")
+									img(src="#{url}ccb/img/y1.png")
 								.y2
-									img(src="#{cdn}img/y2.png")
+									img(src="#{url}ccb/img/y2.png")
 			.ctrlPage
 				a.pass(href="#/game")
-					img(src="#{cdn}img/btn-pass.png")
+					img(src="#{url}ccb/img/btn-pass.png")
 				.sound(ng-click="closeSound()",ng-class="soundoff")
-					img(src="#{cdn}img/icon-sound.png")
+					img(src="#{url}ccb/img/icon-sound.png")
 	script(type="text/ng-template",id="game.html")
 		.game-page(ng-controller="GameController as game")
 			.weiban(ng-show="game.weiban",ng-click="game.hideweiban()")
 			.game(ng-hide="game.weiban")
 				.gameStar(ng-hide="game.gameBegin")
 					.title
-						img(src="#{cdn}img/title.jpg")
+						img(src="#{url}ccb/img/title.jpg")
 					.subtitle
-						img(src="#{cdn}img/subtitle.jpg")
+						img(src="#{url}ccb/img/subtitle.jpg")
 					.star(ng-click="game.gameStar()")
-						img(src="#{cdn}img/starbtn.jpg")
+						img(src="#{url}ccb/img/starbtn.jpg")
 					.logo
-						img(src="#{cdn}img/logo.jpg")
+						img(src="#{url}ccb/img/logo.jpg")
 				.gameCanvas(ng-show="game.gameBegin && !gameOver")
 					//- .text Game Star
 					.timer 剩余时间: {{game.timer}}秒
 					.score {{game.score}} 元
 					.item(ng-class="item.class",ng-style="item.style",ng-click="game.hitYYY(key)",ng-repeat="(key,item) in game.items")
-						img(ng-src="#{cdn}img/{{item.name}}.png")
+						img(ng-src="#{url}ccb/img/{{item.name}}.png")
 				.gameOver(ng-show="gameOver")
 					//- .text Game Over
 					.title
@@ -78,11 +78,11 @@ block ng-template
 					.subtitle
 						p 财运指数超越了朋友圈 {{game.Transcend}}% 的人,<br/>一键分享羊年一起发!
 					.btn
-						img(src="#{cdn}img/sharebtn.jpg")
+						img(src="#{url}ccb/img/sharebtn.jpg")
 						div.sharebtn(ng-click="game.showShare()")
 						div.regame(ng-click="game.regame()")
 					.logo
-						img(src="#{cdn}img/logo.jpg")
+						img(src="#{url}ccb/img/logo.jpg")
 			.wechat(ng-show="game.wechat",ng-click="game.showShare()")
 
 
@@ -91,12 +91,12 @@ block js
 	- var debug = ".min"
 	- var cdn = "";
 	//- - debug = ""
-	script(src="#{cdn}/libs/js/min/Zepto.min.js",type="text/javascript")
-	script(src="#{cdn}/libs/js/min/angular.min.js",type="text/javascript")
-	script(src="#{cdn}/libs/js/min/angular-route.min.js",type="text/javascript")
-	script(src="#{cdn}/libs/js/min/angular-touch.min.js",type="text/javascript")
-	script(src="#{cdn}/libs/js/min/angular-animate.min.js",type="text/javascript")
+	script(src="#{url}libs/js/min/Zepto.min.js",type="text/javascript")
+	script(src="#{url}libs/js/min/angular.min.js",type="text/javascript")
+	script(src="#{url}libs/js/min/angular-route.min.js",type="text/javascript")
+	script(src="#{url}libs/js/min/angular-touch.min.js",type="text/javascript")
+	script(src="#{url}libs/js/min/angular-animate.min.js",type="text/javascript")
 	//- script(src="/libs/js/megapix-image.js",type="text/javascript")
 	//- script(src="/libs/js/exif.js",type="text/javascript")
 	//- script(src="/libs/js/min/preloadjs-0.4.1.min.js",type="text/javascript")
-	script(src="#{cdn}/ccb/js/base.js",type="text/javascript")
+	script(src="/ccb/js/base.js",type="text/javascript")

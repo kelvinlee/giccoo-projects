@@ -550,7 +550,8 @@ app.controller('ShareController', function($rootScope, $scope, $location) {
   this.recode = "test";
   this.score = $rootScope.score != null ? $rootScope.score : -1;
   if (this.score === -1) {
-
+    $location.path("/");
+    return false;
   } else {
     this.text = parseInt((this.score / 1500) * 100);
     if (this.text >= 100) {

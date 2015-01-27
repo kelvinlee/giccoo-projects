@@ -3,7 +3,7 @@
 @import sass/slider
 @import ../../libs/sass/loading
 
-$cdn : "../"
+$cdn : "http://disk.giccoo.com/projects"
 
 +keyframes(movebg)
 	0%
@@ -368,7 +368,7 @@ body
 	background-color: #e4001d
 	.weiban
 		+wh(100%,100%)
-		+b("../img/weiban.jpg",no-repeat,center,center,contain,#e4001d)
+		+b("#{cdn}/ccb/img/weiban.jpg",no-repeat,center,center,contain,#e4001d)
 	.game
 		+wh(100%,100%)
 	.gameOver
@@ -458,7 +458,7 @@ body
 	+posf
 	+tl
 	+br
-	+b("../img/wechat.png",no-repeat,top,center,contain,rgba(0,0,0,0.6))
+	+b("#{$cdn}/ccb/img/wechat.png",no-repeat,top,center,contain,rgba(0,0,0,0.6))
 	z-index: 999
 	// ng-animate ng-hide-animate ng-hide-remove ng-hide-remove-active
 	// ng-animate ng-hide-animate ng-hide-add ng-hide ng-hide-add-active

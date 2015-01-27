@@ -1550,7 +1550,7 @@ html, body {
   .game-page .weiban {
     width: 100%;
     height: 100%;
-    background: url("../img/weiban.jpg") no-repeat center center;
+    background: url("cdn/ccb/img/weiban.jpg") no-repeat center center;
     background-size: contain;
     background-color: #e4001d; }
   .game-page .game {
@@ -1662,7 +1662,7 @@ html, body {
   left: 0px;
   bottom: 0px;
   right: 0px;
-  background: url("../img/wechat.png") no-repeat top center;
+  background: url("http://disk.giccoo.com/projects/ccb/img/wechat.png") no-repeat top center;
   background-size: contain;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 999; }
