@@ -10,16 +10,16 @@ cdn = "http://disk.giccoo.com/projects/"
 
 # load list
 loadList = [
-	{id: "logo", src: "#{cdn}libs/img/loading.png"}
+	# {id: "logo", src: "#{cdn}libs/img/loading.png"}
 	{id: "logo", src: "#{cdn}lkk/img/logo.png"}
-	{id: "star-page", src: "#{cdn}lkk/img/star-page.png"}
+	# {id: "star-page", src: "#{cdn}lkk/img/star-page.png"}
 	# {id: "page-2-select", src: "#{cdn}lkk/img/page-2-select.png"}
 	{id: "star-btn", src: "#{cdn}lkk/img/star-btn.png"}
 	{id: "dish-1", src: "#{cdn}lkk/img/dish-1.png"}
 	{id: "dish-2", src: "#{cdn}lkk/img/dish-2.png"}
 	{id: "dish-3", src: "#{cdn}lkk/img/dish-3.png"}
 	{id: "dish-4", src: "#{cdn}lkk/img/dish-4.png"}
-	{id: "dish-select", src: "#{cdn}lkk/img/page-2-select.png"}
+	# {id: "dish-select", src: "#{cdn}lkk/img/page-2-select.png"}
 	{id: "game-point", src: "#{cdn}lkk/img/game-point.png"}
 ]
 
@@ -103,7 +103,7 @@ app.controller 'MainController', ($rootScope, $scope, $location, $http)->
 		
 	window.addEventListener (if "onorientationchange" in window then "orientationchange" else "resize"), orientationChange, false
 	
-app.controller 'gameController', ($rootScope, $scope, $location)->
+app.controller 'gameController', ($rootScope, $scope, $location, $timeout)->
 	android = if navigator.userAgent.indexOf('iPhone') > -1 then false else yes
 	dishs = ['1','2','3','4']
 	starUp = false
@@ -118,10 +118,12 @@ app.controller 'gameController', ($rootScope, $scope, $location)->
 	this.choose = (i)->
 		this.starFrom = i - 1
 		this.gameStar = true
-		starTime = new Date().getTime()
-		window.addEventListener('devicemotion',deviceMotionHandler, false)
-		$rootScope.CanRun = true
-		tis._checkDrop()
+		$timeout ->
+			starTime = new Date().getTime()
+			window.addEventListener('devicemotion',deviceMotionHandler, false)
+			$rootScope.CanRun = true
+			tis._checkDrop()
+		,2600
 	_lastTime = {
 		x: 0
 		y: 0
@@ -149,9 +151,9 @@ app.controller 'gameController', ($rootScope, $scope, $location)->
 				clone = $("#drop").clone().html "<img src='#{cdn}lkk/img/game-point.png' />"
 			clone[0].addEventListener ANIMATION_END_NAME, (e)->
 				$(this).remove()
-				starUp = true
-				$scope.$apply ->
-					$scope.timer = 0
+				# starUp = true
+				# $scope.$apply ->
+					# $scope.timer = 0
 			$(".page-game").append clone
 			clone.css
 				"top": "30%"
@@ -194,7 +196,7 @@ app.controller 'gameController', ($rootScope, $scope, $location)->
 		if tis.starFrom >= dishs.length
 			tis.starFrom = 0
 		# lostTime = 5000 - (new Date().getTime()-starTime)/5
-		lostTime = 2000 - (new Date().getTime()-starTime)/50
+		lostTime = 2300
 		item = $("<div>").addClass "item"
 		if preload.getResult("dish-#{tis.starFrom+1}")?
 			e = $ preload.getResult "dish-#{tis.starFrom+1}"
@@ -251,7 +253,7 @@ app.controller 'ShareController', ($rootScope, $scope, $location)->
 		$location.path "/"
 		return false
 	else
-		this.text = parseInt (this.score/1500)*100
+		this.text = parseInt (this.score/1900)*100
 		if this.text >= 100
 			this.text = 99
 		if this.text <= 0

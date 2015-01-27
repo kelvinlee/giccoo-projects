@@ -258,13 +258,7 @@ cdn = "http://disk.giccoo.com/projects/";
 loadList = [
   {
     id: "logo",
-    src: "" + cdn + "libs/img/loading.png"
-  }, {
-    id: "logo",
     src: "" + cdn + "lkk/img/logo.png"
-  }, {
-    id: "star-page",
-    src: "" + cdn + "lkk/img/star-page.png"
   }, {
     id: "star-btn",
     src: "" + cdn + "lkk/img/star-btn.png"
@@ -280,9 +274,6 @@ loadList = [
   }, {
     id: "dish-4",
     src: "" + cdn + "lkk/img/dish-4.png"
-  }, {
-    id: "dish-select",
-    src: "" + cdn + "lkk/img/page-2-select.png"
   }, {
     id: "game-point",
     src: "" + cdn + "lkk/img/game-point.png"
@@ -378,7 +369,7 @@ app.controller('MainController', function($rootScope, $scope, $location, $http) 
   return window.addEventListener((__indexOf.call(window, "onorientationchange") >= 0 ? "orientationchange" : "resize"), orientationChange, false);
 });
 
-app.controller('gameController', function($rootScope, $scope, $location) {
+app.controller('gameController', function($rootScope, $scope, $location, $timeout) {
   var Dripping, addNewDish, android, backtoNormal, checkHit, deviceMotionHandler, dishs, newdish, putTime, starTime, starUp, tis, _lastTime;
   android = navigator.userAgent.indexOf('iPhone') > -1 ? false : true;
   dishs = ['1', '2', '3', '4'];
@@ -394,10 +385,12 @@ app.controller('gameController', function($rootScope, $scope, $location) {
   this.choose = function(i) {
     this.starFrom = i - 1;
     this.gameStar = true;
-    starTime = new Date().getTime();
-    window.addEventListener('devicemotion', deviceMotionHandler, false);
-    $rootScope.CanRun = true;
-    return tis._checkDrop();
+    return $timeout(function() {
+      starTime = new Date().getTime();
+      window.addEventListener('devicemotion', deviceMotionHandler, false);
+      $rootScope.CanRun = true;
+      return tis._checkDrop();
+    }, 2600);
   };
   _lastTime = {
     x: 0,
@@ -427,11 +420,7 @@ app.controller('gameController', function($rootScope, $scope, $location) {
         clone = $("#drop").clone().html("<img src='" + cdn + "lkk/img/game-point.png' />");
       }
       clone[0].addEventListener(ANIMATION_END_NAME, function(e) {
-        $(this).remove();
-        starUp = true;
-        return $scope.$apply(function() {
-          return $scope.timer = 0;
-        });
+        return $(this).remove();
       });
       $(".page-game").append(clone);
       clone.css({
@@ -484,7 +473,7 @@ app.controller('gameController', function($rootScope, $scope, $location) {
     if (tis.starFrom >= dishs.length) {
       tis.starFrom = 0;
     }
-    lostTime = 2000 - (new Date().getTime() - starTime) / 50;
+    lostTime = 2300;
     item = $("<div>").addClass("item");
     if (preload.getResult("dish-" + (tis.starFrom + 1)) != null) {
       e = $(preload.getResult("dish-" + (tis.starFrom + 1)));
@@ -553,7 +542,7 @@ app.controller('ShareController', function($rootScope, $scope, $location) {
     $location.path("/");
     return false;
   } else {
-    this.text = parseInt((this.score / 1500) * 100);
+    this.text = parseInt((this.score / 1900) * 100);
     if (this.text >= 100) {
       this.text = 99;
     }

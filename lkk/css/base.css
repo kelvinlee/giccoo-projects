@@ -768,8 +768,8 @@ html, body {
     -webkit-transform: translate3d(-200%, 60px, 0);
             transform: translate3d(-200%, 60px, 0); }
   100% {
-    -webkit-transform: translate3d(-420%, 0%, 0);
-            transform: translate3d(-420%, 0%, 0); } }
+    -webkit-transform: translate3d(-520%, 50%, 0);
+            transform: translate3d(-520%, 50%, 0); } }
 @keyframes dishmove {
   0% {
     -webkit-transform: translate3d(0, 0%, 0);
@@ -778,8 +778,8 @@ html, body {
     -webkit-transform: translate3d(-200%, 60px, 0);
             transform: translate3d(-200%, 60px, 0); }
   100% {
-    -webkit-transform: translate3d(-420%, 0%, 0);
-            transform: translate3d(-420%, 0%, 0); } }
+    -webkit-transform: translate3d(-520%, 50%, 0);
+            transform: translate3d(-520%, 50%, 0); } }
 @-webkit-keyframes forbox {
   0% {
     -webkit-transform: scale(1, 1);
@@ -824,6 +824,38 @@ html, body {
   100% {
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1); } }
+@-webkit-keyframes showNote {
+  0% {
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(0, 0);
+            transform: translate3d(-50%, -50%, 0) scale(0, 0); }
+  50% {
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(1.3, 1.3);
+            transform: translate3d(-50%, -50%, 0) scale(1.3, 1.3); }
+  70% {
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(0.7, 0.7);
+            transform: translate3d(-50%, -50%, 0) scale(0.7, 0.7); }
+  80% {
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(1.1, 1.1);
+            transform: translate3d(-50%, -50%, 0) scale(1.1, 1.1); }
+  100% {
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(1, 1);
+            transform: translate3d(-50%, -50%, 0) scale(1, 1); } }
+@keyframes showNote {
+  0% {
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(0, 0);
+            transform: translate3d(-50%, -50%, 0) scale(0, 0); }
+  50% {
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(1.3, 1.3);
+            transform: translate3d(-50%, -50%, 0) scale(1.3, 1.3); }
+  70% {
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(0.7, 0.7);
+            transform: translate3d(-50%, -50%, 0) scale(0.7, 0.7); }
+  80% {
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(1.1, 1.1);
+            transform: translate3d(-50%, -50%, 0) scale(1.1, 1.1); }
+  100% {
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(1, 1);
+            transform: translate3d(-50%, -50%, 0) scale(1, 1); } }
 body {
   background: url("http://disk.giccoo.com/projects/lkk/img/bg.jpg") no-repeat top left;
   background-size: cover;
@@ -906,7 +938,7 @@ body {
   .page-select .select-dish {
     position: absolute;
     width: 100%;
-    background: url("http://disk.giccoo.com/projects/lkk/img/page-2-select.png") no-repeat top center;
+    background: url("http://disk.giccoo.com/projects/lkk/img/page-2-select.jpg") no-repeat top center;
     background-size: cover;
     background-color: transparent;
     top: 30%;
@@ -955,10 +987,14 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate3d(-50%, -50%, 0);
-            transform: translate3d(-50%, -50%, 0);
     width: 33.4375%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    -webkit-animation: showNote 1s ease;
+            animation: showNote 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial; }
     .iphone4 .page-game .note {
       width: 26.75%; }
   .page-game .timer {
@@ -967,7 +1003,15 @@ body {
     left: 10%;
     width: 15.625%;
     margin: 0 auto;
-    text-align: center; }
+    text-align: center;
+    -webkit-animation: fadeIn 1s ease;
+            animation: fadeIn 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s; }
     .iphone4 .page-game .timer {
       width: 12.5%; }
     .page-game .timer .box {
@@ -994,6 +1038,14 @@ body {
           -webkit-animation-iteration-count: infinite;
                   animation-iteration-count: infinite; }
   .page-game .Bottle {
+    -webkit-animation: fadeIn 1s ease;
+            animation: fadeIn 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
     -webkit-transition: all 0.2s ease;
             transition: all 0.2s ease;
     position: absolute;
@@ -1010,6 +1062,14 @@ body {
     .iphone4 .page-game .Bottle {
       width: 20.625%; }
   .page-game .road {
+    -webkit-animation: fadeIn 1s ease;
+            animation: fadeIn 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
     position: absolute;
     bottom: 20%;
     left: 0px; }
@@ -1058,6 +1118,14 @@ body {
       top: 52%;
       right: 20%; }
   .page-game .score {
+    -webkit-animation: fadeIn 1s ease;
+            animation: fadeIn 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
     position: absolute;
     bottom: 2%;
     left: 50%;

@@ -32,7 +32,7 @@ $cdn : "http://disk.giccoo.com/projects/"
 	50%
 		transform: (translate3d(-200%,60px,0))
 	100%
-		transform: (translate3d(-420%, 0%, 0))
+		transform: (translate3d(-520%, 50%, 0))
 
 +keyframes(forbox)
 	0%
@@ -49,6 +49,19 @@ $cdn : "http://disk.giccoo.com/projects/"
 		+transform(scale(0.9, 0.9))
 	100%
 		+transform(scale(1, 1))
+
++keyframes(showNote)
+	0%
+		+transform(translate3d(-50%,-50%,0) scale(0,0))
+	50%
+		+transform(translate3d(-50%,-50%,0) scale(1.3,1.3))
+	70%
+		+transform(translate3d(-50%,-50%,0) scale(0.7,0.7))
+	80%
+		+transform(translate3d(-50%,-50%,0) scale(1.1,1.1))
+	100%
+		+transform(translate3d(-50%,-50%,0) scale(1,1))
+
 
 
 body 
@@ -111,7 +124,7 @@ body
 	.select-dish
 		+posa
 		+w(100%)
-		+b($cdn+"lkk/img/page-2-select.png",$top:top,$left:center,$size:cover)
+		+b($cdn+"lkk/img/page-2-select.jpg",$top:top,$left:center,$size:cover)
 		top: 30%
 		bottom: 0%
 		overflow: hidden
@@ -144,13 +157,15 @@ body
 	.note
 		+posa
 		+tl(50%,50%)
-		+transform(translate3d(-50%,-50%,0))
 		+iw(214)
+		+animation(showNote)
 	.timer
 		+posa
 		+tl(25%,10%)
 		+iw(100)
 		+text-center
+		+animation(fadeIn)
+		+delay(2s)
 		.box
 			+posr
 			.time-text
@@ -165,8 +180,9 @@ body
 				font-size: 0
 				&.run
 					+animation(second,1s,linear,infinite)
-
 	.Bottle
+		+animation(fadeIn)
+		+delay(2s)
 		+tran($time: 0.2s)
 		+posa
 		+tr(-20%,-10%)
@@ -174,6 +190,8 @@ body
 		+iw(165)
 		transform-origin: center center
 	.road
+		+animation(fadeIn)
+		+delay(2s)
 		+posa
 		+bl(20%)
 		.dishs
@@ -205,6 +223,8 @@ body
 		.point2
 			+tr(52%,20%)
 	.score
+		+animation(fadeIn)
+		+delay(2s)
 		+posa
 		+bl(2%,50%)
 		+iw(500)
