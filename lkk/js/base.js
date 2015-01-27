@@ -484,7 +484,7 @@ app.controller('gameController', function($rootScope, $scope, $location) {
     if (tis.starFrom >= dishs.length) {
       tis.starFrom = 0;
     }
-    lostTime = 2000 - (new Date().getTime() - starTime) / 10;
+    lostTime = 2000 - (new Date().getTime() - starTime) / 50;
     item = $("<div>").addClass("item");
     if (preload.getResult("dish-" + (tis.starFrom + 1)) != null) {
       e = $(preload.getResult("dish-" + (tis.starFrom + 1)));
@@ -571,8 +571,11 @@ app.controller('ShareController', function($rootScope, $scope, $location) {
   this.getPrize = function() {
     return this.showpop = true;
   };
-  return this.close = function() {
+  this.close = function() {
     return this.showpop = false;
+  };
+  return this.regame = function() {
+    return $location.path("/game");
   };
 });
 

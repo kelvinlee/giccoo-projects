@@ -194,7 +194,7 @@ app.controller 'gameController', ($rootScope, $scope, $location)->
 		if tis.starFrom >= dishs.length
 			tis.starFrom = 0
 		# lostTime = 5000 - (new Date().getTime()-starTime)/5
-		lostTime = 2000 - (new Date().getTime()-starTime)/10
+		lostTime = 2000 - (new Date().getTime()-starTime)/50
 		item = $("<div>").addClass "item"
 		if preload.getResult("dish-#{tis.starFrom+1}")?
 			e = $ preload.getResult "dish-#{tis.starFrom+1}"
@@ -266,6 +266,8 @@ app.controller 'ShareController', ($rootScope, $scope, $location)->
 		this.showpop = true
 	this.close = ->
 		this.showpop = false
+	this.regame = ->
+		$location.path "/game"
 
 app.controller 'FormController', ($rootScope, $scope, $location, $http)->
 	$scope.formData = {}

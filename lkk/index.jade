@@ -77,11 +77,14 @@ block ng-template
 
 	script(type="text/ng-template",id="share.html")
 		div.share-page(ng-controller="ShareController as share")
-			div.bg(ng-click="share.getPrize()")
-				img(src="#{url}lkk/img/success.png")
-				.text 你击败了{{share.text}}%的网友<br/>{{share.text2}}
-				div.box
-					img(src="#{url}lkk/img/success-box.png")
+			div.bg
+				div(ng-click="share.getPrize()")
+					img(src="#{url}lkk/img/success.png")
+					.text 你击败了{{share.text}}%的网友<br/>{{share.text2}}
+					div.box
+						img(src="#{url}lkk/img/success-box.png")
+				div.restargame(ng-click="share.regame()")
+
 			div.pop(ng-show="share.showpop")
 				div.content(ng-hide="jd")
 					img(src="#{url}lkk/img/pop-form.png")
