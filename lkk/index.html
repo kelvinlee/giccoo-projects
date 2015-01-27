@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="wechat-share-hide"><img src="http://disk.giccoo.com/projects/lkk/img/share.jpg"></div>
-    <div ng-controller="MainController" class="wrap">
+    <div ng-controller="MainController" ng-hide="ori" class="wrap">
       <div class="hideView"></div>
       <div ng-view class="view-animate"></div>
       <div id="loading" class="loading loaded">
@@ -25,6 +25,7 @@
       </div>
       <div class="logo"><img src="http://disk.giccoo.com/projects/lkk/img/logo.png"></div>
     </div>
+    <div ng-show="ori" class="noteText"><span>请使用竖屏继续浏览</span></div>
     <div class="qrcode">
       <div class="text">建议您使用手机浏览</div><img src="http://disk.giccoo.com/projects/lkk/img/qr.png">
     </div>

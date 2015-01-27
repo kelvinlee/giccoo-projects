@@ -73,7 +73,7 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 ]
 # 主要加载
 app.controller 'MainController', ($rootScope, $scope, $location, $http)->
-	$rootScope.CanRun = false
+	$rootScope.CanRun = true
 	if $("body").height() <= 440
 		$("body").addClass "iphone4"
 	beginload $scope
@@ -84,6 +84,24 @@ app.controller 'MainController', ($rootScope, $scope, $location, $http)->
 	$scope.$watch "loaded", ->
 		$(".loaded").removeClass "loaded" if $scope.loaded
 	defaultShare()
+	orientationChange = ->
+		switch window.orientation
+			when 0
+				$scope.$apply ->
+					$rootScope.ori = false
+			when 90
+				$scope.$apply ->
+					$rootScope.ori = true
+			when -90
+				$scope.$apply ->
+					$rootScope.ori = true
+			else
+				$scope.$apply ->
+					$rootScope.ori = false
+
+			
+		
+	window.addEventListener (if "onorientationchange" in window then "orientationchange" else "resize"), orientationChange, false
 	
 app.controller 'gameController', ($rootScope, $scope, $location)->
 	android = if navigator.userAgent.indexOf('iPhone') > -1 then false else yes
@@ -131,6 +149,9 @@ app.controller 'gameController', ($rootScope, $scope, $location)->
 				clone = $("#drop").clone().html "<img src='#{cdn}lkk/img/game-point.png' />"
 			clone[0].addEventListener ANIMATION_END_NAME, (e)->
 				$(this).remove()
+				starUp = true
+				$scope.$apply ->
+					$scope.timer = 0
 			$(".page-game").append clone
 			clone.css
 				"top": "30%"
@@ -173,7 +194,7 @@ app.controller 'gameController', ($rootScope, $scope, $location)->
 		if tis.starFrom >= dishs.length
 			tis.starFrom = 0
 		# lostTime = 5000 - (new Date().getTime()-starTime)/5
-		lostTime = 2000
+		lostTime = 2000 - (new Date().getTime()-starTime)/10
 		item = $("<div>").addClass "item"
 		if preload.getResult("dish-#{tis.starFrom+1}")?
 			e = $ preload.getResult "dish-#{tis.starFrom+1}"

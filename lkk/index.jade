@@ -13,7 +13,7 @@ block css
 block content
 	div.wechat-share-hide
 		img(src="#{url}lkk/img/share.jpg")
-	div.wrap(ng-controller="MainController")
+	div.wrap(ng-controller="MainController",ng-hide="ori")
 		div.hideView
 		div.view-animate(ng-view)
 		div#loading.loading.loaded
@@ -24,6 +24,8 @@ block content
 					img(src="#{url}libs/img/loading-normal.png")
 		div.logo
 			img(src="#{url}lkk/img/logo.png")
+	div.noteText(ng-show="ori")
+		span 请使用竖屏继续浏览
 	div.qrcode
 		div.text 建议您使用手机浏览
 		img(src="#{url}lkk/img/qr.png")

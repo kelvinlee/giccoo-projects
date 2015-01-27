@@ -1221,3 +1221,11 @@ body {
     .share-page .pop .content .sharebtn {
       bottom: 5%;
       left: 15%; }
+
+.noteText span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  text-align: center; }
