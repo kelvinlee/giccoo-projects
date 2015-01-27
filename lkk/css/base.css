@@ -1099,7 +1099,9 @@ body {
   bottom: 0%;
   left: 0px;
   width: 100%;
-  height: 14%; }
+  height: 14%;
+  top: 86%;
+  z-index: 9; }
 .share-page .text {
   position: absolute;
   top: 17%;
