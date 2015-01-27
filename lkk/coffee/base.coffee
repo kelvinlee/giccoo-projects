@@ -245,6 +245,7 @@ app.controller 'gameController', ($rootScope, $scope, $location, $timeout)->
 
 app.controller 'ShareController', ($rootScope, $scope, $location)->
 	$rootScope.jd = false
+	this.wechat = false
 	this.showpop = false
 	this.recode = "test"
 	this.score = if $rootScope.score? then $rootScope.score else -1
@@ -270,7 +271,8 @@ app.controller 'ShareController', ($rootScope, $scope, $location)->
 		this.showpop = false
 	this.regame = ->
 		$location.path "/game"
-
+	this.showwechat = ->
+		tis.wechat = not tis.wechat
 app.controller 'FormController', ($rootScope, $scope, $location, $http)->
 	$scope.formData = {}
 	$scope.processForm = ->

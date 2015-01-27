@@ -83,7 +83,9 @@
             <div class="box"><img src="http://disk.giccoo.com/projects/lkk/img/success-box.png"></div>
           </div>
           <div ng-click="share.regame()" class="restargame"></div>
+          <div ng-click="share.showwechat()" class="sharewechat"></div>
         </div>
+        <div ng-show="share.wechat" ng-click="share.showwechat()" class="pop"><img src="http://disk.giccoo.com/projects/libs/img/wechat.png"></div>
         <div ng-show="share.showpop" class="pop">
           <div ng-hide="jd" class="content"><img src="http://disk.giccoo.com/projects/lkk/img/pop-form.png">
             <div ng-click="share.close()" class="close"><img src="http://disk.giccoo.com/projects/lkk/img/close.png"></div>

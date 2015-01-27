@@ -535,6 +535,7 @@ app.controller('gameController', function($rootScope, $scope, $location, $timeou
 app.controller('ShareController', function($rootScope, $scope, $location) {
   var tis;
   $rootScope.jd = false;
+  this.wechat = false;
   this.showpop = false;
   this.recode = "test";
   this.score = $rootScope.score != null ? $rootScope.score : -1;
@@ -563,8 +564,11 @@ app.controller('ShareController', function($rootScope, $scope, $location) {
   this.close = function() {
     return this.showpop = false;
   };
-  return this.regame = function() {
+  this.regame = function() {
     return $location.path("/game");
+  };
+  return this.showwechat = function() {
+    return tis.wechat = !tis.wechat;
   };
 });
 

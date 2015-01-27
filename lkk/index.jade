@@ -84,7 +84,9 @@ block ng-template
 					div.box
 						img(src="#{url}lkk/img/success-box.png")
 				div.restargame(ng-click="share.regame()")
-
+				div.sharewechat(ng-click="share.showwechat()")
+			div.pop(ng-show="share.wechat",ng-click="share.showwechat()")
+				img(src="#{url}libs/img/wechat.png")
 			div.pop(ng-show="share.showpop")
 				div.content(ng-hide="jd")
 					img(src="#{url}lkk/img/pop-form.png")
