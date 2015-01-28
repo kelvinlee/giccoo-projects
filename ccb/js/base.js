@@ -319,9 +319,10 @@ app = angular.module('kelvin', ["ngRoute", "ngTouch", "ngAnimate"]).config([
 ]);
 
 app.controller('MainController', function($rootScope, $scope, $location, $timeout) {
+  var audiobg;
   $scope.shakeYYY = "";
   $scope.src = "yyy";
-  $scope.soundoff = "on";
+  $scope.soundoff = "";
   if ($("body").height() <= 440) {
     $("body").addClass("iphone4");
   }
@@ -361,12 +362,25 @@ app.controller('MainController', function($rootScope, $scope, $location, $timeou
   });
   $scope.closeSound = function() {
     if ($scope.soundoff === "on") {
-      return $scope.soundoff = "off";
+      return document.getElementById("audiobg").pause();
     } else {
-      return $scope.soundoff = "on";
+      return document.getElementById("audiobg").play();
     }
   };
-  return refreshShare();
+  refreshShare();
+  if ($("#audiobg").length > 0) {
+    audiobg = document.getElementById("audiobg");
+    audiobg.addEventListener("pause", function() {
+      return $scope.$apply(function() {
+        return $scope.soundoff = "off";
+      });
+    });
+    return audiobg.addEventListener("play", function() {
+      return $scope.$apply(function() {
+        return $scope.soundoff = "on";
+      });
+    });
+  }
 });
 
 app.controller('GameController', function($rootScope, $scope, $location, $timeout) {

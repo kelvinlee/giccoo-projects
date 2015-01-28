@@ -1168,6 +1168,38 @@ html, body {
     opacity: 0;
     -webkit-transform: translate3d(-20%, 50%, 0) rotate(-180deg);
             transform: translate3d(-20%, 50%, 0) rotate(-180deg); } }
+@-webkit-keyframes showNote {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0) scale(0, 0);
+            transform: translate3d(0, 0, 0) scale(0, 0); }
+  50% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.3, 1.3);
+            transform: translate3d(0, 0, 0) scale(1.3, 1.3); }
+  70% {
+    -webkit-transform: translate3d(0, 0, 0) scale(0.7, 0.7);
+            transform: translate3d(0, 0, 0) scale(0.7, 0.7); }
+  80% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.1, 1.1);
+            transform: translate3d(0, 0, 0) scale(1.1, 1.1); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
+            transform: translate3d(0, 0, 0) scale(1, 1); } }
+@keyframes showNote {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0) scale(0, 0);
+            transform: translate3d(0, 0, 0) scale(0, 0); }
+  50% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.3, 1.3);
+            transform: translate3d(0, 0, 0) scale(1.3, 1.3); }
+  70% {
+    -webkit-transform: translate3d(0, 0, 0) scale(0.7, 0.7);
+            transform: translate3d(0, 0, 0) scale(0.7, 0.7); }
+  80% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.1, 1.1);
+            transform: translate3d(0, 0, 0) scale(1.1, 1.1); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
+            transform: translate3d(0, 0, 0) scale(1, 1); } }
 .wrap, .view-animate {
   height: 100%; }
 
@@ -1199,6 +1231,18 @@ html, body {
     -webkit-transform: scale(0, 0);
         -ms-transform: scale(0, 0);
             transform: scale(0, 0);
+    opacity: 0; }
+
+.pagechange {
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+  .pagechange.ng-hide-remove {
+    opacity: 0; }
+  .pagechange.ng-hide-remove-active {
+    opacity: 1; }
+  .pagechange.ng-hide-add {
+    opacity: 1; }
+  .pagechange.ng-hide-add-active {
     opacity: 0; }
 
 .homepage {
@@ -1548,16 +1592,21 @@ html, body {
   height: 100%;
   background-color: #e4001d; }
   .game-page .weiban {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     width: 100%;
     height: 100%;
-    background: url("cdn/ccb/img/weiban.jpg") no-repeat center center;
+    background: url("http://disk.giccoo.com/projects/ccb/img/weiban.jpg") no-repeat center center;
     background-size: contain;
     background-color: #e4001d; }
   .game-page .game {
     width: 100%;
     height: 100%; }
   .game-page .gameOver {
-    position: relative;
+    position: absolute;
+    top: 0px;
+    left: 0px;
     width: 100%;
     height: 100%;
     color: #d4b251; }
@@ -1596,11 +1645,35 @@ html, body {
       padding-top: 15%;
       font-size: 1rem; }
   .game-page .gameStar {
-    position: relative;
+    position: absolute;
+    top: 0px;
+    left: 0px;
     width: 100%;
     height: 100%; }
     .game-page .gameStar .title {
-      padding-top: 10%; }
+      position: relative;
+      top: 10%;
+      overflow: hidden; }
+      .game-page .gameStar .title .normal {
+        -webkit-animation: fadeIn 1s ease;
+                animation: fadeIn 1s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: initial;
+                animation-iteration-count: initial; }
+      .game-page .gameStar .title .special {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        -webkit-animation: showNote 1s linear;
+                animation: showNote 1s linear;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: initial;
+                animation-iteration-count: initial;
+        -webkit-transform-origin: center center;
+            -ms-transform-origin: center center;
+                transform-origin: center center; }
     .game-page .gameStar .subtitle {
       padding-top: 20%; }
     .game-page .gameStar .logo {
@@ -1608,7 +1681,9 @@ html, body {
       bottom: 0px;
       left: 0px; }
   .game-page .gameCanvas {
-    position: relative;
+    position: absolute;
+    top: 0px;
+    left: 0px;
     width: 100%;
     height: 100%; }
     .game-page .gameCanvas .timer, .game-page .gameCanvas .score {
