@@ -24,12 +24,12 @@ block content
 		
 	div.qrcode
 		div.text 建议您使用手机浏览
-		img(src="#{url}ccb/img/qr.jpg")
+		img(src="#{url}ccb/img/qr.png")
 
 
 block ng-template
-	- var cdn = "/ccb/";
 	script(type="text/ng-template",id="home.html")
+		audio#audiobg(src="#{url}ccb/mp3/audio-bg.mp3",autoplay,loop)
 		.homepage(ng-show="starPage")
 			.bg
 				.move
@@ -53,24 +53,27 @@ block ng-template
 					img(src="#{url}ccb/img/icon-sound.png")
 	script(type="text/ng-template",id="game.html")
 		.game-page(ng-controller="GameController as game")
-			.weiban(ng-show="game.weiban",ng-click="game.hideweiban()")
+			.weiban.pagechange(ng-show="game.weiban",ng-click="game.hideweiban()")
 			.game(ng-hide="game.weiban")
-				.gameStar(ng-hide="game.gameBegin")
+				.gameStar.pagechange(ng-hide="game.gameBegin")
 					.title
-						img(src="#{url}ccb/img/title.jpg")
+						.normal
+							img(src="#{url}ccb/img/title.jpg")
+						.special
+							img(src="#{url}ccb/img/title-zhua.png")
 					.subtitle
 						img(src="#{url}ccb/img/subtitle.jpg")
 					.star(ng-click="game.gameStar()")
 						img(src="#{url}ccb/img/starbtn.jpg")
 					.logo
 						img(src="#{url}ccb/img/logo.jpg")
-				.gameCanvas(ng-show="game.gameBegin && !gameOver")
+				.gameCanvas.pagechange(ng-show="game.gameBegin && !gameOver")
 					//- .text Game Star
 					.timer 剩余时间: {{game.timer}}秒
 					.score {{game.score}} 元
 					.item(ng-class="item.class",ng-style="item.style",ng-click="game.hitYYY(key)",ng-repeat="(key,item) in game.items")
 						img(ng-src="#{url}ccb/img/{{item.name}}.png")
-				.gameOver(ng-show="gameOver")
+				.gameOver.pagechange(ng-show="gameOver")
 					//- .text Game Over
 					.title
 						h1 太厉害了
@@ -83,13 +86,12 @@ block ng-template
 						div.regame(ng-click="game.regame()")
 					.logo
 						img(src="#{url}ccb/img/logo.jpg")
-			.wechat(ng-show="game.wechat",ng-click="game.showShare()")
+			.wechat.pagechange(ng-show="game.wechat",ng-click="game.showShare()")
 
 
 
 block js
 	- var debug = ".min"
-	- var cdn = "";
 	//- - debug = ""
 	script(src="#{url}libs/js/min/Zepto.min.js",type="text/javascript")
 	script(src="#{url}libs/js/min/angular.min.js",type="text/javascript")

@@ -7,6 +7,8 @@
 
 # load list
 cdn = "http://disk.giccoo.com/projects"
+# cdn = ""
+
 loadList = [
 	{id: "logo", src:"#{cdn}/libs/img/loading.png"}
 	{id: "bg", src: "#{cdn}/ccb/img/bg.jpg"}
@@ -15,7 +17,6 @@ loadList = [
 	{id: "y1", src: "#{cdn}/ccb/img/y1.png"}
 	{id: "y2", src: "#{cdn}/ccb/img/y2.png"}
 ]
-
 
 _wechat_f = 
 	"appid": ""
@@ -60,7 +61,7 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 	$scope.shakeYYY = ""
 	$scope.src = "yyy"
-	$scope.soundoff = "on"
+	$scope.soundoff = ""
 	if $("body").height() <= 440
 		$("body").addClass "iphone4"
 	beginload $scope,()->
@@ -88,10 +89,24 @@ app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 						# $scope.
 	$scope.closeSound = ->
 		if $scope.soundoff is "on"
-			$scope.soundoff = "off"
+			document.getElementById("audiobg").pause()
+			# $scope.soundoff = "off"
 		else
-			$scope.soundoff = "on"
+			document.getElementById("audiobg").play()
+			# $scope.soundoff = "on"
+
 	refreshShare()
+	if $("#audiobg").length > 0
+		audiobg = document.getElementById("audiobg")
+		audiobg.addEventListener "pause", ()->
+			# alert "已经暂停"
+			$scope.$apply ->
+				$scope.soundoff = "off"
+		audiobg.addEventListener "play", ()->
+			# alert "开始播放"
+			$scope.$apply ->
+				$scope.soundoff = "on"
+
 	
 
 app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
