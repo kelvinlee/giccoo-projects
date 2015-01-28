@@ -453,13 +453,19 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
     }, 300);
   };
   this.hitYYY = function(e) {
-    var dom;
+    var audio, dom;
     dom = tis.items[e];
     if (dom.name === "y") {
       delete tis.items[e];
-      return tis.score += 100;
+      tis.score += 100;
+      audio = document.getElementById("audiocoin");
+      audio.currentTime = 0;
+      return audio.play();
     } else {
-      return $scope.gameOver = true;
+      $scope.gameOver = true;
+      audio = document.getElementById("audioyyy");
+      audio.currentTime = 0;
+      return audio.play();
     }
   };
   this.regame = function() {

@@ -166,8 +166,14 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 		if dom.name is "y"
 			delete tis.items[e]
 			tis.score += 100
+			audio = document.getElementById "audiocoin"
+			audio.currentTime = 0
+			audio.play()
 		else
 			$scope.gameOver = true
+			audio = document.getElementById "audioyyy"
+			audio.currentTime = 0
+			audio.play()
 	this.regame = ->
 		$location.path "/"
 	this.showShare = ->

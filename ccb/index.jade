@@ -53,6 +53,8 @@ block ng-template
 					img(src="#{url}ccb/img/icon-sound.png")
 	script(type="text/ng-template",id="game.html")
 		.game-page(ng-controller="GameController as game")
+			audio#audioyyy(src="#{url}ccb/mp3/audio-yyy.mp3")
+			audio#audiocoin(src="#{url}ccb/mp3/audio-coin.mp3")
 			.weiban.pagechange(ng-show="game.weiban",ng-click="game.hideweiban()")
 			.game(ng-hide="game.weiban")
 				.gameStar.pagechange(ng-hide="game.gameBegin")
