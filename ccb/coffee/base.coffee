@@ -12,6 +12,8 @@ cdn = "http://disk.giccoo.com/projects"
 loadList = [
 	{id: "logo", src:"#{cdn}/libs/img/loading.png"}
 	{id: "bg", src: "#{cdn}/ccb/img/bg.jpg"}
+	{id: "river1", src: "#{cdn}/ccb/img/river1.png"}
+	{id: "river2", src: "#{cdn}/ccb/img/river2.png"}
 	{id: "btn-pass", src: "#{cdn}/ccb/img/btn-pass.png"}
 	{id: "icon-sound", src: "#{cdn}/ccb/img/icon-sound.png"}
 	{id: "y1", src: "#{cdn}/ccb/img/y1.png"}
@@ -38,6 +40,8 @@ _wechat =
 hosts = "http://g.giccoo.com"
 
 refreshShare = (title,desc)->
+	_wechat.title = title
+	_wechat_f.title = title
 	reloadWechat()
 
 
@@ -61,7 +65,7 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 	$scope.shakeYYY = ""
 	$scope.src = "yyy"
-	$scope.soundoff = ""
+	$scope.soundoff = "off"
 	if $("body").height() <= 440
 		$("body").addClass "iphone4"
 	beginload $scope,()->
@@ -75,14 +79,15 @@ app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 			$scope.starPage = true
 			if $(".move").length>0
 				$(".move")[0].addEventListener ANIMATION_END_NAME, (e)->
+					return false if $(e.target).is(".river1") or $(e.target).is(".river2")
 					$scope.$apply ->
 						$scope.shakeYYY = "shakeAll"
 						$timeout ->
 							$scope.src = "yy"
-						,100
+						,50
 						$timeout ->
 							$scope.src = "y"
-						,500
+						,200
 						$timeout ->
 							$location.path "/game"
 						,2000
@@ -95,7 +100,15 @@ app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 			document.getElementById("audiobg").play()
 			# $scope.soundoff = "on"
 
-	refreshShare()
+	if $(".river").length > 0
+		$scope.river = ""
+		$scope.runRiver = ->
+			$timeout ->
+				$scope.river = if $scope.river is "" then "on" else ""
+				$scope.runRiver()
+			,300
+		$scope.runRiver()
+	# refreshShare()
 	if $("#audiobg").length > 0
 		audiobg = document.getElementById("audiobg")
 		audiobg.addEventListener "pause", ()->
@@ -126,6 +139,17 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 		height: $("body").height()
 	}
 	this.items = {}
+	$(document).on "touchstart",".item", (evt)->
+		# console.log "??"
+	# $(".gameCanvas .item").on "touchstart", (evt)->
+		evt.preventDefault()
+		lifeName = $(this).data "key"
+		# console.log lifeName
+		# $(this).hide()
+		$scope.$apply ->
+			# console.log "非堵塞"
+			delete tis.hitYYY lifeName
+
 	this.hideweiban = ->
 		this.weiban = false
 	this.gameStar = ->
@@ -139,32 +163,43 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 		n = (new Date().getTime() - this.starTime)/1000
 		this.timer = timeLife - parseInt n
 		if n >= timeLife
-			$scope.gameOver = true
+			# $scope.gameOver = true
 			return "over"
 		$timeout ->
 			tis.checkTime()
 		,200
 	this.putYYY = ->
 		data = {name:"y",class:"y",style:{top:"100px",left:"100px"}}
-		if parseInt(Math.random()*3) is 0
+		if parseInt(Math.random()*2) is 0
 			data.name = "yyy"
 			data.class = "yyy"
-		data.style.top = (30+parseInt(Math.random()*(mubu.height)*0.8))+"px"
-		data.style.left = parseInt(Math.random()*(mubu.width)*0.9)+"px"
+		data.style.top = "-80px"
+		data.style.left = parseInt(Math.random()*(mubu.width)*0.8)+"px"
+		max = 600
+		min = 300
 		$timeout ->
 			return false if $scope.gameOver
 			lifeName = parseInt(Math.random()*10000)
 			tis.items[lifeName] = data
 			tis.putYYY()
+			# console.log $(".gameCanvas .item").length
 			$timeout ->
 				delete tis.items[lifeName]
-			,10000
-		,300
+				setTimeout ->
+					if $(".item-#{lifeName}.y").length > 0
+						# console.log "钱掉了",$(".item-#{lifeName}.y").attr "class"
+						$scope.$apply ->
+							$scope.gameOver = true
+					$(".item-#{lifeName}").remove()
+				,10
+			,4900
+		,parseInt(Math.random()*(max-min)+min)
 	this.hitYYY = (e)->
 		# console.log e,tis.items[e]
 		dom = tis.items[e]
 		if dom.name is "y"
 			delete tis.items[e]
+			setTimeout -> $(".item-#{e}").remove()
 			tis.score += 100
 			audio = document.getElementById "audiocoin"
 			audio.currentTime = 0
@@ -187,7 +222,8 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 			tis.Transcend = 99
 		else if tis.Transcend <= 0
 			tis.Transcend = 1
-		refreshShare ""
+		if $scope.gameOver
+			refreshShare "我抓到#{tis.score/100}只￥财！你也来试试手气吧！"
 
 
 

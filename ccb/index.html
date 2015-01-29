@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>羊年抓羊财</title>
+    <title>羊年快来抓￥财，羊年亨通升官发财！</title>
     <link rel="stylesheet" href="/ccb/css/base.css">
     <script>
       function showLoad() {
@@ -36,8 +36,16 @@
     <script type="text/ng-template" id="home.html">
       <audio id="audiobg" src="http://disk.giccoo.com/projects/ccb/mp3/audio-bg.mp3" autoplay loop></audio>
       <div ng-show="starPage" class="homepage">
+        <div class="ctrlPage"><a href="#/game" class="pass"><img src="http://disk.giccoo.com/projects/ccb/img/btn-pass.png"></a>
+          <div ng-click="closeSound()" ng-class="soundoff" class="sound"><img src="http://disk.giccoo.com/projects/ccb/img/icon-sound.png"></div>
+        </div>
         <div class="bg">
-          <div class="move"><img src="http://disk.giccoo.com/projects/ccb/img/bg.jpg" class="bgimg"></div>
+          <div class="move"><img src="http://disk.giccoo.com/projects/ccb/img/bg.jpg" class="bgimg">
+            <div ng-class="river" class="river">
+              <div class="river1"><img src="http://disk.giccoo.com/projects/ccb/img/river1.png" class="bgimg"></div>
+              <div class="river2"><img src="http://disk.giccoo.com/projects/ccb/img/river2.png" class="bgimg"></div>
+            </div>
+          </div>
         </div>
         <div class="mubus">
           <div ng-class="shakeYYY" class="mubu">
@@ -142,15 +150,12 @@
             </div>
           </div>
         </div>
-        <div class="ctrlPage"><a href="#/game" class="pass"><img src="http://disk.giccoo.com/projects/ccb/img/btn-pass.png"></a>
-          <div ng-click="closeSound()" ng-class="soundoff" class="sound"><img src="http://disk.giccoo.com/projects/ccb/img/icon-sound.png"></div>
-        </div>
       </div>
     </script>
     <script type="text/ng-template" id="game.html">
       <div ng-controller="GameController as game" class="game-page">
-        <audio id="audioyyy" src="http://disk.giccoo.com/projects/ccb/mp3/audio-yyy.mp3"></audio>
-        <audio id="audiocoin" src="http://disk.giccoo.com/projects/ccb/mp3/audio-coin.mp3"></audio>
+        <audio id="audioyyy" src="http://disk.giccoo.com/projects/ccb/mp3/audio-yyy.mp3" preload="auto"></audio>
+        <audio id="audiocoin" src="http://disk.giccoo.com/projects/ccb/mp3/audio-coin.mp3" preload="auto"></audio>
         <div ng-show="game.weiban" ng-click="game.hideweiban()" class="weiban pagechange"></div>
         <div ng-hide="game.weiban" class="game">
           <div ng-hide="game.gameBegin" class="gameStar pagechange">
@@ -163,9 +168,9 @@
             <div class="logo"><img src="http://disk.giccoo.com/projects/ccb/img/logo.jpg"></div>
           </div>
           <div ng-show="game.gameBegin &amp;&amp; !gameOver" class="gameCanvas pagechange">
-            <div class="timer">剩余时间: {{game.timer}}秒</div>
-            <div class="score">{{game.score}} 元</div>
-            <div ng-class="item.class" ng-style="item.style" ng-click="game.hitYYY(key)" ng-repeat="(key,item) in game.items" class="item"><img ng-src="http://disk.giccoo.com/projects/ccb/img/{{item.name}}.png"></div>
+            <div class="score">{{game.score}} 元 </div>
+            <div ng-class="item.class" ng-style="item.style" data-key="{{key}}" ng-repeat="(key,item) in game.items" class="item item-{{key}}">
+            </div>
           </div>
           <div ng-show="gameOver" class="gameOver pagechange">
             <div class="title">

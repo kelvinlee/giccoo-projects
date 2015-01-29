@@ -262,6 +262,12 @@ loadList = [
     id: "bg",
     src: "" + cdn + "/ccb/img/bg.jpg"
   }, {
+    id: "river1",
+    src: "" + cdn + "/ccb/img/river1.png"
+  }, {
+    id: "river2",
+    src: "" + cdn + "/ccb/img/river2.png"
+  }, {
     id: "btn-pass",
     src: "" + cdn + "/ccb/img/btn-pass.png"
   }, {
@@ -299,6 +305,8 @@ _wechat = {
 hosts = "http://g.giccoo.com";
 
 refreshShare = function(title, desc) {
+  _wechat.title = title;
+  _wechat_f.title = title;
   return reloadWechat();
 };
 
@@ -322,7 +330,7 @@ app.controller('MainController', function($rootScope, $scope, $location, $timeou
   var audiobg;
   $scope.shakeYYY = "";
   $scope.src = "yyy";
-  $scope.soundoff = "";
+  $scope.soundoff = "off";
   if ($("body").height() <= 440) {
     $("body").addClass("iphone4");
   }
@@ -344,14 +352,17 @@ app.controller('MainController', function($rootScope, $scope, $location, $timeou
       $scope.starPage = true;
       if ($(".move").length > 0) {
         return $(".move")[0].addEventListener(ANIMATION_END_NAME, function(e) {
+          if ($(e.target).is(".river1") || $(e.target).is(".river2")) {
+            return false;
+          }
           return $scope.$apply(function() {
             $scope.shakeYYY = "shakeAll";
             $timeout(function() {
               return $scope.src = "yy";
-            }, 100);
+            }, 50);
             $timeout(function() {
               return $scope.src = "y";
-            }, 500);
+            }, 200);
             return $timeout(function() {
               return $location.path("/game");
             }, 2000);
@@ -367,7 +378,16 @@ app.controller('MainController', function($rootScope, $scope, $location, $timeou
       return document.getElementById("audiobg").play();
     }
   };
-  refreshShare();
+  if ($(".river").length > 0) {
+    $scope.river = "";
+    $scope.runRiver = function() {
+      return $timeout(function() {
+        $scope.river = $scope.river === "" ? "on" : "";
+        return $scope.runRiver();
+      }, 300);
+    };
+    $scope.runRiver();
+  }
   if ($("#audiobg").length > 0) {
     audiobg = document.getElementById("audiobg");
     audiobg.addEventListener("pause", function() {
@@ -401,6 +421,14 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
     height: $("body").height()
   };
   this.items = {};
+  $(document).on("touchstart", ".item", function(evt) {
+    var lifeName;
+    evt.preventDefault();
+    lifeName = $(this).data("key");
+    return $scope.$apply(function() {
+      return delete tis.hitYYY(lifeName);
+    });
+  });
   this.hideweiban = function() {
     return this.weiban = false;
   };
@@ -416,7 +444,6 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
     n = (new Date().getTime() - this.starTime) / 1000;
     this.timer = timeLife - parseInt(n);
     if (n >= timeLife) {
-      $scope.gameOver = true;
       return "over";
     }
     return $timeout(function() {
@@ -424,7 +451,7 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
     }, 200);
   };
   this.putYYY = function() {
-    var data;
+    var data, max, min;
     data = {
       name: "y",
       "class": "y",
@@ -433,12 +460,14 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
         left: "100px"
       }
     };
-    if (parseInt(Math.random() * 3) === 0) {
+    if (parseInt(Math.random() * 2) === 0) {
       data.name = "yyy";
       data["class"] = "yyy";
     }
-    data.style.top = (30 + parseInt(Math.random() * mubu.height * 0.8)) + "px";
-    data.style.left = parseInt(Math.random() * mubu.width * 0.9) + "px";
+    data.style.top = "-80px";
+    data.style.left = parseInt(Math.random() * mubu.width * 0.8) + "px";
+    max = 600;
+    min = 300;
     return $timeout(function() {
       var lifeName;
       if ($scope.gameOver) {
@@ -448,15 +477,26 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
       tis.items[lifeName] = data;
       tis.putYYY();
       return $timeout(function() {
-        return delete tis.items[lifeName];
-      }, 10000);
-    }, 300);
+        delete tis.items[lifeName];
+        return setTimeout(function() {
+          if ($(".item-" + lifeName + ".y").length > 0) {
+            $scope.$apply(function() {
+              return $scope.gameOver = true;
+            });
+          }
+          return $(".item-" + lifeName).remove();
+        }, 10);
+      }, 4900);
+    }, parseInt(Math.random() * (max - min) + min));
   };
   this.hitYYY = function(e) {
     var audio, dom;
     dom = tis.items[e];
     if (dom.name === "y") {
       delete tis.items[e];
+      setTimeout(function() {
+        return $(".item-" + e).remove();
+      });
       tis.score += 100;
       audio = document.getElementById("audiocoin");
       audio.currentTime = 0;
@@ -485,6 +525,8 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
     } else if (tis.Transcend <= 0) {
       tis.Transcend = 1;
     }
-    return refreshShare("");
+    if ($scope.gameOver) {
+      return refreshShare("我抓到" + (tis.score / 100) + "只￥财！你也来试试手气吧！");
+    }
   });
 });

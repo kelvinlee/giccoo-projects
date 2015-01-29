@@ -1,7 +1,7 @@
 extends ../libs/jade/layout-ng
 
 block title
-	| 羊年抓羊财
+	| 羊年快来抓￥财，羊年亨通升官发财！
 block css
 	link(rel="stylesheet",href="/ccb/css/base.css")
 	script.
@@ -31,9 +31,19 @@ block ng-template
 	script(type="text/ng-template",id="home.html")
 		audio#audiobg(src="#{url}ccb/mp3/audio-bg.mp3",autoplay,loop)
 		.homepage(ng-show="starPage")
+			.ctrlPage
+				a.pass(href="#/game")
+					img(src="#{url}ccb/img/btn-pass.png")
+				.sound(ng-click="closeSound()",ng-class="soundoff")
+					img(src="#{url}ccb/img/icon-sound.png")
 			.bg
 				.move
 					img.bgimg(src="#{url}ccb/img/bg.jpg")
+					.river(ng-class="river")
+						.river1
+							img.bgimg(src="#{url}ccb/img/river1.png")
+						.river2
+							img.bgimg(src="#{url}ccb/img/river2.png")
 			.mubus
 				.mubu(ng-class="shakeYYY")
 					-for (var i=0;i<11;i++)
@@ -46,15 +56,11 @@ block ng-template
 									img(src="#{url}ccb/img/y1.png")
 								.y2
 									img(src="#{url}ccb/img/y2.png")
-			.ctrlPage
-				a.pass(href="#/game")
-					img(src="#{url}ccb/img/btn-pass.png")
-				.sound(ng-click="closeSound()",ng-class="soundoff")
-					img(src="#{url}ccb/img/icon-sound.png")
+			
 	script(type="text/ng-template",id="game.html")
 		.game-page(ng-controller="GameController as game")
-			audio#audioyyy(src="#{url}ccb/mp3/audio-yyy.mp3")
-			audio#audiocoin(src="#{url}ccb/mp3/audio-coin.mp3")
+			audio#audioyyy(src="#{url}ccb/mp3/audio-yyy.mp3",preload="auto")
+			audio#audiocoin(src="#{url}ccb/mp3/audio-coin.mp3",preload="auto")
 			.weiban.pagechange(ng-show="game.weiban",ng-click="game.hideweiban()")
 			.game(ng-hide="game.weiban")
 				.gameStar.pagechange(ng-hide="game.gameBegin")
@@ -71,10 +77,10 @@ block ng-template
 						img(src="#{url}ccb/img/logo.jpg")
 				.gameCanvas.pagechange(ng-show="game.gameBegin && !gameOver")
 					//- .text Game Star
-					.timer 剩余时间: {{game.timer}}秒
-					.score {{game.score}} 元
-					.item(ng-class="item.class",ng-style="item.style",ng-click="game.hitYYY(key)",ng-repeat="(key,item) in game.items")
-						img(ng-src="#{url}ccb/img/{{item.name}}.png")
+					//- .timer 剩余时间: {{game.timer}}秒
+					.score {{game.score}} 元 
+					.item(class="item-{{key}}",ng-class="item.class",ng-style="item.style",data-key="{{key}}",ng-repeat="(key,item) in game.items")
+						//- img(ng-src="#{url}ccb/img/{{item.name}}.png")
 				.gameOver.pagechange(ng-show="gameOver")
 					//- .text Game Over
 					.title
