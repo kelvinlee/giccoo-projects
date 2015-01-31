@@ -46,8 +46,8 @@ _wechat =
 hosts = "http://g.giccoo.com"
 
 refreshShare = (title,desc)->
-	_wechat.title = "我用财神耗油完成了#{title}盘菜，打败了#{desc}%的人，不服来战！"
-	_wechat_f.title = "我用财神耗油完成了#{title}盘菜，打败了#{desc}%的人，不服来战！"
+	_wechat.title = "我用财神蚝油完成了#{title}盘菜，打败了#{desc}%的人，不服来战！"
+	_wechat_f.title = "我用财神蚝油完成了#{title}盘菜，打败了#{desc}%的人，不服来战！"
 	reloadWechat()
 defaultShare = ->
 	_wechat.title = "李锦记新春接财神！羊年到，财神到，美味齐来到！"

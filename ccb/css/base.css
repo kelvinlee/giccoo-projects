@@ -601,6 +601,62 @@ img {
     opacity: 0.5; }
   30%,100% {
     opacity: 1; } }
+@-webkit-keyframes slideToTop {
+  from {
+    -webkit-transform: translate3d(0, 1000px, 0);
+            transform: translate3d(0, 1000px, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@keyframes slideToTop {
+  from {
+    -webkit-transform: translate3d(0, 1000px, 0);
+            transform: translate3d(0, 1000px, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes slideToBottom {
+  from {
+    -webkit-transform: translate3d(0, -1000px, 0);
+            transform: translate3d(0, -1000px, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@keyframes slideToBottom {
+  from {
+    -webkit-transform: translate3d(0, -1000px, 0);
+            transform: translate3d(0, -1000px, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes slideToLeft {
+  from {
+    -webkit-transform: translate3d(0, 700px, 0);
+            transform: translate3d(0, 700px, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@keyframes slideToLeft {
+  from {
+    -webkit-transform: translate3d(0, 700px, 0);
+            transform: translate3d(0, 700px, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes slideToRight {
+  from {
+    -webkit-transform: translate3d(0, -700px, 0);
+            transform: translate3d(0, -700px, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@keyframes slideToRight {
+  from {
+    -webkit-transform: translate3d(0, -700px, 0);
+            transform: translate3d(0, -700px, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
 .slider-normal {
   overflow: hidden; }
   .slider-normal .slide-normal-group {
