@@ -309,8 +309,8 @@ refreshShare = function(title, desc) {
 };
 
 defaultShare = function() {
-  _wechat.title = "新春送财神，过个滋味年！";
-  _wechat_f.title = "新春送财神，过个滋味年！";
+  _wechat.title = "李锦记新春接财神！羊年到，财神到，美味齐来到！";
+  _wechat_f.title = "李锦记新春接财神！羊年到，财神到，美味齐来到！";
   return reloadWechat();
 };
 
