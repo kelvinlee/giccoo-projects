@@ -115,6 +115,9 @@ app.controller 'gameController', ($rootScope, $scope, $location, $timeout)->
 	$scope.timer = 20
 	$scope.run = "run"
 	$("#dishs").html ""
+	this.anim = {}
+	window.cancelAnimationFrame this.anim
+	window.cancelAnimationFrame this._checkDrop
 	this.choose = (i)->
 		this.starFrom = i - 1
 		this.gameStar = true
@@ -191,7 +194,7 @@ app.controller 'gameController', ($rootScope, $scope, $location, $timeout)->
 		if new Date().getTime()-newdish > 1200
 			newdish = new Date().getTime()
 			addNewDish()
-		window.requestAnimationFrame tis._checkDrop	if not starUp and $rootScope.CanRun
+		tis.anim = window.requestAnimationFrame tis._checkDrop	if not starUp and $rootScope.CanRun
 	addNewDish = ->
 		if tis.starFrom >= dishs.length
 			tis.starFrom = 0

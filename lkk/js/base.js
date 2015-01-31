@@ -382,6 +382,9 @@ app.controller('gameController', function($rootScope, $scope, $location, $timeou
   $scope.timer = 20;
   $scope.run = "run";
   $("#dishs").html("");
+  this.anim = {};
+  window.cancelAnimationFrame(this.anim);
+  window.cancelAnimationFrame(this._checkDrop);
   this.choose = function(i) {
     this.starFrom = i - 1;
     this.gameStar = true;
@@ -465,7 +468,7 @@ app.controller('gameController', function($rootScope, $scope, $location, $timeou
       addNewDish();
     }
     if (!starUp && $rootScope.CanRun) {
-      return window.requestAnimationFrame(tis._checkDrop);
+      return tis.anim = window.requestAnimationFrame(tis._checkDrop);
     }
   };
   addNewDish = function() {
