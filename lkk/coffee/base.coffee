@@ -50,8 +50,8 @@ refreshShare = (title,desc)->
 	_wechat_f.title = "我用李锦记财神蚝油完成了#{title}盘菜，打败了#{desc}%的好友！"
 	reloadWechat()
 defaultShare = ->
-	_wechat.title = "李锦记新春接财神！羊年到，财神到，美味齐来到！"
-	_wechat_f.title = "李锦记新春接财神！羊年到，财神到，美味齐来到！"
+	_wechat.title = "李锦记新春接财神！羊年到，财神到，美味立刻到！"
+	_wechat_f.title = "李锦记新春接财神！羊年到，财神到，美味立刻到！"
 	reloadWechat()
 
 

@@ -1361,6 +1361,9 @@ body {
     .share-page .pop .content .sharebtn {
       bottom: 5%;
       left: 15%; }
+    .share-page .pop .content .yhm {
+      width: 4rem;
+      height: 4rem; }
 
 .noteText span {
   position: absolute;
