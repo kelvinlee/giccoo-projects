@@ -54,6 +54,7 @@ defaultShare = ->
 	_wechat_f.title = "李锦记新春接财神！羊年到，财神到，美味立刻到！"
 	reloadWechat()
 
+_anim = {}
 
 app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 .config ["$routeProvider", "$locationProvider" ,($routeProvider, $locationProvider)->
@@ -99,9 +100,8 @@ app.controller 'MainController', ($rootScope, $scope, $location, $http)->
 				$scope.$apply ->
 					$rootScope.ori = false
 
-			
-		
 	window.addEventListener (if "onorientationchange" in window then "orientationchange" else "resize"), orientationChange, false
+	window.cancelAnimationFrame _anim
 	
 app.controller 'gameController', ($rootScope, $scope, $location, $timeout)->
 	android = if navigator.userAgent.indexOf('iPhone') > -1 then false else yes
@@ -116,8 +116,7 @@ app.controller 'gameController', ($rootScope, $scope, $location, $timeout)->
 	$scope.run = "run"
 	$("#dishs").html ""
 	this.anim = {}
-	window.cancelAnimationFrame this.anim
-	window.cancelAnimationFrame this._checkDrop
+	
 	this.choose = (i)->
 		this.starFrom = i - 1
 		this.gameStar = true
@@ -193,9 +192,9 @@ app.controller 'gameController', ($rootScope, $scope, $location, $timeout)->
 		checkHit()
 		if new Date().getTime()-newdish > 1200
 			newdish = new Date().getTime()
-			addNewDish()
-		tis.anim = window.requestAnimationFrame tis._checkDrop	if not starUp and $rootScope.CanRun
-	addNewDish = ->
+			tis.addNewDish()
+		_anim = window.requestAnimationFrame tis._checkDrop	if not starUp and $rootScope.CanRun
+	this.addNewDish = ->
 		if tis.starFrom >= dishs.length
 			tis.starFrom = 0
 		# lostTime = 5000 - (new Date().getTime()-starTime)/5
@@ -245,6 +244,8 @@ app.controller 'gameController', ($rootScope, $scope, $location, $timeout)->
 			# console.log "Game over"
 	# $("#Bottle").attr "moved","true"
 	backtoNormal()
+	window.cancelAnimationFrame _anim
+	window.cancelAnimationFrame this._checkDrop
 
 app.controller 'ShareController', ($rootScope, $scope, $location)->
 	$rootScope.jd = false

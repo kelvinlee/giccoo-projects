@@ -631,29 +631,29 @@ img {
             transform: translate3d(0, 0, 0); } }
 @-webkit-keyframes slideToLeft {
   from {
-    -webkit-transform: translate3d(0, 700px, 0);
-            transform: translate3d(0, 700px, 0); }
+    -webkit-transform: translate3d(700px, 0, 0);
+            transform: translate3d(700px, 0, 0); }
   to {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
 @keyframes slideToLeft {
   from {
-    -webkit-transform: translate3d(0, 700px, 0);
-            transform: translate3d(0, 700px, 0); }
+    -webkit-transform: translate3d(700px, 0, 0);
+            transform: translate3d(700px, 0, 0); }
   to {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
 @-webkit-keyframes slideToRight {
   from {
-    -webkit-transform: translate3d(0, -700px, 0);
-            transform: translate3d(0, -700px, 0); }
+    -webkit-transform: translate3d(-700px, 0, 0);
+            transform: translate3d(-700px, 0, 0); }
   to {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
 @keyframes slideToRight {
   from {
-    -webkit-transform: translate3d(0, -700px, 0);
-            transform: translate3d(0, -700px, 0); }
+    -webkit-transform: translate3d(-700px, 0, 0);
+            transform: translate3d(-700px, 0, 0); }
   to {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
