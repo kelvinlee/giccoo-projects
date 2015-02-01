@@ -112,7 +112,7 @@ app.controller 'gameController', ($rootScope, $scope, $location, $timeout)->
 	this.dish = true
 	this.starFrom = 0
 	$scope.score = 0
-	$scope.timer = 20
+	$scope.timer = 15
 	$scope.run = "run"
 	$("#dishs").html ""
 	this.anim = {}
@@ -230,7 +230,7 @@ app.controller 'gameController', ($rootScope, $scope, $location, $timeout)->
 						return true
 		setTimeout ->
 			$scope.$apply ->
-				$scope.timer = parseInt (21000 - (new Date().getTime()-starTime))/1000
+				$scope.timer = parseInt (16000 - (new Date().getTime()-starTime))/1000
 				if $scope.timer <= 0
 					starUp = true
 		,0
@@ -257,12 +257,12 @@ app.controller 'ShareController', ($rootScope, $scope, $location)->
 		$location.path "/"
 		return false
 	else
-		this.text = parseInt (this.score/1900)*100
+		this.text = parseInt (this.score/1300)*100
 		if this.text >= 100
 			this.text = 99
 		if this.text <= 0
 			this.text = 1
-		if this.text > 50
+		if this.text > 40
 			this.text2 = "你是接财神的高手"
 		else
 			this.text2 = "要不要再试一次?"
