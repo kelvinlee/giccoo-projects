@@ -189,9 +189,10 @@ app.controller 'shareController', ($rootScope, $scope, $location)->
 
 	defaultShare "【我是#{this.text}！】有胆吗？来测你的范儿！"
 	BindShare "【我是#{this.text}！】有胆吗？来测你的范儿！","http://m.giccoo.com/crown/","http://m.giccoo.com/crown/img/share.jpg"
-	this.pop = (text)->
+	this.pop = (text,o)->
 		if text is "wechat"
-			this.wechat = true
+			return this.wechat = true
+		return window.location.href = $(o).attr "href"
 
 	this.close = ->
 		this.wechat = false

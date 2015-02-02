@@ -490,10 +490,11 @@ app.controller('shareController', function($rootScope, $scope, $location) {
   }
   defaultShare("【我是" + this.text + "！】有胆吗？来测你的范儿！");
   BindShare("【我是" + this.text + "！】有胆吗？来测你的范儿！", "http://m.giccoo.com/crown/", "http://m.giccoo.com/crown/img/share.jpg");
-  this.pop = function(text) {
+  this.pop = function(text, o) {
     if (text === "wechat") {
       return this.wechat = true;
     }
+    return window.location.href = $(o).attr("href");
   };
   return this.close = function() {
     return this.wechat = false;

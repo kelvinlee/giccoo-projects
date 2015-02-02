@@ -284,9 +284,9 @@
           <div class="share-link slideToTop delay-20 duration-5">
             <div class="share-text"><img src="http://disk.giccoo.com/projects/crown/img/page-share-share-text.png"></div>
             <div class="shares">
-              <div ng-click="share.pop('wechat')" class="icon wechat"><img src="http://disk.giccoo.com/projects/crown/img/icon-wechat.png"></div><a data-share="weibo" class="icon weibo"><img src="http://disk.giccoo.com/projects/crown/img/icon-weibo.png"></a><a data-share="douban" class="icon douban"><img src="http://disk.giccoo.com/projects/crown/img/icon-douban.png"></a><a data-share="qzone" class="icon qzone"><img src="http://disk.giccoo.com/projects/crown/img/icon-qzone.png"></a>
+              <div ng-click="share.pop('wechat')" class="icon wechat"><img src="http://disk.giccoo.com/projects/crown/img/icon-wechat.png"></div><a data-share="weibo" ng-click="share.pop('weibo','.weibo')" class="icon weibo"><img src="http://disk.giccoo.com/projects/crown/img/icon-weibo.png"></a><a data-share="douban" ng-click="share.pop('douban','.douban')" class="icon douban"><img src="http://disk.giccoo.com/projects/crown/img/icon-douban.png"></a><a data-share="qzone" ng-click="share.pop('qzone','.qzone')" class="icon qzone"><img src="http://disk.giccoo.com/projects/crown/img/icon-qzone.png"></a>
             </div>
-          </div><a href="http://ftmscrown.duapp.com/" class="link slideToTop delay-22 duration-5"><img src="http://disk.giccoo.com/projects/crown/img/page-share-link.png"></a>
+          </div><a href="http://ftmscrown.duapp.com/" ng-click="share.pop('qzone','.link')" class="link slideToTop delay-22 duration-5"><img src="http://disk.giccoo.com/projects/crown/img/page-share-link.png"></a>
           <div ng-show="share.wechat" ng-click="share.close()" class="wechat-share mark"></div>
         </div>
       </div>
