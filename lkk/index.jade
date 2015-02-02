@@ -11,7 +11,7 @@ block css
 		}
 
 block content
-	-url = "/"
+	//- -url = "/"
 	div.wechat-share-hide
 		img(src="#{url}lkk/img/share.jpg")
 	div.wrap(ng-controller="MainController",ng-hide="ori")
@@ -35,7 +35,7 @@ block content
 
 
 block ng-template
-	-url = "/"
+	//- -url = "/"
 	script(type="text/ng-template",id="home.html")
 		.homepage
 			.banner
@@ -127,7 +127,7 @@ block ng-template
 				input(name="submit",type="submit",value="Submit")
 
 block js
-	-url = "/"
+	//- -url = "/"
 	- var debug = ".min"
 	//- - debug = ""
 	script(src="#{url}libs/js/min/Zepto.min.js",type="text/javascript")
