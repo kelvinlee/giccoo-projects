@@ -5,8 +5,8 @@
 # @codekit-prepend "../../libs/coffee/share"
 # @codekit-prepend "../../libs/coffee/load"
 
-# cdn = "http://disk.giccoo.com/projects/"
-cdn = "/"
+cdn = "http://disk.giccoo.com/projects/"
+# cdn = "/"
 
 # load list
 loadList = [

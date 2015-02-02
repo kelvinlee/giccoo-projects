@@ -14,37 +14,37 @@
     </script>
   </head>
   <body>
-    <div class="wechat-share-hide"><img src="/lkk/img/share.jpg"></div>
+    <div class="wechat-share-hide"><img src="http://disk.giccoo.com/projects/lkk/img/share.jpg"></div>
     <div ng-controller="MainController" ng-hide="ori" class="wrap">
       <div class="hideView"></div>
       <div ng-view class="view-animate"></div>
       <div id="loading" class="loading loaded">
         <div class="loading-logo">
-          <div class="loading-normal"><img src="/libs/img/loading-normal.png"></div>
+          <div class="loading-normal"><img src="http://disk.giccoo.com/projects/libs/img/loading-normal.png"></div>
           <div class="tmp"><img src="/lkk/img/loading.png"></div>
         </div>
       </div>
-      <div class="logo"><img src="/lkk/img/logo.png"></div>
+      <div class="logo"><img src="http://disk.giccoo.com/projects/lkk/img/logo.png"></div>
     </div>
     <div ng-show="ori" class="noteText"><span>请使用竖屏继续浏览</span></div>
     <div class="qrcode">
-      <div class="text">建议您使用手机浏览</div><img src="/lkk/img/qr.png">
+      <div class="text">建议您使用手机浏览</div><img src="http://disk.giccoo.com/projects/lkk/img/qr.png">
     </div>
-    <script src="/libs/js/min/Zepto.min.js" type="text/javascript"></script>
-    <script src="/libs/js/min/angular.min.js" type="text/javascript"></script>
-    <script src="/libs/js/min/angular-route.min.js" type="text/javascript"></script>
-    <script src="/libs/js/min/angular-touch.min.js" type="text/javascript"></script>
-    <script src="/libs/js/min/angular-animate.min.js" type="text/javascript"></script>
+    <script src="http://disk.giccoo.com/projects/libs/js/min/Zepto.min.js" type="text/javascript"></script>
+    <script src="http://disk.giccoo.com/projects/libs/js/min/angular.min.js" type="text/javascript"></script>
+    <script src="http://disk.giccoo.com/projects/libs/js/min/angular-route.min.js" type="text/javascript"></script>
+    <script src="http://disk.giccoo.com/projects/libs/js/min/angular-touch.min.js" type="text/javascript"></script>
+    <script src="http://disk.giccoo.com/projects/libs/js/min/angular-animate.min.js" type="text/javascript"></script>
     <script src="/lkk/js/base.js?v=3" type="text/javascript"></script>
     <script type="text/ng-template" id="home.html">
       <div class="homepage">
-        <div class="banner"><img src="/lkk/img/star-page.png"></div><a href="#/game" class="btn-star"><img src="/lkk/img/star-btn.png"></a>
+        <div class="banner"><img src="http://disk.giccoo.com/projects/lkk/img/star-page.png"></div><a href="#/game" class="btn-star"><img src="http://disk.giccoo.com/projects/lkk/img/star-btn.png"></a>
       </div>
     </script>
     <script type="text/ng-template" id="game.html">
       <div ng-controller="gameController as game" class="games">
         <div ng-hide="game.gameStar" class="page-select">
-          <div class="banner"><img src="/lkk/img/page-2-title.png"></div>
+          <div class="banner"><img src="http://disk.giccoo.com/projects/lkk/img/page-2-title.png"></div>
           <div ng-show="game.dish" class="select-dish">
             <div ng-click="game.choose(1)" class="choose"></div>
             <div ng-click="game.choose(2)" class="choose"></div>
@@ -54,23 +54,23 @@
         </div>
         <div ng-show="game.gameStar" class="page-game">
           <div class="log"></div>
-          <div id="drop" class="drop"><img src="/lkk/img/game-point.png"></div>
-          <div class="note"><img src="/lkk/img/game-note.png"></div>
-          <div id="Bottle" moved="true" class="Bottle"><img src="/lkk/img/game-bottle1.png"></div>
+          <div id="drop" class="drop"><img src="http://disk.giccoo.com/projects/lkk/img/game-point.png"></div>
+          <div class="note"><img src="http://disk.giccoo.com/projects/lkk/img/game-note.png"></div>
+          <div id="Bottle" moved="true" class="Bottle"><img src="http://disk.giccoo.com/projects/lkk/img/game-bottle1.png"></div>
           <div class="timer">
             <div class="text">TIME</div>
             <div class="box">
-              <div ng-class="run" class="progress"><img src="/lkk/img/game-timer-box.png"></div>
+              <div ng-class="run" class="progress"><img src="http://disk.giccoo.com/projects/lkk/img/game-timer-box.png"></div>
               <div class="time-text">{{timer}}</div>
             </div>
           </div>
           <div class="road">
             <div id="dishs" class="dishs">
             </div>
-            <div class="roadbg"><img src="/lkk/img/game-road.png"></div>
+            <div class="roadbg"><img src="http://disk.giccoo.com/projects/lkk/img/game-road.png"></div>
           </div>
           <div class="score">
-            <div class="title"><img src="/lkk/img/game-score.png"></div><span id="score">{{score}}</span>
+            <div class="title"><img src="http://disk.giccoo.com/projects/lkk/img/game-score.png"></div><span id="score">{{score}}</span>
           </div>
         </div>
       </div>
@@ -78,17 +78,17 @@
     <script type="text/ng-template" id="share.html">
       <div ng-controller="ShareController as share" class="share-page">
         <div class="bg">
-          <div ng-click="share.getPrize()"><img src="/lkk/img/success.png">
+          <div ng-click="share.getPrize()"><img src="http://disk.giccoo.com/projects/lkk/img/success.png">
             <div class="text">你击败了{{share.text}}%的网友<br/>{{share.text2}}</div>
-            <div class="box"><img src="/lkk/img/success-box.png"></div>
+            <div class="box"><img src="http://disk.giccoo.com/projects/lkk/img/success-box.png"></div>
           </div>
           <div ng-click="share.regame()" class="restargame"></div>
           <div ng-click="share.showwechat()" class="sharewechat"></div>
         </div>
-        <div ng-show="share.wechat" ng-click="share.showwechat()" class="pop"><img src="/libs/img/wechat.png"></div>
+        <div ng-show="share.wechat" ng-click="share.showwechat()" class="pop"><img src="http://disk.giccoo.com/projects/libs/img/wechat.png"></div>
         <div ng-show="share.showpop" class="pop">
-          <div ng-hide="jd" class="content"><img src="/lkk/img/pop-form.png">
-            <div ng-click="share.close()" class="close"><img src="/lkk/img/close.png"></div>
+          <div ng-hide="jd" class="content"><img src="http://disk.giccoo.com/projects/lkk/img/pop-form.png">
+            <div ng-click="share.close()" class="close"><img src="http://disk.giccoo.com/projects/lkk/img/close.png"></div>
             <div ng-controller="FormController as form" class="formPage">
               <form ng-submit="processForm()">
                 <div class="form-group">
@@ -107,7 +107,7 @@
               </form>
             </div>
           </div>
-          <div ng-show="jd" class="content"><img src="/lkk/img/pop-jd.png"><a href="http://sale.jd.com/act/0riL47NR8PZqEX.html#m" class="goto"></a>
+          <div ng-show="jd" class="content"><img src="http://disk.giccoo.com/projects/lkk/img/pop-jd.png"><a href="http://sale.jd.com/act/0riL47NR8PZqEX.html#m" class="goto"></a>
             <div ng-click="share.close()" class="close yhm"></div>
           </div>
         </div>
