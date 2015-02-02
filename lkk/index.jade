@@ -45,6 +45,7 @@ block ng-template
 
 	script(type="text/ng-template",id="game.html")
 		.games(ng-controller="gameController as game")
+			audio#audio(src="#{url}lkk/mp3/audio.mp3",preload)
 			.page-select(ng-hide="game.gameStar")
 				.banner
 					img(src="#{url}lkk/img/page-2-title.png")

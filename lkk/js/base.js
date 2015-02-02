@@ -389,6 +389,7 @@ app.controller('gameController', function($rootScope, $scope, $location, $timeou
   this.choose = function(i) {
     this.starFrom = i - 1;
     this.gameStar = true;
+    $("#audio")[0].play();
     return $timeout(function() {
       starTime = new Date().getTime();
       window.addEventListener('devicemotion', deviceMotionHandler, false);

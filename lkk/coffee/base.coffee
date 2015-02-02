@@ -120,6 +120,7 @@ app.controller 'gameController', ($rootScope, $scope, $location, $timeout)->
 	this.choose = (i)->
 		this.starFrom = i - 1
 		this.gameStar = true
+		$("#audio")[0].play()
 		$timeout ->
 			starTime = new Date().getTime()
 			window.addEventListener('devicemotion',deviceMotionHandler, false)
