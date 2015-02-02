@@ -64,13 +64,16 @@ function init() {
 	reset();
 }
 
-
+var _timer = {}
 function play() {
-
-	setInterval( loop, 1000 / 40 );
+	_timer = setInterval( loop, 1000 / 40 );
+}
+function stop() {
+	clearInterval(_timer);
 }
 
 function reset() {
+	if ($("#canvas").length<=0){return false}
 
 	var i;
 
@@ -287,7 +290,8 @@ function _createBall(img,x,y) {
 //
 
 function loop() {
-
+	// console.log($("#canvas").length);
+	if ($("#canvas").length<=0){ stop(); return false;}
 	if (getBrowserDimensions()) {
 		setWalls();
 	}

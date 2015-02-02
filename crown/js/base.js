@@ -253,12 +253,24 @@ LoadFinished = function(name, $scope, callback) {
   }
 };
 
-cdn = "/";
+cdn = "http://disk.giccoo.com/projects/";
 
 loadList = [
   {
     id: "logo",
     src: "" + cdn + "lkk/img/logo.png"
+  }, {
+    id: "crown-logo",
+    src: "" + cdn + "crown/img/crown-logo.png"
+  }, {
+    id: "crown-logo2",
+    src: "" + cdn + "crown/img/crown-logo.jpg"
+  }, {
+    id: "page-home-subtitle",
+    src: "" + cdn + "crown/img/page-home-subtitle.jpg"
+  }, {
+    id: "page-home-engine",
+    src: "" + cdn + "crown/img/page-home-engine.jpg"
   }
 ];
 
@@ -268,8 +280,8 @@ _wechat_f = {
   "img_width": 300,
   "img_height": 300,
   "link": "http://m.giccoo.com/crown",
-  "desc": "【我是女神范儿！】 有胆吗？来测你的范儿！",
-  "title": "【我是女神范儿！】 有胆吗？来测你的范儿！"
+  "desc": "你不知道的皇冠范儿",
+  "title": "你不知道的皇冠范儿"
 };
 
 _wechat = {
@@ -278,15 +290,15 @@ _wechat = {
   "img_width": 300,
   "img_height": 300,
   "link": "http://m.giccoo.com/crown",
-  "desc": "【我是女神范儿！】 有胆吗？来测你的范儿！",
-  "title": "【我是女神范儿！】 有胆吗？来测你的范儿！"
+  "desc": "你不知道的皇冠范儿",
+  "title": "你不知道的皇冠范儿"
 };
 
 hosts = "http://g.giccoo.com";
 
-defaultShare = function() {
-  _wechat.title = "【我是女神范儿！】 有胆吗？来测你的范儿！";
-  _wechat_f.title = "【我是女神范儿！】 有胆吗？来测你的范儿！";
+defaultShare = function(title) {
+  _wechat.title = title;
+  _wechat_f.title = title;
   return reloadWechat();
 };
 
@@ -296,7 +308,8 @@ app = angular.module('kelvin', ["ngRoute", "ngTouch", "ngAnimate"]).config([
   "$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
     var page, _j, _len1, _results;
     $routeProvider.when('/', {
-      templateUrl: "home.html"
+      templateUrl: "home.html",
+      controller: "HomeController"
     });
     _results = [];
     for (_j = 0, _len1 = pages.length; _j < _len1; _j++) {
@@ -312,7 +325,6 @@ app = angular.module('kelvin', ["ngRoute", "ngTouch", "ngAnimate"]).config([
 app.run(function($rootScope, $location) {
   var history;
   history = [];
-  console.log("history", history);
   return $rootScope.$on('$routeChangeSuccess', function() {
     var newPage, oldPage;
     newPage = $location.$$path.replace('/', '');
@@ -334,7 +346,6 @@ app.run(function($rootScope, $location) {
 
 app.controller('MainController', function($rootScope, $scope, $location, $http) {
   var orientationChange;
-  console.log("aa");
   $rootScope.CanRun = true;
   if ($("body").height() <= 440) {
     $("body").addClass("iphone4");
@@ -348,7 +359,7 @@ app.controller('MainController', function($rootScope, $scope, $location, $http) 
       return $(".loaded").removeClass("loaded");
     }
   });
-  defaultShare();
+  defaultShare("你不知道的皇冠范儿");
   orientationChange = function() {
     switch (window.orientation) {
       case 0:
@@ -385,8 +396,13 @@ app.controller('MainController', function($rootScope, $scope, $location, $http) 
   });
 });
 
+app.controller('HomeController', function($rootScope, $scope, $location) {
+  return $rootScope.home = "home";
+});
+
 app.controller('swipeController', function($rootScope, $scope, $location) {
-  return $scope.runPage = function(bool) {
+  stop();
+  $scope.runPage = function(bool) {
     return $scope.$apply(function() {
       var e, index, n;
       e = $location.$$path.replace('/', '');
@@ -403,7 +419,6 @@ app.controller('swipeController', function($rootScope, $scope, $location) {
       if (n === -1 && !bool) {
         index = 0;
       }
-      console.log(index);
       if (n === 0 && bool) {
         return $location.path('/');
       }
@@ -413,6 +428,9 @@ app.controller('swipeController', function($rootScope, $scope, $location) {
       return $location.path('/' + pages[index]);
     });
   };
+  if ($rootScope.home !== "home") {
+    return $location.path("/");
+  }
 });
 
 app.controller('rollBallController', function($scope, $location) {
@@ -420,6 +438,66 @@ app.controller('rollBallController', function($scope, $location) {
     init();
     return play();
   }, 1200);
+});
+
+app.controller('touchidController', function($rootScope, $scope, $location, $timeout) {
+  var timeout, tis;
+  this.light = "none";
+  this.sex = "male";
+  this.birthday = 0;
+  timeout = {};
+  tis = this;
+  $rootScope.sex = this.sex;
+  this.select = function() {
+    if (tis.sex === "male") {
+      tis.sex = "female";
+    } else {
+      tis.sex = "male";
+    }
+    return $rootScope.sex = tis.sex;
+  };
+  $(".touch-id").on('touchstart', function(evt) {
+    evt.preventDefault();
+    return $scope.$apply(function() {
+      timeout = $timeout(function() {
+        return $location.path('/share');
+      }, 2000);
+      return tis.light = "block";
+    });
+  });
+  return $(".touch-id").on('touchend', function(evt) {
+    evt.preventDefault();
+    return $scope.$apply(function() {
+      tis.light = "none";
+      return $timeout.cancel(timeout);
+    });
+  });
+});
+
+app.controller('shareController', function($rootScope, $scope, $location) {
+  var female, male;
+  female = ["熟女范儿", "汉子范儿", "文艺范儿", "高冷范儿", "卖萌范儿", "纠结范儿"];
+  male = ["型男范儿", "闷骚范儿", "暖男范儿", "土豪范儿", "清新范儿", "逆袭范儿"];
+  this.text = "";
+  this.wechat = false;
+  if ($rootScope.sex == null) {
+    return $location.path("/");
+  }
+  if ($rootScope.sex === "female") {
+    this.text = female[Math.floor(Math.random() * female.length)];
+  } else {
+    this.text = male[Math.floor(Math.random() * male.length)];
+  }
+  defaultShare("【我是" + this.text + "！】有胆吗？来测你的范儿！");
+  BindShare("【我是" + this.text + "！】有胆吗？来测你的范儿！", "http://m.giccoo.com/crown/", "http://m.giccoo.com/crown/img/share.jpg");
+  this.pop = function(text) {
+    if (text === "wechat") {
+      return this.wechat = true;
+    }
+  };
+  return this.close = function() {
+    return this.wechat = false;
+  };
 });
 
 app.directive("parallax", function($location) {
@@ -444,10 +522,10 @@ app.directive("parallax", function($location) {
         var gone, touch;
         touch = evt.touches[0];
         gone = _d.y - touch.pageY;
-        if (gone < -50 && !_d.run) {
+        if (gone < -50 && !_d.run && attrs["noCtrl"] !== "up") {
           scope.runPage(true);
         }
-        if (gone > 50 && !_d.run) {
+        if (gone > 50 && !_d.run && attrs["noCtrl"] !== "down") {
           scope.runPage(false);
         }
         return evt.preventDefault();

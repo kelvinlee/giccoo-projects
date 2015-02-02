@@ -2,7 +2,7 @@
 extends ../libs/jade/layout-ng
 //- -var url = "/"
 block title
-	| 【我是女神范儿！】 有胆吗？来测你的范儿！
+	| 你不知道的皇冠范儿
 block css
 	link(rel="stylesheet",href="/crown/css/base.css")
 	script.
@@ -11,7 +11,7 @@ block css
 		}
 
 block content
-	- url ="/"
+	//- - url ="/"
 	div.wechat-share-hide
 		img(src="#{url}crown/img/share.jpg")
 	div.wrap(ng-controller="MainController",ng-hide="ori")
@@ -23,8 +23,8 @@ block content
 				//- div.loading-logo-bg(style="display:none")
 				.loading-normal
 					img(src="#{url}libs/img/loading-normal.png")
-		div.logo
-			img(src="#{url}crown/img/logo.png")
+		div.public-logo
+			img(src="#{url}crown/img/crown-logo.png")
 		div.baiduindex
 			img(src="#{url}crown/img/baiduindex.png")
 	div.noteText(ng-show="ori")
@@ -35,10 +35,12 @@ block content
 
 
 block ng-template
-	- url ="/"
+	//- - url ="/"
 	script(type="text/ng-template",id="home.html")
 		.page.home(parallax,ng-controller="swipeController")
 			.zw
+			.logo.fadeInDown.delay-10.duration-5
+				img(src="#{url}crown/img/logo.png")
 			.crown-logo.fadeIn.delay-10.duration-5
 				img(src="#{url}crown/img/crown-logo.jpg")
 			.subtitle.fadeIn.delay-15.duration-5
@@ -51,6 +53,8 @@ block ng-template
 	script(type="text/ng-template",id="sex.html")
 		.page.sex(parallax,ng-controller="swipeController")
 			.zw
+			.logo.fadeInDown.delay-10.duration-5
+				img(src="#{url}crown/img/logo.png")
 			.title.fadeIn.delay-10.duration-5
 				img(src="#{url}crown/img/page-sex-title.png")
 			.people.standup.delay-15.duration-5
@@ -65,6 +69,8 @@ block ng-template
 			.nextpoint
 	script(type="text/ng-template",id="local.html")
 		.page.local(parallax,ng-controller="swipeController")
+			.logo.fadeInDown.delay-10.duration-5
+				img(src="#{url}crown/img/logo.png")
 			.map.fadeIn.delay-10.duration-8
 				.map-body.slideToRight.delay-10.duration-10
 					img(src="#{url}crown/img/page-local-map.jpg")
@@ -77,6 +83,8 @@ block ng-template
 			.nextpoint
 	script(type="text/ng-template",id="interest.html")
 		.page.interest(parallax,ng-controller="swipeController")
+			.logo.fadeInDown.delay-10.duration-5
+				img(src="#{url}crown/img/logo.png")
 			.title.fadeIn.delay-10.duration-5
 				img(src="#{url}crown/img/page-interest-title.png")
 			.gameTag#canvas(ng-controller="rollBallController")
@@ -85,6 +93,8 @@ block ng-template
 	script(type="text/ng-template",id="mycar.html")
 		.page.mycar(parallax,ng-controller="swipeController")
 			.zw
+			.logo.fadeInDown.delay-10.duration-5
+				img(src="#{url}crown/img/logo.png")
 			.pie.fadeIn.delay-10.duration-7
 				.pie-body.slideToLeft.delay-10.duration-5
 					img(src="#{url}crown/img/page-mycar-pie.png")
@@ -100,6 +110,8 @@ block ng-template
 	script(type="text/ng-template",id="pet.html")
 		.page.pet(parallax,ng-controller="swipeController")
 			.zw
+			.logo.fadeInDown.delay-10.duration-5
+				img(src="#{url}crown/img/logo.png")
 			.title.fadeIn.delay-10.duration-5
 				img(src="#{url}crown/img/page-pet-title.png")
 			.pie.fadeIn.delay-15.duration-5
@@ -113,6 +125,8 @@ block ng-template
 	script(type="text/ng-template",id="travel.html")
 		.page.travel(parallax,ng-controller="swipeController")
 			.zw
+			.logo.fadeInDown.delay-10.duration-5
+				img(src="#{url}crown/img/logo.png")
 			.map
 				.bg.fadeIn.delay-10.duration-5
 					img(src="#{url}crown/img/page-travel-map-bg.png")
@@ -132,6 +146,8 @@ block ng-template
 	script(type="text/ng-template",id="sport.html")
 		.page.sport(parallax,ng-controller="swipeController")
 			.zw
+			.logo.fadeInDown.delay-10.duration-5
+				img(src="#{url}crown/img/logo.png")
 			.title.bigbig.delay-10.duration-10
 				img(src="#{url}crown/img/page-sport-title.png")
 			.pie.fadeInDown.delay-15.duration-10
@@ -142,6 +158,8 @@ block ng-template
 	script(type="text/ng-template",id="girl.html")
 		.page.girl(parallax,ng-controller="swipeController")
 			.zw
+			.logo.fadeInDown.delay-10.duration-5
+				img(src="#{url}crown/img/logo.png")
 			-var names = ["Angelababy","陈妍希","赵丽颖","范冰冰","刘亦菲"]
 			-var avatars = ['angelababy','chenyanxi','zhaoliying','fanbingbing','liuyifei']
 			-var stars = [9,7,6,5,3]
@@ -163,13 +181,14 @@ block ng-template
 	script(type="text/ng-template",id="tag.html")
 		.page.tag(parallax,ng-controller="swipeController")
 			.zw
+			.logo.fadeInDown.delay-10.duration-5
+				img(src="#{url}crown/img/logo.png")
 			.title.fadeInDown.delay-10.duration-5
 				img(src="#{url}crown/img/page-tag-title.png")
 			-for (var i=1;i<6;i++)
 				.tag-item(class="item#{i} slideToLeft delay-#{10+i*2} duration-10")
 					img(src="#{url}crown/img/page-tag-#{i}.jpg")
 			.nextpoint
-
 	script(type="text/ng-template",id="history.html")
 		.page.history
 			//- .zw
@@ -190,13 +209,57 @@ block ng-template
 						.goto(parallax,ng-controller="swipeController")
 				.nextpoint
 	script(type="text/ng-template",id="touchid.html")
-		.page.touchid
+		.page.touchid(parallax,no-ctrl="down",ng-controller="swipeController")
+			.zw
+			.logo.fadeInDown.delay-10.duration-5
+				img(src="#{url}crown/img/logo.png")
+			.title.fadeInDown.delay-10.duration-5
+				img(src="#{url}crown/img/page-touchid-title.png")
+			.touch(ng-controller="touchidController as touchid")
+				.option.fadeInDown.delay-15.duration-5(ng-click="touchid.select()",ng-class="touchid.sex")
+					img(src="#{url}crown/img/page-touchid-option.png")
+					.bar
+						img(src="#{url}crown/img/page-touchid-option-bar.png")
+				.touch-id.bigbig.delay-20.duration-10
+					.touch-mark
+					.touch-body
+						img(src="#{url}crown/img/page-touchid-scan.jpg")
+					.touch-light(style="display:{{touchid.light}}")
+						img(src="#{url}crown/img/page-touchid-scan-light.png")
 	script(type="text/ng-template",id="share.html")
-		.page.share
+		.page.share(parallax,ng-controller="swipeController")
+			.share-body(ng-controller="shareController as share")
+				.zw
+				.logo.fadeInDown.delay-10.duration-5
+					img(src="#{url}crown/img/logo.png")
+				.title-icon.fadeIn.delay-10.duration-5
+					img(src="#{url}crown/img/page-share-title-icon.png")
+				.congratulation.fadeInDown.delay-15.duration-5
+					p 恭喜，你的测试结果为
+				.results.bigbig.delay-15.duration-10
+					.text {{share.text}}
+					img(src="#{url}crown/img/page-share-results.png")
+				.share-link.slideToTop.delay-20.duration-5
+					.share-text
+						img(src="#{url}crown/img/page-share-share-text.png")
+					.shares
+						.icon.wechat(ng-click="share.pop('wechat')")
+							img(src="#{url}crown/img/icon-wechat.png")
+						a.icon.weibo(data-share="weibo")
+							img(src="#{url}crown/img/icon-weibo.png")
+						a.icon.douban(data-share="douban")
+							img(src="#{url}crown/img/icon-douban.png")
+						a.icon.qzone(data-share="qzone")
+							img(src="#{url}crown/img/icon-qzone.png")
+				a.link.slideToTop.delay-22.duration-5(href="http://ftmscrown.duapp.com/")
+					img(src="#{url}crown/img/page-share-link.png")
+				.wechat-share.mark(ng-show="share.wechat",ng-click="share.close()")
+
+
 
 
 block js
-	- url = "/"
+	//- - url = "/"
 	- var debug = ".min"
 	//- - debug = ""
 	script(src="#{url}libs/js/min/Zepto.min.js",type="text/javascript")
@@ -207,7 +270,7 @@ block js
 	//- script(src="/libs/js/megapix-image.js",type="text/javascript")
 	//- script(src="/libs/js/exif.js",type="text/javascript")
 	//- script(src="/libs/js/min/preloadjs-0.4.1.min.js",type="text/javascript")
-	script(src="/crown/js/protoclass.js",type="text/javascript")
-	script(src="/crown/js/box2d.js",type="text/javascript")
+	script(src="#{url}crown/js/protoclass.js",type="text/javascript")
+	script(src="#{url}crown/js/box2d.js",type="text/javascript")
 	script(src="/crown/js/Main.js",type="text/javascript")
 	script(src="/crown/js/base.js",type="text/javascript")

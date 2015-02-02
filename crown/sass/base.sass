@@ -4,8 +4,8 @@
 @import ../../libs/sass/loading
 @import animation
 
-// $cdn : "http://disk.giccoo.com/projects/"	
-$cdn : "/"
+$cdn : "http://disk.giccoo.com/projects/"	
+// $cdn : "/"
 
 body 
 	background: #40220f
@@ -82,7 +82,7 @@ body
 			+posa
 			+tl(-10%)
 			+wh(1rem,0.5rem)
-			background: url(../img/nextpoint.png) no-repeat center center
+			background: url(#{$cdn}crown/img/nextpoint.png) no-repeat center center
 			background-size: cover
 			+transform(translate3d(-50%,0,0))
 			+animation(nextpoint,1s,ease,infinite)
@@ -94,7 +94,7 @@ body
 			.text
 				color: #000
 			&:before,&:after
-				background-image: url(../img/nextpoint-black.png)
+				background-image: url(#{$cdn}crown/img/nextpoint-black.png)
 	
 
 	&.home
@@ -141,7 +141,7 @@ body
 			z-index: 1
 		.note-text
 			+posa
-			+bl(5%)
+			+bl(35%)
 			z-index: 1
 		.gameTag
 			+posa
@@ -256,7 +256,7 @@ body
 			+posr
 			+w(100%)
 			overflow: auto
-			padding-top: 25%
+			padding-top: 15%
 			font-size: 0
 			.tree
 				+posr
@@ -318,10 +318,99 @@ body
 				+posa
 				+bl()
 				+wh(100%,50%)
+	&.touchid
+		.option
+			+posr
+			+iw(320,640,100%)
+			margin-bottom: 2%
+			.bar
+				+tran
+				+posa
+				+tl(11%,2%)
+				+w(56%)
+			&.male
+				.bar
+					left: 2%
+			&.female
+				.bar
+					left: 40%
+		.touch-id
+			+iw(271,640,100%)
+			+posr
+			.touch-mark
+				+posa
+				+tl
+				+wh(100%,100%)
+				z-index: 1099
+			.touch-light
+				+posa
+				+bl(75%)
+				// +transform(translate3d(0,100%,0))
+				+animation(scan,2s,linear,infinite)
+	&.share
+		.share-body
+			+wh(100%,100%)
+		.title-icon
+			+iw(106,640,100%)
+		.congratulation
+			+text-center
+			font-size: 1.2rem
+			color: #dedfe4
+		.results
+			+iw(432,640,100%)
+			margin-bottom: 5%
+			+posr
+			.text
+				+posa
+				+tl(50%,10%)
+				+w(1rem)
+				font-size: 1rem
+				line-height: 1.2rem
+				+transform(translate3d(0,-50%,0))
+				
 
+		.link
+			+iw(263,640,100%)
+			+show
+		.shares
+			+w(80%)
+			margin: 0 auto
+			white-space: nowrap
+			+text-center
+			vertical-align: top
+			margin-bottom: 2%
+			.icon
+				vertical-align: top
+				display: inline-block
+				+w(20%)
+				margin: 0 1%
+		.share-text
+			+iw(438,640,100%)
+			margin-bottom: 2%
 
+.wechat-share
+	+tran
+	+posf
+	+tl
+	+br
+	+b("#{$cdn}crown/img/wechat.png",no-repeat,top,center,contain,rgba(0,0,0,0.6))
+	z-index: 999
+	// ng-animate ng-hide-animate ng-hide-remove ng-hide-remove-active
+	// ng-animate ng-hide-animate ng-hide-add ng-hide ng-hide-add-active
+	&.ng-hide-remove
+		opacity: 0
+	&.ng-hide-remove-active
+		opacity: 1
+	&.ng-hide-add
+		opacity: 1
+	&.ng-hide-add-active
+		opacity: 0
 
-
+.public-logo
+	+posa
+	+tl
+	+iw(214,640,100%)
+	z-index: 101
 .logo
 	+posa
 	+tl(10%)

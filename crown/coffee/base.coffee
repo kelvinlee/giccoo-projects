@@ -5,13 +5,17 @@
 # @codekit-prepend "../../libs/coffee/share"
 # @codekit-prepend "../../libs/coffee/load"
 
-# cdn = "http://disk.giccoo.com/projects/"
-cdn = "/"
+cdn = "http://disk.giccoo.com/projects/"
+# cdn = "/"
 
 # load list
 loadList = [
 	# {id: "logo", src: "#{cdn}libs/img/loading.png"}
 	{id: "logo", src: "#{cdn}lkk/img/logo.png"}
+	{id: "crown-logo", src: "#{cdn}crown/img/crown-logo.png"}
+	{id: "crown-logo2", src: "#{cdn}crown/img/crown-logo.jpg"}
+	{id: "page-home-subtitle", src: "#{cdn}crown/img/page-home-subtitle.jpg"}
+	{id: "page-home-engine", src: "#{cdn}crown/img/page-home-engine.jpg"}
 	
 ]
 
@@ -24,22 +28,22 @@ _wechat_f =
 	"img_width": 300
 	"img_height": 300
 	"link": "http://m.giccoo.com/crown"
-	"desc": "【我是女神范儿！】 有胆吗？来测你的范儿！"
-	"title": "【我是女神范儿！】 有胆吗？来测你的范儿！"
+	"desc": "你不知道的皇冠范儿"
+	"title": "你不知道的皇冠范儿"
 _wechat =
 	"appid": ""
 	"img_url": "http://disk.giccoo.com/projects/crown/img/share.jpg"
 	"img_width": 300
 	"img_height": 300
 	"link": "http://m.giccoo.com/crown"
-	"desc": "【我是女神范儿！】 有胆吗？来测你的范儿！"
-	"title": "【我是女神范儿！】 有胆吗？来测你的范儿！"
+	"desc": "你不知道的皇冠范儿"
+	"title": "你不知道的皇冠范儿"
 
 hosts = "http://g.giccoo.com"
 
-defaultShare = ->
-	_wechat.title = "【我是女神范儿！】 有胆吗？来测你的范儿！"
-	_wechat_f.title = "【我是女神范儿！】 有胆吗？来测你的范儿！"
+defaultShare = (title)->
+	_wechat.title = title
+	_wechat_f.title = title
 	reloadWechat()
 
 pages = ['sex','local','interest','mycar','pet','travel','sport','girl','tag','history','touchid','share']
@@ -47,6 +51,7 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 .config ["$routeProvider", "$locationProvider" ,($routeProvider, $locationProvider)->
 	$routeProvider.when '/',{
 		templateUrl: "home.html"
+		controller: "HomeController"
 	}
 	for page in pages
 		$routeProvider.when '/'+page,{
@@ -55,7 +60,7 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 ]
 app.run ($rootScope, $location)->
 	history = []
-	console.log "history",history
+	# console.log "history",history
 	$rootScope.$on '$routeChangeSuccess', ->
 
 		newPage = $location.$$path.replace('/','')
@@ -70,7 +75,7 @@ app.run ($rootScope, $location)->
 			$rootScope.from = "down"
 # 主要加载
 app.controller 'MainController', ($rootScope, $scope, $location, $http)->
-	console.log "aa"
+	# console.log "aa"
 	$rootScope.CanRun = true
 	if $("body").height() <= 440
 		$("body").addClass "iphone4"
@@ -79,7 +84,7 @@ app.controller 'MainController', ($rootScope, $scope, $location, $http)->
 		LoadFinished "angular",$scope
 	$scope.$watch "loaded", ->
 		$(".loaded").removeClass "loaded" if $scope.loaded
-	defaultShare()
+	defaultShare "你不知道的皇冠范儿"
 	orientationChange = ->
 		switch window.orientation
 			when 0
@@ -108,7 +113,11 @@ app.controller 'MainController', ($rootScope, $scope, $location, $http)->
 		else
 			$rootScope.from = "down"
 
+app.controller 'HomeController', ($rootScope, $scope, $location)->
+	$rootScope.home = "home"
+
 app.controller 'swipeController', ($rootScope, $scope, $location)->
+	stop()
 	$scope.runPage = (bool)->
 		# console.log bool
 		$scope.$apply ->
@@ -124,26 +133,76 @@ app.controller 'swipeController', ($rootScope, $scope, $location)->
 				return index = pages.length-1
 			if n is -1 and not bool
 				index = 0
-			console.log index
+			# console.log index
 			if n is 0 and bool
 				return $location.path '/'
 			if index >= pages.length
 				return false
 		
 			$location.path('/'+pages[index])
-		# window.location.href = "#/"+pages[index]
-
+	if $rootScope.home isnt "home"
+		$location.path "/"
 app.controller 'rollBallController', ($scope, $location)->
 	setTimeout ->
 		init()
 		play()
 	,1200
 
+app.controller 'touchidController', ($rootScope, $scope, $location, $timeout)->
+	this.light = "none"
+	this.sex = "male"
+	this.birthday = 0
+	timeout = {}
+	tis = this
+	$rootScope.sex = this.sex
+	this.select = ->
+		if tis.sex is "male"
+			tis.sex = "female"
+		else
+			tis.sex = "male"
+		$rootScope.sex = tis.sex
+	$(".touch-id").on 'touchstart', (evt)->
+		evt.preventDefault()
+		$scope.$apply ->
+			timeout = $timeout ->
+				$location.path '/share'
+			,2000
+			tis.light = "block"
+	$(".touch-id").on 'touchend', (evt)->
+		evt.preventDefault()
+		# console.log "touched end"
+		$scope.$apply ->
+			tis.light = "none"
+			$timeout.cancel(timeout)
+
+app.controller 'shareController', ($rootScope, $scope, $location)->
+	female = ["熟女范儿","汉子范儿","文艺范儿","高冷范儿","卖萌范儿","纠结范儿"]
+	male = ["型男范儿","闷骚范儿","暖男范儿","土豪范儿","清新范儿","逆袭范儿"]
+	this.text = ""
+	this.wechat = false
+	unless $rootScope.sex?
+		return $location.path "/"
+	if $rootScope.sex is "female"
+		this.text = female[Math.floor(Math.random()*female.length)]
+	else
+		this.text = male[Math.floor(Math.random()*male.length)]
+
+	defaultShare "【我是#{this.text}！】有胆吗？来测你的范儿！"
+	BindShare "【我是#{this.text}！】有胆吗？来测你的范儿！","http://m.giccoo.com/crown/","http://m.giccoo.com/crown/img/share.jpg"
+	this.pop = (text)->
+		if text is "wechat"
+			this.wechat = true
+
+	this.close = ->
+		this.wechat = false
+
+
+
 app.directive "parallax", ($location)->
 	return {
 		restrict: 'EA'
 		link: (scope, elem, attrs)->
-			# console.log elem[0]
+			# console.log attrs["noCtrl"]
 			_d = {
 				x: 0
 				y: 0
@@ -159,9 +218,9 @@ app.directive "parallax", ($location)->
 				touch = evt.touches[0]
 				gone = _d.y - touch.pageY
 				# console.log "move",gone
-				if gone < -50 and not _d.run
+				if gone < -50 and not _d.run and attrs["noCtrl"] isnt "up"
 					scope.runPage true
-				if gone > 50 and not _d.run
+				if gone > 50 and not _d.run and attrs["noCtrl"] isnt "down"
 					scope.runPage false
 				evt.preventDefault()
 			elem.on "touchend", (evt)->
