@@ -253,7 +253,7 @@ LoadFinished = function(name, $scope, callback) {
   }
 };
 
-cdn = "http://disk.giccoo.com/projects/";
+cdn = "/";
 
 loadList = [
   {
