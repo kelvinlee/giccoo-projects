@@ -1,0 +1,213 @@
+
+extends ../libs/jade/layout-ng
+//- -var url = "/"
+block title
+	| 【我是女神范儿！】 有胆吗？来测你的范儿！
+block css
+	link(rel="stylesheet",href="/crown/css/base.css")
+	script.
+		function showLoad() {
+			 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
+		}
+
+block content
+	- url ="/"
+	div.wechat-share-hide
+		img(src="#{url}crown/img/share.jpg")
+	div.wrap(ng-controller="MainController",ng-hide="ori")
+		div.hideView(ng-class="from")
+		div.view-animate(ng-view,ng-class="from")
+		div#loading.loading.loaded
+			div.loading-logo
+				//- img(src="#{url}libs/img/loading.png",onload="showLoad()")
+				//- div.loading-logo-bg(style="display:none")
+				.loading-normal
+					img(src="#{url}libs/img/loading-normal.png")
+		div.logo
+			img(src="#{url}crown/img/logo.png")
+		div.baiduindex
+			img(src="#{url}crown/img/baiduindex.png")
+	div.noteText(ng-show="ori")
+		span 请使用竖屏继续浏览
+	div.qrcode
+		div.text 建议您使用手机浏览
+		img(src="#{url}crown/img/qr.png")
+
+
+block ng-template
+	- url ="/"
+	script(type="text/ng-template",id="home.html")
+		.page.home(parallax,ng-controller="swipeController")
+			.zw
+			.crown-logo.fadeIn.delay-10.duration-5
+				img(src="#{url}crown/img/crown-logo.jpg")
+			.subtitle.fadeIn.delay-15.duration-5
+				img(src="#{url}crown/img/page-home-subtitle.jpg")
+			.title.Stamp.delay-20.duration-5
+				img(src="#{url}crown/img/page-home-title.png")
+			a.engine.slideToTop.delay-25.duration-5(href="#/sex")
+				img(src="#{url}crown/img/page-home-engine.jpg")
+			.nextpoint
+	script(type="text/ng-template",id="sex.html")
+		.page.sex(parallax,ng-controller="swipeController")
+			.zw
+			.title.fadeIn.delay-10.duration-5
+				img(src="#{url}crown/img/page-sex-title.png")
+			.people.standup.delay-15.duration-5
+				img(src="#{url}crown/img/page-sex-people.png")
+			.pie
+				.pie-body.rotateIn.delay-20.duration-10
+					img(src="#{url}crown/img/page-sex-pie.png")
+				.pie-text.fadeIn.delay-25.duration-5
+					img(src="#{url}crown/img/page-sex-pie-text.png")
+			.note-text.fadeIn.delay-30.duration-5
+				img(src="#{url}crown/img/page-sex-note-text.png")
+			.nextpoint
+	script(type="text/ng-template",id="local.html")
+		.page.local(parallax,ng-controller="swipeController")
+			.map.fadeIn.delay-10.duration-8
+				.map-body.slideToRight.delay-10.duration-10
+					img(src="#{url}crown/img/page-local-map.jpg")
+				.map-text.fadeIn.delay-20.duration-10
+					img(src="#{url}crown/img/page-local-map-text.png")
+			.note-text.fadeIn.delay-25.duration-5
+				img(src="#{url}crown/img/page-local-note-text.png")
+			.title.slideToTop.delay-30.duration-5
+				img(src="#{url}crown/img/page-local-title.png")
+			.nextpoint
+	script(type="text/ng-template",id="interest.html")
+		.page.interest(parallax,ng-controller="swipeController")
+			.title.fadeIn.delay-10.duration-5
+				img(src="#{url}crown/img/page-interest-title.png")
+			.gameTag#canvas(ng-controller="rollBallController")
+			.note-text
+				img(src="#{url}crown/img/page-interest-note-text.png")
+	script(type="text/ng-template",id="mycar.html")
+		.page.mycar(parallax,ng-controller="swipeController")
+			.zw
+			.pie.fadeIn.delay-10.duration-7
+				.pie-body.slideToLeft.delay-10.duration-5
+					img(src="#{url}crown/img/page-mycar-pie.png")
+				.pie-car.slideToRight.delay-15.duration-10
+					img(src="#{url}crown/img/page-mycar-pie-car.png")
+				.pie-text.fadeIn.delay-20.duration-5
+					img(src="#{url}crown/img/page-mycar-pie-text.png")
+			.note-text.fadeIn.delay-25.duration-5
+				img(src="#{url}crown/img/page-mycar-note-text.png")
+			.title.slideToTop.delay-30.duration-5
+				img(src="#{url}crown/img/page-mycar-title.png")
+			.nextpoint
+	script(type="text/ng-template",id="pet.html")
+		.page.pet(parallax,ng-controller="swipeController")
+			.zw
+			.title.fadeIn.delay-10.duration-5
+				img(src="#{url}crown/img/page-pet-title.png")
+			.pie.fadeIn.delay-15.duration-5
+				.pie-body.slideToBottom.delay-15.duration-10
+					img(src="#{url}crown/img/page-pet-pie.png")
+				.pie-text.slideToLeft.delay-20.duration-10
+					img(src="#{url}crown/img/page-pet-pie-text.png")
+			.note-text.slideToTop.delay-25.duration-10
+				img(src="#{url}crown/img/page-pet-note-text.png")
+			.nextpoint
+	script(type="text/ng-template",id="travel.html")
+		.page.travel(parallax,ng-controller="swipeController")
+			.zw
+			.map
+				.bg.fadeIn.delay-10.duration-5
+					img(src="#{url}crown/img/page-travel-map-bg.png")
+				.point-1.slideToBottom.delay-15.duration-10
+					img(src="#{url}crown/img/page-travel-point-1.png")
+				.point-1-text.slideToRight.delay-20.duration-10
+					img(src="#{url}crown/img/page-travel-point-1-text.png")
+				.point-2.slideToBottom.delay-25.duration-10
+					img(src="#{url}crown/img/page-travel-point-2.png")
+				.point-2-text.slideToRight.delay-30.duration-10
+					img(src="#{url}crown/img/page-travel-point-2-text.png")
+			.note-text.fadeIn.delay-35.duration-5
+				img(src="#{url}crown/img/page-travel-note-text.png")
+			.title.slideToTop.delay-37.duration-10
+				img(src="#{url}crown/img/page-travel-title.png")
+			.nextpoint
+	script(type="text/ng-template",id="sport.html")
+		.page.sport(parallax,ng-controller="swipeController")
+			.zw
+			.title.bigbig.delay-10.duration-10
+				img(src="#{url}crown/img/page-sport-title.png")
+			.pie.fadeInDown.delay-15.duration-10
+				img(src="#{url}crown/img/page-sport-pie.png")
+			.note-text.fadeIn.delay-25.duration-5
+				img(src="#{url}crown/img/page-sport-note-text.png")
+			.nextpoint
+	script(type="text/ng-template",id="girl.html")
+		.page.girl(parallax,ng-controller="swipeController")
+			.zw
+			-var names = ["Angelababy","陈妍希","赵丽颖","范冰冰","刘亦菲"]
+			-var avatars = ['angelababy','chenyanxi','zhaoliying','fanbingbing','liuyifei']
+			-var stars = [9,7,6,5,3]
+			.superstar
+				-for(var i=0;i<names.length;i++)
+					.item
+						.avatar(class="fadeIn delay-#{10+i*2} duration-5")
+							img(src="#{url}crown/img/page-girl-#{avatars[i]}.jpg")
+						.text.fadeInDown(class="delay-#{12+i*2} duration-5") #{names[i]}
+						.stars(class="#{avatars[i]}")
+							-for(var j=0;j<stars[i];j++)
+								.star(class="standup delay-#{15+j*5} duration-10")
+									img(src="#{url}crown/img/icon-heart.png")
+			.note-text.fadeIn.delay-50.duration-5
+				img(src="#{url}crown/img/page-girl-note-text.png")
+			.title.slideToTop.delay-55.duration-10
+				img(src="#{url}crown/img/page-girl-title.png")
+			.nextpoint
+	script(type="text/ng-template",id="tag.html")
+		.page.tag(parallax,ng-controller="swipeController")
+			.zw
+			.title.fadeInDown.delay-10.duration-5
+				img(src="#{url}crown/img/page-tag-title.png")
+			-for (var i=1;i<6;i++)
+				.tag-item(class="item#{i} slideToLeft delay-#{10+i*2} duration-10")
+					img(src="#{url}crown/img/page-tag-#{i}.jpg")
+			.nextpoint
+
+	script(type="text/ng-template",id="history.html")
+		.page.history
+			//- .zw
+			.scroll(scroll-box)
+				.crown-logo.fadeIn.delay-10.duration-5
+					img(src="#{url}crown/img/crown-logo.jpg")
+				.title.fadeInUp.delay-15.duration-5
+					img(src="#{url}crown/img/page-history-title.jpg")
+				.tree.fadeInUp.delay-17.duration-10
+					.tree-body
+						img(src="#{url}crown/img/page-history-tree.jpg")
+						.tree-point
+							-for (var i=1;i<15;i++)
+								.item(class="item#{i}")
+									img(src="#{url}crown/img/page-history-tree-p-#{i}.jpg")
+					.tree-banner
+						img(src="#{url}crown/img/page-history-tree-banner.jpg")
+						.goto(parallax,ng-controller="swipeController")
+				.nextpoint
+	script(type="text/ng-template",id="touchid.html")
+		.page.touchid
+	script(type="text/ng-template",id="share.html")
+		.page.share
+
+
+block js
+	- url = "/"
+	- var debug = ".min"
+	//- - debug = ""
+	script(src="#{url}libs/js/min/Zepto.min.js",type="text/javascript")
+	script(src="#{url}libs/js/angular.js",type="text/javascript")
+	script(src="#{url}libs/js/min/angular-route.min.js",type="text/javascript")
+	script(src="#{url}libs/js/min/angular-touch.min.js",type="text/javascript")
+	script(src="#{url}libs/js/min/angular-animate.min.js",type="text/javascript")
+	//- script(src="/libs/js/megapix-image.js",type="text/javascript")
+	//- script(src="/libs/js/exif.js",type="text/javascript")
+	//- script(src="/libs/js/min/preloadjs-0.4.1.min.js",type="text/javascript")
+	script(src="/crown/js/protoclass.js",type="text/javascript")
+	script(src="/crown/js/box2d.js",type="text/javascript")
+	script(src="/crown/js/Main.js",type="text/javascript")
+	script(src="/crown/js/base.js",type="text/javascript")

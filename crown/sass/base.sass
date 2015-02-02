@@ -1,0 +1,345 @@
+@import sass/base
+@import sass/animation
+@import sass/slider
+@import ../../libs/sass/loading
+@import animation
+
+// $cdn : "http://disk.giccoo.com/projects/"	
+$cdn : "/"
+
+body 
+	background: #40220f
+	color: #fff
+// .logo
+// 	+posa
+// 	+tl
+// 	+w(100%)
+// 	z-index: 99
+.wrap,.view-animate
+	+h(100%)
+.wrap
+	+tran($time:0.1s)
+	overflow: hidden
+.view-animate
+	+tran($time:1s)
+	+posa
+	+w(100%)
+	&.up
+		&.ng-enter
+			+transform(translate3d(0,100%,0))
+		&.ng-enter-active
+			+transform(translate3d(0,0%,0))
+	&.down
+		&.ng-enter
+			+transform(translate3d(0,-100%,0))
+		&.ng-enter-active
+			+transform(translate3d(0,0%,0))
+// view-animate ng-scope ng-animate ng-leave ng-leave-active
+// view-animate ng-scope ng-animate ng-enter ng-enter-active
+
+.hideView.up ~ .view-animate
+	&.ng-leave
+		+transform(translate3d(0,0%,0))
+	&.ng-leave-active
+		+transform(translate3d(0,-100%,0))
+.hideView.down ~ .view-animate
+	&.ng-leave
+		+transform(translate3d(0,0%,0))
+	&.ng-leave-active
+		+transform(translate3d(0,100%,0))
+
+.view-animate
+	&.ng-enter
+		.nextpoint
+			+hide
+	&.ng-leave
+		.nextpoint
+			+hide
+
+.page
+	+posa
+	+tl
+	+wh(100%,100%)
+	overflow: hidden
+	.zw
+		+wh(100%,15%)
+		+show
+	.nextpoint
+		+posa
+		+bl(20px,50%)
+		z-index: 100
+		+anim()
+		.text
+			+posa
+			+tl
+			+text-center
+			+w(5rem)
+			+transform(translate3d(-50%,-150%,0))
+			font-size: 0.8rem
+			color: #fff
+		&:before,&:after
+			content: " "
+			+posa
+			+tl(-10%)
+			+wh(1rem,0.5rem)
+			background: url(../img/nextpoint.png) no-repeat center center
+			background-size: cover
+			+transform(translate3d(-50%,0,0))
+			+animation(nextpoint,1s,ease,infinite)
+		&:after
+			+transform(translate3d(-50%,-100%,0))
+		&:before
+			+delay(0.5s)
+		&.black
+			.text
+				color: #000
+			&:before,&:after
+				background-image: url(../img/nextpoint-black.png)
+	
+
+	&.home
+		// background: green
+		.crown-logo
+			+iw(398)
+		.subtitle
+			+iw(432)
+			margin-top: 5%
+		.title
+			+iw(319)
+		.engine
+			+show
+			+iw(281)
+	&.sex
+		// background: red
+		.title,.people,.pie,.note-text
+			+iw(640)
+		.people
+			transform-origin: bottom center
+		.pie
+			+posr
+			.pie-text
+				+posa
+				+tl
+	&.local
+		.map
+			+posr
+			.map-text
+				+posa
+				+tl
+		.note-text
+			+posa
+			+tl(15%)
+		.title
+			+posr
+			+iw(640)
+			margin-top: -10%
+			z-index: 1
+	&.interest
+		.title
+			+posa
+			+tl(25%)
+			z-index: 1
+		.note-text
+			+posa
+			+bl(5%)
+			z-index: 1
+		.gameTag
+			+posa
+			+tl
+			+wh(100%,95%)
+	&.mycar
+		.pie
+			+posr
+			.pie-car,.pie-text
+				+posa
+				+tl
+		.note-text
+			+posa
+			+tl(44%)
+	&.pet
+		.pie
+			+posr
+			margin-top: 10%
+			padding-bottom: 5%
+			.pie-text
+				+posa
+				+tl
+	&.travel
+		.map
+			+posr
+			.point-1,.point-2,.point-1-text,.point-2-text
+				+posa
+				+tl
+		.note-text
+			+posr
+			margin-top: -20%
+			margin-bottom: 5%
+			z-index: 1
+	&.sport
+		.zw
+			+h(13%)
+		.pie
+			padding-top: 4%
+			+iw(640)
+		.note-text
+			+posa
+			+bl(10%)
+			+iw(640)
+	&.girl
+		.superstar
+			+iw(600)
+			white-space: nowrap
+			font-size: 0
+			.item
+				display: inline-block
+				vertical-align: top
+				+w(20%)
+				.avatar
+					+w(86%)
+					margin: 0 auto
+				.text
+					+text-center
+					font-size: 0.6rem
+					line-height: 1.4rem
+				.stars
+					.star
+						+w(40%)
+						+text-center
+						margin: 0 auto
+						margin-bottom: 4px
+						transform-origin: bottom center
+					&.angelababy
+						.star
+							background: #ffad2b
+					&.chenyanxi
+						.star
+							background: #78a3fb
+					&.zhaoliying
+						.star
+							background: #d2534e
+					&.fanbingbing
+						.star
+							background: #ffad2b
+					&.liuyifei
+						.star
+							background: #91d147
+		.title
+			+iw(640)
+		.note-text
+			margin-top: -20%
+			margin-bottom: 6%
+	&.tag
+		.title
+			margin-bottom: 5%
+
+		.tag-item
+			+posr
+			&.item1
+				+iw(240)
+				left: 20%
+			&.item2
+				+iw(250)
+				left: -15%
+			&.item3
+				+iw(340)
+				left: 10%
+			&.item4
+				+iw(300)
+				left: -20%
+			&.item5
+				+iw(300)
+				left: 5%
+	&.history
+		.crown-logo
+			+iw(398)
+		.scroll
+			+posr
+			+w(100%)
+			overflow: auto
+			padding-top: 25%
+			font-size: 0
+			.tree
+				+posr
+			.tree-body
+				+posr
+			.tree-point
+				+posa
+				+tl(0%)
+				+wh(100%,100%)
+				z-index: 2
+				.item
+					+posa
+					top: 100%
+				.item1
+					+tl(2%,5%)
+					+iw(181,640,100%)
+				.item2
+					+tr(1%,10.5%)
+					+iw(233,640,100%)
+				.item3
+					+tl(11.3%,5.7%)
+					+iw(175,640,100%)
+				.item4
+					+tr(10.7%,5.5%)
+					+iw(262,640,100%)
+				.item5
+					+tl(25.4%,5.9%)
+					+iw(174,640,100%)
+				.item6
+					+tr(23.2%,4.6%)
+					+iw(267,640,100%)
+				.item7
+					+tr(38.8%,9.6%)
+					+iw(239,640,100%)
+				.item8
+					+tl(52.5%,6%)
+					+iw(173,640,100%)
+				.item9
+					+tr(49.8%,5.4%)
+					+iw(264,640,100%)
+				.item10
+					+tl(65%,6.4%)
+					+iw(171,640,100%)
+				.item11
+					+tr(64.1%,7.8%)
+					+iw(246,640,100%)
+				.item12
+					+tl(79.2%,5.4%)
+					+iw(177,640,100%)
+				.item13	
+					+tr(78.3%,9.8%)
+					+iw(236,640,100%)
+				.item14
+					+tr(89.4%,9.7%)
+					+iw(236,640,100%)
+			.tree-banner
+				+posr
+			.goto
+				+posa
+				+bl()
+				+wh(100%,50%)
+
+
+
+
+.logo
+	+posa
+	+tl(10%)
+	+w(100%)
+	z-index: 99
+.baiduindex
+	+posa
+	+br(20px,20px)
+	+iw(131)
+	z-index: 99
+// animation
+@each $name in (fadeIn, fadeOut, fadeInOut, fadeInDown, fadeInUp, slideToTop, slideToBottom, slideToLeft, slideToRight, pulse, shake, Flash, Stamp, StampSmall, StampTop, second, Flicker, rotateIn, rotateOut, standup, bigbig)
+	.#{$name}
+		+anim($name)
+
+// animation,delay, duration
+@for $i from 1 through 200
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
