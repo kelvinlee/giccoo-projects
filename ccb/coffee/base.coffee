@@ -126,6 +126,11 @@ app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 	$scope.pass = ->
 		$scope.weiban = true
 		$scope.starPage = false
+	$scope.$watch "weiban",->
+		if $scope.weiban
+			$timeout ->
+				$location.path "/game"
+			,5000
 
 	
 

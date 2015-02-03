@@ -406,10 +406,17 @@ app.controller('MainController', function($rootScope, $scope, $location, $timeou
     $scope.starPage = false;
     return $location.path("/game");
   };
-  return $scope.pass = function() {
+  $scope.pass = function() {
     $scope.weiban = true;
     return $scope.starPage = false;
   };
+  return $scope.$watch("weiban", function() {
+    if ($scope.weiban) {
+      return $timeout(function() {
+        return $location.path("/game");
+      }, 5000);
+    }
+  });
 });
 
 app.controller('GameController', function($rootScope, $scope, $location, $timeout) {
