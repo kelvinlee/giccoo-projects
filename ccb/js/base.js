@@ -474,10 +474,10 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
     if (life > 4000) {
       life = 4000;
     }
-    if (life <= 0) {
+    if (life <= 0 || isNaN(life)) {
       life = 0;
     }
-    console.log(life);
+    console.log(parseInt(life));
     data = {
       name: "y",
       "class": "y",

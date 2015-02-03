@@ -152,14 +152,9 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 	}
 	this.items = {}
 	$(document).on "touchstart",".item", (evt)->
-		# console.log "??"
-	# $(".gameCanvas .item").on "touchstart", (evt)->
 		evt.preventDefault()
 		lifeName = $(this).data "key"
-		# console.log lifeName
-		# $(this).hide()
 		$scope.$apply ->
-			# console.log "非堵塞"
 			delete tis.hitYYY lifeName
 
 	this.hideweiban = ->
@@ -185,8 +180,8 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 		life = (new Date().getTime() - this.starTime)
 		life = life/10
 		life = 4000 if life>4000
-		life = 0 if life<=0
-		console.log life
+		life = 0 if life<=0 or isNaN(life)
+		console.log parseInt life
 		data = {name:"y",class:"y",style:{"transition-duration":(totleLife-life)+"ms",top:"100px",left:"100px"}}
 		if parseInt(Math.random()*2) is 0
 			data.name = "yyy"
@@ -200,7 +195,6 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 			lifeName = parseInt(Math.random()*10000)
 			tis.items[lifeName] = data
 			tis.putYYY()
-			# console.log $(".gameCanvas .item").length
 			$timeout ->
 				delete tis.items[lifeName]
 				setTimeout ->
