@@ -16,15 +16,15 @@ block content
 		img(src="#{url}crown/img/share.jpg")
 	div.wrap(ng-controller="MainController",ng-hide="ori")
 		div.hideView(ng-class="from")
-		div.view-animate(ng-view,ng-class="from")
+		div.view-animate(ng-view,ng-class="from",class="{{path}}")
+		div.public-logo
+			img(src="#{url}crown/img/crown-logo.png")
 		div#loading.loading.loaded
 			div.loading-logo
 				//- img(src="#{url}libs/img/loading.png",onload="showLoad()")
 				//- div.loading-logo-bg(style="display:none")
 				.loading-normal
 					img(src="#{url}libs/img/loading-normal.png")
-		div.public-logo
-			img(src="#{url}crown/img/crown-logo.png")
 		div.baiduindex
 			img(src="#{url}crown/img/baiduindex.png")
 	div.noteText(ng-show="ori")

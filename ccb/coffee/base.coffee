@@ -169,14 +169,20 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 			tis.checkTime()
 		,200
 	this.putYYY = ->
-		data = {name:"y",class:"y",style:{top:"100px",left:"100px"}}
+		totleLife = 5000
+		life = (new Date().getTime() - this.starTime)
+		life = life/10
+		life = 4000 if life>4000
+		life = 0 if life<=0
+		console.log life
+		data = {name:"y",class:"y",style:{"transition-duration":(totleLife-life)+"ms",top:"100px",left:"100px"}}
 		if parseInt(Math.random()*2) is 0
 			data.name = "yyy"
 			data.class = "yyy"
 		data.style.top = "-80px"
 		data.style.left = parseInt(Math.random()*(mubu.width)*0.8)+"px"
-		max = 600
-		min = 300
+		max = 600 - (life/10)
+		min = 200
 		$timeout ->
 			return false if $scope.gameOver
 			lifeName = parseInt(Math.random()*10000)
@@ -187,12 +193,11 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 				delete tis.items[lifeName]
 				setTimeout ->
 					if $(".item-#{lifeName}.y").length > 0
-						# console.log "钱掉了",$(".item-#{lifeName}.y").attr "class"
 						$scope.$apply ->
 							$scope.gameOver = true
 					$(".item-#{lifeName}").remove()
 				,10
-			,4900
+			,totleLife-life-20
 		,parseInt(Math.random()*(max-min)+min)
 	this.hitYYY = (e)->
 		# console.log e,tis.items[e]

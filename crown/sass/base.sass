@@ -37,6 +37,10 @@ body
 // view-animate ng-scope ng-animate ng-leave ng-leave-active
 // view-animate ng-scope ng-animate ng-enter ng-enter-active
 
+.home ~ .public-logo
+	+hide
+	+animation(fadeIn)
+
 .hideView.up ~ .view-animate
 	&.ng-leave
 		+transform(translate3d(0,0%,0))
@@ -366,8 +370,9 @@ body
 				+posa
 				+tl(50%,10%)
 				+w(1rem)
-				font-size: 1rem
-				line-height: 1.2rem
+				font-size: 1.4rem
+				line-height: 1.6rem
+				font-weight: bold
 				+transform(translate3d(0,-50%,0))
 				
 

@@ -169,8 +169,7 @@
           </div>
           <div ng-show="game.gameBegin &amp;&amp; !gameOver" class="gameCanvas pagechange">
             <div class="score">{{game.score}} 元 </div>
-            <div ng-class="item.class" ng-style="item.style" data-key="{{key}}" ng-repeat="(key,item) in game.items" class="item item-{{key}}">
-            </div>
+            <div ng-class="item.class" ng-style="item.style" data-key="{{key}}" ng-repeat="(key,item) in game.items" class="item item-{{key}}"></div>
           </div>
           <div ng-show="gameOver" class="gameOver pagechange">
             <div class="title">

@@ -5,6 +5,7 @@
 # @codekit-prepend "../../libs/coffee/share"
 # @codekit-prepend "../../libs/coffee/load"
 
+debug = true
 cdn = "http://disk.giccoo.com/projects/"
 # cdn = "/"
 
@@ -101,11 +102,13 @@ app.controller 'MainController', ($rootScope, $scope, $location, $http)->
 					$rootScope.ori = false
 
 	window.addEventListener (if "onorientationchange" in window then "orientationchange" else "resize"), orientationChange, false
-	
+	# $scope.path = $location.path()	
+
 	$scope.$on '$locationChangeStart',(evt, absNewUrl, absOldUrl) ->
 		# console.log('start', absNewUrl.split("#")[1], absOldUrl.split("#")[1])
 		newPage = absNewUrl.split("#")[1]
 		oldPage = absOldUrl.split("#")[1]
+		$scope.path = if newPage is "/" then "home" else newPage
 		return $rootScope.from = "same" if newPage is oldPage
 		# console.log newPage,oldPage,pages.indexOf(newPage),pages.indexOf(oldPage)
 		if pages.indexOf(newPage) > pages.indexOf(oldPage)
@@ -115,6 +118,7 @@ app.controller 'MainController', ($rootScope, $scope, $location, $http)->
 
 app.controller 'HomeController', ($rootScope, $scope, $location)->
 	$rootScope.home = "home"
+	# $scope.pagename = "home"
 
 app.controller 'swipeController', ($rootScope, $scope, $location)->
 	stop()
@@ -141,7 +145,7 @@ app.controller 'swipeController', ($rootScope, $scope, $location)->
 		
 			$location.path('/'+pages[index])
 	if $rootScope.home isnt "home"
-		$location.path "/"
+		$location.path "/" unless debug
 app.controller 'rollBallController', ($scope, $location)->
 	setTimeout ->
 		init()
@@ -181,14 +185,14 @@ app.controller 'shareController', ($rootScope, $scope, $location)->
 	this.text = ""
 	this.wechat = false
 	unless $rootScope.sex?
-		return $location.path "/"
+		return $location.path "/" unless debug
 	if $rootScope.sex is "female"
 		this.text = female[Math.floor(Math.random()*female.length)]
 	else
 		this.text = male[Math.floor(Math.random()*male.length)]
-
-	defaultShare "【我是#{this.text}！】有胆吗？来测你的范儿！"
-	BindShare "【我是#{this.text}！】有胆吗？来测你的范儿！","http://m.giccoo.com/crown/","http://m.giccoo.com/crown/img/share.jpg"
+	this.text = this.text.replace "范儿",""
+	defaultShare "【我是#{this.text}范儿！】有胆吗？来测你的范儿！"
+	BindShare "【我是#{this.text}范儿！】有胆吗？来测你的范儿！","http://m.giccoo.com/crown/","http://m.giccoo.com/crown/img/share.jpg"
 	this.pop = (text,o)->
 		if text is "wechat"
 			return this.wechat = true

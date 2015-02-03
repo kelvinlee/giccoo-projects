@@ -169,7 +169,6 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -276,8 +275,7 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }
@@ -299,7 +297,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -1829,12 +1826,6 @@ html, body {
       .game-page .gameCanvas .item.ng-enter-active {
         -webkit-transform: translate3d(0, 800px, 0);
                 transform: translate3d(0, 800px, 0); }
-      .game-page .gameCanvas .item.ng-leave {
-        opacity: 0;
-        display: none; }
-      .game-page .gameCanvas .item.ng-leave-active {
-        opacity: 0;
-        display: none; }
 
 .wechat {
   -webkit-transition: all 0.5s ease;

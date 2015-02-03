@@ -451,11 +451,22 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
     }, 200);
   };
   this.putYYY = function() {
-    var data, max, min;
+    var data, life, max, min, totleLife;
+    totleLife = 5000;
+    life = new Date().getTime() - this.starTime;
+    life = life / 10;
+    if (life > 4000) {
+      life = 4000;
+    }
+    if (life <= 0) {
+      life = 0;
+    }
+    console.log(life);
     data = {
       name: "y",
       "class": "y",
       style: {
+        "transition-duration": (totleLife - life) + "ms",
         top: "100px",
         left: "100px"
       }
@@ -466,8 +477,8 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
     }
     data.style.top = "-80px";
     data.style.left = parseInt(Math.random() * mubu.width * 0.8) + "px";
-    max = 600;
-    min = 300;
+    max = 600 - (life / 10);
+    min = 200;
     return $timeout(function() {
       var lifeName;
       if ($scope.gameOver) {
@@ -486,7 +497,7 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
           }
           return $(".item-" + lifeName).remove();
         }, 10);
-      }, 4900);
+      }, totleLife - life - 20);
     }, parseInt(Math.random() * (max - min) + min));
   };
   this.hitYYY = function(e) {

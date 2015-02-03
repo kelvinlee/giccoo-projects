@@ -17,13 +17,13 @@
     <div class="wechat-share-hide"><img src="http://disk.giccoo.com/projects/crown/img/share.jpg"></div>
     <div ng-controller="MainController" ng-hide="ori" class="wrap">
       <div ng-class="from" class="hideView"></div>
-      <div ng-view ng-class="from" class="view-animate"></div>
+      <div ng-view ng-class="from" class="view-animate {{path}}"></div>
+      <div class="public-logo"><img src="http://disk.giccoo.com/projects/crown/img/crown-logo.png"></div>
       <div id="loading" class="loading loaded">
         <div class="loading-logo">
           <div class="loading-normal"><img src="http://disk.giccoo.com/projects/libs/img/loading-normal.png"></div>
         </div>
       </div>
-      <div class="public-logo"><img src="http://disk.giccoo.com/projects/crown/img/crown-logo.png"></div>
       <div class="baiduindex"><img src="http://disk.giccoo.com/projects/crown/img/baiduindex.png"></div>
     </div>
     <div ng-show="ori" class="noteText"><span>请使用竖屏继续浏览</span></div>

@@ -80,6 +80,7 @@ block ng-template
 					//- .timer 剩余时间: {{game.timer}}秒
 					.score {{game.score}} 元 
 					.item(class="item-{{key}}",ng-class="item.class",ng-style="item.style",data-key="{{key}}",ng-repeat="(key,item) in game.items")
+					//- .item(name="item-4927",style="-webkit-transition-duration: 50000ms; transition-duration: 50000ms",class="item y ng-scope ng-animate ng-leave ng-leave-active")
 						//- img(ng-src="#{url}ccb/img/{{item.name}}.png")
 				.gameOver.pagechange(ng-show="gameOver")
 					//- .text Game Over
