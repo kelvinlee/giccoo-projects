@@ -32,7 +32,7 @@ block ng-template
 		audio#audiobg(src="#{url}ccb/mp3/audio-bg.mp3",autoplay,loop)
 		.homepage(ng-show="starPage")
 			.ctrlPage
-				a.pass(href="#/game")
+				a.pass(ng-click="pass()")
 					img(src="#{url}ccb/img/btn-pass.png")
 				.sound(ng-click="closeSound()",ng-class="soundoff")
 					img(src="#{url}ccb/img/icon-sound.png")
@@ -56,13 +56,13 @@ block ng-template
 									img(src="#{url}ccb/img/y1.png")
 								.y2
 									img(src="#{url}ccb/img/y2.png")
-			
+		.weiban.pagechange(ng-show="weiban",ng-click="hideweiban()")
 	script(type="text/ng-template",id="game.html")
 		.game-page(ng-controller="GameController as game")
 			audio#audioyyy(src="#{url}ccb/mp3/audio-yyy.mp3",preload="auto")
 			audio#audiocoin(src="#{url}ccb/mp3/audio-coin.mp3",preload="auto")
-			.weiban.pagechange(ng-show="game.weiban",ng-click="game.hideweiban()")
-			.game(ng-hide="game.weiban")
+			
+			.game()
 				.gameStar.pagechange(ng-hide="game.gameBegin")
 					.title
 						.normal

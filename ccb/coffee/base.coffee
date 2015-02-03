@@ -89,8 +89,8 @@ app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 							$scope.src = "y"
 						,200
 						$timeout ->
-							$location.path "/game"
-						,2000
+							$scope.pass()
+						,2500
 						# $scope.
 	$scope.closeSound = ->
 		if $scope.soundoff is "on"
@@ -119,6 +119,13 @@ app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 			# alert "开始播放"
 			$scope.$apply ->
 				$scope.soundoff = "on"
+	$scope.weiban = false
+	$scope.hideweiban = ->
+		$scope.starPage = false
+		$location.path "/game"
+	$scope.pass = ->
+		$scope.weiban = true
+		$scope.starPage = false
 
 	
 

@@ -364,8 +364,8 @@ app.controller('MainController', function($rootScope, $scope, $location, $timeou
               return $scope.src = "y";
             }, 200);
             return $timeout(function() {
-              return $location.path("/game");
-            }, 2000);
+              return $scope.pass();
+            }, 2500);
           });
         });
       }
@@ -395,12 +395,21 @@ app.controller('MainController', function($rootScope, $scope, $location, $timeou
         return $scope.soundoff = "off";
       });
     });
-    return audiobg.addEventListener("play", function() {
+    audiobg.addEventListener("play", function() {
       return $scope.$apply(function() {
         return $scope.soundoff = "on";
       });
     });
   }
+  $scope.weiban = false;
+  $scope.hideweiban = function() {
+    $scope.starPage = false;
+    return $location.path("/game");
+  };
+  return $scope.pass = function() {
+    $scope.weiban = true;
+    return $scope.starPage = false;
+  };
 });
 
 app.controller('GameController', function($rootScope, $scope, $location, $timeout) {

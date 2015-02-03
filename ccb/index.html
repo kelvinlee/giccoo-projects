@@ -36,7 +36,7 @@
     <script type="text/ng-template" id="home.html">
       <audio id="audiobg" src="http://disk.giccoo.com/projects/ccb/mp3/audio-bg.mp3" autoplay loop></audio>
       <div ng-show="starPage" class="homepage">
-        <div class="ctrlPage"><a href="#/game" class="pass"><img src="http://disk.giccoo.com/projects/ccb/img/btn-pass.png"></a>
+        <div class="ctrlPage"><a ng-click="pass()" class="pass"><img src="http://disk.giccoo.com/projects/ccb/img/btn-pass.png"></a>
           <div ng-click="closeSound()" ng-class="soundoff" class="sound"><img src="http://disk.giccoo.com/projects/ccb/img/icon-sound.png"></div>
         </div>
         <div class="bg">
@@ -151,13 +151,13 @@
           </div>
         </div>
       </div>
+      <div ng-show="weiban" ng-click="hideweiban()" class="weiban pagechange"></div>
     </script>
     <script type="text/ng-template" id="game.html">
       <div ng-controller="GameController as game" class="game-page">
         <audio id="audioyyy" src="http://disk.giccoo.com/projects/ccb/mp3/audio-yyy.mp3" preload="auto"></audio>
         <audio id="audiocoin" src="http://disk.giccoo.com/projects/ccb/mp3/audio-coin.mp3" preload="auto"></audio>
-        <div ng-show="game.weiban" ng-click="game.hideweiban()" class="weiban pagechange"></div>
-        <div ng-hide="game.weiban" class="game">
+        <div class="game">
           <div ng-hide="game.gameBegin" class="gameStar pagechange">
             <div class="title">
               <div class="normal"><img src="http://disk.giccoo.com/projects/ccb/img/title.jpg"></div>

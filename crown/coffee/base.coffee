@@ -191,8 +191,8 @@ app.controller 'shareController', ($rootScope, $scope, $location)->
 	else
 		this.text = male[Math.floor(Math.random()*male.length)]
 	this.text = this.text.replace "范儿",""
-	defaultShare "【我是#{this.text}范儿！】有胆吗？来测你的范儿！"
-	BindShare "【我是#{this.text}范儿！】有胆吗？来测你的范儿！","http://m.giccoo.com/crown/","http://m.giccoo.com/crown/img/share.jpg"
+	defaultShare "【我是#{this.text}范儿！】来测你的范儿！"
+	BindShare "【我是#{this.text}范儿！】来测你的范儿！","http://m.giccoo.com/crown/","http://m.giccoo.com/crown/img/share.jpg"
 	this.pop = (text,o)->
 		if text is "wechat"
 			return this.wechat = true

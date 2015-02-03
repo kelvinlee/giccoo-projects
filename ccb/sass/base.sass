@@ -8,93 +8,73 @@ $cdn : "http://disk.giccoo.com/projects"
 +keyframes(movebg)
 	0%
 		+transform(translate3d(-600%,0,0))
-	60%
+	30%
 		+transform(translate3d(-365%,0,0))
-	80%
+	50%
 		+transform(translate3d(-365%,0,0))
-	90%
+	70%
 		+transform(translate3d(0,0,0))
 	100%
 		+transform(translate3d(0,0,0))
 
+$ce : 75
+$ju : 30
+
 +keyframes(yyy0)
-	0%
-		+transform(translate3d(0,0,0) rotate(0deg))
-	5%
-		+transform(translate3d(80%,20%,0) rotate(0deg))
-	10%
-		+transform(translate3d(40%,20%,0) rotate(0deg))
-	15%
-		+transform(translate3d(110%,20%,0) rotate(0deg))
-	30%
+	#{$ce*1%}
 		+transform(translate3d(130%,20%,0) rotate(0deg))
-	32%,36%,40%
+	#{($ce+2)*1%},#{($ce+6)*1%},#{($ce+10)*1%}
 		+transform(translate3d(150%,20%,0) rotate(10deg))
-	34%,38%,42%
+	#{($ce+4)*1%},#{($ce+8)*1%},#{($ce+12)*1%}
 		+transform(translate3d(150%,20%,0) rotate(5deg))
-	45%
+	#{($ce+15)*1%}
 		+transform(translate3d(120%,20%,0) rotate(0deg))
-	50%
-		+transform(translate3d(110%,20%,0) rotate(0deg))
 	// 跳河运动.
-	60%
+	#{$ju*1%}
 		+transform(translate3d(150%,20%,0) rotate(0deg))
-	62%
+	#{($ju+2)*1%}
 		+transform(translate3d(100%,20%,0) rotate(-5deg))
-	64%
+	#{($ju+4)*1%}
 		+transform(translate3d(100%,20%,0) rotate(0deg))
-	66%
+	#{($ju+6)*1%}
 		+transform(translate3d(130%,20%,0) rotate(0deg))
-	68%
+	#{($ju+8)*1%}
 		+transform(translate3d(100%,25%,0) rotate(0deg))
-	70%
-		+transform(translate3d(-30%,-5%,0) rotate(-5deg) scale(1.1,1.1))
-	72%
+	#{($ju+10)*1%}
+		+transform(translate3d(-30%,-25%,0) rotate(-5deg) scale(1.1,1.1))
+	#{($ju+12)*1%}
 		+transform(translate3d(-100%,25%,0) rotate(-10deg))
-	74%
-		+transform(translate3d(-100%,25%,0) rotate(0deg))
-	80%
-		+transform(translate3d(-200%,25%,0) rotate(0deg))
-	90%
-		+transform(translate3d(60%,5%,0) rotate(0deg))
+	0%,20%
+		+transform(translate3d(0,0,0) rotate(0deg))
+	10%
+		+transform(translate3d(80%,20%,0) rotate(0deg))
 	100%
 		+transform(translate3d(0,0,0) rotate(0deg))
 
 +keyframes(yyy1)
-	0%
-		+transform(translate3d(0,0,0) rotate(0deg))
-	
-	30%
+	#{$ce*1%}
 		+transform(translate3d(-50%,20%,0) rotate(0deg))
-	32%,36%,40%
+	#{($ce+2)*1%},#{($ce+6)*1%},#{($ce+10)*1%}
 		+transform(translate3d(-50%,20%,0) rotate(-10deg))
-	34%,38%,42%
+	#{($ce+4)*1%},#{($ce+8)*1%},#{($ce+12)*1%}
 		+transform(translate3d(-50%,20%,0) rotate(-5deg))
-	45%
+	#{($ce+15)*1%}
 		+transform(translate3d(-50%,20%,0) rotate(0deg))
-	50%
-		+transform(translate3d(-20%,20%,0) rotate(0deg))
-	61%
-		+transform(translate3d(0%,20%,0) rotate(0deg))
 	// 跳河运动.
-	70%
+	#{($ju+10)*1%}
 		+transform(translate3d(-30%,20%,0) rotate(-5deg))
-	72%
+	#{($ju+12)*1%}
 		+transform(translate3d(-200%,20%,0) rotate(0deg))
-	74%
-		+transform(translate3d(-230%,-5%,0) rotate(-5deg) scale(1.1,1.1))
-	76%
+	#{($ju+14)*1%}
+		+transform(translate3d(-230%,-25%,0) rotate(-5deg) scale(1.1,1.1))
+	#{($ju+16)*1%}
 		+transform(translate3d(-330%,25%,0) rotate(-10deg))
-	78%
+	#{($ju+20)*1%}
 		+transform(translate3d(-360%,20%,0) rotate(0deg))
-	80%
-		+transform(translate3d(-400%,15%,0) rotate(0deg))
-	85%
-		+transform(translate3d(-360%,20%,0) rotate(0deg))
-	90%
-		+transform(translate3d(-300%,5%,0) rotate(0deg))
-	95%
-		+transform(translate3d(-200%,2%,0) rotate(0deg))
+	0%,20%
+		+transform(translate3d(0,0,0) rotate(0deg))
+	10%
+		+transform(translate3d(-50%,20%,0) rotate(0deg))
 	100%
 		+transform(translate3d(-100%,0,0) rotate(0deg))
 
@@ -382,6 +362,7 @@ body
 				right: 45%
 				animation-duration: 7s
 				transform-origin: bottom center
+				+hide
 			&.y4
 				+w(11%)
 				top: 42%
@@ -394,6 +375,7 @@ body
 				right: 5%
 				animation-delay: 300ms
 				animation-duration: 8s
+				+hide
 			&.y6
 				+w(8%)
 				top: 40%
@@ -424,15 +406,15 @@ body
 				right: 5%
 				animation-delay: 300ms
 				animation-duration: 6s
-
+.weiban
+	+posa
+	+tl
+	+wh(100%,100%)
+	+b("#{$cdn}/ccb/img/weiban.jpg",no-repeat,center,center,contain,#e4001d)
 .game-page
 	+wh(100%,100%)
 	background-color: #e4001d
-	.weiban
-		+posa
-		+tl
-		+wh(100%,100%)
-		+b("#{$cdn}/ccb/img/weiban.jpg",no-repeat,center,center,contain,#e4001d)
+	
 	.game
 		+wh(100%,100%)
 	.gameOver
