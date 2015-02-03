@@ -1,7 +1,7 @@
 var canvas;
 
 var delta = [ 0, 0 ];
-var stage = [ window.screenX, window.screenY, window.innerWidth, window.innerHeight ];
+var stage = [ window.screenX, window.screenY, window.innerWidth*2, window.innerHeight*2];
 getBrowserDimensions();
 
 var themes = [ [ "#10222B", "#95AB63", "#BDD684", "#E2F0D6", "#F6FFE0" ],
@@ -56,7 +56,7 @@ function init() {
 
 	worldAABB = new b2AABB();
 	worldAABB.minVertex.Set( -200, -200 );
-	worldAABB.maxVertex.Set( window.innerWidth + 200, window.innerHeight + 200 );
+	worldAABB.maxVertex.Set( window.innerWidth*2 + 200, window.innerHeight*2 + 200 );
 
 	world = new b2World( worldAABB, new b2Vec2( 0, 0 ), true );
 
@@ -249,7 +249,7 @@ function createBall( i, x, y ) {
 }
 function _createBall(img,x,y) {
 
-	var size = img.width*$("body").width()/640;
+	var size = img.width;
 	// console.log(img.width,$("body").width()/640);
 
 	var element = document.createElement("canvas");
@@ -263,7 +263,7 @@ function _createBall(img,x,y) {
 	element.style.OTransform = 'translateZ(0)';
 	element.style.msTransform = 'translateZ(0)';
 	element.style.transform = 'translateZ(0)';
-
+	// *$("body").width()/640
 	var graphics = element.getContext("2d");
 
 	graphics.drawImage(img,0,0,size*0.98,size*0.98);
@@ -283,6 +283,7 @@ function _createBall(img,x,y) {
 	b2body.userData = {element: element};
 
 	b2body.position.Set( x, y );
+	// console.log(b2body);
 	b2body.linearVelocity.Set( Math.random() * 400 - 200, Math.random() * 400 - 200 );
 	bodies.push( world.CreateBody(b2body) );
 }
@@ -303,6 +304,7 @@ function loop() {
 	world.m_gravity.y = gravity.y * 350 + delta[1];
 
 	mouseDrag();
+	// console.log(iterations);
 	world.Step(timeStep, iterations);
 
 	for (i = 0; i < bodies.length; i++) {
@@ -451,11 +453,12 @@ function setWalls() {
 		walls[3] = null;
 	}
 
+	// wall_thickness = wall_thickness*2
 	walls[0] = createBox(world, stage[2] / 2, - wall_thickness, stage[2], wall_thickness);
 	walls[1] = createBox(world, stage[2] / 2, stage[3] + wall_thickness, stage[2], wall_thickness);
 	walls[2] = createBox(world, - wall_thickness, stage[3] / 2, wall_thickness, stage[3]);
 	walls[3] = createBox(world, stage[2] + wall_thickness, stage[3] / 2, wall_thickness, stage[3]);	
-
+	console.log(world,stage,wall_thickness,delta);
 	wallsSetted = true;
 
 }
@@ -482,16 +485,16 @@ function getBrowserDimensions() {
 
 	}
 
-	if (stage[2] != window.innerWidth) {
+	if (stage[2] != window.innerWidth*2) {
 
-		stage[2] = window.innerWidth;
+		stage[2] = window.innerWidth*2;
 		changed = true;
 
 	}
 
-	if (stage[3] != window.innerHeight) {
+	if (stage[3] != window.innerHeight*2) {
 
-		stage[3] = window.innerHeight;
+		stage[3] = window.innerHeight*2;
 		changed = true;
 
 	}
