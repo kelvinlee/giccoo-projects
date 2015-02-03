@@ -5,7 +5,7 @@
 # @codekit-prepend "../../libs/coffee/share"
 # @codekit-prepend "../../libs/coffee/load"
 
-debug = true
+debug = false
 cdn = "http://disk.giccoo.com/projects/"
 # cdn = "/"
 
