@@ -484,7 +484,6 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
     if (life <= 0 || isNaN(life)) {
       life = 0;
     }
-    console.log(parseInt(life));
     data = {
       name: "y",
       "class": "y",

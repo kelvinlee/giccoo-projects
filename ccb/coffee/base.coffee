@@ -183,7 +183,7 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 		life = life/10
 		life = 4000 if life>4000
 		life = 0 if life<=0 or isNaN(life)
-		console.log parseInt life
+		# console.log parseInt life
 		data = {name:"y",class:"y",style:{"transition-duration":(totleLife-life)+"ms",top:"100px",left:"100px"}}
 		if parseInt(Math.random()*2) is 0
 			data.name = "yyy"
