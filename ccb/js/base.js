@@ -320,8 +320,13 @@ app = angular.module('kelvin', ["ngRoute", "ngTouch", "ngAnimate"]).config([
     $routeProvider.when('/game', {
       templateUrl: "game.html"
     });
-    return $routeProvider.when('/share', {
+    $routeProvider.when('/share', {
       templateUrl: "share.html"
+    });
+    return $routeProvider.when('/:rd', {
+      templateUrl: "home.html",
+      controller: "MainController",
+      controllerAs: "main"
     });
   }
 ]);

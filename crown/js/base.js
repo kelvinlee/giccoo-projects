@@ -308,7 +308,7 @@ pages = ['sex', 'local', 'interest', 'mycar', 'pet', 'travel', 'sport', 'girl', 
 
 app = angular.module('kelvin', ["ngRoute", "ngTouch", "ngAnimate"]).config([
   "$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
-    var page, _j, _len1, _results;
+    var page, _j, _len1;
     $routeProvider.when('/', {
       templateUrl: "home.html",
       controller: "HomeController"
@@ -317,14 +317,16 @@ app = angular.module('kelvin', ["ngRoute", "ngTouch", "ngAnimate"]).config([
       templateUrl: "home.html",
       controller: "HomeController"
     });
-    _results = [];
     for (_j = 0, _len1 = pages.length; _j < _len1; _j++) {
       page = pages[_j];
-      _results.push($routeProvider.when('/' + page, {
+      $routeProvider.when('/' + page, {
         templateUrl: "" + page + ".html"
-      }));
+      });
     }
-    return _results;
+    return $routeProvider.when('/:rd', {
+      templateUrl: "home.html",
+      controller: "HomeController"
+    });
   }
 ]);
 

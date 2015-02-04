@@ -60,6 +60,11 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 	# 	controller: "ShareController"
 	# 	controllerAs: "share"
 	}
+	$routeProvider.when '/:rd', {
+		templateUrl: "home.html"
+		controller: "MainController"
+		controllerAs: "main"
+	}
 ]
 # 主要加载
 app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->

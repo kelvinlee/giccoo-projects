@@ -62,6 +62,10 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 		$routeProvider.when '/'+page,{
 			templateUrl: "#{page}.html"
 		}
+	$routeProvider.when '/:rd', {
+		templateUrl: "home.html"
+		controller: "HomeController"
+	}
 ]
 app.run ($rootScope, $location)->
 	history = []

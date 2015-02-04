@@ -250,7 +250,6 @@ function createBall( i, x, y ) {
 function _createBall(img,x,y) {
 
 	var size = img.width;
-	// console.log(img.width,$("body").width()/640);
 
 	var element = document.createElement("canvas");
 	element.width = size;
@@ -283,7 +282,6 @@ function _createBall(img,x,y) {
 	b2body.userData = {element: element};
 
 	b2body.position.Set( x, y );
-	// console.log(b2body);
 	b2body.linearVelocity.Set( Math.random() * 400 - 200, Math.random() * 400 - 200 );
 	bodies.push( world.CreateBody(b2body) );
 }
@@ -291,7 +289,6 @@ function _createBall(img,x,y) {
 //
 
 function loop() {
-	// console.log($("#canvas").length);
 	if ($("#canvas").length<=0){ stop(); return false;}
 	if (getBrowserDimensions()) {
 		setWalls();
@@ -304,7 +301,6 @@ function loop() {
 	world.m_gravity.y = gravity.y * 350 + delta[1];
 
 	mouseDrag();
-	// console.log(iterations);
 	world.Step(timeStep, iterations);
 
 	for (i = 0; i < bodies.length; i++) {
@@ -458,7 +454,6 @@ function setWalls() {
 	walls[1] = createBox(world, stage[2] / 2, stage[3] + wall_thickness, stage[2], wall_thickness);
 	walls[2] = createBox(world, - wall_thickness, stage[3] / 2, wall_thickness, stage[3]);
 	walls[3] = createBox(world, stage[2] + wall_thickness, stage[3] / 2, wall_thickness, stage[3]);	
-	console.log(world,stage,wall_thickness,delta);
 	wallsSetted = true;
 
 }
