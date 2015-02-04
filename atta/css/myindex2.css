@@ -100,7 +100,8 @@ body {
 .sharePic {
   width: 0px;
   height: 0px;
-  position: absolute; }
+  position: absolute;
+  top: -1000px; }
 
 .copy {
   width: 84.84375%;
