@@ -54,6 +54,10 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 		templateUrl: "home.html"
 		controller: "HomeController"
 	}
+	$routeProvider.when '/rd',{
+		templateUrl: "home.html"
+		controller: "HomeController"
+	}
 	for page in pages
 		$routeProvider.when '/'+page,{
 			templateUrl: "#{page}.html"

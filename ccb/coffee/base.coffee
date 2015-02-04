@@ -84,10 +84,10 @@ app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 						$scope.shakeYYY = "shakeAll"
 						$timeout ->
 							$scope.src = "yy"
-						,50
+						,20
 						$timeout ->
 							$scope.src = "y"
-						,200
+						,100
 						$timeout ->
 							$scope.pass()
 						,2500

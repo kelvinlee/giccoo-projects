@@ -359,10 +359,10 @@ app.controller('MainController', function($rootScope, $scope, $location, $timeou
             $scope.shakeYYY = "shakeAll";
             $timeout(function() {
               return $scope.src = "yy";
-            }, 50);
+            }, 20);
             $timeout(function() {
               return $scope.src = "y";
-            }, 200);
+            }, 100);
             return $timeout(function() {
               return $scope.pass();
             }, 2500);

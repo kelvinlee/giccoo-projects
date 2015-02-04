@@ -313,6 +313,10 @@ app = angular.module('kelvin', ["ngRoute", "ngTouch", "ngAnimate"]).config([
       templateUrl: "home.html",
       controller: "HomeController"
     });
+    $routeProvider.when('/rd', {
+      templateUrl: "home.html",
+      controller: "HomeController"
+    });
     _results = [];
     for (_j = 0, _len1 = pages.length; _j < _len1; _j++) {
       page = pages[_j];
