@@ -35,7 +35,7 @@
     <script src="/ccb/js/base.js" type="text/javascript"></script>
     <script type="text/ng-template" id="home.html">
       <audio id="audiobg" src="http://disk.giccoo.com/projects/ccb/mp3/audio-bg.mp3" autoplay loop></audio>
-      <div ng-show="starPage" class="homepage">
+      <div ng-show="starPage" ng-controller="homeController" class="homepage">
         <div class="ctrlPage"><a ng-click="pass()" class="pass"><img src="http://disk.giccoo.com/projects/ccb/img/btn-pass.png"></a>
           <div ng-click="closeSound()" ng-class="soundoff" class="sound"><img src="http://disk.giccoo.com/projects/ccb/img/icon-sound.png"></div>
         </div>

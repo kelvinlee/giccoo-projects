@@ -419,8 +419,15 @@ app.controller('MainController', function($rootScope, $scope, $location, $timeou
   });
 });
 
+app.controller('homeController', function($rootScope) {
+  return $rootScope.home = true;
+});
+
 app.controller('GameController', function($rootScope, $scope, $location, $timeout) {
   var mubu, tis;
+  if (!$rootScope.home) {
+    return $location.path('/');
+  }
   this.wechat = false;
   this.weiban = true;
   this.gameBegin = false;

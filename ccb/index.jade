@@ -30,7 +30,7 @@ block content
 block ng-template
 	script(type="text/ng-template",id="home.html")
 		audio#audiobg(src="#{url}ccb/mp3/audio-bg.mp3",autoplay,loop)
-		.homepage(ng-show="starPage")
+		.homepage(ng-show="starPage",ng-controller="homeController")
 			.ctrlPage
 				a.pass(ng-click="pass()")
 					img(src="#{url}ccb/img/btn-pass.png")
