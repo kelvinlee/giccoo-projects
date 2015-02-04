@@ -44,10 +44,10 @@ $ju : 30
 		+transform(translate3d(-30%,-25%,0) rotate(-5deg) scale(1.1,1.1))
 	#{($ju+12)*1%}
 		+transform(translate3d(-100%,25%,0) rotate(-10deg))
-	0%,20%
-		+transform(translate3d(0,0,0) rotate(0deg))
-	10%
-		+transform(translate3d(80%,20%,0) rotate(0deg))
+	0%,10%,20%
+		+transform(translate3d(0,20%,0) rotate(10deg))
+	5%,15%
+		+transform(translate3d(0%,20%,0) rotate(-10deg))
 	100%
 		+transform(translate3d(0,0,0) rotate(0deg))
 
@@ -71,10 +71,10 @@ $ju : 30
 		+transform(translate3d(-330%,25%,0) rotate(-10deg))
 	#{($ju+20)*1%}
 		+transform(translate3d(-360%,20%,0) rotate(0deg))
-	0%,20%
-		+transform(translate3d(0,0,0) rotate(0deg))
-	10%
-		+transform(translate3d(-50%,20%,0) rotate(0deg))
+	0%,10%,20%
+		+transform(translate3d(0,20%,0) rotate(5deg))
+	5%,15%
+		+transform(translate3d(0%,20%,0) rotate(-5deg))
 	100%
 		+transform(translate3d(-100%,0,0) rotate(0deg))
 
@@ -129,9 +129,9 @@ $ju : 30
 		+transform(translate3d(0,0,0))
 	20%
 		+transform(translate3d(-10%,-10%,0))
-	50%
+	80%
 		+transform(translate3d(-70%,50%,0) rotate(-180deg))
-	90%
+	95%
 		opacity: 1
 	100%
 		opacity: 0
@@ -142,9 +142,9 @@ $ju : 30
 		+transform(translate3d(0,0,0))
 	20%
 		+transform(translate3d(10%,-10%,0))
-	50%
+	80%
 		+transform(translate3d(70%,50%,0) rotate(180deg))
-	90%
+	95%
 		opacity: 1
 	100%
 		opacity: 0
@@ -232,7 +232,7 @@ body
 			+posr
 			height: 100%
 			// +transform(translate(-360%,0))
-			+animation(movebg,20s,linear)
+			+animation(movebg,24s,linear)
 			transform-style: flat
 			// animation-delay: 3s
 		.river
@@ -288,7 +288,7 @@ body
 			+wh(100%,100%)
 			+posa
 			+tl
-			+animation(comeOut,4s,ease-out)
+			+animation(comeOut,6s,ease-out)
 			transform-origin: 90% 30%
 			&.mubu1
 				left: 30%
@@ -318,9 +318,9 @@ body
 					+posa
 					+tl
 					+w(100%)
-					+animation(dropdown,2s,linear)
+					+animation(dropdown,1.5s,linear)
 				.y2
-					+animation(dropdown2,2s,linear)
+					+animation(dropdown2,1.5s,linear)
 			.jump
 				+animation(jump,1.5s,ease,infinite)
 			@for $i from 0 through 10
@@ -335,7 +335,7 @@ body
 				+w(19%)
 				top: 46%
 				right: 55%
-				animation-duration: 19s
+				animation-duration: 24s
 				transform-origin: bottom center
 				+transform(translate3d(0,0%,0) rotate(0deg))
 				.jump
@@ -344,7 +344,7 @@ body
 				+w(17%)
 				top: 47%
 				right: 5%
-				animation-duration: 19s
+				animation-duration: 24s
 				transform-origin: bottom center
 				.jump
 					+animation(nojump)
@@ -413,8 +413,7 @@ body
 	+b("#{$cdn}/ccb/img/weiban.jpg",no-repeat,center,center,contain,#e4001d)
 .game-page
 	+wh(100%,100%)
-	background-color: #e4001d
-	
+	background-color: #e61010	
 	.game
 		+wh(100%,100%)
 	.gameOver

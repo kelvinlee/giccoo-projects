@@ -837,12 +837,12 @@ html, body {
   42% {
     -webkit-transform: translate3d(-100%, 25%, 0) rotate(-10deg);
             transform: translate3d(-100%, 25%, 0) rotate(-10deg); }
-  0%,20% {
-    -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
-            transform: translate3d(0, 0, 0) rotate(0deg); }
-  10% {
-    -webkit-transform: translate3d(80%, 20%, 0) rotate(0deg);
-            transform: translate3d(80%, 20%, 0) rotate(0deg); }
+  0%,10%,20% {
+    -webkit-transform: translate3d(0, 20%, 0) rotate(10deg);
+            transform: translate3d(0, 20%, 0) rotate(10deg); }
+  5%,15% {
+    -webkit-transform: translate3d(0%, 20%, 0) rotate(-10deg);
+            transform: translate3d(0%, 20%, 0) rotate(-10deg); }
   100% {
     -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
             transform: translate3d(0, 0, 0) rotate(0deg); } }
@@ -880,12 +880,12 @@ html, body {
   42% {
     -webkit-transform: translate3d(-100%, 25%, 0) rotate(-10deg);
             transform: translate3d(-100%, 25%, 0) rotate(-10deg); }
-  0%,20% {
-    -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
-            transform: translate3d(0, 0, 0) rotate(0deg); }
-  10% {
-    -webkit-transform: translate3d(80%, 20%, 0) rotate(0deg);
-            transform: translate3d(80%, 20%, 0) rotate(0deg); }
+  0%,10%,20% {
+    -webkit-transform: translate3d(0, 20%, 0) rotate(10deg);
+            transform: translate3d(0, 20%, 0) rotate(10deg); }
+  5%,15% {
+    -webkit-transform: translate3d(0%, 20%, 0) rotate(-10deg);
+            transform: translate3d(0%, 20%, 0) rotate(-10deg); }
   100% {
     -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
             transform: translate3d(0, 0, 0) rotate(0deg); } }
@@ -917,12 +917,12 @@ html, body {
   50% {
     -webkit-transform: translate3d(-360%, 20%, 0) rotate(0deg);
             transform: translate3d(-360%, 20%, 0) rotate(0deg); }
-  0%,20% {
-    -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
-            transform: translate3d(0, 0, 0) rotate(0deg); }
-  10% {
-    -webkit-transform: translate3d(-50%, 20%, 0) rotate(0deg);
-            transform: translate3d(-50%, 20%, 0) rotate(0deg); }
+  0%,10%,20% {
+    -webkit-transform: translate3d(0, 20%, 0) rotate(5deg);
+            transform: translate3d(0, 20%, 0) rotate(5deg); }
+  5%,15% {
+    -webkit-transform: translate3d(0%, 20%, 0) rotate(-5deg);
+            transform: translate3d(0%, 20%, 0) rotate(-5deg); }
   100% {
     -webkit-transform: translate3d(-100%, 0, 0) rotate(0deg);
             transform: translate3d(-100%, 0, 0) rotate(0deg); } }
@@ -954,12 +954,12 @@ html, body {
   50% {
     -webkit-transform: translate3d(-360%, 20%, 0) rotate(0deg);
             transform: translate3d(-360%, 20%, 0) rotate(0deg); }
-  0%,20% {
-    -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
-            transform: translate3d(0, 0, 0) rotate(0deg); }
-  10% {
-    -webkit-transform: translate3d(-50%, 20%, 0) rotate(0deg);
-            transform: translate3d(-50%, 20%, 0) rotate(0deg); }
+  0%,10%,20% {
+    -webkit-transform: translate3d(0, 20%, 0) rotate(5deg);
+            transform: translate3d(0, 20%, 0) rotate(5deg); }
+  5%,15% {
+    -webkit-transform: translate3d(0%, 20%, 0) rotate(-5deg);
+            transform: translate3d(0%, 20%, 0) rotate(-5deg); }
   100% {
     -webkit-transform: translate3d(-100%, 0, 0) rotate(0deg);
             transform: translate3d(-100%, 0, 0) rotate(0deg); } }
@@ -1092,10 +1092,10 @@ html, body {
   20% {
     -webkit-transform: translate3d(-10%, -10%, 0);
             transform: translate3d(-10%, -10%, 0); }
-  50% {
+  80% {
     -webkit-transform: translate3d(-70%, 50%, 0) rotate(-180deg);
             transform: translate3d(-70%, 50%, 0) rotate(-180deg); }
-  90% {
+  95% {
     opacity: 1; }
   100% {
     opacity: 0;
@@ -1108,10 +1108,10 @@ html, body {
   20% {
     -webkit-transform: translate3d(-10%, -10%, 0);
             transform: translate3d(-10%, -10%, 0); }
-  50% {
+  80% {
     -webkit-transform: translate3d(-70%, 50%, 0) rotate(-180deg);
             transform: translate3d(-70%, 50%, 0) rotate(-180deg); }
-  90% {
+  95% {
     opacity: 1; }
   100% {
     opacity: 0;
@@ -1124,10 +1124,10 @@ html, body {
   20% {
     -webkit-transform: translate3d(10%, -10%, 0);
             transform: translate3d(10%, -10%, 0); }
-  50% {
+  80% {
     -webkit-transform: translate3d(70%, 50%, 0) rotate(180deg);
             transform: translate3d(70%, 50%, 0) rotate(180deg); }
-  90% {
+  95% {
     opacity: 1; }
   100% {
     opacity: 0;
@@ -1140,10 +1140,10 @@ html, body {
   20% {
     -webkit-transform: translate3d(10%, -10%, 0);
             transform: translate3d(10%, -10%, 0); }
-  50% {
+  80% {
     -webkit-transform: translate3d(70%, 50%, 0) rotate(180deg);
             transform: translate3d(70%, 50%, 0) rotate(180deg); }
-  90% {
+  95% {
     opacity: 1; }
   100% {
     opacity: 0;
@@ -1258,8 +1258,8 @@ html, body {
     .homepage .bg .move {
       position: relative;
       height: 100%;
-      -webkit-animation: movebg 20s linear;
-              animation: movebg 20s linear;
+      -webkit-animation: movebg 24s linear;
+              animation: movebg 24s linear;
       -webkit-animation-fill-mode: both;
               animation-fill-mode: both;
       -webkit-animation-iteration-count: initial;
@@ -1338,8 +1338,8 @@ html, body {
       position: absolute;
       top: 0px;
       left: 0px;
-      -webkit-animation: comeOut 4s ease-out;
-              animation: comeOut 4s ease-out;
+      -webkit-animation: comeOut 6s ease-out;
+              animation: comeOut 6s ease-out;
       -webkit-animation-fill-mode: both;
               animation-fill-mode: both;
       -webkit-animation-iteration-count: initial;
@@ -1381,15 +1381,15 @@ html, body {
           top: 0px;
           left: 0px;
           width: 100%;
-          -webkit-animation: dropdown 2s linear;
-                  animation: dropdown 2s linear;
+          -webkit-animation: dropdown 1.5s linear;
+                  animation: dropdown 1.5s linear;
           -webkit-animation-fill-mode: both;
                   animation-fill-mode: both;
           -webkit-animation-iteration-count: initial;
                   animation-iteration-count: initial; }
         .homepage .mubus .yyy .money .y2 {
-          -webkit-animation: dropdown2 2s linear;
-                  animation: dropdown2 2s linear;
+          -webkit-animation: dropdown2 1.5s linear;
+                  animation: dropdown2 1.5s linear;
           -webkit-animation-fill-mode: both;
                   animation-fill-mode: both;
           -webkit-animation-iteration-count: initial;
@@ -1515,8 +1515,8 @@ html, body {
         width: 19%;
         top: 46%;
         right: 55%;
-        -webkit-animation-duration: 19s;
-                animation-duration: 19s;
+        -webkit-animation-duration: 24s;
+                animation-duration: 24s;
         -webkit-transform-origin: bottom center;
             -ms-transform-origin: bottom center;
                 transform-origin: bottom center;
@@ -1533,8 +1533,8 @@ html, body {
         width: 17%;
         top: 47%;
         right: 5%;
-        -webkit-animation-duration: 19s;
-                animation-duration: 19s;
+        -webkit-animation-duration: 24s;
+                animation-duration: 24s;
         -webkit-transform-origin: bottom center;
             -ms-transform-origin: bottom center;
                 transform-origin: bottom center; }
@@ -1637,7 +1637,7 @@ html, body {
 .game-page {
   width: 100%;
   height: 100%;
-  background-color: #e4001d; }
+  background-color: #e61010; }
   .game-page .game {
     width: 100%;
     height: 100%; }
