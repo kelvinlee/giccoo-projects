@@ -191,7 +191,7 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 		data.style.top = "-80px"
 		data.style.left = parseInt(Math.random()*(mubu.width)*0.8)+"px"
 		max = 600 - (life/10)
-		min = 200
+		min = 350
 		$timeout ->
 			return false if $scope.gameOver
 			lifeName = parseInt(Math.random()*10000)

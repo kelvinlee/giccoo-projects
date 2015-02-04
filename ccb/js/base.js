@@ -501,7 +501,7 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
     data.style.top = "-80px";
     data.style.left = parseInt(Math.random() * mubu.width * 0.8) + "px";
     max = 600 - (life / 10);
-    min = 200;
+    min = 350;
     return $timeout(function() {
       var lifeName;
       if ($scope.gameOver) {
