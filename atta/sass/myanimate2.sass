@@ -1,0 +1,46 @@
+@mixin keyframes($key)
+	@keyframes #{$key}
+		@content
+=ada($key,$value)
+	#{$key}: #{$value}
+
+=transform($value)
+	+ada(transform, $value)
+=animation($ani: fadeInUp,$time: 1s,$ease: ease,$count: initial)
+	+ada(animation, $ani $time $ease)
+	+ada(animation-fill-mode, both)
+	+ada(animation-iteration-count, $count)
+
++keyframes(cloud)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(-1000%,0,0))
+
++keyframes(bird)
+	0%
+		+transform(translate3d(0,0,0))
+	50%
+		+transform(translate3d(0,50%,0))
+	100%
+		+transform(translate3d(0,0,0))
+
++keyframes(p3cloud1)
+	0%
+		+transform(translate3d(0,0,0) )
+	100%
+		+transform(translate3d(-100%,0,0))
+
++keyframes(p3cloud2)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(100%,0,0))
+
++keyframes(page7point5)
+	0%
+		opacity: 0
+		+transform(translate3d(100%,40%,0) scale(0.5,0.5))
+	100%
+		opacity: 1
+		+transform(translate3d(0,0,0) scale(1,1))

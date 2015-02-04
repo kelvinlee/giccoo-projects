@@ -1,0 +1,781 @@
+@-webkit-keyframes cloud {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(-1000%, 0, 0);
+            transform: translate3d(-1000%, 0, 0); } }
+@keyframes cloud {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(-1000%, 0, 0);
+            transform: translate3d(-1000%, 0, 0); } }
+@-webkit-keyframes bird {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  50% {
+    -webkit-transform: translate3d(0, 50%, 0);
+            transform: translate3d(0, 50%, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@keyframes bird {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  50% {
+    -webkit-transform: translate3d(0, 50%, 0);
+            transform: translate3d(0, 50%, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes p3cloud1 {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0); } }
+@keyframes p3cloud1 {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0); } }
+@-webkit-keyframes p3cloud2 {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0); } }
+@keyframes p3cloud2 {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0); } }
+@-webkit-keyframes page7point5 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 40%, 0) scale(0.5, 0.5);
+            transform: translate3d(100%, 40%, 0) scale(0.5, 0.5); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
+            transform: translate3d(0, 0, 0) scale(1, 1); } }
+@keyframes page7point5 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 40%, 0) scale(0.5, 0.5);
+            transform: translate3d(100%, 40%, 0) scale(0.5, 0.5); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
+            transform: translate3d(0, 0, 0) scale(1, 1); } }
+html, body {
+  height: 100%; }
+
+img {
+  max-width: 100%; }
+
+body {
+  margin: 0 auto;
+  background-color: #fcdd4e;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 640px;
+  padding: 0px; }
+  .iphone4 body {
+    width: 80%; }
+
+.sharePic {
+  width: 0px;
+  height: 0px;
+  position: absolute; }
+
+.copy {
+  width: 84.84375%;
+  margin: 0 auto;
+  margin-top: 10%; }
+  .iphone4 .copy {
+    width: 67.875%; }
+
+.main {
+  position: absolute;
+  font-size: 0; }
+
+.character {
+  margin-top: 10%;
+  width: 100%; }
+  .character ul {
+    padding: 0px;
+    list-style-type: none; }
+    .character ul .e {
+      width: 22.5%;
+      margin: 0 auto;
+      float: left;
+      margin-left: 1.2%;
+      margin-right: 1.2%;
+      margin-bottom: 8%; }
+      .iphone4 .character ul .e {
+        width: 18%; }
+
+.page0 {
+  display: none;
+  font-size: 0;
+  background-image: url("../img/p0_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fae9d6; }
+  .page0 .title {
+    position: absolute;
+    width: 62.8125%;
+    margin: 0 auto;
+    top: 1.5%;
+    left: 4%;
+    -webkit-animation-delay: 1500ms;
+            animation-delay: 1500ms; }
+    .iphone4 .page0 .title {
+      width: 50.25%; }
+  .page0 .flower {
+    position: absolute;
+    width: 28.90625%;
+    margin: 0 auto;
+    top: 3%;
+    right: 0%;
+    -webkit-animation-delay: 1500ms;
+            animation-delay: 1500ms; }
+    .iphone4 .page0 .flower {
+      width: 23.125%; }
+  .page0 .hill {
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    top: 36%;
+    z-index: 1;
+    background-color: #fae9d6;
+    font-size: 0; }
+    .iphone4 .page0 .hill {
+      width: 80%; }
+  .page0 .deer {
+    width: 44.84375%;
+    margin: 0 auto;
+    position: absolute;
+    top: 41%;
+    left: 2%;
+    z-index: 2;
+    -webkit-animation-delay: 1000ms;
+            animation-delay: 1000ms; }
+    .iphone4 .page0 .deer {
+      width: 35.875%; }
+  .page0 .body {
+    width: 47.5%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 22%;
+    z-index: 3;
+    -webkit-animation-delay: 800ms;
+            animation-delay: 800ms; }
+    .iphone4 .page0 .body {
+      width: 38%; }
+  .page0 .logo {
+    width: 66.875%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 22%;
+    margin-left: 16%;
+    z-index: 3;
+    -webkit-animation-delay: 1800ms;
+            animation-delay: 1800ms; }
+    .iphone4 .page0 .logo {
+      width: 53.5%; }
+  .page0 .share, .page0 .return {
+    position: absolute;
+    margin-left: 25%;
+    z-index: 3;
+    width: 10rem;
+    height: 2rem;
+    line-height: 2rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #4e644f;
+    background: #fad319;
+    border-radius: 5px; }
+  .page0 .share {
+    bottom: 14%;
+    -webkit-animation-delay: 1900ms;
+            animation-delay: 1900ms; }
+  .page0 .return {
+    bottom: 6%;
+    -webkit-animation-delay: 2000ms;
+            animation-delay: 2000ms; }
+
+.page1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  display: none;
+  background-image: url("../img/p1_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center; }
+  .page1 .title {
+    position: absolute;
+    width: 62.8125%;
+    margin: 0 auto;
+    top: 1.5%;
+    left: 4%;
+    -webkit-animation-delay: 1500ms;
+            animation-delay: 1500ms;
+    z-index: 3; }
+    .iphone4 .page1 .title {
+      width: 50.25%; }
+  .page1 .body {
+    width: 66.40625%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 30%;
+    z-index: 3;
+    -webkit-animation-delay: 800ms;
+            animation-delay: 800ms; }
+    .iphone4 .page1 .body {
+      width: 53.125%; }
+  .page1 .cloud {
+    width: 21.25%;
+    margin: 0 auto;
+    position: absolute;
+    top: 10%;
+    left: 98%;
+    -webkit-animation: cloud 12s linear;
+            animation: cloud 12s linear;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+    .iphone4 .page1 .cloud {
+      width: 17%; }
+  .page1 .cloudS {
+    width: 12.65625%;
+    margin: 0 auto;
+    position: absolute;
+    top: 14%;
+    left: 97%;
+    -webkit-animation: cloud 10s linear;
+            animation: cloud 10s linear;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-delay: 200ms;
+            animation-delay: 200ms; }
+    .iphone4 .page1 .cloudS {
+      width: 10.125%; }
+  .page1 .athena {
+    width: 23.28125%;
+    margin: 0 auto;
+    position: absolute;
+    top: 26%;
+    left: 4%;
+    -webkit-animation-delay: 600ms;
+            animation-delay: 600ms; }
+    .iphone4 .page1 .athena {
+      width: 18.625%; }
+  .page1 .logo {
+    width: 66.875%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 22%;
+    margin-left: 16%;
+    z-index: 3;
+    -webkit-animation-delay: 1800ms;
+            animation-delay: 1800ms; }
+    .iphone4 .page1 .logo {
+      width: 53.5%; }
+  .page1 .share, .page1 .return {
+    position: absolute;
+    margin-left: 25%;
+    z-index: 3;
+    width: 10rem;
+    height: 2rem;
+    line-height: 2rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #ed4e06;
+    border-radius: 5px; }
+  .page1 .share {
+    bottom: 14%;
+    -webkit-animation-delay: 1900ms;
+            animation-delay: 1900ms; }
+  .page1 .return {
+    bottom: 6%;
+    -webkit-animation-delay: 2000ms;
+            animation-delay: 2000ms; }
+
+.page2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-image: url("../img/p2_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center; }
+  .page2 .title {
+    position: absolute;
+    width: 85.15625%;
+    margin: 0 auto;
+    top: 1.5%;
+    left: 4%;
+    -webkit-animation-delay: 1500ms;
+            animation-delay: 1500ms;
+    z-index: 3; }
+    .iphone4 .page2 .title {
+      width: 68.125%; }
+  .page2 .body {
+    width: 58.75%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 30%;
+    z-index: 3;
+    -webkit-animation-delay: 800ms;
+            animation-delay: 800ms; }
+    .iphone4 .page2 .body {
+      width: 47%; }
+  .page2 .bird {
+    width: 10.9375%;
+    margin: 0 auto;
+    position: absolute;
+    top: 25%;
+    left: 8%;
+    -webkit-animation: bird 3s linear;
+            animation: bird 3s linear;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+    .iphone4 .page2 .bird {
+      width: 8.75%; }
+  .page2 .logo {
+    width: 66.875%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 22%;
+    margin-left: 16%;
+    z-index: 3;
+    -webkit-animation-delay: 1800ms;
+            animation-delay: 1800ms; }
+    .iphone4 .page2 .logo {
+      width: 53.5%; }
+  .page2 .share, .page2 .return {
+    position: absolute;
+    margin-left: 25%;
+    z-index: 3;
+    width: 10rem;
+    height: 2rem;
+    line-height: 2rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #813004;
+    border-radius: 5px; }
+  .page2 .share {
+    bottom: 14%;
+    -webkit-animation-delay: 1900ms;
+            animation-delay: 1900ms; }
+  .page2 .return {
+    bottom: 6%;
+    -webkit-animation-delay: 2000ms;
+            animation-delay: 2000ms; }
+
+.page3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-image: url("../img/p3_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  overflow: hidden; }
+  .page3 .title {
+    position: absolute;
+    width: 71.25%;
+    margin: 0 auto;
+    top: 1.5%;
+    left: 4%;
+    -webkit-animation-delay: 1500ms;
+            animation-delay: 1500ms;
+    z-index: 3; }
+    .iphone4 .page3 .title {
+      width: 57%; }
+  .page3 .cloud {
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 1;
+    top: 31%;
+    -webkit-animation: p3cloud1 10s linear;
+            animation: p3cloud1 10s linear;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+    .iphone4 .page3 .cloud {
+      width: 80%; }
+  .page3 .cloud2 {
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 1;
+    top: 31%;
+    right: -99%;
+    -webkit-animation: p3cloud1 10s linear;
+            animation: p3cloud1 10s linear;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+    .iphone4 .page3 .cloud2 {
+      width: 80%; }
+  .page3 .body {
+    width: 46.40625%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 31%;
+    z-index: 3;
+    -webkit-animation-delay: 800ms;
+            animation-delay: 800ms; }
+    .iphone4 .page3 .body {
+      width: 37.125%; }
+  .page3 .tower {
+    width: 90.625%;
+    margin: 0 auto;
+    position: absolute;
+    top: 25%;
+    left: 8%;
+    z-index: 2;
+    -webkit-animation-delay: 1000ms;
+            animation-delay: 1000ms; }
+    .iphone4 .page3 .tower {
+      width: 72.5%; }
+  .page3 .logo {
+    width: 66.875%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 22%;
+    margin-left: 16%;
+    z-index: 3;
+    -webkit-animation-delay: 1800ms;
+            animation-delay: 1800ms; }
+    .iphone4 .page3 .logo {
+      width: 53.5%; }
+  .page3 .share, .page3 .return {
+    position: absolute;
+    margin-left: 25%;
+    z-index: 3;
+    width: 10rem;
+    height: 2rem;
+    line-height: 2rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #65c536;
+    border-radius: 5px; }
+  .page3 .share {
+    bottom: 14%;
+    -webkit-animation-delay: 1900ms;
+            animation-delay: 1900ms; }
+  .page3 .return {
+    bottom: 6%;
+    -webkit-animation-delay: 2000ms;
+            animation-delay: 2000ms; }
+
+.page4 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-image: url("../img/p4_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center; }
+  .page4 .title {
+    position: absolute;
+    width: 62.65625%;
+    margin: 0 auto;
+    top: 1.5%;
+    left: 4%;
+    -webkit-animation-delay: 1500ms;
+            animation-delay: 1500ms;
+    z-index: 3; }
+    .iphone4 .page4 .title {
+      width: 50.125%; }
+  .page4 .body {
+    width: 46.25%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 31%;
+    z-index: 3;
+    -webkit-animation-delay: 800ms;
+            animation-delay: 800ms; }
+    .iphone4 .page4 .body {
+      width: 37%; }
+  .page4 .logo {
+    width: 66.875%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 22%;
+    margin-left: 16%;
+    z-index: 3;
+    -webkit-animation-delay: 1800ms;
+            animation-delay: 1800ms; }
+    .iphone4 .page4 .logo {
+      width: 53.5%; }
+  .page4 .share, .page4 .return {
+    position: absolute;
+    margin-left: 25%;
+    z-index: 3;
+    width: 10rem;
+    height: 2rem;
+    line-height: 2rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #1c7d2d;
+    border-radius: 5px; }
+  .page4 .share {
+    bottom: 14%;
+    -webkit-animation-delay: 1900ms;
+            animation-delay: 1900ms; }
+  .page4 .return {
+    bottom: 6%;
+    -webkit-animation-delay: 2000ms;
+            animation-delay: 2000ms; }
+
+.page5 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-image: url("../img/p5_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center; }
+  .page5 .title {
+    position: absolute;
+    width: 67.8125%;
+    margin: 0 auto;
+    top: 1.5%;
+    left: 4%;
+    -webkit-animation-delay: 1500ms;
+            animation-delay: 1500ms;
+    z-index: 3; }
+    .iphone4 .page5 .title {
+      width: 54.25%; }
+  .page5 .body {
+    width: 45%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 31%;
+    z-index: 3;
+    -webkit-animation-delay: 800ms;
+            animation-delay: 800ms; }
+    .iphone4 .page5 .body {
+      width: 36%; }
+  .page5 .logo {
+    width: 66.875%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 22%;
+    margin-left: 16%;
+    z-index: 3;
+    -webkit-animation-delay: 1800ms;
+            animation-delay: 1800ms; }
+    .iphone4 .page5 .logo {
+      width: 53.5%; }
+  .page5 .share, .page5 .return {
+    position: absolute;
+    margin-left: 25%;
+    z-index: 3;
+    width: 10rem;
+    height: 2rem;
+    line-height: 2rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #205098;
+    border-radius: 5px; }
+  .page5 .share {
+    bottom: 14%;
+    -webkit-animation-delay: 1900ms;
+            animation-delay: 1900ms; }
+  .page5 .return {
+    bottom: 6%;
+    -webkit-animation-delay: 2000ms;
+            animation-delay: 2000ms; }
+
+.page6 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-image: url("../img/p6_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center; }
+  .page6 .title {
+    position: absolute;
+    width: 93.75%;
+    margin: 0 auto;
+    top: 1.5%;
+    left: 4%;
+    -webkit-animation-delay: 1500ms;
+            animation-delay: 1500ms;
+    z-index: 3; }
+    .iphone4 .page6 .title {
+      width: 75%; }
+  .page6 .body {
+    width: 42.1875%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 31%;
+    z-index: 3;
+    -webkit-animation-delay: 800ms;
+            animation-delay: 800ms; }
+    .iphone4 .page6 .body {
+      width: 33.75%; }
+  .page6 .logo {
+    width: 66.875%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 22%;
+    margin-left: 16%;
+    z-index: 3;
+    -webkit-animation-delay: 1800ms;
+            animation-delay: 1800ms; }
+    .iphone4 .page6 .logo {
+      width: 53.5%; }
+  .page6 .share, .page6 .return {
+    position: absolute;
+    margin-left: 25%;
+    z-index: 3;
+    width: 10rem;
+    height: 2rem;
+    line-height: 2rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #82ba55;
+    border-radius: 5px; }
+  .page6 .share {
+    bottom: 14%;
+    -webkit-animation-delay: 1900ms;
+            animation-delay: 1900ms; }
+  .page6 .return {
+    bottom: 6%;
+    -webkit-animation-delay: 2000ms;
+            animation-delay: 2000ms; }
+
+.page7 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-image: url("../img/p7_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center; }
+  .page7 .title {
+    position: absolute;
+    width: 74.84375%;
+    margin: 0 auto;
+    top: 1.5%;
+    left: 4%;
+    -webkit-animation-delay: 1500ms;
+            animation-delay: 1500ms;
+    z-index: 3; }
+    .iphone4 .page7 .title {
+      width: 59.875%; }
+  .page7 .body {
+    width: 41.09375%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 31%;
+    z-index: 3;
+    -webkit-animation-delay: 800ms;
+            animation-delay: 800ms; }
+    .iphone4 .page7 .body {
+      width: 32.875%; }
+  .page7 .logo {
+    width: 66.875%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 22%;
+    margin-left: 16%;
+    z-index: 3;
+    -webkit-animation-delay: 1800ms;
+            animation-delay: 1800ms; }
+    .iphone4 .page7 .logo {
+      width: 53.5%; }
+  .page7 .share, .page7 .return {
+    position: absolute;
+    margin-left: 25%;
+    z-index: 3;
+    width: 10rem;
+    height: 2rem;
+    line-height: 2rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #82ba55;
+    border-radius: 5px; }
+  .page7 .share {
+    bottom: 14%;
+    -webkit-animation-delay: 1900ms;
+            animation-delay: 1900ms; }
+  .page7 .return {
+    bottom: 6%;
+    -webkit-animation-delay: 2000ms;
+            animation-delay: 2000ms; }
+
+.sharePage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: none;
+  z-index: 100; }
+  .iphone4 .sharePage {
+    width: 80%; }
