@@ -3,7 +3,11 @@
 @import sass/slider
 @import ../../libs/sass/loading
 
-$cdn : "http://disk.giccoo.com/projects"
+$debug : false
+$cdn : ""
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects"
+
 
 +keyframes(movebg)
 	0%
@@ -219,6 +223,7 @@ body
 	+w(100%)
 	// background: url(../img/bg.jpg) no-repeat top center
 	background-color: #f91200
+	overflow: hidden
 	.bg
 		// +b($cdn+"img/bg.jpg",no-repeat,100%,0%,700% 100%)
 		+posr
@@ -453,7 +458,7 @@ body
 			padding-top: 15%
 			font-size: 1rem
 			span
-				font-size: 0.9rem
+				// font-size: 0.9rem
 	.gameStar
 		+posa
 		+tl
@@ -498,12 +503,12 @@ body
 			// +iw(100,640,100%)
 			+wh(4rem,4rem)
 			padding: 4% 2%
-			&.y
-				+b("#{$cdn}/ccb/img/y.png",no-repeat,center,center, 80% 60%)
-				padding-top: 8%
-				padding-bottom: 0
-			&.yyy
-				+b("#{$cdn}/ccb/img/yyy.png",no-repeat,center,center, 80% 60%)
+			// &.y
+			// 	+b("#{$cdn}/ccb/img/y.png",no-repeat,center,center, 80% 60%)
+			// 	padding-top: 8%
+			// 	padding-bottom: 0
+			// &.yyy
+			// 	+b("#{$cdn}/ccb/img/yyy.png",no-repeat,center,center, 80% 60%)
 			+posa
 			&.ng-enter
 				+transform(translate3d(0,0,0))

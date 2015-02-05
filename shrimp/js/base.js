@@ -1236,7 +1236,8 @@ _Progress = 0;
 handleFileLoad = function() {
   var Percentage;
   _Progress++;
-  return Percentage = Math.ceil((_Progress / loadList.length) * 100);
+  Percentage = Math.ceil((_Progress / loadList.length) * 100);
+  return console.log("Load:", Percentage);
 };
 
 _finishedlist = [

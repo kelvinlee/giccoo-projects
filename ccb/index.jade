@@ -1,7 +1,7 @@
 extends ../libs/jade/layout-ng
 
 block title
-	| 羊年快来抓￥财，羊年亨通升官发财！
+	| 羊年快来抓￥财，羊年亨通升官发财！#{debug}
 block css
 	link(rel="stylesheet",href="/ccb/css/base.css")
 	script.
@@ -36,26 +36,26 @@ block ng-template
 					img(src="#{url}ccb/img/btn-pass.png")
 				.sound(ng-click="closeSound()",ng-class="soundoff")
 					img(src="#{url}ccb/img/icon-sound.png")
-			.bg
-				.move
-					img.bgimg(src="#{url}ccb/img/bg.jpg")
-					.river(ng-class="river")
-						.river1
-							img.bgimg(src="#{url}ccb/img/river1.png")
-						.river2
-							img.bgimg(src="#{url}ccb/img/river2.png")
 			.mubus
 				.mubu(ng-class="shakeYYY")
 					-for (var i=0;i<11;i++)
 						.yyy(class="y#{i}")
 							.body
 								.jump
-									img(ng-src="#{url}ccb/img/{{src}}.png")
+									img(src="#{url}ccb/img/{{src}}.png")
 							.money
 								.y1
 									img(src="#{url}ccb/img/y1.png")
 								.y2
 									img(src="#{url}ccb/img/y2.png")
+			.bg
+				.move
+					img.bgimg(src="#{url}ccb/img/bg.jpg",onload="finishedRiver(this)")
+					.river(ng-class="river")
+						.river1
+							img.bgimg(src="#{url}ccb/img/river1.png")
+						.river2
+							img.bgimg(src="#{url}ccb/img/river2.png")
 		.weiban.pagechange(ng-show="weiban",ng-click="hideweiban()")
 	script(type="text/ng-template",id="game.html")
 		.game-page(ng-controller="GameController as game")
@@ -80,6 +80,7 @@ block ng-template
 					//- .timer 剩余时间: {{game.timer}}秒
 					.score {{game.score}} 元 
 					.item(class="item-{{key}}",ng-class="item.class",ng-style="item.style",data-key="{{key}}",ng-repeat="(key,item) in game.items")
+						img(src="#{url}ccb/img/{{item.class}}.png")
 					//- .item(name="item-4927",style="-webkit-transition-duration: 50000ms; transition-duration: 50000ms",class="item y ng-scope ng-animate ng-leave ng-leave-active")
 						//- img(ng-src="#{url}ccb/img/{{item.name}}.png")
 				.gameOver.pagechange(ng-show="gameOver")
@@ -88,7 +89,7 @@ block ng-template
 						h1 太厉害了
 						h2 一把抓到 {{game.score}} 元
 					.subtitle
-						p 财运指数超越了朋友圈 <span>{{game.Transcend}}%</span> 的人,<br/>一键分享羊年一起发!
+						p 财运指数超越了朋友圈 {{game.Transcend}}% 的人,<br/>一键分享羊年一起发!
 					.btn
 						img(src="#{url}ccb/img/sharebtn.jpg")
 						div.sharebtn(ng-click="game.showShare()")

@@ -150,13 +150,13 @@ loadList = [
   }
 ];
 
-beginload = function($scope) {
+beginload = function($scope, callback) {
   var handleComplete;
   if (preload != null) {
     return "";
   }
   handleComplete = function() {
-    return LoadFinished("img", $scope);
+    return LoadFinished("img", $scope, callback);
   };
   preload = new createjs.LoadQueue();
   preload.on('fileload', handleFileLoad, this);
@@ -169,7 +169,8 @@ _Progress = 0;
 handleFileLoad = function() {
   var Percentage;
   _Progress++;
-  return Percentage = Math.ceil((_Progress / loadList.length) * 100);
+  Percentage = Math.ceil((_Progress / loadList.length) * 100);
+  return console.log("Load:", Percentage);
 };
 
 _finishedlist = [
@@ -182,7 +183,7 @@ _finishedlist = [
   }
 ];
 
-LoadFinished = function(name, $scope) {
+LoadFinished = function(name, $scope, callback) {
   var a, gotoNext, _j, _k, _len1, _len2;
   for (_j = 0, _len1 = _finishedlist.length; _j < _len1; _j++) {
     a = _finishedlist[_j];
@@ -201,7 +202,11 @@ LoadFinished = function(name, $scope) {
   if (gotoNext) {
     $scope.loaded = true;
     if (name !== "angular") {
-      return $scope.$apply();
+      return $scope.$apply(function() {
+        if (typeof callback === "function") {
+          return callback.call();
+        }
+      });
     }
   }
 };

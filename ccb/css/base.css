@@ -353,6 +353,9 @@ td,
 th {
   padding: 0; }
 
+html, body {
+  font-family: Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Heiti SC, Hiragino Sans GB, Simsun, sans-self; }
+
 .clearfix:after {
   content: ".";
   display: block;
@@ -1245,7 +1248,8 @@ html, body {
   height: 100%;
   position: relative;
   width: 100%;
-  background-color: #f91200; }
+  background-color: #f91200;
+  overflow: hidden; }
   .homepage .bg {
     position: relative;
     z-index: 49;
@@ -1682,8 +1686,6 @@ html, body {
       text-align: center;
       padding-top: 15%;
       font-size: 1rem; }
-      .game-page .gameOver .subtitle span {
-        font-size: 0.9rem; }
   .game-page .gameStar {
     position: absolute;
     top: 0px;
@@ -1749,16 +1751,6 @@ html, body {
       height: 4rem;
       padding: 4% 2%;
       position: absolute; }
-      .game-page .gameCanvas .item.y {
-        background: url("http://disk.giccoo.com/projects/ccb/img/y.png") no-repeat center center;
-        background-size: 80% 60%;
-        background-color: transparent;
-        padding-top: 8%;
-        padding-bottom: 0; }
-      .game-page .gameCanvas .item.yyy {
-        background: url("http://disk.giccoo.com/projects/ccb/img/yyy.png") no-repeat center center;
-        background-size: 80% 60%;
-        background-color: transparent; }
       .game-page .gameCanvas .item.ng-enter {
         -webkit-transform: translate3d(0, 0, 0);
                 transform: translate3d(0, 0, 0); }

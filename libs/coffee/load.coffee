@@ -15,7 +15,7 @@ _Progress = 0
 handleFileLoad = ->
 	_Progress++
 	Percentage = Math.ceil((_Progress/loadList.length)*100)
-	# console.log Percentage
+	console.log "Load:",Percentage
 	
 _finishedlist = [{name:"img",load:false},{name:"angular",load:false}]
 LoadFinished = (name,$scope,callback)->

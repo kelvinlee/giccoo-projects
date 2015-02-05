@@ -6,18 +6,21 @@
 # @codekit-prepend "../../libs/coffee/load"
 
 # load list
-cdn = "http://disk.giccoo.com/projects"
-# cdn = ""
+debug = false
+cdn = "/"
+cdn = "http://disk.giccoo.com/projects/" unless debug
+# cdn = "http://disk.giccoo.com/projects/"
+
 
 loadList = [
-	{id: "logo", src:"#{cdn}/libs/img/loading.png"}
-	{id: "bg", src: "#{cdn}/ccb/img/bg.jpg"}
-	{id: "river1", src: "#{cdn}/ccb/img/river1.png"}
-	{id: "river2", src: "#{cdn}/ccb/img/river2.png"}
-	{id: "btn-pass", src: "#{cdn}/ccb/img/btn-pass.png"}
-	{id: "icon-sound", src: "#{cdn}/ccb/img/icon-sound.png"}
-	{id: "y1", src: "#{cdn}/ccb/img/y1.png"}
-	{id: "y2", src: "#{cdn}/ccb/img/y2.png"}
+	{id: "logo", src:"#{cdn}libs/img/loading.png"}
+	{id: "bg", src: "#{cdn}ccb/img/bg.jpg"}
+	{id: "river1", src: "#{cdn}ccb/img/river1.png"}
+	{id: "river2", src: "#{cdn}ccb/img/river2.png"}
+	{id: "btn-pass", src: "#{cdn}ccb/img/btn-pass.png"}
+	{id: "icon-sound", src: "#{cdn}ccb/img/icon-sound.png"}
+	{id: "y1", src: "#{cdn}ccb/img/y1.png"}
+	{id: "y2", src: "#{cdn}ccb/img/y2.png"}
 ]
 
 _wechat_f = 
@@ -66,6 +69,15 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 		controllerAs: "main"
 	}
 ]
+_tempH = 0
+finishedRiver = ->
+	console.log "load river",$(".bgimg").height()
+	setTimeout ->
+		if _tempH <= $(".bgimg").height()
+			_tempH = $(".bgimg").height()
+		$(".mubus").css
+			"height": _tempH+"px"
+	,10
 # 主要加载
 app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 	$scope.shakeYYY = ""
@@ -80,8 +92,10 @@ app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 		LoadFinished "angular",$scope
 	$scope.$watch "loaded", ->
 		if $scope.loaded
-			$(".loaded").removeClass "loaded" 
+			# console.log preload.getResult("bg").height
 			$scope.starPage = true
+			$(".loaded").removeClass "loaded"
+			finishedRiver()
 			if $(".move").length>0
 				$(".move")[0].addEventListener ANIMATION_END_NAME, (e)->
 					return false if $(e.target).is(".river1") or $(e.target).is(".river2")
@@ -94,7 +108,7 @@ app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 							$scope.src = "y"
 						,100
 						$timeout ->
-							$scope.pass()
+							$scope.pass() unless debug
 						,2500
 						# $scope.
 	$scope.closeSound = ->
@@ -134,7 +148,8 @@ app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 	$scope.$watch "weiban",->
 		if $scope.weiban
 			$timeout ->
-				$location.path "/game"
+				audiobg.pause()
+				$location.path "/game" unless debug
 			,5000
 
 app.controller 'homeController', ($rootScope)->
