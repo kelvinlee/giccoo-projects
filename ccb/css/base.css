@@ -1686,6 +1686,9 @@ html, body {
       text-align: center;
       padding-top: 15%;
       font-size: 1rem; }
+      .game-page .gameOver .subtitle span {
+        font-size: 1.2rem;
+        font-weight: bold; }
   .game-page .gameStar {
     position: absolute;
     top: 0px;

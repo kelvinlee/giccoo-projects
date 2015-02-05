@@ -89,7 +89,7 @@ block ng-template
 						h1 太厉害了
 						h2 一把抓到 {{game.score}} 元
 					.subtitle
-						p 财运指数超越了朋友圈 {{game.Transcend}}% 的人,<br/>一键分享羊年一起发!
+						p 财运指数超越了朋友圈 <span>{{game.Transcend}}%</span> 的人,<br/>一键分享羊年一起发!
 					.btn
 						img(src="#{url}ccb/img/sharebtn.jpg")
 						div.sharebtn(ng-click="game.showShare()")
