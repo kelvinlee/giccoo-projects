@@ -1,0 +1,150 @@
+@import sass/base
+@import ../../libs/sass/loading
+
++keyframes(nextpoint)
+	0%,100%
+		opacity: 1
+	50%
+		opacity: 0.5
+
+section
+	+posr
+	&[data-id="1"]
+		background: #000
+		.door
+			+tran($time:2s)
+			+posa
+			+tl()
+			+wh(100%,100%)
+			z-index: 10
+			transform-origin: center center
+			&.open
+				+transform(scale(1.2,1.2))
+				.door-left
+					+transform(rotateY(-90deg) scale(1,1.1))
+				.door-right
+					+transform(rotateY(90deg) scale(1,1.1))
+				& + .page-1
+					+transform(scale(1,1))
+					.text
+						+show
+			.door-left,.door-right
+				+tran($time:2s)
+				+posa
+				+h(100%)
+			.door-left
+				+tl
+				+iw(319)
+				+b("../img/door-left.jpg",no-repeat,center,right,cover)
+				transform-origin: left center
+			.door-right
+				+tr
+				+iw(321)
+				+b("../img/door-right.jpg",no-repeat,center,left,cover)
+				transform-origin: right center
+
+		.page-1
+			+posa
+			+tl
+			+wh(100%,100%)
+			z-index: 1
+			+b("../img/page-1-bg.jpg",no-repeat,center,center,100% 100%)
+			+transform(scale(0.8,0.8))
+			+tran($time:2s)
+			.text
+				+hide
+				margin-top: 10%
+				+posa
+				+tl(50%,55%)
+				+iw(336)
+				+transform(translate3d(-50%,-50%,0))
+				.item
+					+posa
+					+tl
+				@for $i from 2 through 9
+					.item-#{$i}
+						animation-delay: ($i - 1)*300ms
+
+	&[data-id="2"]
+		+b("../img/page-2-bg.jpg",no-repeat,center,center,100% 100%)
+		.keeper
+			+posa
+			+iw(590)
+			+tl(26%,50%)
+			+transform(translate3d(-50%,0,0))
+			.title
+				+posa
+				+tl
+		.text
+			+posa
+			+bl(18%)
+			.item
+				+posa
+				+tl
+				&:first-child
+					+posr
+		.logo
+			+iw(100)
+			+posa
+			+bl(5%,50%)
+			// margin-left: -8%
+			+transform(translate3d(-50%,0,0))
+
+	&[data-id="3"]
+		+b("../img/page-3-bg.jpg",no-repeat,center,center,100% 100%)
+		.zw
+			padding-top: 15%
+		.location
+			+iw(337)
+		.map
+			+show
+			+iw(600)
+			+posr
+			.point
+				+posa
+				+tl(39%,20%)
+				+iw(364,600,100%)
+				// +transform(translate3d(-50%,-50%,0))
+		.logo
+			+iw(100)
+			+posa
+			+bl(2%,50%)
+			// margin-left: -8%
+			+transform(translate3d(-50%,0,0))
+
+.page
+	.nextpoint
+		+posa
+		+bl(20px,50%)
+		z-index: 100
+		+anim()
+		.text
+			+posa
+			+tl
+			+text-center
+			+w(5rem)
+			+transform(translate3d(-50%,-150%,0))
+			font-size: 0.8rem
+			color: #fff
+		&:before,&:after
+			content: " "
+			+posa
+			+tl(-10%)
+			+wh(1rem,0.5rem)
+			background: url(../img/nextpoint.png) no-repeat center center
+			background-size: cover
+			+transform(translate3d(-50%,0,0))
+			+animation(nextpoint,1s,ease,infinite)
+		&:after
+			+transform(translate3d(-50%,-100%,0))
+		&:before
+			+delay(0.5s)
+		&.black
+			.text
+				color: #000
+			&:before,&:after
+				background-image: url(../img/nextpoint-black.png)
+
+				
+
+			
