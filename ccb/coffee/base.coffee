@@ -188,11 +188,11 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 		this.starTime = new Date().getTime()
 		this.checkTime()
 	this.checkTime = ->
-		timeLife = 30
+		timeLife = 60
 		n = (new Date().getTime() - this.starTime)/1000
 		this.timer = timeLife - parseInt n
 		if n >= timeLife
-			# $scope.gameOver = true
+			$scope.gameOver = true
 			return "over"
 		$timeout ->
 			tis.checkTime()

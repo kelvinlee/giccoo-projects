@@ -168,13 +168,14 @@
             <div class="logo"><img src="http://disk.giccoo.com/projects/ccb/img/logo.jpg"></div>
           </div>
           <div ng-show="game.gameBegin &amp;&amp; !gameOver" class="gameCanvas pagechange">
+            <div ng-if="game.timer&lt;=10" class="timer">剩余时间: {{game.timer}}秒</div>
             <div class="score">{{game.score}} 元 </div>
             <div ng-class="item.class" ng-style="item.style" data-key="{{key}}" ng-repeat="(key,item) in game.items" class="item item-{{key}}"><img src="http://disk.giccoo.com/projects/ccb/img/{{item.class}}.png"></div>
           </div>
           <div ng-show="gameOver" class="gameOver pagechange">
             <div class="title">
               <h1>太厉害了</h1>
-              <h2>一把抓到 {{game.score}} 元</h2>
+              <h2>一把抓到 <span>{{game.score}} 元</span></h2>
             </div>
             <div class="subtitle">
               <p>财运指数超越了朋友圈 <span>{{game.Transcend}}%</span> 的人,<br/>一键分享羊年一起发!</p>

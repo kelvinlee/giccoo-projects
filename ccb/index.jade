@@ -77,7 +77,7 @@ block ng-template
 						img(src="#{url}ccb/img/logo.jpg")
 				.gameCanvas.pagechange(ng-show="game.gameBegin && !gameOver")
 					//- .text Game Star
-					//- .timer 剩余时间: {{game.timer}}秒
+					.timer(ng-if="game.timer<=10") 剩余时间: {{game.timer}}秒
 					.score {{game.score}} 元 
 					.item(class="item-{{key}}",ng-class="item.class",ng-style="item.style",data-key="{{key}}",ng-repeat="(key,item) in game.items")
 						img(src="#{url}ccb/img/{{item.class}}.png")
@@ -87,7 +87,7 @@ block ng-template
 					//- .text Game Over
 					.title
 						h1 太厉害了
-						h2 一把抓到 {{game.score}} 元
+						h2 一把抓到 <span>{{game.score}} 元</span>
 					.subtitle
 						p 财运指数超越了朋友圈 <span>{{game.Transcend}}%</span> 的人,<br/>一键分享羊年一起发!
 					.btn

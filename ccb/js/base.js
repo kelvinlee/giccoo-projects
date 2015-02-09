@@ -495,10 +495,11 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
   };
   this.checkTime = function() {
     var n, timeLife;
-    timeLife = 30;
+    timeLife = 60;
     n = (new Date().getTime() - this.starTime) / 1000;
     this.timer = timeLife - parseInt(n);
     if (n >= timeLife) {
+      $scope.gameOver = true;
       return "over";
     }
     return $timeout(function() {

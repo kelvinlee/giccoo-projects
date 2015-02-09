@@ -1665,6 +1665,8 @@ html, body {
       .game-page .gameOver .title h2 {
         font-size: 1.2rem;
         margin: 0; }
+        .game-page .gameOver .title h2 span {
+          font-size: 1.6rem; }
     .game-page .gameOver .btn {
       padding-top: 5%;
       position: relative; }
@@ -1733,7 +1735,7 @@ html, body {
     overflow: hidden; }
     .game-page .gameCanvas .timer, .game-page .gameCanvas .score {
       color: #fff;
-      font-size: 0.8rem; }
+      font-size: 1.2rem; }
     .game-page .gameCanvas .timer {
       position: absolute;
       top: 16px;
