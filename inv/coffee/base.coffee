@@ -7,6 +7,7 @@ init = ->
 		indicator: false,		# 有无指示点
 		arrow:     false,		# 有无指示箭头
 		onchange: (index, element, direction)->
+			$(".loading").hide()
 			if $(".page").height() < 450
 				$("body").addClass "iphone4"
 			else

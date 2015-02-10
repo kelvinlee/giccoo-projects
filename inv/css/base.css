@@ -480,6 +480,22 @@ html, body {
     opacity: 1; }
   50% {
     opacity: 0.5; } }
+.loading {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: #fff;
+  opacity: 1; }
+  .loading .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0); }
+
 section {
   position: relative; }
   section[data-id="1"] {

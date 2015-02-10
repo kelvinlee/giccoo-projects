@@ -12,6 +12,7 @@ init = function() {
     indicator: false,
     arrow: false,
     onchange: function(index, element, direction) {
+      $(".loading").hide();
       if ($(".page").height() < 450) {
         return $("body").addClass("iphone4");
       } else {
