@@ -649,19 +649,19 @@ section {
         width: 42.125%; }
     section[data-id="3"] .map {
       display: block;
-      width: 93.75%;
+      width: 87.5%;
       margin: 0 auto;
       position: relative; }
       .iphone4 section[data-id="3"] .map {
-        width: 75%; }
+        width: 70%; }
       section[data-id="3"] .map .point {
         position: absolute;
         top: 39%;
         left: 20%;
-        width: 60.6666666667%;
+        width: 65%;
         margin: 0 auto; }
         .iphone4 section[data-id="3"] .map .point {
-          width: 60.6666666667%; }
+          width: 65%; }
     section[data-id="3"] .logo {
       width: 15.625%;
       margin: 0 auto;
