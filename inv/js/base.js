@@ -35,6 +35,7 @@ openDoor = function() {
 
 $(document).ready(function() {
   init();
+  $(".loading").hide();
   $(".door").on("touchstart", function() {
     return openDoor();
   });

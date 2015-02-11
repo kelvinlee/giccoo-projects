@@ -22,6 +22,7 @@ openDoor = ->
 	,1000
 $(document).ready ->
 	init()
+	$(".loading").hide()
 	$(".door").on "touchstart",->
 		openDoor()
 	setTimeout ->

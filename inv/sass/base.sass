@@ -44,16 +44,25 @@ section
 				+tran($time:2s)
 				+posa
 				+h(100%)
+				.doorknob
+					+posa
+					+iw(106,320,100%)
+					+transform(translate3d(0,-50%,0))
+					+animation(pulse,1s,linear,infinite)
 			.door-left
 				+tl
 				+iw(319)
 				+b("../img/door-left.jpg",no-repeat,center,right,cover)
 				transform-origin: left center
+				.doorknob
+					+tr(50%,10%)
 			.door-right
 				+tr
 				+iw(321)
 				+b("../img/door-right.jpg",no-repeat,center,left,cover)
 				transform-origin: right center
+				.doorknob
+					+tl(50%,10%)
 
 		.page-1
 			+posa
