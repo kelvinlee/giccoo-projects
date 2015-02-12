@@ -28,6 +28,7 @@ block content
 
 
 block ng-template
+	//- - url = ""
 	script(type="text/ng-template",id="home.html")
 		audio#audiobg(src="#{url}ccb/mp3/audio-bg.mp3",autoplay,loop)
 		.homepage(ng-show="starPage",ng-controller="homeController")
@@ -36,6 +37,8 @@ block ng-template
 					img(src="#{url}ccb/img/btn-pass.png")
 				.sound(ng-click="closeSound()",ng-class="soundoff")
 					img(src="#{url}ccb/img/icon-sound.png")
+				.subtitle
+					img(src="#{url}ccb/img/movie-subtitle.png")
 			.mubus
 				.mubu(ng-class="shakeYYY")
 					-for (var i=0;i<11;i++)
@@ -70,7 +73,7 @@ block ng-template
 						.special
 							img(src="#{url}ccb/img/title-zhua.png")
 					.subtitle
-						img(src="#{url}ccb/img/subtitle.jpg")
+						img(src="#{url}ccb/img/subtitle.png")
 					.star(ng-click="game.gameStar()")
 						img(src="#{url}ccb/img/starbtn.jpg")
 					.logo

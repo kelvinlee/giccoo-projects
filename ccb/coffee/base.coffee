@@ -70,6 +70,8 @@ app = angular.module('kelvin', ["ngRoute","ngTouch","ngAnimate"])
 	}
 ]
 _tempH = 0
+# finishedRiver = ->
+
 finishedRiver = ->
 	console.log "load river",$(".bgimg").height()
 	setTimeout ->
@@ -93,9 +95,13 @@ app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 	$scope.$watch "loaded", ->
 		if $scope.loaded
 			# console.log preload.getResult("bg").height
-			$scope.starPage = true
+			$scope.starPage = false
 			$(".loaded").removeClass "loaded"
-			finishedRiver()
+			# finishedRiver()
+			$timeout ->
+				$scope.hideweiban()
+				console.log "time up"
+			,5000
 			if $(".move").length>0
 				$(".move")[0].addEventListener ANIMATION_END_NAME, (e)->
 					return false if $(e.target).is(".river1") or $(e.target).is(".river2")
@@ -138,25 +144,29 @@ app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 			# alert "开始播放"
 			$scope.$apply ->
 				$scope.soundoff = "on"
-	$scope.weiban = false
+	$scope.weiban = true
 	$scope.hideweiban = ->
-		$scope.starPage = false
-		$location.path "/game"
+		$scope.starPage = true
+		$scope.weiban = false
+		finishedRiver()
 	$scope.pass = ->
-		$scope.weiban = true
-		$scope.starPage = false
-	$scope.$watch "weiban",->
-		if $scope.weiban
-			$timeout ->
-				audiobg.pause()
-				$location.path "/game" unless debug
-			,5000
+		$location.path "/game" unless debug
+		# $scope.weiban = true
+		# $scope.starPage = false
+		#  unless debug
+		
+	# $scope.$watch "weiban",->
+	# 	if $scope.weiban
+	# 		$timeout ->
+	# 			audiobg.pause()
+	# 			$location.path "/game" unless debug
+	# 		,5000
 
 app.controller 'homeController', ($rootScope)->
 	$rootScope.home = true
 
 app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
-	return $location.path '/' unless $rootScope.home
+	# return $location.path '/' unless $rootScope.home
 	this.wechat = false
 	this.weiban = true
 	this.gameBegin = false
@@ -198,7 +208,7 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 			tis.checkTime()
 		,200
 	this.putYYY = ->
-		totleLife = 5000
+		totleLife = 3500
 		life = (new Date().getTime() - this.starTime)
 		life = life/10
 		life = 4000 if life>4000
@@ -210,8 +220,9 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 			data.class = "yyy"
 		data.style.top = "-80px"
 		data.style.left = parseInt(Math.random()*(mubu.width)*0.8)+"px"
-		max = 600 - (life/10)
-		min = 350
+		max = 350 - (life/5)
+		# max = 600 - (life/10)
+		min = 300 - (life/5)
 		$timeout ->
 			return false if $scope.gameOver
 			lifeName = parseInt(Math.random()*10000)

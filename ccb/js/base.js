@@ -374,9 +374,12 @@ app.controller('MainController', function($rootScope, $scope, $location, $timeou
   });
   $scope.$watch("loaded", function() {
     if ($scope.loaded) {
-      $scope.starPage = true;
+      $scope.starPage = false;
       $(".loaded").removeClass("loaded");
-      finishedRiver();
+      $timeout(function() {
+        $scope.hideweiban();
+        return console.log("time up");
+      }, 5000);
       if ($(".move").length > 0) {
         return $(".move")[0].addEventListener(ANIMATION_END_NAME, function(e) {
           if ($(e.target).is(".river1") || $(e.target).is(".river2")) {
@@ -430,25 +433,17 @@ app.controller('MainController', function($rootScope, $scope, $location, $timeou
       });
     });
   }
-  $scope.weiban = false;
+  $scope.weiban = true;
   $scope.hideweiban = function() {
-    $scope.starPage = false;
-    return $location.path("/game");
+    $scope.starPage = true;
+    $scope.weiban = false;
+    return finishedRiver();
   };
-  $scope.pass = function() {
-    $scope.weiban = true;
-    return $scope.starPage = false;
-  };
-  return $scope.$watch("weiban", function() {
-    if ($scope.weiban) {
-      return $timeout(function() {
-        audiobg.pause();
-        if (!debug) {
-          return $location.path("/game");
-        }
-      }, 5000);
+  return $scope.pass = function() {
+    if (!debug) {
+      return $location.path("/game");
     }
-  });
+  };
 });
 
 app.controller('homeController', function($rootScope) {
@@ -457,9 +452,6 @@ app.controller('homeController', function($rootScope) {
 
 app.controller('GameController', function($rootScope, $scope, $location, $timeout) {
   var mubu, tis;
-  if (!$rootScope.home) {
-    return $location.path('/');
-  }
   this.wechat = false;
   this.weiban = true;
   this.gameBegin = false;
@@ -508,7 +500,7 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
   };
   this.putYYY = function() {
     var data, life, max, min, totleLife;
-    totleLife = 5000;
+    totleLife = 3500;
     life = new Date().getTime() - this.starTime;
     life = life / 10;
     if (life > 4000) {
@@ -532,8 +524,8 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
     }
     data.style.top = "-80px";
     data.style.left = parseInt(Math.random() * mubu.width * 0.8) + "px";
-    max = 600 - (life / 10);
-    min = 350;
+    max = 350 - (life / 5);
+    min = 300 - (life / 5);
     return $timeout(function() {
       var lifeName;
       if ($scope.gameOver) {

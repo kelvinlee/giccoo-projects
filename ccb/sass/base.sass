@@ -224,6 +224,8 @@ body
 	// background: url(../img/bg.jpg) no-repeat top center
 	background-color: #f91200
 	overflow: hidden
+	.movie
+		+wh(100%,100%)
 	.bg
 		// +b($cdn+"img/bg.jpg",no-repeat,100%,0%,700% 100%)
 		+posr
@@ -282,6 +284,9 @@ body
 			&.off
 				img
 					margin-left: -100%
+		.subtitle
+			+posa
+			+bl
 	.mubus
 		// +animation(movebg,20s,linear)
 		// animation-delay: 1s
