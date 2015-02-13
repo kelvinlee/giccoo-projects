@@ -452,6 +452,9 @@ app.controller('homeController', function($rootScope) {
 
 app.controller('GameController', function($rootScope, $scope, $location, $timeout) {
   var mubu, tis;
+  if (!$rootScope.home) {
+    return $location.path('/');
+  }
   this.wechat = false;
   this.weiban = true;
   this.gameBegin = false;

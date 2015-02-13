@@ -166,7 +166,7 @@ app.controller 'homeController', ($rootScope)->
 	$rootScope.home = true
 
 app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
-	# return $location.path '/' unless $rootScope.home
+	return $location.path '/' unless $rootScope.home
 	this.wechat = false
 	this.weiban = true
 	this.gameBegin = false
