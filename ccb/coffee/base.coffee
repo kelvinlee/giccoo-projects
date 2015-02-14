@@ -165,7 +165,7 @@ app.controller 'MainController', ($rootScope, $scope, $location, $timeout)->
 app.controller 'homeController', ($rootScope)->
 	$rootScope.home = true
 
-app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
+app.controller 'GameController', ($rootScope, $scope, $location, $timeout, $route)->
 	return $location.path '/' unless $rootScope.home
 	this.wechat = false
 	this.weiban = true
@@ -198,7 +198,7 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 		this.starTime = new Date().getTime()
 		this.checkTime()
 	this.checkTime = ->
-		timeLife = 60
+		timeLife = 60*3
 		n = (new Date().getTime() - this.starTime)/1000
 		this.timer = timeLife - parseInt n
 		if n >= timeLife
@@ -208,10 +208,10 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 			tis.checkTime()
 		,200
 	this.putYYY = ->
-		totleLife = 3500
+		totleLife = 4500
 		life = (new Date().getTime() - this.starTime)
 		life = life/10
-		life = 4000 if life>4000
+		life = 10000 if life>10000
 		life = 0 if life<=0 or isNaN(life)
 		# console.log parseInt life
 		data = {name:"y",class:"y",style:{"transition-duration":(totleLife-life)+"ms",top:"100px",left:"100px"}}
@@ -220,12 +220,13 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 			data.class = "yyy"
 		data.style.top = "-80px"
 		data.style.left = parseInt(Math.random()*(mubu.width)*0.8)+"px"
-		max = 350 - (life/5)
+		console.log life/10
+		max = 450 - (life/10)
 		# max = 600 - (life/10)
-		min = 300 - (life/5)
+		min = 400 - (life/10)
 		$timeout ->
 			return false if $scope.gameOver
-			lifeName = parseInt(Math.random()*10000)
+			lifeName = 10+(new Date().getTime() - tis.starTime)
 			tis.items[lifeName] = data
 			tis.putYYY()
 			$timeout ->
@@ -254,7 +255,10 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout)->
 			audio.currentTime = 0
 			audio.play()
 	this.regame = ->
-		$location.path "/"
+		# $location.path "/game"
+		# tis.gameBegin = false
+		# $scope.gameOver = false
+		$route.reload()
 	this.showShare = ->
 		if this.wechat
 			this.wechat = false
