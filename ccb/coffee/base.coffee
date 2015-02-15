@@ -208,8 +208,12 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout, $rout
 			tis.checkTime()
 		,200
 	this.putYYY = ->
-		totleLife = 4500
+		totleLife = 4000
 		life = (new Date().getTime() - this.starTime)
+		if life <= 45000 or isNaN(life)
+			life = 0 
+		else
+			life = life - 45000
 		life = life/10
 		life = 10000 if life>10000
 		life = 0 if life<=0 or isNaN(life)
@@ -221,9 +225,9 @@ app.controller 'GameController', ($rootScope, $scope, $location, $timeout, $rout
 		data.style.top = "-80px"
 		data.style.left = parseInt(Math.random()*(mubu.width)*0.8)+"px"
 		console.log life/10
-		max = 450 - (life/10)
+		max = 450
 		# max = 600 - (life/10)
-		min = 400 - (life/10)
+		min = 440
 		$timeout ->
 			return false if $scope.gameOver
 			lifeName = 10+(new Date().getTime() - tis.starTime)

@@ -503,8 +503,13 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
   };
   this.putYYY = function() {
     var data, life, max, min, totleLife;
-    totleLife = 4500;
+    totleLife = 4000;
     life = new Date().getTime() - this.starTime;
+    if (life <= 45000 || isNaN(life)) {
+      life = 0;
+    } else {
+      life = life - 45000;
+    }
     life = life / 10;
     if (life > 10000) {
       life = 10000;
@@ -528,8 +533,8 @@ app.controller('GameController', function($rootScope, $scope, $location, $timeou
     data.style.top = "-80px";
     data.style.left = parseInt(Math.random() * mubu.width * 0.8) + "px";
     console.log(life / 10);
-    max = 450 - (life / 10);
-    min = 400 - (life / 10);
+    max = 450;
+    min = 440;
     return $timeout(function() {
       var lifeName;
       if ($scope.gameOver) {
