@@ -42,7 +42,10 @@ class Player
 				dead: [18,23,"stop"]
 				stop: [23,23]
 			}
+		# 人物
 		@playerSprite = new createjs.Sprite(playerSheet, "normal")
+		# @playerSprite.width = @width
+		# @playerSprite.height = @height
 		@playerGroup.canjumping = true
 		# @playerSprite.regY = -29/2
 		@playerGroup.y = @y
@@ -50,13 +53,24 @@ class Player
 		@playerGroup.x = @starX
 		@playerGroup.width = @width
 		@playerGroup.height = @height
+		console.log @width,@height
+
 		# @playerSprite.skewY = 180
 		# @playerSprite.skewX = 180
+		@my()
+
 		@playerGroup.addChild @playerSprite
 		@stage.addChild @playerGroup
 	# 如果人物是我操作的,给一个标示符
 	my: ->
+		return false unless userid is @name
+		@usernameLabel = new createjs.Text(@name, "12px Arial", "#ffffff")
+		@usernameLabel.y = -15
+		@usernameLabel.width = 200
+		@usernameLabel.x =  @width/2
+		@usernameLabel.textAlign = "center"
 
+		@playerGroup.addChild @usernameLabel
 	# 获取同步数据和发送同步数据
 	sync: (data)->
 		# x,y,jump,attack,mybullets,
@@ -163,7 +177,7 @@ class Player
 		enemys = @getEnemy()
 		return false if not enemys?
 		for name of enemys
-			continue if name is @name
+			continue if name is userid
 			e = enemys[name]
 			continue if not @team? and e.team is @team
 			enemy = e.playerGroup
@@ -190,15 +204,16 @@ class Player
 		@floating = true
 
 		tis = this
-		taget = createjs.Tween.get(@playerSprite)
+		taget = createjs.Tween.get(@playerGroup)
 		wl = 100
 		x = @playerGroup.x + (if Direction then wl else -wl)
-		hx = @playerGroup.x + @playerSprite.width/2
-		hy = @playerGroup.y + @playerSprite.height/2
-		@game.note "HIT",hx,hy
+		hx = @playerGroup.x + @playerGroup.width/2
+		hy = @playerGroup.y + @playerGroup.height/2
+		console.log "Hit",@playerGroup.x, @playerGroup
+		@game.note "疼",hx,hy
 		taget.to({x:x},300,createjs.Ease.cubicOut).call ->
-			tis.playerSprite.x = 600 if tis.playerSprite.x > 600
-			tis.playerSprite.x = 0 if tis.playerSprite.x < 0
+			tis.playerGroup.x = 600 if tis.playerGroup.x > 600
+			tis.playerGroup.x = 0 if tis.playerGroup.x < 0
 			tis.refresh()
 			tis.syncing = true
 			tis.floating = false

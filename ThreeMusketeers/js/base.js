@@ -189,11 +189,23 @@ Player = (function() {
     this.playerGroup.x = this.starX;
     this.playerGroup.width = this.width;
     this.playerGroup.height = this.height;
+    console.log(this.width, this.height);
+    this.my();
     this.playerGroup.addChild(this.playerSprite);
     return this.stage.addChild(this.playerGroup);
   };
 
-  Player.prototype.my = function() {};
+  Player.prototype.my = function() {
+    if (userid !== this.name) {
+      return false;
+    }
+    this.usernameLabel = new createjs.Text(this.name, "12px Arial", "#ffffff");
+    this.usernameLabel.y = -15;
+    this.usernameLabel.width = 200;
+    this.usernameLabel.x = this.width / 2;
+    this.usernameLabel.textAlign = "center";
+    return this.playerGroup.addChild(this.usernameLabel);
+  };
 
   Player.prototype.sync = function(data) {
     if (!this.syncing) {
@@ -345,7 +357,7 @@ Player = (function() {
     }
     _results = [];
     for (name in enemys) {
-      if (name === this.name) {
+      if (name === userid) {
         continue;
       }
       e = enemys[name];
@@ -384,20 +396,21 @@ Player = (function() {
     this.syncing = false;
     this.floating = true;
     tis = this;
-    taget = createjs.Tween.get(this.playerSprite);
+    taget = createjs.Tween.get(this.playerGroup);
     wl = 100;
     x = this.playerGroup.x + (Direction ? wl : -wl);
-    hx = this.playerGroup.x + this.playerSprite.width / 2;
-    hy = this.playerGroup.y + this.playerSprite.height / 2;
-    this.game.note("HIT", hx, hy);
+    hx = this.playerGroup.x + this.playerGroup.width / 2;
+    hy = this.playerGroup.y + this.playerGroup.height / 2;
+    console.log("Hit", this.playerGroup.x, this.playerGroup);
+    this.game.note("疼", hx, hy);
     return taget.to({
       x: x
     }, 300, createjs.Ease.cubicOut).call(function() {
-      if (tis.playerSprite.x > 600) {
-        tis.playerSprite.x = 600;
+      if (tis.playerGroup.x > 600) {
+        tis.playerGroup.x = 600;
       }
-      if (tis.playerSprite.x < 0) {
-        tis.playerSprite.x = 0;
+      if (tis.playerGroup.x < 0) {
+        tis.playerGroup.x = 0;
       }
       tis.refresh();
       tis.syncing = true;
@@ -503,7 +516,7 @@ Game = (function() {
     this.x = x != null ? x : 0;
     this.y = y != null ? y : 0;
     this.size = size != null ? size : 20;
-    name = parseInt(Math.random() * 10000);
+    name = parseInt(Math.random() * 100000);
     return this.notes[name] = new Note(type, name, this.noteBackground, this, this.x, this.y, this.size);
   };
 
