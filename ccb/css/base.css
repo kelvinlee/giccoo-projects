@@ -693,14 +693,16 @@ html, body {
   width: 100%;
   opacity: 0;
   background-color: #fff;
-  z-index: -1; }
+  z-index: -1;
+  display: none; }
   .loading .ng-hide {
     opacity: 0; }
   .loading.loaded {
     -webkit-transition: all 0s linear;
             transition: all 0s linear;
     opacity: 1;
-    z-index: 99999; }
+    z-index: 99999;
+    display: block; }
   .loading.finished .loading-logo {
     opacity: 1;
     -webkit-transform: scale(1, 1);

@@ -1,0 +1,432 @@
+@import sass/base
+@import sass/animation
+@import sass/slider
+@import ../../libs/sass/loading
+@import animation
+
+// $cdn : "http://disk.giccoo.com/projects/"	
+$cdn : "/"
+
+body 
+	// background: #40220f
+	color: #fff
+// .logo
+// 	+posa
+// 	+tl
+// 	+w(100%)
+// 	z-index: 99
+.wrap,.view-animate
+	// +h(100%)
+	min-height: 100%
+.wrap
+	+tran($time:0.1s)
+	// overflow: hidden
+.view-animate.store
+	overflow: auto
+	height: auto
+	+posr
+.view-animate
+	// +tran($time:0.7s,$ease: linear)
+	-webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s
+	transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s
+	+posa
+	+w(100%)
+	&.left
+		&.ng-enter
+			+transform(translate3d(-100%,0,0))
+		&.ng-enter-active
+			+transform(translate3d(0%,0,0))
+	&.right
+		&.ng-enter
+			+transform(translate3d(100%,0,0))
+		&.ng-enter-active
+			+transform(translate3d(0%,0,0))
+	&.up
+		&.ng-enter
+			+transform(translate3d(0,100%,0))
+
+		&.ng-enter-active
+			+transform(translate3d(0,0%,0))
+	&.down
+		&.ng-enter
+			+transform(translate3d(0,-100%,0))
+			+tl
+		&.ng-enter-active
+			+transform(translate3d(0,0%,0))
+// view-animate ng-scope ng-animate ng-leave ng-leave-active
+// view-animate ng-scope ng-animate ng-enter ng-enter-active
+// .hideView.left ~ .view-animate
+// 	&.ng-leave
+// 		+transform(translate3d(0,0%,0))
+// 	&.ng-leave-active
+// 		+transform(translate3d(0,-100%,0))
+// .hideView.right ~ .view-animate
+// 	&.ng-leave
+// 		+transform(translate3d(0,0%,0))
+// 	&.ng-leave-active
+// 		+transform(translate3d(0,-100%,0))
+.hideView.up ~ .view-animate
+	&.ng-leave
+		+transform(translate3d(0,0%,0))
+	&.ng-leave-active
+		+transform(translate3d(0,-100%,0))
+.hideView.down ~ .view-animate
+	&.ng-leave
+		+transform(translate3d(0,0%,0))
+	&.ng-leave-active
+		+transform(translate3d(0,100%,0))
+
+.view-animate
+	&.ng-enter
+		.nextpoint
+			+hide
+	&.ng-leave
+		.nextpoint
+			+hide
+
+.page
+	+posa
+	+tl
+	+wh(100%,100%)
+	overflow: hidden
+	.zw
+		+wh(100%,15%)
+		+show
+	.nextpoint
+		+posa
+		+bl(20px,50%)
+		z-index: 100
+		+anim()
+		+iw(76,640,100%)
+		.pointleft
+			+transform(translate3d(-50%,0,0))
+		.text
+			+posa
+			+tl
+			+text-center
+			+w(5rem)
+			+transform(translate3d(-50%,-150%,0))
+			font-size: 0.8rem
+			color: #fff
+		// &:before,&:after
+		// 	content: " "
+		// 	+posa
+		// 	+tl(-10%)
+		// 	+wh(1rem,0.5rem)
+		// 	background: url(../img/nextpoint.png) no-repeat center center
+		// 	background-size: cover
+		// 	+transform(translate3d(-50%,0,0))
+		// 	+animation(nextpoint,1s,ease,infinite)
+		&:after
+			+transform(translate3d(-50%,-100%,0))
+		&:before
+			+delay(0.5s)
+		&.black
+			.text
+				color: #000
+			&:before,&:after
+				background-image: url(../img/nextpoint-black.png)
+	
+	.page-content
+		+wh(100%,100%)
+		.box
+			+wh(100%,100%)
+		.logo-sub
+			+posa
+			+tl(50%,50%)
+			+transform(translate3d(-50%,-50%,0))
+			+w(100%)
+			z-index: 5
+			&.ng-animate, &.ng-leave, &.ng-leave-active
+				+hide
+	&.home
+		.men
+			+wh(50%,100%)
+			+posa
+			+tl
+			background-image: url(../img/m-1.jpg)
+			background-position: 80% top
+			background-size: cover
+			z-index: 1
+			border-right: solid 2px #0089d1
+			.menNote
+				+posa
+				+bl(25%,40%)
+				+iw(92,320,100%)
+				&:before
+					content: " "
+					+posa
+					+tr(5%,-40%)
+					+wh(30%,100%)
+					// +transform(translate3d(150%,0,0))
+					+b("../img/arrow.png",no-repeat,center,top,contain)
+					// +animation(noteSwipeToLeft,2s,ease,infinite)
+		.women
+			+wh(50%,100%)
+			+posa
+			+tr
+			background-image: url(../img/w-1.jpg)
+			background-position: 55% top
+			background-size: cover
+			z-index: 1
+			border-left: solid 2px #0089d1
+			.womenNote
+				+posa
+				+bl(35%,40%)
+				+iw(157,320,100%)
+				&:before
+					content: " "
+					+posa
+					+tl(5%,-30%)
+					+wh(30%,45%)
+					+transform(scale(-1,1))
+					+b("../img/arrow.png",no-repeat,center,top,contain)
+			// 		+animation(noteSwipeToRight,2s,ease,infinite)
+		.logo-sub
+			+posa
+			+tl(50%,50%)
+			+transform(translate3d(-50%,-50%,0))
+			+w(100%)
+			z-index: 5
+			&.ng-animate, &.ng-leave, &.ng-leave-active
+				+hide
+		.nearbtn
+			+posa
+			+bl(2%)
+			+w(100%)
+			z-index: 5
+			&.ng-animate, &.ng-leave, &.ng-leave-active
+				+hide
+	&.women1
+		background-image: url(../img/w-1.jpg)
+		background-position: center center
+		background-size: cover
+	&.women2
+		background-image: url(../img/w-2.jpg)
+		background-position: center center
+		background-size: cover
+		.m-name
+			+posa
+			+bl(20%)
+			+w(100%)
+	&.women3
+		background-image: url(../img/w-3.jpg)
+		background-position: center center
+		background-size: cover
+		.m-name
+			+posa
+			+bl(20%)
+			+w(100%)
+	&.men1
+		background-image: url(../img/m-1.jpg)
+		background-position: center top
+		background-size: cover
+		z-index: 10
+		.m-name
+			+posa
+			+bl(20%)
+			+w(100%)
+	&.men2
+		background-image: url(../img/m-2.jpg)
+		background-position: center top
+		background-size: cover
+		.m-name
+			+posa
+			+bl(20%)
+			+w(100%)
+	&.men3
+		background-image: url(../img/m-3.jpg)
+		background-position: center top
+		background-size: cover
+		.m-name
+			+posa
+			+bl(15%)
+			+w(100%)
+	&.men4
+		background-image: url(../img/m-4.jpg)
+		background-position: center top
+		background-size: cover
+		.m-name
+			+posa
+			+bl(15%)
+			+w(100%)
+	&.men5
+		background-image: url(../img/m-5.jpg)
+		background-position: center top
+		background-size: cover
+		.m-name
+			+posa
+			+bl(15%)
+			+w(100%)
+	&.store
+		+posr
+		// overflow: auto
+		height: auto
+		.back
+			+posa
+			+tl(10px,15px)
+			padding: 10px
+			z-index: 200
+			+iw(98,640,100%)
+		.store-list
+			$normal: #969696
+			$on: #0089d1
+			padding: 0px 20px
+			padding-top: 20%
+			color: $on
+			.city
+				$size: 1.4rem
+				+posr
+				+w(100%)
+				+text-center
+				padding: 10px 0px
+				font-size: $size
+				input
+					+hide
+				label
+					+tran
+					color: $normal
+					+posr
+					&:before
+						content: " "
+						+hide
+						+posa
+						+tl(0.15rem,-$size)
+						+wh($size,$size)
+						+b("../img/arror-select.png",no-repeat,center,center,contain)
+						+animation(bigbig)
+				input:checked + label
+					color: $on
+					&:before
+						+show
+				.left
+					// +posa
+					// +tl
+					+w(50%)
+				.right
+					+posa
+					+tr(10px)
+					+w(50%)
+			.area
+				$size: 1.4rem
+				+posr
+				+show
+				+wh(80%,2rem)
+				border: solid 1px $on
+				border-radius: 10px
+				margin: 10px auto
+				&:before
+					content: " "
+					+posa
+					+tr($size/5,$size/2)
+					+wh($size,$size)
+					+b("../img/arror-select.png",no-repeat,center,center,contain)
+					+transform(rotate(90deg))
+				span
+					line-height: 2rem
+					padding-left: 0.5rem
+					color: $on
+				select
+					+posa
+					+tl
+					+wh(100%,100%)
+					font-size: 2rem
+					padding: 10px
+					opacity: 0
+			.list
+				list-style: none
+				margin: 0px
+				padding: 0px
+				.shop
+					// display: flex
+					padding: 10px 0px
+					border-bottom: solid 1px $normal
+					.avatar
+						+w(20%)
+						float: left
+						margin-right: 2%
+					.text
+						+w(75%)
+						float: right
+					h1,h2
+						margin-top: 0
+					h1
+						font-size: 1.2rem
+					h2
+						font-size: 0.8rem
+						color: $normal
+
+
+
+.pop
+	+tran
+	+posa
+	+tl
+	+wh(100%,100%)
+	background-color: rgba(0,0,0,0.8)
+	z-index: 120
+	.content
+		+posa
+		+tl(20%)
+	&.ng-hide-remove
+		opacity: 0
+	&.ng-hide-remove-active
+		opacity: 1
+	&.ng-hide-add
+		opacity: 1
+	&.ng-hide-add-active
+		opacity: 0
+.mark-img
+	// &:before
+	// 	content: " "
+	// 	+posa
+	// 	+tl
+	// 	+wh(100%,100%)
+	// 	+b("../img/mark.png",repeat,left,top)
+	// 	opacity: 0.5
+.wechat-share
+	+tran
+	+posf
+	+tl
+	+br
+	// +b("../img/wechat.png",no-repeat,top,center,contain,rgba(0,0,0,0.6))
+	z-index: 999
+	// ng-animate ng-hide-animate ng-hide-remove ng-hide-remove-active
+	// ng-animate ng-hide-animate ng-hide-add ng-hide ng-hide-add-active
+	&.ng-hide-remove
+		opacity: 0
+	&.ng-hide-remove-active
+		opacity: 1
+	&.ng-hide-add
+		opacity: 1
+	&.ng-hide-add-active
+		opacity: 0
+
+.public-logo
+	+posa
+	+tl(0,50%)
+	// +w(100%)
+	+iw(92,640,100%)
+	+transform(translate3d(-50%,0,0))
+	z-index: 101
+.logo
+	+posa
+	+tl(0%)
+	+w(100%)
+	z-index: 99
+.baiduindex
+	+posa
+	+br(20px,20px)
+	+iw(131)
+	z-index: 99
+// animation
+@each $name in (fadeIn, fadeOut, fadeInOut, fadeInDown, fadeInUp, slideToTop, slideToBottom, slideToLeft, slideToRight, pulse, shake, Flash, Stamp, StampSmall, StampTop, second, Flicker, rotateIn, rotateOut, standup, bigbig)
+	.#{$name}
+		+anim($name)
+
+// animation,delay, duration
+@for $i from 1 through 200
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms

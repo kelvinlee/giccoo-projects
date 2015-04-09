@@ -17,12 +17,14 @@ html,body
 	opacity: 0
 	background-color: #fff
 	z-index: -1
+	+hide
 	.ng-hide
 		opacity: 0
 	&.loaded
 		+tran(all,0s,linear)
 		opacity: 1
 		z-index: 99999
+		+show
 	&.finished
 		.loading-logo
 			opacity: 1	

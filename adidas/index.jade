@@ -1,0 +1,224 @@
+
+extends ../libs/jade/layout-ng-clean
+//- -var url = "/"
+block title
+	| 陈冠希、蔡依林引领街头潮流，演绎经典zx family鞋款
+block css
+	link(rel="stylesheet",href="css/base.css")
+	script.
+		function showLoad() {
+			 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
+		}
+
+block content
+	- url ="/"
+	div.wechat-share-hide
+		img(src="http://campaign.douban.com/files/campaign/Adidas/img/share.jpg")
+	div.wrap(ng-controller="MainController",ng-hide="ori")
+		div.hideView(ng-class="from")
+		div.view-animate(ng-view,ng-class="from",class="{{path}}")
+		div.public-logo.fadeIn.delay-10.duration-5
+			img(src="img/logo.jpg")
+		div#loading.loading.loaded
+			div.loading-logo
+				//- img(src="#{url}libs/img/loading.png",onload="showLoad()")
+				//- div.loading-logo-bg(style="display:none")
+				.loading-normal
+					img(src="img/loading-normal.png")
+		//- div.baiduindex
+			img(src="img/baiduindex.png")
+	div.noteText(ng-show="ori")
+		span 请使用竖屏继续浏览
+	div.qrcode
+		div.text 建议您使用手机浏览
+		img(src="img/qr.png")
+
+
+block ng-template
+	- url ="/"
+	script(type="text/ng-template",id="home.html")
+		.page.home(parallay,ng-controller="swipeController")
+			.men.mark-img.slideToLeft.duration-5
+				.menNote
+					img(src="img/men.png")
+				//- .box(ng-hide="men.note")
+					.m-1-name.fadeInDown.delay-10.duration-5
+						img(src="img/m-1-name.png")
+					.logo-sub.fadeIn.duration-1
+						img(src="img/logo-sub.png")
+					.nextpoint
+						.pointleft
+							img(src="img/arrow-up.png")
+				//- .pop(ng-show="men.popshow",ng-click="men.Pop(false)")
+					.content
+						img(src="img/m-1-pop.png")
+			.women.mark-img.slideToRight.duration-5
+				.womenNote
+					img(src="img/women.png")
+				//- .box(ng-hide="women.note")
+					.m-1-name.fadeInDown.delay-10.duration-5
+						img(src="img/m-1-name.png")
+					.logo-sub.fadeIn.duration-1
+						img(src="img/logo-sub.png")
+					.nextpoint
+						.pointleft
+							img(src="img/arrow-up.png")
+			.logo-sub.fadeIn.delay-10.duration-10
+				img(src="img/logo-sub.png")
+			a.nearbtn.fadeInUp.delay-10.duration-5(href="#/store")
+				img(src="img/near-btn.png")
+			//- .nextpoint
+	script(type="text/ng-template",id="men1.html")
+		.page.men1(parallax,prePage="",nextPage="men2",ng-controller="swipeController")
+			.page-content(ng-controller="menController as men",ng-click="men.Pop(true)")
+				//- img(src="img/m-1.jpg")
+				.box
+					.m-name.fadeInDown.delay-15.duration-10
+						img(src="img/m-1-name.png")
+					.logo-sub.fadeIn.delay-15.duration-5
+						img(src="img/logo-sub.png")
+					.nextpoint.fadeIn.delay-10.duration-5
+						.pointleft
+							img(src="img/arrow-up.png")
+				.pop(ng-show="men.popshow",ng-click="men.Pop(false)")
+						.content
+							img(src="img/m-1-pop.png")
+	script(type="text/ng-template",id="men2.html")
+		.page.men2(parallax,prePage="men1",nextPage="men3",ng-controller="swipeController")
+			.page-content(ng-controller="menController as men",ng-click="men.Pop(true)")
+				.box
+					.m-name.fadeInDown.delay-15.duration-10
+						img(src="img/m-2-name.png")
+					.logo-sub.fadeIn.delay-15.duration-5
+						img(src="img/logo-sub.png")
+					.nextpoint.fadeIn.delay-10.duration-5
+						.pointleft
+							img(src="img/arrow-up.png")
+				.pop(ng-show="men.popshow",ng-click="men.Pop(false)")
+						.content
+							img(src="img/m-2-pop.png")
+	script(type="text/ng-template",id="men3.html")
+		.page.men3(parallax,prePage="men2",nextPage="men4",ng-controller="swipeController")
+			.page-content(ng-controller="menController as men",ng-click="men.Pop(true)")
+				.box
+					.m-name.fadeInDown.delay-15.duration-10
+						img(src="img/m-3-name.png")
+					.logo-sub.fadeIn.delay-15.duration-5
+						img(src="img/logo-sub.png")
+					.nextpoint.fadeIn.delay-16.duration-5
+						.pointleft
+							img(src="img/arrow-up.png")
+				.pop(ng-show="men.popshow",ng-click="men.Pop(false)")
+						.content
+							img(src="img/m-3-pop.png")
+	script(type="text/ng-template",id="men4.html")
+		.page.men4(parallax,prePage="men3",nextPage="men5",ng-controller="swipeController")
+			.page-content(ng-controller="menController as men",ng-click="men.Pop(true)")
+				.box
+					.m-name.fadeInDown.delay-15.duration-10
+						img(src="img/m-4-name.png")
+					.logo-sub.fadeIn.delay-15.duration-5
+						img(src="img/logo-sub.png")
+					.nextpoint.fadeIn.delay-16.duration-5
+						.pointleft
+							img(src="img/arrow-up.png")
+				.pop(ng-show="men.popshow",ng-click="men.Pop(false)")
+						.content
+							img(src="img/m-4-pop.png")
+	script(type="text/ng-template",id="men5.html")
+		.page.men5(parallax,prePage="men4",nextPage="store",ng-controller="swipeController")
+			.page-content(ng-controller="menController as men",ng-click="men.Pop(true)")
+				.box
+					.m-name.fadeInDown.delay-15.duration-10
+						img(src="img/m-5-name.png")
+					.logo-sub.fadeIn.delay-15.duration-5
+						img(src="img/logo-sub.png")
+					.nextpoint.fadeIn.delay-16.duration-5
+						.pointleft
+							img(src="img/arrow-up.png")
+				.pop(ng-show="men.popshow",ng-click="men.Pop(false)")
+						.content
+							img(src="img/m-5-pop.png")
+	script(type="text/ng-template",id="women1.html")
+		.page.women1(parallax,prePage="",nextPage="women2",ng-controller="swipeController")
+			.page-content(ng-controller="womenController as women",ng-click="women.Pop(true)")
+				.box
+					//- .m-name.fadeInDown.delay-10.duration-5
+						img(src="img/w-2-name.png")
+					.logo-sub.fadeIn.delay-15.duration-10
+						img(src="img/logo-sub.png")
+					.nextpoint.fadeIn.delay-16.duration-5
+						.pointleft
+							img(src="img/arrow-up.png")
+				.pop(ng-show="women.popshow",ng-click="women.Pop(false)")
+						.content
+							img(src="img/w-1-pop.png")
+	script(type="text/ng-template",id="women2.html")
+		.page.women2(parallax,prePage="women1",nextPage="women3",ng-controller="swipeController")
+			.page-content(ng-controller="womenController as women")
+				.box
+					.m-name.fadeInDown.delay-8.duration-5
+						img(src="img/w-2-name.png")
+					//- .logo-sub.fadeIn.delay-8.duration-5
+						img(src="img/logo-sub.png")
+					.nextpoint.fadeIn.delay-10.duration-5
+						.pointleft
+							img(src="img/arrow-up-blue.png")
+				//- .pop(ng-show="women.popshow",ng-click="women.Pop(false)")
+						.content
+							img(src="img/w-2-pop.png")
+	script(type="text/ng-template",id="women3.html")
+		.page.women3(parallax,prePage="women2",nextPage="store",ng-controller="swipeController")
+			.page-content(ng-controller="womenController as women")
+				.box
+					//- .m-name.fadeInDown.delay-10.duration-5
+						img(src="img/w-2-name.png")
+					//- .logo-sub.fadeIn.delay-5.duration-5
+						img(src="img/logo-sub.png")
+					.nextpoint.fadeIn.delay-15.duration-5
+						.pointleft
+							img(src="img/arrow-up-blue.png")
+				//- .pop(ng-show="women.popshow",ng-click="women.Pop(false)")
+						.content
+							img(src="img/w-2-pop.png")
+	script(type="text/ng-template",id="store.html")
+		.page.store(ng-controller="storeController as store")
+			a.back(href="#/")
+				img(src="img/back.png")
+			.store-list
+				.city
+					.left
+						input#beijing(type="radio",value="beijing",name="city",ng-model="city",ng-change="store.changeCity()")
+						label.bj(for="beijing") 北京
+					.right
+						input#shenyang(type="radio",value="shenyang",name="city",ng-model="city",ng-change="store.changeCity()")
+						label.sy(for="shenyang") 沈阳
+						
+				.area
+					.select-template
+						span {{area.name}}
+						em
+						select#area(name="area",ng-model="area",ng-change="store.changed()",ng-options="key.name for key in store.area")
+							//- option(value="{{$index}}",ng-repeat="key in store.area") {{key.name}}
+				ul.list
+					li.shop.clearfix(ng-repeat="shop in store.shoplist")
+						.avatar
+							img(src="img/avatar.png")
+						div.text
+							h1 {{shop[1]}}
+							h2 {{shop[2]}}
+
+block js
+	//- - url = "/"
+	- var debug = ".min"
+	//- - debug = ""
+	script(src="js/Zepto.min.js",type="text/javascript")
+	script(src="js/angular.min.js",type="text/javascript")
+	script(src="js/angular-route.min.js",type="text/javascript")
+	script(src="js/angular-touch.min.js",type="text/javascript")
+	script(src="js/angular-animate.min.js",type="text/javascript")
+	//- script(src="/libs/js/megapix-image.js",type="text/javascript")
+	//- script(src="/libs/js/exif.js",type="text/javascript")
+	//- script(src="/libs/js/min/preloadjs-0.4.1.min.js",type="text/javascript")
+
+	script(src="js/base.js",type="text/javascript")

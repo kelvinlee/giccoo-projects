@@ -1,0 +1,98 @@
++keyframes(nextpoint)
+	0%,100%
+		opacity: 1
+	50%
+		opacity: 0.5
+
++keyframes(rotateIn)
+	0%
+		+transform(rotate(0deg))
+		opacity: 0
+	10%
+		opacity: 1
+	100%
+		+transform(rotate(360deg))
+
++keyframes(rotateOut)
+	0%
+		+transform(rotate(0deg))
+	90%
+		opacity: 1	
+	100%
+		opacity: 0
+		+transform(rotate(360deg))
+
++keyframes(standup)
+	0%
+		+transform(rotateX(90deg))
+		opacity: 0
+	5%
+		opacity: 1
+	70%
+		+transform(rotateX(-30deg))
+	90%
+		+transform(rotateX(30deg))
+	100%
+		+transform(rotateX(0deg))
+		opacity: 1
+
++keyframes(bigbig)
+	0%
+		+transform(scale(3,3))
+		opacity: 0
+	10%
+		opacity: 1
+	20%
+		+transform(scale(0.9,0.9))
+	40%
+		+transform(scale(1.1,1.1))
+	60%
+		+transform(scale(0.95,0.95))
+	80%
+		+transform(scale(1.05,1.05))
+	100%
+		+transform(scale(1,1))
+		opacity: 1
+
++keyframes(scan)
+	0%
+		+transform(scale(1,-1))
+		bottom: 75%
+	49%
+		+transform(scale(1,-1))
+	50%
+		+transform(scale(1,1))
+		bottom: 0%
+	51%
+		+transform(scale(1,1))
+	100%
+		+transform(scale(1,1))
+		bottom: 75%
+
++keyframes(noteSwipeToRight)
+	0%
+		opacity: 0
+		// +transform(translate3d(0,0,0) scale(-1,1))
+		left: -30%
+	10%
+		opacity: 1
+	90%
+		opacity: 1
+	100%
+		left: -40%
+		opacity: 0
+		// +transform(translate3d(-100%,0,0) scale(-1,1))
+
++keyframes(noteSwipeToLeft)
+	0%
+		opacity: 0
+		// +transform(translate3d(0,0,0))
+		right: -40%
+	20%
+		opacity: 1
+	80%
+		opacity: 1
+	100%
+		right: -60%
+		opacity: 0
+		// +transform(translate3d(100%,0,0))

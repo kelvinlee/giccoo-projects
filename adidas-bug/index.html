@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="kelvin" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>陈冠希、蔡依林引领街头潮流，演绎经典zx family鞋款</title>
+    <link rel="stylesheet" href="/adidas/css/base.css">
+    <script>
+      function showLoad() {
+      	 document.getElementsByClassName('loading-logo-bg')[0].style.display = 'block';
+      }
+      
+    </script>
+  </head>
+  <body>
+    <div class="wechat-share-hide"><img src="/adidas/img/share.jpg"></div>
+    <div ng-controller="MainController as main" ng-hide="ori" class="wrap">
+      <div ng-class="from" class="hideView"></div>
+      <div ng-view ng-class="from" class="view-animate {{path}}"></div>
+      <div class="public-logo fadeInDown delay-10 duration-5"><img src="/adidas/img/logo.png"></div>
+      <div id="loading" class="loading loaded">
+        <div class="loading-logo">
+          <div class="loading-normal"><img src="/libs/img/loading-normal.png"></div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="ori" class="noteText"><span>请使用竖屏继续浏览</span></div>
+    <div class="qrcode">
+      <div class="text">建议您使用手机浏览</div><img src="/crown/img/qr.png">
+    </div>
+    <script type="text/ng-template" id="home.html">
+      <div parallax ctrlleft="left" ctrlright="right" noctrl="all" ng-controller="swipeController" class="page home">
+        <div parallax noctrl="{{men.noctrl}}" ng-click="men.Pop(true)" nextPage="men2" ng-class="men.open" ng-controller="menController as men" class="men mark-img">
+          <div ng-show="men.note" class="menNote"><img src="/adidas/img/men.png"></div>
+          <div ng-hide="men.note" class="box">
+            <div class="m-1-name fadeInDown delay-10 duration-5"><img src="/adidas/img/m-1-name.png"></div>
+            <div class="logo-sub fadeIn duration-1"><img src="/adidas/img/logo-sub.png"></div>
+            <div class="nextpoint fadeIn delay-5 duration-5">
+              <div class="pointleft"><img src="/adidas/img/arrow-up.png"></div>
+            </div>
+          </div>
+          <div ng-show="men.popshow" ng-click="men.Pop(false)" class="pop">
+            <div class="content"><img src="/adidas/img/m-1-pop.png"></div>
+          </div>
+        </div>
+        <div parallax noctrl="{{women.noctrl}}" ng-click="women.Pop(true)" nextPage="women2" ng-class="women.open" ng-controller="womenController as women" class="women mark-img">
+          <div ng-show="women.note" class="womenNote"><img src="/adidas/img/women.png"></div>
+          <div ng-hide="women.note" class="box">
+            <div class="logo-sub fadeIn duration-1"><img src="/adidas/img/logo-sub.png"></div>
+            <div class="nextpoint fadeIn delay-5 duration-5">
+              <div class="pointleft"><img src="/adidas/img/arrow-up.png"></div>
+            </div>
+          </div>
+          <div ng-show="women.popshow" ng-click="women.Pop(false)" class="pop">
+            <div class="content"><img src="/adidas/img/w-1-pop.png"></div>
+          </div>
+        </div>
+        <div ng-if="hideSubLogo" class="logo-sub fadeIn delay-20 duration-15"><img src="/adidas/img/logo-sub.png"></div><a href="#/store" ng-if="hideSubLogo" class="nearbtn fadeInUp delay-20 duration-5"><img src="/adidas/img/near-btn.png"></a>
+      </div>
+    </script>
+    <script type="text/ng-template" id="men2.html">
+      <div parallax prePage="" nextPage="men3" ng-controller="swipeController" class="page men2">
+        <div ng-controller="menController as men" ng-click="men.Pop(true)" class="page-content">
+          <div class="box">
+            <div class="m-name fadeInDown delay-10 duration-5"><img src="/adidas/img/m-2-name.png"></div>
+            <div class="logo-sub fadeIn delay-5 duration-5"><img src="/adidas/img/logo-sub.png"></div>
+            <div class="nextpoint fadeIn delay-5 duration-5">
+              <div class="pointleft"><img src="/adidas/img/arrow-up.png"></div>
+            </div>
+          </div>
+          <div ng-show="men.popshow" ng-click="men.Pop(false)" class="pop">
+            <div class="content"><img src="/adidas/img/m-2-pop.png"></div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <script type="text/ng-template" id="men3.html">
+      <div parallax prePage="men2" nextPage="men4" ng-controller="swipeController" class="page men3">
+        <div ng-controller="menController as men" ng-click="men.Pop(true)" class="page-content">
+          <div class="box">
+            <div class="m-name fadeInDown delay-10 duration-5"><img src="/adidas/img/m-3-name.png"></div>
+            <div class="logo-sub fadeIn delay-5 duration-5"><img src="/adidas/img/logo-sub.png"></div>
+            <div class="nextpoint fadeIn delay-5 duration-5">
+              <div class="pointleft"><img src="/adidas/img/arrow-up.png"></div>
+            </div>
+          </div>
+          <div ng-show="men.popshow" ng-click="men.Pop(false)" class="pop">
+            <div class="content"><img src="/adidas/img/m-3-pop.png"></div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <script type="text/ng-template" id="men4.html">
+      <div parallax prePage="men3" nextPage="men5" ng-controller="swipeController" class="page men4">
+        <div ng-controller="menController as men" ng-click="men.Pop(true)" class="page-content">
+          <div class="box">
+            <div class="m-name fadeInDown delay-10 duration-5"><img src="/adidas/img/m-4-name.png"></div>
+            <div class="logo-sub fadeIn delay-5 duration-5"><img src="/adidas/img/logo-sub.png"></div>
+            <div class="nextpoint fadeIn delay-5 duration-5">
+              <div class="pointleft"><img src="/adidas/img/arrow-up.png"></div>
+            </div>
+          </div>
+          <div ng-show="men.popshow" ng-click="men.Pop(false)" class="pop">
+            <div class="content"><img src="/adidas/img/m-4-pop.png"></div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <script type="text/ng-template" id="men5.html">
+      <div parallax prePage="men4" nextPage="store" ng-controller="swipeController" class="page men5">
+        <div ng-controller="menController as men" ng-click="men.Pop(true)" class="page-content">
+          <div class="box">
+            <div class="m-name fadeInDown delay-10 duration-5"><img src="/adidas/img/m-5-name.png"></div>
+            <div class="logo-sub fadeIn delay-5 duration-5"><img src="/adidas/img/logo-sub.png"></div>
+            <div class="nextpoint fadeIn delay-5 duration-5">
+              <div class="pointleft"><img src="/adidas/img/arrow-up.png"></div>
+            </div>
+          </div>
+          <div ng-show="men.popshow" ng-click="men.Pop(false)" class="pop">
+            <div class="content"><img src="/adidas/img/m-5-pop.png"></div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <script type="text/ng-template" id="women2.html">
+      <div parallax prePage="" nextPage="women3" ng-controller="swipeController" class="page women2">
+        <div ng-controller="womenController as women" class="page-content">
+          <div class="box">
+            <div class="m-name fadeInDown delay-10 duration-5"><img src="/adidas/img/w-2-name.png"></div>
+            <div class="nextpoint fadeIn delay-5 duration-5">
+              <div class="pointleft"><img src="/adidas/img/arrow-up-blue.png"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <script type="text/ng-template" id="women3.html">
+      <div parallax prePage="women2" nextPage="store" ng-controller="swipeController" class="page women3">
+        <div ng-controller="womenController as women" class="page-content">
+          <div class="box">
+            <div class="nextpoint fadeIn delay-5 duration-5">
+              <div class="pointleft"><img src="/adidas/img/arrow-up-blue.png"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <script type="text/ng-template" id="store.html">
+      <div ng-controller="storeController as store" class="page store"><a href="#/" class="back"><img src="/adidas/img/back.png"></a>
+        <div class="store-list">
+          <div class="city">
+            <div class="left">
+              <input id="beijing" type="radio" value="beijing" name="city" ng-model="city" ng-change="store.changeCity()">
+              <label for="beijing" class="bj">北京</label>
+            </div>
+            <div class="right">
+              <input id="shenyang" type="radio" value="shenyang" name="city" ng-model="city" ng-change="store.changeCity()">
+              <label for="shenyang" class="sy">沈阳</label>
+            </div>
+          </div>
+          <div class="area">
+            <div class="select-template"><span>{{area.name}}</span><em></em>
+              <select id="area" name="area" ng-model="area" ng-change="store.changed()" ng-options="key.name for key in store.area">
+              </select>
+            </div>
+          </div>
+          <ul class="list">
+            <li ng-repeat="shop in store.shoplist" class="shop">
+              <div class="avatar"><img src="/adidas/img/avatar.png"></div>
+              <div class="text">
+                <h1>{{shop[1]}}</h1>
+                <h2>{{shop[2]}}</h2>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </script>
+    <script src="/libs/js/min/Zepto.min.js" type="text/javascript"></script>
+    <script src="/libs/js/angular.js" type="text/javascript"></script>
+    <script src="/libs/js/min/angular-route.min.js" type="text/javascript"></script>
+    <script src="/libs/js/min/angular-touch.min.js" type="text/javascript"></script>
+    <script src="/libs/js/min/angular-animate.min.js" type="text/javascript"></script>
+    <script src="/adidas/js/base.js" type="text/javascript"></script>
+  </body>
+</html>
