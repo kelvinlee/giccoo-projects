@@ -1007,8 +1007,8 @@ body {
   position: relative; }
 
 .view-animate {
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s;
-  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s;
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s;
   position: absolute;
   width: 100%; }
   .view-animate.left.ng-enter {

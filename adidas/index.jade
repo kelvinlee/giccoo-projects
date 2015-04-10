@@ -38,7 +38,7 @@ block ng-template
 	- url ="/"
 	script(type="text/ng-template",id="home.html")
 		.page.home(parallay,ng-controller="swipeController")
-			.men.mark-img.slideToLeft.duration-5
+			.men.mark-img
 				.menNote
 					img(src="img/men.png")
 				//- .box(ng-hide="men.note")
@@ -52,7 +52,7 @@ block ng-template
 				//- .pop(ng-show="men.popshow",ng-click="men.Pop(false)")
 					.content
 						img(src="img/m-1-pop.png")
-			.women.mark-img.slideToRight.duration-5
+			.women.mark-img
 				.womenNote
 					img(src="img/women.png")
 				//- .box(ng-hide="women.note")
@@ -157,7 +157,7 @@ block ng-template
 		.page.women2(parallax,prePage="women1",nextPage="women3",ng-controller="swipeController")
 			.page-content(ng-controller="womenController as women")
 				.box
-					.m-name.fadeInDown.delay-8.duration-5
+					//- .m-name.fadeInDown.delay-8.duration-5
 						img(src="img/w-2-name.png")
 					//- .logo-sub.fadeIn.delay-8.duration-5
 						img(src="img/logo-sub.png")
