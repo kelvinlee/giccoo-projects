@@ -771,6 +771,8 @@ html, body {
   .navbar .menu-2 {
     -webkit-transition: all 0.5s ease;
             transition: all 0.5s ease;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
     -webkit-transform: translate3d(0, calc(-100% - 10px), 0);
             transform: translate3d(0, calc(-100% - 10px), 0);
     top: 19px;
@@ -817,6 +819,7 @@ html, body {
 
 .pages {
   display: block;
+  height: 100%;
   width: 100%;
   height: calc(100% - 19px);
   overflow: hidden;
@@ -826,6 +829,7 @@ html, body {
     height: 100%;
     -webkit-transition: all 0.5s ease;
             transition: all 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     top: 0px;
     left: 0px;
@@ -889,6 +893,8 @@ html, body {
   background-color: transparent; }
   .homepage .content {
     position: absolute;
+    bottom: 15%;
+    left: 0px;
     bottom: calc(10% + 30px);
     left: 0px;
     width: 100%; }
@@ -966,7 +972,8 @@ html, body {
   .bmwx1 .content {
     position: absolute;
     top: 15%;
-    left: 0px; }
+    left: 0px;
+    width: 100%; }
     .bmwx1 .content .lr {
       position: absolute;
       bottom: 40%;
@@ -991,6 +998,7 @@ html, body {
     .form .form-grounp input[type="text"], .form .form-grounp .select {
       display: inline-block;
       vertical-align: middle;
+      width: 70%;
       width: calc(100% - 4.5rem);
       height: 24px;
       padding: 0 5px;

@@ -1,5 +1,6 @@
 # @codekit-prepend "coffee/css3Prefix"
 # @codekit-prepend "coffee/plus"
+# @codekit-prepend "../../libs/coffee/requestanimation"
 
 Store = {}
 _history = []
@@ -44,8 +45,10 @@ riot.route.exec routeFun
 riot.mount("*")
 
 layzr = null
+
 window.onload = ->
 	$("#loading").hide()
 	layzr = new Layzr
 		callback: (e)->
+			# alert e
 

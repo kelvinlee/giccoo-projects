@@ -63,7 +63,7 @@ riot.tag('parallax', '<yield></yield>', function(opts) {
     this.start = function(evt) {
 
     	if (! _store.can) {return false}
-    	console.log("start")
+
     	touch = evt.touches[0]
     	this.defaultPoint.x = touch.pageX
     	this.defaultPoint.y = touch.pageY
@@ -75,9 +75,9 @@ riot.tag('parallax', '<yield></yield>', function(opts) {
     	if (! _store.can) {return false}
     	touch = evt.touches[0]
     	gone = this.defaultPoint.y - touch.pageY
-    	if (gone > 5 || gone < -5) {
+
     		evt.preventDefault()
-    	}
+
     	if (gone > 50) {
     		console.log(gone)
     		_store.can = false
@@ -113,7 +113,7 @@ riot.tag('parallax', '<yield></yield>', function(opts) {
     	self.nowPage
     	var newpage = self.nowPage
     	var direction = "up"
-    	console.log($(oldpage).index(),$(newpage).index())
+
     	if ($(oldpage).index() > $(newpage).index()) {direction = "down"}
 
     	oldpage.addEventListener(TRANSITION_END_NAME,self.oldpageFinished)
@@ -130,7 +130,7 @@ riot.tag('parallax', '<yield></yield>', function(opts) {
     	self.update()
     }
     this.newpageFinished = function(evt) {
-    	console.log("newpage",evt.target)
+
     	if (self.defaultPoint.returnTranN) {
     		self.defaultPoint.returnTranN = false
     	}
@@ -140,9 +140,9 @@ riot.tag('parallax', '<yield></yield>', function(opts) {
     	_store.can = true
     }
     this.oldpageFinished = function(evt) {
-    	console.log("oldpage",evt.target)
+
     	if (self.defaultPoint.returnTranO) {
-    		console.log("old page finished",evt.target)
+
     		self.defaultPoint.returnTranO = false
     		$(self.oldpage).hide()
     	}
@@ -184,7 +184,7 @@ riot.tag('register', '<form onsubmit="{submit}" class="form fadeInLeft animated 
     }.bind(this);
     this.changeProvince = function(evt) {
     	var name = $("[name=province]",this.root).val()
-    	for(var i=this.cityData.length-1;i>0;i--) {
+    	for(var i=this.cityData.length-1;i>=0;i--) {
     		if (this.cityData[i].name == name) {
     			this.city = this.cityData[i]["sub"]
     			this.update()
@@ -196,12 +196,13 @@ riot.tag('register', '<form onsubmit="{submit}" class="form fadeInLeft animated 
     this.submit = function() {
     	var list = $("form",this.root).serializeArray()
     	var checked = false
-    	console.log(list)
-    	for (var i = list.length-1; i > 0 ;i-- ) {
+    	
+    	for (var i = list.length-1; i >= 0 ;i-- ) {
     		if (list[i].name == "state") {
     				checked = true
     		}
     	}
+
     	if (!checked) {
     		alert("请选择我已阅读并接受数据使用声明 法律声明＊")
     		return false

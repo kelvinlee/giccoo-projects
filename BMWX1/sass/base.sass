@@ -37,6 +37,7 @@ $cdn : ""
 		z-index: 999
 	.menu-2
 		+tran
+		+transform(translate3d(0,-100%,0))
 		+transform(translate3d(0,calc(-100% - 10px),0))
 		+tl($navbarH)
 		+br
@@ -73,13 +74,14 @@ $cdn : ""
 
 .pages
 	+show
+	+h(100%)
 	+wh(100%,calc(100% - 19px))
 	+overhide
 	+posr
 	.page
 		+wh(100%,100%)
 		+tran
-		// +bc(rgba(0,0,0,0.7))
+		+bc(rgba(0,0,0,0.7))
 		+posa
 		+tl
 		+hide
@@ -122,6 +124,7 @@ $cdn : ""
 	+b("../img/bg-1.jpg",no-repeat,center,center,cover)
 	.content
 		+posa
+		+bl(15%)
 		+bl(calc(10% + 30px))
 		+w(100%)
 		.join
@@ -184,6 +187,7 @@ $cdn : ""
 	.content
 		+posa
 		+tl(15%)
+		+w
 		.lr
 			+posa
 			+bl(40%)
@@ -208,6 +212,7 @@ $cdn : ""
 		input[type="text"],.select
 			+show-inline
 			vertical-align: middle
+			+w(70%)
 			+wh(calc(100% - 4.5rem),24px)
 			+p(0 5px)
 			+m

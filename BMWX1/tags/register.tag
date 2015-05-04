@@ -52,7 +52,7 @@
     }
     changeProvince(evt) {
     	var name = $("[name=province]",this.root).val()
-    	for(var i=this.cityData.length-1;i>0;i--) {
+    	for(var i=this.cityData.length-1;i>=0;i--) {
     		if (this.cityData[i].name == name) {
     			this.city = this.cityData[i]["sub"]
     			this.update()
@@ -64,12 +64,13 @@
     submit() {
     	var list = $("form",this.root).serializeArray()
     	var checked = false
-    	console.log(list)
-    	for (var i = list.length-1; i > 0 ;i-- ) {
+    	
+    	for (var i = list.length-1; i >= 0 ;i-- ) {
     		if (list[i].name == "state") {
     				checked = true
     		}
     	}
+    	//- console.log(list,!checked)
     	if (!checked) {
     		alert("请选择我已阅读并接受数据使用声明 法律声明＊")
     		return false

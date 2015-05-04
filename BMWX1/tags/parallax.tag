@@ -18,7 +18,7 @@
     start(evt){
     	//- if ($(".page",this.root).length < 2 ) { _store.can = true }
     	if (! _store.can) {return false}
-    	console.log("start")
+    	//- console.log("start")
     	touch = evt.touches[0]
     	this.defaultPoint.x = touch.pageX
     	this.defaultPoint.y = touch.pageY
@@ -30,9 +30,9 @@
     	if (! _store.can) {return false}
     	touch = evt.touches[0]
     	gone = this.defaultPoint.y - touch.pageY
-    	if (gone > 5 || gone < -5) {
+    	//- if (gone > 5 || gone < -5) {
     		evt.preventDefault()
-    	}
+    	//- }
     	if (gone > 50) {
     		console.log(gone)
     		_store.can = false
@@ -68,7 +68,7 @@
     	self.nowPage
     	var newpage = self.nowPage
     	var direction = "up"
-    	console.log($(oldpage).index(),$(newpage).index())
+    	//- console.log($(oldpage).index(),$(newpage).index())
     	if ($(oldpage).index() > $(newpage).index()) {direction = "down"}
     	//- $(self.root).append("<div class='page riot-"+direction+"' id='"+select+"-page'>"+eval(select+".innerHTML")+"</div>")
     	oldpage.addEventListener(TRANSITION_END_NAME,self.oldpageFinished)
@@ -85,7 +85,7 @@
     	self.update()
     }
     this.newpageFinished = function(evt) {
-    	console.log("newpage",evt.target)
+    	//- console.log("newpage",evt.target)
     	if (self.defaultPoint.returnTranN) {
     		self.defaultPoint.returnTranN = false
     	}
@@ -95,9 +95,9 @@
     	_store.can = true
     }
     this.oldpageFinished = function(evt) {
-    	console.log("oldpage",evt.target)
+    	//- console.log("oldpage",evt.target)
     	if (self.defaultPoint.returnTranO) {
-    		console.log("old page finished",evt.target)
+    		//- console.log("old page finished",evt.target)
     		self.defaultPoint.returnTranO = false
     		$(self.oldpage).hide()
     	}
