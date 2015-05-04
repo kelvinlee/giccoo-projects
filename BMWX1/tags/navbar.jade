@@ -1,0 +1,35 @@
+navbar
+	.menu-1(class="{hide:menu}")
+		.logo
+			img(src="img/logo.png")
+		.btn(onclick="{showMenu}")
+			img(src="img/navbar-btn.png")
+	.menu-2(class="{open:menu}")
+		ul
+			li
+				a(onclick="{jump}",href="/") 首页
+			li
+				a(onclick="{jump}",href="/activity") 活动介绍
+			li
+				a(onclick="{jump}",href="/register") 开启宴遇之旅 & 轻松惠享自由
+			li
+				a(onclick="{jump}",href="/food") 时尚宴遇美食
+			li
+				a(onclick="{jump}",href="/bmwx1") 遇见BMW X1
+		.zw(onclick="{hideMenu}")
+	script.
+		//- $(this.root).addClass("")
+		this.root.className = "navbar"
+		this.menu = false
+		hideMenu() {
+			this.menu = false
+		}
+		showMenu() {
+			this.menu = true
+		}
+		jump(evt) {
+			//- console.log()
+			this.hideMenu()
+			riot.route(evt.target.getAttribute("href"))
+			return false
+		}

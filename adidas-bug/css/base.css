@@ -369,6 +369,11 @@ html, body {
 img {
   max-width: 100%; }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0; }
@@ -576,20 +581,6 @@ img {
   100% {
     -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
             transform: scale3d(1, 1, 1) translate3d(0, 0, 0); } }
-@-webkit-keyframes second {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
-@keyframes second {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
 @-webkit-keyframes Flicker {
   0% {
     opacity: 1; }
@@ -779,6 +770,20 @@ html, body {
 
   .wrap {
     display: none; } }
+@-webkit-keyframes second {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+@keyframes second {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 @-webkit-keyframes nextpoint {
   0%,100% {
     opacity: 1; }

@@ -1,0 +1,76 @@
+extends ../libs/jade/layout
+block title
+	| Ucar
+block css
+	link(rel="stylesheet",href="/libs/css/animate.min.css")
+	link(rel="stylesheet",href="css/base.css")
+	
+
+block content
+	#loading.loading.loaded
+		div.loading-logo
+			.loading-normal
+				img(src="#{url}libs/img/loading-normal.png")
+	.wrap
+		navbar
+		parallax.pages
+			.page.homepage(up="activity")
+				.content
+					.cp
+						.cp-1.fadeInUp.animated.delay-5
+							img(src="/BMWX1/img/cp-1-1.png")
+						.cp-2.fadeInUp.animated.delay-7
+							img(src="/BMWX1/img/cp-1-2.png")
+						.cp-3.fadeInUp.animated.delay-9
+							img(src="/BMWX1/img/cp-1-3.png")
+						a.join(href="#/register").fadeInUp.animated.delay-11
+							img(src="/BMWX1/img/join.png")
+				.next-point
+			.page.activity(down="homepage",up="register")
+				//- h2 page 2
+				.content
+					.cp
+						.cp-1.fadeInLeft.animated.delay-5
+							img(data-layzr="/BMWX1/img/cp-2-1.png")
+						.cp-2.fadeInLeft.animated.delay-7
+							img(data-layzr="/BMWX1/img/cp-2-2.png")
+						a.join(href="#/register").fadeInLeft.animated.delay-9
+							img(data-layzr="/BMWX1/img/join.png")
+				.next-point
+			.page.register(down="activity",up="food")
+				.content
+					.title.fadeInLeft.animated.delay-5
+						img(data-layzr="/BMWX1/img/cp-3-title.png")
+					register
+					.cp
+						.cp-1.fadeInLeft.animated.delay-7
+							img(data-layzr="/BMWX1/img/cp-3-1.png")
+						.cp-2.fadeInRight.animated.delay-8
+							img(data-layzr="/BMWX1/img/cp-3-2.png")
+				.next-point
+			.page.food(down="register",up="bmwx1")
+				food
+				a.join(href="#/register").fadeInUp.animated.delay-5
+					img(data-layzr="/BMWX1/img/join.png")
+				.next-point
+			.page.bmwx1(down="food")
+				.content
+					.cp
+						.cp-1
+							img(data-layzr="/BMWX1/img/cp-5-1.png")
+					slider(list="/BMWX1/img/car-1.png,/BMWX1/img/car-2.png,/BMWX1/img/car-3.png,/BMWX1/img/car-4.png")
+					.lr
+						img(data-layzr="/BMWX1/img/lr.png")
+				a.join(href="#/register").fadeInUp.animated.delay-5
+					img(data-layzr="/BMWX1/img/join.png")
+block js
+	script(src="/libs/js/min/localforage.min.js")
+	script(src="/libs/js/min/riot.js")
+	script(src="/libs/js/min/Zepto.min.js")
+	script(src="/libs/js/cityData.js")
+	script(src="/libs/js/min/layzr.min.js")
+	script(src="js/tag.js")
+	script(src="js/main.js")
+	
+		
+		

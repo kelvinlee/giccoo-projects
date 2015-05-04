@@ -1,0 +1,263 @@
+@import sass/base
+@import ../../libs/sass/loading
+
+$debug : true
+$cdn : ""
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects"
+
++keyframes(nextPoint)
+	from
+		+transform(scale(1,1))
+		opacity: 1
+	to
+		+transform(scale(2,2))
+		opacity: 0
+
+// animation,delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.wrap
+	+wh(100%,100%)
+
+.navbar
+	// +posf
+	// +tl
+	$navbarH: 38px/2
+	+show
+	+wh(100%,$navbarH)
+	+b($cdn+"/BMWX1/img/navbar-bg.png",repeat,left,top)
+	.menu-1,.menu-2
+		+posa
+		+tl
+		z-index: 999
+	.menu-2
+		+tran
+		+transform(translate3d(0,calc(-100% - 10px),0))
+		+tl($navbarH)
+		+br
+		+w(100%)
+		+box
+		+overhide
+		&.open
+			+transform(translate3d(0,0,0))
+		.zw
+			+w
+			+h
+		ul
+			+p(10px 20px 20px 20px)
+			+bc(rgba(0,0,0,0.7))
+			li
+				border-bottom: solid 1px #fff
+				a
+					+show-inline
+					+p(10px 0)
+					+w(100%)
+					color: #fff
+					text-decoration: none
+					font-size: 1rem
+	.menu-1
+		+tran
+		+transform(translate3d(0,0,0))
+		&.hide
+			+transform(translate3d(0,-100%,0))
+		.btn
+			+posa
+			+tl(0,10%)
+			+iw(106,640,100%)
+	
+
+.pages
+	+show
+	+wh(100%,calc(100% - 19px))
+	+overhide
+	+posr
+	.page
+		+wh(100%,100%)
+		+tran
+		// +bc(rgba(0,0,0,0.7))
+		+posa
+		+tl
+		+hide
+		.next-point
+			+wh(30px,30px)
+			+b("../img/down-arrow.png",no-repeat,center,center,10px 10px)
+			+posa
+			+bl(5%,50%)
+			border: solid 1px #fff
+			border-radius: 50%
+			margin-left: -15px
+			z-index: 99
+			+box
+			&:before
+				content: " "
+				+posa
+				+tl
+				+wh(100%,100%)
+				+box
+				border: solid 1px #fff
+				border-radius: 50%
+				transform-origin: center center
+				+animation(nextPoint,1s,ease,"infinite")
+		&:first-child
+			+show
+		h1,h2
+			+m
+		&.riot-up-active,&.riot-down-active
+			+transform(translate3d(0,0,0))
+		&.riot-up-leave
+			+transform(translate3d(0,-100%,0))
+		&.riot-up
+			+transform(translate3d(0,100%,0))
+		&.riot-down-leave
+			+transform(translate3d(0,100%,0))
+		&.riot-down
+			+transform(translate3d(0,-100%,0))
+
+.homepage
+	+b("../img/bg-1.jpg",no-repeat,center,center,cover)
+	.content
+		+posa
+		+bl(calc(10% + 30px))
+		+w(100%)
+		.join
+			margin-top: 10px
+			+show-inline
+
+.activity
+	+b("../img/bg-2.jpg",no-repeat,center,center,cover)
+	.content
+		+posa
+		+tl(20%)
+		.cp-1
+			margin-bottom: 10px
+		.join
+			margin-top: 20px
+			+show-inline
+
+.register
+	+b("../img/bg-3.jpg",no-repeat,center,center,cover)
+	.content
+		+posa
+		+tl(15%)
+		.cp
+			.cp-1
+				+m(10px 0)
+.food
+	+b("../img/bg-4.jpg",no-repeat,center,center,cover)
+	.join
+		+posa
+		+bl(15%)
+	.foods
+		+posa
+		+tl(15%)
+		.cp
+			.cp-1
+				margin-bottom: 10px
+			.cp-2
+				+posr
+				.p1,.p2,.p3
+					+posa
+					+h
+				.p1
+					+tl
+					+w(30%)
+				.p2
+					+tl(0,30%)
+					+w(40%)
+				.p3
+					+tr
+					+w(30%)
+
+	.food-list
+		+posa
+		+tl
+		+w
+		+h
+
+.bmwx1
+	+b("../img/bg-5.jpg",no-repeat,center,center,cover)
+	.content
+		+posa
+		+tl(15%)
+		.lr
+			+posa
+			+bl(40%)
+			z-index: -1
+	.join
+		+posa
+		+bl(10%)
+
+
+
+.form
+	+m
+	+w(79%)
+	color: #fff
+	font-size: 0.6rem
+	.form-grounp
+		+m(10px 0)
+		label
+			+show-inline
+			+w(4rem)
+			vertical-align: middle
+		input[type="text"],.select
+			+show-inline
+			vertical-align: middle
+			+wh(calc(100% - 4.5rem),24px)
+			+p(0 5px)
+			+m
+			+box
+			border: solid 1px #fff
+			+bc(rgba(0,0,0,0.3))
+			outline: none
+			border-radius: 0
+		.select
+			+posr
+			span
+				line-height: 22px
+			select
+				+posa
+				+tl
+				+bl
+				+wh(100%,100%)
+				opacity: 0
+
+	.form-check
+		input[type="checkbox"],input[type="radio"],.checkbox
+			vertical-align: middle
+			+show-inline
+		.checkbox
+			margin-right: 10px
+	.form-btn
+		margin: 10px 0
+	.submit
+		// +b("../img/submit.png",no-repeat,center,center,contain)
+		+m
+		+p
+		border: none
+		outline: none
+		font-size: 0
+		+bc(transparent)
+		
+
+			
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
