@@ -1,0 +1,36 @@
+extends ../libs/jade/layout
+block title
+	| 路虎·揽胜运动版SVR 邀您征服海外极限赛道 
+block css
+	//- link(rel="stylesheet",href="/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css")
+
+
+block content
+	//- -url = "/"
+	.wechat-share-hide
+		img(src="#{url}Landrover/img/share.jpg")
+	#loading.loading.loaded
+		div.loading-logo
+			.loading-normal
+				img(src="#{url}libs/img/loading-normal.png")
+	.wrap
+		.banner
+			img(src="#{url}Landrover/img/banner.jpg")
+		register
+		.footer
+			img(src="#{url}Landrover/img/footer.jpg")
+block js
+	//- script(src="/libs/js/min/localforage.min.js")
+	script(src="/libs/js/min/riot.js")
+	script(src="/libs/js/min/Zepto.min.js")
+	script(src="/libs/js/min/cityData-min.js")
+	//- script(src="/libs/js/min/layzr.min.js")
+	script(src="js/tag.js")
+	//- script(src="js/main.js")
+	script.
+		riot.mount("*");
+		window.onload = function(){
+			$("#loading").hide();
+		}
+

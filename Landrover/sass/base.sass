@@ -1,0 +1,80 @@
+@import sass/base
+@import ../../libs/sass/loading
+
+$debug : true
+$cdn : ""
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects"
+
+
+.wrap
+	+wh(100%,100%)
+
+.form
+	+m
+	+w(80%)
+	color: #333
+	font-size: 0.6rem
+	.form-grounp
+		+m(10px 0)
+		label
+			+show-inline
+			+w(6rem)
+			vertical-align: middle
+		// &>label
+			// +text-right
+		input[type="text"],.select,.comb
+			+show-inline
+			vertical-align: middle
+			+w(55%)
+			+wh(calc(100% - 6.5rem),24px)
+			+p(0 5px)
+			+m
+			+box
+			border: solid 1px #666
+			// +bc(rgba(0,0,0,0.3))
+			outline: none
+			border-radius: 0
+		.select
+			+posr
+			span
+				line-height: 22px
+			select
+				+posa
+				+tl
+				+bl
+				+wh(100%,100%)
+				opacity: 0
+		.comb
+			border: none
+			+p(0)
+			label
+				+show-inline
+				+w(auto)
+				+p(0 10px)
+				line-height: 24px
+			.select
+				+w(48%)
+	.form-check
+		input[type="checkbox"],input[type="radio"],.checkbox
+			vertical-align: middle
+			+show-inline
+		.checkbox
+			margin-right: 10px
+
+
+	.form-btn
+		margin: 20px 0
+		+text-center
+		// margin-top: 20px
+	.submit
+		// +b($cdn+"/BMWX1/img/submit.png",no-repeat,center,center,contain)
+		+m
+		+p
+		border: none
+		outline: none
+		font-size: 0
+		+bc(transparent)
+		+show-inline
+		+iw(160,410,100%)
+		

@@ -10,18 +10,10 @@
       <input id="mobile" type="text" name="mobile"/>
     </div>
     <div class="form-grounp">
-      <label for="province">省份:</label>
-      <div class="select"><span>{provinceName}</span>
-        <select id="province" name="province" onchange="{changeProvince}">
-          <option each="{cityData}" value="{name}">{name}</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-grounp">
-      <label for="city">城市:</label>
+      <label for="city">所在城市:</label>
       <div class="select"><span>{cityName}</span>
-        <select id="city" name="city" onchange="{changeCity}">
-          <option each="{city}" value="{name}">{name}</option>
+        <select id="city" name="city" onchange="{changeSelect}">
+          <option each="{name in city}" value="{name}">{name}</option>
         </select>
       </div>
     </div>
@@ -37,28 +29,33 @@
   </form>
   <script>
     var self = this
-    this.cityData = cityData
-    this.city = this.cityData[0]["sub"]
-    this.provinceName = this.cityData[0].name
-    this.cityName = this.city[0].name
-    this.firstUpdate = true
-    this.on("update",function(){
-    	if (this.firstUpdate) {return this.firstUpdate = false}
-    	this.provinceName = $("[name=province]",this.root).val()
-    	this.cityName = $("[name=city]",this.root).val()
-    })
-    changeCity(evt) {
-    	this.update()
-    }
-    changeProvince(evt) {
-    	var name = $("[name=province]",this.root).val()
-    	for(var i=this.cityData.length-1;i>=0;i--) {
-    		if (this.cityData[i].name == name) {
-    			this.city = this.cityData[i]["sub"]
-    			this.update()
-    			return true
-    		}
-    	}
+    //- this.cityData = cityData
+    this.city = ["昆明","成都","武汉","郑州","其他"]
+    //- this.provinceName = this.cityData[0].name
+    this.cityName = this.city[0]
+    //- this.firstUpdate = true
+    //- this.on("update",function(){
+    //- 	if (this.firstUpdate) {return this.firstUpdate = false}
+    //- 	this.provinceName = $("[name=province]",this.root).val()
+    //- 	this.cityName = $("[name=city]",this.root).val()
+    //- })
+    //- changeCity(evt) {
+    //- 	this.update()
+    //- }
+    //- changeProvince(evt) {
+    //- 	var name = $("[name=province]",this.root).val()
+    //- 	for(var i=this.cityData.length-1;i>=0;i--) {
+    //- 		if (this.cityData[i].name == name) {
+    //- 			this.city = this.cityData[i]["sub"]
+    //- 			this.update()
+    //- 			return true
+    //- 		}
+    //- 	}
+    //- 	return true
+    //- }
+    changeSelect(evt) {
+    	var val = $(evt.target).val()
+    	$(evt.target).prev().text(val)
     	return true
     }
     submit() {

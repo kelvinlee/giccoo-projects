@@ -1,12 +1,14 @@
 extends ../libs/jade/layout
 block title
-	| BMW X1
+	| 即刻参与BMW X1时尚美食汇，尽享甄选美味
 block css
-	link(rel="stylesheet",href="/libs/css/animate.min.css")
+	link(rel="stylesheet",href="/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
 	link(rel="stylesheet",href="css/base.css")
-	
+
 
 block content
+	.wechat-share-hide
+		img(src="#{url}BMWX1/img/share.jpg")
 	#loading.loading.loaded
 		div.loading-logo
 			.loading-normal
@@ -64,10 +66,10 @@ block content
 				a.join(href="#/register").fadeInUp.animated.delay-5
 					img(data-layzr="/BMWX1/img/join.png")
 block js
-	script(src="/libs/js/min/localforage.min.js")
+	//- script(src="/libs/js/min/localforage.min.js")
 	script(src="/libs/js/min/riot.js")
 	script(src="/libs/js/min/Zepto.min.js")
-	script(src="/libs/js/min/cityData-min.js")
+	//- script(src="/libs/js/min/cityData-min.js")
 	script(src="/libs/js/min/layzr.min.js")
 	script(src="js/tag.js")
 	script(src="js/main.js")

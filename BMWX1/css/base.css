@@ -837,7 +837,7 @@ html, body {
     .pages .page .next-point {
       width: 30px;
       height: 30px;
-      background: url("../img/down-arrow.png") no-repeat center center;
+      background: url("/BMWX1/img/down-arrow.png") no-repeat center center;
       background-size: 10px 10px;
       background-color: transparent;
       position: absolute;
@@ -888,7 +888,7 @@ html, body {
               transform: translate3d(0, -100%, 0); }
 
 .homepage {
-  background: url("../img/bg-1.jpg") no-repeat center center;
+  background: url("/BMWX1/img/bg-1.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
   .homepage .content {
@@ -903,7 +903,7 @@ html, body {
       display: inline-block; }
 
 .activity {
-  background: url("../img/bg-2.jpg") no-repeat center center;
+  background: url("/BMWX1/img/bg-2.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
   .activity .content {
@@ -917,7 +917,7 @@ html, body {
       display: inline-block; }
 
 .register {
-  background: url("../img/bg-3.jpg") no-repeat center center;
+  background: url("/BMWX1/img/bg-3.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
   .register .content {
@@ -928,7 +928,7 @@ html, body {
       margin: 10px 0; }
 
 .food {
-  background: url("../img/bg-4.jpg") no-repeat center center;
+  background: url("/BMWX1/img/bg-4.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
   .food .join {
@@ -966,7 +966,7 @@ html, body {
     height: 100%; }
 
 .bmwx1 {
-  background: url("../img/bg-5.jpg") no-repeat center center;
+  background: url("/BMWX1/img/bg-5.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
   .bmwx1 .content {

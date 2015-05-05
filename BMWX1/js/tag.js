@@ -167,30 +167,35 @@ riot.tag('parallax', '<yield></yield>', function(opts) {
   
 });
 
-riot.tag('register', '<form onsubmit="{submit}" class="form fadeInLeft animated delay-6"> <div class="form-grounp"> <label for="username">姓名:</label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="mobile">手机号码:</label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-grounp"> <label for="province">省份:</label> <div class="select"><span>{provinceName}</span> <select id="province" name="province" onchange="{changeProvince}"> <option each="{cityData}" value="{name}">{name}</option> </select> </div> </div> <div class="form-grounp"> <label for="city">城市:</label> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeCity}"> <option each="{city}" value="{name}">{name}</option> </select> </div> </div> <div class="form-check"> <div class="checkbox"> <input type="checkbox" checked="checked" name="state" value="1"> </div> <label>我已阅读并接受数据使用声明 法律声明＊</label> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="/BMWX1/img/submit.png"></button> </div> </form>', function(opts) {
+riot.tag('register', '<form onsubmit="{submit}" class="form fadeInLeft animated delay-6"> <div class="form-grounp"> <label for="username">姓名:</label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="mobile">手机号码:</label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-grounp"> <label for="city">所在城市:</label> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeSelect}"> <option each="{name in city}" value="{name}">{name}</option> </select> </div> </div> <div class="form-check"> <div class="checkbox"> <input type="checkbox" checked="checked" name="state" value="1"> </div> <label>我已阅读并接受数据使用声明 法律声明＊</label> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="/BMWX1/img/submit.png"></button> </div> </form>', function(opts) {
     var self = this
-    this.cityData = cityData
-    this.city = this.cityData[0]["sub"]
-    this.provinceName = this.cityData[0].name
-    this.cityName = this.city[0].name
-    this.firstUpdate = true
-    this.on("update",function(){
-    	if (this.firstUpdate) {return this.firstUpdate = false}
-    	this.provinceName = $("[name=province]",this.root).val()
-    	this.cityName = $("[name=city]",this.root).val()
-    })
-    this.changeCity = function(evt) {
-    	this.update()
-    }.bind(this);
-    this.changeProvince = function(evt) {
-    	var name = $("[name=province]",this.root).val()
-    	for(var i=this.cityData.length-1;i>=0;i--) {
-    		if (this.cityData[i].name == name) {
-    			this.city = this.cityData[i]["sub"]
-    			this.update()
-    			return true
-    		}
-    	}
+
+    this.city = ["昆明","成都","武汉","郑州","其他"]
+
+    this.cityName = this.city[0]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    this.changeSelect = function(evt) {
+    	var val = $(evt.target).val()
+    	$(evt.target).prev().text(val)
     	return true
     }.bind(this);
     this.submit = function() {
