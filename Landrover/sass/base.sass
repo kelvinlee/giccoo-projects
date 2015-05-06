@@ -6,6 +6,14 @@ $cdn : ""
 @if not $debug
 	$cdn : "http://disk.giccoo.com/projects"
 
++large
+	body
+		background: #fff
+	.wrap
+		// +hide
+		+show
+		+m
+		max-width: 640px
 
 .wrap
 	+wh(100%,100%)
