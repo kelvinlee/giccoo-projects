@@ -61,7 +61,8 @@ tm = null
 
 window.onload = ->
 	# $("#loading").hide()
-	if document.getElementById("qrcode").getStyle("display") is "block"
+
+	if getStyle(document.getElementById("qrcode"),"display") is "block"
 		qrcode()
 		return false
 	ep = $(".load-progress .n")

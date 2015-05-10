@@ -8,7 +8,7 @@
     </ul>
   </div>
   <div show="{menu1}" class="menu-item">
-    <form method="post" onsubmit="{submit}" class="form">
+    <form action="http://api.giccoo.com/tongshuai/insert/" method="post" onsubmit="{submit}" class="form">
       <div class="form-grounp">
         <label for="username"><img data-layzr="/Tongshuai/img/form-username.png"/></label>
         <input id="username" type="text" name="username"/>
@@ -20,9 +20,12 @@
       <div class="form-btn">
         <button type="submit" class="submit"><img data-layzr="/Tongshuai/img/submit.png"/></button>
       </div>
+      <div class="back-icon"><img data-layzr="/Tongshuai/img/back.png"/></div>
     </form>
   </div>
-  <div show="{menu2}" onclick="{hideInfo}" class="menu-item"><img data-layzr="/Tongshuai/img/info.png"/></div>
+  <div show="{menu2}" onclick="{hideInfo}" class="menu-item"><img data-layzr="/Tongshuai/img/info.png"/>
+    <div class="back-icon"><img data-layzr="/Tongshuai/img/back.png"/></div>
+  </div>
   <script>
     var self = this
     this.root.className += " menu-items"
@@ -37,6 +40,7 @@
     hideInfo() {
     	this.menu2 = false
     }
+    
     submit() {
     	var list = $("form",this.root).serializeArray()
     	if ( $("[name=username]",this.root).val().length < 1 || $("[name=username]",this.root).val() == "") {
@@ -53,6 +57,7 @@
     			alert("提交成功!")
     			self.menu1 = false
     			self.update()
+    			riot.route("/notes/"+wonShare)
     		}else if(msg.recode == 203){
     			alert(msg.reason)
     			self.menu1 = false

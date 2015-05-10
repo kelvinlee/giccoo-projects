@@ -8,7 +8,7 @@
       <div if="{stamp}" class="icon3 {stamp}"><img if="{stamp}" src="/Tongshuai/img/{stamp}.png"/></div>
       <div class="kv"><img data-layzr="/Tongshuai/img/kv-2.png"/></div>
       <div if="{icon || text || stamp}" onclick="{finished}" class="btn submit"><img src="/Tongshuai/img/finished.png"/></div>
-      <div if="{icon || text || stamp}" onclick="{clear}" class="btn reset"><img src="/Tongshuai/img/reset.png"/></div>
+      <div if="{icon || text || stamp}" onclick="{clear}" class="btn reset"><img src="/Tongshuai/img/reset.png"/></div><a href="#/homepage2/" class="btn back"><img data-layzr="/Tongshuai/img/back.png"/></a>
     </div>
   </div>
   <div class="ctrl-box {ctrlbox}">
@@ -23,11 +23,13 @@
           <div each="{t in icons}" onclick="{parent.parent.parent.selectText(t)}" class="item"><img data-layzr="/Tongshuai/img/{t}.png"/></div>
         </div>
       </slider>
-      <slider>
-        <div each="{parent.stamps}" class="slide">
-          <div each="{p in icons}" onclick="{parent.parent.parent.selectStamp(p)}" class="item"><img data-layzr="/Tongshuai/img/{p}.png"/></div>
+      <div class="slider-box">
+        <div class="slider">
+          <div each="{stamps}" class="slide">
+            <div each="{p in icons}" onclick="{parent.parent.selectStamp(p)}" class="item"><img data-layzr="/Tongshuai/img/{p}.png"/></div>
+          </div>
         </div>
-      </slider>
+      </div>
     </div>
   </div>
   <script>

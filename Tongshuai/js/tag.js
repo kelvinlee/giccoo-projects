@@ -1,5 +1,5 @@
 
-riot.tag('menus', '<div show="{!menu1 &amp;&amp; !menu2}" class="menu-list"> <ul> <li onclick="{showForm}" class="fadeInLeft animated delay-5"><img data-layzr="/Tongshuai/img/menu-1.png"></li> <li onclick="{showInfo}" class="fadeInLeft animated delay-6"><img data-layzr="/Tongshuai/img/menu-2.png"></li> <li class="fadeInLeft animated delay-7"><a href="http://www.tongshuai.com/" target="_blank"><img data-layzr="/Tongshuai/img/menu-3.png"></a></li> </ul> </div> <div show="{menu1}" class="menu-item"> <form method="post" onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username"><img data-layzr="/Tongshuai/img/form-username.png"></label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="mobile"><img data-layzr="/Tongshuai/img/form-mobile.png"></label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-btn"> <button type="submit" class="submit"><img data-layzr="/Tongshuai/img/submit.png"></button> </div> </form> </div> <div show="{menu2}" onclick="{hideInfo}" class="menu-item"><img data-layzr="/Tongshuai/img/info.png"></div>', function(opts) {
+riot.tag('menus', '<div show="{!menu1 &amp;&amp; !menu2}" class="menu-list"> <ul> <li onclick="{showForm}" class="fadeInLeft animated delay-5"><img data-layzr="/Tongshuai/img/menu-1.png"></li> <li onclick="{showInfo}" class="fadeInLeft animated delay-6"><img data-layzr="/Tongshuai/img/menu-2.png"></li> <li class="fadeInLeft animated delay-7"><a href="http://www.tongshuai.com/" target="_blank"><img data-layzr="/Tongshuai/img/menu-3.png"></a></li> </ul> </div> <div show="{menu1}" class="menu-item"> <form action="http://api.giccoo.com/tongshuai/insert/" method="post" onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username"><img data-layzr="/Tongshuai/img/form-username.png"></label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="mobile"><img data-layzr="/Tongshuai/img/form-mobile.png"></label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-btn"> <button type="submit" class="submit"><img data-layzr="/Tongshuai/img/submit.png"></button> </div> <div class="back-icon"><img data-layzr="/Tongshuai/img/back.png"></div> </form> </div> <div show="{menu2}" onclick="{hideInfo}" class="menu-item"><img data-layzr="/Tongshuai/img/info.png"> <div class="back-icon"><img data-layzr="/Tongshuai/img/back.png"></div> </div>', function(opts) {
     var self = this
     this.root.className += " menu-items"
     this.menu1 = false
@@ -13,6 +13,7 @@ riot.tag('menus', '<div show="{!menu1 &amp;&amp; !menu2}" class="menu-list"> <ul
     this.hideInfo = function() {
     	this.menu2 = false
     }.bind(this);
+    
     this.submit = function() {
     	var list = $("form",this.root).serializeArray()
     	if ( $("[name=username]",this.root).val().length < 1 || $("[name=username]",this.root).val() == "") {
@@ -29,6 +30,7 @@ riot.tag('menus', '<div show="{!menu1 &amp;&amp; !menu2}" class="menu-list"> <ul
     			alert("提交成功!")
     			self.menu1 = false
     			self.update()
+    			riot.route("/notes/"+wonShare)
     		}else if(msg.recode == 203){
     			alert(msg.reason)
     			self.menu1 = false
@@ -155,74 +157,6 @@ riot.tag('parallax', '<yield></yield>', function(opts) {
   
 });
 
-riot.tag('register', '<form onsubmit="{submit}" class="form fadeInLeft animated delay-6"> <div class="form-grounp"> <label for="username">姓名:</label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="mobile">手机号码:</label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-grounp"> <label for="city">所在城市:</label> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeSelect}"> <option each="{name in city}" value="{name}">{name}</option> </select> </div> </div> <div class="form-check"> <div class="checkbox"> <input type="checkbox" checked="checked" name="state" value="1"> </div> <label>我已阅读并接受数据使用声明 法律声明＊</label> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="/BMWX1/img/submit.png"></button> </div> </form>', function(opts) {
-    var self = this
-
-    this.city = ["昆明","成都","武汉","郑州","其他"]
-
-    this.cityName = this.city[0]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    this.changeSelect = function(evt) {
-    	var val = $(evt.target).val()
-    	$(evt.target).prev().text(val)
-    	return true
-    }.bind(this);
-    this.submit = function() {
-    	var list = $("form",this.root).serializeArray()
-    	var checked = false
-    	
-    	for (var i = list.length-1; i >= 0 ;i-- ) {
-    		if (list[i].name == "state") {
-    				checked = true
-    		}
-    	}
-
-    	if (!checked) {
-    		alert("请选择我已阅读并接受数据使用声明 法律声明＊")
-    		return false
-    	}
-    	if ( $("[name=username]",this.root).val().length < 1 || $("[name=username]",this.root).val() == "") {
-    		alert("姓名不能为空")
-    		return false
-    	}
-    	var reg = /^0?1[0-9][0-9]\d{9}$/
-    	if (reg.test($("[name=mobile]",this.root).val())) {
-    		alert("手机号码格式不正确")
-    		return false
-    	}
-    
-    	$.post("http://api.giccoo.com/bmwx1/insert/",list,function(msg){
-    		if (msg.recode == 200) {
-    			alert("提交成功!")
-    		}else{
-    			alert(msg.reason)
-    		}
-    	})
-
-    	return false
-    }.bind(this);
-  
-});
-
 riot.tag('shareicon', '<yield></yield><a href="{parent.getUrl(icon)}" each="{icon in icons}" class="share-icon icon-{icon}"><img riot-src="/{parent.site}/img/icon-{icon}.png"></a>', function(opts) {
     var self = this
     var list = {
@@ -263,7 +197,7 @@ riot.tag('share', '<div if="{opts.name==\'notes\'}" class="note-title fadeInLeft
   
 });
 
-riot.tag('shirt', '<div class="t-shirt"> <div class="clear"><img data-layzr="/Tongshuai/img/t-shirt.png"></div> <div class="icons"> <div if="{icon}" class="icon1 {icon}"><img if="{icon}" riot-src="/Tongshuai/img/{icon}.png"></div> <div if="{text}" class="icon2 {text}"><img if="{text}" riot-src="/Tongshuai/img/{text}-dark.png"></div> <div if="{stamp}" class="icon3 {stamp}"><img if="{stamp}" riot-src="/Tongshuai/img/{stamp}.png"></div> <div class="kv"><img data-layzr="/Tongshuai/img/kv-2.png"></div> <div if="{icon || text || stamp}" onclick="{finished}" class="btn submit"><img src="/Tongshuai/img/finished.png"></div> <div if="{icon || text || stamp}" onclick="{clear}" class="btn reset"><img src="/Tongshuai/img/reset.png"></div> </div> </div> <div class="ctrl-box {ctrlbox}"> <div class="box-content"> <slider id="slider-icon" callback="{iconCheck}" class="l"> <div each="{parent.icons}" class="slide"> <div each="{a in icons}" onclick="{parent.parent.parent.selectIcon(a)}" class="item"><img data-layzr="/Tongshuai/img/{a}.png"></div> </div> </slider> <slider id="slider-text" callback="{textCheck}" class="l"> <div each="{parent.texts}" class="slide"> <div each="{t in icons}" onclick="{parent.parent.parent.selectText(t)}" class="item"><img data-layzr="/Tongshuai/img/{t}.png"></div> </div> </slider> <slider> <div each="{parent.stamps}" class="slide"> <div each="{p in icons}" onclick="{parent.parent.parent.selectStamp(p)}" class="item"><img data-layzr="/Tongshuai/img/{p}.png"></div> </div> </slider> </div> </div>', function(opts) {
+riot.tag('shirt', '<div class="t-shirt"> <div class="clear"><img data-layzr="/Tongshuai/img/t-shirt.png"></div> <div class="icons"> <div if="{icon}" class="icon1 {icon}"><img if="{icon}" riot-src="/Tongshuai/img/{icon}.png"></div> <div if="{text}" class="icon2 {text}"><img if="{text}" riot-src="/Tongshuai/img/{text}-dark.png"></div> <div if="{stamp}" class="icon3 {stamp}"><img if="{stamp}" riot-src="/Tongshuai/img/{stamp}.png"></div> <div class="kv"><img data-layzr="/Tongshuai/img/kv-2.png"></div> <div if="{icon || text || stamp}" onclick="{finished}" class="btn submit"><img src="/Tongshuai/img/finished.png"></div> <div if="{icon || text || stamp}" onclick="{clear}" class="btn reset"><img src="/Tongshuai/img/reset.png"></div><a href="#/homepage2/" class="btn back"><img data-layzr="/Tongshuai/img/back.png"></a> </div> </div> <div class="ctrl-box {ctrlbox}"> <div class="box-content"> <slider id="slider-icon" callback="{iconCheck}" class="l"> <div each="{parent.icons}" class="slide"> <div each="{a in icons}" onclick="{parent.parent.parent.selectIcon(a)}" class="item"><img data-layzr="/Tongshuai/img/{a}.png"></div> </div> </slider> <slider id="slider-text" callback="{textCheck}" class="l"> <div each="{parent.texts}" class="slide"> <div each="{t in icons}" onclick="{parent.parent.parent.selectText(t)}" class="item"><img data-layzr="/Tongshuai/img/{t}.png"></div> </div> </slider> <div class="slider-box"> <div class="slider"> <div each="{stamps}" class="slide"> <div each="{p in icons}" onclick="{parent.parent.selectStamp(p)}" class="item"><img data-layzr="/Tongshuai/img/{p}.png"></div> </div> </div> </div> </div> </div>', function(opts) {
     var self = this
     this.ctrlbox = "up"
     this.icons = [

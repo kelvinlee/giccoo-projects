@@ -1155,6 +1155,17 @@ html, body {
     margin: 0 auto; }
     .iphone4 .t-shirt .btn.reset {
       width: 36.875%; }
+    .t-shirt .btn.reset ~ .back {
+      bottom: 30%;
+      left: 2.5%; }
+  .t-shirt .btn.back {
+    position: absolute;
+    bottom: 0;
+    left: 2.5%;
+    width: 36.875%;
+    margin: 0 auto; }
+    .iphone4 .t-shirt .btn.back {
+      width: 36.875%; }
 
 .menus {
   background: url("../img/bg-1.jpg") no-repeat center center;
@@ -1204,6 +1215,16 @@ html, body {
       outline: none;
       font-size: 0;
       background-color: transparent; }
+    .menus .menu-items .back-icon {
+      position: absolute;
+      bottom: 0%;
+      left: 50%;
+      -webkit-transform: translate3d(-50%, 110%, 0);
+              transform: translate3d(-50%, 110%, 0);
+      width: 36.875%;
+      margin: 0 auto; }
+      .iphone4 .menus .menu-items .back-icon {
+        width: 36.875%; }
 
 .notes, .page.share {
   background: url("../img/bg-3.jpg") no-repeat top center;

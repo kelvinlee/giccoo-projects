@@ -317,6 +317,14 @@ $cdn : "../"
 			+posa
 			+bl(15%,2.5%)
 			+iw(236,640,100%)
+			& ~ .back
+				+bl(30%,2.5%)
+		&.back
+			+posa
+			+bl(0,2.5%)
+			+iw(236,640,100%)
+
+
 
 .menus
 	+b($cdn+"img/bg-1.jpg",no-repeat,center,center,cover)
@@ -366,6 +374,11 @@ $cdn : "../"
 				font-size: 0
 				+bc(transparent)
 
+		.back-icon
+			+posa
+			+bl(0%,50%)
+			+transform(translate3d(-50%,110%,0))
+			+iw(236,640,100%)
 .notes,.page.share
 	+b($cdn+"img/bg-3.jpg",no-repeat,top,center,cover)
 

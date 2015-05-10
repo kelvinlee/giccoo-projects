@@ -10,7 +10,7 @@ menus
 					img(data-layzr="/Tongshuai/img/menu-3.png")
 
 	.menu-item(show="{menu1}")
-		form.form(method="post",onsubmit="{submit}")
+		form.form(action="http://api.giccoo.com/tongshuai/insert/",method="post",onsubmit="{submit}")
 			.form-grounp
 				label(for="username")
 					img(data-layzr="/Tongshuai/img/form-username.png")
@@ -22,8 +22,12 @@ menus
 			.form-btn
 				button.submit(type="submit")
 					img(data-layzr="/Tongshuai/img/submit.png")
+			.back-icon
+				img(data-layzr="/Tongshuai/img/back.png")
 	.menu-item(show="{menu2}",onclick="{hideInfo}")
 		img(data-layzr="/Tongshuai/img/info.png")
+		.back-icon
+			img(data-layzr="/Tongshuai/img/back.png")
 
 	script.
 		var self = this
@@ -39,6 +43,7 @@ menus
 		hideInfo() {
 			this.menu2 = false
 		}
+
 		submit() {
 			var list = $("form",this.root).serializeArray()
 			if ( $("[name=username]",this.root).val().length < 1 || $("[name=username]",this.root).val() == "") {
@@ -55,6 +60,7 @@ menus
 					alert("提交成功!")
 					self.menu1 = false
 					self.update()
+					riot.route("/notes/"+wonShare)
 				}else if(msg.recode == 203){
 					alert(msg.reason)
 					self.menu1 = false
