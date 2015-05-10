@@ -772,76 +772,136 @@ html, body {
   -webkit-animation-duration: 3000ms;
           animation-duration: 3000ms; }
 
+.share-wechat {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: url("http://disk.giccoo.com/projects/libs/img/wechat.png") no-repeat top right;
+  background-size: contain;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: none; }
+  .share-wechat.open {
+    display: block; }
+
 .wrap {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  position: relative; }
 
-.navbar {
-  display: block;
-  width: 100%;
-  height: 19px;
-  background: url("/BMWX1/img/navbar-bg.png") repeat left top;
-  background-size: initial;
-  background-color: transparent; }
-  .navbar .menu-1, .navbar .menu-2 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 999; }
-  .navbar .menu-2 {
-    -webkit-transition: all 0.5s ease;
-            transition: all 0.5s ease;
-    -webkit-transform: translate3d(0, -100%, 0);
-            transform: translate3d(0, -100%, 0);
-    -webkit-transform: translate3d(0, calc(-100% - 10px), 0);
-            transform: translate3d(0, calc(-100% - 10px), 0);
-    top: 19px;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
+@media only screen and (min-width: 735px) and (min-device-width: 768px) {
+  .loading.loaded {
+    display: none; } }
+
+.slider {
+  position: relative;
+  white-space: nowrap;
+  font-size: 0;
+  -webkit-transition: all 0s linear;
+          transition: all 0s linear; }
+  .slider .slide {
     width: 100%;
-    box-sizing: border-box;
-    overflow: hidden; }
-    .navbar .menu-2.open {
-      -webkit-transform: translate3d(0, 0, 0);
-              transform: translate3d(0, 0, 0); }
-    .navbar .menu-2 .zw {
-      width: 100%;
-      height: 100%; }
-    .navbar .menu-2 ul {
-      padding: 10px 20px 20px 20px;
-      background-color: rgba(0, 0, 0, 0.7); }
-      .navbar .menu-2 ul li {
-        border-bottom: solid 1px #fff; }
-        .navbar .menu-2 ul li a {
-          display: inline-block;
-          padding: 10px 0;
-          width: 100%;
-          color: #fff;
-          text-decoration: none;
-          font-size: 1rem; }
-  .navbar .menu-1 {
-    -webkit-transition: all 0.5s ease;
-            transition: all 0.5s ease;
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); }
-    .navbar .menu-1.hide {
-      -webkit-transform: translate3d(0, -100%, 0);
-              transform: translate3d(0, -100%, 0); }
-    .navbar .menu-1 .btn {
+    display: inline-block;
+    vertical-align: top; }
+  .slider .bg {
+    font-size: 0;
+    position: relative; }
+    .slider .bg .tag {
       position: absolute;
-      top: 0;
-      left: 10%;
-      width: 16.5625%;
-      margin: 0 auto; }
-      .iphone4 .navbar .menu-1 .btn {
-        width: 16.5625%; }
+      width: 40px; }
+
+.share-icons {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 5%; }
+  .share-icons .share-icon {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0 2%;
+    font-size: 0; }
+    .share-icons .share-icon:first-child {
+      padding: 0;
+      font-size: 1rem;
+      line-height: 320%;
+      vertical-align: top;
+      color: #fff; }
+
+.loading {
+  background: url("../img/bg-1.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+  .loading .new-load {
+    position: absolute;
+    top: 20%;
+    left: 0px;
+    width: 100%;
+    padding: 100% 0 0 0; }
+    .loading .new-load .load-item, .loading .new-load .load-progress {
+      position: absolute;
+      top: 0px;
+      left: 0px; }
+    .loading .new-load .load-item {
+      font-size: 0; }
+    .loading .new-load .load-1 {
+      -webkit-animation: second2 10s ease;
+              animation: second2 10s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+    .loading .new-load .load-2 {
+      -webkit-animation: second 3.5s ease;
+              animation: second 3.5s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+    .loading .new-load .load-3 {
+      -webkit-animation: second2 2s ease;
+              animation: second2 2s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+    .loading .new-load .load-progress {
+      width: 4rem;
+      height: 4rem;
+      top: 50%;
+      left: 50%;
+      padding-top: 1.2rem;
+      -webkit-transform: translate3d(-50%, -50%, 0);
+              transform: translate3d(-50%, -50%, 0); }
+      .loading .new-load .load-progress span {
+        font-size: 1rem;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+        color: #fff; }
+      .loading .new-load .load-progress .l {
+        font-size: 0.6rem; }
+      .loading .new-load .load-progress .n {
+        font-size: 1.4rem; }
+
+.logo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 40.625%;
+  margin: 0 auto;
+  z-index: 999; }
+  .iphone4 .logo {
+    width: 40.625%; }
 
 .pages {
   display: block;
   height: 100%;
   width: 100%;
-  height: calc(100% - 19px);
+  height: 100%;
   overflow: hidden;
   position: relative; }
   .pages .page {
@@ -857,7 +917,7 @@ html, body {
     .pages .page .next-point {
       width: 30px;
       height: 30px;
-      background: url("/BMWX1/img/down-arrow.png") no-repeat center center;
+      background: url("../img/down-arrow.png") no-repeat center center;
       background-size: 10px 10px;
       background-color: transparent;
       position: absolute;
@@ -887,7 +947,7 @@ html, body {
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite; }
-    .pages .page:first-child {
+    .pages .page.first {
       display: block; }
     .pages .page h1, .pages .page h2 {
       margin: 0 auto; }
@@ -908,167 +968,274 @@ html, body {
               transform: translate3d(0, -100%, 0); }
 
 .homepage {
-  background: url("/BMWX1/img/bg-1.jpg") no-repeat center center;
+  background: url("../img/bg-1.jpg") no-repeat top center;
   background-size: cover;
   background-color: transparent; }
-  .homepage .content {
-    position: absolute;
-    bottom: 15%;
-    left: 0px;
-    bottom: calc(10% + 30px);
-    left: 0px;
-    width: 100%; }
-    .homepage .content .join {
-      margin-top: 10px;
-      display: inline-block; }
-
-.activity {
-  background: url("/BMWX1/img/bg-2.jpg") no-repeat center center;
-  background-size: cover;
-  background-color: transparent; }
-  .activity .content {
-    position: absolute;
-    top: 20%;
-    left: 0px; }
-    .activity .content .cp-1 {
-      margin-bottom: 10px; }
-    .activity .content .join {
-      margin-top: 20px;
-      display: inline-block; }
-
-.register {
-  background: url("/BMWX1/img/bg-3.jpg") no-repeat center center;
-  background-size: cover;
-  background-color: transparent; }
-  .register .content {
-    position: absolute;
-    top: 15%;
-    left: 0px; }
-    .register .content .cp .cp-1 {
-      margin: 10px 0; }
-
-.food {
-  background: url("/BMWX1/img/bg-4.jpg") no-repeat center center;
-  background-size: cover;
-  background-color: transparent; }
-  .food .join {
+  .homepage .cp {
     position: absolute;
     bottom: 15%;
     left: 0px; }
-  .food .foods {
+
+.homepage2 {
+  background: url("../img/bg-2.jpg") no-repeat top center;
+  background-size: cover;
+  background-color: transparent; }
+  .homepage2 .cp {
     position: absolute;
-    top: 15%;
+    bottom: 15%;
     left: 0px; }
-    .food .foods .cp .cp-1 {
-      margin-bottom: 10px; }
-    .food .foods .cp .cp-2 {
-      position: relative; }
-      .food .foods .cp .cp-2 .p1, .food .foods .cp .cp-2 .p2, .food .foods .cp .cp-2 .p3 {
+    .homepage2 .cp .kv {
+      margin-bottom: 20%; }
+
+.build {
+  background: url("../img/bg-3.jpg") no-repeat top center;
+  background-size: cover;
+  background-color: transparent; }
+  .build .content {
+    position: absolute;
+    bottom: 0px;
+    left: 0px; }
+    .build .content .ctrl-box {
+      position: relative;
+      box-sizing: border-box;
+      width: 93.75%;
+      margin: 0 auto;
+      margin: 0 auto;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.7);
+      border: solid 1px #faea1d;
+      border-bottom: 0; }
+      .iphone4 .build .content .ctrl-box {
+        width: 75%; }
+      .build .content .ctrl-box.up:after {
+        content: " ";
         position: absolute;
-        height: 100%; }
-      .food .foods .cp .cp-2 .p1 {
-        top: 0px;
-        left: 0px;
-        width: 30%; }
-      .food .foods .cp .cp-2 .p2 {
+        bottom: 0;
+        left: 50%;
+        width: 1rem;
+        height: 1rem;
+        background: url("../img/arrow.png") no-repeat center center;
+        background-size: contain;
+        background-color: transparent;
+        -webkit-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+        margin-left: -0.5rem; }
+      .build .content .ctrl-box.up .box-content {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0); }
+      .build .content .ctrl-box.down:after {
+        content: " ";
+        position: absolute;
         top: 0;
-        left: 30%;
-        width: 40%; }
-      .food .foods .cp .cp-2 .p3 {
-        top: 0px;
+        left: 50%;
+        width: 1rem;
+        height: 1rem;
+        background: url("../img/arrow.png") no-repeat center center;
+        background-size: contain;
+        background-color: transparent;
+        -webkit-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+                transform: rotate(90deg);
+        margin-left: -0.5rem; }
+      .build .content .ctrl-box.down .box-content {
+        -webkit-transform: translate3d(0, -50%, 0);
+                transform: translate3d(0, -50%, 0); }
+      .build .content .ctrl-box .box-content {
+        position: relative;
+        -webkit-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+        width: 100%;
+        padding: 50% 0 0 0; }
+    .build .content .slider-box {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 2% 0 0 0;
+      overflow: hidden; }
+      .build .content .slider-box:nth-child(n+1) {
+        top: 0;
+        left: 0px; }
+      .build .content .slider-box:nth-child(n+2) {
+        top: 50%;
+        left: 0px; }
+      .build .content .slider-box:nth-child(n+3) {
+        top: 100%;
+        left: 0px; }
+      .build .content .slider-box:before, .build .content .slider-box:after {
+        content: " ";
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        background: url("../img/arrow.png") no-repeat center center;
+        background-size: contain;
+        background-color: transparent;
+        -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+                transform: rotate(180deg);
+        -webkit-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+        opacity: 0;
+        margin-top: -0.5rem; }
+      .build .content .slider-box:before {
+        top: 50%;
+        left: 0px; }
+      .build .content .slider-box:after {
+        top: 50%;
         right: 0px;
-        width: 30%; }
-  .food .food-list {
+        -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+                transform: rotate(0deg); }
+      .build .content .slider-box.l:before {
+        opacity: 1; }
+      .build .content .slider-box.r:after {
+        opacity: 1; }
+
+.t-shirt {
+  position: relative;
+  margin-bottom: 2%; }
+  .t-shirt .icons {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10% 0 0 0; }
+  .t-shirt .icon1 {
+    width: 100%;
+    text-align: center; }
+    .t-shirt .icon1 img {
+      width: 32%; }
+  .t-shirt .icon2 {
+    padding-top: 5%;
+    width: 100%;
+    text-align: center; }
+    .t-shirt .icon2 img {
+      width: 30%; }
+  .t-shirt .icon1 ~ .icon2 {
+    padding-top: 0; }
+  .t-shirt .icon3 {
+    position: absolute;
+    top: 28%;
+    left: 0px;
+    width: 100%;
+    text-align: center; }
+    .t-shirt .icon3 img {
+      width: 30%; }
+    .t-shirt .icon3.stamp-1 {
+      -webkit-transform: translate3d(-7%, -5%, 0) rotate(20deg);
+              transform: translate3d(-7%, -5%, 0) rotate(20deg); }
+    .t-shirt .icon3.stamp-2 {
+      -webkit-transform: translate3d(7%, -25%, 0) rotate(-20deg);
+              transform: translate3d(7%, -25%, 0) rotate(-20deg); }
+    .t-shirt .icon3.stamp-3 {
+      -webkit-transform: translate3d(12%, 0%, 0) scale(0.7, 0.7);
+              transform: translate3d(12%, 0%, 0) scale(0.7, 0.7); }
+  .t-shirt .kv {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 100%; }
+  .t-shirt .btn.submit {
+    position: absolute;
+    bottom: 0;
+    left: 2.5%;
+    width: 36.875%;
+    margin: 0 auto; }
+    .iphone4 .t-shirt .btn.submit {
+      width: 36.875%; }
+  .t-shirt .btn.reset {
+    position: absolute;
+    bottom: 15%;
+    left: 2.5%;
+    width: 36.875%;
+    margin: 0 auto; }
+    .iphone4 .t-shirt .btn.reset {
+      width: 36.875%; }
+
+.menus {
+  background: url("../img/bg-1.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+  .menus .content {
     position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
     height: 100%; }
+    .menus .content .kv {
+      position: absolute;
+      top: 20%;
+      left: 0px; }
+      .iphone4 .menus .content .kv {
+        top: 10%;
+        left: 0px; }
+  .menus .menu-items {
+    position: absolute;
+    bottom: 14%;
+    left: 0px;
+    width: 100%;
+    display: block; }
+    .menus .menu-items .form .form-grounp, .menus .menu-items .form .form-btn {
+      margin: 0 auto;
+      width: 50%;
+      position: relative;
+      padding-top: 5px; }
+    .menus .menu-items .form .form-grounp input[type="text"] {
+      position: absolute;
+      margin: 0 auto;
+      padding: 0;
+      top: 0;
+      left: 30%;
+      width: 60%;
+      background-color: transparent;
+      border: none;
+      padding-top: 5%;
+      line-height: 160%;
+      outline: none;
+      font-size: 1rem; }
+    .menus .menu-items .form .submit {
+      margin: 0 auto;
+      padding: 0;
+      border: none;
+      outline: none;
+      font-size: 0;
+      background-color: transparent; }
 
-.bmwx1 {
-  background: url("/BMWX1/img/bg-5.jpg") no-repeat center center;
+.notes, .page.share {
+  background: url("../img/bg-3.jpg") no-repeat top center;
   background-size: cover;
   background-color: transparent; }
-  .bmwx1 .content {
-    position: absolute;
-    top: 15%;
-    left: 0px;
-    width: 100%; }
-    .bmwx1 .content .lr {
-      position: absolute;
-      bottom: 40%;
-      left: 0px;
-      z-index: -1; }
-  .bmwx1 .join {
-    position: absolute;
-    bottom: 10%;
-    left: 0px; }
-
-.form {
-  margin: 0 auto;
-  width: 79%;
-  color: #fff;
-  font-size: 0.6rem; }
-  .form .form-grounp {
-    margin: 10px 0; }
-    .form .form-grounp label {
-      display: inline-block;
-      width: 4rem;
-      vertical-align: middle; }
-    .form .form-grounp input[type="text"], .form .form-grounp .select {
-      display: inline-block;
-      vertical-align: middle;
-      width: 70%;
-      width: calc(100% - 4.5rem);
-      height: 24px;
-      padding: 0 5px;
-      margin: 0 auto;
-      box-sizing: border-box;
-      border: solid 1px #fff;
-      background-color: rgba(0, 0, 0, 0.3);
-      outline: none;
-      border-radius: 0; }
-    .form .form-grounp .select {
-      position: relative; }
-      .form .form-grounp .select span {
-        line-height: 22px; }
-      .form .form-grounp .select select {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        bottom: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        opacity: 0; }
-  .form .form-check input[type="checkbox"], .form .form-check input[type="radio"], .form .form-check .checkbox {
-    vertical-align: middle;
-    display: inline-block; }
-  .form .form-check .checkbox {
-    margin-right: 10px; }
-  .form .form-btn {
-    margin: 10px 0; }
-  .form .submit {
-    margin: 0 auto;
-    padding: 0;
-    border: none;
-    outline: none;
-    font-size: 0;
-    background-color: transparent; }
-
-.slider {
-  position: relative;
-  white-space: nowrap;
-  font-size: 0;
-  -webkit-transition: all 0s linear;
-          transition: all 0s linear; }
-  .slider .slide {
+  .notes .t-shirt, .notes .note-title, .notes .share-title, .page.share .t-shirt, .page.share .note-title, .page.share .share-title {
     width: 100%;
+    margin: 0 auto; }
+    .iphone4 .notes .t-shirt, .iphone4 .notes .note-title, .iphone4 .notes .share-title, .iphone4 .page.share .t-shirt, .iphone4 .page.share .note-title, .iphone4 .page.share .share-title {
+      width: 80%; }
+  .notes .note-title, .notes .share-title, .page.share .note-title, .page.share .share-title {
+    margin-top: 15%;
+    margin-bottom: 5%; }
+  .notes .join, .page.share .join {
     display: inline-block;
-    vertical-align: top; }
-  .slider .bg {
-    font-size: 0;
-    position: relative; }
-    .slider .bg .tag {
-      position: absolute;
-      width: 40px; }
+    margin-top: 5%; }
+
+.page.share {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; }
+  .page.share.show {
+    z-index: 109; }
+
+.slider-box {
+  display: block; }
+
+.slider .slide {
+  box-sizing: border-box;
+  padding: 0 2%; }
+.slider .item {
+  width: 33%;
+  display: inline-block; }

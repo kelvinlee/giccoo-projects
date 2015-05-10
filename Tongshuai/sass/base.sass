@@ -1,0 +1,399 @@
+@import sass/base
+@import ../../libs/sass/loading
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects/Tongshuai/"
+
++keyframes(nextPoint)
+	from
+		+transform(scale(1,1))
+		opacity: 1
+	to
+		+transform(scale(2,2))
+		opacity: 0
+
+// animation,delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.share-wechat
+	+posa
+	+tl
+	+w
+	+h
+	+b("http://disk.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
+	+bc
+	z-index: 1000
+	+hide
+	&.open
+		+show
+
+.wrap
+	+wh(100%,100%)
+	+posr
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+
+.loading.loaded
+	+large
+		+hide
+
+
+
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+w(90%)
+	+m
+	margin-top: 5%
+	.share-icon
+		+show-inline
+		+w(20%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		&:first-child
+			+p
+			font-size: 1rem
+			line-height: 320%
+			vertical-align: top
+			color: #fff
+
+.loading
+	+b($cdn+"img/bg-1.jpg",no-repeat,center,center,cover)
+	.new-load
+		+posa
+		+tl(20%)
+		+w
+		+p(100% 0 0 0)
+		.load-item, .load-progress
+			+posa
+			+tl
+		.load-item
+			font-size: 0
+		.load-1
+			+animation(second2,10s,ease,infinite)
+		.load-2
+			+animation(second,3.5s,ease,infinite)
+		.load-3
+			+animation(second2,2s,ease,infinite)
+			animation-direction:alternate
+
+		.load-progress
+			$w: 4rem
+			+wh($w,$w)
+			+tl(50%,50%)
+			// +m(-$w/2 0 0 -$w/2)
+			// line-height: $w/2
+			padding-top: 1.2rem
+			+transform(translate3d(-50%,-50%,0))
+			span
+				font-size: 1rem
+				+text-center
+				+show-inline
+				+w
+				color: #fff
+			.l
+				font-size: 0.6rem
+			.n
+				font-size: 1.4rem
+
+.logo
+	+posa
+	+tl
+	+iw(260,640,100%)
+	z-index: 999
+
+
+
+.pages
+	+show
+	+h(100%)
+	+wh(100%,100%)
+	+overhide
+	+posr
+	.page
+		+wh(100%,100%)
+		+tran
+		+bc(rgba(0,0,0,0.7))
+		+posa
+		+tl
+		+hide
+		.next-point
+			+wh(30px,30px)
+			+b($cdn+"img/down-arrow.png",no-repeat,center,center,10px 10px)
+			+posa
+			+bl(5%,50%)
+			border: solid 1px #fff
+			border-radius: 50%
+			margin-left: -15px
+			z-index: 99
+			+box
+			&:before
+				content: " "
+				+posa
+				+tl
+				+wh(100%,100%)
+				+box
+				border: solid 1px #fff
+				border-radius: 50%
+				transform-origin: center center
+				+animation(nextPoint,1s,ease,"infinite")
+		&.first
+			+show
+		h1,h2
+			+m
+		&.riot-up-active,&.riot-down-active
+			+transform(translate3d(0,0,0))
+		&.riot-up-leave
+			+transform(translate3d(0,-100%,0))
+		&.riot-up
+			+transform(translate3d(0,100%,0))
+		&.riot-down-leave
+			+transform(translate3d(0,100%,0))
+		&.riot-down
+			+transform(translate3d(0,-100%,0))
+
+.homepage
+	+b($cdn+"img/bg-1.jpg",no-repeat,top,center,cover)
+	.cp
+		+posa
+		+bl(15%)
+.homepage2
+	+b($cdn+"img/bg-2.jpg",no-repeat,top,center,cover)
+	.cp
+		+posa
+		+bl(15%)
+		.kv
+			margin-bottom: 20%
+
+.build
+	+b($cdn+"img/bg-3.jpg",no-repeat,top,center,cover)
+	.content
+		+posa
+		+bl
+		.ctrl-box
+			+posr
+			+box
+			+iw(600)
+			+m
+			+overhide
+			+bc(rgba(0,0,0,0.7))
+			border: solid 1px #faea1d
+			border-bottom: 0
+			&.up
+				&:after
+					content: " "
+					+posa
+					+bl(0,50%)
+					+wh(1rem,1rem)
+					+b($cdn+"img/arrow.png",no-repeat,center,center,contain)
+					+transform(rotate(-90deg))
+					margin-left: -0.5rem
+				.box-content
+					+transform(translate3d(0,0,0))
+			&.down
+				&:after
+					content: " "
+					+posa
+					+tl(0,50%)
+					+wh(1rem,1rem)
+					+b($cdn+"img/arrow.png",no-repeat,center,center,contain)
+					+transform(rotate(90deg))
+					margin-left: -0.5rem
+				.box-content
+					+transform(translate3d(0,-50%,0))
+			.box-content
+				+posr
+				+tran
+				+w(100%)
+				+p(50% 0 0 0)
+		.slider-box
+			+posa
+			+tl
+			+m
+			+w
+			+p(2% 0 0 0)
+			+overhide
+			&:nth-child(n+1)
+				+tl(0)
+			&:nth-child(n+2)
+				+tl(50%)
+			&:nth-child(n+3)
+				+tl(100%)
+			&:before,&:after
+				content: " "
+				+posa
+				+wh(1rem,1rem)
+				+b($cdn+"img/arrow.png",no-repeat,center,center,contain)
+				+transform(rotate(180deg))
+				+tran
+				opacity: 0
+				margin-top: -0.5rem
+			&:before
+				+tl(50%)
+			&:after
+				+tr(50%)
+				+transform(rotate(0deg))
+			&.l
+				&:before
+					opacity: 1
+			&.r
+				&:after
+					opacity: 1
+		// 	&:first-child
+		// 		border-bottom: solid 1px #faea1d
+
+.t-shirt
+	+posr
+	// +iw(640)
+	margin-bottom: 2%
+	.icons
+		+posa
+		+tl
+		+w
+		+h
+		+box
+		+p(10% 0 0 0)
+	.icon1
+		+w(100%)
+		+text-center
+		img
+			+w(32%)
+	.icon2
+		padding-top: 5%
+		+w(100%)
+		+text-center
+		img
+			+w(30%)
+	.icon1 ~ .icon2
+		padding-top: 0
+	.icon3
+		+posa
+		+tl(28%)
+		+w(100%)
+		+text-center
+		img
+			+w(30%)
+		&.stamp-1
+			+transform(translate3d(-7%,-5%,0) rotate(20deg))
+		&.stamp-2
+			+transform(translate3d(7%,-25%,0) rotate(-20deg))
+		&.stamp-3
+			+transform(translate3d(12%,0%,0) scale(0.7,0.7))
+	.kv
+		+posa
+		+br
+		+w(100%)
+		// +transform(rotate(20deg))
+	.btn
+		&.submit
+			+posa
+			+bl(0,2.5%)
+			+iw(236,640,100%)
+		&.reset
+			+posa
+			+bl(15%,2.5%)
+			+iw(236,640,100%)
+
+.menus
+	+b($cdn+"img/bg-1.jpg",no-repeat,center,center,cover)
+	.content
+		+posa
+		+tl
+		+w
+		+h
+		.kv
+			+posa
+			+tl(20%)
+			.iphone4 &
+				+tl(10%)
+
+	.menu-items
+		+posa
+		+bl(14%)
+		+w
+		+show
+		.form
+			.form-grounp,.form-btn
+				+m
+				+w(50%)
+				+posr
+				padding-top: 5px
+			.form-grounp
+				label
+				input[type="text"]
+					+posa
+					+m
+					+p
+					+tl(0,30%)
+					+w(60%)
+					+bc(transparent)
+					border: none
+					padding-top: 5%
+					line-height: 160%
+					outline: none
+					font-size: 1rem
+					
+
+			.submit
+				+m
+				+p
+				border: none
+				outline: none
+				font-size: 0
+				+bc(transparent)
+
+.notes,.page.share
+	+b($cdn+"img/bg-3.jpg",no-repeat,top,center,cover)
+
+	.t-shirt,.note-title,.share-title
+		+iw(640)
+	.note-title , .share-title
+		margin-top: 15%
+		margin-bottom: 5%
+	.join
+		+show-inline
+		margin-top: 5%
+
+
+.page.share
+	+posa
+	+tl
+	+w
+	+h
+	&.show
+		z-index: 109
+
+.slider-box
+	+show
+.slider
+	.slide
+		+box
+		+p(0 2%)
+	.item
+		+w(33%)
+		+show-inline
+		

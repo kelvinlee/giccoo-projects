@@ -1,0 +1,67 @@
+menus
+	.menu-list(show="{!menu1 && !menu2}")
+		ul
+			li.fadeInLeft.animated.delay-5(onclick="{showForm}")
+				img(data-layzr="/Tongshuai/img/menu-1.png")
+			li.fadeInLeft.animated.delay-6(onclick="{showInfo}")
+				img(data-layzr="/Tongshuai/img/menu-2.png")
+			li.fadeInLeft.animated.delay-7
+				a(href="http://www.tongshuai.com/",target="_blank")
+					img(data-layzr="/Tongshuai/img/menu-3.png")
+
+	.menu-item(show="{menu1}")
+		form.form(method="post",onsubmit="{submit}")
+			.form-grounp
+				label(for="username")
+					img(data-layzr="/Tongshuai/img/form-username.png")
+				input#username(type="text",name="username")
+			.form-grounp
+				label(for="mobile")
+					img(data-layzr="/Tongshuai/img/form-mobile.png")
+				input#mobile(type="text",name="mobile")
+			.form-btn
+				button.submit(type="submit")
+					img(data-layzr="/Tongshuai/img/submit.png")
+	.menu-item(show="{menu2}",onclick="{hideInfo}")
+		img(data-layzr="/Tongshuai/img/info.png")
+
+	script.
+		var self = this
+		this.root.className += " menu-items"
+		this.menu1 = false
+		this.menu2 = false
+		showForm() {
+			this.menu1 = true
+		}
+		showInfo() {
+			this.menu2 = true
+		}
+		hideInfo() {
+			this.menu2 = false
+		}
+		submit() {
+			var list = $("form",this.root).serializeArray()
+			if ( $("[name=username]",this.root).val().length < 1 || $("[name=username]",this.root).val() == "") {
+				alert("姓名不能为空")
+				return false
+			}
+			var reg = /^1\d{10}$/
+			if (!reg.test($("[name=mobile]",this.root).val())) {
+				alert("手机号码格式不正确")
+				return false
+			}
+			$.post("http://api.giccoo.com/tongshuai/insert/",list,function(msg){
+				if (msg.recode == 200) {
+					alert("提交成功!")
+					self.menu1 = false
+					self.update()
+				}else if(msg.recode == 203){
+					alert(msg.reason)
+					self.menu1 = false
+					self.update()
+				}else{
+					alert(msg.reason)
+				}
+			})
+			return false
+		}

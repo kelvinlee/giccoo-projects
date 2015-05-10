@@ -1,0 +1,90 @@
+extends ../libs/jade/layout
+block title
+	| “小行走大改变”，正年轻你的，还在等什么？
+block css
+	link(rel="stylesheet",href="/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css")
+
+
+block content
+	- url = "/"
+	.wechat-share-hide
+		img#share(src="http://disk.giccoo.com/projects/Tongshuai/img/share.jpg")
+	#loading.loading.loaded
+		//- div.loading-logo
+		//- 	.loading-normal
+		//- 		img(src="#{url}libs/img/loading-normal.png")
+		.new-load
+			- for (var i=1;i<=4;i++)
+				.load-item(class="load-#{i}")
+					img(src="#{url}Tongshuai/img/loading-#{i}.png")
+				.load-progress
+					span.n 0
+					span.l LOADING⋯
+	.share-wechat(onclick="hideShareWechat()")
+
+	.wrap
+		.logo
+			img(src="#{url}Tongshuai/img/logo.png")
+		.page.share
+			#shares
+
+		parallax.pages
+			.page.homepage.first(up="homepage2")
+				.content
+					.cp
+						.kv.fadeInDown.animated.delay-5
+							img(data-layzr="#{url}Tongshuai/img/kv-1.png")
+						-for(var i=1;i<=4;i++)
+							.animated(class="cp-#{i} fadeInLeft delay-#{i*2+7}")
+								img(data-layzr="#{url}Tongshuai/img/cp-1-#{i}.png")
+				.next-point
+			.page.homepage2(down="homepage",up="build")
+				//- h2 page 2
+				.content
+					.cp
+						.kv.fadeInDown.animated.delay-5
+							img(data-layzr="#{url}Tongshuai/img/kv-1.png")
+						-for(var i=1;i<=3;i++)
+							.animated(class="cp-#{i} fadeInLeft delay-#{i*2+7}")
+								img(data-layzr="#{url}Tongshuai/img/cp-2-#{i}.png")
+				.next-point
+			.page.build
+				.content
+					shirt
+			.page.menus(up="notes")
+				.content
+					.cp
+						.kv.fadeInDown.animated.delay-5
+							img(data-layzr="#{url}Tongshuai/img/kv-1.png")
+						menus
+				.next-point
+			.page.notes(down="menus")
+				#notes
+
+			//- .page.food(down="register",up="bmwx1")
+			//- 	food
+			//- 	a.join(href="#/register").fadeInUp.animated.delay-5
+			//- 		img(data-layzr="/BMWX1/img/join.png")
+			//- 	.next-point
+			//- .page.bmwx1(down="food")
+			//- 	.content
+			//- 		.cp
+			//- 			.cp-1
+			//- 				img(data-layzr="/BMWX1/img/cp-5-1.png")
+			//- 		slider(list="/BMWX1/img/car-1.png,/BMWX1/img/car-2.png,/BMWX1/img/car-3.png,/BMWX1/img/car-4.png")
+			//- 		.lr
+			//- 			img(data-layzr="/BMWX1/img/lr.png")
+			//- 	a.join(href="#/register").fadeInUp.animated.delay-5
+			//- 		img(data-layzr="/BMWX1/img/join.png")
+
+	.qrcode#qrcode
+
+block js
+	//- script(src="/libs/js/min/localforage.min.js")
+	script(src="/libs/js/min/riot.js")
+	script(src="/libs/js/min/Zepto.min.js")
+	//- script(src="/libs/js/min/cityData-min.js")
+	script(src="/libs/js/min/layzr.min.js")
+	script(src="js/tag.js")
+	script(src="js/main.js")

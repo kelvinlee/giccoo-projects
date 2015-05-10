@@ -17,6 +17,10 @@ html,body
 	opacity: 0
 	background-color: #fff
 	z-index: -1
+	+large
+		max-width: 640px
+		left: 50%
+		+transform(translate3d(-50%,0,0))
 	+hide
 	.ng-hide
 		opacity: 0
@@ -81,3 +85,8 @@ html,body
 		+transform(rotate(0deg))
 	100%
 		+transform(rotate(360deg))
++keyframes(second2)
+	0%
+		+transform(rotate(0deg))
+	100%
+		+transform(rotate(-360deg))

@@ -686,6 +686,12 @@ html, body {
   background-color: #fff;
   z-index: -1;
   display: none; }
+  @media only screen and (min-width: 735px) and (min-device-width: 768px) {
+    .loading {
+      max-width: 640px;
+      left: 50%;
+      -webkit-transform: translate3d(-50%, 0, 0);
+              transform: translate3d(-50%, 0, 0); } }
   .loading .ng-hide {
     opacity: 0; }
   .loading.loaded {
@@ -784,6 +790,20 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+@-webkit-keyframes second2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg); } }
+@keyframes second2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg); } }
 @-webkit-keyframes drop {
   0% {
     -webkit-transform: translate3d(-50%, 0, 0);

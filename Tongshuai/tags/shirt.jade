@@ -1,0 +1,142 @@
+shirt
+	.t-shirt
+		.clear
+			img(data-layzr="/Tongshuai/img/t-shirt.png")
+		.icons
+			.icon1(if="{icon}",class="{icon}")
+				img(if="{icon}",src="/Tongshuai/img/{icon}.png")
+			.icon2(if="{text}",class="{text}")
+				img(if="{text}",src="/Tongshuai/img/{text}-dark.png")
+			.icon3(if="{stamp}",class="{stamp}")
+				img(if="{stamp}",src="/Tongshuai/img/{stamp}.png")
+			.kv
+				img(data-layzr="/Tongshuai/img/kv-2.png")
+			.btn.submit(if="{icon || text || stamp}",onclick="{finished}")
+				img(src="/Tongshuai/img/finished.png")
+			.btn.reset(if="{icon || text || stamp}",onclick="{clear}")
+				img(src="/Tongshuai/img/reset.png")
+	.ctrl-box(class="{ctrlbox}")
+		.box-content
+			slider.l#slider-icon(callback="{iconCheck}")
+				.slide(each="{parent.icons}")
+					.item(each="{a in icons}",onclick="{parent.parent.parent.selectIcon(a)}")
+						img(data-layzr="/Tongshuai/img/{a}.png")
+			slider.l#slider-text(callback="{textCheck}")
+				.slide(each="{parent.texts}")
+					.item(each="{t in icons}",onclick="{parent.parent.parent.selectText(t)}")
+						img(data-layzr="/Tongshuai/img/{t}.png")
+			slider
+				.slide(each="{parent.stamps}")
+					.item(each="{p in icons}",onclick="{parent.parent.parent.selectStamp(p)}")
+						img(data-layzr="/Tongshuai/img/{p}.png")
+
+	script.
+		var self = this
+		this.ctrlbox = "up"
+		this.icons = [
+			{icons:["icon-1","icon-2","icon-3"]},
+			{icons:["icon-4","icon-5","icon-6"]},
+			{icons:["icon-7"]}
+		]
+		this.texts = [
+			{icons:["text-1","text-2","text-3"]},
+			{icons:["text-4","text-5","text-6"]},
+			{icons:["text-7"]}
+		]
+		this.stamps = [
+			{icons:["stamp-1","stamp-2","stamp-3"]}
+		]
+		this.icon = null
+		this.text = null
+		this.stamp = null
+		clear() {
+			this.icon = null
+			this.text = null
+			this.stamp = null
+			this.update()
+		}
+		selectIcon(icon) {
+			//- alert("aa")
+			return function() {
+				self.icon = icon
+				self.update()
+			}
+		}
+		selectText(text) {
+			//- alert("aa")
+			return function() {
+				self.text = text
+				self.update()
+			}
+		}
+		selectStamp(stamp) {
+			return function() {
+				self.stamp = stamp
+				self.update()
+			}
+		}
+		iconCheck(i) {
+			//- console.log("a",i)
+			var Max = this.icons.length - 1
+			var ep = $("#slider-icon",this.root)
+			ep.removeClass("l r")
+			if (Math.abs(i) == 0) {
+				return ep.addClass("l")
+			}
+			if (Math.abs(i) == Max) {
+				return ep.addClass("r")
+			}
+			ep.addClass("l r")
+		}
+		textCheck(i) {
+			var Max = this.icons.length - 1
+			var ep = $("#slider-text",this.root)
+			ep.removeClass("l r")
+			if (Math.abs(i) == 0) {
+				return ep.addClass("l")
+			}
+			if (Math.abs(i) == Max) {
+				return ep.addClass("r")
+			}
+			ep.addClass("l r")
+		}
+		this.offset = {}
+		this.touchstart = function(evt) {
+			var touch = evt.touches[0]
+			this.offset.y = touch.pageY
+			this.offset.move = true
+			//- console.log(this.offset)
+		}
+		this.touchmove = function(evt) {
+			var touch = evt.touches[0]
+			this.offset.deltaY = touch.pageY - this.offset.y
+			//- console.log(this.offset)
+			if (!this.offset.move) {return ''}
+			if (this.offset.deltaY > 10 || this.offset.deltaY < -10) {
+				evt.preventDefault()
+			}
+			if (this.offset.deltaY > 30) {
+				this.ctrlbox = "up"
+				this.offset.move = false
+				this.update()
+			}
+			if (this.offset.deltaY < -30) {
+				this.ctrlbox = "down"
+				this.offset.move = false
+				this.update()
+			}
+		}
+		this.touchend = function(evt) {
+		
+		}
+		this.on("mount",function(){
+			var ep = $(".ctrl-box",this.root)[0]
+			ep.addEventListener("touchstart", this.touchstart.bind(this))
+			ep.addEventListener("touchmove", this.touchmove.bind(this))
+			ep.addEventListener("touchend", this.touchend.bind(this))
+		})
+
+		finished() {
+			wonShare = this.icon+","+this.text+","+this.stamp
+			riot.route("/menus/"+wonShare)
+		}
