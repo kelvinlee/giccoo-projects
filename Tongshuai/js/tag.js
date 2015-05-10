@@ -1,5 +1,5 @@
 
-riot.tag('menus', '<div show="{!menu1 &amp;&amp; !menu2}" class="menu-list"> <ul> <li onclick="{showForm}" class="fadeInLeft animated delay-5"><img data-layzr="/Tongshuai/img/menu-1.png"></li> <li onclick="{showInfo}" class="fadeInLeft animated delay-6"><img data-layzr="/Tongshuai/img/menu-2.png"></li> <li class="fadeInLeft animated delay-7"><a href="http://www.tongshuai.com/" target="_blank"><img data-layzr="/Tongshuai/img/menu-3.png"></a></li> </ul> </div> <div show="{menu1}" class="menu-item"> <form action="http://api.giccoo.com/tongshuai/insert/" method="post" onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username"><img data-layzr="/Tongshuai/img/form-username.png"></label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="mobile"><img data-layzr="/Tongshuai/img/form-mobile.png"></label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-btn"> <button type="submit" class="submit"><img data-layzr="/Tongshuai/img/submit.png"></button> </div> <div class="back-icon"><img data-layzr="/Tongshuai/img/back.png"></div> </form> </div> <div show="{menu2}" onclick="{hideInfo}" class="menu-item"><img data-layzr="/Tongshuai/img/info.png"> <div class="back-icon"><img data-layzr="/Tongshuai/img/back.png"></div> </div>', function(opts) {
+riot.tag('menus', '<div show="{!menu1 &amp;&amp; !menu2}" class="menu-list"> <ul> <li onclick="{showForm}" class="fadeInLeft animated delay-5"><img data-layzr="/Tongshuai/img/menu-1.png"></li> <li onclick="{showInfo}" class="fadeInLeft animated delay-6"><img data-layzr="/Tongshuai/img/menu-2.png"></li> <li class="fadeInLeft animated delay-7"><a href="http://www.tongshuai.com/" target="_blank"><img data-layzr="/Tongshuai/img/menu-3.png"></a></li> </ul> </div> <div show="{menu1}" class="menu-item"> <form action="http://api.giccoo.com/tongshuai/insert/" method="post" onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username"><img data-layzr="/Tongshuai/img/form-username.png"></label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="mobile"><img data-layzr="/Tongshuai/img/form-mobile.png"></label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-btn"> <button type="submit" class="submit"><img data-layzr="/Tongshuai/img/submit.png"></button> </div> <div onclick="{hideForm}" class="back-icon"><img data-layzr="/Tongshuai/img/close.png"></div> </form> </div> <div show="{menu2}" onclick="{hideInfo}" class="menu-item"><img data-layzr="/Tongshuai/img/info.png"> <div class="back-icon"><img data-layzr="/Tongshuai/img/close.png"></div> </div>', function(opts) {
     var self = this
     this.root.className += " menu-items"
     this.menu1 = false
@@ -9,6 +9,9 @@ riot.tag('menus', '<div show="{!menu1 &amp;&amp; !menu2}" class="menu-list"> <ul
     }.bind(this);
     this.showInfo = function() {
     	this.menu2 = true
+    }.bind(this);
+    this.hideForm = function() {
+    	this.menu1 = false
     }.bind(this);
     this.hideInfo = function() {
     	this.menu2 = false

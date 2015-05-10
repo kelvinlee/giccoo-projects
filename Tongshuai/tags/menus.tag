@@ -20,11 +20,11 @@
       <div class="form-btn">
         <button type="submit" class="submit"><img data-layzr="/Tongshuai/img/submit.png"/></button>
       </div>
-      <div class="back-icon"><img data-layzr="/Tongshuai/img/back.png"/></div>
+      <div onclick="{hideForm}" class="back-icon"><img data-layzr="/Tongshuai/img/close.png"/></div>
     </form>
   </div>
   <div show="{menu2}" onclick="{hideInfo}" class="menu-item"><img data-layzr="/Tongshuai/img/info.png"/>
-    <div class="back-icon"><img data-layzr="/Tongshuai/img/back.png"/></div>
+    <div class="back-icon"><img data-layzr="/Tongshuai/img/close.png"/></div>
   </div>
   <script>
     var self = this
@@ -36,6 +36,9 @@
     }
     showInfo() {
     	this.menu2 = true
+    }
+    hideForm() {
+    	this.menu1 = false
     }
     hideInfo() {
     	this.menu2 = false

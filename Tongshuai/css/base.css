@@ -1217,14 +1217,12 @@ html, body {
       background-color: transparent; }
     .menus .menu-items .back-icon {
       position: absolute;
-      bottom: 0%;
-      left: 50%;
-      -webkit-transform: translate3d(-50%, 110%, 0);
-              transform: translate3d(-50%, 110%, 0);
-      width: 36.875%;
+      top: -15%;
+      right: 10%;
+      width: 9.84375%;
       margin: 0 auto; }
       .iphone4 .menus .menu-items .back-icon {
-        width: 36.875%; }
+        width: 9.84375%; }
 
 .notes, .page.share {
   background: url("../img/bg-3.jpg") no-repeat top center;

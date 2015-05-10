@@ -22,12 +22,12 @@ menus
 			.form-btn
 				button.submit(type="submit")
 					img(data-layzr="/Tongshuai/img/submit.png")
-			.back-icon
-				img(data-layzr="/Tongshuai/img/back.png")
+			.back-icon(onclick="{hideForm}")
+				img(data-layzr="/Tongshuai/img/close.png")
 	.menu-item(show="{menu2}",onclick="{hideInfo}")
 		img(data-layzr="/Tongshuai/img/info.png")
 		.back-icon
-			img(data-layzr="/Tongshuai/img/back.png")
+			img(data-layzr="/Tongshuai/img/close.png")
 
 	script.
 		var self = this
@@ -39,6 +39,9 @@ menus
 		}
 		showInfo() {
 			this.menu2 = true
+		}
+		hideForm() {
+			this.menu1 = false
 		}
 		hideInfo() {
 			this.menu2 = false
