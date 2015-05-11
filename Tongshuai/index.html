@@ -77,6 +77,25 @@
     <script src="/libs/js/min/layzr.min.js"></script>
     <script src="js/tag.js"></script>
     <script src="js/main.js"></script>
+    <script src="//cdnst.immomo.com/momofes/js/mobile/momo_bridge.2.0.min.js"></script>
+    <script>
+      // 可用来检查是否在陌陌中
+      var is_momo_webview = /momoWebView/.test(window.navigator.userAgent);
+      // 分享设置: 图片， 链接， 文字
+      // 默认分享地址不包括留言板
+      // pic: 图片地址, url: 分享链接，text: 分享文字
+      var shareConfig = {
+      pic: 'http://disk.giccoo.com/projects/Tongshuai/img/share.jpg',
+      url: 'http://m.giccoo.com/Tongshuai/',
+      text: '“小行走大改变”，正年轻你的，还在等什么？'
+      };
+      // 配置界面按钮
+      mm.invoke('init', {
+      	enable:{share:1},
+      	share: shareConfig,
+      	ui_btn: {title:'', dropdown:0, buttons: [ {text:'分享', action:1, param:shareConfig}]}
+      })
+    </script>
     <script>
       var _hmt = _hmt || [];
       (function() {
