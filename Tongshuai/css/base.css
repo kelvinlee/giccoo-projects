@@ -1145,14 +1145,14 @@ html, body {
     .t-shirt .icon3 img {
       width: 30%; }
     .t-shirt .icon3.stamp-1 {
-      -webkit-transform: translate3d(-7%, -5%, 0) rotate(20deg);
-              transform: translate3d(-7%, -5%, 0) rotate(20deg); }
+      -webkit-transform: translate3d(21%, -95%, 0) rotate(20deg) scale(0.6);
+              transform: translate3d(21%, -95%, 0) rotate(20deg) scale(0.6); }
     .t-shirt .icon3.stamp-2 {
-      -webkit-transform: translate3d(7%, -25%, 0) rotate(-20deg);
-              transform: translate3d(7%, -25%, 0) rotate(-20deg); }
+      -webkit-transform: translate3d(21%, -95%, 0) rotate(20deg) scale(0.6);
+              transform: translate3d(21%, -95%, 0) rotate(20deg) scale(0.6); }
     .t-shirt .icon3.stamp-3 {
-      -webkit-transform: translate3d(12%, 0%, 0) scale(0.7, 0.7);
-              transform: translate3d(12%, 0%, 0) scale(0.7, 0.7); }
+      -webkit-transform: translate3d(19%, -90%, 0) rotate(0deg) scale(0.6);
+              transform: translate3d(19%, -90%, 0) rotate(0deg) scale(0.6); }
   .t-shirt .kv {
     position: absolute;
     bottom: 0px;
