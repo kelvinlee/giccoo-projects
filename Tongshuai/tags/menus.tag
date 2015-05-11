@@ -2,29 +2,29 @@
 <menus>
   <div show="{!menu1 &amp;&amp; !menu2}" class="menu-list">
     <ul>
-      <li onclick="{showForm}" class="fadeInLeft animated delay-5"><img data-layzr="/Tongshuai/img/menu-1.png"/></li>
-      <li onclick="{showInfo}" class="fadeInLeft animated delay-6"><img data-layzr="/Tongshuai/img/menu-2.png"/></li>
-      <li class="fadeInLeft animated delay-7"><a href="http://www.tongshuai.com/" target="_blank"><img data-layzr="/Tongshuai/img/menu-3.png"/></a></li>
+      <li onclick="{showForm}" class="fadeInLeft animated delay-5"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/menu-1.png"/></li>
+      <li onclick="{showInfo}" class="fadeInLeft animated delay-6"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/menu-2.png"/></li>
+      <li class="fadeInLeft animated delay-7"><a href="http://www.tongshuai.com/" target="_blank"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/menu-3.png"/></a></li>
     </ul>
   </div>
   <div show="{menu1}" class="menu-item">
     <form action="http://api.giccoo.com/tongshuai/insert/" method="post" onsubmit="{submit}" class="form">
       <div class="form-grounp">
-        <label for="username"><img data-layzr="/Tongshuai/img/form-username.png"/></label>
+        <label for="username"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/form-username.png"/></label>
         <input id="username" type="text" name="username"/>
       </div>
       <div class="form-grounp">
-        <label for="mobile"><img data-layzr="/Tongshuai/img/form-mobile.png"/></label>
+        <label for="mobile"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/form-mobile.png"/></label>
         <input id="mobile" type="text" name="mobile"/>
       </div>
       <div class="form-btn">
-        <button type="submit" class="submit"><img data-layzr="/Tongshuai/img/submit.png"/></button>
+        <button type="submit" class="submit"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/submit.png"/></button>
       </div>
-      <div onclick="{hideForm}" class="back-icon"><img data-layzr="/Tongshuai/img/close.png"/></div>
+      <div onclick="{hideForm}" class="back-icon"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/close.png"/></div>
     </form>
   </div>
-  <div show="{menu2}" onclick="{hideInfo}" class="menu-item"><img data-layzr="/Tongshuai/img/info.png"/>
-    <div class="back-icon"><img data-layzr="/Tongshuai/img/close.png"/></div>
+  <div show="{menu2}" onclick="{hideInfo}" class="menu-item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/info.png"/>
+    <div class="back-icon"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/close.png"/></div>
   </div>
   <script>
     var self = this

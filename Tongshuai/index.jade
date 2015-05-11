@@ -1,4 +1,4 @@
-extends ../libs/jade/layout
+extends ../libs/jade/layout-clean
 block title
 	| “小行走大改变”，正年轻你的，还在等什么？
 block css
@@ -7,7 +7,7 @@ block css
 
 
 block content
-	- url = "/"
+	//- - url = "/"
 	.wechat-share-hide
 		img#share(src="http://disk.giccoo.com/projects/Tongshuai/img/share.jpg")
 	#loading.loading.loaded
@@ -94,4 +94,12 @@ block js
 			share: shareConfig,
 			ui_btn: {title:'', dropdown:0, buttons: [ {text:'分享', action:1, param:shareConfig}]}
 		})
+	script.
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?de4f0f521ea22364e46b0c346fe056db";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
 

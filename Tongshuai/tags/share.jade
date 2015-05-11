@@ -1,26 +1,27 @@
 share
+	- var url = "http://disk.giccoo.com/projects"
 	.note-title.fadeInLeft.animated.delay-5
-		img(src="/Tongshuai/img/{opts.name}-title.png")
+		img(src="#{url}/Tongshuai/img/{opts.name}-title.png")
 	//- .share-title.fadeInLeft.animated.delay-5(if="{opts.name=='share'}")
-		img(src="/Tongshuai/img/share-title.png")
+		img(src="#{url}/Tongshuai/img/share-title.png")
 	.t-shirt.fadeInLeft.animated.delay-8
 		.clear
-			img(src="/Tongshuai/img/t-shirt.png")
+			img(src="#{url}/Tongshuai/img/t-shirt.png")
 		.icons(if="{icon || text || stamp}")
 			.icon1(if="{icon}",class="{icon}")
-				img(src="/Tongshuai/img/{icon}.png")
+				img(src="#{url}/Tongshuai/img/{icon}.png")
 			.icon2(if="{text}",class="{text}")
-				img(src="/Tongshuai/img/{text}-dark.png")
+				img(src="#{url}/Tongshuai/img/{text}-dark.png")
 			.icon3(if="{stamp}",class="{stamp}")
-				img(src="/Tongshuai/img/{stamp}.png")
+				img(src="#{url}/Tongshuai/img/{stamp}.png")
 			.kv
-				img(src="/Tongshuai/img/kv-2.png")
+				img(src="#{url}/Tongshuai/img/kv-2.png")
 	.share-icons.fadeInLeft.animated.delay-10(if="{opts.name=='notes'}")
 		.share
 		shareicon(site="Tongshuai",title="“小行走大改变”，正年轻你的，还在等什么？",url="local",pic="http://disk.giccoo.com/projects/Tongshuai/img/share-pc.jpg",icons="douban,weibo,qzone,wechat")
 			span.share-icon 分享到
 	a.join.fadeInLeft.animated.delay-10(if="{opts.name=='share'}",href="#/")
-		img(src="/Tongshuai/img/join.png")
+		img(src="#{url}/Tongshuai/img/join.png")
 
 	script.
 		var self = this

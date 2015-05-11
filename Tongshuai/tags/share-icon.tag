@@ -1,5 +1,5 @@
 
-<shareicon><yield></yield><a href="{parent.getUrl(icon)}" each="{icon in icons}" class="share-icon icon-{icon}"><img src="/{parent.site}/img/icon-{icon}.png"/></a>
+<shareicon><yield></yield><a href="{parent.getUrl(icon)}" each="{icon in icons}" class="share-icon icon-{icon}"><img src="http://disk.giccoo.com/projects/{parent.site}/img/icon-{icon}.png"/></a>
   <script>
     var self = this
     var list = {

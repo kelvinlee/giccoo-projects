@@ -1,7 +1,7 @@
 @import sass/base
 @import ../../libs/sass/loading
 
-$debug : true
+$debug : false
 $cdn : "../"
 @if not $debug
 	$cdn : "http://disk.giccoo.com/projects/Tongshuai/"
@@ -38,7 +38,7 @@ $cdn : "../"
 	+h
 	+b("http://disk.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
 	+bc
-	z-index: 1000
+	z-index: 1100
 	+hide
 	&.open
 		+show

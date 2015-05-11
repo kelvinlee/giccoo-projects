@@ -1,7 +1,8 @@
 shirt
+	- var url = "http://disk.giccoo.com/projects"
 	.t-shirt
 		.clear
-			img(data-layzr="/Tongshuai/img/t-shirt.png")
+			img(data-layzr="#{url}/Tongshuai/img/t-shirt.png")
 		.icons
 			.icon1(if="{icon}",class="{icon}")
 				img(if="{icon}",src="/Tongshuai/img/{icon}.png")
@@ -10,29 +11,29 @@ shirt
 			.icon3(if="{stamp}",class="{stamp}")
 				img(if="{stamp}",src="/Tongshuai/img/{stamp}.png")
 			.kv
-				img(data-layzr="/Tongshuai/img/kv-2.png")
+				img(data-layzr="#{url}/Tongshuai/img/kv-2.png")
 
 			.btn.submit(if="{icon || text || stamp}",onclick="{finished}")
-				img(src="/Tongshuai/img/finished.png")
+				img(src="#{url}/Tongshuai/img/finished.png")
 			.btn.reset(if="{icon || text || stamp}",onclick="{clear}")
-				img(src="/Tongshuai/img/reset.png")
+				img(src="#{url}/Tongshuai/img/reset.png")
 			a.btn.back(href="#/homepage2/")
-				img(data-layzr="/Tongshuai/img/back.png")
+				img(data-layzr="#{url}/Tongshuai/img/back.png")
 	.ctrl-box(class="{ctrlbox}")
 		.box-content
 			slider.l#slider-icon(callback="{iconCheck}")
 				.slide(each="{parent.icons}")
 					.item(each="{a in icons}",onclick="{parent.parent.parent.selectIcon(a)}")
-						img(data-layzr="/Tongshuai/img/{a}.png")
+						img(data-layzr="#{url}/Tongshuai/img/{a}.png")
 			slider.l#slider-text(callback="{textCheck}")
 				.slide(each="{parent.texts}")
 					.item(each="{t in icons}",onclick="{parent.parent.parent.selectText(t)}")
-						img(data-layzr="/Tongshuai/img/{t}.png")
+						img(data-layzr="#{url}/Tongshuai/img/{t}.png")
 			.slider-box
 				.slider
 					.slide(each="{stamps}")
 						.item(each="{p in icons}",onclick="{parent.parent.selectStamp(p)}")
-							img(data-layzr="/Tongshuai/img/{p}.png")
+							img(data-layzr="#{url}/Tongshuai/img/{p}.png")
 
 	script.
 		var self = this

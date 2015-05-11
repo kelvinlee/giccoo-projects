@@ -801,7 +801,7 @@ html, body {
   background-size: contain;
   background-color: transparent;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
+  z-index: 1100;
   display: none; }
   .share-wechat.open {
     display: block; }
@@ -851,7 +851,7 @@ html, body {
       color: #fff; }
 
 .loading {
-  background: url("../img/bg-1.jpg") no-repeat center center;
+  background: url("http://disk.giccoo.com/projects/Tongshuai/img/bg-1.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
   .loading .new-load {
@@ -936,7 +936,7 @@ html, body {
     .pages .page .next-point {
       width: 30px;
       height: 30px;
-      background: url("../img/down-arrow.png") no-repeat center center;
+      background: url("http://disk.giccoo.com/projects/Tongshuai/img/down-arrow.png") no-repeat center center;
       background-size: 10px 10px;
       background-color: transparent;
       position: absolute;
@@ -987,7 +987,7 @@ html, body {
               transform: translate3d(0, -100%, 0); }
 
 .homepage {
-  background: url("../img/bg-1.jpg") no-repeat top center;
+  background: url("http://disk.giccoo.com/projects/Tongshuai/img/bg-1.jpg") no-repeat top center;
   background-size: cover;
   background-color: transparent; }
   .homepage .cp {
@@ -996,7 +996,7 @@ html, body {
     left: 0px; }
 
 .homepage2 {
-  background: url("../img/bg-2.jpg") no-repeat top center;
+  background: url("http://disk.giccoo.com/projects/Tongshuai/img/bg-2.jpg") no-repeat top center;
   background-size: cover;
   background-color: transparent; }
   .homepage2 .cp {
@@ -1007,7 +1007,7 @@ html, body {
       margin-bottom: 20%; }
 
 .build {
-  background: url("../img/bg-3.jpg") no-repeat top center;
+  background: url("http://disk.giccoo.com/projects/Tongshuai/img/bg-3.jpg") no-repeat top center;
   background-size: cover;
   background-color: transparent; }
   .build .content {
@@ -1033,7 +1033,7 @@ html, body {
         left: 50%;
         width: 1rem;
         height: 1rem;
-        background: url("../img/arrow.png") no-repeat center center;
+        background: url("http://disk.giccoo.com/projects/Tongshuai/img/arrow.png") no-repeat center center;
         background-size: contain;
         background-color: transparent;
         -webkit-transform: rotate(-90deg);
@@ -1050,7 +1050,7 @@ html, body {
         left: 50%;
         width: 1rem;
         height: 1rem;
-        background: url("../img/arrow.png") no-repeat center center;
+        background: url("http://disk.giccoo.com/projects/Tongshuai/img/arrow.png") no-repeat center center;
         background-size: contain;
         background-color: transparent;
         -webkit-transform: rotate(90deg);
@@ -1088,7 +1088,7 @@ html, body {
         position: absolute;
         width: 1rem;
         height: 1rem;
-        background: url("../img/arrow.png") no-repeat center center;
+        background: url("http://disk.giccoo.com/projects/Tongshuai/img/arrow.png") no-repeat center center;
         background-size: contain;
         background-color: transparent;
         -webkit-transform: rotate(180deg);
@@ -1187,7 +1187,7 @@ html, body {
       width: 36.875%; }
 
 .menus {
-  background: url("../img/bg-1.jpg") no-repeat center center;
+  background: url("http://disk.giccoo.com/projects/Tongshuai/img/bg-1.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
   .menus .content {
@@ -1244,7 +1244,7 @@ html, body {
         width: 9.84375%; }
 
 .notes, .page.share, .page.finishedPage {
-  background: url("../img/bg-3.jpg") no-repeat top center;
+  background: url("http://disk.giccoo.com/projects/Tongshuai/img/bg-3.jpg") no-repeat top center;
   background-size: cover;
   background-color: transparent; }
   .notes .t-shirt, .notes .note-title, .notes .share-title, .page.share .t-shirt, .page.share .note-title, .page.share .share-title, .page.finishedPage .t-shirt, .page.finishedPage .note-title, .page.finishedPage .share-title {

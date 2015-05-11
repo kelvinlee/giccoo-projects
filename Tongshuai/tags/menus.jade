@@ -1,33 +1,34 @@
 menus
+	- var url = "http://disk.giccoo.com/projects"
 	.menu-list(show="{!menu1 && !menu2}")
 		ul
 			li.fadeInLeft.animated.delay-5(onclick="{showForm}")
-				img(data-layzr="/Tongshuai/img/menu-1.png")
+				img(data-layzr="#{url}/Tongshuai/img/menu-1.png")
 			li.fadeInLeft.animated.delay-6(onclick="{showInfo}")
-				img(data-layzr="/Tongshuai/img/menu-2.png")
+				img(data-layzr="#{url}/Tongshuai/img/menu-2.png")
 			li.fadeInLeft.animated.delay-7
 				a(href="http://www.tongshuai.com/",target="_blank")
-					img(data-layzr="/Tongshuai/img/menu-3.png")
+					img(data-layzr="#{url}/Tongshuai/img/menu-3.png")
 
 	.menu-item(show="{menu1}")
 		form.form(action="http://api.giccoo.com/tongshuai/insert/",method="post",onsubmit="{submit}")
 			.form-grounp
 				label(for="username")
-					img(data-layzr="/Tongshuai/img/form-username.png")
+					img(data-layzr="#{url}/Tongshuai/img/form-username.png")
 				input#username(type="text",name="username")
 			.form-grounp
 				label(for="mobile")
-					img(data-layzr="/Tongshuai/img/form-mobile.png")
+					img(data-layzr="#{url}/Tongshuai/img/form-mobile.png")
 				input#mobile(type="text",name="mobile")
 			.form-btn
 				button.submit(type="submit")
-					img(data-layzr="/Tongshuai/img/submit.png")
+					img(data-layzr="#{url}/Tongshuai/img/submit.png")
 			.back-icon(onclick="{hideForm}")
-				img(data-layzr="/Tongshuai/img/close.png")
+				img(data-layzr="#{url}/Tongshuai/img/close.png")
 	.menu-item(show="{menu2}",onclick="{hideInfo}")
-		img(data-layzr="/Tongshuai/img/info.png")
+		img(data-layzr="#{url}/Tongshuai/img/info.png")
 		.back-icon
-			img(data-layzr="/Tongshuai/img/close.png")
+			img(data-layzr="#{url}/Tongshuai/img/close.png")
 
 	script.
 		var self = this

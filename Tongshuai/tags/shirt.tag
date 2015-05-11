@@ -1,32 +1,32 @@
 
 <shirt>
   <div class="t-shirt">
-    <div class="clear"><img data-layzr="/Tongshuai/img/t-shirt.png"/></div>
+    <div class="clear"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/t-shirt.png"/></div>
     <div class="icons">
       <div if="{icon}" class="icon1 {icon}"><img if="{icon}" src="/Tongshuai/img/{icon}.png"/></div>
       <div if="{text}" class="icon2 {text}"><img if="{text}" src="/Tongshuai/img/{text}-dark.png"/></div>
       <div if="{stamp}" class="icon3 {stamp}"><img if="{stamp}" src="/Tongshuai/img/{stamp}.png"/></div>
-      <div class="kv"><img data-layzr="/Tongshuai/img/kv-2.png"/></div>
-      <div if="{icon || text || stamp}" onclick="{finished}" class="btn submit"><img src="/Tongshuai/img/finished.png"/></div>
-      <div if="{icon || text || stamp}" onclick="{clear}" class="btn reset"><img src="/Tongshuai/img/reset.png"/></div><a href="#/homepage2/" class="btn back"><img data-layzr="/Tongshuai/img/back.png"/></a>
+      <div class="kv"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/kv-2.png"/></div>
+      <div if="{icon || text || stamp}" onclick="{finished}" class="btn submit"><img src="http://disk.giccoo.com/projects/Tongshuai/img/finished.png"/></div>
+      <div if="{icon || text || stamp}" onclick="{clear}" class="btn reset"><img src="http://disk.giccoo.com/projects/Tongshuai/img/reset.png"/></div><a href="#/homepage2/" class="btn back"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/back.png"/></a>
     </div>
   </div>
   <div class="ctrl-box {ctrlbox}">
     <div class="box-content">
       <slider id="slider-icon" callback="{iconCheck}" class="l">
         <div each="{parent.icons}" class="slide">
-          <div each="{a in icons}" onclick="{parent.parent.parent.selectIcon(a)}" class="item"><img data-layzr="/Tongshuai/img/{a}.png"/></div>
+          <div each="{a in icons}" onclick="{parent.parent.parent.selectIcon(a)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{a}.png"/></div>
         </div>
       </slider>
       <slider id="slider-text" callback="{textCheck}" class="l">
         <div each="{parent.texts}" class="slide">
-          <div each="{t in icons}" onclick="{parent.parent.parent.selectText(t)}" class="item"><img data-layzr="/Tongshuai/img/{t}.png"/></div>
+          <div each="{t in icons}" onclick="{parent.parent.parent.selectText(t)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{t}.png"/></div>
         </div>
       </slider>
       <div class="slider-box">
         <div class="slider">
           <div each="{stamps}" class="slide">
-            <div each="{p in icons}" onclick="{parent.parent.selectStamp(p)}" class="item"><img data-layzr="/Tongshuai/img/{p}.png"/></div>
+            <div each="{p in icons}" onclick="{parent.parent.selectStamp(p)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{p}.png"/></div>
           </div>
         </div>
       </div>

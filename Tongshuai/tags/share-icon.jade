@@ -1,9 +1,10 @@
 shareicon
+	- var url = "http://disk.giccoo.com/projects"
 	<yield></yield>
 	//- a(href="javascript:void(0)")
 		img(src="/Tongshuai/img/icon-wechat.png")
 	a.share-icon(class="icon-{icon}",href="{parent.getUrl(icon)}",each="{icon in icons}")
-		img(src="/{parent.site}/img/icon-{icon}.png")
+		img(src="#{url}/{parent.site}/img/icon-{icon}.png")
 	script.
 		var self = this
 		var list = {
