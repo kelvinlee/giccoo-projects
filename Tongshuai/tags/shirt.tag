@@ -140,7 +140,7 @@
     
     finished() {
     	wonShare = this.icon+","+this.text+","+this.stamp
-    	riot.route("/menus/"+wonShare)
+    	riot.route("/finishedPage/"+wonShare)
     }
   </script>
 </shirt>

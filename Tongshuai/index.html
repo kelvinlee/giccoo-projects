@@ -25,6 +25,7 @@
     <div onclick="hideShareWechat()" class="share-wechat"></div>
     <div class="wrap">
       <div class="logo"><img src="/Tongshuai/img/logo.png"></div>
+      <playsound src="/Tongshuai/mp3/bg.mp3" icon="true" icon-play="/Tongshuai/img/audio-play.png" icon-stop="/Tongshuai/img/audio-stop.png"></playsound>
       <div class="page share">
         <div id="shares"></div>
       </div>
@@ -57,7 +58,11 @@
             <shirt></shirt>
           </div>
         </div>
-        <div up="notes" down="build" class="page menus">
+        <div up="menus" down="build" class="page finishedPage">
+          <div id="finishedPage"></div>
+          <div class="next-point"></div>
+        </div>
+        <div up="notes" down="finishedPage" class="page menus">
           <div class="content">
             <div class="cp">
               <div class="kv fadeInDown animated delay-5"><img data-layzr="/Tongshuai/img/kv-1.png"></div>

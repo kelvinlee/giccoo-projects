@@ -160,6 +160,38 @@ riot.tag('parallax', '<yield></yield>', function(opts) {
   
 });
 
+riot.tag('playsound', '<div if="{icon}" onclick="{change}" class="icon-play {type}"><img riot-src="{iconNow}"></div> <audio id="playgrounp" riot-src="{src}" autoplay="true" loop="loop"></audio>', function(opts) {
+    var self = this
+    this.src = opts.src
+    this.icon = opts.icon
+    this.iconPlay = opts["icon-play"]
+    this.iconStop = opts["icon-stop"]
+    this.type = null
+    this.root.className += "playsound"
+    this.change = function() {
+    	var audio = document.getElementById("playgrounp")
+    	if (this.iconNow == this.iconPlay) {
+    		audio.pause()
+    	}else{
+    		audio.play()
+    	}
+    }.bind(this);
+    this.on("mount",function(){
+    	var audio = document.getElementById("playgrounp")
+    	audio.addEventListener("pause",function(){
+    		self.iconNow = self.iconStop
+    		self.type = "pause"
+    		self.update()
+    	})
+    	audio.addEventListener("play",function(){
+    		self.iconNow = self.iconPlay
+    		self.type = "play"
+    		self.update()
+    	})
+    })
+  
+});
+
 riot.tag('shareicon', '<yield></yield><a href="{parent.getUrl(icon)}" each="{icon in icons}" class="share-icon icon-{icon}"><img riot-src="/{parent.site}/img/icon-{icon}.png"></a>', function(opts) {
     var self = this
     var list = {
@@ -190,7 +222,7 @@ riot.tag('shareicon', '<yield></yield><a href="{parent.getUrl(icon)}" each="{ico
   
 });
 
-riot.tag('share', '<div if="{opts.name==\'notes\'}" class="note-title fadeInLeft animated delay-5"><img src="/Tongshuai/img/note-title.png"></div> <div if="{opts.name!=\'notes\'}" class="share-title fadeInLeft animated delay-5"><img src="/Tongshuai/img/share-title.png"></div> <div class="t-shirt fadeInLeft animated delay-8"> <div class="clear"><img src="/Tongshuai/img/t-shirt.png"></div> <div if="{icon || text || stamp}" class="icons"> <div if="{icon}" class="icon1 {icon}"><img riot-src="/Tongshuai/img/{icon}.png"></div> <div if="{text}" class="icon2 {text}"><img riot-src="/Tongshuai/img/{text}-dark.png"></div> <div if="{stamp}" class="icon3 {stamp}"><img riot-src="/Tongshuai/img/{stamp}.png"></div> <div class="kv"><img src="/Tongshuai/img/kv-2.png"></div> </div> </div> <div if="{opts.name==\'notes\'}" class="share-icons fadeInLeft animated delay-10"> <div class="share"></div> <shareicon site="Tongshuai" title="“小行走大改变”，正年轻你的，还在等什么？" url="local" pic="http://disk.giccoo.com/projects/Tongshuai/img/share-pc.jpg" icons="douban,weibo,qzone,wechat"><span class="share-icon">分享到</span></shareicon> </div><a if="{opts.name!=\'notes\'}" href="#/" class="join fadeInLeft animated delay-10"><img src="/Tongshuai/img/join.png"></a>', function(opts) {
+riot.tag('share', '<div class="note-title fadeInLeft animated delay-5"><img riot-src="/Tongshuai/img/{opts.name}-title.png"></div> <div class="t-shirt fadeInLeft animated delay-8"> <div class="clear"><img src="/Tongshuai/img/t-shirt.png"></div> <div if="{icon || text || stamp}" class="icons"> <div if="{icon}" class="icon1 {icon}"><img riot-src="/Tongshuai/img/{icon}.png"></div> <div if="{text}" class="icon2 {text}"><img riot-src="/Tongshuai/img/{text}-dark.png"></div> <div if="{stamp}" class="icon3 {stamp}"><img riot-src="/Tongshuai/img/{stamp}.png"></div> <div class="kv"><img src="/Tongshuai/img/kv-2.png"></div> </div> </div> <div if="{opts.name==\'notes\'}" class="share-icons fadeInLeft animated delay-10"> <div class="share"></div> <shareicon site="Tongshuai" title="“小行走大改变”，正年轻你的，还在等什么？" url="local" pic="http://disk.giccoo.com/projects/Tongshuai/img/share-pc.jpg" icons="douban,weibo,qzone,wechat"><span class="share-icon">分享到</span></shareicon> </div><a if="{opts.name==\'share\'}" href="#/" class="join fadeInLeft animated delay-10"><img src="/Tongshuai/img/join.png"></a>', function(opts) {
     var self = this
     Store[opts.name] = this
     var list = opts.action.split(",")
@@ -308,7 +340,7 @@ riot.tag('shirt', '<div class="t-shirt"> <div class="clear"><img data-layzr="/To
     
     this.finished = function() {
     	wonShare = this.icon+","+this.text+","+this.stamp
-    	riot.route("/menus/"+wonShare)
+    	riot.route("/finishedPage/"+wonShare)
     }.bind(this);
   
 });

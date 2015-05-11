@@ -17,7 +17,7 @@ controllers =
 				riot.route("/share/"+action)
 			else
 				riot.route("/")
-		if not action? and (collection is "notes" or collection is "menus")
+		if not action? and (collection is "notes" or collection is "menus" or collection is "finishedPage")
 			return riot.route("/"+collection+"/"+wonShare)
 		Store.parallax and Store.parallax.animate(collection)
 		next()
@@ -25,9 +25,12 @@ controllers =
 		$(".page.share").addClass("show")
 		# riot.mount("div#shares","share",{action:action})
 		setTimeout ->
-			riot.mount("div#shares","share",{action:action})
+			riot.mount("div#shares","share",{action:action,name:"share"})
 		,1500
 		# $(".pages").hide()
+	finishedPage: (action, id)->
+		if action?
+			riot.mount("div#finishedPage","share",{action:action,name:"finishedPage"})
 	notes: (action, id)->
 		if action?
 			riot.mount("div#notes","share",{action:action,name:"notes"})

@@ -118,7 +118,7 @@ controllers = {
         riot.route("/");
       }
     }
-    if ((action == null) && (collection === "notes" || collection === "menus")) {
+    if ((action == null) && (collection === "notes" || collection === "menus" || collection === "finishedPage")) {
       return riot.route("/" + collection + "/" + wonShare);
     }
     Store.parallax && Store.parallax.animate(collection);
@@ -128,9 +128,18 @@ controllers = {
     $(".page.share").addClass("show");
     return setTimeout(function() {
       return riot.mount("div#shares", "share", {
-        action: action
+        action: action,
+        name: "share"
       });
     }, 1500);
+  },
+  finishedPage: function(action, id) {
+    if (action != null) {
+      return riot.mount("div#finishedPage", "share", {
+        action: action,
+        name: "finishedPage"
+      });
+    }
   },
   notes: function(action, id) {
     if (action != null) {

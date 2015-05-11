@@ -26,6 +26,7 @@ block content
 	.wrap
 		.logo
 			img(src="#{url}Tongshuai/img/logo.png")
+		playsound(src="#{url}Tongshuai/mp3/bg.mp3",icon="true",icon-play="#{url}Tongshuai/img/audio-play.png",icon-stop="#{url}Tongshuai/img/audio-stop.png")
 		.page.share
 			#shares
 
@@ -52,7 +53,10 @@ block content
 			.page.build
 				.content
 					shirt
-			.page.menus(up="notes",down="build")
+			.page.finishedPage(up="menus",down="build")
+				#finishedPage
+				.next-point
+			.page.menus(up="notes",down="finishedPage")
 				.content
 					.cp
 						.kv.fadeInDown.animated.delay-5
@@ -61,22 +65,6 @@ block content
 				.next-point
 			.page.notes(down="menus")
 				#notes
-
-			//- .page.food(down="register",up="bmwx1")
-			//- 	food
-			//- 	a.join(href="#/register").fadeInUp.animated.delay-5
-			//- 		img(data-layzr="/BMWX1/img/join.png")
-			//- 	.next-point
-			//- .page.bmwx1(down="food")
-			//- 	.content
-			//- 		.cp
-			//- 			.cp-1
-			//- 				img(data-layzr="/BMWX1/img/cp-5-1.png")
-			//- 		slider(list="/BMWX1/img/car-1.png,/BMWX1/img/car-2.png,/BMWX1/img/car-3.png,/BMWX1/img/car-4.png")
-			//- 		.lr
-			//- 			img(data-layzr="/BMWX1/img/lr.png")
-			//- 	a.join(href="#/register").fadeInUp.animated.delay-5
-			//- 		img(data-layzr="/BMWX1/img/join.png")
 
 	.qrcode#qrcode
 

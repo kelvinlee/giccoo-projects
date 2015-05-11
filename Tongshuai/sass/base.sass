@@ -21,6 +21,16 @@ $cdn : "../"
 	.duration-#{$i}
 		animation-duration: $i*100ms
 
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
 .share-wechat
 	+posa
 	+tl
@@ -379,7 +389,7 @@ $cdn : "../"
 			+tr(-15%,10%)
 			// +transform(translate3d(-50%,110%,0))
 			+iw(63,640,100%)
-.notes,.page.share
+.notes,.page.share,.page.finishedPage
 	+b($cdn+"img/bg-3.jpg",no-repeat,top,center,cover)
 
 	.t-shirt,.note-title,.share-title
@@ -390,6 +400,8 @@ $cdn : "../"
 	.join
 		+show-inline
 		margin-top: 5%
+
+
 
 
 .page.share

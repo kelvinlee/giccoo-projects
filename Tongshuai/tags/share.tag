@@ -1,7 +1,6 @@
 
 <share>
-  <div if="{opts.name=='notes'}" class="note-title fadeInLeft animated delay-5"><img src="/Tongshuai/img/note-title.png"/></div>
-  <div if="{opts.name!='notes'}" class="share-title fadeInLeft animated delay-5"><img src="/Tongshuai/img/share-title.png"/></div>
+  <div class="note-title fadeInLeft animated delay-5"><img src="/Tongshuai/img/{opts.name}-title.png"/></div>
   <div class="t-shirt fadeInLeft animated delay-8">
     <div class="clear"><img src="/Tongshuai/img/t-shirt.png"/></div>
     <div if="{icon || text || stamp}" class="icons">
@@ -14,7 +13,7 @@
   <div if="{opts.name=='notes'}" class="share-icons fadeInLeft animated delay-10">
     <div class="share"></div>
     <shareicon site="Tongshuai" title="“小行走大改变”，正年轻你的，还在等什么？" url="local" pic="http://disk.giccoo.com/projects/Tongshuai/img/share-pc.jpg" icons="douban,weibo,qzone,wechat"><span class="share-icon">分享到</span></shareicon>
-  </div><a if="{opts.name!='notes'}" href="#/" class="join fadeInLeft animated delay-10"><img src="/Tongshuai/img/join.png"/></a>
+  </div><a if="{opts.name=='share'}" href="#/" class="join fadeInLeft animated delay-10"><img src="/Tongshuai/img/join.png"/></a>
   <script>
     var self = this
     Store[opts.name] = this

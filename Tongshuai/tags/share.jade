@@ -1,7 +1,7 @@
 share
-	.note-title.fadeInLeft.animated.delay-5(if="{opts.name=='notes'}")
-		img(src="/Tongshuai/img/note-title.png")
-	.share-title.fadeInLeft.animated.delay-5(if="{opts.name!='notes'}")
+	.note-title.fadeInLeft.animated.delay-5
+		img(src="/Tongshuai/img/{opts.name}-title.png")
+	//- .share-title.fadeInLeft.animated.delay-5(if="{opts.name=='share'}")
 		img(src="/Tongshuai/img/share-title.png")
 	.t-shirt.fadeInLeft.animated.delay-8
 		.clear
@@ -19,7 +19,7 @@ share
 		.share
 		shareicon(site="Tongshuai",title="“小行走大改变”，正年轻你的，还在等什么？",url="local",pic="http://disk.giccoo.com/projects/Tongshuai/img/share-pc.jpg",icons="douban,weibo,qzone,wechat")
 			span.share-icon 分享到
-	a.join.fadeInLeft.animated.delay-10(if="{opts.name!='notes'}",href="#/")
+	a.join.fadeInLeft.animated.delay-10(if="{opts.name=='share'}",href="#/")
 		img(src="/Tongshuai/img/join.png")
 
 	script.
