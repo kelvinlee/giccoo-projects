@@ -156,7 +156,6 @@ routeFun = function(collection, action, id) {
   if (collection == null) {
     collection = "homepage";
   }
-  console.log("route:", collection, action, id);
   fn = controllers[collection];
   return controllers["before"](collection, action, id, function() {
     fn && fn(action, id);
@@ -203,13 +202,11 @@ window.onload = function() {
     $("body").addClass("iphone4");
   }
   return $(document).on("click", ".icon-wechat", function() {
-    console.log("abcd");
     return $(".share-wechat").show();
   });
 };
 
 hideShareWechat = function() {
-  console.log("close");
   return $(".share-wechat").hide();
 };
 
@@ -218,7 +215,6 @@ loadStart = function() {
   count = $("[data-layzr]").length;
   now = 0;
   ep = $(".load-progress .n");
-  console.log(count);
   return layzr = new Layzr({
     callback: function(e) {
       console.log(e);

@@ -40,7 +40,7 @@ controllers =
 
 routeFun = (collection, action, id)->
 	collection = "homepage" unless collection?
-	console.log "route:",collection ,action ,id
+	# console.log "route:",collection ,action ,id
 	fn = controllers[collection]
 	controllers["before"] collection, action, id, ->
 		# console.log _history
@@ -82,10 +82,10 @@ window.onload = ->
 		$("body").addClass "iphone4"
 
 	$(document).on "click", ".icon-wechat", ->
-		console.log "abcd"
+		# console.log "abcd"
 		$(".share-wechat").show()
 hideShareWechat = ->
-	console.log "close"
+	# console.log "close"
 	$(".share-wechat").hide()
 
 loadStart = ->
@@ -93,7 +93,7 @@ loadStart = ->
 	now = 0
 	ep = $(".load-progress .n")
 	# return false
-	console.log(count)
+	# console.log(count)
 	layzr = new Layzr
 		callback: (e)->
 			console.log e
