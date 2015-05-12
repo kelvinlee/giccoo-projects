@@ -1,9 +1,10 @@
 
-riot.tag('menus', '<div show="{!menu1 &amp;&amp; !menu2}" class="menu-list"> <ul> <li onclick="{showForm}" class="fadeInLeft animated delay-5"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/menu-1.png"></li> <li onclick="{showInfo}" class="fadeInLeft animated delay-6"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/menu-2.png"></li> <li class="fadeInLeft animated delay-7"><a href="http://www.tongshuai.com/" target="_blank"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/menu-3.png"></a></li> </ul> </div> <div show="{menu1}" class="menu-item"> <form action="http://api.giccoo.com/tongshuai/insert/" method="post" onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/form-username.png"></label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="mobile"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/form-mobile.png"></label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-btn"> <button type="submit" class="submit"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/submit.png"></button> </div> <div onclick="{hideForm}" class="back-icon"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/close.png"></div> </form> </div> <div show="{menu2}" onclick="{hideInfo}" class="menu-item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/info.png"> <div class="back-icon"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/close.png"></div> </div>', function(opts) {
+riot.tag('menus', '<div show="{!menu1 &amp;&amp; !menu2 &amp;&amp; !after}" class="menu-list"> <ul> <li onclick="{showForm}" class="fadeInLeft animated delay-5"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/menu-1.png"></li> <li onclick="{showInfo}" class="fadeInLeft animated delay-6"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/menu-2.png"></li> <li class="fadeInLeft animated delay-7"><a href="http://www.tongshuai.com/" target="_blank"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/menu-3.png"></a></li> </ul> </div> <div show="{menu1}" class="menu-item"> <form action="http://api.giccoo.com/tongshuai/insert/" method="post" onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/form-username.png"></label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="mobile"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/form-mobile.png"></label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-btn"> <button type="submit" class="submit"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/submit.png"></button> </div> <div onclick="{hideForm}" class="back-icon"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/close.png"></div> </form> </div> <div show="{menu2}" onclick="{hideInfo}" class="menu-item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/info.png"> <div class="back-icon"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/close.png"></div> </div> <div show="{after}" onclick="{hideAfter}" class="menu-item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/success.png"> <div class="back-icon"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/close.png"></div> </div>', function(opts) {
     var self = this
     this.root.className += " menu-items"
     this.menu1 = false
     this.menu2 = false
+
     this.showForm = function() {
     	this.menu1 = true
     }.bind(this);
@@ -15,6 +16,9 @@ riot.tag('menus', '<div show="{!menu1 &amp;&amp; !menu2}" class="menu-list"> <ul
     }.bind(this);
     this.hideInfo = function() {
     	this.menu2 = false
+    }.bind(this);
+    this.hideAfter = function() {
+    	this.after = false
     }.bind(this);
     
     this.submit = function() {
@@ -32,8 +36,9 @@ riot.tag('menus', '<div show="{!menu1 &amp;&amp; !menu2}" class="menu-list"> <ul
     		if (msg.recode == 200) {
     			alert("提交成功!")
     			self.menu1 = false
+
+    			self.after = true
     			self.update()
-    			riot.route("/notes/"+wonShare)
     		}else if(msg.recode == 203){
     			alert(msg.reason)
     			self.menu1 = false
@@ -232,21 +237,22 @@ riot.tag('share', '<div class="note-title fadeInLeft animated delay-5"><img riot
   
 });
 
-riot.tag('shirt', '<div class="t-shirt"> <div class="clear"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/t-shirt.png"></div> <div class="icons"> <div if="{icon}" class="icon1 {icon}"><img if="{icon}" riot-src="/Tongshuai/img/{icon}.png"></div> <div if="{text}" class="icon2 {text}"><img if="{text}" riot-src="/Tongshuai/img/{text}-dark.png"></div> <div if="{stamp}" class="icon3 {stamp}"><img if="{stamp}" riot-src="/Tongshuai/img/{stamp}.png"></div> <div class="kv"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/kv-2.png"></div> <div if="{icon || text || stamp}" onclick="{finished}" class="btn submit"><img src="http://disk.giccoo.com/projects/Tongshuai/img/finished.png"></div> <div if="{icon || text || stamp}" onclick="{clear}" class="btn reset"><img src="http://disk.giccoo.com/projects/Tongshuai/img/reset.png"></div><a href="#/homepage2/" class="btn back"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/back.png"></a> </div> </div> <div class="ctrl-box {ctrlbox}"> <div class="box-content"> <slider id="slider-icon" callback="{iconCheck}" class="l"> <div each="{parent.icons}" class="slide"> <div each="{a in icons}" onclick="{parent.parent.parent.selectIcon(a)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{a}.png"></div> </div> </slider> <slider id="slider-text" callback="{textCheck}" class="l"> <div each="{parent.texts}" class="slide"> <div each="{t in icons}" onclick="{parent.parent.parent.selectText(t)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{t}.png"></div> </div> </slider> <div class="slider-box"> <div class="slider"> <div each="{stamps}" class="slide"> <div each="{p in icons}" onclick="{parent.parent.selectStamp(p)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{p}.png"></div> </div> </div> </div> </div> </div>', function(opts) {
+riot.tag('shirt', '<div class="t-shirt"> <div class="clear"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/t-shirt.png"></div> <div class="icons"> <div if="{icon}" class="icon1 {icon}"><img if="{icon}" riot-src="/Tongshuai/img/{icon}.png"></div> <div if="{text}" class="icon2 {text}"><img if="{text}" riot-src="/Tongshuai/img/{text}-dark.png"></div> <div if="{stamp}" class="icon3 {stamp}"><img if="{stamp}" riot-src="/Tongshuai/img/{stamp}.png"></div> <div class="kv"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/kv-2.png"></div> <div if="{icon &amp;&amp; text &amp;&amp; stamp}" onclick="{finished}" class="btn submit"><img src="http://disk.giccoo.com/projects/Tongshuai/img/finished.png"></div> <div if="{icon || text || stamp}" onclick="{clear}" class="btn reset"><img src="http://disk.giccoo.com/projects/Tongshuai/img/reset.png"></div><a href="#/homepage2/" class="btn back"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/back.png"></a> </div> </div> <div class="ctrl-box {ctrlbox}"> <div class="box-content"> <slider id="slider-icon" callback="{iconCheck}" class="l"> <div each="{parent.icons}" class="slide"> <div each="{a in icons}" onclick="{parent.parent.parent.selectIcon(a)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{a}.png"></div> </div> </slider> <slider id="slider-text" callback="{textCheck}" class="l"> <div each="{parent.texts}" class="slide"> <div each="{t in icons}" onclick="{parent.parent.parent.selectText(t)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{t}.png"></div> </div> </slider> <slider id="slider-stamp" callback="{stampCheck}" class="l"> <div each="{parent.stamps}" class="slide"> <div each="{p in icons}" onclick="{parent.parent.parent.selectStamp(p)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{p}.png"></div> </div> </slider> </div> </div>', function(opts) {
     var self = this
     this.ctrlbox = "up"
     this.icons = [
-    	{icons:["icon-1","icon-2","icon-3"]},
-    	{icons:["icon-4","icon-5","icon-6"]},
-    	{icons:["icon-7"]}
+    	{icons:["step-1","icon-1","icon-2"]},
+    	{icons:["icon-3","icon-7","icon-4"]},
+    	{icons:["icon-5","icon-6"]}
     ]
     this.texts = [
-    	{icons:["text-1","text-2","text-3"]},
-    	{icons:["text-4","text-5","text-6"]},
-    	{icons:["text-7"]}
+    	{icons:["step-2","text-4","text-5"]},
+    	{icons:["text-6","text-7","text-1"]},
+    	{icons:["text-2","text-3"]}
     ]
     this.stamps = [
-    	{icons:["stamp-1","stamp-2","stamp-3"]}
+    	{icons:["step-3","stamp-1","stamp-2"]},
+    	{icons:["stamp-3"]}
     ]
     this.icon = null
     this.text = null
@@ -260,6 +266,7 @@ riot.tag('shirt', '<div class="t-shirt"> <div class="clear"><img data-layzr="htt
     this.selectIcon = function(icon) {
 
     	return function() {
+    		if (icon == "step-1"){return false}
     		self.icon = icon
     		self.update()
     	}
@@ -267,12 +274,14 @@ riot.tag('shirt', '<div class="t-shirt"> <div class="clear"><img data-layzr="htt
     this.selectText = function(text) {
 
     	return function() {
+    		if (text == "step-2"){return false}
     		self.text = text
     		self.update()
     	}
     }.bind(this);
     this.selectStamp = function(stamp) {
     	return function() {
+    		if (stamp == "step-3"){return false}
     		self.stamp = stamp
     		self.update()
     	}
@@ -293,6 +302,18 @@ riot.tag('shirt', '<div class="t-shirt"> <div class="clear"><img data-layzr="htt
     this.textCheck = function(i) {
     	var Max = this.icons.length - 1
     	var ep = $("#slider-text",this.root)
+    	ep.removeClass("l r")
+    	if (Math.abs(i) == 0) {
+    		return ep.addClass("l")
+    	}
+    	if (Math.abs(i) == Max) {
+    		return ep.addClass("r")
+    	}
+    	ep.addClass("l r")
+    }.bind(this);
+    this.stampCheck = function(i) {
+    	var Max = this.icons.length - 1
+    	var ep = $("#slider-stamp",this.root)
     	ep.removeClass("l r")
     	if (Math.abs(i) == 0) {
     		return ep.addClass("l")

@@ -6,6 +6,14 @@ $cdn : "../"
 @if not $debug
 	$cdn : "http://disk.giccoo.com/projects/Tongshuai/"
 
++keyframes(Flash)
+	0%
+		opacity: 1
+	50%
+		opacity: 0.2
+	100%
+		opacity: 1
+
 +keyframes(nextPoint)
 	from
 		+transform(scale(1,1))
@@ -152,25 +160,29 @@ $cdn : "../"
 		+tl
 		+hide
 		.next-point
-			+wh(30px,30px)
-			+b($cdn+"img/down-arrow.png",no-repeat,center,center,10px 10px)
+			+wh(20px,30px)
+			// +b($cdn+"img/down-arrow.png",no-repeat,center,center,10px 10px)
 			+posa
-			+bl(5%,50%)
-			border: solid 1px #fff
-			border-radius: 50%
-			margin-left: -15px
+			+bl(2%,50%)
+			// border: solid 1px #fff
+			// border-radius: 50%
+			margin-left: -10px
 			z-index: 99
 			+box
-			&:before
-				content: " "
-				+posa
-				+tl
-				+wh(100%,100%)
-				+box
-				border: solid 1px #fff
-				border-radius: 50%
-				transform-origin: center center
-				+animation(nextPoint,1s,ease,"infinite")
+			font-size: 0
+			span
+				+wh(20px,10px)
+				+show-inline
+				+animation(Flash,2s,ease,infinite)
+				margin-bottom: -2px
+				+b($cdn+"img/arrow-next.png",no-repeat,center,center,cover)
+				&:nth-child(n+1)
+					animation-delay: 1*100ms
+				&:nth-child(n+2)
+					animation-delay: 3*100ms
+				&:nth-child(n+3)
+					animation-delay: 5*100ms
+
 		&.first
 			+show
 		h1,h2
@@ -201,6 +213,8 @@ $cdn : "../"
 
 .build
 	+b($cdn+"img/bg-3.jpg",no-repeat,top,center,cover)
+	.title
+		+p(5% 0)
 	.content
 		+posa
 		+bl
@@ -218,10 +232,10 @@ $cdn : "../"
 					content: " "
 					+posa
 					+bl(0,50%)
-					+wh(1rem,1rem)
+					+wh(1.5rem,1.5rem)
 					+b($cdn+"img/arrow.png",no-repeat,center,center,contain)
 					+transform(rotate(-90deg))
-					margin-left: -0.5rem
+					margin-left: -1.5rem/2
 				.box-content
 					+transform(translate3d(0,0,0))
 			&.down
@@ -229,10 +243,10 @@ $cdn : "../"
 					content: " "
 					+posa
 					+tl(0,50%)
-					+wh(1rem,1rem)
+					+wh(1.5rem,1.5rem)
 					+b($cdn+"img/arrow.png",no-repeat,center,center,contain)
 					+transform(rotate(90deg))
-					margin-left: -0.5rem
+					margin-left: -1.5rem/2
 				.box-content
 					+transform(translate3d(0,-50%,0))
 			.box-content
@@ -256,17 +270,17 @@ $cdn : "../"
 			&:before,&:after
 				content: " "
 				+posa
-				+wh(1rem,1rem)
+				+wh(1.5rem,1.5rem)
 				+b($cdn+"img/arrow.png",no-repeat,center,center,contain)
 				+transform(rotate(180deg))
 				+tran
 				opacity: 0
-				margin-top: -0.5rem
+				margin-top: -1.5rem/2
 			&:before
-				+tl(50%)
-			&:after
-				+tr(50%)
+				+tr(50%,-1.5%)
 				+transform(rotate(0deg))
+			&:after
+				+tl(50%,-1.5%)
 			&.l
 				&:before
 					opacity: 1
@@ -345,7 +359,7 @@ $cdn : "../"
 		+h
 		.kv
 			+posa
-			+tl(20%)
+			+tl(15%)
 			.iphone4 &
 				+tl(10%)
 
@@ -401,6 +415,14 @@ $cdn : "../"
 		+show-inline
 		margin-top: 5%
 
+.finishedPage
+	.cp
+		+iw(640)
+	.cp-1
+		margin-top: 5%
+	#finishedPage
+		.t-shirt
+			+w(80%)
 
 
 

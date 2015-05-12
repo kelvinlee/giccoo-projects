@@ -31,7 +31,7 @@ block content
 			#shares
 
 		parallax.pages
-			.page.homepage.first(up="homepage2")
+			.page.homepage(up="homepage2")
 				.content
 					.cp
 						.kv.fadeInDown.animated.delay-5
@@ -40,22 +40,37 @@ block content
 							.animated(class="cp-#{i} fadeInLeft delay-#{i*2+7}")
 								img(data-layzr="#{url}Tongshuai/img/cp-1-#{i}.png")
 				.next-point
+					span
+					span
+					span
 			.page.homepage2(down="homepage",up="build")
 				//- h2 page 2
 				.content
 					.cp
 						.kv.fadeInDown.animated.delay-5
 							img(data-layzr="#{url}Tongshuai/img/kv-1.png")
-						-for(var i=1;i<=3;i++)
+						-for(var i=1;i<=2;i++)
 							.animated(class="cp-#{i} fadeInLeft delay-#{i*2+7}")
 								img(data-layzr="#{url}Tongshuai/img/cp-2-#{i}.png")
 				.next-point
-			.page.build
+					span
+					span
+					span
+			.page.build.first
+
 				.content
+					.title
+						img(data-layzr="#{url}Tongshuai/img/build-title.png")
 					shirt
 			.page.finishedPage(up="menus",down="build")
 				#finishedPage
+				.cp
+					.cp-1.fadeInLeft.animated.delay-10
+						img(data-layzr="#{url}Tongshuai/img/cp-5-1.png")
 				.next-point
+					span
+					span
+					span
 			.page.menus(up="notes",down="finishedPage")
 				.content
 					.cp
@@ -63,6 +78,9 @@ block content
 							img(data-layzr="#{url}Tongshuai/img/kv-1.png")
 						menus
 				.next-point
+					span
+					span
+					span
 			.page.notes(down="menus")
 				#notes
 
@@ -70,10 +88,10 @@ block content
 
 block js
 	//- script(src="/libs/js/min/localforage.min.js")
-	script(src="/libs/js/min/riot.js")
-	script(src="/libs/js/min/Zepto.min.js")
+	script(src="#{url}libs/js/min/riot.js")
+	script(src="#{url}libs/js/min/Zepto.min.js")
 	//- script(src="/libs/js/min/cityData-min.js")
-	script(src="/libs/js/min/layzr.min.js")
+	script(src="#{url}libs/js/min/layzr.min.js")
 	script(src="js/tag.js")
 	script(src="js/main.js")
 	script(src="//cdnst.immomo.com/momofes/js/mobile/momo_bridge.2.0.min.js")

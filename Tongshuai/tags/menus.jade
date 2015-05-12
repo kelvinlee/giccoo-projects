@@ -1,6 +1,7 @@
 menus
 	- var url = "http://disk.giccoo.com/projects"
-	.menu-list(show="{!menu1 && !menu2}")
+	//- - var url = ""
+	.menu-list(show="{!menu1 && !menu2 && !after}")
 		ul
 			li.fadeInLeft.animated.delay-5(onclick="{showForm}")
 				img(data-layzr="#{url}/Tongshuai/img/menu-1.png")
@@ -29,12 +30,16 @@ menus
 		img(data-layzr="#{url}/Tongshuai/img/info.png")
 		.back-icon
 			img(data-layzr="#{url}/Tongshuai/img/close.png")
-
+	.menu-item(show="{after}",onclick="{hideAfter}")
+		img(data-layzr="#{url}/Tongshuai/img/success.png")
+		.back-icon
+			img(data-layzr="#{url}/Tongshuai/img/close.png")
 	script.
 		var self = this
 		this.root.className += " menu-items"
 		this.menu1 = false
 		this.menu2 = false
+		//- this.after = true
 		showForm() {
 			this.menu1 = true
 		}
@@ -46,6 +51,9 @@ menus
 		}
 		hideInfo() {
 			this.menu2 = false
+		}
+		hideAfter() {
+			this.after = false
 		}
 
 		submit() {
@@ -63,8 +71,9 @@ menus
 				if (msg.recode == 200) {
 					alert("提交成功!")
 					self.menu1 = false
+					//- riot.route("/notes/"+wonShare)
+					self.after = true
 					self.update()
-					riot.route("/notes/"+wonShare)
 				}else if(msg.recode == 203){
 					alert(msg.reason)
 					self.menu1 = false

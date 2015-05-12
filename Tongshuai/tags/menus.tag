@@ -1,6 +1,6 @@
 
 <menus>
-  <div show="{!menu1 &amp;&amp; !menu2}" class="menu-list">
+  <div show="{!menu1 &amp;&amp; !menu2 &amp;&amp; !after}" class="menu-list">
     <ul>
       <li onclick="{showForm}" class="fadeInLeft animated delay-5"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/menu-1.png"/></li>
       <li onclick="{showInfo}" class="fadeInLeft animated delay-6"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/menu-2.png"/></li>
@@ -26,11 +26,15 @@
   <div show="{menu2}" onclick="{hideInfo}" class="menu-item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/info.png"/>
     <div class="back-icon"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/close.png"/></div>
   </div>
+  <div show="{after}" onclick="{hideAfter}" class="menu-item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/success.png"/>
+    <div class="back-icon"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/close.png"/></div>
+  </div>
   <script>
     var self = this
     this.root.className += " menu-items"
     this.menu1 = false
     this.menu2 = false
+    //- this.after = true
     showForm() {
     	this.menu1 = true
     }
@@ -42,6 +46,9 @@
     }
     hideInfo() {
     	this.menu2 = false
+    }
+    hideAfter() {
+    	this.after = false
     }
     
     submit() {
@@ -59,8 +66,9 @@
     		if (msg.recode == 200) {
     			alert("提交成功!")
     			self.menu1 = false
+    			//- riot.route("/notes/"+wonShare)
+    			self.after = true
     			self.update()
-    			riot.route("/notes/"+wonShare)
     		}else if(msg.recode == 203){
     			alert(msg.reason)
     			self.menu1 = false

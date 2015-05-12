@@ -1,5 +1,6 @@
 shirt
 	- var url = "http://disk.giccoo.com/projects"
+	//- - url = ""
 	.t-shirt
 		.clear
 			img(data-layzr="#{url}/Tongshuai/img/t-shirt.png")
@@ -13,7 +14,7 @@ shirt
 			.kv
 				img(data-layzr="#{url}/Tongshuai/img/kv-2.png")
 
-			.btn.submit(if="{icon || text || stamp}",onclick="{finished}")
+			.btn.submit(if="{icon && text && stamp}",onclick="{finished}")
 				img(src="#{url}/Tongshuai/img/finished.png")
 			.btn.reset(if="{icon || text || stamp}",onclick="{clear}")
 				img(src="#{url}/Tongshuai/img/reset.png")
@@ -29,27 +30,27 @@ shirt
 				.slide(each="{parent.texts}")
 					.item(each="{t in icons}",onclick="{parent.parent.parent.selectText(t)}")
 						img(data-layzr="#{url}/Tongshuai/img/{t}.png")
-			.slider-box
-				.slider
-					.slide(each="{stamps}")
-						.item(each="{p in icons}",onclick="{parent.parent.selectStamp(p)}")
-							img(data-layzr="#{url}/Tongshuai/img/{p}.png")
+			slider.l#slider-stamp(callback="{stampCheck}")
+				.slide(each="{parent.stamps}")
+					.item(each="{p in icons}",onclick="{parent.parent.parent.selectStamp(p)}")
+						img(data-layzr="#{url}/Tongshuai/img/{p}.png")
 
 	script.
 		var self = this
 		this.ctrlbox = "up"
 		this.icons = [
-			{icons:["icon-1","icon-2","icon-3"]},
-			{icons:["icon-4","icon-5","icon-6"]},
-			{icons:["icon-7"]}
+			{icons:["step-1","icon-1","icon-2"]},
+			{icons:["icon-3","icon-7","icon-4"]},
+			{icons:["icon-5","icon-6"]}
 		]
 		this.texts = [
-			{icons:["text-1","text-2","text-3"]},
-			{icons:["text-4","text-5","text-6"]},
-			{icons:["text-7"]}
+			{icons:["step-2","text-4","text-5"]},
+			{icons:["text-6","text-7","text-1"]},
+			{icons:["text-2","text-3"]}
 		]
 		this.stamps = [
-			{icons:["stamp-1","stamp-2","stamp-3"]}
+			{icons:["step-3","stamp-1","stamp-2"]},
+			{icons:["stamp-3"]}
 		]
 		this.icon = null
 		this.text = null
@@ -63,6 +64,7 @@ shirt
 		selectIcon(icon) {
 			//- alert("aa")
 			return function() {
+				if (icon == "step-1"){return false}
 				self.icon = icon
 				self.update()
 			}
@@ -70,12 +72,14 @@ shirt
 		selectText(text) {
 			//- alert("aa")
 			return function() {
+				if (text == "step-2"){return false}
 				self.text = text
 				self.update()
 			}
 		}
 		selectStamp(stamp) {
 			return function() {
+				if (stamp == "step-3"){return false}
 				self.stamp = stamp
 				self.update()
 			}
@@ -96,6 +100,18 @@ shirt
 		textCheck(i) {
 			var Max = this.icons.length - 1
 			var ep = $("#slider-text",this.root)
+			ep.removeClass("l r")
+			if (Math.abs(i) == 0) {
+				return ep.addClass("l")
+			}
+			if (Math.abs(i) == Max) {
+				return ep.addClass("r")
+			}
+			ep.addClass("l r")
+		}
+		stampCheck(i) {
+			var Max = this.icons.length - 1
+			var ep = $("#slider-stamp",this.root)
 			ep.removeClass("l r")
 			if (Math.abs(i) == 0) {
 				return ep.addClass("l")
