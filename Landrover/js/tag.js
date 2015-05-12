@@ -48,6 +48,7 @@ riot.tag('register', '<form onsubmit="{submit}" class="form"> <div class="form-g
 
     		if (msg.recode == 200) {
     			alert("注册成功")
+    			window.location.href = "http://www.landrover.com.cn/vehicles/range-rover-sport/range-rover-sport-svr.html"
     		}else{
     			alert(msg.reason)
     		}
