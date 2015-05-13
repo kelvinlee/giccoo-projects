@@ -175,8 +175,6 @@ riot.route(routeFun);
 
 riot.route.exec(routeFun);
 
-riot.mount("*");
-
 layzr = null;
 
 tm = null;
@@ -187,6 +185,7 @@ window.onload = function() {
     qrcode();
     return false;
   }
+  riot.mount("*");
   ep = $(".load-progress .n");
   tm = setInterval(function() {
     if (parseInt(ep.html()) >= 90) {

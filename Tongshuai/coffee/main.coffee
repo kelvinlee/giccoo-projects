@@ -57,8 +57,6 @@ riot.route routeFun
 # 用于首页监测
 riot.route.exec routeFun
 
-riot.mount("*")
-
 layzr = null
 tm = null
 
@@ -68,6 +66,7 @@ window.onload = ->
 	if document.getElementById("qrcode").getStyle("display") is "block"
 		qrcode()
 		return false
+	riot.mount("*")
 	ep = $(".load-progress .n")
 	tm = setInterval ->
 			if parseInt(ep.html()) >= 90
