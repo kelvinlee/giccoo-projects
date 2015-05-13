@@ -8,6 +8,9 @@
     this.icon = opts.icon
     this.iconPlay = opts["icon-play"]
     this.iconStop = opts["icon-stop"]
+    if (this.icon) {
+    	this.iconNow = this.iconStop
+    }
     this.type = null
     this.root.className += "playsound"
     change() {
