@@ -22,34 +22,45 @@ shirt
 				img(data-layzr="#{url}/Tongshuai/img/back.png")
 	.ctrl-box(class="{ctrlbox}")
 		.box-content
-			slider.n1.l#slider-icon(callback="{iconCheck}")
-				.slide(each="{parent.icons}")
-					.item(each="{a in icons}",onclick="{parent.parent.parent.selectIcon(a)}")
-						img(data-layzr="#{url}/Tongshuai/img/{a}.png")
-			slider.n2.l#slider-text(callback="{textCheck}")
-				.slide(each="{parent.texts}")
-					.item(each="{t in icons}",onclick="{parent.parent.parent.selectText(t)}")
-						img(data-layzr="#{url}/Tongshuai/img/{t}.png")
-			slider.n3.l#slider-stamp(callback="{stampCheck}")
-				.slide(each="{parent.stamps}")
-					.item(each="{p in icons}",onclick="{parent.parent.parent.selectStamp(p)}")
-						img(data-layzr="#{url}/Tongshuai/img/{p}.png")
+			.slider-step.n1.l#slider-icon
+				.step
+					img(data-src="#{url}/Tongshuai/img/step-1.png")
+				slider(callback="{iconCheck}")
+					.slide(each="{parent.icons}")
+						.item(each="{a in icons}",onclick="{parent.parent.parent.selectIcon(a)}")
+							img(data-src="#{url}/Tongshuai/img/{a}.png")
+			.slider-step.n2.l#slider-text
+				.step
+					img(data-src="#{url}/Tongshuai/img/step-2.png")
+				slider(callback="{textCheck}")
+					.slide(each="{parent.texts}")
+						.item(each="{t in icons}",onclick="{parent.parent.parent.selectText(t)}")
+							img(data-src="#{url}/Tongshuai/img/{t}.png")
+			.slider-step.n3.l#slider-stamp
+				.step
+					img(data-src="#{url}/Tongshuai/img/step-3.png")
+				slider(callback="{stampCheck}")
+					.slide(each="{parent.stamps}")
+						.item(each="{p in icons}",onclick="{parent.parent.parent.selectStamp(p)}")
+							img(data-src="#{url}/Tongshuai/img/{p}.png")
 
 	script.
 		var self = this
 		this.ctrlbox = "up"
 		this.icons = [
-			{icons:["step-1","icon-1","icon-2"]},
-			{icons:["icon-3","icon-7","icon-4"]},
-			{icons:["icon-5","icon-6"]}
+			{icons:["icon-1","icon-2"]},
+			{icons:["icon-3","icon-7"]},
+			{icons:["icon-4","icon-5"]},
+			{icons:["icon-6"]}
 		]
 		this.texts = [
-			{icons:["step-2","text-4","text-5"]},
-			{icons:["text-6","text-7","text-1"]},
-			{icons:["text-2","text-3"]}
+			{icons:["text-4","text-5"]},
+			{icons:["text-6","text-7"]},
+			{icons:["text-1","text-2"]},
+			{icons:["text-3"]}
 		]
 		this.stamps = [
-			{icons:["step-3","stamp-1","stamp-2"]},
+			{icons:["stamp-1","stamp-2"]},
 			{icons:["stamp-3"]}
 		]
 		this.icon = null
@@ -65,6 +76,7 @@ shirt
 			//- alert("aa")
 			return function() {
 				if (icon == "step-1"){return false}
+				self.ctrlbox = "down"
 				self.icon = icon
 				self.update()
 			}

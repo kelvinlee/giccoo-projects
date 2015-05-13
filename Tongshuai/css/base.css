@@ -1083,23 +1083,31 @@ html, body {
         width: 100%;
         padding: 50% 0 0 0; }
     .build .content .slider-box {
+      margin: 0 auto;
+      width: 66%;
+      padding: 2% 0 0 0;
+      overflow: hidden;
+      display: inline-block; }
+    .build .content .step {
+      width: 32%;
+      display: inline-block;
+      box-sizing: border-box; }
+    .build .content .slider-step {
       position: absolute;
       top: 0px;
       left: 0px;
-      margin: 0 auto;
       width: 100%;
-      padding: 2% 0 0 0;
-      overflow: hidden; }
-      .build .content .slider-box.n1 {
+      white-space: nowrap; }
+      .build .content .slider-step.n1 {
         top: 0;
         left: 0px; }
-      .build .content .slider-box.n2 {
+      .build .content .slider-step.n2 {
         top: 50%;
         left: 0px; }
-      .build .content .slider-box.n3 {
+      .build .content .slider-step.n3 {
         top: 100%;
         left: 0px; }
-      .build .content .slider-box:before, .build .content .slider-box:after {
+      .build .content .slider-step:before, .build .content .slider-step:after {
         content: " ";
         position: absolute;
         width: 1.5rem;
@@ -1114,18 +1122,18 @@ html, body {
                 transition: all 0.5s ease;
         opacity: 0;
         margin-top: -0.75rem; }
-      .build .content .slider-box:before {
+      .build .content .slider-step:before {
         top: 50%;
         right: -1.5%;
         -webkit-transform: rotate(0deg);
             -ms-transform: rotate(0deg);
                 transform: rotate(0deg); }
-      .build .content .slider-box:after {
+      .build .content .slider-step:after {
         top: 50%;
         left: -1.5%; }
-      .build .content .slider-box.l:before {
+      .build .content .slider-step.l:before {
         opacity: 1; }
-      .build .content .slider-box.r:after {
+      .build .content .slider-step.r:after {
         opacity: 1; }
 
 .t-shirt {
@@ -1301,5 +1309,5 @@ html, body {
   box-sizing: border-box;
   padding: 0 2%; }
 .slider .item {
-  width: 33%;
+  width: 50%;
   display: inline-block; }

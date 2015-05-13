@@ -241,21 +241,23 @@ riot.tag('share', '<div class="note-title fadeInLeft animated delay-5"><img riot
   
 });
 
-riot.tag('shirt', '<div class="t-shirt"> <div class="clear"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/t-shirt.png"></div> <div class="icons"> <div if="{icon}" class="icon1 {icon}"><img if="{icon}" riot-src="/Tongshuai/img/{icon}.png"></div> <div if="{text}" class="icon2 {text}"><img if="{text}" riot-src="/Tongshuai/img/{text}-dark.png"></div> <div if="{stamp}" class="icon3 {stamp}"><img if="{stamp}" riot-src="/Tongshuai/img/{stamp}.png"></div> <div class="kv"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/kv-2.png"></div> <div if="{icon &amp;&amp; text &amp;&amp; stamp}" onclick="{finished}" class="btn submit"><img src="http://disk.giccoo.com/projects/Tongshuai/img/finished.png"></div> <div if="{icon || text || stamp}" onclick="{clear}" class="btn reset"><img src="http://disk.giccoo.com/projects/Tongshuai/img/reset.png"></div><a href="#/homepage2/" class="btn back"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/back.png"></a> </div> </div> <div class="ctrl-box {ctrlbox}"> <div class="box-content"> <slider id="slider-icon" callback="{iconCheck}" class="n1 l"> <div each="{parent.icons}" class="slide"> <div each="{a in icons}" onclick="{parent.parent.parent.selectIcon(a)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{a}.png"></div> </div> </slider> <slider id="slider-text" callback="{textCheck}" class="n2 l"> <div each="{parent.texts}" class="slide"> <div each="{t in icons}" onclick="{parent.parent.parent.selectText(t)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{t}.png"></div> </div> </slider> <slider id="slider-stamp" callback="{stampCheck}" class="n3 l"> <div each="{parent.stamps}" class="slide"> <div each="{p in icons}" onclick="{parent.parent.parent.selectStamp(p)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{p}.png"></div> </div> </slider> </div> </div>', function(opts) {
+riot.tag('shirt', '<div class="t-shirt"> <div class="clear"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/t-shirt.png"></div> <div class="icons"> <div if="{icon}" class="icon1 {icon}"><img if="{icon}" riot-src="/Tongshuai/img/{icon}.png"></div> <div if="{text}" class="icon2 {text}"><img if="{text}" riot-src="/Tongshuai/img/{text}-dark.png"></div> <div if="{stamp}" class="icon3 {stamp}"><img if="{stamp}" riot-src="/Tongshuai/img/{stamp}.png"></div> <div class="kv"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/kv-2.png"></div> <div if="{icon &amp;&amp; text &amp;&amp; stamp}" onclick="{finished}" class="btn submit"><img src="http://disk.giccoo.com/projects/Tongshuai/img/finished.png"></div> <div if="{icon || text || stamp}" onclick="{clear}" class="btn reset"><img src="http://disk.giccoo.com/projects/Tongshuai/img/reset.png"></div><a href="#/homepage2/" class="btn back"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/back.png"></a> </div> </div> <div class="ctrl-box {ctrlbox}"> <div class="box-content"> <div id="slider-icon" class="slider-step n1 l"> <div class="step"><img data-src="http://disk.giccoo.com/projects/Tongshuai/img/step-1.png"></div> <slider callback="{iconCheck}"> <div each="{parent.icons}" class="slide"> <div each="{a in icons}" onclick="{parent.parent.parent.selectIcon(a)}" class="item"><img data-src="http://disk.giccoo.com/projects/Tongshuai/img/{a}.png"></div> </div> </slider> </div> <div id="slider-text" class="slider-step n2 l"> <div class="step"><img data-src="http://disk.giccoo.com/projects/Tongshuai/img/step-2.png"></div> <slider callback="{textCheck}"> <div each="{parent.texts}" class="slide"> <div each="{t in icons}" onclick="{parent.parent.parent.selectText(t)}" class="item"><img data-src="http://disk.giccoo.com/projects/Tongshuai/img/{t}.png"></div> </div> </slider> </div> <div id="slider-stamp" class="slider-step n3 l"> <div class="step"><img data-src="http://disk.giccoo.com/projects/Tongshuai/img/step-3.png"></div> <slider callback="{stampCheck}"> <div each="{parent.stamps}" class="slide"> <div each="{p in icons}" onclick="{parent.parent.parent.selectStamp(p)}" class="item"><img data-src="http://disk.giccoo.com/projects/Tongshuai/img/{p}.png"></div> </div> </slider> </div> </div> </div>', function(opts) {
     var self = this
     this.ctrlbox = "up"
     this.icons = [
-    	{icons:["step-1","icon-1","icon-2"]},
-    	{icons:["icon-3","icon-7","icon-4"]},
-    	{icons:["icon-5","icon-6"]}
+    	{icons:["icon-1","icon-2"]},
+    	{icons:["icon-3","icon-7"]},
+    	{icons:["icon-4","icon-5"]},
+    	{icons:["icon-6"]}
     ]
     this.texts = [
-    	{icons:["step-2","text-4","text-5"]},
-    	{icons:["text-6","text-7","text-1"]},
-    	{icons:["text-2","text-3"]}
+    	{icons:["text-4","text-5"]},
+    	{icons:["text-6","text-7"]},
+    	{icons:["text-1","text-2"]},
+    	{icons:["text-3"]}
     ]
     this.stamps = [
-    	{icons:["step-3","stamp-1","stamp-2"]},
+    	{icons:["stamp-1","stamp-2"]},
     	{icons:["stamp-3"]}
     ]
     this.icon = null
@@ -271,6 +273,7 @@ riot.tag('shirt', '<div class="t-shirt"> <div class="clear"><img data-layzr="htt
 
     	return function() {
     		if (icon == "step-1"){return false}
+    		self.ctrlbox = "down"
     		self.icon = icon
     		self.update()
     	}

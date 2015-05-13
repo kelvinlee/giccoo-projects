@@ -255,12 +255,21 @@ $cdn : "../"
 				+w(100%)
 				+p(50% 0 0 0)
 		.slider-box
-			+posa
-			+tl
 			+m
-			+w
+			+w(66%)
 			+p(2% 0 0 0)
 			+overhide
+			+show-inline
+		.step
+			+w(32%)
+			+show-inline
+			// +p(4% 0 0 0)
+			+box
+		.slider-step
+			+posa
+			+tl
+			+w
+			white-space: nowrap
 			&.n1
 				+tl(0)
 			&.n2
@@ -287,8 +296,6 @@ $cdn : "../"
 			&.r
 				&:after
 					opacity: 1
-		// 	&:first-child
-		// 		border-bottom: solid 1px #faea1d
 
 .t-shirt
 	+posr
@@ -441,6 +448,6 @@ $cdn : "../"
 		+box
 		+p(0 2%)
 	.item
-		+w(33%)
+		+w(50%)
 		+show-inline
 		

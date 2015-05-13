@@ -93,7 +93,9 @@ loadStart = ->
 	now = 0
 	ep = $(".load-progress .n")
 	# return false
-	# console.log(count)
+	console.log(count)
+	
+
 	layzr = new Layzr
 		callback: (e)->
 			console.log e
@@ -104,9 +106,14 @@ loadStart = ->
 				ep.html parseInt (now/count)*100
 				setTimeout ->
 					$("#loading").addClass("animated fadeOut")
-				,500
+					loadOther()
+				,1500
 				setTimeout ->
 					$("#loading").hide()
 				,1000
 
+loadOther = ->
+	layzr = new Layzr
+		selector: '[data-src]'
+		attr:'data-src'
 
