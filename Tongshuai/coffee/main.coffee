@@ -78,7 +78,8 @@ window.onload = ->
 	setTimeout -> 
 		loadStart()
 	,1000
-	if $("body").height() <= 440
+	# alert($("body").height())
+	if $("body").height() <= 460
 		$("body").addClass "iphone4"
 
 	$(document).on "click", ".icon-wechat", ->

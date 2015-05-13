@@ -1090,13 +1090,13 @@ html, body {
       width: 100%;
       padding: 2% 0 0 0;
       overflow: hidden; }
-      .build .content .slider-box:nth-child(n+1) {
+      .build .content .slider-box.n1 {
         top: 0;
         left: 0px; }
-      .build .content .slider-box:nth-child(n+2) {
+      .build .content .slider-box.n2 {
         top: 50%;
         left: 0px; }
-      .build .content .slider-box:nth-child(n+3) {
+      .build .content .slider-box.n3 {
         top: 100%;
         left: 0px; }
       .build .content .slider-box:before, .build .content .slider-box:after {

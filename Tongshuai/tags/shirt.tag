@@ -13,17 +13,17 @@
   </div>
   <div class="ctrl-box {ctrlbox}">
     <div class="box-content">
-      <slider id="slider-icon" callback="{iconCheck}" class="l">
+      <slider id="slider-icon" callback="{iconCheck}" class="n1 l">
         <div each="{parent.icons}" class="slide">
           <div each="{a in icons}" onclick="{parent.parent.parent.selectIcon(a)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{a}.png"/></div>
         </div>
       </slider>
-      <slider id="slider-text" callback="{textCheck}" class="l">
+      <slider id="slider-text" callback="{textCheck}" class="n2 l">
         <div each="{parent.texts}" class="slide">
           <div each="{t in icons}" onclick="{parent.parent.parent.selectText(t)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{t}.png"/></div>
         </div>
       </slider>
-      <slider id="slider-stamp" callback="{stampCheck}" class="l">
+      <slider id="slider-stamp" callback="{stampCheck}" class="n3 l">
         <div each="{parent.stamps}" class="slide">
           <div each="{p in icons}" onclick="{parent.parent.parent.selectStamp(p)}" class="item"><img data-layzr="http://disk.giccoo.com/projects/Tongshuai/img/{p}.png"/></div>
         </div>

@@ -198,7 +198,7 @@ window.onload = function() {
   setTimeout(function() {
     return loadStart();
   }, 1000);
-  if ($("body").height() <= 440) {
+  if ($("body").height() <= 460) {
     $("body").addClass("iphone4");
   }
   return $(document).on("click", ".icon-wechat", function() {
