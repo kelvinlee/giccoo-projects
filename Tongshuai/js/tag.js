@@ -39,6 +39,7 @@ riot.tag('menus', '<div show="{!menu1 &amp;&amp; !menu2 &amp;&amp; !after}" clas
 
     			self.after = true
     			self.update()
+    			riot.route("/notes/"+wonShare)
     		}else if(msg.recode == 203){
     			alert(msg.reason)
     			self.menu1 = false

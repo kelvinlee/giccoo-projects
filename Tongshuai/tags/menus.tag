@@ -69,6 +69,7 @@
     			//- riot.route("/notes/"+wonShare)
     			self.after = true
     			self.update()
+    			riot.route("/notes/"+wonShare)
     		}else if(msg.recode == 203){
     			alert(msg.reason)
     			self.menu1 = false
