@@ -12,7 +12,7 @@
   </div>
   <div if="{opts.name=='notes'}" class="share-icons fadeInLeft animated delay-10">
     <div class="share"></div>
-    <shareicon site="Tongshuai" title="“小行走大改变”，正年轻你的，还在等什么？" url="local" pic="http://disk.giccoo.com/projects/Tongshuai/img/share-pc.jpg" icons="douban,weibo,qzone,wechat"><span class="share-icon">分享到</span></shareicon>
+    <shareicon site="Tongshuai" title="“小行走大改变”，现场版奔跑吧兄弟等你来挑战！" url="local" pic="http://disk.giccoo.com/projects/Tongshuai/img/share-pc.jpg" icons="douban,weibo,qzone,wechat"><span class="share-icon">分享到</span></shareicon>
   </div><a if="{opts.name=='share'}" href="#/" class="join fadeInLeft animated delay-10"><img src="http://disk.giccoo.com/projects/Tongshuai/img/join.png"/></a>
   <script>
     var self = this
