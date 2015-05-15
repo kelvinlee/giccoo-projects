@@ -1,0 +1,370 @@
+@import sass/base
+@import ../../libs/sass/loading
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects/Yili-Eat-World/"
+
++keyframes(Flash)
+	0%
+		opacity: 1
+	50%
+		opacity: 0.2
+	100%
+		opacity: 1
+
++keyframes(nextPoint)
+	from
+		+transform(scale(1,1))
+		opacity: 1
+	to
+		+transform(scale(2,2))
+		opacity: 0
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
+
+.share-wechat
+	+posa
+	+tl
+	+w
+	+h
+	+b("http://disk.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
+	+bc
+	z-index: 1100
+	+hide
+	&.open
+		+show
+
+.wrap
+	+wh(100%,100%)
+	+posr
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+
+.loading.loaded
+	+large
+		+hide
+
+
+
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+w(90%)
+	+m
+	margin-top: -5%
+	.share-icon
+		+show-inline
+		+w(25%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		
+html,body
+	+w
+	+h
+
+body
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	color: #3f6aff
+
+
+.loading
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+bc(transparent)
+	.new-load
+		+posa
+		+tl(50%)
+		+w
+		+text-center
+		// +p(100% 0 0 0)
+		+transform(translate3d(0,-50%,0))
+		.load-item-milk
+			+iw(100,640,100%)
+			+posr
+			// > img
+				// +animation(rubberBand,2s,ease,infinite)
+			.load-item-note1,.load-item-note2
+				+posa
+				+tr
+				+iw(60,100,100%)
+				margin-top: -50%
+			.load-item-note1
+				+animation(rubberBand,2s,ease,infinite)
+				animation-delay: 5*100ms
+			.load-item-note2
+				+animation(swing,1.5s,ease,infinite)
+				transform-origin: bottom center
+				
+		.load-progress
+			font-size: 1rem
+			+p(2% 0 0 0)
+			
+
+.page
+	+posa
+	+tl
+	+w
+	+h
+	&.hide
+		+hide
+
+.firstpage,.notepage
+	+posa
+	+tl
+	+w
+	+h
+.notepage
+	.cp
+		+p(2% 0 0 0)
+		+posr
+		z-index: 10
+		.cp-1
+			+posr
+			+iw(640)
+		.cp-2,.cp-4,.cp-5
+			+posa
+			+tl
+		.cp-3
+			+posr
+		.cp-w
+			+iw(160,640,100%)
+			// +transform(translate3d(-20%,100%,0))
+			margin-right: 15%
+			// margin-top: -10%
+	.items
+		+posa
+		+bl(15%)
+		top: 0
+		+w
+		z-index: 1
+		.item
+			+iw(150,640,100%)
+			+posa
+			&.item-1
+				+br(45%,1%)
+			&.item-2
+				+br(20%,0.5%)
+			&.item-3
+				+bl(2%,8%)
+			&.item-4
+				+bl(5%,42%)
+				+animation(tada,1.5s,ease,infinite)
+			&.item-5
+				+bl(18%,4%)
+			&.item-6
+				+bl(36%,-2%)
+	.button
+		+posa
+		+bl
+		z-index: 20
+		.note
+			+posa
+			+tl
+.firstpage
+	.cp
+		+p(2% 0 0 0)
+		+posr
+		z-index: 10
+		.cp-1
+			+posr
+			+iw(640)
+		.cp-2
+			+posa
+			+tl
+		.cp-w
+			+iw(160,640,100%)
+			// +transform(translate3d(-20%,100%,0))
+			margin-right: 15%
+			margin-top: -10%
+
+	.items
+		+posa
+		+bl(15%)
+		top: 0
+		+w
+		z-index: 1
+		.item
+			+iw(150,640,100%)
+			+posa
+			&.item-1
+				+br(25%,1%)
+			&.item-2
+				+br(8%,0.5%)
+			&.item-3
+				+bl(2%,-2.5%)
+			&.item-4
+				+bl(-2%,14%)
+				+animation(tada,1.5s,ease,infinite)
+			&.item-5
+				+bl(18%,4%)
+			&.item-6
+				+bl(2%,30%)
+	.button
+		+posa
+		+bl
+		z-index: 20
+		.note
+			+posa
+			+tl
+
+.game
+	// +tran
+	// filter: blur(3px)
+	.game-plate
+		+tran
+	.putty + .game-plate
+		filter: blur(3px)
+	.putty
+		+posa
+		+bl
+		z-index: 101
+		.content
+			+posa
+			+tl
+			+box
+			+w
+			+p(28% 13% 0 30%)
+			.item
+				+w(49%)
+				+show-inline
+				// +text-center
+				.icon-item
+					+w(33%)
+					+show-inline
+					+posr
+					vertical-align: top
+				span
+					+posa
+					+tr(35%,-80%)
+					+show-inline
+					vertical-align: bottom
+		.goon
+			+posa
+			+bl
+	.gameover
+		+posa
+		+tl
+		z-index: 99
+	.plates
+		+w
+		+text-center
+		+p(2% 0)
+		.plate
+			+w(41%)
+			+m(0 2%)
+			+show-inline
+			+posr
+			.text-content
+				+posa
+				+tl
+				+box
+				+p(4% 2% 10% 18%)
+				+text-left
+				+w
+				.icon
+					+show-inline
+					+w(27%)
+				.milk,.score
+					font-size: 1.4rem
+					+w(50%)
+					+text-right
+					vertical-align: top
+					+show-inline
+					line-height: 140%
+					+large-phone
+						font-size: 1.6rem
+						line-height: 160%
+					+medium-phone
+						line-height: 165%
+
+
+	.canvas
+		+p(2%)
+		+box
+		+iw(640)
+		canvas
+			+w
+	.notes-msg
+		+posa
+		+bl
+		+w
+		.note
+			$w: 450/640*100%
+			+posa
+			+bl(0,(100% - $w)/2)
+			+w($w)
+			.text
+				+posa
+				+tl
+
+.active-over
+	+posa
+	+tl
+	+w
+	+h
+	.plates
+		.icon
+			+show-inline
+			+w(30%)
+	.over-title
+		+posr
+		.over-title-text
+			+posa
+			+tl
+	.over-list
+		.content
+			+box
+			margin-top: 2%
+			+p(0 10%)
+			.item
+				+w(33%)
+				+show-inline
+				// +text-center
+				.icon-item
+					+w(33%)
+					+show-inline
+					+posr
+					vertical-align: top
+				span
+					+posa
+					+tr(35%,-80%)
+					+show-inline
+					vertical-align: bottom
+
+	.over-note
+		+iw(640)

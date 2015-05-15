@@ -1,0 +1,77 @@
+begin
+	- var url = "http://disk.giccoo.com/projects"
+	.firstpage(show="{firstpageShow}",class="{firstpageClass}")
+		.content
+			.cp
+				//- -for(var i=1;i<=5;i++)
+				//- 	.animated.fadeInLeft(class="cp-#{i} delay-#{i+4}")
+				//- 		img(data-layzr="#{url}/Yili-Eat-World/img/cp-1-#{i}.png")
+				.cp-1.animated.fadeInLeft.delay-1
+					img(data-layzr="#{url}/Yili-Eat-World/img/cp-1-1.png")
+					.cp-2.animated.fadeInLeft.delay-3
+						img(data-layzr="#{url}/Yili-Eat-World/img/cp-1-2.png")
+				.cp-3.animated.fadeInLeft.delay-10
+					img(data-layzr="#{url}/Yili-Eat-World/img/cp-1-3.png")
+				.cp-4.animated.fadeInRight.delay-20
+					img(data-layzr="#{url}/Yili-Eat-World/img/cp-1-4.png")
+				.cp-w.animated.fadeInRight.delay-15
+					img(data-layzr="#{url}/Yili-Eat-World/img/stomach.png")
+			.items.animated.fadeIn.delay-18
+				-for(var i=1;i<=6;i++)
+					.item.animated.fadeIn(class="item-#{i} delay-#{i+20}")
+						img(data-layzr="#{url}/Yili-Eat-World/img/icon-p1-#{i}.png")
+			.button.animated.fadeInUp.delay-25(onclick="{nextPage}")
+				img(data-layzr="#{url}/Yili-Eat-World/img/cp-1-5.png")
+				.note.animated.fadeInRight.delay-30
+					img(data-layzr="#{url}/Yili-Eat-World/img/cp-1-6.png")
+	.notepage(show="{notepageShow}",class="{notepageClass}")
+		.content
+			.cp
+				.cp-1.animated.fadeInDown.delay-5
+					img(data-layzr="#{url}/Yili-Eat-World/img/cp-2-1.png")
+					.cp-2.animated.fadeInLeft.delay-6
+						img(data-layzr="#{url}/Yili-Eat-World/img/cp-2-7.png")
+				.cp-3.animated.fadeInLeft.delay-8
+					img(data-layzr="#{url}/Yili-Eat-World/img/cp-2-2.png")
+					.cp-4.animated.fadeInLeft.delay-10
+						img(data-layzr="#{url}/Yili-Eat-World/img/cp-2-3.png")
+					.cp-5.animated.fadeInLeft.delay-12
+						img(data-layzr="#{url}/Yili-Eat-World/img/cp-2-4.png")
+				.cp-w.animated.fadeInRight.delay-15
+					img(data-layzr="#{url}/Yili-Eat-World/img/stomach.png")
+			.items.animated.fadeIn.delay-18
+				-for(var i=1;i<=6;i++)
+					.item.animated.fadeIn(class="item-#{i} delay-#{i+20}")
+						img(data-layzr="#{url}/Yili-Eat-World/img/icon-p1-#{i}.png")
+			.button.animated.fadeInUp.delay-17(onclick="{readyGame}")
+				img(data-layzr="#{url}/Yili-Eat-World/img/cp-2-5.png")
+				.note.animated.fadeInRight.delay-20
+					img(data-layzr="#{url}/Yili-Eat-World/img/cp-2-6.png")
+	script.
+		var self = this
+		this.firstpageClass = ""
+		this.firstpageShow = true
+		this.notepageClass = ""
+		this.notepageShow = false
+		nextPage() {
+			this.notepageShow = true
+			this.firstpageClass = "animated fadeOut"
+			this.notepageClass = "animated fadeIn"
+			setTimeout(function(){
+				this.notepageClass = ""
+				self.firstpageShow = false
+				self.update()
+			},600)
+		}
+		readyGame() {
+			this.notepageClass = "animated fadeOut"
+			setTimeout(function(){
+				self.root.className += "hide"
+				self.notepageShow = false
+				$(".page.game").removeClass("hide")
+				setTimeout(function(){
+					Store.game.build()
+				},500)
+				self.update()
+			},600)
+		}
