@@ -54,6 +54,7 @@
     this.firstpageShow = true
     this.notepageClass = ""
     this.notepageShow = false
+    this.ready = false
     nextPage() {
     	this.notepageShow = true
     	this.firstpageClass = "animated fadeOut"
@@ -65,7 +66,9 @@
     	},600)
     }
     readyGame() {
+    	if (this.ready) {return false}
     	this.notepageClass = "animated fadeOut"
+    	this.ready = true
     	setTimeout(function(){
     		self.root.className += "hide"
     		self.notepageShow = false

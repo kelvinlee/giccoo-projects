@@ -5,6 +5,7 @@ riot.tag('begin', '<div show="{firstpageShow}" class="firstpage {firstpageClass}
     this.firstpageShow = true
     this.notepageClass = ""
     this.notepageShow = false
+    this.ready = false
     this.nextPage = function() {
     	this.notepageShow = true
     	this.firstpageClass = "animated fadeOut"
@@ -16,7 +17,9 @@ riot.tag('begin', '<div show="{firstpageShow}" class="firstpage {firstpageClass}
     	},600)
     }.bind(this);
     this.readyGame = function() {
+    	if (this.ready) {return false}
     	this.notepageClass = "animated fadeOut"
+    	this.ready = true
     	setTimeout(function(){
     		self.root.className += "hide"
     		self.notepageShow = false
