@@ -9,7 +9,7 @@ tm = null
 
 debug = false
 cdn = ""
-cdn = "http://disk.giccoo.com/projects/Yili-Eat-World/" unless debug
+# cdn = "http://disk.giccoo.com/projects/Yili-Eat-World/" unless debug
 
 window.onload = ->
 	# $("#loading").hide()

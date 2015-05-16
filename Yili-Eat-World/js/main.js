@@ -110,10 +110,6 @@ debug = false;
 
 cdn = "";
 
-if (!debug) {
-  cdn = "http://disk.giccoo.com/projects/Yili-Eat-World/";
-}
-
 window.onload = function() {
   var ep, loader;
   if (document.getElementById("qrcode").getStyle("display") === "block") {
