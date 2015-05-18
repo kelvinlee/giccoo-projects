@@ -93,8 +93,8 @@ Game = (function() {
     if (this.oldfood.id === 1) {
       this.milk++;
       this.MyPlayer.changeF();
-      this.noteFun();
     }
+    this.noteFun(this.oldfood.id);
     eggs = 0;
     ref = this.foodList;
     for (i = 0, len = ref.length; i < len; i++) {
@@ -148,11 +148,12 @@ Game = (function() {
     }
     enemy = this.handicap;
     if (!((blt.x >= (enemy.x + enemy.w)) || ((blt.x + blt.w) <= enemy.x) || (blt.y >= (enemy.y + enemy.h)) || ((blt.y + blt.h) <= enemy.y))) {
+      console.log(this.food.x, this.food.y);
       if (this.food.x > 305 && this.food.x < 610 - this.food.w) {
-        this.food.x += blt.w;
+        this.food.x += this.handicap.x - this.handicap.w;
       }
       if (this.food.x > 0 && this.food.x < 305) {
-        this.food.x -= blt.w;
+        this.food.x -= this.handicap.x + this.handicap.w;
       }
       if (this.food.x < 0) {
         this.food.x = 0;
@@ -160,11 +161,11 @@ Game = (function() {
       if (this.food.x > 610 - this.food.w) {
         this.food.x = 610 - enemy.w;
       }
-      if (this.food.y > 305 && this.food.y < 610 - this.food.h) {
-        this.food.y += blt.h;
+      if (this.food.y >= 305 && this.food.y <= 610 - this.food.h) {
+        this.food.y = this.handicap.y + this.handicap.h;
       }
       if (this.food.y > 0 && this.food.y < 305) {
-        this.food.y -= blt.h;
+        this.food.y = this.handicap.y - this.food.h;
       }
       if (this.food.y < 0) {
         this.food.y = 0;
@@ -172,6 +173,7 @@ Game = (function() {
       if (this.food.y > 610 - this.food.h) {
         this.food.y = 610 - this.food.h;
       }
+      console.log(this.food.x, this.food.y);
     }
     return this.stage.addChild(this.food);
   };
@@ -261,7 +263,7 @@ Player = (function() {
     this.brithy = true;
     this.superTime = null;
     this.player = new PIXI.Sprite.fromImage(cdn + 'img/game-p-stomach.png');
-    this.player.scale = new PIXI.Point(0.8, 0.8);
+    this.player.scale = new PIXI.Point(0.65, 0.65);
     this.addChild(this.player);
     console.log("add body", this.player.width, this.width);
     this.x = 610 / 2 - this.size / 2;
@@ -355,9 +357,7 @@ Food = (function() {
   function Food(random) {
     var self, tween;
     PIXI.Sprite.call(this);
-    console.log(random);
     this.id = random[parseInt(Math.random() * random.length)];
-    console.log("id:", this.id);
     if (_food_history.length > 2 && _food_history[_food_history.length - 1] !== 1 && _food_history[_food_history.lenght - 2] !== 1) {
       this.id = 1;
     }

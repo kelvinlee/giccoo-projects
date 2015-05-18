@@ -96,6 +96,7 @@ loadStart = ->
 				setTimeout ->
 					$("#loading").addClass("animated fadeOut")
 					$(".page.begin").removeClass("hide")
+					# Store.game.build()
 				,1500
 				setTimeout ->
 					$("#loading").hide()

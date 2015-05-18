@@ -847,9 +847,12 @@ html, body {
       width: 40px; }
 
 .share-icons {
-  width: 90%;
+  width: 93.75%;
   margin: 0 auto;
-  margin-top: -5%; }
+  margin: 0 auto;
+  margin-top: -8%; }
+  .iphone4 .share-icons {
+    width: 75%; }
   .share-icons .share-icon {
     display: inline-block;
     width: 25%;
@@ -1188,11 +1191,21 @@ body {
     display: inline-block;
     width: 30%; }
   .active-over .over-title {
+    margin-top: -5%;
     position: relative; }
     .active-over .over-title .over-title-text {
       position: absolute;
       top: 0px;
       left: 0px; }
+  .active-over .over-regame {
+    position: relative;
+    width: 38.4375%;
+    margin: 0 auto;
+    z-index: 101;
+    margin-top: -2%;
+    margin-bottom: 2%; }
+    .iphone4 .active-over .over-regame {
+      width: 30.75%; }
   .active-over .over-list .content {
     box-sizing: border-box;
     margin-top: 2%;

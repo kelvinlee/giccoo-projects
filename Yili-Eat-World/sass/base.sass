@@ -83,9 +83,9 @@ $cdn : "../"
 			+w(80px/2)
 
 .share-icons
-	+w(90%)
+	+iw(600)
 	+m
-	margin-top: -5%
+	margin-top: -8%
 	.share-icon
 		+show-inline
 		+w(25%)
@@ -102,7 +102,8 @@ body
 	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
 	color: #3f6aff
 
-
+// .loading.loaded
+// 	+hide
 .loading
 	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
 	+bc(transparent)
@@ -342,10 +343,20 @@ body
 			+show-inline
 			+w(30%)
 	.over-title
+		margin-top: -5%
 		+posr
+		// margin-bottom: 10%
 		.over-title-text
 			+posa
 			+tl
+	.over-regame
+		// +posa
+		// +tl
+		+posr
+		+iw(246)
+		z-index: 101
+		margin-top: -2%
+		margin-bottom: 2%
 	.over-list
 		.content
 			+box

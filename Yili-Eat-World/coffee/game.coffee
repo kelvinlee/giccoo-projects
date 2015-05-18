@@ -82,7 +82,7 @@ class Game
 		if @oldfood.id is 1
 			@milk++
 			@MyPlayer.changeF()
-			@noteFun()
+		@noteFun(@oldfood.id)
 		# 彩蛋判断
 		eggs = 0
 		for egg in @foodList
@@ -118,18 +118,21 @@ class Game
 			@food.y = 610-@food.h if @food.y > 610-@food.h
 		enemy = @handicap
 		unless (blt.x >= (enemy.x + enemy.w)) or ((blt.x + blt.w) <= enemy.x) or (blt.y >= (enemy.y + enemy.h)) or ((blt.y + blt.h) <= enemy.y)
+			# alert "碰撞 墙壁"
+			console.log @food.x,@food.y
 			if @food.x > 305 and @food.x < 610-@food.w
-				@food.x += blt.w
+				@food.x += @handicap.x-@handicap.w
 			if @food.x > 0 and @food.x < 305
-				@food.x -= blt.w
+				@food.x -= @handicap.x+@handicap.w
 			@food.x = 0 if @food.x < 0
 			@food.x = 610-enemy.w if @food.x > 610-@food.w
-			if @food.y > 305 and @food.y < 610-@food.h
-				@food.y += blt.h
+			if @food.y >= 305 and @food.y <= 610-@food.h
+				@food.y = @handicap.y+@handicap.h
 			if @food.y > 0 and @food.y < 305
-				@food.y -= blt.h
+				@food.y = @handicap.y-@food.h
 			@food.y = 0 if @food.y < 0
 			@food.y = 610-@food.h if @food.y > 610-@food.h
+			console.log @food.x,@food.y
 
 		@stage.addChild @food
 	# 碰撞检测	
@@ -201,7 +204,7 @@ class Player
 
 
 		@player = new PIXI.Sprite.fromImage(cdn+'img/game-p-stomach.png')
-		@player.scale = new PIXI.Point(0.8,0.8)
+		@player.scale = new PIXI.Point(0.65,0.65)
 		this.addChild @player
 		console.log "add body",@player.width,@width
 
@@ -270,9 +273,9 @@ class Food
 	# 构建用户
 	constructor: (random)->
 		PIXI.Sprite.call @
-		console.log random
+		# console.log random
 		@id = random[parseInt(Math.random()*(random.length))]
-		console.log "id:",@id
+		# console.log "id:",@id
 		if _food_history.length > 2 and _food_history[_food_history.length-1] isnt 1 and _food_history[_food_history.lenght-2] isnt 1
 			@id = 1
 		if _food_history.length > 20

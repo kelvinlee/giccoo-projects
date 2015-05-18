@@ -25,7 +25,7 @@ block content
 	.share-wechat(onclick="hideShareWechat()")
 	.wrap
 		begin.page.begin.hide
-		game.page.game.hide		
+		game.page.game.hide
 	.qrcode#qrcode
 
 block js
@@ -40,3 +40,11 @@ block js
 	script(src="js/tag.js")
 	script(src="js/game.js")
 	script(src="js/main.js")
+	script.
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?97647f9cd8b3ab0dea00394d1c3ed3aa";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
