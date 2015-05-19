@@ -2,6 +2,8 @@ content
 	//- - var url = "http://disk.giccoo.com/projects"
 	- var url = "/"
 	.page-content(show="{!other && !pop}")
+		.logo
+			img(src="#{url}Yili-sugar/img/logo.png")
 		.content-page
 		.bg.zoomIn.animated.delay-9
 			img(data-layzr="#{url}Yili-sugar/img/sugar.png")
@@ -16,8 +18,10 @@ content
 			-for(var i=1;i<=4;i++)
 				.animated.zoomIn.animated(class="cp-#{i} delay-#{i*2+10}")
 					img(data-layzr="#{url}Yili-sugar/img/cp-2-#{i}.png")
-
+	
 	.page-other.fadeIn.animated(if="{other}")
+		.logo
+			img(src="#{url}Yili-sugar/img/logo.png")
 		.ad.fadeInDown.animated.delay-5
 			img(src="#{url}Yili-sugar/img/ad.png")
 		.back.fadeInDown.animated.delay-7(onclick="{back}")
@@ -42,6 +46,8 @@ content
 			img(data-src="#{url}Yili-sugar/img/back-end.png")
 	.pop.fadeIn.animated(if="{pop}")
 		//- .pop-content.flipInX.animated.delay-7.duration-10
+		.logo
+			img(src="#{url}Yili-sugar/img/logo.png")
 		.pop-content.slideInDown.animated.delay-7.duration-10(onclick="{back}")
 			img(data-src="#{url}Yili-sugar/img/pop.jpg")
 	.loadlist(show="{false}")
@@ -69,7 +75,8 @@ content
 			}
 		}
 		backTop() {
-			$(".page-other",self.root)[0].scrollTop = 0
+			//- $(".page-other",self.root)[0].scrollTop = 0
+			self.back()
 		}
 		back() {
 			self.pop = false

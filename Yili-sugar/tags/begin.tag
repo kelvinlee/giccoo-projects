@@ -1,5 +1,6 @@
 
 <begin>
+  <div class="logo"><img src="/Yili-sugar/img/logo.png"/></div>
   <div onclick="{nextPage}" class="shakeNote fadeInDown animated delay-5"><img data-layzr="/Yili-sugar/img/rotate.png"/>
     <div class="hand"><img data-layzr="/Yili-sugar/img/rotate-hand.png"/></div>
   </div>

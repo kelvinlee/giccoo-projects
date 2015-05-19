@@ -1,6 +1,7 @@
 
 <content>
   <div show="{!other &amp;&amp; !pop}" class="page-content">
+    <div class="logo"><img src="/Yili-sugar/img/logo.png"/></div>
     <div class="content-page"></div>
     <div class="bg zoomIn animated delay-9"><img data-layzr="/Yili-sugar/img/sugar.png"/></div>
     <div class="cp">
@@ -19,6 +20,7 @@
     </div>
   </div>
   <div if="{other}" class="page-other fadeIn animated">
+    <div class="logo"><img src="/Yili-sugar/img/logo.png"/></div>
     <div class="ad fadeInDown animated delay-5"><img src="/Yili-sugar/img/ad.png"/></div>
     <div onclick="{back}" class="back fadeInDown animated delay-7"><img src="/Yili-sugar/img/back.png"/></div>
     <div class="banner fadeInDown animated delay-9"><img src="/Yili-sugar/img/banner.png"/></div>
@@ -36,6 +38,7 @@
     <div onclick="{backTop}" class="backTop fadeIn animated delay-11"><img data-src="/Yili-sugar/img/back-end.png"/></div>
   </div>
   <div if="{pop}" class="pop fadeIn animated">
+    <div class="logo"><img src="/Yili-sugar/img/logo.png"/></div>
     <div onclick="{back}" class="pop-content slideInDown animated delay-7 duration-10"><img data-src="/Yili-sugar/img/pop.jpg"/></div>
   </div>
   <div show="{false}" class="loadlist"><img data-layzr="/Yili-sugar/img/ad.png"/><img data-layzr="/Yili-sugar/img/back.png"/><img data-layzr="/Yili-sugar/img/banner.png"/></div>
@@ -60,7 +63,8 @@
     	}
     }
     backTop() {
-    	$(".page-other",self.root)[0].scrollTop = 0
+    	//- $(".page-other",self.root)[0].scrollTop = 0
+    	self.back()
     }
     back() {
     	self.pop = false
