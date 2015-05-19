@@ -197,7 +197,7 @@
     		self.notes.push({noteClass: "animated fadeInUp",noteNum: "nuts"})
     	}
     	if (id == 1) {
-    		self.notes.push({noteClass: "animated fadeInUp",noteNum: parseInt(Math.random()*4)+1})
+    		self.notes.push({noteClass: "animated fadeInUp",noteNum: parseInt(Math.random()*5)+1})
     	}
     	if (id == 15) {
     		self.notes.push({noteClass: "animated fadeInUp",noteNum: "egg"})

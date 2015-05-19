@@ -275,7 +275,7 @@ Player = (function() {
     nameList = ["lufei", "gangtiexia", "huluwa", "mingren"];
     name = "stomach";
     if (!normal) {
-      name = nameList[parseInt(Math.random() * (nameList.length - 1))];
+      name = nameList[parseInt(Math.random() * nameList.length)];
     }
     this.removeChild(this.player);
     this.player = new PIXI.Sprite.fromImage(cdn + 'img/game-p-' + name + '.png');

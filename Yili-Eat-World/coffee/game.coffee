@@ -233,7 +233,7 @@ class Player
 		nameList = ["lufei","gangtiexia","huluwa","mingren"]
 		name = "stomach"
 		unless normal
-			name = nameList[parseInt(Math.random()*(nameList.length-1))]
+			name = nameList[parseInt(Math.random()*(nameList.length))]
 		this.removeChild @player
 		@player = new PIXI.Sprite.fromImage(cdn+'img/game-p-'+name+'.png')
 		@player.scale = new PIXI.Point(0.65,0.65)
