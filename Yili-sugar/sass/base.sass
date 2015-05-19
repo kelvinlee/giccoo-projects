@@ -1,0 +1,365 @@
+@import sass/base
+@import ../../libs/sass/loading
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects/Yili-Eat-World/"
+
++keyframes(Flash)
+	0%
+		opacity: 1
+	50%
+		opacity: 0.2
+	100%
+		opacity: 1
+
++keyframes(nextPoint)
+	from
+		+transform(scale(1,1))
+		opacity: 1
+	to
+		+transform(scale(2,2))
+		opacity: 0
+$s: 9%
++keyframes(bottleShake)
+	0%,75%,100%
+		+transform(translate3d(0,0,0))
+	#{$s*1},#{$s*3},#{$s*5},#{$s*7}
+		+transform(translate3d(-10%,0,0))
+	#{$s*2},#{$s*4},#{$s*6}
+		+transform(translate3d(10%,0,0))
+
++keyframes(load1)
+	0%,#{$s*0},100%
+		+transform(translate3d(0,0,0))
+		opacity: 0
+	65%
+		+transform(translate3d(-200%,-200%,0))
+		opacity: 1
+	70%
+		+transform(translate3d(-220%,-220%,0))
+		opacity: 0
+
++keyframes(load2)
+	0%,#{$s*2},100%
+		+transform(translate3d(0,0,0))
+		opacity: 0
+	75%
+		+transform(translate3d(240%,-240%,0))
+		opacity: 1
+	80%
+		+transform(translate3d(250%,-250%,0))
+		opacity: 0
+
++keyframes(load3)
+	0%,#{$s*4},100%
+		+transform(translate3d(0,0,0))
+		opacity: 0
+	85%
+		+transform(translate3d(-220%,220%,0))
+		opacity: 1
+	90%
+		+transform(translate3d(-230%,230%,0))
+		opacity: 0
+
++keyframes(load4)
+	0%,#{$s*6},100%
+		+transform(translate3d(0,0,0))
+		opacity: 0
+	75%
+		+transform(translate3d(210%,210%,0))
+		opacity: 1
+	80%
+		+transform(translate3d(220%,220%,0))
+		opacity: 0
+
+
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
+
+.share-wechat
+	+posa
+	+tl
+	+w
+	+h
+	+b("http://disk.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
+	+bc
+	z-index: 1100
+	+hide
+	&.open
+		+show
+
+.wrap
+	+wh(100%,100%)
+	+posr
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+
+.loading.loaded
+	+large
+		+hide
+
+
+
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+iw(600)
+	+m
+	+show
+	// margin-top: -8%
+	.share-icon
+		+show-inline
+		+w(25%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		
+html,body
+	+w
+	+h
+
+body
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+bc(#0590d8)
+	color: #fff
+
+.logo
+	+posa
+	+tl
+	+w(50%)
+	z-index: 101
+.loading.loaded
+	z-index: 99
+	// +hide
+.loading
+	+b($cdn+"img/load-bg.jpg",no-repeat,center,center,cover)
+	+bc(transparent)
+	
+	.new-load
+		+posa
+		+tl(50%)
+		+w
+		+text-center
+		// +p(100% 0 0 0)
+		+transform(translate3d(0,-50%,0))
+		.load-note
+			+iw(110,640,100%)
+			margin-top: -10%
+			margin-bottom: -3%
+			+posr
+			left: -5%
+			z-index: 9
+		.load-item-milk
+			$allTime : 1.5s
+			+w
+			+posr
+			.load-item
+				+posa
+				// +tl(50%,50%)
+				z-index: 5
+				&.load-item-note1
+					$w: 63/640*100%
+					+w($w)
+					+tl(50%-$w/2,50%-$w/2)
+					+animation(load1,$allTime,ease,infinite)
+				&.load-item-note2
+					$w: 59/640*100%
+					+w($w)
+					+tl(50%-$w/2,50%-$w/2)
+					+animation(load2,$allTime,ease,infinite)
+				&.load-item-note3
+					$w: 61/640*100%
+					+w($w)
+					+tl(50%-$w/2,50%-$w/2)
+					+animation(load3,$allTime,ease,infinite)
+				&.load-item-note4
+					$w: 61/640*100%
+					+w($w)
+					+tl(50%-$w/2,50%-$w/2)
+					+animation(load4,$allTime,ease,infinite)
+			.load-bottle
+				+posr
+				+iw(70)
+				z-index: 9
+				+animation(bottleShake,$allTime,ease,infinite)
+			// > img
+				// +animation(rubberBand,2s,ease,infinite)
+			// .load-item-note1,.load-item-note2
+			// 	+posa
+			// 	+tr
+			// 	+iw(60,100,100%)
+			// 	margin-top: -50%
+			// .load-item-note1
+			// 	+animation(rubberBand,2s,ease,infinite)
+			// 	animation-delay: 5*100ms
+			// .load-item-note2
+			// 	+animation(swing,1.5s,ease,infinite)
+			// 	transform-origin: bottom center
+		
+		.load-progress
+			font-size: 1rem
+			+p(2% 0 0 0)
+			+posa
+			+tl(0)
+			.n
+				+posa
+				+tl(57%)
+				+w
+				+show-inline
+
+			
+
+.page
+	+posa
+	+tl
+	+w
+	+h
+	&.hide
+		+hide
+
+
+.page.begin
+	overflow: hidden
+	+b($cdn+"img/bg.jpg",no-repeat,top,center,cover)
+	font-size: 0
+	.shakeNote
+		+posr
+		+iw(640)
+		margin-top: 15%
+		.hand
+			+posa
+			+tl
+			+animation(tada,1.5s,ease,infinite)
+	.cp
+		+posr
+		+iw(640)
+		margin-top: -5%
+		.cp-3
+			+posa
+			+tl
+		.bottle
+			$w: 190/640*100%
+			+posa
+			+tl(30%,50%-$w/2)
+			+w($w)
+		.cp-1
+			+posa
+			+bl(-24.5%)
+
+.page.content
+	+b($cdn+"img/bg.jpg",no-repeat,top,center,cover)
+	.bg,.content
+		+posa
+	.bg
+		+bl(20%)
+		z-index: 1
+	.content
+		z-index: 10
+		+w
+		+h
+		.bottle
+			$w: 160/640*100%
+			+posa
+			+w($w)
+			+bl(30%,50%-$w/2)
+		.cp-note
+			+posa
+			+bl(44%)
+		.btn
+			+wh(50%,50%)
+			+posa
+			z-index: 21
+			&.btn-1
+				+tl
+			&.btn-2
+				+tr
+			&.btn-3
+				+bl
+			&.btn-4
+				+br
+	.cp
+		+posa
+		+bl(5%)
+		z-index: 9
+		+iw(640)
+		.iphone4 &
+			+bl(5%,10%)
+		// +transform(translate3d(0,-50%,0))
+		.cp-2,.cp-3,.cp-4
+			+posa
+			+tl
+
+.page-other
+	+posr
+	+w
+	+h
+	+touch
+	+bc(#0590d8)
+	.ad
+		+posr
+		+iw(200,640,100%)
+		margin-right: 0
+	.back
+		+posa
+		+tl(14%)
+	.banner
+		+posr
+		z-index: 10
+	.other-content
+		+posr
+		z-index: 5
+		font-size: 0
+		&.o-1
+			margin-top: -10%
+		&.o-4
+			margin-top: -15%
+		.manhua
+			+iw(401,640,100%)
+	.backTop
+		padding-bottom: 5%
+
+.pop
+	+posa
+	+w
+	+h
+	+bc(#001e2d)
+	+overhide
+	.pop-content
+		+iw(600)
+		+box
+		+p(12% 0 0 0)

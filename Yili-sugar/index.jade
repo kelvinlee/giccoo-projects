@@ -1,0 +1,58 @@
+extends ../libs/jade/layout-clean
+block title
+	| 糖CUT派对邀你一起HIGH,现场各种高逼格小礼物满足你N型人格！
+
+
+block css
+	link(rel="stylesheet",href="/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css")
+
+block content
+	- url = "/"
+	.wechat-share-hide
+		img#share(src="http://disk.giccoo.com/projects/Yili-sugar/img/share.jpg")
+	#loading.loading.loaded
+		.new-load
+			.load-item-milk
+				.load-note
+					img(src="#{url}Yili-sugar/img/load-1.png")
+				.load-bottle
+					img(src="#{url}Yili-sugar/img/load-bottle.png")
+					.load-progress
+						span
+							img(src="#{url}Yili-sugar/img/load-bottle-next.png")
+						span.n 0
+				.load-item.load-item-note1
+					img(src="#{url}Yili-sugar/img/load-t-l.png")
+				.load-item.load-item-note2
+					img(src="#{url}Yili-sugar/img/load-t-r.png")
+				.load-item.load-item-note3
+					img(src="#{url}Yili-sugar/img/load-b-l.png")
+				.load-item.load-item-note4
+					img(src="#{url}Yili-sugar/img/load-b-r.png")
+	.logo
+		img(src="#{url}Yili-sugar/img/logo.png")
+	.share-wechat(onclick="hideShareWechat()")
+	.wrap
+		begin.page.begin.hide
+		content.page.content.hide
+	.qrcode#qrcode
+
+block js
+	//- - url = "/"
+	//- script(src="/libs/js/min/localforage.min.js")
+	//- script(src="#{url}libs/js/pixi.dev.js",type="text/javascript")
+	//- script(src="#{url}libs/js/min/tween.js",type="text/javascript")
+	script(src="#{url}libs/js/min/riot.js")
+	script(src="#{url}libs/js/min/Zepto.min.js")
+	script(src="#{url}libs/js/min/layzr.min.js")
+	script(src="js/tag.js")
+	script(src="js/main.js")
+	//- script.
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?97647f9cd8b3ab0dea00394d1c3ed3aa";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
