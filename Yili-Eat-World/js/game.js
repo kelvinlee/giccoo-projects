@@ -121,24 +121,14 @@ Game = (function() {
     blt = this.food;
     enemy = this.MyPlayer;
     if (!((blt.x >= (enemy.x + enemy.w)) || ((blt.x + blt.w) <= enemy.x) || (blt.y >= (enemy.y + enemy.h)) || ((blt.y + blt.h) <= enemy.y))) {
-      if (this.food.x > 305 && this.food.x < 610 - this.food.w) {
-        this.food.x += enemy.w;
-      }
-      if (this.food.x > 0 && this.food.x < 305) {
-        this.food.x -= enemy.w;
-      }
+      this.food.x = 610 - this.food.w - enemy.w;
       if (this.food.x < 0) {
         this.food.x = 0;
       }
       if (this.food.x > 610 - this.food.w) {
         this.food.x = 610 - enemy.w;
       }
-      if (this.food.y > 305 && this.food.y < 610 - this.food.h) {
-        this.food.y += enemy.h;
-      }
-      if (this.food.y > 0 && this.food.y < 305) {
-        this.food.y -= enemy.h;
-      }
+      this.food.y = 610 - this.food.h - enemy.h;
       if (this.food.y < 0) {
         this.food.y = 0;
       }
@@ -289,7 +279,7 @@ Player = (function() {
     }
     this.removeChild(this.player);
     this.player = new PIXI.Sprite.fromImage(cdn + 'img/game-p-' + name + '.png');
-    this.player.scale = new PIXI.Point(0.8, 0.8);
+    this.player.scale = new PIXI.Point(0.65, 0.65);
     this.addChild(this.player);
     self = this;
     clearTimeout(this.superTime);

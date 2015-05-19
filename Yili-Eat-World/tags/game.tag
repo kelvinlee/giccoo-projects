@@ -7,7 +7,6 @@
           <div class="icon-item"><img src="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-item-{name}.png"/><span>X{value}</span></div>
         </div>
       </div>
-      <div onclick="{goon}" class="goon"><img src="http://disk.giccoo.com/projects/Yili-Eat-World/img/reset-game.png"/></div>
     </div>
     <div class="game-plate">
       <div class="plates">
@@ -118,11 +117,12 @@
     	}
     	var name = nameList[self.overtitle]
     	var howmany = parseInt(self.score/300*100)
-    	var number = parseInt((new Date().getTime() - new Date("2015-05-18 0:0:0").getTime()) / 1000 / 60 * 4000/(24*60))
+    	var number = parseInt((new Date().getTime() - new Date(1431878400000).getTime()) / 1000 / 60 * 4000/(24*60))
     	howmany = howmany>99? 99 : howmany < 1 ? 1 : howmany
+    	//- alert(number)
     	riot.mount("div#share-icons","shareicon",{
     		site:"Yili-Eat-World",
-    		title:"我是第"+number+"名,获得"+self.score+"能量,战胜"+howmany+"%对手,不服?来吃！",
+    		title:"我是第"+number+"名"+nameList[self.overtitle]+",获得"+self.score+"能量,战胜"+howmany+"%对手,不服?来吃！",
     		url: "local",
     		pic: "http://disk.giccoo.com/projects/Yili-Eat-World/img/share-pc.jpg",
     		icons: "wechat,weibo,qweibo,douban"
@@ -143,6 +143,7 @@
     	self.update()
     }
     resetGame() {
+    	if (self.game == null) {return false}
     	self.game = null
     	self.gameoverP = false
     	self.lastPage = false
@@ -171,17 +172,11 @@
     	self.puttyP = true
     	self.game.pause()
     	self.update()
+    	setTimeout(function(){
+    		self.goon()
+    	},5000)
     }
     this.noteFun = function(id) {
-    	if (id == 1) {
-    		self.notes.push({noteClass: "animated fadeInUp",noteNum: parseInt(Math.random()*4)+1})
-    	}
-    	if (id == 15) {
-    		self.notes.push({noteClass: "animated fadeInUp",noteNum: "egg"})
-    	}
-    	if (id == 14) {
-    		self.notes.push({noteClass: "animated fadeInUp",noteNum: "cookie"})
-    	}
     	if (id >= 2 && id <= 5) {
     		self.notes.push({noteClass: "animated fadeInUp",noteNum: "vegetables"})
     	}
@@ -191,8 +186,17 @@
     	if (id >= 10 && id <= 13) {
     		self.notes.push({noteClass: "animated fadeInUp",noteNum: "meat"})
     	}
+    	if (id == 1) {
+    		self.notes.push({noteClass: "animated fadeInUp",noteNum: parseInt(Math.random()*4)+1})
+    	}
+    	if (id == 15) {
+    		self.notes.push({noteClass: "animated fadeInUp",noteNum: "egg"})
+    	}
+    	if (id == 14) {
+    		self.notes.push({noteClass: "animated fadeInUp",noteNum: "cookie"})
+    	}
     	console.log("Milk 提示",id)
-    	self.update()
+    	//- self.update()
     	setTimeout(function(){
     		for(var i=0; i<=self.notes.length-1;i++) {
     			if (self.notes[i].noteClass == "animated fadeOutDown") {

@@ -104,16 +104,16 @@ class Game
 		blt = @food
 		enemy = @MyPlayer
 		unless (blt.x >= (enemy.x + enemy.w)) or ((blt.x + blt.w) <= enemy.x) or (blt.y >= (enemy.y + enemy.h)) or ((blt.y + blt.h) <= enemy.y)
-			if @food.x > 305 and @food.x < 610-@food.w
-				@food.x += enemy.w
-			if @food.x > 0 and @food.x < 305
-				@food.x -= enemy.w
+			# if @food.x > 305 and @food.x < 610-@food.w
+			# 	@food.x = 610 - @food.w - enemy.x
+			# if @food.x > 0 and @food.x < 305
+			@food.x = 610 - @food.w - enemy.w
 			@food.x = 0 if @food.x < 0
 			@food.x = 610-enemy.w if @food.x > 610-@food.w
-			if @food.y > 305 and @food.y < 610-@food.h
-				@food.y += enemy.h
-			if @food.y > 0 and @food.y < 305
-				@food.y -= enemy.h
+			# if @food.y > 305 and @food.y < 610-@food.h
+			# 	@food.y += enemy.h
+			# if @food.y > 0 and @food.y < 305
+			@food.y = 610 - @food.h - enemy.h
 			@food.y = 0 if @food.y < 0
 			@food.y = 610-@food.h if @food.y > 610-@food.h
 		enemy = @handicap
@@ -232,7 +232,7 @@ class Player
 			name = nameList[parseInt(Math.random()*(nameList.length-1))]
 		this.removeChild @player
 		@player = new PIXI.Sprite.fromImage(cdn+'img/game-p-'+name+'.png')
-		@player.scale = new PIXI.Point(0.8,0.8)
+		@player.scale = new PIXI.Point(0.65,0.65)
 		this.addChild @player
 		self = this
 		clearTimeout @superTime
