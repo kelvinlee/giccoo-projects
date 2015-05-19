@@ -29,8 +29,8 @@ class Game
 		bg = new PIXI.Sprite.fromImage(cdn+'img/game-bg.png')
 		@stage.addChild bg
 		@MyPlayer = new Player()
-		# @foodList = [1,14,15,parseInt(Math.random()*(5-2))+2,parseInt(Math.random()*(9-6))+6,parseInt(Math.random()*(13-10))+10,parseInt(Math.random()*(18-16))+16]
-		@foodList = [parseInt(Math.random()*(18-16))+16]
+		@foodList = [1,14,15,parseInt(Math.random()*(5-2))+2,parseInt(Math.random()*(9-6))+6,parseInt(Math.random()*(13-10))+10,parseInt(Math.random()*(18-16))+16]
+		# @foodList = [parseInt(Math.random()*(18-16))+16]
 		@food = new Food(@foodList)
 		@stage.addChild @food
 
