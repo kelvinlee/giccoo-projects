@@ -53,6 +53,9 @@ window.onload = ->
 		cdn+"img/game-item-13.png"
 		cdn+"img/game-item-14.png"
 		cdn+"img/game-item-15.png"
+		cdn+"img/game-item-16.png"
+		cdn+"img/game-item-17.png"
+		cdn+"img/game-item-18.png"
 		cdn+"img/game-item-2-old.png"
 		cdn+"img/game-item-3-old.png"
 		cdn+"img/game-item-4-old.png"
@@ -67,6 +70,9 @@ window.onload = ->
 		cdn+"img/game-item-13-old.png"
 		cdn+"img/game-item-14-old.png"
 		cdn+"img/game-item-15-old.png"
+		cdn+"img/game-item-16-old.png"
+		cdn+"img/game-item-17-old.png"
+		cdn+"img/game-item-18-old.png"
 		
 	]
 	loader.onComplete = ()->
