@@ -52,6 +52,7 @@
   <script>
     var self = this
     var tween = null
+    var retime = 0
     this.game = null
     this.gameoverP = false
     this.lastPage = false
@@ -98,7 +99,7 @@
     this.root.addEventListener("touchmove",this.move.bind(this))
     this.root.addEventListener("touchend",this.end.bind(this))
     this.build = function(){
-    	$("#Curtain").html("")
+    	$("#Curtain canvas").remove()
     	self.game = new Game("eat-world","Curtain",this.scoreFun.bind(this),this.noteFun.bind(this),this.puttyFun.bind(this),this.gameover.bind(this))
     }
     this.gameover = function(list) {
@@ -143,7 +144,13 @@
     	self.update()
     }
     resetGame() {
+    	//- window.location.reload()
     	if (self.game == null) {return false}
+    	if (retime >= 3) {
+    		window.location.reload()
+    		return ''
+    	}
+    	retime++
     	self.game = null
     	self.gameoverP = false
     	self.lastPage = false
@@ -156,11 +163,11 @@
     	self.milk = 0
     	self.overtitle = 1
     	self.puttyList = []
-    	$("#Curtain").html("")
+    	$("#Curtain canvas").remove()
     	self.update()
     	setTimeout(function(){
     		self.build()
-    	},500)
+    	},1000)
     }
     this.puttyFun = function(list) {
     	console.log("彩蛋",list)

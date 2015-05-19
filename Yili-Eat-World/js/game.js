@@ -24,7 +24,7 @@ Game = (function() {
     bg = new PIXI.Sprite.fromImage(cdn + 'img/game-bg.png');
     this.stage.addChild(bg);
     this.MyPlayer = new Player();
-    this.foodList = [1, 14, 15, parseInt(Math.random() * (5 - 2)) + 2, parseInt(Math.random() * (9 - 6)) + 6, parseInt(Math.random() * (13 - 10)) + 10];
+    this.foodList = [1, 14, 15, parseInt(Math.random() * (5 - 2)) + 2, parseInt(Math.random() * (9 - 6)) + 6, parseInt(Math.random() * (13 - 10)) + 10, parseInt(Math.random() * (18 - 16)) + 16];
     this.food = new Food(this.foodList);
     this.stage.addChild(this.food);
     this.handicap = new PIXI.Sprite.fromImage(cdn + 'img/handicap.png');
@@ -104,7 +104,7 @@ Game = (function() {
       }
     }
     console.log(eggs, this.eat);
-    if (eggs >= this.foodList.length && (this.puttyFun != null)) {
+    if (eggs >= this.foodList.length - 1 && (this.puttyFun != null)) {
       this.puttyFun(this.eat);
       this.puttyFun = null;
     }
@@ -138,8 +138,7 @@ Game = (function() {
     }
     enemy = this.handicap;
     if (!((blt.x >= (enemy.x + enemy.w)) || ((blt.x + blt.w) <= enemy.x) || (blt.y >= (enemy.y + enemy.h)) || ((blt.y + blt.h) <= enemy.y))) {
-      console.log(this.food.x, this.food.y);
-      if (this.food.x > 305 && this.food.x < 610 - this.food.w) {
+      if (this.food.x >= 305 && this.food.x <= 610 - this.food.w) {
         this.food.x += this.handicap.x - this.handicap.w;
       }
       if (this.food.x > 0 && this.food.x < 305) {
@@ -163,7 +162,6 @@ Game = (function() {
       if (this.food.y > 610 - this.food.h) {
         this.food.y = 610 - this.food.h;
       }
-      console.log(this.food.x, this.food.y);
     }
     return this.stage.addChild(this.food);
   };
@@ -244,7 +242,7 @@ Player = (function() {
     this.name = name1;
     PIXI.Sprite.call(this);
     self = this;
-    this.size = 150 * 0.8;
+    this.size = 150 * 0.65;
     this.maxSpeed = 400;
     this.speed = 100;
     this.speedGrow = 0.1;
@@ -256,13 +254,15 @@ Player = (function() {
     this.player.scale = new PIXI.Point(0.65, 0.65);
     this.addChild(this.player);
     console.log("add body", this.player.width, this.width);
+    this.player.x = -10;
+    this.player.y = -10;
     this.x = 610 / 2 - this.size / 2;
     this.y = 610 / 2 - this.size / 2;
     this.starX = this.x;
     this.starY = this.y;
     this.starMoveTime = new Date().getTime();
-    this.w = this.player.width;
-    this.h = this.player.height;
+    this.w = this.player.width - 20;
+    this.h = this.player.height - 30;
   }
 
   Player.prototype = Object.create(PIXI.Sprite.prototype);
@@ -385,6 +385,9 @@ Food = (function() {
     }
     if (this.id === 10 || this.id === 11 || this.id === 12 || this.id === 13) {
       this.score = 15;
+    }
+    if (this.id === 16 || this.id === 17 || this.id === 18) {
+      this.score = 11;
     }
     if (this.id === 14) {
       this.score = 10;

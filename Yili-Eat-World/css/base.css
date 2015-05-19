@@ -1021,13 +1021,15 @@ body {
     position: absolute;
     top: 0px;
     left: 0px; }
+  .firstpage .cp .cp-4 {
+    margin-top: -5%; }
   .firstpage .cp .cp-w {
-    width: 25%;
+    width: 18.75%;
     margin: 0 auto;
-    margin-right: 15%;
-    margin-top: -10%; }
+    margin-right: 28%;
+    margin-top: -12%; }
     .iphone4 .firstpage .cp .cp-w {
-      width: 25%; }
+      width: 18.75%; }
 .firstpage .items {
   position: absolute;
   bottom: 15%;
@@ -1063,8 +1065,8 @@ body {
       bottom: 18%;
       left: 4%; }
     .firstpage .items .item.item-6 {
-      bottom: 2%;
-      left: 30%; }
+      bottom: 42%;
+      left: 2%; }
 .firstpage .button {
   position: absolute;
   bottom: 0px;
@@ -1211,10 +1213,11 @@ body {
     margin-top: 2%;
     padding: 0 10%; }
     .active-over .over-list .content .item {
-      width: 33%;
-      display: inline-block; }
+      width: 25%;
+      display: inline-block;
+      box-sizing: border-box; }
       .active-over .over-list .content .item .icon-item {
-        width: 33%;
+        width: 50%;
         display: inline-block;
         position: relative;
         vertical-align: top; }
@@ -1223,6 +1226,7 @@ body {
         top: 35%;
         right: -80%;
         display: inline-block;
+        font-size: 0.8rem;
         vertical-align: bottom; }
   .active-over .over-note {
     width: 100%;

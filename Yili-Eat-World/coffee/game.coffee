@@ -29,7 +29,7 @@ class Game
 		bg = new PIXI.Sprite.fromImage(cdn+'img/game-bg.png')
 		@stage.addChild bg
 		@MyPlayer = new Player()
-		@foodList = [1,14,15,parseInt(Math.random()*(5-2))+2,parseInt(Math.random()*(9-6))+6,parseInt(Math.random()*(13-10))+10]
+		@foodList = [1,14,15,parseInt(Math.random()*(5-2))+2,parseInt(Math.random()*(9-6))+6,parseInt(Math.random()*(13-10))+10,parseInt(Math.random()*(18-16))+16]
 		@food = new Food(@foodList)
 		@stage.addChild @food
 
@@ -89,7 +89,7 @@ class Game
 			if @eat[egg] > 0
 				eggs++
 		console.log eggs,@eat
-		if eggs >= @foodList.length and @puttyFun?
+		if eggs >= @foodList.length-1 and @puttyFun?
 			@puttyFun(@eat)
 			@puttyFun = null
 		@score += @oldfood.score
@@ -119,8 +119,8 @@ class Game
 		enemy = @handicap
 		unless (blt.x >= (enemy.x + enemy.w)) or ((blt.x + blt.w) <= enemy.x) or (blt.y >= (enemy.y + enemy.h)) or ((blt.y + blt.h) <= enemy.y)
 			# alert "碰撞 墙壁"
-			console.log @food.x,@food.y
-			if @food.x > 305 and @food.x < 610-@food.w
+			# console.log @food.x,@food.y
+			if @food.x >= 305 and @food.x <= 610-@food.w
 				@food.x += @handicap.x-@handicap.w
 			if @food.x > 0 and @food.x < 305
 				@food.x -= @handicap.x+@handicap.w
@@ -132,7 +132,7 @@ class Game
 				@food.y = @handicap.y-@food.h
 			@food.y = 0 if @food.y < 0
 			@food.y = 610-@food.h if @food.y > 610-@food.h
-			console.log @food.x,@food.y
+			# console.log @food.x,@food.y
 
 		@stage.addChild @food
 	# 碰撞检测	
@@ -191,7 +191,7 @@ class Player
 
 		self = this
 
-		@size = 150*0.8
+		@size = 150*0.65
 		@maxSpeed = 400
 		@speed = 100
 		@speedGrow = 0.1
@@ -207,6 +207,8 @@ class Player
 		@player.scale = new PIXI.Point(0.65,0.65)
 		this.addChild @player
 		console.log "add body",@player.width,@width
+		@player.x = -10
+		@player.y = -10
 
 		@x = 610/2 - @size/2
 		@y = 610/2 - @size/2
@@ -215,8 +217,8 @@ class Player
 		@starMoveTime = new Date().getTime()
 		# @player.anchor.x = 0.5
 		# @player.anchor.y = 0.5
-		@w = @player.width
-		@h = @player.height
+		@w = @player.width - 20
+		@h = @player.height - 30
 		# self.scale = new PIXI.Point(0,0)
 		# @player.fromImage = "img/game-p-lufei.png"
 		# tween = new TWEEN.Tween({x:0}).to({x:1},1000).easing(TWEEN.Easing.Elastic.InOut).onUpdate ->
@@ -307,6 +309,8 @@ class Food
 			@score = 9
 		if @id is 10 or @id is 11 or @id is 12 or @id is 13
 			@score = 15
+		if @id is 16 or @id is 17 or @id is 18
+			@score = 11
 		if @id is 14
 			@score = 10
 		if @id is 15
