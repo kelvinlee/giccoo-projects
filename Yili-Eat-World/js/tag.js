@@ -177,6 +177,9 @@ riot.tag('game', '<div show="{!lastPage}" class="game-box"> <div if="{puttyP}" c
     	if (id >= 10 && id <= 13) {
     		self.notes.push({noteClass: "animated fadeInUp",noteNum: "meat"})
     	}
+    	if (id >= 16 && id <= 18) {
+    		self.notes.push({noteClass: "animated fadeInUp",noteNum: "nuts"})
+    	}
     	if (id == 1) {
     		self.notes.push({noteClass: "animated fadeInUp",noteNum: parseInt(Math.random()*4)+1})
     	}

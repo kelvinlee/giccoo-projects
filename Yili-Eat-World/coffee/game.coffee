@@ -29,7 +29,8 @@ class Game
 		bg = new PIXI.Sprite.fromImage(cdn+'img/game-bg.png')
 		@stage.addChild bg
 		@MyPlayer = new Player()
-		@foodList = [1,14,15,parseInt(Math.random()*(5-2))+2,parseInt(Math.random()*(9-6))+6,parseInt(Math.random()*(13-10))+10,parseInt(Math.random()*(18-16))+16]
+		# @foodList = [1,14,15,parseInt(Math.random()*(5-2))+2,parseInt(Math.random()*(9-6))+6,parseInt(Math.random()*(13-10))+10,parseInt(Math.random()*(18-16))+16]
+		@foodList = [parseInt(Math.random()*(18-16))+16]
 		@food = new Food(@foodList)
 		@stage.addChild @food
 
@@ -206,7 +207,7 @@ class Player
 		@player = new PIXI.Sprite.fromImage(cdn+'img/game-p-stomach.png')
 		@player.scale = new PIXI.Point(0.65,0.65)
 		this.addChild @player
-		console.log "add body",@player.width,@width
+		
 		@player.x = -10
 		@player.y = -10
 
@@ -217,14 +218,15 @@ class Player
 		@starMoveTime = new Date().getTime()
 		# @player.anchor.x = 0.5
 		# @player.anchor.y = 0.5
-		@w = @player.width - 20
-		@h = @player.height - 30
+		@w = @player.width - 10
+		@h = @player.height - 15
 		# self.scale = new PIXI.Point(0,0)
 		# @player.fromImage = "img/game-p-lufei.png"
 		# tween = new TWEEN.Tween({x:0}).to({x:1},1000).easing(TWEEN.Easing.Elastic.InOut).onUpdate ->
 		# 	self.scale = new PIXI.Point(this.x,this.x)
 		# .start().onComplete ->
 		# 	self.brithy = true
+		console.log "add body",@w,@h
 		
 	@:: = Object.create(PIXI.Sprite.prototype)
 	changeF: (normal = false)->
@@ -277,7 +279,7 @@ class Food
 		PIXI.Sprite.call @
 		# console.log random
 		@id = random[parseInt(Math.random()*(random.length))]
-		# console.log "id:",@id
+		console.log "id:",@id
 		if _food_history.length > 2 and _food_history[_food_history.length-1] isnt 1 and _food_history[_food_history.lenght-2] isnt 1
 			@id = 1
 		if _food_history.length > 20

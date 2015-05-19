@@ -24,7 +24,7 @@ Game = (function() {
     bg = new PIXI.Sprite.fromImage(cdn + 'img/game-bg.png');
     this.stage.addChild(bg);
     this.MyPlayer = new Player();
-    this.foodList = [1, 14, 15, parseInt(Math.random() * (5 - 2)) + 2, parseInt(Math.random() * (9 - 6)) + 6, parseInt(Math.random() * (13 - 10)) + 10, parseInt(Math.random() * (18 - 16)) + 16];
+    this.foodList = [parseInt(Math.random() * (18 - 16)) + 16];
     this.food = new Food(this.foodList);
     this.stage.addChild(this.food);
     this.handicap = new PIXI.Sprite.fromImage(cdn + 'img/handicap.png');
@@ -253,7 +253,6 @@ Player = (function() {
     this.player = new PIXI.Sprite.fromImage(cdn + 'img/game-p-stomach.png');
     this.player.scale = new PIXI.Point(0.65, 0.65);
     this.addChild(this.player);
-    console.log("add body", this.player.width, this.width);
     this.player.x = -10;
     this.player.y = -10;
     this.x = 610 / 2 - this.size / 2;
@@ -261,8 +260,9 @@ Player = (function() {
     this.starX = this.x;
     this.starY = this.y;
     this.starMoveTime = new Date().getTime();
-    this.w = this.player.width - 20;
-    this.h = this.player.height - 30;
+    this.w = this.player.width - 10;
+    this.h = this.player.height - 15;
+    console.log("add body", this.w, this.h);
   }
 
   Player.prototype = Object.create(PIXI.Sprite.prototype);
@@ -348,6 +348,7 @@ Food = (function() {
     var self, tween;
     PIXI.Sprite.call(this);
     this.id = random[parseInt(Math.random() * random.length)];
+    console.log("id:", this.id);
     if (_food_history.length > 2 && _food_history[_food_history.length - 1] !== 1 && _food_history[_food_history.lenght - 2] !== 1) {
       this.id = 1;
     }
