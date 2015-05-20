@@ -158,7 +158,7 @@ class Game
 			@food = null
 			@addFood()
 
-		if blt.x > (610-blt.size) or blt.x < 0 or blt.y > (610-blt.size) or blt.y < 0
+		if blt.x > (610-blt.w) or blt.x < 0 or blt.y > (610-blt.h) or blt.y < 0
 			@GameOver("墙")
 		if @handicap
 			enemy = @handicap
@@ -212,18 +212,18 @@ class Player
 		@player.scale = new PIXI.Point(0.65,0.65)
 		this.addChild @player
 		
-		@player.x = -10
-		@player.y = -10
+		# @player.x = -10
+		# @player.y = -10
 
-		@x = 610/2 - @size/2
-		@y = 610/2 - @size/2
+		@x = 610/2 - @player.width/2
+		@y = 610/2 - @player.height/2
 		@starX = @x
 		@starY = @y
 		@starMoveTime = new Date().getTime()
 		# @player.anchor.x = 0.5
 		# @player.anchor.y = 0.5
-		@w = @player.width - 10
-		@h = @player.height - 15
+		@w = @player.width
+		@h = @player.height
 		# self.scale = new PIXI.Point(0,0)
 		# @player.fromImage = "img/game-p-lufei.png"
 		# tween = new TWEEN.Tween({x:0}).to({x:1},1000).easing(TWEEN.Easing.Elastic.InOut).onUpdate ->
@@ -241,6 +241,8 @@ class Player
 		this.removeChild @player
 		@player = new PIXI.Sprite.fromImage(cdn+'img/game-p-'+name+'.png')
 		@player.scale = new PIXI.Point(0.65,0.65)
+		@w = @player.width
+		@h = @player.height
 		this.addChild @player
 		self = this
 		clearTimeout @superTime

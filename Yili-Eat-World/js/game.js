@@ -185,7 +185,7 @@ Game = (function() {
       this.food = null;
       this.addFood();
     }
-    if (blt.x > (610 - blt.size) || blt.x < 0 || blt.y > (610 - blt.size) || blt.y < 0) {
+    if (blt.x > (610 - blt.w) || blt.x < 0 || blt.y > (610 - blt.h) || blt.y < 0) {
       this.GameOver("墙");
     }
     if (this.handicap) {
@@ -253,15 +253,13 @@ Player = (function() {
     this.player = new PIXI.Sprite.fromImage(cdn + 'img/game-p-stomach.png');
     this.player.scale = new PIXI.Point(0.65, 0.65);
     this.addChild(this.player);
-    this.player.x = -10;
-    this.player.y = -10;
-    this.x = 610 / 2 - this.size / 2;
-    this.y = 610 / 2 - this.size / 2;
+    this.x = 610 / 2 - this.player.width / 2;
+    this.y = 610 / 2 - this.player.height / 2;
     this.starX = this.x;
     this.starY = this.y;
     this.starMoveTime = new Date().getTime();
-    this.w = this.player.width - 10;
-    this.h = this.player.height - 15;
+    this.w = this.player.width;
+    this.h = this.player.height;
     console.log("add body", this.w, this.h);
   }
 
@@ -280,6 +278,8 @@ Player = (function() {
     this.removeChild(this.player);
     this.player = new PIXI.Sprite.fromImage(cdn + 'img/game-p-' + name + '.png');
     this.player.scale = new PIXI.Point(0.65, 0.65);
+    this.w = this.player.width;
+    this.h = this.player.height;
     this.addChild(this.player);
     self = this;
     clearTimeout(this.superTime);
