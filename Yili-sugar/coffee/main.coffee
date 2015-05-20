@@ -1,5 +1,6 @@
 # @codekit-prepend "coffee/css3Prefix"
 # @codekit-prepend "coffee/plus"
+# @codekit-prepend "../../libs/coffee/requestanimation"
 # @codekit-prepend "../../libs/coffee/qrcode"
 
 Store = {}
@@ -41,11 +42,12 @@ loadStart = ->
 	now = 0
 	ep = $(".load-progress .n")
 	# return false
-	console.log(count)
+	# alert(count)
 	layzr = new Layzr
 		callback: (e)->
-			console.log e
+			# console.log e
 			now++
+			# alert(now)
 			# console.log parseInt (now/count)*100
 			if now >= count
 				clearInterval tm
