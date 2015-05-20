@@ -31,8 +31,8 @@ class Game
 		@MyPlayer = new Player()
 		@foodList = [1,14,15,parseInt(Math.random()*(5-2))+2,parseInt(Math.random()*(9-6))+6,parseInt(Math.random()*(13-10))+10,parseInt(Math.random()*(18-16))+16]
 		# @foodList = [parseInt(Math.random()*(18-16))+16]
-		@food = new Food(@foodList)
-		@stage.addChild @food
+		# @food = new Food(@foodList)
+
 
 		@handicap = new PIXI.Sprite.fromImage(cdn+'img/handicap.png')
 		@handicap.w = @handicap.width
@@ -55,6 +55,10 @@ class Game
 		@stage.addChild @handicap
 
 		@stage.addChild @MyPlayer
+
+		@addFood()
+		@stage.addChild @food
+		
 		# @createBoom 100,100
 		@update()
 	createBoom: (x,y)->

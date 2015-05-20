@@ -25,8 +25,6 @@ Game = (function() {
     this.stage.addChild(bg);
     this.MyPlayer = new Player();
     this.foodList = [1, 14, 15, parseInt(Math.random() * (5 - 2)) + 2, parseInt(Math.random() * (9 - 6)) + 6, parseInt(Math.random() * (13 - 10)) + 10, parseInt(Math.random() * (18 - 16)) + 16];
-    this.food = new Food(this.foodList);
-    this.stage.addChild(this.food);
     this.handicap = new PIXI.Sprite.fromImage(cdn + 'img/handicap.png');
     this.handicap.w = this.handicap.width;
     this.handicap.h = this.handicap.height;
@@ -49,6 +47,8 @@ Game = (function() {
     console.log("handicap:", this.handicap.x, this.handicap.y, this.handicap.width, this.handicap.height);
     this.stage.addChild(this.handicap);
     this.stage.addChild(this.MyPlayer);
+    this.addFood();
+    this.stage.addChild(this.food);
     this.update();
   }
 
