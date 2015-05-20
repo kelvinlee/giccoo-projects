@@ -53,13 +53,23 @@
     			console.log(p)
     			self.pop = true
     			self.update()
-    			setTimeout(function(){var layzr = new Layzr({selector: '[data-src]',attr:'data-src'})},10)
+    			setTimeout(function(){
+    				var timer = setTimeout(function(){backUp('data-src')},300)
+    				var layzr = new Layzr({selector: '[data-src]',attr:'data-src',callback:function(){
+    					clearTimeout(timer)
+    				}})
+    			},10)
     			return false
     		}
     		self.other = true
     		self.otherPage = p
     		self.update()
-    		setTimeout(function(){var layzr = new Layzr({selector: '[data-src]',attr:'data-src'})},10)
+    		setTimeout(function(){
+    			var timer = setTimeout(function(){backUp('data-src')},300)
+    			var layzr = new Layzr({selector: '[data-src]',attr:'data-src',callback:function(){
+    				clearTimeout(timer)
+    			}})
+    		},10)
     	}
     }
     backTop() {

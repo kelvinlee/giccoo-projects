@@ -1,15 +1,14 @@
 # @codekit-prepend "coffee/css3Prefix"
 # @codekit-prepend "coffee/plus"
-# @codekit-prepend "../../libs/coffee/requestanimation"
 # @codekit-prepend "../../libs/coffee/qrcode"
 
 Store = {}
 layzr = null
 tm = null
 
-debug = true
+debug = false
 cdn = ""
-cdn = "http://disk.giccoo.com/projects/Yili-Eat-World/" unless debug
+# cdn = "http://disk.giccoo.com/projects/Yili-Eat-World/" unless debug
 
 window.onload = ->
 	# $("#loading").hide()
@@ -41,28 +40,45 @@ loadStart = ->
 	count = $("[data-layzr]").length
 	now = 0
 	ep = $(".load-progress .n")
+	timer = setTimeout ->
+		backUp("data-layzr")
+		finished()
+	,2000
 	# return false
 	# alert(count)
-	layzr = new Layzr
-		callback: (e)->
-			# console.log e
-			now++
-			# alert(now)
-			# console.log parseInt (now/count)*100
-			if now >= count
-				clearInterval tm
-				ep.html parseInt((now/count)*100)
-				setTimeout ->
-					$("#loading").addClass("animated fadeOut")
-					$(".page.begin").removeClass("hide")
-					# Store.game.build()
-				,1500
-				setTimeout ->
-					$("#loading").hide()
-				,1000
+	try
+		layzr = new Layzr
+			selector: '[data-layzr]'
+			attr:'data-layzr'
+			callback: (e)->
+				# console.log e
+				clearTimeout timer
+				now++
+				# alert(now)
+				# console.log parseInt (now/count)*100
+				if now >= count
+					clearInterval tm
+					ep.html parseInt((now/count)*100)
+					finished()
+	catch e
+		console.log "error"
 
 # loadOther = ->
 # 	layzr = new Layzr
 # 		selector: '[data-src]'
 # 		attr:'data-src'
-
+finished = ->
+	setTimeout ->
+		$("#loading").addClass("animated fadeOut")
+		$(".page.begin").removeClass("hide")
+		# Store.game.build()
+	,1500
+	setTimeout ->
+		$("#loading").hide()
+	,1000		
+backUp = (data)->
+	$("["+data+"]").each ->
+		link = $(this).attr(data)
+		$(this).attr "src",link
+		$(this).removeAttr data
+	
