@@ -12,6 +12,13 @@ game
 			//- .goon(onclick="{goon}")
 				img(src="#{url}/Yili-Eat-World/img/reset-game.png")
 		.game-plate
+			.notes-msg
+				.note(each="{notes}",class="{noteClass}")
+					img(src="#{url}/Yili-Eat-World/img/note-bg.png")
+					.text
+						img(src="#{url}/Yili-Eat-World/img/note-content-{noteNum}.png")
+			.canvas
+				#Curtain
 			.plates
 				.plate.milknumber
 					img(data-layzr="#{url}/Yili-Eat-World/img/icon-box.png")
@@ -25,17 +32,11 @@ game
 						span.icon
 							img(data-layzr="#{url}/Yili-Eat-World/img/icon-note-score.png")
 						span.score {score}
-			.canvas
-				#Curtain
-			.notes-msg
-				.note(each="{notes}",class="{noteClass}")
-					img(src="#{url}/Yili-Eat-World/img/note-bg.png")
-					.text
-						img(src="#{url}/Yili-Eat-World/img/note-content-{noteNum}.png")
+			
 		.gameover.animated.fadeIn.duration-2(show="{gameoverP}")
 			img(data-layzr="#{url}/Yili-Eat-World/img/game-over.png")
 	.active-over(show="{lastPage}")
-		.plates.fadeInDown.animated.delay-3
+		//- .plates.fadeInDown.animated.delay-3
 			.plate
 				span.icon
 					img(data-layzr="#{url}/Yili-Eat-World/img/icon-note-milk.png")
@@ -44,12 +45,6 @@ game
 				span.icon
 					img(data-layzr="#{url}/Yili-Eat-World/img/icon-note-score.png")
 				span.milk {score}
-		.over-title.fadeInDown.animated.delay-5
-			img(data-layzr="#{url}/Yili-Eat-World/img/game-over-title.png")
-			.over-title-text.tada.animated.delay-9
-				img(src="#{url}/Yili-Eat-World/img/game-over-title-{overtitle}.png")
-		.over-regame.fadeInDown.animated.delay-7(onclick="{resetGame}")
-			img(data-layzr="#{url}/Yili-Eat-World/img/again.png")
 		.over-list.fadeInDown.animated.delay-9
 			.title
 				img(data-layzr="#{url}/Yili-Eat-World/img/game-over-all.png")
@@ -58,10 +53,18 @@ game
 					.icon-item
 						img(src="#{url}/Yili-Eat-World/img/game-item-{name}.png")
 						span X{value}
+		.over-score
+			p 获得 {score} 能量
+		.over-title.fadeInDown.animated.delay-5
+			img(data-layzr="#{url}/Yili-Eat-World/img/game-over-title.png")
+			.over-title-text.tada.animated.delay-9
+				img(src="#{url}/Yili-Eat-World/img/game-over-title-{overtitle}.png")
 		.over-note.fadeInDown.animated.delay-11
 			img(data-layzr="#{url}/Yili-Eat-World/img/game-over-note.png")
 		#share-icons.share-icons.fadeInDown.animated.delay-13
 			//- shareicon(site="Yili-Eat-World",title="世间险恶，吃货复活，我刚获得了213能量值。不服？来吃！",url="local",pic="http://disk.giccoo.com/projects/Yili-Eat-World/img/share-pc.jpg",icons="wechat,weibo,qweibo,douban")
+		.over-regame.fadeInDown.animated.delay-7(onclick="{resetGame}")
+			img(data-layzr="#{url}/Yili-Eat-World/img/again.png")
 
 	img(data-layzr="#{url}/Yili-Eat-World/img/game-over-plate.png",style="display:none")
 	img(data-layzr="#{url}/Yili-Eat-World/img/reset-game.png",style="display:none")

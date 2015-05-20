@@ -30,6 +30,7 @@
         </div>
         <div class="cp-3 animated fadeInLeft delay-8"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/cp-2-2.png"/>
           <div class="cp-4 animated fadeInLeft delay-10"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/cp-2-3.png"/></div>
+          <div class="cp-5 animated fadeInLeft delay-12"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/cp-2-4.png"/></div>
         </div>
         <div class="cp-w animated fadeInRight delay-15"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/stomach.png"/></div>
       </div>

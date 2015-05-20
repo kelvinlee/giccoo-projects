@@ -242,7 +242,7 @@ Player = (function() {
     this.name = name1;
     PIXI.Sprite.call(this);
     self = this;
-    this.size = 150 * 0.65;
+    this.size = 150 * 0.5;
     this.maxSpeed = 400;
     this.speed = 100;
     this.speedGrow = 0.1;
@@ -251,7 +251,7 @@ Player = (function() {
     this.brithy = true;
     this.superTime = null;
     this.player = new PIXI.Sprite.fromImage(cdn + 'img/game-p-stomach.png');
-    this.player.scale = new PIXI.Point(0.65, 0.65);
+    this.player.scale = new PIXI.Point(0.5, 0.5);
     this.addChild(this.player);
     this.x = 610 / 2 - this.player.width / 2;
     this.y = 610 / 2 - this.player.height / 2;
@@ -277,7 +277,7 @@ Player = (function() {
     }
     this.removeChild(this.player);
     this.player = new PIXI.Sprite.fromImage(cdn + 'img/game-p-' + name + '.png');
-    this.player.scale = new PIXI.Point(0.65, 0.65);
+    this.player.scale = new PIXI.Point(0.5, 0.5);
     this.w = this.player.width;
     this.h = this.player.height;
     this.addChild(this.player);
@@ -361,8 +361,6 @@ Food = (function() {
     this.Fainting = false;
     this.FaintingTime = 1000 + Math.random() * 4000;
     this.addChild(this.food);
-    this.anchor = new PIXI.Point(40, 50);
-    this.scale = new PIXI.Point(0, 0);
     self = this;
     self.w = self.food.width;
     self.h = self.food.height;
@@ -370,6 +368,7 @@ Food = (function() {
     this.y = Math.random() * (610 - this.food.height);
     this.anchor.x = 0.5;
     this.anchor.y = 0.5;
+    this.food.scale = new PIXI.Point(0.8, 0.8);
     tween = new TWEEN.Tween({
       x: 0
     }).to({

@@ -177,6 +177,7 @@ class Game
 	GameOver: (reason)->
 		@MyPlayer.dead = true
 		@pause()
+		# return false
 		@over(@eat)
 		console.log "死亡原因: ",reason
 	# 持续运行
@@ -196,7 +197,7 @@ class Player
 
 		self = this
 
-		@size = 150*0.65
+		@size = 150*0.5
 		@maxSpeed = 400
 		@speed = 100
 		@speedGrow = 0.1
@@ -209,7 +210,7 @@ class Player
 
 
 		@player = new PIXI.Sprite.fromImage(cdn+'img/game-p-stomach.png')
-		@player.scale = new PIXI.Point(0.65,0.65)
+		@player.scale = new PIXI.Point(0.5,0.5)
 		this.addChild @player
 		
 		# @player.x = -10
@@ -240,7 +241,7 @@ class Player
 			name = nameList[parseInt(Math.random()*(nameList.length))]
 		this.removeChild @player
 		@player = new PIXI.Sprite.fromImage(cdn+'img/game-p-'+name+'.png')
-		@player.scale = new PIXI.Point(0.65,0.65)
+		@player.scale = new PIXI.Point(0.5,0.5)
 		@w = @player.width
 		@h = @player.height
 		this.addChild @player
@@ -297,8 +298,8 @@ class Food
 		@FaintingTime = 1000+Math.random()*4000
 
 		this.addChild @food
-		this.anchor = new PIXI.Point(40,50)
-		this.scale = new PIXI.Point(0,0)
+		# this.anchor = new PIXI.Point(40,50)
+		# this.scale = new PIXI.Point(0,0)
 		self = this
 		self.w = self.food.width
 		self.h = self.food.height
@@ -306,6 +307,7 @@ class Food
 		this.y = Math.random()*(610 - @food.height)
 		this.anchor.x = 0.5
 		this.anchor.y = 0.5
+		@food.scale = new PIXI.Point(0.8,0.8)
 		# console.log "food brithy:",this.x,this.y
 		tween = new TWEEN.Tween({x:0}).to({x:1},1000).easing(TWEEN.Easing.Elastic.InOut).onUpdate ->
 			self.scale = new PIXI.Point(this.x,this.x)

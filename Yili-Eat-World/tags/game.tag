@@ -9,6 +9,14 @@
       </div>
     </div>
     <div class="game-plate">
+      <div class="notes-msg">
+        <div each="{notes}" class="note {noteClass}"><img src="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-bg.png"/>
+          <div class="text"><img src="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-{noteNum}.png"/></div>
+        </div>
+      </div>
+      <div class="canvas">
+        <div id="Curtain"></div>
+      </div>
       <div class="plates">
         <div class="plate milknumber"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/icon-box.png"/>
           <div class="text-content"><span class="icon"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/icon-note-milk.png"/></span><span class="milk">{milk}</span></div>
@@ -17,26 +25,10 @@
           <div class="text-content"><span class="icon"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/icon-note-score.png"/></span><span class="score">{score}</span></div>
         </div>
       </div>
-      <div class="canvas">
-        <div id="Curtain"></div>
-      </div>
-      <div class="notes-msg">
-        <div each="{notes}" class="note {noteClass}"><img src="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-bg.png"/>
-          <div class="text"><img src="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-{noteNum}.png"/></div>
-        </div>
-      </div>
     </div>
     <div show="{gameoverP}" class="gameover animated fadeIn duration-2"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over.png"/></div>
   </div>
   <div show="{lastPage}" class="active-over">
-    <div class="plates fadeInDown animated delay-3">
-      <div class="plate"><span class="icon"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/icon-note-milk.png"/></span><span class="milk">{milk}</span></div>
-      <div class="plate"><span class="icon"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/icon-note-score.png"/></span><span class="milk">{score}</span></div>
-    </div>
-    <div class="over-title fadeInDown animated delay-5"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-title.png"/>
-      <div class="over-title-text tada animated delay-9"><img src="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-title-{overtitle}.png"/></div>
-    </div>
-    <div onclick="{resetGame}" class="over-regame fadeInDown animated delay-7"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/again.png"/></div>
     <div class="over-list fadeInDown animated delay-9">
       <div class="title"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-all.png"/></div>
       <div class="content">
@@ -45,9 +37,16 @@
         </div>
       </div>
     </div>
+    <div class="over-score">
+      <p>获得 {score} 能量</p>
+    </div>
+    <div class="over-title fadeInDown animated delay-5"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-title.png"/>
+      <div class="over-title-text tada animated delay-9"><img src="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-title-{overtitle}.png"/></div>
+    </div>
     <div class="over-note fadeInDown animated delay-11"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-note.png"/></div>
     <div id="share-icons" class="share-icons fadeInDown animated delay-13">
     </div>
+    <div onclick="{resetGame}" class="over-regame fadeInDown animated delay-7"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/again.png"/></div>
   </div><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-plate.png" style="display:none"/><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/reset-game.png" style="display:none"/><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-1.png" style="display:none"/><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-2.png" style="display:none"/><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-3.png" style="display:none"/><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-4.png" style="display:none"/><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-5.png" style="display:none"/>
   <script>
     var self = this

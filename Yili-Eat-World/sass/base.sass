@@ -284,6 +284,8 @@ body
 		+tl
 		z-index: 99
 	.plates
+		+posa
+		+bl
 		+w
 		+text-center
 		+p(2% 0)
@@ -314,20 +316,20 @@ body
 						line-height: 160%
 					+medium-phone
 						line-height: 165%
-
-
 	.canvas
-		+p(2%)
+		+p(0 2%)
 		+box
 		+iw(640)
 		canvas
 			+w
 	.notes-msg
-		+posa
-		+bl
+		+posr
+		+p(27% 0 0 0)
 		+w
+		font-size: 0
+		z-index: -1
 		.note
-			$w: 450/640*100%
+			$w: 350/640*100%
 			+posa
 			+bl(0,(100% - $w)/2)
 			+w($w)
@@ -345,7 +347,7 @@ body
 			+show-inline
 			+w(30%)
 	.over-title
-		margin-top: -5%
+		// margin-top: -5%
 		+posr
 		// margin-bottom: 10%
 		.over-title-text
@@ -357,9 +359,14 @@ body
 		+posr
 		+iw(246)
 		z-index: 101
-		margin-top: -2%
-		margin-bottom: 2%
+		margin-top: 2%
+		// margin-bottom: 2%
+	.over-score
+		+text-center
+		p
+			+m(1% 0)
 	.over-list
+		+m(3% 0 0 0)
 		.content
 			+box
 			margin-top: 2%

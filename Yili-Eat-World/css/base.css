@@ -1119,6 +1119,9 @@ body {
   left: 0px;
   z-index: 99; }
 .game .plates {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
   width: 100%;
   text-align: center;
   padding: 2% 0; }
@@ -1160,7 +1163,7 @@ body {
           .game .plates .plate .text-content .milk, .game .plates .plate .text-content .score {
             line-height: 165%; } }
 .game .canvas {
-  padding: 2%;
+  padding: 0 2%;
   box-sizing: border-box;
   width: 100%;
   margin: 0 auto; }
@@ -1169,15 +1172,16 @@ body {
   .game .canvas canvas {
     width: 100%; }
 .game .notes-msg {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 100%; }
+  position: relative;
+  padding: 27% 0 0 0;
+  width: 100%;
+  font-size: 0;
+  z-index: -1; }
   .game .notes-msg .note {
     position: absolute;
     bottom: 0;
-    left: 14.84375%;
-    width: 70.3125%; }
+    left: 22.65625%;
+    width: 54.6875%; }
     .game .notes-msg .note .text {
       position: absolute;
       top: 0px;
@@ -1193,7 +1197,6 @@ body {
     display: inline-block;
     width: 30%; }
   .active-over .over-title {
-    margin-top: -5%;
     position: relative; }
     .active-over .over-title .over-title-text {
       position: absolute;
@@ -1204,30 +1207,35 @@ body {
     width: 38.4375%;
     margin: 0 auto;
     z-index: 101;
-    margin-top: -2%;
-    margin-bottom: 2%; }
+    margin-top: 2%; }
     .iphone4 .active-over .over-regame {
       width: 30.75%; }
-  .active-over .over-list .content {
-    box-sizing: border-box;
-    margin-top: 2%;
-    padding: 0 10%; }
-    .active-over .over-list .content .item {
-      width: 25%;
-      display: inline-block;
-      box-sizing: border-box; }
-      .active-over .over-list .content .item .icon-item {
-        width: 50%;
+  .active-over .over-score {
+    text-align: center; }
+    .active-over .over-score p {
+      margin: 1% 0; }
+  .active-over .over-list {
+    margin: 3% 0 0 0; }
+    .active-over .over-list .content {
+      box-sizing: border-box;
+      margin-top: 2%;
+      padding: 0 10%; }
+      .active-over .over-list .content .item {
+        width: 25%;
         display: inline-block;
-        position: relative;
-        vertical-align: top; }
-      .active-over .over-list .content .item span {
-        position: absolute;
-        top: 35%;
-        right: -80%;
-        display: inline-block;
-        font-size: 0.8rem;
-        vertical-align: bottom; }
+        box-sizing: border-box; }
+        .active-over .over-list .content .item .icon-item {
+          width: 50%;
+          display: inline-block;
+          position: relative;
+          vertical-align: top; }
+        .active-over .over-list .content .item span {
+          position: absolute;
+          top: 35%;
+          right: -80%;
+          display: inline-block;
+          font-size: 0.8rem;
+          vertical-align: bottom; }
   .active-over .over-note {
     width: 100%;
     margin: 0 auto; }
