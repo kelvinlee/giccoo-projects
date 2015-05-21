@@ -33,10 +33,11 @@ riot.tag('begin', '<div show="{firstpageShow}" class="firstpage {firstpageClass}
   
 });
 
-riot.tag('game', '<div show="{!lastPage}" class="game-box"> <div if="{puttyP}" class="putty animated fadeInLeft"><img src="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-plate.png"> <div class="content"> <div each="{puttyList}" class="item"> <div class="icon-item"><img riot-src="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-item-{name}.png"><span>X{value}</span></div> </div> </div> </div> <div class="game-plate"> <div class="notes-msg"> <div each="{notes}" class="note {noteClass}"><img src="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-bg.png"> <div class="text"><img riot-src="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-{noteNum}.png"></div> </div> </div> <div class="canvas"> <div id="Curtain"></div> </div> <div class="plates"> <div class="plate milknumber"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/icon-box.png"> <div class="text-content"><span class="icon"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/icon-note-milk.png"></span><span class="milk">{milk}</span></div> </div> <div class="plate score"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/icon-box.png"> <div class="text-content"><span class="icon"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/icon-note-score.png"></span><span class="score">{score}</span></div> </div> </div> </div> <div show="{gameoverP}" class="gameover animated fadeIn duration-2"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over.png"></div> </div> <div show="{lastPage}" class="active-over"> <div class="over-list fadeInDown animated delay-9"> <div class="title"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-all.png"></div> <div class="content"> <div each="{puttyList}" class="item"> <div class="icon-item"><img riot-src="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-item-{name}.png"><span>X{value}</span></div> </div> </div> </div> <div class="over-score"> <p>获得 {score} 能量</p> </div> <div class="over-title fadeInDown animated delay-5"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-title.png"> <div class="over-title-text tada animated delay-9"><img riot-src="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-title-{overtitle}.png"></div> </div> <div class="over-note fadeInDown animated delay-11"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-note.png"></div> <div id="share-icons" class="share-icons fadeInDown animated delay-13"> </div> <div onclick="{resetGame}" class="over-regame fadeInDown animated delay-7"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/again.png"></div> </div><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-plate.png" style="display:none"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/reset-game.png" style="display:none"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-1.png" style="display:none"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-2.png" style="display:none"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-3.png" style="display:none"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-4.png" style="display:none"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-5.png" style="display:none">', function(opts) {
+riot.tag('game', '<div show="{!lastPage}" class="game-box"> <div if="{puttyP}" class="putty animated fadeInLeft"><img src="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-plate.png"> <div class="content"> <div each="{puttyList}" class="item"> <div class="icon-item"><img riot-src="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-item-{name}.png"><span>X{value}</span></div> </div> </div> </div> <div class="game-plate"> <div class="notes-msg"> <div each="{notes}" class="note {noteClass}"><img src="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-bg.png"> <div class="text"><img riot-src="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-{noteNum}.png"></div> </div> </div> <div class="canvas"> <div id="Curtain"></div> </div> <div class="plates"> <div class="plate milknumber"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/icon-box.png"> <div class="text-content"><span class="icon"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/icon-note-milk.png"></span><span class="milk">{milk}</span></div> </div> <div class="plate score"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/icon-box.png"> <div class="text-content"><span class="icon"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/icon-note-score.png"></span><span class="score">{score}</span></div> </div> </div> </div> <div show="{gameoverP}" class="gameover animated fadeIn duration-2"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over.png"></div> </div> <div show="{lastPage}" class="active-over"> <div class="over-list fadeInDown animated delay-5"> <div class="title"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-all.png"></div> <div class="content"> <div each="{puttyList}" class="item"> <div class="icon-item"><img riot-src="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-item-{name}.png"><span>X{value}</span></div> </div> </div> </div> <div class="over-score fadeInDown animated delay-7"> <p>获得 {score} 能量</p> </div> <div class="over-title fadeInDown animated delay-9"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-title.png"> <div class="over-title-text tada animated delay-11"><img riot-src="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-title-{overtitle}.png"></div> </div> <div class="over-note fadeInDown animated delay-13"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-note.png"></div> <div id="share-icons" class="share-icons fadeInDown animated delay-15"> </div> <div onclick="{resetGame}" class="over-regame fadeInDown animated delay-17"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/again.png"></div> </div><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/game-over-plate.png" style="display:none"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/reset-game.png" style="display:none"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-1.png" style="display:none"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-2.png" style="display:none"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-3.png" style="display:none"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-4.png" style="display:none"><img data-layzr="http://disk.giccoo.com/projects/Yili-Eat-World/img/note-content-5.png" style="display:none">', function(opts) {
     var self = this
     var tween = null
     var retime = 0
+    this._timer = null
     this.game = null
     this.gameoverP = false
     this.lastPage = false
@@ -168,43 +169,49 @@ riot.tag('game', '<div show="{!lastPage}" class="game-box"> <div if="{puttyP}" c
     	},5000)
     }
     this.noteFun = function(id) {
+    	var note = {}
     	if (id >= 2 && id <= 5) {
-    		self.notes.push({noteClass: "animated fadeInUp",noteNum: "vegetables"})
+    		note = {noteClass: "animated fadeInUp",noteNum: "vegetables"}
     	}
     	if (id >= 6 && id <= 9) {
-    		self.notes.push({noteClass: "animated fadeInUp",noteNum: "fruit"})
+    		note = {noteClass: "animated fadeInUp",noteNum: "fruit"}
     	}
     	if (id >= 10 && id <= 13) {
-    		self.notes.push({noteClass: "animated fadeInUp",noteNum: "meat"})
+    		note = {noteClass: "animated fadeInUp",noteNum: "meat"}
     	}
     	if (id >= 16 && id <= 18) {
-    		self.notes.push({noteClass: "animated fadeInUp",noteNum: "nuts"})
+    		note = {noteClass: "animated fadeInUp",noteNum: "nuts"}
     	}
     	if (id == 1) {
-    		self.notes.push({noteClass: "animated fadeInUp",noteNum: parseInt(Math.random()*5)+1})
+    		note = {noteClass: "animated fadeInUp",noteNum: parseInt(Math.random()*5)+1}
     	}
     	if (id == 15) {
-    		self.notes.push({noteClass: "animated fadeInUp",noteNum: "egg"})
+    		note = {noteClass: "animated fadeInUp",noteNum: "egg"}
     	}
     	if (id == 14) {
-    		self.notes.push({noteClass: "animated fadeInUp",noteNum: "cookie"})
+    		note = {noteClass: "animated fadeInUp",noteNum: "cookie"}
     	}
     	console.log("Milk 提示",id)
 
-    	setTimeout(function(){
-    		for(var i=0; i<=self.notes.length-1;i++) {
-    			if (self.notes[i].noteClass == "animated fadeOutDown") {
-    				self.notes.clean(self.notes[i])
-    				break
-    			}
-    		}
-    		for(var i=0; i<=self.notes.length-1;i++) {
-    			if (self.notes[i].noteClass == "animated fadeInUp"){
-    				self.notes[i].noteClass = "animated fadeOutDown"
-    				self.update()
-    				break
-    			}
-    		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    	clearTimeout(self._timer)
+    	$(".notes-msg",self.root).html('<div class="note '+note.noteClass+'"><img src="/Yili-Eat-World/img/note-bg.png" /><div class="text"><img src="/Yili-Eat-World/img/note-content-'+note.noteNum+'.png" /></div></div>')
+    	self._timer = setTimeout(function(){
+    		$(".notes-msg",self.root).html("")
     	},3500)
     }
     this.scoreFun = function() {

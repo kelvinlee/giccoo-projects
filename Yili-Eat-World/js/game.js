@@ -411,6 +411,7 @@ Food = (function() {
         this.Fainting = true;
         self.removeChild(self.food);
         self.food = new PIXI.Sprite.fromImage(cdn + 'img/game-item-' + self.id + '-old.png');
+        self.food.scale = new PIXI.Point(0.8, 0.8);
         self.addChild(self.food);
         return self.score = parseInt(self.score / 2);
       }
