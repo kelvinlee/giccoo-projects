@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+ <head>
+ 	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>我与o.b.棉条的第一次亲密接触</title>
+    <link rel="stylesheet" href="css/myindex.css">
+    <link rel="stylesheet" href="css/parallax.css" />
+    <link rel="stylesheet" href="css/parallax-animation.css" />
+   
+ </head>
+ <body>
+ 	<div class="main">
+ 		<div class="header"><img src="img/header.png"></div>
+ 		<div class="wrapper">
+      <div class="pages">
+        <!-- 第一屏 -->
+        <section class="page">
+            <div class="firstPage"><img src="img/firstPage.png">
+              <div id="downIcon"><img src="img/down_icon.png"></div>
+            </div>
+        </section>
+
+        <!-- 第二屏 -->
+        <section class="page">
+            <div class="movie">
+             <ul class="list">
+               <li>
+                 <div class="title"><img src="img/title2.jpg"></a></div>
+                  <div class="contss clearfix">
+                    <div class="image"><a href="http://movie.douban.com/subject/3073073/"><img src="img/cover2.jpg"></a></div>
+                    <div class="textshow">
+                      <h2>
+                        <label>导演:</label>凯瑞·福永
+                      </h2>
+                      <h2>
+                        <label>编剧:</label>夏洛蒂·勃朗特 / Moira Buffini
+                      </h2>
+                      <h2>
+                        <label>主演:</label>迈克尔·法斯宾德 / 米娅·华希科沃斯卡 / 杰米·贝尔 / 莎莉·霍金斯 / 克雷格·罗伯兹 
+                      </h2>
+                    </div>
+                  </div>
+                  <div class="prize clearfix">
+                    <p>华丽唯美的服装和充满古典气息的配乐，共同构成了这部复古英伦小清新，第十八次被翻拍的《简爱》依然让人心动</p>
+                  </div>
+                  <div class="views clearfix">
+                    <p>特别喜欢这一版本，回忆的点切入很好，有新意。男女主角都不错尤其女主的情绪和表情太到位太简爱了。世界上简爱常有而罗先生不常有，这世界欠着太多罗先生了。——深海的心</p>
+                    <p>灰色调里的灰姑娘有一张苍白的脸，她不漂亮，但她的倔强令人难忘；新版有新版的优势，画面很精致，镜头舒服极了。 ——芦哲峰</p>
+                    <p>我喜欢那句话，是你的，总有一天会回来... ——娅</p>
+                  </div>
+               </li>
+             </ul>
+            </div>
+        </section>
+
+        <!-- 第三屏 -->
+        <section class="page">
+        </section>
+      </div>
+      
+    </div>
+ 	</div>
+ 	<script src="js/stickUp.min.js"></script>
+  <script src="js/zepto.min.js"></script>
+  <script src="js/parallax.js"></script>
+
+ 	<script>
+     //initiating jQuery
+            
+           $('.pages').parallax({
+            direction: 'vertical',  // horizontal (水平翻页)
+            swipeAnim: 'cover',   // cover (切换效果)
+            drag:      true,    // 是否允许拖拽 (若 false 则只有在 touchend 之后才会翻页)
+            loading:   false,   // 有无加载页
+            indicator: false,   // 有无指示点
+            arrow:     false,   // 有无指示箭头
+            /*
+             * 翻页后立即执行
+             * {int}    index: 第几页
+             * {DOMElement} element: 当前页节点
+             * {String}   directation: forward(前翻)、backward(后翻)、stay(保持原页)
+             */
+            onchange: function(index, element, direction) {
+              // code here...
+              // console.log(index, element, direction);
+            },
+            /*
+             * 横竖屏检测
+             * {String}   orientation: landscape、protrait
+             */
+            orientationchange: function(orientation) {
+              // console.log(orientation);
+            }
+          });
+  </script>
+  <script type="text/javascript">
+    jQuery(function($) {
+              $(document).ready( function() {
+                //enabling stickUp on the '.navbar-wrapper' class
+                $('.header').stickUp();
+              });
+            });
+
+  </script>
+ </body>
+</html>
