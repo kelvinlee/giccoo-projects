@@ -487,19 +487,23 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
 
     // 事件代理绑定
     // ==============================
-
+    var _stop = false
     $(document)
         .on('touchstart', '.page', function(e) {
+            console.log("start")
+            if (_stop) {return false}
             onStart(e.changedTouches[0]);
         })
         .on('touchmove', '.page', function(e) {
+            if (_stop) {return false}
             onMove(e.changedTouches[0]);
         })
         .on('touchend', '.page', function(e) {
+            if (_stop) {return false}
             onEnd(e.changedTouches[0]);
         })
         .on('webkitAnimationEnd webkitTransitionEnd', '.pages', function() {
-
+            if (_stop) {return false}
 			if (direction !== 'stay') {
 				setTimeout(function() {
 	                $(".back").hide().removeClass("back");
@@ -511,6 +515,11 @@ if (typeof Zepto === 'undefined') { throw new Error('Parallax.js\'s script requi
 	            options.onchange(curPage, $pageArr[curPage], direction);  // 执行回调函数
 	            animShow();
 			}
+            if ($(".page.current").data("id")==2) {
+                $(document).off("touchstart")
+                $(document).off("touchmove")
+                $(document).off("touchend")
+            }
             
         });
 
