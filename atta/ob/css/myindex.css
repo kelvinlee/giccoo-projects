@@ -121,7 +121,7 @@ body {
     width: 100%;
     margin: 0 auto; }
     .iphone4 .firstPage #page {
-      width: 62%; }
+      width: 60%; }
   .firstPage #downIcon {
     width: 7.96875%;
     margin: 0 auto;
@@ -173,7 +173,7 @@ body {
 
 .btn1 {
   position: relative;
-  top: 8%;
+  top: 12%;
   width: 64.6875%;
   margin: 0 auto;
   z-index: 2; }
@@ -182,7 +182,7 @@ body {
 
 .btn2 {
   position: relative;
-  top: 10%;
+  top: 13%;
   width: 64.6875%;
   height: 20%;
   margin: 0 auto;
