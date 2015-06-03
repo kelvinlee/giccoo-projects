@@ -118,13 +118,14 @@ body {
   padding-top: 12%;
   text-align: center; }
   .firstPage #page {
-    width: 84.6875%;
+    width: 100%;
     margin: 0 auto; }
     .iphone4 .firstPage #page {
-      width: 67.75%; }
+      width: 62%; }
   .firstPage #downIcon {
     width: 7.96875%;
     margin: 0 auto;
+    margin-top: 5%;
     text-align: center; }
     .iphone4 .firstPage #downIcon {
       width: 6.375%; }
@@ -181,9 +182,12 @@ body {
 
 .btn2 {
   position: relative;
-  top: 8%;
+  top: 10%;
   width: 64.6875%;
+  height: 20%;
   margin: 0 auto;
+  /*margin-bottom: 5%;*/
+  padding-top: 10%
   z-index: 2; }
   .iphone4 .btn2 {
     width: 51.75%; }
