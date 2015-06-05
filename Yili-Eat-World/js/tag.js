@@ -103,7 +103,7 @@ riot.tag('game', '<div show="{!lastPage}" class="game-box"> <div if="{puttyP}" c
     	}
     	var name = nameList[self.overtitle]
     	var howmany = parseInt(self.score/300*100)
-    	var number = parseInt((new Date().getTime() - new Date(1431878400000).getTime()) / 1000 / 60 * 4000/(24*60))
+    	var number = parseInt((new Date().getTime() - new Date(1431878400000).getTime()) / 1000 / 60 * 5000/(24*60))
     	howmany = howmany>99? 99 : howmany < 1 ? 1 : howmany
 
     	riot.mount("div#share-icons","shareicon",{
