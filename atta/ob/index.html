@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+ <head>
+ 	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>我与o.b.棉条的第一次亲密接触</title>
+    <link rel="stylesheet" href="css/parallax.css" />
+    <link rel="stylesheet" href="css/parallax-animation.css" />
+    <link rel="stylesheet" href="css/myindex.css">
+   
+ </head>
+ <body>
+ 	<div class="main">
+ 		<div class="header"><img src="img/header.png"></div>
+ 		<div class="wrapper">
+      <div class="pages">
+        <!-- 第一屏 -->
+        <section class="page">
+            <div class="firstPage">
+              <div id="page"><img src="img/firstPage.png"></div>
+              <div id="downIcon"><img src="img/down_icon.png"></div>
+            </div>
+        </section>
+
+        <!-- 第二屏 -->
+        <section class="page mycontent">
+          <div class="manhua">
+            <img src="img/manhua.jpg" alt="">
+          </div>
+          <div class="question1">
+           <ul class="list">
+             <li>
+                <div class="questionBox1">
+                  <img src="img/question1.png">
+                </div>
+             </li>
+             <li>
+                <div class="questionBox1">
+                  <img src="img/question2.png">
+                </div>
+             </li>
+             <li>
+                <div class="questionBox1">
+                  <img src="img/question3.png">
+                </div>
+             </li>
+             <li>
+                <div class="questionBox1">
+                  <img src="img/question4.png">
+                </div>
+             </li>
+           </ul>
+          </div>
+          
+          <div class="question2">
+           <ul class="list">
+             <li>
+                <div class="questionBox2">
+                  <img src="img/question5.png">
+                </div>
+             </li>
+             <li>
+                <div class="questionBox2">
+                  <img src="img/question6.png">
+                </div>
+             </li>
+             <li>
+                <div class="questionBox2">
+                  <img src="img/question7.png">
+                </div>
+             </li>
+             <li>
+                <div class="questionBox2">
+                  <img src="img/question8.png">
+                </div>
+             </li>
+           </ul>
+          </div>
+          
+          
+          <div class="question3">
+           <ul class="list">
+             <li>
+                <div class="questionBox3">
+                  <img src="img/question9.png">
+                </div>
+             </li>
+             <li>
+                <div class="questionBox3">
+                  <img src="img/question10.png">
+                </div>
+             </li>
+           </ul>
+          </div>
+            
+          <div class="last"><img src="img/last.png"></div>
+          <div class="btn1"><a href="#"><img src="img/btn1.png"></a></div>
+          <div class="btn2"><a href="#"><img src="img/btn2.png"></a></div>
+        </section>
+
+         <!-- 第5屏 -->
+       <!--  <section class="page">
+          <div class="last"><img src="img/last.png"></div>
+          <div class="btn1"><img src="img/btn1.png"></div>
+          <div class="btn2"><img src="img/btn2.png"></div>
+        </section> -->
+      </div>
+      
+    </div>
+    <div class="a0">
+      <img src="img/a1.png">
+    </div>
+    <div class="a1">
+      <img src="img/a2.png">
+    </div>
+    <div class="a2">
+      <img src="img/a3.png">
+    </div>
+    <div class="a3">
+      <img src="img/a4.png">
+    </div>
+    <div class="b0">
+      <img src="img/a5.png">
+    </div>
+    <div class="b1">
+      <img src="img/a6.png">
+    </div>
+    <div class="b2">
+      <img src="img/a7.png">
+    </div>
+    <div class="b3">
+      <img src="img/a8.png">
+    </div>
+    <div class="c0">
+      <img src="img/a9.png">
+    </div>
+    <div class="c1">
+      <img src="img/a10.png">
+    </div>
+ 	</div>
+  <script src="js/zepto.min.js"></script>
+  <script src="js/parallax.js"></script>
+ 	<script>
+     //initiating jQuery
+            
+           $('.pages').parallax({
+           
+            drag:      true,    // 是否允许拖拽 (若 false 则只有在 touchend 之后才会翻页)
+            loading:   false,   // 有无加载页
+            indicator: false,   // 有无指示点
+            arrow:     false,   // 有无指示箭头
+            /*
+             * 翻页后立即执行
+             * {int}    index: 第几页
+             * {DOMElement} element: 当前页节点
+             * {String}   directation: forward(前翻)、backward(后翻)、stay(保持原页)
+             */
+             onchange: function(i,e,d){
+                $('.questionBox1').click(function(){
+                  console.log($(this).parent().index());
+                  index = $(this).parent().index();
+                  $('.a'+index).show();
+                  $('.a'+index).click(function(){
+                      $('.a'+index).hide();
+                    });
+                });
+                  // console.log(111);
+                $('.questionBox2').click(function(){
+                  console.log($(this).parent().index());
+                  index = $(this).parent().index();
+                  $('.b'+index).show();
+                  $('.b'+index).click(function(){
+                      $('.b'+index).hide();
+                    });
+                });
+                  console.log(333);
+                $('.questionBox3').click(function(){
+                  console.log($(this).parent().index());
+                  index = $(this).parent().index();
+                  $('.c'+index).show();
+                  $('.c'+index).click(function(){
+                      $('.c'+index).hide();
+                    });
+                });
+             }
+            /*
+             * 横竖屏检测
+             * {String}   orientation: landscape、protrait
+             */
+            // orientationchange: function(orientation) {
+            //   // console.log(orientation);
+            // }
+          });
+  </script>
+ 
+ </body>
+</html>
