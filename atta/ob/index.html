@@ -13,19 +13,11 @@
  <body>
  	<div class="main">
  		<div class="header"><img src="img/header.png"></div>
- 		<div class="wrapper">
-      <div class="pages">
-        <!-- 第一屏 -->
-        <section class="page">
-            <div class="firstPage">
+    <div class="firstPage">
               <div id="page"><img src="img/firstPage.png"></div>
               <div id="downIcon"><img src="img/down_icon.png"></div>
             </div>
-        </section>
-
-        <!-- 第二屏 -->
-        <section class="page mycontent">
-          <div class="manhua">
+            <div class="manhua">
             <img src="img/manhua.jpg" alt="">
           </div>
           <div class="question1">
@@ -97,17 +89,9 @@
           <div class="last"><img src="img/last.png"></div>
           <div class="btn1"><a href="#"><img src="img/btn1.png"></a></div>
           <div class="btn2"><a href="#"><img src="img/btn2.png"></a></div>
-        </section>
-
-         <!-- 第5屏 -->
-       <!--  <section class="page">
-          <div class="last"><img src="img/last.png"></div>
-          <div class="btn1"><img src="img/btn1.png"></div>
-          <div class="btn2"><img src="img/btn2.png"></div>
-        </section> -->
-      </div>
-      
-    </div>
+ 		<div class="page">
+            
+        </div>
     <div class="a0">
       <img src="img/a1.png">
     </div>
@@ -139,24 +123,12 @@
       <img src="img/a10.png">
     </div>
  	</div>
+  <script type="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
   <script src="js/zepto.min.js"></script>
-  <script src="js/parallax.js"></script>
+
  	<script>
-     //initiating jQuery
-            
-           $('.pages').parallax({
-           
-            drag:      true,    // 是否允许拖拽 (若 false 则只有在 touchend 之后才会翻页)
-            loading:   false,   // 有无加载页
-            indicator: false,   // 有无指示点
-            arrow:     false,   // 有无指示箭头
-            /*
-             * 翻页后立即执行
-             * {int}    index: 第几页
-             * {DOMElement} element: 当前页节点
-             * {String}   directation: forward(前翻)、backward(后翻)、stay(保持原页)
-             */
-             onchange: function(i,e,d){
+
+          $(document).ready(function(){
                 $('.questionBox1').click(function(){
                   console.log($(this).parent().index());
                   index = $(this).parent().index();
@@ -183,16 +155,59 @@
                       $('.c'+index).hide();
                     });
                 });
-             }
-            /*
-             * 横竖屏检测
-             * {String}   orientation: landscape、protrait
-             */
-            // orientationchange: function(orientation) {
-            //   // console.log(orientation);
-            // }
           });
-  </script>
+
+  //    //initiating jQuery
+            
+  //          $('.pages').parallax({
+           
+  //           drag:      true,    // 是否允许拖拽 (若 false 则只有在 touchend 之后才会翻页)
+  //           loading:   false,   // 有无加载页
+  //           indicator: false,   // 有无指示点
+  //           arrow:     false,   // 有无指示箭头
+  //           /*
+  //            * 翻页后立即执行
+  //            * {int}    index: 第几页
+  //            * {DOMElement} element: 当前页节点
+  //            * {String}   directation: forward(前翻)、backward(后翻)、stay(保持原页)
+  //            */
+  //            onchange: function(i,e,d){
+  //               $('.questionBox1').click(function(){
+  //                 console.log($(this).parent().index());
+  //                 index = $(this).parent().index();
+  //                 $('.a'+index).show();
+  //                 $('.a'+index).click(function(){
+  //                     $('.a'+index).hide();
+  //                   });
+  //               });
+  //                 // console.log(111);
+  //               $('.questionBox2').click(function(){
+  //                 console.log($(this).parent().index());
+  //                 index = $(this).parent().index();
+  //                 $('.b'+index).show();
+  //                 $('.b'+index).click(function(){
+  //                     $('.b'+index).hide();
+  //                   });
+  //               });
+  //                 console.log(333);
+  //               $('.questionBox3').click(function(){
+  //                 console.log($(this).parent().index());
+  //                 index = $(this).parent().index();
+  //                 $('.c'+index).show();
+  //                 $('.c'+index).click(function(){
+  //                     $('.c'+index).hide();
+  //                   });
+  //               });
+  //            }
+  //           /*
+  //            * 横竖屏检测
+  //            * {String}   orientation: landscape、protrait
+  //            */
+  //           // orientationchange: function(orientation) {
+  //           //   // console.log(orientation);
+  //           // }
+  //         });
+  // </script>
  
  </body>
 </html>
