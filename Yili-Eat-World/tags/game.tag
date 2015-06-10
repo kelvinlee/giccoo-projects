@@ -118,7 +118,7 @@
     	}
     	var name = nameList[self.overtitle]
     	var howmany = parseInt(self.score/300*100)
-    	var number = parseInt((new Date().getTime() - new Date(1431878400000).getTime()) / 1000 / 60 * 6500/(24*60))
+    	var number = parseInt((new Date().getTime() - new Date(1431878400000).getTime()) / 1000 / 60 * 10700/(24*60))
     	howmany = howmany>99? 99 : howmany < 1 ? 1 : howmany
     	//- alert(number)
     	riot.mount("div#share-icons","shareicon",{
