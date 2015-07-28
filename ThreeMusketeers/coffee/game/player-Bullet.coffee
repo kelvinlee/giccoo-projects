@@ -1,8 +1,9 @@
 class Bullet
 	# 子弹需要有威力参数,控制大小.
-	constructor: (@Direction,@nums=0,@x=0,@y=0,@speed=450,@w = 30,@h = 2)->
+	constructor: (@name,@Direction,@nums=0,@x=0,@y=0,@speed=450,@w = 30,@h = 2)->
 		rotation = [2,0,-2,0]
 		@body = new createjs.Shape()
+		@body.fromid = @name
 		@body.name = "bullet"
 		@body.speed = @speed
 		@body.Defaultx = @x

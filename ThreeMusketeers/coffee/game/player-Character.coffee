@@ -64,7 +64,7 @@ class Player
 	# 如果人物是我操作的,给一个标示符
 	my: ->
 		return false unless userid is @name
-		@usernameLabel = new createjs.Text(@name, "12px Arial", "#ffffff")
+		@usernameLabel = new createjs.Text("Me", "12px Arial", "#ffffff")
 		@usernameLabel.y = -15
 		@usernameLabel.width = 200
 		@usernameLabel.x =  @width/2
@@ -124,8 +124,9 @@ class Player
 		y = @playerGroup.y+29/2
 		if not @Direction
 			x = @playerGroup.x - 20
-		B = new Bullet(@Direction,@mybullets,x,y)
+		B = new Bullet(@name,@Direction,@mybullets,x,y)
 		@game.bullteGround.addChild B.body
+		console.log B.body.fromid
 		@mybullets++
 		# console.log @playerSprite.currentAnimation
 		# @stage.update()
@@ -153,6 +154,9 @@ class Player
 			# 这里注意,如果是子弹就是位移计算. 如果不是子弹如刀等武器按照动作计算.
 			if blt.name is "bullet"
 				continue if blt.stop?
+
+				# console.log blt.fromid
+
 				card = (new Date().getTime()-blt.Birthday)/1000
 				if blt.Direction
 					blt.x = blt.Defaultx + card*blt.speed
@@ -165,6 +169,7 @@ class Player
 					removeBullet.push blt
 				else
 					@Collision {x:blt.x,y:blt.y,width:blt.width,height:blt.height,self:blt}
+					break
 			# 弧线子弹只计算位置和移除
 			# if blt.name is "bullet-Arc"
 			# 砍刀计算工作结束.
@@ -173,11 +178,15 @@ class Player
 			@game.bullteGround.removeChild blt
 	# 子弹碰撞计算.
 	Collision: (blt)->
-		# console.log blt
+		# console.log blt.self.fromid
+		if blt.self.stop
+			console.log "stop:",blt.self.stop
+			return false 
 		enemys = @getEnemy()
-		return false if not enemys?
+		return false unless enemys?
 		for name of enemys
-			continue if name is userid
+			# continue if name is userid
+			continue if name is blt.self.fromid
 			e = enemys[name]
 			continue if not @team? and e.team is @team
 			enemy = e.playerGroup
@@ -185,21 +194,24 @@ class Player
 			if (blt.x >= (enemy.x + enemy.width)) or ((blt.x + blt.width) <= enemy.x) or (blt.y >= (enemy.y + enemy.height)) or ((blt.y + blt.height) <= enemy.y)
 				continue
 			else
-				# console.log e.name
+				# alert blt.fromid+","+name
+				console.log e.name
+				console.log "stop:",blt.self.stop
 				blt.self.alpha = 0
 				blt.self.stop = true
 				# e.dead()
 				# console.log blt.self.Direction
-				@Hit e,blt.self.Direction
+				@Hit e,blt.self.fromid,blt.self.Direction
+				return true
 	# 获取所有用户数据
 	getEnemy: ->
 		return playerlist
 	# 发送我被击中的消息.
-	Hit: (e,Direction)->
-		# @name,击中了
-		sock.send "hit", {name:e.name,by:@name,Direction:Direction}
+	Hit: (e,fromid,Direction)->
+		# return false if fromid isnt @name
+		sock.send "hit", {name:e.name,by:fromid,Direction:Direction}
 	# 获得我被击中的消息.
-	gotHit: (nums,Direction)->
+	gotHit: (nums,Direction,name,time)->
 		@syncing = false
 		@floating = true
 
@@ -209,7 +221,7 @@ class Player
 		x = @playerGroup.x + (if Direction then wl else -wl)
 		hx = @playerGroup.x + @playerGroup.width/2
 		hy = @playerGroup.y + @playerGroup.height/2
-		console.log "Hit",@playerGroup.x, @playerGroup
+		console.log "gotHit",name,time
 		@game.note "疼",hx,hy
 		taget.to({x:x},300,createjs.Ease.cubicOut).call ->
 			tis.playerGroup.x = 600 if tis.playerGroup.x > 600

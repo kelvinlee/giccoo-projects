@@ -1,0 +1,1 @@
+define(["handlebars"],function(e){e=e||this.Handlebars;var n=".tpl";return{pluginBuilder:"./hbs-builder",load:function(t,i,l,a){var s=a.hbs&&a.hbs.templateExtension?a.hbs.templateExtension:n;i(["text!"+t+s],function(n){l(e.compile(n))})}}});

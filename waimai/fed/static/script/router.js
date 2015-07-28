@@ -1,0 +1,2 @@
+define(["utils/appFunc"],function(){var e={init:function(){$$(document).on("pageBeforeInit",function(n){var t=n.detail.page;e.pageBeforeInit(t)}),$$(document).on("pageAfterAnimation",function(n){var t=n.detail.page;e.pageAfterAnimation(t)}),mainView.router.reloadPage($CONFIG.tplPath+"/home.html")},pageBack:function(e){e.name},pageAfterAnimation:function(e){e.name,e.from,e.swipeBack},pageBeforeInit:function(e){{var n=e.name,t=e.query;e.from}require([webHost+"/fed/module/"+n+"/"+n+"Ctrl.js"],function(e){e.init(t)
+})}};return e});

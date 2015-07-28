@@ -32,11 +32,14 @@ app.controller 'MainController', ($rootScope, $scope)->
 		$(".loaded").removeClass "loaded"
 
 app.controller 'HomeController', ($rootScope, $scope)->
-	sock = new Socket "http://kelvin-air.local:8888", userid , ->
+	# url = if window.location.href.indexOf("giccoo") > -1 then "http://game.giccoo.com" else "http://kelvin-air.local:8888"
+	# url = "http://game.giccoo.com:80"
+	url = "http://kelvin-air.local:8888"
+	sock = new Socket url, userid , ->
 		# 定时发送同步请求.
-		setInterval ->
-			sync()
-		,100
+		# setInterval ->
+		# 	sync()
+		# ,100
 
 	sock.option.join = ->
 		return false if not this.name?
@@ -63,9 +66,11 @@ app.controller 'HomeController', ($rootScope, $scope)->
 		playerlist[this.name].Direction = this.Direction
 	sock.option.gotHit = ->
 		return false if not playerlist[this.name]?
-		playerlist[this.name].gotHit this.hit,this.Direction
+		console.log "gotHit server:",this
+		playerlist[this.name].gotHit this.hit,this.Direction,this.name,(new Date()).valueOf()
 		# console.log this
 	sock.option.sync = ->
+		return false
 		return false if not playerlist[this.name]?
 		playerlist[this.name].sync this
 		console.log "延迟",this.delay if this.delay?

@@ -1,0 +1,54 @@
+extends ../libs/jade/layout-clean
+block title
+	| 2014 中国年度经纪人评选
+block css
+	link(rel="stylesheet",href="/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css")
+
+block content
+	//- - url = "/"
+	.wechat-share-hide
+		img#share(src="http://disk.giccoo.com/projects/Yili-Eat-World/img/share.jpg")
+	#loading.loading.loaded
+		div.loading-logo
+			.loading-normal
+				img(src="#{url}libs/img/loading-normal.png")
+	.share-wechat(onclick="hideShareWechat()")
+	.wrap
+		//- playsound(src="#{url}Yili-Eat-World/mp3/bg.mp3",icon="true",icon-play="#{url}Yili-Eat-World/img/audio-play.png",icon-stop="#{url}Yili-Eat-World/img/audio-stop.png")
+		begin.page.begin.hide
+		//- game.page.game.hide
+
+	.qrcode#qrcode
+
+block js
+	- url = "/"
+	script.
+		var userinfo = [
+			{uid:"1",name:"徐敬惠",subtitle:"中国太平洋保险集团常务副总裁",abc:"B",avatar:"avatar",numbers:9998,description:"简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介,简介简介简介简介简介"},
+			{uid:"2",name:"徐敬惠",subtitle:"中国太平洋保险集团常务副总裁",abc:"B",avatar:"avatar",numbers:9998,description:"简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介,简介简介简介简介简介"},
+			{uid:"3",name:"徐敬惠",subtitle:"中国太平洋保险集团常务副总裁",abc:"C",avatar:"avatar",numbers:9998,description:"简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介,简介简介简介简介简介"},
+			{uid:"4",name:"徐敬惠",subtitle:"中国太平洋保险集团常务副总裁",abc:"D",avatar:"avatar",numbers:9998,description:"简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介,简介简介简介简介简介"},
+			{uid:"5",name:"徐敬惠",subtitle:"中国太平洋保险集团常务副总裁",abc:"E",avatar:"avatar",numbers:9998,description:"简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介,简介简介简介简介简介"},
+			{uid:"6",name:"徐敬惠",subtitle:"中国太平洋保险集团常务副总裁",abc:"F",avatar:"avatar",numbers:9998,description:"简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介,简介简介简介简介简介"},
+		];
+		var openid = "asdf";
+
+	//- script(src="/libs/js/min/localforage.min.js")
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
+	script(src="#{url}libs/js/min/riot.js")
+	script(src="#{url}libs/js/min/Zepto.min.js")
+	script(src="#{url}libs/js/min/fastclick.min.js")
+	//- script(src="/libs/js/min/cityData-min.js")
+	script(src="#{url}libs/js/min/layzr.min.js")
+	script(src="http://kelvin-air.local:8990/config")
+	script(src="js/tag.js")
+	script(src="js/main.js")
+	script.
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?97647f9cd8b3ab0dea00394d1c3ed3aa";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();

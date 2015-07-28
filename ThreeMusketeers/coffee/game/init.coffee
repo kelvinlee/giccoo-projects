@@ -36,7 +36,11 @@ class Game
 		return @players[name]
 	# 击中信息
 	note: (type="HIT",@x=0,@y=0,@size=20)->
-		name = parseInt Math.random()*100000
+		# name = parseInt Math.random()*100000
+		name = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace /[xy]/g, (c) ->
+			r = Math.random() * 16 | 0
+			v = if c == 'x' then r else r & 0x3 | 0x8
+			v.toString 16
 		@notes[name] = new Note type,name,@noteBackground,this,@x,@y,@size
 
 	test: ()->
