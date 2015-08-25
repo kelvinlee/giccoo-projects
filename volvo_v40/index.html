@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+
+   
+    
+    <style type="text/css" > 
+    
+    body{
+     font-family:"Microsoft Yahei";
+	 width:100%; height:2700px; margin:0 auto;
+     background-image: url(img/eg_bg.gif);
+     background-repeat: repeat}
+     .wrapper{ width:100%; height:729px; margin:0 auto;  background-image: url(img/top_bg.jpg);background-repeat: no-repeat;background-position:center top}
+	 .main_content{width:1041px;top:484px;border:1;margin:0 auto;text-align:center; z-index:100;position: absolute;left: 50%;margin-left: -541px;}
+     .main_content .mt35 {margin-top:30px;margin-right: 10px;}
+     .main_content .sp35 {margin-top:30px;margin-right: 10px;}
+      .main_content .tr35 {margin-top:21px;margin-right: 12px;}
+     .top_info{position:absolute;background-image:url(img/info_bg.png);background-repeat: norepeat;width:1000px;height:171px;left:41px;}
+     .info_text p1{position:absolute; top:16px;left:52px;text-align: left;width: 889px;line-height: 1.4;text-indent: 2em;color:#2b186b;font-size:14px}
+     .info_text p2{position:absolute; top:60px;left:52px;text-align: left;width: 889px;line-height: 1.4;text-indent: 2em;color:#2b186b;font-size:14px}
+     #la_logo{position:absolute; top:107px;left:800px;}
+     .five_location{position:absolute;width: 1000px;height:343px;top:171px;left:41px;}
+     .lacation_bar{width: 100px;height:343px;background-color: #2089ce;}
+     .lacation_bar img{position:absolute;top:26px;left: 18px;} 
+     .lacation_bar ul{position:absolute;top:80px;width:24px;height:240px;overflow:hidden;list-style:none;}
+     .lacation_bar ul li{float:right;display:inline;margin-left:4px;width:30px;height:240px;font-size:30px;line-height: 1.2;color:#fff;word-wrap:break-word;word-break:nomal;}
+     .location_img{position:absolute;width: 900px;height:343px;top:0px;left:100px}   
+      
+     .imglist{float:left;width:900px; height: 343px;}
+     .imglist a{float:left;background: #000;height: 343px;}
+     .imglist img{ filter:alpha(opacity=40)}
+     .imglist:hover img{
+         opacity:0.7;
+         filter:alpha(opacity=40);
+       }
+     .imglist:hover img:hover{
+        opacity:1;
+        filter:alpha(opacity=100);
+       } 
+     .imglist img{
+        -moz-transition: opacity .7s cubic-bezier(0.2, 0.4, 0.7, 0.8);
+        -webkit-transition: opacity .7s cubic-bezier(0.2, 0.4, 0.7, 0.8);
+        transition: opacity .7s cubic-bezier(0.2, 0.4, 0.7, 0.8);
+       }     
+    .food_content{position:absolute;width:1041px;height:373px;top:520px;left:0px;}
+    .content_bg{position:absolute;width: 1000px;height:361px;background-image:url(img/food_bg.png);top:12px;left:42px;z-index:101}
+    .food_icon{position:absolute;float: left; z-index:102;}
+    .content_title{position:absolute;color:#fff;font-size:30px;left: 78px;top: 16px;}
+    .tabs{position:absolute; z-index:101;left: 71px;top: 72px;width: 940px;height: 240px;}
+    
+    .tabs ul{position:absolute;right: 0px;top:-16px;width:190px;overflow:hidden;zoom:1;list-style-type:none;}
+    .tabs ul li {margin-bottom:1px;height:56px;line-height:15px;text-align:left;text-decoration: none;background-color:#f7941d;color:#603913;border:0px #bbb solid;border-bottom:none;}
+    .tabs ul li span{margin-left:10px;width:14px; height:24px; line-height:60px;}
+    .tabs ul li.fli {background-color:#f9af56;color:#fff;}
+   
+    #tab_con div {position:absolute;width:750px;height:240px;display:none;border:0px #bbb solid;border-top:none;z-index:103}
+    #tab_con div.fdiv {display:block;background-color:#f9af56;}
+    
+   .button_more { 
+    position:absolute; 
+    z-index:104;
+    left: 834px;
+    top: 266px;
+    width: 177px;
+    height: 46px;
+    font-size: 9pt; color: #003366;
+    border: 0px #93bee2 solid;
+    background-color: #ffffff;
+    font-style: normal ;}
+    
+    .button_more_shopping { 
+    position:absolute; 
+    z-index:104;
+    left: 836px;
+    top: 312px;
+    width: 177px;
+    height: 46px;
+    font-size: 9pt; color: #003366;
+    border: 0px #93bee2 solid;
+    background-color: #ffffff;
+    font-style: normal ;}
+    
+    .button_more_travel { 
+    position:absolute; 
+    z-index:104;
+    left: 836px;
+    top: 412px;
+    width: 177px;
+    height: 46px;
+    font-size: 9pt; color: #003366;
+    border: 0px #93bee2 solid;
+    background-color: #ffffff;
+    font-style: normal ;}
+    
+    
+    .hotel_content{position:absolute;width:1041px;height:373px;top:880px;left:0px;}
+    .content_hotel_bg{position:absolute;width: 1000px;height:361px;background-image:url(img/hotel_bg.png);top:12px;left:42px;z-index:101}
+    .hotel_icon{position:absolute;float: left; z-index:102;}
+    .content_title{position:absolute;color:#fff;font-size:30px;left: 78px;top: 16px;}
+    .Hoteltabs{position:absolute; z-index:101;left: 71px;top: 72px;width: 940px;height: 240px;}
+    
+    .Hoteltabs ul{position:absolute;right: 0px;top:-16px;width:190px;overflow:hidden;zoom:1;list-style-type:none;}
+    .Hoteltabs ul li {margin-bottom:1px;height:56px;line-height:15px;text-align:left;text-decoration: none;background-color:#c72e78;color:#ffbbdc;border:0px #bbb solid;border-bottom:none;}
+    .Hoteltabs ul li span{margin-left:10px;width:14px; height:24px; line-height:60px;}
+    .Hoteltabs ul li.H_fli {background-color:#d25893;color:#fff;}
+   
+    #hotel_tab_con div {position:absolute;width:750px;height:240px;display:none;border:0px #bbb solid;border-top:none;z-index:103}
+    #hotel_tab_con div.H_fdiv {display:block;background-color:#d25893;}
+    
+    
+    .shopping_content{position:absolute;width:1041px;height:402px;top:1241px;left:0px;}
+    .content_shopping_bg{position:absolute;width: 1000px;height:402px;background-image:url(img/shopping_bg.png);top:12px;left:42px;z-index:101}
+    .shopping_icon{position:absolute;float: left; z-index:102;}
+    .content_title{position:absolute;color:#fff;font-size:30px;left: 78px;top: 16px;}
+    .shoppingtabs{position:absolute; z-index:101;left: 71px;top: 72px;width: 940px;height: 240px;}
+   
+    #shopping_tab_con div {position:absolute;width:941px;height:233px;display:none;border:0px #bbb solid;border-top:none;z-index:103}
+    #shopping_tab_con div.shopdiv {display:block;background-color:#5cc8c1;}
+    
+    .travel_content{position:absolute;width:1041px;height:455px;top:1643px;left:0px;}
+    .content_travel_bg{position:absolute;width: 1000px;height:455px;background-color:#ff5a5a;top:12px;left:42px;z-index:101}
+    .travel_icon{position:absolute;float: left; z-index:103;}
+    .content_title{position:absolute;color:#fff;font-size:30px;left: 78px;top: 16px;}
+    .traveltabs{position:absolute; z-index:101;left: 71px;top: 72px;width: 940px;height: 329px;background-color:#ff7b7b;}
+    .tab01_pic01{position:absolute;left: 15px }
+    .tab01_pic02{position:absolute;left: 15px }
+    </style> 
+    
+   
+  </head>
+  
+  <body>
+
+    
+    <div  class="wrapper">
+        <div class="main_content">
+            <div class="top_info">
+               <div  class="info_text"> 
+                   <p1>    美国洛杉矶是美国西海岸第一大城市，坐落在美国西海岸加利福尼亚州南部，同时也是一个五花八门、包罗万象的城市。
+                           这里气候四季宜人三面环山，一面临海，拥有130多公里（81英里）的海岸线，因此，洛杉矶又被称为“天使之城”。</p1>
+                   <p2 >   洛杉矶，一座孕育梦想的城市，也成就了无数人的梦想。纯净的天空、茂密的棕榈林、蔚蓝的海岸和璀璨的好莱坞群星……白天活力四射夜晚妩媚动人。
+                           集万千宠爱于一身的洛杉矶，凝聚美国文化精髓，荟萃美食购物菁华，早已成为全球瞩目的焦点，一座不断缔造传奇的魅力之都。</p2>
+                </div>
+                <div id="la_logo">
+                    <img src="img/la_logo.png">
+                </div>
+            </div>
+            <div class="five_location">
+               <div class="lacation_bar">
+                   <img src="img/location_icon.png">
+                   <ul>
+                      <li>
+                         <p1>洛杉矶五大景点</p1>
+                      </li>
+                   </ul>
+               </div>
+               <div class="location_img">
+                  <div class="imglist">
+                    <a href="http://www.hellola.cn/members/ush?category=attractions&proname=top10-attractions" target=”_blank"><img src="img/location01.jpg"/></a>
+                    <a href="http://www.hellola.cn/members/rodeo-drive-beverly-hills?category=attractions&proname=top10-landmarks" target=”_blank"><img src="img/location02.jpg"/></a>
+                    <a href="http://www.hellola.cn/members/walt-disney-concert-hall?category=culture&proname=top10-cultural-experinces" target=”_blank"><img src="img/location03.jpg"/></a>
+                    <a href="http://www.hellola.cn/members/hollywood-walk-of-fame?category=culture&proname=discover-hollywood-car-free" target=”_blank"><img src="img/location04.jpg"/></a>
+                    <a href="http://www.hellola.cn/members/manhattan-beach" target=”_blank"><img src="img/location05.jpg"/></a>
+                  </div>
+                </div>
+            </div>
+            <div class="food_content">
+                 <div class="food_icon">
+                    <img src="img/foodIcon.png">
+                </div>
+                <div class="content_bg">
+                    <p1 class="content_title">洛杉矶美食</p1>
+                </div>
+                <div class="button_more">
+                    <input type="image"  src="img/button_food.jpg"/>
+                </div>
+                
+                <div class="tabs">
+                  <ul id="tab">
+                    <li class="fli"><span>洛杉矶最好吃的中国餐厅</span></li>
+                    <li><span>情人节浪漫餐厅</span></li>
+                    <li><span>名人钟爱的餐厅</span></li>
+                  </ul>
+                    <div id="tab_con">
+                      <div class="fdiv">
+                
+                             <a href="http://www.hellola.cn/members/shanghai-restaurant" target=”_blank"><img src="img/food_tab1_01.jpg" class="mt35"/></a>
+                             <a href="http://www.hellola.cn/members/duck-house" target=”_blank"><img src="img/food_tab1_02.jpg" class="mt35"/></a>
+                             <a href="http://www.hellola.cn/members/chengdu_taste" target=”_blank"><img src="img/food_tab1_03.jpg" class="mt35"/></a>    
+                             
+                      </div>
+                      <div>
+                             <a href="http://www.hellola.cn/members/vibrato-grill" target=”_blank"><img src="img/food_tab2_01.jpg" class="mt35"/></a>
+                             <a href="http://www.hellola.cn/members/caulfields" target=”_blank"><img src="img/food_tab2_02.jpg" class="mt35" /></a>
+                             <a href="http://www.hellola.cn/members/inn-of-the-seventh-ray" target=”_blank"><img src="img/food_tab2_03.jpg" class="mt35"/></a> 
+                      </div>
+                      <div>  <a href="http://www.hellola.cn/members/spago-wolfgang-puck" target=”_blank"><img src="img/food_tab3_01.jpg" class="mt35"/></a>
+                             <a href="http://www.hellola.cn/members/casa-vega" target=”_blank"><img src="img/food_tab3_02.jpg" class="mt35" /></a>
+                             <a href="http://www.hellola.cn/members/tavern" target=”_blank"><img src="img/food_tab3_03.jpg" class="mt35"/></a> 
+                     </div>
+                 </div>
+            </div>
+          </div>
+          
+          <div class="hotel_content">
+                 <div class="hotel_icon">
+                    <img src="img/hotelIcon.png">
+                </div>
+                <div class="content_hotel_bg">
+                    <p1 class="content_title">洛杉矶酒店</p1>
+                </div>
+                <div class="button_more">
+                    <input type="image"  src="img/button_hotel.jpg"/>
+                </div>
+                
+                <div class="Hoteltabs">
+                  <ul id="hotel_tab">
+                    <li class="H_fli"><span>洛杉矶MICE酒店推荐</span></li>
+                    <li><span>威尼斯海滩附近超值酒店</span></li>
+                    <li><span>环球影城邻近酒店指南</span></li>
+                  </ul>
+                    <div id="hotel_tab_con">
+                      <div class="H_fdiv">
+                
+                             <a href="http://www.hellola.cn/members/the-langham-huntington-pasadena-los-angeles" target=”_blank"><img src="img/hotel_tab1_01.jpg" class="mt35"/></a>
+                             <a href="http://www.hellola.cn/members/terranea-resort" target=”_blank"><img src="img/hotel_tab1_02.jpg" class="mt35"/></a>
+                             <a href="http://www.hellola.cn/members/intercontinental-los-angeles-century-city-at-beverly-hills" target=”_blank"><img src="img/hotel_tab1_03.jpg" class="mt35"/></a>      
+                      </div>
+                      <div>
+                             <a href="http://www.hellola.cn/members/hmmdr" target=”_blank"><img src="img/hotel_tab2_01.jpg" class="mt35"/></a>
+                             <a href="http://www.hellola.cn/members/bwp" target=”_blank"><img src="img/hotel_tab2_02.jpg" class="mt35" /></a>
+                             <a href="http://www.hellola.cn/members/inn-at-venicebeach" target=”_blank"><img src="img/hotel_tab2_03.jpg" class="mt35"/></a> 
+                      </div>
+                      <div>  <a href="http://www.hellola.cn/members/marriott-los-angeles-burbank-airport-hotel" target=”_blank"><img src="img/hotel_tab3_01.jpg" class="mt35"/></a>
+                             <a href="http://www.hellola.cn/members/the-beverly-garland" target=”_blank"><img src="img/hotel_tab3_02.jpg" class="mt35" /></a>
+                             <a href="http://www.hellola.cn/members/sheraton-universal-hotel" target=”_blank"><img src="img/hotel_tab3_03.jpg" class="mt35"/></a> 
+                     </div>
+                 </div>
+            </div>
+        </div>  
+        
+          <div class="shopping_content">
+                 <div class="shopping_icon">
+                    <img src="img/shoppingIcon.png">
+                </div>
+                <div class="content_shopping_bg">
+                    <p1 class="content_title">洛杉矶酒店</p1>
+                </div>
+                <div class="button_more_shopping">
+                    <input type="image"  src="img/button_shopping.jpg"/>
+                </div>
+                
+                <div class="shoppingtabs">
+            
+                    <div id="shopping_tab_con">
+                      <div class="shopdiv">
+                
+                             <a href="http://www.hellola.cn/members/hollywood-highland-center" target=”_blank"><img src="img/shopping01.jpg" class="sp35"/></a>
+                             <a href="http://www.hellola.cn/members/santa-monica-place-2-2" target=”_blank"><img src="img/shopping02.jpg" class="sp35"/></a>
+                             <a href="http://www.hellola.cn/members/third-street-promenade" target=”_blank"><img src="img/shopping03.jpg" class="sp35"/></a> 
+                             <a href="http://www.hellola.cn/members/lax-westfield" target=”_blank"><img src="img/shopping04.jpg" class="sp35"/></a>      
+                      </div>
+                      
+                 </div>
+              </div>
+           </div>
+           
+            <div class="travel_content">
+                 <div class="travel_icon">
+                    <img src="img/travelIcon.png">
+                </div>
+                <div class="content_travel_bg">
+                    <p1 class="content_title">洛杉矶酒店</p1>
+                </div>
+                <div class="button_more_travel">
+                    <a href="http://travel.qunar.com/travelbook/list/city/luoshanji-310189/hot-----1?sort=heat" target=”_blank"><input type="image"  src="img/button_travel.jpg"/></a>
+                </div>
+                
+                <div class="traveltabs">
+            
+                    <div id="travel_tab_con">
+                             <div class="travel_change">
+                                 
+                             </div>
+                             <div id="travel_tab01">
+                                  <div class="tab01_pic01">
+                                     <a href="http://travel.qunar.com/gonglve/2204854-luoshanji?cityId=310189#" target=”_blank"><img src="img/tab01_travel01.jpg" class="tr35"/></a>
+                                     <a href="http://travel.qunar.com/gonglve/494109-luoshanji?cityId=310189#" target=”_blank"><img src="img/tab01_travel02.jpg" class="tr35"/></a>
+                                     <a href="http://travel.qunar.com/gonglve/1473702-luoshanji?cityId=310189#!q=%E6%B4%9B%E6%9D%89%E7%9F%B6&ind=2 target=”_blank""><img src="img/tab01_travel03.jpg" class="tr35"/></a>
+                                   </div>
+                                   <div class="tab01_pic02">
+                                     <a href=" http://travel.qunar.com/gonglve/2708885-luoshanji?cityId=310189# " target=”_blank"><img src="img/tab02_travel01.jpg" class="tr35"/></a>
+                                     <a href="http://travel.qunar.com/gonglve/1900806-luoshanji?cityId=310189" target=”_blank"><img src="img/tab02_travel02.jpg" class="tr35"/></a>
+                                     <a href="http://travel.qunar.com/gonglve/2467880-luoshanji?cityId=310189#" target=”_blank"><img src="img/tab02_travel03.jpg" class="tr35"/></a>
+                                   </div>
+                             </div>              
+                  </div>
+              </div>
+           </div>  
+    </div>
+
+   <script type="text/javascript">
+       var tabs=document.getElementById("tab").getElementsByTagName("li");
+       var divs=document.getElementById("tab_con").getElementsByTagName("div");
+       for(var i=0;i<tabs.length;i++){
+         tabs[i].onmouseover=function(){change(this);}
+       }
+         function change(obj){
+       for(var i=0;i<tabs.length;i++)
+       {
+        if(tabs[i]==obj){
+        tabs[i].className="fli";
+        divs[i].className="fdiv";
+       }
+       else{
+        tabs[i].className="";
+        divs[i].className="";
+         }
+        }
+        }
+        
+        
+    //////////////
+       var htabs=document.getElementById("hotel_tab").getElementsByTagName("li");
+       var hdivs=document.getElementById("hotel_tab_con").getElementsByTagName("div");
+       for(var i=0;i<htabs.length;i++){
+         htabs[i].onmouseover=function(){Hchange(this);}
+       }
+         function Hchange(obj){
+       for(var i=0;i<htabs.length;i++)
+       {
+        if(htabs[i]==obj){
+        htabs[i].className="H_fli";
+        hdivs[i].className="H_fdiv";
+       }
+       else{
+        htabs[i].className="";
+        hdivs[i].className="";
+         }
+        }
+        }
+</script>
+  </body>
+</html>
