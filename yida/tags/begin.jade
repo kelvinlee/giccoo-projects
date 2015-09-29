@@ -1,0 +1,110 @@
+begin
+	- var url = "http://disk.giccoo.com/projects/"
+	//- - url = "/"
+	.firstpage(if="{firstpageShow}",class="{firstpageClass}")
+		parallax.pages
+			.page(each="{parent.kv}",class="{name}",up="{down}",down="{up}")
+				.kv.fadeIn.animated.delay-7
+					img(data-layzr="#{url}yida/img/{name}.jpg")
+				.texts
+					img.fadeInRight.animated.delay-8(data-layzr="#{url}yida/img/kv-text-1.png")
+					//- img.fadeInRight.animated.delay-8(data-layzr="http://i1.tietuku.com/502ccbc0bccfad98.png")
+					img.fadeInRight.animated.delay-9(data-layzr="#{url}yida/img/{name}-text.png")
+					img.fadeInRight.animated.delay-10(data-layzr="#{url}yida/img/kv-text-2.png")
+					img.fadeInRight.animated.delay-11(data-layzr="#{url}yida/img/kv-text-3.png")
+					//- img.fadeInRight.animated.delay-12(data-layzr="#{url}yida/img/kv-logo.png")
+					//- img.fadeInRight.animated.delay-10(data-layzr="http://i1.tietuku.com/694aa85346a53ce2.png")
+					//- img.fadeInRight.animated.delay-11(data-layzr="http://i1.tietuku.com/508a37db6a4e9132.png")
+					img.fadeInRight.animated.delay-12(data-layzr="#{url}yida/img/kv-logo.png")
+
+				.kv-name.fadeIn.animated.delay-7
+					img(data-layzr="#{url}yida/img/{name}-name.png")
+				a.normal.fadeInUp.animated.delay-5(href="https://oauth.immomo.com/oauth/authorize?response_type=code&client_id=mm7a12e355d5958001&state=abc")
+					//- img(data-layzr="#{url}yida/img/kv-normal-btn.png")
+					.bg
+						//- img(data-layzr="http://i3.tietuku.com/e521abe60be03076.png")
+						img(data-layzr="#{url}yida/img/kv-next-bg.png")
+					.text
+						.light
+							.flash
+								img(data-layzr="#{url}yida/img/kv-normal-btn.png")
+							img(data-layzr="#{url}yida/img/kv-normal-btn-normal.png")
+					
+				.private.fadeInUp.animated.delay-5
+					.bg
+						//- img(data-layzr="#{url}yida/img/kv-next-bg.png")
+						//- img(data-layzr="http://i3.tietuku.com/e521abe60be03076.png")
+						img(data-layzr="#{url}yida/img/kv-next-bg.png")
+					.text
+						.light
+							.flash
+								img(data-layzr="#{url}yida/img/kv-normal-btn.png")
+							img(data-layzr="#{url}yida/img/kv-normal-btn-normal.png")
+					.next-point
+						//- img(data-layzr="#{url}yida/img/kv-next-point.png")
+						.light
+							.flash
+								//- img(data-layzr="http://i3.tietuku.com/db68c3f48aeec444.png")
+								img(data-layzr="#{url}yida/img/kv-next-point.png")
+							img(src="#{url}yida/img/kv-next-point-normal.png")
+	.userpage(if="{userpageShow}")
+		.preview-info
+			.bg.fadeIn.animated.delay-3
+				img#previewImage(data-layzr="http://image.giccoo.com/momoDir/{userContent.image}@640w_60Q_1x.jpg")
+			.texts
+				.text-1.fadeInRight.animated.delay-6
+					img(data-layzr="#{url}yida/img/build-text-1.png")
+					//- img(data-layzr="http://i3.tietuku.com/976f3577553a1b8c.png")
+				.preview-text.fadeInRight.animated.delay-7
+					p {userContent.message}
+				.text-2.fadeInRight.animated.delay-8
+					img(data-layzr="#{url}yida/img/build-text-2.png")
+					//- img(data-layzr="http://i3.tietuku.com/3dfdb232574a8fa3.png")
+				.text-3.fadeInRight.animated.delay-9
+					img(data-layzr="#{url}yida/img/build-text-3.png")
+					//- img(data-layzr="http://i3.tietuku.com/b4e4d26a25bc7ae1.png")
+			//- .build-reset.fadeInLeft.animated.delay-13(onclick="{reset}")
+				img(data-layzr="#{url}yida/img/build-reset.png")
+			.build-by-who.fadeInUp.animated.delay-18
+				p 来自：{userContent.username}
+			a.share-btn.fadeInUp.animated.delay-15(href="https://oauth.immomo.com/oauth/authorize?response_type=code&client_id=mm7a12e355d5958001&state=abc")
+				.bg-s
+					//- img(data-layzr="#{url}yida/img/kv-next-bg.png")
+					//- img(data-layzr="http://i3.tietuku.com/e521abe60be03076.png")
+					img(data-layzr="#{url}yida/img/kv-next-bg.png")
+				.text
+					.light
+						.flash
+							img(data-layzr="#{url}yida/img/kv-normal-btn.png")
+						img(src="#{url}yida/img/kv-normal-btn-normal.png")
+				//- img(data-layzr="http://i1.tietuku.com/b2731ed3c21efbd9.png")
+
+	script.
+		var self = this
+		self.firstpageShow = false
+		self.userpageShow = false
+		self.firstpageClass = ""
+		self.userContent = oldContent
+		self.kv = []
+		if (oldContent != null) {
+			//- 有用户信息 不显示KV.
+			self.userpageShow = true
+		}else{
+			//- 没有用户信息 显示KV.
+			self.firstpageShow = true
+			//- "kv-1",
+			var KV = ["kv-1","kv-2","kv-3","kv-4"]
+			var tempKV = []
+			tempKV.push({name:KV.splice(parseInt(Math.random()*(KV.length)),1)[0]})
+			tempKV.push({name:KV.splice(parseInt(Math.random()*(KV.length)),1)[0]})
+			tempKV.push({name:KV.splice(parseInt(Math.random()*(KV.length)),1)[0]})
+			for (var i=0; i < tempKV.length ; i++) {
+				tempKV[i].up = typeof(tempKV[i-1]) != "undefined" ? tempKV[i-1].name : null
+				tempKV[i].down =  typeof(tempKV[i+1]) != "undefined" ? tempKV[i+1].name : null
+				//- console.log(tempKV[i-1],tempKV[i+1])
+			}
+			console.log(tempKV)
+			self.kv = tempKV
+		}
+		
+		

@@ -1,0 +1,37 @@
+extends ../libs/jade/layout-clean
+block title
+	| Picturer
+
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://disk.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css")
+
+block content
+	//- - url = "/"
+	
+	.wrap
+		.pages
+			.page
+				slider(list="http://disk.giccoo.com/picturer/01.jpg,http://disk.giccoo.com/picturer/02.jpg,http://disk.giccoo.com/picturer/03.jpg,http://disk.giccoo.com/picturer/04.jpg,http://disk.giccoo.com/picturer/05.jpg,http://disk.giccoo.com/picturer/06.jpg,http://disk.giccoo.com/picturer/07.jpg,http://disk.giccoo.com/picturer/08.jpg,http://disk.giccoo.com/picturer/09.jpg,http://disk.giccoo.com/picturer/10.jpg,http://disk.giccoo.com/picturer/11.jpg,http://disk.giccoo.com/picturer/12.jpg")
+
+
+block js
+	//- - url = "/"
+	//- script(src="/libs/js/min/localforage.min.js")
+	//- script(src="#{url}libs/js/pixi.dev.js",type="text/javascript")
+	script(src="#{url}libs/js/min/riot.js")
+	script(src="#{url}libs/js/min/Zepto.min.js")
+	//- script(src="/libs/js/min/cityData-min.js")
+	script(src="js/tag.js")
+	script.
+		riot.mount("*")
+	//- script.
+	//- 	var _hmt = _hmt || [];
+	//- 	(function() {
+	//- 	  var hm = document.createElement("script");
+	//- 	  hm.src = "//hm.baidu.com/hm.js?97647f9cd8b3ab0dea00394d1c3ed3aa";
+	//- 	  var s = document.getElementsByTagName("script")[0]; 
+	//- 	  s.parentNode.insertBefore(hm, s);
+	//- 	})();

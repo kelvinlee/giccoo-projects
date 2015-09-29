@@ -1,0 +1,562 @@
+@import sass/base
+@import ../../libs/sass/loading
+
+$debug : false
+$cdn : "../"
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects/yida/"
+
++keyframes(leftmove)
+	0%
+		+transform(translate3d(0%,0,0))
+	100%
+		+transform(translate3d(-100%,0,0))
+
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
+
+.share-wechat
+	+posa
+	+tl
+	+w
+	+h
+	+b("http://disk.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
+	+bc
+	z-index: 1100
+	+hide
+	&.open
+		+show
+
+.wrap
+	+wh(100%,100%)
+	// +posf
+	// min-height: 410px
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+
+.loading.loaded
+	+large
+		+hide
+
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+iw(600)
+	+m
+	margin-top: -8%
+	.share-icon
+		+show-inline
+		+w(25%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		
+html,body
+	+w
+	+h
+	// +overhide
+
+body
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	// +b("http://i3.tietuku.com/1fcc3041ce5a552f.jpg",no-repeat,center,center,cover)
+	color: #3f6aff
+
+// .loading.loaded
+// 	+hide
+.loading
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+bc(transparent)
+	.new-load
+		+posa
+		+tl(50%,50%)
+		+w
+		+text-center
+		// +p(100% 0 0 0)
+		+transform(translate3d(-50%,-50%,0))
+		.load-item
+			+iw(230)
+			+posr
+			// > img
+				// +animation(rubberBand,2s,ease,infinite)
+			.load-item-note1
+				+posa
+				+bl(26%,27.5%)
+				+w(45%)
+				+h(5%)
+				+tran($time: 100ms)
+				overflow: hidden
+				.load-move
+					+animation(leftmove,2s,linear,infinite)
+				img
+					+w(180px)
+					max-width: 180px
+					
+			.load-item-note2
+				+posa
+				+tr
+				+w
+				
+		.load-progress
+			+font-size(0.8rem)
+			color: #fff
+			+p(2% 0 0 0)
+			+posa
+			+tl(50%,50%)
+			+transform(translate3d(-50%,-50%,0))
+			
+.begin
+	+posa
+	+tl
+	+w
+	+h
+.hide
+	display: none !important
+
+.firstpage,.notepage
+	+posa
+	+tl
+	+w
+	+h
+
+.pages
+	+show
+	+h(100%)
+	+w
+	// +wh(100%,calc(100% - 19px))
+	+overhide
+	+posr
+	.page
+		+wh(100%,100%)
+		+tran
+		+posa
+		+tl
+		+hide
+		&:first-child
+			+show
+		h1,h2
+			+m
+		&.riot-up-active,&.riot-down-active
+			+transform(translate3d(0,0,0))
+		&.riot-up-leave
+			+transform(translate3d(0,-100%,0))
+		&.riot-up
+			+transform(translate3d(0,100%,0))
+		&.riot-down-leave
+			+transform(translate3d(0,100%,0))
+		&.riot-down
+			+transform(translate3d(0,-100%,0))
+
+.firstpage
+	.page
+		.kv
+			+b($cdn+"img/page-bg.jpg",repeat,top,center,100%)
+			+posa
+			+bl
+			+w
+			+h
+			img
+				+posa
+				+bl
+		.texts
+			+posa
+			+tr(5%)
+			+iw(640)
+		.normal,.private
+			+posa
+			+bl
+			+w
+			font-size: 0
+		.kv-name
+			+posa
+			+br(15%)
+		.private
+			+hide
+		.text,.next-point
+			+posa
+			+tl
+
+		&:first-child
+			.normal
+				+hide
+			.private
+				+show
+
+.build
+	// +posa
+	// +tl
+	+posr
+	+show
+	+w
+	+h
+	.building
+		.active-info
+			+w
+			+posa
+			+tl
+			z-index: 50
+		.texts
+			+posa
+			+tr(10%,5%)
+			+text-right
+			.text-1
+				+show
+				+iw(313)
+				margin-right: 0 
+			.build-text
+				+posr
+				.light
+					+posa
+					+tr
+					+iw(400)
+					+p(0 0.4rem)
+					+h
+					z-index: 9
+					.flash
+						+posa
+						+tl
+						+w
+						+h
+					.build-text-box
+						+posa
+						+tl
+						+w
+						+h
+						+font-size(1rem)
+						+p(0.4rem)
+						+box
+						-webkit-appearance: none
+						box-shadow: 1px 1px 10px #6cd6ff,-1px -1px 10px #6cd6ff
+						border-radius: 5px
+				input
+					+posr
+					+bc(transparent)
+					border: dotted 1px #fff
+					outline: none
+					+font-size(1rem)
+					+iw(400)
+					+p(0.4rem)
+					color: #fff
+					font-weight: bold
+					border-radius: 5px
+					z-index: 10
+					&::-webkit-input-placeholder
+						color: #6cd6ff
+
+			.text-2
+				+show
+				+iw(274)
+				margin-right: 0
+			.text-3
+				+show
+				+iw(233)
+				margin-right: 0
+		.canvas
+			+posa
+			+tl
+			+w
+			+h
+			+overhide
+			canvas
+				+w
+		.upload
+			+posa
+			+bl(15%)
+			+w
+			z-index: 100
+			input[type=file],.changeFile
+				+posa
+				+tl
+				+br
+				+w
+				+h
+				+show
+				z-index: 100
+				opacity: 0
+			.light
+				.flash
+					animation-delay: 500ms
+		.preview-btn
+			+posa
+			+bl
+			+w
+			font-size: 0
+			z-index: 101
+			img
+				max-width: 100%
+			.bg
+				+posr
+			.text
+				+posa
+				+tl
+				.light
+					+posr
+					.flash
+						+posa
+
+		.note-info
+			+posa
+			+tl
+			+w
+			+h
+			+b($cdn+"img/note-bg.jpg",repeat,center,bottom,100%)
+			z-index: 1000
+.preview-info
+	+posa
+	+tl
+	+w
+	+h
+	+overhide
+	.bg
+		+posa
+		+tl
+		+w
+		+h
+		// +transform(translate3d(0,-50%,0))
+		font-size: 0
+		canvas
+			+w
+	.texts
+		+posa
+		+tr(5%,5%)
+		+text-right
+		.text-1
+			+show
+			+iw(313)
+			margin-right: 0 
+		.preview-text
+			+show
+			// +iw(400)
+			+w
+			margin-right: 0 
+			+font-size(1.85rem)
+			color: #fff
+			+text-right
+			-webkit-appearance: none
+			text-shadow: 1px 1px 10px rgba(20,61,116,0.35),-1px -1px 10px rgba(20,61,116,0.35)
+			font-weight: bold
+			p
+				+m
+				padding-right: 2%
+		.text-2
+			+show
+			+iw(274)
+			margin-right: 0
+		.text-3
+			+show
+			+iw(233)
+			margin-right: 0
+	.canvas-ctrl
+		+posa
+		+tl
+		+w
+		+h
+		z-index: 200
+	.build-reset
+		+posa
+		+bl(15%)
+		+iw(183)
+		z-index: 201
+	.share-btn
+		+posa
+		+bl
+		+w
+		font-size: 0
+		z-index: 201
+		.text
+			+posa
+			+tl
+	.uploading
+		+posa
+		+tl
+		+w
+		+h
+		+bc(rgba(0,0,0,0.7))
+		z-index: 1000
+		.upload
+			+posa
+			+tl
+			+w
+			+h(20%)
+			+bc(#fff)
+			-webkit-appearance: none
+			box-shadow: 1px 1px 5px #000
+		.text
+			+posa
+			+tl(50%)
+			+w
+			+transform(translate3d(0,-50%,0))
+			+text-center
+			.loading-normal
+				+show-inline
+				+w(1.2rem)
+				vertical-align: middle
+				margin-right: 0.6rem
+				+animation(second,1.5s,linear,infinite)
+				font-size: 0
+.user-list
+	+posa
+	+tl
+	+w
+	+h
+	+overhide
+	.title
+		+posa
+		+tl
+		+w
+	.share-btn-bg
+		+posa
+		+bl
+		+w
+		.text
+			+posa
+			+tl
+	.share-btn
+		+posa
+		+tl(85%)
+		+w
+		+h(15%)
+		z-index: 100
+		.text
+			+posa
+			+tl
+	.user-note
+		+posa
+		+tl(80%)
+		+text-center
+		+w
+		+h(5%)
+		color: #fff
+		p
+			+m
+.build-by-who
+	+posa
+	+bl(5%)
+	+w
+	+h(10%)
+	+bc(rgba(18,56,106,0.6))
+	color: #fff
+	p
+		+text-right
+		padding-right: 0.5rem
+		+m
+		margin-top: 2%
+.user-content
+	+posa
+	+tl(18%)
+	+w
+	+h(60%)
+	// +touch
+	.page-content
+		+tran
+		white-space: nowrap
+		+w
+		+h
+	.page-list
+		+w
+		+show-inline
+		vertical-align: top
+	ul
+		+m(0 auto)
+		+w(80%)
+		li
+			margin-bottom: 5%
+			white-space: nowrap
+			.avatar
+				+show-inline
+				+w(17%)
+				padding-top: 17%
+				margin-right: 1%
+				font-size: 0
+				vertical-align: top
+				background-size: cover
+				background-position: center center
+				border-radius: 50%
+				border: solid 1px #fff
+				margin-top: 2%
+				// img
+				// 	border-radius: 50%
+				// 	border: solid 1px #fff
+			.message
+				+show-inline
+				+w(80%)
+				vertical-align: top
+				p
+					+m
+					color: #fff
+					white-space: normal
+					&:last-child
+						margin-top: 2%
+						color: #5bcdf1
+						font-weight: bold
+						+font-size(1.1rem)
+
+.note
+	+posa
+	+tl
+	+br
+	+wh(100%,100%)
+	z-index: 9999
+	.note-box
+		+text-center
+		+posa
+		+tl(50%)
+		+w(100%)
+		// z-index: 9999
+		.note-content
+			display: inline-block
+			padding: 10px 11px 10px 10px
+			background-color: rgba(0,0,0,0.7)
+			color: #fff
+			border-radius: 5px
+			max-width: 90%
+			+box
+		.icon-form,.note-text
+			display: inline-block
+			vertical-align: top
+			line-height: 25px
+		.icon-form
+			+wh(25px,25px)
+		.note-text
+			+font-size(0.8rem)
+			letter-spacing: 2px
+
+
+.light
+	+posr
+	.flash
+		+posa
+		+tl
+		+animation(flash,4s,ease,infinite)

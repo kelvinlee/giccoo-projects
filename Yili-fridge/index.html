@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="maximum-dpr=2" name="flexible" />
+<title>假期和美味更搭，快来测测你的锋味指数吧</title>
+<link type="text/css" rel="stylesheet" href="/Yili-fridge/casarte/static/css/webapp.min.css">
+<script type="text/javascript">
+!function(e,t){function i(){var t=n.getBoundingClientRect().width;t/m>540&&(t=540*m);var i=t/16;n.style.fontSize=i+"px",d.rem=e.rem=i}var a,r=e.document,n=r.documentElement,o=r.querySelector('meta[name="viewport"]'),l=r.querySelector('meta[name="flexible"]'),m=0,s=0,d=t.flexible||(t.flexible={});if(o){var p=o.getAttribute("content").match(/initial\-scale=([\d\.]+)/);p&&(s=parseFloat(p[1]),m=parseInt(1/s))
+}else if(l){var c=l.getAttribute("content");if(c){var u=c.match(/initial\-dpr=([\d\.]+)/),f=c.match(/maximum\-dpr=([\d\.]+)/);u&&(m=parseFloat(u[1]),s=parseFloat((1/m).toFixed(2))),f&&(m=parseFloat(f[1]),s=parseFloat((1/m).toFixed(2)))}}if(!m&&!s){var v=(e.navigator.appVersion.match(/android/gi),e.navigator.appVersion.match(/iphone/gi)),h=e.devicePixelRatio;m=v?h>=3&&(!m||m>=3)?3:h>=2&&(!m||m>=2)?2:1:1,s=1/m}if(n.setAttribute("data-dpr",m),!o)if(o=r.createElement("meta"),o.setAttribute("name","viewport"),o.setAttribute("content","initial-scale="+s+", maximum-scale="+s+", minimum-scale="+s+", user-scalable=no"),n.firstElementChild)n.firstElementChild.appendChild(o);
+else{var x=r.createElement("div");x.appendChild(o),r.write(x.innerHTML)}e.addEventListener("resize",function(){clearTimeout(a),a=setTimeout(i,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(a),a=setTimeout(i,300))},!1),"complete"===r.readyState?r.body.style.fontSize=12*m+"px":r.addEventListener("DOMContentLoaded",function(){r.body.style.fontSize=12*m+"px"},!1),i(),d.dpr=e.dpr=m,d.refreshRem=i,d.rem2px=function(e){var t=parseFloat(e)*this.rem;return"string"==typeof e&&e.match(/rem$/)&&(t+="px"),t
+},d.px2rem=function(e){var t=parseFloat(e)/this.rem;return"string"==typeof e&&e.match(/px$/)&&(t+="rem"),t}}(window,window.lib||(window.lib={}));
+    
+    var $CONFIG = {
+        debug : false,
+        staticPath : 'http://'+location.host+'/Yili-fridge/casarte/static',
+        cdnPath : 'http://'+location.host+'/Yili-fridge/'
+    };
+    // if((location.host).indexOf('kelvin') > 0){
+    //     $CONFIG.debug = false;
+    //     var _hmt = _hmt || [];
+    //     (function() {
+    //       var hm = document.createElement("script");
+    //       hm.src = "//hm.baidu.com/hm.js?b92e61280e109fda405d0c6f0413c436";
+    //       var s = document.getElementsByTagName("script")[0]; 
+    //       s.parentNode.insertBefore(hm, s);
+    //     })();
+    
+    // }else{
+    //     $CONFIG.debug = true
+    // }
+</script>
+</head>
+<body>
+    <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/share-img.jpg" class="share-img">
+    <div class="weixinTip" id="js-weixinTip">
+        <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/qr.png">
+    </div>
+    <div class="main weixinShareTip imgFull" data-page="weixinShareTip" id="js-weixinShareTip">
+        <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/sharePage.png">
+    </div>
+    <!--loading-->
+    <div class="main loading" data-page="loading" id="js-loading">
+        <div class="percent">
+            <div class="imgFull"><img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/loadingIMG.png" /></div>
+            <span>
+                <em id="js-percent">1%</em>
+            </span>
+        </div>
+        <div class="schedule">
+            <div class="filler" id="js-filler" style="width:1%;"></div>
+        </div>
+    </div>
+    
+    
+    <!--index-->
+    <div class="main index" data-page="index" id="js-index">
+        <div class="logo imgFull">
+            <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/index-pic-logo.png" />
+        </div>
+        <div class="text imgFull">
+            <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/index-text.png" />
+        </div>
+        <div class="btn imgFull" id="indexBegin">
+            <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/index-begin-btn.png" />
+        </div>
+    </div>
+    
+    <div class="main step" data-page="step" id="js-step">
+        <div class="main-shadow"></div>
+        <div class="stepPic imgFull">
+            <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/step.png" id="step" />
+        </div>
+        <div class="btn imgFull" id="stepBegin">
+            <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/index-begin-btn.png" />
+        </div>
+    </div>
+
+    <!--game-->
+    <div class="main game" data-page="game" id="js-game">
+        <div class="desk imgFull">
+            <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/desk.png">
+        </div>
+        <div class="openText imgFull">
+            <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/openText.png">
+        </div>
+        <div class="fridge imgFull">
+            <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/fridge-close.png" id="fridge">
+            <div class="wine wine1" data-wine-id="1" data-wine-name="冰镇酸梅汤"></div>
+            <div class="wine wine2" data-wine-id="2" data-wine-name="冰镇红酒"></div>
+            <div class="wine wine3" data-wine-id="3" data-wine-name="冰镇啤酒"></div>
+            <div class="wine wine4" data-wine-id="4" data-wine-name="冰镇果汁"></div>
+            <div class="wine wine5" data-wine-id="5" data-wine-name="冰镇酸梅汤"></div>
+            <div class="wine wine6" data-wine-id="6" data-wine-name="冰镇汽水"></div>
+            <div class="wine wine7" data-wine-id="7" data-wine-name="冰奶茶"></div>
+            <div class="wine wine8" data-wine-id="8" data-wine-name="冰激凌"></div>
+            <div class="wine wine9" data-wine-id="9" data-wine-name="冰咖啡"></div>
+            <div class="wine wine10" data-wine-id="10" data-wine-name="冰镇苏打水"></div>
+        </div>
+        <div class="boss imgFull">
+            <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/boss/boss-1.png">
+        </div>
+        <div class="foodSwiper">
+
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-food-name="汉堡" data-food-id="1"><img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/food/food-1.png"></div>
+                    <div class="swiper-slide" data-food-name="火锅" data-food-id="2"><img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/food/food-2.png"></div>
+                    <div class="swiper-slide" data-food-name="荷包蛋" data-food-id="3"><img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/food/food-3.png"></div>
+                    <div class="swiper-slide" data-food-name="烤鸭" data-food-id="4"><img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/food/food-4.png"></div>
+                    <div class="swiper-slide" data-food-name="牛排" data-food-id="5"><img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/food/food-5.png"></div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="food-intro">
+                <button class="btn foodName"></button>
+                <button class="btn wineName" data-wine-id="2">红酒</button>
+            </div>
+        </div>
+
+        <div class="wine-content imgFull">
+            <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/wine/wine-2.png" id="wineImg">
+        </div>
+        
+        <div class="submit-works imgFull" id="submitWorks">
+            <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/submit-bg.png">
+        </div>
+        <div class="pop">
+            <textarea placeholder="写下你的推荐理由吧..." id="text" wrap="hard" style="word-wrap:break-word" onkeyup="checkLen(this)"></textarea>
+        </div>
+        <input type="hidden" id="foodID" >
+        <input type="hidden" id="bossID" >
+        <input type="hidden" id="wineID" value="2">
+    </div>
+    
+    <!--result-->
+    <div class="main result" data-page="result" id="js-result">
+        <div class="main-shadow"></div>
+        <div class="result-card">
+            <div class="prize imgFull">
+                <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/prize-bg.png">
+                <div class="designation" id="prizeName">
+                    锋味指数
+                    <em>2颗星</em>
+                </div>
+            </div>
+            <div class="star" id="prizeStar">
+                <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/start.png">
+                <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/start.png">
+                <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/start-empty.png">
+                <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/start-empty.png">
+                <img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/start-empty.png">
+            </div>
+            <p id="prizeText">达人级搭配师<br>快说你的搭配是不是加了</p>
+        </div>
+        <div class="create-pic imgFull">
+            <img src="">
+        </div>
+        <div class="share-box">
+            分享作品
+            <a href="#" class="share-icon share-weibo" data-media="weibo"><img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/share-weibo.png"></a>
+            <a href="#" class="share-icon share-qq" data-media="tqq"><img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/share-qq.png"></a>
+            <a href="#" class="share-icon share-renren" data-media="renren"><img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/share-renren.png"></a>
+            <a href="#" class="share-icon share-qzone" data-media="qzone"><img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/share-qzone.png"></a>
+            <a href="#" class="share-icon share-weixin" data-media="weixin"><img src="http://disk.giccoo.com/projects/Yili-fridge/casarte/static/images/share-weixin.png"></a>
+        </div>
+        <div class="game-tool">
+            <a href="#" class="btn try-again">再玩一次</a>
+            <a href="http://site.douban.com/casarteicebar/" class="btn goto-douban">前往小站</a>
+        </div>
+    </div>
+
+
+
+
+    
+    <script type="text/javascript" charset="utf-8" src="/Yili-fridge/casarte/static/js/libs/webapp.min.js"></script>
+</body>
+</html>
