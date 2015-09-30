@@ -4721,10 +4721,10 @@ a,img {
 
 .stepPic {
     position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: 0;
-    width: 100%;
+    top: .5rem;
+    left: 50%;
+    margin-left: -7rem;
+    width: 14rem;
 }
 .swiper-container {
     margin: 0 auto;
