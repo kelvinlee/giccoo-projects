@@ -10,8 +10,8 @@
           <div class="cup"><img src="{cocktail.thumb}"/><span class="winename">{cocktail.name}</span></div>
         </div>
       </slider>
-      <div class="left"></div>
-      <div class="right"></div>
+      <div class="left"><img src="http://disk.giccoo.com/projects/huaweiG7/img/left.png"/></div>
+      <div class="right"><img src="http://disk.giccoo.com/projects/huaweiG7/img/right.png"/></div>
     </div>
     <div onclick="{selectCup}" class="select"><img src="http://disk.giccoo.com/projects/huaweiG7/img/select-btn.png"/></div>
   </div>

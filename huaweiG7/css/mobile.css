@@ -1011,7 +1011,26 @@ html, body {
     height: 100%;
     z-index: 201; }
     .main .cup-select .sliders {
-      height: 100%; }
+      height: 100%;
+      position: relative; }
+      .main .cup-select .sliders .left {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        width: 7.65625%;
+        margin: 0 auto;
+        z-index: 300; }
+        .iphone4 .main .cup-select .sliders .left {
+          width: 6.125%; }
+      .main .cup-select .sliders .right {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        width: 7.65625%;
+        margin: 0 auto;
+        z-index: 300; }
+        .iphone4 .main .cup-select .sliders .right {
+          width: 6.125%; }
       .main .cup-select .sliders .slider {
         height: 100%; }
         .main .cup-select .sliders .slider .slide {
