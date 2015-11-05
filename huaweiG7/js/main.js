@@ -94,6 +94,7 @@ window.onload = function() {
   if ($("body").height() <= 460) {
     $("body").addClass("iphone4");
   }
+  loadWechatConfig();
   return wx.ready(function() {
     var AppMShareContent, TimelineShareContent;
     AppMShareContent = {

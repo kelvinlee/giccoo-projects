@@ -31,7 +31,7 @@ window.onload = ->
 	if $("body").height() <= 460
 		$("body").addClass "iphone4"
 
-	# loadWechatConfig()
+	loadWechatConfig()
 	wx.ready ->
 		AppMShareContent =
 			title: "在树洞酒吧，喝一杯小酒，听一首小曲，看一部微电影..."
