@@ -85,7 +85,7 @@ html,body
 	+h
 	z-index: 199
 	.bg
-		+b("../img/bg.jpg",no-repeat,center,center,cover)
+		+b("http://disk.giccoo.com/projects/huaweiG7/img/bg.jpg",no-repeat,center,center,cover)
 		+posa
 		+tl
 		+w
@@ -113,7 +113,7 @@ html,body
 		+w
 		+transform(translate3d(0,50%,0))
 		+tran
-		z-index: 101
+		z-index: 301
 		opacity: 0
 		.in-text
 			+iw(479,640)
@@ -122,6 +122,21 @@ html,body
 			+m(1rem auto)
 		.in-in
 			+iw(374,640)
+		.in-info
+			+iw(225,640)
+			margin-top: 1rem
+	.active-info
+		+posa
+		+tl
+		+br
+		+w
+		+h
+		+bc(rgba(0,0,0,0.8))
+		+hide
+		+box
+		+overhide
+		padding-top: 1rem
+		z-index: 400
 	&.load
 		.bg
 			filter: blur(0px)
@@ -149,7 +164,7 @@ html,body
 	z-index: 200
 
 .main
-	+b("../img/bar-bg.jpg",no-repeat,center,center,cover)
+	+b("http://disk.giccoo.com/projects/huaweiG7/img/bar-bg.jpg",no-repeat,center,center,cover)
 	+posa
 	+tl
 	+w
@@ -170,6 +185,7 @@ html,body
 			margin-top: 30%
 			video
 				+w
+				+h
 		.video-list
 			+w(80%)
 			font-size: 0
@@ -177,8 +193,8 @@ html,body
 			+m
 			margin-top: 1.2rem
 		.back-home
-			margin-top: 2rem
 			+iw(322)
+			margin-top: 2rem
 	.pop
 		+posa
 		+tl
@@ -190,7 +206,7 @@ html,body
 			+posa
 			+tl(50%,50%)
 			+transform(translate3d(-50%,-50%,0))
-			+iw(569)
+			+iw(520)
 			.answer
 				+posa
 				+tl

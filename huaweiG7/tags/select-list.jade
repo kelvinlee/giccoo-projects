@@ -1,8 +1,10 @@
 select-list
+	- var images = "http://disk.giccoo.com/projects/huaweiG7/img"
+	//- - var images = "img"
 	.logo
-		img(src="img/logo.png")
+		img(src="#{images}/logo.png")
 	.phone
-		img(src="img/phone.png")
+		img(src="#{images}/phone.png")
 	.cup-select(show="{pageCup}",class="fadeIn animated")
 		.notetitle 左右滑动，来杯酒，<br/>测试下您的性格类型？
 		.sliders
@@ -14,22 +16,22 @@ select-list
 			.left
 			.right
 		.select(onclick="{selectCup}")
-			img(src="img/select-btn.png")
+			img(src="#{images}/select-btn.png")
 	.pop(show="{pagePop}",class="bounceInDown animated")
 		.bg
-			img(src="img/pop-bg.png")
+			img(src="#{images}/pop-bg.png")
 			.answer
 				img(src="{cocktails[n].answer}")
 			.btn-video(onclick="{showVideos}")
-				img(src="img/btn-video.png")
+				img(src="#{images}/btn-video.png")
 		.share-btn.delay-10.fadeIn.animated(onclick="{showShare}")
-			img(src="img/btn-share.png")
+			img(src="#{images}/btn-share.png")
 	.videos(show="{pageVideos}",class="fadeIn animated")
 		.video-screen
-			video(control="true")
+			video(if="{pageVideos}",controls="true",src="#{images}/1.mp4",width="620",height="340",poster="#{images}/video-thum.jpg",webkit-playsinline)
 		.video-list
 		.back-home(onclick="{backHome}")
-			img(src="img/back-home.png")
+			img(src="#{images}/back-home.png")
 
 	.share-note(show="{pageShare}",onclick="{hideShare}",class="fadeIn animated")
 		img(src="/libs/img/wechat.png")
@@ -41,10 +43,10 @@ select-list
 		this.pageShare = false
 		this.n = 0
 		this.cocktails = [
-			{name:"血腥玛丽",thumb:"img/cup-1.png",answer:"img/answer-1.png",shareText:"此时你也在喝一杯马特利特，在想Ta吗？"},
-			{name:"玛格丽特",thumb:"img/cup-2.png",answer:"img/answer-2.png",shareText:"一杯血腥玛丽竟然暴露了我的性格，你也来一杯？"},
-			{name:"曼哈顿",thumb:"img/cup-3.png",answer:"img/answer-3.png",shareText:"红葡萄变身性格分析师，敢来续杯么？"},
-			{name:"干马提尼",thumb:"img/cup-4.png",answer:"img/answer-4.png",shareText:"一杯酒，一种性格，你相信吗？"},
+			{name:"血腥玛丽",thumb:"#{images}/cup-1.png",answer:"#{images}/answer-1.png",shareText:"一杯血腥玛丽竟然暴露了我的性格，你也来一杯？"},
+			{name:"玛格丽特",thumb:"#{images}/cup-2.png",answer:"#{images}/answer-2.png",shareText:"此时你也在喝一杯马特利特，在想Ta吗？"},
+			{name:"红葡萄酒",thumb:"#{images}/cup-3.png",answer:"#{images}/answer-3.png",shareText:"红葡萄变身性格分析师，敢来续杯么？"},
+			{name:"干马提尼",thumb:"#{images}/cup-4.png",answer:"#{images}/answer-4.png",shareText:"一杯酒，一种性格，你相信吗？"},
 		]
 		selectCup() {
 			self.pageCup = false

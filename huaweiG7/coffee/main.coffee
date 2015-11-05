@@ -1,24 +1,28 @@
 # @codekit-prepend "coffee/css3Prefix"
 # @codekit-prepend "coffee/plus"
 # @codekit-prepend "../../libs/coffee/requestanimation"
-
+images = "http://disk.giccoo.com/projects/huaweiG7/"
+# images = ""
 imageList = [
-	"img/bar-text.png"
-	"img/bar-in.png"
-	"img/bar-up.png"
-	"img/cup-1.png"
-	"img/cup-2.png"
-	"img/cup-3.png"
-	"img/cup-4.png"
-	"img/answer-1.png"
-	"img/answer-2.png"
-	"img/answer-3.png"
-	"img/answer-4.png"
-	"img/select-btn.png"
-	"img/back-home.png"
-	"img/pop-bg.png"
-	"img/btn-share.png"
-	"/libs/img/wechat.png"
+	images+"img/active-info-page.png"
+	images+"img/bar-text.png"
+	images+"img/bar-in.png"
+	images+"img/bar-up.png"
+	images+"img/cup-1.png"
+	images+"img/cup-2.png"
+	images+"img/cup-3.png"
+	images+"img/cup-4.png"
+	images+"img/answer-1.png"
+	images+"img/answer-2.png"
+	images+"img/answer-3.png"
+	images+"img/answer-4.png"
+	images+"img/select-btn.png"
+	images+"img/back-home.png"
+	images+"img/pop-bg.png"
+	images+"img/btn-share.png"
+	images+"img/active-info.png"
+	images+"img/video-thum.jpg"
+	"http://disk.giccoo.com/projects/libs/img/wechat.png"
 ]
 imgs = []
 # riot.mount("*")
@@ -102,3 +106,12 @@ loadWechatConfig = ->
 	s = document.getElementsByTagName('script')[0]
 	s.parentNode.insertBefore hm, s
 	return
+
+showActiveInfo = ->
+	$(".active-info").append imgs[0]
+	$(".active-info").show()
+	$(".active-info").on "click", ->
+		$(".loading").addClass "end"
+		setTimeout ->
+			$(".loading").remove()
+		,560

@@ -6,27 +6,31 @@ block css
 	link(rel="stylesheet",href="css/mobile.css")
 
 block content
+	- var images = "http://disk.giccoo.com/projects/huaweiG7/img"
+	//- - var images = "img"
 	.wechat-share-hide
 		img#share(src="http://disk.giccoo.com/projects/huaweiG7/img/share.jpg")
 	.loading
 		.bg
 		.logo
-			img(src="img/logo.png")
+			img(src="#{images}/logo.png")
 		.phone
-			img(src="img/phone.png")
+			img(src="#{images}/phone.png")
 		.text
 			.text-bg
-				img(src="img/loading.png")
+				img(src="#{images}/loading.png")
 			span#loading-text 0
 		.in-list
 			.in-text
-				img(src="img/bar-text.png")
+				img(src="#{images}/bar-text.png")
 			.in-up
-				img(src="img/bar-up.png")
+				img(src="#{images}/bar-up.png")
 			.in-in
-				img(src="img/bar-in.png")
+				img(src="#{images}/bar-in.png")
+			.in-info(onclick="showActiveInfo()")
+				img(src="#{images}/active-info.png")
 
-	
+		.active-info.fadeIn.animated
 	.main
 		select-list.select-list
 
