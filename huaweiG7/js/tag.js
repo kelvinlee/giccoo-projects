@@ -1,5 +1,5 @@
 
-riot.tag('select-list', '<div class="logo"><img src="http://disk.giccoo.com/projects/huaweiG7/img/logo.png"></div> <div class="phone"><img src="http://disk.giccoo.com/projects/huaweiG7/img/phone.png"></div> <div show="{pageCup}" class="cup-select fadeIn animated"> <div class="notetitle">左右滑动，来杯酒，<br>测试下您的性格类型？</div> <div class="sliders"> <slider callback="{sliderFun}"> <div each="{cocktail in parent.cocktails}" class="slide"> <div class="cup"><img riot-src="{cocktail.thumb}"><span class="winename">{cocktail.name}</span></div> </div> </slider> <div class="left"><img src="http://disk.giccoo.com/projects/huaweiG7/img/left.png"></div> <div class="right"><img src="http://disk.giccoo.com/projects/huaweiG7/img/right.png"></div> </div> <div onclick="{selectCup}" class="select"><img src="http://disk.giccoo.com/projects/huaweiG7/img/select-btn.png"></div> </div> <div show="{pagePop}" class="pop bounceInDown animated"> <div class="bg"><img src="http://disk.giccoo.com/projects/huaweiG7/img/pop-bg.png"> <div class="answer"><img riot-src="{cocktails[n].answer}"></div> <div onclick="{showVideos}" class="btn-video"><img src="http://disk.giccoo.com/projects/huaweiG7/img/btn-video.png"></div> </div> <div onclick="{showShare}" class="share-btn delay-10 fadeIn animated"><img src="http://disk.giccoo.com/projects/huaweiG7/img/btn-share.png"></div> </div> <div show="{pageVideos}" class="videos fadeIn animated"> <div class="video-screen"> <video if="{pageVideos}" controls="true" src="http://disk.giccoo.com/projects/huaweiG7/img/1.mp4" width="620" height="340" poster="http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg" webkit-playsinline="webkit-playsinline"></video> </div> <div class="video-list"></div> <div onclick="{backHome}" class="back-home"><img src="http://disk.giccoo.com/projects/huaweiG7/img/back-home.png"></div> </div> <div show="{pageShare}" onclick="{hideShare}" class="share-note fadeIn animated"><img src="/libs/img/wechat.png"></div>', function(opts) {
+riot.tag('select-list', '<div class="logo"><img src="http://disk.giccoo.com/projects/huaweiG7/img/logo.png"></div> <div class="phone"><img src="http://disk.giccoo.com/projects/huaweiG7/img/phone.png"></div> <div show="{pageCup}" class="cup-select fadeIn animated"> <div class="notetitle">左右滑动，来杯酒，<br>测试下您的性格类型？</div> <div class="sliders"> <slider callback="{sliderFun}"> <div each="{cocktail in parent.cocktails}" class="slide"> <div class="cup"><img riot-src="{cocktail.thumb}"><span class="winename">{cocktail.name}</span></div> </div> </slider> <div onclick="{setSilderNumLeft}" class="left"><img src="http://disk.giccoo.com/projects/huaweiG7/img/left.png"></div> <div onclick="{setSilderNumRight}" class="right"><img src="http://disk.giccoo.com/projects/huaweiG7/img/right.png"></div> </div> <div onclick="{selectCup}" class="select"><img src="http://disk.giccoo.com/projects/huaweiG7/img/select-btn.png"></div> </div> <div show="{pagePop}" class="pop bounceInDown animated"> <div class="bg"><img src="http://disk.giccoo.com/projects/huaweiG7/img/pop-bg.png"> <div class="answer"><img riot-src="{cocktails[n].answer}"></div> <div onclick="{showVideos}" class="btn-video"><img src="http://disk.giccoo.com/projects/huaweiG7/img/btn-video.png"></div> </div> <div onclick="{showShare}" class="share-btn delay-10 fadeIn animated"><img src="http://disk.giccoo.com/projects/huaweiG7/img/btn-share.png"></div> </div> <div show="{pageVideos}" class="videos fadeIn animated"> <div class="video-screen"> <video if="{pageVideos}" controls="true" src="http://disk.giccoo.com/projects/huaweiG7/img/1.mp4" width="620" height="340" poster="http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg" webkit-playsinline="webkit-playsinline"></video> </div> <div onclick="{showShare}" class="share-btn"><img src="http://disk.giccoo.com/projects/huaweiG7/img/btn-share.png"></div> <div onclick="{backHome}" class="back-home"><img src="http://disk.giccoo.com/projects/huaweiG7/img/back-home.png"></div> </div> <div show="{pageShare}" onclick="{hideShare}" class="share-note fadeIn animated"><img src="/libs/img/wechat.png"></div>', function(opts) {
     var self = this
     this.pageCup = true
     this.pagePop = false
@@ -40,9 +40,20 @@ riot.tag('select-list', '<div class="logo"><img src="http://disk.giccoo.com/proj
     	self.pageShare = false
     }.bind(this);
     this.sliderFun = function(n) {
-
     	this.n = Math.abs(n)
     	this.update()
+    }.bind(this);
+    this.setSilderNumLeft = function() {
+    	if (self.n < self.cocktails.length-1) {
+    		self.tags.slider.setNumber(self.n+1)
+    		self.tags.slider.setSlideNumber(0)
+    	}
+    }.bind(this);
+    this.setSilderNumRight = function() {
+    	if (self.n > 0) {
+    		self.tags.slider.setNumber(self.n-1)
+    		self.tags.slider.setSlideNumber(0)
+    	}
     }.bind(this);
   
 });
@@ -68,7 +79,7 @@ riot.tag('slider', '<div riot-style="-webkit-transition-duration: {duration}s;tr
     this.y = 0
     var slider = $(".slider",this.root)
     this.setNumber = function(i) {
-    	self.duration = 0
+    	self.duration = 0.2
     	self.x = -($(".slider",self.root).width() * i)
     	self.update()
     }
@@ -78,7 +89,9 @@ riot.tag('slider', '<div riot-style="-webkit-transition-duration: {duration}s;tr
     	slideNumber += offset
     	slideNumber = Math.min(slideNumber, 0)
     	this.slideNumber = Math.max(-(slider.find(".slide").length - 1), slideNumber);
-    	opts.callback && opts.callback(this.slideNumber)
+    	setTimeout(function(){
+    		opts.callback && opts.callback(Math.abs(self.x / $(".slider",self.root).width()))
+    	},1)
     }
     this.touchstart = function(evt) {
     	touch = evt.touches[0]

@@ -13,9 +13,9 @@ select-list
 					.cup
 						img(src="{cocktail.thumb}")
 						span.winename {cocktail.name}
-			.left
+			.left(onclick="{setSilderNumLeft}")
 				img(src="#{images}/left.png")
-			.right
+			.right(onclick="{setSilderNumRight}")
 				img(src="#{images}/right.png")
 		.select(onclick="{selectCup}")
 			img(src="#{images}/select-btn.png")
@@ -31,7 +31,8 @@ select-list
 	.videos(show="{pageVideos}",class="fadeIn animated")
 		.video-screen
 			video(if="{pageVideos}",controls="true",src="#{images}/1.mp4",width="620",height="340",poster="#{images}/video-thum.jpg",webkit-playsinline)
-		.video-list
+		.share-btn(onclick="{showShare}")
+			img(src="#{images}/btn-share.png")
 		.back-home(onclick="{backHome}")
 			img(src="#{images}/back-home.png")
 
@@ -78,7 +79,18 @@ select-list
 			self.pageShare = false
 		}
 		sliderFun(n) {
-			//- console.log(Math.abs(n))
 			this.n = Math.abs(n)
 			this.update()
+		}
+		setSilderNumLeft() {
+			if (self.n < self.cocktails.length-1) {
+				self.tags.slider.setNumber(self.n+1)
+				self.tags.slider.setSlideNumber(0)
+			}
+		}
+		setSilderNumRight() {
+			if (self.n > 0) {
+				self.tags.slider.setNumber(self.n-1)
+				self.tags.slider.setSlideNumber(0)
+			}
 		}

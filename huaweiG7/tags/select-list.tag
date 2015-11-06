@@ -10,8 +10,8 @@
           <div class="cup"><img src="{cocktail.thumb}"/><span class="winename">{cocktail.name}</span></div>
         </div>
       </slider>
-      <div class="left"><img src="http://disk.giccoo.com/projects/huaweiG7/img/left.png"/></div>
-      <div class="right"><img src="http://disk.giccoo.com/projects/huaweiG7/img/right.png"/></div>
+      <div onclick="{setSilderNumLeft}" class="left"><img src="http://disk.giccoo.com/projects/huaweiG7/img/left.png"/></div>
+      <div onclick="{setSilderNumRight}" class="right"><img src="http://disk.giccoo.com/projects/huaweiG7/img/right.png"/></div>
     </div>
     <div onclick="{selectCup}" class="select"><img src="http://disk.giccoo.com/projects/huaweiG7/img/select-btn.png"/></div>
   </div>
@@ -26,7 +26,7 @@
     <div class="video-screen">
       <video if="{pageVideos}" controls="true" src="http://disk.giccoo.com/projects/huaweiG7/img/1.mp4" width="620" height="340" poster="http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg" webkit-playsinline="webkit-playsinline"></video>
     </div>
-    <div class="video-list"></div>
+    <div onclick="{showShare}" class="share-btn"><img src="http://disk.giccoo.com/projects/huaweiG7/img/btn-share.png"/></div>
     <div onclick="{backHome}" class="back-home"><img src="http://disk.giccoo.com/projects/huaweiG7/img/back-home.png"/></div>
   </div>
   <div show="{pageShare}" onclick="{hideShare}" class="share-note fadeIn animated"><img src="/libs/img/wechat.png"/></div>
@@ -71,9 +71,20 @@
     	self.pageShare = false
     }
     sliderFun(n) {
-    	//- console.log(Math.abs(n))
     	this.n = Math.abs(n)
     	this.update()
+    }
+    setSilderNumLeft() {
+    	if (self.n < self.cocktails.length-1) {
+    		self.tags.slider.setNumber(self.n+1)
+    		self.tags.slider.setSlideNumber(0)
+    	}
+    }
+    setSilderNumRight() {
+    	if (self.n > 0) {
+    		self.tags.slider.setNumber(self.n-1)
+    		self.tags.slider.setSlideNumber(0)
+    	}
     }
   </script>
 </select-list>

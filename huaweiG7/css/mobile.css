@@ -899,15 +899,15 @@ html, body {
 .logo {
   position: absolute;
   top: 0px;
-  left: 0px;
-  width: 100%;
+  right: 0px;
+  width: 80%;
   z-index: 200; }
 
 .phone {
   position: absolute;
   bottom: 0px;
   left: 0px;
-  width: 100%;
+  width: 80%;
   z-index: 200; }
 
 .main {
@@ -944,11 +944,17 @@ html, body {
       margin: 0 auto;
       margin-top: 1.2rem; }
     .main .videos .back-home {
-      width: 50.3125%;
+      width: 45.3125%;
+      margin: 0 auto;
+      margin-top: 1rem; }
+      .iphone4 .main .videos .back-home {
+        width: 36.25%; }
+    .main .videos .share-btn {
+      width: 45.3125%;
       margin: 0 auto;
       margin-top: 2rem; }
-      .iphone4 .main .videos .back-home {
-        width: 40.25%; }
+      .iphone4 .main .videos .share-btn {
+        width: 36.25%; }
   .main .pop {
     position: absolute;
     top: 0px;
@@ -1062,21 +1068,23 @@ html, body {
       position: absolute;
       bottom: 5%;
       right: 5%;
-      width: 42.8125%;
+      width: 39.0625%;
       margin: 0 auto;
       z-index: 301; }
       .iphone4 .main .cup-select .select {
-        width: 34.25%; }
+        width: 31.25%; }
     .main .cup-select .cup {
       width: 78.125%;
       margin: 0 auto;
       position: absolute;
-      top: 60%;
+      top: 64%;
       left: 50%;
       -webkit-transform: translate3d(-50%, -50%, 0);
               transform: translate3d(-50%, -50%, 0); }
       .iphone4 .main .cup-select .cup {
         width: 62.5%; }
+      .iphone4 .main .cup-select .cup {
+        top: 70%; }
       .main .cup-select .cup span {
         position: absolute;
         top: -10%;

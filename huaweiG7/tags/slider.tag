@@ -22,7 +22,7 @@
     this.y = 0
     var slider = $(".slider",this.root)
     this.setNumber = function(i) {
-    	self.duration = 0
+    	self.duration = 0.2
     	self.x = -($(".slider",self.root).width() * i)
     	self.update()
     }
@@ -32,7 +32,9 @@
     	slideNumber += offset
     	slideNumber = Math.min(slideNumber, 0)
     	this.slideNumber = Math.max(-(slider.find(".slide").length - 1), slideNumber);
-    	opts.callback && opts.callback(this.slideNumber)
+    	setTimeout(function(){
+    		opts.callback && opts.callback(Math.abs(self.x / $(".slider",self.root).width()))
+    	},1)
     }
     this.touchstart = function(evt) {
     	touch = evt.touches[0]

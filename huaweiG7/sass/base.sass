@@ -154,13 +154,13 @@ html,body
 
 .logo
 	+posa
-	+tl
-	+w
+	+tr
+	+w(80%)
 	z-index: 200
 .phone
 	+posa
 	+bl
-	+w
+	+w(80%)
 	z-index: 200
 
 .main
@@ -193,7 +193,10 @@ html,body
 			+m
 			margin-top: 1.2rem
 		.back-home
-			+iw(322)
+			+iw(290)
+			margin-top: 1rem
+		.share-btn
+			+iw(290)
 			margin-top: 2rem
 	.pop
 		+posa
@@ -267,13 +270,15 @@ html,body
 		.select
 			+posa
 			+br(5%,5%)
-			+iw(274,640)
+			+iw(250,640)
 			z-index: 301
 		.cup
 			+iw(500,640)
 			+posa
-			+tl(60%,50%)
+			+tl(64%,50%)
 			+transform(translate3d(-50%,-50%,0))
+			.iphone4 &
+				top: 70%
 			span
 				+posa
 				+tl(-10%,50%)
