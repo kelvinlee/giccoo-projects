@@ -102,7 +102,7 @@ loadFinished = ->
 loadWechatConfig = ->
 	url = encodeURIComponent window.location.href.split("#")[0]
 	hm = document.createElement('script')
-	hm.src = "http://api.giccoo.com/config?url="+url
+	hm.src = "http://api.giccoo.com/config?url="+url+"&debug=true"
 	s = document.getElementsByTagName('script')[0]
 	s.parentNode.insertBefore hm, s
 	return
