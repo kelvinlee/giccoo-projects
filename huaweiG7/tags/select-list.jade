@@ -30,11 +30,17 @@ select-list
 			img(src="#{images}/btn-share.png")
 	.videos(show="{pageVideos}",class="fadeIn animated")
 		.video-screen
-			video(if="{pageVideos}",controls="true",src="#{images}/1.mp4",width="620",height="340",poster="#{images}/video-thum.jpg",webkit-playsinline)
-		.share-btn(onclick="{showShare}")
-			img(src="#{images}/btn-share.png")
-		.back-home(onclick="{backHome}")
-			img(src="#{images}/back-home.png")
+			video(if="{pageVideos && v}",controls="true",src="{v.mp4}",width="620",height="340",poster="{v.thum}",webkit-playsinline)
+			.video-no(if="{!v}") 
+				video(width="620",height="340",controls="true",poster="#{images}/video-thum.jpg",webkit-playsinline)
+				span 即将上映
+		.video-list
+			.video-btn(each="{ video in videos }",onclick="{parent.changeVideo(video)}")
+		.btns
+			.share-btn(onclick="{showShare}")
+				img(src="#{images}/btn-share.png")
+			.back-home(onclick="{backHome}")
+				img(src="#{images}/back-home.png")
 
 	.share-note(show="{pageShare}",onclick="{hideShare}",class="fadeIn animated")
 		img(src="/libs/img/wechat.png")
@@ -44,6 +50,8 @@ select-list
 		this.pagePop = false
 		this.pageVideos = false
 		this.pageShare = false
+		this.videos = [{mp4:"#{images}/1.mp4",thum:"#{images}/video-thum.jpg"},false,false]
+		this.v = this.videos[0]
 		this.n = 0
 		this.cocktails = [
 			{name:"血腥玛丽",thumb:"#{images}/cup-1.png",answer:"#{images}/answer-1.png",shareText:"一杯血腥玛丽竟然暴露了我的性格，你也来一杯？"},
@@ -81,6 +89,12 @@ select-list
 		sliderFun(n) {
 			this.n = Math.abs(n)
 			this.update()
+		}
+		changeVideo(video) {
+			return function() {
+				self.v = video
+				self.update()
+			}
 		}
 		setSilderNumLeft() {
 			if (self.n < self.cocktails.length-1) {

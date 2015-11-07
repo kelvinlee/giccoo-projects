@@ -934,27 +934,73 @@ html, body {
       padding: 0;
       margin: 0 auto;
       margin-top: 30%; }
+      .main .videos .video-screen .video-no {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        font-size: 1rem;
+        color: #fff; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .main .videos .video-screen .video-no {
+            font-size: 1.1rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .main .videos .video-screen .video-no {
+            font-size: 1.1rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .main .videos .video-screen .video-no {
+            font-size: 1.2rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .main .videos .video-screen .video-no {
+            font-size: 1.2rem; } }
+        .main .videos .video-screen .video-no video {
+          visibility: hidden; }
+        .main .videos .video-screen .video-no span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate3d(-50%, -50%, 0);
+                  transform: translate3d(-50%, -50%, 0); }
       .main .videos .video-screen video {
         width: 100%;
         height: 100%; }
     .main .videos .video-list {
       width: 80%;
-      font-size: 0;
       padding: 0;
       margin: 0 auto;
+      text-align: center;
+      font-size: 0;
       margin-top: 1.2rem; }
-    .main .videos .back-home {
-      width: 45.3125%;
+      .main .videos .video-list .video-btn {
+        width: 30%;
+        display: inline-block;
+        padding-top: 30%; }
+        .main .videos .video-list .video-btn:nth-child(odd) {
+          margin: 0 2%; }
+        .main .videos .video-list .video-btn:nth-child(n+1) {
+          background: url("http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg") no-repeat center center;
+          background-size: cover;
+          background-color: transparent; }
+        .main .videos .video-list .video-btn:nth-child(n+2) {
+          background: url("http://disk.giccoo.com/projects/huaweiG7/img/video-no.png") no-repeat center center;
+          background-size: cover;
+          background-color: transparent; }
+        .main .videos .video-list .video-btn:nth-child(n+3) {
+          background: url("http://disk.giccoo.com/projects/huaweiG7/img/video-no.png") no-repeat center center;
+          background-size: cover;
+          background-color: transparent; }
+    .main .videos .btns {
+      width: 80%;
+      padding: 0;
       margin: 0 auto;
-      margin-top: 1rem; }
-      .iphone4 .main .videos .back-home {
-        width: 36.25%; }
-    .main .videos .share-btn {
-      width: 45.3125%;
-      margin: 0 auto;
+      text-align: center;
       margin-top: 2rem; }
-      .iphone4 .main .videos .share-btn {
-        width: 36.25%; }
+    .main .videos .back-home {
+      width: 40%;
+      display: inline-block; }
+    .main .videos .share-btn {
+      width: 40%;
+      display: inline-block; }
   .main .pop {
     position: absolute;
     top: 0px;

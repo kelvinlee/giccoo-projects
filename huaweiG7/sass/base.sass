@@ -183,21 +183,53 @@ html,body
 			+p
 			+m
 			margin-top: 30%
+			.video-no
+				+posr
+				+w
+				+h
+				+bc(rgba(0,0,0,0.8))
+				+font-size(1rem)
+				color: #fff
+				video
+					visibility: hidden
+				span
+					+posa
+					+tl(50%,50%)
+					+transform(translate3d(-50%,-50%,0))
 			video
 				+w
 				+h
 		.video-list
 			+w(80%)
-			font-size: 0
 			+p
 			+m
+			+text-center
+			font-size: 0
 			margin-top: 1.2rem
-		.back-home
-			+iw(290)
-			margin-top: 1rem
-		.share-btn
-			+iw(290)
+			.video-btn
+				+w(30%)
+				display: inline-block
+				padding-top: 30%
+				&:nth-child(odd)
+					+m(0 2%)
+				&:nth-child(n+1)
+					+b("http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg",no-repeat,center,center,cover)
+				&:nth-child(n+2)
+					+b("http://disk.giccoo.com/projects/huaweiG7/img/video-no.png",no-repeat,center,center,cover)
+				&:nth-child(n+3)
+					+b("http://disk.giccoo.com/projects/huaweiG7/img/video-no.png",no-repeat,center,center,cover)
+		.btns
+			+w(80%)
+			+p
+			+m
+			+text-center
 			margin-top: 2rem
+		.back-home
+			+w(40%)
+			display: inline-block
+		.share-btn
+			+w(40%)
+			display: inline-block
 	.pop
 		+posa
 		+tl

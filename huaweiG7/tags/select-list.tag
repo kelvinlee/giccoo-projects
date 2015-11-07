@@ -24,10 +24,18 @@
   </div>
   <div show="{pageVideos}" class="videos fadeIn animated">
     <div class="video-screen">
-      <video if="{pageVideos}" controls="true" src="http://disk.giccoo.com/projects/huaweiG7/img/1.mp4" width="620" height="340" poster="http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg" webkit-playsinline="webkit-playsinline"></video>
+      <video if="{pageVideos &amp;&amp; v}" controls="true" src="{v.mp4}" width="620" height="340" poster="{v.thum}" webkit-playsinline="webkit-playsinline"></video>
+      <div if="{!v}" class="video-no"> 
+        <video width="620" height="340" controls="true" poster="http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg" webkit-playsinline="webkit-playsinline"></video><span>即将上映</span>
+      </div>
     </div>
-    <div onclick="{showShare}" class="share-btn"><img src="http://disk.giccoo.com/projects/huaweiG7/img/btn-share.png"/></div>
-    <div onclick="{backHome}" class="back-home"><img src="http://disk.giccoo.com/projects/huaweiG7/img/back-home.png"/></div>
+    <div class="video-list">
+      <div each="{ video in videos }" onclick="{parent.changeVideo(video)}" class="video-btn"></div>
+    </div>
+    <div class="btns">
+      <div onclick="{showShare}" class="share-btn"><img src="http://disk.giccoo.com/projects/huaweiG7/img/btn-share.png"/></div>
+      <div onclick="{backHome}" class="back-home"><img src="http://disk.giccoo.com/projects/huaweiG7/img/back-home.png"/></div>
+    </div>
   </div>
   <div show="{pageShare}" onclick="{hideShare}" class="share-note fadeIn animated"><img src="/libs/img/wechat.png"/></div>
   <script>
@@ -36,6 +44,8 @@
     this.pagePop = false
     this.pageVideos = false
     this.pageShare = false
+    this.videos = [{mp4:"http://disk.giccoo.com/projects/huaweiG7/img/1.mp4",thum:"http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg"},false,false]
+    this.v = this.videos[0]
     this.n = 0
     this.cocktails = [
     	{name:"血腥玛丽",thumb:"http://disk.giccoo.com/projects/huaweiG7/img/cup-1.png",answer:"http://disk.giccoo.com/projects/huaweiG7/img/answer-1.png",shareText:"一杯血腥玛丽竟然暴露了我的性格，你也来一杯？"},
@@ -73,6 +83,12 @@
     sliderFun(n) {
     	this.n = Math.abs(n)
     	this.update()
+    }
+    changeVideo(video) {
+    	return function() {
+    		self.v = video
+    		self.update()
+    	}
     }
     setSilderNumLeft() {
     	if (self.n < self.cocktails.length-1) {
