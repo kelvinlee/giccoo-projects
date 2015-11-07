@@ -1087,7 +1087,7 @@ html, body {
         top: 70%; }
       .main .cup-select .cup span {
         position: absolute;
-        top: -10%;
+        top: -3%;
         left: 50%;
         -webkit-transform: translate3d(-50%, 0, 0);
                 transform: translate3d(-50%, 0, 0);

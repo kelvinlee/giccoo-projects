@@ -176,7 +176,7 @@ loadFinished = function() {
 
 loadWechatConfig = function() {
   var hm, s, url;
-  url = window.location.href.split("#")[0];
+  url = encodeURIComponent(window.location.href.split("#")[0]);
   hm = document.createElement('script');
   hm.src = "http://api.giccoo.com/config?url=" + url;
   s = document.getElementsByTagName('script')[0];
