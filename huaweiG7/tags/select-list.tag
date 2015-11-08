@@ -44,7 +44,8 @@
     this.pagePop = false
     this.pageVideos = false
     this.pageShare = false
-    this.videos = [{mp4:"http://disk.giccoo.com/projects/huaweiG7/img/1.mp4",thum:"http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg"},false,false]
+    //- http://disk.giccoo.com/projects/huaweiG7/img/1.mp4
+    this.videos = [{mp4:"http://t.douban.com/img/files/file-1446884786553388.mp4",thum:"http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg"},false,false]
     this.v = this.videos[0]
     this.n = 0
     this.cocktails = [

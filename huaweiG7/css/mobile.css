@@ -1153,6 +1153,13 @@ html, body {
           .main .cup-select .cup span {
             font-size: 1.68rem; } }
 
+.icon-play {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 500;
+  width: 2rem; }
+
 .sliders {
   overflow: hidden; }
   .sliders .slider {

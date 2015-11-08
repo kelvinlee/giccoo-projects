@@ -1,11 +1,47 @@
 
+riot.tag('playsound', '<div if="{icon}" onclick="{change}" class="icon-play {type}"><img riot-src="{iconNow}"></div> <audio id="playgrounp" riot-src="{src}" autoplay="true" loop="loop"></audio>', function(opts) {
+    var self = this
+    this.src = opts.src
+    this.icon = opts.icon
+    this.iconPlay = opts["icon-play"]
+    this.iconStop = opts["icon-stop"]
+    if (this.icon) {
+    	this.iconNow = this.iconStop
+    }
+    this.type = null
+    this.root.className += "playsound"
+    this.change = function() {
+    	var audio = document.getElementById("playgrounp")
+    	if (this.iconNow == this.iconPlay) {
+    		audio.pause()
+    	}else{
+    		audio.play()
+    	}
+    }.bind(this);
+    this.on("mount",function(){
+    	var audio = document.getElementById("playgrounp")
+    	audio.addEventListener("pause",function(){
+    		self.iconNow = self.iconStop
+    		self.type = "pause"
+    		self.update()
+    	})
+    	audio.addEventListener("play",function(){
+    		self.iconNow = self.iconPlay
+    		self.type = "play"
+    		self.update()
+    	})
+    })
+  
+});
+
 riot.tag('select-list', '<div class="logo"><img src="http://disk.giccoo.com/projects/huaweiG7/img/logo.png"></div> <div class="phone"><img src="http://disk.giccoo.com/projects/huaweiG7/img/phone.png"></div> <div show="{pageCup}" class="cup-select fadeIn animated"> <div class="notetitle">左右滑动，来杯酒，<br>测试下您的性格类型？</div> <div class="sliders"> <slider callback="{sliderFun}"> <div each="{cocktail in parent.cocktails}" class="slide"> <div class="cup"><img riot-src="{cocktail.thumb}"><span class="winename">{cocktail.name}</span></div> </div> </slider> <div onclick="{setSilderNumLeft}" class="left"><img src="http://disk.giccoo.com/projects/huaweiG7/img/left.png"></div> <div onclick="{setSilderNumRight}" class="right"><img src="http://disk.giccoo.com/projects/huaweiG7/img/right.png"></div> </div> <div onclick="{selectCup}" class="select"><img src="http://disk.giccoo.com/projects/huaweiG7/img/select-btn.png"></div> </div> <div show="{pagePop}" class="pop bounceInDown animated"> <div class="bg"><img src="http://disk.giccoo.com/projects/huaweiG7/img/pop-bg.png"> <div class="answer"><img riot-src="{cocktails[n].answer}"></div> <div onclick="{showVideos}" class="btn-video"><img src="http://disk.giccoo.com/projects/huaweiG7/img/btn-video.png"></div> </div> <div onclick="{showShare}" class="share-btn delay-10 fadeIn animated"><img src="http://disk.giccoo.com/projects/huaweiG7/img/btn-share.png"></div> </div> <div show="{pageVideos}" class="videos fadeIn animated"> <div class="video-screen"> <video if="{pageVideos &amp;&amp; v}" controls="true" riot-src="{v.mp4}" width="620" height="340" poster="{v.thum}" webkit-playsinline="webkit-playsinline"></video> <div if="{!v}" class="video-no"> <video width="620" height="340" controls="true" poster="http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg" webkit-playsinline="webkit-playsinline"></video><span>即将上映</span> </div> </div> <div class="video-list"> <div each="{ video in videos }" onclick="{parent.changeVideo(video)}" class="video-btn"></div> </div> <div class="btns"> <div onclick="{showShare}" class="share-btn"><img src="http://disk.giccoo.com/projects/huaweiG7/img/btn-share.png"></div> <div onclick="{backHome}" class="back-home"><img src="http://disk.giccoo.com/projects/huaweiG7/img/back-home.png"></div> </div> </div> <div show="{pageShare}" onclick="{hideShare}" class="share-note fadeIn animated"><img src="/libs/img/wechat.png"></div>', function(opts) {
     var self = this
     this.pageCup = true
     this.pagePop = false
     this.pageVideos = false
     this.pageShare = false
-    this.videos = [{mp4:"http://disk.giccoo.com/projects/huaweiG7/img/1.mp4",thum:"http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg"},false,false]
+
+    this.videos = [{mp4:"http://t.douban.com/img/files/file-1446884786553388.mp4",thum:"http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg"},false,false]
     this.v = this.videos[0]
     this.n = 0
     this.cocktails = [
