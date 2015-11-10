@@ -1,0 +1,62 @@
+extends ../libs/jade/layout-640
+block title
+	| 官网
+block css
+	script(src="/libs/js/viewport.js")
+	link(rel="stylesheet",href="/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css")
+
+block content
+	// - var images = "http://disk.giccoo.com/projects/huaweiG7/img"
+	- var images = "img"
+	.wechat-share-hide
+		//- img#share(src="http://disk.giccoo.com/projects/huaweiG7/img/share.jpg")
+	
+	.main
+		.homepage
+			.bottle.bottle-logo
+				img(src="#{images}/bottle-logo.png")
+				.on-button(onclick="openBottle(this)",page-name="logo")
+				.white
+					img(src="#{images}/bottle-logo-white.png")
+			.bottle.bottle-strategy
+				img(src="#{images}/bottle-strategy.png")
+				.on-button(onclick="openBottle(this)",page-name="strategy")
+				.white
+					img(src="#{images}/bottle-strategy-white.png")
+			.bottle.bottle-technology
+				img(src="#{images}/bottle-technology.png")
+				.on-button(onclick="openBottle(this)",page-name="technology")
+				.white
+					img(src="#{images}/bottle-technology-white.png")
+			.bottle.bottle-brand
+				img(src="#{images}/bottle-brand.png")
+				.on-button(onclick="openBottle(this)",page-name="brand")
+				.white
+					img(src="#{images}/bottle-brand-white.png")
+			//- .bottle.bottle-award
+				img(src="#{images}/bottle-award.png")
+				.on
+				.white
+					img(src="#{images}/bottle-award-white.png")
+		.pages-brand.fadeIn.animated.delay-10
+			.bg.fadeIn.animated.duration-10.delay-18
+			.content(onclick="backBottle('brand')")
+				img(src="img/icon-logo-bmw.png")
+
+block js
+	//- script(src="/libs/js/min/localforage.min.js")
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
+	script(src="/libs/js/min/Zepto.min.js")
+	script(src="/libs/js/min/fastclick.min.js")
+	script(src="/libs/js/min/riot.js")
+	//- script(src="js/tag.js")
+	script(src="js/main.js")
+	script.
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-66865226-2', 'auto');
+		ga('send', 'pageview');

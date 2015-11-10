@@ -1,0 +1,211 @@
+@import sass/base
+
+
+// animation,delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+// animate clickover
++keyframes(clickover)
+	0%
+		opacity: 0
+	30%
+		opacity: 0.7
+	60%
+		opacity: 0
+	100%
+		opacity: 0
++keyframes(bgshow)
+	0%
+		+transform(scale(1,1))
+	100%
+		+transform(scale(1.3,1.3))
++keyframes(bgsmall)
+	0%
+		+transform(scale(1.3,1.3))
+	100%
+		+transform(scale(1,1))
++keyframes(play1)
+	0%
+		+transform(translate3d(0,0,0))
+	50%
+		+transform(translate3d(0,50%,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(play2)
+	0%
+		+transform(translate3d(0,0,0))
+	50%
+		+transform(translate3d(0,80%,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(play3)
+	0%
+		+transform(translate3d(0,0,0))
+	50%
+		+transform(translate3d(0,30%,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(play4)
+	0%
+		+transform(translate3d(0,0,0))
+	50%
+		+transform(translate3d(0,70%,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(play5)
+	0%
+		+transform(translate3d(0,0,0))
+	50%
+		+transform(translate3d(0,70%,0))
+	100%
+		+transform(translate3d(0,0,0))
+// end animate
+
+.wechat-share-hide
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+
+html,body
+	+w
+	+h
+.hide
+	+hide
+// .loading
+	
+
+.main
+	+posa
+	+tl
+	+w(640px)
+	+h
+	+b("../img/bg.jpg",no-repeat,center,center,cover)
+	+overhide
+	// +transform(scale(0.5,0.5))
+	transform-origin: top left
+	.homepage
+		+posa
+		+tl
+		+w
+		+h
+		+tran($time: 2s)
+		z-index: 2
+		&.page-logo
+			+transform(translate3d(400px,400px,0))
+		&.page-strategy
+			+transform(translate3d(400px,400px,0))
+		&.page-technology
+			+transform(translate3d(400px,400px,0))
+		&.page-brand
+			+transform(translate3d(0px,105%,0))
+		&.page-award
+			+transform(translate3d(400px,400px,0))
+
+
+.bottle
+	+posa
+	+show
+	.on-button
+		+posa
+		cursor: pointer
+		z-index: 999
+	.white
+		+tran($time: 2s)
+		+posa
+		+tl
+		+w
+		+h
+		+overhide
+		z-index: 998
+
+.bottle-logo
+	+tl(-420px,-110px)
+	.on-button
+		+br(0px,55px)
+		+wh(165px,60px)
+.bottle-strategy
+	$w: 1020px
+	+tl(-196px,-230px)
+	+w($w)
+	.on-button
+		+tl(0,563px)
+		+wh(240px,290px)
+	.white
+		img
+			+w($w)
+			max-width: $w
+.bottle-technology
+	$w: 953px
+	+tl(110px,-180px)
+	+w($w)
+	.on-button
+		+tl(60px,250px)
+		+wh(200px,100px)
+	.white
+		img
+			+w($w)
+			max-width: $w
+.bottle-brand
+	$w: 411px
+	+w($w)
+	+tl(-260px,-20px)
+	.on-button
+		+br(0,0px)
+		+wh(160px,230px)
+	.white
+		img
+			+w($w)
+			max-width: $w
+		&.on
+			+h(0%)
+.bottle-award
+	$w: 520px
+	+w($w)
+	// +posr
+	+bl(100px,-100px)
+	.white
+		img
+			+w($w)
+			max-width: $w
+		&.on
+			+w(0%)
+
+.pages-brand
+	+hide
+	+posa
+	+tl
+	+w
+	+h
+	+bc(#73ea9c)
+	z-index: 1
+	.bg
+		+posa
+		+tl
+		+w
+		+h
+		+b("../img/pages-brand-bg.jpg",no-repeat,center,center,cover)
+	.content
+		+posa
+		+tl
+		+w
+		+h
+		z-index: 1
+
+
+
+.sliders
+	overflow: hidden
+	.slider
+		+posr
+		white-space: nowrap
+		font-size: 0
+		+tran(all,0s,linear)
+		.slide
+			+w(100%)
+			display: inline-block
+			vertical-align: topd
