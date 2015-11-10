@@ -45,7 +45,7 @@
     this.pageVideos = false
     this.pageShare = false
     //- http://disk.giccoo.com/projects/huaweiG7/img/1.mp4
-    this.videos = [{mp4:"http://t.douban.com/img/files/file-144698473774769.mp4",thum:"http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg"},false,false]
+    this.videos = [{mp4:"http://t.douban.com/img/files/file-144698473774769.mp4",thum:"http://disk.giccoo.com/projects/huaweiG7/img/video-thum.jpg"},{mp4:"http://t.douban.com/img/files/file-1447135205917324.mp4",thum:"http://disk.giccoo.com/projects/huaweiG7/img/video-thum-2.jpg"},false]
     this.v = this.videos[0]
     this.n = 0
     this.cocktails = [
