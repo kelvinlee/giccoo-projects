@@ -1,0 +1,46 @@
+@import sass/base
+
+
++keyframes(nextpoint)
+	0%
+		opacity: 0
+		+transform(translate3d(0,0,0))
+	10%
+		opacity: 1
+	100%
+		opacity: 0.2
+		+transform(translate3d(0,100%,0))
+
+html,body
+	+w
+	+h
+
+.main
+	+w
+	+h
+	.homepage
+		+posa
+		+tl
+		+w
+		+h
+		+tran
+		+b("../img/bg.jpg",no-repeat,bottom,center,cover)
+		&.next
+			+transform(translate3d(0,-100%,0))
+		.logo
+			+posa
+			+tl
+		.note
+			+posa
+			+bl(8%)
+			+w
+		.next
+			+posa
+			+bl(4%)
+			+w
+			+animation(nextpoint,1s,ease,infinite)
+	.nextpage
+		+w
+		+h
+		// +touch
+		font-size: 0
