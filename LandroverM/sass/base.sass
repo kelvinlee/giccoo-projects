@@ -19,12 +19,13 @@ html,body
 	+w
 	+h
 	.homepage
-		+posa
+		+posf
 		+tl
 		+w
 		+h
 		+tran
 		+b("../img/bg.jpg",no-repeat,bottom,center,cover)
+		z-index: 5
 		&.next
 			+transform(translate3d(0,-100%,0))
 		.logo
@@ -39,6 +40,17 @@ html,body
 			+bl(4%)
 			+w
 			+animation(nextpoint,1s,ease,infinite)
+	.back
+		+posf
+		+br(1rem,1rem)
+		+wh(2rem,2rem)
+		z-index: 2
+		border-radius: 0.3rem
+		+bc(rgba(255,255,255,0.8))
+		color: #000
+		line-height: 2rem
+		+font-size(0.8rem)
+		+text-center
 	.nextpage
 		+w
 		+h

@@ -23,6 +23,7 @@ block content
 		.nextpage
 			- for(var i=1; i < 11; i++)
 				img(src="img/page-#{i}.jpg")
+		#back.back 返回
 
 block js
 	//- script(src="/libs/js/min/localforage.min.js")
@@ -42,8 +43,12 @@ block js
 		    return evt.preventDefault();
 		  });
 		  document.getElementById("homepage").addEventListener("touchend", function(evt) {
-		    document.getElementById("homepage").className = "homepage next"
+		    document.getElementById("homepage").className = "homepage next";
 		  });
+		  document.getElementById("back").addEventListener("touchend", function(evt){
+		  	document.getElementById("homepage").className = "homepage";
+		  	setTimeout(function(){ window.scrollTo(0,0) },500);
+		  })
 		};
 
 	
