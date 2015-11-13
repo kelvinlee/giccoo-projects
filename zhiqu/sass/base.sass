@@ -79,33 +79,7 @@ html,body
 // .loading
 	
 
-.main
-	+posa
-	+tl
-	+w(640px)
-	+h
-	// +h(1136px)
-	+b("../img/bg.jpg",no-repeat,center,center,cover)
-	+overhide
-	// +transform(scale(0.5,0.5))
-	transform-origin: top left
-	.homepage
-		+posa
-		+tl
-		+w
-		+h
-		+tran($time: 2s)
-		z-index: 2
-		&.page-logo
-			+transform(translate3d(400px,400px,0))
-		&.page-strategy
-			+transform(translate3d(400px,400px,0))
-		&.page-technology
-			+transform(translate3d(400px,400px,0))
-		&.page-brand
-			+transform(translate3d(0px,105%,0))
-		&.page-award
-			+transform(translate3d(400px,400px,0))
+
 
 
 .bottle
@@ -228,6 +202,37 @@ html,body
 .last-bottle
 	+posa
 	+bl
+
+
+
+
+.main
+	+posa
+	+tl
+	+w(640px)
+	+h
+	// +h(1136px)
+	+b("../img/bg.jpg",no-repeat,center,center,cover)
+	+overhide
+	// +transform(scale(0.5,0.5))
+	transform-origin: top left
+	.homepage
+		+posa
+		+tl
+		+w
+		+h
+		+tran($time: 2s)
+		z-index: 2
+		&.page-logo
+			+transform(translate3d(400px,400px,0))
+		&.page-strategy
+			+transform(translate3d(400px,400px,0))
+		&.page-technology
+			+transform(translate3d(400px,400px,0))
+		&.page-brand
+			+transform(translate3d(-10%,105%,0))
+		&.page-award
+			+transform(translate3d(400px,400px,0))
 
 
 .pages-brand
