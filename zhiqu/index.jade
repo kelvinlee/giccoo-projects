@@ -34,11 +34,24 @@ block content
 				.on-button(onclick="openBottle(this)",page-name="brand")
 				.white
 					img(src="#{images}/bottle-brand-white.png")
+			.bottle.bottle-media
+				img(src="#{images}/bottle-media.png")
+				.on-button(onclick="openBottle(this)",page-name="media")
+				.white
+					img(src="#{images}/bottle-media-white.png")
+			.bottle.middle-tower
+				img(src="#{images}/middle-tower.png")
+			.bottle.left-tower
+				img(src="#{images}/search-tower.png")
+			.bottle.right-tower
+				img(src="#{images}/time-tower.png")
 			//- .bottle.bottle-award
 				img(src="#{images}/bottle-award.png")
 				.on
 				.white
 					img(src="#{images}/bottle-award-white.png")
+			.bottle.last-bottle
+				img(src="#{images}/bottom-bottle.png")
 		.pages-brand.fadeIn.animated.delay-10
 			.bg.fadeIn.animated.duration-10.delay-18
 			.content(onclick="backBottle('brand')")

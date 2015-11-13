@@ -780,7 +780,7 @@ html, body {
   top: 0px;
   left: 0px;
   width: 640px;
-  height: 100%;
+  height: 1136px;
   background: url("../img/bg.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent;
@@ -881,6 +881,19 @@ html, body {
   .bottle-brand .white.on {
     height: 0%; }
 
+.bottle-media {
+  top: 110px;
+  left: -180px;
+  width: 953px; }
+  .bottle-media .on-button {
+    top: 110px;
+    left: 610px;
+    width: 155px;
+    height: 230px; }
+  .bottle-media .white img {
+    width: 953px;
+    max-width: 953px; }
+
 .bottle-award {
   width: 520px;
   bottom: 100px;
@@ -890,6 +903,26 @@ html, body {
     max-width: 520px; }
   .bottle-award .white.on {
     width: 0%; }
+
+.middle-tower {
+  top: 370px;
+  left: 239px;
+  width: 155px; }
+
+.left-tower {
+  top: 290px;
+  left: -130px;
+  width: 341px; }
+
+.right-tower {
+  top: 210px;
+  right: 90px;
+  width: 155px; }
+
+.last-bottle {
+  position: absolute;
+  bottom: 0px;
+  left: 0px; }
 
 .pages-brand {
   display: none;

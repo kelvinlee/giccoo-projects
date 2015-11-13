@@ -163,6 +163,17 @@ html,body
 			max-width: $w
 		&.on
 			+h(0%)
+.bottle-media
+	$w: 953px
+	+tl(110px,-180px)
+	+w($w)
+	.on-button
+		+tl(110px,610px)
+		+wh(155px,230px)
+	.white
+		img
+			+w($w)
+			max-width: $w
 .bottle-award
 	$w: 520px
 	+w($w)
@@ -174,6 +185,24 @@ html,body
 			max-width: $w
 		&.on
 			+w(0%)
+
+.middle-tower
+	$w: 155px
+	+tl(370px,239px)
+	+w($w)
+.left-tower
+	$w: 341px
+	+tl(290px,-130px)
+	+w($w)
+.right-tower
+	$w: 155px
+	+tr(210px,90px)
+	+w($w)
+
+.last-bottle
+	+posa
+	+bl
+
 
 .pages-brand
 	+hide
