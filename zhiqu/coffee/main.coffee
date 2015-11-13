@@ -19,8 +19,15 @@ openBottle = (evt)->
 	$(evt).next().addClass "on"
 	$(".homepage").addClass "page-"+name
 	$(".pages-"+name).show()
+	setTimeout ->
+		$(".pages-"+name).addClass "thispage"
+	,1
+	console.log name
 
 backBottle = (name)->
 	$(".homepage").removeClass "page-"+name
 	$(".bottle-"+name+" .white").removeClass "on"
-	$(".pages-"+name).hide()
+	$(".pages-"+name).removeClass "thispage"
+	setTimeout ->
+		$(".pages-"+name).hide()
+	,2000

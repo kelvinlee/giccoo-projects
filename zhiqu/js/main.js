@@ -101,11 +101,18 @@ openBottle = function(evt) {
   name = $(evt).attr("page-name");
   $(evt).next().addClass("on");
   $(".homepage").addClass("page-" + name);
-  return $(".pages-" + name).show();
+  $(".pages-" + name).show();
+  setTimeout(function() {
+    return $(".pages-" + name).addClass("thispage");
+  }, 1);
+  return console.log(name);
 };
 
 backBottle = function(name) {
   $(".homepage").removeClass("page-" + name);
   $(".bottle-" + name + " .white").removeClass("on");
-  return $(".pages-" + name).hide();
+  $(".pages-" + name).removeClass("thispage");
+  return setTimeout(function() {
+    return $(".pages-" + name).hide();
+  }, 2000);
 };
