@@ -780,7 +780,7 @@ html, body {
   top: 0px;
   left: 0px;
   width: 640px;
-  height: 1136px;
+  height: 100%;
   background: url("../img/bg.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent;
@@ -894,15 +894,48 @@ html, body {
     width: 953px;
     max-width: 953px; }
 
+.bottle-contactus {
+  top: 510px;
+  right: -230px;
+  width: 452px; }
+  .bottle-contactus .on-button {
+    top: 90px;
+    left: 10px;
+    width: 145px;
+    height: 170px; }
+  .bottle-contactus .white img {
+    width: 452px;
+    max-width: 452px; }
+
 .bottle-award {
   width: 520px;
-  bottom: 100px;
-  left: -100px; }
+  top: 575px;
+  left: -132px; }
+  .bottle-award .on-button {
+    top: 90px;
+    left: 408px;
+    width: 85px;
+    height: 140px; }
   .bottle-award .white img {
     width: 520px;
     max-width: 520px; }
   .bottle-award .white.on {
     width: 0%; }
+
+.bottle-fire-1 {
+  width: 78px;
+  top: 411px;
+  left: 90px; }
+
+.bottle-fire-2 {
+  width: 65px;
+  top: 778px;
+  right: 115px; }
+
+.bottle-search {
+  width: 70px;
+  top: 678px;
+  left: 135px; }
 
 .middle-tower {
   top: 370px;

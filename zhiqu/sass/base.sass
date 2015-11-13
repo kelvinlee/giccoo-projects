@@ -83,7 +83,8 @@ html,body
 	+posa
 	+tl
 	+w(640px)
-	+h(1136px)
+	+h
+	// +h(1136px)
 	+b("../img/bg.jpg",no-repeat,center,center,cover)
 	+overhide
 	// +transform(scale(0.5,0.5))
@@ -174,17 +175,42 @@ html,body
 		img
 			+w($w)
 			max-width: $w
+.bottle-contactus
+	$w: 452px
+	+tr(510px,-230px)
+	+w($w)
+	.on-button
+		+tl(90px,10px)
+		+wh(145px,170px)
+	.white
+		img
+			+w($w)
+			max-width: $w
 .bottle-award
 	$w: 520px
 	+w($w)
-	// +posr
-	+bl(100px,-100px)
+	+tl(575px,-132px)
+	.on-button
+		+tl(90px,408px)
+		+wh(85px,140px)
 	.white
 		img
 			+w($w)
 			max-width: $w
 		&.on
 			+w(0%)
+.bottle-fire-1
+	$w: 78px
+	+w($w)
+	+tl(411px,90px)
+.bottle-fire-2
+	$w: 65px
+	+w($w)
+	+tr(778px,115px)
+.bottle-search
+	$w: 70px
+	+w($w)
+	+tl(678px,135px)
 
 .middle-tower
 	$w: 155px
