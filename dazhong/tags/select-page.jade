@@ -1,0 +1,97 @@
+select-page
+	.box
+		img(src="img/box.png")
+	.content
+		.logo
+			img(src="img/home-logo.png")
+		.menus
+			.line
+				img(src="img/select-line.png")
+			.menu
+				.menu-item(each="{menu in menus}",onclick="{changeMenu(menu)}",class="{now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,before: parent.now == menus.indexOf(menu)+1}")
+					img(src="{menu.thumb}.png")
+		.text
+			p {info.description}
+			p
+				span.icon
+					img(src="img/icon-star.png")
+				span {info.name}
+		.btns
+			.btn-info(onclick="{openCuisine}")
+				img(src="img/button-info.png")
+			.btn-random(onclick="{randomCuisine}")
+				img(src="img/button-random.png")
+
+	.cuisinePage(show="{openInfo}",class="fadeIn animated")
+		.load
+			img(src="/libs/img/loading-normal.png")
+		.context-img(if="{openInfo}")
+			img(src="{info.thumb}-1.jpg")
+		.btns
+			img(src="img/button-list.png")
+			.btn.btn-1(onclick="{closeCuisine}")
+			.btn.btn-2(onclick="{showCuisineInfo}")
+			.btn.btn-3(onclick="{showShare}")
+	.cuisineInfoPage(show="{openInfoInfo}",class="fadeIn animated")
+		.load
+			img(src="/libs/img/loading-normal.png")
+		.context-img(if="{openInfo}")
+			img(src="{info.thumb}-2.jpg")
+		.btns
+			.btn-new.btn-4(onclick="{closeCuisineInfo}")
+				img(src="img/icon-back.png")
+			.btn-new.btn-5(onclick="{hideSave}",show="{save}")
+				img(src="img/icon-save.png")
+	script.
+		var self = this
+		this.openInfo = false
+		this.openInfoInfo = false
+		this.share = true
+		this.save = true
+		this.now = 1
+		this.menus = [
+			{name:"《霍森斯那碗羊肉pasta》",thumb:"img/cuisine-1",description:"在北欧的童话里，用美食治愈乡愁"},
+			{name:"《两个饥饿的女文青》",thumb:"img/cuisine-2",description:"没挨过饿，就不算有故事的文艺青年"},
+			{name:"《花心思的吮指美味 美式香烤猪肋排》",thumb:"img/cuisine-3",description:"有一种甜甜腻腻的滋味——叫爱情"},
+			{name:"《是味道，更是儿时的记忆》",thumb:"img/cuisine-4",description:"承认吧！生命中烙印最深的DNA，是你的口味"},
+			{name:"《小龙虾盖浇饭》",thumb:"img/cuisine-5",description:"太重口味？那是你打开的方式不对"},
+			{name:"《番茄蛋的故事》",thumb:"img/cuisine-6",description:"番茄炒蛋，做给最爱的人吃才好吃"},
+			{name:"《大胃囊与小食代——茶香话梅卤汁豆干》",thumb:"img/cuisine-7",description:"亲手做一份怀念尝尝"},
+			{name:"《陌生的城市啊熟悉的角落里，独有一份属于家的味觉》",thumb:"img/cuisine-8",description:"这个火锅是用来暖家的"},
+			{name:"《掰馍》",thumb:"img/cuisine-9",description:"吃羊肉泡馍前，先得憋个大招"},
+			{name:"《Miss麻辣烫》",thumb:"img/cuisine-10",description:"是不是所有的“秀色可餐”，最后都变成了“食色性也”？"}
+		]
+		this.info = this.menus[this.now]
+		randomCuisine() {
+			//- console.log(parseInt(Math.random()*(self.menus.length-1)))
+			//- console.log(self.menus[parseInt(Math.random()*(self.menus.length-1))])
+			self.changeMenu(self.menus[parseInt(Math.random()*(self.menus.length-1))]).call()
+		}
+		changeMenu(menu) {
+			return function() {
+				self.now = self.menus.indexOf(menu)
+				self.info = menu
+				self.update()
+			}
+		}
+		openCuisine() {
+			self.openInfo = true
+		}
+		closeCuisine() {
+			self.openInfo = false
+		}
+		showCuisineInfo () {
+			self.openInfoInfo = true
+			self.save = true
+			$(".playsound").hide()
+		}
+		hideSave() {
+			self.save = false
+		}
+		closeCuisineInfo () {
+			self.openInfoInfo = false
+			$(".playsound").show()
+		}
+		showShare() {
+			$(".wechat").show()
+		}

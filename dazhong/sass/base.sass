@@ -1,0 +1,289 @@
+@import sass/base
+
+
++keyframes(second)
+	0%
+		+transform(rotate(0deg))
+	100%
+		+transform(rotate(360deg))
+// animation,delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.wechat-share-hide
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+
+html,body
+	+w
+	+h
+	+bc(#fefcf0)
+.hide
+	+hide
+// .loading
+	
+.loading
+	+posa
+	+tl
+	+w
+	+h
+	+bc(#fefcf0)
+	z-index: 999
+	.img
+		+posa
+		+tl(50%)
+		+transform(translate3d(0,-50%,0))
+	.text
+		+posa
+		+tl(68%,50%)
+		+transform(translate3d(-50%,-50%,0))
+		+text-center
+		+font-size(1rem)
+		line-height: 1.4em
+		color: #f5c559
+		.loadtext
+			+font-size(1.4rem)
+			margin-right: -1rem
+			em
+				font-style: normal
+.main
+	+posa
+	+tl
+	+w
+	+h
+	z-index: 99
+	.homepage
+		+posa
+		+tl
+		+w
+		+h
+		+overhide
+		+bc(#fefcf0)
+		+hide
+		z-index: 10
+		.food
+			+posa
+			font-size: 0
+		.food-1
+			+tl(0,-0.3rem)
+			+iw(300)
+		.food-2
+			+tr(0,-0.4rem)
+			+iw(300)
+		.food-3
+			+tl(40%,-0.5rem)
+			+iw(320)
+		.food-4
+			+tr(45%,-0.5rem)
+			+iw(230)
+		.food-5
+			+bl(0,-2rem)
+			+iw(300)
+		.food-6
+			+br(0,-0.5rem)
+			+iw(190)
+		
+		.logo
+			+posa
+			+tl(16%,55%)
+			// +transform(translate3d(-50%,-50%,0))
+			+iw(122)
+			margin-left: -122/640*100%/2
+		.star
+			+posa
+			+bl(5%,50%)
+			+iw(250)
+			// +transform(translate3d(-50%,0,0))
+			margin-left: -250/640*100%/2
+
+	.otherpage
+		+posa
+		+tl
+		+w
+		+h
+		+bc(#fefcf0)
+		+hide
+		font-size: 0
+		z-index: 9
+		.playsound
+			+posa
+			+tr(1rem,1rem)
+			+iw(58)
+			z-index: 99
+		.infopage
+			+posa
+			+tl
+			+w
+			+h
+			z-index: 8
+			.bg
+				+b("../img/home-bg.jpg",no-repeat,top,center,cover)
+			.content
+				margin-top: 10%
+				.text
+					+iw(308)
+				.star
+					+iw(304)
+					margin-top: 1rem
+		.content
+			z-index: 20
+		.box,.bg,.content
+			+posa
+			+tl
+			+w
+			+h
+			img
+				+w
+				+h
+		.select-page
+			+posa
+			+tl
+			+w
+			+h
+			+hide
+			z-index: 7
+			.logo
+				+posa
+				+tr(10%,5%)
+				+iw(400)
+			.btns
+				+w(50%)
+				+posa
+				+br(5%,5%)
+				.btn-info
+					+iw(300,320)
+				.btn-random
+					+iw(250,320)
+					margin-top: 1rem
+			.menus
+				+posa
+				+tl(50%)
+				+transform(translate3d(0,-50%,0))
+				+iw(230)
+				.menu
+					+posa
+					+tl
+					+w
+					+h
+				.menu-item
+					// +tran(top)
+					+tran(left)
+					+posa
+					+tl
+					+w(100%)
+					+transform(translate3d(-50%,-50%,0))
+					opacity: 0
+					&.before
+						+tl(10%,50%)
+						+w(130%)
+						opacity: 1
+						z-index: 9
+					&.now
+						+tl(35%,130%)
+						+w(200%)
+						opacity: 1
+						z-index: 8
+					&.after
+						+tl(88%,55%)
+						+w(130%)
+						opacity: 1
+						z-index: 9
+						& ~ .menu-item
+							opacity: 0
+							+tl(100%,0)
+			.text
+				+posa
+				+tr(62%,10%)
+				+transform(translate3d(0,-50%,0))
+				+w(52%)
+				color: #31363c
+				p
+					+font-size(0.8rem)
+					font-weight: bold
+				.icon
+					display: inline-block
+					vertical-align: middle
+					+w(1rem)
+
+			.cuisinePage,.cuisineInfoPage
+				+posa
+				+tl
+				+br
+				+w
+				+h
+				+p
+				+overhide
+				+bc(#fefcf0)
+				z-index: 101
+				font-size: 0
+				.load
+					+posa
+					+tl(50%,50%)
+					+w(12.5%)
+					margin-left: -12.5%/2
+					margin-top: -12.5%/2
+					z-index: 99
+					+transform(translate3d(-50%,-50%,0))
+					+animation(second,1.5s,linear,infinite)
+				.context-img
+					+posr
+					+h
+					+touch
+					z-index: 102
+				.btns
+					+posf
+					+bl
+					+w
+					font-size: 0
+					z-index: 103
+					.btn
+						+posa
+						+tl
+						+w(33.33%)
+						+h
+						z-index: 104
+					.btn-1
+						+tl
+					.btn-2
+						+tl(0,33.33%)
+					.btn-3
+						+tl(0,66.66%)
+			.cuisineInfoPage
+				z-index: 201
+				.btn-4
+					+posa
+					+bl(1rem,1rem)
+					+iw(151)
+				.btn-5
+					+posa
+					+br
+					+iw(233)
+
+
+.wechat
+	+posa
+	+tl
+	+w
+	+h
+	+bc(rgba(255,255,255,0.8))
+	+box
+	+hide
+	padding-top: 2rem
+	z-index: 3009
+
+.sliders
+	overflow: hidden
+	.slider
+		+posr
+		white-space: nowrap
+		font-size: 0
+		+tran(all,0s,linear)
+		.slide
+			+w(100%)
+			display: inline-block
+			vertical-align: top
