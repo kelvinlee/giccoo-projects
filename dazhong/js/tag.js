@@ -40,7 +40,8 @@ riot.tag('select-page', '<div class="box"><img src="img/box.png"></div> <div cla
     this.openInfoInfo = false
     this.share = true
     this.save = true
-    this.now = 1
+    this.canRun = false
+    this.now = 9
     this.menus = [
     	{name:"《霍森斯那碗羊肉pasta》",thumb:"img/cuisine-1",description:"在北欧的童话里，用美食治愈乡愁"},
     	{name:"《两个饥饿的女文青》",thumb:"img/cuisine-2",description:"没挨过饿，就不算有故事的文艺青年"},
@@ -61,6 +62,7 @@ riot.tag('select-page', '<div class="box"><img src="img/box.png"></div> <div cla
     }.bind(this);
     this.changeMenu = function(menu) {
     	return function() {
+    		if (!self.canRun) { return false }
     		self.now = self.menus.indexOf(menu)
     		self.info = menu
     		self.update()
@@ -86,6 +88,18 @@ riot.tag('select-page', '<div class="box"><img src="img/box.png"></div> <div cla
     }.bind(this);
     this.showShare = function() {
     	$(".wechat").show()
+    }.bind(this);
+    this.init = function() {
+    	if (self.now <= 1) {
+    		self.canRun = true
+    		return false
+    	}
+    	setTimeout(function(){
+    		self.now = self.now-1
+    		self.info = self.menus[self.now]
+    		self.update()
+    		self.init()
+    	},500)
     }.bind(this);
   
 });

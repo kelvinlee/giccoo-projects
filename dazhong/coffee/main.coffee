@@ -19,6 +19,16 @@ imageList = [
 	"img/start.png"
 	"img/wechat.png"
 	"img/box.png"
+	"img/cuisine-1.png"
+	"img/cuisine-2.png"
+	"img/cuisine-3.png"
+	"img/cuisine-4.png"
+	"img/cuisine-5.png"
+	"img/cuisine-6.png"
+	"img/cuisine-7.png"
+	"img/cuisine-8.png"
+	"img/cuisine-9.png"
+	"img/cuisine-10.png"
 ]
 imgs = []
 # riot.mount("*")
@@ -45,9 +55,9 @@ loadAllImage = ->
 loadComper = (m)->
 	$("#loading-text").text m
 
-
+tags = null
 loadFinished = ->
-	riot.mount("*")
+	tags = riot.mount("*")
 	$(".loading").addClass "fadeOut animated"
 	setTimeout ->
 		$(".loading").hide()
@@ -66,4 +76,5 @@ starEat = ->
 	setTimeout ->
 		$(".infopage").hide()
 		$(".select-page").show()
+		tags[1].init()
 	,500

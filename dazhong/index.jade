@@ -6,10 +6,10 @@ block css
 	link(rel="stylesheet",href="css/base.css")
 
 block content
-	// - var images = "http://disk.giccoo.com/projects/huaweiG7/img"
+	// - var images = "http://disk.giccoo.com/projects/dazhong/img"
 	- var images = "img"
 	.wechat-share-hide
-		//- img#share(src="http://disk.giccoo.com/projects/huaweiG7/img/share.jpg")
+		img#share(src="http://disk.giccoo.com/projects/dazhong/img/share.jpg")
 	.loading
 		.img
 			img(src="img/loading.jpg")
@@ -29,7 +29,7 @@ block content
 			.star.fadeInTop.animated.duration-10.delay-12(onclick="hidePage()")
 				img(src="img/start.png")
 		.otherpage
-			playsound(src="img/audio.mp3",icon="true",icon-play="img/icon-play.png")
+			playsound(src="http://t.douban.com/img/files/file-1446701573287210.mp3",icon="true",icon-play="img/icon-play.png")
 			.infopage.fadeIn.animated
 				.bg
 				.box
@@ -46,7 +46,7 @@ block content
 				img(src="img/wechat.png")
 block js
 	//- script(src="/libs/js/min/localforage.min.js")
-	script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
+	//- script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
 	script(src="/libs/js/min/Zepto.min.js")
 	script(src="/libs/js/min/fastclick.min.js")
 	script(src="/libs/js/min/riot.js")
