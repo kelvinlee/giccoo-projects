@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>官网</title>
+    <title>致趣实验室</title>
     <script src="/libs/js/viewport.js"></script>
     <link rel="stylesheet" href="/libs/css/animate.min.css" media="none" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="css/base.css">
@@ -15,8 +15,12 @@
     <div class="main">
       <div class="homepage">
         <div class="bottle bottle-logo"><img src="img/bottle-logo.png">
-          <div onclick="openBottle(this)" page-name="logo" class="on-button"></div>
+          <div onclick="openBottleMain(this)" page-name="logo" class="on-button"></div>
           <div class="white"><img src="img/bottle-logo-white.png"></div>
+          <div class="newbottle"><img src="img/bottle-logo-full.png">
+            <div class="white white-1"><img src="img/bottle-logo-full-white-1.png"></div>
+            <div class="white white-2"><img src="img/bottle-logo-full-white-2.png"></div>
+          </div>
         </div>
         <div class="bottle bottle-strategy"><img src="img/bottle-strategy.png">
           <div onclick="openBottle(this)" page-name="strategy" class="on-button"></div>
@@ -29,13 +33,18 @@
         <div class="bottle bottle-brand"><img src="img/bottle-brand.png">
           <div onclick="openBottle(this)" page-name="brand" class="on-button"></div>
           <div class="white"><img src="img/bottle-brand-white.png"></div>
+          <div class="bubbles">
+            <div class="bubble bubble-1"><img src="img/homepage-bubble.png"></div>
+            <div class="bubble bubble-2"><img src="img/homepage-bubble.png"></div>
+            <div class="bubble bubble-3"><img src="img/homepage-bubble.png"></div>
+          </div>
         </div>
         <div class="bottle bottle-media"><img src="img/bottle-media.png">
           <div onclick="openBottle(this)" page-name="media" class="on-button"></div>
           <div class="white"><img src="img/bottle-media-white.png"></div>
         </div>
         <div class="bottle bottle-contactus"><img src="img/bottle-contactus.png">
-          <div onclick="openBottle(this)" page-name="contactus" class="on-button"></div>
+          <div onclick="openBottleMain(this)" page-name="contactus" class="on-button"></div>
           <div class="white"><img src="img/bottle-contactus-white.png"></div>
         </div>
         <div class="bottle bottle-award"><img src="img/bottle-award.png">
@@ -44,29 +53,47 @@
         </div>
         <div class="bottle middle-tower"><img src="img/middle-tower.png"></div>
         <div class="bottle left-tower"><img src="img/search-tower.png"></div>
-        <div class="bottle right-tower"><img src="img/time-tower.png"></div>
+        <div class="bottle right-tower"><img src="img/time-tower.png">
+          <div class="timer"><img src="img/right-tower-timer.png">
+            <timer></timer>
+          </div>
+          <playsound src="mp3/1.mp3"></playsound>
+        </div>
         <div class="bottle last-bottle"><img src="img/bottom-bottle.png"></div>
         <div class="bottle bottle-fire-1"><img src="img/bottle-lighter.png"></div>
         <div class="bottle bottle-fire-2"><img src="img/bottle-lighter.png"></div>
-        <div class="bottle bottle-search"><img src="img/magn.png"></div>
+        <div class="bottle bottle-search tada animated infinite duration-15"><img src="img/magn.png"></div>
+      </div>
+      <div class="pages-logo">
+        <div class="bg"></div>
+        <div onclick="backBottleMain('logo')" class="content">
+          <div class="logo-page-bottle"></div>
+          <div class="bottle bottle-logo-next"><img src="img/bottle-logo-next.png">
+            <div class="text fadeIn animated delay-20"><img src="img/pages-logo-text.png"></div>
+            <div class="white-1"><img src="img/bottle-logo-next-white-1.png"></div>
+            <div class="white-2"><img src="img/bottle-logo-next-white-2.png"></div>
+            <div class="white-3"><img src="img/bottle-logo-next-white-3.png"></div>
+            <div class="white-4"><img src="img/bottle-logo-next-white-4.png"></div>
+          </div>
+        </div>
       </div>
       <div class="pages-brand">
         <div class="bg fadeIn animated duration-10 delay-18"></div>
         <div onclick="backBottle('brand')" class="content">
           <div class="brands">
-            <div class="bg-line fadeIn animated duration-10 delay-20"><img src="img/pages-brand-line.png"></div>
-            <div class="brand duration-10 fadeIn animated brand-1 delay-12"><img src="img/icon-brand-1.png"></div>
-            <div class="brand duration-10 fadeIn animated brand-2 delay-14"><img src="img/icon-brand-2.png"></div>
-            <div class="brand duration-10 fadeIn animated brand-3 delay-16"><img src="img/icon-brand-3.png"></div>
-            <div class="brand duration-10 fadeIn animated brand-4 delay-18"><img src="img/icon-brand-4.png"></div>
-            <div class="brand duration-10 fadeIn animated brand-5 delay-20"><img src="img/icon-brand-5.png"></div>
-            <div class="brand duration-10 fadeIn animated brand-6 delay-22"><img src="img/icon-brand-6.png"></div>
-            <div class="brand duration-10 fadeIn animated brand-7 delay-24"><img src="img/icon-brand-7.png"></div>
-            <div class="brand duration-10 fadeIn animated brand-8 delay-26"><img src="img/icon-brand-8.png"></div>
-            <div class="brand duration-10 fadeIn animated brand-9 delay-28"><img src="img/icon-brand-9.png"></div>
-            <div class="brand duration-10 fadeIn animated brand-10 delay-30"><img src="img/icon-brand-10.png"></div>
-            <div class="brand duration-10 fadeIn animated brand-11 delay-32"><img src="img/icon-brand-11.png"></div>
-            <div class="brand duration-10 fadeIn animated brand-12 delay-34"><img src="img/icon-brand-12.png"></div>
+            <div class="bg-line fadeIn animated duration-10 delay-15"><img src="img/pages-brand-line.png"></div>
+            <div class="brand animated duration-5 brand-1 bounceIn delay-30"><img src="img/icon-brand-1.png"></div>
+            <div class="brand animated duration-5 brand-2 bounceIn delay-27"><img src="img/icon-brand-2.png"></div>
+            <div class="brand animated duration-5 brand-3 bounceIn delay-24"><img src="img/icon-brand-3.png"></div>
+            <div class="brand animated duration-5 brand-4 bounceIn delay-21"><img src="img/icon-brand-4.png"></div>
+            <div class="brand animated duration-5 brand-5 bounceIn delay-27"><img src="img/icon-brand-5.png"></div>
+            <div class="brand animated duration-5 brand-6 bounceIn delay-21"><img src="img/icon-brand-6.png"></div>
+            <div class="brand animated duration-5 brand-7 bounceIn delay-19"><img src="img/icon-brand-7.png"></div>
+            <div class="brand animated duration-5 brand-8 bounceIn delay-24"><img src="img/icon-brand-8.png"></div>
+            <div class="brand animated duration-5 brand-9 bounceIn delay-18"><img src="img/icon-brand-9.png"></div>
+            <div class="brand animated duration-5 brand-10 bounceIn delay-24"><img src="img/icon-brand-10.png"></div>
+            <div class="brand animated duration-5 brand-11 bounceIn delay-24"><img src="img/icon-brand-11.png"></div>
+            <div class="brand animated duration-5 brand-12 bounceIn delay-27"><img src="img/icon-brand-12.png"></div>
           </div>
         </div>
       </div>
@@ -80,16 +107,36 @@
             <div class="item-light-all"><img src="img/pages-strategy-light-all.png"></div>
             <div class="item-icloud-1"><img src="img/pages-strategy-icloud-1.png"></div>
             <div class="item-icloud-2"><img src="img/pages-strategy-icloud-2.png"></div>
+            <div class="item-icons"><img src="img/pages-strategy-icons.png"></div>
           </div>
           <div class="m-bottom">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="p1"><img src="img/pages-strategy-people-1.png"></div>
+            <div class="p2"><img src="img/pages-strategy-people-2.png"></div>
+            <div class="parts1"><img src="img/pages-strategy-parts-red.png"></div>
+            <div class="parts2"><img src="img/pages-strategy-parts-yellow.png"></div>
+            <div class="parts3"><img src="img/pages-strategy-parts-roulette.png"></div>
+            <div class="fcanvas">
+              <div class="items">
+                <div class="item"><img src="img/pages-strategy-canvas-1.png"></div>
+                <div class="item"><img src="img/pages-strategy-canvas-2.png"></div>
+              </div>
+            </div>
             <div class="bg"><img src="img/pages-strategy-m-bottom.png"></div>
           </div>
+        </div>
+      </div>
+      <div class="pages-contactus">
+        <div onclick="backBottleMain('contactus')" class="content">
+          <div class="bg"><img src="img/pages-contactus-bg.png"></div>
         </div>
       </div>
     </div>
     <script src="/libs/js/min/Zepto.min.js"></script>
     <script src="/libs/js/min/fastclick.min.js"></script>
     <script src="/libs/js/min/riot.js"></script>
+    <script src="js/tag.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

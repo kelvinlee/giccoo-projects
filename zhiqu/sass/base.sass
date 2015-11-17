@@ -29,8 +29,91 @@
 		opacity: 1
 	50%
 		opacity: 0.4
++keyframes(soundBG)
+	to
+		background-position-x: -165px
++keyframes(whiteH)
+	from
+		+h(100%)
+	to
+		+h(0%)
++keyframes(whiteW)
+	from
+		+w(100%)
+	to
+		+w(0%)
++keyframes(people1)
+	0%
+		+transform(scale(-1,1) translate3d(190px,0,0))
+		opacity: 1
+	90%
+		opacity: 1
+	100%
+		opacity: 0
+		+transform(scale(-1,1) translate3d(-700px,0,0))
++keyframes(people2)
+	0%
+		+transform(scale(-1,1) translate3d(-90px,0,0))
+		opacity: 1
+	90%
+		opacity: 1
+	100%
+		opacity: 0
+	100%
+		+transform(scale(-1,1) translate3d(740px,0,0))
++keyframes(rotateP)
+	from
+		+transform(rotate(0deg))
+	to
+		+transform(rotate(360deg))
++keyframes(rotatePF)
+	from
+		+transform(rotate(0deg))
+	to
+		+transform(rotate(-360deg))
++keyframes(rotatePW)
+	0%
+		+transform(rotate(0deg))
+	30%
+		+transform(rotate(360deg))
+	100%
+		+transform(rotate(360deg))
++keyframes(canvasM)
+	0%,100%
+		+transform(translate3d(0,0,0))
+	40%
+		+transform(translate3d(0,0,0))
+	50%
+		+transform(translate3d(-100%,0,0))
+	90%
+		+transform(translate3d(-100%,0,0))
++keyframes(iconShow)
+	0%
+		+transform(rotate(0deg) scale(0,0))
+	10%
+		+transform(rotate(360deg) scale(1.4,1.4))
+	15%
+		+transform(rotate(720deg) scale(0.7,0.7))
+	25%
+		+transform(rotate(360deg) scale(1.1,1.1))
+	50%,90%
+		+transform(rotate(0deg) scale(1,1))
+	100%
+		+transform(rotate(-360deg) scale(0,0))
++keyframes(bubble)
+	0%,100%
+		+transform(translate3d(0,80px,0) scale(0,0))
+		opacity: 0
+	10%,20%
+		opacity: 1
+	30%
+		+transform(translate3d(0,0px,0) scale(1,1))
+		opacity: 1
+	35%
+		+transform(translate3d(0,-20px,0) scale(0,0))
+		opacity: 0
 
-// end animate
+
 
 .wechat-share-hide
 	+posa
@@ -44,7 +127,6 @@ html,body
 .hide
 	+hide
 // .loading
-	
 
 
 
@@ -52,6 +134,14 @@ html,body
 .bottle
 	+posa
 	+show
+	.newbottle
+		+hide
+		+posa
+		+tl
+		+w
+		+h
+	&.Mybottle
+		+show
 	.on-button
 		+posa
 		cursor: pointer
@@ -66,10 +156,57 @@ html,body
 		z-index: 998
 
 .bottle-logo
+	$w: 403px
+	$h: 581px
 	+tl(-420px,-110px)
 	.on-button
 		+br(0px,55px)
 		+wh(165px,60px)
+	.white
+		+tran
+		+w(100%)
+		left: auto
+		right: 0
+		&.on
+			+w(0%)
+			& *
+				+hide
+		img
+			+posa
+			+tr
+			+w($w)
+			max-width: $w
+	.white-1,.white-2
+		+posa
+		+tl
+		+w($w)
+		+h($h)
+		+overhide
+		img
+			+posa
+			+tl
+	.newbottle
+		opacity: 0
+		+show
+	&.Mybottle
+		.newbottle
+			// +show
+			opacity: 1
+			// img
+			// 	+w
+			// 	+h
+		.white-1
+			+tran($time: 1s)
+			+h(0%)
+		.white-2
+			+tran($time: 1s)
+			+w(0%)
+			transition-delay: 1s
+
+
+
+
+
 .bottle-strategy
 	$w: 1020px
 	+tl(-196px,-230px)
@@ -108,6 +245,32 @@ html,body
 			max-width: $w
 		&.on
 			+h(0%)
+	.bubbles
+		+posa
+		+bl(120px,130px)
+		z-index: -1
+		+w(28px*3)
+		+h(120px)
+
+		.bubble
+			+posa
+			transform-origin: center center
+			img
+				+wh(28px,28px)
+		.bubble-1
+			+tl(0,20px)
+			+animation(bubble,2.5s,linear,infinite)
+		.bubble-2
+			+tl(30px,0)
+			+animation(bubble,3s,linear,infinite)
+			img
+				+wh(20px,20px)
+		.bubble-3
+			+tl(50px,15px)
+			+animation(bubble,3.5s,linear,infinite)
+			img
+				+wh(18px,18px)
+
 .bottle-media
 	$w: 953px
 	+tl(110px,-180px)
@@ -168,6 +331,46 @@ html,body
 	$w: 155px
 	+tr(210px,90px)
 	+w($w)
+	.timer
+		+posa
+		+tl(33%)
+		.timer-box
+			+posa
+			+tl
+			+w
+			+h
+			.hour,.mint
+				+posa
+				+bl(50%,50%)
+				+w(4px)
+				+h(24px)
+				margin-left: -1px
+				+bc(#596272)
+				font-size: 0
+				transform-origin: bottom center
+				border-radius: 1px
+			.hour
+				+h(18px)
+			.sec
+				+posa
+				+bl(50%,50%)
+				+w(4px)
+				+h(30px)
+				margin-left: -1px
+				+bc(#f06640)
+				font-size: 0
+				transform-origin: bottom center
+				border-radius: 1px
+	.playsound
+		+posa
+		+tl(14px,27px)
+		z-index: 999
+		.icon-play
+			+wh(33px,25px)
+			+b("../img/right-tower-sound.png",no-repeat,0,0,165px 25px)
+			&.play
+				animation: soundBG 0.8s steps(5) infinite
+
 
 .last-bottle
 	+posa
@@ -191,19 +394,161 @@ html,body
 		+tl
 		+w
 		+h
-		+tran($time: 2s)
+		+tran($time: 0.5s,$ease: linear)
 		z-index: 2
 		// &.page-logo
 			// +transform(translate3d(400px,400px,0))
 		&.page-strategy
+			+tran($time: 2s,$ease: linear)
 			+transform(translate3d(770px,0,0))
 		// &.page-technology
 			// +transform(translate3d(400px,400px,0))
 		&.page-brand
+			+tran($time: 2s,$ease: linear)
 			+transform(translate3d(-10%,105%,0))
 		// &.page-award
 			// +transform(translate3d(400px,400px,0))
+	&.page-logo .homepage
+		+tran($time: 2s,$ease: linear)
+		+transform(translate3d(243px,113%,0))
+	&.page-contactus .homepage
+		+tran($time: 2s,$ease: linear)
+		+transform(translate3d(-670px,-500px,0))
 
+.pages-contactus
+	+tran($time: 0.5s,$ease: linear)
+	+posa
+	+tl
+	+w
+	+h
+	// +hide
+	z-index: 102
+	+transform(translate3d(670px,500px,0))
+	&.thispage
+		+tran($time: 2s,$ease: linear)
+		+transform(translate3d(0,0,0))
+	.content
+		+posa
+		+tl
+		+w
+		+h
+		+overhide
+		z-index: 1
+		.bg
+			+posa
+			+tl(80px)
+
+.pages-logo
+	$w: 300px
+	+tran($time: 0.5s,$ease: linear)
+	+posa
+	+tl
+	+w
+	+h
+	// +hide
+	+transform(translate3d(-243px,-113%,0))
+	+b("../img/pages-logo-bg-start.jpg",no-repeat,center,center,cover)
+	&.thispage
+		+tran($time: 2s,$ease: linear)
+		+transform(translate3d(0,0,0))
+		// z-index: 120
+		.bg
+			+animation(fadeIn,0.5s,ease)
+			animation-delay: 2s
+			z-index: -1
+		.bottle-logo-next
+			+show
+			.white
+				
+				+tran($time: 0.5)
+			.white-1,.white-2,.white-3,.white-4
+				+tran($time: 0.5)
+				+posa
+				+overhide
+				+w(100%)
+				+h(100%)
+			.white-1
+				// transition-delay: 2s
+				// +tran($time: 0.5,$ease: linear)
+				+tl
+				// +h(0%)
+				+animation(whiteH,0.5s,linear)
+				animation-delay: 2s
+			.white-2
+				// transition-delay: 2.5s
+				// +tran($time: 0.5,$ease: linear)
+				+tr
+				+animation(whiteW,0.5s,linear)
+				animation-delay: 2.5s
+				+text-right
+				img
+					+posa
+					+tr
+			.white-3
+				// transition-delay: 3s
+				// +tran($time: 0.5,$ease: linear)
+				+br
+				// +h(0%)
+				+animation(whiteH,0.5s,linear)
+				animation-delay: 3s
+				img
+					+posa
+					+bl
+			.white-4
+				// transition-delay: 3.5s
+				// +tran($time: 0.5,$ease: linear)
+				+posa
+				+tl
+				+animation(whiteW,0.5s,linear)
+				animation-delay: 3.25s
+				img
+					+posa
+					+tl
+	.content
+		+posa
+		+tl
+		+w
+		+h
+		z-index: 1
+	.bg
+		+posa
+		+tl
+		+w
+		+h
+		+b("../img/pages-logo-bg-end.jpg",no-repeat,center,center,cover)
+		+animation(fadeOut,.5s,ease)
+	.bottle-logo-next
+		+posa
+		+bl(28px,0px)
+		$w: 604px
+		$h: 905px
+		+wh($w,$h)
+		z-index: 120
+		+hide
+		.text
+			+posa
+			+tl(180px)
+
+		.white-1,.white-2,.white-3,.white-4
+			+tran($time: 0.5)
+			+posa
+			+overhide
+			+w(100%)
+			+h(100%)
+			img
+				+w($w)
+				+h($h)
+				max-width: $w
+		.white
+			// transition-delay: 0s
+			// +overhide
+			// +w(100%)
+			&.on
+				+w(0%)
+			img
+				+w($w)
+				+h($h)
+				max-width: $w
 
 .pages-brand
 	+hide
@@ -211,12 +556,13 @@ html,body
 	+tl
 	+w
 	+h
-	+bc(#73ea9c)
-	+tran($time: 2s)
+	// +bc(#73ea9c)
+	+tran($time: 0.5s,$ease: linear)
 	z-index: 1
 	opacity: 0
 	+transform(translate3d(10%,-105%,0))
 	&.thispage
+		+tran($time: 2s,$ease: linear)
 		opacity: 1
 		+transform(translate3d(0,0,0))
 	.bg
@@ -268,12 +614,13 @@ html,body
 	+tl
 	+w
 	+h
-	+tran($time: 1.95s)
+	+tran($time: 0.5s,$ease: linear)
 	z-index: 11
 	opacity: 0
 	+transform(translate3d(-770px,0,0))
 	// +bc(#73ea9c)
 	&.thispage
+		+tran($time: 2s,$ease: linear)
 		opacity: 1
 		+transform(translate3d(0,0,0))
 	.content
@@ -281,6 +628,7 @@ html,body
 		+h
 		.m-top
 			+posr
+			z-index: 10
 			.item-switch
 				+posa
 				+tl(310px,480px)
@@ -323,14 +671,71 @@ html,body
 				z-index: -1
 				transform-origin: left center
 				+animation(cloud,4s,ease,infinite)
+			.item-icons
+				+posa
+				+tl(60px,258px)
+				z-index: 2
+				+animation(iconShow,8s,ease,infinite)
 		.m-bottom
 			+posa
-			+tl(466px)
+			+tl(460px)
 			+br
 			+w
+			z-index: -1
+			.line1,.line2
+				+posa
+				+tl
+				+w(8px)
+				+h(50%)
+				+bc(#c9c4c6)
+			.line1
+				+tl(0,132px)
+			.line2
+				+tl(0,447px)
+			.p1
+				+posa
+				+bl
+				+animation(people1,6s,linear,infinite)
+				z-index: 99
+				transform-origin: right center
+				animation-delay: 2s
+			.p2
+				+posa
+				+br
+				+animation(people2,5s,linear,infinite)
+				z-index: 99
+				transform-origin: center center
+			.parts1,.parts2,.parts3
+				+posa
+				+tl(134px,510px)
+				z-index: 99
+			.parts1
+				+animation(rotateP,2s,linear,infinite)
+			.parts2
+				+tl(177px,536px)
+				+animation(rotatePF,2s,linear,infinite)
+			.parts3
+				+tl(228px,531px)
+				+animation(rotatePW,4s,linear,infinite)
+			.fcanvas
+				+posa
+				+tl(90px,120px)
+				+wh(385px,308px)
+				+overhide
+				
+				font-size: 0
+				z-index: 99
+				.items
+					white-space: nowrap
+					+w
+					+h
+					+animation(canvasM,8s,linear,infinite)
+				.item
+					+show-inline
 			.bg
 				+posa
 				+bl
+
 .sliders
 	overflow: hidden
 	.slider

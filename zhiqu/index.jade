@@ -1,6 +1,6 @@
 extends ../libs/jade/layout-640
 block title
-	| 官网
+	| 致趣实验室
 block css
 	script(src="/libs/js/viewport.js")
 	link(rel="stylesheet",href="/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
@@ -16,9 +16,15 @@ block content
 		.homepage
 			.bottle.bottle-logo
 				img(src="#{images}/bottle-logo.png")
-				.on-button(onclick="openBottle(this)",page-name="logo")
+				.on-button(onclick="openBottleMain(this)",page-name="logo")
 				.white
 					img(src="#{images}/bottle-logo-white.png")
+				.newbottle
+					img(src="#{images}/bottle-logo-full.png")
+					.white.white-1
+						img(src="#{images}/bottle-logo-full-white-1.png")
+					.white.white-2
+						img(src="#{images}/bottle-logo-full-white-2.png")
 			.bottle.bottle-strategy
 				img(src="#{images}/bottle-strategy.png")
 				.on-button(onclick="openBottle(this)",page-name="strategy")
@@ -34,6 +40,10 @@ block content
 				.on-button(onclick="openBottle(this)",page-name="brand")
 				.white
 					img(src="#{images}/bottle-brand-white.png")
+				.bubbles
+					-for (var i=0;i<3;i++)
+						.bubble(class="bubble-#{i+1}")
+							img(src="#{images}/homepage-bubble.png")
 			.bottle.bottle-media
 				img(src="#{images}/bottle-media.png")
 				.on-button(onclick="openBottle(this)",page-name="media")
@@ -41,7 +51,7 @@ block content
 					img(src="#{images}/bottle-media-white.png")
 			.bottle.bottle-contactus
 				img(src="#{images}/bottle-contactus.png")
-				.on-button(onclick="openBottle(this)",page-name="contactus")
+				.on-button(onclick="openBottleMain(this)",page-name="contactus")
 				.white
 					img(src="#{images}/bottle-contactus-white.png")
 			.bottle.bottle-award
@@ -55,53 +65,107 @@ block content
 				img(src="#{images}/search-tower.png")
 			.bottle.right-tower
 				img(src="#{images}/time-tower.png")
+				.timer
+					img(src="#{images}/right-tower-timer.png")
+					timer
+				playsound(src="mp3/1.mp3")
 			.bottle.last-bottle
 				img(src="#{images}/bottom-bottle.png")
 			.bottle.bottle-fire-1
 				img(src="#{images}/bottle-lighter.png")
 			.bottle.bottle-fire-2
 				img(src="#{images}/bottle-lighter.png")
-			.bottle.bottle-search
+			.bottle.bottle-search.tada.animated.infinite.duration-15
 				img(src="#{images}/magn.png")
+
+		.pages-logo
+			.bg
+			.content(onclick="backBottleMain('logo')")
+				.logo-page-bottle
+				.bottle.bottle-logo-next
+					img(src="#{images}/bottle-logo-next.png")
+					.text.fadeIn.animated.delay-20
+						img(src="#{images}/pages-logo-text.png")
+					.white-1
+						img(src="#{images}/bottle-logo-next-white-1.png")
+					.white-2
+						img(src="#{images}/bottle-logo-next-white-2.png")
+					.white-3
+						img(src="#{images}/bottle-logo-next-white-3.png")
+					.white-4
+						img(src="#{images}/bottle-logo-next-white-4.png")
+
+				//- .bottle.bottle-logo-next
+					img(src="#{images}/bottle-logo-next.png")
+					.white
+						img(src="#{images}/bottle-logo-next-white.png")
 
 		.pages-brand
 			.bg.fadeIn.animated.duration-10.delay-18
 			.content(onclick="backBottle('brand')")
 				.brands
-					.bg-line.fadeIn.animated.duration-10.delay-20
+					.bg-line.fadeIn.animated.duration-10.delay-15
 						img(src="img/pages-brand-line.png")
+					//- var list = [{a:"fadeIn",num: 10},{a:"fadeInUp", num: 12},{a:"fadeInUp", num: 9},{a:"fadeInUp", num: 6},{a:"fadeInRight", num: 3},{a:"fadeInLeft", num: 9},{a:"fadeInLeft", num: 3},{a:"fadeInUp",num: 1},{a:"fadeInRight",num: 6},{a:"fadeIn",num: 0},{a:"fadeInUp",num: 6},{a:"fadeInDown",num: 6},{a:"fadeInUp",num: 9},{a:"fadeIn",num: 10}]
+					- var list = [{a:"bounceIn",num: 10},{a:"bounceIn", num: 12},{a:"bounceIn", num: 9},{a:"bounceIn", num: 6},{a:"bounceIn", num: 3},{a:"bounceIn", num: 9},{a:"bounceIn", num: 3},{a:"bounceIn",num: 1},{a:"bounceIn",num: 6},{a:"bounceIn",num: 0},{a:"bounceIn",num: 6},{a:"bounceIn",num: 6},{a:"bounceIn",num: 9},{a:"bounceIn",num: 10}]
 					- for (var i=1;i<13;i++)
-						.brand.duration-10.fadeIn.animated(class="brand-#{i} delay-#{i*2+10}")
+						.brand.animated(class="duration-5 brand-#{i} #{list[i].a} delay-#{list[i].num+18}")
 							img(src="img/icon-brand-#{i}.png")
 
 		.pages-strategy
 			.content(onclick="backBottle('strategy')")
 				.m-top
-					img(src="img/pages-strategy-m-top.png")
+					img(src="#{images}/pages-strategy-m-top.png")
 					.item-logo
-						img(src="img/pages-strategy-logo.png")
+						img(src="#{images}/pages-strategy-logo.png")
 					.item-switch
-						img(src="img/pages-strategy-switch.png")
+						img(src="#{images}/pages-strategy-switch.png")
 					.item-light-red
-						img(src="img/pages-strategy-light-red.png")
+						img(src="#{images}/pages-strategy-light-red.png")
 					.item-light-blue
-						img(src="img/pages-strategy-light-blue.png")
+						img(src="#{images}/pages-strategy-light-blue.png")
 					.item-light-all
-						img(src="img/pages-strategy-light-all.png")
+						img(src="#{images}/pages-strategy-light-all.png")
 					.item-icloud-1
-						img(src="img/pages-strategy-icloud-1.png")
+						img(src="#{images}/pages-strategy-icloud-1.png")
 					.item-icloud-2
-						img(src="img/pages-strategy-icloud-2.png")
+						img(src="#{images}/pages-strategy-icloud-2.png")
+					.item-icons
+						img(src="#{images}/pages-strategy-icons.png")
 				.m-bottom
+					.line1
+					.line2
+					.p1
+						img(src="#{images}/pages-strategy-people-1.png")
+					.p2
+						img(src="#{images}/pages-strategy-people-2.png")
+					.parts1
+						img(src="#{images}/pages-strategy-parts-red.png")
+					.parts2
+						img(src="#{images}/pages-strategy-parts-yellow.png")
+					.parts3
+						img(src="#{images}/pages-strategy-parts-roulette.png")
+					.fcanvas
+						.items
+							.item
+								img(src="#{images}/pages-strategy-canvas-1.png")
+							.item
+								img(src="#{images}/pages-strategy-canvas-2.png")
 					.bg
-						img(src="img/pages-strategy-m-bottom.png")
+						img(src="#{images}/pages-strategy-m-bottom.png")
+
+		.pages-contactus
+			.content(onclick="backBottleMain('contactus')")
+				.bg
+					img(src="#{images}/pages-contactus-bg.png")
+
 block js
 	//- script(src="/libs/js/min/localforage.min.js")
 	//- script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
 	script(src="/libs/js/min/Zepto.min.js")
 	script(src="/libs/js/min/fastclick.min.js")
 	script(src="/libs/js/min/riot.js")
-	//- script(src="js/tag.js")
+	script(src="js/tag.js")
 	script(src="js/main.js")
 	//- script.
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

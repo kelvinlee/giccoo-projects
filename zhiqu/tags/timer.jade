@@ -1,0 +1,21 @@
+timer
+	.hour(style="transform: rotate({hour_deg}deg); -webkit-transform: rotate({hour_deg}deg)") {hour}
+	.mint(style="transform: rotate({mint_deg}deg); -webkit-transform: rotate({mint_deg}deg)") {mint}
+	.sec(style="transform: rotate({sec_deg}deg); -webkit-transform: rotate({sec_deg}deg)") {sec}
+	script.
+		var self = this
+		this.root.className = "timer-box"
+		
+		init() {
+			self.hour = new Date().getHours()
+			self.mint = new Date().getMinutes()
+			self.sec = new Date().getSeconds()
+			self.hour_deg = 360/12 * self.hour
+			self.mint_deg = 360/60 * self.mint
+			self.sec_deg = 360/60 * self.sec
+			self.update()
+			setTimeout(function(){
+				self.init()
+			},100)
+		}
+		self.init()

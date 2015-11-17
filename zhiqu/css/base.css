@@ -663,6 +663,220 @@ ul {
     opacity: 1; }
   50% {
     opacity: 0.4; } }
+@-webkit-keyframes soundBG {
+  to {
+    background-position-x: -165px; } }
+@keyframes soundBG {
+  to {
+    background-position-x: -165px; } }
+@-webkit-keyframes whiteH {
+  from {
+    height: 100%; }
+  to {
+    height: 0%; } }
+@keyframes whiteH {
+  from {
+    height: 100%; }
+  to {
+    height: 0%; } }
+@-webkit-keyframes whiteW {
+  from {
+    width: 100%; }
+  to {
+    width: 0%; } }
+@keyframes whiteW {
+  from {
+    width: 100%; }
+  to {
+    width: 0%; } }
+@-webkit-keyframes people1 {
+  0% {
+    -webkit-transform: scale(-1, 1) translate3d(190px, 0, 0);
+            transform: scale(-1, 1) translate3d(190px, 0, 0);
+    opacity: 1; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(-1, 1) translate3d(-700px, 0, 0);
+            transform: scale(-1, 1) translate3d(-700px, 0, 0); } }
+@keyframes people1 {
+  0% {
+    -webkit-transform: scale(-1, 1) translate3d(190px, 0, 0);
+            transform: scale(-1, 1) translate3d(190px, 0, 0);
+    opacity: 1; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(-1, 1) translate3d(-700px, 0, 0);
+            transform: scale(-1, 1) translate3d(-700px, 0, 0); } }
+@-webkit-keyframes people2 {
+  0% {
+    -webkit-transform: scale(-1, 1) translate3d(-90px, 0, 0);
+            transform: scale(-1, 1) translate3d(-90px, 0, 0);
+    opacity: 1; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0; }
+  100% {
+    -webkit-transform: scale(-1, 1) translate3d(740px, 0, 0);
+            transform: scale(-1, 1) translate3d(740px, 0, 0); } }
+@keyframes people2 {
+  0% {
+    -webkit-transform: scale(-1, 1) translate3d(-90px, 0, 0);
+            transform: scale(-1, 1) translate3d(-90px, 0, 0);
+    opacity: 1; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0; }
+  100% {
+    -webkit-transform: scale(-1, 1) translate3d(740px, 0, 0);
+            transform: scale(-1, 1) translate3d(740px, 0, 0); } }
+@-webkit-keyframes rotateP {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+@keyframes rotateP {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+@-webkit-keyframes rotatePF {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg); } }
+@keyframes rotatePF {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg); } }
+@-webkit-keyframes rotatePW {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  30% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+@keyframes rotatePW {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  30% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+@-webkit-keyframes canvasM {
+  0%,100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  40% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  50% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0); }
+  90% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0); } }
+@keyframes canvasM {
+  0%,100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  40% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  50% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0); }
+  90% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0); } }
+@-webkit-keyframes iconShow {
+  0% {
+    -webkit-transform: rotate(0deg) scale(0, 0);
+            transform: rotate(0deg) scale(0, 0); }
+  10% {
+    -webkit-transform: rotate(360deg) scale(1.4, 1.4);
+            transform: rotate(360deg) scale(1.4, 1.4); }
+  15% {
+    -webkit-transform: rotate(720deg) scale(0.7, 0.7);
+            transform: rotate(720deg) scale(0.7, 0.7); }
+  25% {
+    -webkit-transform: rotate(360deg) scale(1.1, 1.1);
+            transform: rotate(360deg) scale(1.1, 1.1); }
+  50%,90% {
+    -webkit-transform: rotate(0deg) scale(1, 1);
+            transform: rotate(0deg) scale(1, 1); }
+  100% {
+    -webkit-transform: rotate(-360deg) scale(0, 0);
+            transform: rotate(-360deg) scale(0, 0); } }
+@keyframes iconShow {
+  0% {
+    -webkit-transform: rotate(0deg) scale(0, 0);
+            transform: rotate(0deg) scale(0, 0); }
+  10% {
+    -webkit-transform: rotate(360deg) scale(1.4, 1.4);
+            transform: rotate(360deg) scale(1.4, 1.4); }
+  15% {
+    -webkit-transform: rotate(720deg) scale(0.7, 0.7);
+            transform: rotate(720deg) scale(0.7, 0.7); }
+  25% {
+    -webkit-transform: rotate(360deg) scale(1.1, 1.1);
+            transform: rotate(360deg) scale(1.1, 1.1); }
+  50%,90% {
+    -webkit-transform: rotate(0deg) scale(1, 1);
+            transform: rotate(0deg) scale(1, 1); }
+  100% {
+    -webkit-transform: rotate(-360deg) scale(0, 0);
+            transform: rotate(-360deg) scale(0, 0); } }
+@-webkit-keyframes bubble {
+  0%,100% {
+    -webkit-transform: translate3d(0, 80px, 0) scale(0, 0);
+            transform: translate3d(0, 80px, 0) scale(0, 0);
+    opacity: 0; }
+  10%,20% {
+    opacity: 1; }
+  30% {
+    -webkit-transform: translate3d(0, 0px, 0) scale(1, 1);
+            transform: translate3d(0, 0px, 0) scale(1, 1);
+    opacity: 1; }
+  35% {
+    -webkit-transform: translate3d(0, -20px, 0) scale(0, 0);
+            transform: translate3d(0, -20px, 0) scale(0, 0);
+    opacity: 0; } }
+@keyframes bubble {
+  0%,100% {
+    -webkit-transform: translate3d(0, 80px, 0) scale(0, 0);
+            transform: translate3d(0, 80px, 0) scale(0, 0);
+    opacity: 0; }
+  10%,20% {
+    opacity: 1; }
+  30% {
+    -webkit-transform: translate3d(0, 0px, 0) scale(1, 1);
+            transform: translate3d(0, 0px, 0) scale(1, 1);
+    opacity: 1; }
+  35% {
+    -webkit-transform: translate3d(0, -20px, 0) scale(0, 0);
+            transform: translate3d(0, -20px, 0) scale(0, 0);
+    opacity: 0; } }
 .wechat-share-hide {
   position: absolute;
   top: -1000px;
@@ -680,6 +894,15 @@ html, body {
 .bottle {
   position: absolute;
   display: block; }
+  .bottle .newbottle {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%; }
+  .bottle.Mybottle {
+    display: block; }
   .bottle .on-button {
     position: absolute;
     cursor: pointer;
@@ -703,6 +926,48 @@ html, body {
     right: 55px;
     width: 165px;
     height: 60px; }
+  .bottle-logo .white {
+    -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+    width: 100%;
+    left: auto;
+    right: 0; }
+    .bottle-logo .white.on {
+      width: 0%; }
+      .bottle-logo .white.on * {
+        display: none; }
+    .bottle-logo .white img {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 403px;
+      max-width: 403px; }
+  .bottle-logo .white-1, .bottle-logo .white-2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 403px;
+    height: 581px;
+    overflow: hidden; }
+    .bottle-logo .white-1 img, .bottle-logo .white-2 img {
+      position: absolute;
+      top: 0px;
+      left: 0px; }
+  .bottle-logo .newbottle {
+    opacity: 0;
+    display: block; }
+  .bottle-logo.Mybottle .newbottle {
+    opacity: 1; }
+  .bottle-logo.Mybottle .white-1 {
+    -webkit-transition: all 1s ease;
+            transition: all 1s ease;
+    height: 0%; }
+  .bottle-logo.Mybottle .white-2 {
+    -webkit-transition: all 1s ease;
+            transition: all 1s ease;
+    width: 0%;
+    -webkit-transition-delay: 1s;
+            transition-delay: 1s; }
 
 .bottle-strategy {
   top: -196px;
@@ -748,6 +1013,54 @@ html, body {
     max-width: 411px; }
   .bottle-brand .white.on {
     height: 0%; }
+  .bottle-brand .bubbles {
+    position: absolute;
+    bottom: 120px;
+    left: 130px;
+    z-index: -1;
+    width: 84px;
+    height: 120px; }
+    .bottle-brand .bubbles .bubble {
+      position: absolute;
+      -webkit-transform-origin: center center;
+          -ms-transform-origin: center center;
+              transform-origin: center center; }
+      .bottle-brand .bubbles .bubble img {
+        width: 28px;
+        height: 28px; }
+    .bottle-brand .bubbles .bubble-1 {
+      top: 0;
+      left: 20px;
+      -webkit-animation: bubble 2.5s linear;
+              animation: bubble 2.5s linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+    .bottle-brand .bubbles .bubble-2 {
+      top: 30px;
+      left: 0;
+      -webkit-animation: bubble 3s linear;
+              animation: bubble 3s linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+      .bottle-brand .bubbles .bubble-2 img {
+        width: 20px;
+        height: 20px; }
+    .bottle-brand .bubbles .bubble-3 {
+      top: 50px;
+      left: 15px;
+      -webkit-animation: bubble 3.5s linear;
+              animation: bubble 3.5s linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+      .bottle-brand .bubbles .bubble-3 img {
+        width: 18px;
+        height: 18px; }
 
 .bottle-media {
   top: 110px;
@@ -819,6 +1132,58 @@ html, body {
   top: 210px;
   right: 90px;
   width: 155px; }
+  .right-tower .timer {
+    position: absolute;
+    top: 33%;
+    left: 0px; }
+    .right-tower .timer .timer-box {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%; }
+      .right-tower .timer .timer-box .hour, .right-tower .timer .timer-box .mint {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        width: 4px;
+        height: 24px;
+        margin-left: -1px;
+        background-color: #596272;
+        font-size: 0;
+        -webkit-transform-origin: bottom center;
+            -ms-transform-origin: bottom center;
+                transform-origin: bottom center;
+        border-radius: 1px; }
+      .right-tower .timer .timer-box .hour {
+        height: 18px; }
+      .right-tower .timer .timer-box .sec {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        width: 4px;
+        height: 30px;
+        margin-left: -1px;
+        background-color: #f06640;
+        font-size: 0;
+        -webkit-transform-origin: bottom center;
+            -ms-transform-origin: bottom center;
+                transform-origin: bottom center;
+        border-radius: 1px; }
+  .right-tower .playsound {
+    position: absolute;
+    top: 14px;
+    left: 27px;
+    z-index: 999; }
+    .right-tower .playsound .icon-play {
+      width: 33px;
+      height: 25px;
+      background: url("../img/right-tower-sound.png") no-repeat 0 0;
+      background-size: 165px 25px;
+      background-color: transparent; }
+      .right-tower .playsound .icon-play.play {
+        -webkit-animation: soundBG 0.8s steps(5) infinite;
+                animation: soundBG 0.8s steps(5) infinite; }
 
 .last-bottle {
   position: absolute;
@@ -844,15 +1209,208 @@ html, body {
     left: 0px;
     width: 100%;
     height: 100%;
-    -webkit-transition: all 2s ease;
-            transition: all 2s ease;
+    -webkit-transition: all 0.5s linear;
+            transition: all 0.5s linear;
     z-index: 2; }
     .main .homepage.page-strategy {
+      -webkit-transition: all 2s linear;
+              transition: all 2s linear;
       -webkit-transform: translate3d(770px, 0, 0);
               transform: translate3d(770px, 0, 0); }
     .main .homepage.page-brand {
+      -webkit-transition: all 2s linear;
+              transition: all 2s linear;
       -webkit-transform: translate3d(-10%, 105%, 0);
               transform: translate3d(-10%, 105%, 0); }
+  .main.page-logo .homepage {
+    -webkit-transition: all 2s linear;
+            transition: all 2s linear;
+    -webkit-transform: translate3d(243px, 113%, 0);
+            transform: translate3d(243px, 113%, 0); }
+  .main.page-contactus .homepage {
+    -webkit-transition: all 2s linear;
+            transition: all 2s linear;
+    -webkit-transform: translate3d(-670px, -500px, 0);
+            transform: translate3d(-670px, -500px, 0); }
+
+.pages-contactus {
+  -webkit-transition: all 0.5s linear;
+          transition: all 0.5s linear;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 102;
+  -webkit-transform: translate3d(670px, 500px, 0);
+          transform: translate3d(670px, 500px, 0); }
+  .pages-contactus.thispage {
+    -webkit-transition: all 2s linear;
+            transition: all 2s linear;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  .pages-contactus .content {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; }
+    .pages-contactus .content .bg {
+      position: absolute;
+      top: 80px;
+      left: 0px; }
+
+.pages-logo {
+  -webkit-transition: all 0.5s linear;
+          transition: all 0.5s linear;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate3d(-243px, -113%, 0);
+          transform: translate3d(-243px, -113%, 0);
+  background: url("../img/pages-logo-bg-start.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+  .pages-logo.thispage {
+    -webkit-transition: all 2s linear;
+            transition: all 2s linear;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+    .pages-logo.thispage .bg {
+      -webkit-animation: fadeIn 0.5s ease;
+              animation: fadeIn 0.5s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial;
+      -webkit-animation-delay: 2s;
+              animation-delay: 2s;
+      z-index: -1; }
+    .pages-logo.thispage .bottle-logo-next {
+      display: block; }
+      .pages-logo.thispage .bottle-logo-next .white {
+        -webkit-transition: all 0.5 ease;
+                transition: all 0.5 ease; }
+      .pages-logo.thispage .bottle-logo-next .white-1, .pages-logo.thispage .bottle-logo-next .white-2, .pages-logo.thispage .bottle-logo-next .white-3, .pages-logo.thispage .bottle-logo-next .white-4 {
+        -webkit-transition: all 0.5 ease;
+                transition: all 0.5 ease;
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        height: 100%; }
+      .pages-logo.thispage .bottle-logo-next .white-1 {
+        top: 0px;
+        left: 0px;
+        -webkit-animation: whiteH 0.5s linear;
+                animation: whiteH 0.5s linear;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: initial;
+                animation-iteration-count: initial;
+        -webkit-animation-delay: 2s;
+                animation-delay: 2s; }
+      .pages-logo.thispage .bottle-logo-next .white-2 {
+        top: 0px;
+        right: 0px;
+        -webkit-animation: whiteW 0.5s linear;
+                animation: whiteW 0.5s linear;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: initial;
+                animation-iteration-count: initial;
+        -webkit-animation-delay: 2.5s;
+                animation-delay: 2.5s;
+        text-align: right; }
+        .pages-logo.thispage .bottle-logo-next .white-2 img {
+          position: absolute;
+          top: 0px;
+          right: 0px; }
+      .pages-logo.thispage .bottle-logo-next .white-3 {
+        bottom: 0px;
+        right: 0px;
+        -webkit-animation: whiteH 0.5s linear;
+                animation: whiteH 0.5s linear;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: initial;
+                animation-iteration-count: initial;
+        -webkit-animation-delay: 3s;
+                animation-delay: 3s; }
+        .pages-logo.thispage .bottle-logo-next .white-3 img {
+          position: absolute;
+          bottom: 0px;
+          left: 0px; }
+      .pages-logo.thispage .bottle-logo-next .white-4 {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        -webkit-animation: whiteW 0.5s linear;
+                animation: whiteW 0.5s linear;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: initial;
+                animation-iteration-count: initial;
+        -webkit-animation-delay: 3.25s;
+                animation-delay: 3.25s; }
+        .pages-logo.thispage .bottle-logo-next .white-4 img {
+          position: absolute;
+          top: 0px;
+          left: 0px; }
+  .pages-logo .content {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1; }
+  .pages-logo .bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: url("../img/pages-logo-bg-end.jpg") no-repeat center center;
+    background-size: cover;
+    background-color: transparent;
+    -webkit-animation: fadeOut 0.5s ease;
+            animation: fadeOut 0.5s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: initial;
+            animation-iteration-count: initial; }
+  .pages-logo .bottle-logo-next {
+    position: absolute;
+    bottom: 28px;
+    left: 0px;
+    width: 604px;
+    height: 905px;
+    z-index: 120;
+    display: none; }
+    .pages-logo .bottle-logo-next .text {
+      position: absolute;
+      top: 180px;
+      left: 0px; }
+    .pages-logo .bottle-logo-next .white-1, .pages-logo .bottle-logo-next .white-2, .pages-logo .bottle-logo-next .white-3, .pages-logo .bottle-logo-next .white-4 {
+      -webkit-transition: all 0.5 ease;
+              transition: all 0.5 ease;
+      position: absolute;
+      overflow: hidden;
+      width: 100%;
+      height: 100%; }
+      .pages-logo .bottle-logo-next .white-1 img, .pages-logo .bottle-logo-next .white-2 img, .pages-logo .bottle-logo-next .white-3 img, .pages-logo .bottle-logo-next .white-4 img {
+        width: 604px;
+        height: 905px;
+        max-width: 604px; }
+    .pages-logo .bottle-logo-next .white.on {
+      width: 0%; }
+    .pages-logo .bottle-logo-next .white img {
+      width: 604px;
+      height: 905px;
+      max-width: 604px; }
 
 .pages-brand {
   display: none;
@@ -861,14 +1419,15 @@ html, body {
   left: 0px;
   width: 100%;
   height: 100%;
-  background-color: #73ea9c;
-  -webkit-transition: all 2s ease;
-          transition: all 2s ease;
+  -webkit-transition: all 0.5s linear;
+          transition: all 0.5s linear;
   z-index: 1;
   opacity: 0;
   -webkit-transform: translate3d(10%, -105%, 0);
           transform: translate3d(10%, -105%, 0); }
   .pages-brand.thispage {
+    -webkit-transition: all 2s linear;
+            transition: all 2s linear;
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); }
@@ -940,13 +1499,15 @@ html, body {
   left: 0px;
   width: 100%;
   height: 100%;
-  -webkit-transition: all 1.95s ease;
-          transition: all 1.95s ease;
+  -webkit-transition: all 0.5s linear;
+          transition: all 0.5s linear;
   z-index: 11;
   opacity: 0;
   -webkit-transform: translate3d(-770px, 0, 0);
           transform: translate3d(-770px, 0, 0); }
   .pages-strategy.thispage {
+    -webkit-transition: all 2s linear;
+            transition: all 2s linear;
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); }
@@ -954,7 +1515,8 @@ html, body {
     width: 100%;
     height: 100%; }
     .pages-strategy .content .m-top {
-      position: relative; }
+      position: relative;
+      z-index: 10; }
       .pages-strategy .content .m-top .item-switch {
         position: absolute;
         top: 310px;
@@ -1049,13 +1611,119 @@ html, body {
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite; }
+      .pages-strategy .content .m-top .item-icons {
+        position: absolute;
+        top: 60px;
+        left: 258px;
+        z-index: 2;
+        -webkit-animation: iconShow 8s ease;
+                animation: iconShow 8s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite; }
     .pages-strategy .content .m-bottom {
       position: absolute;
-      top: 466px;
+      top: 460px;
       left: 0px;
       bottom: 0px;
       right: 0px;
-      width: 100%; }
+      width: 100%;
+      z-index: -1; }
+      .pages-strategy .content .m-bottom .line1, .pages-strategy .content .m-bottom .line2 {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 8px;
+        height: 50%;
+        background-color: #c9c4c6; }
+      .pages-strategy .content .m-bottom .line1 {
+        top: 0;
+        left: 132px; }
+      .pages-strategy .content .m-bottom .line2 {
+        top: 0;
+        left: 447px; }
+      .pages-strategy .content .m-bottom .p1 {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        -webkit-animation: people1 6s linear;
+                animation: people1 6s linear;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        z-index: 99;
+        -webkit-transform-origin: right center;
+            -ms-transform-origin: right center;
+                transform-origin: right center;
+        -webkit-animation-delay: 2s;
+                animation-delay: 2s; }
+      .pages-strategy .content .m-bottom .p2 {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        -webkit-animation: people2 5s linear;
+                animation: people2 5s linear;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        z-index: 99;
+        -webkit-transform-origin: center center;
+            -ms-transform-origin: center center;
+                transform-origin: center center; }
+      .pages-strategy .content .m-bottom .parts1, .pages-strategy .content .m-bottom .parts2, .pages-strategy .content .m-bottom .parts3 {
+        position: absolute;
+        top: 134px;
+        left: 510px;
+        z-index: 99; }
+      .pages-strategy .content .m-bottom .parts1 {
+        -webkit-animation: rotateP 2s linear;
+                animation: rotateP 2s linear;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite; }
+      .pages-strategy .content .m-bottom .parts2 {
+        top: 177px;
+        left: 536px;
+        -webkit-animation: rotatePF 2s linear;
+                animation: rotatePF 2s linear;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite; }
+      .pages-strategy .content .m-bottom .parts3 {
+        top: 228px;
+        left: 531px;
+        -webkit-animation: rotatePW 4s linear;
+                animation: rotatePW 4s linear;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite; }
+      .pages-strategy .content .m-bottom .fcanvas {
+        position: absolute;
+        top: 90px;
+        left: 120px;
+        width: 385px;
+        height: 308px;
+        overflow: hidden;
+        font-size: 0;
+        z-index: 99; }
+        .pages-strategy .content .m-bottom .fcanvas .items {
+          white-space: nowrap;
+          width: 100%;
+          height: 100%;
+          -webkit-animation: canvasM 8s linear;
+                  animation: canvasM 8s linear;
+          -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite; }
+        .pages-strategy .content .m-bottom .fcanvas .item {
+          display: inline-block; }
       .pages-strategy .content .m-bottom .bg {
         position: absolute;
         bottom: 0px;
