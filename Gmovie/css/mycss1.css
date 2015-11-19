@@ -7,13 +7,18 @@ html{
 	margin: 0px;
 	height: 100%;
 	/*max-width: 640px;*/
+	font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
 }
 p{
 	margin: 0px;
-	font-size: 2rem;
+	font-size: 1rem;
 	/*letter-spacing: 8px;*/
-	line-height: 3rem;
-	text-indent: 3rem;
+	line-height: 2rem;
+	text-indent: 2rem;
 }
 .container{
 	/*max-width: 640px;
@@ -39,6 +44,13 @@ p{
 .arrowNext{
 	width: 17.5%;
 	position: absolute;
+	bottom: 2%;
+	left: 41.25%;
+	/*background-color: #000088;*/
+}
+.arrowNext2{
+	width: 17.5%;
+	position: relative;
 	bottom: 2%;
 	left: 41.25%;
 	/*background-color: #000088;*/
@@ -166,4 +178,22 @@ p{
 }
 .t2footer{
 	background-color: #000000;
+}
+#audioPlay{
+	width: 11.25%;
+	height: 6.3%;
+	
+	background-repeat:  no-repeat;
+	background-size: 100% 100%;
+	position: fixed;
+	bottom: 2%;
+	right: 2%;
+	z-index: 999;
+
+}
+.playM{
+	background-image: url("../img/musicOn.png");
+}
+.stopM{
+	background-image: url("../img/musicOff.png");
 }
