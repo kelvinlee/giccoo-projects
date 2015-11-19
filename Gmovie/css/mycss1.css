@@ -1,0 +1,166 @@
+body{
+	margin: 0px;
+	height: 100%;
+
+}
+html{
+	margin: 0px;
+	height: 100%;
+	/*max-width: 640px;*/
+}
+p{
+	margin: 0px;
+	font-size: 1rem;
+	/*letter-spacing: 8px;*/
+	line-height: 2rem;
+	text-indent: 2rem;
+}
+.container{
+	/*max-width: 640px;
+	width: 640px;*/
+}
+#page1{
+	width: 100%;
+	margin: 0px;
+	background-color: #000000;
+	position: relative;
+	height: 100%;
+	z-index: 1;
+}
+#page1BG{
+	
+}
+#page1T{
+	width: 75%;
+	position: absolute;
+	bottom: 5%;
+	left: 12.5%;
+}
+.arrowNext{
+	width: 17.5%;
+	position: absolute;
+	bottom: 2%;
+	left: 41.25%;
+	/*background-color: #000088;*/
+}
+#page2{
+	width: 100%;
+	margin: 0px;
+	background-color: #000000;
+	height: 100%;
+	position: relative;
+	z-index: 2;
+}
+#theG{
+	width: 100%;
+	position: absolute;
+	bottom: 25%;
+
+}
+#page2T{
+	width: 100%;
+	position: absolute;
+	bottom: 8%;
+}
+.nofix-div{
+	width: 100%;
+	position: absolute;
+	top: 100%;
+	z-index: 3;
+	/*max-width: 640px;*/
+}
+.fix-div{
+	position:fixed;
+	top:0px;z-index: 3;
+	/*max-width: 640px;*/
+}
+.allMoviePage{
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	/*height: 1900px;*/
+	/*background-color: #003366;*/
+	background:#000000 url("../img/movieBG.jpg") no-repeat fixed top;
+	background-size: 100%;
+}
+.moviePage{
+	position: relative;
+	width: 100%;
+	
+}
+.movieInfo{
+	padding-top: 10%;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.moviePic{
+	position: relative;
+	left: 4.4%;
+	width: 50%;
+	float: left;
+}
+.movieText1{
+	position: relative;
+	left: 4.3%;
+	width: 41.4%;
+	float: left;
+}
+.movieContent{
+	position: relative;
+	
+}
+.title1{
+	width: 45.3%;
+}
+.movieT2{
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	left: 5%;
+	width: 90%;
+}
+.mt2L{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 2%;
+	height: 100%;
+	border: 4px solid #ff0000;
+	border-right: none;
+}
+.mt2M{
+	position: relative;
+	left: 5%;
+	width: 90%;
+
+	color: #ffffff;
+}
+.mt2R{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 2%;
+	height: 100%;
+	border: 4px solid #ff0000;
+	border-left: none;
+}
+.title2{
+	width: 100%;
+}
+.userAll{
+	position: relative;
+	top: -6px;
+	padding: 0;
+	margin: 0;
+	background:#000000 url("../img/t2BG.png") repeat-y;
+	background-size: 100%;
+}
+.user1{
+	padding: 5%;
+	color: #aaaaaa;
+}
+.t2footer{
+	background-color: #000000;
+}
