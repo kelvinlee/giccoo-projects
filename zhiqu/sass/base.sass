@@ -458,6 +458,32 @@ html,body
 	&.page-contactus .homepage
 		+tran($time: 2s,$ease: linear)
 		+transform(translate3d(-670px,-500px,0))
+	&.page-award .homepage
+		+tran($time: 2s,$ease: linear)
+		+transform(translate3d(670px,-550px,0))
+
+.pages-award
+	+tran($time: 0.5s,$ease: linear)
+	+posa
+	+tl
+	+w
+	+h
+	// +hide
+	z-index: 102
+	+transform(translate3d(-670px,550px,0))
+	&.thispage
+		+tran($time: 2s,$ease: linear)
+		+transform(translate3d(0,0,0))
+	.content
+		+posa
+		+tl
+		+w
+		+h
+		+overhide
+		z-index: 1
+	.bg
+		+posa
+		+tl(80px)
 
 .pages-contactus
 	+tran($time: 0.5s,$ease: linear)
@@ -556,6 +582,7 @@ html,body
 				+tl(28px,0)
 				+wh(80px,3px)
 				+bc(#355e91)
+
 .pages-logo
 	$w: 300px
 	+tran($time: 0.5s,$ease: linear)

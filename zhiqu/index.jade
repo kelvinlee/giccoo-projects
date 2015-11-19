@@ -56,7 +56,7 @@ block content
 					img(src="#{images}/bottle-contactus-white.png")
 			.bottle.bottle-award
 				img(src="#{images}/bottle-award.png")
-				.on-button(onclick="openBottle(this)",page-name="award")
+				.on-button(onclick="openBottleMain(this)",page-name="award")
 				.white
 					img(src="#{images}/bottle-award-white.png")
 			.bottle.middle-tower
@@ -78,6 +78,27 @@ block content
 			.bottle.bottle-search.tada.animated.infinite.duration-15
 				img(src="#{images}/magn.png")
 
+		.pages-award
+			.bg
+				img(src="#{images}/pages-award-bg.png")
+			.content(onclick="backBottleMain('award')")
+				.icons.icons-1
+					-for (var i=1;i<7;i++)
+						.icon
+							img(src="#{images}/pages-award-icon-#{i}.png")
+				.icons.icons-2
+					-for (var i=7;i<13;i++)
+						.icon
+							img(src="#{images}/pages-award-icon-#{i}.png")
+				.bottles.bottle-1
+					-for (var i=1;i<5;i++)
+						.icon
+							img(src="#{images}/pages-award-bottle-#{i}.png")
+				.bottles.bottle-2
+					-for (var i=4;i<8;i++)
+						.icon
+							img(src="#{images}/pages-award-bottle-#{i}.png")
+				
 		.pages-logo
 			.bg
 			.content(onclick="backBottleMain('logo')")
