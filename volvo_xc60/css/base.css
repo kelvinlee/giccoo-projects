@@ -389,6 +389,32 @@ ul {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+@-webkit-keyframes light {
+  0%,100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 0; }
+  10% {
+    opacity: 1; }
+  70% {
+    opacity: 1; }
+  80% {
+    -webkit-transform: translate3d(9rem, 0, 0);
+            transform: translate3d(9rem, 0, 0);
+    opacity: 0; } }
+@keyframes light {
+  0%,100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 0; }
+  10% {
+    opacity: 1; }
+  70% {
+    opacity: 1; }
+  80% {
+    -webkit-transform: translate3d(9rem, 0, 0);
+            transform: translate3d(9rem, 0, 0);
+    opacity: 0; } }
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -723,6 +749,17 @@ html, body {
     display: block; }
   .main .homepage .bg-2 .title {
     margin-bottom: 1rem; }
+  .main .homepage .bg-3 .show-pop .light {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 3rem;
+    -webkit-animation: light 2s ease;
+            animation: light 2s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
   .main .homepage .bg-3 .show-pop {
     position: absolute;
     top: 5%;

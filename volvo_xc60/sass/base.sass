@@ -6,6 +6,21 @@
 		+transform(rotate(0deg))
 	100%
 		+transform(rotate(360deg))
++keyframes(light)
+	0%,100%
+		+transform(translate3d(0,0,0))
+		opacity: 0
+	10%
+		opacity: 1
+	70%
+		opacity: 1
+	80%
+		+transform(translate3d(9rem,0,0))
+		opacity: 0
+	
+
+
+
 // animation,delay, duration
 @for $i from 1 through 30
 	.delay-#{$i}
@@ -75,6 +90,13 @@ html,body
 			.title
 				margin-bottom: 1rem
 		.bg-3
+			.show-pop
+				.light
+					+posa
+					+tl
+					+w(3rem)
+					+animation(light,2s,ease,infinite)
+
 			.show-pop
 				+posa
 				+tl(5%,5%)
