@@ -31,7 +31,7 @@ register
 			label(for="dealer") 选择经销商:
 			.select
 				span {dealerName}
-				select#dealer(name="dealer")
+				select#dealer(name="dealer",onchange="{changeDealer}")
 					option(each="{dealer}",value="{name}") {name}
 
 		.form-btn
@@ -81,7 +81,9 @@ register
 			self.dealer = dealer
 			self.update()
 		}
-		
+		changeDealer(evt) {
+			self.update()
+		}
 		submit() {
 			var data = $("form",this.root).serializeArray()
 			if ( $("[name=username]",this.root).val().length < 1 || $("[name=username]",this.root).val() == "") {

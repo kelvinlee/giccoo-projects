@@ -326,6 +326,11 @@ window.onload = ->
 	$(".pop").on "click", ->
 		$(".pop").hide()
 
+	$(".backTop").on "click", ->
+
+		window.scrollTo(0,$(".bg-2").offset().top-80)
+
+
 changePoint = (i)->
 	console.log(Math.abs(i))
 	$(".points span").removeClass "on"

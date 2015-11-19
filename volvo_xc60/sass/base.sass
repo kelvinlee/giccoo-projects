@@ -207,6 +207,16 @@ html,body
 			+p(0 0.2rem)
 			+font-size(0.8rem)
 			color: #000
+			&:after
+				$size: 0.5rem
+				content: " "
+				+posa
+				+tr(50%,$size)
+				+transform(translate3d(0,-50%,0))
+				z-index: 99
+				border-left: $size/2 solid transparent
+				border-right: $size/2 solid transparent
+				border-top: $size solid #6ba2d1
 			span
 				text-overflow: ellipsis
 				+show-inline
@@ -229,6 +239,16 @@ html,body
 			+p
 			+bc(transparent)
 			border: none
+
+.backTop
+	+posf
+	+br(1rem,1rem)
+	color: #fff
+	+bc(rgba(0,0,0,0.8))
+	+p(0.4rem)
+	z-index: 101
+	+font-size(0.8rem)
+	border-radius: 0.4rem
 
 .slider
 	+posr

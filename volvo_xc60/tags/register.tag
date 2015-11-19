@@ -36,7 +36,7 @@
     <div class="form-grounp">
       <label for="dealer">选择经销商:</label>
       <div class="select"><span>{dealerName}</span>
-        <select id="dealer" name="dealer">
+        <select id="dealer" name="dealer" onchange="{changeDealer}">
           <option each="{dealer}" value="{name}">{name}</option>
         </select>
       </div>
@@ -89,7 +89,9 @@
     	self.dealer = dealer
     	self.update()
     }
-    
+    changeDealer(evt) {
+    	self.update()
+    }
     submit() {
     	var data = $("form",this.root).serializeArray()
     	if ( $("[name=username]",this.root).val().length < 1 || $("[name=username]",this.root).val() == "") {

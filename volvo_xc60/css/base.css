@@ -957,6 +957,17 @@ html, body {
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
         .form .form-grounp .select {
           font-size: 0.96rem; } }
+      .form .form-grounp .select:after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+        -webkit-transform: translate3d(0, -50%, 0);
+                transform: translate3d(0, -50%, 0);
+        z-index: 99;
+        border-left: 0.25rem solid transparent;
+        border-right: 0.25rem solid transparent;
+        border-top: 0.5rem solid #6ba2d1; }
       .form .form-grounp .select span {
         text-overflow: ellipsis;
         display: inline-block;
@@ -981,6 +992,29 @@ html, body {
       padding: 0;
       background-color: transparent;
       border: none; }
+
+.backTop {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0.4rem;
+  z-index: 101;
+  font-size: 0.8rem;
+  border-radius: 0.4rem; }
+  @media only screen and (min-width: 321px) and (max-width: 399px) {
+    .backTop {
+      font-size: 0.88rem; } }
+  @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+    .backTop {
+      font-size: 0.88rem; } }
+  @media only screen and (min-width: 399px) and (max-width: 767px) {
+    .backTop {
+      font-size: 0.96rem; } }
+  @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+    .backTop {
+      font-size: 0.96rem; } }
 
 .slider {
   position: relative;

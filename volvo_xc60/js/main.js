@@ -1060,8 +1060,11 @@ window.onload = function() {
     $(".pop .content").html('<img src="img/pop-' + i + '.png" />');
     return $(".pop").show();
   });
-  return $(".pop").on("click", function() {
+  $(".pop").on("click", function() {
     return $(".pop").hide();
+  });
+  return $(".backTop").on("click", function() {
+    return window.scrollTo(0, $(".bg-2").offset().top - 80);
   });
 };
 
