@@ -82,7 +82,7 @@ p{
 	width: 100%;
 	/*height: 1900px;*/
 	/*background-color: #003366;*/
-	background:#000000 url("../img/movieBG.jpg") repeat-y  top;
+	background:#000000 url("../img/movieBG.jpg") repeat-y fixed top;
 	background-size: 100%;
 }
 .moviePage{
