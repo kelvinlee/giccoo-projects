@@ -112,6 +112,51 @@
 	35%
 		+transform(translate3d(0,-20px,0) scale(0,0))
 		opacity: 0
++keyframes(pointerM)
+	0%,70%,100%
+		+transform(rotate(0deg))
+	40%
+		+transform(rotate(40deg))
+	50%
+		+transform(rotate(20deg))
+	60%
+		+transform(rotate(30deg))
++keyframes(showB)
+	0%
+		opacity: 0
+	20%
+		opacity: 0
+	25%
+		opacity: 1
+	90%
+		opacity: 1
+	100%
+		opacity: 0
++keyframes(showD)
+	0%,100%
+		opacity: 0
+		+transform(scale(0,0) translate3d(0,0,0))
+	13%
+		opacity: 1
+		+transform(scale(1,1) translate3d(0,0,0))
+	20%
+		+transform(scale(1,1) translate3d(0,200%,0))
+		opacity: 1
+	22%
+		opacity: 0
++keyframes(music)
+	0%,100%
+		+h(0%)
+	15%
+		+h(50%)
+	30%
+		+h(90%)
+	45%
+		+h(20%)
+	60%
+		+h(70%)
+	90%
+		+h(45%)
 
 
 
@@ -154,7 +199,6 @@ html,body
 		+h
 		+overhide
 		z-index: 998
-
 .bottle-logo
 	$w: 403px
 	$h: 581px
@@ -202,11 +246,6 @@ html,body
 			+tran($time: 1s)
 			+w(0%)
 			transition-delay: 1s
-
-
-
-
-
 .bottle-strategy
 	$w: 1020px
 	+tl(-196px,-230px)
@@ -270,7 +309,6 @@ html,body
 			+animation(bubble,3.5s,linear,infinite)
 			img
 				+wh(18px,18px)
-
 .bottle-media
 	$w: 953px
 	+tl(110px,-180px)
@@ -290,7 +328,14 @@ html,body
 		+tl(90px,10px)
 		+wh(145px,170px)
 	.white
+		right: 0
+		left: auto
+		+overhide
+		&.on
+			+w(0%)
 		img
+			+posa
+			+tr
 			+w($w)
 			max-width: $w
 .bottle-award
@@ -318,7 +363,6 @@ html,body
 	$w: 70px
 	+w($w)
 	+tl(678px,135px)
-
 .middle-tower
 	$w: 155px
 	+tl(370px,239px)
@@ -427,6 +471,11 @@ html,body
 	&.thispage
 		+tran($time: 2s,$ease: linear)
 		+transform(translate3d(0,0,0))
+		.content
+			.qrcode
+				+transform(translate3d(0,0,0))
+				transition-delay: 1.5s
+				opacity: 1
 	.content
 		+posa
 		+tl
@@ -437,7 +486,76 @@ html,body
 		.bg
 			+posa
 			+tl(80px)
-
+		.pointer
+			+posa
+			+tl(256px,121px)
+			transform-origin: 9px 3.5px
+			font-size: 0
+			+animation(pointerM,3s,ease,infinite)
+			z-index: 102
+		.text
+			+posa
+			+tl(460px,(640px-219px)/2)
+			z-index: 102
+		.qrcode
+			+posa
+			+tl(430px+105px+90px,(640px-245px)/2)
+			z-index: 102
+			opacity: 0
+			+transform(translate3d(-100%,0,0))
+			+tran($time: 1s)
+		.bubbles
+			+posa
+			+tl(195px,262px)
+			+wh(24px,124px)
+			+overhide
+			z-index: 102
+			+animation(showB,6s,linear,infinite)
+			.bubble
+				+posa
+				img
+					+w(100%)
+			@for $i from 0 through 10
+				.bubble-#{$i}
+					+w((8+$i)*1px)
+					+tl(random(90)*1%,random(50)*1%)
+					+animation(bubble,0.5s,ease,infinite)
+					animation-duration: (random(2000)+1000)*1ms
+					animation-delay: 500ms+$i*100ms
+		.drops
+			+posa
+			+tl(150px,275px)
+			+animation(showD,6s,linear,infinite)
+			font-size: 0
+			z-index: 102
+		.music
+			+posa
+			+tl(250px,487px)
+			+wh(81px,71px)
+			z-index: 102
+			.c1,.c2,.c3
+				+posa
+				+bl
+				+wh(10px,100%)
+			.c1
+				+bl
+				+bc(#94c141)
+				+animation(music,3s,ease,infinite)
+				animation-delay: 600ms
+			.c2
+				+bl(0,33px)
+				+bc(#7fc286)
+				+animation(music,3.3s,ease,infinite)
+				animation-delay: 300ms
+			.c3
+				+bl(0,68px)
+				+bc(#d5725f)
+				+animation(music,4.8s,ease,infinite)
+			.line
+				+posa
+				+tl(28px,0)
+				+wh(80px,3px)
+				+bc(#355e91)
 .pages-logo
 	$w: 300px
 	+tran($time: 0.5s,$ease: linear)

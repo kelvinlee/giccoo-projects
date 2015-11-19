@@ -156,6 +156,26 @@ block content
 
 		.pages-contactus
 			.content(onclick="backBottleMain('contactus')")
+				.text
+					img(src="#{images}/pages-contactus-text.png")
+				.qrcode
+					img(src="#{images}/pages-contactus-qrcode.png")
+				//- .vitro
+					img(src="#{images}/pages-contactus-vitro.png")
+				.drops
+					img(src="#{images}/pages-contactus-drops.png")
+				.bubbles
+					-for (var i=0;i<10;i++)
+						.bubble(class="bubble-#{i+1}")
+							img(src="#{images}/homepage-bubble.png")
+				.music
+					.c1
+					.c2
+					.c3
+					.line
+
+				.pointer
+					img(src="#{images}/pages-contactus-pointer.png")
 				.bg
 					img(src="#{images}/pages-contactus-bg.png")
 
