@@ -1,23 +1,20 @@
 body{
 	margin: 0px;
 	height: 100%;
-
+	font-size: 1rem;
 }
 html{
 	margin: 0px;
 	height: 100%;
 	/*max-width: 640px;*/
-	font-family: sans-serif;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
+	font-size: 1rem;
+	
 }
 p{
 	margin: 0px;
-	font-size: 1rem;
+	
 	/*letter-spacing: 8px;*/
-	line-height: 2rem;
+	line-height: 1.5rem;
 	text-indent: 2rem;
 }
 .container{
