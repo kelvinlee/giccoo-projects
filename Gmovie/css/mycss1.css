@@ -100,6 +100,7 @@ p{
 	left: 4.4%;
 	width: 50%;
 	float: left;
+	z-index: 99;
 }
 .movieText1{
 	position: relative;
@@ -113,6 +114,7 @@ p{
 }
 .title1{
 	width: 45.3%;
+
 }
 .movieT2{
 	position: relative;
