@@ -11,12 +11,15 @@ imgs = []
 page = ["page-brand"]
 pages = [".pages-brand"]
 opened = false
+global = {}
 
 window.onload = ->
 	riot.mount("*")
 	$(".bottle-logo-next").css {
 		bottom: 164 - $("body").height() * 0.13 - 18
 	}
+	$(".pages-award .icon").on "click", openAward
+	$(".pages-media .icon").on "click", openMedia
 
 openBottle = (evt)->
 	return false if opened 
@@ -58,5 +61,17 @@ backBottleMain = (name)->
 	$(".bottle-"+name).removeClass "Mybottle"
 	opened = false
 
+awardList = [
+	{}
+]  
 
+openAward = (evt)->
+	evt.stopPropagation()
+	e = $(evt.target).parents(".icon")
 
+	console.log e.attr "rel"
+openMedia = (evt)->
+	evt.stopPropagation()
+	e = $(evt.target).parents(".icon")
+
+	console.log e.attr "rel"

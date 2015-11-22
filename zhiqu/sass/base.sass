@@ -317,7 +317,13 @@ html,body
 		+tl(110px,610px)
 		+wh(155px,230px)
 	.white
+		left: auto
+		right: 0
+		&.on
+			+w(0%)
 		img
+			+posa
+			+tr
 			+w($w)
 			max-width: $w
 .bottle-contactus
@@ -414,8 +420,6 @@ html,body
 			+b("../img/right-tower-sound.png",no-repeat,0,0,165px 25px)
 			&.play
 				animation: soundBG 0.8s steps(5) infinite
-
-
 .last-bottle
 	+posa
 	+bl
@@ -445,8 +449,9 @@ html,body
 		&.page-strategy
 			+tran($time: 2s,$ease: linear)
 			+transform(translate3d(770px,0,0))
-		// &.page-technology
-			// +transform(translate3d(400px,400px,0))
+		&.page-technology
+			+tran($time: 2s,$ease: linear)
+			+transform(translate3d(763px,-173px,0))
 		&.page-brand
 			+tran($time: 2s,$ease: linear)
 			+transform(translate3d(-10%,105%,0))
@@ -458,9 +463,42 @@ html,body
 	&.page-contactus .homepage
 		+tran($time: 2s,$ease: linear)
 		+transform(translate3d(-670px,-500px,0))
+	&.page-media .homepage
+		+tran($time: 2s,$ease: linear)
+		+transform(translate3d(-690px,550px,0))
 	&.page-award .homepage
 		+tran($time: 2s,$ease: linear)
 		+transform(translate3d(670px,-550px,0))
+	// &.page-technology .homepage
+		// +tran($time: 2s,$ease: linear)
+		// +transform(translate3d(780px,-100px,0))
+
+.pages-technology
+	+tran($time: 0.5s,$ease: linear)
+	+posa
+	+tl
+	+w
+	+h
+	z-index: 102
+	+transform(translate3d(-763px,173px,0))
+	&.thispage
+		+tran($time: 2s,$ease: linear)
+		+transform(translate3d(0,0,0))
+	.content
+		+posa
+		+tl
+		+w
+		+h
+		z-index: 1
+		.m-top
+			.bg
+				padding-top: 40px
+		.m-bottom
+			+posa
+			+bl
+			.bg
+				+w(906px)
+				margin-left: -(906px-640px)/2
 
 .pages-award
 	+tran($time: 0.5s,$ease: linear)
@@ -468,9 +506,50 @@ html,body
 	+tl
 	+w
 	+h
-	// +hide
 	z-index: 102
 	+transform(translate3d(-670px,550px,0))
+	&.thispage
+		+tran($time: 2s,$ease: linear)
+		+transform(translate3d(0,0,0))
+	.bg
+		+posa
+		+tl(80px)
+	.content
+		+posa
+		+tl
+		+w
+		+h
+		+overhide
+		z-index: 1
+		.icons,.bottles
+			+posa
+			+w(400px)
+			+m
+			+text-left
+			.icon
+				+show-inline
+				+m(0 8px)
+		.icons-1
+			+tl(90px+80px,120px)
+		.icons-2
+			+tl(364px+80px,120px)
+		.icons-3
+			+tl(616px+80px,120px)
+		.other
+			+posa
+		.other-1
+			+tl(139px+80px,393px)
+		.other-2
+			+tl(736px+80px,393px)
+
+.pages-media
+	+tran($time: 0.5s,$ease: linear)
+	+posa
+	+tl
+	+w
+	+h
+	z-index: 102
+	+transform(translate3d(690px,-550px,0))
 	&.thispage
 		+tran($time: 2s,$ease: linear)
 		+transform(translate3d(0,0,0))
@@ -481,7 +560,6 @@ html,body
 		+h
 		+overhide
 		z-index: 1
-
 		.icons,.bottles
 			+posa
 			+w(500px)
@@ -909,3 +987,19 @@ html,body
 			+w(100%)
 			display: inline-block
 			vertical-align: topd
+
+
+.pop
+	+posf
+	+tl
+	+br
+	+w
+	+h
+	+bc(rgba(0,0,0,0.8))
+	.content
+		+posa
+		+tl(50%)
+		+transform(translate3d(0,-50%,0))
+		+touch
+		+p(20px 0)
+		max-height: 100%

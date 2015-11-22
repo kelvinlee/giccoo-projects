@@ -40,7 +40,7 @@
           </div>
         </div>
         <div class="bottle bottle-media"><img src="img/bottle-media.png">
-          <div onclick="openBottle(this)" page-name="media" class="on-button"></div>
+          <div onclick="openBottleMain(this)" page-name="media" class="on-button"></div>
           <div class="white"><img src="img/bottle-media-white.png"></div>
         </div>
         <div class="bottle bottle-contactus"><img src="img/bottle-contactus.png">
@@ -57,42 +57,71 @@
           <div class="timer"><img src="img/right-tower-timer.png">
             <timer></timer>
           </div>
-          <playsound src="mp3/1.mp3"></playsound>
         </div>
         <div class="bottle last-bottle"><img src="img/bottom-bottle.png"></div>
         <div class="bottle bottle-fire-1"><img src="img/bottle-lighter.png"></div>
         <div class="bottle bottle-fire-2"><img src="img/bottle-lighter.png"></div>
         <div class="bottle bottle-search tada animated infinite duration-15"><img src="img/magn.png"></div>
       </div>
+      <div class="pages-technology">
+        <div onclick="backBottle('technology')" class="content">
+          <div class="m-top">
+            <div class="bg"><img src="img/pages-technology-top.png"></div>
+          </div>
+          <div class="m-bottom">
+            <div class="bg"><img src="img/pages-technology-bottom.png"></div>
+          </div>
+        </div>
+      </div>
       <div class="pages-award">
         <div class="bg"><img src="img/pages-award-bg.png"></div>
         <div onclick="backBottleMain('award')" class="content">
           <div class="icons icons-1">
-            <div class="icon"><img src="img/pages-award-icon-1.png"></div>
-            <div class="icon"><img src="img/pages-award-icon-2.png"></div>
-            <div class="icon"><img src="img/pages-award-icon-3.png"></div>
-            <div class="icon"><img src="img/pages-award-icon-4.png"></div>
-            <div class="icon"><img src="img/pages-award-icon-5.png"></div>
-            <div class="icon"><img src="img/pages-award-icon-6.png"></div>
+            <div rel="1" class="icon"><img src="img/pages-award-icon-1.png"></div>
+            <div rel="2" class="icon"><img src="img/pages-award-icon-2.png"></div>
           </div>
           <div class="icons icons-2">
-            <div class="icon"><img src="img/pages-award-icon-7.png"></div>
-            <div class="icon"><img src="img/pages-award-icon-8.png"></div>
-            <div class="icon"><img src="img/pages-award-icon-9.png"></div>
-            <div class="icon"><img src="img/pages-award-icon-10.png"></div>
-            <div class="icon"><img src="img/pages-award-icon-11.png"></div>
-            <div class="icon"><img src="img/pages-award-icon-12.png"></div>
+            <div rel="3" class="icon"><img src="img/pages-award-icon-3.png"></div>
+            <div rel="4" class="icon"><img src="img/pages-award-icon-4.png"></div>
+            <div rel="5" class="icon"><img src="img/pages-award-icon-5.png"></div>
+          </div>
+          <div class="icons icons-3">
+            <div rel="6" class="icon"><img src="img/pages-award-icon-6.png"></div>
+            <div rel="7" class="icon"><img src="img/pages-award-icon-7.png"></div>
+          </div>
+          <div class="other other-1"><img src="img/pages-award-other-1.png"></div>
+          <div class="other other-2"><img src="img/pages-award-other-2.png"></div>
+        </div>
+      </div>
+      <div class="pages-media">
+        <div class="bg"><img src="img/pages-media-bg.png"></div>
+        <div onclick="backBottleMain('media')" class="content">
+          <div class="icons icons-1">
+            <div rel="1" class="icon"><img src="img/pages-media-icon-1.png"></div>
+            <div rel="2" class="icon"><img src="img/pages-media-icon-2.png"></div>
+            <div rel="3" class="icon"><img src="img/pages-media-icon-3.png"></div>
+            <div rel="4" class="icon"><img src="img/pages-media-icon-4.png"></div>
+            <div rel="5" class="icon"><img src="img/pages-media-icon-5.png"></div>
+            <div rel="6" class="icon"><img src="img/pages-media-icon-6.png"></div>
+          </div>
+          <div class="icons icons-2">
+            <div rel="7" class="icon"><img src="img/pages-media-icon-7.png"></div>
+            <div rel="8" class="icon"><img src="img/pages-media-icon-8.png"></div>
+            <div rel="9" class="icon"><img src="img/pages-media-icon-9.png"></div>
+            <div rel="10" class="icon"><img src="img/pages-media-icon-10.png"></div>
+            <div rel="11" class="icon"><img src="img/pages-media-icon-11.png"></div>
+            <div rel="12" class="icon"><img src="img/pages-media-icon-12.png"></div>
           </div>
           <div class="bottles bottle-1">
-            <div class="icon"><img src="img/pages-award-bottle-1.png"></div>
-            <div class="icon"><img src="img/pages-award-bottle-2.png"></div>
-            <div class="icon"><img src="img/pages-award-bottle-3.png"></div>
-            <div class="icon"><img src="img/pages-award-bottle-4.png"></div>
+            <div class="icon"><img src="img/pages-media-bottle-1.png"></div>
+            <div class="icon"><img src="img/pages-media-bottle-2.png"></div>
+            <div class="icon"><img src="img/pages-media-bottle-3.png"></div>
+            <div class="icon"><img src="img/pages-media-bottle-4.png"></div>
           </div>
           <div class="bottles bottle-2">
-            <div class="icon"><img src="img/pages-award-bottle-5.png"></div>
-            <div class="icon"><img src="img/pages-award-bottle-6.png"></div>
-            <div class="icon"><img src="img/pages-award-bottle-7.png"></div>
+            <div class="icon"><img src="img/pages-media-bottle-5.png"></div>
+            <div class="icon"><img src="img/pages-media-bottle-6.png"></div>
+            <div class="icon"><img src="img/pages-media-bottle-7.png"></div>
           </div>
         </div>
       </div>
@@ -110,23 +139,11 @@
         </div>
       </div>
       <div class="pages-brand">
-        <div class="bg fadeIn animated duration-10 delay-18"></div>
+        <div class="bg">
+          <gif id="brandbg" width="640" height="1134" normal="[0,6, &quot;replay&quot;]" replay="7" stop="0" play="normal" count="8" src="img/animate/brandbg/brand-id.png"></gif>
+        </div>
         <div onclick="backBottle('brand')" class="content">
-          <div class="brands">
-            <div class="bg-line fadeIn animated duration-10 delay-15"><img src="img/pages-brand-line.png"></div>
-            <div class="brand animated duration-5 brand-1 bounceIn delay-30"><img src="img/icon-brand-1.png"></div>
-            <div class="brand animated duration-5 brand-2 bounceIn delay-27"><img src="img/icon-brand-2.png"></div>
-            <div class="brand animated duration-5 brand-3 bounceIn delay-24"><img src="img/icon-brand-3.png"></div>
-            <div class="brand animated duration-5 brand-4 bounceIn delay-21"><img src="img/icon-brand-4.png"></div>
-            <div class="brand animated duration-5 brand-5 bounceIn delay-27"><img src="img/icon-brand-5.png"></div>
-            <div class="brand animated duration-5 brand-6 bounceIn delay-21"><img src="img/icon-brand-6.png"></div>
-            <div class="brand animated duration-5 brand-7 bounceIn delay-19"><img src="img/icon-brand-7.png"></div>
-            <div class="brand animated duration-5 brand-8 bounceIn delay-24"><img src="img/icon-brand-8.png"></div>
-            <div class="brand animated duration-5 brand-9 bounceIn delay-18"><img src="img/icon-brand-9.png"></div>
-            <div class="brand animated duration-5 brand-10 bounceIn delay-24"><img src="img/icon-brand-10.png"></div>
-            <div class="brand animated duration-5 brand-11 bounceIn delay-24"><img src="img/icon-brand-11.png"></div>
-            <div class="brand animated duration-5 brand-12 bounceIn delay-27"><img src="img/icon-brand-12.png"></div>
-          </div>
+          <gif id="brand" width="640" height="1134" normal="[0,86, &quot;replay&quot;]" replay="[87, 126]" stop="0" play="normal" count="127" src="img/animate/brands/brand-id.png"></gif>
         </div>
       </div>
       <div class="pages-strategy">
@@ -187,6 +204,9 @@
         </div>
       </div>
     </div>
+    <script src="/libs/js/min/easeljs-0.8.0.min.js" type="text/javascript"></script>
+    <script src="/libs/js/min/tweenjs-0.6.0.min.js" type="text/javascript"></script>
+    <script src="/libs/js/min/preloadjs-0.4.1.min.js" type="text/javascript"></script>
     <script src="/libs/js/min/Zepto.min.js"></script>
     <script src="/libs/js/min/fastclick.min.js"></script>
     <script src="/libs/js/min/riot.js"></script>

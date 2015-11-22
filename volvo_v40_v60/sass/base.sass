@@ -1,0 +1,295 @@
+@import sass/base
+
+
++keyframes(second)
+	0%
+		+transform(rotate(0deg))
+	100%
+		+transform(rotate(360deg))
++keyframes(light)
+	0%,100%
+		+transform(translate3d(0,0,0))
+		opacity: 0
+	10%
+		opacity: 1
+	70%
+		opacity: 1
+	80%
+		+transform(translate3d(9rem,0,0))
+		opacity: 0
+	
+
+
+
+// animation,delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.wechat-share-hide
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+
+html,body
+	+w
+	+h
+	+bc(#e7e7e7)
+.hide
+	+hide
+// .loading
+
+.loading
+	+posa
+	+tl
+	+w
+	+h
+	+bc(#fefcf0)
+	z-index: 999
+	.img
+		+posa
+		+tl(50%)
+		+transform(translate3d(0,-50%,0))
+	.text
+		+posa
+		+tl(68%,50%)
+		+transform(translate3d(-50%,-50%,0))
+		+text-center
+		+font-size(1rem)
+		line-height: 1.4em
+		color: #f5c559
+		.loadtext
+			+font-size(1.4rem)
+			margin-right: -1rem
+			em
+				font-style: normal
+.main
+	+posa
+	+tl
+	+w
+	+h
+	z-index: 99
+	font-size: 0
+	.homepage
+		.bg
+			+posr
+			.content
+				+posa
+				+tl
+				+br
+		.bg-1
+			.outlink
+				+posa
+				+tl(29%,5%)
+				+wh(80%,2rem)
+				+show
+		.bg-2
+			.title
+				margin-bottom: 1rem
+		.bg-3
+			.show-pop
+				.light
+					+posa
+					+tl
+					+w(3rem)
+					+animation(light,2s,ease,infinite)
+
+			.show-pop
+				+posa
+				+tl(5%,5%)
+				+wh(40%,2rem)
+				+transform(rotate(10deg))
+				transform-origin: left top
+				&:nth-child(n+1)
+					+tl(7%,4%)
+					+wh(50%,2.2rem)
+				&:nth-child(n+2)
+					+tl(23%,60%)
+					+wh(36%,2rem)
+				&:nth-child(n+3)
+					+tl(39%,63%)
+					+wh(36%,2rem)
+				&:nth-child(n+4)
+					+tl(23%,17%)
+					+wh(36%,2rem)
+				&:nth-child(n+5)
+					+tl(33%,6%)
+					+wh(36%,2rem)
+		.bg-4
+			.sliders
+				+w(80%)
+				+m
+				+overhide
+				margin-top: 1rem
+				border: solid 4px #fff
+			.points
+				+w
+				+text-center
+				margin-top: 1rem
+				span
+					+show-inline
+					+wh(0.5rem,0.5rem)
+					+m(0 0.2rem)
+					+bc(#fff)
+					border-radius: 50%
+					&.on
+						+bc(#00d1c1)
+.pop
+	+posf
+	+tl
+	+w
+	+h
+	+bc(rgba(0,0,0,0.8))
+	+hide
+	.content
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+		+iw(450)
+
+.tabs
+	.tab
+		+w(100%)
+		white-space: nowrap
+		.item
+			+show-inline
+			+w(50%)
+			+text-center
+			+bc(#003057)
+			+p(0.8rem 0)
+			&.on
+				+bc(#024d89)
+	.contents
+		+p(0.8rem 0)
+		.sliders
+			+w(80%)
+			+m
+			+overhide
+			+bc(#fff)
+			border: solid 0.4rem #fff
+		.points
+			+text-center
+			+p(0.2rem)
+			+box
+			span
+				+show-inline
+				+wh(0.4rem,0.4rem)
+				+overhide
+				border-radius: 50%
+				+bc(#fff)
+				+m(0 0.2rem)
+				&.on
+					+bc(#00d1c1)
+
+
+.form
+	+w(90%)
+	+m
+	+p(1.4rem 0)
+	.form-grounp
+		$h: 1.4rem
+		vertical-align: top
+		> label
+			+wh(30%,$h)
+			+show-inline
+			+font-size(0.8rem)
+			+m(0.2rem 0)
+			line-height: $h
+			vertical-align: top
+			color: #2f416d
+		> input
+			+wh(68%,$h)
+			+font-size(0.8rem)
+			+bc(#fff)
+			+show-inline
+			+box
+			+m(0.2rem 0)
+			+p(0.2rem)
+			line-height: $h
+			vertical-align: top
+			border: solid 1px #2f416d
+			color: #2f416d
+			outline: none
+			border-radius: 0.4rem
+		.comb
+			+wh(68%,$h)
+			+font-size(1rem)
+			+show-inline
+			+m(0.2rem 0)
+			color: #000
+			white-space: nowrap
+			label
+				+wh(30%,$h)
+				+show-inline
+				+font-size(0.8rem)
+				+text-center
+				color: #2f416d
+			input
+				+show-inline
+				+w(1rem)
+			.select
+				+w(48.5%)
+				+m
+		.select
+			+posr
+			+wh(68%,$h)
+			+show-inline
+			+bc(#fff)
+			+m(0.2rem 0)
+			+box
+			+p(0 0.2rem)
+			+font-size(0.8rem)
+			color: #000
+			border: solid 1px #2f416d
+			border-radius: 0.4rem
+			&:after
+				$size: 0.5rem
+				content: " "
+				+posa
+				+tr(50%,$size)
+				+transform(translate3d(0,-50%,0))
+				z-index: 99
+				border-left: $size/2 solid transparent
+				border-right: $size/2 solid transparent
+				border-top: $size solid #6ba2d1
+			span
+				text-overflow: ellipsis
+				+show-inline
+				+wh(100%,$h)
+				+overhide
+			select
+				+posa
+				+tl
+				+br
+				+w
+				+h
+				opacity: 0
+
+	.form-btn
+		+text-center
+		margin-top: 1rem
+		button
+			+w(40%)
+			+m
+			+p
+			+bc(transparent)
+			border: none
+
+.backTop
+	+posf
+	+br(1rem,1rem)
+	+iw(80)
+	
+
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top

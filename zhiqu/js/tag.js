@@ -1,4 +1,53 @@
 
+riot.tag('gif', '<canvas width="{opts.width}" height="{opts.height}"></canvas>', function(opts) {
+    var self = this
+    var stage = null
+    var playerSprite = null
+    console.log(opts)
+    this.count = parseInt(opts.count)
+    this.url = opts.src
+    this.play = opts.play
+    this.animations = JSON.parse('{"normal": '+opts.normal+', "replay": '+opts.replay+', "stop": '+opts.stop+'}')
+    console.log(self.animations)
+    if (opts.id&&global) { global[opts.id] = self }
+    this.init = function() {
+    	stage = new createjs.Stage($("canvas",this.root)[0])
+    	brandImages = []
+    	for(var i=1;i<=self.count;i++) {
+    		brandImages.push(self.url.replace("id",i))
+    	}
+    	playerSheet = new createjs.SpriteSheet({
+    		"images": brandImages,
+    		frames: {
+    			height: opts.height,
+    			width: opts.width,
+    			regX: 0,
+    			regY: 0,
+    			count: self.count
+    		},
+    		animations: self.animations
+    	});
+    	playerSprite = new createjs.Sprite(playerSheet, self.play);
+    	stage.addChild(playerSprite)
+    	stage.update()
+    	createjs.Ticker.addEventListener("tick", self.tick)
+    }.bind(this);
+    
+    this.tick = function(evt) {
+    	stage.update()
+    }.bind(this);
+    
+    this.on("mount",function(){
+    	self.init()
+    	self.update()
+    })
+    
+    this.replay = function(name) {
+    	playerSprite.gotoAndPlay(name)
+    }.bind(this);
+  
+});
+
 riot.tag('playsound', '<div onclick="{change}" class="icon-play {type}"></div> <audio id="playgrounp" riot-src="{src}" autoplay="true" loop="loop"></audio>', function(opts) {
     var self = this
     this.src = opts.src

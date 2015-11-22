@@ -11,7 +11,9 @@ block content
 	- var images = "img"
 	.wechat-share-hide
 		//- img#share(src="http://disk.giccoo.com/projects/huaweiG7/img/share.jpg")
-	
+	//- gif(width="640",height="1134",normal='[0,86, "replay"]',replay='[87, 126]',stop="86",play="normal",count="127",src="img/animate/brands/brand-id.png")
+	//- gif(id="brandbg",width="640",height="1134",normal='[0,6, "stop"]',replay='[0,7]',stop="[7,7]",play="normal",count="8",src="img/animate/brandbg/brand-id.png")
+	//- animations='{ "normal": [0,86, "replay"], "replay": [87, 126], "stop": 86 }'
 	.main
 		.homepage
 			.bottle.bottle-logo
@@ -46,7 +48,7 @@ block content
 							img(src="#{images}/homepage-bubble.png")
 			.bottle.bottle-media
 				img(src="#{images}/bottle-media.png")
-				.on-button(onclick="openBottle(this)",page-name="media")
+				.on-button(onclick="openBottleMain(this)",page-name="media")
 				.white
 					img(src="#{images}/bottle-media-white.png")
 			.bottle.bottle-contactus
@@ -68,7 +70,7 @@ block content
 				.timer
 					img(src="#{images}/right-tower-timer.png")
 					timer
-				playsound(src="mp3/1.mp3")
+				//- playsound(src="mp3/1.mp3")
 			.bottle.last-bottle
 				img(src="#{images}/bottom-bottle.png")
 			.bottle.bottle-fire-1
@@ -78,26 +80,55 @@ block content
 			.bottle.bottle-search.tada.animated.infinite.duration-15
 				img(src="#{images}/magn.png")
 
+		.pages-technology
+			.content(onclick="backBottle('technology')")
+				.m-top
+					.bg
+						img(src="#{images}/pages-technology-top.png")
+				.m-bottom
+					.bg
+						img(src="#{images}/pages-technology-bottom.png")
+
 		.pages-award
 			.bg
 				img(src="#{images}/pages-award-bg.png")
 			.content(onclick="backBottleMain('award')")
 				.icons.icons-1
-					-for (var i=1;i<7;i++)
-						.icon
+					-for (var i=1;i<3;i++)
+						.icon(rel="#{i}")
 							img(src="#{images}/pages-award-icon-#{i}.png")
 				.icons.icons-2
-					-for (var i=7;i<13;i++)
-						.icon
+					-for (var i=3;i<6;i++)
+						.icon(rel="#{i}")
 							img(src="#{images}/pages-award-icon-#{i}.png")
+				.icons.icons-3
+					-for (var i=6;i<8;i++)
+						.icon(rel="#{i}")
+							img(src="#{images}/pages-award-icon-#{i}.png")
+				.other.other-1
+					img(src="#{images}/pages-award-other-1.png")
+				.other.other-2
+					img(src="#{images}/pages-award-other-2.png")
+		.pages-media
+			.bg
+				img(src="#{images}/pages-media-bg.png")
+			.content(onclick="backBottleMain('media')")
+				.icons.icons-1
+					-for (var i=1;i<7;i++)
+						.icon(rel="#{i}")
+							img(src="#{images}/pages-media-icon-#{i}.png")
+				.icons.icons-2
+					-for (var i=7;i<13;i++)
+						.icon(rel="#{i}")
+							img(src="#{images}/pages-media-icon-#{i}.png")
 				.bottles.bottle-1
 					-for (var i=1;i<5;i++)
 						.icon
-							img(src="#{images}/pages-award-bottle-#{i}.png")
+							img(src="#{images}/pages-media-bottle-#{i}.png")
 				.bottles.bottle-2
 					-for (var i=5;i<8;i++)
 						.icon
-							img(src="#{images}/pages-award-bottle-#{i}.png")
+							img(src="#{images}/pages-media-bottle-#{i}.png")
 				
 		.pages-logo
 			.bg
@@ -122,9 +153,11 @@ block content
 						img(src="#{images}/bottle-logo-next-white.png")
 
 		.pages-brand
-			.bg.fadeIn.animated.duration-10.delay-18
+			.bg
+				gif(id="brandbg",width="640",height="1134",normal='[0,6, "replay"]',replay='7',stop="0",play="normal",count="8",src="img/animate/brandbg/brand-id.png")
 			.content(onclick="backBottle('brand')")
-				.brands
+				gif(id="brand",width="640",height="1134",normal='[0,86, "replay"]',replay='[87, 126]',stop="0",play="normal",count="127",src="img/animate/brands/brand-id.png")
+				//- .brands
 					.bg-line.fadeIn.animated.duration-10.delay-15
 						img(src="img/pages-brand-line.png")
 					//- var list = [{a:"fadeIn",num: 10},{a:"fadeInUp", num: 12},{a:"fadeInUp", num: 9},{a:"fadeInUp", num: 6},{a:"fadeInRight", num: 3},{a:"fadeInLeft", num: 9},{a:"fadeInLeft", num: 3},{a:"fadeInUp",num: 1},{a:"fadeInRight",num: 6},{a:"fadeIn",num: 0},{a:"fadeInUp",num: 6},{a:"fadeInDown",num: 6},{a:"fadeInUp",num: 9},{a:"fadeIn",num: 10}]
@@ -203,6 +236,9 @@ block content
 block js
 	//- script(src="/libs/js/min/localforage.min.js")
 	//- script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
+	script(src="/libs/js/min/easeljs-0.8.0.min.js",type="text/javascript")
+	script(src="/libs/js/min/tweenjs-0.6.0.min.js",type="text/javascript")
+	script(src="/libs/js/min/preloadjs-0.4.1.min.js",type="text/javascript")
 	script(src="/libs/js/min/Zepto.min.js")
 	script(src="/libs/js/min/fastclick.min.js")
 	script(src="/libs/js/min/riot.js")
