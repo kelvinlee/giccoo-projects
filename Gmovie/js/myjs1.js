@@ -34,7 +34,7 @@
         $(window).scroll(fix);
     }
 
-    $('#logoBar').fixedDiv('fix-div');
+    //$('#logoBar').fixedDiv('fix-div');
 //-----------------------------------------
 
     var audio;
