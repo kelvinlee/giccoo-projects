@@ -46,17 +46,19 @@ p{
 	/*background-color: #000088;*/
 }
 .arrowNext2{
-	width: 17.5%;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
 	position: relative;
-	bottom: 2%;
-	left: 41.25%;
+	/*bottom: 2%;*/
+	/*left: 41.25%;*/
 	/*background-color: #000088;*/
 }
 #page2{
 	width: 100%;
 	margin: 0px;
 	background-color: #000000;
-	height: 100%;
+	height: 90%;
 	position: relative;
 	z-index: 2;
 }
@@ -69,7 +71,7 @@ p{
 #page2T{
 	width: 100%;
 	position: absolute;
-	bottom: 8%;
+	bottom: 3%;
 }
 .nofix-div{
 	width: 100%;
@@ -97,10 +99,12 @@ p{
 .moviePage{
 	position: relative;
 	width: 100%;
+	margin: 0;
+	padding: 0;
 	
 }
 .movieInfo{
-	padding-top: 10%;
+	padding-top: 0%;
 	position: relative;
 	width: 100%;
 	height: 100%;
