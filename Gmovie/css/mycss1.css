@@ -58,7 +58,7 @@ p{
 	width: 100%;
 	margin: 0px;
 	background-color: #000000;
-	height: 100%;
+	height: 90%;
 	position: relative;
 	z-index: 2;
 }
@@ -71,7 +71,7 @@ p{
 #page2T{
 	width: 100%;
 	position: absolute;
-	bottom: 8%;
+	bottom: 3%;
 }
 .nofix-div{
 	width: 100%;
