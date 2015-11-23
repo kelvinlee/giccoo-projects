@@ -17,7 +17,8 @@ riot.tag('gif', '<canvas width="{opts.width}" height="{opts.height}"></canvas>',
     		brandImages.push(self.url.replace("id",i))
     	}
     	playerSheet = new createjs.SpriteSheet({
-    		"images": brandImages,
+    		images: brandImages,
+    		framerate: 20,
     		frames: {
     			height: opts.height,
     			width: opts.width,
@@ -44,6 +45,7 @@ riot.tag('gif', '<canvas width="{opts.width}" height="{opts.height}"></canvas>',
     
     this.replay = function(name) {
     	playerSprite.gotoAndPlay(name)
+    	console.log(name)
     }.bind(this);
   
 });

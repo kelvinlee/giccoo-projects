@@ -137,6 +137,11 @@ html,body
 					border-radius: 50%
 					&.on
 						+bc(#00d1c1)
+	.outlink
+		+posa
+		+tl(40%,50%)
+		+wh(30%,20%)
+		z-index: 99
 .pop
 	+posf
 	+tl
@@ -148,6 +153,7 @@ html,body
 		+posa
 		+tl(50%,50%)
 		+transform(translate3d(-50%,-50%,0))
+
 		+iw(450)
 
 .tabs
@@ -170,6 +176,7 @@ html,body
 			+overhide
 			+bc(#fff)
 			border: solid 0.4rem #fff
+			
 		.points
 			+text-center
 			+p(0.2rem)
@@ -270,11 +277,11 @@ html,body
 
 	.form-btn
 		+text-center
-		margin-top: 1rem
+		margin-top: 0.8rem
 		button
 			+w(40%)
 			+m
-			+p
+			+p(2px 0)
 			+bc(transparent)
 			border: none
 

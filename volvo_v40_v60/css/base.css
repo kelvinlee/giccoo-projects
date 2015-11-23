@@ -816,6 +816,13 @@ html, body {
       border-radius: 50%; }
       .main .homepage .bg-4 .points span.on {
         background-color: #00d1c1; }
+  .main .outlink {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 30%;
+    height: 20%;
+    z-index: 99; }
 
 .pop {
   position: fixed;
@@ -1022,11 +1029,11 @@ html, body {
         opacity: 0; }
   .form .form-btn {
     text-align: center;
-    margin-top: 1rem; }
+    margin-top: 0.8rem; }
     .form .form-btn button {
       width: 40%;
       margin: 0 auto;
-      padding: 0;
+      padding: 2px 0;
       background-color: transparent;
       border: none; }
 

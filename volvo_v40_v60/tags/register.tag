@@ -33,6 +33,15 @@
         </div>
       </div>
     </div>
+    <div class="form-grounp">
+      <label for="dealer">选择车型:</label>
+      <div class="select"><span>{carTypeName}</span>
+        <select id="cartype" name="cartype" onchange="{changeCar}">
+          <option value="沃尔沃2016款V40">沃尔沃2016款V40</option>
+          <option value="沃尔沃2016款V60">沃尔沃2016款V60</option>
+        </select>
+      </div>
+    </div>
     <div class="form-btn">
       <button type="submit" class="submit"><img src="img/submit.png"/></button>
     </div>
@@ -55,13 +64,14 @@
     
     this.provinceName = this.province[0]
     this.cityName = this.city[0]
+    this.carTypeName = "沃尔沃2016款V40"
     //- this.dealerName = this.dealer[0].name
     this.firstUpdate = true
     this.on("update",function(){
     	if (this.firstUpdate) {return this.firstUpdate = false}
     	this.provinceName = $("[name=province]",this.root).val()
     	this.cityName = $("[name=city]",this.root).val()
-    	//- this.dealerName = $("[name=dealer]",this.root).val()
+    	this.carTypeName = $("[name=cartype]",this.root).val()
     })
     changeCity(evt) {
     	var newName = $("[name=province]",self.root).val()
@@ -81,7 +91,7 @@
     	self.dealer = dealer
     	self.update()
     }
-    changeDealer(evt) {
+    changeCar(evt) {
     	self.update()
     }
     submit() {

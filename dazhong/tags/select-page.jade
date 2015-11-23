@@ -11,11 +11,11 @@ select-page
 				.menu-item(each="{menu in menus}",onclick="{changeMenu(menu)}",class="{now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,before: parent.now == menus.indexOf(menu)+1}")
 					img(src="{menu.thumb}.png")
 		.text
-			p {info.description}
-			p
+			p.title
 				span.icon
 					img(src="img/icon-star.png")
 				span {info.name}
+			p {info.description}
 		.btns
 			.btn-info(onclick="{openCuisine}")
 				img(src="img/button-info.png")

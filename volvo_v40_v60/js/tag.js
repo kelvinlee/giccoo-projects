@@ -1,5 +1,5 @@
 
-riot.tag('register', '<form onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username">姓名:</label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="">性别:</label> <div class="comb"> <label for="man">先生</label> <input id="man" type="radio" name="sex" value="男" checked="checked"> <label for="woman">女士</label> <input id="woman" type="radio" name="sex" value="女"> </div> </div> <div class="form-grounp"> <label for="mobile">手机号码:</label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-grounp"> <label for="province">所在省/市:</label> <div class="comb"> <div class="select"><span>{provinceName}</span> <select id="province" name="province" onchange="{changeProvince}"> <option each="{name in province}" value="{name}">{name}</option> </select> </div> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeCity}"> <option each="{name in city}" value="{name}">{name}</option> </select> </div> </div> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="img/submit.png"></button> </div> </form>', function(opts) {
+riot.tag('register', '<form onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username">姓名:</label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="">性别:</label> <div class="comb"> <label for="man">先生</label> <input id="man" type="radio" name="sex" value="男" checked="checked"> <label for="woman">女士</label> <input id="woman" type="radio" name="sex" value="女"> </div> </div> <div class="form-grounp"> <label for="mobile">手机号码:</label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-grounp"> <label for="province">所在省/市:</label> <div class="comb"> <div class="select"><span>{provinceName}</span> <select id="province" name="province" onchange="{changeProvince}"> <option each="{name in province}" value="{name}">{name}</option> </select> </div> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeCity}"> <option each="{name in city}" value="{name}">{name}</option> </select> </div> </div> </div> <div class="form-grounp"> <label for="dealer">选择车型:</label> <div class="select"><span>{carTypeName}</span> <select id="cartype" name="cartype" onchange="{changeCar}"> <option value="沃尔沃2016款V40">沃尔沃2016款V40</option> <option value="沃尔沃2016款V60">沃尔沃2016款V60</option> </select> </div> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="img/submit.png"></button> </div> </form>', function(opts) {
     var self = this
     this.cityData = _citys
     var province = []
@@ -17,13 +17,14 @@ riot.tag('register', '<form onsubmit="{submit}" class="form"> <div class="form-g
     
     this.provinceName = this.province[0]
     this.cityName = this.city[0]
+    this.carTypeName = "沃尔沃2016款V40"
 
     this.firstUpdate = true
     this.on("update",function(){
     	if (this.firstUpdate) {return this.firstUpdate = false}
     	this.provinceName = $("[name=province]",this.root).val()
     	this.cityName = $("[name=city]",this.root).val()
-
+    	this.carTypeName = $("[name=cartype]",this.root).val()
     })
     this.changeCity = function(evt) {
     	var newName = $("[name=province]",self.root).val()
@@ -43,7 +44,7 @@ riot.tag('register', '<form onsubmit="{submit}" class="form"> <div class="form-g
     	self.dealer = dealer
     	self.update()
     }.bind(this);
-    this.changeDealer = function(evt) {
+    this.changeCar = function(evt) {
     	self.update()
     }.bind(this);
     this.submit = function() {
@@ -150,9 +151,9 @@ riot.tag('slider', '<div riot-style="-webkit-transition-duration: {duration}s;tr
     }
     this.on("mount",function(){
     	slider = $(".slider",this.root)
-    	slider[0].addEventListener("touchstart", this.touchstart.bind(this))
-    	slider[0].addEventListener("touchmove", this.touchmove.bind(this))
-    	slider[0].addEventListener("touchend", this.touchend.bind(this))
+    	this.root.addEventListener("touchstart", this.touchstart.bind(this))
+    	this.root.addEventListener("touchmove", this.touchmove.bind(this))
+    	this.root.addEventListener("touchend", this.touchend.bind(this))
     	opts.end && opts.end(this)
     })
   

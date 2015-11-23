@@ -85,9 +85,9 @@
     }
     this.on("mount",function(){
     	slider = $(".slider",this.root)
-    	slider[0].addEventListener("touchstart", this.touchstart.bind(this))
-    	slider[0].addEventListener("touchmove", this.touchmove.bind(this))
-    	slider[0].addEventListener("touchend", this.touchend.bind(this))
+    	this.root.addEventListener("touchstart", this.touchstart.bind(this))
+    	this.root.addEventListener("touchmove", this.touchmove.bind(this))
+    	this.root.addEventListener("touchend", this.touchend.bind(this))
     	opts.end && opts.end(this)
     })
   </script>

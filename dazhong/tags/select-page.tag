@@ -10,8 +10,8 @@
       </div>
     </div>
     <div class="text">
+      <p class="title"><span class="icon"><img src="img/icon-star.png"/></span><span>{info.name}</span></p>
       <p>{info.description}</p>
-      <p><span class="icon"><img src="img/icon-star.png"/></span><span>{info.name}</span></p>
     </div>
     <div class="btns">
       <div onclick="{openCuisine}" class="btn-info"><img src="img/button-info.png"/></div>

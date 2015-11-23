@@ -20,6 +20,7 @@ window.onload = ->
 	}
 	$(".pages-award .icon").on "click", openAward
 	$(".pages-media .icon").on "click", openMedia
+	$(".pages-brand .item").on "click", openBrand
 
 openBottle = (evt)->
 	return false if opened 
@@ -32,7 +33,8 @@ openBottle = (evt)->
 	setTimeout ->
 		$(".pages-"+name).addClass "thispage"
 	,1
-	console.log name
+	# console.log name
+
 	opened = true
 
 backBottle = (name)->
@@ -52,7 +54,10 @@ openBottleMain = (evt)->
 	$(".bottle-"+name).addClass "Mybottle"
 	$(".main").addClass "page-"+name
 	$(".pages-"+name).addClass "thispage"
+	global["bottle"+name].replay("replay") if global? && global["bottle"+name]?
 	opened = true
+
+	brandShow() if name is "brand"
 
 backBottleMain = (name)->
 	$(".main").removeClass "page-"+name
@@ -60,11 +65,16 @@ backBottleMain = (name)->
 	$(".pages-"+name).removeClass "thispage"
 	$(".bottle-"+name).removeClass "Mybottle"
 	opened = false
+	global["bottle"+name].replay("normal") if global? && global["bottle"+name]?
 
 awardList = [
 	{}
 ]  
+openBrand = (evt)->
+	evt.stopPropagation()
+	e = $(evt.target)
 
+	console.log e.attr "rel"
 openAward = (evt)->
 	evt.stopPropagation()
 	e = $(evt.target).parents(".icon")
@@ -75,3 +85,14 @@ openMedia = (evt)->
 	e = $(evt.target).parents(".icon")
 
 	console.log e.attr "rel"
+
+brandShow = ->
+	console.log global.brandbg?,global.brand?
+	global.brandbg.replay("stop") if global? and global.brandbg?
+	global.brand.replay("stop") if global? and global.brand?
+	setTimeout ->
+		global.brandbg.replay("normal") if global? and global.brandbg?
+		global.brand.replay("normal") if global? and global.brand?
+	,4100
+
+

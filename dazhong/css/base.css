@@ -922,7 +922,7 @@ html, body {
         color: #31363c; }
         .main .otherpage .select-page .text p {
           font-size: 0.8rem;
-          font-weight: bold; }
+          font-weight: normal; }
           @media only screen and (min-width: 321px) and (max-width: 399px) {
             .main .otherpage .select-page .text p {
               font-size: 0.88rem; } }
@@ -939,6 +939,21 @@ html, body {
           display: inline-block;
           vertical-align: middle;
           width: 1rem; }
+        .main .otherpage .select-page .text .title {
+          font-size: 1rem;
+          font-weight: bold; }
+          @media only screen and (min-width: 321px) and (max-width: 399px) {
+            .main .otherpage .select-page .text .title {
+              font-size: 1.1rem; } }
+          @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+            .main .otherpage .select-page .text .title {
+              font-size: 1.1rem; } }
+          @media only screen and (min-width: 399px) and (max-width: 767px) {
+            .main .otherpage .select-page .text .title {
+              font-size: 1.2rem; } }
+          @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+            .main .otherpage .select-page .text .title {
+              font-size: 1.2rem; } }
       .main .otherpage .select-page .cuisinePage, .main .otherpage .select-page .cuisineInfoPage {
         position: absolute;
         top: 0px;

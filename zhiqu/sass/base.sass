@@ -157,7 +157,30 @@
 		+h(70%)
 	90%
 		+h(45%)
++keyframes(fire)
+	0%
+		opacity: 0.5
+	20%
+		opacity: 0.7
+	40%
+		opacity: 1
+	50%
+		opacity: 0.4
+	60%
+		opacity: 0.7
+	80%
+		opacity: 0.6
+	90%
+		opacity: 0.9
+	100%
+		opacity: 0.5
++keyframes(bottleshadow)
+	0%,100%
+		opacity: 0.3
+	50%
+		opacity: 1
 
+	
 
 
 .wechat-share-hide
@@ -199,10 +222,17 @@ html,body
 		+h
 		+overhide
 		z-index: 998
+	.shadow
+		+posa
+		+animation(bottleshadow,3s,ease,infinite)
 .bottle-logo
 	$w: 403px
 	$h: 581px
 	+tl(-420px,-110px)
+	#bottlelogo
+		+posa
+		+tl(-16px,-40px)
+
 	.on-button
 		+br(0px,55px)
 		+wh(165px,60px)
@@ -250,6 +280,12 @@ html,body
 	$w: 1020px
 	+tl(-196px,-230px)
 	+w($w)
+	#bottlestrategy
+		+posa
+		+tl(157px,-27px)
+	.shadow
+		+tl(169px,522px)
+		z-index: -1
 	.on-button
 		+tl(0,563px)
 		+wh(240px,290px)
@@ -264,6 +300,12 @@ html,body
 	$w: 953px
 	+tl(110px,-180px)
 	+w($w)
+	#bottletechnology
+		+posa
+		+tl(-22px,-78px)
+	.shadow
+		+tl(72px,225px)
+		z-index: -1
 	.on-button
 		+tl(60px,250px)
 		+wh(200px,100px)
@@ -275,6 +317,10 @@ html,body
 	$w: 411px
 	+w($w)
 	+tl(-260px,-20px)
+	#bottlebrand
+		+posa
+		+tl(-12px,184px)
+		
 	.on-button
 		+br(0,0px)
 		+wh(160px,230px)
@@ -313,6 +359,13 @@ html,body
 	$w: 953px
 	+tl(110px,-180px)
 	+w($w)
+	#bottlemedia
+		+posa
+		+tl(-30px,580px)
+		// z-index: -1
+	.shadow
+		+tl(170px,582px)
+		z-index: -1
 	.on-button
 		+tl(110px,610px)
 		+wh(155px,230px)
@@ -330,6 +383,13 @@ html,body
 	$w: 452px
 	+tr(510px,-230px)
 	+w($w)
+	#bottlecontactus
+		+show-inline
+		margin-top: -8px
+		margin-left: -12px
+	.shadow
+		+tl(89px,-45px)
+		z-index: -1
 	.on-button
 		+tl(90px,10px)
 		+wh(145px,170px)
@@ -348,6 +408,15 @@ html,body
 	$w: 520px
 	+w($w)
 	+tl(575px,-132px)
+	#bottleaward
+		+show-inline
+		margin-top: -28px
+		margin-left: -52px
+	.shadow
+		+tl(16px,295px)
+		z-index: -1
+		+w(300px)
+		animation-delay: 500ms
 	.on-button
 		+tl(90px,408px)
 		+wh(85px,140px)
@@ -365,6 +434,12 @@ html,body
 	$w: 65px
 	+w($w)
 	+tr(778px,115px)
+.bottle-fire-1,.bottle-fire-2
+	.fire
+		+posa
+		+tl
+		z-index: 2
+		+animation(fire,5s,ease,infinite)
 .bottle-search
 	$w: 70px
 	+w($w)
@@ -446,29 +521,33 @@ html,body
 		z-index: 2
 		// &.page-logo
 			// +transform(translate3d(400px,400px,0))
-		&.page-strategy
-			+tran($time: 2s,$ease: linear)
-			+transform(translate3d(770px,0,0))
-		&.page-technology
-			+tran($time: 2s,$ease: linear)
-			+transform(translate3d(763px,-173px,0))
-		&.page-brand
-			+tran($time: 2s,$ease: linear)
-			+transform(translate3d(-10%,105%,0))
-		// &.page-award
-			// +transform(translate3d(400px,400px,0))
+	&.page-technology .homepage
+		+tran($time: 2s,$ease: linear)
+		+transform(translate3d(763px,-173px,0))
+		transition-delay: 2s
+	&.page-strategy .homepage
+		+tran($time: 2s,$ease: linear)
+		+transform(translate3d(770px,0,0))
+		transition-delay: 2.6s
+	&.page-brand .homepage
+		+tran($time: 2s,$ease: linear)
+		+transform(translate3d(-128px,105%,0))
+		transition-delay: 2s
 	&.page-logo .homepage
 		+tran($time: 2s,$ease: linear)
 		+transform(translate3d(243px,113%,0))
+		transition-delay: 2s
 	&.page-contactus .homepage
-		+tran($time: 2s,$ease: linear)
+		+tran($time: 4.3s,$ease: linear)
 		+transform(translate3d(-670px,-500px,0))
 	&.page-media .homepage
 		+tran($time: 2s,$ease: linear)
 		+transform(translate3d(-690px,550px,0))
+		transition-delay: 2.2s
 	&.page-award .homepage
 		+tran($time: 2s,$ease: linear)
 		+transform(translate3d(670px,-550px,0))
+		transition-delay: 2.6s
 	// &.page-technology .homepage
 		// +tran($time: 2s,$ease: linear)
 		// +transform(translate3d(780px,-100px,0))
@@ -484,6 +563,7 @@ html,body
 	&.thispage
 		+tran($time: 2s,$ease: linear)
 		+transform(translate3d(0,0,0))
+		transition-delay: 2s
 	.content
 		+posa
 		+tl
@@ -511,6 +591,7 @@ html,body
 	&.thispage
 		+tran($time: 2s,$ease: linear)
 		+transform(translate3d(0,0,0))
+		transition-delay: 2.6s
 	.bg
 		+posa
 		+tl(80px)
@@ -553,6 +634,7 @@ html,body
 	&.thispage
 		+tran($time: 2s,$ease: linear)
 		+transform(translate3d(0,0,0))
+		transition-delay: 2.2s
 	.content
 		+posa
 		+tl
@@ -590,7 +672,7 @@ html,body
 	z-index: 102
 	+transform(translate3d(670px,500px,0))
 	&.thispage
-		+tran($time: 2s,$ease: linear)
+		+tran($time: 4.3s,$ease: linear)
 		+transform(translate3d(0,0,0))
 		.content
 			.qrcode
@@ -691,6 +773,7 @@ html,body
 	&.thispage
 		+tran($time: 2s,$ease: linear)
 		+transform(translate3d(0,0,0))
+		transition-delay: 2s
 		// z-index: 120
 		.bg
 			+animation(fadeIn,0.5s,ease)
@@ -791,7 +874,6 @@ html,body
 				max-width: $w
 
 .pages-brand
-	+hide
 	+posa
 	+tl
 	+w
@@ -800,56 +882,45 @@ html,body
 	+tran($time: 0.5s,$ease: linear)
 	z-index: 1
 	opacity: 0
-	+transform(translate3d(10%,-105%,0))
+	+transform(translate3d(128px,-105%,0))
 	&.thispage
 		+tran($time: 2s,$ease: linear)
-		opacity: 1
 		+transform(translate3d(0,0,0))
+		opacity: 1
+		transition-delay: 2s
 	.bg
 		+posa
 		+tl
 		+w
 		+h
-		+b("../img/pages-brand-bg.jpg",no-repeat,center,center,cover)
+		// +b("../img/pages-brand-bg.jpg",no-repeat,center,center,cover)
 	.content
 		+posa
 		+tl
 		+w
 		+h
 		z-index: 1
-	.brands
-		+posa
-		+tl(10%)
-		.brand
+		
+		#brand,.ctrls
 			+posa
-			+tl
-		.brand-1
-			+tl(11px,360px)
-		.brand-2
-			+tl(170px,310px)
-		.brand-3
-			+tl(200px,190px)
-		.brand-4
-			+tl(307px,156px)
-		.brand-5
-			+tl(250px,511px)
-		.brand-6
-			+tl(367px,359px)
-		.brand-7
-			+tl(404px,232px)
-		.brand-8
-			+tl(342px,40px)
-		.brand-9
-			+tl(494px,145px)
-		.brand-10
-			+tl(232px,358px)
-		.brand-11
-			+tl(432px,427px)
-		.brand-12
-			+tl(50px,30px)
+			+tl(-120px)
+			// +transform(translate3d(0,-50%,0))
+		.ctrls
+			+wh(640px,1134px)
+			z-index: 102
+			.item
+				+posa
+				+tl
+				+wh(100px,100px)
+				// +bc(#fff)
+			.item-1
+				+tl(305px,56px)
+			.item-2
+				+tl(497px,413px)
+			.item-3
+				+tl(730px,485px)
 
 .pages-strategy
-	+hide
 	+posa
 	+tl
 	+w
@@ -861,8 +932,9 @@ html,body
 	// +bc(#73ea9c)
 	&.thispage
 		+tran($time: 2s,$ease: linear)
-		opacity: 1
 		+transform(translate3d(0,0,0))
+		transition-delay: 2.6s
+		opacity: 1
 	.content
 		+w
 		+h
