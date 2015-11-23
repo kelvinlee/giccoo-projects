@@ -38,7 +38,7 @@
       <div class="select"><span>{carTypeName}</span>
         <select id="cartype" name="cartype" onchange="{changeCar}">
           <option value="沃尔沃2016款V40">沃尔沃2016款V40</option>
-          <option value="沃尔沃2016款V60">沃尔沃2016款V60</option>
+          <option value="沃尔沃2015款V60">沃尔沃2015款V60</option>
         </select>
       </div>
     </div>
