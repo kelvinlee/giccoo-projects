@@ -15,7 +15,7 @@ block content
 	//- gif(id="brandbg",width="640",height="1134",normal='[0,6, "stop"]',replay='[0,7]',stop="[7,7]",play="normal",count="8",src="img/animate/brandbg/brand-id.png")
 	//- animations='{ "normal": [0,86, "replay"], "replay": [87, 126], "stop": 86 }'
 	.main
-		.homepage
+		.homepage.page-strategy
 			.bottle.bottle-logo
 				img(src="#{images}/bottle-logo.png")
 				gif(id="bottlelogo",width="480",height="620",count="63",normal='0',replay='[0,62,"stop"]',stop="62",play="normal",src="img/animate/bottle-logo/logo-id.png")
@@ -100,7 +100,6 @@ block content
 					img(src="#{images}/bottle-lighter-fire.png")
 			.bottle.bottle-search.tada.animated.infinite.duration-15
 				img(src="#{images}/magn.png")
-
 		.pages-technology
 			.content(onclick="backBottleMain('technology')")
 				.m-top
@@ -179,7 +178,7 @@ block content
 					.item.item-1(rel="1")
 					.item.item-2(rel="2")
 					.item.item-3(rel="3")
-		.pages-strategy
+		.pages-strategy.thispage
 			.content(onclick="backBottleMain('strategy')")
 				.m-top
 					img(src="#{images}/pages-strategy-m-top.png")

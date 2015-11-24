@@ -859,11 +859,11 @@ html, body {
           .iphone4 .main .otherpage .select-page .btns .btn-info {
             width: 75%; }
         .main .otherpage .select-page .btns .btn-random {
-          width: 78.125%;
+          width: 85.3125%;
           margin: 0 auto;
           margin-top: 1rem; }
           .iphone4 .main .otherpage .select-page .btns .btn-random {
-            width: 62.5%; }
+            width: 68.25%; }
       .main .otherpage .select-page .menus {
         position: absolute;
         top: 50%;
@@ -882,7 +882,7 @@ html, body {
           height: 100%; }
         .main .otherpage .select-page .menus .menu-item {
           -webkit-transition: all 0.5s ease;
-                  transition: all 0.5s ease;
+          transition: all 0.5s ease;
           position: absolute;
           top: 0px;
           left: 0px;
@@ -890,6 +890,16 @@ html, body {
           -webkit-transform: translate3d(-50%, -50%, 0);
                   transform: translate3d(-50%, -50%, 0);
           opacity: 0; }
+          .main .otherpage .select-page .menus .menu-item .over {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 70%;
+            height: 40%;
+            -webkit-transform: translate3d(-50%, -50%, 0);
+                    transform: translate3d(-50%, -50%, 0);
+            z-index: 2; }
           .main .otherpage .select-page .menus .menu-item.before {
             top: 10%;
             left: 50%;
@@ -902,6 +912,8 @@ html, body {
             width: 200%;
             opacity: 1;
             z-index: 8; }
+            .main .otherpage .select-page .menus .menu-item.now .over {
+              display: block; }
           .main .otherpage .select-page .menus .menu-item.after {
             top: 88%;
             left: 55%;
@@ -1051,7 +1063,7 @@ html, body {
     white-space: nowrap;
     font-size: 0;
     -webkit-transition: all 0s linear;
-            transition: all 0s linear; }
+    transition: all 0s linear; }
     .sliders .slider .slide {
       width: 100%;
       display: inline-block;

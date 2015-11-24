@@ -10,6 +10,7 @@ select-page
 			.menu
 				.menu-item(each="{menu in menus}",onclick="{changeMenu(menu)}",class="{now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,before: parent.now == menus.indexOf(menu)+1}")
 					img(src="{menu.thumb}.png")
+					.over(onclick="{openCuisine}")
 		.text
 			p.title
 				span.icon

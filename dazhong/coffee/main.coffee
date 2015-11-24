@@ -41,6 +41,21 @@ window.onload = ->
 		$("body").addClass "i4"
 	$(".wechat").on "click",->
 		$(".wechat").hide()
+	loadWechatConfig()
+	wx.ready ->
+		AppMShareContent =
+			title: "玻璃心慎点！这间「青春食堂」总有一道美味能让你动容"
+			desc: "好友围炉，赏味青春。这里有10段我只想和你分享的美味故事，不想听听吗？"
+			link: "http://m.giccoo.com/dazhong/"
+			imgUrl: "http://disk.giccoo.com/projects/dazhong/img/share.jpg"
+			success: ->
+				# alert "success"
+			cancel: ->
+				# alert "cancel"
+		wx.onMenuShareTimeline AppMShareContent
+		wx.onMenuShareAppMessage AppMShareContent
+		wx.onMenuShareQQ AppMShareContent
+		wx.onMenuShareWeibo AppMShareContent
 
 loadAllImage = ->
 	max = imageList.length
@@ -78,3 +93,11 @@ starEat = ->
 		$(".select-page").show()
 		tags[1].init()
 	,500
+
+loadWechatConfig = ->
+	url = encodeURIComponent window.location.href.split("#")[0]
+	hm = document.createElement('script')
+	hm.src = "http://api.giccoo.com/config?url="+url
+	s = document.getElementsByTagName('script')[0]
+	s.parentNode.insertBefore hm, s
+	return

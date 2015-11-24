@@ -6,7 +6,9 @@
     <div class="menus">
       <div class="line"><img src="img/select-line.png"/></div>
       <div class="menu">
-        <div each="{menu in menus}" onclick="{changeMenu(menu)}" class="menu-item {now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,before: parent.now == menus.indexOf(menu)+1}"><img src="{menu.thumb}.png"/></div>
+        <div each="{menu in menus}" onclick="{changeMenu(menu)}" class="menu-item {now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,before: parent.now == menus.indexOf(menu)+1}"><img src="{menu.thumb}.png"/>
+          <div onclick="{openCuisine}" class="over"></div>
+        </div>
       </div>
     </div>
     <div class="text">
