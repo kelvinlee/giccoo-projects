@@ -1,5 +1,5 @@
 @import sass/base
-
+@import animate
 
 // animation,delay, duration
 @for $i from 1 through 30
@@ -12,13 +12,71 @@
 +keyframes(switch)
 	0%,100%
 		+transform(rotate(-20deg))
-	10%,80%
+	15%,80%
 		+transform(rotate(30deg))
-+keyframes(cloud)
++keyframes(cloudL)
 	0%,100%
 		+transform(translate3d(0,0,0))
+		margin-left: 0px
 	50%
-		+transform(translate3d(100%,0,0))
+		+transform(translate3d(0,0,0))
+		// +transform(translate3d(200px,0,0))
+		margin-left: 100px
++keyframes(cloudR)
+	0%,60%,100%
+		+transform(translate3d(0,0,0))
+		margin-right: 0px
+	30%
+		+transform(translate3d(0,0,0))
+		// +transform(translate3d(200px,0,0))
+		margin-right: 100px
++keyframes(cloudLine1)
+	0%,60%
+		+transform(translate3d(-100%,0,0))
+		opacity: 1
+	70%
+		+transform(translate3d(0,0,0))
+	95%
+		opacity: 1
+	100%
+		opacity: 0
++keyframes(cloudLine2)
+	0%,70%
+		+transform(translate3d(0,100%,0))
+		opacity: 1
+	90%
+		+transform(translate3d(0,0,0))
+	95%
+		opacity: 1
+	100%
+		opacity: 0
++keyframes(arrow1)
+	0%
+		opacity: 0
+	10%,100%
+		opacity: 1
++keyframes(arrow2)
+	0%,10%
+		opacity: 0
+	20%,100%
+		opacity: 1
++keyframes(arrow3)
+	0%,20%
+		opacity: 0
+	30%,100%
+		opacity: 1
++keyframes(arrow4)
+	0%,30%
+		opacity: 0
+	40%,100%
+		opacity: 1
++keyframes(arrow5)
+	0%,40%
+		opacity: 0
+	50%,100%
+		opacity: 1
+
+
 +keyframes(flash)
 	0%,60%,100%
 		opacity: 1
@@ -84,9 +142,9 @@
 	40%
 		+transform(translate3d(0,0,0))
 	50%
-		+transform(translate3d(-100%,0,0))
+		+transform(translate3d(0,-100%,0))
 	90%
-		+transform(translate3d(-100%,0,0))
+		+transform(translate3d(0,-100%,0))
 +keyframes(iconShow)
 	0%
 		+transform(rotate(0deg) scale(0,0))
@@ -179,8 +237,26 @@
 		opacity: 0.3
 	50%
 		opacity: 1
-
++keyframes(images)
+	0%
+		background-position-x: 0px
+	100%
+		background-position-x: -12900px
++keyframes(tvShow)
+	0%,50%,100%
+		+transform(translate3d(-50%,-50%,0))
+		filter: blur(0px)
+		opacity: 1
+	25%
+		+transform(translate3d(-50%,-200%,0))
+		filter: blur(10px)
+		opacity: 0
+	30%
+		+transform(translate3d(-50%,100%,0))
+		filter: blur(10px)
+		opacity: 0
 	
+
 
 
 .wechat-share-hide
@@ -522,32 +598,36 @@ html,body
 		// &.page-logo
 			// +transform(translate3d(400px,400px,0))
 	&.page-technology .homepage
-		+tran($time: 2s,$ease: linear)
+		+tran($time: 1.2s,$ease: linear)
+		transition-delay: 0.8s
 		+transform(translate3d(763px,-173px,0))
-		transition-delay: 2s
+		
 	&.page-strategy .homepage
-		+tran($time: 2s,$ease: linear)
+		+tran($time: 1.4s,$ease: linear)
+		transition-delay: 1.2s
 		+transform(translate3d(770px,0,0))
-		transition-delay: 2.6s
 	&.page-brand .homepage
-		+tran($time: 2s,$ease: linear)
+		+tran($time: 1s,$ease: linear)
+		transition-delay: 0.7s
 		+transform(translate3d(-128px,105%,0))
-		transition-delay: 2s
+		
 	&.page-logo .homepage
-		+tran($time: 2s,$ease: linear)
+		+tran($time: 1.3s,$ease: linear)
+		transition-delay: 0.8s
 		+transform(translate3d(243px,113%,0))
-		transition-delay: 2s
+		
 	&.page-contactus .homepage
-		+tran($time: 4.3s,$ease: linear)
+		+tran($time: 2.2s,$ease: linear)
 		+transform(translate3d(-670px,-500px,0))
 	&.page-media .homepage
-		+tran($time: 2s,$ease: linear)
+		+tran($time: 1.5s,$ease: linear)
+		transition-delay: 1s
 		+transform(translate3d(-690px,550px,0))
-		transition-delay: 2.2s
+		// transition-delay: 2.2s
 	&.page-award .homepage
-		+tran($time: 2s,$ease: linear)
+		+tran($time: 1.3s,$ease: linear)
+		transition-delay: 1.4s
 		+transform(translate3d(670px,-550px,0))
-		transition-delay: 2.6s
 	// &.page-technology .homepage
 		// +tran($time: 2s,$ease: linear)
 		// +transform(translate3d(780px,-100px,0))
@@ -561,9 +641,9 @@ html,body
 	z-index: 102
 	+transform(translate3d(-763px,173px,0))
 	&.thispage
-		+tran($time: 2s,$ease: linear)
+		+tran($time: 1.2s,$ease: linear)
+		transition-delay: 0.8s
 		+transform(translate3d(0,0,0))
-		transition-delay: 2s
 	.content
 		+posa
 		+tl
@@ -589,9 +669,9 @@ html,body
 	z-index: 102
 	+transform(translate3d(-670px,550px,0))
 	&.thispage
-		+tran($time: 2s,$ease: linear)
+		+tran($time: 1.3s,$ease: linear)
+		transition-delay: 1.4s
 		+transform(translate3d(0,0,0))
-		transition-delay: 2.6s
 	.bg
 		+posa
 		+tl(80px)
@@ -632,9 +712,10 @@ html,body
 	z-index: 102
 	+transform(translate3d(690px,-550px,0))
 	&.thispage
-		+tran($time: 2s,$ease: linear)
+		+tran($time: 1.5s,$ease: linear)
+		transition-delay: 1s
 		+transform(translate3d(0,0,0))
-		transition-delay: 2.2s
+		
 	.content
 		+posa
 		+tl
@@ -672,7 +753,7 @@ html,body
 	z-index: 102
 	+transform(translate3d(670px,500px,0))
 	&.thispage
-		+tran($time: 4.3s,$ease: linear)
+		+tran($time: 2.2s,$ease: linear)
 		+transform(translate3d(0,0,0))
 		.content
 			.qrcode
@@ -771,9 +852,10 @@ html,body
 	+transform(translate3d(-243px,-113%,0))
 	+b("../img/pages-logo-bg-start.jpg",no-repeat,center,center,cover)
 	&.thispage
-		+tran($time: 2s,$ease: linear)
+		+tran($time: 1.3s,$ease: linear)
+		transition-delay: 0.8s
 		+transform(translate3d(0,0,0))
-		transition-delay: 2s
+
 		// z-index: 120
 		.bg
 			+animation(fadeIn,0.5s,ease)
@@ -884,10 +966,10 @@ html,body
 	opacity: 0
 	+transform(translate3d(128px,-105%,0))
 	&.thispage
-		+tran($time: 2s,$ease: linear)
+		+tran($time: 1s,$ease: linear)
+		transition-delay: 0.7s
 		+transform(translate3d(0,0,0))
 		opacity: 1
-		transition-delay: 2s
 	.bg
 		+posa
 		+tl
@@ -931,9 +1013,9 @@ html,body
 	+transform(translate3d(-770px,0,0))
 	// +bc(#73ea9c)
 	&.thispage
-		+tran($time: 2s,$ease: linear)
+		+tran($time: 1.4s,$ease: linear)
+		transition-delay: 1.2s
 		+transform(translate3d(0,0,0))
-		transition-delay: 2.6s
 		opacity: 1
 	.content
 		+w
@@ -941,17 +1023,43 @@ html,body
 		.m-top
 			+posr
 			z-index: 10
+			.item-lighter
+				+posa
+				+tl(240px,288px)
+				z-index: -1
+				+animation(flash,4s,ease,infinite)
+				animation-delay: 200ms
 			.item-switch
 				+posa
 				+tl(310px,480px)
 				z-index: -1
 				transform-origin: left center
-				+animation(switch,2s,ease,infinite)
-			.item-logo
+				+animation(switch,3s,ease,infinite)
+			.item-tv
 				+posa
-				+tl(302px,377px)
+				+tl(282px,372px)
+				+wh(74px,58px)
 				z-index: 11
 				transform-origin: left center
+				.item-logo
+					+posa
+					+tl(50%,50%)
+					+transform(translate3d(-50%,-50%,0))
+					+w(63px)
+					+animation(tvShow,3s,ease,infinite)
+			.item-arrow
+				+posa
+				+br(-40px,80px)
+				.arrow1
+					+animation(arrow1,6s,linear,infinite)
+				.arrow2
+					+animation(arrow2,6s,linear,infinite)
+				.arrow3
+					+animation(arrow3,6s,linear,infinite)
+				.arrow4
+					+animation(arrow4,6s,linear,infinite)
+				.arrow5
+					+animation(arrow5,6s,linear,infinite)
 			.item-light-red
 				+posa
 				+tl(307px,325px)
@@ -970,23 +1078,79 @@ html,body
 				+tl(143px,91px)
 				z-index: 11
 				transform-origin: left center
-				+animation(flashM,2s,ease,infinite)
+				+w(11px)
+				.lights
+					+posa
+					+tl
+					+animation(flashM,2s,ease,infinite)
+					&:nth-child(n+1)
+						animation-delay: 2000ms
+					&:nth-child(n+2)
+						animation-delay: 150ms
+					&:nth-child(n+3)
+						animation-delay: 1000ms
+					&:nth-child(n+4)
+						animation-delay: 500ms
+			.item-lines
+				+posa
+				+tl(255px,480px)
+				+wh(64px,92px)
+				+overhide
+				.line1,.line2
+					+posa
+					+tl
+				.line1
+					+animation(cloudLine1,5s,linear,infinite)
+				.line2
+					+animation(cloudLine2,5s,linear,infinite)
+
+
+
+			.item-pointer
+				+posa
+				+tl(330px,115px)
+				+wh(4px,16px)
+				+bc(#e1effa)
+				transform-origin: bottom center
+				border-radius: 4px
+				+animation(pointerM,3s,ease,infinite)
+				z-index: 1
+			.item-screw
+				+posa
+				+tl(347px,370px)
+				+animation(rotateP,3s,linear,infinite)
 			.item-icloud-1
 				+posa
 				+tl(263px,41px)
 				z-index: -1
 				transform-origin: left center
-				+animation(cloud,5.5s,ease,infinite)
+				+animation(cloudL,5.5s,ease,infinite)
+				+w(100px)
 			.item-icloud-2
 				+posa
 				+tl(233px,31px)
 				z-index: -1
 				transform-origin: left center
-				+animation(cloud,4s,ease,infinite)
+				+animation(cloudL,4s,ease,infinite)
+				+w(200px)
+			.item-icloud-3
+				+posa
+				+tr(233px,44px)
+				z-index: -1
+				transform-origin: left center
+				+animation(cloudR,5s,ease,infinite)
+				+w(109px)
 			.item-icons
 				+posa
-				+tl(60px,258px)
+				+tl(-30px,198px)
 				z-index: 2
+				.test
+					+wh(300px,300px)
+					+b("../img/animate/strategy-icons/strategy.png",no-repeat,left,center,12900px 300px)
+					animation: images 4.3s steps(43) infinite
+				.box
+					+posa
+					+tl(3px,-24px)
 				// +animation(iconShow,8s,ease,infinite)
 		.m-bottom
 			+posa
@@ -1007,38 +1171,49 @@ html,body
 			.p1
 				+posa
 				+bl
-				+animation(people1,6s,linear,infinite)
+				+animation(people1,12s,linear,infinite)
 				z-index: 99
 				transform-origin: right center
 				animation-delay: 2s
 			.p2
 				+posa
 				+br
-				+animation(people2,5s,linear,infinite)
+				+animation(people2,15s,linear,infinite)
 				z-index: 99
 				transform-origin: center center
 			.parts1,.parts2,.parts3
 				+posa
-				+tl(134px,510px)
+				+tl(154px,510px)
 				z-index: 99
 			.parts1
 				+animation(rotateP,2s,linear,infinite)
 			.parts2
-				+tl(177px,536px)
+				+tl(200px,536px)
 				+animation(rotatePF,2s,linear,infinite)
 			.parts3
-				+tl(228px,531px)
+				+tl(252px,531px)
 				+animation(rotatePW,4s,linear,infinite)
 			.fcanvas
 				+posa
-				+tl(90px,120px)
+				+tl(120px,120px)
 				+wh(385px,308px)
 				+overhide
-				
 				font-size: 0
 				z-index: 99
+				.item-arrow
+					+posa
+					+tr(40px,20px)
+					.arrow1
+						+animation(arrow1,4s,linear,infinite)
+					.arrow2
+						+animation(arrow2,4s,linear,infinite)
+					.arrow3
+						+animation(arrow3,4s,linear,infinite)
+					.arrow4
+						+animation(arrow4,4s,linear,infinite)
+					.arrow5
+						+animation(arrow5,4s,linear,infinite)
 				.items
-					white-space: nowrap
 					+w
 					+h
 					+animation(canvasM,8s,linear,infinite)

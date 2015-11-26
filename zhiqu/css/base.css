@@ -374,6 +374,256 @@ ul {
   padding: 0;
   list-style: none; }
 
+.gif {
+  display: inline-block;
+  font-size: 0; }
+
+@-webkit-keyframes strategyiconsnormal {
+  0% {
+    background-position-x: 0px; }
+  100% {
+    background-position-x: -12900px; } }
+
+@keyframes strategyiconsnormal {
+  0% {
+    background-position-x: 0px; }
+  100% {
+    background-position-x: -12900px; } }
+.strategyicons {
+  background: url("../img/animate/strategy-icons/strategy.png") no-repeat 0 0;
+  background-size: 12900px 300px;
+  background-color: transparent;
+  width: 300px;
+  height: 300px; }
+  .strategyicons.normal {
+    background: url("../img/pages-strategy-icons.png") no-repeat -26px 4px;
+    background-size: 300px 300px;
+    background-color: transparent; }
+  .strategyicons.replay {
+    -webkit-animation: strategyiconsnormal 1.4333333333s steps(43);
+            animation: strategyiconsnormal 1.4333333333s steps(43); }
+
+@-webkit-keyframes bottlestrategyreplay {
+  0% {
+    background-position-y: 0px; }
+  100% {
+    background-position-y: -15600px; } }
+
+@keyframes bottlestrategyreplay {
+  0% {
+    background-position-y: 0px; }
+  100% {
+    background-position-y: -15600px; } }
+.bottlestrategy {
+  background: url("../img/animate/bottle-strategy/strategy.png") no-repeat 0 -15600px;
+  background-size: 850px 15600px;
+  background-color: transparent;
+  width: 850px;
+  height: 200px; }
+  .bottlestrategy.normal {
+    background-position: 0 0; }
+  .bottlestrategy.replay {
+    -webkit-animation: bottlestrategyreplay 2.6s steps(78);
+            animation: bottlestrategyreplay 2.6s steps(78); }
+  .bottlestrategy.stop {
+    background-position: 0 -15600px; }
+
+@-webkit-keyframes bottlelogoreplay {
+  0% {
+    background-position-x: 0px; }
+  100% {
+    background-position-x: -30240px; } }
+
+@keyframes bottlelogoreplay {
+  0% {
+    background-position-x: 0px; }
+  100% {
+    background-position-x: -30240px; } }
+.bottlelogo {
+  background: url("../img/animate/bottle-logo/logo.png") no-repeat -29760px 0;
+  background-size: 30240px 620px;
+  background-color: transparent;
+  width: 480px;
+  height: 620px; }
+  .bottlelogo.normal {
+    background-position: 0 0; }
+  .bottlelogo.replay {
+    -webkit-animation: bottlelogoreplay 2.1s steps(63);
+            animation: bottlelogoreplay 2.1s steps(63); }
+  .bottlelogo.stop {
+    background-position: -29760px 0; }
+
+@-webkit-keyframes bottletechnologyreplay {
+  0% {
+    background-position-y: 0px; }
+  100% {
+    background-position-y: -15600px; } }
+
+@keyframes bottletechnologyreplay {
+  0% {
+    background-position-y: 0px; }
+  100% {
+    background-position-y: -15600px; } }
+.bottletechnology {
+  background: url("../img/animate/bottle-technology/technology.png") no-repeat 0 -15600px;
+  background-size: 800px 15600px;
+  background-color: transparent;
+  width: 800px;
+  height: 260px; }
+  .bottletechnology.normal {
+    background-position: 0 0; }
+  .bottletechnology.replay {
+    -webkit-animation: bottletechnologyreplay 2s steps(60);
+            animation: bottletechnologyreplay 2s steps(60); }
+  .bottletechnology.stop {
+    background-position: 0 -15600px; }
+
+@-webkit-keyframes bottlemediareplay {
+  0% {
+    background-position-y: 0px; }
+  100% {
+    background-position-y: -28880px; } }
+
+@keyframes bottlemediareplay {
+  0% {
+    background-position-y: 0px; }
+  100% {
+    background-position-y: -28880px; } }
+.bottlemedia {
+  background: url("../img/animate/bottle-media/media.png") no-repeat 0 -28880px;
+  background-size: 380px 28880px;
+  background-color: transparent;
+  width: 380px;
+  height: 380px; }
+  .bottlemedia.normal {
+    background-position: 0 0; }
+  .bottlemedia.replay {
+    -webkit-animation: bottlemediareplay 2.5333333333s steps(76);
+            animation: bottlemediareplay 2.5333333333s steps(76); }
+  .bottlemedia.stop {
+    background-position: 0 -28880px; }
+
+@-webkit-keyframes bottlecontactusreplay {
+  0% {
+    background-position-x: 0px; }
+  100% {
+    background-position-x: -30720px; } }
+
+@keyframes bottlecontactusreplay {
+  0% {
+    background-position-x: 0px; }
+  100% {
+    background-position-x: -30720px; } }
+.bottlecontactus {
+  background: url("../img/animate/bottle-contactus/contactus.png") no-repeat -30720px 0;
+  background-size: 30720px 480px;
+  background-color: transparent;
+  width: 480px;
+  height: 480px; }
+  .bottlecontactus.normal {
+    background-position: 0 0; }
+  .bottlecontactus.replay {
+    -webkit-animation: bottlecontactusreplay 2.1333333333s steps(64);
+            animation: bottlecontactusreplay 2.1333333333s steps(64); }
+  .bottlecontactus.stop {
+    background-position: -30720px 0; }
+
+@-webkit-keyframes bottleawardreplay {
+  0% {
+    background-position-y: 0px; }
+  100% {
+    background-position-y: -24600px; } }
+
+@keyframes bottleawardreplay {
+  0% {
+    background-position-y: 0px; }
+  100% {
+    background-position-y: -24600px; } }
+.bottleaward {
+  background: url("../img/animate/bottle-award/award.png") no-repeat 0 -24300px;
+  background-size: 600px 24600px;
+  background-color: transparent;
+  width: 600px;
+  height: 300px; }
+  .bottleaward.normal {
+    background-position: 0 0; }
+  .bottleaward.replay {
+    -webkit-animation: bottleawardreplay 2.7333333333s steps(82);
+            animation: bottleawardreplay 2.7333333333s steps(82); }
+  .bottleaward.stop {
+    background-position: 0 -24300px; }
+
+@-webkit-keyframes bottlebrandreplay {
+  0% {
+    background-position-x: 0px; }
+  100% {
+    background-position-x: -15300px; } }
+
+@keyframes bottlebrandreplay {
+  0% {
+    background-position-x: 0px; }
+  100% {
+    background-position-x: -15300px; } }
+.bottlebrand {
+  background: url("../img/animate/bottle-brand/brand.png") no-repeat -15000px 0;
+  background-size: 15300px 750px;
+  background-color: transparent;
+  width: 300px;
+  height: 750px; }
+  .bottlebrand.normal {
+    background-position: 0 0; }
+  .bottlebrand.replay {
+    -webkit-animation: bottlebrandreplay 1.7s steps(51);
+            animation: bottlebrandreplay 1.7s steps(51); }
+  .bottlebrand.stop {
+    background-position: -15000px 0; }
+
+@-webkit-keyframes strategypeople1 {
+  0% {
+    background-position-x: 0px; }
+  100% {
+    background-position-x: -6150px; } }
+
+@keyframes strategypeople1 {
+  0% {
+    background-position-x: 0px; }
+  100% {
+    background-position-x: -6150px; } }
+.strategypeople1 {
+  background: url("../img/animate/strategy-icons/p1.png") no-repeat -6150px 0;
+  background-size: 6150px 150px;
+  background-color: transparent;
+  width: 150px;
+  height: 150px; }
+  .strategypeople1.normal {
+    background-position: -6150px 0; }
+  .strategypeople1.replay {
+    -webkit-animation: strategypeople1 1.3666666667s steps(41) infinite;
+            animation: strategypeople1 1.3666666667s steps(41) infinite; }
+
+@-webkit-keyframes strategypeople2 {
+  0% {
+    background-position-x: 0px; }
+  100% {
+    background-position-x: -6150px; } }
+
+@keyframes strategypeople2 {
+  0% {
+    background-position-x: 0px; }
+  100% {
+    background-position-x: -6150px; } }
+.strategypeople2 {
+  background: url("../img/animate/strategy-icons/p2.png") no-repeat -6150px 0;
+  background-size: 6150px 150px;
+  background-color: transparent;
+  width: 150px;
+  height: 150px; }
+  .strategypeople2.normal {
+    background-position: -6150px 0; }
+  .strategypeople2.replay {
+    -webkit-animation: strategypeople2 1.3666666667s steps(41) infinite;
+            animation: strategypeople2 1.3666666667s steps(41) infinite; }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -618,7 +868,7 @@ ul {
   0%,100% {
     -webkit-transform: rotate(-20deg);
             transform: rotate(-20deg); }
-  10%,80% {
+  15%,80% {
     -webkit-transform: rotate(30deg);
             transform: rotate(30deg); } }
 
@@ -626,23 +876,143 @@ ul {
   0%,100% {
     -webkit-transform: rotate(-20deg);
             transform: rotate(-20deg); }
-  10%,80% {
+  15%,80% {
     -webkit-transform: rotate(30deg);
             transform: rotate(30deg); } }
-@-webkit-keyframes cloud {
+@-webkit-keyframes cloudL {
   0%,100% {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); }
+            transform: translate3d(0, 0, 0);
+    margin-left: 0px; }
   50% {
-    -webkit-transform: translate3d(100%, 0, 0);
-            transform: translate3d(100%, 0, 0); } }
-@keyframes cloud {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    margin-left: 100px; } }
+@keyframes cloudL {
   0%,100% {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); }
+            transform: translate3d(0, 0, 0);
+    margin-left: 0px; }
   50% {
-    -webkit-transform: translate3d(100%, 0, 0);
-            transform: translate3d(100%, 0, 0); } }
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    margin-left: 100px; } }
+@-webkit-keyframes cloudR {
+  0%,60%,100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    margin-right: 0px; }
+  30% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    margin-right: 100px; } }
+@keyframes cloudR {
+  0%,60%,100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    margin-right: 0px; }
+  30% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    margin-right: 100px; } }
+@-webkit-keyframes cloudLine1 {
+  0%,60% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+    opacity: 1; }
+  70% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  95% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes cloudLine1 {
+  0%,60% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+    opacity: 1; }
+  70% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  95% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-webkit-keyframes cloudLine2 {
+  0%,70% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+    opacity: 1; }
+  90% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  95% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes cloudLine2 {
+  0%,70% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+    opacity: 1; }
+  90% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  95% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-webkit-keyframes arrow1 {
+  0% {
+    opacity: 0; }
+  10%,100% {
+    opacity: 1; } }
+@keyframes arrow1 {
+  0% {
+    opacity: 0; }
+  10%,100% {
+    opacity: 1; } }
+@-webkit-keyframes arrow2 {
+  0%,10% {
+    opacity: 0; }
+  20%,100% {
+    opacity: 1; } }
+@keyframes arrow2 {
+  0%,10% {
+    opacity: 0; }
+  20%,100% {
+    opacity: 1; } }
+@-webkit-keyframes arrow3 {
+  0%,20% {
+    opacity: 0; }
+  30%,100% {
+    opacity: 1; } }
+@keyframes arrow3 {
+  0%,20% {
+    opacity: 0; }
+  30%,100% {
+    opacity: 1; } }
+@-webkit-keyframes arrow4 {
+  0%,30% {
+    opacity: 0; }
+  40%,100% {
+    opacity: 1; } }
+@keyframes arrow4 {
+  0%,30% {
+    opacity: 0; }
+  40%,100% {
+    opacity: 1; } }
+@-webkit-keyframes arrow5 {
+  0%,40% {
+    opacity: 0; }
+  50%,100% {
+    opacity: 1; } }
+@keyframes arrow5 {
+  0%,40% {
+    opacity: 0; }
+  50%,100% {
+    opacity: 1; } }
 @-webkit-keyframes flash {
   0%,60%,100% {
     opacity: 1; }
@@ -791,11 +1161,11 @@ ul {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); }
   50% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0); }
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0); }
   90% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0); } }
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0); } }
 @keyframes canvasM {
   0%,100% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -804,11 +1174,11 @@ ul {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); }
   50% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0); }
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0); }
   90% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0); } }
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0); } }
 @-webkit-keyframes iconShow {
   0% {
     -webkit-transform: rotate(0deg) scale(0, 0);
@@ -1025,6 +1395,54 @@ ul {
     opacity: 0.3; }
   50% {
     opacity: 1; } }
+@-webkit-keyframes images {
+  0% {
+    background-position-x: 0px; }
+  100% {
+    background-position-x: -12900px; } }
+@keyframes images {
+  0% {
+    background-position-x: 0px; }
+  100% {
+    background-position-x: -12900px; } }
+@-webkit-keyframes tvShow {
+  0%,50%,100% {
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1; }
+  25% {
+    -webkit-transform: translate3d(-50%, -200%, 0);
+            transform: translate3d(-50%, -200%, 0);
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    opacity: 0; }
+  30% {
+    -webkit-transform: translate3d(-50%, 100%, 0);
+            transform: translate3d(-50%, 100%, 0);
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    opacity: 0; } }
+@keyframes tvShow {
+  0%,50%,100% {
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1; }
+  25% {
+    -webkit-transform: translate3d(-50%, -200%, 0);
+            transform: translate3d(-50%, -200%, 0);
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    opacity: 0; }
+  30% {
+    -webkit-transform: translate3d(-50%, 100%, 0);
+            transform: translate3d(-50%, 100%, 0);
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    opacity: 0; } }
 .wechat-share-hide {
   position: absolute;
   top: -1000px;
@@ -1449,52 +1867,52 @@ html, body {
     transition: all 0.5s linear;
     z-index: 2; }
   .main.page-technology .homepage {
-    -webkit-transition: all 2s linear;
-    transition: all 2s linear;
+    -webkit-transition: all 1.2s linear;
+    transition: all 1.2s linear;
+    -webkit-transition-delay: 0.8s;
+            transition-delay: 0.8s;
     -webkit-transform: translate3d(763px, -173px, 0);
-            transform: translate3d(763px, -173px, 0);
-    -webkit-transition-delay: 2s;
-            transition-delay: 2s; }
+            transform: translate3d(763px, -173px, 0); }
   .main.page-strategy .homepage {
-    -webkit-transition: all 2s linear;
-    transition: all 2s linear;
+    -webkit-transition: all 1.4s linear;
+    transition: all 1.4s linear;
+    -webkit-transition-delay: 1.2s;
+            transition-delay: 1.2s;
     -webkit-transform: translate3d(770px, 0, 0);
-            transform: translate3d(770px, 0, 0);
-    -webkit-transition-delay: 2.6s;
-            transition-delay: 2.6s; }
+            transform: translate3d(770px, 0, 0); }
   .main.page-brand .homepage {
-    -webkit-transition: all 2s linear;
-    transition: all 2s linear;
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+    -webkit-transition-delay: 0.7s;
+            transition-delay: 0.7s;
     -webkit-transform: translate3d(-128px, 105%, 0);
-            transform: translate3d(-128px, 105%, 0);
-    -webkit-transition-delay: 2s;
-            transition-delay: 2s; }
+            transform: translate3d(-128px, 105%, 0); }
   .main.page-logo .homepage {
-    -webkit-transition: all 2s linear;
-    transition: all 2s linear;
+    -webkit-transition: all 1.3s linear;
+    transition: all 1.3s linear;
+    -webkit-transition-delay: 0.8s;
+            transition-delay: 0.8s;
     -webkit-transform: translate3d(243px, 113%, 0);
-            transform: translate3d(243px, 113%, 0);
-    -webkit-transition-delay: 2s;
-            transition-delay: 2s; }
+            transform: translate3d(243px, 113%, 0); }
   .main.page-contactus .homepage {
-    -webkit-transition: all 4.3s linear;
-    transition: all 4.3s linear;
+    -webkit-transition: all 2.2s linear;
+    transition: all 2.2s linear;
     -webkit-transform: translate3d(-670px, -500px, 0);
             transform: translate3d(-670px, -500px, 0); }
   .main.page-media .homepage {
-    -webkit-transition: all 2s linear;
-    transition: all 2s linear;
+    -webkit-transition: all 1.5s linear;
+    transition: all 1.5s linear;
+    -webkit-transition-delay: 1s;
+            transition-delay: 1s;
     -webkit-transform: translate3d(-690px, 550px, 0);
-            transform: translate3d(-690px, 550px, 0);
-    -webkit-transition-delay: 2.2s;
-            transition-delay: 2.2s; }
+            transform: translate3d(-690px, 550px, 0); }
   .main.page-award .homepage {
-    -webkit-transition: all 2s linear;
-    transition: all 2s linear;
+    -webkit-transition: all 1.3s linear;
+    transition: all 1.3s linear;
+    -webkit-transition-delay: 1.4s;
+            transition-delay: 1.4s;
     -webkit-transform: translate3d(670px, -550px, 0);
-            transform: translate3d(670px, -550px, 0);
-    -webkit-transition-delay: 2.6s;
-            transition-delay: 2.6s; }
+            transform: translate3d(670px, -550px, 0); }
 
 .pages-technology {
   -webkit-transition: all 0.5s linear;
@@ -1508,12 +1926,12 @@ html, body {
   -webkit-transform: translate3d(-763px, 173px, 0);
           transform: translate3d(-763px, 173px, 0); }
   .pages-technology.thispage {
-    -webkit-transition: all 2s linear;
-    transition: all 2s linear;
+    -webkit-transition: all 1.2s linear;
+    transition: all 1.2s linear;
+    -webkit-transition-delay: 0.8s;
+            transition-delay: 0.8s;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    -webkit-transition-delay: 2s;
-            transition-delay: 2s; }
+            transform: translate3d(0, 0, 0); }
   .pages-technology .content {
     position: absolute;
     top: 0px;
@@ -1543,12 +1961,12 @@ html, body {
   -webkit-transform: translate3d(-670px, 550px, 0);
           transform: translate3d(-670px, 550px, 0); }
   .pages-award.thispage {
-    -webkit-transition: all 2s linear;
-    transition: all 2s linear;
+    -webkit-transition: all 1.3s linear;
+    transition: all 1.3s linear;
+    -webkit-transition-delay: 1.4s;
+            transition-delay: 1.4s;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    -webkit-transition-delay: 2.6s;
-            transition-delay: 2.6s; }
+            transform: translate3d(0, 0, 0); }
   .pages-award .bg {
     position: absolute;
     top: 80px;
@@ -1599,12 +2017,12 @@ html, body {
   -webkit-transform: translate3d(690px, -550px, 0);
           transform: translate3d(690px, -550px, 0); }
   .pages-media.thispage {
-    -webkit-transition: all 2s linear;
-    transition: all 2s linear;
+    -webkit-transition: all 1.5s linear;
+    transition: all 1.5s linear;
+    -webkit-transition-delay: 1s;
+            transition-delay: 1s;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    -webkit-transition-delay: 2.2s;
-            transition-delay: 2.2s; }
+            transform: translate3d(0, 0, 0); }
   .pages-media .content {
     position: absolute;
     top: 0px;
@@ -1650,8 +2068,8 @@ html, body {
   -webkit-transform: translate3d(670px, 500px, 0);
           transform: translate3d(670px, 500px, 0); }
   .pages-contactus.thispage {
-    -webkit-transition: all 4.3s linear;
-    transition: all 4.3s linear;
+    -webkit-transition: all 2.2s linear;
+    transition: all 2.2s linear;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); }
     .pages-contactus.thispage .content .qrcode {
@@ -1722,91 +2140,63 @@ html, body {
           width: 100%; }
       .pages-contactus .content .bubbles .bubble-0 {
         width: 8px;
-        top: 82%;
-        left: 40%;
+        top: 51%;
+        left: 5%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 2404ms;
-                animation-duration: 2404ms;
+        -webkit-animation-duration: 1526ms;
+                animation-duration: 1526ms;
         -webkit-animation-delay: 500ms;
                 animation-delay: 500ms; }
       .pages-contactus .content .bubbles .bubble-1 {
         width: 9px;
-        top: 61%;
-        left: 32%;
+        top: 25%;
+        left: 14%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 1901ms;
-                animation-duration: 1901ms;
+        -webkit-animation-duration: 1121ms;
+                animation-duration: 1121ms;
         -webkit-animation-delay: 600ms;
                 animation-delay: 600ms; }
       .pages-contactus .content .bubbles .bubble-2 {
         width: 10px;
-        top: 62%;
-        left: 41%;
+        top: 43%;
+        left: 17%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 1478ms;
-                animation-duration: 1478ms;
+        -webkit-animation-duration: 2055ms;
+                animation-duration: 2055ms;
         -webkit-animation-delay: 700ms;
                 animation-delay: 700ms; }
       .pages-contactus .content .bubbles .bubble-3 {
         width: 11px;
-        top: 86%;
-        left: 20%;
+        top: 9%;
+        left: 36%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 1702ms;
-                animation-duration: 1702ms;
+        -webkit-animation-duration: 2728ms;
+                animation-duration: 2728ms;
         -webkit-animation-delay: 800ms;
                 animation-delay: 800ms; }
       .pages-contactus .content .bubbles .bubble-4 {
         width: 12px;
-        top: 81%;
-        left: 42%;
-        -webkit-animation: bubble 0.5s ease;
-                animation: bubble 0.5s ease;
-        -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        -webkit-animation-duration: 1802ms;
-                animation-duration: 1802ms;
-        -webkit-animation-delay: 900ms;
-                animation-delay: 900ms; }
-      .pages-contactus .content .bubbles .bubble-5 {
-        width: 13px;
-        top: 24%;
-        left: 26%;
-        -webkit-animation: bubble 0.5s ease;
-                animation: bubble 0.5s ease;
-        -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        -webkit-animation-duration: 2903ms;
-                animation-duration: 2903ms;
-        -webkit-animation-delay: 1000ms;
-                animation-delay: 1000ms; }
-      .pages-contactus .content .bubbles .bubble-6 {
-        width: 14px;
-        top: 3%;
+        top: 55%;
         left: 48%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
@@ -1814,13 +2204,55 @@ html, body {
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 2500ms;
-                animation-duration: 2500ms;
+        -webkit-animation-duration: 2034ms;
+                animation-duration: 2034ms;
+        -webkit-animation-delay: 900ms;
+                animation-delay: 900ms; }
+      .pages-contactus .content .bubbles .bubble-5 {
+        width: 13px;
+        top: 85%;
+        left: 11%;
+        -webkit-animation: bubble 0.5s ease;
+                animation: bubble 0.5s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        -webkit-animation-duration: 1899ms;
+                animation-duration: 1899ms;
+        -webkit-animation-delay: 1000ms;
+                animation-delay: 1000ms; }
+      .pages-contactus .content .bubbles .bubble-6 {
+        width: 14px;
+        top: 46%;
+        left: 13%;
+        -webkit-animation: bubble 0.5s ease;
+                animation: bubble 0.5s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        -webkit-animation-duration: 2476ms;
+                animation-duration: 2476ms;
         -webkit-animation-delay: 1100ms;
                 animation-delay: 1100ms; }
       .pages-contactus .content .bubbles .bubble-7 {
         width: 15px;
-        top: 37%;
+        top: 29%;
+        left: 35%;
+        -webkit-animation: bubble 0.5s ease;
+                animation: bubble 0.5s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        -webkit-animation-duration: 1236ms;
+                animation-duration: 1236ms;
+        -webkit-animation-delay: 1200ms;
+                animation-delay: 1200ms; }
+      .pages-contactus .content .bubbles .bubble-8 {
+        width: 16px;
+        top: 79%;
         left: 16%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
@@ -1828,50 +2260,36 @@ html, body {
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 1260ms;
-                animation-duration: 1260ms;
-        -webkit-animation-delay: 1200ms;
-                animation-delay: 1200ms; }
-      .pages-contactus .content .bubbles .bubble-8 {
-        width: 16px;
-        top: 16%;
-        left: 41%;
-        -webkit-animation: bubble 0.5s ease;
-                animation: bubble 0.5s ease;
-        -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        -webkit-animation-duration: 2444ms;
-                animation-duration: 2444ms;
+        -webkit-animation-duration: 2994ms;
+                animation-duration: 2994ms;
         -webkit-animation-delay: 1300ms;
                 animation-delay: 1300ms; }
       .pages-contactus .content .bubbles .bubble-9 {
         width: 17px;
-        top: 22%;
-        left: 42%;
+        top: 36%;
+        left: 12%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 1297ms;
-                animation-duration: 1297ms;
+        -webkit-animation-duration: 1314ms;
+                animation-duration: 1314ms;
         -webkit-animation-delay: 1400ms;
                 animation-delay: 1400ms; }
       .pages-contactus .content .bubbles .bubble-10 {
         width: 18px;
-        top: 87%;
-        left: 38%;
+        top: 88%;
+        left: 30%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 2869ms;
-                animation-duration: 2869ms;
+        -webkit-animation-duration: 1718ms;
+                animation-duration: 1718ms;
         -webkit-animation-delay: 1500ms;
                 animation-delay: 1500ms; }
     .pages-contactus .content .drops {
@@ -1955,12 +2373,12 @@ html, body {
   background-size: cover;
   background-color: transparent; }
   .pages-logo.thispage {
-    -webkit-transition: all 2s linear;
-    transition: all 2s linear;
+    -webkit-transition: all 1.3s linear;
+    transition: all 1.3s linear;
+    -webkit-transition-delay: 0.8s;
+            transition-delay: 0.8s;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    -webkit-transition-delay: 2s;
-            transition-delay: 2s; }
+            transform: translate3d(0, 0, 0); }
     .pages-logo.thispage .bg {
       -webkit-animation: fadeIn 0.5s ease;
               animation: fadeIn 0.5s ease;
@@ -2106,13 +2524,13 @@ html, body {
   -webkit-transform: translate3d(128px, -105%, 0);
           transform: translate3d(128px, -105%, 0); }
   .pages-brand.thispage {
-    -webkit-transition: all 2s linear;
-    transition: all 2s linear;
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+    -webkit-transition-delay: 0.7s;
+            transition-delay: 0.7s;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-    opacity: 1;
-    -webkit-transition-delay: 2s;
-            transition-delay: 2s; }
+    opacity: 1; }
   .pages-brand .bg {
     position: absolute;
     top: 0px;
@@ -2163,12 +2581,12 @@ html, body {
   -webkit-transform: translate3d(-770px, 0, 0);
           transform: translate3d(-770px, 0, 0); }
   .pages-strategy.thispage {
-    -webkit-transition: all 2s linear;
-    transition: all 2s linear;
+    -webkit-transition: all 1.4s linear;
+    transition: all 1.4s linear;
+    -webkit-transition-delay: 1.2s;
+            transition-delay: 1.2s;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-    -webkit-transition-delay: 2.6s;
-            transition-delay: 2.6s;
     opacity: 1; }
   .pages-strategy .content {
     width: 100%;
@@ -2176,6 +2594,19 @@ html, body {
     .pages-strategy .content .m-top {
       position: relative;
       z-index: 10; }
+      .pages-strategy .content .m-top .item-lighter {
+        position: absolute;
+        top: 240px;
+        left: 288px;
+        z-index: -1;
+        -webkit-animation: flash 4s ease;
+                animation: flash 4s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        -webkit-animation-delay: 200ms;
+                animation-delay: 200ms; }
       .pages-strategy .content .m-top .item-switch {
         position: absolute;
         top: 310px;
@@ -2184,20 +2615,74 @@ html, body {
         -webkit-transform-origin: left center;
             -ms-transform-origin: left center;
                 transform-origin: left center;
-        -webkit-animation: switch 2s ease;
-                animation: switch 2s ease;
+        -webkit-animation: switch 3s ease;
+                animation: switch 3s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite; }
-      .pages-strategy .content .m-top .item-logo {
+      .pages-strategy .content .m-top .item-tv {
         position: absolute;
-        top: 302px;
-        left: 377px;
+        top: 282px;
+        left: 372px;
+        width: 74px;
+        height: 58px;
         z-index: 11;
         -webkit-transform-origin: left center;
             -ms-transform-origin: left center;
                 transform-origin: left center; }
+        .pages-strategy .content .m-top .item-tv .item-logo {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate3d(-50%, -50%, 0);
+                  transform: translate3d(-50%, -50%, 0);
+          width: 63px;
+          -webkit-animation: tvShow 3s ease;
+                  animation: tvShow 3s ease;
+          -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite; }
+      .pages-strategy .content .m-top .item-arrow {
+        position: absolute;
+        bottom: -40px;
+        right: 80px; }
+        .pages-strategy .content .m-top .item-arrow .arrow1 {
+          -webkit-animation: arrow1 6s linear;
+                  animation: arrow1 6s linear;
+          -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite; }
+        .pages-strategy .content .m-top .item-arrow .arrow2 {
+          -webkit-animation: arrow2 6s linear;
+                  animation: arrow2 6s linear;
+          -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite; }
+        .pages-strategy .content .m-top .item-arrow .arrow3 {
+          -webkit-animation: arrow3 6s linear;
+                  animation: arrow3 6s linear;
+          -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite; }
+        .pages-strategy .content .m-top .item-arrow .arrow4 {
+          -webkit-animation: arrow4 6s linear;
+                  animation: arrow4 6s linear;
+          -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite; }
+        .pages-strategy .content .m-top .item-arrow .arrow5 {
+          -webkit-animation: arrow5 6s linear;
+                  animation: arrow5 6s linear;
+          -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite; }
       .pages-strategy .content .m-top .item-light-red {
         position: absolute;
         top: 307px;
@@ -2236,8 +2721,78 @@ html, body {
         -webkit-transform-origin: left center;
             -ms-transform-origin: left center;
                 transform-origin: left center;
-        -webkit-animation: flashM 2s ease;
-                animation: flashM 2s ease;
+        width: 11px; }
+        .pages-strategy .content .m-top .item-light-all .lights {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          -webkit-animation: flashM 2s ease;
+                  animation: flashM 2s ease;
+          -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite; }
+          .pages-strategy .content .m-top .item-light-all .lights:nth-child(n+1) {
+            -webkit-animation-delay: 2000ms;
+                    animation-delay: 2000ms; }
+          .pages-strategy .content .m-top .item-light-all .lights:nth-child(n+2) {
+            -webkit-animation-delay: 150ms;
+                    animation-delay: 150ms; }
+          .pages-strategy .content .m-top .item-light-all .lights:nth-child(n+3) {
+            -webkit-animation-delay: 1000ms;
+                    animation-delay: 1000ms; }
+          .pages-strategy .content .m-top .item-light-all .lights:nth-child(n+4) {
+            -webkit-animation-delay: 500ms;
+                    animation-delay: 500ms; }
+      .pages-strategy .content .m-top .item-lines {
+        position: absolute;
+        top: 255px;
+        left: 480px;
+        width: 64px;
+        height: 92px;
+        overflow: hidden; }
+        .pages-strategy .content .m-top .item-lines .line1, .pages-strategy .content .m-top .item-lines .line2 {
+          position: absolute;
+          top: 0px;
+          left: 0px; }
+        .pages-strategy .content .m-top .item-lines .line1 {
+          -webkit-animation: cloudLine1 5s linear;
+                  animation: cloudLine1 5s linear;
+          -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite; }
+        .pages-strategy .content .m-top .item-lines .line2 {
+          -webkit-animation: cloudLine2 5s linear;
+                  animation: cloudLine2 5s linear;
+          -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite; }
+      .pages-strategy .content .m-top .item-pointer {
+        position: absolute;
+        top: 330px;
+        left: 115px;
+        width: 4px;
+        height: 16px;
+        background-color: #e1effa;
+        -webkit-transform-origin: bottom center;
+            -ms-transform-origin: bottom center;
+                transform-origin: bottom center;
+        border-radius: 4px;
+        -webkit-animation: pointerM 3s ease;
+                animation: pointerM 3s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        z-index: 1; }
+      .pages-strategy .content .m-top .item-screw {
+        position: absolute;
+        top: 347px;
+        left: 370px;
+        -webkit-animation: rotateP 3s linear;
+                animation: rotateP 3s linear;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
@@ -2250,12 +2805,13 @@ html, body {
         -webkit-transform-origin: left center;
             -ms-transform-origin: left center;
                 transform-origin: left center;
-        -webkit-animation: cloud 5.5s ease;
-                animation: cloud 5.5s ease;
+        -webkit-animation: cloudL 5.5s ease;
+                animation: cloudL 5.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite; }
+                animation-iteration-count: infinite;
+        width: 100px; }
       .pages-strategy .content .m-top .item-icloud-2 {
         position: absolute;
         top: 233px;
@@ -2264,17 +2820,45 @@ html, body {
         -webkit-transform-origin: left center;
             -ms-transform-origin: left center;
                 transform-origin: left center;
-        -webkit-animation: cloud 4s ease;
-                animation: cloud 4s ease;
+        -webkit-animation: cloudL 4s ease;
+                animation: cloudL 4s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite; }
+                animation-iteration-count: infinite;
+        width: 200px; }
+      .pages-strategy .content .m-top .item-icloud-3 {
+        position: absolute;
+        top: 233px;
+        right: 44px;
+        z-index: -1;
+        -webkit-transform-origin: left center;
+            -ms-transform-origin: left center;
+                transform-origin: left center;
+        -webkit-animation: cloudR 5s ease;
+                animation: cloudR 5s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        width: 109px; }
       .pages-strategy .content .m-top .item-icons {
         position: absolute;
-        top: 60px;
-        left: 258px;
+        top: -30px;
+        left: 198px;
         z-index: 2; }
+        .pages-strategy .content .m-top .item-icons .test {
+          width: 300px;
+          height: 300px;
+          background: url("../img/animate/strategy-icons/strategy.png") no-repeat left center;
+          background-size: 12900px 300px;
+          background-color: transparent;
+          -webkit-animation: images 4.3s steps(43) infinite;
+                  animation: images 4.3s steps(43) infinite; }
+        .pages-strategy .content .m-top .item-icons .box {
+          position: absolute;
+          top: 3px;
+          left: -24px; }
     .pages-strategy .content .m-bottom {
       position: absolute;
       top: 460px;
@@ -2300,8 +2884,8 @@ html, body {
         position: absolute;
         bottom: 0px;
         left: 0px;
-        -webkit-animation: people1 6s linear;
-                animation: people1 6s linear;
+        -webkit-animation: people1 12s linear;
+                animation: people1 12s linear;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
@@ -2316,8 +2900,8 @@ html, body {
         position: absolute;
         bottom: 0px;
         right: 0px;
-        -webkit-animation: people2 5s linear;
-                animation: people2 5s linear;
+        -webkit-animation: people2 15s linear;
+                animation: people2 15s linear;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
@@ -2328,7 +2912,7 @@ html, body {
                 transform-origin: center center; }
       .pages-strategy .content .m-bottom .parts1, .pages-strategy .content .m-bottom .parts2, .pages-strategy .content .m-bottom .parts3 {
         position: absolute;
-        top: 134px;
+        top: 154px;
         left: 510px;
         z-index: 99; }
       .pages-strategy .content .m-bottom .parts1 {
@@ -2339,7 +2923,7 @@ html, body {
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite; }
       .pages-strategy .content .m-bottom .parts2 {
-        top: 177px;
+        top: 200px;
         left: 536px;
         -webkit-animation: rotatePF 2s linear;
                 animation: rotatePF 2s linear;
@@ -2348,7 +2932,7 @@ html, body {
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite; }
       .pages-strategy .content .m-bottom .parts3 {
-        top: 228px;
+        top: 252px;
         left: 531px;
         -webkit-animation: rotatePW 4s linear;
                 animation: rotatePW 4s linear;
@@ -2358,15 +2942,53 @@ html, body {
                 animation-iteration-count: infinite; }
       .pages-strategy .content .m-bottom .fcanvas {
         position: absolute;
-        top: 90px;
+        top: 120px;
         left: 120px;
         width: 385px;
         height: 308px;
         overflow: hidden;
         font-size: 0;
         z-index: 99; }
+        .pages-strategy .content .m-bottom .fcanvas .item-arrow {
+          position: absolute;
+          top: 40px;
+          right: 20px; }
+          .pages-strategy .content .m-bottom .fcanvas .item-arrow .arrow1 {
+            -webkit-animation: arrow1 4s linear;
+                    animation: arrow1 4s linear;
+            -webkit-animation-fill-mode: both;
+                    animation-fill-mode: both;
+            -webkit-animation-iteration-count: infinite;
+                    animation-iteration-count: infinite; }
+          .pages-strategy .content .m-bottom .fcanvas .item-arrow .arrow2 {
+            -webkit-animation: arrow2 4s linear;
+                    animation: arrow2 4s linear;
+            -webkit-animation-fill-mode: both;
+                    animation-fill-mode: both;
+            -webkit-animation-iteration-count: infinite;
+                    animation-iteration-count: infinite; }
+          .pages-strategy .content .m-bottom .fcanvas .item-arrow .arrow3 {
+            -webkit-animation: arrow3 4s linear;
+                    animation: arrow3 4s linear;
+            -webkit-animation-fill-mode: both;
+                    animation-fill-mode: both;
+            -webkit-animation-iteration-count: infinite;
+                    animation-iteration-count: infinite; }
+          .pages-strategy .content .m-bottom .fcanvas .item-arrow .arrow4 {
+            -webkit-animation: arrow4 4s linear;
+                    animation: arrow4 4s linear;
+            -webkit-animation-fill-mode: both;
+                    animation-fill-mode: both;
+            -webkit-animation-iteration-count: infinite;
+                    animation-iteration-count: infinite; }
+          .pages-strategy .content .m-bottom .fcanvas .item-arrow .arrow5 {
+            -webkit-animation: arrow5 4s linear;
+                    animation: arrow5 4s linear;
+            -webkit-animation-fill-mode: both;
+                    animation-fill-mode: both;
+            -webkit-animation-iteration-count: infinite;
+                    animation-iteration-count: infinite; }
         .pages-strategy .content .m-bottom .fcanvas .items {
-          white-space: nowrap;
           width: 100%;
           height: 100%;
           -webkit-animation: canvasM 8s linear;

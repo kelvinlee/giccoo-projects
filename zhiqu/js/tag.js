@@ -1,5 +1,5 @@
 
-riot.tag('gif', '<canvas width="{opts.width}" height="{opts.height}"></canvas>', function(opts) {
+riot.tag('brands', '<canvas width="{opts.width}" height="{opts.height}"></canvas>', function(opts) {
     var self = this
     var stage = null
     var playerSprite = null
@@ -9,6 +9,7 @@ riot.tag('gif', '<canvas width="{opts.width}" height="{opts.height}"></canvas>',
     this.play = opts.play
     this.animations = JSON.parse('{"normal": '+opts.normal+', "replay": '+opts.replay+', "stop": '+opts.stop+'}')
     console.log(self.animations)
+    createjs.Ticker.setFPS(30)
     if (opts.id&&global) { global[opts.id] = self }
     this.init = function() {
     	stage = new createjs.Stage($("canvas",this.root)[0])
@@ -18,7 +19,7 @@ riot.tag('gif', '<canvas width="{opts.width}" height="{opts.height}"></canvas>',
     	}
     	playerSheet = new createjs.SpriteSheet({
     		images: brandImages,
-    		framerate: 20,
+    		framerate: 30,
     		frames: {
     			height: opts.height,
     			width: opts.width,
@@ -47,6 +48,34 @@ riot.tag('gif', '<canvas width="{opts.width}" height="{opts.height}"></canvas>',
     	playerSprite.gotoAndPlay(name)
     	console.log(name)
     }.bind(this);
+  
+});
+
+riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {opts.id} {played}"></div>', function(opts) {
+    var self = this
+    var delay = parseInt(opts.delay)?parseInt(opts.delay):0
+    this.played = opts.play
+    if (opts.id&&global) { global[opts.id] = self }
+    this.replay = function(name) {
+    	self.played = name
+    	self.update()
+    }.bind(this);
+    this.animate = function(evt) {
+
+    	var old = opts[self.played]
+    	self.played = "normal"
+    	self.update()
+    	setTimeout(function(){
+    		self.replay(old)
+    		console.log(old)
+    	},delay+1)
+    }.bind(this);
+    self.on("mount",function(){
+    	if (opts.normal == "replay" && opts.replay == "replay" && opts.play == "replay") {
+    	}else{
+    		$(".gif",self.root)[0].addEventListener(ANIMATION_END_NAME,self.animate)
+    	}
+    })
   
 });
 

@@ -95,6 +95,9 @@
     init() {
     	if (self.now <= 1) {
     		self.canRun = true
+    		$(".menus",self.root)[0].addEventListener("touchstart", this.touchstart.bind(this))
+    		$(".menus",self.root)[0].addEventListener("touchmove", this.touchmove.bind(this))
+    		$(".menus",self.root)[0].addEventListener("touchend", this.touchend.bind(this))
     		return false
     	}
     	setTimeout(function(){
@@ -104,5 +107,41 @@
     		self.init()
     	},500)
     }
+    var _default = {x:0, y:0, can: true}
+    touchstart(evt) {
+    	touch = evt.touches[0]
+    	_default.y = touch.pageY
+    	console.log(_default)
+    }
+    touchmove(evt) {
+    	if (!_default.can) { return false }
+    	touch = evt.touches[0]
+    	var y = touch.pageY
+    	var move = y - _default.y
+    	console.log(move)
+    	if (Math.abs(move) > 10) {
+    		evt.preventDefault()
+    	}
+    	if (move > 50) {
+    		self.now--
+    		if (self.now < 0) {self.now = 0}
+    		console.log(self.menus[self.now])
+    		self.changeMenu(self.menus[self.now]).call()
+    		_default.can = false
+    	}
+    	if (move < -50) {
+    		self.now++
+    		if (self.now >= self.menus.length) {self.now = self.menus.length-1}
+    		console.log(self.menus[self.now])
+    		self.changeMenu(self.menus[self.now]).call()
+    		_default.can = false
+    	}
+    }
+    touchend(evt) {
+    	_default.can = true
+    }
+    this.on("mount",function(){
+    	
+    })
   </script>
 </select-page>

@@ -14,11 +14,11 @@ block content
 	//- gif(width="640",height="1134",normal='[0,86, "replay"]',replay='[87, 126]',stop="86",play="normal",count="127",src="img/animate/brands/brand-id.png")
 	//- gif(id="brandbg",width="640",height="1134",normal='[0,6, "stop"]',replay='[0,7]',stop="[7,7]",play="normal",count="8",src="img/animate/brandbg/brand-id.png")
 	//- animations='{ "normal": [0,86, "replay"], "replay": [87, 126], "stop": 86 }'
-	.main
-		.homepage.page-strategy
+	.main.page-technology
+		.homepage
 			.bottle.bottle-logo
 				img(src="#{images}/bottle-logo.png")
-				gif(id="bottlelogo",width="480",height="620",count="63",normal='0',replay='[0,62,"stop"]',stop="62",play="normal",src="img/animate/bottle-logo/logo-id.png")
+				gif(id="bottlelogo",width="480",height="620",count="63",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-logo/logo.png")
 				.on-button(onclick="openBottleMain(this)",page-name="logo")
 				//- .white
 					img(src="#{images}/bottle-logo-white.png")
@@ -30,7 +30,7 @@ block content
 						img(src="#{images}/bottle-logo-full-white-2.png")
 			.bottle.bottle-strategy
 				img(src="#{images}/bottle-strategy.png")
-				gif(id="bottlestrategy",width="850",height="200",count="78",normal='0',replay='[0,77,"stop"]',stop="77",play="normal",src="img/animate/bottle-strategy/strategy-id.png")
+				gif(id="bottlestrategy",width="850",height="200",count="78",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-strategy/strategy.png")
 				.shadow
 					img(src="#{images}/bottle-strategy-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="strategy")
@@ -38,7 +38,7 @@ block content
 					img(src="#{images}/bottle-strategy-white.png")
 			.bottle.bottle-technology
 				img(src="#{images}/bottle-technology.png")
-				gif(id="bottletechnology",width="800",height="260",count="60",normal='0',replay='[0,59,"stop"]',stop="59",play="normal",src="img/animate/bottle-technology/technology-id.png")
+				gif(id="bottletechnology",width="800",height="260",count="60",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-technology/technology.png")
 				.shadow
 					img(src="#{images}/bottle-technology-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="technology")
@@ -46,7 +46,7 @@ block content
 					img(src="#{images}/bottle-technology-white.png")
 			.bottle.bottle-brand
 				img(src="#{images}/bottle-brand.png")
-				gif(id="bottlebrand",width="300",height="750",count="51",normal='0',replay='[0,50,"stop"]',stop="50",play="normal",src="img/animate/bottle-brand/brand-id.png")
+				gif(id="bottlebrand",width="300",height="750",count="51",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-brand/brand.png")
 				.on-button(onclick="openBottleMain(this)",page-name="brand")
 				//- .white
 					img(src="#{images}/bottle-brand-white.png")
@@ -56,7 +56,7 @@ block content
 							img(src="#{images}/homepage-bubble.png")
 			.bottle.bottle-media
 				img(src="#{images}/bottle-media.png")
-				gif(id="bottlemedia",width="380",height="380",count="76",normal='0',replay='[0,75,"stop"]',stop="75",play="normal",src="img/animate/bottle-media/media-id.png")
+				gif(id="bottlemedia",width="380",height="380",count="76",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-media/media-id.png")
 				.shadow
 					img(src="#{images}/bottle-media-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="media")
@@ -64,7 +64,7 @@ block content
 					img(src="#{images}/bottle-media-white.png")
 			.bottle.bottle-contactus
 				//- img(src="#{images}/bottle-contactus.png")
-				gif(id="bottlecontactus",width="480",height="480",count="82",normal='0',replay='[0,81,"stop"]',stop="81",play="normal",src="img/animate/bottle-contactus/contactus-id.png")
+				gif(id="bottlecontactus",width="480",height="480",count="66",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-contactus/contactus.png")
 				.shadow
 					img(src="#{images}/bottle-contactus-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="contactus")
@@ -72,7 +72,7 @@ block content
 					img(src="#{images}/bottle-contactus-white.png")
 			.bottle.bottle-award
 				//- img(src="#{images}/bottle-award.png")
-				gif(id="bottleaward",width="600",height="300",count="82",normal='0',replay='[0,81,"stop"]',stop="81",play="normal",src="img/animate/bottle-award/award-id.png")
+				gif(id="bottleaward",width="600",height="300",count="82",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-award/award.png")
 				.shadow
 					img(src="#{images}/bottle-award-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="award")
@@ -100,7 +100,7 @@ block content
 					img(src="#{images}/bottle-lighter-fire.png")
 			.bottle.bottle-search.tada.animated.infinite.duration-15
 				img(src="#{images}/magn.png")
-		.pages-technology
+		.pages-technology.thispage
 			.content(onclick="backBottleMain('technology')")
 				.m-top
 					.bg
@@ -178,12 +178,13 @@ block content
 					.item.item-1(rel="1")
 					.item.item-2(rel="2")
 					.item.item-3(rel="3")
-		.pages-strategy.thispage
+		.pages-strategy
 			.content(onclick="backBottleMain('strategy')")
 				.m-top
 					img(src="#{images}/pages-strategy-m-top.png")
-					.item-logo
-						img(src="#{images}/pages-strategy-logo.png")
+					.item-tv
+						.item-logo
+							img(src="#{images}/pages-strategy-logo.png")
 					.item-switch
 						img(src="#{images}/pages-strategy-switch.png")
 					.item-light-red
@@ -191,22 +192,48 @@ block content
 					.item-light-blue
 						img(src="#{images}/pages-strategy-light-blue.png")
 					.item-light-all
-						img(src="#{images}/pages-strategy-light-all.png")
+						-for (var i=1;i<=4;i++)
+							.lights
+								img(src="#{images}/pages-strategy-light-all-#{i}.png")
+					.item-pointer
+					.item-arrow
+						-for (var i=1;i<6;i++)
+							.arrow(class="arrow#{i}")
+								img(src="#{images}/pages-strategy-arrow-yellow.png")
+					.item-screw
+						img(src="#{images}/pages-strategy-screw.png")
 					.item-icloud-1
 						img(src="#{images}/pages-strategy-icloud-1.png")
 					.item-icloud-2
 						img(src="#{images}/pages-strategy-icloud-2.png")
+					.item-icloud-3
+						img(src="#{images}/pages-strategy-icloud-3.png")
+					.item-lines
+						.line1
+							img(src="#{images}/pages-strategy-line-1.png")
+						.line2
+							img(src="#{images}/pages-strategy-line-2.png")
+			
+					.item-lighter
+						img(src="#{images}/pages-strategy-lighter.png")
 					.item-icons
-						img(src="#{images}/pages-strategy-icons.png")
+						//- img(src="#{images}/pages-strategy-icons.png")
+						gif(id="strategyicons",width="300",height="300",count="43",normal="normal",replay='replay',delay="4000",stop="0",play="replay",src="img/animate/strategy-icons/strategy.png")
+						//- .test
+						.box
+							img(src="#{images}/pages-strategy-box.png")
+
 				.m-bottom
+					.line1
+					.line2
 					.bg
 						img(src="#{images}/pages-strategy-m-bottom.png")
-						.line1
-						.line2
 						.p1
-							img(src="#{images}/pages-strategy-people-1.png")
+							//- img(src="#{images}/pages-strategy-people-1.png")
+							gif(id="strategypeople1",width="150",height="150",normal='replay',replay='replay',stop="stop",play="replay",count="41",src="img/animate/brandbg/brand-id.png")
 						.p2
-							img(src="#{images}/pages-strategy-people-2.png")
+							//- img(src="#{images}/pages-strategy-people-2.png")
+							gif(id="strategypeople2",width="150",height="150",normal='replay',replay='replay',stop="stop",play="replay",count="41",src="img/animate/brandbg/brand-id.png")
 						.parts1
 							img(src="#{images}/pages-strategy-parts-red.png")
 						.parts2
@@ -214,6 +241,10 @@ block content
 						.parts3
 							img(src="#{images}/pages-strategy-parts-roulette.png")
 						.fcanvas
+							.item-arrow
+								-for (var i=1;i<6;i++)
+									.arrow(class="arrow#{i}")
+										img(src="#{images}/pages-strategy-arrow-yellow.png")
 							.items
 								.item
 									img(src="#{images}/pages-strategy-canvas-1.png")
