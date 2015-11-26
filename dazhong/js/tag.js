@@ -115,10 +115,7 @@ riot.tag('select-page', '<div class="box"><img src="img/box.png"></div> <div cla
     	touch = evt.touches[0]
     	var y = touch.pageY
     	var move = y - _default.y
-    	console.log(move)
-    	if (Math.abs(move) > 10) {
-    		evt.preventDefault()
-    	}
+    	evt.preventDefault()
     	if (move > 50) {
     		self.now--
     		if (self.now < 0) {self.now = 0}
@@ -137,8 +134,5 @@ riot.tag('select-page', '<div class="box"><img src="img/box.png"></div> <div cla
     this.touchend = function(evt) {
     	_default.can = true
     }.bind(this);
-    this.on("mount",function(){
-    	
-    })
   
 });

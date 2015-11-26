@@ -118,10 +118,7 @@
     	touch = evt.touches[0]
     	var y = touch.pageY
     	var move = y - _default.y
-    	console.log(move)
-    	if (Math.abs(move) > 10) {
-    		evt.preventDefault()
-    	}
+    	evt.preventDefault()
     	if (move > 50) {
     		self.now--
     		if (self.now < 0) {self.now = 0}
@@ -140,8 +137,5 @@
     touchend(evt) {
     	_default.can = true
     }
-    this.on("mount",function(){
-    	
-    })
   </script>
 </select-page>
