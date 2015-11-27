@@ -1,0 +1,216 @@
+$z: 30
+.gif
+	+show-inline
+	font-size: 0
+
++keyframes(strategyiconsnormal)
+	0%
+		background-position-x: 0px
+	100%
+		background-position-x: -12900px
+
+.strategyicons
+	+b("../img/animate/strategy-icons/strategy.png",no-repeat,0,0,12900px 300px)
+	+wh(300px,300px)
+	&.normal
+		+b("../img/pages-strategy-icons.png",no-repeat,-26px,4px,300px 300px)
+	&.replay
+		animation: strategyiconsnormal (43/$z)*1s steps(43)
+
++keyframes(brandbg)
+	0%
+		background-position-y: 0px
+	100%
+		background-position-y: -9072px
+
+.brandbg
+	+b("../img/animate/brandbg/brandbg.png",no-repeat,0,-7938px,640px 9072px)
+	+wh(640px,1134px)
+	&.normal
+		background-position: 0 0
+	&.replay
+		animation: brandbg (8/20)*1s steps(8)
+	&.stop
+		background-position: 0 -7938px
+
+
+
++keyframes(bottlestrategyreplay)
+	0%
+		background-position-y: 0px
+	100%
+		background-position-y: -15600px
+
+.bottlestrategy
+	+b("../img/animate/bottle-strategy/strategy.png",no-repeat,0,-15400px,850px 15600px)
+	+wh(850px,200px)
+	&.normal
+		background-position: 0 0
+	&.replay
+		animation: bottlestrategyreplay (78/$z)*1s steps(78)
+	&.stop
+		background-position: 0 -15400px
+
++keyframes(bottlelogoreplay)
+	0%
+		background-position-x: 0px
+	100%
+		background-position-x: -30240px
+
+.bottlelogo
+	+b("../img/animate/bottle-logo/logo.png",no-repeat,-29760px,0,30240px 620px)
+	+wh(480px,620px)
+	&.normal
+		background-position: 0 0
+	&.replay
+		animation: bottlelogoreplay (63/$z)*1s steps(63)
+	&.stop
+		background-position: -29760px 0
+
++keyframes(bottletechnologyreplay)
+	0%
+		background-position-y: 0px
+	100%
+		background-position-y: -15600px
+.bottletechnology
+	+b("../img/animate/bottle-technology/technology.png",no-repeat,0,-15600px,800px 15600px)
+	+wh(800px,260px)
+	&.normal
+		background-position: 0 0
+	&.replay
+		animation: bottletechnologyreplay (60/$z)*1s steps(60)
+	&.stop
+		background-position: 0 -15600px
+
++keyframes(bottlemediareplay)
+	0%
+		background-position-y: 0px
+	100%
+		background-position-y: -28880px
+.bottlemedia
+	+b("../img/animate/bottle-media/media.png",no-repeat,0,-28880px,380px 28880px)
+	+wh(380px,380px)
+	&.normal
+		background-position: 0 0
+	&.replay
+		animation: bottlemediareplay (76/$z)*1s steps(76)
+	&.stop
+		background-position: 0 -28880px
+
++keyframes(bottlecontactusreplay)
+	0%
+		background-position-x: 0px
+	100%
+		background-position-x: -30720px
+.bottlecontactus
+	+b("../img/animate/bottle-contactus/contactus.png",no-repeat,-30240px,0,30720px 480px)
+	+wh(480px,480px)
+	&.normal
+		background-position: 0 0
+	&.replay
+		animation: bottlecontactusreplay (64/$z)*1s steps(64)
+	&.stop
+		background-position: -30240px 0
+
++keyframes(bottleawardreplay)
+	0%
+		background-position-y: 0px
+	100%
+		background-position-y: -24600px
+.bottleaward
+	+b("../img/animate/bottle-award/award.png",no-repeat,0,-24300px,600px 24600px)
+	+wh(600px,300px)
+	&.normal
+		background-position: 0 0
+	&.replay
+		animation: bottleawardreplay (82/$z)*1s steps(82)
+	&.stop
+		background-position: 0 -24300px
+
+
++keyframes(bottlebrandreplay)
+	0%
+		background-position-x: 0px
+	100%
+		background-position-x: -15300px
+.bottlebrand
+	+b("../img/animate/bottle-brand/brand.png",no-repeat,-15000px,0,15300px 750px)
+	+wh(300px,750px)
+	&.normal
+		background-position: 0 0
+	&.replay
+		animation: bottlebrandreplay (51/$z)*1s steps(51)
+	&.stop
+		background-position: -15000px 0
+
+
+
++keyframes(strategypeople1)
+	0%
+		background-position-x: 0px
+	100%
+		background-position-x: -6150px
+
+.strategypeople1
+	+b("../img/animate/strategy-icons/p1.png",no-repeat,-6150px,0,6150px 150px)
+	+wh(150px,150px)
+	&.normal
+		background-position: -6150px 0
+	&.replay
+		animation: strategypeople1 (41/$z)*1s steps(41) infinite
+
++keyframes(strategypeople2)
+	0%
+		background-position-x: 0px
+	100%
+		background-position-x: -6150px
+
+.strategypeople2
+	+b("../img/animate/strategy-icons/p2.png",no-repeat,-6150px,0,6150px 150px)
+	+wh(150px,150px)
+	&.normal
+		background-position: -6150px 0
+	&.replay
+		animation: strategypeople2 (41/$z)*1s steps(41) infinite
+
++keyframes(technologylogo)
+	0%
+		background-position-x: 0px
+	100%
+		background-position-x: -8670px
+
+.technologylogo
+	+b("../img/animate/bottle-technology/logo.png",no-repeat,-8500px,0,8670px 200px)
+	+wh(170px,200px)
+	&.normal
+		background-position: -8500px 0
+	&.replay
+		animation: technologylogo (51/$z)*1s steps(51)
+
++keyframes(loadbox)
+	0%
+		background-position-x: 0px
+	100%
+		background-position-x: -8700px
+
+.loadbox
+	+b("../img/loaded/box.png",no-repeat,-8700px,0,8700px 500px)
+	+wh(300px,500px)
+	&.normal
+		background-position: -8700px 0
+	&.replay
+		animation: loadbox (29/$z)*1s steps(29) infinite
+
+
+// brand movies
++keyframes(brandMovie1)
+	0%
+		background-position-x: 0px
+	100%
+		background-position-x: -32000px
+
++keyframes(brandMovie2)
+	0%
+		background-position-x: 0px
+	100%
+		background-position-x: -25600px

@@ -87,6 +87,11 @@
 		opacity: 1
 	50%
 		opacity: 0.4
++keyframes(flashF)
+	0%,100%
+		opacity: 0.4
+	50%
+		opacity: 1
 +keyframes(soundBG)
 	to
 		background-position-x: -165px
@@ -256,6 +261,231 @@
 		filter: blur(10px)
 		opacity: 0
 	
++keyframes(tP1)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(400px,0,0))
++keyframes(tP2)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(215px,0,0))
++keyframes(tP3)
+	0%
+		+transform(translate3d(-215px,0,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(po1)
+	0%,100%
+		opacity: 1
++keyframes(po2)
+	0%,20%
+		opacity: 0
+	20.1%,100%
+		opacity: 1
++keyframes(po3)
+	0%,40%
+		opacity: 0
+	40.1%,100%
+		opacity: 1
++keyframes(po4)
+	0%,60%
+		opacity: 0
+	60.1%,100%
+		opacity: 1
++keyframes(po5)
+	0%,80%
+		opacity: 0
+	80.1%,100%
+		opacity: 1
+
++keyframes(lo1)
+	0%,10%,100%
+		opacity: 0
+	2%,8%
+		opacity: 1
++keyframes(lo2)
+	0%,20%,30%,100%
+		opacity: 0
+	22%,28%
+		opacity: 1
++keyframes(lo3)
+	0%,40%,50%,100%
+		opacity: 0
+	42%,48%
+		opacity: 1
++keyframes(lo4)
+	0%,60%,70%,100%
+		opacity: 0
+	62%,68%
+		opacity: 1
++keyframes(lo5)
+	0%,80%,90%,100%
+		opacity: 0
+	82%,88%
+		opacity: 1
++keyframes(moveIconText)
+	0%,8%
+		+transform(translate3d(0,0,0))
+		filter: blur(0px)
+	10%
+		filter: blur(5px)
+	22%,28%
+		+transform(translate3d(0,-250px*0.2,0))
+		filter: blur(0px)
+	30%
+		filter: blur(5px)
+	42%,48%
+		+transform(translate3d(0,-250px*0.4,0))
+		filter: blur(0px)
+	50%
+		filter: blur(5px)
+	62%,68%
+		+transform(translate3d(0,-250px*0.6,0))
+		filter: blur(0px)
+	70%
+		filter: blur(5px)
+	82%,88%
+		+transform(translate3d(0,-250px*0.8,0))
+		filter: blur(0px)
+	90%
+		filter: blur(5px)
+	100%
+		+transform(translate3d(0,-250px,0))
+		filter: blur(0px)
++keyframes(moveIconBox)
+	0%,8%
+		+transform(translate3d(0,0,0))
+		filter: blur(0px)
+	10%
+		filter: blur(5px)
+	22%,28%
+		+transform(translate3d(0,-300px*0.2,0))
+		filter: blur(0px)
+	30%
+		filter: blur(5px)
+	42%,48%
+		+transform(translate3d(0,-300px*0.4,0))
+		filter: blur(0px)
+	50%
+		filter: blur(5px)
+	62%,68%
+		+transform(translate3d(0,-300px*0.6,0))
+		filter: blur(0px)
+	70%
+		filter: blur(5px)
+	82%,88%
+		+transform(translate3d(0,-300px*0.8,0))
+		filter: blur(0px)
+	90%
+		filter: blur(5px)
+	100%
+		+transform(translate3d(0,-300px,0))
+		filter: blur(0px)
++keyframes(compU)
+	0%,30%,100%
+		+transform(translate3d(0,0,0))
+	20%
+		+transform(translate3d(0,-100%,0))
++keyframes(compU2)
+	0%,30%,100%
+		+transform(translate3d(0,0,0))
+	20%
+		+transform(translate3d(0,-200%,0))
++keyframes(compD)
+	0%,30%,100%
+		+transform(translate3d(0,0,0))
+	20%
+		+transform(translate3d(0,100%,0))
++keyframes(compD2)
+	0%,30%,100%
+		+transform(translate3d(0,0,0))
+	20%
+		+transform(translate3d(0,200%,0))
+
++keyframes(handLine)
+	0%,100%
+		+h(40px)
+	20%,80%
+		+h(90px)
+
++keyframes(bomt1)
+	0%,19%
+		opacity: 0
+	19.1%,100%
+		opacity: 1
++keyframes(bomt2)
+	0%,39%
+		opacity: 0
+	39.1%,100%
+		opacity: 1
++keyframes(bomt3)
+	0%,59%
+		opacity: 0
+	59.1%,100%
+		opacity: 1
++keyframes(bomt4)
+	0%,79%
+		opacity: 0
+	79.1%,100%
+		opacity: 1
++keyframes(bomt5)
+	0%,99%
+		opacity: 0
+	99.1%,100%
+		opacity: 1
+
++keyframes(downHandBox1)
+	0%,10%,100%
+		opacity: 0
+		+transform(translate3d(0,0,0))
+	19.1%
+		opacity: 1
+		+transform(translate3d(0,74px,0))
+	19.2%
+		opacity: 0
+		+transform(translate3d(0,74px,0))
++keyframes(downHandBox2)
+	0%,30%,100%
+		opacity: 0
+		+transform(translate3d(0,0,0))
+	39.1%
+		opacity: 1
+		+transform(translate3d(0,74px,0))
+	39.2%
+		opacity: 0
+		+transform(translate3d(0,74px,0))
++keyframes(downHandBox3)
+	0%,50%,100%
+		opacity: 0
+		+transform(translate3d(0,0,0))
+	59.1%
+		opacity: 1
+		+transform(translate3d(0,74px,0))
+	59.2%
+		opacity: 0
+		+transform(translate3d(0,74px,0))
++keyframes(downHandBox4)
+	0%,70%,100%
+		opacity: 0
+		+transform(translate3d(0,0,0))
+	79.1%
+		opacity: 1
+		+transform(translate3d(0,74px,0))
+	79.2%
+		opacity: 0
+		+transform(translate3d(0,74px,0))
++keyframes(downHandBox5)
+	0%,90%,100%
+		opacity: 0
+		+transform(translate3d(0,0,0))
+	99.1%
+		opacity: 1
+		+transform(translate3d(0,74px,0))
+	99.2%
+		opacity: 0
+		+transform(translate3d(0,74px,0))
 
 
 
@@ -576,7 +806,114 @@ html,body
 	+bl
 
 
+.firstPage
+	+posa
+	+tl
+	+w
+	+h
+	+overhide
+	z-index: 999
+	+b("../img/loaded/bg.jpg",no-repeat,center,center,cover)
+	font-size: 0
+	.content
+		+posa
+		+tl(50%,50%)
+		z-index: 3
+		opacity: 1
+		+transform(translate3d(-50%,-50%,0))
+		.home
+			+w(393px)
+		.door
+			+tran
+			+posa
+			+tl(198px,166px)
+			+w(60px)
+			z-index: -1
+		.logo
+			+posa
+			+tl(-30px,50%)
+			+w(340px)
+			+transform(translate3d(-50%,0,0))
+			.on
+				+posa
+				+tl
+				+animation(flashF,2s,ease,infinite)
+		.enter
+			+w(100%)
+			+text-center
+			.text
+				margin-top: 10px
+				+animation(flashF,2.5s,linear,infinite)
+			.arrow
+				+show
+				+m
+			.arrow-1
+				+w(25px)
+				+animation(flashF,2.5s,linear,infinite)
+				animation-delay: 1500ms
+			.arrow-2
+				+w(30px)
+				+animation(flashF,2.5s,linear,infinite)
+				animation-delay: 1000ms
+			.arrow-3
+				+w(35px)
+				+animation(flashF,2.5s,linear,infinite)
+				animation-delay: 500ms
 
+	.loading
+		+posa
+		+tl
+		z-index: 2
+		+b("../img/bg.jpg",no-repeat,center,center,cover)
+		+w
+		+h
+		+transform(scale(0.2,0.2))
+		transform-origin: center center
+		.box
+			+wh(300px,500px)
+			+posa
+			+tl(50%,50%)
+			+transform(translate3d(-50%,-50%,0))
+			.text
+				+posa
+				+tl(50%,50%)
+				+transform(translate3d(-50%,-50%,0))
+				// margin-left: 0.4rem
+				color: #fff
+				// +font-size(2rem)
+				font-size: 24px
+			.bubbles
+				+posa
+				+tl(120px,131px)
+				+wh(36px,90px)
+				.bubble
+					+posa
+				.bubble-1
+					+tl(0,20px)
+					+animation(bubble,2.5s,linear,infinite)
+				.bubble-2
+					+tl(30px,0)
+					+animation(bubble,3s,linear,infinite)
+					img
+						+wh(20px,20px)
+				.bubble-3
+					+tl(50px,15px)
+					+animation(bubble,3.5s,linear,infinite)
+					img
+						+wh(18px,18px)
+
+	&.on
+		.loading
+			+tran($time: 1s)
+			+transform(scale(1,1))
+			transition-delay: 1s
+		.content
+			+tran($time: 1s)
+			+transform(translate3d(-50%,-50%,0) scale(4,4))
+			transition-delay: 1s
+			opacity: 0
+			.door
+				+tl(198px,106px)
 
 .main
 	+posa
@@ -632,6 +969,9 @@ html,body
 		// +tran($time: 2s,$ease: linear)
 		// +transform(translate3d(780px,-100px,0))
 
+.pages-item
+	+hide
+
 .pages-technology
 	+tran($time: 0.5s,$ease: linear)
 	+posa
@@ -653,13 +993,217 @@ html,body
 		.m-top
 			.bg
 				padding-top: 40px
+			.texts
+				+posa
+				+tl(366px,230px)
+				+wh(80px,50px)
+				+overhide
+				font-size: 0
+				.text-box
+					+animation(moveIconText,10s,linear,infinite)
+					&.first
+						// margin-top: -250px
+
+			.gear
+				+posa
+				z-index: -1
+				&.gear-1
+					+tl(324px,314px)
+					+animation(rotateP,4s,linear,infinite)
+				&.gear-2
+					+tl(270px,350px)
+					+animation(rotatePF,4s,linear,infinite)
+				&.gear-3
+					+tl(240px,330px)
+					+animation(rotateP,4s,linear,infinite)
+			.item-lighter
+				+posa
+				+tl(510px,489px)
+				z-index: -1
+				+animation(flash,4s,ease,infinite)
+				animation-delay: 200ms
+			.item-bt
+				+posa
+				+tl(140px,228px)
+				.full
+					+posa
+					+bl
+					z-index: 1
+					+overhide
+					+w
+					+h(30%)
+					+animation(music,5s,ease,infinite)
+					min-height: 30%
+					img
+						+posa
+						+bl
+			.item-comp
+				+posa
+				+tl(174px,276px)
+				.item
+					+posa
+					+wh(30px,8px)
+					+bc(#d15f4b)
+					&.item-1
+						+tl
+						+animation(compD2,2s,linear,infinite)
+					&.item-2
+						+tl(15px)
+						+animation(compD,2s,linear,infinite)
+					&.item-3
+						+tl(30px)
+						+animation(compU,2s,linear,infinite)
+					&.item-4
+						+tl(45px)
+						+animation(compU2,2s,linear,infinite)
+			.logo
+				+posa
+				+tl(170px,382px)
+			.box-logo
+				+posa
+				+tl(196px,411px)
+				z-index: 1
+			.item-light-red
+				+posa
+				+tl(106px,182px)
+				z-index: 11
+				transform-origin: left center
+				+animation(flash,2s,ease,infinite)
+			.item-light-blue
+				+posa
+				+tl(84px,182px)
+				z-index: 11
+				transform-origin: left center
+				+animation(flashM,2s,ease,infinite)
+				animation-delay: 1s
+			.m-hand
+				+posa
+				+tl(210px,60px)
+				.line
+					+wh(6px,40px)
+					+bc(#496683)
+					margin-left: 100px
+					+animation(handLine,2s,linear,infinite)
+					animation-delay: 500ms
+				.hand
+					+posr
+					margin-top: -2px
+					.hand-box
+						+posa
+						+tl(0px,20px)
+						+w(33px)
+						z-index: -1
+						.b
+							+posa
+							+tl
+							@for $i from 1 through 5
+								&.b-#{$i}
+									+animation(downHandBox#{$i},10s,linear,infinite)
+
+			.b-boxs-boxs
+				+posa
+				+tl(366px,78px)
+				+w(215px)
+				white-space: nowrap
+				+overhide
+				font-size: 0
+				z-index: -1
+				// +bc(#fff)
+				.b-boxs
+					+w(215px*3)
+					// margin-left: -115px
+					// +transform(translate3d(-215px,0,0))
+					+animation(tP3,10s,linear,infinite)
+				.b-box-box
+					+show-inline
+					// +animation(tP2,10s,linear,infinite)
+					.b-m
+						+show-inline
+						+p(0 5px)
+				.first
+					@for $i from 1 through 5
+						.b-m-#{$i}
+							+animation(bomt#{$i},10s,linear,infinite)
+					
+
+		.lights
+			+posa
+			+tl(520px,50%)
+			bottom: 30px
+			+transform(translate3d(-17%,0,0))
+			z-index: -1
+			+w(55px)
+			.light
+				+posa
+				+tl
+				+w
+				+h
+				img
+					+w
+					+h
+				@for $i from 1 through 5
+					&.i-#{$i}
+						+animation(lo#{$i},10s,linear,infinite)
 		.m-bottom
 			+posa
 			+bl
 			.bg
 				+w(906px)
 				margin-left: -(906px-640px)/2
+			.icons
+				+posa
+				+bl(130px,18px)
+				+wh(60px,60px)
+				+overhide
+				font-size: 0
+				.icon-box
+					+animation(moveIconBox,10s,linear,infinite)
+					&.first
+						margin-top: -300px
 
+
+
+			.peoples
+				+posa
+				+bl(36px,-50px)
+				white-space: nowrap
+				z-index: -1
+				font-size: 0
+				.p-box
+					+show-inline
+					+animation(tP1,10s,linear,infinite)
+					&:first-child
+						+posa
+						+tl(0,-50%)
+					&.index
+						.p-1
+							.over
+								+animation(po1,10s,linear,infinite)
+						.p-2
+							.over
+								+animation(po2,10s,linear,infinite)
+						.p-3
+							.over
+								+animation(po3,10s,linear,infinite)
+						.p-4
+							.over
+								+animation(po4,10s,linear,infinite)
+						.p-5
+							.over
+								+animation(po5,10s,linear,infinite)
+
+				.people
+					+show-inline
+					+posr
+					+p(0 15px)
+					.over
+						+posa
+						+tl
+						+p(0 15px)
+						z-index: 2
+					// &.p-1
+						// +animation(tP1,6s,linear,infinite)
+				
 .pages-award
 	+tran($time: 0.5s,$ease: linear)
 	+posa
@@ -983,10 +1527,26 @@ html,body
 		+h
 		z-index: 1
 		
-		#brand,.ctrls
+		#brand,.ctrls,.brands-item
 			+posa
 			+tl(-120px)
 			// +transform(translate3d(0,-50%,0))
+		.brands-item
+			+wh(640,1134px)
+			.brand-item
+				+posa
+				+tl
+				+wh(640px,1134px)
+			// .brand-item-1
+			// 	+b("../img/animate/brands/brand-1.png",no-repeat,-25600px,0,25600px 1134px)
+			// 	animation: brandMovie1 (40/20)*1s steps(40) 1
+			// .brand-item-2
+			// 	+b("../img/animate/brands/brand-2.png",no-repeat,-25600px,0,25600px 1134px)
+			// 	animation: brandMovie2 (40/20)*1s steps(40) infinite
+			// 	animation-delay: (50/20)*1s
+			
+
+
 		.ctrls
 			+wh(640px,1134px)
 			z-index: 102
