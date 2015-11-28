@@ -15,7 +15,7 @@
     	var old = opts[self.played]
     	self.played = "normal"
     	self.update()
-    	console.log(opts.id,"animate")
+    	//- console.log(opts.id,"animate")
     	
     	setTimeout(function(){
     		self.replay(old)

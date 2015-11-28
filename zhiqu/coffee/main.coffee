@@ -189,6 +189,7 @@ page = ["page-brand"]
 pages = [".pages-brand"]
 opened = false
 global = {}
+tags = null
 
 window.onload = ->
 	riot.mount("*")
@@ -196,38 +197,64 @@ window.onload = ->
 		bottom: 164 - $("body").height() * 0.13 - 18
 	}
 	$(".pages-award .icon").on "click", openAward
-	$(".pages-media .icon").on "click", openMedia
+	$(".pages-media .bottle-media-movie").on "click", openMedia
 	$(".pages-brand .item").on "click", openBrand
 	$(".firstPage .content").on "click", init
 
+	$(".pages-media .icons-1 .icon").on "touchstart", (evt)->
+		$(".alert",this).addClass "on"
+		evt.stopPropagation()
+		evt.preventDefault()
+	$(".pages-media .icons-1 .icon").on "touchend", (evt)->
+		$(".alert",this).removeClass "on"
+		evt.stopPropagation()
+		evt.preventDefault()
 init = ->
 	$(".firstPage").addClass "on"
 	setTimeout ->
-		loadAllImage()
+		# tags = riot.mount("div#main","main")
+		loadStart()
 	,1500
+test = ->
+	# alert("haha")
+loadStart = ->
+	count = $("[data-layzr]").length
+	now = 0
+	ep = $("#loading-text")
+	$("[data-layzr]").on "load", ->
+		now++
+		ep.text parseInt now/count*100
+		loadEnd() if now >= count
 
-loadAllImage = ->
-	max = imageList.length
-	for image in imageList
-		img = new Image()
-		img.onload = ->
-			max--
-			loadComper parseInt (imageList.length-max)/imageList.length*100
-			loadFinished() if max <= 0
-		img.src = image
-		imgs.push(img)
-loadComper = (m)->
-	$("#loading-text").text m
-
-tags = null
-loadFinished = ->
-	tags = riot.mount("div#main","main")
+	$("[data-layzr]").each ->
+		$(this).attr("src",$(this).attr("data-layzr"))
+loadEnd = ->
 	setTimeout ->
 		$(".firstPage").addClass "fadeOut animated"
 		setTimeout ->
 			$(".firstPage").remove()
 		,500
-	,1000
+	,1500
+# loadAllImage = ->
+# 	max = imageList.length
+# 	for image in imageList
+# 		img = new Image()
+# 		img.onload = ->
+# 			max--
+# 			loadComper parseInt (imageList.length-max)/imageList.length*100
+# 			loadFinished() if max <= 0
+# 		img.src = image
+# 		imgs.push(img)
+# loadComper = (m)->
+# 	$("#loading-text").text m
+# loadFinished = ->
+# 	tags = riot.mount("div#main","main")
+# 	setTimeout ->
+# 		$(".firstPage").addClass "fadeOut animated"
+# 		setTimeout ->
+# 			$(".firstPage").remove()
+# 		,500
+# 	,1000
 
 openBottle = (evt)->
 	return false if opened 
@@ -264,7 +291,7 @@ openBottleMain = (evt)->
 	$(".pages-"+name).addClass "thispage"
 	# global["bottle"+name].replay("replay") if global? && global["bottle"+name]?
 	opened = true
-	$("#bottle"+name+" .gif").removeClass("normal replay stop").addClass("replay")
+	$(".bottle"+name+".gif").removeClass("normal replay stop").addClass("replay")
 	brandShow() if name is "brand"
 
 backBottleMain = (name)->
@@ -272,10 +299,10 @@ backBottleMain = (name)->
 	$(".bottle-"+name+" .white").removeClass "on"
 	$(".pages-"+name).removeClass "thispage"
 	$(".bottle-"+name).removeClass "Mybottle"
-	opened = false
 	# global["bottle"+name].replay("normal") if global? && global["bottle"+name]?
-	$("#bottle"+name+" .gif").removeClass("normal replay stop").addClass("normal")
+	$(".bottle"+name+".gif").removeClass("normal replay stop").addClass("normal")
 	clearNone()
+
 awardList = [
 	{}
 ]  
@@ -283,21 +310,31 @@ openBrand = (evt)->
 	evt.stopPropagation()
 	e = $(evt.target)
 
-	console.log e.attr "rel"
+	n = e.attr "rel"
+	
 openAward = (evt)->
 	evt.stopPropagation()
 	e = $(evt.target).parents(".icon")
 
-	console.log e.attr "rel"
+	n = e.attr "rel"
+	$(".page-award .pop").show()
+	$(".page-award .pop .pop-content").html '<div class="alert-'+n+'"><img src="img/pages-award-alert-'+n+'.jpg" /></div>'
+	$(".page-award .pop").on "click", ->
+		$(".page-award .pop").hide()
 openMedia = (evt)->
 	evt.stopPropagation()
 	e = $(evt.target).parents(".icon")
 
-	console.log e.attr "rel"
+	n = e.attr "rel"
+	$(".page-media .pop").show()
+	# $(".page-media .pop .pop-content").html '<div class="alert-'+n+'"><img src="img/pages-media-alert-'+n+'.jpg" /></div>'
+	$(".page-media .pop").on "click", ->
+		$(".page-media .pop").hide()
 
 clearNone = ->
 	setTimeout ->
-		$(".pages-brand .brands-item").html("")
+		# $(".pages-brand .brands-item").html("")
+		opened = false
 	,500
 
 brandShow = ->
@@ -309,7 +346,7 @@ brandShow = ->
 		# global.brandbg.replay("replay") if global? and global.brandbg?
 		# global.brand.replay("replay") if global? and global.brand?
 		$(".pages-brand .content").show()
-		$(".pages-brand .brands-item").html("<div class='brand-item brand-item-1' ></div><div class='brand-item brand-item-2' ></div>")
+		# $(".pages-brand .brands-item").html("<div class='brand-item brand-item-1' ></div><div class='brand-item brand-item-2' ></div>")
 	,1700
 	# $("#brandbg")[0].addEventListener ANIMATION_END_NAME, (evt)->
 	# 	setTimeout ->

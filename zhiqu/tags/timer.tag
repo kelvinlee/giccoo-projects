@@ -17,7 +17,7 @@
     	self.update()
     	setTimeout(function(){
     		self.init()
-    	},100)
+    	},500)
     }
     self.init()
   </script>

@@ -498,6 +498,7 @@
 html,body
 	+w
 	+h
+	touch-callout: none
 .hide
 	+hide
 // .loading
@@ -931,6 +932,7 @@ html,body
 		+w
 		+h
 		+tran($time: 0.5s,$ease: linear)
+		transition-delay: 0s
 		z-index: 2
 		// &.page-logo
 			// +transform(translate3d(400px,400px,0))
@@ -951,7 +953,7 @@ html,body
 	&.page-logo .homepage
 		+tran($time: 1.3s,$ease: linear)
 		transition-delay: 0.8s
-		+transform(translate3d(243px,113%,0))
+		+transform(translate3d(260px,113%,0))
 		
 	&.page-contactus .homepage
 		+tran($time: 2.2s,$ease: linear)
@@ -1246,6 +1248,11 @@ html,body
 			+tl(139px+80px,393px)
 		.other-2
 			+tl(736px+80px,393px)
+	.pop
+		.alert-1,.alert-3,.alert-4
+			+w(411px)
+		.alert-2,.alert-5,.alert-6,.alert-7
+			+w(412px)
 
 .pages-media
 	+tran($time: 0.5s,$ease: linear)
@@ -1272,17 +1279,45 @@ html,body
 			+w(500px)
 			+m
 			+text-center
+			vertical-align: bottom
 			.icon
 				+show-inline
 				+m(0 4px)
+				+posr
+				.light
+					+posa
+					+tl(-30px,-15px)
+					+w(90px)
+					+animation(flashF,2s,ease,infinite)
+
+				.alert
+					+posa
+					+tl(-60px,50%)
+					+w(82px)
+					+transform(translate3d(-50%,0,0))
+					opacity: 0
+					&.on
+						opacity: 1
 		.icons-1
-			+tl(164px,70px)
+			+tl(168px,70px)
 		.icons-2
-			+tl(514px,70px)
+			+tl(357px,70px)
 		.bottle-1
-			+tl(658px,70px)
+			+tl(535px,70px)
 		.bottle-2
-			+tl(325px,70px)
+			+tl(790px,70px)
+		.ml-30
+			margin-left: -30px
+		.bottle-media-movie
+			+wh(200px,200px)
+			+overhide
+			+show-inline
+			vertical-align: bottom
+			margin-bottom: -24px
+			margin-left: -40px
+			margin-right: -30px
+			
+				
 	.bg
 		+posa
 		+tl(80px)
@@ -1304,6 +1339,11 @@ html,body
 				+transform(translate3d(0,0,0))
 				transition-delay: 1.5s
 				opacity: 1
+			.bottle-full
+				.full
+					+tran
+					+h(100%)
+					transition-delay: 2.2s
 	.content
 		+posa
 		+tl
@@ -1321,17 +1361,39 @@ html,body
 			font-size: 0
 			+animation(pointerM,3s,ease,infinite)
 			z-index: 102
+		.title
+			+posa
+			+tl(420px,(640px-300px)/2)
+			z-index: 102
 		.text
 			+posa
-			+tl(460px,(640px-219px)/2)
+			+tl(800px,(640px-219px)/2)
 			z-index: 102
 		.qrcode
 			+posa
-			+tl(430px+105px+90px,(640px-245px)/2)
+			+tl(430px+60px,(640px-274px)/2)
 			z-index: 102
 			opacity: 0
 			+transform(translate3d(-100%,0,0))
 			+tran($time: 1s)
+		.gear
+			+posa
+			+tl(292px,220px)
+			z-index: 102
+		.bottle-full
+			+posa
+			+tl(118px,176px)
+			+wh(28px,206px)
+			.full
+				+posa
+				+tl
+				+h(0)
+				+w
+				+overhide
+			img
+				+w
+				+h
+			z-index: 102
 		.bubbles
 			+posa
 			+tl(195px,262px)
@@ -1393,13 +1455,13 @@ html,body
 	+w
 	+h
 	// +hide
-	+transform(translate3d(-243px,-113%,0))
+	+transform(translate3d(-260px,-113%,0))
 	+b("../img/pages-logo-bg-start.jpg",no-repeat,center,center,cover)
 	&.thispage
 		+tran($time: 1.3s,$ease: linear)
 		transition-delay: 0.8s
 		+transform(translate3d(0,0,0))
-
+		
 		// z-index: 120
 		.bg
 			+animation(fadeIn,0.5s,ease)
@@ -1453,6 +1515,11 @@ html,body
 				img
 					+posa
 					+tl
+		.logo-movie
+			.gif-content
+				animation: logo-movie (20/15)*1s steps(19)
+				animation-fill-mode: forwards
+				animation-delay: 2.1s
 	.content
 		+posa
 		+tl
@@ -1498,6 +1565,11 @@ html,body
 				+w($w)
 				+h($h)
 				max-width: $w
+	.logo-movie
+		+wh(640px,1134px)
+		+overhide
+		+posa
+		+bl(-60px,0)
 
 .pages-brand
 	+posa
@@ -1537,13 +1609,19 @@ html,body
 				+posa
 				+tl
 				+wh(640px,1134px)
-			// .brand-item-1
-			// 	+b("../img/animate/brands/brand-1.png",no-repeat,-25600px,0,25600px 1134px)
-			// 	animation: brandMovie1 (40/20)*1s steps(40) 1
-			// .brand-item-2
-			// 	+b("../img/animate/brands/brand-2.png",no-repeat,-25600px,0,25600px 1134px)
-			// 	animation: brandMovie2 (40/20)*1s steps(40) infinite
-			// 	animation-delay: (50/20)*1s
+				+overhide
+			.brand-item-1
+				// +b("../img/animate/brands/brand-1.png",no-repeat,-25600px,0,25600px 1134px)
+				.gif-content
+					+wh(32000px,1134px)
+					animation: brandMovie1 (50/20)*1s steps(50) 1
+					animation-fill-mode: forwards
+			.brand-item-2
+				// +b("../img/animate/brands/brand-2.png",no-repeat,-25600px,0,25600px 1134px)
+				.gif-content
+					+wh(25600px,1134px)
+					animation: brandMovie2 (40/20)*1s steps(40) infinite
+					animation-delay: (50/20)*1s
 			
 
 
@@ -1803,10 +1881,13 @@ html,body
 	+w
 	+h
 	+bc(rgba(0,0,0,0.8))
-	.content
+	+hide
+	z-index: 10000
+	.content,.pop-content
 		+posa
-		+tl(50%)
-		+transform(translate3d(0,-50%,0))
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
 		+touch
 		+p(20px 0)
+		+text-center
 		max-height: 100%
