@@ -213,7 +213,7 @@
 	15%
 		+h(50%)
 	30%
-		+h(90%)
+		+h(70%)
 	45%
 		+h(20%)
 	60%
@@ -830,6 +830,22 @@ html,body
 			+tl(198px,166px)
 			+w(60px)
 			z-index: -1
+		.thermometer
+			+posa
+			+tl
+			.line
+				+posa
+				+bl(30px,17px)
+				+w(3px)
+				+h(100px)
+				+bc(#f06640)
+				+animation(music,5s,ease,infinite)
+			&.thermometer-1
+				+tl(188px,114px)
+				.line
+					animation-delay: 500ms
+			&.thermometer-2
+				+tl(188px,240px)
 		.logo
 			+posa
 			+tl(-30px,50%)
