@@ -85,7 +85,7 @@ HTMLElement.prototype.getStyle = function(className) {
 
 images = "";
 
-imageList = ["img/pages-contactus-bg.png", "img/bg.jpg", "img/bottle-award-shadow.png", "img/bottle-award-white.png", "img/bottle-award.png", "img/bottle-brand-white.png", "img/bottle-brand.png", "img/bottle-contactus-shadow.png", "img/bottle-contactus-white.png", "img/bottle-contactus.png", "img/bottle-lighter-fire.png", "img/bottle-lighter.png", "img/bottle-logo-full-white-1.png", "img/bottle-logo-full-white-2.png", "img/bottle-logo-full.png", "img/bottle-logo-next-white-1.png", "img/bottle-logo-next-white-2.png", "img/bottle-logo-next-white-3.png", "img/bottle-logo-next-white-4.png", "img/bottle-logo-next-white.png", "img/bottle-logo-next.png", "img/bottle-logo-white.png", "img/bottle-logo.png", "img/bottle-media-shadow.png", "img/bottle-media-white.png", "img/bottle-media.png", "img/bottle-strategy-shadow.png", "img/bottle-strategy-white.png", "img/bottle-strategy.png", "img/bottle-technology-shadow.png", "img/bottle-technology-white.png", "img/bottle-technology.png", "img/bottom-bottle.png", "img/homepage-bubble.png", "img/icon-brand-1.png", "img/icon-brand-10.png", "img/icon-brand-11.png", "img/icon-brand-12.png", "img/icon-brand-2.png", "img/icon-brand-3.png", "img/icon-brand-4.png", "img/icon-brand-5.png", "img/icon-brand-6.png", "img/icon-brand-7.png", "img/icon-brand-8.png", "img/icon-brand-9.png", "img/icon-logo-bmw.png", "img/magn.png", "img/middle-tower.png", "img/pages-award-bg.png", "img/pages-award-icon-1.png", "img/pages-award-icon-2.png", "img/pages-award-icon-3.png", "img/pages-award-icon-4.png", "img/pages-award-icon-5.png", "img/pages-award-icon-6.png", "img/pages-award-icon-7.png", "img/pages-award-other-1.png", "img/pages-award-other-2.png", "img/pages-brand-bg.jpg", "img/pages-brand-line.png", "img/pages-contactus-drops.png", "img/pages-contactus-offon.png", "img/pages-contactus-pointer.png", "img/pages-contactus-qrcode.png", "img/pages-contactus-text.png", "img/pages-logo-bg-end.jpg", "img/pages-logo-bg-start.jpg", "img/pages-logo-text.png", "img/pages-media-bg.png", "img/pages-media-bottle-1.png", "img/pages-media-bottle-2.png", "img/pages-media-bottle-3.png", "img/pages-media-bottle-4.png", "img/pages-media-bottle-5.png", "img/pages-media-bottle-6.png", "img/pages-media-bottle-7.png", "img/pages-media-icon-1.png", "img/pages-media-icon-10.png", "img/pages-media-icon-11.png", "img/pages-media-icon-12.png", "img/pages-media-icon-2.png", "img/pages-media-icon-3.png", "img/pages-media-icon-4.png", "img/pages-media-icon-5.png", "img/pages-media-icon-6.png", "img/pages-media-icon-7.png", "img/pages-media-icon-8.png", "img/pages-media-icon-9.png", "img/pages-strategy-arrow-yellow.png", "img/pages-strategy-arrow.png", "img/pages-strategy-box.png", "img/pages-strategy-canvas-1.png", "img/pages-strategy-canvas-2.png", "img/pages-strategy-icloud-1.png", "img/pages-strategy-icloud-2.png", "img/pages-strategy-icloud-3.png", "img/pages-strategy-icons.png", "img/pages-strategy-light-all-1.png", "img/pages-strategy-light-all-2.png", "img/pages-strategy-light-all-3.png", "img/pages-strategy-light-all-4.png", "img/pages-strategy-light-all.png", "img/pages-strategy-light-blue.png", "img/pages-strategy-light-red.png", "img/pages-strategy-lighter.png", "img/pages-strategy-line-1.png", "img/pages-strategy-line-2.png", "img/pages-strategy-logo.png", "img/pages-strategy-m-bottom.png", "img/pages-strategy-m-top.png", "img/pages-strategy-parts-red.png", "img/pages-strategy-parts-roulette.png", "img/pages-strategy-parts-yellow.png", "img/pages-strategy-people-1.png", "img/pages-strategy-people-2.png", "img/pages-strategy-screw.png", "img/pages-strategy-switch.png", "img/pages-technology-bottom.png", "img/pages-technology-top.png", "img/right-tower-sound.png", "img/right-tower-timer.png", "img/search-tower.png", "img/time-tower.png", "img/animate/bottle-award/award.png", "img/animate/bottle-brand/brand.png", "img/animate/bottle-contactus/contactus.png", "img/animate/bottle-logo/logo.png", "img/animate/bottle-media/media.png", "img/animate/bottle-strategy/strategy.png", "img/animate/bottle-technology/technology.png", "img/animate/bottle-technology/logo.png", "img/animate/brands/brand-1.png", "img/animate/brands/brand-2.png", "img/animate/strategy-icons/p1.png", "img/animate/strategy-icons/p2.png", "img/animate/strategy-icons/strategy.png", "img/technology/b-1.png", "img/technology/b-2.png", "img/technology/b-3.png", "img/technology/b-4.png", "img/technology/b-5.png", "img/technology/box.png", "img/technology/bt-1.png", "img/technology/bt-2.png", "img/technology/gear-1.png", "img/technology/gear-2.png", "img/technology/gear-3.png", "img/technology/p-1.png", "img/technology/hand.png", "img/technology/i-1.png", "img/technology/i-2.png", "img/technology/i-3.png", "img/technology/i-4.png", "img/technology/i-5.png", "img/technology/l-1.png", "img/technology/l-2.png", "img/technology/l-3.png", "img/technology/l-4.png", "img/technology/l-5.png", "img/technology/p-0.png", "img/technology/p-2.png", "img/technology/p-3.png", "img/technology/p-4.png", "img/technology/p-5.png", "img/technology/pages-technology-top.png", "img/technology/switch.png", "img/technology/t-1.png", "img/technology/t-2.png", "img/technology/t-3.png", "img/technology/t-4.png", "img/technology/t-5.png"];
+imageList = [];
 
 imgs = [];
 
@@ -239,7 +239,13 @@ openBrand = function(evt) {
   var e, n;
   evt.stopPropagation();
   e = $(evt.target);
-  return n = e.attr("rel");
+  n = e.attr("rel");
+  $("#pop").show();
+  $("#pop .pop-content").html("<img src='img/pages-brand-pop-" + n + ".png' />");
+  return $("#pop .close").on("click", function() {
+    $("#pop").hide();
+    return $("#pop .pop-content").html("");
+  });
 };
 
 openAward = function(evt) {
@@ -308,6 +314,8 @@ clearNone = function() {
 };
 
 brandShow = function() {
+  $(".pages-brand .pop").hide();
+  $(".pages-brand .pop .pop-content").html("");
   return setTimeout(function() {
     if ((global != null) && (global["brandbg"] != null)) {
       global["brandbg"].replay("replay");

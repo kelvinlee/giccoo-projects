@@ -67,10 +67,13 @@ html,body
 			em
 				font-style: normal
 .main
-	+posa
-	+tl
+	// +posa
+	// +tl
+	+posr
 	+w
 	+h
+	+m
+	max-width: 640px
 	z-index: 99
 	font-size: 0
 	.homepage
@@ -82,7 +85,18 @@ html,body
 				+br
 			.sliders
 				+overhide
-
+		.left2
+			+posa
+			+tl(50%,0.4rem)
+			+iw(23)
+			font-size: 0
+			+transform(translate3d(0,-50%,0))
+		.right2
+			+posa
+			+tr(50%,0.4rem)
+			+iw(23)
+			font-size: 0
+			+transform(translate3d(0,-50%,0) scale(-1,1))
 		.left
 			+posa
 			+tl(50%,0)
@@ -97,18 +111,27 @@ html,body
 			+transform(translate3d(0,-50%,0) scale(-1,1))
 		.last
 			+posr
-			.sliders
+			.content
 				+posa
-				+bl(20%,10%)
+				+tl
+				+br
+				+w
+				+h
+			.sliders
+				// +posa
+				// +bl(20%,10%)
 				+overhide
 				+w(80%)
+				+m
+				margin-top: 1rem
+				max-width: 400px
 				border: solid 4px #fff
 			.points
 				+w
 				+text-center
-				+posa
-				+bl(15%,0)
-				// margin-top: 1rem
+				// +posa
+				// +bl(15%,0)
+				margin-top: 1rem
 				span
 					+show-inline
 					+wh(0.5rem,0.5rem)
@@ -118,8 +141,9 @@ html,body
 					&.on
 						+bc(#00d1c1)
 			.title
-				+posa
-				+tl(18%)
+				// +posa
+				// +tl(18%)
+				margin-top: 18%
 		.form-box
 			+posa
 			+tl(0,0)

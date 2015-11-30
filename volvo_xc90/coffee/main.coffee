@@ -330,12 +330,17 @@ window.onload = ->
 		window.scrollTo(0,$(".form").offset().top)
 	$(".left").on "click", moveLeft
 	$(".right").on "click", moveRight
+	$(".left2").on "click", mLeft
+	$(".right2").on "click", mRight
 
 mainSlider = {}
+secondSlider = {}
 tabId = 0
+tabId2 = 0
 
 changePoint = (i)->
 	console.log(Math.abs(i))
+	tabId2 = Math.abs(i)
 	# e = $(".contents .item").eq(tabId-1)
 	$(".points span").removeClass "on"
 	$(".points span").eq(Math.abs(i)).addClass "on"
@@ -343,15 +348,32 @@ changePoint = (i)->
 
 changeMain = (i)->
 	tabId = Math.abs(i)
+
+mLeft = ->
+	tabId2--
+	if tabId2 < 0
+		tabId2 = 0
+	secondSlider.setNumber(tabId2)
+	$(".points span").removeClass "on"
+	$(".points span").eq(tabId2).addClass "on"
+mRight = ->
+	tabId2++
+	if tabId2 > 4
+		tabId2 = 4
+	secondSlider.setNumber(tabId2)
+	$(".points span").removeClass "on"
+	$(".points span").eq(tabId2).addClass "on"
+
 moveLeft = ->
-	tabId++
-	if tabId > 4
-		tabId = 4
-	mainSlider.setNumber(tabId)
-moveRight = ->
 	tabId--
 	if tabId < 0
 		tabId = 0
+	mainSlider.setNumber(tabId)
+	
+moveRight = ->
+	tabId++
+	if tabId > 4
+		tabId = 4
 	mainSlider.setNumber(tabId)
 
 

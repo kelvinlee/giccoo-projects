@@ -30,16 +30,21 @@ block content
 					img(src="#{images}/move-left.png")
 			.bg.last
 				img(src="#{images}/bg-3.jpg")
-				.title
-					img(src="#{images}/title.png")
-				.sliders
-					slider(callback="changePoint",list="#{images}/car-1.jpg,#{images}/car-2.jpg,#{images}/car-3.jpg,#{images}/car-4.jpg,#{images}/car-5.jpg")
-				.points
-					span.on
-					span
-					span
-					span
-					span
+				.content
+					.title
+						img(src="#{images}/title.png")
+					.sliders
+						slider(myid="secondSlider",callback="changePoint",list="#{images}/car-1.jpg,#{images}/car-2.jpg,#{images}/car-3.jpg,#{images}/car-4.jpg,#{images}/car-5.jpg")
+					.left2
+						img(src="#{images}/m-left.png")
+					.right2
+						img(src="#{images}/m-left.png")
+					.points
+						span.on
+						span
+						span
+						span
+						span
 
 		.backTop
 			img(src="#{images}/back-top.png")

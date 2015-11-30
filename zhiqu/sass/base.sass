@@ -1626,7 +1626,7 @@ html,body
 		
 		#brand,.ctrls,.brands-item
 			+posa
-			+tl(-120px)
+			+tl
 			// +transform(translate3d(0,-50%,0))
 		.brands-item
 			+wh(640,1134px)
@@ -1923,5 +1923,17 @@ html,body
 		max-height: 100%
 
 
-
+#pop.pop
+	.pop-content
+		+touch
+		+tl(0,0)
+		+w
+		+h
+		+p
+		+transform(translate3d(0,0,0))
+	.close
+		+posf
+		+tl(10px,10px)
+		+wh(37px,37px)
+		+b("../img/pop-close.png",no-repeat,center,center,cover)
 

@@ -725,11 +725,11 @@ html, body {
         font-style: normal; }
 
 .main {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  position: relative;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
+  max-width: 640px;
   z-index: 99;
   font-size: 0; }
   .main .homepage .bg {
@@ -742,6 +742,28 @@ html, body {
       right: 0px; }
     .main .homepage .bg .sliders {
       overflow: hidden; }
+  .main .homepage .left2 {
+    position: absolute;
+    top: 50%;
+    left: 0.4rem;
+    width: 3.59375%;
+    margin: 0 auto;
+    font-size: 0;
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0); }
+    .iphone4 .main .homepage .left2 {
+      width: 2.875%; }
+  .main .homepage .right2 {
+    position: absolute;
+    top: 50%;
+    right: 0.4rem;
+    width: 3.59375%;
+    margin: 0 auto;
+    font-size: 0;
+    -webkit-transform: translate3d(0, -50%, 0) scale(-1, 1);
+            transform: translate3d(0, -50%, 0) scale(-1, 1); }
+    .iphone4 .main .homepage .right2 {
+      width: 2.875%; }
   .main .homepage .left {
     position: absolute;
     top: 50%;
@@ -766,19 +788,25 @@ html, body {
       width: 5.75%; }
   .main .homepage .last {
     position: relative; }
-    .main .homepage .last .sliders {
+    .main .homepage .last .content {
       position: absolute;
-      bottom: 20%;
-      left: 10%;
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
+      width: 100%;
+      height: 100%; }
+    .main .homepage .last .sliders {
       overflow: hidden;
       width: 80%;
+      margin: 0 auto;
+      margin-top: 1rem;
+      max-width: 400px;
       border: solid 4px #fff; }
     .main .homepage .last .points {
       width: 100%;
       text-align: center;
-      position: absolute;
-      bottom: 15%;
-      left: 0; }
+      margin-top: 1rem; }
       .main .homepage .last .points span {
         display: inline-block;
         width: 0.5rem;
@@ -789,9 +817,7 @@ html, body {
         .main .homepage .last .points span.on {
           background-color: #00d1c1; }
     .main .homepage .last .title {
-      position: absolute;
-      top: 18%;
-      left: 0px; }
+      margin-top: 18%; }
   .main .homepage .form-box {
     position: absolute;
     top: 0;
