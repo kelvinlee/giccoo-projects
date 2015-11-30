@@ -94,6 +94,15 @@
 	100%
 		opacity: 1
 
++keyframes(BM)
+	0%,10%
+		+transform(translate3d(0,-50px,0))
+		opacity: 0
+	20%
+		+transform(translate3d(0,0,0))
+		opacity: 1
+	100%
+		+transform(translate3d(215px,0,0))
 
 +keyframes(flash)
 	0%,60%,100%
@@ -110,6 +119,15 @@
 		opacity: 0.4
 	50%
 		opacity: 1
++keyframes(enter)
+	0%
+		+transform(translate3d(0,0,0))
+		opacity: 0
+	5%,95%
+		opacity: 1
+	100%
+		+transform(translate3d(0,-20px,0) scale(0.9,0.9))
+		opacity: 0
 +keyframes(soundBG)
 	to
 		background-position-x: -165px
@@ -428,27 +446,27 @@
 	20%,80%
 		+h(90px)
 
-+keyframes(bomt1)
++keyframes(bomtA)
 	0%,19%
 		opacity: 0
 	19.1%,100%
 		opacity: 1
-+keyframes(bomt2)
++keyframes(bomtB)
 	0%,39%
 		opacity: 0
 	39.1%,100%
 		opacity: 1
-+keyframes(bomt3)
++keyframes(bomtC)
 	0%,59%
 		opacity: 0
 	59.1%,100%
 		opacity: 1
-+keyframes(bomt4)
++keyframes(bomtD)
 	0%,79%
 		opacity: 0
 	79.1%,100%
 		opacity: 1
-+keyframes(bomt5)
++keyframes(bomtE)
 	0%,99%
 		opacity: 0
 	99.1%,100%
@@ -504,6 +522,7 @@
 	99.2%
 		opacity: 0
 		+transform(translate3d(0,74px,0))
+
 
 
 
@@ -880,6 +899,7 @@ html,body
 		.enter
 			+w(100%)
 			+text-center
+			+animation(enter,5s,linear,infinite)
 			.text
 				margin-top: 10px
 				+animation(flashF,2.5s,linear,infinite)
@@ -948,7 +968,7 @@ html,body
 			transition-delay: 1s
 		.content
 			+tran($time: 1s)
-			+transform(translate3d(-50%,-50%,0) scale(4,4))
+			+transform(translate3d(-50%,-50%,0) scale(14,14))
 			transition-delay: 1s
 			opacity: 0
 			.door
@@ -965,6 +985,12 @@ html,body
 	font-size: 0
 	// +transform(scale(0.5,0.5))
 	transform-origin: top left
+	.back-btn
+		+posa
+		+tl(-200px,-200px)
+		+tran
+		z-index: 1001
+		opacity: 0
 	.homepage
 		+posa
 		+tl
@@ -975,41 +1001,86 @@ html,body
 		z-index: 2
 		// &.page-logo
 			// +transform(translate3d(400px,400px,0))
-	&.page-technology .homepage
-		+tran($time: 1.2s,$ease: linear)
-		transition-delay: 0.8s
-		+transform(translate3d(763px,-173px,0))
-		.bottle-award,.left-tower
-			+tran
-			opacity: 0
-			transition-delay: 1.3s
-		
-	&.page-strategy .homepage
-		+tran($time: 1.4s,$ease: linear)
-		transition-delay: 1.2s
-		+transform(translate3d(770px,0,0))
-	&.page-brand .homepage
-		+tran($time: 1s,$ease: linear)
-		transition-delay: 0.7s
-		+transform(translate3d(-128px,105%,0))
-		
-	&.page-logo .homepage
-		+tran($time: 1.3s,$ease: linear)
-		transition-delay: 0.8s
-		+transform(translate3d(260px,113%,0))
-		
-	&.page-contactus .homepage
-		+tran($time: 2.2s,$ease: linear)
-		+transform(translate3d(-670px,-500px,0))
-	&.page-media .homepage
-		+tran($time: 1.5s,$ease: linear)
-		transition-delay: 1s
-		+transform(translate3d(-700px,550px,0))
-		// transition-delay: 2.2s
-	&.page-award .homepage
-		+tran($time: 1.3s,$ease: linear)
-		transition-delay: 1.4s
-		+transform(translate3d(670px,-550px,0))
+	&.page-technology 
+		.homepage
+			+tran($time: 1.2s,$ease: linear)
+			transition-delay: 0.8s
+			+transform(translate3d(763px,-173px,0))
+			.bottle-award,.left-tower
+				+tran
+				opacity: 0
+				transition-delay: 1.3s
+		.back-btn
+			+tl(auto,auto)
+			+tr(10px,10px)
+			opacity: 1
+			+transform(rotate(-90deg))
+			transition-delay: 1000ms
+	&.page-strategy 
+		.homepage
+			+tran($time: 1.4s,$ease: linear)
+			transition-delay: 1.2s
+			+transform(translate3d(770px,0,0))
+		.back-btn
+			+tl(auto,auto)
+			+tr(50px,10px)
+			+transform(rotate(-90deg))
+			opacity: 1
+			transition-delay: 1000ms
+	&.page-brand 
+		.homepage
+			+tran($time: 1s,$ease: linear)
+			transition-delay: 0.7s
+			+transform(translate3d(-128px,105%,0))
+		.back-btn
+			+tl(auto,auto)
+			+bl(10px,10px)
+			opacity: 1
+			transition-delay: 1000ms
+	&.page-logo 
+		.homepage
+			+tran($time: 1.3s,$ease: linear)
+			transition-delay: 0.8s
+			+transform(translate3d(260px,113%,0))
+			.bottle-brand
+				+tran
+				opacity: 0
+				transition-delay: 1.3s
+		.back-btn
+			+tl(auto,auto)
+			+br(10px,10px)
+			opacity: 1
+			transition-delay: 1000ms
+	&.page-contactus 
+		.homepage
+			+tran($time: 2.2s,$ease: linear)
+			+transform(translate3d(-670px,-500px,0))
+		.back-btn
+			+tl(70px,10px)
+			+transform(rotate(90deg))
+			opacity: 1
+			transition-delay: 1000ms
+	&.page-media 
+		.homepage
+			+tran($time: 1.5s,$ease: linear)
+			transition-delay: 1s
+			+transform(translate3d(-700px,550px,0))
+		.back-btn
+			+tl(10px,10px)
+			+transform(rotate(90deg))
+			opacity: 1
+			transition-delay: 1000ms
+	&.page-award 
+		.homepage
+			+tran($time: 1.3s,$ease: linear)
+			transition-delay: 1.4s
+			+transform(translate3d(670px,-550px,0))
+		.back-btn
+			+tl(auto,auto)
+			+tr(10px,10px)
+			+transform(rotate(-90deg))
+			opacity: 1
+			transition-delay: 1000ms
 	// &.page-technology .homepage
 		// +tran($time: 2s,$ease: linear)
 		// +transform(translate3d(780px,-100px,0))
@@ -1160,25 +1231,53 @@ html,body
 				+tl(366px,78px)
 				+w(215px)
 				white-space: nowrap
-				+overhide
+				// +overhide
 				font-size: 0
 				z-index: -1
 				// +bc(#fff)
-				.b-boxs
-					+w(215px*3)
-					// margin-left: -115px
-					// +transform(translate3d(-215px,0,0))
-					+animation(tP3,10s,linear,infinite)
 				.b-box-box
 					+show-inline
 					// +animation(tP2,10s,linear,infinite)
 					.b-m
+						+posa
 						+show-inline
 						+p(0 5px)
-				.first
-					@for $i from 1 through 5
-						.b-m-#{$i}
-							+animation(bomt#{$i},10s,linear,infinite)
+						+tl
+					.b-m-1
+						animation-name: BM
+						animation-fill-mode: both
+						animation-duration: 10s
+						animation-iteration-count: infinite
+						animation-timing-function: linear
+						animation-delay: 2s
+					.b-m-2
+						animation-name: BM
+						animation-fill-mode: both
+						animation-duration: 10s
+						animation-iteration-count: infinite
+						animation-timing-function: linear
+						animation-delay: 4s
+					.b-m-3
+						animation-name: BM
+						animation-fill-mode: both
+						animation-duration: 10s
+						animation-iteration-count: infinite
+						animation-timing-function: linear
+						animation-delay: 6s
+					.b-m-4
+						animation-name: BM
+						animation-fill-mode: both
+						animation-duration: 10s
+						animation-iteration-count: infinite
+						animation-timing-function: linear
+						animation-delay: 8s
+					.b-m-5
+						animation-name: BM
+						animation-fill-mode: both
+						animation-duration: 10s
+						animation-iteration-count: infinite
+						animation-timing-function: linear
+						animation-delay: 10s
 					
 
 		.lights
@@ -1936,4 +2035,5 @@ html,body
 		+tl(10px,10px)
 		+wh(37px,37px)
 		+b("../img/pop-close.png",no-repeat,center,center,cover)
+		z-index: 1000
 

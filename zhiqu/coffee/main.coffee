@@ -13,7 +13,7 @@ global = {}
 tags = null
 
 window.onload = ->
-	riot.mount("*")
+	
 	$(".bottle-logo-next").css {
 		bottom: 164 - $("body").height() * 0.13 - 18
 	}
@@ -32,8 +32,12 @@ window.onload = ->
 		evt.preventDefault()
 
 	$(".pages-brand .content").css({"margin-top": -(1136-$("body").height())+"px"})
-	console.log( -(1136-$("body").height())+"px")
-	loadStart()
+
+	$("#pop .close").on "click", ->
+		$("#pop").hide()
+		$("#pop .pop-content").html("")
+
+	# loadStart()
 
 
 init = ->
@@ -45,23 +49,43 @@ init = ->
 test = ->
 	# alert("haha")
 loadStart = ->
+	# riot.mount("*")
+
 	count = $("[data-layzr]").length
 	now = 0
 	ep = $("#loading-text")
+
 	$("[data-layzr]").on "load", ->
 		now++
-		ep.text parseInt now/count*100
+		ep.text parseInt now/count*60
 		loadEnd() if now >= count
 
 	$("[data-layzr]").each ->
 		$(this).attr("src",$(this).attr("data-layzr"))
+_gifCount = 0
+_gifnow = 0
+loadGIF = ->
+	_gifnow++
+	ep = $("#loading-text")
+	ep.text parseInt 60+_gifnow/_gifCount*40
+	hideFirstPage() if _gifnow >= _gifCount
 loadEnd = ->
+	_gifCount = $("gif").length
+	riot.mount("*")
+	console.log _gifCount
+	
+	# setTimeout ->
+	# 	$(".firstPage").addClass "fadeOut animated"
+	# 	setTimeout ->
+	# 		$(".firstPage").remove()
+	# 	,500
+	# ,1500
+hideFirstPage = ->
+	$(".firstPage").addClass "fadeOut animated"
 	setTimeout ->
-		$(".firstPage").addClass "fadeOut animated"
-		setTimeout ->
-			$(".firstPage").remove()
-		,500
-	,1500
+		$(".firstPage").remove()
+	,500
+
 # loadAllImage = ->
 # 	max = imageList.length
 # 	for image in imageList
@@ -125,7 +149,9 @@ openBottleMain = (evt)->
 	logoShow() if name is "logo"
 	technologyShow() if name is "technology"
 
-backBottleMain = (name)->
+backBottleMain = ()->
+	name = $(".thispage").attr "name"
+	console.log("close",name)
 	$(".main").removeClass "page-"+name
 	$(".bottle-"+name+" .white").removeClass "on"
 	$(".pages-"+name).removeClass "thispage"
@@ -144,28 +170,26 @@ openBrand = (evt)->
 	n = e.attr "rel"
 	$("#pop").show()
 	$("#pop .pop-content").html("<img src='img/pages-brand-pop-"+n+".png' />")
-	$("#pop .close").on "click", ->
-		$("#pop").hide()
-		$("#pop .pop-content").html("")
+	
 
 openAward = (evt)->
 	evt.stopPropagation()
 	e = $(evt.target).parents(".icon")
 
 	n = e.attr "rel"
-	$(".page-award .pop").show()
-	$(".page-award .pop .pop-content").html '<div class="alert-'+n+'"><img src="img/pages-award-alert-'+n+'.jpg" /></div>'
-	$(".page-award .pop").on "click", ->
-		$(".page-award .pop").hide()
+	$(".pages-award .pop").show()
+	$(".pages-award .pop .pop-content").html '<div class="alert-'+n+'"><img src="img/pages-award-alert-'+n+'.jpg" /></div>'
+	$(".pages-award .pop").on "click", ->
+		$(".pages-award .pop").hide()
 openMedia = (evt)->
 	evt.stopPropagation()
 	e = $(evt.target).parents(".icon")
 
 	n = e.attr "rel"
-	$(".page-media .pop").show()
+	$(".pages-media .pop").show()
 	# $(".page-media .pop .pop-content").html '<div class="alert-'+n+'"><img src="img/pages-media-alert-'+n+'.jpg" /></div>'
-	$(".page-media .pop").on "click", ->
-		$(".page-media .pop").hide()
+	$(".pages-media .pop").on "click", ->
+		$(".pages-media .pop").hide()
 
 clearNone = ->
 	setTimeout ->

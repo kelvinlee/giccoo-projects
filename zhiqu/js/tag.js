@@ -80,12 +80,15 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     this.load = function() {
     	self._loaded++
 
+    
     	if (parseInt(self._loaded/self.max*100) == 100) {
     		self.loaded = true
     		self.loadend()
     	}
     }.bind(this);
     this.loadend = function() {
+    	console.log(opts.id," loaded")
+    	loadGIF()
     	self.init()
     }.bind(this);
     this.init = function() {
@@ -107,7 +110,7 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     		self.now = playList[0]
     		self.max = playList[1]
     		self.next = playList[2]
-    		console.log(opts.id,name,self.now,self.now == self.max)
+
     		if (self.now == self.max) {
     			$(".gif",self.root).html(loads[self.now])
     			self.Stop = true

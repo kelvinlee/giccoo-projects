@@ -1,4 +1,4 @@
-// $z: 30
+$z: 30
 // .gif
 // 	+show-inline
 // 	font-size: 0
@@ -272,19 +272,19 @@
 // 	&.replay
 // 		animation: technologylogo (51/$z)*1s steps(51)
 
-// +keyframes(loadbox)
-// 	0%
-// 		background-position-x: 0px
-// 	100%
-// 		background-position-x: -8700px
++keyframes(loadbox)
+	0%
+		background-position-x: 0px
+	100%
+		background-position-x: -8700px
 
-// .loadbox
-// 	+b("../img/loaded/box.png",no-repeat,-8700px,0,8700px 500px)
-// 	+wh(300px,500px)
-// 	&.normal
-// 		background-position: -8700px 0
-// 	&.replay
-// 		animation: loadbox (29/$z)*1s steps(29) infinite
+.loadbox
+	+b("../img/loaded/box.png",no-repeat,-8700px,0,8700px 500px)
+	+wh(300px,500px)
+	&.normal
+		background-position: -8700px 0
+	&.replay
+		animation: loadbox (29/$z)*1s steps(29) infinite
 
 
 // // brand movies
