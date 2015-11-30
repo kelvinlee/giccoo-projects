@@ -34,7 +34,7 @@ riot.tag('playsound', '<div if="{icon}" onclick="{change}" class="icon-play {typ
   
 });
 
-riot.tag('select-page', '<div class="box"><img src="img/box.png"></div> <div class="content"> <div class="logo"><img src="img/home-logo.png"></div> <div class="menus"> <div class="line"><img src="img/select-line.png"></div> <div class="menu"> <div each="{menu in menus}" onclick="{changeMenu(menu)}" class="menu-item {now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,before: parent.now == menus.indexOf(menu)+1}"><img riot-src="{menu.thumb}.png"> <div onclick="{openCuisine}" class="over"></div> </div> </div> </div> <div class="text"> <p class="title"><span class="icon"><img src="img/icon-star.png"></span><span>{info.name}</span></p> <p>{info.description}</p> </div> <div class="btns"> <div onclick="{openCuisine}" class="btn-info"><img src="img/button-info.png"></div> <div onclick="{randomCuisine}" class="btn-random"><img src="img/button-random.png"></div> </div> </div> <div show="{openInfo}" class="cuisinePage fadeIn animated"> <div class="load"><img src="/libs/img/loading-normal.png"></div> <div if="{openInfo}" class="context-img"><img riot-src="{info.thumb}-1.jpg"></div> <div class="btns"><img src="img/button-list.png"> <div onclick="{closeCuisine}" class="btn btn-1"></div> <div onclick="{showCuisineInfo}" class="btn btn-2"></div> <div onclick="{showShare}" class="btn btn-3"></div> </div> </div> <div show="{openInfoInfo}" class="cuisineInfoPage fadeIn animated"> <div class="load"><img src="/libs/img/loading-normal.png"></div> <div if="{openInfo}" class="context-img"><img riot-src="{info.thumb}-2.jpg"></div> <div class="btns"> <div onclick="{closeCuisineInfo}" class="btn-new btn-4"><img src="img/icon-back.png"></div> <div onclick="{hideSave}" show="{save}" class="btn-new btn-5"><img src="img/icon-save.png"></div> </div> </div>', function(opts) {
+riot.tag('select-page', '<div class="box"><img src="img/box.png"></div> <div class="content"> <div class="logo"><img src="img/home-logo.png"></div> <div class="menus"> <div class="line"><img src="img/select-line.png"></div> <div class="menu"> <div each="{menu in menus}" onclick="{changeMenu(menu)}" class="menu-item {now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,afterfornow: parent.now == menus.length-1 &amp;&amp; menus.indexOf(menu) == 0,before: parent.now == menus.indexOf(menu)+1, before: parent.now == 0 &amp;&amp; menus.indexOf(menu) == menus.length-1,readydown: parent.now == 1 &amp;&amp; menus.indexOf(menu) == menus.length-1, readyup: parent.now == menus.length-2 &amp;&amp; menus.indexOf(menu) == 0,readydown: parent.now == 0 &amp;&amp; menus.indexOf(menu) == menus.length-2, readyup: parent.now == menus.length-1 &amp;&amp; menus.indexOf(menu) == 1}"><img riot-src="{menu.thumb}.png"> <div onclick="{openCuisine}" class="over"></div> </div> </div> </div> <div show="{canRun}" class="text fadeIn animated"> <p class="title"><span class="icon"><img src="img/icon-star.png"></span><span>{info.name}</span></p> <p>{info.description}</p> </div> <div class="btns"> <div onclick="{openCuisine}" class="btn-info"><img src="img/button-info.png"></div> <div onclick="{randomCuisine}" class="btn-random"><img src="img/button-random.png"></div> </div> </div> <div show="{openInfo}" class="cuisinePage fadeIn animated"> <div class="load"><img src="/libs/img/loading-normal.png"></div> <div if="{openInfo}" class="context-img"><img riot-src="{info.thumb}-1.jpg"></div> <div class="btns"><img src="img/button-list.png"> <div onclick="{closeCuisine}" class="btn btn-1"></div> <div onclick="{showCuisineInfo}" class="btn btn-2"></div> <div onclick="{showShare}" class="btn btn-3"></div> </div> </div> <div show="{openInfoInfo}" class="cuisineInfoPage fadeIn animated"> <div class="load"><img src="/libs/img/loading-normal.png"></div> <div if="{openInfo}" class="context-img"><img riot-src="{info.thumb}-2.jpg"></div> <div class="btns"> <div onclick="{closeCuisineInfo}" class="btn-new btn-4"><img src="img/icon-back.png"></div> <div onclick="{hideSave}" show="{save}" class="btn-new btn-5"><img src="img/icon-save.png"></div> </div> </div>', function(opts) {
     var self = this
     this.openInfo = false
     this.openInfoInfo = false
@@ -54,11 +54,14 @@ riot.tag('select-page', '<div class="box"><img src="img/box.png"></div> <div cla
     	{name:"《掰馍》",thumb:"img/cuisine-9",description:"吃羊肉泡馍前，先得憋个大招"},
     	{name:"《Miss麻辣烫》",thumb:"img/cuisine-10",description:"是不是所有的“秀色可餐”，最后都变成了“食色性也”？"}
     ]
+    
     this.info = this.menus[this.now]
     this.randomCuisine = function() {
+    	if (!self.canRun) { return false }
 
 
     	self.changeMenu(self.menus[parseInt(Math.random()*(self.menus.length-1))]).call()
+    	self.openCuisine()
     }.bind(this);
     this.changeMenu = function(menu) {
     	return function() {
@@ -100,8 +103,8 @@ riot.tag('select-page', '<div class="box"><img src="img/box.png"></div> <div cla
     	setTimeout(function(){
     		self.now = self.now-1
     		self.info = self.menus[self.now]
-    		self.update()
     		self.init()
+    		self.update()
     	},500)
     }.bind(this);
     var _default = {x:0, y:0, can: true}
@@ -118,14 +121,14 @@ riot.tag('select-page', '<div class="box"><img src="img/box.png"></div> <div cla
     	evt.preventDefault()
     	if (move > 50) {
     		self.now--
-    		if (self.now < 0) {self.now = 0}
+    		if (self.now < 0) {self.now = self.menus.length-1}
     		console.log(self.menus[self.now])
     		self.changeMenu(self.menus[self.now]).call()
     		_default.can = false
     	}
     	if (move < -50) {
     		self.now++
-    		if (self.now >= self.menus.length) {self.now = self.menus.length-1}
+    		if (self.now >= self.menus.length) {self.now = 0}
     		console.log(self.menus[self.now])
     		self.changeMenu(self.menus[self.now]).call()
     		_default.can = false

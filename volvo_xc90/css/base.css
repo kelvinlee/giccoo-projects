@@ -740,6 +740,8 @@ html, body {
       left: 0px;
       bottom: 0px;
       right: 0px; }
+    .main .homepage .bg .sliders {
+      overflow: hidden; }
   .main .homepage .left {
     position: absolute;
     top: 50%;

@@ -914,6 +914,12 @@ html, body {
             z-index: 8; }
             .main .otherpage .select-page .menus .menu-item.now .over {
               display: block; }
+          .main .otherpage .select-page .menus .menu-item.afterfornow {
+            top: 88%;
+            left: 55%;
+            width: 130%;
+            opacity: 1;
+            z-index: 9; }
           .main .otherpage .select-page .menus .menu-item.after {
             top: 88%;
             left: 55%;
@@ -923,7 +929,33 @@ html, body {
             .main .otherpage .select-page .menus .menu-item.after ~ .menu-item {
               opacity: 0;
               top: 100%;
-              left: 0; }
+              left: 0px; }
+              .main .otherpage .select-page .menus .menu-item.after ~ .menu-item.readydown {
+                top: 0px;
+                left: 0px; }
+              .main .otherpage .select-page .menus .menu-item.after ~ .menu-item.readyup {
+                top: 100%;
+                left: 0px; }
+              .main .otherpage .select-page .menus .menu-item.after ~ .menu-item.before {
+                top: 10%;
+                left: 50%;
+                width: 130%;
+                opacity: 1;
+                z-index: 9; }
+              .main .otherpage .select-page .menus .menu-item.after ~ .menu-item.now {
+                top: 35%;
+                left: 130%;
+                width: 200%;
+                opacity: 1;
+                z-index: 8; }
+                .main .otherpage .select-page .menus .menu-item.after ~ .menu-item.now .over {
+                  display: block; }
+          .main .otherpage .select-page .menus .menu-item.readydown {
+            top: 0px;
+            left: 0px; }
+          .main .otherpage .select-page .menus .menu-item.readyup {
+            top: 100%;
+            left: 0px; }
       .main .otherpage .select-page .text {
         position: absolute;
         top: 62%;

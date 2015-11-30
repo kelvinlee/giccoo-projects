@@ -22,12 +22,14 @@ block content
 	.main
 		.homepage
 			-for (var i=1; i<7;i++)
-				.food.rubberBand.animated.duration-10(class="food-#{i} delay-#{i*2}")
+				.food.fadeIn.animated.duration-10(class="food-#{i} delay-#{i*2}")
 					img(src="img/food-#{i}.jpg")
-			.logo.fadeInDown.animated.duration-15.delay-8
+			.logo.fadeIn.animated.duration-15.delay-8
 				img(src="img/logo.png")
-			.star.fadeInTop.animated.duration-10.delay-12(onclick="hidePage()")
-				img(src="img/start.png")
+
+			.star.fadeInUp.animated.duration-10.delay-12(onclick="hidePage()")
+				.rubberBand.animated.duration-10.delay-17
+					img(src="img/start.png")
 		.otherpage
 			playsound(src="http://t.douban.com/img/files/file-14483685209223.mp3",icon="true",icon-play="img/icon-play.png")
 			.infopage.fadeIn.animated

@@ -30,7 +30,7 @@
 		+transform(translate3d(0,0,0))
 		// +transform(translate3d(200px,0,0))
 		margin-right: 100px
-+keyframes(cloudLine1)
++keyframes(cloudLineA)
 	0%,60%
 		+transform(translate3d(-100%,0,0))
 		opacity: 1
@@ -39,8 +39,8 @@
 	95%
 		opacity: 1
 	100%
-		opacity: 0
-+keyframes(cloudLine2)
+		opacity: 1
++keyframes(cloudLineB)
 	0%,70%
 		+transform(translate3d(0,100%,0))
 		opacity: 1
@@ -49,31 +49,49 @@
 	95%
 		opacity: 1
 	100%
-		opacity: 0
-+keyframes(arrow1)
+		opacity: 1
++keyframes(arrowA)
 	0%
-		opacity: 0
-	10%,100%
+		opacity: 0.4
+	10%
 		opacity: 1
-+keyframes(arrow2)
-	0%,10%
-		opacity: 0
-	20%,100%
+	100%
 		opacity: 1
-+keyframes(arrow3)
-	0%,20%
-		opacity: 0
-	30%,100%
++keyframes(arrowB)
+	0%
+		opacity: 0.4
+	10%
+		opacity: 0.4
+	20%
 		opacity: 1
-+keyframes(arrow4)
-	0%,30%
-		opacity: 0
-	40%,100%
+	100%
 		opacity: 1
-+keyframes(arrow5)
-	0%,40%
-		opacity: 0
-	50%,100%
++keyframes(arrowC)
+	0%
+		opacity: 0.4
+	20%
+		opacity: 0.4
+	30%
+		opacity: 1
+	100%
+		opacity: 1
++keyframes(arrowD)
+	0%
+		opacity: 0.4
+	30%
+		opacity: 0.4
+	40%
+		opacity: 1
+	100%
+		opacity: 1
++keyframes(arrowE)
+	0%
+		opacity: 0.4
+	40%
+		opacity: 0.4
+	50%
+		opacity: 1
+	100%
 		opacity: 1
 
 
@@ -105,7 +123,7 @@
 		+w(100%)
 	to
 		+w(0%)
-+keyframes(people1)
++keyframes(peopleA)
 	0%
 		+transform(scale(-1,1) translate3d(190px,0,0))
 		opacity: 1
@@ -114,7 +132,7 @@
 	100%
 		opacity: 0
 		+transform(scale(-1,1) translate3d(-700px,0,0))
-+keyframes(people2)
++keyframes(peopleB)
 	0%
 		+transform(scale(-1,1) translate3d(-90px,0,0))
 		opacity: 1
@@ -662,6 +680,10 @@ html,body
 			+animation(bubble,3.5s,linear,infinite)
 			img
 				+wh(18px,18px)
+	&.Mybottle ~ .bottle-logo
+		+tran
+		opacity: 0
+		transition-delay: 0.7s
 .bottle-media
 	$w: 953px
 	+tl(110px,-180px)
@@ -717,8 +739,8 @@ html,body
 	+tl(575px,-132px)
 	#bottleaward
 		+show-inline
-		margin-top: -28px
-		margin-left: -52px
+		margin-top: -8px
+		margin-left: -12px
 	.shadow
 		+tl(16px,295px)
 		z-index: -1
@@ -940,6 +962,7 @@ html,body
 	// +h(1136px)
 	+b("../img/bg.jpg",no-repeat,center,center,cover)
 	+overhide
+	font-size: 0
 	// +transform(scale(0.5,0.5))
 	transform-origin: top left
 	.homepage
@@ -956,6 +979,10 @@ html,body
 		+tran($time: 1.2s,$ease: linear)
 		transition-delay: 0.8s
 		+transform(translate3d(763px,-173px,0))
+		.bottle-award,.left-tower
+			+tran
+			opacity: 0
+			transition-delay: 1.3s
 		
 	&.page-strategy .homepage
 		+tran($time: 1.4s,$ease: linear)
@@ -977,7 +1004,7 @@ html,body
 	&.page-media .homepage
 		+tran($time: 1.5s,$ease: linear)
 		transition-delay: 1s
-		+transform(translate3d(-690px,550px,0))
+		+transform(translate3d(-700px,550px,0))
 		// transition-delay: 2.2s
 	&.page-award .homepage
 		+tran($time: 1.3s,$ease: linear)
@@ -1040,6 +1067,12 @@ html,body
 				z-index: -1
 				+animation(flash,4s,ease,infinite)
 				animation-delay: 200ms
+			.item-switch
+				+posa
+				+tl(258px,525px)
+				z-index: -1
+				transform-origin: left center
+				+animation(switch,4.6s,ease,infinite)
 			.item-bt
 				+posa
 				+tl(140px,228px)
@@ -1065,15 +1098,19 @@ html,body
 					&.item-1
 						+tl
 						+animation(compD2,2s,linear,infinite)
+						animation-delay: 500ms
 					&.item-2
 						+tl(15px)
 						+animation(compD,2s,linear,infinite)
+						animation-delay: 500ms
 					&.item-3
 						+tl(30px)
 						+animation(compU,2s,linear,infinite)
+						animation-delay: 500ms
 					&.item-4
 						+tl(45px)
 						+animation(compU2,2s,linear,infinite)
+						animation-delay: 500ms
 			.logo
 				+posa
 				+tl(170px,382px)
@@ -1277,7 +1314,7 @@ html,body
 	+w
 	+h
 	z-index: 102
-	+transform(translate3d(690px,-550px,0))
+	+transform(translate3d(700px,-550px,0))
 	&.thispage
 		+tran($time: 1.5s,$ease: linear)
 		transition-delay: 1s
@@ -1483,59 +1520,10 @@ html,body
 			+animation(fadeIn,0.5s,ease)
 			animation-delay: 2s
 			z-index: -1
-		.bottle-logo-next
-			+show
-			.white
-				
-				+tran($time: 0.5)
-			.white-1,.white-2,.white-3,.white-4
-				+tran($time: 0.5)
-				+posa
-				+overhide
-				+w(100%)
-				+h(100%)
-			.white-1
-				// transition-delay: 2s
-				// +tran($time: 0.5,$ease: linear)
-				+tl
-				// +h(0%)
-				+animation(whiteH,0.5s,linear)
-				animation-delay: 2s
-			.white-2
-				// transition-delay: 2.5s
-				// +tran($time: 0.5,$ease: linear)
-				+tr
-				+animation(whiteW,0.5s,linear)
-				animation-delay: 2.5s
-				+text-right
-				img
-					+posa
-					+tr
-			.white-3
-				// transition-delay: 3s
-				// +tran($time: 0.5,$ease: linear)
-				+br
-				// +h(0%)
-				+animation(whiteH,0.5s,linear)
-				animation-delay: 3s
-				img
-					+posa
-					+bl
-			.white-4
-				// transition-delay: 3.5s
-				// +tran($time: 0.5,$ease: linear)
-				+posa
-				+tl
-				+animation(whiteW,0.5s,linear)
-				animation-delay: 3.25s
-				img
-					+posa
-					+tl
-		.logo-movie
-			.gif-content
-				animation: logo-movie (20/15)*1s steps(19)
-				animation-fill-mode: forwards
-				animation-delay: 2.1s
+		.logo-text
+			+animation(fadeIn,0.5s,ease)
+			animation-delay: 3.5s
+		
 	.content
 		+posa
 		+tl
@@ -1547,8 +1535,25 @@ html,body
 		+tl
 		+w
 		+h
-		+b("../img/pages-logo-bg-end.jpg",no-repeat,center,center,cover)
-		+animation(fadeOut,.5s,ease)
+		font-size: 0
+		img
+			+w
+			+h
+	.logo-page-bottle
+		+posa
+		+bl(-52px,160px)
+		z-index: 120
+	.vitro
+		+posa
+		+bl(100px,-46px)
+		z-index: 110
+		+wh(700px,1000px)
+	.logo-text
+		+posa
+		+bl(520px,10px)
+		+wh(600px,400px)
+		z-index: 109
+
 	.bottle-logo-next
 		+posa
 		+bl(28px,0px)
@@ -1595,18 +1600,22 @@ html,body
 	// +bc(#73ea9c)
 	+tran($time: 0.5s,$ease: linear)
 	z-index: 1
-	opacity: 0
+	// opacity: 0
 	+transform(translate3d(128px,-105%,0))
 	&.thispage
 		+tran($time: 1s,$ease: linear)
 		transition-delay: 0.7s
 		+transform(translate3d(0,0,0))
-		opacity: 1
+		// opacity: 1
 	.bg
 		+posa
 		+tl
 		+w
 		+h
+		font-size: 0
+		img
+			+w
+			+h
 		// +b("../img/pages-brand-bg.jpg",no-repeat,center,center,cover)
 	.content
 		+posa
@@ -1677,6 +1686,10 @@ html,body
 		.m-top
 			+posr
 			z-index: 10
+			.item-arrow-white
+				+posa
+				+tl(100px,170px)
+
 			.item-lighter
 				+posa
 				+tl(240px,288px)
@@ -1701,19 +1714,20 @@ html,body
 					+transform(translate3d(-50%,-50%,0))
 					+w(63px)
 					+animation(tvShow,3s,ease,infinite)
+
 			.item-arrow
 				+posa
 				+br(-40px,80px)
 				.arrow1
-					+animation(arrow1,6s,linear,infinite)
+					+animation(arrowA,6s,linear,infinite)
 				.arrow2
-					+animation(arrow2,6s,linear,infinite)
+					+animation(arrowB,6s,linear,infinite)
 				.arrow3
-					+animation(arrow3,6s,linear,infinite)
+					+animation(arrowC,6s,linear,infinite)
 				.arrow4
-					+animation(arrow4,6s,linear,infinite)
+					+animation(arrowD,6s,linear,infinite)
 				.arrow5
-					+animation(arrow5,6s,linear,infinite)
+					+animation(arrowE,6s,linear,infinite)
 			.item-light-red
 				+posa
 				+tl(307px,325px)
@@ -1754,9 +1768,9 @@ html,body
 					+posa
 					+tl
 				.line1
-					+animation(cloudLine1,5s,linear,infinite)
+					+animation(cloudLineA,5s,linear,infinite)
 				.line2
-					+animation(cloudLine2,5s,linear,infinite)
+					+animation(cloudLineB,5s,linear,infinite)
 
 
 
@@ -1825,14 +1839,14 @@ html,body
 			.p1
 				+posa
 				+bl
-				+animation(people1,12s,linear,infinite)
+				+animation(peopleA,12s,linear,infinite)
 				z-index: 99
 				transform-origin: right center
 				animation-delay: 2s
 			.p2
 				+posa
 				+br
-				+animation(people2,15s,linear,infinite)
+				+animation(peopleB,15s,linear,infinite)
 				z-index: 99
 				transform-origin: center center
 			.parts1,.parts2,.parts3
@@ -1870,7 +1884,7 @@ html,body
 				.items
 					+w
 					+h
-					+animation(canvasM,8s,linear,infinite)
+					// +animation(canvasM,8s,linear,infinite)
 				.item
 					+show-inline
 			.bg
@@ -1907,3 +1921,7 @@ html,body
 		+p(20px 0)
 		+text-center
 		max-height: 100%
+
+
+
+

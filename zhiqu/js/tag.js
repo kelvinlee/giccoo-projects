@@ -53,29 +53,96 @@ riot.tag('brands', '<canvas width="{opts.width}" height="{opts.height}"></canvas
 
 riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {opts.id} {played}"></div>', function(opts) {
     var self = this
-    var delay = parseInt(opts.delay)?parseInt(opts.delay):0
-    this.played = opts.play
+    var loads = []
+    self.now = 0
+    self.count = parseInt(opts.count)
+    self.max = parseInt(opts.count)
+    self._loaded = 0
+    self.loaded = false
+    self.mounted = false
+    self.Stop = false
+    self.play = opts.play
+    
+    var fpsInterval = 1000/30
+    var then = Date.now()
+    var startTime = then
+    var now = Date.now()
+    
     if (opts.id&&global) { global[opts.id] = self }
-    this.replay = function(name) {
-    	self.played = name
-    	self.update()
-    }.bind(this);
-    this.animate = function(evt) {
-
-    	var old = opts[self.played]
-    	self.played = "normal"
-    	self.update()
-
-    	
-    	setTimeout(function(){
-    		self.replay(old)
-    	},delay+1)
-    }.bind(this);
-    self.on("mount",function(){
-    	if (opts.normal == "replay" && opts.replay == "replay" && opts.play == "replay") {
-    	}else{
-    		$(".gif",self.root)[0].addEventListener(ANIMATION_END_NAME,self.animate)
+    for (var i=0;i < self.max; i++) {
+    	var image = new Image()
+    	image.src = opts.src.replace("id",i+1)
+    	image.onload = function(){
+    		self.load()
     	}
+    	loads.push(image)
+    }
+    this.load = function() {
+    	self._loaded++
+
+    	if (parseInt(self._loaded/self.max*100) == 100) {
+    		self.loaded = true
+    		self.loadend()
+    	}
+    }.bind(this);
+    this.loadend = function() {
+    	self.init()
+    }.bind(this);
+    this.init = function() {
+    	if (self.loaded && self.mounted) {
+    		self.replay(opts.play)
+    	}
+    }.bind(this);
+    this.replay = function(name) {
+
+    	self.play = name
+    	if (name == "stop") {
+    		self.now = parseInt(opts[name])
+    		$(".gif",self.root).html(loads[self.now])
+    		self.Stop = false
+    	}
+    	if (opts[name]) {
+    		self.Stop = false
+    		var playList = eval(opts[name])
+    		self.now = playList[0]
+    		self.max = playList[1]
+    		self.next = playList[2]
+    		console.log(opts.id,name,self.now,self.now == self.max)
+    		if (self.now == self.max) {
+    			$(".gif",self.root).html(loads[self.now])
+    			self.Stop = true
+    			return true
+    		}
+    		then = Date.now()
+    		self.animate()
+    	}
+    }.bind(this);
+    this.animate = function() {
+    	if (self.Stop) { return false }
+    	now = Date.now()
+    	var elapsed = now - then
+    	if (elapsed > fpsInterval) {
+    		then = now - (elapsed%fpsInterval)
+
+    		$(".gif",self.root).html(loads[self.now])
+    		self.now++
+    		if (self.now > self.max) {
+    			self.now = self.max
+    			if (opts.delay && self.play != "stepend") {
+    				setTimeout(function(){
+    					self.replay(self.next)
+    				},opts.delay)
+    				return false
+    			}
+    			self.replay(self.next)
+    			return false 
+    		}
+    	}
+    	requestAnimationFrame(self.animate)
+    }.bind(this);
+    this.on("mount",function(){
+    	self.mounted = true
+    	self.init()
     })
   
 });

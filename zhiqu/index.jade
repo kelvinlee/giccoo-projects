@@ -14,7 +14,7 @@ block content
 	//- gif(width="640",height="1134",normal='[0,86, "replay"]',replay='[87, 126]',stop="86",play="normal",count="127",src="img/animate/brands/brand-id.png")
 	//- gif(id="brandbg",width="640",height="1134",normal='[0,6, "stop"]',replay='[0,7]',stop="[7,7]",play="normal",count="8",src="img/animate/brandbg/brand-id.png")
 	//- animations='{ "normal": [0,86, "replay"], "replay": [87, 126], "stop": 86 }'
-	.firstPage
+	//- .firstPage
 		.content
 			.home
 				img(src="#{images}/loaded/home.png")
@@ -53,62 +53,66 @@ block content
 	//- main#main
 	.main
 		.homepage
-			.bottle.bottle-logo
-				img(data-layzr="#{images}/bottle-logo.png")
-				.gif.bottlelogo.normal(id="bottlelogo",width="480",height="620",count="63",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-logo/logo.png",onload="test()")
-					.gif-content
-						img(data-layzr="img/animate/bottle-logo/logo.png")
-				.on-button(onclick="openBottleMain(this)",page-name="logo")
-			.bottle.bottle-strategy
-				img(data-layzr="#{images}/bottle-strategy.png")
-				.gif.bottlestrategy.normal(id="bottlestrategy",width="850",height="200",count="78",normal='replay',replay='stop',stop="stop",play="normal",src="img/animate/bottle-strategy/strategy.png")
-					.gif-content
-						img(data-layzr="img/animate/bottle-strategy/strategy.png")
-				.shadow
-					img(data-layzr="#{images}/bottle-strategy-shadow.png")
-				.on-button(onclick="openBottleMain(this)",page-name="strategy")
-			.bottle.bottle-technology
-				img(data-layzr="#{images}/bottle-technology.png")
-				.gif.bottletechnology.normal(id="bottletechnology",width="800",height="260",count="60",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-technology/technology.png")
-					.gif-content
-						img(data-layzr="img/animate/bottle-technology/technology.png")
-				.shadow
-					img(data-layzr="#{images}/bottle-technology-shadow.png")
-				.on-button(onclick="openBottleMain(this)",page-name="technology")
 			.bottle.bottle-brand
 				img(data-layzr="#{images}/bottle-brand.png")
-				.gif.bottlebrand.normal(id="bottlebrand",width="300",height="750",count="51",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-brand/brand.png")
+				//- .gif.bottlebrand.normal(id="bottlebrand",width="300",height="750",count="51",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-brand/brand.png")
 					.gif-content
 						img(data-layzr="img/animate/bottle-brand/brand.png")
+				gif(id="bottlebrand",width="300",height="750",count="51",normal='[0,0,"normal"]',replay='[0,50,"stop"]',stop="50",play="normal",src="img/animate/bottle-brand/brand-id.png")
 				.on-button(onclick="openBottleMain(this)",page-name="brand")
 				.bubbles
 					-for (var i=0;i<3;i++)
 						.bubble(class="bubble-#{i+1}")
 							img(data-layzr="#{images}/homepage-bubble.png")
+			.bottle.bottle-logo
+				img(data-layzr="#{images}/bottle-logo.png")
+				//- .gif.bottlelogo.normal(id="bottlelogo",width="480",height="620",count="63",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-logo/logo.png",onload="test()")
+					.gif-content
+						img(data-layzr="img/animate/bottle-logo/logo.png")
+				gif(id="bottlelogo",width="480",height="620",count="63",normal='[0,0,"normal"]',replay='[0,62,"stop"]',stop="62",play="normal",src="img/animate/bottle-logo/logo-id.png")
+				.on-button(onclick="openBottleMain(this)",page-name="logo")
+			.bottle.bottle-strategy
+				img(data-layzr="#{images}/bottle-strategy.png")
+				//- .gif.bottlestrategy.normal(id="bottlestrategy",width="850",height="200",count="78",normal='replay',replay='stop',stop="stop",play="normal",src="img/animate/bottle-strategy/strategy.png")
+					.gif-content
+						img(data-layzr="img/animate/bottle-strategy/strategy.png")
+				gif(id="bottlestrategy",width="850",height="200",count="78",normal='[0,0,"normal"]',replay='[0,77,"stop"]',stop="77",play="normal",src="img/animate/bottle-strategy/strategy-id.png")
+				.shadow
+					img(data-layzr="#{images}/bottle-strategy-shadow.png")
+				.on-button(onclick="openBottleMain(this)",page-name="strategy")
+			.bottle.bottle-technology
+				img(data-layzr="#{images}/bottle-technology.png")
+				//- .gif.bottletechnology.normal(id="bottletechnology",width="800",height="260",count="60",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-technology/technology.png")
+					.gif-content
+						img(data-layzr="img/animate/bottle-technology/technology.png")
+				gif(id="bottletechnology",width="800",height="260",count="60",normal='[0,0,"normal"]',replay='[0,59,"stop"]',stop="59",play="normal",src="img/animate/bottle-technology/technology-id.png")
+				.shadow
+					img(data-layzr="#{images}/bottle-technology-shadow.png")
+				.on-button(onclick="openBottleMain(this)",page-name="technology")
 			.bottle.bottle-media
 				img(data-layzr="#{images}/bottle-media.png")
-				.gif.bottlemedia.normal(id="bottlemedia",width="380",height="380",count="76",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-media/media.png")
+				//- .gif.bottlemedia.normal(id="bottlemedia",width="380",height="380",count="76",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-media/media.png")
 					.gif-content
 						img(data-layzr="img/animate/bottle-media/media.png")
-
+				gif(id="bottlemedia",width="380",height="380",count="76",normal='[0,0,"normal"]',replay='[0,75,"stop"]',stop="75",play="normal",src="img/animate/bottle-media/media-id.png")
 				.shadow
 					img(data-layzr="#{images}/bottle-media-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="media")
 			.bottle.bottle-contactus
 				//- img(data-layzr="#{images}/bottle-contactus.png")
-				.gif.bottlecontactus.normal(id="bottlecontactus",width="480",height="480",count="66",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-contactus/contactus.png")
+				//- .gif.bottlecontactus.normal(id="bottlecontactus",width="480",height="480",count="66",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-contactus/contactus.png")
 					.gif-content
 						img(data-layzr="img/animate/bottle-contactus/contactus.png")
-
+				gif(id="bottlecontactus",width="480",height="480",count="81",normal='[0,0,"normal"]',replay='[0,80,"stop"]',stop="80",play="normal",src="img/animate/bottle-contactus/contactus-id.png")
 				.shadow
 					img(data-layzr="#{images}/bottle-contactus-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="contactus")
-				
 			.bottle.bottle-award
 				//- img(data-layzr="#{images}/bottle-award.png")
-				.gif.bottleaward.normal(id="bottleaward",width="600",height="300",count="82",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-award/award.png")
+				//- .gif.bottleaward.normal(id="bottleaward",width="600",height="300",count="82",normal='normal',replay='stop',stop="stop",play="normal",src="img/animate/bottle-award/award.png")
 					.gif-content
 						img(data-layzr="img/animate/bottle-award/award.png")
+				gif(id="bottleaward",width="550",height="265",count="82",normal='[0,0,"normal"]',replay='[0,81,"stop"]',stop="81",play="normal",src="img/animate/bottle-award/award-id.png")
 				.shadow
 					img(data-layzr="#{images}/bottle-award-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="award")
@@ -137,7 +141,6 @@ block content
 				img(data-layzr="#{images}/magn.png")
 		.pages-technology
 			.content(onclick="backBottleMain('technology')")
-
 				.m-top
 					.bg
 						img(data-layzr="#{images}/pages-technology-top.png")
@@ -156,7 +159,9 @@ block content
 					.box-logo
 						img(data-layzr="#{images}/technology/box.png")
 					.logo
-						gif(id="technologylogo",width="170",height="200",delay="3300",normal="normal",replay="replay",stop="stop",play="replay",count="51",src="img/animate/bottle-technology/logo.png")
+						gif(id="technologylogo",width="170",height="200",delay="4000",normal="[0,0,'normal']",replay="[0,50,'replay']",stop="0",play="normal",count="51",src="img/animate/technology/logo/logo-id.png")
+					.item-switch
+						img(data-layzr="#{images}/pages-strategy-switch.png")
 					.item-light-red
 						img(data-layzr="#{images}/pages-strategy-light-red.png")
 					.item-light-blue
@@ -292,9 +297,11 @@ block content
 				.bottles.bottle-2
 					.icon.ml-30
 						img(data-layzr="#{images}/pages-media-bottle-5.png")
-					.bottle-media-movie.replay
+					//- .bottle-media-movie.replay
 						.gif-content
 							img(data-layzr="#{images}/pages-media-bottle-movie.png")
+					.bottle-media-movie
+						gif(id="bottlemediamovie",width="200",height="200",count="38",normal='[0,0,"normal"]',replay='[0,37,"replay"]',stop="0",play="normal",src="img/animate/media/media-id.png")
 					.icon
 						img(data-layzr="#{images}/pages-media-bottle-6.png")
 			.pop.fadeIn.animated#mediapop
@@ -302,7 +309,14 @@ block content
 					img(data-layzr="#{images}/pages-media-alert.png")
 		.pages-logo
 			.bg
+				gif(id="logobg",width="640",height="1134",count="24",normal='[0,0,"normal"]',replay='[0,23,"stop"]',stop="23",play="normal",src="img/animate/logo/bg/bg-id.jpg")
 			.content(onclick="backBottleMain('logo')")
+				.logo-page-bottle
+					gif(id="logobottle",width="300",height="300",count="15",normal='[0,0,"normal"]',replay='[0,14,"stop"]',stop="14",play="normal",src="img/animate/logo/bottle/bottle-id.png")
+				.vitro
+					gif(id="logovitro",width="700",height="1000",count="78",normal='[0,0,"normal"]',replay='[0,77,"stop"]',stop="77",play="normal",src="img/animate/logo/vitro/vitro-id.png")
+				.logo-text
+					img(data-layzr="#{images}/pages-logo-text.png")
 				//- .logo-page-bottle
 				//- .bottle.bottle-logo-next
 				//- 	img(data-layzr="#{images}/bottle-logo-next.png")
@@ -316,26 +330,16 @@ block content
 				//- 		img(data-layzr="#{images}/bottle-logo-next-white-3.png")
 				//- 	.white-4
 				//- 		img(data-layzr="#{images}/bottle-logo-next-white-4.png")
-				.logo-movie
-					.gif-content
-						img(data-layzr="#{images}/animate/brand/brand.jpg")
+				
 				//- .bottle.bottle-logo-next
 					img(data-layzr="#{images}/bottle-logo-next.png")
 					.white
 						img(data-layzr="#{images}/bottle-logo-next-white.png")
 		.pages-brand
-			//- .bg
-				//- gif(id="brandbg",rx="0",ry="0",width="640",height="1134",normal='replay',replay='stop',stop="stop",play="normal",count="8",src="img/animate/brandbg/brandbg.png")
+			.bg
+				gif(id="brandbg",width="640",height="1134",count="8",normal='[0,0,"normal"]',replay='[0,7,"stop"]',stop="7",play="normal",src="img/animate/brandbg/brandbg-id.png")
 			.content(onclick="backBottleMain('brand')")
-				#brandbg.brandbg.replay
-				//- gif(id="brand",rx="0",ry="0",width="640",height="1134",normal='[0,86, "replay"]',replay='[87, 126]',stop="127",play="normal",count="127",src="img/animate/brands/brand-id.png")
-				.brands-item
-					.brand-item.brand-item-1
-						.gif-content
-							img(data-layzr="#{images}/animate/brands/brand-1.png")
-					.brand-item.brand-item-2
-						.gif-content
-							img(data-layzr="#{images}/animate/brands/brand-2.png")
+				gif(id="brands",width="640",height="1134",count="127",normal='[0,86,"replay"]',replay='[86,126,"replay"]',stop="0",play="stop",src="img/animate/brands/brands-id.png")
 				.ctrls
 					.item.item-1(rel="1")
 					.item.item-2(rel="2")
@@ -358,10 +362,10 @@ block content
 							.lights
 								img(data-layzr="#{images}/pages-strategy-light-all-#{i}.png")
 					.item-pointer
+					.item-arrow-white
+						gif(id="strategyarrowwhite",width="30",height="100",count="15",normal="[0,0,'normal']",replay='[0,14,"replay"]',delay="3000",stop="14",play="normal",src="img/animate/strategy/arrow-white/arrow-id.png")
 					.item-arrow
-						-for (var i=1;i<6;i++)
-							.arrow(class="arrow#{i}")
-								img(data-layzr="#{images}/pages-strategy-arrow-yellow.png")
+						gif(id="strategyarrowyellow1",width="30",height="100",count="15",normal="[0,0,'normal']",replay='[0,14,"replay"]',delay="6000",stop="14",play="normal",src="img/animate/strategy/arrow-yellow/arrow-id.png")
 					.item-screw
 						img(data-layzr="#{images}/pages-strategy-screw.png")
 					.item-icloud-1
@@ -380,7 +384,7 @@ block content
 						img(data-layzr="#{images}/pages-strategy-lighter.png")
 					.item-icons
 						//- img(data-layzr="#{images}/pages-strategy-icons.png")
-						gif(id="strategyicons",width="300",height="300",count="43",normal="normal",replay='replay',delay="4000",stop="0",play="replay",src="img/animate/strategy-icons/strategy.png")
+						gif(id="strategyicons",width="300",height="300",count="45",normal="[0,0,'normal']",replay='[0,44,"replay"]',delay="6000",stop="44",play="normal",src="img/animate/strategy/icons/icon-id.png")
 						//- .test
 						.box
 							img(data-layzr="#{images}/pages-strategy-box.png")
@@ -391,11 +395,9 @@ block content
 					.bg
 						img(data-layzr="#{images}/pages-strategy-m-bottom.png")
 						.p1
-							//- img(data-layzr="#{images}/pages-strategy-people-1.png")
-							gif(id="strategypeople1",width="150",height="150",normal='replay',replay='replay',stop="stop",play="replay",count="41",src="img/animate/brandbg/brand-id.png")
+							gif(id="strategypeople1",width="150",height="150",normal='[0,0,"normal"]',replay='[0,40,"replay"]',stop="0",play="normal",count="41",src="img/animate/strategy/p2/p-id.png")
 						.p2
-							//- img(data-layzr="#{images}/pages-strategy-people-2.png")
-							gif(id="strategypeople2",width="150",height="150",normal='replay',replay='replay',stop="stop",play="replay",count="41",src="img/animate/brandbg/brand-id.png")
+							gif(id="strategypeople2",width="150",height="150",normal='[0,0,"normal"]',replay='[0,40,"replay"]',stop="0",play="normal",count="41",src="img/animate/strategy/p1/p-id.png")
 						.parts1
 							img(data-layzr="#{images}/pages-strategy-parts-red.png")
 						.parts2
@@ -404,14 +406,9 @@ block content
 							img(data-layzr="#{images}/pages-strategy-parts-roulette.png")
 						.fcanvas
 							.item-arrow
-								-for (var i=1;i<6;i++)
-									.arrow(class="arrow#{i}")
-										img(data-layzr="#{images}/pages-strategy-arrow-yellow.png")
+								gif(id="strategyarrowyellow2",width="30",height="100",count="15",normal="[0,0,'normal']",replay='[0,14,"replay"]',delay="4000",stop="14",play="normal",src="img/animate/strategy/arrow-yellow/arrow-id.png")
 							.items
-								.item
-									img(data-layzr="#{images}/pages-strategy-canvas-1.png")
-								.item
-									img(data-layzr="#{images}/pages-strategy-canvas-2.png")
+								gif(id="strategyad",width="500",height="400",count="102",normal="[0,0,'normal']",replay='[0,35,"stepto"]',stepto='[36,93,"stepend"]',stepend='[94,101,"replay"]',delay="4000",stop="0",play="normal",src="img/animate/strategy/ad/ad-id.png")
 		.pages-contactus
 			.content(onclick="backBottleMain('contactus')")
 				.text

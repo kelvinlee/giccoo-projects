@@ -6,12 +6,12 @@
     <div class="menus">
       <div class="line"><img src="img/select-line.png"/></div>
       <div class="menu">
-        <div each="{menu in menus}" onclick="{changeMenu(menu)}" class="menu-item {now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,before: parent.now == menus.indexOf(menu)+1}"><img src="{menu.thumb}.png"/>
+        <div each="{menu in menus}" onclick="{changeMenu(menu)}" class="menu-item {now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,afterfornow: parent.now == menus.length-1 &amp;&amp; menus.indexOf(menu) == 0,before: parent.now == menus.indexOf(menu)+1, before: parent.now == 0 &amp;&amp; menus.indexOf(menu) == menus.length-1,readydown: parent.now == 1 &amp;&amp; menus.indexOf(menu) == menus.length-1, readyup: parent.now == menus.length-2 &amp;&amp; menus.indexOf(menu) == 0,readydown: parent.now == 0 &amp;&amp; menus.indexOf(menu) == menus.length-2, readyup: parent.now == menus.length-1 &amp;&amp; menus.indexOf(menu) == 1}"><img src="{menu.thumb}.png"/>
           <div onclick="{openCuisine}" class="over"></div>
         </div>
       </div>
     </div>
-    <div class="text">
+    <div show="{canRun}" class="text fadeIn animated">
       <p class="title"><span class="icon"><img src="img/icon-star.png"/></span><span>{info.name}</span></p>
       <p>{info.description}</p>
     </div>
@@ -57,11 +57,14 @@
     	{name:"《掰馍》",thumb:"img/cuisine-9",description:"吃羊肉泡馍前，先得憋个大招"},
     	{name:"《Miss麻辣烫》",thumb:"img/cuisine-10",description:"是不是所有的“秀色可餐”，最后都变成了“食色性也”？"}
     ]
+    
     this.info = this.menus[this.now]
     randomCuisine() {
+    	if (!self.canRun) { return false }
     	//- console.log(parseInt(Math.random()*(self.menus.length-1)))
     	//- console.log(self.menus[parseInt(Math.random()*(self.menus.length-1))])
     	self.changeMenu(self.menus[parseInt(Math.random()*(self.menus.length-1))]).call()
+    	self.openCuisine()
     }
     changeMenu(menu) {
     	return function() {
@@ -103,8 +106,8 @@
     	setTimeout(function(){
     		self.now = self.now-1
     		self.info = self.menus[self.now]
-    		self.update()
     		self.init()
+    		self.update()
     	},500)
     }
     var _default = {x:0, y:0, can: true}
@@ -121,14 +124,14 @@
     	evt.preventDefault()
     	if (move > 50) {
     		self.now--
-    		if (self.now < 0) {self.now = 0}
+    		if (self.now < 0) {self.now = self.menus.length-1}
     		console.log(self.menus[self.now])
     		self.changeMenu(self.menus[self.now]).call()
     		_default.can = false
     	}
     	if (move < -50) {
     		self.now++
-    		if (self.now >= self.menus.length) {self.now = self.menus.length-1}
+    		if (self.now >= self.menus.length) {self.now = 0}
     		console.log(self.menus[self.now])
     		self.changeMenu(self.menus[self.now]).call()
     		_default.can = false
