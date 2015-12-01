@@ -67,7 +67,7 @@ riot.tag('select-page', '<div class="box"><img src="img/box.png"></div> <div cla
     		if (!self.canRun) { return false }
     		self.now = self.menus.indexOf(menu)
     		self.info = menu
-    		$(".text",self.root).html(imgs[self.now-1])
+    		$(".text",self.root).html(imgs[self.now])
     		self.update()
     	}
     }.bind(this);
@@ -96,7 +96,7 @@ riot.tag('select-page', '<div class="box"><img src="img/box.png"></div> <div cla
     this.init = function() {
     	if (self.now <= 1) {
     		self.canRun = true
-    		$(".text",self.root).html(imgs[self.now-1])
+    		$(".text",self.root).html(imgs[self.now])
     		$(".menus",self.root)[0].addEventListener("touchstart", this.touchstart.bind(this))
     		$(".menus",self.root)[0].addEventListener("touchmove", this.touchmove.bind(this))
     		$(".menus",self.root)[0].addEventListener("touchend", this.touchend.bind(this))
