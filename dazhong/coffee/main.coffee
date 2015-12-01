@@ -29,6 +29,16 @@ imageList = [
 	"img/cuisine-8.png"
 	"img/cuisine-9.png"
 	"img/cuisine-10.png"
+	"img/text-1.png"
+	"img/text-2.png"
+	"img/text-3.png"
+	"img/text-4.png"
+	"img/text-5.png"
+	"img/text-6.png"
+	"img/text-7.png"
+	"img/text-8.png"
+	"img/text-9.png"
+	"img/text-10.png"
 ]
 imgs = []
 # riot.mount("*")

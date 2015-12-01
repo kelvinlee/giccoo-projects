@@ -9,7 +9,7 @@
     this.iconPlay = opts["icon-play"]
     this.iconStop = opts["icon-stop"]
     if (this.icon) {
-    	this.iconNow = this.iconPlay
+    	this.iconNow = this.iconStop
     }
     this.type = null
     this.root.className += "playsound"
@@ -24,7 +24,7 @@
     this.on("mount",function(){
     	var audio = document.getElementById("playgrounp")
     	audio.addEventListener("pause",function(){
-    		if (self.iconStop) { self.iconNow = self.iconStop }
+    		self.iconNow = self.iconStop
     		self.type = "pause"
     		self.update()
     	})

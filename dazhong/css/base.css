@@ -797,6 +797,13 @@ html, body {
       z-index: 99; }
       .iphone4 .main .otherpage .playsound {
         width: 7.25%; }
+      .main .otherpage .playsound .play {
+        -webkit-animation: second 4s ease;
+                animation: second 4s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite; }
     .main .otherpage .infopage {
       position: absolute;
       top: 0px;
@@ -880,6 +887,9 @@ html, body {
           left: 0px;
           width: 100%;
           height: 100%; }
+          .main .otherpage .select-page .menus .menu.onmove .menu-item {
+            -webkit-transition: all 300ms ease;
+            transition: all 300ms ease; }
         .main .otherpage .select-page .menus .menu-item {
           -webkit-transition: all 0.5s ease;
           transition: all 0.5s ease;
@@ -959,10 +969,10 @@ html, body {
       .main .otherpage .select-page .text {
         position: absolute;
         top: 62%;
-        right: 10%;
+        right: 2%;
         -webkit-transform: translate3d(0, -50%, 0);
                 transform: translate3d(0, -50%, 0);
-        width: 52%;
+        width: 60%;
         color: #31363c; }
         .main .otherpage .select-page .text p {
           font-size: 0.8rem;
@@ -1034,6 +1044,15 @@ html, body {
           overflow-scrolling: touch;
           -webkit-overflow-scrolling: touch;
           z-index: 102; }
+        .main .otherpage .select-page .cuisinePage .btn-1, .main .otherpage .select-page .cuisineInfoPage .btn-1 {
+          position: fixed;
+          top: 1.2rem;
+          left: 1.2rem;
+          width: 23.59375%;
+          margin: 0 auto;
+          z-index: 103; }
+          .iphone4 .main .otherpage .select-page .cuisinePage .btn-1, .iphone4 .main .otherpage .select-page .cuisineInfoPage .btn-1 {
+            width: 18.875%; }
         .main .otherpage .select-page .cuisinePage .btns, .main .otherpage .select-page .cuisineInfoPage .btns {
           position: fixed;
           bottom: 0px;
@@ -1045,26 +1064,24 @@ html, body {
             position: absolute;
             top: 0px;
             left: 0px;
-            width: 33.33%;
+            width: 50%;
             height: 100%;
             z-index: 104; }
-          .main .otherpage .select-page .cuisinePage .btns .btn-1, .main .otherpage .select-page .cuisineInfoPage .btns .btn-1 {
-            top: 0px;
-            left: 0px; }
           .main .otherpage .select-page .cuisinePage .btns .btn-2, .main .otherpage .select-page .cuisineInfoPage .btns .btn-2 {
             top: 0;
-            left: 33.33%; }
+            left: 0%; }
           .main .otherpage .select-page .cuisinePage .btns .btn-3, .main .otherpage .select-page .cuisineInfoPage .btns .btn-3 {
             top: 0;
-            left: 66.66%; }
+            left: 50%; }
       .main .otherpage .select-page .cuisineInfoPage {
         z-index: 201; }
         .main .otherpage .select-page .cuisineInfoPage .btn-4 {
           position: absolute;
-          bottom: 1rem;
-          left: 1rem;
+          top: 1.2rem;
+          left: 1.2rem;
           width: 23.59375%;
-          margin: 0 auto; }
+          margin: 0 auto;
+          z-index: 205; }
           .iphone4 .main .otherpage .select-page .cuisineInfoPage .btn-4 {
             width: 18.875%; }
         .main .otherpage .select-page .cuisineInfoPage .btn-5 {

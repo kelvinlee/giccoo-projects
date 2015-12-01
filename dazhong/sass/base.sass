@@ -115,6 +115,8 @@ html,body
 			+tr(1rem,1rem)
 			+iw(58)
 			z-index: 99
+			.play
+				+animation(second,4s,ease,infinite)
 		.infopage
 			+posa
 			+tl
@@ -170,6 +172,9 @@ html,body
 					+tl
 					+w
 					+h
+					&.onmove
+						.menu-item
+							+tran($time: 300ms)
 				.menu-item
 					// +tran(top)
 					// +tran(left)
@@ -233,11 +238,12 @@ html,body
 						+tl
 					&.readyup
 						+tl(100%)
+
 			.text
 				+posa
-				+tr(62%,10%)
+				+tr(62%,2%)
 				+transform(translate3d(0,-50%,0))
-				+w(52%)
+				+w(60%)
 				color: #31363c
 				p
 					+font-size(0.8rem)
@@ -275,6 +281,11 @@ html,body
 					+h
 					+touch
 					z-index: 102
+				.btn-1
+					+posf
+					+tl(1.2rem,1.2rem)
+					+iw(151)
+					z-index: 103
 				.btns
 					+posf
 					+bl
@@ -284,21 +295,20 @@ html,body
 					.btn
 						+posa
 						+tl
-						+w(33.33%)
+						+w(50%)
 						+h
 						z-index: 104
-					.btn-1
-						+tl
 					.btn-2
-						+tl(0,33.33%)
+						+tl(0,0%)
 					.btn-3
-						+tl(0,66.66%)
+						+tl(0,50%)
 			.cuisineInfoPage
 				z-index: 201
 				.btn-4
 					+posa
-					+bl(1rem,1rem)
+					+tl(1.2rem,1.2rem)
 					+iw(151)
+					z-index: 205
 				.btn-5
 					+posa
 					+br

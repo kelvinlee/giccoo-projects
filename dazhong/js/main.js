@@ -83,7 +83,7 @@ HTMLElement.prototype.getStyle = function(className) {
   }
 })();
 
-imageList = ["img/button-eat.png", "img/button-info.png", "img/button-list.png", "img/button-random.png", "img/home-bg.jpg", "img/home-logo.png", "img/home-text.png", "img/icon-back.png", "img/icon-play.png", "img/icon-save.png", "img/icon-star.png", "img/logo.png", "img/select-line.png", "img/start.png", "img/wechat.png", "img/box.png", "img/cuisine-1.png", "img/cuisine-2.png", "img/cuisine-3.png", "img/cuisine-4.png", "img/cuisine-5.png", "img/cuisine-6.png", "img/cuisine-7.png", "img/cuisine-8.png", "img/cuisine-9.png", "img/cuisine-10.png"];
+imageList = ["img/button-eat.png", "img/button-info.png", "img/button-list.png", "img/button-random.png", "img/home-bg.jpg", "img/home-logo.png", "img/home-text.png", "img/icon-back.png", "img/icon-play.png", "img/icon-save.png", "img/icon-star.png", "img/logo.png", "img/select-line.png", "img/start.png", "img/wechat.png", "img/box.png", "img/cuisine-1.png", "img/cuisine-2.png", "img/cuisine-3.png", "img/cuisine-4.png", "img/cuisine-5.png", "img/cuisine-6.png", "img/cuisine-7.png", "img/cuisine-8.png", "img/cuisine-9.png", "img/cuisine-10.png", "img/text-1.png", "img/text-2.png", "img/text-3.png", "img/text-4.png", "img/text-5.png", "img/text-6.png", "img/text-7.png", "img/text-8.png", "img/text-9.png", "img/text-10.png"];
 
 imgs = [];
 

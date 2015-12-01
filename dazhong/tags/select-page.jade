@@ -7,7 +7,7 @@ select-page
 		.menus
 			.line
 				img(src="img/select-line.png")
-			.menu
+			.menu(class="{onmove: !canRun}")
 				.menu-item(each="{menu in menus}",onclick="{changeMenu(menu)}",class="{now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,afterfornow: parent.now == menus.length-1 && menus.indexOf(menu) == 0,before: parent.now == menus.indexOf(menu)+1, before: parent.now == 0 && menus.indexOf(menu) == menus.length-1,readydown: parent.now == 1 && menus.indexOf(menu) == menus.length-1, readyup: parent.now == menus.length-2 && menus.indexOf(menu) == 0,readydown: parent.now == 0 && menus.indexOf(menu) == menus.length-2, readyup: parent.now == menus.length-1 && menus.indexOf(menu) == 1}")
 					img(src="{menu.thumb}.png")
 					.over(onclick="{openCuisine}")
@@ -16,11 +16,12 @@ select-page
 					img(src="{menu.thumb}.png")
 					.over(onclick="{openCuisine}")
 		.text.fadeIn.animated(show="{canRun}")
-			p.title
-				span.icon
-					img(src="img/icon-star.png")
-				span {info.name}
-			p {info.description}
+			img(src="img/text-{now+1}.png")
+			//- p.title
+			//- 	span.icon
+			//- 		img(src="img/icon-star.png")
+			//- 	span {info.name}
+			//- p {info.description}
 		.btns
 			.btn-info(onclick="{openCuisine}")
 				img(src="img/button-info.png")
@@ -34,19 +35,20 @@ select-page
 			img(src="{info.thumb}-1.jpg")
 		.btns
 			img(src="img/button-list.png")
-			.btn.btn-1(onclick="{closeCuisine}")
 			.btn.btn-2(onclick="{showCuisineInfo}")
 			.btn.btn-3(onclick="{showShare}")
+		.btn.btn-1(onclick="{closeCuisine}")
+			img(src="img/button-back.png")
 	.cuisineInfoPage(show="{openInfoInfo}",class="fadeIn animated")
 		.load
 			img(src="/libs/img/loading-normal.png")
 		.context-img(if="{openInfo}")
 			img(src="{info.thumb}-2.jpg")
 		.btns
-			.btn-new.btn-4(onclick="{closeCuisineInfo}")
-				img(src="img/icon-back.png")
 			.btn-new.btn-5(onclick="{hideSave}",show="{save}")
 				img(src="img/icon-save.png")
+		.btn-new.btn-4(onclick="{closeCuisineInfo}")
+			img(src="img/icon-back.png")
 	script.
 		var self = this
 		this.openInfo = false
@@ -100,6 +102,7 @@ select-page
 		}
 		closeCuisineInfo () {
 			self.openInfoInfo = false
+			self.openInfo = false
 			$(".playsound").show()
 		}
 		showShare() {
@@ -118,7 +121,7 @@ select-page
 				self.info = self.menus[self.now]
 				self.init()
 				self.update()
-			},500)
+			},300)
 		}
 		var _default = {x:0, y:0, can: true}
 		touchstart(evt) {

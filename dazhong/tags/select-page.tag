@@ -5,15 +5,13 @@
     <div class="logo"><img src="img/home-logo.png"/></div>
     <div class="menus">
       <div class="line"><img src="img/select-line.png"/></div>
-      <div class="menu">
+      <div class="menu {onmove: !canRun}">
         <div each="{menu in menus}" onclick="{changeMenu(menu)}" class="menu-item {now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,afterfornow: parent.now == menus.length-1 &amp;&amp; menus.indexOf(menu) == 0,before: parent.now == menus.indexOf(menu)+1, before: parent.now == 0 &amp;&amp; menus.indexOf(menu) == menus.length-1,readydown: parent.now == 1 &amp;&amp; menus.indexOf(menu) == menus.length-1, readyup: parent.now == menus.length-2 &amp;&amp; menus.indexOf(menu) == 0,readydown: parent.now == 0 &amp;&amp; menus.indexOf(menu) == menus.length-2, readyup: parent.now == menus.length-1 &amp;&amp; menus.indexOf(menu) == 1}"><img src="{menu.thumb}.png"/>
           <div onclick="{openCuisine}" class="over"></div>
         </div>
       </div>
     </div>
-    <div show="{canRun}" class="text fadeIn animated">
-      <p class="title"><span class="icon"><img src="img/icon-star.png"/></span><span>{info.name}</span></p>
-      <p>{info.description}</p>
+    <div show="{canRun}" class="text fadeIn animated"><img src="img/text-{now+1}.png"/>
     </div>
     <div class="btns">
       <div onclick="{openCuisine}" class="btn-info"><img src="img/button-info.png"/></div>
@@ -24,18 +22,18 @@
     <div class="load"><img src="/libs/img/loading-normal.png"/></div>
     <div if="{openInfo}" class="context-img"><img src="{info.thumb}-1.jpg"/></div>
     <div class="btns"><img src="img/button-list.png"/>
-      <div onclick="{closeCuisine}" class="btn btn-1"></div>
       <div onclick="{showCuisineInfo}" class="btn btn-2"></div>
       <div onclick="{showShare}" class="btn btn-3"></div>
     </div>
+    <div onclick="{closeCuisine}" class="btn btn-1"><img src="img/button-back.png"/></div>
   </div>
   <div show="{openInfoInfo}" class="cuisineInfoPage fadeIn animated">
     <div class="load"><img src="/libs/img/loading-normal.png"/></div>
     <div if="{openInfo}" class="context-img"><img src="{info.thumb}-2.jpg"/></div>
     <div class="btns">
-      <div onclick="{closeCuisineInfo}" class="btn-new btn-4"><img src="img/icon-back.png"/></div>
       <div onclick="{hideSave}" show="{save}" class="btn-new btn-5"><img src="img/icon-save.png"/></div>
     </div>
+    <div onclick="{closeCuisineInfo}" class="btn-new btn-4"><img src="img/icon-back.png"/></div>
   </div>
   <script>
     var self = this
@@ -90,6 +88,7 @@
     }
     closeCuisineInfo () {
     	self.openInfoInfo = false
+    	self.openInfo = false
     	$(".playsound").show()
     }
     showShare() {
@@ -108,7 +107,7 @@
     		self.info = self.menus[self.now]
     		self.init()
     		self.update()
-    	},500)
+    	},300)
     }
     var _default = {x:0, y:0, can: true}
     touchstart(evt) {
