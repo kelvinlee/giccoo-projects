@@ -5,13 +5,17 @@
     <div class="logo"><img src="img/home-logo.png"/></div>
     <div class="menus">
       <div class="line"><img src="img/select-line.png"/></div>
+      <div class="arrow">
+        <div class="arrow-top"><img src="img/arrow.png"/></div>
+        <div class="arrow-bottom"><img src="img/arrow.png"/></div>
+      </div>
       <div class="menu {onmove: !canRun}">
         <div each="{menu in menus}" onclick="{changeMenu(menu)}" class="menu-item {now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,afterfornow: parent.now == menus.length-1 &amp;&amp; menus.indexOf(menu) == 0,before: parent.now == menus.indexOf(menu)+1, before: parent.now == 0 &amp;&amp; menus.indexOf(menu) == menus.length-1,readydown: parent.now == 1 &amp;&amp; menus.indexOf(menu) == menus.length-1, readyup: parent.now == menus.length-2 &amp;&amp; menus.indexOf(menu) == 0,readydown: parent.now == 0 &amp;&amp; menus.indexOf(menu) == menus.length-2, readyup: parent.now == menus.length-1 &amp;&amp; menus.indexOf(menu) == 1}"><img src="{menu.thumb}.png"/>
           <div onclick="{openCuisine}" class="over"></div>
         </div>
       </div>
     </div>
-    <div show="{canRun}" class="text fadeIn animated"><img src="img/text-{now+1}.png"/>
+    <div show="{canRun}" class="text fadeIn animated">
     </div>
     <div class="btns">
       <div onclick="{openCuisine}" class="btn-info"><img src="img/button-info.png"/></div>
@@ -55,7 +59,6 @@
     	{name:"《掰馍》",thumb:"img/cuisine-9",description:"吃羊肉泡馍前，先得憋个大招"},
     	{name:"《Miss麻辣烫》",thumb:"img/cuisine-10",description:"是不是所有的“秀色可餐”，最后都变成了“食色性也”？"}
     ]
-    
     this.info = this.menus[this.now]
     randomCuisine() {
     	if (!self.canRun) { return false }
@@ -69,6 +72,7 @@
     		if (!self.canRun) { return false }
     		self.now = self.menus.indexOf(menu)
     		self.info = menu
+    		$(".text",self.root).html(imgs[self.now-1])
     		self.update()
     	}
     }
@@ -97,6 +101,7 @@
     init() {
     	if (self.now <= 1) {
     		self.canRun = true
+    		$(".text",self.root).html(imgs[self.now-1])
     		$(".menus",self.root)[0].addEventListener("touchstart", this.touchstart.bind(this))
     		$(".menus",self.root)[0].addEventListener("touchmove", this.touchmove.bind(this))
     		$(".menus",self.root)[0].addEventListener("touchend", this.touchend.bind(this))

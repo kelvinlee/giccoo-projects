@@ -3,6 +3,16 @@
 # @codekit-prepend "../../libs/coffee/requestanimation"
 
 imageList = [
+	"img/text-1.png"
+	"img/text-2.png"
+	"img/text-3.png"
+	"img/text-4.png"
+	"img/text-5.png"
+	"img/text-6.png"
+	"img/text-7.png"
+	"img/text-8.png"
+	"img/text-9.png"
+	"img/text-10.png"
 	"img/button-eat.png"
 	"img/button-info.png"
 	"img/button-list.png"
@@ -29,16 +39,6 @@ imageList = [
 	"img/cuisine-8.png"
 	"img/cuisine-9.png"
 	"img/cuisine-10.png"
-	"img/text-1.png"
-	"img/text-2.png"
-	"img/text-3.png"
-	"img/text-4.png"
-	"img/text-5.png"
-	"img/text-6.png"
-	"img/text-7.png"
-	"img/text-8.png"
-	"img/text-9.png"
-	"img/text-10.png"
 ]
 imgs = []
 # riot.mount("*")
@@ -51,6 +51,7 @@ window.onload = ->
 		$("body").addClass "i4"
 	$(".wechat").on "click",->
 		$(".wechat").hide()
+	$(".homepage .star .item")[0].addEventListener ANIMATION_END_NAME,reButton
 	loadWechatConfig()
 	wx.ready ->
 		AppMShareContent =
@@ -111,3 +112,9 @@ loadWechatConfig = ->
 	s = document.getElementsByTagName('script')[0]
 	s.parentNode.insertBefore hm, s
 	return
+
+reButton = ->
+	$(".homepage .star .item").removeClass "rubberBand animated"
+	setTimeout ->
+		$(".homepage .star .item").addClass "rubberBand animated"
+	,1000

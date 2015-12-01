@@ -966,6 +966,22 @@ html, body {
           .main .otherpage .select-page .menus .menu-item.readyup {
             top: 100%;
             left: 0px; }
+        .main .otherpage .select-page .menus .arrow-bottom {
+          position: absolute;
+          bottom: -10%;
+          left: 15%;
+          width: 50%;
+          -webkit-transform: rotate(-23deg);
+              -ms-transform: rotate(-23deg);
+                  transform: rotate(-23deg); }
+        .main .otherpage .select-page .menus .arrow-top {
+          position: absolute;
+          top: -10%;
+          left: 13%;
+          width: 50%;
+          -webkit-transform: rotate(23deg) scale(1, -1);
+              -ms-transform: rotate(23deg) scale(1, -1);
+                  transform: rotate(23deg) scale(1, -1); }
       .main .otherpage .select-page .text {
         position: absolute;
         top: 62%;

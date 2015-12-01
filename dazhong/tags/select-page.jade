@@ -7,6 +7,11 @@ select-page
 		.menus
 			.line
 				img(src="img/select-line.png")
+			.arrow
+				.arrow-top
+					img(src="img/arrow.png")
+				.arrow-bottom
+					img(src="img/arrow.png")
 			.menu(class="{onmove: !canRun}")
 				.menu-item(each="{menu in menus}",onclick="{changeMenu(menu)}",class="{now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,afterfornow: parent.now == menus.length-1 && menus.indexOf(menu) == 0,before: parent.now == menus.indexOf(menu)+1, before: parent.now == 0 && menus.indexOf(menu) == menus.length-1,readydown: parent.now == 1 && menus.indexOf(menu) == menus.length-1, readyup: parent.now == menus.length-2 && menus.indexOf(menu) == 0,readydown: parent.now == 0 && menus.indexOf(menu) == menus.length-2, readyup: parent.now == menus.length-1 && menus.indexOf(menu) == 1}")
 					img(src="{menu.thumb}.png")
@@ -16,7 +21,7 @@ select-page
 					img(src="{menu.thumb}.png")
 					.over(onclick="{openCuisine}")
 		.text.fadeIn.animated(show="{canRun}")
-			img(src="img/text-{now+1}.png")
+			//- img(src="img/text-{now+1}.png")
 			//- p.title
 			//- 	span.icon
 			//- 		img(src="img/icon-star.png")
@@ -69,7 +74,6 @@ select-page
 			{name:"《掰馍》",thumb:"img/cuisine-9",description:"吃羊肉泡馍前，先得憋个大招"},
 			{name:"《Miss麻辣烫》",thumb:"img/cuisine-10",description:"是不是所有的“秀色可餐”，最后都变成了“食色性也”？"}
 		]
-		
 		this.info = this.menus[this.now]
 		randomCuisine() {
 			if (!self.canRun) { return false }
@@ -83,6 +87,7 @@ select-page
 				if (!self.canRun) { return false }
 				self.now = self.menus.indexOf(menu)
 				self.info = menu
+				$(".text",self.root).html(imgs[self.now-1])
 				self.update()
 			}
 		}
@@ -111,6 +116,7 @@ select-page
 		init() {
 			if (self.now <= 1) {
 				self.canRun = true
+				$(".text",self.root).html(imgs[self.now-1])
 				$(".menus",self.root)[0].addEventListener("touchstart", this.touchstart.bind(this))
 				$(".menus",self.root)[0].addEventListener("touchmove", this.touchmove.bind(this))
 				$(".menus",self.root)[0].addEventListener("touchend", this.touchend.bind(this))
