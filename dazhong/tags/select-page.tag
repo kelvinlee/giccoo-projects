@@ -11,7 +11,7 @@
       </div>
       <div class="menu {onmove: !canRun}">
         <div each="{menu in menus}" onclick="{changeMenu(menu)}" class="menu-item {now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,afterfornow: parent.now == menus.length-1 &amp;&amp; menus.indexOf(menu) == 0,before: parent.now == menus.indexOf(menu)+1, before: parent.now == 0 &amp;&amp; menus.indexOf(menu) == menus.length-1,readydown: parent.now == 1 &amp;&amp; menus.indexOf(menu) == menus.length-1, readyup: parent.now == menus.length-2 &amp;&amp; menus.indexOf(menu) == 0,readydown: parent.now == 0 &amp;&amp; menus.indexOf(menu) == menus.length-2, readyup: parent.now == menus.length-1 &amp;&amp; menus.indexOf(menu) == 1}"><img src="{menu.thumb}.png"/>
-          <div onclick="{openCuisine}" class="over"></div>
+          <div onclick="{openCuisineIn}" class="over"></div>
         </div>
       </div>
     </div>
@@ -66,6 +66,8 @@
     	//- console.log(self.menus[parseInt(Math.random()*(self.menus.length-1))])
     	self.changeMenu(self.menus[parseInt(Math.random()*(self.menus.length-1))]).call()
     	self.openCuisine()
+    	ClickEvent('BUT_3.0_Random',1)
+    	console.log('BUT_3.0_Random')
     }
     changeMenu(menu) {
     	return function() {
@@ -76,16 +78,30 @@
     		self.update()
     	}
     }
+    openCuisineIn() {
+    	self.openInfo = true
+    	ClickEvent('P4.'+(self.now+1),1)
+    	ClickEvent('BUT_3.0_Dish'+(self.now+1),1)
+    	console.log('BUT_3.0_Dish'+(self.now+1))
+    }
     openCuisine() {
     	self.openInfo = true
+    	ClickEvent('P4.'+(self.now+1),1)
+    	ClickEvent('BUT_3.0_Details'+(self.now+1),1)
+    	console.log('BUT_3.0_Details'+(self.now+1))
     }
     closeCuisine() {
     	self.openInfo = false
+    	ClickEvent('BUT_4.0_Back'+(self.now+1),1)
+    	console.log('BUT_4.0_Back'+(self.now+1))
     }
     showCuisineInfo () {
     	self.openInfoInfo = true
     	self.save = true
     	$(".playsound").hide()
+    	ClickEvent('P5.'+(self.now+1),1)
+    	ClickEvent('BUT_4.0_Check'+(self.now+1),1)
+    	console.log('BUT_4.0_Check'+(self.now+1))
     }
     hideSave() {
     	self.save = false
@@ -94,9 +110,13 @@
     	self.openInfoInfo = false
     	self.openInfo = false
     	$(".playsound").show()
+    	ClickEvent('BUT_5.0_Back'+(self.now+1),1)
+    	console.log('BUT_5.0_Back'+(self.now+1))
     }
     showShare() {
     	$(".wechat").show()
+    	ClickEvent('BUT_4.0_Share'+(self.now+1),1)
+    	console.log('BUT_4.0_Share'+(self.now+1))
     }
     init() {
     	if (self.now <= 1) {

@@ -31,8 +31,7 @@ block content
 				.item.rubberBand.animated.duration-10.delay-17
 					img(src="img/start.png")
 		.otherpage
-			//- http://t.douban.com/img/files/file-14483685209223.mp3
-			playsound(src="mp3/bg.mp3",icon="true",icon-stop="img/icon-stop.png",icon-play="img/icon-play.png")
+			playsound(src="http://t.douban.com/img/files/file-14483685209223.mp3",icon="true",icon-stop="img/icon-stop.png",icon-play="img/icon-play.png")
 			.infopage.fadeIn.animated
 				.bg
 				.box
@@ -46,20 +45,34 @@ block content
 						img(src="img/button-eat.png")
 			select-page.select-page
 			.wechat.fadeIn.animated
-				img(src="img/wechat.png")
+				img(src="img/wechat.png",onload="loadWechat()")
 block js
 	//- script(src="/libs/js/min/localforage.min.js")
-	script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
-	script(src="/libs/js/min/Zepto.min.js")
-	script(src="/libs/js/min/fastclick.min.js")
-	script(src="/libs/js/min/riot.js")
-	script(src="js/tag.js")
-	script(src="js/main.js")
 	script.
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		ga('create', 'UA-66865226-2', 'auto');
+		ga('create', 'UA-68041469-2');
 		ga('send', 'pageview');
+		function ClickEvent(event,interaction) {
+			event = event.toUpperCase();
+			interaction=interaction||false;
+			if (event.indexOf("BUT_") != -1) 
+			{ try{ga('send', 'event', 'BUT', event, {'nonInteraction': interaction});} catch(err){}; }
+			else 
+			{ try{ga('send', 'pageview',event, {'nonInteraction': interaction});} catch(err){}; }
+		}
+		function loadWechat() {
+			ClickEvent('P6.0',1)
+			console.log('P6.0')
+		}
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
+	script(src="/libs/js/min/Zepto.min.js")
+	script(src="/libs/js/min/fastclick.min.js")
+	script(src="/libs/js/min/riot.js")
+	script(src="js/tag.js")
+	script(src="js/main.js")
+
+

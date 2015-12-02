@@ -29,16 +29,16 @@ imageList = [
 	"img/start.png"
 	"img/wechat.png"
 	"img/box.png"
-	"img/cuisine-1.png"
-	"img/cuisine-2.png"
-	"img/cuisine-3.png"
-	"img/cuisine-4.png"
-	"img/cuisine-5.png"
-	"img/cuisine-6.png"
-	"img/cuisine-7.png"
-	"img/cuisine-8.png"
-	"img/cuisine-9.png"
-	"img/cuisine-10.png"
+	# "img/cuisine-1.png"
+	# "img/cuisine-2.png"
+	# "img/cuisine-3.png"
+	# "img/cuisine-4.png"
+	# "img/cuisine-5.png"
+	# "img/cuisine-6.png"
+	# "img/cuisine-7.png"
+	# "img/cuisine-8.png"
+	# "img/cuisine-9.png"
+	# "img/cuisine-10.png"
 ]
 imgs = []
 # riot.mount("*")
@@ -89,6 +89,7 @@ loadFinished = ->
 		$(".loading").hide()
 		$(".homepage").show()
 	,500
+	ClickEvent('P1.0',1)
 
 hidePage = ->
 	$(".homepage").addClass "fadeOut animated"
@@ -96,6 +97,8 @@ hidePage = ->
 		$(".homepage").hide()
 		$(".otherpage").show()
 	,500
+	ClickEvent('BUT_1.0_Start',1)
+	ClickEvent('P2.0',1)
 
 starEat = ->
 	$(".infopage").removeClass("fadeIn").addClass "fadeOut animated"
@@ -104,6 +107,8 @@ starEat = ->
 		$(".select-page").show()
 		tags[1].init()
 	,500
+	ClickEvent('BUT_2.0_Eat',1)
+	ClickEvent('P3.0',1)
 
 loadWechatConfig = ->
 	url = encodeURIComponent window.location.href.split("#")[0]

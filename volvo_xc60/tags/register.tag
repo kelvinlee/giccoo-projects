@@ -37,7 +37,7 @@
       <label for="dealer">选择经销商:</label>
       <div class="select"><span>{dealerName}</span>
         <select id="dealer" name="dealer" onchange="{changeDealer}">
-          <option each="{dealer}" value="{name}">{name}</option>
+          <option each="{dealer}" value="{code}">{name}</option>
         </select>
       </div>
     </div>
@@ -69,7 +69,7 @@
     	if (this.firstUpdate) {return this.firstUpdate = false}
     	this.provinceName = $("[name=province]",this.root).val()
     	this.cityName = $("[name=city]",this.root).val()
-    	this.dealerName = $("[name=dealer]",this.root).val()
+    	this.dealerName = $("[name=dealer] [value="+$("[name=dealer]",this.root).val()+"]",this.root).text()
     })
     changeCity(evt) {
     	var newName = $("[name=province]",self.root).val()
@@ -94,6 +94,7 @@
     }
     submit() {
     	var data = $("form",this.root).serializeArray()
+    	data.push({name:"dealername",value:self.dealerName})
     	if ( $("[name=username]",this.root).val().length < 1 || $("[name=username]",this.root).val() == "") {
     		alert("姓名不能为空")
     		return false
