@@ -83,7 +83,7 @@ HTMLElement.prototype.getStyle = function(className) {
   }
 })();
 
-imageList = ["img/text-1.png", "img/text-2.png", "img/text-3.png", "img/text-4.png", "img/text-5.png", "img/text-6.png", "img/text-7.png", "img/text-8.png", "img/text-9.png", "img/text-10.png", "img/button-eat.png", "img/button-info.png", "img/button-list.png", "img/button-random.png", "img/home-bg.jpg", "img/home-logo.png", "img/home-text.png", "img/icon-back.png", "img/icon-play.png", "img/icon-save.png", "img/icon-star.png", "img/logo.png", "img/select-line.png", "img/start.png", "img/wechat.png", "img/box.png", "img/cuisine-1.png", "img/cuisine-2.png", "img/cuisine-3.png", "img/cuisine-4.png", "img/cuisine-5.png", "img/cuisine-6.png", "img/cuisine-7.png", "img/cuisine-8.png", "img/cuisine-9.png", "img/cuisine-10.png"];
+imageList = ["img/text-1.png", "img/text-2.png", "img/text-3.png", "img/text-4.png", "img/text-5.png", "img/text-6.png", "img/text-7.png", "img/text-8.png", "img/text-9.png", "img/text-10.png", "img/button-eat.png", "img/button-info.png", "img/button-list.png", "img/button-random.png", "img/home-bg.jpg", "img/home-logo.png", "img/home-text.png", "img/icon-back.png", "img/icon-play.png", "img/icon-save.png", "img/icon-star.png", "img/logo.png", "img/select-line.png", "img/start.png", "img/wechat.png", "img/box.png"];
 
 imgs = [];
 
@@ -145,27 +145,35 @@ tags = null;
 loadFinished = function() {
   tags = riot.mount("*");
   $(".loading").addClass("fadeOut animated");
-  return setTimeout(function() {
+  setTimeout(function() {
     $(".loading").hide();
     return $(".homepage").show();
   }, 500);
+  console.log(ClickEvent);
+  return ClickEvent('P1.0', 1);
 };
 
 hidePage = function() {
   $(".homepage").addClass("fadeOut animated");
-  return setTimeout(function() {
+  setTimeout(function() {
     $(".homepage").hide();
     return $(".otherpage").show();
   }, 500);
+  console.log(ClickEvent);
+  ClickEvent('BUT_1.0_Start', 1);
+  return ClickEvent('P2.0', 1);
 };
 
 starEat = function() {
   $(".infopage").removeClass("fadeIn").addClass("fadeOut animated");
-  return setTimeout(function() {
+  setTimeout(function() {
     $(".infopage").hide();
     $(".select-page").show();
     return tags[1].init();
   }, 500);
+  console.log(ClickEvent);
+  ClickEvent('BUT_2.0_Eat', 1);
+  return ClickEvent('P3.0', 1);
 };
 
 loadWechatConfig = function() {
@@ -180,7 +188,6 @@ loadWechatConfig = function() {
 reButton = function() {
   $(".homepage .star .item").removeClass("rubberBand animated");
   return setTimeout(function() {
-    $(".homepage .star .item").addClass("rubberBand animated");
-    return console.log("reButton");
+    return $(".homepage .star .item").addClass("rubberBand animated");
   }, 1000);
 };
