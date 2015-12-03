@@ -89,6 +89,7 @@ loadFinished = ->
 		$(".loading").hide()
 		$(".homepage").show()
 	,500
+	console.log ClickEvent
 	ClickEvent('P1.0',1)
 
 hidePage = ->
@@ -97,6 +98,7 @@ hidePage = ->
 		$(".homepage").hide()
 		$(".otherpage").show()
 	,500
+	console.log ClickEvent
 	ClickEvent('BUT_1.0_Start',1)
 	ClickEvent('P2.0',1)
 
@@ -107,6 +109,7 @@ starEat = ->
 		$(".select-page").show()
 		tags[1].init()
 	,500
+	console.log ClickEvent
 	ClickEvent('BUT_2.0_Eat',1)
 	ClickEvent('P3.0',1)
 

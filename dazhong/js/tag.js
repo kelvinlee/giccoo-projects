@@ -111,7 +111,9 @@ riot.tag('select-page', '<div class="box"><img src="img/box.png"></div> <div cla
     this.showShare = function() {
     	$(".wechat").show()
     	ClickEvent('BUT_4.0_Share'+(self.now+1),1)
+    	ClickEvent('P6.0',1)
     	console.log('BUT_4.0_Share'+(self.now+1))
+    	console.log('P6.0')
     }.bind(this);
     this.init = function() {
     	if (self.now <= 1) {

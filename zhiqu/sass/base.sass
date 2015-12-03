@@ -143,7 +143,7 @@
 		+w(0%)
 +keyframes(peopleA)
 	0%
-		+transform(scale(-1,1) translate3d(190px,0,0))
+		+transform(scale(-1,1) translate3d(300px,0,0))
 		opacity: 1
 	90%
 		opacity: 1
@@ -572,7 +572,7 @@ html,body
 .bottle-logo
 	$w: 403px
 	$h: 581px
-	+tl(-420px,-110px)
+	+tl(-416px,-118px)
 	#bottlelogo
 		+posa
 		+tl(-16px,-40px)
@@ -622,7 +622,7 @@ html,body
 			transition-delay: 1s
 .bottle-strategy
 	$w: 1020px
-	+tl(-196px,-230px)
+	+tl(-186px,-230px)
 	+w($w)
 	#bottlestrategy
 		+posa
@@ -1021,6 +1021,10 @@ html,body
 			+tran($time: 1.4s,$ease: linear)
 			transition-delay: 1.2s
 			+transform(translate3d(770px,0,0))
+			.bottle-technology
+				+tran
+				opacity: 0
+				transition-delay: 2s
 		.back-btn
 			+tl(auto,auto)
 			+tr(50px,10px)
@@ -1441,6 +1445,7 @@ html,body
 					+tl(-30px,-15px)
 					+w(90px)
 					+animation(flashF,2s,ease,infinite)
+					z-index: -1
 
 				.alert
 					+posa
@@ -1609,11 +1614,12 @@ html,body
 	// +hide
 	+transform(translate3d(-260px,-113%,0))
 	+b("../img/pages-logo-bg-start.jpg",no-repeat,center,center,cover)
+	opacity: 0
 	&.thispage
 		+tran($time: 1.3s,$ease: linear)
 		transition-delay: 0.8s
 		+transform(translate3d(0,0,0))
-		
+		opacity: 1
 		// z-index: 120
 		.bg
 			+animation(fadeIn,0.5s,ease)
@@ -1771,14 +1777,14 @@ html,body
 	+h
 	+tran($time: 0.5s,$ease: linear)
 	z-index: 11
-	opacity: 0
+	// opacity: 0
 	+transform(translate3d(-770px,0,0))
 	// +bc(#73ea9c)
 	&.thispage
 		+tran($time: 1.4s,$ease: linear)
 		transition-delay: 1.2s
 		+transform(translate3d(0,0,0))
-		opacity: 1
+		// opacity: 1
 	.content
 		+w
 		+h
@@ -1937,15 +1943,15 @@ html,body
 				+tl(0,447px)
 			.p1
 				+posa
-				+bl
-				+animation(peopleA,12s,linear,infinite)
+				+bl(-20px)
+				+animation(peopleA,20s,linear,infinite)
 				z-index: 99
 				transform-origin: right center
 				animation-delay: 2s
 			.p2
 				+posa
-				+br
-				+animation(peopleB,15s,linear,infinite)
+				+br(-24px)
+				+animation(peopleB,22s,linear,infinite)
 				z-index: 99
 				transform-origin: center center
 			.parts1,.parts2,.parts3
@@ -1989,6 +1995,7 @@ html,body
 			.bg
 				+posa
 				+bl
+				padding-bottom: 30px
 
 .sliders
 	overflow: hidden

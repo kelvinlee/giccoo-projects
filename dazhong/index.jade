@@ -45,7 +45,7 @@ block content
 						img(src="img/button-eat.png")
 			select-page.select-page
 			.wechat.fadeIn.animated
-				img(src="img/wechat.png",onload="loadWechat()")
+				img(src="img/wechat.png")
 block js
 	//- script(src="/libs/js/min/localforage.min.js")
 	script.
@@ -65,8 +65,7 @@ block js
 			{ try{ga('send', 'pageview',event, {'nonInteraction': interaction});} catch(err){}; }
 		}
 		function loadWechat() {
-			ClickEvent('P6.0',1)
-			console.log('P6.0')
+			
 		}
 	script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
 	script(src="/libs/js/min/Zepto.min.js")

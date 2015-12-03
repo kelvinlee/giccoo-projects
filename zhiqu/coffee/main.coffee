@@ -10,6 +10,7 @@ page = ["page-brand"]
 pages = [".pages-brand"]
 opened = false
 global = {}
+loaded = []
 tags = null
 
 window.onload = ->
@@ -23,13 +24,17 @@ window.onload = ->
 	$(".firstPage .content").on "click", init
 
 	$(".pages-media .icons-1 .icon").on "touchstart", (evt)->
+		evt.stopPropagation()
+		evt.preventDefault()
 		$(".alert",this).addClass "on"
+	$(".pages-media .icons-1 .icon").on "touchmove", (evt)->
 		evt.stopPropagation()
 		evt.preventDefault()
 	$(".pages-media .icons-1 .icon").on "touchend", (evt)->
-		$(".alert",this).removeClass "on"
 		evt.stopPropagation()
 		evt.preventDefault()
+		$(".alert",this).removeClass "on"
+		
 
 	$(".pages-brand .content").css({"margin-top": -(1136-$("body").height())+"px"})
 
@@ -73,39 +78,66 @@ loadEnd = ->
 	_gifCount = $("gif").length
 	riot.mount("*")
 	console.log _gifCount
+
+startLoadPage = (name,evt)->
+	global["bottle"+name].replay("prepare") if global? && global["bottle"+name]?
+	now = 0
+	count = $("[data-layzr-"+name+"]").length
+	console.log name,count
+	_gifCount = 0
+	_gifnow = 0
+	loadGIF = ->
+		# console.log("a")
+		_gifnow++
+		loadPageEnd() if _gifnow >= _gifCount
+	loadPageEnd = ->
+		if _gifCount is 0
+			loaded[name] = true
+			openBottleMain evt
+		else if _gifnow >= _gifCount
+			loaded[name] = true
+			openBottleMain evt
+		if name is "strategy"
+			setTimeout ->
+				global["strategyad"].replay("replay") if global? && global["strategyad"]?
+			,1000
+	$("[data-layzr-"+name+"]").on "load", ->
+		now++
+		loadPageEnd() if now >= count
+	$("[data-layzr-"+name+"]").each ->
+		$(this).attr("src",$(this).attr("data-layzr-"+name))
+	if name is "brand"
+		riot.mount("div#brandbg","gif")
+		riot.mount("div#brands","gif")
+		_gifCount = 2
+	if name is "technology"
+		riot.mount("div#technologylogo","gif")
+		_gifCount = 1
+	if name is "media"
+		riot.mount("div#bottlemediamovie","gif")
+		_gifCount = 1
+	if name is "logo"
+		riot.mount("div#logobg","gif")
+		riot.mount("div#logobottle","gif")
+		riot.mount("div#logovitro","gif")
+		_gifCount = 3
+	if name is "strategy"
+		riot.mount("div#strategyarrowwhite","gif")
+		riot.mount("div#strategyarrowyellow1","gif")
+		riot.mount("div#strategyicons","gif")
+		riot.mount("div#strategypeople1","gif")
+		riot.mount("div#strategypeople2","gif")
+		riot.mount("div#strategyarrowyellow2","gif")
+		riot.mount("div#strategyad","gif")
+		_gifCount = 7
+	loadPageEnd() if count is 0
+
 	
-	# setTimeout ->
-	# 	$(".firstPage").addClass "fadeOut animated"
-	# 	setTimeout ->
-	# 		$(".firstPage").remove()
-	# 	,500
-	# ,1500
 hideFirstPage = ->
 	$(".firstPage").addClass "fadeOut animated"
 	setTimeout ->
 		$(".firstPage").remove()
 	,500
-
-# loadAllImage = ->
-# 	max = imageList.length
-# 	for image in imageList
-# 		img = new Image()
-# 		img.onload = ->
-# 			max--
-# 			loadComper parseInt (imageList.length-max)/imageList.length*100
-# 			loadFinished() if max <= 0
-# 		img.src = image
-# 		imgs.push(img)
-# loadComper = (m)->
-# 	$("#loading-text").text m
-# loadFinished = ->
-# 	tags = riot.mount("div#main","main")
-# 	setTimeout ->
-# 		$(".firstPage").addClass "fadeOut animated"
-# 		setTimeout ->
-# 			$(".firstPage").remove()
-# 		,500
-# 	,1000
 
 openBottle = (evt)->
 	return false if opened 
@@ -135,6 +167,10 @@ backBottle = (name)->
 openBottleMain = (evt)->
 	return false if opened 
 	name = $(evt).attr("page-name")
+	if loaded[name] isnt true
+		startLoadPage name,evt
+		return false
+	
 	$(evt).next().addClass "on"
 	$(".bottle-"+name).addClass "Mybottle"
 	$(".main").addClass "page-"+name
@@ -170,8 +206,6 @@ openBrand = (evt)->
 	n = e.attr "rel"
 	$("#pop").show()
 	$("#pop .pop-content").html("<img src='img/pages-brand-pop-"+n+".png' />")
-	
-
 openAward = (evt)->
 	evt.stopPropagation()
 	e = $(evt.target).parents(".icon")
@@ -190,7 +224,6 @@ openMedia = (evt)->
 	# $(".page-media .pop .pop-content").html '<div class="alert-'+n+'"><img src="img/pages-media-alert-'+n+'.jpg" /></div>'
 	$(".pages-media .pop").on "click", ->
 		$(".pages-media .pop").hide()
-
 clearNone = ->
 	setTimeout ->
 		# $(".pages-brand .brands-item").html("")
@@ -216,10 +249,9 @@ brandShow = ->
 		global["brandbg"].replay("replay") if global? && global["brandbg"]?
 		global["brands"].replay("normal") if global? && global["brands"]?
 	,1700
-
 mediaShow = ->
+	# 
 	global["bottlemediamovie"].replay("replay") if global? && global["bottlemediamovie"]?
-
 strategyShow = ->
 	global["strategypeople1"].replay("replay") if global? && global["strategypeople1"]?
 	global["strategypeople2"].replay("replay") if global? && global["strategypeople2"]?
@@ -228,7 +260,6 @@ strategyShow = ->
 	global["strategyarrowyellow2"].replay("replay") if global? && global["strategyarrowyellow2"]?
 	global["strategyarrowwhite"].replay("replay") if global? && global["strategyarrowwhite"]?
 	global["strategyad"].replay("replay") if global? && global["strategyad"]?
-
 logoShow = ->
 	global["logobg"].replay("normal") if global? && global["logobg"]?
 	global["logobottle"].replay("normal") if global? && global["logobottle"]?
@@ -240,7 +271,6 @@ logoShow = ->
 			global["logovitro"].replay("replay") if global? && global["logovitro"]?
 		,400
 	,2400
-
 technologyShow = ->
 	# technologylogo
 	global["technologylogo"].replay("replay") if global? && global["technologylogo"]?

@@ -131,7 +131,9 @@ select-page
 		showShare() {
 			$(".wechat").show()
 			ClickEvent('BUT_4.0_Share'+(self.now+1),1)
+			ClickEvent('P6.0',1)
 			console.log('BUT_4.0_Share'+(self.now+1))
+			console.log('P6.0')
 		}
 		init() {
 			if (self.now <= 1) {
