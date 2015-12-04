@@ -3,32 +3,16 @@
 # @codekit-prepend "../../libs/coffee/requestanimation"
 
 imageList = [
-	"img/text-1.png"
-	"img/text-2.png"
-	"img/text-3.png"
-	"img/text-4.png"
-	"img/text-5.png"
-	"img/text-6.png"
-	"img/text-7.png"
-	"img/text-8.png"
-	"img/text-9.png"
-	"img/text-10.png"
-	"img/button-eat.png"
-	"img/button-info.png"
-	"img/button-list.png"
-	"img/button-random.png"
-	"img/home-bg.jpg"
-	"img/home-logo.png"
-	"img/home-text.png"
-	"img/icon-back.png"
-	"img/icon-play.png"
-	"img/icon-save.png"
-	"img/icon-star.png"
-	"img/logo.png"
-	"img/select-line.png"
-	"img/start.png"
-	"img/wechat.png"
-	"img/box.png"
+	"http://disk.giccoo.com/projects/dazhong/img/text-1.png"
+	"http://disk.giccoo.com/projects/dazhong/img/text-2.png"
+	"http://disk.giccoo.com/projects/dazhong/img/text-3.png"
+	"http://disk.giccoo.com/projects/dazhong/img/text-4.png"
+	"http://disk.giccoo.com/projects/dazhong/img/text-5.png"
+	"http://disk.giccoo.com/projects/dazhong/img/text-6.png"
+	"http://disk.giccoo.com/projects/dazhong/img/text-7.png"
+	"http://disk.giccoo.com/projects/dazhong/img/text-8.png"
+	"http://disk.giccoo.com/projects/dazhong/img/text-9.png"
+	"http://disk.giccoo.com/projects/dazhong/img/text-10.png"
 	# "img/cuisine-1.png"
 	# "img/cuisine-2.png"
 	# "img/cuisine-3.png"
@@ -41,9 +25,10 @@ imageList = [
 	# "img/cuisine-10.png"
 ]
 imgs = []
-# riot.mount("*")
+tags = null
 
 window.onload = ->
+	tags = riot.mount("*")
 	setTimeout ->
 		loadAllImage()
 	,500
@@ -52,7 +37,7 @@ window.onload = ->
 	$(".wechat").on "click",->
 		$(".wechat").hide()
 	$(".homepage .star .item")[0].addEventListener ANIMATION_END_NAME,reButton
-	loadWechatConfig()
+	# loadWechatConfig()
 	wx.ready ->
 		AppMShareContent =
 			title: "玻璃心慎点！这间「青春食堂」总有一道美味能让你动容"
@@ -70,20 +55,30 @@ window.onload = ->
 
 loadAllImage = ->
 	max = imageList.length
+	Nmax = $("[data-src]").length
+	max = Nmax+max
+	now = 0
 	for image in imageList
 		img = new Image()
 		img.onload = ->
-			max--
-			loadComper parseInt (imageList.length-max)/imageList.length*100
-			loadFinished() if max <= 0
+			now++
+			loadComper parseInt now/max*100
+			loadFinished() if now >= max
 		img.src = image
 		imgs.push(img)
+	
+	$("[data-src]").each ->
+		$(this).attr("src",$(this).attr("data-src"))
+	$("[data-src]").on "load", ->
+		now++
+		loadComper parseInt now/max*100
+		loadFinished() if now >= max
+
 loadComper = (m)->
 	$("#loading-text").text m
 
-tags = null
+
 loadFinished = ->
-	tags = riot.mount("*")
 	$(".loading").addClass "fadeOut animated"
 	setTimeout ->
 		$(".loading").hide()
@@ -114,7 +109,7 @@ starEat = ->
 	ClickEvent('P3.0',1)
 
 loadWechatConfig = ->
-	url = encodeURIComponent window.location.href.split("#")[0]
+	url = encodeURIComponent(window.location.href.split("#")[0])
 	hm = document.createElement('script')
 	hm.src = "http://api.giccoo.com/config?url="+url
 	s = document.getElementsByTagName('script')[0]

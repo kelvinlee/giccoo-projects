@@ -9,38 +9,38 @@
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
-    <!-- - var images = "http://disk.giccoo.com/projects/dazhong/img"-->
+    <!-- - var images = "img"-->
     <div class="loading">
-      <div class="img"><img src="img/loading.jpg">
+      <div class="img"><img src="http://disk.giccoo.com/projects/dazhong/img/loading.jpg">
         <div class="text"><span class="loadtext"><em id="loading-text">0</em> %</span><br><span>LOADING</span></div>
       </div>
     </div>
     <div class="main">
       <div class="homepage">
-        <div class="food fadeIn animated duration-10 food-1 delay-2"><img src="img/food-1.jpg"></div>
-        <div class="food fadeIn animated duration-10 food-2 delay-4"><img src="img/food-2.jpg"></div>
-        <div class="food fadeIn animated duration-10 food-3 delay-6"><img src="img/food-3.jpg"></div>
-        <div class="food fadeIn animated duration-10 food-4 delay-8"><img src="img/food-4.jpg"></div>
-        <div class="food fadeIn animated duration-10 food-5 delay-10"><img src="img/food-5.jpg"></div>
-        <div class="food fadeIn animated duration-10 food-6 delay-12"><img src="img/food-6.jpg"></div>
-        <div class="logo fadeIn animated duration-15 delay-8"><img src="img/logo.png"></div>
+        <div class="food fadeIn animated duration-10 food-1 delay-2"><img data-src="http://disk.giccoo.com/projects/dazhong/img/food-1.jpg"></div>
+        <div class="food fadeIn animated duration-10 food-2 delay-4"><img data-src="http://disk.giccoo.com/projects/dazhong/img/food-2.jpg"></div>
+        <div class="food fadeIn animated duration-10 food-3 delay-6"><img data-src="http://disk.giccoo.com/projects/dazhong/img/food-3.jpg"></div>
+        <div class="food fadeIn animated duration-10 food-4 delay-8"><img data-src="http://disk.giccoo.com/projects/dazhong/img/food-4.jpg"></div>
+        <div class="food fadeIn animated duration-10 food-5 delay-10"><img data-src="http://disk.giccoo.com/projects/dazhong/img/food-5.jpg"></div>
+        <div class="food fadeIn animated duration-10 food-6 delay-12"><img data-src="http://disk.giccoo.com/projects/dazhong/img/food-6.jpg"></div>
+        <div class="logo fadeIn animated duration-15 delay-8"><img data-src="http://disk.giccoo.com/projects/dazhong/img/logo.png"></div>
         <div onclick="hidePage()" class="star fadeInUp animated duration-10 delay-12">
-          <div class="item rubberBand animated duration-10 delay-17"><img src="img/start.png"></div>
+          <div class="item rubberBand animated duration-10 delay-17"><img data-src="http://disk.giccoo.com/projects/dazhong/img/start.png"></div>
         </div>
       </div>
       <div class="otherpage">
         <playsound src="mp3/bg.mp3" icon="true" icon-stop="img/icon-stop.png" icon-play="img/icon-play.png"></playsound>
         <div class="infopage fadeIn animated">
           <div class="bg"></div>
-          <div class="box"><img src="img/box.png"></div>
+          <div class="box"><img data-src="http://disk.giccoo.com/projects/dazhong/img/box.png"></div>
           <div class="content">
-            <div class="logo"><img src="img/home-logo.png"></div>
-            <div class="text"><img src="img/home-text.png"></div>
-            <div onclick="starEat()" class="star"><img src="img/button-eat.png"></div>
+            <div class="logo"><img data-src="http://disk.giccoo.com/projects/dazhong/img/home-logo.png"></div>
+            <div class="text"><img data-src="http://disk.giccoo.com/projects/dazhong/img/home-text.png"></div>
+            <div onclick="starEat()" class="star"><img data-src="http://disk.giccoo.com/projects/dazhong/img/button-eat.png"></div>
           </div>
         </div>
         <select-page class="select-page"></select-page>
-        <div class="wechat fadeIn animated"><img src="img/wechat.png"></div>
+        <div class="wechat fadeIn animated"><img data-src="http://disk.giccoo.com/projects/dazhong/img/wechat.png"></div>
       </div>
     </div>
     <script>
@@ -62,6 +62,11 @@
       function loadWechat() {
       	
       }
+      (function(i,s,o,g,r,a,m){i['GiccooApiWechatConfig']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','http://api.giccoo.com/config?url='+encodeURIComponent(window.location.href.split("#")[0]),'ga');
+      
     </script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="/libs/js/min/Zepto.min.js"></script>
