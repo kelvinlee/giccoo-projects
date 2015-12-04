@@ -37,8 +37,8 @@
       <label for="dealer">选择车型:</label>
       <div class="select"><span>{carTypeName}</span>
         <select id="cartype" name="cartype" onchange="{changeCar}">
-          <option value="沃尔沃2016款V40">沃尔沃2016款V40</option>
-          <option value="沃尔沃2015款V60">沃尔沃2015款V60</option>
+          <option value="沃尔沃 V40">沃尔沃 V40</option>
+          <option value="沃尔沃 V60">沃尔沃 V60</option>
         </select>
       </div>
     </div>
@@ -64,7 +64,7 @@
     
     this.provinceName = this.province[0]
     this.cityName = this.city[0]
-    this.carTypeName = "沃尔沃2016款V40"
+    this.carTypeName = "沃尔沃 V40"
     //- this.dealerName = this.dealer[0].name
     this.firstUpdate = true
     this.on("update",function(){
