@@ -112,7 +112,12 @@ startLoadPage = (name,evt)->
 		_gifCount = 2
 	if name is "technology"
 		riot.mount("div#technologylogo","gif")
-		_gifCount = 1
+		riot.mount("div#technologypeople5","gif")
+		riot.mount("div#technologypeople4","gif")
+		riot.mount("div#technologypeople3","gif")
+		riot.mount("div#technologypeople2","gif")
+		riot.mount("div#technologypeople1","gif")
+		_gifCount = 6
 	if name is "media"
 		riot.mount("div#bottlemediamovie","gif")
 		_gifCount = 1
@@ -227,6 +232,7 @@ openMedia = (evt)->
 clearNone = ->
 	setTimeout ->
 		# $(".pages-brand .brands-item").html("")
+		stop = true
 		opened = false
 		global["brandbg"].replay("normal") if global? && global["brandbg"]?
 		global["brands"].replay("stop") if global? && global["brands"]?
@@ -240,6 +246,7 @@ clearNone = ->
 		global["logobg"].replay("stop") if global? && global["logobg"]?
 		global["logobottle"].replay("stop") if global? && global["logobottle"]?
 		global["logovitro"].replay("stop") if global? && global["logovitro"]?
+
 	,500
 
 brandShow = ->
@@ -274,3 +281,19 @@ logoShow = ->
 technologyShow = ->
 	# technologylogo
 	global["technologylogo"].replay("replay") if global? && global["technologylogo"]?
+	console.log "T start"
+	stop = false
+	# TrunCheck()
+
+stop = false
+TrunCheck = ->
+	return false if stop
+	last = 0
+	$(".p-box.index .people").each (i)->
+		# console.log parseInt $(".over",this).css("opacity")
+		if parseInt $(".over",this).css("opacity")
+			if global? and global["technologypeople"+(i+1)]? and (global["technologypeople"+(i+1)].play isnt "replay" and global["technologypeople"+(i+1)].play isnt "stop")
+				global["technologypeople"+(i+1)].replay("replay")
+		else
+			global["technologypeople"+(i+1)].replay("normal") if global? && global["technologypeople"+(i+1)]?
+	requestAnimationFrame(TrunCheck)

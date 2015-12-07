@@ -66,7 +66,7 @@
     	//- console.log(self.menus[parseInt(Math.random()*(self.menus.length-1))])
     	self.changeMenu(self.menus[parseInt(Math.random()*(self.menus.length-1))]).call()
     	self.openCuisine()
-    	ClickEvent('BUT_3.0_Random',1)
+    	ClickEvent('BUT_3.0_Random')
     	console.log('BUT_3.0_Random')
     }
     changeMenu(menu) {
@@ -81,18 +81,18 @@
     openCuisineIn() {
     	self.openInfo = true
     	ClickEvent('P4.'+(self.now+1),1)
-    	ClickEvent('BUT_3.0_Dish'+(self.now+1),1)
+    	ClickEvent('BUT_3.0_Dish'+(self.now+1))
     	console.log('BUT_3.0_Dish'+(self.now+1))
     }
     openCuisine() {
     	self.openInfo = true
     	ClickEvent('P4.'+(self.now+1),1)
-    	ClickEvent('BUT_3.0_Details'+(self.now+1),1)
+    	ClickEvent('BUT_3.0_Details'+(self.now+1))
     	console.log('BUT_3.0_Details'+(self.now+1))
     }
     closeCuisine() {
     	self.openInfo = false
-    	ClickEvent('BUT_4.0_Back'+(self.now+1),1)
+    	ClickEvent('BUT_4.0_Back'+(self.now+1))
     	console.log('BUT_4.0_Back'+(self.now+1))
     }
     showCuisineInfo () {
@@ -100,7 +100,7 @@
     	self.save = true
     	$(".playsound").hide()
     	ClickEvent('P5.'+(self.now+1),1)
-    	ClickEvent('BUT_4.0_Check'+(self.now+1),1)
+    	ClickEvent('BUT_4.0_Check'+(self.now+1))
     	console.log('BUT_4.0_Check'+(self.now+1))
     }
     hideSave() {
@@ -110,12 +110,12 @@
     	self.openInfoInfo = false
     	self.openInfo = false
     	$(".playsound").show()
-    	ClickEvent('BUT_5.0_Back'+(self.now+1),1)
+    	ClickEvent('BUT_5.0_Back'+(self.now+1))
     	console.log('BUT_5.0_Back'+(self.now+1))
     }
     showShare() {
     	$(".wechat").show()
-    	ClickEvent('BUT_4.0_Share'+(self.now+1),1)
+    	ClickEvent('BUT_4.0_Share'+(self.now+1))
     	ClickEvent('P6.0',1)
     	console.log('BUT_4.0_Share'+(self.now+1))
     	console.log('P6.0')

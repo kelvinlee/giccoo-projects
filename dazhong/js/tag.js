@@ -61,7 +61,7 @@ riot.tag('select-page', '<div class="box"><img data-src="http://disk.giccoo.com/
 
     	self.changeMenu(self.menus[parseInt(Math.random()*(self.menus.length-1))]).call()
     	self.openCuisine()
-    	ClickEvent('BUT_3.0_Random',1)
+    	ClickEvent('BUT_3.0_Random')
     	console.log('BUT_3.0_Random')
     }.bind(this);
     this.changeMenu = function(menu) {
@@ -76,18 +76,18 @@ riot.tag('select-page', '<div class="box"><img data-src="http://disk.giccoo.com/
     this.openCuisineIn = function() {
     	self.openInfo = true
     	ClickEvent('P4.'+(self.now+1),1)
-    	ClickEvent('BUT_3.0_Dish'+(self.now+1),1)
+    	ClickEvent('BUT_3.0_Dish'+(self.now+1))
     	console.log('BUT_3.0_Dish'+(self.now+1))
     }.bind(this);
     this.openCuisine = function() {
     	self.openInfo = true
     	ClickEvent('P4.'+(self.now+1),1)
-    	ClickEvent('BUT_3.0_Details'+(self.now+1),1)
+    	ClickEvent('BUT_3.0_Details'+(self.now+1))
     	console.log('BUT_3.0_Details'+(self.now+1))
     }.bind(this);
     this.closeCuisine = function() {
     	self.openInfo = false
-    	ClickEvent('BUT_4.0_Back'+(self.now+1),1)
+    	ClickEvent('BUT_4.0_Back'+(self.now+1))
     	console.log('BUT_4.0_Back'+(self.now+1))
     }.bind(this);
     this.showCuisineInfo = function() {
@@ -95,7 +95,7 @@ riot.tag('select-page', '<div class="box"><img data-src="http://disk.giccoo.com/
     	self.save = true
     	$(".playsound").hide()
     	ClickEvent('P5.'+(self.now+1),1)
-    	ClickEvent('BUT_4.0_Check'+(self.now+1),1)
+    	ClickEvent('BUT_4.0_Check'+(self.now+1))
     	console.log('BUT_4.0_Check'+(self.now+1))
     }.bind(this);
     this.hideSave = function() {
@@ -105,12 +105,12 @@ riot.tag('select-page', '<div class="box"><img data-src="http://disk.giccoo.com/
     	self.openInfoInfo = false
     	self.openInfo = false
     	$(".playsound").show()
-    	ClickEvent('BUT_5.0_Back'+(self.now+1),1)
+    	ClickEvent('BUT_5.0_Back'+(self.now+1))
     	console.log('BUT_5.0_Back'+(self.now+1))
     }.bind(this);
     this.showShare = function() {
     	$(".wechat").show()
-    	ClickEvent('BUT_4.0_Share'+(self.now+1),1)
+    	ClickEvent('BUT_4.0_Share'+(self.now+1))
     	ClickEvent('P6.0',1)
     	console.log('BUT_4.0_Share'+(self.now+1))
     	console.log('P6.0')

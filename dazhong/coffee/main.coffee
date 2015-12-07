@@ -94,7 +94,7 @@ hidePage = ->
 		$(".otherpage").show()
 	,500
 	console.log ClickEvent
-	ClickEvent('BUT_1.0_Start',1)
+	ClickEvent('BUT_1.0_Start')
 	ClickEvent('P2.0',1)
 
 starEat = ->
@@ -105,7 +105,7 @@ starEat = ->
 		tags[1].init()
 	,500
 	console.log ClickEvent
-	ClickEvent('BUT_2.0_Eat',1)
+	ClickEvent('BUT_2.0_Eat')
 	ClickEvent('P3.0',1)
 
 loadWechatConfig = ->

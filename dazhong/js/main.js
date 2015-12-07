@@ -170,7 +170,7 @@ hidePage = function() {
     return $(".otherpage").show();
   }, 500);
   console.log(ClickEvent);
-  ClickEvent('BUT_1.0_Start', 1);
+  ClickEvent('BUT_1.0_Start');
   return ClickEvent('P2.0', 1);
 };
 
@@ -182,7 +182,7 @@ starEat = function() {
     return tags[1].init();
   }, 500);
   console.log(ClickEvent);
-  ClickEvent('BUT_2.0_Eat', 1);
+  ClickEvent('BUT_2.0_Eat');
   return ClickEvent('P3.0', 1);
 };
 
