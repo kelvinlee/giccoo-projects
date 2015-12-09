@@ -298,10 +298,19 @@
 		opacity: 0
 	
 +keyframes(tP1)
-	0%
+	$tpw: 410px
+	0%,10%
 		+transform(translate3d(0,0,0))
+	20%,30%
+		+transform(translate3d($tpw*1/5,0,0))
+	40%,50%
+		+transform(translate3d($tpw*2/5,0,0))
+	60%,70%
+		+transform(translate3d($tpw*3/5,0,0))
+	80%,90%
+		+transform(translate3d($tpw*4/5,0,0))
 	100%
-		+transform(translate3d(400px,0,0))
+		+transform(translate3d($tpw,0,0))
 +keyframes(tP2)
 	0%
 		+transform(translate3d(0,0,0))
@@ -1126,6 +1135,7 @@ $award-delay: 1.4s+0.4
 		+w
 		+h
 		z-index: 1
+		+overhide
 		.m-top
 			.bg
 				padding-top: 40px
@@ -1339,7 +1349,7 @@ $award-delay: 1.4s+0.4
 
 			.peoples
 				+posa
-				+bl(36px,-50px)
+				+bl(36px,-24px)
 				white-space: nowrap
 				z-index: -1
 				font-size: 0
@@ -1369,12 +1379,22 @@ $award-delay: 1.4s+0.4
 				.people
 					+show-inline
 					+posr
-					+p(0 15px)
+					// +p(0 15px)
+					+m(0 -45px)
+					margin-bottom: -42px
+					.normal
+						+w(172px)
 					.over
 						+posa
 						+tl
-						+p(0 15px)
+						+w
+						+h
 						z-index: 2
+						.gif
+							+posa
+							+bl
+							+w(172px)
+							// +transform(translate3d(-50%,0,0))
 					// &.p-1
 						// +animation(tP1,6s,linear,infinite)
 				
@@ -1960,6 +1980,10 @@ $award-delay: 1.4s+0.4
 			+br
 			+w
 			z-index: -1
+			.hand
+				+posa
+				+tl(112px,186px)
+				z-index: 2
 			.line1,.line2
 				+posa
 				+tl

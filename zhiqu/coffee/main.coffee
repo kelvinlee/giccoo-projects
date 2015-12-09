@@ -127,6 +127,7 @@ startLoadPage = (name,evt)->
 		riot.mount("div#logovitro","gif")
 		_gifCount = 3
 	if name is "strategy"
+		riot.mount("div#strategyhand","gif")
 		riot.mount("div#strategyarrowwhite","gif")
 		riot.mount("div#strategyarrowyellow1","gif")
 		riot.mount("div#strategyicons","gif")
@@ -243,6 +244,7 @@ clearNone = ->
 		global["strategyarrowyellow1"].replay("stop") if global? && global["strategyarrowyellow1"]?
 		global["strategyarrowyellow2"].replay("stop") if global? && global["strategyarrowyellow2"]?
 		global["strategyad"].replay("stop") if global? && global["strategyad"]?
+		global["strategyhand"].replay("normal") if global? && global["strategyhand"]?
 		global["logobg"].replay("stop") if global? && global["logobg"]?
 		global["logobottle"].replay("stop") if global? && global["logobottle"]?
 		global["logovitro"].replay("stop") if global? && global["logovitro"]?
@@ -267,6 +269,7 @@ strategyShow = ->
 	global["strategyarrowyellow2"].replay("replay") if global? && global["strategyarrowyellow2"]?
 	global["strategyarrowwhite"].replay("replay") if global? && global["strategyarrowwhite"]?
 	global["strategyad"].replay("replay") if global? && global["strategyad"]?
+	global["strategyhand"].replay("replay") if global? && global["strategyhand"]?
 logoShow = ->
 	global["logobg"].replay("normal") if global? && global["logobg"]?
 	global["logobottle"].replay("normal") if global? && global["logobottle"]?
@@ -292,6 +295,7 @@ TrunCheck = ->
 	$(".p-box.index .people").each (i)->
 		# console.log parseInt $(".over",this).css("opacity")
 		if parseInt $(".over",this).css("opacity")
+
 			if global? and global["technologypeople"+(i+1)]? and (global["technologypeople"+(i+1)].play isnt "replay" and global["technologypeople"+(i+1)].play isnt "stop")
 				global["technologypeople"+(i+1)].replay("replay")
 		else
