@@ -21,7 +21,7 @@
 	50%
 		+transform(translate3d(0,0,0))
 		// +transform(translate3d(200px,0,0))
-		margin-left: 100px
+		margin-left: 40px
 +keyframes(cloudR)
 	0%,60%,100%
 		+transform(translate3d(0,0,0))
@@ -298,10 +298,19 @@
 		opacity: 0
 	
 +keyframes(tP1)
-	0%
+	$tpw: 410px
+	0%,10%
 		+transform(translate3d(0,0,0))
+	20%,30%
+		+transform(translate3d($tpw*1/5,0,0))
+	40%,50%
+		+transform(translate3d($tpw*2/5,0,0))
+	60%,70%
+		+transform(translate3d($tpw*3/5,0,0))
+	80%,90%
+		+transform(translate3d($tpw*4/5,0,0))
 	100%
-		+transform(translate3d(400px,0,0))
+		+transform(translate3d($tpw,0,0))
 +keyframes(tP2)
 	0%
 		+transform(translate3d(0,0,0))
@@ -541,7 +550,13 @@ html,body
 // .loading
 
 
-
+$logo-delay: 0.8s
+$strategy-delay: 1.2s+0.4
+$technology-delay: 0.8s+0.4
+$brand-delay: 0.7s+0.4
+$media-delay: 1s+0.4
+$contactus-delay: 0.4s
+$award-delay: 1.4s+0.4
 
 .bottle
 	+posa
@@ -756,6 +771,7 @@ html,body
 	$w: 520px
 	+w($w)
 	+tl(575px,-132px)
+	z-index: 3
 	#bottleaward
 		+show-inline
 		margin-top: -8px
@@ -896,13 +912,15 @@ html,body
 				+posa
 				+tl
 				+animation(flashF,2s,ease,infinite)
+		.text
+			+text-center
+			+m
+			margin-top: 10px
+			+animation(flashF,2.5s,linear,infinite)
 		.enter
 			+w(100%)
 			+text-center
 			+animation(enter,5s,linear,infinite)
-			.text
-				margin-top: 10px
-				+animation(flashF,2.5s,linear,infinite)
 			.arrow
 				+show
 				+m
@@ -926,7 +944,7 @@ html,body
 		+b("../img/bg.jpg",no-repeat,center,center,cover)
 		+w
 		+h
-		+transform(scale(0.2,0.2))
+		+transform(scale(0.22,0.22))
 		transform-origin: center center
 		.box
 			+wh(300px,500px)
@@ -1004,7 +1022,7 @@ html,body
 	&.page-technology 
 		.homepage
 			+tran($time: 1.2s,$ease: linear)
-			transition-delay: 0.8s
+			transition-delay: $technology-delay
 			+transform(translate3d(763px,-173px,0))
 			.bottle-award,.left-tower
 				+tran
@@ -1015,11 +1033,11 @@ html,body
 			+tr(10px,10px)
 			opacity: 1
 			+transform(rotate(-90deg))
-			transition-delay: 1000ms
+			transition-delay: $technology-delay+1.2
 	&.page-strategy 
 		.homepage
 			+tran($time: 1.4s,$ease: linear)
-			transition-delay: 1.2s
+			transition-delay: $strategy-delay
 			+transform(translate3d(770px,0,0))
 			.bottle-technology
 				+tran
@@ -1030,22 +1048,22 @@ html,body
 			+tr(50px,10px)
 			+transform(rotate(-90deg))
 			opacity: 1
-			transition-delay: 1000ms
+			transition-delay: $strategy-delay+1.4
 	&.page-brand 
 		.homepage
 			+tran($time: 1s,$ease: linear)
-			transition-delay: 0.7s
+			transition-delay: $brand-delay
 			+transform(translate3d(-128px,105%,0))
 		.back-btn
 			+tl(auto,auto)
 			+bl(10px,10px)
 			opacity: 1
-			transition-delay: 1000ms
+			transition-delay: $brand-delay+1
 	&.page-logo 
 		.homepage
 			+tran($time: 1.3s,$ease: linear)
-			transition-delay: 0.8s
-			+transform(translate3d(260px,113%,0))
+			transition-delay: $logo-delay
+			+transform(translate3d(266px,113%,0))
 			.bottle-brand
 				+tran
 				opacity: 0
@@ -1054,37 +1072,44 @@ html,body
 			+tl(auto,auto)
 			+br(10px,10px)
 			opacity: 1
-			transition-delay: 1000ms
+			transition-delay: $logo-delay+1.3
+		.pages-logo-bg
+			+tran($time: 1.3s,$ease: linear)
+			transition-delay: $logo-delay
+			+transform(translate3d(0,0,0))
+			opacity: 1
+
 	&.page-contactus 
 		.homepage
 			+tran($time: 2.2s,$ease: linear)
 			+transform(translate3d(-670px,-500px,0))
+			transition-delay: $contactus-delay
 		.back-btn
 			+tl(70px,10px)
 			+transform(rotate(90deg))
 			opacity: 1
-			transition-delay: 1000ms
+			transition-delay: $contactus-delay+2.2
 	&.page-media 
 		.homepage
 			+tran($time: 1.5s,$ease: linear)
-			transition-delay: 1s
+			transition-delay: $media-delay
 			+transform(translate3d(-700px,550px,0))
 		.back-btn
 			+tl(10px,10px)
 			+transform(rotate(90deg))
 			opacity: 1
-			transition-delay: 1000ms
+			transition-delay: $media-delay+1.5
 	&.page-award 
 		.homepage
 			+tran($time: 1.3s,$ease: linear)
-			transition-delay: 1.4s
+			transition-delay: $award-delay
 			+transform(translate3d(670px,-550px,0))
 		.back-btn
 			+tl(auto,auto)
 			+tr(10px,10px)
 			+transform(rotate(-90deg))
 			opacity: 1
-			transition-delay: 1000ms
+			transition-delay: $award-delay+1.3
 	// &.page-technology .homepage
 		// +tran($time: 2s,$ease: linear)
 		// +transform(translate3d(780px,-100px,0))
@@ -1102,7 +1127,7 @@ html,body
 	+transform(translate3d(-763px,173px,0))
 	&.thispage
 		+tran($time: 1.2s,$ease: linear)
-		transition-delay: 0.8s
+		transition-delay: $technology-delay
 		+transform(translate3d(0,0,0))
 	.content
 		+posa
@@ -1110,6 +1135,7 @@ html,body
 		+w
 		+h
 		z-index: 1
+		+overhide
 		.m-top
 			.bg
 				padding-top: 40px
@@ -1323,7 +1349,7 @@ html,body
 
 			.peoples
 				+posa
-				+bl(36px,-50px)
+				+bl(36px,-24px)
 				white-space: nowrap
 				z-index: -1
 				font-size: 0
@@ -1353,12 +1379,22 @@ html,body
 				.people
 					+show-inline
 					+posr
-					+p(0 15px)
+					// +p(0 15px)
+					+m(0 -45px)
+					margin-bottom: -42px
+					.normal
+						+w(172px)
 					.over
 						+posa
 						+tl
-						+p(0 15px)
+						+w
+						+h
 						z-index: 2
+						.gif
+							+posa
+							+bl
+							+w(172px)
+							// +transform(translate3d(-50%,0,0))
 					// &.p-1
 						// +animation(tP1,6s,linear,infinite)
 				
@@ -1372,7 +1408,7 @@ html,body
 	+transform(translate3d(-670px,550px,0))
 	&.thispage
 		+tran($time: 1.3s,$ease: linear)
-		transition-delay: 1.4s
+		transition-delay: $award-delay
 		+transform(translate3d(0,0,0))
 	.bg
 		+posa
@@ -1392,6 +1428,10 @@ html,body
 			.icon
 				+show-inline
 				+m(0 8px)
+				+posr
+				.star
+					+posa
+					+tl
 		.icons-1
 			+tl(90px+80px,120px)
 		.icons-2
@@ -1420,7 +1460,7 @@ html,body
 	+transform(translate3d(700px,-550px,0))
 	&.thispage
 		+tran($time: 1.5s,$ease: linear)
-		transition-delay: 1s
+		transition-delay: $media-delay
 		+transform(translate3d(0,0,0))
 		
 	.content
@@ -1440,6 +1480,12 @@ html,body
 				+show-inline
 				+m(0 4px)
 				+posr
+				.keep
+					+posa
+					+tl
+					+w
+					+h
+					z-index: 101
 				.light
 					+posa
 					+tl(-30px,-15px)
@@ -1466,6 +1512,7 @@ html,body
 		.ml-30
 			margin-left: -30px
 		.bottle-media-movie
+			+posr
 			+wh(200px,200px)
 			+overhide
 			+show-inline
@@ -1473,6 +1520,12 @@ html,body
 			margin-bottom: -24px
 			margin-left: -40px
 			margin-right: -30px
+			.keep
+				+posa
+				+tl
+				+w
+				+h
+				z-index: 101
 			
 				
 	.bg
@@ -1491,16 +1544,13 @@ html,body
 	&.thispage
 		+tran($time: 2.2s,$ease: linear)
 		+transform(translate3d(0,0,0))
+		transition-delay: $contactus-delay
 		.content
-			.qrcode
-				+transform(translate3d(0,0,0))
-				transition-delay: 1.5s
-				opacity: 1
 			.bottle-full
 				.full
 					+tran
 					+h(100%)
-					transition-delay: 2.2s
+					transition-delay: $contactus-delay+2.2
 	.content
 		+posa
 		+tl
@@ -1530,9 +1580,9 @@ html,body
 			+posa
 			+tl(430px+60px,(640px-274px)/2)
 			z-index: 102
-			opacity: 0
-			+transform(translate3d(-100%,0,0))
-			+tran($time: 1s)
+			// opacity: 0
+			// +transform(translate3d(-100%,0,0))
+			// +tran($time: 1s)
 		.gear
 			+posa
 			+tl(292px,220px)
@@ -1604,7 +1654,7 @@ html,body
 				+wh(80px,3px)
 				+bc(#355e91)
 
-.pages-logo
+.pages-logo,.pages-logo-bg
 	$w: 300px
 	+tran($time: 0.5s,$ease: linear)
 	+posa
@@ -1612,19 +1662,15 @@ html,body
 	+w
 	+h
 	// +hide
-	+transform(translate3d(-260px,-113%,0))
-	+b("../img/pages-logo-bg-start.jpg",no-repeat,center,center,cover)
+	+transform(translate3d(-266px,-113%,0))
+	// +b("../img/pages-logo-bg-start.jpg",no-repeat,center,center,cover)
 	opacity: 0
 	&.thispage
 		+tran($time: 1.3s,$ease: linear)
-		transition-delay: 0.8s
+		transition-delay: $logo-delay
 		+transform(translate3d(0,0,0))
 		opacity: 1
 		// z-index: 120
-		.bg
-			+animation(fadeIn,0.5s,ease)
-			animation-delay: 2s
-			z-index: -1
 		.logo-text
 			+animation(fadeIn,0.5s,ease)
 			animation-delay: 3.5s
@@ -1697,6 +1743,9 @@ html,body
 		+posa
 		+bl(-60px,0)
 
+.pages-logo
+	z-index: 2
+
 .pages-brand
 	+posa
 	+tl
@@ -1709,7 +1758,7 @@ html,body
 	+transform(translate3d(128px,-105%,0))
 	&.thispage
 		+tran($time: 1s,$ease: linear)
-		transition-delay: 0.7s
+		transition-delay: $brand-delay
 		+transform(translate3d(0,0,0))
 		// opacity: 1
 	.bg
@@ -1782,7 +1831,7 @@ html,body
 	// +bc(#73ea9c)
 	&.thispage
 		+tran($time: 1.4s,$ease: linear)
-		transition-delay: 1.2s
+		transition-delay: $strategy-delay
 		+transform(translate3d(0,0,0))
 		// opacity: 1
 	.content
@@ -1931,6 +1980,10 @@ html,body
 			+br
 			+w
 			z-index: -1
+			.hand
+				+posa
+				+tl(112px,186px)
+				z-index: 2
 			.line1,.line2
 				+posa
 				+tl

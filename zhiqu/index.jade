@@ -37,8 +37,8 @@ block content
 					img(src="#{images}/loaded/arrow.png")
 				.arrow.arrow-3
 					img(src="#{images}/loaded/arrow.png")
-				.text
-					img(src="#{images}/loaded/text.png")
+			.text
+				img(src="#{images}/loaded/text.png")
 		.loading
 			.box
 				//- gif(id="loadbox",width="300",height="500",normal='replay',replay='replay',stop="stop",play="replay",count="29",src="#{images}/loaded/box.png")
@@ -127,7 +127,7 @@ block content
 				.timer
 					img(data-layzr="#{images}/right-tower-timer.png")
 					timer
-				//- playsound(src="http://t.douban.com/img/files/file-14483685209223.mp3")
+				playsound(src="http://t.douban.com/img/files/file-14483685209223.mp3")
 			.bottle.last-bottle
 				img(data-layzr="#{images}/bottom-bottle.png")
 			.bottle.bottle-fire-1
@@ -138,7 +138,7 @@ block content
 				img(data-layzr="#{images}/bottle-lighter.png")
 				.fire
 					img(data-layzr="#{images}/bottle-lighter-fire.png")
-			.bottle.bottle-search.tada.animated.infinite.duration-15
+			.bottle.bottle-search.tada.animated.duration-15
 				img(data-layzr="#{images}/magn.png")
 		.pages-technology(name="technology")
 			.content
@@ -239,22 +239,23 @@ block content
 							-for(var i=5;i>=1;i--)
 								.people(class="p-#{i}")
 									.normal
-										img(data-layzr-technology="#{images}/technology/p-0.png")
+										img(data-layzr-technology="#{images}/animate/technology/p#{i}/p-1.png")
 									//- .over
 										img(data-layzr-technology="#{images}/technology/p-#{i}.png")
 						.p-box.index
 							-for(var i=5;i>=1;i--)
 								.people(class="p-#{i}")
 									.normal
-										img(data-layzr-technology="#{images}/technology/p-0.png")
+										img(data-layzr-technology="#{images}/animate/technology/p#{i}/p-1.png")
 									.over
-										img(data-layzr-technology="#{images}/technology/p-#{i}.png")
+										//- img(data-layzr-technology="#{images}/technology/p-#{i}.png")
+										div(id="technologypeople#{i}",width="200",height="650",normal="[0,0,'normal']",replay="[0,9,'stop']",stop="9",play="normal",count="10",src="#{images}/animate/technology/p#{i}/p-id.png")
 						.p-box
 							-for(var i=5;i>=1;i--)
 								.people(class="p-#{i}")
 									.normal
-										img(data-layzr-technology="#{images}/technology/p-0.png")
-									.over
+										img(data-layzr-technology="#{images}/animate/technology/p#{i}/p-10.png")
+									//- .over
 										img(data-layzr-technology="#{images}/technology/p-#{i}.png")
 					.icons
 						.icon-box.first
@@ -277,14 +278,20 @@ block content
 					-for (var i=1;i<3;i++)
 						.icon(rel="#{i}")
 							img(data-layzr-award="#{images}/pages-award-icon-#{i}.png")
+							.star
+								img(data-layzr-award="#{images}/star.png")
 				.icons.icons-2
 					-for (var i=3;i<6;i++)
 						.icon(rel="#{i}")
 							img(data-layzr-award="#{images}/pages-award-icon-#{i}.png")
+							.star
+								img(data-layzr-award="#{images}/star.png")
 				.icons.icons-3
 					-for (var i=6;i<8;i++)
 						.icon(rel="#{i}")
 							img(data-layzr-award="#{images}/pages-award-icon-#{i}.png")
+							.star
+								img(data-layzr-award="#{images}/star.png")
 				.other.other-1
 					img(data-layzr-award="#{images}/pages-award-other-1.png")
 				.other.other-2
@@ -296,9 +303,10 @@ block content
 				img(data-layzr-media="#{images}/pages-media-bg.png")
 			.content
 				.icons.icons-1
-					-for (var i=1;i<7;i++)
+					- for (var i=1;i<7;i++)
 						.icon(rel="#{i}")
 							img(data-layzr-media="#{images}/pages-media-icon-#{i}.png")
+							.keep
 							.light
 								img(data-layzr-media="#{images}/pages-media-icon-#{i}-light.png")
 							.alert
@@ -318,6 +326,7 @@ block content
 						.gif-content
 							img(data-layzr-media="#{images}/pages-media-bottle-movie.png")
 					.bottle-media-movie
+						.keep
 						#bottlemediamovie(width="200",height="200",count="38",normal='[0,0,"normal"]',replay='[0,37,"replay"]',stop="0",play="normal",src="#{images}/animate/media/media-id.png")
 					.icon
 						img(data-layzr-media="#{images}/pages-media-bottle-6.png")
@@ -325,8 +334,6 @@ block content
 				.pop-content
 					img(data-layzr-media="#{images}/pages-media-alert.png")
 		.pages-logo(name="logo")
-			.bg
-				#logobg(width="640",height="1134",count="24",normal='[0,0,"normal"]',replay='[0,23,"stop"]',stop="23",play="normal",src="#{images}/animate/logo/bg/bg-id.jpg")
 			.content
 				.logo-page-bottle
 					#logobottle(width="300",height="300",count="15",normal='[0,0,"normal"]',replay='[0,14,"stop"]',stop="14",play="normal",src="#{images}/animate/logo/bottle/bottle-id.png")
@@ -334,6 +341,9 @@ block content
 					#logovitro(width="700",height="1000",count="78",normal='[0,0,"normal"]',replay='[0,77,"stop"]',stop="77",play="normal",src="#{images}/animate/logo/vitro/vitro-id.png")
 				.logo-text
 					img(data-layzr-logo="#{images}/pages-logo-text.png")		
+		.pages-logo-bg
+			.bg
+				#logobg(width="640",height="1134",count="24",normal='[0,0,"normal"]',replay='[0,23,"stop"]',stop="23",play="normal",src="#{images}/animate/logo/bg/bg-id.jpg")
 		.pages-brand(name="brand")
 			.bg
 				#brandbg(width="640",height="1134",count="8",normal='[0,0,"normal"]',replay='[0,7,"stop"]',stop="7",play="normal",src="#{images}/animate/brandbg/brandbg-id.png")
@@ -362,9 +372,9 @@ block content
 								img(data-layzr-strategy="#{images}/pages-strategy-light-all-#{i}.png")
 					.item-pointer
 					.item-arrow-white
-						#strategyarrowwhite(width="30",height="100",count="15",normal="[0,0,'normal']",replay='[0,14,"replay"]',delay="3000",stop="14",play="normal",src="#{images}/animate/strategy/arrow-white/arrow-id.png")
+						#strategyarrowwhite(width="30",height="100",count="15",normal="[0,0,'normal']",replay='[0,14,"replay"]',stop="14",play="normal",src="#{images}/animate/strategy/arrow-white/arrow-id.png")
 					.item-arrow
-						#strategyarrowyellow1(width="30",height="100",count="15",normal="[0,0,'normal']",replay='[0,14,"replay"]',delay="6000",stop="14",play="normal",src="#{images}/animate/strategy/arrow-yellow/arrow-id.png")
+						#strategyarrowyellow1(width="30",height="100",count="15",normal="[0,0,'normal']",replay='[0,14,"replay"]',stop="14",play="normal",src="#{images}/animate/strategy/arrow-yellow/arrow-id.png")
 					.item-screw
 						img(data-layzr-strategy="#{images}/pages-strategy-screw.png")
 					.item-icloud-1
@@ -383,13 +393,15 @@ block content
 						img(data-layzr-strategy="#{images}/pages-strategy-lighter.png")
 					.item-icons
 						//- img(data-layzr-strategy="#{images}/pages-strategy-icons.png")
-						#strategyicons(width="300",height="300",count="45",normal="[0,0,'normal']",replay='[0,44,"replay"]',delay="6000",stop="44",play="normal",src="#{images}/animate/strategy/icons/icon-id.png")
+						#strategyicons(width="300",height="300",count="44",normal="[1,1,'normal']",replay='[1,43,"replay"]',delay="6000",stop="43",play="normal",src="#{images}/animate/strategy/icons/icon-id.png")
 						//- .test
 						.box
 							img(data-layzr-strategy="#{images}/pages-strategy-box.png")
 				.m-bottom
 					.line1
 					.line2
+					.hand
+						#strategyhand(width="150",height="150",count="10",normal='[0,0,"normal"]',replay='[0,9,"replay"]',delay="4000",stop="9",play="normal",src="#{images}/animate/strategy/hand/hand-id.png")
 					.bg
 						img(data-layzr-strategy="#{images}/pages-strategy-m-bottom.png")
 						.p1
@@ -404,7 +416,7 @@ block content
 							img(data-layzr-strategy="#{images}/pages-strategy-parts-roulette.png")
 						.fcanvas
 							.item-arrow
-								#strategyarrowyellow2(width="30",height="100",count="15",normal="[0,0,'normal']",replay='[0,14,"replay"]',delay="4000",stop="14",play="normal",src="#{images}/animate/strategy/arrow-yellow/arrow-id.png")
+								#strategyarrowyellow2(width="30",height="100",count="15",normal="[0,0,'normal']",replay='[0,14,"replay"]',stop="14",play="normal",src="#{images}/animate/strategy/arrow-yellow/arrow-id.png")
 							.items
 								#strategyad(width="500",height="400",count="102",normal="[0,0,'normal']",replay='[0,35,"stepto"]',stepto='[36,93,"stepend"]',stepend='[94,101,"replay"]',delay="4000",stop="0",play="normal",src="#{images}/animate/strategy/ad/ad-id.png")
 		.pages-contactus(name="contactus")

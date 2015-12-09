@@ -85,8 +85,6 @@ HTMLElement.prototype.getStyle = function(className) {
 
 _citys = {};
 
-_citys = {};
-
 _citys["北京"] = {};
 
 _citys["甘肃"] = {};
@@ -369,6 +367,8 @@ _citys["浙江"]["舟山"] = [];
 
 _citys["山西"]["运城"] = [];
 
+_citys["广东"]["江门"] = [];
+
 _citys["北京"]["北京"].push({
   code: "BJG",
   name: "沃尔沃汽车北京中汽南方百旺4S中心"
@@ -381,17 +381,17 @@ _citys["北京"]["北京"].push({
 
 _citys["北京"]["北京"].push({
   code: "BJC",
-  name: "沃尔沃汽车北京中汽南方东四环展厅"
+  name: "沃尔沃汽车北京中汽南方东四环展厅 "
 });
 
 _citys["北京"]["北京"].push({
   code: "BJE",
-  name: "沃尔沃汽车北京中诚海华4S中心"
+  name: "沃尔沃汽车北京中诚海华4S中心 "
 });
 
 _citys["北京"]["北京"].push({
   code: "BJF",
-  name: "沃尔沃汽车北京宝辰欧雅4S中心"
+  name: "沃尔沃汽车北京宝辰欧雅4S中心 "
 });
 
 _citys["甘肃"]["兰州"].push({
@@ -531,12 +531,12 @@ _citys["江西"]["南昌"].push({
 
 _citys["上海"]["上海"].push({
   code: "SHA",
-  name: "沃尔沃汽车上海世之沃4S中心"
+  name: "沃尔沃汽车上海世之沃4S中心 "
 });
 
 _citys["上海"]["上海"].push({
   code: "SHE",
-  name: "沃尔沃汽车上海世之沃浦东维修站"
+  name: "沃尔沃汽车上海世之沃浦东维修站 "
 });
 
 _citys["上海"]["上海"].push({
@@ -616,7 +616,7 @@ _citys["广东"]["揭阳"].push({
 
 _citys["广东"]["汕头"].push({
   code: "STA",
-  name: "沃尔沃汽车汕头恒康4S中心"
+  name: "沃尔沃汽车汕头恒康4S中心 "
 });
 
 _citys["广东"]["深圳"].push({
@@ -956,7 +956,7 @@ _citys["江苏"]["无锡"].push({
 
 _citys["广西"]["柳州"].push({
   code: "NNC",
-  name: "沃尔沃汽车柳州弘耀4S中心"
+  name: "沃尔沃汽车柳州弘耀 4S中心"
 });
 
 _citys["云南"]["昆明"].push({
@@ -971,7 +971,7 @@ _citys["福建"]["福州"].push({
 
 _citys["福建"]["泉州"].push({
   code: "QZB",
-  name: "沃尔沃汽车泉州中升沃茂4S中心"
+  name: "沃尔沃汽车泉州中升沃茂 4S中心"
 });
 
 _citys["黑龙江"]["哈尔滨"].push({
@@ -1051,7 +1051,7 @@ _citys["河南"]["安阳"].push({
 
 _citys["山东"]["威海"].push({
   code: "WHD",
-  name: "沃尔沃汽车威海 威海富豪4S中心"
+  name: "沃尔沃汽车 威海 威海富豪 4S中心 "
 });
 
 _citys["江苏"]["盐城"].push({
@@ -1241,7 +1241,7 @@ _citys["吉林"]["吉林"].push({
 
 _citys["浙江"]["金华"].push({
   code: "JHC",
-  name: "沃尔沃汽车金华中沃维修站"
+  name: "沃尔沃汽车金华中沃维修站 "
 });
 
 _citys["陕西"]["宝鸡"].push({
@@ -1352,6 +1352,16 @@ _citys["重庆"]["重庆"].push({
 _citys["陕西"]["西安"].push({
   code: "XAE",
   name: "沃尔沃西安天一汇通4S中心"
+});
+
+_citys["江苏"]["南京"].push({
+  code: "NJC",
+  name: "沃尔沃汽车南京天泓凯润4S中心"
+});
+
+_citys["广东"]["江门"].push({
+  code: "JMA",
+  name: "沃尔沃汽车江门元柏通4S中心"
 });
 
 window.onload = function() {

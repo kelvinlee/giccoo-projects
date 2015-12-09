@@ -1,59 +1,61 @@
 select-page
+	-var images = "http://disk.giccoo.com/projects/dazhong/img"
+	//- - var images = "img"
 	.box
-		img(src="img/box.png")
+		img(data-src="#{images}/box.png")
 	.content
 		.logo
-			img(src="img/home-logo.png")
+			img(data-src="#{images}/home-logo.png")
 		.menus
 			.line
-				img(src="img/select-line.png")
+				img(data-src="#{images}/select-line.png")
 			.arrow
 				.arrow-top
-					img(src="img/arrow.png")
+					img(data-src="#{images}/arrow.png")
 				.arrow-bottom
-					img(src="img/arrow.png")
+					img(data-src="#{images}/arrow.png")
 			.menu(class="{onmove: !canRun}")
 				.menu-item(each="{menu in menus}",onclick="{changeMenu(menu)}",class="{now: parent.now == menus.indexOf(menu),after: parent.now == menus.indexOf(menu)-1,afterfornow: parent.now == menus.length-1 && menus.indexOf(menu) == 0,before: parent.now == menus.indexOf(menu)+1, before: parent.now == 0 && menus.indexOf(menu) == menus.length-1,readydown: parent.now == 1 && menus.indexOf(menu) == menus.length-1, readyup: parent.now == menus.length-2 && menus.indexOf(menu) == 0,readydown: parent.now == 0 && menus.indexOf(menu) == menus.length-2, readyup: parent.now == menus.length-1 && menus.indexOf(menu) == 1}")
-					img(src="{menu.thumb}.png")
+					img(data-src="{menu.thumb}.png")
 					.over(onclick="{openCuisineIn}")
 			//- .menu-bk
 				.menu-item(each="{menu in menusbk}",onclick="{changeMenu(menu)}",class="{now: parent.now == menusbk.indexOf(menu),after: parent.now == menusbk.indexOf(menu)-1,before: parent.now == menusbk.indexOf(menu)+1}")
-					img(src="{menu.thumb}.png")
+					img(data-src="{menu.thumb}.png")
 					.over(onclick="{openCuisine}")
 		.text.fadeIn.animated(show="{canRun}")
-			//- img(src="img/text-{now+1}.png")
+			//- img(data-src="#{images}/text-{now+1}.png")
 			//- p.title
 			//- 	span.icon
-			//- 		img(src="img/icon-star.png")
+			//- 		img(data-src="#{images}/icon-star.png")
 			//- 	span {info.name}
 			//- p {info.description}
 		.btns
 			.btn-info(onclick="{openCuisine}")
-				img(src="img/button-info.png")
+				img(data-src="#{images}/button-info.png")
 			.btn-random(onclick="{randomCuisine}")
-				img(src="img/button-random.png")
+				img(data-src="#{images}/button-random.png")
 
 	.cuisinePage(show="{openInfo}",class="fadeIn animated")
 		.load
-			img(src="/libs/img/loading-normal.png")
+			img(data-src="/libs/img/loading-normal.png")
 		.context-img(if="{openInfo}")
 			img(src="{info.thumb}-1.jpg")
 		.btns
-			img(src="img/button-list.png")
+			img(data-src="#{images}/button-list.png")
 			.btn.btn-2(onclick="{showCuisineInfo}")
 			.btn.btn-3(onclick="{showShare}")
 		.btn.btn-1(onclick="{closeCuisine}")
-			img(src="img/button-back.png")
+			img(data-src="#{images}/button-back.png")
 	.cuisineInfoPage(show="{openInfoInfo}",class="fadeIn animated")
 		.load
-			img(src="/libs/img/loading-normal.png")
+			img(data-src="/libs/img/loading-normal.png")
 		.context-img(if="{openInfo}")
 			img(src="{info.thumb}-2.jpg")
 		.btns
 			.btn-new.btn-5(onclick="{hideSave}",show="{save}")
-				img(src="img/icon-save.png")
+				img(data-src="#{images}/icon-save.png")
 		.btn-new.btn-4(onclick="{closeCuisineInfo}")
-			img(src="img/icon-back.png")
+			img(data-src="#{images}/icon-back.png")
 	script.
 		var self = this
 		this.openInfo = false
@@ -63,16 +65,16 @@ select-page
 		this.canRun = false
 		this.now = 9
 		this.menus = [
-			{name:"《霍森斯那碗羊肉pasta》",thumb:"img/cuisine-1",description:"在北欧的童话里，用美食治愈乡愁"},
-			{name:"《两个饥饿的女文青》",thumb:"img/cuisine-2",description:"没挨过饿，就不算有故事的文艺青年"},
-			{name:"《花心思的吮指美味 美式香烤猪肋排》",thumb:"img/cuisine-3",description:"有一种甜甜腻腻的滋味——叫爱情"},
-			{name:"《是味道，更是儿时的记忆》",thumb:"img/cuisine-4",description:"承认吧！生命中烙印最深的DNA，是你的口味"},
-			{name:"《小龙虾盖浇饭》",thumb:"img/cuisine-5",description:"太重口味？那是你打开的方式不对"},
-			{name:"《番茄蛋的故事》",thumb:"img/cuisine-6",description:"番茄炒蛋，做给最爱的人吃才好吃"},
-			{name:"《大胃囊与小食代——茶香话梅卤汁豆干》",thumb:"img/cuisine-7",description:"亲手做一份怀念尝尝"},
-			{name:"《陌生的城市啊熟悉的角落里，独有一份属于家的味觉》",thumb:"img/cuisine-8",description:"这个火锅是用来暖家的"},
-			{name:"《掰馍》",thumb:"img/cuisine-9",description:"吃羊肉泡馍前，先得憋个大招"},
-			{name:"《Miss麻辣烫》",thumb:"img/cuisine-10",description:"是不是所有的“秀色可餐”，最后都变成了“食色性也”？"}
+			{name:"《霍森斯那碗羊肉pasta》",thumb:"#{images}/cuisine-1",description:"在北欧的童话里，用美食治愈乡愁"},
+			{name:"《两个饥饿的女文青》",thumb:"#{images}/cuisine-2",description:"没挨过饿，就不算有故事的文艺青年"},
+			{name:"《花心思的吮指美味 美式香烤猪肋排》",thumb:"#{images}/cuisine-3",description:"有一种甜甜腻腻的滋味——叫爱情"},
+			{name:"《是味道，更是儿时的记忆》",thumb:"#{images}/cuisine-4",description:"承认吧！生命中烙印最深的DNA，是你的口味"},
+			{name:"《小龙虾盖浇饭》",thumb:"#{images}/cuisine-5",description:"太重口味？那是你打开的方式不对"},
+			{name:"《番茄蛋的故事》",thumb:"#{images}/cuisine-6",description:"番茄炒蛋，做给最爱的人吃才好吃"},
+			{name:"《大胃囊与小食代——茶香话梅卤汁豆干》",thumb:"#{images}/cuisine-7",description:"亲手做一份怀念尝尝"},
+			{name:"《陌生的城市啊熟悉的角落里，独有一份属于家的味觉》",thumb:"#{images}/cuisine-8",description:"这个火锅是用来暖家的"},
+			{name:"《掰馍》",thumb:"#{images}/cuisine-9",description:"吃羊肉泡馍前，先得憋个大招"},
+			{name:"《Miss麻辣烫》",thumb:"#{images}/cuisine-10",description:"是不是所有的“秀色可餐”，最后都变成了“食色性也”？"}
 		]
 		this.info = this.menus[this.now]
 		randomCuisine() {
@@ -81,7 +83,7 @@ select-page
 			//- console.log(self.menus[parseInt(Math.random()*(self.menus.length-1))])
 			self.changeMenu(self.menus[parseInt(Math.random()*(self.menus.length-1))]).call()
 			self.openCuisine()
-			ClickEvent('BUT_3.0_Random',1)
+			ClickEvent('BUT_3.0_Random')
 			console.log('BUT_3.0_Random')
 		}
 		changeMenu(menu) {
@@ -96,18 +98,18 @@ select-page
 		openCuisineIn() {
 			self.openInfo = true
 			ClickEvent('P4.'+(self.now+1),1)
-			ClickEvent('BUT_3.0_Dish'+(self.now+1),1)
+			ClickEvent('BUT_3.0_Dish'+(self.now+1))
 			console.log('BUT_3.0_Dish'+(self.now+1))
 		}
 		openCuisine() {
 			self.openInfo = true
 			ClickEvent('P4.'+(self.now+1),1)
-			ClickEvent('BUT_3.0_Details'+(self.now+1),1)
+			ClickEvent('BUT_3.0_Details'+(self.now+1))
 			console.log('BUT_3.0_Details'+(self.now+1))
 		}
 		closeCuisine() {
 			self.openInfo = false
-			ClickEvent('BUT_4.0_Back'+(self.now+1),1)
+			ClickEvent('BUT_4.0_Back'+(self.now+1))
 			console.log('BUT_4.0_Back'+(self.now+1))
 		}
 		showCuisineInfo () {
@@ -115,7 +117,7 @@ select-page
 			self.save = true
 			$(".playsound").hide()
 			ClickEvent('P5.'+(self.now+1),1)
-			ClickEvent('BUT_4.0_Check'+(self.now+1),1)
+			ClickEvent('BUT_4.0_Check'+(self.now+1))
 			console.log('BUT_4.0_Check'+(self.now+1))
 		}
 		hideSave() {
@@ -125,12 +127,12 @@ select-page
 			self.openInfoInfo = false
 			self.openInfo = false
 			$(".playsound").show()
-			ClickEvent('BUT_5.0_Back'+(self.now+1),1)
+			ClickEvent('BUT_5.0_Back'+(self.now+1))
 			console.log('BUT_5.0_Back'+(self.now+1))
 		}
 		showShare() {
 			$(".wechat").show()
-			ClickEvent('BUT_4.0_Share'+(self.now+1),1)
+			ClickEvent('BUT_4.0_Share'+(self.now+1))
 			ClickEvent('P6.0',1)
 			console.log('BUT_4.0_Share'+(self.now+1))
 			console.log('P6.0')
