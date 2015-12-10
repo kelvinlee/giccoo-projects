@@ -657,7 +657,8 @@ html, body {
     top: 50%;
     left: 0px;
     -webkit-transform: translate3d(0, -50%, 0);
-            transform: translate3d(0, -50%, 0); }
+            transform: translate3d(0, -50%, 0);
+    width: 100%; }
   .loading .text {
     position: absolute;
     top: 68%;
