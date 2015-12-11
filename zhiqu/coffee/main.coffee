@@ -109,7 +109,8 @@ startLoadPage = (name,evt)->
 	if name is "brand"
 		riot.mount("div#brandbg","gif")
 		riot.mount("div#brands","gif")
-		_gifCount = 2
+		global["bottlebrand"].reload()
+		_gifCount = 3
 	if name is "technology"
 		riot.mount("div#technologylogo","gif")
 		riot.mount("div#technologypeople5","gif")
@@ -117,15 +118,19 @@ startLoadPage = (name,evt)->
 		riot.mount("div#technologypeople3","gif")
 		riot.mount("div#technologypeople2","gif")
 		riot.mount("div#technologypeople1","gif")
-		_gifCount = 6
+		riot.mount("div#technologyhand","gif")
+		global["bottletechnology"].reload()
+		_gifCount = 8
 	if name is "media"
 		riot.mount("div#bottlemediamovie","gif")
-		_gifCount = 1
+		global["bottlemedia"].reload()
+		_gifCount = 2
 	if name is "logo"
 		riot.mount("div#logobg","gif")
 		riot.mount("div#logobottle","gif")
 		riot.mount("div#logovitro","gif")
-		_gifCount = 3
+		global["bottlelogo"].reload()
+		_gifCount = 4
 	if name is "strategy"
 		riot.mount("div#strategyhand","gif")
 		riot.mount("div#strategyarrowwhite","gif")
@@ -135,9 +140,14 @@ startLoadPage = (name,evt)->
 		riot.mount("div#strategypeople2","gif")
 		riot.mount("div#strategyarrowyellow2","gif")
 		riot.mount("div#strategyad","gif")
-		_gifCount = 7
+		global["bottlestrategy"].reload()
+		_gifCount = 8
 	if name is "contactus"
 		riot.mount("div#contactusfull","gif")
+		global["bottlecontactus"].reload()
+		_gifCount = 2
+	if name is "award"
+		global["bottleaward"].reload()
 		_gifCount = 1
 	loadPageEnd() if count is 0
 
@@ -298,6 +308,12 @@ technologyShow = ->
 	stop = false
 	TrunCheck()
 
+technologyHandRun = (name)->
+	if name is "replay"
+		console.log(name)
+		
+
+
 stop = false
 XList = [-62,30,122,214,306]
 TWidth = 460 / 5
@@ -321,5 +337,15 @@ TrunCheck = ->
 			global["technologypeople"+(i+1)].replay("normal")
 		else if x >= XList[i]+TWidth*4.92 and global["technologypeople"+(i+1)].play isnt "normal"
 			global["technologypeople"+(i+1)].replay("normal")
-
+	# if $(".pages-technology .line").height() >= 90 and (global["technologyhand"].play isnt "stop" or global["technologyhand"].play isnt "replay")
+	# 	global["technologyhand"].replay("replay")
+	# 	console.log $(".pages-technology .line").height(),"line height"
+	# if $(".pages-technology .line").height() <= 90 and (global["technologyhand"].play is "stop" or global["technologyhand"].play is "replay")
+	# 	console.log $(".pages-technology .line").height(),"line height"
+	# 	global["technologyhand"].replay("normal")
+	if $(".pages-technology .line").height() >= 90 and (global["technologyhand"].play isnt "stop" and global["technologyhand"].play isnt "replay")
+		# console.log $(".pages-technology .line").height(),global["technologyhand"].play
+		global["technologyhand"].replay("replay")
+	if $(".pages-technology .line").height() <= 50 and (global["technologyhand"].play isnt "normal")
+		global["technologyhand"].replay("normal")
 	requestAnimationFrame(TrunCheck)

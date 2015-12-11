@@ -101,10 +101,10 @@ $people-width: 460px
 		opacity: 1
 
 +keyframes(BM)
-	0%,10%
+	0%,14%
 		+transform(translate3d(0,-50px,0))
 		opacity: 0
-	20%
+	16%
 		+transform(translate3d(0,0,0))
 		opacity: 1
 	100%
@@ -352,30 +352,55 @@ $people-width: 460px
 		opacity: 1
 
 +keyframes(lo1)
-	0%,10%,100%
+	0%,100%
 		opacity: 0
+		+h(0)
 	2%,8%
 		opacity: 1
-+keyframes(lo2)
-	0%,20%,30%,100%
+		+h(100%)
+	10%
 		opacity: 0
+		+h(100%)
++keyframes(lo2)
+	0%,20%,100%
+		opacity: 0
+		+h(0)
 	22%,28%
 		opacity: 1
-+keyframes(lo3)
-	0%,40%,50%,100%
+		+h(100%)
+	30%
 		opacity: 0
+		+h(100%)
++keyframes(lo3)
+	0%,40%,100%
+		opacity: 0
+		+h(0)
 	42%,48%
 		opacity: 1
-+keyframes(lo4)
-	0%,60%,70%,100%
+		+h(100%)
+	50%
 		opacity: 0
+		+h(100%)
++keyframes(lo4)
+	0%,60%,100%
+		opacity: 0
+		+h(0)
 	62%,68%
 		opacity: 1
-+keyframes(lo5)
-	0%,80%,90%,100%
+		+h(100%)
+	70%
 		opacity: 0
+		+h(100%)
++keyframes(lo5)
+	0%,80%,100%
+		opacity: 0
+		+h(0)
 	82%,88%
 		opacity: 1
+		+h(100%)
+	90%
+		opacity: 0
+		+h(100%)
 +keyframes(moveIconText)
 	0%,8%
 		+transform(translate3d(0,0,0))
@@ -456,9 +481,9 @@ $people-width: 460px
 		+transform(translate3d(0,200%,0))
 
 +keyframes(handLine)
-	0%,100%
+	0%,10%,80%,100%
 		+h(40px)
-	20%,80%
+	30%,70%
 		+h(90px)
 
 +keyframes(bomtA)
@@ -1250,6 +1275,9 @@ $award-delay: 1.4s+0.4
 				.hand
 					+posr
 					margin-top: -2px
+					#technologyhand
+						+posa
+						+tl(-20px,-40px)
 					.hand-box
 						+posa
 						+tl(0px,20px)

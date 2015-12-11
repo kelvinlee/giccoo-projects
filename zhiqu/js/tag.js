@@ -69,6 +69,11 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     var now = Date.now()
     
     if (opts.id&&global) { global[opts.id] = self }
+    if (opts.load) {
+    	console.log(opts.id,"拆分 load",parseInt(eval(opts["prepare"])[1]))
+
+    	self.max = parseInt(eval(opts["prepare"])[1])+1
+    }
     for (var i=0;i < self.max; i++) {
     	var image = new Image()
     	image.src = opts.src.replace("id",i+1)
@@ -77,18 +82,39 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     	}
     	loads.push(image)
     }
+    this.reload = function() {
+
+
+    	for (var i=parseInt(eval(opts["prepare"])[1])+1;i < self.count; i++) {
+    		var image = new Image()
+    		image.src = opts.src.replace("id",i+1)
+    		image.onload = function(){
+    			self._reload()
+    		}
+    		loads.push(image)
+    	}
+    	self.NotReinit = true
+    }.bind(this);
+    this._reload = function() {
+    	self._loaded++
+    	if (parseInt(self._loaded/self.count*100) == 100) {
+    		self.loaded = true
+    		self.loadend()
+    	}
+    }.bind(this);
     this.load = function() {
     	self._loaded++
 
-    
+    	
     	if (parseInt(self._loaded/self.max*100) == 100) {
     		self.loaded = true
     		self.loadend()
     	}
     }.bind(this);
     this.loadend = function() {
-    	console.log(opts.id," loaded")
+    	console.log(opts.id," loaded",loads)
     	loadGIF()
+    	if (self.NotReinit) {return false}
     	self.init()
     }.bind(this);
     this.init = function() {
@@ -99,6 +125,9 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     this.replay = function(name) {
 
     	self.play = name
+    	if (opts.prerun) {
+    		eval(opts.prerun+"('"+name+"')")
+    	}
     	if (name == "stop") {
     		self.now = parseInt(opts[name])
     		$(".gif",self.root).html(loads[self.now])
@@ -129,6 +158,9 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
 
     		$(".gif",self.root).html(loads[self.now])
     		self.now++
+    		if (opts.id == "bottlelogo") {
+    			console.log(self.now, self.max)
+    		}
     		if (self.now > self.max) {
     			self.now = self.max
     			if (opts.delay && self.play != "stepend") {

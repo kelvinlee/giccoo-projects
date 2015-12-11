@@ -19,6 +19,11 @@ gif
 		var now = Date.now()
 
 		if (opts.id&&global) { global[opts.id] = self }
+		if (opts.load) {
+			console.log(opts.id,"拆分 load",parseInt(eval(opts["prepare"])[1]))
+			//- playList = eval(opts["prepare"])[1]
+			self.max = parseInt(eval(opts["prepare"])[1])+1
+		}
 		for (var i=0;i < self.max; i++) {
 			var image = new Image()
 			image.src = opts.src.replace("id",i+1)
@@ -27,18 +32,39 @@ gif
 			}
 			loads.push(image)
 		}
+		reload() {
+			//- self.max = parseInt(opts.count)
+			//- console.log(self.max)
+			for (var i=parseInt(eval(opts["prepare"])[1])+1;i < self.count; i++) {
+				var image = new Image()
+				image.src = opts.src.replace("id",i+1)
+				image.onload = function(){
+					self._reload()
+				}
+				loads.push(image)
+			}
+			self.NotReinit = true
+		}
+		_reload() {
+			self._loaded++
+			if (parseInt(self._loaded/self.count*100) == 100) {
+				self.loaded = true
+				self.loadend()
+			}
+		}
 		load() {
 			self._loaded++
 			//- console.log(parseInt(self.loaded/self.max*100))
-
+			
 			if (parseInt(self._loaded/self.max*100) == 100) {
 				self.loaded = true
 				self.loadend()
 			}
 		}
 		loadend() {
-			console.log(opts.id," loaded")
+			console.log(opts.id," loaded",loads)
 			loadGIF()
+			if (self.NotReinit) {return false}
 			self.init()
 		}
 		init() {
@@ -49,6 +75,9 @@ gif
 		replay(name){
 			//- if (name == self.next) { return false }
 			self.play = name
+			if (opts.prerun) {
+				eval(opts.prerun+"('"+name+"')")
+			}
 			if (name == "stop") {
 				self.now = parseInt(opts[name])
 				$(".gif",self.root).html(loads[self.now])
@@ -79,6 +108,9 @@ gif
 				// draw
 				$(".gif",self.root).html(loads[self.now])
 				self.now++
+				if (opts.id == "bottlelogo") {
+					console.log(self.now, self.max)
+				}
 				if (self.now > self.max) {
 					self.now = self.max
 					if (opts.delay && self.play != "stepend") {

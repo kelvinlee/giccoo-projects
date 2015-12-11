@@ -843,11 +843,11 @@ ul {
   100% {
     opacity: 1; } }
 @-webkit-keyframes BM {
-  0%,10% {
+  0%,14% {
     -webkit-transform: translate3d(0, -50px, 0);
             transform: translate3d(0, -50px, 0);
     opacity: 0; }
-  20% {
+  16% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     opacity: 1; }
@@ -855,11 +855,11 @@ ul {
     -webkit-transform: translate3d(215px, 0, 0);
             transform: translate3d(215px, 0, 0); } }
 @keyframes BM {
-  0%,10% {
+  0%,14% {
     -webkit-transform: translate3d(0, -50px, 0);
             transform: translate3d(0, -50px, 0);
     opacity: 0; }
-  20% {
+  16% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     opacity: 1; }
@@ -1441,55 +1441,105 @@ ul {
   80.1%,100% {
     opacity: 1; } }
 @-webkit-keyframes lo1 {
-  0%,10%,100% {
-    opacity: 0; }
+  0%,100% {
+    opacity: 0;
+    height: 0; }
   2%,8% {
-    opacity: 1; } }
+    opacity: 1;
+    height: 100%; }
+  10% {
+    opacity: 0;
+    height: 100%; } }
 @keyframes lo1 {
-  0%,10%,100% {
-    opacity: 0; }
+  0%,100% {
+    opacity: 0;
+    height: 0; }
   2%,8% {
-    opacity: 1; } }
+    opacity: 1;
+    height: 100%; }
+  10% {
+    opacity: 0;
+    height: 100%; } }
 @-webkit-keyframes lo2 {
-  0%,20%,30%,100% {
-    opacity: 0; }
+  0%,20%,100% {
+    opacity: 0;
+    height: 0; }
   22%,28% {
-    opacity: 1; } }
+    opacity: 1;
+    height: 100%; }
+  30% {
+    opacity: 0;
+    height: 100%; } }
 @keyframes lo2 {
-  0%,20%,30%,100% {
-    opacity: 0; }
+  0%,20%,100% {
+    opacity: 0;
+    height: 0; }
   22%,28% {
-    opacity: 1; } }
+    opacity: 1;
+    height: 100%; }
+  30% {
+    opacity: 0;
+    height: 100%; } }
 @-webkit-keyframes lo3 {
-  0%,40%,50%,100% {
-    opacity: 0; }
+  0%,40%,100% {
+    opacity: 0;
+    height: 0; }
   42%,48% {
-    opacity: 1; } }
+    opacity: 1;
+    height: 100%; }
+  50% {
+    opacity: 0;
+    height: 100%; } }
 @keyframes lo3 {
-  0%,40%,50%,100% {
-    opacity: 0; }
+  0%,40%,100% {
+    opacity: 0;
+    height: 0; }
   42%,48% {
-    opacity: 1; } }
+    opacity: 1;
+    height: 100%; }
+  50% {
+    opacity: 0;
+    height: 100%; } }
 @-webkit-keyframes lo4 {
-  0%,60%,70%,100% {
-    opacity: 0; }
+  0%,60%,100% {
+    opacity: 0;
+    height: 0; }
   62%,68% {
-    opacity: 1; } }
+    opacity: 1;
+    height: 100%; }
+  70% {
+    opacity: 0;
+    height: 100%; } }
 @keyframes lo4 {
-  0%,60%,70%,100% {
-    opacity: 0; }
+  0%,60%,100% {
+    opacity: 0;
+    height: 0; }
   62%,68% {
-    opacity: 1; } }
+    opacity: 1;
+    height: 100%; }
+  70% {
+    opacity: 0;
+    height: 100%; } }
 @-webkit-keyframes lo5 {
-  0%,80%,90%,100% {
-    opacity: 0; }
+  0%,80%,100% {
+    opacity: 0;
+    height: 0; }
   82%,88% {
-    opacity: 1; } }
+    opacity: 1;
+    height: 100%; }
+  90% {
+    opacity: 0;
+    height: 100%; } }
 @keyframes lo5 {
-  0%,80%,90%,100% {
-    opacity: 0; }
+  0%,80%,100% {
+    opacity: 0;
+    height: 0; }
   82%,88% {
-    opacity: 1; } }
+    opacity: 1;
+    height: 100%; }
+  90% {
+    opacity: 0;
+    height: 100%; } }
 @-webkit-keyframes moveIconText {
   0%,8% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -1731,14 +1781,14 @@ ul {
     -webkit-transform: translate3d(0, 200%, 0);
             transform: translate3d(0, 200%, 0); } }
 @-webkit-keyframes handLine {
-  0%,100% {
+  0%,10%,80%,100% {
     height: 40px; }
-  20%,80% {
+  30%,70% {
     height: 90px; } }
 @keyframes handLine {
-  0%,100% {
+  0%,10%,80%,100% {
     height: 40px; }
-  20%,80% {
+  30%,70% {
     height: 90px; } }
 @-webkit-keyframes bomtA {
   0%,19% {
@@ -2961,6 +3011,10 @@ html, body {
       .pages-technology .content .m-top .m-hand .hand {
         position: relative;
         margin-top: -2px; }
+        .pages-technology .content .m-top .m-hand .hand #technologyhand {
+          position: absolute;
+          top: -20px;
+          left: -40px; }
         .pages-technology .content .m-top .m-hand .hand .hand-box {
           position: absolute;
           top: 0px;
@@ -3563,147 +3617,77 @@ html, body {
           width: 100%; }
       .pages-contactus .content .bubbles .bubble-0 {
         width: 8px;
-        top: 47%;
-        left: 50%;
+        top: 27%;
+        left: 34%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 1814ms;
-                animation-duration: 1814ms;
+        -webkit-animation-duration: 1323ms;
+                animation-duration: 1323ms;
         -webkit-animation-delay: 500ms;
                 animation-delay: 500ms; }
       .pages-contactus .content .bubbles .bubble-1 {
         width: 9px;
-        top: 36%;
-        left: 16%;
+        top: 33%;
+        left: 13%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 2302ms;
-                animation-duration: 2302ms;
+        -webkit-animation-duration: 2928ms;
+                animation-duration: 2928ms;
         -webkit-animation-delay: 600ms;
                 animation-delay: 600ms; }
       .pages-contactus .content .bubbles .bubble-2 {
         width: 10px;
-        top: 13%;
-        left: 1%;
+        top: 79%;
+        left: 43%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 2479ms;
-                animation-duration: 2479ms;
+        -webkit-animation-duration: 2004ms;
+                animation-duration: 2004ms;
         -webkit-animation-delay: 700ms;
                 animation-delay: 700ms; }
       .pages-contactus .content .bubbles .bubble-3 {
         width: 11px;
-        top: 12%;
-        left: 45%;
+        top: 14%;
+        left: 24%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 1379ms;
-                animation-duration: 1379ms;
+        -webkit-animation-duration: 1268ms;
+                animation-duration: 1268ms;
         -webkit-animation-delay: 800ms;
                 animation-delay: 800ms; }
       .pages-contactus .content .bubbles .bubble-4 {
         width: 12px;
-        top: 72%;
-        left: 19%;
+        top: 34%;
+        left: 5%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 1213ms;
-                animation-duration: 1213ms;
+        -webkit-animation-duration: 2433ms;
+                animation-duration: 2433ms;
         -webkit-animation-delay: 900ms;
                 animation-delay: 900ms; }
       .pages-contactus .content .bubbles .bubble-5 {
         width: 13px;
-        top: 53%;
-        left: 18%;
-        -webkit-animation: bubble 0.5s ease;
-                animation: bubble 0.5s ease;
-        -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        -webkit-animation-duration: 2415ms;
-                animation-duration: 2415ms;
-        -webkit-animation-delay: 1000ms;
-                animation-delay: 1000ms; }
-      .pages-contactus .content .bubbles .bubble-6 {
-        width: 14px;
-        top: 26%;
-        left: 37%;
-        -webkit-animation: bubble 0.5s ease;
-                animation: bubble 0.5s ease;
-        -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        -webkit-animation-duration: 2427ms;
-                animation-duration: 2427ms;
-        -webkit-animation-delay: 1100ms;
-                animation-delay: 1100ms; }
-      .pages-contactus .content .bubbles .bubble-7 {
-        width: 15px;
-        top: 39%;
-        left: 6%;
-        -webkit-animation: bubble 0.5s ease;
-                animation: bubble 0.5s ease;
-        -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        -webkit-animation-duration: 1777ms;
-                animation-duration: 1777ms;
-        -webkit-animation-delay: 1200ms;
-                animation-delay: 1200ms; }
-      .pages-contactus .content .bubbles .bubble-8 {
-        width: 16px;
-        top: 59%;
-        left: 42%;
-        -webkit-animation: bubble 0.5s ease;
-                animation: bubble 0.5s ease;
-        -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        -webkit-animation-duration: 2190ms;
-                animation-duration: 2190ms;
-        -webkit-animation-delay: 1300ms;
-                animation-delay: 1300ms; }
-      .pages-contactus .content .bubbles .bubble-9 {
-        width: 17px;
-        top: 61%;
-        left: 15%;
-        -webkit-animation: bubble 0.5s ease;
-                animation: bubble 0.5s ease;
-        -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        -webkit-animation-duration: 1779ms;
-                animation-duration: 1779ms;
-        -webkit-animation-delay: 1400ms;
-                animation-delay: 1400ms; }
-      .pages-contactus .content .bubbles .bubble-10 {
-        width: 18px;
-        top: 63%;
+        top: 23%;
         left: 4%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
@@ -3711,8 +3695,78 @@ html, body {
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 1284ms;
-                animation-duration: 1284ms;
+        -webkit-animation-duration: 1038ms;
+                animation-duration: 1038ms;
+        -webkit-animation-delay: 1000ms;
+                animation-delay: 1000ms; }
+      .pages-contactus .content .bubbles .bubble-6 {
+        width: 14px;
+        top: 64%;
+        left: 33%;
+        -webkit-animation: bubble 0.5s ease;
+                animation: bubble 0.5s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        -webkit-animation-duration: 2913ms;
+                animation-duration: 2913ms;
+        -webkit-animation-delay: 1100ms;
+                animation-delay: 1100ms; }
+      .pages-contactus .content .bubbles .bubble-7 {
+        width: 15px;
+        top: 26%;
+        left: 9%;
+        -webkit-animation: bubble 0.5s ease;
+                animation: bubble 0.5s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        -webkit-animation-duration: 1070ms;
+                animation-duration: 1070ms;
+        -webkit-animation-delay: 1200ms;
+                animation-delay: 1200ms; }
+      .pages-contactus .content .bubbles .bubble-8 {
+        width: 16px;
+        top: 57%;
+        left: 17%;
+        -webkit-animation: bubble 0.5s ease;
+                animation: bubble 0.5s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        -webkit-animation-duration: 2646ms;
+                animation-duration: 2646ms;
+        -webkit-animation-delay: 1300ms;
+                animation-delay: 1300ms; }
+      .pages-contactus .content .bubbles .bubble-9 {
+        width: 17px;
+        top: 39%;
+        left: 21%;
+        -webkit-animation: bubble 0.5s ease;
+                animation: bubble 0.5s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        -webkit-animation-duration: 2558ms;
+                animation-duration: 2558ms;
+        -webkit-animation-delay: 1400ms;
+                animation-delay: 1400ms; }
+      .pages-contactus .content .bubbles .bubble-10 {
+        width: 18px;
+        top: 19%;
+        left: 18%;
+        -webkit-animation: bubble 0.5s ease;
+                animation: bubble 0.5s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        -webkit-animation-duration: 1427ms;
+                animation-duration: 1427ms;
         -webkit-animation-delay: 1500ms;
                 animation-delay: 1500ms; }
     .pages-contactus .content .drops {
