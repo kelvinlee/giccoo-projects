@@ -8,6 +8,12 @@
 	.duration-#{$i}
 		animation-duration: $i*100ms
 
+
+$people-width: 460px
+
+
+
+
 // animate clickover
 +keyframes(switch)
 	0%,100%
@@ -298,7 +304,7 @@
 		opacity: 0
 	
 +keyframes(tP1)
-	$tpw: 410px
+	$tpw: $people-width
 	0%,10%
 		+transform(translate3d(0,0,0))
 	20%,30%
@@ -1349,7 +1355,7 @@ $award-delay: 1.4s+0.4
 
 			.peoples
 				+posa
-				+bl(36px,-24px)
+				+bl(36px,-62px)
 				white-space: nowrap
 				z-index: -1
 				font-size: 0
@@ -1359,29 +1365,28 @@ $award-delay: 1.4s+0.4
 					&:first-child
 						+posa
 						+tl(0,-50%)
-					&.index
-						.p-1
-							.over
-								+animation(po1,10s,linear,infinite)
-						.p-2
-							.over
-								+animation(po2,10s,linear,infinite)
-						.p-3
-							.over
-								+animation(po3,10s,linear,infinite)
-						.p-4
-							.over
-								+animation(po4,10s,linear,infinite)
-						.p-5
-							.over
-								+animation(po5,10s,linear,infinite)
+					// &.index
+					// 	.p-1
+					// 		.over
+					// 			+animation(po1,10s,linear,infinite)
+					// 	.p-2
+					// 		.over
+					// 			+animation(po2,10s,linear,infinite)
+					// 	.p-3
+					// 		.over
+					// 			+animation(po3,10s,linear,infinite)
+					// 	.p-4
+					// 		.over
+					// 			+animation(po4,10s,linear,infinite)
+					// 	.p-5
+					// 		.over
+					// 			+animation(po5,10s,linear,infinite)
 
 				.people
 					+show-inline
 					+posr
 					// +p(0 15px)
-					+m(0 -45px)
-					margin-bottom: -42px
+					+w($people-width/5)
 					.normal
 						+w(172px)
 					.over
@@ -1412,7 +1417,11 @@ $award-delay: 1.4s+0.4
 		+transform(translate3d(0,0,0))
 	.bg
 		+posa
-		+tl(80px)
+		+tl(80px,3%)
+		+w(94%)
+		img
+			+w
+			max-width: none
 	.content
 		+posa
 		+tl
@@ -1422,28 +1431,71 @@ $award-delay: 1.4s+0.4
 		z-index: 1
 		.icons,.bottles
 			+posa
-			+w(400px)
+			+w(460px)
 			+m
 			+text-left
 			.icon
 				+show-inline
-				+m(0 8px)
+				+m(0 16px)
 				+posr
+				+w(120px)
+				img
+					+w
 				.star
 					+posa
 					+tl
 		.icons-1
-			+tl(90px+80px,120px)
+			+tl(186px,90px)
+			.icon
+				&:nth-child(n+1)
+					.star
+						+hide
+				&:nth-child(n+2)
+					.star
+						+animation(rotateIn,5s,ease,infinite)
+						animation-direction: alternate
 		.icons-2
-			+tl(364px+80px,120px)
+			+tl(494px,90px)
+			.icon
+				&:nth-child(n+1)
+					.star
+						+tl(70px,50px)
+						+animation(rotateIn,4s,ease,infinite)
+						animation-delay: 500ms
+						animation-direction: alternate
+				&:nth-child(n+2)
+					.star
+						+tl(30px,60px)
+						+animation(rotateIn,4s,ease,infinite)
+						animation-delay: 1500ms
+						animation-direction: alternate
+				&:nth-child(n+3)
+					.star
+						+tl(60px,50px)
+						+animation(rotateIn,4s,ease,infinite)
+						animation-delay: 2500ms
+						animation-direction: alternate
 		.icons-3
-			+tl(616px+80px,120px)
+			+tl(772px,90px)
+			.icon
+				&:nth-child(n+1)
+					.star
+						+tl(66px,20px)
+						+animation(rotateIn,3s,ease,infinite)
+						animation-delay: 1500ms
+						animation-direction: alternate
+				&:nth-child(n+2)
+					.star
+						+tl(24px,60px)
+						+animation(rotateOut,6s,ease,infinite)
+						animation-delay: 2500ms
+						animation-direction: alternate
 		.other
 			+posa
 		.other-1
-			+tl(139px+80px,393px)
+			+tl(249px,405px)
 		.other-2
-			+tl(736px+80px,393px)
+			+tl(906px,405px)
 	.pop
 		.alert-1,.alert-3,.alert-4
 			+w(411px)
@@ -1550,7 +1602,8 @@ $award-delay: 1.4s+0.4
 				.full
 					+tran
 					+h(100%)
-					transition-delay: $contactus-delay+2.2
+					// transition-delay: $contactus-delay+2.2
+					
 	.content
 		+posa
 		+tl
@@ -1589,14 +1642,20 @@ $award-delay: 1.4s+0.4
 			z-index: 102
 		.bottle-full
 			+posa
-			+tl(118px,176px)
-			+wh(28px,206px)
+			+tl(115px,167px)
+			+wh(48px,214px)
 			.full
 				+posa
 				+tl
 				+h(0)
 				+w
 				+overhide
+				.gif,#contactusfull
+					+w
+					+h
+					img
+						+w
+						+h
 			img
 				+w
 				+h
@@ -1825,6 +1884,7 @@ $award-delay: 1.4s+0.4
 	+w
 	+h
 	+tran($time: 0.5s,$ease: linear)
+	+overhide
 	z-index: 11
 	// opacity: 0
 	+transform(translate3d(-770px,0,0))
@@ -1982,7 +2042,7 @@ $award-delay: 1.4s+0.4
 			z-index: -1
 			.hand
 				+posa
-				+tl(112px,186px)
+				+tl(-22px,186px)
 				z-index: 2
 			.line1,.line2
 				+posa

@@ -87,6 +87,9 @@ gif
 						},opts.delay)
 						return false
 					}
+					if (opts.callback && self.play == "replay") {
+						eval(opts.callback+".call()")
+					}
 					self.replay(self.next)
 					return false 
 				}

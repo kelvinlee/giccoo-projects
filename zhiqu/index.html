@@ -47,7 +47,7 @@
     <div class="main">
       <div class="homepage">
         <div class="bottle bottle-brand"><img data-layzr="img/bottle-brand.png">
-          <gif load="true" id="bottlebrand" width="300" height="750" count="51" normal="[0,0,&quot;normal&quot;]" replay="[0,50,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="50" play="normal" src="img/animate/bottle-brand/brand-id.png"></gif>
+          <gif load="true" id="bottlebrand" width="300" height="750" count="51" normal="[0,0,&quot;normal&quot;]" replay="[0,50,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="50" play="normal" src="img/animate/bottle-brand/brand-id.png" callback="brandLoadEnd"></gif>
           <div onclick="openBottleMain(this)" page-name="brand" class="on-button"></div>
           <div class="bubbles">
             <div class="bubble bubble-1"><img data-layzr="img/homepage-bubble.png"></div>
@@ -56,7 +56,7 @@
           </div>
         </div>
         <div class="bottle bottle-logo"><img data-layzr="img/bottle-logo.png">
-          <gif load="true" id="bottlelogo" width="480" height="620" count="63" normal="[0,0,&quot;normal&quot;]" replay="[0,62,&quot;stop&quot;]" prepare="[1,6,&quot;prepare&quot;]" stop="62" play="normal" src="img/animate/bottle-logo/logo-id.png"></gif>
+          <gif load="true" id="bottlelogo" width="480" height="620" count="63" normal="[0,0,&quot;normal&quot;]" replay="[0,62,&quot;stop&quot;]" prepare="[1,6,&quot;prepare&quot;]" stop="62" play="normal" src="img/animate/bottle-logo/logo-id.png" callback="logoLoadEnd"></gif>
           <div onclick="openBottleMain(this)" page-name="logo" class="on-button"></div>
         </div>
         <div class="bottle bottle-strategy"><img data-layzr="img/bottle-strategy.png">
@@ -75,7 +75,7 @@
           <div onclick="openBottleMain(this)" page-name="media" class="on-button"></div>
         </div>
         <div class="bottle bottle-contactus">
-          <gif load="true" id="bottlecontactus" width="480" height="480" count="81" normal="[0,0,&quot;normal&quot;]" replay="[0,80,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="80" play="normal" src="img/animate/bottle-contactus/contactus-id.png"></gif>
+          <gif load="true" id="bottlecontactus" width="480" height="480" count="81" normal="[0,0,&quot;normal&quot;]" replay="[0,80,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="80" play="normal" src="img/animate/bottle-contactus/contactus-id.png" callback="contactusLoadEnd"></gif>
           <div class="shadow"><img data-layzr="img/bottle-contactus-shadow.png"></div>
           <div onclick="openBottleMain(this)" page-name="contactus" class="on-button"></div>
         </div>
@@ -380,7 +380,7 @@
             <div id="logobottle" width="300" height="300" count="15" normal="[0,0,&quot;normal&quot;]" replay="[0,14,&quot;stop&quot;]" stop="14" play="normal" src="img/animate/logo/bottle/bottle-id.png"></div>
           </div>
           <div class="vitro">
-            <div id="logovitro" width="700" height="1000" count="78" normal="[0,0,&quot;normal&quot;]" replay="[0,77,&quot;stop&quot;]" stop="77" play="normal" src="img/animate/logo/vitro/vitro-id.png"></div>
+            <div id="logovitro" width="700" height="1000" count="63" normal="[0,0,&quot;normal&quot;]" replay="[0,62,&quot;stop&quot;]" stop="62" play="normal" src="img/animate/logo/vitro/v-id.png"></div>
           </div>
           <div class="logo-text"><img data-layzr-logo="img/pages-logo-text.png"></div>
         </div>
@@ -442,15 +442,15 @@
           <div class="m-bottom">
             <div class="line1"></div>
             <div class="line2"></div>
-            <div class="hand">
-              <div id="strategyhand" width="150" height="150" count="10" normal="[0,0,&quot;normal&quot;]" replay="[0,9,&quot;replay&quot;]" delay="4000" stop="9" play="normal" src="img/animate/strategy/hand/hand-id.png"></div>
-            </div>
             <div class="bg"><img data-layzr-strategy="img/pages-strategy-m-bottom.png">
               <div class="p1">
                 <div id="strategypeople1" width="150" height="150" normal="[0,0,&quot;normal&quot;]" replay="[0,40,&quot;replay&quot;]" stop="0" play="normal" count="41" src="img/animate/strategy/p2/p-id.png"></div>
               </div>
               <div class="p2">
                 <div id="strategypeople2" width="150" height="150" normal="[0,0,&quot;normal&quot;]" replay="[0,40,&quot;replay&quot;]" stop="0" play="normal" count="41" src="img/animate/strategy/p1/p-id.png"></div>
+              </div>
+              <div class="hand">
+                <div id="strategyhand" width="150" height="150" count="10" normal="[0,0,&quot;normal&quot;]" replay="[0,9,&quot;replay&quot;]" delay="4000" stop="9" play="normal" src="img/animate/strategy/hand/hand-id.png"></div>
               </div>
               <div class="parts1"><img data-layzr-strategy="img/pages-strategy-parts-red.png"></div>
               <div class="parts2"><img data-layzr-strategy="img/pages-strategy-parts-yellow.png"></div>
@@ -474,7 +474,9 @@
           <div class="qrcode"><img data-layzr-contactus="img/pages-contactus-qrcode.jpg"></div>
           <div class="gear"><img data-layzr-contactus="img/pages-contactus-gear.png"></div>
           <div class="bottle-full">
-            <div class="full"><img data-layzr-contactus="img/pages-contactus-bottle-full.png"></div>
+            <div class="full">
+              <div id="contactusfull" width="50" height="240" count="11" normal="[0,0,'normal']" replay="[0,10,&quot;stop&quot;]" stop="10" play="normal" src="img/animate/contact/b-id.png"></div>
+            </div>
           </div>
           <div class="drops"><img data-layzr-contactus="img/pages-contactus-drops.png"></div>
           <div class="bubbles">

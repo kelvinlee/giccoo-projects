@@ -137,6 +137,9 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     				},opts.delay)
     				return false
     			}
+    			if (opts.callback && self.play == "replay") {
+    				eval(opts.callback+".call()")
+    			}
     			self.replay(self.next)
     			return false 
     		}

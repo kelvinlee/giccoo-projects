@@ -136,6 +136,9 @@ startLoadPage = (name,evt)->
 		riot.mount("div#strategyarrowyellow2","gif")
 		riot.mount("div#strategyad","gif")
 		_gifCount = 7
+	if name is "contactus"
+		riot.mount("div#contactusfull","gif")
+		_gifCount = 1
 	loadPageEnd() if count is 0
 
 	
@@ -248,16 +251,13 @@ clearNone = ->
 		global["logobg"].replay("stop") if global? && global["logobg"]?
 		global["logobottle"].replay("stop") if global? && global["logobottle"]?
 		global["logovitro"].replay("stop") if global? && global["logovitro"]?
+		global["contactusfull"].replay("normal") if global? && global["contactusfull"]?
 
 	,500
 
 brandShow = ->
 	$(".pages-brand .pop").hide()
 	$(".pages-brand .pop .pop-content").html("")
-	setTimeout ->
-		global["brandbg"].replay("replay") if global? && global["brandbg"]?
-		global["brands"].replay("normal") if global? && global["brands"]?
-	,1700
 mediaShow = ->
 	# 
 	global["bottlemediamovie"].replay("replay") if global? && global["bottlemediamovie"]?
@@ -274,30 +274,52 @@ logoShow = ->
 	global["logobg"].replay("normal") if global? && global["logobg"]?
 	global["logobottle"].replay("normal") if global? && global["logobottle"]?
 	global["logovitro"].replay("normal") if global? && global["logovitro"]?
+	# setTimeout ->
+	# ,2400
+logoLoadEnd = ->
+	console.log "logoLoadEnd"
+	global["logobg"].replay("replay") if global? && global["logobg"]?
+	global["logobottle"].replay("replay") if global? && global["logobottle"]?
 	setTimeout ->
-		global["logobg"].replay("replay") if global? && global["logobg"]?
-		global["logobottle"].replay("replay") if global? && global["logobottle"]?
-		setTimeout ->
-			global["logovitro"].replay("replay") if global? && global["logovitro"]?
-		,400
-	,2400
+		global["logovitro"].replay("replay") if global? && global["logovitro"]?
+	,400
+
+contactusLoadEnd = ->
+	global["contactusfull"].replay("replay") if global? && global["contactusfull"]?
+
+brandLoadEnd = ->
+	global["brandbg"].replay("replay") if global? && global["brandbg"]?
+	global["brands"].replay("normal") if global? && global["brands"]?
+
 technologyShow = ->
 	# technologylogo
 	global["technologylogo"].replay("replay") if global? && global["technologylogo"]?
 	console.log "T start"
 	stop = false
-	# TrunCheck()
+	TrunCheck()
 
 stop = false
+XList = [-62,30,122,214,306]
+TWidth = 460 / 5
 TrunCheck = ->
 	return false if stop
 	last = 0
 	$(".p-box.index .people").each (i)->
 		# console.log parseInt $(".over",this).css("opacity")
-		if parseInt $(".over",this).css("opacity")
+		x = $(this).offset().left
+		if i is 0 and x <= XList[i] and global["technologypeople"+(i+1)].play is "normal"
+			global["technologypeople"+(i+1)].replay("replay")
+			return true
+		if i is 0 and x >= XList[i]+TWidth*3.5 and global["technologypeople"+(i+1)].play isnt "normal"
+			global["technologypeople"+(i+1)].replay("normal")
+			return true
+		if i is 0
+			return true
+		if global["technologypeople"+(i+1)].play is "normal" and x >= XList[i]+TWidth*(i)
+			global["technologypeople"+(i+1)].replay("replay")
+		else if x <= XList[i]
+			global["technologypeople"+(i+1)].replay("normal")
+		else if x >= XList[i]+TWidth*4.92 and global["technologypeople"+(i+1)].play isnt "normal"
+			global["technologypeople"+(i+1)].replay("normal")
 
-			if global? and global["technologypeople"+(i+1)]? and (global["technologypeople"+(i+1)].play isnt "replay" and global["technologypeople"+(i+1)].play isnt "stop")
-				global["technologypeople"+(i+1)].replay("replay")
-		else
-			global["technologypeople"+(i+1)].replay("normal") if global? && global["technologypeople"+(i+1)]?
 	requestAnimationFrame(TrunCheck)
