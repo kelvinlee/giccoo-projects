@@ -1,0 +1,372 @@
+@import sass/base
+@import ../../libs/sass/loading
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects/showman/"
+
++keyframes(Flash)
+	0%
+		opacity: 1
+	50%
+		opacity: 0.2
+	100%
+		opacity: 1
+
++keyframes(nextPoint)
+	from
+		+transform(scale(1,1))
+		opacity: 1
+	to
+		+transform(scale(2,2))
+		opacity: 0
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
+
+.share-wechat
+	+posa
+	+tl
+	+w
+	+h
+	+b("http://disk.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
+	+bc
+	z-index: 1100
+	+hide
+	&.open
+		+show
+
+.wrap
+	+wh(100%,100%)
+	+posr
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+
+.loading.loaded
+	+large
+		+hide
+
+
+
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+iw(600)
+	+m
+	margin-top: -8%
+	.share-icon
+		+show-inline
+		+w(25%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		
+html,body
+	+w
+	+h
+
+body
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	color: #3f6aff
+
+// .loading.loaded
+// 	+hide
+.loading
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+bc(#fff)
+	.new-load
+		+posa
+		+tl(50%)
+		+w
+		+text-center
+		// +p(100% 0 0 0)
+		+transform(translate3d(0,-50%,0))
+		.load-item-milk
+			+iw(100,640,100%)
+			+posr
+			// > img
+				// +animation(rubberBand,2s,ease,infinite)
+			.load-item-note1,.load-item-note2
+				+posa
+				+tr
+				+iw(60,100,100%)
+				margin-top: -50%
+			.load-item-note1
+				+animation(rubberBand,2s,ease,infinite)
+				animation-delay: 5*100ms
+			.load-item-note2
+				+animation(swing,1.5s,ease,infinite)
+				transform-origin: bottom center
+				
+		.load-progress
+			font-size: 1rem
+			+p(2% 0 0 0)
+			
+
+.page
+	+posa
+	+tl
+	+w
+	+h
+	&.hide
+		+hide
+
+.firstpage,.notepage,.listpage,.focusUs
+	+posa
+	+tl
+	+w
+	+h
+
+.firstpage
+	.content
+		+w
+		+h
+	.pageone,.pagetwo
+		+posa
+		+tl
+		+w
+		+h
+		+overhide
+	.pageone
+		z-index: 3
+		.home-1
+			+posa
+			+bl
+			font-size: 0
+		.home-2
+			+posa
+			+tl(50%,0)
+			z-index: -1
+			+transform(translate3d(0,-50%,0))
+			font-size: 0
+		.title
+			+iw(480)
+			margin-top: 15%
+	.pagetwo
+		z-index: 4
+		.title
+			+iw(570)
+			margin-top: 5%
+		.text-content
+			+posa
+			+tl(0,5%)
+			+br(15%,5%)
+			+w(90%)
+			color: #fff
+			+touch
+		.btn
+			+posa
+			+bl(2%,50%)
+			+iw(280)
+			+transform(translate3d(-50%,0,0))
+
+
+
+	.stars
+		+posa
+		+tl
+		+w
+		+h
+		.star
+			+posa
+			+tl
+			+ada(animation-iteration-count, "infinite")
+		@for $i from 0 through 10
+			.star-#{$i}
+				+w((8+$i)*1%)
+				+tl(random(70)*1%,random(80)*1%)
+				animation-duration: 3500ms
+				animation-delay: 500ms+$i*100ms				
+
+.notepage
+	+bc(#fff)
+	// .banner
+	.text-content
+		+w
+		+posa
+		+tl(40%)
+		+br(10%)
+		color: #cb3926
+		p
+			// +m(0 0 0.6em 0)
+			+w(80%)
+			+m
+			line-height: 1.6em
+			margin-bottom: 0.6em
+			text-align: justify
+		.text
+			+posa
+			+tl
+			+br
+			+m
+			+h
+			+touch
+		.hide-D
+			+posa
+			+bl(-5px)
+			+w
+			font-size: 0
+
+	.btn
+		+posa
+		+bl(2%)
+
+.listpage
+	// +b($cdn+"img/bg-2.jpg",repeat,center,center,100% auto)
+	.list-content,.detailpage
+		+posa
+		+tl
+		+br
+		+touch
+		.note-note
+			+w(90%)
+			+m
+			+p(0 0 0.4rem 0)
+			p
+				+m
+				font-size: 0.7rem
+				color: #fff
+				+text-center
+		.items
+			+w(90%)
+			+m
+			.item
+				+w
+				+show-inline
+				.name
+					+w
+				.btn
+					+w(80%)
+					+m
+					+p(0.4em 0)
+	.detailpage
+		.title-box
+			+w(90%)
+			+m
+			.back
+				+iw(160)
+				+show-inline
+				vertical-align: top
+			.title
+				+w(60%)
+				color: #f7d26f
+				+font-size(1rem)
+				+show-inline
+				vertical-align: top
+				line-height: 2em
+		.items
+			color: #fff
+			.item
+				+b("../img/item.png",no-repeat,top,center,100% 100%)
+				+p(1.4rem)
+				+box
+				+posr
+				&.on
+					.description
+						+show
+				.vote
+					+posa
+					+tr(1.4rem,1.4rem)
+					+w(20%)
+					z-index: 102
+					.off
+						+posa
+						+tl
+						z-index: 202
+					&.off
+						.off
+							+show
+				.numbs
+					+font-size(0.8rem)
+				.name
+					+w(60%)
+					+font-size(0.9rem)
+					color: #f7d26f
+				.description
+					+hide
+					+p(1rem 0)
+					+font-size(0.8rem)
+					line-height: 1.4em
+
+
+.focusUs
+	z-index: 9999
+	+bc(rgba(0,0,0,0.8))
+	+animation(fadeIn)
+	.box
+		+posr
+		top: 5%
+		+w(80%)
+		+p(10% 0 0 0)
+		+m
+		p
+			color: #fff
+			+m(0.4em auto)
+			+text-center
+			+font-size(0.8rem)
+		.close
+			+posa
+			+tr(0,-10%)
+			+iw(90)
+.note
+	+posa
+	+tl
+	+br
+	+wh(100%,100%)
+	z-index: 9999
+	.note-box
+		+text-center
+		+posa
+		+tl(50%)
+		+w(100%)
+		// z-index: 9999
+		.note-content
+			display: inline-block
+			padding: 10px 11px 10px 10px
+			background-color: rgba(0,0,0,0.7)
+			color: #fff
+			border-radius: 5px
+			max-width: 90%
+			+box
+		.icon-form,.note-text
+			display: inline-block
+			vertical-align: top
+			line-height: 25px
+		.icon-form
+			+wh(25px,25px)
+		.note-text
+			+font-size(0.8rem)
+			letter-spacing: 2px
