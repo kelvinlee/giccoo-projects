@@ -1,6 +1,7 @@
 begin
-	//- var url = "http://disk.giccoo.com/projects/products"
+	//- var url = "http://disk.giccoo.com/projects/product"
 	- var url = "/product"
+	playsound(src="#{url}/mp3/bg.mp3",icon="true",icon-play="#{url}/img/audio-play.png",icon-stop="#{url}/img/audio-stop.png")
 	.firstpage(show="{firstpageShow}",class="{firstpageClass}")
 		.pageone
 			.title(class="{fadeOutUp: notepageShow, animated: notepageShow}")
@@ -15,6 +16,8 @@ begin
 					-for (var i=0; i < 10; i++)
 						img(class="star star-#{i} animated #{list[i]}",data-layzr="#{url}/img/star.png")
 		.pagetwo(show="{notepageShow}",class="fadeIn animated delay-5")
+			.head
+				img(data-layzr="#{url}/img/head.png")
 			.title
 				img(data-layzr="#{url}/img/2015-sub.png")
 			.text-content(style="top:{toppx}px")
@@ -42,6 +45,7 @@ begin
 					p 【评选活动运作管理】
 					p 1.评委会秘书处：评委会秘书处设在《中国保险报》、中保网。
 					p 2.联系电话：010-63998207，63998310，63998201。
+
 			.btn(onclick="{GameStart}")
 				img(src="#{url}/img/in-btn.png")
 	
@@ -78,7 +82,7 @@ begin
 				p 请使用微信打开此页面.
 				p 长按二维码图片进行关注.
 				p 请先关注我们的微信公众账号,然后参与投票.
-				p 每人只能参与1票.
+				p 每人每天可以为每类候选产品中的1-3款投票.
 			.close(onclick="{hideFocus}")
 				img(src="#{url}/img/icon-close.png")
 
@@ -93,17 +97,20 @@ begin
 		self.userinfo = false
 		self.canRun = true
 		self.abclist = []
+		Store.begin = self
 		for (var i=0;i < self.productlist.length; i++) {
 			if (self.abclist.indexOf(self.productlist[i].abc) < 0) {
 				self.abclist.push(self.productlist[i].abc)
 			}
 		}
-		self.toppx = $("body").width()/640*200
+		self.toppx = $("body").width()/640*380
 		self.toppx2 = $("body").width()/640*320
-		setTimeout(function(){
-			self.notepageShow = true
-			self.update()
-		},6000)
+		build() {
+			setTimeout(function(){
+				self.notepageShow = true
+				self.update()
+			},2500)
+		}
 		updateVote() {
 			for (i in voteList) {
 				for (n in self.detail.list) {
@@ -163,7 +170,7 @@ begin
 						if (msg.recode == 200) {
 							//- 发送 note
 							SendNote("投票成功啦!")
-							voteList.push({product: uid})
+							voteList.push({product: uid, num: 1})
 							self.updateVote()
 						}else if (msg.recode == 222) {
 							self.focusUs = true

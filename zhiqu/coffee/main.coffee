@@ -44,6 +44,8 @@ window.onload = ->
 	$(".pages-media .icons-1 .icon .alert").on "touchend", (evt)->
 		evt.stopPropagation()
 		evt.preventDefault()
+
+
 		
 
 	# $(".pages-brand .content").css({"margin-top": -(1136-$("body").height())+"px"})
@@ -218,15 +220,22 @@ openBottleMain = (evt)->
 		$(".thispage .bg").addClass("show")
 	mediaShow() if name is "media"
 	strategyShow() if name is "strategy"
-	logoShow() if name is "logo"
+	if name is "logo"
+		$(".pages-logo-bg .bg").addClass("show")
+		logoShow() 
 	technologyShow() if name is "technology"
 
 backBottleMain = ()->
-	
 	name = $(".thispage").attr "name"
 	console.log("close",name)
 	if name is "brand" and $(".thispage .bg").is(".show")
 		$(".thispage .bg").removeClass("show")
+		setTimeout ->
+			backBottleMain()
+		,500
+		return false
+	if name is "logo" and $(".pages-logo-bg .bg").is(".show")
+		$(".pages-logo-bg .bg").removeClass("show")
 		setTimeout ->
 			backBottleMain()
 		,500
@@ -304,6 +313,17 @@ strategyShow = ->
 	global["strategyarrowwhite"].replay("replay") if global? && global["strategyarrowwhite"]?
 	global["strategyad"].replay("replay") if global? && global["strategyad"]?
 	global["strategyhand"].replay("replay") if global? && global["strategyhand"]?
+
+	$(".pages-strategy .item-icons").on "click", ->
+		global["strategyicons"].replay("replay") if global? && global["strategyicons"]?
+	$(".pages-strategy .fcanvas").on "click", ->
+		console.log "test"
+		if global? && global["strategyad"]?
+			if global["strategyad"].play is "stepto"
+				global["strategyad"].replay("stepend") 
+			if global["strategyad"].play is "replay"
+				global["strategyad"].replay("stepto")
+
 logoShow = ->
 	global["logobg"].replay("normal") if global? && global["logobg"]?
 	# global["logobottle"].replay("normal") if global? && global["logobottle"]?
@@ -326,6 +346,8 @@ brandLoadEnd = ->
 technologyShow = ->
 	# technologylogo
 	global["technologylogo"].replay("replay") if global? && global["technologylogo"]?
+	$(".pages-technology .box-logo").on "click", ->
+		global["technologylogo"].replay("replay") if global? && global["technologylogo"]?
 	console.log "T start"
 	stop = false
 	TrunCheck()

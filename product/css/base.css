@@ -968,12 +968,14 @@ body {
       width: 60%; }
 .firstpage .pagetwo {
   z-index: 4; }
+  .firstpage .pagetwo .head {
+    margin-top: 1%; }
   .firstpage .pagetwo .title {
-    width: 89.0625%;
+    width: 70%;
     margin: 0 auto;
-    margin-top: 5%; }
+    margin-top: 1%; }
     .iphone4 .firstpage .pagetwo .title {
-      width: 71.25%; }
+      width: 56%; }
   .firstpage .pagetwo .text-content {
     position: absolute;
     top: 0;
@@ -1009,88 +1011,88 @@ body {
             animation-iteration-count: infinite; }
   .firstpage .stars .star-0 {
     width: 8%;
-    top: 41%;
-    left: 69%;
+    top: 48%;
+    left: 5%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 500ms;
             animation-delay: 500ms; }
   .firstpage .stars .star-1 {
     width: 9%;
-    top: 55%;
-    left: 61%;
+    top: 40%;
+    left: 40%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 600ms;
             animation-delay: 600ms; }
   .firstpage .stars .star-2 {
     width: 10%;
-    top: 38%;
-    left: 61%;
+    top: 57%;
+    left: 30%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 700ms;
             animation-delay: 700ms; }
   .firstpage .stars .star-3 {
     width: 11%;
-    top: 16%;
-    left: 69%;
+    top: 7%;
+    left: 72%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 800ms;
             animation-delay: 800ms; }
   .firstpage .stars .star-4 {
     width: 12%;
-    top: 45%;
-    left: 65%;
+    top: 52%;
+    left: 68%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 900ms;
             animation-delay: 900ms; }
   .firstpage .stars .star-5 {
     width: 13%;
-    top: 30%;
-    left: 9%;
+    top: 61%;
+    left: 61%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 1000ms;
             animation-delay: 1000ms; }
   .firstpage .stars .star-6 {
     width: 14%;
-    top: 10%;
-    left: 37%;
+    top: 37%;
+    left: 9%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 1100ms;
             animation-delay: 1100ms; }
   .firstpage .stars .star-7 {
     width: 15%;
-    top: 64%;
-    left: 53%;
+    top: 68%;
+    left: 58%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 1200ms;
             animation-delay: 1200ms; }
   .firstpage .stars .star-8 {
     width: 16%;
-    top: 43%;
-    left: 69%;
+    top: 19%;
+    left: 52%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 1300ms;
             animation-delay: 1300ms; }
   .firstpage .stars .star-9 {
     width: 17%;
-    top: 30%;
-    left: 3%;
+    top: 43%;
+    left: 61%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 1400ms;
             animation-delay: 1400ms; }
   .firstpage .stars .star-10 {
     width: 18%;
-    top: 41%;
-    left: 79%;
+    top: 47%;
+    left: 11%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 1500ms;

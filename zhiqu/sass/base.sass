@@ -135,14 +135,10 @@ $people-width: 460px
 		+transform(translate3d(0,-20px,0) scale(0.9,0.9))
 		opacity: 0
 +keyframes(enterDown)
-	0%
+	0%,100%
 		+transform(translate3d(0,0,0))
-		opacity: 0
-	5%,95%
-		opacity: 1
-	100%
-		+transform(translate3d(0,20px,0) scale(0.9,0.9))
-		opacity: 0
+	50%
+		+transform(translate3d(0,10px,0))
 +keyframes(soundBG)
 	to
 		background-position-x: -180px
@@ -588,12 +584,12 @@ html,body
 // .loading
 
 $logo-delay: 0.8s
-$strategy-delay: 2.5s
-$technology-delay: 0.8s+0.4
-$brand-delay: 0.7s+0.4
+$strategy-delay: 3s
+$technology-delay: 1.2s
+$brand-delay: 1.1s
 $media-delay: 2s
-$contactus-delay: 0.4s
-$award-delay: 1.4s+0.4
+$contactus-delay: 1.4s
+$award-delay: 1.8s
 
 .gif
 	img
@@ -934,20 +930,27 @@ $award-delay: 1.4s+0.4
 	+h
 	+overhide
 	z-index: 999
-	+b("../img/loaded/bg.jpg",no-repeat,center,center,cover)
+	// +b("../img/loaded/bg.jpg",no-repeat,center,center,cover)
 	font-size: 0
 	.content
 		+posa
-		+tl(50%,50%)
+		// +tl(50%,50%)
+		+tl
+		+w
+		+h
 		z-index: 3
 		opacity: 1
-		+transform(translate3d(-50%,-50%,0))
+		// +transform(translate3d(-50%,-50%,0))
+		+overhide
 		.home
-			+w(393px)
+			+posa
+			+tl(50%,50%)
+			+transform(translate3d(-50%,-50%,0))
+			+wh(640px,1200px)
 		.door
 			+tran
 			+posa
-			+tl(198px,166px)
+			+tl(51%,290px)
 			+w(60px)
 			z-index: -1
 		.thermometer
@@ -961,14 +964,14 @@ $award-delay: 1.4s+0.4
 				+bc(#f06640)
 				+animation(music,5s,ease,infinite)
 			&.thermometer-1
-				+tl(188px,114px)
+				+tl(608px,232px)
 				.line
 					animation-delay: 500ms
 			&.thermometer-2
-				+tl(188px,240px)
+				+tl(608px,232px+136)
 		.logo
 			+posa
-			+tl(-30px,50%)
+			+tl(390px,53%)
 			+w(340px)
 			+transform(translate3d(-50%,0,0))
 			.on
@@ -976,11 +979,17 @@ $award-delay: 1.4s+0.4
 				+tl
 				+animation(flashF,2s,ease,infinite)
 		.text
+			+posa
+			+bl(300px,(640px-207)/2)
 			+text-center
 			+m
+			z-index: 101
 			margin-top: 10px
 			+animation(flashF,2.5s,linear,infinite)
 		.enter
+			+posa
+			+bl(360px,0)
+			z-index: 2
 			+w(100%)
 			+text-center
 			+animation(enter,5s,linear,infinite)
@@ -1007,13 +1016,13 @@ $award-delay: 1.4s+0.4
 		+b("../img/bg.jpg",no-repeat,center,center,cover)
 		+w
 		+h
-		+transform(scale(0.22,0.22))
-		transform-origin: center center
+		// +transform(translate3d(0,10%,0) scale(0.22,0.22))
+		// transform-origin: center center
 		.box
 			+wh(300px,500px)
 			+posa
 			+tl(50%,50%)
-			+transform(translate3d(-50%,-50%,0))
+			+transform(translate3d(-50%,-35%,0) scale(0.22,0.22))
 			.text
 				+posa
 				+tl(50%,50%)
@@ -1043,17 +1052,17 @@ $award-delay: 1.4s+0.4
 						+wh(18px,18px)
 
 	&.on
-		.loading
+		.loading .box
 			+tran($time: 1s)
-			+transform(scale(1,1))
+			+transform(translate3d(-50%,-50%,0) scale(1,1))
 			transition-delay: 1s
 		.content
 			+tran($time: 1s)
-			+transform(translate3d(-50%,-50%,0) scale(14,14))
+			+transform(translate3d(0,-70%,0) scale(14,14))
 			transition-delay: 1s
-			opacity: 0
+			opacity: 0.5
 			.door
-				+tl(198px,106px)
+				+tl(51%,290px-145)
 
 .main
 	+posa
@@ -1099,13 +1108,13 @@ $award-delay: 1.4s+0.4
 			transition-delay: $technology-delay+1.2
 	&.page-strategy 
 		.homepage
-			+tran($time: 1.5s,$ease: linear)
+			+tran($time: 2s,$ease: linear)
 			transition-delay: $strategy-delay
 			+transform(translate3d(820px,-20px,0))
 			.bottle-technology
 				+tran
 				opacity: 0
-				transition-delay: 2s
+				transition-delay: $strategy-delay+1.5
 		.back-btn
 			+tl(auto,auto)
 			+tr(50px,10px)
@@ -1850,10 +1859,15 @@ $award-delay: 1.4s+0.4
 		+tl
 		+w
 		+h
+		+tran
 		font-size: 0
+		opacity: 0
 		img
 			+w
 			+h
+		&.show
+			+tran($time: 0)
+			opacity: 1
 	.logo-page-bottle
 		+posa
 		+bl(-52px,160px)
@@ -1942,7 +1956,7 @@ $award-delay: 1.4s+0.4
 		// +b("../img/pages-brand-bg.jpg",no-repeat,center,center,cover)
 	.content
 		+posa
-		+bl(20px)
+		+bl(10px)
 		+w
 		+h(1134px)
 		z-index: 1
@@ -2000,7 +2014,7 @@ $award-delay: 1.4s+0.4
 	+transform(translate3d(-820px,20px,0))
 	// +bc(#73ea9c)
 	&.thispage
-		+tran($time: 1.5s,$ease: linear)
+		+tran($time: 2s,$ease: linear)
 		transition-delay: $strategy-delay
 		+transform(translate3d(0,0,0))
 		// opacity: 1
@@ -2014,7 +2028,7 @@ $award-delay: 1.4s+0.4
 			.item-arrow-white
 				+posa
 				+tl(100px,170px)
-				+animation(enterDown, 5s, ease, infinite)
+				+animation(enterDown, 2s, ease, infinite)
 
 			.item-lighter
 				+posa
@@ -2044,7 +2058,7 @@ $award-delay: 1.4s+0.4
 			.item-arrow
 				+posa
 				+br(-40px,80px)
-				+animation(enterDown, 5s, ease, infinite)
+				+animation(enterDown, 2s, ease, infinite)
 			.item-light-red
 				+posa
 				+tl(307px,325px)
@@ -2142,7 +2156,7 @@ $award-delay: 1.4s+0.4
 			+tl(460px)
 			+br
 			+w
-			z-index: -1
+			z-index: 1
 			transform-origin: bottom center
 			.hand
 				+posa
@@ -2165,14 +2179,14 @@ $award-delay: 1.4s+0.4
 			.p1
 				+posa
 				+bl(-20px)
-				+animation(peopleA,20s,linear,infinite)
+				+animation(peopleA,40s,linear,infinite)
 				z-index: 99
 				transform-origin: right center
 				animation-delay: 2s
 			.p2
 				+posa
 				+br(-24px)
-				+animation(peopleB,22s,linear,infinite)
+				+animation(peopleB,35s,linear,infinite)
 				z-index: 99
 				transform-origin: center center
 			.parts1,.parts2,.parts3
@@ -2197,7 +2211,7 @@ $award-delay: 1.4s+0.4
 				.item-arrow
 					+posa
 					+tr(40px,20px)
-					+animation(enterDown, 5s, ease, infinite)
+					+animation(enterDown, 2s, ease, infinite)
 					
 				.items
 					+w

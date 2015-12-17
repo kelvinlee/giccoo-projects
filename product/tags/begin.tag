@@ -1,5 +1,6 @@
 
 <begin>
+  <playsound src="/product/mp3/bg.mp3" icon="true" icon-play="/product/img/audio-play.png" icon-stop="/product/img/audio-stop.png"></playsound>
   <div show="{firstpageShow}" class="firstpage {firstpageClass}">
     <div class="pageone">
       <div class="title {fadeOutUp: notepageShow, animated: notepageShow}"><img data-layzr="/product/img/2015.png"/></div>
@@ -11,6 +12,7 @@
       </div>
     </div>
     <div show="{notepageShow}" class="pagetwo fadeIn animated delay-5">
+      <div class="head"><img data-layzr="/product/img/head.png"/></div>
       <div class="title"><img data-layzr="/product/img/2015-sub.png"/></div>
       <div style="top:{toppx}px" class="text-content">
         <div class="text">
@@ -78,7 +80,7 @@
         <p>请使用微信打开此页面.</p>
         <p>长按二维码图片进行关注.</p>
         <p>请先关注我们的微信公众账号,然后参与投票.</p>
-        <p>每人只能参与1票.</p>
+        <p>每人每天可以为每类候选产品中的1-3款投票.</p>
       </div>
       <div onclick="{hideFocus}" class="close"><img src="/product/img/icon-close.png"/></div>
     </div>
@@ -94,17 +96,20 @@
     self.userinfo = false
     self.canRun = true
     self.abclist = []
+    Store.begin = self
     for (var i=0;i < self.productlist.length; i++) {
     	if (self.abclist.indexOf(self.productlist[i].abc) < 0) {
     		self.abclist.push(self.productlist[i].abc)
     	}
     }
-    self.toppx = $("body").width()/640*200
+    self.toppx = $("body").width()/640*380
     self.toppx2 = $("body").width()/640*320
-    setTimeout(function(){
-    	self.notepageShow = true
-    	self.update()
-    },6000)
+    build() {
+    	setTimeout(function(){
+    		self.notepageShow = true
+    		self.update()
+    	},2500)
+    }
     updateVote() {
     	for (i in voteList) {
     		for (n in self.detail.list) {
@@ -164,7 +169,7 @@
     				if (msg.recode == 200) {
     					//- 发送 note
     					SendNote("投票成功啦!")
-    					voteList.push({product: uid})
+    					voteList.push({product: uid, num: 1})
     					self.updateVote()
     				}else if (msg.recode == 222) {
     					self.focusUs = true

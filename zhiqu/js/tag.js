@@ -62,6 +62,7 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     self.mounted = false
     self.Stop = false
     self.play = opts.play
+    self.delayFun = null
     
     var fpsInterval = 1000/30
     var then = Date.now()
@@ -125,6 +126,8 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     this.replay = function(name) {
 
     	self.play = name
+    	clearTimeout(self.delayFun)
+    	
     	if (opts.prerun) {
     		eval(opts.prerun+"('"+name+"')")
     	}
@@ -160,8 +163,10 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     		self.now++
     		if (self.now > self.max) {
     			self.now = self.max
+    			self.Stop = true
+    			
     			if (opts.delay && self.play != "stepend") {
-    				setTimeout(function(){
+    				self.delayFun = setTimeout(function(){
     					self.replay(self.next)
     				},opts.delay)
     				return false

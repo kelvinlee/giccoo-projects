@@ -151,10 +151,10 @@ $(document).ready(function() {
   return wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "2014 中国年度经纪人评选",
-      desc: "2014 中国年度经纪人评选 由 中国保险报发起",
-      link: "http://i.giccoo.com/showman/",
-      imgUrl: "http://disk.giccoo.com/projects/showman/img/share.jpg",
+      title: "2015 年度保险产品评选",
+      desc: "为您喜爱的保险产品投一票！",
+      link: "http://i.giccoo.com/product/",
+      imgUrl: "http://disk.giccoo.com/projects/product/img/share.jpg",
       success: function() {},
       cancel: function() {}
     };
@@ -188,7 +188,8 @@ loadStart = function() {
         ep.html(parseInt((now / count) * 100) + "%");
         setTimeout(function() {
           $("#loading").addClass("animated fadeOut");
-          return $(".page.begin").removeClass("hide");
+          $(".page.begin").removeClass("hide");
+          return Store.begin.build();
         }, 1500);
         return setTimeout(function() {
           return finishedLoad();

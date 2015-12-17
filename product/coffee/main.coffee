@@ -42,10 +42,10 @@ $(document).ready ->
 	loadWechatConfig()
 	wx.ready ->
 		shareContent =
-			title: "2014 中国年度经纪人评选"
-			desc: "2014 中国年度经纪人评选 由 中国保险报发起"
-			link: "http://i.giccoo.com/showman/"
-			imgUrl: "http://disk.giccoo.com/projects/showman/img/share.jpg"
+			title: "2015 年度保险产品评选"
+			desc: "为您喜爱的保险产品投一票！"
+			link: "http://i.giccoo.com/product/"
+			imgUrl: "http://disk.giccoo.com/projects/product/img/share.jpg"
 			success: ->
 				# alert "success"
 			cancel: ->
@@ -81,7 +81,7 @@ loadStart = ->
 				setTimeout ->
 					$("#loading").addClass("animated fadeOut")
 					$(".page.begin").removeClass("hide")
-					# Store.game.build()
+					Store.begin.build()
 				,1500
 				setTimeout ->
 					finishedLoad()

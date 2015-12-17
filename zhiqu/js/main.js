@@ -357,6 +357,7 @@ openBottleMain = function(evt) {
     strategyShow();
   }
   if (name === "logo") {
+    $(".pages-logo-bg .bg").addClass("show");
     logoShow();
   }
   if (name === "technology") {
@@ -370,6 +371,13 @@ backBottleMain = function() {
   console.log("close", name);
   if (name === "brand" && $(".thispage .bg").is(".show")) {
     $(".thispage .bg").removeClass("show");
+    setTimeout(function() {
+      return backBottleMain();
+    }, 500);
+    return false;
+  }
+  if (name === "logo" && $(".pages-logo-bg .bg").is(".show")) {
+    $(".pages-logo-bg .bg").removeClass("show");
     setTimeout(function() {
       return backBottleMain();
     }, 500);
@@ -501,8 +509,24 @@ strategyShow = function() {
     global["strategyad"].replay("replay");
   }
   if ((global != null) && (global["strategyhand"] != null)) {
-    return global["strategyhand"].replay("replay");
+    global["strategyhand"].replay("replay");
   }
+  $(".pages-strategy .item-icons").on("click", function() {
+    if ((global != null) && (global["strategyicons"] != null)) {
+      return global["strategyicons"].replay("replay");
+    }
+  });
+  return $(".pages-strategy .fcanvas").on("click", function() {
+    console.log("test");
+    if ((global != null) && (global["strategyad"] != null)) {
+      if (global["strategyad"].play === "stepto") {
+        global["strategyad"].replay("stepend");
+      }
+      if (global["strategyad"].play === "replay") {
+        return global["strategyad"].replay("stepto");
+      }
+    }
+  });
 };
 
 logoShow = function() {
@@ -544,6 +568,11 @@ technologyShow = function() {
   if ((global != null) && (global["technologylogo"] != null)) {
     global["technologylogo"].replay("replay");
   }
+  $(".pages-technology .box-logo").on("click", function() {
+    if ((global != null) && (global["technologylogo"] != null)) {
+      return global["technologylogo"].replay("replay");
+    }
+  });
   console.log("T start");
   stop = false;
   return TrunCheck();

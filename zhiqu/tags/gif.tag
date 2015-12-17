@@ -12,6 +12,7 @@
     self.mounted = false
     self.Stop = false
     self.play = opts.play
+    self.delayFun = null
     
     var fpsInterval = 1000/30
     var then = Date.now()
@@ -75,6 +76,8 @@
     replay(name){
     	//- if (name == self.next) { return false }
     	self.play = name
+    	clearTimeout(self.delayFun)
+    	
     	if (opts.prerun) {
     		eval(opts.prerun+"('"+name+"')")
     	}
@@ -110,8 +113,10 @@
     		self.now++
     		if (self.now > self.max) {
     			self.now = self.max
+    			self.Stop = true
+    			
     			if (opts.delay && self.play != "stepend") {
-    				setTimeout(function(){
+    				self.delayFun = setTimeout(function(){
     					self.replay(self.next)
     				},opts.delay)
     				return false
