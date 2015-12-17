@@ -12,6 +12,7 @@ opened = false
 global = {}
 loaded = []
 tags = null
+paoAudio = null
 
 window.onload = ->
 	
@@ -34,9 +35,18 @@ window.onload = ->
 		evt.stopPropagation()
 		evt.preventDefault()
 		$(".alert",this).removeClass "on"
+	$(".pages-media .icons-1 .icon .alert").on "touchstart", (evt)->
+		evt.stopPropagation()
+		evt.preventDefault()
+	$(".pages-media .icons-1 .icon .alert").on "touchmove", (evt)->
+		evt.stopPropagation()
+		evt.preventDefault()
+	$(".pages-media .icons-1 .icon .alert").on "touchend", (evt)->
+		evt.stopPropagation()
+		evt.preventDefault()
 		
 
-	$(".pages-brand .content").css({"margin-top": -(1136-$("body").height())+"px"})
+	# $(".pages-brand .content").css({"margin-top": -(1136-$("body").height())+"px"})
 
 	$("#pop .close").on "click", ->
 		$("#pop").hide()
@@ -77,6 +87,8 @@ loadGIF = ->
 loadEnd = ->
 	_gifCount = $("gif").length
 	riot.mount("*")
+	paoAudio = riot.mount("div#paoAudio","playsound")
+	paoAudio[0].stop()
 	console.log _gifCount
 
 startLoadPage = (name,evt)->
@@ -127,10 +139,10 @@ startLoadPage = (name,evt)->
 		_gifCount = 2
 	if name is "logo"
 		riot.mount("div#logobg","gif")
-		riot.mount("div#logobottle","gif")
+		# riot.mount("div#logobottle","gif")
 		riot.mount("div#logovitro","gif")
 		global["bottlelogo"].reload()
-		_gifCount = 4
+		_gifCount = 3
 	if name is "strategy"
 		riot.mount("div#strategyhand","gif")
 		riot.mount("div#strategyarrowwhite","gif")
@@ -151,7 +163,6 @@ startLoadPage = (name,evt)->
 		_gifCount = 1
 	loadPageEnd() if count is 0
 
-	
 hideFirstPage = ->
 	$(".firstPage").addClass "fadeOut animated"
 	setTimeout ->
@@ -183,9 +194,13 @@ backBottle = (name)->
 	,2000
 	opened = false
 
+bottleRunEnd = ->
+	paoAudio[0].stop()
+
 openBottleMain = (evt)->
 	return false if opened 
 	name = $(evt).attr("page-name")
+	paoAudio[0].play()
 	if loaded[name] isnt true
 		startLoadPage name,evt
 		return false
@@ -198,15 +213,24 @@ openBottleMain = (evt)->
 	global["bottle"+name].replay("replay") if global? && global["bottle"+name]?
 	opened = true
 	$(".bottle"+name+".gif").removeClass("normal replay stop").addClass("replay")
-	brandShow() if name is "brand"
+	if name is "brand"
+		brandShow() 
+		$(".thispage .bg").addClass("show")
 	mediaShow() if name is "media"
 	strategyShow() if name is "strategy"
 	logoShow() if name is "logo"
 	technologyShow() if name is "technology"
 
 backBottleMain = ()->
+	
 	name = $(".thispage").attr "name"
 	console.log("close",name)
+	if name is "brand" and $(".thispage .bg").is(".show")
+		$(".thispage .bg").removeClass("show")
+		setTimeout ->
+			backBottleMain()
+		,500
+		return false
 	$(".main").removeClass "page-"+name
 	$(".bottle-"+name+" .white").removeClass "on"
 	$(".pages-"+name).removeClass "thispage"
@@ -259,7 +283,7 @@ clearNone = ->
 		global["strategyad"].replay("stop") if global? && global["strategyad"]?
 		global["strategyhand"].replay("normal") if global? && global["strategyhand"]?
 		global["logobg"].replay("stop") if global? && global["logobg"]?
-		global["logobottle"].replay("stop") if global? && global["logobottle"]?
+		# global["logobottle"].replay("stop") if global? && global["logobottle"]?
 		global["logovitro"].replay("stop") if global? && global["logovitro"]?
 		global["contactusfull"].replay("normal") if global? && global["contactusfull"]?
 
@@ -282,17 +306,15 @@ strategyShow = ->
 	global["strategyhand"].replay("replay") if global? && global["strategyhand"]?
 logoShow = ->
 	global["logobg"].replay("normal") if global? && global["logobg"]?
-	global["logobottle"].replay("normal") if global? && global["logobottle"]?
+	# global["logobottle"].replay("normal") if global? && global["logobottle"]?
 	global["logovitro"].replay("normal") if global? && global["logovitro"]?
 	# setTimeout ->
 	# ,2400
 logoLoadEnd = ->
 	console.log "logoLoadEnd"
 	global["logobg"].replay("replay") if global? && global["logobg"]?
-	global["logobottle"].replay("replay") if global? && global["logobottle"]?
-	setTimeout ->
-		global["logovitro"].replay("replay") if global? && global["logovitro"]?
-	,400
+	# global["logobottle"].replay("replay") if global? && global["logobottle"]?
+	global["logovitro"].replay("replay") if global? && global["logovitro"]?
 
 contactusLoadEnd = ->
 	global["contactusfull"].replay("replay") if global? && global["contactusfull"]?

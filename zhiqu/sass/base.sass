@@ -27,7 +27,7 @@ $people-width: 460px
 	50%
 		+transform(translate3d(0,0,0))
 		// +transform(translate3d(200px,0,0))
-		margin-left: 40px
+		margin-left: 30px
 +keyframes(cloudR)
 	0%,60%,100%
 		+transform(translate3d(0,0,0))
@@ -35,7 +35,7 @@ $people-width: 460px
 	30%
 		+transform(translate3d(0,0,0))
 		// +transform(translate3d(200px,0,0))
-		margin-right: 100px
+		margin-right: 40px
 +keyframes(cloudLineA)
 	0%,60%
 		+transform(translate3d(-100%,0,0))
@@ -134,9 +134,18 @@ $people-width: 460px
 	100%
 		+transform(translate3d(0,-20px,0) scale(0.9,0.9))
 		opacity: 0
++keyframes(enterDown)
+	0%
+		+transform(translate3d(0,0,0))
+		opacity: 0
+	5%,95%
+		opacity: 1
+	100%
+		+transform(translate3d(0,20px,0) scale(0.9,0.9))
+		opacity: 0
 +keyframes(soundBG)
 	to
-		background-position-x: -165px
+		background-position-x: -180px
 +keyframes(whiteH)
 	from
 		+h(100%)
@@ -564,8 +573,6 @@ $people-width: 460px
 		+transform(translate3d(0,74px,0))
 
 
-
-
 .wechat-share-hide
 	+posa
 	+tl(-1000px)
@@ -580,18 +587,26 @@ html,body
 	+hide
 // .loading
 
-
 $logo-delay: 0.8s
-$strategy-delay: 1.2s+0.4
+$strategy-delay: 2.5s
 $technology-delay: 0.8s+0.4
 $brand-delay: 0.7s+0.4
-$media-delay: 1s+0.4
+$media-delay: 2s
 $contactus-delay: 0.4s
 $award-delay: 1.4s+0.4
+
+.gif
+	img
+		+w
+		+h
+		max-width: none
 
 .bottle
 	+posa
 	+show
+	> img
+		+w
+		max-width: auto
 	.newbottle
 		+hide
 		+posa
@@ -616,15 +631,17 @@ $award-delay: 1.4s+0.4
 		+posa
 		+animation(bottleshadow,3s,ease,infinite)
 .bottle-logo
-	$w: 403px
-	$h: 581px
-	+tl(-416px,-118px)
+	$w: 403px*1.1
+	$h: 581px*1.1
+	+tl(-462px,-136px)
+	+w($w)
 	#bottlelogo
 		+posa
-		+tl(-16px,-40px)
-
+		+tl(-16px,-44px)
+	.bottlelogo
+		+wh(480px*1.1,620px*1.1)
 	.on-button
-		+br(0px,55px)
+		+br(0px,65px)
 		+wh(165px,60px)
 	.white
 		+tran
@@ -667,17 +684,19 @@ $award-delay: 1.4s+0.4
 			+w(0%)
 			transition-delay: 1s
 .bottle-strategy
-	$w: 1020px
-	+tl(-186px,-230px)
+	$w: 1020px*1.1
+	+tl(-212px,-260px)
 	+w($w)
 	#bottlestrategy
 		+posa
-		+tl(157px,-27px)
+		+tl(172px,-26px)
+	.bottlestrategy
+		+wh(850px*1.1,200px*1.1)
 	.shadow
-		+tl(169px,522px)
+		+tl(200px,600px)
 		z-index: -1
 	.on-button
-		+tl(0,563px)
+		+tl(20px,633px)
 		+wh(240px,290px)
 	.white
 		+w(70%)
@@ -687,30 +706,33 @@ $award-delay: 1.4s+0.4
 			+w($w)
 			max-width: $w
 .bottle-technology
-	$w: 953px
-	+tl(110px,-180px)
+	$w: 953px*1.1
+	+tl(110px,-208px)
 	+w($w)
 	#bottletechnology
 		+posa
-		+tl(-22px,-78px)
+		+tl(-22px,-84px)
+	.bottletechnology
+		+wh(800px*1.1,260px*1.1)
 	.shadow
-		+tl(72px,225px)
+		+tl(72px,255px)
 		z-index: -1
 	.on-button
-		+tl(60px,250px)
-		+wh(200px,100px)
+		+tl(70px,286px)
+		+wh(200px,110px)
 	.white
 		img
 			+w($w)
 			max-width: $w
 .bottle-brand
-	$w: 411px
+	$w: 411px*1.1
 	+w($w)
-	+tl(-260px,-20px)
+	+tl(-310px,-30px)
 	#bottlebrand
 		+posa
-		+tl(-12px,184px)
-		
+		+tl(-12px,204px)
+	.bottlebrand
+		+wh(300px*1.1,750px*1.1)
 	.on-button
 		+br(0,0px)
 		+wh(160px,230px)
@@ -722,7 +744,7 @@ $award-delay: 1.4s+0.4
 			+h(0%)
 	.bubbles
 		+posa
-		+bl(120px,130px)
+		+bl(120px,144px)
 		z-index: -1
 		+w(28px*3)
 		+h(120px)
@@ -750,18 +772,20 @@ $award-delay: 1.4s+0.4
 		opacity: 0
 		transition-delay: 0.7s
 .bottle-media
-	$w: 953px
-	+tl(110px,-180px)
+	$w: 953px*1.1
+	+tl(110px,-206px)
 	+w($w)
 	#bottlemedia
 		+posa
-		+tl(-30px,580px)
+		+tl(-30px,640px)
 		// z-index: -1
+	.bottlemedia
+		+wh(380px*1.1,380px*1.1)
 	.shadow
-		+tl(170px,582px)
+		+tl(200px,652px)
 		z-index: -1
 	.on-button
-		+tl(110px,610px)
+		+tl(140px,680px)
 		+wh(155px,230px)
 	.white
 		left: auto
@@ -774,18 +798,20 @@ $award-delay: 1.4s+0.4
 			+w($w)
 			max-width: $w
 .bottle-contactus
-	$w: 452px
-	+tr(510px,-230px)
+	$w: 452px*1.1
+	+tr(550px,-310px)
 	+w($w)
 	#bottlecontactus
 		+show-inline
 		margin-top: -8px
 		margin-left: -12px
+	.bottlecontactus
+		+wh(480px*1.1,480px*1.1)
 	.shadow
-		+tl(89px,-45px)
+		+tl(118px,-36px)
 		z-index: -1
 	.on-button
-		+tl(90px,10px)
+		+tl(120px,20px)
 		+wh(145px,170px)
 	.white
 		right: 0
@@ -799,22 +825,24 @@ $award-delay: 1.4s+0.4
 			+w($w)
 			max-width: $w
 .bottle-award
-	$w: 520px
+	$w: 520px*1.2
 	+w($w)
-	+tl(575px,-132px)
+	+tl(592px,-200px)
 	z-index: 3
 	#bottleaward
 		+show-inline
 		margin-top: -8px
 		margin-left: -12px
+	.bottleaward
+		+wh(550px*1.2,265px*1.2)
 	.shadow
-		+tl(16px,295px)
+		+tl(54px,378px)
 		z-index: -1
-		+w(300px)
+		+w(300px*1.2)
 		animation-delay: 500ms
 	.on-button
-		+tl(90px,408px)
-		+wh(85px,140px)
+		+tl(120px,484px)
+		+wh(105px,150px)
 	.white
 		img
 			+w($w)
@@ -824,11 +852,11 @@ $award-delay: 1.4s+0.4
 .bottle-fire-1
 	$w: 78px
 	+w($w)
-	+tl(411px,90px)
+	+tl(448px,96px)
 .bottle-fire-2
 	$w: 65px
 	+w($w)
-	+tr(778px,115px)
+	+tr(852px,75px)
 .bottle-fire-1,.bottle-fire-2
 	.fire
 		+posa
@@ -836,24 +864,28 @@ $award-delay: 1.4s+0.4
 		z-index: 2
 		+animation(fire,5s,ease,infinite)
 .bottle-search
-	$w: 70px
+	$w: 70px*1.1
 	+w($w)
-	+tl(678px,135px)
+	+tl(728px,165px)
 .middle-tower
-	$w: 155px
-	+tl(370px,239px)
+	$w: 155px*1.1
+	+tl(378px,254px)
 	+w($w)
 .left-tower
-	$w: 341px
-	+tl(290px,-130px)
+	$w: 341px*1.1
+	+tl(300px,-140px)
 	+w($w)
 .right-tower
-	$w: 155px
-	+tr(210px,90px)
+	$w: 155px*1.1
+	+tr(210px,44px)
 	+w($w)
 	.timer
 		+posa
 		+tl(33%)
+		+wh(100px,100px)
+		> img
+			+w
+			max-width: none
 		.timer-box
 			+posa
 			+tl
@@ -863,19 +895,19 @@ $award-delay: 1.4s+0.4
 				+posa
 				+bl(50%,50%)
 				+w(4px)
-				+h(24px)
+				+h(28px)
 				margin-left: -1px
 				+bc(#596272)
 				font-size: 0
 				transform-origin: bottom center
 				border-radius: 1px
 			.hour
-				+h(18px)
+				+h(20px)
 			.sec
 				+posa
 				+bl(50%,50%)
 				+w(4px)
-				+h(30px)
+				+h(32px)
 				margin-left: -1px
 				+bc(#f06640)
 				font-size: 0
@@ -883,11 +915,11 @@ $award-delay: 1.4s+0.4
 				border-radius: 1px
 	.playsound
 		+posa
-		+tl(14px,27px)
+		+tl(16px,30px)
 		z-index: 999
 		.icon-play
-			+wh(33px,25px)
-			+b("../img/right-tower-sound.png",no-repeat,0,0,165px 25px)
+			+wh(36px,27px)
+			+b("../img/right-tower-sound.png",no-repeat,0,0,36px*5 27px)
 			&.play
 				animation: soundBG 0.8s steps(5) infinite
 .last-bottle
@@ -1054,7 +1086,7 @@ $award-delay: 1.4s+0.4
 		.homepage
 			+tran($time: 1.2s,$ease: linear)
 			transition-delay: $technology-delay
-			+transform(translate3d(763px,-173px,0))
+			+transform(translate3d(813px,-208px,0))
 			.bottle-award,.left-tower
 				+tran
 				opacity: 0
@@ -1067,9 +1099,9 @@ $award-delay: 1.4s+0.4
 			transition-delay: $technology-delay+1.2
 	&.page-strategy 
 		.homepage
-			+tran($time: 1.4s,$ease: linear)
+			+tran($time: 1.5s,$ease: linear)
 			transition-delay: $strategy-delay
-			+transform(translate3d(770px,0,0))
+			+transform(translate3d(820px,-20px,0))
 			.bottle-technology
 				+tran
 				opacity: 0
@@ -1084,7 +1116,7 @@ $award-delay: 1.4s+0.4
 		.homepage
 			+tran($time: 1s,$ease: linear)
 			transition-delay: $brand-delay
-			+transform(translate3d(-128px,105%,0))
+			+transform(translate3d(-148px,112%,0))
 		.back-btn
 			+tl(auto,auto)
 			+bl(10px,10px)
@@ -1094,7 +1126,7 @@ $award-delay: 1.4s+0.4
 		.homepage
 			+tran($time: 1.3s,$ease: linear)
 			transition-delay: $logo-delay
-			+transform(translate3d(266px,113%,0))
+			+transform(translate3d(266px,118%,0))
 			.bottle-brand
 				+tran
 				opacity: 0
@@ -1109,11 +1141,10 @@ $award-delay: 1.4s+0.4
 			transition-delay: $logo-delay
 			+transform(translate3d(0,0,0))
 			opacity: 1
-
 	&.page-contactus 
 		.homepage
 			+tran($time: 2.2s,$ease: linear)
-			+transform(translate3d(-670px,-500px,0))
+			+transform(translate3d(-750px,-540px,0))
 			transition-delay: $contactus-delay
 		.back-btn
 			+tl(70px,10px)
@@ -1124,7 +1155,7 @@ $award-delay: 1.4s+0.4
 		.homepage
 			+tran($time: 1.5s,$ease: linear)
 			transition-delay: $media-delay
-			+transform(translate3d(-700px,550px,0))
+			+transform(translate3d(-780px,550px,0))
 		.back-btn
 			+tl(10px,10px)
 			+transform(rotate(90deg))
@@ -1134,7 +1165,7 @@ $award-delay: 1.4s+0.4
 		.homepage
 			+tran($time: 1.3s,$ease: linear)
 			transition-delay: $award-delay
-			+transform(translate3d(700px,-550px,0))
+			+transform(translate3d(740px,-550px,0))
 		.back-btn
 			+tl(auto,auto)
 			+tr(10px,10px)
@@ -1155,7 +1186,7 @@ $award-delay: 1.4s+0.4
 	+w
 	+h
 	z-index: 102
-	+transform(translate3d(-763px,173px,0))
+	+transform(translate3d(-813px,208px,0))
 	&.thispage
 		+tran($time: 1.2s,$ease: linear)
 		transition-delay: $technology-delay
@@ -1168,6 +1199,9 @@ $award-delay: 1.4s+0.4
 		z-index: 1
 		+overhide
 		.m-top
+			margin-top: -30px
+			+transform(scale(1.1,1.1))
+			transform-origin: top center
 			.bg
 				padding-top: 40px
 			.texts
@@ -1368,6 +1402,18 @@ $award-delay: 1.4s+0.4
 			.bg
 				+w(906px)
 				margin-left: -(906px-640px)/2
+			.bottle-water
+				+posa
+				+bl(144px,130px)
+				+overhide
+				+wh(20px,40px)
+				.over
+					+h(0%)
+					+overhide
+					+posa
+					+bl
+					+animation(music,5s,ease,infinite)
+
 			.icons
 				+posa
 				+bl(130px,18px)
@@ -1426,7 +1472,7 @@ $award-delay: 1.4s+0.4
 						.gif
 							+posa
 							+bl
-							+w(172px)
+							+w(66px)
 							// +transform(translate3d(-50%,0,0))
 					// &.p-1
 						// +animation(tP1,6s,linear,infinite)
@@ -1438,14 +1484,62 @@ $award-delay: 1.4s+0.4
 	+w
 	+h
 	z-index: 102
-	+transform(translate3d(-700px,550px,0))
+	+transform(translate3d(-740px,550px,0))
 	&.thispage
 		+tran($time: 1.3s,$ease: linear)
 		transition-delay: $award-delay
 		+transform(translate3d(0,0,0))
+		.icons-1
+			.icon
+				&:nth-child(1)
+					.star
+						+animation(rotateIn,6s,ease,infinite)
+						animation-direction: alternate
+						-webkit-animation-direction: alternate
+				&:nth-child(2)
+					.star
+						+tl
+						+animation(rotateIn,5s,ease,infinite)
+						animation-direction: alternate
+						-webkit-animation-direction: alternate
+		.icons-2
+			.icon
+				&:nth-child(1)
+					.star
+						+animation(rotateIn,4s,ease,infinite)
+						animation-direction: alternate
+						-webkit-animation-direction: alternate
+						animation-delay: 500ms
+				&:nth-child(2)
+					.star
+						+animation(rotateOut,4s,ease,infinite)
+						animation-direction: alternate
+						-webkit-animation-direction: alternate
+						animation-delay: 1000ms
+				&:nth-child(3)
+					.star
+						+animation(rotateOut,4s,ease,infinite)
+						animation-direction: alternate
+						-webkit-animation-direction: alternate
+						animation-delay: 1500ms
+		.icons-3
+			.icon
+				&:nth-child(1)
+					.star
+						+animation(rotateIn,5s,ease,infinite)
+						animation-direction: alternate
+						-webkit-animation-direction: alternate
+						animation-delay: 500ms
+				&:nth-child(2)
+					.star
+						+animation(rotateOut,5s,ease,infinite)
+						animation-direction: alternate
+						-webkit-animation-direction: alternate
+						animation-delay: 1000ms
+				
 	.bg
 		+posa
-		+tl(80px,3%)
+		+tl(30px,3%)
 		+w(94%)
 		img
 			+w
@@ -1473,57 +1567,41 @@ $award-delay: 1.4s+0.4
 					+posa
 					+tl
 		.icons-1
-			+tl(186px,90px)
+			+tl(186px-50,90px)
 			.icon
-				&:nth-child(n+1)
+				&:nth-child(1)
 					.star
-						+hide
-				&:nth-child(n+2)
+						+tl(70px,50px)
+				&:nth-child(2)
 					.star
-						+animation(rotateIn,5s,ease,infinite)
-						animation-direction: alternate
+						+tl
 		.icons-2
-			+tl(494px,90px)
+			+tl(494px-50,90px)
 			.icon
 				&:nth-child(n+1)
 					.star
 						+tl(70px,50px)
-						+animation(rotateIn,4s,ease,infinite)
-						animation-delay: 500ms
-						animation-direction: alternate
 				&:nth-child(n+2)
 					.star
 						+tl(30px,60px)
-						+animation(rotateIn,4s,ease,infinite)
-						animation-delay: 1500ms
-						animation-direction: alternate
 				&:nth-child(n+3)
 					.star
 						+tl(60px,50px)
-						+animation(rotateIn,4s,ease,infinite)
-						animation-delay: 2500ms
-						animation-direction: alternate
 		.icons-3
-			+tl(772px,90px)
+			+tl(772px-50,90px)
 			.icon
 				&:nth-child(n+1)
 					.star
 						+tl(66px,20px)
-						+animation(rotateIn,3s,ease,infinite)
-						animation-delay: 1500ms
-						animation-direction: alternate
 				&:nth-child(n+2)
 					.star
 						+tl(24px,60px)
-						+animation(rotateOut,6s,ease,infinite)
-						animation-delay: 2500ms
-						animation-direction: alternate
 		.other
 			+posa
 		.other-1
-			+tl(249px,405px)
+			+tl(249px-50,405px)
 		.other-2
-			+tl(906px,405px)
+			+tl(906px-50,405px)
 	.pop
 		.alert-1,.alert-3,.alert-4
 			+w(411px)
@@ -1537,7 +1615,7 @@ $award-delay: 1.4s+0.4
 	+w
 	+h
 	z-index: 102
-	+transform(translate3d(700px,-550px,0))
+	+transform(translate3d(780px,-550px,0))
 	&.thispage
 		+tran($time: 1.5s,$ease: linear)
 		transition-delay: $media-delay
@@ -1558,14 +1636,14 @@ $award-delay: 1.4s+0.4
 			vertical-align: bottom
 			.icon
 				+show-inline
-				+m(0 4px)
+				+m(0 8px)
 				+posr
 				.keep
 					+posa
 					+tl
 					+w
 					+h
-					z-index: 101
+					z-index: 1001
 				.light
 					+posa
 					+tl(-30px,-15px)
@@ -1579,16 +1657,17 @@ $award-delay: 1.4s+0.4
 					+w(82px)
 					+transform(translate3d(-50%,0,0))
 					opacity: 0
+					z-index: 2
 					&.on
 						opacity: 1
 		.icons-1
-			+tl(168px,70px)
+			+tl(168px-50,70px)
 		.icons-2
-			+tl(357px,70px)
+			+tl(357px-50,70px)
 		.bottle-1
-			+tl(535px,70px)
+			+tl(535px-50,70px)
 		.bottle-2
-			+tl(790px,70px)
+			+tl(790px-50,70px)
 		.ml-30
 			margin-left: -30px
 		.bottle-media-movie
@@ -1606,11 +1685,9 @@ $award-delay: 1.4s+0.4
 				+w
 				+h
 				z-index: 101
-			
-				
 	.bg
 		+posa
-		+tl(80px)
+		+tl(30px)
 
 .pages-contactus
 	+tran($time: 0.5s,$ease: linear)
@@ -1620,7 +1697,7 @@ $award-delay: 1.4s+0.4
 	+h
 	// +hide
 	z-index: 102
-	+transform(translate3d(670px,500px,0))
+	+transform(translate3d(750px,540px,0))
 	&.thispage
 		+tran($time: 2.2s,$ease: linear)
 		+transform(translate3d(0,0,0))
@@ -1749,7 +1826,7 @@ $award-delay: 1.4s+0.4
 	+w
 	+h
 	// +hide
-	+transform(translate3d(-266px,-113%,0))
+	+transform(translate3d(-266px,-118%,0))
 	// +b("../img/pages-logo-bg-start.jpg",no-repeat,center,center,cover)
 	opacity: 0
 	&.thispage
@@ -1842,7 +1919,7 @@ $award-delay: 1.4s+0.4
 	+tran($time: 0.5s,$ease: linear)
 	z-index: 1
 	// opacity: 0
-	+transform(translate3d(128px,-105%,0))
+	+transform(translate3d(148px,-112%,0))
 	&.thispage
 		+tran($time: 1s,$ease: linear)
 		transition-delay: $brand-delay
@@ -1853,16 +1930,21 @@ $award-delay: 1.4s+0.4
 		+tl
 		+w
 		+h
+		+tran
 		font-size: 0
+		opacity: 0
 		img
 			+w
 			+h
+		&.show
+			+tran($time: 0)
+			opacity: 1
 		// +b("../img/pages-brand-bg.jpg",no-repeat,center,center,cover)
 	.content
 		+posa
-		+tl
+		+bl(20px)
 		+w
-		+h
+		+h(1134px)
 		z-index: 1
 		
 		#brand,.ctrls,.brands-item
@@ -1915,10 +1997,10 @@ $award-delay: 1.4s+0.4
 	+overhide
 	z-index: 11
 	// opacity: 0
-	+transform(translate3d(-770px,0,0))
+	+transform(translate3d(-820px,20px,0))
 	// +bc(#73ea9c)
 	&.thispage
-		+tran($time: 1.4s,$ease: linear)
+		+tran($time: 1.5s,$ease: linear)
 		transition-delay: $strategy-delay
 		+transform(translate3d(0,0,0))
 		// opacity: 1
@@ -1928,9 +2010,11 @@ $award-delay: 1.4s+0.4
 		.m-top
 			+posr
 			z-index: 10
+			transform-origin: top center
 			.item-arrow-white
 				+posa
 				+tl(100px,170px)
+				+animation(enterDown, 5s, ease, infinite)
 
 			.item-lighter
 				+posa
@@ -1954,22 +2038,13 @@ $award-delay: 1.4s+0.4
 					+posa
 					+tl(50%,50%)
 					+transform(translate3d(-50%,-50%,0))
-					+w(63px)
+					+wh(63px,21px)
 					+animation(tvShow,3s,ease,infinite)
 
 			.item-arrow
 				+posa
 				+br(-40px,80px)
-				.arrow1
-					+animation(arrowA,6s,linear,infinite)
-				.arrow2
-					+animation(arrowB,6s,linear,infinite)
-				.arrow3
-					+animation(arrowC,6s,linear,infinite)
-				.arrow4
-					+animation(arrowD,6s,linear,infinite)
-				.arrow5
-					+animation(arrowE,6s,linear,infinite)
+				+animation(enterDown, 5s, ease, infinite)
 			.item-light-red
 				+posa
 				+tl(307px,325px)
@@ -2034,21 +2109,21 @@ $award-delay: 1.4s+0.4
 				+tl(263px,41px)
 				z-index: -1
 				transform-origin: left center
-				+animation(cloudL,5.5s,ease,infinite)
+				+animation(cloudL,5.5s,linear,infinite)
 				+w(100px)
 			.item-icloud-2
 				+posa
 				+tl(233px,31px)
 				z-index: -1
 				transform-origin: left center
-				+animation(cloudL,4s,ease,infinite)
+				+animation(cloudL,4s,linear,infinite)
 				+w(200px)
 			.item-icloud-3
 				+posa
 				+tr(233px,44px)
 				z-index: -1
 				transform-origin: left center
-				+animation(cloudR,5s,ease,infinite)
+				+animation(cloudR,5s,linear,infinite)
 				+w(109px)
 			.item-icons
 				+posa
@@ -2068,6 +2143,7 @@ $award-delay: 1.4s+0.4
 			+br
 			+w
 			z-index: -1
+			transform-origin: bottom center
 			.hand
 				+posa
 				+tl(-22px,186px)
@@ -2075,13 +2151,17 @@ $award-delay: 1.4s+0.4
 			.line1,.line2
 				+posa
 				+tl
-				+w(8px)
-				+h(50%)
+				+w(6px)
+				+h(0%)
 				+bc(#c9c4c6)
 			.line1
-				+tl(0,132px)
+				+tl(12%,134px)
+				bottom: 50%
+				+h(auto)
 			.line2
-				+tl(0,447px)
+				+tl(12%,448px)
+				bottom: 50%
+				+h(auto)
 			.p1
 				+posa
 				+bl(-20px)
@@ -2117,16 +2197,8 @@ $award-delay: 1.4s+0.4
 				.item-arrow
 					+posa
 					+tr(40px,20px)
-					.arrow1
-						+animation(arrow1,4s,linear,infinite)
-					.arrow2
-						+animation(arrow2,4s,linear,infinite)
-					.arrow3
-						+animation(arrow3,4s,linear,infinite)
-					.arrow4
-						+animation(arrow4,4s,linear,infinite)
-					.arrow5
-						+animation(arrow5,4s,linear,infinite)
+					+animation(enterDown, 5s, ease, infinite)
+					
 				.items
 					+w
 					+h
@@ -2137,6 +2209,8 @@ $award-delay: 1.4s+0.4
 				+posa
 				+bl
 				padding-bottom: 30px
+		.m-top,.m-bottom
+			+transform(scale(1.1,1.1))
 
 .sliders
 	overflow: hidden

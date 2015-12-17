@@ -158,9 +158,6 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
 
     		$(".gif",self.root).html(loads[self.now])
     		self.now++
-    		if (opts.id == "bottlelogo") {
-    			console.log(self.now, self.max)
-    		}
     		if (self.now > self.max) {
     			self.now = self.max
     			if (opts.delay && self.play != "stepend") {
@@ -171,6 +168,9 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     			}
     			if (opts.callback && self.play == "replay") {
     				eval(opts.callback+".call()")
+    			}
+    			if (opts.playend && self.play == "replay") {
+    				eval(opts.playend+".call()")
     			}
     			self.replay(self.next)
     			return false 
@@ -193,7 +193,7 @@ riot.tag('main', ' <div class="main"> <div class="homepage"> <div class="bottle 
   
 });
 
-riot.tag('playsound', '<div onclick="{change}" class="icon-play {type}"></div> <audio id="playgrounp" riot-src="{src}" autoplay="true" loop="loop"></audio>', function(opts) {
+riot.tag('playsound', '<div onclick="{change}" class="icon-play {type}"></div> <audio id="{opts.id}-playgrounp" riot-src="{src}" autoplay="true" loop="loop"></audio>', function(opts) {
     var self = this
     this.src = opts.src
     this.icon = opts.icon
@@ -204,8 +204,16 @@ riot.tag('playsound', '<div onclick="{change}" class="icon-play {type}"></div> <
 
     this.type = null
     this.root.className += "playsound"
+    this.play = function() {
+    	var audio = document.getElementById(opts.id+"-playgrounp")
+    	audio.play()
+    }.bind(this);
+    this.stop = function() {
+    	var audio = document.getElementById(opts.id+"-playgrounp")
+    	audio.pause()
+    }.bind(this);
     this.change = function() {
-    	var audio = document.getElementById("playgrounp")
+    	var audio = document.getElementById(opts.id+"-playgrounp")
     	if (self.type == "play") {
     		audio.pause()
     	}else{
@@ -213,7 +221,7 @@ riot.tag('playsound', '<div onclick="{change}" class="icon-play {type}"></div> <
     	}
     }.bind(this);
     this.on("mount",function(){
-    	var audio = document.getElementById("playgrounp")
+    	var audio = document.getElementById(opts.id+"-playgrounp")
     	audio.addEventListener("pause",function(){
 
     		self.type = "pause"

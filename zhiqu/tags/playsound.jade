@@ -1,6 +1,6 @@
 playsound
 	.icon-play(onclick="{change}",class="{type}")
-	audio#playgrounp(src="{src}",autoplay="true",loop="loop")
+	audio(id="{opts.id}-playgrounp",src="{src}",autoplay="true",loop="loop")
 	script.
 		var self = this
 		this.src = opts.src
@@ -12,8 +12,16 @@ playsound
 		//- }
 		this.type = null
 		this.root.className += "playsound"
+		play() {
+			var audio = document.getElementById(opts.id+"-playgrounp")
+			audio.play()
+		}
+		stop() {
+			var audio = document.getElementById(opts.id+"-playgrounp")
+			audio.pause()
+		}
 		change() {
-			var audio = document.getElementById("playgrounp")
+			var audio = document.getElementById(opts.id+"-playgrounp")
 			if (self.type == "play") {
 				audio.pause()
 			}else{
@@ -21,7 +29,7 @@ playsound
 			}
 		}
 		this.on("mount",function(){
-			var audio = document.getElementById("playgrounp")
+			var audio = document.getElementById(opts.id+"-playgrounp")
 			audio.addEventListener("pause",function(){
 				//- self.iconNow = self.iconStop
 				self.type = "pause"

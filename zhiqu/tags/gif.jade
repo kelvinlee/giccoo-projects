@@ -108,9 +108,6 @@ gif
 				// draw
 				$(".gif",self.root).html(loads[self.now])
 				self.now++
-				if (opts.id == "bottlelogo") {
-					console.log(self.now, self.max)
-				}
 				if (self.now > self.max) {
 					self.now = self.max
 					if (opts.delay && self.play != "stepend") {
@@ -121,6 +118,9 @@ gif
 					}
 					if (opts.callback && self.play == "replay") {
 						eval(opts.callback+".call()")
+					}
+					if (opts.playend && self.play == "replay") {
+						eval(opts.playend+".call()")
 					}
 					self.replay(self.next)
 					return false 

@@ -1,7 +1,7 @@
 
 <playsound>
   <div onclick="{change}" class="icon-play {type}"></div>
-  <audio id="playgrounp" src="{src}" autoplay="true" loop="loop"></audio>
+  <audio id="{opts.id}-playgrounp" src="{src}" autoplay="true" loop="loop"></audio>
   <script>
     var self = this
     this.src = opts.src
@@ -13,8 +13,16 @@
     //- }
     this.type = null
     this.root.className += "playsound"
+    play() {
+    	var audio = document.getElementById(opts.id+"-playgrounp")
+    	audio.play()
+    }
+    stop() {
+    	var audio = document.getElementById(opts.id+"-playgrounp")
+    	audio.pause()
+    }
     change() {
-    	var audio = document.getElementById("playgrounp")
+    	var audio = document.getElementById(opts.id+"-playgrounp")
     	if (self.type == "play") {
     		audio.pause()
     	}else{
@@ -22,7 +30,7 @@
     	}
     }
     this.on("mount",function(){
-    	var audio = document.getElementById("playgrounp")
+    	var audio = document.getElementById(opts.id+"-playgrounp")
     	audio.addEventListener("pause",function(){
     		//- self.iconNow = self.iconStop
     		self.type = "pause"

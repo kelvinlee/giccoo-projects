@@ -46,8 +46,9 @@
     </div>
     <div class="main">
       <div class="homepage">
+        <div id="paoAudio" src="mp3/pao.mp3"></div>
         <div class="bottle bottle-brand"><img data-layzr="img/bottle-brand.png">
-          <gif load="true" id="bottlebrand" width="300" height="750" count="51" normal="[0,0,&quot;normal&quot;]" replay="[1,50,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="50" play="normal" src="img/animate/bottle-brand/brand-id.png" callback="brandLoadEnd"></gif>
+          <gif load="true" id="bottlebrand" width="300" height="750" count="51" normal="[0,0,&quot;normal&quot;]" replay="[1,50,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="50" play="normal" src="img/animate/bottle-brand/brand-id.png" playend="bottleRunEnd" callback="brandLoadEnd"></gif>
           <div onclick="openBottleMain(this)" page-name="brand" class="on-button"></div>
           <div class="bubbles">
             <div class="bubble bubble-1"><img data-layzr="img/homepage-bubble.png"></div>
@@ -56,31 +57,31 @@
           </div>
         </div>
         <div class="bottle bottle-logo"><img data-layzr="img/bottle-logo.png">
-          <gif load="true" id="bottlelogo" width="480" height="620" count="63" normal="[0,0,&quot;normal&quot;]" replay="[1,62,&quot;stop&quot;]" prepare="[1,6,&quot;prepare&quot;]" stop="62" play="normal" src="img/animate/bottle-logo/logo-id.png" callback="logoLoadEnd"></gif>
+          <gif load="true" id="bottlelogo" width="480" height="620" count="63" normal="[0,0,&quot;normal&quot;]" replay="[1,62,&quot;stop&quot;]" prepare="[1,6,&quot;prepare&quot;]" stop="62" play="normal" src="img/animate/bottle-logo/logo-id.png" playend="bottleRunEnd" callback="logoLoadEnd"></gif>
           <div onclick="openBottleMain(this)" page-name="logo" class="on-button"></div>
         </div>
         <div class="bottle bottle-strategy"><img data-layzr="img/bottle-strategy.png">
-          <gif load="true" id="bottlestrategy" width="850" height="200" count="78" normal="[0,0,&quot;normal&quot;]" replay="[1,77,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="77" play="normal" src="img/animate/bottle-strategy/strategy-id.png"></gif>
+          <gif load="true" id="bottlestrategy" width="850" height="200" count="78" normal="[0,0,&quot;normal&quot;]" replay="[1,77,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="77" play="normal" src="img/animate/bottle-strategy/strategy-id.png" playend="bottleRunEnd"></gif>
           <div class="shadow"><img data-layzr="img/bottle-strategy-shadow.png"></div>
           <div onclick="openBottleMain(this)" page-name="strategy" class="on-button"></div>
         </div>
         <div class="bottle bottle-technology"><img data-layzr="img/bottle-technology.png">
-          <gif load="true" id="bottletechnology" width="800" height="260" count="60" normal="[0,0,&quot;normal&quot;]" replay="[1,59,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="59" play="normal" src="img/animate/bottle-technology/technology-id.png"></gif>
+          <gif load="true" id="bottletechnology" width="800" height="260" count="60" normal="[0,0,&quot;normal&quot;]" replay="[1,59,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="59" play="normal" src="img/animate/bottle-technology/technology-id.png" playend="bottleRunEnd"></gif>
           <div class="shadow"><img data-layzr="img/bottle-technology-shadow.png"></div>
           <div onclick="openBottleMain(this)" page-name="technology" class="on-button"></div>
         </div>
         <div class="bottle bottle-media"><img data-layzr="img/bottle-media.png">
-          <gif load="true" id="bottlemedia" width="380" height="380" count="76" normal="[0,0,&quot;normal&quot;]" replay="[1,75,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="75" play="normal" src="img/animate/bottle-media/media-id.png"></gif>
+          <gif load="true" id="bottlemedia" width="380" height="380" count="76" normal="[0,0,&quot;normal&quot;]" replay="[1,75,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="75" play="normal" src="img/animate/bottle-media/media-id.png" playend="bottleRunEnd"></gif>
           <div class="shadow"><img data-layzr="img/bottle-media-shadow.png"></div>
           <div onclick="openBottleMain(this)" page-name="media" class="on-button"></div>
         </div>
         <div class="bottle bottle-contactus">
-          <gif load="true" id="bottlecontactus" width="480" height="480" count="81" normal="[0,0,&quot;normal&quot;]" replay="[1,80,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="80" play="normal" src="img/animate/bottle-contactus/contactus-id.png" callback="contactusLoadEnd"></gif>
+          <gif load="true" id="bottlecontactus" width="480" height="480" count="81" normal="[0,0,&quot;normal&quot;]" replay="[1,80,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="80" play="normal" src="img/animate/bottle-contactus/contactus-id.png" playend="bottleRunEnd" callback="contactusLoadEnd"></gif>
           <div class="shadow"><img data-layzr="img/bottle-contactus-shadow.png"></div>
           <div onclick="openBottleMain(this)" page-name="contactus" class="on-button"></div>
         </div>
         <div class="bottle bottle-award">
-          <gif load="true" id="bottleaward" width="550" height="265" count="82" normal="[0,0,&quot;normal&quot;]" replay="[1,81,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="81" play="normal" src="img/animate/bottle-award/award-id.png"></gif>
+          <gif load="true" id="bottleaward" width="550" height="265" count="82" normal="[0,0,&quot;normal&quot;]" replay="[1,81,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="81" play="normal" src="img/animate/bottle-award/award-id.png" playend="bottleRunEnd"></gif>
           <div class="shadow"><img data-layzr="img/bottle-award-shadow.png"></div>
           <div onclick="openBottleMain(this)" page-name="award" class="on-button"></div>
         </div>
@@ -90,7 +91,7 @@
           <div class="timer"><img data-layzr="img/right-tower-timer.png">
             <timer></timer>
           </div>
-          <playsound src="http://t.douban.com/img/files/file-14483685209223.mp3"></playsound>
+          <playsound id="bgaudio" src="mp3/bg.mp3"></playsound>
         </div>
         <div class="bottle last-bottle"><img data-layzr="img/bottom-bottle.png"></div>
         <div class="bottle bottle-fire-1"><img data-layzr="img/bottle-lighter.png">
@@ -183,6 +184,9 @@
           </div>
           <div class="m-bottom">
             <div class="bg"><img data-layzr-technology="img/pages-technology-bottom.png"></div>
+            <div class="bottle-water">
+              <div class="over"><img data-layzr-technology="img/pages-technology-bottom-bottle.png"></div>
+            </div>
             <div class="peoples">
               <div class="p-box">
                 <div class="people p-5">
@@ -320,33 +324,57 @@
           <div class="icons icons-1">
             <div rel="1" class="icon"><img data-layzr-media="img/pages-media-icon-1.png">
               <div class="keep"></div>
-              <div class="light"><img data-layzr-media="img/pages-media-icon-1-light.png"></div>
-              <div class="alert"><img data-layzr-media="img/pages-media-icon-1-alert.png"></div>
+              <div class="light"><img data-layzr-media="img/pages-media-icon-1-light.png">
+                <div class="keep"></div>
+              </div>
+              <div class="alert"><img data-layzr-media="img/pages-media-icon-1-alert.png">
+                <div class="keep"></div>
+              </div>
             </div>
             <div rel="2" class="icon"><img data-layzr-media="img/pages-media-icon-2.png">
               <div class="keep"></div>
-              <div class="light"><img data-layzr-media="img/pages-media-icon-2-light.png"></div>
-              <div class="alert"><img data-layzr-media="img/pages-media-icon-2-alert.png"></div>
+              <div class="light"><img data-layzr-media="img/pages-media-icon-2-light.png">
+                <div class="keep"></div>
+              </div>
+              <div class="alert"><img data-layzr-media="img/pages-media-icon-2-alert.png">
+                <div class="keep"></div>
+              </div>
             </div>
             <div rel="3" class="icon"><img data-layzr-media="img/pages-media-icon-3.png">
               <div class="keep"></div>
-              <div class="light"><img data-layzr-media="img/pages-media-icon-3-light.png"></div>
-              <div class="alert"><img data-layzr-media="img/pages-media-icon-3-alert.png"></div>
+              <div class="light"><img data-layzr-media="img/pages-media-icon-3-light.png">
+                <div class="keep"></div>
+              </div>
+              <div class="alert"><img data-layzr-media="img/pages-media-icon-3-alert.png">
+                <div class="keep"></div>
+              </div>
             </div>
             <div rel="4" class="icon"><img data-layzr-media="img/pages-media-icon-4.png">
               <div class="keep"></div>
-              <div class="light"><img data-layzr-media="img/pages-media-icon-4-light.png"></div>
-              <div class="alert"><img data-layzr-media="img/pages-media-icon-4-alert.png"></div>
+              <div class="light"><img data-layzr-media="img/pages-media-icon-4-light.png">
+                <div class="keep"></div>
+              </div>
+              <div class="alert"><img data-layzr-media="img/pages-media-icon-4-alert.png">
+                <div class="keep"></div>
+              </div>
             </div>
             <div rel="5" class="icon"><img data-layzr-media="img/pages-media-icon-5.png">
               <div class="keep"></div>
-              <div class="light"><img data-layzr-media="img/pages-media-icon-5-light.png"></div>
-              <div class="alert"><img data-layzr-media="img/pages-media-icon-5-alert.png"></div>
+              <div class="light"><img data-layzr-media="img/pages-media-icon-5-light.png">
+                <div class="keep"></div>
+              </div>
+              <div class="alert"><img data-layzr-media="img/pages-media-icon-5-alert.png">
+                <div class="keep"></div>
+              </div>
             </div>
             <div rel="6" class="icon"><img data-layzr-media="img/pages-media-icon-6.png">
               <div class="keep"></div>
-              <div class="light"><img data-layzr-media="img/pages-media-icon-6-light.png"></div>
-              <div class="alert"><img data-layzr-media="img/pages-media-icon-6-alert.png"></div>
+              <div class="light"><img data-layzr-media="img/pages-media-icon-6-light.png">
+                <div class="keep"></div>
+              </div>
+              <div class="alert"><img data-layzr-media="img/pages-media-icon-6-alert.png">
+                <div class="keep"></div>
+              </div>
             </div>
           </div>
           <div class="icons icons-2">
@@ -377,11 +405,8 @@
       </div>
       <div name="logo" class="pages-logo">
         <div class="content">
-          <div class="logo-page-bottle">
-            <div id="logobottle" width="300" height="300" count="15" normal="[0,0,&quot;normal&quot;]" replay="[0,14,&quot;stop&quot;]" stop="14" play="normal" src="img/animate/logo/bottle/bottle-id.png"></div>
-          </div>
           <div class="vitro">
-            <div id="logovitro" width="700" height="1000" count="63" normal="[0,0,&quot;normal&quot;]" replay="[0,62,&quot;stop&quot;]" stop="62" play="normal" src="img/animate/logo/vitro/v-id.png"></div>
+            <div id="logovitro" width="680" height="1080" count="76" normal="[0,0,&quot;normal&quot;]" replay="[0,75,&quot;stop&quot;]" stop="75" play="normal" src="img/animate/logo/v/v-id.png"></div>
           </div>
           <div class="logo-text"><img data-layzr-logo="img/pages-logo-text.png"></div>
         </div>
@@ -421,10 +446,10 @@
             </div>
             <div class="item-pointer"></div>
             <div class="item-arrow-white">
-              <div id="strategyarrowwhite" width="30" height="100" count="15" normal="[0,0,'normal']" replay="[0,14,&quot;replay&quot;]" stop="14" play="normal" src="img/animate/strategy/arrow-white/arrow-id.png"></div>
+              <div id="strategyarrowwhite" width="30" height="100" count="15" normal="[0,0,'normal']" replay="[0,14,&quot;stop&quot;]" stop="14" play="normal" src="img/animate/strategy/arrow-white/arrow-id.png"></div>
             </div>
             <div class="item-arrow">
-              <div id="strategyarrowyellow1" width="30" height="100" count="15" normal="[0,0,'normal']" replay="[0,14,&quot;replay&quot;]" stop="14" play="normal" src="img/animate/strategy/arrow-yellow/arrow-id.png"></div>
+              <div id="strategyarrowyellow1" width="30" height="100" count="15" normal="[0,0,'normal']" replay="[0,14,&quot;stop&quot;]" stop="14" play="normal" src="img/animate/strategy/arrow-yellow/arrow-id.png"></div>
             </div>
             <div class="item-screw"><img data-layzr-strategy="img/pages-strategy-screw.png"></div>
             <div class="item-icloud-1"><img data-layzr-strategy="img/pages-strategy-icloud-1.png"></div>
@@ -458,7 +483,7 @@
               <div class="parts3"><img data-layzr-strategy="img/pages-strategy-parts-roulette.png"></div>
               <div class="fcanvas">
                 <div class="item-arrow">
-                  <div id="strategyarrowyellow2" width="30" height="100" count="15" normal="[0,0,'normal']" replay="[0,14,&quot;replay&quot;]" stop="14" play="normal" src="img/animate/strategy/arrow-yellow/arrow-id.png"></div>
+                  <div id="strategyarrowyellow2" width="30" height="100" count="15" normal="[0,0,'normal']" replay="[0,14,&quot;stop&quot;]" stop="14" play="normal" src="img/animate/strategy/arrow-yellow/arrow-id.png"></div>
                 </div>
                 <div class="items">
                   <div id="strategyad" width="500" height="400" count="102" normal="[0,0,'normal']" replay="[0,35,&quot;stepto&quot;]" stepto="[36,93,&quot;stepend&quot;]" stepend="[94,101,&quot;replay&quot;]" delay="4000" stop="0" play="normal" src="img/animate/strategy/ad/ad-id.png"></div>
