@@ -1,19 +1,20 @@
 
 <begin>
-  <playsound src="/product/mp3/bg.mp3" icon="true" icon-play="/product/img/audio-play.png" icon-stop="/product/img/audio-stop.png"></playsound>
+  <!-- - var url = "/product"-->
+  <playsound src="http://disk.giccoo.com/projects/product/mp3/bg.mp3" icon="true" icon-play="http://disk.giccoo.com/projects/product/img/audio-play.png" icon-stop="http://disk.giccoo.com/projects/product/img/audio-stop.png"></playsound>
   <div show="{firstpageShow}" class="firstpage {firstpageClass}">
     <div class="pageone">
-      <div class="title {fadeOutUp: notepageShow, animated: notepageShow}"><img data-layzr="/product/img/2015.png"/></div>
-      <div class="home-2 {fadeOut: notepageShow, animated: notepageShow}"><img data-layzr="/product/img/home-2.png"/></div>
-      <div class="home-1 {fadeOutDown: notepageShow, animated: notepageShow}"><img data-layzr="/product/img/home-1.png"/></div>
+      <div class="title {fadeOutUp: notepageShow, animated: notepageShow}"><img data-layzr="http://disk.giccoo.com/projects/product/img/2015.png"/></div>
+      <div class="home-2 {fadeOut: notepageShow, animated: notepageShow}"><img data-layzr="http://disk.giccoo.com/projects/product/img/home-2.png"/></div>
+      <div class="home-1 {fadeOutDown: notepageShow, animated: notepageShow}"><img data-layzr="http://disk.giccoo.com/projects/product/img/home-1.png"/></div>
       <div class="stars {fadeOut: notepageShow, animated: notepageShow}">
-        <div class="normal"><img data-layzr="/product/img/star.png" class="star star-0 animated flash"/><img data-layzr="/product/img/star.png" class="star star-1 animated rotateIn"/><img data-layzr="/product/img/star.png" class="star star-2 animated rotateIn"/><img data-layzr="/product/img/star.png" class="star star-3 animated rotateOut"/><img data-layzr="/product/img/star.png" class="star star-4 animated flash"/><img data-layzr="/product/img/star.png" class="star star-5 animated flash"/><img data-layzr="/product/img/star.png" class="star star-6 animated rotateOut"/><img data-layzr="/product/img/star.png" class="star star-7 animated rotateIn"/><img data-layzr="/product/img/star.png" class="star star-8 animated rotateOut"/><img data-layzr="/product/img/star.png" class="star star-9 animated flash"/>
+        <div class="normal"><img data-layzr="http://disk.giccoo.com/projects/product/img/star.png" class="star star-0 animated flash"/><img data-layzr="http://disk.giccoo.com/projects/product/img/star.png" class="star star-1 animated rotateIn"/><img data-layzr="http://disk.giccoo.com/projects/product/img/star.png" class="star star-2 animated rotateIn"/><img data-layzr="http://disk.giccoo.com/projects/product/img/star.png" class="star star-3 animated rotateOut"/><img data-layzr="http://disk.giccoo.com/projects/product/img/star.png" class="star star-4 animated flash"/><img data-layzr="http://disk.giccoo.com/projects/product/img/star.png" class="star star-5 animated flash"/><img data-layzr="http://disk.giccoo.com/projects/product/img/star.png" class="star star-6 animated rotateOut"/><img data-layzr="http://disk.giccoo.com/projects/product/img/star.png" class="star star-7 animated rotateIn"/><img data-layzr="http://disk.giccoo.com/projects/product/img/star.png" class="star star-8 animated rotateOut"/><img data-layzr="http://disk.giccoo.com/projects/product/img/star.png" class="star star-9 animated flash"/>
         </div>
       </div>
     </div>
     <div show="{notepageShow}" class="pagetwo fadeIn animated delay-5">
-      <div class="head"><img data-layzr="/product/img/head.png"/></div>
-      <div class="title"><img data-layzr="/product/img/2015-sub.png"/></div>
+      <div class="head"><img data-layzr="http://disk.giccoo.com/projects/product/img/head.png"/></div>
+      <div class="title"><img data-layzr="http://disk.giccoo.com/projects/product/img/2015-sub.png"/></div>
       <div style="top:{toppx}px" class="text-content">
         <div class="text">
           <p>由中国保险报业股份有限公司发起，《中国保险报》、中保网和新浪财经共同主办的“2015年度保险产品评选”活动今日正式启动，现将本次评选活动的主要情况公告如下。</p>
@@ -41,31 +42,32 @@
           <p>2.联系电话：010-63998207，63998310，63998201。</p>
         </div>
       </div>
-      <div onclick="{GameStart}" class="btn"><img src="/product/img/in-btn.png"/></div>
+      <div onclick="{GameStart}" class="btn"><img src="http://disk.giccoo.com/projects/product/img/in-btn.png"/></div>
     </div>
   </div>
   <div show="{listpageShow}" class="listpage">
     <div class="content">
-      <div class="banner"><img src="/product/img/banner.png"/></div>
+      <div class="banner"><img src="http://disk.giccoo.com/projects/product/img/banner.png"/></div>
       <div style="top:{toppx2}px" show="{!detailpageShow}" class="list-content">
         <div class="items">
           <div each="{p in productlist}" onclick="{parent.showInfo(p)}" class="item">
-            <div class="name"><img data-layzr="/product/img/b-{parent.productlist.indexOf(p)+1}.png"/></div>
+            <div class="name"><img data-layzr="http://disk.giccoo.com/projects/product/img/b-{parent.productlist.indexOf(p)+1}.png"/></div>
           </div>
         </div>
       </div>
       <div style="top:{toppx2}px" show="{detailpageShow}" class="detailpage">
         <div class="title-box">
-          <div onclick="{backlist}" class="back"><img data-layzr="/product/img/back-btn.png"/></div>
+          <div onclick="{backlist}" class="back"><img data-layzr="http://disk.giccoo.com/projects/product/img/back-btn.png"/></div>
           <div class="title">{detail.name}</div>
         </div>
         <div class="items">
           <div each="{item in detail.list}" class="item">
             <div onclick="{showHide}" class="numbs">编号 {item.code}</div>
-            <div onclick="{showHide}" class="name">{item.name}</div>
+            <div onclick="{showHide}" class="name">{item.company}-{item.name}</div>
+            <div onclick="{showHide}" class="numbs">投票数: {votes[item.code]?votes[item.code]:0}</div>
             <div class="vote">
-              <div onclick="{vote(item.code)}" class="on"><img src="/product/img/vote-on.png"/></div>
-              <div if="{item.on}" class="off"><img src="/product/img/vote-off.png"/></div>
+              <div onclick="{vote(item.code)}" class="on"><img src="http://disk.giccoo.com/projects/product/img/vote-on.png"/></div>
+              <div if="{item.on}" class="off"><img src="http://disk.giccoo.com/projects/product/img/vote-off.png"/></div>
             </div>
             <div class="description">{item.description}</div>
           </div>
@@ -75,14 +77,14 @@
   </div>
   <div show="{focusUs}" class="focusUs">
     <div class="box">
-      <div class="qcode"><img src="/product/img/qrcode.jpg"/></div>
+      <div class="qcode"><img src="http://disk.giccoo.com/projects/product/img/qrcode.jpg"/></div>
       <div class="note-text">
         <p>请使用微信打开此页面.</p>
         <p>长按二维码图片进行关注.</p>
         <p>请先关注我们的微信公众账号,然后参与投票.</p>
         <p>每人每天可以为每类候选产品中的1-3款投票.</p>
       </div>
-      <div onclick="{hideFocus}" class="close"><img src="/product/img/icon-close.png"/></div>
+      <div onclick="{hideFocus}" class="close"><img src="http://disk.giccoo.com/projects/product/img/icon-close.png"/></div>
     </div>
   </div>
   <script>
@@ -96,6 +98,7 @@
     self.userinfo = false
     self.canRun = true
     self.abclist = []
+    self.votes = votes
     Store.begin = self
     for (var i=0;i < self.productlist.length; i++) {
     	if (self.abclist.indexOf(self.productlist[i].abc) < 0) {
@@ -164,12 +167,13 @@
     			//- http://i.giccoo.com/
     			if (!self.canRun) { return false }
     			self.canRun = false
-    			$.get("http://kelvin-air.local:8990/product/vote/to/"+uid,{openid: openid},function(msg){
+    			$.get("http://i.giccoo.com/product/vote/to/"+uid,{openid: openid},function(msg){
     				self.canRun = true
     				if (msg.recode == 200) {
     					//- 发送 note
     					SendNote("投票成功啦!")
     					voteList.push({product: uid, num: 1})
+    					self.votes[uid] = self.votes[uid] + 1
     					self.updateVote()
     				}else if (msg.recode == 222) {
     					self.focusUs = true

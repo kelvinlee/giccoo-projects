@@ -44,7 +44,30 @@ window.onload = ->
 	$(".pages-media .icons-1 .icon .alert").on "touchend", (evt)->
 		evt.stopPropagation()
 		evt.preventDefault()
+	loadWechatConfig()
+	wx.ready ->
+		shareContent =
+			title: "致趣实验室"
+			desc: "致趣实验室"
+			link: "http://m.giccoo.com/zhiqu/"
+			imgUrl: "http://disk.giccoo.com/projects/zhiqu/img/share.jpg"
+			success: ->
+				# alert "success"
+			cancel: ->
+				# alert "cancel"
+		wx.onMenuShareTimeline shareContent
+		wx.onMenuShareAppMessage shareContent
+		wx.onMenuShareQQ shareContent
+		wx.onMenuShareWeibo shareContent
+	# finishedLoad()
 
+loadWechatConfig = ->
+	url = encodeURIComponent window.location.href.split("#")[0]
+	hm = document.createElement('script')
+	hm.src = "http://api.giccoo.com/config?url="+url
+	s = document.getElementsByTagName('script')[0]
+	s.parentNode.insertBefore hm, s
+	return
 
 		
 

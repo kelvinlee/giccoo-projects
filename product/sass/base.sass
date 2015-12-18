@@ -1,10 +1,10 @@
 @import sass/base
 @import ../../libs/sass/loading
 
-$debug : true
+$debug : false
 $cdn : "../"
 @if not $debug
-	$cdn : "http://disk.giccoo.com/projects/showman/"
+	$cdn : "http://disk.giccoo.com/projects/product/"
 
 +keyframes(Flash)
 	0%
@@ -292,7 +292,7 @@ body
 		.items
 			color: #fff
 			.item
-				+b("../img/item.png",no-repeat,top,center,100% 100%)
+				+b($cdn+"img/item.png",no-repeat,top,center,100% 100%)
 				+p(1.4rem)
 				+box
 				+posr

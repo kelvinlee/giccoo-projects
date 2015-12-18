@@ -1,6 +1,6 @@
 begin
-	//- var url = "http://disk.giccoo.com/projects/product"
-	- var url = "/product"
+	- var url = "http://disk.giccoo.com/projects/product"
+	// - var url = "/product"
 	playsound(src="#{url}/mp3/bg.mp3",icon="true",icon-play="#{url}/img/audio-play.png",icon-stop="#{url}/img/audio-stop.png")
 	.firstpage(show="{firstpageShow}",class="{firstpageClass}")
 		.pageone
@@ -66,7 +66,8 @@ begin
 				.items
 					.item(each="{item in detail.list}")
 						.numbs(onclick="{showHide}") 编号 {item.code}
-						.name(onclick="{showHide}") {item.name}
+						.name(onclick="{showHide}") {item.company}-{item.name}
+						.numbs(onclick="{showHide}") 投票数: {votes[item.code]?votes[item.code]:0}
 						.vote
 							.on(onclick="{vote(item.code)}")
 								img(src="#{url}/img/vote-on.png")
@@ -97,6 +98,7 @@ begin
 		self.userinfo = false
 		self.canRun = true
 		self.abclist = []
+		self.votes = votes
 		Store.begin = self
 		for (var i=0;i < self.productlist.length; i++) {
 			if (self.abclist.indexOf(self.productlist[i].abc) < 0) {
@@ -165,12 +167,13 @@ begin
 					//- http://i.giccoo.com/
 					if (!self.canRun) { return false }
 					self.canRun = false
-					$.get("http://kelvin-air.local:8990/product/vote/to/"+uid,{openid: openid},function(msg){
+					$.get("http://i.giccoo.com/product/vote/to/"+uid,{openid: openid},function(msg){
 						self.canRun = true
 						if (msg.recode == 200) {
 							//- 发送 note
 							SendNote("投票成功啦!")
 							voteList.push({product: uid, num: 1})
+							self.votes[uid] = self.votes[uid] + 1
 							self.updateVote()
 						}else if (msg.recode == 222) {
 							self.focusUs = true
