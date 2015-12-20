@@ -111,29 +111,29 @@ window.onload = function() {
   $(".pages-media .bottle-media-movie").on("click", openMedia);
   $(".pages-brand .item").on("click", openBrand);
   $(".firstPage .content").on("click", init);
-  $(".pages-media .icons-1 .icon").on("touchstart", function(evt) {
+  $(".pages-media .icons .icon").on("touchstart", function(evt) {
     evt.stopPropagation();
     evt.preventDefault();
     return $(".alert", this).addClass("on");
   });
-  $(".pages-media .icons-1 .icon").on("touchmove", function(evt) {
+  $(".pages-media .icons .icon").on("touchmove", function(evt) {
     evt.stopPropagation();
     return evt.preventDefault();
   });
-  $(".pages-media .icons-1 .icon").on("touchend", function(evt) {
+  $(".pages-media .icons .icon").on("touchend", function(evt) {
     evt.stopPropagation();
     evt.preventDefault();
     return $(".alert", this).removeClass("on");
   });
-  $(".pages-media .icons-1 .icon .alert").on("touchstart", function(evt) {
+  $(".pages-media .icons .icon .alert").on("touchstart", function(evt) {
     evt.stopPropagation();
     return evt.preventDefault();
   });
-  $(".pages-media .icons-1 .icon .alert").on("touchmove", function(evt) {
+  $(".pages-media .icons .icon .alert").on("touchmove", function(evt) {
     evt.stopPropagation();
     return evt.preventDefault();
   });
-  $(".pages-media .icons-1 .icon .alert").on("touchend", function(evt) {
+  $(".pages-media .icons .icon .alert").on("touchend", function(evt) {
     evt.stopPropagation();
     return evt.preventDefault();
   });
@@ -417,6 +417,7 @@ backBottleMain = function() {
     global["bottle" + name].replay("normal");
   }
   $(".bottle" + name + ".gif").removeClass("normal replay stop").addClass("normal");
+  paoAudio[0].stop();
   return clearNone();
 };
 
@@ -644,7 +645,7 @@ TrunCheck = function() {
       return global["technologypeople" + (i + 1)].replay("normal");
     }
   });
-  if ($(".pages-technology .line").height() >= 90 && (global["technologyhand"].play !== "stop" && global["technologyhand"].play !== "replay")) {
+  if ($(".pages-technology .line").height() >= 80 && (global["technologyhand"].play !== "stop" && global["technologyhand"].play !== "replay")) {
     global["technologyhand"].replay("replay");
   }
   if ($(".pages-technology .line").height() <= 50 && (global["technologyhand"].play !== "normal")) {

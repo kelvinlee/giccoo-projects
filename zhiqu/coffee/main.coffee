@@ -24,24 +24,24 @@ window.onload = ->
 	$(".pages-brand .item").on "click", openBrand
 	$(".firstPage .content").on "click", init
 
-	$(".pages-media .icons-1 .icon").on "touchstart", (evt)->
+	$(".pages-media .icons .icon").on "touchstart", (evt)->
 		evt.stopPropagation()
 		evt.preventDefault()
 		$(".alert",this).addClass "on"
-	$(".pages-media .icons-1 .icon").on "touchmove", (evt)->
+	$(".pages-media .icons .icon").on "touchmove", (evt)->
 		evt.stopPropagation()
 		evt.preventDefault()
-	$(".pages-media .icons-1 .icon").on "touchend", (evt)->
+	$(".pages-media .icons .icon").on "touchend", (evt)->
 		evt.stopPropagation()
 		evt.preventDefault()
 		$(".alert",this).removeClass "on"
-	$(".pages-media .icons-1 .icon .alert").on "touchstart", (evt)->
+	$(".pages-media .icons .icon .alert").on "touchstart", (evt)->
 		evt.stopPropagation()
 		evt.preventDefault()
-	$(".pages-media .icons-1 .icon .alert").on "touchmove", (evt)->
+	$(".pages-media .icons .icon .alert").on "touchmove", (evt)->
 		evt.stopPropagation()
 		evt.preventDefault()
-	$(".pages-media .icons-1 .icon .alert").on "touchend", (evt)->
+	$(".pages-media .icons .icon .alert").on "touchend", (evt)->
 		evt.stopPropagation()
 		evt.preventDefault()
 	loadWechatConfig()
@@ -269,6 +269,7 @@ backBottleMain = ()->
 	$(".bottle-"+name).removeClass "Mybottle"
 	global["bottle"+name].replay("normal") if global? && global["bottle"+name]?
 	$(".bottle"+name+".gif").removeClass("normal replay stop").addClass("normal")
+	paoAudio[0].stop()
 	clearNone()
 
 awardList = [
@@ -410,7 +411,7 @@ TrunCheck = ->
 	# if $(".pages-technology .line").height() <= 90 and (global["technologyhand"].play is "stop" or global["technologyhand"].play is "replay")
 	# 	console.log $(".pages-technology .line").height(),"line height"
 	# 	global["technologyhand"].replay("normal")
-	if $(".pages-technology .line").height() >= 90 and (global["technologyhand"].play isnt "stop" and global["technologyhand"].play isnt "replay")
+	if $(".pages-technology .line").height() >= 80 and (global["technologyhand"].play isnt "stop" and global["technologyhand"].play isnt "replay")
 		# console.log $(".pages-technology .line").height(),global["technologyhand"].play
 		global["technologyhand"].replay("replay")
 	if $(".pages-technology .line").height() <= 50 and (global["technologyhand"].play isnt "normal")

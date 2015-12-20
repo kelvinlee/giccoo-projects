@@ -581,12 +581,11 @@ html,body
 	touch-callout: none
 .hide
 	+hide
-// .loading
 
-$logo-delay: 0.8s
+$logo-delay: 1.2s
 $strategy-delay: 3s
-$technology-delay: 1.2s
-$brand-delay: 1.1s
+$technology-delay: 3.4s
+$brand-delay: 2s
 $media-delay: 2s
 $contactus-delay: 1.4s
 $award-delay: 1.8s
@@ -639,6 +638,12 @@ $award-delay: 1.8s
 	.on-button
 		+br(0px,65px)
 		+wh(165px,60px)
+	.goon
+		+posa
+		+tl(258px,-150px)
+		+w(339px)
+		+transform(scale(1.1,1.1))
+		z-index: -1
 	.white
 		+tran
 		+w(100%)
@@ -726,7 +731,7 @@ $award-delay: 1.8s
 	+tl(-310px,-30px)
 	#bottlebrand
 		+posa
-		+tl(-12px,204px)
+		+tl(-16px,200px)
 	.bottlebrand
 		+wh(300px*1.1,750px*1.1)
 	.on-button
@@ -738,6 +743,10 @@ $award-delay: 1.8s
 			max-width: $w
 		&.on
 			+h(0%)
+	.goon
+		+posa
+		+tl(616px,-116px)
+		z-index: -1
 	.bubbles
 		+posa
 		+bl(120px,144px)
@@ -766,7 +775,7 @@ $award-delay: 1.8s
 	&.Mybottle ~ .bottle-logo
 		+tran
 		opacity: 0
-		transition-delay: 0.7s
+		transition-delay: $brand-delay+1s
 .bottle-media
 	$w: 953px*1.1
 	+tl(110px,-206px)
@@ -795,7 +804,7 @@ $award-delay: 1.8s
 			max-width: $w
 .bottle-contactus
 	$w: 452px*1.1
-	+tr(550px,-310px)
+	+tr(500px,-310px)
 	+w($w)
 	#bottlecontactus
 		+show-inline
@@ -852,7 +861,7 @@ $award-delay: 1.8s
 .bottle-fire-2
 	$w: 65px
 	+w($w)
-	+tr(852px,75px)
+	+tr(800px,75px)
 .bottle-fire-1,.bottle-fire-2
 	.fire
 		+posa
@@ -872,13 +881,13 @@ $award-delay: 1.8s
 	+tl(300px,-140px)
 	+w($w)
 .right-tower
-	$w: 155px*1.1
+	$w: 154px
 	+tr(210px,44px)
 	+w($w)
 	.timer
 		+posa
-		+tl(33%)
-		+wh(100px,100px)
+		+tl(33%,-18px)
+		+wh(90px,90px)
 		> img
 			+w
 			max-width: none
@@ -911,7 +920,7 @@ $award-delay: 1.8s
 				border-radius: 1px
 	.playsound
 		+posa
-		+tl(16px,30px)
+		+tl(14px,10px)
 		z-index: 999
 		.icon-play
 			+wh(36px,27px)
@@ -1099,7 +1108,7 @@ $award-delay: 1.8s
 			.bottle-award,.left-tower
 				+tran
 				opacity: 0
-				transition-delay: 1.3s
+				transition-delay: $technology-delay+1
 		.back-btn
 			+tl(auto,auto)
 			+tr(10px,10px)
@@ -1135,11 +1144,16 @@ $award-delay: 1.8s
 		.homepage
 			+tran($time: 1.3s,$ease: linear)
 			transition-delay: $logo-delay
-			+transform(translate3d(266px,118%,0))
+			+transform(translate3d(266px,116%,0))
 			.bottle-brand
 				+tran
 				opacity: 0
-				transition-delay: 1.3s
+				transition-delay: $logo-delay+1.3/2
+			.bottle-logo
+				.goon
+					+tran
+					opacity: 0
+					transition-delay: $logo-delay+1.3/2
 		.back-btn
 			+tl(auto,auto)
 			+br(10px,10px)
@@ -1153,7 +1167,7 @@ $award-delay: 1.8s
 	&.page-contactus 
 		.homepage
 			+tran($time: 2.2s,$ease: linear)
-			+transform(translate3d(-750px,-540px,0))
+			+transform(translate3d(-750px,-490px,0))
 			transition-delay: $contactus-delay
 		.back-btn
 			+tl(70px,10px)
@@ -1200,6 +1214,51 @@ $award-delay: 1.8s
 		+tran($time: 1.2s,$ease: linear)
 		transition-delay: $technology-delay
 		+transform(translate3d(0,0,0))
+		.content
+			.m-top
+				.gear
+					&.gear-1
+						+animation(rotateP,4s,linear,infinite)
+					&.gear-2
+						+animation(rotatePF,4s,linear,infinite)
+					&.gear-3
+						+animation(rotateP,4s,linear,infinite)
+				.item-lighter
+					+animation(flash,4s,ease,infinite)
+				.item-switch
+					+animation(switch,4.6s,ease,infinite)
+				.item-bt
+					.full
+						+animation(music,5s,ease,infinite)
+				.item-comp
+					.item
+						&.item-1
+							+animation(compD2,2s,linear,infinite)
+							animation-delay: 500ms
+						&.item-2
+							+animation(compD,2s,linear,infinite)
+							animation-delay: 500ms
+						&.item-3
+							+animation(compU,2s,linear,infinite)
+							animation-delay: 500ms
+						&.item-4
+							+animation(compU2,2s,linear,infinite)
+							animation-delay: 500ms
+				.item-light-red
+					+animation(flash,2s,ease,infinite)
+				.item-light-blue
+					+animation(flashM,2s,ease,infinite)
+					animation-delay: 1s
+				.m-hand
+					.line
+						+animation(handLine,2s,linear,infinite)
+					.hand-box
+						.b
+							@for $i from 1 through 5
+								&.b-#{$i}
+									+animation(downHandBox#{$i},10s,linear,infinite)
+				.b-boxs-boxs
+					
 	.content
 		+posa
 		+tl
@@ -1223,31 +1282,25 @@ $award-delay: 1.8s
 					+animation(moveIconText,10s,linear,infinite)
 					&.first
 						// margin-top: -250px
-
 			.gear
 				+posa
 				z-index: -1
 				&.gear-1
 					+tl(324px,314px)
-					+animation(rotateP,4s,linear,infinite)
 				&.gear-2
 					+tl(270px,350px)
-					+animation(rotatePF,4s,linear,infinite)
 				&.gear-3
 					+tl(240px,330px)
-					+animation(rotateP,4s,linear,infinite)
 			.item-lighter
 				+posa
 				+tl(510px,489px)
 				z-index: -1
-				+animation(flash,4s,ease,infinite)
 				animation-delay: 200ms
 			.item-switch
 				+posa
 				+tl(258px,525px)
 				z-index: -1
 				transform-origin: left center
-				+animation(switch,4.6s,ease,infinite)
 			.item-bt
 				+posa
 				+tl(140px,228px)
@@ -1258,7 +1311,6 @@ $award-delay: 1.8s
 					+overhide
 					+w
 					+h(30%)
-					+animation(music,5s,ease,infinite)
 					min-height: 30%
 					img
 						+posa
@@ -1272,20 +1324,12 @@ $award-delay: 1.8s
 					+bc(#d15f4b)
 					&.item-1
 						+tl
-						+animation(compD2,2s,linear,infinite)
-						animation-delay: 500ms
 					&.item-2
 						+tl(15px)
-						+animation(compD,2s,linear,infinite)
-						animation-delay: 500ms
 					&.item-3
 						+tl(30px)
-						+animation(compU,2s,linear,infinite)
-						animation-delay: 500ms
 					&.item-4
 						+tl(45px)
-						+animation(compU2,2s,linear,infinite)
-						animation-delay: 500ms
 			.logo
 				+posa
 				+tl(170px,382px)
@@ -1298,14 +1342,11 @@ $award-delay: 1.8s
 				+tl(106px,182px)
 				z-index: 11
 				transform-origin: left center
-				+animation(flash,2s,ease,infinite)
 			.item-light-blue
 				+posa
 				+tl(84px,182px)
 				z-index: 11
 				transform-origin: left center
-				+animation(flashM,2s,ease,infinite)
-				animation-delay: 1s
 			.m-hand
 				+posa
 				+tl(210px,60px)
@@ -1313,7 +1354,6 @@ $award-delay: 1.8s
 					+wh(6px,40px)
 					+bc(#496683)
 					margin-left: 100px
-					+animation(handLine,2s,linear,infinite)
 					animation-delay: 500ms
 				.hand
 					+posr
@@ -1329,9 +1369,6 @@ $award-delay: 1.8s
 						.b
 							+posa
 							+tl
-							@for $i from 1 through 5
-								&.b-#{$i}
-									+animation(downHandBox#{$i},10s,linear,infinite)
 
 			.b-boxs-boxs
 				+posa
@@ -1645,7 +1682,7 @@ $award-delay: 1.8s
 			vertical-align: bottom
 			.icon
 				+show-inline
-				+m(0 8px)
+				+m(0 14px)
 				+posr
 				.keep
 					+posa
@@ -1670,15 +1707,31 @@ $award-delay: 1.8s
 					&.on
 						opacity: 1
 		.icons-1
-			+tl(168px-50,70px)
+			+tl(158px,70px)
 		.icons-2
-			+tl(357px-50,70px)
+			+tl(347px,70px)
+		.icons-3
+			+tl(552px,84px)
+			+wh(200px,159px)
+			.icon
+				+m(0 5px)
+			.line
+				+w
+				+text-center
+				&:last-child
+					margin-top: -10px
 		.bottle-1
-			+tl(535px-50,70px)
+			+tl(524px,270px)
+			+w(300px)
+			.icon
+				+m(0 8px)
+				+w(72px)
 		.bottle-2
-			+tl(790px-50,70px)
-		.ml-30
-			margin-left: -30px
+			+tl(750px,70px)
+			.icon
+				+m(0 8px)
+			.ml-30
+				margin-left: -30px
 		.bottle-media-movie
 			+posr
 			+wh(200px,200px)
@@ -1706,7 +1759,7 @@ $award-delay: 1.8s
 	+h
 	// +hide
 	z-index: 102
-	+transform(translate3d(750px,540px,0))
+	+transform(translate3d(750px,490px,0))
 	&.thispage
 		+tran($time: 2.2s,$ease: linear)
 		+transform(translate3d(0,0,0))
@@ -1717,7 +1770,17 @@ $award-delay: 1.8s
 					+tran
 					+h(100%)
 					// transition-delay: $contactus-delay+2.2
-					
+			.pointer
+				+animation(pointerM,3s,ease,infinite)
+			.bubbles
+				+animation(showB,6s,linear,infinite)
+				@for $i from 0 through 10
+					.bubble-#{$i}
+						+w((8+$i)*1px)
+						+tl(random(90)*1%,random(50)*1%)
+						+animation(bubble,0.5s,ease,infinite)
+						animation-duration: (random(2000)+1000)*1ms
+						animation-delay: 500ms+$i*100ms
 	.content
 		+posa
 		+tl
@@ -1733,7 +1796,6 @@ $award-delay: 1.8s
 			+tl(256px,121px)
 			transform-origin: 9px 3.5px
 			font-size: 0
-			+animation(pointerM,3s,ease,infinite)
 			z-index: 102
 		.title
 			+posa
@@ -1785,13 +1847,7 @@ $award-delay: 1.8s
 				+posa
 				img
 					+w(100%)
-			@for $i from 0 through 10
-				.bubble-#{$i}
-					+w((8+$i)*1px)
-					+tl(random(90)*1%,random(50)*1%)
-					+animation(bubble,0.5s,ease,infinite)
-					animation-duration: (random(2000)+1000)*1ms
-					animation-delay: 500ms+$i*100ms
+			
 		.drops
 			+posa
 			+tl(150px,275px)
@@ -1835,7 +1891,7 @@ $award-delay: 1.8s
 	+w
 	+h
 	// +hide
-	+transform(translate3d(-266px,-118%,0))
+	+transform(translate3d(-266px,-116%,0))
 	// +b("../img/pages-logo-bg-start.jpg",no-repeat,center,center,cover)
 	opacity: 0
 	&.thispage
@@ -1874,12 +1930,17 @@ $award-delay: 1.8s
 		z-index: 120
 	.vitro
 		+posa
-		+bl(100px,-46px)
+		+bl(-40px,0)
 		z-index: 110
-		+wh(700px,1000px)
+		+wh(640px,1144px)
+		#logovitro
+			+posa
+			+bl
+			+w
+			+h
 	.logo-text
 		+posa
-		+bl(520px,10px)
+		+bl(430px,10px)
 		+wh(600px,400px)
 		z-index: 109
 
@@ -1956,7 +2017,7 @@ $award-delay: 1.8s
 		// +b("../img/pages-brand-bg.jpg",no-repeat,center,center,cover)
 	.content
 		+posa
-		+bl(10px)
+		+bl(-10px)
 		+w
 		+h(1134px)
 		z-index: 1
@@ -2018,6 +2079,47 @@ $award-delay: 1.8s
 		transition-delay: $strategy-delay
 		+transform(translate3d(0,0,0))
 		// opacity: 1
+		.content
+			.m-top
+				.item-arrow-white
+					+animation(enterDown, 2s, ease, infinite)
+				.item-lighter
+					+animation(flash,4s,ease,infinite)
+					animation-delay: 200ms
+				.item-switch
+					+animation(switch,3s,ease,infinite)
+				.item-logo
+					+animation(tvShow,3s,ease,infinite)
+				.item-arrow
+					+animation(enterDown, 2s, ease, infinite)
+				.item-light-red
+					+animation(flash,2s,ease,infinite)
+				.item-light-blue
+					+animation(flashM,2s,ease,infinite)
+					animation-delay: 1s
+				.item-light-all
+					.lights
+						+animation(flashM,2s,ease,infinite)
+				.item-lines
+					.line1
+						+animation(cloudLineA,5s,linear,infinite)
+					.line2
+						+animation(cloudLineB,5s,linear,infinite)
+			.m-bottom
+				.p1
+					+animation(peopleA,40s,linear,infinite)
+					transform-origin: right center
+					animation-delay: 2s
+				.p2
+					+animation(peopleB,35s,linear,infinite)
+				.parts1
+					+animation(rotateP,2s,linear,infinite)
+				.parts2
+					+animation(rotatePF,2s,linear,infinite)
+				.parts3
+					+animation(rotatePW,4s,linear,infinite)
+				.item-arrow
+					+animation(enterDown, 2s, ease, infinite)
 	.content
 		+w
 		+h
@@ -2028,20 +2130,15 @@ $award-delay: 1.8s
 			.item-arrow-white
 				+posa
 				+tl(100px,170px)
-				+animation(enterDown, 2s, ease, infinite)
-
 			.item-lighter
 				+posa
 				+tl(240px,288px)
 				z-index: -1
-				+animation(flash,4s,ease,infinite)
-				animation-delay: 200ms
 			.item-switch
 				+posa
 				+tl(310px,480px)
 				z-index: -1
 				transform-origin: left center
-				+animation(switch,3s,ease,infinite)
 			.item-tv
 				+posa
 				+tl(282px,372px)
@@ -2053,25 +2150,19 @@ $award-delay: 1.8s
 					+tl(50%,50%)
 					+transform(translate3d(-50%,-50%,0))
 					+wh(63px,21px)
-					+animation(tvShow,3s,ease,infinite)
-
 			.item-arrow
 				+posa
 				+br(-40px,80px)
-				+animation(enterDown, 2s, ease, infinite)
 			.item-light-red
 				+posa
 				+tl(307px,325px)
 				z-index: 11
 				transform-origin: left center
-				+animation(flash,2s,ease,infinite)
 			.item-light-blue
 				+posa
 				+tl(325px,325px)
 				z-index: 11
 				transform-origin: left center
-				+animation(flashM,2s,ease,infinite)
-				animation-delay: 1s
 			.item-light-all
 				+posa
 				+tl(143px,91px)
@@ -2081,7 +2172,6 @@ $award-delay: 1.8s
 				.lights
 					+posa
 					+tl
-					+animation(flashM,2s,ease,infinite)
 					&:nth-child(n+1)
 						animation-delay: 2000ms
 					&:nth-child(n+2)
@@ -2098,10 +2188,7 @@ $award-delay: 1.8s
 				.line1,.line2
 					+posa
 					+tl
-				.line1
-					+animation(cloudLineA,5s,linear,infinite)
-				.line2
-					+animation(cloudLineB,5s,linear,infinite)
+				
 
 
 
@@ -2179,28 +2266,20 @@ $award-delay: 1.8s
 			.p1
 				+posa
 				+bl(-20px)
-				+animation(peopleA,40s,linear,infinite)
 				z-index: 99
-				transform-origin: right center
-				animation-delay: 2s
 			.p2
 				+posa
 				+br(-24px)
-				+animation(peopleB,35s,linear,infinite)
 				z-index: 99
 				transform-origin: center center
 			.parts1,.parts2,.parts3
 				+posa
 				+tl(154px,510px)
 				z-index: 99
-			.parts1
-				+animation(rotateP,2s,linear,infinite)
 			.parts2
 				+tl(200px,536px)
-				+animation(rotatePF,2s,linear,infinite)
 			.parts3
 				+tl(252px,531px)
-				+animation(rotatePW,4s,linear,infinite)
 			.fcanvas
 				+posa
 				+tl(120px,120px)
@@ -2211,7 +2290,6 @@ $award-delay: 1.8s
 				.item-arrow
 					+posa
 					+tr(40px,20px)
-					+animation(enterDown, 2s, ease, infinite)
 					
 				.items
 					+w
@@ -2238,7 +2316,6 @@ $award-delay: 1.8s
 			display: inline-block
 			vertical-align: topd
 
-
 .pop
 	+posf
 	+tl
@@ -2256,7 +2333,6 @@ $award-delay: 1.8s
 		+p(20px 0)
 		+text-center
 		max-height: 100%
-
 
 #pop.pop
 	.pop-content
