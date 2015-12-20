@@ -44,6 +44,9 @@ window.onload = ->
 	$(".pages-media .icons .icon .alert").on "touchend", (evt)->
 		evt.stopPropagation()
 		evt.preventDefault()
+	$("#pop .close").on "click", ->
+		$("#pop").hide()
+		$("#pop .pop-content").html("")
 	loadWechatConfig()
 	wx.ready ->
 		shareContent =
@@ -73,9 +76,7 @@ loadWechatConfig = ->
 
 	# $(".pages-brand .content").css({"margin-top": -(1136-$("body").height())+"px"})
 
-	$("#pop .close").on "click", ->
-		$("#pop").hide()
-		$("#pop .pop-content").html("")
+	
 
 	# loadStart()
 
@@ -281,7 +282,10 @@ openBrand = (evt)->
 
 	n = e.attr "rel"
 	$("#pop").show()
-	$("#pop .pop-content").html("<img src='img/pages-brand-pop-"+n+".png' />")
+	$("#pop .pop-content").html("<img src='img/pages-brand-pop-"+n+".png' /><div class='close close-"+n+"'></div>")
+	$("#pop .close").on "click", ->
+		$("#pop").hide()
+		$("#pop .pop-content").html("")
 openAward = (evt)->
 	evt.stopPropagation()
 	e = $(evt.target).parents(".icon")

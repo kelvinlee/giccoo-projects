@@ -1918,6 +1918,9 @@ $award-delay: 1.8s
 		+tran
 		font-size: 0
 		opacity: 0
+		#logobg
+			+posa
+			+bl
 		img
 			+w
 			+h
@@ -2342,10 +2345,26 @@ $award-delay: 1.8s
 		+h
 		+p
 		+transform(translate3d(0,0,0))
+		.close-1
+			+posa
+			+tl(930px,520px)
+			+wh(70px,70px)
+			background: none
+		.close-2
+			+posa
+			+tl(930px,520px)
+			+wh(70px,70px)
+			background: none
+		.close-3
+			+posa
+			+tl(930px,520px)
+			+wh(70px,70px)
+			background: none
 	.close
 		+posf
 		+tl(10px,10px)
 		+wh(37px,37px)
 		+b("../img/pop-close.png",no-repeat,center,center,cover)
 		z-index: 1000
+
 

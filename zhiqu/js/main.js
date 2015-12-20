@@ -137,6 +137,10 @@ window.onload = function() {
     evt.stopPropagation();
     return evt.preventDefault();
   });
+  $("#pop .close").on("click", function() {
+    $("#pop").hide();
+    return $("#pop .pop-content").html("");
+  });
   loadWechatConfig();
   return wx.ready(function() {
     var shareContent;
@@ -162,11 +166,6 @@ loadWechatConfig = function() {
   hm.src = "http://api.giccoo.com/config?url=" + url;
   s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(hm, s);
-  return;
-  return $("#pop .close").on("click", function() {
-    $("#pop").hide();
-    return $("#pop .pop-content").html("");
-  });
 };
 
 init = function() {
@@ -429,7 +428,11 @@ openBrand = function(evt) {
   e = $(evt.target);
   n = e.attr("rel");
   $("#pop").show();
-  return $("#pop .pop-content").html("<img src='img/pages-brand-pop-" + n + ".png' />");
+  $("#pop .pop-content").html("<img src='img/pages-brand-pop-" + n + ".png' /><div class='close close-" + n + "'></div>");
+  return $("#pop .close").on("click", function() {
+    $("#pop").hide();
+    return $("#pop .pop-content").html("");
+  });
 };
 
 openAward = function(evt) {
