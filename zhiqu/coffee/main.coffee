@@ -72,15 +72,6 @@ loadWechatConfig = ->
 	s.parentNode.insertBefore hm, s
 	return
 
-		
-
-	# $(".pages-brand .content").css({"margin-top": -(1136-$("body").height())+"px"})
-
-	
-
-	# loadStart()
-
-
 init = ->
 	$(".firstPage").addClass "on"
 	setTimeout ->
@@ -131,10 +122,10 @@ startLoadPage = (name,evt)->
 	loadPageEnd = ->
 		if _gifCount is 0
 			loaded[name] = true
-			openBottleMain evt
+			openBottleMain evt, true
 		else if _gifnow >= _gifCount
 			loaded[name] = true
-			openBottleMain evt
+			openBottleMain evt, true
 		if name is "strategy"
 			setTimeout ->
 				global["strategyad"].replay("replay") if global? && global["strategyad"]?
@@ -223,10 +214,13 @@ backBottle = (name)->
 bottleRunEnd = ->
 	paoAudio[0].stop()
 
-openBottleMain = (evt)->
-	return false if opened 
+openBottleMain = (evt,pass)->
+	console.log "opened:",opened
+	if opened and pass isnt true
+		return false
 	name = $(evt).attr("page-name")
 	paoAudio[0].play()
+	opened = true
 	if loaded[name] isnt true
 		startLoadPage name,evt
 		return false
@@ -237,7 +231,6 @@ openBottleMain = (evt)->
 	$(".pages-"+name).show()
 	$(".pages-"+name).addClass "thispage"
 	global["bottle"+name].replay("replay") if global? && global["bottle"+name]?
-	opened = true
 	$(".bottle"+name+".gif").removeClass("normal replay stop").addClass("replay")
 	if name is "brand"
 		brandShow() 
@@ -383,8 +376,6 @@ technologyShow = ->
 technologyHandRun = (name)->
 	if name is "replay"
 		console.log(name)
-		
-
 
 stop = false
 XList = [-62,30,122,214,306]

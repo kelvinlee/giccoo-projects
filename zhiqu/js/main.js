@@ -235,10 +235,10 @@ startLoadPage = function(name, evt) {
   loadPageEnd = function() {
     if (_gifCount === 0) {
       loaded[name] = true;
-      openBottleMain(evt);
+      openBottleMain(evt, true);
     } else if (_gifnow >= _gifCount) {
       loaded[name] = true;
-      openBottleMain(evt);
+      openBottleMain(evt, true);
     }
     if (name === "strategy") {
       return setTimeout(function() {
@@ -350,13 +350,15 @@ bottleRunEnd = function() {
   return paoAudio[0].stop();
 };
 
-openBottleMain = function(evt) {
+openBottleMain = function(evt, pass) {
   var name;
-  if (opened) {
+  console.log("opened:", opened);
+  if (opened && pass !== true) {
     return false;
   }
   name = $(evt).attr("page-name");
   paoAudio[0].play();
+  opened = true;
   if (loaded[name] !== true) {
     startLoadPage(name, evt);
     return false;
@@ -369,7 +371,6 @@ openBottleMain = function(evt) {
   if ((global != null) && (global["bottle" + name] != null)) {
     global["bottle" + name].replay("replay");
   }
-  opened = true;
   $(".bottle" + name + ".gif").removeClass("normal replay stop").addClass("replay");
   if (name === "brand") {
     brandShow();
