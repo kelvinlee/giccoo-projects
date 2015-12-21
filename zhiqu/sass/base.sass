@@ -1,6 +1,8 @@
 @import sass/base
 @import animate
 
+$cdn: "http://disk.giccoo.com/projects/zhiqu/"
+
 // animation,delay, duration
 @for $i from 1 through 30
 	.delay-#{$i}
@@ -924,7 +926,7 @@ $award-delay: 1.8s
 		z-index: 999
 		.icon-play
 			+wh(36px,27px)
-			+b("../img/right-tower-sound.png",no-repeat,0,0,36px*5 27px)
+			+b($cdn+"img/right-tower-sound.png",no-repeat,0,0,36px*5 27px)
 			&.play
 				animation: soundBG 0.8s steps(5) infinite
 .last-bottle
@@ -939,7 +941,7 @@ $award-delay: 1.8s
 	+h
 	+overhide
 	z-index: 999
-	// +b("../img/loaded/bg.jpg",no-repeat,center,center,cover)
+	// +b($cdn+"img/loaded/bg.jpg",no-repeat,center,center,cover)
 	font-size: 0
 	.content
 		+posa
@@ -959,7 +961,7 @@ $award-delay: 1.8s
 		.door
 			+tran
 			+posa
-			+tl(51%,290px)
+			+tl(46%,290px)
 			+w(60px)
 			z-index: -1
 		.thermometer
@@ -973,12 +975,12 @@ $award-delay: 1.8s
 				+bc(#f06640)
 				+animation(music,5s,ease,infinite)
 			&.thermometer-1
-				+tl(608px,232px)
+				+tl(558px,232px)
 				.line
 					+animation(music,4s,ease,infinite)
 					animation-delay: 500ms
 			&.thermometer-2
-				+tl(608px,232px+136)
+				+tl(558px,232px+136)
 				.line
 					+animation(music,5s,ease,infinite)
 		.logo
@@ -992,7 +994,7 @@ $award-delay: 1.8s
 				+animation(flashF,2s,ease,infinite)
 		.text
 			+posa
-			+bl(300px,(640px-207)/2)
+			+bl(350px,(640px-207)/2)
 			+text-center
 			+m
 			z-index: 101
@@ -1000,7 +1002,7 @@ $award-delay: 1.8s
 			+animation(flashF,2.5s,linear,infinite)
 		.enter
 			+posa
-			+bl(360px,0)
+			+bl(410px,0)
 			z-index: 2
 			+w(100%)
 			+text-center
@@ -1025,7 +1027,7 @@ $award-delay: 1.8s
 		+posa
 		+tl
 		z-index: 2
-		+b("../img/bg.jpg",no-repeat,center,center,cover)
+		+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
 		+w
 		+h
 		// +transform(translate3d(0,10%,0) scale(0.22,0.22))
@@ -1033,7 +1035,7 @@ $award-delay: 1.8s
 		.box
 			+wh(300px,500px)
 			+posa
-			+tl(50%,50%)
+			+tl(45%,50%)
 			+transform(translate3d(-50%,-35%,0) scale(0.22,0.22))
 			.text
 				+posa
@@ -1074,7 +1076,7 @@ $award-delay: 1.8s
 			transition-delay: 1s
 			opacity: 0.5
 			.door
-				+tl(51%,290px-145)
+				+tl(46%,290px-145)
 
 .main
 	+posa
@@ -1082,7 +1084,7 @@ $award-delay: 1.8s
 	+w(640px)
 	+h
 	// +h(1136px)
-	+b("../img/bg.jpg",no-repeat,center,center,cover)
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
 	+overhide
 	font-size: 0
 	// +transform(scale(0.5,0.5))
@@ -1895,7 +1897,7 @@ $award-delay: 1.8s
 	+h
 	// +hide
 	+transform(translate3d(-266px,-116%,0))
-	// +b("../img/pages-logo-bg-start.jpg",no-repeat,center,center,cover)
+	// +b($cdn+"img/pages-logo-bg-start.jpg",no-repeat,center,center,cover)
 	opacity: 0
 	&.thispage
 		+tran($time: 1.3s,$ease: linear)
@@ -2020,7 +2022,7 @@ $award-delay: 1.8s
 		&.show
 			+tran($time: 0)
 			opacity: 1
-		// +b("../img/pages-brand-bg.jpg",no-repeat,center,center,cover)
+		// +b($cdn+"img/pages-brand-bg.jpg",no-repeat,center,center,cover)
 	.content
 		+posa
 		+bl(-10px)
@@ -2040,13 +2042,13 @@ $award-delay: 1.8s
 				+wh(640px,1134px)
 				+overhide
 			.brand-item-1
-				// +b("../img/animate/brands/brand-1.png",no-repeat,-25600px,0,25600px 1134px)
+				// +b($cdn+"img/animate/brands/brand-1.png",no-repeat,-25600px,0,25600px 1134px)
 				.gif-content
 					+wh(32000px,1134px)
 					animation: brandMovie1 (50/20)*1s steps(50) 1
 					animation-fill-mode: forwards
 			.brand-item-2
-				// +b("../img/animate/brands/brand-2.png",no-repeat,-25600px,0,25600px 1134px)
+				// +b($cdn+"img/animate/brands/brand-2.png",no-repeat,-25600px,0,25600px 1134px)
 				.gif-content
 					+wh(25600px,1134px)
 					animation: brandMovie2 (40/20)*1s steps(40) infinite
@@ -2238,7 +2240,7 @@ $award-delay: 1.8s
 				z-index: 2
 				.test
 					+wh(300px,300px)
-					+b("../img/animate/strategy-icons/strategy.png",no-repeat,left,center,12900px 300px)
+					+b($cdn+"img/animate/strategy-icons/strategy.png",no-repeat,left,center,12900px 300px)
 					animation: images 4.3s steps(43) infinite
 				.box
 					+posa
@@ -2367,7 +2369,7 @@ $award-delay: 1.8s
 		+posf
 		+tl(10px,10px)
 		+wh(37px,37px)
-		+b("../img/pop-close.png",no-repeat,center,center,cover)
+		+b($cdn+"img/pop-close.png",no-repeat,center,center,cover)
 		z-index: 1000
 
 
