@@ -68,6 +68,8 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     var then = Date.now()
     var startTime = then
     var now = Date.now()
+    var passmove = false
+    
     
     if (opts.id&&global) { global[opts.id] = self }
     if (opts.load) {
@@ -113,7 +115,7 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     	}
     }.bind(this);
     this.loadend = function() {
-    	console.log(opts.id," loaded",loads)
+
     	loadGIF()
     	if (self.NotReinit) {return false}
     	self.init()
@@ -127,7 +129,9 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
 
     	self.play = name
     	clearTimeout(self.delayFun)
-    	
+    	if (opts.passmove) {
+    		passmove = parseInt(opts.passmove)
+    	}
     	if (opts.prerun) {
     		eval(opts.prerun+"('"+name+"')")
     	}
@@ -161,6 +165,10 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
 
     		$(".gif",self.root).html(loads[self.now])
     		self.now++
+    		if (passmove && self.now >= passmove) {
+    			passmove = false
+    			passMoveFun(opts.id)
+    		}
     		if (self.now > self.max) {
     			self.now = self.max
     			self.Stop = true
@@ -181,7 +189,11 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     			return false 
     		}
     	}
-    	requestAnimationFrame(self.animate)
+    	if (fps >= 25) {
+    		requestAnimationFrame(self.animate)
+    	}else{
+    		setTimeout(self.animate,1000/25)
+    	}
     }.bind(this);
     this.on("mount",function(){
     	self.mounted = true

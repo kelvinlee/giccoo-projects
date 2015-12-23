@@ -18,6 +18,8 @@
     var then = Date.now()
     var startTime = then
     var now = Date.now()
+    var passmove = false
+    
     
     if (opts.id&&global) { global[opts.id] = self }
     if (opts.load) {
@@ -63,7 +65,7 @@
     	}
     }
     loadend() {
-    	console.log(opts.id," loaded",loads)
+    	//- console.log(opts.id," loaded",loads)
     	loadGIF()
     	if (self.NotReinit) {return false}
     	self.init()
@@ -77,7 +79,9 @@
     	//- if (name == self.next) { return false }
     	self.play = name
     	clearTimeout(self.delayFun)
-    	
+    	if (opts.passmove) {
+    		passmove = parseInt(opts.passmove)
+    	}
     	if (opts.prerun) {
     		eval(opts.prerun+"('"+name+"')")
     	}
@@ -111,6 +115,10 @@
     		// draw
     		$(".gif",self.root).html(loads[self.now])
     		self.now++
+    		if (passmove && self.now >= passmove) {
+    			passmove = false
+    			passMoveFun(opts.id)
+    		}
     		if (self.now > self.max) {
     			self.now = self.max
     			self.Stop = true
@@ -131,7 +139,11 @@
     			return false 
     		}
     	}
-    	requestAnimationFrame(self.animate)
+    	if (fps >= 25) {
+    		requestAnimationFrame(self.animate)
+    	}else{
+    		setTimeout(self.animate,1000/25)
+    	}
     }
     this.on("mount",function(){
     	self.mounted = true

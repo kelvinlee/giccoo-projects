@@ -53,14 +53,56 @@ block content
 
 	//- main#main
 	.main
+		.progress
+			.line
+		.award-box.fadeIn.animated
+			.bingo-box
+				.box.fadeIn.animated.delay-5
+					img(data-layzr="#{images}/bingo-light.png")
+					.content.bounceIn.animated.delay-8
+						img(data-layzr="#{images}/bingo-box.png")
+				.text.fadeIn.animated.delay-5
+					img(data-layzr="#{images}/bingo-text.png")
+			.bingo-email
+				img(data-layzr="#{images}/bingo-bg.png")
+				.form
+					.form-group
+						input(type="text",name="email")
+						button#submit 提交
+
 		.homepage
 			#paoAudio(src="mp3/pao.mp3")
+			.p-notes(rel="1")
+				.note.note-text
+					img(data-layzr="#{images}/note/bottle-text.png")
+				.note.note-hand.fadeIn.animated.delay-10
+					img(data-layzr="#{images}/note/note-hand.png")
+					.point
+						em
+						em.last
+				.note.note-1.rollIn.animated.delay-5
+					img(data-layzr="#{images}/note/bottle-logo.png")
+				.note.note-2.rollIn.animated.delay-7
+					img(data-layzr="#{images}/note/bottle-strategy.png")
+				.note.note-3.rollIn.animated.delay-9
+					img(data-layzr="#{images}/note/bottle-media.png")
+				.note.note-4.rollIn.animated.delay-11
+					img(data-layzr="#{images}/note/bottle-brand.png")
+				.note.note-5.rollIn.animated.delay-13
+					img(data-layzr="#{images}/note/bottle-technology.png")
+				.note.note-6.rollIn.animated.delay-15
+					img(data-layzr="#{images}/note/bottle-award.png")
+				.note.note-7.rollIn.animated.delay-17
+					img(data-layzr="#{images}/note/bottle-contactus.png")
+				//- .note.note-3
+					img(data-layzr="#{images}/note/bottle-strategy.png")
+
 			.bottle.bottle-brand
 				img(data-layzr="#{images}/bottle-brand.png")
 				//- .gif.bottlebrand.normal(id="bottlebrand",width="300",height="750",count="51",normal='normal',replay='stop',stop="stop",play="normal",src="#{images}/animate/bottle-brand/brand.png")
 					.gif-content
 						img(data-layzr="img/animate/bottle-brand/brand.png")
-				gif(load="true",id="bottlebrand",width="300",height="750",count="51",normal='[0,0,"normal"]',replay='[1,50,"stop"]',prepare='[1,17,"prepare"]',stop="50",play="normal",src="#{images}/animate/bottle-brand/brand-id.png",playend="bottleRunEnd",callback="brandLoadEnd")
+				gif(load="true",id="bottlebrand",width="300",height="750",count="51",normal='[0,0,"normal"]',replay='[1,50,"stop"]',prepare='[1,17,"prepare"]',stop="50",play="normal",src="#{images}/animate/bottle-brand/brand-id.png",passmove="36",playend="bottleRunEnd",callback="brandLoadEnd")
 				.on-button(onclick="openBottleMain(this)",page-name="brand")
 				.bubbles
 					-for (var i=0;i<3;i++)
@@ -73,7 +115,7 @@ block content
 				//- .gif.bottlelogo.normal(id="bottlelogo",width="480",height="620",count="63",normal='normal',replay='stop',stop="stop",play="normal",src="#{images}/animate/bottle-logo/logo.png",onload="test()")
 					.gif-content
 						img(data-layzr="img/animate/bottle-logo/logo.png")
-				gif(load="true",id="bottlelogo",width="480",height="620",count="63",normal='[0,0,"normal"]',replay='[1,62,"stop"]',prepare='[1,6,"prepare"]',stop="62",play="normal",src="#{images}/animate/bottle-logo/logo-id.png",playend="bottleRunEnd",callback="logoLoadEnd")
+				gif(load="true",id="bottlelogo",width="480",height="620",count="63",normal='[0,0,"normal"]',replay='[1,62,"stop"]',prepare='[1,6,"prepare"]',stop="62",play="normal",src="#{images}/animate/bottle-logo/logo-id.png",passmove="24",playend="bottleRunEnd",callback="logoLoadEnd")
 				.on-button(onclick="openBottleMain(this)",page-name="logo")
 				.goon
 					img(data-layzr="#{images}/bottle-logo-goon.png")
@@ -82,7 +124,7 @@ block content
 				//- .gif.bottlestrategy.normal(id="bottlestrategy",width="850",height="200",count="78",normal='replay',replay='stop',stop="stop",play="normal",src="#{images}/animate/bottle-strategy/strategy.png")
 					.gif-content
 						img(data-layzr="img/animate/bottle-strategy/strategy.png")
-				gif(load="true",id="bottlestrategy",width="850",height="200",count="78",normal='[0,0,"normal"]',replay='[1,77,"stop"]',prepare='[1,17,"prepare"]',stop="77",play="normal",src="#{images}/animate/bottle-strategy/strategy-id.png",playend="bottleRunEnd")
+				gif(load="true",id="bottlestrategy",width="850",height="200",count="78",normal='[0,0,"normal"]',replay='[1,77,"stop"]',prepare='[1,17,"prepare"]',stop="77",play="normal",src="#{images}/animate/bottle-strategy/strategy-id.png",passmove="69",playend="bottleRunEnd")
 				.shadow
 					img(data-layzr="#{images}/bottle-strategy-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="strategy")
@@ -91,7 +133,7 @@ block content
 				//- .gif.bottletechnology.normal(id="bottletechnology",width="800",height="260",count="60",normal='normal',replay='stop',stop="stop",play="normal",src="#{images}/animate/bottle-technology/technology.png")
 					.gif-content
 						img(data-layzr="img/animate/bottle-technology/technology.png")
-				gif(load="true",id="bottletechnology",width="800",height="260",count="60",normal='[0,0,"normal"]',replay='[1,59,"stop"]',prepare='[1,17,"prepare"]',stop="59",play="normal",src="#{images}/animate/bottle-technology/technology-id.png",playend="bottleRunEnd")
+				gif(load="true",id="bottletechnology",width="800",height="260",count="60",normal='[0,0,"normal"]',replay='[1,59,"stop"]',prepare='[1,17,"prepare"]',stop="59",play="normal",src="#{images}/animate/bottle-technology/technology-id.png",passmove="33",playend="bottleRunEnd")
 				.shadow
 					img(data-layzr="#{images}/bottle-technology-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="technology")
@@ -100,7 +142,7 @@ block content
 				//- .gif.bottlemedia.normal(id="bottlemedia",width="380",height="380",count="76",normal='normal',replay='stop',stop="stop",play="normal",src="#{images}/animate/bottle-media/media.png")
 					.gif-content
 						img(data-layzr="img/animate/bottle-media/media.png")
-				gif(load="true",id="bottlemedia",width="380",height="380",count="76",normal='[0,0,"normal"]',replay='[1,75,"stop"]',prepare='[1,17,"prepare"]',stop="75",play="normal",src="#{images}/animate/bottle-media/media-id.png",playend="bottleRunEnd")
+				gif(load="true",id="bottlemedia",width="380",height="380",count="76",normal='[0,0,"normal"]',replay='[1,75,"stop"]',prepare='[1,17,"prepare"]',stop="75",play="normal",src="#{images}/animate/bottle-media/media-id.png",passmove="40",playend="bottleRunEnd")
 				.shadow
 					img(data-layzr="#{images}/bottle-media-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="media")
@@ -109,7 +151,7 @@ block content
 				//- .gif.bottlecontactus.normal(id="bottlecontactus",width="480",height="480",count="66",normal='normal',replay='stop',stop="stop",play="normal",src="#{images}/animate/bottle-contactus/contactus.png")
 					.gif-content
 						img(data-layzr="img/animate/bottle-contactus/contactus.png")
-				gif(load="true",id="bottlecontactus",width="480",height="480",count="81",normal='[0,0,"normal"]',replay='[1,80,"stop"]',prepare='[1,17,"prepare"]',stop="80",play="normal",src="#{images}/animate/bottle-contactus/contactus-id.png",playend="bottleRunEnd",callback="contactusLoadEnd")
+				gif(load="true",id="bottlecontactus",width="480",height="480",count="81",normal='[0,0,"normal"]',replay='[1,80,"stop"]',prepare='[1,17,"prepare"]',stop="80",play="normal",src="#{images}/animate/bottle-contactus/contactus-id.png",passmove="46",playend="bottleRunEnd",callback="contactusLoadEnd")
 				.shadow
 					img(data-layzr="#{images}/bottle-contactus-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="contactus")
@@ -118,7 +160,7 @@ block content
 				//- .gif.bottleaward.normal(id="bottleaward",width="600",height="300",count="82",normal='normal',replay='stop',stop="stop",play="normal",src="#{images}/animate/bottle-award/award.png")
 					.gif-content
 						img(data-layzr="img/animate/bottle-award/award.png")
-				gif(load="true",id="bottleaward",width="550",height="265",count="82",normal='[0,0,"normal"]',replay='[1,81,"stop"]',prepare='[1,17,"prepare"]',stop="81",play="normal",src="#{images}/animate/bottle-award/award-id.png",playend="bottleRunEnd")
+				gif(load="true",id="bottleaward",width="550",height="265",count="82",normal='[0,0,"normal"]',replay='[1,81,"stop"]',prepare='[1,17,"prepare"]',stop="81",play="normal",src="#{images}/animate/bottle-award/award-id.png",passmove="76",playend="bottleRunEnd")
 				.shadow
 					img(data-layzr="#{images}/bottle-award-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="award")
@@ -132,7 +174,7 @@ block content
 				.timer
 					img(data-layzr="#{images}/right-tower-timer.png")
 					timer
-				playsound#bgaudio(src="mp3/bg.mp3")
+				//- playsound#bgaudio(src="mp3/bg.mp3")
 			.bottle.last-bottle
 				img(data-layzr="#{images}/bottom-bottle.png")
 			.bottle.bottle-fire-1
@@ -146,6 +188,14 @@ block content
 			.bottle.bottle-search.tada.animated.duration-15
 				img(data-layzr="#{images}/magn.png")
 		.pages-technology(name="technology")
+			.p-notes
+				.note.p-technology
+					img(data-layzr="#{images}/note/technology-note.png")
+				.note.note-hand
+					img(data-layzr="#{images}/note/note-hand.png")
+					.point
+						em
+						em.last
 			.content
 				.m-top
 					.bg
@@ -393,6 +443,14 @@ block content
 					.item.item-2(rel="2")
 					.item.item-3(rel="3")
 		.pages-strategy(name="strategy")
+			.p-notes
+				.note.p-strategy
+					img(data-layzr="#{images}/note/strategy-note.png")
+				.note.note-hand
+					img(data-layzr="#{images}/note/note-hand.png")
+					.point
+						em
+						em.last
 			.content
 				.m-top
 					img(data-layzr-strategy="#{images}/pages-strategy-m-top.png")
@@ -505,6 +563,7 @@ block js
 	script(src="http://disk.giccoo.com/projects/libs/js/min/layzr.min.js")
 	script(src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js")
 	script(src="http://disk.giccoo.com/projects/libs/js/min/riot.js")
+	script(src="/libs/js/js.cookie.js")
 	script(src="js/tag.js")
 	script(src="js/main.js")
 	//- script.

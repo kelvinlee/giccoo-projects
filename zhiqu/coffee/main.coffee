@@ -13,9 +13,51 @@ global = {}
 loaded = []
 tags = null
 paoAudio = null
+fps = 30
+randomAward = false
+openid = ""
+PubUrl = "http://i.giccoo.com"
+# PubUrl = "http://kelvin-air.local:8990"
 
 window.onload = ->
-	
+	openid = $_GET["openid"]
+	if not openid? or openid is ""
+		window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3dd8b8d67e940c4&redirect_uri={url}&response_type=code&scope=snsapi_base&state=123#wechat_redirect".replace("{url}", encodeURIComponent(PubUrl+"/zhiqu/"));
+		return false
+
+	setTimeout ->
+		all = 0
+		t = new Date()
+		i = 0
+		run10 = ->
+			i++
+			all = all + (new Date() - t)
+			t = new Date()
+			if i>= 10
+				fps = parseInt 1000 / all / i * 100
+				# alert fps
+				return false
+			requestAnimationFrame run10
+		run10()
+	,500
+
+	if Cookies.get("note-1")
+		$(".homepage .p-notes").remove()
+	if Cookies.get("note-2")
+		$(".pages-strategy .p-notes").remove()
+	else
+		$(".pages-strategy .p-notes").addClass "show"
+		$(".pages-strategy .p-notes").on "click", ->
+			$(".pages-strategy .p-notes").removeClass "show"
+			Cookies.set("note-2","true")
+	if Cookies.get("note-3")
+		$(".pages-technology .p-notes").remove()
+	else
+		$(".pages-technology .p-notes").addClass "show"
+		$(".pages-technology .p-notes").on "click", ->
+			$(".pages-technology .p-notes").removeClass "show"
+			Cookies.set("note-3","true")
+
 	$(".bottle-logo-next").css {
 		bottom: 164 - $("body").height() * 0.13 - 18
 	}
@@ -35,6 +77,10 @@ window.onload = ->
 		evt.stopPropagation()
 		evt.preventDefault()
 		$(".alert",this).removeClass "on"
+		if !randomAward
+			PostAward()
+			randomAward = true
+
 	$(".pages-media .icons .icon .alert").on "touchstart", (evt)->
 		evt.stopPropagation()
 		evt.preventDefault()
@@ -50,8 +96,8 @@ window.onload = ->
 	loadWechatConfig()
 	wx.ready ->
 		shareContent =
-			title: "致趣实验室"
-			desc: "致趣实验室"
+			title: "致趣联媒实验室"
+			desc: "科学实验表明：99%的移动广告预算可在这里被消耗！"
 			link: "http://m.giccoo.com/zhiqu/"
 			imgUrl: "http://disk.giccoo.com/projects/zhiqu/img/share.jpg"
 			success: ->
@@ -63,6 +109,39 @@ window.onload = ->
 		wx.onMenuShareQQ shareContent
 		wx.onMenuShareWeibo shareContent
 	# finishedLoad()
+
+PostAward = ->
+	console.log "post award"
+	data = {openid: openid}
+	# http://i.giccoo.com
+	# http://kelvin-air.local:8990
+	$.post PubUrl+"/zhiqu/vote/to/", data, (msg)->
+		console.log msg
+		if msg.recode is 200
+			showAwardBox()
+readyEmail = false
+showAwardBox = ->
+	$(".award-box").show()
+	$(".award-box .box").on "click", ->
+		$(".award-box .bingo-box").hide()
+		$(".award-box .bingo-email").show()
+	$(".award-box .bingo-email #submit").on "click", ->
+		if readyEmail
+			return alert "正在提交请稍后..."
+		reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/
+		email = $("[name=email]").val()
+		if reg.test email
+			readyEmail = true
+			data = {openid: openid,email: email}
+			$.post PubUrl+"/zhiqu/vote/email/", data, (msg)->
+				readyEmail = false
+				if msg.recode is 200
+					alert "已经提交成功, 请等候我们的通知."
+					$(".award-box").hide()
+				else
+					alert msg.reason
+		else
+			alert "Email 格式不正确"
 
 loadWechatConfig = ->
 	url = encodeURIComponent window.location.href.split("#")[0]
@@ -106,7 +185,11 @@ loadEnd = ->
 	riot.mount("*")
 	paoAudio = riot.mount("div#paoAudio","playsound")
 	paoAudio[0].stop()
-	console.log _gifCount
+	console.log "loaded."
+	$(".homepage .p-notes").addClass "show"
+	$(".homepage .p-notes").on "click", ->
+		Cookies.set("note-1","true")
+		$(".homepage .p-notes").removeClass "show"
 
 startLoadPage = (name,evt)->
 	global["bottle"+name].replay("prepare") if global? && global["bottle"+name]?
@@ -115,11 +198,17 @@ startLoadPage = (name,evt)->
 	console.log name,count
 	_gifCount = 0
 	_gifnow = 0
+	$(".progress").addClass "show"
 	loadGIF = ->
 		# console.log("a")
 		_gifnow++
+		runProgress()
 		loadPageEnd() if _gifnow >= _gifCount
 	loadPageEnd = ->
+		$(".progress").removeClass "show"
+		setTimeout ->
+			$(".progress .line").css {width: "0%"}
+		,800
 		if _gifCount is 0
 			loaded[name] = true
 			openBottleMain evt, true
@@ -130,8 +219,13 @@ startLoadPage = (name,evt)->
 			setTimeout ->
 				global["strategyad"].replay("replay") if global? && global["strategyad"]?
 			,1000
+	runProgress = ->
+		v = parseInt (_gifnow+now)/(count+_gifCount)*100
+		console.log v,_gifnow,now,count,_gifCount
+		$(".progress .line").css {width: v+"%"}
 	$("[data-layzr-"+name+"]").on "load", ->
 		now++
+		runProgress()
 		loadPageEnd() if now >= count
 	$("[data-layzr-"+name+"]").each ->
 		$(this).attr("src",$(this).attr("data-layzr-"+name))
@@ -186,6 +280,15 @@ hideFirstPage = ->
 		$(".firstPage").remove()
 	,500
 
+passMoveFun = (name)->
+	# console.log "passMoveFun:",name
+	name = name.replace("bottle","")
+	console.log "passMoveFun:",name
+	$(".bottle-"+name).addClass "Mybottle"
+	$(".main").addClass "page-"+name
+	$(".pages-"+name).show()
+	$(".pages-"+name).addClass "thispage"
+
 openBottle = (evt)->
 	return false if opened 
 	console.log evt
@@ -215,7 +318,7 @@ bottleRunEnd = ->
 	paoAudio[0].stop()
 
 openBottleMain = (evt,pass)->
-	console.log "opened:",opened
+	# console.log "opened:",opened
 	if opened and pass isnt true
 		return false
 	name = $(evt).attr("page-name")
@@ -226,10 +329,6 @@ openBottleMain = (evt,pass)->
 		return false
 	
 	$(evt).next().addClass "on"
-	$(".bottle-"+name).addClass "Mybottle"
-	$(".main").addClass "page-"+name
-	$(".pages-"+name).show()
-	$(".pages-"+name).addClass "thispage"
 	global["bottle"+name].replay("replay") if global? && global["bottle"+name]?
 	$(".bottle"+name+".gif").removeClass("normal replay stop").addClass("replay")
 	if name is "brand"
@@ -412,3 +511,18 @@ TrunCheck = ->
 	if $(".pages-technology .line").height() <= 50 and (global["technologyhand"].play isnt "normal")
 		global["technologyhand"].replay("normal")
 	requestAnimationFrame(TrunCheck)
+
+
+$_GET = do ->
+	url = window.document.location.href.toString()
+	u = url.split('?')
+	if typeof u[1] == 'string'
+		u = u[1].split('&')
+		get = {}
+		console.log u
+		for i in u
+			j = i.split('=')
+			get[j[0]] = j[1]
+		get
+	else
+		{}
