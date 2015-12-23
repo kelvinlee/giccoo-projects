@@ -275,10 +275,14 @@ startLoadPage = (name,evt)->
 	loadPageEnd() if count is 0
 
 hideFirstPage = ->
-	$(".firstPage").addClass "fadeOut animated"
+	$(".firstPage .loading .box").hide()
+	$(".firstPage .loading .box-text").show()
 	setTimeout ->
-		$(".firstPage").remove()
-	,500
+		$(".firstPage").addClass "fadeOut animated"
+		setTimeout ->
+			$(".firstPage").remove()
+		,500
+	,4000
 
 passMoveFun = (name)->
 	# console.log "passMoveFun:",name

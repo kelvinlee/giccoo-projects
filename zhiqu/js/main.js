@@ -439,10 +439,14 @@ startLoadPage = function(name, evt) {
 };
 
 hideFirstPage = function() {
-  $(".firstPage").addClass("fadeOut animated");
+  $(".firstPage .loading .box").hide();
+  $(".firstPage .loading .box-text").show();
   return setTimeout(function() {
-    return $(".firstPage").remove();
-  }, 500);
+    $(".firstPage").addClass("fadeOut animated");
+    return setTimeout(function() {
+      return $(".firstPage").remove();
+    }, 500);
+  }, 4000);
 };
 
 passMoveFun = function(name) {

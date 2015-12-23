@@ -50,7 +50,8 @@ block content
 					-for (var i=0;i<3;i++)
 						.bubble(class="bubble-#{i+1}")
 							img(src="#{images}/loading-bubble.png")
-
+			.box-text.fadeIn.animated
+				img(src="#{images}/loaded/loaded-text.png")
 	//- main#main
 	.main
 		.progress
@@ -174,7 +175,7 @@ block content
 				.timer
 					img(data-layzr="#{images}/right-tower-timer.png")
 					timer
-				//- playsound#bgaudio(src="mp3/bg.mp3")
+				playsound#bgaudio(src="mp3/bg.mp3")
 			.bottle.last-bottle
 				img(data-layzr="#{images}/bottom-bottle.png")
 			.bottle.bottle-fire-1
