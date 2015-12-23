@@ -113,6 +113,10 @@ PubUrl = "http://i.giccoo.com";
 
 window.onload = function() {
   openid = $_GET["openid"];
+  if ((openid == null) || openid === "") {
+    window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3dd8b8d67e940c4&redirect_uri={url}&response_type=code&scope=snsapi_base&state=123#wechat_redirect".replace("{url}", encodeURIComponent(PubUrl + "/zhiqu/"));
+    return false;
+  }
   setTimeout(function() {
     var all, run10, t;
     all = 0;
@@ -124,7 +128,6 @@ window.onload = function() {
       t = new Date();
       if (i >= 10) {
         fps = parseInt(1000 / all / i * 100);
-        alert(fps);
         return false;
       }
       return requestAnimationFrame(run10);
