@@ -18,12 +18,14 @@ randomAward = false
 openid = ""
 PubUrl = "http://i.giccoo.com"
 # PubUrl = "http://kelvin-air.local:8990"
+debug = false
 
 window.onload = ->
-	openid = $_GET["openid"]
-	if not openid? or openid is ""
-		window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3dd8b8d67e940c4&redirect_uri={url}&response_type=code&scope=snsapi_base&state=123#wechat_redirect".replace("{url}", encodeURIComponent(PubUrl+"/zhiqu/"));
-		return false
+	if not debug
+		openid = $_GET["openid"]
+		if not openid? or openid is ""
+			window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3dd8b8d67e940c4&redirect_uri={url}&response_type=code&scope=snsapi_base&state=123#wechat_redirect".replace("{url}", encodeURIComponent(PubUrl+"/zhiqu/"));
+			return false
 
 	setTimeout ->
 		all = 0
@@ -35,7 +37,7 @@ window.onload = ->
 			t = new Date()
 			if i>= 10
 				fps = parseInt 1000 / all / i * 100
-				# alert fps
+				console.log "fps:",fps if debug
 				return false
 			requestAnimationFrame run10
 		run10()
@@ -116,7 +118,7 @@ PostAward = ->
 	# http://i.giccoo.com
 	# http://kelvin-air.local:8990
 	$.post PubUrl+"/zhiqu/vote/to/", data, (msg)->
-		console.log msg
+		console.log msg if debug
 		if msg.recode is 200
 			showAwardBox()
 readyEmail = false
@@ -166,26 +168,35 @@ loadStart = ->
 	now = 0
 	ep = $("#loading-text")
 
-	$("[data-layzr]").on "load", ->
-		now++
-		ep.text parseInt now/count*60
-		loadEnd() if now >= count
+	# $("[data-layzr]").on "load", ->
+		
 
 	$("[data-layzr]").each ->
-		$(this).attr("src",$(this).attr("data-layzr"))
+		# $(this).attr("src",$(this).attr("data-layzr"))
+		img = new Image()
+		img.onload = ->
+			now++
+			ep.text parseInt now/count*60
+			loadEnd() if now >= count
+		img.src = $(this).attr("data-layzr")
+		$(this).after(img)
+		$(this).remove()
 _gifCount = 0
 _gifnow = 0
 loadGIF = ->
 	_gifnow++
 	ep = $("#loading-text")
 	ep.text parseInt 60+_gifnow/_gifCount*40
-	hideFirstPage() if _gifnow >= _gifCount
+	if _gifnow >= _gifCount
+		setTimeout ->
+			hideFirstPage()
+		,500
 loadEnd = ->
 	_gifCount = $("gif").length
 	riot.mount("*")
 	paoAudio = riot.mount("div#paoAudio","playsound")
 	paoAudio[0].stop()
-	console.log "loaded."
+	console.log "loaded." if debug
 	$(".homepage .p-notes").addClass "show"
 	$(".homepage .p-notes").on "click", ->
 		Cookies.set("note-1","true")
@@ -195,9 +206,10 @@ startLoadPage = (name,evt)->
 	global["bottle"+name].replay("prepare") if global? && global["bottle"+name]?
 	now = 0
 	count = $("[data-layzr-"+name+"]").length
-	console.log name,count
+	console.log name,count if debug
 	_gifCount = 0
 	_gifnow = 0
+	pageEnd = 0
 	$(".progress").addClass "show"
 	loadGIF = ->
 		# console.log("a")
@@ -205,6 +217,8 @@ startLoadPage = (name,evt)->
 		runProgress()
 		loadPageEnd() if _gifnow >= _gifCount
 	loadPageEnd = ->
+		pageEnd++
+		return false if pageEnd < 2
 		$(".progress").removeClass "show"
 		setTimeout ->
 			$(".progress .line").css {width: "0%"}
@@ -221,14 +235,18 @@ startLoadPage = (name,evt)->
 			,1000
 	runProgress = ->
 		v = parseInt (_gifnow+now)/(count+_gifCount)*100
-		console.log v,_gifnow,now,count,_gifCount
+		# console.log v,_gifnow,now,count,_gifCount
 		$(".progress .line").css {width: v+"%"}
-	$("[data-layzr-"+name+"]").on "load", ->
-		now++
-		runProgress()
-		loadPageEnd() if now >= count
 	$("[data-layzr-"+name+"]").each ->
-		$(this).attr("src",$(this).attr("data-layzr-"+name))
+		# $(this).attr("src",$(this).attr("data-layzr-"+name))
+		img = new Image()
+		img.onload = ->
+			now++
+			runProgress()
+			loadPageEnd() if now >= count
+		img.src = $(this).attr("data-layzr-"+name)
+		$(this).after(img)
+		$(this).remove()
 	if name is "brand"
 		riot.mount("div#brandbg","gif")
 		riot.mount("div#brands","gif")
@@ -277,6 +295,10 @@ startLoadPage = (name,evt)->
 hideFirstPage = ->
 	$(".firstPage .loading .box").hide()
 	$(".firstPage .loading .box-text").show()
+
+	if not global.bottlelogo?
+		alert "riot create fail."
+
 	setTimeout ->
 		$(".firstPage").addClass "fadeOut animated"
 		setTimeout ->
@@ -287,7 +309,7 @@ hideFirstPage = ->
 passMoveFun = (name)->
 	# console.log "passMoveFun:",name
 	name = name.replace("bottle","")
-	console.log "passMoveFun:",name
+	console.log "passMoveFun:",name if debug
 	$(".bottle-"+name).addClass "Mybottle"
 	$(".main").addClass "page-"+name
 	$(".pages-"+name).show()
@@ -295,7 +317,7 @@ passMoveFun = (name)->
 
 openBottle = (evt)->
 	return false if opened 
-	console.log evt
+	console.log evt if debug
 	name = $(evt).attr("page-name")
 	$(evt).next().addClass "on"
 	$(".bottle-"+name).addClass "Mybottle"
@@ -326,6 +348,7 @@ openBottleMain = (evt,pass)->
 	if opened and pass isnt true
 		return false
 	name = $(evt).attr("page-name")
+	$(".pages-"+name).show()
 	paoAudio[0].play()
 	opened = true
 	if loaded[name] isnt true
@@ -337,7 +360,7 @@ openBottleMain = (evt,pass)->
 	$(".bottle"+name+".gif").removeClass("normal replay stop").addClass("replay")
 	if name is "brand"
 		brandShow() 
-		$(".thispage .bg").addClass("show")
+		$(".pages-brand .bg").addClass("show")
 	mediaShow() if name is "media"
 	strategyShow() if name is "strategy"
 	if name is "logo"
@@ -347,7 +370,7 @@ openBottleMain = (evt,pass)->
 
 backBottleMain = ()->
 	name = $(".thispage").attr "name"
-	console.log("close",name)
+	console.log("close",name) if debug
 	if name is "brand" and $(".thispage .bg").is(".show")
 		$(".thispage .bg").removeClass("show")
 		setTimeout ->
@@ -405,6 +428,14 @@ clearNone = ->
 		# $(".pages-brand .brands-item").html("")
 		stop = true
 		opened = false
+		$(".pages-logo").hide()
+		$(".pages-media").hide()
+		$(".pages-award").hide()
+		$(".pages-brand").hide()
+		$(".pages-strategy").hide()
+		$(".pages-technology").hide()
+		$(".pages-contactus").hide()
+
 		global["brandbg"].replay("normal") if global? && global["brandbg"]?
 		global["brands"].replay("stop") if global? && global["brands"]?
 		global["bottlemediamovie"].replay("stop") if global? && global["bottlemediamovie"]?
@@ -441,7 +472,7 @@ strategyShow = ->
 	$(".pages-strategy .item-icons").on "click", ->
 		global["strategyicons"].replay("replay") if global? && global["strategyicons"]?
 	$(".pages-strategy .fcanvas").on "click", ->
-		console.log "test"
+		console.log "test" if debug
 		if global? && global["strategyad"]?
 			if global["strategyad"].play is "stepto"
 				global["strategyad"].replay("stepend") 
@@ -455,7 +486,7 @@ logoShow = ->
 	# setTimeout ->
 	# ,2400
 logoLoadEnd = ->
-	console.log "logoLoadEnd"
+	console.log "logoLoadEnd" if debug
 	global["logobg"].replay("replay") if global? && global["logobg"]?
 	# global["logobottle"].replay("replay") if global? && global["logobottle"]?
 	global["logovitro"].replay("replay") if global? && global["logovitro"]?
@@ -472,13 +503,13 @@ technologyShow = ->
 	global["technologylogo"].replay("replay") if global? && global["technologylogo"]?
 	$(".pages-technology .box-logo").on "click", ->
 		global["technologylogo"].replay("replay") if global? && global["technologylogo"]?
-	console.log "T start"
+	console.log "T start" if debug
 	stop = false
 	TrunCheck()
 
 technologyHandRun = (name)->
 	if name is "replay"
-		console.log(name)
+		console.log(name) if debug
 
 stop = false
 XList = [-62,30,122,214,306]
@@ -523,7 +554,7 @@ $_GET = do ->
 	if typeof u[1] == 'string'
 		u = u[1].split('&')
 		get = {}
-		console.log u
+		console.log u if debug
 		for i in u
 			j = i.split('=')
 			get[j[0]] = j[1]

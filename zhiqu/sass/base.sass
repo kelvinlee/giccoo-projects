@@ -1104,6 +1104,7 @@ $award-delay: 1.8s
 		opacity: 1
 		.line
 			+tran($time: 0.2s)
+			+w(15%)
 	.line
 		+w(0%)
 		+h
@@ -1332,6 +1333,9 @@ $award-delay: 1.8s
 		// +transform(translate3d(780px,-100px,0))
 
 .pages-item
+	+hide
+
+.pages-technology,.pages-award,.pages-media,.pages-contactus,.pages-logo,.pages-brand,.pages-strategy
 	+hide
 
 .pages-technology
@@ -2142,7 +2146,7 @@ $award-delay: 1.8s
 		+h
 		+tran
 		font-size: 0
-		// opacity: 0
+		opacity: 0
 		img
 			+w
 			+h

@@ -23,7 +23,7 @@
     
     if (opts.id&&global) { global[opts.id] = self }
     if (opts.load) {
-    	console.log(opts.id,"拆分 load",parseInt(eval(opts["prepare"])[1]))
+    	//- console.log(opts.id,"拆分 load",parseInt(eval(opts["prepare"])[1]))
     	//- playList = eval(opts["prepare"])[1]
     	self.max = parseInt(eval(opts["prepare"])[1])+1
     }
@@ -58,7 +58,7 @@
     load() {
     	self._loaded++
     	//- console.log(parseInt(self.loaded/self.max*100))
-    	
+    	//- loadProgress(opts.id,parseInt(self._loaded/self.max*100))
     	if (parseInt(self._loaded/self.max*100) == 100) {
     		self.loaded = true
     		self.loadend()
@@ -139,13 +139,14 @@
     			return false 
     		}
     	}
-    	if (fps >= 25) {
+    	if (fps >= 20) {
     		requestAnimationFrame(self.animate)
     	}else{
-    		setTimeout(self.animate,1000/25)
+    		setTimeout(self.animate,1000/20)
     	}
     }
     this.on("mount",function(){
+    	$(".gif",self.root).html(loads[0])
     	self.mounted = true
     	self.init()
     })

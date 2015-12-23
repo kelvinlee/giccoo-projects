@@ -73,7 +73,7 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     
     if (opts.id&&global) { global[opts.id] = self }
     if (opts.load) {
-    	console.log(opts.id,"拆分 load",parseInt(eval(opts["prepare"])[1]))
+
 
     	self.max = parseInt(eval(opts["prepare"])[1])+1
     }
@@ -108,7 +108,7 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     this.load = function() {
     	self._loaded++
 
-    	
+
     	if (parseInt(self._loaded/self.max*100) == 100) {
     		self.loaded = true
     		self.loadend()
@@ -189,13 +189,14 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     			return false 
     		}
     	}
-    	if (fps >= 25) {
+    	if (fps >= 20) {
     		requestAnimationFrame(self.animate)
     	}else{
-    		setTimeout(self.animate,1000/25)
+    		setTimeout(self.animate,1000/20)
     	}
     }.bind(this);
     this.on("mount",function(){
+    	$(".gif",self.root).html(loads[0])
     	self.mounted = true
     	self.init()
     })
