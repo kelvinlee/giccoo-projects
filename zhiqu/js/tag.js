@@ -177,7 +177,7 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     			self.now = self.max
     			self.Stop = true
 
-    			
+
     			if (opts.delay) {
     				self.delayFun = setTimeout(function(){
     					self.replay(self.next)

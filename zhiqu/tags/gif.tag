@@ -127,7 +127,7 @@
     			self.now = self.max
     			self.Stop = true
     			//-  && opts.stepto
-    			
+    			//- console.log(opts.id , opts.delay , self.next)
     			if (opts.delay) {
     				self.delayFun = setTimeout(function(){
     					self.replay(self.next)
