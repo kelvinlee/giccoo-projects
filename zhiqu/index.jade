@@ -69,13 +69,16 @@ block content
 				.form
 					.form-group
 						input(type="text",name="email")
-						button#submit 提交
-
+					.form-group
+						#submit
+							img(data-layzr="#{images}/bingo-submit.png")
+				.giveup
+					img(data-layzr="#{images}/bingo-giveup.png")
 		.homepage
 			#paoAudio(src="mp3/pao.mp3")
 			.p-notes(rel="1")
 				.note.note-text
-					img(data-layzr="#{images}/note/bottle-text.png")
+					img(data-layzr="#{images}/note/bottle-text-new.png")
 				.note.note-hand.fadeIn.animated.delay-10
 					img(data-layzr="#{images}/note/note-hand.png")
 					.point
@@ -124,7 +127,7 @@ block content
 				//- .gif.bottlestrategy.normal(id="bottlestrategy",width="850",height="200",count="78",normal='replay',replay='stop',stop="stop",play="normal",src="#{images}/animate/bottle-strategy/strategy.png")
 					.gif-content
 						img(data-layzr="img/animate/bottle-strategy/strategy.png")
-				gif(load="true",id="bottlestrategy",width="850",height="200",count="78",normal='[0,0,"normal"]',replay='[1,77,"stop"]',prepare='[1,77,"prepare"]',stop="77",play="normal",src="#{images}/animate/bottle-strategy/strategy-id.png",passmove="69",playend="bottleRunEnd")
+				gif(load="true",id="bottlestrategy",width="850",height="200",count="78",normal='[0,0,"normal"]',replay='[1,77,"stop"]',prepare='[1,17,"prepare"]',stop="77",play="normal",src="#{images}/animate/bottle-strategy/strategy-id.png",passmove="69",playend="bottleRunEnd")
 				.shadow
 					img(data-layzr="#{images}/bottle-strategy-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="strategy")
@@ -215,7 +218,7 @@ block content
 					.box-logo
 						img(data-layzr-technology="#{images}/technology/box.png")
 					.logo
-						#technologylogo(width="170",height="200",normal="[0,0,'normal']",replay="[0,50,'normal']",stop="0",play="normal",count="51",src="#{images}/animate/technology/logo/logo-id.png")
+						#technologylogo(width="150",height="200",normal="[0,0,'normal']",replay="[0,50,'normal']",stop="0",play="normal",count="51",src="#{images}/animate/technology/logo/logo-id.jpg")
 					.item-switch
 						img(data-layzr-technology="#{images}/pages-strategy-switch.png")
 					.item-light-red
@@ -432,12 +435,12 @@ block content
 					img(data-layzr-logo="#{images}/pages-logo-text.png")		
 		.pages-logo-bg
 			.bg
-				#logobg(width="640",height="1144",count="21",normal='[0,0,"normal"]',replay='[0,20,"stop"]',stop="20",play="normal",src="#{images}/animate/logo/bg/bg-id.png")
+				#logobg(width="640",height="1144",count="33",normal='[0,0,"normal"]',replay='[0,32,"stop"]',stop="32",play="normal",src="#{images}/animate/logo/bg/bg-id.jpg")
 		.pages-brand(name="brand")
-			.bg
+			//- .bg
 				#brandbg(width="640",height="1134",count="8",normal='[0,0,"normal"]',replay='[0,7,"stop"]',stop="7",play="normal",src="#{images}/animate/brandbg/brandbg-id.png")
 			.content
-				#brands(width="640",height="1134",count="127",normal='[0,86,"replay"]',replay='[86,126,"replay"]',stop="0",play="stop",src="#{images}/animate/brands/brands-id.png")
+				#brands(width="640",height="1136",count="111",normal='[0,90,"replay"]',replay='[90,110,"replay"]',stop="0",play="stop",src="#{images}/animate/brands/brands-id.jpg")
 				.ctrls
 					.item.item-1(rel="1")
 					.item.item-2(rel="2")
@@ -490,10 +493,10 @@ block content
 						img(data-layzr-strategy="#{images}/pages-strategy-lighter.png")
 					.item-icons
 						//- img(data-layzr-strategy="#{images}/pages-strategy-icons.png")
-						#strategyicons(width="300",height="300",count="44",normal="[1,1,'normal']",replay='[1,43,"normal"]',stop="43",play="normal",src="#{images}/animate/strategy/icons/icon-id.png")
+						#strategyicons(width="300",height="300",count="43",normal="[1,1,'normal']",replay='[1,42,"normal"]',stop="42",play="normal",src="#{images}/animate/strategy/icons/icon-id.jpg")
 						//- .test
-						.box
-							img(data-layzr-strategy="#{images}/pages-strategy-box.png")
+					.item-box
+						img(data-layzr-strategy="#{images}/pages-strategy-box.png")
 				.m-bottom
 					.line1
 					.line2

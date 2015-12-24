@@ -223,6 +223,9 @@ initNormal = function() {
     };
     return run10();
   }, 500);
+  if (Cookies.get("randomAward") === "true") {
+    randomAward = true;
+  }
   $(".pages-strategy .p-notes").addClass("show");
   $(".pages-strategy .p-notes").on("click", function() {
     $(".pages-strategy .p-notes").removeClass("show");
@@ -256,6 +259,11 @@ initNormal = function() {
       PostAward();
       return randomAward = true;
     }
+  });
+  $(".giveup").on("click", function() {
+    $(".award-box").hide();
+    randomAward = true;
+    return Cookies.set("randomAward", true);
   });
   $(".pages-media .icons .icon .alert").on("touchstart", function(evt) {
     evt.stopPropagation();
@@ -407,10 +415,9 @@ startLoadPage = function(name, evt) {
     return $(this).remove();
   });
   if (name === "brand") {
-    riot.mount("div#brandbg", "gif");
     riot.mount("div#brands", "gif");
     global["bottlebrand"].reload();
-    _gifCount = 3;
+    _gifCount = 2;
   }
   if (name === "technology") {
     riot.mount("div#technologylogo", "gif");
@@ -639,9 +646,6 @@ clearNone = function() {
     $(".pages-strategy").hide();
     $(".pages-technology").hide();
     $(".pages-contactus").hide();
-    if ((global != null) && (global["brandbg"] != null)) {
-      global["brandbg"].replay("normal");
-    }
     if ((global != null) && (global["brands"] != null)) {
       global["brands"].replay("stop");
     }
@@ -714,7 +718,7 @@ strategyShow = function() {
   if ((global != null) && (global["strategyhand"] != null)) {
     global["strategyhand"].replay("replay");
   }
-  $(".pages-strategy .item-icons").on("click", function() {
+  $(".pages-strategy .item-box").on("click", function() {
     if ((global != null) && (global["strategyicons"] != null)) {
       return global["strategyicons"].replay("replay");
     }
@@ -762,9 +766,6 @@ contactusLoadEnd = function() {
 };
 
 brandLoadEnd = function() {
-  if ((global != null) && (global["brandbg"] != null)) {
-    global["brandbg"].replay("replay");
-  }
   if ((global != null) && (global["brands"] != null)) {
     return global["brands"].replay("normal");
   }

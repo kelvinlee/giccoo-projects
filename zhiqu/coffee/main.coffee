@@ -123,6 +123,8 @@ initNormal = ->
 			requestAnimationFrame run10
 		run10()
 	,500
+	if Cookies.get("randomAward") is "true"
+		randomAward = true
 	$(".pages-strategy .p-notes").addClass "show"
 	$(".pages-strategy .p-notes").on "click", ->
 		$(".pages-strategy .p-notes").removeClass "show"
@@ -154,6 +156,10 @@ initNormal = ->
 		if !randomAward
 			PostAward()
 			randomAward = true
+	$(".giveup").on "click", ->
+		$(".award-box").hide()
+		randomAward = true
+		Cookies.set("randomAward",true)
 
 	$(".pages-media .icons .icon .alert").on "touchstart", (evt)->
 		evt.stopPropagation()
@@ -266,10 +272,10 @@ startLoadPage = (name,evt)->
 		$(this).after(img)
 		$(this).remove()
 	if name is "brand"
-		riot.mount("div#brandbg","gif")
+		# riot.mount("div#brandbg","gif")
 		riot.mount("div#brands","gif")
 		global["bottlebrand"].reload()
-		_gifCount = 3
+		_gifCount = 2
 	if name is "technology"
 		riot.mount("div#technologylogo","gif")
 		riot.mount("div#technologypeople5","gif")
@@ -457,7 +463,7 @@ clearNone = ->
 		$(".pages-technology").hide()
 		$(".pages-contactus").hide()
 
-		global["brandbg"].replay("normal") if global? && global["brandbg"]?
+		# global["brandbg"].replay("normal") if global? && global["brandbg"]?
 		global["brands"].replay("stop") if global? && global["brands"]?
 		global["bottlemediamovie"].replay("stop") if global? && global["bottlemediamovie"]?
 		global["strategypeople1"].replay("stop") if global? && global["strategypeople1"]?
@@ -490,7 +496,7 @@ strategyShow = ->
 	global["strategyad"].replay("replay") if global? && global["strategyad"]?
 	global["strategyhand"].replay("replay") if global? && global["strategyhand"]?
 
-	$(".pages-strategy .item-icons").on "click", ->
+	$(".pages-strategy .item-box").on "click", ->
 		global["strategyicons"].replay("replay") if global? && global["strategyicons"]?
 	$(".pages-strategy .fcanvas").on "click", ->
 		console.log "test" if debug
@@ -516,7 +522,7 @@ contactusLoadEnd = ->
 	global["contactusfull"].replay("replay") if global? && global["contactusfull"]?
 
 brandLoadEnd = ->
-	global["brandbg"].replay("replay") if global? && global["brandbg"]?
+	# global["brandbg"].replay("replay") if global? && global["brandbg"]?
 	global["brands"].replay("normal") if global? && global["brands"]?
 
 technologyShow = ->
