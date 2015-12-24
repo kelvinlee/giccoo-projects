@@ -27,74 +27,10 @@ window.onload = ->
 			window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3dd8b8d67e940c4&redirect_uri={url}&response_type=code&scope=snsapi_base&state=123#wechat_redirect".replace("{url}", encodeURIComponent(PubUrl+"/zhiqu/"));
 			return false
 
-	setTimeout ->
-		all = 0
-		t = new Date()
-		i = 0
-		run10 = ->
-			i++
-			all = all + (new Date() - t)
-			t = new Date()
-			if i>= 10
-				fps = parseInt 1000 / all / i * 100
-				console.log "fps:",fps if debug
-				return false
-			requestAnimationFrame run10
-		run10()
-	,500
 
-	if Cookies.get("note-1")
-		$(".homepage .p-notes").remove()
-	if Cookies.get("note-2")
-		$(".pages-strategy .p-notes").remove()
-	else
-		$(".pages-strategy .p-notes").addClass "show"
-		$(".pages-strategy .p-notes").on "click", ->
-			$(".pages-strategy .p-notes").removeClass "show"
-			Cookies.set("note-2","true")
-	if Cookies.get("note-3")
-		$(".pages-technology .p-notes").remove()
-	else
-		$(".pages-technology .p-notes").addClass "show"
-		$(".pages-technology .p-notes").on "click", ->
-			$(".pages-technology .p-notes").removeClass "show"
-			Cookies.set("note-3","true")
-
-	$(".bottle-logo-next").css {
-		bottom: 164 - $("body").height() * 0.13 - 18
-	}
-	$(".pages-award .icon").on "click", openAward
-	$(".pages-media .bottle-media-movie").on "click", openMedia
-	$(".pages-brand .item").on "click", openBrand
+	$(".firstPage").show()
 	$(".firstPage .content").on "click", init
 
-	$(".pages-media .icons .icon").on "touchstart", (evt)->
-		evt.stopPropagation()
-		evt.preventDefault()
-		$(".alert",this).addClass "on"
-	$(".pages-media .icons .icon").on "touchmove", (evt)->
-		evt.stopPropagation()
-		evt.preventDefault()
-	$(".pages-media .icons .icon").on "touchend", (evt)->
-		evt.stopPropagation()
-		evt.preventDefault()
-		$(".alert",this).removeClass "on"
-		if !randomAward
-			PostAward()
-			randomAward = true
-
-	$(".pages-media .icons .icon .alert").on "touchstart", (evt)->
-		evt.stopPropagation()
-		evt.preventDefault()
-	$(".pages-media .icons .icon .alert").on "touchmove", (evt)->
-		evt.stopPropagation()
-		evt.preventDefault()
-	$(".pages-media .icons .icon .alert").on "touchend", (evt)->
-		evt.stopPropagation()
-		evt.preventDefault()
-	$("#pop .close").on "click", ->
-		$("#pop").hide()
-		$("#pop .pop-content").html("")
 	loadWechatConfig()
 	wx.ready ->
 		shareContent =
@@ -110,6 +46,24 @@ window.onload = ->
 		wx.onMenuShareAppMessage shareContent
 		wx.onMenuShareQQ shareContent
 		wx.onMenuShareWeibo shareContent
+	
+	# if Cookies.get("note-1")
+	# 	$(".homepage .p-notes").remove()
+	# if Cookies.get("note-2")
+	# 	$(".pages-strategy .p-notes").remove()
+	# else
+	# 	$(".pages-strategy .p-notes").addClass "show"
+	# 	$(".pages-strategy .p-notes").on "click", ->
+	# 		$(".pages-strategy .p-notes").removeClass "show"
+	# 		Cookies.set("note-2","true")
+	# if Cookies.get("note-3")
+	# 	$(".pages-technology .p-notes").remove()
+	# else
+	# 	$(".pages-technology .p-notes").addClass "show"
+	# 	$(".pages-technology .p-notes").on "click", ->
+	# 		$(".pages-technology .p-notes").removeClass "show"
+	# 		Cookies.set("note-3","true")
+
 	# finishedLoad()
 
 PostAward = ->
@@ -124,7 +78,7 @@ PostAward = ->
 readyEmail = false
 showAwardBox = ->
 	$(".award-box").show()
-	$(".award-box .box").on "click", ->
+	$(".award-box .box .content,.award-box .text").on "click", ->
 		$(".award-box .bingo-box").hide()
 		$(".award-box .bingo-email").show()
 	$(".award-box .bingo-email #submit").on "click", ->
@@ -153,10 +107,74 @@ loadWechatConfig = ->
 	s.parentNode.insertBefore hm, s
 	return
 
+initNormal = ->
+	setTimeout ->
+		all = 0
+		t = new Date()
+		i = 0
+		run10 = ->
+			i++
+			all = all + (new Date() - t)
+			t = new Date()
+			if i>= 10
+				fps = parseInt 1000 / all / i * 100
+				console.log "fps:",fps if debug
+				return false
+			requestAnimationFrame run10
+		run10()
+	,500
+	$(".pages-strategy .p-notes").addClass "show"
+	$(".pages-strategy .p-notes").on "click", ->
+		$(".pages-strategy .p-notes").removeClass "show"
+		Cookies.set("note-2","true")
+	$(".pages-technology .p-notes").addClass "show"
+	$(".pages-technology .p-notes").on "click", ->
+		$(".pages-technology .p-notes").removeClass "show"
+		Cookies.set("note-3","true")
+
+	$(".bottle-logo-next").css {
+		bottom: 164 - $("body").height() * 0.13 - 18
+	}
+	$(".pages-award .icon").on "click", openAward
+	$(".pages-media .bottle-media-movie").on "click", openMedia
+	$(".pages-brand .item").on "click", openBrand
+	
+
+	$(".pages-media .icons .icon").on "touchstart", (evt)->
+		evt.stopPropagation()
+		evt.preventDefault()
+		$(".alert",this).addClass "on"
+	$(".pages-media .icons .icon").on "touchmove", (evt)->
+		evt.stopPropagation()
+		evt.preventDefault()
+	$(".pages-media .icons .icon").on "touchend", (evt)->
+		evt.stopPropagation()
+		evt.preventDefault()
+		$(".alert",this).removeClass "on"
+		if !randomAward
+			PostAward()
+			randomAward = true
+
+	$(".pages-media .icons .icon .alert").on "touchstart", (evt)->
+		evt.stopPropagation()
+		evt.preventDefault()
+	$(".pages-media .icons .icon .alert").on "touchmove", (evt)->
+		evt.stopPropagation()
+		evt.preventDefault()
+	$(".pages-media .icons .icon .alert").on "touchend", (evt)->
+		evt.stopPropagation()
+		evt.preventDefault()
+	$("#pop .close").on "click", ->
+		$("#pop").hide()
+		$("#pop .pop-content").html("")
+
+	# 加载微信分享内容.
+	
+
 init = ->
 	$(".firstPage").addClass "on"
+	$(".firstPage .loading .loadbox").addClass "replay"
 	setTimeout ->
-		# tags = riot.mount("div#main","main")
 		loadStart()
 	,1500
 test = ->
@@ -167,9 +185,6 @@ loadStart = ->
 	count = $("[data-layzr]").length
 	now = 0
 	ep = $("#loading-text")
-
-	# $("[data-layzr]").on "load", ->
-		
 
 	$("[data-layzr]").each ->
 		# $(this).attr("src",$(this).attr("data-layzr"))
@@ -194,11 +209,14 @@ loadGIF = ->
 loadEnd = ->
 	_gifCount = $("gif").length
 	riot.mount("*")
+	# riot.mount("div#bottlebrand","gif")
+	# riot.mount("div#bottlelogo","gif")
+	initNormal()
 	paoAudio = riot.mount("div#paoAudio","playsound")
 	paoAudio[0].stop()
 	console.log "loaded." if debug
 	$(".homepage .p-notes").addClass "show"
-	$(".homepage .p-notes").on "click", ->
+	$(".homepage .p-notes .note").on "click", ->
 		Cookies.set("note-1","true")
 		$(".homepage .p-notes").removeClass "show"
 
@@ -293,6 +311,8 @@ startLoadPage = (name,evt)->
 	loadPageEnd() if count is 0
 
 hideFirstPage = ->
+	# return false
+
 	$(".firstPage .loading .box").hide()
 	$(".firstPage .loading .box-text").show()
 
@@ -300,11 +320,12 @@ hideFirstPage = ->
 		alert "riot create fail."
 
 	setTimeout ->
-		$(".firstPage").addClass "fadeOut animated"
+		$(".main").show()
+		$(".firstPage").addClass "fadeOut animated duration-10"
 		setTimeout ->
 			$(".firstPage").remove()
 		,500
-	,4000
+	,2000
 
 passMoveFun = (name)->
 	# console.log "passMoveFun:",name
@@ -462,7 +483,7 @@ mediaShow = ->
 strategyShow = ->
 	global["strategypeople1"].replay("replay") if global? && global["strategypeople1"]?
 	global["strategypeople2"].replay("replay") if global? && global["strategypeople2"]?
-	global["strategyicons"].replay("replay") if global? && global["strategyicons"]?
+	# global["strategyicons"].replay("replay") if global? && global["strategyicons"]?
 	global["strategyarrowyellow1"].replay("replay") if global? && global["strategyarrowyellow1"]?
 	global["strategyarrowyellow2"].replay("replay") if global? && global["strategyarrowyellow2"]?
 	global["strategyarrowwhite"].replay("replay") if global? && global["strategyarrowwhite"]?
@@ -500,7 +521,7 @@ brandLoadEnd = ->
 
 technologyShow = ->
 	# technologylogo
-	global["technologylogo"].replay("replay") if global? && global["technologylogo"]?
+	# global["technologylogo"].replay("replay") if global? && global["technologylogo"]?
 	$(".pages-technology .box-logo").on "click", ->
 		global["technologylogo"].replay("replay") if global? && global["technologylogo"]?
 	console.log "T start" if debug

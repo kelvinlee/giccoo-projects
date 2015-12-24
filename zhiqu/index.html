@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
-    <div class="wechat-share-hide">
-    </div>
     <div class="firstPage">
       <div class="content">
         <div class="home"><img src="http://disk.giccoo.com/projects/zhiqu/img/loaded/home-bg.png">
@@ -31,8 +29,8 @@
       </div>
       <div class="loading">
         <div class="box">
-          <div class="loadbox replay"></div>
-          <div class="text"><span id="loading-text">0</span>%</div>
+          <div class="loadbox"></div>
+          <div class="text"><span id="loading-text">1</span>%</div>
           <div class="bubbles">
             <div class="bubble bubble-1"><img src="http://disk.giccoo.com/projects/zhiqu/img/loading-bubble.png"></div>
             <div class="bubble bubble-2"><img src="http://disk.giccoo.com/projects/zhiqu/img/loading-bubble.png"></div>
@@ -69,13 +67,13 @@
           <div class="note note-hand fadeIn animated delay-10"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/note-hand.png">
             <div class="point"><em></em><em class="last"></em></div>
           </div>
-          <div class="note note-1 rollIn animated delay-5"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/bottle-logo.png"></div>
-          <div class="note note-2 rollIn animated delay-7"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/bottle-strategy.png"></div>
-          <div class="note note-3 rollIn animated delay-9"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/bottle-media.png"></div>
-          <div class="note note-4 rollIn animated delay-11"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/bottle-brand.png"></div>
-          <div class="note note-5 rollIn animated delay-13"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/bottle-technology.png"></div>
-          <div class="note note-6 rollIn animated delay-15"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/bottle-award.png"></div>
-          <div class="note note-7 rollIn animated delay-17"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/bottle-contactus.png"></div>
+          <div class="note note-1 rollIn animated delay-5"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/bottle-logo-new.png"></div>
+          <div class="note note-2 rollIn animated delay-7"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/bottle-strategy-new.png"></div>
+          <div class="note note-3 rollIn animated delay-9"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/bottle-media-new.png"></div>
+          <div class="note note-4 rollIn animated delay-11"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/bottle-brand-new.png"></div>
+          <div class="note note-5 rollIn animated delay-13"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/bottle-technology-new.png"></div>
+          <div class="note note-6 rollIn animated delay-15"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/bottle-award-new.png"></div>
+          <div class="note note-7 rollIn animated delay-17"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/note/bottle-contactus-new.png"></div>
         </div>
         <div class="bottle bottle-brand"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/bottle-brand.png">
           <gif load="true" id="bottlebrand" width="300" height="750" count="51" normal="[0,0,&quot;normal&quot;]" replay="[1,50,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="50" play="normal" src="http://disk.giccoo.com/projects/zhiqu/img/animate/bottle-brand/brand-id.png" passmove="36" playend="bottleRunEnd" callback="brandLoadEnd"></gif>
@@ -93,7 +91,7 @@
           <div class="goon"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/bottle-logo-goon.png"></div>
         </div>
         <div class="bottle bottle-strategy"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/bottle-strategy.png">
-          <gif load="true" id="bottlestrategy" width="850" height="200" count="78" normal="[0,0,&quot;normal&quot;]" replay="[1,77,&quot;stop&quot;]" prepare="[1,17,&quot;prepare&quot;]" stop="77" play="normal" src="http://disk.giccoo.com/projects/zhiqu/img/animate/bottle-strategy/strategy-id.png" passmove="69" playend="bottleRunEnd"></gif>
+          <gif load="true" id="bottlestrategy" width="850" height="200" count="78" normal="[0,0,&quot;normal&quot;]" replay="[1,77,&quot;stop&quot;]" prepare="[1,77,&quot;prepare&quot;]" stop="77" play="normal" src="http://disk.giccoo.com/projects/zhiqu/img/animate/bottle-strategy/strategy-id.png" passmove="69" playend="bottleRunEnd"></gif>
           <div class="shadow"><img data-layzr="http://disk.giccoo.com/projects/zhiqu/img/bottle-strategy-shadow.png"></div>
           <div onclick="openBottleMain(this)" page-name="strategy" class="on-button"></div>
         </div>
@@ -153,7 +151,7 @@
             </div>
             <div class="box-logo"><img data-layzr-technology="http://disk.giccoo.com/projects/zhiqu/img/technology/box.png"></div>
             <div class="logo">
-              <div id="technologylogo" width="170" height="200" delay="4000" normal="[0,0,'normal']" replay="[0,50,'replay']" stop="0" play="normal" count="51" src="http://disk.giccoo.com/projects/zhiqu/img/animate/technology/logo/logo-id.png"></div>
+              <div id="technologylogo" width="170" height="200" normal="[0,0,'normal']" replay="[0,50,'normal']" stop="0" play="normal" count="51" src="http://disk.giccoo.com/projects/zhiqu/img/animate/technology/logo/logo-id.png"></div>
             </div>
             <div class="item-switch"><img data-layzr-technology="http://disk.giccoo.com/projects/zhiqu/img/pages-strategy-switch.png"></div>
             <div class="item-light-red"><img data-layzr-technology="http://disk.giccoo.com/projects/zhiqu/img/pages-strategy-light-red.png"></div>
@@ -568,7 +566,7 @@
             </div>
             <div class="item-lighter"><img data-layzr-strategy="http://disk.giccoo.com/projects/zhiqu/img/pages-strategy-lighter.png"></div>
             <div class="item-icons">
-              <div id="strategyicons" width="300" height="300" count="44" normal="[1,1,'normal']" replay="[1,43,&quot;replay&quot;]" delay="6000" stop="43" play="normal" src="http://disk.giccoo.com/projects/zhiqu/img/animate/strategy/icons/icon-id.png"></div>
+              <div id="strategyicons" width="300" height="300" count="44" normal="[1,1,'normal']" replay="[1,43,&quot;normal&quot;]" stop="43" play="normal" src="http://disk.giccoo.com/projects/zhiqu/img/animate/strategy/icons/icon-id.png"></div>
               <div class="box"><img data-layzr-strategy="http://disk.giccoo.com/projects/zhiqu/img/pages-strategy-box.png"></div>
             </div>
           </div>
@@ -642,9 +640,8 @@
     </div>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="http://disk.giccoo.com/projects/libs/js/min/jquery.min.js"></script>
-    <script src="http://disk.giccoo.com/projects/libs/js/min/layzr.min.js"></script>
     <script src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/riot/2.3.12/riot.min.js"></script>
+    <script src="http://disk.giccoo.com/projects/libs/js/min/riot.js"></script>
     <script src="http://disk.giccoo.com/projects/libs/js/js.cookie.js"></script>
     <script src="js/tag.js"></script>
     <script src="js/main.js"></script>

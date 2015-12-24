@@ -196,7 +196,7 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     	}
     }.bind(this);
     this.on("mount",function(){
-    	$(".gif",self.root).html(loads[0])
+
     	self.mounted = true
     	self.init()
     })

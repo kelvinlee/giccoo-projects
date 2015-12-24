@@ -146,7 +146,7 @@
     	}
     }
     this.on("mount",function(){
-    	$(".gif",self.root).html(loads[0])
+    	//- $(".gif",self.root).html(loads[0])
     	self.mounted = true
     	self.init()
     })

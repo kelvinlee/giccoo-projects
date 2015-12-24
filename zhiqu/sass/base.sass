@@ -943,6 +943,7 @@ $award-delay: 1.8s
 
 
 .firstPage
+	+hide
 	+posa
 	+tl
 	+w
@@ -1081,11 +1082,11 @@ $award-delay: 1.8s
 	&.on
 		.loading .box
 			+tran($time: 1s)
-			+transform(translate3d(-50%,-50%,0) scale(1,1))
+			+transform(translate(-50%,-50%) scale(1,1))
 			transition-delay: 1s
 		.content
 			+tran($time: 1s)
-			+transform(translate3d(0,-70%,0) scale(14,14))
+			+transform(translate(0,-70%) scale(14,14))
 			transition-delay: 1s
 			opacity: 0.5
 			.door
@@ -1112,6 +1113,7 @@ $award-delay: 1.8s
 		min-width: 5%
 
 .main
+	+hide
 	+posa
 	+tl
 	+w(640px)
@@ -1124,7 +1126,7 @@ $award-delay: 1.8s
 	transform-origin: top left
 	.back-btn
 		+posa
-		+tl(-200px,-200px)
+		+tl(30px,30px)
 		// +tran
 		z-index: 1001
 		opacity: 0
@@ -1209,14 +1211,14 @@ $award-delay: 1.8s
 		.note-2
 			+tl(-8px,344px)
 		.note-3
-			+tl(230px,334px)
+			+tl(230px,474px)
 		.note-4
-			+tl(226px,170px)
+			+tl(226px,246px)
 		.note-5
 			+tl(164px,56px)
 		.note-6
 			+tl(702px,280px)
-			+w(248px)
+			+w(110px)
 		.note-7
 			+tl(594px,470px)
 		.p-strategy
@@ -1241,8 +1243,8 @@ $award-delay: 1.8s
 				opacity: 0
 				transition-delay: $move
 		.back-btn
-			+tl(auto,auto)
-			+tr(10px,10px)
+			// +tl(auto,auto)
+			// +tr(10px,10px)
 			opacity: 1
 			+transform(rotate(-90deg))
 			transition-delay: $move
@@ -1257,8 +1259,8 @@ $award-delay: 1.8s
 				opacity: 0
 				transition-delay: $move
 		.back-btn
-			+tl(auto,auto)
-			+tr(50px,10px)
+			// +tl(auto,auto)
+			// +tr(50px,10px)
 			+transform(rotate(-90deg))
 			opacity: 1
 			transition-delay: $move
@@ -1269,8 +1271,8 @@ $award-delay: 1.8s
 			transition-delay: 0
 			+transform(translate3d(-148px,112%,0))
 		.back-btn
-			+tl(auto,auto)
-			+bl(10px,10px)
+			// +tl(auto,auto)
+			// +bl(10px,10px)
 			opacity: 1
 			transition-delay: $move
 	&.page-logo 
@@ -1288,8 +1290,8 @@ $award-delay: 1.8s
 					opacity: 0
 					transition-delay: $logo-delay+1.3/2
 		.back-btn
-			+tl(auto,auto)
-			+br(10px,10px)
+			// +tl(auto,auto)
+			// +br(10px,10px)
 			opacity: 1
 			transition-delay: $logo-delay+1.3
 		.pages-logo-bg
@@ -1303,7 +1305,7 @@ $award-delay: 1.8s
 			+transform(translate3d(-750px,-490px,0))
 			transition-delay: 0
 		.back-btn
-			+tl(70px,10px)
+			// +tl(70px,10px)
 			+transform(rotate(90deg))
 			opacity: 1
 			transition-delay: 1.2s
@@ -1313,7 +1315,7 @@ $award-delay: 1.8s
 			transition-delay: 0
 			+transform(translate3d(-780px,550px,0))
 		.back-btn
-			+tl(10px,10px)
+			// +tl(10px,10px)
 			+transform(rotate(90deg))
 			opacity: 1
 			transition-delay: 1.5s
@@ -1323,8 +1325,8 @@ $award-delay: 1.8s
 			transition-delay: 0
 			+transform(translate3d(740px,-550px,0))
 		.back-btn
-			+tl(auto,auto)
-			+tr(10px,10px)
+			// +tl(auto,auto)
+			// +tr(10px,10px)
 			+transform(rotate(-90deg))
 			opacity: 1
 			transition-delay: 1.3s

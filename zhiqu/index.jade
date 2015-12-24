@@ -9,7 +9,7 @@ block css
 block content
 	- var images = "http://disk.giccoo.com/projects/zhiqu/img"
 	//- var images = "img"
-	.wechat-share-hide
+	//- .wechat-share-hide
 		//- img#share(src="http://disk.giccoo.com/projects/huaweiG7/img/share.jpg")
 	//- gif(width="640",height="1134",normal='[0,86, "replay"]',replay='[87, 126]',stop="86",play="normal",count="127",src="#{images}/animate/brands/brand-id.png")
 	//- gif(id="brandbg",width="640",height="1134",normal='[0,6, "stop"]',replay='[0,7]',stop="[7,7]",play="normal",count="8",src="#{images}/animate/brandbg/brand-id.png")
@@ -42,9 +42,9 @@ block content
 		.loading
 			.box
 				//- gif(id="loadbox",width="300",height="500",normal='replay',replay='replay',stop="stop",play="replay",count="29",src="#{images}/loaded/box.png")
-				.loadbox.replay
+				.loadbox
 				.text
-					span#loading-text 0
+					span#loading-text 1
 					| %
 				.bubbles
 					-for (var i=0;i<3;i++)
@@ -82,21 +82,20 @@ block content
 						em
 						em.last
 				.note.note-1.rollIn.animated.delay-5
-					img(data-layzr="#{images}/note/bottle-logo.png")
+					img(data-layzr="#{images}/note/bottle-logo-new.png")
 				.note.note-2.rollIn.animated.delay-7
-					img(data-layzr="#{images}/note/bottle-strategy.png")
+					img(data-layzr="#{images}/note/bottle-strategy-new.png")
 				.note.note-3.rollIn.animated.delay-9
-					img(data-layzr="#{images}/note/bottle-media.png")
+					img(data-layzr="#{images}/note/bottle-media-new.png")
 				.note.note-4.rollIn.animated.delay-11
-					img(data-layzr="#{images}/note/bottle-brand.png")
+					img(data-layzr="#{images}/note/bottle-brand-new.png")
 				.note.note-5.rollIn.animated.delay-13
-					img(data-layzr="#{images}/note/bottle-technology.png")
+					img(data-layzr="#{images}/note/bottle-technology-new.png")
 				.note.note-6.rollIn.animated.delay-15
-					img(data-layzr="#{images}/note/bottle-award.png")
+					img(data-layzr="#{images}/note/bottle-award-new.png")
 				.note.note-7.rollIn.animated.delay-17
-					img(data-layzr="#{images}/note/bottle-contactus.png")
-				//- .note.note-3
-					img(data-layzr="#{images}/note/bottle-strategy.png")
+					img(data-layzr="#{images}/note/bottle-contactus-new.png")
+				
 
 			.bottle.bottle-brand
 				img(data-layzr="#{images}/bottle-brand.png")
@@ -125,7 +124,7 @@ block content
 				//- .gif.bottlestrategy.normal(id="bottlestrategy",width="850",height="200",count="78",normal='replay',replay='stop',stop="stop",play="normal",src="#{images}/animate/bottle-strategy/strategy.png")
 					.gif-content
 						img(data-layzr="img/animate/bottle-strategy/strategy.png")
-				gif(load="true",id="bottlestrategy",width="850",height="200",count="78",normal='[0,0,"normal"]',replay='[1,77,"stop"]',prepare='[1,17,"prepare"]',stop="77",play="normal",src="#{images}/animate/bottle-strategy/strategy-id.png",passmove="69",playend="bottleRunEnd")
+				gif(load="true",id="bottlestrategy",width="850",height="200",count="78",normal='[0,0,"normal"]',replay='[1,77,"stop"]',prepare='[1,77,"prepare"]',stop="77",play="normal",src="#{images}/animate/bottle-strategy/strategy-id.png",passmove="69",playend="bottleRunEnd")
 				.shadow
 					img(data-layzr="#{images}/bottle-strategy-shadow.png")
 				.on-button(onclick="openBottleMain(this)",page-name="strategy")
@@ -216,7 +215,7 @@ block content
 					.box-logo
 						img(data-layzr-technology="#{images}/technology/box.png")
 					.logo
-						#technologylogo(width="170",height="200",delay="4000",normal="[0,0,'normal']",replay="[0,50,'replay']",stop="0",play="normal",count="51",src="#{images}/animate/technology/logo/logo-id.png")
+						#technologylogo(width="170",height="200",normal="[0,0,'normal']",replay="[0,50,'normal']",stop="0",play="normal",count="51",src="#{images}/animate/technology/logo/logo-id.png")
 					.item-switch
 						img(data-layzr-technology="#{images}/pages-strategy-switch.png")
 					.item-light-red
@@ -491,7 +490,7 @@ block content
 						img(data-layzr-strategy="#{images}/pages-strategy-lighter.png")
 					.item-icons
 						//- img(data-layzr-strategy="#{images}/pages-strategy-icons.png")
-						#strategyicons(width="300",height="300",count="44",normal="[1,1,'normal']",replay='[1,43,"replay"]',delay="6000",stop="43",play="normal",src="#{images}/animate/strategy/icons/icon-id.png")
+						#strategyicons(width="300",height="300",count="44",normal="[1,1,'normal']",replay='[1,43,"normal"]',stop="43",play="normal",src="#{images}/animate/strategy/icons/icon-id.png")
 						//- .test
 						.box
 							img(data-layzr-strategy="#{images}/pages-strategy-box.png")
@@ -561,9 +560,9 @@ block js
 	//- script(src="/libs/js/min/tweenjs-0.6.0.min.js",type="text/javascript")
 	//- script(src="/libs/js/min/preloadjs-0.4.1.min.js",type="text/javascript")
 	script(src="http://disk.giccoo.com/projects/libs/js/min/jquery.min.js")
-	script(src="http://disk.giccoo.com/projects/libs/js/min/layzr.min.js")
+	//- script(src="http://disk.giccoo.com/projects/libs/js/min/layzr.min.js")
 	script(src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js")
-	script(src="https://cdn.jsdelivr.net/riot/2.3.12/riot.min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/riot.js")
 	script(src="http://disk.giccoo.com/projects/libs/js/js.cookie.js")
 	script(src="js/tag.js")
 	script(src="js/main.js")

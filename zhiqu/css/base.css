@@ -406,7 +406,7 @@ ul {
   100% {
     background-position-x: -8700px; } }
 .loadbox {
-  background: url("../img/loaded/box.png") no-repeat -8700px 0;
+  background: url("http://disk.giccoo.com/projects/zhiqu/img/loaded/box.png") no-repeat -8700px 0;
   background-size: 8700px 500px;
   background-color: transparent;
   width: 300px;
@@ -2469,6 +2469,7 @@ html, body {
   left: 0px; }
 
 .firstPage {
+  display: none;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -2694,15 +2695,17 @@ html, body {
   .firstPage.on .loading .box {
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
-    -webkit-transform: translate3d(-50%, -50%, 0) scale(1, 1);
-            transform: translate3d(-50%, -50%, 0) scale(1, 1);
+    -webkit-transform: translate(-50%, -50%) scale(1, 1);
+        -ms-transform: translate(-50%, -50%) scale(1, 1);
+            transform: translate(-50%, -50%) scale(1, 1);
     -webkit-transition-delay: 1s;
             transition-delay: 1s; }
   .firstPage.on .content {
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
-    -webkit-transform: translate3d(0, -70%, 0) scale(14, 14);
-            transform: translate3d(0, -70%, 0) scale(14, 14);
+    -webkit-transform: translate(0, -70%) scale(14, 14);
+        -ms-transform: translate(0, -70%) scale(14, 14);
+            transform: translate(0, -70%) scale(14, 14);
     -webkit-transition-delay: 1s;
             transition-delay: 1s;
     opacity: 0.5; }
@@ -2735,6 +2738,7 @@ html, body {
     min-width: 5%; }
 
 .main {
+  display: none;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -2750,8 +2754,8 @@ html, body {
           transform-origin: top left; }
   .main .back-btn {
     position: absolute;
-    top: -200px;
-    left: -200px;
+    top: 30px;
+    left: 30px;
     z-index: 1001;
     opacity: 0; }
   .main .homepage {
@@ -2856,17 +2860,17 @@ html, body {
       left: 344px; }
     .main .p-notes .note-3, .main .award-box .note-3 {
       top: 230px;
-      left: 334px; }
+      left: 474px; }
     .main .p-notes .note-4, .main .award-box .note-4 {
       top: 226px;
-      left: 170px; }
+      left: 246px; }
     .main .p-notes .note-5, .main .award-box .note-5 {
       top: 164px;
       left: 56px; }
     .main .p-notes .note-6, .main .award-box .note-6 {
       top: 702px;
       left: 280px;
-      width: 248px; }
+      width: 110px; }
     .main .p-notes .note-7, .main .award-box .note-7 {
       top: 594px;
       left: 470px; }
@@ -2902,10 +2906,6 @@ html, body {
       -webkit-transition-delay: 1.2s;
               transition-delay: 1.2s; }
   .main.page-technology .back-btn {
-    top: auto;
-    left: auto;
-    top: 10px;
-    right: 10px;
     opacity: 1;
     -webkit-transform: rotate(-90deg);
         -ms-transform: rotate(-90deg);
@@ -2926,10 +2926,6 @@ html, body {
       -webkit-transition-delay: 1.4s;
               transition-delay: 1.4s; }
   .main.page-strategy .back-btn {
-    top: auto;
-    left: auto;
-    top: 50px;
-    right: 10px;
     -webkit-transform: rotate(-90deg);
         -ms-transform: rotate(-90deg);
             transform: rotate(-90deg);
@@ -2944,10 +2940,6 @@ html, body {
     -webkit-transform: translate3d(-148px, 112%, 0);
             transform: translate3d(-148px, 112%, 0); }
   .main.page-brand .back-btn {
-    top: auto;
-    left: auto;
-    bottom: 10px;
-    left: 10px;
     opacity: 1;
     -webkit-transition-delay: 1.2s;
             transition-delay: 1.2s; }
@@ -2971,10 +2963,6 @@ html, body {
       -webkit-transition-delay: 1.85s;
               transition-delay: 1.85s; }
   .main.page-logo .back-btn {
-    top: auto;
-    left: auto;
-    bottom: 10px;
-    right: 10px;
     opacity: 1;
     -webkit-transition-delay: 2.5s;
             transition-delay: 2.5s; }
@@ -2994,8 +2982,6 @@ html, body {
     -webkit-transition-delay: 0;
             transition-delay: 0; }
   .main.page-contactus .back-btn {
-    top: 70px;
-    left: 10px;
     -webkit-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
             transform: rotate(90deg);
@@ -3010,8 +2996,6 @@ html, body {
     -webkit-transform: translate3d(-780px, 550px, 0);
             transform: translate3d(-780px, 550px, 0); }
   .main.page-media .back-btn {
-    top: 10px;
-    left: 10px;
     -webkit-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
             transform: rotate(90deg);
@@ -3026,10 +3010,6 @@ html, body {
     -webkit-transform: translate3d(740px, -550px, 0);
             transform: translate3d(740px, -550px, 0); }
   .main.page-award .back-btn {
-    top: auto;
-    left: auto;
-    top: 10px;
-    right: 10px;
     -webkit-transform: rotate(-90deg);
         -ms-transform: rotate(-90deg);
             transform: rotate(-90deg);
@@ -3889,156 +3869,156 @@ html, body {
               animation-iteration-count: infinite; }
       .pages-contactus.thispage .content .bubbles .bubble-0 {
         width: 8px;
-        top: 86%;
-        left: 41%;
+        top: 22%;
+        left: 15%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 2196ms;
-                animation-duration: 2196ms;
+        -webkit-animation-duration: 2310ms;
+                animation-duration: 2310ms;
         -webkit-animation-delay: 500ms;
                 animation-delay: 500ms; }
       .pages-contactus.thispage .content .bubbles .bubble-1 {
         width: 9px;
-        top: 44%;
-        left: 9%;
+        top: 73%;
+        left: 15%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 2117ms;
-                animation-duration: 2117ms;
+        -webkit-animation-duration: 2614ms;
+                animation-duration: 2614ms;
         -webkit-animation-delay: 600ms;
                 animation-delay: 600ms; }
       .pages-contactus.thispage .content .bubbles .bubble-2 {
         width: 10px;
-        top: 58%;
-        left: 14%;
+        top: 13%;
+        left: 40%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 2294ms;
-                animation-duration: 2294ms;
+        -webkit-animation-duration: 2367ms;
+                animation-duration: 2367ms;
         -webkit-animation-delay: 700ms;
                 animation-delay: 700ms; }
       .pages-contactus.thispage .content .bubbles .bubble-3 {
         width: 11px;
-        top: 67%;
-        left: 22%;
+        top: 35%;
+        left: 5%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 1672ms;
-                animation-duration: 1672ms;
+        -webkit-animation-duration: 1429ms;
+                animation-duration: 1429ms;
         -webkit-animation-delay: 800ms;
                 animation-delay: 800ms; }
       .pages-contactus.thispage .content .bubbles .bubble-4 {
         width: 12px;
-        top: 69%;
-        left: 13%;
+        top: 20%;
+        left: 40%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 2028ms;
-                animation-duration: 2028ms;
+        -webkit-animation-duration: 2842ms;
+                animation-duration: 2842ms;
         -webkit-animation-delay: 900ms;
                 animation-delay: 900ms; }
       .pages-contactus.thispage .content .bubbles .bubble-5 {
         width: 13px;
-        top: 58%;
-        left: 46%;
+        top: 23%;
+        left: 23%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 2661ms;
-                animation-duration: 2661ms;
+        -webkit-animation-duration: 1978ms;
+                animation-duration: 1978ms;
         -webkit-animation-delay: 1000ms;
                 animation-delay: 1000ms; }
       .pages-contactus.thispage .content .bubbles .bubble-6 {
         width: 14px;
-        top: 53%;
-        left: 10%;
+        top: 66%;
+        left: 16%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 2615ms;
-                animation-duration: 2615ms;
+        -webkit-animation-duration: 2703ms;
+                animation-duration: 2703ms;
         -webkit-animation-delay: 1100ms;
                 animation-delay: 1100ms; }
       .pages-contactus.thispage .content .bubbles .bubble-7 {
         width: 15px;
-        top: 71%;
-        left: 33%;
+        top: 8%;
+        left: 49%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 2857ms;
-                animation-duration: 2857ms;
+        -webkit-animation-duration: 2805ms;
+                animation-duration: 2805ms;
         -webkit-animation-delay: 1200ms;
                 animation-delay: 1200ms; }
       .pages-contactus.thispage .content .bubbles .bubble-8 {
         width: 16px;
-        top: 45%;
-        left: 41%;
+        top: 16%;
+        left: 31%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 2296ms;
-                animation-duration: 2296ms;
+        -webkit-animation-duration: 1486ms;
+                animation-duration: 1486ms;
         -webkit-animation-delay: 1300ms;
                 animation-delay: 1300ms; }
       .pages-contactus.thispage .content .bubbles .bubble-9 {
         width: 17px;
-        top: 50%;
-        left: 29%;
+        top: 76%;
+        left: 37%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 1499ms;
-                animation-duration: 1499ms;
+        -webkit-animation-duration: 1902ms;
+                animation-duration: 1902ms;
         -webkit-animation-delay: 1400ms;
                 animation-delay: 1400ms; }
       .pages-contactus.thispage .content .bubbles .bubble-10 {
         width: 18px;
-        top: 69%;
-        left: 48%;
+        top: 44%;
+        left: 12%;
         -webkit-animation: bubble 0.5s ease;
                 animation: bubble 0.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
-        -webkit-animation-duration: 2498ms;
-                animation-duration: 2498ms;
+        -webkit-animation-duration: 1189ms;
+                animation-duration: 1189ms;
         -webkit-animation-delay: 1500ms;
                 animation-delay: 1500ms; }
   .pages-contactus .content {
