@@ -31,7 +31,7 @@ gif
 			var image = new Image()
 			image.src = opts.src.replace("id",i+1)
 			image.onload = function(){
-				self.load()
+				self.load(this)
 			}
 			loads.push(image)
 		}
@@ -47,9 +47,12 @@ gif
 				loads.push(image)
 			}
 			self.NotReinit = true
+			//- console.log(parseInt(self.count),parseInt(eval(opts["prepare"])[1])+1)
+			return parseInt(self.count) - parseInt(eval(opts["prepare"])[1])+1
 		}
 		_reload() {
 			self._loaded++
+			loadProgress()
 			if (parseInt(self._loaded/self.count*100) == 100) {
 				self.loaded = true
 				self.loadend()
@@ -59,6 +62,7 @@ gif
 			self._loaded++
 			//- console.log(parseInt(self.loaded/self.max*100))
 			//- loadProgress(opts.id,parseInt(self._loaded/self.max*100))
+			loadProgress()
 			if (parseInt(self._loaded/self.max*100) == 100) {
 				self.loaded = true
 				self.loadend()
@@ -122,8 +126,9 @@ gif
 				if (self.now > self.max) {
 					self.now = self.max
 					self.Stop = true
+					//-  && opts.stepto
 					
-					if (opts.delay && self.play != "stepend") {
+					if (opts.delay) {
 						self.delayFun = setTimeout(function(){
 							self.replay(self.next)
 						},opts.delay)

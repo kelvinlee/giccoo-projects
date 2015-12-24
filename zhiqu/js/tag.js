@@ -81,7 +81,7 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     	var image = new Image()
     	image.src = opts.src.replace("id",i+1)
     	image.onload = function(){
-    		self.load()
+    		self.load(this)
     	}
     	loads.push(image)
     }
@@ -97,9 +97,12 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     		loads.push(image)
     	}
     	self.NotReinit = true
+
+    	return parseInt(self.count) - parseInt(eval(opts["prepare"])[1])+1
     }.bind(this);
     this._reload = function() {
     	self._loaded++
+    	loadProgress()
     	if (parseInt(self._loaded/self.count*100) == 100) {
     		self.loaded = true
     		self.loadend()
@@ -109,6 +112,7 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     	self._loaded++
 
 
+    	loadProgress()
     	if (parseInt(self._loaded/self.max*100) == 100) {
     		self.loaded = true
     		self.loadend()
@@ -172,8 +176,9 @@ riot.tag('gif', '<div width="{opts.width}" height="{opts.height}" class="gif {op
     		if (self.now > self.max) {
     			self.now = self.max
     			self.Stop = true
+
     			
-    			if (opts.delay && self.play != "stepend") {
+    			if (opts.delay) {
     				self.delayFun = setTimeout(function(){
     					self.replay(self.next)
     				},opts.delay)

@@ -226,6 +226,8 @@ loadEnd = ->
 		Cookies.set("note-1","true")
 		$(".homepage .p-notes").removeClass "show"
 
+loadProgress = ->
+
 startLoadPage = (name,evt)->
 	global["bottle"+name].replay("prepare") if global? && global["bottle"+name]?
 	now = 0
@@ -237,9 +239,9 @@ startLoadPage = (name,evt)->
 	$(".progress").addClass "show"
 	loadGIF = ->
 		# console.log("a")
-		_gifnow++
-		runProgress()
-		loadPageEnd() if _gifnow >= _gifCount
+		# _gifnow++
+		# runProgress()
+		# loadPageEnd() if _gifnow >= _gifCount
 	loadPageEnd = ->
 		pageEnd++
 		return false if pageEnd < 2
@@ -257,6 +259,10 @@ startLoadPage = (name,evt)->
 			setTimeout ->
 				global["strategyad"].replay("replay") if global? && global["strategyad"]?
 			,1000
+	loadProgress = ->
+		_gifnow++
+		runProgress()
+		loadPageEnd() if _gifnow >= _gifCount
 	runProgress = ->
 		v = parseInt (_gifnow+now)/(count+_gifCount)*100
 		# console.log v,_gifnow,now,count,_gifCount
@@ -273,10 +279,19 @@ startLoadPage = (name,evt)->
 		$(this).remove()
 	if name is "brand"
 		# riot.mount("div#brandbg","gif")
+		_c = parseInt $("#brands").attr("count")
 		riot.mount("div#brands","gif")
-		global["bottlebrand"].reload()
-		_gifCount = 2
+		_c += global["bottlebrand"].reload()
+		_gifCount = _c - 2
 	if name is "technology"
+		_c = parseInt $("#technologylogo").attr("count")
+		_c += parseInt $("#technologypeople5").attr("count")
+		_c += parseInt $("#technologypeople4").attr("count")
+		_c += parseInt $("#technologypeople3").attr("count")
+		_c += parseInt $("#technologypeople2").attr("count")
+		_c += parseInt $("#technologypeople1").attr("count")
+		_c += parseInt $("#technologyhand").attr("count")
+
 		riot.mount("div#technologylogo","gif")
 		riot.mount("div#technologypeople5","gif")
 		riot.mount("div#technologypeople4","gif")
@@ -284,19 +299,33 @@ startLoadPage = (name,evt)->
 		riot.mount("div#technologypeople2","gif")
 		riot.mount("div#technologypeople1","gif")
 		riot.mount("div#technologyhand","gif")
-		global["bottletechnology"].reload()
-		_gifCount = 8
+		_c += global["bottletechnology"].reload()
+		_gifCount = _c - 2
 	if name is "media"
+		_c = parseInt $("#bottlemediamovie").attr("count")
+
 		riot.mount("div#bottlemediamovie","gif")
-		global["bottlemedia"].reload()
-		_gifCount = 2
+		_c += global["bottlemedia"].reload()
+		_gifCount = _c - 2
 	if name is "logo"
+		_c = parseInt $("#logobg").attr("count")
+		_c += parseInt $("#logovitro").attr("count")
+
 		riot.mount("div#logobg","gif")
 		# riot.mount("div#logobottle","gif")
 		riot.mount("div#logovitro","gif")
-		global["bottlelogo"].reload()
-		_gifCount = 3
+		_c += global["bottlelogo"].reload()
+		_gifCount = _c - 2
 	if name is "strategy"
+		_c = parseInt $("#strategyhand").attr("count")
+		_c += parseInt $("#strategyarrowwhite").attr("count")
+		_c += parseInt $("#strategyarrowyellow1").attr("count")
+		_c += parseInt $("#strategyicons").attr("count")
+		_c += parseInt $("#strategypeople1").attr("count")
+		_c += parseInt $("#strategypeople2").attr("count")
+		_c += parseInt $("#strategyarrowyellow2").attr("count")
+		_c += parseInt $("#strategyad").attr("count")
+
 		riot.mount("div#strategyhand","gif")
 		riot.mount("div#strategyarrowwhite","gif")
 		riot.mount("div#strategyarrowyellow1","gif")
@@ -305,15 +334,16 @@ startLoadPage = (name,evt)->
 		riot.mount("div#strategypeople2","gif")
 		riot.mount("div#strategyarrowyellow2","gif")
 		riot.mount("div#strategyad","gif")
-		global["bottlestrategy"].reload()
-		_gifCount = 8
+		_c += global["bottlestrategy"].reload()
+		_gifCount = _c - 2
 	if name is "contactus"
+		_c = parseInt $("#contactusfull").attr("count")
 		riot.mount("div#contactusfull","gif")
-		global["bottlecontactus"].reload()
-		_gifCount = 2
+		_c += global["bottlecontactus"].reload()
+		_gifCount = _c - 2
 	if name is "award"
-		global["bottleaward"].reload()
-		_gifCount = 1
+		_c = global["bottleaward"].reload()
+		_gifCount = _c - 2
 	loadPageEnd() if count is 0
 
 hideFirstPage = ->

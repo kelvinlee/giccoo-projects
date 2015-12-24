@@ -7,8 +7,8 @@ block css
 	link(rel="stylesheet",href="css/base.css")
 
 block content
-	- var images = "http://disk.giccoo.com/projects/zhiqu/img"
-	//- var images = "img"
+	//- var images = "http://disk.giccoo.com/projects/zhiqu/img"
+	- var images = "img"
 	//- .wechat-share-hide
 		//- img#share(src="http://disk.giccoo.com/projects/huaweiG7/img/share.jpg")
 	//- gif(width="640",height="1134",normal='[0,86, "replay"]',replay='[87, 126]',stop="86",play="normal",count="127",src="#{images}/animate/brands/brand-id.png")
@@ -519,7 +519,7 @@ block content
 							.item-arrow
 								#strategyarrowyellow2(width="30",height="100",count="15",normal="[0,0,'normal']",replay='[0,14,"stop"]',stop="14",play="normal",src="#{images}/animate/strategy/arrow-yellow/arrow-id.png")
 							.items
-								#strategyad(width="500",height="400",count="102",normal="[0,0,'normal']",replay='[0,35,"stepto"]',stepto='[36,93,"stepend"]',stepend='[94,101,"replay"]',delay="4000",stop="0",play="normal",src="#{images}/animate/strategy/ad/ad-id.png")
+								#strategyad(width="370",height="270",count="60",normal="[0,0,'normal']",replay='[0,16,"stepto"]',stepto='[17,59,"stepend"]',delay="4000",stop="0",play="normal",src="#{images}/animate/strategy/ad-new/ad-id.jpg")
 		.pages-contactus(name="contactus")
 			.content
 				.text
@@ -552,7 +552,12 @@ block content
 				.bg
 					img(data-layzr-contactus="#{images}/pages-contactus-bg.png")
 		.back-btn(onclick="backBottleMain()")
-			img(data-layzr="#{images}/back-btn.png")
+			.back-1
+				img(data-layzr="#{images}/back-1.jpg")
+			.back-2
+				img(data-layzr="#{images}/back-2.jpg")
+			.back-3
+				img(data-layzr="#{images}/back-3.jpg")
 		#pop.pop.fadeIn.animated
 			.close
 			.pop-content
