@@ -114,6 +114,7 @@ PubUrl = "http://i.giccoo.com";
 debug = false;
 
 window.onload = function() {
+  var _hm;
   if (!debug) {
     openid = $_GET["openid"];
     if ((openid == null) || openid === "") {
@@ -121,6 +122,8 @@ window.onload = function() {
       return false;
     }
   }
+  _hm = new Image();
+  _hm.src = "http://124.205.144.213/count/?name=html5&ts=" + new Date().getTime() + parseInt(Math.random() * 1000);
   $(".firstPage").show();
   $(".firstPage .content").on("click", init);
   loadWechatConfig();
