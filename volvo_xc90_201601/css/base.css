@@ -757,7 +757,7 @@ html, body {
   .main .homepage .left2 {
     position: absolute;
     top: 50%;
-    left: 0.4rem;
+    left: 8%;
     width: 3.59375%;
     margin: 0 auto;
     font-size: 0;
@@ -768,7 +768,7 @@ html, body {
   .main .homepage .right2 {
     position: absolute;
     top: 50%;
-    right: 0.4rem;
+    right: 8%;
     width: 3.59375%;
     margin: 0 auto;
     font-size: 0;
@@ -810,11 +810,12 @@ html, body {
       height: 100%; }
     .main .homepage .last .sliders {
       overflow: hidden;
-      width: 75%;
+      width: 60%;
       margin: 0 auto;
-      margin-top: 4rem;
+      margin-top: 17%;
       max-width: 400px;
-      border: solid 4px #fff; }
+      border: solid 8px #fff;
+      box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6); }
     .main .homepage .last .points {
       width: 100%;
       text-align: center;
@@ -827,7 +828,7 @@ html, body {
         background-color: #fff;
         border-radius: 50%; }
         .main .homepage .last .points span.on {
-          background-color: #00d1c1; }
+          background-color: #9c8b57; }
     .main .homepage .last .title {
       margin-top: 18%; }
   .main .homepage .form-box {
@@ -843,7 +844,7 @@ html, body {
       left: 0px;
       width: 100%; }
     .main .homepage .form-box .form {
-      margin-top: 3rem; }
+      margin-top: 12%; }
 
 .pop {
   position: fixed;

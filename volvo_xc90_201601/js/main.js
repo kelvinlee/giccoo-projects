@@ -1462,8 +1462,8 @@ mLeft = function() {
 
 mRight = function() {
   tabId2++;
-  if (tabId2 > 4) {
-    tabId2 = 4;
+  if (tabId2 > 6) {
+    tabId2 = 6;
   }
   secondSlider.setNumber(tabId2);
   $(".points span").removeClass("on");
