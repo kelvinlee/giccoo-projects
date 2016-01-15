@@ -744,7 +744,7 @@ html, body {
       overflow: hidden; }
     .main .homepage .bg.bg-3 .sliders {
       position: absolute;
-      top: 11.25%;
+      top: 10%;
       left: 0px;
       width: 100%; }
   .main .homepage .outlink {
@@ -756,7 +756,7 @@ html, body {
     display: inline-block; }
   .main .homepage .left2 {
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 8%;
     width: 3.59375%;
     margin: 0 auto;
@@ -767,7 +767,7 @@ html, body {
       width: 2.875%; }
   .main .homepage .right2 {
     position: absolute;
-    top: 50%;
+    top: 52%;
     right: 8%;
     width: 3.59375%;
     margin: 0 auto;
@@ -778,7 +778,7 @@ html, body {
       width: 2.875%; }
   .main .homepage .left {
     position: absolute;
-    top: 50%;
+    top: 36%;
     left: 0;
     width: 7.1875%;
     margin: 0 auto;
@@ -789,7 +789,7 @@ html, body {
       width: 5.75%; }
   .main .homepage .right {
     position: absolute;
-    top: 50%;
+    top: 36%;
     right: 0;
     width: 7.1875%;
     margin: 0 auto;
@@ -810,11 +810,11 @@ html, body {
       height: 100%; }
     .main .homepage .last .sliders {
       overflow: hidden;
-      width: 60%;
+      width: 66%;
       margin: 0 auto;
       margin-top: 17%;
       max-width: 400px;
-      border: solid 8px #fff;
+      border: solid 4px #fff;
       box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6); }
     .main .homepage .last .points {
       width: 100%;
@@ -825,7 +825,7 @@ html, body {
         width: 0.5rem;
         height: 0.5rem;
         margin: 0 0.2rem;
-        background-color: #fff;
+        background-color: #c2c2c2;
         border-radius: 50%; }
         .main .homepage .last .points span.on {
           background-color: #9c8b57; }
