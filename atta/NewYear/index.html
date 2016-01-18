@@ -11,7 +11,6 @@
 		<link rel="stylesheet" href="css/parallax-animation.css">
 		<!-- <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
 		<script src="pace.js"></script>
-  	<link href="/pace/dataurl.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="themes/red/pace-theme-center-simple.css">
 	</head>
@@ -57,24 +56,26 @@
 			$(function() {
     	    Pace.on('done', function(){
             $('#wrapper').show()
-    	    });
-   		 });
-       
-			 $('.pages').parallax({
-			 loading:	 false,
-			 indicator: true,
-			 arrow:		 false,
-             direction: 'horizontal',  // 滚动方向, "horizontal/vertical"
+
+            $('.pages').parallax({
+			 					
+								 indicator: true,
+								 arrow:		 false,
+             		 direction: 'horizontal',  // 滚动方向, "horizontal/vertical"
              
-             onchange: function(i,e,d){
+             		onchange: function(i,e,d){
                 
-                if ($(".page").height() <= 568) {
+               	 if ($(".page").height() <= 568) {
                     $("body").addClass("iphone4");
                     } else {
                     $("body").removeClass("iphone4");
                     }
-             }
-		 });
+              }
+						 });
+    	    });
+   		 });
+       
+			 
 		</script>
 
 	</body>
