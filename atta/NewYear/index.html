@@ -5,16 +5,27 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<title>New Year</title>
+
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/parallax.css">
 		<link rel="stylesheet" href="css/parallax-animation.css">
-		<script src="/pace/pace.min.js"></script>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+		<script src="pace.js"></script>
   	<link href="/pace/dataurl.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="themes/red/pace-theme-center-simple.css">
 	</head>
-	<body >
+
+	<body class="pace-done">
+		<div class="pace  pace-inactive">
+    <div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
+        <div class="pace-progress-inner"></div>
+    </div>
+    <div class="pace-activity"></div>
+		</div>
+
 		<div class="sharePic"><img src="img/share_pic.jpg"></div>
-		<div class="wrapper">
+		<div id="wrapper">
 		<div class="pages">
 				<!-- 第一屏 -->
 				<section class="page">
@@ -43,18 +54,11 @@
         
         
 		<script>
-			// var $box = $('#title');
-			// var tween = TweenLite.to($box, 2, {
-			// 	  scaleX:1.2,scaleY:1.2,
- 		// 			delay: 0,
- 		// 			onComplete: myFunction,
- 		// 	});
-			// function myFunction() {
-   // 			console.log("我我啊");
-			// }
-			// $(document).ready(function() {
-					
-			// }
+			$(function() {
+    	    Pace.on('done', function(){
+            $('#wrapper').show()
+    	    });
+   		 });
        
 			 $('.pages').parallax({
 			 loading:	 false,
