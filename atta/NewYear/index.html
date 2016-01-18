@@ -53,11 +53,7 @@
         
         
 		<script>
-			$(function() {
-    	    Pace.on('done', function(){
-            $('#wrapper').show()
-
-            $('.pages').parallax({
+			$('.pages').parallax({
 			 					
 								 indicator: true,
 								 arrow:		 false,
@@ -72,6 +68,9 @@
                     }
               }
 						 });
+			$(function() {
+    	    Pace.on('done', function(){
+            $('#wrapper').show()
     	    });
    		 });
        
