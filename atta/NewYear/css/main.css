@@ -35,20 +35,7 @@ section[data-id="1"] {
     -webkit-animation: bounce 2.0s infinite ease-in-out;
     animation: bounce 2.0s infinite ease-in-out;
     }
-   @-webkit-keyframes bounce {
-    0%, 100% { -webkit-transform: scale(0.0) };
-     50% { -webkit-transform: scale(1.0) };
-    }
- 
-  @keyframes bounce {
-   0%, 100% { 
-        transform: scale(0.0);
-      -webkit-transform: scale(0.0);
-    } 50% { 
-     transform: scale(1.0);
-     -webkit-transform: scale(1.0);
-   }
-  }
+   
     .iphone4 section[data-id="1"].title {
       width: 22.5%; }
   section[data-id="1"] .boss {
@@ -58,7 +45,7 @@ section[data-id="1"] {
     top: 35%;
     left: 25%; }
     .iphone4 section[data-id="1"].boss {
-      width: 46%; }
+      width: 30%; }
   section[data-id="1"] .subline {
     position: absolute;
     width: 74%;
@@ -66,7 +53,7 @@ section[data-id="1"] {
     bottom: 10%;
     left: 13%; }
     .iphone4 section[data-id="1"].subline {
-      width: 65%; }
+      width: 62%; }
 section[data-id="2"] {
   background-image: url("../img/cover2-bg.jpg");
   background-repeat: no-repeat;
