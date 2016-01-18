@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenLite.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<title>New Year</title>
 		<link rel="stylesheet" href="css/main.css">
@@ -11,27 +12,26 @@
         <link rel="stylesheet" href="css/animate.css">
 	</head>
 	<body >
+		<div class="sharePic"><img src="img/share_pic.jpg"></div>
 		<div class="wrapper">
 		<div class="pages">
 				<!-- 第一屏 -->
 				<section class="page">
-						<div class="title">
-                            <img src="img/title.png" data-animation="bounceInDown" data-duration="1000"> 
+						<div id="title">
+                <img src="img/title.png" data-animation="bounceInDown" data-duration="1000"> 
 						</div>
-                        <div class ="boss">
-                            <img src="img/boss.gif" data-animation="fadeIn" data-delay="100" data-duration="1000">
-                        </div>
+            <div class ="boss">
+                <img src="img/boss.gif" data-animation="fadeIn" data-delay="100" data-duration="1000">
+            </div>
+            <div class ="subline">
+                <img src="img/subline.png" data-animation="bounceInUp" data-delay="100" data-duration="1000">
+            </div>
 				</section>
 
 				<!-- 第二屏 -->
 				<section class="page">
-					    <div class="boss2">
-                            <img src="img/boss.gif" data-animation="fadeIn" data-delay="100" data-duration="1000"> 
-                        </div>
-                        <div class ="txt">
-                            <img src="img/txt.png" data-animation="slideToLeft" data-delay="300" data-duration="1000">
-                        </div>
-
+					    <div class="boss2"><img src="img/boss.gif" data-animation="fadeIn" data-delay="100" data-duration="1000"> </div>
+              <div class ="txt"><img src="img/txt.png" data-animation="slideToLeft" data-delay="300" data-duration="1000"></div>
 				</section>
 
 		</div>
@@ -42,8 +42,19 @@
         
         
 		<script>
-
-             
+			// var $box = $('#title');
+			// var tween = TweenLite.to($box, 2, {
+			// 	  scaleX:1.2,scaleY:1.2,
+ 		// 			delay: 0,
+ 		// 			onComplete: myFunction,
+ 		// 	});
+			// function myFunction() {
+   // 			console.log("我我啊");
+			// }
+			// $(document).ready(function() {
+					
+			// }
+       
 			 $('.pages').parallax({
 			 loading:	 false,
 			 indicator: true,
