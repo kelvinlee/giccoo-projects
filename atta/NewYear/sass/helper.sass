@@ -1,0 +1,109 @@
+// 适配
+=ada($key,$value)
+  #{$key}: #{$value}
+
+=gradient($angle: 90deg, $star: #333, $end: #999)
+  background: linear-gradient($angle, $star, $end)
+
+=mcenter
+  margin: 0 auto
+// 宽高
+=w($w)
+  width: $w
+=h($h)
+  height: $h
+=wh($w: auto,$h: auto)
+  width: $w
+  height: $h
+=mh($h: 100%)
+  min-height: $h
+// position 定位
+=posa()
+  position: absolute
+=posr()
+  position: relative
+=posf()
+  position: fixed
+=tl($t: 0px,$l: 0px)
+  top: $t
+  left: $l
+=bl($b: 0px,$l: 0px)
+  bottom: $b
+  left: $l
+=tr($t: 0px,$r: 0px)
+  top: $t
+  right: $r
+=br($b: 0px,$r: 0px)
+  bottom: $b
+  right: $r
+=tlr($t:0px,$l:0px,$r:0px)
+  top: $t
+  left: $l
+  right: $r
+=blr($b:0px,$l:0px,$r:0px)
+  bottom: $b
+  left: $l
+  right: $r
+=tbl($t:0px,$b:0px,$l:0px)
+  top: $t
+  bottom: $b
+  left: $l
+=tbr($t:0px,$b:0px,$r:0px)
+  top: $t
+  bottom: $b
+  right: $r
+// float 定位
+=left
+  float: left
+=right
+  float: right
+=nf
+  float: none
+// 隐藏边框
+=overhide
+  overflow: hidden
+// display
+=show
+  display: block
+=hide
+  display: none
+=show-inline
+  display: inline-block
+// text
+=text-center
+  text-align: center
+=text-right
+  text-align: right
+=text-left
+  text-align: left
+// Box 阴影
+=box-shadow($px,$color)
+  +ada(box-shadow,$px $color)
+
+// 圆角
+=border-radius($radius: 5px)
+  +ada("border-radius",$radius)
+
+// 动画
+@mixin keyframes($key)
+  @keyframes #{$key}
+    @content
+
+=tran($all: all,$time: .5s,$ease: ease)
+  +ada(transition, $all $time $ease)
+
+=animation($ani: fadeInUp,$time: 1s,$ease: ease,$count: initial)
+  // infinite 无限, initial 默认
+  +ada(animation, $ani $time $ease)
+  +ada(animation-fill-mode, both)
+  +ada(animation-iteration-count, $count)
+
+=delay($time:.5s)
+  +ada(animation-delay, $time)
+
+=transform($value)
+  +ada(transform, $value)
+
+=blur($b: 5px)
+  filter: blur($b)
+

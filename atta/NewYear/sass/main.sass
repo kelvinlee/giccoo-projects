@@ -1,0 +1,524 @@
+//@import helper
+/* custom */
+
+// .iphone4
+=mcenter
+	margin: 0 auto
+
+=w($w)
+	width: $w
+=h($h)
+	height: $h
+=wh($w: auto,$h: auto)
+	width: $w
+	height: $h
+=mh($h: 100%)
+	min-height: $h
+
+=posa()
+	position: absolute
+=posr()
+	position: relative
+=posf()
+	position: fixed
+=tl($t: 0px,$l: 0px)
+	top: $t
+	left: $l
+=bl($b: 0px,$l: 0px)
+	bottom: $b
+	left: $l
+=tr($t: 0px,$r: 0px)
+	top: $t
+	right: $r
+=br($b: 0px,$r: 0px)
+	bottom: $b
+	right: $r
+=tlr($t:0px,$l:0px,$r:0px)
+	top: $t
+	left: $l
+	right: $r
+=blr($b:0px,$l:0px,$r:0px)
+	bottom: $b
+	left: $l
+	right: $r
+=tbl($t:0px,$b:0px,$l:0px)
+	top: $t
+	bottom: $b
+	left: $l
+=tbr($t:0px,$b:0px,$r:0px)
+	top: $t
+	bottom: $b
+	right: $r
+
+=left
+	float: left
+=right
+	float: right
+=nf
+	float: none
+
+=overhide
+	overflow: hidden
+// display
+=show
+	display: block
+=hide
+	display: none
+=show-inline
+	display: inline-block
+// text
+=text-center
+	text-align: center
+=text-right
+	text-align: right
+=text-left
+	text-align: left
+
+=ada($key,$value)
+	#{$key}: #{$value}
+
+@mixin keyframes($key)
+	@keyframes #{$key}
+		@content
+
+=tran($all: all,$time: .5s,$ease: ease)
+	+ada(transition, $all $time $ease)
+
+=animation($ani: fadeInUp,$time: 1s,$ease: ease,$count: initial)
+	+ada(animation, $ani $time $ease)
+	+ada(animation-fill-mode, both)
+	+ada(animation-iteration-count, $count)
+=transform($value)
+	+ada(transform, $value)
+
++keyframes(UpDown)
+	0%,100%
+		top: 50%
+	50%
+		top: 40%
+
+
+=nw($n,$x: 640,$i4: 80%)
+	$w: $n/$x
+	+w($w*100%)
+	margin: 0 auto
+	.iphone4 &
+		+w($w*$i4)
+
+=backbg()
+	background-repeat: no-repeat
+	background-size: 100% 100%
+	background-position: center center
+body
+	text-align:center
+img
+	width: 100%
+.mask1
+	+posf
+	+tl
+	+nw(168)
+	z-index: 9999
+	font-size: 0
+	display: block !important
+.mask2
+	+posf
+	+tr
+	+nw(159)
+	font-size: 0
+	z-index: 9999
+	display: block !important
+.mask3
+	+posf
+	+bl
+	+nw(167)
+	font-size: 0
+	z-index: 9999
+	display: block !important
+.mask4
+	+posf
+	+br
+	+nw(159)
+	font-size: 0
+	z-index: 9999
+	display: block !important
+.logo
+	+posa
+	+nw(104)
+	left: 80%
+	bottom: 3%
+	z-index: 9999
+	display: block !important
+section[data-id="1"] 
+	background-image: url('../img/cover-bg.jpg')
+	+backbg
+	.title
+		+mcenter
+		+nw(180)
+		margin-top: 10%
+	.small
+		+posa
+		+nw(42)
+		+tr(25%,28%)
+	.point
+		width: 2.5em
+		height: 2.5em
+		border-radius: 100%
+		background-color: #1f0302
+		+posa
+		bottom: 2%
+		left: 50%
+		margin-left: -2.5em/2
+
+		.arow
+			width: 0
+			height: 0
+			border-left: 0.8em solid transparent
+			border-right: 0.8em solid transparent
+			border-bottom: 1em solid #e7ba76
+			+posa
+			left: 50%
+			top: 50%
+			// margin-left: -1.4em/2
+			// margin-top: -1.4em/2
+			+animation(UpDown,1s,ease,infinite)
+			+transform(translate3d(-50%,-50%,0))
+
+section[data-id="2"] 
+	background-image: url('../img/bg2.jpg')
+	+backbg
+	.title
+		+mcenter
+		+nw(120)
+		margin-top: 12%
+	
+	.dish1
+		+posa
+		+nw(240)
+		left: 0%
+		top: 22%
+		.name1
+			+posa
+			+nw(39,240)
+			left: 70%
+			top: 20%
+	.dish2
+		+posa
+		+nw(295)
+		right: -10%
+		top: 22%
+		.name2
+			+posa
+			+nw(39,295)
+			right: 80%
+			top: 20%
+	.dish3
+		+posa
+		+nw(278)
+		left: -8%
+		top: 45%
+		.name3
+			+posa
+			+nw(39,220)
+			left: 40%
+			top: 45%
+	.dish4
+		+posa
+		+nw(281)
+		right: -14%
+		top: 45%
+		.name4
+			+posa
+			+nw(39,281)
+			right: 96%
+			top: 25%
+	.dish5
+		+posa
+		+nw(278)
+		left: 30%
+		top: 65%
+		+transform(translate3d(-50%,0,0)) 
+		.name5
+			+posa
+			+nw(39,289)
+			left: 70%
+			top: 50%
+	.point
+		width: 2.5em
+		height: 2.5em
+		border-radius: 100%
+		background-color: #1f0302
+		+posa
+		bottom: 2%
+		left: 50%
+		margin-left: -2.5em/2
+
+		.arow
+			width: 0
+			height: 0
+			border-left: 0.8em solid transparent
+			border-right: 0.8em solid transparent
+			border-bottom: 1em solid #e7ba76
+			+posa
+			left: 50%
+			top: 50%
+			// margin-left: -1.4em/2
+			// margin-top: -1.4em/2
+			+animation(UpDown,1s,ease,infinite)
+			+transform(translate3d(-50%,-50%,0))
+section[data-id="3"] 
+	background-image: url('../img/bg3.jpg')
+	+backbg
+	.title
+		+mcenter
+		+nw(120)
+		margin-top: 12%
+	.dish1
+		+posa
+		+nw(308)
+		left: -6%
+		top: 22%
+		.name1
+			+posa
+			+nw(39,308)
+			left: 70%
+			top: 0%
+	.dish2
+		+posa
+		+nw(276)
+		right: -6%
+		top: 22%
+		.name2
+			+posa
+			+nw(39,276)
+			right: 70%
+			top: 10%
+	.dish3
+		+posa
+		+nw(290)
+		left: -2%
+		top: 45%
+		.name3
+			+posa
+			+nw(39,230)
+			left: 30%
+			top: 35%
+	.dish4
+		+posa
+		+nw(304)
+		right: -6%
+		top: 50%
+		.name4
+			+posa
+			+nw(39,304)
+			right: 70%
+			top: -10%
+	.dish5
+		+posa
+		+nw(332)
+		left: 26%
+		top: 70%
+		+transform(translate3d(-50%,0,0)) 
+		.name5
+			+posa
+			+nw(39,332)
+			left: 70%
+			top: 50%
+	.point
+		width: 2.5em
+		height: 2.5em
+		border-radius: 100%
+		background-color: #1f0302
+		+posa
+		bottom: 2%
+		left: 50%
+		margin-left: -2.5em/2
+
+		.arow
+			width: 0
+			height: 0
+			border-left: 0.8em solid transparent
+			border-right: 0.8em solid transparent
+			border-bottom: 1em solid #e7ba76
+			+posa
+			left: 50%
+			top: 50%
+			// margin-left: -1.4em/2
+			// margin-top: -1.4em/2
+			+animation(UpDown,1s,ease,infinite)
+			+transform(translate3d(-50%,-50%,0))
+section[data-id="4"] 
+	background-image: url('../img/bg4.jpg')
+	+backbg
+	.title
+		+mcenter
+		+nw(115)
+		margin-top: 12%
+	.dish1
+		+posa
+		+nw(307)
+		left: -4%
+		top: 28%
+		.name1
+			+posa
+			+nw(39,308)
+			left: 75%
+			top: 60%
+	.dish2
+		+posa
+		+nw(326)
+		right: -8%
+		top: 28%
+		.name2
+			+posa
+			+nw(39,300)
+			right: 75%
+			top: 20%
+	.dish3
+		+posa
+		+nw(328)
+		left: -4%
+		top: 55%
+		.name3
+			+posa
+			+nw(39,260)
+			left: 15%
+			top: 15%
+	.dish4
+		+posa
+		+nw(277)
+		right: -6%
+		top: 50%
+		.name4
+			+posa
+			+nw(39,260)
+			right: 80%
+			top: 18%
+	.dish5
+		+posa
+		+nw(332)
+		left: 25%
+		top: 70%
+		+transform(translate3d(-50%,0,0)) 
+		.name5
+			+posa
+			+nw(39,312)
+			left: 80%
+			top: 50%
+	.point
+		width: 2.5em
+		height: 2.5em
+		border-radius: 100%
+		background-color: #1f0302
+		+posa
+		bottom: 2%
+		left: 50%
+		margin-left: -2.5em/2
+
+		.arow
+			width: 0
+			height: 0
+			border-left: 0.8em solid transparent
+			border-right: 0.8em solid transparent
+			border-bottom: 1em solid #e7ba76
+			+posa
+			left: 50%
+			top: 50%
+			// margin-left: -1.4em/2
+			// margin-top: -1.4em/2
+			+animation(UpDown,1s,ease,infinite)
+			+transform(translate3d(-50%,-50%,0))
+section[data-id="5"] 
+	background-image: url('../img/bg5.jpg')
+	+backbg
+	.title
+		+mcenter
+		+nw(125)
+		margin-top: 6%
+	.dish1
+		+posa
+		+nw(308)
+		left: -4%
+		top: 30%
+		.name1
+			+posa
+			+nw(39,308)
+			left: 65%
+			top: -40%
+	.dish2
+		+posa
+		+nw(270)
+		right: -4%
+		top: 28%
+		.name2
+			+posa
+			+nw(39,270)
+			right: 70%
+			top: -10%
+	.dish3
+		+posa
+		+nw(332)
+		left: -3%
+		top: 48%
+		.name3
+			+posa
+			+nw(47,332)
+			left: 20%
+			top: -6%
+	.dish4
+		+posa
+		+nw(317)
+		right: -6%
+		top: 46%
+		.name4
+			+posa
+			+nw(39,317)
+			right: 70%
+			top: 36%
+	.dish5
+		+posa
+		+nw(372)
+		left: 22%
+		top: 70%
+		+transform(translate3d(-50%,0,0)) 
+		.name5
+			+posa
+			+nw(39,372)
+			left: 60%
+			top: 50%
+	.point
+		width: 2.5em
+		height: 2.5em
+		border-radius: 100%
+		background-color: #1f0302
+		+posa
+		bottom: 2%
+		left: 50%
+		margin-left: -2.5em/2
+
+		.arow
+			width: 0
+			height: 0
+			border-left: 0.8em solid transparent
+			border-right: 0.8em solid transparent
+			border-bottom: 1em solid #e7ba76
+			+posa
+			left: 50%
+			top: 50%
+			// margin-left: -1.4em/2
+			// margin-top: -1.4em/2
+			+animation(UpDown,1s,ease,infinite)
+			+transform(translate3d(-50%,-50%,0))
+section[data-id="6"] 
+	background-image: url('../img/bg6.jpg')
+	+backbg
+	.share
+		+nw(528)
+		+mcenter
+		margin-top: 35%
+		.button
+			+nw(324,528)
+			margin-top: -30%
+	.logo1
+		+nw(104)
+		+mcenter
+		margin-top: 15%

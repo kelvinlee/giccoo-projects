@@ -1,0 +1,161 @@
+/* custom */
+@-webkit-keyframes UpDown {
+  0%,100% {
+    top: 50%; }
+  50% {
+    top: 40%; } }
+@keyframes UpDown {
+  0%,100% {
+    top: 50%; }
+  50% {
+    top: 40%; } }
+img {
+  width: 100%; }
+
+
+
+section[data-id="1"] {
+  margin: 0 auto;
+  background-image: url("../img/cover-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center; 
+  }
+  
+  section[data-id="1"] .title {
+    margin: 0 auto;
+    width: 58%;
+    /*margin: 0 auto;*/
+    margin-top: 20%; }
+    .iphone4 section[data-id="1"].title {
+      width: 22.5%; }
+  section[data-id="1"] .boss {
+    position: absolute;
+    width: 36.7%;
+    margin: 0 auto;
+    top: 37%;
+    left: 25%; }
+    .iphone4 section[data-id="1"].boss {
+      width: 5.25%; }
+  
+section[data-id="2"] {
+  background-image: url("../img/cover2-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center; 
+}
+.iphone4 section[data-id="2"] {
+      background-size: 100% 100%}
+
+  section[data-id="2"] .boss2 {
+    position: absolute;
+    margin: 0 auto;
+    width: 26%;
+    left: 10%;
+    margin-top: 112%; }
+    .iphone4 section[data-id="2"] .boss2 {
+      width: 24%;
+      margin-top: 90%; }
+  section[data-id="2"] .txt {
+    position: absolute;
+    width: 54.5%;
+    margin: 0 auto;
+    right: 10%;
+    top: 52%; }
+    .iphone4 section[data-id="2"] .txt {
+      width: 46%; 
+      right: 12%;}
+   
+  section[data-id="2"] .dish2 {
+    position: absolute;
+    width: 46.09375%;
+    margin: 0 auto;
+    right: -10%;
+    top: 22%; }
+    .iphone4 section[data-id="2"] .dish2 {
+      width: 36.875%; }
+    section[data-id="2"] .dish2 .name2 {
+      position: absolute;
+      width: 13.22034%;
+      margin: 0 auto;
+      right: 80%;
+      top: 20%; }
+      .iphone4 section[data-id="2"] .dish2 .name2 {
+        width: 10.57627%; }
+  section[data-id="2"] .dish3 {
+    position: absolute;
+    width: 43.4375%;
+    margin: 0 auto;
+    left: -8%;
+    top: 45%; }
+    .iphone4 section[data-id="2"] .dish3 {
+      width: 34.75%; }
+    section[data-id="2"] .dish3 .name3 {
+      position: absolute;
+      width: 17.72727%;
+      margin: 0 auto;
+      left: 40%;
+      top: 45%; }
+      .iphone4 section[data-id="2"] .dish3 .name3 {
+        width: 14.18182%; }
+  section[data-id="2"] .dish4 {
+    position: absolute;
+    width: 43.90625%;
+    margin: 0 auto;
+    right: -14%;
+    top: 45%; }
+    .iphone4 section[data-id="2"] .dish4 {
+      width: 35.125%; }
+    section[data-id="2"] .dish4 .name4 {
+      position: absolute;
+      width: 13.879%;
+      margin: 0 auto;
+      right: 96%;
+      top: 25%; }
+      .iphone4 section[data-id="2"] .dish4 .name4 {
+        width: 11.1032%; }
+  section[data-id="2"] .dish5 {
+    position: absolute;
+    width: 43.4375%;
+    margin: 0 auto;
+    left: 30%;
+    top: 65%;
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0); }
+    .iphone4 section[data-id="2"] .dish5 {
+      width: 34.75%; }
+    section[data-id="2"] .dish5 .name5 {
+      position: absolute;
+      width: 13.49481%;
+      margin: 0 auto;
+      left: 70%;
+      top: 50%; }
+      .iphone4 section[data-id="2"] .dish5 .name5 {
+        width: 10.79585%; }
+  section[data-id="2"] .point {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 100%;
+    background-color: #1f0302;
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    margin-left: -1.25em; }
+    section[data-id="2"] .point .arow {
+      width: 0;
+      height: 0;
+      border-left: 0.8em solid transparent;
+      border-right: 0.8em solid transparent;
+      border-bottom: 1em solid #e7ba76;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-animation: UpDown 1s ease;
+              animation: UpDown 1s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-transform: translate3d(-50%, -50%, 0);
+              transform: translate3d(-50%, -50%, 0); }
+
