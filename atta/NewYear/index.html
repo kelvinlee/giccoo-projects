@@ -11,69 +11,69 @@
 		<link rel="stylesheet" href="css/parallax-animation.css">
 		<!-- <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
 		<script src="pace.js"></script>
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="themes/red/pace-theme-center-simple.css">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="themes/red/pace-theme-center-simple.css">
 	</head>
 
 	<body class="pace-done">
-		<div class="pace  pace-inactive">
-    <div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
-        <div class="pace-progress-inner"></div>
-    </div>
-    <div class="pace-activity"></div>
+		<!-- <div class="pace	pace-inactive">
+		<div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
+				<div class="pace-progress-inner"></div>
 		</div>
+		<div class="pace-activity"></div>
+		</div> -->
 
-		<div class="sharePic"><img src="img/share_pic.jpg"></div>
+		<!-- <div class="sharePic"><img src="img/share_pic.jpg"></div> -->
 		<div id="wrapper">
-		<div class="pages">
-				<!-- 第一屏 -->
-				<section class="page">
-						<div id="title">
-                <img src="img/title.png" data-animation="bounceInDown" data-duration="1000"> 
-						</div>
-            <div class ="boss">
-                <img src="img/boss.gif" data-animation="fadeIn" data-delay="100" data-duration="1000">
-            </div>
-            <div class ="subline">
-                <img src="img/subline.png" data-animation="bounceInUp" data-delay="100" data-duration="1000">
-            </div>
-				</section>
+			<div class="pages">
+					<!-- 第一屏 -->
+					<section class="page">
+							<div id="title">
+									<img src="img/title.png" data-animation="bounceInDown" data-duration="1000"> 
+							</div>
+							<div class ="boss">
+									<img src="img/boss.gif" data-animation="fadeIn" data-delay="100" data-duration="1000">
+							</div>
+							<div class ="subline">
+									<img src="img/subline.png" data-animation="bounceInUp" data-delay="100" data-duration="1000">
+							</div>
+					</section>
 
-				<!-- 第二屏 -->
-				<section class="page">
-					    <div class="boss2"><img src="img/boss.gif" data-animation="fadeIn" data-delay="100" data-duration="1000"> </div>
-              <div class ="txt"><img src="img/txt.png" data-animation="slideToLeft" data-delay="300" data-duration="1000"></div>
-				</section>
+					<!-- 第二屏 -->
+					<section class="page">
+								<div class="boss2"><img src="img/boss.gif" data-animation="fadeIn" data-delay="100" data-duration="1000"> </div>
+								<div class ="txt"><img src="img/txt.png" data-animation="slideToLeft" data-delay="300" data-duration="1000"></div>
+					</section>
 
+			</div>
 		</div>
-</div>
-		<div onclick="sharewechat(false)" class="wechat hide"></div>
+		<!-- <div onclick="sharewechat(false)" class="wechat hide"></div> -->
 		<script src="js/zepto.min.js"></script>
 		<script src="js/parallax.js"></script>
-        
-        
 		<script>
-			$('.pages').parallax({
-			 					
-								 indicator: true,
-								 arrow:		 false,
-             		 direction: 'horizontal',  // 滚动方向, "horizontal/vertical"
-             
-             		onchange: function(i,e,d){
-                
-               	 if ($(".page").height() <= 568) {
-                    $("body").addClass("iphone4");
-                    } else {
-                    $("body").removeClass("iphone4");
-                    }
-              }
-						 });
+			
 			$(function() {
-    	    Pace.on('done', function(){
-            $('#wrapper').show()
-    	    });
-   		 });
-       
+					
+					Pace.on('done', function(){
+						$('.pages').parallax({
+							
+								indicator: true,
+								arrow:		 false,
+								direction: 'horizontal',	// 滚动方向, "horizontal/vertical"
+						
+								onchange: function(i,e,d){
+								
+									if ($(".page").height() <= 568) {
+										$("body").addClass("iphone4");
+									} else {
+										$("body").removeClass("iphone4");
+									}
+								}
+						});
+						$('#wrapper').show();
+					});
+	 		 });
+			 
 			 
 		</script>
 
