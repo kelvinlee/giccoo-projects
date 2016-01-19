@@ -16,12 +16,12 @@
 	</head>
 
 	<body class="pace-done">
-		<div class="pace  pace-inactive">
+		<!-- <div class="pace  pace-inactive">
     <div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
         <div class="pace-progress-inner"></div>
     </div>
     <div class="pace-activity"></div>
-		</div>
+		</div> -->
 
 		<div class="sharePic"><img src="img/share_pic.jpg"></div>
 		<div id="wrapper">
@@ -41,40 +41,43 @@
 
 				<!-- 第二屏 -->
 				<section class="page">
-					    <div class="boss2"><img src="img/boss.gif" data-animation="fadeIn" data-delay="100" data-duration="1000"> </div>
-              <div class ="txt"><img src="img/txt.png" data-animation="slideToLeft" data-delay="300" data-duration="1000"></div>
+						  <div class="hesui"><img src="img/hesui.png" data-animation="zoomIn" data-delay="0" data-duration="800"> </div>
+						  <div class="lantern"><img src="img/Lantern.gif" data-animation="fadeIn" data-delay="200" data-duration="800"></div>
+						  <div class="copy"><img src="img/copy.png" data-animation="fadeIn" data-delay="200" data-duration="1000"> </div>
+						  <div class="shadow"><img src="img/shadow.png" data-animation="fadeIn" data-delay="300" data-duration="1000"> </div>
+					    <div class="boss2"><img src="img/boss.gif" data-animation="fadeIn" data-delay="300" data-duration="1000"> </div>
+              <div class ="txt"><img src="img/txt.png" data-animation="slideToLeft" data-delay="400" data-duration="1000"></div>
 				</section>
 
 		</div>
 </div>
-		<div onclick="sharewechat(false)" class="wechat hide"></div>
+		<!-- <div onclick="sharewechat(false)" class="wechat hide"></div> -->
 		<script src="js/zepto.min.js"></script>
 		<script src="js/parallax.js"></script>
         
         
 		<script>
-			$('.pages').parallax({
-			 					
-								 indicator: true,
-								 arrow:		 false,
-             		 direction: 'horizontal',  // 滚动方向, "horizontal/vertical"
-             
-             		onchange: function(i,e,d){
-                
-               	 if ($(".page").height() <= 568) {
-                    $("body").addClass("iphone4");
-                    } else {
-                    $("body").removeClass("iphone4");
-                    }
-              }
-						 });
 			$(function() {
-    	    Pace.on('done', function(){
-            $('#wrapper').show()
-    	    });
-   		 });
-       
-			 
+					
+					Pace.on('done', function(){
+						$('.pages').parallax({
+							
+								indicator: true,
+								arrow:		 false,
+								direction: 'horizontal',	// 滚动方向, "horizontal/vertical"
+						
+								onchange: function(i,e,d){
+								
+									if ($(".page").height() <= 568) {
+										$("body").addClass("iphone4");
+									} else {
+										$("body").removeClass("iphone4");
+									}
+								}
+						});
+						$('#wrapper').show();
+					});
+	 		 });
 		</script>
 
 	</body>
