@@ -14,6 +14,8 @@ img {
 
 #wrapper {
   display: none;
+  width: 100%;
+  overflow: hidden;
 }
 .sharePic {
   width: 0px;
