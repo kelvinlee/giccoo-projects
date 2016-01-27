@@ -1,0 +1,35 @@
+/*
+Error: Invalid US-ASCII character "\xE4"
+        on line 1 of /Users/miller/百度云同步盘/豆瓣/豆瓣电影/味道中国/Chinese-tastes/Chinese-tastes_20150121/sass/slider.sass
+
+1: // 依赖 sass/base
+2: 
+3: .slider-normal
+4: 	overflow: hidden
+5: 	.slide-normal-group
+6: 		+posr
+
+Backtrace:
+/Users/miller/百度云同步盘/豆瓣/豆瓣电影/味道中国/Chinese-tastes/Chinese-tastes_20150121/sass/slider.sass:1
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1323:in `rescue in block in find_encoding_error'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1320:in `block in find_encoding_error'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1319:in `each'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1319:in `each_with_index'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1319:in `find_encoding_error'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:896:in `check_sass_encoding'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:423:in `check_encoding!'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:379:in `_to_tree'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:396:in `run'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/bin/sass:18:in `load'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/bin/sass:18:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid US-ASCII character \"\xE4\"\A         on line 1 of /Users/miller/百度云同步盘/豆瓣/豆瓣电影/味道中国/Chinese-tastes/Chinese-tastes_20150121/sass/slider.sass\A \A 1: // 依赖 sass/base\A 2: \A 3: .slider-normal\A 4: 	overflow: hidden\A 5: 	.slide-normal-group\A 6: 		+posr"; }

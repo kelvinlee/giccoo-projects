@@ -1,0 +1,108 @@
+// 依赖 sass/base
+
++keyframes(fadeIn)
+  0%
+    opacity: 0
+  100%
+    opacity: 1
++keyframes(fadeOut)
+  0%
+    opacity: 1
+  100%
+    opacity: 0
++keyframes(fadeInOut)
+  0%
+    opacity: 1
+  50%
+    opacity: 0.5
+  100%
+    opacity: 1
+
+
++keyframes(fadeInDown)
+  0%
+    opacity: 0
+    +transform(translateY(-20px))
+  100%
+    opacity: 1
+    +transform(translateY(0px))
+
++keyframes(fadeInUp)
+  0%
+    opacity: 0
+    +transform(translateY(20px))
+  100%
+    opacity: 1
+    +transform(translateY(0px))
+
++keyframes(pulse)
+  0%
+    +transform(scale3d(1, 1, 1))
+  50%
+    +transform(scale3d(1.05, 1.05, 1.05))
+  100%
+    +transform(scale3d(1, 1, 1))
++keyframes(shake)
+  0%, 100%
+    +transform(translate3d(0, 0, 0))
+  10%, 30%, 50%, 70%, 90%
+    +transform(translate3d(-8%, 0, 0))
+  20%, 40%, 60%, 80%
+    +transform(translate3d(8%, 0, 0))
++keyframes(Flash)
+  0%
+    opacity: 1
+  50%
+    opacity: 0.6
+  100%
+    opacity: 1
+
+
++keyframes(Stamp)
+  0%
+    opacity: 0
+    +transform(scale3d(2, 2, 2))
+  20%
+    opacity: 1
+  70%
+    +transform(scale3d(0.9, 0.9, 0.9) )
+  100%
+    +transform(scale3d(1, 1, 1))
++keyframes(StampSmall)
+  0%
+    opacity: 1
+    +transform(scale3d(1, 1, 1))
+  20%
+    opacity: 0.6
+  70%
+    +transform(scale3d(0.8, 0.8, 0.8) )
+    opacity: 0.8
+  100%
+    +transform(scale3d(1, 1, 1))
+    opacity: 1
+
++keyframes(StampTop)
+  0%
+    opacity: 0
+    +transform(scale3d(2, 2, 2) translate3d(8%, -8%, 0))
+  20%
+    opacity: 1
+  70%
+    +transform(scale3d(0.9, 0.9, 0.9) )
+  100%
+    +transform(scale3d(1, 1, 1) translate3d(0, 0, 0))
+
+
++keyframes(second)
+  0%
+    +transform(rotate(0deg))
+  100%
+    +transform(rotate(360deg))
+
++keyframes(Flicker)
+  0%
+    opacity: 1
+  20%
+    opacity: 0.5
+  30%,100%
+    opacity: 1

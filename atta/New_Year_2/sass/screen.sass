@@ -1,0 +1,40 @@
+// , large , medium , small
+=print
+  @media print, only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 144dpi), screen and (min-resolution: 144dppx)
+    @content
+
+=large
+  @media only screen and (min-width: 735px) and (min-device-width: 768px)
+    @content
+
+=medium
+  @media only screen and (max-width: 1024px)
+    @content
+  @media only screen and (max-width: 735px) and (max-device-width: 768px) and (max-width: 1024px)
+    @content
+
+=small
+  @media only screen and (max-width: 735px) and (max-device-width: 768px)
+    @content
+  @media only screen and (max-width: 735px) and (max-device-width: 768px) and (max-width: 735px) and (max-device-width: 768px)
+    @content
+
+// 
+=large-phone
+  @media print, only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 144dpi), screen and (min-resolution: 144dppx)
+    @content
+  @media only screen and (max-width: 375px) and (max-device-width: 768px)
+    @content
+
+=medium-phone
+  @media only screen and (max-width: 399px)
+    @content
+  @media only screen and (max-width: 320px) and (max-device-width: 375px) and (max-width: 399px)
+    @content
+
+=small-phone
+  @content
+  @media only screen and (max-width: 320px) and (max-device-width: 375px)
+    @content
+  @media only screen and (max-width: 320px) and (max-device-width: 375px) and (max-width: 320px) and (max-device-width: 375px)
+    @content

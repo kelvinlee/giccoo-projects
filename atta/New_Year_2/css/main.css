@@ -1,0 +1,133 @@
+/* custom */
+@-webkit-keyframes UpDown {
+  0%,100% {
+    top: 50%; }
+  50% {
+    top: 40%; } }
+@keyframes UpDown {
+  0%,100% {
+    top: 50%; }
+  50% {
+    top: 40%; } }
+img {
+  width: 100%; }
+
+#wrapper {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: red;
+    overflow: hidden;
+  }
+.sharePic {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: -1000px; }
+
+section[data-id="1"] {
+  margin: 0 auto;
+  background-image: url("../img/cover-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center; 
+  }
+  
+  section[data-id="1"] #title {
+    margin: 0 auto;
+    width: 58%;
+    /*margin: 0 auto;*/
+    margin-top: 20%;
+    -webkit-animation: bounce 2.0s infinite ease-in-out;
+    animation: bounce 2.0s infinite ease-in-out;
+    }
+   
+    .iphone4 section[data-id="1"].title {
+      width: 22.5%; }
+  
+  section[data-id="1"] .boss {
+    position: absolute;
+    width: 36%;
+    margin: 0 auto;
+    top: 35%;
+    left: 25%; }
+    .iphone4 section[data-id="1"].boss {
+      width: 30%; }
+  section[data-id="1"] .subline {
+    position: absolute;
+    width: 74%;
+    margin: 0 auto;
+    bottom: 10%;
+    left: 13%; }
+    .iphone4 section[data-id="1"].subline {
+      width: 62%; }
+section[data-id="2"] {
+  background-image: url("../img/cover2-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center; 
+}
+.iphone4 section[data-id="2"] {
+      background-size: 100% 100%}
+section[data-id="2"] .hesui {
+    position: absolute;
+    margin: 0 auto;
+    width: 49%;
+    top: 10%;
+    left: 14%;
+     }
+    .iphone4 section[data-id="2"].hesui {
+      width: 40%; }
+  section[data-id="2"] .lantern {
+    position: absolute;
+    width: 27%;
+    margin: 0 auto;
+    top: 7%;
+    left: 62%; }
+    .iphone4 section[data-id="2"].lantern {
+      width: 22%; }
+  section[data-id="2"] .copy {
+    position: absolute;
+    width: 65%;
+    margin: 0 auto;
+    top: 35%;
+    left: 15%;
+     }
+    .iphone4 section[data-id="2"].copy {
+      width: 56%; }
+
+  section[data-id="2"] .shadow {
+    position: absolute;
+    width: 45%;
+    margin: 0 auto;
+    margin-top: 130%;
+    left: 1%; }
+    .iphone4 section[data-id="2"].shadow {
+      width: 34%;
+      margin-top: 130%;
+      left: 1%; }
+
+  section[data-id="2"] .boss2 {
+    position: absolute;
+    margin: 0 auto;
+    width: 26%;
+    left: 12%;
+    margin-top: 95%; }
+    .iphone4 section[data-id="2"] .boss2 {
+      width: 24%;
+      margin-top: 95%; }
+  section[data-id="2"] .txt {
+    position: absolute;
+    width: 48%;
+    margin: 0 auto;
+    right: 12%;
+    top: 56%; }
+    .iphone4 section[data-id="2"] .txt {
+      width: 42%; 
+      right: 12%;}
+   
+  

@@ -1,0 +1,35 @@
+/*
+Error: Invalid US-ASCII character "\xE9"
+        on line 1 of /Users/miller/百度云同步盘/豆瓣/豆瓣电影/味道中国/Chinese-tastes/Chinese-tastes_20150121/sass/helper.sass
+
+1: // 适配
+2: =ada($key,$value)
+3:   #{$key}: #{$value}
+4: 
+5: =gradient($angle: 90deg, $star: #333, $end: #999)
+6:   background: linear-gradient($angle, $star, $end)
+
+Backtrace:
+/Users/miller/百度云同步盘/豆瓣/豆瓣电影/味道中国/Chinese-tastes/Chinese-tastes_20150121/sass/helper.sass:1
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1323:in `rescue in block in find_encoding_error'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1320:in `block in find_encoding_error'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1319:in `each'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1319:in `each_with_index'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1319:in `find_encoding_error'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:896:in `check_sass_encoding'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:423:in `check_encoding!'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:379:in `_to_tree'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:396:in `run'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/bin/sass:18:in `load'
+/Users/miller/Downloads/Koala 2.app/Contents/Resources/app.nw/bin/sass:18:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid US-ASCII character \"\xE9\"\A         on line 1 of /Users/miller/百度云同步盘/豆瓣/豆瓣电影/味道中国/Chinese-tastes/Chinese-tastes_20150121/sass/helper.sass\A \A 1: // 适配\A 2: =ada($key,$value)\A 3:   #{$key}: #{$value}\A 4: \A 5: =gradient($angle: 90deg, $star: #333, $end: #999)\A 6:   background: linear-gradient($angle, $star, $end)"; }
