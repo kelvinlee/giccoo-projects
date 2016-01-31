@@ -1,0 +1,209 @@
+select-list
+	- var images = "img"
+	.logo
+		img(data-src="#{images}/logo.png")
+	.page.page-1.on(step="1",max="2")
+		.rivers
+			-for(var r=1;r<=4;r++)
+				.river(class="river-#{r}")
+					-for(var i=0;i<12;i++)
+						.item
+							img(data-src="#{images}/item-bl.png")
+			.river(class="river-5")
+				-for(var i=0;i<12;i++)
+					.item
+						img(data-src="#{images}/item-blm.png")
+			.lw.lw-1
+				img(data-src="#{images}/p-1-p.png")
+			.lw.lw-2
+				img(data-src="#{images}/p-1-y.png")
+			.lw.lw-3
+				img(data-src="#{images}/p-1-m.png")
+			.lw.lw-4
+				img(data-src="#{images}/p-1-b.png")
+		.banner.fadeIn.animated.delay-5
+			img(data-src="#{images}/banner.png")
+		.banner-text.fadeIn.animated.delay-7
+			img(data-src="#{images}/banner-text.png")
+		.haibao-note.bounceIn.animated.delay-5
+			.box
+				img(data-src="#{images}/haibao-note.jpg")
+		.haibao.fadeInUp.animated.delay-5
+			.box
+				img(data-src="#{images}/haibao.png")
+		#phone.phone
+			img(data-src="#{images}/piao.jpg")
+			.pop
+				img(data-src="#{images}/pop.png")
+	.page.page-2(step="1",max="4")
+		-for (var i=1;i<=4;i++)
+			.film(class="film-#{i}")
+				.bg
+					img(data-src="#{images}/film-bg.png")
+					.content
+						img(data-src="#{images}/film-#{i}.jpg")
+					.link(onclick="{goGame}")
+	.page.page-3
+		.box(class="{boxrun}",onclick="{runGame}")
+			.mk
+				img(data-src="#{images}/box-bg.png")
+				.line-box
+					.line.line-1
+						.ls
+							-for(var i=1;i<=4;i++)
+								ul
+									li
+										img(data-src="#{images}/run-4.png")
+									li
+										img(data-src="#{images}/run-1.png")
+									li
+										img(data-src="#{images}/run-2.png")
+									li
+										img(data-src="#{images}/run-3.png")
+					.line.line-2
+						.ls
+							-for(var i=1;i<=4;i++)
+								ul
+									li
+										img(data-src="#{images}/run-2.png")
+									li
+										img(data-src="#{images}/run-1.png")
+									li
+										img(data-src="#{images}/run-3.png")
+									li
+										img(data-src="#{images}/run-4.png")
+					.line.line-3
+						.ls
+							-for(var i=1;i<=4;i++)
+								ul
+									li
+										img(data-src="#{images}/run-3.png")
+									li
+										img(data-src="#{images}/run-1.png")
+									li
+										img(data-src="#{images}/run-4.png")
+									li
+										img(data-src="#{images}/run-2.png")
+				.hongbao
+					.box-m
+						img(data-src="#{images}/hongbao.png")
+			.hand
+				img(data-src="#{images}/box-hand.png")
+		.piao
+			img(data-src="#{images}/piao.png")
+	.next
+		img(data-src="#{images}/next.png")
+	//- .page.page-2
+
+	script.
+		var self = this
+		self.boxrun = ""
+		target = null
+		_default = {x: 0,y: 0}
+		_can = true
+		runGame() {
+			if (self.boxrun != "") { return false }
+			console.log("starGame")
+			$(".line-1 .ls",self.root)[0].addEventListener(ANIMATION_END_NAME,function(){
+				//- alert("中奖")
+				self.boxrun = "run end"
+				self.update()
+			})
+			$(".page-3 .hongbao",self.root)[0].addEventListener(TRANSITION_END_NAME,function(){
+				alert("go to weipiaoer get hongbao")
+			})
+			self.boxrun = "run star"
+			self.update()
+			setTimeout(function(){
+				self.boxrun = "run"
+				self.update()
+			},4500)
+		}
+		starGame() {
+			
+		}
+		goGame() {
+			$(".page",self.root).removeClass("on")
+			$(".page-3",self.root).addClass("on")
+		}
+		stepRun(target,run) {
+			//- console.log("target: ",run)
+			if (run) {
+				max = parseInt(target.attr("max"))
+				step = parseInt(target.attr("step"))
+				//- console.log("step: ",step,max)
+				if (step < max) {
+					target.attr("step",step+1)
+				}else{
+					target.removeClass("on")
+					target.next().addClass("on")
+					if (target.next().is(".page-3")) {
+						self.starGame()
+					}
+				}
+			}else{
+				step = parseInt(target.attr("step"))
+				if (step > 1) {
+					target.attr("step",step-1)
+				}else{
+					if (target.is(".page-1")) { return false }
+					target.removeClass("on")
+					target.prev().addClass("on")
+				}
+			}
+		}
+		PageTouchstart(evt) {
+			touch = evt.touches[0]
+			target = $(evt.target).is(".page") ? $(evt.target) : $(evt.target).parents(".page")
+			_default.x = touch.pageX
+			_default.y = touch.pageY
+			console.log(target)
+		}
+		PageTouchmove(evt) {
+			touch = evt.touches[0]
+			delta = touch.pageY - _default.y
+			evt.preventDefault()
+			if (!_can) {return false}
+			console.log("move: ",delta)
+			if (delta > 50) { 
+				_can = false
+				self.stepRun(target,false) 
+			}
+		
+			if (delta < -50) { 
+				_can = false
+				self.stepRun(target,true) 
+			}
+		}
+		PageTouchend(evt) {
+			_can = true
+		}
+
+		phoneTouchstart(evt) {
+			evt.stopPropagation()
+			evt.preventDefault()
+			$(".phone .pop",this.root).show()
+		}
+		phoneTouchend(evt) {
+			evt.stopPropagation()
+			evt.preventDefault()
+			$(".phone .pop",this.root).hide()	
+		}
+		this.on("mount", function(){
+
+			slider = $(".phone",self.root)
+			slider[0].addEventListener("touchstart", self.phoneTouchstart)
+			slider[0].addEventListener("touchend", self.phoneTouchend)
+			pageOne = $(".page-1",self.root)
+			pageOne[0].addEventListener("touchstart", self.PageTouchstart)
+			pageOne[0].addEventListener("touchmove", self.PageTouchmove)
+			pageOne[0].addEventListener("touchend", self.PageTouchend)
+			pageTwo = $(".page-2",self.root)
+			pageTwo[0].addEventListener("touchstart", self.PageTouchstart)
+			pageTwo[0].addEventListener("touchmove", self.PageTouchmove)
+			pageTwo[0].addEventListener("touchend", self.PageTouchend)
+			console.log("mount")
+
+		})
+
+		

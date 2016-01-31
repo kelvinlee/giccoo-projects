@@ -1,0 +1,416 @@
+@import sass/base
+@import ../../libs/sass/loading
+
+$red: #da3043
+
+
+// animation,delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+// animate clickover
++keyframes(clickover)
+	0%
+		opacity: 0
+	30%
+		opacity: 0.7
+	60%
+		opacity: 0
+	100%
+		opacity: 0
++keyframes(bgshow)
+	0%
+		+transform(scale(1,1))
+	100%
+		+transform(scale(1.3,1.3))
++keyframes(bgsmall)
+	0%
+		+transform(scale(1.3,1.3))
+	100%
+		+transform(scale(1,1))
++keyframes(play1)
+	0%
+		+transform(translate3d(0,0,0))
+	50%
+		+transform(translate3d(0,50%,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(play2)
+	0%
+		+transform(translate3d(0,0,0))
+	50%
+		+transform(translate3d(0,80%,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(play3)
+	0%
+		+transform(translate3d(0,0,0))
+	50%
+		+transform(translate3d(0,30%,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(play4)
+	0%
+		+transform(translate3d(0,0,0))
+	50%
+		+transform(translate3d(0,70%,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(play5)
+	0%
+		+transform(translate3d(0,0,0))
+	50%
+		+transform(translate3d(0,70%,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(river)
+	from
+		+transform(translate3d(0,0,0))
+	to
+		+transform(translate3d(-30%,0,0))
++keyframes(floating)
+	0%,100%
+		+transform(translate3d(0,0,0))
+	70%
+		+transform(translate3d(12%,-10%,0))
++keyframes(runGame)
+	0%
+		+transform(translate3d(0,-25%,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(nextPoint)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(0,100%,0))
+
+
+// end animate
+
+.wechat-share-hide
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+
+html,body
+	+w
+	+h
+	+bc($red)
+.hide
+	+hide
+.loading
+	+bc($red)
+.logo
+	+posa
+	+tr
+	+w(100%)
+	z-index: 200
+
+.main
+	+posa
+	+tl
+	+w
+	+h
+	z-index: 190
+	.page
+		+posa
+		+tl
+		+w
+		+h
+		+overhide
+	.page-1
+		z-index: 5
+		+hide
+		&.on
+			+show
+		.rivers
+			+tran
+			+posa
+			+bl(82%)
+			// +transform(translate3d(0,200%,0))
+			+w
+			font-size: 0
+			$item-w: 15%
+			$item-h: 25%
+			.river
+				white-space: nowrap
+				+posa
+				+tl
+				.item
+					display: inline-block
+					+w($item-w)
+			.river-1
+				// +transform(translate3d(0,0,0))
+				+animation(river,4s,linear,infinite)
+				z-index: 1
+			.river-2
+				// +transform(translate3d(-$item-w/2,$item-h,0))
+				+tl($item-h,-$item-w/2)
+				+animation(river,4s,linear,infinite)
+				animation-direction: reverse
+				z-index: 3
+			.river-3
+				// +transform(translate3d(0,$item-h*2,0))
+				+tl($item-h*2)
+				+animation(river,4s,linear,infinite)
+				z-index: 5
+			.river-4
+				// +transform(translate3d(-$item-w/2,$item-h*3,0))
+				+tl($item-h*3,-$item-w/2)
+				+animation(river,4s,linear,infinite)
+				animation-direction: reverse
+				z-index: 7
+			.river-5
+				+transform(translate3d(0,$item-h*4,0))
+				+posr
+				z-index: 10
+				&:after
+					content: " "
+					+posa
+					+tl(42%,0)
+					+wh(100%,58%)
+					+bc($red)
+			.lw
+				+posa
+			.lw-1
+				+iw(124)
+				+tl(38%,4%)
+				+animation(floating,5s,ease,infinite)
+				animation-delay: 500ms
+				z-index: 8
+			.lw-2
+				+iw(83)
+				+tl(35%,50%)
+				+animation(floating,4s,ease,infinite)
+				animation-direction: reverse
+				z-index: 6
+			.lw-3
+				+iw(126)
+				+tl(16%,74%)
+				+animation(floating,5s,ease,infinite)
+				animation-delay: 1.5s
+				// animation-direction: reverse
+				z-index: 6
+			.lw-4
+				+iw(99)
+				+tl(6%,24%)
+				+animation(floating,4s,ease,infinite)
+				animation-delay: 1s
+				animation-direction: reverse
+				z-index: 4
+		.banner
+			+m
+			+iw(640)
+			margin-top: 30%
+			+posr
+			z-index: 11
+			opacity: 1
+		.banner-text
+			+m
+			+iw(640)
+			opacity: 1
+		.haibao
+			+posa
+			+bl(26%)
+			z-index: 2
+			.box
+				+m
+				+iw(640)
+		.haibao-note
+			+posa
+			+bl(62%)
+			z-index: 1
+			.box
+				+m
+				+iw(640)
+
+		&[step="1"]
+			.haibao,.haibao-note
+				+hide
+			.banner,.banner-text
+				+show
+
+		&[step="2"]
+			.haibao,.haibao-note
+				+show
+			.banner,.banner-text
+				+hide
+			.rivers
+				top: auto
+				bottom: 28%
+				margin-top: 0
+				.lw-4
+					left: 2%
+				.lw-1
+					left: 14%
+	.page-2
+		z-index: 4
+		opacity: 0
+		+tran
+		&.on
+			opacity: 1
+			+transform(translate3d(0,0,0))
+		.film
+			+tran
+			+posr
+			+w
+			+h
+			.bg
+				+posa
+				+tl(50%,50%)
+				+transform(translate3d(-50%,-50%,0))
+				+iw(640)
+			.content
+				+posa
+				+tl(15.5%,13.5%)
+				+w(73%)
+			.link
+				+posa
+				+bl(10%,10%)
+				+wh(80%,16%)
+
+		&[step="1"]
+			.film
+				+transform(translate3d(0,0,0))
+		&[step="2"]
+			.film
+				+transform(translate3d(0,-100%,0))
+		&[step="3"]
+			.film
+				+transform(translate3d(0,-200%,0))
+		&[step="4"]
+			.film
+				+transform(translate3d(0,-300%,0))
+	.page-3
+		z-index: 1
+		// $cdn+
+		+b("../img/bg-line.jpg",no-repeat,center,center,cover)
+		+tran
+		opacity: 0
+		&.on
+			z-index: 5
+			opacity: 1
+		.box
+			+posa
+			+tl(10%,50%)
+			+iw(640)
+			+transform(translate3d(-50%,0,0))
+			z-index: 200
+			.mk
+				+posr
+				z-index: 10
+				.line-box
+					+posa
+					+tl(51%,27%)
+					+wh(46%,33%)
+					// +bc($red)
+					font-size: 0
+					white-space: nowrap
+					.line
+						+wh(33%,100%)
+						+overhide
+						display: inline-block
+						margin-left: 1%
+						&:first-child
+							margin-left: 0
+						.ls
+							+posr
+							+m
+							+w(80%)
+							+transform(translate3d(0,-25%,0))
+							+tran($time: 2s)
+							transition-delay: 4s
+							ul
+								+tran
+								transition-delay: 1s
+
+						&.line-1
+							.ls
+								top: -32%
+						&.line-2
+							.ls
+								top: -32%*2
+						&.line-3
+							.ls
+								top: -33%*3
+				.hongbao
+					+posa
+					+bl(-20% + 7.6%)
+					+w
+					+text-center
+					+h(20%)
+					+overhide
+					.box-m
+						+posa
+						+tl(0,(100% - 37.5%)/2)
+						+w(37.5%)
+						+tran($time: 1s)
+						+transform(translate3d(0,-100%,0))
+						transition-delay: 300ms
+			.hand
+				+posa
+				+tl(14%)
+				+tran
+				z-index: 8
+
+			&.run
+				.mk
+					.line-box
+						.line
+							&.line-1,&.line-2,&.line-3
+								.ls
+									top: 0
+							.ls
+								+animation(runGame,1s,linear,6)
+			&.star
+				.hand
+					+transform(scale(1,-1))
+				.ls
+					ul
+						filter: url(blur.svg#blur)
+						-webkit-filter: blur(2px)
+						-moz-filter: blur(2px)
+						-ms-filter: blur(2px)
+						filter: blur(2px)
+			&.end
+				.mk
+					.hongbao
+						.box-m
+							+transform(translate3d(0,0,0))
+		.piao
+			+posa
+			+bl
+
+	.page-1.on ~ .page-2
+		+transform(translate3d(0,100%,0))
+
+	.phone
+		+posa
+		+bl(4%,50%)
+		+transform(translate3d(-50%,0,0))
+		+iw(640)
+		z-index: 100
+		.pop
+			+posa
+			+bl(110%)
+			+hide
+	.next
+		+posa
+		+bl(1%,50%)
+		+iw(39)
+		+transform(translate3d(-50%,0,0))
+.sliders
+	overflow: hidden
+	.slider
+		+posr
+		white-space: nowrap
+		font-size: 0
+		+tran(all,0s,linear)
+		.slide
+			+w(100%)
+			display: inline-block
+			vertical-align: topd
