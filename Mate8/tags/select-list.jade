@@ -30,10 +30,17 @@ select-list
 			.box
 				img(data-src="#{images}/haibao-note.png")
 		.haibao.fadeInUp.animated.delay-5
-			.box
+			//- .box
 				img(data-src="#{images}/haibao.png")
-		#phone.phone
-			.over
+			.haibao-list
+				-for (var i=4;i>=1;i--)
+					.item(class="item-#{i}")
+						img(data-src="#{images}/film-#{i}.png")
+						div(class="item-click-#{i}")
+		.phone
+			#phone.over
+			.phone-item
+				img(data-src="#{images}/phone.png")
 			img(data-src="#{images}/piao.jpg")
 			.pop
 				img(data-src="#{images}/pop.png")
@@ -198,7 +205,7 @@ select-list
 		}
 		this.on("mount", function(){
 
-			slider = $(".phone",self.root)
+			slider = $("#phone",self.root)
 			slider[0].addEventListener("touchstart", self.phoneTouchstart)
 			slider[0].addEventListener("touchend", self.phoneTouchend)
 			slider = $(".piao",self.root)

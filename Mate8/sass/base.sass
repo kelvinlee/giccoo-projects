@@ -37,7 +37,34 @@ $red: #da3043
 		+transform(translate3d(-50%,0,0))
 	100%
 		+transform(translate3d(-50%,40%,0))
-
++keyframes(film1)
+	0%,25%,100%
+		+transform(rotate(-20deg) scale(1,1) translate3d(0,0,0))
+		z-index: 5
+	3%,22%
+		+transform(rotate(0deg) scale(1.3,1.3) translate3d(20%,-20%,0))
+		z-index: 6
++keyframes(film2)
+	0%,25%,100%
+		+transform(rotate(-10deg) scale(1,1) translate3d(0,0,0))
+		z-index: 5
+	3%,22%
+		+transform(rotate(0deg) scale(1.3,1.3) translate3d(10%,-20%,0))
+		z-index: 6
++keyframes(film3)
+	0%,25%,100%
+		+transform(rotate(5deg) scale(1,1) translate3d(0,0,0))
+		z-index: 5
+	3%,22%
+		+transform(rotate(0deg) scale(1.3,1.3) translate3d(-5%,-20%,0))
+		z-index: 6
++keyframes(film4)
+	0%,25%,100%
+		+transform(rotate(20deg) scale(1,1) translate3d(0,0,0))
+		z-index: 5
+	3%,22%
+		+transform(rotate(0deg) scale(1.3,1.3) translate3d(-20%,-20%,0))
+		z-index: 6
 // end animate
 
 .wechat-share-hide
@@ -186,6 +213,7 @@ html,body
 		.haibao
 			+posa
 			+bl(26%)
+			+w
 			z-index: 2
 			.box
 				+m
@@ -193,6 +221,31 @@ html,body
 				+text-center
 				img
 					+w(90%)
+			.haibao-list
+				+m
+				+iw(640)
+				+text-center
+				+posr
+				.item
+					+posa
+					+bl
+					+iw(270,640,100%)
+					z-index: 5
+				.item-1
+					+bl(0,10%)
+					+transform(rotate(-20deg))
+				.item-2
+					+bl(1.4rem,25%)
+					+transform(rotate(-10deg))
+				.item-3
+					+bl(1.4rem,40%)
+					+transform(rotate(5deg))
+				.item-4
+					+bl(0,55%)
+					+transform(rotate(20deg))
+
+
+
 		.haibao-note
 			+posa
 			+bl(62%)
@@ -225,6 +278,20 @@ html,body
 					left: 2%
 				.lw-1
 					left: 14%
+			.haibao
+				$time: 12s
+				.item-1
+					+animation(film1,$time,linear,infinite)
+					animation-delay: $time/4*0
+				.item-2
+					+animation(film2,$time,linear,infinite)
+					animation-delay: $time/4*1
+				.item-3
+					+animation(film3,$time,linear,infinite)
+					animation-delay: $time/4*2
+				.item-4
+					+animation(film4,$time,linear,infinite)
+					animation-delay: $time/4*3
 	.page-2
 		z-index: 4
 		opacity: 0
@@ -405,10 +472,14 @@ html,body
 		z-index: 100
 		.over
 			+posa
-			+tl
-			+w
-			+h
+			+tl(6%,12%)
+			+w(122/640*100%)
+			+h(70%)
 			z-index: 101
+		.phone-item
+			+posa
+			+tl(6%,12%)
+			+w(122/640*100%)
 		.pop
 			+posa
 			+bl(110%)

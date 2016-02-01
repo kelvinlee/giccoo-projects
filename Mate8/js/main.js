@@ -86,11 +86,13 @@ HTMLElement.prototype.getStyle = function(className) {
 imgs = [];
 
 window.onload = function() {
+  var MK;
   riot.mount("*");
   setTimeout(function() {
     return loadAllImage();
   }, 500);
-  if ($("body").height() <= 460) {
+  MK = $("body").width() / $("body").height();
+  if ($("body").height() <= 460 || MK > 0.65) {
     return $("body").addClass("iphone4");
   }
 };

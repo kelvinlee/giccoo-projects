@@ -42,8 +42,9 @@ window.onload = ->
 	setTimeout ->
 		loadAllImage()
 	,500
+	MK = $("body").width()/$("body").height()
 
-	if $("body").height() <= 460
+	if $("body").height() <= 460 or MK > 0.65
 		$("body").addClass "iphone4"
 
 	# wx = {}

@@ -85,10 +85,24 @@
       <div class="box"><img data-src="img/haibao-note.png"/></div>
     </div>
     <div class="haibao fadeInUp animated delay-5">
-      <div class="box"><img data-src="img/haibao.png"/></div>
+      <div class="haibao-list">
+        <div class="item item-4"><img data-src="img/film-4.png"/>
+          <div class="item-click-4"></div>
+        </div>
+        <div class="item item-3"><img data-src="img/film-3.png"/>
+          <div class="item-click-3"></div>
+        </div>
+        <div class="item item-2"><img data-src="img/film-2.png"/>
+          <div class="item-click-2"></div>
+        </div>
+        <div class="item item-1"><img data-src="img/film-1.png"/>
+          <div class="item-click-1"></div>
+        </div>
+      </div>
     </div>
-    <div id="phone" class="phone">
-      <div class="over"></div><img data-src="img/piao.jpg"/>
+    <div class="phone">
+      <div id="phone" class="over"></div>
+      <div class="phone-item"><img data-src="img/phone.png"/></div><img data-src="img/piao.jpg"/>
       <div class="pop"><img data-src="img/pop.png"/></div>
     </div>
   </div>
@@ -317,7 +331,7 @@
     }
     this.on("mount", function(){
     
-    	slider = $(".phone",self.root)
+    	slider = $("#phone",self.root)
     	slider[0].addEventListener("touchstart", self.phoneTouchstart)
     	slider[0].addEventListener("touchend", self.phoneTouchend)
     	slider = $(".piao",self.root)
