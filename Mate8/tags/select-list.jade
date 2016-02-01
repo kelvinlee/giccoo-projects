@@ -8,7 +8,7 @@ select-list
 				.river(class="river-#{r}")
 					-for(var i=0;i<12;i++)
 						.item
-							img(data-src="#{images}/item-bl.png")
+							img(src="#{images}/item-bl.png")
 			.river(class="river-5")
 				-for(var i=0;i<12;i++)
 					.item
@@ -21,28 +21,32 @@ select-list
 				img(data-src="#{images}/p-1-m.png")
 			.lw.lw-4
 				img(data-src="#{images}/p-1-b.png")
+		.bg
 		.banner.fadeIn.animated.delay-5
 			img(data-src="#{images}/banner.png")
 		.banner-text.fadeIn.animated.delay-7
 			img(data-src="#{images}/banner-text.png")
 		.haibao-note.bounceIn.animated.delay-5
 			.box
-				img(data-src="#{images}/haibao-note.jpg")
+				img(data-src="#{images}/haibao-note.png")
 		.haibao.fadeInUp.animated.delay-5
 			.box
 				img(data-src="#{images}/haibao.png")
 		#phone.phone
+			.over
 			img(data-src="#{images}/piao.jpg")
 			.pop
 				img(data-src="#{images}/pop.png")
 	.page.page-2(step="1",max="4")
-		-for (var i=1;i<=4;i++)
-			.film(class="film-#{i}")
-				.bg
-					img(data-src="#{images}/film-bg.png")
-					.content
-						img(data-src="#{images}/film-#{i}.jpg")
-					.link(onclick="{goGame}")
+		.film-box
+			-for (var i=1;i<=4;i++)
+				.film(class="film-#{i}")
+					.bg
+						img(data-src="#{images}/film-bg.png")
+						.content
+							img(data-src="#{images}/film-#{i}.jpg")
+						.link(onclick="{goGame}")
+							img(data-src="#{images}/link.png")
 	.page.page-3
 		.box(class="{boxrun}",onclick="{runGame}")
 			.mk
@@ -89,8 +93,11 @@ select-list
 						img(data-src="#{images}/hongbao.png")
 			.hand
 				img(data-src="#{images}/box-hand.png")
-		.piao
+		.piao(class="{boxrun}")
+			.over
 			img(data-src="#{images}/piao.png")
+			.pop
+				img(data-src="#{images}/pop.png")
 	.next
 		img(data-src="#{images}/next.png")
 	//- .page.page-2
@@ -110,17 +117,17 @@ select-list
 				self.update()
 			})
 			$(".page-3 .hongbao",self.root)[0].addEventListener(TRANSITION_END_NAME,function(){
-				alert("go to weipiaoer get hongbao")
+				console.log("go to weipiaoer get hongbao")
 			})
 			self.boxrun = "run star"
 			self.update()
 			setTimeout(function(){
 				self.boxrun = "run"
 				self.update()
-			},4500)
+			},2500)
 		}
 		starGame() {
-			
+			$(".next",self.root).hide()
 		}
 		goGame() {
 			$(".page",self.root).removeClass("on")
@@ -137,7 +144,7 @@ select-list
 				}else{
 					target.removeClass("on")
 					target.next().addClass("on")
-					if (target.next().is(".page-3")) {
+					if (target.is(".page-3") || target.next().is(".page-3")) {
 						self.starGame()
 					}
 				}
@@ -182,16 +189,19 @@ select-list
 		phoneTouchstart(evt) {
 			evt.stopPropagation()
 			evt.preventDefault()
-			$(".phone .pop",this.root).show()
+			$(".phone .pop,.piao .pop",this.root).show()
 		}
 		phoneTouchend(evt) {
 			evt.stopPropagation()
 			evt.preventDefault()
-			$(".phone .pop",this.root).hide()	
+			$(".phone .pop,.piao .pop",this.root).hide()	
 		}
 		this.on("mount", function(){
 
 			slider = $(".phone",self.root)
+			slider[0].addEventListener("touchstart", self.phoneTouchstart)
+			slider[0].addEventListener("touchend", self.phoneTouchend)
+			slider = $(".piao",self.root)
 			slider[0].addEventListener("touchstart", self.phoneTouchstart)
 			slider[0].addEventListener("touchend", self.phoneTouchend)
 			pageOne = $(".page-1",self.root)

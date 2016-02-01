@@ -4,60 +4,60 @@
   <div step="1" max="2" class="page page-1 on">
     <div class="rivers">
       <div class="river river-1">
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
       </div>
       <div class="river river-2">
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
       </div>
       <div class="river river-3">
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
       </div>
       <div class="river river-4">
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
-        <div class="item"><img data-src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
+        <div class="item"><img src="img/item-bl.png"/></div>
       </div>
       <div class="river river-5">
         <div class="item"><img data-src="img/item-blm.png"/></div>
@@ -78,41 +78,45 @@
       <div class="lw lw-3"><img data-src="img/p-1-m.png"/></div>
       <div class="lw lw-4"><img data-src="img/p-1-b.png"/></div>
     </div>
+    <div class="bg"></div>
     <div class="banner fadeIn animated delay-5"><img data-src="img/banner.png"/></div>
     <div class="banner-text fadeIn animated delay-7"><img data-src="img/banner-text.png"/></div>
     <div class="haibao-note bounceIn animated delay-5">
-      <div class="box"><img data-src="img/haibao-note.jpg"/></div>
+      <div class="box"><img data-src="img/haibao-note.png"/></div>
     </div>
     <div class="haibao fadeInUp animated delay-5">
       <div class="box"><img data-src="img/haibao.png"/></div>
     </div>
-    <div id="phone" class="phone"><img data-src="img/piao.jpg"/>
+    <div id="phone" class="phone">
+      <div class="over"></div><img data-src="img/piao.jpg"/>
       <div class="pop"><img data-src="img/pop.png"/></div>
     </div>
   </div>
   <div step="1" max="4" class="page page-2">
-    <div class="film film-1">
-      <div class="bg"><img data-src="img/film-bg.png"/>
-        <div class="content"><img data-src="img/film-1.jpg"/></div>
-        <div onclick="{goGame}" class="link"></div>
+    <div class="film-box">
+      <div class="film film-1">
+        <div class="bg"><img data-src="img/film-bg.png"/>
+          <div class="content"><img data-src="img/film-1.jpg"/></div>
+          <div onclick="{goGame}" class="link"><img data-src="img/link.png"/></div>
+        </div>
       </div>
-    </div>
-    <div class="film film-2">
-      <div class="bg"><img data-src="img/film-bg.png"/>
-        <div class="content"><img data-src="img/film-2.jpg"/></div>
-        <div onclick="{goGame}" class="link"></div>
+      <div class="film film-2">
+        <div class="bg"><img data-src="img/film-bg.png"/>
+          <div class="content"><img data-src="img/film-2.jpg"/></div>
+          <div onclick="{goGame}" class="link"><img data-src="img/link.png"/></div>
+        </div>
       </div>
-    </div>
-    <div class="film film-3">
-      <div class="bg"><img data-src="img/film-bg.png"/>
-        <div class="content"><img data-src="img/film-3.jpg"/></div>
-        <div onclick="{goGame}" class="link"></div>
+      <div class="film film-3">
+        <div class="bg"><img data-src="img/film-bg.png"/>
+          <div class="content"><img data-src="img/film-3.jpg"/></div>
+          <div onclick="{goGame}" class="link"><img data-src="img/link.png"/></div>
+        </div>
       </div>
-    </div>
-    <div class="film film-4">
-      <div class="bg"><img data-src="img/film-bg.png"/>
-        <div class="content"><img data-src="img/film-4.jpg"/></div>
-        <div onclick="{goGame}" class="link"></div>
+      <div class="film film-4">
+        <div class="bg"><img data-src="img/film-bg.png"/>
+          <div class="content"><img data-src="img/film-4.jpg"/></div>
+          <div onclick="{goGame}" class="link"><img data-src="img/link.png"/></div>
+        </div>
       </div>
     </div>
   </div>
@@ -211,7 +215,10 @@
       </div>
       <div class="hand"><img data-src="img/box-hand.png"/></div>
     </div>
-    <div class="piao"><img data-src="img/piao.png"/></div>
+    <div class="piao {boxrun}">
+      <div class="over"></div><img data-src="img/piao.png"/>
+      <div class="pop"><img data-src="img/pop.png"/></div>
+    </div>
   </div>
   <div class="next"><img data-src="img/next.png"/></div>
   <script>
@@ -229,17 +236,17 @@
     		self.update()
     	})
     	$(".page-3 .hongbao",self.root)[0].addEventListener(TRANSITION_END_NAME,function(){
-    		alert("go to weipiaoer get hongbao")
+    		console.log("go to weipiaoer get hongbao")
     	})
     	self.boxrun = "run star"
     	self.update()
     	setTimeout(function(){
     		self.boxrun = "run"
     		self.update()
-    	},4500)
+    	},2500)
     }
     starGame() {
-    	
+    	$(".next",self.root).hide()
     }
     goGame() {
     	$(".page",self.root).removeClass("on")
@@ -256,7 +263,7 @@
     		}else{
     			target.removeClass("on")
     			target.next().addClass("on")
-    			if (target.next().is(".page-3")) {
+    			if (target.is(".page-3") || target.next().is(".page-3")) {
     				self.starGame()
     			}
     		}
@@ -301,16 +308,19 @@
     phoneTouchstart(evt) {
     	evt.stopPropagation()
     	evt.preventDefault()
-    	$(".phone .pop",this.root).show()
+    	$(".phone .pop,.piao .pop",this.root).show()
     }
     phoneTouchend(evt) {
     	evt.stopPropagation()
     	evt.preventDefault()
-    	$(".phone .pop",this.root).hide()	
+    	$(".phone .pop,.piao .pop",this.root).hide()	
     }
     this.on("mount", function(){
     
     	slider = $(".phone",self.root)
+    	slider[0].addEventListener("touchstart", self.phoneTouchstart)
+    	slider[0].addEventListener("touchend", self.phoneTouchend)
+    	slider = $(".piao",self.root)
     	slider[0].addEventListener("touchstart", self.phoneTouchstart)
     	slider[0].addEventListener("touchend", self.phoneTouchend)
     	pageOne = $(".page-1",self.root)
