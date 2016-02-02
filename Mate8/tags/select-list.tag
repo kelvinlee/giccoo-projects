@@ -1,7 +1,7 @@
 
 <select-list>
   <div class="logo"><img data-src="img/logo.png"/></div>
-  <div step="1" max="2" class="page page-1">
+  <div step="1" max="2" class="page page-1 on">
     <div class="rivers">
       <div class="river river-1">
         <div class="item"><img src="img/item-bl.png"/></div>
@@ -137,7 +137,7 @@
       </div>
     </div>
   </div>
-  <div class="page page-3 on">
+  <div class="page page-3">
     <div class="bg {boxrun}"><img data-src="img/bg-line.jpg"/></div>
     <div onclick="{closeShare}" class="share"><img data-src="img/share.png"/></div>
     <div onclick="{runGame}" class="box {boxrun}">

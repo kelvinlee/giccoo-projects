@@ -2,7 +2,7 @@ select-list
 	- var images = "img"
 	.logo
 		img(data-src="#{images}/logo.png")
-	.page.page-1(step="1",max="2")
+	.page.page-1.on(step="1",max="2")
 		.rivers
 			-for(var r=1;r<=4;r++)
 				.river(class="river-#{r}")
@@ -55,7 +55,7 @@ select-list
 							img(data-src="#{images}/mate8-bainian.png")
 						.link(onclick="{goGame}")
 							img(data-src="#{images}/link.png")
-	.page.page-3.on
+	.page.page-3
 		.bg(class="{boxrun}")
 			img(data-src="#{images}/bg-line.jpg")
 		.share(onclick="{closeShare}")
