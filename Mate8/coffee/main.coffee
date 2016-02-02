@@ -1,6 +1,6 @@
 # @codekit-prepend "coffee/css3Prefix"
-# @codekit-prepend "coffee/plus"
-# @codekit-prepend "../../libs/coffee/requestanimation"
+
+
 # images = "http://disk.giccoo.com/projects/huaweiG7/"
 # images = ""
 # imageList = [

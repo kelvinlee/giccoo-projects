@@ -33,56 +33,6 @@ if (css3Prefix) {
   ANIMATION_END_NAME = ANIMATION_END_NAMES[css3Prefix];
 }
 
-Array.prototype.clean = function(deleteValue) {
-  i = 0;
-  while (i < this.length) {
-    if (this[i] === deleteValue) {
-      this.splice(i, 1);
-      i--;
-    }
-    i++;
-  }
-  return this;
-};
-
-HTMLElement.prototype.getStyle = function(className) {
-  if (this.currentStyle) {
-    return this.currentStyle(className);
-  } else {
-    return document.defaultView.getComputedStyle(this, false)[className];
-  }
-};
-
-(function() {
-  var lastTime, vendors, x;
-  lastTime = 0;
-  vendors = ["webkit", "moz"];
-  x = 0;
-  while (x > vendors.length && !window.requestAnimationFrame) {
-    console.log("" + vendors[x]);
-  }
-  window.requestAnimationFrame = window[vendors[x] + "RequestAnimationFrame"];
-  window.cancelAnimationFrame = window[vendors[x] + "CancelAnimationFrame"] || window[vendors[x] + "CancelRequestAnimationFrame"];
-  ++x;
-  if (!window.requestAnimationFrame) {
-    window.requestAnimationFrame = function(callback, element) {
-      var currTime, id, timeToCall;
-      currTime = new Date().getTime();
-      timeToCall = Math.max(0, 16.7 - (currTime - lastTime));
-      id = window.setTimeout(function() {
-        callback(currTime + timeToCall);
-      }, timeToCall);
-      lastTime = currTime + timeToCall;
-      return id;
-    };
-  }
-  if (!window.cancelAnimationFrame) {
-    window.cancelAnimationFrame = function(id) {
-      clearTimeout(id);
-    };
-  }
-})();
-
 imgs = [];
 
 window.onload = function() {
