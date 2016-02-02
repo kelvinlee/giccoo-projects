@@ -61,7 +61,10 @@ riot.tag('select-list', '<div class="logo"><img data-src="img/logo.png"></div> <
     		self.update()
     	})
     	$(".page-3 .hongbao",self.root)[0].addEventListener(TRANSITION_END_NAME,function(){
-    		console.log("go to weipiaoer get hongbao")
+
+    		setTimeout(function(){
+    			window.location.href = relinkTo
+    		},300)
     	})
     	self.boxrun = "run star"
     	self.update()
