@@ -37,13 +37,12 @@ select-list
 					.item(class="item-#{i}")
 						img(data-src="#{images}/film-#{i}.png")
 						div(class="item-click-#{i}")
-		.phone
-			#phone.over
+		#phone.phone(onclick="{showPop}")
+			.over
 			.phone-item
 				img(data-src="#{images}/phone.png")
 			img(data-src="#{images}/piao.jpg")
-			.pop
-				img(data-src="#{images}/pop.png")
+			//- .pop
 	.page.page-2(step="1",max="4")
 		.film-box
 			-for (var i=1;i<=4;i++)
@@ -52,9 +51,13 @@ select-list
 						img(data-src="#{images}/film-bg.png")
 						.content
 							img(data-src="#{images}/film-#{i}.jpg")
+						.bainian
+							img(data-src="#{images}/mate8-bainian.png")
 						.link(onclick="{goGame}")
 							img(data-src="#{images}/link.png")
 	.page.page-3
+		.bg(class="{boxrun}")
+			img(data-src="#{images}/bg-line.jpg")
 		.box(class="{boxrun}",onclick="{runGame}")
 			.mk
 				img(data-src="#{images}/box-bg.png")
@@ -100,24 +103,41 @@ select-list
 						img(data-src="#{images}/hongbao.png")
 			.hand
 				img(data-src="#{images}/box-hand.png")
-		.piao(class="{boxrun}")
+		.piao(class="{boxrun}",onclick="{showPop}")
 			.over
 			img(data-src="#{images}/piao.png")
 			.pop
 				img(data-src="#{images}/pop.png")
 	.next
 		img(data-src="#{images}/next.png")
+	.note-page.fadeIn.animated(show="{pop}",onclick="{closePop}")
+		.close
+			img(data-src="#{images}/icon-close.png")
+		.content
+			img(data-src="#{images}/pop.png")
 	//- .page.page-2
 
 	script.
 		var self = this
 		self.boxrun = ""
+		self.pop = false
 		target = null
 		_default = {x: 0,y: 0}
 		_can = true
+		showPop() {
+			if (self.boxrun != "") { return false }
+			self.pop = true
+			console.log(self.pop)
+			self.update()
+		}
+		closePop(){
+			self.pop = false
+			self.update()
+		}
 		runGame() {
 			if (self.boxrun != "") { return false }
 			console.log("starGame")
+			self.closePop()
 			$(".line-1 .ls",self.root)[0].addEventListener(ANIMATION_END_NAME,function(){
 				//- alert("中奖")
 				self.boxrun = "run end"
@@ -131,7 +151,7 @@ select-list
 			setTimeout(function(){
 				self.boxrun = "run"
 				self.update()
-			},2500)
+			},2000)
 		}
 		starGame() {
 			$(".next",self.root).hide()
@@ -205,12 +225,12 @@ select-list
 		}
 		this.on("mount", function(){
 
-			slider = $("#phone",self.root)
-			slider[0].addEventListener("touchstart", self.phoneTouchstart)
-			slider[0].addEventListener("touchend", self.phoneTouchend)
-			slider = $(".piao",self.root)
-			slider[0].addEventListener("touchstart", self.phoneTouchstart)
-			slider[0].addEventListener("touchend", self.phoneTouchend)
+			//- slider = $("#phone",self.root)
+			//- slider[0].addEventListener("touchstart", self.phoneTouchstart)
+			//- slider[0].addEventListener("touchend", self.phoneTouchend)
+			//- slider = $(".piao",self.root)
+			//- slider[0].addEventListener("touchstart", self.phoneTouchstart)
+			//- slider[0].addEventListener("touchend", self.phoneTouchend)
 			pageOne = $(".page-1",self.root)
 			pageOne[0].addEventListener("touchstart", self.PageTouchstart)
 			pageOne[0].addEventListener("touchmove", self.PageTouchmove)

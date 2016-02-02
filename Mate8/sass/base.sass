@@ -65,6 +65,11 @@ $red: #da3043
 	3%,22%
 		+transform(rotate(0deg) scale(1.3,1.3) translate3d(-20%,-20%,0))
 		z-index: 6
++keyframes(rotateBG)
+	0%
+		+transform(translate3d(-50%,-50%,0) rotate(0deg))
+	100%
+		+transform(translate3d(-50%,-50%,0) rotate(360deg))
 // end animate
 
 .wechat-share-hide
@@ -115,6 +120,8 @@ html,body
 			font-size: 0
 			$item-w: 15%
 			$item-h: 25%
+			.iphone4 &
+				+bl(78%)
 			.river
 				white-space: nowrap
 				+posa
@@ -195,7 +202,7 @@ html,body
 			z-index: 0
 		.banner
 			+m
-			+iw(640)
+			+w
 			margin-top: 30%
 			+posr
 			z-index: 11
@@ -205,7 +212,8 @@ html,body
 				+w(90%)
 		.banner-text
 			+m
-			+iw(640)
+			+w
+			margin-top: -4%
 			opacity: 1
 			+text-center
 			img
@@ -315,7 +323,7 @@ html,body
 				+posa
 				+tl(10%,50%)
 				+transform(translate3d(-50%,0,0))
-				+iw(640)
+				+iw(640,640,90%)
 			.content
 				+posa
 				+tl(15.5%,13.5%)
@@ -325,6 +333,10 @@ html,body
 				+bl(10%,18%)
 				+wh(64%,16%)
 				+hide
+			.bainian
+				+posa
+				+bl(11%)
+				+w
 
 		&[step="1"]
 			.film-box
@@ -343,17 +355,29 @@ html,body
 				// +transform(translate3d(0,-300%,0))
 				top: -300%
 			.film-4
+				.bainian
+					+hide
 				.link
 					+show
 	.page-3
 		z-index: 1
 		// $cdn+
-		+b("../img/bg-line.jpg",no-repeat,center,center,cover)
+		// +b("../img/bg-line.jpg",no-repeat,center,center,cover)
 		+tran
 		opacity: 0
+		.bg
+			+posa
+			+tl(50%,50%)
+			+w(200%)
+			+transform(translate3d(-50%,-50%,0))
+
 		&.on
 			z-index: 5
 			opacity: 1
+			.bg
+				+animation(rotateBG,10s,linear,infinite)
+				&.run
+					animation-duration: 4s
 		.box
 			+posa
 			+tl(10%,50%)
@@ -382,8 +406,8 @@ html,body
 							+m
 							+w(80%)
 							+transform(translate3d(0,-25%,0))
-							+tran($time: 2s)
-							transition-delay: 4s
+							+tran($time: 1s)
+							transition-delay: 1s
 							ul
 								+tran
 								transition-delay: 1s
@@ -425,7 +449,7 @@ html,body
 								.ls
 									top: 0
 							.ls
-								+animation(runGame,1s,linear,6)
+								+animation(runGame,0.5s,linear,6)
 			&.star
 				.hand
 					+transform(scale(1,-1))
@@ -463,6 +487,28 @@ html,body
 
 	.page-1.on ~ .page-2
 		+transform(translate3d(0,100%,0))
+	.note-page
+		+posa
+		+tl
+		+w
+		+h
+		+bc(rgba(0,0,0,0.6))
+		// +hide
+		z-index: 10009
+		.close
+			+posa
+			+tr(5%,5%)
+			+w(10%)
+			+overhide
+			+box
+			+font-size(0)
+			border: solid 2px #fff
+			border-radius: 50%
+		.content
+			+posa
+			+tl(50%)
+			+transform(translate3d(0,-50%,0))
+
 
 	.phone
 		+posa

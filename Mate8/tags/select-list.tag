@@ -100,10 +100,9 @@
         </div>
       </div>
     </div>
-    <div class="phone">
-      <div id="phone" class="over"></div>
+    <div id="phone" onclick="{showPop}" class="phone">
+      <div class="over"></div>
       <div class="phone-item"><img data-src="img/phone.png"/></div><img data-src="img/piao.jpg"/>
-      <div class="pop"><img data-src="img/pop.png"/></div>
     </div>
   </div>
   <div step="1" max="4" class="page page-2">
@@ -111,30 +110,35 @@
       <div class="film film-1">
         <div class="bg"><img data-src="img/film-bg.png"/>
           <div class="content"><img data-src="img/film-1.jpg"/></div>
+          <div class="bainian"><img data-src="img/mate8-bainian.png"/></div>
           <div onclick="{goGame}" class="link"><img data-src="img/link.png"/></div>
         </div>
       </div>
       <div class="film film-2">
         <div class="bg"><img data-src="img/film-bg.png"/>
           <div class="content"><img data-src="img/film-2.jpg"/></div>
+          <div class="bainian"><img data-src="img/mate8-bainian.png"/></div>
           <div onclick="{goGame}" class="link"><img data-src="img/link.png"/></div>
         </div>
       </div>
       <div class="film film-3">
         <div class="bg"><img data-src="img/film-bg.png"/>
           <div class="content"><img data-src="img/film-3.jpg"/></div>
+          <div class="bainian"><img data-src="img/mate8-bainian.png"/></div>
           <div onclick="{goGame}" class="link"><img data-src="img/link.png"/></div>
         </div>
       </div>
       <div class="film film-4">
         <div class="bg"><img data-src="img/film-bg.png"/>
           <div class="content"><img data-src="img/film-4.jpg"/></div>
+          <div class="bainian"><img data-src="img/mate8-bainian.png"/></div>
           <div onclick="{goGame}" class="link"><img data-src="img/link.png"/></div>
         </div>
       </div>
     </div>
   </div>
   <div class="page page-3">
+    <div class="bg {boxrun}"><img data-src="img/bg-line.jpg"/></div>
     <div onclick="{runGame}" class="box {boxrun}">
       <div class="mk"><img data-src="img/box-bg.png"/>
         <div class="line-box">
@@ -229,21 +233,37 @@
       </div>
       <div class="hand"><img data-src="img/box-hand.png"/></div>
     </div>
-    <div class="piao {boxrun}">
+    <div onclick="{showPop}" class="piao {boxrun}">
       <div class="over"></div><img data-src="img/piao.png"/>
       <div class="pop"><img data-src="img/pop.png"/></div>
     </div>
   </div>
   <div class="next"><img data-src="img/next.png"/></div>
+  <div show="{pop}" onclick="{closePop}" class="note-page fadeIn animated">
+    <div class="close"><img data-src="img/icon-close.png"/></div>
+    <div class="content"><img data-src="img/pop.png"/></div>
+  </div>
   <script>
     var self = this
     self.boxrun = ""
+    self.pop = false
     target = null
     _default = {x: 0,y: 0}
     _can = true
+    showPop() {
+    	if (self.boxrun != "") { return false }
+    	self.pop = true
+    	console.log(self.pop)
+    	self.update()
+    }
+    closePop(){
+    	self.pop = false
+    	self.update()
+    }
     runGame() {
     	if (self.boxrun != "") { return false }
     	console.log("starGame")
+    	self.closePop()
     	$(".line-1 .ls",self.root)[0].addEventListener(ANIMATION_END_NAME,function(){
     		//- alert("中奖")
     		self.boxrun = "run end"
@@ -257,7 +277,7 @@
     	setTimeout(function(){
     		self.boxrun = "run"
     		self.update()
-    	},2500)
+    	},2000)
     }
     starGame() {
     	$(".next",self.root).hide()
@@ -331,12 +351,12 @@
     }
     this.on("mount", function(){
     
-    	slider = $("#phone",self.root)
-    	slider[0].addEventListener("touchstart", self.phoneTouchstart)
-    	slider[0].addEventListener("touchend", self.phoneTouchend)
-    	slider = $(".piao",self.root)
-    	slider[0].addEventListener("touchstart", self.phoneTouchstart)
-    	slider[0].addEventListener("touchend", self.phoneTouchend)
+    	//- slider = $("#phone",self.root)
+    	//- slider[0].addEventListener("touchstart", self.phoneTouchstart)
+    	//- slider[0].addEventListener("touchend", self.phoneTouchend)
+    	//- slider = $(".piao",self.root)
+    	//- slider[0].addEventListener("touchstart", self.phoneTouchstart)
+    	//- slider[0].addEventListener("touchend", self.phoneTouchend)
     	pageOne = $(".page-1",self.root)
     	pageOne[0].addEventListener("touchstart", self.PageTouchstart)
     	pageOne[0].addEventListener("touchmove", self.PageTouchmove)
