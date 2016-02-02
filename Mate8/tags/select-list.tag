@@ -1,7 +1,7 @@
 
 <select-list>
   <div class="logo"><img data-src="img/logo.png"/></div>
-  <div step="1" max="2" class="page page-1 on">
+  <div step="1" max="2" class="page page-1">
     <div class="rivers">
       <div class="river river-1">
         <div class="item"><img src="img/item-bl.png"/></div>
@@ -137,8 +137,9 @@
       </div>
     </div>
   </div>
-  <div class="page page-3">
+  <div class="page page-3 on">
     <div class="bg {boxrun}"><img data-src="img/bg-line.jpg"/></div>
+    <div onclick="{closeShare}" class="share"><img data-src="img/share.png"/></div>
     <div onclick="{runGame}" class="box {boxrun}">
       <div class="mk"><img data-src="img/box-bg.png"/>
         <div class="line-box">
@@ -231,7 +232,15 @@
           <div class="box-m"><img data-src="img/hongbao.png"/></div>
         </div>
       </div>
-      <div class="hand"><img data-src="img/box-hand.png"/></div>
+      <div class="hand"><img data-src="img/box-hand.png"/>
+        <div class="stars">
+          <div class="star star-1"><img data-src="img/star.png"/></div>
+          <div class="star star-2"><img data-src="img/star.png"/></div>
+          <div class="star star-3"><img data-src="img/star.png"/></div>
+          <div class="star star-4"><img data-src="img/star.png"/></div>
+          <div class="star star-5"><img data-src="img/star.png"/></div>
+        </div>
+      </div>
     </div>
     <div onclick="{showPop}" class="piao {boxrun}">
       <div class="over"></div><img data-src="img/piao.png"/>
@@ -250,6 +259,9 @@
     target = null
     _default = {x: 0,y: 0}
     _can = true
+    closeShare() {
+    	$(".share",self.root).hide()
+    }
     showPop() {
     	if (self.boxrun != "") { return false }
     	self.pop = true

@@ -2,7 +2,7 @@ select-list
 	- var images = "img"
 	.logo
 		img(data-src="#{images}/logo.png")
-	.page.page-1.on(step="1",max="2")
+	.page.page-1(step="1",max="2")
 		.rivers
 			-for(var r=1;r<=4;r++)
 				.river(class="river-#{r}")
@@ -55,9 +55,11 @@ select-list
 							img(data-src="#{images}/mate8-bainian.png")
 						.link(onclick="{goGame}")
 							img(data-src="#{images}/link.png")
-	.page.page-3
+	.page.page-3.on
 		.bg(class="{boxrun}")
 			img(data-src="#{images}/bg-line.jpg")
+		.share(onclick="{closeShare}")
+			img(data-src="#{images}/share.png")
 		.box(class="{boxrun}",onclick="{runGame}")
 			.mk
 				img(data-src="#{images}/box-bg.png")
@@ -103,6 +105,11 @@ select-list
 						img(data-src="#{images}/hongbao.png")
 			.hand
 				img(data-src="#{images}/box-hand.png")
+				.stars
+					-for(var i=1;i<6;i++)
+						.star(class="star-#{i}")
+							img(data-src="#{images}/star.png")
+
 		.piao(class="{boxrun}",onclick="{showPop}")
 			.over
 			img(data-src="#{images}/piao.png")
@@ -124,6 +131,9 @@ select-list
 		target = null
 		_default = {x: 0,y: 0}
 		_can = true
+		closeShare() {
+			$(".share",self.root).hide()
+		}
 		showPop() {
 			if (self.boxrun != "") { return false }
 			self.pop = true

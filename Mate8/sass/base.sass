@@ -378,6 +378,14 @@ html,body
 				+animation(rotateBG,10s,linear,infinite)
 				&.run
 					animation-duration: 4s
+		.share
+			+bc(rgba(0,0,0,0.6))
+			+posa
+			+tl
+			+w
+			+h
+			z-index: 999
+
 		.box
 			+posa
 			+tl(10%,50%)
@@ -440,8 +448,41 @@ html,body
 				+tl(14%)
 				+tran
 				z-index: 8
+				.stars
+					+posa
+					+tr
+					+wh(50%,50%)
+					.star
+						+posa
+						+w(1rem)
+						&.star-1
+							+tr(40%,6%)
+							+w(0.8rem)
+							+animation(flash,5s,ease,infinite)
+						&.star-2
+							+tr(60%,25%)
+							+w(1.2rem)
+							+animation(flash,5s,ease,infinite)
+							animation-delay: 500ms
+						&.star-3
+							+tr(80%,3%)
+							+w(0.9rem)
+							+animation(flash,5s,ease,infinite)
+							animation-delay: 1000ms
+						&.star-4
+							+tr(95%,25%)
+							+animation(flash,5s,ease,infinite)
+							animation-delay: 1500ms
+						&.star-5
+							+tr(33%,25%)
+							+animation(flash,5s,ease,infinite)
+							animation-delay: 2000ms
 
+			
 			&.run
+				.hand
+					.stars
+						+hide
 				.mk
 					.line-box
 						.line
