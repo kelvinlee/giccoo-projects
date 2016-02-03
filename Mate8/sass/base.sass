@@ -34,9 +34,9 @@ $red: #da3043
 		+transform(none)
 +keyframes(nextPoint)
 	0%
-		+transform(translate3d(-50%,0,0))
+		+transform(scale(1,-1) translate3d(-50%,0,0))
 	100%
-		+transform(translate3d(-50%,40%,0))
+		+transform(scale(1,-1) translate3d(-50%,40%,0))
 +keyframes(film1)
 	0%,25%,100%
 		+transform(rotate(-20deg) scale(1,1) translate3d(0,0,0))
@@ -565,8 +565,8 @@ html,body
 			z-index: 101
 		.phone-item
 			+posa
-			+tl(6%,12%)
-			+w(122/640*100%)
+			+tl(9%,12%)
+			+w(222/640*100%)
 		.pop
 			+posa
 			+bl(110%)

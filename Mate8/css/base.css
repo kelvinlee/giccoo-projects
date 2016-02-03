@@ -777,22 +777,22 @@ html, body {
 }
 @-webkit-keyframes nextPoint {
   0% {
-    -webkit-transform: translate3d(-50%, 0, 0);
-            transform: translate3d(-50%, 0, 0);
+    -webkit-transform: scale(1, -1) translate3d(-50%, 0, 0);
+            transform: scale(1, -1) translate3d(-50%, 0, 0);
   }
   100% {
-    -webkit-transform: translate3d(-50%, 40%, 0);
-            transform: translate3d(-50%, 40%, 0);
+    -webkit-transform: scale(1, -1) translate3d(-50%, 40%, 0);
+            transform: scale(1, -1) translate3d(-50%, 40%, 0);
   }
 }
 @keyframes nextPoint {
   0% {
-    -webkit-transform: translate3d(-50%, 0, 0);
-            transform: translate3d(-50%, 0, 0);
+    -webkit-transform: scale(1, -1) translate3d(-50%, 0, 0);
+            transform: scale(1, -1) translate3d(-50%, 0, 0);
   }
   100% {
-    -webkit-transform: translate3d(-50%, 40%, 0);
-            transform: translate3d(-50%, 40%, 0);
+    -webkit-transform: scale(1, -1) translate3d(-50%, 40%, 0);
+            transform: scale(1, -1) translate3d(-50%, 40%, 0);
   }
 }
 @-webkit-keyframes film1 {
@@ -1730,9 +1730,9 @@ html, body {
 }
 .main .phone .phone-item {
   position: absolute;
-  top: 6%;
+  top: 9%;
   left: 12%;
-  width: 19.0625%;
+  width: 34.6875%;
 }
 .main .phone .pop {
   position: absolute;

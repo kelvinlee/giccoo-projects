@@ -39,9 +39,9 @@ select-list
 						div(class="item-click-#{i}")
 		#phone.phone(onclick="{showPop}")
 			.over
-			.phone-item
+			.phone-item.duration-10(class="{phoneAn}")
 				img(data-src="#{images}/phone.png")
-			img(data-src="#{images}/piao.jpg")
+			img(data-src="#{images}/piao-1.png")
 			//- .pop
 	.page.page-2(step="1",max="4")
 		.film-box
@@ -128,6 +128,7 @@ select-list
 		var self = this
 		self.boxrun = ""
 		self.pop = false
+		self.phoneAn = "wobble animated"
 		target = null
 		_default = {x: 0,y: 0}
 		_can = true
@@ -252,6 +253,15 @@ select-list
 			pageTwo[0].addEventListener("touchstart", self.PageTouchstart)
 			pageTwo[0].addEventListener("touchmove", self.PageTouchmove)
 			pageTwo[0].addEventListener("touchend", self.PageTouchend)
+			$(".phone-item",self.root)[0].addEventListener(ANIMATION_END_NAME,function(){
+				console.log()
+				self.phoneAn = ""
+				self.update()
+				setTimeout(function(){
+					self.phoneAn = "wobble animated"
+					self.update()
+				},3000)
+			})
 			console.log("mount")
 
 		})

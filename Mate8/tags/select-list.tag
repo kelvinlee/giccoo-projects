@@ -102,7 +102,7 @@
     </div>
     <div id="phone" onclick="{showPop}" class="phone">
       <div class="over"></div>
-      <div class="phone-item"><img data-src="img/phone.png"/></div><img data-src="img/piao.jpg"/>
+      <div class="phone-item duration-10 {phoneAn}"><img data-src="img/phone.png"/></div><img data-src="img/piao-1.png"/>
     </div>
   </div>
   <div step="1" max="4" class="page page-2">
@@ -256,6 +256,7 @@
     var self = this
     self.boxrun = ""
     self.pop = false
+    self.phoneAn = "wobble animated"
     target = null
     _default = {x: 0,y: 0}
     _can = true
@@ -380,6 +381,15 @@
     	pageTwo[0].addEventListener("touchstart", self.PageTouchstart)
     	pageTwo[0].addEventListener("touchmove", self.PageTouchmove)
     	pageTwo[0].addEventListener("touchend", self.PageTouchend)
+    	$(".phone-item",self.root)[0].addEventListener(ANIMATION_END_NAME,function(){
+    		console.log()
+    		self.phoneAn = ""
+    		self.update()
+    		setTimeout(function(){
+    			self.phoneAn = "wobble animated"
+    			self.update()
+    		},3000)
+    	})
     	console.log("mount")
     
     })
