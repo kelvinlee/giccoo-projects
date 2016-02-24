@@ -21,6 +21,14 @@ block js
 	//- script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
 	script.
 		var relinkTo = "http://b.wepiao.com/hongbao/index.html?pid=c6761dd45c816d6c&channelid=3&chid=100";
+		var ua = navigator.userAgent.toLowerCase()
+		if (/iphone|ipad|ipod/.test(ua)) {
+			relinkTo = "wxmovie://hongbao?url=http://b.wepiao.com/hongbao/index.html?pid=bab53ce3a1f3b34f&channelid=8&chid=200&openid=%wxopenid%&p=%p%";
+		} else if (/android/.test(ua)) {
+			relinkTo = "wxmovie://hongbao?url=http://b.wepiao.com/hongbao/index.html?pid=bab53ce3a1f3b34f&channelid=9&chid=10&openid=%wxopenid%&p=%p%";
+		}
+		
+
 	script(src="js/Zepto.min.js")
 	script(src="js/fastclick.min.js")
 	script(src="js/riot.js")

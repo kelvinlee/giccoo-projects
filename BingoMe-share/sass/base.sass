@@ -1,0 +1,129 @@
+@import sass/base
+@import ../../libs/sass/loading
+
+
+html,body
+	+w
+	+h
+	+overhide
+
+.main
+	+posa
+	+tl
+	+w
+	+h
+	+b("../img/bg.jpg",no-repeat,center,top,cover)
+	+overhide
+
+.content
+	+posa
+	+tl
+	+w
+	+h
+	+touch
+.user
+	color: #fff
+	+m(1rem 1rem 0 1rem)
+	+posr
+	.avatar
+		+wh(3rem,3rem)
+		border-radius: 50%
+		+overhide
+		float: left
+	.nickname
+		+w(3rem)
+		+font-size(0.8rem)
+		+text-center
+	.question
+		// float: right
+		+posr
+		top: 0.3rem
+		+p(0.6rem)
+		line-height: 1.4em
+		border-radius: 0.3rem
+		+bc(#fff)
+		+font-size(0.8rem)
+		color: #4c537e
+		margin-left: 4rem
+		&:before
+			content: " "
+			+posa
+			+tl(50%,-0.5rem)
+			+wh(0,0)
+			border-top: 0.3rem solid transparent
+			border-right: 0.6rem solid #fff
+			border-bottom: 0.3rem solid transparent
+			+transform(translate3d(0,-50%,0))
+		p
+			+m
+.shadow
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.15)
+.bingo
+	color: #fff
+	+m(1rem 1rem 0 1rem)
+	+posr
+	.bingo-img
+		border-radius: 0.4rem
+		font-size: 0
+		+overhide
+		.like
+			+posa
+			+w(60px)
+
+
+.bingos
+	+m(1rem 1rem 0 1rem)
+	padding-bottom: 4rem
+	.item
+		+w(48%)
+		+m
+		+overhide
+		display: inline-block
+		border-radius: 0.4rem
+		font-size: 0
+		margin-top: 0.3rem
+		&:nth-child(even)
+			margin-left: 3.5%
+
+.download
+	+posf
+	+bl
+	+w
+	font-size: 0
+	.ios
+	.andriod,.other
+		+bc(rgba(0,0,0,0.6))
+		+show
+	p
+		+text-center
+		+font-size(0.8rem)
+		+m
+		+p(1rem)
+		color: #fff
+
+.qrcode
+	+posf
+	+tl
+	+br
+	+w
+	+h
+	+bc(rgba(0,0,0,0.6))
+	+text-center
+	+show
+	+p(0)
+	.close
+		+posa
+		+tr(2%,2%)
+		+w(3rem)
+	.image
+		+m
+		+w(80%)
+		margin-top: 25%
+	.text
+		+m
+		+w(80%)
+		margin-top: 1%
+		color: #fff
+		+text-center
+		p
+			+m

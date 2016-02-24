@@ -1,0 +1,40 @@
+download
+	//- - var images = "img"
+	- var images = "http://disk.giccoo.com/projects/BingoMe-share/img"
+	.download
+		.ios(if="{system == 'ios'}",onclick="{showQR}")
+			img(src="#{images}/ios-download.png")
+		.andriod(if="{system == 'android'}")
+			p 安卓正在紧张开发中...
+		.other(if="{system == 'other'}")
+			p 暂时只支持 iOS 和 Andriod
+	.qrcode.fadeIn.animated(if="{qrcode}")
+		.close(onclick="{closeQR}")
+			img(src="#{images}/icon-close.png")
+		.image
+			img(src="#{images}/qrcode.png")
+		.text
+			p 想知道答案在哪吗?<br/>长按二维码进行下载吧!
+
+	script.
+		var self = this
+		download = this
+		self.system = "ios"
+		self.qrcode = false
+		//- $(self.root).addClass("download")
+		var ua = navigator.userAgent.toLowerCase()
+		if (/iphone|ipad|ipod/.test(ua)) {
+			self.system = "ios"
+		} else if (/android/.test(ua)) {
+			self.system = "android"
+		} else {
+			self.system = "other"
+		}
+		showQR() {
+			self.qrcode = true
+			self.update()
+		}
+		closeQR() {
+			self.qrcode = false
+			self.update()
+		}

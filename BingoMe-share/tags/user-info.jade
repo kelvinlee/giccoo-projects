@@ -1,0 +1,13 @@
+user-info
+	- var images = "img"
+	.user
+		.avatar.shadow
+			//- @0o_0l_120w_60q.jpg
+			img(src="http://disk.giccoo.com/BingoMe/{opts.avatar}")
+		.question.shadow
+			p {opts.question}
+		.nickname {opts.nickname}
+		
+
+	script.
+		var self = this
