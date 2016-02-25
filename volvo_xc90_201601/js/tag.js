@@ -1,5 +1,5 @@
 
-riot.tag('register', '<form onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username">姓名:</label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="">性别:</label> <div class="comb"> <label for="man">先生</label> <input id="man" type="radio" name="sex" value="先生" checked="checked"> <label for="woman">女士</label> <input id="woman" type="radio" name="sex" value="女士"> </div> </div> <div class="form-grounp"> <label for="mobile">手机号码:</label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-grounp"> <label for="province">所在省/市:</label> <div class="comb"> <div class="select"><span>{provinceName}</span> <select id="province" name="province" onchange="{changeProvince}"> <option each="{name in province}" value="{name}">{name}</option> </select> </div> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeCity}"> <option each="{name in city}" value="{name}">{name}</option> </select> </div> </div> </div> <div class="form-grounp"> <label for="dealer">选择经销商:</label> <div class="select"><span>{dealerName}</span> <select id="dealer" name="dealer" onchange="{changeDealer}"> <option each="{dealer}" value="{code}">{name}</option> </select> </div> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="img/submit.png"></button> </div> </form>', function(opts) {
+riot.tag2('register', '<form onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username">姓名:</label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="">性别:</label> <div class="comb"> <label for="man">先生</label> <input id="man" type="radio" name="sex" value="先生" checked="checked"> <label for="woman">女士</label> <input id="woman" type="radio" name="sex" value="女士"> </div> </div> <div class="form-grounp"> <label for="mobile">手机号码:</label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-grounp"> <label for="province">所在省/市:</label> <div class="comb"> <div class="select"><span>{provinceName}</span> <select id="province" name="province" onchange="{changeProvince}"> <option each="{name in province}" value="{name}">{name}</option> </select> </div> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeCity}"> <option each="{name in city}" value="{name}">{name}</option> </select> </div> </div> </div> <div class="form-grounp"> <label for="dealer">选择经销商:</label> <div class="select"><span>{dealerName}</span> <select id="dealer" name="dealer" onchange="{changeDealer}"> <option each="{dealer}" value="{code}">{name}</option> </select> </div> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="img/submit.png"></button> </div> </form>', '', '', function(opts) {
     var self = this
     this.cityData = _citys
     var province = []
@@ -14,7 +14,7 @@ riot.tag('register', '<form onsubmit="{submit}" class="form"> <div class="form-g
     this.province = province
     this.city = city
     this.dealer = dealer
-    
+
     this.provinceName = this.province[0]
     this.cityName = this.city[0]
     this.dealerName = this.dealer[0].name
@@ -31,7 +31,7 @@ riot.tag('register', '<form onsubmit="{submit}" class="form"> <div class="form-g
     	var dealer = self.cityData[newName][newCity]
     	self.dealer = dealer
     	self.update()
-    }.bind(this);
+    }.bind(this)
     this.changeProvince = function(evt) {
     	var newName = $("[name=province]",self.root).val()
     	var city = []
@@ -42,10 +42,10 @@ riot.tag('register', '<form onsubmit="{submit}" class="form"> <div class="form-g
     	self.city = city
     	self.dealer = dealer
     	self.update()
-    }.bind(this);
+    }.bind(this)
     this.changeDealer = function(evt) {
     	self.update()
-    }.bind(this);
+    }.bind(this)
     this.submit = function() {
     	var data = $("form",this.root).serializeArray()
     	data.push({name:"dealername",value:self.dealerName})
@@ -67,11 +67,10 @@ riot.tag('register', '<form onsubmit="{submit}" class="form"> <div class="form-g
     		}
     	})
     	return false
-    }.bind(this);
-  
-});
+    }.bind(this)
+}, '{ }');
 
-riot.tag('slider', '<div riot-style="-webkit-transition-duration: {duration}s;transition-duration: {duration}s; -webkit-transform: translate3d({x}px,0,0); transform: translate3d({x}px,0,0);" class="slider"> <div each="{bgimg in list}" class="slide"> <div class="bg"><img riot-src="{bgimg}"></div> </div> </div>', function(opts) {
+riot.tag2('slider', '<div riot-style="-webkit-transition-duration: {duration}s;transition-duration: {duration}s; -webkit-transform: translate3d({x}px,0,0); transform: translate3d({x}px,0,0);" class="slider"> <div each="{bgimg in list}" class="slide"> <div class="bg"><img riot-src="{bgimg}"></div> </div> </div>', '', '', function(opts) {
     var self = this
     this.list = opts.list.split(",")
     this.duration = 0.2
@@ -139,9 +138,6 @@ riot.tag('slider', '<div riot-style="-webkit-transition-duration: {duration}s;tr
     		evt.preventDefault()
     	}
 
-
-
-
     	this.update()
     }
     this.touchend = function(evt) {
@@ -161,5 +157,4 @@ riot.tag('slider', '<div riot-style="-webkit-transition-duration: {duration}s;tr
     	this.root.addEventListener("touchend", this.touchend.bind(this))
     	opts.end && opts.end(this)
     })
-  
-});
+}, '{ }');

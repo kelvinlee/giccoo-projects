@@ -108,10 +108,10 @@ _citys["江苏"]["徐州"] = []
 _citys["福建"]["厦门"] = []
 _citys["江苏"]["泰州"] = []
 _citys["广西"]["柳州"] = []
-_citys["福建"]["福州"] = []
 _citys["江西"]["赣州"] = []
 _citys["江苏"]["镇江"] = []
 _citys["河南"]["平顶山"] = []
+_citys["福建"]["福州"] = []
 _citys["辽宁"]["锦州"] = []
 _citys["福建"]["龙岩"] = []
 _citys["河南"]["安阳"] = []
@@ -152,6 +152,7 @@ _citys["广东"]["湛江"] = []
 _citys["浙江"]["衢州"] = []
 _citys["浙江"]["金华"] = []
 _citys["江苏"]["连云港"] = []
+_citys["四川"]["泸州"] = []
 
 _citys["北京"]["北京"].push({code:"BJG",name:"沃尔沃汽车北京中汽南方百旺4S中心"})
 _citys["北京"]["北京"].push({code:"BJC",name:"沃尔沃汽车北京中汽南方亦庄4S中心"})
@@ -185,8 +186,6 @@ _citys["江苏"]["苏州"].push({code:"SUB",name:"沃尔沃汽车苏州通孚祥
 _citys["江苏"]["无锡"].push({code:"WXB",name:"沃尔沃汽车无锡东方吉羊4S中心"})
 _citys["江苏"]["扬州"].push({code:"YZA",name:"沃尔沃汽车扬州富豪4S中心"})
 _citys["江西"]["南昌"].push({code:"NCA",name:"沃尔沃汽车南昌绿地名沃4S中心"})
-_citys["上海"]["上海"].push({code:"SHA",name:"沃尔沃汽车上海世之沃4S中心 "})
-_citys["上海"]["上海"].push({code:"SHE",name:"沃尔沃汽车上海世之沃浦东维修站 "})
 _citys["上海"]["上海"].push({code:"SHC",name:"沃尔沃汽车上海通孚祥4S中心 "})
 _citys["上海"]["上海"].push({code:"SHD",name:"沃尔沃汽车上海永达4S中心"})
 _citys["浙江"]["杭州"].push({code:"HZA",name:"沃尔沃汽车杭州世之贸4S中心"})
@@ -244,7 +243,7 @@ _citys["四川"]["乐山"].push({code:"CDC",name:"沃尔沃汽车乐山通孚祥
 _citys["黑龙江"]["大庆"].push({code:"DQA",name:"沃尔沃汽车大庆尊荣4S中心"})
 _citys["宁夏"]["银川"].push({code:"YCB",name:"沃尔沃汽车银川宁夏佳丰4S中心"})
 _citys["上海"]["上海"].push({code:"SHG",name:"沃尔沃汽车上海永达嘉沃4S中心"})
-_citys["浙江"]["杭州"].push({code:"HZD",name:"沃尔沃汽车浙江万友4S中心"})
+_citys["浙江"]["杭州"].push({code:"HZD",name:"沃尔沃汽车浙江万友维修站"})
 _citys["内蒙古"]["赤峰"].push({code:"MGE",name:"沃尔沃汽车赤峰庞大兴沃4S中心"})
 _citys["浙江"]["杭州"].push({code:"HZF",name:"沃尔沃汽车杭州中沃4S中心"})
 _citys["辽宁"]["沈阳"].push({code:"SYC",name:"沃尔沃汽车沈阳尊荣富沃4S中心"})
@@ -272,7 +271,6 @@ _citys["福建"]["厦门"].push({code:"XMB",name:"沃尔沃汽车厦门中升沃
 _citys["江苏"]["无锡"].push({code:"YXA",name:"沃尔沃汽车宜兴东方沃邦4S中心"})
 _citys["广西"]["柳州"].push({code:"NNC",name:"沃尔沃汽车柳州弘耀 4S中心"})
 _citys["云南"]["昆明"].push({code:"KMC",name:"沃尔沃汽车昆明庞润荣沃4S中心"})
-_citys["福建"]["福州"].push({code:"FZB",name:"沃尔沃汽车福州吉诺城市展厅"})
 _citys["福建"]["泉州"].push({code:"QZB",name:"沃尔沃汽车泉州中升沃茂 4S中心"})
 _citys["黑龙江"]["哈尔滨"].push({code:"HRB",name:"沃尔沃汽车哈尔滨尊荣亿方4S中心"})
 _citys["江西"]["赣州"].push({code:"GAA",name:"沃尔沃汽车赣州绿地祥沃4S中心"})
@@ -364,6 +362,7 @@ _citys["广东"]["深圳"].push({code:"SZE",name:"沃尔沃汽车深圳德利行
 _citys["湖南"]["长沙"].push({code:"CSD",name:"沃尔沃汽车长沙德熙行4S中心"})
 _citys["江苏"]["连云港"].push({code:"LYC",name:"沃尔沃汽车连云港伟途4S中心"})
 _citys["天津"]["天津"].push({code:"TJD",name:"沃尔沃汽车天津荣沃4S中心"})
+_citys["四川"]["泸州"].push({code:"LZD",name:"沃尔沃汽车泸州市泸州中沃4S中心"})
 
 window.onload = ->
 	riot.mount("*")
