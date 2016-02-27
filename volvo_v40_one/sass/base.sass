@@ -37,7 +37,6 @@
 html,body
 	+w
 	+h
-	+bc(#000)
 .hide
 	+hide
 // .loading
@@ -79,48 +78,47 @@ html,body
 	.homepage
 		.bg
 			+posr
+			font-size: 0
 			.content
 				+posa
 				+tl
 				+br
 			.sliders
 				+overhide
-			&.bg-3
-				.sliders
-					+posa
-					+tl(10%)
-					+w
-		.outlink
-			+posa
-			+br(1%,30%)
-			+wh(40%,2rem)
-			display: inline-block
+			.text
+				margin-top: -34%
+			.outlink
+				+posa
+				+tl(35%,20%)
+				+show
+				+wh(35%,8%)
 		.left2
 			+posa
-			+tl(52%,8%)
+			+tl(50%,0.8rem)
 			+iw(23)
 			font-size: 0
 			+transform(translate3d(0,-50%,0))
 		.right2
 			+posa
-			+tr(52%,8%)
+			+tr(50%,0.8rem)
 			+iw(23)
 			font-size: 0
 			+transform(translate3d(0,-50%,0) scale(-1,1))
 		.left
 			+posa
-			+tl(36%,0)
+			+tl(50%,0)
 			+iw(46)
 			font-size: 0
 			+transform(translate3d(0,-50%,0))
 		.right
 			+posa
-			+tr(36%,0)
+			+tr(50%,0)
 			+iw(46)
 			font-size: 0
 			+transform(translate3d(0,-50%,0) scale(-1,1))
 		.last
 			+posr
+			margin-top: -1px
 			.content
 				+posa
 				+tl
@@ -131,28 +129,25 @@ html,body
 				// +posa
 				// +bl(20%,10%)
 				+overhide
-				+w(100%)
+				+w(70%)
 				+m
-				// border: solid 4px #fff
-				// box-shadow: 1px 2px 4px rgba(0,0,0,0.6)
+				margin-top: 25%
+				max-width: 400px
+				border: solid 6px #fff
 			.points
 				+w
 				+text-center
-				+posa
-				+tl(2px,0)
-				+w(100%)
+				// +posa
+				// +bl(15%,0)
+				margin-top: 1rem
 				span
 					+show-inline
-					+wh(20%)
-					+p(0.4rem 0)
-					+overhide
-					+bc(#898989)
-					+m(0)
-					color: #ffffff
-					+font-size(0.8rem)
+					+wh(0.5rem,0.5rem)
+					+m(0 0.2rem)
+					+bc(#fff)
+					border-radius: 50%
 					&.on
-						+bc(#043c4f)
-				
+						+bc(#194784)
 			.title
 				// +posa
 				// +tl(18%)
@@ -162,13 +157,15 @@ html,body
 			// +tl(0,0)
 			+w(100%)
 			+box
-			+p(0 1.5rem)
+			// +p(0 1.5rem)
 			.title
 				// +p(1rem 0)
-				+posa
-				+tl(2rem)
+				// +posa
+				// +tl(2rem)
 				+w
-
+				margin-top: 10%
+			.form
+				margin-top: 0rem
 
 .pop
 	+posf
@@ -209,16 +206,24 @@ html,body
 			+text-center
 			+p(0.2rem)
 			+box
-			
+			span
+				+show-inline
+				+wh(0.4rem,0.4rem)
+				+overhide
+				border-radius: 50%
+				+bc(#fff)
+				+m(0 0.2rem)
+				&.on
+					+bc(#00d1c1)
 
 
 .form
-	+w(100%)
+	+w(80%)
 	+m
 	+p(1.4rem 0)
-	$labelColor: #ffffff
-	$borderColor: #9c8b57
-	$inputColor: #000
+	$labelColor: #194784
+	$borderColor: #194784
+	$inputColor: #194784
 	.form-grounp
 		$h: 1.4rem
 		vertical-align: top
@@ -323,8 +328,3 @@ html,body
 		+w(100%)
 		display: inline-block
 		vertical-align: top
-		.link
-			+show
-			+posa
-			+bl(5%,5%)
-			+wh(30%,30%)
