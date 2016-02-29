@@ -895,11 +895,11 @@ html, body {
 .form {
   width: 100%;
   margin: 0 auto;
-  padding: 1.4rem 0; }
+  padding: 1.2rem 0; }
   .form .form-grounp {
     vertical-align: top; }
     .form .form-grounp > label {
-      width: 30%;
+      width: 32%;
       height: 1.4rem;
       display: inline-block;
       font-size: 0.8rem;
@@ -920,7 +920,7 @@ html, body {
         .form .form-grounp > label {
           font-size: 0.96rem; } }
     .form .form-grounp > input {
-      width: 68%;
+      width: 67%;
       height: 1.4rem;
       font-size: 0.8rem;
       background-color: #fff;

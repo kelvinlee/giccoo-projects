@@ -2,11 +2,11 @@
 <register>
   <form onsubmit="{submit}" class="form">
     <div class="form-grounp">
-      <label for="username">姓名:</label>
+      <label for="username">姓名</label>
       <input id="username" type="text" name="username"/>
     </div>
     <div class="form-grounp">
-      <label for="">性别:</label>
+      <label for="">性别</label>
       <div class="comb">
         <label for="man">先生</label>
         <input id="man" type="radio" name="sex" value="先生" checked="checked"/>
@@ -15,11 +15,11 @@
       </div>
     </div>
     <div class="form-grounp">
-      <label for="mobile">手机号码:</label>
+      <label for="mobile">手机号码</label>
       <input id="mobile" type="text" name="mobile"/>
     </div>
     <div class="form-grounp">
-      <label for="province">所在省/市:</label>
+      <label for="province">所在省/市</label>
       <div class="comb">
         <div class="select"><span>{provinceName}</span>
           <select id="province" name="province" onchange="{changeProvince}">
@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="form-grounp">
-      <label for="budget">购车预算:</label>
+      <label for="budget">购车预算</label>
       <div class="select"><span>{budgetName}</span>
         <select id="budget" name="budget" onchange="{changeBudget}">
           <option each="{name in budget}" value="{name}">{name}</option>
@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="form-grounp">
-      <label for="buytime">计划购车时间:</label>
+      <label for="buytime">计划购车时间</label>
       <div class="select"><span>{buytimeName}</span>
         <select id="buytime" name="buytime" onchange="{changeBuytime}">
           <option each="{name in buytime}" value="{name}">{name}</option>
@@ -50,7 +50,7 @@
       </div>
     </div>
     <div class="form-grounp">
-      <label for="type">感兴趣车型:</label>
+      <label for="type">感兴趣车型</label>
       <div class="select"><span>{typeName}</span>
         <select id="type" name="type" onchange="{changeType}">
           <option each="{name in type}" value="{name}">{name}</option>

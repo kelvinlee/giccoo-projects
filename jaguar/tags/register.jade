@@ -1,23 +1,23 @@
 register
 	form.form(onsubmit="{submit}")
 		.form-grounp
-			label(for="username") 姓名:
+			label(for="username") 姓名
 			input#username(type="text",name="username")
 		.form-grounp
-			label(for="") 性别:
+			label(for="") 性别
 			.comb
 				label(for="man") 先生
 				input#man(type="radio",name="sex",value="先生",checked)
 				label(for="woman") 女士
 				input#woman(type="radio",name="sex",value="女士")
 		.form-grounp
-			label(for="mobile") 手机号码:
+			label(for="mobile") 手机号码
 			input#mobile(type="text",name="mobile")
 		//- .form-grounp
-			label(form="email") 电子邮箱:
+			label(form="email") 电子邮箱
 			input#email(type="text",name="email")
 		.form-grounp
-			label(for="province") 所在省/市:
+			label(for="province") 所在省/市
 			.comb
 				.select
 					span {provinceName}
@@ -28,25 +28,25 @@ register
 					select#city(name="city",onchange="{changeCity}")
 						option(each="{city}",value="{name}") {name}
 		.form-grounp
-			label(for="budget") 购车预算:
+			label(for="budget") 购车预算
 			.select
 				span {budgetName}
 				select#budget(name="budget",onchange="{changeBudget}")
 					option(each="{name in budget}",value="{name}") {name}
 		.form-grounp
-			label(for="buytime") 计划购车时间:
+			label(for="buytime") 计划购车时间
 			.select
 				span {buytimeName}
 				select#buytime(name="buytime",onchange="{changeBuytime}")
 					option(each="{name in buytime}",value="{name}") {name}
 		.form-grounp
-			label(for="type") 感兴趣车型:
+			label(for="type") 感兴趣车型
 			.select
 				span {typeName}
 				select#type(name="type",onchange="{changeType}")
 					option(each="{name in type}",value="{name}") {name}
 		//- .form-grounp
-			label(for="dealer") 选择经销商:
+			label(for="dealer") 选择经销商
 			.select
 				span {dealerName}
 				select#dealer(name="dealer",onchange="{changeDealer}")
