@@ -1,4 +1,22 @@
 
+riot.tag2('note', '<div class="note-box"> <div class="note-content {animated:true,fadeInUp:!close,fadeOutUp:close}"> <div class="note-text"> <div class="icon-form"><img src="http://disk.giccoo.com/projects/showman/img/icon-alert-note.png"></div> {title} </div> </div> </div>', '', '', function(opts) {
+    var self = this
+    this.title = opts.title
+    this.close = false
+    this.time = opts.time?parseInt(opts.time):3000
+    $(this.root).addClass("note")
+
+    this.on("mount",function(){
+    	setTimeout(function(){
+    		self.unmount()
+    	},self.time)
+    	setTimeout(function(){
+    		self.close = true
+    		self.update()
+    	},self.time-500)
+    })
+}, '{ }');
+
 riot.tag2('register', '<form onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username">姓名:</label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="">性别:</label> <div class="comb"> <label for="man">先生</label> <input id="man" type="radio" name="sex" value="先生" checked="checked"> <label for="woman">女士</label> <input id="woman" type="radio" name="sex" value="女士"> </div> </div> <div class="form-grounp"> <label for="mobile">手机号码:</label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-grounp"> <label for="province">所在省/市:</label> <div class="comb"> <div class="select"><span>{provinceName}</span> <select id="province" name="province" onchange="{changeProvince}"> <option each="{name in province}" value="{name}">{name}</option> </select> </div> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeCity}"> <option each="{name in city}" value="{name}">{name}</option> </select> </div> </div> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="img/submit.png"></button> </div> </form>', '', '', function(opts) {
     var self = this
     this.cityData = _citys
@@ -59,10 +77,12 @@ riot.tag2('register', '<form onsubmit="{submit}" class="form"> <div class="form-
     	$.post(opts.action,data,function(msg){
 
     		if (msg.recode == 200) {
-    			alert("注册成功")
+
+    			SendNote("注册成功")
 
     		}else{
-    			alert(msg.reason)
+
+    			SendNote(msg.reason)
     		}
     	})
     	return false
