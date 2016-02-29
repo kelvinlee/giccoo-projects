@@ -227,3 +227,8 @@ showTab = (i)->
 
 showTab(1)
 
+SendNote = (msg,time = 3000)->
+	$("body").append("<note title='"+msg+"' time='#{time}'></note>")
+	riot.mount("note")
+
+	
