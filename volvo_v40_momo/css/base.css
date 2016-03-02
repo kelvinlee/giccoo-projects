@@ -798,6 +798,13 @@ html, body {
       display: block;
       width: 35%;
       height: 8%; }
+    .main .homepage .bg .readmore {
+      position: absolute;
+      bottom: 0%;
+      left: 30%;
+      display: block;
+      width: 40%;
+      height: 20%; }
   .main .homepage .left2 {
     position: absolute;
     top: 50%;
