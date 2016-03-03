@@ -218,7 +218,7 @@ _QUESTION = [
 			"C",
 			"D"
 		],
-		banner: "img/banner.jpg",
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -230,7 +230,7 @@ _QUESTION = [
 			"c",
 			"d"
 		],
-		banner: "img/banner.jpg",
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	}
 ]
@@ -296,8 +296,8 @@ POST = (answers,callback)->
 	console.log answers
 	data = {openid: openid,answer: answers.join(",")}
 	data.company = company if company?
-	# $.post "http://i.giccoo.com/qa/to/answer/",data, (msg)->
-	$.post "http://localhost:8990/qa/to/answer/",data, (msg)->
+	$.post "http://i.giccoo.com/qa/to/answer/",data, (msg)->
+	# $.post "http://localhost:8990/qa/to/answer/",data, (msg)->
 		if msg.recode is 200
 			SendNote("提交成功")
 			setTimeout ->

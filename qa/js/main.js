@@ -486,13 +486,13 @@ _QUESTION = [
     id: 1,
     question: "为贯彻《国务院办公厅关于加强金融消费者权益保护工作的指导意见》，开展保险消费者权益保护教育，具体活动安排如下：",
     answers: ["A", "B", "C", "D"],
-    banner: "img/banner.jpg",
+    banner: "http://m.giccoo.com/qa/img/banner.jpg",
     link: "http://www.baidu.com"
   }, {
     id: 2,
     question: "为贯彻《国务院办公厅关于加强金融消费者权益保护工作的指导意见》，开展保险消费者权益保护教育，具体活动安排如下：",
     answers: ["a", "b", "c", "d"],
-    banner: "img/banner.jpg",
+    banner: "http://m.giccoo.com/qa/img/banner.jpg",
     link: "http://www.baidu.com"
   }
 ];
@@ -579,7 +579,7 @@ POST = function(answers, callback) {
   if (company != null) {
     data.company = company;
   }
-  return $.post("http://localhost:8990/qa/to/answer/", data, function(msg) {
+  return $.post("http://i.giccoo.com/qa/to/answer/", data, function(msg) {
     if (msg.recode === 200) {
       SendNote("提交成功");
       return setTimeout(function() {

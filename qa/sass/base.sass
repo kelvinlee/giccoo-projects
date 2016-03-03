@@ -1,6 +1,7 @@
 @import sass/base
 @import sass/note
 
+$cdn: "http://disk.giccoo.com/projects/qa/"
 
 +keyframes(second)
 	0%
@@ -23,6 +24,7 @@
 		+transform(translate3d(-50%,0,0))
 	50%
 		+transform(translate3d(-50%,-20%,0))
+
 
 
 
@@ -81,7 +83,7 @@ html,body
 	z-index: 99
 	font-size: 0
 	.page
-		+b("../img/bg.jpg",no-repeat,center,center,cover)
+		+b($cdn+"/img/bg.jpg",no-repeat,center,center,cover)
 		+posa
 		+tl
 		+h

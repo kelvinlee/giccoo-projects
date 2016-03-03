@@ -793,7 +793,7 @@ html, body {
   z-index: 99;
   font-size: 0; }
   .main .page {
-    background: url("../img/bg.jpg") no-repeat center center;
+    background: url("http://disk.giccoo.com/projects/qa//img/bg.jpg") no-repeat center center;
     background-size: cover;
     background-color: transparent;
     position: absolute;
