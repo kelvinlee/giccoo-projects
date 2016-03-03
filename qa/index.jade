@@ -1,0 +1,34 @@
+extends ../libs/jade/layout
+block title
+	| 2016年“3·15”保险消费者保险知识竞赛
+block css
+	link(rel="stylesheet",href="http://disk.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="http://m.giccoo.com/qa/css/base.css")
+
+block content
+	- var images = "http://disk.giccoo.com/projects/qa/img"
+	// - var images = "img"
+	.loading
+		.img
+			img(src="#{images}/loading.gif")
+			.text
+				| Loading 
+				span#loading-text 0
+				| %
+	.main
+		#pages
+		#select-company.pop.select-company.fadeIn.animated
+		#qa.page.question-page
+
+block js
+	//- script(src="/libs/js/min/localforage.min.js")
+	//- script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
+	script.
+		var openid = "test";
+		var subscribe = 1;
+	script(src="http://disk.giccoo.com/projects/libs/js/min/Zepto.min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/riot.min.js")
+	script(src="http://m.giccoo.com/qa/js/tag.js")
+	script(src="http://m.giccoo.com/qa/js/main.js")
+	
