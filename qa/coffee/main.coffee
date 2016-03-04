@@ -262,6 +262,11 @@ loadEnd = ->
 
 window.onload = ->
 	# loadStart()
+	if openid == ""
+		window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3dd8b8d67e940c4&redirect_uri={url}&response_type=code&scope=snsapi_base&state=123#wechat_redirect".replace("{url}",encodeURIComponent("http://i.giccoo.com/#{project}/"))
+		return false
+
+
 	riot.mount("#pages","pages")
 
 	MK = $("body").width()/$("body").height()
