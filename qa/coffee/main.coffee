@@ -280,6 +280,46 @@ window.onload = ->
 		return showFocus() if subscribe is 0
 		$(".page.note-page").removeClass "on"
 		$(".page.question-page").addClass "on"
+
+	loadWechatConfig()
+	wx.ready ->
+		shareContent =
+			title: SHARETITLE
+			desc: SHAREDESC
+			link: SHARELINK
+			imgUrl: "http://disk.giccoo.com/projects/qa/img/share.jpg"
+			success: ->
+				# alert "success"
+			cancel: ->
+				# alert "cancel"
+		wx.onMenuShareTimeline shareContent
+		wx.onMenuShareAppMessage shareContent
+		wx.onMenuShareQQ shareContent
+		wx.onMenuShareWeibo shareContent
+
+loadWechatConfig = ->
+	url = encodeURIComponent window.location.href.split("#")[0]
+	hm = document.createElement('script')
+	hm.src = "http://api.giccoo.com/config?url="+url
+	s = document.getElementsByTagName('script')[0]
+	s.parentNode.insertBefore hm, s
+	return
+
+UpdateShare = (text)->
+	TimelineShareContent =
+		title: text
+		desc: SHAREDESC
+		link: SHARELINK
+		imgUrl: "http://disk.giccoo.com/projects/qa/img/share.jpg"
+		success: ->
+			# alert "success"
+		cancel: ->
+			# alert "cancel"
+	wx.onMenuShareTimeline TimelineShareContent
+	wx.onMenuShareAppMessage TimelineShareContent
+	wx.onMenuShareQQ TimelineShareContent
+	wx.onMenuShareWeibo TimelineShareContent
+
 showFocus = ->
 	$(".pop.focus-page").addClass("on")
 hideFocus = ->
@@ -293,11 +333,11 @@ CompanyPage = (name)->
 
 
 POST = (answers,callback)->
-	console.log answers
+	# console.log answers
 	data = {openid: openid,answer: answers.join(",")}
 	data.company = company if company?
-	$.post "http://i.giccoo.com/qa/to/answer/",data, (msg)->
-	# $.post "http://localhost:8990/qa/to/answer/",data, (msg)->
+	# $.post "http://i.giccoo.com/qa/to/answer/",data, (msg)->
+	$.post POSTurl,data, (msg)->
 		if msg.recode is 200
 			SendNote("提交成功")
 			setTimeout ->
@@ -312,6 +352,7 @@ Done = (msg)->
 		fen = fen-10+parseInt(Math.random()*10)
 	else
 		fen = fen
+	UpdateShare("恭喜你!保险知识竞赛正确率超过了 #{fen}% 的网友.")
 	$(".page.finished-page #nums").text(fen)
 	$(".page").removeClass("on")
 	$(".page.finished-page").addClass("on")

@@ -42,7 +42,7 @@
   </div>
   <div class="pop focus-page fadeIn animated">
     <div class="box">
-      <div class="qcode"><img data-src="http://disk.giccoo.com/projects/qa/img/qrcode.jpg"/></div>
+      <div class="qcode"><img data-src="{qrcode}"/></div>
       <div class="note-text">
         <p>请使用微信打开此页面.</p>
         <p>长按二维码图片进行关注.</p>
@@ -53,6 +53,7 @@
   </div>
   <script>
     var self = this
+    this.qrcode = QRCODE
     this.on("mount",function(){
     	loadStart()
     })

@@ -50,7 +50,7 @@ pages
 	.pop.focus-page.fadeIn.animated
 		.box
 			.qcode
-				img(data-src="#{images}/qrcode.jpg")
+				img(data-src="{qrcode}")
 			.note-text
 				p 请使用微信打开此页面.
 				p 长按二维码图片进行关注.
@@ -60,6 +60,7 @@ pages
 	
 	script.
 		var self = this
+		this.qrcode = QRCODE
 		this.on("mount",function(){
 			loadStart()
 		})
