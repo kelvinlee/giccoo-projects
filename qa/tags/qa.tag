@@ -18,7 +18,11 @@
   </div><a href="{question.link}" class="banner"><img src="{question.banner}"/></a>
   <script>
     var self = this
-    this.questions = _QUESTION
+    if (company) {
+    	this.questions = _QUESTION_COMPANY
+    }else{
+    	this.questions = _QUESTION
+    }
     this.now = 0
     this.question = this.questions[this.now]
     this.selected = -1
@@ -60,7 +64,9 @@
     done() {
     	if (confirm("提交后不能修改答案,确定要提交吗?")) {
     		//- 
-    		this.answer.push(self.selected)
+    		if (this.answer.length < 10) {
+    			this.answer.push(self.selected)
+    		}
     		POST(self.answer)
     	}
     }

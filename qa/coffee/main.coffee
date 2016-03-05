@@ -211,7 +211,7 @@ _citys["保险资产管理公司"].push("英大保险资产管理有限公司")
 _QUESTION = [
 	{
 		id: 1,
-		question: "为贯彻《国务院办公厅关于加强金融消费者权益保护工作的指导意见》，开展保险消费者权益保护教育，具体活动安排如下：",
+		question: "这是题目1",
 		answers: [
 			"A",
 			"B",
@@ -223,7 +223,103 @@ _QUESTION = [
 	},
 	{
 		id: 2,
-		question: "为贯彻《国务院办公厅关于加强金融消费者权益保护工作的指导意见》，开展保险消费者权益保护教育，具体活动安排如下：",
+		question: "这是题目2",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 3,
+		question: "这是题目3",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 4,
+		question: "这是题目4",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 5,
+		question: "这是题目5",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 6,
+		question: "这是题目6",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 7,
+		question: "这是题目7",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 8,
+		question: "这是题目8",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 9,
+		question: "这是题目9",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 10,
+		question: "这是题目10",
 		answers: [
 			"a",
 			"b",
@@ -234,7 +330,128 @@ _QUESTION = [
 		link: "http://www.baidu.com"
 	}
 ]
-
+_QUESTION_COMPANY = [
+	{
+		id: 1,
+		question: "这是保险从业题目1",
+		answers: [
+			"A",
+			"B",
+			"C",
+			"D"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 2,
+		question: "这是保险从业题目2",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 3,
+		question: "这是保险从业题目3",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 4,
+		question: "这是保险从业题目4",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 5,
+		question: "这是保险从业题目5",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 6,
+		question: "这是保险从业题目6",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 7,
+		question: "这是保险从业题目7",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 8,
+		question: "这是保险从业题目8",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 9,
+		question: "这是保险从业题目9",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	},
+	{
+		id: 10,
+		question: "这是保险从业题目10",
+		answers: [
+			"a",
+			"b",
+			"c",
+			"d"
+		],
+		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		link: "http://www.baidu.com"
+	}
+]
 company = null
 
 loadStart = ->
