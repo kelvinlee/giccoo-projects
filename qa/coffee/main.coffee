@@ -207,7 +207,7 @@ _citys["保险资产管理公司"].push("长城财富资产管理股份有限公
 _citys["保险资产管理公司"].push("英大保险资产管理有限公司")
 
 
-
+_QA = null
 _QUESTION = [
 	{
 		id: 1,
@@ -218,7 +218,7 @@ _QUESTION = [
 			"C",
 			"D"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -230,7 +230,7 @@ _QUESTION = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -242,7 +242,7 @@ _QUESTION = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -254,7 +254,7 @@ _QUESTION = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -266,7 +266,7 @@ _QUESTION = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -278,7 +278,7 @@ _QUESTION = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -290,7 +290,7 @@ _QUESTION = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -302,7 +302,7 @@ _QUESTION = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -314,7 +314,7 @@ _QUESTION = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-normal-9.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -326,7 +326,7 @@ _QUESTION = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-normal-10.jpg",
 		link: "http://www.baidu.com"
 	}
 ]
@@ -340,7 +340,7 @@ _QUESTION_COMPANY = [
 			"C",
 			"D"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-1.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -352,7 +352,7 @@ _QUESTION_COMPANY = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-2.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -364,7 +364,7 @@ _QUESTION_COMPANY = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-3.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -376,7 +376,7 @@ _QUESTION_COMPANY = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-4.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -388,7 +388,7 @@ _QUESTION_COMPANY = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-5.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -400,7 +400,7 @@ _QUESTION_COMPANY = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-6.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -412,7 +412,7 @@ _QUESTION_COMPANY = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-7.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -424,7 +424,7 @@ _QUESTION_COMPANY = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-8.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -436,7 +436,7 @@ _QUESTION_COMPANY = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-9.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -448,7 +448,7 @@ _QUESTION_COMPANY = [
 			"c",
 			"d"
 		],
-		banner: "http://m.giccoo.com/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-10.jpg",
 		link: "http://www.baidu.com"
 	}
 ]
@@ -551,6 +551,7 @@ hideFocus = ->
 
 CompanyPage = (name)->
 	company = name
+	_QA.changeCompany() if _QA?
 	$(".page.note-page").removeClass "on"
 	$(".page.question-page").addClass "on"
 

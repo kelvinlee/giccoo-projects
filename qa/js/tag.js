@@ -27,6 +27,7 @@ riot.tag2('pages', '<div class="page info-page on"> <div class="slogan"><img dat
 
 riot.tag2('qa', '<div class="question"><img src="http://disk.giccoo.com/projects/qa/img/question.png"> <div class="num">{question.id}</div> <div class="count"><span class="num">{question.id}</span>/{questions.length}</div> <div class="text">{question.question}</div> </div> <div class="answers"> <ul> <li each="{item in question.answers}" onclick="{selectAnswer(item)}"><span class="check"><img src="http://disk.giccoo.com/projects/qa/img/check.png"></span>{item}</li> </ul> </div> <div class="btns"> <div if="{now != questions.length-1}" onclick="{nextQuestion}" class="next"><img src="http://disk.giccoo.com/projects/qa/img/btn-next.png"></div> <div if="{now == questions.length-1}" onclick="{restart}" class="restart"><img src="http://disk.giccoo.com/projects/qa/img/btn-restart.png"></div> <div if="{now == questions.length-1}" onclick="{done}" class="done"><img src="http://disk.giccoo.com/projects/qa/img/btn-done.png"></div> </div><a href="{question.link}" class="banner"><img riot-src="{question.banner}"></a>', '', '', function(opts) {
     var self = this
+    _QA = this
     if (company) {
     	this.questions = _QUESTION_COMPANY
     }else{
@@ -36,7 +37,16 @@ riot.tag2('qa', '<div class="question"><img src="http://disk.giccoo.com/projects
     this.question = this.questions[this.now]
     this.selected = -1
     this.answer = []
-
+    this.changeCompany = function() {
+    	console.log(company)
+    	if (company) {
+    		this.questions = _QUESTION_COMPANY
+    	}else{
+    		this.questions = _QUESTION
+    	}
+    	this.question = this.questions[this.now]
+    	this.update()
+    }.bind(this)
     this.selectAnswer = function(item) {
 
     	return function() {

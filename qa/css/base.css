@@ -914,11 +914,11 @@ html, body {
       .main .question-page .question > .num {
         position: absolute;
         top: 15%;
-        left: 23%;
+        left: 25%;
         font-size: 1.4rem;
         display: inline-block;
         width: 2rem;
-        text-align: center; }
+        text-align: left; }
         @media only screen and (min-width: 321px) and (max-width: 399px) {
           .main .question-page .question > .num {
             font-size: 1.54rem; } }

@@ -18,6 +18,7 @@
   </div><a href="{question.link}" class="banner"><img src="{question.banner}"/></a>
   <script>
     var self = this
+    _QA = this
     if (company) {
     	this.questions = _QUESTION_COMPANY
     }else{
@@ -27,7 +28,16 @@
     this.question = this.questions[this.now]
     this.selected = -1
     this.answer = []
-    
+    changeCompany() {
+    	console.log(company)
+    	if (company) {
+    		this.questions = _QUESTION_COMPANY
+    	}else{
+    		this.questions = _QUESTION
+    	}
+    	this.question = this.questions[this.now]
+    	this.update()
+    }
     selectAnswer(item) {
     	//- console.log($(evt.target).parent("li"))
     	return function() {
