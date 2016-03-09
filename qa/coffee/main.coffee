@@ -211,120 +211,120 @@ _QA = null
 _QUESTION = [
 	{
 		id: 1,
-		question: "这是题目1",
+		question: "对于保险的理解，下面哪句话是错的？",
 		answers: [
-			"A",
-			"B",
-			"C",
-			"D"
+			"保险是一种未雨绸缪的智慧",
+			"保险体现人们的互助精神",
+			"为家人购买保险是对家庭的关爱",
+			"保险和慈善是一回事"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 2,
-		question: "这是题目2",
+		question: "关于保险的功能，哪一项是错的？",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"损失补偿功能",
+			"无偿救济功能",
+			"投资功能",
+			"储蓄功能"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 3,
-		question: "这是题目3",
+		question: "关于保险公司收取保费的依据，哪一项是错的？",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"如保障对象是人，要考虑年龄、性别、婚姻状况、身体状况、工作状况等。",
+			"如保障对象是财产，要考虑其本身价值、使用年限、用途、所处位置等。",
+			"保险标的风险高保费就较高",
+			"保费收取没有严格依据"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 4,
-		question: "这是题目4",
+		question: "消费者购买家庭财产保险，通常情况下，对于以下哪种标的，保险公司不予承保？",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"家具",
+			"室内装饰物",
+			"食品",
+			"家用电器"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 5,
-		question: "这是题目5",
+		question: "以下关于机动车辆保险，哪种说法不正确？",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"所有机动车辆必须购买交强险",
+			"基本险包括机动车辆损失保险和机动车第三者责任保险",
+			"附加险包括全车盗抢险、玻璃单独破碎险、车身划痕损失险等",
+			"买了交强险就不用购买其他机动车辆保险了"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 6,
-		question: "这是题目6",
+		question: "关于重大疾病保险与医疗保险，下列哪种表述是错误的？",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"尽量选择保障范围广的重大疾病保险",
+			"重大疾病保险和医疗保险是一回事",
+			"医疗保险是按实际所用医疗费来赔付",
+			"重大疾病保险是定额赔付，不考虑实际支出多少医疗费"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 7,
-		question: "这是题目7",
+		question: "分红险是指保险公司在每个会计年度结束后，将上一会计年度该类分红保险的可分配盈余，按照一定比例、以现金红利或增额红利的方式，分配给客户的一种人寿保险。以下说法那种是错误的？",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"分红多少取决于保费投入多少以及产品选择的不同",
+			"分红险是一种人寿保险",
+			"购买分红险的客户承担一定的投资风险",
+			"买了分红险一定可以年年收红利"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 8,
-		question: "这是题目8",
+		question: "消费者购买保险产品，除了通过保险营销员、保险公司还有其他渠道，具体来说，不可以通过哪种途径购买保险？",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"保险代理公司",
+			"保险公估公司",
+			"保险经纪公司",
+			"互联网渠道"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 9,
-		question: "这是题目9",
+		question: "全国保险消费者投诉维权热线电话是？",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"12378",
+			"12306",
+			"12315",
+			"12310"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-normal-9.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 10,
-		question: "这是题目10",
+		question: "消费者在行使自己保险索赔权利，要求保险公司进行赔偿时，受到时间的限制。人寿保险的被保险人或者受益人向保险人请求给付保险金的诉讼时效为多长时间？",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"60天",
+			"一年",
+			"两年",
+			"五年"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-normal-10.jpg",
 		link: "http://www.baidu.com"
@@ -333,120 +333,120 @@ _QUESTION = [
 _QUESTION_COMPANY = [
 	{
 		id: 1,
-		question: "这是保险从业题目1",
+		question: "下列那些风险是不可保的？",
 		answers: [
-			"A",
-			"B",
-			"C",
-			"D"
+			"生病",
+			"车辆损失",
+			"房屋损失",
+			"股票投资"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-1.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 2,
-		question: "这是保险从业题目2",
+		question: "投保人或者被保险人变更受益人，当事人主张变更行为自变更意思表示发出时生效的，人民法院（）。 投保人或者被保险人变更受益人未通知保险人，保险人主张变更对其不发生效力的，人民法院（）。以上两处均正确的是?",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"应予支持 不予支持",
+			"不予支持 应予支持",
+			"不予支持 不予支持",
+			"应予支持 应予支持"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-2.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 3,
-		question: "这是保险从业题目3",
+		question: "下列哪项不是保险的本质？",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"保险是用今天的钱筹划明天的生活",
+			"保险是用大钱换小钱",
+			"保险是仁爱的化身，是责任的体现",
+			"保险是一种赌博，以今天的平安赌明天的风险"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-3.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 4,
-		question: "这是保险从业题目4",
+		question: "下列哪些不属于分红保险产品的主要特征？",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"保单持有人享受经营成果",
+			"客户承担一定的投资风险",
+			"定价的精算假设比较激进",
+			"保险给付、退保金中含有红利"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-4.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 5,
-		question: "这是保险从业题目5",
+		question: "保险合同约定按照基本医疗保险的标准核定医疗费用，保险人以被保险人的医疗支出超出基本医疗保险范围为由拒绝给付保险金的，人民法院（）；保险人有证据证明被保险人支出的费用超过基本医疗保险同类医疗费用标准，要求对超出部分拒绝给付保险金的，人民法院（）。以上两处均正确的是?",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"应予支持 不予支持",
+			"不予支持 应予支持",
+			"不予支持 不予支持",
+			"应予支持 应予支持"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-5.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 6,
-		question: "这是保险从业题目6",
+		question: "保险是金融业的三驾马车之一，在经济发展中具有举足轻重的地位，下列哪项不是其具体表现？",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"刺激消费",
+			"不利于拉动投资",
+			"支持对外贸易",
+			"促进技术创新"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-6.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 7,
-		question: "这是保险从业题目7",
+		question: "2012年6月24日，中国“蛟龙”号载人潜水器在西太平洋的马里亚纳海沟试验海区首次突破7000米，创造了中国载人深潜的历史记录。同时，我国也开创了首例探潜器保险，引入了4家保险公司以及海外再保险人。该项目采用了何种机制来减少和避免巨大损失？",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"风险分散机制",
+			"风险管理机制",
+			"产业链整合机制",
+			"资金融通机制"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-7.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 8,
-		question: "这是保险从业题目8",
+		question: "保险人以被保险人自杀为由拒绝给付保险金的，由（）承担举证责任。受益人或者被保险人的继承人以被保险人自杀时无民事行为能力为由抗辩的，由（）承担举证责任。以上两空格处均正确的是?",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"保险人、保险人",
+			"受益人或者被保险人的继承人、保险人 ",
+			"保险人、受益人或者被保险人的继承人 ",
+			"受益人或者被保险人的继承人、受益人或者被保险人的继承人保险人"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-8.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 9,
-		question: "这是保险从业题目9",
+		question: "保险合同效力中止后，经保险人与投保人协商并达成协议，在投保人补交保险费后，合同效力恢复。但自合同效力中止之日起（）双方未达成协议的，保险人有权解除合同。",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"满一年",
+			"满两年",
+			"满三年",
+			"满四年"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-9.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
 		id: 10,
-		question: "这是保险从业题目10",
+		question: "保险业防范和化解风险的最后一道防线是( )",
 		answers: [
-			"a",
-			"b",
-			"c",
-			"d"
+			"中国保险监督管理委员会",
+			"再保险公司",
+			"保险保障基金",
+			"保险投资基金"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-10.jpg",
 		link: "http://www.baidu.com"
@@ -479,7 +479,7 @@ loadEnd = ->
 
 window.onload = ->
 	# loadStart()
-	project = "qa" if not project?
+	# alert project
 	if openid == ""
 		window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3dd8b8d67e940c4&redirect_uri={url}&response_type=code&scope=snsapi_base&state=123#wechat_redirect".replace("{url}",encodeURIComponent("http://i.giccoo.com/#{project}/"))
 		return false

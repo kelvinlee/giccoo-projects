@@ -15,9 +15,10 @@
     <div if="{now != questions.length-1}" onclick="{nextQuestion}" class="next"><img src="http://disk.giccoo.com/projects/qa/img/btn-next.png"/></div>
     <div if="{now == questions.length-1}" onclick="{restart}" class="restart"><img src="http://disk.giccoo.com/projects/qa/img/btn-restart.png"/></div>
     <div if="{now == questions.length-1}" onclick="{done}" class="done"><img src="http://disk.giccoo.com/projects/qa/img/btn-done.png"/></div>
-  </div><a href="{question.link}" class="banner"><img src="{question.banner}"/></a>
+  </div><a if="{!ad}" href="{question.link}" class="banner"><img src="{question.banner}"/></a>
   <script>
     var self = this
+    this.ad = NOAD
     _QA = this
     if (company) {
     	this.questions = _QUESTION_COMPANY

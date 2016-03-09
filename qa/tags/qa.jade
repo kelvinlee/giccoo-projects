@@ -21,11 +21,12 @@ qa
 			img(src="#{images}/btn-restart.png")
 		.done(if="{now == questions.length-1}",onclick="{done}")
 			img(src="#{images}/btn-done.png")
-	a.banner(href="{question.link}")
+	a.banner(if="{!ad}",href="{question.link}")
 		img(src="{question.banner}")
 
 	script.
 		var self = this
+		this.ad = NOAD
 		_QA = this
 		if (company) {
 			this.questions = _QUESTION_COMPANY
