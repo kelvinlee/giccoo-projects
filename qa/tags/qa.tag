@@ -2,6 +2,7 @@
 <qa>
   <!-- - var images = "img"-->
   <div class="question"><img src="http://disk.giccoo.com/projects/qa/img/question.png"/>
+    <div class="icon"><img src="http://disk.giccoo.com/projects/qa/img/icon-child.png"/></div>
     <div class="num">{question.id}</div>
     <div class="count"><span class="num">{question.id}</span>/{questions.length}</div>
     <div class="text">{question.question}</div>
@@ -54,7 +55,7 @@
     	if (self.selected < 0) {
     		return SendNote("请选择本题答案")
     	}
-    	this.answer.push(self.selected)
+    	this.answer.push(self.selected+1)
     	self.selected = -1
     	self.now++
     	//- if (self.now >= )
@@ -76,7 +77,7 @@
     	if (confirm("提交后不能修改答案,确定要提交吗?")) {
     		//- 
     		if (this.answer.length < 10) {
-    			this.answer.push(self.selected)
+    			this.answer.push(self.selected+1)
     		}
     		POST(self.answer)
     	}

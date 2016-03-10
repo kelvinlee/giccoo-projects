@@ -141,11 +141,18 @@ html,body
 				&.on
 					.p
 						+animation(ups,2s,linear,infinite)
+						.off
+							+hide
 				
 					
 
 		.btns
 			+bl(20%,50%)
+	.note-page
+		.text
+			top: 40%
+		.btns
+			bottom: 30%
 	.select-page
 		&.on
 			.text
@@ -172,6 +179,10 @@ html,body
 			color: #ffffff
 			.iphone4 &
 				margin-top: 0
+			> .icon
+				+posa
+				+tl(-10%,35%)
+				+w(15%)
 			> .num
 				+posa
 				+tl(15%,25%)
@@ -516,3 +527,5 @@ html,body
 		+w(100%)
 		display: inline-block
 		vertical-align: top
+
+

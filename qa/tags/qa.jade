@@ -3,6 +3,8 @@ qa
 	// - var images = "img"
 	.question
 		img(src="#{images}/question.png")
+		.icon
+			img(src="#{images}/icon-child.png")
 		.num {question.id}
 		.count
 			span.num {question.id}
@@ -62,7 +64,7 @@ qa
 			if (self.selected < 0) {
 				return SendNote("请选择本题答案")
 			}
-			this.answer.push(self.selected)
+			this.answer.push(self.selected+1)
 			self.selected = -1
 			self.now++
 			//- if (self.now >= )
@@ -84,7 +86,7 @@ qa
 			if (confirm("提交后不能修改答案,确定要提交吗?")) {
 				//- 
 				if (this.answer.length < 10) {
-					this.answer.push(self.selected)
+					this.answer.push(self.selected+1)
 				}
 				POST(self.answer)
 			}

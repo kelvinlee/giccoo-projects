@@ -559,12 +559,16 @@ CompanyPage = (name)->
 	$(".page.question-page").addClass "on"
 
 
+_POSTING = false
 POST = (answers,callback)->
 	# console.log answers
+	return SendNote("正在提交请稍后...") if _POSTING
+	_POSTING = true
 	data = {openid: openid,answer: answers.join(",")}
 	data.company = company if company?
 	# $.post "http://i.giccoo.com/qa/to/answer/",data, (msg)->
 	$.post POSTurl,data, (msg)->
+		_POSTING = false
 		if msg.recode is 200
 			SendNote("提交成功")
 			setTimeout ->
@@ -576,9 +580,11 @@ POST = (answers,callback)->
 Done = (msg)->
 	fen = msg.info.fen
 	if msg.info.fen > 20
-		fen = fen-10+parseInt(Math.random()*10)
+		fen = fen+parseInt(Math.random()*9)
 	else
 		fen = fen
+	if fen > 99
+		fen = 99
 	UpdateShare("恭喜你!保险知识竞赛正确率超过了 #{fen}% 的网友.")
 	$(".page.finished-page #nums").text(fen)
 	$(".page").removeClass("on")
