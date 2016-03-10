@@ -453,7 +453,7 @@ _QUESTION_COMPANY = [
 	}
 ]
 company = null
-
+_jplink = "http://m.baolian365.com/index.php?g=Wap&m=Zixun&a=h5"
 loadStart = ->
 	count = $("[data-src]").length
 	now = 0
@@ -498,14 +498,14 @@ window.onload = ->
 		$(".page.select-page").removeClass "on"
 		$(".page.note-page").addClass "on"
 	
-	$(".btn-company").click ->
-		# $(".page.note-page").removeClass "on"
-		return showFocus() if subscribe is 0
-		$(".pop.select-company").addClass "on"
-	$(".btn-personal").click ->
-		return showFocus() if subscribe is 0
-		$(".page.note-page").removeClass "on"
-		$(".page.question-page").addClass "on"
+	# $(".btn-company").click ->
+	# 	# $(".page.note-page").removeClass "on"
+	# 	return showFocus() if subscribe is 0
+	# 	$(".pop.select-company").addClass "on"
+	# $(".btn-personal").click ->
+	# 	return showFocus() if subscribe is 0
+	# 	$(".page.note-page").removeClass "on"
+	# 	$(".page.question-page").addClass "on"
 
 	loadWechatConfig()
 	wx.ready ->

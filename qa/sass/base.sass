@@ -133,13 +133,23 @@ html,body
 					+bl(30%,50%)
 					+w(40%)
 					+transform(translate3d(-50%,0,0))
-					+animation(ups,2s,linear,infinite)
 					z-index: -1
-				.p-2
-					animation-delay: 1000ms
+					.off
+						+posa
+						+tl
+						z-index: 9
+				&.on
+					.p
+						+animation(ups,2s,linear,infinite)
+				
+					
+
 		.btns
 			+bl(20%,50%)
 	.select-page
+		&.on
+			.text
+				top: 30%
 		.text
 			p,h3
 				+m(0.2rem 0)
@@ -157,9 +167,11 @@ html,body
 		.question
 			+posr
 			+m
-			+iw(640)
+			+w
 			margin-top: 5%
 			color: #ffffff
+			.iphone4 &
+				margin-top: 0
 			> .num
 				+posa
 				+tl(15%,25%)
@@ -168,7 +180,7 @@ html,body
 				+w(2rem)
 				+text-left
 				.iphone4 &
-					+tl(15%,22%)
+					+tl(15%,26%)
 					font-size: (1.2rem)
 			> .count
 				+posa
@@ -188,16 +200,19 @@ html,body
 				+posa
 				+tl(32%,22%)
 				+w(60%)
-				+font-size(0.8rem)
+				+font-size(0.64rem)
 				.iphone4 &
-					font-size: (0.7rem)
+					font-size: (0.64rem)
 
 		.answers
 			+w(80%)
 			+m
 			+font-size(0.8rem)
 			color: #4193d8
-			line-height: 2rem
+			line-height: 1.4em
+			ul
+				li
+					margin-bottom: 0.5rem
 			.check
 				+show-inline
 				+posr
@@ -236,6 +251,11 @@ html,body
 			+w
 			+text-center
 			color: #162a88
+			.over
+				+posa
+				+tl(-20%,50%)
+				+w(50%)
+				+transform(translate3d(-50%,0,0))
 			p
 				+m
 				line-height: 1.6em

@@ -1,6 +1,6 @@
 pages
-	// - var images = "http://disk.giccoo.com/projects/qa/img"
-	- var images = "img"
+	- var images = "http://disk.giccoo.com/projects/qa/img"
+	// - var images = "img"
 	.page.info-page.on
 		.slogan
 			img(data-src="#{images}/slogan.png")
@@ -46,26 +46,28 @@ pages
 			//- p 中国保险监督管理委员会保险消费者权益保护局
 			//- p 《中国保险报》
 			h3 请选择您的身份：
-			p
-				span.companylogo
-					img(data-src="#{images}/company-1.png")
-				span.companylogo
-					img(data-src="#{images}/company-2.png")
+			
 		.btns
-			.btn.btn-company
+			.btn.btn-company(class="{on: selectCOMPANY}",onclick="{selectPage1}")
 				img(data-src="#{images}/btn-company.png")
 				.p
+					.off
+						img(data-src="#{images}/p-1-off.png")
 					img(data-src="#{images}/p-1.png")
-			.btn.btn-personal
+			.btn.btn-personal(class="{on: selectPERSONAL}",onclick="{selectPage2}")
 				img(data-src="#{images}/btn-personal.png")
 				.p.p-2
+					.off
+						img(data-src="#{images}/p-2-off.png")
 					img(data-src="#{images}/p-2.png")
-		.btn-join
+		.btn-join(onclick="{GoNext}")
 			img(data-src="#{images}/btn-begin.png")
 	.page.finished-page
 		.content
 			.bg.fadeIn.animated
 				img(src="#{images}/over-bg.png")
+			.over
+				img(src="#{images}/over-1.png")
 			h2 恭喜你!
 			p 保险知识竞赛正确率
 			p 超过了 
@@ -73,6 +75,8 @@ pages
 				| % 的网友
 			.btn-share(onclick="showShare()")
 				img(src="#{images}/btn-share.png")
+			a.btn-jiang(if="{!ad}",href="{jplink}")
+				img(src="#{images}/btn-jp.png")
 		.share-box.fadeIn.animated(onclick="hideShare()")
 			img(src="#{images}/share-note.png")
 	.pop.focus-page.fadeIn.animated
@@ -90,6 +94,29 @@ pages
 		var self = this
 		this.qrcode = QRCODE
 		this.ad = NOAD
+		this.jplink = _jplink
+		this.selectCOMPANY = false
+		this.selectPERSONAL = false
+		GoNext() {
+			if (subscribe == 0) {return showFocus()}
+			//- 
+			if (this.selectCOMPANY) {
+				$(".pop.select-company").addClass("on")
+			}else if (this.selectPERSONAL) {
+				$(".page.note-page").removeClass("on")
+				$(".page.question-page").addClass("on")
+			}else{
+				SendNote("请选择从业组,或消费组")
+			}
+		}
+		selectPage1() {
+			this.selectCOMPANY = true
+			this.selectPERSONAL = false
+		}
+		selectPage2() {
+			this.selectCOMPANY = false
+			this.selectPERSONAL = true
+		}
 		this.on("mount",function(){
 			loadStart()
 		})

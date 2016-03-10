@@ -375,14 +375,14 @@ ul {
   list-style: none; }
 
 .note {
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 0px;
   bottom: 0px;
   right: 0px;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 9999; }
   .note .note-box {
     text-align: center;
@@ -393,7 +393,7 @@ ul {
     .note .note-box .note-content {
       display: inline-block;
       padding: 10px 11px 10px 10px;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.8);
       color: #fff;
       border-radius: 5px;
       max-width: 90%;
@@ -401,10 +401,11 @@ ul {
     .note .note-box .icon-form, .note .note-box .note-text {
       display: inline-block;
       vertical-align: top;
-      line-height: 25px; }
+      line-height: 1.6em; }
     .note .note-box .icon-form {
-      width: 25px;
-      height: 25px; }
+      width: 1rem; }
+      .note .note-box .icon-form img {
+        vertical-align: middle; }
     .note .note-box .note-text {
       font-size: 0.8rem;
       letter-spacing: 2px; }
@@ -804,7 +805,7 @@ html, body {
     display: none; }
     .main .page.on {
       display: block; }
-  .main .info-page .slogan, .main .note-page .slogan {
+  .main .info-page .slogan, .main .note-page .slogan, .main .select-page .slogan {
     position: absolute;
     top: 5%;
     left: 50%;
@@ -812,95 +813,11 @@ html, body {
     margin: 0 auto;
     -webkit-transform: translate3d(-50%, 0, 0);
             transform: translate3d(-50%, 0, 0); }
-    .iphone4 .main .info-page .slogan, .iphone4 .main .note-page .slogan {
+    .iphone4 .main .info-page .slogan, .iphone4 .main .note-page .slogan, .iphone4 .main .select-page .slogan {
       width: 80%; }
-  .main .info-page .text, .main .note-page .text {
-    position: absolute;
-    top: 38%;
-    left: 10%;
-    width: 80%;
-    font-size: 0.8rem;
-    color: #162a88;
-    text-align: center; }
-    @media only screen and (min-width: 321px) and (max-width: 399px) {
-      .main .info-page .text, .main .note-page .text {
-        font-size: 0.88rem; } }
-    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-      .main .info-page .text, .main .note-page .text {
-        font-size: 0.88rem; } }
-    @media only screen and (min-width: 399px) and (max-width: 767px) {
-      .main .info-page .text, .main .note-page .text {
-        font-size: 0.96rem; } }
-    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-      .main .info-page .text, .main .note-page .text {
-        font-size: 0.96rem; } }
-    .main .info-page .text h3, .main .note-page .text h3 {
-      font-size: 1.1rem; }
-      @media only screen and (min-width: 321px) and (max-width: 399px) {
-        .main .info-page .text h3, .main .note-page .text h3 {
-          font-size: 1.21rem; } }
-      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-        .main .info-page .text h3, .main .note-page .text h3 {
-          font-size: 1.21rem; } }
-      @media only screen and (min-width: 399px) and (max-width: 767px) {
-        .main .info-page .text h3, .main .note-page .text h3 {
-          font-size: 1.32rem; } }
-      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-        .main .info-page .text h3, .main .note-page .text h3 {
-          font-size: 1.32rem; } }
-    .main .info-page .text p, .main .info-page .text h3, .main .note-page .text p, .main .note-page .text h3 {
-      margin: 0.4rem 0;
-      line-height: 1.4em; }
-    .main .info-page .text .companylogo, .main .note-page .text .companylogo {
-      display: inline-block;
-      width: 6rem; }
-  .main .info-page .btn-join, .main .info-page .btns, .main .note-page .btn-join, .main .note-page .btns {
-    position: absolute;
-    bottom: 2%;
-    left: 50%;
-    width: 100%;
-    margin: 0 auto;
-    -webkit-transform: translate3d(-50%, 0, 0);
-            transform: translate3d(-50%, 0, 0);
-    text-align: center; }
-    .iphone4 .main .info-page .btn-join, .iphone4 .main .info-page .btns, .iphone4 .main .note-page .btn-join, .iphone4 .main .note-page .btns {
-      width: 80%; }
-    .main .info-page .btn-join .btn, .main .info-page .btns .btn, .main .note-page .btn-join .btn, .main .note-page .btns .btn {
-      display: inline-block;
-      width: 36%;
-      margin: 0 2%;
-      position: relative; }
-      .main .info-page .btn-join .btn .p, .main .info-page .btns .btn .p, .main .note-page .btn-join .btn .p, .main .note-page .btns .btn .p {
-        position: absolute;
-        bottom: 30%;
-        left: 50%;
-        width: 40%;
-        -webkit-transform: translate3d(-50%, 0, 0);
-                transform: translate3d(-50%, 0, 0);
-        -webkit-animation: ups 2s linear;
-                animation: ups 2s linear;
-        -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        z-index: -1; }
-      .main .info-page .btn-join .btn .p-2, .main .info-page .btns .btn .p-2, .main .note-page .btn-join .btn .p-2, .main .note-page .btns .btn .p-2 {
-        -webkit-animation-delay: 1000ms;
-                animation-delay: 1000ms; }
-  .main .info-page .btns, .main .note-page .btns {
-    bottom: 5%;
-    left: 50%; }
-  .main .info-page .slogan, .main .select-page .slogan {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    width: 100%;
-    margin: 0 auto;
-    -webkit-transform: translate3d(-50%, 0, 0);
-            transform: translate3d(-50%, 0, 0); }
-    .iphone4 .main .info-page .slogan, .iphone4 .main .select-page .slogan {
-      width: 80%; }
-  .main .info-page .text, .main .select-page .text {
+    .iphone4 .main .info-page .slogan, .iphone4 .main .note-page .slogan, .iphone4 .main .select-page .slogan {
+      top: 0; }
+  .main .info-page .text, .main .note-page .text, .main .select-page .text {
     position: absolute;
     top: 36%;
     left: 10%;
@@ -909,38 +826,40 @@ html, body {
     color: #162a88;
     text-align: center; }
     @media only screen and (min-width: 321px) and (max-width: 399px) {
-      .main .info-page .text, .main .select-page .text {
+      .main .info-page .text, .main .note-page .text, .main .select-page .text {
         font-size: 0.88rem; } }
     @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-      .main .info-page .text, .main .select-page .text {
+      .main .info-page .text, .main .note-page .text, .main .select-page .text {
         font-size: 0.88rem; } }
     @media only screen and (min-width: 399px) and (max-width: 767px) {
-      .main .info-page .text, .main .select-page .text {
+      .main .info-page .text, .main .note-page .text, .main .select-page .text {
         font-size: 0.96rem; } }
     @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-      .main .info-page .text, .main .select-page .text {
+      .main .info-page .text, .main .note-page .text, .main .select-page .text {
         font-size: 0.96rem; } }
-    .main .info-page .text h3, .main .select-page .text h3 {
+    .iphone4 .main .info-page .text, .iphone4 .main .note-page .text, .iphone4 .main .select-page .text {
+      top: 34%; }
+    .main .info-page .text h3, .main .note-page .text h3, .main .select-page .text h3 {
       font-size: 1.1rem; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
-        .main .info-page .text h3, .main .select-page .text h3 {
+        .main .info-page .text h3, .main .note-page .text h3, .main .select-page .text h3 {
           font-size: 1.21rem; } }
       @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-        .main .info-page .text h3, .main .select-page .text h3 {
+        .main .info-page .text h3, .main .note-page .text h3, .main .select-page .text h3 {
           font-size: 1.21rem; } }
       @media only screen and (min-width: 399px) and (max-width: 767px) {
-        .main .info-page .text h3, .main .select-page .text h3 {
+        .main .info-page .text h3, .main .note-page .text h3, .main .select-page .text h3 {
           font-size: 1.32rem; } }
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-        .main .info-page .text h3, .main .select-page .text h3 {
+        .main .info-page .text h3, .main .note-page .text h3, .main .select-page .text h3 {
           font-size: 1.32rem; } }
-    .main .info-page .text p, .main .info-page .text h3, .main .select-page .text p, .main .select-page .text h3 {
+    .main .info-page .text p, .main .info-page .text h3, .main .note-page .text p, .main .note-page .text h3, .main .select-page .text p, .main .select-page .text h3 {
       margin: 0.4rem 0;
       line-height: 1.4em; }
-    .main .info-page .text .companylogo, .main .select-page .text .companylogo {
+    .main .info-page .text .companylogo, .main .note-page .text .companylogo, .main .select-page .text .companylogo {
       display: inline-block;
       width: 6rem; }
-  .main .info-page .btn-join, .main .info-page .btns, .main .select-page .btn-join, .main .select-page .btns {
+  .main .info-page .btn-join, .main .info-page .btns, .main .note-page .btn-join, .main .note-page .btns, .main .select-page .btn-join, .main .select-page .btns {
     position: absolute;
     bottom: 2%;
     left: 50%;
@@ -949,33 +868,41 @@ html, body {
     -webkit-transform: translate3d(-50%, 0, 0);
             transform: translate3d(-50%, 0, 0);
     text-align: center; }
-    .iphone4 .main .info-page .btn-join, .iphone4 .main .info-page .btns, .iphone4 .main .select-page .btn-join, .iphone4 .main .select-page .btns {
+    .iphone4 .main .info-page .btn-join, .iphone4 .main .info-page .btns, .iphone4 .main .note-page .btn-join, .iphone4 .main .note-page .btns, .iphone4 .main .select-page .btn-join, .iphone4 .main .select-page .btns {
       width: 80%; }
-    .main .info-page .btn-join .btn, .main .info-page .btns .btn, .main .select-page .btn-join .btn, .main .select-page .btns .btn {
+    .main .info-page .btn-join .btn, .main .info-page .btns .btn, .main .note-page .btn-join .btn, .main .note-page .btns .btn, .main .select-page .btn-join .btn, .main .select-page .btns .btn {
       display: inline-block;
       width: 36%;
       margin: 0 2%;
       position: relative; }
-      .main .info-page .btn-join .btn .p, .main .info-page .btns .btn .p, .main .select-page .btn-join .btn .p, .main .select-page .btns .btn .p {
+      .main .info-page .btn-join .btn .p, .main .info-page .btns .btn .p, .main .note-page .btn-join .btn .p, .main .note-page .btns .btn .p, .main .select-page .btn-join .btn .p, .main .select-page .btns .btn .p {
         position: absolute;
         bottom: 30%;
         left: 50%;
         width: 40%;
         -webkit-transform: translate3d(-50%, 0, 0);
                 transform: translate3d(-50%, 0, 0);
+        z-index: -1; }
+        .main .info-page .btn-join .btn .p .off, .main .info-page .btns .btn .p .off, .main .note-page .btn-join .btn .p .off, .main .note-page .btns .btn .p .off, .main .select-page .btn-join .btn .p .off, .main .select-page .btns .btn .p .off {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          z-index: 9; }
+      .main .info-page .btn-join .btn.on .p, .main .info-page .btns .btn.on .p, .main .note-page .btn-join .btn.on .p, .main .note-page .btns .btn.on .p, .main .select-page .btn-join .btn.on .p, .main .select-page .btns .btn.on .p {
         -webkit-animation: ups 2s linear;
                 animation: ups 2s linear;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        z-index: -1; }
-      .main .info-page .btn-join .btn .p-2, .main .info-page .btns .btn .p-2, .main .select-page .btn-join .btn .p-2, .main .select-page .btns .btn .p-2 {
-        -webkit-animation-delay: 1000ms;
-                animation-delay: 1000ms; }
-  .main .info-page .btns, .main .select-page .btns {
-    bottom: 5%;
+                animation-iteration-count: infinite; }
+  .main .info-page .btns, .main .note-page .btns, .main .select-page .btns {
+    bottom: 20%;
     left: 50%; }
+  .main .select-page.on .text {
+    top: 30%; }
+  .main .select-page .text p, .main .select-page .text h3 {
+    margin: 0.2rem 0;
+    line-height: 1.4em; }
   .main .question-page {
     position: absolute;
     top: 0px;
@@ -992,11 +919,10 @@ html, body {
       position: relative;
       margin: 0 auto;
       width: 100%;
-      margin: 0 auto;
       margin-top: 5%;
       color: #ffffff; }
       .iphone4 .main .question-page .question {
-        width: 80%; margin-top: 0%;}
+        margin-top: 0; }
       .main .question-page .question > .num {
         position: absolute;
         top: 15%;
@@ -1066,27 +992,27 @@ html, body {
         top: 32%;
         left: 22%;
         width: 60%;
-        font-size: 0.6rem; }
+        font-size: 0.64rem; }
         @media only screen and (min-width: 321px) and (max-width: 399px) {
           .main .question-page .question > .text {
-            font-size: 0.68rem; } }
+            font-size: 0.704rem; } }
         @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
           .main .question-page .question > .text {
-            font-size: 0.68rem; } }
+            font-size: 0.704rem; } }
         @media only screen and (min-width: 399px) and (max-width: 767px) {
           .main .question-page .question > .text {
-            font-size: 0.76rem; } }
+            font-size: 0.768rem; } }
         @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
           .main .question-page .question > .text {
-            font-size: 0.76rem; } }
+            font-size: 0.768rem; } }
         .iphone4 .main .question-page .question > .text {
-          font-size: 0.5rem; }
+          font-size: 0.64rem; }
     .main .question-page .answers {
       width: 80%;
       margin: 0 auto;
       font-size: 0.8rem;
       color: #4193d8;
-      line-height: 1.6em; }
+      line-height: 1.4em; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
         .main .question-page .answers {
           font-size: 0.88rem; } }
@@ -1100,8 +1026,7 @@ html, body {
         .main .question-page .answers {
           font-size: 0.96rem; } }
       .main .question-page .answers ul li {
-        margin-bottom: 0.4rem
-      }
+        margin-bottom: 0.5rem; }
       .main .question-page .answers .check {
         display: inline-block;
         position: relative;
@@ -1152,6 +1077,13 @@ html, body {
     @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
       .main .finished-page .content {
         font-size: 1.08rem; } }
+    .main .finished-page .content .over {
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      width: 50%;
+      -webkit-transform: translate3d(-50%, 0, 0);
+              transform: translate3d(-50%, 0, 0); }
     .main .finished-page .content p {
       margin: 0 auto;
       line-height: 1.6em; }
