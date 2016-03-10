@@ -1,5 +1,5 @@
 
-riot.tag('note', '<div class="note-box"> <div class="note-content {animated:true,fadeInUp:!close,fadeOutUp:close}"> <div class="note-text"> <div class="icon-form"><img src="http://disk.giccoo.com/projects/showman/img/icon-alert-note.png"></div> {title} </div> </div> </div>', function(opts) {
+riot.tag2('note', '<div class="note-box"> <div class="note-content {animated:true,fadeInUp:!close,fadeOutUp:close}"> <div class="note-text"> <div class="icon-form"><img src="http://disk.giccoo.com/projects/showman/img/icon-alert-note.png"></div> {title} </div> </div> </div>', '', '', function(opts) {
     var self = this
     this.title = opts.title
     this.close = false
@@ -15,19 +15,18 @@ riot.tag('note', '<div class="note-box"> <div class="note-content {animated:true
     		self.update()
     	},self.time-500)
     })
-  
-});
+}, '{ }');
 
-riot.tag('pages', ' <div class="page info-page on"> <div class="slogan"><img data-src="http://disk.giccoo.com/projects/qa/img/slogan.png"></div> <div class="text"> <h3>活动规则</h3> <p>本次知识竞赛设最佳团队奖、最佳组织奖、最佳个人奖三类。</p> <p>最佳团队奖：得分前五的公司团队获此殊荣，由主办、承办、赞助单位一起颁发奖杯。</p> <p>最佳组织奖：参与人数前五的公司团队获此殊荣，由主办、承办、赞助单位一起颁发奖杯。</p> <p>最佳个人奖：一等奖5名；二等奖10名；三等奖50名。优秀奖200名。获奖者由《中国保险报》微信公众账号后台在优秀答卷中抽取产生。纪念奖若干名，奖品待定。</p> </div> <div class="btn-join"><img data-src="http://disk.giccoo.com/projects/qa/img/btn-start.png"></div> </div> <div class="page note-page"> <div class="slogan"><img data-src="http://disk.giccoo.com/projects/qa/img/slogan.png"></div> <div class="text"> <h3>主办单位：</h3> <p>中国保险监督管理委员会保险消费者权益保护局</p> <p>《中国保险报》</p> <h3>协办单位：</h3> <p><span class="companylogo"><img data-src="http://disk.giccoo.com/projects/qa/img/company-1.png"></span><span class="companylogo"><img data-src="http://disk.giccoo.com/projects/qa/img/company-2.png"></span></p> </div> <div class="btns"> <div class="btn btn-company"><img data-src="http://disk.giccoo.com/projects/qa/img/btn-company.png"> <div class="p"><img data-src="http://disk.giccoo.com/projects/qa/img/p-1.png"></div> </div> <div class="btn btn-personal"><img data-src="http://disk.giccoo.com/projects/qa/img/btn-personal.png"> <div class="p p-2"><img data-src="http://disk.giccoo.com/projects/qa/img/p-2.png"></div> </div> </div> </div> <div class="page finished-page"> <div class="content"> <div class="bg fadeIn animated"><img src="http://disk.giccoo.com/projects/qa/img/over-bg.png"></div> <h2>恭喜你!</h2> <p>保险知识竞赛正确率</p> <p>超过了 <span id="nums">0</span>% 的网友</p> <div onclick="showShare()" class="btn-share"><img src="http://disk.giccoo.com/projects/qa/img/btn-share.png"></div> </div> <div onclick="hideShare()" class="share-box fadeIn animated"><img src="http://disk.giccoo.com/projects/qa/img/share-note.png"></div> </div> <div class="pop focus-page fadeIn animated"> <div class="box"> <div class="qcode"><img data-src="{qrcode}"></div> <div class="note-text"> <p>请使用微信打开此页面.</p> <p>长按二维码图片进行关注.</p> <p>请先关注我们的微信公众账号,然后参与答题.</p> </div> <div onclick="hideFocus()" class="close"><img data-src="http://disk.giccoo.com/projects/qa/img/icon-close.png"></div> </div> </div>', function(opts) {
+riot.tag2('pages', '<div class="page info-page on"> <div class="slogan"><img data-src="img/slogan.png"></div> <div class="text"> <h3>主办单位：</h3> <p>中国保监会保险消费者权益保护局</p> <h3>承办单位：</h3> <p>中国保险报业股份有限公司</p> <h3 if="{!ad}">协办单位：</h3> <p if="{!ad}"><span class="companylogo"><img data-src="img/company-2.png"></span><span class="companylogo"><img data-src="img/company-1.png"></span></p> </div> <div class="btn-join"><img data-src="img/btn-start.png"></div> </div> <div class="page select-page"> <div class="slogan"><img data-src="img/slogan.png"></div> <div class="text"> <h3>活动规则</h3> <p>第一步：选择分组。</p> <p>如果您是保险消费者，请选“保险消费者组”；如果您是保险从业者，请选“保险从业者组”</p> <p>第二步：参与答题。</p> <p>您将看到10道单项选择题，答完上一题才能进入下一题。</p> <h3>奖项设置</h3> <p>1.最佳团队奖：平均成绩前5名的公司团队。</p> <p>2.最佳组织奖：参与人数前5名的公司团队。</p> <p>3.最佳个人奖（针对消费者）：一等奖5名；二等奖10名；三等奖50名。优秀奖200名。</p> </div> <div class="btn-join"><img data-src="img/btn-go.png"></div> </div> <div class="page note-page"> <div class="slogan"><img data-src="img/slogan.png"></div> <div class="text"> <h3>请选择您的身份：</h3> <p><span class="companylogo"><img data-src="img/company-1.png"></span><span class="companylogo"><img data-src="img/company-2.png"></span></p> </div> <div class="btns"> <div class="btn btn-company"><img data-src="img/btn-company.png"> <div class="p"><img data-src="img/p-1.png"></div> </div> <div class="btn btn-personal"><img data-src="img/btn-personal.png"> <div class="p p-2"><img data-src="img/p-2.png"></div> </div> </div> <div class="btn-join"><img data-src="img/btn-begin.png"></div> </div> <div class="page finished-page"> <div class="content"> <div class="bg fadeIn animated"><img src="img/over-bg.png"></div> <h2>恭喜你!</h2> <p>保险知识竞赛正确率</p> <p>超过了 <span id="nums">0</span>% 的网友</p> <div onclick="showShare()" class="btn-share"><img src="img/btn-share.png"></div> </div> <div onclick="hideShare()" class="share-box fadeIn animated"><img src="img/share-note.png"></div> </div> <div class="pop focus-page fadeIn animated"> <div class="box"> <div class="qcode"><img data-src="{qrcode}"></div> <div class="note-text"> <p>请使用微信打开此页面.</p> <p>长按二维码图片进行关注.</p> <p>请先关注我们的微信公众账号,然后参与答题.</p> </div> <div onclick="hideFocus()" class="close"><img data-src="img/icon-close.png"></div> </div> </div>', '', '', function(opts) {
     var self = this
     this.qrcode = QRCODE
+    this.ad = NOAD
     this.on("mount",function(){
     	loadStart()
     })
-  
-});
+}, '{ }');
 
-riot.tag('qa', ' <div class="question"><img src="http://disk.giccoo.com/projects/qa/img/question.png"> <div class="num">{question.id}</div> <div class="count"><span class="num">{question.id}</span>/{questions.length}</div> <div class="text">{question.question}</div> </div> <div class="answers"> <ul> <li each="{item in question.answers}" onclick="{selectAnswer(item)}"><span class="check"><img src="http://disk.giccoo.com/projects/qa/img/check.png"></span>{item}</li> </ul> </div> <div class="btns"> <div if="{now != questions.length-1}" onclick="{nextQuestion}" class="next"><img src="http://disk.giccoo.com/projects/qa/img/btn-next.png"></div> <div if="{now == questions.length-1}" onclick="{restart}" class="restart"><img src="http://disk.giccoo.com/projects/qa/img/btn-restart.png"></div> <div if="{now == questions.length-1}" onclick="{done}" class="done"><img src="http://disk.giccoo.com/projects/qa/img/btn-done.png"></div> </div><a if="{!ad}" href="{question.link}" class="banner"><img riot-src="{question.banner}"></a>', function(opts) {
+riot.tag2('qa', '<div class="question"><img src="http://disk.giccoo.com/projects/qa/img/question.png"> <div class="num">{question.id}</div> <div class="count"><span class="num">{question.id}</span>/{questions.length}</div> <div class="text">{question.question}</div> </div> <div class="answers"> <ul> <li each="{item in question.answers}" onclick="{selectAnswer(item)}"><span class="check"><img src="http://disk.giccoo.com/projects/qa/img/check.png"></span>{item}</li> </ul> </div> <div class="btns"> <div if="{now != questions.length-1}" onclick="{nextQuestion}" class="next"><img src="http://disk.giccoo.com/projects/qa/img/btn-next.png"></div> <div if="{now == questions.length-1}" onclick="{restart}" class="restart"><img src="http://disk.giccoo.com/projects/qa/img/btn-restart.png"></div> <div if="{now == questions.length-1}" onclick="{done}" class="done"><img src="http://disk.giccoo.com/projects/qa/img/btn-done.png"></div> </div><a if="{!ad}" href="{question.link}" class="banner"><img riot-src="{question.banner}"></a>', '', '', function(opts) {
     var self = this
     this.ad = NOAD
     _QA = this
@@ -49,7 +48,7 @@ riot.tag('qa', ' <div class="question"><img src="http://disk.giccoo.com/projects
     	}
     	this.question = this.questions[this.now]
     	this.update()
-    }.bind(this);
+    }.bind(this)
     this.selectAnswer = function(item) {
 
     	return function() {
@@ -59,8 +58,8 @@ riot.tag('qa', ' <div class="question"><img src="http://disk.giccoo.com/projects
     		$(".answers li",self.root).removeClass("on")
     		$(".answers li",self.root).eq(n).addClass("on")
     	}
-    }.bind(this);
-    
+    }.bind(this)
+
     this.nextQuestion = function() {
     	if (self.selected < 0) {
     		return SendNote("请选择本题答案")
@@ -72,8 +71,8 @@ riot.tag('qa', ' <div class="question"><img src="http://disk.giccoo.com/projects
     	self.question = self.questions[self.now]
     	self.update()
     	$(".answers li",self.root).removeClass("on")
-    }.bind(this);
-    
+    }.bind(this)
+
     this.restart = function() {
     	self.selected = -1
     	self.now = 0
@@ -81,8 +80,8 @@ riot.tag('qa', ' <div class="question"><img src="http://disk.giccoo.com/projects
     	self.question = self.questions[self.now]
     	self.update()
     	$(".answers li",self.root).removeClass("on")
-    }.bind(this);
-    
+    }.bind(this)
+
     this.done = function() {
     	if (confirm("提交后不能修改答案,确定要提交吗?")) {
 
@@ -91,13 +90,12 @@ riot.tag('qa', ' <div class="question"><img src="http://disk.giccoo.com/projects
     		}
     		POST(self.answer)
     	}
-    }.bind(this);
-  
-});
+    }.bind(this)
+}, '{ }');
 
-riot.tag('select-company', '<div class="content"> <div class="form-grounp"> <label for="province">分类:</label> <div class="select"><span>{provinceName}</span> <select id="province" name="province" onchange="{changeProvince}"> <option each="{name in province}" value="{name}">{name}</option> </select> </div> </div> <div class="form-grounp"> <label for="city">公司名称:</label> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeCity}"> <option each="{name in city}" value="{name}">{name}</option> </select> </div> </div> <div class="form-grounp"> <label for="province">搜索:</label> <input type="search" name="search" onchange="{searchChange}"> </div> <div class="form-grounp"> <div class="btns"> <div onclick="{submit}" class="btn submit">开始答题</div> <div onclick="{clear}" class="btn clear">清空</div> <div onclick="{close}" class="btn close">关闭</div> </div> </div> </div>', function(opts) {
+riot.tag2('select-company', '<div class="content"> <div class="form-grounp"> <label for="province">分类:</label> <div class="select"><span>{provinceName}</span> <select id="province" name="province" onchange="{changeProvince}"> <option each="{name in province}" value="{name}">{name}</option> </select> </div> </div> <div class="form-grounp"> <label for="city">公司名称:</label> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeCity}"> <option each="{name in city}" value="{name}">{name}</option> </select> </div> </div> <div class="form-grounp"> <label for="province">搜索:</label> <input type="search" name="search" onchange="{searchChange}"> </div> <div class="form-grounp"> <div class="btns"> <div onclick="{submit}" class="btn submit">开始答题</div> <div onclick="{clear}" class="btn clear">清空</div> <div onclick="{close}" class="btn close">关闭</div> </div> </div> </div>', '', '', function(opts) {
     var self = this
-    
+
     this.cityData = _citys
     var province = []
     for (name in this.cityData) {
@@ -108,7 +106,6 @@ riot.tag('select-company', '<div class="content"> <div class="form-grounp"> <lab
     this.province = province
     this.city = city
 
-    
     this.provinceName = this.province[0]
     this.cityName = this.city[0]
 
@@ -123,21 +120,16 @@ riot.tag('select-company', '<div class="content"> <div class="form-grounp"> <lab
     	var newName = $("[name=province]",self.root).val()
     	var newCity = $("[name=city]",this.root).val()
 
-
     	self.update()
-    }.bind(this);
+    }.bind(this)
     this.changeProvince = function(evt) {
     	var newName = $("[name=province]",self.root).val()
-
-
-
-
 
     	self.city = self.cityData[newName]
 
     	$("[name=search]",this.root).val("")
     	self.update()
-    }.bind(this);
+    }.bind(this)
     this.searchChange = function(evt) {
 
     	var text = $(evt.target).val()
@@ -162,8 +154,8 @@ riot.tag('select-company', '<div class="content"> <div class="form-grounp"> <lab
     	this.city = names
     	this.cityName = this.city[0]
     	this.update()
-    }.bind(this);
-    
+    }.bind(this)
+
     this.clear = function() {
     	$("[name=search]",this.root).val("")
     	$("[name=province] option",self.root).not(function(){ return console.log(this.selected=false) })
@@ -172,22 +164,21 @@ riot.tag('select-company', '<div class="content"> <div class="form-grounp"> <lab
     	this.provinceName = this.province[0]
     	this.cityName = this.city[0]
     	this.update()
-    }.bind(this);
+    }.bind(this)
     this.submit = function() {
     	if (self.cityName == "未找到" || self.cityName == "") {
     		SendNote("请选择公司后进行答题")
     		return false
     	}
     	CompanyPage(self.cityName)
-    }.bind(this);
-    
+    }.bind(this)
+
     this.close = function() {
     	$(this.root).removeClass("on")
-    }.bind(this);
-  
-});
+    }.bind(this)
+}, '{ }');
 
-riot.tag('slider', '<div riot-style="-webkit-transition-duration: {duration}s;transition-duration: {duration}s; -webkit-transform: translate3d({x}px,0,0); transform: translate3d({x}px,0,0);" class="slider"> <div each="{bgimg in list}" class="slide"> <div class="bg"><img riot-src="{bgimg}"></div> </div> </div>', function(opts) {
+riot.tag2('slider', '<div riot-style="-webkit-transition-duration: {duration}s;transition-duration: {duration}s; -webkit-transform: translate3d({x}px,0,0); transform: translate3d({x}px,0,0);" class="slider"> <div each="{bgimg in list}" class="slide"> <div class="bg"><img riot-src="{bgimg}"></div> </div> </div>', '', '', function(opts) {
     var self = this
     this.list = opts.list.split(",")
     this.duration = 0.2
@@ -253,9 +244,6 @@ riot.tag('slider', '<div riot-style="-webkit-transition-duration: {duration}s;tr
     	this.offset.resistance = this.slideNumber === 0 && this.offset.deltaX > 0 ? pageX / this.offset.w + 1.25 : (this.slideNumber === this.offset.lastSlide && this.offset.deltaX < 0 ? (this.offset.w-Math.abs(pageX)) / this.offset.w + 1.25 : 1)
     	evt.preventDefault()
 
-
-
-
     	this.update()
     }
     this.touchend = function(evt) {
@@ -275,5 +263,4 @@ riot.tag('slider', '<div riot-style="-webkit-transition-duration: {duration}s;tr
     	this.root.addEventListener("touchend", this.touchend.bind(this))
     	opts.end && opts.end(this)
     })
-  
-});
+}, '{ }');

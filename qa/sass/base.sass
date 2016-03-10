@@ -92,19 +92,23 @@ html,body
 		&.on
 			+show
 
-	.info-page, .note-page
+	.info-page, .note-page, .select-page
 		.slogan
 			+posa
 			+tl(5%,50%)
 			+iw(640)
 			+transform(translate3d(-50%,0,0))
+			.iphone4 &
+				top: 0
 		.text
 			+posa
-			+tl(34%,10%)
+			+tl(36%,10%)
 			+w(80%)
 			+font-size(0.8rem)
 			color: #162a88
 			+text-center
+			.iphone4 &
+				top: 34%
 			h3
 				+font-size(1.1rem)
 			p,h3
@@ -134,7 +138,12 @@ html,body
 				.p-2
 					animation-delay: 1000ms
 		.btns
-			+bl(5%,50%)
+			+bl(20%,50%)
+	.select-page
+		.text
+			p,h3
+				+m(0.2rem 0)
+				line-height: 1.4em
 	.question-page
 		+posa
 		+tl

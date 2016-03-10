@@ -218,8 +218,8 @@ _QUESTION = [
 			"为家人购买保险是对家庭的关爱",
 			"保险和慈善是一回事"
 		],
-		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
-		link: "http://www.baidu.com"
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-normal-1.jpg",
+		link: "http://e.cic.cn/"
 	},
 	{
 		id: 2,
@@ -230,8 +230,8 @@ _QUESTION = [
 			"投资功能",
 			"储蓄功能"
 		],
-		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
-		link: "http://www.baidu.com"
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-normal-2.jpg",
+		link: "http://e.cic.cn/"
 	},
 	{
 		id: 3,
@@ -242,8 +242,8 @@ _QUESTION = [
 			"保险标的风险高保费就较高",
 			"保费收取没有严格依据"
 		],
-		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
-		link: "http://www.baidu.com"
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-normal-1.jpg",
+		link: "http://e.cic.cn/"
 	},
 	{
 		id: 4,
@@ -254,8 +254,8 @@ _QUESTION = [
 			"食品",
 			"家用电器"
 		],
-		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
-		link: "http://www.baidu.com"
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-normal-2.jpg",
+		link: "http://e.cic.cn/"
 	},
 	{
 		id: 5,
@@ -266,8 +266,8 @@ _QUESTION = [
 			"附加险包括全车盗抢险、玻璃单独破碎险、车身划痕损失险等",
 			"买了交强险就不用购买其他机动车辆保险了"
 		],
-		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
-		link: "http://www.baidu.com"
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-normal-1.jpg",
+		link: "http://e.cic.cn/"
 	},
 	{
 		id: 6,
@@ -278,8 +278,8 @@ _QUESTION = [
 			"医疗保险是按实际所用医疗费来赔付",
 			"重大疾病保险是定额赔付，不考虑实际支出多少医疗费"
 		],
-		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
-		link: "http://www.baidu.com"
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-normal-2.jpg",
+		link: "http://e.cic.cn/"
 	},
 	{
 		id: 7,
@@ -290,8 +290,8 @@ _QUESTION = [
 			"购买分红险的客户承担一定的投资风险",
 			"买了分红险一定可以年年收红利"
 		],
-		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
-		link: "http://www.baidu.com"
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-normal-1.jpg",
+		link: "http://e.cic.cn/"
 	},
 	{
 		id: 8,
@@ -302,7 +302,7 @@ _QUESTION = [
 			"保险经纪公司",
 			"互联网渠道"
 		],
-		banner: "http://disk.giccoo.com/projects/qa/img/banner.jpg",
+		banner: "http://disk.giccoo.com/projects/qa/img/banner-normal-2.jpg",
 		link: "http://www.baidu.com"
 	},
 	{
@@ -315,7 +315,7 @@ _QUESTION = [
 			"12310"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-normal-9.jpg",
-		link: "http://www.baidu.com"
+		link: "http://m.baolian365.com/index.php?g=Wap&m=Zixun&a=h5"
 	},
 	{
 		id: 10,
@@ -327,7 +327,7 @@ _QUESTION = [
 			"五年"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-normal-10.jpg",
-		link: "http://www.baidu.com"
+		link: "http://m.baolian365.com/index.php?g=Wap&m=Zixun&a=h5"
 	}
 ]
 _QUESTION_COMPANY = [
@@ -341,7 +341,7 @@ _QUESTION_COMPANY = [
 			"股票投资"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-1.jpg",
-		link: "http://www.baidu.com"
+		link: "http://m.baolian365.com/index.php?g=Wap&m=Zixun&a=h5"
 	},
 	{
 		id: 2,
@@ -353,7 +353,7 @@ _QUESTION_COMPANY = [
 			"应予支持 应予支持"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-2.jpg",
-		link: "http://www.baidu.com"
+		link: "http://m.baolian365.com/index.php?g=Wap&m=Zixun&a=h5"
 	},
 	{
 		id: 3,
@@ -365,7 +365,7 @@ _QUESTION_COMPANY = [
 			"保险是一种赌博，以今天的平安赌明天的风险"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-3.jpg",
-		link: "http://www.baidu.com"
+		link: "http://m.baolian365.com/index.php?g=Wap&m=Zixun&a=h5"
 	},
 	{
 		id: 4,
@@ -377,7 +377,7 @@ _QUESTION_COMPANY = [
 			"保险给付、退保金中含有红利"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-4.jpg",
-		link: "http://www.baidu.com"
+		link: "http://m.baolian365.com/index.php?g=Wap&m=Zixun&a=h5"
 	},
 	{
 		id: 5,
@@ -389,7 +389,7 @@ _QUESTION_COMPANY = [
 			"应予支持 应予支持"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-5.jpg",
-		link: "http://www.baidu.com"
+		link: "http://m.baolian365.com/index.php?g=Wap&m=Zixun&a=h5"
 	},
 	{
 		id: 6,
@@ -401,7 +401,7 @@ _QUESTION_COMPANY = [
 			"促进技术创新"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-6.jpg",
-		link: "http://www.baidu.com"
+		link: "http://m.baolian365.com/index.php?g=Wap&m=Zixun&a=h5"
 	},
 	{
 		id: 7,
@@ -413,7 +413,7 @@ _QUESTION_COMPANY = [
 			"资金融通机制"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-7.jpg",
-		link: "http://www.baidu.com"
+		link: "http://m.baolian365.com/index.php?g=Wap&m=Zixun&a=h5"
 	},
 	{
 		id: 8,
@@ -425,7 +425,7 @@ _QUESTION_COMPANY = [
 			"受益人或者被保险人的继承人、受益人或者被保险人的继承人保险人"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-8.jpg",
-		link: "http://www.baidu.com"
+		link: "http://m.baolian365.com/index.php?g=Wap&m=Zixun&a=h5"
 	},
 	{
 		id: 9,
@@ -437,7 +437,7 @@ _QUESTION_COMPANY = [
 			"满四年"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-9.jpg",
-		link: "http://www.baidu.com"
+		link: "http://m.baolian365.com/index.php?g=Wap&m=Zixun&a=h5"
 	},
 	{
 		id: 10,
@@ -449,7 +449,7 @@ _QUESTION_COMPANY = [
 			"保险投资基金"
 		],
 		banner: "http://disk.giccoo.com/projects/qa/img/banner-company-10.jpg",
-		link: "http://www.baidu.com"
+		link: "http://m.baolian365.com/index.php?g=Wap&m=Zixun&a=h5"
 	}
 ]
 company = null
@@ -491,10 +491,13 @@ window.onload = ->
 	if $("body").height() <= 460 or MK > 0.65
 		$("body").addClass "iphone4"
 
-	$(".btn-join").click ->
+	$(".page.info-page .btn-join").click ->
 		$(".page.info-page").removeClass "on"
+		$(".page.select-page").addClass "on"
+	$(".page.select-page .btn-join").click ->
+		$(".page.select-page").removeClass "on"
 		$(".page.note-page").addClass "on"
-
+	
 	$(".btn-company").click ->
 		# $(".page.note-page").removeClass "on"
 		return showFocus() if subscribe is 0

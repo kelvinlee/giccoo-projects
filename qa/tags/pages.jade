@@ -1,25 +1,51 @@
 pages
-	- var images = "http://disk.giccoo.com/projects/qa/img"
-	// - var images = "img"
+	// - var images = "http://disk.giccoo.com/projects/qa/img"
+	- var images = "img"
 	.page.info-page.on
 		.slogan
 			img(data-src="#{images}/slogan.png")
 		.text
-			h3 活动规则
-			p 本次知识竞赛设最佳团队奖、最佳组织奖、最佳个人奖三类。
-			p 最佳团队奖：得分前五的公司团队获此殊荣，由主办、承办、赞助单位一起颁发奖杯。
-			p 最佳组织奖：参与人数前五的公司团队获此殊荣，由主办、承办、赞助单位一起颁发奖杯。
-			p 最佳个人奖：一等奖5名；二等奖10名；三等奖50名。优秀奖200名。获奖者由《中国保险报》微信公众账号后台在优秀答卷中抽取产生。纪念奖若干名，奖品待定。
+			//- h3 活动规则
+			//- p 本次知识竞赛设最佳团队奖、最佳组织奖、最佳个人奖三类。
+			//- p 最佳团队奖：得分前五的公司团队获此殊荣，由主办、承办、赞助单位一起颁发奖杯。
+			//- p 最佳组织奖：参与人数前五的公司团队获此殊荣，由主办、承办、赞助单位一起颁发奖杯。
+			//- p 最佳个人奖：一等奖5名；二等奖10名；三等奖50名。优秀奖200名。获奖者由《中国保险报》微信公众账号后台在优秀答卷中抽取产生。纪念奖若干名，奖品待定。
+			h3 主办单位：
+			p 中国保监会保险消费者权益保护局
+			h3 承办单位：
+			p 中国保险报业股份有限公司
+			h3(if="{!ad}") 协办单位：
+			p(if="{!ad}")
+				span.companylogo
+					img(data-src="#{images}/company-2.png")
+				span.companylogo
+					img(data-src="#{images}/company-1.png")
+				
 		.btn-join
 			img(data-src="#{images}/btn-start.png")
+	.page.select-page
+		.slogan
+			img(data-src="#{images}/slogan.png")
+		.text
+			h3 活动规则
+			p 第一步：选择分组。
+			p 如果您是保险消费者，请选“保险消费者组”；如果您是保险从业者，请选“保险从业者组”
+			p 第二步：参与答题。
+			p 您将看到10道单项选择题，答完上一题才能进入下一题。
+			h3 奖项设置
+			p 1.最佳团队奖：平均成绩前5名的公司团队。
+			p 2.最佳组织奖：参与人数前5名的公司团队。
+			p 3.最佳个人奖（针对消费者）：一等奖5名；二等奖10名；三等奖50名。优秀奖200名。
+		.btn-join
+			img(data-src="#{images}/btn-go.png")
 	.page.note-page
 		.slogan
 			img(data-src="#{images}/slogan.png")
 		.text
-			h3 主办单位：
-			p 中国保险监督管理委员会保险消费者权益保护局
-			p 《中国保险报》
-			h3 协办单位：
+			//- h3 主办单位：
+			//- p 中国保险监督管理委员会保险消费者权益保护局
+			//- p 《中国保险报》
+			h3 请选择您的身份：
 			p
 				span.companylogo
 					img(data-src="#{images}/company-1.png")
@@ -34,6 +60,8 @@ pages
 				img(data-src="#{images}/btn-personal.png")
 				.p.p-2
 					img(data-src="#{images}/p-2.png")
+		.btn-join
+			img(data-src="#{images}/btn-begin.png")
 	.page.finished-page
 		.content
 			.bg.fadeIn.animated
@@ -61,6 +89,7 @@ pages
 	script.
 		var self = this
 		this.qrcode = QRCODE
+		this.ad = NOAD
 		this.on("mount",function(){
 			loadStart()
 		})
