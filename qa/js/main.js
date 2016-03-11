@@ -617,8 +617,12 @@ loadEnd = function() {
 
 window.onload = function() {
   var MK;
-  if (openid === "") {
+  if (openid === "" && project === "qa") {
     window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3dd8b8d67e940c4&redirect_uri={url}&response_type=code&scope=snsapi_base&state=123#wechat_redirect".replace("{url}", encodeURIComponent("http://i.giccoo.com/" + project + "/"));
+    return false;
+  }
+  if (openid === "" && project === "question") {
+    window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe2f2c38eb9ac51c7&redirect_uri={url}&response_type=code&scope=snsapi_base&state=123#wechat_redirect".replace("{url}", encodeURIComponent("http://i.giccoo.com/" + project + "/"));
     return false;
   }
   riot.mount("#pages", "pages");
