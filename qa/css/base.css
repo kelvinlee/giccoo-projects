@@ -375,14 +375,14 @@ ul {
   list-style: none; }
 
 .note {
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
   bottom: 0px;
   right: 0px;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 9999; }
   .note .note-box {
     text-align: center;
@@ -393,7 +393,7 @@ ul {
     .note .note-box .note-content {
       display: inline-block;
       padding: 10px 11px 10px 10px;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.7);
       color: #fff;
       border-radius: 5px;
       max-width: 90%;
@@ -401,13 +401,14 @@ ul {
     .note .note-box .icon-form, .note .note-box .note-text {
       display: inline-block;
       vertical-align: top;
-      line-height: 1.6em; }
+      line-height: 25px; }
     .note .note-box .icon-form {
-      width: 1rem; }
-      .note .note-box .icon-form img {
-        vertical-align: middle; }
+      width: 1.1rem;
+      height: 1.1rem;
+      vertical-align: middle; }
     .note .note-box .note-text {
       font-size: 0.8rem;
+      line-height: 1.4em;
       letter-spacing: 2px; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
         .note .note-box .note-text {
@@ -806,6 +807,8 @@ html, body {
     display: none; }
     .main .page.on, .main .pages.on {
       display: block; }
+  .main .pages {
+    display: block; }
   .main .info-page .slogan, .main .note-page .slogan, .main .select-page .slogan {
     position: absolute;
     top: 5%;

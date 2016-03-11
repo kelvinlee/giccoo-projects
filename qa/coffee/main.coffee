@@ -330,7 +330,7 @@ _QUESTION = [
 	{
 		id: 10,
 		question: "消费者在行使自己保险索赔权利，要求保险公司进行赔偿时，受到时间的限制。人寿保险的被保险人或者受益人向保险人请求给付保险金的诉讼时效为多长时间？",
-		size: "big",
+		size: "normal",
 		answers: [
 			"60天",
 			"一年",
@@ -597,10 +597,15 @@ POST = (answers,callback)->
 			setTimeout ->
 				Done(msg)
 			,3000
+		else if msg.recode is 202
+			SendNote("您已经提交过答案,无法变更,即将显示您本次答题的正确率。",4000)
+			setTimeout ->
+				Done(msg,true)
+			,4000
 		else
 			SendNote(msg.reason)
 
-Done = (msg)->
+Done = (msg,secondTime = false)->
 	fen = msg.info.fen
 	if msg.info.fen > 20
 		fen = fen+parseInt(Math.random()*9)
