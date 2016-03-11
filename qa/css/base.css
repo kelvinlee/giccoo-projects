@@ -653,7 +653,8 @@ html, body {
     position: absolute;
     top: 50%;
     left: 0px;
-    transform: translate3d(0, -50%, 0); }
+    transform: translate3d(0, -50%, 0);
+    width: 100%; }
   .loading .text {
     position: absolute;
     top: 68%;
@@ -807,7 +808,21 @@ html, body {
   .main .note-page .btns {
     bottom: 30%; }
   .main .select-page.on .text {
-    top: 30%; }
+    top: 32%; }
+  .main .select-page .text p {
+    font-size: 0.74rem; }
+    @media only screen and (min-width: 321px) and (max-width: 399px) {
+      .main .select-page .text p {
+        font-size: 0.814rem; } }
+    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+      .main .select-page .text p {
+        font-size: 0.814rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 767px) {
+      .main .select-page .text p {
+        font-size: 0.888rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+      .main .select-page .text p {
+        font-size: 0.888rem; } }
   .main .select-page .text p, .main .select-page .text h3 {
     margin: 0.2rem 0;
     line-height: 1.4em; }

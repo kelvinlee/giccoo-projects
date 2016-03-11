@@ -59,6 +59,7 @@ html,body
 		+posa
 		+tl(50%)
 		+transform(translate3d(0,-50%,0))
+		+w
 	.text
 		+posa
 		+tl(68%,50%)
@@ -156,8 +157,10 @@ html,body
 	.select-page
 		&.on
 			.text
-				top: 30%
+				top: 32%
 		.text
+			p
+				+font-size(0.74rem)
 			p,h3
 				+m(0.2rem 0)
 				line-height: 1.4em
