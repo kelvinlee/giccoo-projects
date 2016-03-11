@@ -83,7 +83,7 @@ html,body
 	max-width: 640px
 	z-index: 99
 	font-size: 0
-	.page
+	.page,.pages
 		+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
 		+posa
 		+tl
@@ -92,7 +92,6 @@ html,body
 		+hide
 		&.on
 			+show
-
 	.info-page, .note-page, .select-page
 		.slogan
 			+posa
@@ -117,7 +116,7 @@ html,body
 				line-height: 1.4em
 			.companylogo
 				display: inline-block
-				+w(6rem)
+				+w(7rem)
 		.btn-join,.btns
 			+posa
 			+bl(2%,50%)
@@ -161,6 +160,7 @@ html,body
 		.text
 			p
 				+font-size(0.74rem)
+				+text-left
 			p,h3
 				+m(0.2rem 0)
 				line-height: 1.4em
@@ -214,9 +214,12 @@ html,body
 				+posa
 				+tl(32%,22%)
 				+w(60%)
-				+font-size(0.64rem)
-				.iphone4 &
-					font-size: (0.64rem)
+				+font-size(0.8rem)
+				&.big
+					+font-size(1rem)
+				&.small
+					+font-size(0.64rem)
+
 
 		.answers
 			+w(80%)

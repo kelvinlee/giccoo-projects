@@ -54,6 +54,7 @@
       <h2>恭喜你!</h2>
       <p>保险知识竞赛正确率</p>
       <p>超过了 <span id="nums">0</span>% 的网友</p>
+      <p>获奖结果于3月22日公布，敬请关注！</p>
       <div onclick="showShare()" class="btn-share"><img src="http://disk.giccoo.com/projects/qa/img/btn-share.png"/></div><a if="{!ad}" href="{jplink}" class="btn-jiang"><img src="http://disk.giccoo.com/projects/qa/img/btn-jp.png"/></a>
     </div>
     <div onclick="hideShare()" class="share-box fadeIn animated"><img src="http://disk.giccoo.com/projects/qa/img/share-note.png"/></div>
@@ -71,6 +72,7 @@
   </div>
   <script>
     var self = this
+    $(this.root).addClass("pages")
     this.qrcode = QRCODE
     this.ad = NOAD
     this.jplink = _jplink

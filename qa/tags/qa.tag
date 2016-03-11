@@ -5,7 +5,7 @@
     <div class="icon"><img src="http://disk.giccoo.com/projects/qa/img/icon-child.png"/></div>
     <div class="num">{question.id}</div>
     <div class="count"><span class="num">{question.id}</span>/{questions.length}</div>
-    <div class="text">{question.question}</div>
+    <div class="text {question.size}">{question.question}</div>
   </div>
   <div class="answers">
     <ul>

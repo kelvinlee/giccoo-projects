@@ -98,6 +98,7 @@ _citys["保险公司－人身险"].push("安邦养老保险股份有限公司")
 _citys["保险公司－人身险"].push("太保安联健康保险股份有限公司")
 _citys["保险公司－人身险"].push("渤海人寿保险股份有限公司")
 _citys["保险公司－人身险"].push("国联人寿保险股份有限公司")
+_citys["保险公司－人身险"].push("中新大东方人寿更名为恒大人寿保险有限公司")
 
 _citys["保险公司－财产险"] = []
 _citys["保险公司－财产险"].push("中国人民财产保险股份有限公司")
@@ -212,6 +213,7 @@ _QUESTION = [
 	{
 		id: 1,
 		question: "对于保险的理解，下面哪句话是错的？",
+		size: "big",
 		answers: [
 			"保险是一种未雨绸缪的智慧",
 			"保险体现人们的互助精神",
@@ -224,6 +226,7 @@ _QUESTION = [
 	{
 		id: 2,
 		question: "关于保险的功能，哪一项是错的？",
+		size: "big",
 		answers: [
 			"损失补偿功能",
 			"无偿救济功能",
@@ -236,6 +239,7 @@ _QUESTION = [
 	{
 		id: 3,
 		question: "关于保险公司收取保费的依据，哪一项是错的？",
+		size: "big",
 		answers: [
 			"如保障对象是人，要考虑年龄、性别、婚姻状况、身体状况、工作状况等。",
 			"如保障对象是财产，要考虑其本身价值、使用年限、用途、所处位置等。",
@@ -248,6 +252,7 @@ _QUESTION = [
 	{
 		id: 4,
 		question: "消费者购买家庭财产保险，通常情况下，对于以下哪种标的，保险公司不予承保？",
+		size: "big",
 		answers: [
 			"家具",
 			"室内装饰物",
@@ -260,6 +265,7 @@ _QUESTION = [
 	{
 		id: 5,
 		question: "以下关于机动车辆保险，哪种说法不正确？",
+		size: "big",
 		answers: [
 			"所有机动车辆必须购买交强险",
 			"基本险包括机动车辆损失保险和机动车第三者责任保险",
@@ -272,6 +278,7 @@ _QUESTION = [
 	{
 		id: 6,
 		question: "关于重大疾病保险与医疗保险，下列哪种表述是错误的？",
+		size: "big",
 		answers: [
 			"尽量选择保障范围广的重大疾病保险",
 			"重大疾病保险和医疗保险是一回事",
@@ -284,6 +291,7 @@ _QUESTION = [
 	{
 		id: 7,
 		question: "分红险是指保险公司在每个会计年度结束后，将上一会计年度该类分红保险的可分配盈余，按照一定比例、以现金红利或增额红利的方式，分配给客户的一种人寿保险。以下说法那种是错误的？",
+		size: "normal",
 		answers: [
 			"分红多少取决于保费投入多少以及产品选择的不同",
 			"分红险是一种人寿保险",
@@ -296,6 +304,7 @@ _QUESTION = [
 	{
 		id: 8,
 		question: "消费者购买保险产品，除了通过保险营销员、保险公司还有其他渠道，具体来说，不可以通过哪种途径购买保险？",
+		size: "big",
 		answers: [
 			"保险代理公司",
 			"保险公估公司",
@@ -308,6 +317,7 @@ _QUESTION = [
 	{
 		id: 9,
 		question: "全国保险消费者投诉维权热线电话是？",
+		size: "big",
 		answers: [
 			"12378",
 			"12306",
@@ -320,6 +330,7 @@ _QUESTION = [
 	{
 		id: 10,
 		question: "消费者在行使自己保险索赔权利，要求保险公司进行赔偿时，受到时间的限制。人寿保险的被保险人或者受益人向保险人请求给付保险金的诉讼时效为多长时间？",
+		size: "big",
 		answers: [
 			"60天",
 			"一年",
@@ -334,6 +345,7 @@ _QUESTION_COMPANY = [
 	{
 		id: 1,
 		question: "下列那些风险是不可保的？",
+		size: "big",
 		answers: [
 			"生病",
 			"车辆损失",
@@ -346,6 +358,7 @@ _QUESTION_COMPANY = [
 	{
 		id: 2,
 		question: "投保人或者被保险人变更受益人，当事人主张变更行为自变更意思表示发出时生效的，人民法院（）。 投保人或者被保险人变更受益人未通知保险人，保险人主张变更对其不发生效力的，人民法院（）。以上两处均正确的是?",
+		size: "small",
 		answers: [
 			"应予支持 不予支持",
 			"不予支持 应予支持",
@@ -358,6 +371,7 @@ _QUESTION_COMPANY = [
 	{
 		id: 3,
 		question: "下列哪项不是保险的本质？",
+		size: "big",
 		answers: [
 			"保险是用今天的钱筹划明天的生活",
 			"保险是用大钱换小钱",
@@ -370,6 +384,7 @@ _QUESTION_COMPANY = [
 	{
 		id: 4,
 		question: "下列哪些不属于分红保险产品的主要特征？",
+		size: "big",
 		answers: [
 			"保单持有人享受经营成果",
 			"客户承担一定的投资风险",
@@ -382,6 +397,7 @@ _QUESTION_COMPANY = [
 	{
 		id: 5,
 		question: "保险合同约定按照基本医疗保险的标准核定医疗费用，保险人以被保险人的医疗支出超出基本医疗保险范围为由拒绝给付保险金的，人民法院（）；保险人有证据证明被保险人支出的费用超过基本医疗保险同类医疗费用标准，要求对超出部分拒绝给付保险金的，人民法院（）。以上两处均正确的是?",
+		size: "small",
 		answers: [
 			"应予支持 不予支持",
 			"不予支持 应予支持",
@@ -394,6 +410,7 @@ _QUESTION_COMPANY = [
 	{
 		id: 6,
 		question: "保险是金融业的三驾马车之一，在经济发展中具有举足轻重的地位，下列哪项不是其具体表现？",
+		size: "big",
 		answers: [
 			"刺激消费",
 			"不利于拉动投资",
@@ -406,6 +423,7 @@ _QUESTION_COMPANY = [
 	{
 		id: 7,
 		question: "2012年6月24日，中国“蛟龙”号载人潜水器在西太平洋的马里亚纳海沟试验海区首次突破7000米，创造了中国载人深潜的历史记录。同时，我国也开创了首例探潜器保险，引入了4家保险公司以及海外再保险人。该项目采用了何种机制来减少和避免巨大损失？",
+		size: "small",
 		answers: [
 			"风险分散机制",
 			"风险管理机制",
@@ -418,6 +436,7 @@ _QUESTION_COMPANY = [
 	{
 		id: 8,
 		question: "保险人以被保险人自杀为由拒绝给付保险金的，由（）承担举证责任。受益人或者被保险人的继承人以被保险人自杀时无民事行为能力为由抗辩的，由（）承担举证责任。以上两空格处均正确的是?",
+		size: "normal",
 		answers: [
 			"保险人、保险人",
 			"受益人或者被保险人的继承人、保险人 ",
@@ -430,6 +449,7 @@ _QUESTION_COMPANY = [
 	{
 		id: 9,
 		question: "保险合同效力中止后，经保险人与投保人协商并达成协议，在投保人补交保险费后，合同效力恢复。但自合同效力中止之日起（）双方未达成协议的，保险人有权解除合同。",
+		size: "normal",
 		answers: [
 			"满一年",
 			"满两年",
@@ -442,6 +462,7 @@ _QUESTION_COMPANY = [
 	{
 		id: 10,
 		question: "保险业防范和化解风险的最后一道防线是( )",
+		size: "big",
 		answers: [
 			"中国保险监督管理委员会",
 			"再保险公司",
@@ -487,7 +508,6 @@ window.onload = ->
 		# wxe2f2c38eb9ac51c7
 		window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe2f2c38eb9ac51c7&redirect_uri={url}&response_type=code&scope=snsapi_base&state=123#wechat_redirect".replace("{url}",encodeURIComponent("http://i.giccoo.com/#{project}/"))
 		return false
-
 
 	riot.mount("#pages","pages")
 
@@ -562,7 +582,6 @@ CompanyPage = (name)->
 	$(".page.note-page").removeClass "on"
 	$(".page.question-page").addClass "on"
 
-
 _POSTING = false
 POST = (answers,callback)->
 	# console.log answers
@@ -589,7 +608,7 @@ Done = (msg)->
 		fen = fen
 	if fen > 99
 		fen = 99
-	UpdateShare("恭喜你!保险知识竞赛正确率超过了 #{fen}% 的网友.")
+	UpdateShare("恭喜你!保险知识有奖竞赛正确率超过了 #{fen}% 的网友.")
 	$(".page.finished-page #nums").text(fen)
 	$(".page").removeClass("on")
 	$(".page.finished-page").addClass("on")

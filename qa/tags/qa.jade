@@ -9,7 +9,7 @@ qa
 		.count
 			span.num {question.id}
 			| /{questions.length}
-		.text {question.question}
+		.text(class="{question.size}") {question.question}
 	.answers
 		ul
 			li(each="{item in question.answers}",onclick="{selectAnswer(item)}")

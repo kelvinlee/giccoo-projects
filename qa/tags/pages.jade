@@ -73,6 +73,7 @@ pages
 			p 超过了 
 				span#nums 0
 				| % 的网友
+			p 获奖结果于3月22日公布，敬请关注！
 			.btn-share(onclick="showShare()")
 				img(src="#{images}/btn-share.png")
 			a.btn-jiang(if="{!ad}",href="{jplink}")
@@ -92,6 +93,7 @@ pages
 	
 	script.
 		var self = this
+		$(this.root).addClass("pages")
 		this.qrcode = QRCODE
 		this.ad = NOAD
 		this.jplink = _jplink
