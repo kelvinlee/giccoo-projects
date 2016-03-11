@@ -717,11 +717,11 @@ html, body {
     position: absolute;
     top: 5%;
     left: 50%;
-    width: 100%;
+    width: 81.25%;
     margin: 0 auto;
     transform: translate3d(-50%, 0, 0); }
     .iphone4 .main .info-page .slogan, .iphone4 .main .note-page .slogan, .iphone4 .main .select-page .slogan {
-      width: 80%; }
+      width: 65%; }
     .iphone4 .main .info-page .slogan, .iphone4 .main .note-page .slogan, .iphone4 .main .select-page .slogan {
       top: 0; }
   .main .info-page .text, .main .note-page .text, .main .select-page .text {
