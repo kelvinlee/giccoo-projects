@@ -9,7 +9,9 @@
       <h3>承办单位：</h3>
       <p>中国保险报业股份有限公司</p>
       <h3 if="{!ad}">协办单位：</h3>
-      <p if="{!ad}"><span class="companylogo"><img data-src="http://disk.giccoo.com/projects/qa/img/company-2.png"/></span><span class="companylogo"><img data-src="http://disk.giccoo.com/projects/qa/img/company-1.png"/></span></p>
+      <p if="{!ad}"><span class="companylogo"><img data-src="http://m.giccoo.com/qa/img/company-2.png"/></span><span class="companylogo"><img data-src="http://m.giccoo.com/qa/img/company-1.png"/></span></p>
+      <p if="{ad}">&nbsp;</p>
+      <p>“3.15”保险消费者权益保护活动周</p>
     </div>
     <div class="btn-join"><img data-src="http://disk.giccoo.com/projects/qa/img/btn-start.png"/></div>
   </div>
