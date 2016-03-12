@@ -1113,10 +1113,10 @@ html, body {
           margin-right: 10%; }
   .main .finished-page .content {
     position: absolute;
-    top: 50%;
+    bottom: 5%;
     left: 50%;
-    -webkit-transform: translate3d(-50%, -50%, 0);
-            transform: translate3d(-50%, -50%, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
     font-size: 0.9rem;
     width: 100%;
     text-align: center;
@@ -1143,9 +1143,24 @@ html, body {
     .main .finished-page .content p {
       margin: 0 auto;
       line-height: 1.6em; }
+      .main .finished-page .content p:last-child {
+        font-size: 0.8rem; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .main .finished-page .content p:last-child {
+            font-size: 0.88rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .main .finished-page .content p:last-child {
+            font-size: 0.88rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .main .finished-page .content p:last-child {
+            font-size: 0.96rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .main .finished-page .content p:last-child {
+            font-size: 0.96rem; } }
     .main .finished-page .content h2 {
       font-size: 1.6rem;
-      color: #df0283; }
+      color: #df0283;
+      margin: 0.2rem 0; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
         .main .finished-page .content h2 {
           font-size: 1.76rem; } }
@@ -1158,6 +1173,9 @@ html, body {
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
         .main .finished-page .content h2 {
           font-size: 1.92rem; } }
+    .main .finished-page .content .qrcode {
+      width: 30%;
+      margin: 0 auto; }
     .main .finished-page .content #nums {
       color: #fc9400;
       font-size: 1.2rem; }

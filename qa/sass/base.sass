@@ -264,8 +264,8 @@ html,body
 	.finished-page
 		.content
 			+posa	
-			+tl(50%,50%)
-			+transform(translate3d(-50%,-50%,0))
+			+bl(5%,50%)
+			+transform(translate3d(-50%,0,0))
 			+font-size(0.9rem)
 			+w
 			+text-center
@@ -278,9 +278,15 @@ html,body
 			p
 				+m
 				line-height: 1.6em
+				&:last-child
+					+font-size(0.8rem)
 			h2
 				+font-size(1.6rem)
 				color: #df0283
+				+m(0.2rem 0)
+			.qrcode
+				+w(30%)
+				+m
 			#nums
 				color: #fc9400
 				+font-size(1.2rem)

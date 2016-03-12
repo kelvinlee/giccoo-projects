@@ -56,6 +56,8 @@
       <p>超过了 <span id="nums">0</span>% 的网友</p>
       <p>获奖结果于3月22日公布，敬请关注！</p>
       <div onclick="showShare()" class="btn-share"><img src="http://disk.giccoo.com/projects/qa/img/btn-share.png"/></div><a if="{!ad}" href="{jplink}" class="btn-jiang"><img src="http://disk.giccoo.com/projects/qa/img/btn-jp.png"/></a>
+      <div class="qrcode"><img src="http://disk.giccoo.com/projects/qa/img/qrcode-2.jpg"/></div>
+      <p>晓保形象由中国保监会授权使用</p>
     </div>
     <div onclick="hideShare()" class="share-box fadeIn animated"><img src="http://disk.giccoo.com/projects/qa/img/share-note.png"/></div>
   </div>
