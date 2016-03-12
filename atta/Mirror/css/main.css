@@ -1,0 +1,142 @@
+/* custom */
+
+
+@-webkit-keyframes 'moonmove' {
+ 0% {
+ margin-left:-46px;
+}
+ 100% {
+ margin-left:-162px;
+}
+}
+
+@-webkit-keyframes 'faceMove' {
+ 0% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 1;
+}
+}
+
+img {
+  width: 100%; }
+body{
+  margin: 0 auto;
+  background-color: black;
+}
+/*loader-Page*/
+.loader-content{
+  position: relative;
+  text-align: center;
+
+  /*overflow: hidden;*/
+}
+
+.moon{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 46px;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  margin-left: -46px;
+  margin-top: -120px;
+}
+.moonbox{
+  position: absolute;
+  /*-webkit-mask-image:url("../img/moon-mask.png");
+  -webkit-mask-size:92.5px 92.5px;
+  -webkit-mask-repeat:no-repeat;
+  -webkit-mask-position:0 0;
+
+  -webkit-animation:wipe 4s infinite; 
+  -webkit-animation-delay:0; 
+  -webkit-animation-direction:alternate;*/
+
+  width: 208px;
+  top: 50%;
+  left: 50%;
+  margin-left: -44px;
+  margin-top: -46px;
+  z-index: 996;
+  -webkit-animation-name:'moonmove';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+  -webkit-animation-duration: 10s;/*动画持续时间*/
+  -webkit-animation-timing-function: linear; /*动画频率，和transition-timing-function是一样的*/
+  -webkit-animation-delay: 0;/*动画延迟时间*/
+  -webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+  -webkit-animation-direction: normal;/*定义动画方式 alternate;*/
+}
+#moon-over{
+  position: absolute;
+  width: 92.5px;
+  top: 50%;
+  left: 50%;
+  margin-left: -46px;
+  margin-top: -46px;
+  z-index: 999;
+}
+#moon-over2{
+  position: absolute;
+  width: 92.5px;
+  top: 50%;
+  left: 50%;
+  margin-left: -46px;
+  margin-top: -46px;
+  z-index: 998;
+}
+.loading{
+  position: absolute;
+  width: 80px;
+  top: 50%;
+  left: 50%;
+  margin-left: -40px;
+  margin-top: -15px;
+  color: #b1a4b4;
+}
+.fadeout {
+  opacity: 0;
+  filter:alpha(opacity=0);
+}
+
+
+/*Game-Page*/
+.game {
+   position: relative;
+   margin: 0 auto;
+   background-image: url("../img/mainBg.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   text-align: center;
+}
+.mirror-board{
+  /*position: absolute;*/
+  width: 320px;
+  margin:0 auto;
+  z-index:2;
+}
+.face{
+  position: absolute;
+  width: 248px;
+  top: 50%;
+  left: 50%;
+  margin-left: -124px;
+  margin-top: -250px;
+  z-index:3;
+  -webkit-animation-name:'faceMove';
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 2;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+}
+.btton{
+  /*position: absolute;*/
+  /*margin-bottom: -20px;*/
+  width: 328px;
+  margin:0 auto;
+  z-index: 999;
+}
+  
+
