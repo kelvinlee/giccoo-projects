@@ -12,7 +12,7 @@
       <h3 if="{!ad}">协办单位</h3>
       <p if="{!ad}"><span class="companylogo"><img data-src="http://m.giccoo.com/qa/img/company-2.png"/></span><span class="companylogo"><img data-src="http://m.giccoo.com/qa/img/company-1.png"/></span></p>
       <div if="{ad}" class="qrcode"><img src="http://disk.giccoo.com/projects/qa/img/qrcode-2.jpg"/></div>
-      <p if="{ad}">晓保形象由中国保监会授权使用</p>
+      <p if="{ad}">晓保形象由中国保险监督委员会授权使用</p>
     </div>
     <div class="btn-join"><img data-src="http://disk.giccoo.com/projects/qa/img/btn-start.png"/></div>
   </div>
