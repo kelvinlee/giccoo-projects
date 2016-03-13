@@ -4,13 +4,13 @@
   <div class="page info-page on">
     <div class="slogan"><img data-src="http://disk.giccoo.com/projects/qa/img/slogan.png"/></div>
     <div class="text">
-      <h3>主办单位：</h3>
-      <p>中国保监会保险消费者权益保护局</p>
-      <h3>承办单位：</h3>
-      <p>中国保险报业股份有限公司</p>
-      <h3 if="{!ad}">协办单位：</h3>
-      <p if="{!ad}"><span class="companylogo"><img data-src="http://m.giccoo.com/qa/img/company-2.png"/></span><span class="companylogo"><img data-src="http://m.giccoo.com/qa/img/company-1.png"/></span></p>
       <p>“3.15”保险消费者权益保护活动周</p>
+      <h3>主办单位</h3>
+      <p>中国保监会保险消费者权益保护局</p>
+      <h3>承办单位</h3>
+      <p>中国保险报业股份有限公司</p>
+      <h3 if="{!ad}">协办单位</h3>
+      <p if="{!ad}"><span class="companylogo"><img data-src="http://m.giccoo.com/qa/img/company-2.png"/></span><span class="companylogo"><img data-src="http://m.giccoo.com/qa/img/company-1.png"/></span></p>
       <div if="{ad}" class="qrcode"><img src="http://disk.giccoo.com/projects/qa/img/qrcode-2.jpg"/></div>
       <p if="{ad}">晓保形象由中国保监会授权使用</p>
     </div>
@@ -60,7 +60,7 @@
       <p>获奖结果于3月22日公布，敬请关注！</p>
       <div onclick="showShare()" class="btn-share"><img src="http://disk.giccoo.com/projects/qa/img/btn-share.png"/></div><a if="{!ad}" href="{jplink}" class="btn-jiang"><img src="http://disk.giccoo.com/projects/qa/img/btn-jp.png"/></a>
       <div if="{!ad}" class="qrcode"><img src="http://disk.giccoo.com/projects/qa/img/qrcode-2.jpg"/></div>
-      <p if="{!ad}">晓保形象由中国保监会授权使用</p>
+      <p if="{!ad}">晓保形象由中国保险监督委员会授权使用</p>
     </div>
     <div onclick="hideShare()" class="share-box fadeIn animated"><img src="http://disk.giccoo.com/projects/qa/img/share-note.png"/></div>
   </div>

@@ -14,7 +14,7 @@ select-company
 					option(each="{name in city}",value="{name}") {name}
 		.form-grounp
 			label(for="province") 搜索公司:
-			input(type="search",name="search",onchange="{searchChange}",placeholder="请输入您所在公司的关键字")				
+			input(type="search",name="search",onblur="{searchChange}",onchange="{searchChange}",onkeyup="{searchChange}",placeholder="请输入您所在公司的关键字")				
 		.form-grounp
 			.btns
 				.btn.submit(show="{cityName!='请选择' && cityName != '未找到' && cityName != ''}",onclick="{submit}") 开始答题
