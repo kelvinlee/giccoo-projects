@@ -821,6 +821,9 @@ html, body {
       width: 65%; }
     .iphone4 .main .info-page .slogan, .iphone4 .main .note-page .slogan, .iphone4 .main .select-page .slogan {
       top: 0; }
+  .main .info-page .qrcode, .main .note-page .qrcode, .main .select-page .qrcode {
+    width: 25%;
+    margin: 0 auto; }
   .main .info-page .text, .main .note-page .text, .main .select-page .text {
     position: absolute;
     top: 36%;
