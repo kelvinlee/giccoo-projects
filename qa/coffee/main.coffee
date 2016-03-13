@@ -582,6 +582,7 @@ hideFocus = ->
 CompanyPage = (name)->
 	company = name
 	_QA.changeCompany() if _QA?
+	$(".pop.select-company").removeClass "on"
 	$(".page.note-page").removeClass "on"
 	$(".page.question-page").addClass "on"
 

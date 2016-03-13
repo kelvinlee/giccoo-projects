@@ -1114,6 +1114,11 @@ html, body {
         width: 34%; }
         .main .question-page .btns .next:last-child, .main .question-page .btns .restart:last-child, .main .question-page .btns .done:last-child {
           margin-right: 10%; }
+  .main .finished-page.noad .content {
+    top: 30%; }
+    .main .finished-page.noad .content .bg {
+      top: 0;
+      bottom: none; }
   .main .finished-page .content {
     position: absolute;
     bottom: 5%;

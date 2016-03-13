@@ -23,7 +23,7 @@
     </div>
     <div class="form-grounp">
       <div class="btns">
-        <div onclick="{submit}" class="btn submit">开始答题</div>
+        <div show="{cityName!='请选择' &amp;&amp; cityName != '未找到' &amp;&amp; cityName != ''}" onclick="{submit}" class="btn submit">开始答题</div>
         <div onclick="{clear}" class="btn clear">清空</div>
         <div onclick="{close}" class="btn close">关闭</div>
       </div>
@@ -108,7 +108,7 @@
     	this.update()
     }
     submit() {
-    	if (self.cityName == "未找到" || self.cityName == "") {
+    	if (self.cityName == "请选择" || self.cityName == "未找到" || self.cityName == "") {
     		SendNote("请选择公司后进行答题")
     		return false
     	}

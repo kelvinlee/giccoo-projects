@@ -716,6 +716,7 @@ CompanyPage = function(name) {
   if (_QA != null) {
     _QA.changeCompany();
   }
+  $(".pop.select-company").removeClass("on");
   $(".page.note-page").removeClass("on");
   return $(".page.question-page").addClass("on");
 };
