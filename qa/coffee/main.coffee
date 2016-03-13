@@ -3,6 +3,9 @@
 # @codekit-prepend "../../libs/coffee/requestanimation"
 
 _citys = {}
+
+_citys["请选择"] = ["请选择"]
+
 _citys["保险集团控股公司"] = []
 _citys["保险集团控股公司"].push("中国人民保险集团股份有限公司")
 _citys["保险集团控股公司"].push("中国太平保险集团有限责任公司")
@@ -589,6 +592,7 @@ POST = (answers,callback)->
 	_POSTING = true
 	data = {openid: openid,answer: answers.join(",")}
 	data.company = company if company?
+	$(".pop.select-company").removeClass "on"
 	# $.post "http://i.giccoo.com/qa/to/answer/",data, (msg)->
 	$.post POSTurl,data, (msg)->
 		_POSTING = false
@@ -606,6 +610,7 @@ POST = (answers,callback)->
 			SendNote(msg.reason)
 
 Done = (msg,secondTime = false)->
+	$(".pop.select-company").removeClass "on"
 	fen = msg.info.fen
 	if msg.info.fen > 20
 		fen = fen+parseInt(Math.random()*9)

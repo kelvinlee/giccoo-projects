@@ -18,8 +18,8 @@
       </div>
     </div>
     <div class="form-grounp">
-      <label for="province">搜索:</label>
-      <input type="search" name="search" onchange="{searchChange}"/>
+      <label for="province">搜索公司:</label>
+      <input type="search" name="search" onchange="{searchChange}" placeholder="请输入您所在公司的关键字"/>
     </div>
     <div class="form-grounp">
       <div class="btns">

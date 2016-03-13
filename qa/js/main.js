@@ -55,6 +55,8 @@ HTMLElement.prototype.getStyle = function(className) {
 
 _citys = {};
 
+_citys["请选择"] = ["请选择"];
+
 _citys["保险集团控股公司"] = [];
 
 _citys["保险集团控股公司"].push("中国人民保险集团股份有限公司");
@@ -733,6 +735,7 @@ POST = function(answers, callback) {
   if (company != null) {
     data.company = company;
   }
+  $(".pop.select-company").removeClass("on");
   return $.post(POSTurl, data, function(msg) {
     _POSTING = false;
     if (msg.recode === 200) {
@@ -756,6 +759,7 @@ Done = function(msg, secondTime) {
   if (secondTime == null) {
     secondTime = false;
   }
+  $(".pop.select-company").removeClass("on");
   fen = msg.info.fen;
   if (msg.info.fen > 20) {
     fen = fen + parseInt(Math.random() * 9);

@@ -13,8 +13,8 @@ select-company
 				select#city(name="city",onchange="{changeCity}")
 					option(each="{name in city}",value="{name}") {name}
 		.form-grounp
-			label(for="province") 搜索:
-			input(type="search",name="search",onchange="{searchChange}")
+			label(for="province") 搜索公司:
+			input(type="search",name="search",onchange="{searchChange}",placeholder="请输入您所在公司的关键字")
 		.form-grounp
 			.btns
 				.btn.submit(onclick="{submit}") 开始答题
