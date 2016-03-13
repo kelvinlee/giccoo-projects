@@ -20,8 +20,11 @@ pages
 					img(data-src="http://m.giccoo.com/qa/img/company-2.png")
 				span.companylogo
 					img(data-src="http://m.giccoo.com/qa/img/company-1.png")
-			p(if="{ad}") &nbsp;
+			//- p(if="{ad}") &nbsp;
 			p “3.15”保险消费者权益保护活动周
+			.qrcode(if="{ad}")
+				img(src="#{images}/qrcode-2.jpg")
+			p(if="{ad}") 晓保形象由中国保监会授权使用
 				
 		.btn-join
 			img(data-src="#{images}/btn-start.png")
@@ -80,9 +83,9 @@ pages
 				img(src="#{images}/btn-share.png")
 			a.btn-jiang(if="{!ad}",href="{jplink}")
 				img(src="#{images}/btn-jp.png")
-			.qrcode
+			.qrcode(if="{ad}")
 				img(src="#{images}/qrcode-2.jpg")
-			p 晓保形象由中国保监会授权使用
+			p(if="{ad}") 晓保形象由中国保监会授权使用
 		.share-box.fadeIn.animated(onclick="hideShare()")
 			img(src="#{images}/share-note.png")
 	.pop.focus-page.fadeIn.animated
