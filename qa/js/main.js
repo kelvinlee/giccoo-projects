@@ -245,6 +245,8 @@ _citys["保险公司－人身险"].push("渤海人寿保险股份有限公司");
 
 _citys["保险公司－人身险"].push("国联人寿保险股份有限公司");
 
+_citys["保险公司－人身险"].push("中华联合人寿保险股份有限公司");
+
 _citys["保险公司－财产险"] = [];
 
 _citys["保险公司－财产险"].push("中国人民财产保险股份有限公司");
@@ -548,7 +550,7 @@ _QUESTION_COMPANY = [
     id: 3,
     question: "下列哪项不是保险的本质？",
     size: "big",
-    answers: ["保险是用今天的钱筹划明天的生活", "保险是用大钱换小钱", "保险是仁爱的化身，是责任的体现", "保险是一种赌博，以今天的平安赌明天的风险"],
+    answers: ["保险是用今天的钱筹划明天的生活", "保险是用小钱换大钱", "保险是仁爱的化身，是责任的体现", "保险是一种赌博，以今天的平安赌明天的风险"],
     banner: "http://disk.giccoo.com/projects/qa/img/banner-company-3.jpg",
     link: "http://m.baolian365.com/index.php?g=Wap&m=Zixun&a=h5"
   }, {
