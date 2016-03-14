@@ -8,7 +8,8 @@
 		<link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/animate.css">
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script> -->
+		<script src="js/TweenMax.min.js"></script>
     <script src="js/main.js"></script>
 	</head>
 	<body>
@@ -31,14 +32,39 @@
 		</div>
 		<!-- 进入画面 -->
 		<div class="game">
-			<!-- <img class= "main-bg" src="img/mainBg.jpg" alt="MirrorBg"> -->
-			<div class="cloud"></div>
+			<img class= "main-bg" src="img/mainBg.jpg" alt="MirrorBg">
+			<div class="cloud"><img src="img/cloud.png"></div>
 			<div class="mirror-board">
-				<div class="mirror"><img src="img/mirror.png"></div>
-				<div class="face"><img src="img/mirror-face.png"></div>
+				
+				<div class="mirror"><img src="img/mirror.png">
+						<div id="logo"><img src="img/logo.png"></div>
+						<div class="face"><img src="img/mirror-face.png"></div>
+						<div class="bubbles">
+						<div id="intro">
+							<div id="intro1">
+								<div class="pic"><img src="img/big-bubble.png"></div>
+							</div>
+							<div id="intro2">
+								<div class="pic"><img src="img/sec-bubble.png"></div>
+								<!-- <div class="txt"><p>你想了解自己的寐力有多大吗？你想看看最真实的自己吗？那就对我念出魔咒吧……</p></div> -->
+							</div>
+							
+							<div id="chat1">
+								<img src="">
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
 			</div>
-			<div class="btton">
-				<div class="bar"><img src="img/titlebar.png"></div>
+			<div class="startBtton">
+				<div id="bar"><img src="img/titlebar.png"></div>
+				<div id="txt"><img src="img/start-txt.png"></div>
+			</div>
+			<div class="testBtton">
+				<div id="testbar"><img src="img/titlebar.png"></div>
+				<div id="testtxt"><p>魔镜魔镜，告诉我谁是世界上最有寐力的人？</p></div>
 			</div>
 		</div>
 		<!-- <div onclick="sharewechat(false)" class="wechat hide"></div> -->

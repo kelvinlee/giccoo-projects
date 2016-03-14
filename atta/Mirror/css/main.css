@@ -9,7 +9,16 @@
  margin-left:-162px;
 }
 }
-
+@-webkit-keyframes 'cloudMove' {
+ 0% {
+ margin-left:0px;
+ opacity: 0.6;
+}
+ 100% {
+ margin-left:-750px;
+ opacity: 0.6;
+}
+}
 @-webkit-keyframes 'faceMove' {
  0% {
  opacity: 0;
@@ -24,8 +33,12 @@ img {
 body{
   margin: 0 auto;
   background-color: black;
+ 
 }
 /*loader-Page*/
+.loader{
+ overflow: hidden;
+}
 .loader-content{
   position: relative;
   text-align: center;
@@ -46,15 +59,7 @@ body{
 }
 .moonbox{
   position: absolute;
-  /*-webkit-mask-image:url("../img/moon-mask.png");
-  -webkit-mask-size:92.5px 92.5px;
-  -webkit-mask-repeat:no-repeat;
-  -webkit-mask-position:0 0;
-
-  -webkit-animation:wipe 4s infinite; 
-  -webkit-animation-delay:0; 
-  -webkit-animation-direction:alternate;*/
-
+  
   width: 208px;
   top: 50%;
   left: 50%;
@@ -105,24 +110,20 @@ body{
 .game {
    position: relative;
    margin: 0 auto;
-   background-image: url("../img/mainBg.jpg");
+   /*background-image: url("../img/mainBg.jpg");
    background-repeat: no-repeat;
-   background-size: 100% 100%;
+   background-size: 100% 100%;*/
    text-align: center;
-}
-.mirror-board{
-  /*position: absolute;*/
-  width: 320px;
-  margin:0 auto;
-  z-index:2;
+   display: none;
+   overflow: hidden;
 }
 .face{
   position: absolute;
   width: 248px;
-  top: 50%;
+  top: 10%;
   left: 50%;
   margin-left: -124px;
-  margin-top: -250px;
+  /*margin-top: 24%;*/
   z-index:3;
   -webkit-animation-name:'faceMove';
   -webkit-animation-duration: 2s;
@@ -131,12 +132,130 @@ body{
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
 }
-.btton{
-  /*position: absolute;*/
-  /*margin-bottom: -20px;*/
-  width: 328px;
+.cloud{
+  position: absolute;
+  width: 1125px;
+  top: 36%;
+  margin-left: 0px;
+  -webkit-animation-name:'cloudMove';
+  -webkit-animation-duration: 34s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+}
+.mirror{
+  position: relative;
+}
+.mirror-board{
+  position: absolute;
+  width: 84%;
   margin:0 auto;
-  z-index: 999;
+  top: 50%;
+  left: 50%;
+  margin-left: -42%;
+  margin-top: -76%;
+  z-index:2;
+}
+#logo{
+  position: absolute;
+  width: 36%;
+  left: 50%;
+  margin-left: -16%;
+  margin-top: 30%;
+  top: 0;
+  z-index:4;
+}
+.bubbles{
+  position: absolute;
+  font-family: 楷体;
+  text-align: left;
+  line-height: 1em;
+  font-size: 1em;
+  color: #ba98cf;
+  width: 100%;
+  height: 320px;
+  top: 34%;
+  overflow: hidden;
+}
+#intro{
+  position: relative;
+  width: 72%;
+  /*height: 279px;*/
+  z-index: 4;
+  left: 12%;
+  /*top: 9%;*/
+}
+#intro1{
+  position: absolute;
+  width: 100%;
+  /*height: 207px;*/
+ 
+}
+#intro2{
+ position: absolute;
+ width: 100%;
+ top:90%;
+}
+.pic{
+  position: absolute;
+  z-index:4;
+}
+.txt{
+  position: absolute;
+  width: 83%;
+  margin-left: 13%;
+  font-family: 楷体;
+  font-size: 0.7em;
+  z-index:5;
+}
+
+
+.startBtton{
+  position: fixed;
+  /*margin-bottom: -20px;*/
+  width: 100%;
+  top: 88%;
+  left: 50%;
+  margin-left: -50%;
+  z-index: 6;
+}
+#bar{
+  position: absolute;
+}
+#txt{
+  position: absolute;
+  width: 40%;
+  z-index: 6;
+  left: 29%;
+  margin-top: 6%;
+}
+
+.testBtton{
+  position: fixed;
+  display: none;
+  width: 100%;
+  top: 88%;
+  left: 50%;
+  margin-left: -50%;
+  z-index: 6;
+}
+#testbar{
+  position: absolute;
+}
+#testtxt{
+  position: absolute;
+  width: 100%;
+  z-index: 6;
+  left: 0;
+  margin-top: 3%;
+  font-family: 宋体;
+  font-weight:900;
+  text-align: center;
+  font-size: 1em;
+  letter-spacing: -1px;
+  text-shadow:#fff 0 1px 1px;
+  color: #000;
 }
   
 
