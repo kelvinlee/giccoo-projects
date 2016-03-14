@@ -1,6 +1,4 @@
-# @codekit-prepend "coffee/css3Prefix"
 # @codekit-prepend "coffee/plus"
-# @codekit-prepend "../../libs/coffee/requestanimation"
 
 _citys = {}
 
@@ -102,6 +100,7 @@ _citys["保险公司－人身险"].push("太保安联健康保险股份有限公
 _citys["保险公司－人身险"].push("渤海人寿保险股份有限公司")
 _citys["保险公司－人身险"].push("国联人寿保险股份有限公司")
 _citys["保险公司－人身险"].push("中华联合人寿保险股份有限公司")
+_citys["保险公司－人身险"].push("珠江人寿保险股份有限公司")
 
 
 _citys["保险公司－财产险"] = []
