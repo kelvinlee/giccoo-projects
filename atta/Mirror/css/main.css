@@ -181,7 +181,7 @@ body{
 #intro{
   position: relative;
   width: 72%;
-  /*height: 279px;*/
+  height: 30%;
   z-index: 4;
   left: 12%;
   /*top: 9%;*/
