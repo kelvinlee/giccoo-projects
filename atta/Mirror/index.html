@@ -35,8 +35,11 @@
 			<img class= "main-bg" src="img/mainBg.jpg" alt="MirrorBg">
 			<div class="cloud"><img src="img/cloud.png"></div>
 			<div class="music">
-				<div id="icon"><img src="img/music.png"></div>
-				<audio id="audiobg" src="mp3/sound.mp3" loop="loop" autoplay></audio>
+				<!-- <div id="icon"><img src="img/play.png"></div> -->
+				<!-- <audio id="audiobg" src="mp3/sound.mp3"  loop="loop">你的浏览器不支持audio标签。</audio>  -->
+				<audio id="music" src="mp3/sound.mp3" autoplay="autoplay" loop="loop">你的浏览器不支持audio标签。</audio> 
+				<a id="audio_btn"><img src="img/play.png" id="music_btn" border="0"></a> 
+
 			</div>
 			<div class="mirror-board">
 				
@@ -118,7 +121,7 @@
 								<div class="result2"><img src="img/result2.png"></div>
 								<div class="result3"><img src="img/result3.png"></div>
 								<div class="result4"><img src="img/result4.png"></div>
-								<img src="img/lessonBtn.jpg">
+								<div class="lessonBtn"><img src="img/lessonBtn.jpg"></div>
 							</div>
 					</div>
 					
@@ -185,8 +188,11 @@
 						</div>
 					</div>
 						</div>
-						
-
+				</div>
+				<!-- 分享页提示 -->
+				<div class="sharePage"> 
+					<div class="lessonMask"><img src="img/loading-bg.jpg"></div>
+					<div class="sharePic"><img src="img/sharePic.png"></div>
 				</div>
 			</div>
 			

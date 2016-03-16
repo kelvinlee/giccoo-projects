@@ -10,6 +10,7 @@ var answer5=["焦虑到不行","焦虑到不行","有些担心","那都不是事
 var answer6=["日子简直没法过","日子简直没法过","受到些影响","偶尔才会意识到没睡好","我是江湖人称小睡神，完全不影响"];
 var qaNum = 0;
 var score = 0;
+var resultTitle;
 
 jQuery(document).ready(function($) {
 	
@@ -175,13 +176,18 @@ window.onload = function(){
 		function endGame(){
 			if(score<=7){
 				showResult(1);
+				resultTitle = "睡神考拉";
 			}else if (score>=8 && score<=14){
 				showResult(2);
+				resultTitle = "小牧羊童";
 			}else if (15<=score<=21){
 				showResult(3);
+				resultTitle = "资深熊猫";
 			}else if (22<=score<=28){
 				showResult(4);
+				resultTitle = "德古拉伯爵";
 			}
+			console.log(resultTitle);
 		}
 		function showResult(_num){
 			TweenLite.to(qaBar, 1, {opacity:0,top:"100%"});
@@ -215,4 +221,31 @@ window.onload = function(){
 			}
 			
 		}
+		$(".shareBtton").click(function(){
+			$(".sharePage").show();
+		});
+		$(".sharePage").click(function(){
+			$(".sharePage").hide();
+		});
+		$(".lessonBtn").click(function(){
+			
+			$(".lesson").show();
+		});
+		$("#close").click(function(){
+			$(".lesson").hide();
+		});
+
+		// 音乐开关控制
+		$("#audio_btn").click(function(){
+    var music = document.getElementById("music");
+    if(music.paused){
+        music.play();
+        $(".music").css('-webkit-animation-play-state','running');
+        $("#music_btn").attr("src","img/play.png");
+    }else{
+        music.pause();
+        $("#music_btn").attr("src","img/pause.png");
+        $(".music").css('-webkit-animation-play-state','paused');
+	}
+		});
 };

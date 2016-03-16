@@ -12,11 +12,23 @@
 @-webkit-keyframes 'cloudMove' {
  0% {
  margin-left:0px;
+ opacity: 0;
+}
+25%{
+margin-left:-187px;
+ opacity: 0.6;
+}
+50% {
+ margin-left:-374px;
+ opacity: 0.6;
+}
+75% {
+ margin-left:-561px;
  opacity: 0.6;
 }
  100% {
  margin-left:-750px;
- opacity: 0.6;
+ opacity: 0;
 }
 }
 @-webkit-keyframes 'faceMove' {
@@ -388,6 +400,7 @@ body{
   top: 24%;
   width: 60%;
   display: none;
+ z-index: 999;
 }
 .result1{
   display: none;
@@ -438,7 +451,7 @@ body{
   width: 100%;
   height: 100%;
   z-index: 10; /* 此处的图层要大于页面 */
-  /*display:none;*/
+  display:none;
 }
 .lessonMask{
   filter: alpha(opacity=50); /* IE的透明度 */
@@ -462,19 +475,35 @@ body{
 }
 #copyMask{
   width: 100%;
-  height:50%;
-  overflow:auto;/* winphone8和android4+ */
-  -webkit-overflow-scrolling: touch; /* ios5+ */
+  height: 100%;
+  display: flex;
+  
 }
 #copy{
-  position: absolute;
+   position: absolute;
   width: 70%;
   color: #e7e7e7;
   text-align: left;
   line-height: 1.2em;
   left: 18%;
   top: 21%;
-  
+  overflow: auto;
+  height: 52%;
 
 }
-
+.sharePage{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 10; /* 此处的图层要大于页面 */
+  display: none;
+}
+.sharePic{
+  position: relative;
+    top: -95%;
+    width: 70%;
+    left: 22%;
+    z-index: 11;
+}
