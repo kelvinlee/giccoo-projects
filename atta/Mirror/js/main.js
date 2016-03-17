@@ -78,13 +78,21 @@ window.onload = function(){
 						TweenLite.from($("#chat1"), 1, {opacity:0});
 						
 						setTimeout(function(){
-							TweenLite.to(testBar, 0.4, {top:"88%",delay:1});
+							// 
 							testBar.bind("click", tagClick);
-							$("#chat2").css('display','block');
-							TweenLite.from($("#chat2"), 1, {opacity:0});
+							$("#chat2-1").css('display','block');
+							TweenLite.from($("#chat2-1"), 1, {opacity:0});
 							TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
-							$("#testtxt").html("真是傲娇的魔镜，你问吧。");
-							
+
+
+							setTimeout(function(){
+								$("#chat2").css('display','block');
+								TweenLite.from($("#chat2"), 1, {opacity:0});
+								TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
+
+								TweenLite.to(testBar, 0.4, {top:"88%",delay:1});
+								$("#testtxt").html("真是傲娇的魔镜，你问吧。");
+							},2000);
 						},2000);
 					break;
 					case 2:
@@ -158,6 +166,13 @@ window.onload = function(){
 			// $(".a").css('display','block');
 			btn.unbind("click", btnsClick);
 			var index = $(this).index();
+			TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
+
+			
+			TweenLite.to($(".btn"), 0.4,{css:{scaleX:1,scaleY:1}});
+			TweenLite.to($(this), 0.4,{ease: Elastic.easeOut,css:{scaleX:1.2,scaleY:1.2}});
+			
+			TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
 			switch(qaNum){
 				case 0:
 					$("#q0a"+index).css('display','block');
@@ -181,13 +196,19 @@ window.onload = function(){
 					TweenLite.from($("#q3a"+index), 1, {opacity:0});
 				break;
 				case 4:
-					$(".answer").html(answer4[index]);
+					$("#q4a"+index).css('display','block');
+					TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
+					TweenLite.from($("#q4a"+index), 1, {opacity:0});
 				break;
 				case 5:
-					$(".answer").html(answer5[index]);
+					$("#q5a"+index).css('display','block');
+					TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
+					TweenLite.from($("#q5a"+index), 1, {opacity:0});
 				break;
 				case 6:
-					$(".answer").html(answer6[index]);
+					$("#q6a"+index).css('display','block');
+					TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
+					TweenLite.from($("#q6a"+index), 1, {opacity:0});
 				break;
 			}
 			addScore(index);
@@ -205,10 +226,15 @@ window.onload = function(){
 					btn.bind("click", btnsClick);
 				}
 				if(qaNum==7){
-					endGame();
+					setTimeout(function(){
+						$(".lastq").css('display','block');
+						TweenLite.from($(".lastq"), 1, {opacity:0});
+						TweenLite.to(bubble, 1,{scrollTo:{y:"max"}});
+						endGame();
+					},2000);
 				}
 				
-			},1000);
+			},2000);
 		}
 		function endGame(){
 			if(score<=7){
@@ -227,16 +253,20 @@ window.onload = function(){
 			console.log(resultTitle);
 		}
 		function showResult(_num){
-			TweenLite.to(qaBar, 1, {opacity:0,top:"100%"});
-			TweenLite.to(logo, 1, {opacity:0,onComplete:showReult});
-			function showReult(){
-				result.css('display','block');
-				qaBar.css('display','none');
-				$(".shareBtton").css('display','block');
-				$(".result"+_num).css('display','block');
-				TweenLite.from($(".shareBtton"), 1, {opacity:0,top:"100%"});
-				TweenLite.from(result, 1, {opacity:0});
-			}
+			setTimeout(function(){
+				TweenLite.to(qaBar, 1, {opacity:0,top:"100%"});
+				TweenLite.to(intro, 1, {opacity:0});
+				TweenLite.to(logo, 1, {opacity:0,onComplete:showReult});
+				function showReult(){
+					result.css('display','block');
+					qaBar.css('display','none');
+					$(".shareBtton").css('display','block');
+					$(".result"+_num).css('display','block');
+					TweenLite.from($(".shareBtton"), 1, {opacity:0,top:"100%"});
+					TweenLite.from(result, 1, {opacity:0});
+				}
+			},2000);
+			
 		}
 		function addScore(index){
 			switch(index){

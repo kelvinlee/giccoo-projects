@@ -268,6 +268,11 @@ body{
   margin-left: 4%;
   display: none;
 }
+#chat2-1{
+  margin-top: 3%;
+  width: 70%;
+  display: none;
+}
 #chat2{
   margin-top: 3%;
   width: 70%;
@@ -438,7 +443,10 @@ body{
   margin-top: 3%;
   display: none;
 }
-
+.lastq{
+  margin-top: 3%;
+  display: none;
+}
 .a{
 
   position: relative;
