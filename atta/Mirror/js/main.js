@@ -169,8 +169,11 @@ window.onload = function(){
 			TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
 
 			
-			TweenLite.to($(".btn"), 0.4,{css:{scaleX:1,scaleY:1}});
-			TweenLite.to($(this), 0.4,{ease: Elastic.easeOut,css:{scaleX:1.2,scaleY:1.2}});
+			// TweenLite.to($(".btn"), 0.4,{css:{scaleX:1,scaleY:1}});
+			TweenLite.to($(this), 0.4,{ease: Elastic.easeOut,css:{scaleX:1.5,scaleY:1.5},onComplete:backHandle});
+			function backHandle(){
+				TweenLite.to($(this), 0.4,{ease: Elastic.easeOut,css:{scaleX:1,scaleY:1}});
+			}
 			
 			TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
 			switch(qaNum){
