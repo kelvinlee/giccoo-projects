@@ -10,6 +10,7 @@
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script> -->
 		<script src="js/TweenMax.min.js"></script>
+		<script src="js/ScrollToPlugin.min.js"></script>
     <script src="js/main.js"></script>
 	</head>
 	<body>
@@ -49,73 +50,83 @@
 						<div class="bubbles">
 							<div id="intro">
 								<div id="intro1">
-									<div class="pic"><img src="img/big-bubble.png"></div>
+									<div class="pic"><img src="img/bubble1.png"></div>
 								</div>
 								<div id="intro2">
-									<div class="pic"><img src="img/sec-bubble.png"></div>
-									<!-- <div class="txt"><p>你想了解自己的寐力有多大吗？你想看看最真实的自己吗？那就对我念出魔咒吧……</p></div> -->
+									<div class="pic"><img src="img/bubble2.png"></div>
 								</div>
-							</div>
-							<div id="chat">
+								<div id="intro3">
+									<div class="pic"><img src="img/bubble3.png"></div>
+								</div>
+
+								<div id="chat">
 									<div id="chat1"><img src="img/chat1.png"></div>
 									<div id="chat2"><img src="img/chat2.png"></div>
 									<div id="chat3"><img src="img/chat3.png"></div>
 									<div id="chat4"><img src="img/chat4.png"></div>
 									<div id="chat5"><img src="img/chat5.png"></div>
-							</div>
-							
-							<div id="qa">
-								<div class="q0">
-									<div class="q"><img src="img/q1.png"></div>
-									<div class="a">
-										<img class="answerbg" src="img/answerBg.png">
-										<span class="answer">低到令人发指</span>
+								</div>
+								
+								<div id="qa">
+									<div class="q0">
+										<div class="q"><img src="img/q1.png"></div>
+										
+										<img class ="a" id="q0a0" src="img/q0a0.png">
+										<img class ="a" id="q0a1" src="img/q0a1.png">
+										<img class ="a" id="q0a2" src="img/q0a2.png">
+										<img class ="a" id="q0a3" src="img/q0a3.png">
+										<img class ="a" id="q0a4" src="img/q0a4.png">
+
+										
+									</div>
+									<div class="q1">
+										<div class="q"><img src="img/q2.png"></div>
+										<img class ="a" id="q1a0" src="img/q0a0.png">
+										<img class ="a" id="q1a1" src="img/q0a1.png">
+										<img class ="a" id="q1a2" src="img/q0a2.png">
+										<img class ="a" id="q1a3" src="img/q0a3.png">
+										<img class ="a" id="q1a4" src="img/q0a4.png">
+									</div>
+									<div class="q2">
+										<div class="q"><img src="img/q3.png"></div>
+										<div class="a">
+											<img class="answerbg" src="img/answerBg.png">
+											<span class="answer">数羊数到天荒地老</span>
+										</div>
+									</div>
+									<div class="q3">
+										<div class="q"><img src="img/q4.png"></div>
+										<div class="a">
+											<img class="answerbg" src="img/answerBg.png">
+											<span class="answer">简直会被飘雪的声音吵醒</span>
+										</div>
+									</div>
+									<div class="q4">
+										<div class="q"><img src="img/q5.png"></div>
+										<div class="a">
+											<img class="answerbg" src="img/answerBg.png">
+											<span class="answer">几乎每天都是</span>
+										</div>
+									</div>
+									<div class="q5">
+										<div class="q"><img src="img/q6.png"></div>
+										<div class="a">
+											<img class="answerbg" src="img/answerBg.png">
+											<span class="answer">几乎每天都是</span>
+										</div>
+									</div>
+									<div class="q6">
+										<div class="q"><img src="img/q7.png"></div>
+										<div class="a">
+											<img class="answerbg" src="img/answerBg.png">
+											<span class="answer">几乎每天都是</span>
+										</div>
 									</div>
 								</div>
-								<div class="q1">
-									<div class="q"><img src="img/q2.png"></div>
-									<div class="a">
-										<img class="answerbg" src="img/answerBg.png">
-										<span class="answer">行走的黑眼圈，人人都知道</span>
-									</div>
-								</div>
-								<div class="q2">
-									<div class="q"><img src="img/q3.png"></div>
-									<div class="a">
-										<img class="answerbg" src="img/answerBg.png">
-										<span class="answer">数羊数到天荒地老</span>
-									</div>
-								</div>
-								<div class="q3">
-									<div class="q"><img src="img/q4.png"></div>
-									<div class="a">
-										<img class="answerbg" src="img/answerBg.png">
-										<span class="answer">简直会被飘雪的声音吵醒</span>
-									</div>
-								</div>
-								<div class="q4">
-									<div class="q"><img src="img/q5.png"></div>
-									<div class="a">
-										<img class="answerbg" src="img/answerBg.png">
-										<span class="answer">几乎每天都是</span>
-									</div>
-								</div>
-								<div class="q5">
-									<div class="q"><img src="img/q6.png"></div>
-									<div class="a">
-										<img class="answerbg" src="img/answerBg.png">
-										<span class="answer">几乎每天都是</span>
-									</div>
-								</div>
-								<div class="q6">
-									<div class="q"><img src="img/q7.png"></div>
-									<div class="a">
-										<img class="answerbg" src="img/answerBg.png">
-										<span class="answer">几乎每天都是</span>
-									</div>
-								</div>
-							</div>
 						</div>
+
+						</div>
+							
 						<div class="result">
 								<div class="result1"><img src="img/result1.png"></div>
 								<div class="result2"><img src="img/result2.png"></div>

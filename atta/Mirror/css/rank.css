@@ -1,0 +1,177 @@
+@-webkit-keyframes 'cloudMove' {
+ 0% {
+ margin-left:0px;
+ opacity: 0;
+}
+25%{
+margin-left:-187px;
+ opacity: 0.6;
+}
+50% {
+ margin-left:-374px;
+ opacity: 0.6;
+}
+75% {
+ margin-left:-561px;
+ opacity: 0.6;
+}
+ 100% {
+ margin-left:-750px;
+ opacity: 0;
+}
+}
+@-webkit-keyframes 'faceMove' {
+ 0% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 1;
+}
+}
+img {
+  width: 100%; }
+body{
+  margin: 0 auto;
+  background-color: black;
+  -webkit-text-size-adjust: none;
+ 	overflow: hidden;
+ 	height: 100%;
+}
+.mainPage {
+   position: relative;
+   margin: 0 auto;
+   /*background-image: url("../img/mainBg.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% 100%;*/
+   text-align: center;
+   overflow: hidden;
+}
+.face{
+  position: absolute;
+  width: 248px;
+  top: 20%;
+  left: 50%;
+  margin-left: -124px;
+  /*margin-top: 24%;*/
+  z-index:3;
+  -webkit-animation-name:'faceMove';
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 2;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+}
+.cloud{
+  position: absolute;
+  width: 1125px;
+  top: 36%;
+  margin-left: 0px;
+  -webkit-animation-name:'cloudMove';
+  -webkit-animation-duration: 34s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+}
+.mirror{
+  position: relative;
+}
+.mirror-board{
+  position: absolute;
+  width: 84%;
+  margin:0 auto;
+  top: 50%;
+  left: 50%;
+  margin-left: -42%;
+  margin-top: -76%;
+  z-index:2;
+}
+#logo{
+  position: absolute;
+  width: 36%;
+  left: 50%;
+  margin-left: -16%;
+  margin-top: 30%;
+  top: 0;
+  z-index:4;
+}
+.btns{
+	 width: 100%;
+   margin: auto;
+   color: #ffc8f4;
+   font-size: 1em;
+   /*font-weight: bold;*/
+
+}
+#btn2{
+	position: absolute;
+	
+}
+.page1{
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  width: 80%;
+
+}
+li{
+	list-style: none;
+  text-align: center;
+  float: left;
+  color: #ffaaed;
+  font-size: 0.7em;
+  margin-bottom:10px;
+}
+.box{
+	width: 100%;
+	height: 280px;
+	
+	/*background:#bd8dfe;*/
+	background:rgba(189, 140, 254, 0.4); //背景透明
+	border-radius:6px;
+}
+.rank{
+  width: 100%;
+  position: relative;
+  margin-left: -5%;
+  margin-bottom: 16%;
+}
+.rank1{
+	margin: auto;
+  width: 85%;
+  margin-top: -4%;
+
+}
+.avatar{
+	position: absolute;
+  /*float: left;*/
+  width: 32px;
+  height: 32px;
+}
+.pic{
+	 border-radius: 18px;
+}
+.name{
+  position: absolute;
+  /* float: left; */
+  text-align: left;
+  width: 18%;
+  margin-top: 1%;
+  line-height: 1.3em;
+  margin-left: 17%;
+}
+.line{
+	position: absolute;
+  border-top: 1px dashed #cccccc;
+  height: 1px;
+  margin-top: 8%;
+  overflow: hidden;
+  /*float: left;*/
+  width: 80px;
+  margin-left: 35%;
+}
+.title{
+	position: absolute;
+  margin-left: 76%;
+  margin-top: 5%;
+}

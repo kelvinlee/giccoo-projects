@@ -40,6 +40,23 @@ margin-left:-187px;
 }
 }
 
+@-webkit-keyframes 'scaleMove' {
+ 0% {
+  transform:scale(1,1);
+  -ms-transform:scale(1,1); /* Internet Explorer */
+  -moz-transform:scale(1,1); /* Firefox */
+  -webkit-transform:scale(1,1); /* Safari 和 Chrome */
+  -o-transform:scale(1,1); /* Opera */
+}
+ 100% {
+  transform:scale(1.1,1.1);
+  -ms-transform:scale(1.1,1.1); /* Internet Explorer */
+  -moz-transform:scale(1.1,1.1); /* Firefox */
+  -webkit-transform:scale(1.1,1.1); /* Safari 和 Chrome */
+  -o-transform:scale(1.1,1.1); /* Opera */
+}
+}
+
 @-webkit-keyframes rotate{
 from{-webkit-transform:rotate(0deg)}
 to{-webkit-transform:rotate(360deg)}
@@ -62,6 +79,8 @@ img {
 body{
   margin: 0 auto;
   background-color: black;
+  overflow: hidden;
+  height: 100%;
   -webkit-text-size-adjust: none;
  
 }
@@ -80,7 +99,9 @@ body{
   position: absolute;
   width: 90px;
   height: 90px;
-  border-radius: 46px;
+  /*border-radius: 46px;*/
+  -moz-border-radius: 46px; 
+  -webkit-border-radius: 46px;
   overflow: hidden;
   top: 50%;
   left: 50%;
@@ -184,7 +205,7 @@ body{
   top: 50%;
   left: 50%;
   margin-left: -42%;
-  margin-top: -76%;
+  margin-top: -82%;
   z-index:2;
 }
 #logo{
@@ -204,67 +225,73 @@ body{
   font-size: 14px;
   color: #ba98cf;
   width: 100%;
-  height: 320px;
+  height: 48%;
+  left: 13%;
   top: 34%;
-  overflow: hidden;
+  overflow:scroll;
+  /*overflow: hidden;*/
 }
 #intro{
   position: relative;
-  width: 72%;
+  width: 100%;
   /*height: 30%;*/
   z-index: 4;
-  left: 12%;
+  
+   overflow: auto;
+  /*left: 12%;*/
   /*top: 9%;*/
 }
 #intro1{
   /*position: absolute;*/
-  width: 100%;
+
+  width: 70%;
   /*height: 207px;*/
  
 }
 #intro2{
  /*position: absolute;*/
- width: 100%;
- top:240%;
+ width: 70%;
+}
+#intro3{
+ 
+ width: 70%;
 }
 #chat{
-  position: relative;
-  width: 68%;
-  height: 30%;
-  z-index: 4;
-  left: 15%;
+  
   display: none;
   /*top: 9%;*/
 }
 #chat1{
+   margin-top: 3%;
+
+  width: 70%;
+  margin-left: 4%;
   display: none;
 }
 #chat2{
+  margin-top: 3%;
+  width: 70%;
   display: none;
 }
 #chat3{
+  margin-top: 3%;
+  width: 70%;
+  margin-left: 4%;
   display: none;
 }
 #chat4{
+  margin-top: 3%;
+  width: 70%;
   display: none;
 }
 #chat5{
+  margin-top: 3%;
+  width: 70%;
   display: none;
  /* width: 76%;
   margin-left: 26%;*/
 }
-/*.chatTxt{
-  position: absolute;
-  width: 83%;
-  left: 8%;
-  top: -10%;
-  margin-left: 8%;
-  margin-top: -2%;
-  font-family: 楷体;
-  font-size: 0.7em;
-  color: #000;
-  z-index:5;
-}*/
+
 .pic{
   /*position: absolute;*/
   z-index:4;
@@ -287,6 +314,12 @@ body{
   left: 50%;
   margin-left: -50%;
   z-index: 6;
+  -webkit-animation-name:'scaleMove';
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
 }
 #bar{
   position: absolute;
@@ -307,6 +340,12 @@ body{
   left: 50%;
   margin-left: -50%;
   z-index: 6;
+  -webkit-animation-name:'scaleMove';
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
 }
 #testbar{
   position: absolute;
@@ -333,6 +372,12 @@ body{
   left: 50%;
   margin-left: -50%;
   z-index: 6;
+  -webkit-animation-name:'scaleMove';
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
 }
 
 #sharetxt{
@@ -353,35 +398,53 @@ body{
   display: none;
   position: relative;
   width: 70%;
-  left: 14%;
+ 
+}
+.sprite {
+  background-image: url("../img/spritesheet.png");
+  background-repeat: no-repeat;
+  display: block;
+}
+.sprite-q0a0 {
+  width: 213.5px;
+  height: 47px;
+  background-position: 0 0;
 }
 .q0{
-  display: none;
+  margin-top: 3%;
+  /*display: none;*/
 }
 .q1{
+  margin-top: 3%;
   display: none;
 }
 .q2{
+  margin-top: 3%;
   display: none;
 }
 .q3{
+  margin-top: 3%;
   display: none;
 }
 .q4{
+  margin-top: 3%;
   display: none;
 }
 .q5{
+  margin-top: 3%;
   display: none;
 }
 .q6{
+  margin-top: 3%;
   display: none;
 }
 
 .a{
+
   position: relative;
+  margin-top: 3%;
   display: none;
-  width: 85%;
-  margin-left: 17%;
+  
 }
 .answer{
   position: absolute;
