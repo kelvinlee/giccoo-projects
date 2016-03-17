@@ -28,6 +28,17 @@ margin-left:-187px;
  opacity: 1;
 }
 }
+body,div,ul,ol,li,p,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,
+textarea,blockquote,th,td{margin:0;padding:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary {
+	display: block
+}
+html{
+	height:100%;  
+	font-size: 62.5%;
+	-ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
 img {
   width: 100%; }
 body{
@@ -36,7 +47,61 @@ body{
   -webkit-text-size-adjust: none;
  	overflow: hidden;
  	height: 100%;
+ 	width:100%;
+	
+	text-align:left;
+	font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+	line-height:1.5;
+	height:100%;
+	color:#656566;
+	font-size:1.6rem;
+
 }
+h1, h2, h3, h4, h5, h6 { line-height:2;font-weight:normal}
+h1 { font-size: 1.8rem;}  /*18px*/
+h2 {font-size: 1.6rem;}   /*16px*/
+h3 {font-size: 1.4rem;}  /*14px*/
+a {
+	background: transparent;
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+	color: #08c
+}
+ul,ol{list-style:none;}
+img{border:0;max-width:100%;}
+input,img{vertical-align:middle}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+caption, th {
+    text-align: left;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit; 
+    font: inherit; 
+    margin: 0; 
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; 
+    cursor: pointer; 
+}
+/*清除浮动*/
+.clearfix:before,.clearfix:after {
+	content: "";
+	display: table
+}
+.clearfix:after {
+	clear: both
+}
+
 .mainPage {
    position: relative;
    margin: 0 auto;
@@ -132,19 +197,18 @@ li{
 }
 .rank{
   width: 100%;
-  position: relative;
-  margin-left: -5%;
-  margin-bottom: 16%;
+  font-size: 0.6em;
+  margin-bottom: 4%;
 }
 .rank1{
 	margin: auto;
   width: 85%;
-  margin-top: -4%;
+  /*margin-top: -4%;*/
 
 }
 .avatar{
-	position: absolute;
-  /*float: left;*/
+	/*position: absolute;*/
+  float: left;
   width: 32px;
   height: 32px;
 }
@@ -152,26 +216,27 @@ li{
 	 border-radius: 18px;
 }
 .name{
-  position: absolute;
-  /* float: left; */
+  /*position: absolute;*/
+   float: left; 
   text-align: left;
   width: 18%;
   margin-top: 1%;
   line-height: 1.3em;
-  margin-left: 17%;
+  /*margin-left: 17%;*/
 }
 .line{
-	position: absolute;
+	/*position: absolute;*/
   border-top: 1px dashed #cccccc;
   height: 1px;
   margin-top: 8%;
   overflow: hidden;
-  /*float: left;*/
+  float: left;
   width: 80px;
-  margin-left: 35%;
+  /*margin-left: 35%;*/
 }
 .title{
-	position: absolute;
-  margin-left: 76%;
+	/*position: absolute;*/
+	float: left;
+  /*margin-left: 76%;*/
   margin-top: 5%;
 }
