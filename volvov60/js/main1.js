@@ -23,9 +23,9 @@ $(document).ready(function load () {
 	}
 	function moveTouch(event){
 		var nowY=event.touches[0].clientY
-		if (nowY-startY>80) {
+		if (nowY-startY>60) {
 			pageUpDown=1
-		}else if (nowY-startY< -80) {
+		}else if (nowY-startY< -60) {
 			pageUpDown=-1
 		}else{
 			pageUpDown=0
