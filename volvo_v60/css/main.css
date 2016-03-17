@@ -1,0 +1,189 @@
+html{	height: 100%;}
+body{	margin: 0;padding: 0;height: 100%;}
+
+.content{	position: absolute;width: 100%;height: 400%;}
+.bg{	position: absolute;width: 100%;height: 100%;}
+.page{	position: absolute;width: 100%;height: 25%;top: 0%;}
+#page1{	top: 0%;}
+#page2{	top: 25%;}
+#page3{	top: 50%;}
+#page4{	top: 75%;}
+.t1{	position: absolute;	width: 100%;	left: 0%;	top: 0%;}
+.arrow1{      width: 4.2%;      position: absolute ;      bottom: 4.1%;      left: 47.9%;}
+.arrow2{      width: 4.2%;      position: absolute ;      bottom: 3.1%;      left: 47.9%;}
+.arrow3{      width: 4.2%;      position: absolute ;      bottom: 1.1%;      left: 47.9%;}
+.btnT{      width: 23.4%;      position: absolute ;      bottom: 9.8%;      left: 38.3%;}
+.swiper-container{	height: 100%;}
+
+.aslide{	width:100%;}
+.slidePic{	position: absolute;	top: 13.38%;}
+.aslide2{	height: 100%;}
+.slidePic2{	position: absolute;	top: 28.3%;}
+.btnlr2{	position: absolute;	top: 25%;	height: 75%;	width: 100%;}
+#dots{	position: absolute;	bottom: 15%;	left: 35%;}
+#btnBack{	position: absolute;	width: 14.2%;	bottom: 4%;	right: 5%;	z-index: 101;}
+
+.formDiv{
+	position: absolute;
+	background-color: #84d;
+	width: 100%;
+	height: 42%;
+	top: 44%;
+	padding: 10px;
+}
+.form {
+  width: 80%;
+  margin: 0 auto; }
+  .form .form-grounp {
+    vertical-align: top; }
+    .form .form-grounp > label {
+      width: 30%;
+      height: 1.4rem;
+      display: inline-block;
+      font-size: 0.8rem;
+      margin: 0.2rem 0;
+      line-height: 1.4rem;
+      vertical-align: top;
+      color: #fff; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .form .form-grounp > label {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .form .form-grounp > label {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .form .form-grounp > label {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .form .form-grounp > label {
+          font-size: 0.96rem; } }
+    .form .form-grounp > input {
+      width: 68%;
+      height: 1.4rem;
+      font-size: 0.8rem;
+      background-color: #fff;
+      display: inline-block;
+      box-sizing: border-box;
+      margin: 0.2rem 0;
+      padding: 0.2rem;
+      line-height: 1.4rem;
+      vertical-align: top;
+      border: solid 0px #fff;
+      color: #000;
+      outline: none;
+      border-radius: 0; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .form .form-grounp > input {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .form .form-grounp > input {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .form .form-grounp > input {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .form .form-grounp > input {
+          font-size: 0.96rem; } }
+    .form .form-grounp .comb {
+      width: 68%;
+      height: 1.4rem;
+      font-size: 1rem;
+      display: inline-block;
+      margin: 0.2rem 0;
+      color: #000;
+      white-space: nowrap; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .form .form-grounp .comb {
+          font-size: 1.1rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .form .form-grounp .comb {
+          font-size: 1.1rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .form .form-grounp .comb {
+          font-size: 1.2rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .form .form-grounp .comb {
+          font-size: 1.2rem; } }
+      .form .form-grounp .comb label {
+        width: 30%;
+        height: 1.4rem;
+        display: inline-block;
+        font-size: 0.8rem;
+        text-align: center;
+        color: #fff; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .form .form-grounp .comb label {
+            font-size: 0.88rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .form .form-grounp .comb label {
+            font-size: 0.88rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .form .form-grounp .comb label {
+            font-size: 0.96rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .form .form-grounp .comb label {
+            font-size: 0.96rem; } }
+      .form .form-grounp .comb input {
+        display: inline-block;
+        width: 1rem; }
+      .form .form-grounp .comb .select {
+        width: 48.5%;
+        margin: 0 auto; }
+    .form .form-grounp .select {
+      position: relative;
+      width: 68%;
+      height: 1.4rem;
+      display: inline-block;
+      background-color: #fff;
+      margin: 0.2rem 0;
+      box-sizing: border-box;
+      padding: 0 0.2rem;
+      font-size: 0.8rem;
+      color: #000; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .form .form-grounp .select {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .form .form-grounp .select {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .form .form-grounp .select {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .form .form-grounp .select {
+          font-size: 0.96rem; } }
+      .form .form-grounp .select:after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+        -webkit-transform: translate3d(0, -50%, 0);
+                transform: translate3d(0, -50%, 0);
+        z-index: 99;
+        border-left: 0.25rem solid transparent;
+        border-right: 0.25rem solid transparent;
+        border-top: 0.5rem solid #6ba2d1; }
+      .form .form-grounp .select span {
+        text-overflow: ellipsis;
+        display: inline-block;
+        width: 100%;
+        height: 1.4rem;
+        overflow: hidden; }
+      .form .form-grounp .select select {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        width: 100%;
+        height: 100%;
+        opacity: 0; }
+  .form .form-btn {
+    text-align: center;
+    margin-top: 1rem; }
+    .form .form-btn button {
+      width: 40%;
+      margin: 0 auto;
+      padding: 0;
+      background-color: transparent;
+      border: none; }
