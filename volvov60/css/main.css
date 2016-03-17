@@ -25,11 +25,11 @@ body{	margin: 0;padding: 0;height: 100%;}
 
 .formDiv{
 	position: absolute;
-	background-color: #84d;
+	/*background-color: #84d;*/
 	width: 100%;
 	height: 42%;
-	top: 44%;
-	padding: 10px;
+	top: 50%;
+	
 }
 .form {
   width: 80%;
@@ -44,7 +44,7 @@ body{	margin: 0;padding: 0;height: 100%;}
       margin: 0.2rem 0;
       line-height: 1.4rem;
       vertical-align: top;
-      color: #fff; }
+      color: #164985; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
         .form .form-grounp > label {
           font-size: 0.88rem; } }
@@ -68,8 +68,8 @@ body{	margin: 0;padding: 0;height: 100%;}
       padding: 0.2rem;
       line-height: 1.4rem;
       vertical-align: top;
-      border: solid 0px #fff;
-      color: #000;
+      border: solid 1px #164985;
+      color: #164985;
       outline: none;
       border-radius: 0; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
@@ -110,7 +110,7 @@ body{	margin: 0;padding: 0;height: 100%;}
         display: inline-block;
         font-size: 0.8rem;
         text-align: center;
-        color: #fff; }
+        color: #164985; }
         @media only screen and (min-width: 321px) and (max-width: 399px) {
           .form .form-grounp .comb label {
             font-size: 0.88rem; } }
@@ -139,7 +139,8 @@ body{	margin: 0;padding: 0;height: 100%;}
       box-sizing: border-box;
       padding: 0 0.2rem;
       font-size: 0.8rem;
-      color: #000; }
+      color: #164985; 
+    border: solid 1px #164985;}
       @media only screen and (min-width: 321px) and (max-width: 399px) {
         .form .form-grounp .select {
           font-size: 0.88rem; } }
@@ -162,7 +163,7 @@ body{	margin: 0;padding: 0;height: 100%;}
         z-index: 99;
         border-left: 0.25rem solid transparent;
         border-right: 0.25rem solid transparent;
-        border-top: 0.5rem solid #6ba2d1; }
+        border-top: 0.5rem solid #164985; }
       .form .form-grounp .select span {
         text-overflow: ellipsis;
         display: inline-block;
@@ -182,7 +183,8 @@ body{	margin: 0;padding: 0;height: 100%;}
     text-align: center;
     margin-top: 1rem; }
     .form .form-btn button {
-      width: 40%;
+      width: 100%;
+
       margin: 0 auto;
       padding: 0;
       background-color: transparent;
