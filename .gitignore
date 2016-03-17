@@ -4,3 +4,4 @@ node_modules
 .sass-cache
 config.js
 *.zip
+config.codekit
