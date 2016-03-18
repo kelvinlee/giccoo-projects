@@ -652,8 +652,8 @@ body{
   display: none;
 }
 .sharePic{
-  position: relative;
-    top: -100%;
+  position: absolute;
+    top: 0%;
     width: 70%;
     left: 28%;
     z-index: 11;
