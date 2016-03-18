@@ -30,14 +30,14 @@
 .swiper-button-next,.swiper-button-prev{
 	position:absolute;
 	top:33%;
-	width:7%;
-	height:8.4%;
+	width:8%;
+	height:0%;
 	margin-top:0px;
 	z-index:10;
 	cursor:pointer;
-	-moz-background-size:45px 95px;
-	-webkit-background-size:45px 95px;
-	background-size:45px 95px;
+	-moz-background-size:45px 1px;
+	-webkit-background-size:45px 1px;
+	background-size:45px 1px;
 	background-position:center;
 	background-repeat:no-repeat
 }
