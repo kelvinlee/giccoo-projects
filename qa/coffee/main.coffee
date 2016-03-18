@@ -175,6 +175,8 @@ _citys["保险公司－财产险"].push("合众财产保险股份有限公司")
 _citys["保险公司－财产险"].push("中路财产保险股份有限公司")
 _citys["保险公司－财产险"].push("中原农业保险股份有限公司")
 _citys["保险公司－财产险"].push("中国铁路财产保险自保有限公司")
+_citys["保险公司－财产险"].push("阳光渝融信用保证保险股份有限公司");
+
 
 _citys["再保险公司"] = []
 _citys["再保险公司"].push("中国财产再保险有限责任公司")
@@ -606,6 +608,11 @@ POST = (answers,callback)->
 			,3000
 		else if msg.recode is 202
 			SendNote("您已经提交过答案,无法变更,即将显示您本次答题的正确率。",4000)
+			setTimeout ->
+				Done(msg,true)
+			,4000
+		else if msg.recode is 203
+			SendNote("活动已经结束，如果您还没有参与过活动，现在已经无法参与，即将显示您本次答题的正确率。",4000)
 			setTimeout ->
 				Done(msg,true)
 			,4000
