@@ -28,6 +28,8 @@ body{	margin: 0;padding: 0;height: 100%;}
 #dots{	position: absolute;	bottom: 12%;	left: 35%;}
 #btnBack{	position: absolute;	width: 14.2%;	bottom: 4%;	right: 5%;	z-index: 101;}
 
+
+
 .formDiv{
 	position: absolute;
 	/*background-color: #84d;*/
@@ -193,3 +195,4 @@ body{	margin: 0;padding: 0;height: 100%;}
       padding: 0;
       background-color: transparent;
       border: none; }
+    .form-group .submit {width: 20%;}
