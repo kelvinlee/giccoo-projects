@@ -195,4 +195,5 @@ body{	margin: 0;padding: 0;height: 100%;}
       padding: 0;
       background-color: transparent;
       border: none; }
-    .form-group .submit {width: 20%;}
+.form .form-btn button.submit {width: 40%;}
+.form .form-btn button.submit img {width: 100%}
