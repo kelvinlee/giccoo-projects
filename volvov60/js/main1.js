@@ -1,6 +1,6 @@
 $(document).ready(function load () {
 	//alert("Zepto成功")
-	document.addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
+	//document.addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
 
 	var page = $('.page');
 	var nowPage = 0;
@@ -10,9 +10,9 @@ $(document).ready(function load () {
 	var pageUpDown =0
 	var DocHeight = document.body.scrollHeight||document.body.offsetHeight||document.body.clientHeight;
 
-	document.addEventListener('touchstart',startTouch,false)
-	document.addEventListener('touchmove',moveTouch,false)
-	document.addEventListener('touchend',endTouch,false)
+	//document.addEventListener('touchstart',startTouch,false)
+	//document.addEventListener('touchmove',moveTouch,false)
+	//document.addEventListener('touchend',endTouch,false)
 	
 
 	function startTouch(event){
@@ -50,7 +50,8 @@ $(document).ready(function load () {
 		goPage()
 	}
 	function goPage(){
-		$('html,body').animate({scrollTop:DocHeight*nowPage/4},400)
+		$('html,body').animate({scrollTop:DocHeight*nowPage/4},400)//viewportHeight
+		//$('html,body').animate({scrollTop:viewportHeight*nowPage},400)
 		if (pageUpDown!=0) {
 			//每页动画
 			
@@ -59,7 +60,7 @@ $(document).ready(function load () {
 	
 	$("#btnBack").on("click",function goPage2(){
 		//alert("goPage2")
-		 nowPage=1;
+		 nowPage=0.6;
 		 goPage();
 	});
 
