@@ -57,6 +57,23 @@ margin-left:-187px;
 }
 }
 
+@-webkit-keyframes 'smallscaleMove' {
+ 0% {
+  transform:scale(1,1);
+  -ms-transform:scale(1,1); /* Internet Explorer */
+  -moz-transform:scale(1,1); /* Firefox */
+  -webkit-transform:scale(1,1); /* Safari 和 Chrome */
+  -o-transform:scale(1,1); /* Opera */
+}
+ 100% {
+  transform:scale(1.1,1.1);
+  -ms-transform:scale(1.1,1.1); /* Internet Explorer */
+  -moz-transform:scale(1.1,1.1); /* Firefox */
+  -webkit-transform:scale(1.1,1.1); /* Safari 和 Chrome */
+  -o-transform:scale(1.1,1.1); /* Opera */
+}
+}
+
 @-webkit-keyframes rotate{
 from{-webkit-transform:rotate(0deg)}
 to{-webkit-transform:rotate(360deg)}
@@ -74,6 +91,10 @@ from{-o-transform:rotate(0deg)}
 to{-o-transform:rotate(360deg)}
 }
 
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary {
+  display: block
+}
+
 img {
   width: 100%; }
 body{
@@ -82,7 +103,8 @@ body{
   overflow: hidden;
   height: 100%;
   -webkit-text-size-adjust: none;
- 
+ -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 /*loader-Page*/
 .loader{
@@ -485,6 +507,16 @@ body{
 .result4{
   display: none;
 }
+.lessonBtn{
+  width: 80%;
+  margin: auto;
+  -webkit-animation-name:'smallscaleMove';
+  -webkit-animation-duration: 1.2s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+}
 .qaBtton{
   position: fixed;
   display: none;
@@ -493,6 +525,12 @@ body{
   left: 50%;
   margin-left: -50%;
   z-index: 6;
+  -webkit-animation-name:'scaleMove';
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
 }
 #qabar{
   position: absolute;
@@ -525,15 +563,16 @@ body{
   display:none;
 }
 .lessonMask{
-  filter: alpha(opacity=50); /* IE的透明度 */
-  opacity: 0.5;  /* 透明度 */
+  filter: alpha(opacity=80); /* IE的透明度 */
+  opacity: 0.8;  /* 透明度 */
 }
 #close{
   position: absolute;
-    top: 0%;
-    width: 14%;
-    left: 83%;
-    z-index: 11;
+  top: 14%;
+  width: 12%;
+  left: 80%;
+  z-index: 999;
+
 }
 .lessonPic{
   /*position: absolute;*/
@@ -557,9 +596,44 @@ body{
   text-align: left;
   line-height: 1.2em;
   left: 18%;
-  top: 21%;
+  top: 20%;
   overflow: auto;
-  height: 52%;
+  height: 51%;
+
+}
+.copyUl{
+  list-style-type: disc;
+  color:#e7e7e7;
+  list-style-position: outside;
+  padding-left: 7%;
+  font-size: 0.8rem;
+  margin-top: 3%;
+}
+.copyUl li{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1.2%;
+   line-height: 1.4em;
+
+}
+.copyp{
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  color:#e7e7e7;
+  margin-top: 5%;
+}
+.h3{
+  margin: 0;
+    padding: 0;
+  margin-top: 4%;
+  font-size: 1rem;
+  color: #ffb474;
+  line-height: 1.4em;
+}
+.p{
+  font-size: 0.8rem;
+  margin-top: 4%;
 
 }
 .sharePage{
@@ -573,8 +647,8 @@ body{
 }
 .sharePic{
   position: relative;
-    top: -95%;
+    top: -100%;
     width: 70%;
-    left: 22%;
+    left: 28%;
     z-index: 11;
 }

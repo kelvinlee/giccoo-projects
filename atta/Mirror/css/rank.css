@@ -33,6 +33,7 @@ textarea,blockquote,th,td{margin:0;padding:0;}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary {
 	display: block
 }
+
 html{
 	height:100%;  
 	font-size: 62.5%;
@@ -165,13 +166,18 @@ input[type="submit"] {
    margin: auto;
    color: #ffc8f4;
    font-size: 0.8rem;
-   /*font-weight: bold;*/
+    margin-top: 2%;
+
 
 }
-#btn2{
-	position: absolute;
-	
+.btn2{
+ width: 100%;
+ margin: auto;
+ color: #ffc8f4;
+ font-size: 0.8rem;
+ margin-top: 4%;
 }
+
 .page1{
   position: absolute;
   top: 35%;
@@ -200,8 +206,9 @@ li{
 }
 .box{
 	border-radius:6px;
-	padding-top: 6%;
-	margin-top: 2%;
+	width: 85%;
+  margin: auto;
+	margin-top:4%;
 	/*background:#bd8dfe;*/
 	background:rgba(189, 140, 254, 0.4); //背景透明
 }
@@ -217,15 +224,23 @@ li{
   
 }
 .list {
-    padding: 0 1em; 
-    font: bold 36px/200px monaco; 
-    text-shadow: 1px 1px #eee;
+  padding: 0 1em; 
+  font: bold 36px/200px monaco; 
+  text-shadow: 1px 1px #eee;
 }
 .rank1{
 	margin: auto;
-  width: 85%;
+  width: 100%;
   /*margin-top: -4%;*/
 
+}
+.rank2{
+  border-radius:6px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-top: 2%;
+  display:-webkit-box;
+  -webkit-box-align: center;
 }
 .myRank{
 	margin: auto;
@@ -249,21 +264,12 @@ li{
 .pic{
 	 border-radius: 18px;
 }
+
 .name{
-	margin-left: 2%;
-  /*position: absolute;*/
-   /*float: left; */
-  text-align: left;
-  width: 18%;
-  margin-top: 1%;
-  line-height: 1.3em;
-  /*margin-left: 17%;*/
-}
-.myname{
   margin-left: 2%;
   
   text-align: left;
-  
+  max-width: 9%;
   line-height: 1.3em;
    -moz-box-flex: 1; 
   -webkit-box-flex: 1; 

@@ -170,10 +170,7 @@ window.onload = function(){
 
 			
 			// TweenLite.to($(".btn"), 0.4,{css:{scaleX:1,scaleY:1}});
-			TweenLite.to($(this), 0.4,{ease: Elastic.easeOut,css:{scaleX:1.5,scaleY:1.5},onComplete:backHandle});
-			function backHandle(){
-				TweenLite.to($(this), 0.4,{ease: Elastic.easeOut,css:{scaleX:1,scaleY:1}});
-			}
+			$(this).animateCss('bounceIn');
 			
 			TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
 			switch(qaNum){
@@ -246,16 +243,17 @@ window.onload = function(){
 			}else if (score>=8 && score<=14){
 				showResult(2);
 				resultTitle = "小牧羊童";
-			}else if (15<=score<=21){
+			}else if (score>=15 && score<=21){
 				showResult(3);
 				resultTitle = "资深熊猫";
-			}else if (22<=score<=28){
+			}else if (score>=22 && score<=28){
 				showResult(4);
 				resultTitle = "德古拉伯爵";
 			}
-			console.log(resultTitle);
+			
 		}
 		function showResult(_num){
+			console.log(resultTitle);
 			setTimeout(function(){
 				TweenLite.to(qaBar, 1, {opacity:0,top:"100%"});
 				TweenLite.to(intro, 1, {opacity:0});
@@ -266,7 +264,7 @@ window.onload = function(){
 					$(".shareBtton").css('display','block');
 					$(".result"+_num).css('display','block');
 					TweenLite.from($(".shareBtton"), 1, {opacity:0,top:"100%"});
-					TweenLite.from(result, 1, {opacity:0});
+					TweenLite.from($(".result"+_num), 1, {opacity:0});
 				}
 			},2000);
 			
@@ -298,10 +296,16 @@ window.onload = function(){
 			$(".sharePage").hide();
 		});
 		$(".lessonBtn").click(function(){
+			// $(".lessonBtn").animateCss('bounceIn');
 			$(".lesson").show();
+			TweenLite.from($(".lesson"), 1, {opacity:0});
 		});
 		$("#close").click(function(){
-			$(".lesson").hide();
+			TweenLite.to($(".lesson"), 1, {opacity:0,onComplete:hidelesson});
+			function hidelesson(){
+				$(".lesson").hide();
+				$(".lesson").css('opacity','1');
+			}
 		});
 
 		// 音乐开关控制
@@ -318,3 +322,13 @@ window.onload = function(){
 	}
 		});
 };
+
+
+$.fn.extend({
+    animateCss: function (animationName) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+        });
+    }
+});
