@@ -97,6 +97,10 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 
 img {
   width: 100%; }
+html{
+  height:100%;
+  overflow:hidden;
+}
 body{
   margin: 0 auto;
   background-color: black;
@@ -108,6 +112,7 @@ body{
 }
 /*loader-Page*/
 .loader{
+ height:100%;
  overflow: hidden;
 }
 .loader-content{
@@ -183,9 +188,7 @@ body{
 .game {
    position: relative;
    margin: 0 auto;
-   /*background-image: url("../img/mainBg.jpg");
-   background-repeat: no-repeat;
-   background-size: 100% 100%;*/
+   height:100%;
    text-align: center;
    display: none;
    overflow: hidden;
