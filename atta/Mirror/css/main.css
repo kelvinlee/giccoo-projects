@@ -568,7 +568,7 @@ body{
 }
 #close{
   position: absolute;
-  top: 14%;
+  top: 3%;
   width: 12%;
   left: 80%;
   z-index: 999;
@@ -577,7 +577,7 @@ body{
 .lessonPic{
   /*position: absolute;*/
   position: relative;
-  top: -84%;
+  top: -96%;
   width: 90%;
   left: 4%;
   z-index: 11;
@@ -596,9 +596,9 @@ body{
   text-align: left;
   line-height: 1.2em;
   left: 18%;
-  top: 20%;
+  top: 15%;
   overflow: auto;
-  height: 51%;
+  height: 61%;
 
 }
 .copyUl{
@@ -613,8 +613,11 @@ body{
   margin: 0;
   padding: 0;
   margin-bottom: 1.2%;
-   line-height: 1.4em;
+  line-height: 1.4em;
 
+}
+.copyUl span{
+  color: #ffb474;
 }
 .copyp{
   margin: 0;

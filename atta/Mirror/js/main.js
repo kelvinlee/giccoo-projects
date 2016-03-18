@@ -178,40 +178,46 @@ window.onload = function(){
 					$("#q0a"+index).css('display','block');
 					TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
 					TweenLite.from($("#q0a"+index), 1, {opacity:0});
-					// $(".answer").html(answer0[index]);
+					addScore(index);
 				break;
 				case 1:
 					$("#q1a"+index).css('display','block');
 					TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
 					TweenLite.from($("#q1a"+index), 1, {opacity:0});
+					addScore2(index);
 				break;
 				case 2:
 					$("#q2a"+index).css('display','block');
 					TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
 					TweenLite.from($("#q2a"+index), 1, {opacity:0});
+					addScore2(index);
 				break;
 				case 3:
 					$("#q3a"+index).css('display','block');
 					TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
 					TweenLite.from($("#q3a"+index), 1, {opacity:0});
+					addScore2(index);
 				break;
 				case 4:
 					$("#q4a"+index).css('display','block');
 					TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
 					TweenLite.from($("#q4a"+index), 1, {opacity:0});
+					addScore2(index);
 				break;
 				case 5:
 					$("#q5a"+index).css('display','block');
 					TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
 					TweenLite.from($("#q5a"+index), 1, {opacity:0});
+					addScore2(index);
 				break;
 				case 6:
 					$("#q6a"+index).css('display','block');
 					TweenLite.to(bubble, 1,{scrollTo:{y:"max"}, ease:Back.easeOut});
 					TweenLite.from($("#q6a"+index), 1, {opacity:0});
+					addScore2(index);
 				break;
 			}
-			addScore(index);
+			
 			console.log("你的得分=="+score);
 			setTimeout(function(){
 				
@@ -287,7 +293,9 @@ window.onload = function(){
 					score += 0;
 				break;
 			}
-			
+		}
+		function addScore2(index){
+			score += index;
 		}
 		$(".shareBtton").click(function(){
 			$(".sharePage").show();
