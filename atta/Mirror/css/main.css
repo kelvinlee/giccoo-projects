@@ -563,7 +563,7 @@ body{
   width: 100%;
   height: 100%;
   z-index: 10; /* 此处的图层要大于页面 */
-  /*display:none;*/
+  display:none;
 }
 .lessonMask{
   filter: alpha(opacity=80); /* IE的透明度 */
