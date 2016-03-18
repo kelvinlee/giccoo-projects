@@ -578,9 +578,9 @@ body{
 
 }
 .lessonPic{
-  /*position: absolute;*/
-  position: relative;
-  top: -96%;
+ 
+  position: absolute;
+  top: 8%;
   width: 90%;
   left: 4%;
   z-index: 11;
