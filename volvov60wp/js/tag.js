@@ -57,7 +57,7 @@ riot.tag('register', '<form onsubmit="{submit}" class="form"> <div class="form-g
     		alert("手机号码不能为空")
     		return false
     	}
-    	$.post("http://api.giccoo.com/volvo_v60/insert/",data,function(msg){
+    	$.post("",data,function(msg){//================http://api.giccoo.com/volvo_v60/insert/
 
     		if (msg.recode == 200) {
     			alert("注册成功")
