@@ -10,15 +10,22 @@
   </head>
   <body>
     <!-- - var images = "img"-->
-    <div class="loading">
-      <div class="img"><img src="http://disk.giccoo.com/projects/qa/img/loading.gif">
-        <div class="text">Loading <span id="loading-text">0</span>%</div>
-      </div>
-    </div>
     <div class="main">
-      <div id="pages"></div>
-      <div id="select-company" class="pop select-company fadeIn animated"></div>
-      <div id="qa" class="page question-page"></div>
+      <div class="page info-page on">
+        <div class="slogan"><img src="http://disk.giccoo.com/projects/qa/img/slogan.png"></div>
+        <div class="text">
+          <h2>十分抱歉，您并没有中奖。</h2>
+          <p>请中奖用户与7日内领取，否则视为放弃奖品。</p>
+        </div>
+        <div class="text">
+          <h2>您已经填写了领取地址。</h2>
+          <p>请中奖用户与7日内领取，否则视为放弃奖品。</p>
+        </div>
+        <register action="http://i.giccoo.com/qa/to/lott">
+          <h3>恭喜中奖,请填写您的个人信息</h3>
+          <p>请中奖用户与7日内领取，否则视为放弃奖品。</p>
+        </register>
+      </div>
     </div>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script>

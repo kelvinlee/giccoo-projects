@@ -8,7 +8,7 @@ block css
 block content
 	- var images = "http://disk.giccoo.com/projects/qa/img"
 	// - var images = "img"
-	.loading
+	//- .loading
 		.img
 			img(src="#{images}/loading.gif")
 			.text
@@ -16,9 +16,23 @@ block content
 				span#loading-text 0
 				| %
 	.main
-		#pages
-		#select-company.pop.select-company.fadeIn.animated
-		#qa.page.question-page
+		.page.info-page.on
+			.slogan
+				img(src="#{images}/slogan.png")
+			.text
+				h2 十分抱歉，您并没有中奖。
+				p 请中奖用户与7日内领取，否则视为放弃奖品。
+			.text
+				h2 您已经填写了领取地址。
+				p 请中奖用户与7日内领取，否则视为放弃奖品。
+			register(action="http://i.giccoo.com/qa/to/lott")
+				h3 恭喜中奖,请填写您的个人信息
+				p 请中奖用户与7日内领取，否则视为放弃奖品。
+
+
+		//- #pages
+		//- #select-company.pop.select-company.fadeIn.animated
+		//- #qa.page.question-page
 
 block js
 	//- script(src="/libs/js/min/localforage.min.js")
