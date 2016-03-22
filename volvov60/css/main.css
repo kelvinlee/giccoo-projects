@@ -18,27 +18,33 @@ body{	margin: 0;padding: 0;height: 100%;}
 .swiper-container{	height: 100%;}
 
 .firstSlider{
-  position: absolute;
-  top: 12%;
-  width: 100%;
-  
+  /*position: relative;
+  top: 7%;
+  width: 100%;*/
+padding: 0;
+margin: 0;
+border: 0;
+  position: relative;
+  top: -2px;
 }
 .aslide{	
   position: relative;
   width:100%;
+
   padding-top: 5%;
 
   /*bottom: 12.85%;*/
 }
-.slidePic{	/*position: relative;*/	/*top: 13.38%*/;width: 100%;}/*height: 48.2%;*/
+.slidePic{	padding:0;/*position: relative;*/	/*top: 13.38%*/width: 100%;}/*height: 48.2%;*/
 
 #title2{
   position: absolute;
   top: 0%;
 }
 #title3{
-  position: absolute;
-  top: 0%;
+/*  position: absolute;
+
+  top: 0%;*/
 }
 #title4{
   position: absolute;
