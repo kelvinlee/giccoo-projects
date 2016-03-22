@@ -20,6 +20,7 @@ register
 		submit() {
 			var data = $("form",this.root).serializeArray()
 			//- data.push({name:"dealername",value:self.dealerName})
+			data.push({name: "openid", value: openid})
 			if ( $("[name=name]",this.root).val().length < 1 || $("[name=name]",this.root).val() == "") {
 				alert("姓名不能为空")
 				return false

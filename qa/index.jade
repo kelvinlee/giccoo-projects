@@ -19,13 +19,13 @@ block content
 		.page.info-page.on
 			.slogan
 				img(src="#{images}/slogan.png")
-			.text
-				h2 十分抱歉，您并没有中奖。
-				p 请中奖用户与7日内领取，否则视为放弃奖品。
-			.text
-				h2 您已经填写了领取地址。
-				p 请中奖用户与7日内领取，否则视为放弃奖品。
-			register(action="http://i.giccoo.com/qa/to/lott")
+			//- .text
+			//- 	h2 十分抱歉，您并没有中奖。
+			//- 	p 请中奖用户与7日内领取，否则视为放弃奖品。
+			//- .text
+			//- 	h2 您已经填写了领取地址。
+			//- 	p 请中奖用户与7日内领取，否则视为放弃奖品。
+			register(action="http://localhost:8990/qa/to/lott")
 				h3 恭喜中奖,请填写您的个人信息
 				p 请中奖用户与7日内领取，否则视为放弃奖品。
 
