@@ -1,5 +1,5 @@
 
-riot.tag2('register', '<form onsubmit="{submit}" class="form"><yield></yield> <div class="form-grounp"> <label for="name">姓名</label> <input id="name" type="text" name="name"> </div> <div class="form-grounp"> <label for="mobile">手机号码</label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-grounp"> <label for="adr">联系地址</label> <input id="adr" type="text" name="adr"> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="http://disk.giccoo.com/projects/qa/img/submit.png"></button> </div> </form>', '', '', function(opts) {
+riot.tag2('register', '<form onsubmit="{submit}" class="form"><yield></yield> <div class="form-grounp"> <label for="name">姓名</label> <input id="name" type="text" name="name"> </div> <div class="form-grounp"> <label for="mobile">手机号码</label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-grounp"> <label for="adr">联系地址</label> <input id="adr" type="text" name="adr"> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="http://disk.giccoo.com/projects/volvo_xc90/img/submit.png"></button> </div> </form>', '', '', function(opts) {
     var self = this
 
     this.submit = function() {

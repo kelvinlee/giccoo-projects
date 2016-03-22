@@ -14,7 +14,7 @@
       <input id="adr" type="text" name="adr"/>
     </div>
     <div class="form-btn">
-      <button type="submit" class="submit"><img src="http://disk.giccoo.com/projects/qa/img/submit.png"/></button>
+      <button type="submit" class="submit"><img src="http://disk.giccoo.com/projects/volvo_xc90/img/submit.png"/></button>
     </div>
   </form>
   <script>
