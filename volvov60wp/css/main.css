@@ -19,9 +19,14 @@ body{	margin: 0;padding: 0;height: 100%;}
 .swiper-container{	height: 100%;}
 
 .firstSlider{
-  position: absolute;
+/*  position: absolute;
   top: 12%;
-  width: 100%;
+  width: 100%;*/
+  padding: 0;
+margin: 0;
+border: 0;
+  position: relative;
+  top: -1%;
   
 }
 .aslide{	
@@ -38,8 +43,8 @@ body{	margin: 0;padding: 0;height: 100%;}
   top: 0%;
 }
 #title3{
-  position: absolute;
-  top: 0%;
+  /*position: absolute;
+  top: 0%;*/
 }
 #title4{
   position: absolute;
