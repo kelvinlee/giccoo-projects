@@ -614,3 +614,13 @@ changePoint = function(i) {
   $(".points span").removeClass("on");
   return $(".points span").eq(Math.abs(i)).addClass("on");
 };
+
+jsoncallback = function(msg) {
+  console.log(msg);
+  if (msg.apicode == 10000) {
+    alert("注册成功");
+    window.location.href = "http://b.wepiao.com/hongbao/index.html?pid=d84931112673c317&channelid=3&chid=100";
+  }else{
+    alert(msg.data.msg);
+  }
+}
