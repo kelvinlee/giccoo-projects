@@ -57,11 +57,11 @@ riot.tag('register', '<form onsubmit="{submit}" class="form"> <div class="form-g
     		alert("手机号码不能为空")
     		return false
     	}
-    	$.post("",data,function(msg){//================http://api.giccoo.com/volvo_v60/insert/
+    	$.post("http://api.biz.wepiao.com/common/saveactivityuserinfo",data,function(msg){//================http://api.giccoo.com/volvo_v60/insert/
 
     		if (msg.recode == 200) {
     			alert("注册成功")
-
+                window.location.href = "http://b.wepiao.com/hongbao/index.html?pid=d84931112673c317&channelid=3&chid=100";
     		}else{
     			alert(msg.reason)
     		}
