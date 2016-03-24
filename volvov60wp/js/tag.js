@@ -70,6 +70,7 @@ riot.tag('register', '<form onsubmit="{submit}" class="form"> <div class="form-g
         openid: new Date().getTime()+""+(parseInt(Math.random()*900000)+100000),
         activeid: "20160324002",
         content: JSON.stringify(data),
+        newDecrypt: "2",
         callback: "jsoncallback"
       }
 			$.ajax({
