@@ -1,0 +1,180 @@
+*{	margin: 0;	padding: 0;}
+html,body{height: 100%;position: relative;}
+.p{margin: 1rem;}
+.part{	width: 100%;}
+.content{position: absolute;overflow: hidden;width: 100%;height: 100%;}
+.page{	position: absolute;	width: 100%;height: 100%; overflow:hidden;z-index: 0
+ -webkit-transition: all 0.5s ease;
+         transition: all 0.5s ease;
+ -webkit-transform: translate3d(0, 100%, 0);
+       	 transform: translate3d(0, 100%, 0);
+
+}
+
+.page.show{
+	-webkit-transform: translate3d(0, 0%, 0);
+       		transform: translate3d(0, 0%, 0);
+}
+.page.up{
+	-webkit-transform: translate3d(0, -100%, 0);
+       		transform: translate3d(0, -100%, 0);
+}
+.page.down{
+	-webkit-transform: translate3d(0, 100%, 0);
+       		transform: translate3d(0, 100%, 0);
+}
+.btnBack{position: fixed;width: 6%;left: 0;top: 25%;z-index: 10000;visibility:hidden;}
+.popbtn{position: absolute; width: 100%;height: 15%;z-index: 999;background-color: #789;opacity:0.2;}
+.popText{z-index: 10000;}
+/*.popUpLayer{position: absolute;width: 100%;height: 0%;top: 0;left: 0;z-index: 10000;}*/
+
+#popbtn1{top: 12%;}
+
+#page01{z-index: 1;background-color: #e7e7e8;}
+
+#page02{z-index: 1;}
+
+#page11{ background-color: #b70030;}
+#page12{ }
+#page13{ background-color: #7c0000;}
+#page14{ background-color: #000000;}
+#page15{ background-color: #000000;}
+
+#page31{ background-color: #ffffff;}
+#page32{}
+
+#page41{ background-color: #152a5d;}
+#page42{background-color: #000000;}
+#page43{background-color: #000000;}
+#page44{background-color: #000000;}
+
+#page51{background-color: #ffffff;}
+#page52{background-color: #ffffff;}
+#page53{}
+#page54{}
+#page55{}
+
+.picMid{	position: absolute;	width: 100%;	top: 50%;	-webkit-transform: translate3d(0, -50%, 0);transform: translate3d(0, -50%, 0);}
+.arrow{	position: absolute;	width: 4.5%;	left: 47.75%;	bottom: 2%;}
+
+#arrow52{bottom: 4%;}
+
+/*第 1 部分*/
+.bgD{position: absolute;	width: 100%;	height: 100%;	bottom: 0%;}
+#btn11{	position: absolute;	width: 100%;	top: 18.2%;}
+#btn12{	position: absolute;	width: 100%;	top: 28.2%;}
+#btn13{	position: absolute;	width: 100%;	top: 38.2%;}
+#btn14{	position: absolute;	width: 100%;	top: 48.2%;}
+#btn15{	position: absolute;	width: 100%;	top: 58.2%;}
+
+#videoD0{position: absolute;top: 0;left: 0;}
+
+/*第 2 部分*/
+#p12a{position: absolute;top: 0;}
+#p12b{position: absolute;bottom: 0;}
+#p13b{position: absolute;bottom: 0;}
+#p14a{position: absolute;top: 0;}
+#p14b{position: absolute;bottom: 0;}
+#p15a{position: absolute;top: 0;}
+#p15b{position: absolute;bottom: 0;}
+#p19a{position: absolute;top: 0;left: 10%;}
+#p19b{position: absolute;bottom: 0;}
+#p20a{position: absolute;top: 0;}
+#p20b{position: absolute;bottom: 0;}
+#p21a{position: absolute;top: 0;}
+#p21b{position: absolute;bottom: 0;}
+#p23a{position: absolute;top: 4%;}
+#p23b{position: absolute;bottom: 0;}
+#p23c{position: absolute;width: 94%;height: 96%;border: 1px solid #888;left: 3%;top: 2%;}
+#p24a{position: absolute;}
+#p25a{position: absolute;bottom: 0;}
+#p26a{position: absolute;bottom: 0;}
+
+.popVideo{  /*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝视频弹出框＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+	position: absolute;
+	bottom: 0%;
+	width: 93.75%;
+	left: 3.125%;
+	background-color: #e7e7e8;
+	visibility: hidden;
+}
+.poptitle{
+	float: left;
+	background-color: #7f7f7f;
+	margin-top: 0.5em;
+	margin-bottom: 1.5em;
+	padding: 1em;
+	color: #ffffff;
+	font-size: 1.1em;
+}
+.closebtn{
+	float: right;
+	background-color: #7f7f7f;
+	margin-top: 0.5em;
+	margin-bottom: 1.5em;
+	padding: 1em;
+	color: #ffffff;
+	font-size: 1.1em;
+}
+.poppic{
+	padding: 1.5em;
+	padding-top: 3em;
+
+}
+.popName{
+	text-align: center;
+	width: 100%;
+	color: #7f7f7f;
+	font-size: 0.9em;
+	padding-bottom: 1.5em;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝文本弹出框＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+.popText{
+	position: absolute;
+	bottom: 0%;
+	width: 93.75%;
+	height: 90%;
+	left: 3.125%;
+	background-color: #e7e7e8;
+	visibility: hidden;
+}
+.popT{
+	float: left;
+	height: 70%;
+	padding: 1em;
+	padding-top: 1em;
+	overflow: scroll;
+          overflow-scrolling: touch;
+          -webkit-overflow-scrolling: touch;
+}
+/*========================================横屏切换 导航============================================*/
+.navigator{
+	position: absolute;
+	border: 2px solid #fff;
+
+	background-color: #898989;
+	width: 20%;
+	top: 0;
+	color: #ffffff;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-left: -2px;
+	text-align: center;
+	z-index: 100;
+}
+#n1{left: 0%;}
+#n2{left: 20%;}
+#n3{left: 40%;}
+#n4{left: 60%;}
+#n5{left: 80%;}
+
+.Aslider{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+.showVideo{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
