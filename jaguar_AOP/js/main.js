@@ -125,9 +125,9 @@ $(document).ready(function load (){
 	}
 	function goPage(){
 		if (nowPage==0||nowPage==1||nowPage==2||nowPage==7||nowPage==9||nowPage==13) {
-		 	$('.btnBack').css('visibility','hidden');
+		 	$('.btnBack').css('display','none');
 		 }else{
-		 	$('.btnBack').css('visibility','visible');
+		 	$('.btnBack').css('display','block');
 		 };
 		for (var i = 0; i < pageA.length; i++) {
 			$(pageA[i]).removeClass('up');
@@ -205,12 +205,12 @@ $(document).ready(function load (){
 	});
 	//====打开文字浮层
 	function showText(_textNum){
-		$(textA[_textNum]).css('visibility','visible');
+		$(textA[_textNum]).css('display','none');
 	}
 
 	//====打开视频浮层
 	function showVideo(_videoNum){
-		$(videoA[_videoNum]).css('visibility','visible');
+		$(videoA[_videoNum]).css('display','block');
 	}
 	//====关闭视频浮层
 	$(".closebtn").click(function (){
