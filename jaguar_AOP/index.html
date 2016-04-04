@@ -80,13 +80,64 @@
 			<div class="navigator" id="n4">F-TYPE</div>
 			<div class="navigator" id="n5">F-PACE</div>
 			<div class="slider">
-				<div class="Aslider" id="slider1"><img src="img/p17a.jpg" width="100%"></div>
-				<div class="Aslider" id="slider2"><img src="img/p17b.jpg" width="100%"></div>
-				<div class="Aslider" id="slider3"><img src="img/p17c.jpg" width="100%"></div>
-				<div class="Aslider" id="slider4"><img src="img/p17d.jpg" width="100%"></div>
-				<div class="Aslider" id="slider5"><img src="img/p17e.jpg" width="100%"></div>
+				<div class="Aslider mid" id="slider1">
+					<img src="img/p17a.jpg" width="100%">
+				</div>
+
+				<div class="Aslider" id="slider2">
+					<img src="img/p17b.jpg" width="100%">
+					<div class="popbtn" id="popbtn7"></div>	
+				</div>
+
+				<div class="Aslider" id="slider3">
+					<img src="img/p17c.jpg" width="100%">
+					<div class="popbtn" id="popbtn8"></div>	
+				</div>
+
+				<div class="Aslider" id="slider4">
+					<img src="img/p17d.jpg" width="100%">
+				</div>
+
+				<div class="Aslider" id="slider5">
+					<img src="img/p17e.jpg" width="100%">
+				</div>
 			</div>
 			<div class="showVideo"><img src="img/p17btn.png" width="100%"></div>
+			<div class="popVideo" id="popv1"> <!-- 视频弹框 -->
+				<div class="poptitle videoL">捷豹精彩视频</div>
+				<div class="closebtn videoL">X</div>
+				<div class="poppic" id="video1"><video id="video0" src="mp4/xe.mp4" poster="img/video0.jpg" controls="true" width="100%" height="100%" ></video></div>
+				<!-- webkit-playsinline="webkit-playsinline" -->
+				<div class="popName">点击观看XE精彩视频</div>
+			</div>
+			<div class="popVideo" id="popv2"> <!-- 视频弹框 -->
+				<div class="poptitle videoL">捷豹精彩视频</div>
+				<div class="closebtn videoL">X</div>
+				<div class="poppic" id="video1"><video id="video0" src="mp4/xf.mp4" poster="img/video0.jpg" controls="true" width="100%" height="100%" ></video></div>
+				<!-- webkit-playsinline="webkit-playsinline" -->
+				<div class="popName">点击观看XF精彩视频</div>
+			</div>
+			<div class="popVideo" id="popv3"> <!-- 视频弹框 -->
+				<div class="poptitle videoL">捷豹精彩视频</div>
+				<div class="closebtn videoL">X</div>
+				<div class="poppic" id="video1"><video id="video0" src="mp4/xj.mp4" poster="img/video0.jpg" controls="true" width="100%" height="100%" ></video></div>
+				<!-- webkit-playsinline="webkit-playsinline" -->
+				<div class="popName">点击观看XJ精彩视频</div>
+			</div>
+			<div class="popVideo" id="popv4"> <!-- 视频弹框 -->
+				<div class="poptitle videoL">捷豹精彩视频</div>
+				<div class="closebtn videoL">X</div>
+				<div class="poppic" id="video1"><video id="video0" src="mp4/ftype.mp4" poster="img/video0.jpg" controls="true" width="100%" height="100%" ></video></div>
+				<!-- webkit-playsinline="webkit-playsinline" -->
+				<div class="popName">点击观看F-TYPE精彩视频</div>
+			</div>
+			<div class="popVideo" id="popv5"> <!-- 视频弹框 -->
+				<div class="poptitle videoL">捷豹精彩视频</div>
+				<div class="closebtn videoL">X</div>
+				<div class="poppic" id="video1"><video id="video0" src="mp4/fpace.mp4" poster="img/video0.jpg" controls="true" width="100%" height="100%" ></video></div>
+				<!-- webkit-playsinline="webkit-playsinline" -->
+				<div class="popName">点击观看F-PACE精彩视频</div>
+			</div>
 		</div>
 
 	</div>
@@ -109,11 +160,14 @@
 			<div id="p20a"><img src="img/p20a.jpg" width="100%" ></div>
 			<div id="p20b"><img src="img/p20b.png" width="100%" ></div>
 			<div class="arrow"><img src="img/arrow7.gif" width="100%"></div>
+			<div class="popbtn" id="popbtn2"></div>
+			<div class="popbtn" id="popbtn3"></div>
 		</div>
 
 		<div class="page" id="page44"><!-- 第四部分第四页 -->
 			<div id="p21a"><img src="img/p21a.jpg" width="100%" height="100%"></div>
 			<div id="p21b"><img src="img/p21b.png" width="100%" ></div>
+			<div class="popbtn" id="popbtn4"></div>
 		</div>
 
 	</div>
@@ -142,11 +196,13 @@
 		<div class="page" id="page54"><!-- 第五部分第四页 -->
 			<div id="p25a"><img src="img/p25a.jpg" width="100%"></div>
 			<div class="arrow"><img src="img/arrow7.gif" width="100%"></div>
+			<div class="popbtn" id="popbtn5"></div>
 		</div>
 
 		<div class="page" id="page55"><!-- 第五部分第五页 -->
 			<div id="p26a"><img src="img/p26a.jpg" width="100%" height="100%"></div>
-			<div class="picMid"><img src="img/p26b.png" width="100%" ></div>	
+			<div class="picMid"><img src="img/p26b.png" width="100%" ></div>
+			<div class="popbtn" id="popbtn6"></div>	
 		</div>		
 	</div>
 	
@@ -154,25 +210,86 @@
 
 <div class="popUpLayer">
 	<div class="popText" id="popt1">
-				<div class="poptitle">捷豹形态美学</div>
-				<div class="closebtn">X</div>
-				<div class="popT">
-					<p>“回归最简，是一切设计之源头。这需要我们克制而优雅，一如英伦传统的处事方式。如若气势十足，何须填满整个空间？设计的主旨是祛除浮华回到本初。
-					</p>
-					<p>创造极简，极其困难，这需要一定的自制力，这一点最难习得。我常常说，设计不等于妥协，而等同于决策。每一处设计，意味着满足各种不同层次的要求。身为设计师，不得不判断要求的高低优劣。如有意简化，则需将设计推向复杂的极致，寻求极简。
-					</p>
-					<p>创作时，志得意满在所难免。若是能对自己的设计删减有力，将设计抽丝剥茧，最终归于至简无华，这是真正的设计功力。
-					</p>
-					<p>——捷豹全球设计总监严凯伦（lanCallun）</p>
-					<p>“回归最简，是一切设计之源头。这需要我们克制而优雅，一如英伦传统的处事方式。如若气势十足，何须填满整个空间？设计的主旨是祛除浮华回到本初。
-					</p>
-					<p>创造极简，极其困难，这需要一定的自制力，这一点最难习得。我常常说，设计不等于妥协，而等同于决策。每一处设计，意味着满足各种不同层次的要求。身为设计师，不得不判断要求的高低优劣。如有意简化，则需将设计推向复杂的极致，寻求极简。
-					</p>
-					<p>创作时，志得意满在所难免。若是能对自己的设计删减有力，将设计抽丝剥茧，最终归于至简无华，这是真正的设计功力。
-					</p>
-					<p>——捷豹全球设计总监严凯伦（lanCallun）</p>
-				</div>
-			</div>
+		<div class="poptitle">捷豹形态美学</div>
+		<div class="closebtn">X</div>
+		<div class="popT">
+			<p>“回归最简，是一切设计之源头。这需要我们克制而优雅，一如英伦传统的处事方式。如若气势十足，何须填满整个空间？设计的主旨是祛除浮华回到本初。</p>
+			<p>创造极简，极其困难，这需要一定的自制力，这一点最难习得。我常常说，设计不等于妥协，而等同于决策。每一处设计，意味着满足各种不同层次的要求。身为设计师，不得不判断要求的高低优劣。如有意简化，则需将设计推向复杂的极致，寻求极简。</p>
+			<p>创作时，志得意满在所难免。若是能对自己的设计删减有力，将设计抽丝剥茧，最终归于至简无华，这是真正的设计功力。</p>
+			<p>——捷豹全球设计总监严凯伦（lanCallun）</p>
+		</div>
+	</div>
+
+	<div class="popText" id="popt2">
+		<div class="poptitle">极致感官体验</div>
+		<div class="closebtn">X</div>
+		<div class="popT">
+			<p>夜间驾驶捷豹XJ堪称视觉盛宴。车辆操控完全随心所欲，低平的仪表板实现视野最大化，其设计灵感源自1950年代设计华美的木质Riva Italia高速汽艇。</p>
+			<p>而当您在驾驶位入座后，华美饰板的包裹感扑面而来。驾驶位散发迷人的优雅魅力，仿佛置身飞机驾驶舱内。这种由内饰所散发的与外观相同的个性魅力，令人信心倍增，动感十足。您可以选择平稳驾驶，亦可切换至运动模式，一切都会截然不同。开启运动模式后，仪表盘灯光将切换为更具激进感的红色，悬挂系统转变为更加硬朗的风格，发动机的机械增压亦随之启动。</p>
+		</div>
+	</div>
+
+	<div class="popText" id="popt3">
+		<div class="poptitle">极致感官体验</div>
+		<div class="closebtn">X</div>
+		<div class="popT">
+			<p>捷豹之所以能像一头真正的豹子那样会呼吸，秘密就在于其奢华内饰中所选用的真皮材质。柔软且密布纹理的小牛皮，是捷豹内饰的主要“肌肤”，铺撒在了车舱内的各个区块。包括座椅、仪表控台、内门饰板以及中央肘枕等处。而这些顶级皮革来自Pasubio, 这家来自意大利的皮革供货商的顶级皮革除了供应汽车内饰，另外还提供给私人商务喷射机，豪华游艇，顶级品牌家具等用途。这些顶级皮革必须先经过10道严密的程序，包括皮革挑选、刨刮至同样厚度、复鞣及染色、延展、染剂准备、清洁、喷涂、压花、碾磨，以及最后决选，确保每一张送交到捷豹的皮革都是细腻出色且完美无缺的。</p>
+		</div>
+	</div>
+
+	<div class="popText" id="popt4">
+		<div class="poptitle">燃情与柔情美学</div>
+		<div class="closebtn">X</div>
+		<div class="popT">
+			<p>捷豹既能暴烈如猛兽，又能静雅如细水深流。这一切，全凭你敏锐的耳朵来感知。</p>
+			<h1>柔情</h1><p>与其偶尔奔赴音乐剧场，不如让剧院级音响带来的柔情一路相随。捷豹知您所需，除了用舒适柔软的真皮座椅体贴您的身体，更用有着“英国之宝”美誉的极致音响品牌Meridian打造媲美音乐厅效果的魅力音场，抚慰心灵。Meridian的声音工程师深入研究心理声学，呈现最逼真的效果，令听者大脑认为原音再现，并且将真正的乐器作为参照基准，例如斯坦威钢琴或者人声，呈现媲美原声的真实感，把经典交响乐章层次分明地传至耳畔，不放过任何细微乐器奏出地声响。不论乘客坐在哪个位置，独有地Trifield技术都会令浑厚而宽广地立体声效不绝于耳。</p><p>不妨把存有勃拉姆斯，巴赫，维瓦尔弟经典曲目的CD或是iphone接上捷豹中控台的端口吧，细细聆听，感知捷豹用听觉打开的无尽视界。</p>
+			<h1>静逸</h1><p>车舱赋予驾乘者的听觉感受，更妙在静逸。与排气管声浪及音响一样，车内一切的声音效果都是精心调校的结晶。每个按钮，开关及仪表盘的音效都必须做到既具实用功能，又不会过于夸张，例如座椅调节按钮的效果等。声音工程师还深入评估了空气动力特点，努力减少风躁。即使闭上双眼，您亦能感受到捷豹的独特魅力。</p>
+			<p>以XJ为例，您还能在车内享受到绝佳的谈话环境，捷豹的对话辅助功能可令前后排的乘客无障碍交谈，不必为音响系统或车厢内任何噪声（捷豹汽车不存在此类问题）的干扰而提高嗓音。</p>
+			<p>不管您相信与否，XJ装配的对话辅助功能还能帮助乘客畅所欲言。通过巧妙设计麦克风分布位置，该功能系统充分收集每位乘客的声音，完成分析处理并增强音质，确保声音清晰动听。该系统一旦完成声效处理，谈话就会通过前后6台扬声器同时传出，从而确保每位乘客都能轻松听到他人的谈话。整个处理过程流程可在瞬间完成，不会出现延迟的现象。捷豹声学工程师Toby Newman表示：“此项技术的研发过程历时三年，其设置完全从前后座乘客交谈障碍的实际情况出发，令前后排乘客不必改变坐姿也能轻松交谈。”</p>
+		</div>
+	</div>
+
+	<div class="popText" id="popt5">
+		<div class="poptitle">捷豹C-X75</div>
+		<div class="closebtn">X</div>
+		<div class="popT">
+			<p>出现在全新007电影《幽灵党SPECTRE》中的这台捷豹有史以来科技含量最高的超级跑车，最初诞生于2010年的巴黎车展，这一四驱插电式混合动力汽车（PHEV），以其全新的环保极速理念和精湛绝伦的美感惊艳了整个汽车行业。</p>
+			<p>其时速可达353.98公里／小时。其最可贵的是，实现了性能和燃油效率方面的同时均衡。驱动它的是一台前所未有的1.6升小排量四缸发动机，外加功率达到19千瓦／时的锂电池组件，两者配合，动力输出总和高达850马力，扭矩达102牛?米，从静止到百公里时速仅需不到3秒，二氧化碳排放量甚至低于89克／公里。</p>
+			<p>代表着捷豹工程和设计技术巅峰的C-X75，无疑是对未来捷豹在绿色能源领地的发展作出一次集中预言。</p>
+		</div>
+	</div>
+
+	<div class="popText" id="popt6">
+		<div class="poptitle">Formula E</div>
+		<div class="closebtn">X</div>
+		<div class="popT">
+			<p>2015年年末，捷豹宣布以厂商队身份回归国际赛事，且初露头角就剑指前瞻性的Formula E（国际汽联电动方程式锦标赛）。该赛事是世界上首个全电动单座赛车系列赛。捷豹这一举动向外界传递了两个重要讯息：其一，捷豹坚信，Formula E才是赛车运动的未来；其二，这一举动也标志着捷豹已经将目光瞄准了绿色环保的电动汽车，未来将大力着眼于电动车技术领域的研发和创新，并借此继续推动此项技术的全球发展速度。</p>
+			<p>捷豹路虎全球工程运营总监Nick Rogers所介绍的那样，“未来五年全球汽车市场的变化将比过去30年经历的变化还要多、还要大。互联技术和节能环保将成为未来汽车行业的发展趋势，电气化和轻量化技术正扮演着日益重要的角色。电动方程式锦标赛的举办恰恰是对这些新趋势的认可和响应。”</p>
+			<p>创新和突破一直是捷豹的生命线，但以往太多例子向我们证明，捷豹从未将创新止于设计和技术之上。每一次高瞻远瞩的远见和对行业发展方向的洞悉都带着无比“捷豹”式的突破和勇气。Nick Rogers相信，重返赛道并参加国际汽联电动方程式锦标赛的角逐，将使得电动车成为捷豹产品线重要的组成部分，并且有助于工程师们在极端竞技环境下进一步推进先进电气化技术的研发和工程测试。通过参加FormulaE，工程师们不仅可以运用其专业技能，还可以利用从赛道上积累的经验在电动车技术研发领域实现更大突破。</p>
+			<p>据悉，捷豹FormulaE团队现已获得国际汽联电动车方程式锦标赛的参赛资格，预计将在2016第三季度登场。让我们拭目以待。</p>
+		</div>
+	</div>
+
+	<div class="popText" id="popt7">
+		<div class="poptitle">捷豹XF</div>
+		<div class="closebtn">X</div>
+		<div class="popT">
+			<p>毋庸置疑，第一眼看到全新一代XF,即会被其所吸引。静静伫立时，他仿佛一位身着剪裁精良西装的摩登绅士，气质非凡，却也时刻挥洒着不羁本性。</p>
+			<p>这是一位“身材骨感”却“表现性感”的绅士：和上一代车型相比，全新一代XF车身更显紧凑，比例更佳，这得益于捷豹采用的高密度全铝架构以及大量先进科技。铝合金材质不仅用于全新一代XF车身架构，同时也用于车身两侧，发动机舱盖及前翼部分，因而大幅减轻了整车重量，其较老款车型减重190公斤的同时，车身刚性却增强了28%。</p>
+			<p>这是一位热爱御风畅行的环保绅士：0.29的风阻系数，其中深意不言而喻。XF利用前保险杠上的进气口，将气流引入轮拱内的通风口，穿越前轮上方，从车身两侧穿行而过，车门扁平侧身部分也能减少气流产生的压力，车身防护外延部分亦精心设计，最大限度克服风阻对速度的影响。低风阻系数，也使XF大幅减少资源消耗，并降低污染排放。</p>
+			<p>当然，最重要的，这是一位生来爱跑的运动绅士：其拥有跑车速度和商务轿车的舒适，无论蜿蜒山路或是高速畅行，只要置身XF座椅，就能获得非一般的舒适架乘。源自F-TYPE的铝合金双叉臂式前悬挂，让全新一代XF具有极高的外倾刚性，使轮胎能够立刻产生较高侧向力，即意味着在过弯时能产生更大的抓地力，因而应对急弯更从容自若。这台天生轿跑，动感不为舒适妥协，运动个性与商务实用和谐统一，跑出商务新风尚。</p>
+		</div>
+	</div>
+
+	<div class="popText" id="popt8">
+		<div class="poptitle">捷豹XJ</div>
+		<div class="closebtn">X</div>
+		<div class="popT">
+			<p>2003年，捷豹在参与Formula 1赛车的第四年，推出旗下全新 XJ。这部隶属于第三代，厂家代号为 X350的旗舰，率所有豪华轿车之先采用全车铝合金材质，其着眼点在于降低车身重量，荟萃了许多当时只在赛车上才看得见的科技。</p>
+			<p>有了移植赛车科技至量产车的经验之后，捷豹在进一步研发全新一代XJ时，更将科技运用得淋漓尽致。第四代厂方代号为X351的全新XJ（即2009年诞生延续至今的这一代），从打造之初就完全利用计算机仿真运算，将车辆的底盘，悬架及车体结构全面运算。换句话说，这辆车在还未造出原型车之前，就确保了操控性能绝对凌驾于同级别大型豪华轿车之上。</p>
+			<p>这一代XJ造型流线创下当时同级别大型豪华轿车最低风阻系数0.29.如同赛车一般，更低的风阻系数除了可以降低车辆前进时的阻力而降低油耗，更可增加高速行驶时的稳定性。此外，全铝轻量化车身赋予车辆各方面加速表现和灵活性，前悬架部分采用的与F1赛车同级别的双叉臂式悬架，更大幅度提升操作性能。</p>
+		</div>
+	</div>
 </div>
 
 <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
