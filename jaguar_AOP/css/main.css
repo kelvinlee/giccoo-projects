@@ -1,7 +1,24 @@
 *{	margin: 0;	padding: 0;}
-html,body{height: 100%;position: relative;}
+html,body{width:100%;height: 100%;position: relative;overflow:hidden;}
 p{font-size: 0.9rem;line-height: 1.3rem;text-indent: 1.8rem;margin: 1rem;}
 h1{font-size: 1.1rem;line-height: 1.3rem;text-indent: 1.8rem;margin: 1rem;margin-bottom: 0;}
+img{ width: 100%; }
+/* Loading */
+.loading {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 10009;
+	background-color: #fff;
+}
+.loading p {
+	text-align: center;
+}
+/* End loading*/
+
+
+
+
 .part{	width: 100%;}
 .content{position: absolute;overflow: hidden;width: 100%;height: 100%;}
 .page{	position: absolute;	width: 100%;height: 100%; overflow:hidden;z-index: 0
@@ -26,13 +43,10 @@ h1{font-size: 1.1rem;line-height: 1.3rem;text-indent: 1.8rem;margin: 1rem;margin
 }
 
 
-
-
-
 .btnBack{position: fixed;width: 6%;left: 0;top: 25%;z-index: 10000;display:none;}
 .popbtn{position: absolute; width: 100%;height: 15%;z-index: 999;background-color: #900;opacity:0;}
 .popText{z-index: 10000;}
-/*.popUpLayer{position: absolute;width: 100%;height: 0%;top: 0;left: 0;z-index: 10000;}*/
+.popUpLayer{position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: 10000;background: rgba(0,0,0,0.7);}
 
 #popbtn1{top: 12%;}
 #popbtn2{top: 40%;}
@@ -161,14 +175,18 @@ h1{font-size: 1.1rem;line-height: 1.3rem;text-indent: 1.8rem;margin: 1rem;margin
 	padding: 1em;
 	padding-top: 1em;
 	overflow: scroll;
-          overflow-scrolling: touch;
-          -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
 }
 /*========================================横屏切换 导航============================================*/
+.navs{
+	position: absolute;
+	width: 100%;
+	z-index: 100000;
+}
 .navigator{
 	position: absolute;
 	border: 2px solid #fff;
-
 	background-color: #898989;
 	width: 20%;
 	top: 0;
@@ -178,6 +196,7 @@ h1{font-size: 1.1rem;line-height: 1.3rem;text-indent: 1.8rem;margin: 1rem;margin
 	margin-left: -2px;
 	text-align: center;
 	z-index: 100;
+	font-size: 1rem;
 }
 #n1{left: 0%;background-color: #b70030;}
 #n2{left: 20%;}
@@ -189,6 +208,7 @@ h1{font-size: 1.1rem;line-height: 1.3rem;text-indent: 1.8rem;margin: 1rem;margin
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	z-index: -1;
 }
 
 .Aslider{

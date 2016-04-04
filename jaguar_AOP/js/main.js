@@ -1,5 +1,8 @@
 
-$(document).ready(function load (){
+$(document).ready(function (){
+	loadStart()
+
+
 	var nowPage = 0;
 	var startY = 0;
 	var startScrollTop;
@@ -96,12 +99,14 @@ $(document).ready(function load (){
 	$('.content')[0].addEventListener('touchmove',moveTouch,false)
 	$('.content')[0].addEventListener('touchend',endTouch,false)
 	function startTouch(event){
-		startY=event.touches[0].clientY
-		pageUpDown=0
+		// event.preventDefault();
+		startY=event.touches[0].clientY;
+		pageUpDown=0;
 
 	}
 	function moveTouch(event){
-		var nowY=event.touches[0].clientY
+		var nowY=event.touches[0].clientY;
+		event.preventDefault();
 		if (nowY-startY>80&&nowPage!=0&&nowPage!=2&&nowPage!=7&&nowPage!=9&&nowPage!=13) {
 			pageUpDown=1
 		}else if (nowY-startY< -80&&nowPage!=1&&nowPage!=6&&nowPage!=8&&nowPage!=12&&nowPage!=17) {
@@ -112,6 +117,7 @@ $(document).ready(function load (){
 		
 	}
 	function endTouch(event){
+		// event.preventDefault();
 		if (pageUpDown == 1) {
 			//alert("上一页")
 			nowPage--
@@ -145,19 +151,23 @@ $(document).ready(function load (){
 	$("#btn11").click(function (){
 		nowPage=2;
 		goPage();
+		loadStep(2);
 	});
 
 	$("#btn12").click(function (){
 		nowPage=7;
 		goPage();
+		loadStep(3);
 	});
 	$("#btn13").click(function (){
 		nowPage=9;
 		goPage();
+		loadStep(4);
 	});
 	$("#btn14").click(function (){
 		nowPage=13;
 		goPage();
+		loadStep(5);
 	});
 	//＝＝＝＝＝＝返回
 	$('.btnBack').click(function(){
@@ -205,7 +215,8 @@ $(document).ready(function load (){
 	});
 	//====打开文字浮层
 	function showText(_textNum){
-		$(textA[_textNum]).css('display','none');
+		$(".popUpLayer").css('display','block');
+		$(textA[_textNum]).css('display','block');
 	}
 
 	//====打开视频浮层
@@ -217,13 +228,59 @@ $(document).ready(function load (){
 		closePop();
 	});
 	function closePop(){
+		$(".popUpLayer").css('display','none');
 		for (var i = 0; i < videoA.length ; i++) {
-			$(videoA[i]).css('visibility','hidden');
+			$(videoA[i]).css('display','none');
 		};
 		for (var i = 0; i < textA.length ; i++) {
-			$(textA[i]).css('visibility','hidden');
+			$(textA[i]).css('display','none');
 		};
 		// var video=$('#video0');
 		// video[0].pause();
 	};
 });
+
+
+var loadStepOne = [".popUpLayer",".btnBack","#part1","#part2 .page:eq(0)",,"#part3 .page:eq(0)","#part4 .page:eq(0)","#part5 .page:eq(0)"]
+var _loadNum = 0
+var _loadMax = 0
+function loadStart() {
+	for (var i = 0; i< loadStepOne.length;i++) {
+		_loadMax += $(loadStepOne[i]+" [data-src]").length;
+	}
+	// console.log(_loadMax);
+	for (var i = 0; i< loadStepOne.length;i++) {
+		$(loadStepOne[i]+" [data-src]").each(function(){
+			var img = new Image();
+			img.onload = function(){
+				_loadNum++;
+				// console.log(parseInt(_loadNum/_loadMax*100));
+				$("#loading-text").text(parseInt(_loadNum/_loadMax*100));
+				if (_loadNum>=_loadMax) {
+					loadEnd()
+				}
+			}
+			img.src = $(this).attr("data-src");
+			$(this).after(img);
+			$(this).remove();
+		})
+	}
+}
+function loadEnd() {
+	console.log("load end")
+	$(".loading").addClass("fadeOut animated");
+	setTimeout(function(){
+		$(".loading").remove()
+	},500)
+}
+function loadStep(nums) {
+	if ($("#part"+nums+" [data-src]").length <= 0) {
+		return false;
+	}
+	$("#part"+nums+" [data-src]").each(function(){
+		var img = new Image();
+		img.src = $(this).attr("data-src");
+		$(this).after(img);
+		$(this).remove();
+	})
+}
