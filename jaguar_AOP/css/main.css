@@ -98,8 +98,8 @@ img{ width: 100%; }
 #videoD0{position: absolute;top: 0;left: 0;}
 
 /*第 2 部分*/
-#p12a{position: absolute;top: 0;}
-#p12b{position: absolute;bottom: 0;}
+#p12a{position: absolute;top: 0;font-size: 0;}
+#p12b{position: absolute;bottom: 0;font-size: 0;}
 #p13b{position: absolute;bottom: 0;}
 #p14a{position: absolute;top: 0;}
 #p14b{position: absolute;bottom: 0;}
@@ -114,9 +114,9 @@ img{ width: 100%; }
 #p23a{position: absolute;top: 4%;}
 #p23b{position: absolute;bottom: 0;}
 #p23c{position: absolute;width: 94%;height: 96%;border: 1px solid #888;left: 3%;top: 2%;}
-#p24a{position: absolute;}
-#p25a{position: absolute;bottom: 0;}
-#p26a{position: absolute;bottom: 0;}
+#p24a{position: absolute;font-size: 0;}
+#p25a{position: absolute;bottom: 0;font-size: 0;}
+#p26a{position: absolute;bottom: 0;font-size: 0;}
 
 .popVideo{  /*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝视频弹出框＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 	position: absolute;
@@ -209,6 +209,7 @@ img{ width: 100%; }
 	width: 100%;
 	height: 100%;
 	z-index: -1;
+	background-color: #000;
 }
 
 .Aslider{

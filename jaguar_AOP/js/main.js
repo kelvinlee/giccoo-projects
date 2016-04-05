@@ -242,7 +242,7 @@ $(document).ready(function (){
 });
 
 
-var loadStepOne = [".popUpLayer",".btnBack","#part1","#part2 .page:eq(0)",,"#part3 .page:eq(0)","#part4 .page:eq(0)","#part5 .page:eq(0)"]
+var loadStepOne = [".popUpLayer",".btnBack","#part1","#part2 .page:eq(0)","#part3 .page:eq(0)","#part4 .page:eq(0)","#part5 .page:eq(0)"]
 var _loadNum = 0
 var _loadMax = 0
 function loadStart() {
