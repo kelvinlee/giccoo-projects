@@ -12,6 +12,8 @@ img{ width: 100%; }
 	background-color: #fff;
 }
 .loading p {
+	position: relative;
+	top:45%;
 	text-align: center;
 }
 /* End loading*/

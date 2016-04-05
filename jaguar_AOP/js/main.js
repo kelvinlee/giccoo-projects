@@ -249,7 +249,7 @@ function loadStart() {
 	for (var i = 0; i< loadStepOne.length;i++) {
 		_loadMax += $(loadStepOne[i]+" [data-src]").length;
 	}
-	// console.log(_loadMax);
+	console.log(_loadMax);
 	for (var i = 0; i< loadStepOne.length;i++) {
 		$(loadStepOne[i]+" [data-src]").each(function(){
 			var img = new Image();
@@ -266,6 +266,9 @@ function loadStart() {
 			$(this).remove();
 		})
 	}
+	setTimeout(function(){
+		loadEnd();
+	},500)
 }
 function loadEnd() {
 	console.log("load end")
