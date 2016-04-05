@@ -153,9 +153,9 @@ $(document).ready(function (){
 		};
 		if (pageUpDown!=0) {closePop();};
 		if (nowPage==2) {loadStep(2);};
-		if (nowPage==7) {loadStep(3);};
-		if (nowPage==9) {loadStep(4);};
-		if (nowPage==13) {loadStep(5);};
+		if (nowPage==7) {loadStep(3);loadStep(2);};
+		if (nowPage==9) {loadStep(4);loadStep(3);};
+		if (nowPage==13) {loadStep(5);loadStep(4);};
 	}
 	//＝＝＝＝＝＝导航
 	$("#btn11").click(function (){
