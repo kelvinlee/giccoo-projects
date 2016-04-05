@@ -231,6 +231,7 @@ $(document).ready(function (){
 		$(".popUpLayer").css('display','none');
 		for (var i = 0; i < videoA.length ; i++) {
 			$(videoA[i]).css('display','none');
+			$(videoA[i]+" video")[0].pause();
 		};
 		for (var i = 0; i < textA.length ; i++) {
 			$(textA[i]).css('display','none');
