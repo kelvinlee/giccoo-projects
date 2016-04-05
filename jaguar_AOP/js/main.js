@@ -107,14 +107,21 @@ $(document).ready(function (){
 	function moveTouch(event){
 		var nowY=event.touches[0].clientY;
 		event.preventDefault();
-		if (nowY-startY>80&&nowPage!=0&&nowPage!=2&&nowPage!=7&&nowPage!=9&&nowPage!=13) {
+		// if (nowY-startY>80&&nowPage!=0&&nowPage!=2&&nowPage!=7&&nowPage!=9&&nowPage!=13) {
+		// 	pageUpDown=1
+		// }else if (nowY-startY< -80&&nowPage!=1&&nowPage!=6&&nowPage!=8&&nowPage!=12&&nowPage!=17) {
+		// 	pageUpDown=-1
+		// }else{
+		// 	pageUpDown=0
+		// };
+		
+		if (nowY-startY>80&&nowPage!=0) {
 			pageUpDown=1
-		}else if (nowY-startY< -80&&nowPage!=1&&nowPage!=6&&nowPage!=8&&nowPage!=12&&nowPage!=17) {
+		}else if (nowY-startY< -80&&nowPage!=17) {
 			pageUpDown=-1
 		}else{
 			pageUpDown=0
 		};
-		
 	}
 	function endTouch(event){
 		// event.preventDefault();
@@ -145,7 +152,10 @@ $(document).ready(function (){
 			if (i==nowPage) {$(pageA[i]).addClass('show');};
 		};
 		if (pageUpDown!=0) {closePop();};
-		 
+		if (nowPage==2) {loadStep(2);};
+		if (nowPage==7) {loadStep(3);};
+		if (nowPage==9) {loadStep(4);};
+		if (nowPage==13) {loadStep(5);};
 	}
 	//＝＝＝＝＝＝导航
 	$("#btn11").click(function (){
