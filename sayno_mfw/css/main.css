@@ -1,0 +1,71 @@
+*{margin: 0;padding: 0;}
+html,body{width:100%;height: 100%;position: relative;overflow:hidden;}
+img{ width: 100%; }
+
+.bg{position: absolute;width: 100%;height: 100%;}
+.logo{position: absolute;width: 100%;top: 0;}
+.bottomDiv{position: absolute;width: 100%;bottom: 0;}
+.title1{position: absolute;width: 100%;top: 20%;
+-webkit-transform:translate3d(0,-50%,0);
+		transform:translate3d(0,-50%,0);
+}
+.title2{position: absolute;width: 100%;top: 50%;
+-webkit-transform:translate3d(0,-50%,0);
+		transform:translate3d(0,-50%,0);
+}
+#rule{
+	position: absolute;width: 100%;height: 100%;
+}
+#rulebg{
+	background-color: #000;
+	opacity: .5;
+}
+#rule1{
+	position: absolute;
+	width:82.8%; 
+	height: 3.6%;
+	bottom: 86.5%;
+	left:8.6%;
+	background-color: #fff;
+	opacity: .9;
+}
+#rule2{
+	position: absolute;
+	width:100%; 
+	left:0%;
+	top: 13.5%;
+	z-index: 1;
+}
+#rule3{
+	position: absolute;
+	width:82.8%; 
+	height: 79.5%;
+	bottom: 7%;
+	left:8.6%;
+	background-color: #fff;
+	opacity: .9;
+}
+#rule3t{
+	position: absolute;
+	width: 83.4%;
+	left: 8.3%;
+	top: 8%;
+	height: 88%;
+	border-bottom: 2px solid #01b4e5;
+	overflow: scroll;
+	overflow-scrolling: touch;
+	-webkit-overflow-scrolling: touch;
+}
+#closeBtn{
+	width:auto;
+	height: 100%;
+	float: right;
+}
+.picPart{
+	position: absolute;
+	background-color: #fff;
+	width: 75%;
+	left: 12.5%;
+	height: 61.6%;
+	top: 14.4%;
+}
