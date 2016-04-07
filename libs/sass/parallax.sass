@@ -1,0 +1,48 @@
+.pages
+	+show
+	+h(100%)
+	+wh(100%,100%)
+	+overhide
+	+posr
+	.page
+		+wh(100%,100%)
+		+tran
+		// +bc(rgba(0,0,0,0.7))
+		+posa
+		+tl
+		+hide
+		.next-point
+			+wh(20px,30px)
+			+posa
+			+bl(2%,50%)
+			margin-left: -10px
+			z-index: 99
+			+box
+			font-size: 0
+			span
+				+wh(20px,10px)
+				+show-inline
+				+animation(Flash,2s,ease,infinite)
+				margin-bottom: -2px
+				+b("http://disk.giccoo.com/projects/libs/img/arrow-next.png",no-repeat,center,center,cover)
+				&:nth-child(n+1)
+					animation-delay: 1*100ms
+				&:nth-child(n+2)
+					animation-delay: 3*100ms
+				&:nth-child(n+3)
+					animation-delay: 5*100ms
+
+		&.first
+			+show
+		h1,h2
+			+m
+		&.riot-up-active,&.riot-down-active
+			+transform(translate3d(0,0,0))
+		&.riot-up-leave
+			+transform(translate3d(0,-100%,0))
+		&.riot-up
+			+transform(translate3d(0,100%,0))
+		&.riot-down-leave
+			+transform(translate3d(0,100%,0))
+		&.riot-down
+			+transform(translate3d(0,-100%,0))

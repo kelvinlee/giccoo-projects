@@ -1,0 +1,84 @@
+extends ../libs/jade/layout-clean
+block title
+	| 益达
+
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://disk.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css")
+
+block content
+	- url = "."
+	parallax.pages
+		.logo
+			img(src="#{url}/img/logo.png")
+		.slogen
+			img(src="#{url}/img/slogen.png")
+		.page.kv.kv1.first(up="kv2")
+			.box
+				.image
+					img(src="#{url}/img/kv-1.jpg")
+				.kv-title
+					img(src="#{url}/img/kv-title-1.png")
+			.title
+				img(src="#{url}/img/title.png")
+			.next-point
+		.page.kv.kv2(down="kv1",up="homepage")
+			.box
+				.image
+					img(src="#{url}/img/kv-2.jpg")
+				.kv-title
+					img(src="#{url}/img/kv-title-2.png")
+			.title
+				img(src="#{url}/img/title.png")
+			.next-point
+		.page.homepage
+			ctrl-image
+				span Logo
+
+block js
+	- url = "/"
+	//- script(src="/libs/js/min/localforage.min.js")
+	//- script(src="#{url}libs/js/pixi.dev.js",type="text/javascript")
+	script.
+		var userInfo = {name:"kelvin",avatar:"http://lksjdflk.com"};
+		var oldContent = null;
+		var shareDefault =  {
+			title: '益达',
+			text: '益达约吃吗?',
+			url: 'http://api.giccoo.com/momo/',
+			pic: 'http://chatst.immomo.com/webim/09/01/09016D25-8F82-434D-97C3-BD774F6E1C6A_L.jpg',
+		}
+		var shareOneConfig = {
+			app: 'momo_feed',
+			title: shareDefault.title,
+			text: shareDefault.text,
+			url: shareDefault.url,
+			pic: shareDefault.pic,
+			confirm_tail:'1',
+			resource: {
+					icon: shareDefault.pic,
+					link: shareDefault.url,
+					title: shareDefault.title,
+					desc: shareDefault.text,
+					ignore_pic:1
+			},
+			callback: ''
+		}
+	script(src="//cdnst.immomo.com/momofes/js/mobile/momo_bridge.2.0.4.min.js")
+	script(src="#{url}libs/js/min/riot.min.js")
+	script(src="#{url}libs/js/min/Zepto.min.js")
+	//- script(src="/libs/js/min/cityData-min.js")
+	script(src="#{url}libs/js/min/layzr.min.js")
+	script(src="js/tags.js")
+	script(src="js/main.js")
+
+	//- script.
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?97647f9cd8b3ab0dea00394d1c3ed3aa";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>益达</title>
+    <meta name="author" content="m.giccoo.com">
+    <link rel="stylesheet" href="http://disk.giccoo.com/projects/libs/css/animate.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="css/base.css">
+  </head>
+  <body>
+    <parallax class="pages">
+      <div class="logo"><img src="./img/logo.png"></div>
+      <div class="slogen"><img src="./img/slogen.png"></div>
+      <div up="kv2" class="page kv kv1 first">
+        <div class="box">
+          <div class="image"><img src="./img/kv-1.jpg"></div>
+          <div class="kv-title"><img src="./img/kv-title-1.png"></div>
+        </div>
+        <div class="title"><img src="./img/title.png"></div>
+        <div class="next-point"></div>
+      </div>
+      <div down="kv1" up="homepage" class="page kv kv2">
+        <div class="box">
+          <div class="image"><img src="./img/kv-2.jpg"></div>
+          <div class="kv-title"><img src="./img/kv-title-2.png"></div>
+        </div>
+        <div class="title"><img src="./img/title.png"></div>
+        <div class="next-point"></div>
+      </div>
+      <div class="page homepage">
+        <ctrl-image><span>Logo</span></ctrl-image>
+      </div>
+    </parallax>
+    <script>
+      var userInfo = {name:"kelvin",avatar:"http://lksjdflk.com"};
+      var oldContent = null;
+      var shareDefault =  {
+      	title: '益达',
+      	text: '益达约吃吗?',
+      	url: 'http://api.giccoo.com/momo/',
+      	pic: 'http://chatst.immomo.com/webim/09/01/09016D25-8F82-434D-97C3-BD774F6E1C6A_L.jpg',
+      }
+      var shareOneConfig = {
+      	app: 'momo_feed',
+      	title: shareDefault.title,
+      	text: shareDefault.text,
+      	url: shareDefault.url,
+      	pic: shareDefault.pic,
+      	confirm_tail:'1',
+      	resource: {
+      			icon: shareDefault.pic,
+      			link: shareDefault.url,
+      			title: shareDefault.title,
+      			desc: shareDefault.text,
+      			ignore_pic:1
+      	},
+      	callback: ''
+      }
+    </script>
+    <script src="//cdnst.immomo.com/momofes/js/mobile/momo_bridge.2.0.4.min.js"></script>
+    <script src="/libs/js/min/riot.min.js"></script>
+    <script src="/libs/js/min/Zepto.min.js"></script>
+    <script src="/libs/js/min/layzr.min.js"></script>
+    <script src="js/tags.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
