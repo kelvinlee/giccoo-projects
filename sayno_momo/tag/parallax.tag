@@ -22,8 +22,7 @@ parallax
 				Store.nowPage = self.nowPage
 
 			# if ($(".page",this.root).length < 2 ) { _store.can = true }
-			if not _store.can 
-				return false
+			return false unless _store.can
 			console.log("start")
 			touch = evt.touches[0]
 			this.defaultPoint.x = touch.pageX
@@ -33,8 +32,7 @@ parallax
 		
 		# touch move
 		this.move = (evt)->
-			if not _store.can 
-				return false
+			return false unless _store.can
 			touch = evt.touches[0]
 			gone = this.defaultPoint.y - touch.pageY
 			# if (gone > 5 || gone < -5) {
@@ -54,11 +52,19 @@ parallax
 		
 		# touch end
 		this.end = (e)->
+			return false unless _store.can
+			console.log $(this.nowPage),$(this.nowPage).attr("up") is null
+			if $(this.nowPage).attr("up") is null and $(this.nowPage).attr("down") is null
+				console.log "remove event"
+				_store.can = false
+				self.root.removeEventListener("touchstart",self.start)
+				self.root.removeEventListener("touchmove",self.move)
+				self.root.removeEventListener("touchend",self.end)
 		allClass = "riot-up riot-up-active riot-up-leave riot-down riot-down-active riot-down-leave riot-left riot-left-active  riot-left-leave riot-right riot-right-active  riot-right-leave"
 		# 传递页面
 		this.passpage = (direction)->
 			select = $(this.nowPage).attr(direction)
-			# console.log(direction,select,typeof select)
+			console.log(direction,select,typeof select)
 			if select
 				# riot.route("/"+select)
 				self.animate(select)

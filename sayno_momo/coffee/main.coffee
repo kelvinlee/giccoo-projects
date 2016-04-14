@@ -13,7 +13,15 @@ cdn = ""
 isMM = false
 # cdn = "http://disk.giccoo.com/projects/Yili-Eat-World/" unless debug
 global = {}
+link = "http://api.giccoo.com"
 
+defaultWords = [
+	"谁说素颜不能当女神？"
+	"谁说90后=非主流？"
+	"谁说旅行晒照是种病？"
+	"谁说美食不该手机先吃？"
+]
+INDEX = parseInt(Math.random()*defaultWords.length)
 
 window.onload = ->
 	# $("#loading").hide()
@@ -23,7 +31,18 @@ window.onload = ->
 	# 	return false
 	riot.mount("*")
 
-	
+	$("#title").on "keyup", ->
+		if $("#title").val().length > 0
+			$("#title").next().hide()
+		else
+			$("#title").next().show()
+	$("#title").on "change", ->
+		if $("#title").val().length > 0
+			$("#title").next().hide()
+		else
+			$("#title").next().show()
+
+	# $("#submit").on "click", uploadImage
 	# ep = $(".load-progress .n")
 	# tm = setInterval ->
 	# 		if parseInt(ep.html()) >= 96
@@ -44,19 +63,33 @@ window.onload = ->
 	# 	$(".share-wechat").show()
 
 	# # alert window.location.href
-	# $.get 'http://api.giccoo.com/momo/config', {url: window.location.href}, (resp)->
-	# 	config = resp
-	# 	console.log "back config:",config
-	# 	mm.invoke 'initConfig', config, (resq)->
-	# 		# alert window.location.href
-	# 		# alert resq
-	# 		console.log resq
-	# 		isMM = true
-	# 		UpdateShare()
-	# 		Store.build && Store.build.updateFrom()
+	$.get 'http://api.giccoo.com/sayno/momo/config', {url: window.location.href}, (resp)->
+		config = resp
+		console.log "back config:",config
+		mm.invoke 'initConfig', config, (resq)->
+			# alert window.location.href
+			# alert resq
+			console.log "init Config momo:",resq
+			shareDefault.title = defaultWords[INDEX] + shareDefault.title
+			isMM = true
+			UpdateShare()
+			# Store.build && Store.build.updateFrom()
 
 selectFiles = ->
 	console.log(this)
+	self = this
+	# data =  ""
+	# self.passImage 'data:image/jpeg;base64,' + data
+	# self.passImage "http://localhost:5757/sayno/img/add-image.jpg"
+	# return false
+	mm.invoke 'readImage', {
+		'id': 'image'
+		'method': 0
+		'type': 'base64'
+	}, (id, data, size, type) ->
+		# document.getElementById(id).src = 'data:image/jpeg;base64,' + data
+		self.passImage 'data:image/jpeg;base64,' + data
+		return
 
 hideShareWechat = ->
 	# console.log "close"
@@ -87,6 +120,121 @@ loadStart = ->
 					$("#loading").hide()
 				,1000
 
+sending = false
+uploadImage = (next)->
+	if sending
+		return SendNote "正在提交请稍后"
+	data = {}
+	data.image = global.canvas.getContent()
+	unless data.image
+		return SendNote "请先选择照片"
+	data.message = $("#title").val()
+	data.nickname = userInfo.name
+	data.avatar = userInfo.avatar
+
+	createFullImage = (callback)->
+		canvas = document.createElement("canvas")
+		canvas.width = 480
+		canvas.height = 680
+		canvas.className = "testCanvas"
+		ctx = canvas.getContext "2d"
+		ctx.fillStyle = "#ffffff"
+		ctx.fillRect(0,0,480,680)
+		times = 0
+		loadAll = ->
+			console.log times
+			# return false
+			if times >= 4
+				data.image = canvas.toDataURL("image/png")
+				callback()
+				# console.log "callback"
+			else
+				times++
+
+		image = new Image()
+		image.onload = ->
+			ctx.drawImage(image, 25, 25, 430, 430)
+			ctx.font = "16px bold Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self"
+			ctx.lineWidth = 2
+			ctx.textAlign = "right"
+			ctx.strokeStyle = "#000000"
+			ctx.strokeText("@"+data.nickname, 435, 435, 430)
+			ctx.fillStyle = "#ffffff"
+			ctx.fillText("@"+data.nickname, 435, 435, 430)
+			loadAll()
+		image.src = data.image
+
+		logo = new Image()
+		logo.onload = ->
+			ctx.drawImage(logo, 35, 35, 120, 30)
+			loadAll()
+		logo.src = "/sayno/img/logo-mark.png"
+
+		title = new Image()
+		title.onload = ->
+			height = 40
+			ctx.drawImage(title, 25, 430+height, title.width, title.height)
+			ctx.beginPath()
+			ctx.lineWidth = 2
+			ctx.moveTo(25,430+height+10+title.height)
+			ctx.lineTo(270,430+height+10+title.height)
+			ctx.stroke()
+			loadAll()
+		title.src = "/sayno/img/build-title.png"
+
+		slogen = new Image()
+		slogen.onload = ->
+			ctx.drawImage(slogen, 480-slogen.width-25, 680-slogen.height-25, slogen.width, slogen.height)
+			loadAll()
+		slogen.src = "/sayno/img/image-slogen.png"
+
+		input = new Image()
+		input.onload = ->
+			height = 40+35+15
+			console.log data.message,data.message is ""
+			if data.message is "" or not data.message?
+				ctx.drawImage(input, 25, 430+height, input.width, 35)
+			else
+				ctx.textAlign = "left"
+				ctx.font = "22px bold Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self"
+				ctx.fillStyle = "#000000"
+				ctx.fillText(data.message, 25, 430+height-10+input.height)
+
+			ctx.beginPath()
+			ctx.lineWidth = 2
+			ctx.moveTo(25,430+height+5+35)
+			ctx.lineTo(270,430+height+5+35)
+			ctx.stroke()
+			loadAll()
+		input.src = "/sayno/img/build-title-bg-"+(INDEX+1)+".png"
+		# $("body").append canvas
+		return 
+
+	sending = true
+	opendWaiting()
+	createFullImage ->
+		# return false
+		if data.message is "" or not data.message?
+			data.message = defaultWords[INDEX]
+		else
+			data.message = "谁说"+data.message
+		$.post link+"/sayno/momo/create",data, (msg)->
+			sending = false
+			if msg.recode is 200
+				# alert "Success"
+				# showShare()
+				next(msg)
+			else
+				SendNote msg.reason
+			closeWaiting()
+
+# 显示上传等待界面.
+opendWaiting = ->
+	Loader "upload","正在上传中请稍后","ball"
+# 关闭上传等待.
+closeWaiting = ->
+	Loader "upload"
+
 # loadOther = ->
 # 	layzr = new Layzr
 # 		selector: '[data-src]'
@@ -94,6 +242,12 @@ loadStart = ->
 SendNote = (msg,time = 3000)->
 	$("body").append("<note title='"+msg+"' time='#{time}'></note>")
 	riot.mount("note")
+_loader = {}
+Loader = (id,title = "",type = "ball",time = 0,more = null)->
+	if $("#"+id).length > 0
+		return _loader[id].loadend()
+	$("body").append("<loader id='"+id+"' title='"+title+"' type='"+type+"' time='#{time}'>#{more}</loader>")
+	riot.mount("loader")
 
 
 share = {
@@ -122,7 +276,7 @@ UpdateShare = ->
 				url: shareDefault.url,
 				pic: shareDefault.pic,
 				token:	'87d9yxBlJPJ0Enw2urLSr%2F09le0CT0Jw6Pjl1yZI7dTq',
-				callback: '',
+				callback: 'shareEnd',
 				apps: ['momo_feed', 'momo_contacts'],
 				configs: {
 					momo_feed: {
@@ -182,8 +336,8 @@ shareCall = ->
 		url: shareDefault.url,
 		pic: shareDefault.pic,
 		token:	'87d9yxBlJPJ0Enw2urLSr%2F09le0CT0Jw6Pjl1yZI7dTq',
-		callback: '',
-		apps: ['momo_feed', 'momo_contacts', 'weixin', 'weixin_friend'],
+		callback: 'shareEnd',
+		apps: ['momo_feed', 'momo_contacts'],
 		configs: {
 			momo_feed: {
 				title: shareDefault.title,
@@ -204,8 +358,17 @@ shareCall = ->
 		}
 	})
 
+UpdateShareContent = (title = null,text = null,url = null,pic = null)->
+	shareDefault.title = title if title?
+	shareDefault.text = text if text?
+	shareDefault.url = url if url?
+	shareDefault.pic = pic if pic?
+	UpdateShare()
 
-
+shareEnd = (msg)->
+	# alert "share back:"+msg.status
+	# if msg.status is 0
+	global.homepage.openShare() if global.homepage?
 
 # $_GET = do ->
 # 	url = window.document.location.href.toString()

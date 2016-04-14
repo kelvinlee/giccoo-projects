@@ -1,18 +1,24 @@
 @import sass/base
 @import ../../libs/sass/loading
 @import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
 
-$debug : true
-$cdn : "../"
+
+$debug : false
+$cdn : "http://localhost:5757/sayno_momo/"
 @if not $debug
-	$cdn : "http://disk.giccoo.com/projects/yida/"
+	$cdn : "http://disk.giccoo.com/projects/sayno_momo/"
 
 +keyframes(leftmove)
 	0%
 		+transform(translate3d(0%,0,0))
 	100%
 		+transform(translate3d(-100%,0,0))
-
++keyframes(showline)
+	0%
+		+w(0)
+	100%
+		+w(96%)
 
 // animation, delay, duration
 @for $i from 1 through 30
@@ -205,35 +211,341 @@ body
 			// +bc(#000)
 
 .pages
-	.logo,.slogen
+	.logo
 		+posa
 		+tl
-		z-index: 99
+		+w(80%)
+	.slogen
+		+posa
+		+tr
+		+w(80%)
+		// z-index: 99
 	.kv
 		.box
 			+w(80%)
 			+bc(#fff)
 			+m
-			margin-top: 20%
+			margin-top: 18%
 			.iphone4 &
 				+w(60%)
+				margin-top: 18%
 			.image
 				+w(90%)
 				+m
 				padding-top: 5%
 			.kv-title
-				+w(40%)
+				+w(50%)
 				margin-right: 5%
 				margin-left: auto
 				+p(5% 0 15% 0)
+		.box-left
+			+posa
+			+tl(0,-20%)
+			+transform(rotate(-20deg) scale(0.8))
+			opacity: 0.5
+			z-index: -1
+		.box-right
+			+posa
+			+tr(0,-20%)
+			+transform(rotate(20deg) scale(0.8))
+			opacity: 0.5
+			z-index: -1
+
 		.title
 			+m(2% auto)
 			.iphone4 &
 				+m(2% 10%)
-
+		.btns
+			margin-top: 5%
+			+text-center
+			.item
+				+w(40%)
+				+show-inline
+				+m
+				+p
+				+text-center
+				p
+					+font-size(0.6rem)
+					color: #ffffff
+					+m(0.1rem auto)
+				.btn
+					+w(90%)
+					+show-inline
 	.page
 		.next-point
-			+b("../img/next-point.png",no-repeat,center,center,cover)
+			+b($cdn+"img/next-point.png",no-repeat,center,center,cover)
 			+w(10%)
 
+	.page.homepage
+		.build
+			+w(70%)
+			+bc(#fff)
+			+m
+			+posr
+			margin-top: 18%
+			.iphone4 &
+				+w(60%)
+				margin-top: 18%
+			.ctrl-image
+				+posr
+				+w(90%)
+				+m(5%)
+				+show-inline
+				.image-input
+					+b($cdn+"img/add-image.jpg",no-repeat,center,center,cover)
+				.logo
+					+w(30%)
+					+tl(3%,3%)
+					z-index: 102
+				.icon.icon-restart
+					+posa
+					+tr(3%,3%)
+					+wh(1rem,1rem)
+					z-index: 101
+					+b($cdn+"img/restart.png",no-repeat,center,center,cover)
+				.mask-note
+					+posa
+					+tl
+					+w
+					+h
+					z-index: 10
+					+b($cdn+"img/mask-note.png",no-repeat,center,center,cover)
+			.title
+				+w(50%)
+				margin-left: 5%
+				.line
+					border-bottom: solid 2px #000
+					// padding-bottom: 0.2rem
+				.input
+					+posr
+					input
+						border: none
+						box-shadow: none
+						outline: none
+						color: #000
+						font-weight: bold
+						z-index: 2
+						+p(0.1rem)
+						+font-size(1rem)
+						+posr
+						+w
+						+bc(transparent)
+					.bg
+						+posa
+						+tl
+						+w
+						z-index: 1
+			.image-slogen
+				+w(70%)
+				+m(0 5% 0 auto)
+				+p(5% 0)
+		.submit
+			+w(50%)
+			+m
+			margin-top: 5%
+			.iphone4 &
+				+w(40%)
+		.share-box
+			+posr
+			margin-top: 2%
+			.iphone4 &
+				+w(80%)
+				+m
+				margin-top: 2%
+			.btn
+				+posa
+				+w(30%)
+				+transform(translate3d(-50%,0,0))
+			.btn-share
+				+tl(15%,50%)
+			.btn-others
+				+bl(15%,50%)
+
+		.other-page
+			z-index: 105
+			.other-box
+				+posa
+				+tl(50%,10%)
+				+w(80%)
+				+transform(translate3d(0,-50%,0))
+				+bc(#ffffff)
+				+overhide
+				.close
+					+posa
+					+tr(0.2rem,0.2rem)
+					+w(1.4rem)
+					z-index: 99
+				.line
+					+w(80%)
+					+font-size(0.8rem)
+					+text-center
+					+m
+					border-top: solid 2px #747474
+					color: #747474
+					line-height: 2em
+				.slide
+					+box
+					+p(0.5rem 10%)
+					white-space: normal
+					li
+						+w(50%)
+						+p(0.5rem 0)
+						+show-inline
+						font-size: 0
+						+text-left
+						&:nth-child(even)
+							+text-right
+						img
+							+w(80%)
+							border: solid 2px #747474
+							border-radius: 0.5rem
+							+overhide
+		.share-success
+			z-index: 105
+			h2 
+				color: #ffffff
+				+text-center
+				+font-size(1.6rem)
+				margin-top: 40%
+				line-height: 2em
+			.line
+				+w(94%)
+				border-top: solid 2px #01b4e5
+				animation-delay: 800ms
+				+m
+				+animation(showline,1s,ease)
+			.btn-lottery
+				+w(40%)
+				+m
+				margin-top: 5%
+		.lottery-faild,.lottery-success
+			z-index: 109
+			.content
+				+posa
+				+tl(50%,5%)
+				+w(90%)
+				+bc(#fff)
+				+transform(translate3d(0,-50%,0))
+			.body
+				+box
+				+p(5%)
+				p
+					+text-center
+					+font-size(0.8rem)
+					color: #747474
+				.form-group
+					+w
+					+m(0.4rem 0)
+					input
+						+w
+						+bc(#f0f0f0)
+						+p(0.3rem)
+						+box
+						border: solid 1px #b5b5b5
+						color: #000
+				.btn
+					+w(40%)
+					+m
+			.footer
+				+wh(100%,1.4rem)
+				border-top: solid 2px #01b4e5
+		.show-page,.build-page
+			+posa
+			+tl
+			+w
+			+h
+		.show-page
+			.bg
+				+posa
+				+tl(32%)
+				+w
+				z-index: -1
+			.text-1
+				+posa
+				+tl(20%,0)
+				+w
+			.text-2
+				+posa
+				+tl(32%,0)
+				+w
+			.start
+				+posa
+				+bl(20%,0)
+				+w
+			.active
+				+posa
+				+bl(15%,0)
+				+w
+			.active
+				+text-center
+				+font-size(0.8rem)
+				text-decoration: underline
+				color: #01b4e5
+		.active-info
+			z-index: 1106
+			.title
+				+posa
+				+tl(15%)
+				+w(100%)
+				+font-size(1.2rem)
+				+bc(#01b4e5)
+				+text-center
+				z-index: 10
+				line-height: 1.6em
+				color: #3f3f3f
+			.close
+				+posa
+				+tr(11%,6%)
+				z-index: 11199
+				+w(7%)
+			.content
+				+posa
+				+tl(10%,5%)
+				+w(90%)
+				+h(80%)
+				+bc(rgba(255,255,255,0.9))
+				+box
+				z-index: 9
+				padding-top: 22%
+				color: #3f3f3f
+				.content-text
+					+h(90%)
+					+touch
+				p
+					+w(90%)
+					+m
+					+font-size(0.8rem)
+		.image-info
+			z-index: 111
+			.close
+				+posa
+				+tr(11%,11%)
+				z-index: 11199
+				+w(7%)
+			.content
+				+posa
+				+tl(10%,10%)
+				+w(80%)
+
+.pop
+	+posa
+	+tl
+	+w
+	+h
+	+bc(rgba(0,0,0,0.7))
+
+.loader
+	.more
+		+posa
+		+tl(60%,50%)
+		+w(35%)
+		margin-left: -35%/2
+
+
+
+.testCanvas
+	+posa
+	+tl(5%,5%)
+	+w(90%)
+	z-index: 10000
 

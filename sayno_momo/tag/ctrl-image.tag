@@ -2,16 +2,17 @@ ctrl-image
 	.image-content#previewImage
 		canvas#imageCtrl(width="{width}",height="{height}")
 		//- canvas-ctrl(parent="#previewImage canvas")
-		.image-input(show="{!uploaded}",onclick="{selectImage}")
+		.image-input(show="{!uploaded && !stop}",onclick="{selectImage}")
 			input#imageInput(if="{!_selectImage}" type="file",onchange="{changeImage}")
-		.icon.icon-restart(show="{uploaded}",onclick="{restart}")
-		.mask-note(show="{noted}",onclick="{hideNote}")
+		.icon.icon-restart(show="{uploaded && !stop}",onclick="{restart}")
+		.mask-note.fadeIn.animated(show="{noted}",onclick="{hideNote}")
 	<yield></yield>
 	script(type="text/coffeescript").
 		# Core: jquery
 		self = this
 		this.width = if opts.width? then opts.width else 640
 		this.height = if opts.height? then opts.height else 640
+		this.stop = false
 		this._selectImage = false
 		this.uploaded = false
 		this.noted = false
@@ -36,7 +37,7 @@ ctrl-image
 
 		this._selectImage = opts.selectimage if opts.selectimage?
 		$(self.root).addClass "ctrl-image"
-		global.canvas = this
+		global.canvas = self unless global.canvas?
 		createObjectURLfun = (file)->
 			if (window.webkitURL? || window.navigator.userAgent.indexOf("Chrome") >= 1 || window.navigator.userAgent.indexOf("Safari") >= 1) 
 				return window.webkitURL.createObjectURL(file)
@@ -143,12 +144,14 @@ ctrl-image
 			self.uploaded = true
 			self.noted = true
 			self.update()
+			console.log self.uploaded
 			self.target = document.getElementById("imageCtrl")
-			document.getElementById("imageCtrl").addEventListener("touchstart",self.start.bind(this))
-			document.getElementById("imageCtrl").addEventListener("touchmove",self.move.bind(this))
-			document.getElementById("imageCtrl").addEventListener("touchend",self.end.bind(this))
+			document.getElementById("imageCtrl").addEventListener("touchstart",self.start.bind(self))
+			document.getElementById("imageCtrl").addEventListener("touchmove",self.move.bind(self))
+			document.getElementById("imageCtrl").addEventListener("touchend",self.end.bind(self))
 			setTimeout ->
 				self.hideNote()
+				console.log self.uploaded
 			,2000
 		this.hideNote = ->
 			self.noted = false
@@ -167,10 +170,16 @@ ctrl-image
 				return canvas.toDataURL("image/png")
 			else
 				return false
-		
+		this.stopCtrl = ->
+			@stop = true
+			@noted = false
+			@update()
+
+
 		# 对 canvas 操作
 		this.start = (evt)->
-			console.log(evt)
+			# console.log(evt)
+			return false if @stop
 			touch = evt.touches
 			defaultType = touch.length
 			for i in [0...touch.length]
@@ -180,6 +189,7 @@ ctrl-image
 			# console.log(self.target.toDataURL("image/png"))
 		
 		this.move = (evt)->
+			return false if @stop
 			touch = evt.touches
 			ctx = self.target.getContext("2d")
 			evt.preventDefault()
@@ -219,6 +229,7 @@ ctrl-image
 				# rotation
 		
 		this.end = (evt)->
+			return false if @stop
 			touch = evt.touches
 			defaultType = touch.length
 			# for (var i = 0 ; i < touch.length ; i++)

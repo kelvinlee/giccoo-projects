@@ -1,6 +1,6 @@
 extends ../libs/jade/layout-clean
 block title
-	| 益达
+	| 荣耀
 
 
 block css
@@ -9,7 +9,24 @@ block css
 	link(rel="stylesheet",href="css/base.css")
 
 block content
-	- url = "."
+	- url = "http://image.giccoo.com/projects/sayno_momo"
+	//- .pages
+		.logo
+			img(src="#{url}/img/logo.png")
+		.slogen
+			img(src="#{url}/img/slogen.png")
+		.page.kv.first
+			.box
+				img(src="http://image.giccoo.com/sayno/momo/1460346661862-9463.png")
+			.btns
+				.item
+					p 已经有12345人发表「异见」
+					a.btn.btn-join(href="http://api.giccoo.com/sayno/momo/")
+						img(src="#{url}/img/btn-join.png")
+				.item
+					p 荣耀7i 发布会正在进行
+					a.btn.btn-focus(href="http://api.giccoo.com/sayno/momo/")
+						img(src="#{url}/img/btn-focus.png")
 	parallax.pages
 		.logo
 			img(src="#{url}/img/logo.png")
@@ -17,6 +34,16 @@ block content
 			img(src="#{url}/img/slogen.png")
 		.page.kv.kv1.first(up="kv2")
 			.box
+				.image
+					img(src="#{url}/img/kv-1.jpg")
+				.kv-title
+					img(src="#{url}/img/kv-title-1.png")
+			.box.box-left
+				.image
+					img(src="#{url}/img/kv-1.jpg")
+				.kv-title
+					img(src="#{url}/img/kv-title-1.png")
+			.box.box-right
 				.image
 					img(src="#{url}/img/kv-1.jpg")
 				.kv-title
@@ -30,12 +57,22 @@ block content
 					img(src="#{url}/img/kv-2.jpg")
 				.kv-title
 					img(src="#{url}/img/kv-title-2.png")
+			.box.box-left
+				.image
+					img(src="#{url}/img/kv-2.jpg")
+				.kv-title
+					img(src="#{url}/img/kv-title-2.png")
+			.box.box-right
+				.image
+					img(src="#{url}/img/kv-2.jpg")
+				.kv-title
+					img(src="#{url}/img/kv-title-2.png")
 			.title
 				img(src="#{url}/img/title.png")
 			.next-point
 		.page.homepage
-			ctrl-image
-				span Logo
+			homepage
+
 
 block js
 	- url = "/"
@@ -64,7 +101,7 @@ block js
 					desc: shareDefault.text,
 					ignore_pic:1
 			},
-			callback: ''
+			callback: 'shareEnd'
 		}
 	script(src="//cdnst.immomo.com/momofes/js/mobile/momo_bridge.2.0.4.min.js")
 	script(src="#{url}libs/js/min/riot.min.js")
