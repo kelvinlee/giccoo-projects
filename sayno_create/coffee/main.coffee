@@ -21,7 +21,9 @@ defaultWords = [
 	"谁说旅行晒照是种病？"
 	"谁说美食不该手机先吃？"
 ]
-INDEX = parseInt(Math.random()*defaultWords.length)
+global.INDEX = 1
+namelist = []
+
 
 window.onload = ->
 	# $("#loading").hide()
@@ -70,7 +72,7 @@ window.onload = ->
 			# alert window.location.href
 			# alert resq
 			console.log "init Config momo:",resq
-			shareDefault.title = defaultWords[INDEX] + shareDefault.title
+			shareDefault.title = defaultWords[global.INDEX] + shareDefault.title
 			isMM = true
 			UpdateShare()
 			# Store.build && Store.build.updateFrom()
@@ -168,7 +170,7 @@ uploadImage = (next)->
 		logo.onload = ->
 			ctx.drawImage(logo, 35, 35, 120*1.2, 30*1.2)
 			loadAll()
-		logo.src = "/sayno/img/logo-mark.png"
+		logo.src = "./img/logo-mark.png"
 
 		title = new Image()
 		title.onload = ->
@@ -180,13 +182,13 @@ uploadImage = (next)->
 			ctx.lineTo(270,430+height+10+title.height)
 			ctx.stroke()
 			loadAll()
-		title.src = "/sayno/img/build-title.png"
+		title.src = "./img/build-title.png"
 
 		slogen = new Image()
 		slogen.onload = ->
 			ctx.drawImage(slogen, 480-slogen.width-25, 680-slogen.height-25, slogen.width, slogen.height)
 			loadAll()
-		slogen.src = "/sayno/img/image-slogen.png"
+		slogen.src = "./img/image-slogen.png"
 
 		input = new Image()
 		input.onload = ->
@@ -206,7 +208,7 @@ uploadImage = (next)->
 			ctx.lineTo(270,430+height+5+35)
 			ctx.stroke()
 			loadAll()
-		input.src = "/sayno/img/build-title-bg-"+(INDEX+1)+".png"
+		input.src = "./img/build-title-bg-"+(global.INDEX+1)+".png"
 		# $("body").append canvas
 		return 
 
@@ -215,15 +217,17 @@ uploadImage = (next)->
 	createFullImage ->
 		# return false
 		if data.message is "" or not data.message?
-			data.message = defaultWords[INDEX]
+			data.message = defaultWords[global.INDEX]
 		else
 			data.message = "谁说"+data.message
-		$.post link+"/sayno/momo/create",data, (msg)->
+		$.post link+"/sayno/build/create",data, (msg)->
 			sending = false
 			if msg.recode is 200
 				# alert "Success"
 				# showShare()
-				next(msg)
+				setTimeout ->
+					next(msg)
+				,520
 			else
 				SendNote msg.reason
 			closeWaiting()

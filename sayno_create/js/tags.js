@@ -1,5 +1,5 @@
 
-riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas id="imageCtrl" width="{width}" height="{height}"></canvas> <div show="{!uploaded &amp;&amp; !stop}" onclick="{selectImage}" class="image-input"> <input id="imageInput" if="{!_selectImage}" type="file" onchange="{changeImage}"> </div> <div show="{uploaded &amp;&amp; !stop}" onclick="{restart}" class="icon icon-restart"></div> <div show="{noted}" onclick="{hideNote}" class="mask-note fadeIn animated"></div> </div><yield></yield>', '', '', function(opts) {
+riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas id="imageCtrl" width="{width}" height="{height}"></canvas> <div show="{!uploaded &amp;&amp; !stop}" onclick="{selectImage}" class="image-input"> <input id="imageInput" if="{!_selectImage}" type="file" multiple="multiple" onchange="{changeImage}"> </div> <div show="{uploaded &amp;&amp; !stop}" onclick="{restart}" class="icon icon-restart"></div> <div show="{noted}" onclick="{hideNote}" class="mask-note fadeIn animated"></div> </div><yield></yield>', '', '', function(opts) {
 var createObjectURLfun, defaultOrin, defaultType, logOrin, logSize, self;
 
 self = this;
@@ -19,6 +19,10 @@ this.noted = false;
 this.image = null;
 
 this.info = null;
+
+this.max = 0;
+
+this.now = 0;
 
 this.frame = {
   x: 0,
@@ -88,7 +92,21 @@ this.selectImage = function(evt) {
 this.changeImage = function(evt) {
   var blob, img;
   img = document.getElementById("imageInput");
+  console.log(img.files.length);
+  self.max = img.files.length;
+  self.now = 0;
   blob = createObjectURLfun(img.files[0]);
+  return self.passImage(blob);
+};
+
+this.nextImage = function() {
+  var blob, img;
+  self.now++;
+  if (self.now >= self.max) {
+    return false;
+  }
+  img = document.getElementById("imageInput");
+  blob = createObjectURLfun(img.files[self.now]);
   return self.passImage(blob);
 };
 
@@ -176,10 +194,7 @@ this.init = function() {
   document.getElementById("imageCtrl").addEventListener("touchstart", self.start.bind(self));
   document.getElementById("imageCtrl").addEventListener("touchmove", self.move.bind(self));
   document.getElementById("imageCtrl").addEventListener("touchend", self.end.bind(self));
-  return setTimeout(function() {
-    self.hideNote();
-    return console.log(self.uploaded);
-  }, 2000);
+  return opts.send(self);
 };
 
 this.hideNote = function() {
@@ -294,16 +309,16 @@ this.end = function(evt) {
 };
 }, '{ }');
 
-riot.tag2('homepage', '<div show="{!buildpage}" class="show-page"> <div class="bg flipInY animated delay-7"><img src="http://image.giccoo.com/projects/sayno/img/homepage-bg.png"></div> <div class="text-1 fadeInDown animated delay-5"><img src="http://image.giccoo.com/projects/sayno/img/homepage-text-1.png"></div> <div class="text-2 bounceIn animated delay-9"><img src="http://image.giccoo.com/projects/sayno/img/homepage-text-2.png"></div> <div onclick="{start}" class="start fadeInUp animated delay-11"><img src="http://image.giccoo.com/projects/sayno/img/homepage-start.png"></div> <div onclick="{showActive}" class="active fadeInUp animated delay-12">活动细则</div> </div> <div show="{buildpage}" class="build-page fadeIn animated"> <div class="build"> <ctrl-image selectimage="selectFiles"> <div class="logo"><img src="http://image.giccoo.com/projects/sayno/img/logo-mark.png"></div> </ctrl-image> <div class="title"> <div class="line normal"><img src="http://image.giccoo.com/projects/sayno/img/build-title.png"></div> <div class="line input"> <input id="title" type="text" name="title"> <div class="bg"><img riot-src="http://image.giccoo.com/projects/sayno/img/build-title-bg-{INDEX}.png"></div> <div class="noteText fadeInRight animated">< 点击修改</div> </div> </div> <div class="image-slogen"><img src="http://image.giccoo.com/projects/sayno/img/image-slogen.png"></div> </div> <div id="submit" show="{!submited}" onclick="{submit}" class="submit"><img src="http://image.giccoo.com/projects/sayno/img/submit.png"></div> <div show="{submited}" class="share-box"> <div class="bg"><img src="http://image.giccoo.com/projects/sayno/img/phone.png?v=1"></div> <div onclick="{share}" class="btn btn-share"><img src="http://image.giccoo.com/projects/sayno/img/btn-share.png"></div> <div onclick="{showOthers}" class="btn btn-others"><img src="http://image.giccoo.com/projects/sayno/img/btn-others.png"></div> </div> </div> <div show="{sharedsuccess}" class="pop share-success fadeIn animated"> <h2>分享成功!</h2> <div class="line"></div> <div onclick="{postLottery}" class="btn btn-lottery"><img src="http://image.giccoo.com/projects/sayno/img/btn-lottery.png"></div> </div> <div show="{otherspage}" class="pop other-page fadeIn animated"> <div class="other-box"> <div onclick="{closeOther}" class="close"><img src="http://image.giccoo.com/projects/sayno/img/btn-close.png"></div> <slider callback="{sliderEnd}"> <ul each="{items in parent.lists}" class="slide"> <li each="{item in items}" onclick="{parent.parent.parent.showInfo}" rel="http://image.giccoo.com/sayno/momo/{item.src}@!large"><img riot-src="http://image.giccoo.com/sayno/momo/small-{item.src}@!medium"></li> </ul> </slider> <div class="line">向左滑动换一批》</div> </div> </div> <div show="{lotteryfaild}" class="pop lottery-faild fadeIn animated"> <div class="content"> <div class="title"><img src="http://image.giccoo.com/projects/sayno/img/lottery-faild-title.jpg"></div> <div class="body"> <p>但是你还有机会继续抽奖<br>赢取荣耀7i手机！</p> <div class="product"><img src="http://image.giccoo.com/projects/sayno/img/phone.jpg?v=1"></div> <div onclick="{restart}" class="btn btn-goback"><img src="http://image.giccoo.com/projects/sayno/img/btn-goback.jpg"></div> </div> <div class="footer"></div> </div> </div> <div show="{lotterysuccess}" class="pop lottery-success fadeIn animated"> <div class="content"> <div class="title"><img src="http://image.giccoo.com/projects/sayno/img/lottery-success-title.png"></div> <div class="body"> <div show="{submitsuccess}" class="success-note"> <p>提交成功,请耐心等待奖品.</p> <div onclick="{restart}" class="btn btn-goback"><img src="http://image.giccoo.com/projects/sayno/img/btn-goback.jpg"></div> </div> <form name="register" show="{!submitsuccess}" class="form"> <div class="form-group"> <input id="name" type="text" name="name" placeholder="请输入用户名"> </div> <div class="form-group"> <input id="mobile" type="text" name="mobile" placeholder="请输入手机号"> </div> <div class="form-group"> <input id="adr" type="text" name="adr" placeholder="请输入联系地址"> </div> <div onclick="{submitLottery}" class="btn btn-submit"><img src="http://image.giccoo.com/projects/sayno/img/btn-submit.jpg"></div> </form> </div> <div class="footer"></div> </div> </div> <div show="{activeinfo}" class="pop active-info fadeIn animated"> <div class="title">活动形式</div> <div onclick="{closeactive}" class="close"><img src="http://image.giccoo.com/projects/sayno/img/btn-close.png"></div> <div class="content"> <div class="content-text"> <p>活动形式：</p> <p>1)发表「异见」上传图片</p> <p>2)发布作品之后分享给好友或者到附近动态，即可参与抽奖，奖品包含：</p> <p>- 荣耀自拍杆</p> <p>- 荣耀7i手机</p> <p>*每次发布作品之后分享可进行一次抽奖</p> <p>*获得奖品并在2个小时内未填写联系方式则视为放弃奖品</p> <p>*如发现参与者恶意上传重复作品或者与主题无关作品，将在未进行通知情况下取消其获奖资格</p> <p></p> <p>活动时间：</p> <p>2016年4月15日至2016年5月12日24:00止</p> <p>本次活动主办方为华为终端（东莞）有限公司</p> <p>·本次活动产生的全部资料、照片等所有权及知识产权均属主办方所有</p> <p>·参与者如出现下列任一情况的，主办方有权在不予通知情况下屏蔽其作品</p> <p>1)内容违法或唆使违法、唆使虐待及自残等行为的动机</p> <p>2)内容带有歧视、涉及政治、宗教等</p> <p>3)内容扰乱社会公共秩序</p> <p>4)侵犯他人或机构的著作权、专利权或商标权等相关知识产权</p> <p>5)侵犯他人肖像权或隐私</p> <p>6)损害他人名誉、信用，导致他人不快等内容</p> <p>·活动参与用户承诺参赛作品内容健康、拥有参赛作品的完整版权、著作权、及其他合法权利，保证不侵犯任何第三方合法权利；</p> <p>·活动参与用户承诺遵守中华人民共和国相关法律法规，不得发表上传反动、色情、暴力、恐怖等任何形式的违法信息。对于违反国家法律、法规的作品，或是主办方认为有违反公共秩序、社会风气的作品，将被取消参赛资格。</p> <p>·活动参与用户上传照片及文字侵犯第三人合法权利或违反相关法律的，由活动参与用户承担所有责任，并赔偿华为因此遭受的所有损失。</p> </div> </div> </div> <div show="{imageInfo}" class="pop image-info fadeIn animated"> <div onclick="{closeInfo}" class="close"><img src="http://image.giccoo.com/projects/sayno/img/btn-close.png"></div> <div class="content"><img riot-src="{imagelarge}"></div> </div>', '', '', function(opts) {
+riot.tag2('homepage', '<div show="{!buildpage}" class="show-page"> <div class="bg flipInY animated delay-7"><img src="http://image.giccoo.com/projects/sayno/img/homepage-bg.png"></div> <div class="text-1 fadeInDown animated delay-5"><img src="http://image.giccoo.com/projects/sayno/img/homepage-text-1.png"></div> <div class="text-2 bounceIn animated delay-9"><img src="http://image.giccoo.com/projects/sayno/img/homepage-text-2.png"></div> <div onclick="{start}" class="start fadeInUp animated delay-11"><img src="http://image.giccoo.com/projects/sayno/img/homepage-start.png"></div> <div onclick="{showActive}" class="active fadeInUp animated delay-12">活动细则</div> </div> <div show="{buildpage}" class="build-page fadeIn animated"> <div class="build"> <ctrl-image send="{sendImage}"> <div class="logo"><img src="http://image.giccoo.com/projects/sayno/img/logo-mark.png"></div> </ctrl-image> <div class="title"> <div class="line input"> <input id="title" type="text" name="title"> <div class="bg"><img riot-src="http://image.giccoo.com/projects/sayno/img/build-title-bg-{INDEX}.png"></div> </div> </div> <div class="image-slogen"><img src="http://image.giccoo.com/projects/sayno/img/image-slogen.png"></div> </div> <div class="form-group"> <select id="index"> <option value="0">谁说素颜不能当女神？</option> <option value="1">谁说90后=非主流？</option> <option value="2">谁说旅行晒照是种病？</option> <option value="3">谁说美食不该手机先吃？</option> </select> </div> <div class="form-group"> <textarea id="names"></textarea> </div> <div show="{submited}" class="share-box"> <div class="bg"><img src="http://image.giccoo.com/projects/sayno/img/phone.png"></div> <div onclick="{share}" class="btn btn-share"><img src="http://image.giccoo.com/projects/sayno/img/btn-share.png"></div> <div onclick="{showOthers}" class="btn btn-others"><img src="http://image.giccoo.com/projects/sayno/img/btn-others.png"></div> </div> </div> <div show="{sharedsuccess}" class="pop share-success fadeIn animated"> <h2>分享成功!</h2> <div class="line"></div> <div onclick="{postLottery}" class="btn btn-lottery"><img src="http://image.giccoo.com/projects/sayno/img/btn-lottery.png"></div> </div> <div show="{otherspage}" class="pop other-page fadeIn animated"> <div class="other-box"> <div onclick="{closeOther}" class="close"><img src="http://image.giccoo.com/projects/sayno/img/btn-close.png"></div> <slider callback="{sliderEnd}"> <ul each="{items in parent.lists}" class="slide"> <li each="{item in items}" onclick="{parent.parent.parent.showInfo}" rel="http://image.giccoo.com/sayno/momo/{item.src}@!large"><img riot-src="http://image.giccoo.com/sayno/momo/small-{item.src}@!medium"></li> </ul> </slider> <div class="line">向左滑动换一批》</div> </div> </div> <div show="{lotteryfaild}" class="pop lottery-faild fadeIn animated"> <div class="content"> <div class="title"><img src="http://image.giccoo.com/projects/sayno/img/lottery-faild-title.jpg"></div> <div class="body"> <p>但是你还有机会继续抽奖</p> <div class="product"><img src="http://image.giccoo.com/projects/sayno/img/phone.jpg"></div> <div onclick="{restart}" class="btn btn-goback"><img src="http://image.giccoo.com/projects/sayno/img/btn-goback.jpg"></div> </div> <div class="footer"></div> </div> </div> <div show="{lotterysuccess}" class="pop lottery-success fadeIn animated"> <div class="content"> <div class="title"><img src="http://image.giccoo.com/projects/sayno/img/lottery-success-title.png"></div> <div class="body"> <div show="{submitsuccess}" class="success-note"> <p>提交成功,请耐心等待奖品.</p> <div onclick="{restart}" class="btn btn-goback"><img src="http://image.giccoo.com/projects/sayno/img/btn-goback.jpg"></div> </div> <form name="register" show="{!submitsuccess}" class="form"> <div class="form-group"> <input id="name" type="text" name="name" placeholder="请输入用户名"> </div> <div class="form-group"> <input id="mobile" type="text" name="mobile" placeholder="请输入手机号"> </div> <div class="form-group"> <input id="adr" type="text" name="adr" placeholder="请输入联系地址"> </div> <div onclick="{submitLottery}" class="btn btn-submit"><img src="http://image.giccoo.com/projects/sayno/img/btn-submit.jpg"></div> </form> </div> <div class="footer"></div> </div> </div> <div show="{activeinfo}" class="pop active-info fadeIn animated"> <div class="title">活动形式</div> <div onclick="{closeactive}" class="close"><img src="http://image.giccoo.com/projects/sayno/img/btn-close.png"></div> <div class="content"> <div class="content-text"> <p>活动形式：</p> <p>1)发表「异见」上传图片</p> <p>2)发布作品之后分享给好友或者到附近动态，即可参与抽奖，奖品包含：</p> <p>- 荣耀自拍杆</p> <p>- 荣耀7i手机</p> <p>*每次发布作品之后分享可进行一次抽奖</p> <p>*如发现参与者恶意上传重复作品或者与主题无关作品，将在未进行通知情况下取消其获奖资格</p> <p></p> <p>活动时间：</p> <p>2016年4月15日至2016年5月10日24:00止</p> <p>·本次活动主办方为华为终端(东莞)有限公司</p> <p>·本次活动产生的全部资料、照片等所有权及知识产权均属主办方所有</p> <p>·参与者如违反下列任一情况的，主办方有权在不予通知情况下屏蔽其作品</p> <p>1)内容违法或唆使违法、唆使虐待及自残等行为的动机</p> <p>2)内容不得带有歧视、不得涉及政治、宗教等</p> <p>3)内容不得扰乱社会公共秩序</p> <p>4)不侵犯他人或机构的著作权、专利权或商标权等相关知识产权</p> <p>5)不侵犯他人肖像权或隐私</p> <p>6)不损害他人名誉、信用，无导致他人不快等内容</p> </div> </div> </div> <div show="{imageInfo}" class="pop image-info fadeIn animated"> <div onclick="{closeInfo}" class="close"><img src="http://image.giccoo.com/projects/sayno/img/btn-close.png"></div> <div class="content"><img riot-src="{imagelarge}"></div> </div>', '', '', function(opts) {
 var Number, _first, self;
 
 self = this;
 
 self.data = {};
 
-this.INDEX = INDEX + 1;
+this.INDEX = global.INDEX + 1;
 
-this.buildpage = false;
+this.buildpage = true;
 
 this.activeinfo = false;
 
@@ -325,8 +340,6 @@ this.imageInfo = false;
 
 this.posting = false;
 
-this.submiting = false;
-
 this.lists = [[], []];
 
 if (global.canvas == null) {
@@ -340,7 +353,7 @@ _first = false;
 this.sliderEnd = function(num) {
   var type;
   console.log(num, Number, Number >= 1, !_first);
-  if (Number >= 1 && !_first && Math.abs(num) >= 1) {
+  if (Number >= 1 && !_first) {
     _first = true;
     Loader("moreImage", "努力加载中，需要一些时间，不如发表一张作品后再来？", type = "ball", 0, "<a href='http://api.giccoo.com/sayno/momo/' class='more'><img src='http://image.giccoo.com/projects/sayno_momo/img/btn-more.png' /></a>");
   }
@@ -362,7 +375,7 @@ this.start = function() {
   this.buildpage = true;
   return setTimeout(function() {
     return $(".noteText", this.root).remove();
-  }, 3000);
+  }, 1500);
 };
 
 this.showActive = function() {
@@ -373,24 +386,25 @@ this.closeactive = function() {
   return this.activeinfo = false;
 };
 
-this.submit = function() {
-  if (self.submiting) {
-    return SendNote("上传中请稍后");
+this.sendImage = function(ctrl) {
+  var namelist;
+  console.log("a", ctrl.now);
+  self.ctrl = ctrl;
+  global.INDEX = parseInt($("#index").val());
+  namelist = $("#names").val().split("\n");
+  if (namelist.length !== ctrl.max) {
+    return SendNote("昵称与图片数量不匹配");
   }
-  self.submiting = true;
-  self.update();
+  userInfo.name = namelist[ctrl.now];
+  return self.submit();
+};
+
+this.submit = function() {
   return uploadImage(function(msg) {
-    var text;
     self.data = msg;
-    self.submiting = false;
     self.showShare();
     self.tags["ctrl-image"].stopCtrl();
-    $("#title", self.root).attr("readonly", "true");
-    text = null;
-    if ($("#title", self.root).val().length > 0) {
-      text = "谁说" + $("#title", self.root).val() + " 我有异见！";
-    }
-    return UpdateShareContent(text, null, "http://api.giccoo.com/sayno/momo/?id=" + self.data.obj.insertId, "http://image.giccoo.com/sayno/momo/small-" + self.data.image);
+    return self.ctrl.nextImage();
   });
 };
 
@@ -720,8 +734,6 @@ this.y = 0;
 
 slider = $(".slider", this.root);
 
-this.moved = false;
-
 this.setNumber = function(i) {
   self.duration = 0;
   self.x = -($(".slider", self.root).width() * i);
@@ -730,15 +742,12 @@ this.setNumber = function(i) {
 
 this.setSlideNumber = function(offset) {
   var round, slideNumber;
-  console.log(offset);
-  if (this.moved) {
-    round = offset ? (this.offset.deltaX < 0 ? "ceil" : "floor") : "round";
-    slideNumber = Math[round](this.x / (this.offset.scrollableArea / slider.find(".slide").length));
-    slideNumber += offset;
-    slideNumber = Math.min(slideNumber, 0);
-    this.slideNumber = Math.max(-(slider.find(".slide").length - 1), slideNumber);
-    return opts.callback && opts.callback(this.slideNumber);
-  }
+  round = offset ? (this.offset.deltaX < 0 ? "ceil" : "floor") : "round";
+  slideNumber = Math[round](this.x / (this.offset.scrollableArea / slider.find(".slide").length));
+  slideNumber += offset;
+  slideNumber = Math.min(slideNumber, 0);
+  this.slideNumber = Math.max(-(slider.find(".slide").length - 1), slideNumber);
+  return opts.callback && opts.callback(this.slideNumber);
 };
 
 this.touchstart = function(evt) {
@@ -746,7 +755,6 @@ this.touchstart = function(evt) {
   touch = evt.touches[0];
   slider = $(".slider", this.root);
   this.duration = 0;
-  this.moved = false;
   this.startTime = +new Date();
   this.offset.w = slider.width();
   this.offset.x = touch.pageX;
@@ -772,7 +780,6 @@ this.touchmove = function(evt) {
   this.x = this.offset.deltaX / this.offset.resistance + this.offset.lastw;
   this.offset.resistance = this.slideNumber === 0 && this.offset.deltaX > 0 ? pageX / this.offset.w + 1.25 : (this.slideNumber === this.offset.lastSlide && this.offset.deltaX < 0 ? (this.offset.w - Math.abs(pageX)) / this.offset.w + 1.25 : 1);
   evt.preventDefault();
-  this.moved = true;
   return this.update();
 };
 
@@ -780,14 +787,10 @@ this.touchend = function(evt) {
   if (this.offset.isScrolling) {
     return "";
   }
-  console.log(this.moved);
-  if (this.moved) {
-    this.setSlideNumber(+(new Date) - this.startTime < 1000 && Math.abs(this.offset.deltaX) > 15 ? (this.offset.deltaX < 0 ? -1 : 1) : 0);
-    this.x = this.slideNumber * this.offset.w;
-    this.duration = 0.2;
-    this.update();
-  }
-  return this.moved = false;
+  this.setSlideNumber(+(new Date) - this.startTime < 1000 && Math.abs(this.offset.deltaX) > 15 ? (this.offset.deltaX < 0 ? -1 : 1) : 0);
+  this.x = this.slideNumber * this.offset.w;
+  this.duration = 0.2;
+  return this.update();
 };
 
 this.on("mount", function() {

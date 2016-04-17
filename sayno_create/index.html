@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>荣耀</title>
+    <meta name="author" content="m.giccoo.com">
+    <link rel="stylesheet" href="http://disk.giccoo.com/projects/libs/css/animate.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="css/base.css">
+  </head>
+  <body>
+    <parallax class="pages">
+      <div class="page homepage first">
+        <homepage></homepage>
+      </div>
+    </parallax>
+    <script>
+      var userInfo = {name:"kelvin",avatar:"http://noavatar.com"};
+      var oldContent = null;
+      var shareDefault =  {
+      	title: '益达',
+      	text: '益达约吃吗?',
+      	url: 'http://api.giccoo.com/momo/',
+      	pic: 'http://chatst.immomo.com/webim/09/01/09016D25-8F82-434D-97C3-BD774F6E1C6A_L.jpg',
+      }
+      var shareOneConfig = {
+      	app: 'momo_feed',
+      	title: shareDefault.title,
+      	text: shareDefault.text,
+      	url: shareDefault.url,
+      	pic: shareDefault.pic,
+      	confirm_tail:'1',
+      	resource: {
+      			icon: shareDefault.pic,
+      			link: shareDefault.url,
+      			title: shareDefault.title,
+      			desc: shareDefault.text,
+      			ignore_pic:1
+      	},
+      	callback: 'shareEnd'
+      }
+    </script>
+    <script src="//cdnst.immomo.com/momofes/js/mobile/momo_bridge.2.0.4.min.js"></script>
+    <script src="/libs/js/min/riot.min.js"></script>
+    <script src="/libs/js/min/Zepto.min.js"></script>
+    <script src="/libs/js/min/layzr.min.js"></script>
+    <script src="js/tags.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

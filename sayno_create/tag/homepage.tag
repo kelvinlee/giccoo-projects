@@ -13,24 +13,27 @@ homepage
 		.active.fadeInUp.animated.delay-12(onclick="{showActive}") 活动细则
 	.build-page.fadeIn.animated(show="{buildpage}")
 		.build
-			ctrl-image(selectimage="selectFiles")
+			ctrl-image(send="{sendImage}")
 				.logo
 					img(src="#{url}/img/logo-mark.png")
 			.title
-				.line.normal
-					img(src="#{url}/img/build-title.png")
 				.line.input
 					input#title(type="text",name="title")
 					.bg
 						img(src="#{url}/img/build-title-bg-{INDEX}.png")
-					.noteText.fadeInRight.animated < 点击修改
 			.image-slogen
 				img(src="#{url}/img/image-slogen.png")
-		.submit#submit(show="{!submited}",onclick="{submit}")
-			img(src="#{url}/img/submit.png")
+		.form-group
+			select#index
+				option(value="0") 谁说素颜不能当女神？
+				option(value="1") 谁说90后=非主流？
+				option(value="2") 谁说旅行晒照是种病？
+				option(value="3") 谁说美食不该手机先吃？
+		.form-group
+			textarea#names
 		.share-box(show="{submited}")
 			.bg
-				img(src="#{url}/img/phone.png?v=1")
+				img(src="#{url}/img/phone.png")
 			.btn.btn-share(onclick="{share}")
 				img(src="#{url}/img/btn-share.png")
 			.btn.btn-others(onclick="{showOthers}")
@@ -55,10 +58,8 @@ homepage
 				img(src="#{url}/img/lottery-faild-title.jpg")
 			.body
 				p 但是你还有机会继续抽奖
-					br
-					| 赢取荣耀7i手机！
 				.product
-					img(src="#{url}/img/phone.jpg?v=1")
+					img(src="#{url}/img/phone.jpg")
 				.btn.btn-goback(onclick="{restart}")
 					img(src="#{url}/img/btn-goback.jpg")
 			.footer
@@ -95,23 +96,19 @@ homepage
 				p - 荣耀自拍杆
 				p - 荣耀7i手机
 				p *每次发布作品之后分享可进行一次抽奖
-				p *获得奖品并在2个小时内未填写联系方式则视为放弃奖品
 				p *如发现参与者恶意上传重复作品或者与主题无关作品，将在未进行通知情况下取消其获奖资格
 				p
 				p 活动时间：
-				p 2016年4月15日至2016年5月12日24:00止
-				p 本次活动主办方为华为终端（东莞）有限公司
+				p 2016年4月15日至2016年5月10日24:00止
+				p ·本次活动主办方为华为终端(东莞)有限公司
 				p ·本次活动产生的全部资料、照片等所有权及知识产权均属主办方所有
-				p ·参与者如出现下列任一情况的，主办方有权在不予通知情况下屏蔽其作品
+				p ·参与者如违反下列任一情况的，主办方有权在不予通知情况下屏蔽其作品
 				p 1)内容违法或唆使违法、唆使虐待及自残等行为的动机
-				p 2)内容带有歧视、涉及政治、宗教等
-				p 3)内容扰乱社会公共秩序
-				p 4)侵犯他人或机构的著作权、专利权或商标权等相关知识产权
-				p 5)侵犯他人肖像权或隐私
-				p 6)损害他人名誉、信用，导致他人不快等内容
-				p ·活动参与用户承诺参赛作品内容健康、拥有参赛作品的完整版权、著作权、及其他合法权利，保证不侵犯任何第三方合法权利；
-				p ·活动参与用户承诺遵守中华人民共和国相关法律法规，不得发表上传反动、色情、暴力、恐怖等任何形式的违法信息。对于违反国家法律、法规的作品，或是主办方认为有违反公共秩序、社会风气的作品，将被取消参赛资格。
-				p ·活动参与用户上传照片及文字侵犯第三人合法权利或违反相关法律的，由活动参与用户承担所有责任，并赔偿华为因此遭受的所有损失。
+				p 2)内容不得带有歧视、不得涉及政治、宗教等
+				p 3)内容不得扰乱社会公共秩序
+				p 4)不侵犯他人或机构的著作权、专利权或商标权等相关知识产权
+				p 5)不侵犯他人肖像权或隐私
+				p 6)不损害他人名誉、信用，无导致他人不快等内容
 	.pop.image-info.fadeIn.animated(show="{imageInfo}")
 		.close(onclick="{closeInfo}")
 			img(src="#{url}/img/btn-close.png")
@@ -121,8 +118,8 @@ homepage
 	script(type="text/coffeescript").
 		self = this
 		self.data = {}
-		this.INDEX = INDEX+1
-		this.buildpage = false
+		this.INDEX = global.INDEX+1
+		this.buildpage = true
 		this.activeinfo = false
 		this.submited = false
 		this.sharedsuccess = false
@@ -133,7 +130,6 @@ homepage
 		this.imagelarge = ""
 		this.imageInfo = false
 		this.posting = false
-		this.submiting = false
 		this.lists = [[],[]]
 
 		global.homepage = self unless global.canvas?
@@ -142,7 +138,7 @@ homepage
 		_first = false
 		this.sliderEnd = (num)->
 			console.log num, Number, Number >= 1 , not _first
-			if Number >= 1 and not _first and Math.abs(num) >= 1
+			if Number >= 1 and not _first
 				_first = true
 				Loader("moreImage","努力加载中，需要一些时间，不如发表一张作品后再来？",type="ball",0,"<a href='http://api.giccoo.com/sayno/momo/' class='more'><img src='http://image.giccoo.com/projects/sayno_momo/img/btn-more.png' /></a>")
 			Number = Math.abs num
@@ -162,17 +158,22 @@ homepage
 			# @update()
 			setTimeout ->
 				$(".noteText",this.root).remove()
-			,3000
+			,1500
 		this.showActive = ->
 			@activeinfo = true
 		this.closeactive = ->
 			@activeinfo = false
 
+		this.sendImage = (ctrl)->
+			console.log "a",ctrl.now
+			self.ctrl = ctrl
+			global.INDEX = parseInt $("#index").val()
+			namelist = $("#names").val().split("\n")
+			if namelist.length isnt ctrl.max
+				return SendNote "昵称与图片数量不匹配"
+			userInfo.name = namelist[ctrl.now]
+			self.submit()
 		this.submit = ->
-			if self.submiting
-				return SendNote("上传中请稍后")
-			self.submiting = true
-			self.update()
 			# self.showShare()
 			# console.log self.tags["ctrl-image"].stopCtrl()
 			# return false
@@ -180,15 +181,10 @@ homepage
 			uploadImage (msg)->
 				# console.log msg
 				self.data = msg
-				self.submiting = false
 				self.showShare()
 				self.tags["ctrl-image"].stopCtrl()
-				$("#title",self.root).attr("readonly","true")
-				text = null
-				if $("#title",self.root).val().length > 0
-					text = "谁说"+$("#title",self.root).val()+" 我有异见！"
-				# console.log(text,null,"http://api.giccoo.com/sayno/momo/?id="+self.data.obj.insertId,"http://image.giccoo.com/sayno/momo/"+self.data.image)
-				UpdateShareContent(text,null,"http://api.giccoo.com/sayno/momo/?id="+self.data.obj.insertId,"http://image.giccoo.com/sayno/momo/small-"+self.data.image)
+				self.ctrl.nextImage()
+
 
 		this.showShare = ->
 			this.submited = true

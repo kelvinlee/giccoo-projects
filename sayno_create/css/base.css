@@ -1268,7 +1268,7 @@ body {
   background-color: #fff;
   margin: 0 auto;
   position: relative;
-  margin-top: 18%; }
+  margin-top: 2%; }
   .iphone4 .pages .page.homepage .build {
     width: 60%;
     margin-top: 18%; }
@@ -1346,14 +1346,9 @@ body {
       .pages .page.homepage .build .title .input .noteText {
         position: absolute;
         top: 0;
-        right: -70%;
+        right: -60%;
         font-size: 0.8rem;
-        background-color: #01b4e5;
-        overflow: hidden;
-        padding: 0.2rem 0.3rem;
-        color: #fff;
-        border-radius: 0.3rem;
-        border: solid 2px #fff; }
+        color: #333; }
         @media only screen and (min-width: 321px) and (max-width: 399px) {
           .pages .page.homepage .build .title .input .noteText {
             font-size: 0.88rem; } }
@@ -1370,6 +1365,8 @@ body {
     width: 70%;
     margin: 0 5% 0 auto;
     padding: 5% 0; }
+.pages .page.homepage #index {
+  margin: 0 auto; }
 .pages .page.homepage .submit {
   width: 50%;
   margin: 0 auto;
@@ -1378,11 +1375,9 @@ body {
     width: 40%; }
 .pages .page.homepage .share-box {
   position: relative;
-  margin: 0 auto;
-  width: 90%;
   margin-top: 2%; }
   .iphone4 .pages .page.homepage .share-box {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     margin-top: 2%; }
   .pages .page.homepage .share-box .btn {
