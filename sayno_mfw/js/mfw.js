@@ -917,7 +917,7 @@ cdn = "";
 
 isMM = false;
 
-isWechat = true;
+isWechat = false;
 
 global = {};
 
@@ -1014,7 +1014,7 @@ selectFiles = function() {
   return wx.chooseImage({
     count: 1,
     success: function(res) {
-      alert(res);
+      alert(res.localIds);
       return self.passImage(res.localIds);
     }
   });

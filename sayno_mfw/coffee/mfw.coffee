@@ -11,7 +11,7 @@ tm = null
 debug = false
 cdn = ""
 isMM = false
-isWechat = true
+isWechat = false
 # cdn = "http://disk.giccoo.com/projects/Yili-Eat-World/" unless debug
 global = {}
 link = "http://api.giccoo.com"
@@ -118,7 +118,7 @@ selectFiles = ->
 	wx.chooseImage
 		count: 1,
 		success: (res)->
-			alert res
+			alert res.localIds
 			self.passImage res.localIds
 
 		
