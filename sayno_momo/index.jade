@@ -10,6 +10,7 @@ block css
 
 block content
 	- url = "http://image.giccoo.com/projects/sayno_momo"
+	build
 	//- .pages
 		.logo
 			img(src="#{url}/img/logo.png")
@@ -27,7 +28,7 @@ block content
 					p 荣耀7i 发布会正在进行
 					a.btn.btn-focus(href="http://api.giccoo.com/sayno/momo/")
 						img(src="#{url}/img/btn-focus.png")
-	parallax.pages
+	//- parallax.pages
 		.logo
 			img(src="#{url}/img/logo.png")
 		.slogen
@@ -104,12 +105,13 @@ block js
 			callback: 'shareEnd'
 		}
 	script(src="//cdnst.immomo.com/momofes/js/mobile/momo_bridge.2.0.4.min.js")
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
 	script(src="#{url}libs/js/min/riot.min.js")
 	script(src="#{url}libs/js/min/Zepto.min.js")
 	//- script(src="/libs/js/min/cityData-min.js")
 	script(src="#{url}libs/js/min/layzr.min.js")
 	script(src="js/tags.js")
-	script(src="js/main.js")
+	script(src="js/mfw.js")
 
 	//- script.
 		var _hmt = _hmt || [];

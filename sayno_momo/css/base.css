@@ -1263,30 +1263,32 @@ body {
   background-size: cover;
   background-color: transparent;
   width: 10%; }
-.pages .page.homepage .build {
+
+.build {
   width: 70%;
   background-color: #fff;
   margin: 0 auto;
   position: relative;
   margin-top: 18%; }
-  .iphone4 .pages .page.homepage .build {
+  .iphone4 .build {
     width: 60%;
     margin-top: 18%; }
-  .pages .page.homepage .build .ctrl-image {
+  .build .ctrl-image {
     position: relative;
     width: 90%;
     margin: 5%;
     display: inline-block; }
-    .pages .page.homepage .build .ctrl-image .image-input {
+    .build .ctrl-image .image-input {
       background: url("http://disk.giccoo.com/projects/sayno_momo/img/add-image.jpg") no-repeat center center;
       background-size: cover;
       background-color: transparent; }
-    .pages .page.homepage .build .ctrl-image .logo {
+    .build .ctrl-image .logo {
+      position: absolute;
       width: 35%;
       top: 3%;
       left: 3%;
       z-index: 102; }
-    .pages .page.homepage .build .ctrl-image .icon.icon-restart {
+    .build .ctrl-image .icon.icon-restart {
       position: absolute;
       top: 3%;
       right: 3%;
@@ -1296,7 +1298,7 @@ body {
       background: url("http://disk.giccoo.com/projects/sayno_momo/img/restart.png") no-repeat center center;
       background-size: cover;
       background-color: transparent; }
-    .pages .page.homepage .build .ctrl-image .mask-note {
+    .build .ctrl-image .mask-note {
       position: absolute;
       top: 0px;
       left: 0px;
@@ -1306,14 +1308,15 @@ body {
       background: url("http://disk.giccoo.com/projects/sayno_momo/img/mask-note.png") no-repeat center center;
       background-size: cover;
       background-color: transparent; }
-  .pages .page.homepage .build .title {
+  .build .title {
+    position: relative;
     width: 50%;
     margin-left: 5%; }
-    .pages .page.homepage .build .title .line {
+    .build .title .line {
       border-bottom: solid 2px #000; }
-    .pages .page.homepage .build .title .input {
+    .build .title .input {
       position: relative; }
-      .pages .page.homepage .build .title .input input {
+      .build .title .input input {
         border: none;
         box-shadow: none;
         outline: none;
@@ -1326,24 +1329,24 @@ body {
         width: 100%;
         background-color: transparent; }
         @media only screen and (min-width: 321px) and (max-width: 399px) {
-          .pages .page.homepage .build .title .input input {
+          .build .title .input input {
             font-size: 1.1rem; } }
         @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-          .pages .page.homepage .build .title .input input {
+          .build .title .input input {
             font-size: 1.1rem; } }
         @media only screen and (min-width: 399px) and (max-width: 767px) {
-          .pages .page.homepage .build .title .input input {
+          .build .title .input input {
             font-size: 1.2rem; } }
         @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-          .pages .page.homepage .build .title .input input {
+          .build .title .input input {
             font-size: 1.2rem; } }
-      .pages .page.homepage .build .title .input .bg {
+      .build .title .input .bg {
         position: absolute;
         top: 0px;
         left: 0px;
         width: 100%;
         z-index: 1; }
-      .pages .page.homepage .build .title .input .noteText {
+      .build .title .input .noteText {
         position: absolute;
         top: 0;
         right: -70%;
@@ -1355,50 +1358,108 @@ body {
         border-radius: 0.3rem;
         border: solid 2px #fff; }
         @media only screen and (min-width: 321px) and (max-width: 399px) {
-          .pages .page.homepage .build .title .input .noteText {
+          .build .title .input .noteText {
             font-size: 0.88rem; } }
         @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-          .pages .page.homepage .build .title .input .noteText {
+          .build .title .input .noteText {
             font-size: 0.88rem; } }
         @media only screen and (min-width: 399px) and (max-width: 767px) {
-          .pages .page.homepage .build .title .input .noteText {
+          .build .title .input .noteText {
             font-size: 0.96rem; } }
         @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-          .pages .page.homepage .build .title .input .noteText {
+          .build .title .input .noteText {
             font-size: 0.96rem; } }
-  .pages .page.homepage .build .image-slogen {
+    .build .title .select-arrow {
+      position: relative; }
+      .build .title .select-arrow .arrow {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        width: 15%;
+        -webkit-transform: translate3d(0, -50%, 0);
+                transform: translate3d(0, -50%, 0);
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        font-size: 0; }
+        .build .title .select-arrow .arrow.on {
+          -webkit-transform: translate3d(0, -50%, 0) rotate(90deg);
+                  transform: translate3d(0, -50%, 0) rotate(90deg); }
+    .build .title .select img {
+      opacity: 0.7; }
+    .build .title .select-list {
+      position: absolute;
+      top: 45%;
+      left: 0px;
+      padding: 0.2rem;
+      background-color: #f0f0f0;
+      border: solid 1px #000; }
+      .build .title .select-list .option {
+        opacity: 0.7; }
+        .build .title .select-list .option.on {
+          opacity: 1; }
+    .build .title .inputname {
+      position: absolute;
+      top: 0;
+      right: -92%;
+      width: 80%; }
+      .build .title .inputname input {
+        width: 80%;
+        margin: 0 auto;
+        border: none;
+        border-bottom: dashed 2px #000;
+        text-align: center;
+        font-size: 0.8rem;
+        line-height: 1.6em;
+        color: #000; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .build .title .inputname input {
+            font-size: 0.88rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .build .title .inputname input {
+            font-size: 0.88rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .build .title .inputname input {
+            font-size: 0.96rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .build .title .inputname input {
+            font-size: 0.96rem; } }
+  .build .image-slogen {
     width: 70%;
     margin: 0 5% 0 auto;
     padding: 5% 0; }
-.pages .page.homepage .submit {
+
+.submit {
   width: 50%;
   margin: 0 auto;
   margin-top: 5%; }
-  .iphone4 .pages .page.homepage .submit {
+  .iphone4 .submit {
     width: 40%; }
-.pages .page.homepage .share-box {
+
+.share-box {
   position: relative;
   margin: 0 auto;
   width: 90%;
   margin-top: 2%; }
-  .iphone4 .pages .page.homepage .share-box {
+  .iphone4 .share-box {
     width: 70%;
     margin: 0 auto;
     margin-top: 2%; }
-  .pages .page.homepage .share-box .btn {
+  .share-box .btn {
     position: absolute;
     width: 30%;
     -webkit-transform: translate3d(-50%, 0, 0);
             transform: translate3d(-50%, 0, 0); }
-  .pages .page.homepage .share-box .btn-share {
+  .share-box .btn-share {
     top: 15%;
     left: 50%; }
-  .pages .page.homepage .share-box .btn-others {
+  .share-box .btn-others {
     bottom: 15%;
     left: 50%; }
-.pages .page.homepage .other-page {
+
+.other-page {
   z-index: 105; }
-  .pages .page.homepage .other-page .other-box {
+  .other-page .other-box {
     position: absolute;
     top: 50%;
     left: 10%;
@@ -1407,13 +1468,13 @@ body {
             transform: translate3d(0, -50%, 0);
     background-color: #ffffff;
     overflow: hidden; }
-    .pages .page.homepage .other-page .other-box .close {
+    .other-page .other-box .close {
       position: absolute;
       top: 0.2rem;
       right: 0.2rem;
       width: 1.4rem;
       z-index: 99; }
-    .pages .page.homepage .other-page .other-box .line {
+    .other-page .other-box .line {
       width: 80%;
       font-size: 0.8rem;
       text-align: center;
@@ -1422,55 +1483,56 @@ body {
       color: #747474;
       line-height: 2em; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
-        .pages .page.homepage .other-page .other-box .line {
+        .other-page .other-box .line {
           font-size: 0.88rem; } }
       @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-        .pages .page.homepage .other-page .other-box .line {
+        .other-page .other-box .line {
           font-size: 0.88rem; } }
       @media only screen and (min-width: 399px) and (max-width: 767px) {
-        .pages .page.homepage .other-page .other-box .line {
+        .other-page .other-box .line {
           font-size: 0.96rem; } }
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-        .pages .page.homepage .other-page .other-box .line {
+        .other-page .other-box .line {
           font-size: 0.96rem; } }
-    .pages .page.homepage .other-page .other-box .slide {
+    .other-page .other-box .slide {
       box-sizing: border-box;
       padding: 0.5rem 10%;
       white-space: normal; }
-      .pages .page.homepage .other-page .other-box .slide li {
+      .other-page .other-box .slide li {
         width: 50%;
         padding: 0.5rem 0;
         display: inline-block;
         font-size: 0;
         text-align: left; }
-        .pages .page.homepage .other-page .other-box .slide li:nth-child(even) {
+        .other-page .other-box .slide li:nth-child(even) {
           text-align: right; }
-        .pages .page.homepage .other-page .other-box .slide li img {
+        .other-page .other-box .slide li img {
           width: 80%;
           border: solid 2px #747474;
           border-radius: 0.5rem;
           overflow: hidden; }
-.pages .page.homepage .share-success {
+
+.share-success {
   z-index: 105; }
-  .pages .page.homepage .share-success h2 {
+  .share-success h2 {
     color: #ffffff;
     text-align: center;
     font-size: 1.6rem;
     margin-top: 40%;
     line-height: 2em; }
     @media only screen and (min-width: 321px) and (max-width: 399px) {
-      .pages .page.homepage .share-success h2 {
+      .share-success h2 {
         font-size: 1.76rem; } }
     @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-      .pages .page.homepage .share-success h2 {
+      .share-success h2 {
         font-size: 1.76rem; } }
     @media only screen and (min-width: 399px) and (max-width: 767px) {
-      .pages .page.homepage .share-success h2 {
+      .share-success h2 {
         font-size: 1.92rem; } }
     @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-      .pages .page.homepage .share-success h2 {
+      .share-success h2 {
         font-size: 1.92rem; } }
-  .pages .page.homepage .share-success .line {
+  .share-success .line {
     width: 94%;
     border-top: solid 2px #01b4e5;
     -webkit-animation-delay: 800ms;
@@ -1482,13 +1544,14 @@ body {
             animation-fill-mode: both;
     -webkit-animation-iteration-count: initial;
             animation-iteration-count: initial; }
-  .pages .page.homepage .share-success .btn-lottery {
+  .share-success .btn-lottery {
     width: 40%;
     margin: 0 auto;
     margin-top: 5%; }
-.pages .page.homepage .lottery-faild, .pages .page.homepage .lottery-success {
+
+.lottery-faild, .lottery-success {
   z-index: 109; }
-  .pages .page.homepage .lottery-faild .content, .pages .page.homepage .lottery-success .content {
+  .lottery-faild .content, .lottery-success .content {
     position: absolute;
     top: 50%;
     left: 5%;
@@ -1496,99 +1559,102 @@ body {
     background-color: #fff;
     -webkit-transform: translate3d(0, -50%, 0);
             transform: translate3d(0, -50%, 0); }
-    .pages .page.homepage .lottery-faild .content .title, .pages .page.homepage .lottery-success .content .title {
+    .lottery-faild .content .title, .lottery-success .content .title {
       margin-top: -10%; }
-  .pages .page.homepage .lottery-faild .body, .pages .page.homepage .lottery-success .body {
+  .lottery-faild .body, .lottery-success .body {
     box-sizing: border-box;
     padding: 5%; }
-    .pages .page.homepage .lottery-faild .body p, .pages .page.homepage .lottery-success .body p {
+    .lottery-faild .body p, .lottery-success .body p {
       text-align: center;
       font-size: 0.8rem;
       color: #747474; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
-        .pages .page.homepage .lottery-faild .body p, .pages .page.homepage .lottery-success .body p {
+        .lottery-faild .body p, .lottery-success .body p {
           font-size: 0.88rem; } }
       @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-        .pages .page.homepage .lottery-faild .body p, .pages .page.homepage .lottery-success .body p {
+        .lottery-faild .body p, .lottery-success .body p {
           font-size: 0.88rem; } }
       @media only screen and (min-width: 399px) and (max-width: 767px) {
-        .pages .page.homepage .lottery-faild .body p, .pages .page.homepage .lottery-success .body p {
+        .lottery-faild .body p, .lottery-success .body p {
           font-size: 0.96rem; } }
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-        .pages .page.homepage .lottery-faild .body p, .pages .page.homepage .lottery-success .body p {
+        .lottery-faild .body p, .lottery-success .body p {
           font-size: 0.96rem; } }
-    .pages .page.homepage .lottery-faild .body .product, .pages .page.homepage .lottery-success .body .product {
+    .lottery-faild .body .product, .lottery-success .body .product {
       width: 35%;
       margin: 0 auto; }
-    .pages .page.homepage .lottery-faild .body .form-group, .pages .page.homepage .lottery-success .body .form-group {
+    .lottery-faild .body .form-group, .lottery-success .body .form-group {
       width: 100%;
       margin: 0.4rem 0; }
-      .pages .page.homepage .lottery-faild .body .form-group input, .pages .page.homepage .lottery-success .body .form-group input {
+      .lottery-faild .body .form-group input, .lottery-success .body .form-group input {
         width: 100%;
         background-color: #f0f0f0;
         padding: 0.3rem;
         box-sizing: border-box;
         border: solid 1px #b5b5b5;
         color: #000; }
-    .pages .page.homepage .lottery-faild .body .btn, .pages .page.homepage .lottery-success .body .btn {
+    .lottery-faild .body .btn, .lottery-success .body .btn {
       width: 40%;
       margin: 0 auto; }
-  .pages .page.homepage .lottery-faild .footer, .pages .page.homepage .lottery-success .footer {
+  .lottery-faild .footer, .lottery-success .footer {
     width: 100%;
     height: 1.4rem;
     border-top: solid 2px #01b4e5; }
-.pages .page.homepage .show-page, .pages .page.homepage .build-page {
+
+.show-page, .build-page {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
   height: 100%; }
-.pages .page.homepage .show-page .bg {
+
+.show-page .bg {
   position: absolute;
   top: 32%;
   left: 0px;
   width: 100%;
   z-index: -1; }
-.pages .page.homepage .show-page .text-1 {
+.show-page .text-1 {
   position: absolute;
   top: 20%;
   left: 0;
   width: 100%; }
-.pages .page.homepage .show-page .text-2 {
+.show-page .text-2 {
   position: absolute;
   top: 32%;
   left: 0;
   width: 100%; }
-.pages .page.homepage .show-page .start {
+.show-page .start {
   position: absolute;
   bottom: 20%;
   left: 0;
   width: 100%; }
-.pages .page.homepage .show-page .active {
+.show-page .active {
   position: absolute;
   bottom: 15%;
   left: 0;
   width: 100%; }
-.pages .page.homepage .show-page .active {
+.show-page .active {
   text-align: center;
   font-size: 0.8rem;
   text-decoration: underline;
   color: #01b4e5; }
   @media only screen and (min-width: 321px) and (max-width: 399px) {
-    .pages .page.homepage .show-page .active {
+    .show-page .active {
       font-size: 0.88rem; } }
   @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-    .pages .page.homepage .show-page .active {
+    .show-page .active {
       font-size: 0.88rem; } }
   @media only screen and (min-width: 399px) and (max-width: 767px) {
-    .pages .page.homepage .show-page .active {
+    .show-page .active {
       font-size: 0.96rem; } }
   @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-    .pages .page.homepage .show-page .active {
+    .show-page .active {
       font-size: 0.96rem; } }
-.pages .page.homepage .active-info {
+
+.active-info {
   z-index: 1106; }
-  .pages .page.homepage .active-info .title {
+  .active-info .title {
     position: absolute;
     top: 15%;
     left: 0px;
@@ -1600,24 +1666,24 @@ body {
     line-height: 1.6em;
     color: #3f3f3f; }
     @media only screen and (min-width: 321px) and (max-width: 399px) {
-      .pages .page.homepage .active-info .title {
+      .active-info .title {
         font-size: 1.32rem; } }
     @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-      .pages .page.homepage .active-info .title {
+      .active-info .title {
         font-size: 1.32rem; } }
     @media only screen and (min-width: 399px) and (max-width: 767px) {
-      .pages .page.homepage .active-info .title {
+      .active-info .title {
         font-size: 1.44rem; } }
     @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-      .pages .page.homepage .active-info .title {
+      .active-info .title {
         font-size: 1.44rem; } }
-  .pages .page.homepage .active-info .close {
+  .active-info .close {
     position: absolute;
     top: 11%;
     right: 6%;
     z-index: 11199;
     width: 7%; }
-  .pages .page.homepage .active-info .content {
+  .active-info .content {
     position: absolute;
     top: 10%;
     left: 5%;
@@ -1628,36 +1694,37 @@ body {
     z-index: 9;
     padding-top: 22%;
     color: #3f3f3f; }
-    .pages .page.homepage .active-info .content .content-text {
+    .active-info .content .content-text {
       height: 90%;
       overflow: scroll;
       overflow-scrolling: touch;
       -webkit-overflow-scrolling: touch; }
-    .pages .page.homepage .active-info .content p {
+    .active-info .content p {
       width: 90%;
       margin: 0 auto;
       font-size: 0.8rem; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
-        .pages .page.homepage .active-info .content p {
+        .active-info .content p {
           font-size: 0.88rem; } }
       @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-        .pages .page.homepage .active-info .content p {
+        .active-info .content p {
           font-size: 0.88rem; } }
       @media only screen and (min-width: 399px) and (max-width: 767px) {
-        .pages .page.homepage .active-info .content p {
+        .active-info .content p {
           font-size: 0.96rem; } }
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-        .pages .page.homepage .active-info .content p {
+        .active-info .content p {
           font-size: 0.96rem; } }
-.pages .page.homepage .image-info {
+
+.image-info {
   z-index: 111; }
-  .pages .page.homepage .image-info .close {
+  .image-info .close {
     position: absolute;
     top: 11%;
     right: 11%;
     z-index: 11199;
     width: 7%; }
-  .pages .page.homepage .image-info .content {
+  .image-info .content {
     position: absolute;
     top: 10%;
     left: 10%;

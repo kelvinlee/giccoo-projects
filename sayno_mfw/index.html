@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js" prefix="og: http://ogp.me/ns#">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<title>文艺旅照？我有异见!</title>
+
+	<meta property="og:url" content="" />
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta property="og:image" content="" />
+
+	<meta name="author" content="m.giccoo.com">
+	<link rel="stylesheet" href="http://disk.giccoo.com/projects/libs/css/animate.min.css" media="none" onload="if(media!='all')media='all'">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/build.css">
 </head>
 <body>
 <div class="content">
@@ -110,7 +119,7 @@
 
  		<div class="page" id="page2">
  		
- 			<div class="userPic addShadow"></div>
+ 			<div class="userPic addShadow"><build></build></div>
  			<div class="bottomDiv" id="btnUpload"><img src="img/btn_upload.png" width="100%"></div>
  			<div id="shareBtn"><img src="img/share.png" width="100%"></div>
  			<div class="bottomDiv" id="p2btn">
@@ -125,26 +134,26 @@
  			<div class="blackBG"></div>
  			<div class="userPicx12 addShadow" id="pG1">
  				<div class="btnPicClose"><img src="img/p1btnclose.png" width="100%"></div>
- 				<div class="picGroup " >
- 					<div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_1" class="pic_All"></div>
+ 				<div class="picGroup">
+ 					<!-- <div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_1" class="pic_All"></div>
  					<div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_2" class="pic_All"></div>
  					<div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_3" class="pic_All"></div>
  					<div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_4" class="pic_All"></div>
  					<div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_5" class="pic_All"></div>
- 					<div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_6" class="pic_All"></div>
+ 					<div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_6" class="pic_All"></div> -->
  				</div>
  				<div class="picFooter"><img src="img/picfooter.png" width="100%"></div>
  			</div>
 
  			<div class="userPicx12 addShadow" id="pG2">
  				<div class="btnPicClose"><img src="img/p1btnclose.png" width="100%"></div>
- 				<div class="picGroup " >
- 					<div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_7" class="pic_All"></div>
+ 				<div class="picGroup">
+ 					<!-- <div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_7" class="pic_All"></div>
  					<div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_8" class="pic_All"></div>
  					<div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_9" class="pic_All"></div>
  					<div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_10" class="pic_All"></div>
  					<div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_11" class="pic_All"></div>
- 					<div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_12" class="pic_All"></div>
+ 					<div class="Apic"><img src="img/userpic_s.png" width="69%" id="pic_12" class="pic_All"></div> -->
  				</div>
  				<div class="picFooter"><img src="img/picfooter.png" width="100%"></div>
  			</div>
@@ -163,9 +172,22 @@
 <div id="logo"><img src="img/logo1.png" width="100%"></div>
 <div id="bg"><img src="img/bg.jpg" width="100%" height="100%"></div>
 
-
-<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
-<script type="text/javascript" src="js/TweenMax.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+		<script>
+      var userInfo = {name:"kelvin",avatar:"http://no.avatar.com"};
+      var oldContent = null;
+      var shareDefault =  {
+      	title: '',
+      	text: '现在发表「异见」更有机会抽取荣耀手机大奖！',
+      	url: 'http://m.giccoo.com/sayno_mfw/',
+      	pic: 'http://image.giccoo.com/projects/sayno_momo/img/share.jpg'
+      }
+    </script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="/libs/js/min/riot.min.js"></script>
+		<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+		<script type="text/javascript" src="js/TweenMax.min.js"></script>
+		<script type="text/javascript" src="js/tags.js"></script>
+		<script type="text/javascript" src="js/mfw.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

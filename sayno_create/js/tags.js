@@ -392,6 +392,7 @@ this.sendImage = function(ctrl) {
   self.ctrl = ctrl;
   global.INDEX = parseInt($("#index").val());
   namelist = $("#names").val().split("\n");
+  console.log("数量:", namelist.length, ctrl.max);
   if (namelist.length !== ctrl.max) {
     return SendNote("昵称与图片数量不匹配");
   }

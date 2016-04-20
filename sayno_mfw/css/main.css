@@ -35,6 +35,7 @@ li{font-size: 0.8rem;color: #3f3f3f;margin: 0rem 0.1rem 0rem 1rem;line-height: 1
 	top: 50%;
 }
 .bottomDiv{position: absolute;width: 100%;bottom: 0;}
+
 /*规则*/
 #rule{	position: absolute;width: 100%;height: 100%;display: none;}
 #rulebg{	background-color: #000;	opacity: .5;}
@@ -53,13 +54,13 @@ li{font-size: 0.8rem;color: #3f3f3f;margin: 0rem 0.1rem 0rem 1rem;line-height: 1
 	height: 61.37%;
 	background-color: #fff;
 	left: 50%;
-	top:47%;
+	top: 40%;
 	transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);
 }
 #p2btn{
 	position: absolute;
 	width: 100%;
-	bottom: 0;
+	bottom: -5%;
 	display: none;
 }
 #phone{
@@ -114,6 +115,8 @@ li{font-size: 0.8rem;color: #3f3f3f;margin: 0rem 0.1rem 0rem 1rem;line-height: 1
 	border: solid 0.2rem #747474;
 	border-radius: .5rem;
 	-webkit-border-radius: .5rem;
+	overflow: hidden;
+	width: 80%;
 }
 .picFooter{
 	position: absolute;
@@ -153,5 +156,8 @@ li{font-size: 0.8rem;color: #3f3f3f;margin: 0rem 0.1rem 0rem 1rem;line-height: 1
 	right: 0;
 	top: 0;
 	display: none;
-	z-index: 1000;
+}
+#p2btn1 {
+	margin-top: -10%;
+	visibility: hidden;
 }

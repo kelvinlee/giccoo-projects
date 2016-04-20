@@ -276,274 +276,316 @@ body
 			+b($cdn+"img/next-point.png",no-repeat,center,center,cover)
 			+w(10%)
 
-	.page.homepage
-		.build
-			+w(70%)
-			+bc(#fff)
-			+m
-			+posr
-			margin-top: 18%
-			.iphone4 &
-				+w(60%)
-				margin-top: 18%
-			.ctrl-image
-				+posr
-				+w(90%)
-				+m(5%)
-				+show-inline
-				.image-input
-					+b($cdn+"img/add-image.jpg",no-repeat,center,center,cover)
-				.logo
-					+w(35%)
-					+tl(3%,3%)
-					z-index: 102
-				.icon.icon-restart
-					+posa
-					+tr(3%,3%)
-					+wh(1rem,1rem)
-					z-index: 101
-					+b($cdn+"img/restart.png",no-repeat,center,center,cover)
-				.mask-note
-					+posa
-					+tl
-					+w
-					+h
-					z-index: 10
-					+b($cdn+"img/mask-note.png",no-repeat,center,center,cover)
-			.title
-				+w(50%)
-				margin-left: 5%
-				.line
-					border-bottom: solid 2px #000
-					// padding-bottom: 0.2rem
-				.input
-					+posr
-					input
-						border: none
-						box-shadow: none
-						outline: none
-						color: #000
-						font-weight: bold
-						z-index: 2
-						+p(0.1rem)
-						+font-size(1rem)
-						+posr
-						+w
-						+bc(transparent)
-					.bg
-						+posa
-						+tl
-						+w
-						z-index: 1
-					.noteText
-						+posa
-						+tr(0,-70%)
-						+font-size(0.8rem)
-						+bc(#01b4e5)
-						+overhide
-						+p(0.2rem 0.3rem)
-						color: #fff
-						border-radius: 0.3rem
-						border: solid 2px #fff
-						
-			.image-slogen
-				+w(70%)
-				+m(0 5% 0 auto)
-				+p(5% 0)
-		.submit
-			+w(50%)
-			+m
-			margin-top: 5%
-			.iphone4 &
-				+w(40%)
-		.share-box
-			+posr
-			+m
-			+w(90%)
-			margin-top: 2%
-			.iphone4 &
-				+w(70%)
-				+m
-				margin-top: 2%
-			.btn
-				+posa
-				+w(30%)
-				+transform(translate3d(-50%,0,0))
-			.btn-share
-				+tl(15%,50%)
-			.btn-others
-				+bl(15%,50%)
+	// .page.homepage
 
-		.other-page
-			z-index: 105
-			.other-box
-				+posa
-				+tl(50%,10%)
-				+w(80%)
-				+transform(translate3d(0,-50%,0))
-				+bc(#ffffff)
-				+overhide
-				.close
-					+posa
-					+tr(0.2rem,0.2rem)
-					+w(1.4rem)
-					z-index: 99
-				.line
-					+w(80%)
-					+font-size(0.8rem)
-					+text-center
-					+m
-					border-top: solid 2px #747474
-					color: #747474
-					line-height: 2em
-				.slide
-					+box
-					+p(0.5rem 10%)
-					white-space: normal
-					li
-						+w(50%)
-						+p(0.5rem 0)
-						+show-inline
-						font-size: 0
-						+text-left
-						&:nth-child(even)
-							+text-right
-						img
-							+w(80%)
-							border: solid 2px #747474
-							border-radius: 0.5rem
-							+overhide
-		.share-success
-			z-index: 105
-			h2 
-				color: #ffffff
-				+text-center
-				+font-size(1.6rem)
-				margin-top: 40%
-				line-height: 2em
-			.line
-				+w(94%)
-				border-top: solid 2px #01b4e5
-				animation-delay: 800ms
-				+m
-				+animation(showline,1s,ease)
-			.btn-lottery
-				+w(40%)
-				+m
-				margin-top: 5%
-		.lottery-faild,.lottery-success
-			z-index: 109
-			.content
-				+posa
-				+tl(50%,5%)
-				+w(90%)
-				+bc(#fff)
-				+transform(translate3d(0,-50%,0))
-				.title
-					margin-top: -10%
-			.body
-				+box
-				+p(5%)
-				p
-					+text-center
-					+font-size(0.8rem)
-					color: #747474
-				.product
-					+w(35%)
-					+m
-				.form-group
-					+w
-					+m(0.4rem 0)
-					input
-						+w
-						+bc(#f0f0f0)
-						+p(0.3rem)
-						+box
-						border: solid 1px #b5b5b5
-						color: #000
-				.btn
-					+w(40%)
-					+m
-			.footer
-				+wh(100%,1.4rem)
-				border-top: solid 2px #01b4e5
-		.show-page,.build-page
+.build
+	+w(70%)
+	+bc(#fff)
+	+m
+	+posr
+	margin-top: 18%
+	.iphone4 &
+		+w(60%)
+		margin-top: 18%
+	.ctrl-image
+		+posr
+		+w(90%)
+		+m(5%)
+		+show-inline
+		.image-input
+			+b($cdn+"img/add-image.jpg",no-repeat,center,center,cover)
+		.logo
+			+posa
+			+w(35%)
+			+tl(3%,3%)
+			z-index: 102
+		.icon.icon-restart
+			+posa
+			+tr(3%,3%)
+			+wh(1rem,1rem)
+			z-index: 101
+			+b($cdn+"img/restart.png",no-repeat,center,center,cover)
+		.mask-note
 			+posa
 			+tl
 			+w
 			+h
-		.show-page
+			z-index: 10
+			+b($cdn+"img/mask-note.png",no-repeat,center,center,cover)
+	.title
+		+posr
+		+w(50%)
+		margin-left: 5%
+		.line
+			border-bottom: solid 2px #000
+			// padding-bottom: 0.2rem
+		.input
+			+posr
+			input
+				border: none
+				box-shadow: none
+				outline: none
+				color: #000
+				font-weight: bold
+				z-index: 2
+				+p(0.1rem)
+				+font-size(1rem)
+				+posr
+				+w
+				+bc(transparent)
 			.bg
 				+posa
-				+tl(32%)
+				+tl
 				+w
-				z-index: -1
-			.text-1
+				z-index: 1
+			.noteText
 				+posa
-				+tl(20%,0)
-				+w
-			.text-2
+				+tr(0,-70%)
+				+font-size(0.8rem)
+				+bc(#01b4e5)
+				+overhide
+				+p(0.2rem 0.3rem)
+				color: #fff
+				border-radius: 0.3rem
+				border: solid 2px #fff
+		// .normal
+		.select-arrow
+			+posr
+			& .arrow
+				content: " "
 				+posa
-				+tl(32%,0)
-				+w
-			.start
-				+posa
-				+bl(20%,0)
-				+w
-			.active
-				+posa
-				+bl(15%,0)
-				+w
-			.active
+				+tl(50%,35%)
+				+w(15%)
+				+transform(translate3d(0,-50%,0))
+				+tran
+				font-size: 0
+				&.on
+					+transform(translate3d(0,-50%,0) rotate(90deg))
+		.select
+			img
+				opacity: 0.7
+		.select-list
+			+posa
+			+tl(45%)
+			+p(0.2rem)
+			+bc(#f0f0f0)
+			border: solid 1px #000
+			.option
+				opacity: 0.7
+				&.on
+					opacity: 1
+		.inputname
+			+posa
+			+tr(0,-92%)
+			+w(80%)
+			input
+				+w(80%)
+				+m
+				border: none
+				border-bottom: dashed 2px #000
 				+text-center
 				+font-size(0.8rem)
-				text-decoration: underline
-				color: #01b4e5
-		.active-info
-			z-index: 1106
-			.title
-				+posa
-				+tl(15%)
-				+w(100%)
-				+font-size(1.2rem)
-				+bc(#01b4e5)
-				+text-center
-				z-index: 10
 				line-height: 1.6em
-				color: #3f3f3f
-			.close
-				+posa
-				+tr(11%,6%)
-				z-index: 11199
-				+w(7%)
-			.content
-				+posa
-				+tl(10%,5%)
-				+w(90%)
-				+h(80%)
-				+bc(rgba(255,255,255,0.9))
+				color: #000
+
+	.image-slogen
+		+w(70%)
+		+m(0 5% 0 auto)
+		+p(5% 0)
+.submit
+	+w(50%)
+	+m
+	margin-top: 5%
+	.iphone4 &
+		+w(40%)
+.share-box
+	+posr
+	+m
+	+w(90%)
+	margin-top: 2%
+	.iphone4 &
+		+w(70%)
+		+m
+		margin-top: 2%
+	.btn
+		+posa
+		+w(30%)
+		+transform(translate3d(-50%,0,0))
+	.btn-share
+		+tl(15%,50%)
+	.btn-others
+		+bl(15%,50%)
+
+.other-page
+	z-index: 105
+	.other-box
+		+posa
+		+tl(50%,10%)
+		+w(80%)
+		+transform(translate3d(0,-50%,0))
+		+bc(#ffffff)
+		+overhide
+		.close
+			+posa
+			+tr(0.2rem,0.2rem)
+			+w(1.4rem)
+			z-index: 99
+		.line
+			+w(80%)
+			+font-size(0.8rem)
+			+text-center
+			+m
+			border-top: solid 2px #747474
+			color: #747474
+			line-height: 2em
+		.slide
+			+box
+			+p(0.5rem 10%)
+			white-space: normal
+			li
+				+w(50%)
+				+p(0.5rem 0)
+				+show-inline
+				font-size: 0
+				+text-left
+				&:nth-child(even)
+					+text-right
+				img
+					+w(80%)
+					border: solid 2px #747474
+					border-radius: 0.5rem
+					+overhide
+.share-success
+	z-index: 105
+	h2 
+		color: #ffffff
+		+text-center
+		+font-size(1.6rem)
+		margin-top: 40%
+		line-height: 2em
+	.line
+		+w(94%)
+		border-top: solid 2px #01b4e5
+		animation-delay: 800ms
+		+m
+		+animation(showline,1s,ease)
+	.btn-lottery
+		+w(40%)
+		+m
+		margin-top: 5%
+.lottery-faild,.lottery-success
+	z-index: 109
+	.content
+		+posa
+		+tl(50%,5%)
+		+w(90%)
+		+bc(#fff)
+		+transform(translate3d(0,-50%,0))
+		.title
+			margin-top: -10%
+	.body
+		+box
+		+p(5%)
+		p
+			+text-center
+			+font-size(0.8rem)
+			color: #747474
+		.product
+			+w(35%)
+			+m
+		.form-group
+			+w
+			+m(0.4rem 0)
+			input
+				+w
+				+bc(#f0f0f0)
+				+p(0.3rem)
 				+box
-				z-index: 9
-				padding-top: 22%
-				color: #3f3f3f
-				.content-text
-					+h(90%)
-					+touch
-				p
-					+w(90%)
-					+m
-					+font-size(0.8rem)
-		.image-info
-			z-index: 111
-			.close
-				+posa
-				+tr(11%,11%)
-				z-index: 11199
-				+w(7%)
-			.content
-				+posa
-				+tl(10%,10%)
-				+w(80%)
+				border: solid 1px #b5b5b5
+				color: #000
+		.btn
+			+w(40%)
+			+m
+	.footer
+		+wh(100%,1.4rem)
+		border-top: solid 2px #01b4e5
+.show-page,.build-page
+	+posa
+	+tl
+	+w
+	+h
+.show-page
+	.bg
+		+posa
+		+tl(32%)
+		+w
+		z-index: -1
+	.text-1
+		+posa
+		+tl(20%,0)
+		+w
+	.text-2
+		+posa
+		+tl(32%,0)
+		+w
+	.start
+		+posa
+		+bl(20%,0)
+		+w
+	.active
+		+posa
+		+bl(15%,0)
+		+w
+	.active
+		+text-center
+		+font-size(0.8rem)
+		text-decoration: underline
+		color: #01b4e5
+.active-info
+	z-index: 1106
+	.title
+		+posa
+		+tl(15%)
+		+w(100%)
+		+font-size(1.2rem)
+		+bc(#01b4e5)
+		+text-center
+		z-index: 10
+		line-height: 1.6em
+		color: #3f3f3f
+	.close
+		+posa
+		+tr(11%,6%)
+		z-index: 11199
+		+w(7%)
+	.content
+		+posa
+		+tl(10%,5%)
+		+w(90%)
+		+h(80%)
+		+bc(rgba(255,255,255,0.9))
+		+box
+		z-index: 9
+		padding-top: 22%
+		color: #3f3f3f
+		.content-text
+			+h(90%)
+			+touch
+		p
+			+w(90%)
+			+m
+			+font-size(0.8rem)
+.image-info
+	z-index: 111
+	.close
+		+posa
+		+tr(11%,11%)
+		z-index: 11199
+		+w(7%)
+	.content
+		+posa
+		+tl(10%,10%)
+		+w(80%)
 
 .pop
 	+posa

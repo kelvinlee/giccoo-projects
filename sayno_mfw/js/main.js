@@ -135,16 +135,19 @@ $(document).ready(function load (){
 	var p2btn2=$('#p2btn2')
 
 	btnStart.click(function(){
+		global.build.init();
 		ani2End();
 	});
 
 	btnUpload.click(function(){
 		//alert("发布作品")
-		ani3();
+		global.build.submit(function(){
+			ani3();
+		});
 	});
 
 	p2btn1.click(function(){
-		alert("马上关注")
+		// alert("马上关注")
 	});
 
 	p2btn2.click(function(){
@@ -153,7 +156,7 @@ $(document).ready(function load (){
 	});
 
 	$('#shareBtn').click(function(){
-		alert("分享")
+		// alert("分享")
 	});
 
 
