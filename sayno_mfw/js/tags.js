@@ -135,15 +135,12 @@ this.showShare = function() {
   return results;
 };
 
+this.on("mount", function() {
+  return riot.mount("#ctrl-image", "ctrl-image");
+});
+
 this.init = function() {
-  console.log(isWechat);
-  if (isWechat) {
-    return riot.mount("#ctrl-image", "ctrl-image", {
-      selectimage: "selectFiles"
-    });
-  } else {
-    return riot.mount("#ctrl-image", "ctrl-image");
-  }
+  return console.log(isWechat);
 };
 }, '{ }');
 
@@ -242,11 +239,9 @@ this.changeImage = function(evt) {
 
 this.passImage = function(src) {
   var drawCanvasImage, image, normalImage, orienImage;
-  alert(src);
   image = new Image();
   drawCanvasImage = function() {
     console.log("canvas image");
-    alert(image);
     self.image = image;
     EXIF.getData(image, function() {
       var info;

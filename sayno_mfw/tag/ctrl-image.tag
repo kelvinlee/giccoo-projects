@@ -69,11 +69,9 @@ ctrl-image
 			blob = createObjectURLfun(img.files[0])
 			self.passImage blob
 		this.passImage = (src)->
-			alert src
 			image = new Image()
 			drawCanvasImage = ->
 				console.log "canvas image"
-				alert image
 				self.image = image
 				EXIF.getData image, ->
 					info = EXIF.getTag(image, "Orientation")

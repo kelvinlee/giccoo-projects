@@ -134,10 +134,12 @@ build
 
 
 
-		# this.on "mount", ->
+		this.on "mount", ->
+			riot.mount("#ctrl-image","ctrl-image")
+			
 		this.init = ->
 			console.log isWechat
-			if isWechat
-				riot.mount("#ctrl-image","ctrl-image",{selectimage:"selectFiles"})
-			else
-				riot.mount("#ctrl-image","ctrl-image")
+			# if isWechat
+			# 	riot.mount("#ctrl-image","ctrl-image",{selectimage:"selectFiles"})
+			# else
+			# 	riot.mount("#ctrl-image","ctrl-image")
