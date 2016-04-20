@@ -242,9 +242,11 @@ this.changeImage = function(evt) {
 
 this.passImage = function(src) {
   var drawCanvasImage, image, normalImage, orienImage;
+  alert(src);
   image = new Image();
   drawCanvasImage = function() {
     console.log("canvas image");
+    alert(image);
     self.image = image;
     EXIF.getData(image, function() {
       var info;
