@@ -5,22 +5,27 @@ $(document).ready(function load (){
 	var startScrollTop;
 	var pageUpDown =0
 
+	if (Math.random()>0.5) {$(".pic1").attr("src","img/p0pic3.jpg");};//随机首页图
+	if (Math.random()>0.5) {$(".pic2").attr("src","img/p0pic4.jpg");};
+
 	$('#part1')[0].addEventListener('touchstart',startTouch,false)
 	$('#part1')[0].addEventListener('touchmove',moveTouch,false)
 	$('#part1')[0].addEventListener('touchend',endTouch,false)
 
-	var sliderA=[$('#slider1'),$('#slider2'),$('#slider3'),$('#slider4')]
-	var sliderB=["#slider1>","#slider2>","#slider3>","#slider4>"]
+	//var sliderA=[$('#slider1'),$('#slider2'),$('#slider3'),$('#slider4')]
+	//var sliderB=["#slider1>","#slider2>","#slider3>","#slider4>"]
+
+	var sliderA=[$('#slider1'),$('#slider2')]
+	var sliderB=["#slider1>","#slider2>"]
+
 	var p0title=$('.p0title')
 	var container=$('.content')
 	TweenMax.set(container, {perspective:600})
 
 	for (var i = 0; i < sliderA.length; i++) {
-		//sliderA[i].css({transform:'translate3d(0,100%,0)','-webkit-transform':'translate3d(0,100%,0)'})
 		sliderA[i].css({top:'100%'})
 
 	}
-	//sliderA[0].css({transform:'translate3d(0,0,0)','-webkit-transform':'translate3d(0,0,0)'})
 	sliderA[0].css({top:'0%'})
 
 	function startTouch(event){
@@ -32,7 +37,7 @@ $(document).ready(function load (){
 		event.preventDefault();
 		if (nowY-startY>80&&nowPage!=0) {
 			pageUpDown=1
-		}else if (nowY-startY< -80&&nowPage!=4) {
+		}else if (nowY-startY< -80&&nowPage!=2) {
 			pageUpDown=-1
 		}else{
 			pageUpDown=0
@@ -98,12 +103,12 @@ $(document).ready(function load (){
 			};
 
 		}
-		if (pageUpDown!=0&&nowPage!=4){
+		if (pageUpDown!=0&&nowPage!=2){
 			TweenLite.killTweensOf(p0title);
 			p0title.css({opacity:'0',top:'90%'});
 			TweenLite.to(p0title,.4,{opacity:1,top:'80%',delay:.3});
 		};
-		if (nowPage==4&&pageUpDown!=0) {
+		if (nowPage==2&&pageUpDown!=0) {
 			TweenLite.killTweensOf(p0title);
 			TweenLite.to(p0title,.4,{opacity:0,onComplete:goPart2});
 		};
@@ -126,14 +131,31 @@ $(document).ready(function load (){
 	var btnUpload=$('#btnUpload')
 	var userPic=$('.userPic')
 
+	var p2btn1=$('#p2btn1')
+	var p2btn2=$('#p2btn2')
+
 	btnStart.click(function(){
 		ani2End();
 	});
 
 	btnUpload.click(function(){
-		alert("发布作品")
-		
+		//alert("发布作品")
+		ani3();
 	});
+
+	p2btn1.click(function(){
+		alert("马上关注")
+	});
+
+	p2btn2.click(function(){
+		//alert("查看其它作品")
+		ani4();
+	});
+
+	$('#shareBtn').click(function(){
+		alert("分享")
+	});
+
 
 	//==========活动细则
 	btnRule.click(function(){//显示活动细则
@@ -162,5 +184,91 @@ $(document).ready(function load (){
 		TweenLite.from(btnUpload,.5,{opacity:0,left:'100%',delay:1*.05})
 	}
 
+	function ani3(){
+		btnUpload.css({display:'none'})
+		$('#p2btn').css({display:'block'})
+		$('#shareBtn').css({display:'block'})
+		TweenLite.from($('#p2btn'),.5,{opacity:0,})
+		
+
+	}
+	function ani4(){
+		$('#page3').css({display:'block'})
+		TweenLite.from($('#page3'),.5,{opacity:0,})
+	}
+
+	var nowPage1 = 0;
+	var startX = 0;
+	var startScrollTop;
+	var pageLeftRight =0
+
+	$('#page3')[0].addEventListener('touchstart',startTouch1,false)
+	$('#page3')[0].addEventListener('touchmove',moveTouch1,false)
+	$('#page3')[0].addEventListener('touchend',endTouch1,false)
+
+	function startTouch1(event){
+		startX=event.touches[0].clientX
+		pageLeftRight=0
+	}
+	function moveTouch1(event){
+		var nowX=event.touches[0].clientX
+		event.preventDefault();
+		if (nowX-startX>80&&nowPage1!=0) {
+			pageLeftRight=1
+		}else if (nowX-startX< -80) {
+			pageLeftRight=-1
+		}else{
+			pageLeftRight=0
+		};	
+	}
+	function endTouch1(event){
+		if (pageLeftRight == 1) {
+			//alert("左一页")
+			nowPage1--
+		}else if (pageLeftRight == -1) {
+			//alert("右一页")
+			if (nowPage1==1) {
+				$('#page3')[0].removeEventListener('touchstart',startTouch1,false)
+				$('#page3')[0].removeEventListener('touchmove',moveTouch1,false)
+				$('#page3')[0].removeEventListener('touchend',endTouch1,false)
+				$('#pG3').css({display:'block'})
+				TweenLite.from($('#pG3'),.5,{opacity:0})
+			}else{
+				nowPage1++	
+			};
+			
+
+		}else if (pageLeftRight==0) {
+			//alert("不翻页")
+		};
+		goPage1()
+	} 
+
+	var pgA=[$('#pG1'),$('#pG2')]
+	pgA[0].css({left:"50%"})
+	pgA[1].css({left:"150%"})
+	//pgA[2].css({left:"50%",display:"none"})
+	$('#pG3').css({display:'none'})
+
+	function goPage1(){
+		for (var i = 0; i < pgA.length; i++) {
+			if (i==nowPage1) {
+				TweenLite.to(pgA[i],.5,{left:'50%'})
+			}else if (i<nowPage1) {
+				TweenLite.to(pgA[i],.5,{left:'-50%'})
+			}else if (i>nowPage1) {
+				TweenLite.to(pgA[i],.5,{left:'150%'})
+			};
+		};
+	}
+
+	$('#pG3').click(function(){
+		alert("刷新页面")
+		window.location.reload()
+
+	});
+	$('.btnPicClose').click(function(){
+		$('#page3').css({display:'none'});
+	});
 
 });

@@ -6,7 +6,7 @@ li{font-size: 0.8rem;color: #3f3f3f;margin: 0rem 0.1rem 0rem 1rem;line-height: 1
 
 #bg{position: absolute;width: 100%;height: 100%;z-index: -1;top: 0;left: 0;}
 #logo{position: absolute;width: 100%;top: 0;left: 0;z-index: 0;}
-.content{position: absolute;width: 100%;height: 100%;z-index: 1;}
+.content{position: absolute;width: 100%;height: 100%;z-index: 100;}
 #part1{position: absolute;width: 100%;height: 100%;}
 #part2{position: absolute;width: 100%;height: 100%;display: none;}
 .slider{position: absolute;width: 100%;height: 100%;overflow: hidden;}
@@ -55,4 +55,103 @@ li{font-size: 0.8rem;color: #3f3f3f;margin: 0rem 0.1rem 0rem 1rem;line-height: 1
 	left: 50%;
 	top:47%;
 	transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);
+}
+#p2btn{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	display: none;
+}
+#phone{
+	width: 100%;
+}
+#btnGroup{
+	position: absolute;
+	width: 100%;
+	top: 0;
+}
+#page3{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.blackBG{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: .5;
+	background-color: #000;
+}
+.userPicx12{
+	position: absolute;
+	width: 72.5%;
+	height: 70%;
+	left: 50%;
+	top: 50%;
+	background-color: #fff;
+	transform:translate3d(-50%,-50%,0);
+	-webkit-transform:translate3d(-50%,-50%,0);
+}
+.picGroup{
+	position: relative;
+	width: 84%;
+	left: 50%;
+	top: 5%;
+	transform:translate3d(-50%,0,0);
+	-webkit-transform:translate3d(-50%,0,0);
+}
+.Apic{
+	display: inline-block;
+	width: 48%;
+	white-space:nowrap;
+	text-align: center;
+	padding: .5rem 0 .5rem 0;
+/*	padding: 1rem;*/
+
+}
+.pic_All{
+	border: solid 0.2rem #747474;
+	border-radius: .5rem;
+	-webkit-border-radius: .5rem;
+}
+.picFooter{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+#pG2{
+	/*display: none;*/
+}
+#pG3{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 50%;
+	top: 50%;
+	transform:translate3d(-50%,-50%,0);
+	-webkit-transform:translate3d(-50%,-50%,0);
+	/*display: none;*/
+}
+#ending1{
+	position: absolute;
+	width: 100%;
+	left: 50%;
+	top: 50%;
+	transform:translate3d(-50%,-50%,0);
+	-webkit-transform:translate3d(-50%,-50%,0);
+}
+.btnPicClose{
+	width: 8.75%;
+	right: 0;
+	position:absolute;
+	padding: .5rem;
+}
+#shareBtn{
+	width: 68.6%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: none;
+	z-index: 1000;
 }
