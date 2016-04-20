@@ -266,7 +266,7 @@ $(document).ready(function load (){
 	}
 
 	$('#pG3').click(function(){
-		alert("刷新页面")
+		// alert("刷新页面")
 		window.location.reload()
 
 	});
