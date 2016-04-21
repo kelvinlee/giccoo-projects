@@ -139,6 +139,14 @@ $cdn : "http://localhost:5757/sayno_mfw/"
 			+posa
 			+tr(0,-92%)
 			+w(80%)
+			p
+				+w(70%)
+				+m
+				+text-right
+				+font-size(0.8rem)
+				color: #000
+				&:before
+					content: "@"
 			input
 				+w(80%)
 				+m
@@ -153,6 +161,34 @@ $cdn : "http://localhost:5757/sayno_mfw/"
 		+w(70%)
 		+m(0 5% 0 auto)
 		+p(5% 0)
+
+.image-info
+	z-index: 111
+	.close
+		+posa
+		+tr(11%,11%)
+		z-index: 11199
+		+w(7%)
+	.content
+		+posa
+		+tl(10%,10%)
+		+w(80%)
+		+h(auto)
+
+.pop
+	+posa
+	+tl
+	+w
+	+h
+	+bc(rgba(0,0,0,0.7))
+
+.loader
+	.more
+		+posa
+		+tl(60%,50%)
+		+w(35%)
+		margin-left: -35%/2
+
 
 .note
 	+posa

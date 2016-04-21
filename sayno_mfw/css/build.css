@@ -656,6 +656,26 @@ ul {
       top: 0;
       right: -92%;
       width: 80%; }
+      .build .title .inputname p {
+        width: 70%;
+        margin: 0 auto;
+        text-align: right;
+        font-size: 0.8rem;
+        color: #000; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .build .title .inputname p {
+            font-size: 0.88rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .build .title .inputname p {
+            font-size: 0.88rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .build .title .inputname p {
+            font-size: 0.96rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .build .title .inputname p {
+            font-size: 0.96rem; } }
+        .build .title .inputname p:before {
+          content: "@"; }
       .build .title .inputname input {
         width: 80%;
         margin: 0 auto;
@@ -681,6 +701,36 @@ ul {
     width: 70%;
     margin: 0 5% 0 auto;
     padding: 5% 0; }
+
+.image-info {
+  z-index: 111; }
+  .image-info .close {
+    position: absolute;
+    top: 11%;
+    right: 11%;
+    z-index: 11199;
+    width: 7%; }
+  .image-info .content {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: auto; }
+
+.pop {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); }
+
+.loader .more {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 35%;
+  margin-left: -17.5%; }
 
 .note {
   position: absolute;

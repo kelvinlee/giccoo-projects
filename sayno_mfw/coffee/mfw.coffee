@@ -30,6 +30,7 @@ window.onload = ->
 	riot.mount("*")
 	shareDefault.title = defaultWords[INDEX]
 	# console.log defaultWords
+
 	UpdateShare()
 	loadWechatConfig()
 	wx.ready ->
@@ -71,6 +72,23 @@ window.onload = ->
 			else
 				# window.location.href = "http://m.giccoo.com/sayno_mfw/"
 				console.log "href"
+
+bindIMAGE = ->
+	$(".pic_All").on "click", (evt)->
+		
+		link = evt.target.src.replace("small-","") 
+		link = link.replace("medium","large")
+		# console.log evt.target,evt.target.src,link
+
+		html = "<div class='pop image-info fadeIn animated'>"
+		html+= "<div class='close' onclick='closeallpop()'><img src='http://image.giccoo.com/projects/sayno_momo/img/btn-close.png' /></div>"
+		html+= "<div class='content'><img src='"+link+"' /></div>"
+		html+= "</div>"
+		$("body").append(html)
+		# $(".pop.close").on "click", ->
+		# 	$(".pop").remove()
+closeallpop = ->
+	$(".pop").remove()
 
 UpdateShare = ->
 	$("meta[property='og:title']").attr("content",shareDefault.title)

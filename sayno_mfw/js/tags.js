@@ -1,5 +1,5 @@
 
-riot.tag2('build', '<div class="build"> <div id="ctrl-image"> <div class="logo"><img src=".//img/logo-mark.png"></div> </div> <div class="title"> <div onclick="{opendSelect}" class="line normal select-arrow"><img src=".//img/build-title.png"> <div class="arrow"><img src=".//img/arrow.png"></div> </div> <div onclick="{opendSelect}" class="line select"><img riot-src=".//img/select-{INDEX}.png"></div> <div show="{selectlist}" class="select-list"> <div onclick="{selectIndex(1)}" class="option {on: (INDEX == 1),not: (INDEX != 1)}"><img src=".//img/select-1.png"></div> <div onclick="{selectIndex(2)}" class="option {on: (INDEX == 2),not: (INDEX != 2)}"><img src=".//img/select-2.png"></div> <div onclick="{selectIndex(3)}" class="option {on: (INDEX == 3),not: (INDEX != 3)}"><img src=".//img/select-3.png"></div> <div onclick="{selectIndex(4)}" class="option {on: (INDEX == 4),not: (INDEX != 4)}"><img src=".//img/select-4.png"></div> </div> <div class="inputname"> <input name="username" type="text" placeholder="您的ID"> </div> </div> <div class="image-slogen"><img src=".//img/image-slogen.png"></div> </div> <div show="{submited}" class="build mark"> </div>', '', '', function(opts) {
+riot.tag2('build', '<div class="build"> <ctrl-image> <div class="logo"><img src=".//img/logo-mark.png"></div> </ctrl-image> <div class="title"> <div onclick="{opendSelect}" class="line normal select-arrow"><img src=".//img/build-title.png"> <div show="{!stop}" class="arrow"><img src=".//img/arrow.png"></div> </div> <div onclick="{opendSelect}" class="line select"><img riot-src=".//img/select-{INDEX}.png"></div> <div show="{selectlist}" class="select-list"> <div onclick="{selectIndex(1)}" class="option {on: (INDEX == 1),not: (INDEX != 1)}"><img src=".//img/select-1.png"></div> <div onclick="{selectIndex(2)}" class="option {on: (INDEX == 2),not: (INDEX != 2)}"><img src=".//img/select-2.png"></div> <div onclick="{selectIndex(3)}" class="option {on: (INDEX == 3),not: (INDEX != 3)}"><img src=".//img/select-3.png"></div> <div onclick="{selectIndex(4)}" class="option {on: (INDEX == 4),not: (INDEX != 4)}"><img src=".//img/select-4.png"></div> </div> <div class="inputname"> <input show="{!stop}" name="username" type="text" placeholder="您的ID"> <p show="{stop}">{yourID}</p> </div> </div> <div class="image-slogen"><img src=".//img/image-slogen.png"></div> </div> <div show="{submited}" class="build mark"> </div>', '', '', function(opts) {
 var Number, _first, self;
 
 self = this;
@@ -9,6 +9,8 @@ self.data = {};
 this.INDEX = INDEX + 1;
 
 this.buildpage = false;
+
+self.stop = false;
 
 this.activeinfo = false;
 
@@ -33,6 +35,10 @@ this.posting = false;
 this.submiting = false;
 
 this.selectlist = false;
+
+this.ctrlImage = null;
+
+this.yourID = "";
 
 this.lists = [[], []];
 
@@ -62,7 +68,7 @@ this.opendSelect = function() {
 this.selectIndex = function(nums) {
   return function() {
     self.selectlist = false;
-    self.INDEX = -1 + parseInt(nums);
+    self.INDEX = parseInt(nums);
     global.INDEX = -1 + parseInt(nums);
     return self.update();
   };
@@ -106,12 +112,15 @@ this.submit = function(callback) {
   }
   self.submiting = true;
   self.update();
+  self.yourID = $("[name=username]", self.root).val();
   return uploadImage(self, function(msg) {
     var text;
     self.data = msg;
     self.submiting = false;
     self.image = msg.image;
+    self.stop = true;
     self.showShare();
+    self.tags["ctrl-image"].stopCtrl();
     $("[name=username]", self.root).attr("readonly", "true");
     text = defaultWords[global.INDEX - 1];
     UpdateShareContent(text, null, "http://m.giccoo.com/sayno_mfw/share.html?id=" + self.data.obj.insertId, "http://image.giccoo.com/sayno/mfw/small-" + self.data.image);
@@ -134,10 +143,6 @@ this.showShare = function() {
   }
   return results;
 };
-
-this.on("mount", function() {
-  return riot.mount("#ctrl-image", "ctrl-image");
-});
 
 this.init = function() {
   return console.log(isWechat);

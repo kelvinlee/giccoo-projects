@@ -3,13 +3,13 @@ build
 	// - var url = "http://image.giccoo.com/projects/sayno"
 	- var url = "./"
 	.build
-		#ctrl-image
+		ctrl-image
 			.logo
 				img(src="#{url}/img/logo-mark.png")
 		.title
 			.line.normal.select-arrow(onclick="{opendSelect}")
 				img(src="#{url}/img/build-title.png")
-				.arrow
+				.arrow(show="{!stop}")
 					img(src="#{url}/img/arrow.png")
 			.line.select(onclick="{opendSelect}")
 				img(src="#{url}/img/select-{INDEX}.png")
@@ -23,7 +23,8 @@ build
 				.option(class="{on: (INDEX == 4),not: (INDEX != 4)}",onclick="{selectIndex(4)}")
 					img(src="#{url}/img/select-4.png")
 			.inputname
-				input(name="username",type="text",placeholder="您的ID")
+				input(show="{!stop}",name="username",type="text",placeholder="您的ID")
+				p(show="{stop}") {yourID}
 		.image-slogen
 			img(src="#{url}/img/image-slogen.png")
 	
@@ -34,6 +35,7 @@ build
 		self.data = {}
 		this.INDEX = INDEX+1
 		this.buildpage = false
+		self.stop = false
 		this.activeinfo = false
 		this.submited = false
 		this.sharedsuccess = false
@@ -46,6 +48,8 @@ build
 		this.posting = false
 		this.submiting = false
 		this.selectlist = false
+		this.ctrlImage = null
+		this.yourID = ""
 		this.lists = [[],[]]
 
 		global.build = self unless global.canvas?
@@ -66,7 +70,7 @@ build
 		this.selectIndex = (nums)->
 			return ->
 				self.selectlist = false
-				self.INDEX = -1+parseInt nums
+				self.INDEX = parseInt nums
 				global.INDEX = -1+parseInt nums
 				self.update()
 
@@ -103,14 +107,16 @@ build
 			# self.showShare()
 			# console.log self.tags["ctrl-image"].stopCtrl()
 			# return false
+			self.yourID = $("[name=username]",self.root).val()
 
 			uploadImage self,(msg)->
 				# console.log msg
 				self.data = msg
 				self.submiting = false
 				self.image = msg.image
+				self.stop = true
 				self.showShare()
-				# self.tags["ctrl-image"].stopCtrl()
+				self.tags["ctrl-image"].stopCtrl()
 				$("[name=username]",self.root).attr("readonly","true")
 				text = defaultWords[global.INDEX-1]
 				# $("#preview").html("<img src='http://image.giccoo.com/sayno/mfw/"+self.image+"@!large' />")
@@ -134,12 +140,12 @@ build
 
 
 
-		this.on "mount", ->
-			riot.mount("#ctrl-image","ctrl-image")
+		# this.on "mount", ->
+		# 	self.ctrlImage = riot.mount("#ctrl-image","ctrl-image")
 			
 		this.init = ->
 			console.log isWechat
 			# if isWechat
-			# 	riot.mount("#ctrl-image","ctrl-image",{selectimage:"selectFiles"})
+			# 	self.ctrlImage = riot.mount("#ctrl-image","ctrl-image",{selectimage:"selectFiles"})
 			# else
-			# 	riot.mount("#ctrl-image","ctrl-image")
+			# 	self.ctrlImage = riot.mount("#ctrl-image","ctrl-image")

@@ -143,6 +143,7 @@ $(document).ready(function load (){
 		//alert("发布作品")
 		global.build.submit(function(){
 			ani3();
+			bindIMAGE();
 		});
 	});
 
@@ -234,8 +235,9 @@ $(document).ready(function load (){
 				$('#page3')[0].removeEventListener('touchstart',startTouch1,false)
 				$('#page3')[0].removeEventListener('touchmove',moveTouch1,false)
 				$('#page3')[0].removeEventListener('touchend',endTouch1,false)
-				$('#pG3').css({display:'block'})
-				TweenLite.from($('#pG3'),.5,{opacity:0})
+				// $('#pG3').css({display:'block'})
+				// TweenLite.from($('#pG3'),.5,{opacity:0})
+				Loader("moreImage","努力加载中，需要一些时间，不如发表一张作品后再来？",type="ball",0,"<a href='http://m.giccoo.com/sayno_mfw/' class='more'><img src='http://image.giccoo.com/projects/sayno_momo/img/btn-more.png' /></a>")
 			}else{
 				nowPage1++	
 			};
