@@ -938,7 +938,7 @@ window.onload = function() {
     var AppMShareContent, TimelineShareContent;
     isWechat = true;
     AppMShareContent = {
-      title: shareDefault.title,
+      title: shareDefault.title + "我有异见！",
       desc: shareDefault.text,
       link: shareDefault.url,
       imgUrl: shareDefault.pic,
@@ -946,7 +946,7 @@ window.onload = function() {
       cancel: function() {}
     };
     TimelineShareContent = {
-      title: shareDefault.title,
+      title: shareDefault.title + "我有异见！",
       desc: shareDefault.text,
       link: shareDefault.url,
       imgUrl: shareDefault.pic,
@@ -969,6 +969,7 @@ window.onload = function() {
       if (msg.recode === 200) {
         $("#imghere").append("<img src='http://image.giccoo.com/sayno/mfw/" + msg.info.image + "@!large'  />");
         $("#nums").text(msg.count);
+        document.title = msg.info.message + "我有异见！";
         text = defaultWords[defaultWords.indexOf(msg.info.message)];
         return UpdateShareContent(text, null, "http://m.giccoo.com/sayno_mfw/share.html?id=" + msg.info.id, "http://image.giccoo.com/sayno/mfw/small-" + msg.info.image);
       } else {
@@ -997,12 +998,12 @@ closeallpop = function() {
 
 UpdateShare = function() {
   var TimelineShareContent;
-  $("meta[property='og:title']").attr("content", shareDefault.title);
+  $("meta[property='og:title']").attr("content", shareDefault.title + "我有异见！");
   $("meta[property='og:description']").attr("content", shareDefault.text);
   $("meta[property='og:url']").attr("content", shareDefault.url);
   $("meta[property='og:image']").attr("content", shareDefault.pic);
   TimelineShareContent = {
-    title: shareDefault.title,
+    title: shareDefault.title + "我有异见！",
     desc: shareDefault.text,
     link: shareDefault.url,
     imgUrl: shareDefault.pic,
