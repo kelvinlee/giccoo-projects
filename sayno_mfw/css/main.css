@@ -8,7 +8,7 @@ li{font-size: 0.8rem;color: #3f3f3f;margin: 0rem 0.1rem 0rem 1rem;line-height: 1
 #logo{position: absolute;width: 100%;top: 0;left: 0;z-index: 0;}
 .content{position: absolute;width: 100%;height: 100%;z-index: 100;}
 #part1{position: absolute;width: 100%;height: 100%;}
-#part2{position: absolute;width: 100%;height: 100%;display: none;}
+#part2{position: absolute; z-index: 1; width: 100%;height: 100%;display: none;}
 .slider{position: absolute;width: 100%;height: 100%;overflow: hidden;}
 .btnUp{position: absolute;top: 0;display: none;}
 .btnDown{position: absolute;bottom: 0;	transform:scale3d(1,-1,1);	-webkit-transform:scale3d(1,-1,1);}
@@ -37,7 +37,7 @@ li{font-size: 0.8rem;color: #3f3f3f;margin: 0rem 0.1rem 0rem 1rem;line-height: 1
 .bottomDiv{position: absolute;width: 100%;bottom: 0;}
 
 /*规则*/
-#rule{	position: absolute;width: 100%;height: 100%;display: none;}
+#rule{	position: absolute; background: rgba(0,0,0,0.7); width: 100%;height: 100%;display: none;}
 #rulebg{	background-color: #000;	opacity: .5;}
 #rule1{	position: absolute;	width:82.8%; 	height: 3.6%;	bottom: 86.5%;	left:8.6%;	background-color: #fff;	opacity: .9;}
 #rule2{	position: absolute;	width:100%; 	left:0%;	top: 13.5%;	z-index: 1;}

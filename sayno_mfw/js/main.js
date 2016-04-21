@@ -137,6 +137,8 @@ $(document).ready(function load (){
 	btnStart.click(function(){
 		global.build.init();
 		ani2End();
+		$("#logo1").show()
+		$("#logo2").hide()
 	});
 
 	btnUpload.click(function(){
