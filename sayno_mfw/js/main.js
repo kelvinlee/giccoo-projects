@@ -5,8 +5,14 @@ $(document).ready(function load (){
 	var startScrollTop;
 	var pageUpDown =0
 
-	if (Math.random()>0.5) {$(".pic1").attr("src","img/p0pic3.jpg");};//随机首页图
-	if (Math.random()>0.5) {$(".pic2").attr("src","img/p0pic4.jpg");};
+	if (Math.random()>0.5) {
+		$(".pic1").attr("src","http://image.giccoo.com/projects/sayno_mfw/img/p0pic3.jpg");
+		$(".pic1").parent().next().find("img").attr("src","http://image.giccoo.com/projects/sayno_mfw/img/p0copy3.png");
+	};//随机首页图
+	if (Math.random()>0.5) {
+		$(".pic2").attr("src","http://image.giccoo.com/projects/sayno_mfw/img/p0pic4.jpg");
+		$(".pic2").parent().next().find("img").attr("src","http://image.giccoo.com/projects/sayno_mfw/img/p0copy4.png");
+	};
 
 	$('#part1')[0].addEventListener('touchstart',startTouch,false)
 	$('#part1')[0].addEventListener('touchmove',moveTouch,false)

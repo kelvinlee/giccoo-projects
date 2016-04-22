@@ -37,7 +37,7 @@ window.onload = ->
 		# alert "wechat"
 		isWechat = true
 		AppMShareContent =
-			title: shareDefault.title+"我有异见！"
+			title: "#唤醒•荣耀V8#"+shareDefault.title+"我有异见！"
 			desc: shareDefault.text
 			link: shareDefault.url
 			imgUrl: shareDefault.pic
@@ -46,7 +46,7 @@ window.onload = ->
 			cancel: ->
 				# alert "cancel"
 		TimelineShareContent =
-			title: shareDefault.title+"我有异见！"
+			title: "#唤醒•荣耀V8#"+shareDefault.title+"我有异见！"
 			desc: shareDefault.text
 			link: shareDefault.url
 			imgUrl: shareDefault.pic
@@ -92,12 +92,12 @@ closeallpop = ->
 	$(".pop").remove()
 
 UpdateShare = ->
-	$("meta[property='og:title']").attr("content",shareDefault.title+"我有异见！")
+	$("meta[property='og:title']").attr("content","#唤醒•荣耀V8#"+shareDefault.title+"我有异见！")
 	$("meta[property='og:description']").attr("content",shareDefault.text)
 	$("meta[property='og:url']").attr("content",shareDefault.url)
 	$("meta[property='og:image']").attr("content",shareDefault.pic)
 	TimelineShareContent =
-		title: shareDefault.title+"我有异见！"
+		title: "#唤醒•荣耀V8#"+shareDefault.title+"我有异见！"
 		desc: shareDefault.text
 		link: shareDefault.url
 		imgUrl: shareDefault.pic
