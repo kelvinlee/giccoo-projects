@@ -1001,7 +1001,7 @@ UpdateShare = function() {
   $("meta[property='og:title']").attr("content", "#唤醒•荣耀V8#" + shareDefault.title + "我有异见！");
   $("meta[property='og:description']").attr("content", shareDefault.text);
   $("meta[property='og:url']").attr("content", shareDefault.url);
-  $("meta[property='og:image']").attr("content", shareDefault.pic);
+  $("meta[property='og:image']").attr("content", shareDefault.pic + "@!medium");
   TimelineShareContent = {
     title: "#唤醒•荣耀V8#" + shareDefault.title + "我有异见！",
     desc: shareDefault.text,
