@@ -1,0 +1,227 @@
+@import sass/base
+@import ../../libs/sass/loader-ball
+
+$debug : false
+$cdn : "http://localhost:5757/sayno_mfw/"
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects/sayno_momo/"
+
+.ctrl-image
+	.image-content
+		+posr
+		+w
+		canvas
+			+w
+		.image-input
+			+posa
+			+tl
+			+br
+			+w
+			+h
+			+bc(#f2f2f2)
+			+overhide
+			input[type=file]
+				+posa
+				+tl
+				+bl
+				+w
+				+h
+				+p(100rem)
+				opacity: 0
+		.icon-restart
+			+posa
+			+br(1rem,1rem)
+			// +wh(1rem,1rem)
+			// +bc(#000)
+
+
+.build
+	+w(100%)
+	+bc(#fff)
+	+m
+	+posr
+	&.mark
+		+posa
+		+tl
+		+br
+		+w
+		+h
+		+bc(transparent)
+		z-index: 99
+	.ctrl-image
+		+posr
+		+w(90%)
+		+m(5%)
+		+show-inline
+		.image-input
+			+b($cdn+"img/add-image.jpg",no-repeat,center,center,cover)
+		.logo
+			+posa
+			+w(35%)
+			+tl(3%,3%)
+			z-index: 102
+		.icon.icon-restart
+			+posa
+			+tr(3%,3%)
+			+wh(1rem,1rem)
+			z-index: 101
+			+b($cdn+"img/restart.png",no-repeat,center,center,cover)
+		.mask-note
+			+posa
+			+tl
+			+w
+			+h
+			z-index: 10
+			+b($cdn+"img/mask-note.png",no-repeat,center,center,cover)
+	.title
+		+posr
+		+w(50%)
+		margin-left: 5%
+		.line
+			border-bottom: solid 2px #000
+			// padding-bottom: 0.2rem
+		.input
+			+posr
+			input
+				border: none
+				box-shadow: none
+				outline: none
+				color: #000
+				font-weight: bold
+				z-index: 2
+				+p(0.1rem)
+				+font-size(1rem)
+				+posr
+				+w
+				+bc(transparent)
+			.bg
+				+posa
+				+tl
+				+w
+				z-index: 1
+			.noteText
+				+posa
+				+tr(0,-70%)
+				+font-size(0.8rem)
+				+bc(#01b4e5)
+				+overhide
+				+p(0.2rem 0.3rem)
+				color: #fff
+				border-radius: 0.3rem
+				border: solid 2px #fff
+		// .normal
+		.select-arrow
+			+posr
+			& .arrow
+				content: " "
+				+posa
+				+tl(50%,35%)
+				+w(15%)
+				+transform(translate3d(0,-50%,0))
+				+tran
+				font-size: 0
+				&.on
+					+transform(translate3d(0,-50%,0) rotate(90deg))
+		.select
+			img
+				opacity: 0.7
+		.select-list
+			+posa
+			+tl(45%)
+			+p(0.2rem)
+			+bc(#f0f0f0)
+			border: solid 1px #000
+			.option
+				opacity: 0.7
+				&.on
+					opacity: 1
+		.inputname
+			+posa
+			+tr(0,-92%)
+			+w(80%)
+			p
+				+w(70%)
+				+m
+				+text-right
+				+font-size(0.8rem)
+				color: #000
+				&:before
+					content: "@"
+			input
+				+w(80%)
+				+m
+				border: none
+				border-bottom: dashed 2px #000
+				+text-center
+				+font-size(0.8rem)
+				line-height: 1.6em
+				color: #000
+
+	.image-slogen
+		+w(70%)
+		+m(0 5% 0 auto)
+		+p(5% 0)
+
+.image-info
+	z-index: 111
+	.close
+		+posa
+		+tr(11%,11%)
+		z-index: 11199
+		+w(7%)
+	.content
+		+posa
+		+tl(10%,10%)
+		+w(80%)
+		+h(auto)
+
+.pop
+	+posa
+	+tl
+	+w
+	+h
+	+bc(rgba(0,0,0,0.7))
+
+.loader
+	.more
+		+posa
+		+tl(60%,50%)
+		+w(35%)
+		margin-left: -35%/2
+
+
+.note
+	+posa
+	+tl
+	+br
+	+wh(100%,100%)
+	z-index: 9999
+	.note-box
+		+text-center
+		+posa
+		+tl(50%)
+		+w(100%)
+		// z-index: 9999
+		.note-content
+			display: inline-block
+			padding: 10px 11px 10px 10px
+			background-color: rgba(0,0,0,0.7)
+			color: #fff
+			border-radius: 5px
+			max-width: 90%
+			+box
+		.icon-form,.note-text
+			display: inline-block
+			vertical-align: top
+			line-height: 25px
+		.icon-form
+			+wh(25px,25px)
+		.note-text
+			+font-size(0.8rem)
+			letter-spacing: 2px
+
+
+#logo1
+	display: none
+#logo2
+	
