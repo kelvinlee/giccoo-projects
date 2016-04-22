@@ -6,6 +6,20 @@ $cdn : "http://localhost:5757/sayno_mfw/"
 @if not $debug
 	$cdn : "http://disk.giccoo.com/projects/sayno_momo/"
 
+
++keyframes(zoomfade)
+	0%
+		+transform(scale(0,0))
+		opacity: 0
+	100%
+		+transform(scale(1,1))
+		opacity: 1
+		
+
+// zoomfade
+
+
+
 .ctrl-image
 	.image-content
 		+posr
@@ -223,5 +237,17 @@ $cdn : "http://localhost:5757/sayno_mfw/"
 
 #logo1
 	display: none
-#logo2
+// #logo2
 	
+#shareBtn
+	&:after
+		content: " "
+		+show
+		+posa
+		+tr(6%,7%)
+		+wh(10px,10px)
+		+bc(#fff)
+		+animation(zoomfade,1s,ease,infinite)
+		z-index: 1111
+		border-radius: 50%
+

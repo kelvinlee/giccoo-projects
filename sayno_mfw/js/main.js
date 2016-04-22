@@ -166,6 +166,9 @@ $(document).ready(function load (){
 
 	$('#shareBtn').click(function(){
 		// alert("分享")
+		if ((navigator.userAgent.indexOf("mfwjssdk") > -1 || navigator.userAgent.indexOf("com.mfw.roadbook") > -1) && navigator.userAgent.indexOf("Android") > -1) {
+			window.location.href = "travelguide://page/appshare"
+		}
 	});
 
 

@@ -481,6 +481,25 @@ ul {
       -webkit-animation: ball-spin-fade-loader 1s -0.12s infinite linear;
       animation: ball-spin-fade-loader 1s -0.12s infinite linear; }
 
+@-webkit-keyframes zoomfade {
+  0% {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+    opacity: 0; }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    opacity: 1; } }
+
+@keyframes zoomfade {
+  0% {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+    opacity: 0; }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    opacity: 1; } }
 .ctrl-image .image-content {
   position: relative;
   width: 100%; }
@@ -780,3 +799,21 @@ ul {
 
 #logo1 {
   display: none; }
+
+#shareBtn:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 6%;
+  right: 7%;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  -webkit-animation: zoomfade 1s ease;
+          animation: zoomfade 1s ease;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  z-index: 1111;
+  border-radius: 50%; }
