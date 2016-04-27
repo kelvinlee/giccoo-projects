@@ -563,11 +563,21 @@ ul {
     .build .ctrl-image .icon.icon-restart {
       position: absolute;
       top: 3%;
-      right: 3%;
+      right: 13%;
       width: 1rem;
       height: 1rem;
       z-index: 101;
       background: url("http://disk.giccoo.com/projects/sayno_momo/img/restart.png") no-repeat center center;
+      background-size: cover;
+      background-color: transparent; }
+    .build .ctrl-image .icon-rotation {
+      position: absolute;
+      top: 3%;
+      right: 3%;
+      width: 1rem;
+      height: 1rem;
+      z-index: 101;
+      background: url("http://disk.giccoo.com/projects/sayno_momo/img/rotation.png") no-repeat center center;
       background-size: cover;
       background-color: transparent; }
     .build .ctrl-image .mask-note {

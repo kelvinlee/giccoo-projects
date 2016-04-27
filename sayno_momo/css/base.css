@@ -1698,11 +1698,32 @@ body {
       height: 90%;
       overflow: scroll;
       overflow-scrolling: touch;
-      -webkit-overflow-scrolling: touch; }
+      -webkit-overflow-scrolling: touch;
+      font-size: 0.8rem; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .active-info .content .content-text {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .active-info .content .content-text {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .active-info .content .content-text {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .active-info .content .content-text {
+          font-size: 0.96rem; } }
+      .active-info .content .content-text ol {
+        padding-left: 10%; }
+      .active-info .content .content-text li {
+        width: 95%;
+        margin-bottom: 10px; }
+        .active-info .content .content-text li p {
+          width: 100%; }
     .active-info .content p {
       width: 90%;
       margin: 0 auto;
-      font-size: 0.8rem; }
+      font-size: 0.8rem;
+      line-height: 1.6em; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
         .active-info .content p {
           font-size: 0.88rem; } }

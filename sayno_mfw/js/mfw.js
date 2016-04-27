@@ -1154,7 +1154,6 @@ uploadImage = function(self, next) {
       return loadAll();
     };
     input.src = "./img/select-" + (global.INDEX + 1) + ".png";
-    $("body").append(canvas);
   };
   sending = true;
   opendWaiting();

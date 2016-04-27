@@ -5,6 +5,7 @@ ctrl-image
 		.image-input(show="{!uploaded && !stop}",onclick="{selectImage}")
 			input#imageInput(if="{!_selectImage}" type="file",onchange="{changeImage}")
 		.icon.icon-restart(show="{uploaded && !stop}",onclick="{restart}")
+		.icon.icon-rotation(show="{uploaded && !stop}",onclick="{rotation}")
 		.mask-note.fadeIn.animated(show="{noted}",onclick="{hideNote}")
 	<yield></yield>
 	script(type="text/coffeescript").
@@ -19,6 +20,7 @@ ctrl-image
 		this.image = null
 		this.info = null
 		this.frame = {
+			rotation: 0,
 			x: 0,
 			y: 0,
 			w: 640,
@@ -107,9 +109,13 @@ ctrl-image
 
 
 				ctx.clearRect(-10000, -10000, 50000, 50000)
-				ctx.rotate(Math.PI/2)
-				ctx.drawImage(image, y, -h, w, h)
-				self.setDefault y, -h, w, h
+				ctx.translate(canvas.width/2,canvas.height/2)
+				ctx.rotate(90*Math.PI/180)
+				ctx.translate(-canvas.width/2,-canvas.height/2)
+				# ctx.drawImage(image, y, -h, w, h)
+				ctx.drawImage(self.image, self.frame.x, self.frame.y, w, h)
+				self.setDefault self.frame.x, self.frame.y, w, h
+				self.frame.rotation = 90
 				self.init()
 			normalImage = ->
 				canvas = document.getElementById "imageCtrl"
@@ -164,6 +170,31 @@ ctrl-image
 			ctx.clearRect(-10000, -10000, 50000, 50000)
 			self.uploaded = false
 			self.noted = false
+		this.rotation = ->
+			self.frame.rotation += 90
+			if self.frame.rotation == 360
+				self.frame.rotation = 0
+			rotation = 90*Math.PI/180
+
+			console.log self.frame.rotation,rotation
+
+			canvas = document.getElementById "imageCtrl"
+			ctx = canvas.getContext "2d"
+			ctx.clearRect(-10000, -10000, 50000, 50000)
+			# ctx.save()
+			ctx.translate(canvas.width/2,canvas.height/2)
+			ctx.rotate(rotation)
+			ctx.translate(-canvas.width/2,-canvas.height/2)
+			ctx.drawImage(self.image, self.frame.x, self.frame.y, logSize.w, logSize.h)
+			# ctx.restore()
+			# self.image = new Image()
+			# self.image.src = canvas.toDataURL("image/png")
+			# w = logSize.w
+			# h = logSize.h
+			# logSize.w = self.image.width
+			# logSize.h = self.image.height
+			# console.log ctx
+
 		this.getContent = ->
 			if self.uploaded
 				canvas = document.getElementById "imageCtrl"
@@ -200,12 +231,26 @@ ctrl-image
 				# console.log("moving",moveX,moveY)
 				logOrin.x = self.frame.x + moveX
 				logOrin.y = self.frame.y + moveY
-				if (self.info == 6)
+				# if (self.info == 6)
+				if (self.frame.rotation is 90)
 					logOrin.x = self.frame.x + moveY
 					logOrin.y = self.frame.y - moveX
+				if (self.frame.rotation is 180)
+					logOrin.x = self.frame.x - moveX
+					logOrin.y = self.frame.y - moveY
+				if (self.frame.rotation is 270)
+					logOrin.x = self.frame.x - moveY
+					logOrin.y = self.frame.y + moveX
 
 				ctx.clearRect(-10000, -10000, 50000, 50000)
 				ctx.drawImage(self.image, logOrin.x, logOrin.y, self.frame.w, self.frame.h)
+				# ctx.clearRect(-10000, -10000, 50000, 50000)
+				# ctx.save()
+				# ctx.translate(self.target.width/2,self.target.height/2)
+				# ctx.rotate(self.frame.rotation)
+				# ctx.translate(-self.target.width/2,-self.target.height/2)
+				# ctx.drawImage(self.image, self.frame.x, self.frame.y, logSize.w, logSize.h)
+				# ctx.restore()
 			
 			if (defaultType == 2)
 				# 放大和旋转

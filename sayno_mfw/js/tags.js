@@ -149,7 +149,7 @@ this.init = function() {
 };
 }, '{ }');
 
-riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas id="imageCtrl" width="{width}" height="{height}"></canvas> <div show="{!uploaded &amp;&amp; !stop}" onclick="{selectImage}" class="image-input"> <input id="imageInput" if="{!_selectImage}" type="file" onchange="{changeImage}"> </div> <div show="{uploaded &amp;&amp; !stop}" onclick="{restart}" class="icon icon-restart"></div> <div show="{noted}" onclick="{hideNote}" class="mask-note fadeIn animated"></div> </div><yield></yield>', '', '', function(opts) {
+riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas id="imageCtrl" width="{width}" height="{height}"></canvas> <div show="{!uploaded &amp;&amp; !stop}" onclick="{selectImage}" class="image-input"> <input id="imageInput" if="{!_selectImage}" type="file" onchange="{changeImage}"> </div> <div show="{uploaded &amp;&amp; !stop}" onclick="{restart}" class="icon icon-restart"></div> <div show="{uploaded &amp;&amp; !stop}" onclick="{rotation}" class="icon icon-rotation"></div> <div show="{noted}" onclick="{hideNote}" class="mask-note fadeIn animated"></div> </div><yield></yield>', '', '', function(opts) {
 var createObjectURLfun, defaultOrin, defaultType, logOrin, logSize, self;
 
 self = this;
@@ -171,6 +171,7 @@ this.image = null;
 this.info = null;
 
 this.frame = {
+  rotation: 0,
   x: 0,
   y: 0,
   w: 640,
@@ -282,9 +283,12 @@ this.passImage = function(src) {
     x = -(w - canvas.height) / 2;
     y = -(h - canvas.width) / 2;
     ctx.clearRect(-10000, -10000, 50000, 50000);
-    ctx.rotate(Math.PI / 2);
-    ctx.drawImage(image, y, -h, w, h);
-    self.setDefault(y, -h, w, h);
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+    ctx.rotate(90 * Math.PI / 180);
+    ctx.translate(-canvas.width / 2, -canvas.height / 2);
+    ctx.drawImage(self.image, self.frame.x, self.frame.y, w, h);
+    self.setDefault(self.frame.x, self.frame.y, w, h);
+    self.frame.rotation = 90;
     return self.init();
   };
   normalImage = function() {
@@ -351,6 +355,23 @@ this.restart = function() {
   return self.noted = false;
 };
 
+this.rotation = function() {
+  var canvas, ctx, rotation;
+  self.frame.rotation += 90;
+  if (self.frame.rotation === 360) {
+    self.frame.rotation = 0;
+  }
+  rotation = 90 * Math.PI / 180;
+  console.log(self.frame.rotation, rotation);
+  canvas = document.getElementById("imageCtrl");
+  ctx = canvas.getContext("2d");
+  ctx.clearRect(-10000, -10000, 50000, 50000);
+  ctx.translate(canvas.width / 2, canvas.height / 2);
+  ctx.rotate(rotation);
+  ctx.translate(-canvas.width / 2, -canvas.height / 2);
+  return ctx.drawImage(self.image, self.frame.x, self.frame.y, logSize.w, logSize.h);
+};
+
 this.getContent = function() {
   var canvas;
   if (self.uploaded) {
@@ -396,9 +417,17 @@ this.move = function(evt) {
     moveY = touch[0].clientY - defaultOrin[0].y;
     logOrin.x = self.frame.x + moveX;
     logOrin.y = self.frame.y + moveY;
-    if (self.info === 6) {
+    if (self.frame.rotation === 90) {
       logOrin.x = self.frame.x + moveY;
       logOrin.y = self.frame.y - moveX;
+    }
+    if (self.frame.rotation === 180) {
+      logOrin.x = self.frame.x - moveX;
+      logOrin.y = self.frame.y - moveY;
+    }
+    if (self.frame.rotation === 270) {
+      logOrin.x = self.frame.x - moveY;
+      logOrin.y = self.frame.y + moveX;
     }
     ctx.clearRect(-10000, -10000, 50000, 50000);
     ctx.drawImage(self.image, logOrin.x, logOrin.y, self.frame.w, self.frame.h);

@@ -10,7 +10,7 @@ block css
 
 block content
 	- url = "http://image.giccoo.com/projects/sayno_momo"
-	build
+	//- build
 	//- .pages
 		.logo
 			img(src="#{url}/img/logo.png")
@@ -28,10 +28,10 @@ block content
 					p 荣耀7i 发布会正在进行
 					a.btn.btn-focus(href="http://api.giccoo.com/sayno/momo/")
 						img(src="#{url}/img/btn-focus.png")
-	//- parallax.pages
+	parallax.pages
 		.logo
 			img(src="#{url}/img/logo.png")
-		.slogen
+		//- .slogen
 			img(src="#{url}/img/slogen.png")
 		.page.kv.kv1.first(up="kv2")
 			.box

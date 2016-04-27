@@ -49,6 +49,7 @@ $cdn : "http://localhost:5757/sayno_mfw/"
 			// +bc(#000)
 
 
+
 .build
 	+w(100%)
 	+bc(#fff)
@@ -76,10 +77,16 @@ $cdn : "http://localhost:5757/sayno_mfw/"
 			z-index: 102
 		.icon.icon-restart
 			+posa
-			+tr(3%,3%)
+			+tr(3%,13%)
 			+wh(1rem,1rem)
 			z-index: 101
 			+b($cdn+"img/restart.png",no-repeat,center,center,cover)
+		.icon-rotation
+			+posa
+			+tr(3%,3%)
+			+wh(1rem,1rem)
+			z-index: 101
+			+b($cdn+"img/rotation.png",no-repeat,center,center,cover)
 		.mask-note
 			+posa
 			+tl

@@ -260,7 +260,7 @@ uploadImage = (self,next)->
 			# ctx.stroke()
 			loadAll()
 		input.src = "./img/select-"+(global.INDEX+1)+".png"
-		$("body").append canvas
+		# $("body").append canvas
 		return 
 
 	sending = true
