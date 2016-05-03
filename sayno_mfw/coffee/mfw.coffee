@@ -66,7 +66,7 @@ window.onload = ->
 			$(".page").addClass("first")
 			if msg.recode is 200
 				$("#imghere").append("<img src='http://image.giccoo.com/sayno/mfw/#{msg.info.image}@!large'  />")
-				$("#nums").text(msg.count)
+				$("#nums").text((msg.count-4000))
 				document.title = msg.info.message+"我有异见！"
 				text = defaultWords[defaultWords.indexOf(msg.info.message)]
 				UpdateShareContent(text,null,"http://m.giccoo.com/sayno_mfw/share.html?id="+msg.info.id,"http://image.giccoo.com/sayno/mfw/small-"+msg.info.image)
