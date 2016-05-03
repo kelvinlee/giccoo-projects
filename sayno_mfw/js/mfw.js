@@ -968,7 +968,7 @@ window.onload = function() {
       $(".page").addClass("first");
       if (msg.recode === 200) {
         $("#imghere").append("<img src='http://image.giccoo.com/sayno/mfw/" + msg.info.image + "@!large'  />");
-        $("#nums").text(msg.count - 4000);
+        $("#nums").text(msg.count);
         document.title = msg.info.message + "我有异见！";
         text = defaultWords[defaultWords.indexOf(msg.info.message)];
         return UpdateShareContent(text, null, "http://m.giccoo.com/sayno_mfw/share.html?id=" + msg.info.id, "http://image.giccoo.com/sayno/mfw/small-" + msg.info.image);
