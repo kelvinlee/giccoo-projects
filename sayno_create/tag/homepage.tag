@@ -186,12 +186,12 @@ homepage
 			@activeinfo = false
 
 		this.sendImage = (ctrl)->
-			console.log "a",ctrl.now
+			# console.log "a",ctrl.now
 			self.ctrl = ctrl
 			global.INDEX = parseInt $("#index").val()
 			namelist = $("#names").val().split("\n")
-			console.log "数量:",namelist.length,ctrl.max
-			if namelist.length isnt ctrl.max
+			if namelist.length < ctrl.max
+				console.log "数量:",namelist.length,ctrl.max
 				return SendNote "昵称与图片数量不匹配"
 			userInfo.name = namelist[ctrl.now]
 			self.submit()

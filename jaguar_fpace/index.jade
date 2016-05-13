@@ -1,0 +1,86 @@
+extends ../libs/jade/layout-clean
+block title
+	| 荣耀
+
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://disk.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css")
+
+block content
+	//- url = "http://image.giccoo.com/projects/jaguar_fpace/"
+	- url = "/jaguar_fpace/"
+	.main
+		.model.model-1
+			.bg
+				img(src="#{url}img/bg-1.jpg")
+				.title.fadeInRight.animated
+					img(src="#{url}img/title-1.png")
+
+		.model.medel-2
+			.title
+				img(src="#{url}img/title-2.jpg")
+			.form-box
+				register(action="http://api.giccoo.com/jaguar_fpace/")
+				//- register(action="http://localhost:8881/jaguar_fpace/")
+		//-.model.model-3
+			.title
+				img(src="#{url}img/title-3.jpg")
+			.bg
+				img(src="#{url}img/bg-2.jpg")
+		.model.model-4
+			.title
+				img(src="#{url}img/title-4.jpg")
+			.bg
+				video(width=640,height=360,poster="#{url}img/video.jpg",src="#{url}video/video.mp4",controls="true",webkit-playsinline,playsinline)
+				p 点击观看精彩视频
+		.model.model-5
+			.title
+				img(src="#{url}img/title-5.jpg")
+			.bg
+				slider(myid="mainSlider",callback="changeMain",list="#{url}img/carimg-1.jpg,#{url}img/carimg-2.jpg,#{url}img/carimg-3.jpg,#{url}img/carimg-4.jpg,#{url}img/carimg-5.jpg,#{url}img/carimg-6.jpg,#{url}img/carimg-7.jpg,#{url}img/carimg-8.jpg")
+					.left
+						img(src="#{url}img/left.png")
+					.right
+						img(src="#{url}img/left.png")
+		.model.model-6
+			.title
+				img(src="#{url}img/title-6.jpg")
+			.bg
+				.sliders
+					slider(myid="secondSlider",callback="changePoint",list="#{url}img/car-1.jpg,#{url}img/car-2.jpg,#{url}img/car-3.jpg,#{url}img/car-4.jpg,#{url}img/car-5.jpg,#{url}img/car-6.jpg,#{url}img/car-7.jpg")
+						.left2
+							img(src="#{url}img/m-left.png")
+						.right2
+							img(src="#{url}img/m-left.png")
+				.points
+					span.on
+					span
+					span
+					span
+					span
+					span
+					span
+
+		a.backTop.hide(href="http://www.jaguar.com.cn/jaguar-range/f-pace/specifications/index.html ")
+			img(src="#{url}img/banner.jpg")
+
+
+block js
+	- url = "/"
+	script(src="http://disk.giccoo.com/projects/libs/js/min/Zepto.min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	script(src="http://disk.giccoo.com/projects/jaguar/js/cityData-min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/riot.min.js")
+	script(src="js/tags.js")
+	script(src="js/main.js")
+
+	//- script.
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?97647f9cd8b3ab0dea00394d1c3ed3aa";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();

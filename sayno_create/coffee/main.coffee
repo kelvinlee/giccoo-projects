@@ -13,8 +13,15 @@ cdn = ""
 isMM = false
 # cdn = "http://disk.giccoo.com/projects/Yili-Eat-World/" unless debug
 global = {}
-link = "http://api.giccoo.com"
+link = "http://localhost:8881"
+# link = "http://api.giccoo.com"
 
+# defaultWords = [
+# 	"谁说旅行就是凑热闹？"
+# 	"谁说旅行就是装文艺?"
+# 	"谁说旅行就是去度假?"
+# 	"谁说旅行就是拍别人?"
+# ]
 defaultWords = [
 	"谁说素颜不能当女神？"
 	"谁说90后=非主流？"
@@ -133,7 +140,90 @@ uploadImage = (next)->
 	data.message = $("#title").val()
 	data.nickname = userInfo.name
 	data.avatar = userInfo.avatar
+	data.project = "momo"
+	global.INDEX = parseInt(Math.random()*defaultWords.length)
+	# parseInt(Math.random()*defaultWords.length)
 
+	# for mfw
+	# createFullImage = (callback)->
+	# 	canvas = document.createElement("canvas")
+	# 	canvas.width = 480
+	# 	canvas.height = 680
+	# 	canvas.className = "testCanvas"
+	# 	ctx = canvas.getContext "2d"
+	# 	ctx.fillStyle = "#ffffff"
+	# 	ctx.fillRect(0,0,480,680)
+	# 	times = 0
+	# 	loadAll = ->
+	# 		# console.log times
+	# 		# return false
+	# 		if times >= 4
+	# 			data.image = canvas.toDataURL("image/png")
+	# 			callback()
+	# 			# console.log "callback"
+	# 		else
+	# 			times++
+
+	# 	image = new Image()
+	# 	image.onload = ->
+	# 		ctx.drawImage(image, 25, 25, 430, 430)
+	# 		ctx.font = "16px bold Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self"
+	# 		ctx.lineWidth = 2
+	# 		ctx.textAlign = "right"
+	# 		# ctx.strokeStyle = "#ffffff"
+	# 		# ctx.strokeText("@"+data.nickname, 435, 485, 430)
+	# 		ctx.fillStyle = "#000000"
+	# 		ctx.fillText("@"+data.nickname, 435, 485, 430)
+	# 		loadAll()
+	# 	image.src = data.image
+
+	# 	logo = new Image()
+	# 	logo.onload = ->
+	# 		ctx.drawImage(logo, 35, 35, 120*1.2, 30*1.2)
+	# 		loadAll()
+	# 	logo.src = "./img/logo-mark.png"
+
+	# 	title = new Image()
+	# 	title.onload = ->
+	# 		height = 40
+	# 		ctx.drawImage(title, 25, 430+height, title.width, title.height)
+	# 		# ctx.beginPath()
+	# 		# ctx.lineWidth = 2
+	# 		# ctx.moveTo(25,430+height+10+title.height)
+	# 		# ctx.lineTo(270,430+height+10+title.height)
+	# 		# ctx.stroke()
+	# 		loadAll()
+	# 	title.src = "./img/build-title.png"
+
+	# 	slogen = new Image()
+	# 	slogen.onload = ->
+	# 		ctx.drawImage(slogen, 480-slogen.width-25, 680-slogen.height-25, slogen.width, slogen.height)
+	# 		loadAll()
+	# 	slogen.src = "./img/image-slogen.png"
+
+	# 	input = new Image()
+	# 	input.onload = ->
+	# 		height = 40+35
+	# 		console.log data.message,data.message is ""
+	# 		if data.message is "" or not data.message?
+	# 			ctx.drawImage(input, 25, 430+height, input.width, 35)
+	# 		else
+	# 			ctx.textAlign = "left"
+	# 			ctx.font = "22px bold Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self"
+	# 			ctx.fillStyle = "#000000"
+	# 			ctx.fillText(data.message, 25, 430+height-10+input.height)
+
+	# 		# ctx.beginPath()
+	# 		# ctx.lineWidth = 2
+	# 		# ctx.moveTo(25,430+height+5+35)
+	# 		# ctx.lineTo(270,430+height+5+35)
+	# 		# ctx.stroke()
+	# 		loadAll()
+	# 	input.src = "./img/select-"+(global.INDEX+1)+".png"
+	# 	# $("body").append canvas
+	# 	return 
+
+	# for momo
 	createFullImage = (callback)->
 		canvas = document.createElement("canvas")
 		canvas.width = 480
@@ -144,7 +234,6 @@ uploadImage = (next)->
 		ctx.fillRect(0,0,480,680)
 		times = 0
 		loadAll = ->
-			console.log times
 			# return false
 			if times >= 4
 				data.image = canvas.toDataURL("image/png")
@@ -193,7 +282,6 @@ uploadImage = (next)->
 		input = new Image()
 		input.onload = ->
 			height = 40+35+15
-			console.log data.message,data.message is ""
 			if data.message is "" or not data.message?
 				ctx.drawImage(input, 25, 430+height, input.width, 35)
 			else
@@ -212,14 +300,20 @@ uploadImage = (next)->
 		# $("body").append canvas
 		return 
 
+
 	sending = true
 	opendWaiting()
 	createFullImage ->
 		# return false
-		if data.message is "" or not data.message?
-			data.message = defaultWords[global.INDEX]
-		else
-			data.message = "谁说"+data.message
+		# if data.message is "" or not data.message?
+		# 	data.message = defaultWords[global.INDEX]
+		# else
+		# 	data.message = "谁说"+data.message
+
+		data.message = defaultWords[global.INDEX]
+
+		postFunc()
+	postFunc = ->
 		$.post link+"/sayno/build/create",data, (msg)->
 			sending = false
 			if msg.recode is 200
@@ -227,9 +321,14 @@ uploadImage = (next)->
 				# showShare()
 				setTimeout ->
 					next(msg)
-				,520
+				,600
 			else
+				console.log data
 				SendNote msg.reason
+				# 重试
+				setTimeout ->
+					postFunc()
+				,600
 			closeWaiting()
 
 # 显示上传等待界面.

@@ -50,7 +50,7 @@ ctrl-image
 			self.frame.y = y
 			self.frame.w = w
 			self.frame.h = h
-			console.log "default:",self.frame
+			# console.log "default:",self.frame
 			logOrin = {
 				x: self.frame.x,
 				y: self.frame.y
@@ -59,7 +59,7 @@ ctrl-image
 				w: self.frame.w,
 				h: self.frame.h
 			}
-			console.log "default:",logSize
+			# console.log "default:",logSize
 			return self.frame
 		this.selectImage = (evt)->
 			if self._selectImage && self._selectImage?
@@ -76,22 +76,24 @@ ctrl-image
 			self.passImage blob
 		this.nextImage = ->
 			self.now++
-			return false if self.now >= self.max 
+			img = document.getElementById "imageInput"
+			console.log img.files.length, self.now, self.max
+			return false if self.now >= img.files.length
 			img = document.getElementById "imageInput"
 			blob = createObjectURLfun(img.files[self.now])
 			self.passImage blob
 		this.passImage = (src)->
 			image = new Image()
 			drawCanvasImage = ->
-				console.log "canvas image"
+				# console.log "canvas image"
 				self.image = image
-				EXIF.getData image, ->
-					info = EXIF.getTag(image, "Orientation")
-					self.info = info
-					if info is 6
-						orienImage()
-					else
-						normalImage()
+				# EXIF.getData image, ->
+				# 	info = EXIF.getTag(image, "Orientation")
+				# 	self.info = info
+				# 	if info is 6
+				# 		orienImage()
+				# 	else
+				normalImage()
 				return true
 			orienImage = ->
 				canvas = document.getElementById "imageCtrl"
@@ -152,11 +154,12 @@ ctrl-image
 				self.init()
 			image.onload = drawCanvasImage
 			image.src = src
+			console.log src
 		this.init = ->
 			self.uploaded = true
 			self.noted = true
 			self.update()
-			console.log self.uploaded
+			# console.log self.uploaded
 			self.target = document.getElementById("imageCtrl")
 			document.getElementById("imageCtrl").addEventListener("touchstart",self.start.bind(self))
 			document.getElementById("imageCtrl").addEventListener("touchmove",self.move.bind(self))
