@@ -1,0 +1,49 @@
+extends ../../libs/jade/layout-clean
+block title
+	| 思维智尚 全新F-PACE
+
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://disk.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css")
+
+block content
+	//- url = "http://image.giccoo.com/projects/jaguar_fpace/"
+	- url = "/mengniu/zaocan/"
+	.model.model-1
+		.bg
+			img(src="#{url}img/background.jpg")
+			a.heart.tada.animated.duration-15.infinite(href="http://zcn-cp.mengniu.com.cn/angrybird/")
+				img(src="#{url}img/heart.png")
+			a.hand.fadeInRight.animated.duration-20.infinite(href="http://zcn-cp.mengniu.com.cn/angrybird/")
+				img(src="#{url}img/hand.png")
+		.logo
+			img(src="#{url}img/logo.png")
+		.slogen
+			img(src="#{url}img/slogen.png")
+		.text
+			img(src="#{url}img/text.png")
+		.top
+			img(src="#{url}img/top.png")
+		.bottom
+			img(src="#{url}img/bottom.png")
+
+
+block js
+	- url = "/"
+	script(src="http://disk.giccoo.com/projects/libs/js/min/Zepto.min.js")
+	//- script(src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="http://disk.giccoo.com/projects/jaguar/js/cityData-min.js")
+	//- script(src="http://disk.giccoo.com/projects/libs/js/min/riot.min.js")
+	//- script(src="js/tags.js")
+	script(src="js/main.js")
+
+	//- script.
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?97647f9cd8b3ab0dea00394d1c3ed3aa";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();

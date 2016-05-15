@@ -1,0 +1,156 @@
+@import sass/base
+@import ../../../libs/sass/loading
+@import ../../../libs/sass/parallax
+@import ../../../libs/sass/loader-ball
+
+
+$debug : false
+$cdn : "http://localhost:5757/sayno_momo/"
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects/sayno_momo/"
+
++keyframes(leftmove)
+	0%
+		+transform(translate3d(0%,0,0))
+	100%
+		+transform(translate3d(-100%,0,0))
++keyframes(showline)
+	0%
+		+w(0)
+	100%
+		+w(96%)
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
+
+.share-wechat
+	+posa
+	+tl
+	+w
+	+h
+	+b("http://disk.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
+	+bc
+	z-index: 1100
+	+hide
+	&.open
+		+show
+
+.main
+	+wh(100%,100%)
+	// +posf
+	// min-height: 410px
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+
+.loading.loaded
+	+large
+		+hide
+
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+iw(600)
+	+m
+	margin-top: -8%
+	.share-icon
+		+show-inline
+		+w(25%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		
+html,body
+	+w
+	+h
+	// +overhide
+
+body
+	// +b("http://i3.tietuku.com/1fcc3041ce5a552f.jpg",no-repeat,center,center,cover)
+
+// .loading.loaded
+// 	+hide
+
+.model
+	+posa
+	+tl
+	+w
+	+h
+	+overhide
+	+bc(#3190da)
+.bg
+	+posa
+	+bl
+	// +transform(translate3d(0,50%,0))
+	+w
+	font-size: 0
+	img
+		+w
+		max-width: none
+	.heart
+		+posa
+		+tl(61%,33%)
+		+w(32%)
+		z-index: 1000
+	.hand
+		+posa
+		+tl(70%,50%)
+		+w(22%)
+		z-index: 1000
+
+.logo,.slogen,.text,.top,.bottom
+	+w
+	img
+		+w
+		max-width: none
+.logo
+	+posa
+	+tl
+	z-index: 102
+.slogen
+	+posa
+	+tl(10%)
+	z-index: 103
+.text
+	+posa
+	+bl(7%)
+	z-index: 103
+.top
+	+posa
+	+tl
+	z-index: 101
+.bottom
+	+posa
+	+bl
+
