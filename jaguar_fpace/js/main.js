@@ -1284,41 +1284,36 @@ changePoint = function(i) {
 };
 
 changeMain = function(i) {
+  console.log(i);
   return tabId = Math.abs(i);
 };
 
 mLeft = function() {
   tabId2--;
-  if (tabId2 < 0) {
-    tabId2 = 0;
-  }
   secondSlider.setNumber(tabId2);
   $(".points span").removeClass("on");
+  if (tabId2 < 0) {
+    tabId2 = 6;
+  }
   return $(".points span").eq(tabId2).addClass("on");
 };
 
 mRight = function() {
   tabId2++;
-  if (tabId2 > 6) {
-    tabId2 = 6;
-  }
   secondSlider.setNumber(tabId2);
   $(".points span").removeClass("on");
+  if (tabId2 > 6) {
+    tabId2 = 0;
+  }
   return $(".points span").eq(tabId2).addClass("on");
 };
 
 moveLeft = function() {
   tabId--;
-  if (tabId < 0) {
-    tabId = 0;
-  }
   return mainSlider.setNumber(tabId);
 };
 
 moveRight = function() {
   tabId++;
-  if (tabId > 7) {
-    tabId = 7;
-  }
   return mainSlider.setNumber(tabId);
 };

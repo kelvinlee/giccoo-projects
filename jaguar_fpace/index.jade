@@ -38,7 +38,7 @@ block content
 			.title
 				img(src="#{url}img/title-5.jpg")
 			.bg
-				slider(myid="mainSlider",callback="changeMain",list="#{url}img/carimg-1.jpg,#{url}img/carimg-2.jpg,#{url}img/carimg-3.jpg,#{url}img/carimg-4.jpg,#{url}img/carimg-5.jpg,#{url}img/carimg-6.jpg,#{url}img/carimg-7.jpg,#{url}img/carimg-8.jpg")
+				slider.sliderBox(myid="mainSlider",repeat="true",callback="changeMain",list="#{url}img/carimg-1.jpg,#{url}img/carimg-2.jpg,#{url}img/carimg-3.jpg,#{url}img/carimg-4.jpg,#{url}img/carimg-5.jpg,#{url}img/carimg-6.jpg,#{url}img/carimg-7.jpg,#{url}img/carimg-8.jpg")
 					.left
 						img(src="#{url}img/left.png")
 					.right
@@ -47,8 +47,8 @@ block content
 			.title
 				img(src="#{url}img/title-6.jpg")
 			.bg
-				.sliders
-					slider(myid="secondSlider",callback="changePoint",list="#{url}img/car-1.jpg,#{url}img/car-2.jpg,#{url}img/car-3.jpg,#{url}img/car-4.jpg,#{url}img/car-5.jpg,#{url}img/car-6.jpg,#{url}img/car-7.jpg")
+				.sliders.sliderBox
+					slider(myid="secondSlider",repeat="true",callback="changePoint",list="#{url}img/car-1.jpg,#{url}img/car-2.jpg,#{url}img/car-3.jpg,#{url}img/car-4.jpg,#{url}img/car-5.jpg,#{url}img/car-6.jpg,#{url}img/car-7.jpg")
 						.left2
 							img(src="#{url}img/m-left.png")
 						.right2
@@ -68,10 +68,10 @@ block content
 
 block js
 	- url = "/"
-	script(src="http://disk.giccoo.com/projects/libs/js/min/Zepto.min.js")
-	script(src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js")
-	script(src="http://disk.giccoo.com/projects/jaguar/js/cityData-min.js")
-	script(src="http://disk.giccoo.com/projects/libs/js/min/riot.min.js")
+	script(src="/libs/js/min/Zepto.min.js")
+	script(src="/libs/js/min/fastclick.min.js")
+	script(src="/jaguar/js/cityData-min.js")
+	script(src="/libs/js/min/riot.min.js")
 	script(src="js/tags.js")
 	script(src="js/main.js")
 

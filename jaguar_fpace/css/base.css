@@ -993,12 +993,16 @@ html, body {
   .loading.loaded {
     display: none; } }
 
+.sliderBox {
+  white-space: nowrap; }
+
 .slider {
   position: relative;
   white-space: nowrap;
   font-size: 0;
   -webkit-transition: all 0s linear;
-  transition: all 0s linear; }
+  transition: all 0s linear;
+  display: inline-block; }
   .slider .slide {
     width: 100%;
     display: inline-block;
@@ -1440,7 +1444,7 @@ body {
 
 .backTop {
   position: fixed;
-  bottom: 20%;
+  bottom: 30%;
   right: 0;
   width: 2rem;
   font-size: 0; }

@@ -63,11 +63,14 @@ $cdn : "http://localhost:5757/sayno_momo/"
 	+large
 		+hide
 
+.sliderBox
+	white-space: nowrap
 .slider
 	+posr
 	white-space: nowrap
 	font-size: 0
 	+tran(all,0s,linear)
+	+show-inline
 	.slide
 		+w(100%)
 		display: inline-block
@@ -383,7 +386,7 @@ body
 
 .backTop
 	+posf
-	+br(20%,0)
+	+br(30%,0)
 	+w(2rem)
 	font-size: 0
 	&.hide

@@ -215,31 +215,34 @@ changePoint = (i)->
 
 
 changeMain = (i)->
+	console.log i
 	tabId = Math.abs(i)
 
 mLeft = ->
 	tabId2--
-	if tabId2 < 0
-		tabId2 = 0
+	
 	secondSlider.setNumber(tabId2)
 	$(".points span").removeClass "on"
+	if tabId2 < 0
+		tabId2 = 6
 	$(".points span").eq(tabId2).addClass "on"
 mRight = ->
 	tabId2++
-	if tabId2 > 6
-		tabId2 = 6
+	
 	secondSlider.setNumber(tabId2)
 	$(".points span").removeClass "on"
+	if tabId2 > 6
+		tabId2 = 0
 	$(".points span").eq(tabId2).addClass "on"
 
 moveLeft = ->
 	tabId--
-	if tabId < 0
-		tabId = 0
+	# if tabId < 0
+		# tabId = 7
 	mainSlider.setNumber(tabId)
 	
 moveRight = ->
 	tabId++
-	if tabId > 7
-		tabId = 7
+	# if tabId > 7
+		# tabId = 0
 	mainSlider.setNumber(tabId)

@@ -164,7 +164,7 @@ this.on('update', function() {
 });
 }, '{ }');
 
-riot.tag2('slider', '<yield></yield> <div riot-style="-webkit-transition-duration: {duration}s;transition-duration: {duration}s; -webkit-transform: translate3d({x}px,0,0); transform: translate3d({x}px,0,0);" class="slider"> <div each="{bgimg in list}" class="slide"> <div class="bg"><img riot-src="{bgimg}"></div> </div> </div>', '', '', function(opts) {
+riot.tag2('slider', '<yield></yield> <div riot-style="-webkit-transition-duration: {duration}s;transition-duration: {duration}s; -webkit-transform: translate3d({x}px,0,0); transform: translate3d({x}px,0,0);" class="slider"> <div riot-if="{repeat}" each="{bgimg in list}" class="slide"> <div class="bg"><img riot-src="{bgimg}"></div> </div><div riot-if="{repeat}" each="{bgimg in list}" class="slide"> <div class="bg"><img riot-src="{bgimg}"></div> </div><div each="{bgimg in list}" class="slide"> <div class="bg"><img riot-src="{bgimg}"></div> </div> </div>', '', '', function(opts) {
 var list, self, slider;
 
 self = this;
@@ -172,6 +172,8 @@ self = this;
 list = opts.list + "";
 
 this.list = list.split(",");
+
+this.repeat = opts.repeat?true:false
 
 this.duration = 0.2;
 
@@ -194,6 +196,14 @@ this.x = 0;
 
 this.y = 0;
 
+this.Rx = 0;
+
+this.Ry = 0;
+
+this.Lx = 0
+
+this.Ly = 0;
+
 slider = $(".slider", this.root);
 
 this.moved = false;
@@ -203,21 +213,25 @@ if (opts.myid) {
 }
 
 this.setNumber = function(i) {
+  console.log(i,self.slideNumber);
   self.duration = 0.2;
   self.x = -($(".slider", self.root).width() * i);
-  return self.update();
+  if (this.repeat) {
+    self.x -= this.list.length * this.offset.w;
+  }
+  self.slideNumber = i
+  self.update();
 };
 
 this.setSlideNumber = function(offset) {
   var round, slideNumber;
-  console.log(offset);
   if (this.moved) {
     round = offset ? (this.offset.deltaX < 0 ? "ceil" : "floor") : "round";
     slideNumber = Math[round](this.x / (this.offset.scrollableArea / slider.find(".slide").length));
     slideNumber += offset;
     slideNumber = Math.min(slideNumber, 0);
-    this.slideNumber = Math.max(-(slider.find(".slide").length - 1), slideNumber);
-    console.log(opts.callback, typeof opts.callback);
+    console.log(Math.max(-(slider.find(".slide").length - 1), slideNumber));
+    this.slideNumber = Math.max(-(slider.find(".slide").length - 1), slideNumber) % this.list.length ;
     opts.callback && eval(opts.callback + "(" + this.slideNumber + ")");
   }
 };
@@ -232,8 +246,11 @@ this.touchstart = function(evt) {
   this.offset.w = slider.width();
   this.offset.x = touch.pageX;
   this.offset.y = touch.pageY;
+  if (this.repeat && this.x == 0) {
+    this.x = - this.list.length * this.offset.w
+  }
   this.offset.lastw = this.x;
-  this.offset.lastSlide = -(slider.find(".slide").length - 1);
+  this.offset.lastSlide = -(this.list.length - 1);
   this.offset.scrollableArea = this.offset.w * slider.find(".slide").length;
   this.setSlideNumber(0);
   return this.update();
@@ -244,30 +261,80 @@ this.touchmove = function(evt) {
   touch = evt.touches[0];
   this.offset.deltaX = touch.pageX - this.offset.x;
   pageX = touch.pageX;
-  this.x = this.offset.deltaX / this.offset.resistance + this.offset.lastw;
-  this.offset.resistance = this.slideNumber === 0 && this.offset.deltaX > 0 ? pageX / this.offset.w + 1.25 : (this.slideNumber === this.offset.lastSlide && this.offset.deltaX < 0 ? (this.offset.w - Math.abs(pageX)) / this.offset.w + 1.25 : 1);
+  if (this.repeat) {
+    this.x = this.offset.deltaX + this.offset.lastw;
+  }else{
+    this.x = this.offset.deltaX / this.offset.resistance + this.offset.lastw;
+    this.offset.resistance = this.slideNumber === 0 && this.offset.deltaX > 0 ? pageX / this.offset.w + 1.25 : (this.slideNumber === this.offset.lastSlide && this.offset.deltaX < 0 ? (this.offset.w - Math.abs(pageX)) / this.offset.w + 1.25 : 1);
+  }
+  
   this.moved = true;
   evt.preventDefault();
-  console.log(Math.abs(pageX), this.offset.w);
+  // console.log(Math.abs(pageX), this.offset.w);
   return this.update();
 };
 
 this.touchend = function(evt) {
   console.log(this.moved);
   if (this.moved) {
+    var oldslideNumber = this.slideNumber;
     this.setSlideNumber(+(new Date) - this.startTime < 1000 && Math.abs(this.offset.deltaX) > 15 ? (this.offset.deltaX < 0 ? -1 : 1) : 0);
     this.x = this.slideNumber * this.offset.w;
+    console.log("my number:",this.slideNumber,oldslideNumber)
+    if (this.slideNumber == 0 && oldslideNumber == -(this.list.length-1)) {
+      // console.log("move",this.list.length)
+      this.x = (oldslideNumber-1) * this.offset.w;
+    }
+    if (oldslideNumber == 0 && this.slideNumber == -(this.list.length-1)) {
+      // console.log("move",this.list.length)
+      this.x = 1 * this.offset.w;
+    }
+    if (this.repeat) {
+      this.x -= this.list.length * this.offset.w;
+      // this.Rx = this.x + (this.list.length-1) * this.offset.w;
+      // this.Lx = this.x - (this.list.length) * this.offset.w;
+      // this.x = 
+    }
+    // console.log(this.Rx,this.x,this.repeat)
     this.duration = 0.2;
     this.update();
   }
   return this.moved = false;
 };
 
+this.transition = function(evt) {
+  // return false;
+  console.log(this.x , -( (this.list.length) * this.offset.w));
+  if (this.x < -( (this.list.length * 2 - 1) * this.offset.w)) {
+    this.x = - this.list.length * this.offset.w;
+    // this.Rx = this.x + (this.list.length-1) * this.offset.w;
+    // this.Lx = this.x - (this.list.length-1) * this.offset.w;
+    this.duration = 0;
+    this.slideNumber = 0;
+    this.update();
+    opts.callback && eval(opts.callback + "(" + this.slideNumber + ")");
+  }
+  if (this.x > -( (this.list.length) * this.offset.w)) {
+    this.x = - (this.list.length*2-1) * this.offset.w;
+    // this.Rx = this.x + (this.list.length-1) * this.offset.w;
+    // this.Lx = this.x - (this.list.length-1) * this.offset.w;
+    this.duration = 0;
+    this.slideNumber = -(this.list.length-1);
+    this.update();
+    opts.callback && eval(opts.callback + "(" + this.slideNumber + ")");
+  }
+}
+
 this.on("mount", function() {
   slider = $(this.root);
   slider[0].addEventListener("touchstart", this.touchstart.bind(this));
   slider[0].addEventListener("touchmove", this.touchmove.bind(this));
   slider[0].addEventListener("touchend", this.touchend.bind(this));
+  if (this.repeat) {
+    slide = $(".slider",this.root);
+    console.log(slide,TRANSITION_END_NAME);
+    slide[0].addEventListener(TRANSITION_END_NAME, this.transition.bind(this));
+  }
   return opts.end && opts.end(this);
 });
 }, '{ }');
