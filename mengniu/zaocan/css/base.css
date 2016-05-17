@@ -712,6 +712,26 @@ html, body {
     width: 0; }
   100% {
     width: 96%; } }
+@-webkit-keyframes heart {
+  0%,20%,45%,100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  10%,35% {
+    -webkit-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8); }
+  25%,50% {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1); } }
+@keyframes heart {
+  0%,20%,45%,100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  10%,35% {
+    -webkit-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8); }
+  25%,50% {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1); } }
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -1052,12 +1072,18 @@ html, body {
     top: 61%;
     left: 33%;
     width: 32%;
-    z-index: 1000; }
+    z-index: 1000;
+    -webkit-animation: heart 1s ease;
+            animation: heart 1s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
   .bg .hand {
     position: absolute;
     top: 70%;
     left: 50%;
-    width: 22%;
+    width: 12%;
     z-index: 1000; }
 
 .logo, .slogen, .text, .top, .bottom {

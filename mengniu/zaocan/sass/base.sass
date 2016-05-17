@@ -19,6 +19,16 @@ $cdn : "http://localhost:5757/sayno_momo/"
 		+w(0)
 	100%
 		+w(96%)
++keyframes(heart)
+	0%,20%,45%,100%
+		+transform(scale(1,1))
+	10%,35%
+		+transform(scale(0.8,0.8))
+	25%,50%
+		+transform(scale(1.1,1.1))
+
+
+
 
 // animation, delay, duration
 @for $i from 1 through 30
@@ -123,10 +133,11 @@ body
 		+tl(61%,33%)
 		+w(32%)
 		z-index: 1000
+		+animation(heart,1s,ease,infinite)
 	.hand
 		+posa
 		+tl(70%,50%)
-		+w(22%)
+		+w(12%)
 		z-index: 1000
 
 .logo,.slogen,.text,.top,.bottom
@@ -153,4 +164,5 @@ body
 .bottom
 	+posa
 	+bl
+
 
