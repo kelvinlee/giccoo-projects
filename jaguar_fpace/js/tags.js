@@ -253,6 +253,7 @@ this.touchstart = function(evt) {
   this.offset.lastSlide = -(this.list.length - 1);
   this.offset.scrollableArea = this.offset.w * slider.find(".slide").length;
   this.setSlideNumber(0);
+  console.log("move start");
   return this.update();
 };
 
@@ -282,18 +283,13 @@ this.touchend = function(evt) {
     this.x = this.slideNumber * this.offset.w;
     console.log("my number:",this.slideNumber,oldslideNumber)
     if (this.slideNumber == 0 && oldslideNumber == -(this.list.length-1)) {
-      // console.log("move",this.list.length)
       this.x = (oldslideNumber-1) * this.offset.w;
     }
     if (oldslideNumber == 0 && this.slideNumber == -(this.list.length-1)) {
-      // console.log("move",this.list.length)
       this.x = 1 * this.offset.w;
     }
     if (this.repeat) {
       this.x -= this.list.length * this.offset.w;
-      // this.Rx = this.x + (this.list.length-1) * this.offset.w;
-      // this.Lx = this.x - (this.list.length) * this.offset.w;
-      // this.x = 
     }
     // console.log(this.Rx,this.x,this.repeat)
     this.duration = 0.2;
