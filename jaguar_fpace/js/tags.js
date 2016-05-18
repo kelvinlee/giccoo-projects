@@ -214,6 +214,8 @@ if (opts.myid) {
 
 this.setNumber = function(i) {
   console.log(i,self.slideNumber);
+  slider = $(".slider", this.root);
+  this.offset.w = slider.width();
   self.duration = 0.2;
   self.x = -($(".slider", self.root).width() * i);
   if (this.repeat) {
