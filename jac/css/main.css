@@ -238,7 +238,7 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;}
         text-overflow: ellipsis;
         display: inline-block;
         width: 100%;
-        height: 1.4rem;
+        height: 2rem;
         overflow: hidden; }
       .form .form-grounp .select select {
         position: absolute;
@@ -260,3 +260,10 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;}
       border: none; }
 .form .form-btn button.submit {width: 41.6%;}
 .form .form-btn button.submit img {width: 100%}
+.endText{
+  color: #fff;
+  font-size: 0.6rem;
+  text-align: right;
+  height: 1.4rem; 
+
+}
