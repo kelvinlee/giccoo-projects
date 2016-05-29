@@ -60,7 +60,9 @@ riot.tag('register', '<form onsubmit="{submit}" class="form"> <div class="form-g
     	$.post("http://api.giccoo.com/jac/insert/",data,function(msg){
 
     		if (msg.recode == 200) {
-    			alert("注册成功")
+    			//alert("注册成功")
+    			$("#doneLayer").css({"display":"block"})
+				TweenLite.to($("#doneLayer"),1,{opacity:1})
 
     		}else{
     			alert(msg.reason)

@@ -9,7 +9,7 @@
 <body>
 
 <div id="logo"><img src="img/logo.png" width="100%"></div>
-<div id="loading">
+<div class="loading">
 	<div class="bg"><img src="img/loading_bg.jpg" width="100%" height="100%"></div>	
 	<div class="loadingLine" id="line1"><img src="img/loading_line.png" width="100%"></div>
 	<div class="loadingLine" id="line2"><img src="img/loading_line.png" width="100%"></div>
@@ -19,7 +19,15 @@
 	<div class="loadingLine" id="line6"><img src="img/loading_line.png" width="100%"></div>
 	<div id="loadingCar"><img src="img/loading_car.png" width="100%"></div>
 	<div class="loadingLine" ><img src="img/loading_line.png" width="100%"></div>
-	<div id="loadingT">100%</div>
+	<div id="loadingT"><span id="loading-text">0</span>%</div>
+</div>
+
+<div style="display:none;">
+	<div id="fenxiang_title">分享标题文案</div>
+	<div id="fenxiang_img">分享图片链接</div>
+	<div id="fenxiang_desc">分享描述文案</div>
+	<div id="fenxiang_link">分享页面链接</div>
+	<div id="weibo_fenxiang_img">分享图片链接</div>
 </div>
 
 <div class="content">
@@ -243,7 +251,7 @@
 		<div id="userTable">
 			<register></register>
 		</div>
-		<div class="btnEnd" id="btnSubmit"><img src="img/submit.png" width="100%"></div>
+		<!-- <div class="btnEnd" id="btnSubmit"><img src="img/submit.png" width="100%"></div> -->
 		<div class="btnEnd" id="btnShare"><img src="img/btn_share.png" width="100%"></div>
 		<div class="floatLayer" id="shareLayer">
 			<div class="blackLayer"></div>

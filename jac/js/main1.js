@@ -1,5 +1,6 @@
 
 $(document).ready(function load (){
+	loadStart()
 	loadingLine()
 	function loadingLine(){
 		var lineA=[$("#line1"),$("#line2"),$("#line3"),$("#line4"),$("#line5"),$("#line6")]
@@ -10,7 +11,7 @@ $(document).ready(function load (){
 		TweenLite.to(lineA,1,{onComplete:loadingLine})//记得加loading结束去循环
 	}
 
-	page1Line()
+	
 	function page1Line(){
 		var lineA1=[$("#p1line1"),$("#p1line2"),$("#p1line3"),$("#p1line4"),$("#p1line5"),$("#p1line6")]
 		for (var i = 0; i < lineA1.length; i++) {
@@ -20,7 +21,7 @@ $(document).ready(function load (){
 		TweenLite.to(lineA1,.5,{onComplete:page1Line})
 	}
 
-	setSlide();
+	// setSlide();
 	function setSlide(){
 		var nowPage = 0;
 		var startY = 0;
@@ -90,10 +91,10 @@ $(document).ready(function load (){
 		})
 
 
-		$("#btnSubmit").click(function(){
-			$("#doneLayer").css({"display":"block"})
-			TweenLite.to($("#doneLayer"),1,{opacity:1})
-		})
+		// $("#btnSubmit").click(function(){
+		// 	$("#doneLayer").css({"display":"block"})
+		// 	TweenLite.to($("#doneLayer"),1,{opacity:1})
+		// })
 
 
 		
@@ -105,7 +106,7 @@ $(document).ready(function load (){
 	var container=$('body')
 	TweenMax.set(container, {perspective:500})
 
-	ani1()
+	//ani1()
 
 	function ani1(){
 		var t1=$("#p1t1")
@@ -245,5 +246,82 @@ $(document).ready(function load (){
 	}
 
 
+function loadStart() {
+
+	var loadStepOne = [".bg"]
+
+var _loadNum = 0
+var _loadMax = 0
+	for (var i = 0; i< loadStepOne.length;i++) {
+		_loadMax += $(loadStepOne[i]+" [data-src]").length;
+	}
+	console.log(_loadMax);
+	for (var i = 0; i< loadStepOne.length;i++) {
+		$(loadStepOne[i]+" [data-src]").each(function(){
+			var img = new Image();
+			img.onload = function(){
+				_loadNum++;
+				// console.log(parseInt(_loadNum/_loadMax*100));
+				$("#loading-text").text(parseInt(_loadNum/_loadMax*100));
+				if (_loadNum>=_loadMax) {
+					//alert(_loadMax)
+					loadEnd()
+				}
+			}
+			img.src = $(this).attr("data-src");
+			$(this).after(img);
+			$(this).remove();
+		})
+	}
+	setTimeout(function(){
+		loadEnd();
+	},500)
+}
+function loadEnd() {
+	// loadjscssfile("css/main.css","css");
+	setSlide();
+	 page1Line();
+	 ani1()
+	console.log("load end")
+	$(".loading").addClass("fadeOut animated");
+	setTimeout(function(){
+		$(".loading").remove()
+	},500)
+
+}
+function loadStep(nums) {
+	if ($("#part"+nums+" [data-src]").length <= 0) {
+		return false;
+	}
+	$("#part"+nums+" [data-src]").each(function(){
+		var img = new Image();
+		img.src = $(this).attr("data-src");
+		$(this).after(img);
+		$(this).remove();
+	})
+}
+// JavaScript Document
+function loadjscssfile(filename,filetype){
+
+    if(filetype == "js"){
+        var fileref = document.createElement('script');
+        fileref.setAttribute("type","text/javascript");
+        fileref.setAttribute("src",filename);
+    }else if(filetype == "css"){
+    
+        var fileref = document.createElement('link');
+        fileref.setAttribute("rel","stylesheet");
+        fileref.setAttribute("type","text/css");
+        fileref.setAttribute("href",filename);
+    }
+   if(typeof fileref != "undefined"){
+        document.getElementsByTagName("head")[0].appendChild(fileref);
+    }
+    
+}
 
 });
+
+
+//var loadStepOne = [".popUpLayer",".btnBack","#part1","#part2 .page:eq(0)","#part3 .page:eq(0)","#part4 .page:eq(0)","#part5 .page:eq(0)"]
+

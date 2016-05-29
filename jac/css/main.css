@@ -3,7 +3,7 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;}
 #logo{position: absolute;width: 100%;top: 0;z-index: 1000}
 .bg{position: absolute;width: 100%;height: 100%;z-index: 0;}
 
-#loading{display: none;}
+.loading{position: absolute;z-index: 99999;top: 0;left: 0;width: 100%;height: 100%;}
 #loadingCar{position: absolute;width: 43.3%;top: 50%;left: 50%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);}
 .loadingLine{position: absolute;width: 43.3%;top: 50%;left: 50%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);}
 #loadingT{position: absolute;width: 100%;text-align: center;font-size: 1rem;color: #fff;top: 60%;}
@@ -49,7 +49,7 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;}
 #p3pic{display: none;}
 .page2t{position: absolute;width: 100%;top: 70%;left: 50%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0)}
 .page3t{position: absolute;width: 100%;top: 70%;left: 50%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0)}
-.numberPic{	position: absolute;width: 100%;top: 0%;left: 50%;transform:translate3d(-50%,0%,0);-webkit-transform:translate3d(-50%,0%,0);}
+.numberPic{	position: absolute;width: 75%;top: 0%;left: 50%;transform:translate3d(-50%,0%,0);-webkit-transform:translate3d(-50%,0%,0);}
 .square{	position: absolute;width: 12.1875%;top: 0%;left: 50%;transform:translate3d(-50%,0%,0);-webkit-transform:translate3d(-50%,0%,0);}
 .ts{position: absolute;	color: #fff;	font-size: .8rem;	top: 50%;	left: 50%;
 	transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);
@@ -82,10 +82,10 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;}
 	top: 70%;
 }
 #btnShare{
-	top: 80%;
+	bottom: 10%;
 }
 .floatLayer{
-	position: absolute;width: 100%;height: 100%;
+	position: absolute;width: 100%;height: 100%;z-index: 9999;
 }
 .blackLayer{
 	position: absolute;width: 100%;height: 100%;background-color: #000;opacity: .5;
