@@ -331,7 +331,7 @@ var _loadMax = 0
 			img.onload = function(){
 				_loadNum++;
 				// console.log(parseInt(_loadNum/_loadMax*100));
-				$("#loading-text").text(parseInt(_loadNum/_loadMax*100));
+				$("#loading-text").text(parseInt(_loadNum/_loadMax*82+18));
 				if (_loadNum>=_loadMax) {
 					//alert(_loadMax)
 					setTimeout(function(){
