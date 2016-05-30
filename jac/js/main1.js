@@ -338,7 +338,7 @@ var _loadMax = 0
 				}
 			}
 			img.src = $(this).attr("data-src");
-			if (loadStepOne[i]==".bg") {img.style="width:100% height:100%";}else{img.style="width:100%";};
+			if (loadStepOne[i]==".bg") {img.style="width:100%;height:100%;";}else{img.style="width:100%;";};
 			
 			$(this).after(img);
 			$(this).remove();
