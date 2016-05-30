@@ -280,7 +280,7 @@ $(document).ready(function load (){
 			
 			//TweenLite.from(tA[i][j],1,{opacity:0,rotationY:360*Math.random()-180,rotationX:-180*Math.random()+90,left:100*Math.random()+"%",z:800,ease:Back.easeOut,delay:.5+0.07*j})
 
-			TweenLite.from(tA[i][j],1,{opacity:0,width:"150%",ease:Back.easeOut,delay:.5+0.07*j})
+			//TweenLite.from(tA[i][j],1,{opacity:0,width:"150%",ease:Back.easeOut,delay:.5+0.07*j})
 		};
 
 		//TweenLite.to(bigN,4,{opacity:1,left:"50%",ease:Quint.easeOut})
