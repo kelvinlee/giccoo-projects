@@ -2,7 +2,42 @@
 $(document).ready(function load (){
 	loadStart()
 	loadingLine()
-	
+
+	loadWechatConfig();
+ 	 wx.ready(function() {
+   	 var AppMShareContent, TimelineShareContent;
+   	 isWechat = true;
+  	  AppMShareContent = {
+    	  title: "#唤醒•荣耀V8#" + shareDefault.title + "我有异见！",
+     	 desc: shareDefault.text,
+   	   link: shareDefault.url,
+   	   imgUrl: shareDefault.pic,
+   	   success: function() {},
+   	   cancel: function() {}
+  	  };
+  	  TimelineShareContent = {
+   	   title: "#唤醒•荣耀V8#" + shareDefault.title + "我有异见！",
+    	  desc: shareDefault.text,
+    	  link: shareDefault.url,
+   	   imgUrl: shareDefault.pic,
+  	    success: function() {},
+  	    cancel: function() {}
+   	 };
+   	 wx.onMenuShareTimeline(TimelineShareContent);
+  	  wx.onMenuShareAppMessage(AppMShareContent);
+ 	   wx.onMenuShareQQ(AppMShareContent);
+	    return wx.onMenuShareWeibo(TimelineShareContent);
+	  });
+ 	function loadWechatConfig() {
+	  var hm, s, url;
+	  url = encodeURIComponent(window.location.href.split("#")[0]);
+	  hm = document.createElement('script');
+	  hm.src = "http://api.giccoo.com/config?url=" + url;
+	  s = document.getElementsByTagName('script')[0];
+	  s.parentNode.insertBefore(hm, s);
+	};
+
+
 	function loadingLine(){
 		var lineA=[$("#line1"),$("#line2"),$("#line3"),$("#line4"),$("#line5"),$("#line6")]
 		for (var i = 0; i < lineA.length; i++) {
@@ -26,8 +61,9 @@ $(document).ready(function load (){
 	}
 
 	// setSlide();
+	var nowPage = 0;
 	function setSlide(){
-		var nowPage = 0;
+		
 		var startY = 0;
 		var startScrollTop;
 		var pageUpDown =0
@@ -129,8 +165,8 @@ $(document).ready(function load (){
 		t5.css({'opacity':0,'top':'48%'})
 		TweenLite.to(t1,1,{rotationY:'0',opacity:1,left:"50%",delay:0,ease:Back.easeOut,overwrite:0})
 		TweenLite.to(t2,1,{rotationY:'0',opacity:1,left:"50%",delay:0.1,ease:Back.easeOut,overwrite:0})
-		TweenLite.to(t1,.8,{top:'34%',ease:Back.easeOut,delay:1.5})
-		TweenLite.to(t2,.8,{top:'34%',ease:Back.easeOut,delay:1.6})
+		TweenLite.to(t1,.8,{top:'35%',ease:Back.easeOut,delay:1.5})
+		TweenLite.to(t2,.8,{top:'35%',ease:Back.easeOut,delay:1.6})
 
 		TweenLite.to(t5,1,{top:'35%',opacity:1,ease:Back.easeOut,delay:1.6+.05})
 		TweenLite.to(t4,1,{top:'35%',opacity:1,ease:Back.easeOut,delay:1.6+.05*2})
@@ -159,7 +195,7 @@ $(document).ready(function load (){
 				picY*=.8;
 				ctx.clearRect(0,0,480,493)
 				ctx.drawImage(img,0,picY);
-				if (picY<2) {
+				if (picY<2||nowPage!=1) {
 					clearInterval(draw);
 				};
 			},40)
@@ -199,13 +235,13 @@ $(document).ready(function load (){
 		function startDraw2(){
 			var picY2=400
 			var draw2=setInterval(function(){
-				picY2*=.95;
+				picY2*=.8;
 				ctx2.clearRect(0,0,480,494)
 				ctx2.drawImage(img2,0,picY2);
-				if (picY2<2) {
+				if (picY2<2||nowPage!=2) {
 					clearInterval(draw2);
 				};
-			},20)
+			},40)
 		}
 		
        	var t1=$("#p3t1")
@@ -238,18 +274,15 @@ $(document).ready(function load (){
 		//car.css({"opacity":0,"top":"100%"})
 		//end.css({"opacity":0,"top":"100%"})
 		for (var j = 0; j < tA[i].length; j++) {
-			//tA[i].css({"opacity":0,"left":"0%"})
-			//TweenLite.to(tA[i],2,{opacity:1,left:"50%",ease:Elastic.easeOut,delay:.5+0.05*i})
-			var zf=-1
-			if (j%2==0) {zf=1};
+			
 			TweenLite.from(tA[i][j],1,{opacity:0,rotationY:360*Math.random()-180,rotationX:-180*Math.random()+90,left:100*Math.random()+"%",z:800,ease:Back.easeOut,delay:.5+0.07*j})
 		};
 
 		//TweenLite.to(bigN,4,{opacity:1,left:"50%",ease:Quint.easeOut})
 		TweenLite.from(bigN[i],4,{opacity:0,left:"-50%",ease:Quint.easeOut})
 		TweenLite.to(sq[i],2,{opacity:1,top:"95%",ease:Elastic.easeOut,delay:.5-0.05})
-		TweenLite.from(car[i],2,{opacity:0,left:"60%",ease:Quint.easeOut,delay:.5})
-		TweenLite.from(end[i],4,{opacity:0,ease:Quint.easeOut,delay:.5})
+		//TweenLite.from(car[i],2,{opacity:0,left:"60%",ease:Quint.easeOut,delay:.5})
+		//TweenLite.from(end[i],4,{opacity:0,ease:Quint.easeOut,delay:.5})
 
 	}
 
