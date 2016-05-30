@@ -8,18 +8,18 @@ $(document).ready(function load (){
    	 var AppMShareContent, TimelineShareContent;
    	 isWechat = true;
   	  AppMShareContent = {
-    	  title: "#唤醒•荣耀V8#" + shareDefault.title + "我有异见！",
-     	 desc: shareDefault.text,
-   	   link: shareDefault.url,
-   	   imgUrl: shareDefault.pic,
-   	   success: function() {},
-   	   cancel: function() {}
+    	title: "舒适空间自由启程，快来体验二代瑞风M5的7重舒适！",
+		desc: "致敬时代驱动力",
+		link: "http://m.giccoo.com/jac/",
+		imgUrl: "http://m.giccoo.com/jac/img/ico.jpg",
+		success: function() {},
+		cancel: function() {}
   	  };
   	  TimelineShareContent = {
-   	   title: "#唤醒•荣耀V8#" + shareDefault.title + "我有异见！",
-    	  desc: shareDefault.text,
-    	  link: shareDefault.url,
-   	   imgUrl: shareDefault.pic,
+   	   title: "舒适空间自由启程，快来体验二代瑞风M5的7重舒适！",
+    	  desc: "致敬时代驱动力",
+    	  link: "http://m.giccoo.com/jac/",
+   		  imgUrl: "http://m.giccoo.com/jac/img/ico.jpg",
   	    success: function() {},
   	    cancel: function() {}
    	 };
