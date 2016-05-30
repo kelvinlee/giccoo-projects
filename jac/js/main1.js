@@ -120,9 +120,10 @@ $(document).ready(function load (){
 			if (nowPage!=0) {killTweenLine();};
 			 for (var i = 0; i < sliderA.length; i++) {
 			 	if (i<nowPage) {
-			 		TweenLite.to(sliderA[i],.5,{top:"-100%"})//,ease:Back.easeOut
+			 		TweenLite.to(sliderA[i],.5,{top:"-100%",display:"none"})//,ease:Back.easeOut
 			 	};
 			 	if (i==nowPage) {
+			 		sliderA[i].css({"display":"block"})
 			 		TweenLite.to(sliderA[i],.5,{top:"0%"})
 			 		if (i==0) {ani1()};
 			 		if (i==1) {ani2()};
@@ -130,7 +131,7 @@ $(document).ready(function load (){
 			 		if (i>2&&i<10) {pageAni1(i-3)};
 			 	};
 			 	if (i>nowPage) {
-			 		TweenLite.to(sliderA[i],.5,{top:"100%"})
+			 		TweenLite.to(sliderA[i],.5,{top:"100%",display:"none"})
 			 	};
 			 }
 		}
