@@ -63,7 +63,24 @@ $(document).ready(function load (){
 	// setSlide();
 	var nowPage = 0;
 	function setSlide(){
-		
+		$(".goend").click(function(){
+			nowPage=10
+			goPage()
+		})
+		$("#btnShare").click(function(){
+			$("#shareLayer").css({"display":"block"})
+			TweenLite.to($("#shareLayer"),1,{opacity:1})
+			$("#logo").css({"opacity":.5})
+		})
+		$("#shareLayer").click(function(){
+			TweenLite.to($("#shareLayer"),1,{opacity:0,display:"none"})
+		})
+
+		$("#doneLayer").click(function(){
+			TweenLite.to($("#doneLayer"),1,{opacity:0,display:"none"})
+			setTimeout("$('#doneLayer').css({'opacity':0,'display':'none'})",500)
+
+		})
 		var startY = 0;
 		var startScrollTop;
 		var pageUpDown =0
@@ -118,22 +135,7 @@ $(document).ready(function load (){
 			 }
 		}
 
-		$(".goend").click(function(){
-			nowPage=10
-			goPage()
-		})
-		$("#btnShare").click(function(){
-			$("#shareLayer").css({"display":"block"})
-			TweenLite.to($("#shareLayer"),1,{opacity:1})
-			$("#logo").css({"opacity":.5})
-		})
-		$("#shareLayer").click(function(){
-			TweenLite.to($("#shareLayer"),1,{opacity:0,display:"none"})
-		})
-
-		$("#doneLayer").click(function(){
-			TweenLite.to($("#doneLayer"),1,{opacity:0,display:"none"})
-		})
+		
 
 		// $("#btnSubmit").click(function(){
 		// 	$("#doneLayer").css({"display":"block"})
