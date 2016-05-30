@@ -2,15 +2,19 @@
 $(document).ready(function load (){
 	loadStart()
 	loadingLine()
+	
 	function loadingLine(){
 		var lineA=[$("#line1"),$("#line2"),$("#line3"),$("#line4"),$("#line5"),$("#line6")]
 		for (var i = 0; i < lineA.length; i++) {
 			lineA[i].css({"width":43.3+2*i+"%","opacity": 1-i*.2})
 			TweenLite.to(lineA[i],1,{width:43.3+2*(i+1)+"%",opacity:1-(i+1)*.2,ease:Linear.easeNone})
 		};
-		TweenLite.to(lineA,1,{onComplete:loadingLine})//记得加loading结束去循环
+		TweenLite.to(this,1,{onComplete:loadingLine})//记得加loading结束去循环
 	}
 
+	function killTweenLine(){
+			TweenLite.killTweensOf(this)
+	}
 	
 	function page1Line(){
 		var lineA1=[$("#p1line1"),$("#p1line2"),$("#p1line3"),$("#p1line4"),$("#p1line5"),$("#p1line6")]
@@ -18,7 +22,7 @@ $(document).ready(function load (){
 			lineA1[i].css({"width":100+6*i+"%","opacity": 1-i*.2,"top":75-i*.2+"%"})
 			TweenLite.to(lineA1[i],.5,{width:100+6*(i+1)+"%",opacity:1-(i+1)*.2,top:75-(i+1)*.2+"%",ease:Linear.easeNone})
 		};
-		TweenLite.to(lineA1,.5,{onComplete:page1Line})
+		TweenLite.to(this,.5,{onComplete:page1Line})
 	}
 
 	// setSlide();
@@ -60,6 +64,7 @@ $(document).ready(function load (){
 			};	
 		} 
 		function goPage(){
+			if (nowPage!=0) {killTweenLine();};
 			 for (var i = 0; i < sliderA.length; i++) {
 			 	if (i<nowPage) {
 			 		TweenLite.to(sliderA[i],.5,{top:"-100%"})//,ease:Back.easeOut
@@ -90,6 +95,9 @@ $(document).ready(function load (){
 			TweenLite.to($("#shareLayer"),1,{opacity:0,display:"none"})
 		})
 
+		$("#doneLayer").click(function(){
+			TweenLite.to($("#doneLayer"),1,{opacity:0,display:"none"})
+		})
 
 		// $("#btnSubmit").click(function(){
 		// 	$("#doneLayer").css({"display":"block"})
@@ -148,13 +156,13 @@ $(document).ready(function load (){
 		function startDraw(){
 			var picY=400
 			var draw=setInterval(function(){
-				picY*=.95;
+				picY*=.8;
 				ctx.clearRect(0,0,480,493)
 				ctx.drawImage(img,0,picY);
 				if (picY<2) {
 					clearInterval(draw);
 				};
-			},20)
+			},40)
 		}
 		
        	var t1=$("#p2t1")
@@ -279,9 +287,11 @@ var _loadMax = 0
 }
 function loadEnd() {
 	// loadjscssfile("css/main.css","css");
+	killTweenLine();
 	setSlide();
 	 page1Line();
-	 ani1()
+	 ani1();
+	 
 	console.log("load end")
 	$(".loading").addClass("fadeOut animated");
 	setTimeout(function(){
