@@ -85,9 +85,14 @@ $(document).ready(function load (){
 		var startScrollTop;
 		var pageUpDown =0
 		var sliderA=[$('#starter'),$('#starter1'),$('#starter2'),$('#page1'),$('#page2'),$('#page3'),$('#page4'),$('#page5'),$('#page6'),$('#page7'),$('#page8')]
-		$('.content')[0].addEventListener('touchstart',startTouch,false)
-		$('.content')[0].addEventListener('touchmove',moveTouch,false)
-		$('.content')[0].addEventListener('touchend',endTouch,false)
+		// $('.content')[0].addEventListener('touchstart',startTouch,false)
+		// $('.content')[0].addEventListener('touchmove',moveTouch,false)
+		// $('.content')[0].addEventListener('touchend',endTouch,false)
+
+		$('body')[0].addEventListener('touchstart',startTouch,false)
+		$('body')[0].addEventListener('touchmove',moveTouch,false)
+		$('body')[0].addEventListener('touchend',endTouch,false)
+
 		function startTouch(event){
 			startY=event.touches[0].clientY
 			pageUpDown=0
@@ -104,6 +109,7 @@ $(document).ready(function load (){
 			};	
 		}
 		function endTouch(event){
+
 			if (pageUpDown == 1) {
 				//alert("上一页")
 				nowPage--
@@ -115,12 +121,14 @@ $(document).ready(function load (){
 			}else if (pageUpDown==0) {
 				//alert("不翻页")
 			};	
+
 		} 
 		function goPage(){
+			
 			if (nowPage!=0) {killTweenLine();};
 			 for (var i = 0; i < sliderA.length; i++) {
 			 	if (i<nowPage) {
-			 		TweenLite.to(sliderA[i],.5,{top:"-100%",display:"none"})//,ease:Back.easeOut
+			 		TweenLite.to(sliderA[i],.5,{top:"-100%"})//,ease:Back.easeOut
 			 	};
 			 	if (i==nowPage) {
 			 		sliderA[i].css({"display":"block"})
@@ -131,7 +139,7 @@ $(document).ready(function load (){
 			 		if (i>2&&i<10) {pageAni1(i-3)};
 			 	};
 			 	if (i>nowPage) {
-			 		TweenLite.to(sliderA[i],.5,{top:"100%",display:"none"})
+			 		TweenLite.to(sliderA[i],.5,{top:"100%"})
 			 	};
 			 }
 		}
@@ -305,7 +313,7 @@ $(document).ready(function load (){
 
 function loadStart() {
 
-	var loadStepOne = [".bg"]
+	var loadStepOne = [".page1t",".bg",".page2t",".page3t",".p12pic","#car1",".numberPic",".mcar"]
 
 var _loadNum = 0
 var _loadMax = 0
@@ -326,13 +334,15 @@ var _loadMax = 0
 				}
 			}
 			img.src = $(this).attr("data-src");
+			if (loadStepOne[i]==".bg") {img.style="width:100% height:100%";}else{img.style="width:100%";};
+			
 			$(this).after(img);
 			$(this).remove();
 		})
 	}
-	setTimeout(function(){
-		loadEnd();
-	},500)
+	// setTimeout(function(){
+	// 	loadEnd();
+	// },500)
 }
 function loadEnd() {
 	// loadjscssfile("css/main.css","css");
@@ -348,17 +358,18 @@ function loadEnd() {
 	},500)
 
 }
-function loadStep(nums) {
-	if ($("#part"+nums+" [data-src]").length <= 0) {
-		return false;
-	}
-	$("#part"+nums+" [data-src]").each(function(){
-		var img = new Image();
-		img.src = $(this).attr("data-src");
-		$(this).after(img);
-		$(this).remove();
-	})
-}
+// function loadStep(nums) {
+// 	alert(22222)
+// 	if ($("#part"+nums+" [data-src]").length <= 0) {
+// 		return false;
+// 	}
+// 	$("#part"+nums+" [data-src]").each(function(){
+// 		var img = new Image();
+// 		img.src = $(this).attr("data-src");
+// 		$(this).after(img);
+// 		$(this).remove();
+// 	})
+// }
 // JavaScript Document
 function loadjscssfile(filename,filetype){
 
