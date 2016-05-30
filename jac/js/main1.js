@@ -330,7 +330,11 @@ var _loadMax = 0
 				$("#loading-text").text(parseInt(_loadNum/_loadMax*100));
 				if (_loadNum>=_loadMax) {
 					//alert(_loadMax)
-					loadEnd()
+					setTimeout(function(){
+						loadEnd();
+					},500)
+
+					//loadEnd()
 				}
 			}
 			img.src = $(this).attr("data-src");
