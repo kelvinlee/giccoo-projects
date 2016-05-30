@@ -2,6 +2,10 @@
 $(document).ready(function load (){
 	loadStart()
 	loadingLine()
+	killTweenLine();
+	setSlide();
+	 page1Line();
+	 ani1();
 
 	loadWechatConfig();
  	 wx.ready(function() {
@@ -310,7 +314,7 @@ $(document).ready(function load (){
 
 	}
 
-
+});
 function loadStart() {
 
 	var loadStepOne = [".page1t",".bg",".page2t",".page3t",".p12pic","#car1",".numberPic",".mcar"]
@@ -350,10 +354,10 @@ var _loadMax = 0
 }
 function loadEnd() {
 	// loadjscssfile("css/main.css","css");
-	killTweenLine();
-	setSlide();
-	 page1Line();
-	 ani1();
+	// killTweenLine();
+	// setSlide();
+	//  page1Line();
+	//  ani1();
 	 
 	console.log("load end")
 	$(".loading").addClass("fadeOut animated");
@@ -374,27 +378,29 @@ function loadEnd() {
 // 		$(this).remove();
 // 	})
 // }
+
+
 // JavaScript Document
-function loadjscssfile(filename,filetype){
+// function loadjscssfile(filename,filetype){
 
-    if(filetype == "js"){
-        var fileref = document.createElement('script');
-        fileref.setAttribute("type","text/javascript");
-        fileref.setAttribute("src",filename);
-    }else if(filetype == "css"){
+//     if(filetype == "js"){
+//         var fileref = document.createElement('script');
+//         fileref.setAttribute("type","text/javascript");
+//         fileref.setAttribute("src",filename);
+//     }else if(filetype == "css"){
     
-        var fileref = document.createElement('link');
-        fileref.setAttribute("rel","stylesheet");
-        fileref.setAttribute("type","text/css");
-        fileref.setAttribute("href",filename);
-    }
-   if(typeof fileref != "undefined"){
-        document.getElementsByTagName("head")[0].appendChild(fileref);
-    }
+//         var fileref = document.createElement('link');
+//         fileref.setAttribute("rel","stylesheet");
+//         fileref.setAttribute("type","text/css");
+//         fileref.setAttribute("href",filename);
+//     }
+//    if(typeof fileref != "undefined"){
+//         document.getElementsByTagName("head")[0].appendChild(fileref);
+//     }
     
-}
+// }
 
-});
+
 
 
 //var loadStepOne = [".popUpLayer",".btnBack","#part1","#part2 .page:eq(0)","#part3 .page:eq(0)","#part4 .page:eq(0)","#part5 .page:eq(0)"]
