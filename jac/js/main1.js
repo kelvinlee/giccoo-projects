@@ -314,7 +314,7 @@ $(document).ready(function load (){
 
 	}
 
-});
+
 function loadStart() {
 
 	var loadStepOne = [".page1t",".bg",".page2t",".page3t",".p12pic","#car1",".numberPic",".mcar"]
@@ -366,6 +366,8 @@ function loadEnd() {
 	},500)
 
 }
+
+});
 // function loadStep(nums) {
 // 	alert(22222)
 // 	if ($("#part"+nums+" [data-src]").length <= 0) {
