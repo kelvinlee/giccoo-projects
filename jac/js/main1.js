@@ -55,9 +55,9 @@ $(document).ready(function load (){
 		var lineA1=[$("#p1line1"),$("#p1line2"),$("#p1line3"),$("#p1line4"),$("#p1line5"),$("#p1line6")]
 		for (var i = 0; i < lineA1.length; i++) {
 			lineA1[i].css({"width":100+6*i+"%","opacity": 1-i*.2,"top":75-i*.2+"%"})
-			TweenLite.to(lineA1[i],.5,{width:100+6*(i+1)+"%",opacity:1-(i+1)*.2,top:75-(i+1)*.2+"%",ease:Linear.easeNone})
+			//TweenLite.to(lineA1[i],.5,{width:100+6*(i+1)+"%",opacity:1-(i+1)*.2,top:75-(i+1)*.2+"%",ease:Linear.easeNone})
 		};
-		TweenLite.to(this,.5,{onComplete:page1Line})
+		//TweenLite.to(this,.5,{onComplete:page1Line})
 	}
 
 	// setSlide();
@@ -149,8 +149,8 @@ $(document).ready(function load (){
 
 
 
-	var container=$('body')
-	TweenMax.set(container, {perspective:500})
+	// var container=$('body')
+	// TweenMax.set(container, {perspective:500})
 
 	//ani1()
 
@@ -160,8 +160,8 @@ $(document).ready(function load (){
 		var t3=$("#p1t3")
 		var t4=$("#p1t4")
 		var t5=$("#p1t5")
-		t1.css({'opacity':0,'left':'0','top':'50%','transform':'translate3d(-50%,-50%,0) rotateY(-90deg)','-webkit-transform':'translate3d(-50%,-50%,0) rotateY(-90deg)'})
-		t2.css({'opacity':0,'left':'100%','top':'50%','transform':'translate3d(-50%,-50%,0) rotateY(90deg)','-webkit-transform':'translate3d(-50%,-50%,0) rotateY(90deg)'})
+		t1.css({'opacity':0,'left':'0','top':'50%'})
+		t2.css({'opacity':0,'left':'100%','top':'50%'})
 		t3.css({'opacity':0,'top':'48%'})
 		t4.css({'opacity':0,'top':'48%'})
 		t5.css({'opacity':0,'top':'48%'})
@@ -177,31 +177,31 @@ $(document).ready(function load (){
 
 	
 	function ani2(){
-		var myC=$("#Canvas1")
-		var ctx=myC[0].getContext("2d")
-		ctx.moveTo(0,0);
-		ctx.lineTo(480,0);
-		ctx.lineTo(480,268);
-		ctx.lineTo(0,493)
-		ctx.clip();
+		// var myC=$("#Canvas1")
+		// var ctx=myC[0].getContext("2d")
+		// ctx.moveTo(0,0);
+		// ctx.lineTo(480,0);
+		// ctx.lineTo(480,268);
+		// ctx.lineTo(0,493)
+		// ctx.clip();
 
-		var img=new Image()
-		img.src="img/page2pic.png"
-		img.onload=function(){ 
-			startDraw()
-		}
+		// var img=new Image()
+		// img.src="img/page2pic.png"
+		// img.onload=function(){ 
+		// 	startDraw()
+		// }
 
-		function startDraw(){
-			var picY=400
-			var draw=setInterval(function(){
-				picY*=.8;
-				ctx.clearRect(0,0,480,493)
-				ctx.drawImage(img,0,picY);
-				if (picY<2||nowPage!=1) {
-					clearInterval(draw);
-				};
-			},40)
-		}
+		// function startDraw(){
+		// 	var picY=400
+		// 	var draw=setInterval(function(){
+		// 		picY*=.8;
+		// 		ctx.clearRect(0,0,480,493)
+		// 		ctx.drawImage(img,0,picY);
+		// 		if (picY<2||nowPage!=1) {
+		// 			clearInterval(draw);
+		// 		};
+		// 	},40)
+		// }
 		
        	var t1=$("#p2t1")
 		var t2=$("#p2t2")
@@ -220,31 +220,31 @@ $(document).ready(function load (){
 
 	
 	function ani3(){
-		var myC2=$("#Canvas2")
-		var ctx2=myC2[0].getContext("2d")
-		ctx2.moveTo(0,0);
-		ctx2.lineTo(480,0);
-		ctx2.lineTo(480,494);
-		ctx2.lineTo(0,268);
-		ctx2.clip();
+		// var myC2=$("#Canvas2")
+		// var ctx2=myC2[0].getContext("2d")
+		// ctx2.moveTo(0,0);
+		// ctx2.lineTo(480,0);
+		// ctx2.lineTo(480,494);
+		// ctx2.lineTo(0,268);
+		// ctx2.clip();
 
-		var img2=new Image()
-		img2.src="img/page3pic.png"
-		img2.onload=function(){ 
-			startDraw2()
-		}
+		// var img2=new Image()
+		// img2.src="img/page3pic.png"
+		// img2.onload=function(){ 
+		// 	startDraw2()
+		// }
 
-		function startDraw2(){
-			var picY2=400
-			var draw2=setInterval(function(){
-				picY2*=.8;
-				ctx2.clearRect(0,0,480,494)
-				ctx2.drawImage(img2,0,picY2);
-				if (picY2<2||nowPage!=2) {
-					clearInterval(draw2);
-				};
-			},40)
-		}
+		// function startDraw2(){
+		// 	var picY2=400
+		// 	var draw2=setInterval(function(){
+		// 		picY2*=.8;
+		// 		ctx2.clearRect(0,0,480,494)
+		// 		ctx2.drawImage(img2,0,picY2);
+		// 		if (picY2<2||nowPage!=2) {
+		// 			clearInterval(draw2);
+		// 		};
+		// 	},40)
+		// }
 		
        	var t1=$("#p3t1")
 		var t2=$("#p3t2")
@@ -277,7 +277,9 @@ $(document).ready(function load (){
 		//end.css({"opacity":0,"top":"100%"})
 		for (var j = 0; j < tA[i].length; j++) {
 			
-			TweenLite.from(tA[i][j],1,{opacity:0,rotationY:360*Math.random()-180,rotationX:-180*Math.random()+90,left:100*Math.random()+"%",z:800,ease:Back.easeOut,delay:.5+0.07*j})
+			//TweenLite.from(tA[i][j],1,{opacity:0,rotationY:360*Math.random()-180,rotationX:-180*Math.random()+90,left:100*Math.random()+"%",z:800,ease:Back.easeOut,delay:.5+0.07*j})
+
+			TweenLite.from(tA[i][j],1,{opacity:0,width:"150%",ease:Back.easeOut,delay:.5+0.07*j})
 		};
 
 		//TweenLite.to(bigN,4,{opacity:1,left:"50%",ease:Quint.easeOut})

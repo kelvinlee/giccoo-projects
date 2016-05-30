@@ -45,8 +45,8 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;}
 	top: 50%;
 
 }
-#p2pic{display: none;}
-#p3pic{display: none;}
+/*#p2pic{display: none;}
+#p3pic{display: none;}*/
 .page2t{position: absolute;width: 100%;top: 70%;left: 50%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0)}
 .page3t{position: absolute;width: 100%;top: 70%;left: 50%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0)}
 .numberPic{	position: absolute;width: 75%;top: 0%;left: 37.5%;transform:translate3d(-50%,0%,0);-webkit-transform:translate3d(-50%,0%,0);}
