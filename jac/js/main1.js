@@ -191,9 +191,9 @@ $(document).ready(function load (){
 
 		TweenLite.to(t1,1,{opacity:1,y:0,ease:Back.easeOut,delay:1});
 		TweenLite.to(t2,1,{opacity:1,y:0,ease:Back.easeOut,delay:2});
-		TweenLite.to(t3,.5,{opacity:1,y:0,ease:Back.easeOut,delay:3});
-		TweenLite.to(t4,.5,{opacity:1,y:0,ease:Back.easeOut,delay:3.5});
-		TweenLite.to(t5,.5,{opacity:1,y:0,ease:Back.easeOut,delay:4});
+		TweenLite.to(t3,1,{opacity:1,y:0,ease:Back.easeOut,delay:3});
+		TweenLite.to(t4,1,{opacity:1,y:0,ease:Back.easeOut,delay:3.5});
+		TweenLite.to(t5,1,{opacity:1,y:0,ease:Back.easeOut,delay:4});
 
 		// TweenMax.to(t1,1.8,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:.5})
 		// TweenMax.to(t2,1.8,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:.6})
