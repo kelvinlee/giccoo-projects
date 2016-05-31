@@ -1,21 +1,6 @@
 
 $(document).ready(function load (){
 	loadStart()
-	// ani0()
-	// function ani0(){
-	// 	var t1=$("#p1t1")
-	// 	var t2=$("#p1t2")
-	// 	var t3=$("#p1t3")
-	// 	var t4=$("#p1t4")
-	// 	var t5=$("#p1t5")
-	// 	TweenMax.to(t1,0,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
-	// 	TweenMax.to(t2,0,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
-	// 	TweenMax.to(t5,0,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
-	// 	TweenMax.to(t4,0,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
-	// 	TweenMax.to(t3,0,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
-
-
-	// }
 
 	loadWechatConfig();
  	 wx.ready(function() {
@@ -50,27 +35,6 @@ $(document).ready(function load (){
 	  s = document.getElementsByTagName('script')[0];
 	  s.parentNode.insertBefore(hm, s);
 	};
-
-
-	function loadingLine(){
-		var lineA=[$("#line1"),$("#line2"),$("#line3"),$("#line4"),$("#line5"),$("#line6")]
-		for (var i = 0; i < lineA.length; i++) {
-			lineA[i].css({"width":43.3+2*i+"%","opacity": 1-i*.2})
-			TweenLite.to(lineA[i],1,{width:43.3+2*(i+1)+"%",opacity:1-(i+1)*.2,ease:Linear.easeNone})
-		};
-		TweenLite.to(this,1,{onComplete:loadingLine})//记得加loading结束去循环
-	}
-
-
-	
-	function page1Line(){
-		var lineA1=[$("#p1line1"),$("#p1line2"),$("#p1line3"),$("#p1line4"),$("#p1line5"),$("#p1line6")]
-		for (var i = 0; i < lineA1.length; i++) {
-			lineA1[i].css({"width":100+6*i+"%","opacity": 1-i*.2,"top":75-i*.2+"%"})
-			//TweenLite.to(lineA1[i],.5,{width:100+6*(i+1)+"%",opacity:1-(i+1)*.2,top:75-(i+1)*.2+"%",ease:Linear.easeNone})
-		};
-		//TweenLite.to(this,.5,{onComplete:page1Line})
-	}
 
 	var nowPage = 0;
 	function setSlide(){
@@ -155,33 +119,12 @@ $(document).ready(function load (){
 	
 	}
 
-
-
-	// var container=$('body')
-	// TweenMax.set(container, {perspective:500})
-
 	function ani1(){
 		var t1=$("#p1t1")
 		var t2=$("#p1t2")
 		var t3=$("#p1t3")
 		var t4=$("#p1t4")
 		var t5=$("#p1t5")
-		// t1.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
-		// t2.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
-		// t3.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
-		// t4.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
-		// t5.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
-
-		// TweenMax.to(t1,1.8,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:.5})
-		// TweenMax.to(t2,1.8,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:.6})
-		// TweenMax.to(t5,1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:1.6+.05})
-		// TweenMax.to(t4,1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:1.6+.05*2})
-		// TweenMax.to(t3,1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:1.6+.05*3})
-		// t1.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
-		// t2.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
-		// t3.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
-		// t4.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
-		// t5.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
 
 		TweenLite.set(t1,{opacity:0,xPercent:-50,yPercent:-50,y:100});
 		TweenLite.set(t2,{opacity:0,xPercent:-50,yPercent:-50,y:100});
@@ -194,28 +137,13 @@ $(document).ready(function load (){
 		TweenLite.to(t3,1,{opacity:1,y:0,ease:Back.easeOut,delay:3});
 		TweenLite.to(t4,1,{opacity:1,y:0,ease:Back.easeOut,delay:3.5});
 		TweenLite.to(t5,1,{opacity:1,y:0,ease:Back.easeOut,delay:4});
-
-		// TweenMax.to(t1,1.8,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:.5})
-		// TweenMax.to(t2,1.8,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:.6})
-		// TweenMax.to(t5,1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:1.6+.05})
-		// TweenMax.to(t4,1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:1.6+.05*2})
-		// TweenMax.to(t3,1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:1.6+.05*3})
 	}
 
-	function ani2(){
-		
+	function ani2(){	
        	var t1=$("#p2t1")
 		var t2=$("#p2t2")
 		var t3=$("#p2t3")
 		var t4=$("#p2t4")
-		// t1.css({'opacity':0,'top':'85%'})
-		// t2.css({'opacity':0,'top':'85%'})
-		// t3.css({'opacity':0,'top':'85%'})
-		// t4.css({'opacity':0,'top':'85%'})
-		// TweenLite.to(t1,1,{top:'75%',opacity:1,ease:Back.easeOut,delay:.5+.05})
-		// TweenLite.to(t2,1,{top:'75%',opacity:1,ease:Back.easeOut,delay:.5+.05*2})
-		// TweenLite.to(t3,1,{top:'75%',opacity:1,ease:Back.easeOut,delay:.5+.05*3})
-		// TweenLite.to(t4,1,{top:'75%',opacity:1,ease:Back.easeOut,delay:.5+.05*4})
 
 		t1.css({'opacity':1})
 		t2.css({'opacity':1})
@@ -225,39 +153,21 @@ $(document).ready(function load (){
 		TweenLite.from(t2,1,{opacity:1,rotationY:-90,ease:Back.easeOut,delay:.5+.05*2})
 		TweenLite.from(t3,1,{opacity:1,rotationY:-90,ease:Back.easeOut,delay:.5+.05*3})
 		TweenLite.from(t4,1,{opacity:1,rotationY:-90,ease:Back.easeOut,delay:.5+.05*4})
-
 	}
 
 	
-	function ani3(){
-		
+	function ani3(){	
        	var t1=$("#p3t1")
 		var t2=$("#p3t2")
-		// t1.css({'opacity':0,'top':'80%'})
-		// t2.css({'opacity':0,'top':'80%'})
-		// TweenLite.to(t1,1,{top:'70%',opacity:1,ease:Back.easeOut,delay:.5+.05})
-		// TweenLite.to(t2,1,{top:'70%',opacity:1,ease:Back.easeOut,delay:.5+.05*2})
-
 		t1.css({'opacity':1})
 		t2.css({'opacity':1})
 		TweenLite.from(t1,1,{opacity:0,rotationY:-90,ease:Back.easeOut,delay:.5+.05})
 		TweenLite.from(t2,1,{opacity:0,rotationY:-90,ease:Back.easeOut,delay:.5+.05*2})
 	}
 
-	//pageAni1()
 	function pageAni1(i){
 		var bigN=[$("#num1"),$("#num2"),$("#num3"),$("#num4"),$("#num5"),$("#num6"),$("#num7")];
 		var sq=[$("#m1t0"),$("#m2t0"),$("#m3t0"),$("#m4t0"),$("#m5t0"),$("#m6t0"),$("#m7t0")];
-		// var tA=[
-		// [$("#m1t1"),$("#m1t2"),$("#m1t3"),$("#m1t4"),$("#m1t5"),$("#m1t6"),$("#m1t7")],
-		// [$("#m2t1"),$("#m2t2"),$("#m2t3"),$("#m2t4"),$("#m2t5"),$("#m2t6")],
-		// [$("#m3t1"),$("#m3t2"),$("#m3t3"),$("#m3t4"),$("#m3t5"),$("#m3t6")],
-		// [$("#m4t1"),$("#m4t2"),$("#m4t3"),$("#m4t4"),$("#m4t5"),$("#m4t6"),$("#m4t7"),$("#m4t8")],
-		// [$("#m5t1"),$("#m5t2"),$("#m5t3"),$("#m5t4"),$("#m5t5"),$("#m5t6")],
-		// [$("#m6t1"),$("#m6t2"),$("#m6t3"),$("#m6t4"),$("#m6t5"),$("#m6t6"),$("#m6t7"),$("#m6t8"),$("#m6t9"),$("#m6t10")],
-		// [$("#m7t1"),$("#m7t2"),$("#m7t3"),$("#m7t4"),$("#m7t5"),$("#m7t6"),$("#m7t7"),$("#m7t8")],
-
-		// ];
 		var tA=[
 		[$("#m1t1")],
 		[$("#m2t1")],
@@ -312,15 +222,9 @@ var _loadMax = 0
 			$(this).remove();
 		})
 	}
-	// setTimeout(function(){
-	// 	loadEnd();
-	// },500)
 }
 function loadEnd() {
-	// loadjscssfile("css/main.css","css");
-	//loadingLine()
 	setSlide();
-	 //page1Line();
 	 ani1();
 	 
 	console.log("load end")
@@ -332,42 +236,5 @@ function loadEnd() {
 }
 
 });
-// function loadStep(nums) {
-// 	alert(22222)
-// 	if ($("#part"+nums+" [data-src]").length <= 0) {
-// 		return false;
-// 	}
-// 	$("#part"+nums+" [data-src]").each(function(){
-// 		var img = new Image();
-// 		img.src = $(this).attr("data-src");
-// 		$(this).after(img);
-// 		$(this).remove();
-// 	})
-// }
 
-
-// JavaScript Document
-// function loadjscssfile(filename,filetype){
-
-//     if(filetype == "js"){
-//         var fileref = document.createElement('script');
-//         fileref.setAttribute("type","text/javascript");
-//         fileref.setAttribute("src",filename);
-//     }else if(filetype == "css"){
-    
-//         var fileref = document.createElement('link');
-//         fileref.setAttribute("rel","stylesheet");
-//         fileref.setAttribute("type","text/css");
-//         fileref.setAttribute("href",filename);
-//     }
-//    if(typeof fileref != "undefined"){
-//         document.getElementsByTagName("head")[0].appendChild(fileref);
-//     }
-    
-// }
-
-
-
-
-//var loadStepOne = [".popUpLayer",".btnBack","#part1","#part2 .page:eq(0)","#part3 .page:eq(0)","#part4 .page:eq(0)","#part5 .page:eq(0)"]
 
