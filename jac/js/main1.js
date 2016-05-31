@@ -183,17 +183,17 @@ $(document).ready(function load (){
 		// t4.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
 		// t5.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
 
-		TweenLite.set(t1,{opacity:0,xPercent:-50,yPercent:-30});
-		TweenLite.set(t2,{opacity:0,xPercent:-50,yPercent:-30});
-		TweenLite.set(t3,{opacity:0,xPercent:-50,yPercent:-30});
-		TweenLite.set(t4,{opacity:0,xPercent:-50,yPercent:-30});
-		TweenLite.set(t5,{opacity:0,xPercent:-50,yPercent:-30});
+		TweenLite.set(t1,{opacity:0,xPercent:-50,yPercent:-50,y:100});
+		TweenLite.set(t2,{opacity:0,xPercent:-50,yPercent:-50,y:100});
+		TweenLite.set(t3,{opacity:0,xPercent:-50,yPercent:-50,y:100});
+		TweenLite.set(t4,{opacity:0,xPercent:-50,yPercent:-50,y:100});
+		TweenLite.set(t5,{opacity:0,xPercent:-50,yPercent:-50,y:100});
 
-		TweenLite.to(t1,1,{opacity:1,xPercent:-50,yPercent:-50,ease:Back.easeOut,delay:.5});
-		TweenLite.to(t2,1,{opacity:1,xPercent:-50,yPercent:-50,ease:Back.easeOut,delay:.6});
-		TweenLite.to(t3,1,{opacity:1,xPercent:-50,yPercent:-50,ease:Back.easeOut,delay:.7});
-		TweenLite.to(t4,1,{opacity:1,xPercent:-50,yPercent:-50,ease:Back.easeOut,delay:.8});
-		TweenLite.to(t5,1,{opacity:1,xPercent:-50,yPercent:-50,ease:Back.easeOut,delay:.9});
+		TweenLite.to(t1,1,{opacity:1,y:0,ease:Back.easeOut,delay:.5});
+		TweenLite.to(t2,1,{opacity:1,y:0,ease:Back.easeOut,delay:.6});
+		TweenLite.to(t3,1,{opacity:1,y:0,ease:Back.easeOut,delay:.7});
+		TweenLite.to(t4,1,{opacity:1,y:0,ease:Back.easeOut,delay:.8});
+		TweenLite.to(t5,1,{opacity:1,y:0,ease:Back.easeOut,delay:.9});
 
 		// TweenMax.to(t1,1.8,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:.5})
 		// TweenMax.to(t2,1.8,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:.6})
