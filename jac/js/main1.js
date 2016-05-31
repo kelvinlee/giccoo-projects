@@ -1,11 +1,21 @@
 
 $(document).ready(function load (){
 	loadStart()
-	//loadingLine()
-	killTweenLine();
-	setSlide();
-	 //page1Line();
-	 ani1();
+	ani0()
+	function ani0(){
+		var t1=$("#p1t1")
+		var t2=$("#p1t2")
+		var t3=$("#p1t3")
+		var t4=$("#p1t4")
+		var t5=$("#p1t5")
+		TweenMax.to(t1,.1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
+		TweenMax.to(t2,.1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
+		TweenMax.to(t5,.1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
+		TweenMax.to(t4,.1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
+		TweenMax.to(t3,.1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
+
+
+	}
 
 	loadWechatConfig();
  	 wx.ready(function() {
@@ -51,9 +61,7 @@ $(document).ready(function load (){
 		TweenLite.to(this,1,{onComplete:loadingLine})//记得加loading结束去循环
 	}
 
-	function killTweenLine(){
-			TweenLite.killTweensOf(this)
-	}
+
 	
 	function page1Line(){
 		var lineA1=[$("#p1line1"),$("#p1line2"),$("#p1line3"),$("#p1line4"),$("#p1line5"),$("#p1line6")]
@@ -89,12 +97,9 @@ $(document).ready(function load (){
 		var startScrollTop;
 		var pageUpDown =0
 		var sliderA=[$('#starter'),$('#starter1'),$('#starter2'),$('#page1'),$('#page2'),$('#page3'),$('#page4'),$('#page5'),$('#page6'),$('#page7'),$('#page8')]
-		// $('.content')[0].addEventListener('touchstart',startTouch,false)
-		// $('.content')[0].addEventListener('touchmove',moveTouch,false)
-		// $('.content')[0].addEventListener('touchend',endTouch,false)
 
 		for (var i = 1; i < sliderA.length; i++) {
-			sliderA[i].css({"top":"100%"});
+			sliderA[i].css({"transform":"translate3d(0%,100%,0)","-webkit-transform":"translate3d(0%,100%,0)","display":"none"});
 		};
 
 
@@ -130,25 +135,23 @@ $(document).ready(function load (){
 			}else if (pageUpDown==0) {
 				//alert("不翻页")
 			};	
-
 		} 
 		function goPage(){
-			
-			if (nowPage!=0) {killTweenLine();};
+			//if (nowPage!=0) {killTweenLine();};
 			 for (var i = 0; i < sliderA.length; i++) {
-			 	if (i==nowPage-1) {
-			 		TweenLite.to(sliderA[i],.5,{top:"-100%"})//,ease:Back.easeOut
+			 	if (i<nowPage) {
+			 		TweenLite.to(sliderA[i],.5,{"transform":"translate3d(0%,-100%,0)","-webkit-transform":"translate3d(0%,-100%,0)",display:"none"})
 			 	};
 			 	if (i==nowPage) {
-			 		//sliderA[i].css({"display":"block"})
-			 		TweenLite.to(sliderA[i],.5,{top:"0%"});
+			 		sliderA[i].css({"display":"block"})
+			 		TweenLite.to(sliderA[i],.5,{"transform":"translate3d(0%,0%,0)","-webkit-transform":"translate3d(0%,0%,0)"})
 			 		if (i==0) {ani1()};
 			 		if (i==1) {ani2()};
 			 		if (i==2) {ani3()};
 			 		if (i>2&&i<10) {pageAni1(i-3)};
 			 	};
-			 	if (i==nowPage+1) {
-			 		TweenLite.to(sliderA[i],.5,{top:"100%"})
+			 	if (i>nowPage) {
+			 		TweenLite.to(sliderA[i],.5,{"transform":"translate3d(0%,100%,0)","-webkit-transform":"translate3d(0%,100%,0)",display:"none"})
 			 	};
 			 }
 		}
@@ -160,56 +163,26 @@ $(document).ready(function load (){
 	// var container=$('body')
 	// TweenMax.set(container, {perspective:500})
 
-	//ani1()
-
 	function ani1(){
 		var t1=$("#p1t1")
 		var t2=$("#p1t2")
 		var t3=$("#p1t3")
 		var t4=$("#p1t4")
 		var t5=$("#p1t5")
-		t1.css({'opacity':0,'top':'50%'})
-		t2.css({'opacity':0,'top':'50%'})
-		t3.css({'opacity':0,'top':'48%'})
-		t4.css({'opacity':0,'top':'48%'})
-		t5.css({'opacity':0,'top':'48%'})
-		//TweenLite.to(t1,1,{opacity:1,left:"50%",delay:0,ease:Back.easeOut,overwrite:0})
-		//TweenLite.to(t2,1,{opacity:1,left:"50%",delay:0.1,ease:Back.easeOut,overwrite:0})
-		TweenLite.to(t1,1.8,{top:'35%',opacity:1,left:"50%",ease:Back.easeOut,delay:.5})
-		TweenLite.to(t2,1.8,{top:'35%',opacity:1,left:"50%",ease:Back.easeOut,delay:.6})
+		t1.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
+		t2.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
+		t3.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
+		t4.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
+		t5.css({'opacity':0,"transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0)"})
 
-		TweenLite.to(t5,1,{top:'35%',opacity:1,ease:Back.easeOut,delay:1.6+.05})
-		TweenLite.to(t4,1,{top:'35%',opacity:1,ease:Back.easeOut,delay:1.6+.05*2})
-		TweenLite.to(t3,1,{top:'35%',opacity:1,ease:Back.easeOut,delay:1.6+.05*3})
+		TweenMax.to(t1,1.8,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:.5})
+		TweenMax.to(t2,1.8,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:.6})
+		TweenMax.to(t5,1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:1.6+.05})
+		TweenMax.to(t4,1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:1.6+.05*2})
+		TweenMax.to(t3,1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)",opacity:1,ease:Back.easeOut,delay:1.6+.05*3})
 	}
 
-	
 	function ani2(){
-		// var myC=$("#Canvas1")
-		// var ctx=myC[0].getContext("2d")
-		// ctx.moveTo(0,0);
-		// ctx.lineTo(480,0);
-		// ctx.lineTo(480,268);
-		// ctx.lineTo(0,493)
-		// ctx.clip();
-
-		// var img=new Image()
-		// img.src="img/page2pic.png"
-		// img.onload=function(){ 
-		// 	startDraw()
-		// }
-
-		// function startDraw(){
-		// 	var picY=400
-		// 	var draw=setInterval(function(){
-		// 		picY*=.8;
-		// 		ctx.clearRect(0,0,480,493)
-		// 		ctx.drawImage(img,0,picY);
-		// 		if (picY<2||nowPage!=1) {
-		// 			clearInterval(draw);
-		// 		};
-		// 	},40)
-		// }
 		
        	var t1=$("#p2t1")
 		var t2=$("#p2t2")
@@ -228,31 +201,6 @@ $(document).ready(function load (){
 
 	
 	function ani3(){
-		// var myC2=$("#Canvas2")
-		// var ctx2=myC2[0].getContext("2d")
-		// ctx2.moveTo(0,0);
-		// ctx2.lineTo(480,0);
-		// ctx2.lineTo(480,494);
-		// ctx2.lineTo(0,268);
-		// ctx2.clip();
-
-		// var img2=new Image()
-		// img2.src="img/page3pic.png"
-		// img2.onload=function(){ 
-		// 	startDraw2()
-		// }
-
-		// function startDraw2(){
-		// 	var picY2=400
-		// 	var draw2=setInterval(function(){
-		// 		picY2*=.8;
-		// 		ctx2.clearRect(0,0,480,494)
-		// 		ctx2.drawImage(img2,0,picY2);
-		// 		if (picY2<2||nowPage!=2) {
-		// 			clearInterval(draw2);
-		// 		};
-		// 	},40)
-		// }
 		
        	var t1=$("#p3t1")
 		var t2=$("#p3t2")
@@ -300,9 +248,10 @@ $(document).ready(function load (){
 
 			TweenLite.from(tA[i][j],1,{opacity:0,ease:Back.easeOut,delay:.5+0.07*j})
 		};
-
+		bigN[i].css({"transform":"translate3d(-100%,0%,0)","-webkit-transform":"translate3d(-100%,0%,0)"})
+		//sq[i].css({"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
 		//TweenLite.to(bigN,4,{opacity:1,left:"50%",ease:Quint.easeOut})
-		TweenLite.from(bigN[i],4,{opacity:0,left:"-50%",ease:Quint.easeOut})
+		TweenLite.to(bigN[i],4,{opacity:1,"transform":"translate3d(0%,0%,0)","-webkit-transform":"translate3d(0%,0%,0)",ease:Quint.easeOut})
 		TweenLite.to(sq[i],2,{opacity:1,top:"95%",ease:Elastic.easeOut,delay:.5-0.05})
 		//TweenLite.from(car[i],2,{opacity:0,left:"60%",ease:Quint.easeOut,delay:.5})
 		//TweenLite.from(end[i],4,{opacity:0,ease:Quint.easeOut,delay:.5})
@@ -312,7 +261,7 @@ $(document).ready(function load (){
 
 function loadStart() {
 
-	var loadStepOne = [".page1t",".bg","#car1",".page2t",".page3t",".p12pic",".numberPic",".mcar"]
+	var loadStepOne = [".page1t",".bg","#car1",".page2t",".page3t",".p12pic",".numberPic",".mcar"]//
 
 var _loadNum = 0
 var _loadMax = 0
@@ -349,10 +298,10 @@ var _loadMax = 0
 }
 function loadEnd() {
 	// loadjscssfile("css/main.css","css");
-	// killTweenLine();
-	// setSlide();
-	//  page1Line();
-	//  ani1();
+	//loadingLine()
+	setSlide();
+	 //page1Line();
+	 ani1();
 	 
 	console.log("load end")
 	$(".loading").addClass("fadeOut animated");
