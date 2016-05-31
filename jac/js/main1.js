@@ -93,6 +93,11 @@ $(document).ready(function load (){
 		// $('.content')[0].addEventListener('touchmove',moveTouch,false)
 		// $('.content')[0].addEventListener('touchend',endTouch,false)
 
+		for (var i = 1; i < sliderA.length; i++) {
+			sliderA[i].css({"top":"100%"});
+		};
+
+
 		$('body')[0].addEventListener('touchstart',startTouch,false)
 		$('body')[0].addEventListener('touchmove',moveTouch,false)
 		$('body')[0].addEventListener('touchend',endTouch,false)
@@ -131,7 +136,7 @@ $(document).ready(function load (){
 			
 			if (nowPage!=0) {killTweenLine();};
 			 for (var i = 0; i < sliderA.length; i++) {
-			 	if (i<nowPage) {
+			 	if (i==nowPage-1) {
 			 		TweenLite.to(sliderA[i],.5,{top:"-100%"})//,ease:Back.easeOut
 			 	};
 			 	if (i==nowPage) {
@@ -142,7 +147,7 @@ $(document).ready(function load (){
 			 		if (i==2) {ani3()};
 			 		if (i>2&&i<10) {pageAni1(i-3)};
 			 	};
-			 	if (i>nowPage) {
+			 	if (i==nowPage+1) {
 			 		TweenLite.to(sliderA[i],.5,{top:"100%"})
 			 	};
 			 }
