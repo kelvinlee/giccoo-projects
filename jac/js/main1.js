@@ -1,10 +1,10 @@
 
 $(document).ready(function load (){
 	loadStart()
-	loadingLine()
+	//loadingLine()
 	killTweenLine();
 	setSlide();
-	 page1Line();
+	 //page1Line();
 	 ani1();
 
 	loadWechatConfig();
@@ -140,8 +140,8 @@ $(document).ready(function load (){
 			 		TweenLite.to(sliderA[i],.5,{top:"-100%"})//,ease:Back.easeOut
 			 	};
 			 	if (i==nowPage) {
-			 		sliderA[i].css({"display":"block"})
-			 		TweenLite.to(sliderA[i],.5,{top:"0%"})
+			 		//sliderA[i].css({"display":"block"})
+			 		TweenLite.to(sliderA[i],.5,{top:"0%"});
 			 		if (i==0) {ani1()};
 			 		if (i==1) {ani2()};
 			 		if (i==2) {ani3()};
@@ -152,17 +152,7 @@ $(document).ready(function load (){
 			 	};
 			 }
 		}
-
-		
-
-		// $("#btnSubmit").click(function(){
-		// 	$("#doneLayer").css({"display":"block"})
-		// 	TweenLite.to($("#doneLayer"),1,{opacity:1})
-		// })
-
-
-		
-		
+	
 	}
 
 
@@ -322,7 +312,7 @@ $(document).ready(function load (){
 
 function loadStart() {
 
-	var loadStepOne = [".page1t",".bg",".page2t",".page3t",".p12pic","#car1",".numberPic",".mcar"]
+	var loadStepOne = [".page1t",".bg","#car1",".page2t",".page3t",".p12pic",".numberPic",".mcar"]
 
 var _loadNum = 0
 var _loadMax = 0
