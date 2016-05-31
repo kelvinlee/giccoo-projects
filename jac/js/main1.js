@@ -99,7 +99,8 @@ $(document).ready(function load (){
 		var sliderA=[$('#starter'),$('#starter1'),$('#starter2'),$('#page1'),$('#page2'),$('#page3'),$('#page4'),$('#page5'),$('#page6'),$('#page7'),$('#page8')]
 
 		for (var i = 1; i < sliderA.length; i++) {
-			sliderA[i].css({"transform":"translate3d(0%,200%,0)","-webkit-transform":"translate3d(0%,200%,0)","display":"none"});
+			//sliderA[i].css({"transform":"translate3d(0%,200%,0)","-webkit-transform":"translate3d(0%,200%,0)","display":"none"});
+			TweenLite.set(sliderA[i],{yPercent:100,"display":"none"})
 		};
 
 
@@ -140,18 +141,21 @@ $(document).ready(function load (){
 			//if (nowPage!=0) {killTweenLine();};
 			 for (var i = 0; i < sliderA.length; i++) {
 			 	if (i<nowPage) {
-			 		TweenLite.to(sliderA[i],.5,{"transform":"translate3d(0%,-100%,0)","-webkit-transform":"translate3d(0%,-100%,0)",display:"none"})
+			 		//TweenLite.to(sliderA[i],.5,{"transform":"translate3d(0%,-100%,0)","-webkit-transform":"translate3d(0%,-100%,0)",display:"none"})
+			 		TweenLite.to(sliderA[i],.5,{yPercent:-100})
 			 	};
 			 	if (i==nowPage) {
 			 		sliderA[i].css({"display":"block"})
-			 		TweenLite.to(sliderA[i],.5,{"transform":"translate3d(0%,0%,0)","-webkit-transform":"translate3d(0%,0%,0)"})
+			 		//TweenLite.to(sliderA[i],.5,{"transform":"translate3d(0%,0%,0)","-webkit-transform":"translate3d(0%,0%,0)"})
+			 		TweenLite.to(sliderA[i],.5,{yPercent:0})
 			 		if (i==0) {ani1()};
 			 		if (i==1) {ani2()};
 			 		if (i==2) {ani3()};
 			 		if (i>2&&i<10) {pageAni1(i-3)};
 			 	};
 			 	if (i>nowPage) {
-			 		TweenLite.to(sliderA[i],.5,{"transform":"translate3d(0%,100%,0)","-webkit-transform":"translate3d(0%,100%,0)",display:"none"})
+			 		//TweenLite.to(sliderA[i],.5,{"transform":"translate3d(0%,100%,0)","-webkit-transform":"translate3d(0%,100%,0)",display:"none"})
+			 		TweenLite.to(sliderA[i],.5,{yPercent:100})
 			 	};
 			 }
 		}
