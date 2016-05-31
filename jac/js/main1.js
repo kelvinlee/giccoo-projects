@@ -8,11 +8,11 @@ $(document).ready(function load (){
 		var t3=$("#p1t3")
 		var t4=$("#p1t4")
 		var t5=$("#p1t5")
-		TweenMax.to(t1,.1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
-		TweenMax.to(t2,.1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
-		TweenMax.to(t5,.1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
-		TweenMax.to(t4,.1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
-		TweenMax.to(t3,.1,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
+		TweenMax.to(t1,0,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
+		TweenMax.to(t2,0,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
+		TweenMax.to(t5,0,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
+		TweenMax.to(t4,0,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
+		TweenMax.to(t3,0,{"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
 
 
 	}
@@ -99,7 +99,7 @@ $(document).ready(function load (){
 		var sliderA=[$('#starter'),$('#starter1'),$('#starter2'),$('#page1'),$('#page2'),$('#page3'),$('#page4'),$('#page5'),$('#page6'),$('#page7'),$('#page8')]
 
 		for (var i = 1; i < sliderA.length; i++) {
-			sliderA[i].css({"transform":"translate3d(0%,100%,0)","-webkit-transform":"translate3d(0%,100%,0)","display":"none"});
+			sliderA[i].css({"transform":"translate3d(0%,200%,0)","-webkit-transform":"translate3d(0%,200%,0)","display":"none"});
 		};
 
 
@@ -188,14 +188,23 @@ $(document).ready(function load (){
 		var t2=$("#p2t2")
 		var t3=$("#p2t3")
 		var t4=$("#p2t4")
-		t1.css({'opacity':0,'top':'85%'})
-		t2.css({'opacity':0,'top':'85%'})
-		t3.css({'opacity':0,'top':'85%'})
-		t4.css({'opacity':0,'top':'85%'})
-		TweenLite.to(t1,1,{top:'75%',opacity:1,ease:Back.easeOut,delay:.5+.05})
-		TweenLite.to(t2,1,{top:'75%',opacity:1,ease:Back.easeOut,delay:.5+.05*2})
-		TweenLite.to(t3,1,{top:'75%',opacity:1,ease:Back.easeOut,delay:.5+.05*3})
-		TweenLite.to(t4,1,{top:'75%',opacity:1,ease:Back.easeOut,delay:.5+.05*4})
+		// t1.css({'opacity':0,'top':'85%'})
+		// t2.css({'opacity':0,'top':'85%'})
+		// t3.css({'opacity':0,'top':'85%'})
+		// t4.css({'opacity':0,'top':'85%'})
+		// TweenLite.to(t1,1,{top:'75%',opacity:1,ease:Back.easeOut,delay:.5+.05})
+		// TweenLite.to(t2,1,{top:'75%',opacity:1,ease:Back.easeOut,delay:.5+.05*2})
+		// TweenLite.to(t3,1,{top:'75%',opacity:1,ease:Back.easeOut,delay:.5+.05*3})
+		// TweenLite.to(t4,1,{top:'75%',opacity:1,ease:Back.easeOut,delay:.5+.05*4})
+
+		t1.css({'opacity':0})
+		t2.css({'opacity':0})
+		t3.css({'opacity':0})
+		t4.css({'opacity':0})
+		TweenLite.to(t1,1,{opacity:1,ease:Back.easeOut,delay:.5+.05})
+		TweenLite.to(t2,1,{opacity:1,ease:Back.easeOut,delay:.5+.05*2})
+		TweenLite.to(t3,1,{opacity:1,ease:Back.easeOut,delay:.5+.05*3})
+		TweenLite.to(t4,1,{opacity:1,ease:Back.easeOut,delay:.5+.05*4})
 
 	}
 
@@ -204,10 +213,15 @@ $(document).ready(function load (){
 		
        	var t1=$("#p3t1")
 		var t2=$("#p3t2")
-		t1.css({'opacity':0,'top':'80%'})
-		t2.css({'opacity':0,'top':'80%'})
-		TweenLite.to(t1,1,{top:'70%',opacity:1,ease:Back.easeOut,delay:.5+.05})
-		TweenLite.to(t2,1,{top:'70%',opacity:1,ease:Back.easeOut,delay:.5+.05*2})
+		// t1.css({'opacity':0,'top':'80%'})
+		// t2.css({'opacity':0,'top':'80%'})
+		// TweenLite.to(t1,1,{top:'70%',opacity:1,ease:Back.easeOut,delay:.5+.05})
+		// TweenLite.to(t2,1,{top:'70%',opacity:1,ease:Back.easeOut,delay:.5+.05*2})
+
+		t1.css({'opacity':0})
+		t2.css({'opacity':0})
+		TweenLite.to(t1,1,{opacity:1,ease:Back.easeOut,delay:.5+.05})
+		TweenLite.to(t2,1,{opacity:1,ease:Back.easeOut,delay:.5+.05*2})
 	}
 
 	//pageAni1()
@@ -239,7 +253,8 @@ $(document).ready(function load (){
 		var end=[$("#m1_end"),$("#m2_end"),$("#m3_end"),$("#m4_end"),$("#m5_end"),$("#m6_end"),$("#m7_end")];
 
 		//bigN.css({"opacity":0,"left":"0%"})
-		sq[i].css({"opacity":0,"top":"100%"})
+		//sq[i].css({"opacity":0,"top":"100%"})
+		sq[i].css({"opacity":0})
 		//car.css({"opacity":0,"top":"100%"})
 		//end.css({"opacity":0,"top":"100%"})
 		for (var j = 0; j < tA[i].length; j++) {
@@ -252,7 +267,8 @@ $(document).ready(function load (){
 		//sq[i].css({"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)"})
 		//TweenLite.to(bigN,4,{opacity:1,left:"50%",ease:Quint.easeOut})
 		TweenLite.to(bigN[i],4,{opacity:1,"transform":"translate3d(0%,0%,0)","-webkit-transform":"translate3d(0%,0%,0)",ease:Quint.easeOut})
-		TweenLite.to(sq[i],2,{opacity:1,top:"95%",ease:Elastic.easeOut,delay:.5-0.05})
+		//TweenLite.to(sq[i],2,{opacity:1,top:"95%",ease:Elastic.easeOut,delay:.5-0.05})
+		TweenLite.to(sq[i],2,{opacity:1,ease:Elastic.easeOut,delay:.5-0.05})
 		//TweenLite.from(car[i],2,{opacity:0,left:"60%",ease:Quint.easeOut,delay:.5})
 		//TweenLite.from(end[i],4,{opacity:0,ease:Quint.easeOut,delay:.5})
 
