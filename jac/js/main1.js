@@ -103,7 +103,7 @@ $(document).ready(function load (){
 		} 
 		function goPage(){
 			 for (var i = 0; i < sliderA.length; i++) {
-			 	if (i<nowPage) {
+			 	if (i==nowPage-1) {
 			 		sliderA[i].css({"transform":"translate3d(0%,-100%,0)","-webkit-transform":"translate3d(0%,-100%,0);"});
 			 		//TweenLite.to(sliderA[i],.5,{yPercent:-100})
 			 		//if (i>2&&i<10) {pageAni2(i-3);};
@@ -119,7 +119,7 @@ $(document).ready(function load (){
 			 		if (i==2) {ani3()};
 			 		if (i>2&&i<10) {pageAni1(i-3);$(".goend").css({"display":"block"});};
 			 	};
-			 	if (i>nowPage) {
+			 	if (i==nowPage+1) {
 			 		//sliderA[i].css({"top":"100%"})
 			 		sliderA[i].css({"transform":"translate3d(0%,100%,0)","-webkit-transform":"translate3d(0%,100%,0);"});
 			 		//TweenLite.to(sliderA[i],.5,{yPercent:100})
