@@ -105,11 +105,12 @@ $(document).ready(function load (){
 			 		TweenLite.to(sliderA[i],.5,{yPercent:-100})
 			 	};
 			 	if (i==nowPage) {
+			 		$(".goend").css({"display":"none"});
 			 		TweenLite.to(sliderA[i],.5,{yPercent:0})
 			 		if (i==0) {ani1()};
 			 		if (i==1) {ani2()};
 			 		if (i==2) {ani3()};
-			 		if (i>2&&i<10) {pageAni1(i-3)};
+			 		if (i>2&&i<10) {pageAni1(i-3);$(".goend").css({"display":"block"});};
 			 	};
 			 	if (i>nowPage) {
 			 		TweenLite.to(sliderA[i],.5,{yPercent:100})

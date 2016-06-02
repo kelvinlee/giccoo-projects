@@ -70,7 +70,7 @@ img{width: 100%;}
 	opacity: 0;
 }
 .goend{
-	position: absolute;width: 14.375%;right: 10%;bottom: 5%
+	position: absolute;width: 14.375%;right: 10%;bottom: 5%;z-index: 1000;display: none;
 }
 #endTitle{
 	position: absolute;width: 100%;bottom: 65%;
