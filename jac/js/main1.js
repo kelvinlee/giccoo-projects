@@ -63,7 +63,8 @@ $(document).ready(function load (){
 
 		for (var i = 1; i < sliderA.length; i++) {
 			//TweenLite.set(sliderA[i],{yPercent:100})
-			sliderA[i].css({"top":"100%"})
+			//sliderA[i].css({"top":"100%"})
+			sliderA[i].css({"transform":"translate3d(0%,100%,0)","-webkit-transform":"translate3d(0%,100%,0);"})
 		};
 
 
@@ -103,12 +104,14 @@ $(document).ready(function load (){
 		function goPage(){
 			 for (var i = 0; i < sliderA.length; i++) {
 			 	if (i<nowPage) {
-			 		sliderA[i].css({"top":"-100%"})
+			 		sliderA[i].css({"transform":"translate3d(0%,-100%,0)","-webkit-transform":"translate3d(0%,-100%,0);"});
 			 		//TweenLite.to(sliderA[i],.5,{yPercent:-100})
+			 		if (i>2&&i<10) {pageAni2(i-3);};
 			 	};
 			 	if (i==nowPage) {
 			 		$(".goend").css({"display":"none"});
-			 		sliderA[i].css({"top":"0%"})
+			 		//sliderA[i].css({"top":"0%"})
+			 		sliderA[i].css({"transform":"translate3d(0%,0%,0)","-webkit-transform":"translate3d(0%,0%,0);"});
 			 		//TweenLite.to(sliderA[i],.5,{yPercent:0})
 			 		if (i==0) {ani1()};
 			 		if (i==1) {ani2()};
@@ -116,8 +119,10 @@ $(document).ready(function load (){
 			 		if (i>2&&i<10) {pageAni1(i-3);$(".goend").css({"display":"block"});};
 			 	};
 			 	if (i>nowPage) {
-			 		sliderA[i].css({"top":"100%"})
+			 		//sliderA[i].css({"top":"100%"})
+			 		sliderA[i].css({"transform":"translate3d(0%,100%,0)","-webkit-transform":"translate3d(0%,100%,0);"});
 			 		//TweenLite.to(sliderA[i],.5,{yPercent:100})
+			 		if (i>2&&i<10) {pageAni2(i-3);};
 			 	};
 			 }
 		}
@@ -191,8 +196,14 @@ $(document).ready(function load (){
 		// 	TweenLite.from(tA[i][j],1,{opacity:0,ease:Back.easeOut,delay:.5+0.07*j})
 		// };
 		//bigN[i].css({"transform":"translate3d(-100%,0%,0)","-webkit-transform":"translate3d(-100%,0%,0)"})
+		
+		bigN[i].css({"transform":"translate3d(0%,0%,0)","-webkit-transform":"translate3d(0%,0%,0);","transition":"all 3s ease","-webkit-transition":"all 3s ease"});
 		//TweenLite.to(bigN[i],3,{opacity:1,"transform":"translate3d(0%,0%,0)","-webkit-transform":"translate3d(0%,0%,0)",ease:Quint.easeOut,delay:.5})
 		// TweenLite.from(sq[i],2,{opacity:0,y:"+=60",ease:Elastic.easeOut,delay:.5})
+	}
+	function pageAni2(i){
+		var bigN=[$("#num1"),$("#num2"),$("#num3"),$("#num4"),$("#num5"),$("#num6"),$("#num7")];
+		bigN[i].css({"transform":"translate3d(-100%,0%,0)","-webkit-transform":"translate3d(-100%,0%,0);","transition":"all 3s ease","-webkit-transition":"all 3s ease"});
 	}
 
 
