@@ -107,6 +107,7 @@ $(document).ready(function load (){
 			 		sliderA[i].css({"transform":"translate3d(0%,-100%,0)","-webkit-transform":"translate3d(0%,-100%,0);"});
 			 		//TweenLite.to(sliderA[i],.5,{yPercent:-100})
 			 		if (i>2&&i<10) {pageAni2(i-3);};
+			 		if (i==0) {ani11()};
 			 	};
 			 	if (i==nowPage) {
 			 		$(".goend").css({"display":"none"});
@@ -123,6 +124,7 @@ $(document).ready(function load (){
 			 		sliderA[i].css({"transform":"translate3d(0%,100%,0)","-webkit-transform":"translate3d(0%,100%,0);"});
 			 		//TweenLite.to(sliderA[i],.5,{yPercent:100})
 			 		if (i>2&&i<10) {pageAni2(i-3);};
+			 		if (i==0) {ani11()};
 			 	};
 			 }
 		}
@@ -136,7 +138,11 @@ $(document).ready(function load (){
 		var t4=$("#p1t4")
 		var t5=$("#p1t5")
 
-
+		t1.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1s","-webkit-transition":"all 1s ease 1s"});
+		t2.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.1s","-webkit-transition":"all 1s ease 1.1s"});
+		t3.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.2s","-webkit-transition":"all 1s ease 1.2s"});
+		t4.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.3s","-webkit-transition":"all 1s ease 1.3s"});
+		t5.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.4s","-webkit-transition":"all 1s ease 1.4s"});
 		// TweenLite.set(t1,{opacity:0,xPercent:-50,yPercent:-50,y:100});
 		// TweenLite.set(t2,{opacity:0,xPercent:-50,yPercent:-50,y:100});
 		// TweenLite.set(t3,{opacity:0,xPercent:-50,yPercent:-50,y:50});
@@ -148,6 +154,20 @@ $(document).ready(function load (){
 		// TweenLite.to(t3,1,{opacity:1,y:0,ease:Back.easeOut,delay:3});
 		// TweenLite.to(t4,1,{opacity:1,y:0,ease:Back.easeOut,delay:3.5});
 		// TweenLite.to(t5,1,{opacity:1,y:0,ease:Back.easeOut,delay:4});
+	}
+	function ani11(){
+		var t1=$("#p1t1")
+		var t2=$("#p1t2")
+		var t3=$("#p1t3")
+		var t4=$("#p1t4")
+		var t5=$("#p1t5")
+
+		t1.css({"opacity":"0","transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0);","transition":"all 0s ease","-webkit-transition":"all 0s ease"});
+		t2.css({"opacity":"0","transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0);","transition":"all 0s ease","-webkit-transition":"all 0s ease"});
+		t3.css({"opacity":"0","transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0);","transition":"all 0s ease","-webkit-transition":"all 0s ease"});
+		t4.css({"opacity":"0","transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0);","transition":"all 0s ease","-webkit-transition":"all 0s ease"});
+		t5.css({"opacity":"0","transform":"translate3d(-50%,-30%,0)","-webkit-transform":"translate3d(-50%,-30%,0);","transition":"all 0s ease","-webkit-transition":"all 0s ease"});
+
 	}
 
 	function ani2(){	
