@@ -106,8 +106,8 @@ $(document).ready(function load (){
 			 	if (i<nowPage) {
 			 		sliderA[i].css({"transform":"translate3d(0%,-100%,0)","-webkit-transform":"translate3d(0%,-100%,0);"});
 			 		//TweenLite.to(sliderA[i],.5,{yPercent:-100})
-			 		if (i>2&&i<10) {pageAni2(i-3);};
-			 		if (i==0) {ani11()};
+			 		//if (i>2&&i<10) {pageAni2(i-3);};
+			 		//if (i==0) {ani11()};
 			 	};
 			 	if (i==nowPage) {
 			 		$(".goend").css({"display":"none"});
@@ -123,8 +123,8 @@ $(document).ready(function load (){
 			 		//sliderA[i].css({"top":"100%"})
 			 		sliderA[i].css({"transform":"translate3d(0%,100%,0)","-webkit-transform":"translate3d(0%,100%,0);"});
 			 		//TweenLite.to(sliderA[i],.5,{yPercent:100})
-			 		if (i>2&&i<10) {pageAni2(i-3);};
-			 		if (i==0) {ani11()};
+			 		//if (i>2&&i<10) {pageAni2(i-3);};
+			 		//if (i==0) {ani11()};
 			 	};
 			 }
 		}
