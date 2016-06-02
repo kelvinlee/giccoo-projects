@@ -6,7 +6,7 @@ img{width: 100%;}
 #logo{position: absolute;width: 100%;top: 0;z-index: 1000}
 .bg{position: absolute;width: 100%;height: 100%;z-index: 0;}
 .wechat-share {  position: absolute;  top: -1000px;  left: 0px;  z-index: -100;  width: 1px; }
-.loading{position: absolute;z-index: 99999;top: 0;left: 0;width: 100%;height: 100%;}
+.loading{position: absolute;z-index: 2999;top: 0;left: 0;width: 100%;height: 100%;}
 #loadingCar{position: absolute;width: 43.3%;top: 50%;left: 50%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);}
 .loadingLine{position: absolute;width: 50.625%;top: 50%;left: 50%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);}
 #loadingT{position: absolute;width: 100%;text-align: center;font-size: 1rem;color: #fff;top: 60%;}
@@ -21,7 +21,7 @@ img{width: 100%;}
 	position: absolute;width: 100%;left:50%;top: 75%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);
 }
 .page1line{position: absolute;width: 100%;top: 75%;left: 50%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);}
-.page1t{position: absolute;width: 100%;top: 35%;left: 50%;/*transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);*/}
+.page1t{position: absolute;width: 100%;top: 35%;left: 50%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);}
 .arrow{position: absolute;width: 100%;bottom: 0;}
 .p12pic{position: absolute;
 	width: 100%;
@@ -89,7 +89,7 @@ img{width: 100%;}
 	bottom: 10%;
 }
 .floatLayer{
-	position: absolute;width: 100%;height: 100%;z-index: 9999;
+	position: absolute;width: 100%;height: 100%;z-index: 2000;
 }
 .blackLayer{
 	position: absolute;width: 100%;height: 100%;background-color: #000;opacity: .5;

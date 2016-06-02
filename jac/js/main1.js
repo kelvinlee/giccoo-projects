@@ -127,17 +127,18 @@ $(document).ready(function load (){
 		var t4=$("#p1t4")
 		var t5=$("#p1t5")
 
-		TweenLite.set(t1,{opacity:0,xPercent:-50,yPercent:-50,y:100});
-		TweenLite.set(t2,{opacity:0,xPercent:-50,yPercent:-50,y:100});
-		TweenLite.set(t3,{opacity:0,xPercent:-50,yPercent:-50,y:50});
-		TweenLite.set(t4,{opacity:0,xPercent:-50,yPercent:-50,y:50});
-		TweenLite.set(t5,{opacity:0,xPercent:-50,yPercent:-50,y:50});
 
-		TweenLite.to(t1,1,{opacity:1,y:0,ease:Back.easeOut,delay:1});
-		TweenLite.to(t2,1,{opacity:1,y:0,ease:Back.easeOut,delay:2});
-		TweenLite.to(t3,1,{opacity:1,y:0,ease:Back.easeOut,delay:3});
-		TweenLite.to(t4,1,{opacity:1,y:0,ease:Back.easeOut,delay:3.5});
-		TweenLite.to(t5,1,{opacity:1,y:0,ease:Back.easeOut,delay:4});
+		// TweenLite.set(t1,{opacity:0,xPercent:-50,yPercent:-50,y:100});
+		// TweenLite.set(t2,{opacity:0,xPercent:-50,yPercent:-50,y:100});
+		// TweenLite.set(t3,{opacity:0,xPercent:-50,yPercent:-50,y:50});
+		// TweenLite.set(t4,{opacity:0,xPercent:-50,yPercent:-50,y:50});
+		// TweenLite.set(t5,{opacity:0,xPercent:-50,yPercent:-50,y:50});
+
+		// TweenLite.to(t1,1,{opacity:1,y:0,ease:Back.easeOut,delay:1});
+		// TweenLite.to(t2,1,{opacity:1,y:0,ease:Back.easeOut,delay:2});
+		// TweenLite.to(t3,1,{opacity:1,y:0,ease:Back.easeOut,delay:3});
+		// TweenLite.to(t4,1,{opacity:1,y:0,ease:Back.easeOut,delay:3.5});
+		// TweenLite.to(t5,1,{opacity:1,y:0,ease:Back.easeOut,delay:4});
 	}
 
 	function ani2(){	
@@ -209,7 +210,6 @@ var _loadMax = 0
 				// console.log(parseInt(_loadNum/_loadMax*100));
 				$("#loading-text").text(parseInt(_loadNum/_loadMax*82+18));
 				if (_loadNum>=_loadMax) {
-					//alert(_loadMax)
 					setTimeout(function(){
 						loadEnd();
 					},500)
@@ -217,8 +217,8 @@ var _loadMax = 0
 				}
 			}
 			img.src = $(this).attr("data-src");
-			if (loadStepOne[i]==".bg") {img.style="width:100%;";}else{img.style="width:100%;";};
-			
+			//if (loadStepOne[i]==".bg") {;}else{img.style="width:100%;";};
+			img.style="width:100%;";
 			$(this).after(img);
 			$(this).remove();
 		})
@@ -226,7 +226,7 @@ var _loadMax = 0
 }
 function loadEnd() {
 	setSlide();
-	 ani1();
+	ani1();
 	 
 	console.log("load end")
 	$(".loading").addClass("fadeOut animated");
