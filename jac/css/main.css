@@ -12,19 +12,19 @@ img{width: 100%;}
 #loadingT{position: absolute;width: 100%;text-align: center;font-size: 1rem;color: #fff;top: 60%;}
 .content{position: absolute;width: 100%;height: 100%;overflow: hidden;}
 .aPage{
-	position: absolute;width: 100%;height: 100%;/*top: 100%;*/left: 0;overflow:hidden;/*transform:translate3d(0%,100%,0);-webkit-transform:translate3d(0%,100%,0);*/
+	position: absolute;width: 100%;height: 100%;/*top: 100%;*/left: 0;overflow:hidden;transform:translate3d(0%,100%,0);-webkit-transform:translate3d(0%,100%,0);
   transition:all .5s ease;
   -webkit-transition:all .5s ease;
 }
 #starter{
   /*top: 0%;*/
-	/*transform:translate3d(0%,0%,0);-webkit-transform:translate3d(0%,0%,0);*/
+	transform:translate3d(0%,0%,0);-webkit-transform:translate3d(0%,0%,0);
 }
 #car1{
 	position: absolute;width: 100%;left:50%;top: 75%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);
 }
 .page1line{position: absolute;width: 100%;top: 75%;left: 50%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);}
-.page1t{opacity: 0;position: absolute;width: 100%;top: 35%;left: 50%;transform:translate3d(-50%,-30%,0);-webkit-transform:translate3d(-50%,-30%,0);transition:all 1.5s ease 2s;
+.page1t{opacity: 1;position: absolute;width: 100%;top: 35%;left: 50%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);transition:all 1.5s ease 2s;
   -webkit-transition:all .5s ease;}
 .arrow{position: absolute;width: 100%;bottom: 0;}
 .p12pic{position: absolute;

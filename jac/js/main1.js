@@ -138,11 +138,11 @@ $(document).ready(function load (){
 		var t4=$("#p1t4")
 		var t5=$("#p1t5")
 
-		t1.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1s","-webkit-transition":"all 1s ease 1s"});
-		t2.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.1s","-webkit-transition":"all 1s ease 1.1s"});
-		t3.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.2s","-webkit-transition":"all 1s ease 1.2s"});
-		t4.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.3s","-webkit-transition":"all 1s ease 1.3s"});
-		t5.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.4s","-webkit-transition":"all 1s ease 1.4s"});
+		// t1.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1s","-webkit-transition":"all 1s ease 1s"});
+		// t2.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.1s","-webkit-transition":"all 1s ease 1.1s"});
+		// t3.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.2s","-webkit-transition":"all 1s ease 1.2s"});
+		// t4.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.3s","-webkit-transition":"all 1s ease 1.3s"});
+		// t5.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.4s","-webkit-transition":"all 1s ease 1.4s"});
 		// TweenLite.set(t1,{opacity:0,xPercent:-50,yPercent:-50,y:100});
 		// TweenLite.set(t2,{opacity:0,xPercent:-50,yPercent:-50,y:100});
 		// TweenLite.set(t3,{opacity:0,xPercent:-50,yPercent:-50,y:50});
