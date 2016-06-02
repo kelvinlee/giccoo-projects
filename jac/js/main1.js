@@ -102,22 +102,119 @@ $(document).ready(function load (){
 			};	
 		} 
 		function goPage(){
+			// setTimeout(function(){
+			// 		if(0!=nowPage&&0!=nowPage+1&&0!=nowPage-1){sliderA[0].css({"display":"none"});}
+			// 	},500)
+			// setTimeout(function(){
+			// 		if(1!=nowPage&&1!=nowPage+1&&1!=nowPage-1){sliderA[1].css({"display":"none"});}
+			// 	},500)
+			// setTimeout(function(){
+			// 		if(2!=nowPage&&2!=nowPage+1&&2!=nowPage-1){sliderA[2].css({"display":"none"});}
+			// 	},500)
+			// setTimeout(function(){
+			// 		if(3!=nowPage&&3!=nowPage+1&&3!=nowPage-1){sliderA[3].css({"display":"none"});}
+			// 	},500)
+			// setTimeout(function(){
+			// 		if(4!=nowPage&&4!=nowPage+1&&4!=nowPage-1){sliderA[4].css({"display":"none"});}
+			// 	},500)
+			// setTimeout(function(){
+			// 		if(5!=nowPage&&5!=nowPage+1&&5!=nowPage-1){sliderA[5].css({"display":"none"});}
+			// 	},500)
+			// setTimeout(function(){
+			// 		if(6!=nowPage&&6!=nowPage+1&&6!=nowPage-1){sliderA[6].css({"display":"none"});}
+			// 	},500)
+			// setTimeout(function(){
+			// 		if(7!=nowPage&&7!=nowPage+1&&7!=nowPage-1){sliderA[7].css({"display":"none"});}
+			// 	},500)
+			// setTimeout(function(){
+			// 		if(8!=nowPage&&8!=nowPage+1&&8!=nowPage-1){sliderA[8].css({"display":"none"});}
+			// 	},500)
+			// setTimeout(function(){
+			// 		if(9!=nowPage&&9!=nowPage+1&&9!=nowPage-1){sliderA[9].css({"display":"none"});}
+			// 	},500)
+			// setTimeout(function(){
+			// 		if(10!=nowPage&&10!=nowPage+1&&10!=nowPage-1){sliderA[10].css({"display":"none"});}
+			// 	},500)
+			
+			if(0!=nowPage&&0!=nowPage+1&&0!=nowPage-1){
+				setTimeout(function(){sliderA[0].css({"display":"none"});},500)
+			}else{
+				sliderA[0].css({"display":"block"});
+			}
+			if(1!=nowPage&&1!=nowPage+1&&1!=nowPage-1){
+				setTimeout(function(){sliderA[1].css({"display":"none"});},500)
+			}else{
+				sliderA[1].css({"display":"block"});
+			}
+			if(2!=nowPage&&2!=nowPage+1&&2!=nowPage-1){
+				setTimeout(function(){sliderA[2].css({"display":"none"});},500)
+			}else{
+				sliderA[2].css({"display":"block"});
+			}
+			if(3!=nowPage&&3!=nowPage+1&&3!=nowPage-1){
+				setTimeout(function(){sliderA[3].css({"display":"none"});},500)
+			}else{
+				sliderA[3].css({"display":"block"});
+			}
+			if(4!=nowPage&&4!=nowPage+1&&4!=nowPage-1){
+				setTimeout(function(){sliderA[4].css({"display":"none"});},500)
+			}else{
+				sliderA[4].css({"display":"block"});
+			}
+			if(5!=nowPage&&5!=nowPage+1&&5!=nowPage-1){
+				setTimeout(function(){sliderA[5].css({"display":"none"});},500)
+			}else{
+				sliderA[5].css({"display":"block"});
+			}
+			if(6!=nowPage&&6!=nowPage+1&&6!=nowPage-1){
+				setTimeout(function(){sliderA[6].css({"display":"none"});},500)
+			}else{
+				sliderA[6].css({"display":"block"});
+			}
+			if(7!=nowPage&&7!=nowPage+1&&7!=nowPage-1){
+				setTimeout(function(){sliderA[7].css({"display":"none"});},500)
+			}else{
+				sliderA[7].css({"display":"block"});
+			}
+			if(8!=nowPage&&8!=nowPage+1&&8!=nowPage-1){
+				setTimeout(function(){sliderA[8].css({"display":"none"});},500)
+			}else{
+				sliderA[8].css({"display":"block"});
+			}
+			if(9!=nowPage&&9!=nowPage+1&&9!=nowPage-1){
+				setTimeout(function(){sliderA[9].css({"display":"none"});},500)
+			}else{
+				sliderA[9].css({"display":"block"});
+			}
+			if(10!=nowPage&&10!=nowPage+1&&10!=nowPage-1){
+				setTimeout(function(){sliderA[10].css({"display":"none"});},500)
+			}else{
+				sliderA[10].css({"display":"block"});
+			}
+
+
+
+
 			 for (var i = 0; i < sliderA.length; i++) {
 			 	if (i==nowPage-1) {
+			 		
 			 		sliderA[i].css({"transform":"translate3d(0%,-100%,0)","-webkit-transform":"translate3d(0%,-100%,0);"});
 			 		//TweenLite.to(sliderA[i],.5,{yPercent:-100})
 			 		//if (i>2&&i<10) {pageAni2(i-3);};
 			 		//if (i==0) {ani11()};
+
 			 	};
 			 	if (i==nowPage) {
 			 		$(".goend").css({"display":"none"});
+			 		sliderA[i].css({"display":"block"})
 			 		//sliderA[i].css({"top":"0%"})
-			 		sliderA[i].css({"transform":"translate3d(0%,0%,0)","-webkit-transform":"translate3d(0%,0%,0);"});
+			 		sliderA[i].css({"transform":"translate3d(0%,0%,0)","-webkit-transform":"translate3d(0%,0%,0);","transition":"all .5s ease","-webkit-transition":"all .5s ease;"});
 			 		//TweenLite.to(sliderA[i],.5,{yPercent:0})
 			 		if (i==0) {ani1()};
 			 		if (i==1) {ani2()};
 			 		if (i==2) {ani3()};
 			 		if (i>2&&i<10) {pageAni1(i-3);$(".goend").css({"display":"block"});};
+
 			 	};
 			 	if (i==nowPage+1) {
 			 		//sliderA[i].css({"top":"100%"})
