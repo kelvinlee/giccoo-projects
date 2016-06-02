@@ -186,8 +186,8 @@ $(document).ready(function load (){
 			TweenLite.from(tA[i][j],1,{opacity:0,ease:Back.easeOut,delay:.5+0.07*j})
 		};
 		bigN[i].css({"transform":"translate3d(-100%,0%,0)","-webkit-transform":"translate3d(-100%,0%,0)"})
-		TweenLite.to(bigN[i],4,{opacity:1,"transform":"translate3d(0%,0%,0)","-webkit-transform":"translate3d(0%,0%,0)",ease:Quint.easeOut,delay:.5})
-		TweenLite.from(sq[i],3,{opacity:0,y:"+=60",ease:Elastic.easeOut,delay:.5})
+		TweenLite.to(bigN[i],3,{opacity:1,"transform":"translate3d(0%,0%,0)","-webkit-transform":"translate3d(0%,0%,0)",ease:Quint.easeOut,delay:.5})
+		TweenLite.from(sq[i],2,{opacity:0,y:"+=60",ease:Elastic.easeOut,delay:.5})
 	}
 
 
