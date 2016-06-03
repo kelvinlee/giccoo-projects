@@ -11,8 +11,5 @@ img{ width: 100%; }
 	position: absolute;width: 100%;top: 0;
 }
 .alpha{
-	position: absolute;width: 100%;height: 100%;background-color: #666666;display: none;
-}
-#android{
-	background-color: #660066;
+	position: absolute;width: 100%;height: 100%;background-color: #666666;display: none;opacity: 0;
 }
