@@ -62,8 +62,6 @@ $(document).ready(function load (){
 		var sliderA=[$('#starter'),$('#starter1'),$('#starter2'),$('#page1'),$('#page2'),$('#page3'),$('#page4'),$('#page5'),$('#page6'),$('#page7'),$('#page8')]
 
 		for (var i = 1; i < sliderA.length; i++) {
-			//TweenLite.set(sliderA[i],{yPercent:100})
-			//sliderA[i].css({"top":"100%"})
 			sliderA[i].css({"transform":"translate3d(0%,100%,0)","-webkit-transform":"translate3d(0%,100%,0);"})
 		};
 
@@ -101,41 +99,7 @@ $(document).ready(function load (){
 				//alert("不翻页")
 			};	
 		} 
-		function goPage(){
-			// setTimeout(function(){
-			// 		if(0!=nowPage&&0!=nowPage+1&&0!=nowPage-1){sliderA[0].css({"display":"none"});}
-			// 	},500)
-			// setTimeout(function(){
-			// 		if(1!=nowPage&&1!=nowPage+1&&1!=nowPage-1){sliderA[1].css({"display":"none"});}
-			// 	},500)
-			// setTimeout(function(){
-			// 		if(2!=nowPage&&2!=nowPage+1&&2!=nowPage-1){sliderA[2].css({"display":"none"});}
-			// 	},500)
-			// setTimeout(function(){
-			// 		if(3!=nowPage&&3!=nowPage+1&&3!=nowPage-1){sliderA[3].css({"display":"none"});}
-			// 	},500)
-			// setTimeout(function(){
-			// 		if(4!=nowPage&&4!=nowPage+1&&4!=nowPage-1){sliderA[4].css({"display":"none"});}
-			// 	},500)
-			// setTimeout(function(){
-			// 		if(5!=nowPage&&5!=nowPage+1&&5!=nowPage-1){sliderA[5].css({"display":"none"});}
-			// 	},500)
-			// setTimeout(function(){
-			// 		if(6!=nowPage&&6!=nowPage+1&&6!=nowPage-1){sliderA[6].css({"display":"none"});}
-			// 	},500)
-			// setTimeout(function(){
-			// 		if(7!=nowPage&&7!=nowPage+1&&7!=nowPage-1){sliderA[7].css({"display":"none"});}
-			// 	},500)
-			// setTimeout(function(){
-			// 		if(8!=nowPage&&8!=nowPage+1&&8!=nowPage-1){sliderA[8].css({"display":"none"});}
-			// 	},500)
-			// setTimeout(function(){
-			// 		if(9!=nowPage&&9!=nowPage+1&&9!=nowPage-1){sliderA[9].css({"display":"none"});}
-			// 	},500)
-			// setTimeout(function(){
-			// 		if(10!=nowPage&&10!=nowPage+1&&10!=nowPage-1){sliderA[10].css({"display":"none"});}
-			// 	},500)
-			
+		function goPage(){			
 			if(0!=nowPage&&0!=nowPage+1&&0!=nowPage-1){
 				setTimeout(function(){sliderA[0].css({"display":"none"});},500)
 			}else{
@@ -202,6 +166,8 @@ $(document).ready(function load (){
 			 		//TweenLite.to(sliderA[i],.5,{yPercent:-100})
 			 		if (i>2&&i<10) {pageAni2(i-3);};
 			 		if (i==0) {ani11()};
+			 		if (i==1) {ani22()};
+			 		if (i==2) {ani33()};
 
 			 	};
 			 	if (i==nowPage) {
@@ -222,6 +188,8 @@ $(document).ready(function load (){
 			 		//TweenLite.to(sliderA[i],.5,{yPercent:100})
 			 		if (i>2&&i<10) {pageAni2(i-3);};
 			 		if (i==0) {ani11()};
+			 		if (i==1) {ani22()};
+			 		if (i==2) {ani33()};
 			 	};
 			 }
 		}
@@ -240,17 +208,6 @@ $(document).ready(function load (){
 		 t3.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.2s","-webkit-transition":"all 1s ease 1.2s"});
 		 t4.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.3s","-webkit-transition":"all 1s ease 1.3s"});
 		 t5.css({"opacity":"1","transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0);","transition":"all 1s ease 1.4s","-webkit-transition":"all 1s ease 1.4s"});
-		// TweenLite.set(t1,{opacity:0,xPercent:-50,yPercent:-50,y:100});
-		// TweenLite.set(t2,{opacity:0,xPercent:-50,yPercent:-50,y:100});
-		// TweenLite.set(t3,{opacity:0,xPercent:-50,yPercent:-50,y:50});
-		// TweenLite.set(t4,{opacity:0,xPercent:-50,yPercent:-50,y:50});
-		// TweenLite.set(t5,{opacity:0,xPercent:-50,yPercent:-50,y:50});
-
-		// TweenLite.to(t1,1,{opacity:1,y:0,ease:Back.easeOut,delay:1});
-		// TweenLite.to(t2,1,{opacity:1,y:0,ease:Back.easeOut,delay:2});
-		// TweenLite.to(t3,1,{opacity:1,y:0,ease:Back.easeOut,delay:3});
-		// TweenLite.to(t4,1,{opacity:1,y:0,ease:Back.easeOut,delay:3.5});
-		// TweenLite.to(t5,1,{opacity:1,y:0,ease:Back.easeOut,delay:4});
 	}
 	function ani11(){
 		var t1=$("#p1t1")
@@ -273,30 +230,39 @@ $(document).ready(function load (){
 		var t3=$("#p2t3")
 		var t4=$("#p2t4")
 
-		t1.css({'opacity':1})
-		t2.css({'opacity':1})
-		t3.css({'opacity':1})
-		t4.css({'opacity':1})
-		// TweenLite.from(t1,1,{opacity:1,rotationY:-90,ease:Back.easeOut,delay:.5+.05})
-		// TweenLite.from(t2,1,{opacity:1,rotationY:-90,ease:Back.easeOut,delay:.5+.05*2})
-		// TweenLite.from(t3,1,{opacity:1,rotationY:-90,ease:Back.easeOut,delay:.5+.05*3})
-		// TweenLite.from(t4,1,{opacity:1,rotationY:-90,ease:Back.easeOut,delay:.5+.05*4})
+		t1.css({'opacity':1,'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)','transition':'all .5s ease-out .3s','-webkit-transition':'all .5s ease-out .3s'})
+		t2.css({'opacity':1,'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)','transition':'all .5s ease-out .35s','-webkit-transition':'all .5s ease-out .35s'})
+		t3.css({'opacity':1,'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)','transition':'all .5s ease-out .4s','-webkit-transition':'all .5s ease-out .4s'})
+		t4.css({'opacity':1,'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)','transition':'all .5s ease-out .45s','-webkit-transition':'all .5s ease-out .45s'})
+	}
+	function ani22(){
+		var t1=$("#p2t1")
+		var t2=$("#p2t2")
+		var t3=$("#p2t3")
+		var t4=$("#p2t4")
+
+		t1.css({'opacity':0,'transform':'translate3d(-50%,30%,0)','-webkit-transform':'translate3d(-50%,30%,0)'})
+		t2.css({'opacity':0,'transform':'translate3d(-50%,30%,0)','-webkit-transform':'translate3d(-50%,30%,0)'})
+		t3.css({'opacity':0,'transform':'translate3d(-50%,30%,0)','-webkit-transform':'translate3d(-50%,30%,0)'})
+		t4.css({'opacity':0,'transform':'translate3d(-50%,30%,0)','-webkit-transform':'translate3d(-50%,30%,0)'})
 	}
 
 	
 	function ani3(){	
        	var t1=$("#p3t1")
 		var t2=$("#p3t2")
-		t1.css({'opacity':1})
-		t2.css({'opacity':1})
-		// TweenLite.from(t1,1,{opacity:0,rotationY:-90,ease:Back.easeOut,delay:.5+.05})
-		// TweenLite.from(t2,1,{opacity:0,rotationY:-90,ease:Back.easeOut,delay:.5+.05*2})
+		t1.css({'opacity':1,'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)','transition':'all .5s ease-out .3s','-webkit-transition':'all .5s ease-out .3s'})
+		t2.css({'opacity':1,'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)','transition':'all .5s ease-out .35s','-webkit-transition':'all .5s ease-out .35s'})
 	}
 
-	function pageAni1(i){
-		var bigN=[$("#num1"),$("#num2"),$("#num3"),$("#num4"),$("#num5"),$("#num6"),$("#num7")];
-		var sq=[$("#m1t0"),$("#m2t0"),$("#m3t0"),$("#m4t0"),$("#m5t0"),$("#m6t0"),$("#m7t0")];
-		var tA=[
+	function ani33(){	
+       	var t1=$("#p3t1")
+		var t2=$("#p3t2")
+		t1.css({'opacity':0,'transform':'translate3d(-50%,30%,0)','-webkit-transform':'translate3d(-50%,30%,0)'})
+		t2.css({'opacity':0,'transform':'translate3d(-50%,30%,0)','-webkit-transform':'translate3d(-50%,30%,0)'})
+	}
+
+	var tA=[
 		[$("#m1t1")],
 		[$("#m2t1")],
 		[$("#m3t1")],
@@ -306,20 +272,26 @@ $(document).ready(function load (){
 		[$("#m7t1")],
 
 		];
+	function pageAni1(i){
+		var bigN=[$("#num1"),$("#num2"),$("#num3"),$("#num4"),$("#num5"),$("#num6"),$("#num7")];
+		var sq=[$("#m1t0"),$("#m2t0"),$("#m3t0"),$("#m4t0"),$("#m5t0"),$("#m6t0"),$("#m7t0")];
+		
 
 		var car=[$("#mcar1"),$("#mcar2"),$("#mcar3"),$("#mcar4"),$("#mcar5"),$("#mcar6"),$("#mcar7")];
 		var end=[$("#m1_end"),$("#m2_end"),$("#m3_end"),$("#m4_end"),$("#m5_end"),$("#m6_end"),$("#m7_end")];
 		// for (var j = 0; j < tA[i].length; j++) {
 		// 	TweenLite.from(tA[i][j],1,{opacity:0,ease:Back.easeOut,delay:.5+0.07*j})
 		// };
-		//bigN[i].css({"transform":"translate3d(-100%,0%,0)","-webkit-transform":"translate3d(-100%,0%,0)"})
-		
+
+		tA[i][0].css({'opacity':1,'transform':'translate3d(-50%,-100%,0)','-webkit-transform':'translate3d(-50%,-100%,0)','transition':'all .5s ease-out .3s','-webkit-transition':'all .5s ease-out .3s'})
 		bigN[i].css({"transform":"translate3d(0%,0%,0)","-webkit-transform":"translate3d(0%,0%,0);","transition":"all 3s ease","-webkit-transition":"all 3s ease"});
 		//TweenLite.to(bigN[i],3,{opacity:1,"transform":"translate3d(0%,0%,0)","-webkit-transform":"translate3d(0%,0%,0)",ease:Quint.easeOut,delay:.5})
-		// TweenLite.from(sq[i],2,{opacity:0,y:"+=60",ease:Elastic.easeOut,delay:.5})
+		sq[i].css({"opacity":"1",'transform':'translate3d(-50%,-100%,0)','-webkit-transform':'translate3d(-50%,-100%,0)'})
+		TweenLite.from(sq[i],2,{opacity:0,y:"+=60",ease:Elastic.easeOut,delay:.5})
 	}
 	function pageAni2(i){
 		var bigN=[$("#num1"),$("#num2"),$("#num3"),$("#num4"),$("#num5"),$("#num6"),$("#num7")];
+		tA[i][0].css({'opacity':0,'transform':'translate3d(-50%,-80%,0)','-webkit-transform':'translate3d(-50%,-80%,0)'})
 		bigN[i].css({"transform":"translate3d(-100%,0%,0)","-webkit-transform":"translate3d(-100%,0%,0);","transition":"all 3s ease","-webkit-transition":"all 3s ease"});
 	}
 
