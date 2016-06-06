@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<img src="../img/circle_2.png" style="display:none;"/>
+<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/shop.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="../js/share.js"></script>
+<title>HUAWEI P9首销体验店查询</title>
+<script type="text/javascript">
+var newShopList = [];
+var shopStrArr = shopList.split("|");
+for(var i=0;i<shopStrArr.length;i++){
+	var s = shopStrArr[i].split("#");
+	newShopList.push(s);	
+}
+$(function(){
+	$(".city").click(function(){
+		var c = $(this).text(); 
+		ShowPage2(c);
+	});
+});
+function ShowPage2(city){
+	$("#oneList").empty(); 
+	$("#page_2_title").html(city);
+	for(var i=0;i<newShopList.length;i++){ 
+		if(newShopList[i][0].indexOf(city) >= 0){
+			var html = '<div class="one">';
+                html +='<div class="title"><h3>'+newShopList[i][1]+'</h3></div>';
+                html +='<div class="address"><p>'+newShopList[i][2]+'</p></div>';
+                html +='</div>';
+			$("#oneList").append(html);
+		}
+	}
+	$("#page_1").hide();
+	$("#page_2").show();	
+}
+function ShowPage1(){
+	$("#page_1").show();
+	$("#page_2").hide();	
+}
+</script> 
+</head>
+<body>
+<div id="mobileBody">
+	<img class="SharePic" src="share.jpg" style="position: fixed;top: -1000px;left: -1000px;"></img>
+	<div class="page_1" id="page_1" >
+    	<div class="context">
+       	  <div class="city" style="left:45px; top:8px;">北京</div>
+          <div class="city" style="left:183px; top:8px;">上海</div>
+          <div class="city" style="left:320px; top:8px;">天津</div>
+          <div class="city" style="left:458px; top:9px;">重庆</div>
+          <div class="city" style="left:595px; top:8px;">浙江</div>
+          <div class="city" style="left:120px; top:111px;">广东</div>
+          <div class="city" style="left:258px; top:110px;">江苏</div>
+          <div class="city" style="left:398px; top:112px;">山东</div>
+          <div class="city" style="left:534px; top:109px;">河南</div>
+          <div class="city" style="left:43px; top:211px;">河北</div>
+          <div class="city" style="left:182px; top:211px;">四川</div>
+          <div class="city" style="left:458px; top:213px;">湖北</div>
+          <div class="city" style="left:595px; top:211px;">辽宁</div>
+          <div class="city" style="left:119px; top:314px;">湖南</div>
+          <div class="city" style="left:258px; top:314px;">福建</div>
+          <div class="city" style="left:397px; top:315px;">安徽</div>
+          <div class="city" style="left:535px; top:315px;">陕西</div>
+          <div class="city" style="left:43px; top:420px;">内蒙古</div>
+          <div class="city" style="left:182px; top:420px;">江西</div>
+          <div class="city" style="left:319px; top:419px;">广西</div>
+          <div class="city" style="left:457px; top:419px;">山西</div>
+          <div class="city" style="left:593px; top:419px;">黑龙江</div>
+          <div class="city" style="left:119px; top:522px;">云南</div>
+          <div class="city" style="left:255px; top:521px;">吉林</div>
+          <div class="city" style="left:396px; top:520px;">贵州</div>
+          <div class="city" style="left:535px; top:520px;">新疆</div>
+          <div class="city" style="left:60px; top:621px;">甘肃</div>
+          <div class="city" style="left:197px; top:620px;">海南</div>
+          <div class="city" style="left:335px; top:622px;">宁夏</div>
+          <div class="city" style="left:473px; top:621px;">青海</div>
+          <div class="city" style="left:610px; top:623px;">西藏</div>
+          <a href="http://m.vmall.com/product/3325.html">
+          <div class="buy" style="left:319px; top:210px;">购买</div>
+          </a>
+      </div>
+        <div class="foot">全国超过一万家零售门店有售</div>
+  </div>
+	
+    <div class="page_2" id="page_2" >
+    	<div class="head"><span id="page_2_title">上海</span>
+        	<a href="javascript:;" onclick="ShowPage1()" class="return"></a>
+        </div>
+        <div id="oneList">
+            <div class="one">
+                <div class="title">上海市吾界南京东路华为高级体验店</div>
+                <div class="address">上海市黄浦区南京东路505号</div>
+            </div>
+            <div class="one">
+                <div class="title">上海市吾界南京东路华为高级体验店</div>
+                <div class="address">上海市黄浦区南京东路505号</div>
+            </div>
+            <div class="one">
+                <div class="title">上海市吾界南京东路华为高级体验店</div>
+                <div class="address">上海市黄浦区南京东路505号</div>
+            </div>
+            <div class="one">
+                <div class="title">上海市吾界南京东路华为高级体验店</div>
+                <div class="address">上海市黄浦区南京东路505号</div>
+            </div>
+            <div class="one">
+                <div class="title">上海市吾界南京东路华为高级体验店</div>
+                <div class="address">上海市黄浦区南京东路505号</div>
+            </div>
+            <div class="one">
+                <div class="title">上海市吾界南京东路华为高级体验店</div>
+                <div class="address">上海市黄浦区南京东路505号</div>
+            </div>
+            <div class="one">
+                <div class="title">上海市吾界南京东路华为高级体验店</div>
+                <div class="address">上海市黄浦区南京东路505号</div>
+            </div>
+        </div>
+        <div class="foot2"></div>
+    </div>
+</div>
+</body>
+</html> 

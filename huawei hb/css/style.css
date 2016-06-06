@@ -1,0 +1,32 @@
+html,body{margin:0px; padding:0px; text-align:left; font-size:12px; font-family:"微软雅黑", "新宋体"; background-color:#fff;}
+a{text-decoration:none; color:#3377aa; }
+a:hover{text-decoration:none;}
+h1,h2,h3,h4,h5,h6,p{margin:0px; padding:0px;}
+ul,li,ol,dl,dd,dt{margin:0px; padding:0px; list-style:none;}
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both; height:0px;}
+.red{color:#F00;}
+
+#mobileBody{ width:750px; height:auto; margin:0px auto; position:relative; left:0px; top:0px; background-color:#fff; }
+#mobileBody .page_1{ height:821px;   background:url(../images/mobile_01.jpg) no-repeat; position:relative; left:0px; top:0px; padding-top:385px;}
+#mobileBody .page_1 .context{position:relative; left:0px; top:0px; width:750px; height:745px; }
+#mobileBody .page_1 .city{width:108px; height:78px; position:absolute; left:0px; top:0px; font-size:30px; color:#222222; background:url(../images/circle_1.png) no-repeat; text-align:center; padding-top:30px; line-height:45px; overflow:hidden; cursor:pointer; }
+#mobileBody .page_1 .buy{width:114px; height:114px; position:absolute; left:0px; top:0px; background:url(../images/circle_2.png) no-repeat; overflow:hidden;  text-indent:-99em; }
+
+#mobileBody .page_1 .foot{height:76px; text-align:center; font-size:28px; color:#808080; line-height:58px;}
+
+#mobileBody .page_2{ height:auto; background:url(../images/mobile_02.png) no-repeat; display:none; }
+#mobileBody .page_2 .head{height:80px; text-align:center; font-size:40px; line-height:80px; color:#000000; font-family:"黑体","微软雅黑"; margin-bottom:10px; position:relative; left:0px; top:0px; }
+#mobileBody .page_2 .return{width:133px; height:80px; position:absolute; right:0px; top:0px; display:block;}
+#mobileBody .page_2 .one{width:690px; height:auto; border:1px solid #d2d2d2; margin:0px auto; margin-top:24px; }
+#mobileBody .page_2 .one .title{height:auto; line-height:56px; font-size:24px; color:#1e1e1f; text-align:center; background-color:#e5e5e5;  }
+#mobileBody .page_2 .one .address{  line-height:44px; padding:26px; text-align:center; font-size:22px; color:#5c696f; }
+#mobileBody .page_2 .foot2{height:206px; background:url(../images/foot2.png) no-repeat;}
+#oneList { min-height:900px;}
+#mobileBody .page_2 .one .title h3{
+	font-size: 28px;
+}
+#mobileBody .page_2 .one .address p{
+	font-size: 26px;
+}
