@@ -122,8 +122,8 @@ $(document).ready(function load (){
 		event.preventDefault();
 		//TweenLite.set(pen,{top:nowY,left:nowX})	
 		pen.css({top:nowY,left:nowX})
-		var cardW=cardA[0].css("width")
-		var cardH=cardA[0].css("height")
+		var cardW=cardA[0].width()//css("width")
+		var cardH=cardA[0].height()//css("height")
 		answer="none"
 		for (var i = 0; i < cardA.length; i++) {
 			if (	(nowX-parseInt(cardA[i].css("left"))<=parseInt(cardW)/2)&&(nowX-parseInt(cardA[i].css("left"))>=-parseInt(cardW)/2)&&(nowY-parseInt(cardA[i].css("top"))<=parseInt(cardH)/2)&&(nowY-parseInt(cardA[i].css("top"))>=-parseInt(cardH)/2)	) {
