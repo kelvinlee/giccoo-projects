@@ -104,8 +104,6 @@ $(document).ready(function load (){
 		TweenLite.from($("#pen"),1,{opacity:0,y:"+=40",delay:1.7})
 	}
 
-	var startX = 0;
-	var startY = 0;
 	var nowX
 	var nowY
 	var oldX=$("#ooo").css("left")
@@ -116,15 +114,14 @@ $(document).ready(function load (){
 	$('#pen')[0].addEventListener('touchmove',moveTouch,false)
 	$('#pen')[0].addEventListener('touchend',endTouch,false)
 	function startTouch(event){//拖拽
-		startX=event.touches[0].clientX
-		startY=event.touches[0].clientY
-		//pageUpDown=0
+
 	}
 	function moveTouch(event){
 		nowX=event.touches[0].clientX
 		nowY=event.touches[0].clientY
 		event.preventDefault();
-		TweenLite.set(pen,{top:nowY,left:nowX})	
+		//TweenLite.set(pen,{top:nowY,left:nowX})	
+		pen.css({top:nowY,left:nowX})
 		var cardW=cardA[0].css("width")
 		var cardH=cardA[0].css("height")
 		answer="none"
@@ -139,15 +136,18 @@ $(document).ready(function load (){
 		oldX=$("#ooo").css("left")
 		oldY=$("#ooo").css("top")
 		if (answer=="none") {
-			TweenLite.to(pen,.5,{top:parseInt(oldY),left:parseInt(oldX)})
+			//TweenLite.to(pen,.5,{top:parseInt(oldY),left:parseInt(oldX)})
+			pen.css({top:oldY,left:oldX})
 		}else if (answer==0) {
 			//alert("正确")
 			goNext(1)
-			TweenLite.to(pen,.5,{top:parseInt(oldY),left:parseInt(oldX)})
+			//TweenLite.to(pen,.5,{top:parseInt(oldY),left:parseInt(oldX)})
+			pen.css({top:oldY,left:oldX})
 		}else{
 			//alert("错误")
 			goNext(0)
-			TweenLite.to(pen,.5,{top:parseInt(oldY),left:parseInt(oldX)})
+			//TweenLite.to(pen,.5,{top:parseInt(oldY),left:parseInt(oldX)})
+			pen.css({top:oldY,left:oldX})
 		};
 	} 
 	function goNext(_ifRight){
