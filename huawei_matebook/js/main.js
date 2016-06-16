@@ -139,15 +139,15 @@ $(document).ready(function load (){
 		oldX=$("#ooo").css("left")
 		oldY=$("#ooo").css("top")
 		if (answer=="none") {
-			TweenLite.to(pen,.5,{top:oldY,left:oldX})
+			TweenLite.to(pen,.5,{top:parseInt(oldY),left:parseInt(oldX)})
 		}else if (answer==0) {
 			//alert("正确")
 			goNext(1)
-			TweenLite.to(pen,.5,{top:oldY,left:oldX})
+			TweenLite.to(pen,.5,{top:parseInt(oldY),left:parseInt(oldX)})
 		}else{
 			//alert("错误")
 			goNext(0)
-			TweenLite.to(pen,.5,{top:oldY,left:oldX})
+			TweenLite.to(pen,.5,{top:parseInt(oldY),left:parseInt(oldX)})
 		};
 	} 
 	function goNext(_ifRight){
