@@ -136,6 +136,8 @@ $(document).ready(function load (){
 
 	}
 	function endTouch(event){
+		oldX=$("#ooo").css("left")
+		oldY=$("#ooo").css("top")
 		if (answer=="none") {
 			TweenLite.to(pen,.5,{top:oldY,left:oldX})
 		}else if (answer==0) {
