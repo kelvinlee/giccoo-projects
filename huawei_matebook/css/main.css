@@ -222,8 +222,22 @@ p{
 .game{
 	position: absolute;
 	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform:translate3d(-50%,-51%,0);
+	-webkit-transform:translate3d(-50%,-51%,0);
+	display: none;
+}
+#gameBG{
+	width: 100%;
+	opacity: 0;
+}
+.gameAll{
+	position: absolute;
+	width: 100%;
 	top: 42%;
 	left: 50%;
 	transform:translate3d(-50%,-45%,0);
 	-webkit-transform:translate3d(-50%,-45%,0);
+	overflow: hidden;
 }

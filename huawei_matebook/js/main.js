@@ -177,8 +177,66 @@ $(document).ready(function load (){
 	}
 
 	function finalPage(){
-		
+		$("#gamebg").css({display:"block"})
+		$("#game1").css({display:"block"})
+		$("#gamea").css({display:"block"})
+		$("#gameb").css({display:"block"})
+		$("#gamec").css({display:"block"})
 
+		$(".game").click(function(){
+			startGame()
+		})
+		$("#p4btn").click(function(){
+			startGame()
+		})
+	}
+
+	function startGame(){
+		$("#game1").css({display:"none"})
+		$("#game2").css({display:"block"})
+		setTimeout(function(){//显示gif
+			$("#game1").css({display:"block"})
+			$("#game2").css({display:"none"})
+			$("#gamea").css({display:"none"})
+			$("#gameb").css({display:"none"})
+			$("#gamec").css({display:"none"})
+			$("#g1").css({display:"block"})
+			$("#g2").css({display:"block"})
+			$("#g3").css({display:"block"})
+		},200)
+
+		setTimeout(function(){//显示gif
+			$("#gamea").css({display:"block"})
+			$("#gameb").css({display:"none"})
+			$("#gamec").css({display:"none"})
+			$("#g1").css({display:"none"})
+			$("#g2").css({display:"block"})
+			$("#g3").css({display:"block"})
+
+			TweenLite.from($("#gamea"),1.5,{y:"-=30",ease:Elastic.easeOut})
+		},1500)
+
+		setTimeout(function(){//显示gif
+			$("#gamea").css({display:"block"})
+			$("#gameb").css({display:"block"})
+			$("#gamec").css({display:"none"})
+			$("#g1").css({display:"none"})
+			$("#g2").css({display:"none"})
+			$("#g3").css({display:"block"})
+
+			TweenLite.from($("#gameb"),1.5,{y:"-=30",ease:Elastic.easeOut})
+		},2000)
+
+		setTimeout(function(){//显示gif
+			$("#gamea").css({display:"block"})
+			$("#gameb").css({display:"block"})
+			$("#gamec").css({display:"block"})
+			$("#g1").css({display:"none"})
+			$("#g2").css({display:"none"})
+			$("#g3").css({display:"none"})
+
+			TweenLite.from($("#gamec"),1.5,{y:"-=30",ease:Elastic.easeOut})
+		},2500)
 	}
 
 
