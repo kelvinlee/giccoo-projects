@@ -93,7 +93,12 @@ $(document).ready(function load (){
 		function hidePage2(){
 			$("#page2").css({display:"none"})
 		}
-		TweenLite.from($("#pc"),.5,{y:"-=25",opacity:0,delay:.25,rotationY:-45,rotationZ:10,rotationX:10,ease:Sine.easeOut})
+		$("#pc").css({opacity:0,"transition":"none","-webkit-transition":"none"})
+		setTimeout(function(){
+			$("#pc").css({opacity:1,"transition":"all .5s ease","-webkit-transition":"all .5s ease"})
+		},250)
+		
+		//TweenLite.from($("#pc"),.5,{y:"-=25",opacity:0,delay:.25,rotationY:-45,rotationZ:10,rotationX:10,ease:Sine.easeOut})
 		TweenLite.from($("#p3t"),.5,{opacity:0,delay:.5})
 		TweenLite.from($("#card1"),2,{opacity:0,y:"+=25",rotationY:90,delay:1+0.1*0,ease:Elastic.easeOut})
 		TweenLite.from($("#card2"),2,{opacity:0,y:"+=25",rotationY:90,delay:1+0.1*1,ease:Elastic.easeOut})
@@ -213,7 +218,7 @@ $(document).ready(function load (){
 			$("#g2").css({display:"block"})
 			$("#g3").css({display:"block"})
 
-			TweenLite.from($("#gamea"),1.5,{y:"-=30",ease:Elastic.easeOut})
+			TweenLite.from($("#gamea"),1.5,{y:"-=20",ease:Elastic.easeOut})
 		},1500)
 
 		setTimeout(function(){//显示gif
@@ -224,7 +229,7 @@ $(document).ready(function load (){
 			$("#g2").css({display:"none"})
 			$("#g3").css({display:"block"})
 
-			TweenLite.from($("#gameb"),1.5,{y:"-=30",ease:Elastic.easeOut})
+			TweenLite.from($("#gameb"),1.5,{y:"-=20",ease:Elastic.easeOut})
 		},2000)
 
 		setTimeout(function(){//显示gif
@@ -235,7 +240,7 @@ $(document).ready(function load (){
 			$("#g2").css({display:"none"})
 			$("#g3").css({display:"none"})
 
-			TweenLite.from($("#gamec"),1.5,{y:"-=30",ease:Elastic.easeOut})
+			TweenLite.from($("#gamec"),1.5,{y:"-=20",ease:Elastic.easeOut})
 		},2500)
 	}
 
