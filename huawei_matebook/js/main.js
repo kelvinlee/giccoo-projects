@@ -126,7 +126,7 @@ $(document).ready(function load (){
 		var cardH=cardA[0].height()//css("height")
 		answer="none"
 		for (var i = 0; i < cardA.length; i++) {
-			if (	(nowX-parseInt(cardA[i].css("left"))<=parseInt(cardW)/2)&&(nowX-parseInt(cardA[i].css("left"))>=-parseInt(cardW)/2)&&(nowY-parseInt(cardA[i].css("top"))<=parseInt(cardH)/2)&&(nowY-parseInt(cardA[i].css("top"))>=-parseInt(cardH)/2)	) {
+			if (	(nowX-parseInt(cardA[i].css("left"))<=parseInt(cardW))&&(nowX-parseInt(cardA[i].css("left"))>=0)&&(nowY-parseInt(cardA[i].css("top"))<=parseInt(cardH))&&(nowY-parseInt(cardA[i].css("top"))>=0)	) {
 				answer=i
 			};
 		};
