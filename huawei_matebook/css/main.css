@@ -203,3 +203,27 @@ p{
 	z-index: 101;
 	display: none;
 }
+.p4t{
+	position: absolute;
+	width: 100%;
+/*	z-index: 200;*/
+	transition:all 1s ease;
+	-webkit-transition:all 1s ease;
+}
+#p4t1{
+	top: 10%;
+}
+#p4t2{
+	bottom: 0%;
+}
+#p4btn{
+	top: 68%;
+}
+.game{
+	position: absolute;
+	width: 100%;
+	top: 42%;
+	left: 50%;
+	transform:translate3d(-50%,-45%,0);
+	-webkit-transform:translate3d(-50%,-45%,0);
+}

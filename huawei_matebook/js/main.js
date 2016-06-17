@@ -171,11 +171,13 @@ $(document).ready(function load (){
 
 		setTimeout(function(){
 			$("#page3").css({display:"none"})
+			$("#page4").css({display:"block"})
 			finalPage()
 		},3000)
 	}
 
 	function finalPage(){
+		
 
 	}
 
