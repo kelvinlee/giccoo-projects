@@ -119,8 +119,7 @@ $(document).ready(function load (){
 	function moveTouch(event){
 		nowX=event.touches[0].clientX
 		nowY=event.touches[0].clientY
-		event.preventDefault();
-		//TweenLite.set(pen,{top:nowY,left:nowX})	
+		event.preventDefault();	
 		pen.css({top:nowY,left:nowX})
 		var cardW=cardA[0].width()//css("width")
 		var cardH=cardA[0].height()//css("height")
@@ -133,8 +132,8 @@ $(document).ready(function load (){
 
 	}
 	function endTouch(event){
-		oldX=$("#ooo").css("left")
-		oldY=$("#ooo").css("top")
+		oldX="50%"//$("#ooo").css("left")
+		oldY="90%"//$("#ooo").css("top")
 		if (answer=="none") {
 			//TweenLite.to(pen,.5,{top:parseInt(oldY),left:parseInt(oldX)})
 			pen.css({top:oldY,left:oldX})
@@ -151,7 +150,33 @@ $(document).ready(function load (){
 		};
 	} 
 	function goNext(_ifRight){
-		alert(_ifRight)
+		var yn=[$("#ifNo"),$("#ifYes")]
+		yn[_ifRight].css({display:"block",opacity:0})
+		for (var i = 0; i < cardA.length; i++) {
+			cardA[i].css({display:"none"})
+		};
+		TweenLite.to(yn[_ifRight],.5,{opacity:1,width:"100%"})
+		$("#pc").css({"z-index":100,opacity:1,width:"100%",transform:"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)","transition":"all .5s ease","-webkit-transition":"all .5s ease"})
+		yn[_ifRight].css({"z-index":101})
+		$(".blackBGall").css({display:"block",opacity:0.8})
+		$(".bottomT2").css({display:"block",opacity:0.8})
+		$(".timeLeft").css({display:"block"})
+		setTimeout(function(){
+			$(".timeLeft").text("（页面将于2秒后自动跳转）")
+		},1000)
+
+		setTimeout(function(){
+			$(".timeLeft").text("（页面将于1秒后自动跳转）")
+		},2000)
+
+		setTimeout(function(){
+			$("#page3").css({display:"none"})
+			finalPage()
+		},3000)
+	}
+
+	function finalPage(){
+
 	}
 
 
