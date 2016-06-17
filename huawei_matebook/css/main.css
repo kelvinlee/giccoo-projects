@@ -127,7 +127,7 @@ p{
 	position: absolute;
 	width: 71.25%;
 	left: 50%;
-	top: 53%;
+	top: 52%;
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
 }
@@ -175,7 +175,7 @@ p{
 	position: absolute;
 	width: 71.25%;
 	left: 50%;
-	top: 50%;
+	top: 49%;
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
 	display: none;
@@ -202,7 +202,7 @@ p{
 .timeLeft{
 	position: absolute;
 	width: 100%;
-	top: 50%;
+	top: 49%;
 	color: #fff;
 	font-size: 0.9em;
 	text-align: center;
