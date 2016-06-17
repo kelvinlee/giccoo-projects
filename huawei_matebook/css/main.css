@@ -127,7 +127,7 @@ p{
 	position: absolute;
 	width: 71.25%;
 	left: 50%;
-	top: 55%;
+	top: 53%;
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
 }
@@ -141,7 +141,7 @@ p{
 	width: 10%;
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
-	top: 48%;
+	top: 45%;
 }
 #card1{	left: 32%;}
 #card2{	left: 44%;}
@@ -175,7 +175,7 @@ p{
 	position: absolute;
 	width: 71.25%;
 	left: 50%;
-	top: 55%;
+	top: 50%;
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
 	display: none;
@@ -202,7 +202,7 @@ p{
 .timeLeft{
 	position: absolute;
 	width: 100%;
-	top: 55%;
+	top: 50%;
 	color: #fff;
 	font-size: 0.9em;
 	text-align: center;

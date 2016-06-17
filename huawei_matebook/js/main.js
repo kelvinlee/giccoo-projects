@@ -161,7 +161,7 @@ $(document).ready(function load (){
 			cardA[i].css({display:"none"})
 		};
 		TweenLite.to(yn[_ifRight],.5,{opacity:1,width:"100%"})
-		$("#pc").css({"z-index":100,opacity:1,width:"100%",transform:"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)","transition":"all .5s ease","-webkit-transition":"all .5s ease"})
+		$("#pc").css({"z-index":100,top:"50%",opacity:1,width:"100%",transform:"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)","transition":"all .5s ease","-webkit-transition":"all .5s ease"})
 		yn[_ifRight].css({"z-index":101})
 		$(".blackBGall").css({display:"block",opacity:0.8})
 		$(".bottomT2").css({display:"block",opacity:0.8})
