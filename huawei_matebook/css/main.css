@@ -92,6 +92,7 @@ p{
 	margin-left: 2em;
 	margin-right: 2em;
 	line-height: 1.4em;
+	text-align: justify;
 }
 #btnCloseRule{
 	color: #fff;
