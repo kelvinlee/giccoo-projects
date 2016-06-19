@@ -13,7 +13,7 @@ img{ width: 100%; }
 .topT{
 	position: absolute;
 	width: 100%;
-	top: 45%;
+	top: 43.5%;
 	transform:translate3d(0,-100%,0);
 	-webkit-transform:translate3d(0,-100%,0);
 }
@@ -181,7 +181,7 @@ a{
         right: 0px;
         width: 100%;
         height: 100%;
-        opacity: 0; }
+        opacity: 1; }
   .form .form-btn {
     text-align: center;
     margin-top: 1.5rem; }
