@@ -10,7 +10,7 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;background-
 #mateBook{
 	position: absolute;
 	width: 100%;
-	top: 50%;
+	top: 48%;
 	left: 50%;
 	transform:translate3d(-72%,-0%,0) scaleX(1.2) scaleY(1.2);
 	-webkit-transform:translate3d(-72%,-0%,0) scaleX(1.2) scaleY(1.2);
@@ -67,6 +67,7 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;background-
 	height: 100%;
 	display: none;
 	z-index: 100;
+
 }
 .blackBG{
 	position: absolute;
@@ -79,11 +80,12 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;background-
 .rulePage{
 	position: absolute;
 	width: 100%;
-	height: 70%;
-	top: 15%;
+	height: 80%;
+	top: 10%;
 	overflow: scroll;
-	padding-top: 2em;
-	padding-bottom: 2em;
+	padding-top: 0em;
+	padding-bottom: 0em;
+	background-color: #000;
 }
 p{
 	font-size: 1.1em;
@@ -95,14 +97,28 @@ p{
 	line-height: 1.4em;
 	text-align: justify;
 }
+li{
+	font-size: 1.1em;
+	color: #fff;
+	line-height: 1.4em;
+	margin-left: 3em;
+	margin-right: 2em;
+	text-align: justify;
+	/*list-style-type: none;*/
+}
+ul{
+	text-indent: -3em;
+	list-style-type: none;
+	margin-left: 1.5em;
+}
 #btnCloseRule{
 	color: #fff;
 	font-size: 1.2em;
 	position: absolute;
-	top: 15%;
+	top: 10%;
 	right: 0%;
-	transform:translate3d(-100%,100%,0);
-	-webkit-transform:translate3d(-100%,100%,0);
+	transform:translate3d(-50%,40%,0);
+	-webkit-transform:translate3d(-50%,40%,0);
 	font-family: Helvetica;
 }
 #prints{

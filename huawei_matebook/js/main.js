@@ -6,6 +6,7 @@ $(document).ready(function load (){
 
 	var zz=0
 	var pen=$("#pen")
+	var loop1=0
 
 
 	setup()
@@ -25,7 +26,8 @@ $(document).ready(function load (){
 		$("#btnCloseRule").click(function(){
 			hideRule();
 		})
-		$("#btnStart2").click(function(){
+		$("#prints").click(function(){
+			loop1=1
 			goGame();
 		})
 		
@@ -34,7 +36,7 @@ $(document).ready(function load (){
 	
 	function getStart(){
 		$("#page2").css({display:"block"})
-		$("#mateBook").css({top:"45%","transform":"translate3d(-50%,0%,0)","-webkit-transform":"translate3d(-50%,0%,0)","transition":"all 1.5s ease","-webkit-transition":"all 1.5s ease;"})
+		$("#mateBook").css({top:"42%","transform":"translate3d(-50%,0%,0)","-webkit-transform":"translate3d(-50%,0%,0)","transition":"all 1.5s ease","-webkit-transition":"all 1.5s ease;"})
 		$("#p1t").css({opacity:0,"transform":"translate3d(-50%,-0%,0)","-webkit-transform":"translate3d(-50%,-0%,0)","transition":"all 1.5s ease","-webkit-transition":"all 1.5s ease;"})
 		TweenLite.set($("#btn1"),{scale:.8})
 		TweenLite.to($("#btn1"),.5,{opacity:0,display:"none",scale:1.2,ease:Back.easeIn})
@@ -60,12 +62,22 @@ $(document).ready(function load (){
 			 var dx=Math.random()*100-50
 			 var dy=Math.random()*100-50
 			TweenLite.set(p2tA[i],{opacity:1,display:"block"})
-			TweenLite.from(p2tA[i],1.5,{scale:8,rotationX:-360,rotationY:-180,opacity:0,delay:.08*i+.7})//Elastic
+			TweenLite.from(p2tA[i],1,{y:"+=60",opacity:0,delay:.1*i+.7,ease:Back.easeOut})//TweenLite.from(p2tA[i],1.5,{scale:8,rotationX:-360,rotationY:-180,opacity:0,delay:.08*i+.7})
 		};
 		$("#btnRule").css({display:"block"});
-		TweenLite.from($("#btnRule"),2,{opacity:0,y:"+=40",delay:1.5})
+		TweenLite.from($("#btnRule"),1,{opacity:0,y:"+=40",delay:1.5})
 		$("#prints").css({display:"block"});
-		TweenLite.from($("#prints"),1,{opacity:0,scale:4,delay:2.5,ease:Back.easeOut})
+		TweenLite.from($("#prints"),1,{opacity:0,scale:4,delay:2.5,ease:Back.easeOut,onComplete:prints1})
+	}
+
+	function prints1(){
+		TweenLite.to($("#prints"),.5,{opacity:0.2,scale:.8,onComplete:prints2,delay:.2})
+	}
+
+	function prints2(){
+		if (loop1==0) {
+			TweenLite.to($("#prints"),1,{opacity:1,scale:1,onComplete:prints1})
+		};
 	}
 
 	function showRule(){//活动规则出现
@@ -88,25 +100,32 @@ $(document).ready(function load (){
 	}
 	function ani3(){//显示游戏页
 		$("#page3").css({display:"block"})
-		$("#mateBook").css({top:"45%","transform":"translate3d(-50%,0%,0)","-webkit-transform":"translate3d(-50%,0%,0)","transition":"none","-webkit-transition":"none"})
-		TweenLite.to($("#mateBook"),.5,{y:"+=25",opacity:0,rotationY:30,rotationZ:-30,rotationX:-30,onComplete:hidePage2,ease:Sine.easeIn})
+		$("#mateBook").css({"transform":"translate3d(-50%,0%,0)","-webkit-transform":"translate3d(-50%,0%,0)","transition":"none","-webkit-transition":"none"})
+		TweenLite.to($("#mateBook"),.5,{opacity:0,onComplete:hidePage2,ease:Sine.easeIn})
 		function hidePage2(){
 			$("#page2").css({display:"none"})
 		}
 		$("#pc").css({opacity:0,"transition":"none","-webkit-transition":"none"})
 		setTimeout(function(){
-			$("#pc").css({opacity:1,"transition":"all .5s ease","-webkit-transition":"all .5s ease"})
-		},250)
+			$("#pc").css({opacity:1,"transition":"all 1s ease","-webkit-transition":"all 1s ease"})
+		},0)
 		
 		//TweenLite.from($("#pc"),.5,{y:"-=25",opacity:0,delay:.25,rotationY:-45,rotationZ:10,rotationX:10,ease:Sine.easeOut})
-		TweenLite.from($("#p3t"),.5,{opacity:0,delay:.5})
-		TweenLite.from($("#card1"),2,{opacity:0,y:"+=25",rotationY:90,delay:1+0.1*0,ease:Elastic.easeOut})
-		TweenLite.from($("#card2"),2,{opacity:0,y:"+=25",rotationY:90,delay:1+0.1*1,ease:Elastic.easeOut})
-		TweenLite.from($("#card3"),2,{opacity:0,y:"+=25",rotationY:90,delay:1+0.1*2,ease:Elastic.easeOut})
-		TweenLite.from($("#card4"),2,{opacity:0,y:"+=25",rotationY:90,delay:1+0.1*3,ease:Elastic.easeOut})
-		TweenLite.from($("#ooo"),1,{opacity:0,y:"+=40",delay:1.7})
-		TweenLite.from($("#p3hint"),1,{opacity:0,y:"+=40",delay:1.8})
-		TweenLite.from($("#pen"),1,{opacity:0,y:"+=40",delay:1.7})
+		TweenLite.from($("#p3t"),.5,{opacity:0})
+		TweenLite.from($("#card1"),2,{opacity:0,y:"+=25",rotationY:90,delay:.5+0.1*0,ease:Elastic.easeOut})
+		TweenLite.from($("#card2"),2,{opacity:0,y:"+=25",rotationY:90,delay:.5+0.1*1,ease:Elastic.easeOut})
+		TweenLite.from($("#card3"),2,{opacity:0,y:"+=25",rotationY:90,delay:.5+0.1*2,ease:Elastic.easeOut})
+		TweenLite.from($("#card4"),2,{opacity:0,y:"+=25",rotationY:90,delay:.5+0.1*3,ease:Elastic.easeOut,onComplete:reSetPosition})
+		TweenLite.from($("#ooo"),.5,{opacity:0,y:"+=40",delay:1.2})
+		TweenLite.from($("#p3hint"),.5,{opacity:0,y:"+=40",delay:1.3})
+		TweenLite.from($("#pen"),.5,{opacity:0,y:"+=40",delay:1.2})
+		function reSetPosition(){
+			$(".card").css({"transform":"translate3d(0%,-50%,0)","-webkit-transform":"translate3d(0%,-50%,0)"})
+			$("#card1").css({left:"27%"})
+			$("#card2").css({left:"39%"})
+			$("#card3").css({left:"51%"})
+			$("#card4").css({left:"63%"})
+		}
 	}
 
 	var nowX
@@ -130,7 +149,7 @@ $(document).ready(function load (){
 		var cardH=cardA[0].height()//css("height")
 		answer="none"
 		for (var i = 0; i < cardA.length; i++) {
-			if (	(nowX-parseInt(cardA[i].css("left"))<=parseInt(cardW))&&(nowX-parseInt(cardA[i].css("left"))>=0)&&(nowY-parseInt(cardA[i].css("top"))<=parseInt(cardH))&&(nowY-parseInt(cardA[i].css("top"))>=0)	) {
+			if (	(nowX-parseInt(cardA[i].css("left"))<=parseInt(cardW))&&(nowX-parseInt(cardA[i].css("left"))>=0)&&(nowY-parseInt(cardA[i].css("top"))<=parseInt(cardH))&&(nowY-parseInt(cardA[i].css("top"))>=-parseInt(cardH)/2)	) {
 				answer=i
 			};
 		};
@@ -155,6 +174,10 @@ $(document).ready(function load (){
 		};
 	} 
 	function goNext(_ifRight){
+		pen.css({display:"none"})
+		$("#p3hint").css({display:"none"})
+		$("#ooo").css({display:"none"})
+
 		var yn=[$("#ifNo"),$("#ifYes")]
 		yn[_ifRight].css({display:"block",opacity:0})
 		for (var i = 0; i < cardA.length; i++) {
