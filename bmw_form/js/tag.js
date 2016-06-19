@@ -62,9 +62,9 @@ riot.tag('register',
     	$.post("http://api.giccoo.com/bmw_form/insert/",data,function(msg){
 
     		if (msg.recode == 200) {
-    			//alert("注册成功")
-    			$("#doneLayer").css({"display":"block"})
-				TweenLite.to($("#doneLayer"),1,{opacity:1})
+    			alert("注册成功")
+    // 			$("#doneLayer").css({"display":"block"})
+				// TweenLite.to($("#doneLayer"),1,{opacity:1})
 
     		}else{
     			alert(msg.reason)
