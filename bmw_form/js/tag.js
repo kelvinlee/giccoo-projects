@@ -51,10 +51,14 @@ riot.tag('register',
     this.submit = function() {
     	var data = $("form",this.root).serializeArray()
     	data.push({name:"dealername",value:self.dealerName})
-    	if ( $("[name=username]",this.root).val().length < 1 || $("[name=username]",this.root).val() == "") {
-    		alert("姓名不能为空")
+    	if ( $("[name=username1]",this.root).val().length < 1 || $("[name=username1]",this.root).val() == "") {
+    		alert("姓不能为空")
     		return false
     	}
+        if ( $("[name=username2]",this.root).val().length < 1 || $("[name=username2]",this.root).val() == "") {
+            alert("名不能为空")
+            return false
+        }
     	if ( $("[name=mobile]",this.root).val().length < 1 || $("[name=mobile]",this.root).val() == "") {
     		alert("手机号码不能为空")
     		return false
