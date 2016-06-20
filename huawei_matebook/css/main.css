@@ -80,7 +80,7 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;background-
 .rulePage{
 	position: absolute;
 	width: 100%;
-	height: 80%;
+	height: 75%;
 	top: 10%;
 	overflow: scroll;
 	padding-top: 0em;
@@ -239,7 +239,7 @@ ul{
 	bottom: 0%;
 }
 #p4btn{
-	top: 68%;
+	top: 66%;
 }
 .game{
 	position: absolute;

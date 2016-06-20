@@ -93,7 +93,7 @@ $(document).ready(function load (){
 		for (var i = 0; i < p2tA.length; i++) {
 			 var dx=Math.random()*100-50
 			 var dy=Math.random()*100-50
-			TweenLite.to(p2tA[i],1,{y:"+=150",rotationX:720*Math.random()-360,scale:Math.random()*2,rotationZ:90*Math.random()-45,opacity:0,delay:.05*i,display:"none"})//Elastic
+			TweenLite.to(p2tA[i],1,{opacity:0,delay:.05*i,display:"none"})//Elastic
 		};
 		TweenLite.to($("#btnRule"),.5,{opacity:0,y:"+=40",display:"none"})
 		TweenLite.to($("#prints"),.5,{opacity:0,y:"+=40",display:"none"})
