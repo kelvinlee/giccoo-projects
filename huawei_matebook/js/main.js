@@ -265,6 +265,10 @@ $(document).ready(function load (){
 
 			TweenLite.from($("#gamec"),1.5,{y:"-=20",ease:Elastic.easeOut})
 		},2500)
+
+		setTimeout(function(){
+			window.location.href="http://redbox.wepiao.com/index.html?pid=b18d621b1eac0f0d&channelid=3&chid=100";
+		},3500)
 	}
 
 
