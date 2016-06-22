@@ -131,8 +131,8 @@ $(document).ready(function load (){
 var ifooo=0
 function oooloop(){
 	if(ifooo==0){
-		TweenLite.set($("#ooo"),{scale:1,opacity:1})
-		TweenLite.to($("#ooo"),1,{scale:1.3,opacity:0,onComplete:oooloop})
+		TweenLite.set($("#ooo"),{scale:0.8,opacity:1})
+		TweenLite.to($("#ooo"),1,{scale:1,opacity:0,onComplete:oooloop})
 	}
 }
 	var nowX
@@ -163,8 +163,8 @@ function oooloop(){
 
 	}
 	function endTouch(event){
-		oldX="50%"//$("#ooo").css("left")
-		oldY="90%"//$("#ooo").css("top")
+		oldX="81%"//$("#ooo").css("left")
+		oldY="55%"//$("#ooo").css("top")
 		if (answer=="none") {
 			//TweenLite.to(pen,.5,{top:parseInt(oldY),left:parseInt(oldX)})
 			pen.css({top:oldY,left:oldX})

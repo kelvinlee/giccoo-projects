@@ -166,23 +166,23 @@ ul{
 #pen{
 	position: absolute;
 	width: 15.3125%;
-	top: 90%;
-	left: 50%;
+	top:55%;
+	left: 81%;
 	transform:translate3d(0%,-100%,0);
 	-webkit-transform:translate3d(0%,-100%,0);
 }
 #ooo{
 	position: absolute;
 	width: 13.75%;
-	top: 90%;
-	left: 50%;
+	top: 55%;
+	left: 81%;
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
 }
 #p3hint{
 	position: absolute;
 	width: 100%;
-	top: 93%;
+	top: 82%;
 	color: #fff;
 	font-size: .8em;
 	text-align: center;
