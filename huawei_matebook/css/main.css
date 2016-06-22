@@ -173,9 +173,9 @@ ul{
 }
 #ooo{
 	position: absolute;
-	width: 13.75%;
+	width: 11%;
 	top: 55%;
-	left: 81%;
+	left: 82%;
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
 }
