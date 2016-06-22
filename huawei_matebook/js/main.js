@@ -267,7 +267,8 @@ $(document).ready(function load (){
 		},2500)
 
 		setTimeout(function(){
-			window.location.href="http://redbox.wepiao.com/index.html?pid=acf13e85ef280289&channelid=3&chid=100";
+			//window.location.href="http://redbox.wepiao.com/index.html?pid=acf13e85ef280289&channelid=3&chid=100";
+			window.location.href="http://www.baidu.com";
 		},3500)
 	}
 

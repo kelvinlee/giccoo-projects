@@ -124,8 +124,8 @@ ul{
 #prints{
 	position: absolute;
 	width: 11.1%;
-	top: 36.5%;
-	right: 10%;
+	top: 34%;
+	right: 10.5%;
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
 	display: none;
