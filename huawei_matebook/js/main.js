@@ -116,7 +116,7 @@ $(document).ready(function load (){
 		TweenLite.from($("#card2"),2,{opacity:0,y:"+=25",rotationY:90,delay:.5+0.1*1,ease:Elastic.easeOut})
 		TweenLite.from($("#card3"),2,{opacity:0,y:"+=25",rotationY:90,delay:.5+0.1*2,ease:Elastic.easeOut})
 		TweenLite.from($("#card4"),2,{opacity:0,y:"+=25",rotationY:90,delay:.5+0.1*3,ease:Elastic.easeOut,onComplete:reSetPosition})
-		TweenLite.from($("#ooo"),.5,{opacity:0,y:"+=40",delay:1.2})
+		TweenLite.from($("#ooo"),.5,{opacity:0,y:"+=40",delay:1.2,onComplete:oooloop})
 		TweenLite.from($("#p3hint"),.5,{opacity:0,y:"+=40",delay:1.3})
 		TweenLite.from($("#pen"),.5,{opacity:0,y:"+=40",delay:1.2})
 		function reSetPosition(){
@@ -126,8 +126,15 @@ $(document).ready(function load (){
 			$("#card3").css({left:"51%"})
 			$("#card4").css({left:"63%"})
 		}
-	}
 
+	}
+var ifooo=0
+function oooloop(){
+	if(ifooo==0){
+		TweenLite.set($("#ooo"),{scale:1,opacity:1})
+		TweenLite.to($("#ooo"),1,{scale:1.3,opacity:0,onComplete:oooloop})
+	}
+}
 	var nowX
 	var nowY
 	var oldX=$("#ooo").css("left")
@@ -174,6 +181,7 @@ $(document).ready(function load (){
 		};
 	} 
 	function goNext(_ifRight){
+		ifooo=1
 		pen.css({display:"none"})
 		$("#p3hint").css({display:"none"})
 		$("#ooo").css({display:"none"})
@@ -190,18 +198,18 @@ $(document).ready(function load (){
 		$(".bottomT2").css({display:"block",opacity:0.8})
 		$(".timeLeft").css({display:"block"})
 		setTimeout(function(){
-			$(".timeLeft").text("（页面将于2秒后自动跳转）")
-		},1000)
+			$(".timeLeft").text("（页面将于1秒后自动跳转）")
+		},10)
 
 		setTimeout(function(){
 			$(".timeLeft").text("（页面将于1秒后自动跳转）")
-		},2000)
+		},20)
 
 		setTimeout(function(){
 			$("#page3").css({display:"none"})
 			$("#page4").css({display:"block"})
 			finalPage()
-		},3000)
+		},1000)
 	}
 
 	function finalPage(){
