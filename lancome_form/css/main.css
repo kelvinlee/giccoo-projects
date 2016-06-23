@@ -37,11 +37,11 @@ img{ width: 100%; }
     vertical-align: top; }
     .form .form-grounp > label {
       width: 30%;
-      height: 2rem;
+      height: 1.7rem;
       display: inline-block;
       font-size: 0.75rem;
       margin: 0.2rem 0;
-      line-height: 1.7rem;
+      line-height: 1.5rem;
       vertical-align: top;
       color: #000000;
       text-align: right;
