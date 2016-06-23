@@ -1017,10 +1017,14 @@ html, body {
         border-top: 0.5rem solid #000; }
       .form .form-grounp .select span {
         text-overflow: ellipsis;
-        display: inline-block;
-        width: 100%;
+        width: 94%;
         height: 1.6rem;
-        overflow: hidden; }
+        line-height: 1.6rem;
+        overflow: hidden;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
       .form .form-grounp .select select {
         position: absolute;
         top: 0px;
