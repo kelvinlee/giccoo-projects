@@ -1,11 +1,9 @@
 
 $(document).ready(function load (){
-	// var laserS=$("#laserS")
 	var laser1=$("#laser1")
 	var laser2=$("#laser2")
 	var laser3=$("#laser3")
 
-	// laserMove()
 	laserMoveA()
 	setTimeout(function(){
 		laserMoveB()
@@ -14,14 +12,6 @@ $(document).ready(function load (){
 		laserMoveC()
 	},1333)
 
-
-	// function laserMove(){
-	// 	TweenLite.to(laserS,1.4,{x:"-=50",scale:2.2,opacity:0,onComplete:laserMove2})
-	// }
-	// function laserMove2(){
-	// 	TweenLite.set(laserS,{x:"+=50",scale:1})
-	// 	TweenLite.to(laserS,.1,{scale:1,opacity:.0,onComplete:laserMove,delay:2*Math.random()})
-	// }
 
 	function laserMoveA(){
 		TweenLite.to(laser1,1,{scale:1,opacity:0,onComplete:laserMoveA2,ease:Linear.easeNone})
@@ -59,9 +49,6 @@ $(document).ready(function load (){
 		TweenLite.to(bgRed1,1,{opacity:1,scaleX:1.5,scaleY:1,overwrite:0,ease:Linear.easeNone})
 		TweenLite.to(bgRed1,1,{opacity:0,scaleX:1,scaleY:1.2,overwrite:0,delay:1,onComplete:redA1,ease:Linear.easeNone})
 	}
-	// function redA2(){
-	// 	TweenLite.to(bgRed1,.5,{opacity:0,scaleX:1,scaleY:1.3,onComplete:redA1})
-	// }
 	
 	function redB1(){
 		TweenLite.set(bgRed2,{opacity:0,scaleX:2,scaleY:0.8})
@@ -69,14 +56,37 @@ $(document).ready(function load (){
 		TweenLite.to(bgRed2,1,{opacity:0,scaleX:1,scaleY:1.2,overwrite:0,delay:1,onComplete:redB1,ease:Linear.easeNone})
 	}
 
-	// function redB1(){
-	// 	TweenLite.set(bgRed2,{opacity:1,scaleX:1.3,scaleY:0.8})
-	// 	TweenLite.to(bgRed2,1,{opacity:0,scaleX:1,scaleY:1.3,onComplete:redB1})
-	// }
-	// function redB2(){
-	// 	TweenLite.to(bgRed2,1,{opacity:1,onComplete:redB1})
-	// }
+	var btn1=$("#btnPic2")	
+	function btnMove(){
+		TweenLite.set(btn1,{opacity:1,scale:1})
+		TweenLite.to(btn1,1,{opacity:0,scale:1.2,onComplete:btnMove})
+	}
+
+	var cA=[$("#c1"),$("#c2"),$("#c3"),$("#c4"),$("#n1"),$("#n2"),$("#n3"),$("#n4")]
+	ani1()
+
+	function ani1(){
+		for (var i = 0; i < cA.length; i++) {
+			TweenLite.from(cA[i],1,{opacity:0,y:"+=50",ease:Back.easeOut,delay:0.1*i})
+		};
+		setTimeout(function(){
+			$(".btn").css({"display":"block",opacity:0})
+			TweenLite.to($(".btn"),1,{opacity:1})
+			btnMove()
+		},2000)
 
 
+		setTimeout(function(){
+			$(".t123").css({"display":"block",opacity:1})
+
+			TweenLite.from($("#t1"),1,{opacity:0,y:"+=50",delay:0+0.2*0})
+			TweenLite.from($("#t2"),1,{opacity:0,y:"+=50",delay:0+0.2*1})
+			TweenLite.from($("#t3"),1,{opacity:0,y:"+=50",delay:0+0.2*2})
+		},1000)
+	}
+
+	$("#btnt").click(function(){
+		
+	})
 
 });

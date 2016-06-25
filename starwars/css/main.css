@@ -48,15 +48,17 @@ img{ width: 100%; }
 	top: 55%;
 	transform:translate3d(-50%,0%,0);
 	-webkit-transform:translate3d(-50%,0%,0);
+	display: none;
 
 }
 .btn{
 	position: absolute;
 	width: 100%;
 	left: 50%;
-	top: 80%;
+	top: 82%;
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
+	display: none;
 }
 #bgred2{
 
