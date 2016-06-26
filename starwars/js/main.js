@@ -63,10 +63,14 @@ $(document).ready(function load (){
 	}
 
 	var cA=[$("#c1"),$("#c2"),$("#c3"),$("#c4"),$("#n1"),$("#n2"),$("#n3"),$("#n4")]
-	ani1()
+	setTimeout(function(){
+		ani1()
+	},500)
+	
 
 	function ani1(){
 		for (var i = 0; i < cA.length; i++) {
+			cA[i].css({display:"block"})
 			TweenLite.from(cA[i],1,{opacity:0,y:"+=50",ease:Back.easeOut,delay:0.1*i})
 		};
 		setTimeout(function(){

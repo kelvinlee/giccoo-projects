@@ -32,6 +32,7 @@ img{ width: 100%; }
 	top: 50%;
 	transform:translate3d(-50%,-100%,0);
 	-webkit-transform:translate3d(-50%,-100%,0);
+	display: none;
 }
 .laser{
 	position: absolute;
@@ -60,8 +61,9 @@ img{ width: 100%; }
 	-webkit-transform:translate3d(-50%,-50%,0);
 	display: none;
 }
+#bgred1{
+	display: block;
+}
 #bgred2{
-
-	/*transform:translate3d(-50%,-100%,0) scaleX(-1);
-	-webkit-transform:translate3d(-50%,-100%,0) scaleX(-1);*/
+	display: block;
 }
