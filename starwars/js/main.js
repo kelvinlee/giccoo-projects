@@ -39,10 +39,7 @@ $(document).ready(function load (){
 	var bgRed2=$("#bgred2")
 
 
-	redA1()
-	setTimeout(function(){
-		redB1()
-	},1000)
+	
 
 	function redA1(){
 		TweenLite.set(bgRed1,{opacity:0,scaleX:2,scaleY:.8})
@@ -65,6 +62,10 @@ $(document).ready(function load (){
 	var cA=[$("#c1"),$("#c2"),$("#c3"),$("#c4"),$("#n1"),$("#n2"),$("#n3"),$("#n4")]
 	setTimeout(function(){
 		ani1()
+		redA1()
+		setTimeout(function(){
+			redB1()
+		},1000)
 	},500)
 	
 
