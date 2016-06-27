@@ -1,16 +1,16 @@
 
 $(document).ready(function load (){
 	var laser1=$("#laser1")
-	var laser2=$("#laser2")
-	var laser3=$("#laser3")
+	// var laser2=$("#laser2")
+	// var laser3=$("#laser3")
 
-	laserMoveA()
-	setTimeout(function(){
-		laserMoveB()
-	},666)
-	setTimeout(function(){
-		laserMoveC()
-	},1333)
+	// laserMoveA()
+	// setTimeout(function(){
+	// 	laserMoveB()
+	// },666)
+	// setTimeout(function(){
+	// 	laserMoveC()
+	// },1333)
 
 
 	function laserMoveA(){
