@@ -1,0 +1,69 @@
+extends ../libs/jade/layout-clean
+block title
+	| 沃尔沃S60L
+
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://disk.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css?v=1")
+
+block content
+	// - url = "http://image.giccoo.com/projects/volvo_s60l/"
+	- url = "/volvo_s60l/"
+	.main
+		.model.model-1
+			.bg
+				img(src="#{url}img/bg-1.jpg")
+				a.outlink(href="http://www.volvocars.com/zh-cn/cars/new-models/s60l")
+		.model.medel-2
+			.form-box
+				register#register(action="http://api.giccoo.com/volvo_s60l/insert/")
+		.model
+			.bg
+				img(src="#{url}img/bg-2.jpg")
+		.model.model-5
+			.bg
+				slider.sliderBox(myid="mainSlider",repeat="true",callback="changeMain",list="#{url}img/info-1.jpg,#{url}img/info-2.jpg,#{url}img/info-3.jpg")
+					.left
+						img(src="#{url}img/left.png")
+					.right
+						img(src="#{url}img/left.png")
+		.model.model-6
+			.title
+				img(src="#{url}img/title.jpg")
+			.bg
+				.sliders
+					slider.sliderBox(myid="secondSlider",repeat="true",callback="changePoint",list="#{url}img/car-1.jpg,#{url}img/car-2.jpg,#{url}img/car-3.jpg,#{url}img/car-4.jpg,#{url}img/car-5.jpg")
+						.left2
+							img(src="#{url}img/left.png")
+						.right2
+							img(src="#{url}img/left.png")
+				.points
+					span.on
+					span
+					span
+					span
+					span
+
+		a.backTop(href="#register")
+			img(src="#{url}img/back-top.png")
+
+
+block js
+	- url = "/"
+	script(src="http://disk.giccoo.com/projects/libs/js/min/Zepto.min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="http://disk.giccoo.com/projects/jaguar/js/cityData-min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/riot.min.js")
+	script(src="js/tag.js?v=1")
+	script(src="js/main.js?v=1")
+
+	script.
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?97647f9cd8b3ab0dea00394d1c3ed3aa";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();

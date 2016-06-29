@@ -1,0 +1,408 @@
+@import sass/base
+@import ../../libs/sass/loading
+@import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+
+
+$debug : false
+$cdn : "http://localhost:5757/sayno_momo/"
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects/sayno_momo/"
+
++keyframes(leftmove)
+	0%
+		+transform(translate3d(0%,0,0))
+	100%
+		+transform(translate3d(-100%,0,0))
++keyframes(showline)
+	0%
+		+w(0)
+	100%
+		+w(96%)
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
+
+.share-wechat
+	+posa
+	+tl
+	+w
+	+h
+	+b("http://disk.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
+	+bc
+	z-index: 1100
+	+hide
+	&.open
+		+show
+
+.main
+	+wh(100%,100%)
+	// +posf
+	// min-height: 410px
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+
+.loading.loaded
+	+large
+		+hide
+
+.sliderBox
+	white-space: nowrap
+	+w
+	+h
+	+show
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	+show-inline
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+iw(600)
+	+m
+	margin-top: -8%
+	.share-icon
+		+show-inline
+		+w(25%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		
+html,body
+	+w
+	+h
+	// +overhide
+
+body
+	// +b("http://i3.tietuku.com/1fcc3041ce5a552f.jpg",no-repeat,center,center,cover)
+	color: #fff
+	+bc(#edeeef)
+
+// .loading.loaded
+// 	+hide
+.loading
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+bc(transparent)
+	.new-load
+		+posa
+		+tl(50%,50%)
+		+w
+		+text-center
+		// +p(100% 0 0 0)
+		+transform(translate3d(-50%,-50%,0))
+		.load-item
+			+iw(230)
+			+posr
+			// > img
+				// +animation(rubberBand,2s,ease,infinite)
+			.load-item-note1
+				+posa
+				+bl(26%,27.5%)
+				+w(45%)
+				+h(5%)
+				+tran($time: 100ms)
+				overflow: hidden
+				.load-move
+					+animation(leftmove,2s,linear,infinite)
+				img
+					+w(180px)
+					max-width: 180px
+					
+			.load-item-note2
+				+posa
+				+tr
+				+w
+				
+		.load-progress
+			+font-size(0.8rem)
+			color: #fff
+			+p(2% 0 0 0)
+			+posa
+			+tl(50%,50%)
+			+transform(translate3d(-50%,-50%,0))
+			
+.begin
+	+posa
+	+tl
+	+w
+	+h
+.hide
+	display: none !important
+
+.outlink
+	+posa
+	+tl(35%,5%)
+	+w(40%)
+	+h(2rem)
+	+show
+
+.note
+	+posa
+	+tl
+	+br
+	+wh(100%,100%)
+	z-index: 9999
+	.note-box
+		+text-center
+		+posa
+		+tl(50%)
+		+w(100%)
+		// z-index: 9999
+		.note-content
+			display: inline-block
+			padding: 10px 11px 10px 10px
+			background-color: rgba(0,0,0,0.7)
+			color: #fff
+			border-radius: 5px
+			max-width: 90%
+			+box
+		.icon-form,.note-text
+			display: inline-block
+			vertical-align: top
+			line-height: 25px
+		.icon-form
+			+wh(25px,25px)
+		.note-text
+			+font-size(0.8rem)
+			letter-spacing: 2px
+
+.pop
+	+posa
+	+tl
+	+w
+	+h
+	+bc(rgba(0,0,0,0.7))
+
+.loader
+	.more
+		+posa
+		+tl(60%,50%)
+		+w(35%)
+		margin-left: -35%/2
+
+.model
+	.title
+		font-size: 0
+	.bg
+		font-size: 0
+		+overhide
+		+posr
+	.left
+		+posa
+		+tl(50%,0)
+		+iw(46)
+		font-size: 0
+		+transform(translate3d(0,-50%,0))
+		z-index: 101
+	.right
+		+posa
+		+tr(50%,0)
+		+iw(46)
+		font-size: 0
+		+transform(translate3d(0,-50%,0) scale(-1,1))
+		z-index: 101
+	.left2
+		+posa
+		+tl(50%,0)
+		+iw(40)
+		font-size: 0
+		+transform(translate3d(0,-50%,0))
+	.right2
+		+posa
+		+tr(50%,0)
+		+iw(40)
+		font-size: 0
+		+transform(translate3d(0,-50%,0) scale(-1,1))
+
+	&.model-1
+		.bg
+			+posr
+		.title
+			+posa
+			+tl(75%)
+	&.model-4
+		.bg
+			+p(10% 0)
+			+text-center
+			video
+				+wh(80%,auto)
+				+m
+			p
+				+font-size(1rem)
+				color: #7f7f7f
+				margin-bottom: 0.4em
+	&.model-6
+		padding-bottom: 2rem
+.sliders
+	// +posa
+	// +bl(20%,10%)
+	+overhide
+	+w(80%)
+	+m
+	margin-top: 1rem
+	max-width: 400px
+	border: solid 4px #fff
+
+
+
+.points
+	+w
+	+text-center
+	// +posa
+	// +bl(15%,0)
+	margin-top: 1rem
+	span
+		+show-inline
+		+wh(0.5rem,0.5rem)
+		+m(0 0.2rem)
+		+bc(#fff)
+		border-radius: 50%
+		&.on
+			+bc(#003663)
+
+
+
+.form-box
+	// +posa
+	// +tl(0,0)
+	+w(100%)
+	+box
+	+p(0 1.5rem)
+.form
+	+w(100%)
+	+m
+	+p(1.2rem 0)
+	$labelColor: #486680
+	$borderColor: #486680
+	$inputColor: #000
+	.form-grounp
+		$h: 1.4rem
+		vertical-align: top
+		font-size: 0
+		> label
+			+wh(32%,$h)
+			+show-inline
+			+font-size(0.8rem)
+			+m(0.2rem 0)
+			line-height: $h
+			vertical-align: top
+			color: $labelColor
+		> input
+			+wh(67%,$h)
+			+font-size(0.8rem)
+			+bc(#fff)
+			+show-inline
+			+box
+			+m(0.2rem 0)
+			+p(0.2rem)
+			line-height: $h
+			vertical-align: top
+			border: solid 1px $borderColor
+			color: $inputColor
+			outline: none
+			border-radius: 0.4rem
+		.comb
+			+wh(68%,$h)
+			+font-size(1rem)
+			+show-inline
+			+m(0.2rem 0)
+			color: $inputColor
+			white-space: nowrap
+			label
+				+wh(30%,$h)
+				+show-inline
+				+font-size(0.8rem)
+				+text-center
+				color: $labelColor
+			input
+				+show-inline
+				+w(1rem)
+			.select
+				+w(48.5%)
+				+m
+		.select
+			+posr
+			+wh(68%,$h)
+			+show-inline
+			+bc(#fff)
+			+m(0.2rem 0)
+			+box
+			+p(0 0.2rem)
+			+font-size(0.8rem)
+			color: $inputColor
+			border: solid 1px $borderColor
+			border-radius: 0.4rem
+			&:after
+				$size: 0.5rem
+				content: " "
+				+posa
+				+tr(50%,$size)
+				+transform(translate3d(0,-50%,0))
+				z-index: 99
+				border-left: $size/2 solid transparent
+				border-right: $size/2 solid transparent
+				border-top: $size solid $borderColor
+			span
+				text-overflow: ellipsis
+				+show-inline
+				+wh(100%,$h)
+				+overhide
+				white-space: nowrap
+				overflow: hidden
+				text-overflow: ellipsis
+			select
+				+posa
+				+tl
+				+br
+				+w
+				+h
+				opacity: 0
+
+	.form-btn
+		+text-center
+		margin-top: 0.8rem
+		button
+			+w(40%)
+			+m
+			+p(2px 0)
+			+bc(transparent)
+			border: none
+
+.backTop
+	+posf
+	+br(5%,5%)
+	+w(2rem)
+	font-size: 0
+	&.hide
+		+hide
+		
+
