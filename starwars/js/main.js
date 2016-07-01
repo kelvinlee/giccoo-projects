@@ -1,45 +1,8 @@
 
 $(document).ready(function load (){
-	var laser1=$("#laser1")
-	// var laser2=$("#laser2")
-	// var laser3=$("#laser3")
-
-	// laserMoveA()
-	// setTimeout(function(){
-	// 	laserMoveB()
-	// },666)
-	// setTimeout(function(){
-	// 	laserMoveC()
-	// },1333)
-
-
-	function laserMoveA(){
-		TweenLite.to(laser1,1,{scale:1,opacity:0,onComplete:laserMoveA2,ease:Linear.easeNone})
-	}
-	function laserMoveA2(){
-		TweenLite.to(laser1,1,{scale:1,opacity:1,onComplete:laserMoveA})
-	}
-
-
-	function laserMoveB(){
-		TweenLite.to(laser2,1,{scale:1,opacity:0,onComplete:laserMoveB2,ease:Linear.easeNone})
-	}
-	function laserMoveB2(){
-		TweenLite.to(laser2,1,{scale:1,opacity:1,onComplete:laserMoveB})
-	}
-
-	function laserMoveC(){
-		TweenLite.to(laser3,1,{scale:1,opacity:0,onComplete:laserMoveC2,ease:Linear.easeNone})
-	}
-	function laserMoveC2(){
-		TweenLite.to(laser3,1,{scale:1,opacity:1,onComplete:laserMoveC})
-	}
 
 	var bgRed1=$("#bgred1")
 	var bgRed2=$("#bgred2")
-
-
-	
 
 	function redA1(){
 		TweenLite.set(bgRed1,{opacity:0,scaleX:2,scaleY:.8})
@@ -59,21 +22,33 @@ $(document).ready(function load (){
 		TweenLite.to(btn1,1,{opacity:0,scale:1.2,onComplete:btnMove})
 	}
 
-	var cA=[$("#c1"),$("#c2"),$("#c3"),$("#c4"),$("#n1"),$("#n2"),$("#n3"),$("#n4")]
+	var cA=[$("#c1"),$("#c2"),$("#c3"),$("#c4"),$("#nn")]
+
+	for (var i = 0; i < cA.length; i++) {
+			//cA[i].css({display:"block",opacity:0})
+			cA[i].css({display:"block",opacity:0,"transform":"translate3d(-50%,-80%,0)","-webkit-transform":"translate3d(-50%,-80%,0)"})
+		};
+
 	setTimeout(function(){
 		ani1()
 		redA1()
 		setTimeout(function(){
 			redB1()
 		},1000)
-	},500)
+	},1200)
 	
 
 	function ani1(){
-		for (var i = 0; i < cA.length; i++) {
-			cA[i].css({display:"block"})
-			TweenLite.from(cA[i],1,{opacity:0,y:"+=50",ease:Back.easeOut,delay:0.1*i})
-		};
+		//for (var i = 0; i < cA.length; i++) {
+			//cA[i].css({display:"block",opacity:0,"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)","transition":"all 0s ease 0s"})
+			//TweenLite.from(cA[i],1,{opacity:0,y:"+=50",ease:Back.easeOut,delay:0.1*i})
+			//cA[i].css({display:"block",opacity:1,"transform":"translate3d(-50%,-100%,0)","-webkit-transform":"translate3d(-50%,-100%,0)","transition":"all 1s ease 0.1s"})
+		//};
+		cA[0].css({display:"block",opacity:1,"transform":"translate3d(-50%,-100%,0)","-webkit-transform":"translate3d(-50%,-100%,0)","transition":"all .7s ease 0.0s","-webkit-transition":"all .7s ease 0.0s"})
+		cA[1].css({display:"block",opacity:1,"transform":"translate3d(-50%,-100%,0)","-webkit-transform":"translate3d(-50%,-100%,0)","transition":"all .7s ease 0.1s","-webkit-transition":"all .7s ease 0.1s"})
+		cA[2].css({display:"block",opacity:1,"transform":"translate3d(-50%,-100%,0)","-webkit-transform":"translate3d(-50%,-100%,0)","transition":"all .7s ease 0.2s","-webkit-transition":"all .7s ease 0.2s"})
+		cA[3].css({display:"block",opacity:1,"transform":"translate3d(-50%,-100%,0)","-webkit-transform":"translate3d(-50%,-100%,0)","transition":"all .7s ease 0.3s","-webkit-transition":"all .7s ease 0.3s"})
+		cA[4].css({display:"block",opacity:1,"transform":"translate3d(-50%,-100%,0)","-webkit-transform":"translate3d(-50%,-100%,0)","transition":"all .7s ease 0.4s","-webkit-transition":"all .7s ease 0.4s"})
 		setTimeout(function(){
 			$(".btn").css({"display":"block",opacity:0})
 			TweenLite.to($(".btn"),1,{opacity:1})
