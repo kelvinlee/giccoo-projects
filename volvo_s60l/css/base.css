@@ -1233,12 +1233,28 @@ body {
           transform: translate3d(0, -50%, 0) scale(-1, 1); }
   .iphone4 .model .right2 {
     width: 5%; }
-.model.model-1 .bg {
-  position: relative; }
-.model.model-1 .title {
-  position: absolute;
-  top: 75%;
-  left: 0px; }
+.model.model-1 {
+  height: 100%;
+  background: url("../img/bg-1.jpg") no-repeat top center;
+  background-size: cover;
+  background-color: transparent; }
+  .model.model-1 .content {
+    height: 100%;
+    position: relative; }
+    .model.model-1 .content .banner {
+      position: absolute;
+      top: 20%;
+      left: 0px; }
+    .model.model-1 .content .car {
+      position: absolute;
+      bottom: 5%;
+      left: 0px; }
+  .model.model-1 .bg {
+    position: relative; }
+  .model.model-1 .title {
+    position: absolute;
+    top: 75%;
+    left: 0px; }
 .model.model-4 .bg {
   padding: 10% 0;
   text-align: center; }
