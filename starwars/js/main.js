@@ -25,7 +25,8 @@ $(document).ready(function load (){
 	var cA=[$("#c1"),$("#c2"),$("#c3"),$("#c4"),$("#nn")]
 
 	for (var i = 0; i < cA.length; i++) {
-			cA[i].css({display:"block",opacity:0})
+			//cA[i].css({display:"block",opacity:0})
+			cA[i].css({display:"block",opacity:0,"transform":"translate3d(-50%,-80%,0)","-webkit-transform":"translate3d(-50%,-80%,0)"})
 		};
 
 	setTimeout(function(){
@@ -34,14 +35,20 @@ $(document).ready(function load (){
 		setTimeout(function(){
 			redB1()
 		},1000)
-	},1500)
+	},1200)
 	
 
 	function ani1(){
-		for (var i = 0; i < cA.length; i++) {
-			cA[i].css({display:"block",opacity:1})
-			TweenLite.from(cA[i],1,{opacity:0,y:"+=50",ease:Back.easeOut,delay:0.1*i})
-		};
+		//for (var i = 0; i < cA.length; i++) {
+			//cA[i].css({display:"block",opacity:0,"transform":"translate3d(-50%,-50%,0)","-webkit-transform":"translate3d(-50%,-50%,0)","transition":"all 0s ease 0s"})
+			//TweenLite.from(cA[i],1,{opacity:0,y:"+=50",ease:Back.easeOut,delay:0.1*i})
+			//cA[i].css({display:"block",opacity:1,"transform":"translate3d(-50%,-100%,0)","-webkit-transform":"translate3d(-50%,-100%,0)","transition":"all 1s ease 0.1s"})
+		//};
+		cA[0].css({display:"block",opacity:1,"transform":"translate3d(-50%,-100%,0)","-webkit-transform":"translate3d(-50%,-100%,0)","transition":"all .7s ease 0.0s","-webkit-transition":"all .7s ease 0.0s"})
+		cA[1].css({display:"block",opacity:1,"transform":"translate3d(-50%,-100%,0)","-webkit-transform":"translate3d(-50%,-100%,0)","transition":"all .7s ease 0.1s","-webkit-transition":"all .7s ease 0.1s"})
+		cA[2].css({display:"block",opacity:1,"transform":"translate3d(-50%,-100%,0)","-webkit-transform":"translate3d(-50%,-100%,0)","transition":"all .7s ease 0.2s","-webkit-transition":"all .7s ease 0.2s"})
+		cA[3].css({display:"block",opacity:1,"transform":"translate3d(-50%,-100%,0)","-webkit-transform":"translate3d(-50%,-100%,0)","transition":"all .7s ease 0.3s","-webkit-transition":"all .7s ease 0.3s"})
+		cA[4].css({display:"block",opacity:1,"transform":"translate3d(-50%,-100%,0)","-webkit-transform":"translate3d(-50%,-100%,0)","transition":"all .7s ease 0.4s","-webkit-transition":"all .7s ease 0.4s"})
 		setTimeout(function(){
 			$(".btn").css({"display":"block",opacity:0})
 			TweenLite.to($(".btn"),1,{opacity:1})
