@@ -19,6 +19,16 @@ $cdn : "http://localhost:5757/sayno_momo/"
 		+w(0)
 	100%
 		+w(96%)
++keyframes(nextpoint)
+	0%
+		opacity: 0.5
+		+transform(translate3d(0,-100%,0))
+	10%
+		opacity: 1
+	100%
+		opacity: 0.5
+		+transform(translate3d(0,0,0))
+
 
 // animation, delay, duration
 @for $i from 1 through 30
@@ -255,6 +265,20 @@ body
 			.car
 				+posa
 				+bl(5%)
+			.next-point
+				+posa
+				+bl(4%,50%)
+				z-index: 100
+				+w(10%)
+				margin-left: -5%
+				+animation(nextpoint,1s,ease,infinite)
+			.next-text
+				+posa
+				+bl(1%,50%)
+				z-index: 100
+				+transform(translate3d(-50%,0,0))
+				+font-size(0.8rem)
+
 		.bg
 			+posr
 		.title

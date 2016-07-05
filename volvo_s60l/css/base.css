@@ -712,6 +712,28 @@ html, body {
     width: 0; }
   100% {
     width: 96%; } }
+@-webkit-keyframes nextpoint {
+  0% {
+    opacity: 0.5;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0); }
+  10% {
+    opacity: 1; }
+  100% {
+    opacity: 0.5;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+@keyframes nextpoint {
+  0% {
+    opacity: 0.5;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0); }
+  10% {
+    opacity: 1; }
+  100% {
+    opacity: 0.5;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -1249,6 +1271,39 @@ body {
       position: absolute;
       bottom: 5%;
       left: 0px; }
+    .model.model-1 .content .next-point {
+      position: absolute;
+      bottom: 4%;
+      left: 50%;
+      z-index: 100;
+      width: 10%;
+      margin-left: -5%;
+      -webkit-animation: nextpoint 1s ease;
+              animation: nextpoint 1s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+    .model.model-1 .content .next-text {
+      position: absolute;
+      bottom: 1%;
+      left: 50%;
+      z-index: 100;
+      -webkit-transform: translate3d(-50%, 0, 0);
+              transform: translate3d(-50%, 0, 0);
+      font-size: 0.8rem; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .model.model-1 .content .next-text {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .model.model-1 .content .next-text {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .model.model-1 .content .next-text {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .model.model-1 .content .next-text {
+          font-size: 0.96rem; } }
   .model.model-1 .bg {
     position: relative; }
   .model.model-1 .title {
