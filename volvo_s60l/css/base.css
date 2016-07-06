@@ -1291,7 +1291,9 @@ body {
       z-index: 100;
       -webkit-transform: translate3d(-50%, 0, 0);
               transform: translate3d(-50%, 0, 0);
-      font-size: 0.8rem; }
+      font-size: 0.8rem;
+      color: #fff;
+      text-decoration: none; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
         .model.model-1 .content .next-text {
           font-size: 0.88rem; } }
