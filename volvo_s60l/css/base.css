@@ -1264,9 +1264,7 @@ body {
     width: 5%; }
 .model.model-1 {
   height: 100%;
-  background: url("../img/bg-1.jpg") no-repeat top center;
-  background-size: cover;
-  background-color: transparent; }
+  background-color: #b1d2e3; }
   .model.model-1 .content {
     height: 100%;
     position: relative; }
@@ -1314,7 +1312,9 @@ body {
         .model.model-1 .content .next-text {
           font-size: 0.96rem; } }
   .model.model-1 .bg {
-    position: relative; }
+    position: absolute;
+    bottom: 0px;
+    left: 0px; }
   .model.model-1 .title {
     position: absolute;
     top: 75%;
