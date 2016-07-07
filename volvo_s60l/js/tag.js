@@ -1,3 +1,152 @@
+riot.tag2('parallax', '<yield></yield>', '', '', function(opts) {
+var _store, allClass, begin, self;
+
+_store = {
+  can: true
+};
+
+self = this;
+
+Store.parallax = this;
+
+this.nowPage = null;
+
+begin = true;
+
+this.defaultPoint = {
+  x: 0,
+  y: 0,
+  returnTranN: true,
+  returnTranO: true
+};
+
+this.start = function(evt) {
+  var touch;
+  if (self.nowPage === null) {
+    self.nowPage = $(".page.first", self.root)[0];
+    Store.nowPage = self.nowPage;
+  }
+  if (!_store.can) {
+    return false;
+  }
+  touch = evt.touches[0];
+  this.defaultPoint.x = touch.pageX;
+  this.defaultPoint.y = touch.pageY;
+  return true;
+};
+
+this.move = function(evt) {
+  var gone, touch;
+  if (!_store.can) {
+    return false;
+  }
+  touch = evt.touches[0];
+  gone = this.defaultPoint.y - touch.pageY;
+  evt.preventDefault();
+  if (gone > 50) {
+    _store.can = false;
+    this.passpage.bind(this)("up");
+  }
+  if (gone < -50) {
+    _store.can = false;
+    this.passpage.bind(this)("down");
+  }
+  return true;
+};
+
+this.end = function(e) {
+  if (!_store.can) {
+    return false;
+  }
+  if ($(this.nowPage).attr("up") === null && $(this.nowPage).attr("down") === null) {
+    _store.can = false;
+    self.root.removeEventListener("touchstart", self.start);
+    self.root.removeEventListener("touchmove", self.move);
+    return self.root.removeEventListener("touchend", self.end);
+  }
+};
+
+allClass = "riot-up riot-up-active riot-up-leave riot-down riot-down-active riot-down-leave riot-left riot-left-active  riot-left-leave riot-right riot-right-active  riot-right-leave";
+
+this.passpage = function(direction) {
+  var select;
+  select = $(this.nowPage).attr(direction);
+  if (select) {
+    return self.animate(select);
+  } else {
+    return _store.can = true;
+  }
+};
+
+this.changepage = function(name) {
+  return self.animate(name);
+};
+
+this.animate = function(select) {
+  var direction, newpage, oldpage;
+  oldpage = self.nowPage;
+  // console.log(select);
+  self.oldpage = oldpage;
+  if (self.oldpage == null) {
+    self.oldpage = $(".page.first", self.root)[0];
+  }
+  self.nowPage = $(".page." + select, self.root)[0];
+  console.log(self.oldpage,oldpage,self.nowPage);
+  if (oldpage === self.nowPage) {
+    return false;
+  }
+  self.nowPage;
+  newpage = self.nowPage;
+  direction = "up";
+  if ($(oldpage).index() > $(newpage).index()) {
+    direction = "down";
+  }
+  oldpage.addEventListener(TRANSITION_END_NAME, self.oldpageFinished);
+  self.defaultPoint.returnTranN = true;
+  newpage.addEventListener(TRANSITION_END_NAME, self.newpageFinished);
+  self.defaultPoint.returnTranO = true;
+  $(newpage).hide().removeClass(allClass).addClass("riot-" + direction);
+  $(newpage).show();
+  $(oldpage).removeClass(allClass);
+  setTimeout(function() {
+    $(oldpage).addClass("riot-" + direction + "-leave");
+    return $(newpage).removeClass(allClass).addClass("riot-" + direction + "-active");
+  }, 100);
+  return self.update();
+};
+
+this.newpageFinished = function(evt) {
+  if (self.defaultPoint.returnTranN) {
+    self.defaultPoint.returnTranN = false;
+  }
+  self.newpage && self.newpage.removeEventListener(TRANSITION_END_NAME, self.newpageFinished);
+  self.newpage && self.newpage.removeEventListener(TRANSITION_END_NAME, self.oldpageFinished);
+  $(self.newpage).removeClass(allClass);
+  return _store.can = true;
+};
+
+this.oldpageFinished = function(evt) {
+  if (self.defaultPoint.returnTranO) {
+    self.defaultPoint.returnTranO = false;
+    $(self.oldpage).hide();
+  }
+  self.oldpage && self.oldpage.removeEventListener(TRANSITION_END_NAME, self.newpageFinished);
+  self.oldpage && self.oldpage.removeEventListener(TRANSITION_END_NAME, self.oldpageFinished);
+  $(self.oldpage).removeClass(allClass);
+  return _store.can = true;
+};
+
+this.on("mount", function() {
+  self.nowPage = $(".page.first", self.root)[0];
+  self.oldpage = $(".page.first", self.root)[0];
+});
+
+this.root.addEventListener("touchstart", this.start.bind(this));
+
+this.root.addEventListener("touchmove", this.move.bind(this));
+
+this.root.addEventListener("touchend", this.end.bind(this));
+});
 
 riot.tag2('register', '<form onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username">姓名:</label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="">性别:</label> <div class="comb"> <label for="man">先生</label> <input id="man" type="radio" name="sex" value="先生" checked="checked"> <label for="woman">女士</label> <input id="woman" type="radio" name="sex" value="女士"> </div> </div> <div class="form-grounp"> <label for="mobile">手机号码:</label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-grounp"> <label for="province">所在省/市:</label> <div class="comb"> <div class="select"><span>{provinceName}</span> <select id="province" name="province" onchange="{changeProvince}"> <option each="{name in province}" value="{name}">{name}</option> </select> </div> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeCity}"> <option each="{name in city}" value="{name}">{name}</option> </select> </div> </div> </div> <div class="form-grounp"> <label for="dealer">选择经销商:</label> <div class="select"><span>{dealerName}</span> <select id="dealer" name="dealer" onchange="{changeDealer}"> <option each="{dealer}" value="{code}">{name}</option> </select> </div> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="img/submit.png"></button> </div> </form>', '', '', function(opts) {
     var self = this
@@ -120,14 +269,23 @@ if (opts.myid) {
 
 this.setNumber = function(i) {
   console.log(i,self.slideNumber);
-  slider = $(".slider", this.root);
-  this.offset.w = slider.width();
+  slider = $("#"+opts.myid);
+  self.offset.w = slider.width();
   self.duration = 0.2;
-  self.x = -($(".slider", self.root).width() * i);
-  if (this.repeat) {
-    self.x -= this.list.length * this.offset.w;
+  self.x = -(slider.width() * i);
+  
+  if (self.repeat) {
+    self.x = -(self.list.length * self.offset.w) - (slider.width() * i);
   }
+  console.log(slider,slider.width(),self.offset.w,self.repeat);
   self.slideNumber = i
+  slider.find(".slider").css({
+    "-webkit-transition-duration": "0.2s",
+    "transition-duration": "0.2s",
+    "-webkit-transform": "translate3d("+self.x+"px,0,0)",
+    "transform": "translate3d("+self.x+"px,0,0)"
+  })
+
   self.update();
 };
 
@@ -199,7 +357,7 @@ this.touchend = function(evt) {
     if (this.repeat) {
       this.x -= this.list.length * this.offset.w;
     }
-    // console.log(this.Rx,this.x,this.repeat)
+    console.log(this.Rx,this.x,this.repeat)
     this.duration = 0.2;
     this.update();
   }

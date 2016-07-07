@@ -2294,6 +2294,12 @@ window.onload = function() {
   $(".right").on("click", moveRight);
   $(".left2").on("click", mLeft);
   $(".right2").on("click", mRight);
+  $(".next-point,.next-text").on("click", function() {
+    return Store.parallax.changepage("model-2");
+  });
+  $(".backTop").on("click", function() {
+    return Store.parallax.changepage("model-2");
+  });
   return $(window).on("scroll", function(evt) {
     if ($(window).scrollTop() > $(window).width()) {
       return $(".backTop").removeClass("hide");
@@ -2347,30 +2353,36 @@ changeMain = function(i) {
 
 mLeft = function() {
   tabId2--;
-  secondSlider.setNumber(tabId2);
   $(".points span").removeClass("on");
   if (tabId2 < 0) {
     tabId2 = 4;
   }
+  secondSlider.setNumber(tabId2);
   return $(".points span").eq(tabId2).addClass("on");
 };
 
 mRight = function() {
   tabId2++;
-  secondSlider.setNumber(tabId2);
   $(".points span").removeClass("on");
   if (tabId2 > 4) {
     tabId2 = 0;
   }
+  secondSlider.setNumber(tabId2);
   return $(".points span").eq(tabId2).addClass("on");
 };
 
 moveLeft = function() {
   tabId--;
+  if (tabId < 0) {
+    tabId = 2;
+  }
   return mainSlider.setNumber(tabId);
 };
 
 moveRight = function() {
   tabId++;
+  if (tabId > 2) {
+    tabId = 0;
+  }
   return mainSlider.setNumber(tabId);
 };

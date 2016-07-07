@@ -397,6 +397,11 @@ window.onload = ->
 	$(".left2").on "click", mLeft
 	$(".right2").on "click", mRight
 
+	$(".next-point,.next-text").on "click", ->
+		Store.parallax.changepage("model-2")
+	$(".backTop").on "click", ->
+		Store.parallax.changepage("model-2")
+
 	$(window).on "scroll", (evt)->
 		# console.log $(window).scrollTop()>$(window).width(),$(window).scrollTop(),$(window).width()
 		if $(window).scrollTop()>$(window).width()
@@ -432,29 +437,27 @@ changeMain = (i)->
 
 mLeft = ->
 	tabId2--
-	
-	secondSlider.setNumber(tabId2)
 	$(".points span").removeClass "on"
 	if tabId2 < 0
 		tabId2 = 4
+	secondSlider.setNumber(tabId2)
 	$(".points span").eq(tabId2).addClass "on"
 mRight = ->
 	tabId2++
-	
-	secondSlider.setNumber(tabId2)
 	$(".points span").removeClass "on"
 	if tabId2 > 4
 		tabId2 = 0
+	secondSlider.setNumber(tabId2)
 	$(".points span").eq(tabId2).addClass "on"
 
 moveLeft = ->
 	tabId--
-	# if tabId < 0
-		# tabId = 7
+	if tabId < 0
+		tabId = 2
 	mainSlider.setNumber(tabId)
 	
 moveRight = ->
 	tabId++
-	# if tabId > 7
-		# tabId = 0
+	if tabId > 2
+		tabId = 0
 	mainSlider.setNumber(tabId)

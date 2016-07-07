@@ -11,8 +11,8 @@ block css
 block content
 	// - url = "http://image.giccoo.com/projects/volvo_s60l/"
 	- url = "/volvo_s60l/"
-	.main
-		.model.model-1
+	parallax#parallax.pages
+		.page.model.model-1.first(up="model-2")
 			//- .bg
 				img(src="#{url}img/bg-1.jpg")
 				a.outlink(href="http://www.volvocars.com/zh-cn/cars/new-models/s60l")
@@ -23,31 +23,45 @@ block content
 					img(src="#{url}img/banner-1.png")
 				.car
 					img(src="#{url}img/banner-car.png")
-				a.next-point(href="#model-2")
+				.next-point#next-point
 					img(src="#{url}img/next-point.png")
-				a.next-text(href="#model-2") 预约试驾
+				.next-text 预约试驾
 
-		.model.medel-2#model-2
+		.page.model.model-2(down="model-1",up="model-3")
 			.title
-				img(src="#{url}img/form-title.jpg")
+				img(src="#{url}img/title-1.jpg")
 			.form-box
 				register#register(action="http://api.giccoo.com/volvo_s60l/insert/")
-		.model
 			.bg
-				img(src="#{url}img/bg-2.jpg")
-		.model.model-5
+				img(src="#{url}img/car-bg-2.jpg")
+			.next-point
+				img(src="#{url}img/next-point.png")
+		.page.model.model-3(down="model-2",up="model-4")
 			.bg
-				slider.sliderBox(myid="mainSlider",repeat="true",callback="changeMain",list="#{url}img/info-1.jpg,#{url}img/info-2.jpg,#{url}img/info-3.jpg")
+				//- img(src="#{url}img/bg-3.jpg")
+			.next-point
+				img(src="#{url}img/next-point.png")
+			.backTop
+				img(src="#{url}img/back-top.png")
+		.page.model.model-4(down="model-3",up="model-5")
+			.bg
+				.title
+					img(src="#{url}img/title-4.jpg")
+				slider#mainSlider.sliderBox(myid="mainSlider",repeat="true",callback="changeMain",list="#{url}img/info-1.jpg,#{url}img/info-2.jpg,#{url}img/info-3.jpg")
 					.left
 						img(src="#{url}img/left.png")
 					.right
 						img(src="#{url}img/left.png")
-		.model.model-6
+			.backTop
+				img(src="#{url}img/back-top.png")
+			.next-point
+				img(src="#{url}img/next-point.png")
+		.page.model.model-5(down="model-4")
 			.title
 				img(src="#{url}img/title.jpg")
 			.bg
 				.sliders
-					slider.sliderBox(myid="secondSlider",repeat="true",callback="changePoint",list="#{url}img/car-1.jpg,#{url}img/car-2.jpg,#{url}img/car-3.jpg,#{url}img/car-4.jpg,#{url}img/car-5.jpg")
+					slider#secondSlider.sliderBox(myid="secondSlider",repeat="true",callback="changePoint",list="#{url}img/car-1.jpg,#{url}img/car-2.jpg,#{url}img/car-3.jpg,#{url}img/car-4.jpg,#{url}img/car-5.jpg")
 						.left2
 							img(src="#{url}img/left.png")
 						.right2
@@ -59,8 +73,8 @@ block content
 					span
 					span
 
-		a.backTop.hide(href="#register")
-			img(src="#{url}img/back-top.png")
+			.backTop
+				img(src="#{url}img/back-top.png")
 
 
 block js

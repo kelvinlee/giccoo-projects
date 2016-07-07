@@ -115,7 +115,7 @@ html,body
 body
 	// +b("http://i3.tietuku.com/1fcc3041ce5a552f.jpg",no-repeat,center,center,cover)
 	color: #fff
-	+bc(#edeeef)
+	+bc(#fff)
 
 // .loading.loaded
 // 	+hide
@@ -159,7 +159,19 @@ body
 			+posa
 			+tl(50%,50%)
 			+transform(translate3d(-50%,-50%,0))
-			
+
+.pages
+	.page
+		.content
+			+posa
+			+tl
+			+w
+			+h
+
+
+
+
+
 .begin
 	+posa
 	+tl
@@ -286,9 +298,26 @@ body
 		.title
 			+posa
 			+tl(75%)
-	&.model-4
+	&.model-2
+		.title
+			margin-top: 5%
 		.bg
-			+p(10% 0)
+			+posa
+			+bl
+			+w
+			z-index: -1
+	&.model-3
+		+bc(#fafafa)
+		.bg
+			+w
+			+h
+			+b("../img/bg-3.jpg",no-repeat,top,center,contain)
+			+bc(#fafafa)
+	&.model-4
+		.title
+			+p(5% 0)
+		.bg
+			// +p(10% 0)
 			+text-center
 			video
 				+wh(80%,auto)
@@ -297,8 +326,10 @@ body
 				+font-size(1rem)
 				color: #7f7f7f
 				margin-bottom: 0.4em
-	&.model-6
-		padding-bottom: 2rem
+	&.model-5
+		// padding-bottom: 2rem
+		.title
+			+p(5% 0)
 .sliders
 	// +posa
 	// +bl(20%,10%)
@@ -308,6 +339,7 @@ body
 	margin-top: 1rem
 	max-width: 400px
 	border: solid 4px #fff
+	box-shadow: 1px 1px 6px #000
 
 
 
@@ -321,7 +353,7 @@ body
 		+show-inline
 		+wh(0.5rem,0.5rem)
 		+m(0 0.2rem)
-		+bc(#fff)
+		+bc(#c2c2c2)
 		border-radius: 50%
 		&.on
 			+bc(#003663)

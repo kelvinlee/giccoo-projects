@@ -1060,7 +1060,7 @@ html, body {
 
 body {
   color: #fff;
-  background-color: #edeeef; }
+  background-color: #fff; }
 
 .loading {
   background-color: transparent; }
@@ -1123,6 +1123,13 @@ body {
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
         .loading .new-load .load-progress {
           font-size: 0.96rem; } }
+
+.pages .page .content {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; }
 
 .begin {
   position: absolute;
@@ -1312,8 +1319,26 @@ body {
     position: absolute;
     top: 75%;
     left: 0px; }
+.model.model-2 .title {
+  margin-top: 5%; }
+.model.model-2 .bg {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: -1; }
+.model.model-3 {
+  background-color: #fafafa; }
+  .model.model-3 .bg {
+    width: 100%;
+    height: 100%;
+    background: url("../img/bg-3.jpg") no-repeat top center;
+    background-size: contain;
+    background-color: transparent;
+    background-color: #fafafa; }
+.model.model-4 .title {
+  padding: 5% 0; }
 .model.model-4 .bg {
-  padding: 10% 0;
   text-align: center; }
   .model.model-4 .bg video {
     width: 80%;
@@ -1335,8 +1360,8 @@ body {
     @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
       .model.model-4 .bg p {
         font-size: 1.2rem; } }
-.model.model-6 {
-  padding-bottom: 2rem; }
+.model.model-5 .title {
+  padding: 5% 0; }
 
 .sliders {
   overflow: hidden;
@@ -1344,7 +1369,8 @@ body {
   margin: 0 auto;
   margin-top: 1rem;
   max-width: 400px;
-  border: solid 4px #fff; }
+  border: solid 4px #fff;
+  box-shadow: 1px 1px 6px #000; }
 
 .points {
   width: 100%;
@@ -1355,7 +1381,7 @@ body {
     width: 0.5rem;
     height: 0.5rem;
     margin: 0 0.2rem;
-    background-color: #fff;
+    background-color: #c2c2c2;
     border-radius: 50%; }
     .points span.on {
       background-color: #003663; }
