@@ -1,0 +1,47 @@
+extends ../libs/jade/layout-clean
+block title
+	| 桂格最赞早范儿菜谱排行
+
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://disk.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css?v=1")
+
+block content
+	//- url = "http://image.giccoo.com/projects/quaker/"
+	- url = "/quaker/"
+	.main
+		.logo
+			img(src="#{url}img/logo.png")
+		.title-1
+			img(src="#{url}img/title-1.png")
+		box.topten(src="http://api.giccoo.com/quaker/topten",type="topten")
+		.title-2
+			img(src="#{url}img/title-2.png")
+		box.topsix(src="http://api.giccoo.com/quaker/topsix",type="topsix")
+		.last-text
+			img(src="#{url}img/last-text.png")
+	.wait
+		.logo
+			img(src="#{url}img/logo.png")
+		.wait-box
+			img(src="#{url}img/wait.jpg")
+
+
+block js
+	- url = "/"
+	script(src="http://disk.giccoo.com/projects/libs/js/min/jquery.min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/riot.min.js")
+	script(src="js/tags.js?v=1")
+	script(src="js/main.js?v=1")
+
+	script.
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();

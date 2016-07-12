@@ -1,0 +1,216 @@
+@import sass/base
+@import ../../libs/sass/loading
+@import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+
+
+$debug : true
+$cdn : "http://localhost:5757/quaker/"
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects/quaker/"
+
++keyframes(leftmove)
+	0%
+		+transform(translate3d(0%,0,0))
+	100%
+		+transform(translate3d(-100%,0,0))
++keyframes(showline)
+	0%
+		+w(0)
+	100%
+		+w(96%)
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+
+.main,.wait
+	+hide
+	+w
+	+h
+	max-width: 640px
+	+m
+	+b("#{$cdn}img/bg.jpg",no-repeat,top,center,cover)
+	+touch
+	.logo
+		margin-top: 1.5rem
+		+posr
+		z-index: 100
+	.title-1
+		margin-top: 2rem
+	.last-text
+		margin-top: 2rem
+		padding-bottom: 2rem
+	.wait-box
+		+m
+		margin-top: -15%
+		+w(90%)
+
+
+
+.topten
+	+w(90%)
+	+m
+	+show-inline
+	margin-left: 5%
+	margin-top: 5%
+	.list
+		+w
+		.item
+			$font: 0.7rem
+			+show-inline
+			+w(18%)
+			+m(0 1%)
+			+text-center
+			+posr
+			text-decoration: none
+			vertical-align: top
+			margin-bottom: 2%
+			@for $i from 1 through 10
+				&:nth-child(#{$i})
+					&:before
+						content: "#{$i}"
+						+posa
+						+tl
+						+wh($font*1.8,$font*1.8)
+						+bc(#c73338)
+						+transform(translate3d(-10%,-30%,0))
+						+font-size($font*1.1)
+						+text-center
+						line-height: $font*1.8
+						color: #fff
+						border-radius: 50%
+						z-index: 100
+			img
+				border: solid 2px #7d786b
+				font-size: 0
+				border-radius: 2px
+			.like
+				color: #707070
+				.heart
+					+show-inline
+					+wh($font,$font)
+					+b("#{$cdn}img/icon-heart.png",no-repeat,center,center,cover)
+					vertical-align: middle
+					margin-right: 0.2rem
+				span
+					+font-size($font)
+					text-shadow: 1px 1px 3px #fff
+			.name
+				+font-size($font)
+				+m
+				+h(2.4em)
+				line-height: 1.2em
+				color: #0f3358
+				text-shadow: 1px 1px 3px #fff
+.topsix
+	+w(90%)
+	+m
+	+show-inline
+	margin-left: 5%
+	margin-top: 5%
+	.list
+		+w
+		.item
+			$font: 0.7rem
+			+show-inline
+			+w(46%)
+			+m(0 2%)
+			+text-center
+			+posr
+			+b("../img/box-bg.png",no-repeat,center,center,100% 100%)
+			margin-top: 2%
+			text-decoration: none
+			vertical-align: top
+			margin-bottom: 2%
+			color: #083b6a
+			@for $i from 1 through 6
+				&:nth-child(#{$i})
+					&:before
+						content: "NO.#{$i}"
+						+posa
+						+tl
+						+wh($font*4,$font*4)
+						+bc(#c73338)
+						+transform(translate3d(-10%,-20%,0))
+						+font-size($font*1.2)
+						+text-center
+						font-weight: bold
+						line-height: $font*4
+						color: #fff
+						border-radius: 50%
+						z-index: 100
+			.box
+				+p(5%)
+				.img
+					img
+						border-radius: 5%
+				.description
+					+w
+					margin-top: 5%
+					vertical-align: top
+					.avatar
+						+w(30%)
+						+show-inline
+						+posr
+						vertical-align: top
+						img
+							border-radius: 50%
+						&:after
+							content: " "
+							+posa
+							+tr(10%,-20%)
+							+h(80%)
+							border-right: solid 2px #0b3861
+							border-radius: 2px
+					.text
+						+w(60%)
+						+show-inline
+						padding-left: 5%
+						vertical-align: top
+						p
+							+m
+							+font-size($font)
+						.like
+							+show-inline
+							+wh($font,$font)
+							+b("#{$cdn}img/icon-like.png",no-repeat,center,center,cover)
+							vertical-align: middle
+							margin-right: 0.2rem
+
+
+.note
+	+posa
+	+tl
+	+br
+	+wh(100%,100%)
+	+bc(rgba(0,0,0,0.6))
+	z-index: 9999
+	.note-box
+		+text-center
+		+posa
+		+tl(50%)
+		+w(100%)
+		+transform(translate3d(0,-50%,0))
+		// z-index: 9999
+		.note-content
+			display: inline-block
+			padding: 10px 11px 10px 10px
+			background-color: rgba(0,0,0,0.7)
+			color: #fff
+			border-radius: 5px
+			max-width: 90%
+			+box
+		.icon-form,.note-text
+			display: inline-block
+			vertical-align: top
+			line-height: 25px
+		.icon-form
+			+wh(25px,25px)
+		.note-text
+			+font-size(0.8rem)
+			letter-spacing: 2px

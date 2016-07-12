@@ -1,0 +1,620 @@
+@import sass/base
+@import ../../libs/sass/loading
+@import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+
+
+$debug : false
+$cdn : "http://localhost:5757/sayno_momo/"
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects/sayno_momo/"
+
++keyframes(leftmove)
+	0%
+		+transform(translate3d(0%,0,0))
+	100%
+		+transform(translate3d(-100%,0,0))
++keyframes(showline)
+	0%
+		+w(0)
+	100%
+		+w(96%)
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
+
+.share-wechat
+	+posa
+	+tl
+	+w
+	+h
+	+b("http://disk.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
+	+bc
+	z-index: 1100
+	+hide
+	&.open
+		+show
+
+.wrap
+	+wh(100%,100%)
+	// +posf
+	// min-height: 410px
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+
+.loading.loaded
+	+large
+		+hide
+
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+iw(600)
+	+m
+	margin-top: -8%
+	.share-icon
+		+show-inline
+		+w(25%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		
+html,body
+	+w
+	+h
+	// +overhide
+
+body
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	// +b("http://i3.tietuku.com/1fcc3041ce5a552f.jpg",no-repeat,center,center,cover)
+	color: #3f6aff
+
+// .loading.loaded
+// 	+hide
+.loading
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+bc(transparent)
+	.new-load
+		+posa
+		+tl(50%,50%)
+		+w
+		+text-center
+		// +p(100% 0 0 0)
+		+transform(translate3d(-50%,-50%,0))
+		.load-item
+			+iw(230)
+			+posr
+			// > img
+				// +animation(rubberBand,2s,ease,infinite)
+			.load-item-note1
+				+posa
+				+bl(26%,27.5%)
+				+w(45%)
+				+h(5%)
+				+tran($time: 100ms)
+				overflow: hidden
+				.load-move
+					+animation(leftmove,2s,linear,infinite)
+				img
+					+w(180px)
+					max-width: 180px
+					
+			.load-item-note2
+				+posa
+				+tr
+				+w
+				
+		.load-progress
+			+font-size(0.8rem)
+			color: #fff
+			+p(2% 0 0 0)
+			+posa
+			+tl(50%,50%)
+			+transform(translate3d(-50%,-50%,0))
+			
+.begin
+	+posa
+	+tl
+	+w
+	+h
+.hide
+	display: none !important
+
+.note
+	+posa
+	+tl
+	+br
+	+wh(100%,100%)
+	z-index: 9999
+	.note-box
+		+text-center
+		+posa
+		+tl(50%)
+		+w(100%)
+		// z-index: 9999
+		.note-content
+			display: inline-block
+			padding: 10px 11px 10px 10px
+			background-color: rgba(0,0,0,0.7)
+			color: #fff
+			border-radius: 5px
+			max-width: 90%
+			+box
+		.icon-form,.note-text
+			display: inline-block
+			vertical-align: top
+			line-height: 25px
+		.icon-form
+			+wh(25px,25px)
+		.note-text
+			+font-size(0.8rem)
+			letter-spacing: 2px
+
+.ctrl-image
+	.image-content
+		+posr
+		+w
+		canvas
+			+w
+		.image-input
+			+posa
+			+tl
+			+br
+			+w
+			+h
+			+bc(#f2f2f2)
+			+overhide
+			input[type=file]
+				+posa
+				+tl
+				+bl
+				+w
+				+h
+				+p(100rem)
+				opacity: 0
+		.icon-restart
+			+posa
+			+br(1rem,1rem)
+			// +wh(1rem,1rem)
+			// +bc(#000)
+
+.pages
+	.logo
+		+posa
+		+tl
+		+w
+	.slogen
+		+posa
+		+tr
+		+w(80%)
+		// z-index: 99
+	.kv
+		.box
+			+w(80%)
+			+bc(#fff)
+			+m
+			margin-top: 18%
+			.iphone4 &
+				+w(60%)
+				margin-top: 18%
+			.image
+				+w(90%)
+				+m
+				padding-top: 5%
+			.kv-title
+				+w(50%)
+				margin-right: 5%
+				margin-left: auto
+				+p(5% 0 15% 0)
+		.box-left
+			+posa
+			+tl(0,-20%)
+			+transform(rotate(-20deg) scale(0.8))
+			opacity: 0.5
+			z-index: -1
+		.box-right
+			+posa
+			+tr(0,-20%)
+			+transform(rotate(20deg) scale(0.8))
+			opacity: 0.5
+			z-index: -1
+
+		.title
+			+m(2% auto)
+			.iphone4 &
+				+m(2% 10%)
+		.btns
+			margin-top: 5%
+			+text-center
+			.item
+				+w(40%)
+				+show-inline
+				+m
+				+p
+				+text-center
+				p
+					+font-size(0.6rem)
+					color: #ffffff
+					+m(0.1rem auto)
+				.btn
+					+w(90%)
+					+show-inline
+	.page
+		.next-point
+			+b($cdn+"img/next-point.png",no-repeat,center,center,cover)
+			+w(10%)
+
+	// .page.homepage
+
+.build
+	+w(70%)
+	+bc(#fff)
+	+m
+	+posr
+	margin-top: 18%
+	.iphone4 &
+		+w(60%)
+		margin-top: 18%
+	.ctrl-image
+		+posr
+		+w(90%)
+		+m(5%)
+		+show-inline
+		.image-input
+			+b($cdn+"img/add-image.jpg",no-repeat,center,center,cover)
+		.logo
+			+posa
+			+w(35%)
+			+tl(3%,3%)
+			z-index: 102
+		.icon.icon-restart
+			+posa
+			+tr(3%,3%)
+			+wh(1rem,1rem)
+			z-index: 101
+			+b($cdn+"img/restart.png",no-repeat,center,center,cover)
+		.mask-note
+			+posa
+			+tl
+			+w
+			+h
+			z-index: 10
+			+b($cdn+"img/mask-note.png",no-repeat,center,center,cover)
+	.title
+		+posr
+		+w(50%)
+		margin-left: 5%
+		.line
+			border-bottom: solid 2px #000
+			// padding-bottom: 0.2rem
+		.input
+			+posr
+			input
+				border: none
+				box-shadow: none
+				outline: none
+				color: #000
+				font-weight: bold
+				z-index: 2
+				+p(0.1rem)
+				+font-size(1rem)
+				+posr
+				+w
+				+bc(transparent)
+			.bg
+				+posa
+				+tl
+				+w
+				z-index: 1
+			.noteText
+				+posa
+				+tr(0,-70%)
+				+font-size(0.8rem)
+				+bc(#01b4e5)
+				+overhide
+				+p(0.2rem 0.3rem)
+				color: #fff
+				border-radius: 0.3rem
+				border: solid 2px #fff
+		// .normal
+		.select-arrow
+			+posr
+			& .arrow
+				content: " "
+				+posa
+				+tl(50%,35%)
+				+w(15%)
+				+transform(translate3d(0,-50%,0))
+				+tran
+				font-size: 0
+				&.on
+					+transform(translate3d(0,-50%,0) rotate(90deg))
+		.select
+			img
+				opacity: 0.7
+		.select-list
+			+posa
+			+tl(45%)
+			+p(0.2rem)
+			+bc(#f0f0f0)
+			border: solid 1px #000
+			.option
+				opacity: 0.7
+				&.on
+					opacity: 1
+		.inputname
+			+posa
+			+tr(0,-92%)
+			+w(80%)
+			input
+				+w(80%)
+				+m
+				border: none
+				border-bottom: dashed 2px #000
+				+text-center
+				+font-size(0.8rem)
+				line-height: 1.6em
+				color: #000
+
+	.image-slogen
+		+w(70%)
+		+m(0 5% 0 auto)
+		+p(5% 0)
+.submit
+	+w(50%)
+	+m
+	margin-top: 5%
+	.iphone4 &
+		+w(40%)
+.share-box
+	+posr
+	+m
+	+w(90%)
+	margin-top: 2%
+	.iphone4 &
+		+w(70%)
+		+m
+		margin-top: 2%
+	.btn
+		+posa
+		+w(30%)
+		+transform(translate3d(-50%,0,0))
+	.btn-share
+		+tl(15%,50%)
+	.btn-others
+		+bl(15%,50%)
+
+.other-page
+	z-index: 105
+	.other-box
+		+posa
+		+tl(50%,10%)
+		+w(80%)
+		+transform(translate3d(0,-50%,0))
+		+bc(#ffffff)
+		+overhide
+		.close
+			+posa
+			+tr(0.2rem,0.2rem)
+			+w(1.4rem)
+			z-index: 99
+		.line
+			+w(80%)
+			+font-size(0.8rem)
+			+text-center
+			+m
+			border-top: solid 2px #747474
+			color: #747474
+			line-height: 2em
+		.slide
+			+box
+			+p(0.5rem 10%)
+			white-space: normal
+			li
+				+w(50%)
+				+p(0.5rem 0)
+				+show-inline
+				font-size: 0
+				+text-left
+				&:nth-child(even)
+					+text-right
+				img
+					+w(80%)
+					border: solid 2px #747474
+					border-radius: 0.5rem
+					+overhide
+.share-success
+	z-index: 105
+	h2 
+		color: #ffffff
+		+text-center
+		+font-size(1.6rem)
+		margin-top: 40%
+		line-height: 2em
+	.line
+		+w(94%)
+		border-top: solid 2px #01b4e5
+		animation-delay: 800ms
+		+m
+		+animation(showline,1s,ease)
+	.btn-lottery
+		+w(40%)
+		+m
+		margin-top: 5%
+.lottery-faild,.lottery-success
+	z-index: 109
+	.content
+		+posa
+		+tl(50%,5%)
+		+w(90%)
+		+bc(#fff)
+		+transform(translate3d(0,-50%,0))
+		.title
+			margin-top: -10%
+	.body
+		+box
+		+p(5%)
+		p
+			+text-center
+			+font-size(0.8rem)
+			color: #747474
+		.product
+			+w(35%)
+			+m
+		.form-group
+			+w
+			+m(0.4rem 0)
+			input
+				+w
+				+bc(#f0f0f0)
+				+p(0.3rem)
+				+box
+				border: solid 1px #b5b5b5
+				color: #000
+		.btn
+			+w(40%)
+			+m
+	.footer
+		+wh(100%,1.4rem)
+		border-top: solid 2px #01b4e5
+.show-page,.build-page
+	+posa
+	+tl
+	+w
+	+h
+.show-page
+	.bg
+		+posa
+		+tl(32%)
+		+w
+		z-index: -1
+	.text-1
+		+posa
+		+tl(20%,0)
+		+w
+	.text-2
+		+posa
+		+tl(32%,0)
+		+w
+	.start
+		+posa
+		+bl(20%,0)
+		+w
+	.active
+		+posa
+		+bl(15%,0)
+		+w
+	.active
+		+text-center
+		+font-size(0.8rem)
+		text-decoration: underline
+		color: #01b4e5
+.active-info
+	z-index: 1106
+	.title
+		+posa
+		+tl(15%)
+		+w(100%)
+		+font-size(1.2rem)
+		+bc(#01b4e5)
+		+text-center
+		z-index: 10
+		line-height: 1.6em
+		color: #3f3f3f
+	.close
+		+posa
+		+tr(11%,6%)
+		z-index: 11199
+		+w(7%)
+	.content
+		+posa
+		+tl(10%,5%)
+		+w(90%)
+		+h(80%)
+		+bc(rgba(255,255,255,0.9))
+		+box
+		z-index: 9
+		padding-top: 22%
+		color: #3f3f3f
+		.content-text
+			+h(90%)
+			+touch
+			+font-size(0.8rem)
+			ol
+				padding-left: 10%
+			li
+				+w(95%)
+				margin-bottom: 10px
+				p
+					+w
+		p
+			+w(90%)
+			+m
+			+font-size(0.8rem)
+			line-height: 1.6em
+.image-info
+	z-index: 111
+	.close
+		+posa
+		+tr(11%,11%)
+		z-index: 11199
+		+w(7%)
+	.content
+		+posa
+		+tl(10%,10%)
+		+w(80%)
+
+.pop
+	+posa
+	+tl
+	+w
+	+h
+	+bc(rgba(0,0,0,0.7))
+
+.loader
+	.more
+		+posa
+		+tl(60%,50%)
+		+w(35%)
+		margin-left: -35%/2
+
+
+
+.testCanvas
+	+posa
+	+tl(5%,5%)
+	+w(90%)
+	z-index: 10000
+
