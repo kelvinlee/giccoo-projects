@@ -958,7 +958,7 @@ html, body {
   height: 100%;
   max-width: 640px;
   margin: 0 auto;
-  background: url("http://localhost:5757/quaker/img/bg.jpg") no-repeat top center;
+  background: url("/quaker/img/bg.jpg") no-repeat top center;
   background-size: cover;
   background-color: transparent;
   overflow: scroll;
@@ -1285,7 +1285,7 @@ html, body {
           display: inline-block;
           width: 0.7rem;
           height: 0.7rem;
-          background: url("http://localhost:5757/quaker/img/icon-heart.png") no-repeat center center;
+          background: url("/quaker/img/icon-heart.png") no-repeat center center;
           background-size: cover;
           background-color: transparent;
           vertical-align: middle;
@@ -1568,7 +1568,7 @@ html, body {
               display: inline-block;
               width: 0.7rem;
               height: 0.7rem;
-              background: url("http://localhost:5757/quaker/img/icon-like.png") no-repeat center center;
+              background: url("/quaker/img/icon-like.png") no-repeat center center;
               background-size: cover;
               background-color: transparent;
               vertical-align: middle;
