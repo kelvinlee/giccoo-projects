@@ -409,19 +409,19 @@ window.onload = ->
 
 	$(".btn-registerpage").on "click",(evt)->
 		# $(".page").removeClass "first"
-		target = $(".page.first")
-		$(".page.first").addClass "fadeOutRight animated"
-		$(".registerpage").addClass("fadeInLeft animated first")
+		target = $(".questionpage")
+		$(".questionpage").addClass("fadeOutRight animated")
+		$(".registerpage").addClass("fadeInLeft animated").show()
 		setTimeout ->
-			target.removeClass "fadeOutRight animated first"
+			target.removeClass("fadeOutRight animated first")
 		,500
 
 	$(".btn-infopage").on "click",(evt)->
-		target = $(".page.first")
-		$(".page.first").addClass "fadeOutLeft animated"
-		$(".infopage").addClass("fadeInRight animated first")
+		target = $(".questionpage")
+		$(".questionpage").removeClass("fadeIn animated").addClass("fadeOutLeft animated")
+		$(".infopage").removeClass("fadeIn fadeInRight").addClass("fadeInRight animated").show()
 		setTimeout ->
-			target.removeClass "fadeOutLeft animated first"
+			target.removeClass("fadeOutLeft animated first")
 		,500
 
 	$(".homepage .btn-1").on "click",(evt)->
@@ -458,12 +458,12 @@ window.onload = ->
 		$(".infopage").removeClass("fadeInRight zoomIn fadeIn").addClass "fadeOut animated"
 		$(".homepage").addClass("fadeIn animated first")
 		setTimeout ->
-			$(".infopage").removeClass "zoomIn fadeOut animated first"
+			$(".infopage").removeClass("zoomIn fadeOut animated first").hide()
 		,500
 
 	setTimeout ->
 		loadImage()
-	,300
+	,500
 
 loadImage = ->
 	$("[data-src]").each (i)->
@@ -473,7 +473,7 @@ backHome = ->
 	$(".registerpage").removeClass("fadeInLeft zoomIn fadeIn").addClass "fadeOut animated"
 	$(".homepage").addClass("fadeIn animated first")
 	setTimeout ->
-		$(".registerpage").removeClass "zoomIn fadeOut animated first"
+		$(".registerpage").removeClass("zoomIn fadeOut animated first").hide()
 	,500
 
 

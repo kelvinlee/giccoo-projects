@@ -1501,18 +1501,18 @@ window.onload = function() {
   });
   $(".btn-registerpage").on("click", function(evt) {
     var target;
-    target = $(".page.first");
-    $(".page.first").addClass("fadeOutRight animated");
-    $(".registerpage").addClass("fadeInLeft animated first");
+    target = $(".questionpage");
+    $(".questionpage").addClass("fadeOutRight animated");
+    $(".registerpage").addClass("fadeInLeft animated").show();
     return setTimeout(function() {
       return target.removeClass("fadeOutRight animated first");
     }, 500);
   });
   $(".btn-infopage").on("click", function(evt) {
     var target;
-    target = $(".page.first");
-    $(".page.first").addClass("fadeOutLeft animated");
-    $(".infopage").addClass("fadeInRight animated first");
+    target = $(".questionpage");
+    $(".questionpage").removeClass("fadeIn animated").addClass("fadeOutLeft animated");
+    $(".infopage").removeClass("fadeIn fadeInRight").addClass("fadeInRight animated").show();
     return setTimeout(function() {
       return target.removeClass("fadeOutLeft animated first");
     }, 500);
@@ -1550,12 +1550,12 @@ window.onload = function() {
     $(".infopage").removeClass("fadeInRight zoomIn fadeIn").addClass("fadeOut animated");
     $(".homepage").addClass("fadeIn animated first");
     return setTimeout(function() {
-      return $(".infopage").removeClass("zoomIn fadeOut animated first");
+      return $(".infopage").removeClass("zoomIn fadeOut animated first").hide();
     }, 500);
   });
   return setTimeout(function() {
     return loadImage();
-  }, 300);
+  }, 500);
 };
 
 loadImage = function() {
@@ -1568,7 +1568,7 @@ backHome = function() {
   $(".registerpage").removeClass("fadeInLeft zoomIn fadeIn").addClass("fadeOut animated");
   $(".homepage").addClass("fadeIn animated first");
   return setTimeout(function() {
-    return $(".registerpage").removeClass("zoomIn fadeOut animated first");
+    return $(".registerpage").removeClass("zoomIn fadeOut animated first").hide();
   }, 500);
 };
 

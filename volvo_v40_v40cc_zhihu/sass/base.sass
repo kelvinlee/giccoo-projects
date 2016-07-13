@@ -30,6 +30,39 @@ $cdn : "http://localhost:5757/sayno_momo/"
 		opacity: 0.5
 		+transform(translate3d(0,0,0))
 
++keyframes(moveInLeft)
+	0%
+		+transform(translate3d(-100%,0,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(moveOutLeft)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(-100%,0,0))
++keyframes(moveInRight)
+	0%
+		+transform(translate3d(100%,0,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(moveOutRight)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(100%,0,0))
+
+.moveInLeft
+	-webkit-animation-name: moveInLeft
+	animation-name: moveInLeft
+.moveOutLeft
+	-webkit-animation-name: moveOutLeft
+	animation-name: moveOutLeft
+.moveInRight
+	-webkit-animation-name: moveInRight
+	animation-name: moveInRight
+.moveOutRight
+	-webkit-animation-name: moveOutRight
+	animation-name: moveOutRight
 
 // animation, delay, duration
 @for $i from 1 through 30
@@ -49,7 +82,6 @@ $cdn : "http://localhost:5757/sayno_momo/"
 			+animation(second,5s,ease,infinite)
 			transform-origin: center center
 
-
 .main
 	+wh(100%,100%)
 	+posr
@@ -64,7 +96,6 @@ $cdn : "http://localhost:5757/sayno_momo/"
 		+posa
 		+tl
 		z-index: 1009
-
 
 .loading.loaded
 	+large
