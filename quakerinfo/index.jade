@@ -1,0 +1,29 @@
+extends ../libs/jade/layout-clean
+block title
+	| 桂格最赞早范儿菜谱排行
+
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://disk.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css?v=1")
+
+block content
+	//- url = "http://image.giccoo.com/projects/quakerinfo/"
+	- url = "/quakerinfo/"
+	.main
+		img(src="#{url}img/info.jpg")
+		
+
+
+block js
+	- url = "/"
+
+	script.
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
