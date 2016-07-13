@@ -106,7 +106,7 @@ today = new Date();
 
 openTime = 1468825200000;
 
-debug = true;
+debug = false;
 
 if (debug) {
   openTime = 1467356400000;

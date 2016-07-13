@@ -6,7 +6,7 @@
 Store = {}
 today = new Date()
 openTime = 1468825200000
-debug = true
+debug = false
 
 openTime = 1467356400000 if debug 
 
