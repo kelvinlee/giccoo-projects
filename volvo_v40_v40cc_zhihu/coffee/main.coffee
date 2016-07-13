@@ -392,7 +392,7 @@ _type = ["V40","V40 CROSS COUNTRY 越界车"]
 _moving = false
 
 window.onload = ->
-	
+	MK = $("body").width()/$("body").height()
 	if $("body").height() <= 460 or MK > 0.65
 		$("body").addClass "iphone4"
 		
@@ -502,6 +502,7 @@ loadImage = ->
 backHome = ->
 	$(".registerpage").removeClass("fadeInLeft zoomIn fadeIn").addClass "fadeOut animated"
 	$(".homepage").addClass("fadeIn animated first")
+	$(".infopage").removeClass("zoomIn fadeOut animated first").hide()
 	setTimeout ->
 		_moving = false
 		$(".registerpage").removeClass("zoomIn fadeOut animated first").hide()

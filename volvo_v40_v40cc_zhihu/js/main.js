@@ -1488,6 +1488,8 @@ _type = ["V40", "V40 CROSS COUNTRY 越界车"];
 _moving = false;
 
 window.onload = function() {
+  var MK;
+  MK = $("body").width() / $("body").height();
   if ($("body").height() <= 460 || MK > 0.65) {
     $("body").addClass("iphone4");
   }
@@ -1612,6 +1614,7 @@ loadImage = function() {
 backHome = function() {
   $(".registerpage").removeClass("fadeInLeft zoomIn fadeIn").addClass("fadeOut animated");
   $(".homepage").addClass("fadeIn animated first");
+  $(".infopage").removeClass("zoomIn fadeOut animated first").hide();
   return setTimeout(function() {
     _moving = false;
     return $(".registerpage").removeClass("zoomIn fadeOut animated first").hide();
