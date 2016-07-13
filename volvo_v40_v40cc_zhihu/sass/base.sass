@@ -5,10 +5,10 @@
 
 
 
-$debug : false
-$cdn : "http://localhost:5757/sayno_momo/"
+$debug : true
+$cdn : "/volvo_v40_v40cc_zhihu/"
 @if not $debug
-	$cdn : "http://disk.giccoo.com/projects/sayno_momo/"
+	$cdn : "http://disk.giccoo.com/projects/volvo_v40_v40cc_zhihu/"
 
 +keyframes(leftmove)
 	0%
@@ -464,6 +464,8 @@ body
 		+w
 		+h
 		z-index: 1000
+		.text-content
+			+hide
 		.bg
 			+posa
 			+bl
@@ -512,6 +514,8 @@ body
 	+bc(#a1a1a1)
 	.title
 		margin-top: 10%
+		.iphone4 &
+			margin-top: 5%
 
 	// .points
 	// 	+posa
@@ -533,7 +537,8 @@ body
 			+wh(50%,100%)
 
 .registerpage
-	+b("../img/formpage-bg.jpg",no-repeat,center,center,cover)
+	+b($cdn+"img/formpage-bg.jpg",no-repeat,center,center,cover)
+	z-index: 200
 	.title
 		margin-top: 25%
 	.form

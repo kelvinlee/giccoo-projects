@@ -55,18 +55,33 @@ block content
 						|<div class="sub-down"><img src="#{url}img/arrow.png" /></div>	
 						|</yield>
 				.answer.zoomIn.animated.hide
-					.bg
-						img(src="#{url}img/a-4.jpg")
-					.text
-						img(src="#{url}img/a-4-text.png")
-						.btn-registerpage
-						.btn-infopage
+					-for (var i=1;i<=4;i++)
+						.text-content
+							.bg
+								img(data-src="#{url}img/a-#{i}.jpg")
+							.text(class="text-#{i}")
+								img(data-src="#{url}img/a-#{i}-text.png")
+								.btn-registerpage
+								.btn-infopage
+
 			.page.infopage.animated
 				.content
 					.title
 						img(src="#{url}img/infopage-title.png")
-					slider.sliderBox(myid="sliderBox",list="#{url}img/q-1.jpg,#{url}img/q-2.jpg,#{url}img/q-3.jpg,#{url}img/q-4.jpg,#{url}img/q-5.jpg,#{url}img/q-6.jpg",callback="changePoint")
+					slider.sliderBox(myid="sliderBox",repeat="true",list="#{url}img/q-1.jpg,#{url}img/q-2.jpg,#{url}img/q-3.jpg,#{url}img/q-4.jpg,#{url}img/q-5.jpg,#{url}img/q-6.jpg",callback="changePoint")
 						|<yield to="content">
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-1.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-2.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-3.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-4.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-5.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-6.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-1.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-2.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-3.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-4.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-5.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-6.jpg" /></div></div>	
 						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-1.jpg" /></div></div>	
 						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-2.jpg" /></div></div>	
 						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-3.jpg" /></div></div>	

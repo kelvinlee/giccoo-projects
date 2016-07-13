@@ -1555,6 +1555,8 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1000; }
+  .questionpage .answer .text-content {
+    display: none; }
   .questionpage .answer .bg {
     position: absolute;
     bottom: 0px;
@@ -1612,6 +1614,8 @@ body {
   background-color: #a1a1a1; }
   .infopage .title {
     margin-top: 10%; }
+    .iphone4 .infopage .title {
+      margin-top: 5%; }
   .infopage .last-content {
     position: absolute;
     bottom: 2%;
@@ -1634,9 +1638,10 @@ body {
       height: 100%; }
 
 .registerpage {
-  background: url("../img/formpage-bg.jpg") no-repeat center center;
+  background: url("/volvo_v40_v40cc_zhihu/img/formpage-bg.jpg") no-repeat center center;
   background-size: cover;
-  background-color: transparent; }
+  background-color: transparent;
+  z-index: 200; }
   .registerpage .title {
     margin-top: 25%; }
   .registerpage .form {

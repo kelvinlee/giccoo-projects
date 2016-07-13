@@ -389,8 +389,13 @@ _citys["广东"]["清远"].push({code:"QYA",name:"沃尔沃汽车清远南方骏
 _type = ["V40","V40 CROSS COUNTRY 越界车"]
 
 
+_moving = false
+
 window.onload = ->
 	
+	if $("body").height() <= 460 or MK > 0.65
+		$("body").addClass "iphone4"
+		
 	riot.mount("*")
 	
 	$(".left").on "click", moveLeft
@@ -399,65 +404,90 @@ window.onload = ->
 	# $(".right2").on "click", mRight
 
 	$(".btn-answer").on "click", (evt)->
+		return false if _moving
+		_moving = true
 		temp = $(this).attr("rel")
 		console.log temp
-		$(".questionpage .answer .bg img").attr "src","./img/a-"+temp+".jpg"
-		$(".questionpage .answer .text img").attr "src","./img/a-"+temp+"-text.png"
+		# $(".questionpage .answer .bg img").attr "src","./img/a-"+temp+".jpg"
+		$(".questionpage .answer .text-content").hide()
+		$(".questionpage .answer .text-content").eq(temp-1).show()
 		$(".questionpage .answer .text").removeClass "text-1 text-2 text-3 text-3"
 		$(".questionpage .answer .text").addClass "text-"+temp
 		$(".questionpage .answer").removeClass("hide").addClass("fadeIn animated")
+		_moving = false
 
 	$(".btn-registerpage").on "click",(evt)->
+		return false if _moving
+		_moving = true
 		# $(".page").removeClass "first"
 		target = $(".questionpage")
 		$(".questionpage").addClass("fadeOutRight animated")
 		$(".registerpage").addClass("fadeInLeft animated").show()
 		setTimeout ->
+			_moving = false
 			target.removeClass("fadeOutRight animated first")
 		,500
 
 	$(".btn-infopage").on "click",(evt)->
+		return false if _moving
+		_moving = true
 		target = $(".questionpage")
 		$(".questionpage").removeClass("fadeIn animated").addClass("fadeOutLeft animated")
 		$(".infopage").removeClass("fadeIn fadeInRight").addClass("fadeInRight animated").show()
 		setTimeout ->
+			_moving = false
 			target.removeClass("fadeOutLeft animated first")
 		,500
 
 	$(".homepage .btn-1").on "click",(evt)->
+		return false if _moving
+		_moving = true
 		$(".homepage").removeClass("fadeIn").addClass "zoomOut animated"
 		$(".startpage").addClass("zoomIn animated first")
 		setTimeout ->
+			_moving = false
 			$(".homepage").removeClass "zoomOut animated first"
 		,500
 
 	$(".homepage .btn-2").on "click",(evt)->
+		return false if _moving
+		_moving = true
 		$(".homepage").removeClass("fadeIn").addClass "zoomOut animated"
-		$(".infopage").addClass("zoomIn animated first")
+		$(".infopage").addClass("zoomIn animated").show()
 		setTimeout ->
+			_moving = false
 			$(".homepage").removeClass "zoomOut animated first"
 		,500
 
 	$(".homepage .btn-3").on "click",(evt)->
+		return false if _moving
+		_moving = true
 		$(".homepage").removeClass("fadeIn").addClass "zoomOut animated"
 		$(".registerpage").addClass("zoomIn animated first")
 		setTimeout ->
+			_moving = false
 			$(".homepage").removeClass "zoomOut animated first"
 		,500
 		
 	$(".startpage .btn.start").on "click",(evt)->
+		return false if _moving
+		_moving = true
 		$(".startpage").removeClass("zoomIn").addClass "fadeOut animated"
 		$(".questionpage").addClass "fadeIn animated first"
 		$(".questionpage .answer").removeClass("zoomIn animated").addClass "hide"
 		setTimeout ->
+			_moving = false
 			$(".startpage").removeClass "fadeOut animated first"
 		,500
 
 	$(".btn-homepage").on "click",(evt)->
+		return false if _moving
+		_moving = true
 		# first
 		$(".infopage").removeClass("fadeInRight zoomIn fadeIn").addClass "fadeOut animated"
 		$(".homepage").addClass("fadeIn animated first")
 		setTimeout ->
+			_moving = false
 			$(".infopage").removeClass("zoomIn fadeOut animated first").hide()
 		,500
 
@@ -473,6 +503,7 @@ backHome = ->
 	$(".registerpage").removeClass("fadeInLeft zoomIn fadeIn").addClass "fadeOut animated"
 	$(".homepage").addClass("fadeIn animated first")
 	setTimeout ->
+		_moving = false
 		$(".registerpage").removeClass("zoomIn fadeOut animated first").hide()
 	,500
 
