@@ -1535,10 +1535,32 @@ body {
   .homepage .btns .btn {
     margin: 5% 0; }
 
+.startpage .bg.one {
+  background: url("/volvo_v40_v40cc_zhihu/img/startpage-bg-one.jpg") no-repeat center bottom;
+  background-size: cover;
+  background-color: transparent;
+  width: 100%;
+  height: 100%; }
+.startpage .bg.momo {
+  background: url("/volvo_v40_v40cc_zhihu/img/startpage-bg-momo.jpg") no-repeat center bottom;
+  background-size: cover;
+  background-color: transparent;
+  width: 100%;
+  height: 100%; }
+.startpage .bg.weipiaoer {
+  background: url("/volvo_v40_v40cc_zhihu/img/startpage-bg-weipiaoer.jpg") no-repeat center bottom;
+  background-size: cover;
+  background-color: transparent;
+  width: 100%;
+  height: 100%; }
 .startpage .text {
   margin-top: 35%; }
   .iphone4 .startpage .text {
     margin-top: 25%; }
+  .startpage .text.momo {
+    margin-top: 40%; }
+    .iphone4 .startpage .text.momo {
+      margin-top: 40%; }
 .startpage .btn {
   margin-top: 5%; }
 

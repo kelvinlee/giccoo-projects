@@ -443,10 +443,27 @@ body
 			+m(5% 0)
 
 .startpage
+	.bg
+		&.one
+			+b($cdn+"img/startpage-bg-one.jpg",no-repeat,center,bottom,cover)
+			+w
+			+h
+		&.momo
+			+b($cdn+"img/startpage-bg-momo.jpg",no-repeat,center,bottom,cover)
+			+w
+			+h
+		&.weipiaoer
+			+b($cdn+"img/startpage-bg-weipiaoer.jpg",no-repeat,center,bottom,cover)
+			+w
+			+h
 	.text
 		margin-top: 35%
 		.iphone4 &
 			margin-top: 25%
+		&.momo
+			margin-top: 40%
+			.iphone4 &
+				margin-top: 40%
 	.btn
 		margin-top: 5%
 

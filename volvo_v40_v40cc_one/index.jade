@@ -1,0 +1,134 @@
+extends ../libs/jade/layout-clean
+block title
+	| 沃尔沃2017款V40&V40 Cross Country 越界车
+block css
+	- url = "/volvo_v40_v40cc_zhihu/"
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://disk.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="#{url}css/base.css?v=1")
+
+block content
+	// - url = "http://image.giccoo.com/projects/volvo_v40_v40cc_zhihu/"
+	- url = "/volvo_v40_v40cc_zhihu/"
+	.main
+		.logo
+			img(src="#{url}img/logo.png")
+		.pages
+			.page.homepage.fadeIn.animated.first
+				.bg
+					img(src="#{url}img/homepage-bg.jpg")
+				.content
+					.text
+						img(src="#{url}img/homepage-text.png")
+					.btns
+						.btn.btn-1.fadeInUp.animated.delay-5
+							img(src="#{url}img/btn-1.png")
+						.btn.btn-2.fadeInUp.animated.delay-7
+							img(src="#{url}img/btn-2.png")
+						.btn.btn-3.fadeInUp.animated.delay-9
+							img(src="#{url}img/btn-3.png")
+			.page.startpage
+				.bg.one.bottom
+					//- img(src="#{url}img/startpage-bg.jpg")
+				.content
+					.text
+						img(src="#{url}img/startpage-text-one.png")
+					.btn.start
+						img(src="#{url}img/btn-start.png")
+			.page.questionpage
+				.content
+					slider.sliders(repeat="true",list="#{url}img/q-1.jpg,#{url}img/q-2.jpg,#{url}img/q-3.jpg,#{url}img/q-4.jpg")
+						|<yield to="content">
+						|<div class="slide"><div class="bg"><div class="btn-answer" rel="1"></div><img data-src="#{url}img/q-1.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><div class="btn-answer" rel="2"></div><img data-src="#{url}img/q-2.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><div class="btn-answer" rel="3"></div><img data-src="#{url}img/q-3.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><div class="btn-answer" rel="4"></div><img data-src="#{url}img/q-4.jpg" /></div></div>
+						|<div class="slide"><div class="bg"><div class="btn-answer" rel="1"></div><img data-src="#{url}img/q-1.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><div class="btn-answer" rel="2"></div><img data-src="#{url}img/q-2.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><div class="btn-answer" rel="3"></div><img data-src="#{url}img/q-3.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><div class="btn-answer" rel="4"></div><img data-src="#{url}img/q-4.jpg" /></div></div>
+						|<div class="slide"><div class="bg"><div class="btn-answer" rel="1"></div><img data-src="#{url}img/q-1.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><div class="btn-answer" rel="2"></div><img data-src="#{url}img/q-2.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><div class="btn-answer" rel="3"></div><img data-src="#{url}img/q-3.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><div class="btn-answer" rel="4"></div><img data-src="#{url}img/q-4.jpg" /></div></div>
+						|</yield>
+						|<yield to="sub">
+						|<div class="sub-down"><img src="#{url}img/arrow.png" /></div>	
+						|</yield>
+				.answer.zoomIn.animated.hide
+					-for (var i=1;i<=4;i++)
+						.text-content
+							.bg
+								img(data-src="#{url}img/a-#{i}.jpg")
+							.text(class="text-#{i}")
+								img(data-src="#{url}img/a-#{i}-text.png")
+								.btn-registerpage
+								.btn-infopage
+
+			.page.infopage.animated
+				.content
+					.title
+						img(src="#{url}img/infopage-title.png")
+					slider.sliderBox(myid="sliderBox",repeat="true",list="#{url}img/q-1.jpg,#{url}img/q-2.jpg,#{url}img/q-3.jpg,#{url}img/q-4.jpg,#{url}img/q-5.jpg,#{url}img/q-6.jpg",callback="changePoint")
+						|<yield to="content">
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-1.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-2.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-3.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-4.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-5.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-6.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-1.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-2.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-3.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-4.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-5.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-6.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-1.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-2.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-3.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-4.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-5.jpg" /></div></div>	
+						|<div class="slide"><div class="bg"><img data-src="#{url}img/info-6.jpg" /></div></div>	
+						|</yield>
+						|<yield to="sub">
+						|<div class="left"><img src="#{url}img/left.png" /></div>	
+						|<div class="right"><img src="#{url}img/left.png" /></div>	
+						|</yield>
+					.last-content
+						.points
+							span.on
+							span
+							span
+							span
+							span
+							span
+						.btns
+							.bg
+								img(src="#{url}img/back-form.png")
+							.btn-homepage
+							.btn-registerpage
+			.page.registerpage
+				.content
+					.title
+						img(src="#{url}img/formpage-title.png")
+					register.form(action="http://api.giccoo.com/volvo_v40_v40cc_one/insert")
+
+
+
+block js
+	- url = "/volvo_v40_v40cc_zhihu/"
+	script(src="http://disk.giccoo.com/projects/libs/js/min/Zepto.min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="http://disk.giccoo.com/projects/jaguar/js/cityData-min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/riot.min.js")
+	script(src="#{url}js/tags.js?v=1")
+	script(src="#{url}js/main.js?v=1")
+
+	script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
