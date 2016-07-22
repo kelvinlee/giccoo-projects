@@ -137,17 +137,40 @@ this.submit = function() {
     SendNote('手机号码不能为空');
     return false;
   }
-  $.post(opts.action, data, function(msg) {
-    if (msg.recode === 200) {
-      // SendNote('注册成功');
-      // setTimeout(function() {
-        // return backHome();
-      // }, 1500);
-      backHome();
-    } else {
-      SendNote(msg.reason);
+  // $.post(opts.action, data, function(msg) {
+  //   if (msg.recode === 200) {
+  //     // SendNote('注册成功');
+  //     // setTimeout(function() {
+  //       // return backHome();
+  //     // }, 1500);
+  //     backHome();
+  //   } else {
+  //     SendNote(msg.reason);
+  //   }
+  // });
+  var JSONDATA = {
+    openid: new Date().getTime()+""+(parseInt(Math.random()*900000)+100000),
+    activeid: "20160722001",
+    content: JSON.stringify(data),
+    newDecrypt: "2",
+    callback: "jsoncallback"
+  }
+  $.ajax({
+    url: "http://api.biz.wepiao.com/common/saveactivityuserinfo",
+    type: "GET",
+    dataType: 'jsonp',
+    jsonp: 'jsoncallback',
+    data: JSONDATA,
+    success: function(msg) {
+      if (msg.apicode == 10000) {
+        // alert("注册成功")
+        // window.location.href = "http://b.wepiao.com/hongbao/index.html?pid=d84931112673c317&channelid=3&chid=100";
+        backHome();
+      }else{
+        SendNote(msg.data.msg)
+      }
     }
-  });
+  })
   return false;
 };
 }, '{ }');

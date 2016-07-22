@@ -1545,7 +1545,7 @@ window.onload = function() {
     }
     _moving = true;
     $(".homepage").removeClass("fadeIn").addClass("zoomOut animated");
-    $(".startpage").addClass("zoomIn animated first");
+    $(".startpage").removeClass("zoomOut").addClass("zoomIn animated first");
     return setTimeout(function() {
       _moving = false;
       return $(".homepage").removeClass("zoomOut animated first");
@@ -1586,6 +1586,18 @@ window.onload = function() {
     return setTimeout(function() {
       _moving = false;
       return $(".startpage").removeClass("fadeOut animated first");
+    }, 500);
+  });
+  $(".startpage .btn.back-home").on("click", function(evt) {
+    if (_moving) {
+      return false;
+    }
+    _moving = true;
+    $(".homepage").removeClass("fadeIn zoomOut").addClass("fadeIn animated first");
+    $(".startpage").removeClass("zoomIn").addClass("zoomOut animated");
+    return setTimeout(function() {
+      _moving = false;
+      return $(".startpage").removeClass("zoomIn animated first");
     }, 500);
   });
   $(".btn-homepage").on("click", function(evt) {
@@ -1699,3 +1711,12 @@ moveRight = function() {
   }
   return sliderBox.setNumber(tabId);
 };
+
+var jsoncallback = function(msg) {
+  console.log(msg);
+  if (msg.apicode == 10000) {
+    backHome();
+  }else{
+    SendNote(msg.data.msg);
+  }
+}
