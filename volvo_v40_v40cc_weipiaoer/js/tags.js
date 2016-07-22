@@ -139,10 +139,11 @@ this.submit = function() {
   }
   $.post(opts.action, data, function(msg) {
     if (msg.recode === 200) {
-      SendNote('注册成功');
-      setTimeout(function() {
-        return backHome();
-      }, 1500);
+      // SendNote('注册成功');
+      // setTimeout(function() {
+        // return backHome();
+      // }, 1500);
+      backHome();
     } else {
       SendNote(msg.reason);
     }
