@@ -2,14 +2,14 @@ extends ../libs/jade/layout-clean
 block title
 	| 沃尔沃2017款V40&V40 Cross Country 越界车
 block css
-	- url = "/volvo_v40_v40cc_zhihu/"
+	- url = "./"
 	meta(name="author",content="m.giccoo.com")
 	link(rel="stylesheet",href="http://disk.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
 	link(rel="stylesheet",href="#{url}css/base.css?v=1")
 
 block content
 	// - url = "http://image.giccoo.com/projects/volvo_v40_v40cc_zhihu/"
-	- url = "/volvo_v40_v40cc_zhihu/"
+	- url = ""
 	.main
 		.logo
 			img(src="#{url}img/logo.png")
@@ -27,6 +27,10 @@ block content
 							img(src="#{url}img/btn-2.png")
 						.btn.btn-3.fadeInUp.animated.delay-9
 							img(src="#{url}img/btn-3.png")
+							.icon-weipiaoer.tada.animated.infinite.duration-10.delay-12
+								img(src="#{url}img/icon-weipiaoer.png")
+					.bottom
+						img(src="#{url}img/homepage-bottom.png")
 			.page.startpage
 				.bg.weipiaoer.bottom
 					//- img(src="#{url}img/startpage-bg.jpg")
@@ -112,23 +116,20 @@ block content
 					.title
 						img(src="#{url}img/formpage-title.png")
 					register.form(action="http://api.giccoo.com/volvo_v40_v40cc_weipiaoer/insert")
+					p.note-text *填写试驾信息领取红包
 
+		.pop.hide.fadeIn.animated
+			.body
+				p 恭喜你获得抽取红包的资格
+				a(href="http://redbox.wepiao.com/index.html?pid=704ab684b5bae2b0&channelid=3&chid=100") 点击抽取红包
 
 
 block js
-	- url = "/volvo_v40_v40cc_zhihu/"
-	script(src="http://disk.giccoo.com/projects/libs/js/min/Zepto.min.js")
-	script(src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	- url = "./"
+	script(src="#{url}js/Zepto.min.js")
+	script(src="#{url}js/fastclick.min.js")
 	//- script(src="http://disk.giccoo.com/projects/jaguar/js/cityData-min.js")
-	script(src="http://disk.giccoo.com/projects/libs/js/min/riot.min.js")
+	script(src="#{url}js/riot.min.js")
 	script(src="#{url}js/tags.js?v=1")
 	script(src="#{url}js/main.js?v=1")
-
-	script.
-		var _hmt = _hmt || [];
-		(function() {
-			var hm = document.createElement("script");
-			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
-			var s = document.getElementsByTagName("script")[0]; 
-			s.parentNode.insertBefore(hm, s);
-		})();
+		

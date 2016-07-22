@@ -1,0 +1,608 @@
+@import sass/base
+@import ../../libs/sass/loading
+@import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+
+
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects/volvo_v40_v40cc_zhihu/"
+
++keyframes(leftmove)
+	0%
+		+transform(translate3d(0%,0,0))
+	100%
+		+transform(translate3d(-100%,0,0))
++keyframes(showline)
+	0%
+		+w(0)
+	100%
+		+w(96%)
++keyframes(nextpoint)
+	0%
+		opacity: 0.5
+		+transform(translate3d(0,-100%,0))
+	10%
+		opacity: 1
+	100%
+		opacity: 0.5
+		+transform(translate3d(0,0,0))
+
++keyframes(moveInLeft)
+	0%
+		+transform(translate3d(-100%,0,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(moveOutLeft)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(-100%,0,0))
++keyframes(moveInRight)
+	0%
+		+transform(translate3d(100%,0,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(moveOutRight)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(100%,0,0))
+
+.moveInLeft
+	-webkit-animation-name: moveInLeft
+	animation-name: moveInLeft
+.moveOutLeft
+	-webkit-animation-name: moveOutLeft
+	animation-name: moveOutLeft
+.moveInRight
+	-webkit-animation-name: moveInRight
+	animation-name: moveInRight
+.moveOutRight
+	-webkit-animation-name: moveOutRight
+	animation-name: moveOutRight
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
+
+.main
+	+wh(100%,100%)
+	+posr
+	+bc(#000)
+	// +posf
+	// min-height: 410px
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+	.logo
+		+posa
+		+tl
+		z-index: 1009
+
+.loading.loaded
+	+large
+		+hide
+
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	+show-inline
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+iw(600)
+	+m
+	margin-top: -8%
+	.share-icon
+		+show-inline
+		+w(25%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		
+html,body
+	+w
+	+h
+	// +overhide
+
+body
+	// +b("http://i3.tietuku.com/1fcc3041ce5a552f.jpg",no-repeat,center,center,cover)
+	color: #fff
+	+bc(#fff)
+
+// .loading.loaded
+// 	+hide
+.loading
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+bc(transparent)
+	.new-load
+		+posa
+		+tl(50%,50%)
+		+w
+		+text-center
+		// +p(100% 0 0 0)
+		+transform(translate3d(-50%,-50%,0))
+		.load-item
+			+iw(230)
+			+posr
+			// > img
+				// +animation(rubberBand,2s,ease,infinite)
+			.load-item-note1
+				+posa
+				+bl(26%,27.5%)
+				+w(45%)
+				+h(5%)
+				+tran($time: 100ms)
+				overflow: hidden
+				.load-move
+					+animation(leftmove,2s,linear,infinite)
+				img
+					+w(180px)
+					max-width: 180px
+					
+			.load-item-note2
+				+posa
+				+tr
+				+w
+				
+		.load-progress
+			+font-size(0.8rem)
+			color: #fff
+			+p(2% 0 0 0)
+			+posa
+			+tl(50%,50%)
+			+transform(translate3d(-50%,-50%,0))
+
+.pages
+	.page
+		> .bg
+			+posa
+			+tl
+			&.bottom
+				+bl
+				top: auto
+		.content
+			+posa
+			+tl
+			+w
+			+h
+			z-index: 10
+
+.hide
+	display: none !important
+
+.note
+	+posa
+	+tl
+	+br
+	+wh(100%,100%)
+	z-index: 9999
+	.note-box
+		+text-center
+		+posa
+		+tl(50%)
+		+w(100%)
+		// z-index: 9999
+		.note-content
+			display: inline-block
+			padding: 10px 11px 10px 10px
+			background-color: rgba(0,0,0,0.7)
+			color: #fff
+			border-radius: 5px
+			max-width: 90%
+			+box
+		.icon-form,.note-text
+			display: inline-block
+			vertical-align: top
+			line-height: 25px
+		.icon-form
+			+wh(25px,25px)
+		.note-text
+			+font-size(0.8rem)
+			letter-spacing: 2px
+
+.pop
+	+posa
+	+tl
+	+w
+	+h
+	+bc(rgba(0,0,0,0.7))
+	z-index: 1001
+	.body
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+		+w(70%)
+		+p(1rem 1rem 2.5rem 1rem)
+		+bc(#fff)
+		+overhide
+		color: #000
+		border-radius: 1rem
+		p
+			+text-center
+		a
+			+posa
+			+bl
+			+w
+			+text-center
+			line-height: 2rem
+			text-decoration: none
+			+bc(#eee)
+			color: #ff7a39
+
+.loader
+	.more
+		+posa
+		+tl(60%,50%)
+		+w(35%)
+		margin-left: -35%/2
+
+.points
+	+w
+	+text-center
+	// +posa
+	// +bl(15%,0)
+	margin-top: 1rem
+	span
+		+show-inline
+		+wh(0.5rem,0.5rem)
+		+m(0 0.2rem)
+		+bc(#ffffff)
+		border-radius: 50%
+		&.on
+			+bc(#464646)
+
+.form
+	+w(100%)
+	+m
+	+p(1.2rem 0)
+	$labelColor: #fff
+	$borderColor: #252525
+	$inputColor: #000
+	.form-grounp
+		$h: 1.4rem
+		vertical-align: top
+		font-size: 0
+		> label
+			+wh(32%,$h)
+			+show-inline
+			+font-size(0.8rem)
+			+m(0.2rem 0)
+			line-height: $h
+			vertical-align: top
+			color: $labelColor
+		> input
+			+wh(67%,$h)
+			+font-size(0.8rem)
+			+bc(#fff)
+			+show-inline
+			+box
+			+m(0.2rem 0)
+			+p(0.2rem)
+			line-height: $h
+			vertical-align: top
+			border: solid 1px $borderColor
+			color: $inputColor
+			outline: none
+			border-radius: 0
+		.comb
+			+wh(68%,$h)
+			+font-size(1rem)
+			+show-inline
+			+m(0.2rem 0)
+			color: $inputColor
+			white-space: nowrap
+			label
+				+wh(30%,$h)
+				+show-inline
+				+font-size(0.8rem)
+				+text-center
+				color: $labelColor
+			input
+				+show-inline
+				+w(1rem)
+			.select
+				+w(48.5%)
+				+m
+		.select
+			+posr
+			+wh(68%,$h)
+			+show-inline
+			+bc(#fff)
+			+m(0.2rem 0)
+			+box
+			+p(0 0.2rem)
+			+font-size(0.8rem)
+			color: $inputColor
+			border: solid 1px $borderColor
+			border-radius: 0
+			&:after
+				$size: 0.5rem
+				content: " "
+				+posa
+				+tr(50%,$size)
+				+transform(translate3d(0,-50%,0))
+				z-index: 99
+				border-left: $size/2 solid transparent
+				border-right: $size/2 solid transparent
+				border-top: $size solid $borderColor
+			span
+				text-overflow: ellipsis
+				+show-inline
+				+wh(100%,$h)
+				+overhide
+				white-space: nowrap
+				overflow: hidden
+				text-overflow: ellipsis
+			select
+				+posa
+				+tl
+				+br
+				+w
+				+h
+				opacity: 0
+
+	.form-btn
+		+text-center
+		margin-top: 0.8rem
+		button
+			+w(40%)
+			+m
+			+p(2px 0)
+			+bc(transparent)
+			border: none
+
+.sliders
+	+posr
+	+w
+	+h
+	+overhide
+	+show
+	font-size: 0
+	.sub-down
+		+posa
+		+bl
+		z-index: 1009
+	.slider
+		+w
+		+h
+		.slide
+			+h
+			+posr
+			&:nth-child(1)
+				+bc(#6accda)
+			&:nth-child(2)
+				+bc(#2c1e12)
+			&:nth-child(3)
+				+bc(#749bba)
+			&:nth-child(4)
+				+bc(#000)
+			&:nth-child(5)
+				+bc(#6accda)
+			&:nth-child(6)
+				+bc(#2c1e12)
+			&:nth-child(7)
+				+bc(#749bba)
+			&:nth-child(8)
+				+bc(#000)
+			&:nth-child(9)
+				+bc(#6accda)
+			&:nth-child(10)
+				+bc(#2c1e12)
+			&:nth-child(11)
+				+bc(#749bba)
+			&:nth-child(12)
+				+bc(#000)
+			.bg
+				+posa
+				+bl
+				.iphone4 &
+					+tl
+					bottom: auto
+
+.sliderBox
+	+posr
+	+w
+	+h
+	+overhide
+	+show
+	font-size: 0
+	.left
+		+posa
+		+tl(18%,0)
+		+iw(46)
+		font-size: 0
+		+transform(translate3d(0,-50%,0))
+		z-index: 101
+	.right
+		+posa
+		+tr(18%,0)
+		+iw(46)
+		font-size: 0
+		+transform(translate3d(0,-50%,0) scale(-1,1))
+		z-index: 101
+	.slider
+		+w
+		+h
+
+.homepage
+	.text
+		margin-top: 25%
+	.btns
+		+posa
+		+bl(5%,0)
+		.btn
+			+m(5% 0)
+			.icon-weipiaoer
+				+posa
+				+tl(50%,32%)
+				+w(1.4rem)
+				// +transform(translate3d(0,-50%,0))
+				margin-top: -0.8rem
+	.bottom
+		+posa
+		+bl
+		z-index: -1
+		font-size: 0
+
+.startpage
+	.bg
+		&.one
+			+b($cdn+"img/startpage-bg-one.jpg",no-repeat,center,bottom,cover)
+			+w
+			+h
+		&.momo
+			+b($cdn+"img/startpage-bg-momo.jpg",no-repeat,center,bottom,cover)
+			+w
+			+h
+		&.weipiaoer
+			+b($cdn+"img/startpage-bg-weipiaoer.jpg",no-repeat,center,bottom,cover)
+			+w
+			+h
+	.text
+		margin-top: 35%
+		.iphone4 &
+			margin-top: 25%
+		&.momo
+			margin-top: 40%
+			.iphone4 &
+				margin-top: 40%
+	.btn
+		margin-top: 5%
+
+.questionpage
+	.sliders
+		.bg
+			.btn-answer
+				+posa
+				+tl(20%,10%)
+				+wh(60%,26%)
+
+	.answer
+		+posa
+		+tl
+		+w
+		+h
+		z-index: 1000
+		.text-content
+			+hide
+		.bg
+			+posa
+			+bl
+			font-size: 0
+		.text
+			+posa
+			+tl(0)
+			z-index: 200
+			.btn-registerpage
+				+posa
+				+bl
+				+wh(50%,35%)
+				z-index: 101
+			.btn-infopage
+				+posa
+				+br
+				+wh(50%,35%)
+				z-index: 101
+			&.text-1
+				+tl(20%)
+				.btn-registerpage
+					+w(70%)
+				.btn-infopage
+					+w(30%)
+			&.text-2
+				+tl(12%)
+				.btn-registerpage
+					+w(68%)
+				.btn-infopage
+					+w(32%)
+			&.text-3
+				+tl(15%)
+				.btn-registerpage
+					+w(33%)
+				.btn-infopage
+					+w(67%)
+			&.text-4
+				+tl(12%)
+				.btn-registerpage
+					+w(32%)
+				.btn-infopage
+					+w(68%)
+
+.infopage
+
+	+bc(#a1a1a1)
+	.title
+		margin-top: 10%
+		.iphone4 &
+			margin-top: 5%
+
+	// .points
+	// 	+posa
+	// 	+bl(14%)
+	.last-content
+		+posa
+		+bl(2%)
+	.points
+		margin-bottom: 4%
+	.btns
+		+posr
+		.btn-homepage
+			+posa
+			+tl
+			+wh(50%,100%)
+		.btn-registerpage
+			+posa
+			+tr
+			+wh(50%,100%)
+
+.registerpage
+	+b($cdn+"img/formpage-bg.jpg",no-repeat,center,center,cover)
+	z-index: 200
+	.title
+		margin-top: 25%
+	.form
+		+w(80%)
+		+m
+	.note-text
+		+text-center
+		+m
+		+font-size(0.8rem)
+		margin-top: -0.8rem
+
+
+
+
+
+
+
