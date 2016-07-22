@@ -148,13 +148,19 @@ this.submit = function() {
   //     SendNote(msg.reason);
   //   }
   // });
+  text = []
+  for (var i=0;i<data.length;i++) {
+    text.push(data[i].value)
+  }
   var JSONDATA = {
     openid: new Date().getTime()+""+(parseInt(Math.random()*900000)+100000),
     activeid: "20160722001",
-    content: JSON.stringify(data),
+    content: text.join(",")+"",
     newDecrypt: "2",
     callback: "jsoncallback"
   }
+  // console.log(text.join(","),JSONDATA)
+  // return false
   $.ajax({
     url: "http://api.biz.wepiao.com/common/saveactivityuserinfo",
     type: "GET",
