@@ -68,7 +68,7 @@ block content
 								img(data-src="#{url}img/a-#{i}.jpg")
 							.text(class="text-#{i}")
 								img(data-src="#{url}img/a-#{i}-text.png")
-								.btn-registerpage
+								.btn-registerpage(page="startpage")
 								.btn-infopage
 
 			.page.infopage.animated
@@ -112,12 +112,14 @@ block content
 							.bg
 								img(src="#{url}img/back-form.png")
 							.btn-homepage
-							.btn-registerpage
+							.btn-registerpage(page="infopage")
 			.page.registerpage
 				.content
 					.title
 						img(src="#{url}img/formpage-title.png")
 					register.form(action="http://api.giccoo.com/volvo_v40_v40cc_weipiaoer/insert")
+					.btn.btn-back
+						img(src="#{url}img/btn-back.png")
 					p.note-text *填写试驾信息领取红包
 
 		.pop.hide.fadeIn.animated
@@ -129,6 +131,8 @@ block content
 block js
 	- url = "./"
 	script(src="#{url}js/Zepto.min.js")
+	script(src="#{url}js/jweixin-1.0.0.js")
+	script(src="#{url}js/wxjs_verif.js")
 	script(src="#{url}js/fastclick.min.js")
 	//- script(src="http://disk.giccoo.com/projects/jaguar/js/cityData-min.js")
 	script(src="#{url}js/riot.min.js")

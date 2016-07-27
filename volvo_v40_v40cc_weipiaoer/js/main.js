@@ -1487,6 +1487,8 @@ _type = ["V40", "V40 CROSS COUNTRY 越界车"];
 
 _moving = false;
 
+var lastPage = "homepage";
+
 window.onload = function() {
   var MK;
   MK = $("body").width() / $("body").height();
@@ -1509,6 +1511,7 @@ window.onload = function() {
     $(".questionpage .answer .text").removeClass("text-1 text-2 text-3 text-3");
     $(".questionpage .answer .text").addClass("text-" + temp);
     $(".questionpage .answer").removeClass("hide").addClass("fadeIn animated");
+    updateShare(temp);
     return _moving = false;
   });
   $(".btn-registerpage").on("click", function(evt) {
@@ -1517,12 +1520,14 @@ window.onload = function() {
       return false;
     }
     _moving = true;
+    lastPage = $(this).attr("page");
     target = $(".questionpage");
     $(".questionpage").addClass("fadeOutRight animated");
     $(".registerpage").addClass("fadeInLeft animated").show();
     return setTimeout(function() {
       _moving = false;
-      return target.removeClass("fadeOutRight animated first");
+      $(".infopage").removeClass("zoomIn animated first").hide();
+      return target.removeClass("fadeOutRight fadeIn animated first");
     }, 500);
   });
   $(".btn-infopage").on("click", function(evt) {
@@ -1536,7 +1541,7 @@ window.onload = function() {
     $(".infopage").removeClass("fadeIn fadeInRight").addClass("fadeInRight animated").show();
     return setTimeout(function() {
       _moving = false;
-      return target.removeClass("fadeOutLeft animated first");
+      return target.removeClass("fadeOutLeft animated first").hide();
     }, 500);
   });
   $(".homepage .btn-1").on("click", function(evt) {
@@ -1568,8 +1573,9 @@ window.onload = function() {
       return false;
     }
     _moving = true;
+    lastPage = "homepage";
     $(".homepage").removeClass("fadeIn").addClass("zoomOut animated");
-    $(".registerpage").addClass("zoomIn animated first");
+    $(".registerpage").addClass("zoomIn animated first").show();
     return setTimeout(function() {
       _moving = false;
       return $(".homepage").removeClass("zoomOut animated first");
@@ -1581,7 +1587,7 @@ window.onload = function() {
     }
     _moving = true;
     $(".startpage").removeClass("zoomIn").addClass("fadeOut animated");
-    $(".questionpage").addClass("fadeIn animated first");
+    $(".questionpage").addClass("fadeIn animated first").show();
     $(".questionpage .answer").removeClass("zoomIn animated").addClass("hide");
     return setTimeout(function() {
       _moving = false;
@@ -1601,17 +1607,43 @@ window.onload = function() {
     }, 500);
   });
   $(".btn-homepage").on("click", function(evt) {
+    // if (_moving) {
+    //   return false;
+    // }
+    // _moving = true;
+    // $(".infopage").removeClass("fadeInRight zoomIn fadeIn").addClass("fadeOut animated");
+    // $(".homepage").addClass("fadeIn animated first");
+    // return setTimeout(function() {
+    //   _moving = false;
+    //   return $(".infopage").removeClass("zoomIn fadeOut animated first").hide();
+    // }, 500);
     if (_moving) {
       return false;
     }
     _moving = true;
     $(".infopage").removeClass("fadeInRight zoomIn fadeIn").addClass("fadeOut animated");
-    $(".homepage").addClass("fadeIn animated first");
+    $(".startpage").removeClass("zoomOut").addClass("zoomIn animated first");
     return setTimeout(function() {
       _moving = false;
       return $(".infopage").removeClass("zoomIn fadeOut animated first").hide();
     }, 500);
   });
+  $(".btn-back").on("click", function(evt) {
+    console.log(lastPage);
+    if (_moving) {
+      return false;
+    }
+    if (lastPage == "infopage") {
+      $("."+lastPage).show()
+    }
+    $("."+lastPage).removeClass("fadeIn zoomIn zoomOut fadeInRight fadeInLeft").addClass("fadeIn animated first");
+    $(".registerpage").removeClass("fadeIn fadeInLeft zoomIn").addClass("fadeOut animated first");
+    return setTimeout(function() {
+      _moving = false;
+      return $(".registerpage").removeClass("fadeOut animated first").hide();
+    }, 500);
+  });
+
   return setTimeout(function() {
     return loadImage();
   }, 500);
@@ -1719,4 +1751,42 @@ var jsoncallback = function(msg) {
   }else{
     SendNote(msg.data.msg);
   }
+}
+
+function updateShare(temp) {
+   var share_param = {
+    title:'复古与时尚的融合：我是风尚的宠儿，复古是我的标签',
+    desc:'亚马逊蓝的V40是我前行的最佳Partner',
+    link: location.href,
+    imgUrl:'http://test.wexin.wepiao.com/20160719/vivo/img/share.jpg',
+    type:'',
+    dataUrl:'',
+    calback:function(){
+      console.log("分享回调");
+    }
+  };
+  console.log(temp);
+  if (temp == 1) {
+    share_param.title = '复古与时尚的融合：我是风尚的宠儿，复古是我的标签';
+    share_param.desc = '亚马逊蓝的V40是我前行的最佳Partner';
+    share_param.imgUrl = 'http://test.wexin.wepiao.com/20160719/volvo/img/share-1.jpg';
+  }
+  if (temp == 2) {
+    share_param.title = '品质生活的真谛：我的生活充满精致，优雅是我的DNA';
+    share_param.desc = '塞浦路斯铜的V40 Cross Country是我前行的最佳Partner';
+    share_param.imgUrl = 'http://test.wexin.wepiao.com/20160719/volvo/img/share-2.jpg';
+  }
+  if (temp == 3) {
+    share_param.title = '释放自由的灵魂：我总是无惧挑战，自由奔放是我的DNA';
+    share_param.desc = '丹宁蓝的V40是我前行的最佳Partner';
+    share_param.imgUrl = 'http://test.wexin.wepiao.com/20160719/volvo/img/share-3.jpg';
+  }
+  if (temp == 4) {
+    share_param.title = '开启勇者的时代：我是天生的冒险家，不断征服是我的DNA';
+    share_param.desc = '耀目沙的V40 Cross Country是我前行的最佳Partner';
+    share_param.imgUrl = 'http://test.wexin.wepiao.com/20160719/volvo/img/share-4.jpg';
+  }
+  console.log(share_param);
+  share(share_param);
+
 }

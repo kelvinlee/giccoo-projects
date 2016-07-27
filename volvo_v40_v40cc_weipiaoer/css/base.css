@@ -1703,7 +1703,7 @@ body {
   background-color: transparent;
   z-index: 200; }
   .registerpage .title {
-    margin-top: 25%; }
+    margin-top: 22%; }
   .registerpage .form {
     width: 80%;
     margin: 0 auto; }
@@ -1711,7 +1711,7 @@ body {
     text-align: center;
     margin: 0 auto;
     font-size: 0.8rem;
-    margin-top: -0.8rem; }
+    margin-top: 0.4rem; }
     @media only screen and (min-width: 321px) and (max-width: 399px) {
       .registerpage .note-text {
         font-size: 0.88rem; } }
@@ -1724,3 +1724,7 @@ body {
     @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
       .registerpage .note-text {
         font-size: 0.96rem; } }
+  .registerpage .btn-back {
+    width: 32%;
+    margin: 0 auto;
+    margin-top: -0.8rem; }
