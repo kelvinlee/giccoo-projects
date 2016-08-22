@@ -29,6 +29,7 @@ p{
     -webkit-margin-after: 1em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;*/
+
 }
 .content{
 	margin: 1em;
@@ -44,4 +45,10 @@ p{
 	display: block;
 	height: 50px;
 	
+}
+b{
+	font-weight: 900;
+}
+a{
+	color: #000;
 }
