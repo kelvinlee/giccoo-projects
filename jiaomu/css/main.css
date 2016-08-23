@@ -25,11 +25,6 @@ p{
 	margin-top: 1em;
 	margin-bottom: 1em;
 	line-height: 1.8em;
-    /*-webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;*/
-
 }
 .content{
 	margin: 1em;
@@ -51,4 +46,20 @@ b{
 }
 a{
 	color: #515fb5;
+}
+#like{
+	width: 100%;
+}
+#like1{
+	width: 5%;
+	position: absolute;
+}
+#like2{
+	width: 5%;
+	position: absolute;
+	display: none;
+}
+#likeNum{
+	position: absolute;
+	left: 10%;
 }
