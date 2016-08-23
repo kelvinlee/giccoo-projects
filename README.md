@@ -55,3 +55,41 @@ jade转换html。
 
 感谢你的Star。
 
+
+### Count use function
+
+###### Create/update a new id count
+
+IDNAME is what you want the id's name.
+
+```
+$.post("http://api.giccoo.com/count/update", {id: "IDNAME"},function(msg){
+	if (msg.recode == 200) {
+		alert("update success")
+	}else{
+		alert("update faild")
+	}
+})
+```
+###### Get ids count
+
+IDS is what you want get the ids (like: test1,test2,test3)
+
+```
+$.get("http://api.giccoo.com/count/get/IDS",function(msg){
+	if (msg.recode == 200) {
+		console.log("update success", msg.info)
+	}else{
+		alert("get faild")
+	}
+})
+```
+
+Example msg:
+
+```
+{"recode":200,"reason":"success","info":[{"id":"test1","count":2,"create_at":"2016-08-23T07:00:00.000Z"}]}
+```
+
+
+
