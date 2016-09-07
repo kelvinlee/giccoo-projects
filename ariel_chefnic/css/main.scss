@@ -1,0 +1,281 @@
+@import 'normalize.css';
+@import "common";
+
+@font-face {
+  font-family: 'myCNfont';
+  src: url("../font/PingFangSC.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+.title,.number,.subtext,.post_number,.result_title,.result_copy,.link_btn{
+  font-family: myCNfont;
+}
+
+@mixin setBackground($w,$h){
+  width: px($w);
+  height: px($h);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+html{
+  width: 100%;
+  font-size: 100px;
+}
+img{
+  //max-width: 100%;
+  width: 100%;
+}
+iframe{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+}
+.contanier{
+  //width: 100%;
+  height: 100%;
+  max-width: 640px !important;
+  margin: auto;
+
+  .page7{
+    position: relative;
+    .tips_btn{
+      cursor: pointer;
+      width: px(140);
+      height: px(60);
+      position: absolute;
+      bottom: 0.4rem;
+      left: px(440);
+      z-index: 99;
+    }
+  }
+  .page3{
+    padding: px(15) px(22) px(15) px(22);
+
+    .main_video{
+      height: px(400);
+    }
+
+    .videos{
+      margin-top: px(22);
+      margin-left: px(-20);
+      .small_video{
+        width: px(287);
+        height: px(248);
+        float: left;
+        margin-left: px(20);
+      }
+      #video_click{
+        cursor: pointer;
+        width: px(287);
+        height: px(248);
+        float: left;
+      }
+      .video_back{
+        cursor: pointer;
+      }
+    }
+  }
+  .page9{
+    position: relative;
+    width: px(640);
+    height: px(907);
+
+    .lottery_btn{
+      cursor: pointer;
+      width: px(300);
+      height: px(100);
+      position: absolute;
+      bottom: px(200);
+      left:50%;
+      margin-left: px(-150);
+      z-index: 99;
+      //background-color: #000;
+    }
+  }
+  .lottery_overlay{
+    display: none;
+    z-index: 9999999;
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: px(640);
+    position: fixed; /* Stay in place */
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.7); /* Black w/opacity */
+    overflow: hidden; /* Disable horizontal scroll */
+    //transition: 0.5s;
+
+    .lottery_conent{
+      position: relative;
+      height: 100%;
+
+      .start{
+        //display: none;
+        position:absolute;
+        top:40%;
+        left: 50%;
+        width: px(540);
+        height: px(400);
+        margin-left: px(-275);
+        margin-top: px(-190);
+
+        .title{
+          font-size: px(112);
+          color:#fff;
+        }
+        .number{
+          margin-top: px(50);
+          font-size: px(22);
+          color: #fff;
+
+          .input_phone{
+            width: px(385);
+            height: px(50);
+            margin-left: px(12);
+          }
+        }
+        .subtext{
+          margin-top: px(6);
+          margin-left: px(100);
+          font-size:px(16);
+          color: #fff;
+        }
+        .post_number{
+          cursor: pointer;
+          position: absolute;
+          left: 50%;
+          bottom:0;
+          margin-left: px(-150);
+          font-size: px(24);
+          line-height: px(60);
+          width: px(300);
+          height: px(60);
+          text-align: center;
+          background-color: #86c12d;
+          border-radius: px(4);
+          color: #fff;
+        }
+      }
+
+      .loading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: px(-45);
+        margin-top: px(-45);
+        width: px(90);
+        height: px(90);
+        display: none;
+      }
+
+      .result{
+        display: none;
+        position:absolute;
+        top:30%;
+        left: 50%;
+        width: px(540);
+        height: px(550);
+        margin-left: px(-275);
+        margin-top: px(-190);
+
+        .result_title{
+          font-size: px(110);
+          color:#fff;
+        }
+        .result_copy{
+          text-align: center;
+          margin-top: px(20);
+          font-size: px(30);
+          color: #fff;
+        }
+        .link_btn{
+          cursor: pointer;
+          position: absolute;
+          left: 50%;
+          bottom:0;
+          margin-left: px(-150);
+          font-size: px(24);
+          line-height: px(60);
+          width: px(300);
+          height: px(60);
+          text-align: center;
+          background-color: #86c12d;
+          border-radius: px(4);
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .tips_overlay{
+    display: none;
+    z-index: 9999999;
+    height: 100%;
+    width: px(640);
+    position: fixed;
+    top: 0;
+    background-color: rgba(0,0,0, 0.7);
+    overflow: hidden;
+
+    .tips_conent{
+      position: absolute;
+      top:50%;
+      left: 50%;
+      margin-left: px(-238);
+      margin-top: px(-315);
+      //height: 100%;
+      .tips_pic{
+        width: px(475);
+        height: px(630);
+      }
+      .colseBtn{
+        cursor: pointer;
+        position:absolute;
+        top:0;
+        right: 0;
+        width: px(100);
+        height: px(100);
+        //background: #000;
+      }
+    }
+  }
+  /*.page4{
+    background-image: url(../img/page4.jpg);
+    @include setBackground(640px,276px);
+  }
+  .page5{
+    background-image: url(../img/page5.jpg);
+    @include setBackground(640px,785px);
+  }
+  .page6{
+    background-image: url(../img/page6.jpg);
+    @include setBackground(640px,378px);
+  }
+  .page7{
+    background-image: url(../img/page7.jpg);
+    @include setBackground(640px,784px);
+  }
+  .page8{
+    background-image: url(../img/page8.jpg);
+    @include setBackground(640px,287px);
+  }
+  .page9{
+    background-image: url(../img/page9.jpg);
+    @include setBackground(640px,892px);
+  }
+  .page10{
+    background-image: url(../img/page10.jpg);
+    @include setBackground(640px,1421px);
+  }
+  .page11{
+    background-image: url(../img/page11.jpg);
+    @include setBackground(640px,906px);
+  }*/
+
+}

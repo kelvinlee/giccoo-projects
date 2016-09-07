@@ -1,0 +1,248 @@
+@import url(normalize.css);
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0; }
+
+.clearfix {
+  zoom: 1; }
+
+.fl {
+  float: left;
+  display: inline; }
+
+.fr {
+  float: right;
+  display: inline; }
+
+/*select, input {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  border: 0;
+  outline: 0;
+}*/
+@font-face {
+  font-family: 'myCNfont';
+  src: url("../font/PingFangSC.ttf");
+  font-weight: normal;
+  font-style: normal; }
+.title, .number, .subtext, .post_number, .result_title, .result_copy, .link_btn {
+  font-family: myCNfont; }
+
+html {
+  width: 100%;
+  font-size: 100px; }
+
+img {
+  width: 100%; }
+
+iframe {
+  width: 100%;
+  height: 100%; }
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  padding: 0; }
+
+.contanier {
+  height: 100%;
+  max-width: 640px !important;
+  margin: auto;
+  /*.page4{
+    background-image: url(../img/page4.jpg);
+    @include setBackground(640px,276px);
+  }
+  .page5{
+    background-image: url(../img/page5.jpg);
+    @include setBackground(640px,785px);
+  }
+  .page6{
+    background-image: url(../img/page6.jpg);
+    @include setBackground(640px,378px);
+  }
+  .page7{
+    background-image: url(../img/page7.jpg);
+    @include setBackground(640px,784px);
+  }
+  .page8{
+    background-image: url(../img/page8.jpg);
+    @include setBackground(640px,287px);
+  }
+  .page9{
+    background-image: url(../img/page9.jpg);
+    @include setBackground(640px,892px);
+  }
+  .page10{
+    background-image: url(../img/page10.jpg);
+    @include setBackground(640px,1421px);
+  }
+  .page11{
+    background-image: url(../img/page11.jpg);
+    @include setBackground(640px,906px);
+  }*/ }
+  .contanier .page7 {
+    position: relative; }
+    .contanier .page7 .tips_btn {
+      cursor: pointer;
+      width: 1.4rem;
+      height: 0.6rem;
+      position: absolute;
+      bottom: 0.4rem;
+      left: 4.4rem;
+      z-index: 99; }
+  .contanier .page3 {
+    padding: 0.15rem 0.22rem 0.15rem 0.22rem; }
+    .contanier .page3 .main_video {
+      height: 4rem; }
+    .contanier .page3 .videos {
+      margin-top: 0.22rem;
+      margin-left: -0.2rem; }
+      .contanier .page3 .videos .small_video {
+        width: 2.87rem;
+        height: 2.48rem;
+        float: left;
+        margin-left: 0.2rem; }
+      .contanier .page3 .videos #video_click {
+        cursor: pointer;
+        width: 2.87rem;
+        height: 2.48rem;
+        float: left; }
+      .contanier .page3 .videos .video_back {
+        cursor: pointer; }
+  .contanier .page9 {
+    position: relative;
+    width: 6.4rem;
+    height: 9.07rem; }
+    .contanier .page9 .lottery_btn {
+      cursor: pointer;
+      width: 3rem;
+      height: 1rem;
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      margin-left: -1.5rem;
+      z-index: 99; }
+  .contanier .lottery_overlay {
+    display: none;
+    z-index: 9999999;
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 6.4rem;
+    position: fixed;
+    /* Stay in place */
+    top: 0;
+    background-color: black;
+    /* Black fallback color */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black w/opacity */
+    overflow: hidden;
+    /* Disable horizontal scroll */ }
+    .contanier .lottery_overlay .lottery_conent {
+      position: relative;
+      height: 100%; }
+      .contanier .lottery_overlay .lottery_conent .start {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        width: 5.4rem;
+        height: 4rem;
+        margin-left: -2.75rem;
+        margin-top: -1.9rem; }
+        .contanier .lottery_overlay .lottery_conent .start .title {
+          font-size: 1.12rem;
+          color: #fff; }
+        .contanier .lottery_overlay .lottery_conent .start .number {
+          margin-top: 0.5rem;
+          font-size: 0.22rem;
+          color: #fff; }
+          .contanier .lottery_overlay .lottery_conent .start .number .input_phone {
+            width: 3.85rem;
+            height: 0.5rem;
+            margin-left: 0.12rem; }
+        .contanier .lottery_overlay .lottery_conent .start .subtext {
+          margin-top: 0.06rem;
+          margin-left: 1rem;
+          font-size: 0.16rem;
+          color: #fff; }
+        .contanier .lottery_overlay .lottery_conent .start .post_number {
+          cursor: pointer;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          margin-left: -1.5rem;
+          font-size: 0.24rem;
+          line-height: 0.6rem;
+          width: 3rem;
+          height: 0.6rem;
+          text-align: center;
+          background-color: #86c12d;
+          border-radius: 0.04rem;
+          color: #fff; }
+      .contanier .lottery_overlay .lottery_conent .loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -0.45rem;
+        margin-top: -0.45rem;
+        width: 0.9rem;
+        height: 0.9rem;
+        display: none; }
+      .contanier .lottery_overlay .lottery_conent .result {
+        display: none;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        width: 5.4rem;
+        height: 5.5rem;
+        margin-left: -2.75rem;
+        margin-top: -1.9rem; }
+        .contanier .lottery_overlay .lottery_conent .result .result_title {
+          font-size: 1.1rem;
+          color: #fff; }
+        .contanier .lottery_overlay .lottery_conent .result .result_copy {
+          text-align: center;
+          margin-top: 0.2rem;
+          font-size: 0.3rem;
+          color: #fff; }
+        .contanier .lottery_overlay .lottery_conent .result .link_btn {
+          cursor: pointer;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          margin-left: -1.5rem;
+          font-size: 0.24rem;
+          line-height: 0.6rem;
+          width: 3rem;
+          height: 0.6rem;
+          text-align: center;
+          background-color: #86c12d;
+          border-radius: 0.04rem;
+          color: #fff; }
+  .contanier .tips_overlay {
+    display: none;
+    z-index: 9999999;
+    height: 100%;
+    width: 6.4rem;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: hidden; }
+    .contanier .tips_overlay .tips_conent {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -2.38rem;
+      margin-top: -3.15rem; }
+      .contanier .tips_overlay .tips_conent .tips_pic {
+        width: 4.75rem;
+        height: 6.3rem; }
+      .contanier .tips_overlay .tips_conent .colseBtn {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1rem;
+        height: 1rem; }

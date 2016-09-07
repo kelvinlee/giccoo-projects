@@ -1,0 +1,25 @@
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0; }
+
+.clearfix {
+  zoom: 1; }
+
+.fl {
+  float: left;
+  display: inline; }
+
+.fr {
+  float: right;
+  display: inline; }
+
+/*select, input {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  border: 0;
+  outline: 0;
+}*/
+
+/*# sourceMappingURL=common.css.map */
