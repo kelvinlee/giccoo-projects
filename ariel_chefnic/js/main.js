@@ -61,6 +61,7 @@ $(document).ready(function () {
     $('.lottery_btn').on('click',function () {
         enabledTouch = false;
         $('.lottery_overlay').css('display','block');
+        $('.start').css('display','block');
     });
 
     $('.tips_btn').on('click',function () {
@@ -104,17 +105,16 @@ $(document).ready(function () {
             //POST 抽奖
             var _data = {'mobile': number};
             $.post(_lotteryApiUrl,_data,function (data, status) {
-                if(data.reason == 'success'){
-                    console.log(data);
-                    if(data.recode == 201){
-                        nextResult();
-                    }else if(data.recode == 444){
-                        alert("您已经参与过抽奖!")
-                    }
-
-                }else {
+                console.log(data);
+                nextResult();
+                /*if(data.recode == 201){
+                    nextResult();
+                }else if(data.recode == 206){
                     alert(data.reason);
-                }
+                    $('.loading').css('display','none');
+                    $('.lottery_overlay').css('display','none');
+                    $(".number").find('input').val("");
+                }*/
             });
             function nextResult() {
                 $.getJSON(_ipApiUrl,function(data){
