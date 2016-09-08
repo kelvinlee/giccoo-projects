@@ -3,6 +3,7 @@
  */
 $(document).ready(function () {
     var _ipApiUrl = 'http://api.giccoo.com/api/ip/';
+    var _lotteryApiUrl = 'Http://api.giccoo.com/admin/ariel/lottery';
     var _currentDevice;
 
     //禁止滚动
@@ -74,16 +75,17 @@ $(document).ready(function () {
 
     //跳转链接
     $('.join_btn').on('click',function () {
-        window.location.href = 'http://www.xiachufang.com/event/100158777/';
+        window.open('http://www.xiachufang.com/event/100158777/','_blank')
+
     });
     $('.save_btn').on('click',function () {
-        window.location.href = 'http://www.xiachufang.com/recipe_list/103474481/';
+        window.open('http://www.xiachufang.com/recipe_list/103474481/','_blank')
     });
     $('.small_video').on('click',function () {
-        window.location.href = 'http://www.iqiyi.com/v_19rrm41010.html';
+        window.open('http://www.iqiyi.com/v_19rrm41010.html','_blank')
     });
     $('.dish_btn').on('click',function () {
-        window.location.href = 'http://www.xiachufang.com/recipe/1079397/';
+        window.open('http://www.xiachufang.com/recipe/1079397/','_blank')
     });
     //检查电话号码是否合法
     function checkMobile(value) {
@@ -98,41 +100,60 @@ $(document).ready(function () {
             $('.start').css('display','none');
             $('.loading').css('display','block');
 
-            $.getJSON(_ipApiUrl,function(data){
-                // alert("数据: " + data + "\n状态: " + status);
+
+            //POST 抽奖
+            var _data = {'mobile': number};
+            $.post(_lotteryApiUrl,_data,function (data, status) {
                 if(data.reason == 'success'){
-                    var _linkUrl = "";
-                    var address = data.info.content.address;
-                    console.log(address);
-                    if(address == "北京市"){
-                        $('.result_copy').text("不用气馁,前往官网了解更多有奖活动！");
-                        $('.link_btn').text("前往官网");
-                        _linkUrl = "http://www.pg.com.cn/products/detail.aspx?id=30";
-
-                    }else{
-                        $('.result_copy').text("现在购买碧浪商品，有更多大奖等你来拿！");
-                        $('.link_btn').text("前往商城");
-
-                        if(_currentDevice === "PC"){
-                            _linkUrl = "http://sale.jd.com/act/2TwGVQPD3c.html";
-                        }else{
-                            _linkUrl = "http://sale.jd.com/m/act/2TwGVQPD3c.html";
-                        }
-
+                    console.log(data);
+                    if(data.recode == 201){
+                        nextResult();
+                    }else if(data.recode == 444){
+                        alert("您已经参与过抽奖!")
                     }
 
-                    $('.link_btn').on('click',function () {
-                        window.location.href = _linkUrl;
-                    });
-                    $('.loading').fadeOut(800,function () {
-                        $('.result').fadeIn();
-                    });
-
                 }else {
-                    alert("请求失败")
+                    alert(data.reason);
                 }
-
             });
+            function nextResult() {
+                $.getJSON(_ipApiUrl,function(data){
+                    // alert("数据: " + data + "\n状态: " + status);
+                    if(data.reason == 'success'){
+                        var _linkUrl = "";
+                        var address = data.info.content.address;
+                        console.log(address);
+                        if(address == "北京市"){
+                            $('.result_copy').text("不用气馁,前往官网了解更多有奖活动！");
+                            $('.link_btn').text("前往官网");
+                            _linkUrl = "http://www.pg.com.cn/products/detail.aspx?id=30";
+
+                        }else{
+                            $('.result_copy').text("现在购买碧浪商品，有更多大奖等你来拿！");
+                            $('.link_btn').text("前往商城");
+
+                            if(_currentDevice === "PC"){
+                                _linkUrl = "http://sale.jd.com/act/2TwGVQPD3c.html";
+                            }else{
+                                _linkUrl = "http://sale.jd.com/m/act/2TwGVQPD3c.html";
+                            }
+
+                        }
+
+                        $('.link_btn').on('click',function () {
+                            window.open(_linkUrl,'_blank')
+                        });
+                        $('.loading').fadeOut(800,function () {
+                            $('.result').fadeIn();
+                        });
+
+                    }else {
+                        alert("请求失败")
+                    }
+
+                });
+            }
+
         }
     });
 });
