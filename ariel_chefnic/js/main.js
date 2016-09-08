@@ -3,7 +3,7 @@
  */
 $(document).ready(function () {
     var _ipApiUrl = 'http://api.giccoo.com/api/ip/';
-    var _linkUrl = "";
+    var _currentDevice;
 
     //禁止滚动
     var enabledTouch = true;
@@ -21,6 +21,7 @@ $(document).ready(function () {
     //判断设备
     if (/iPhone|iPod|Android/.test(navigator.userAgent)) {
         //if mobile
+        _currentDevice = 'MOBILE';
         window.onResize = _onResize();
         _onResize();
         function _onResize(){
@@ -33,6 +34,7 @@ $(document).ready(function () {
 
     } else {
         //if pc
+        _currentDevice = 'PC';
         var _pcVideo = '<embed src="http://player.video.qiyi.com/a4d5301564a7d7f98ecce09ce8284523/0/0/w_19rsw0ni5x.swf-albumId=6263790809-tvId=6263790809-isPurchase=0-cnId=20" allowFullScreen="true" quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>';
         $('#mobile_video').remove();
         $('.main_video').append(_pcVideo);
@@ -69,6 +71,20 @@ $(document).ready(function () {
         $('.tips_overlay').fadeOut(400);
     });
 
+
+    //跳转链接
+    $('.join_btn').on('click',function () {
+        window.location.href = 'http://www.xiachufang.com/event/100158777/';
+    });
+    $('.save_btn').on('click',function () {
+        window.location.href = 'http://www.xiachufang.com/recipe_list/103474481/';
+    });
+    $('.small_video').on('click',function () {
+        window.location.href = 'http://www.iqiyi.com/v_19rrm41010.html';
+    });
+    $('.dish_btn').on('click',function () {
+        window.location.href = 'http://www.xiachufang.com/recipe/1079397/';
+    });
     //检查电话号码是否合法
     function checkMobile(value) {
         var reg = /^(0|86|17951)?(13|15|17|18|14)[\d]{9}$/;
@@ -85,19 +101,26 @@ $(document).ready(function () {
             $.getJSON(_ipApiUrl,function(data){
                 // alert("数据: " + data + "\n状态: " + status);
                 if(data.reason == 'success'){
-                    console.log("success");
+                    var _linkUrl = "";
                     var address = data.info.content.address;
                     console.log(address);
                     if(address == "北京市"){
                         $('.result_copy').text("不用气馁,前往官网了解更多有奖活动！");
                         $('.link_btn').text("前往官网");
-                        _linkUrl = "";
+                        _linkUrl = "http://www.pg.com.cn/products/detail.aspx?id=30";
 
                     }else{
                         $('.result_copy').text("现在购买碧浪商品，有更多大奖等你来拿！");
                         $('.link_btn').text("前往商城");
-                        _linkUrl = "";
+
+                        if(_currentDevice === "PC"){
+                            _linkUrl = "http://sale.jd.com/act/2TwGVQPD3c.html";
+                        }else{
+                            _linkUrl = "http://sale.jd.com/m/act/2TwGVQPD3c.html";
+                        }
+
                     }
+
                     $('.link_btn').on('click',function () {
                         window.location.href = _linkUrl;
                     });

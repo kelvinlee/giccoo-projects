@@ -42,6 +42,19 @@ body{
   max-width: 640px !important;
   margin: auto;
 
+  .page5{
+    position: relative;
+    .join_btn{
+      cursor: pointer;
+      width: px(280);
+      height: px(80);
+      position: absolute;
+      top:px(220);
+      left: 50%;
+      margin-left: px(-140);
+      z-index: 99;
+    }
+  }
   .page7{
     position: relative;
     .tips_btn{
@@ -52,6 +65,29 @@ body{
       bottom: 0.4rem;
       left: px(440);
       z-index: 99;
+    }
+    .dish_btn{
+      cursor: pointer;
+      width: px(380);
+      height: px(280);
+      position: absolute;
+      bottom: 0;
+      left: px(10);
+      z-index: 99;
+    }
+  }
+  .page8{
+    position: relative;
+    .save_btn{
+      cursor: pointer;
+      width: px(300);
+      height: px(80);
+      position: absolute;
+      top:px(30);
+      left: 50%;
+      margin-left: px(-150);
+      z-index: 99;
+      //background-color: #000000;
     }
   }
   .page3{
@@ -69,8 +105,10 @@ body{
         height: px(248);
         float: left;
         margin-left: px(20);
+        cursor: pointer;
       }
       #video_click{
+        margin-left: px(20);
         cursor: pointer;
         width: px(287);
         height: px(248);
