@@ -20,6 +20,7 @@ $(document).ready(function () {
 
     //判断设备
     if (/iPhone|iPod|Android/.test(navigator.userAgent)) {
+        //if mobile
         window.onResize = _onResize();
         _onResize();
         function _onResize(){
@@ -29,8 +30,12 @@ $(document).ready(function () {
             var scale = 1;
             docEl.style.fontSize = 100 * scale * (clientWidth / default_value) + 'px';
         }
-    } else {
 
+    } else {
+        //if pc
+        var _pcVideo = '<embed src="http://player.video.qiyi.com/a4d5301564a7d7f98ecce09ce8284523/0/0/w_19rsw0ni5x.swf-albumId=6263790809-tvId=6263790809-isPurchase=0-cnId=20" allowFullScreen="true" quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>';
+        $('#mobile_video').remove();
+        $('.main_video').append(_pcVideo);
     }
     //视频
     $('#video2').css('display','none');
