@@ -2,8 +2,11 @@
  * Created by miller on 16/9/7.
  */
 $(document).ready(function () {
+    var videoNum = 3;
     var _ipApiUrl = 'http://api.giccoo.com/api/ip/';
     var _lotteryApiUrl = 'Http://api.giccoo.com/admin/ariel/lottery';
+    var _getVideoPicsUrl = "http://api.giccoo.com/admin/ariel/video/?size=" + videoNum;
+    var _picBeforeUrl = 'http://image.giccoo.com/Active/';
     var _currentDevice;
 
     //禁止滚动
@@ -18,7 +21,6 @@ $(document).ready(function () {
                 event.preventDefault();
         }
     });
-
     //判断设备
     if (/iPhone|iPod|Android/.test(navigator.userAgent)) {
         //if mobile
@@ -32,31 +34,68 @@ $(document).ready(function () {
             var scale = 1;
             docEl.style.fontSize = 100 * scale * (clientWidth / default_value) + 'px';
         }
-
     } else {
         //if pc
         _currentDevice = 'PC';
         var _pcVideo = '<embed src="http://player.video.qiyi.com/a4d5301564a7d7f98ecce09ce8284523/0/0/w_19rsw0ni5x.swf-albumId=6263790809-tvId=6263790809-isPurchase=0-cnId=20" allowFullScreen="true" quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>';
         $('#mobile_video').remove();
         $('.main_video').append(_pcVideo);
-    }
-    //视频
-    $('#video2').css('display','none');
-    $('#video3').css('display','none');
-    $('.video_back').css('display','none');
+    };
 
-    $('#video_click').on('click',function () {
-        $('#video2').css('display','block');
-        $('#video3').css('display','block');
-        $('.video_back').css('display','block');
-        $('#video_click').css('display','none');
+    /*获取视频/!**/
+    var _hideVideos=[];
+    $.getJSON(_getVideoPicsUrl,function (data) {
+       if (data.reason === 'success') {
+           var _data = data.info;
+           for (var i = 0; i < _data.length; i++) {
+               var obj = _data[i];
+               var _pic = _picBeforeUrl + obj.image;
+               var _link = obj.link;
+               var _id = 'video' + i;
+               var _dom = '<a  target="_blank" href=' + _link + '><div class="small_video" id=' + _id + '><img src=' + _pic + '></div></a>';
+               $('.pic_container').append(_dom);
+               if (i != 0) {
+                   _hideVideos.push(_id)
+               }
+           }
+           console.log(_hideVideos);
+           function controlVideoDom(show) {
+               if(show == true){
+                   for (var i = 0; i < _hideVideos.length; i++) {
+                       var obj = _hideVideos[i];
+                       $('#'+obj).css('display','block');
+                   }
+                   $('.video_back').css('display','block');
+                   $('#video_click').css('display','none');
+               }else {
+                   for (var k = 0; k < _hideVideos.length; k++) {
+                       var objK = _hideVideos[k];
+                       $('#'+objK).css('display','none');
+                   }
+                   $('.video_back').css('display','none');
+                   $('#video_click').css('display','block');
+               }
+           }
+           //视频控制
+           if(_hideVideos.length != 1 && _hideVideos.length != 0){
+               controlVideoDom(false);
+               $('.video_back').css('display','none');
+               $('#video_click').on('click',function () {
+                   controlVideoDom(true);
+               });
+               $('.video_back').on('click',function () {
+                   controlVideoDom(false);
+               });
+           }else {
+               //如果只有一个视频,点击按钮消失
+               $('#video_click').css('display','none');
+           }
+
+       }else {
+           console.log(data.reason);
+       }
     });
-    $('.video_back').on('click',function () {
-        $('#video2').css('display','none');
-        $('#video3').css('display','none');
-        $('.video_back').css('display','none');
-        $('#video_click').css('display','block');
-    });
+
     
     $('.lottery_btn').on('click',function () {
         enabledTouch = false;
@@ -75,19 +114,14 @@ $(document).ready(function () {
 
 
     //跳转链接
-    $('.join_btn').on('click',function () {
+    /*$('.join_btn').on('click',function () {
         window.open('http://www.xiachufang.com/event/100158777/','_blank')
 
-    });
-    $('.save_btn').on('click',function () {
+    });*/
+    /*$('.save_btn').on('click',function () {
         window.open('http://www.xiachufang.com/recipe_list/103474481/','_blank')
-    });
-    $('.small_video').on('click',function () {
-        window.open('http://www.iqiyi.com/v_19rrm41010.html','_blank')
-    });
-    $('.dish_btn').on('click',function () {
-        window.open('http://www.xiachufang.com/recipe/1079397/','_blank')
-    });
+    });*/
+    
     //检查电话号码是否合法
     function checkMobile(value) {
         var reg = /^(0|86|17951)?(13|15|17|18|14)[\d]{9}$/;
