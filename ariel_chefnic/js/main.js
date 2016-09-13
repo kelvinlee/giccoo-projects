@@ -58,8 +58,9 @@ $(document).ready(function () {
                var obj = _data[i];
                var _pic = _picBeforeUrl + obj.image;
                var _link = obj.link;
+               var _name =obj.name;
                var _id = 'video' + i;
-               var _dom = '<a target="_blank" href=' + _link + '><div class="small_video" id=' + _id + '><img src=' + _pic + '></div></a>';
+               var _dom = '<a target="_blank" href=' + _link + '><div class="small_video" id=' + _id + '><img class="video_pic" src=' + _pic + '><div class="videoName">' +_name +'</div></div></a>';
                $('.pic_container').append(_dom);
 
                if (i != 0) {

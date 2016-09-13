@@ -153,7 +153,14 @@ body {
         height: 2.48rem;
         float: left;
         margin-left: 0.2rem;
+        text-align: center;
         cursor: pointer; }
+        .contanier .page3 .videos .small_video .video_pic {
+          display: block; }
+        .contanier .page3 .videos .small_video .videoName {
+          line-height: 0.28rem;
+          font-size: 0.22rem;
+          color: #a4a4a4; }
       .contanier .page3 .videos #video_click {
         margin-left: 0.2rem;
         cursor: pointer;

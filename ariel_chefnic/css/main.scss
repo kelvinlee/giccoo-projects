@@ -170,7 +170,18 @@ body{
         height: px(248);
         float: left;
         margin-left: px(20);
+        text-align: center;
         cursor: pointer;
+
+        .video_pic{
+          display: block;
+
+        }
+        .videoName{
+          line-height: px(28);
+          font-size: px(22);
+          color: #a4a4a4;
+        }
       }
       #video_click{
         margin-left: px(20);
