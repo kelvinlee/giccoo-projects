@@ -49,7 +49,7 @@ body{
       width: px(280);
       height: px(80);
       position: absolute;
-      top:px(220);
+      top:px(330);
       left: 50%;
       margin-left: px(-140);
       z-index: 99;
@@ -92,7 +92,7 @@ body{
         .dish_name{
           font-size: px(21);
           color: black;
-          width:px(240); white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;
+          //width:px(240); white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;
           margin-top: px(25);
         }
         .tips_fakeBtn{

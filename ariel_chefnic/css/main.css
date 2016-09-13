@@ -58,7 +58,7 @@ body {
       width: 2.8rem;
       height: 0.8rem;
       position: absolute;
-      top: 2.2rem;
+      top: 3.3rem;
       left: 50%;
       margin-left: -1.4rem;
       z-index: 99; }
@@ -92,11 +92,6 @@ body {
         .contanier .page7 .dish .dish_info .dish_name {
           font-size: 0.21rem;
           color: black;
-          width: 2.4rem;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          -o-text-overflow: ellipsis;
-          overflow: hidden;
           margin-top: 0.25rem; }
         .contanier .page7 .dish .dish_info .tips_fakeBtn {
           width: 1.11rem;
@@ -290,5 +285,3 @@ body {
         right: 0;
         width: 1rem;
         height: 1rem; }
-
-/*# sourceMappingURL=main.css.map */
