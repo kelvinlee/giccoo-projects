@@ -57,13 +57,65 @@ body{
   }
   .page7{
     position: relative;
+    //height: px(262);
+
+    .dish{
+      padding: px(12) px(22);
+      height: px(238);
+      .dishLeft{
+        width: px(352);
+        height: px(238);
+        float: left;
+        .dish_pic{
+          width: px(352);
+          height: px(238);
+        }
+      }
+
+      .dish_info{
+        margin: auto;
+        text-align: center;
+        width: px(244);
+        float: left;
+        padding-top: px(22);
+        .dish_makerPic{
+          width: px(76);
+          height: px(76);
+          border-radius: 100%;
+          border: px(2) #dddddd solid;
+        }
+        .user_name{
+          font-size: px(14);
+          color: #babab7;
+          margin-top: px(-4);
+        }
+        .dish_name{
+          font-size: px(21);
+          color: black;
+          width:px(240); white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;
+          margin-top: px(25);
+        }
+        .tips_fakeBtn{
+          width: px(111);
+          height: px(23);
+          border-radius: px(2);
+          background-color: #86c12d;
+          font-size: px(13);
+          color: #ffffff;
+          line-height: px(23);
+          text-align: center;
+          margin-top: px(16);
+          margin-left: px(70);
+        }
+      }
+    }
     .tips_btn{
       cursor: pointer;
       width: px(140);
       height: px(60);
       position: absolute;
-      bottom: 0.4rem;
-      left: px(440);
+      bottom: 0.1rem;
+      left: px(420);
       z-index: 99;
     }
     .dish_btn{
@@ -98,6 +150,7 @@ body{
     }
 
     .videos{
+      height: px(120);
       margin-top: px(22);
       margin-left: px(-20);
       .small_video{
@@ -121,8 +174,6 @@ body{
   }
   .page9{
     position: relative;
-    width: px(640);
-    height: px(907);
 
     .lottery_btn{
       cursor: pointer;
@@ -283,37 +334,6 @@ body{
       }
     }
   }
-  /*.page4{
-    background-image: url(../img/page4.jpg);
-    @include setBackground(640px,276px);
-  }
-  .page5{
-    background-image: url(../img/page5.jpg);
-    @include setBackground(640px,785px);
-  }
-  .page6{
-    background-image: url(../img/page6.jpg);
-    @include setBackground(640px,378px);
-  }
-  .page7{
-    background-image: url(../img/page7.jpg);
-    @include setBackground(640px,784px);
-  }
-  .page8{
-    background-image: url(../img/page8.jpg);
-    @include setBackground(640px,287px);
-  }
-  .page9{
-    background-image: url(../img/page9.jpg);
-    @include setBackground(640px,892px);
-  }
-  .page10{
-    background-image: url(../img/page10.jpg);
-    @include setBackground(640px,1421px);
-  }
-  .page11{
-    background-image: url(../img/page11.jpg);
-    @include setBackground(640px,906px);
-  }*/
+
 
 }

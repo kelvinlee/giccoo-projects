@@ -50,39 +50,7 @@ body {
 .contanier {
   height: 100%;
   max-width: 640px !important;
-  margin: auto;
-  /*.page4{
-    background-image: url(../img/page4.jpg);
-    @include setBackground(640px,276px);
-  }
-  .page5{
-    background-image: url(../img/page5.jpg);
-    @include setBackground(640px,785px);
-  }
-  .page6{
-    background-image: url(../img/page6.jpg);
-    @include setBackground(640px,378px);
-  }
-  .page7{
-    background-image: url(../img/page7.jpg);
-    @include setBackground(640px,784px);
-  }
-  .page8{
-    background-image: url(../img/page8.jpg);
-    @include setBackground(640px,287px);
-  }
-  .page9{
-    background-image: url(../img/page9.jpg);
-    @include setBackground(640px,892px);
-  }
-  .page10{
-    background-image: url(../img/page10.jpg);
-    @include setBackground(640px,1421px);
-  }
-  .page11{
-    background-image: url(../img/page11.jpg);
-    @include setBackground(640px,906px);
-  }*/ }
+  margin: auto; }
   .contanier .page5 {
     position: relative; }
     .contanier .page5 .join_btn {
@@ -96,13 +64,58 @@ body {
       z-index: 99; }
   .contanier .page7 {
     position: relative; }
+    .contanier .page7 .dish {
+      padding: 0.12rem 0.22rem;
+      height: 2.38rem; }
+      .contanier .page7 .dish .dishLeft {
+        width: 3.52rem;
+        height: 2.38rem;
+        float: left; }
+        .contanier .page7 .dish .dishLeft .dish_pic {
+          width: 3.52rem;
+          height: 2.38rem; }
+      .contanier .page7 .dish .dish_info {
+        margin: auto;
+        text-align: center;
+        width: 2.44rem;
+        float: left;
+        padding-top: 0.22rem; }
+        .contanier .page7 .dish .dish_info .dish_makerPic {
+          width: 0.76rem;
+          height: 0.76rem;
+          border-radius: 100%;
+          border: 0.02rem #dddddd solid; }
+        .contanier .page7 .dish .dish_info .user_name {
+          font-size: 0.14rem;
+          color: #babab7;
+          margin-top: -0.04rem; }
+        .contanier .page7 .dish .dish_info .dish_name {
+          font-size: 0.21rem;
+          color: black;
+          width: 2.4rem;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          -o-text-overflow: ellipsis;
+          overflow: hidden;
+          margin-top: 0.25rem; }
+        .contanier .page7 .dish .dish_info .tips_fakeBtn {
+          width: 1.11rem;
+          height: 0.23rem;
+          border-radius: 0.02rem;
+          background-color: #86c12d;
+          font-size: 0.13rem;
+          color: #ffffff;
+          line-height: 0.23rem;
+          text-align: center;
+          margin-top: 0.16rem;
+          margin-left: 0.7rem; }
     .contanier .page7 .tips_btn {
       cursor: pointer;
       width: 1.4rem;
       height: 0.6rem;
       position: absolute;
-      bottom: 0.4rem;
-      left: 4.4rem;
+      bottom: 0.1rem;
+      left: 4.2rem;
       z-index: 99; }
     .contanier .page7 .dish_btn {
       cursor: pointer;
@@ -128,6 +141,7 @@ body {
     .contanier .page3 .main_video {
       height: 4rem; }
     .contanier .page3 .videos {
+      height: 1.2rem;
       margin-top: 0.22rem;
       margin-left: -0.2rem; }
       .contanier .page3 .videos .small_video {
@@ -145,9 +159,7 @@ body {
       .contanier .page3 .videos .video_back {
         cursor: pointer; }
   .contanier .page9 {
-    position: relative;
-    width: 6.4rem;
-    height: 9.07rem; }
+    position: relative; }
     .contanier .page9 .lottery_btn {
       cursor: pointer;
       width: 3rem;
@@ -278,3 +290,5 @@ body {
         right: 0;
         width: 1rem;
         height: 1rem; }
+
+/*# sourceMappingURL=main.css.map */

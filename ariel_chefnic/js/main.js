@@ -2,11 +2,13 @@
  * Created by miller on 16/9/7.
  */
 $(document).ready(function () {
-    var videoNum = 3;
+    var videoNum = 1;
+    var dishNum = 1;
     var _ipApiUrl = 'http://api.giccoo.com/api/ip/';
     var _lotteryApiUrl = 'Http://api.giccoo.com/admin/ariel/lottery';
     var _getVideoPicsUrl = "http://api.giccoo.com/admin/ariel/video/?size=" + videoNum;
     var _picBeforeUrl = 'http://image.giccoo.com/Active/';
+    var _getDishUrl = 'http://api.giccoo.com/admin/ariel/dish/?size=';
     var _currentDevice;
 
     //禁止滚动
@@ -24,6 +26,7 @@ $(document).ready(function () {
     //判断设备
     if (/iPhone|iPod|Android/.test(navigator.userAgent)) {
         //if mobile
+        console.log("mobile");
         _currentDevice = 'MOBILE';
         window.onResize = _onResize();
         _onResize();
@@ -36,10 +39,14 @@ $(document).ready(function () {
         }
     } else {
         //if pc
+        console.log("PC");
         _currentDevice = 'PC';
         var _pcVideo = '<embed src="http://player.video.qiyi.com/a4d5301564a7d7f98ecce09ce8284523/0/0/w_19rsw0ni5x.swf-albumId=6263790809-tvId=6263790809-isPurchase=0-cnId=20" allowFullScreen="true" quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>';
         $('#mobile_video').remove();
         $('.main_video').append(_pcVideo);
+        
+        var docEl = document.documentElement;
+        docEl.style.fontSize = 100 + 'px';
     };
 
     /*获取视频/!**/
@@ -77,6 +84,7 @@ $(document).ready(function () {
                }
            }
            //视频控制
+           $('.video_back').css('display','none');
            if(_hideVideos.length != 1 && _hideVideos.length != 0){
                controlVideoDom(false);
                $('.video_back').css('display','none');
@@ -96,17 +104,44 @@ $(document).ready(function () {
        }
     });
 
-    
+    //获取菜谱
+    $.getJSON(_getDishUrl,function (data) {
+        if (data.reason === 'success') {
+            var _data = data.info;
+            for (var i = 0; i < dishNum; i++) {
+                var obj = _data[i];
+                var _image = _picBeforeUrl + obj.image;
+                var _link = obj.link;
+                var _avatar = _picBeforeUrl + obj.avatar;
+                var name = obj.name;
+                var username = obj.username;
+                 // ' <a  target="_blank" href=' + _link + '><div class="small_video" id=' + _id + '><img src=' + _pic + '></div></a>'
+                var _dom = '<div class="dish"><div class="dishLeft"><a target="_blank" href='+ _link + '><img class="dish_pic" src=' + _image + '></a></div><div class="dish_info"><img class="dish_makerPic" src='+ _avatar +' alt=""> <div class="user_name">'+ username + '</div> <div class="dish_name">' + name +'</div> <div class="tips_fakeBtn">碧浪TIPS</div> </div><div class="tips_btn"></div></div>';
+
+                $('#dishContanier').append(_dom);
+                $('.dish_pic').on('click',function () {
+                    window.open(_link,'_blank');
+                });
+            }
+
+            $('.tips_btn').on('click',function () {
+                console.log("tips");
+                enabledTouch = false;
+                $('.tips_overlay').css('display','block');
+            });
+            // console.log(_dishPic);
+        }else {
+            console.log(data.reason);
+        }
+    });
+
     $('.lottery_btn').on('click',function () {
         enabledTouch = false;
         $('.lottery_overlay').css('display','block');
         $('.start').css('display','block');
     });
 
-    $('.tips_btn').on('click',function () {
-        enabledTouch = false;
-        $('.tips_overlay').css('display','block');
-    });
+
     $('.colseBtn').on('click',function () {
         enabledTouch = true;
         $('.tips_overlay').fadeOut(400);
@@ -121,7 +156,7 @@ $(document).ready(function () {
     /*$('.save_btn').on('click',function () {
         window.open('http://www.xiachufang.com/recipe_list/103474481/','_blank')
     });*/
-    
+
     //检查电话号码是否合法
     function checkMobile(value) {
         var reg = /^(0|86|17951)?(13|15|17|18|14)[\d]{9}$/;
