@@ -59,8 +59,9 @@ $(document).ready(function () {
                var _pic = _picBeforeUrl + obj.image;
                var _link = obj.link;
                var _id = 'video' + i;
-               var _dom = '<a  target="_blank" href=' + _link + '><div class="small_video" id=' + _id + '><img src=' + _pic + '></div></a>';
+               var _dom = '<a target="_blank" href=' + _link + '><div class="small_video" id=' + _id + '><img src=' + _pic + '></div></a>';
                $('.pic_container').append(_dom);
+
                if (i != 0) {
                    _hideVideos.push(_id)
                }
@@ -105,6 +106,7 @@ $(document).ready(function () {
     });
 
     //获取菜谱
+    var dishArray = [];
     $.getJSON(_getDishUrl,function (data) {
         if (data.reason === 'success') {
             var _data = data.info;
@@ -114,20 +116,26 @@ $(document).ready(function () {
                 var _link = obj.link;
                 var _avatar = _picBeforeUrl + obj.avatar;
                 var name = obj.name;
-                var username = obj.username;
+                var username =  obj.username;
+                // var _tips = _picBeforeUrl + obj.tips;
+                // var _id = obj.id;
+                var dish = {
+                    'tips': _picBeforeUrl + obj.tips,
+                    'id': obj.id
+                };
+                dishArray.push(dish);
                  // ' <a  target="_blank" href=' + _link + '><div class="small_video" id=' + _id + '><img src=' + _pic + '></div></a>'
-                var _dom = '<div class="dish"><div class="dishLeft"><a target="_blank" href='+ _link + '><img class="dish_pic" src=' + _image + '></a></div><div class="dish_info"><img class="dish_makerPic" src='+ _avatar +' alt=""> <div class="user_name">'+ username + '</div> <div class="dish_name">' + name +'</div> <div class="tips_fakeBtn">碧浪TIPS</div> </div><div class="tips_btn"></div></div>';
+                var _dom = '<div class="dish"><div class="dishLeft"><a class="dishLink" target="_blank" href='+ _link + '><img class="dish_pic" src=' + _image + '></a></div><div class="dish_info"><img class="dish_makerPic" src='+ _avatar +' alt=""> <div class="user_name">'+ username + '</div> <div class="dish_name">' + name +'</div> <div class="tips_fakeBtn">碧浪TIPS</div> </div><div class="tips_btn"></div></div>';
 
                 $('#dishContanier').append(_dom);
-                $('.dish_pic').on('click',function () {
-                    window.open(_link,'_blank');
-                });
             }
 
-            $('.tips_btn').on('click',function () {
-                console.log("tips");
+            $('.tips_btn').on('click',function (e) {
                 enabledTouch = false;
+                var _num = $(this).parent().index();
+                $('.tips_pic').attr('src',dishArray[_num].tips);
                 $('.tips_overlay').css('display','block');
+
             });
             // console.log(_dishPic);
         }else {

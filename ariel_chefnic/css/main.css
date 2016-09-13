@@ -58,7 +58,7 @@ body {
       width: 2.8rem;
       height: 0.8rem;
       position: absolute;
-      top: 3.3rem;
+      top: 3rem;
       left: 50%;
       margin-left: -1.4rem;
       z-index: 99; }
@@ -71,28 +71,37 @@ body {
         width: 3.52rem;
         height: 2.38rem;
         float: left; }
+        .contanier .page7 .dish .dishLeft .dishLink {
+          position: absolute;
+          top: 0.12rem;
+          left: 0.22rem;
+          width: 3.53rem;
+          height: 2.38rem;
+          display: block; }
         .contanier .page7 .dish .dishLeft .dish_pic {
           width: 3.52rem;
           height: 2.38rem; }
       .contanier .page7 .dish .dish_info {
-        margin: auto;
         text-align: center;
         width: 2.44rem;
         float: left;
-        padding-top: 0.22rem; }
+        padding-top: 0.1rem; }
         .contanier .page7 .dish .dish_info .dish_makerPic {
           width: 0.76rem;
           height: 0.76rem;
           border-radius: 100%;
-          border: 0.02rem #dddddd solid; }
+          border: 0.02rem #dddddd solid;
+          display: block;
+          margin: auto; }
         .contanier .page7 .dish .dish_info .user_name {
           font-size: 0.14rem;
           color: #babab7;
-          margin-top: -0.04rem; }
+          margin-top: 0.06rem; }
         .contanier .page7 .dish .dish_info .dish_name {
           font-size: 0.21rem;
           color: black;
-          margin-top: 0.25rem; }
+          line-height: 0.22rem;
+          margin-top: 0.22rem; }
         .contanier .page7 .dish .dish_info .tips_fakeBtn {
           width: 1.11rem;
           height: 0.23rem;
@@ -102,7 +111,7 @@ body {
           color: #ffffff;
           line-height: 0.23rem;
           text-align: center;
-          margin-top: 0.16rem;
+          margin-top: 0.18rem;
           margin-left: 0.7rem; }
     .contanier .page7 .tips_btn {
       cursor: pointer;
@@ -269,19 +278,14 @@ body {
     top: 0;
     background-color: rgba(0, 0, 0, 0.7);
     overflow: hidden; }
-    .contanier .tips_overlay .tips_conent {
+    .contanier .tips_overlay .tips_conent .tips_pic {
+      width: 6.4rem;
+      height: 11.8rem; }
+    .contanier .tips_overlay .tips_conent .colseBtn {
+      cursor: pointer;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-left: -2.38rem;
-      margin-top: -3.15rem; }
-      .contanier .tips_overlay .tips_conent .tips_pic {
-        width: 4.75rem;
-        height: 6.3rem; }
-      .contanier .tips_overlay .tips_conent .colseBtn {
-        cursor: pointer;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 1rem;
-        height: 1rem; }
+      top: 2.3rem;
+      right: 0.3rem;
+      user-select: none;
+      width: 1rem;
+      height: 1rem; }

@@ -49,7 +49,7 @@ body{
       width: px(280);
       height: px(80);
       position: absolute;
-      top:px(330);
+      top:px(300);
       left: 50%;
       margin-left: px(-140);
       z-index: 99;
@@ -66,6 +66,15 @@ body{
         width: px(352);
         height: px(238);
         float: left;
+        .dishLink{
+          position: absolute;
+          top:px(12);
+          left:px(22);
+          width: px(353);
+          height: px(238);
+
+          display: block;
+        }
         .dish_pic{
           width: px(352);
           height: px(238);
@@ -73,27 +82,30 @@ body{
       }
 
       .dish_info{
-        margin: auto;
+        //margin: auto;
         text-align: center;
         width: px(244);
         float: left;
-        padding-top: px(22);
+        padding-top: px(10);
         .dish_makerPic{
           width: px(76);
           height: px(76);
           border-radius: 100%;
           border: px(2) #dddddd solid;
+          display: block;
+          margin: auto;
         }
         .user_name{
           font-size: px(14);
           color: #babab7;
-          margin-top: px(-4);
+          margin-top: px(6);
         }
         .dish_name{
           font-size: px(21);
           color: black;
+          line-height: px(22);
           //width:px(240); white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;
-          margin-top: px(25);
+          margin-top: px(22);
         }
         .tips_fakeBtn{
           width: px(111);
@@ -104,7 +116,7 @@ body{
           color: #ffffff;
           line-height: px(23);
           text-align: center;
-          margin-top: px(16);
+          margin-top: px(18);
           margin-left: px(70);
         }
       }
@@ -313,21 +325,16 @@ body{
     overflow: hidden;
 
     .tips_conent{
-      position: absolute;
-      top:50%;
-      left: 50%;
-      margin-left: px(-238);
-      margin-top: px(-315);
-      //height: 100%;
       .tips_pic{
-        width: px(475);
-        height: px(630);
+        width: px(640);
+        height: px(1180);
       }
       .colseBtn{
         cursor: pointer;
         position:absolute;
-        top:0;
-        right: 0;
+        top:px(230);
+        right: px(30);
+        user-select: none;
         width: px(100);
         height: px(100);
         //background: #000;
