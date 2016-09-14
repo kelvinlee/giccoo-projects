@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+ <head>
+ 	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+     <!--<script src="js/jquery.min.js"></script>-->
+     <!--<script src="js/main.js"></script>-->
+    <link rel="stylesheet" href="css/main.css">
+   
+ </head>
+ <body>
+ 	<div class="contanier">
+        <div class="mainPic"><img style="width: 6.4rem;height: 11.05rem" src="img/page.jpg" alt=""></div>
+ 	</div>
+
+    <script>
+        window.onResize = _onResize();
+        _onResize();
+        function _onResize(){
+            var docEl = document.documentElement;
+            var default_value = 640;
+            var clientWidth = docEl.clientWidth;
+            var scale = 1;
+            docEl.style.fontSize = 100 * scale * (clientWidth / default_value) + 'px';
+        }
+    </script>
+ </body>
+</html>
