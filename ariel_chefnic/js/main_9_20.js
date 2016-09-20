@@ -50,6 +50,8 @@ $(document).ready(function () {
     };
 
     /*获取视频/!**/
+    $('.video_back').css('display','none');
+    $('#video_click').css('display','none');
     var _hideVideos=[];
     $.getJSON(_getVideoPicsUrl,function (data) {
        if (data.reason === 'success') {
