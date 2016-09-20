@@ -2,8 +2,8 @@
  * Created by miller on 16/9/7.
  */
 $(document).ready(function () {
-    var videoNum = 1;
-    var dishNum = 1;
+    var videoNum = 2;
+    var dishNum = 2;
     var _ipApiUrl = 'http://api.giccoo.com/api/ip/';
     var _lotteryApiUrl = 'Http://api.giccoo.com/admin/ariel/lottery';
     var _getVideoPicsUrl = "http://api.giccoo.com/admin/ariel/video/?size=" + videoNum;
@@ -60,7 +60,7 @@ $(document).ready(function () {
                var _link = obj.link;
                var _name =obj.name;
                var _id = 'video' + i;
-               var _dom = '<a target="_blank" href=' + _link + '><div class="small_video" id=' + _id + '><img class="video_pic" src=' + _pic + '><div class="videoName">' +_name +'</div></div></a>';
+               var _dom = '<div class="small_video" id=' + _id + '><a target="_blank" href=' + _link + '><img class="video_pic" src=' + _pic + '></a><div class="videoName">' +_name +'</div></div>';
                $('.pic_container').append(_dom);
 
                if (i != 0) {
