@@ -127,13 +127,13 @@ $(document).ready(function () {
                 dishArray.push(dish);
                  // ' <a  target="_blank" href=' + _link + '><div class="small_video" id=' + _id + '><img src=' + _pic + '></div></a>'
                 var _dom = '<div class="dish"><div class="dishLeft"><a class="dishLink" target="_blank" href='+ _link + '><img class="dish_pic" src=' + _image + '></a></div><div class="dish_info"><img class="dish_makerPic" src='+ _avatar +' alt=""> <div class="user_name">'+ username + '</div> <div class="dish_name">' + name +'</div> <div class="tips_fakeBtn">碧浪TIPS</div> </div><div class="tips_btn"></div></div>';
-
                 $('#dishContanier').append(_dom);
             }
-
+            console.log(dishArray);
             $('.tips_btn').on('click',function (e) {
                 enabledTouch = false;
                 var _num = $(this).parent().index();
+                console.log(_num);
                 $('.tips_pic').attr('src',dishArray[_num].tips);
                 $('.tips_overlay').css('display','block');
 

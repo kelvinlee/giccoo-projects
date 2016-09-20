@@ -65,6 +65,7 @@ body {
   .contanier .page7 {
     position: relative; }
     .contanier .page7 .dish {
+      position: relative;
       padding: 0.12rem 0.22rem;
       height: 2.38rem; }
       .contanier .page7 .dish .dishLeft {
