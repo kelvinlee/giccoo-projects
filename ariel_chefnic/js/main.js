@@ -134,7 +134,7 @@ $(document).ready(function () {
                 enabledTouch = false;
                 var _num = $(this).parent().index();
                 console.log(_num);
-                $('.tips_pic').attr('src',dishArray[_num].tips);
+                $('.tips_path').attr('src',dishArray[_num].tips);
                 $('.tips_overlay').css('display','block');
 
             });
