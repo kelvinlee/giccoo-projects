@@ -41,9 +41,9 @@ $(document).ready(function () {
         //if pc
         console.log("PC");
         _currentDevice = 'PC';
-        var _pcVideo = '<embed src="http://player.video.qiyi.com/a4d5301564a7d7f98ecce09ce8284523/0/0/w_19rsw0ni5x.swf-albumId=6263790809-tvId=6263790809-isPurchase=0-cnId=20" allowFullScreen="true" quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>';
+        /*var _pcVideo = '<embed src="http://player.video.qiyi.com/a4d5301564a7d7f98ecce09ce8284523/0/0/w_19rsw0ni5x.swf-albumId=6263790809-tvId=6263790809-isPurchase=0-cnId=20" allowFullScreen="true" quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>';
         $('#mobile_video').remove();
-        $('.main_video').append(_pcVideo);
+        $('.main_video').append(_pcVideo);*/
         
         var docEl = document.documentElement;
         docEl.style.fontSize = 100 + 'px';
