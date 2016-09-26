@@ -2,7 +2,7 @@
  * Created by miller on 16/9/7.
  */
 $(document).ready(function () {
-    var videoNum = 2;
+    var videoNum = 3;
     var dishNum = 2;
     var _ipApiUrl = 'http://api.giccoo.com/api/ip/';
     var _lotteryApiUrl = 'Http://api.giccoo.com/admin/ariel/lottery';
@@ -51,7 +51,7 @@ $(document).ready(function () {
 
     /*获取视频/!**/
     $('.video_back').css('display','none');
-    $('#video_click').css('display','none');
+    // $('#video_click').css('display','none');
     var _hideVideos=[];
     $.getJSON(_getVideoPicsUrl,function (data) {
        if (data.reason === 'success') {

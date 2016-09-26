@@ -1,4 +1,3 @@
-@import url(normalize.css);
 .clearfix:after {
   content: " ";
   display: block;
@@ -142,12 +141,12 @@ body {
       margin-left: -1.5rem;
       z-index: 99; }
   .contanier .page3 {
-    padding: 0.15rem 0.22rem 0.15rem 0.22rem; }
+    padding: 0.15rem 0.22rem 0.15rem 0.22rem;
+    overflow: hidden; }
     .contanier .page3 .main_video {
       height: 4rem; }
     .contanier .page3 .videos {
-      height: 1.2rem;
-      margin-top: 0.22rem;
+      height: 1;
       margin-left: -0.2rem; }
       .contanier .page3 .videos .small_video {
         width: 2.87rem;
@@ -158,6 +157,8 @@ body {
         cursor: pointer; }
         .contanier .page3 .videos .small_video .video_pic {
           display: block; }
+          .contanier .page3 .videos .small_video .video_pic .pic_container {
+            overflow: hidden; }
         .contanier .page3 .videos .small_video .videoName {
           line-height: 0.28rem;
           font-size: 0.22rem;
