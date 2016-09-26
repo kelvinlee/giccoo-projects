@@ -146,7 +146,7 @@ body {
     .contanier .page3 .main_video {
       height: 4rem; }
     .contanier .page3 .videos {
-      height: 1;
+      height: 100%;
       margin-left: -0.2rem; }
       .contanier .page3 .videos .small_video {
         width: 2.87rem;
@@ -170,7 +170,8 @@ body {
         height: 2.48rem;
         float: left; }
       .contanier .page3 .videos .video_back {
-        cursor: pointer; }
+        cursor: pointer;
+        user-select: none; }
   .contanier .page9 {
     position: relative; }
     .contanier .page9 .lottery_btn {

@@ -2,6 +2,7 @@
  * Created by miller on 16/9/7.
  */
 $(document).ready(function () {
+    
     var videoNum = 3;
     var dishNum = 2;
     var _ipApiUrl = 'http://api.giccoo.com/api/ip/';
@@ -93,9 +94,11 @@ $(document).ready(function () {
                controlVideoDom(false);
                $('.video_back').css('display','none');
                $('#video_click').on('click',function () {
+                   event.preventDefault();
                    controlVideoDom(true);
                });
                $('.video_back').on('click',function () {
+                   event.preventDefault();
                    controlVideoDom(false);
                });
            }else {
