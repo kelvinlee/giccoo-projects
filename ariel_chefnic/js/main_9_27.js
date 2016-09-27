@@ -4,7 +4,7 @@
 $(document).ready(function () {
     
     var videoNum = 3;
-    var dishNum = 2;
+    var dishNum = 3;
     var _ipApiUrl = 'http://api.giccoo.com/api/ip/';
     var _lotteryApiUrl = 'Http://api.giccoo.com/admin/ariel/lottery';
     var _getVideoPicsUrl = "http://api.giccoo.com/admin/ariel/video/?size=" + videoNum;
@@ -57,6 +57,7 @@ $(document).ready(function () {
     $.getJSON(_getVideoPicsUrl,function (data) {
        if (data.reason === 'success') {
            var _data = data.info;
+           _data.reverse();
            for (var i = 0; i < _data.length; i++) {
                var obj = _data[i];
                var _pic = _picBeforeUrl + obj.image;
@@ -116,6 +117,7 @@ $(document).ready(function () {
     $.getJSON(_getDishUrl,function (data) {
         if (data.reason === 'success') {
             var _data = data.info;
+            _data.reverse();
             for (var i = 0; i < dishNum; i++) {
                 var obj = _data[i];
                 var _image = _picBeforeUrl + obj.image;
