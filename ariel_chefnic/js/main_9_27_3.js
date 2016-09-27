@@ -9,7 +9,7 @@ $(document).ready(function () {
     var _lotteryApiUrl = 'Http://api.giccoo.com/admin/ariel/lottery';
     var _getVideoPicsUrl = "http://api.giccoo.com/admin/ariel/video/?size=" + videoNum;
     var _picBeforeUrl = 'http://image.giccoo.com/Active/';
-    var _getDishUrl = 'http://api.giccoo.com/admin/ariel/dish/?size=';
+    var _getDishUrl = 'http://api.giccoo.com/admin/ariel/dish/?size=' + dishNum;
     var _currentDevice;
 
     //禁止滚动
@@ -57,7 +57,9 @@ $(document).ready(function () {
     $.getJSON(_getVideoPicsUrl,function (data) {
        if (data.reason === 'success') {
            var _data = data.info;
+           console.log(_data);
            _data.reverse();
+           console.log(_data);
            for (var i = 0; i < _data.length; i++) {
                var obj = _data[i];
                var _pic = _picBeforeUrl + obj.image;
