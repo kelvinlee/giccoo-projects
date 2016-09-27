@@ -218,9 +218,9 @@ $(document).ready(function () {
                             $('.link_btn').text("前往商城");
 
                             if(_currentDevice === "PC"){
-                                _linkUrl = "http://sale.jd.com/act/2TwGVQPD3c.html";
+                                _linkUrl = "http://sale.jd.com/act/gB3aNFEkQIr4qVx.html";
                             }else{
-                                _linkUrl = "http://sale.jd.com/m/act/2TwGVQPD3c.html";
+                                _linkUrl = "http://sale.jd.com/m/act/gB3aNFEkQIr4qVx.html";
                             }
 
                         }
