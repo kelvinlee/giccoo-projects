@@ -1,0 +1,115 @@
+extends ../libs/jade/layout-clean
+block title
+	| 东风雪铁龙全新C4L
+
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="./libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css?v=1")
+
+block content
+	//- url = "http://image.giccoo.com/projects/ldl-c4l/"
+	- url = "./"
+
+	.pages
+		.page.homepage
+			.bg
+				img(src="#{url}img/homepage-bg.jpg")
+			.content
+				.banner
+					img(src="#{url}img/homepage-banner.png")
+
+		.page.notepage
+			.content
+				.content-center
+					.text
+						img(src="#{url}img/notepage-text.jpg")
+					.bottom
+						img(src="#{url}img/notepage-bottom.jpg")
+
+		.page.infopage.first
+			.content
+				.title
+					img(src="#{url}img/infopage-title.png")
+				.cups
+					ul
+						li
+							img(src="#{url}img/cup-1.png")
+						li
+							img(src="#{url}img/cup-2.png")
+						li
+							img(src="#{url}img/cup-3.png")
+				.step-box
+					.box-bg
+						img(src="#{url}img/step-box-bg.png")
+					.circleProgress_wrapper
+						.circle-content.text
+							p.c-title 步数
+							p.c-number#stepnumber 0
+							p.c-small 下一个阶段<br>目标步数: <span id="nextstepnumber">40,000</span>
+						.circle-content.medal.hide
+							img(src="#{url}img/medal-1.png")
+						.circleProgress-bg
+						.wrapper.right
+							.circleProgress.rightcircle
+						.wrapper.left
+							.circleProgress.leftcircle
+				.next-step
+					.normal
+						img(src="#{url}img/wait-lottery.png")
+					.start-lottery.start-lottery-1.hide
+						img(src="#{url}img/start-lottery-1.png")
+					.start-lottery.start-lottery-2.hide
+						img(src="#{url}img/start-lottery-2.png")
+					.start-lottery.start-lottery-3.hide
+						img(src="#{url}img/start-lottery-3.png")
+
+		.page.lotpage
+			.content
+				.lottery-box
+					.box-plan
+						img(src="#{url}/img/lottery-box-list.png")
+					.box-content
+						img(src="#{url}/img/lottery-box.png")
+						.title
+							img(src="#{url}/img/lottery-box-lucky.png")
+				.lottery-note
+					img(src="#{url}/img/lotpage-text.jpg")
+					.box-people
+						img(src="#{url}/img/lotpage-person.png")
+
+	.pop.faild.hide.animated.fadeInUp
+		.content
+			.close
+				img(src="#{url}/img/close.png")
+			img(src="#{url}/img/pop-faild.png")
+
+	.pop.success.hide.animated.fadeInUp
+		.content
+			.close
+				img(src="#{url}/img/close.png")
+			img(src="#{url}/img/pop-success.png")
+
+	.pop.success-form.hide.animated.fadeInUp
+		.content
+			//- .close
+				img(src="#{url}/img/close.png")
+			.form
+				h2 恭喜你获得<span>小米手环</span>!
+				p 请填写中奖信息<br/>我们将在活动结束后15日内寄出奖品
+				lottery(action="",callback="lotterySuccess")
+
+
+	
+
+
+block js
+	- url = "/"
+	script(src="./libs/js/min/jquery.min.js")
+	script(src="./libs/js/min/fastclick.min.js")
+	script(src="./libs/js/min/riot.min.js")
+	script(src="./libs/js/min/localforage.min.js")
+	script(src="js/common.js")
+	script(src="js/tags.js?v=1")
+	script(src="js/main.js?v=1")

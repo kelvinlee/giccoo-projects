@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>东风雪铁龙全新C4L</title>
+    <meta name="author" content="m.giccoo.com">
+    <link rel="stylesheet" href="./libs/css/animate.min.css" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="css/base.css?v=1">
+  </head>
+  <body>
+    <div class="pages">
+      <div class="page homepage">
+        <div class="bg"><img src="./img/homepage-bg.jpg"></div>
+        <div class="content">
+          <div class="banner"><img src="./img/homepage-banner.png"></div>
+        </div>
+      </div>
+      <div class="page notepage">
+        <div class="content">
+          <div class="content-center">
+            <div class="text"><img src="./img/notepage-text.jpg"></div>
+            <div class="bottom"><img src="./img/notepage-bottom.jpg"></div>
+          </div>
+        </div>
+      </div>
+      <div class="page infopage first">
+        <div class="content">
+          <div class="title"><img src="./img/infopage-title.png"></div>
+          <div class="cups">
+            <ul>
+              <li><img src="./img/cup-1.png"></li>
+              <li><img src="./img/cup-2.png"></li>
+              <li><img src="./img/cup-3.png"></li>
+            </ul>
+          </div>
+          <div class="step-box">
+            <div class="box-bg"><img src="./img/step-box-bg.png"></div>
+            <div class="circleProgress_wrapper">
+              <div class="circle-content text">
+                <p class="c-title">步数</p>
+                <p id="stepnumber" class="c-number">0</p>
+                <p class="c-small">下一个阶段<br>目标步数: <span id="nextstepnumber">40,000</span></p>
+              </div>
+              <div class="circle-content medal hide"><img src="./img/medal-1.png"></div>
+              <div class="circleProgress-bg"></div>
+              <div class="wrapper right">
+                <div class="circleProgress rightcircle"></div>
+              </div>
+              <div class="wrapper left">
+                <div class="circleProgress leftcircle"></div>
+              </div>
+            </div>
+          </div>
+          <div class="next-step">
+            <div class="normal"><img src="./img/wait-lottery.png"></div>
+            <div class="start-lottery start-lottery-1 hide"><img src="./img/start-lottery-1.png"></div>
+            <div class="start-lottery start-lottery-2 hide"><img src="./img/start-lottery-2.png"></div>
+            <div class="start-lottery start-lottery-3 hide"><img src="./img/start-lottery-3.png"></div>
+          </div>
+        </div>
+      </div>
+      <div class="page lotpage">
+        <div class="content">
+          <div class="lottery-box">
+            <div class="box-plan"><img src=".//img/lottery-box-list.png"></div>
+            <div class="box-content"><img src=".//img/lottery-box.png">
+              <div class="title"><img src=".//img/lottery-box-lucky.png"></div>
+            </div>
+          </div>
+          <div class="lottery-note"><img src=".//img/lotpage-text.jpg">
+            <div class="box-people"><img src=".//img/lotpage-person.png"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pop faild hide animated fadeInUp">
+      <div class="content">
+        <div class="close"><img src=".//img/close.png"></div><img src=".//img/pop-faild.png">
+      </div>
+    </div>
+    <div class="pop success hide animated fadeInUp">
+      <div class="content">
+        <div class="close"><img src=".//img/close.png"></div><img src=".//img/pop-success.png">
+      </div>
+    </div>
+    <div class="pop success-form hide animated fadeInUp">
+      <div class="content">
+        <div class="form">
+          <h2>恭喜你获得<span>小米手环</span>!</h2>
+          <p>请填写中奖信息<br/>我们将在活动结束后15日内寄出奖品</p>
+          <lottery action="" callback="lotterySuccess"></lottery>
+        </div>
+      </div>
+    </div>
+    <script src="./libs/js/min/jquery.min.js"></script>
+    <script src="./libs/js/min/fastclick.min.js"></script>
+    <script src="./libs/js/min/riot.min.js"></script>
+    <script src="./libs/js/min/localforage.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/tags.js?v=1"></script>
+    <script src="js/main.js?v=1"></script>
+  </body>
+</html>

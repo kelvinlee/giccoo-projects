@@ -1,0 +1,629 @@
+@import sass/base
+@import ../../libs/sass/loading
+@import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+
+
+$debug : true
+$cdn : "http://localhost:5757/ldl-c4l/"
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects/ldl-c4l/"
+
++keyframes(leftmove)
+	0%
+		+transform(translate3d(0%,0,0))
+	100%
+		+transform(translate3d(-100%,0,0))
++keyframes(showline)
+	0%
+		+w(0)
+	100%
+		+w(96%)
++keyframes(nextpoint)
+	0%
+		opacity: 0.5
+		+transform(translate3d(0,-100%,0))
+	10%
+		opacity: 1
+	100%
+		opacity: 0.5
+		+transform(translate3d(0,0,0))
+
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
+
+.share-wechat
+	+posa
+	+tl
+	+w
+	+h
+	+b("http://disk.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
+	+bc
+	z-index: 1100
+	+hide
+	&.open
+		+show
+
+.main
+	+wh(100%,100%)
+	// +posf
+	// min-height: 410px
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+
+.loading.loaded
+	+large
+		+hide
+
+.sliderBox
+	white-space: nowrap
+	+w
+	+h
+	+show
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	+show-inline
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+iw(600)
+	+m
+	margin-top: -8%
+	.share-icon
+		+show-inline
+		+w(25%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		
+html,body
+	+w
+	+h
+	// +overhide
+
+body
+	// +b("http://i3.tietuku.com/1fcc3041ce5a552f.jpg",no-repeat,center,center,cover)
+	color: #fff
+	+bc(#fff)
+
+// .loading.loaded
+// 	+hide
+.loading
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+bc(transparent)
+	.new-load
+		+posa
+		+tl(50%,50%)
+		+w
+		+text-center
+		// +p(100% 0 0 0)
+		+transform(translate3d(-50%,-50%,0))
+		.load-item
+			+iw(230)
+			+posr
+			// > img
+				// +animation(rubberBand,2s,ease,infinite)
+			.load-item-note1
+				+posa
+				+bl(26%,27.5%)
+				+w(45%)
+				+h(5%)
+				+tran($time: 100ms)
+				overflow: hidden
+				.load-move
+					+animation(leftmove,2s,linear,infinite)
+				img
+					+w(180px)
+					max-width: 180px
+					
+			.load-item-note2
+				+posa
+				+tr
+				+w
+				
+		.load-progress
+			+font-size(0.8rem)
+			color: #fff
+			+p(2% 0 0 0)
+			+posa
+			+tl(50%,50%)
+			+transform(translate3d(-50%,-50%,0))
+.hide
+	+hide
+.pages
+	.page
+		.content
+			+posa
+			+tl
+			+w
+			+h
+
+.note
+	+posa
+	+tl
+	+br
+	+wh(100%,100%)
+	z-index: 9999
+	.note-box
+		+text-center
+		+posa
+		+tl(50%)
+		+w(100%)
+		// z-index: 9999
+		.note-content
+			display: inline-block
+			padding: 10px 11px 10px 10px
+			background-color: rgba(0,0,0,0.7)
+			color: #fff
+			border-radius: 5px
+			max-width: 90%
+			+box
+		.icon-form,.note-text
+			display: inline-block
+			vertical-align: top
+			line-height: 25px
+		.icon-form
+			+wh(25px,25px)
+		.note-text
+			+font-size(0.8rem)
+			letter-spacing: 2px
+
+.pop
+	+posa
+	+tl
+	+w
+	+h
+	// +bc(rgba(0,0,0,0.7))
+	.content
+		+posa
+		+tl(50%)
+		+transform(translate3d(0,-50%,0))
+		+bc(#fff)
+		+p(1.4rem 0)
+		border-top: dashed 1px #f38f18
+		border-bottom: dashed 1px #f38f18
+	.close
+		+posa
+		+tr(0.3rem,0.3rem)
+		+w(1.4rem)
+
+.loader
+	.more
+		+posa
+		+tl(60%,50%)
+		+w(35%)
+		margin-left: -35%/2
+
+.model
+	.title
+		font-size: 0
+	.bg
+		font-size: 0
+		+overhide
+		+posr
+	.left
+		+posa
+		+tl(50%,0)
+		+iw(46)
+		font-size: 0
+		+transform(translate3d(0,-50%,0))
+		z-index: 101
+	.right
+		+posa
+		+tr(50%,0)
+		+iw(46)
+		font-size: 0
+		+transform(translate3d(0,-50%,0) scale(-1,1))
+		z-index: 101
+	.left2
+		+posa
+		+tl(50%,0)
+		+iw(40)
+		font-size: 0
+		+transform(translate3d(0,-50%,0))
+	.right2
+		+posa
+		+tr(50%,0)
+		+iw(40)
+		font-size: 0
+		+transform(translate3d(0,-50%,0) scale(-1,1))
+
+	&.model-1
+		+h
+		// +b("../img/cloud.jpg",no-repeat,top,center,cover)
+		+bc(#b1d2e3)
+		.content
+			+h
+			+posr
+			.banner
+				+posa
+				+tl(20%)
+			.car
+				+posa
+				+bl(5%)
+			.next-point
+				+posa
+				+bl(4%,50%)
+				z-index: 100
+				+w(10%)
+				margin-left: -5%
+				+animation(nextpoint,1s,ease,infinite)
+			.next-text
+				+posa
+				+bl(1%,50%)
+				z-index: 100
+				+transform(translate3d(-50%,0,0))
+				+font-size(0.8rem)
+				color: #fff
+				text-decoration: none
+
+		.bg
+			+posa
+			+bl
+		.title
+			+posa
+			+tl(75%)
+	&.model-2
+		.title
+			margin-top: 5%
+		.bg
+			+posa
+			+bl
+			+w
+			z-index: -1
+	&.model-3
+		+bc(#fafafa)
+		.bg
+			+w
+			+h
+			+b("../img/bg-3.jpg",no-repeat,top,center,contain)
+			+bc(#fafafa)
+	&.model-4
+		.title
+			+p(5% 0)
+		.bg
+			// +p(10% 0)
+			+text-center
+			video
+				+wh(80%,auto)
+				+m
+			p
+				+font-size(1rem)
+				color: #7f7f7f
+				margin-bottom: 0.4em
+	&.model-5
+		// padding-bottom: 2rem
+		.title
+			+p(5% 0)
+.sliders
+	// +posa
+	// +bl(20%,10%)
+	+overhide
+	+w(80%)
+	+m
+	margin-top: 1rem
+	max-width: 400px
+	border: solid 4px #fff
+	box-shadow: 1px 1px 6px #000
+
+.points
+	+w
+	+text-center
+	// +posa
+	// +bl(15%,0)
+	margin-top: 1rem
+	span
+		+show-inline
+		+wh(0.5rem,0.5rem)
+		+m(0 0.2rem)
+		+bc(#c2c2c2)
+		border-radius: 50%
+		&.on
+			+bc(#003663)
+
+.form-box
+	// +posa
+	// +tl(0,0)
+	+w(100%)
+	+box
+	+p(0 1.5rem)
+.form
+	+w(100%)
+	+m
+	+p(1.2rem 0)
+	$labelColor: #ffa200
+	$borderColor: #ffa200
+	$inputColor: #000
+	.form-grounp
+		$h: 1.4rem
+		vertical-align: top
+		font-size: 0
+		> label
+			+wh(32%,$h)
+			+show-inline
+			+font-size(0.8rem)
+			+m(0.2rem 0)
+			line-height: $h
+			vertical-align: top
+			color: $labelColor
+		> input
+			+wh(67%,$h)
+			+font-size(0.8rem)
+			+bc(#fff)
+			+show-inline
+			+box
+			+m(0.2rem 0)
+			+p(0.2rem)
+			line-height: $h
+			vertical-align: top
+			border: solid 1px $borderColor
+			color: $inputColor
+			outline: none
+			border-radius: 0.4rem
+		.comb
+			+wh(68%,$h)
+			+font-size(1rem)
+			+show-inline
+			+m(0.2rem 0)
+			color: $inputColor
+			white-space: nowrap
+			label
+				+wh(30%,$h)
+				+show-inline
+				+font-size(0.8rem)
+				+text-center
+				color: $labelColor
+			input
+				+show-inline
+				+w(1rem)
+			.select
+				+w(48.5%)
+				+m
+		.select
+			+posr
+			+wh(68%,$h)
+			+show-inline
+			+bc(#fff)
+			+m(0.2rem 0)
+			+box
+			+p(0 0.2rem)
+			+font-size(0.8rem)
+			color: $inputColor
+			border: solid 1px $borderColor
+			border-radius: 0.4rem
+			&:after
+				$size: 0.5rem
+				content: " "
+				+posa
+				+tr(50%,$size)
+				+transform(translate3d(0,-50%,0))
+				z-index: 99
+				border-left: $size/2 solid transparent
+				border-right: $size/2 solid transparent
+				border-top: $size solid $borderColor
+			span
+				text-overflow: ellipsis
+				+show-inline
+				+wh(100%,$h)
+				+overhide
+				white-space: nowrap
+				overflow: hidden
+				text-overflow: ellipsis
+			select
+				+posa
+				+tl
+				+br
+				+w
+				+h
+				opacity: 0
+
+	.form-btn
+		+text-center
+		margin-top: 0.8rem
+		button
+			+w(40%)
+			+m
+			+p(2px 0)
+			+bc(transparent)
+			border: none
+
+.backTop
+	+posf
+	+br(5%,5%)
+	+w(2rem)
+	font-size: 0
+	&.hide
+		+hide	
+
+.homepage
+	.bg
+		+posa
+		+bl
+	.banner
+		margin-top: 10%
+
+
+.notepage
+	+bc(#ffa200)
+
+	.content-center
+		+posa
+		+tl(50%)
+		+w
+		+transform(translate3d(0,-50%,0))
+
+.infopage
+	+b($cdn+"img/infopage-bg.jpg",no-repeat,center,center,cover)
+	.title
+		+w
+		+m
+		margin-top: 5%
+		.iphone4 &
+			+w(80%)
+	.cups
+		ul
+			margin: 0 10%
+			white-space: nowrap
+			+text-center
+			li
+				+show-inline
+				font-size: 0
+				+w(20%)
+				margin: 0 3%
+
+	.step-box
+		+w(60%)
+		+m(0 auto)
+		+posr
+		font-size: 0
+
+		.circleProgress_wrapper
+			$border: 10px
+			$wh: 200px
+			// +w(70%)
+			+wh($wh,$wh)
+			+posa
+			+tl(50%,50%)
+			+transform(translate3d(-50%,-45%,0))
+
+			.wrapper
+				+wh(50%,100%)
+				+posa
+				+overhide
+				top: 0
+			.circle-content
+				+posa
+				+tl(50%,50%)
+				+w(80%)
+				+transform(translate3d(-50%,-50%,0))
+				padding-bottom: 1rem
+				color: #fff
+				&.medal
+					padding-bottom: 0rem
+					font-size: 0
+				p
+					+m
+					+text-center
+					line-height: 1.4em
+				.c-title
+					+font-size(1.2rem)
+				.c-number
+					+font-size(1.5rem)
+				.c-small
+					+font-size(0.6rem)
+			.circleProgress-bg
+				+posa
+				+tl
+				+wh($wh - $border * 2,$wh - $border * 2)
+				border: $border solid rgba(255,255,255,0.4)
+				border-radius: 50%
+				+posa
+				top: 0
+			.circleProgress
+				+wh($wh - $border * 2,$wh - $border * 2)
+				border: $border solid rgba(0,0,0,0)
+				border-radius: 50%
+				+posa
+				top: 0
+				+transform(rotate(-135deg))
+			.rightcircle
+				border-top: $border solid rgb(255,255,255)
+				border-right: $border solid rgb(255,255,255)
+				right: 0
+				+tran(all,0.5s,linear)
+			.leftcircle
+				border-bottom: $border solid rgb(255,255,255)
+				border-left: $border solid rgb(255,255,255)
+				left: 0
+				+tran(all,0.5s,linear)
+				transition-delay: 0.5s
+			.right
+				right: 0
+			.left
+				left: 0
+
+	.next-step
+		+w
+		+m
+		.iphone4 &
+			+w(80%)
+
+.lotpage
+	+bc(#ffa200)
+
+	.lottery-box
+		+w(65%)
+		+m
+		+posr
+		margin-top: 10%
+		.iphone4 &
+			margin-top: 5%
+		.box-plan
+			+posa
+			+tl
+			+w
+			+transform(rotate(0deg))
+			transform-origin: 50% 47.5%
+			+tran(all,4s,ease-in-out)
+		.box-content
+			+posr
+			.title
+				+posa
+				+tl(-2.5%)
+	.lottery-note
+		+posr
+		.box-people
+			+posa
+			+bl(100%)
+
+
+.success-form
+	+w
+	.content
+		+w
+		color: #ffa200
+
+		.form
+			+w(80%)
+			+m
+			h2,p
+				+text-center
+				+m
+			h2
+				+font-size(1.2rem)
+				margin-bottom: 0.4rem
+			p
+				+font-size(0.7rem)
+				margin-bottom: 0.4rem
+
