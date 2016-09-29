@@ -227,8 +227,8 @@ $(document).ready(function () {
 
                         }*/
 
-                        $('.result_copy').text("现在购买碧浪商品，有更多大奖等你来拿！");
-                        $('.link_btn').text("前往商城");
+                        $('.result_copy').text("现在购买碧浪商品，不仅有满199减100，还有价值2000元的海尔洗衣机等你来抢！");
+                        // $('.link_btn').text("前往商城");
 
                         if(_currentDevice === "PC"){
                             _linkUrl = "http://sale.jd.com/act/gB3aNFEkQIr4qVx.html";

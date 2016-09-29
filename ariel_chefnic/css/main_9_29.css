@@ -48,7 +48,7 @@ body {
 
 .contanier {
   height: 100%;
-  max-width: 640px !important;
+  max-width: 6.4rem !important;
   margin: auto; }
   .contanier .page5 {
     position: relative; }
@@ -253,8 +253,8 @@ body {
         position: absolute;
         top: 30%;
         left: 50%;
-        width: 5.4rem;
-        height: 5.5rem;
+        width: 5.5rem;
+        height: 5.9rem;
         margin-left: -2.75rem;
         margin-top: -1.9rem; }
         .contanier .lottery_overlay .lottery_conent .result .result_title {
@@ -266,19 +266,29 @@ body {
           font-size: 0.3rem;
           color: #fff; }
         .contanier .lottery_overlay .lottery_conent .result .link_btn {
+          /*cursor: pointer;
+          position: absolute;
+          left: 50%;
+          bottom:0;
+          margin-left: px(-150);
+          font-size: px(24);
+          line-height: px(60);
+          width: px(300);
+          height: px(60);
+          text-align: center;
+          background-color: #86c12d;
+          border-radius: px(4);
+          color: #fff;*/
           cursor: pointer;
           position: absolute;
           left: 50%;
           bottom: 0;
-          margin-left: -1.5rem;
-          font-size: 0.24rem;
-          line-height: 0.6rem;
-          width: 3rem;
-          height: 0.6rem;
-          text-align: center;
-          background-color: #86c12d;
-          border-radius: 0.04rem;
-          color: #fff; }
+          margin-left: -3rem;
+          background-image: url(../img/btn.png);
+          width: 6rem;
+          height: 1.29rem;
+          background-size: 100%;
+          background-repeat: no-repeat; }
   .contanier .tips_overlay {
     display: none;
     z-index: 9999999;

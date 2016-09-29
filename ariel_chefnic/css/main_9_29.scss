@@ -38,7 +38,7 @@ body{
 .contanier{
   //width: 100%;
   height: 100%;
-  max-width: 640px !important;
+  max-width: px(640) !important;
   margin: auto;
 
   .page5{
@@ -295,8 +295,8 @@ body{
         position:absolute;
         top:30%;
         left: 50%;
-        width: px(540);
-        height: px(550);
+        width: px(550);
+        height: px(590);
         margin-left: px(-275);
         margin-top: px(-190);
 
@@ -311,7 +311,7 @@ body{
           color: #fff;
         }
         .link_btn{
-          cursor: pointer;
+          /*cursor: pointer;
           position: absolute;
           left: 50%;
           bottom:0;
@@ -323,7 +323,15 @@ body{
           text-align: center;
           background-color: #86c12d;
           border-radius: px(4);
-          color: #fff;
+          color: #fff;*/
+
+          cursor: pointer;
+          position: absolute;
+          left: 50%;
+          bottom:0;
+          margin-left: px(-300);
+          background-image: url(../img/btn.png);
+          @include setBackground(600,129);
         }
       }
     }
