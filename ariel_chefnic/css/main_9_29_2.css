@@ -254,7 +254,7 @@ body {
         top: 30%;
         left: 50%;
         width: 5.5rem;
-        height: 5.9rem;
+        height: 5.8rem;
         margin-left: -2.75rem;
         margin-top: -1.9rem; }
         .contanier .lottery_overlay .lottery_conent .result .result_title {
@@ -263,7 +263,7 @@ body {
         .contanier .lottery_overlay .lottery_conent .result .result_copy {
           text-align: center;
           margin-top: 0.2rem;
-          font-size: 0.3rem;
+          font-size: 0.24rem;
           color: #fff; }
         .contanier .lottery_overlay .lottery_conent .result .link_btn {
           /*cursor: pointer;
