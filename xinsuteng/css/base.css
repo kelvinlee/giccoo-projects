@@ -1449,7 +1449,6 @@ body.pc .main {
         top: 0px;
         right: 0px; }
   body.pc .main .kv {
-    max-width: 1200px;
     margin: 0 auto; }
   body.pc .main .register, body.pc .main .cars, body.pc .main .news, body.pc .main .zc-box {
     max-width: 640px;
@@ -1462,10 +1461,10 @@ body.pc .main {
     body.pc .main .content .kv {
       position: relative;
       width: 100%;
-      height: 800px;
-      padding-top: 0;
+      height: 0px;
+      padding-top: 75%;
       background: url("/xinsuteng/img/banner-pc.jpg") no-repeat top center;
-      background-size: 1200px 800px;
+      background-size: 100%;
       background-color: transparent;
       margin-top: -74px; }
       body.pc .main .content .kv .link {
@@ -1475,7 +1474,7 @@ body.pc .main {
         width: auto; }
     body.pc .main .content .register {
       width: 100%;
-      margin-top: -5%;
+      margin-top: -15%;
       position: relative; }
       body.pc .main .content .register .form-box {
         position: absolute;
@@ -1597,7 +1596,7 @@ body.pc .main {
     body.pc .main .content .news {
       position: relative;
       margin-top: 80px;
-      padding-bottom: 200px; }
+      padding-bottom: 100px; }
       body.pc .main .content .news .title {
         padding-bottom: 1em; }
       body.pc .main .content .news .news-img {
@@ -1612,6 +1611,12 @@ body.pc .main {
         color: #4ca2d9;
         font-size: 20px;
         line-height: 1.4em; }
+        body.pc .main .content .news .news-content .text-center {
+          text-align: center; }
+        body.pc .main .content .news .news-content .more {
+          width: 50%;
+          margin: 0 auto;
+          display: inline-block; }
 
 body.mobi .main {
   background: url("/xinsuteng/img/m-bg.jpg") no-repeat top center;
@@ -1695,6 +1700,7 @@ body.mobi .main {
         body.mobi .main .content .video-box .box .box-content {
           position: absolute;
           width: 80%;
+          height: 60%;
           top: 50%;
           left: 10%;
           -webkit-transform: translate3d(0, -56%, 0);
@@ -1747,7 +1753,6 @@ body.mobi .main {
         margin: 0 auto; }
       body.mobi .main .content .news .news-content {
         width: 80%;
-        height: 14em;
         margin: 0 auto;
         overflow: scroll;
         overflow-scrolling: touch;
@@ -1757,3 +1762,9 @@ body.mobi .main {
         color: #4ca2d9; }
         body.mobi .main .content .news .news-content p {
           margin: 0 0 1em 0; }
+        body.mobi .main .content .news .news-content .text-center {
+          text-align: center; }
+        body.mobi .main .content .news .news-content .more {
+          width: 50%;
+          margin: 0 auto;
+          display: inline-block; }

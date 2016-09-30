@@ -413,7 +413,7 @@ body.pc
 					+posa
 					+tr
 		.kv
-			max-width: 1200px
+			// max-width: 1200px
 			+m
 		.register,.cars,.news,.zc-box
 			max-width: 640px
@@ -427,9 +427,9 @@ body.pc
 			.kv
 				+posr
 				+w
-				+h(800px)
-				padding-top: 0
-				+b($cdn+"img/banner-pc.jpg",no-repeat,top,center,1200px 800px)
+				+h(0px)
+				padding-top: 75%
+				+b($cdn+"img/banner-pc.jpg",no-repeat,top,center,100%)
 				margin-top: -74px
 				.link
 					+posa
@@ -437,7 +437,7 @@ body.pc
 					+w(auto)
 			.register
 				+w
-				margin-top: -5%
+				margin-top: -15%
 				+posr
 				.form-box
 					+posa
@@ -535,7 +535,7 @@ body.pc
 			.news
 				+posr
 				margin-top: 80px
-				padding-bottom: 200px
+				padding-bottom: 100px
 				.title
 					padding-bottom: 1em
 					
@@ -552,6 +552,12 @@ body.pc
 					color: #4ca2d9
 					font-size: 20px
 					line-height: 1.4em
+					.text-center
+						+text-center
+					.more
+						+w(50%)
+						+m
+						+show-inline
 
 
 body.mobi
@@ -617,6 +623,7 @@ body.mobi
 					.box-content
 						+posa
 						+w(80%)
+						+h(60%)
 						+tl(50%,10%)
 						+transform(translate3d(0,-56%,0))
 						font-size: 0
@@ -659,7 +666,6 @@ body.mobi
 
 				.news-content
 					+w(80%)
-					+h(14em)
 					+m
 					+touch
 					line-height: 1.4em
@@ -667,6 +673,12 @@ body.mobi
 					color: #4ca2d9
 					p
 						+m(0 0 1em 0)
+					.text-center
+						+text-center
+					.more
+						+w(50%)
+						+m
+						+show-inline
 
 
 				
