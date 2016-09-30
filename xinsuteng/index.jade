@@ -1,0 +1,86 @@
+extends ../libs/jade/layout-clean
+block title
+	| 新速腾
+
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://disk.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css?v=1")
+
+block content
+	//- url = "http://image.giccoo.com/projects/volvo_s60l/"
+	- url = "/xinsuteng/"
+	
+	.main.hide
+		.content
+			.kv
+				//- img(src="#{url}img/banner-m.jpg")
+				a.link.pc-show(href="http://vw.faw-vw.com")
+					img(src="#{url}img/goto-website-button.jpg")
+				a.link.m-show(href="http://vw.faw-vw.com/m")
+					img(src="#{url}img/goto-website-button.jpg")
+			.register
+				.bg
+					img(src="#{url}img/register-bg.png")
+				.form-box
+					register#register(action="http://localhost:8881/xinsuteng/insert/")
+			.zc-box
+				.title
+					img(src="#{url}img/jinrong-title.png")
+				slider#mainSlider.sliderBox(myid="mainSlider",repeat="true",callback="changeMain",list="#{url}img/jinrong-1.png,#{url}img/jinrong-1.png,#{url}img/jinrong-1.png")
+					.left
+						img(src="#{url}img/left-button.png")
+					.right
+						img(src="#{url}img/left-button.png")
+				.points
+					span.on
+					span
+					span
+			.video-box
+				.title
+					img(src="#{url}img/video-title.png")
+				.box
+					.box-content
+						|<iframe height=300 width=480 src='http://player.youku.com/embed/XMTc0MTIzMDExNg==' frameborder=0 'allowfullscreen'></iframe>
+
+			.cars
+				.title
+					img(src="#{url}img/car-title.png")
+				slider#secondSlider.sliderBox(myid="secondSlider",repeat="true",callback="changePoint",list="#{url}img/car-info-1.png,#{url}img/car-info-2.png,#{url}img/car-info-3.png,#{url}img/car-info-4.png")
+					.left
+						img(src="#{url}img/left-button.png")
+					.right
+						img(src="#{url}img/left-button.png")
+				.points
+					span.on
+					span
+					span
+					span
+
+			.news
+				.title
+					img(src="#{url}img/news-title.png")
+				.news-img
+					img(src="#{url}img/news-banner.jpg")
+				.news-content
+					p 9月19日，新速腾2017年型超值上市，配置更加丰富，售价保持不变。新年型增加了诸多舒适、科技装备，比如真皮多功能方向盘、无钥匙进入与一键启动、后倒车雷达、后门氛围灯、第二代MIB信息娱乐系统等一系列科技装备在除时尚型外的全系车型上实现了标配；同时此次年型升级提供了更个性化的选装方案，以十足诚意感恩消费者十年厚爱与支持。
+					p 与此同时，新速腾2017年型在保持原有1.6L 、230TSI、280TSI三种动力的基础上，新增一款小排量车型——新速腾1.2TSI自动领先型，售价15.88万元，新车搭载了大众全新的EA211系列1.2TSI四缸涡轮增压发动机，以及7挡DSG双离合变速器，高效能、低排放，堪称速腾家族的“环保能手”。
+
+block js
+	- url = "/"
+	script(src="http://disk.giccoo.com/projects/libs/js/min/Zepto.min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="http://disk.giccoo.com/projects/jaguar/js/cityData-min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/riot.min.js")
+	script(src="js/tags.js?v=1")
+	script(src="js/main.js?v=1")
+
+	script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();

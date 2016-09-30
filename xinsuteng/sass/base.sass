@@ -1,0 +1,652 @@
+@import sass/base
+@import ../../libs/sass/loading
+@import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+
+
+$debug : true
+$cdn : "http://192.168.1.140:5757/xinsuteng/"
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects/xinsuteng/"
+
++keyframes(leftmove)
+	0%
+		+transform(translate3d(0%,0,0))
+	100%
+		+transform(translate3d(-100%,0,0))
++keyframes(showline)
+	0%
+		+w(0)
+	100%
+		+w(96%)
++keyframes(nextpoint)
+	0%
+		opacity: 0.5
+		+transform(translate3d(0,-100%,0))
+	10%
+		opacity: 1
+	100%
+		opacity: 0.5
+		+transform(translate3d(0,0,0))
+
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
+
+.share-wechat
+	+posa
+	+tl
+	+w
+	+h
+	+b("http://disk.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
+	+bc
+	z-index: 1100
+	+hide
+	&.open
+		+show
+
+.main
+	+w
+	+bc(#22262a)
+	// +posf
+	// min-height: 410px
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+
+.loading.loaded
+	+large
+		+hide
+
+.sliderBox
+	white-space: nowrap
+	+w
+	+h
+	+show
+	+overhide
+
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	+show-inline
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+iw(600)
+	+m
+	margin-top: -8%
+	.share-icon
+		+show-inline
+		+w(25%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		
+html,body
+	+w
+	+h
+	// +overhide
+
+body
+	// +b("http://i3.tietuku.com/1fcc3041ce5a552f.jpg",no-repeat,center,center,cover)
+	color: #fff
+	// +bc(#fff)
+
+
+// .loading.loaded
+// 	+hide
+.loading
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+bc(transparent)
+	.new-load
+		+posa
+		+tl(50%,50%)
+		+w
+		+text-center
+		// +p(100% 0 0 0)
+		+transform(translate3d(-50%,-50%,0))
+		.load-item
+			+iw(230)
+			+posr
+			// > img
+				// +animation(rubberBand,2s,ease,infinite)
+			.load-item-note1
+				+posa
+				+bl(26%,27.5%)
+				+w(45%)
+				+h(5%)
+				+tran($time: 100ms)
+				overflow: hidden
+				.load-move
+					+animation(leftmove,2s,linear,infinite)
+				img
+					+w(180px)
+					max-width: 180px
+					
+			.load-item-note2
+				+posa
+				+tr
+				+w
+				
+		.load-progress
+			+font-size(0.8rem)
+			color: #fff
+			+p(2% 0 0 0)
+			+posa
+			+tl(50%,50%)
+			+transform(translate3d(-50%,-50%,0))
+
+.pages
+	.page
+		.content
+			+posa
+			+tl
+			+w
+			+h
+
+
+
+
+
+.begin
+	+posa
+	+tl
+	+w
+	+h
+.hide
+	display: none !important
+
+.outlink
+	+posa
+	+tl(35%,5%)
+	+w(40%)
+	+h(2rem)
+	+show
+
+.note
+	+posf
+	+tl
+	+br
+	+wh(100%,100%)
+	z-index: 9999
+	.note-box
+		+text-center
+		+posa
+		+tl(50%)
+		+w(100%)
+		// z-index: 9999
+		.note-content
+			display: inline-block
+			padding: 10px 11px 10px 10px
+			background-color: rgba(0,0,0,0.7)
+			color: #fff
+			border-radius: 5px
+			max-width: 90%
+			+box
+		.icon-form,.note-text
+			display: inline-block
+			vertical-align: top
+			line-height: 25px
+		.icon-form
+			+wh(25px,25px)
+		.note-text
+			+font-size(0.8rem)
+			letter-spacing: 2px
+
+.pop
+	+posa
+	+tl
+	+w
+	+h
+	+bc(rgba(0,0,0,0.7))
+
+.loader
+	.more
+		+posa
+		+tl(60%,50%)
+		+w(35%)
+		margin-left: -35%/2
+
+.sliders
+	// +posa
+	// +bl(20%,10%)
+	+overhide
+	+w(80%)
+	+m
+	margin-top: 1rem
+	max-width: 400px
+	border: solid 4px #fff
+	box-shadow: 1px 1px 6px #000
+
+.points
+	+w
+	+text-center
+	// +posa
+	// +bl(15%,0)
+	margin-top: 1rem
+	span
+		+show-inline
+		+wh(0.5rem,0.5rem)
+		+m(0 0.2rem)
+		+bc(#c2c2c2)
+		border-radius: 50%
+		&.on
+			+bc(#003663)
+
+
+
+.form-box
+	// +posa
+	// +tl(0,0)
+	+w(100%)
+	+box
+	+p(0 1.5rem)
+.form
+	+w(100%)
+	+m
+	+p(1.2rem 0)
+	$labelColor: #fffff
+	$borderColor: #313131
+	$inputColor: #000
+	$inputBackgroundColor: #6cc7ff
+	$inputBorderRadius: 0
+	.form-grounp
+		$h: 1.6rem
+		margin-bottom: 0.4rem
+		+p(0.2rem 0)
+		vertical-align: top
+		font-size: 0
+		> label
+			+wh(32%,$h)
+			+show-inline
+			+font-size(0.8rem)
+			+m(0.2rem 0)
+			line-height: $h
+			vertical-align: top
+			color: $labelColor
+			font-weight: bold
+		> input
+			+wh(67%,$h)
+			+font-size(0.8rem)
+			+bc($inputBackgroundColor)
+			+show-inline
+			+box
+			+m(0.2rem 0)
+			+p(0.2rem)
+			line-height: $h
+			vertical-align: top
+			border: solid 1px $borderColor
+			color: $inputColor
+			outline: none
+			border-radius: $inputBorderRadius
+		.comb
+			+wh(68%,$h)
+			+font-size(1rem)
+			+show-inline
+			+m(0.2rem 0)
+			color: $inputColor
+			white-space: nowrap
+			label
+				+wh(30%,$h)
+				+show-inline
+				+font-size(0.8rem)
+				+text-center
+				color: $labelColor
+			input
+				+show-inline
+				+w(1rem)
+			.select
+				+w(48.5%)
+				+m
+		.select
+			+posr
+			+wh(68%,$h)
+			+show-inline
+			+bc($inputBackgroundColor)
+			+m(0.2rem 0)
+			+box
+			+p(0 0.2rem)
+			+font-size(0.8rem)
+			color: $inputColor
+			border: solid 1px $borderColor
+			border-radius: $inputBorderRadius
+			&:after
+				$size: 0.5rem
+				content: " "
+				+posa
+				+tr(50%,$size)
+				+transform(translate3d(0,-50%,0))
+				z-index: 99
+				border-left: $size/2 solid transparent
+				border-right: $size/2 solid transparent
+				border-top: $size solid $borderColor
+			span
+				text-overflow: ellipsis
+				+show-inline
+				+wh(100%,$h)
+				+overhide
+				white-space: nowrap
+				overflow: hidden
+				text-overflow: ellipsis
+			select
+				+posa
+				+tl
+				+br
+				+w
+				+h
+				opacity: 0
+
+	.form-btn
+		+text-center
+		margin-top: 0.8rem
+		button
+			+w(40%)
+			+m
+			+p(2px 0)
+			+bc(transparent)
+			border: none
+
+.backTop
+	+posf
+	+br(5%,5%)
+	+w(2rem)
+	font-size: 0
+	&.hide
+		+hide
+
+body.pc
+	.m-show
+		display: none
+body.mobi
+	.pc-show
+		display: none
+
+
+body.pc
+	.main
+		.kv
+			max-width: 1200px
+			+m
+		.register,.cars,.news,.zc-box
+			max-width: 640px
+			+m
+		.video-box
+			max-width: 740px
+			+m
+		+b($cdn+"img/pc-bg.jpg",no-repeat,top,center,1200px 4919px,#22262a)
+		.content
+			+w
+			.kv
+				+posr
+				+w
+				+h(800px)
+				padding-top: 0
+				+b($cdn+"img/banner-pc.jpg",no-repeat,top,center,1200px 800px)
+				.link
+					+posa
+					+br(24%,15%)
+					+w(auto)
+			.register
+				+w
+				margin-top: -5%
+				+posr
+				.form-box
+					+posa
+					+tl(24%,5%)
+					+w(90%)
+				.form
+					.form-grounp
+						// line-height: 2em
+						margin-bottom: 20px
+						label,input
+							font-size: 24px
+							height: 1.6em
+							line-height: 1.6em
+						.select
+							font-size: 24px
+							height: 1.6em
+							line-height: 1.6em
+							span
+								height: 1.6em
+								line-height: 1.6em
+							select
+								top: 5px
+
+			.zc-box
+				+posr
+				margin-top: 2em
+				padding-top: 70px
+				.title
+					+posa
+					+tl
+					z-index: 2
+				.left
+					+posa
+					+tl(50%,3%)
+					+iw(46)
+					font-size: 0
+					+transform(translate3d(0,-50%,0))
+					z-index: 101
+					cursor: pointer
+				.right
+					+posa
+					+tr(50%,3%)
+					+iw(46)
+					font-size: 0
+					+transform(translate3d(0,-50%,0) scale(-1,1))
+					z-index: 101
+					cursor: pointer
+			.video-box
+				+posr
+				margin-top: 80px
+				padding-top: 2em
+				.title
+					+posa
+					+tl
+					z-index: 2
+				.box
+					+w
+					padding-top: 72%
+					+b($cdn+"img/video-bg.png",no-repeat,top,center,100% auto)
+					+posr
+					.box-content
+						+posa
+						+w(80%)
+						+tl(45%,10%)
+						+transform(translate3d(0,-50%,0))
+						font-size: 0
+						+text-center
+						iframe
+							+m
+			.cars
+				+posr
+				margin-top: 80px
+				padding-top: 133px
+				.title
+					+posa
+					+tl
+					z-index: 2
+				.left
+					+posa
+					+tl(50%,3%)
+					+iw(46)
+					font-size: 0
+					+transform(translate3d(0,-50%,0))
+					z-index: 101
+					cursor: pointer
+				.right
+					+posa
+					+tr(50%,3%)
+					+iw(46)
+					font-size: 0
+					+transform(translate3d(0,-50%,0) scale(-1,1))
+					z-index: 101
+					cursor: pointer
+
+			.news
+				+posr
+				margin-top: 80px
+				padding-bottom: 200px
+				.title
+					padding-bottom: 1em
+					
+				.news-img
+					+w(80%)
+					+m
+					+text-center
+
+				.news-content
+					+w(405px)
+					+h(auto)
+					+m
+					margin-top: 2em
+					color: #4ca2d9
+					font-size: 20px
+					line-height: 1.4em
+
+
+body.mobi
+	.main
+		+b($cdn+"img/m-bg.jpg",no-repeat,top,center,100% auto,#22262a)
+		.content
+			+w
+			// +h
+			+touch
+			.kv
+				+posr
+				+w
+				// +h(600px)
+				padding-top: 130%
+				+b($cdn+"img/banner-m.jpg",no-repeat,top,center,100% auto)
+				.link
+					+posa
+					+br(24%,15%)
+					+w(40%)
+			.register
+				+w
+				margin-top: -20%
+				+posr
+				.form-box
+					+posa
+					+tl(18%,5%)
+					+w(90%)
+			.zc-box
+				+posr
+				margin-top: 2em
+				padding-top: 1.6em
+				.title
+					+posa
+					+tl
+					z-index: 2
+				.left
+					+posa
+					+tl(50%,3%)
+					+iw(46)
+					font-size: 0
+					+transform(translate3d(0,-50%,0))
+					z-index: 101
+				.right
+					+posa
+					+tr(50%,3%)
+					+iw(46)
+					font-size: 0
+					+transform(translate3d(0,-50%,0) scale(-1,1))
+					z-index: 101
+			.video-box
+				+posr
+				margin-top: 2em
+				padding-top: 2em
+				.title
+					+posa
+					+tl
+					z-index: 2
+				.box
+					+w
+					padding-top: 80%
+					+b($cdn+"img/video-bg.png",no-repeat,top,center,110% auto)
+					+posr
+					.box-content
+						+posa
+						+w(80%)
+						+tl(50%,10%)
+						+transform(translate3d(0,-56%,0))
+						font-size: 0
+						iframe
+							+w
+							+h
+			.cars
+				+posr
+				margin-top: 2em
+				padding-top: 4em
+				.title
+					+posa
+					+tl
+					z-index: 2
+				.left
+					+posa
+					+tl(50%,3%)
+					+iw(46)
+					font-size: 0
+					+transform(translate3d(0,-50%,0))
+					z-index: 101
+				.right
+					+posa
+					+tr(50%,3%)
+					+iw(46)
+					font-size: 0
+					+transform(translate3d(0,-50%,0) scale(-1,1))
+					z-index: 101
+
+			.news
+				+posr
+				margin-top: 2em
+				padding-bottom: 4em
+				.title
+					padding-bottom: 1em
+					
+				.news-img
+					+w(80%)
+					+m
+
+				.news-content
+					+w(80%)
+					+h(14em)
+					+m
+					+touch
+					line-height: 1.4em
+					margin-top: 2em
+					color: #4ca2d9
+					p
+						+m(0 0 1em 0)
+
+
+				
+
