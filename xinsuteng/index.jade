@@ -5,7 +5,7 @@ block title
 
 block css
 	meta(name="author",content="m.giccoo.com")
-	link(rel="stylesheet",href="http://disk.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
 	link(rel="stylesheet",href="css/base.css?v=1")
 
 block content
@@ -14,6 +14,12 @@ block content
 	
 	.main.hide
 		.content
+			.logo
+				.logo-box
+					.left
+						img(src="#{url}img/logo-left.jpg")
+					.right
+						img(src="#{url}img/logo-right.jpg")
 			.kv
 				//- img(src="#{url}img/banner-m.jpg")
 				a.link.pc-show(href="http://vw.faw-vw.com")
@@ -69,10 +75,10 @@ block content
 
 block js
 	- url = "/"
-	script(src="http://disk.giccoo.com/projects/libs/js/min/Zepto.min.js")
-	script(src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js")
-	//- script(src="http://disk.giccoo.com/projects/jaguar/js/cityData-min.js")
-	script(src="http://disk.giccoo.com/projects/libs/js/min/riot.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/Zepto.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="http://image.giccoo.com/projects/jaguar/js/cityData-min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/riot.min.js")
 	script(src="js/tags.js?v=1")
 	script(src="js/main.js?v=1")
 

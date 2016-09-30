@@ -5,9 +5,9 @@
 
 
 $debug : true
-$cdn : "http://192.168.1.140:5757/xinsuteng/"
+$cdn : "/xinsuteng/"
 @if not $debug
-	$cdn : "http://disk.giccoo.com/projects/xinsuteng/"
+	$cdn : "http://image.giccoo.com/projects/xinsuteng/"
 
 +keyframes(leftmove)
 	0%
@@ -389,9 +389,29 @@ body.mobi
 	.pc-show
 		display: none
 
-
+.logo
+	+hide
 body.pc
 	.main
+		.logo
+			+posr
+			+show-inline
+			min-width: 640px
+			z-index: 109
+			+w
+			+bc(#ffffff)
+			.logo-box
+				+w
+				+h(74px)
+				+posr
+				+m
+				max-width: 1200px
+				.left
+					+posa
+					+tl
+				.right
+					+posa
+					+tr
 		.kv
 			max-width: 1200px
 			+m
@@ -410,6 +430,7 @@ body.pc
 				+h(800px)
 				padding-top: 0
 				+b($cdn+"img/banner-pc.jpg",no-repeat,top,center,1200px 800px)
+				margin-top: -74px
 				.link
 					+posa
 					+br(24%,15%)

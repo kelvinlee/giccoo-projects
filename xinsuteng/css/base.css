@@ -1420,10 +1420,34 @@ body.pc .m-show {
 body.mobi .pc-show {
   display: none; }
 
+.logo {
+  display: none; }
+
 body.pc .main {
-  background: url("http://192.168.1.140:5757/xinsuteng/img/pc-bg.jpg") no-repeat top center;
+  background: url("/xinsuteng/img/pc-bg.jpg") no-repeat top center;
   background-size: 1200px 4919px;
   background-color: #22262a; }
+  body.pc .main .logo {
+    position: relative;
+    display: inline-block;
+    min-width: 640px;
+    z-index: 109;
+    width: 100%;
+    background-color: #ffffff; }
+    body.pc .main .logo .logo-box {
+      width: 100%;
+      height: 74px;
+      position: relative;
+      margin: 0 auto;
+      max-width: 1200px; }
+      body.pc .main .logo .logo-box .left {
+        position: absolute;
+        top: 0px;
+        left: 0px; }
+      body.pc .main .logo .logo-box .right {
+        position: absolute;
+        top: 0px;
+        right: 0px; }
   body.pc .main .kv {
     max-width: 1200px;
     margin: 0 auto; }
@@ -1440,9 +1464,10 @@ body.pc .main {
       width: 100%;
       height: 800px;
       padding-top: 0;
-      background: url("http://192.168.1.140:5757/xinsuteng/img/banner-pc.jpg") no-repeat top center;
+      background: url("/xinsuteng/img/banner-pc.jpg") no-repeat top center;
       background-size: 1200px 800px;
-      background-color: transparent; }
+      background-color: transparent;
+      margin-top: -74px; }
       body.pc .main .content .kv .link {
         position: absolute;
         bottom: 24%;
@@ -1519,7 +1544,7 @@ body.pc .main {
       body.pc .main .content .video-box .box {
         width: 100%;
         padding-top: 72%;
-        background: url("http://192.168.1.140:5757/xinsuteng/img/video-bg.png") no-repeat top center;
+        background: url("/xinsuteng/img/video-bg.png") no-repeat top center;
         background-size: 100% auto;
         background-color: transparent;
         position: relative; }
@@ -1589,7 +1614,7 @@ body.pc .main {
         line-height: 1.4em; }
 
 body.mobi .main {
-  background: url("http://192.168.1.140:5757/xinsuteng/img/m-bg.jpg") no-repeat top center;
+  background: url("/xinsuteng/img/m-bg.jpg") no-repeat top center;
   background-size: 100% auto;
   background-color: #22262a; }
   body.mobi .main .content {
@@ -1601,7 +1626,7 @@ body.mobi .main {
       position: relative;
       width: 100%;
       padding-top: 130%;
-      background: url("http://192.168.1.140:5757/xinsuteng/img/banner-m.jpg") no-repeat top center;
+      background: url("/xinsuteng/img/banner-m.jpg") no-repeat top center;
       background-size: 100% auto;
       background-color: transparent; }
       body.mobi .main .content .kv .link {
@@ -1663,7 +1688,7 @@ body.mobi .main {
       body.mobi .main .content .video-box .box {
         width: 100%;
         padding-top: 80%;
-        background: url("http://192.168.1.140:5757/xinsuteng/img/video-bg.png") no-repeat top center;
+        background: url("/xinsuteng/img/video-bg.png") no-repeat top center;
         background-size: 110% auto;
         background-color: transparent;
         position: relative; }
