@@ -1469,12 +1469,12 @@ body.pc .main {
       margin-top: -74px; }
       body.pc .main .content .kv .link {
         position: absolute;
-        bottom: 24%;
+        bottom: 40%;
         right: 15%;
         width: auto; }
     body.pc .main .content .register {
       width: 100%;
-      margin-top: -15%;
+      margin-top: -25%;
       position: relative; }
       body.pc .main .content .register .form-box {
         position: absolute;
