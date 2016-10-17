@@ -107,11 +107,15 @@ $(document).ready(function load (){
 
 		redot.css({opacity:0})
 		bl2.css({display:'block',opacity:1})
-		TweenLite.set(screen2,{scaleY:.02})
-		TweenLite.set(screenPic,{scaleY:.02})
+
+		screen2.css({'top':'40%','left': '50%','width': '100%',	'transform':'translate3d(-50%,-50%,0)',	'-webkit-transform':'translate3d(-50%,-50%,0)',opacity:1})
+
+		//TweenLite.set(screen2,{scaleY:.02,opacity:1})
+		TweenLite.set(screenPic,{scaleY:.02,opacity:1})
 		TweenLite.from(screen2,.5,{scaleX:0,opacity:0,delay:0,onComplete:fullscreen})
 		TweenLite.from(screenPic,.5,{scaleX:0,opacity:0,delay:0.2})
 		
+
 
 		function fullscreen(){//屏幕展开后
 			TweenLite.to(screen2,.5,{scaleY:1,opacity:1,delay:0,onComplete:screenLoop})
@@ -224,6 +228,7 @@ $(document).ready(function load (){
 		end3.css({display:'none'})
 		end4.css({display:'none'})
 		endA[story-1].css({display:'block'})
+		$('#btnBack1234').css({display:'none'})
 
 		if (story==1) {
 
@@ -234,7 +239,7 @@ $(document).ready(function load (){
 			TweenLite.from($('#Apic2'),.5,{opacity:0,delay:4})//开始笑
 			TweenLite.from($('#smile1'),1,{scaleY:0,ease:Back.easeOut,delay:5})//笑
 
-			TweenLite.from($('#bubble1'),1,{opacity:0,scale:0,ease:Back.easeOut,delay:5})//气泡
+			TweenLite.from($('#bubble1'),1,{opacity:0,scale:0,ease:Back.easeOut,delay:5,onComplete:setBtn})//气泡
 			TweenLite.from($('.p5down'),1,{opacity:0,delay:6})//底边
 			TweenLite.from($('#At3'),1,{opacity:0,delay:6})//底边
 		}else if (story==2){
@@ -245,7 +250,7 @@ $(document).ready(function load (){
 			TweenLite.from($('#Bpic2'),.5,{opacity:0,delay:4})//开始笑
 			TweenLite.from($('#smile2'),1,{scaleY:0,ease:Back.easeOut,delay:5})//笑
 
-			TweenLite.from($('#bubble2'),1,{opacity:0,scale:0,ease:Back.easeOut,delay:5})//气泡
+			TweenLite.from($('#bubble2'),1,{opacity:0,scale:0,ease:Back.easeOut,delay:5,onComplete:setBtn})//气泡
 			TweenLite.from($('.p5down'),1,{opacity:0,delay:6})//底边
 			TweenLite.from($('#Bt3'),1,{opacity:0,delay:6})//底边
 		}else if (story==3){
@@ -256,7 +261,7 @@ $(document).ready(function load (){
 			TweenLite.from($('#Cpic2'),.5,{opacity:0,delay:4})//开始笑
 			TweenLite.from($('#smile3'),1,{scaleY:0,ease:Back.easeOut,delay:5})//笑
 
-			TweenLite.from($('#bubble3'),1,{opacity:0,scale:0,ease:Back.easeOut,delay:5})//气泡
+			TweenLite.from($('#bubble3'),1,{opacity:0,scale:0,ease:Back.easeOut,delay:5,onComplete:setBtn})//气泡
 			TweenLite.from($('.p5down'),1,{opacity:0,delay:6})//底边
 			TweenLite.from($('#Ct3'),1,{opacity:0,delay:6})//底边
 			
@@ -268,16 +273,21 @@ $(document).ready(function load (){
 			TweenLite.from($('#Dpic2'),.5,{opacity:0,delay:4})//开始笑
 			TweenLite.from($('#smile4'),1,{scaleY:0,ease:Back.easeOut,delay:5})//笑
 
-			TweenLite.from($('#bubble4'),1,{opacity:0,scale:0,ease:Back.easeOut,delay:5})//气泡
+			TweenLite.from($('#bubble4'),1,{opacity:0,scale:0,ease:Back.easeOut,delay:5,onComplete:setBtn})//气泡
 			TweenLite.from($('.p5down'),1,{opacity:0,delay:6})//底边
 			TweenLite.from($('#Dt3'),1,{opacity:0,delay:6})//底边
 			
+		}
+
+		function setBtn(){
+			$('#btnBack1234').css({display:'block'})
 		}
 
 		$('#btnBack1234').click(function(){
 			$('#page2').css({display:'none'})
 			$('#page5').css({display:'none'})
 			$('#page4').css({display:'none'})
+			story=0
 			goPage3();
 		})
 
