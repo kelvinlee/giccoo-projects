@@ -51,7 +51,12 @@ $(document).ready(function load (){
 
 	var lockT = $('#lock')
 
-	page1ani1();
+
+	setTimeout(function(){
+		page1ani1()
+	},1000)
+
+	//page1ani1();
 	
 	function page1ani1(){
 		$('#page1').css({display:'block'})
@@ -86,10 +91,10 @@ $(document).ready(function load (){
 		TweenLite.from(p2t2,1.5,{y:+10,opacity:0,delay:1})
 		TweenLite.from(p2t3,1.5,{y:+10,opacity:0,delay:2,onComplete:hidePage2})
 		function hidePage2(){
-			TweenLite.to(bl1,.2,{opacity:1,delay:1})
-			TweenLite.to(p2t1,.2,{opacity:0,delay:1.7})
-			TweenLite.to(p2t2,.2,{opacity:0,delay:1.6})
-			TweenLite.to(p2t3,.2,{opacity:0,delay:1.5,onComplete:goPage3})//最后挑时间，。2-》2
+			TweenLite.to(bl1,2,{opacity:1,delay:1})
+			TweenLite.to(p2t1,2,{opacity:0,delay:1.7})
+			TweenLite.to(p2t2,2,{opacity:0,delay:1.6})
+			TweenLite.to(p2t3,2,{opacity:0,delay:1.5,onComplete:goPage3})//最后挑时间，。2-》2
 		}
 	}
 
@@ -108,18 +113,24 @@ $(document).ready(function load (){
 		redot.css({opacity:0})
 		bl2.css({display:'block',opacity:1})
 
-		screen2.css({'top':'40%','left': '50%','width': '100%',	'transform':'translate3d(-50%,-50%,0)',	'-webkit-transform':'translate3d(-50%,-50%,0)',opacity:1})
+		//screen2.css({'transform':''})
+		//screen2.css({'top':'40%','left': '50%','width': '100%',	'transform':'translate3d(-50%,-50%,0)',	'-webkit-transform':'translate3d(-50%,-50%,0)',opacity:1})
 
-		//TweenLite.set(screen2,{scaleY:.02,opacity:1})
-		TweenLite.set(screenPic,{scaleY:.02,opacity:1})
-		TweenLite.from(screen2,.5,{scaleX:0,opacity:0,delay:0,onComplete:fullscreen})
-		TweenLite.from(screenPic,.5,{scaleX:0,opacity:0,delay:0.2})
+		// TweenLite.set(screen2,{scaleY:.02,opacity:1})
+		// TweenLite.set(screenPic,{scaleY:.02,opacity:1})
+		// TweenLite.from(screen2,.5,{scaleX:0,opacity:0,delay:0,onComplete:fullscreen})
+		// TweenLite.from(screenPic,.5,{scaleX:0,opacity:0,delay:0.2})
+
+		TweenLite.set(screen2,{scale:0,opacity:1})
+		TweenLite.set(screenPic,{scale:0,opacity:1})
+		TweenLite.from(screen2,.5,{opacity:0,delay:0,onComplete:fullscreen})
+		TweenLite.from(screenPic,.5,{opacity:0,delay:0.2})
 		
 
 
 		function fullscreen(){//屏幕展开后
-			TweenLite.to(screen2,.5,{scaleY:1,opacity:1,delay:0,onComplete:screenLoop})
-			TweenLite.to(screenPic,.5,{scaleY:1,opacity:1,delay:0.2,onComplete:redotLoop})
+			TweenLite.to(screen2,.5,{scale:1,opacity:1,delay:0,onComplete:screenLoop})
+			TweenLite.to(screenPic,.5,{scale:1,opacity:1,delay:0.2,onComplete:redotLoop})
 			TweenLite.to(bl2,2,{opacity:0,display:'block',delay:1})
 			p3t1.css({display:'block',opacity:1})
 			arrow1.css({display:'block',opacity:1})
@@ -155,6 +166,7 @@ $(document).ready(function load (){
 			function goNext(){
 				// alert(story)
 				$('#page3').css({display:'none'})
+
 				nowPage=4
 				startSearch()
 			}
@@ -215,8 +227,8 @@ $(document).ready(function load (){
 			TweenLite.set(sp4,{left:'-21.4%',top:'25%',delay:3,scale:1.6,overwrite:0})
 		}
 
-		TweenLite.set(lockT,{display:'block',opacity:1})
-		TweenLite.from(lockT,.5,{opacity:0,scale:2,delay:3.5,onComplete:hidePage4})
+		TweenLite.set(lockT,{display:'block',opacity:1,scale:1})
+		TweenLite.from(lockT,.5,{opacity:0,scale:1.5,delay:3,onComplete:hidePage4})
 	}
 	 function hidePage4(){
 	 	TweenLite.set($('#page4'),{display:'none',delay:.5,onComplete:goPage5})
@@ -284,9 +296,10 @@ $(document).ready(function load (){
 		}
 
 		$('#btnBack1234').click(function(){
-			$('#page2').css({display:'none'})
-			$('#page5').css({display:'none'})
+			$('#page1').css({display:'none'})
+			$('#page3').css({display:'none'})
 			$('#page4').css({display:'none'})
+			$('#page5').css({display:'none'})
 			story=0
 			goPage3();
 		})
