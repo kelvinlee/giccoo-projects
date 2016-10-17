@@ -91,10 +91,10 @@ $(document).ready(function load (){
 		TweenLite.from(p2t2,1.5,{y:+10,opacity:0,delay:1})
 		TweenLite.from(p2t3,1.5,{y:+10,opacity:0,delay:2,onComplete:hidePage2})
 		function hidePage2(){
-			TweenLite.to(bl1,2,{opacity:1,delay:1})
-			TweenLite.to(p2t1,2,{opacity:0,delay:1.7})
-			TweenLite.to(p2t2,2,{opacity:0,delay:1.6})
-			TweenLite.to(p2t3,2,{opacity:0,delay:1.5,onComplete:goPage3})//最后挑时间，。2-》2
+			TweenLite.to(bl1,2,{opacity:1,delay:.5})
+			TweenLite.to(p2t1,1,{opacity:0,delay:1.2})
+			TweenLite.to(p2t2,1,{opacity:0,delay:1.1})
+			TweenLite.to(p2t3,1,{opacity:0,delay:1.0,onComplete:goPage3})//最后挑时间，。2-》2
 		}
 	}
 
@@ -245,8 +245,8 @@ $(document).ready(function load (){
 		if (story==1) {
 
 			TweenLite.from($('#Apic1'),1,{opacity:0})
-			TweenLite.from($('#At1'),1,{opacity:0,delay:.5})//感叹
-			TweenLite.from($('#At2'),1,{opacity:0,scale:0,ease:Elastic.easeOut,delay:2.5})//等等！
+			TweenLite.from($('#At1'),1,{y:+5,opacity:0,delay:.5})//感叹
+			TweenLite.from($('#At2'),1,{opacity:0,scale:.5,ease:Back.easeOut,delay:2.5})//等等！
 
 			TweenLite.from($('#Apic2'),.5,{opacity:0,delay:4})//开始笑
 			TweenLite.from($('#smile1'),1,{scaleY:0,ease:Back.easeOut,delay:5})//笑
@@ -256,8 +256,8 @@ $(document).ready(function load (){
 			TweenLite.from($('#At3'),1,{opacity:0,delay:6})//底边
 		}else if (story==2){
 			TweenLite.from($('#Bpic1'),1,{opacity:0})
-			TweenLite.from($('#Bt1'),1,{opacity:0,delay:.5})//感叹
-			TweenLite.from($('#Bt2'),1,{opacity:0,scale:0,ease:Elastic.easeOut,delay:2.5})//等等！
+			TweenLite.from($('#Bt1'),1,{y:+5,opacity:0,delay:.5})//感叹
+			TweenLite.from($('#Bt2'),1,{opacity:0,scale:.5,ease:Back.easeOut,delay:2.5})//等等！
 
 			TweenLite.from($('#Bpic2'),.5,{opacity:0,delay:4})//开始笑
 			TweenLite.from($('#smile2'),1,{scaleY:0,ease:Back.easeOut,delay:5})//笑
@@ -267,8 +267,8 @@ $(document).ready(function load (){
 			TweenLite.from($('#Bt3'),1,{opacity:0,delay:6})//底边
 		}else if (story==3){
 			TweenLite.from($('#Cpic1'),1,{opacity:0})
-			TweenLite.from($('#Ct1'),1,{opacity:0,delay:.5})//感叹
-			TweenLite.from($('#Ct2'),1,{opacity:0,scale:0,ease:Elastic.easeOut,delay:2.5})//等等！
+			TweenLite.from($('#Ct1'),1,{y:+5,opacity:0,delay:.5})//感叹
+			TweenLite.from($('#Ct2'),1,{opacity:0,scale:.5,ease:Back.easeOut,delay:2.5})//等等！
 
 			TweenLite.from($('#Cpic2'),.5,{opacity:0,delay:4})//开始笑
 			TweenLite.from($('#smile3'),1,{scaleY:0,ease:Back.easeOut,delay:5})//笑
@@ -279,8 +279,8 @@ $(document).ready(function load (){
 			
 		}else if (story==4){
 			TweenLite.from($('#Dpic1'),1,{opacity:0})
-			TweenLite.from($('#Dt1'),1,{opacity:0,delay:.5})//感叹
-			TweenLite.from($('#Dt2'),1,{opacity:0,scale:0,ease:Elastic.easeOut,delay:2.5})//等等！
+			TweenLite.from($('#Dt1'),1,{y:+5,opacity:0,delay:.5})//感叹
+			TweenLite.from($('#Dt2'),1,{opacity:0,scale:.5,ease:Back.easeOut,delay:2.5})//等等！
 
 			TweenLite.from($('#Dpic2'),.5,{opacity:0,delay:4})//开始笑
 			TweenLite.from($('#smile4'),1,{scaleY:0,ease:Back.easeOut,delay:5})//笑
