@@ -193,9 +193,7 @@ $(document).ready(function load (){
 			TweenLite.set(sp1,{left:'13%',top:'120%',delay:3,scale:2,overwrite:0})
 
 			TweenLite.set(lockT,{display:'block',opacity:1})
-			TweenLite.from(lockT,1,{opacity:0,scale:2,ease:Elastic.easeOut,delay:3,onComplete:hidePage4})
-
-
+			TweenLite.from(lockT,1,{opacity:0,scale:2,ease:Back.easeOut,delay:3,onComplete:hidePage4})
 
 		}else if (story==2){
 
@@ -205,13 +203,13 @@ $(document).ready(function load (){
 
 		}
 	}
+	 function hidePage4(){
+	 	TweenLite.set($('#page4'),{display:'none',delay:.5,onComplete:goPage5})
+	 }
+	 function goPage5(){
 
-	function hidePage4(){
-		TweenLite.set($('#page4'),{display:'none',delay:.5,onComplete:goPage5})
-	}
-	function goPage5(){
-		
-	}
+	 }
+
 	
 
 });
