@@ -77,3 +77,52 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;background-
 	transition:all 1s;
 	-webkit-transition:all 1s;
 }
+#sStory2{
+	position: absolute;left: 50%;top: 50%;width: 154%;
+	transform:translate3d(-50%,-50%,0);
+	-webkit-transform:translate3d(-50%,-50%,0);
+	transition:all 1s;
+	-webkit-transition:all 1s;
+}
+#sStory3{
+	position: absolute;left: 50%;top: 50%;width: 154%;
+	transform:translate3d(-50%,-50%,0);
+	-webkit-transform:translate3d(-50%,-50%,0);
+	transition:all 1s;
+	-webkit-transition:all 1s;
+}
+#sStory4{
+	position: absolute;left: 50%;top: 50%;width: 154%;
+	transform:translate3d(-50%,-50%,0);
+	-webkit-transform:translate3d(-50%,-50%,0);
+	transition:all 1s ease;
+	-webkit-transition:all 1s ease;
+}
+#mask{
+		opacity: .8;
+		width: 100.5%;
+}
+.endT1{
+	position: absolute;left: 50%;top: 60%;width: 100%;
+	transform:translate3d(-50%,-50%,0);
+	-webkit-transform:translate3d(-50%,-50%,0);
+}
+.smile{
+	position: absolute;left: 50%;top: 60%;width: 100%;
+	transform:translate3d(-50%,-50%,0);
+	-webkit-transform:translate3d(-50%,-50%,0);
+}
+.p5bubble{
+	position: absolute;left: 50%;top: 60%;width: 100%;
+	transform:translate3d(-50%,-100%,0);
+	-webkit-transform:translate3d(-50%,-100%,0);
+}
+.p5down{
+	position: absolute;width: 100%;bottom: 0;
+}
+.p5tempT{
+	position: absolute;width: 100%;bottom: 0;
+}
+.btnBack{
+	position: absolute;width: 100%;bottom: 0;height: 20%;background-color: #769;opacity: 0;
+}

@@ -38,10 +38,16 @@ $(document).ready(function load (){
 	var story4=$('#story4')
 	var storyA=[story1,story2,story3,story4]
 
+	var end1=$('#end1')
+	var end2=$('#end2')
+	var end3=$('#end3')
+	var end4=$('#end4')
+	var endA=[end1,end2,end3,end4]
+
 	var sp1=$('#sStory1')
-	// var sp2=$('#sStory2')
-	// var sp3=$('#sStory3')
-	// var sp4=$('#sStory4')
+	var sp2=$('#sStory2')
+	var sp3=$('#sStory3')
+	var sp4=$('#sStory4')
 
 	var lockT = $('#lock')
 
@@ -184,29 +190,96 @@ $(document).ready(function load (){
 		lockT.css({display:'none'})
 		storyA[story-1].css({display:'block'})
 		if (story==1) {
-			// sp1.css({left:0,bottom:0})
-			//TweenLite.set(sp1,{'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)',overwrite:0})
-			//sp1.css({'transform':'translate3d(-31.65%,-50%,0)','-webkit-transform':'translate3d(-31.65%,-50%,0)','transition':'all 1s','-webkit-transition':'all 1s'})//18.35
-			TweenLite.set(sp1,{left:'-21%',overwrite:0})
+			TweenLite.set(sp1,{left:'21%',scale:1,overwrite:0})
 			TweenLite.set(sp1,{left:'79%',delay:1,overwrite:0})
 			TweenLite.set(sp1,{left:'26%',top:'85%',delay:2,overwrite:0})
 			TweenLite.set(sp1,{left:'13%',top:'120%',delay:3,scale:2,overwrite:0})
-
-			TweenLite.set(lockT,{display:'block',opacity:1})
-			TweenLite.from(lockT,1,{opacity:0,scale:2,ease:Back.easeOut,delay:3,onComplete:hidePage4})
-
 		}else if (story==2){
-
+			TweenLite.set(sp2,{left:'79%',scale:1,overwrite:0})
+			TweenLite.set(sp2,{left:'23%',delay:1,overwrite:0})
+			TweenLite.set(sp2,{left:'77%',top:'50%',delay:2,overwrite:0})
+			TweenLite.set(sp2,{left:'121.4%',top:'17%',delay:3,scale:1.6,overwrite:0})
 		}else if (story==3){
-
+			TweenLite.set(sp3,{left:'23%',scale:1,overwrite:0})
+			TweenLite.set(sp3,{left:'77%',delay:1,overwrite:0})
+			TweenLite.set(sp3,{left:'23%',top:'50%',delay:2,overwrite:0})
+			TweenLite.set(sp3,{left:'-21.4%',top:'25%',delay:3,scale:1.6,overwrite:0})
 		}else if (story==4){
-
+			TweenLite.set(sp4,{left:'23%',scale:1,overwrite:0})
+			TweenLite.set(sp4,{left:'77%',delay:1,overwrite:0})
+			TweenLite.set(sp4,{left:'23%',top:'50%',delay:2,overwrite:0})
+			TweenLite.set(sp4,{left:'-21.4%',top:'25%',delay:3,scale:1.6,overwrite:0})
 		}
+
+		TweenLite.set(lockT,{display:'block',opacity:1})
+		TweenLite.from(lockT,.5,{opacity:0,scale:2,delay:3.5,onComplete:hidePage4})
 	}
 	 function hidePage4(){
 	 	TweenLite.set($('#page4'),{display:'none',delay:.5,onComplete:goPage5})
 	 }
 	 function goPage5(){
+	 	$('#page5').css({display:'block'})
+	 	end1.css({display:'none'})
+		end2.css({display:'none'})
+		end3.css({display:'none'})
+		end4.css({display:'none'})
+		endA[story-1].css({display:'block'})
+
+		if (story==1) {
+
+			TweenLite.from($('#Apic1'),1,{opacity:0})
+			TweenLite.from($('#At1'),1,{opacity:0,delay:.5})//感叹
+			TweenLite.from($('#At2'),1,{opacity:0,scale:0,ease:Elastic.easeOut,delay:2.5})//等等！
+
+			TweenLite.from($('#Apic2'),.5,{opacity:0,delay:4})//开始笑
+			TweenLite.from($('#smile1'),1,{scaleY:0,ease:Back.easeOut,delay:5})//笑
+
+			TweenLite.from($('.p5bubble'),1,{opacity:0,scale:0,ease:Back.easeOut,delay:5})//气泡
+			TweenLite.from($('.p5down'),1,{opacity:0,delay:6})//底边
+			TweenLite.from($('#At3'),1,{opacity:0,delay:6})//底边
+		}else if (story==2){
+			TweenLite.from($('#Bpic1'),1,{opacity:0})
+			TweenLite.from($('#Bt1'),1,{opacity:0,delay:.5})//感叹
+			TweenLite.from($('#Bt2'),1,{opacity:0,scale:0,ease:Elastic.easeOut,delay:2.5})//等等！
+
+			TweenLite.from($('#Bpic2'),.5,{opacity:0,delay:4})//开始笑
+			TweenLite.from($('#smile2'),1,{scaleY:0,ease:Back.easeOut,delay:5})//笑
+
+			TweenLite.from($('.p5bubble'),1,{opacity:0,scale:0,ease:Back.easeOut,delay:5})//气泡
+			TweenLite.from($('.p5down'),1,{opacity:0,delay:6})//底边
+			TweenLite.from($('#Bt3'),1,{opacity:0,delay:6})//底边
+		}else if (story==3){
+			TweenLite.from($('#Cpic1'),1,{opacity:0})
+			TweenLite.from($('#Ct1'),1,{opacity:0,delay:.5})//感叹
+			TweenLite.from($('#Ct2'),1,{opacity:0,scale:0,ease:Elastic.easeOut,delay:2.5})//等等！
+
+			TweenLite.from($('#Cpic2'),.5,{opacity:0,delay:4})//开始笑
+			TweenLite.from($('#smile3'),1,{scaleY:0,ease:Back.easeOut,delay:5})//笑
+
+			TweenLite.from($('.p5bubble'),1,{opacity:0,scale:0,ease:Back.easeOut,delay:5})//气泡
+			TweenLite.from($('.p5down'),1,{opacity:0,delay:6})//底边
+			TweenLite.from($('#Ct3'),1,{opacity:0,delay:6})//底边
+			
+		}else if (story==4){
+			TweenLite.from($('#Dpic1'),1,{opacity:0})
+			TweenLite.from($('#Dt1'),1,{opacity:0,delay:.5})//感叹
+			TweenLite.from($('#Dt2'),1,{opacity:0,scale:0,ease:Elastic.easeOut,delay:2.5})//等等！
+
+			TweenLite.from($('#Dpic2'),.5,{opacity:0,delay:4})//开始笑
+			TweenLite.from($('#smile4'),1,{scaleY:0,ease:Back.easeOut,delay:5})//笑
+
+			TweenLite.from($('.p5bubble'),1,{opacity:0,scale:0,ease:Back.easeOut,delay:5})//气泡
+			TweenLite.from($('.p5down'),1,{opacity:0,delay:6})//底边
+			TweenLite.from($('#Dt3'),1,{opacity:0,delay:6})//底边
+			
+		}
+
+		$('#btnBack1234').click(function(){
+			$('#page2').css({display:'none'})
+			$('#page5').css({display:'none'})
+			$('#page4').css({display:'none'})
+			goPage3();
+		})
 
 	 }
 
