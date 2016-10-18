@@ -3,8 +3,8 @@
  */
 $(document).ready(function () {
     
-    var videoNum = 5;
-    var dishNum = 5;
+    var videoNum = 6;
+    var dishNum = 6;
     var _ipApiUrl = 'http://api.giccoo.com/api/ip/';
     var _lotteryApiUrl = 'Http://api.giccoo.com/admin/ariel/lottery';
     var _getVideoPicsUrl = "http://api.giccoo.com/admin/ariel/video/?size=" + videoNum;
