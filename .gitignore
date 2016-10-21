@@ -5,3 +5,4 @@ node_modules
 config.js
 *.zip
 config.codekit
+huxiu_ministation/static/.DS_Store

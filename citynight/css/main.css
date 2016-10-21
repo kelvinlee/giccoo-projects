@@ -5,6 +5,7 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;background-
 .page{position: absolute;top: 0;left: 0;width: 100%;height: 100%;overflow: hidden;display: none;font-size: 0;}
 .bg{position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
 .fullscreen{position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+.wechat-share {  position: absolute;  top: -1000px;  left: 0px;  z-index: -100;  width: 1px; }
 #newsPapper{
 	position: absolute;top: 50%;left: 50%;width: 116.875%;
 	transform:translate3d(-50%,-50%,0);
@@ -35,6 +36,12 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;background-
 	position: absolute;bottom:0;left: 0;width: 100%;
 }
 .camera{
+	position: absolute;top:40%;left: 50%;width: 100%;
+	transform:translate3d(-50%,-50%,0);
+	-webkit-transform:translate3d(-50%,-50%,0);
+
+}
+.p4camera{
 	position: absolute;top:40%;left: 50%;width: 100%;
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
@@ -71,28 +78,28 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;background-
 	font-size: 0;
 }
 #sStory1{
-	position: absolute;left: 50%;top: 50%;width: 158.75%;
+	position: absolute;left: 50%;top: 50%;width: 393.75%;
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
 	transition:all 1s;
 	-webkit-transition:all 1s;
 }
 #sStory2{
-	position: absolute;left: 50%;top: 50%;width: 154%;
+	position: absolute;left: 50%;top: 50%;width: 222.66%;
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
 	transition:all 1s;
 	-webkit-transition:all 1s;
 }
 #sStory3{
-	position: absolute;left: 50%;top: 50%;width: 154%;
+	position: absolute;left: 50%;top: 50%;width: 294.375%;
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
 	transition:all 1s;
 	-webkit-transition:all 1s;
 }
 #sStory4{
-	position: absolute;left: 50%;top: 50%;width: 154%;
+	position: absolute;left: 50%;top: 50%;width: 232.03125%;
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
 	transition:all 1s ease;

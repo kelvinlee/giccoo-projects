@@ -198,6 +198,7 @@ $(document).ready(function load (){
 	}
 
 	function startSearch(){//搜索
+		$('#p4error').css({display:'none'})
 		$('#page4').css({display:'block'})
 		story1.css({display:'none'})
 		story2.css({display:'none'})
@@ -206,29 +207,49 @@ $(document).ready(function load (){
 		lockT.css({display:'none'})
 		storyA[story-1].css({display:'block'})
 		if (story==1) {
-			TweenLite.set(sp1,{left:'21%',scale:1,overwrite:0})
-			TweenLite.set(sp1,{left:'79%',delay:1,overwrite:0})
-			TweenLite.set(sp1,{left:'26%',top:'85%',delay:2,overwrite:0})
-			TweenLite.set(sp1,{left:'13%',top:'120%',delay:3,scale:2,overwrite:0})
+			TweenLite.set(sp1,{left:'121%',top:'15%',scale:1,overwrite:0})//对车
+			TweenLite.set(sp1,{left:'-76.5%',top:'80%',delay:1,overwrite:0})//对人
+			TweenLite.set($('#p4error'),{display:'block',delay:2,overwrite:0})
+			TweenLite.set($('#p4error'),{display:'none',delay:4,overwrite:0})
+			TweenLite.set(sp1,{left:'-141%',top:'90%',delay:2,scale:1.5,overwrite:0})//放大
+			TweenLite.set(sp1,{left:'-76.5%',top:'80%',delay:3.5,scale:1,overwrite:0})//缩小
+			TweenLite.set(sp1,{left:'60%',top:'120%',delay:4,overwrite:0})
+			TweenLite.set(sp1,{left:'65.5%',top:'150%',delay:5,scale:1.5,overwrite:0})
 		}else if (story==2){
-			TweenLite.set(sp2,{left:'79%',scale:1,overwrite:0})
-			TweenLite.set(sp2,{left:'23%',delay:1,overwrite:0})
-			TweenLite.set(sp2,{left:'77%',top:'50%',delay:2,overwrite:0})
-			TweenLite.set(sp2,{left:'121.4%',top:'17%',delay:3,scale:1.6,overwrite:0})
+			TweenLite.set(sp2,{left:'-11.56%',top:'50%',delay:0,scale:1,overwrite:0})//对车
+			TweenLite.set(sp2,{left:'43.75%',top:'50%',delay:1,overwrite:0})//对人
+			TweenLite.set($('#p4error'),{display:'block',delay:2,overwrite:0})
+			TweenLite.set($('#p4error'),{display:'none',delay:4,overwrite:0})
+			TweenLite.set(sp2,{left:'42.48%',top:'31.25%',delay:2,scale:1.5,overwrite:0})//放大
+			TweenLite.set(sp2,{left:'43.75%',top:'50%',delay:3.5,scale:1,overwrite:0})//缩小
+			TweenLite.set(sp2,{left:'111.4%',top:'50%',delay:4,overwrite:0})
+			TweenLite.set(sp2,{left:'222%',top:'23%',delay:5,scale:2,overwrite:0})
 		}else if (story==3){
-			TweenLite.set(sp3,{left:'23%',scale:1,overwrite:0})
-			TweenLite.set(sp3,{left:'77%',delay:1,overwrite:0})
-			TweenLite.set(sp3,{left:'23%',top:'50%',delay:2,overwrite:0})
-			TweenLite.set(sp3,{left:'-21.4%',top:'25%',delay:3,scale:1.6,overwrite:0})
+			TweenLite.set(sp3,{left:'147.1875%',top:'33.68%',delay:0,scale:1,overwrite:0})//对车
+			TweenLite.set(sp3,{left:'58.28125%',top:'33.68%',delay:1,overwrite:0})//对人
+			TweenLite.set($('#p4error'),{display:'block',delay:2,overwrite:0})
+			TweenLite.set($('#p4error'),{display:'none',delay:4,overwrite:0})
+			TweenLite.set(sp3,{left:'57.75%',top:'28.646%',delay:2,scale:1.5,overwrite:0})//放大
+			TweenLite.set(sp3,{left:'58.28125%',top:'33.68%',delay:3.5,scale:1,overwrite:0})//缩小
+			TweenLite.set(sp3,{left:'-46.875%',top:'33.68%',delay:4,overwrite:0})
+			TweenLite.set(sp3,{left:'-104.46%',top:'28.646%',delay:5,scale:1.5,overwrite:0})
 		}else if (story==4){
-			TweenLite.set(sp4,{left:'23%',scale:1,overwrite:0})
-			TweenLite.set(sp4,{left:'77%',delay:1,overwrite:0})
-			TweenLite.set(sp4,{left:'23%',top:'50%',delay:2,overwrite:0})
-			TweenLite.set(sp4,{left:'-21.4%',top:'25%',delay:3,scale:1.6,overwrite:0})
+			TweenLite.set(sp4,{left:'50%',top:'43.4%',delay:0,scale:1,overwrite:0})//对车
+			TweenLite.set(sp4,{left:'106.25%',top:'43.4%',delay:1,overwrite:0})//对人
+			TweenLite.set($('#p4error'),{display:'block',delay:2,overwrite:0})
+			TweenLite.set($('#p4error'),{display:'none',delay:4,overwrite:0})
+			TweenLite.set(sp4,{left:'136.85%',top:'23.7%',delay:2,scale:1.5,overwrite:0})//放大
+			TweenLite.set(sp4,{left:'106.25%',top:'43.4%',delay:3.5,scale:1,overwrite:0})//缩小
+			TweenLite.set(sp4,{left:'-16.1%',top:'43.4%',delay:4,overwrite:0})
+			TweenLite.set(sp4,{left:'-56.56%',top:'27.86%',delay:5,scale:1.5,overwrite:0})
 		}
 
-		TweenLite.set(lockT,{display:'block',opacity:1,scale:1})
-		TweenLite.from(lockT,.5,{opacity:0,scale:1.5,delay:3,onComplete:hidePage4})
+		// TweenLite.set(lockT,{display:'block',opacity:1,scale:1})
+		// TweenLite.from(lockT,.5,{opacity:0,scale:1.5,delay:5,onComplete:hidePage4})
+		// TweenLite.set(lockT,{display:'block',opacity:1,overwrite:0})
+		// TweenLite.from(lockT,.5,{opacity:0,delay:5,onComplete:hidePage4,overwrite:0})
+		lockT.css({display:'block',opacity:0})
+		TweenLite.to(lockT,.5,{opacity:1,delay:5,onComplete:hidePage4})
 	}
 	 function hidePage4(){
 	 	TweenLite.set($('#page4'),{display:'none',delay:.5,onComplete:goPage5})
