@@ -210,7 +210,7 @@ $(document).ready(function () {
                         var _linkUrl = "";
                         var address = data.info.content.address;
                         console.log(address);
-                        /*if(address == "北京市"){
+                        if(address == "北京市"){
                             $('.result_copy').text("不用气馁,前往官网了解更多有奖活动！");
                             $('.link_btn').text("前往官网");
                             _linkUrl = "http://www.pg.com.cn/products/detail.aspx?id=30";
@@ -225,7 +225,7 @@ $(document).ready(function () {
                                 _linkUrl = "http://sale.jd.com/m/act/gB3aNFEkQIr4qVx.html";
                             }
 
-                        }*/
+                        }
 
                         $('.result_copy').text("现在购买碧浪商品，不仅有满199减100，还有价值2000元的海尔洗衣机等你来抢！");
                         // $('.link_btn').text("前往商城");
