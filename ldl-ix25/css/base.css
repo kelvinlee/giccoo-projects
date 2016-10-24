@@ -677,6 +677,16 @@ html, body {
     transform: rotate(-360deg); }
   100% {
     transform: rotate(0deg); } }
+@keyframes rotatebig {
+  0% {
+    transform: rotate(360deg) scale(0.8, 0.8);
+    opacity: 0.7; }
+  50% {
+    transform: rotate(180deg) scale(1.2, 1.2);
+    opacity: 1; }
+  100% {
+    transform: rotate(0deg) scale(0.8, 0.8);
+    opacity: 0.7; } }
 .delay-1 {
   animation-delay: 100ms; }
 
@@ -2167,7 +2177,7 @@ body {
     z-index: 9;
     padding-top: 230%; }
   .page.page-note.move-select .bg {
-    transform: translate3d(0, 12%, 0); }
+    transform: translate3d(0, 20%, 0); }
   .page.page-note.move-select .content-first {
     animation: fadeOutUp 1s ease;
     animation-fill-mode: both;
@@ -2193,11 +2203,11 @@ body {
     animation-iteration-count: initial; }
     .page.page-note .content-first .text {
       position: absolute;
-      top: 20%;
+      top: 14%;
       left: 0px; }
       .iphone4 .page.page-note .content-first .text {
         width: 80%;
-        top: 20%;
+        top: 14%;
         left: 10%; }
       .page.page-note .content-first .text .btn-goto-charge {
         width: 35.9375%;
@@ -2302,7 +2312,10 @@ body {
         width: 40%; }
 
 .page.page-main {
-  font-size: 0; }
+  font-size: 0;
+  animation: fadeIn 0.5s ease;
+  animation-fill-mode: both;
+  animation-iteration-count: initial; }
   .page.page-main .mark {
     position: absolute;
     top: 0px;
@@ -2342,12 +2355,37 @@ body {
       .page.page-main .medal .medals .item {
         display: inline-block;
         width: 33%;
-        position: relative; }
+        position: relative;
+        cursor: pointer; }
         .page.page-main .medal .medals .item .on {
           position: absolute;
           top: 0px;
           left: 0px;
           z-index: 10; }
+        .page.page-main .medal .medals .item .light {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          z-index: -1; }
+      .page.page-main .medal .medals .item-1 .light {
+        top: 5%;
+        left: -15%;
+        animation: rotatebig 4s ease-in-out;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite; }
+      .page.page-main .medal .medals .item-2 .light {
+        top: -15%;
+        left: -15%;
+        animation: rotatebig 3s ease-out;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite; }
+      .page.page-main .medal .medals .item-3 .light {
+        width: 150%;
+        top: -35%;
+        left: -27%;
+        animation: rotatebig 2.5s linear;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite; }
   .page.page-main .progress {
     width: 80%;
     height: 0.8rem;
@@ -2356,18 +2394,21 @@ body {
     background-color: #e1e1e1;
     overflow: hidden; }
     .page.page-main .progress .progress-lin {
-      transition: all 0.5s ease;
+      transition: all 1s ease;
       width: 80%;
-      height: 100%;
+      height: 0.8rem;
       border-radius: 0.8rem;
       background-color: #ee8610;
       overflow: hidden; }
   .page.page-main .note-text {
     width: 100%;
     margin: 0 auto;
-    margin-top: 2%; }
+    transition: all 0.5s ease;
+    margin-top: 5%; }
     .iphone4 .page.page-main .note-text {
       width: 80%; }
+    .page.page-main .note-text.notalone {
+      margin-top: 2%; }
   .page.page-main .btn-start {
     width: 35.9375%;
     margin: 0 auto;
@@ -2418,8 +2459,20 @@ body {
     z-index: -1;
     border-top: solid 1px #fff;
     border-bottom: solid 1px #fff; }
-    .select-box .select-box-list .line img {
+    .select-box .select-box-list .line > img {
       opacity: 0; }
+    .select-box .select-box-list .line .left {
+      position: absolute;
+      top: 50%;
+      left: -15%;
+      width: 15%;
+      transform: translate3d(0, -50%, 0); }
+    .select-box .select-box-list .line .right {
+      position: absolute;
+      top: 50%;
+      right: -15%;
+      width: 15%;
+      transform: translate3d(0, -50%, 0) scale(-1, 1); }
   .select-box .select-box-list .item {
     position: absolute;
     top: 0px;
@@ -2437,3 +2490,28 @@ body {
       transform: translate3d(0, 300%, 0) scale(0.8, 0.8); }
     .select-box .select-box-list .item.on-4 ~ .item {
       transform: translate3d(0, 350%, 0) scale(0, 0); }
+
+.pop {
+  z-index: 1001;
+  background-color: rgba(0, 0, 0, 0.8); }
+  .pop .pop-content {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translate3d(0, -50%, 0);
+    width: 100%; }
+    .pop .pop-content .medal {
+      width: 46.875%;
+      margin: 0 auto;
+      position: relative; }
+      .iphone4 .pop .pop-content .medal {
+        width: 37.5%; }
+      .pop .pop-content .medal .light {
+        position: absolute;
+        top: -30%;
+        left: -25%;
+        z-index: -1;
+        width: 150%;
+        animation: rotatebig 2.5s linear;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite; }
