@@ -262,6 +262,7 @@ $(document).ready(function load (){
 		end4.css({display:'none'})
 		endA[story-1].css({display:'block'})
 		$('#btnBack1234').css({display:'none'})
+		$('#btnGO1234').css({display:'none'})
 
 		if (story==1) {
 
@@ -314,6 +315,7 @@ $(document).ready(function load (){
 
 		function setBtn(){
 			$('#btnBack1234').css({display:'block'})
+			$('#btnGO1234').css({display:'block'})
 		}
 
 		$('#btnBack1234').click(function(){
@@ -323,6 +325,13 @@ $(document).ready(function load (){
 			$('#page5').css({display:'none'})
 			story=0
 			goPage3();
+		})
+
+		$('#btnGO1234').click(function(){
+			if (story==1) {window.location.href="https://promotion.zhihu.com/p/19701044"};
+			if (story==2) {};
+			if (story==3) {};
+			if (story==4) {};
 		})
 
 	 }
