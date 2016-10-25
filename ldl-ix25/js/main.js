@@ -899,11 +899,11 @@ debug = true;
 if (debug) {
   uid = 30102254 + parseInt(Math.random() * 10000);
   pc = "ad6ca3d5d8db6eb4af38dbeb13527470012669a8";
-  _FullStep = 6000 + 16000 + 26000 + 6000;
+  _FullStep = 6000;
   _taskOverDate[23] = 6000;
-  _taskOverDate[24] = 16000;
-  _taskOverDate[25] = 26000;
-  _taskOverDate[26] = 6000;
+  _taskOverDate[24] = 200;
+  _taskOverDate[25] = 200;
+  _taskOverDate[26] = 200;
   localStorage.clear();
   setTimeout(function() {
     return updateStep(_FullStep);
