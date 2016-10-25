@@ -22,6 +22,8 @@ var item, j, ref, self;
 
 self = this;
 
+this.sending = false;
+
 this.formHide = true;
 
 this._init = false;
@@ -164,12 +166,12 @@ this.Getlottery = function() {
     name: 'step',
     value: _FullStep
   });
-  if (debug) {
-    $(".pages .page-main .content.main").addClass("hide");
-    $(".pages .page-main .content.award-fail").removeClass("hide");
+  if (self.sending) {
     return false;
   }
+  self.sending = true;
   return $.post("http://localhost:8881/ldl-ix25/check", data, function(msg) {
+    self.sending = false;
     $(".pages .page-main .content.main").addClass("hide");
     if (msg.recode === 200) {
       $(".pages .page-main .content.award-success").removeClass("hide");
