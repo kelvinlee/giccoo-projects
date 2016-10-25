@@ -462,15 +462,16 @@ this.touchmove = function(evt) {
   var touch;
   touch = evt.touches[0];
   this.offset.deltaY = touch.pageY - this.offset.y;
+  evt.preventDefault();
   if (this.moved) {
     return false;
   }
-  if (this.offset.deltaY > 50) {
+  if (this.offset.deltaY > 20) {
     console.log(this.moved, "--");
     this.moved = true;
     this.setNumber(--this["default"]);
   }
-  if (this.offset.deltaY < -50) {
+  if (this.offset.deltaY < -20) {
     console.log(this.moved, "++");
     this.moved = true;
     return this.setNumber(++this["default"]);
