@@ -1,5 +1,5 @@
 
-riot.tag2('first-page', '<div class="page page-movie first"> <div class="mark"><img src="./img/bg-mark.png"></div> <div class="first-cla"> <div class="box fadeOut animated delay-20"> <div class="text bounceIn animated"><img src="./img/moive-1-text.png"></div> <div class="banner rotateInDownLeft animated delay-3"> <div class="title zoomIn animated delay-6"><img src="./img/moive-1-2.png"></div><img src="./img/moive-1-1.png"> </div> </div> </div> <div class="second-cla fadeIn animated delay-18"> <div class="box fadeOut animated delay-40"> <div class="text bounceIn animated delay-20"><img src="./img/moive-2-text.png"></div> <div class="banner rotateInDownRight animated delay-23"><img src="./img/moive-2-1.png"></div> </div> </div> <div class="third-cla fadeIn animated delay-38"> <div class="box fadeOut animated delay-70"> <div class="text bounceIn animated delay-40"><img src="./img/moive-3-text.png"></div> <div class="banner fadeInUp animated duration-15 delay-43"><img src="./img/moive-3-1.png"></div> </div> </div> <div class="mian-cla fadeIn animated delay-70"> <div class="text"><img src="./img/page-first-text.png"> <div class="btn btn-next bounceIn animated delay-74"><img src="./img/btn-test.png"></div> </div> </div> </div> <div class="page page-note"> <div class="mark"><img src="./img/bg-mark.png"></div> <div class="bg"> </div> <div class="content content-first"> <div class="title"><img src="./img/page-test-title.png"></div> <div class="box box-test"> <div class="text"><img src="./img/page-test-content.png"></div> <div id="select-box" class="select-box"> <div class="line"><img src="./img/time-1.png"> <div class="left"><img src="./img/arrow.png"></div> <div class="right"><img src="./img/arrow.png"></div> </div> </div> <div class="btn btn-goto-test"><img src="./img/btn-test-start.png"></div> </div> <div class="box box-loading hide"> <div class="loading-box fadeInDown animated"> <div class="loading-big"><img src="./img/loading-box-big.png"></div> <div class="loading-small"><img src="./img/loading-box-small.png"></div> </div> <p class="fadeInDown animated delay-2">正在自动匹配<br>年龄和运动数据…</p> </div> </div> <div class="content content-second"> <div class="text"><img src="./img/page-note-text.png"> <div class="btn btn-goto-charge"><img src="./img/btn-test-next.png"></div> </div> </div> <div class="content content-over"> <div class="box box-fail hide"> <div class="title"><img src="./img/page-answer-title.png"></div> <div class="battery battery-no"><img src="./img/battery-box.png"> <div class="light"><img src="./img/battery-no.png"></div> </div> <div class="text"><img src="./img/note-no.png"></div> <div class="btn btn-recharge"><img src="./img/btn-recharge.png"></div> </div> <div class="box box-success hide"> <div class="title"><img src="./img/page-answer-title.png"></div> <div class="battery"><img src="./img/battery-full.png"></div> <div class="text"><img src="./img/note-full.png"></div> <div class="btn btn-recharge"><img src="./img/btn-recharge.png"></div> </div> </div> </div>', '', '', function(opts) {
+riot.tag2('first-page', '<div class="page page-movie first"> <div class="mark"><img src="./img/bg-mark.png"></div> <div class="first-cla"> <div class="box fadeOut animated delay-20"> <div class="text bounceIn animated"><img src="./img/moive-1-text.png"></div> <div class="banner rotateInDownLeft animated delay-3"> <div class="title zoomIn animated delay-6"><img src="./img/moive-1-2.png"></div><img src="./img/moive-1-1.png"> </div> </div> </div> <div class="second-cla fadeIn animated delay-18"> <div class="box fadeOut animated delay-40"> <div class="text bounceIn animated delay-20"><img src="./img/moive-2-text.png"></div> <div class="banner rotateInDownRight animated delay-23"><img src="./img/moive-2-1.png"></div> </div> </div> <div class="third-cla fadeIn animated delay-38"> <div class="box fadeOut animated delay-70"> <div class="text bounceIn animated delay-40"><img src="./img/moive-3-text.png"></div> <div class="banner fadeInUp animated duration-15 delay-43"><img src="./img/moive-3-1.png"></div> </div> </div> <div class="mian-cla fadeIn animated delay-70"> <div class="text"><img src="./img/page-first-text.png"> <div class="btn btn-next tada animated duration-10 infinite"><img src="./img/btn-test.png"></div> </div> </div> </div> <div class="page page-note"> <div class="mark"><img src="./img/bg-mark.png"></div> <div class="bg"> </div> <div class="content content-first"> <div class="title"><img src="./img/page-test-title.png"></div> <div class="box box-test"> <div class="text"><img src="./img/page-test-content.png"></div> <div id="select-box" class="select-box"> <div class="line"><img src="./img/time-1.png"> <div class="left"><img src="./img/arrow.png"></div> <div class="right"><img src="./img/arrow.png"></div> </div> </div> <div class="btn btn-goto-test"><img src="./img/btn-test-start.png"></div> </div> <div class="box box-loading hide"> <div class="loading-box fadeInDown animated"> <div class="loading-big"><img src="./img/loading-box-big.png"></div> <div class="loading-small"><img src="./img/loading-box-small.png"></div> </div> <p class="fadeInDown animated delay-2">正在自动匹配<br>年龄和运动数据…</p> </div> </div> <div class="content content-second"> <div class="text"><img src="./img/page-note-text.png"> <div class="btn btn-goto-charge"><img src="./img/btn-test-next.png"></div> </div> </div> <div class="content content-over"> <div class="box box-fail hide"> <div class="title"><img src="./img/page-answer-title.png"></div> <div class="battery battery-no"><img src="./img/battery-box.png"> <div class="light"><img src="./img/battery-no.png"></div> </div> <div class="text"><img src="./img/note-no.png"></div> <div class="btn btn-recharge"><img src="./img/btn-recharge.png"></div> </div> <div class="box box-success hide"> <div class="title"><img src="./img/page-answer-title.png"></div> <div class="battery"><img src="./img/battery-full.png"></div> <div class="text"><img src="./img/note-full.png"></div> <div class="btn btn-recharge"><img src="./img/btn-recharge.png"></div> </div> </div> </div>', '', '', function(opts) {
 this.on("mount", function() {
   return _Dom_Select.dom = riot.mount("#select-box", "select-box", {
     list: [
@@ -17,7 +17,7 @@ this.on("mount", function() {
 });
 });
 
-riot.tag2('main-page', '<div class="page page-main"> <div class="mark"><img src="./img/bg-mark.png"></div> <div class="bg"></div> <div class="content main"> <div class="title fadeInUp animated delay-5"><img src="./img/page-main-title.png"></div> <div class="medal fadeInUp animated delay-6 medal-list"> <div class="medals"> <div onclick="{openMedal(0)}" class="item item-1"> <div class="off"><img src="./img/medal-1-off.png"></div> <div class="on fadeIn duration-10 animated {medals[0]}"><img src="./img/medal-1-on.png"></div> <div class="light {hide: waiting[0]}"><img src="./img/light.png"></div> </div> <div onclick="{openMedal(1)}" class="item item-2"> <div class="off"><img src="./img/medal-2-off.png"></div> <div class="on fadeIn duration-10 animated {medals[1]}"><img src="./img/medal-2-on.png"></div> <div class="light {hide: waiting[1]}"><img src="./img/light.png"></div> </div> <div onclick="{openMedal(2)}" class="item item-3"> <div class="off"><img src="./img/medal-3-off.png"></div> <div class="on fadeIn duration-10 animated {medals[2]}"><img src="./img/medal-3-on.png"></div> <div class="light {hide: waiting[2]}"><img src="./img/light.png"></div> </div> </div> </div> <div class="progress fadeInUp animated delay-7"> <div riot-style="width: {progress}%" class="progress-lin"></div> </div> <div class="text fadeInUp animated delay-8"><img src="./img/page-main-pro-text.png"></div> <div class="note-text fadeInUp animated delay-9 {notalone: lotterybtn}"><img riot-src="./img/{noteText}"></div> <div onclick="{Getlottery}" class="btn btn-start fadeInUp animated delay-2 {hide: !lotterybtn}"><img src="./img/btn-start.png"></div> </div> <div class="content award award-fail hide"> <div class="lottery-box fadeInDown animated"><img src="./img/lottery-box-off.png"></div> <div class="text fadeInDown animated delay-2"><img src="./img/award-text-fail.png"></div> <div class="btn btn-share fadeInDown animated delay-4"><img src="./img/btn-share.png"></div> <div class="car-banner fadeInUp animated delay-5"><img src="./img/car.png"></div> </div> <div class="content award award-success hide"> <div class="lottery-box fadeInDown animated delay-2"><img src="./img/lottery-box-on.png"></div> <div class="lottery-fireworks fadeInDown animated delay-0 duration-10"><img src="./img/fireworks.png"></div> <div class="text fadeInDown animated delay-4"><img src="./img/award-text-success.png"></div> <div onclick="{openSubmit}" class="btn btn-submit fadeInDown animated delay-6"><img src="./img/btn-submit.png"></div> <div class="car-banner fadeInUp animated delay-7"><img src="./img/car.png"></div> </div> <div class="pop zoomIn animated {hide: !pop}"> <div onclick="{closePop}" class="pop-content"> <div class="medal"><img riot-src="./img/lottery-{popid}.png"> <div class="light"><img src="./img/light.png"></div> </div> <div class="text"><img riot-src="./img/lottery-text-{popid}.png"></div> </div> </div> <div class="pop zoomIn animated {hide: formHide}"> <div class="form-content"> <form onsubmit="{submit}" class="form"> <div class="form-grounp"> <label>姓名:</label> <input type="text" name="username"> </div> <div class="form-grounp"> <label>电话:</label> <input type="text" name="mobile"> </div> <div class="form-grounp"> <label>联系地址:</label> <input type="text" name="address"> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="img/submit-lottery.png"></button> </div> </form> </div> </div> </div>', '', '', function(opts) {
+riot.tag2('main-page', '<div class="page page-main"> <div class="mark"><img src="./img/bg-mark.png"></div> <div class="bg"></div> <div class="content main"> <div class="title fadeInUp animated delay-5"><img src="./img/page-main-title.png"></div> <div class="medal fadeInUp animated delay-6 medal-list"> <div class="medals"> <div class="item item-1"> <div class="off"><img src="./img/medal-1-off.png"></div> <div class="on fadeIn duration-10 animated {medals[0]}"><img src="./img/medal-1-on.png"></div> <div class="light {hide: waiting[0]}"><img src="./img/light.png"></div> </div> <div class="item item-2"> <div class="off"><img src="./img/medal-2-off.png"></div> <div class="on fadeIn duration-10 animated {medals[1]}"><img src="./img/medal-2-on.png"></div> <div class="light {hide: waiting[1]}"><img src="./img/light.png"></div> </div> <div class="item item-3"> <div class="off"><img src="./img/medal-3-off.png"></div> <div class="on fadeIn duration-10 animated {medals[2]}"><img src="./img/medal-3-on.png"></div> <div class="light {hide: waiting[2]}"><img src="./img/light.png"></div> </div> </div> </div> <div class="progress fadeInUp animated delay-7"> <div riot-style="width: {progress}%" class="progress-lin"></div> </div> <div class="text fadeInUp animated delay-8"><img src="./img/page-main-pro-text.png"></div> <div class="note-text fadeInUp animated delay-9 {notalone: lotterybtn}"><img riot-src="./img/{noteText}"></div> <div onclick="{Getlottery}" class="btn btn-start fadeInUp animated delay-2 {hide: !lotterybtn}"><img src="./img/btn-start.png"></div> </div> <div class="content award award-fail hide"> <div class="lottery-box fadeInDown animated"><img src="./img/lottery-box-off.png"></div> <div class="text fadeInDown animated delay-2"><img src="./img/award-text-fail.png"></div> <div onclick="{shareTo}" class="btn btn-share fadeInDown animated delay-4"><img src="./img/btn-share.png"></div> <div class="car-banner fadeInUp animated delay-5"><img src="./img/car.png"></div> </div> <div class="content award award-success hide"> <div class="lottery-box fadeInDown animated delay-2"><img src="./img/lottery-box-on.png"></div> <div class="lottery-fireworks fadeInDown animated delay-0 duration-10"><img src="./img/fireworks.png"></div> <div class="text fadeInDown animated delay-4"><img src="./img/award-text-success.png"></div> <div onclick="{openSubmit}" class="btn btn-submit fadeInDown animated delay-6"><img src="./img/btn-submit.png"></div> <div class="car-banner fadeInUp animated delay-7"><img src="./img/car.png"></div> </div> <div class="pop zoomIn animated {hide: !pop}"> <div onclick="{closePop}" class="pop-content"> <div class="medal"><img riot-src="./img/lottery-{popid}.png"> <div class="light"><img src="./img/light.png"></div> </div> <div class="text"><img riot-src="./img/lottery-text-{popid}.png"></div> </div> </div> <div class="pop zoomIn animated {hide: formHide}"> <div class="form-content"> <form onsubmit="{submit}" class="form"> <div class="form-grounp"> <label>姓名:</label> <input type="text" name="username"> </div> <div class="form-grounp"> <label>电话:</label> <input type="text" name="mobile"> </div> <div class="form-grounp"> <label>联系地址:</label> <input type="text" name="address"> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="img/submit-lottery.png"></button> </div> </form> </div> </div> </div>', '', '', function(opts) {
 var item, j, ref, self;
 
 self = this;
@@ -64,6 +64,10 @@ if (!self.alreadylottery && self.medals[0] === "" && self.medals[1] === "" && se
 }
 
 localStorage.setItem("opend", "true");
+
+this.shareTo = function() {
+  return shareToOther();
+};
 
 this.closePop = function() {
   self.pop = false;
@@ -113,10 +117,10 @@ this.updateStep = function() {
   _first = false;
   _second = 0;
   for (i = k = 0; k < 5; i = ++k) {
-    if (_taskOverDate[new Date(_startDate.getTime() + i * 24 * 60 * 60 * 1000).getDate()] > 5000) {
+    if (_taskOverDate[new Date(_startDate.getTime() + i * 24 * 60 * 60 * 1000).getDate()] >= 5000) {
       _first = true;
     }
-    if (_taskOverDate[new Date(_startDate.getTime() + i * 24 * 60 * 60 * 1000).getDate()] > 10000) {
+    if (_taskOverDate[new Date(_startDate.getTime() + i * 24 * 60 * 60 * 1000).getDate()] >= 10000) {
       _second += 1;
     }
   }
@@ -183,7 +187,13 @@ this.Getlottery = function() {
 };
 
 this.on("mount", function() {
-  if (_taskOverDate[23] || _taskOverDate[24] || _taskOverDate[25]) {
+  var i, key;
+  i = 0;
+  for (key in _taskOverDate) {
+    i++;
+  }
+  console.log(i);
+  if (i > 0) {
     return self.updateStep();
   }
 });
@@ -399,24 +409,85 @@ this.goto = function(item) {
 };
 
 this.setNumber = function(i) {
-  var k, ref1, results;
-  results = [];
+  var k, ref1;
+  console.log(i);
+  if (i < 0) {
+    i = 0;
+    self["default"] = 0;
+  }
+  if (i >= self.list.length) {
+    i = self.list.length - 1;
+    self["default"] = self.list.length - 1;
+  }
   for (it = k = 0, ref1 = self.list.length; 0 <= ref1 ? k < ref1 : k > ref1; it = 0 <= ref1 ? ++k : --k) {
     if (i === it) {
       self.list[it]["class"] = "on-3";
-      results.push(self["default"] = i);
+      self["default"] = i;
     } else if (i - 1 === it) {
-      results.push(self.list[it]["class"] = "on-2");
+      self.list[it]["class"] = "on-2";
     } else if (i - 2 === it) {
-      results.push(self.list[it]["class"] = "on-1");
+      self.list[it]["class"] = "on-1";
     } else if (i + 1 === it) {
-      results.push(self.list[it]["class"] = "on-4");
+      self.list[it]["class"] = "on-4";
     } else {
-      results.push(self.list[it]["class"] = "");
+      self.list[it]["class"] = "";
     }
   }
-  return results;
+  return self.update();
 };
+
+this.offset = {
+  resistance: 1,
+  lastSlide: 1,
+  scrollableArea: 320,
+  isScrolling: false,
+  lastw: 0,
+  w: 320,
+  x: 0,
+  y: 0,
+  deltaX: 0,
+  deltaY: 0
+};
+
+this.touchstart = function(evt) {
+  var touch;
+  touch = evt.touches[0];
+  this.duration = 0;
+  this.moved = false;
+  this.offset.x = touch.pageX;
+  return this.offset.y = touch.pageY;
+};
+
+this.touchmove = function(evt) {
+  var touch;
+  touch = evt.touches[0];
+  this.offset.deltaY = touch.pageY - this.offset.y;
+  if (this.moved) {
+    return false;
+  }
+  if (this.offset.deltaY > 50) {
+    console.log(this.moved, "--");
+    this.moved = true;
+    this.setNumber(--this["default"]);
+  }
+  if (this.offset.deltaY < -50) {
+    console.log(this.moved, "++");
+    this.moved = true;
+    return this.setNumber(++this["default"]);
+  }
+};
+
+this.touchend = function(evt) {
+  return this.moved = false;
+};
+
+this.on("mount", function() {
+  var slider;
+  slider = $(this.root);
+  slider[0].addEventListener("touchstart", this.touchstart.bind(this));
+  slider[0].addEventListener("touchmove", this.touchmove.bind(this));
+  return slider[0].addEventListener("touchend", this.touchend.bind(this));
+});
 }, '{ }');
 
 riot.tag2('slider', '<yield></yield> <div riot-style="-webkit-transition-duration: {duration}s;transition-duration: {duration}s; -webkit-transform: translate3d({x}px,0,0); transform: translate3d({x}px,0,0);" class="slider"> <div each="{bgimg in list}" class="slide"> <div class="bg"><img riot-src="{bgimg}"></div> </div> </div>', '', '', function(opts) {
