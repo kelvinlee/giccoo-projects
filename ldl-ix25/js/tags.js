@@ -170,7 +170,7 @@ this.Getlottery = function() {
     return false;
   }
   self.sending = true;
-  return $.post("http://localhost:8881/ldl-ix25/check", data, function(msg) {
+  return $.post("http://api.giccoo.com/ldl-ix25/check", data, function(msg) {
     self.sending = false;
     $(".pages .page-main .content.main").addClass("hide");
     if (msg.recode === 200) {
@@ -221,7 +221,7 @@ this.submit = function() {
     SendNote('联系地址不能为空');
     return false;
   }
-  $.post("http://localhost:8881/ldl-ix25/update", data, function(msg) {
+  $.post("http://api.giccoo.com/ldl-ix25/update", data, function(msg) {
     if (msg.recode === 200) {
       SendNote('注册成功');
       self.formHide = true;
