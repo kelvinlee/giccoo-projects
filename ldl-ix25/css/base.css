@@ -2686,8 +2686,8 @@ body {
     top: 0px;
     left: 0px;
     z-index: 10;
-    -webkit-transform: translate3d(0, -20%, 0);
-            transform: translate3d(0, -20%, 0); }
+    -webkit-transform: translate3d(0, 0%, 0);
+            transform: translate3d(0, 0%, 0); }
   .page.page-main .bg {
     position: absolute;
     bottom: 0px;
