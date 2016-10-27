@@ -1,0 +1,35 @@
+extends ../libs/jade/layout-clean
+block title
+	| 速腾质领新标准
+
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css?v=1")
+
+block content
+	//- url = "http://image.giccoo.com/projects/volvo_s60l/"
+	- url = "/citynight-meitu/"
+	
+	.main
+		.content
+			.logo
+				img(src="#{url}img/logo.png")
+			.title
+				img(src="#{url}img/title.png")
+			
+			.download
+				a(href="http://a.app.qq.com/o/simple.jsp?pkgname=com.mt.mtxx.mtxx&ckey=CK1347478011791")
+					img(src="#{url}img/download.png")
+				.banner
+					img(src="#{url}img/note-text.png")
+				
+
+block js
+	- url = "/"
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/Zepto.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="http://image.giccoo.com/projects/jaguar/js/cityData-min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/riot.min.js")
+	

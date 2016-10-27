@@ -1,0 +1,32 @@
+@import sass/base
+
+body,html
+	+w
+	+h
+.main
+	+w
+	+h
+	max-width: 640px
+	font-size: 0
+	+m
+	+posr
+
+	+b("../img/bg.jpg",no-repeat,center,center,cover)
+	.logo
+		+posa
+		+tl
+		+w
+	.title
+		+posa
+		+tl(12%,5%)
+		+w(90%)
+	.download
+		+posa
+		+bl
+		a
+			+posr
+			z-index: 1001
+	.banner
+		+posa
+		+bl(100%)
+
