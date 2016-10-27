@@ -329,7 +329,7 @@ $(document).ready(function load (){
 
 		$('#btnGO1234').click(function(){
 			if (story==1) {window.location.href="https://promotion.zhihu.com/p/19701044"};
-			if (story==2) {};
+			if (story==2) {window.location.href="http://m.giccoo.com/citynight-meitu/"};
 			if (story==3) {window.location.href="http://h5.ledongli.cn/statics/xiandai/"};
 			if (story==4) {};
 		})
