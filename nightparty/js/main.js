@@ -33,6 +33,10 @@ $(document).ready(function load (){
 	var p3btn=$('.p3btn')
 	var btnBack=$('#btnBack')
 	var btnEnd=$('#btnEnd')
+	//===============================第4页
+	var pageEnd=$('#pageEnd')
+	
+	var pageShare=$('#pageShare')
 
 	setTimeout(function(){
 		p1start();
@@ -140,5 +144,14 @@ $(document).ready(function load (){
 		btnBack.css({display:'none'})
 		btnEnd.css({display:'none'})
 		page2.css({display:'none'})
+		pageEnd.css({display:'block'})
+		TweenLite.from(pageEnd,.5,{opacity:0})
+	}
+	pageEnd.click(function(){
+		goShare()
+	})
+	function goShare(){
+		pageShare.css({display:'block'})
+		TweenLite.from(pageShare,.5,{opacity:0})
 	}
 });
