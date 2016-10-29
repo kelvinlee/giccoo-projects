@@ -33,6 +33,40 @@ $(document).ready(function load (){
 	var p3btn=$('.p3btn')
 	var btnBack=$('#btnBack')
 	var btnEnd=$('#btnEnd')
+
+	var pic1a=$('#pic1a')
+	var pic1b=$('#pic1b')
+	var pic1c=$('#pic1c')
+	var pic1d=$('#pic1d')
+
+	var pic2a=$('#pic2a')
+	var pic2b=$('#pic2b')
+	var pic2c=$('#pic2c')
+	var pic2d=$('#pic2d')
+
+	var pic3a=$('#pic3a')
+	var pic3b=$('#pic3b')
+	var pic3c=$('#pic3c')
+	var pic3d=$('#pic3d')
+
+	var pic4a=$('#pic4a')
+	var pic4b=$('#pic4b')
+	var pic4c=$('#pic4c')
+	var pic4d=$('#pic4d')
+
+	var pic5a=$('#pic5a')
+	var pic5b=$('#pic5b')
+	var pic5c=$('#pic5c')
+	var pic5d=$('#pic5d')
+
+	p1A=[pic1a,pic1b,pic1c,pic1d]
+	p2A=[pic2a,pic2b,pic2c,pic2d]
+	p3A=[pic3a,pic3b,pic3c,pic3d]
+	p4A=[pic4a,pic4b,pic4c,pic4d]
+	p5A=[pic5a,pic5b,pic5c,pic5d]
+
+	pAA=[p1A,p2A,p3A,p4A,p5A]
+	nowPic=0
 	//===============================第4页
 	var pageEnd=$('#pageEnd')
 	
@@ -83,7 +117,7 @@ $(document).ready(function load (){
 		TweenLite.to(p1moon,1,{x:'-20%'})
 		TweenLite.to(p1cloud1,1,{x:'-20%'})
 		TweenLite.to(p1cloud2,1,{x:'20%'})
-
+		picLoop()
 	}
 	function showPage2(){
 		page1.css({display:'none'})
@@ -120,6 +154,23 @@ $(document).ready(function load (){
 			btnBack.css({display:'block'})
 			btnEnd.css({display:'block'})
 		}
+		
+	}
+
+	function picLoop(){
+		nowPic++
+		if(nowPic==4){
+			nowPic=0
+		}
+		for (var i = 0; i < 5; i++) {
+			for (var j = 0; j < 4; j++) {
+				//pAA[i][j].css({opacity:0})
+				TweenLite.to(pAA[i][j],1,{opacity:0})
+			};
+			//pAA[i][nowPic].css({opacity:1})
+			TweenLite.to(pAA[i][nowPic],1,{opacity:1})
+		};
+		TweenLite.set(pAA[0][nowPic],{delay:5,onComplete:picLoop})
 	}
 
 	btnBack.click(function(){
