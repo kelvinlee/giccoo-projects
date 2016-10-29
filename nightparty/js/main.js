@@ -23,6 +23,14 @@ $(document).ready(function load (){
 	var btn5=$('#btn5')
 	var nowCity=0
 	var cityIf=[0,0,0,0,0]
+	var mark1=$('#p2mark1')
+	var mark2=$('#p2mark2')
+	var mark3=$('#p2mark3')
+	var mark4=$('#p2mark4')
+	var mark5=$('#p2mark5')
+	var cityName=$('#cityName')
+	var p2hint=$('#p2hint')
+	
 	//==＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝第3页元素
 	var city1=$('#city1') 
 	var city2=$('#city2') 
@@ -122,6 +130,17 @@ $(document).ready(function load (){
 	function showPage2(){
 		page1.css({display:'none'})
 		page2.css({display:'block'})
+		TweenLite.from(page2,1,{opacity:0})
+		TweenLite.from(mark1,1.2,{opacity:0,y:-190,ease:Bounce.easeOut,delay:.5+.1})
+		TweenLite.from(mark2,1.2,{opacity:0,y:-190,ease:Bounce.easeOut,delay:.5+.15})
+		TweenLite.from(mark3,1.2,{opacity:0,y:-190,ease:Bounce.easeOut,delay:.5+.2})
+		TweenLite.from(mark4,1.2,{opacity:0,y:-190,ease:Bounce.easeOut,delay:.5+.25})
+		TweenLite.from(mark5,1.2,{opacity:0,y:-190,ease:Bounce.easeOut,delay:.5+.3})
+
+		TweenLite.from(cityName,1.2,{opacity:0,delay:.5+.1})
+		TweenLite.from(p2hint,2,{x:'50%',opacity:0,ease:Elastic.easeOut,delay:1+.1})		
+
+
 	}
 	btn1.click(function(){
 		nowCity=1
