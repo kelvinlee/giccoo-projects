@@ -331,7 +331,7 @@ $(document).ready(function load (){
 			if (story == 1) {window.location.href="https://promotion.zhihu.com/p/19701044";}
 			else if (story == 2) {window.location.href="http://m.giccoo.com/citynight-meitu/";}
 			else if (story == 3) {window.location.href="http://h5.ledongli.cn/statics/xiandai/";}
-			else {}
+			else {window.location.href="http://m.giccoo.com/nightparty/"}
 		})
 
 	 }
