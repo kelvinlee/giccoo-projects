@@ -1,0 +1,67 @@
+*{margin: 0;padding: 0;}
+html,body{width:100%;height: 100%;position: relative;overflow:hidden;background-color: #000;}
+/*img{ width: 100%; }*/
+
+.logo{position: absolute;width: 100%;z-index: 100;}
+.page{position: absolute;width: 100%;height: 100%;/*display: none;*/}
+.bg{position: absolute;width: 100%;height: 100%;}
+.pagedown{position: absolute;width: 100%;bottom: 0;font-size: 0;display: none;}
+.pagetop{position: absolute;width: 100%;/*display: none;*/}
+#p1tittle{
+	/*left: -150%;*/
+	width: 300%;
+			transform:translate3d(-50%,0%,0);
+	-webkit-transform:translate3d(-50%,0%,0);
+}
+.mask{position: absolute;width: 100%;height: 100%;background-color: #000;}
+
+#page2{background-color: #333333;}
+.btnGroup{
+	position: absolute;width: 100%;height: 100%;
+}
+.btnG{
+	position: absolute;width: 28%;height: 16.15%;background-color: #800;opacity: 0;
+}
+#btn1{
+	left: 0;top: 43.969%;
+}
+#btn2{
+	left: 31.406%;top: 61.284%;
+}
+#btn3{
+	left: 45.78125%;top: 55.837%;
+}
+#btn4{
+	left: 52.8125%;top: 43.0934%;
+}
+#btn5{
+	left: 55%;top: 26.556%;
+}
+.cityPage{
+	position: absolute;width: 100%;height: 100%;display: none;background-color: #333333;
+}
+.p3bg{
+	position: absolute;width: 100%;left: 50%;top: 50%;
+			transform:translate3d(-50%,-50%,0);
+	-webkit-transform:translate3d(-50%,-50%,0);
+}
+.p3t{
+	position: absolute;width: 100%;left: 50%;top: 50%;
+			transform:translate3d(-50%,-50%,0);
+	-webkit-transform:translate3d(-50%,-50%,0);
+}
+.p3btn{
+	position: absolute;width: 100%;bottom: 0%;display: none;
+}
+.p3pic{
+	position: absolute;width: 100%;top: 53.988%;
+			transform:translate3d(0%,-100%,0);
+	-webkit-transform:translate3d(0%,-100%,0);
+
+}
+#btnBack{
+	position: absolute;width: 50%;height: 19%;left: 0;bottom: 0;background-color: #864;opacity: 0;display: none;
+}
+#btnEnd{
+	position: absolute;width: 50%;height: 19%;right: 0;bottom: 0;background-color: #864;opacity: 0;display: none;
+}
