@@ -332,7 +332,7 @@ $(document).ready(function load (){
 			else if (story == 2) {window.location.href="http://m.giccoo.com/citynight-meitu/";}
 			else if (story == 3) {window.location.href="http://h5.ledongli.cn/statics/xiandai/";}
 			else if (story == 4) {window.location.href="http://m.giccoo.com/nightparty/";}
-			
+			else{}
 		})
 
 	 }
