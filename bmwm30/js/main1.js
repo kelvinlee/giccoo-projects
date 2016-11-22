@@ -34,8 +34,11 @@ $(document).ready(function load (){
 	var back2=$('#back2')
 	var back3=$('#back3')
 
+	setTimeout(function(){
+		showP1();
+	},1000)
 
-	showP1()
+	
 	function showP1(){
 		page1.css({display:'block'})
 		for (var i = 0; i < itemP1.length; i++) {
