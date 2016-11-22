@@ -90,10 +90,12 @@ $(document).ready(function load (){
 	btn1.click(function(){
 		page3.css({display:'none'})
 		page4.css({display:'block'})
+		page4.scrollTop(0);
 	});
 	btn2.click(function(){
 		page4.css({display:'none'})
 		page5.css({display:'block'})
+		
 	});
 
 	back1.click(function(){
@@ -103,10 +105,12 @@ $(document).ready(function load (){
 	back2.click(function(){
 		page4.css({display:'none'})
 		page3.css({display:'block'})
+		page3.scrollTop(0);
 	});
 	back3.click(function(){
 		page5.css({display:'none'})
 		page4.css({display:'block'})
+		page4.scrollTop(0);
 	});
 
 

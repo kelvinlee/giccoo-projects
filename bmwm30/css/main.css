@@ -18,21 +18,25 @@ html,body{width:100%;height: 100%;position: relative;overflow:hidden;}
 			transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
 }
+.st0{
+  width: 100%;
+}
+
 
 #page3{
 	overflow: scroll;
-  overflow-scrolling: touch;
-  -webkit-overflow-scrolling: touch;
+/*  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;*/
 }
 #page4{
 	overflow: scroll;
-  overflow-scrolling: touch;
-  -webkit-overflow-scrolling: touch;
+/*  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;*/
 }
 #page5{
 	overflow: scroll;
-  overflow-scrolling: touch;
-  -webkit-overflow-scrolling: touch;
+/*  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;*/
 }
 .floatPage{
 	width: 100%;
