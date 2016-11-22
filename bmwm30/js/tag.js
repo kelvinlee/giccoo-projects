@@ -69,7 +69,7 @@ riot.tag('register',
             alert("请阅读并接受个人信息保护法律声明")
             return false
         };
-    	$.post("http://api.giccoo.com/bmw_form/insert/",data,function(msg){
+    	$.post("http://api.giccoo.com/bmw_m30_form/insert/",data,function(msg){
 
     		if (msg.recode == 200) {
     			alert("注册成功")
