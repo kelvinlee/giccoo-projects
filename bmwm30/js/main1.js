@@ -36,7 +36,7 @@ $(document).ready(function load (){
 
 	setTimeout(function(){
 		showP1();
-	},1000)
+	},100)
 
 	
 	function showP1(){
@@ -47,18 +47,18 @@ $(document).ready(function load (){
 		p1title.css({display:"block",top:'15%'})
 		p1copy.css({display:"block"})
 		p1btn.css({display:"block"})
-		TweenLite.from(p1title,2,{scale:1,y:"-=50",opacity:0,delay:0})
-		TweenLite.from(p1copy,2,{y:"+=0",opacity:0,delay:.2*8+1+.5})
-		TweenLite.from(p1btn,2,{x:"+=50",opacity:0,delay:.2*8+1+1,ease:Elastic.easeOut,onComplete:setLoop})
+		//TweenLite.from(p1title,2,{scale:1,y:"-=50",opacity:0,delay:0})
+		//TweenLite.from(p1copy,2,{y:"+=0",opacity:0,delay:.2*8+1+.5})
+		//TweenLite.from(p1btn,2,{x:"+=50",opacity:0,delay:.2*8+1+1,ease:Elastic.easeOut,onComplete:setLoop})
 		for (var i = 0; i < itemP1.length; i++) {
 			itemP1[i].css({display:"block"})
-			TweenLite.from(itemP1[i],.3,{scale:4,y:"-=0",opacity:0,delay:.2*i+.5})
+			//TweenLite.from(itemP1[i],.3,{scale:4,y:"-=0",opacity:0,delay:.2*i+.5})
 		};
 		for (var i = 0; i < itemP1.length; i++) {
-			TweenLite.to(itemP1[i],1,{top:'72%',delay:.2*8+1,overwrite:0})
+			TweenLite.set(itemP1[i],{top:'72%',overwrite:0})
 		};
-		TweenLite.to(p1title,1,{top:'0%',delay:.2*8+1,overwrite:0})
-
+		TweenLite.set(p1title,{top:'0%',overwrite:0})
+		setLoop()
 		function setLoop(){
 			for (var i = 0; i < itemP1.length; i++) {
 				//itemP1[i].css({opacity:0})
