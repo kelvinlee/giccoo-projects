@@ -21,6 +21,7 @@ $(document).ready(function load (){
 
 	var page11=$('#page11')
 	var page12=$('#page12')
+	var page13=$('#page13')
 	var pageA=[page1,page2,page3,page4,page5,page6,page7,page8,page9,page10]
 	var pAA=[
 		[$('#age1'),$('#p1t')],
@@ -37,18 +38,30 @@ $(document).ready(function load (){
 	var citybtn=$('#citybtn')
 	var goFormBtn=$('#p11btn1')
 	var goUploadBtn=$('#p11btn2')
-
+	var ifcan=0
 
 	start()
 	function start(){
 		loadingPage.css({'display':'none'})//loading消失
+		checkShare()
 		page1.css({'display':'block'})//page1显示
 		$('.content')[0].addEventListener('touchstart',startTouch,false)
 		$('.content')[0].addEventListener('touchmove',moveTouch,false)
 		$('.content')[0].addEventListener('touchend',endTouch,false)
 		pageAni()
 	}
-
+	function checkShare(){
+		var picId = window.location.hash;
+		if(picId!=''){
+			page13.css({display:'block'});
+			ifcan=1
+			picId=picId.replace(/#/,'')
+			document.getElementById("sharePic").src='http://image.giccoo.com/ad/a60/'+picId
+		}else{
+			page13.css({display:'none'});
+		};
+		
+	}
 	function pageAni(){
 		for (var i = 0; i < pageA.length; i++) {
 			if (i>nowPage+1||i<nowPage-1) {
@@ -106,8 +119,13 @@ $(document).ready(function load (){
         // next(msg);
         $('#btn_submit').css({opacity:0});
 				$('.up_down').css({display:'block'});
-				alert(msg.image)
-				window.location.href ="http://m.giccoo.com/a60/#"+msg.image
+				//alert(msg.image)
+				if (ifcan==1) {
+					window.location.href ="http://m.giccoo.com/a60/#"+msg.image
+				}else{
+   					document.getElementById("fenxiang_link").innerHTML = "http://m.giccoo.com/a60/#"+msg.image;
+				};
+				
 				// msg.image
 				// http://image.giccoo.com/ad/a60/1481693901227-2623.png
       } else {
