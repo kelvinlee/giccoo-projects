@@ -106,6 +106,8 @@ $(document).ready(function load (){
         // next(msg);
         $('#btn_submit').css({opacity:0});
 				$('.up_down').css({display:'block'});
+				alert(msg.image)
+				window.location.href ="http://m.giccoo.com/a60/#"+msg.image
 				// msg.image
 				// http://image.giccoo.com/ad/a60/1481693901227-2623.png
       } else {
