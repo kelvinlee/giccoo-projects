@@ -121,8 +121,15 @@ $(document).ready(function load (){
 				$('.up_down').css({display:'block'});
 				//alert(msg.image)
 				if (ifcan==1) {
-					window.location.href ="http://m.giccoo.com/a60/#"+msg.image
+					var _url=window.location.href
+					var m=_url.length
+					var n=indexOf('#')
+					var j=_url.substring(n,m)
+					_url=_url.replace(j,msg.image)
+					window.location.href =_url//"http://m.giccoo.com/a60/#"+msg.image
+					document.getElementById("fenxiang_link").innerHTML = "http://m.giccoo.com/a60/#"+msg.image;
 				}else{
+					window.location.href ="http://m.giccoo.com/a60/#"+msg.image
    					document.getElementById("fenxiang_link").innerHTML = "http://m.giccoo.com/a60/#"+msg.image;
 				};
 				
