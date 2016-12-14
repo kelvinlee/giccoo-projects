@@ -1,0 +1,280 @@
+*{margin: 0;padding: 0;}
+html,body{width:100%;height: 100%;position: relative;overflow:hidden;}
+/*img{ width: 100%; }*/
+.wechat-share {  position: absolute;  top: -1000px;  left: 0px;  z-index: -100;  width: 1px; }
+
+.loading{
+	position: absolute;width: 100%;height: 100%;background-color: #9d9d9d;
+}
+.loadingPic{
+	position: absolute;width: 100%;bottom: 50%;
+}
+.loadingT{
+	position: absolute;width: 100%;top: 52%;text-align: center;color: #333333;font-size: 1.2rem;
+}
+.content{position: absolute;overflow: hidden;width: 100%;height: 100%;}
+.aniPage{
+	position: absolute;width: 100%;height: 100%;overflow: hidden;background-color: #e5e5e5;display: block;
+	 -webkit-transition: all 0.5s ease;
+         transition: all 0.5s ease;
+ 	-webkit-transform: translate3d(0, 100%, 0);
+       	 transform: translate3d(0, 100%, 0);
+}
+
+.aniPage.show{
+	-webkit-transform: translate3d(0, 0%, 0);
+       		transform: translate3d(0, 0%, 0);
+}
+.aniPage.up{
+	-webkit-transform: translate3d(0, -100%, 0);
+       		transform: translate3d(0, -100%, 0);
+}
+.aniPage.down{
+	-webkit-transform: translate3d(0, 100%, 0);
+       		transform: translate3d(0, 100%, 0);
+}
+.aniBG{
+	position: absolute;width: 100%;bottom: 0;font-size: 0;
+}
+.bottomT{
+	position: absolute;width: 100%;bottom: 0;
+
+}
+.topT{
+	position: absolute;width: 100%;top:0;
+}
+.midPic{
+	position: absolute;width: 100%;bottom: 0;
+}
+.arrow{
+	position: absolute;width: 100%;bottom: 0;
+}
+.logo{
+	position: absolute;width: 100%;top: 0;
+}
+#alphaLogo{
+	opacity: .5;
+}
+.midPart{
+	position: absolute;width: 100%;top: 50%;
+	-webkit-transform: translate3d(0, -50%, 0);
+       		transform: translate3d(0, -50%, 0);
+}
+.fullBG{
+	position: absolute;width: 100%;height: 100%;
+}
+.mainPart{
+	position: absolute;width: 100%;height: 100%;overflow: hidden;/*display: none;========*/
+}
+.page{
+	position: absolute;width: 100%;height: 100%;background-color: #e4e4e4;/*display: none;========*/
+}
+#page13{
+	display: none;
+}
+.bottomPart{
+	position: absolute;width: 100%;bottom: 0;
+}
+.formPage{
+	position: absolute;width: 100%;height: 100%;background-color: #e5e5e5;display: none;
+}
+.form1{
+	position: absolute;width: 100%;height: 100%;
+}
+.blackLayer{
+	position: absolute;width: 100%;height: 100%;opacity: .6;background-color: #000;
+}
+.editPic{
+	width: 73.14%;background-color: #fff;left: 13.43%;position: relative;
+}
+.editArea{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	top: 0;
+}
+.downPart{
+	width: 100%;
+	position: relative;
+}
+.up_down{
+	display: none;
+	position: absolute;
+	width: 100%;
+	top: 0;
+}
+.up_btns{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+.share_hint{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝表格 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+.userForm{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0%;
+	transform:translate3d(0%,-0%,0);
+	-webkit-transform:translate3d(0%,-0%,0);
+}
+
+#ckb1{
+  margin-right: 0.3rem;
+}
+a{
+  color: #9c9c9c;
+}
+.form {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0%;
+  margin: 0 auto; 
+  position: absolute;
+}
+  .form .form-grounp {
+    vertical-align: top; 
+    padding-left: 9.375%;
+    padding-right: 9.375%;
+	}
+    .form .form-grounp > label {
+
+      width: 30%;
+      height: 1.5rem;
+      display: inline-block;
+      font-size: 0.75rem;
+      margin: 0.2rem 0;
+      line-height: 1.7rem;
+      vertical-align: top;
+      color: #ffffff;
+      text-align: left;
+      white-space: nowrap; 
+  		}
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .form .form-grounp > label {
+          font-size: 0.83rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .form .form-grounp > label {
+          font-size: 0.83rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .form .form-grounp > label {
+          font-size: 0.91rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .form .form-grounp > label {
+          font-size: 0.91rem; } }
+    .form .form-grounp > input {
+
+      width: 100%;
+      /*left: 9.375%;*/
+      height: 1.4rem;
+      font-size: 0.8rem;
+      background-color: #fff;
+      display: inline-block;
+      box-sizing: border-box;
+      margin: 0.2rem 0;
+      padding: 0.2rem;
+      line-height: 1.4rem;
+      vertical-align: top;
+      border: solid 1px #164985;
+      color: #000000;
+      outline: none;
+      border-radius: 0; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .form .form-grounp > input {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .form .form-grounp > input {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .form .form-grounp > input {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .form .form-grounp > input {
+          font-size: 0.96rem; } }
+    .form .form-grounp .select {
+      position: relative;
+      width: 100%;
+      height: 1.4rem;
+      display: inline-block;
+      background-color: #fff;
+      margin: 0.2rem 0;
+      box-sizing: border-box;
+      padding: 0 0.2rem;
+      font-size: 0.8rem;
+      color: #164985; 
+    border: solid 1px #164985;}
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .form .form-grounp .select {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .form .form-grounp .select {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .form .form-grounp .select {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .form .form-grounp .select {
+          font-size: 0.96rem; } }
+      .form .form-grounp .select:after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+        -webkit-transform: translate3d(0, -50%, 0);
+                transform: translate3d(0, -50%, 0);
+        z-index: 99;
+        border-left: 0.25rem solid transparent;
+        border-right: 0.25rem solid transparent;
+        border-top: 0.5rem solid #164985; }
+      .form .form-grounp .select span {
+        text-overflow: ellipsis;
+        display: inline-block;
+        width: 100%;
+        height: 2rem;
+        overflow: hidden; }
+      .form .form-grounp .select select {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        width: 100%;
+        height: 100%;
+        opacity: 1; }
+  .form .form-btn {
+    text-align: center;
+    margin-top: 1.5rem; }
+    .form .form-btn button {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+      background-color: transparent;
+      border: none; }
+.form .form-btn button.submit {width: 100%;left: 0;/*position: absolute;bottom: 0%;*/}
+.form .form-btn button.submit img {width: 100%}
+.endText{
+  color: #fff;
+  font-size: 0.8rem;
+  text-align: center;
+  height: 1.2rem; 
+}
+#emptyDiv{
+	position: absolute;
+	width: 100%;
+	top: 55%;
+	transform:translate3d(0%,-50%,0);
+	-webkit-transform:translate3d(0%,-50%,0);
+}
+#doneLayer{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
