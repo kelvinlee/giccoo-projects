@@ -138,11 +138,19 @@ $(document).ready(function load (){
 				// };
 				var _url=window.location.href
 					var m=_url.length
-					var n=indexOf('#')
-					var j=_url.substring(n,m)
-					_url=_url.replace(j,msg.image)
+					var n=_url.indexOf('#')
+					alert(n)
+					var j=_url.substring(n+1,m)
+
+					if (n==-1) {
+						_url=_url.replace(j,"#"+msg.image+'@!large')
+					}else{
+						_url=_url.replace(j,msg.image+'@!large')
+					};
+					
+					
 					window.location.href =_url//"http://m.giccoo.com/a60/#"+msg.image
-					document.getElementById("fenxiang_link").innerHTML = _url//"http://m.giccoo.com/a60/#"+msg.image;
+					document.getElementById("fenxiang_link").innerHTML = "http://m.giccoo.com/a60/#"+msg.image;
 				
 				// msg.image
 				// http://image.giccoo.com/ad/a60/1481693901227-2623.png
