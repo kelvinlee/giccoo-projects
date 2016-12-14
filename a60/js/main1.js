@@ -1,7 +1,10 @@
+// var INDEX = 0;
+// var global = {};
 
 $(document).ready(function load (){
 	var nowPage = 0;
 	var startY = 0;
+	var sending = false;
 	var startScrollTop;
 	var pageUpDown =-1
 	var loadingPage=$('.loading')
@@ -89,10 +92,26 @@ $(document).ready(function load (){
 	});
 
 	$('#btn_submit').click(function(){
-		alert("发布作品按钮")
-		$('#btn_submit').css({opacity:0})
-		$('.up_down').css({display:'block'})
-		
+		// SendNote("发布作品按钮");
+		data = {};
+  	data.image = global.canvas.getContent();
+  	if (!data.image) {
+	    return SendNote("请先选择照片");
+	  }
+  	if (sending) {SendNote("上传中请稍后..."); return false;}
+  	sending = true;
+		$.post("http://api.giccoo.com/ad/ad_a60/create/", data, function(msg) {
+      sending = false;
+      if (msg.recode === 200) {
+        // next(msg);
+        $('#btn_submit').css({opacity:0});
+				$('.up_down').css({display:'block'});
+				// msg.image
+				// http://image.giccoo.com/ad/a60/1481693901227-2623.png
+      } else {
+        SendNote(msg.reason);
+      }
+    });
 	});
 	$('#btn_share').click(function(){
 		$('.share_hint').css({display:'block'})
