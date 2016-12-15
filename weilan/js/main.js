@@ -114,6 +114,8 @@ $(document).ready(function load (){
 					numA[i]=jsonData.count[i].counts-Math.random()*0.1
 					numB[i]=numA[i]
 				};
+				numA[0]=numA[0]*1.2
+				numB[0]=numB[0]*1.2
 
 				$('.top8').css({display:'block',opacity:0})
 				TweenLite.to($('.top8'),.5,{opacity:1})
