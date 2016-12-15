@@ -16,13 +16,14 @@ $(document).ready(function load (){
 	var page6=$('#page6')
 	var page7=$('#page7')
 	var page8=$('#page8')
+	var page8_1=$('#page8_1')
 	var page9=$('#page9')
 	var page10=$('#page10')
 
 	var page11=$('#page11')
 	var page12=$('#page12')
 	var page13=$('#page13')
-	var pageA=[page1,page2,page3,page4,page5,page6,page7,page8,page9,page10]
+	var pageA=[page1,page2,page3,page4,page5,page6,page7,page8,page8_1,page9,page10]
 	var pAA=[
 		[$('#age1'),$('#p1t')],
 		[$('#age2'),$('#p2t')],
@@ -32,6 +33,7 @@ $(document).ready(function load (){
 		[$('#p6pic'),$('#p6t1'),$('#p6t2')],
 		[$('#p7pic'),$('#p7t1'),$('#p7t2')],
 		[$('#p8pic'),$('#p8t1'),$('#p8t2')],
+		[$('#p8_1t1'),$('#p8_1t2'),$('#p8_1t3'),$('#p8_1t4')],
 		[$('#p9pic'),$('#p9t1'),$('#p9t2')],
 		[]
 	]
@@ -187,7 +189,7 @@ $(document).ready(function load (){
 		var nowY=event.touches[0].clientY
 		if (nowY-startY>80&&nowPage!=0) {
 			pageUpDown=1
-		}else if (nowY-startY< -80&&nowPage!=9) {
+		}else if (nowY-startY< -80&&nowPage!=10) {
 			pageUpDown=-1
 		}else{
 			pageUpDown=0
