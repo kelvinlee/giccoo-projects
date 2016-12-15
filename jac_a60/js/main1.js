@@ -141,7 +141,7 @@ $(document).ready(function load (){
 				var _url=window.location.href
 					var m=_url.length
 					var n=_url.indexOf('#')
-					alert(n)
+					// alert(n)
 					var j=_url.substring(n+1,m)
 
 					if (n==-1) {
