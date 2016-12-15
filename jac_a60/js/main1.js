@@ -20,7 +20,7 @@ $(document).ready(function load (){
 	var page8_1=$('#page8_1')
 	var page9=$('#page9')
 	var page10=$('#page10')
-
+	var _p=0
 	var page11=$('#page11')
 	var page12=$('#page12')
 	var page13=$('#page13')
@@ -48,7 +48,7 @@ $(document).ready(function load (){
 	setTimeout(function(){
 						loadStart();
 		},500)
-// start();
+ // start();
 
 function loadStart() {
 
@@ -96,7 +96,14 @@ function loadEnd() {
 }
 
 	function start(){
-		loadingPage.css({'display':'none'})//loading消失
+		// //loadingPage.css({'display':'none'})//loading消失
+		// TweenLite.to($("#loadingMask"),1.8,{opacity:0,delay:.2})
+		// TweenLite.to(loadingPage,1,{opacity:0,display:'none',delay:2})
+		// setInterval(function(){
+		// 	$("#loading-text").text(_p);
+		// 	_p++
+
+		// },100)
 		checkShare()
 		page1.css({'display':'block'})//page1显示
 		$('.content')[0].addEventListener('touchstart',startTouch,false)
