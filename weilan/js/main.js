@@ -198,6 +198,8 @@ $(document).ready(function load (){
 			// $('.content')[0].removeEventListener('touchmove',moveTouch,false)
 			// $('.content')[0].removeEventListener('touchend',endTouch,false)
 			TweenLite.set($('.content'),{display:'none',delay:1})
+			$('.carList').css({display:'block',opacity:0})
+			TweenLite.to($('.carList'),1,{opacity:1})
 		};
 	}
 //==============================================================翻页结束
