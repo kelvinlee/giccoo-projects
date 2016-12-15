@@ -45,65 +45,73 @@ $(document).ready(function load (){
 	var ifcan=0
 
 
-	setTimeout(function(){
-						loadStart();
-		},500)
- // start();
+	// setTimeout(function(){
+	// 					loadStart();
+	// 	},500)
+  start();
 
-function loadStart() {
+// function loadStart() {
 
-var loadStepOne = [".fullBG",".aniBG",".midPart",".bottomT",".bottomT2",".topT",".midPic",".arrow",".topT2"]//
+// var loadStepOne = [".fullBG",".aniBG",".midPart",".bottomT",".bottomT2",".topT",".midPic",".arrow",".topT2"]//
 
-var _loadNum = 0
-var _loadMax = 0
-	for (var i = 0; i< loadStepOne.length;i++) {
-		_loadMax += $(loadStepOne[i]+" [data-src]").length;
-	}
-	console.log(_loadMax);
-	for (var i = 0; i< loadStepOne.length;i++) {
-		$(loadStepOne[i]+" [data-src]").each(function(){
-			var img = new Image();
-			img.onload = function(){
-				_loadNum++;
-				// console.log(parseInt(_loadNum/_loadMax*100));
-				$("#loadingT").text(parseInt(_loadNum/_loadMax));
-				TweenLite.to($("#loadingMask"),.1,{opacity:1-_loadNum/_loadMax})
-				if (_loadNum>=_loadMax) {
-					setTimeout(function(){
-						loadEnd();
-					},500)
-					//loadEnd()
-				}
-			}
-			img.src = $(this).attr("data-src");
-			//if (loadStepOne[i]==".bg") {;}else{img.style="width:100%;";};
-			img.style="width:100%;";
-			$(this).after(img);
-			$(this).remove();
-		})
-	}
-}
-function loadEnd() {
+// var _loadNum = 0
+// var _loadMax = 0
+// 	for (var i = 0; i< loadStepOne.length;i++) {
+// 		_loadMax += $(loadStepOne[i]+" [data-src]").length;
+// 	}
+// 	console.log(_loadMax);
+// 	for (var i = 0; i< loadStepOne.length;i++) {
+// 		$(loadStepOne[i]+" [data-src]").each(function(){
+// 			var img = new Image();
+// 			img.onload = function(){
+// 				_loadNum++;
+// 				// console.log(parseInt(_loadNum/_loadMax*100));
+// 				$("#loadingT").text(parseInt(_loadNum/_loadMax));
+// 				TweenLite.to($("#loadingMask"),.1,{opacity:1-_loadNum/_loadMax})
+// 				if (_loadNum>=_loadMax) {
+// 					setTimeout(function(){
+// 						loadEnd();
+// 					},500)
+// 					//loadEnd()
+// 				}
+// 			}
+// 			img.src = $(this).attr("data-src");
+// 			//if (loadStepOne[i]==".bg") {;}else{img.style="width:100%;";};
+// 			img.style="width:100%;";
+// 			$(this).after(img);
+// 			$(this).remove();
+// 		})
+// 	}
+// }
+// function loadEnd() {
 	 
-	console.log("load end")
-	$(".loading").addClass("fadeOut animated");
-	setTimeout(function(){
-		$(".loading").remove()
-	},500)
+// 	console.log("load end")
+// 	$(".loading").addClass("fadeOut animated");
+// 	setTimeout(function(){
+// 		$(".loading").remove()
+// 	},500)
 
-	start();
+// 	start();
 
-}
+// }
 
 	function start(){
-		// //loadingPage.css({'display':'none'})//loading消失
-		// TweenLite.to($("#loadingMask"),1.8,{opacity:0,delay:.2})
-		// TweenLite.to(loadingPage,1,{opacity:0,display:'none',delay:2})
-		// setInterval(function(){
-		// 	$("#loading-text").text(_p);
-		// 	_p++
+		//loadingPage.css({'display':'none'})//loading消失
+		TweenLite.to($("#loadingMask"),1.8,{opacity:0,delay:.2})
+		TweenLite.to(loadingPage,1,{opacity:0,display:'none',delay:2})
+		setInterval(function(){
+			
+			if (_p<99) {
+				_p+=9
+			}else{
+				_p=100
+			};
+			$("#loading-text").text(_p);
+			
 
-		// },100)
+
+
+		},130)
 		checkShare()
 		page1.css({'display':'block'})//page1显示
 		$('.content')[0].addEventListener('touchstart',startTouch,false)
