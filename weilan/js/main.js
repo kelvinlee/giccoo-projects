@@ -19,7 +19,8 @@ $(document).ready(function load (){
 	var p1ass=$('#p1ass')
 	var p1t=$('#p1t')
 	var page1=$('#page1')
-	var pageA=[page1]
+	var page2=$('#page2')
+	var pageA=[page1,page2]
 	var page3=$('#page3')
 	// var p1car=$('#p1car')
 	// var p1car=$('#p1car')
@@ -196,7 +197,7 @@ $(document).ready(function load (){
 			// $('.content')[0].removeEventListener('touchstart',startTouch,false)
 			// $('.content')[0].removeEventListener('touchmove',moveTouch,false)
 			// $('.content')[0].removeEventListener('touchend',endTouch,false)
-			TweenLite.set($('.content'),{display:'none',delay:.5})
+			TweenLite.set($('.content'),{display:'none',delay:1})
 		};
 	}
 //==============================================================翻页结束
