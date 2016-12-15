@@ -161,6 +161,7 @@ $(document).ready(function load (){
 
 	}
 	function moveTouch(event){
+		event.preventDefault()
 		var nowY=event.touches[0].clientY
 		if (nowY-startY>80&&nowPage!=0) {
 			pageUpDown=1
