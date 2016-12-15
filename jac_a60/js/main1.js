@@ -45,7 +45,10 @@ $(document).ready(function load (){
 	var ifcan=0
 
 
-	loadStart()
+setTimeout(function(){
+						loadStart();
+					},500)
+
 
 function loadStart() {
 
