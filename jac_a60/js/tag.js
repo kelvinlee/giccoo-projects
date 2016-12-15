@@ -1,4 +1,5 @@
 riot.tag2('register', '<form onsubmit="{submit}" class="form">  <div id="emptyDiv"><div class="form-grounp">  <label for="username">*姓名</label> <input id="username" type="text" name="username">  </div>  <div class="form-grounp">  <label for="mobile">*移动电话</label> <input id="mobile" type="text" name="mobile">  </div>  <div class="form-grounp"> <label for="city">*所在城市</label> <input id="city" type="text" name="city"> </div>   <div class="form-btn"> <button type="submit" class="submit"><img src="img/form_btn.png"></button></div></div></form>', '', '', function(opts) {
+
     var self = this
     this.cityData = cityData
     this.city = this.cityData[0]["sub"]
