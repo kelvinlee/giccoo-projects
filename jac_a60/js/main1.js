@@ -45,9 +45,9 @@ $(document).ready(function load (){
 	var ifcan=0
 
 
-setTimeout(function(){
+	setTimeout(function(){
 						loadStart();
-					},500)
+		},500)
 // start();
 
 function loadStart() {
