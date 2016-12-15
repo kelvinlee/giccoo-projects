@@ -16,6 +16,7 @@ $(document).ready(function load (){
 	var page6=$('#page6')
 	var page7=$('#page7')
 	var page8=$('#page8')
+	var page8_2=$('#page8_2')
 	var page8_1=$('#page8_1')
 	var page9=$('#page9')
 	var page10=$('#page10')
@@ -23,7 +24,7 @@ $(document).ready(function load (){
 	var page11=$('#page11')
 	var page12=$('#page12')
 	var page13=$('#page13')
-	var pageA=[page1,page2,page3,page4,page5,page6,page7,page8,page8_1,page9,page10]
+	var pageA=[page1,page2,page3,page4,page5,page6,page7,page8,page8_2,page8_1,page9,page10]
 	var pAA=[
 		[$('#age1'),$('#p1t')],
 		[$('#age2'),$('#p2t')],
@@ -33,6 +34,7 @@ $(document).ready(function load (){
 		[$('#p6pic'),$('#p6t1'),$('#p6t2')],
 		[$('#p7pic'),$('#p7t1'),$('#p7t2')],
 		[$('#p8pic'),$('#p8t1'),$('#p8t2')],
+		[$('#p8_1t1'),$('#p8_1t2'),$('#p8_1t3')],
 		[$('#p8_1t1'),$('#p8_1t2'),$('#p8_1t3'),$('#p8_1t4')],
 		[$('#p9pic'),$('#p9t1'),$('#p9t2')],
 		[]
@@ -42,7 +44,55 @@ $(document).ready(function load (){
 	var goUploadBtn=$('#p11btn2')
 	var ifcan=0
 
-	start()
+
+	loadStart()
+
+function loadStart() {
+
+var loadStepOne = [".fullBG",".aniBG",".midPart",".bottomT",".bottomT2",".topT",".midPic",".arrow",".topT2"]//
+
+var _loadNum = 0
+var _loadMax = 0
+	for (var i = 0; i< loadStepOne.length;i++) {
+		_loadMax += $(loadStepOne[i]+" [data-src]").length;
+	}
+	console.log(_loadMax);
+	for (var i = 0; i< loadStepOne.length;i++) {
+		$(loadStepOne[i]+" [data-src]").each(function(){
+			var img = new Image();
+			img.onload = function(){
+				_loadNum++;
+				// console.log(parseInt(_loadNum/_loadMax*100));
+				$("#loadingT").text(parseInt(_loadNum/_loadMax));
+				TweenLite.to($("#loadingMask"),.1,{opacity:1-_loadNum/_loadMax})
+				if (_loadNum>=_loadMax) {
+					setTimeout(function(){
+						loadEnd();
+					},500)
+					//loadEnd()
+				}
+			}
+			img.src = $(this).attr("data-src");
+			//if (loadStepOne[i]==".bg") {;}else{img.style="width:100%;";};
+			img.style="width:100%;";
+			$(this).after(img);
+			$(this).remove();
+		})
+	}
+}
+function loadEnd() {
+	 
+	console.log("load end")
+	$(".loading").addClass("fadeOut animated");
+	setTimeout(function(){
+		$(".loading").remove()
+	},500)
+
+	start();
+
+}
+
+	// 
 	function start(){
 		loadingPage.css({'display':'none'})//loading消失
 		checkShare()
@@ -191,7 +241,7 @@ $(document).ready(function load (){
 		var nowY=event.touches[0].clientY
 		if (nowY-startY>80&&nowPage!=0) {
 			pageUpDown=1
-		}else if (nowY-startY< -80&&nowPage!=10) {
+		}else if (nowY-startY< -80&&nowPage!=11) {
 			pageUpDown=-1
 		}else{
 			pageUpDown=0

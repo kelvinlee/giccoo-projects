@@ -64,7 +64,8 @@ riot.tag2('register', '<form onsubmit="{submit}" class="form">  <div id="emptyDi
 
             if (msg.recode == 200) {
 
-                SendNote("注册成功")
+                // SendNote("注册成功")
+                $("#doneLayer").css({"display":"block"})
             }else{
 
                 SendNote(msg.reason)
