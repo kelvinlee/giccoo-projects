@@ -48,7 +48,7 @@ $(document).ready(function load (){
 setTimeout(function(){
 						loadStart();
 					},500)
-
+// start();
 
 function loadStart() {
 
@@ -95,7 +95,6 @@ function loadEnd() {
 
 }
 
-	// 
 	function start(){
 		loadingPage.css({'display':'none'})//loading消失
 		checkShare()
