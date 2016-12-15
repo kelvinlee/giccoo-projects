@@ -119,6 +119,7 @@ $(document).ready(function load (){
       sending = false;
       if (msg.recode === 200) {
         // next(msg);
+        global.canvas.stopCtrl();
         $('#btn_submit').css({opacity:0});
 				$('.up_down').css({display:'block'});
 				// if (ifcan==1) {

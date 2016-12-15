@@ -99,7 +99,9 @@ this.showActive = function() {
 this.closeactive = function() {
   return this.activeinfo = false;
 };
-
+this.stopCtrl = function() {
+  self.tags["ctrl-image"].stopCtrl();
+};
 this.submit = function(callback) {
   var val;
   val = $("[name=username]", self.root).val();
