@@ -68,12 +68,34 @@ riot.tag2('register', '<form onsubmit="{submit}" class="form">  <div id="emptyDi
                  ifGet[1-if1]=1
                  data = {ifFirstTime:0,sex:sex,ifGet:ifGet} 
                  localStorage.setItem("data", JSON.stringify(data))
+                 medalState[1-if1]=2
+
+
+                 medalA[0][0].hide()
+                 medalA[0][1].hide()
+                 medalA[0][2].hide()
+
+                 medalA[1][0].hide()
+                 medalA[1][1].hide()
+                 medalA[1][2].hide()
+
+                 medalA[2][0].hide()
+                 medalA[2][1].hide()
+                 medalA[2][2].hide()
+
+
+                 medalA[0][medalState[0]].css({display:'block'})//========设置奖章状态
+                 medalA[1][medalState[1]].css({display:'block'})
+                 medalA[2][medalState[2]].css({display:'block'})
+
+
+
+                 $('#page5').hide()
+                 $('#page6').hide()
                // $("#doneLayer").css({"display":"block"})
             }else{
-                ifGet[1-if1]=1
-                 data = {ifFirstTime:0,sex:sex,ifGet:ifGet} 
-                 localStorage.setItem("data", JSON.stringify(data))
                 SendNote(msg.reason)
+                
             }
         })
         return false

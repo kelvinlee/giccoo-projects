@@ -8,14 +8,12 @@
 	var data={}
 	var if1=0//2等奖是0 1等奖是1	
 
+	var medalA=[]
+
+
 $(document).ready(function load (){
 
 
-	var medalA=[
-	[$('#medal1a'),$('#medal1b'),$('#medal1c')],
-	[$('#medal2a'),$('#medal2b'),$('#medal2c')],
-	[$('#medal3a'),$('#medal3b'),$('#medal3c')]
-	]
 
 
 
@@ -34,9 +32,17 @@ $(document).ready(function load (){
 
 	// var data={ifFirstTime:0,sex:0,medalState:[0,0,0]}
 
+	medalA=[
+	[$('#medal1a'),$('#medal1b'),$('#medal1c')],
+	[$('#medal2a'),$('#medal2b'),$('#medal2c')],
+	[$('#medal3a'),$('#medal3b'),$('#medal3c')]
+	]
+
+
+
 	checkState()
 	function checkState(){
-		 //localStorage.clear()
+		 localStorage.clear()
 		if(localStorage.getItem("data")){//不是第一次
 			data = JSON.parse(localStorage.getItem("data"))
 
@@ -62,13 +68,24 @@ $(document).ready(function load (){
 	function ani1(){
 		page1.css({display:'block'})
 		page2.css({display:'block'})
-		TweenLite.to(page1,1,{opacity:0,delay:1,display:'none',onComplete:ani2})
+		TweenLite.to($('#ttt1'),8,{x:'-150%',delay:.5})
+		TweenLite.to($('#ttt2'),8,{x:'-150%',delay:1})
+		TweenLite.to(page1,1,{opacity:0,delay:3.5,display:'none',onComplete:ani2})
+
+		TweenLite.from($('#p2btn'),1.5,{opacity:0,scale:2,delay:4.55,ease:Elastic.easeOut})
+		TweenLite.from($('#p2t1'),1.5,{opacity:0,scale:2,delay:4.5,ease:Elastic.easeOut})
+		TweenLite.from($('#p2t2'),1.5,{opacity:0,scale:2,delay:4.6,ease:Elastic.easeOut})
+
 
 	}
 	function ani2(){
+
 		$('#p2btn').click(function(){
 			page3.css({display:'block'})
-			TweenLite.to(page2,1,{opacity:0,display:'none',onComplete:ani3})
+			TweenLite.to(page2,.5,{opacity:0,display:'none',onComplete:ani3})
+
+			TweenLite.from($('#bg3a'),.5,{opacity:0,x:'+100%',delay:0})
+			TweenLite.from($('#bg3b'),.5,{opacity:0,x:'-100%',delay:0.1})
 		})
 	}
 	function ani3(){
