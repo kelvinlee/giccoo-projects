@@ -52,6 +52,9 @@ riot.tag2('register', '<form onsubmit="{submit}" class="form">  <div id="emptyDi
     this.submit = function() {
         var data = $("form",this.root).serializeArray()
         data.push({name:"dealername",value:self.dealerName})
+        data.push({name:"uid",value: uid})
+        data.push({name:"pc",value: pc})
+        data.push({name:"step",value: step})
         if ( $("[name=username]",this.root).val().length < 1 || $("[name=username]",this.root).val() == "") {
             alert("姓名不能为空")
             return false
