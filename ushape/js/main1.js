@@ -1,14 +1,22 @@
-
-$(document).ready(function load (){
 	var ifFirstTime=1//是否第一次打开页面 1第一次打开  0不是第一次打开
 	var sex=0//0女的，1男的
-	var medalState=[1,1,1]//奖章状态：[一等奖，二等奖，三等奖]   0未达标 1可以领奖 2已领取
+	var medalState=[0,0,0]//奖章状态：[一等奖，二等奖，三等奖]   0未达标 1可以领奖 2已领取
+
+	var ifGet=[0,0,0]
+	var step=15000
+
+	var data={}
+	var if1=0//2等奖是0 1等奖是1	
+
+$(document).ready(function load (){
+
 
 	var medalA=[
 	[$('#medal1a'),$('#medal1b'),$('#medal1c')],
 	[$('#medal2a'),$('#medal2b'),$('#medal2c')],
 	[$('#medal3a'),$('#medal3b'),$('#medal3c')]
 	]
+
 
 
 	var page1=$('#page1')
@@ -24,10 +32,24 @@ $(document).ready(function load (){
 	var btn5=$('#btn5')
 
 
-
+	// var data={ifFirstTime:0,sex:0,medalState:[0,0,0]}
 
 	checkState()
 	function checkState(){
+		 //localStorage.clear()
+		if(localStorage.getItem("data")){//不是第一次
+			data = JSON.parse(localStorage.getItem("data"))
+
+			ifFirstTime=data.ifFirstTime
+			sex=data.sex
+			ifGet=data.ifGet
+		}else{//是第一次
+			data = {ifFirstTime:0,sex:0,ifGet:[0,0,0]} 
+			//localStorage.setItem("data", JSON.stringify(data))
+		};
+
+
+
 		if(ifFirstTime==1){
 			ani1()
 		}else{
@@ -52,31 +74,54 @@ $(document).ready(function load (){
 	function ani3(){
 		$('#p3t1b').click(function(){//====选男的 之后跳第四页  这里要发服务器记录男女
 			sex=1
-			page4.css({display:'block'})
+			data = {ifFirstTime:0,sex:sex,ifGet:[0,0,0]} 
+			localStorage.setItem("data", JSON.stringify(data))
+			//page4.css({display:'block'})
 			ani4()
 		})
 		$('#p3t2b').click(function(){//====选女的 之后跳第四页  这里要发服务器记录男女
 			sex=0
-			page4.css({display:'block'})
+			data = {ifFirstTime:0,sex:sex,ifGet:[0,0,0]} 
+			localStorage.setItem("data", JSON.stringify(data))
+			//page4.css({display:'block'})
 			ani4()
 		})
+		
+
 	}
 	function ani4(){
+		page4.css({display:'block'})
 		TweenLite.to(page3,1,{opacity:0,display:'none'})
+
 		if (sex==0) {//=============================判断男女改变背景
 			$('#p4bg_boy').css({display:'none'})
 		}else{
 			$('#p4bg_girl').css({display:'none'})
 		};
+
+		if (step<3000) {
+			medalState=[0,0,0]
+		}else if (step<10000) {
+			medalState=[0,0,1]
+		}else if (step<15000) {
+			medalState=[0,1,1]
+		}else{
+			medalState=[1,1,1]
+		};
+		for (var i = 0; i < 3; i++) {
+				medalState[i]+=ifGet[i]
+			};	
 		
 		medalA[0][medalState[0]].css({display:'block'})//========设置奖章状态
 		medalA[1][medalState[1]].css({display:'block'})
 		medalA[2][medalState[2]].css({display:'block'})
 	}
 	$('#medal1b').click(function(){//=========领一等奖
+		if1=1
 		page6.css({display:'block'})
 	})
 	$('#medal2b').click(function(){//=========领二等奖
+		if1=0
 		page5.css({display:'block'})	
 	})
 	$('#medal3b').click(function(){//=========领三等奖
@@ -97,19 +142,39 @@ $(document).ready(function load (){
 
 
 	btn1.click(function(){//======领三等奖 华北
+		ifGet[2]=1
+		data = {ifFirstTime:0,sex:sex,ifGet:ifGet} 
+		localStorage.setItem("data", JSON.stringify(data))
 		window.location.href="https://pages.tmall.com/wow/chaoshi/act/shengxian-yxpphb"
+		
 	})
 	btn2.click(function(){//======领三等奖 华东
+		ifGet[2]=1
+		data = {ifFirstTime:0,sex:sex,ifGet:ifGet} 
+		localStorage.setItem("data", JSON.stringify(data))
 		window.location.href="https://pages.tmall.com/wow/chaoshi/act/shengxian-yxhdhd"
+		
 	})
 	btn3.click(function(){//======领三等奖 华中
+		ifGet[2]=1
+		data = {ifFirstTime:0,sex:sex,ifGet:ifGet} 
+		localStorage.setItem("data", JSON.stringify(data))
 		window.location.href="https://pages.tmall.com/wow/chaoshi/act/shengxian-yxhz"
+		
 	})
 	btn4.click(function(){//======领三等奖 华南
+		ifGet[2]=1
+		data = {ifFirstTime:0,sex:sex,ifGet:ifGet} 
+		localStorage.setItem("data", JSON.stringify(data))
 		window.location.href="https://pages.tmall.com/wow/chaoshi/act/shengxian-yxhn"
+		
 	})
 	btn5.click(function(){//======领三等奖 西南
+		ifGet[2]=1
+		data = {ifFirstTime:0,sex:sex,ifGet:ifGet} 
+		localStorage.setItem("data", JSON.stringify(data))
 		window.location.href="https://pages.tmall.com/wow/chaoshi/act/shengxian-yxx"
+
 	})
 
 

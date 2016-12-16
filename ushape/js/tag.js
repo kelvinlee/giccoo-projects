@@ -65,12 +65,40 @@ riot.tag2('register', '<form onsubmit="{submit}" class="form">  <div id="emptyDi
             if (msg.recode == 200) {
 
                  SendNote("注册成功")
+                 ifGet[1-if1]=1
+                 data = {ifFirstTime:0,sex:sex,ifGet:ifGet} 
+                 localStorage.setItem("data", JSON.stringify(data))
                // $("#doneLayer").css({"display":"block"})
             }else{
-
+                ifGet[1-if1]=1
+                 data = {ifFirstTime:0,sex:sex,ifGet:ifGet} 
+                 localStorage.setItem("data", JSON.stringify(data))
                 SendNote(msg.reason)
             }
         })
         return false
     }.bind(this)
+}, '{ }');
+riot.tag2('note', '<div class="note-box"> <div class="note-content {animated:true,fadeInUp:!close,fadeOutUp:close}"> <div class="note-text"> <div class="icon-form"><img src="http://disk.giccoo.com/projects/showman/img/icon-alert-note.png"></div> {title} </div> </div> </div>', '', '', function(opts) {
+var self;
+
+self = this;
+
+this.title = opts.title;
+
+this.close = false;
+
+this.time = opts.time != null ? parseInt(opts.time) : 3000;
+
+$(this.root).addClass("note");
+
+this.on("mount", function() {
+  setTimeout(function() {
+    return self.unmount();
+  }, self.time);
+  return setTimeout(function() {
+    self.close = true;
+    return self.update();
+  }, self.time - 500);
+});
 }, '{ }');
