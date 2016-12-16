@@ -42,7 +42,7 @@ $(document).ready(function load (){
 
 	checkState()
 	function checkState(){
-		 localStorage.clear()
+		// localStorage.clear()
 		if(localStorage.getItem("data")){//不是第一次
 			data = JSON.parse(localStorage.getItem("data"))
 
