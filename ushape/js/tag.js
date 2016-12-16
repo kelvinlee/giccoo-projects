@@ -1,4 +1,4 @@
-riot.tag2('register', '<form onsubmit="{submit}" class="form">  <div id="emptyDiv"><div class="form-grounp"> <label for="username">收货人姓名：</label> <input id="username" type="text" name="username">  </div> <div class="form-grounp">  <label for="mobile">收货人电话：</label> <input id="mobile" type="text" name="mobile">  </div> <div class="form-grounp"> <label for="address">收货人地址：</label> <input id="address" type="text" name="address">  </div> <div class="form-btn"> <button type="submit" class="submit"><img src="img/form_btn.png"></button></div></div></form>', '', '', function(opts) {
+riot.tag2('register', '<form onsubmit="{submit}" class="form">  <div id="emptyDiv"><div class="form-grounp"> <label for="username">收货人姓名：</label> <input id="username" type="text" name="username">  </div> <div class="form-grounp">  <label for="mobile">收货人电话：</label> <input id="mobile" type="text" name="mobile">  </div> <div class="form-grounp"> <label for="city">收货人地址：</label> <input id="city" type="text" name="city">  </div> <div class="form-btn"> <button type="submit" class="submit"><img src="img/form_btn.png"></button></div></div></form>', '', '', function(opts) {
 
     var self = this
     this.cityData = cityData
@@ -64,8 +64,8 @@ riot.tag2('register', '<form onsubmit="{submit}" class="form">  <div id="emptyDi
 
             if (msg.recode == 200) {
 
-                // SendNote("注册成功")
-                $("#doneLayer").css({"display":"block"})
+                 SendNote("注册成功")
+               // $("#doneLayer").css({"display":"block"})
             }else{
 
                 SendNote(msg.reason)
