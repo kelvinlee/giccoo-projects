@@ -40,7 +40,7 @@ $(document).ready(function load (){
 
 
 
-	checkState()
+	// checkState()
 	function checkState(){
 		// localStorage.clear()
 		if(localStorage.getItem("data")){//不是第一次

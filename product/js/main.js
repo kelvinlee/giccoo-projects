@@ -144,7 +144,7 @@ $(document).ready(function() {
     return false;
   }
   if (openid === "") {
-    window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3dd8b8d67e940c4&redirect_uri={url}&response_type=code&scope=snsapi_base&state=123#wechat_redirect".replace("{url}", encodeURIComponent("http://i.giccoo.com/product/"));
+    // window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3dd8b8d67e940c4&redirect_uri={url}&response_type=code&scope=snsapi_base&state=123#wechat_redirect".replace("{url}", encodeURIComponent("http://i.giccoo.com/product/"));
     return false;
   }
   loadWechatConfig();
@@ -232,3 +232,5 @@ finishedLoad = function() {
     return SendNote(decodeURI($_GET["err"]));
   }
 };
+
+var votes = [];
