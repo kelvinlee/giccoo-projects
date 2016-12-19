@@ -5,7 +5,12 @@ img{ width: 100%; }
 .page{position: absolute;width: 100%;height: 100%;overflow: hidden;display: none;}
 .bg{position: absolute;width: 100%;height: 100%;}
 .topPart{position: absolute;width: 100%;top: 0;}
+
 .bottomPart{position: absolute;width: 100%;bottom: 0;font-size: 0;}
+
+.bottomPart4{position: absolute;width: 100%;bottom: 0;font-size: 0;}
+.ios .bottomPart4{position: absolute;width: 100%;bottom: 9.68%;font-size: 0;}
+
 .logo{position: absolute;width: 100%;top: 0;}
 #page1{z-index: 100}
 #page2{z-index: 99}
