@@ -221,7 +221,7 @@ $(document).ready(function load (){
 					
 					
 					document.getElementById("fenxiang_link").innerHTML = "http://m.giccoo.com/jac_a60/#"+msg.image;
-					window.location.href =_url//"http://m.giccoo.com/a60/#"+msg.image
+					//window.location.href =_url//"http://m.giccoo.com/a60/#"+msg.image
 				
 				// msg.image
 				// http://image.giccoo.com/ad/a60/1481693901227-2623.png
