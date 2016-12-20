@@ -189,34 +189,17 @@ $(document).ready(function load (){
         global.canvas.stopCtrl();
         $('#btn_submit').css({opacity:0});
 				$('.up_down').css({display:'block'});
-				// if (ifcan==1) {
-				// 	var _url=window.location.href
+				
+				// var _url=window.location.href
 				// 	var m=_url.length
-				// 	var n=indexOf('#')
-				// 	var j=_url.substring(n,m)
-				// 	_url=_url.replace(j,msg.image)
-				// 	window.location.href =_url//"http://m.giccoo.com/a60/#"+msg.image
-				// 	document.getElementById("fenxiang_link").innerHTML = "http://m.giccoo.com/a60/#"+msg.image;
-				// }else{
-				// 	var _url=window.location.href
-				// 	var m=_url.length
-				// 	var n=indexOf('#')
-				// 	var j=_url.substring(n,m)
-				// 	_url=_url.replace(j,msg.image)
-				// 	window.location.href =_url//"http://m.giccoo.com/a60/#"+msg.image
-				// 	document.getElementById("fenxiang_link").innerHTML = "http://m.giccoo.com/a60/#"+msg.image;
-				// };
-				var _url=window.location.href
-					var m=_url.length
-					var n=_url.indexOf('#')
-					// alert(n)
-					var j=_url.substring(n+1,m)
+				// 	var n=_url.indexOf('#')
+				// 	var j=_url.substring(n+1,m)
 
-					if (n==-1) {
-						_url=_url.replace(j,"#"+msg.image+'@!large')
-					}else{
-						_url=_url.replace(j,msg.image+'@!large')
-					};
+				// 	if (n==-1) {
+				// 		_url=_url.replace(j,"#"+msg.image+'@!large')
+				// 	}else{
+				// 		_url=_url.replace(j,msg.image+'@!large')
+				// 	};
 					
 					
 					
