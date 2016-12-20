@@ -189,7 +189,7 @@ $(document).ready(function load (){
         global.canvas.stopCtrl();
         $('#btn_submit').css({opacity:0});
 				$('.up_down').css({display:'block'});
-				
+				//193-202是动态修改URL 加#123456.png 注释掉同时注释掉html 第13行 会让微信分享不了图，html 13行会让微信从fenxiang_link标签读取分享链接而不是当前链接
 				// var _url=window.location.href
 				// 	var m=_url.length
 				// 	var n=_url.indexOf('#')
