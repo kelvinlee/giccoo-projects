@@ -462,3 +462,9 @@ a{
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
         .note .note-box .note-text {
           font-size: 0.96rem; } }
+
+
+
+.android #p11btn2,.no-ios #p11btn2 {
+  display: none;
+}
