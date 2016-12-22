@@ -240,6 +240,13 @@
 <script type="text/javascript" src="js/TweenMax.min.js"></script>
 <script type="text/javascript" src="js/main1.js"></script>
 <script data-main="//jp.rsscc.com/promotion/scripts/wechattools/main" src="//jp.rsscc.com/promotion/scripts/wechattools/require.js"></script>
-
+<script type="text/javascript">
+	$(document).ready(function(){
+		MK = $("body").width() / $("body").height();
+	  if ($("body").height() <= 460 || MK > 0.65) {
+	    $("body").addClass("iphone4");
+	  }
+	});
+</script>
 </body>
 </html>

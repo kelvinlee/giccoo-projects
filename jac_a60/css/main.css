@@ -468,3 +468,8 @@ a{
 .android #p11btn2,.no-ios #p11btn2 {
   display: none;
 }
+
+.iphone4 #page7 .topT,.iphone4 #page8 .topT,.iphone4 #page8_1 .topT {
+  top: -10%;
+} 
+
