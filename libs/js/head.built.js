@@ -1,7 +1,7 @@
-require=(function e(b,g,d){function c(k,i){if(!g[k]){if(!b[k]){var h=typeof require=="function"&&require;
+_require=(function e(b,g,d){function c(k,i){if(!g[k]){if(!b[k]){var h=typeof _require=="function"&&_require;
 if(!i&&h){return h(k,!0)}if(a){return a(k,!0)}throw new Error("Cannot find module '"+k+"'")
 }var j=g[k]={exports:{}};b[k][0].call(j.exports,function(l){var m=b[k][1][l];return c(m?m:l)
-},j,j.exports,e,b,g,d)}return g[k].exports}var a=typeof require=="function"&&require;
+},j,j.exports,e,b,g,d)}return g[k].exports}var a=typeof _require=="function"&&_require;
 for(var f=0;f<d.length;f++){c(d[f])}return c})({1:[function(b,c,a){var f=c.exports={};
 f.nextTick=(function(){var h=typeof window!=="undefined"&&window.setImmediate;var j=typeof window!=="undefined"&&window.postMessage&&window.addEventListener;
 if(h){return function(k){return window.setImmediate(k)}}if(j){var g=[];window.addEventListener("message",function(l){var m=l.source;
@@ -179,7 +179,7 @@ DOMTokenList.prototype.toggle=function(h,i){if(1 in arguments&&!this.contains(h)
 },{}],"0ZeZAA":[function(b,c,a){if(!Function.prototype.bind){Function.prototype.bind=function(d){if(typeof this!=="function"){throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable")
 }var i=Array.prototype.slice.call(arguments,1);var h=this;var f=function(){};var g=function(){return h.apply((this instanceof f&&d)?this:d,i.concat(Array.prototype.slice.call(arguments)))
 };f.prototype=this.prototype;g.prototype=new f();return g}}},{}],"@marcom/ac-polyfills/JSON":[function(b,c,a){c.exports=b("q+QZbj")
-},{}],"q+QZbj":[function(require,module,exports){if(typeof JSON!=="object"){JSON={}
+},{}],"q+QZbj":[function(_require,module,exports){if(typeof JSON!=="object"){JSON={}
 }(function(){function f(n){return n<10?"0"+n:n}if(typeof Date.prototype.toJSON!=="function"){Date.prototype.toJSON=function(){return isFinite(this.valueOf())?this.getUTCFullYear()+"-"+f(this.getUTCMonth()+1)+"-"+f(this.getUTCDate())+"T"+f(this.getUTCHours())+":"+f(this.getUTCMinutes())+":"+f(this.getUTCSeconds())+"Z":null
 };String.prototype.toJSON=Number.prototype.toJSON=Boolean.prototype.toJSON=function(){return this.valueOf()
 }}var cx,escapable,gap,indent,meta,rep;function quote(string){escapable.lastIndex=0;
@@ -271,10 +271,10 @@ window.cancelAnimationFrame=window[g[d]+"CancelAnimationFrame"]||window[g[d]+"Ca
 var j=Math.max(0,16-(h-f));var k=window.setTimeout(function(){l(h+j)},j);f=h+j;
 return k}}if(!window.cancelAnimationFrame){window.cancelAnimationFrame=function(h){clearTimeout(h)
 }}}())},{}],"@marcom/ac-polyfills/requestAnimationFrame":[function(b,c,a){c.exports=b("fElNMO")
-},{}]},{},["v+RgmD"]);(function e(b,g,d){function c(m,j){if(!g[m]){if(!b[m]){var i=typeof require=="function"&&require;
+},{}]},{},["v+RgmD"]);(function e(b,g,d){function c(m,j){if(!g[m]){if(!b[m]){var i=typeof _require=="function"&&_require;
 if(!j&&i){return i(m,!0)}if(a){return a(m,!0)}var k=new Error("Cannot find module '"+m+"'");
 throw k.code="MODULE_NOT_FOUND",k}var h=g[m]={exports:{}};b[m][0].call(h.exports,function(l){var o=b[m][1][l];
-return c(o?o:l)},h,h.exports,e,b,g,d)}return g[m].exports}var a=typeof require=="function"&&require;
+return c(o?o:l)},h,h.exports,e,b,g,d)}return g[m].exports}var a=typeof _require=="function"&&_require;
 for(var f=0;f<d.length;f++){c(d[f])}return c})({1:[function(c,d,b){var g=c("./utils/addEventListener");
 var a=c("./shared/getEventType");d.exports=function f(k,i,j,h){i=a(k,i);return g(k,i,j,h)
 }},{"./shared/getEventType":2,"./utils/addEventListener":3}],2:[function(c,f,b){var d=c("@marcom/ac-prefixer/getEventType");
@@ -607,7 +607,7 @@ DOMTokenList.prototype.toggle=function(h,i){if(1 in arguments&&!this.contains(h)
 }else{return d.call(this,h)}}}f=null}())}}},{}],83:[function(b,c,a){b("./Function/prototype.bind")
 },{"./Function/prototype.bind":84}],84:[function(b,c,a){if(!Function.prototype.bind){Function.prototype.bind=function(d){if(typeof this!=="function"){throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable")
 }var i=Array.prototype.slice.call(arguments,1);var h=this;var f=function(){};var g=function(){return h.apply((this instanceof f&&d)?this:d,i.concat(Array.prototype.slice.call(arguments)))
-};f.prototype=this.prototype;g.prototype=new f();return g}}},{}],85:[function(require,module,exports){if(typeof JSON!=="object"){JSON={}
+};f.prototype=this.prototype;g.prototype=new f();return g}}},{}],85:[function(_require,module,exports){if(typeof JSON!=="object"){JSON={}
 }(function(){function f(n){return n<10?"0"+n:n}if(typeof Date.prototype.toJSON!=="function"){Date.prototype.toJSON=function(){return isFinite(this.valueOf())?this.getUTCFullYear()+"-"+f(this.getUTCMonth()+1)+"-"+f(this.getUTCDate())+"T"+f(this.getUTCHours())+":"+f(this.getUTCMinutes())+":"+f(this.getUTCSeconds())+"Z":null
 };String.prototype.toJSON=Number.prototype.toJSON=Boolean.prototype.toJSON=function(){return this.valueOf()
 }}var cx,escapable,gap,indent,meta,rep;function quote(string){escapable.lastIndex=0;
