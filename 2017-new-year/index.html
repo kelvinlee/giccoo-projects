@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+	<meta charset="UTF-8">
+	<title>2017新春快乐</title>
+
+	<script src="js/index.min.js"></script>
+
+	<link rel="stylesheet" href="css/index.min.css">
+</head>
+
+<body gb-app="app">
+
+
+	<script>
+		window.addEventListener('resize', _onResize);
+		_onResize();
+
+		function _onResize() {
+			var docEl = document.documentElement;
+			var default_value = 640;
+			var clientWidth = docEl.clientWidth;
+			var scale = 1;
+			docEl.style.fontSize = 100 * scale * (clientWidth / default_value) + 'px';
+		}
+		$(window).bind("touchstart", function(evt) {
+			if (evt.cancelable) evt.preventDefault();
+		});
+	</script>
+</body>
+
+</html>
