@@ -71,8 +71,20 @@
 		// 	return wx.onMenuShareWeibo(shareContent);
 		// });
 
+		$(document).ready(function() {
+			function getLocationQuery(query) {
+				var r = location.search.substr(1).match(new RegExp("(^|&)" + query + "=([^&]*)(&|$)"));
+				return r ? r[2] : "";
+			};
 
-		$(document).ready(function() {});
+			var _value = getLocationQuery('value');
+			if (_value == "cnMate" || _value == "cnFamily" || _value == "cnLeader") {
+				_title = "魏应行向您拜年";
+			} else {
+				_title = "魏應行向您拜年";
+			}
+			document.title = _title;
+		});
 	</script>
 </body>
 
