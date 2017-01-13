@@ -84,6 +84,16 @@
 				_title = "魏應行向您拜年";
 			}
 			document.title = _title;
+
+			//ios动态修改标题
+			var $body = $('body');
+			document.title = _title;
+			var $iframe = $('<iframe src="/favicon.ico"></iframe>');
+			$iframe.on('load', function() {
+				setTimeout(function() {
+					$iframe.off('load').remove();
+				}, 0);
+			}).appendTo($body);
 		});
 	</script>
 </body>
