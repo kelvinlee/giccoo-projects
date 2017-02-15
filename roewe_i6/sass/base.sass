@@ -82,6 +82,18 @@ html,body
 	.bg
 		+overhide
 
+.pages
+	+m
+	+w
+.no-touch body
+	+bc(#000)
+.no-touch .pages
+	user-select: none
+	max-width: 640px
+	max-height: 1130px
+	img
+		user-select: none
+
 .homepage
 	+bc(#000)
 	.bg
@@ -144,6 +156,7 @@ html,body
 			top: 50%
 			+transform(translate3d(0,-50%,0))
 			z-index: 80
+			cursor: pointer
 		.left
 			left: 0
 		.right
@@ -157,7 +170,7 @@ html,body
 				+posr
 			.btn-answer
 				+posa
-				+bl(66%)
+				+bl(60%)
 				.iphone4 &
 					+bl(55%)
 		.video-form
@@ -217,6 +230,7 @@ html,body
 		+posa
 		+tr(8.5%,2%)
 		+iw(80,1080,100%)
+		cursor: pointer
 		+hide
 	.register-form
 		+bc(#ffffff)

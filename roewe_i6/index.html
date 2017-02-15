@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
-    <!-- - var images = "http://disk.giccoo.com/projects/volvo_v40_one/img"-->
-    <div class="wechat-share-hide">
-    </div>
+    <!-- - var images = "http://disk.giccoo.com/projects/roewe_i6/img"-->
+    <div class="wechat-share-hide"><img id="share" src="http://disk.giccoo.com/projects/roewe_i6/img/share.jpg"></div>
     <parallax class="pages">
       <div up="infopage" class="page homepage first">
         <div class="bg fadeIn animated">
@@ -29,23 +28,14 @@
           <div class="bar-2"></div>
         </div>
         <div class="content content-bar-1">
-          <slider myid="mainSlider" list="1,2,3,4,5,6" class="sliders">
-            <yield to="content">
-            <div class="slide"><div class="bg"><div class="btn-answer" rel="1"><img src="img/pro-text-1.png" /></div><img src="img/pro-1.jpg" /></div></div>
-            <div class="slide"><div class="bg"><div class="btn-answer" rel="1"><img src="img/pro-text-2.png" /></div><img src="img/pro-2.jpg" /></div></div>
-            <div class="slide"><div class="bg"><div class="btn-answer" rel="1"><img src="img/pro-text-3.png" /></div><img src="img/pro-3.jpg" /></div></div>
-            <div class="slide"><div class="bg"><div class="btn-answer" rel="1"><img src="img/pro-text-4.png" /></div><img src="img/pro-4.jpg" /></div></div>
-            <div class="slide"><div class="bg"><div class="btn-answer" rel="1"><img src="img/pro-text-5.png" /></div><img src="img/pro-5.jpg" /></div></div>
-            <div class="slide"><div class="bg"><div class="btn-answer" rel="1"><img src="img/pro-text-6.png" /></div><img src="img/pro-6.jpg" /></div></div>
-            </yield>
-          </slider>
+          <slider myid="mainSlider" repeat="true" callback="changeMain" left="img/button-left.png" right="img/button-left.png" list="img/pro-1.jpg,img/pro-2.jpg,img/pro-3.jpg,img/pro-4.jpg,img/pro-5.jpg,img/pro-6.jpg" text="img/pro-text-1.png,img/pro-text-2.png,img/pro-text-3.png,img/pro-text-4.png,img/pro-text-5.png,img/pro-text-6.png" class="sliders"></slider>
         </div>
         <div class="content content-bar-2">
           <div class="bg"><img src="img/video-bg.jpg"></div>
           <div class="video-form">
             <div class="title"><img src="img/video-title.png"></div>
             <div class="video">
-              <video src="img/video.mp4" controls="true" poster="img/video-thum.jpg" webkit-playsinline></video>
+              <video src="http://image.giccoo.com/projects/roewe_i6/img/video.mp4" controls="true" poster="img/video-thum.jpg" webkit-playsinline></video>
             </div>
             <p>点击观看</p>
           </div>
@@ -61,6 +51,7 @@
         </div>
       </div>
     </parallax>
+    <script src="http://disk.giccoo.com/projects/libs/js/head.built.js"></script>
     <script src="http://disk.giccoo.com/projects/libs/js/min/Zepto.min.js"></script>
     <script src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js"></script>
     <script src="http://disk.giccoo.com/projects/libs/js/min/riot.min.js"></script>

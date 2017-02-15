@@ -44,9 +44,19 @@ this.on("mount", function() {
 }, '{ }');
 
 riot.tag2('parallax', '<yield></yield>', '', '', function(opts) {
-var _store, allClass, begin, self;
+var _store, _touchEnd, _touchMove, _touchStart, allClass, begin, notouch, self;
 
-console.log("parallax");
+console.log("parallax", $("html").is(".no-touch"));
+
+notouch = $("html").is(".no-touch");
+
+_touchStart = notouch ? "mousedown" : "touchstart";
+
+_touchMove = notouch ? "mousemove" : "touchmove";
+
+_touchEnd = notouch ? "mouseup" : "touchend";
+
+allClass = "riot-up riot-up-active riot-up-leave riot-down riot-down-active riot-down-leave riot-left riot-left-active  riot-left-leave riot-right riot-right-active  riot-right-leave";
 
 _store = {
   can: true
@@ -73,11 +83,14 @@ this.start = function(evt) {
     self.nowPage = $(".page", self.root)[0];
     Store.nowPage = self.nowPage;
   }
+  _store.can = true;
   if (!_store.can) {
     return false;
   }
-  console.log("start");
-  touch = evt.touches[0];
+  $(self.root).css({
+    "cursor": "-webkit-grabbing"
+  });
+  touch = notouch ? evt : evt.touches[0];
   this.defaultPoint.x = touch.pageX;
   this.defaultPoint.y = touch.pageY;
   return true;
@@ -88,9 +101,9 @@ this.move = function(evt) {
   if (!_store.can) {
     return false;
   }
-  touch = evt.touches[0];
+  console.log(_store.can);
+  touch = notouch ? evt : evt.touches[0];
   gone = this.defaultPoint.y - touch.pageY;
-  evt.preventDefault();
   if (gone > 50) {
     _store.can = false;
     this.passpage.bind(this)("up");
@@ -99,33 +112,35 @@ this.move = function(evt) {
     _store.can = false;
     this.passpage.bind(this)("down");
   }
+  evt.preventDefault();
   return true;
 };
 
 this.end = function(e) {
+  $(this.root).css({
+    "cursor": "-webkit-grab"
+  });
+  _store.can = false;
   if (!_store.can) {
     return false;
   }
   console.log($(this.nowPage), $(this.nowPage).attr("up") === null);
   if ($(this.nowPage).attr("up") === null && $(this.nowPage).attr("down") === null) {
-    console.log("remove event");
-    _store.can = false;
-    self.root.removeEventListener("touchstart", self.start);
-    self.root.removeEventListener("touchmove", self.move);
-    return self.root.removeEventListener("touchend", self.end);
+    self.root.removeEventListener(_touchStart, self.start);
+    self.root.removeEventListener(_touchMove, self.move);
+    return self.root.removeEventListener(_touchEnd, self.end);
   }
 };
-
-allClass = "riot-up riot-up-active riot-up-leave riot-down riot-down-active riot-down-leave riot-left riot-left-active  riot-left-leave riot-right riot-right-active  riot-right-leave";
 
 this.passpage = function(direction) {
   var select;
   select = $(this.nowPage).attr(direction);
   console.log(direction, select, typeof select);
   if (select) {
-    return self.animate(select);
+    self.animate(select);
+    return _store.can = false;
   } else {
-    return _store.can = true;
+
   }
 };
 
@@ -163,8 +178,7 @@ this.newpageFinished = function(evt) {
   }
   self.newpage && self.newpage.removeEventListener(TRANSITION_END_NAME, self.newpageFinished);
   self.newpage && self.newpage.removeEventListener(TRANSITION_END_NAME, self.oldpageFinished);
-  $(self.newpage).removeClass(allClass);
-  return _store.can = true;
+  return $(self.newpage).removeClass(allClass);
 };
 
 this.oldpageFinished = function(evt) {
@@ -174,19 +188,33 @@ this.oldpageFinished = function(evt) {
   }
   self.oldpage && self.oldpage.removeEventListener(TRANSITION_END_NAME, self.newpageFinished);
   self.oldpage && self.oldpage.removeEventListener(TRANSITION_END_NAME, self.oldpageFinished);
-  $(self.oldpage).removeClass(allClass);
-  return _store.can = true;
+  return $(self.oldpage).removeClass(allClass);
 };
 
-this.on("mount", function() {});
+this.on("mount", function() {
+  var i, item, len, ref, results;
+  $(this.root).css({
+    "cursor": "-webkit-grab"
+  });
+  if (notouch) {
+    ref = document.getElementsByTagName('img');
+    results = [];
+    for (i = 0, len = ref.length; i < len; i++) {
+      item = ref[i];
+      results.push(item.onmousedown = function(e) {
+        console.log("aa");
+        return e.preventDefault();
+      });
+    }
+    return results;
+  }
+});
 
-console.log(this.root);
+this.root.addEventListener(_touchStart, this.start.bind(this));
 
-this.root.addEventListener("touchstart", this.start.bind(this));
+this.root.addEventListener(_touchMove, this.move.bind(this));
 
-this.root.addEventListener("touchmove", this.move.bind(this));
-
-this.root.addEventListener("touchend", this.end.bind(this));
+this.root.addEventListener(_touchEnd, this.end.bind(this));
 });
 
 riot.tag2('register', '<form onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username">姓名</label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="mobile">手机号码</label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-grounp"> <label for="province">所在省/市</label> <div class="comb"> <div class="select"><span>{provinceName}</span> <select id="province" name="province" onchange="{changeProvince}"> <option each="{cityData}" value="{name}">{name}</option> </select> </div> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeCity}"> <option each="{city}" value="{name}">{name}</option> </select> </div> </div> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="img/submit.png"></button> </div> </form>', '', '', function(opts) {
@@ -276,14 +304,27 @@ this.submit = function() {
 };
 }, '{ }');
 
-riot.tag2('slider', '<yield from="sub"></yield> <div onclick="{moveLeft}" class="left"><img src="img/button-left.png"></div> <div onclick="{moveRight}" class="right"><img src="img/button-left.png"></div> <div riot-style="-webkit-transition-duration: {duration}s;transition-duration: {duration}s; -webkit-transform: translate3d({x}px,0,0); transform: translate3d({x}px,0,0);" class="slider"><yield from="content"></yield></div>', '', '', function(opts) {
-var list, self, slider;
+riot.tag2('slider', '<div onclick="{moveLeft}" class="left"><img riot-src="{opts.left}"></div> <div onclick="{moveRight}" class="right"><img riot-src="{opts.right}"></div> <div riot-style="-webkit-transition-duration: {duration}s;transition-duration: {duration}s; -webkit-transform: translate3d({x}px,0,0); transform: translate3d({x}px,0,0);" class="slider"> <div each="{bgimg in list}" if="{repeat}" class="slide"> <div class="bg"> <div class="btn-answer"><img riot-src="{bgimg.text}"></div><img riot-src="{bgimg.bg}"> </div> </div> <div each="{bgimg in list}" if="{repeat}" class="slide"> <div class="bg"> <div class="btn-answer"><img riot-src="{bgimg.text}"></div><img riot-src="{bgimg.bg}"> </div> </div> <div each="{bgimg in list}" class="slide"> <div class="bg"> <div class="btn-answer"><img riot-src="{bgimg.text}"></div><img riot-src="{bgimg.bg}"> </div> </div> </div>', '', '', function(opts) {
+var i, item, list, ref, self, slider, text;
 
 self = this;
 
 list = opts.list + '';
 
-this.list = list.split(',');
+list = list.split(',');
+
+text = opts.text + '';
+
+text = text.split(',');
+
+this.list = [];
+
+for (item = i = 0, ref = list.length; 0 <= ref ? i < ref : i > ref; item = 0 <= ref ? ++i : --i) {
+  this.list[item] = {
+    bg: list[item],
+    text: text[item]
+  };
+}
 
 this.repeat = opts.repeat ? true : false;
 
@@ -324,59 +365,47 @@ if (opts.myid) {
   eval(opts.myid + ' = this');
 }
 
-this.setNumber = function(i) {
-  slider = $(".sliders .slider");
-  self.offset.w = slider.width();
-  self.duration = 0.2;
-  self.x = -(slider.width() * i);
-  self.slideNumber = i;
-  console.log(self.x, i);
-  self.update();
-  opts.callback && eval(opts.callback + '(' + self.slideNumber + ')');
+this.moveLeft = function(evt) {
+  this.moved = true;
+  slider = $('.slider', this.root);
+  this.offset.w = slider.width();
+  this.slideNumber--;
+  this.x = this.slideNumber * this.offset.w;
+  if (this.repeat) {
+    this.x -= this.list.length * this.offset.w;
+  }
+  this.duration = 0.2;
+  return this.update();
+};
+
+this.moveRight = function(evt) {
+  this.moved = true;
+  slider = $('.slider', this.root);
+  this.offset.w = slider.width();
+  this.slideNumber++;
+  this.x = this.slideNumber * this.offset.w;
+  if (this.repeat) {
+    this.x -= this.list.length * this.offset.w;
+  }
+  this.duration = 0.2;
+  return this.update();
 };
 
 this.setSlideNumber = function(offset) {
   var round, slideNumber;
-  round = void 0;
-  slideNumber = void 0;
   if (this.moved) {
     round = offset ? (this.offset.deltaX < 0 ? 'ceil' : 'floor') : 'round';
     slideNumber = Math[round](this.x / (this.offset.scrollableArea / slider.find('.slide').length));
     slideNumber += offset;
     slideNumber = Math.min(slideNumber, 0);
-    console.log(Math.max(-(slider.find('.slide').length - 1), slideNumber));
     this.slideNumber = Math.max(-(slider.find('.slide').length - 1), slideNumber) % this.list.length;
+    console.log(this.slideNumber);
     opts.callback && eval(opts.callback + '(' + this.slideNumber + ')');
   }
 };
 
-this.moveLeft = function() {
-  var max;
-  max = this.list.length - 1;
-  self.slideNumber = Math.abs(this.x / slider.width());
-  self.slideNumber++;
-  console.log("left", self.slideNumber);
-  if (self.slideNumber >= max) {
-    self.slideNumber = max;
-  }
-  return this.setNumber(self.slideNumber);
-};
-
-this.moveRight = function() {
-  var max;
-  max = this.list.length - 1;
-  self.slideNumber = Math.abs(this.x / slider.width());
-  self.slideNumber--;
-  console.log("right", self.slideNumber);
-  if (self.slideNumber <= 0) {
-    self.slideNumber = 0;
-  }
-  return this.setNumber(self.slideNumber);
-};
-
 this.touchstart = function(evt) {
   var touch;
-  touch = void 0;
   touch = evt.touches[0];
   slider = $('.slider', this.root);
   this.duration = 0;
@@ -386,20 +415,18 @@ this.touchstart = function(evt) {
   this.offset.x = touch.pageX;
   this.offset.y = touch.pageY;
   if (this.repeat && this.x === 0) {
-    this.x = -(this.list.length - 1) * this.offset.w;
+    this.x = -this.list.length * this.offset.w;
   }
   this.offset.lastw = this.x;
   this.offset.lastSlide = -(this.list.length - 1);
   this.offset.scrollableArea = this.offset.w * slider.find('.slide').length;
   this.setSlideNumber(0);
-  console.log('move start', this.x);
+  console.log('move start');
   return this.update();
 };
 
 this.touchmove = function(evt) {
   var pageX, touch;
-  pageX = void 0;
-  touch = void 0;
   touch = evt.touches[0];
   this.offset.deltaX = touch.pageX - this.offset.x;
   pageX = touch.pageX;
@@ -420,7 +447,7 @@ this.touchend = function(evt) {
     oldslideNumber = this.slideNumber;
     this.setSlideNumber(+(new Date) - this.startTime < 1000 && Math.abs(this.offset.deltaX) > 15 ? (this.offset.deltaX < 0 ? -1 : 1) : 0);
     this.x = this.slideNumber * this.offset.w;
-    console.log('my number:', this.slideNumber, oldslideNumber, this.list.length);
+    console.log('my number:', this.slideNumber, oldslideNumber);
     if (this.slideNumber === 0 && oldslideNumber === -(this.list.length - 1)) {
       this.x = (oldslideNumber - 1) * this.offset.w;
     }
@@ -430,7 +457,6 @@ this.touchend = function(evt) {
     if (this.repeat) {
       this.x -= this.list.length * this.offset.w;
     }
-    console.log(this.Rx, this.x, this.repeat);
     this.duration = 0.2;
     this.update();
   }
@@ -463,7 +489,6 @@ this.on('mount', function() {
   slider[0].addEventListener('touchend', this.touchend.bind(this));
   if (this.repeat) {
     slide = $('.slider', this.root);
-    console.log(slide, TRANSITION_END_NAME);
     slide[0].addEventListener(TRANSITION_END_NAME, this.transition.bind(this));
   }
   return opts.end && opts.end(this);

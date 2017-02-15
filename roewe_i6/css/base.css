@@ -886,6 +886,26 @@ html, body {
   .page .bg {
     overflow: hidden; }
 
+.pages {
+  margin: 0 auto;
+  width: 100%; }
+
+.no-touch body {
+  background-color: #000; }
+
+.no-touch .pages {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  max-width: 640px;
+  max-height: 1130px; }
+  .no-touch .pages img {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+
 .homepage {
   background-color: #000; }
   .homepage .bg {
@@ -963,7 +983,8 @@ html, body {
     top: 50%;
     -webkit-transform: translate3d(0, -50%, 0);
             transform: translate3d(0, -50%, 0);
-    z-index: 80; }
+    z-index: 80;
+    cursor: pointer; }
     .iphone4 .infopage .content .left, .iphone4 .infopage .content .right {
       width: 7.3148148148%; }
   .infopage .content .left {
@@ -980,7 +1001,7 @@ html, body {
     position: relative; }
   .infopage .content .slide .btn-answer {
     position: absolute;
-    bottom: 66%;
+    bottom: 60%;
     left: 0px; }
     .iphone4 .infopage .content .slide .btn-answer {
       bottom: 55%;
@@ -1073,6 +1094,7 @@ html, body {
     right: 2%;
     width: 7.4074074074%;
     margin: 0 auto;
+    cursor: pointer;
     display: none; }
     .iphone4 .register .close {
       width: 7.4074074074%; }

@@ -1,17 +1,37 @@
 slider
-	<yield from="sub"/>
 	.left(onclick="{moveLeft}")
-		img(src="img/button-left.png")
+		img(src="{opts.left}")
 	.right(onclick="{moveRight}")
-		img(src="img/button-left.png")
+		img(src="{opts.right}")
 	.slider(style="-webkit-transition-duration: {duration}s;transition-duration: {duration}s; -webkit-transform: translate3d({x}px,0,0); transform: translate3d({x}px,0,0);")
-		<yield from="content"/>
-		
+		.slide(each="{bgimg in list}",if="{repeat}")
+			.bg
+				.btn-answer
+					img(src="{bgimg.text}")
+				img(src="{bgimg.bg}")
+		.slide(each="{bgimg in list}",if="{repeat}")
+			.bg
+				.btn-answer
+					img(src="{bgimg.text}")
+				img(src="{bgimg.bg}")
+		.slide(each="{bgimg in list}")
+			.bg
+				.btn-answer
+					img(src="{bgimg.text}")
+				img(src="{bgimg.bg}")
+
 
 	script(type="text/coffeescript").
 		self = this
 		list = opts.list + ''
-		@list = list.split(',')
+		list = list.split(',')
+		# console.log "list",list
+		text = opts.text + ''
+		text = text.split(',')
+		@list = []
+		for item in [0...list.length]
+			@list[item] = {bg: list[item], text: text[item]}
+		# @list = list.split(',')
 		@repeat = if opts.repeat then true else false
 		@duration = 0.2
 		@offset =
@@ -37,53 +57,58 @@ slider
 		if opts.myid
 			eval opts.myid + ' = this'
 
-		@setNumber = (i) ->
-			# console.log self is this
-			slider = $(".sliders .slider")
-			self.offset.w = slider.width()
-			self.duration = 0.2
-			self.x = -(slider.width() * i)
-			# console.log i, self.slideNumber, self.x, self, self.update
-			# if @repeat
-			# 	self.x -= @list.length * @offset.w
-			self.slideNumber = i
-			console.log self.x, i
-			self.update()
-			opts.callback and eval(opts.callback + '(' + self.slideNumber + ')')
-			return
+		# @setNumber = (i) ->
+		# 	slider = $('.slider', @root)
+		# 	@offset.w = slider.width()
+		# 	console.log "setNumber",i, self.slideNumber, @, @root
+			
+		# 	self.duration = 0.2
+		# 	self.x = -($('.slider', self.root).width() * i)
+		# 	if @repeat
+		# 		self.x -= @list.length * @offset.w
+		# 	# self.slideNumber = i
+		# 	self.update()
+		# 	return
+
+		@moveLeft = (evt)->
+			@moved = true
+			# @setSlideNumber -1
+			slider = $('.slider', @root)
+			@offset.w = slider.width()
+			@slideNumber--
+			@x = @slideNumber * @offset.w
+			if @repeat
+				@x -= @list.length * @offset.w
+			@duration = 0.2
+			# evt.preventDefault()
+			@update()
+		@moveRight = (evt)->
+			@moved = true
+			# @setSlideNumber 1
+			slider = $('.slider', @root)
+			@offset.w = slider.width()
+			@slideNumber++
+			@x = @slideNumber * @offset.w
+			if @repeat
+				@x -= @list.length * @offset.w
+			@duration = 0.2
+			# evt.preventDefault()
+			@update()
 
 		@setSlideNumber = (offset) ->
-			round = undefined
-			slideNumber = undefined
+			# console.log "offset:",offset
 			if @moved
 				round = if offset then (if @offset.deltaX < 0 then 'ceil' else 'floor') else 'round'
 				slideNumber = Math[round](@x / (@offset.scrollableArea / slider.find('.slide').length))
 				slideNumber += offset
 				slideNumber = Math.min(slideNumber, 0)
-				console.log Math.max(-(slider.find('.slide').length - 1), slideNumber)
+				# console.log Math.max(-(slider.find('.slide').length - 1), slideNumber)
 				@slideNumber = Math.max(-(slider.find('.slide').length - 1), slideNumber) % @list.length
+				console.log @slideNumber
 				opts.callback and eval(opts.callback + '(' + @slideNumber + ')')
 			return
 
-		@moveLeft = ->
-			max = @list.length - 1
-			self.slideNumber = Math.abs @.x / slider.width()
-			self.slideNumber++
-			console.log "left", self.slideNumber
-			if self.slideNumber >= max
-				self.slideNumber = max
-			@setNumber self.slideNumber
-		@moveRight = ->
-			max = @list.length - 1
-			self.slideNumber = Math.abs @.x / slider.width()
-			self.slideNumber--
-			console.log "right", self.slideNumber
-			if self.slideNumber <= 0
-				self.slideNumber = 0
-			@setNumber self.slideNumber
-
 		@touchstart = (evt) ->
-			touch = undefined
 			touch = evt.touches[0]
 			slider = $('.slider', @root)
 			@duration = 0
@@ -93,17 +118,15 @@ slider
 			@offset.x = touch.pageX
 			@offset.y = touch.pageY
 			if @repeat and @x == 0
-				@x = -(@list.length-1) * @offset.w
+				@x = -@list.length * @offset.w
 			@offset.lastw = @x
 			@offset.lastSlide = -(@list.length - 1)
 			@offset.scrollableArea = @offset.w * slider.find('.slide').length
 			@setSlideNumber 0
-			console.log 'move start', @x
+			console.log 'move start'
 			@update()
 
 		@touchmove = (evt) ->
-			pageX = undefined
-			touch = undefined
 			touch = evt.touches[0]
 			@offset.deltaX = touch.pageX - (@offset.x)
 			pageX = touch.pageX
@@ -123,14 +146,14 @@ slider
 				oldslideNumber = @slideNumber
 				@setSlideNumber if +new Date - (@startTime) < 1000 and Math.abs(@offset.deltaX) > 15 then (if @offset.deltaX < 0 then -1 else 1) else 0
 				@x = @slideNumber * @offset.w
-				console.log 'my number:', @slideNumber, oldslideNumber, @list.length
-				if @slideNumber is 0 and oldslideNumber is -(@list.length - 1)
+				console.log 'my number:', @slideNumber, oldslideNumber
+				if @slideNumber == 0 and oldslideNumber == -(@list.length - 1)
 					@x = (oldslideNumber - 1) * @offset.w
-				if oldslideNumber is 0 and @slideNumber is -(@list.length - 1)
+				if oldslideNumber == 0 and @slideNumber == -(@list.length - 1)
 					@x = 1 * @offset.w
 				if @repeat
 					@x -= @list.length * @offset.w
-				console.log(this.Rx,this.x,this.repeat)
+				# console.log(this.Rx,this.x,this.repeat)
 				@duration = 0.2
 				@update()
 			@moved = false
@@ -163,6 +186,6 @@ slider
 			slider[0].addEventListener 'touchend', @touchend.bind(this)
 			if @repeat
 				slide = $('.slider', @root)
-				console.log slide, TRANSITION_END_NAME
+				# console.log slide, TRANSITION_END_NAME
 				slide[0].addEventListener TRANSITION_END_NAME, @transition.bind(this)
 			opts.end and opts.end(this)
