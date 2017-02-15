@@ -1,0 +1,78 @@
+extends ../libs/jade/layout
+block title
+	| 荣威i6 让生活充满i
+block css
+	link(rel="stylesheet",href="http://disk.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css")
+
+block content
+	// - var images = "http://disk.giccoo.com/projects/volvo_v40_one/img"
+	-var images = "img"
+	.wechat-share-hide
+		//- img#share(src="http://disk.giccoo.com/projects/dazhong/img/share.jpg")
+	parallax.pages
+		.page.homepage.first(up="infopage")
+			.bg.fadeIn.animated
+				//- img(src="#{images}/homepage-bg.jpg")
+			.logo
+				img(src="#{images}/logo.png")
+			.top.fadeInDown.animated.delay-5.duration-20
+				img(src="#{images}/homepage-top.png")
+			.bottom.fadeInUp.animated.delay-15
+				img(src="#{images}/homepage-title.png")
+			.nextpoint
+				img(src="#{images}/down-arrow.png")
+
+		.page.infopage.bar-1(down="homepage")
+			.title
+				.title-1
+					img(src="#{images}/tab-1.jpg")
+				.title-2
+					img(src="#{images}/tab-2.jpg")
+				.bar-1
+				.bar-2
+			.content.content-bar-1
+				slider.sliders(myid="mainSlider",list="1,2,3,4,5,6")
+					|<yield to="content">
+					|<div class="slide"><div class="bg"><div class="btn-answer" rel="1"><img src="#{images}/pro-text-1.png" /></div><img src="#{images}/pro-1.jpg" /></div></div>
+					|<div class="slide"><div class="bg"><div class="btn-answer" rel="1"><img src="#{images}/pro-text-2.png" /></div><img src="#{images}/pro-2.jpg" /></div></div>
+					|<div class="slide"><div class="bg"><div class="btn-answer" rel="1"><img src="#{images}/pro-text-3.png" /></div><img src="#{images}/pro-3.jpg" /></div></div>
+					|<div class="slide"><div class="bg"><div class="btn-answer" rel="1"><img src="#{images}/pro-text-4.png" /></div><img src="#{images}/pro-4.jpg" /></div></div>
+					|<div class="slide"><div class="bg"><div class="btn-answer" rel="1"><img src="#{images}/pro-text-5.png" /></div><img src="#{images}/pro-5.jpg" /></div></div>
+					|<div class="slide"><div class="bg"><div class="btn-answer" rel="1"><img src="#{images}/pro-text-6.png" /></div><img src="#{images}/pro-6.jpg" /></div></div>
+					|</yield>
+
+			.content.content-bar-2
+				.bg
+					img(src="#{images}/video-bg.jpg")
+				.video-form
+					.title
+						img(src="#{images}/video-title.png")
+					.video
+						video(src="#{images}/video.mp4",controls="true",poster="#{images}/video-thum.jpg",webkit-playsinline)
+					p 点击观看
+		
+		.register.fadeIn.animated.delay-10
+			.title
+				img(src="#{images}/button-register.png")
+				.star.animated.infinite
+					img(src="#{images}/star.png")
+			.close.fadeIn.animated
+				img(src="#{images}/close.png")
+			.register-form
+				img(src="#{images}/form-text.png")
+				register(action="http://api.giccoo.com/roewe_i6/insert/")
+
+
+block js
+	//- script(src="/libs/js/min/localforage.min.js")
+	//- script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/Zepto.min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/min/riot.min.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/cityData.js")
+	script(src="http://disk.giccoo.com/projects/libs/js/baidu.js")
+	script(src="js/tags.js")
+	script(src="js/main.js")
+
+		

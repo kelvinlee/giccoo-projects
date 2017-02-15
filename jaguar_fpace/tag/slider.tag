@@ -55,6 +55,8 @@ slider
 			this.offset.w = slider.width()
 			this.offset.x = touch.pageX
 			this.offset.y = touch.pageY
+			if this.repeat and this.x == 0
+				this.x = - this.list.length * this.offset.w
 			this.offset.lastw = this.x
 			this.offset.lastSlide = -(slider.find(".slide").length-1)
 			this.offset.scrollableArea = this.offset.w * slider.find(".slide").length
@@ -71,8 +73,12 @@ slider
 			# if this.offset.isScrolling
 			# 	return ""
 	
-			this.x = this.offset.deltaX / this.offset.resistance + this.offset.lastw
-			this.offset.resistance = if this.slideNumber is 0 and this.offset.deltaX > 0 then pageX / this.offset.w + 1.25 else ( if this.slideNumber is this.offset.lastSlide and this.offset.deltaX < 0 then (this.offset.w-Math.abs(pageX)) / this.offset.w + 1.25 else 1)
+			if @repeat
+				@x = @offset.deltaX + @offset.lastw
+			else
+				@x = @offset.deltaX / @offset.resistance + @offset.lastw
+				@offset.resistance = if @slideNumber == 0 and @offset.deltaX > 0 then pageX / @offset.w + 1.25 else if @slideNumber == @offset.lastSlide and @offset.deltaX < 0 then (@offset.w - Math.abs(pageX)) / @offset.w + 1.25 else 1
+
 			this.moved = true
 			evt.preventDefault()
 			
@@ -89,6 +95,13 @@ slider
 			if this.moved
 				this.setSlideNumber if +new Date - (@startTime) < 1000 and Math.abs(@offset.deltaX) > 15 then (if @offset.deltaX < 0 then -1 else 1) else 0
 				this.x = this.slideNumber * this.offset.w
+				console.log 'my number:', @slideNumber, oldslideNumber
+				if @slideNumber == 0 and oldslideNumber == -(@list.length - 1)
+					@x = (oldslideNumber - 1) * @offset.w
+				if oldslideNumber == 0 and @slideNumber == -(@list.length - 1)
+					@x = 1 * @offset.w
+				if @repeat
+					@x -= @list.length * @offset.w
 				this.duration = 0.2
 				# console.log(this.x,this.slideNumber)
 				this.update()
@@ -99,4 +112,8 @@ slider
 			slider[0].addEventListener("touchstart", this.touchstart.bind(this))
 			slider[0].addEventListener("touchmove", this.touchmove.bind(this))
 			slider[0].addEventListener("touchend", this.touchend.bind(this))
+			if @repeat
+				slide = $('.slider', @root)
+				console.log slide, TRANSITION_END_NAME
+				slide[0].addEventListener TRANSITION_END_NAME, @transition.bind(this)
 			opts.end && opts.end(this)
