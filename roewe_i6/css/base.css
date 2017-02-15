@@ -906,6 +906,10 @@ html, body {
         -ms-user-select: none;
             user-select: none; }
 
+.no-touch .iphone4 .pages {
+  max-width: 500px;
+  max-height: 880px; }
+
 .homepage {
   background-color: #000; }
   .homepage .bg {
@@ -996,16 +1000,24 @@ html, body {
   .infopage .content .slider {
     position: absolute;
     bottom: 0px;
-    left: 0px; }
-  .infopage .content .slide .bg {
-    position: relative; }
-  .infopage .content .slide .btn-answer {
-    position: absolute;
-    bottom: 60%;
-    left: 0px; }
-    .iphone4 .infopage .content .slide .btn-answer {
-      bottom: 55%;
-      left: 0px; }
+    left: 0px;
+    width: 100%;
+    height: 100%; }
+  .infopage .content .slide {
+    position: relative;
+    height: 100%; }
+    .infopage .content .slide .bg {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      z-index: -1; }
+    .infopage .content .slide .btn-answer {
+      position: relative;
+      z-index: 1;
+      top: 10%; }
+      .iphone4 .infopage .content .slide .btn-answer {
+        bottom: 55%;
+        left: 0px; }
   .infopage .content .video-form {
     -webkit-transform: translate3d(0, -50%, 0);
             transform: translate3d(0, -50%, 0);

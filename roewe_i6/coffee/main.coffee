@@ -6,9 +6,9 @@ Store = {}
 
 window.onload = ->
 	riot.mount("*")
-	MK = $("body").width()/$("body").height()
+	MK = $(".pages").width()/$(".pages").height()
 
-	if $("body").height() <= 460 or MK > 0.65
+	if $(".pages").height() <= 460 or MK > 0.72
 		$("body").addClass "iphone4"
 
 	$(".infopage .title .bar-1").on "click", ->
@@ -34,6 +34,8 @@ window.onload = ->
 
 	# $(".left").on "click", moveLeft
 	# $(".right").on "click", moveRight
+	$(".pages .nextpoint").on "click", ->
+		Store.parallax.passpage("up")
 
 	$(".show-pop").on "click", ->
 		i = $(this).index()+1

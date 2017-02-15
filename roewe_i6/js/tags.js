@@ -304,7 +304,7 @@ this.submit = function() {
 };
 }, '{ }');
 
-riot.tag2('slider', '<div onclick="{moveLeft}" class="left"><img riot-src="{opts.left}"></div> <div onclick="{moveRight}" class="right"><img riot-src="{opts.right}"></div> <div riot-style="-webkit-transition-duration: {duration}s;transition-duration: {duration}s; -webkit-transform: translate3d({x}px,0,0); transform: translate3d({x}px,0,0);" class="slider"> <div each="{bgimg in list}" if="{repeat}" class="slide"> <div class="bg"> <div class="btn-answer"><img riot-src="{bgimg.text}"></div><img riot-src="{bgimg.bg}"> </div> </div> <div each="{bgimg in list}" if="{repeat}" class="slide"> <div class="bg"> <div class="btn-answer"><img riot-src="{bgimg.text}"></div><img riot-src="{bgimg.bg}"> </div> </div> <div each="{bgimg in list}" class="slide"> <div class="bg"> <div class="btn-answer"><img riot-src="{bgimg.text}"></div><img riot-src="{bgimg.bg}"> </div> </div> </div>', '', '', function(opts) {
+riot.tag2('slider', '<div onclick="{moveLeft}" class="left"><img riot-src="{opts.left}"></div> <div onclick="{moveRight}" class="right"><img riot-src="{opts.right}"></div> <div riot-style="-webkit-transition-duration: {duration}s;transition-duration: {duration}s; -webkit-transform: translate3d({x}px,0,0); transform: translate3d({x}px,0,0);" class="slider"> <div each="{bgimg in list}" if="{repeat}" class="slide"> <div class="bg"><img riot-src="{bgimg.bg}"></div> <div class="btn-answer"><img riot-src="{bgimg.text}"></div> </div> <div each="{bgimg in list}" if="{repeat}" class="slide"> <div class="bg"><img riot-src="{bgimg.bg}"></div> <div class="btn-answer"><img riot-src="{bgimg.text}"></div> </div> <div each="{bgimg in list}" class="slide"> <div class="bg"><img riot-src="{bgimg.bg}"></div> <div class="btn-answer"><img riot-src="{bgimg.text}"></div> </div> </div>', '', '', function(opts) {
 var i, item, list, ref, self, slider, text;
 
 self = this;
@@ -363,6 +363,10 @@ this.moved = false;
 
 if (opts.myid) {
   eval(opts.myid + ' = this');
+}
+
+if (this.repeat) {
+  this.x = -this.list.length * this.offset.w;
 }
 
 this.moveLeft = function(evt) {
@@ -490,6 +494,11 @@ this.on('mount', function() {
   if (this.repeat) {
     slide = $('.slider', this.root);
     slide[0].addEventListener(TRANSITION_END_NAME, this.transition.bind(this));
+    setTimeout(function() {
+      self.offset.w = $(".pages").width();
+      self.x = -self.list.length * self.offset.w;
+      return self.update();
+    }, 500);
   }
   return opts.end && opts.end(this);
 });

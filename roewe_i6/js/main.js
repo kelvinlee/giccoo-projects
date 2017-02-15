@@ -88,8 +88,8 @@ Store = {};
 window.onload = function() {
   var MK;
   riot.mount("*");
-  MK = $("body").width() / $("body").height();
-  if ($("body").height() <= 460 || MK > 0.65) {
+  MK = $(".pages").width() / $(".pages").height();
+  if ($(".pages").height() <= 460 || MK > 0.72) {
     $("body").addClass("iphone4");
   }
   $(".infopage .title .bar-1").on("click", function() {
@@ -123,6 +123,9 @@ window.onload = function() {
     });
     return $(".register").addClass("show");
   }, 500);
+  $(".pages .nextpoint").on("click", function() {
+    return Store.parallax.passpage("up");
+  });
   $(".show-pop").on("click", function() {
     i = $(this).index() + 1;
     $(".pop .content").html('<img src="img/pop-' + i + '.png" />');

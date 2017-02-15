@@ -93,6 +93,9 @@ html,body
 	max-height: 1130px
 	img
 		user-select: none
+.no-touch .iphone4 .pages
+	max-width: 500px
+	max-height: 880px
 
 .homepage
 	+bc(#000)
@@ -165,12 +168,19 @@ html,body
 		.slider
 			+posa
 			+bl
+			+w
+			+h
 		.slide
+			+posr
+			+h
 			.bg
-				+posr
-			.btn-answer
 				+posa
-				+bl(60%)
+				+bl
+				z-index: -1
+			.btn-answer
+				+posr
+				z-index: 1
+				top: 10%
 				.iphone4 &
 					+bl(55%)
 		.video-form

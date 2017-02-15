@@ -6,19 +6,19 @@ slider
 	.slider(style="-webkit-transition-duration: {duration}s;transition-duration: {duration}s; -webkit-transform: translate3d({x}px,0,0); transform: translate3d({x}px,0,0);")
 		.slide(each="{bgimg in list}",if="{repeat}")
 			.bg
-				.btn-answer
-					img(src="{bgimg.text}")
 				img(src="{bgimg.bg}")
+			.btn-answer
+				img(src="{bgimg.text}")
 		.slide(each="{bgimg in list}",if="{repeat}")
 			.bg
-				.btn-answer
-					img(src="{bgimg.text}")
 				img(src="{bgimg.bg}")
+			.btn-answer
+				img(src="{bgimg.text}")
 		.slide(each="{bgimg in list}")
 			.bg
-				.btn-answer
-					img(src="{bgimg.text}")
 				img(src="{bgimg.bg}")
+			.btn-answer
+				img(src="{bgimg.text}")
 
 
 	script(type="text/coffeescript").
@@ -56,7 +56,8 @@ slider
 		@moved = false
 		if opts.myid
 			eval opts.myid + ' = this'
-
+		if @repeat
+			@x = -@list.length * @offset.w
 		# @setNumber = (i) ->
 		# 	slider = $('.slider', @root)
 		# 	@offset.w = slider.width()
@@ -188,4 +189,11 @@ slider
 				slide = $('.slider', @root)
 				# console.log slide, TRANSITION_END_NAME
 				slide[0].addEventListener TRANSITION_END_NAME, @transition.bind(this)
+				setTimeout ->
+					self.offset.w = $(".pages").width()
+					# alert self.list.length+","+self.offset.w
+					self.x = -self.list.length * self.offset.w
+					self.update()
+				,500
+
 			opts.end and opts.end(this)
