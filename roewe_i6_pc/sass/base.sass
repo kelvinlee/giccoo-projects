@@ -1,0 +1,414 @@
+@import sass/base
+@import sass/note
+@import sass/slider
+@import ../../libs/sass/parallax
+
+
++keyframes(second)
+	0%
+		+transform(rotate(0deg))
+	100%
+		+transform(rotate(360deg))
++keyframes(light)
+	0%,100%
+		+transform(translate3d(0,0,0))
+		opacity: 0
+	10%
+		opacity: 1
+	70%
+		opacity: 1
+	80%
+		+transform(translate3d(9rem,0,0))
+		opacity: 0
++keyframes(rollOut)
+	0%
+		+transform(translate3d(0,40%,0) rotate(0deg))
+		opacity: 1
+	70%
+		opacity: 1
+	100%
+		+transform(translate3d(320px,40%,0) rotate(1800deg))
+		opacity: 0
+
+
+
+// animation,delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.wechat-share-hide
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+
+html,body
+	+w
+	+h
+.hide
+	+hide
+// .loading
+
+.loading
+	+posa
+	+tl
+	+w
+	+h
+	+bc(#fefcf0)
+	z-index: 999
+	.img
+		+posa
+		+tl(50%)
+		+transform(translate3d(0,-50%,0))
+	.text
+		+posa
+		+tl(68%,50%)
+		+transform(translate3d(-50%,-50%,0))
+		+text-center
+		+font-size(1rem)
+		line-height: 1.4em
+		color: #f5c559
+		.loadtext
+			+font-size(1.4rem)
+			margin-right: -1rem
+			em
+				font-style: normal
+
+.page
+	+overhide
+	.bg
+		+overhide
+
+.pages
+	+m
+	+w
+.no-touch body
+	+bc(#000)
+.no-touch .pages
+	user-select: none
+	max-width: 640px
+	max-height: 1130px
+	img
+		user-select: none
+.no-touch .iphone4 .pages
+	max-width: 500px
+	max-height: 880px
+
+.homepage
+	+bc(#000)
+	.bg
+		+b("../img/homepage-bg.jpg",no-repeat,center,center,cover)
+		+h
+		+w
+	.logo
+		+posa
+		+tl(3%)
+	.top
+		+posa
+		+tl(16%)
+	.bottom
+		+posa
+		+bl(18%)
+	.nextpoint
+		+posa
+		+bl(7.5%,50%)
+		+transform(translate3d(-50%,0,0))
+		+iw(60,1080,100%)
+	.iphone4 &
+		.top
+			+tl(15%)
+
+.infopage
+	.title
+		+posa
+		+tl
+		z-index: 10
+		.bar-1
+			+posa
+			+tl
+			z-index: 2
+			+w(50%)
+			+h
+			cursor: pointer
+		.bar-2
+			+posa
+			+tr
+			z-index: 2
+			+w(50%)
+			+h
+			cursor: pointer
+		
+	.content
+		+posa
+		+tl
+		+w
+		+h
+		+overhide
+		.sliders
+			+w
+			+h
+			padding-bottom: 10px
+			+posa
+			+bl
+		.left,.right
+			+iw(79,1080,100%)
+			+posa
+			top: 50%
+			+transform(translate3d(0,-50%,0))
+			z-index: 80
+			cursor: pointer
+		.left
+			left: 0
+		.right
+			right: 0
+			+transform(translate3d(0,-50%,0) scale(-1,-1))
+		.slider
+			+posa
+			+bl
+			+w
+			+h
+		.slide
+			+posr
+			+h
+			.bg
+				+posa
+				+bl
+				z-index: -1
+			.btn-answer
+				+posr
+				z-index: 1
+				top: 10%
+				.iphone4 &
+					+bl(55%)
+		.video-form
+			+transform(translate3d(0,-50%,0))
+			+posa
+			+tl(50%)
+			+w
+			.title
+				+posr
+			.video
+				+w(80%)
+				+m(5% auto)
+				video
+					+w
+			p
+				+font-size(0.9rem)
+				text-align: center
+				+m
+				color: #7f7f7f
+
+	&.bar-1
+		.title
+			.title-1
+				+show
+			.title-2
+				+hide
+		.content-bar-1
+			+show
+		.content-bar-2
+			+hide
+	&.bar-2
+		.title
+			.title-1
+				+hide
+			.title-2
+				+show
+		.content-bar-1
+			+hide
+		.content-bar-2
+			+show
+.register
+	+posa
+	+bl
+	+tran
+	&.show
+		z-index: 101
+	.title
+		font-size: 0
+		cursor: pointer
+		.star
+			+posa
+			+tl(-6%,0)
+			+iw(120,1080,100%)
+			+animation(rollOut,2s,ease,infinite)
+			z-index: -1
+	.close
+		+posa
+		+tr(8.5%,2%)
+		+iw(80,1080,100%)
+		cursor: pointer
+		+hide
+	.register-form
+		+bc(#ffffff)
+		padding: 5% 0
+	&.on
+		.close
+			+show
+		.star
+			+hide
+
+.pop
+	+posf
+	+tl
+	+w
+	+h
+	+bc(rgba(0,0,0,0.8))
+	+hide
+	.content
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+
+		+iw(450)
+
+.tabs
+	.tab
+		+w(100%)
+		white-space: nowrap
+		.item
+			+show-inline
+			+w(50%)
+			+text-center
+			+bc(#003057)
+			+p(0.8rem 0)
+			&.on
+				+bc(#024d89)
+	.contents
+		+p(0.8rem 0)
+		// .sliders
+		// 	+w(80%)
+		// 	+m
+		// 	+overhide
+		// 	+bc(#fff)
+		// 	border: solid 0.4rem #fff
+			
+		.points
+			+text-center
+			+p(0.2rem)
+			+box
+			span
+				+show-inline
+				+wh(0.4rem,0.4rem)
+				+overhide
+				border-radius: 50%
+				+bc(#fff)
+				+m(0 0.2rem)
+				&.on
+					+bc(#00d1c1)
+
+
+.form
+	+w(80%)
+	+m
+	+p(1.4rem 0)
+	$labelColor: #278fcf
+	$borderColor: #278fcf
+	$inputColor: #000000
+	.form-grounp
+		$h: 1.4rem
+		vertical-align: top
+		> label
+			+wh(30%,$h)
+			+show-inline
+			+font-size(0.8rem)
+			+m(0.2rem 0)
+			line-height: $h
+			vertical-align: top
+			color: $labelColor
+		> input
+			+wh(68%,$h)
+			+font-size(0.8rem)
+			+bc(#fff)
+			+show-inline
+			+box
+			+m(0.2rem 0)
+			+p(0.2rem)
+			line-height: $h
+			vertical-align: top
+			border: solid 1px $borderColor
+			color: $inputColor
+			outline: none
+			border-radius: 0.2rem
+		.comb
+			+wh(68%,$h)
+			+font-size(1rem)
+			+show-inline
+			+m(0.2rem 0)
+			color: $inputColor
+			white-space: nowrap
+			label
+				+wh(30%,$h)
+				+show-inline
+				+font-size(0.8rem)
+				+text-center
+				color: $labelColor
+			input
+				+show-inline
+				+w(1rem)
+			.select
+				+w(48.5%)
+				+m
+		.select
+			+posr
+			+wh(68%,$h)
+			+show-inline
+			+bc(#fff)
+			+m(0.2rem 0)
+			+box
+			+p(0 0.2rem)
+			+font-size(0.8rem)
+			color: $inputColor
+			border: solid 1px $borderColor
+			border-radius: 0.2rem
+			&:after
+				$size: 0.5rem
+				content: " "
+				+posa
+				+tr(50%,$size)
+				+transform(translate3d(0,-50%,0))
+				z-index: 99
+				border-left: $size/2 solid transparent
+				border-right: $size/2 solid transparent
+				border-top: $size solid $borderColor
+			span
+				text-overflow: ellipsis
+				+show-inline
+				+wh(100%,$h)
+				+overhide
+			select
+				+posa
+				+tl
+				+br
+				+w
+				+h
+				opacity: 0
+
+	.form-btn
+		+text-center
+		margin-top: 0.8rem
+		button
+			+w(40%)
+			+m
+			+p(2px 0)
+			+bc(transparent)
+			border: none
+
+.backTop
+	+posf
+	+br(1rem,1rem)
+	+iw(80)
+	
+
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
