@@ -907,8 +907,8 @@ html, body {
             user-select: none; }
 
 .no-touch .iphone4 .pages {
-  max-width: 500px;
-  max-height: 880px; }
+  max-width: 400px;
+  max-height: 704px; }
 
 .homepage {
   background-color: #000; }
@@ -1078,6 +1078,8 @@ html, body {
   position: absolute;
   bottom: 0px;
   left: 0px;
+  -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   .register.show {
