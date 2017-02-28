@@ -40,9 +40,50 @@ var p7c=$('#p7c')
 
 var btnBack=$("#btnBack")
 
+var p0pic1=$("#p0pic1")
+var p0pic2=$("#p0pic1")
+var p0pic3=$("#p0pic1")
+var p0pic4=$("#p0pic1")
+
 function setup(){
 	goPage();
+	setMotion();
 };
+
+function setMotion(){
+	if (window.DeviceMotionEvent) {
+		window.addEventListener("devicemotion", motionHandler, false);
+	} 
+	if (window.DeviceOrientationEvent) {
+		window.addEventListener("deviceorientation", orientationHandler, false);
+	}
+}
+function orientationHandler(event) {
+// document.getElementById("alpha").innerHTML = event.alpha;
+// document.getElementById("beta").innerHTML = event.beta;
+//===document.getElementById("gamma").innerHTML = event.gamma;
+p0pic1.css(	{'-webkit-transform': 'translate3d(0, '+event.gamma+'%, 0)','transform': 'translate3d(0, '+event.gamma+'%, 0)'})
+// document.getElementById("heading").innerHTML = event.webkitCompassHeading;
+// document.getElementById("accuracy").innerHTML = event.webkitCompassAccuracy;
+
+}
+
+
+function motionHandler(event) {
+// document.getElementById("interval").innerHTML = event.interval;
+// var acc = event.acceleration;
+// document.getElementById("x").innerHTML = acc.x;
+// document.getElementById("y").innerHTML = acc.y;
+// document.getElementById("z").innerHTML = acc.z;
+// var accGravity = event.accelerationIncludingGravity;
+// document.getElementById("xg").innerHTML = accGravity.x;
+// document.getElementById("yg").innerHTML = accGravity.y;
+// document.getElementById("zg").innerHTML = accGravity.z;
+// var rotationRate = event.rotationRate;
+// document.getElementById("Ralpha").innerHTML = rotationRate.alpha;
+// document.getElementById("Rbeta").innerHTML = rotationRate.beta;
+// document.getElementById("Rgamma").innerHTML = rotationRate.gamma;
+}
 
 function pageAni(){
 	// $(pageA[nowPage]).css({display:'block'})
