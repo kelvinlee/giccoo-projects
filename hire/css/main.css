@@ -1,0 +1,66 @@
+*{margin: 0;padding: 0;}
+html,body{width:100%;height: 100%;position: relative;overflow:hidden;}
+img{ width: 100%; }
+.wechat-share {  position: absolute;  top: -1000px;  left: 0px;  z-index: -100;  width: 1px; }
+/*＝＝＝＝＝＝＝＝＝＝＝＝通用＝＝＝＝＝＝＝＝＝＝*/
+.page{
+	position: absolute;top: 0;left: 0;width: 100%;height: 100%;overflow: hidden;display: none;font-size: 0;
+
+}
+
+
+.webkitPart{
+	position: absolute;left: 50%;width: 100%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+       		transform: translate3d(-50%, -50%, 0);
+}
+.topPart{
+	position: absolute;width: 100%;top:0;
+}
+.bottomPart{
+	position: absolute;width: 100%;bottom:0;
+}
+.midPart{
+	position: absolute;width: 100%;top:50%;left: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+       		transform: translate3d(-50%, -50%, 0);
+}
+
+
+/*=========page0-7==========*/
+#page0{	/*background-color: #f2de4e;*/display: block;}
+/*#page1{	background-color: #eaeaea;}
+#page2{	background-color: #bababa;}
+#page3{	background-color: #eaeaea;}
+#page4{	background-color: #80a7ce;}
+#page5{	background-color: #4888b7;}
+#page6{	background-color: #f2de4e;}
+#page7{	background-color: #80a7ce;}*/
+#colorBG{background-color: #f2de4e;display: block;
+ -webkit-transition: all 0.5s ease;
+         transition: all 0.5s ease;
+}
+#arrowDown{
+	display: none;
+}
+/*=========page0-7 内元素==========*/
+#p0_title{
+	top: 28%;
+}
+
+/*＝＝＝＝＝按钮＝＝＝＝＝*/
+.transBtn{
+	position: absolute;background-color: #879586;opacity: 0;
+}
+#btn1{
+	width: 50%;height: 50%;bottom: 0;left: 0;
+}
+#btn2{
+	width: 50%;height: 50%;bottom: 0;right: 0;
+}
+#btn3{
+	width: 60%;height: 20%;bottom: 5%;right: 20%;
+}
+#btnBack4{
+	width: 30%;height: 8%;top: 0;left: 0;
+}
