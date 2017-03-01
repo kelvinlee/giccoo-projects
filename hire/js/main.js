@@ -68,8 +68,16 @@ function orientationHandler(event) {
 _beta=event.beta
 _gamma=event.gamma
 
-_beta=Math.min(_beta+90,45+90)-90
-_gamma=Math.min(_gamma+90,45+90)-90
+if (_beta>0) {
+	_beta=Math.min(_beta,45)
+}else{
+	_beta=Math.max(_beta,-45)
+};
+if (_gamma>0) {
+	_gamma=Math.min(_gamma,45)
+}else{
+	_gamma=Math.max(_gamma,-45)
+};
 
 p0pic1.css(	{'-webkit-transform': 'translate3d('+(_gamma/10)+'%,'+_beta/10+'%,  0)','transform': 'translate3d('+(_gamma/10)+'%,'+_beta/10+'%,  0)'})
 p0pic2.css(	{'-webkit-transform': 'translate3d('+(_gamma/8)+'%,'+_beta/8+'%,  0)','transform': 'translate3d('+(_gamma/8)+'%,'+_beta/8+'%,  0)'})
