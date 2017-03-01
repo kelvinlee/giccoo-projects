@@ -80,7 +80,7 @@ if (_gamma>0) {
 }else{
 	_gamma=Math.max(_gamma,-45)
 };
-p0_title.css(	{'-webkit-transform': 'translate3d('+(_gamma/9)-50+'%,'+_beta/18-50+'%,  0)','transform': 'translate3d('+(_gamma/9)-50+'%,'+_beta/18-50+'%,  0)'})
+p0_title.css(	{'-webkit-transform': 'translate3d('+(_gamma/6-50)+'%,'+(_beta/12-50)+'%,  0)','transform': 'translate3d('+(_gamma/6-50)+'%,'+(_beta/12-50)+'%,  0)'})
 p0pic1.css(	{'-webkit-transform': 'translate3d('+(_gamma/10)+'%,'+_beta/20+'%,  0)','transform': 'translate3d('+(_gamma/10)+'%,'+_beta/20+'%,  0)'})
 p0pic2.css(	{'-webkit-transform': 'translate3d('+(_gamma/8)+'%,'+_beta/16+'%,  0)','transform': 'translate3d('+(_gamma/8)+'%,'+_beta/16+'%,  0)'})
 p0pic3.css(	{'-webkit-transform': 'translate3d('+(_gamma/6)+'%,'+_beta/12+'%,  0)','transform': 'translate3d('+(_gamma/6)+'%,'+_beta/12+'%,  0)'})
