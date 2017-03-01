@@ -45,6 +45,8 @@ var p0pic2=$("#p0pic2")
 var p0pic3=$("#p0pic3")
 var p0pic4=$("#p0pic4")
 
+var p0_title=$("#p0_title")
+
 var _beta=0
 var _gamma=0
 
@@ -78,7 +80,7 @@ if (_gamma>0) {
 }else{
 	_gamma=Math.max(_gamma,-45)
 };
-
+p0_title.css(	{'-webkit-transform': 'translate3d('+(_gamma/9)+'%,'+_beta/18+'%,  0)','transform': 'translate3d('+(_gamma/9)+'%,'+_beta/18+'%,  0)'})
 p0pic1.css(	{'-webkit-transform': 'translate3d('+(_gamma/10)+'%,'+_beta/20+'%,  0)','transform': 'translate3d('+(_gamma/10)+'%,'+_beta/20+'%,  0)'})
 p0pic2.css(	{'-webkit-transform': 'translate3d('+(_gamma/8)+'%,'+_beta/16+'%,  0)','transform': 'translate3d('+(_gamma/8)+'%,'+_beta/16+'%,  0)'})
 p0pic3.css(	{'-webkit-transform': 'translate3d('+(_gamma/6)+'%,'+_beta/12+'%,  0)','transform': 'translate3d('+(_gamma/6)+'%,'+_beta/12+'%,  0)'})
