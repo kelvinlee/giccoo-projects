@@ -907,8 +907,8 @@ html, body {
             user-select: none; }
 
 .no-touch .iphone4 .pages {
-  max-width: 380px;
-  max-height: 700px; }
+  max-width: 500px;
+  max-height: 880px; }
 
 .homepage {
   background-color: #000; }
@@ -1078,8 +1078,6 @@ html, body {
   position: absolute;
   bottom: 0px;
   left: 0px;
-  -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   .register.show {
@@ -1104,7 +1102,7 @@ html, body {
         width: 11.1111111111%; }
   .register .close {
     position: absolute;
-    top: 8.5%;
+    top: 5.5%;
     right: 2%;
     width: 7.4074074074%;
     margin: 0 auto;
@@ -1171,7 +1169,8 @@ html, body {
 .form {
   width: 80%;
   margin: 0 auto;
-  padding: 1.4rem 0; }
+  padding: 1.4rem 0;
+  padding-bottom: 0.4rem; }
   .form .form-grounp {
     vertical-align: top; }
     .form .form-grounp > label {
@@ -1320,7 +1319,7 @@ html, body {
         opacity: 0; }
   .form .form-btn {
     text-align: center;
-    margin-top: 0.8rem; }
+    margin-top: 0.2rem; }
     .form .form-btn button {
       width: 40%;
       margin: 0 auto;

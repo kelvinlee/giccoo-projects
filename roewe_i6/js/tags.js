@@ -217,7 +217,7 @@ this.root.addEventListener(_touchMove, this.move.bind(this));
 this.root.addEventListener(_touchEnd, this.end.bind(this));
 });
 
-riot.tag2('register', '<form onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username">姓名</label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="mobile">手机号码</label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-grounp"> <label for="province">所在省/市</label> <div class="comb"> <div class="select"><span>{provinceName}</span> <select id="province" name="province" onchange="{changeProvince}"> <option each="{cityData}" value="{name}">{name}</option> </select> </div> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeCity}"> <option each="{city}" value="{name}">{name}</option> </select> </div> </div> </div> <div class="form-btn"> <button type="submit" class="submit"><img src="img/submit.png"></button> </div> </form>', '', '', function(opts) {
+riot.tag2('register', '<form onsubmit="{submit}" class="form"> <div class="form-grounp"> <label for="username">姓名</label> <input id="username" type="text" name="username"> </div> <div class="form-grounp"> <label for="mobile">手机号码</label> <input id="mobile" type="text" name="mobile"> </div> <div class="form-grounp"> <label for="province">所在省/市</label> <div class="comb"> <div class="select"><span>{provinceName}</span> <select id="province" name="province" onchange="{changeProvince}"> <option each="{cityData}" value="{name}">{name}</option> </select> </div> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeCity}"> <option each="{city}" value="{name}">{name}</option> </select> </div> </div> </div> <div class="form-grounp"> <label for="type">车身颜色</label> <div class="select"><span>{typeName}</span> <select id="type" name="type" onchange="{changeType}"> <option each="{type}" value="{name}">{name}</option> </select> </div> </div> <div class="form-grounp"><img riot-src="http://image.giccoo.com/projects/roewe_i6/img/car-{typeimg}.jpg"></div> <div class="form-btn"> <button type="submit" class="submit"><img src="img/submit.png"></button> </div> </form>', '', '', function(opts) {
 var city, name, province, self;
 
 self = this;
@@ -229,6 +229,12 @@ this.city = this.cityData[0]["sub"];
 this.provinceName = this.cityData[0].name;
 
 this.cityName = this.city[0].name;
+
+this.type = _type;
+
+this.typeimg = this.type[0].img;
+
+this.typeName = this.type[0].name;
 
 province = [];
 
@@ -253,6 +259,19 @@ this.on('update', function() {
   this.provinceName = $('[name=province]', this.root).val();
   this.cityName = $('[name=city]', this.root).val();
 });
+
+this.changeType = function(evt) {
+  var i, j, len, ref;
+  this.typeName = $('[name=type]', self.root).val();
+  ref = this.type;
+  for (j = 0, len = ref.length; j < len; j++) {
+    i = ref[j];
+    if (i.name === this.typeName) {
+      this.typeimg = i.img;
+    }
+  }
+  self.update();
+};
 
 this.changeCity = function(evt) {
   self.update();

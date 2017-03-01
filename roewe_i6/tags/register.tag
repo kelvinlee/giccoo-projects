@@ -30,12 +30,14 @@ register
 				span {dealerName}
 				select#dealer(name="dealer",onchange="{changeDealer}")
 					option(each="{dealer}",value="{code}") {name}
-		//- .form-grounp
-			label(for="type") 试驾车型
+		.form-grounp
+			label(for="type") 车身颜色
 			.select
 				span {typeName}
 				select#type(name="type",onchange="{changeType}")
-					option(each="{name in type}",value="{name}") {name}
+					option(each="{type}",value="{name}") {name}
+		.form-grounp
+			img(src="http://image.giccoo.com/projects/roewe_i6/img/car-{typeimg}.jpg")
 
 		.form-btn
 			button.submit(type="submit")
@@ -47,8 +49,9 @@ register
 		@city = @cityData[0]["sub"]
 		@provinceName = @cityData[0].name
 		@cityName = @city[0].name
-		# @type = _type
-		# @typeName = @type[0]
+		@type = _type
+		@typeimg = @type[0].img
+		@typeName = @type[0].name
 		province = []
 		for name of @cityData
 			`name = name`
@@ -72,10 +75,13 @@ register
 			# @dealerName = $('[name=dealer] [value=' + $('[name=dealer]', @root).val() + ']', @root).text()
 			return
 
-		# @changeType = (evt) ->
-		# 	@typeName = $('[name=type]', self.root).val()
-		# 	self.update()
-		# 	return
+		@changeType = (evt) ->
+			@typeName = $('[name=type]', self.root).val()
+			for i in @type
+				if i.name is @typeName
+					@typeimg = i.img
+			self.update()
+			return
 		@changeCity = (evt) ->
 			# newName = $('[name=province]', self.root).val()
 			# newCity = $('[name=city]', @root).val()

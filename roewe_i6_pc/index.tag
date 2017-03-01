@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
-    <!-- -var images = "img"-->
     <div class="wechat-share-hide"><img id="share" src="http://disk.giccoo.com/projects/roewe_i6/img/share.jpg"></div>
     <parallax class="pages">
       <div up="infopage" class="page homepage first">

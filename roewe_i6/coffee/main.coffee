@@ -3,6 +3,14 @@
 # @codekit-prepend "../../libs/coffee/requestanimation"
 
 Store = {}
+_type = [
+	{name:"银色",img:"silver"}
+	{name:"青色",img:"cyan"}
+	{name:"蓝色",img:"blue"}
+	{name:"红色",img:"red"}
+	{name:"黑色",img:"black"}
+	{name:"白色",img:"white"}
+]
 
 window.onload = ->
 	riot.mount("*")
