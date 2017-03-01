@@ -64,3 +64,20 @@ img{ width: 100%; }
 #btnBack4{
 	width: 30%;height: 8%;top: 0;left: 0;
 }
+
+#p0pic1{
+	 -webkit-transition: all 0.5s ease;
+         	 transition: all 0.5s ease;
+}
+#p0pic2{
+	 -webkit-transition: all 0.5s ease;
+         	 transition: all 0.5s ease;
+}
+#p0pic3{
+	 -webkit-transition: all 0.5s ease;
+         	 transition: all 0.5s ease;
+}
+#p0pic4{
+	 -webkit-transition: all 0.5s ease;
+         	 transition: all 0.5s ease;
+}
