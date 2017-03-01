@@ -62,7 +62,10 @@ function orientationHandler(event) {
 // document.getElementById("alpha").innerHTML = event.alpha;
 // document.getElementById("beta").innerHTML = event.beta;
 //===document.getElementById("gamma").innerHTML = event.gamma;
-p0pic1.css(	{'-webkit-transform': 'translate3d(0, '+event.gamma+'%, 0)','transform': 'translate3d(0, '+event.gamma+'%, 0)'})
+p0pic1.css(	{'-webkit-transform': 'translate3d('+event.gamma/2+'%,0,  0)','transform': 'translate3d('+event.gamma+'%,0,  0)'})
+p0pic2.css(	{'-webkit-transform': 'translate3d('+event.gamma/2.5+'%,0,  0)','transform': 'translate3d('+event.gamma+'%,0,  0)'})
+p0pic3.css(	{'-webkit-transform': 'translate3d('+event.gamma/3+'%,0,  0)','transform': 'translate3d('+event.gamma+'%,0,  0)'})
+p0pic4.css(	{'-webkit-transform': 'translate3d('+event.gamma/3.5+'%,0,  0)','transform': 'translate3d('+event.gamma+'%,0,  0)'})
 // document.getElementById("heading").innerHTML = event.webkitCompassHeading;
 // document.getElementById("accuracy").innerHTML = event.webkitCompassAccuracy;
 
