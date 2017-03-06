@@ -136,7 +136,7 @@ slider
 				@x = @offset.deltaX / @offset.resistance + @offset.lastw
 				@offset.resistance = if @slideNumber == 0 and @offset.deltaX > 0 then pageX / @offset.w + 1.25 else if @slideNumber == @offset.lastSlide and @offset.deltaX < 0 then (@offset.w - Math.abs(pageX)) / @offset.w + 1.25 else 1
 			@moved = true
-			# evt.preventDefault()
+			evt.preventDefault()
 			# console.log(Math.abs(pageX), this.offset.w);
 			@update()
 

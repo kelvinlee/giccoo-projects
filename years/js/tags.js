@@ -274,6 +274,7 @@ this.touchmove = function(evt) {
     this.offset.resistance = this.slideNumber === 0 && this.offset.deltaX > 0 ? pageX / this.offset.w + 1.25 : this.slideNumber === this.offset.lastSlide && this.offset.deltaX < 0 ? (this.offset.w - Math.abs(pageX)) / this.offset.w + 1.25 : 1;
   }
   this.moved = true;
+  evt.preventDefault();
   return this.update();
 };
 
