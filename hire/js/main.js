@@ -8,10 +8,10 @@ var nowPage = 0;
 var startY = 0;
 var startScrollTop;
 var pageUpDown =0
-var sliderA=[$('#page0'),$('#page1'),$('#page2'),$('#page3'),$('#page4'),$('#page5'),$('#page6'),$('#page7')]
+var sliderA=[$('#page0'),$('#page1'),$('#page2'),$('#page3'),$('#page4'),$('#page5'),$('#page6'),$('#page7'),$('#page8')]
 
 var colorBG=$('#colorBG')
-var colorA=['#f2de4e','#eaeaea','#bababa','#eaeaea','#80a7ce','#4888b7','#f2de4e','#80a7ce']
+var colorA=['#f2de4e','#eaeaea','#bababa','#eaeaea','#80a7ce','#4888b7','#f2de4e','#80a7ce','#eaeaea']
 
 var arrowDown=$('#arrowDown')
 
@@ -37,6 +37,10 @@ var p6d=$('#p6d')
 var p7_t=$('#p7_t')
 var p7b=$('#p7b')
 var p7c=$('#p7c')
+
+var p8_t=$('#p8_t')
+var p8b=$('#p8b')
+var p8c=$('#p8c')
 
 var btnBack=$("#btnBack")
 
@@ -124,8 +128,16 @@ $('#btn2').click(function(){
 $('#btn3').click(function(){
 	window.location.href="mailto:hr@inad.com"
 })
+$('#endEmail').click(function(){
+	window.location.href="mailto:hr@inad.com"
+})
 
 $('#btnBack4').click(function(){
+	nowPage=0;
+	goPage();
+})
+
+$('#p8c').click(function(){
 	nowPage=0;
 	goPage();
 })
@@ -193,6 +205,19 @@ function ani7(){
 
 
 }
+
+function ani8(){
+	TweenLite.set(p8_t,{y:300,opacity:0})
+	TweenLite.to(p8_t,.5,{y:0,opacity:1,ease:Back.easeOut,delay:.25})
+
+	TweenLite.set(p8b,{y:300,opacity:0})
+	TweenLite.to(p8b,.5,{y:0,opacity:1,ease:Back.easeOut,delay:.35})
+
+	TweenLite.set(p8c,{y:300,opacity:0})
+	TweenLite.to(p8c,.5,{y:0,opacity:1,ease:Back.easeOut,delay:.3})
+
+
+}
 //=====================翻页＝＝＝＝＝＝＝＝＝＝＝ 
 
 
@@ -213,7 +238,7 @@ function startTouch(event){
 			event.preventDefault();
 			if (nowY-startY>80&&nowPage!=0) {
 				pageUpDown=1
-			}else if (nowY-startY< -80&&nowPage!=7) {
+			}else if (nowY-startY< -80&&nowPage!=8) {
 				pageUpDown=-1
 			}else{
 				pageUpDown=0
@@ -240,7 +265,7 @@ function startTouch(event){
 			 	if (i==nowPage) {
 			 		TweenLite.to(sliderA[i],.5,{top:"0%",display:'block'})
 			 		TweenLite.set(colorBG,{'background-color':colorA[i]})
-			 		if (i==0||i==7) {arrowDown.css({'display':'none'})}else{arrowDown.css({'display':'block'})};
+			 		if (i==0||i==8) {arrowDown.css({'display':'none'})}else{arrowDown.css({'display':'block'})};
 			 		if (i!=0) {btnBack.css({'display':'block'})}else{btnBack.css({'display':'none'})};
 			 		 if (i==1) {ani1()};
 			 		 if (i==2) {ani2()};
@@ -249,6 +274,7 @@ function startTouch(event){
 			 		 if (i==5) {ani5()};
 			 		 if (i==6) {ani6()};
 			 		 if (i==7) {ani7()};
+			 		 if (i==8) {ani8()};
 			 		// if (i>2&&i<10) {pageAni1(i-3)};
 			 	};
 			 	if (i>nowPage) {
@@ -258,5 +284,31 @@ function startTouch(event){
 		}
 
 //=====================翻页＝＝＝＝＝＝＝＝＝＝＝
+var audio;
+    function initAudio(id){
+        audio=document.getElementById(id);
+    };
 
+    window.onload=function(){
+        initAudio("audio");
+         if (audio.paused) {
+            $("#audioPlay").removeClass("stopM").addClass("playM")
+            //this.style.backgrundImage='url("../img/musicOn.png")';
+        }else{
+            $("#audioPlay").removeClass("playM").addClass("stopM")
+            //this.style.backgrundImage='url("../img/musicOff.png")';
+        };
+    }
+    var ap=document.getElementById("audioPlay");
+    $("#audioPlay").on("click",function(){
+        if (audio.paused) {
+            audio.play();
+            $("#audioPlay").removeClass("playM").addClass("stopM")
+            //this.style.backgrundImage='url("../img/musicOn.png")';
+        }else{
+            audio.pause();
+            $("#audioPlay").removeClass("stopM").addClass("playM")
+            //this.style.backgrundImage='url("../img/musicOff.png")';
+        };
+    });
 

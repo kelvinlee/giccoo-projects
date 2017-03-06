@@ -64,7 +64,22 @@ img{ width: 100%; }
 #btnBack4{
 	width: 30%;height: 8%;top: 0;left: 0;
 }
+#endEmail{
+	width: 60%;height: 20%;bottom: 50%;right: 20%;
+}
+.playM{
+	background-image: url("../img/music_off.png");
+	position: absolute;width: 100%;top: 0;height: 5%;
+	background-repeat:  no-repeat;
+	background-size: 100% 100%;
 
+}
+.stopM{
+	background-image: url("../img/music_on.png");
+	position: absolute;width: 100%;top: 0;height: 5%;
+	background-repeat:  no-repeat;
+	background-size: 100% 100%;
+}
 /*#p0pic1{
 	 -webkit-transition: all 0.2s ease;
          	 transition: all 0.2s ease;
