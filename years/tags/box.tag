@@ -18,6 +18,7 @@ box.box
 				img(src="./img/arrow.png")
 		.points
 			.point(each="{value,i in list}",class="{on: parent.now == i}") {i}
+		p.note-text 以下排名不分先后
 		.list
 			.item(each="{item in list[now].list}")
 				.left-title
