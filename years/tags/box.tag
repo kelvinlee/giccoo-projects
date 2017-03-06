@@ -8,7 +8,7 @@ box.box
 		.video-box
 			.bg
 				img(src="./img/video-box.png")
-			video(width="620",height="340",controls="true",src="http://m.giccoo.com/years/video/video-{now+1}.mp4",poster="http://m.giccoo.com/years/img/video-p.jpg",webkit-playsinline,playsinline)
+			video(width="620",height="340",controls="true",type="video/mp4",src="http://m.giccoo.com/years/video/video-{now+1}.mp4",poster="http://m.giccoo.com/years/img/video-p.jpg",webkit-playsinline,playsinline)
 		.slider-list
 			.type-item(each="{value,i in list}",onclick="{SelectList(i)}",class="{on: parent.now==i,before: (parent.now-1)==i,after: (parent.now+1)==i,afters: (parent.now+1)<i}")
 				img(src="./img/type-{i+1}.png")
