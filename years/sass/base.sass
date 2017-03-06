@@ -1,0 +1,439 @@
+@import sass/base
+@import sass/slider
+@import ../../libs/sass/loading
+
+$debug : false
+$cdn : "../"
+@if not $debug
+	$cdn : "http://disk.giccoo.com/projects/showman/"
+
++keyframes(Flash)
+	0%
+		opacity: 1
+	50%
+		opacity: 0.2
+	100%
+		opacity: 1
+
++keyframes(nextPoint)
+	from
+		+transform(scale(1,1))
+		opacity: 1
+	to
+		+transform(scale(2,2))
+		opacity: 0
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
+
+.share-wechat
+	+posa
+	+tl
+	+w
+	+h
+	+b("http://disk.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
+	+bc
+	z-index: 1100
+	+hide
+	&.open
+		+show
+
+.wrap
+	+wh(100%,100%)
+	+posr
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+
+.loading.loaded
+	+large
+		+hide
+
+
+
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+iw(600)
+	+m
+	margin-top: -8%
+	.share-icon
+		+show-inline
+		+w(25%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		
+html,body
+	+w
+	+h
+
+body
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	color: #3f6aff
+
+// .loading.loaded
+// 	+hide
+.loading
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+bc(#fff)
+	.new-load
+		+posa
+		+tl(50%)
+		+w
+		+text-center
+		// +p(100% 0 0 0)
+		+transform(translate3d(0,-50%,0))
+		.load-item-milk
+			+iw(100,640,100%)
+			+posr
+			// > img
+				// +animation(rubberBand,2s,ease,infinite)
+			.load-item-note1,.load-item-note2
+				+posa
+				+tr
+				+iw(60,100,100%)
+				margin-top: -50%
+			.load-item-note1
+				+animation(rubberBand,2s,ease,infinite)
+				animation-delay: 5*100ms
+			.load-item-note2
+				+animation(swing,1.5s,ease,infinite)
+				transform-origin: bottom center
+				
+		.load-progress
+			font-size: 1rem
+			+p(2% 0 0 0)
+			
+
+.page
+	+posa
+	+tl
+	+w
+	+h
+	&.hide
+		+hide
+
+
+.note
+	+posa
+	+tl
+	+br
+	+wh(100%,100%)
+	z-index: 9999
+	.note-box
+		+text-center
+		+posa
+		+tl(50%)
+		+w(100%)
+		// z-index: 9999
+		.note-content
+			display: inline-block
+			padding: 10px 11px 10px 10px
+			background-color: rgba(0,0,0,0.7)
+			color: #fff
+			border-radius: 5px
+			max-width: 90%
+			+box
+		.icon-form,.note-text
+			display: inline-block
+			vertical-align: top
+			line-height: 25px
+		.icon-form
+			+wh(25px,25px)
+		.note-text
+			+font-size(0.8rem)
+			letter-spacing: 2px
+
+
+
+
+
+.main
+	+w
+	+h
+	+overhide
+	.box-content
+		+b("../img/normal-bg.jpg",repeat,center,top,100% auto)
+		+posr
+		// +overhide
+		// +w
+		// +h
+	.box-bg
+		+posa
+		+tl
+		font-size: 0
+		z-index: 0
+		// +b("../img/listpage-bg.jpg",no-repeat,center,top,100% auto)
+	.box
+		+touch
+		+w
+		+h
+		+show-inline
+		.title,.video-box,.slider-list
+			+posr
+			z-index: 1
+			font-size: 0
+		.title
+			padding-top: 5%;
+		.video-box
+			video
+				+posa
+				+tl(14.4%,5%)
+				+w(91%)
+				+h(73.4%)
+
+
+		.slider-list
+			+posr
+			+w(90%)
+			+overhide
+			padding-top: 30%
+			+m
+			.left
+				+posa
+				+tl(50%)
+				+iw(60,640,100%)
+				cursor: pointer
+			.right
+				+posa
+				+tr(50%)
+				+iw(60,640,100%)
+				+transform(scale(-1,1))
+				cursor: pointer
+			.type-item
+				+posa
+				+tl(0,-15%)
+				+w(20%)
+				+transform(translate3d(-50%,35%,0))
+				+tran(all,0.2s,linear)
+				opacity: 0
+				&.before
+					+tl(0,20%)
+					+w(25%)
+					+transform(translate3d(-50%,30%,0))
+					opacity: 0.7
+				&.on
+					+tl(0,50%)
+					+w(40%)
+					+transform(translate3d(-50%,0,0))
+					opacity: 1
+				&.after
+					left: 81%
+					// right: -10%
+					+w(25%)
+					+transform(translate3d(-50%,30%,0))
+					opacity: 0.7
+				&.afters
+					left: 115%
+					// right: -25%
+					+transform(translate3d(-50%,35%,0))
+					+w(20%)
+					opacity: 0
+				
+		.points
+			$size: 0.7rem
+			+text-center
+			+m($size 0)
+			.point
+				+wh($size,$size)
+				+m(0 $size/3)
+				+bc(#d6d6d6)
+				font-size: 0
+				+show-inline
+				border-radius: 50%
+				+overhide
+				&.on
+					+b("../img/point-bg.png",repeat,left,top,auto 100%)
+
+		.list
+			+w(90%)
+			+m
+			.item
+				white-space: nowrap
+				padding-top: 0.5rem
+				padding-bottom: 0.5rem
+				.left-title
+					+show-inline
+					+w(60%)
+					h3
+						+m
+						white-space: normal
+						font-weight: normal
+						+font-size(0.8rem)
+						line-height: 1.4em
+						color: #dcc88b
+				.right-btns
+					+show-inline
+					+w(40%)
+					+text-right
+					// padding-top: 0.3rem
+					vertical-align: top
+					.btn-info,.btn-vote
+						+wh(40%,2.4rem)
+						+show-inline
+						vertical-align: top
+						margin-left: 5%
+						font-size: 0
+					.btn-info
+						+b("../img/btn-look.png",no-repeat,center,center,contain)
+					.btn-vote
+						+b("../img/btn-vote.png",no-repeat,center,center,contain)
+						&.on
+							+b("../img/btn-voted.png",no-repeat,center,center,contain)
+				p
+					color: #b4b4b4
+					+font-size(0.6rem)
+					+m(0.4rem 0)
+					margin-bottom: 0.7rem
+					span
+						color: #dcc88b
+						+font-size(0.6rem)
+						float: right
+						em
+							+font-size(0.8rem)
+				.line
+					font-size: 0
+
+		.pop
+			+bc(rgba(0,0,0,0.8))
+			+posa
+			+tl
+			+wh(100%,100%)
+			z-index: 1001
+			&.hide
+				+hide
+			.close
+				+posa
+				+tr(1rem,1rem)
+				+iw(60,640,100%)
+				font-size: 0
+				z-index: 101
+			.content
+				+posa
+				+tl(10%,5%)
+				+br(0,5%)
+				+w(90%)
+				+touch
+				color: #dcc88b
+				h1
+					+font-size(1.4rem)
+					+m
+				.vote-btns
+					+text-center
+					.btn-vote
+						+wh(40%,2.4rem)
+						+show-inline
+						vertical-align: top
+						font-size: 0
+					.btn-vote
+						+b("../img/btn-vote-large.png",no-repeat,center,center,contain)
+						&.on
+							+b("../img/btn-voted-large.png",no-repeat,center,center,contain)
+				.company
+					+font-size(0.8rem)
+					color: #b4b4b4
+				.piao
+					+text-center
+					+font-size(0.8rem)
+					span
+						+font-size(1rem)
+				.subtitle
+					+font-size(1rem)
+					font-weight: bold
+					line-height: 1.6em
+					margin-bottom: 0
+					& + p
+						margin-top: 0
+				p
+					+font-size(0.8rem)
+					line-height: 1.4rem
+
+.fisrt-page
+	+b("../img/homepage-bg.jpg",no-repeat,center,center,cover)
+	+posa
+	+tl
+	+w
+	+h
+	z-index: 101
+	.banner
+		font-size: 0
+	.text
+		margin-top: 1.5rem
+	.btn-next
+		margin-top: 1.5rem
+	.btn-show
+		+posa
+		+br(2%,5%)
+		+iw(150,640,100%)
+		z-index: 103
+
+.info-page
+	+posa
+	+tl
+	+bc(rgba(0,0,0,0.8))
+	+w
+	+h
+	z-index: 202
+	&.hide
+		+hide
+	.info-content
+		+posa
+		+tl(20%,10%)
+		+br(25%,10%)
+		+w(80%)
+		+touch
+		+font-size(0.8rem)
+		line-height: 1.6em
+		color: #dcc88b
+		h1
+			line-height: 1.4em
+		h4
+			line-height: 1.4em
+		p
+			line-height: 1.6em
+
+	.title
+		margin-top: 5%
+	.btn-next
+		+posa
+		+bl(2%)
+
+
+
+.sliders
+	+w
+	+overhide
+	+show-inline
+
