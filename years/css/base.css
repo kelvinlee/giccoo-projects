@@ -804,6 +804,9 @@ html, body {
   -webkit-animation-duration: 3000ms;
           animation-duration: 3000ms; }
 
+.hide {
+  display: none; }
+
 .playsound {
   position: absolute;
   top: 10px;
@@ -1140,6 +1143,8 @@ body {
             vertical-align: top;
             margin-left: 5%;
             font-size: 0; }
+            .main .box .list .item .right-btns .btn-info.hide, .main .box .list .item .right-btns .btn-vote.hide {
+              display: none; }
           .main .box .list .item .right-btns .btn-info {
             background: url("../img/btn-look.png") no-repeat center center;
             background-size: contain;

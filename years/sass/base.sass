@@ -30,6 +30,9 @@ $cdn : "../"
 	.duration-#{$i}
 		animation-duration: $i*100ms
 
+.hide
+	+hide
+
 .playsound
 	+posa
 	+tr(10px,10px)
@@ -306,6 +309,8 @@ body
 						vertical-align: top
 						margin-left: 5%
 						font-size: 0
+						&.hide
+							+hide
 					.btn-info
 						+b("../img/btn-look.png",no-repeat,center,center,contain)
 					.btn-vote

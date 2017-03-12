@@ -25,10 +25,10 @@ box.box
 					h3 {item.name}  
 				.right-btns
 					a.btn-info(href="javascript:void(0)",onclick="{ShowInfo(item)}") 查看
-					a.btn-vote(if="{!parent.voteds[item.code]}",href="javascript:void(0)",onclick="{Vote(item.code)}") 投票
-					a.on.btn-vote(if="{parent.voteds[item.code]}",href="javascript:void(0)") 投票
+					a.hide.btn-vote(if="{!parent.voteds[item.code]}",href="javascript:void(0)",onclick="{Vote(item.code)}") 投票
+					a.hide.on.btn-vote(if="{parent.voteds[item.code]}",href="javascript:void(0)") 投票
 				p {item.company}
-					span
+					span.hide
 						em {parent.votes[item.code]?parent.votes[item.code]:0}
 						|  票
 				.line
@@ -42,10 +42,10 @@ box.box
 			slider.sliders(myid="mainSlider",repeat="true",list="http://image.giccoo.com/projects/years/moreimg/101-1.jpg,http://image.giccoo.com/projects/years/moreimg/101-2.jpg,http://image.giccoo.com/projects/years/moreimg/101-3.jpg")
 			.line
 				img(src="./img/line.png")
-			p.piao
+			p.hide.piao
 				span {votes[popContent.code]?votes[popContent.code]:0}  
 				| 票
-			.vote-btns
+			.vote-btns.hide
 				a.btn-vote(if="{!voteds[popContent.code]}",href="javascript:void(0)",onclick="{Vote(popContent.code)}") 投票
 				a.on.btn-vote(if="{voteds[popContent.code]}",href="javascript:void(0)") 投票
 			p.subtitle 案例介绍:
