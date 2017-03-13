@@ -24,7 +24,7 @@ $(document).ready(function load (){
 	}
 
 	$("#btn").click(function(){
-		window.location.href="http://www.lancome.com.cn/landing/genifique.html";
+		window.location.href="http://www.lancome.com.cn/trybuysamples/?dc_user_id=%m&utm_source=Zhihu&utm_medium=NVD_DISP&utm_content=148223129_01-06Zhihu_Articlepage_trailbutton&utm_campaign=CN_20170311_UV_LPD_LAN_FS_Regular_NVD_DISP_DIG";
 	})
 
 	var iflike=0
