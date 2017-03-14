@@ -8,6 +8,10 @@ img{ width: 100%; }
 span{
 	color: #74c4ea;
 }
+.xt{
+	font-style:italic;
+	color: #999999;
+}
 #gif1{
 	/*position: absolute;*/
 	width: 100%;
