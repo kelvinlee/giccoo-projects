@@ -1,0 +1,836 @@
+@import sass/base
+@import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "http://image.giccoo.com/projects/lincoln_mkz/"
+
++keyframes(frameAnimation)
+	0%
+		background-size: 100% auto
+		opacity: 1
+	70%
+		opacity: 1
+	100%
+		background-size: 120% auto
+		opacity: 0
+
++keyframes(fontColor)
+	0%
+		color: #fff
+	20%
+		color: #fff
+	25%
+		color: #000
+	45%
+		color: #000
+	50%
+		color: #fff
+	75%
+		color: #fff
+	100%
+		color: #fff
+
++keyframes(hour-first)
+	0%
+		margin-top: -0em
+	20%
+		margin-top: -0em
+	25%
+		margin-top: -1em
+	70%
+		margin-top: -1em
+	75%
+		margin-top: -2em
+	100%
+		margin-top: -2em
+
++keyframes(hour-last)
+	0%
+		margin-top: -9em
+	20%
+		margin-top: -9em
+	25%
+		margin-top: -3em
+	40%
+		margin-top: -3em
+	45%
+		margin-top: -8em
+	50%
+		margin-top: -8em
+	70%
+		margin-top: -8em
+	75%
+		margin-top: -3em
+	100%
+		margin-top: -3em
+
++keyframes(m-first)
+	0%
+		margin-top: -4em
+	20%
+		margin-top: -4em
+	25%
+		margin-top: -0em
+	40%
+		margin-top: -0em
+	45%
+		margin-top: -3em
+	50%
+		margin-top: -3em
+	70%
+		margin-top: -3em
+	75%
+		margin-top: -5em
+	100%
+		margin-top: -5em
+
++keyframes(m-last)
+	0%
+		margin-top: -5em
+	20%
+		margin-top: -5em
+	25%
+		margin-top: -0em
+	40%
+		margin-top: -0em
+	45%
+		margin-top: -7em
+	50%
+		margin-top: -7em
+	70%
+		margin-top: -7em
+	75%
+		margin-top: -9em
+	100%
+		margin-top: -9em
+
++keyframes(cardUp)
+	0%
+		+transform(rotate(90deg) translate3d(50%,0,0))
+	100%
+		+transform(rotate(90deg) translate3d(-80%,0,0))
+
++keyframes(clockHide)
+	0%
+		opacity: 1
+	90%
+		opacity: 1
+	100%
+		opacity: 0
+
++keyframes(carShow)
+	0%
+		+transform(translate3d(0,-60%,0) scale(0,0))
+	100%
+		+transform(translate3d(0,-20%,0) scale(1,1))
+
++keyframes(carMove)
+	0%
+		+transform(translate3d(0,0%,0) scale(0.96,0.96))
+	40%
+		+transform(translate3d(0,3%,0) scale(1,1))
+	100%
+		+transform(translate3d(0,0%,0) scale(0.96,0.96))
+
++keyframes(fadeInLeftPx)
+	0%
+		+transform(translate3d(-300px,0,0))
+		opacity: 0
+	100%
+		+transform(translate3d(0,0,0))
+		opacity: 1
+
+$heightSize : -100%
++keyframes(lineMove4)
+	0%
+		+transform(translate3d(0,0,0) scale(1,1))
+	100%
+		+transform(translate3d(0,$heightSize,0) scale(0.8,0.8))
++keyframes(lineMove3)
+	0%
+		+transform(translate3d(0,0,0) scale(0.8,0.8))
+	100%
+		+transform(translate3d(0,$heightSize,0) scale(0.6,0.6))
++keyframes(lineMove2)
+	0%
+		+transform(translate3d(0,0,0) scale(0.6,0.6))
+	100%
+		+transform(translate3d(0,$heightSize,0) scale(0.4,0.4))
++keyframes(lineMove1)
+	0%
+		+transform(translate3d(0,0,0) scale(0.4,0.4))
+	100%
+		+transform(translate3d(0,$heightSize,0) scale(0.2,0.2))
+
++keyframes(showline)
+	0%
+		+w(0)
+	100%
+		+w(96%)
++keyframes(nextpoint)
+	0%
+		opacity: 0.5
+		+transform(translate3d(0,-100%,0))
+	10%
+		opacity: 1
+	100%
+		opacity: 0.5
+		+transform(translate3d(0,0,0))
+
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
+
+.share-wechat
+	+posa
+	+tl
+	+w
+	+h
+	+b("http://image.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
+	+bc
+	z-index: 1100
+	+hide
+	&.open
+		+show
+
+.main
+	+wh(100%,100%)
+	// +posf
+	// min-height: 410px
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+
+.loading.loaded
+	+large
+		+hide
+
+.sliderBox
+	white-space: nowrap
+	+w
+	+h
+	+show
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	+show-inline
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+iw(600)
+	+m
+	margin-top: -8%
+	.share-icon
+		+show-inline
+		+w(25%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		
+html,body
+	+w
+	+h
+	// +overhide
+
+body
+	// +b("http://i3.tietuku.com/1fcc3041ce5a552f.jpg",no-repeat,center,center,cover)
+	color: #000
+	+bc(#fff)
+
+.pages,.loading
+	max-width: 640px
+	+m
+
+.wechat-share-hide
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+// .loading.loaded
+// 	+hide
+.loading
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+bc(#fff)
+	// +hide
+	z-index: 1009
+	+posa
+	+tl
+	+w
+	+h
+	.content
+		+posa
+		+tl(50%)
+		+w
+		+transform(translate3d(0,-50%,0))
+	.text
+		+text-center
+		+hide
+		line-height: 1em
+		font-size: 1em
+		color: #000
+		&.on
+			+show
+		em
+			margin-left: 0.2em
+			line-height: 1em
+			+animation(fadeIn,1000ms,linear,infinite)
+			&.em1
+				animation-delay: 200ms
+			&.em2
+				animation-delay: 400ms
+			&.em3
+				animation-delay: 600ms
+
+		span
+			+show-inline
+			+w(3em)
+
+	
+
+
+.hide
+	+hide
+.pages
+	.page
+		.content
+			+posa
+			+tl
+			+w
+			+h
+
+.note
+	+posa
+	+tl
+	+br
+	+wh(100%,100%)
+	z-index: 9999
+	.note-box
+		+text-center
+		+posa
+		+tl(50%)
+		+w(100%)
+		// z-index: 9999
+		.note-content
+			display: inline-block
+			padding: 10px 11px 10px 10px
+			background-color: rgba(0,0,0,0.7)
+			color: #fff
+			border-radius: 5px
+			max-width: 90%
+			+box
+		.icon-form,.note-text
+			display: inline-block
+			vertical-align: top
+			line-height: 25px
+		.icon-form
+			+wh(25px,25px)
+		.note-text
+			+font-size(0.8rem)
+			letter-spacing: 2px
+
+.pop
+	+posa
+	+tl
+	+w
+	+h
+	// +bc(rgba(0,0,0,0.7))
+	.content
+		+posa
+		+tl(50%)
+		+transform(translate3d(0,-50%,0))
+		+bc(#fff)
+		+p(1.4rem 0)
+		border-top: dashed 1px #f38f18
+		border-bottom: dashed 1px #f38f18
+	.close
+		+posa
+		+tr(0.3rem,0.3rem)
+		+w(1.4rem)
+
+
+.form
+	+w(80%)
+	+m
+	+p(1.4rem 0)
+	padding-bottom: 0.4rem
+	$labelColor: #b39030
+	$borderColor: #b39030
+	$inputColor: #000000
+	.form-grounp
+		$h: 1.4rem
+		vertical-align: top
+		> label
+			+wh(30%,$h)
+			+show-inline
+			+font-size(0.8rem)
+			+m(0.2rem 0)
+			line-height: $h
+			vertical-align: top
+			color: $labelColor
+		> input
+			+wh(68%,$h)
+			+font-size(0.8rem)
+			+bc(#fff)
+			+show-inline
+			+box
+			+m(0.2rem 0)
+			+p(0.2rem)
+			line-height: $h
+			vertical-align: top
+			border: solid 1px $borderColor
+			color: $inputColor
+			outline: none
+			border-radius: 0.2rem
+		.comb
+			+wh(68%,$h)
+			+font-size(1rem)
+			+show-inline
+			+m(0.2rem 0)
+			color: $inputColor
+			white-space: nowrap
+			label
+				+wh(30%,$h)
+				+show-inline
+				+font-size(0.8rem)
+				+text-center
+				color: $labelColor
+			input
+				+show-inline
+				+w(1rem)
+			.select
+				+w(48.5%)
+				+m
+		.select
+			+posr
+			+wh(68%,$h)
+			+show-inline
+			+bc(#fff)
+			+m(0.2rem 0)
+			+box
+			+p(0 0.2rem)
+			+font-size(0.8rem)
+			color: $inputColor
+			border: solid 1px $borderColor
+			border-radius: 0.2rem
+			&:after
+				$size: 0.5rem
+				content: " "
+				+posa
+				+tr(50%,$size)
+				+transform(translate3d(0,-50%,0))
+				z-index: 99
+				border-left: $size/2 solid transparent
+				border-right: $size/2 solid transparent
+				border-top: $size solid $borderColor
+			span
+				text-overflow: ellipsis
+				+show-inline
+				+wh(100%,$h)
+				+overhide
+			select
+				+posa
+				+tl
+				+br
+				+w
+				+h
+				opacity: 0
+
+	.form-btn
+		+text-center
+		margin-top: 0.5rem
+		button
+			+w(40%)
+			+m
+			+p(2px 0)
+			+bc(transparent)
+			border: none
+
+.pages
+
+.page-frame
+	$time: 2500ms
+	z-index: 1008
+	&.on
+		+show
+	.frame
+		+posa
+		+tl
+		+w
+		+h
+	.clock-box
+		+posa
+		+tl(10%,50%)
+		+transform(translate3d(-50%,0,0))
+		z-index: 20
+		+w(180/640*100%)
+		+animation(clockHide,$time*4,linear)
+		.time
+			+tran
+			+posa
+			+tl(50%,50%)
+			+transform(translate3d(-50%,-34%,0))
+			+text-center
+			+w
+			+h(2rem)
+			vertical-align: top
+			line-height: 1.4rem
+			color: #fff
+			// font-size: 1.4rem
+			letter-spacing: 0.1rem
+			font-size: 0
+			+animation(fontColor,$time*4,linear,1)
+			.point
+				+overhide
+				+show-inline
+				+h(1.4rem)
+				font-size: 1.4rem
+				line-height: 1em
+			.hour-first,.hour-last,.m-first,.m-last,.point
+				+overhide
+				+show-inline
+				+h(1.4rem)
+				font-size: 0
+				span
+					+show
+					+h(1.4rem)
+					font-size: 1.4rem
+					line-height: 1em
+			.hour-first
+				& span:first-child
+					+animation(hour-first,$time*4,linear,1)
+			.hour-last
+				& span:first-child
+					+animation(hour-last,$time*4,linear,1)
+			.m-first
+				& span:first-child
+					+animation(m-first,$time*4,linear,1)
+			.m-last
+				& span:first-child
+					+animation(m-last,$time*4,linear,1)
+					// margin-top: -1em*3
+
+
+
+	.frame-1
+		+b($cdn+"img/frame-background-1.jpg",no-repeat,center,center,100% auto)
+		+animation(frameAnimation,$time,ease-out,1)
+		z-index: 19
+		.text
+			+posa
+			+bl(12%)
+			animation-duration: $time*3/5
+	.frame-2
+		+b($cdn+"img/frame-background-2.jpg",no-repeat,right,center,100% auto)
+		+animation(frameAnimation,$time,ease-out,1)
+		animation-delay: $time
+		z-index: 18
+		.text
+			+posa
+			+bl(12%)
+			animation-duration: $time*3/5
+			animation-delay: $time - 100ms
+	.frame-3
+		+b($cdn+"img/frame-background-3.jpg",no-repeat,center,top,100% auto)
+		+animation(frameAnimation,$time,ease-out,1)
+		animation-delay: $time*2
+		z-index: 17
+		.text
+			+posa
+			+bl(12%)
+			animation-duration: $time*3/5
+			animation-delay: $time*2 - 100ms
+	.frame-4
+		+b($cdn+"img/frame-background-4.jpg",no-repeat,center,bottom,100% auto)
+		+animation(frameAnimation,$time,ease-out,1)
+		animation-delay: $time*3
+		z-index: 16
+		.text
+			+posa
+			+bl(12%)
+			animation-duration: $time*3/5
+			animation-delay: $time*3 - 100ms
+
+.page-reset
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	&.on
+		+show
+	.content-box
+		+hide
+		+posa
+		+tl(50%)
+		+transform(translate3d(0,-50%,0))
+		&.on
+			+show
+		+text-center
+		.logo
+			+show-inline
+			+w(80%)
+			margin-bottom: 0.8em
+		.card
+			+show-inline
+			+w(75%)
+			+posr
+			.hand
+				+posa
+				+tl(8%,64%)
+				+w(120%)
+		.text
+			font-size: 0.9em
+			font-weight: bold
+			line-height: 1.4em
+			margin-top: 0.8em
+			p
+				+m
+		.btn-reset
+			margin-top: 0.2em
+			+show-inline
+			+w(50%)
+
+	.content-pos
+		+hide
+		+posa
+		+tl(50%)
+		+transform(translate3d(0,-50%,0))
+		+text-center
+		&.on
+			+show
+		.logo
+			+show-inline
+			+w(80%)
+			margin-bottom: 0.8em
+		.pos
+			+posr
+			+show-inline
+			+w(220/640*100%)
+			+text-center
+			+m
+			.pos-text
+				+posa
+				+tl(17.5%,14%)
+				+show-inline
+				+w(150/220*100%)
+				+overhide
+				.normal
+					+posa
+					+tl
+			.card
+				+posa
+				+tl(110%,-4%)
+				+show-inline
+				+w(100%)
+				+transform(rotate(90deg) translate3d(-80%,0,0))
+				+animation(cardUp,500ms,ease-out)
+				animation-delay: 800ms
+				z-index: -1
+				.hand
+					+posa
+					+tl(8%,64%)
+					+w(120%)
+
+	.content-select
+		+hide
+		+posa
+		+tl(50%)
+		+transform(translate3d(0,-50%,0))
+		+text-center
+		&.on
+			+show
+		.success-text
+			+iw(640)
+			margin-top: 0.4rem
+		.slider-box
+			+posr
+			top: -1rem
+			+iw(640)
+			+m
+			+show-inline
+			+b($cdn+"img/list-bg.png",no-repeat,center,center,cover)
+			font-size: 0
+			.left
+				+posa
+				+tl(45%,2%)
+				+iw(60)
+				// +transform(translate3d(0,-50%,0))
+			.right
+				+posa
+				+tr(45%,2%)
+				+iw(60)
+				+transform(scale(-1,1))
+		.btn-start
+			+iw(320)
+			+show-inline
+
+.page-answer
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	z-index: 800
+	&.on
+		+show
+	.logo,.logo-white
+		margin-bottom: 2rem
+	.logo-white
+		+hide
+	.content-box
+		+posa
+		+tl(40%)
+		+transform(translate3d(0,-50%,0))
+		+h(auto)
+	.text
+		+posr
+		+iw(640)
+		.text-1
+		.text-2,.text-3
+			+posa
+			+tl
+	.btn-answer-last
+		+posa
+		+bl(5%,25%)
+		+iw(320)
+		// +transform(translate3d(-50%,0,0))
+		// margin-left: -50%
+		.iphone4 &
+			+bl(5%,30%)
+		.btn-text
+			+posa
+			+tl
+	&.answer-1,&.answer-2
+		.logo-white
+			+hide
+		.logo
+			+show
+	&.answer-3
+		.logo-white
+			+show
+		.logo
+			+hide
+		.content-box
+			+tl(30%)
+	&.answer-4
+		.logo-white
+			+show
+		.logo
+			+hide
+		.content-box
+			+tl(45%)
+		.text
+			margin-top: 60%
+
+.page-transition
+	+b($cdn+"img/item-answer-last.jpg",no-repeat,center,center,cover)
+	+hide
+	z-index: 900
+	&.on
+		+show
+	.text
+		+posr
+		+tl(10%,0)
+		+w
+		+show
+		+animation(fadeInLeftPx,1s,ease)
+		font-size: 0
+		z-index: 100
+
+.page-last
+	z-index: 1000
+	.bg
+		+b($cdn+"img/mkz-bg.jpg",no-repeat,center,center,cover)
+		+posa
+		+tl
+		+w
+		+h
+		z-index: -1
+	&.on
+		+show
+	.lines
+		+posa
+		+bl(-10%,35%)
+		+text-center
+		+w(30%)
+		+transform(rotateX(45deg))
+		transform-origin: bottom center
+		$time: 800ms
+		.line
+			+show-inline
+			+posa
+			+tl
+		.line-1
+			// +animation(lineMove1,$time,linear,infinite)
+		.line-2
+			// +animation(lineMove2,$time,linear,infinite)
+		.line-3
+			// +animation(lineMove3,$time,linear,infinite)
+		.line-4
+			// +animation(lineMove4,$time,linear,infinite)
+
+	.car
+		+posa
+		+tl(50%,-10%)
+		+w(120%)
+		+h(0)
+		+transform(translate3d(0,-20%,0))
+		+animation(carShow,2s,ease-out)
+		transform-origin: center top
+		.car-move
+			+animation(carMove,2500ms,ease-out,infinite)
+			transform-origin: center top
+		.car-bg
+			+posa
+			+tl
+			z-index: -1
+
+	.logo
+		+posa
+		+tl(10%)
+	.logo-text
+		+posa
+		+tl(0,(100% - 640/800*100%)/2)
+		+w(640/800*100%)
+		+transform(translate3d(0,-70%,0))
+		z-index: -1
+
+	.form-register
+		+posa
+		+bl
+		+tran
+		font-size: 0
+		.title
+			+posr
+			.arrow
+				+posa
+				+tl(54%)
+		.form
+			+bc(#080404)
+			+w(90%)
+			+p(5% 5%)
+
