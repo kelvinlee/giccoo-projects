@@ -942,6 +942,30 @@ ul {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
 
+@-webkit-keyframes star {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
+            transform: translate3d(0, 0, 0) rotate(0deg); }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(300px, 0, 0) rotate(1800deg);
+            transform: translate3d(300px, 0, 0) rotate(1800deg); } }
+
+@keyframes star {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
+            transform: translate3d(0, 0, 0) rotate(0deg); }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(300px, 0, 0) rotate(1800deg);
+            transform: translate3d(300px, 0, 0) rotate(1800deg); } }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -1749,9 +1773,101 @@ body {
     left: 0px;
     -webkit-transform: translate3d(0, -50%, 0);
             transform: translate3d(0, -50%, 0);
+    z-index: 9;
     text-align: center; }
-    .page-reset .content-box.on {
+    .page-reset .content-box.on, .page-reset .content-box.next {
       display: block; }
+    .page-reset .content-box.on .logo {
+      -webkit-animation: fadeInUp 500ms ease;
+              animation: fadeInUp 500ms ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial; }
+    .page-reset .content-box.on .card {
+      -webkit-animation: fadeInUp 500ms ease;
+              animation: fadeInUp 500ms ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial;
+      -webkit-animation-delay: 200ms;
+              animation-delay: 200ms; }
+    .page-reset .content-box.on .text-1 {
+      -webkit-animation: fadeInUp 500ms ease;
+              animation: fadeInUp 500ms ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial;
+      -webkit-animation-delay: 400ms;
+              animation-delay: 400ms; }
+    .page-reset .content-box.on .text-2 {
+      -webkit-animation: fadeInUp 500ms ease;
+              animation: fadeInUp 500ms ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial;
+      -webkit-animation-delay: 500ms;
+              animation-delay: 500ms; }
+    .page-reset .content-box.on .text-3 {
+      -webkit-animation: fadeInUp 500ms ease;
+              animation: fadeInUp 500ms ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial;
+      -webkit-animation-delay: 600ms;
+              animation-delay: 600ms; }
+    .page-reset .content-box.on .btn-reset {
+      -webkit-animation: fadeInUp 500ms ease;
+              animation: fadeInUp 500ms ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial;
+      -webkit-animation-delay: 800ms;
+              animation-delay: 800ms; }
+    .page-reset .content-box.next .logo {
+      -webkit-animation: fadeOutUp 500ms ease;
+              animation: fadeOutUp 500ms ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial; }
+    .page-reset .content-box.next .card {
+      -webkit-animation: fadeOutRight 500ms ease;
+              animation: fadeOutRight 500ms ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial;
+      -webkit-animation-delay: 700ms;
+              animation-delay: 700ms; }
+      .page-reset .content-box.next .card .hand {
+        -webkit-animation: fadeIn 250ms ease;
+                animation: fadeIn 250ms ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: initial;
+                animation-iteration-count: initial; }
+    .page-reset .content-box.next .text {
+      -webkit-animation: fadeOutDown 500ms ease;
+              animation: fadeOutDown 500ms ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial;
+      -webkit-animation-delay: 200ms;
+              animation-delay: 200ms; }
+    .page-reset .content-box.next .btn-reset {
+      -webkit-animation: fadeOutDown 500ms ease;
+              animation: fadeOutDown 500ms ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial; }
     .page-reset .content-box .logo {
       display: inline-block;
       width: 80%;
@@ -1764,7 +1880,8 @@ body {
         position: absolute;
         top: 8%;
         left: 64%;
-        width: 120%; }
+        width: 120%;
+        opacity: 0; }
     .page-reset .content-box .text {
       font-size: 0.9em;
       font-weight: bold;
@@ -1783,7 +1900,8 @@ body {
     left: 0px;
     -webkit-transform: translate3d(0, -50%, 0);
             transform: translate3d(0, -50%, 0);
-    text-align: center; }
+    text-align: center;
+    z-index: 10; }
     .page-reset .content-pos.on {
       display: block; }
     .page-reset .content-pos .logo {
@@ -1821,8 +1939,8 @@ body {
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: initial;
                 animation-iteration-count: initial;
-        -webkit-animation-delay: 800ms;
-                animation-delay: 800ms;
+        -webkit-animation-delay: 1800ms;
+                animation-delay: 1800ms;
         z-index: -1; }
         .page-reset .content-pos .pos .card .hand {
           position: absolute;
@@ -1863,7 +1981,8 @@ body {
         top: 45%;
         left: 2%;
         width: 9.375%;
-        margin: 0 auto; }
+        margin: 0 auto;
+        z-index: 200; }
         .iphone4 .page-reset .content-select .slider-box .left {
           width: 7.5%; }
       .page-reset .content-select .slider-box .right {
@@ -1873,7 +1992,8 @@ body {
         width: 9.375%;
         margin: 0 auto;
         -webkit-transform: scale(-1, 1);
-                transform: scale(-1, 1); }
+                transform: scale(-1, 1);
+        z-index: 200; }
         .iphone4 .page-reset .content-select .slider-box .right {
           width: 7.5%; }
     .page-reset .content-select .btn-start {
@@ -1998,9 +2118,10 @@ body {
       left: 0px; }
   .page-last .car {
     position: absolute;
-    top: 50%;
+    top: 43%;
     left: -10%;
     width: 120%;
+    margin: 0 auto;
     height: 0;
     -webkit-transform: translate3d(0, -20%, 0);
             transform: translate3d(0, -20%, 0);
@@ -2012,6 +2133,11 @@ body {
             animation-iteration-count: initial;
     -webkit-transform-origin: center top;
             transform-origin: center top; }
+    .iphone4 .page-last .car {
+      width: 96%; }
+    .iphone4 .page-last .car {
+      top: 45%;
+      left: 2%; }
     .page-last .car .car-move {
       -webkit-animation: carMove 2500ms ease-out;
               animation: carMove 2500ms ease-out;
@@ -2026,6 +2152,35 @@ body {
       top: 0px;
       left: 0px;
       z-index: -1; }
+      .page-last .car .car-bg .text {
+        text-align: center;
+        position: absolute;
+        bottom: -20%;
+        left: 0px;
+        width: 100%;
+        color: #fff; }
+        .iphone4 .page-last .car .car-bg .text {
+          bottom: -30%;
+          left: 0px; }
+        .page-last .car .car-bg .text .text-title {
+          width: 80%;
+          display: inline-block; }
+        .page-last .car .car-bg .text p {
+          margin: 0 auto;
+          font-size: 0.6rem;
+          line-height: 1.4em; }
+          @media only screen and (min-width: 321px) and (max-width: 399px) {
+            .page-last .car .car-bg .text p {
+              font-size: 0.66rem; } }
+          @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+            .page-last .car .car-bg .text p {
+              font-size: 0.66rem; } }
+          @media only screen and (min-width: 399px) and (max-width: 767px) {
+            .page-last .car .car-bg .text p {
+              font-size: 0.72rem; } }
+          @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+            .page-last .car .car-bg .text p {
+              font-size: 0.72rem; } }
   .page-last .logo {
     position: absolute;
     top: 10%;
@@ -2051,6 +2206,18 @@ body {
         position: absolute;
         top: 54%;
         left: 0px; }
+      .page-last .form-register .title .star {
+        width: 2rem;
+        position: absolute;
+        top: 2%;
+        left: 0px;
+        -webkit-animation: star 2s ease-out;
+                animation: star 2s ease-out;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        z-index: -1; }
     .page-last .form-register .form {
       background-color: #080404;
       width: 90%;

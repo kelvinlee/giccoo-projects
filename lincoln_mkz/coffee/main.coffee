@@ -7,7 +7,7 @@
 Store = {}
 layzr = null
 tm = null
-
+oldslideNumber = 0
 debug = false
 cdn = ""
 isMM = false
@@ -53,13 +53,20 @@ window.onload = ->
 	$(".loading .text").addClass "on"
 	setTimeout ->
 		loadedEnd()
-	,2000
+	,2400
+	# loadedEnd()
 
 	$(".btn-reset").on "click", ->
-		$(".page-reset .content-box").removeClass "on"
-		$(".page-reset .content-pos").addClass "on"
+		# $(".page-reset .content-box").removeClass "on"
 		_hmt.push(['_trackEvent', "lincoln_mkz", "充值1小时", "-", "-"])
+		$(".page-reset .content-box").removeClass("on").addClass "next"
+		$(".page-reset .content-pos").addClass "on"
+
+
+
+
 	$(".btn-run-next").on "click", ->
+		$(".page-reset .content-box").removeClass "on next"
 		$(".page-reset .content-pos").removeClass "on"
 		$(".page-reset .content-select").addClass "on"
 		_hmt.push(['_trackEvent', "lincoln_mkz", "确认充值", "-", "-"])
@@ -67,9 +74,10 @@ window.onload = ->
 	$(".btn-start").on "click", ->
 		id = Math.abs mainSlider.slideNumber
 		id += 1
-		$(".page-answer").addClass "on answer-#{id}"
+		$(".page-answer").removeClass("answer-1 answer-2 answer-3 answer-4").addClass "on answer-#{id}"
+		$(".page-reset").removeClass("fadeIn").addClass "fadeOut"
 		$(".page-answer img").each (i)->
-			src = $(this).attr "old-src"
+			src = $(this).attr "old-no-src"
 			if src
 				$(this).attr "src",src.replace("answer-x","answer-"+id)
 
@@ -91,7 +99,7 @@ EndLastFrame = (evt)->
 	if $(evt.target).is ".text"
 		setTimeout ->
 			$(".page-last").addClass "on"
-		,500
+		,1700
 
 loadedEnd = ->
 	$(".loading").addClass "rollOut animated duration-5"
@@ -104,6 +112,9 @@ loadedEnd = ->
 	$(".form-register").css {"bottom": -FormHeight+"px"}
 	$(".pages .page-last").removeClass "on"
 	console.log FormHeight
+
+	$("img[no-src]").each ->
+		$(this).attr "src",$(this).attr("no-src")
 	
 	
 
@@ -112,6 +123,8 @@ FrameFun = (evt)->
 		$(".loading").addClass "hide"
 		$(".pages .page-frame").removeClass "on"
 		$(".pages .page-reset .content-box").addClass "on"
+
+changeMain = ->
 
 SendNote = (msg,time = 3000)->
 	$("body").append("<note title='"+msg+"' time='#{time}'></note>")

@@ -66,97 +66,109 @@ block content
 						img(src="#{url}img/frame-text-4.png")
 		.page.page-reset.on
 			.content-box
-				.logo.fadeInUp.animated
-					img(src="#{url}img/logo.png")
-				.card.fadeInUp.animated.delay-2
-					img(src="#{url}img/card.png")
+				.logo
+					img(no-src="#{url}img/logo.png")
+				.card
+					img(no-src="#{url}img/card.png")
 					.hand
-						img(src="#{url}img/hand.png")
+						img(no-src="#{url}img/hand.png")
 				.text
-					p.fadeInUp.animated.delay-5 总说没时间的你
-					p.fadeInUp.animated.delay-6 如果拥有了一天的第25个小时
-					p.fadeInUp.animated.delay-7 你会为你的人生资产增添什么样的可能？
-				.btn-reset.fadeInUp.animated.delay-8
-					img(src="#{url}img/btn-reset.png")
+					p.text-1 总说没时间的你
+					p.text-2 如果拥有了一天的第25个小时
+					p.text-3 你会为你的人生资产增添什么样的可能？
+				.btn-reset
+					img(no-src="#{url}img/btn-reset.png")
 
 			.content-pos
-				.logo.fadeIn.animated
-					img(src="#{url}img/logo.png")
-				.pos.fadeIn.animated.delay-2
-					img(src="#{url}img/pos.png")
+				.logo.fadeInUp.animated.delay-12
+					img(no-src="#{url}img/logo.png")
+				.pos.fadeInUp.animated.delay-14
+					img(no-src="#{url}img/pos.png")
 					.pos-text
-						.normal.fadeOutUp.animated.delay-10
-							img(src="#{url}img/pos-text-first.png")
-						.btn-run-next.fadeInUp.animated.delay-10
-							img(src="#{url}img/pos-text.png")
+						.normal.fadeOutUp.animated.delay-24
+							img(no-src="#{url}img/pos-text-first.png")
+						.btn-run-next.fadeInUp.animated.delay-24
+							img(no-src="#{url}img/pos-text.png")
 
 					.card
-						img(src="#{url}img/card.png")
+						img(no-src="#{url}img/card.png")
 						.hand
-							img(src="#{url}img/hand.png")
+							img(no-src="#{url}img/hand.png")
 
 			.content-select
 				.logo.fadeInUp.animated
-					img(src="#{url}img/logo.png")
+					img(no-src="#{url}img/logo.png")
 				.success-text.fadeInUp.animated.delay-2
-					img(src="#{url}img/success-text.png")
-				slider.slider-box.fadeInUp.animated.delay-4(myid="mainSlider",list="#{url}img/item-1.png,#{url}img/item-2.png,#{url}img/item-3.png,#{url}img/item-4.png")
-					.left
-						img(src="#{url}img/btn-left.png")
-					.right
-						img(src="#{url}img/btn-left.png")
+					img(no-src="#{url}img/success-text.png")
+				//- slider.slider-box.fadeInUp.animated.delay-4(myid="mainSlider",repeat="true",list="#{url}img/item-1.png,#{url}img/item-2.png,#{url}img/item-3.png,#{url}img/item-4.png")
+				slider.slider-box.fadeInUp.animated.delay-4(myid="mainSlider",repeat="true",callback="changeMain",left="#{url}img/btn-left.png",right="#{url}img/btn-left.png",list="#{url}img/item-1.png,#{url}img/item-2.png,#{url}img/item-3.png,#{url}img/item-4.png")
+					//- .left
+					//- 	img(no-src="#{url}img/btn-left.png")
+					//- .right
+					//- 	img(no-src="#{url}img/btn-left.png")
 				.btn-start.fadeInUp.animated.delay-7
-					img(src="#{url}img/btn-start.png")
+					img(no-src="#{url}img/btn-start.png")
 
 		.page.page-answer.fadeIn.animated
 			.bg
-				img(old-src="#{url}img/item-answer-x.jpg")
+				img(old-no-src="#{url}img/item-answer-x.jpg")
 			.content-box
 				.logo-white.fadeInUp.animated
-					img(src="#{url}img/logo-white.png")
+					img(no-src="#{url}img/logo-white.png")
 				.logo.fadeInUp.animated
-					img(src="#{url}img/logo.png")
+					img(no-src="#{url}img/logo.png")
 				.text
 					.text-1.fadeInUp.animated.duration-10.delay-3
-						img(old-src="#{url}img/item-answer-x-text-1.png")
+						img(old-no-src="#{url}img/item-answer-x-text-1.png")
 					.text-2.fadeInUp.animated.duration-12.delay-4
-						img(old-src="#{url}img/item-answer-x-text-2.png")
+						img(old-no-src="#{url}img/item-answer-x-text-2.png")
 					.text-3.fadeInUp.animated.duration-14.delay-5
-						img(old-src="#{url}img/item-answer-x-text-3.png")
+						img(old-no-src="#{url}img/item-answer-x-text-3.png")
 			.btn-answer-last.fadeInUp.animated.delay-14
 				.btn-text
-					img(src="#{url}img/btn-answer-last.png")
-				img(src="#{url}img/btn-answer-last-text.png")
+					img(no-src="#{url}img/btn-answer-last.png")
+				img(no-src="#{url}img/btn-answer-last-text.png")
 
 		.page.page-transition.fadeIn.animated
 			.text.fadeInLeft.animated.duration-15
-				img(src="#{url}img/item-answer-last.png")
+				img(no-src="#{url}img/item-answer-last.png")
 
 		.page.page-last.fadeIn.animated.on
 			.bg
 			.content
 				.logo.fadeIn.animated.duration-10.delay-5
-					img(src="#{url}img/mkz-logo.png")
+					img(no-src="#{url}img/mkz-logo.png")
 				//- .lines
 					.line.line-1
-						img(src="#{url}img/road-line.png")
+						img(no-src="#{url}img/road-line.png")
 					.line.line-2
-						img(src="#{url}img/road-line.png")
+						img(no-src="#{url}img/road-line.png")
 					.line.line-3
-						img(src="#{url}img/road-line.png")
+						img(no-src="#{url}img/road-line.png")
 					.line.line-4
-						img(src="#{url}img/road-line.png")
+						img(no-src="#{url}img/road-line.png")
 				.car
 					.logo-text.fadeIn.animated.duration-20.delay-14
-						img(src="#{url}img/mkz-logo-text.png")
+						img(no-src="#{url}img/mkz-logo-text.png")
 					.car-move
-						img(src="#{url}img/car.png")
+						img(no-src="#{url}img/car.png")
 					.car-bg
-						img(src="#{url}img/car-bg.png")
+						img(no-src="#{url}img/car-bg.png")
+						.text.fadeIn.animated.duration-20.delay-24
+							.text-title
+								img(no-src="#{url}img/mkz-text-title.png")
+							p 这一刻因林肯MKZ H混合动力而开启
+							p 搭载2.0L Hybrid 高效混动发动机
+							p 融合高效发动机与节能电动机
+							p 让驾驭全面突破过往潜能
+							p 让省心省力伴你一路
+
 
 				.form-register
 					.title
 						img(src="#{url}img/form-title.png")
+						.star
+							img(src="http://disk.giccoo.com/projects/roewe_i6/img/star.png")
 						.arrow.bounce.animated.infinite
 							img(src="#{url}img/form-title-arrow.png")
 					.form

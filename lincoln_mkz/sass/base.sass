@@ -181,6 +181,15 @@ $heightSize : -100%
 		opacity: 0.5
 		+transform(translate3d(0,0,0))
 
++keyframes(star)
+	0%
+		opacity: 1
+		+transform(translate3d(0,0,0) rotate(0deg))
+	80%
+		opacity: 1
+	100%
+		opacity: 0
+		+transform(translate3d(300px,0,0) rotate(1800deg))
 
 // animation, delay, duration
 @for $i from 1 through 30
@@ -591,8 +600,44 @@ body
 		+posa
 		+tl(50%)
 		+transform(translate3d(0,-50%,0))
-		&.on
+		z-index: 9
+		&.on,&.next
 			+show
+		&.on
+			$animate-time: 500ms
+			.logo
+				+animation(fadeInUp,$animate-time)
+			.card
+				+animation(fadeInUp,$animate-time)
+				animation-delay: 200ms
+			.text-1
+				+animation(fadeInUp,$animate-time)
+				animation-delay: 400ms
+			.text-2
+				+animation(fadeInUp,$animate-time)
+				animation-delay: 500ms
+			.text-3
+				+animation(fadeInUp,$animate-time)
+				animation-delay: 600ms
+			.btn-reset
+				+animation(fadeInUp,$animate-time)
+				animation-delay: 800ms
+		&.next
+			$animate-time: 500ms
+			.logo
+				+animation(fadeOutUp,$animate-time)
+			.card
+				+animation(fadeOutRight,$animate-time)
+				animation-delay: 700ms
+				.hand
+					+animation(fadeIn,$animate-time/2)
+			.text
+				+animation(fadeOutDown,$animate-time)
+				animation-delay: 200ms
+			.btn-reset
+				+animation(fadeOutDown,$animate-time)
+				
+
 		+text-center
 		.logo
 			+show-inline
@@ -606,6 +651,7 @@ body
 				+posa
 				+tl(8%,64%)
 				+w(120%)
+				opacity: 0
 		.text
 			font-size: 0.9em
 			font-weight: bold
@@ -624,6 +670,7 @@ body
 		+tl(50%)
 		+transform(translate3d(0,-50%,0))
 		+text-center
+		z-index: 10
 		&.on
 			+show
 		.logo
@@ -652,7 +699,7 @@ body
 				+w(100%)
 				+transform(rotate(90deg) translate3d(-80%,0,0))
 				+animation(cardUp,500ms,ease-out)
-				animation-delay: 800ms
+				animation-delay: 1800ms
 				z-index: -1
 				.hand
 					+posa
@@ -682,12 +729,14 @@ body
 				+posa
 				+tl(45%,2%)
 				+iw(60)
+				z-index: 200
 				// +transform(translate3d(0,-50%,0))
 			.right
 				+posa
 				+tr(45%,2%)
 				+iw(60)
 				+transform(scale(-1,1))
+				z-index: 200
 		.btn-start
 			+iw(320)
 			+show-inline
@@ -795,12 +844,14 @@ body
 
 	.car
 		+posa
-		+tl(50%,-10%)
-		+w(120%)
+		+tl(43%,-10%)
+		+iw(768)
 		+h(0)
 		+transform(translate3d(0,-20%,0))
 		+animation(carShow,2s,ease-out)
 		transform-origin: center top
+		.iphone4 &
+			+tl(45%,2%)
 		.car-move
 			+animation(carMove,2500ms,ease-out,infinite)
 			transform-origin: center top
@@ -808,6 +859,21 @@ body
 			+posa
 			+tl
 			z-index: -1
+			.text
+				+text-center
+				+posa
+				+bl(-20%)
+				+w
+				color: #fff
+				.iphone4 &
+					+bl(-30%)
+				.text-title
+					+w(80%)
+					+show-inline
+				p
+					+m
+					+font-size(0.6rem)
+					line-height: 1.4em
 
 	.logo
 		+posa
@@ -829,6 +895,13 @@ body
 			.arrow
 				+posa
 				+tl(54%)
+			.star
+				+w(2rem)
+				+posa
+				+tl(2%)
+				+animation(star,2s,ease-out,infinite)
+				z-index: -1
+
 		.form
 			+bc(#080404)
 			+w(90%)
