@@ -11,7 +11,7 @@ block css
 block content
 	//- url = "http://image.giccoo.com/projects/ldl-c4l/"
 	- url = "./"
-	.wechat-share-hide
+	//- .wechat-share-hide
 		img#share(src="http://image.giccoo.com/projects/lincoln_mkz/img/share.jpg")
 	.loading.show
 		.content
@@ -53,16 +53,16 @@ block content
 						span .
 			.content
 				.frame.frame-1
-					.text.fadeInRight.duration-10.animated
+					.text.fadeInRight.animated
 						img(src="#{url}img/frame-text-1.png")
 				.frame.frame-2
-					.text.fadeInDown.duration-10.animated
+					.text.fadeInDown.animated
 						img(src="#{url}img/frame-text-2.png")
 				.frame.frame-3
-					.text.fadeInLeft.duration-10.animated
+					.text.fadeInLeft.animated
 						img(src="#{url}img/frame-text-3.png")
 				.frame.frame-4
-					.text.fadeInUp.duration-10.animated
+					.text.fadeInUp.animated
 						img(src="#{url}img/frame-text-4.png")
 		.page.page-reset.on
 			.content-box
@@ -169,8 +169,13 @@ block content
 						img(src="#{url}img/form-title.png")
 						.star
 							img(src="http://disk.giccoo.com/projects/roewe_i6/img/star.png")
-						.arrow.bounce.animated.infinite
-							img(src="#{url}img/form-title-arrow.png")
+						.arrow
+							.arrow-1
+								img(src="#{url}img/form-title-arrow.png")
+							.arrow-2
+								img(src="#{url}img/form-title-arrow.png")
+							.arrow-3
+								img(src="#{url}img/form-title-arrow.png")
 					.form
 						//- api.giccoo.com
 						register(action="http://api.giccoo.com/lincoln_mkz/insert/")

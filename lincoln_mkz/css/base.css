@@ -970,6 +970,18 @@ ul {
     -webkit-transform: translate3d(300px, 0, 0) rotate(1800deg);
             transform: translate3d(300px, 0, 0) rotate(1800deg); } }
 
+@-webkit-keyframes arrow {
+  0% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+
+@keyframes arrow {
+  0% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -1611,8 +1623,8 @@ body {
             transform: translate3d(-50%, 0, 0);
     z-index: 20;
     width: 28.125%;
-    -webkit-animation: clockHide 10000ms linear;
-            animation: clockHide 10000ms linear;
+    -webkit-animation: clockHide 12000ms linear;
+            animation: clockHide 12000ms linear;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     -webkit-animation-iteration-count: initial;
@@ -1633,8 +1645,8 @@ body {
       color: #fff;
       letter-spacing: 0.1rem;
       font-size: 0;
-      -webkit-animation: fontColor 10000ms linear;
-              animation: fontColor 10000ms linear;
+      -webkit-animation: fontColor 12000ms linear;
+              animation: fontColor 12000ms linear;
       -webkit-animation-fill-mode: both;
               animation-fill-mode: both;
       -webkit-animation-iteration-count: 1;
@@ -1656,29 +1668,29 @@ body {
           font-size: 1.4rem;
           line-height: 1em; }
       .page-frame .clock-box .time .hour-first span:first-child {
-        -webkit-animation: hour-first 10000ms linear;
-                animation: hour-first 10000ms linear;
+        -webkit-animation: hour-first 12000ms linear;
+                animation: hour-first 12000ms linear;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: 1;
                 animation-iteration-count: 1; }
       .page-frame .clock-box .time .hour-last span:first-child {
-        -webkit-animation: hour-last 10000ms linear;
-                animation: hour-last 10000ms linear;
+        -webkit-animation: hour-last 12000ms linear;
+                animation: hour-last 12000ms linear;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: 1;
                 animation-iteration-count: 1; }
       .page-frame .clock-box .time .m-first span:first-child {
-        -webkit-animation: m-first 10000ms linear;
-                animation: m-first 10000ms linear;
+        -webkit-animation: m-first 12000ms linear;
+                animation: m-first 12000ms linear;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: 1;
                 animation-iteration-count: 1; }
       .page-frame .clock-box .time .m-last span:first-child {
-        -webkit-animation: m-last 10000ms linear;
-                animation: m-last 10000ms linear;
+        -webkit-animation: m-last 12000ms linear;
+                animation: m-last 12000ms linear;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: 1;
@@ -1687,8 +1699,8 @@ body {
     background: url("../img/frame-background-1.jpg") no-repeat center center;
     background-size: 100% auto;
     background-color: transparent;
-    -webkit-animation: frameAnimation 2500ms ease-out;
-            animation: frameAnimation 2500ms ease-out;
+    -webkit-animation: frameAnimation 3000ms ease-out;
+            animation: frameAnimation 3000ms ease-out;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     -webkit-animation-iteration-count: 1;
@@ -1698,71 +1710,71 @@ body {
       position: absolute;
       bottom: 12%;
       left: 0px;
-      -webkit-animation-duration: 1500ms;
-              animation-duration: 1500ms; }
+      -webkit-animation-duration: 1200ms;
+              animation-duration: 1200ms; }
   .page-frame .frame-2 {
     background: url("../img/frame-background-2.jpg") no-repeat right center;
     background-size: 100% auto;
     background-color: transparent;
-    -webkit-animation: frameAnimation 2500ms ease-out;
-            animation: frameAnimation 2500ms ease-out;
+    -webkit-animation: frameAnimation 3000ms ease-out;
+            animation: frameAnimation 3000ms ease-out;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     -webkit-animation-iteration-count: 1;
             animation-iteration-count: 1;
-    -webkit-animation-delay: 2500ms;
-            animation-delay: 2500ms;
+    -webkit-animation-delay: 3000ms;
+            animation-delay: 3000ms;
     z-index: 18; }
     .page-frame .frame-2 .text {
       position: absolute;
       bottom: 12%;
       left: 0px;
-      -webkit-animation-duration: 1500ms;
-              animation-duration: 1500ms;
-      -webkit-animation-delay: 2400ms;
-              animation-delay: 2400ms; }
+      -webkit-animation-duration: 1200ms;
+              animation-duration: 1200ms;
+      -webkit-animation-delay: 2800ms;
+              animation-delay: 2800ms; }
   .page-frame .frame-3 {
     background: url("../img/frame-background-3.jpg") no-repeat center top;
     background-size: 100% auto;
     background-color: transparent;
-    -webkit-animation: frameAnimation 2500ms ease-out;
-            animation: frameAnimation 2500ms ease-out;
+    -webkit-animation: frameAnimation 3000ms ease-out;
+            animation: frameAnimation 3000ms ease-out;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     -webkit-animation-iteration-count: 1;
             animation-iteration-count: 1;
-    -webkit-animation-delay: 5000ms;
-            animation-delay: 5000ms;
+    -webkit-animation-delay: 6000ms;
+            animation-delay: 6000ms;
     z-index: 17; }
     .page-frame .frame-3 .text {
       position: absolute;
       bottom: 12%;
       left: 0px;
-      -webkit-animation-duration: 1500ms;
-              animation-duration: 1500ms;
-      -webkit-animation-delay: 4900ms;
-              animation-delay: 4900ms; }
+      -webkit-animation-duration: 1200ms;
+              animation-duration: 1200ms;
+      -webkit-animation-delay: 5800ms;
+              animation-delay: 5800ms; }
   .page-frame .frame-4 {
     background: url("../img/frame-background-4.jpg") no-repeat center bottom;
     background-size: 100% auto;
     background-color: transparent;
-    -webkit-animation: frameAnimation 2500ms ease-out;
-            animation: frameAnimation 2500ms ease-out;
+    -webkit-animation: frameAnimation 3000ms ease-out;
+            animation: frameAnimation 3000ms ease-out;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     -webkit-animation-iteration-count: 1;
             animation-iteration-count: 1;
-    -webkit-animation-delay: 7500ms;
-            animation-delay: 7500ms;
+    -webkit-animation-delay: 9000ms;
+            animation-delay: 9000ms;
     z-index: 16; }
     .page-frame .frame-4 .text {
       position: absolute;
       bottom: 12%;
       left: 0px;
-      -webkit-animation-duration: 1500ms;
-              animation-duration: 1500ms;
-      -webkit-animation-delay: 7400ms;
-              animation-delay: 7400ms; }
+      -webkit-animation-duration: 1200ms;
+              animation-duration: 1200ms;
+      -webkit-animation-delay: 8800ms;
+              animation-delay: 8800ms; }
 
 .page-reset {
   background: url("../img/bg.jpg") no-repeat center center;
@@ -2202,12 +2214,37 @@ body {
       position: relative; }
       .page-last .form-register .title .arrow {
         position: absolute;
-        top: 54%;
+        top: 47.5%;
         left: 0px; }
+        .page-last .form-register .title .arrow .arrow-1 {
+          -webkit-animation: arrow 500ms linear;
+                  animation: arrow 500ms linear;
+          -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite;
+          -webkit-animation-delay: 400ms;
+                  animation-delay: 400ms; }
+        .page-last .form-register .title .arrow .arrow-2 {
+          -webkit-animation: arrow 500ms linear;
+                  animation: arrow 500ms linear;
+          -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite;
+          -webkit-animation-delay: 200ms;
+                  animation-delay: 200ms; }
+        .page-last .form-register .title .arrow .arrow-3 {
+          -webkit-animation: arrow 500ms linear;
+                  animation: arrow 500ms linear;
+          -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite; }
       .page-last .form-register .title .star {
         width: 2rem;
         position: absolute;
-        top: 2%;
+        top: -10%;
         left: 0px;
         -webkit-animation: star 2s ease-out;
                 animation: star 2s ease-out;

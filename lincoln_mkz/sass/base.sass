@@ -193,6 +193,12 @@ $heightSize : -100%
 		opacity: 0
 		+transform(translate3d(300px,0,0) rotate(1800deg))
 
++keyframes(arrow)
+	0%
+		opacity: 0.5
+	100%
+		opacity: 1
+
 // animation, delay, duration
 @for $i from 1 through 30
 	.delay-#{$i}
@@ -491,7 +497,7 @@ body
 .pages
 
 .page-frame
-	$time: 2500ms
+	$time: 3000ms
 	z-index: 1008
 	&.on
 		+show
@@ -561,7 +567,7 @@ body
 		.text
 			+posa
 			+bl(12%)
-			animation-duration: $time*3/5
+			animation-duration: $time*2/5
 	.frame-2
 		+b($cdn+"img/frame-background-2.jpg",no-repeat,right,center,100% auto)
 		+animation(frameAnimation,$time,ease-out,1)
@@ -570,8 +576,8 @@ body
 		.text
 			+posa
 			+bl(12%)
-			animation-duration: $time*3/5
-			animation-delay: $time - 100ms
+			animation-duration: $time*2/5
+			animation-delay: $time - 200ms
 	.frame-3
 		+b($cdn+"img/frame-background-3.jpg",no-repeat,center,top,100% auto)
 		+animation(frameAnimation,$time,ease-out,1)
@@ -580,8 +586,8 @@ body
 		.text
 			+posa
 			+bl(12%)
-			animation-duration: $time*3/5
-			animation-delay: $time*2 - 100ms
+			animation-duration: $time*2/5
+			animation-delay: $time*2 - 200ms
 	.frame-4
 		+b($cdn+"img/frame-background-4.jpg",no-repeat,center,bottom,100% auto)
 		+animation(frameAnimation,$time,ease-out,1)
@@ -590,8 +596,8 @@ body
 		.text
 			+posa
 			+bl(12%)
-			animation-duration: $time*3/5
-			animation-delay: $time*3 - 100ms
+			animation-duration: $time*2/5
+			animation-delay: $time*3 - 200ms
 
 .page-reset
 	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
@@ -896,11 +902,21 @@ body
 			+posr
 			.arrow
 				+posa
-				+tl(54%)
+				+tl(47.5%)
+				.arrow-1
+					+animation(arrow,500ms,linear,infinite)
+					animation-delay: 400ms
+				.arrow-2
+					+animation(arrow,500ms,linear,infinite)
+					animation-delay: 200ms
+				.arrow-3
+					+animation(arrow,500ms,linear,infinite)
+					
+
 			.star
 				+w(2rem)
 				+posa
-				+tl(2%)
+				+tl(-10%)
 				+animation(star,2s,ease-out,infinite)
 				z-index: -1
 
