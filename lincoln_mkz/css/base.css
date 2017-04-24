@@ -1771,8 +1771,8 @@ body {
       position: absolute;
       bottom: 12%;
       left: 0px;
-      -webkit-animation-duration: 1320ms;
-              animation-duration: 1320ms;
+      -webkit-animation-duration: 600ms;
+              animation-duration: 600ms;
       -webkit-animation-delay: 9800ms;
               animation-delay: 9800ms; }
 
