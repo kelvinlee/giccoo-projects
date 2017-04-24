@@ -1623,8 +1623,8 @@ body {
             transform: translate3d(-50%, 0, 0);
     z-index: 20;
     width: 28.125%;
-    -webkit-animation: clockHide 12000ms linear;
-            animation: clockHide 12000ms linear;
+    -webkit-animation: clockHide 13200ms linear;
+            animation: clockHide 13200ms linear;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     -webkit-animation-iteration-count: initial;
@@ -1645,8 +1645,8 @@ body {
       color: #fff;
       letter-spacing: 0.1rem;
       font-size: 0;
-      -webkit-animation: fontColor 12000ms linear;
-              animation: fontColor 12000ms linear;
+      -webkit-animation: fontColor 13200ms linear;
+              animation: fontColor 13200ms linear;
       -webkit-animation-fill-mode: both;
               animation-fill-mode: both;
       -webkit-animation-iteration-count: 1;
@@ -1668,29 +1668,29 @@ body {
           font-size: 1.4rem;
           line-height: 1em; }
       .page-frame .clock-box .time .hour-first span:first-child {
-        -webkit-animation: hour-first 12000ms linear;
-                animation: hour-first 12000ms linear;
+        -webkit-animation: hour-first 13200ms linear;
+                animation: hour-first 13200ms linear;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: 1;
                 animation-iteration-count: 1; }
       .page-frame .clock-box .time .hour-last span:first-child {
-        -webkit-animation: hour-last 12000ms linear;
-                animation: hour-last 12000ms linear;
+        -webkit-animation: hour-last 13200ms linear;
+                animation: hour-last 13200ms linear;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: 1;
                 animation-iteration-count: 1; }
       .page-frame .clock-box .time .m-first span:first-child {
-        -webkit-animation: m-first 12000ms linear;
-                animation: m-first 12000ms linear;
+        -webkit-animation: m-first 13200ms linear;
+                animation: m-first 13200ms linear;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: 1;
                 animation-iteration-count: 1; }
       .page-frame .clock-box .time .m-last span:first-child {
-        -webkit-animation: m-last 12000ms linear;
-                animation: m-last 12000ms linear;
+        -webkit-animation: m-last 13200ms linear;
+                animation: m-last 13200ms linear;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: 1;
@@ -1699,8 +1699,8 @@ body {
     background: url("../img/frame-background-1.jpg") no-repeat center center;
     background-size: 100% auto;
     background-color: transparent;
-    -webkit-animation: frameAnimation 3000ms ease-out;
-            animation: frameAnimation 3000ms ease-out;
+    -webkit-animation: frameAnimation 3300ms ease-out;
+            animation: frameAnimation 3300ms ease-out;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     -webkit-animation-iteration-count: 1;
@@ -1710,71 +1710,71 @@ body {
       position: absolute;
       bottom: 12%;
       left: 0px;
-      -webkit-animation-duration: 1200ms;
-              animation-duration: 1200ms; }
+      -webkit-animation-duration: 600ms;
+              animation-duration: 600ms; }
   .page-frame .frame-2 {
     background: url("../img/frame-background-2.jpg") no-repeat right center;
     background-size: 100% auto;
     background-color: transparent;
-    -webkit-animation: frameAnimation 3000ms ease-out;
-            animation: frameAnimation 3000ms ease-out;
+    -webkit-animation: frameAnimation 3300ms ease-out;
+            animation: frameAnimation 3300ms ease-out;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     -webkit-animation-iteration-count: 1;
             animation-iteration-count: 1;
-    -webkit-animation-delay: 3000ms;
-            animation-delay: 3000ms;
+    -webkit-animation-delay: 3300ms;
+            animation-delay: 3300ms;
     z-index: 18; }
     .page-frame .frame-2 .text {
       position: absolute;
       bottom: 12%;
       left: 0px;
-      -webkit-animation-duration: 1200ms;
-              animation-duration: 1200ms;
-      -webkit-animation-delay: 2800ms;
-              animation-delay: 2800ms; }
+      -webkit-animation-duration: 600ms;
+              animation-duration: 600ms;
+      -webkit-animation-delay: 3200ms;
+              animation-delay: 3200ms; }
   .page-frame .frame-3 {
     background: url("../img/frame-background-3.jpg") no-repeat center top;
     background-size: 100% auto;
     background-color: transparent;
-    -webkit-animation: frameAnimation 3000ms ease-out;
-            animation: frameAnimation 3000ms ease-out;
+    -webkit-animation: frameAnimation 3300ms ease-out;
+            animation: frameAnimation 3300ms ease-out;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     -webkit-animation-iteration-count: 1;
             animation-iteration-count: 1;
-    -webkit-animation-delay: 6000ms;
-            animation-delay: 6000ms;
+    -webkit-animation-delay: 6600ms;
+            animation-delay: 6600ms;
     z-index: 17; }
     .page-frame .frame-3 .text {
       position: absolute;
       bottom: 12%;
       left: 0px;
-      -webkit-animation-duration: 1200ms;
-              animation-duration: 1200ms;
-      -webkit-animation-delay: 5800ms;
-              animation-delay: 5800ms; }
+      -webkit-animation-duration: 600ms;
+              animation-duration: 600ms;
+      -webkit-animation-delay: 6500ms;
+              animation-delay: 6500ms; }
   .page-frame .frame-4 {
     background: url("../img/frame-background-4.jpg") no-repeat center bottom;
     background-size: 100% auto;
     background-color: transparent;
-    -webkit-animation: frameAnimation 3000ms ease-out;
-            animation: frameAnimation 3000ms ease-out;
+    -webkit-animation: frameAnimation 3300ms ease-out;
+            animation: frameAnimation 3300ms ease-out;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     -webkit-animation-iteration-count: 1;
             animation-iteration-count: 1;
-    -webkit-animation-delay: 9000ms;
-            animation-delay: 9000ms;
+    -webkit-animation-delay: 9900ms;
+            animation-delay: 9900ms;
     z-index: 16; }
     .page-frame .frame-4 .text {
       position: absolute;
       bottom: 12%;
       left: 0px;
-      -webkit-animation-duration: 1200ms;
-              animation-duration: 1200ms;
-      -webkit-animation-delay: 8800ms;
-              animation-delay: 8800ms; }
+      -webkit-animation-duration: 1320ms;
+              animation-duration: 1320ms;
+      -webkit-animation-delay: 9800ms;
+              animation-delay: 9800ms; }
 
 .page-reset {
   background: url("../img/bg.jpg") no-repeat center center;
@@ -2059,17 +2059,10 @@ body {
       position: absolute;
       top: 0px;
       left: 0px; }
-  .page-answer.answer-1 .logo-white, .page-answer.answer-2 .logo-white {
+  .page-answer.answer-1 .logo-white, .page-answer.answer-2 .logo-white, .page-answer.answer-3 .logo-white {
     display: none; }
-  .page-answer.answer-1 .logo, .page-answer.answer-2 .logo {
+  .page-answer.answer-1 .logo, .page-answer.answer-2 .logo, .page-answer.answer-3 .logo {
     display: block; }
-  .page-answer.answer-3 .logo-white {
-    display: block; }
-  .page-answer.answer-3 .logo {
-    display: none; }
-  .page-answer.answer-3 .content-box {
-    top: 30%;
-    left: 0px; }
   .page-answer.answer-4 .logo-white {
     display: block; }
   .page-answer.answer-4 .logo {

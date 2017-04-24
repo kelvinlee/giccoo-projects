@@ -497,7 +497,7 @@ body
 .pages
 
 .page-frame
-	$time: 3000ms
+	$time: 3300ms
 	z-index: 1008
 	&.on
 		+show
@@ -567,7 +567,7 @@ body
 		.text
 			+posa
 			+bl(12%)
-			animation-duration: $time*2/5
+			animation-duration: 600ms
 	.frame-2
 		+b($cdn+"img/frame-background-2.jpg",no-repeat,right,center,100% auto)
 		+animation(frameAnimation,$time,ease-out,1)
@@ -576,8 +576,8 @@ body
 		.text
 			+posa
 			+bl(12%)
-			animation-duration: $time*2/5
-			animation-delay: $time - 200ms
+			animation-duration: 600ms
+			animation-delay: $time - 100ms
 	.frame-3
 		+b($cdn+"img/frame-background-3.jpg",no-repeat,center,top,100% auto)
 		+animation(frameAnimation,$time,ease-out,1)
@@ -586,8 +586,8 @@ body
 		.text
 			+posa
 			+bl(12%)
-			animation-duration: $time*2/5
-			animation-delay: $time*2 - 200ms
+			animation-duration: 600ms
+			animation-delay: $time*2 - 100ms
 	.frame-4
 		+b($cdn+"img/frame-background-4.jpg",no-repeat,center,bottom,100% auto)
 		+animation(frameAnimation,$time,ease-out,1)
@@ -597,7 +597,7 @@ body
 			+posa
 			+bl(12%)
 			animation-duration: $time*2/5
-			animation-delay: $time*3 - 200ms
+			animation-delay: $time*3 - 100ms
 
 .page-reset
 	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
@@ -781,18 +781,11 @@ body
 		.btn-text
 			+posa
 			+tl
-	&.answer-1,&.answer-2
+	&.answer-1,&.answer-2,&.answer-3
 		.logo-white
 			+hide
 		.logo
 			+show
-	&.answer-3
-		.logo-white
-			+show
-		.logo
-			+hide
-		.content-box
-			+tl(30%)
 	&.answer-4
 		.logo-white
 			+show
