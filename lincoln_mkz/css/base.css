@@ -1314,7 +1314,7 @@ body {
   max-width: 640px;
   margin: 0 auto; }
 
-.wechat-share-hide {
+.wechat-share-hide, .load-before {
   position: absolute;
   top: -1000px;
   left: 0px;
