@@ -4,7 +4,6 @@ node_modules
 .sass-cache
 config.js
 *.zip
-*.mp4
 config.codekit
 huxiu_ministation/static/.DS_Store
 
