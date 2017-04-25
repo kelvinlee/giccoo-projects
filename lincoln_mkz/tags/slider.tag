@@ -190,11 +190,14 @@ slider
 				# console.log slide, TRANSITION_END_NAME
 				slide[0].addEventListener TRANSITION_END_NAME, @transition.bind(this)
 				setTimeout ->
-					self.offset.w = slide.find(".slide").width()
+					self.offset.w = $(document).width()
+					if $("body").is(".iphone4")
+						self.offset.w = self.offset.w*0.8
+
 					# alert self.list.length+","+self.offset.w
 					self.x = -self.list.length * self.offset.w
 					# self.x = - $(".slide",self.root).width()
-					console.log "2:"+self.x
+					console.log "2:"+self.x,self.offset.w,slide.width()
 					self.update()
 				,500
 

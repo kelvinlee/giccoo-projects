@@ -370,9 +370,12 @@ this.on('mount', function() {
     slide = $('.slider', this.root);
     slide[0].addEventListener(TRANSITION_END_NAME, this.transition.bind(this));
     setTimeout(function() {
-      self.offset.w = slide.find(".slide").width();
+      self.offset.w = $(document).width();
+      if ($("body").is(".iphone4")) {
+        self.offset.w = self.offset.w * 0.8;
+      }
       self.x = -self.list.length * self.offset.w;
-      console.log("2:" + self.x);
+      console.log("2:" + self.x, self.offset.w, slide.width());
       return self.update();
     }, 500);
   }
