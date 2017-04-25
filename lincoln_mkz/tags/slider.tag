@@ -27,7 +27,7 @@ slider
 			@list[item] = {bg: list[item]}
 		# @list = list.split(',')
 		@repeat = if opts.repeat then true else false
-		@duration = 0.2
+		@duration = 0
 		@offset =
 			resistance: 1
 			lastSlide: 1
@@ -52,6 +52,8 @@ slider
 			eval opts.myid + ' = this'
 		if @repeat
 			@x = -@list.length * @offset.w
+			@x = 0
+		# alert @x
 		# @setNumber = (i) ->
 		# 	slider = $('.slider', @root)
 		# 	@offset.w = slider.width()
@@ -69,7 +71,7 @@ slider
 			@moved = true
 			# @setSlideNumber -1
 			slider = $('.slider', @root)
-			@offset.w = slider.width()
+			@offset.w = slider.find(".slide").width()
 			@slideNumber--
 			@x = @slideNumber * @offset.w
 			if @repeat
@@ -81,7 +83,7 @@ slider
 			@moved = true
 			# @setSlideNumber 1
 			slider = $('.slider', @root)
-			@offset.w = slider.width()
+			@offset.w = slider.find(".slide").width()
 			@slideNumber++
 			@x = @slideNumber * @offset.w
 			if @repeat
@@ -91,7 +93,7 @@ slider
 			@update()
 
 		@setSlideNumber = (offset) ->
-			# console.log "offset:",offset
+			console.log "offset:",offset
 			if @moved
 				round = if offset then (if @offset.deltaX < 0 then 'ceil' else 'floor') else 'round'
 				slideNumber = Math[round](@x / (@offset.scrollableArea / slider.find('.slide').length))
@@ -109,7 +111,7 @@ slider
 			@duration = 0
 			@moved = false
 			@startTime = +new Date
-			@offset.w = slider.width()
+			@offset.w = slider.find(".slide").width()
 			@offset.x = touch.pageX
 			@offset.y = touch.pageY
 			if @repeat and @x == 0
@@ -155,7 +157,8 @@ slider
 
 		@transition = (evt) ->
 			# return false;
-			console.log @x, -(@list.length * @offset.w)
+			# alert @x +","+ -(@list.length * @offset.w)
+
 			if @x < -((@list.length * 2 - 1) * @offset.w)
 				@x = -@list.length * @offset.w
 				# this.Rx = this.x + (this.list.length-1) * this.offset.w;
@@ -172,6 +175,9 @@ slider
 				@slideNumber = -(@list.length - 1)
 				@update()
 				opts.callback and eval(opts.callback + '(' + @slideNumber + ')')
+			# alert @x
+			# alert @list.length
+			# alert @offset.w
 			return
 
 		@on 'mount', ->
@@ -184,9 +190,11 @@ slider
 				# console.log slide, TRANSITION_END_NAME
 				slide[0].addEventListener TRANSITION_END_NAME, @transition.bind(this)
 				setTimeout ->
-					self.offset.w = $(".pages").width()
+					self.offset.w = slide.find(".slide").width()
 					# alert self.list.length+","+self.offset.w
 					self.x = -self.list.length * self.offset.w
+					# self.x = - $(".slide",self.root).width()
+					console.log "2:"+self.x
 					self.update()
 				,500
 

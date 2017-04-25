@@ -51,8 +51,8 @@ window.onload = ->
 
 	
 	$(".loading .text").addClass "on"
+	riot.mount("*")
 	setTimeout ->
-		riot.mount("*")
 		loadedEnd()
 	,2400
 	# loadedEnd()

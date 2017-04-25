@@ -2205,7 +2205,8 @@ body {
     transition: all 0.5s ease;
     font-size: 0; }
     .page-last .form-register .title {
-      position: relative; }
+      position: relative;
+      overflow: hidden; }
       .page-last .form-register .title .arrow {
         position: absolute;
         top: 47.5%;

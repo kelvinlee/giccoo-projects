@@ -202,7 +202,7 @@ for (item = i = 0, ref = list.length; 0 <= ref ? i < ref : i > ref; item = 0 <= 
 
 this.repeat = opts.repeat ? true : false;
 
-this.duration = 0.2;
+this.duration = 0;
 
 this.offset = {
   resistance: 1,
@@ -241,12 +241,13 @@ if (opts.myid) {
 
 if (this.repeat) {
   this.x = -this.list.length * this.offset.w;
+  this.x = 0;
 }
 
 this.moveLeft = function(evt) {
   this.moved = true;
   slider = $('.slider', this.root);
-  this.offset.w = slider.width();
+  this.offset.w = slider.find(".slide").width();
   this.slideNumber--;
   this.x = this.slideNumber * this.offset.w;
   if (this.repeat) {
@@ -259,7 +260,7 @@ this.moveLeft = function(evt) {
 this.moveRight = function(evt) {
   this.moved = true;
   slider = $('.slider', this.root);
-  this.offset.w = slider.width();
+  this.offset.w = slider.find(".slide").width();
   this.slideNumber++;
   this.x = this.slideNumber * this.offset.w;
   if (this.repeat) {
@@ -271,6 +272,7 @@ this.moveRight = function(evt) {
 
 this.setSlideNumber = function(offset) {
   var round, slideNumber;
+  console.log("offset:", offset);
   if (this.moved) {
     round = offset ? (this.offset.deltaX < 0 ? 'ceil' : 'floor') : 'round';
     slideNumber = Math[round](this.x / (this.offset.scrollableArea / slider.find('.slide').length));
@@ -289,7 +291,7 @@ this.touchstart = function(evt) {
   this.duration = 0;
   this.moved = false;
   this.startTime = +(new Date);
-  this.offset.w = slider.width();
+  this.offset.w = slider.find(".slide").width();
   this.offset.x = touch.pageX;
   this.offset.y = touch.pageY;
   if (this.repeat && this.x === 0) {
@@ -342,7 +344,6 @@ this.touchend = function(evt) {
 };
 
 this.transition = function(evt) {
-  console.log(this.x, -(this.list.length * this.offset.w));
   if (this.x < -((this.list.length * 2 - 1) * this.offset.w)) {
     this.x = -this.list.length * this.offset.w;
     this.duration = 0;
@@ -369,8 +370,9 @@ this.on('mount', function() {
     slide = $('.slider', this.root);
     slide[0].addEventListener(TRANSITION_END_NAME, this.transition.bind(this));
     setTimeout(function() {
-      self.offset.w = $(".pages").width();
+      self.offset.w = slide.find(".slide").width();
       self.x = -self.list.length * self.offset.w;
+      console.log("2:" + self.x);
       return self.update();
     }, 500);
   }

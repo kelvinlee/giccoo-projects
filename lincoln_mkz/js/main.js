@@ -971,8 +971,8 @@ window.onload = function() {
     $("body").addClass("iphone4");
   }
   $(".loading .text").addClass("on");
+  riot.mount("*");
   setTimeout(function() {
-    riot.mount("*");
     return loadedEnd();
   }, 2400);
   $(".btn-reset").on("click", function() {
