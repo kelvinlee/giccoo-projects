@@ -1319,7 +1319,8 @@ body {
   top: -1000px;
   left: 0px;
   display: none;
-  width: 1px; }
+  width: 1px;
+  height: 1px; }
 
 .loading {
   background-color: #fff;

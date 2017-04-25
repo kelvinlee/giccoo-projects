@@ -49,9 +49,10 @@ window.onload = ->
 	if $("body").height() <= 460 or MK > 0.65
 		$("body").addClass "iphone4"
 
-	riot.mount("*")
+	
 	$(".loading .text").addClass "on"
 	setTimeout ->
+		riot.mount("*")
 		loadedEnd()
 	,2400
 	# loadedEnd()

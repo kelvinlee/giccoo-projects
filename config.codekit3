@@ -29331,6 +29331,12 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/MP_verify_AesIPwONIZJg9aKE.txt": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/MP_verify_AesIPwONIZJg9aKE.txt",
+		"oF": 0
+		},
 	"\/MP_verify_oRSVhS25okEvGLH9.txt": {
 		"ft": 8192,
 		"oA": 2,
@@ -32273,12 +32279,6 @@
 		"opt": 0,
 		"oT": 1,
 		"q": 100
-		},
-	"\/roewe_i6\/img\/video.mp4": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/roewe_i6\/img\/video.mp4",
-		"oF": 0
 		},
 	"\/roewe_i6\/index.html": {
 		"ft": 8192,

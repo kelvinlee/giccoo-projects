@@ -970,9 +970,9 @@ window.onload = function() {
   if ($("body").height() <= 460 || MK > 0.65) {
     $("body").addClass("iphone4");
   }
-  riot.mount("*");
   $(".loading .text").addClass("on");
   setTimeout(function() {
+    riot.mount("*");
     return loadedEnd();
   }, 2400);
   $(".btn-reset").on("click", function() {
