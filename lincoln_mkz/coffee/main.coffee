@@ -109,7 +109,7 @@ loadedEnd = ->
 	$(".pages .page-transition")[0].addEventListener ANIMATION_END_NAME, EndLastFrame
 	# $(".pages .page-transition")[0].addEventListener ANIMATION_END_NAME, EndLastFrame
 
-	FormHeight = $(".form-register").height() - $(".form-register .title").height()
+	FormHeight = $(".form-register").height() - 95/640 * $(".form-register").width()
 	$(".form-register").css {"bottom": -FormHeight+"px"}
 	$(".pages .page-last").removeClass "on"
 	console.log FormHeight
