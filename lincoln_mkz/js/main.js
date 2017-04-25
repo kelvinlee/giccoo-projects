@@ -975,6 +975,9 @@ window.onload = function() {
   setTimeout(function() {
     return loadedEnd();
   }, 2400);
+  document.querySelector('body').addEventListener("touchmove", function(e) {
+    return e.preventDefault();
+  });
   $(".btn-reset").on("click", function() {
     _hmt.push(['_trackEvent', "lincoln_mkz", "充值1小时", "-", "-"]);
     $(".page-reset .content-box").removeClass("on").addClass("next");

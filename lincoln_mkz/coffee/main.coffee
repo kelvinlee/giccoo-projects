@@ -55,6 +55,8 @@ window.onload = ->
 	setTimeout ->
 		loadedEnd()
 	,2400
+	document.querySelector('body').addEventListener "touchmove", (e)->
+		e.preventDefault()
 	# loadedEnd()
 
 	$(".btn-reset").on "click", ->
