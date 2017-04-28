@@ -93,7 +93,7 @@ window.onload = ->
 	wx.ready ->
 		shareContent =
 			title: "第25小时的精彩"
-			desc: "第25小时的精彩"
+			desc: "如果拥有了一天的第25个小时,你会为你的人生增添什么样的可能?"
 			link: "http://m.giccoo.com/lincoln_mkz/"
 			imgUrl: "http://image.giccoo.com/projects/lincoln_mkz/img/share.jpg"
 			success: ->
