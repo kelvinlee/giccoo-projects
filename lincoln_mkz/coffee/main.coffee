@@ -1,6 +1,4 @@
 # @codekit-prepend "coffee/css3Prefix"
-# @codekit-prepend "coffee/plus"
-# @codekit-prepend "js/vendor/exif.js"
 # @codekit-prepend "../../libs/coffee/requestanimation"
 # @codekit-prepend "../../libs/coffee/qrcode"
 
@@ -49,6 +47,7 @@ window.onload = ->
 	if $("body").height() <= 460 or MK > 0.65
 		$("body").addClass "iphone4"
 
+
 	
 	$(".loading .text").addClass "on"
 	riot.mount("*")
@@ -64,16 +63,11 @@ window.onload = ->
 		_hmt.push(['_trackEvent', "lincoln_mkz", "充值1小时", "-", "-"])
 		$(".page-reset .content-box").removeClass("on").addClass "next"
 		$(".page-reset .content-pos").addClass "on"
-
-
-
-
 	$(".btn-run-next").on "click", ->
 		$(".page-reset .content-box").removeClass "on next"
 		$(".page-reset .content-pos").removeClass "on"
 		$(".page-reset .content-select").addClass "on"
 		_hmt.push(['_trackEvent', "lincoln_mkz", "确认充值", "-", "-"])
-
 	$(".btn-start").on "click", ->
 		id = Math.abs mainSlider.slideNumber
 		id += 1
@@ -88,7 +82,6 @@ window.onload = ->
 	$(".btn-answer-last").on "click", ->
 		$(".page-transition").addClass "on"
 		_hmt.push(['_trackEvent', "lincoln_mkz", "一起来揭秘", "-", "-"])
-
 	$(".form-register .title").on "click", ->
 		if Math.abs(parseInt($(".form-register").css("bottom"))) <= 0
 			$(".form-register").css {"bottom": -FormHeight+"px"}
@@ -96,7 +89,31 @@ window.onload = ->
 			$(".form-register").css {"bottom": 0}
 		_hmt.push(['_trackEvent', "lincoln_mkz", "打开/关闭试驾信息", "-", "-"])
 
+	loadWechatConfig()
+	wx.ready ->
+		shareContent =
+			title: "第25小时的精彩"
+			desc: "第25小时的精彩"
+			link: "http://m.giccoo.com/lincoln_mkz/"
+			imgUrl: "http://image.giccoo.com/projects/lincoln_mkz/img/share.jpg"
+			success: ->
+				# alert "success"
+			cancel: ->
+				# alert "cancel"
+		wx.onMenuShareTimeline shareContent
+		wx.onMenuShareAppMessage shareContent
+		wx.onMenuShareQQ shareContent
+		wx.onMenuShareWeibo shareContent
 
+	return true
+
+loadWechatConfig = ->
+	url = encodeURIComponent window.location.href.split("#")[0]
+	hm = document.createElement('script')
+	hm.src = "http://api.giccoo.com/api/config?url="+url
+	s = document.getElementsByTagName('script')[0]
+	s.parentNode.insertBefore hm, s
+	return
 
 EndLastFrame = (evt)->
 	if $(evt.target).is ".text"
