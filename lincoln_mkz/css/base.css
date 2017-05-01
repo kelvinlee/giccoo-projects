@@ -1697,7 +1697,7 @@ body {
         -webkit-animation-iteration-count: 1;
                 animation-iteration-count: 1; }
   .page-frame .frame-1 {
-    background: url("../img/frame-background-1.jpg") no-repeat center center;
+    background: url("http://image.giccoo.com/projects/lincoln_mkz/img/frame-background-1.jpg") no-repeat center center;
     background-size: 100% auto;
     background-color: transparent;
     -webkit-animation: frameAnimation 3300ms ease-out;
@@ -1714,7 +1714,7 @@ body {
       -webkit-animation-duration: 600ms;
               animation-duration: 600ms; }
   .page-frame .frame-2 {
-    background: url("../img/frame-background-2.jpg") no-repeat right center;
+    background: url("http://image.giccoo.com/projects/lincoln_mkz/img/frame-background-2.jpg") no-repeat right center;
     background-size: 100% auto;
     background-color: transparent;
     -webkit-animation: frameAnimation 3300ms ease-out;
@@ -1735,7 +1735,7 @@ body {
       -webkit-animation-delay: 3200ms;
               animation-delay: 3200ms; }
   .page-frame .frame-3 {
-    background: url("../img/frame-background-3.jpg") no-repeat center top;
+    background: url("http://image.giccoo.com/projects/lincoln_mkz/img/frame-background-3.jpg") no-repeat center top;
     background-size: 100% auto;
     background-color: transparent;
     -webkit-animation: frameAnimation 3300ms ease-out;
@@ -1756,7 +1756,7 @@ body {
       -webkit-animation-delay: 6500ms;
               animation-delay: 6500ms; }
   .page-frame .frame-4 {
-    background: url("../img/frame-background-4.jpg") no-repeat center bottom;
+    background: url("http://image.giccoo.com/projects/lincoln_mkz/img/frame-background-4.jpg") no-repeat center bottom;
     background-size: 100% auto;
     background-color: transparent;
     -webkit-animation: frameAnimation 3300ms ease-out;
@@ -1778,7 +1778,7 @@ body {
               animation-delay: 9800ms; }
 
 .page-reset {
-  background: url("../img/bg.jpg") no-repeat center center;
+  background: url("http://image.giccoo.com/projects/lincoln_mkz/img/bg.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
   .page-reset.on {
@@ -1987,7 +1987,7 @@ body {
       margin: 0 auto;
       margin: 0 auto;
       display: inline-block;
-      background: url("../img/list-bg.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/lincoln_mkz/img/list-bg.png") no-repeat center center;
       background-size: cover;
       background-color: transparent;
       font-size: 0; }
@@ -2075,7 +2075,7 @@ body {
     margin-top: 60%; }
 
 .page-transition {
-  background: url("../img/item-answer-last.jpg") no-repeat center center;
+  background: url("http://image.giccoo.com/projects/lincoln_mkz/img/item-answer-last.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent;
   display: none;
@@ -2100,7 +2100,7 @@ body {
 .page-last {
   z-index: 1000; }
   .page-last .bg {
-    background: url("../img/mkz-bg.jpg") no-repeat center center;
+    background: url("http://image.giccoo.com/projects/lincoln_mkz/img/mkz-bg.jpg") no-repeat center center;
     background-size: cover;
     background-color: transparent;
     position: absolute;
