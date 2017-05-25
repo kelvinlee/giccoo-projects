@@ -357,7 +357,7 @@ th {
   -webkit-tap-highlight-color: transparent; }
 
 html, body {
-  font-family: Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self; }
+  font-family: Tahoma,Arial,Roboto,Droid Sans,Helvetica Neue,Droid Sans Fallback,Microsoft YaHei,SimHei,Heiti SC,Hiragino Sans GB,Simsun,sans-self; }
 
 .clearfix:after {
   content: ".";
@@ -386,7 +386,7 @@ html, body {
 
 .loading {
   -webkit-transition: all 0.5s linear;
-          transition: all 0.5s linear;
+  transition: all 0.5s linear;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -406,23 +406,21 @@ html, body {
     opacity: 0; }
   .loading.loaded {
     -webkit-transition: all 0s linear;
-            transition: all 0s linear;
+    transition: all 0s linear;
     opacity: 1;
     z-index: 99999;
     display: block; }
   .loading.finished .loading-logo {
     opacity: 1;
     -webkit-transform: scale(1, 1);
-        -ms-transform: scale(1, 1);
             transform: scale(1, 1); }
   .loading.finished span {
     -webkit-transform: scale(0.2, 0.2);
-        -ms-transform: scale(0.2, 0.2);
             transform: scale(0.2, 0.2);
     opacity: 0; }
   .loading .loading-logo, .loading .loading-normal {
     -webkit-transition: all 0.5s ease;
-            transition: all 0.5s ease;
+    transition: all 0.5s ease;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -431,7 +429,6 @@ html, body {
     width: 5em;
     height: 5em;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     overflow: hidden; }
   .loading .loading-normal {
@@ -483,9 +480,9 @@ html, body {
 @media only screen and (min-width: 735px) and (min-device-width: 768px) {
   body {
     background: #fff; }
-
   .wrap {
     display: none; } }
+
 @-webkit-keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -493,6 +490,7 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
 @keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -500,6 +498,11 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 @-webkit-keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -507,6 +510,7 @@ html, body {
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
+
 @keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -514,6 +518,11 @@ html, body {
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
+
+.second2 {
+  -webkit-animation-name: second2;
+          animation-name: second2; }
+
 @-webkit-keyframes Flash {
   0% {
     opacity: 1; }
@@ -521,6 +530,7 @@ html, body {
     opacity: 0.2; }
   100% {
     opacity: 1; } }
+
 @keyframes Flash {
   0% {
     opacity: 1; }
@@ -528,6 +538,11 @@ html, body {
     opacity: 0.2; }
   100% {
     opacity: 1; } }
+
+.Flash {
+  -webkit-animation-name: Flash;
+          animation-name: Flash; }
+
 @-webkit-keyframes nextPoint {
   from {
     -webkit-transform: scale(1, 1);
@@ -537,6 +552,7 @@ html, body {
     -webkit-transform: scale(2, 2);
             transform: scale(2, 2);
     opacity: 0; } }
+
 @keyframes nextPoint {
   from {
     -webkit-transform: scale(1, 1);
@@ -546,6 +562,11 @@ html, body {
     -webkit-transform: scale(2, 2);
             transform: scale(2, 2);
     opacity: 0; } }
+
+.nextPoint {
+  -webkit-animation-name: nextPoint;
+          animation-name: nextPoint; }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -802,7 +823,6 @@ html, body {
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
     -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
             transform-origin: center center; }
 
 .share-wechat {
@@ -834,7 +854,7 @@ html, body {
   white-space: nowrap;
   font-size: 0;
   -webkit-transition: all 0s linear;
-          transition: all 0s linear; }
+  transition: all 0s linear; }
   .slider .slide {
     width: 100%;
     display: inline-block;
@@ -913,7 +933,6 @@ body {
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
         -webkit-transform-origin: bottom center;
-            -ms-transform-origin: bottom center;
                 transform-origin: bottom center; }
     .loading .new-load .load-progress {
       font-size: 1rem;
@@ -938,20 +957,24 @@ body {
 .firstpage .content {
   width: 100%;
   height: 100%; }
+
 .firstpage .btn {
   position: absolute;
   bottom: 10%;
   left: 0px; }
+
 .firstpage .dove {
   position: absolute;
   top: 5%;
   left: 0px;
   width: 100%; }
+
 .firstpage .background {
   position: absolute;
   top: 22%;
   left: 0px;
   width: 100%; }
+
 .firstpage .cp {
   position: absolute;
   top: 22%;
@@ -963,6 +986,7 @@ body {
     left: 0px; }
   .firstpage .cp > .cp-1 {
     position: relative; }
+
 .firstpage .stars {
   position: absolute;
   top: 0px;
@@ -977,88 +1001,88 @@ body {
             animation-iteration-count: infinite; }
   .firstpage .stars .star-0 {
     width: 8%;
-    top: 64%;
-    left: 8%;
+    top: 35%;
+    left: 49%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 500ms;
             animation-delay: 500ms; }
   .firstpage .stars .star-1 {
     width: 9%;
-    top: 69%;
-    left: 54%;
+    top: 37%;
+    left: 34%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 600ms;
             animation-delay: 600ms; }
   .firstpage .stars .star-2 {
     width: 10%;
-    top: 66%;
-    left: 37%;
+    top: 26%;
+    left: 43%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 700ms;
             animation-delay: 700ms; }
   .firstpage .stars .star-3 {
     width: 11%;
-    top: 37%;
-    left: 7%;
+    top: 22%;
+    left: 61%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 800ms;
             animation-delay: 800ms; }
   .firstpage .stars .star-4 {
     width: 12%;
-    top: 54%;
-    left: 7%;
+    top: 21%;
+    left: 49%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 900ms;
             animation-delay: 900ms; }
   .firstpage .stars .star-5 {
     width: 13%;
-    top: 56%;
-    left: 75%;
+    top: 21%;
+    left: 14%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 1000ms;
             animation-delay: 1000ms; }
   .firstpage .stars .star-6 {
     width: 14%;
-    top: 28%;
-    left: 16%;
+    top: 67%;
+    left: 38%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 1100ms;
             animation-delay: 1100ms; }
   .firstpage .stars .star-7 {
     width: 15%;
-    top: 46%;
-    left: 68%;
+    top: 16%;
+    left: 14%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 1200ms;
             animation-delay: 1200ms; }
   .firstpage .stars .star-8 {
     width: 16%;
-    top: 8%;
-    left: 45%;
+    top: 7%;
+    left: 24%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 1300ms;
             animation-delay: 1300ms; }
   .firstpage .stars .star-9 {
     width: 17%;
-    top: 42%;
-    left: 2%;
+    top: 37%;
+    left: 53%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 1400ms;
             animation-delay: 1400ms; }
   .firstpage .stars .star-10 {
     width: 18%;
-    top: 2%;
-    left: 36%;
+    top: 16%;
+    left: 41%;
     -webkit-animation-duration: 3500ms;
             animation-duration: 3500ms;
     -webkit-animation-delay: 1500ms;

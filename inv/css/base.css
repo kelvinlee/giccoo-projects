@@ -357,7 +357,7 @@ th {
   -webkit-tap-highlight-color: transparent; }
 
 html, body {
-  font-family: Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self; }
+  font-family: Tahoma,Arial,Roboto,Droid Sans,Helvetica Neue,Droid Sans Fallback,Microsoft YaHei,SimHei,Heiti SC,Hiragino Sans GB,Simsun,sans-self; }
 
 .clearfix:after {
   content: ".";
@@ -386,7 +386,7 @@ html, body {
 
 .loading {
   -webkit-transition: all 0.5s linear;
-          transition: all 0.5s linear;
+  transition: all 0.5s linear;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -406,23 +406,21 @@ html, body {
     opacity: 0; }
   .loading.loaded {
     -webkit-transition: all 0s linear;
-            transition: all 0s linear;
+    transition: all 0s linear;
     opacity: 1;
     z-index: 99999;
     display: block; }
   .loading.finished .loading-logo {
     opacity: 1;
     -webkit-transform: scale(1, 1);
-        -ms-transform: scale(1, 1);
             transform: scale(1, 1); }
   .loading.finished span {
     -webkit-transform: scale(0.2, 0.2);
-        -ms-transform: scale(0.2, 0.2);
             transform: scale(0.2, 0.2);
     opacity: 0; }
   .loading .loading-logo, .loading .loading-normal {
     -webkit-transition: all 0.5s ease;
-            transition: all 0.5s ease;
+    transition: all 0.5s ease;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -431,7 +429,6 @@ html, body {
     width: 5em;
     height: 5em;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     overflow: hidden; }
   .loading .loading-normal {
@@ -483,9 +480,9 @@ html, body {
 @media only screen and (min-width: 735px) and (min-device-width: 768px) {
   body {
     background: #fff; }
-
   .wrap {
     display: none; } }
+
 @-webkit-keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -493,6 +490,7 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
 @keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -500,6 +498,11 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 @-webkit-keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -507,6 +510,7 @@ html, body {
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
+
 @keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -514,16 +518,27 @@ html, body {
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
+
+.second2 {
+  -webkit-animation-name: second2;
+          animation-name: second2; }
+
 @-webkit-keyframes nextpoint {
-  0%,100% {
+  0%, 100% {
     opacity: 1; }
   50% {
     opacity: 0.5; } }
+
 @keyframes nextpoint {
-  0%,100% {
+  0%, 100% {
     opacity: 1; }
   50% {
     opacity: 0.5; } }
+
+.nextpoint {
+  -webkit-animation-name: nextpoint;
+          animation-name: nextpoint; }
+
 .loading {
   position: absolute;
   top: 0px;
@@ -546,7 +561,7 @@ section {
     background: #000; }
     section[data-id="1"] .door {
       -webkit-transition: all 2s ease;
-              transition: all 2s ease;
+      transition: all 2s ease;
       position: absolute;
       top: 0px;
       left: 0px;
@@ -554,11 +569,9 @@ section {
       height: 100%;
       z-index: 10;
       -webkit-transform-origin: center center;
-          -ms-transform-origin: center center;
               transform-origin: center center; }
       section[data-id="1"] .door.open {
         -webkit-transform: scale(1.2, 1.2);
-            -ms-transform: scale(1.2, 1.2);
                 transform: scale(1.2, 1.2); }
         section[data-id="1"] .door.open .door-left {
           -webkit-transform: rotateY(-90deg) scale(1, 1.1);
@@ -568,13 +581,12 @@ section {
                   transform: rotateY(90deg) scale(1, 1.1); }
         section[data-id="1"] .door.open + .page-1 {
           -webkit-transform: scale(1, 1);
-              -ms-transform: scale(1, 1);
                   transform: scale(1, 1); }
           section[data-id="1"] .door.open + .page-1 .text {
             display: block; }
       section[data-id="1"] .door .door-left, section[data-id="1"] .door .door-right {
         -webkit-transition: all 2s ease;
-                transition: all 2s ease;
+        transition: all 2s ease;
         position: absolute;
         height: 100%; }
         section[data-id="1"] .door .door-left .doorknob, section[data-id="1"] .door .door-right .doorknob {
@@ -600,7 +612,6 @@ section {
         background-size: cover;
         background-color: transparent;
         -webkit-transform-origin: left center;
-            -ms-transform-origin: left center;
                 transform-origin: left center; }
         .iphone4 section[data-id="1"] .door .door-left {
           width: 39.875%; }
@@ -616,7 +627,6 @@ section {
         background-size: cover;
         background-color: transparent;
         -webkit-transform-origin: right center;
-            -ms-transform-origin: right center;
                 transform-origin: right center; }
         .iphone4 section[data-id="1"] .door .door-right {
           width: 40.125%; }
@@ -634,10 +644,9 @@ section {
       background-size: 100% 100%;
       background-color: transparent;
       -webkit-transform: scale(0.8, 0.8);
-          -ms-transform: scale(0.8, 0.8);
               transform: scale(0.8, 0.8);
       -webkit-transition: all 2s ease;
-              transition: all 2s ease; }
+      transition: all 2s ease; }
       section[data-id="1"] .page-1 .text {
         display: none;
         margin-top: 10%;

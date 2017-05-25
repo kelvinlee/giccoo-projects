@@ -357,7 +357,7 @@ th {
   -webkit-tap-highlight-color: transparent; }
 
 html, body {
-  font-family: Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self; }
+  font-family: Tahoma,Arial,Roboto,Droid Sans,Helvetica Neue,Droid Sans Fallback,Microsoft YaHei,SimHei,Heiti SC,Hiragino Sans GB,Simsun,sans-self; }
 
 .clearfix:after {
   content: ".";
@@ -403,10 +403,12 @@ ul {
       vertical-align: top;
       line-height: 25px; }
     .note .note-box .icon-form {
-      width: 25px;
-      height: 25px; }
+      width: 1.1rem;
+      height: 1.1rem;
+      vertical-align: middle; }
     .note .note-box .note-text {
       font-size: 0.8rem;
+      line-height: 1.4em;
       letter-spacing: 2px; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
         .note .note-box .note-text {
@@ -436,8 +438,13 @@ ul {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 @-webkit-keyframes light {
-  0%,100% {
+  0%, 100% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     opacity: 0; }
@@ -449,8 +456,9 @@ ul {
     -webkit-transform: translate3d(9rem, 0, 0);
             transform: translate3d(9rem, 0, 0);
     opacity: 0; } }
+
 @keyframes light {
-  0%,100% {
+  0%, 100% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     opacity: 0; }
@@ -462,6 +470,11 @@ ul {
     -webkit-transform: translate3d(9rem, 0, 0);
             transform: translate3d(9rem, 0, 0);
     opacity: 0; } }
+
+.light {
+  -webkit-animation-name: light;
+          animation-name: light; }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -932,6 +945,7 @@ html, body {
     padding: 0.8rem 0; }
     .tabs .tab .item.on {
       background-color: #024d89; }
+
 .tabs .contents {
   padding: 0.8rem 0; }
   .tabs .contents .points {

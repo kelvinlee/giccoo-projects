@@ -1,0 +1,975 @@
+@import sass/base
+@import sass/animation
+@import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "http://image.giccoo.com/projects/lincoln_mkz/"
+	
+
++keyframes(frameAnimation)
+	0%
+		background-size: 100% auto
+		opacity: 1
+	70%
+		opacity: 1
+	100%
+		background-size: 120% auto
+		opacity: 0
+
++keyframes(fontColor)
+	0%
+		color: #fff
+	20%
+		color: #fff
+	25%
+		color: #000
+	45%
+		color: #000
+	50%
+		color: #000
+	70%
+		color: #000
+	75%
+		color: #fff
+	100%
+		color: #fff
+
++keyframes(hour-first)
+	0%
+		margin-top: -0em
+	20%
+		margin-top: -0em
+	25%
+		margin-top: -1em
+	70%
+		margin-top: -1em
+	75%
+		margin-top: -2em
+	100%
+		margin-top: -2em
+
++keyframes(hour-last)
+	0%
+		margin-top: -9em
+	20%
+		margin-top: -9em
+	25%
+		margin-top: -3em
+	40%
+		margin-top: -3em
+	45%
+		margin-top: -8em
+	50%
+		margin-top: -8em
+	70%
+		margin-top: -8em
+	75%
+		margin-top: -3em
+	100%
+		margin-top: -3em
+
++keyframes(m-first)
+	0%
+		margin-top: -4em
+	20%
+		margin-top: -4em
+	25%
+		margin-top: -0em
+	40%
+		margin-top: -0em
+	45%
+		margin-top: -3em
+	50%
+		margin-top: -3em
+	70%
+		margin-top: -3em
+	75%
+		margin-top: -5em
+	100%
+		margin-top: -5em
+
++keyframes(m-last)
+	0%
+		margin-top: -5em
+	20%
+		margin-top: -5em
+	25%
+		margin-top: -0em
+	40%
+		margin-top: -0em
+	45%
+		margin-top: -7em
+	50%
+		margin-top: -7em
+	70%
+		margin-top: -7em
+	75%
+		margin-top: -9em
+	100%
+		margin-top: -9em
+
++keyframes(cardUp)
+	0%
+		+transform(rotate(90deg) translate3d(50%,0,0))
+	100%
+		+transform(rotate(90deg) translate3d(-80%,0,0))
+
++keyframes(clockHide)
+	0%
+		opacity: 1
+	90%
+		opacity: 1
+	100%
+		opacity: 0
+
++keyframes(carShow)
+	0%
+		+transform(translate3d(0,-60%,0) scale(0,0))
+	100%
+		+transform(translate3d(0,-20%,0) scale(1,1))
+
++keyframes(carMove)
+	0%
+		+transform(translate3d(0,0%,0) scale(0.96,0.96))
+	40%
+		+transform(translate3d(0,3%,0) scale(1,1))
+	100%
+		+transform(translate3d(0,0%,0) scale(0.96,0.96))
+
++keyframes(fadeInLeftPx)
+	0%
+		+transform(translate3d(-300px,0,0))
+		opacity: 0
+	100%
+		+transform(translate3d(0,0,0))
+		opacity: 1
+
+$heightSize : -100%
++keyframes(lineMove4)
+	0%
+		+transform(translate3d(0,0,0) scale(1,1))
+	100%
+		+transform(translate3d(0,$heightSize,0) scale(0.8,0.8))
++keyframes(lineMove3)
+	0%
+		+transform(translate3d(0,0,0) scale(0.8,0.8))
+	100%
+		+transform(translate3d(0,$heightSize,0) scale(0.6,0.6))
++keyframes(lineMove2)
+	0%
+		+transform(translate3d(0,0,0) scale(0.6,0.6))
+	100%
+		+transform(translate3d(0,$heightSize,0) scale(0.4,0.4))
++keyframes(lineMove1)
+	0%
+		+transform(translate3d(0,0,0) scale(0.4,0.4))
+	100%
+		+transform(translate3d(0,$heightSize,0) scale(0.2,0.2))
+
++keyframes(showline)
+	0%
+		+w(0)
+	100%
+		+w(96%)
++keyframes(nextpoint)
+	0%
+		opacity: 0.5
+		+transform(translate3d(0,-100%,0))
+	10%
+		opacity: 1
+	100%
+		opacity: 0.5
+		+transform(translate3d(0,0,0))
+
++keyframes(star)
+	0%
+		opacity: 1
+		+transform(translate3d(0,0,0) rotate(0deg))
+	80%
+		opacity: 1
+	100%
+		opacity: 0
+		+transform(translate3d(300px,0,0) rotate(1800deg))
+
++keyframes(arrow)
+	0%
+		opacity: 0.5
+	100%
+		opacity: 1
++keyframes(grow)
+	0%
+		height: 0%
+	100%
+		height: 100%
++keyframes(growdown)
+	0%
+		height: 100%
+	100%
+		height: 0%
++keyframes(fadeInZoom)
+	0%
+		opacity: 0
+		+transform(scale3d(0.8,0.8,1))
+	100%
+		opacity: 1
+		+transform(scale3d(1,1,1))
++keyframes(fadeInZoomBig)
+	0%
+		opacity: 0
+		+transform(scale3d(1.2,1.2,1))
+	100%
+		opacity: 1
+		+transform(scale3d(1,1,1))
++keyframes(bgDown)
+	0%
+		opacity: 0.8
+		+transform(translate3d(0,70%,0) scale3d(1.3,1.3,1))
+	100%
+		opacity: 1
+		+transform(translate3d(0,0,0) scale3d(1,1,1))
++keyframes(fadeInZoomBigOp)
+	0%
+		opacity: 0.8
+		+transform(scale3d(1.2,1.2,1))
+	100%
+		opacity: 1
+		+transform(scale3d(1,1,1))
++keyframes(star)
+	0%
+		opacity: 0
+		+transform(scale3d(1,1,1))
+	30%
+		opacity: 0.8
+		+transform(scale3d(1.2,1.2,1))
+	70%
+		opacity: 0.8
+		+transform(scale3d(1.2,1.2,1))
+	100%
+		opacity: 0
+		+transform(scale3d(1,1,1))
++keyframes(rotate)
+	0%
+		opacity: 0
+		+transform(rotate(0deg) scale3d(1,1,1))
+	10%
+		opacity: 1
+	90%
+		opacity: 1
+	100%
+		opacity: 0
+		+transform(rotate(360deg) scale3d(0.5,0.5,1))
++keyframes(starMoveLeft)
+	0%
+		+transform(translate3d(400px,0,0))
+	100%
+		+transform(translate3d(-400px,0,0))
++keyframes(starMoveRight)
+	0%
+		+transform(translate3d(-400px,0,0))
+	100%
+		+transform(translate3d(400px,0,0))
+
+.linear
+	animation-timing-function: linear
+
+// animation, delay, duration
+@for $i from 1 through 100
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
+
+
+.share-wechat
+	+posa
+	+tl
+	+w
+	+h
+	+b("http://image.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
+	+bc
+	z-index: 1100
+	+hide
+	&.open
+		+show
+
+.main
+	+wh(100%,100%)
+	// +posf
+	// min-height: 410px
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+
+.loading.loaded
+	+large
+		+hide
+
+.sliderBox
+	white-space: nowrap
+	+w
+	+h
+	+show
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	+show-inline
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+iw(600)
+	+m
+	margin-top: -8%
+	.share-icon
+		+show-inline
+		+w(25%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		
+html,body
+	+w
+	+h
+	// +overhide
+
+body
+	// +b("http://i3.tietuku.com/1fcc3041ce5a552f.jpg",no-repeat,center,center,cover)
+	color: #000
+	+bc(#fff)
+
+.pages,.loading
+	max-width: 640px
+	+m
+
+.wechat-share-hide,.load-before
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+	+h(1px)
+// .loading.loaded
+// 	+hide
+.loading
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+bc(#003949)
+	// +hide
+	z-index: 1009
+	+posa
+	+tl
+	+w
+	+h
+	$time: 2s
+	.content
+		+posa
+		+tl(50%)
+		+w
+		+transform(translate3d(0,-50%,0))
+		&.on
+			.text
+				+show
+			.logo
+				.tree
+					+animation(grow,$time,linear)
+				.white
+					+animation(growdown,$time,linear)
+	.logo
+		+iw(120,640,100%)
+		+posr
+		font-size: 0
+		margin-bottom: 1rem
+		> img
+			opacity: 0
+		.tree
+			+posa
+			+bl
+			+w
+			+h(0%)
+			+overhide
+			img
+				+w
+				+posa
+				+bl
+		.white
+			+posa
+			+tl
+			+w
+			+h(100%)
+			+overhide
+			img
+				+w
+				+posa
+				+tl
+	.text
+		+text-center
+		+hide
+		line-height: 1em
+		font-size: 0.8rem
+		color: #a0ebed
+		margin-top: -1rem
+		em
+			margin-left: 0.2em
+			line-height: 1em
+			+animation(fadeIn,1000ms,linear,infinite)
+			&.em1
+				animation-delay: 200ms
+			&.em2
+				animation-delay: 400ms
+			&.em3
+				animation-delay: 600ms
+
+		span
+			+show-inline
+			// +w(3em)
+			font-size: 0.8rem
+
+	
+
+
+.hide
+	+hide
+.pages
+	.page
+		.content
+			+posa
+			+tl
+			+w
+			+h
+
+.note
+	+posa
+	+tl
+	+br
+	+wh(100%,100%)
+	z-index: 9999
+	.note-box
+		+text-center
+		+posa
+		+tl(50%)
+		+w(100%)
+		// z-index: 9999
+		.note-content
+			display: inline-block
+			padding: 10px 11px 10px 10px
+			background-color: rgba(0,0,0,0.7)
+			color: #fff
+			border-radius: 5px
+			max-width: 90%
+			+box
+		.icon-form,.note-text
+			display: inline-block
+			vertical-align: top
+			line-height: 25px
+		.icon-form
+			+wh(25px,25px)
+		.note-text
+			+font-size(0.8rem)
+			letter-spacing: 2px
+
+.pop
+	+posa
+	+tl
+	+w
+	+h
+	// +bc(rgba(0,0,0,0.7))
+	.content
+		+posa
+		+tl(50%)
+		+transform(translate3d(0,-50%,0))
+		+bc(#fff)
+		+p(1.4rem 0)
+		border-top: dashed 1px #f38f18
+		border-bottom: dashed 1px #f38f18
+	.close
+		+posa
+		+tr(0.3rem,0.3rem)
+		+w(1.4rem)
+
+.stars
+	$size: 2px
+	.star
+		+posa
+		+tl(30%,30%)
+		+wh($size,$size)
+		+bc(#fff)
+		+animation(star,1s,linear,infinite)
+		box-shadow: 1px 1px 2px #fff,-1px -1px 2px #fff
+		border-radius: 50%
+
+.form
+	+w(80%)
+	+m
+	+p(1.4rem 0)
+	padding-bottom: 0.4rem
+	$labelColor: #b39030
+	$borderColor: #b39030
+	$inputColor: #000000
+	.form-grounp
+		$h: 1.4rem
+		vertical-align: top
+		> label
+			+wh(30%,$h)
+			+show-inline
+			+font-size(0.8rem)
+			+m(0.2rem 0)
+			line-height: $h
+			vertical-align: top
+			color: $labelColor
+		> input
+			+wh(68%,$h)
+			+font-size(0.8rem)
+			+bc(#fff)
+			+show-inline
+			+box
+			+m(0.2rem 0)
+			+p(0.2rem)
+			line-height: $h
+			vertical-align: top
+			border: solid 1px $borderColor
+			color: $inputColor
+			outline: none
+			border-radius: 0.2rem
+		.comb
+			+wh(68%,$h)
+			+font-size(1rem)
+			+show-inline
+			+m(0.2rem 0)
+			color: $inputColor
+			white-space: nowrap
+			label
+				+wh(30%,$h)
+				+show-inline
+				+font-size(0.8rem)
+				+text-center
+				color: $labelColor
+			input
+				+show-inline
+				+w(1rem)
+			.select
+				+w(48.5%)
+				+m
+		.select
+			+posr
+			+wh(68%,$h)
+			+show-inline
+			+bc(#fff)
+			+m(0.2rem 0)
+			+box
+			+p(0 0.2rem)
+			+font-size(0.8rem)
+			color: $inputColor
+			border: solid 1px $borderColor
+			border-radius: 0.2rem
+			&:after
+				$size: 0.5rem
+				content: " "
+				+posa
+				+tr(50%,$size)
+				+transform(translate3d(0,-50%,0))
+				z-index: 99
+				border-left: $size/2 solid transparent
+				border-right: $size/2 solid transparent
+				border-top: $size solid $borderColor
+			span
+				text-overflow: ellipsis
+				+show-inline
+				+wh(100%,$h)
+				+overhide
+			select
+				+posa
+				+tl
+				+br
+				+w
+				+h
+				opacity: 0
+
+	.form-btn
+		+text-center
+		margin-top: 0.5rem
+		button
+			+w(40%)
+			+m
+			+p(2px 0)
+			+bc(transparent)
+			border: none
+.pages
+	.page
+		font-size: 0
+		&.on
+			+show
+.page-one
+	+bc(#dbd7d2)
+	z-index: 100
+	.content
+		$height: 20%
+		.texts
+			+posa
+			+tl(30%)
+			+w
+			z-index: 1
+			.text,.btn
+				margin-top: 1rem
+			.btn
+				+iw(250,640,100%)
+				margin-top: 1rem
+		.bg
+			+posa
+			+bl($height)
+			+w
+			+overhide
+			font-size: 0
+			.down
+				+posa
+				+bl
+				font-size: 0
+			.stars
+				+posa
+				+bl(20%)
+				+w(400px)
+				+h(80%)
+			.stars-1
+				+animation(starMoveLeft,30s,linear,infinite)
+			.stars-2
+				+animation(starMoveLeft,20s,linear,infinite)
+			.stars-3
+				+animation(starMoveLeft,40s,linear,infinite)
+		.bottom
+			+posa
+			+bl
+			+w
+			+h($height)
+			+bc(#dbd7d2)
+
+.page-two
+	+bc(#172430)
+	z-index: 99
+	.texts
+		+posa
+		+tl(20%)
+		+w
+		z-index: 1
+		.text,.btn
+			margin-top: 1rem
+	.bg
+		+posa
+		+bl
+
+.page-three
+	+bc(#003949)
+	z-index: 98
+	.texts
+		+posa
+		+bl(20%)
+		+w
+		z-index: 1
+		.text,.btn
+			margin-top: 1rem
+	.bg
+		+posa
+		+tl(10%)
+
+.page-four
+	z-index: 97
+	+b($cdn+"img/page-4-background.jpg",no-repeat,top,right,cover)
+	.texts
+		+posa
+		+tl(50%)
+		+w
+		z-index: 1
+		+transform(translate3d(0,-50%,0))
+		.text,.btn
+			margin-top: 1rem
+		.btn
+			+iw(250,640,100%)
+			margin-top: 1rem
+
+.page-four-1
+	z-index: 96
+	+bc(#13232a)
+	.bg
+		+posa
+		+bl(50%)
+	.texts
+		+posa
+		+bl(25%)
+		+w
+		z-index: 1
+		.text,.btn
+			margin-top: 1rem
+		.btn
+			+iw(250,640,100%)
+			margin-top: 1rem
+
+.page-four-2
+	z-index: 95
+	+bc(#0c111e)
+	.bg
+		+posa
+		+tl(0%)
+		+w
+		+h
+		+b($cdn+"img/page-4-2-background.jpg",no-repeat,center,center,cover)
+	.texts
+		+posa
+		+bl(25%)
+		+w
+		z-index: 1
+		.text,.btn
+			margin-top: 1rem
+		.btn
+			+iw(250,640,100%)
+			margin-top: 1rem
+
+.page-four-3
+	z-index: 94
+	+bc(#17202f)
+	.bg
+		+posa
+		+bl
+		.mark
+			+posa
+			+bl
+		.stars
+			+posa
+			+tl(20%)
+			+wh(100%,30%)
+
+	.texts
+		+posa
+		+tl(35%)
+		+w
+		z-index: 1
+		.text,.btn
+			margin-top: 1rem
+
+.page-five
+	z-index: 93
+	+b($cdn+"img/page-4-background.jpg",no-repeat,top,right,cover)
+	.texts
+		+posa
+		+tl(50%)
+		+w
+		z-index: 1
+		+transform(translate3d(0,-50%,0))
+		.text,.btn
+			margin-top: 1rem
+		.btn
+			+iw(250,640,100%)
+			margin-top: 1rem
+
+.page-five-1
+	z-index: 92
+	+bc(#17202f)
+	.bg
+		+posa
+		+tl(10%)
+	.texts
+		+posa
+		+bl(20%)
+		+w
+		z-index: 1
+		// +transform(translate3d(0,-50%,0))
+		.text,.btn
+			margin-top: 1rem
+
+.page-five-2
+	z-index: 91
+	.bg
+		+posa
+		+tl
+		+w
+		+h
+		+b($cdn+"img/page-5-2-background.jpg",no-repeat,top,right,cover)
+	.texts
+		+posa
+		+bl(20%)
+		+w
+		z-index: 1
+		// +transform(translate3d(0,-50%,0))
+		.text,.btn
+			margin-top: 1rem
+
+.page-five-3
+	z-index: 90
+	.bg
+		+posa
+		+tl
+		+w
+		+h
+		+b($cdn+"img/page-5-3-background.jpg",no-repeat,top,right,cover)
+		.cover
+			+posa
+			+tl
+			+w
+			+h
+			+b($cdn+"img/page-5-3-background.png",no-repeat,top,right,cover)
+		.stars
+			+posa
+			+tl(10%)
+			+wh(100%,35%)
+
+	.texts
+		+posa
+		+bl(20%)
+		+w
+		z-index: 1
+		// +transform(translate3d(0,-50%,0))
+		.text,.btn
+			margin-top: 1rem
+
+.page-five-4
+	z-index: 89
+	.bg
+		+posa
+		+tl
+		+w
+		+h
+		+b($cdn+"img/page-5-4-background.jpg",no-repeat,top,right,cover)
+	.texts
+		+posa
+		+bl(45%)
+		+w
+		z-index: 1
+		// +transform(translate3d(0,-50%,0))
+		.text,.btn
+			margin-top: 1rem
+
+.page-six
+	z-index: 88
+	.bg
+		+posa
+		+tl
+		+w
+		+h
+		+b($cdn+"img/page-6-background.jpg",no-repeat,top,right,cover)
+	.texts
+		+posa
+		+bl(45%)
+		+w
+		z-index: 1
+		// +transform(translate3d(0,-50%,0))
+		.text,.btn
+			margin-top: 1rem
+		.btn
+			+iw(250,640,100%)
+			margin-top: 1rem
+
+.page-seven
+	z-index: 87
+	+bc(#1e3034)
+	.bg
+		+posa
+		+tl
+		+bc(#243d41)
+		.hand
+			$size: 3rem
+			+posa
+			+tl(63%,55%)
+			margin-top: -$size/2
+			margin-left: -$size/2
+			+w($size)
+		.stars
+			+posa
+			+tl(25%,5%)
+			+wh(90%,65%)
+			border-radius: 50%
+			+animation(rotate,30s,linear,infinite)
+			+overhide
+		.stars-2
+			+animation(rotate,20s,linear,infinite)
+		.stars-3
+			+animation(rotate,40s,linear,infinite)
+	.texts
+		+posa
+		+bl(20%)
+		+w
+		z-index: 1
+		// +transform(translate3d(0,-50%,0))
+		.text,.btn
+			margin-top: 1rem
+		.btn
+			+iw(250,640,100%)
+			margin-top: 1rem
+
+.page-eight
+	+b($cdn+"img/page-8-background.jpg",no-repeat,center,center,cover)
+	+bc(#000)
+	.content
+		.texts
+			+posa
+			+tl(50%)
+			+w
+			z-index: 11
+			+transform(translate3d(0,-50%,0))
+			.text,.btn
+				margin-top: 1rem
+			.btn
+				+iw(250,640,100%)
+				margin-top: 1rem
+		.video
+			+posa
+			+bl
+			+w
+			z-index: 10
+			// video
+			// 	+w(620px)
+			// 	+h
+				// opacity: 0
+			canvas
+				+w
+				//+posa
+				//+tl(-100%)
+				z-index: 9
+	.hidevideo
+		+posa
+		+tl
+		z-index: -1
+		opacity: 0
+		+wh(1,1)
+		+overhide
+
+.page-nine
+	+bc(#000)
+	.content
+		.texts
+			+posa
+			+tl(25%)
+			+w
+			z-index: 11
+			// +transform(translate3d(0,-50%,0))
+			.text,.btn
+				margin-top: 1rem
+			.btn
+				+iw(250,640,100%)
+				margin-top: 1rem
+
+// video::media-controls-enclosure
+// 	display: none
+video::-webkit-media-controls-enclosure, video::-webkit-media-controls-panel,, video::-webkit-media-controls
+	display: none!important

@@ -357,7 +357,7 @@ th {
   -webkit-tap-highlight-color: transparent; }
 
 html, body {
-  font-family: Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self; }
+  font-family: Tahoma,Arial,Roboto,Droid Sans,Helvetica Neue,Droid Sans Fallback,Microsoft YaHei,SimHei,Heiti SC,Hiragino Sans GB,Simsun,sans-self; }
 
 .clearfix:after {
   content: ".";
@@ -389,8 +389,13 @@ ul {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 @-webkit-keyframes light {
-  0%,100% {
+  0%, 100% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     opacity: 0; }
@@ -402,8 +407,9 @@ ul {
     -webkit-transform: translate3d(9rem, 0, 0);
             transform: translate3d(9rem, 0, 0);
     opacity: 0; } }
+
 @keyframes light {
-  0%,100% {
+  0%, 100% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     opacity: 0; }
@@ -415,6 +421,11 @@ ul {
     -webkit-transform: translate3d(9rem, 0, 0);
             transform: translate3d(9rem, 0, 0);
     opacity: 0; } }
+
+.light {
+  -webkit-animation-name: light;
+          animation-name: light; }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -767,10 +778,8 @@ html, body {
     width: 40%;
     height: 2rem;
     -webkit-transform: rotate(10deg);
-        -ms-transform: rotate(10deg);
             transform: rotate(10deg);
     -webkit-transform-origin: left top;
-        -ms-transform-origin: left top;
             transform-origin: left top; }
     .main .homepage .bg-3 .show-pop:nth-child(n+1) {
       top: 7%;
@@ -1021,7 +1030,7 @@ html, body {
   white-space: nowrap;
   font-size: 0;
   -webkit-transition: all 0s linear;
-          transition: all 0s linear; }
+  transition: all 0s linear; }
   .slider .slide {
     width: 100%;
     display: inline-block;

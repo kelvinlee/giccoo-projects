@@ -398,7 +398,7 @@ th {
 }
 
 html, body {
-  font-family: Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self;
+  font-family: Tahoma,Arial,Roboto,Droid Sans,Helvetica Neue,Droid Sans Fallback,Microsoft YaHei,SimHei,Heiti SC,Hiragino Sans GB,Simsun,sans-self;
 }
 
 .clearfix:after {
@@ -444,6 +444,7 @@ html, body {
   z-index: -1;
   display: none;
 }
+
 @media only screen and (min-width: 735px) and (min-device-width: 768px) {
   .loading {
     max-width: 640px;
@@ -452,9 +453,11 @@ html, body {
             transform: translate3d(-50%, 0, 0);
   }
 }
+
 .loading .ng-hide {
   opacity: 0;
 }
+
 .loading.loaded {
   -webkit-transition: all 0s linear;
   transition: all 0s linear;
@@ -462,18 +465,19 @@ html, body {
   z-index: 99999;
   display: block;
 }
+
 .loading.finished .loading-logo {
   opacity: 1;
   -webkit-transform: scale(1, 1);
-      -ms-transform: scale(1, 1);
           transform: scale(1, 1);
 }
+
 .loading.finished span {
   -webkit-transform: scale(0.2, 0.2);
-      -ms-transform: scale(0.2, 0.2);
           transform: scale(0.2, 0.2);
   opacity: 0;
 }
+
 .loading .loading-logo, .loading .loading-normal {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -485,10 +489,10 @@ html, body {
   width: 5em;
   height: 5em;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   overflow: hidden;
 }
+
 .loading .loading-normal {
   width: 3rem;
   height: 3rem;
@@ -501,6 +505,7 @@ html, body {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
+
 .loading .loading-logo-bg {
   position: absolute;
   top: 0px;
@@ -517,6 +522,7 @@ html, body {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
+
 .loading .loading-logo img {
   position: relative;
   z-index: 2;
@@ -529,16 +535,19 @@ html, body {
   text-align: center;
   display: none;
 }
+
 @media only screen and (min-width: 735px) and (min-device-width: 768px) {
   .qrcode {
     display: block;
   }
 }
+
 @media only screen and (max-width: 735px) and (max-device-width: 768px) {
   .qrcode {
     display: none;
   }
 }
+
 @media only screen and (max-width: 768px) {
   .qrcode {
     display: none;
@@ -549,11 +558,11 @@ html, body {
   body {
     background: #fff;
   }
-
   .wrap {
     display: none;
   }
 }
+
 @-webkit-keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -564,6 +573,7 @@ html, body {
             transform: rotate(360deg);
   }
 }
+
 @keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -574,6 +584,12 @@ html, body {
             transform: rotate(360deg);
   }
 }
+
+.second {
+  -webkit-animation-name: second;
+          animation-name: second;
+}
+
 @-webkit-keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -584,6 +600,7 @@ html, body {
             transform: rotate(-360deg);
   }
 }
+
 @keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -594,6 +611,12 @@ html, body {
             transform: rotate(-360deg);
   }
 }
+
+.second2 {
+  -webkit-animation-name: second2;
+          animation-name: second2;
+}
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms;
@@ -715,6 +738,12 @@ html, body {
             transform: translate3d(-30%, 0, 0);
   }
 }
+
+.river {
+  -webkit-animation-name: river;
+          animation-name: river;
+}
+
 @-webkit-keyframes riverF {
   0% {
     -webkit-transform: translate3d(-30%, 0, 0);
@@ -725,6 +754,7 @@ html, body {
             transform: none;
   }
 }
+
 @keyframes riverF {
   0% {
     -webkit-transform: translate3d(-30%, 0, 0);
@@ -735,8 +765,14 @@ html, body {
             transform: none;
   }
 }
+
+.riverF {
+  -webkit-animation-name: riverF;
+          animation-name: riverF;
+}
+
 @-webkit-keyframes floating {
-  0%,100% {
+  0%, 100% {
     -webkit-transform: none;
             transform: none;
   }
@@ -745,8 +781,9 @@ html, body {
             transform: translate3d(12%, -10%, 0);
   }
 }
+
 @keyframes floating {
-  0%,100% {
+  0%, 100% {
     -webkit-transform: none;
             transform: none;
   }
@@ -755,6 +792,12 @@ html, body {
             transform: translate3d(12%, -10%, 0);
   }
 }
+
+.floating {
+  -webkit-animation-name: floating;
+          animation-name: floating;
+}
+
 @-webkit-keyframes runGame {
   0% {
     -webkit-transform: translate3d(0, -25%, 0);
@@ -765,6 +808,7 @@ html, body {
             transform: none;
   }
 }
+
 @keyframes runGame {
   0% {
     -webkit-transform: translate3d(0, -25%, 0);
@@ -775,6 +819,12 @@ html, body {
             transform: none;
   }
 }
+
+.runGame {
+  -webkit-animation-name: runGame;
+          animation-name: runGame;
+}
+
 @-webkit-keyframes nextPoint {
   0% {
     -webkit-transform: scale(1, -1) translate3d(-50%, 0, 0);
@@ -785,6 +835,7 @@ html, body {
             transform: scale(1, -1) translate3d(-50%, 40%, 0);
   }
 }
+
 @keyframes nextPoint {
   0% {
     -webkit-transform: scale(1, -1) translate3d(-50%, 0, 0);
@@ -795,102 +846,136 @@ html, body {
             transform: scale(1, -1) translate3d(-50%, 40%, 0);
   }
 }
+
+.nextPoint {
+  -webkit-animation-name: nextPoint;
+          animation-name: nextPoint;
+}
+
 @-webkit-keyframes film1 {
-  0%,25%,100% {
+  0%, 25%, 100% {
     -webkit-transform: rotate(-20deg) scale(1, 1) translate3d(0, 0, 0);
             transform: rotate(-20deg) scale(1, 1) translate3d(0, 0, 0);
     z-index: 5;
   }
-  3%,22% {
+  3%, 22% {
     -webkit-transform: rotate(0deg) scale(1.3, 1.3) translate3d(20%, -20%, 0);
             transform: rotate(0deg) scale(1.3, 1.3) translate3d(20%, -20%, 0);
     z-index: 6;
   }
 }
+
 @keyframes film1 {
-  0%,25%,100% {
+  0%, 25%, 100% {
     -webkit-transform: rotate(-20deg) scale(1, 1) translate3d(0, 0, 0);
             transform: rotate(-20deg) scale(1, 1) translate3d(0, 0, 0);
     z-index: 5;
   }
-  3%,22% {
+  3%, 22% {
     -webkit-transform: rotate(0deg) scale(1.3, 1.3) translate3d(20%, -20%, 0);
             transform: rotate(0deg) scale(1.3, 1.3) translate3d(20%, -20%, 0);
     z-index: 6;
   }
 }
+
+.film1 {
+  -webkit-animation-name: film1;
+          animation-name: film1;
+}
+
 @-webkit-keyframes film2 {
-  0%,25%,100% {
+  0%, 25%, 100% {
     -webkit-transform: rotate(-10deg) scale(1, 1) translate3d(0, 0, 0);
             transform: rotate(-10deg) scale(1, 1) translate3d(0, 0, 0);
     z-index: 5;
   }
-  3%,22% {
+  3%, 22% {
     -webkit-transform: rotate(0deg) scale(1.3, 1.3) translate3d(10%, -20%, 0);
             transform: rotate(0deg) scale(1.3, 1.3) translate3d(10%, -20%, 0);
     z-index: 6;
   }
 }
+
 @keyframes film2 {
-  0%,25%,100% {
+  0%, 25%, 100% {
     -webkit-transform: rotate(-10deg) scale(1, 1) translate3d(0, 0, 0);
             transform: rotate(-10deg) scale(1, 1) translate3d(0, 0, 0);
     z-index: 5;
   }
-  3%,22% {
+  3%, 22% {
     -webkit-transform: rotate(0deg) scale(1.3, 1.3) translate3d(10%, -20%, 0);
             transform: rotate(0deg) scale(1.3, 1.3) translate3d(10%, -20%, 0);
     z-index: 6;
   }
 }
+
+.film2 {
+  -webkit-animation-name: film2;
+          animation-name: film2;
+}
+
 @-webkit-keyframes film3 {
-  0%,25%,100% {
+  0%, 25%, 100% {
     -webkit-transform: rotate(5deg) scale(1, 1) translate3d(0, 0, 0);
             transform: rotate(5deg) scale(1, 1) translate3d(0, 0, 0);
     z-index: 5;
   }
-  3%,22% {
+  3%, 22% {
     -webkit-transform: rotate(0deg) scale(1.3, 1.3) translate3d(-5%, -20%, 0);
             transform: rotate(0deg) scale(1.3, 1.3) translate3d(-5%, -20%, 0);
     z-index: 6;
   }
 }
+
 @keyframes film3 {
-  0%,25%,100% {
+  0%, 25%, 100% {
     -webkit-transform: rotate(5deg) scale(1, 1) translate3d(0, 0, 0);
             transform: rotate(5deg) scale(1, 1) translate3d(0, 0, 0);
     z-index: 5;
   }
-  3%,22% {
+  3%, 22% {
     -webkit-transform: rotate(0deg) scale(1.3, 1.3) translate3d(-5%, -20%, 0);
             transform: rotate(0deg) scale(1.3, 1.3) translate3d(-5%, -20%, 0);
     z-index: 6;
   }
 }
+
+.film3 {
+  -webkit-animation-name: film3;
+          animation-name: film3;
+}
+
 @-webkit-keyframes film4 {
-  0%,25%,100% {
+  0%, 25%, 100% {
     -webkit-transform: rotate(20deg) scale(1, 1) translate3d(0, 0, 0);
             transform: rotate(20deg) scale(1, 1) translate3d(0, 0, 0);
     z-index: 5;
   }
-  3%,22% {
+  3%, 22% {
     -webkit-transform: rotate(0deg) scale(1.3, 1.3) translate3d(-20%, -20%, 0);
             transform: rotate(0deg) scale(1.3, 1.3) translate3d(-20%, -20%, 0);
     z-index: 6;
   }
 }
+
 @keyframes film4 {
-  0%,25%,100% {
+  0%, 25%, 100% {
     -webkit-transform: rotate(20deg) scale(1, 1) translate3d(0, 0, 0);
             transform: rotate(20deg) scale(1, 1) translate3d(0, 0, 0);
     z-index: 5;
   }
-  3%,22% {
+  3%, 22% {
     -webkit-transform: rotate(0deg) scale(1.3, 1.3) translate3d(-20%, -20%, 0);
             transform: rotate(0deg) scale(1.3, 1.3) translate3d(-20%, -20%, 0);
     z-index: 6;
   }
 }
+
+.film4 {
+  -webkit-animation-name: film4;
+          animation-name: film4;
+}
+
 @-webkit-keyframes rotateBG {
   0% {
     -webkit-transform: translate3d(-50%, -50%, 0) rotate(0deg);
@@ -901,6 +986,7 @@ html, body {
             transform: translate3d(-50%, -50%, 0) rotate(360deg);
   }
 }
+
 @keyframes rotateBG {
   0% {
     -webkit-transform: translate3d(-50%, -50%, 0) rotate(0deg);
@@ -911,6 +997,12 @@ html, body {
             transform: translate3d(-50%, -50%, 0) rotate(360deg);
   }
 }
+
+.rotateBG {
+  -webkit-animation-name: rotateBG;
+          animation-name: rotateBG;
+}
+
 .wechat-share-hide {
   position: absolute;
   top: -1000px;
@@ -950,6 +1042,7 @@ html, body {
   overflow: hidden;
   z-index: 190;
 }
+
 .main .page {
   position: absolute;
   top: 0px;
@@ -958,13 +1051,16 @@ html, body {
   height: 100%;
   overflow: hidden;
 }
+
 .main .page-1 {
   z-index: 5;
   display: none;
 }
+
 .main .page-1.on {
   display: block;
 }
+
 .main .page-1 .rivers {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -975,10 +1071,12 @@ html, body {
   display: block;
   font-size: 0;
 }
+
 .iphone4 .main .page-1 .rivers {
   bottom: 78%;
   left: 0px;
 }
+
 .main .page-1 .rivers .river {
   white-space: nowrap;
   position: absolute;
@@ -987,10 +1085,12 @@ html, body {
   display: block;
   width: 100%;
 }
+
 .main .page-1 .rivers .river .item {
   display: inline-block;
   width: 15%;
 }
+
 .main .page-1 .rivers .river-1 {
   -webkit-animation: river 4s linear;
           animation: river 4s linear;
@@ -1000,6 +1100,7 @@ html, body {
           animation-iteration-count: infinite;
   z-index: 1;
 }
+
 .main .page-1 .rivers .river-2 {
   top: 25%;
   left: -7.5%;
@@ -1011,6 +1112,7 @@ html, body {
           animation-iteration-count: infinite;
   z-index: 3;
 }
+
 .main .page-1 .rivers .river-3 {
   top: 50%;
   left: 0px;
@@ -1022,6 +1124,7 @@ html, body {
           animation-iteration-count: infinite;
   z-index: 5;
 }
+
 .main .page-1 .rivers .river-4 {
   top: 75%;
   left: -7.5%;
@@ -1033,12 +1136,14 @@ html, body {
           animation-iteration-count: infinite;
   z-index: 7;
 }
+
 .main .page-1 .rivers .river-5 {
   -webkit-transform: translate3d(0, 100%, 0);
           transform: translate3d(0, 100%, 0);
   position: relative;
   z-index: 10;
 }
+
 .main .page-1 .rivers .river-5:after {
   content: " ";
   position: absolute;
@@ -1048,9 +1153,11 @@ html, body {
   height: 58%;
   background-color: #da3043;
 }
+
 .main .page-1 .rivers .lw {
   position: absolute;
 }
+
 .main .page-1 .rivers .lw-1 {
   width: 19.375%;
   margin: 0 auto;
@@ -1066,9 +1173,11 @@ html, body {
           animation-delay: 500ms;
   z-index: 8;
 }
+
 .iphone4 .main .page-1 .rivers .lw-1 {
   width: 15.5%;
 }
+
 .main .page-1 .rivers .lw-2 {
   width: 12.96875%;
   margin: 0 auto;
@@ -1084,9 +1193,11 @@ html, body {
           animation-direction: reverse;
   z-index: 6;
 }
+
 .iphone4 .main .page-1 .rivers .lw-2 {
   width: 10.375%;
 }
+
 .main .page-1 .rivers .lw-3 {
   width: 19.6875%;
   margin: 0 auto;
@@ -1102,9 +1213,11 @@ html, body {
           animation-delay: 1.5s;
   z-index: 6;
 }
+
 .iphone4 .main .page-1 .rivers .lw-3 {
   width: 15.75%;
 }
+
 .main .page-1 .rivers .lw-4 {
   width: 15.46875%;
   margin: 0 auto;
@@ -1122,9 +1235,11 @@ html, body {
           animation-direction: reverse;
   z-index: 4;
 }
+
 .iphone4 .main .page-1 .rivers .lw-4 {
   width: 12.375%;
 }
+
 .main .page-1 .bg {
   position: absolute;
   top: 0px;
@@ -1145,6 +1260,7 @@ html, body {
   display: none;
   z-index: 0;
 }
+
 .main .page-1 .banner {
   margin: 0 auto;
   width: 100%;
@@ -1154,9 +1270,11 @@ html, body {
   opacity: 1;
   text-align: center;
 }
+
 .main .page-1 .banner img {
   width: 90%;
 }
+
 .main .page-1 .banner-text {
   margin: 0 auto;
   width: 100%;
@@ -1164,9 +1282,11 @@ html, body {
   opacity: 1;
   text-align: center;
 }
+
 .main .page-1 .banner-text img {
   width: 90%;
 }
+
 .main .page-1 .haibao {
   position: absolute;
   bottom: 26%;
@@ -1174,18 +1294,22 @@ html, body {
   width: 100%;
   z-index: 2;
 }
+
 .main .page-1 .haibao .box {
   margin: 0 auto;
   width: 100%;
   margin: 0 auto;
   text-align: center;
 }
+
 .iphone4 .main .page-1 .haibao .box {
   width: 80%;
 }
+
 .main .page-1 .haibao .box img {
   width: 90%;
 }
+
 .main .page-1 .haibao .haibao-list {
   margin: 0 auto;
   width: 100%;
@@ -1193,9 +1317,11 @@ html, body {
   text-align: center;
   position: relative;
 }
+
 .iphone4 .main .page-1 .haibao .haibao-list {
   width: 80%;
 }
+
 .main .page-1 .haibao .haibao-list .item {
   position: absolute;
   bottom: 0px;
@@ -1204,81 +1330,95 @@ html, body {
   margin: 0 auto;
   z-index: 5;
 }
+
 .iphone4 .main .page-1 .haibao .haibao-list .item {
   width: 42.1875%;
 }
+
 .main .page-1 .haibao .haibao-list .item-1 {
   bottom: 0;
   left: 10%;
   -webkit-transform: rotate(-20deg);
-      -ms-transform: rotate(-20deg);
           transform: rotate(-20deg);
 }
+
 .main .page-1 .haibao .haibao-list .item-2 {
   bottom: 1.4rem;
   left: 25%;
   -webkit-transform: rotate(-10deg);
-      -ms-transform: rotate(-10deg);
           transform: rotate(-10deg);
 }
+
 .main .page-1 .haibao .haibao-list .item-3 {
   bottom: 1.4rem;
   left: 40%;
   -webkit-transform: rotate(5deg);
-      -ms-transform: rotate(5deg);
           transform: rotate(5deg);
 }
+
 .main .page-1 .haibao .haibao-list .item-4 {
   bottom: 0;
   left: 55%;
   -webkit-transform: rotate(20deg);
-      -ms-transform: rotate(20deg);
           transform: rotate(20deg);
 }
+
 .main .page-1 .haibao-note {
   position: absolute;
   bottom: 62%;
   left: 0px;
   z-index: 1;
 }
+
 .main .page-1 .haibao-note .box {
   margin: 0 auto;
   width: 100%;
   margin: 0 auto;
   text-align: center;
 }
+
 .iphone4 .main .page-1 .haibao-note .box {
   width: 80%;
 }
+
 .main .page-1 .haibao-note .box img {
   width: 90%;
 }
+
 .main .page-1[step="1"] .haibao, .main .page-1[step="1"] .haibao-note {
   display: none;
 }
+
 .main .page-1[step="1"] .banner, .main .page-1[step="1"] .banner-text {
   display: block;
 }
+
 .main .page-1[step="2"] .bg {
   display: block;
 }
+
 .main .page-1[step="2"] .haibao, .main .page-1[step="2"] .haibao-note {
   display: block;
 }
+
 .main .page-1[step="2"] .banner, .main .page-1[step="2"] .banner-text {
   display: none;
 }
+
 .main .page-1[step="2"] .rivers {
   top: auto;
   bottom: 30%;
   margin-top: 0;
 }
+
 .main .page-1[step="2"] .rivers .lw-4 {
   left: 2%;
 }
+
 .main .page-1[step="2"] .rivers .lw-1 {
   left: 14%;
 }
+
 .main .page-1[step="2"] .haibao .item-1 {
   -webkit-animation: film1 12s linear;
           animation: film1 12s linear;
@@ -1289,6 +1429,7 @@ html, body {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
 }
+
 .main .page-1[step="2"] .haibao .item-2 {
   -webkit-animation: film2 12s linear;
           animation: film2 12s linear;
@@ -1299,6 +1440,7 @@ html, body {
   -webkit-animation-delay: 3s;
           animation-delay: 3s;
 }
+
 .main .page-1[step="2"] .haibao .item-3 {
   -webkit-animation: film3 12s linear;
           animation: film3 12s linear;
@@ -1309,6 +1451,7 @@ html, body {
   -webkit-animation-delay: 6s;
           animation-delay: 6s;
 }
+
 .main .page-1[step="2"] .haibao .item-4 {
   -webkit-animation: film4 12s linear;
           animation: film4 12s linear;
@@ -1319,17 +1462,20 @@ html, body {
   -webkit-animation-delay: 9s;
           animation-delay: 9s;
 }
+
 .main .page-2 {
   z-index: 4;
   opacity: 0;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+
 .main .page-2.on {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
 }
+
 .main .page-2 .film-box {
   position: absolute;
   top: 0px;
@@ -1341,12 +1487,14 @@ html, body {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
 }
+
 .main .page-2 .film {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
+
 .main .page-2 .film .bg {
   position: absolute;
   top: 10%;
@@ -1356,15 +1504,18 @@ html, body {
   width: 100%;
   margin: 0 auto;
 }
+
 .iphone4 .main .page-2 .film .bg {
   width: 90%;
 }
+
 .main .page-2 .film .content {
   position: absolute;
   top: 15.5%;
   left: 13.5%;
   width: 73%;
 }
+
 .main .page-2 .film .link {
   position: absolute;
   bottom: 10%;
@@ -1373,36 +1524,45 @@ html, body {
   height: 16%;
   display: none;
 }
+
 .main .page-2 .film .bainian {
   position: absolute;
   bottom: 11%;
   left: 0px;
   width: 100%;
 }
+
 .main .page-2[step="1"] .film-box {
   top: 0;
 }
+
 .main .page-2[step="2"] .film-box {
   top: -100%;
 }
+
 .main .page-2[step="3"] .film-box {
   top: -200%;
 }
+
 .main .page-2[step="4"] .film-box {
   top: -300%;
 }
+
 .main .page-2[step="4"] .film-4 .bainian {
   display: none;
 }
+
 .main .page-2[step="4"] .film-4 .link {
   display: block;
 }
+
 .main .page-3 {
   z-index: 1;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   opacity: 0;
 }
+
 .main .page-3 .bg {
   position: absolute;
   top: 50%;
@@ -1411,10 +1571,12 @@ html, body {
   -webkit-transform: translate3d(-50%, -50%, 0);
           transform: translate3d(-50%, -50%, 0);
 }
+
 .main .page-3.on {
   z-index: 5;
   opacity: 1;
 }
+
 .main .page-3.on .bg {
   -webkit-animation: rotateBG 10s linear;
           animation: rotateBG 10s linear;
@@ -1423,10 +1585,12 @@ html, body {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
+
 .main .page-3.on .bg.run {
   -webkit-animation-duration: 4s;
           animation-duration: 4s;
 }
+
 .main .page-3 .share {
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
@@ -1436,6 +1600,7 @@ html, body {
   height: 100%;
   z-index: 999;
 }
+
 .main .page-3 .box {
   position: absolute;
   top: 10%;
@@ -1446,13 +1611,16 @@ html, body {
           transform: translate3d(-50%, 0, 0);
   z-index: 200;
 }
+
 .iphone4 .main .page-3 .box {
   width: 72%;
 }
+
 .main .page-3 .box .mk {
   position: relative;
   z-index: 10;
 }
+
 .main .page-3 .box .mk .line-box {
   position: absolute;
   top: 51%;
@@ -1462,6 +1630,7 @@ html, body {
   font-size: 0;
   white-space: nowrap;
 }
+
 .main .page-3 .box .mk .line-box .line {
   width: 33%;
   height: 100%;
@@ -1469,9 +1638,11 @@ html, body {
   display: inline-block;
   margin-left: 1%;
 }
+
 .main .page-3 .box .mk .line-box .line:first-child {
   margin-left: 0;
 }
+
 .main .page-3 .box .mk .line-box .line .ls {
   position: relative;
   margin: 0 auto;
@@ -1483,21 +1654,26 @@ html, body {
   -webkit-transition-delay: 1s;
           transition-delay: 1s;
 }
+
 .main .page-3 .box .mk .line-box .line .ls ul {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-transition-delay: 1s;
           transition-delay: 1s;
 }
+
 .main .page-3 .box .mk .line-box .line.line-1 .ls {
   top: -32%;
 }
+
 .main .page-3 .box .mk .line-box .line.line-2 .ls {
   top: -64%;
 }
+
 .main .page-3 .box .mk .line-box .line.line-3 .ls {
   top: -99%;
 }
+
 .main .page-3 .box .mk .hongbao {
   position: absolute;
   bottom: -12.4%;
@@ -1507,6 +1683,7 @@ html, body {
   height: 20%;
   overflow: hidden;
 }
+
 .main .page-3 .box .mk .hongbao .box-m {
   position: absolute;
   top: 0;
@@ -1519,6 +1696,7 @@ html, body {
   -webkit-transition-delay: 300ms;
           transition-delay: 300ms;
 }
+
 .main .page-3 .box .hand {
   position: absolute;
   top: 14%;
@@ -1527,6 +1705,7 @@ html, body {
   transition: all 0.5s ease;
   z-index: 8;
 }
+
 .main .page-3 .box .hand .stars {
   position: absolute;
   top: 0px;
@@ -1534,10 +1713,12 @@ html, body {
   width: 50%;
   height: 50%;
 }
+
 .main .page-3 .box .hand .stars .star {
   position: absolute;
   width: 1rem;
 }
+
 .main .page-3 .box .hand .stars .star.star-1 {
   top: 40%;
   right: 6%;
@@ -1549,6 +1730,7 @@ html, body {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
+
 .main .page-3 .box .hand .stars .star.star-2 {
   top: 60%;
   right: 25%;
@@ -1562,6 +1744,7 @@ html, body {
   -webkit-animation-delay: 500ms;
           animation-delay: 500ms;
 }
+
 .main .page-3 .box .hand .stars .star.star-3 {
   top: 80%;
   right: 3%;
@@ -1575,6 +1758,7 @@ html, body {
   -webkit-animation-delay: 1000ms;
           animation-delay: 1000ms;
 }
+
 .main .page-3 .box .hand .stars .star.star-4 {
   top: 95%;
   right: 25%;
@@ -1587,6 +1771,7 @@ html, body {
   -webkit-animation-delay: 1500ms;
           animation-delay: 1500ms;
 }
+
 .main .page-3 .box .hand .stars .star.star-5 {
   top: 33%;
   right: 25%;
@@ -1599,12 +1784,15 @@ html, body {
   -webkit-animation-delay: 2000ms;
           animation-delay: 2000ms;
 }
+
 .main .page-3 .box.run .hand .stars {
   display: none;
 }
+
 .main .page-3 .box.run .mk .line-box .line.line-1 .ls, .main .page-3 .box.run .mk .line-box .line.line-2 .ls, .main .page-3 .box.run .mk .line-box .line.line-3 .ls {
   top: 0;
 }
+
 .main .page-3 .box.run .mk .line-box .line .ls {
   -webkit-animation: runGame 0.5s linear;
           animation: runGame 0.5s linear;
@@ -1613,11 +1801,12 @@ html, body {
   -webkit-animation-iteration-count: 6;
           animation-iteration-count: 6;
 }
+
 .main .page-3 .box.star .hand {
   -webkit-transform: scale(1, -1);
-      -ms-transform: scale(1, -1);
           transform: scale(1, -1);
 }
+
 .main .page-3 .box.star .ls ul {
   filter: url(blur.svg#blur);
   -webkit-filter: blur(2px);
@@ -1625,23 +1814,28 @@ html, body {
   -ms-filter: blur(2px);
   filter: blur(2px);
 }
+
 .main .page-3 .box.end .mk .hongbao .box-m {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
 }
+
 .main .page-3 .piao {
   position: absolute;
   bottom: 0px;
   left: 0px;
   z-index: 210;
 }
+
 .main .page-3 .piao.run {
   z-index: 1;
 }
+
 .main .page-3 .piao.run .pop {
   display: none;
   opacity: 0;
 }
+
 .main .page-3 .piao .over {
   position: absolute;
   top: 0px;
@@ -1650,16 +1844,19 @@ html, body {
   height: 100%;
   z-index: 101;
 }
+
 .main .page-3 .piao .pop {
   position: absolute;
   bottom: 110%;
   left: 0px;
   display: none;
 }
+
 .main .page-1.on ~ .page-2 {
   -webkit-transform: translate3d(0, 100%, 0);
           transform: translate3d(0, 100%, 0);
 }
+
 .main .note-page {
   position: absolute;
   top: 0px;
@@ -1669,6 +1866,7 @@ html, body {
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 10009;
 }
+
 .main .note-page .close {
   position: absolute;
   top: 5%;
@@ -1680,26 +1878,31 @@ html, body {
   border: solid 2px #fff;
   border-radius: 50%;
 }
+
 @media only screen and (min-width: 321px) and (max-width: 399px) {
   .main .note-page .close {
     font-size: 0;
   }
 }
+
 @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
   .main .note-page .close {
     font-size: 0;
   }
 }
+
 @media only screen and (min-width: 399px) and (max-width: 767px) {
   .main .note-page .close {
     font-size: 0;
   }
 }
+
 @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
   .main .note-page .close {
     font-size: 0;
   }
 }
+
 .main .note-page .content {
   position: absolute;
   top: 50%;
@@ -1707,6 +1910,7 @@ html, body {
   -webkit-transform: translate3d(0, -50%, 0);
           transform: translate3d(0, -50%, 0);
 }
+
 .main .phone {
   position: absolute;
   bottom: 4%;
@@ -1717,9 +1921,11 @@ html, body {
   margin: 0 auto;
   z-index: 100;
 }
+
 .iphone4 .main .phone {
   width: 80%;
 }
+
 .main .phone .over {
   position: absolute;
   top: 6%;
@@ -1728,18 +1934,21 @@ html, body {
   height: 70%;
   z-index: 101;
 }
+
 .main .phone .phone-item {
   position: absolute;
   top: 9%;
   left: 12%;
   width: 34.6875%;
 }
+
 .main .phone .pop {
   position: absolute;
   bottom: 110%;
   left: 0px;
   display: none;
 }
+
 .main .next {
   position: absolute;
   bottom: 1%;
@@ -1754,6 +1963,7 @@ html, body {
           animation-iteration-count: infinite;
   z-index: 102;
 }
+
 .iphone4 .main .next {
   width: 4.875%;
 }
@@ -1761,6 +1971,7 @@ html, body {
 .sliders {
   overflow: hidden;
 }
+
 .sliders .slider {
   position: relative;
   white-space: nowrap;
@@ -1768,6 +1979,7 @@ html, body {
   -webkit-transition: all 0s linear;
   transition: all 0s linear;
 }
+
 .sliders .slider .slide {
   width: 100%;
   display: inline-block;

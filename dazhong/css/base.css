@@ -357,7 +357,7 @@ th {
   -webkit-tap-highlight-color: transparent; }
 
 html, body {
-  font-family: Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self; }
+  font-family: Tahoma,Arial,Roboto,Droid Sans,Helvetica Neue,Droid Sans Fallback,Microsoft YaHei,SimHei,Heiti SC,Hiragino Sans GB,Simsun,sans-self; }
 
 .clearfix:after {
   content: ".";
@@ -389,6 +389,11 @@ ul {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -973,7 +978,6 @@ html, body {
           left: 15%;
           width: 50%;
           -webkit-transform: rotate(-23deg);
-              -ms-transform: rotate(-23deg);
                   transform: rotate(-23deg); }
         .main .otherpage .select-page .menus .arrow-top {
           position: absolute;
@@ -981,7 +985,6 @@ html, body {
           left: 13%;
           width: 50%;
           -webkit-transform: rotate(23deg) scale(1, -1);
-              -ms-transform: rotate(23deg) scale(1, -1);
                   transform: rotate(23deg) scale(1, -1); }
       .main .otherpage .select-page .text {
         position: absolute;
@@ -1043,8 +1046,8 @@ html, body {
           top: 50%;
           left: 50%;
           width: 12.5%;
-          margin-left: -6.25%;
-          margin-top: -6.25%;
+          margin-left: -12.5%/2;
+          margin-top: -12.5%/2;
           z-index: 99;
           -webkit-transform: translate3d(-50%, -50%, 0);
                   transform: translate3d(-50%, -50%, 0);

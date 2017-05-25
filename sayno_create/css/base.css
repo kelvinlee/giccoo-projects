@@ -357,7 +357,7 @@ th {
   -webkit-tap-highlight-color: transparent; }
 
 html, body {
-  font-family: Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self; }
+  font-family: Tahoma,Arial,Roboto,Droid Sans,Helvetica Neue,Droid Sans Fallback,Microsoft YaHei,SimHei,Heiti SC,Hiragino Sans GB,Simsun,sans-self; }
 
 .clearfix:after {
   content: ".";
@@ -480,9 +480,9 @@ html, body {
 @media only screen and (min-width: 735px) and (min-device-width: 768px) {
   body {
     background: #fff; }
-
   .wrap {
     display: none; } }
+
 @-webkit-keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -490,6 +490,7 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
 @keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -497,6 +498,11 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 @-webkit-keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -504,6 +510,7 @@ html, body {
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
+
 @keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -511,6 +518,11 @@ html, body {
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
+
+.second2 {
+  -webkit-animation-name: second2;
+          animation-name: second2; }
+
 .pages {
   display: block;
   height: 100%;
@@ -624,6 +636,7 @@ html, body {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1); } }
+
 @keyframes ball-spin-fade-loader {
   50% {
     opacity: 0.3;
@@ -633,6 +646,7 @@ html, body {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1); } }
+
 .ball-spin-fade-loader {
   position: relative;
   top: -10px;
@@ -702,16 +716,27 @@ html, body {
   100% {
     -webkit-transform: translate3d(-100%, 0, 0);
             transform: translate3d(-100%, 0, 0); } }
+
+.leftmove {
+  -webkit-animation-name: leftmove;
+          animation-name: leftmove; }
+
 @-webkit-keyframes showline {
   0% {
     width: 0; }
   100% {
     width: 96%; } }
+
 @keyframes showline {
   0% {
     width: 0; }
   100% {
     width: 96%; } }
+
+.showline {
+  -webkit-animation-name: showline;
+          animation-name: showline; }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -1188,11 +1213,13 @@ body {
   top: 0px;
   left: 0px;
   width: 100%; }
+
 .pages .slogen {
   position: absolute;
   top: 0px;
   right: 0px;
   width: 80%; }
+
 .pages .kv .box {
   width: 80%;
   background-color: #fff;
@@ -1210,6 +1237,7 @@ body {
     margin-right: 5%;
     margin-left: auto;
     padding: 5% 0 15% 0; }
+
 .pages .kv .box-left {
   position: absolute;
   top: 0;
@@ -1218,6 +1246,7 @@ body {
           transform: rotate(-20deg) scale(0.8);
   opacity: 0.5;
   z-index: -1; }
+
 .pages .kv .box-right {
   position: absolute;
   top: 0;
@@ -1226,10 +1255,12 @@ body {
           transform: rotate(20deg) scale(0.8);
   opacity: 0.5;
   z-index: -1; }
+
 .pages .kv .title {
   margin: 2% auto; }
   .iphone4 .pages .kv .title {
     margin: 2% 10%; }
+
 .pages .kv .btns {
   margin-top: 5%;
   text-align: center; }
@@ -1258,11 +1289,13 @@ body {
     .pages .kv .btns .item .btn {
       width: 90%;
       display: inline-block; }
+
 .pages .page .next-point {
   background: url("http://disk.giccoo.com/projects/sayno_momo/img/next-point.png") no-repeat center center;
   background-size: cover;
   background-color: transparent;
   width: 10%; }
+
 .pages .page.homepage .build {
   width: 70%;
   background-color: #fff;
@@ -1365,14 +1398,17 @@ body {
     width: 70%;
     margin: 0 5% 0 auto;
     padding: 5% 0; }
+
 .pages .page.homepage #index {
   margin: 0 auto; }
+
 .pages .page.homepage .submit {
   width: 50%;
   margin: 0 auto;
   margin-top: 5%; }
   .iphone4 .pages .page.homepage .submit {
     width: 40%; }
+
 .pages .page.homepage .share-box {
   position: relative;
   margin-top: 2%; }
@@ -1391,6 +1427,7 @@ body {
   .pages .page.homepage .share-box .btn-others {
     bottom: 15%;
     left: 50%; }
+
 .pages .page.homepage .other-page {
   z-index: 105; }
   .pages .page.homepage .other-page .other-box {
@@ -1445,6 +1482,7 @@ body {
           border: solid 2px #747474;
           border-radius: 0.5rem;
           overflow: hidden; }
+
 .pages .page.homepage .share-success {
   z-index: 105; }
   .pages .page.homepage .share-success h2 {
@@ -1481,6 +1519,7 @@ body {
     width: 40%;
     margin: 0 auto;
     margin-top: 5%; }
+
 .pages .page.homepage .lottery-faild, .pages .page.homepage .lottery-success {
   z-index: 109; }
   .pages .page.homepage .lottery-faild .content, .pages .page.homepage .lottery-success .content {
@@ -1532,38 +1571,45 @@ body {
     width: 100%;
     height: 1.4rem;
     border-top: solid 2px #01b4e5; }
+
 .pages .page.homepage .show-page, .pages .page.homepage .build-page {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
   height: 100%; }
+
 .pages .page.homepage .show-page .bg {
   position: absolute;
   top: 32%;
   left: 0px;
   width: 100%;
   z-index: -1; }
+
 .pages .page.homepage .show-page .text-1 {
   position: absolute;
   top: 20%;
   left: 0;
   width: 100%; }
+
 .pages .page.homepage .show-page .text-2 {
   position: absolute;
   top: 32%;
   left: 0;
   width: 100%; }
+
 .pages .page.homepage .show-page .start {
   position: absolute;
   bottom: 20%;
   left: 0;
   width: 100%; }
+
 .pages .page.homepage .show-page .active {
   position: absolute;
   bottom: 15%;
   left: 0;
   width: 100%; }
+
 .pages .page.homepage .show-page .active {
   text-align: center;
   font-size: 0.8rem;
@@ -1581,6 +1627,7 @@ body {
   @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
     .pages .page.homepage .show-page .active {
       font-size: 0.96rem; } }
+
 .pages .page.homepage .active-info {
   z-index: 1106; }
   .pages .page.homepage .active-info .title {
@@ -1644,6 +1691,7 @@ body {
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
         .pages .page.homepage .active-info .content p {
           font-size: 0.96rem; } }
+
 .pages .page.homepage .image-info {
   z-index: 111; }
   .pages .page.homepage .image-info .close {
@@ -1671,7 +1719,7 @@ body {
   top: 60%;
   left: 50%;
   width: 35%;
-  margin-left: -17.5%; }
+  margin-left: -35%/2; }
 
 .testCanvas {
   position: absolute;

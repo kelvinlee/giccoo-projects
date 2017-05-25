@@ -1,0 +1,274 @@
+extends ../libs/jade/layout-clean
+block title
+	| 潮汐更迭 共续蔚蓝心动
+
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css?v=1")
+
+block content
+	// - url = "http://image.giccoo.com/projects/lincoln_mkz/"
+	- url = "./"
+	.wechat-share-hide
+		img#share(src="http://image.giccoo.com/projects/lincoln_mkz/img/share.jpg")
+	.pages
+		.loading
+			.content
+				.logo
+					img(src="#{url}img/loading-white.png")
+					.white
+						img(src="#{url}img/loading-white.png")
+					.tree
+						img(src="#{url}img/loading-color.png")
+				.text
+					span Loading
+					em.em1 .
+					em.em2 .
+					em.em3 .
+		.page.page-one
+			.content
+				.texts
+					.text.text-1.fadeInUp.animated.duration-10.delay-12
+						img(first-load-src="#{url}img/page-1-text-1.png")
+					.text.text-2.fadeInUp.animated.duration-10.delay-15
+						img(first-load-src="#{url}img/page-1-text-2.png")
+					.text.text-2.fadeInUp.animated.duration-10.delay-17
+						img(first-load-src="#{url}img/page-1-text-3.png")
+					.btn.fadeInUp.animated.duration-10.delay-19
+						img(first-load-src="#{url}img/page-1-btn.png")
+				.bg
+					img(first-load-src="#{url}img/page-1-background.jpg")
+					.down.fadeOut.animated.duration-30.delay-5.last
+						img(first-load-src="#{url}img/page-1-down.jpg")
+					.stars.stars-1
+					.stars.stars-2
+					.stars.stars-3
+		
+		.page.page-two(next=".page-three",wait="1000")
+			.content
+				.texts
+					.text.text-1.fadeInUp.animated.duration-10.delay-2
+						img(first-load-src="#{url}img/page-2-text-1.png")
+					.text.text-2.fadeInUp.animated.duration-10.delay-4
+						img(first-load-src="#{url}img/page-2-text-2.png")
+				.bg.fadeInZoom.animated.delay-7.duration-30.last
+					img(first-load-src="#{url}img/page-2-background.jpg")
+
+		.page.page-three(next=".page-four",wait="1000")
+			.content
+				.texts
+					.text.text-1.fadeInUp.animated.duration-10.delay-10
+						img(first-load-src="#{url}img/page-3-text-1.png")
+					.text.text-2.fadeInUp.animated.duration-10.delay-12
+						img(first-load-src="#{url}img/page-3-text-2.png")
+				.bg.fadeInZoomBig.animated.delay-3.duration-20.last
+					img(first-load-src="#{url}img/page-3-background.jpg")
+
+		.page.page-four
+			.content
+				.texts
+					.text.text-1.fadeInUp.animated.duration-10.delay-2
+						img(second-load-src="#{url}img/page-4-text-1.png")
+					.text.text-2.fadeInUp.animated.duration-11.delay-4
+						img(second-load-src="#{url}img/page-4-text-2.png")
+					.text.text-3.fadeInUp.animated.duration-12.delay-6
+						img(second-load-src="#{url}img/page-4-text-3.png")
+					.text.text-4.fadeInUp.animated.duration-13.delay-8
+						img(second-load-src="#{url}img/page-4-text-4.png")
+					.btn.btn-1.fadeInUp.animated.duration-14.delay-10
+						img(second-load-src="#{url}img/page-4-btn-1.png")
+					.btn.btn-2.fadeInUp.animated.duration-15.delay-12
+						img(second-load-src="#{url}img/page-4-btn-2.png")
+
+		.page.page-four-1(next=".page-four-2",wait="1000")
+			.content
+				.bg.bgDown.animated.duration-40.delay-5.linear
+					img(second-load-src="#{url}img/page-4-1-background.jpg")
+				.texts.fadeInUp.animated.duration-10.delay-40
+					.text.text-1.fadeInUp.animated.delay-40
+						img(second-load-src="#{url}img/page-4-1-text-1.png")
+					.text.text-2.fadeInUp.animated.delay-42
+						img(second-load-src="#{url}img/page-4-1-text-2.png")
+					.text.text-3.fadeInUp.animated.delay-44
+						img(second-load-src="#{url}img/page-4-1-text-3.png")
+					.text.text-4.fadeInUp.animated.delay-46.last
+						img(second-load-src="#{url}img/page-4-1-text-4.png")
+
+		.page.page-four-2(next=".page-four-3",wait="1000")
+			.content
+				.bg.fadeInZoomBig.animated.duration-40.last
+				.texts
+					.text.text-1.fadeInUp.animated.duration-10.delay-4
+						img(second-load-src="#{url}img/page-4-2-text-1.png")
+					.text.text-2.fadeInUp.animated.duration-10.delay-6
+						img(second-load-src="#{url}img/page-4-2-text-2.png")
+		
+		.page.page-four-3(next=".page-five",wait="1000")
+			.content
+				.bg
+					img(second-load-src="#{url}img/page-4-3-background.jpg")
+					.mark.fadeOut.animated.duration-30.delay-5.last
+						img(second-load-src="#{url}img/page-4-3-background.png")
+					.stars
+				.texts
+					.text.text-1.fadeInDown.animated.duration-10.delay-4
+						img(second-load-src="#{url}img/page-4-3-text-1.png")
+
+		.page.page-five
+			.content
+				.texts
+					.text.text-1.fadeInUp.animated.duration-10.delay-2
+						img(second-load-src="#{url}img/page-5-text-1.png")
+					.text.text-2.fadeInUp.animated.duration-11.delay-4
+						img(second-load-src="#{url}img/page-5-text-2.png")
+					.text.text-3.fadeInUp.animated.duration-12.delay-6
+						img(second-load-src="#{url}img/page-5-text-3.png")
+					.btn.btn-1.fadeInUp.animated.duration-14.delay-10
+						img(second-load-src="#{url}img/page-5-btn-2.png")
+					.btn.btn-2.fadeInUp.animated.duration-15.delay-12
+						img(second-load-src="#{url}img/page-5-btn-1.png")
+
+		.page.page-five-1(next=".page-five-2",wait="2000")
+			.content
+				.bg.fadeInZoomBig.animated.duration-30.last
+					img(last-load-src="#{url}img/page-5-1-background.jpg")
+				.texts
+					.text.text-1.fadeInUp.animated.duration-10.delay-2
+						img(last-load-src="#{url}img/page-5-1-text-1.png")
+					.text.text-2.fadeInUp.animated.duration-11.delay-4
+						img(last-load-src="#{url}img/page-5-1-text-2.png")
+					.text.text-3.fadeInUp.animated.duration-12.delay-6
+						img(last-load-src="#{url}img/page-5-1-text-3.png")
+
+		.page.page-five-2(next=".page-five-3",wait="1000")
+			.content
+				.bg.fadeInZoomBigOp.animated.duration-30.last
+				.texts
+					.text.text-1.fadeInUp.animated.duration-10.delay-2
+						img(last-load-src="#{url}img/page-5-2-text-1.png")
+					.text.text-2.fadeInUp.animated.duration-11.delay-4
+						img(last-load-src="#{url}img/page-5-2-text-2.png")
+					.text.text-3.fadeInUp.animated.duration-12.delay-6
+						img(last-load-src="#{url}img/page-5-2-text-3.png")
+
+		.page.page-five-3(next=".page-five-4",wait="1000")
+			.content
+				.bg.fadeInZoomBigOp.animated.duration-30
+					.cover.fadeOut.animated.duration-20.delay-15.last
+					.stars
+				.texts
+					.text.text-1.fadeInUp.animated.duration-10.delay-2
+						img(last-load-src="#{url}img/page-5-3-text-1.png")
+					.text.text-2.fadeInUp.animated.duration-11.delay-4
+						img(last-load-src="#{url}img/page-5-3-text-2.png")
+					.text.text-3.fadeInUp.animated.duration-12.delay-6
+						img(last-load-src="#{url}img/page-5-3-text-3.png")
+
+		.page.page-five-4(next=".page-six",wait="2000")
+			.content
+				.bg.fadeInZoomBigOp.animated.duration-30.last
+				.texts
+					.text.text-1.fadeInUp.animated.duration-10.delay-2
+						img(last-load-src="#{url}img/page-5-4-text-1.png")
+					.text.text-2.fadeInUp.animated.duration-11.delay-4
+						img(last-load-src="#{url}img/page-5-4-text-2.png")
+
+		.page.page-six
+			.content
+				.bg
+				.texts
+					.text.text-1.fadeInUp.animated.duration-10.delay-2
+						img(last-load-src="#{url}img/page-6-text-1.png")
+					.text.text-2.fadeInUp.animated.duration-11.delay-4
+						img(last-load-src="#{url}img/page-6-text-2.png")
+					.btn.btn-1.fadeInUp.animated.duration-11.delay-6
+						img(last-load-src="#{url}img/page-6-btn-1.png")
+
+		.page.page-seven(next=".page-eight",wait="2000")
+			.content
+				.bg.fadeInZoomBig.animated.duration-30.last
+					img(last-load-src="#{url}img/page-7-background.jpg")
+					.stars.stars-1
+					.stars.stars-2
+					.stars.stars-3
+					// .hand.fadeIn.animated.duration-10.delay-35
+						img(last-load-src="#{url}img/hand.png")
+				.texts
+					.text.text-1.fadeInUp.animated.duration-10.delay-2
+						img(last-load-src="#{url}img/page-7-text-1.png")
+					.text.text-2.fadeInUp.animated.duration-11.delay-4
+						img(last-load-src="#{url}img/page-7-text-2.png")
+					.text.text-1.fadeInUp.animated.duration-11.delay-6
+						img(last-load-src="#{url}img/page-7-text-3.png")
+
+		.page.page-eight
+			.content
+				.texts
+					.text.text-1.fadeInUp.animated.duration-10.delay-2
+						img(last-load-src="#{url}img/page-8-text-1.png")
+					.text.text-2.fadeInUp.animated.duration-10.delay-4
+						img(last-load-src="#{url}img/page-8-text-2.png")
+					.text.text-3.fadeInUp.animated.duration-11.delay-6
+						img(last-load-src="#{url}img/page-8-product.png")
+					.text.text-4.fadeInUp.animated.duration-11.delay-10
+						img(last-load-src="#{url}img/page-8-text-3.png")
+					.text.text-5.fadeInUp.animated.duration-11.delay-12
+						img(last-load-src="#{url}img/page-8-text-4.png")
+					.text.text-6.fadeInUp.animated.duration-12.delay-14
+						img(last-load-src="#{url}img/page-8-text-5.png")
+					.btn.btn-1.fadeInUp.animated.duration-12.delay-16
+						a(href="http://www.baidu.com")
+							img(last-load-src="#{url}img/page-8-btn-1.png")
+
+		// .page.page-eight(next=".page-nine",wait="4500")
+			.content
+				.texts
+					.title.Stamp.animated.duration-5.delay-2
+						img(last-load-src="#{url}img/page-8-title.png")
+					.text.text-1.fadeInUp.animated.duration-10.delay-5
+						img(last-load-src="#{url}img/page-8-text-1.png")
+					.text.text-2.fadeInUp.animated.duration-11.delay-7
+						img(last-load-src="#{url}img/page-8-text-2.png")
+					.text.text-3.fadeInUp.animated.duration-12.delay-8.last
+						img(last-load-src="#{url}img/page-8-text-2.png")
+				.video
+					canvas#player(width="620",height="340")
+
+			.hidevideo
+				video#video(src="#{url}video/video.mp4",controls,width="620",height="340",poster="#{url}img/black.jpg",webkit-playsinline,playsinline,loop)
+		// .page.page-nine
+			.content
+				.texts
+					.title.Stamp.animated.duration-5.delay-2
+						img(last-load-src="#{url}img/page-9-title.png")
+					.text.text-1.fadeInUp.animated.duration-10.delay-4
+						img(last-load-src="#{url}img/page-9-product.png")
+					.text.text-2.fadeInUp.animated.duration-11.delay-6
+						img(last-load-src="#{url}img/page-9-text-1.png")
+					.text.text-3.fadeInUp.animated.duration-12.delay-8
+						img(last-load-src="#{url}img/page-9-text-2.png")
+					.text.text-4.fadeInUp.animated.duration-12.delay-10
+						img(last-load-src="#{url}img/page-9-text-3.png")
+					.btn.btn-1.fadeInUp.animated.duration-12.delay-12
+						a(href="http://www.baidu.com")
+							img(last-load-src="#{url}img/page-9-btn-1.png")
+
+block js
+	- url = "/"
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/jquery.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/riot.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/cityData.js")
+	//- script(src="js/tags.js?v=1")
+	script(src="js/main.js?v=1")
+	script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();

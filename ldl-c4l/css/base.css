@@ -357,7 +357,7 @@ th {
   -webkit-tap-highlight-color: transparent; }
 
 html, body {
-  font-family: Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self; }
+  font-family: Tahoma,Arial,Roboto,Droid Sans,Helvetica Neue,Droid Sans Fallback,Microsoft YaHei,SimHei,Heiti SC,Hiragino Sans GB,Simsun,sans-self; }
 
 .clearfix:after {
   content: ".";
@@ -480,9 +480,9 @@ html, body {
 @media only screen and (min-width: 735px) and (min-device-width: 768px) {
   body {
     background: #fff; }
-
   .wrap {
     display: none; } }
+
 @-webkit-keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -490,6 +490,7 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
 @keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -497,6 +498,11 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 @-webkit-keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -504,6 +510,7 @@ html, body {
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
+
 @keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -511,6 +518,11 @@ html, body {
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
+
+.second2 {
+  -webkit-animation-name: second2;
+          animation-name: second2; }
+
 .pages {
   display: block;
   height: 100%;
@@ -624,6 +636,7 @@ html, body {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1); } }
+
 @keyframes ball-spin-fade-loader {
   50% {
     opacity: 0.3;
@@ -633,6 +646,7 @@ html, body {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1); } }
+
 .ball-spin-fade-loader {
   position: relative;
   top: -10px;
@@ -702,16 +716,27 @@ html, body {
   100% {
     -webkit-transform: translate3d(-100%, 0, 0);
             transform: translate3d(-100%, 0, 0); } }
+
+.leftmove {
+  -webkit-animation-name: leftmove;
+          animation-name: leftmove; }
+
 @-webkit-keyframes showline {
   0% {
     width: 0; }
   100% {
     width: 96%; } }
+
 @keyframes showline {
   0% {
     width: 0; }
   100% {
     width: 96%; } }
+
+.showline {
+  -webkit-animation-name: showline;
+          animation-name: showline; }
+
 @-webkit-keyframes nextpoint {
   0% {
     opacity: 0.5;
@@ -723,6 +748,7 @@ html, body {
     opacity: 0.5;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
+
 @keyframes nextpoint {
   0% {
     opacity: 0.5;
@@ -734,6 +760,11 @@ html, body {
     opacity: 0.5;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
+
+.nextpoint {
+  -webkit-animation-name: nextpoint;
+          animation-name: nextpoint; }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -1207,14 +1238,16 @@ body {
   top: 60%;
   left: 50%;
   width: 35%;
-  margin-left: -17.5%; }
+  margin-left: -35%/2; }
 
 .model .title {
   font-size: 0; }
+
 .model .bg {
   font-size: 0;
   overflow: hidden;
   position: relative; }
+
 .model .left {
   position: absolute;
   top: 50%;
@@ -1227,6 +1260,7 @@ body {
   z-index: 101; }
   .iphone4 .model .left {
     width: 5.75%; }
+
 .model .right {
   position: absolute;
   top: 50%;
@@ -1239,6 +1273,7 @@ body {
   z-index: 101; }
   .iphone4 .model .right {
     width: 5.75%; }
+
 .model .left2 {
   position: absolute;
   top: 50%;
@@ -1250,6 +1285,7 @@ body {
           transform: translate3d(0, -50%, 0); }
   .iphone4 .model .left2 {
     width: 5%; }
+
 .model .right2 {
   position: absolute;
   top: 50%;
@@ -1261,6 +1297,7 @@ body {
           transform: translate3d(0, -50%, 0) scale(-1, 1); }
   .iphone4 .model .right2 {
     width: 5%; }
+
 .model.model-1 {
   height: 100%;
   background-color: #b1d2e3; }
@@ -1318,14 +1355,17 @@ body {
     position: absolute;
     top: 75%;
     left: 0px; }
+
 .model.model-2 .title {
   margin-top: 5%; }
+
 .model.model-2 .bg {
   position: absolute;
   bottom: 0px;
   left: 0px;
   width: 100%;
   z-index: -1; }
+
 .model.model-3 {
   background-color: #fafafa; }
   .model.model-3 .bg {
@@ -1335,8 +1375,10 @@ body {
     background-size: contain;
     background-color: transparent;
     background-color: #fafafa; }
+
 .model.model-4 .title {
   padding: 5% 0; }
+
 .model.model-4 .bg {
   text-align: center; }
   .model.model-4 .bg video {
@@ -1359,6 +1401,7 @@ body {
     @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
       .model.model-4 .bg p {
         font-size: 1.2rem; } }
+
 .model.model-5 .title {
   padding: 5% 0; }
 
@@ -1567,6 +1610,7 @@ body {
   position: absolute;
   bottom: 0px;
   left: 0px; }
+
 .homepage .banner {
   margin-top: 10%; }
 

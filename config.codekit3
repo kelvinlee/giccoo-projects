@@ -13198,6 +13198,16 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"\/css\/base.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/css\/base-min.css",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/dazhong\/coffee\/main.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -22324,6 +22334,957 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/jiaomu\/mp4\/v1.mp4",
+		"oF": 0
+		},
+	"\/lamer\/coffee\/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/lamer\/js\/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0
+		},
+	"\/lamer\/css\/base.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/lamer\/css\/base-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/lamer\/img\/black.jpg": {
+		"ft": 16384,
+		"iS": 1256,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/black.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/img\/hand.png": {
+		"ft": 32768,
+		"iS": 3964,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/hand.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/loading-color.png": {
+		"ft": 32768,
+		"iS": 14456,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/loading-color.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/loading-white.png": {
+		"ft": 32768,
+		"iS": 7517,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/loading-white.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-1-background.jpg": {
+		"ft": 16384,
+		"iS": 77879,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-1-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/img\/page-1-btn.png": {
+		"ft": 32768,
+		"iS": 2227,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-1-btn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-1-down.jpg": {
+		"ft": 16384,
+		"iS": 7348,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-1-down.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/img\/page-1-text-1.png": {
+		"ft": 32768,
+		"iS": 4626,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-1-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-1-text-2.png": {
+		"ft": 32768,
+		"iS": 3304,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-1-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-1-text-3.png": {
+		"ft": 32768,
+		"iS": 4073,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-1-text-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-2-background.jpg": {
+		"ft": 16384,
+		"iS": 19963,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-2-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/img\/page-2-text-1.png": {
+		"ft": 32768,
+		"iS": 5039,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-2-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-2-text-2.png": {
+		"ft": 32768,
+		"iS": 4166,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-2-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-3-background.jpg": {
+		"ft": 16384,
+		"iS": 29858,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-3-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/img\/page-3-text-1.png": {
+		"ft": 32768,
+		"iS": 3236,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-3-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-3-text-2.png": {
+		"ft": 32768,
+		"iS": 4491,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-3-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-1-background.jpg": {
+		"ft": 16384,
+		"iS": 216018,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-1-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-1-text-1.png": {
+		"ft": 32768,
+		"iS": 2002,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-1-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-1-text-2.png": {
+		"ft": 32768,
+		"iS": 4277,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-1-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-1-text-3.png": {
+		"ft": 32768,
+		"iS": 3538,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-1-text-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-1-text-4.png": {
+		"ft": 32768,
+		"iS": 4166,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-1-text-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-2-background.jpg": {
+		"ft": 16384,
+		"iS": 41295,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-2-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-2-text-1.png": {
+		"ft": 32768,
+		"iS": 5120,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-2-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-2-text-2.png": {
+		"ft": 32768,
+		"iS": 4769,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-2-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-3-background.jpg": {
+		"ft": 16384,
+		"iS": 48387,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-3-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-3-background.png": {
+		"ft": 32768,
+		"iS": 28466,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-3-background.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-3-text-1.png": {
+		"ft": 32768,
+		"iS": 4705,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-3-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-background.jpg": {
+		"ft": 16384,
+		"iS": 27892,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-btn-1.png": {
+		"ft": 32768,
+		"iS": 2302,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-btn-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-btn-2.png": {
+		"ft": 32768,
+		"iS": 2303,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-btn-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-text-1.png": {
+		"ft": 32768,
+		"iS": 4629,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-text-2.png": {
+		"ft": 32768,
+		"iS": 5178,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-text-3.png": {
+		"ft": 32768,
+		"iS": 3723,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-text-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-4-text-4.png": {
+		"ft": 32768,
+		"iS": 3350,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-4-text-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-1-background.jpg": {
+		"ft": 16384,
+		"iS": 36353,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-1-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-1-text-1.png": {
+		"ft": 32768,
+		"iS": 3612,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-1-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-1-text-2.png": {
+		"ft": 32768,
+		"iS": 4120,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-1-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-1-text-3.png": {
+		"ft": 32768,
+		"iS": 4427,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-1-text-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-2-background.jpg": {
+		"ft": 16384,
+		"iS": 43457,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-2-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-2-text-1.png": {
+		"ft": 32768,
+		"iS": 4279,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-2-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-2-text-2.png": {
+		"ft": 32768,
+		"iS": 3988,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-2-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-2-text-3.png": {
+		"ft": 32768,
+		"iS": 4964,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-2-text-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-3-background.jpg": {
+		"ft": 16384,
+		"iS": 48574,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-3-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-3-background.png": {
+		"ft": 32768,
+		"iS": 48695,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-3-background.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-3-text-1.png": {
+		"ft": 32768,
+		"iS": 3465,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-3-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-3-text-2.png": {
+		"ft": 32768,
+		"iS": 3279,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-3-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-3-text-3.png": {
+		"ft": 32768,
+		"iS": 4733,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-3-text-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-4-background.jpg": {
+		"ft": 16384,
+		"iS": 44711,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-4-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-4-text-1.png": {
+		"ft": 32768,
+		"iS": 3303,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-4-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-4-text-2.png": {
+		"ft": 32768,
+		"iS": 3829,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-4-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-btn-1.png": {
+		"ft": 32768,
+		"iS": 1999,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-btn-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-btn-2.png": {
+		"ft": 32768,
+		"iS": 2350,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-btn-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-text-1.png": {
+		"ft": 32768,
+		"iS": 4553,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-text-2.png": {
+		"ft": 32768,
+		"iS": 3569,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-5-text-3.png": {
+		"ft": 32768,
+		"iS": 3152,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-5-text-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-6-background.jpg": {
+		"ft": 16384,
+		"iS": 33741,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-6-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/img\/page-6-btn-1.png": {
+		"ft": 32768,
+		"iS": 2149,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-6-btn-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-6-text-1.png": {
+		"ft": 32768,
+		"iS": 3630,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-6-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-6-text-2.png": {
+		"ft": 32768,
+		"iS": 3642,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-6-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-7-background.jpg": {
+		"ft": 16384,
+		"iS": 62523,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-7-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-7-text-1.png": {
+		"ft": 32768,
+		"iS": 5004,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-7-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-7-text-2.png": {
+		"ft": 32768,
+		"iS": 4947,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-7-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-7-text-3.png": {
+		"ft": 32768,
+		"iS": 4859,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-7-text-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-8-background.jpg": {
+		"ft": 16384,
+		"iS": 97308,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-8-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/img\/page-8-btn-1.png": {
+		"ft": 32768,
+		"iS": 3590,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-8-btn-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-8-product.png": {
+		"ft": 32768,
+		"iS": 159223,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-8-product.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-8-text-1.png": {
+		"ft": 32768,
+		"iS": 4571,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-8-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-8-text-2.png": {
+		"ft": 32768,
+		"iS": 4821,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-8-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-8-text-3.png": {
+		"ft": 32768,
+		"iS": 5061,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-8-text-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-8-text-4.png": {
+		"ft": 32768,
+		"iS": 4188,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-8-text-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/page-8-text-5.png": {
+		"ft": 32768,
+		"iS": 3285,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/page-8-text-5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lamer\/img\/share.jpg": {
+		"ft": 16384,
+		"iS": 36215,
+		"oA": 0,
+		"oAP": "\/lamer\/img\/share.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lamer\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/index.html",
+		"oF": 0
+		},
+	"\/lamer\/index.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/lamer\/index.html",
+		"oF": 2,
+		"oS": 0
+		},
+	"\/lamer\/js\/main.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/lamer\/js\/min\/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/lamer\/sass\/.sass-cache\/3f763b32e55f83a4b869db21b7d91fec8cef1a9b\/base.sassc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/sass\/.sass-cache\/3f763b32e55f83a4b869db21b7d91fec8cef1a9b\/base.sassc",
+		"oF": 0
+		},
+	"\/lamer\/sass\/.sass-cache\/aaeb416075cb508f1a7dec063022968a74b13575\/base.sassc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/sass\/.sass-cache\/aaeb416075cb508f1a7dec063022968a74b13575\/base.sassc",
+		"oF": 0
+		},
+	"\/lamer\/sass\/.sass-cache\/e1e76c82274f29432d34f22c377f885d6a978a75\/base.sassc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/sass\/.sass-cache\/e1e76c82274f29432d34f22c377f885d6a978a75\/base.sassc",
+		"oF": 0
+		},
+	"\/lamer\/sass\/.sass-cache\/e525706c05bc9ab71b773ed6eb6070af96d9c6e4\/base.sassc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/sass\/.sass-cache\/e525706c05bc9ab71b773ed6eb6070af96d9c6e4\/base.sassc",
+		"oF": 0
+		},
+	"\/lamer\/sass\/.sass-cache\/e525706c05bc9ab71b773ed6eb6070af96d9c6e4\/default.sassc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/sass\/.sass-cache\/e525706c05bc9ab71b773ed6eb6070af96d9c6e4\/default.sassc",
+		"oF": 0
+		},
+	"\/lamer\/sass\/.sass-cache\/e525706c05bc9ab71b773ed6eb6070af96d9c6e4\/helper.sassc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/sass\/.sass-cache\/e525706c05bc9ab71b773ed6eb6070af96d9c6e4\/helper.sassc",
+		"oF": 0
+		},
+	"\/lamer\/sass\/.sass-cache\/e525706c05bc9ab71b773ed6eb6070af96d9c6e4\/normalize.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/sass\/.sass-cache\/e525706c05bc9ab71b773ed6eb6070af96d9c6e4\/normalize.scssc",
+		"oF": 0
+		},
+	"\/lamer\/sass\/.sass-cache\/e525706c05bc9ab71b773ed6eb6070af96d9c6e4\/screen.sassc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/sass\/.sass-cache\/e525706c05bc9ab71b773ed6eb6070af96d9c6e4\/screen.sassc",
+		"oF": 0
+		},
+	"\/lamer\/sass\/.sass-cache\/e7cb53404752de7bc313e2d4ea3116916b1cb20e\/loader-ball.sassc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/sass\/.sass-cache\/e7cb53404752de7bc313e2d4ea3116916b1cb20e\/loader-ball.sassc",
+		"oF": 0
+		},
+	"\/lamer\/sass\/.sass-cache\/e7cb53404752de7bc313e2d4ea3116916b1cb20e\/loader-pacman.sassc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/sass\/.sass-cache\/e7cb53404752de7bc313e2d4ea3116916b1cb20e\/loader-pacman.sassc",
+		"oF": 0
+		},
+	"\/lamer\/sass\/.sass-cache\/e7cb53404752de7bc313e2d4ea3116916b1cb20e\/loader.sassc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/sass\/.sass-cache\/e7cb53404752de7bc313e2d4ea3116916b1cb20e\/loader.sassc",
+		"oF": 0
+		},
+	"\/lamer\/sass\/.sass-cache\/e7cb53404752de7bc313e2d4ea3116916b1cb20e\/loading.sassc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/sass\/.sass-cache\/e7cb53404752de7bc313e2d4ea3116916b1cb20e\/loading.sassc",
+		"oF": 0
+		},
+	"\/lamer\/sass\/.sass-cache\/e7cb53404752de7bc313e2d4ea3116916b1cb20e\/parallax.sassc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/sass\/.sass-cache\/e7cb53404752de7bc313e2d4ea3116916b1cb20e\/parallax.sassc",
+		"oF": 0
+		},
+	"\/lamer\/sass\/.sass-cache\/ebed15f440fe08abe755a95d590afa696dc8925c\/base.sassc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/sass\/.sass-cache\/ebed15f440fe08abe755a95d590afa696dc8925c\/base.sassc",
+		"oF": 0
+		},
+	"\/lamer\/sass\/base.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/lamer\/css\/base.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/lamer\/tags\/loader.tag": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/tags\/loader.tag",
+		"oF": 0
+		},
+	"\/lamer\/tags\/lottery.tag": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/tags\/lottery.tag",
+		"oF": 0
+		},
+	"\/lamer\/tags\/note.tag": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/tags\/note.tag",
+		"oF": 0
+		},
+	"\/lamer\/tags\/register.tag": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/tags\/register.tag",
+		"oF": 0
+		},
+	"\/lamer\/tags\/slider.tag": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/tags\/slider.tag",
+		"oF": 0
+		},
+	"\/lamer\/video\/video.mp4": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lamer\/video\/video.mp4",
 		"oF": 0
 		},
 	"\/lancome_form\/css\/main.css": {
@@ -38379,6 +39340,16 @@
 		"oF": 0,
 		"oS": 1,
 		"sC": 0
+		},
+	"\/upload\/css\/base.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/upload\/css\/base-min.css",
+		"oF": 0,
+		"oS": 0
 		},
 	"\/upload\/index.html": {
 		"ft": 8192,

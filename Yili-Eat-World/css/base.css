@@ -357,7 +357,7 @@ th {
   -webkit-tap-highlight-color: transparent; }
 
 html, body {
-  font-family: Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self; }
+  font-family: Tahoma,Arial,Roboto,Droid Sans,Helvetica Neue,Droid Sans Fallback,Microsoft YaHei,SimHei,Heiti SC,Hiragino Sans GB,Simsun,sans-self; }
 
 .clearfix:after {
   content: ".";
@@ -386,7 +386,7 @@ html, body {
 
 .loading {
   -webkit-transition: all 0.5s linear;
-          transition: all 0.5s linear;
+  transition: all 0.5s linear;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -406,23 +406,21 @@ html, body {
     opacity: 0; }
   .loading.loaded {
     -webkit-transition: all 0s linear;
-            transition: all 0s linear;
+    transition: all 0s linear;
     opacity: 1;
     z-index: 99999;
     display: block; }
   .loading.finished .loading-logo {
     opacity: 1;
     -webkit-transform: scale(1, 1);
-        -ms-transform: scale(1, 1);
             transform: scale(1, 1); }
   .loading.finished span {
     -webkit-transform: scale(0.2, 0.2);
-        -ms-transform: scale(0.2, 0.2);
             transform: scale(0.2, 0.2);
     opacity: 0; }
   .loading .loading-logo, .loading .loading-normal {
     -webkit-transition: all 0.5s ease;
-            transition: all 0.5s ease;
+    transition: all 0.5s ease;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -431,7 +429,6 @@ html, body {
     width: 5em;
     height: 5em;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     overflow: hidden; }
   .loading .loading-normal {
@@ -483,9 +480,9 @@ html, body {
 @media only screen and (min-width: 735px) and (min-device-width: 768px) {
   body {
     background: #fff; }
-
   .wrap {
     display: none; } }
+
 @-webkit-keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -493,6 +490,7 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
 @keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -500,6 +498,11 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 @-webkit-keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -507,6 +510,7 @@ html, body {
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
+
 @keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -514,6 +518,11 @@ html, body {
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
+
+.second2 {
+  -webkit-animation-name: second2;
+          animation-name: second2; }
+
 @-webkit-keyframes Flash {
   0% {
     opacity: 1; }
@@ -521,6 +530,7 @@ html, body {
     opacity: 0.2; }
   100% {
     opacity: 1; } }
+
 @keyframes Flash {
   0% {
     opacity: 1; }
@@ -528,6 +538,11 @@ html, body {
     opacity: 0.2; }
   100% {
     opacity: 1; } }
+
+.Flash {
+  -webkit-animation-name: Flash;
+          animation-name: Flash; }
+
 @-webkit-keyframes nextPoint {
   from {
     -webkit-transform: scale(1, 1);
@@ -537,6 +552,7 @@ html, body {
     -webkit-transform: scale(2, 2);
             transform: scale(2, 2);
     opacity: 0; } }
+
 @keyframes nextPoint {
   from {
     -webkit-transform: scale(1, 1);
@@ -546,6 +562,11 @@ html, body {
     -webkit-transform: scale(2, 2);
             transform: scale(2, 2);
     opacity: 0; } }
+
+.nextPoint {
+  -webkit-animation-name: nextPoint;
+          animation-name: nextPoint; }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -802,7 +823,6 @@ html, body {
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
     -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
             transform-origin: center center; }
 
 .share-wechat {
@@ -834,7 +854,7 @@ html, body {
   white-space: nowrap;
   font-size: 0;
   -webkit-transition: all 0s linear;
-          transition: all 0s linear; }
+  transition: all 0s linear; }
   .slider .slide {
     width: 100%;
     display: inline-block;
@@ -916,7 +936,6 @@ body {
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
         -webkit-transform-origin: bottom center;
-            -ms-transform-origin: bottom center;
                 transform-origin: bottom center; }
     .loading .new-load .load-progress {
       font-size: 1rem;
@@ -960,6 +979,7 @@ body {
     margin-right: 15%; }
     .iphone4 .notepage .cp .cp-w {
       width: 25%; }
+
 .notepage .items {
   position: absolute;
   bottom: 15%;
@@ -997,6 +1017,7 @@ body {
     .notepage .items .item.item-6 {
       bottom: 36%;
       left: -2%; }
+
 .notepage .button {
   position: absolute;
   bottom: 0px;
@@ -1030,6 +1051,7 @@ body {
     margin-top: -12%; }
     .iphone4 .firstpage .cp .cp-w {
       width: 18.75%; }
+
 .firstpage .items {
   position: absolute;
   bottom: 15%;
@@ -1067,6 +1089,7 @@ body {
     .firstpage .items .item.item-6 {
       bottom: 42%;
       left: 2%; }
+
 .firstpage .button {
   position: absolute;
   bottom: 0px;
@@ -1079,10 +1102,12 @@ body {
 
 .game .game-plate {
   -webkit-transition: all 0.5s ease;
-          transition: all 0.5s ease; }
+  transition: all 0.5s ease; }
+
 .game .putty + .game-plate {
   -webkit-filter: blur(3px);
           filter: blur(3px); }
+
 .game .putty {
   position: absolute;
   bottom: 0px;
@@ -1113,11 +1138,13 @@ body {
     position: absolute;
     bottom: 0px;
     left: 0px; }
+
 .game .gameover {
   position: absolute;
   top: 0px;
   left: 0px;
   z-index: 99; }
+
 .game .plates {
   position: absolute;
   bottom: 0;
@@ -1162,6 +1189,7 @@ body {
         @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
           .game .plates .plate .text-content .milk, .game .plates .plate .text-content .score {
             line-height: 165%; } }
+
 .game .canvas {
   padding: 0 2%;
   box-sizing: border-box;
@@ -1171,6 +1199,7 @@ body {
     width: 80%; }
   .game .canvas canvas {
     width: 100%; }
+
 .game .notes-msg {
   position: relative;
   padding: 27% 0 0 0;

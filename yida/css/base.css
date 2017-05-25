@@ -357,7 +357,7 @@ th {
   -webkit-tap-highlight-color: transparent; }
 
 html, body {
-  font-family: Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self; }
+  font-family: Tahoma,Arial,Roboto,Droid Sans,Helvetica Neue,Droid Sans Fallback,Microsoft YaHei,SimHei,Heiti SC,Hiragino Sans GB,Simsun,sans-self; }
 
 .clearfix:after {
   content: ".";
@@ -386,7 +386,7 @@ html, body {
 
 .loading {
   -webkit-transition: all 0.5s linear;
-          transition: all 0.5s linear;
+  transition: all 0.5s linear;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -406,23 +406,21 @@ html, body {
     opacity: 0; }
   .loading.loaded {
     -webkit-transition: all 0s linear;
-            transition: all 0s linear;
+    transition: all 0s linear;
     opacity: 1;
     z-index: 99999;
     display: block; }
   .loading.finished .loading-logo {
     opacity: 1;
     -webkit-transform: scale(1, 1);
-        -ms-transform: scale(1, 1);
             transform: scale(1, 1); }
   .loading.finished span {
     -webkit-transform: scale(0.2, 0.2);
-        -ms-transform: scale(0.2, 0.2);
             transform: scale(0.2, 0.2);
     opacity: 0; }
   .loading .loading-logo, .loading .loading-normal {
     -webkit-transition: all 0.5s ease;
-            transition: all 0.5s ease;
+    transition: all 0.5s ease;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -431,7 +429,6 @@ html, body {
     width: 5em;
     height: 5em;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     overflow: hidden; }
   .loading .loading-normal {
@@ -483,9 +480,9 @@ html, body {
 @media only screen and (min-width: 735px) and (min-device-width: 768px) {
   body {
     background: #fff; }
-
   .wrap {
     display: none; } }
+
 @-webkit-keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -493,6 +490,7 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
 @keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -500,6 +498,11 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 @-webkit-keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -507,6 +510,7 @@ html, body {
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
+
 @keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -514,6 +518,11 @@ html, body {
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
+
+.second2 {
+  -webkit-animation-name: second2;
+          animation-name: second2; }
+
 @-webkit-keyframes leftmove {
   0% {
     -webkit-transform: translate3d(0%, 0, 0);
@@ -521,6 +530,7 @@ html, body {
   100% {
     -webkit-transform: translate3d(-100%, 0, 0);
             transform: translate3d(-100%, 0, 0); } }
+
 @keyframes leftmove {
   0% {
     -webkit-transform: translate3d(0%, 0, 0);
@@ -528,6 +538,11 @@ html, body {
   100% {
     -webkit-transform: translate3d(-100%, 0, 0);
             transform: translate3d(-100%, 0, 0); } }
+
+.leftmove {
+  -webkit-animation-name: leftmove;
+          animation-name: leftmove; }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -784,7 +799,6 @@ html, body {
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
     -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
             transform-origin: center center; }
 
 .share-wechat {
@@ -815,7 +829,7 @@ html, body {
   white-space: nowrap;
   font-size: 0;
   -webkit-transition: all 0s linear;
-          transition: all 0s linear; }
+  transition: all 0s linear; }
   .slider .slide {
     width: 100%;
     display: inline-block;
@@ -875,7 +889,7 @@ body {
         width: 45%;
         height: 5%;
         -webkit-transition: all 100ms ease;
-                transition: all 100ms ease;
+        transition: all 100ms ease;
         overflow: hidden; }
         .loading .new-load .load-item .load-item-note1 .load-move {
           -webkit-animation: leftmove 2s linear;
@@ -941,7 +955,7 @@ body {
     width: 100%;
     height: 100%;
     -webkit-transition: all 0.5s ease;
-            transition: all 0.5s ease;
+    transition: all 0.5s ease;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -979,6 +993,7 @@ body {
     position: absolute;
     bottom: 0px;
     left: 0px; }
+
 .firstpage .page .texts {
   position: absolute;
   top: 5%;
@@ -987,24 +1002,30 @@ body {
   margin: 0 auto; }
   .iphone4 .firstpage .page .texts {
     width: 80%; }
+
 .firstpage .page .normal, .firstpage .page .private {
   position: absolute;
   bottom: 0px;
   left: 0px;
   width: 100%;
   font-size: 0; }
+
 .firstpage .page .kv-name {
   position: absolute;
   bottom: 15%;
   right: 0px; }
+
 .firstpage .page .private {
   display: none; }
+
 .firstpage .page .text, .firstpage .page .next-point {
   position: absolute;
   top: 0px;
   left: 0px; }
+
 .firstpage .page:first-child .normal {
   display: none; }
+
 .firstpage .page:first-child .private {
   display: block; }
 
@@ -1060,7 +1081,7 @@ body {
           padding: 0.4rem;
           box-sizing: border-box;
           -webkit-appearance: none;
-          box-shadow: 1px 1px 10px #6cd6ff, -1px -1px 10px #6cd6ff;
+          box-shadow: 1px 1px 10px #6cd6ff,-1px -1px 10px #6cd6ff;
           border-radius: 5px; }
           @media only screen and (min-width: 321px) and (max-width: 399px) {
             .build .building .texts .build-text .light .build-text-box {
@@ -1373,7 +1394,7 @@ body {
   height: 60%; }
   .user-content .page-content {
     -webkit-transition: all 0.5s ease;
-            transition: all 0.5s ease;
+    transition: all 0.5s ease;
     white-space: nowrap;
     width: 100%;
     height: 100%; }

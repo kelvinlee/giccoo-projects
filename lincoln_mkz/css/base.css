@@ -572,6 +572,10 @@ ul {
     background-size: 120% auto;
     opacity: 0; } }
 
+.frameAnimation {
+  -webkit-animation-name: frameAnimation;
+          animation-name: frameAnimation; }
+
 @-webkit-keyframes fontColor {
   0% {
     color: #fff; }
@@ -608,6 +612,10 @@ ul {
   100% {
     color: #fff; } }
 
+.fontColor {
+  -webkit-animation-name: fontColor;
+          animation-name: fontColor; }
+
 @-webkit-keyframes hour-first {
   0% {
     margin-top: -0em; }
@@ -635,6 +643,10 @@ ul {
     margin-top: -2em; }
   100% {
     margin-top: -2em; } }
+
+.hour-first {
+  -webkit-animation-name: hour-first;
+          animation-name: hour-first; }
 
 @-webkit-keyframes hour-last {
   0% {
@@ -676,6 +688,10 @@ ul {
   100% {
     margin-top: -3em; } }
 
+.hour-last {
+  -webkit-animation-name: hour-last;
+          animation-name: hour-last; }
+
 @-webkit-keyframes m-first {
   0% {
     margin-top: -4em; }
@@ -715,6 +731,10 @@ ul {
     margin-top: -5em; }
   100% {
     margin-top: -5em; } }
+
+.m-first {
+  -webkit-animation-name: m-first;
+          animation-name: m-first; }
 
 @-webkit-keyframes m-last {
   0% {
@@ -756,6 +776,10 @@ ul {
   100% {
     margin-top: -9em; } }
 
+.m-last {
+  -webkit-animation-name: m-last;
+          animation-name: m-last; }
+
 @-webkit-keyframes cardUp {
   0% {
     -webkit-transform: rotate(90deg) translate3d(50%, 0, 0);
@@ -771,6 +795,10 @@ ul {
   100% {
     -webkit-transform: rotate(90deg) translate3d(-80%, 0, 0);
             transform: rotate(90deg) translate3d(-80%, 0, 0); } }
+
+.cardUp {
+  -webkit-animation-name: cardUp;
+          animation-name: cardUp; }
 
 @-webkit-keyframes clockHide {
   0% {
@@ -788,6 +816,10 @@ ul {
   100% {
     opacity: 0; } }
 
+.clockHide {
+  -webkit-animation-name: clockHide;
+          animation-name: clockHide; }
+
 @-webkit-keyframes carShow {
   0% {
     -webkit-transform: translate3d(0, -60%, 0) scale(0, 0);
@@ -803,6 +835,10 @@ ul {
   100% {
     -webkit-transform: translate3d(0, -20%, 0) scale(1, 1);
             transform: translate3d(0, -20%, 0) scale(1, 1); } }
+
+.carShow {
+  -webkit-animation-name: carShow;
+          animation-name: carShow; }
 
 @-webkit-keyframes carMove {
   0% {
@@ -826,6 +862,10 @@ ul {
     -webkit-transform: translate3d(0, 0%, 0) scale(0.96, 0.96);
             transform: translate3d(0, 0%, 0) scale(0.96, 0.96); } }
 
+.carMove {
+  -webkit-animation-name: carMove;
+          animation-name: carMove; }
+
 @-webkit-keyframes fadeInLeftPx {
   0% {
     -webkit-transform: translate3d(-300px, 0, 0);
@@ -846,6 +886,10 @@ ul {
             transform: translate3d(0, 0, 0);
     opacity: 1; } }
 
+.fadeInLeftPx {
+  -webkit-animation-name: fadeInLeftPx;
+          animation-name: fadeInLeftPx; }
+
 @-webkit-keyframes lineMove4 {
   0% {
     -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
@@ -861,6 +905,10 @@ ul {
   100% {
     -webkit-transform: translate3d(0, -100%, 0) scale(0.8, 0.8);
             transform: translate3d(0, -100%, 0) scale(0.8, 0.8); } }
+
+.lineMove4 {
+  -webkit-animation-name: lineMove4;
+          animation-name: lineMove4; }
 
 @-webkit-keyframes lineMove3 {
   0% {
@@ -878,6 +926,10 @@ ul {
     -webkit-transform: translate3d(0, -100%, 0) scale(0.6, 0.6);
             transform: translate3d(0, -100%, 0) scale(0.6, 0.6); } }
 
+.lineMove3 {
+  -webkit-animation-name: lineMove3;
+          animation-name: lineMove3; }
+
 @-webkit-keyframes lineMove2 {
   0% {
     -webkit-transform: translate3d(0, 0, 0) scale(0.6, 0.6);
@@ -893,6 +945,10 @@ ul {
   100% {
     -webkit-transform: translate3d(0, -100%, 0) scale(0.4, 0.4);
             transform: translate3d(0, -100%, 0) scale(0.4, 0.4); } }
+
+.lineMove2 {
+  -webkit-animation-name: lineMove2;
+          animation-name: lineMove2; }
 
 @-webkit-keyframes lineMove1 {
   0% {
@@ -910,6 +966,10 @@ ul {
     -webkit-transform: translate3d(0, -100%, 0) scale(0.2, 0.2);
             transform: translate3d(0, -100%, 0) scale(0.2, 0.2); } }
 
+.lineMove1 {
+  -webkit-animation-name: lineMove1;
+          animation-name: lineMove1; }
+
 @-webkit-keyframes showline {
   0% {
     width: 0; }
@@ -921,6 +981,10 @@ ul {
     width: 0; }
   100% {
     width: 96%; } }
+
+.showline {
+  -webkit-animation-name: showline;
+          animation-name: showline; }
 
 @-webkit-keyframes nextpoint {
   0% {
@@ -946,6 +1010,10 @@ ul {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
 
+.nextpoint {
+  -webkit-animation-name: nextpoint;
+          animation-name: nextpoint; }
+
 @-webkit-keyframes star {
   0% {
     opacity: 1;
@@ -970,6 +1038,10 @@ ul {
     -webkit-transform: translate3d(300px, 0, 0) rotate(1800deg);
             transform: translate3d(300px, 0, 0) rotate(1800deg); } }
 
+.star {
+  -webkit-animation-name: star;
+          animation-name: star; }
+
 @-webkit-keyframes arrow {
   0% {
     opacity: 0.5; }
@@ -981,6 +1053,10 @@ ul {
     opacity: 0.5; }
   100% {
     opacity: 1; } }
+
+.arrow {
+  -webkit-animation-name: arrow;
+          animation-name: arrow; }
 
 .delay-1 {
   -webkit-animation-delay: 100ms;

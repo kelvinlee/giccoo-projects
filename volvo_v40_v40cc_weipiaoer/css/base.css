@@ -357,7 +357,7 @@ th {
   -webkit-tap-highlight-color: transparent; }
 
 html, body {
-  font-family: Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self; }
+  font-family: Tahoma,Arial,Roboto,Droid Sans,Helvetica Neue,Droid Sans Fallback,Microsoft YaHei,SimHei,Heiti SC,Hiragino Sans GB,Simsun,sans-self; }
 
 .clearfix:after {
   content: ".";
@@ -480,9 +480,9 @@ html, body {
 @media only screen and (min-width: 735px) and (min-device-width: 768px) {
   body {
     background: #fff; }
-
   .wrap {
     display: none; } }
+
 @-webkit-keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -490,6 +490,7 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
 @keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
@@ -497,6 +498,11 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 @-webkit-keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -504,6 +510,7 @@ html, body {
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
+
 @keyframes second2 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -511,6 +518,11 @@ html, body {
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
+
+.second2 {
+  -webkit-animation-name: second2;
+          animation-name: second2; }
+
 .pages {
   display: block;
   height: 100%;
@@ -624,6 +636,7 @@ html, body {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1); } }
+
 @keyframes ball-spin-fade-loader {
   50% {
     opacity: 0.3;
@@ -633,6 +646,7 @@ html, body {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1); } }
+
 .ball-spin-fade-loader {
   position: relative;
   top: -10px;
@@ -702,16 +716,27 @@ html, body {
   100% {
     -webkit-transform: translate3d(-100%, 0, 0);
             transform: translate3d(-100%, 0, 0); } }
+
+.leftmove {
+  -webkit-animation-name: leftmove;
+          animation-name: leftmove; }
+
 @-webkit-keyframes showline {
   0% {
     width: 0; }
   100% {
     width: 96%; } }
+
 @keyframes showline {
   0% {
     width: 0; }
   100% {
     width: 96%; } }
+
+.showline {
+  -webkit-animation-name: showline;
+          animation-name: showline; }
+
 @-webkit-keyframes nextpoint {
   0% {
     opacity: 0.5;
@@ -723,6 +748,7 @@ html, body {
     opacity: 0.5;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
+
 @keyframes nextpoint {
   0% {
     opacity: 0.5;
@@ -734,6 +760,11 @@ html, body {
     opacity: 0.5;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
+
+.nextpoint {
+  -webkit-animation-name: nextpoint;
+          animation-name: nextpoint; }
+
 @-webkit-keyframes moveInLeft {
   0% {
     -webkit-transform: translate3d(-100%, 0, 0);
@@ -741,6 +772,7 @@ html, body {
   100% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
+
 @keyframes moveInLeft {
   0% {
     -webkit-transform: translate3d(-100%, 0, 0);
@@ -748,6 +780,11 @@ html, body {
   100% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
+
+.moveInLeft {
+  -webkit-animation-name: moveInLeft;
+          animation-name: moveInLeft; }
+
 @-webkit-keyframes moveOutLeft {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -755,6 +792,7 @@ html, body {
   100% {
     -webkit-transform: translate3d(-100%, 0, 0);
             transform: translate3d(-100%, 0, 0); } }
+
 @keyframes moveOutLeft {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -762,6 +800,11 @@ html, body {
   100% {
     -webkit-transform: translate3d(-100%, 0, 0);
             transform: translate3d(-100%, 0, 0); } }
+
+.moveOutLeft {
+  -webkit-animation-name: moveOutLeft;
+          animation-name: moveOutLeft; }
+
 @-webkit-keyframes moveInRight {
   0% {
     -webkit-transform: translate3d(100%, 0, 0);
@@ -769,6 +812,7 @@ html, body {
   100% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
+
 @keyframes moveInRight {
   0% {
     -webkit-transform: translate3d(100%, 0, 0);
@@ -776,6 +820,11 @@ html, body {
   100% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
+
+.moveInRight {
+  -webkit-animation-name: moveInRight;
+          animation-name: moveInRight; }
+
 @-webkit-keyframes moveOutRight {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -783,6 +832,7 @@ html, body {
   100% {
     -webkit-transform: translate3d(100%, 0, 0);
             transform: translate3d(100%, 0, 0); } }
+
 @keyframes moveOutRight {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -790,6 +840,11 @@ html, body {
   100% {
     -webkit-transform: translate3d(100%, 0, 0);
             transform: translate3d(100%, 0, 0); } }
+
+.moveOutRight {
+  -webkit-animation-name: moveOutRight;
+          animation-name: moveOutRight; }
+
 .moveInLeft {
   -webkit-animation-name: moveInLeft;
   animation-name: moveInLeft; }
@@ -1190,6 +1245,7 @@ body {
     bottom: 0px;
     left: 0px;
     top: auto; }
+
 .pages .page .content {
   position: absolute;
   top: 0px;
@@ -1285,7 +1341,7 @@ body {
   top: 60%;
   left: 50%;
   width: 35%;
-  margin-left: -17.5%; }
+  margin-left: -35%/2; }
 
 .points {
   width: 100%;
@@ -1553,6 +1609,7 @@ body {
 
 .homepage .text {
   margin-top: 25%; }
+
 .homepage .btns {
   position: absolute;
   bottom: 5%;
@@ -1566,6 +1623,7 @@ body {
       left: 32%;
       width: 1.4rem;
       margin-top: -0.8rem; }
+
 .homepage .bottom {
   position: absolute;
   bottom: 0px;
@@ -1579,18 +1637,21 @@ body {
   background-color: transparent;
   width: 100%;
   height: 100%; }
+
 .startpage .bg.momo {
   background: url("../img/startpage-bg-momo.jpg") no-repeat center bottom;
   background-size: cover;
   background-color: transparent;
   width: 100%;
   height: 100%; }
+
 .startpage .bg.weipiaoer {
   background: url("../img/startpage-bg-weipiaoer.jpg") no-repeat center bottom;
   background-size: cover;
   background-color: transparent;
   width: 100%;
   height: 100%; }
+
 .startpage .text {
   margin-top: 35%; }
   .iphone4 .startpage .text {
@@ -1599,6 +1660,7 @@ body {
     margin-top: 40%; }
     .iphone4 .startpage .text.momo {
       margin-top: 40%; }
+
 .startpage .btn {
   margin-top: 5%; }
 
@@ -1608,6 +1670,7 @@ body {
   left: 10%;
   width: 60%;
   height: 26%; }
+
 .questionpage .answer {
   position: absolute;
   top: 0px;

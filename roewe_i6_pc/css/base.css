@@ -521,6 +521,10 @@ ul {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 @-webkit-keyframes light {
   0%, 100% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -549,6 +553,10 @@ ul {
             transform: translate3d(9rem, 0, 0);
     opacity: 0; } }
 
+.light {
+  -webkit-animation-name: light;
+          animation-name: light; }
+
 @-webkit-keyframes rollOut {
   0% {
     -webkit-transform: translate3d(0, 40%, 0) rotate(0deg);
@@ -572,6 +580,10 @@ ul {
     -webkit-transform: translate3d(320px, 40%, 0) rotate(1800deg);
             transform: translate3d(320px, 40%, 0) rotate(1800deg);
     opacity: 0; } }
+
+.rollOut {
+  -webkit-animation-name: rollOut;
+          animation-name: rollOut; }
 
 .delay-1 {
   -webkit-animation-delay: 100ms;
@@ -907,8 +919,8 @@ html, body {
             user-select: none; }
 
 .no-touch .iphone4 .pages {
-  max-width: 380px;
-  max-height: 700px; }
+  max-width: 500px;
+  max-height: 880px; }
 
 .homepage {
   background-color: #000; }
@@ -1078,8 +1090,6 @@ html, body {
   position: absolute;
   bottom: 0px;
   left: 0px;
-  -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   .register.show {
