@@ -109,6 +109,7 @@ window.onload = ->
 
 loadWechatConfig = ->
 	url = encodeURIComponent window.location.href.split("#")[0]
+	url = url.replace('&', '%26')
 	hm = document.createElement('script')
 	hm.src = "http://api.giccoo.com/api/config?url="+url
 	s = document.getElementsByTagName('script')[0]

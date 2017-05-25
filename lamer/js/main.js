@@ -266,6 +266,7 @@ playerDraw = function() {
 loadWechatConfig = function() {
   var hm, s, url;
   url = encodeURIComponent(window.location.href.split("#")[0]);
+  url = url.replace('&', '%26');
   hm = document.createElement('script');
   hm.src = "http://api.giccoo.com/api/config?debug=true&url=" + url;
   s = document.getElementsByTagName('script')[0];
