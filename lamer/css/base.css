@@ -1570,6 +1570,38 @@ ul {
   -webkit-animation-name: fadeInZoomBigOp;
           animation-name: fadeInZoomBigOp; }
 
+@-webkit-keyframes fadeInZoomBigMoon {
+  0% {
+    opacity: 0.8;
+    -webkit-transform: scale3d(1.7, 1.7, 1);
+            transform: scale3d(1.7, 1.7, 1);
+    -webkit-transform-origin: top right;
+            transform-origin: top right; }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center; } }
+
+@keyframes fadeInZoomBigMoon {
+  0% {
+    opacity: 0.8;
+    -webkit-transform: scale3d(1.7, 1.7, 1);
+            transform: scale3d(1.7, 1.7, 1);
+    -webkit-transform-origin: top right;
+            transform-origin: top right; }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center; } }
+
+.fadeInZoomBigMoon {
+  -webkit-animation-name: fadeInZoomBigMoon;
+          animation-name: fadeInZoomBigMoon; }
+
 @keyframes star {
   0% {
     opacity: 0;
@@ -1626,16 +1658,16 @@ ul {
 
 @-webkit-keyframes starMoveLeft {
   0% {
-    -webkit-transform: translate3d(400px, 0, 0);
-            transform: translate3d(400px, 0, 0); }
+    -webkit-transform: translate3d(100px, 0, 0);
+            transform: translate3d(100px, 0, 0); }
   100% {
     -webkit-transform: translate3d(-400px, 0, 0);
             transform: translate3d(-400px, 0, 0); } }
 
 @keyframes starMoveLeft {
   0% {
-    -webkit-transform: translate3d(400px, 0, 0);
-            transform: translate3d(400px, 0, 0); }
+    -webkit-transform: translate3d(100px, 0, 0);
+            transform: translate3d(100px, 0, 0); }
   100% {
     -webkit-transform: translate3d(-400px, 0, 0);
             transform: translate3d(-400px, 0, 0); } }
@@ -2957,27 +2989,6 @@ body {
       left: 0px;
       width: 400px;
       height: 80%; }
-    .page-one .content .bg .stars-1 {
-      -webkit-animation: starMoveLeft 30s linear;
-              animation: starMoveLeft 30s linear;
-      -webkit-animation-fill-mode: both;
-              animation-fill-mode: both;
-      -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite; }
-    .page-one .content .bg .stars-2 {
-      -webkit-animation: starMoveLeft 20s linear;
-              animation: starMoveLeft 20s linear;
-      -webkit-animation-fill-mode: both;
-              animation-fill-mode: both;
-      -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite; }
-    .page-one .content .bg .stars-3 {
-      -webkit-animation: starMoveLeft 40s linear;
-              animation: starMoveLeft 40s linear;
-      -webkit-animation-fill-mode: both;
-              animation-fill-mode: both;
-      -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite; }
   .page-one .content .bottom {
     position: absolute;
     bottom: 0px;
@@ -3106,6 +3117,27 @@ body {
       left: 0px;
       width: 100%;
       height: 30%; }
+    .page-four-3 .bg .stars-1 {
+      -webkit-animation: starMoveLeft 30s linear;
+              animation: starMoveLeft 30s linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+    .page-four-3 .bg .stars-2 {
+      -webkit-animation: starMoveLeft 20s linear;
+              animation: starMoveLeft 20s linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+    .page-four-3 .bg .stars-3 {
+      -webkit-animation: starMoveLeft 40s linear;
+              animation: starMoveLeft 40s linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
   .page-four-3 .texts {
     position: absolute;
     top: 35%;
@@ -3183,7 +3215,9 @@ body {
     height: 100%;
     background: url("../img/page-5-3-background.jpg") no-repeat top right;
     background-size: cover;
-    background-color: transparent; }
+    background-color: transparent;
+    -webkit-transform-origin: top right;
+            transform-origin: top right; }
     .page-five-3 .bg .cover {
       position: absolute;
       top: 0px;
@@ -3368,6 +3402,3 @@ body {
       margin-top: 1rem; }
       .iphone4 .page-nine .content .texts .btn {
         width: 39.0625%; }
-
-video::-webkit-media-controls-enclosure, video::-webkit-media-controls-panel, video::-webkit-media-controls {
-  display: none !important; }

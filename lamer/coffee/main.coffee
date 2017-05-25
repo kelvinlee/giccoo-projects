@@ -90,7 +90,9 @@ window.onload = ->
 		$(".pages .page-four").addClass "fadeOut animated"
 		$(".pages .page-four-1")[0].addEventListener ANIMATION_END_NAME, FrameFun
 		$(".pages .page-four-1").addClass "on"
-		Stars(".page-four-3 .stars",20)
+		Stars(".page-four-3 .stars-1",15)
+		Stars(".page-four-3 .stars-2",20)
+		Stars(".page-four-3 .stars-3",15)
 		setTimeout ->
 			$(".pages .page-four").removeClass "on fadeOut animated"
 		,550
@@ -102,7 +104,9 @@ window.onload = ->
 		$(".pages .page-four").addClass "fadeOut animated"
 		$(".pages .page-four-3")[0].addEventListener ANIMATION_END_NAME, FrameFun
 		$(".pages .page-four-3").addClass "on"
-		Stars(".page-four-3 .stars",20)
+		Stars(".page-four-3 .stars-1",15)
+		Stars(".page-four-3 .stars-2",20)
+		Stars(".page-four-3 .stars-3",15)
 		setTimeout ->
 			$(".pages .page-four").removeClass "on fadeOut animated"
 		,550
@@ -235,6 +239,7 @@ passFun = (evt)->
 hideSelf = (evt)->
 	$(evt.target).removeClass "on fadeOut animated"
 	$(evt.target)[0].removeEventListener ANIMATION_END_NAME, hideSelf
+	$(evt.target).find(".stars").html("")
 changeMain = ->
 
 SendNote = (msg,time = 3000)->

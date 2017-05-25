@@ -238,6 +238,16 @@ $heightSize : -100%
 	100%
 		opacity: 1
 		+transform(scale3d(1,1,1))
++keyframes(fadeInZoomBigMoon)
+	0%
+		opacity: 0.8
+		+transform(scale3d(1.7,1.7,1))
+		transform-origin: top right
+	100%
+		opacity: 1
+		+transform(scale3d(1,1,1))
+		transform-origin: center center
+
 +keyframes(star)
 	0%
 		opacity: 0
@@ -264,7 +274,7 @@ $heightSize : -100%
 		+transform(rotate(360deg) scale3d(0.5,0.5,1))
 +keyframes(starMoveLeft)
 	0%
-		+transform(translate3d(400px,0,0))
+		+transform(translate3d(100px,0,0))
 	100%
 		+transform(translate3d(-400px,0,0))
 +keyframes(starMoveRight)
@@ -449,11 +459,9 @@ body
 			// +w(3em)
 			font-size: 0.8rem
 
-	
-
-
 .hide
 	+hide
+
 .pages
 	.page
 		.content
@@ -618,11 +626,13 @@ body
 			+p(2px 0)
 			+bc(transparent)
 			border: none
+
 .pages
 	.page
 		font-size: 0
 		&.on
 			+show
+
 .page-one
 	+bc(#dbd7d2)
 	z-index: 100
@@ -654,11 +664,11 @@ body
 				+w(400px)
 				+h(80%)
 			.stars-1
-				+animation(starMoveLeft,30s,linear,infinite)
+				// +animation(starMoveLeft,30s,linear,infinite)
 			.stars-2
-				+animation(starMoveLeft,20s,linear,infinite)
+				// +animation(starMoveLeft,20s,linear,infinite)
 			.stars-3
-				+animation(starMoveLeft,40s,linear,infinite)
+				// +animation(starMoveLeft,40s,linear,infinite)
 		.bottom
 			+posa
 			+bl
@@ -759,7 +769,12 @@ body
 			+posa
 			+tl(20%)
 			+wh(100%,30%)
-
+		.stars-1
+			+animation(starMoveLeft,30s,linear,infinite)
+		.stars-2
+			+animation(starMoveLeft,20s,linear,infinite)
+		.stars-3
+			+animation(starMoveLeft,40s,linear,infinite)
 	.texts
 		+posa
 		+tl(35%)
@@ -823,6 +838,7 @@ body
 		+w
 		+h
 		+b($cdn+"img/page-5-3-background.jpg",no-repeat,top,right,cover)
+		transform-origin: top right
 		.cover
 			+posa
 			+tl
@@ -971,5 +987,5 @@ body
 
 // video::media-controls-enclosure
 // 	display: none
-video::-webkit-media-controls-enclosure, video::-webkit-media-controls-panel,, video::-webkit-media-controls
+// video::-webkit-media-controls-enclosure, video::-webkit-media-controls-panel,, video::-webkit-media-controls
 	display: none!important

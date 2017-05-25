@@ -53,7 +53,7 @@ block content
 						img(first-load-src="#{url}img/page-2-text-1.png")
 					.text.text-2.fadeInUp.animated.duration-10.delay-4
 						img(first-load-src="#{url}img/page-2-text-2.png")
-				.bg.fadeInZoom.animated.delay-7.duration-30.last
+				.bg.fadeInZoomBig.animated.delay-7.duration-30.last
 					img(first-load-src="#{url}img/page-2-background.jpg")
 
 		.page.page-three(next=".page-four",wait="1000")
@@ -82,7 +82,7 @@ block content
 					.btn.btn-2.fadeInUp.animated.duration-15.delay-12
 						img(second-load-src="#{url}img/page-4-btn-2.png")
 
-		.page.page-four-1(next=".page-four-2",wait="1000")
+		.page.page-four-1(next=".page-four-2",wait="2500")
 			.content
 				.bg.bgDown.animated.duration-40.delay-5.linear
 					img(second-load-src="#{url}img/page-4-1-background.jpg")
@@ -111,7 +111,10 @@ block content
 					img(second-load-src="#{url}img/page-4-3-background.jpg")
 					.mark.fadeOut.animated.duration-30.delay-5.last
 						img(second-load-src="#{url}img/page-4-3-background.png")
-					.stars
+					.stars.stars-1
+					.stars.stars-2
+					.stars.stars-3
+
 				.texts
 					.text.text-1.fadeInDown.animated.duration-10.delay-4
 						img(second-load-src="#{url}img/page-4-3-text-1.png")
@@ -155,7 +158,7 @@ block content
 
 		.page.page-five-3(next=".page-five-4",wait="1000")
 			.content
-				.bg.fadeInZoomBigOp.animated.duration-30
+				.bg.fadeInZoomBigMoon.animated.duration-30
 					.cover.fadeOut.animated.duration-20.delay-15.last
 					.stars
 				.texts
