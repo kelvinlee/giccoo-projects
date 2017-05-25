@@ -168,6 +168,7 @@ window.onload = ->
 		wx.onMenuShareWeibo shareContent
 
 	return true
+
 playerDraw = ()->
 	# console.log c,v,w,h
 	v = document.getElementById('video')
@@ -181,9 +182,8 @@ playerDraw = ()->
 
 loadWechatConfig = ->
 	url = encodeURIComponent window.location.href.split("#")[0]
-	url = url.replace('&', '%26')
 	hm = document.createElement('script')
-	hm.src = "http://api.giccoo.com/api/config?debug=true&url="+url
+	hm.src = "http://api.giccoo.com/api/config?url="+url
 	s = document.getElementsByTagName('script')[0]
 	s.parentNode.insertBefore hm, s
 	return
