@@ -5,7 +5,7 @@ $(document).ready(function load (){
     var shareContent;
     shareContent = {
       title: "智·混动 MAX秀",
-      desc: "",
+      desc: "人人都是隐藏的跨界高手",
       link: "http://m.giccoo.com/maxshow/",
       imgUrl: "http://m.giccoo.com/maxshow/img/ico.jpg",
       success: function() {},
