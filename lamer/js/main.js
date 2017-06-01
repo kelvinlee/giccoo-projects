@@ -146,6 +146,7 @@ window.onload = function() {
     $("body").addClass("iphone4");
   }
   $(".loading .content").addClass("on");
+  riot.mount("*");
   setTimeout(function() {
     return loadedEnd();
   }, 2400);
@@ -316,7 +317,12 @@ passFun = function(evt) {
     console.log("next page");
     parent.addClass("fadeOut animated");
     $(parent.attr("next")).addClass("on");
-    return $(parent.attr("next"))[0].addEventListener(ANIMATION_END_NAME, FrameFun);
+    $(parent.attr("next"))[0].addEventListener(ANIMATION_END_NAME, FrameFun);
+    if ($(parent.attr("next")).is(".page-nine")) {
+      Stars(".page-nine .stars-1", 20);
+      Stars(".page-nine .stars-2", 20);
+      return Stars(".page-nine .stars-3", 20);
+    }
   } else {
     return console.log("stop this");
   }
@@ -380,8 +386,7 @@ Stars = function(target, num) {
       "animation-delay": delay + "ms",
       "animation-duration": duration + "ms"
     });
-    stars.append(star);
-    results.push(console.log(star));
+    results.push(stars.append(star));
   }
   return results;
 };

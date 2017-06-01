@@ -9,11 +9,13 @@ block css
 	link(rel="stylesheet",href="css/base.css?v=1")
 
 block content
-	// - url = "http://image.giccoo.com/projects/lincoln_mkz/"
+	// - url = "http://image.giccoo.com/projects/lamer/"
 	- url = "./"
+	- normalTime = 2000
 	.wechat-share-hide
-		img#share(src="http://image.giccoo.com/projects/lincoln_mkz/img/share.jpg")
+		img#share(src="http://image.giccoo.com/projects/lamer/img/share.jpg")
 	.pages
+		playsound.playsound(src="/dazhong/mp3/bg.mp3",icon="true",iconplay="http://image.giccoo.com/projects/libs/img/audio-play.png",iconstop="http://image.giccoo.com/projects/libs/img/audio-stop.png")
 		.loading
 			.content
 				.logo
@@ -31,11 +33,11 @@ block content
 			.content
 				.texts
 					.text.text-1.fadeInUp.animated.duration-10.delay-12
-						img(first-load-src="#{url}img/page-1-text-1.png")
+						p 很久以前有一个叫麦克斯·贺伯的人
 					.text.text-2.fadeInUp.animated.duration-10.delay-15
-						img(first-load-src="#{url}img/page-1-text-2.png")
+						p 他有一个奇幻的故事
 					.text.text-2.fadeInUp.animated.duration-10.delay-17
-						img(first-load-src="#{url}img/page-1-text-3.png")
+						p 下面请由你来撰写他的传奇
 					.btn.fadeInUp.animated.duration-10.delay-19
 						img(first-load-src="#{url}img/page-1-btn.png")
 				.bg
@@ -46,23 +48,25 @@ block content
 					.stars.stars-2
 					.stars.stars-3
 		
-		.page.page-two(next=".page-three",wait="1000")
+		.page.page-two(next=".page-three",wait="#{normalTime}")
 			.content
 				.texts
 					.text.text-1.fadeInUp.animated.duration-10.delay-2
-						img(first-load-src="#{url}img/page-2-text-1.png")
+						p 麦克斯·贺伯博士是NASA前太空物理学家
 					.text.text-2.fadeInUp.animated.duration-10.delay-4
-						img(first-load-src="#{url}img/page-2-text-2.png")
+						p 他有着与众不同的强大好奇心
 				.bg.fadeInZoomBig.animated.delay-7.duration-30.last
 					img(first-load-src="#{url}img/page-2-background.jpg")
 
-		.page.page-three(next=".page-four",wait="1000")
+		.page.page-three(next=".page-four",wait="#{normalTime}")
 			.content
 				.texts
 					.text.text-1.fadeInUp.animated.duration-10.delay-10
-						img(first-load-src="#{url}img/page-3-text-1.png")
+						p 在一次火箭燃料的实验失误中
 					.text.text-2.fadeInUp.animated.duration-10.delay-12
-						img(first-load-src="#{url}img/page-3-text-2.png")
+						p 遭遇化学性爆炸
+					.text.text-3.fadeInUp.animated.duration-10.delay-14
+						p 博士的脸部和手臂被灼伤
 				.bg.fadeInZoomBig.animated.delay-3.duration-20.last
 					img(first-load-src="#{url}img/page-3-background.jpg")
 
@@ -70,42 +74,54 @@ block content
 			.content
 				.texts
 					.text.text-1.fadeInUp.animated.duration-10.delay-2
-						img(second-load-src="#{url}img/page-4-text-1.png")
+						//- img(second-load-src="#{url}img/page-4-text-1.png")
+						p 当时的医疗技术对此无可奈何
 					.text.text-2.fadeInUp.animated.duration-11.delay-4
-						img(second-load-src="#{url}img/page-4-text-2.png")
+						//- img(second-load-src="#{url}img/page-4-text-2.png")
+						p 于是，他毅然地在浩瀚的自然中
 					.text.text-3.fadeInUp.animated.duration-12.delay-6
-						img(second-load-src="#{url}img/page-4-text-3.png")
+						//- img(second-load-src="#{url}img/page-4-text-3.png")
+						p 探寻修复容颜的秘方
 					.text.text-4.fadeInUp.animated.duration-13.delay-8
-						img(second-load-src="#{url}img/page-4-text-4.png")
-					.btn.btn-1.fadeInUp.animated.duration-14.delay-10
+						//- img(second-load-src="#{url}img/page-4-text-4.png")
+						p 那么现在由你来选择
+					.text.text-5.fadeInUp.animated.duration-13.delay-10
+						p 麦克斯·贺伯博士去哪里
+					.btn.btn-1.fadeInUp.animated.duration-14.delay-12
 						img(second-load-src="#{url}img/page-4-btn-1.png")
-					.btn.btn-2.fadeInUp.animated.duration-15.delay-12
+					.btn.btn-2.fadeInUp.animated.duration-15.delay-14
 						img(second-load-src="#{url}img/page-4-btn-2.png")
 
-		.page.page-four-1(next=".page-four-2",wait="2500")
+		.page.page-four-1(next=".page-four-2",wait="#{normalTime+1500}")
 			.content
 				.bg.bgDown.animated.duration-40.delay-5.linear
 					img(second-load-src="#{url}img/page-4-1-background.jpg")
 				.texts.fadeInUp.animated.duration-10.delay-40
 					.text.text-1.fadeInUp.animated.delay-40
-						img(second-load-src="#{url}img/page-4-1-text-1.png")
+						//- img(second-load-src="#{url}img/page-4-1-text-1.png")
+						p 他日复一日
 					.text.text-2.fadeInUp.animated.delay-42
-						img(second-load-src="#{url}img/page-4-1-text-2.png")
+						//- img(second-load-src="#{url}img/page-4-1-text-2.png")
+						p 不断的从找到的每一块石头
 					.text.text-3.fadeInUp.animated.delay-44
-						img(second-load-src="#{url}img/page-4-1-text-3.png")
+						//- img(second-load-src="#{url}img/page-4-1-text-3.png")
+						p 每一朵花和每一棵树中
 					.text.text-4.fadeInUp.animated.delay-46.last
-						img(second-load-src="#{url}img/page-4-1-text-4.png")
+						//- img(second-load-src="#{url}img/page-4-1-text-4.png")
+						p 探寻修复容颜的秘方
 
-		.page.page-four-2(next=".page-four-3",wait="1000")
+		.page.page-four-2(next=".page-four-3",wait="#{normalTime}")
 			.content
 				.bg.fadeInZoomBig.animated.duration-40.last
 				.texts
 					.text.text-1.fadeInUp.animated.duration-10.delay-4
-						img(second-load-src="#{url}img/page-4-2-text-1.png")
+						//- img(second-load-src="#{url}img/page-4-2-text-1.png")
+						p 但大自然永远不会轻易告诉你答案
 					.text.text-2.fadeInUp.animated.duration-10.delay-6
-						img(second-load-src="#{url}img/page-4-2-text-2.png")
+						//- img(second-load-src="#{url}img/page-4-2-text-2.png")
+						p 博士转而探索海洋的奥秘
 		
-		.page.page-four-3(next=".page-five",wait="1000")
+		.page.page-four-3(next=".page-five",wait="#{normalTime}")
 			.content
 				.bg
 					img(second-load-src="#{url}img/page-4-3-background.jpg")
@@ -117,79 +133,95 @@ block content
 
 				.texts
 					.text.text-1.fadeInDown.animated.duration-10.delay-4
-						img(second-load-src="#{url}img/page-4-3-text-1.png")
+						//- img(second-load-src="#{url}img/page-4-3-text-1.png")
+						p 于是贺伯博士来到海边寻找答案
 
 		.page.page-five
 			.content
 				.texts
 					.text.text-1.fadeInUp.animated.duration-10.delay-2
-						img(second-load-src="#{url}img/page-5-text-1.png")
+						//- img(second-load-src="#{url}img/page-5-text-1.png")
+						p 但在海边依然没有什么进展
 					.text.text-2.fadeInUp.animated.duration-11.delay-4
-						img(second-load-src="#{url}img/page-5-text-2.png")
+						//- img(second-load-src="#{url}img/page-5-text-2.png")
+						p 现在再次由你来选择
 					.text.text-3.fadeInUp.animated.duration-12.delay-6
-						img(second-load-src="#{url}img/page-5-text-3.png")
+						//- img(second-load-src="#{url}img/page-5-text-3.png")
+						p 希望贺伯博士去哪里
 					.btn.btn-1.fadeInUp.animated.duration-14.delay-10
 						img(second-load-src="#{url}img/page-5-btn-2.png")
 					.btn.btn-2.fadeInUp.animated.duration-15.delay-12
 						img(second-load-src="#{url}img/page-5-btn-1.png")
 
-		.page.page-five-1(next=".page-five-2",wait="2000")
+		.page.page-five-1(next=".page-five-2",wait="#{normalTime+1000}")
 			.content
 				.bg.fadeInZoomBig.animated.duration-30.last
 					img(last-load-src="#{url}img/page-5-1-background.jpg")
 				.texts
 					.text.text-1.fadeInUp.animated.duration-10.delay-2
-						img(last-load-src="#{url}img/page-5-1-text-1.png")
+						//- img(last-load-src="#{url}img/page-5-1-text-1.png")
+						p 贺伯博士发现了一个小渔村
 					.text.text-2.fadeInUp.animated.duration-11.delay-4
-						img(last-load-src="#{url}img/page-5-1-text-2.png")
-					.text.text-3.fadeInUp.animated.duration-12.delay-6
+						//- img(last-load-src="#{url}img/page-5-1-text-2.png")
+						p 碰到了正在收网归来的渔夫
+					//- .text.text-3.fadeInUp.animated.duration-12.delay-6
 						img(last-load-src="#{url}img/page-5-1-text-3.png")
 
-		.page.page-five-2(next=".page-five-3",wait="1000")
+		.page.page-five-2(next=".page-five-3",wait="#{normalTime}")
 			.content
 				.bg.fadeInZoomBigOp.animated.duration-30.last
 				.texts
 					.text.text-1.fadeInUp.animated.duration-10.delay-2
-						img(last-load-src="#{url}img/page-5-2-text-1.png")
+						//- img(last-load-src="#{url}img/page-5-2-text-1.png")
+						p 博士发现渔夫们常常用海藻来包裹被
 					.text.text-2.fadeInUp.animated.duration-11.delay-4
-						img(last-load-src="#{url}img/page-5-2-text-2.png")
+						//- img(last-load-src="#{url}img/page-5-2-text-2.png")
+						p 渔网割伤的手掌
 					.text.text-3.fadeInUp.animated.duration-12.delay-6
-						img(last-load-src="#{url}img/page-5-2-text-3.png")
+						//- img(last-load-src="#{url}img/page-5-2-text-3.png")
+						p 海藻总是能奇迹般地治愈他们的伤口
 
-		.page.page-five-3(next=".page-five-4",wait="1000")
+		.page.page-five-3(next=".page-five-4",wait="#{normalTime}")
 			.content
 				.bg.fadeInZoomBigMoon.animated.duration-30
 					.cover.fadeOut.animated.duration-20.delay-15.last
 					.stars
 				.texts
 					.text.text-1.fadeInUp.animated.duration-10.delay-2
-						img(last-load-src="#{url}img/page-5-3-text-1.png")
+						//- img(last-load-src="#{url}img/page-5-3-text-1.png")
+						p 于是贺伯博士借了一条小船
 					.text.text-2.fadeInUp.animated.duration-11.delay-4
-						img(last-load-src="#{url}img/page-5-3-text-2.png")
+						//- img(last-load-src="#{url}img/page-5-3-text-2.png")
+						p 游荡在浩瀚的海洋里
 					.text.text-3.fadeInUp.animated.duration-12.delay-6
-						img(last-load-src="#{url}img/page-5-3-text-3.png")
+						//- img(last-load-src="#{url}img/page-5-3-text-3.png")
+						p 寻找深海修复容颜的奥秘
 
-		.page.page-five-4(next=".page-six",wait="2000")
+		.page.page-five-4(next=".page-six",wait="#{normalTime+1000}")
 			.content
 				.bg.fadeInZoomBigOp.animated.duration-30.last
 				.texts
 					.text.text-1.fadeInUp.animated.duration-10.delay-2
-						img(last-load-src="#{url}img/page-5-4-text-1.png")
+						//- img(last-load-src="#{url}img/page-5-41-text-1.png")
+						p 终于他发现了
 					.text.text-2.fadeInUp.animated.duration-11.delay-4
-						img(last-load-src="#{url}img/page-5-4-text-2.png")
+						//- img(last-load-src="#{url}img/page-5-4-text-2.png")
+						p 充满修复能量的深海巨藻
 
 		.page.page-six
 			.content
 				.bg
 				.texts
 					.text.text-1.fadeInUp.animated.duration-10.delay-2
-						img(last-load-src="#{url}img/page-6-text-1.png")
+						//- img(last-load-src="#{url}img/page-6-text-1.png")
+						p 于是贺伯博士把巨藻带了回来
 					.text.text-2.fadeInUp.animated.duration-11.delay-4
-						img(last-load-src="#{url}img/page-6-text-2.png")
+						//- img(last-load-src="#{url}img/page-6-text-2.png")
+						p 在实验室潜心研究
 					.btn.btn-1.fadeInUp.animated.duration-11.delay-6
 						img(last-load-src="#{url}img/page-6-btn-1.png")
 
-		.page.page-seven(next=".page-eight",wait="2000")
+		.page.page-seven(next=".page-eight",wait="#{normalTime+1000}")
 			.content
 				.bg.fadeInZoomBig.animated.duration-30.last
 					img(last-load-src="#{url}img/page-7-background.jpg")
@@ -200,13 +232,75 @@ block content
 						img(last-load-src="#{url}img/hand.png")
 				.texts
 					.text.text-1.fadeInUp.animated.duration-10.delay-2
-						img(last-load-src="#{url}img/page-7-text-1.png")
+						//- img(last-load-src="#{url}img/page-7-text-1.png")
+						p 在模拟深海环境的“声纳”
 					.text.text-2.fadeInUp.animated.duration-11.delay-4
-						img(last-load-src="#{url}img/page-7-text-2.png")
-					.text.text-1.fadeInUp.animated.duration-11.delay-6
-						img(last-load-src="#{url}img/page-7-text-3.png")
+						//- img(last-load-src="#{url}img/page-7-text-2.png")
+						p 和特定频率光线的催化下
+					.text.text-3.fadeInUp.animated.duration-11.delay-6
+						//- img(last-load-src="#{url}img/page-7-text-3.png")
+						p 历经三个月的古法发酵
+					.text.text-4.fadeInUp.animated.duration-11.delay-8
+						p 最终他萃取出LA MER的品牌灵魂修复成分---
+					.text.text-5.fadeInUp.animated.duration-12.delay-10
+						p
+							em 神奇活性精萃Miracle Broth™
 
-		.page.page-eight
+		.page.page-eight(next=".page-nine",wait="#{normalTime+1000}")
+			.content
+				.texts
+					.small-logo.fadeInUp.animated.duration-10.delay-2
+						img(last-load-src="#{url}img/page-8-small-logo.png")
+					.title.title-1.fadeInUp.animated.duration-10.delay-4
+						h3 奇迹面霜由此诞生
+					.text.text-1.fadeInUp.animated.duration-10.delay-6
+						p 博士的容颜得到修复
+					.text.text-2.fadeInUp.animated.duration-11.delay-8
+						p 无与伦比的传奇面霜
+					.text.text-3.fadeInUp.animated.duration-11.delay-10
+						p 为全球众多爱用者带来肌肤焕变的奇迹
+				.bg
+					img(first-load-src="#{url}img/page-1-background.jpg")
+					.down.fadeOut.animated.duration-30.delay-5.last
+						img(first-load-src="#{url}img/page-1-down.jpg")
+					.stars.stars-1
+					.stars.stars-2
+					.stars.stars-3
+
+		.page.page-nine.on
+			.bg
+			.content
+				.texts
+					.title.title-1.fadeInUp.animated.duration-10.delay-1
+						h3 取自海洋
+					.title.title-2.fadeInUp.animated.duration-10.delay-2
+						h3 回馈海洋
+					.text.text-1.fadeInUp.animated.duration-10.delay-4
+						p 为了将海洋的馈赠延续给子孙后代，
+					.text.text-2.fadeInUp.animated.duration-10.delay-5
+						p 海蓝之谜致力于还原和保护海洋栖息地。
+					.text.text-3.fadeInUp.animated.duration-10.delay-6
+						p 为了庆祝2017年世界海洋日，
+					.text.text-4.fadeInUp.animated.duration-10.delay-7
+						p LA MER成立海蓝之谜蔚蓝心动基金会，
+					.text.text-5.fadeInUp.animated.duration-10.delay-8
+						p 专注扩大海洋保护区域，
+					.text.text-6.fadeInUp.animated.duration-10.delay-9
+						p 并与Project 0合作创办，
+					.text.text-7.fadeInUp.animated.duration-10.delay-10
+						p 世界海洋日艺术展，
+					.text.text-8.fadeInUp.animated.duration-10.delay-11
+						p 唤起公众的海洋环保意识。
+					.btn.btn-1.fadeInUp.animated.duration-12.delay-13
+						a(href="http://www.baidu.com")
+							img(last-load-src="#{url}img/page-9-btn-1.png")
+
+
+		//- .page.page-nine.on
+			.content
+				.texts
+
+		//- .page.page-eight
 			.content
 				.texts
 					.text.text-1.fadeInUp.animated.duration-10.delay-2
@@ -225,7 +319,7 @@ block content
 						a(href="http://www.baidu.com")
 							img(last-load-src="#{url}img/page-8-btn-1.png")
 
-		// .page.page-eight(next=".page-nine",wait="4500")
+		//- .page.page-eight(next=".page-nine",wait="4500")
 			.content
 				.texts
 					.title.Stamp.animated.duration-5.delay-2
@@ -241,7 +335,7 @@ block content
 
 			.hidevideo
 				video#video(src="#{url}video/video.mp4",controls,width="620",height="340",poster="#{url}img/black.jpg",webkit-playsinline,playsinline,loop)
-		// .page.page-nine
+		//- .page.page-nine
 			.content
 				.texts
 					.title.Stamp.animated.duration-5.delay-2
@@ -263,11 +357,12 @@ block js
 	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/jquery.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
-	//- script(src="http://image.giccoo.com/projects/libs/js/min/riot.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/riot.min.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/cityData.js")
 	//- script(src="js/tags.js?v=1")
+	script(src="/libs/js/tags/playsound.js")
 	script(src="js/main.js?v=1")
-	script.
+	//- script.
 		var _hmt = _hmt || [];
 		(function() {
 			var hm = document.createElement("script");

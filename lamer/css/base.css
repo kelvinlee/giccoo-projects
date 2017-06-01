@@ -374,390 +374,6 @@ ul {
   padding: 0;
   list-style: none; }
 
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-          animation-name: fadeIn; }
-
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-.fadeOut {
-  -webkit-animation-name: fadeOut;
-          animation-name: fadeOut; }
-
-@-webkit-keyframes fadeInOut {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0.5; }
-  100% {
-    opacity: 1; } }
-
-@keyframes fadeInOut {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0.5; }
-  100% {
-    opacity: 1; } }
-
-.fadeInOut {
-  -webkit-animation-name: fadeInOut;
-          animation-name: fadeInOut; }
-
-@-webkit-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px); }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px); } }
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px); }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px); } }
-
-.fadeInDown {
-  -webkit-animation-name: fadeInDown;
-          animation-name: fadeInDown; }
-
-@-webkit-keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-            transform: translateY(20px); }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px); } }
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-            transform: translateY(20px); }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px); } }
-
-.fadeInUp {
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp; }
-
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); }
-  50% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-            transform: scale3d(1.05, 1.05, 1.05); }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); } }
-
-@keyframes pulse {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); }
-  50% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-            transform: scale3d(1.05, 1.05, 1.05); }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); } }
-
-.pulse {
-  -webkit-animation-name: pulse;
-          animation-name: pulse; }
-
-@-webkit-keyframes shake {
-  0%, 100% {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); }
-  10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: translate3d(-8%, 0, 0);
-            transform: translate3d(-8%, 0, 0); }
-  20%, 40%, 60%, 80% {
-    -webkit-transform: translate3d(8%, 0, 0);
-            transform: translate3d(8%, 0, 0); } }
-
-@keyframes shake {
-  0%, 100% {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); }
-  10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: translate3d(-8%, 0, 0);
-            transform: translate3d(-8%, 0, 0); }
-  20%, 40%, 60%, 80% {
-    -webkit-transform: translate3d(8%, 0, 0);
-            transform: translate3d(8%, 0, 0); } }
-
-.shake {
-  -webkit-animation-name: shake;
-          animation-name: shake; }
-
-@-webkit-keyframes Flash {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0.6; }
-  100% {
-    opacity: 1; } }
-
-@keyframes Flash {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0.6; }
-  100% {
-    opacity: 1; } }
-
-.Flash {
-  -webkit-animation-name: Flash;
-          animation-name: Flash; }
-
-@-webkit-keyframes Stamp {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(2, 2, 2);
-            transform: scale3d(2, 2, 2); }
-  20% {
-    opacity: 1; }
-  70% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-            transform: scale3d(0.9, 0.9, 0.9); }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); } }
-
-@keyframes Stamp {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(2, 2, 2);
-            transform: scale3d(2, 2, 2); }
-  20% {
-    opacity: 1; }
-  70% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-            transform: scale3d(0.9, 0.9, 0.9); }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); } }
-
-.Stamp {
-  -webkit-animation-name: Stamp;
-          animation-name: Stamp; }
-
-.Stamp {
-  -webkit-animation-name: Stamp;
-          animation-name: Stamp; }
-
-@-webkit-keyframes StampSmall {
-  0% {
-    opacity: 1;
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); }
-  20% {
-    opacity: 0.6; }
-  70% {
-    -webkit-transform: scale3d(0.8, 0.8, 0.8);
-            transform: scale3d(0.8, 0.8, 0.8);
-    opacity: 0.8; }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
-    opacity: 1; } }
-
-@keyframes StampSmall {
-  0% {
-    opacity: 1;
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1); }
-  20% {
-    opacity: 0.6; }
-  70% {
-    -webkit-transform: scale3d(0.8, 0.8, 0.8);
-            transform: scale3d(0.8, 0.8, 0.8);
-    opacity: 0.8; }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
-    opacity: 1; } }
-
-.StampSmall {
-  -webkit-animation-name: StampSmall;
-          animation-name: StampSmall; }
-
-.StampSmall {
-  -webkit-animation-name: StampSmall;
-          animation-name: StampSmall; }
-
-@-webkit-keyframes StampTop {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(2, 2, 2) translate3d(8%, -8%, 0);
-            transform: scale3d(2, 2, 2) translate3d(8%, -8%, 0); }
-  20% {
-    opacity: 1; }
-  70% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-            transform: scale3d(0.9, 0.9, 0.9); }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
-            transform: scale3d(1, 1, 1) translate3d(0, 0, 0); } }
-
-@keyframes StampTop {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(2, 2, 2) translate3d(8%, -8%, 0);
-            transform: scale3d(2, 2, 2) translate3d(8%, -8%, 0); }
-  20% {
-    opacity: 1; }
-  70% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-            transform: scale3d(0.9, 0.9, 0.9); }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
-            transform: scale3d(1, 1, 1) translate3d(0, 0, 0); } }
-
-.StampTop {
-  -webkit-animation-name: StampTop;
-          animation-name: StampTop; }
-
-.StampTop {
-  -webkit-animation-name: StampTop;
-          animation-name: StampTop; }
-
-@-webkit-keyframes Flicker {
-  0% {
-    opacity: 1; }
-  20% {
-    opacity: 0.5; }
-  30%, 100% {
-    opacity: 1; } }
-
-@keyframes Flicker {
-  0% {
-    opacity: 1; }
-  20% {
-    opacity: 0.5; }
-  30%, 100% {
-    opacity: 1; } }
-
-.Flicker {
-  -webkit-animation-name: Flicker;
-          animation-name: Flicker; }
-
-@-webkit-keyframes slideToTop {
-  from {
-    -webkit-transform: translate3d(0, 1000px, 0);
-            transform: translate3d(0, 1000px, 0); }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); } }
-
-@keyframes slideToTop {
-  from {
-    -webkit-transform: translate3d(0, 1000px, 0);
-            transform: translate3d(0, 1000px, 0); }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); } }
-
-.slideToTop {
-  -webkit-animation-name: slideToTop;
-          animation-name: slideToTop; }
-
-@-webkit-keyframes slideToBottom {
-  from {
-    -webkit-transform: translate3d(0, -1000px, 0);
-            transform: translate3d(0, -1000px, 0); }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); } }
-
-@keyframes slideToBottom {
-  from {
-    -webkit-transform: translate3d(0, -1000px, 0);
-            transform: translate3d(0, -1000px, 0); }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); } }
-
-.slideToBottom {
-  -webkit-animation-name: slideToBottom;
-          animation-name: slideToBottom; }
-
-@-webkit-keyframes slideToLeft {
-  from {
-    -webkit-transform: translate3d(700px, 0, 0);
-            transform: translate3d(700px, 0, 0); }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); } }
-
-@keyframes slideToLeft {
-  from {
-    -webkit-transform: translate3d(700px, 0, 0);
-            transform: translate3d(700px, 0, 0); }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); } }
-
-.slideToLeft {
-  -webkit-animation-name: slideToLeft;
-          animation-name: slideToLeft; }
-
-@-webkit-keyframes slideToRight {
-  from {
-    -webkit-transform: translate3d(-700px, 0, 0);
-            transform: translate3d(-700px, 0, 0); }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); } }
-
-@keyframes slideToRight {
-  from {
-    -webkit-transform: translate3d(-700px, 0, 0);
-            transform: translate3d(-700px, 0, 0); }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); } }
-
-.slideToRight {
-  -webkit-animation-name: slideToRight;
-          animation-name: slideToRight; }
-
 .pages {
   display: block;
   height: 100%;
@@ -1696,6 +1312,26 @@ ul {
   -webkit-animation-name: starMoveRight;
           animation-name: starMoveRight; }
 
+@-webkit-keyframes second {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes second {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 .linear {
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear; }
@@ -2504,13 +2140,13 @@ ul {
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 2rem;
-  height: 2rem;
+  width: 30px;
+  height: 30px;
   z-index: 1009;
   font-size: 0; }
   .playsound .icon-play.play {
-    -webkit-animation: second 5s ease;
-            animation: second 5s ease;
+    -webkit-animation: second 5s linear;
+            animation: second 5s linear;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     -webkit-animation-iteration-count: infinite;
@@ -2949,47 +2585,65 @@ body {
       background-color: transparent;
       border: none; }
 
+.playsound {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 9.0625%;
+  margin: 0 auto;
+  font-size: 0;
+  z-index: 999; }
+  .iphone4 .playsound {
+    width: 7.25%; }
+  .playsound .play {
+    -webkit-animation: second 4s ease;
+            animation: second 4s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+
 .pages .page {
   font-size: 0; }
   .pages .page.on {
     display: block; }
 
-.page-one {
+.page-one, .page-eight {
   background-color: #dbd7d2;
   z-index: 100; }
-  .page-one .content .texts {
+  .page-one .content .texts, .page-eight .content .texts {
     position: absolute;
     top: 30%;
     left: 0px;
     width: 100%;
     z-index: 1; }
-    .page-one .content .texts .text, .page-one .content .texts .btn {
+    .page-one .content .texts .text, .page-one .content .texts .btn, .page-eight .content .texts .text, .page-eight .content .texts .btn {
       margin-top: 1rem; }
-    .page-one .content .texts .btn {
+    .page-one .content .texts .btn, .page-eight .content .texts .btn {
       width: 39.0625%;
       margin: 0 auto;
       margin-top: 1rem; }
-      .iphone4 .page-one .content .texts .btn {
+      .iphone4 .page-one .content .texts .btn, .iphone4 .page-eight .content .texts .btn {
         width: 39.0625%; }
-  .page-one .content .bg {
+  .page-one .content .bg, .page-eight .content .bg {
     position: absolute;
     bottom: 20%;
     left: 0px;
     width: 100%;
     overflow: hidden;
     font-size: 0; }
-    .page-one .content .bg .down {
+    .page-one .content .bg .down, .page-eight .content .bg .down {
       position: absolute;
       bottom: 0px;
       left: 0px;
       font-size: 0; }
-    .page-one .content .bg .stars {
+    .page-one .content .bg .stars, .page-eight .content .bg .stars {
       position: absolute;
       bottom: 20%;
       left: 0px;
       width: 400px;
       height: 80%; }
-  .page-one .content .bottom {
+  .page-one .content .bottom, .page-eight .content .bottom {
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -3000,15 +2654,18 @@ body {
 .page-two {
   background-color: #172430;
   z-index: 99; }
-  .page-two .texts {
+  .page-two .content .texts {
     position: absolute;
     top: 20%;
     left: 0px;
     width: 100%;
     z-index: 1; }
-    .page-two .texts .text, .page-two .texts .btn {
+    .page-two .content .texts .text, .page-two .content .texts .btn {
       margin-top: 1rem; }
-  .page-two .bg {
+      .page-two .content .texts .text p, .page-two .content .texts .btn p {
+        padding: 0 10%;
+        text-align: left; }
+  .page-two .content .bg {
     position: absolute;
     bottom: 0px;
     left: 0px; }
@@ -3016,15 +2673,18 @@ body {
 .page-three {
   background-color: #003949;
   z-index: 98; }
-  .page-three .texts {
+  .page-three .content .texts {
     position: absolute;
     bottom: 20%;
     left: 0px;
     width: 100%;
     z-index: 1; }
-    .page-three .texts .text, .page-three .texts .btn {
+    .page-three .content .texts .text, .page-three .content .texts .btn {
       margin-top: 1rem; }
-  .page-three .bg {
+      .page-three .content .texts .text p, .page-three .content .texts .btn p {
+        padding: 0 10%;
+        text-align: left; }
+  .page-three .content .bg {
     position: absolute;
     top: 10%;
     left: 0px; }
@@ -3138,14 +2798,17 @@ body {
               animation-fill-mode: both;
       -webkit-animation-iteration-count: infinite;
               animation-iteration-count: infinite; }
-  .page-four-3 .texts {
+  .page-four-3 .content .texts {
     position: absolute;
     top: 35%;
     left: 0px;
     width: 100%;
     z-index: 1; }
-    .page-four-3 .texts .text, .page-four-3 .texts .btn {
+    .page-four-3 .content .texts .text, .page-four-3 .content .texts .btn {
       margin-top: 1rem; }
+      .page-four-3 .content .texts .text p, .page-four-3 .content .texts .btn p {
+        padding: 0 10%;
+        text-align: left; }
 
 .page-five {
   z-index: 93;
@@ -3176,14 +2839,17 @@ body {
     position: absolute;
     top: 10%;
     left: 0px; }
-  .page-five-1 .texts {
+  .page-five-1 .content .texts {
     position: absolute;
     bottom: 20%;
     left: 0px;
     width: 100%;
     z-index: 1; }
-    .page-five-1 .texts .text, .page-five-1 .texts .btn {
+    .page-five-1 .content .texts .text, .page-five-1 .content .texts .btn {
       margin-top: 1rem; }
+      .page-five-1 .content .texts .text p, .page-five-1 .content .texts .btn p {
+        padding: 0 10%;
+        text-align: right; }
 
 .page-five-2 {
   z-index: 91; }
@@ -3196,14 +2862,17 @@ body {
     background: url("../img/page-5-2-background.jpg") no-repeat top right;
     background-size: cover;
     background-color: transparent; }
-  .page-five-2 .texts {
+  .page-five-2 .content .texts {
     position: absolute;
     bottom: 20%;
     left: 0px;
     width: 100%;
     z-index: 1; }
-    .page-five-2 .texts .text, .page-five-2 .texts .btn {
+    .page-five-2 .content .texts .text, .page-five-2 .content .texts .btn {
       margin-top: 1rem; }
+      .page-five-2 .content .texts .text p, .page-five-2 .content .texts .btn p {
+        padding: 0 10%;
+        text-align: left; }
 
 .page-five-3 {
   z-index: 90; }
@@ -3233,14 +2902,17 @@ body {
       left: 0px;
       width: 100%;
       height: 35%; }
-  .page-five-3 .texts {
+  .page-five-3 .content .texts {
     position: absolute;
     bottom: 20%;
     left: 0px;
     width: 100%;
     z-index: 1; }
-    .page-five-3 .texts .text, .page-five-3 .texts .btn {
+    .page-five-3 .content .texts .text, .page-five-3 .content .texts .btn {
       margin-top: 1rem; }
+      .page-five-3 .content .texts .text p, .page-five-3 .content .texts .btn p {
+        padding: 0 10%;
+        text-align: right; }
 
 .page-five-4 {
   z-index: 89; }
@@ -3253,14 +2925,17 @@ body {
     background: url("../img/page-5-4-background.jpg") no-repeat top right;
     background-size: cover;
     background-color: transparent; }
-  .page-five-4 .texts {
+  .page-five-4 .content .texts {
     position: absolute;
     bottom: 45%;
     left: 0px;
     width: 100%;
     z-index: 1; }
-    .page-five-4 .texts .text, .page-five-4 .texts .btn {
+    .page-five-4 .content .texts .text, .page-five-4 .content .texts .btn {
       margin-top: 1rem; }
+      .page-five-4 .content .texts .text p, .page-five-4 .content .texts .btn p {
+        padding: 0 10%;
+        text-align: left; }
 
 .page-six {
   z-index: 88; }
@@ -3346,59 +3021,99 @@ body {
       .iphone4 .page-seven .texts .btn {
         width: 39.0625%; }
 
-.page-eight {
-  background: url("../img/page-8-background.jpg") no-repeat center center;
-  background-size: cover;
-  background-color: transparent;
-  background-color: #000; }
-  .page-eight .content .texts {
-    position: absolute;
-    top: 50%;
-    left: 0px;
-    width: 100%;
-    z-index: 11;
-    -webkit-transform: translate3d(0, -50%, 0);
-            transform: translate3d(0, -50%, 0); }
-    .page-eight .content .texts .text, .page-eight .content .texts .btn {
-      margin-top: 1rem; }
-    .page-eight .content .texts .btn {
-      width: 39.0625%;
-      margin: 0 auto;
-      margin-top: 1rem; }
-      .iphone4 .page-eight .content .texts .btn {
-        width: 39.0625%; }
-  .page-eight .content .video {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    z-index: 10; }
-    .page-eight .content .video canvas {
-      width: 100%;
-      z-index: 9; }
-  .page-eight .hidevideo {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: -1;
-    opacity: 0;
-    width: 1;
-    height: 1;
-    overflow: hidden; }
+.page-eight .content .texts .title h3 {
+  font-size: 1.4rem;
+  font-weight: lighter;
+  margin: 1em auto; }
+  @media only screen and (min-width: 321px) and (max-width: 399px) {
+    .page-eight .content .texts .title h3 {
+      font-size: 1.54rem; } }
+  @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+    .page-eight .content .texts .title h3 {
+      font-size: 1.54rem; } }
+  @media only screen and (min-width: 399px) and (max-width: 767px) {
+    .page-eight .content .texts .title h3 {
+      font-size: 1.68rem; } }
+  @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+    .page-eight .content .texts .title h3 {
+      font-size: 1.68rem; } }
 
-.page-nine {
-  background-color: #000; }
-  .page-nine .content .texts {
-    position: absolute;
-    top: 25%;
-    left: 0px;
-    width: 100%;
-    z-index: 11; }
-    .page-nine .content .texts .text, .page-nine .content .texts .btn {
-      margin-top: 1rem; }
-    .page-nine .content .texts .btn {
-      width: 39.0625%;
-      margin: 0 auto;
-      margin-top: 1rem; }
-      .iphone4 .page-nine .content .texts .btn {
-        width: 39.0625%; }
+.page-nine .bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: url("../img/page-5-3-background.jpg") no-repeat top right;
+  background-size: cover;
+  background-color: transparent; }
+
+.page-nine .content .texts {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  width: 100%;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0); }
+  .page-nine .content .texts .title h3 {
+    font-size: 1.4rem;
+    font-weight: lighter;
+    margin: 1em auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
+    @media only screen and (min-width: 321px) and (max-width: 399px) {
+      .page-nine .content .texts .title h3 {
+        font-size: 1.54rem; } }
+    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+      .page-nine .content .texts .title h3 {
+        font-size: 1.54rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 767px) {
+      .page-nine .content .texts .title h3 {
+        font-size: 1.68rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+      .page-nine .content .texts .title h3 {
+        font-size: 1.68rem; } }
+  .page-nine .content .texts .text p {
+    font-size: 0.8rem; }
+    @media only screen and (min-width: 321px) and (max-width: 399px) {
+      .page-nine .content .texts .text p {
+        font-size: 0.88rem; } }
+    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+      .page-nine .content .texts .text p {
+        font-size: 0.88rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 767px) {
+      .page-nine .content .texts .text p {
+        font-size: 0.96rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+      .page-nine .content .texts .text p {
+        font-size: 0.96rem; } }
+  .page-nine .content .texts .text-1 {
+    margin-top: 1.4em; }
+  .page-nine .content .texts .text-3 {
+    margin-top: 1em; }
+  .page-nine .content .texts .btn-1 {
+    margin-top: 1em; }
+
+.page .text, .page .title {
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.4em; }
+  @media only screen and (min-width: 321px) and (max-width: 399px) {
+    .page .text, .page .title {
+      font-size: 0.99rem; } }
+  @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+    .page .text, .page .title {
+      font-size: 0.99rem; } }
+  @media only screen and (min-width: 399px) and (max-width: 767px) {
+    .page .text, .page .title {
+      font-size: 1.08rem; } }
+  @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+    .page .text, .page .title {
+      font-size: 1.08rem; } }
+  .page .text p, .page .text h1, .page .text h2, .page .text h3, .page .title p, .page .title h1, .page .title h2, .page .title h3 {
+    margin: 0.4em auto;
+    text-align: center;
+    font-family: 'PingHei', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif;
+    font-weight: lighter;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
+    .page .text p em, .page .text h1 em, .page .text h2 em, .page .text h3 em, .page .title p em, .page .title h1 em, .page .title h2 em, .page .title h3 em {
+      font-weight: bold; }

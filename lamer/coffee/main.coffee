@@ -55,7 +55,7 @@ window.onload = ->
 	
 
 	$(".loading .content").addClass "on"
-	# riot.mount("*")
+	riot.mount("*")
 	setTimeout ->
 		loadedEnd()
 	,2400
@@ -229,6 +229,10 @@ passFun = (evt)->
 		parent.addClass "fadeOut animated"
 		$(parent.attr("next")).addClass "on"
 		$(parent.attr("next"))[0].addEventListener ANIMATION_END_NAME, FrameFun
+		if $(parent.attr("next")).is ".page-nine"
+			Stars(".page-nine .stars-1",20)
+			Stars(".page-nine .stars-2",20)
+			Stars(".page-nine .stars-3",20)
 		# if $(parent.attr("next")).is ".page-eight"
 		# 	$("#video")[0].play()
 		# if $(parent.attr("next")).is ".page-nine"
@@ -271,5 +275,5 @@ Stars = (target,num)->
 			"animation-duration": duration+"ms"
 		})
 		stars.append star
-		console.log star
+		# console.log star
 

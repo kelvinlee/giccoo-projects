@@ -1,5 +1,4 @@
 @import sass/base
-@import sass/animation
 @import ../../libs/sass/parallax
 @import ../../libs/sass/loader-ball
 
@@ -282,7 +281,11 @@ $heightSize : -100%
 		+transform(translate3d(-400px,0,0))
 	100%
 		+transform(translate3d(400px,0,0))
-
++keyframes(second)
+	from
+		+transform(rotate(0deg))
+	to
+		+transform(rotate(360deg))
 .linear
 	animation-timing-function: linear
 
@@ -296,14 +299,13 @@ $heightSize : -100%
 .playsound
 	+posa
 	+tr(10px,10px)
-	+wh(2rem,2rem)
+	+wh(30px,30px)
 	z-index: 1009
 	font-size: 0
 	.icon-play
 		&.play
-			+animation(second,5s,ease,infinite)
+			+animation(second,5s,linear,infinite)
 			transform-origin: center center
-
 
 .share-wechat
 	+posa
@@ -627,13 +629,23 @@ body
 			+bc(transparent)
 			border: none
 
+.playsound
+	+posa
+	+tr(1rem,1rem)
+	+iw(58)
+	font-size: 0
+	z-index: 999
+	.play
+		+animation(second,4s,ease,infinite)
+
+
 .pages
 	.page
 		font-size: 0
 		&.on
 			+show
 
-.page-one
+.page-one,.page-eight
 	+bc(#dbd7d2)
 	z-index: 100
 	.content
@@ -679,30 +691,38 @@ body
 .page-two
 	+bc(#172430)
 	z-index: 99
-	.texts
-		+posa
-		+tl(20%)
-		+w
-		z-index: 1
-		.text,.btn
-			margin-top: 1rem
-	.bg
-		+posa
-		+bl
+	.content
+		.texts
+			+posa
+			+tl(20%)
+			+w
+			z-index: 1
+			.text,.btn
+				margin-top: 1rem
+				p
+					padding: 0 10%;
+					+text-left
+		.bg
+			+posa
+			+bl
 
 .page-three
 	+bc(#003949)
 	z-index: 98
-	.texts
-		+posa
-		+bl(20%)
-		+w
-		z-index: 1
-		.text,.btn
-			margin-top: 1rem
-	.bg
-		+posa
-		+tl(10%)
+	.content
+		.texts
+			+posa
+			+bl(20%)
+			+w
+			z-index: 1
+			.text,.btn
+				margin-top: 1rem
+				p
+					padding: 0 10%;
+					+text-left
+		.bg
+			+posa
+			+tl(10%)
 
 .page-four
 	z-index: 97
@@ -775,13 +795,17 @@ body
 			+animation(starMoveLeft,20s,linear,infinite)
 		.stars-3
 			+animation(starMoveLeft,40s,linear,infinite)
-	.texts
-		+posa
-		+tl(35%)
-		+w
-		z-index: 1
-		.text,.btn
-			margin-top: 1rem
+	.content
+		.texts
+			+posa
+			+tl(35%)
+			+w
+			z-index: 1
+			.text,.btn
+				margin-top: 1rem
+				p
+					padding: 0 10%;
+					+text-left
 
 .page-five
 	z-index: 93
@@ -804,14 +828,18 @@ body
 	.bg
 		+posa
 		+tl(10%)
-	.texts
-		+posa
-		+bl(20%)
-		+w
-		z-index: 1
-		// +transform(translate3d(0,-50%,0))
-		.text,.btn
-			margin-top: 1rem
+	.content
+		.texts
+			+posa
+			+bl(20%)
+			+w
+			z-index: 1
+			// +transform(translate3d(0,-50%,0))
+			.text,.btn
+				margin-top: 1rem
+				p
+					padding: 0 10%;
+					+text-right
 
 .page-five-2
 	z-index: 91
@@ -821,14 +849,18 @@ body
 		+w
 		+h
 		+b($cdn+"img/page-5-2-background.jpg",no-repeat,top,right,cover)
-	.texts
-		+posa
-		+bl(20%)
-		+w
-		z-index: 1
-		// +transform(translate3d(0,-50%,0))
-		.text,.btn
-			margin-top: 1rem
+	.content
+		.texts
+			+posa
+			+bl(20%)
+			+w
+			z-index: 1
+			// +transform(translate3d(0,-50%,0))
+			.text,.btn
+				margin-top: 1rem
+				p
+					padding: 0 10%;
+					+text-left
 
 .page-five-3
 	z-index: 90
@@ -849,15 +881,18 @@ body
 			+posa
 			+tl(10%)
 			+wh(100%,35%)
-
-	.texts
-		+posa
-		+bl(20%)
-		+w
-		z-index: 1
-		// +transform(translate3d(0,-50%,0))
-		.text,.btn
-			margin-top: 1rem
+	.content
+		.texts
+			+posa
+			+bl(20%)
+			+w
+			z-index: 1
+			// +transform(translate3d(0,-50%,0))
+			.text,.btn
+				margin-top: 1rem
+				p
+					padding: 0 10%;
+					+text-right
 
 .page-five-4
 	z-index: 89
@@ -867,14 +902,18 @@ body
 		+w
 		+h
 		+b($cdn+"img/page-5-4-background.jpg",no-repeat,top,right,cover)
-	.texts
-		+posa
-		+bl(45%)
-		+w
-		z-index: 1
-		// +transform(translate3d(0,-50%,0))
-		.text,.btn
-			margin-top: 1rem
+	.content
+		.texts
+			+posa
+			+bl(45%)
+			+w
+			z-index: 1
+			// +transform(translate3d(0,-50%,0))
+			.text,.btn
+				margin-top: 1rem
+				p
+					padding: 0 10%;
+					+text-left
 
 .page-six
 	z-index: 88
@@ -933,57 +972,111 @@ body
 			+iw(250,640,100%)
 			margin-top: 1rem
 
+
 .page-eight
-	+b($cdn+"img/page-8-background.jpg",no-repeat,center,center,cover)
-	+bc(#000)
+	.content
+		.texts
+			.title
+				h3
+					+font-size(1.4rem)
+					font-weight: lighter
+					margin: 1em auto
+.page-nine
+	.bg
+		+posa
+		+tl
+		+w
+		+h
+		+b($cdn+"img/page-5-3-background.jpg",no-repeat,top,right,cover)
 	.content
 		.texts
 			+posa
 			+tl(50%)
 			+w
-			z-index: 11
 			+transform(translate3d(0,-50%,0))
-			.text,.btn
-				margin-top: 1rem
-			.btn
-				+iw(250,640,100%)
-				margin-top: 1rem
-		.video
-			+posa
-			+bl
-			+w
-			z-index: 10
-			// video
-			// 	+w(620px)
-			// 	+h
-				// opacity: 0
-			canvas
-				+w
-				//+posa
-				//+tl(-100%)
-				z-index: 9
-	.hidevideo
-		+posa
-		+tl
-		z-index: -1
-		opacity: 0
-		+wh(1,1)
-		+overhide
+			.title
+				h3
+					+font-size(1.4rem)
+					font-weight: lighter
+					margin: 1em auto
+					text-shadow: 1px 1px 2px rgba(0,0,0,0.6)
+			.text
+				p
+					+font-size(0.8rem)
+			.text-1
+				margin-top: 1.4em
+			.text-3
+				margin-top: 1em
+			.btn-1
+				margin-top: 1em
 
-.page-nine
-	+bc(#000)
-	.content
-		.texts
-			+posa
-			+tl(25%)
-			+w
-			z-index: 11
-			// +transform(translate3d(0,-50%,0))
-			.text,.btn
-				margin-top: 1rem
-			.btn
-				+iw(250,640,100%)
-				margin-top: 1rem
+// .page-eight
+// 	+b($cdn+"img/page-8-background.jpg",no-repeat,center,center,cover)
+// 	+bc(#000)
+// 	.content
+// 		.texts
+// 			+posa
+// 			+tl(50%)
+// 			+w
+// 			z-index: 11
+// 			+transform(translate3d(0,-50%,0))
+// 			.text,.btn
+// 				margin-top: 1rem
+// 			.btn
+// 				+iw(250,640,100%)
+// 				margin-top: 1rem
+// 		.video
+// 			+posa
+// 			+bl
+// 			+w
+// 			z-index: 10
+// 			// video
+// 			// 	+w(620px)
+// 			// 	+h
+// 				// opacity: 0
+// 			canvas
+// 				+w
+// 				//+posa
+// 				//+tl(-100%)
+// 				z-index: 9
+// 	.hidevideo
+// 		+posa
+// 		+tl
+// 		z-index: -1
+// 		opacity: 0
+// 		+wh(1,1)
+// 		+overhide
+
+// .page-nine
+// 	+bc(#000)
+// 	.content
+// 		.texts
+// 			+posa
+// 			+tl(25%)
+// 			+w
+// 			z-index: 11
+// 			// +transform(translate3d(0,-50%,0))
+// 			.text,.btn
+// 				margin-top: 1rem
+// 			.btn
+// 				+iw(250,640,100%)
+// 				margin-top: 1rem
+
+
+.page
+	.text,.title
+		color: #fff
+		+font-size(0.9rem)
+		line-height: 1.4em
+
+		p,h1,h2,h3
+			margin: 0.4em auto
+			+text-center
+			font-family: 'PingHei', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif
+			font-weight: lighter
+			text-shadow: 1px 1px 2px rgba(0,0,0,0.6)
+			em
+				font-weight: bold
 
 // video::media-controls-enclosure
 // 	display: none
