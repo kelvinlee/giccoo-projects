@@ -138,7 +138,7 @@ taskData = [
     endDate: new Date(_startDate.getTime() + 10 * 24 * 60 * 60 * 1000)
   }
 ];
-
+var riots = [];
 window.onload = function() {
   var MK;
   MK = $("body").width() / $("body").height();
@@ -146,7 +146,7 @@ window.onload = function() {
     $("body").addClass("iphone4");
   }
   $(".loading .content").addClass("on");
-  riot.mount("*");
+  riots = riot.mount("*");
   setTimeout(function() {
     return loadedEnd();
   }, 2400);
@@ -157,6 +157,7 @@ window.onload = function() {
     return e.preventDefault();
   });
   $(".page-one .btn").on("click", function() {
+    $(riots[0].root).find("audio")[0].play()
     $(".pages .page-one")[0].removeEventListener(ANIMATION_END_NAME, FrameFun);
     $(".pages .page-one").addClass("fadeOut animated");
     $(".pages .page-two")[0].addEventListener(ANIMATION_END_NAME, FrameFun);

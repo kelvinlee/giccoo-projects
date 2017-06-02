@@ -3020,10 +3020,16 @@ body {
       margin-top: 1rem; }
       .iphone4 .page-seven .texts .btn {
         width: 39.0625%; }
-
+.page-eight .content .texts {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  width: 100%;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0); }
 .page-eight .content .texts .title h3 {
   font-size: 1.4rem;
-  font-weight: lighter;
+  font-weight: normal;
   margin: 1em auto; }
   @media only screen and (min-width: 321px) and (max-width: 399px) {
     .page-eight .content .texts .title h3 {
@@ -3057,7 +3063,7 @@ body {
           transform: translate3d(0, -50%, 0); }
   .page-nine .content .texts .title h3 {
     font-size: 1.4rem;
-    font-weight: lighter;
+    font-weight: normal;
     margin: 1em auto;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
     @media only screen and (min-width: 321px) and (max-width: 399px) {
@@ -3090,6 +3096,10 @@ body {
     margin-top: 1.4em; }
   .page-nine .content .texts .text-3 {
     margin-top: 1em; }
+  .page-nine .content .texts .btn {
+    width: 70.3125%;
+    margin: 0 auto;
+  }
   .page-nine .content .texts .btn-1 {
     margin-top: 1em; }
 
@@ -3113,7 +3123,7 @@ body {
     margin: 0.4em auto;
     text-align: center;
     font-family: 'PingHei', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif;
-    font-weight: lighter;
+    font-weight: normal;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
     .page .text p em, .page .text h1 em, .page .text h2 em, .page .text h3 em, .page .title p em, .page .title h1 em, .page .title h2 em, .page .title h3 em {
       font-weight: bold; }
