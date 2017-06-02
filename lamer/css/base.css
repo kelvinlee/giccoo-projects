@@ -3008,7 +3008,7 @@ body {
               animation-iteration-count: infinite; }
   .page-seven .texts {
     position: absolute;
-    bottom: 20%;
+    bottom: 5%;
     left: 0px;
     width: 100%;
     z-index: 1; }
@@ -3020,29 +3020,30 @@ body {
       margin-top: 1rem; }
       .iphone4 .page-seven .texts .btn {
         width: 39.0625%; }
+
 .page-eight .content .texts {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 0px;
   width: 100%;
   -webkit-transform: translate3d(0, -50%, 0);
           transform: translate3d(0, -50%, 0); }
-.page-eight .content .texts .title h3 {
-  font-size: 1.4rem;
-  font-weight: normal;
-  margin: 1em auto; }
-  @media only screen and (min-width: 321px) and (max-width: 399px) {
-    .page-eight .content .texts .title h3 {
-      font-size: 1.54rem; } }
-  @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-    .page-eight .content .texts .title h3 {
-      font-size: 1.54rem; } }
-  @media only screen and (min-width: 399px) and (max-width: 767px) {
-    .page-eight .content .texts .title h3 {
-      font-size: 1.68rem; } }
-  @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-    .page-eight .content .texts .title h3 {
-      font-size: 1.68rem; } }
+  .page-eight .content .texts .title h3 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin: 1em auto; }
+    @media only screen and (min-width: 321px) and (max-width: 399px) {
+      .page-eight .content .texts .title h3 {
+        font-size: 1.54rem; } }
+    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+      .page-eight .content .texts .title h3 {
+        font-size: 1.54rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 767px) {
+      .page-eight .content .texts .title h3 {
+        font-size: 1.68rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+      .page-eight .content .texts .title h3 {
+        font-size: 1.68rem; } }
 
 .page-nine .bg {
   position: absolute;
@@ -3099,9 +3100,11 @@ body {
   .page-nine .content .texts .btn {
     width: 70.3125%;
     margin: 0 auto;
-  }
+    margin-top: 1rem; }
+    .iphone4 .page-nine .content .texts .btn {
+      width: 70.3125%; }
   .page-nine .content .texts .btn-1 {
-    margin-top: 1em; }
+    margin-top: 1rem; }
 
 .page .text, .page .title {
   color: #fff;

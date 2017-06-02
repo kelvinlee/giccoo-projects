@@ -1,6 +1,6 @@
 extends ../libs/jade/layout-clean
 block title
-	| 潮汐更迭 共续蔚蓝心动
+	| 麦克斯·贺伯博士的奇妙探险
 
 
 block css
@@ -12,8 +12,8 @@ block content
 	// - url = "http://image.giccoo.com/projects/lamer/"
 	- url = "./"
 	- normalTime = 2000
-	.wechat-share-hide
-		img#share(src="http://image.giccoo.com/projects/lamer/img/share.jpg")
+	div(style="display: none")
+		img(src="http://image.giccoo.com/projects/lamer/img/share.jpg",alt="")
 	.pages
 		playsound.playsound(src="./mp3/bg.mp3",icon="true",iconplay="http://image.giccoo.com/projects/libs/img/audio-play.png",iconstop="http://image.giccoo.com/projects/libs/img/audio-stop.png")
 		.loading
@@ -92,7 +92,7 @@ block content
 					.btn.btn-2.fadeInUp.animated.duration-15.delay-14
 						img(second-load-src="#{url}img/page-4-btn-2.png")
 
-		.page.page-four-1(next=".page-four-2",wait="#{normalTime+1500}")
+		.page.page-four-1(next=".page-four-2",wait="#{normalTime}")
 			.content
 				.bg.bgDown.animated.duration-40.delay-5.linear
 					img(second-load-src="#{url}img/page-4-1-background.jpg")
@@ -153,7 +153,7 @@ block content
 					.btn.btn-2.fadeInUp.animated.duration-15.delay-12
 						img(second-load-src="#{url}img/page-5-btn-1.png")
 
-		.page.page-five-1(next=".page-five-2",wait="#{normalTime+1000}")
+		.page.page-five-1(next=".page-five-2",wait="#{normalTime}")
 			.content
 				.bg.fadeInZoomBig.animated.duration-30.last
 					img(last-load-src="#{url}img/page-5-1-background.jpg")
@@ -197,7 +197,7 @@ block content
 						//- img(last-load-src="#{url}img/page-5-3-text-3.png")
 						p 寻找深海修复容颜的奥秘
 
-		.page.page-five-4(next=".page-six",wait="#{normalTime+1000}")
+		.page.page-five-4(next=".page-six",wait="#{normalTime}")
 			.content
 				.bg.fadeInZoomBigOp.animated.duration-30.last
 				.texts
@@ -221,7 +221,7 @@ block content
 					.btn.btn-1.fadeInUp.animated.duration-11.delay-6
 						img(last-load-src="#{url}img/page-6-btn-1.png")
 
-		.page.page-seven(next=".page-eight",wait="#{normalTime+1000}")
+		.page.page-seven(next=".page-eight",wait="#{normalTime}")
 			.content
 				.bg.fadeInZoomBig.animated.duration-30.last
 					img(last-load-src="#{url}img/page-7-background.jpg")
@@ -246,18 +246,18 @@ block content
 						p
 							em 神奇活性精萃Miracle Broth™
 
-		.page.page-eight(next=".page-nine",wait="#{normalTime+1000}")
+		.page.page-eight(next=".page-nine",wait="#{normalTime}")
 			.content
 				.texts
-					.small-logo.fadeInUp.animated.duration-10.delay-2
+					.small-logo.fadeIn.animated.duration-10.delay-2
 						img(last-load-src="#{url}img/page-8-small-logo.png")
 					.title.title-1.fadeInUp.animated.duration-10.delay-4
 						h3 奇迹面霜由此诞生
 					.text.text-1.fadeInUp.animated.duration-10.delay-6
-						p 博士的容颜得到修复
+						p 初始，这只是一个人探寻自我愈颜的旅程
 					.text.text-2.fadeInUp.animated.duration-11.delay-8
-						p 无与伦比的传奇面霜
-					.text.text-3.fadeInUp.animated.duration-11.delay-10
+						p 却最终成就全世界秘传追随的新生焕变奇迹
+					//- .text.text-3.fadeInUp.animated.duration-11.delay-10
 						p 为全球众多爱用者带来肌肤焕变的奇迹
 				.bg
 					img(first-load-src="#{url}img/page-1-background.jpg")
@@ -286,20 +286,21 @@ block content
 					.text.text-5.fadeInUp.animated.duration-10.delay-8
 						p 专注扩大海洋保护区域，
 					.text.text-6.fadeInUp.animated.duration-10.delay-9
-						p 并与Project 0合作创办，
+						p 并与Project 0合作，
 					.text.text-7.fadeInUp.animated.duration-10.delay-10
-						p 世界海洋日艺术展，
+						p 邀请全球50位知名艺术家和明星
 					.text.text-8.fadeInUp.animated.duration-10.delay-11
+						p 参加LA MER BLUE HEART艺术展
+					.text.text-8.fadeInUp.animated.duration-10.delay-12
 						p 唤起公众的海洋环保意识。
 					.btn.btn-1.fadeInUp.animated.duration-12.delay-13
-						a(href="http://www.baidu.com")
+						a(href="http://wod.lamer.com.cn/mobile/index.html?utm_source=zhihu")
 							img(last-load-src="#{url}img/page-9-btn-1.png")
 
 
 		//- .page.page-nine.on
 			.content
 				.texts
-
 		//- .page.page-eight
 			.content
 				.texts
@@ -318,7 +319,6 @@ block content
 					.btn.btn-1.fadeInUp.animated.duration-12.delay-16
 						a(href="http://www.baidu.com")
 							img(last-load-src="#{url}img/page-8-btn-1.png")
-
 		//- .page.page-eight(next=".page-nine",wait="4500")
 			.content
 				.texts
@@ -362,7 +362,7 @@ block js
 	//- script(src="js/tags.js?v=1")
 	script(src="/libs/js/tags/playsound.js")
 	script(src="js/main.js?v=1")
-	//- script.
+	script.
 		var _hmt = _hmt || [];
 		(function() {
 			var hm = document.createElement("script");

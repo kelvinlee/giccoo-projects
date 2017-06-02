@@ -19,6 +19,7 @@ secondSlider = {}
 tabId = 0
 tabId2 = 0
 _stepList = ["40,000","70,000","120,000"]
+riots = []
 
 debug = false
 if debug
@@ -55,7 +56,7 @@ window.onload = ->
 	
 
 	$(".loading .content").addClass "on"
-	riot.mount("*")
+	riots = riot.mount("*")
 	setTimeout ->
 		loadedEnd()
 	,2400
@@ -158,8 +159,8 @@ window.onload = ->
 	loadWechatConfig()
 	wx.ready ->
 		shareContent =
-			title: "潮汐更迭 共续蔚蓝心动"
-			desc: "LA MER海蓝之谜邀您一起参与世界海洋日艺术展"
+			title: "麦克斯·贺伯博士的奇妙探险"
+			desc: "奇幻之旅的下一秒会发生什么"
 			link: "http://m.giccoo.com/lamer/"
 			imgUrl: "http://image.giccoo.com/projects/lamer/img/share.jpg"
 			success: ->
@@ -170,7 +171,8 @@ window.onload = ->
 		wx.onMenuShareAppMessage shareContent
 		wx.onMenuShareQQ shareContent
 		wx.onMenuShareWeibo shareContent
-
+		$(riots[0].root).find("audio")[0].play()
+		return true
 	return true
 
 playerDraw = ()->
