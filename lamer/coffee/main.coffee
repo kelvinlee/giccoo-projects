@@ -160,7 +160,7 @@ window.onload = ->
 	wx.ready ->
 		shareContent =
 			title: "麦克斯·贺伯博士的奇妙探险"
-			desc: "奇幻之旅的下一秒会发生什么"
+			desc: ""
 			link: "http://m.giccoo.com/lamer/"
 			imgUrl: "http://image.giccoo.com/projects/lamer/img/share.jpg"
 			success: ->

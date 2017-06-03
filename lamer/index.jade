@@ -11,7 +11,7 @@ block css
 block content
 	// - url = "http://image.giccoo.com/projects/lamer/"
 	- url = "./"
-	- normalTime = 2000
+	- normalTime = 2500
 	div(style="display: none")
 		img(src="http://image.giccoo.com/projects/lamer/img/share.jpg",alt="")
 	.pages
@@ -92,7 +92,7 @@ block content
 					.btn.btn-2.fadeInUp.animated.duration-15.delay-14
 						img(second-load-src="#{url}img/page-4-btn-2.png")
 
-		.page.page-four-1(next=".page-four-2",wait="#{normalTime}")
+		.page.page-four-1(next=".page-four-2",wait="#{normalTime+1500}")
 			.content
 				.bg.bgDown.animated.duration-40.delay-5.linear
 					img(second-load-src="#{url}img/page-4-1-background.jpg")
@@ -221,7 +221,7 @@ block content
 					.btn.btn-1.fadeInUp.animated.duration-11.delay-6
 						img(last-load-src="#{url}img/page-6-btn-1.png")
 
-		.page.page-seven(next=".page-eight",wait="#{normalTime}")
+		.page.page-seven(next=".page-eight",wait="#{normalTime+1000}")
 			.content
 				.bg.fadeInZoomBig.animated.duration-30.last
 					img(last-load-src="#{url}img/page-7-background.jpg")

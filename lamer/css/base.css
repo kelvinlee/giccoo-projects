@@ -2675,7 +2675,7 @@ body {
   z-index: 98; }
   .page-three .content .texts {
     position: absolute;
-    bottom: 20%;
+    bottom: 15%;
     left: 0px;
     width: 100%;
     z-index: 1; }
@@ -2904,7 +2904,7 @@ body {
       height: 35%; }
   .page-five-3 .content .texts {
     position: absolute;
-    bottom: 20%;
+    bottom: 15%;
     left: 0px;
     width: 100%;
     z-index: 1; }
