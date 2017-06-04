@@ -6,8 +6,8 @@ $(document).ready(function load (){
     shareContent = {
       title: "比起双手，TA 比你更灵活",
       desc: "",
-      link: "http://m.giccoo.com/bigeye/",
-      imgUrl: "http://m.giccoo.com/bigeye/img/ico.jpg",
+      link: "http://m.giccoo.com/dayan/",
+      imgUrl: "http://m.giccoo.com/dayan/img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };
