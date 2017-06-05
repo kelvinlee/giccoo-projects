@@ -40,7 +40,7 @@ $(document).ready(function load (){
 	}
 
 	$("#btn").click(function(){
-		window.location.href="http://www.lancome.com.cn/landing/genifique.html";
+		window.location.href="http://www.lancome.com.cn/landing/genifique-yeux-lp.html?dc_user_id=%m&amp;utm_source=Zhihu&utm_medium=NVD_DISP&utm_content=153555280_03-5Zhihu_Nativearticle_icon&utm_campaign=CN_20170601_GLP_LPD_LAN_FS_Regular_NVD_DISP_DIG";
 	})
 
 	var iflike=0
