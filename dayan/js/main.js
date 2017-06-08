@@ -17,17 +17,29 @@ $(document).ready(function load (){
     return wx.onMenuShareWeibo(shareContent);
   });
 
+  	var mydate = new Date();
 	checkNum()
 
 	var nowNum=0
 
+ 	var ri=mydate.getDate()
+	var yue=mydate.getMonth()
+    var num80=(yue-5)*30+(ri-7)*82
 
 	function checkNum(){
+		
+
+		
+		
+		
+
+
+
 		$.get("http://api.giccoo.com/count/get/jiaomu1",function(msg){
 				if (msg.recode == 200) {
 					//console.log("update success", msg.info)
 					//alert(msg.info[0].count)
-					nowNum=msg.info[0].count
+					nowNum=msg.info[0].count+num80
 					setText()
 				}else{
 					//alert("get faild")
