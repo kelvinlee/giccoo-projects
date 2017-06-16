@@ -53,8 +53,13 @@ var loadWechatConfig = function() {
   s.parentNode.insertBefore(hm, s);
 };
 
+document.querySelector('body').addEventListener("touchmove",stopMove,false)
+function stopMove(event){
+  event.preventDefault()
+}
 
 function setup(){
+
 
 
   ctx.drawImage(pen,-10,-10,50,50);
@@ -88,7 +93,7 @@ function moveTouch(event){
 
 
   for (var i = 0; i < 50; i++) {
-    ctx.drawImage(pen,lastX+dx/50*i,lastY+dy/50*i,50-50*speed,50-50*speed);
+    ctx.drawImage(pen,lastX+dx/50*i-(50-50*speed)/2,lastY+dy/50*i-(50-50*speed)/2,50-50*speed,50-50*speed);
   };
 
   lastX=event.touches[0].clientX/screenW*640
