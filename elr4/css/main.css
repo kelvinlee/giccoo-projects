@@ -46,6 +46,7 @@ p{
 	right: 0;
 	width: 26.7%;
 	z-index: 999;
+	max-width: 170px;
 }
 #footer{
 	display: block;
@@ -73,4 +74,10 @@ a{
 #likeNum{
 	position: absolute;
 	left: 10%;
+}
+
+article {
+	position: relative;
+	max-width: 640px;
+	margin: 0 auto;
 }

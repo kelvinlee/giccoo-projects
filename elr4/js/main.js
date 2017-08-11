@@ -24,7 +24,10 @@ $(document).ready(function load (){
 	}
 
 	$("#btn").click(function(){
-		window.location.href="http://r4.esteelauderclub.cn/mob/index.html";
+		_hmt.push(['_trackEvent', "elr4", "跳转落地页", "-", "-"])
+		setTimeout(function(){
+			window.location.href="http://r4.esteelauderclub.cn/mob/index.html";
+		},10)
 	})
 
 	var iflike=0
