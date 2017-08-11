@@ -40,6 +40,10 @@ p{
 .content h1,.content h2,.content p,.content .p {
 	margin: 1rem 4.04%;
 }
+#like {
+	padding: 1rem 4.04%;
+	height: 1.4rem
+}
 #btn{
 	position: fixed;
 	bottom: 0;
@@ -65,11 +69,16 @@ a{
 #like1{
 	width: 5%;
 	position: absolute;
+	line-height: 1em;
 }
 #like2{
 	width: 5%;
 	position: absolute;
 	display: none;
+	line-height: 1em;
+}
+#like1 img,#like2 img {
+	vertical-align: middle;
 }
 #likeNum{
 	position: absolute;

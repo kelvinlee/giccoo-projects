@@ -1,13 +1,13 @@
 
 $(document).ready(function load (){
 
-	// checkNum()
+	checkNum()
 
 	var nowNum=0
 
 
 	function checkNum(){
-		$.get("http://api.giccoo.com/count/get/jiaomu1",function(msg){
+		$.get("http://api.giccoo.com/count/get/elr4",function(msg){
 				if (msg.recode == 200) {
 					//console.log("update success", msg.info)
 					//alert(msg.info[0].count)
@@ -38,7 +38,7 @@ $(document).ready(function load (){
 			//这里反馈
 
 			//=======
-			$.post("http://api.giccoo.com/count/update", {id: "jiaomu1"},function(msg){
+			$.post("http://api.giccoo.com/count/update", {id: "elr4"},function(msg){
 				if (msg.recode == 200) {
 					//alert("update success")
 					nowNum++

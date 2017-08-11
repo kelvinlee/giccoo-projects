@@ -14511,17 +14511,25 @@
 		},
 	"\/elr4\/img\/8.gif": {
 		"ft": 4194304,
-		"iS": 2178375,
+		"iS": 3088418,
 		"oA": 0,
 		"oAP": "\/elr4\/img\/8.gif",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"\/elr4\/img\/8.old.gif": {
 		"ft": 4194304,
 		"iS": 5695686,
 		"oA": 0,
 		"oAP": "\/elr4\/img\/8.old.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/elr4\/img\/8.old.small.gif": {
+		"ft": 4194304,
+		"iS": 2178375,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/8.old.small.gif",
 		"oF": 0,
 		"opt": 0
 		},
