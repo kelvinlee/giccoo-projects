@@ -78,11 +78,12 @@ a{
 	line-height: 1em;
 }
 #like1 img,#like2 img {
-	vertical-align: middle;
+	vertical-align: top;
 }
 #likeNum{
 	position: absolute;
 	left: 10%;
+	line-height: 1em;
 }
 
 article {
