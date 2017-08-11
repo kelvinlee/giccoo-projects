@@ -7,7 +7,7 @@
 		"uuidString": "DE83B16E-0B46-434B-8780-3294DEF21C1E"
 		}
 	],
-"creatorBuild": "25813",
+"creatorBuild": "25849",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -1438,6 +1438,164 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
+		},
+	"\/anpin\/css\/main.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/anpin\/css\/main-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/anpin\/img\/1.gif": {
+		"ft": 4194304,
+		"iS": 2010418,
+		"oA": 0,
+		"oAP": "\/anpin\/img\/1.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/anpin\/img\/2.gif": {
+		"ft": 4194304,
+		"iS": 753913,
+		"oA": 0,
+		"oAP": "\/anpin\/img\/2.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/anpin\/img\/3.gif": {
+		"ft": 4194304,
+		"iS": 3196138,
+		"oA": 0,
+		"oAP": "\/anpin\/img\/3.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/anpin\/img\/4.gif": {
+		"ft": 4194304,
+		"iS": 795989,
+		"oA": 0,
+		"oAP": "\/anpin\/img\/4.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/anpin\/img\/ad.jpg": {
+		"ft": 16384,
+		"iS": 4951,
+		"oA": 0,
+		"oAP": "\/anpin\/img\/ad.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/anpin\/img\/btn.png": {
+		"ft": 32768,
+		"iS": 28465,
+		"oA": 0,
+		"oAP": "\/anpin\/img\/btn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/anpin\/img\/hero.jpg": {
+		"ft": 16384,
+		"iS": 4670,
+		"oA": 0,
+		"oAP": "\/anpin\/img\/hero.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/anpin\/img\/like1.png": {
+		"ft": 32768,
+		"iS": 1449,
+		"oA": 0,
+		"oAP": "\/anpin\/img\/like1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/anpin\/img\/like2.png": {
+		"ft": 32768,
+		"iS": 1966,
+		"oA": 0,
+		"oAP": "\/anpin\/img\/like2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/anpin\/img\/pic1.jpg": {
+		"ft": 16384,
+		"iS": 26113,
+		"oA": 0,
+		"oAP": "\/anpin\/img\/pic1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/anpin\/img\/pic2.jpg": {
+		"ft": 16384,
+		"iS": 76137,
+		"oA": 0,
+		"oAP": "\/anpin\/img\/pic2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/anpin\/img\/pic3.jpg": {
+		"ft": 16384,
+		"iS": 64974,
+		"oA": 0,
+		"oAP": "\/anpin\/img\/pic3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/anpin\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/anpin\/index.html",
+		"oF": 0
+		},
+	"\/anpin\/js\/jquery-2.2.1.min.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/anpin\/js\/min\/jquery-2.2.1.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/anpin\/js\/main.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/anpin\/js\/min\/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/anpin\/js\/TweenMax.min.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/anpin\/js\/min\/TweenMax.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
 		},
 	"\/ariel_chefnic\/css\/common.css": {
 		"aP": 0,
@@ -14273,6 +14431,178 @@
 		"oAP": "\/dazhong\/tags\/select-page.tag",
 		"oF": 0
 		},
+	"\/elr4\/css\/main.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/elr4\/css\/main-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/elr4\/img\/1.gif": {
+		"ft": 4194304,
+		"iS": 266335,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/1.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/elr4\/img\/2.jpg": {
+		"ft": 16384,
+		"iS": 257961,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/elr4\/img\/3.jpg": {
+		"ft": 16384,
+		"iS": 324020,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/elr4\/img\/4.jpg": {
+		"ft": 16384,
+		"iS": 211546,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/elr4\/img\/5.jpg": {
+		"ft": 16384,
+		"iS": 255960,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/5.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/elr4\/img\/6.jpg": {
+		"ft": 16384,
+		"iS": 267653,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/6.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/elr4\/img\/7.jpg": {
+		"ft": 16384,
+		"iS": 312718,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/7.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/elr4\/img\/8.gif": {
+		"ft": 4194304,
+		"iS": 2178375,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/8.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/elr4\/img\/8.old.gif": {
+		"ft": 4194304,
+		"iS": 5695686,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/8.old.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/elr4\/img\/9.jpg": {
+		"ft": 16384,
+		"iS": 196627,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/9.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/elr4\/img\/ad.jpg": {
+		"ft": 16384,
+		"iS": 3610,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/ad.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/elr4\/img\/btn.png": {
+		"ft": 32768,
+		"iS": 44994,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/btn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/elr4\/img\/hero.jpg": {
+		"ft": 16384,
+		"iS": 197000,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/hero.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/elr4\/img\/like1.png": {
+		"ft": 32768,
+		"iS": 1295,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/like1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/elr4\/img\/like2.png": {
+		"ft": 32768,
+		"iS": 1810,
+		"oA": 0,
+		"oAP": "\/elr4\/img\/like2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/elr4\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/elr4\/index.html",
+		"oF": 0
+		},
+	"\/elr4\/js\/main.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/elr4\/js\/min\/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/favicon.ico": {
 		"ft": 8192,
 		"oA": 2,
@@ -25452,6 +25782,60 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/ldl-ix25\/js\/min\/tags-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/liamtest\/css\/main.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/liamtest\/css\/main-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/liamtest\/img\/pen.png": {
+		"ft": 32768,
+		"iS": 6493,
+		"oA": 0,
+		"oAP": "\/liamtest\/img\/pen.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/liamtest\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/liamtest\/index.html",
+		"oF": 0
+		},
+	"\/liamtest\/js\/jquery-2.2.1.min.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/liamtest\/js\/min\/jquery-2.2.1.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/liamtest\/js\/main.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/liamtest\/js\/min\/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/liamtest\/js\/TweenMax.min.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/liamtest\/js\/min\/TweenMax.min-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
@@ -73660,6 +74044,7 @@
 		},
 	"languageDefaultsUserDefined": [
 		],
+	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",
