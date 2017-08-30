@@ -52,7 +52,7 @@ $(document).ready(function load (){
 	}
 
 	$("#btn").click(function(){
-		window.location.href="http://www.lancome.com.cn/product/LAN00436.html";
+		window.location.href="http://www.lancome.com.cn/product/LAN00436.html?dc_user_id=%m&utm_source=Zhihu&utm_medium=NVD_DISP&utm_content=204554424_03-05Zhihu_APP_Icon&utm_campaign=CN_20170820_DoubleDrop_LPD_LAN_FS_Regular_NVD_DISP_DIG";
 	})
 
 	var iflike=0
