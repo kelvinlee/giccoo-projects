@@ -24,7 +24,7 @@ $(document).ready(function load (){
 
  	var ri=mydate.getDate()
 	var yue=mydate.getMonth()
-    var num80=0//(yue-5)*30+(ri-7)*82
+    var num80=((yue-7)*31+(ri-30))*191
 
 	function checkNum(){
 		
@@ -39,7 +39,7 @@ $(document).ready(function load (){
 				if (msg.recode == 200) {
 					//console.log("update success", msg.info)
 					//alert(msg.info[0].count)
-					nowNum=msg.info[0].count+num80-295
+					nowNum=msg.info[0].count+num80
 					setText()
 				}else{
 					//alert("get faild")
