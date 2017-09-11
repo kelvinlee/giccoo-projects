@@ -48,6 +48,17 @@ window.onload = ->
 		$("body").addClass "iphone4"
 	riot.mount("*")
 	
+	$(".btn").on "click", ->
+		$(".page").removeClass "on"
+		_next = $(this).attr("next-page")
+		$(_next).addClass "on"
+
+		if $(this).attr("data-content")
+			console.log $(this).attr("data-content")
+			console.log JSON.parse $(this).attr("data-content")
+			json = JSON.parse $(this).attr("data-content")
+			Store.contentx.updateContents(json)
+
 	loadWechatConfig()
 	wx.ready ->
 		shareContent =
@@ -66,6 +77,13 @@ window.onload = ->
 
 	return true
 
+hideSelfPage = (self)->
+	# $(self).parents(".page").hide()
+	$(".page").removeClass("on")
+	
+
+
+
 loadWechatConfig = ->
 	url = encodeURIComponent window.location.href.split("#")[0]
 	hm = document.createElement('script')
@@ -73,7 +91,6 @@ loadWechatConfig = ->
 	s = document.getElementsByTagName('script')[0]
 	s.parentNode.insertBefore hm, s
 	return
-
 SendNote = (msg,time = 3000)->
 	$("body").append("<note title='"+msg+"' time='#{time}'></note>")
 	riot.mount("note")

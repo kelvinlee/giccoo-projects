@@ -1,13 +1,12 @@
 @import sass/base
 @import ../../libs/sass/parallax
-@import ../../libs/sass/loader-ball
+// @import ../../libs/sass/loader-ball
 
 
 $debug : false
 $cdn : "../"
 @if not $debug
 	$cdn : "http://image.giccoo.com/projects/CX5/"
-	
 
 // animation, delay, duration
 @for $i from 1 through 30
@@ -41,12 +40,6 @@ $cdn : "../"
 
 .main
 	+wh(100%,100%)
-	// +posf
-	// min-height: 410px
-	// +large
-	// 	max-width: 640px
-	// 	+m
-	// 	+show
 
 .loading.loaded
 	+large
@@ -57,6 +50,7 @@ $cdn : "../"
 	+w
 	+h
 	+show
+
 .slider
 	+posr
 	white-space: nowrap
@@ -108,3 +102,81 @@ body
 	+h(1px)
 // .loading.loaded
 // 	+hide
+
+.pages
+	.page
+		+hide
+		&.on
+			+show
+		.content
+			+posa
+			+tl
+			+w
+			+h
+
+.pages
+	.product-logo
+		+w(25%)
+		+posa
+		+br(0,0)
+		font-size: 0
+		z-index: 109
+.page-homepage
+	+b($cdn+"img/homepage-bg.jpg",no-repeat,top,center,cover)
+	+bc(#000)
+	.text,.btn
+		+posr
+		+w
+		font-size: 0
+		margin-top: 0.4rem
+	.text-1
+		margin-top: 12%
+	.text-2
+		margin-top: 4%
+	.car
+		+posa
+		+bl(8%,0)
+		+w
+.page-contents
+	$margin: 8%
+	+bc(#000)
+	.navbar
+		+posr
+		z-index: 101
+		+h($margin)
+	.texts
+		+posa
+		+tl($margin)
+		+w
+		+h(100%-$margin*2)
+		.text
+			+posr
+			+w
+			+h(32.5%)
+			.title
+				+hide
+			.btn
+				+posa
+				+bl
+				+w
+				+h(50%)
+		.text-1
+			top: 0
+			+bc(#000)
+			z-index: 90
+		.text-2
+			top: -10%
+			+bc(#ccc)
+			z-index: 89
+		.text-3
+			top: -20%
+			+bc(#333)
+			z-index: 88
+		.text-4
+			top: -30%
+			+bc(#888)
+			z-index: 87
+
+
+
+
