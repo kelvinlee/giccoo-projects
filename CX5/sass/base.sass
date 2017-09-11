@@ -1,0 +1,110 @@
+@import sass/base
+@import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+
+
+$debug : false
+$cdn : "../"
+@if not $debug
+	$cdn : "http://image.giccoo.com/projects/CX5/"
+	
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tr(10px,10px)
+	+wh(2rem,2rem)
+	z-index: 1009
+	font-size: 0
+	.icon-play
+		&.play
+			+animation(second,5s,ease,infinite)
+			transform-origin: center center
+
+.share-wechat
+	+posa
+	+tl
+	+w
+	+h
+	+b("http://image.giccoo.com/projects/libs/img/wechat.png",no-repeat,top,right,contain)
+	+bc
+	z-index: 1100
+	+hide
+	&.open
+		+show
+
+.main
+	+wh(100%,100%)
+	// +posf
+	// min-height: 410px
+	// +large
+	// 	max-width: 640px
+	// 	+m
+	// 	+show
+
+.loading.loaded
+	+large
+		+hide
+
+.sliderBox
+	white-space: nowrap
+	+w
+	+h
+	+show
+.slider
+	+posr
+	white-space: nowrap
+	font-size: 0
+	+tran(all,0s,linear)
+	+show-inline
+	.slide
+		+w(100%)
+		display: inline-block
+		vertical-align: top
+	.bg
+		font-size: 0
+		+posr
+		.tag
+			+posa
+			+w(80px/2)
+
+.share-icons
+	+iw(600)
+	+m
+	margin-top: -8%
+	.share-icon
+		+show-inline
+		+w(25%)
+		+text-center
+		+box
+		+p(0 2%)
+		font-size: 0
+		
+html,body
+	+w
+	+h
+	// +overhide
+
+body
+	// +b("http://i3.tietuku.com/1fcc3041ce5a552f.jpg",no-repeat,center,center,cover)
+	color: #000
+	+bc(#fff)
+
+.pages,.loading
+	max-width: 640px
+	+m
+
+.wechat-share-hide,.load-before
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+	+h(1px)
+// .loading.loaded
+// 	+hide

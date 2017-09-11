@@ -1,0 +1,93 @@
+extends ../libs/jade/layout-clean
+block title
+	| 第25小时的精彩
+
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/base.css?v=1")
+
+block content
+	- url = "http://image.giccoo.com/projects/CX5/"
+	//- url = "./"
+	
+	.wechat-share-hide
+		img#share(src="http://image.giccoo.com/projects/CX5/img/share.jpg")
+	.pages
+		.product-logo
+			img(src="#{url}img/product-logo.png")
+		.page.page-homepage.on
+			.content
+				.text.text-1.fadeInUp.animated.delay-5
+					img(src="#{url}img/homepage-text-1.png")
+				.text.text-2.fadeInUp.animated.delay-9
+					img(src="#{url}img/homepage-text-2.png")
+				.text.text-3.fadeInUp.animated.delay-10
+					img(src="#{url}img/homepage-text-3.png")
+				.text.text-4.fadeInUp.animated.delay-11
+					img(src="#{url}img/homepage-text-4.png")
+				.btn.btn-1.fadeInUp.animated.delay-13
+					img(src="#{url}img/homepage-btn-1.png")
+				.car.fadeInUp.animated.duration-15
+					img(src="#{url}img/homepage-car.png")
+		
+		.page.page-contents
+			.content
+				.navbar
+					.btn.btn-register
+						img(src="#{url}img/listpage-btn.png")
+				.texts
+					.text.text-1.fadeInDown.animated.delay-2
+						img(src="#{url}img/listpage-text-1.png")
+						.title 
+						.btn.btn-1
+					.text.text-2.fadeInDown.animated.delay-4
+						img(src="#{url}img/listpage-text-2.png")
+						.title 
+						.btn.btn-2
+					.text.text-3.fadeInDown.animated.delay-6
+						img(src="#{url}img/listpage-text-3.png")
+						.title 
+						.btn.btn-3
+					.text.text-4.fadeInDown.animated.delay-8
+						img(src="#{url}img/listpage-text-4.png")
+						.title 
+						.btn.btn-4
+		.page.page-content
+			.content
+				.navbar
+					.btn.btn-register
+						img(src="#{url}img/listpage-btn.png")
+					.btn.btn-back
+						img(src="#{url}img/listpage-back.png")
+				.text-list
+					contentx
+
+		.page.page-transition.fadeIn.animated
+			.text.fadeInLeft.animated.duration-15
+				img(no-src="#{url}img/item-answer-last.png")
+
+		.page.page-register
+			.bg
+			.content
+				.form
+					//- api.giccoo.com
+					register(action="http://api.giccoo.com/lincoln_mkz/insert/")
+block js
+	- url = "/"
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/jquery.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/riot.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/cityData.js")
+	script(src="js/tags.js?v=1")
+	script(src="js/main.js?v=1")
+	script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
