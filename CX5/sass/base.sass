@@ -115,15 +115,33 @@ body
 			+h
 
 .pages
+	+bc(#000)
+	color: #fff
 	.product-logo
 		+w(25%)
 		+posa
 		+br(0,0)
 		font-size: 0
 		z-index: 109
+
+// public
+$margin: 8%
+.page
+	.navbar
+		+posr
+		z-index: 101
+		+h($margin)
+		.btn
+			+w(50%)
+			+h
+		.btn-register
+			+posa
+			+tl
+		.btn-back
+			+posa
+			+tr
 .page-homepage
 	+b($cdn+"img/homepage-bg.jpg",no-repeat,top,center,cover)
-	+bc(#000)
 	.text,.btn
 		+posr
 		+w
@@ -138,12 +156,7 @@ body
 		+bl(8%,0)
 		+w
 .page-contents
-	$margin: 8%
 	+bc(#000)
-	.navbar
-		+posr
-		z-index: 101
-		+h($margin)
 	.texts
 		+posa
 		+tl($margin)
@@ -162,7 +175,7 @@ body
 				+h(50%)
 		.text-1
 			top: 0
-			+bc(#000)
+			+bc(#f2f2f2)
 			z-index: 90
 		.text-2
 			top: -10%
@@ -177,6 +190,47 @@ body
 			+bc(#888)
 			z-index: 87
 
+.page-content
+	+b($cdn+"img/homepage-bg.jpg",no-repeat,top,center,cover)
+	.text-list
+		h2
+			+font-size(1.2rem)
+			+w(90%)
+			+m(0.6rem auto)
+	.text-box
+		+w(90%)
+		+m
+		text-align: center
+		a
+			color: #fff
+			text-decoration: none
+		.title
+			+font-size(1rem)
+			+w(auto)
+			+show
+			+p(0.4em 0.2em)
+			+bc(red)
+		.lists
+			.list
+				+m
+				margin-top: 0.6rem
+				margin-bottom: 0.6rem
+				+w(90%)
+				+show
+				+p(0.4em 0.2em)
+				border: solid 1px #fff
+				+font-size(0.8rem)
+		.more
+			+font-size(0.6rem)
+			+show
+			+p(0.4rem 0)
+			text-align: right
+			margin-left: auto
+			margin-right: 5%
+			margin-top: 0.6rem
+			margin-bottom: 0.6rem
 
+
+			
 
 

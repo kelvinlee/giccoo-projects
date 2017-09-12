@@ -110,12 +110,15 @@ this.on('update', function() {
 
 
 
+
 riot.tag2('contentx', '<h2>{headline}</h2> <div class="text-box" each="{item in contents}"> <div class="title">{item.title}</div> <div class="lists" each="{list in item.lists}"><a class="list" href="{list.link}">{list.text}</a></div><a class="more" href="{item.more}">+查看更多回答</a> </div>', '', '', function(opts) {
 var self;
 
 self = this;
 
 Store.contentx = self;
+
+self.headline = "Hello World";
 
 self.contents = [
   {
@@ -139,7 +142,8 @@ self.contents = [
   }
 ];
 
-this.updateContents = function(contents) {
+this.updateContents = function(headline, contents) {
+  self.headline = headline;
   self.contents = contents;
   return self.update();
 };

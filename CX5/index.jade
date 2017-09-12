@@ -34,40 +34,41 @@ block content
 		
 		.page.page-contents.on
 			.content
-				.navbar
-					.btn.btn-register
+				.navbar.fadeInLeft.animated
+					.btn.btn-register(next-page=".page-register")
 						img(src="#{url}img/listpage-btn.png")
 				.texts
 					.text.text-1.fadeInDown.animated.delay-2
 						img(src="#{url}img/listpage-text-1.png")
 						.title 
-						.btn.btn-1(next-page=".page-content",data-content='[{"title":"唤醒激情","more":"more-a-link","lists":[{"text":"a","link":"a-link"}]},{"title":"h2","more":"more-a-link","lists":[{"text":"b","link":"b-link"}]}]')
+						.btn.btn-1(next-page=".page-content",data-title="唤醒激情",data-content='[{"title":"唤醒激情","more":"more-a-link","lists":[{"text":"a","link":"a-link"},{"text":"a","link":"a-link"}]},{"title":"h2","more":"more-a-link","lists":[{"text":"b","link":"b-link"}]}]')
 					.text.text-2.fadeInDown.animated.delay-4
 						img(src="#{url}img/listpage-text-2.png")
 						.title 
-						.btn.btn-2(next-page=".page-content",data-content='[{"title":"唤醒满足","more":"more-a-link","lists":[{"text":"a","link":"a-link"}]},{"title":"h2","more":"more-a-link","lists":[{"text":"b","link":"b-link"}]}]')
+						.btn.btn-2(next-page=".page-content",data-title="唤醒满足",data-content='[{"title":"唤醒满足","more":"more-a-link","lists":[{"text":"a","link":"a-link"},{"text":"a","link":"a-link"}]},{"title":"h2","more":"more-a-link","lists":[{"text":"b","link":"b-link"}]}]')
 					.text.text-3.fadeInDown.animated.delay-6
 						img(src="#{url}img/listpage-text-3.png")
 						.title 
-						.btn.btn-3(next-page=".page-content",data-content='[{"title":"唤醒视觉","more":"more-a-link","lists":[{"text":"a","link":"a-link"}]},{"title":"h2","more":"more-a-link","lists":[{"text":"b","link":"b-link"}]}]')
+						.btn.btn-3(next-page=".page-content",data-title="唤醒视觉",data-content='[{"title":"唤醒视觉","more":"more-a-link","lists":[{"text":"a","link":"a-link"},{"text":"a","link":"a-link"}]},{"title":"h2","more":"more-a-link","lists":[{"text":"b","link":"b-link"}]}]')
 					.text.text-4.fadeInDown.animated.delay-8
 						img(src="#{url}img/listpage-text-4.png")
 						.title 
-						.btn.btn-4(next-page=".page-content",data-content='[{"title":"唤醒安全","more":"more-a-link","lists":[{"text":"a","link":"a-link"}]},{"title":"h2","more":"more-a-link","lists":[{"text":"b","link":"b-link"}]}]')
+						.btn.btn-4(next-page=".page-content",data-title="唤醒安全",data-content='[{"title":"唤醒安全","more":"more-a-link","lists":[{"text":"a","link":"a-link"},{"text":"a","link":"a-link"}]},{"title":"h2","more":"more-a-link","lists":[{"text":"b","link":"b-link"}]}]')
 		.page.page-content
 			.content
 				.navbar
-					.btn.btn-register
+					.btn.btn-register.fadeInLeft.animated(next-page=".page-register")
 						img(src="#{url}img/listpage-btn.png")
-					.btn.btn-back
+					.btn.btn-back.fadeInRight.animated(next-page=".page-contents")
 						img(src="#{url}img/listpage-back.png")
-				.text-list
+				.text-list.fadeIn.animated.duration-10.delay-3
 					contentx
 
 		.page.page-register
 			.bg
 			.content
-				.form
+				.form.fadeIn.animated
+					h2 注册标题
 					//- api.giccoo.com
 					register(action="http://api.giccoo.com/CX5/insert/")
 block js

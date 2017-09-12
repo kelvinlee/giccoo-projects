@@ -6,6 +6,8 @@ self = this;
 
 Store.contentx = self;
 
+self.headline = "Hello World";
+
 self.contents = [
   {
     title: "h1",
@@ -28,7 +30,8 @@ self.contents = [
   }
 ];
 
-this.updateContents = function(contents) {
+this.updateContents = function(headline, contents) {
+  self.headline = headline;
   self.contents = contents;
   return self.update();
 };

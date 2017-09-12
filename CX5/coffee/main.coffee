@@ -54,10 +54,9 @@ window.onload = ->
 		$(_next).addClass "on"
 
 		if $(this).attr("data-content")
-			console.log $(this).attr("data-content")
-			console.log JSON.parse $(this).attr("data-content")
 			json = JSON.parse $(this).attr("data-content")
-			Store.contentx.updateContents(json)
+			headline = $(this).attr("data-title")
+			Store.contentx.updateContents(headline,json)
 
 	loadWechatConfig()
 	wx.ready ->

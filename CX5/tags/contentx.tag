@@ -9,8 +9,10 @@ contentx
 		self = this
 		Store.contentx = self
 		# self.contents = []
+		self.headline = "Hello World"
 		self.contents = [{title:"h1",more:"more-a-link",lists:[{text:"a",link:"a-link"}]},{title:"h2",more:"more-a-link",lists:[{text:"b",link:"b-link"}]}]
 
-		@updateContents = (contents) ->
+		@updateContents = (headline,contents) ->
+			self.headline = headline
 			self.contents = contents
 			self.update()
