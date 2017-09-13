@@ -17,7 +17,7 @@ block content
 	.pages
 		.product-logo
 			img(src="#{url}img/product-logo.png")
-		.page.page-homepage
+		.page.page-homepage.on
 			.content
 				.text.text-1.fadeInUp.animated.delay-5
 					img(src="#{url}img/homepage-text-1.png")
@@ -32,7 +32,7 @@ block content
 				.car.fadeInUp.animated.duration-15
 					img(src="#{url}img/homepage-car.png")
 		
-		.page.page-contents.on
+		.page.page-contents
 			.content
 				.navbar.fadeInLeft.animated
 					.btn.btn-register(next-page=".page-register")
@@ -68,9 +68,12 @@ block content
 			.bg
 			.content
 				.form.fadeIn.animated
-					h2 注册标题
+					.title
+						img(src="#{url}img/register-title.png")
 					//- api.giccoo.com
 					register(action="http://api.giccoo.com/CX5/insert/")
+					.btn.btn-share
+						img(src="#{url}img/btn-share.png")
 block js
 	- url = "/"
 	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")

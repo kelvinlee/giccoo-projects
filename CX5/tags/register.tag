@@ -24,9 +24,12 @@ register
 					span {cityName}
 					select#city(name="city",onchange="{changeCity}")
 						option(each="{city}",value="{name}") {name}
-
-
-
+		.form-check
+			.checkbox
+				input(type="checkbox",checked,name="state",value="1")
+			label 我已阅读并接受隐私条款：
+		.form-grounp
+			p 您的个人资料有可能提交至马自达厂商及其授权经销商与您进一步沟通试驾，购车等事宜。
 		.form-btn
 			button.submit(type="submit")
 				img(src="img/submit.png")
@@ -76,11 +79,19 @@ register
 			data.push
 				name: 'dealername'
 				value: self.dealerName
+
 			if $('[name=username]', @root).val().length < 1 or $('[name=username]', @root).val() == ''
 				alert '姓名不能为空'
 				return false
 			if $('[name=mobile]', @root).val().length < 1 or $('[name=mobile]', @root).val() == ''
 				alert '手机号码不能为空'
+				return false
+			checked = false
+			for item in data
+				if item.name == "state"
+					checked = true
+			if !checked
+				alert("我已阅读并接受隐私条款")
 				return false
 			$.post opts.action, data, (msg) ->
 				#- 提交
