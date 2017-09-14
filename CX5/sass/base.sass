@@ -3,7 +3,7 @@
 // @import ../../libs/sass/loader-ball
 
 
-$debug : false
+$debug : true
 $cdn : "../"
 @if not $debug
 	$cdn : "http://image.giccoo.com/projects/CX5/"
@@ -118,9 +118,9 @@ body
 	+bc(#000)
 	color: #fff
 	.product-logo
-		+w(25%)
+		+w(50%)
 		+posa
-		+br(0,0)
+		+br(8px,0)
 		font-size: 0
 		z-index: 109
 
@@ -141,7 +141,7 @@ $margin: 8%
 			+posa
 			+tr
 .page-homepage
-	+b($cdn+"img/homepage-bg.jpg",no-repeat,top,center,cover)
+	+b($cdn+"img/homepage-bg.jpg",no-repeat,bottom,center,cover)
 	.text,.btn
 		+posr
 		+w
@@ -149,8 +149,8 @@ $margin: 8%
 		margin-top: 0.4rem
 	.text-1
 		margin-top: 12%
-	.text-2
-		margin-top: 4%
+	.btn-1
+		margin-top: 10%
 	.car
 		+posa
 		+bl(8%,0)
@@ -175,27 +175,41 @@ $margin: 8%
 				+h(50%)
 		.text-1
 			top: 0
-			+bc(#f2f2f2)
 			z-index: 90
 		.text-2
 			top: -10%
-			+bc(#ccc)
 			z-index: 89
 		.text-3
 			top: -20%
-			+bc(#333)
 			z-index: 88
 		.text-4
 			top: -30%
-			+bc(#888)
 			z-index: 87
 
 .page-content
-	+b($cdn+"img/homepage-bg.jpg",no-repeat,top,center,cover)
+	+b($cdn+"img/bg.jpg",no-repeat,top,center,cover)
+	.navbar
+		+posr
+		+h(auto)
+		+bc(#000)
+		border-bottom: solid 2px #fff
+		font-size: 0
+		.btn-register
+			+posa
+			+w(50%)
+			+h
+			+tl
+		.btn-back
+			+posa
+			+w(50%)
+			+h
+			+tr
+		
+
 	.text-list
 		h2
-			+font-size(1.2rem)
-			+w(90%)
+			+font-size(0.94rem)
+			+w(86%)
 			+m(0.6rem auto)
 	.text-box
 		+w(90%)
@@ -205,11 +219,16 @@ $margin: 8%
 			color: #fff
 			text-decoration: none
 		.title
-			+font-size(1rem)
+			+font-size(0.8rem)
 			+w(auto)
 			+show
-			+p(0.4em 0.2em)
-			+bc(red)
+			+p(0.8rem 0.2rem)
+			+b($cdn+"img/title-bg.jpg",no-repeat,top,center,cover)
+			&.fontsmall
+				+font-size(0.6rem)
+			&.fontbig
+				+font-size(0.9rem)
+
 		.lists
 			.list
 				+m
@@ -217,9 +236,16 @@ $margin: 8%
 				margin-bottom: 0.6rem
 				+w(90%)
 				+show
-				+p(0.4em 0.2em)
+				+p(0.4rem 0.2rem)
 				border: solid 1px #fff
 				+font-size(0.8rem)
+				line-height: 1.4rem
+				&.fontsmall
+					+font-size(0.6rem)
+				&.fontsmallsmall
+					+font-size(0.5rem)
+				&.fontbig
+					+font-size(0.9rem)
 		.more
 			+font-size(0.6rem)
 			+show
@@ -230,7 +256,122 @@ $margin: 8%
 			margin-top: 0.6rem
 			margin-bottom: 0.6rem
 
+.page-register
+	+b($cdn+"img/form-bg.jpg",no-repeat,top,center,cover)
+	.form
+		+w(80%)
+	.title
+		margin-top: 8%
 
-			
+.form
+	+w(80%)
+	+m
+	+p(1.4rem 0)
+	padding-bottom: 0.4rem
+	$labelColor: #ffffff
+	$borderColor: #ffffff
+	$inputColor: #ffffff
+	$inputBackgroundColor: transparent
+	.form-check
+		+text-center
+		+font-size(0.7rem)
+		margin-top: 1rem
+		.checkbox
+			+show-inline
 
+	.form-grounp
+		$h: 1.8rem
+		vertical-align: top
+		margin-top: 0.4rem
+		> p
+			+m
+			+font-size(0.6rem)
+			margin-top: 0.2rem
+			+text-center
+		> label
+			+wh(30%,$h)
+			+show-inline
+			+font-size(0.8rem)
+			+m(0.2rem 0)
+			line-height: $h
+			vertical-align: top
+			color: $labelColor
+		> input
+			+wh(68%,$h)
+			+font-size(0.8rem)
+			+bc($inputBackgroundColor)
+			+show-inline
+			+box
+			+m(0.2rem 0)
+			+p(0.4rem)
+			line-height: $h
+			vertical-align: top
+			border: solid 1px $borderColor
+			color: $inputColor
+			outline: none
+			border-radius: 0.2rem
+		.comb
+			+wh(68%,$h)
+			+font-size(1rem)
+			+show-inline
+			+m(0.2rem 0)
+			color: $inputColor
+			white-space: nowrap
+			label
+				+wh(30%,$h)
+				+show-inline
+				+font-size(0.8rem)
+				+text-center
+				color: $labelColor
+			input,.checkbox
+				+show-inline
+				+w(1rem)
+			.select
+				+w(48.5%)
+				+m
 
+		.select
+			+posr
+			+wh(68%,$h)
+			line-height: $h
+			+show-inline
+			+bc($inputBackgroundColor)
+			+m(0.2rem 0)
+			+box
+			+p(0 0.2rem)
+			+font-size(0.8rem)
+			color: $inputColor
+			border: solid 1px $borderColor
+			border-radius: 0.2rem
+			&:after
+				$size: 0.5rem
+				content: " "
+				+posa
+				+tr(50%,$size)
+				+transform(translate3d(0,-50%,0))
+				z-index: 99
+				border-left: $size/2 solid transparent
+				border-right: $size/2 solid transparent
+				border-top: $size solid $borderColor
+			span
+				text-overflow: ellipsis
+				+show-inline
+				+wh(100%,$h)
+				+overhide
+			select
+				+posa
+				+tl
+				+br
+				+w
+				+h
+				opacity: 0
+
+	.form-btn
+		+text-center
+		margin-top: 0.8rem
+		button
+			+w(30%)
+			+m
+			+p(2px 0)
+			+bc(transparent)
+			border: none

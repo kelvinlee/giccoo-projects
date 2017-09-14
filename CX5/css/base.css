@@ -803,9 +803,9 @@ body {
   background-color: #000;
   color: #fff; }
   .pages .product-logo {
-    width: 25%;
+    width: 50%;
     position: absolute;
-    bottom: 0;
+    bottom: 8px;
     right: 0;
     font-size: 0;
     z-index: 109; }
@@ -827,7 +827,7 @@ body {
     right: 0px; }
 
 .page-homepage {
-  background: url("http://image.giccoo.com/projects/CX5/img/homepage-bg.jpg") no-repeat top center;
+  background: url("../img/homepage-bg.jpg") no-repeat bottom center;
   background-size: cover;
   background-color: transparent; }
   .page-homepage .text, .page-homepage .btn {
@@ -837,8 +837,8 @@ body {
     margin-top: 0.4rem; }
   .page-homepage .text-1 {
     margin-top: 12%; }
-  .page-homepage .text-2 {
-    margin-top: 4%; }
+  .page-homepage .btn-1 {
+    margin-top: 10%; }
   .page-homepage .car {
     position: absolute;
     bottom: 8%;
@@ -867,41 +867,55 @@ body {
         height: 50%; }
     .page-contents .texts .text-1 {
       top: 0;
-      background-color: #f2f2f2;
       z-index: 90; }
     .page-contents .texts .text-2 {
       top: -10%;
-      background-color: #ccc;
       z-index: 89; }
     .page-contents .texts .text-3 {
       top: -20%;
-      background-color: #333;
       z-index: 88; }
     .page-contents .texts .text-4 {
       top: -30%;
-      background-color: #888;
       z-index: 87; }
 
 .page-content {
-  background: url("http://image.giccoo.com/projects/CX5/img/homepage-bg.jpg") no-repeat top center;
+  background: url("../img/bg.jpg") no-repeat top center;
   background-size: cover;
   background-color: transparent; }
+  .page-content .navbar {
+    position: relative;
+    height: auto;
+    background-color: #000;
+    border-bottom: solid 2px #fff;
+    font-size: 0; }
+    .page-content .navbar .btn-register {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0px;
+      left: 0px; }
+    .page-content .navbar .btn-back {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0px;
+      right: 0px; }
   .page-content .text-list h2 {
-    font-size: 1.2rem;
-    width: 90%;
+    font-size: 0.94rem;
+    width: 86%;
     margin: 0.6rem auto; }
     @media only screen and (min-width: 321px) and (max-width: 399px) {
       .page-content .text-list h2 {
-        font-size: 1.32rem; } }
+        font-size: 1.034rem; } }
     @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
       .page-content .text-list h2 {
-        font-size: 1.32rem; } }
+        font-size: 1.034rem; } }
     @media only screen and (min-width: 399px) and (max-width: 767px) {
       .page-content .text-list h2 {
-        font-size: 1.44rem; } }
+        font-size: 1.128rem; } }
     @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
       .page-content .text-list h2 {
-        font-size: 1.44rem; } }
+        font-size: 1.128rem; } }
   .page-content .text-box {
     width: 90%;
     margin: 0 auto;
@@ -910,32 +924,63 @@ body {
       color: #fff;
       text-decoration: none; }
     .page-content .text-box .title {
-      font-size: 1rem;
+      font-size: 0.8rem;
       width: auto;
       display: block;
-      padding: 0.4em 0.2em;
-      background-color: red; }
+      padding: 0.8rem 0.2rem;
+      background: url("../img/title-bg.jpg") no-repeat top center;
+      background-size: cover;
+      background-color: transparent; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
         .page-content .text-box .title {
-          font-size: 1.1rem; } }
+          font-size: 0.88rem; } }
       @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
         .page-content .text-box .title {
-          font-size: 1.1rem; } }
+          font-size: 0.88rem; } }
       @media only screen and (min-width: 399px) and (max-width: 767px) {
         .page-content .text-box .title {
-          font-size: 1.2rem; } }
+          font-size: 0.96rem; } }
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
         .page-content .text-box .title {
-          font-size: 1.2rem; } }
+          font-size: 0.96rem; } }
+      .page-content .text-box .title.fontsmall {
+        font-size: 0.6rem; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .page-content .text-box .title.fontsmall {
+            font-size: 0.66rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .page-content .text-box .title.fontsmall {
+            font-size: 0.66rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .page-content .text-box .title.fontsmall {
+            font-size: 0.72rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .page-content .text-box .title.fontsmall {
+            font-size: 0.72rem; } }
+      .page-content .text-box .title.fontbig {
+        font-size: 0.9rem; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .page-content .text-box .title.fontbig {
+            font-size: 0.99rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .page-content .text-box .title.fontbig {
+            font-size: 0.99rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .page-content .text-box .title.fontbig {
+            font-size: 1.08rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .page-content .text-box .title.fontbig {
+            font-size: 1.08rem; } }
     .page-content .text-box .lists .list {
       margin: 0 auto;
       margin-top: 0.6rem;
       margin-bottom: 0.6rem;
       width: 90%;
       display: block;
-      padding: 0.4em 0.2em;
+      padding: 0.4rem 0.2rem;
       border: solid 1px #fff;
-      font-size: 0.8rem; }
+      font-size: 0.8rem;
+      line-height: 1.4rem; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
         .page-content .text-box .lists .list {
           font-size: 0.88rem; } }
@@ -948,6 +993,48 @@ body {
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
         .page-content .text-box .lists .list {
           font-size: 0.96rem; } }
+      .page-content .text-box .lists .list.fontsmall {
+        font-size: 0.6rem; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .page-content .text-box .lists .list.fontsmall {
+            font-size: 0.66rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .page-content .text-box .lists .list.fontsmall {
+            font-size: 0.66rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .page-content .text-box .lists .list.fontsmall {
+            font-size: 0.72rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .page-content .text-box .lists .list.fontsmall {
+            font-size: 0.72rem; } }
+      .page-content .text-box .lists .list.fontsmallsmall {
+        font-size: 0.5rem; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .page-content .text-box .lists .list.fontsmallsmall {
+            font-size: 0.55rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .page-content .text-box .lists .list.fontsmallsmall {
+            font-size: 0.55rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .page-content .text-box .lists .list.fontsmallsmall {
+            font-size: 0.6rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .page-content .text-box .lists .list.fontsmallsmall {
+            font-size: 0.6rem; } }
+      .page-content .text-box .lists .list.fontbig {
+        font-size: 0.9rem; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .page-content .text-box .lists .list.fontbig {
+            font-size: 0.99rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .page-content .text-box .lists .list.fontbig {
+            font-size: 0.99rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .page-content .text-box .lists .list.fontbig {
+            font-size: 1.08rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .page-content .text-box .lists .list.fontbig {
+            font-size: 1.08rem; } }
     .page-content .text-box .more {
       font-size: 0.6rem;
       display: block;
@@ -969,3 +1056,212 @@ body {
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
         .page-content .text-box .more {
           font-size: 0.72rem; } }
+
+.page-register {
+  background: url("../img/form-bg.jpg") no-repeat top center;
+  background-size: cover;
+  background-color: transparent; }
+  .page-register .form {
+    width: 80%; }
+  .page-register .title {
+    margin-top: 8%; }
+
+.form {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1.4rem 0;
+  padding-bottom: 0.4rem; }
+  .form .form-check {
+    text-align: center;
+    font-size: 0.7rem;
+    margin-top: 1rem; }
+    @media only screen and (min-width: 321px) and (max-width: 399px) {
+      .form .form-check {
+        font-size: 0.77rem; } }
+    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+      .form .form-check {
+        font-size: 0.77rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 767px) {
+      .form .form-check {
+        font-size: 0.84rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+      .form .form-check {
+        font-size: 0.84rem; } }
+    .form .form-check .checkbox {
+      display: inline-block; }
+  .form .form-grounp {
+    vertical-align: top;
+    margin-top: 0.4rem; }
+    .form .form-grounp > p {
+      margin: 0 auto;
+      font-size: 0.6rem;
+      margin-top: 0.2rem;
+      text-align: center; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .form .form-grounp > p {
+          font-size: 0.66rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .form .form-grounp > p {
+          font-size: 0.66rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .form .form-grounp > p {
+          font-size: 0.72rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .form .form-grounp > p {
+          font-size: 0.72rem; } }
+    .form .form-grounp > label {
+      width: 30%;
+      height: 1.8rem;
+      display: inline-block;
+      font-size: 0.8rem;
+      margin: 0.2rem 0;
+      line-height: 1.8rem;
+      vertical-align: top;
+      color: #ffffff; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .form .form-grounp > label {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .form .form-grounp > label {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .form .form-grounp > label {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .form .form-grounp > label {
+          font-size: 0.96rem; } }
+    .form .form-grounp > input {
+      width: 68%;
+      height: 1.8rem;
+      font-size: 0.8rem;
+      background-color: transparent;
+      display: inline-block;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      margin: 0.2rem 0;
+      padding: 0.4rem;
+      line-height: 1.8rem;
+      vertical-align: top;
+      border: solid 1px #ffffff;
+      color: #ffffff;
+      outline: none;
+      border-radius: 0.2rem; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .form .form-grounp > input {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .form .form-grounp > input {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .form .form-grounp > input {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .form .form-grounp > input {
+          font-size: 0.96rem; } }
+    .form .form-grounp .comb {
+      width: 68%;
+      height: 1.8rem;
+      font-size: 1rem;
+      display: inline-block;
+      margin: 0.2rem 0;
+      color: #ffffff;
+      white-space: nowrap; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .form .form-grounp .comb {
+          font-size: 1.1rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .form .form-grounp .comb {
+          font-size: 1.1rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .form .form-grounp .comb {
+          font-size: 1.2rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .form .form-grounp .comb {
+          font-size: 1.2rem; } }
+      .form .form-grounp .comb label {
+        width: 30%;
+        height: 1.8rem;
+        display: inline-block;
+        font-size: 0.8rem;
+        text-align: center;
+        color: #ffffff; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .form .form-grounp .comb label {
+            font-size: 0.88rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .form .form-grounp .comb label {
+            font-size: 0.88rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .form .form-grounp .comb label {
+            font-size: 0.96rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .form .form-grounp .comb label {
+            font-size: 0.96rem; } }
+      .form .form-grounp .comb input, .form .form-grounp .comb .checkbox {
+        display: inline-block;
+        width: 1rem; }
+      .form .form-grounp .comb .select {
+        width: 48.5%;
+        margin: 0 auto; }
+    .form .form-grounp .select {
+      position: relative;
+      width: 68%;
+      height: 1.8rem;
+      line-height: 1.8rem;
+      display: inline-block;
+      background-color: transparent;
+      margin: 0.2rem 0;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 0 0.2rem;
+      font-size: 0.8rem;
+      color: #ffffff;
+      border: solid 1px #ffffff;
+      border-radius: 0.2rem; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .form .form-grounp .select {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .form .form-grounp .select {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .form .form-grounp .select {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .form .form-grounp .select {
+          font-size: 0.96rem; } }
+      .form .form-grounp .select:after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+        -webkit-transform: translate3d(0, -50%, 0);
+                transform: translate3d(0, -50%, 0);
+        z-index: 99;
+        border-left: 0.25rem solid transparent;
+        border-right: 0.25rem solid transparent;
+        border-top: 0.5rem solid #ffffff; }
+      .form .form-grounp .select span {
+        text-overflow: ellipsis;
+        display: inline-block;
+        width: 100%;
+        height: 1.8rem;
+        overflow: hidden; }
+      .form .form-grounp .select select {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        width: 100%;
+        height: 100%;
+        opacity: 0; }
+  .form .form-btn {
+    text-align: center;
+    margin-top: 0.8rem; }
+    .form .form-btn button {
+      width: 30%;
+      margin: 0 auto;
+      padding: 2px 0;
+      background-color: transparent;
+      border: none; }

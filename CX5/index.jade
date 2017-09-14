@@ -5,15 +5,15 @@ block title
 
 block css
 	meta(name="author",content="m.giccoo.com")
-	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="../libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
 	link(rel="stylesheet",href="css/base.css?v=1")
 
 block content
-	- url = "http://image.giccoo.com/projects/CX5/"
-	//- url = "./"
+	//- url = "http://image.giccoo.com/projects/CX5/"
+	- url = "./"
 	
 	.wechat-share-hide
-		img#share(src="http://image.giccoo.com/projects/CX5/img/share.jpg")
+		//- img#share(src="http://image.giccoo.com/projects/CX5/img/share.jpg")
 	.pages
 		.product-logo
 			img(src="#{url}img/product-logo.png")
@@ -21,69 +21,63 @@ block content
 			.content
 				.text.text-1.fadeInUp.animated.delay-5
 					img(src="#{url}img/homepage-text-1.png")
-				.text.text-2.fadeInUp.animated.delay-9
+				.btn.btn-1.fadeInUp.animated.delay-7(next-page=".page-contents")
 					img(src="#{url}img/homepage-text-2.png")
-				.text.text-3.fadeInUp.animated.delay-10
-					img(src="#{url}img/homepage-text-3.png")
-				.text.text-4.fadeInUp.animated.delay-11
-					img(src="#{url}img/homepage-text-4.png")
-				.btn.btn-1.fadeInUp.animated.delay-13(next-page=".page-contents")
+				
+				//-.btn.btn-1.fadeInUp.animated.delay-13(next-page=".page-contents")
 					img(src="#{url}img/homepage-btn-1.png")
-				.car.fadeInUp.animated.duration-15
-					img(src="#{url}img/homepage-car.png")
+				
 		
 		.page.page-contents
 			.content
-				.navbar.fadeInLeft.animated
+				.navbar.fadeIn.animated.delay-12
 					.btn.btn-register(next-page=".page-register")
-						img(src="#{url}img/listpage-btn.png")
+						img(src="#{url}img/listpage-btn.jpg")
 				.texts
 					.text.text-1.fadeInDown.animated.delay-2
 						img(src="#{url}img/listpage-text-1.png")
 						.title 
-						.btn.btn-1(next-page=".page-content",data-title="唤醒激情",data-content='[{"title":"唤醒激情","more":"more-a-link","lists":[{"text":"a","link":"a-link"},{"text":"a","link":"a-link"}]},{"title":"h2","more":"more-a-link","lists":[{"text":"b","link":"b-link"}]}]')
+						.btn.btn-1(next-page=".page-content",data-title="唤醒视觉，觉醒感官。",data-subtitle="感受生活的律动，初心炼就，魄动升华。",data-content='[{"title":"除了五彩斑斓的黑，还有哪些艳丽且深邃的红？","more":"more-a-link","lists":[{"text":"母亲节时，送给妈妈的第一只口红","link":"a-link"},{"text":"追梦路上，少年心中的满腔热血","link":"a-link"}]},{"title":"“人生只若初见”到底有多美？","more":"more-a-link","lists":[{"text":"从此我明白什么是「一眼万年」","link":"b-link"},{"text":"只缘感君一回顾，使我思君暮与朝","link":"b-link"}]}]')
 					.text.text-2.fadeInDown.animated.delay-4
 						img(src="#{url}img/listpage-text-2.png")
 						.title 
-						.btn.btn-2(next-page=".page-content",data-title="唤醒满足",data-content='[{"title":"唤醒满足","more":"more-a-link","lists":[{"text":"a","link":"a-link"},{"text":"a","link":"a-link"}]},{"title":"h2","more":"more-a-link","lists":[{"text":"b","link":"b-link"}]}]')
+						.btn.btn-2(next-page=".page-content",data-title="唤醒满足，觉醒触感。",data-subtitle="时刻静享舒适驾乘之悦。",data-content='[{"title":"汽车上隐藏了哪些不为人知但极具人性化的设计？","more":"more-a-link","lists":[{"text":"比如我车上的自动跟车系统吧，中高速巡航时特别方便、省心。","link":"a-link"},{"text":"你有在停完车然后忘了停哪，竖着耳朵按车钥匙的时候嘛，偷笑~","link":"a-link"}]},{"title":"你有什么看到「请勿触摸」后，却仍然收不住手的经历？","more":"more-a-link","lists":[{"text":"拆包装的时候，总是忍不住一直捏带气泡的塑料袋","link":"b-link"},{"text":"手：怪我咯","link":"b-link"}]}]')
 					.text.text-3.fadeInDown.animated.delay-6
 						img(src="#{url}img/listpage-text-3.png")
 						.title 
-						.btn.btn-3(next-page=".page-content",data-title="唤醒视觉",data-content='[{"title":"唤醒视觉","more":"more-a-link","lists":[{"text":"a","link":"a-link"},{"text":"a","link":"a-link"}]},{"title":"h2","more":"more-a-link","lists":[{"text":"b","link":"b-link"}]}]')
+						.btn.btn-3(next-page=".page-content",data-title="唤醒激情，觉醒驾感，",data-subtitle="让每一个澎湃的驾驶渴望全情释放。",data-content='[{"title":"默契无间、人马一体是一种怎样的体验？","more":"more-a-link","lists":[{"text":"说好一起减肥，却又心照不宣的点起了外卖","link":"a-link"},{"text":"就算出门忘记带手机，还是能互相找到对方","link":"a-link"}]},{"title":"如果说走过最远的路是套路，那如何才能优雅地驾驭它？","more":"more-a-link","lists":[{"text":"走最远的路陪你看最美的风景","link":"b-link"},{"text":"套路是我学的，但我爱你是真的","link":"b-link"}]}]')
 					.text.text-4.fadeInDown.animated.delay-8
 						img(src="#{url}img/listpage-text-4.png")
 						.title 
-						.btn.btn-4(next-page=".page-content",data-title="唤醒安全",data-content='[{"title":"唤醒安全","more":"more-a-link","lists":[{"text":"a","link":"a-link"},{"text":"a","link":"a-link"}]},{"title":"h2","more":"more-a-link","lists":[{"text":"b","link":"b-link"}]}]')
+						.btn.btn-4(next-page=".page-content",data-title="唤醒安全，觉醒安心。",data-subtitle="伴您从容驾乘，从此无畏向前。",data-content='[{"title":"对于汽车安全，你有哪些不得不提到的知识点？","more":"more-a-link","lists":[{"text":"戒骄戒躁，拒绝路怒症，小心驾驶才是正道。","link":"a-link"},{"text":"开车不喝酒，喝酒不开车，12分亲身教训，切记切记！","link":"a-link"}]},{"title":"当你焦虑的时候，哪句话让你充满安全感？","more":"more-a-link","lists":[{"text":"您的本月工资已经到账。","link":"b-link"},{"text":"手机有电、卡里有钱、车里有油。","link":"b-link"}]}]')
 		.page.page-content
 			.content
-				.navbar
+				.navbar.fadeIn.animated.duration-10
+					img(src="#{url}img/navbar.jpg")
 					.btn.btn-register.fadeInLeft.animated(next-page=".page-register")
-						img(src="#{url}img/listpage-btn.png")
 					.btn.btn-back.fadeInRight.animated(next-page=".page-contents")
-						img(src="#{url}img/listpage-back.png")
 				.text-list.fadeIn.animated.duration-10.delay-3
 					contentx
 
 		.page.page-register
 			.bg
-			.content
-				.form.fadeIn.animated
-					.title
-						img(src="#{url}img/register-title.png")
-					//- api.giccoo.com
-					register(action="http://api.giccoo.com/CX5/insert/")
-					.btn.btn-share
-						img(src="#{url}img/btn-share.png")
+			.content.fadeIn.animated.duration-15
+				.title
+					img(src="#{url}img/register-title.png")
+				//- api.giccoo.com
+				register(action="http://localhost:8881/CX5/insert/")
+				//- .btn.btn-share
+					img(src="#{url}img/btn-share.png")
 block js
 	- url = "/"
-	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
-	script(src="http://image.giccoo.com/projects/libs/js/min/jquery.min.js")
-	script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
-	script(src="http://image.giccoo.com/projects/libs/js/min/riot.min.js")
-	script(src="http://image.giccoo.com/projects/libs/js/cityData.js")
+	//- script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	script(src="../libs/js/min/jquery.min.js")
+	script(src="../libs/js/min/fastclick.min.js")
+	script(src="../libs/js/min/riot.min.js")
+	script(src="../libs/js/cityData.js")
 	script(src="js/tags.js?v=1")
 	script(src="js/main.js?v=1")
-	script.
+	//- script.
 		var _hmt = _hmt || [];
 		(function() {
 			var hm = document.createElement("script");

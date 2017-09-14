@@ -24,7 +24,7 @@ register
 					span {cityName}
 					select#city(name="city",onchange="{changeCity}")
 						option(each="{city}",value="{name}") {name}
-		//- .form-grounp
+		.form-grounp
 			label(for="dealer") 经销商
 			.select
 				span {dealerName}
@@ -58,18 +58,18 @@ register
 			`name = name`
 			city.push name
 
-		# @province = province
+		@province = province
 		
-		# @dealer = dealer
+		@dealer = dealer
 		
-		# @dealerName = @dealer[0].name
+		@dealerName = @dealer[0].name
 		@firstUpdate = true
 		@on 'update', ->
 			if @firstUpdate
 				return @firstUpdate = false
 			@provinceName = $('[name=province]', @root).val()
 			@cityName = $('[name=city]', @root).val()
-			# @dealerName = $('[name=dealer] [value=' + $('[name=dealer]', @root).val() + ']', @root).text()
+			@dealerName = $('[name=dealer] [value=' + $('[name=dealer]', @root).val() + ']', @root).text()
 			return
 
 		# @changeType = (evt) ->
