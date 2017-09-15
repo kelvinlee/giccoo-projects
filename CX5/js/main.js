@@ -175,6 +175,9 @@ window.onload = function() {
     wx.onMenuShareQQ(shareContent);
     return wx.onMenuShareWeibo(shareContent);
   });
+  wx.error(function(res) {
+    return console.log(res);
+  });
   return true;
 };
 

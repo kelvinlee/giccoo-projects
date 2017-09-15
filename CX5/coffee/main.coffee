@@ -74,7 +74,8 @@ window.onload = ->
 		wx.onMenuShareAppMessage shareContent
 		wx.onMenuShareQQ shareContent
 		wx.onMenuShareWeibo shareContent
-
+	wx.error (res)->
+		console.log res
 	return true
 
 hideSelfPage = (self)->
