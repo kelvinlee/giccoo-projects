@@ -170,7 +170,7 @@ window.onload = function() {
       title: "与第二代 Mazda CX-5 一起分享你的感官觉醒",
       desc: "与第二代 Mazda CX-5 一起分享你的感官觉醒",
       link: "http://m.giccoo.com/CX5/",
-      imgUrl: "http://image.giccoo.com/projects/CX5/img/share.jpg",
+      imgUrl: "http://m.giccoo.com/CX5/img/share.jpg",
       success: function() {
         return alert("success");
       },
