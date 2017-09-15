@@ -1,6 +1,6 @@
 extends ../libs/jade/layout-clean
 block title
-	| 第25小时的精彩
+	| 与第二代 Mazda CX-5 一起分享你的感官觉醒
 
 
 block css
@@ -70,14 +70,14 @@ block content
 					img(src="#{url}img/btn-share.png")
 block js
 	- url = "/"
-	//- script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
 	script(src="../libs/js/min/jquery.min.js")
 	script(src="../libs/js/min/fastclick.min.js")
 	script(src="../libs/js/min/riot.min.js")
 	script(src="../libs/js/cityData.js")
 	script(src="js/tags.js?v=1")
 	script(src="js/main.js?v=1")
-	//- script.
+	script.
 		var _hmt = _hmt || [];
 		(function() {
 			var hm = document.createElement("script");

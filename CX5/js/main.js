@@ -159,6 +159,22 @@ window.onload = function() {
       return Store.contentx.updateContents(headline, subheadline, json);
     }
   });
+  loadWechatConfig();
+  wx.ready(function() {
+    var shareContent;
+    shareContent = {
+      title: "与第二代 Mazda CX-5 一起分享你的感官觉醒",
+      desc: "与第二代 Mazda CX-5 一起分享你的感官觉醒",
+      link: "http://m.giccoo.com/CX5/",
+      imgUrl: "http://image.giccoo.com/projects/CX5/img/share.jpg",
+      success: function() {},
+      cancel: function() {}
+    };
+    wx.onMenuShareTimeline(shareContent);
+    wx.onMenuShareAppMessage(shareContent);
+    wx.onMenuShareQQ(shareContent);
+    return wx.onMenuShareWeibo(shareContent);
+  });
   return true;
 };
 

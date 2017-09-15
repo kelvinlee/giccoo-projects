@@ -59,21 +59,21 @@ window.onload = ->
 			subheadline = $(this).attr("data-subtitle")
 			Store.contentx.updateContents(headline,subheadline,json)
 
-	# loadWechatConfig()
-	# wx.ready ->
-	# 	shareContent =
-	# 		title: "第25小时的精彩"
-	# 		desc: "如果拥有了一天的第25个小时,你会为你的人生增添什么样的可能?"
-	# 		link: "http://m.giccoo.com/lincoln_mkz/"
-	# 		imgUrl: "http://image.giccoo.com/projects/lincoln_mkz/img/share.jpg"
-	# 		success: ->
-	# 			# alert "success"
-	# 		cancel: ->
-	# 			# alert "cancel"
-	# 	wx.onMenuShareTimeline shareContent
-	# 	wx.onMenuShareAppMessage shareContent
-	# 	wx.onMenuShareQQ shareContent
-	# 	wx.onMenuShareWeibo shareContent
+	loadWechatConfig()
+	wx.ready ->
+		shareContent =
+			title: "与第二代 Mazda CX-5 一起分享你的感官觉醒"
+			desc: "与第二代 Mazda CX-5 一起分享你的感官觉醒"
+			link: "http://m.giccoo.com/CX5/"
+			imgUrl: "http://image.giccoo.com/projects/CX5/img/share.jpg"
+			success: ->
+				# alert "success"
+			cancel: ->
+				# alert "cancel"
+		wx.onMenuShareTimeline shareContent
+		wx.onMenuShareAppMessage shareContent
+		wx.onMenuShareQQ shareContent
+		wx.onMenuShareWeibo shareContent
 
 	return true
 
