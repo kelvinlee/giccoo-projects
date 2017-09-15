@@ -61,9 +61,11 @@ window.onload = ->
 
 	
 	wx.error (res)->
+		alert res
 		console.log("wx ready")
 		console.log res
 	wx.ready ->
+		alert "ready"
 		console.log("wx ready")
 		shareContent =
 			title: "与第二代 Mazda CX-5 一起分享你的感官觉醒"
@@ -78,14 +80,9 @@ window.onload = ->
 		wx.onMenuShareAppMessage shareContent
 		wx.onMenuShareQQ shareContent
 		wx.onMenuShareWeibo shareContent
+
 	loadWechatConfig()
 	return true
-
-hideSelfPage = (self)->
-	# $(self).parents(".page").hide()
-	$(".page").removeClass("on")
-	
-
 
 
 loadWechatConfig = ->
