@@ -59,23 +59,19 @@ window.onload = ->
 			subheadline = $(this).attr("data-subtitle")
 			Store.contentx.updateContents(headline,subheadline,json)
 
-	alert "update for test"
+
 	wx.error (res)->
-		alert res
-		console.log("wx ready")
 		console.log res
 	wx.ready ->
-		alert "ready"
-		console.log("wx ready")
 		shareContent =
 			title: "与第二代 Mazda CX-5 一起分享你的感官觉醒"
 			desc: "与第二代 Mazda CX-5 一起分享你的感官觉醒"
 			link: "http://m.giccoo.com/CX5/"
 			imgUrl: "http://m.giccoo.com/CX5/img/share.jpg"
 			success: ->
-				alert "success"
+				# alert "success"
 			cancel: ->
-				alert "cancel"
+				# alert "cancel"
 		wx.onMenuShareTimeline shareContent
 		wx.onMenuShareAppMessage shareContent
 		wx.onMenuShareQQ shareContent
