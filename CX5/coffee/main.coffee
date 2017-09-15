@@ -59,23 +59,26 @@ window.onload = ->
 			subheadline = $(this).attr("data-subtitle")
 			Store.contentx.updateContents(headline,subheadline,json)
 
-	loadWechatConfig()
+	
+	wx.error (res)->
+		console.log("wx ready")
+		console.log res
 	wx.ready ->
+		console.log("wx ready")
 		shareContent =
 			title: "与第二代 Mazda CX-5 一起分享你的感官觉醒"
 			desc: "与第二代 Mazda CX-5 一起分享你的感官觉醒"
 			link: "http://m.giccoo.com/CX5/"
 			imgUrl: "http://image.giccoo.com/projects/CX5/img/share.jpg"
 			success: ->
-				# alert "success"
+				alert "success"
 			cancel: ->
-				# alert "cancel"
+				alert "cancel"
 		wx.onMenuShareTimeline shareContent
 		wx.onMenuShareAppMessage shareContent
 		wx.onMenuShareQQ shareContent
 		wx.onMenuShareWeibo shareContent
-	wx.error (res)->
-		console.log res
+	loadWechatConfig()
 	return true
 
 hideSelfPage = (self)->
