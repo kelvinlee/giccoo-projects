@@ -87,7 +87,7 @@ hideSelfPage = (self)->
 loadWechatConfig = ->
 	url = encodeURIComponent window.location.href.split("#")[0]
 	hm = document.createElement('script')
-	hm.src = "http://api.giccoo.com/api/config?url="+url
+	hm.src = "http://api.giccoo.com/api/config?debug=true&url="+url
 	s = document.getElementsByTagName('script')[0]
 	s.parentNode.insertBefore hm, s
 	return
