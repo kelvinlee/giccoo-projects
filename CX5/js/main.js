@@ -159,6 +159,7 @@ window.onload = function() {
       return Store.contentx.updateContents(headline, subheadline, json);
     }
   });
+  alert("update for test");
   wx.error(function(res) {
     alert(res);
     console.log("wx ready");

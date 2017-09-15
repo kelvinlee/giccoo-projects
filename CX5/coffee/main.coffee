@@ -59,7 +59,7 @@ window.onload = ->
 			subheadline = $(this).attr("data-subtitle")
 			Store.contentx.updateContents(headline,subheadline,json)
 
-	
+	alert "update for test"
 	wx.error (res)->
 		alert res
 		console.log("wx ready")
