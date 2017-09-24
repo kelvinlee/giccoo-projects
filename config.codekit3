@@ -15053,17 +15053,6 @@
 		"opt": 1,
 		"q": 100
 		},
-	"\/friso\/img\/focus.png": {
-		"ft": 32768,
-		"iS": 131656,
-		"oA": 0,
-		"oAP": "\/friso\/img\/focus.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
 	"\/friso\/img\/footer.png": {
 		"ft": 32768,
 		"iS": 0,
@@ -15264,17 +15253,6 @@
 		"iS": 2171,
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-pop-close.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/m-pop-focus.png": {
-		"ft": 32768,
-		"iS": 212675,
-		"oA": 0,
-		"oAP": "\/friso\/img\/m-pop-focus.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
