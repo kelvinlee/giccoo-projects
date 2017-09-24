@@ -15064,16 +15064,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/friso\/img\/footer.jpg": {
-		"ft": 16384,
-		"iS": 290594,
-		"oA": 0,
-		"oAP": "\/friso\/img\/footer.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
 	"\/friso\/img\/footer.png": {
 		"ft": 32768,
 		"iS": 0,
@@ -15258,17 +15248,6 @@
 		"opt": 0,
 		"q": 100
 		},
-	"\/friso\/img\/m-pop-banner.png": {
-		"ft": 32768,
-		"iS": 351291,
-		"oA": 0,
-		"oAP": "\/friso\/img\/m-pop-banner.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/friso\/img\/m-pop-bg.png": {
 		"ft": 32768,
 		"iS": 1080,
@@ -15304,7 +15283,7 @@
 		},
 	"\/friso\/img\/m-pop-free.png": {
 		"ft": 32768,
-		"iS": 195462,
+		"iS": 196381,
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-pop-free.png",
 		"oF": 0,
@@ -15453,7 +15432,7 @@
 		},
 	"\/friso\/img\/outlink.png": {
 		"ft": 32768,
-		"iS": 6511,
+		"iS": 14147,
 		"oA": 0,
 		"oAP": "\/friso\/img\/outlink.png",
 		"oF": 0,
