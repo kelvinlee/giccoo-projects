@@ -90,7 +90,7 @@ getdefaultTop = false;
 
 shareContent = {
   title: "知乎·北鼻版",
-  desc: "知乎·北鼻版",
+  desc: "小宝宝的问题千奇百怪，又萌又天真。如果有一个「知乎北鼻版」 会发生神马?",
   link: "http://m.giccoo.com/friso/",
   imgUrl: "http://m.giccoo.com/friso/img/share.jpg",
   success: function() {},

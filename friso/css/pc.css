@@ -1719,9 +1719,11 @@ video {
 .legal {
   margin-top: 45px; }
 
-.video h3 {
-  text-align: center;
-  color: #7a512d; }
+.video {
+  margin-top: 25px; }
+  .video h3 {
+    text-align: center;
+    color: #7a512d; }
 
 .note-text {
   color: #7a512d; }
