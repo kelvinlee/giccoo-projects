@@ -135,16 +135,16 @@ window.onload = function() {
     document.scrollingElement.scrollTop = scrollTop;
     return document.body.style.top = 0;
   });
-  wx.error(function(res) {
-    return console.log(res);
-  });
-  wx.ready(function() {
-    wx.onMenuShareTimeline(shareContent);
-    wx.onMenuShareAppMessage(shareContent);
-    wx.onMenuShareQQ(shareContent);
-    return wx.onMenuShareWeibo(shareContent);
-  });
-  loadWechatConfig();
+  if (typeof wx !== "undefined" && wx !== null) {
+    console.log("load wx");
+    wx.ready(function() {
+      wx.onMenuShareTimeline(shareContent);
+      wx.onMenuShareAppMessage(shareContent);
+      wx.onMenuShareQQ(shareContent);
+      return wx.onMenuShareWeibo(shareContent);
+    });
+    loadWechatConfig();
+  }
   return true;
 };
 

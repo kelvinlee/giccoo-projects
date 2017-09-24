@@ -47,14 +47,16 @@ window.onload = ->
 		document.scrollingElement.scrollTop = scrollTop
 		document.body.style.top = 0
 
-	wx.error (res)->
-		console.log res
-	wx.ready ->	
-		wx.onMenuShareTimeline shareContent
-		wx.onMenuShareAppMessage shareContent
-		wx.onMenuShareQQ shareContent
-		wx.onMenuShareWeibo shareContent
-	loadWechatConfig()
+	if wx?
+		console.log "load wx"
+		# wx.error (res)->
+		# 	console.log res
+		wx.ready ->	
+			wx.onMenuShareTimeline shareContent
+			wx.onMenuShareAppMessage shareContent
+			wx.onMenuShareQQ shareContent
+			wx.onMenuShareWeibo shareContent
+		loadWechatConfig()
 	return true
 
 
