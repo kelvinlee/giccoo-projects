@@ -15087,12 +15087,12 @@
 		},
 	"\/friso\/img\/free.png": {
 		"ft": 32768,
-		"iS": 118245,
+		"iS": 117809,
 		"oA": 0,
 		"oAP": "\/friso\/img\/free.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
@@ -15304,12 +15304,12 @@
 		},
 	"\/friso\/img\/m-pop-free.png": {
 		"ft": 32768,
-		"iS": 195462,
+		"iS": 182439,
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-pop-free.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
