@@ -1,0 +1,1741 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+* {
+  -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  font-family: Tahoma,Arial,Roboto,Droid Sans,Helvetica Neue,Droid Sans Fallback,Microsoft YaHei,SimHei,Heiti SC,Hiragino Sans GB,Simsun,sans-self; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+img {
+  max-width: 100%; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.pages {
+  display: block;
+  height: 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative; }
+  .pages .page {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none; }
+    .pages .page .next-point {
+      width: 20px;
+      height: 30px;
+      position: absolute;
+      bottom: 2%;
+      left: 50%;
+      margin-left: -10px;
+      z-index: 99;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      font-size: 0; }
+      .pages .page .next-point span {
+        width: 20px;
+        height: 10px;
+        display: inline-block;
+        -webkit-animation: Flash 2s ease;
+                animation: Flash 2s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        margin-bottom: -2px;
+        background: url("http://disk.giccoo.com/projects/libs/img/arrow-next.png") no-repeat center center;
+        background-size: cover;
+        background-color: transparent; }
+        .pages .page .next-point span:nth-child(n+1) {
+          -webkit-animation-delay: 100ms;
+                  animation-delay: 100ms; }
+        .pages .page .next-point span:nth-child(n+2) {
+          -webkit-animation-delay: 300ms;
+                  animation-delay: 300ms; }
+        .pages .page .next-point span:nth-child(n+3) {
+          -webkit-animation-delay: 500ms;
+                  animation-delay: 500ms; }
+    .pages .page.first {
+      display: block; }
+    .pages .page h1, .pages .page h2 {
+      margin: 0 auto; }
+    .pages .page.riot-up-active, .pages .page.riot-down-active {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+    .pages .page.riot-up-leave {
+      -webkit-transform: translate3d(0, -100%, 0);
+              transform: translate3d(0, -100%, 0); }
+    .pages .page.riot-up {
+      -webkit-transform: translate3d(0, 100%, 0);
+              transform: translate3d(0, 100%, 0); }
+    .pages .page.riot-down-leave {
+      -webkit-transform: translate3d(0, 100%, 0);
+              transform: translate3d(0, 100%, 0); }
+    .pages .page.riot-down {
+      -webkit-transform: translate3d(0, -100%, 0);
+              transform: translate3d(0, -100%, 0); }
+
+.loader {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999; }
+  .loader .loader-icon {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 100px;
+    height: 100px; }
+  .loader .loader-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff; }
+    @media only screen and (min-width: 321px) and (max-width: 399px) {
+      .loader .loader-text {
+        font-size: 1.1rem; } }
+    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+      .loader .loader-text {
+        font-size: 1.1rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 767px) {
+      .loader .loader-text {
+        font-size: 1.2rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+      .loader .loader-text {
+        font-size: 1.2rem; } }
+
+@-webkit-keyframes ball-spin-fade-loader {
+  50% {
+    opacity: 0.3;
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+@keyframes ball-spin-fade-loader {
+  50% {
+    opacity: 0.3;
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+.ball-spin-fade-loader {
+  position: relative;
+  top: -10px;
+  left: -10px; }
+  .ball-spin-fade-loader > div {
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin: 2px;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    position: absolute; }
+    .ball-spin-fade-loader > div:nth-child(1) {
+      top: 25px;
+      left: 0;
+      -webkit-animation: ball-spin-fade-loader 1s -0.96s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.96s infinite linear; }
+    .ball-spin-fade-loader > div:nth-child(2) {
+      top: 17.04545px;
+      left: 17.04545px;
+      -webkit-animation: ball-spin-fade-loader 1s -0.84s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.84s infinite linear; }
+    .ball-spin-fade-loader > div:nth-child(3) {
+      top: 0;
+      left: 25px;
+      -webkit-animation: ball-spin-fade-loader 1s -0.72s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.72s infinite linear; }
+    .ball-spin-fade-loader > div:nth-child(4) {
+      top: -17.04545px;
+      left: 17.04545px;
+      -webkit-animation: ball-spin-fade-loader 1s -0.6s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.6s infinite linear; }
+    .ball-spin-fade-loader > div:nth-child(5) {
+      top: -25px;
+      left: 0;
+      -webkit-animation: ball-spin-fade-loader 1s -0.48s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.48s infinite linear; }
+    .ball-spin-fade-loader > div:nth-child(6) {
+      top: -17.04545px;
+      left: -17.04545px;
+      -webkit-animation: ball-spin-fade-loader 1s -0.36s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.36s infinite linear; }
+    .ball-spin-fade-loader > div:nth-child(7) {
+      top: 0;
+      left: -25px;
+      -webkit-animation: ball-spin-fade-loader 1s -0.24s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.24s infinite linear; }
+    .ball-spin-fade-loader > div:nth-child(8) {
+      top: 17.04545px;
+      left: -17.04545px;
+      -webkit-animation: ball-spin-fade-loader 1s -0.12s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.12s infinite linear; }
+
+.nowrap {
+  display: inline-block;
+  text-decoration: inherit;
+  white-space: nowrap; }
+
+.clear {
+  clear: both; }
+
+.cursor-grab {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab; }
+
+.cursor-grabbing {
+  cursor: move;
+  cursor: -webkit-grabbing;
+  cursor: grabbing; }
+
+.row {
+  position: relative;
+  z-index: 1; }
+  .row::before {
+    content: ' ';
+    display: table; }
+  .row::after {
+    content: ' ';
+    display: table;
+    clear: both; }
+
+.column {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  float: left;
+  min-height: 2px; }
+
+.large-offset-0 {
+  margin-left: 0; }
+
+.large-push-0 {
+  left: auto;
+  right: auto; }
+
+.large-pull-0 {
+  right: auto;
+  left: auto; }
+
+.large-1 {
+  width: 8.33333%; }
+
+.large-offset-1 {
+  margin-left: 8.33333%; }
+
+.large-push-1 {
+  left: 8.33333%;
+  right: auto; }
+
+.large-pull-1 {
+  right: 8.33333%;
+  left: auto; }
+
+.large-2 {
+  width: 16.66667%; }
+
+.large-offset-2 {
+  margin-left: 16.66667%; }
+
+.large-push-2 {
+  left: 16.66667%;
+  right: auto; }
+
+.large-pull-2 {
+  right: 16.66667%;
+  left: auto; }
+
+.large-3 {
+  width: 25%; }
+
+.large-offset-3 {
+  margin-left: 25%; }
+
+.large-push-3 {
+  left: 25%;
+  right: auto; }
+
+.large-pull-3 {
+  right: 25%;
+  left: auto; }
+
+.large-4 {
+  width: 33.33333%; }
+
+.large-offset-4 {
+  margin-left: 33.33333%; }
+
+.large-push-4 {
+  left: 33.33333%;
+  right: auto; }
+
+.large-pull-4 {
+  right: 33.33333%;
+  left: auto; }
+
+.large-5 {
+  width: 41.66667%; }
+
+.large-offset-5 {
+  margin-left: 41.66667%; }
+
+.large-push-5 {
+  left: 41.66667%;
+  right: auto; }
+
+.large-pull-5 {
+  right: 41.66667%;
+  left: auto; }
+
+.large-6 {
+  width: 50%; }
+
+.large-offset-6 {
+  margin-left: 50%; }
+
+.large-push-6 {
+  left: 50%;
+  right: auto; }
+
+.large-pull-6 {
+  right: 50%;
+  left: auto; }
+
+.large-7 {
+  width: 58.33333%; }
+
+.large-offset-7 {
+  margin-left: 58.33333%; }
+
+.large-push-7 {
+  left: 58.33333%;
+  right: auto; }
+
+.large-pull-7 {
+  right: 58.33333%;
+  left: auto; }
+
+.large-8 {
+  width: 66.66667%; }
+
+.large-offset-8 {
+  margin-left: 66.66667%; }
+
+.large-push-8 {
+  left: 66.66667%;
+  right: auto; }
+
+.large-pull-8 {
+  right: 66.66667%;
+  left: auto; }
+
+.large-9 {
+  width: 75%; }
+
+.large-offset-9 {
+  margin-left: 75%; }
+
+.large-push-9 {
+  left: 75%;
+  right: auto; }
+
+.large-pull-9 {
+  right: 75%;
+  left: auto; }
+
+.large-10 {
+  width: 83.33333%; }
+
+.large-offset-10 {
+  margin-left: 83.33333%; }
+
+.large-push-10 {
+  left: 83.33333%;
+  right: auto; }
+
+.large-pull-10 {
+  right: 83.33333%;
+  left: auto; }
+
+.large-11 {
+  width: 91.66667%; }
+
+.large-offset-11 {
+  margin-left: 91.66667%; }
+
+.large-push-11 {
+  left: 91.66667%;
+  right: auto; }
+
+.large-pull-11 {
+  right: 91.66667%;
+  left: auto; }
+
+.large-12 {
+  width: 100%; }
+
+.large-offset-12 {
+  margin-left: 100%; }
+
+.large-push-12 {
+  left: 100%;
+  right: auto; }
+
+.large-pull-12 {
+  right: 100%;
+  left: auto; }
+
+.large-centered {
+  margin-left: auto;
+  margin-right: auto;
+  float: none; }
+
+.large-uncentered {
+  margin-left: 0;
+  margin-right: 0; }
+
+.large-last {
+  float: right; }
+
+.large-notlast {
+  float: left; }
+
+@media only screen and (min-width: 1442px) {
+  .xlarge-offset-0 {
+    margin-left: 0; }
+  .xlarge-push-0 {
+    left: auto;
+    right: auto; }
+  .xlarge-pull-0 {
+    right: auto;
+    left: auto; }
+  .xlarge-1 {
+    width: 8.33333%; }
+  .xlarge-offset-1 {
+    margin-left: 8.33333%; }
+  .xlarge-push-1 {
+    left: 8.33333%;
+    right: auto; }
+  .xlarge-pull-1 {
+    right: 8.33333%;
+    left: auto; }
+  .xlarge-2 {
+    width: 16.66667%; }
+  .xlarge-offset-2 {
+    margin-left: 16.66667%; }
+  .xlarge-push-2 {
+    left: 16.66667%;
+    right: auto; }
+  .xlarge-pull-2 {
+    right: 16.66667%;
+    left: auto; }
+  .xlarge-3 {
+    width: 25%; }
+  .xlarge-offset-3 {
+    margin-left: 25%; }
+  .xlarge-push-3 {
+    left: 25%;
+    right: auto; }
+  .xlarge-pull-3 {
+    right: 25%;
+    left: auto; }
+  .xlarge-4 {
+    width: 33.33333%; }
+  .xlarge-offset-4 {
+    margin-left: 33.33333%; }
+  .xlarge-push-4 {
+    left: 33.33333%;
+    right: auto; }
+  .xlarge-pull-4 {
+    right: 33.33333%;
+    left: auto; }
+  .xlarge-5 {
+    width: 41.66667%; }
+  .xlarge-offset-5 {
+    margin-left: 41.66667%; }
+  .xlarge-push-5 {
+    left: 41.66667%;
+    right: auto; }
+  .xlarge-pull-5 {
+    right: 41.66667%;
+    left: auto; }
+  .xlarge-6 {
+    width: 50%; }
+  .xlarge-offset-6 {
+    margin-left: 50%; }
+  .xlarge-push-6 {
+    left: 50%;
+    right: auto; }
+  .xlarge-pull-6 {
+    right: 50%;
+    left: auto; }
+  .xlarge-7 {
+    width: 58.33333%; }
+  .xlarge-offset-7 {
+    margin-left: 58.33333%; }
+  .xlarge-push-7 {
+    left: 58.33333%;
+    right: auto; }
+  .xlarge-pull-7 {
+    right: 58.33333%;
+    left: auto; }
+  .xlarge-8 {
+    width: 66.66667%; }
+  .xlarge-offset-8 {
+    margin-left: 66.66667%; }
+  .xlarge-push-8 {
+    left: 66.66667%;
+    right: auto; }
+  .xlarge-pull-8 {
+    right: 66.66667%;
+    left: auto; }
+  .xlarge-9 {
+    width: 75%; }
+  .xlarge-offset-9 {
+    margin-left: 75%; }
+  .xlarge-push-9 {
+    left: 75%;
+    right: auto; }
+  .xlarge-pull-9 {
+    right: 75%;
+    left: auto; }
+  .xlarge-10 {
+    width: 83.33333%; }
+  .xlarge-offset-10 {
+    margin-left: 83.33333%; }
+  .xlarge-push-10 {
+    left: 83.33333%;
+    right: auto; }
+  .xlarge-pull-10 {
+    right: 83.33333%;
+    left: auto; }
+  .xlarge-11 {
+    width: 91.66667%; }
+  .xlarge-offset-11 {
+    margin-left: 91.66667%; }
+  .xlarge-push-11 {
+    left: 91.66667%;
+    right: auto; }
+  .xlarge-pull-11 {
+    right: 91.66667%;
+    left: auto; }
+  .xlarge-12 {
+    width: 100%; }
+  .xlarge-offset-12 {
+    margin-left: 100%; }
+  .xlarge-push-12 {
+    left: 100%;
+    right: auto; }
+  .xlarge-pull-12 {
+    right: 100%;
+    left: auto; }
+  .xlarge-centered {
+    margin-left: auto;
+    margin-right: auto;
+    float: none; }
+  .xlarge-uncentered {
+    margin-left: 0;
+    margin-right: 0; }
+  .xlarge-last {
+    float: right; }
+  .xlarge-notlast {
+    float: left; } }
+
+@media only screen and (max-width: 1068px) {
+  .medium-offset-0 {
+    margin-left: 0; }
+  .medium-push-0 {
+    left: auto;
+    right: auto; }
+  .medium-pull-0 {
+    right: auto;
+    left: auto; }
+  .medium-1 {
+    width: 8.33333%; }
+  .medium-offset-1 {
+    margin-left: 8.33333%; }
+  .medium-push-1 {
+    left: 8.33333%;
+    right: auto; }
+  .medium-pull-1 {
+    right: 8.33333%;
+    left: auto; }
+  .medium-2 {
+    width: 16.66667%; }
+  .medium-offset-2 {
+    margin-left: 16.66667%; }
+  .medium-push-2 {
+    left: 16.66667%;
+    right: auto; }
+  .medium-pull-2 {
+    right: 16.66667%;
+    left: auto; }
+  .medium-3 {
+    width: 25%; }
+  .medium-offset-3 {
+    margin-left: 25%; }
+  .medium-push-3 {
+    left: 25%;
+    right: auto; }
+  .medium-pull-3 {
+    right: 25%;
+    left: auto; }
+  .medium-4 {
+    width: 33.33333%; }
+  .medium-offset-4 {
+    margin-left: 33.33333%; }
+  .medium-push-4 {
+    left: 33.33333%;
+    right: auto; }
+  .medium-pull-4 {
+    right: 33.33333%;
+    left: auto; }
+  .medium-5 {
+    width: 41.66667%; }
+  .medium-offset-5 {
+    margin-left: 41.66667%; }
+  .medium-push-5 {
+    left: 41.66667%;
+    right: auto; }
+  .medium-pull-5 {
+    right: 41.66667%;
+    left: auto; }
+  .medium-6 {
+    width: 50%; }
+  .medium-offset-6 {
+    margin-left: 50%; }
+  .medium-push-6 {
+    left: 50%;
+    right: auto; }
+  .medium-pull-6 {
+    right: 50%;
+    left: auto; }
+  .medium-7 {
+    width: 58.33333%; }
+  .medium-offset-7 {
+    margin-left: 58.33333%; }
+  .medium-push-7 {
+    left: 58.33333%;
+    right: auto; }
+  .medium-pull-7 {
+    right: 58.33333%;
+    left: auto; }
+  .medium-8 {
+    width: 66.66667%; }
+  .medium-offset-8 {
+    margin-left: 66.66667%; }
+  .medium-push-8 {
+    left: 66.66667%;
+    right: auto; }
+  .medium-pull-8 {
+    right: 66.66667%;
+    left: auto; }
+  .medium-9 {
+    width: 75%; }
+  .medium-offset-9 {
+    margin-left: 75%; }
+  .medium-push-9 {
+    left: 75%;
+    right: auto; }
+  .medium-pull-9 {
+    right: 75%;
+    left: auto; }
+  .medium-10 {
+    width: 83.33333%; }
+  .medium-offset-10 {
+    margin-left: 83.33333%; }
+  .medium-push-10 {
+    left: 83.33333%;
+    right: auto; }
+  .medium-pull-10 {
+    right: 83.33333%;
+    left: auto; }
+  .medium-11 {
+    width: 91.66667%; }
+  .medium-offset-11 {
+    margin-left: 91.66667%; }
+  .medium-push-11 {
+    left: 91.66667%;
+    right: auto; }
+  .medium-pull-11 {
+    right: 91.66667%;
+    left: auto; }
+  .medium-12 {
+    width: 100%; }
+  .medium-offset-12 {
+    margin-left: 100%; }
+  .medium-push-12 {
+    left: 100%;
+    right: auto; }
+  .medium-pull-12 {
+    right: 100%;
+    left: auto; }
+  .medium-centered {
+    margin-left: auto;
+    margin-right: auto;
+    float: none; }
+  .medium-uncentered {
+    margin-left: 0;
+    margin-right: 0; }
+  .medium-last {
+    float: right; }
+  .medium-notlast {
+    float: left; } }
+
+@media only screen and (max-width: 735px) {
+  .small-offset-0 {
+    margin-left: 0; }
+  .small-push-0 {
+    left: auto;
+    right: auto; }
+  .small-pull-0 {
+    right: auto;
+    left: auto; }
+  .small-1 {
+    width: 8.33333%; }
+  .small-offset-1 {
+    margin-left: 8.33333%; }
+  .small-push-1 {
+    left: 8.33333%;
+    right: auto; }
+  .small-pull-1 {
+    right: 8.33333%;
+    left: auto; }
+  .small-2 {
+    width: 16.66667%; }
+  .small-offset-2 {
+    margin-left: 16.66667%; }
+  .small-push-2 {
+    left: 16.66667%;
+    right: auto; }
+  .small-pull-2 {
+    right: 16.66667%;
+    left: auto; }
+  .small-3 {
+    width: 25%; }
+  .small-offset-3 {
+    margin-left: 25%; }
+  .small-push-3 {
+    left: 25%;
+    right: auto; }
+  .small-pull-3 {
+    right: 25%;
+    left: auto; }
+  .small-4 {
+    width: 33.33333%; }
+  .small-offset-4 {
+    margin-left: 33.33333%; }
+  .small-push-4 {
+    left: 33.33333%;
+    right: auto; }
+  .small-pull-4 {
+    right: 33.33333%;
+    left: auto; }
+  .small-5 {
+    width: 41.66667%; }
+  .small-offset-5 {
+    margin-left: 41.66667%; }
+  .small-push-5 {
+    left: 41.66667%;
+    right: auto; }
+  .small-pull-5 {
+    right: 41.66667%;
+    left: auto; }
+  .small-6 {
+    width: 50%; }
+  .small-offset-6 {
+    margin-left: 50%; }
+  .small-push-6 {
+    left: 50%;
+    right: auto; }
+  .small-pull-6 {
+    right: 50%;
+    left: auto; }
+  .small-7 {
+    width: 58.33333%; }
+  .small-offset-7 {
+    margin-left: 58.33333%; }
+  .small-push-7 {
+    left: 58.33333%;
+    right: auto; }
+  .small-pull-7 {
+    right: 58.33333%;
+    left: auto; }
+  .small-8 {
+    width: 66.66667%; }
+  .small-offset-8 {
+    margin-left: 66.66667%; }
+  .small-push-8 {
+    left: 66.66667%;
+    right: auto; }
+  .small-pull-8 {
+    right: 66.66667%;
+    left: auto; }
+  .small-9 {
+    width: 75%; }
+  .small-offset-9 {
+    margin-left: 75%; }
+  .small-push-9 {
+    left: 75%;
+    right: auto; }
+  .small-pull-9 {
+    right: 75%;
+    left: auto; }
+  .small-10 {
+    width: 83.33333%; }
+  .small-offset-10 {
+    margin-left: 83.33333%; }
+  .small-push-10 {
+    left: 83.33333%;
+    right: auto; }
+  .small-pull-10 {
+    right: 83.33333%;
+    left: auto; }
+  .small-11 {
+    width: 91.66667%; }
+  .small-offset-11 {
+    margin-left: 91.66667%; }
+  .small-push-11 {
+    left: 91.66667%;
+    right: auto; }
+  .small-pull-11 {
+    right: 91.66667%;
+    left: auto; }
+  .small-12 {
+    width: 100%; }
+  .small-offset-12 {
+    margin-left: 100%; }
+  .small-push-12 {
+    left: 100%;
+    right: auto; }
+  .small-pull-12 {
+    right: 100%;
+    left: auto; }
+  .small-centered {
+    margin-left: auto;
+    margin-right: auto;
+    float: none; }
+  .small-uncentered {
+    margin-left: 0;
+    margin-right: 0; }
+  .small-last {
+    float: right; }
+  .small-notlast {
+    float: left; } }
+
+.section-content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 980px; }
+
+@media only screen and (min-width: 1442px) {
+  .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px; } }
+
+@media only screen and (max-width: 1068px) {
+  .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 692px; } }
+
+@media only screen and (max-width: 735px) {
+  .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 87.5%; } }
+
+.delay-1 {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms; }
+
+.duration-1 {
+  -webkit-animation-duration: 100ms;
+          animation-duration: 100ms; }
+
+.delay-2 {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms; }
+
+.duration-2 {
+  -webkit-animation-duration: 200ms;
+          animation-duration: 200ms; }
+
+.delay-3 {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms; }
+
+.duration-3 {
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms; }
+
+.delay-4 {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms; }
+
+.duration-4 {
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms; }
+
+.delay-5 {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms; }
+
+.duration-5 {
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms; }
+
+.delay-6 {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms; }
+
+.duration-6 {
+  -webkit-animation-duration: 600ms;
+          animation-duration: 600ms; }
+
+.delay-7 {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms; }
+
+.duration-7 {
+  -webkit-animation-duration: 700ms;
+          animation-duration: 700ms; }
+
+.delay-8 {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms; }
+
+.duration-8 {
+  -webkit-animation-duration: 800ms;
+          animation-duration: 800ms; }
+
+.delay-9 {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms; }
+
+.duration-9 {
+  -webkit-animation-duration: 900ms;
+          animation-duration: 900ms; }
+
+.delay-10 {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms; }
+
+.duration-10 {
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms; }
+
+.delay-11 {
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms; }
+
+.duration-11 {
+  -webkit-animation-duration: 1100ms;
+          animation-duration: 1100ms; }
+
+.delay-12 {
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms; }
+
+.duration-12 {
+  -webkit-animation-duration: 1200ms;
+          animation-duration: 1200ms; }
+
+.delay-13 {
+  -webkit-animation-delay: 1300ms;
+          animation-delay: 1300ms; }
+
+.duration-13 {
+  -webkit-animation-duration: 1300ms;
+          animation-duration: 1300ms; }
+
+.delay-14 {
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms; }
+
+.duration-14 {
+  -webkit-animation-duration: 1400ms;
+          animation-duration: 1400ms; }
+
+.delay-15 {
+  -webkit-animation-delay: 1500ms;
+          animation-delay: 1500ms; }
+
+.duration-15 {
+  -webkit-animation-duration: 1500ms;
+          animation-duration: 1500ms; }
+
+.delay-16 {
+  -webkit-animation-delay: 1600ms;
+          animation-delay: 1600ms; }
+
+.duration-16 {
+  -webkit-animation-duration: 1600ms;
+          animation-duration: 1600ms; }
+
+.delay-17 {
+  -webkit-animation-delay: 1700ms;
+          animation-delay: 1700ms; }
+
+.duration-17 {
+  -webkit-animation-duration: 1700ms;
+          animation-duration: 1700ms; }
+
+.delay-18 {
+  -webkit-animation-delay: 1800ms;
+          animation-delay: 1800ms; }
+
+.duration-18 {
+  -webkit-animation-duration: 1800ms;
+          animation-duration: 1800ms; }
+
+.delay-19 {
+  -webkit-animation-delay: 1900ms;
+          animation-delay: 1900ms; }
+
+.duration-19 {
+  -webkit-animation-duration: 1900ms;
+          animation-duration: 1900ms; }
+
+.delay-20 {
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms; }
+
+.duration-20 {
+  -webkit-animation-duration: 2000ms;
+          animation-duration: 2000ms; }
+
+.delay-21 {
+  -webkit-animation-delay: 2100ms;
+          animation-delay: 2100ms; }
+
+.duration-21 {
+  -webkit-animation-duration: 2100ms;
+          animation-duration: 2100ms; }
+
+.delay-22 {
+  -webkit-animation-delay: 2200ms;
+          animation-delay: 2200ms; }
+
+.duration-22 {
+  -webkit-animation-duration: 2200ms;
+          animation-duration: 2200ms; }
+
+.delay-23 {
+  -webkit-animation-delay: 2300ms;
+          animation-delay: 2300ms; }
+
+.duration-23 {
+  -webkit-animation-duration: 2300ms;
+          animation-duration: 2300ms; }
+
+.delay-24 {
+  -webkit-animation-delay: 2400ms;
+          animation-delay: 2400ms; }
+
+.duration-24 {
+  -webkit-animation-duration: 2400ms;
+          animation-duration: 2400ms; }
+
+.delay-25 {
+  -webkit-animation-delay: 2500ms;
+          animation-delay: 2500ms; }
+
+.duration-25 {
+  -webkit-animation-duration: 2500ms;
+          animation-duration: 2500ms; }
+
+.delay-26 {
+  -webkit-animation-delay: 2600ms;
+          animation-delay: 2600ms; }
+
+.duration-26 {
+  -webkit-animation-duration: 2600ms;
+          animation-duration: 2600ms; }
+
+.delay-27 {
+  -webkit-animation-delay: 2700ms;
+          animation-delay: 2700ms; }
+
+.duration-27 {
+  -webkit-animation-duration: 2700ms;
+          animation-duration: 2700ms; }
+
+.delay-28 {
+  -webkit-animation-delay: 2800ms;
+          animation-delay: 2800ms; }
+
+.duration-28 {
+  -webkit-animation-duration: 2800ms;
+          animation-duration: 2800ms; }
+
+.delay-29 {
+  -webkit-animation-delay: 2900ms;
+          animation-delay: 2900ms; }
+
+.duration-29 {
+  -webkit-animation-duration: 2900ms;
+          animation-duration: 2900ms; }
+
+.delay-30 {
+  -webkit-animation-delay: 3000ms;
+          animation-delay: 3000ms; }
+
+.duration-30 {
+  -webkit-animation-duration: 3000ms;
+          animation-duration: 3000ms; }
+
+video {
+  width: 100%;
+  height: auto; }
+
+.wechat-share-hide, .load-before {
+  position: absolute;
+  top: -1000px;
+  left: 0px;
+  display: none;
+  width: 1px;
+  height: 1px; }
+
+.main {
+  width: 100%;
+  margin: 0 auto;
+  background: url("../img/bg.jpg") repeat top center;
+  background-size: 100% 1px;
+  background-color: transparent;
+  min-width: 1024px; }
+
+.banner {
+  background: url("../img/banner.jpg") no-repeat center bottom;
+  background-size: cover;
+  background-color: transparent;
+  height: 500px; }
+
+.focus {
+  margin-top: 25px; }
+
+.age {
+  width: 92%;
+  margin: 0 auto;
+  margin-top: 25px; }
+  .age .age-box {
+    background: url("../img/m-q-bg.jpg") no-repeat top center;
+    background-size: 100% 100%;
+    background-color: transparent;
+    padding: 35px 30px; }
+    .age .age-box p {
+      margin: 0 auto;
+      font-size: 20px;
+      color: #7a512d;
+      line-height: 1.8em; }
+
+.line {
+  text-align: center; }
+
+.tzw .title {
+  font-size: 0; }
+
+.tzw .content {
+  background: url("../img/m-tzw-bg.png") repeat top center;
+  background-size: 100% 1px;
+  background-color: transparent;
+  position: relative;
+  min-height: 200px;
+  padding-bottom: 20px; }
+  .tzw .content .footer {
+    font-size: 0;
+    bottom: -20px;
+    position: absolute; }
+  .tzw .content .outlink {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    width: 31.25%;
+    margin: 0 auto;
+    height: 50px;
+    background: url("../img/m-iwask.png") no-repeat center center;
+    background-size: contain;
+    background-color: transparent;
+    font-size: 0;
+    margin-left: -15.5%; }
+    .iphone4 .tzw .content .outlink {
+      width: 31.25%; }
+    .tzw .content .outlink img {
+      display: none; }
+  .tzw .content h2 {
+    font-size: 20px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px 0;
+    font-weight: 400;
+    color: #7a512d; }
+  .tzw .content .answer-box {
+    width: 82%;
+    margin: 0 auto;
+    background: url("../img/m-answer-bg.png") repeat top center;
+    background-size: 100% 1px;
+    background-color: transparent;
+    border-radius: 6px;
+    border: solid 1px #a7852c; }
+    .tzw .content .answer-box .answer {
+      border-bottom: solid 1px #a7852c;
+      padding: 15px;
+      font-size: 16px; }
+      .tzw .content .answer-box .answer:last-child {
+        border-bottom: none; }
+      .tzw .content .answer-box .answer .by {
+        display: inline-block;
+        font-size: 16px;
+        width: 100%;
+        color: #7a512d;
+        padding-bottom: 6px; }
+      .tzw .content .answer-box .answer .answer-text {
+        display: inline-block;
+        font-size: 16px;
+        width: 100%;
+        line-height: 1.2em;
+        color: #3b3b3d; }
+
+.ten-q {
+  margin-top: 65px; }
+
+.q-list {
+  position: relative;
+  min-height: 200px; }
+  .q-list .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%; }
+  .q-list .question-list {
+    width: 92%;
+    margin: 0 auto; }
+    .q-list .question-list .question-box {
+      background: url("../img/m-q-bg.jpg") no-repeat top center;
+      background-size: 100% 100%;
+      background-color: transparent;
+      margin-top: 45px;
+      padding-bottom: 40px;
+      position: relative; }
+      .q-list .question-list .question-box .outlink {
+        position: absolute;
+        bottom: -22px;
+        left: 50%;
+        width: 31.25%;
+        margin: 0 auto;
+        height: 50px;
+        background: url("../img/outlink.png") no-repeat center center;
+        background-size: contain;
+        background-color: transparent;
+        font-size: 0;
+        margin-left: -15.5%; }
+        .iphone4 .q-list .question-list .question-box .outlink {
+          width: 31.25%; }
+        .q-list .question-list .question-box .outlink img {
+          display: none; }
+      .q-list .question-list .question-box .title {
+        color: #7a512d;
+        padding: 15px 15px;
+        padding-left: 120px;
+        position: relative; }
+        .q-list .question-list .question-box .title h2, .q-list .question-list .question-box .title p {
+          margin: 0 auto; }
+        .q-list .question-list .question-box .title h2 {
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 1.2em; }
+        .q-list .question-list .question-box .title p {
+          font-size: 16px; }
+        .q-list .question-list .question-box .title .numbs {
+          margin-top: 6px; }
+        .q-list .question-list .question-box .title .icon {
+          position: absolute;
+          top: 0%;
+          left: -10px;
+          width: 120px;
+          height: 100%;
+          background: url("../img/m-icon-an.png") no-repeat left center;
+          background-size: contain;
+          background-color: transparent; }
+      .q-list .question-list .question-box .answer-box {
+        width: 90%;
+        margin: 0 auto;
+        background: url("../img/m-answer-bg.png") repeat top center;
+        background-size: 100% 1px;
+        background-color: transparent;
+        border-radius: 6px;
+        border: solid 1px #a7852c; }
+        .q-list .question-list .question-box .answer-box .answer {
+          border-bottom: solid 1px #a7852c;
+          padding: 15px;
+          font-size: 16px; }
+          .q-list .question-list .question-box .answer-box .answer:last-child {
+            border-bottom: none; }
+          .q-list .question-list .question-box .answer-box .answer .by {
+            display: inline-block;
+            font-size: 16px;
+            width: 100%;
+            color: #7a512d;
+            padding-bottom: 6px; }
+          .q-list .question-list .question-box .answer-box .answer .answer-text {
+            display: inline-block;
+            font-size: 16px;
+            width: 100%;
+            line-height: 1.2em;
+            color: #3b3b3d; }
+      .q-list .question-list .question-box.small {
+        background: none;
+        padding-bottom: 10px; }
+        .q-list .question-list .question-box.small .title {
+          background: url("../img/m-question-bg.png") repeat top center;
+          background-size: 100% 100%;
+          background-color: transparent;
+          padding: 20px 10%;
+          cursor: pointer; }
+          .q-list .question-list .question-box.small .title p {
+            display: none; }
+          .q-list .question-list .question-box.small .title .icon {
+            background: url("../img/m-icon-more.png") no-repeat left center;
+            background-size: contain;
+            background-color: transparent;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            left: auto;
+            margin-top: -10px; }
+        .q-list .question-list .question-box.small .answer-box {
+          margin-top: -10px;
+          padding-top: 8px;
+          display: none; }
+        .q-list .question-list .question-box.small .answer:last-child {
+          padding-bottom: 30px; }
+        .q-list .question-list .question-box.small .outlink {
+          display: none; }
+      .q-list .question-list .question-box.small.on .icon {
+        background: url("../img/m-icon-more.png") no-repeat left center;
+        background-size: contain;
+        background-color: transparent;
+        -webkit-transform: scale3d(1, -1, 1);
+                transform: scale3d(1, -1, 1); }
+      .q-list .question-list .question-box.small.on .answer-box {
+        display: block; }
+      .q-list .question-list .question-box.small.on .outlink {
+        display: block; }
+
+.kv {
+  margin-top: 25px; }
+
+.legal {
+  margin-top: 45px; }
+
+.video h3 {
+  text-align: center;
+  color: #7a512d; }
+
+.note-text {
+  color: #7a512d; }
+  .note-text h3 {
+    text-align: center; }
+  .note-text h4 {
+    margin: 0 auto; }
+
+.free {
+  font-size: 0;
+  margin-top: 25px; }
+
+.footer {
+  width: 100%;
+  font-size: 0; }
+  .footer img {
+    width: 100%; }

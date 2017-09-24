@@ -1,0 +1,108 @@
+extends ../libs/jade/layout-clean
+block title
+	| 知乎·北鼻版
+
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="../libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
+	link(rel="stylesheet",href="css/pc.css?v=1")
+
+block content
+	//- url = "http://image.giccoo.com/projects/CX5/"
+	- url = "./"
+	
+	.wechat-share-hide
+		img#share(src="http://m.giccoo.com/CX5/img/share.jpg")
+	
+	.main
+		//- .nav
+			.row
+				.section-content
+					.column.large-3 Logo
+					.column.large-1.large-offset-1 Menu1
+					.column.large-1 Menu2
+					.column.large-1 Menu3
+					.column.large-5 Search
+		.banner
+			.row
+				.section-content
+					.column.large-2
+						.logo
+							img(src="#{url}img/logo.png")
+		.content
+			.row
+				.section-content
+					.column.large-7
+						.age
+							.age-box
+								p 宝宝脑洞超级大，总会问出萌到你，却又问倒你的问题。皇家美素佳儿联合知乎推出「知乎·北鼻版」，打造首个婴幼儿知识问答互动空间，征集宝宝的「天真问题」和知友的「认真回答」。皇家美素佳儿相信，宝宝的每一个天真问题，都值得尊重。
+					.column.large-4.large-push-1
+						.focus
+							a(href="https://www.zhihu.com/org/frisomei-su-jia-er-63")
+								img(src="#{url}img/focus.png")
+				.section-content.line
+					img(src="#{url}img/line.png")
+				.section-content
+					.column.large-7
+						.tzw
+							.title
+								img(src="#{url}img/m-tzw-title.png")
+							.content
+								h2 天真好奇的宝宝，他们小小的脑袋装满了问题，有些问题既天真又有趣，有些问题更是前所未闻过，你还记得这些问题吗？
+								.answer-box
+									.answer.answer-1
+										span.by @叉叉叉
+										span.answer-text 麻麻，今天的鱼可以不放刺吗？
+									.answer.answer-2
+										span.by @成章律师
+										span.answer-text 妈妈，为什么我的眼睛这么小却能看到这么大的世界？
+									.answer.answer-3
+										span.by @加菲
+										span.answer-text 宝宝指着我的人中问：妈妈你鼻子下面是鼻涕槽吗？
+								.footer
+									img(src="#{url}img/m-tzw-footer.png")
+								a.outlink(href="https://www.zhihu.com/question/65195977")
+									img(src="#{url}img/m-iwask.png")
+						.ten-q
+							img(src="#{url}img/m-ten-q.png")
+						.q-list
+							list
+					.column.large-4.large-push-1
+						.kv
+							img(src="#{url}img/kv.png")
+						.free
+							a(href="https://frisoprestige.tmall.com/p/rd521921.htm")
+								img(src="#{url}img/free.png")
+						.video
+							h3 皇家美素佳儿视频
+							video(width=640,height=360,poster="#{url}img/pop-video.jpg",src="http://image.giccoo.com/projects/friso/video/pc.mp4",controls="true",webkit-playsinline,playsinline)
+						.note-text
+							h3 皇家美素佳儿
+							p 100%荷兰原装进口，来自荷兰自家牧场，新鲜直取皇家第一道奶源，由“食品硅谷”荷兰瓦赫宁根研究中心75年科技突破，解密1:25天然营养精华，凝萃三大天然珍稀营养，延续母爱力量，助力宝宝多方位成长，和妈妈拥有更多珍贵体验。
+							h4 皇家美素佳儿，因珍稀而珍贵。
+				
+				.section-content
+					.column.large-12.legal
+						img(src="#{url}img/legal.png")
+
+
+		.footer
+			img(src="#{url}img/footer.jpg")
+
+block js
+	- url = "/"
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	script(src="../libs/js/min/jquery.min.js")
+	script(src="../libs/js/min/fastclick.min.js")
+	script(src="../libs/js/min/riot.min.js")
+	script(src="js/friso.js?v=1")
+	script(src="js/main.js?v=1")
+	script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
