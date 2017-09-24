@@ -40,12 +40,21 @@ window.onload = ->
 			document.body.style.top = -scrollTop + 'px'
 			$("body").addClass "pop-open"
 			$(".pop").addClass "on"
+			_hmt.push(['_trackEvent', "friso", "移动端浮层", "打开", "-"])
 	
 	$(".pop .close").on "click", (evt)->
 		$("body").removeClass "pop-open"
 		$(".pop").removeClass "on"
 		document.scrollingElement.scrollTop = scrollTop
 		document.body.style.top = 0
+		_hmt.push(['_trackEvent', "friso", "移动端浮层", "关闭", "-"])
+
+	$(".main,.pop").on "click","a", (evt)->
+		_hmt.push(['_trackEvent', "friso", "页面外跳", ""+$(this).attr("href"), "-"])
+		self = this
+		setTimeout ->
+			window.location.href = $(self).attr("href")
+		,10
 
 	if IsPC() and $(".main").is(".mobile")
 		return window.location.href = "pc.html"

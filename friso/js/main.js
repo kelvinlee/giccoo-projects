@@ -127,13 +127,23 @@ window.onload = function() {
     scrollTop = document.scrollingElement.scrollTop;
     document.body.style.top = -scrollTop + 'px';
     $("body").addClass("pop-open");
-    return $(".pop").addClass("on");
+    $(".pop").addClass("on");
+    return _hmt.push(['_trackEvent', "friso", "移动端浮层", "打开", "-"]);
   });
   $(".pop .close").on("click", function(evt) {
     $("body").removeClass("pop-open");
     $(".pop").removeClass("on");
     document.scrollingElement.scrollTop = scrollTop;
-    return document.body.style.top = 0;
+    document.body.style.top = 0;
+    return _hmt.push(['_trackEvent', "friso", "移动端浮层", "关闭", "-"]);
+  });
+  $(".main,.pop").on("click", "a", function(evt) {
+    var self;
+    _hmt.push(['_trackEvent', "friso", "页面外跳", "" + $(this).attr("href"), "-"]);
+    self = this;
+    return setTimeout(function() {
+      return window.location.href = $(self).attr("href");
+    }, 10);
   });
   if (IsPC() && $(".main").is(".mobile")) {
     return window.location.href = "pc.html";
