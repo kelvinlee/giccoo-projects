@@ -6,11 +6,12 @@ list
 			-for (var i=0;i<8;i++)
 				div
 	.question-list(show="{contents.length > 0}")
-		.question-box(each="{question in contents}",show="{question.question}",class="{small: parent.contents.indexOf(question) >= 5}")
+		.question-box(each="{question in contents}",show="{question.question}",class="{on: parent.contents.indexOf(question) >= 5}")
 			.title
 				span.icon
 				h2 {question.question}
 				p.numbs {question.answers}个回答&nbsp;&nbsp;&nbsp;{question.focus}个关注
+				span.icon-more
 			.answer-box
 				.answer.answer-1(if="{question.answer1 && question.answer1by}")
 					span.by @{question.answer1by}

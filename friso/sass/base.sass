@@ -200,9 +200,10 @@ body.pop-open
 
 				.title
 					color: #7a512d
-					+p(15px 15px)
+					+p(15px 40px)
 					padding-left: 30%
 					+posr
+					cursor: pointer
 					h2,p
 						+m
 					h2
@@ -219,6 +220,13 @@ body.pop-open
 						+iw(190,592,100%)
 						+h
 						+b($cdn+"img/m-icon-an.png",no-repeat,left,center,contain)
+					.icon-more
+						+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
+						+wh(20px,20px)
+						+posa
+						+tr(50%,10px)
+						left: auto
+						margin-top: -10px
 				.answer-box
 					+w(90%)
 					+m
@@ -244,39 +252,49 @@ body.pop-open
 							+w
 							line-height: 1.2em
 							color: #3b3b3d
-				&.small
-					background: none
+				&.on
+					+b($cdn+"img/m-q-bg-small.png",no-repeat,top,center,100% 100%)
 					padding-bottom: 10px
-					margin-top: 25px
-					.title
-						+b($cdn+"img/m-question-bg.png",repeat,top,center,100% 100%)
-						+p(10px 10%)
-						p
-							+hide
-						.icon
-							+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
-							+wh(20px,20px)
-							+posa
-							+tr(50%,10px)
-							left: auto
-							margin-top: -10px
-					.answer-box
-						margin-top: -10px
-						padding-top: 8px
-						+hide
-					.answer
-						&:last-child
-							padding-bottom: 20px
-					.outlink
-						+hide
-				&.small.on
-					.icon
+					.icon-more
 						+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
 						+transform(scale3d(1,-1,1))
 					.answer-box
-						+show
+						+hide
 					.outlink
-						+show
+						+hide
+				// &.small
+				// 	background: none
+				// 	padding-bottom: 10px
+				// 	margin-top: 25px
+				// 	.title
+				// 		+b($cdn+"img/m-question-bg.png",repeat,top,center,100% 100%)
+				// 		+p(10px 10%)
+				// 		p
+				// 			+hide
+				// 		.icon
+				// 			+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
+				// 			+wh(20px,20px)
+				// 			+posa
+				// 			+tr(50%,10px)
+				// 			left: auto
+				// 			margin-top: -10px
+				// 	.answer-box
+				// 		margin-top: -10px
+				// 		padding-top: 8px
+				// 		+hide
+				// 	.answer
+				// 		&:last-child
+				// 			padding-bottom: 20px
+				// 	.outlink
+				// 		+hide
+				// &.small.on
+				// 	.icon
+				// 		+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
+				// 		+transform(scale3d(1,-1,1))
+				// 	.answer-box
+				// 		+show
+				// 	.outlink
+				// 		+show
 						
 
 .outlink

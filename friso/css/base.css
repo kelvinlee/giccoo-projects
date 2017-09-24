@@ -1783,9 +1783,10 @@ body.pop-open {
           display: none; }
       .main .q-list .question-list .question-box .title {
         color: #7a512d;
-        padding: 15px 15px;
+        padding: 15px 40px;
         padding-left: 30%;
-        position: relative; }
+        position: relative;
+        cursor: pointer; }
         .main .q-list .question-list .question-box .title h2, .main .q-list .question-list .question-box .title p {
           margin: 0 auto; }
         .main .q-list .question-list .question-box .title h2 {
@@ -1832,6 +1833,17 @@ body.pop-open {
           background-color: transparent; }
           .iphone4 .main .q-list .question-list .question-box .title .icon {
             width: 32.0945945946%; }
+        .main .q-list .question-list .question-box .title .icon-more {
+          background: url("../img/m-icon-more.png") no-repeat left center;
+          background-size: contain;
+          background-color: transparent;
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          left: auto;
+          margin-top: -10px; }
       .main .q-list .question-list .question-box .answer-box {
         width: 90%;
         margin: 0 auto;
@@ -1894,46 +1906,21 @@ body.pop-open {
             @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
               .main .q-list .question-list .question-box .answer-box .answer .answer-text {
                 font-size: 0.96rem; } }
-      .main .q-list .question-list .question-box.small {
-        background: none;
-        padding-bottom: 10px;
-        margin-top: 25px; }
-        .main .q-list .question-list .question-box.small .title {
-          background: url("../img/m-question-bg.png") repeat top center;
-          background-size: 100% 100%;
-          background-color: transparent;
-          padding: 10px 10%; }
-          .main .q-list .question-list .question-box.small .title p {
-            display: none; }
-          .main .q-list .question-list .question-box.small .title .icon {
-            background: url("../img/m-icon-more.png") no-repeat left center;
-            background-size: contain;
-            background-color: transparent;
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            left: auto;
-            margin-top: -10px; }
-        .main .q-list .question-list .question-box.small .answer-box {
-          margin-top: -10px;
-          padding-top: 8px;
-          display: none; }
-        .main .q-list .question-list .question-box.small .answer:last-child {
-          padding-bottom: 20px; }
-        .main .q-list .question-list .question-box.small .outlink {
-          display: none; }
-      .main .q-list .question-list .question-box.small.on .icon {
-        background: url("../img/m-icon-more.png") no-repeat left center;
-        background-size: contain;
+      .main .q-list .question-list .question-box.on {
+        background: url("../img/m-q-bg-small.png") no-repeat top center;
+        background-size: 100% 100%;
         background-color: transparent;
-        -webkit-transform: scale3d(1, -1, 1);
-                transform: scale3d(1, -1, 1); }
-      .main .q-list .question-list .question-box.small.on .answer-box {
-        display: block; }
-      .main .q-list .question-list .question-box.small.on .outlink {
-        display: block; }
+        padding-bottom: 10px; }
+        .main .q-list .question-list .question-box.on .icon-more {
+          background: url("../img/m-icon-more.png") no-repeat left center;
+          background-size: contain;
+          background-color: transparent;
+          -webkit-transform: scale3d(1, -1, 1);
+                  transform: scale3d(1, -1, 1); }
+        .main .q-list .question-list .question-box.on .answer-box {
+          display: none; }
+        .main .q-list .question-list .question-box.on .outlink {
+          display: none; }
 
 .outlink {
   z-index: 99; }

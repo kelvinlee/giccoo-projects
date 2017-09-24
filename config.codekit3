@@ -15098,7 +15098,7 @@
 		},
 	"\/friso\/img\/kv.png": {
 		"ft": 32768,
-		"iS": 351711,
+		"iS": 303106,
 		"oA": 0,
 		"oAP": "\/friso\/img\/kv.png",
 		"oF": 0,
@@ -15195,7 +15195,7 @@
 		},
 	"\/friso\/img\/m-icon-more.png": {
 		"ft": 32768,
-		"iS": 237,
+		"iS": 458,
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-icon-more.png",
 		"oF": 0,
@@ -15217,7 +15217,7 @@
 		},
 	"\/friso\/img\/m-iwask.png": {
 		"ft": 32768,
-		"iS": 6658,
+		"iS": 6353,
 		"oA": 0,
 		"oAP": "\/friso\/img\/tzw-btn.png",
 		"oF": 0,
@@ -15260,7 +15260,7 @@
 		},
 	"\/friso\/img\/m-pop-banner.png": {
 		"ft": 32768,
-		"iS": 348137,
+		"iS": 351291,
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-pop-banner.png",
 		"oF": 0,
@@ -15332,6 +15332,17 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-q-bg-small.png": {
+		"ft": 32768,
+		"iS": 71319,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-q-bg-small.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/friso\/img\/m-q-bg.jpg": {

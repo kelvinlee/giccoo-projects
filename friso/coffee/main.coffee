@@ -31,11 +31,10 @@ window.onload = ->
 	riot.mount("*")
 	$(".q-list").on "click",".title", (evt)->
 		# console.log "abc",$(this).parent()
-		if $(this).parent().is(".small")
-			if $(this).parent().is(".on")
-				$(this).parent().removeClass "on"
-			else
-				$(this).parent().addClass "on"
+		if $(this).parent().is(".on")
+			$(this).parent().removeClass "on"
+		else
+			$(this).parent().addClass "on"
 	$(".main .logo").on "click", (evt)->
 			scrollTop = document.scrollingElement.scrollTop
 			document.body.style.top = -scrollTop + 'px'

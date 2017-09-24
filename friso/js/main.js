@@ -117,12 +117,10 @@ window.onload = function() {
   }
   riot.mount("*");
   $(".q-list").on("click", ".title", function(evt) {
-    if ($(this).parent().is(".small")) {
-      if ($(this).parent().is(".on")) {
-        return $(this).parent().removeClass("on");
-      } else {
-        return $(this).parent().addClass("on");
-      }
+    if ($(this).parent().is(".on")) {
+      return $(this).parent().removeClass("on");
+    } else {
+      return $(this).parent().addClass("on");
     }
   });
   $(".main .logo").on("click", function(evt) {
