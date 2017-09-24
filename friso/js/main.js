@@ -100,7 +100,6 @@ shareContent = {
 window.onscroll = function(evt) {
   var top;
   top = document.scrollingElement.scrollTop;
-  console.log(top, $(".logo").offset().top);
   if (getdefaultTop && (top > defaultTop)) {
     return $(".logo").addClass("scroll");
   } else {
