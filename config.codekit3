@@ -15059,8 +15059,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/focus.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15071,7 +15071,7 @@
 		"oAP": "\/friso\/img\/footer.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/friso\/img\/footer.png": {
@@ -15080,8 +15080,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/footer.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15091,8 +15091,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/free.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15102,8 +15102,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/kv.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15113,8 +15113,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/legal.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15124,8 +15124,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/line.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15135,8 +15135,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/logo.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15146,8 +15146,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-answer-bg.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15158,7 +15158,7 @@
 		"oAP": "\/friso\/img\/m-banner.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/friso\/img\/m-bg.png": {
@@ -15179,7 +15179,7 @@
 		"oAP": "\/friso\/img\/m-footer.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/friso\/img\/m-icon-an.png": {
@@ -15188,8 +15188,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-icon-an.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15199,8 +15199,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-icon-more.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15210,19 +15210,19 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-icon-q.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
 	"\/friso\/img\/m-iwask.png": {
 		"ft": 32768,
-		"iS": 14147,
+		"iS": 6353,
 		"oA": 0,
 		"oAP": "\/friso\/img\/tzw-btn.png",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15232,8 +15232,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-line.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15243,8 +15243,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-logo.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15255,7 +15255,7 @@
 		"oAP": "\/friso\/img\/m-pop-banner.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/friso\/img\/m-pop-banner.png": {
@@ -15264,8 +15264,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-pop-banner.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15275,8 +15275,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-pop-bg.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15286,8 +15286,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-pop-close.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15297,8 +15297,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-pop-focus.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15308,8 +15308,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-pop-free.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15319,8 +15319,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-pop-legal.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15331,7 +15331,7 @@
 		"oAP": "\/friso\/img\/m-pop-video.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/friso\/img\/m-q-bg-small.png": {
@@ -15340,8 +15340,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-q-bg-small.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15352,7 +15352,7 @@
 		"oAP": "\/friso\/img\/m-q-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/friso\/img\/m-q-bg.png": {
@@ -15361,8 +15361,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-q-bg.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15372,8 +15372,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-question-bg.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15383,8 +15383,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-ten-q.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15404,8 +15404,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-tzw-bg.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15416,7 +15416,7 @@
 		"oAP": "\/friso\/img\/m-tzw-footer.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/friso\/img\/m-tzw-footer.png": {
@@ -15425,8 +15425,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-tzw-footer.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15437,7 +15437,7 @@
 		"oAP": "\/friso\/img\/m-tzw-title.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/friso\/img\/m-tzw-title.png": {
@@ -15446,8 +15446,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/m-tzw-title.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15457,8 +15457,8 @@
 		"oA": 0,
 		"oAP": "\/friso\/img\/outlink.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15469,7 +15469,7 @@
 		"oAP": "\/friso\/img\/pop-video.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/friso\/img\/share.jpg": {
@@ -15479,7 +15479,7 @@
 		"oAP": "\/friso\/img\/share.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/friso\/index.html": {

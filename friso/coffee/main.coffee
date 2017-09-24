@@ -47,6 +47,9 @@ window.onload = ->
 		document.scrollingElement.scrollTop = scrollTop
 		document.body.style.top = 0
 
+	if IsPC() and $(".main").is(".mobile")
+		return window.location.href = "pc.html"
+
 	if wx?
 		console.log "load wx"
 		# wx.error (res)->
@@ -60,6 +63,17 @@ window.onload = ->
 	return true
 
 
+IsPC = ->
+  userAgentInfo = navigator.userAgent
+  Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod')
+  flag = true
+  v = 0
+  while v < Agents.length
+    if userAgentInfo.indexOf(Agents[v]) > 0
+      flag = false
+      break
+    v++
+  flag
 loadWechatConfig = ->
 	url = encodeURIComponent window.location.href.split("#")[0]
 	hm = document.createElement('script')
