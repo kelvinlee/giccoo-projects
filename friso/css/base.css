@@ -1749,6 +1749,10 @@ body.pop-open {
           @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
             .main .tzw .content .answer-box .answer .answer-text {
               font-size: 0.96rem; } }
+  .main .free {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 25px; }
   .main .q-list {
     position: relative;
     width: 92.5%;
