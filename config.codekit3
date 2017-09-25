@@ -15430,30 +15430,9 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/friso\/img\/m-tzw-title.jpg": {
-		"ft": 16384,
-		"iS": 14879,
-		"oA": 0,
-		"oAP": "\/friso\/img\/m-tzw-title.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/friso\/img\/m-tzw-title.png": {
-		"ft": 32768,
-		"iS": 63543,
-		"oA": 0,
-		"oAP": "\/friso\/img\/m-tzw-title.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
 	"\/friso\/img\/outlink.png": {
 		"ft": 32768,
-		"iS": 6511,
+		"iS": 14147,
 		"oA": 0,
 		"oAP": "\/friso\/img\/outlink.png",
 		"oF": 0,
