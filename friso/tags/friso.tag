@@ -15,13 +15,19 @@ list
 			.answer-box
 				.answer.answer-1(if="{question.answer1 && question.answer1by}")
 					span.by @{question.answer1by}
-					span.answer-text {question.answer1}
+					span.answer-text
+						img(if="{question.answer1img}",src="http://image.giccoo.com/Active/{question.answer1img}")
+						|{question.answer1}
 				.answer.answer-2(if="{question.answer2 && question.answer2by}")
 					span.by @{question.answer2by}
-					span.answer-text {question.answer2}
+					span.answer-text
+						img(if="{question.answer2img}",src="http://image.giccoo.com/Active/{question.answer2img}")
+						|{question.answer2}
 				.answer.answer-3(if="{question.answer3 && question.answer3by}")
 					span.by @{question.answer3by}
-					span.answer-text {question.answer3}
+					span.answer-text
+						img(if="{question.answer3img}",src="http://image.giccoo.com/Active/{question.answer3img}")
+						|{question.answer3}
 			a.outlink(href="{question.link}",show="{question.link}")
 				img(src="./img/outlink.png")
 

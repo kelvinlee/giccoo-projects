@@ -1592,11 +1592,17 @@ video {
         color: #7a512d;
         padding-bottom: 6px; }
       .tzw .content .answer-box .answer .answer-text {
+        width: 100%;
         display: inline-block;
         font-size: 16px;
-        width: 100%;
         line-height: 1.2em;
         color: #3b3b3d; }
+        .tzw .content .answer-box .answer .answer-text img {
+          vertical-align: top;
+          float: left;
+          max-width: 25%;
+          margin-right: 10px;
+          margin-bottom: 10px; }
 
 .ten-q {
   margin-top: 65px; }
@@ -1696,6 +1702,12 @@ video {
             width: 100%;
             line-height: 1.2em;
             color: #3b3b3d; }
+            .q-list .question-list .question-box .answer-box .answer .answer-text img {
+              vertical-align: top;
+              float: left;
+              max-width: 25%;
+              margin-right: 10px;
+              margin-bottom: 10px; }
       .q-list .question-list .question-box.on {
         background: url("../img/m-q-bg-small.png") no-repeat top center;
         background-size: 100% 100%;

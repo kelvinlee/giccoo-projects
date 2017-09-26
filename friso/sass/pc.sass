@@ -118,11 +118,17 @@ video
 					// +p(6px 0)
 					padding-bottom: 6px
 				.answer-text
+					+w
 					display: inline-block
 					font-size: 16px
-					+w
 					line-height: 1.2em
 					color: #3b3b3d
+					img
+						vertical-align: top
+						float: left
+						max-width: 25%
+						margin-right: 10px
+						margin-bottom: 10px
 
 .ten-q
 	margin-top: 65px
@@ -206,6 +212,12 @@ video
 						+w
 						line-height: 1.2em
 						color: #3b3b3d
+						img
+							vertical-align: top
+							float: left
+							max-width: 25%
+							margin-right: 10px
+							margin-bottom: 10px
 				
 			&.on
 				+b($cdn+"img/m-q-bg-small.png",no-repeat,top,center,100% 100%)

@@ -1749,6 +1749,12 @@ body.pop-open {
           @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
             .main .tzw .content .answer-box .answer .answer-text {
               font-size: 0.96rem; } }
+          .main .tzw .content .answer-box .answer .answer-text img {
+            vertical-align: top;
+            float: left;
+            max-width: 25%;
+            margin-right: 10px;
+            margin-bottom: 10px; }
   .main .free {
     width: 80%;
     margin: 0 auto;
@@ -1910,6 +1916,12 @@ body.pop-open {
             @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
               .main .q-list .question-list .question-box .answer-box .answer .answer-text {
                 font-size: 0.96rem; } }
+            .main .q-list .question-list .question-box .answer-box .answer .answer-text img {
+              vertical-align: top;
+              float: left;
+              max-width: 25%;
+              margin-right: 10px;
+              margin-bottom: 10px; }
       .main .q-list .question-list .question-box.on {
         background: url("../img/m-q-bg-small.png") no-repeat top center;
         background-size: 100% 100%;
