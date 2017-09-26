@@ -1,11 +1,7 @@
 list
 	//- var url = "http://disk.giccoo.com/projects/friso"
 	- var url = "."
-	.loading(hide="{loaded}")
-		.loader-inner.ball-spin-fade-loader
-			-for (var i=0;i<8;i++)
-				div
-	.question-list(show="{contents.length > 0}")
+	.question-list
 		.question-box(each="{question in contents}",show="{question.question}",class="{on: parent.contents.indexOf(question) >= 5}")
 			.title
 				span.icon
@@ -34,22 +30,26 @@ list
 
 	script(type="text/coffeescript").
 		self = this
-		self.contents = []
+		self.contents = defaultInfo
 		self.loaded = false
+		Store.friso = self
+		self.updateContents = (contents)->
+			self.contents = contents
+			self.update()
 
-		this.on "mount", ->
-			console.log "starting load questions"
-			$.ajax
-				type: "get"
-				url: "http://api.giccoo.com/friso/list/"
-				dataType: 'json'
-				data: null
-				success: (msg)->
-					console.log msg
-					self.contents = msg.list
-					self.loaded = true
-					self.update()
-				error: (error)->
+		# this.on "mount", ->
+		# 	console.log "starting load questions"
+		# 	$.ajax
+		# 		type: "get"
+		# 		url: "http://api.giccoo.com/friso/list/"
+		# 		dataType: 'json'
+		# 		data: null
+		# 		success: (msg)->
+		# 			console.log msg
+		# 			self.contents = msg.list
+		# 			self.loaded = true
+		# 			self.update()
+		# 		error: (error)->
 
 			
 
