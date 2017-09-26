@@ -1496,10 +1496,22 @@ video {
   min-width: 1024px; }
 
 .banner {
-  background: url("../img/banner.jpg") no-repeat center bottom;
-  background-size: cover;
-  background-color: transparent;
-  height: 500px; }
+  position: relative;
+  margin: 0 auto;
+  max-width: 1624px; }
+  .banner .bottle {
+    position: absolute;
+    bottom: 0;
+    right: 16.5%;
+    width: 11%;
+    height: 35%;
+    display: block;
+    z-index: 999; }
+  .banner .row.logo {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-width: 1024px; }
 
 .focus {
   margin-top: 25px; }
@@ -1725,6 +1737,8 @@ video {
 
 .footer {
   width: 100%;
-  font-size: 0; }
+  font-size: 0;
+  max-width: 1624px;
+  margin: 0 auto; }
   .footer img {
     width: 100%; }

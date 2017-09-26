@@ -33,9 +33,22 @@ video
 	min-width: 1024px
 
 .banner
-	+b($cdn+"img/banner.jpg",no-repeat,center,bottom,cover)
-	+h(500px)
-
+	// +b($cdn+"img/banner.jpg",no-repeat,center,bottom,cover)
+	// +h(500px)
+	+posr
+	+m
+	max-width: 1624px
+	.bottle
+		+posa
+		+br(0,16.5%)
+		+wh(11%,35%)
+		+show
+		z-index: 999
+	.row.logo
+		+posa
+		top: 0
+		+w
+		min-width: 1024px
 .focus
 	margin-top: 25px
 
@@ -266,6 +279,8 @@ video
 .footer
 	+w
 	font-size: 0
+	max-width: 1624px
+	+m
 	img
 		+w
 
