@@ -111,8 +111,8 @@ defaultInfo = localStorage.getItem("defaultInfo") ? JSON.parse(localStorage.getI
     answer3by: null,
     answer3img: null,
     like: 0,
-    focus: 382,
-    answers: 39,
+    focus: 420,
+    answers: 47,
     link: 'https://www.zhihu.com/question/65373045'
   }, {
     id: 2,
@@ -127,8 +127,8 @@ defaultInfo = localStorage.getItem("defaultInfo") ? JSON.parse(localStorage.getI
     answer3by: null,
     answer3img: null,
     like: 0,
-    focus: 155,
-    answers: 30,
+    focus: 160,
+    answers: 33,
     link: 'https://www.zhihu.com/question/65372977'
   }, {
     id: 3,
@@ -143,8 +143,8 @@ defaultInfo = localStorage.getItem("defaultInfo") ? JSON.parse(localStorage.getI
     answer3by: null,
     answer3img: null,
     like: 0,
-    focus: 110,
-    answers: 14,
+    focus: 130,
+    answers: 19,
     link: 'https://www.zhihu.com/question/65373089'
   }, {
     id: 4,
@@ -159,8 +159,8 @@ defaultInfo = localStorage.getItem("defaultInfo") ? JSON.parse(localStorage.getI
     answer3by: null,
     answer3img: null,
     like: 0,
-    focus: 211,
-    answers: 27,
+    focus: 215,
+    answers: 28,
     link: 'https://www.zhihu.com/question/65373183'
   }, {
     id: 5,
@@ -175,8 +175,8 @@ defaultInfo = localStorage.getItem("defaultInfo") ? JSON.parse(localStorage.getI
     answer3by: null,
     answer3img: null,
     like: 0,
-    focus: 178,
-    answers: 11,
+    focus: 197,
+    answers: 12,
     link: 'https://www.zhihu.com/question/65375080'
   }, {
     id: 6,
@@ -191,8 +191,8 @@ defaultInfo = localStorage.getItem("defaultInfo") ? JSON.parse(localStorage.getI
     answer3by: null,
     answer3img: null,
     like: 0,
-    focus: 169,
-    answers: 20,
+    focus: 190,
+    answers: 29,
     link: 'https://www.zhihu.com/question/65340831'
   }, {
     id: 7,
@@ -207,8 +207,8 @@ defaultInfo = localStorage.getItem("defaultInfo") ? JSON.parse(localStorage.getI
     answer3by: null,
     answer3img: null,
     like: 0,
-    focus: 152,
-    answers: 22,
+    focus: 178,
+    answers: 28,
     link: 'https://www.zhihu.com/question/65373153'
   }, {
     id: 8,
@@ -223,8 +223,8 @@ defaultInfo = localStorage.getItem("defaultInfo") ? JSON.parse(localStorage.getI
     answer3by: null,
     answer3img: null,
     like: 0,
-    focus: 155,
-    answers: 8,
+    focus: 180,
+    answers: 10,
     link: 'https://www.zhihu.com/question/65341250'
   }, {
     id: 9,
@@ -239,8 +239,8 @@ defaultInfo = localStorage.getItem("defaultInfo") ? JSON.parse(localStorage.getI
     answer3by: null,
     answer3img: null,
     like: 0,
-    focus: 140,
-    answers: 26,
+    focus: 159,
+    answers: 28,
     link: 'https://www.zhihu.com/question/65373216'
   }, {
     id: 10,
@@ -255,8 +255,8 @@ defaultInfo = localStorage.getItem("defaultInfo") ? JSON.parse(localStorage.getI
     answer3by: null,
     answer3img: null,
     like: 0,
-    focus: 143,
-    answers: 15,
+    focus: 154,
+    answers: 19,
     link: 'https://www.zhihu.com/question/65342493'
   }
 ];
