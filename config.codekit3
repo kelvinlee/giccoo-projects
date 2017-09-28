@@ -15033,6 +15033,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"\/friso\/img\/banner.jpg": {
+		"ft": 16384,
+		"iS": 275668,
+		"oA": 0,
+		"oAP": "\/friso\/img\/banner.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/friso\/img\/bg.jpg": {
 		"ft": 16384,
 		"iS": 1473,
@@ -15224,6 +15234,17 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-logo.png": {
+		"ft": 32768,
+		"iS": 55531,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
