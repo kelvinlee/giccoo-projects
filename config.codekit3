@@ -13474,6 +13474,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/CX5\/img\/listpage-btn-text.png": {
+		"ft": 32768,
+		"iS": 8131,
+		"oA": 0,
+		"oAP": "\/CX5\/img\/listpage-btn-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/CX5\/img\/listpage-btn.jpg": {
 		"ft": 16384,
 		"iS": 8364,
@@ -15129,6 +15140,27 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/friso\/img\/listpage-btn-text.png": {
+		"ft": 32768,
+		"iS": 8131,
+		"oA": 0,
+		"oAP": "\/friso\/img\/listpage-btn-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/listpage-btn.jpg": {
+		"ft": 16384,
+		"iS": 5736,
+		"oA": 0,
+		"oAP": "\/friso\/img\/listpage-btn.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/friso\/img\/logo.png": {
 		"ft": 32768,
 		"iS": 56639,
@@ -15453,7 +15485,7 @@
 		},
 	"\/friso\/img\/outlink.png": {
 		"ft": 32768,
-		"iS": 6511,
+		"iS": 14147,
 		"oA": 0,
 		"oAP": "\/friso\/img\/outlink.png",
 		"oF": 0,
