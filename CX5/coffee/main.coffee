@@ -40,10 +40,22 @@ taskData = [
 	}
 ]
 
+loopAimate = ->
+	$("[animate-loop]").each ->
+		time = parseInt $(this).attr("animate-loop")
+		self = $(this)
+		animateName = $(this).attr("animate-name")
+		timeout = setInterval ->
+			return false if not self.is(":visible")
+			self.addClass animateName
+			setTimeout ->
+				self.removeClass animateName
+			,time/2
+		,time
 
 window.onload = ->
 	MK = $("body").width()/$("body").height()
-
+	loopAimate()
 	if $("body").height() <= 460 or MK > 0.65
 		$("body").addClass "iphone4"
 	riot.mount("*")

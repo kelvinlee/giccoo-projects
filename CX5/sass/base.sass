@@ -1,4 +1,5 @@
 @import sass/base
+@import sass/note
 @import ../../libs/sass/parallax
 // @import ../../libs/sass/loader-ball
 
@@ -198,8 +199,19 @@ $margin: 8%
 		+posr
 		+h(auto)
 		+bc(#000)
+		+overhide
 		border-bottom: solid 2px #fff
 		font-size: 0
+		.navbar-text-left,.navbar-text-right
+			+posa
+			+tl
+			z-index: 1
+			+w(25%)
+		.navbar-text-right
+			+tr
+			left: auto
+		.btn
+			z-index: 5
 		.btn-register
 			+posa
 			+w(50%)

@@ -33,7 +33,7 @@ block content
 				.navbar.fadeIn.animated.delay-12
 					.btn.btn-register(next-page=".page-register")
 						img(src="#{url}img/listpage-btn.jpg")
-						.text.tada.animated.infinite
+						.text(animate-loop="3000",animate-name="tada animated")
 							img(src="#{url}img/listpage-btn-text.png")
 
 				.texts
@@ -57,6 +57,11 @@ block content
 			.content
 				.navbar.fadeIn.animated.duration-10
 					img(src="#{url}img/navbar.jpg")
+					.navbar-text-left.duration-10(animate-loop="3000",animate-name="tada animated")
+						img(src="#{url}img/navbar-left.png")
+					.navbar-text-right.duration-10(animate-loop="3000",animate-name="tada animated")
+						img(src="#{url}img/navbar-right.png")
+					
 					.btn.btn-register.fadeInLeft.animated(next-page=".page-register")
 					.btn.btn-back.fadeInRight.animated(next-page=".page-contents")
 				.text-list.fadeIn.animated.duration-10.delay-3

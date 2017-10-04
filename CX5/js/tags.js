@@ -83,11 +83,11 @@ this.submit = function() {
     value: self.dealerName
   });
   if ($('[name=username]', this.root).val().length < 1 || $('[name=username]', this.root).val() === '') {
-    alert('姓名不能为空');
+    SendNote('姓名不能为空');
     return false;
   }
   if ($('[name=mobile]', this.root).val().length < 1 || $('[name=mobile]', this.root).val() === '') {
-    alert('手机号码不能为空');
+    SendNote('手机号码不能为空');
     return false;
   }
   checked = false;
@@ -98,14 +98,14 @@ this.submit = function() {
     }
   }
   if (!checked) {
-    alert("我已阅读并接受隐私条款");
+    SendNote("请勾选我已阅读并接受隐私条款");
     return false;
   }
   $.post(opts.action, data, function(msg) {
     if (msg.recode === 200) {
-      alert('注册成功');
+      SendNote('感谢您的参与');
     } else {
-      alert(msg.reason);
+      SendNote(msg.reason);
     }
   });
   return false;
@@ -155,7 +155,7 @@ this.updateContents = function(headline, subheadline, contents) {
 });
 
 
-riot.tag2('note', '<div class="note-box"> <div class="note-content {animated:true,fadeInUp:!close,fadeOutUp:close}"> <div class="note-text"> <div class="icon-form"><img riot-src="#{url}showman/img/icon-alert-note.png"></div> {title} </div> </div> </div>', '', '', function(opts) {
+riot.tag2('note', '<div class="note-box"> <div class="note-content {animated:true,fadeInUp:!close,fadeOutUp:close}"> <div class="note-text"> <div class="icon-form"><img src="http://image.giccoo.com/projects/showman/img/icon-alert-note.png"></div> {title} </div> </div> </div>', '', '', function(opts) {
 var self;
 
 self = this;
