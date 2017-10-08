@@ -1940,3 +1940,44 @@ body.pop-open {
 
 .outlink {
   z-index: 99; }
+
+.answer {
+  position: relative; }
+  .answer .likeanswer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    font-size: 0.8rem; }
+    @media only screen and (min-width: 321px) and (max-width: 399px) {
+      .answer .likeanswer {
+        font-size: 0.88rem; } }
+    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+      .answer .likeanswer {
+        font-size: 0.88rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 767px) {
+      .answer .likeanswer {
+        font-size: 0.96rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+      .answer .likeanswer {
+        font-size: 0.96rem; } }
+    .answer .likeanswer.on .icon {
+      background: url("../img/heart-on.png") no-repeat left center;
+      background-size: 100% 100%;
+      background-color: transparent; }
+    .answer .likeanswer .icon {
+      width: 17px;
+      height: 17px;
+      display: inline-block;
+      background: url("../img/heart-off.png") no-repeat left center;
+      background-size: 100% 100%;
+      background-color: transparent;
+      font-size: 0;
+      margin-right: 4px; }
+      .answer .likeanswer .icon img {
+        opacity: 0; }
+    .answer .likeanswer .likeanswer-text {
+      display: inline-block;
+      color: #333;
+      line-height: 17px;
+      vertical-align: top; }
