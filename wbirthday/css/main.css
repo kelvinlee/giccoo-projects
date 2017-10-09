@@ -1,0 +1,29 @@
+*{margin: 0;padding: 0;}
+html,body{width:100%;height: 100%;position: relative;overflow:hidden;}
+img{ width: 100%; }
+.wechat-share {  position: absolute;  top: -1000px;  left: 0px;  z-index: -100;  width: 1px; }
+
+.page{
+	position: absolute; width: 100%;height: 100%;font-size: 0;overflow:hidden;top: 100%;
+}
+.cloud{
+	position: absolute; width: 100%;height: 100%;font-size: 0;overflow:hidden;
+}
+
+.topPic{
+	position: absolute; width: 100%;top: 0;
+}
+.bottomPic{
+	position: absolute; width: 100%;bottom: 0;
+}
+
+
+#page0{
+	background-color: #5487c0;opacity: 1;top: 0%;
+}
+#p0pic{
+	width: 120%;
+}
+.bg{
+	position: absolute; width: 100%;height: 100%;font-size: 0;overflow:hidden;
+}
