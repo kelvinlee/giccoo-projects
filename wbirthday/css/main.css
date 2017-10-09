@@ -27,3 +27,22 @@ img{ width: 100%; }
 .bg{
 	position: absolute; width: 100%;height: 100%;font-size: 0;overflow:hidden;
 }
+
+#audioPlay{
+	width: 11.25%;
+	height: 6.3%;
+	
+	background-repeat:  no-repeat;
+	background-size: 100% 100%;
+	position: fixed;
+	top: 2%;
+	right: 2%;
+	z-index: 999;
+
+}
+.playM{
+	background-image: url("../img/musicOn.png");
+}
+.stopM{
+	background-image: url("../img/musicOff.png");
+}
