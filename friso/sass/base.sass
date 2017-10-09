@@ -1,0 +1,342 @@
+@import sass/base
+@import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+@import box
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "http://image.giccoo.com/projects/CX5/"
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+html,body
+	+w
+	+h
+
+body
+	color: #fff
+	+bc(#000)
+video
+	+w
+	+h(auto)
+body.pop-open
+	position: fixed
+	width: 100%
+
+.wechat-share-hide,.load-before
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+	+h(1px)
+
+.pop
+	+posf
+	+tl
+	+br
+	+w
+	+h
+	+touch
+	// +bc(rgba(233,233,233,0.9))
+	+hide
+	+b($cdn+"img/m-pop-bg.png",repeat,top,center,100% 1px)
+	z-index: 10009
+	&.on
+		+show
+	.close
+		+posa
+		+tr(10px,10px)
+		+iw(73,640,100%)
+		font-size: 0
+	.banner
+		+w
+	.video,.pop-text
+		+w(90%)
+		+m
+	.video
+		margin-top: 20px
+	.pop-free,.pop-focus
+		+w(84%)
+		+m
+		margin-top: 20px
+	.pop-legal
+		margin-top: 20px
+		padding-bottom: 40px
+	.pop-text
+		color: #7a512d
+		+w(80%)
+		+m
+		h3
+			+text-center
+			+font-size(1rem)
+		p
+			+font-size(0.8rem)
+		h4
+			+font-size(0.8rem)
+
+
+
+
+
+
+.main
+	+b($cdn+"img/m-bg.png",repeat,top,center,100% 1px)
+	.logo,.banner,.footer
+		font-size: 0
+	.logo
+		+posa
+		+tr(71.5%,0.3%)
+		+iw(157,640,100%)
+		z-index: 1001
+		&.scroll
+			+posf
+			+tr(0,0.3%)
+	.banner
+		+w
+		+posr
+	.age
+		+w(92.5%)
+		+m
+		.age-box
+			+b($cdn+"img/m-q-bg.jpg",no-repeat,top,center,100% 100%)
+			+p(35px 20px)
+			p
+				+m
+				+font-size(0.8rem)
+				color: #7a512d
+				line-height: 1.8em
+	.line
+		margin-top: -15px
+	.ten-q
+		+w(92%)
+		+m
+		margin-top: 45px;
+	.tzw
+		.title
+			font-size: 0
+		.content
+			+b($cdn+"img/m-tzw-bg.jpg",repeat,top,center,100% 1px)
+			+posr
+			min-height: 200px
+			
+			.footer
+				font-size: 0
+				padding-top: 20px
+			.outlink
+				+posa
+				+bl(-22px,50%)
+				+iw(200,640,100%)
+				+h(50px)
+				+b($cdn+"img/m-iwask.png",no-repeat,center,center,contain)
+				font-size: 0
+				margin-left: -15.5%
+				img
+					+hide
+			h2
+				+font-size(1rem)
+				+w(80%)
+				+m(0 auto)
+				+p(15px 0)
+				font-weight: 400
+				color: #7a512d
+
+			.answer-box
+				+w(82%)
+				+m
+				+b($cdn+"img/m-answer-bg.png",repeat,top,center,100% 1px)
+				border-radius: 6px
+				border: solid 1px #a7852c
+				.answer
+					border-bottom: solid 1px #a7852c
+					+p(15px)
+					+font-size(0.8rem)
+					&:last-child
+						border-bottom: none
+					.by
+						display: inline-block
+						+font-size(0.8rem)
+						+w
+						color: #7a512d
+						// +p(6px 0)
+						padding-bottom: 6px
+					.answer-text
+						display: inline-block
+						+font-size(0.8rem)
+						+w
+						line-height: 1.2em
+						color: #3b3b3d
+						img
+							vertical-align: top
+							float: left
+							max-width: 25%
+							margin-right: 10px
+							margin-bottom: 10px
+
+	.free
+		+w(80%)
+		+m
+		margin-top: 25px
+	.q-list
+		+posr
+		+w(92.5%)
+		+m
+		min-height: 200px
+		.loading
+			+posa
+			+tl(50%,50%)
+		.question-list
+			.question-box
+				+b($cdn+"img/m-q-bg.jpg",no-repeat,top,center,100% 100%)
+				margin-top: 45px
+				padding-bottom: 40px
+				+posr
+				.outlink
+					+posa
+					+bl(-22px,50%)
+					+iw(200,640,100%)
+					+h(50px)
+					+b($cdn+"img/outlink.png",no-repeat,center,center,contain)
+					font-size: 0
+					margin-left: -15.5%
+					img
+						+hide
+
+				.title
+					color: #7a512d
+					+p(15px 40px)
+					padding-left: 30%
+					+posr
+					cursor: pointer
+					h2,p
+						+m
+					h2
+						+font-size(1rem)
+						font-weight: 400
+						line-height: 1.2em
+					p
+						+font-size(0.8rem)
+					.numbs
+						margin-top: 6px
+					.icon
+						+posa
+						+tl(0%,-2.3%)
+						+iw(190,592,100%)
+						+h
+						+b($cdn+"img/m-icon-an.png",no-repeat,left,center,contain)
+					.icon-more
+						+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
+						+wh(20px,20px)
+						+posa
+						+tr(50%,10px)
+						left: auto
+						margin-top: -10px
+				.answer-box
+					+w(90%)
+					+m
+					+b($cdn+"img/m-answer-bg.png",repeat,top,center,100% 1px)
+					border-radius: 6px
+					border: solid 1px #a7852c
+					.answer
+						border-bottom: solid 1px #a7852c
+						+p(15px)
+						+font-size(0.8rem)
+						&:last-child
+							border-bottom: none
+						.by
+							display: inline-block
+							+font-size(0.8rem)
+							+w
+							color: #7a512d
+							// +p(6px 0)
+							padding-bottom: 6px
+						.answer-text
+							display: inline-block
+							+font-size(0.8rem)
+							+w
+							line-height: 1.2em
+							color: #3b3b3d
+							img
+								vertical-align: top
+								float: left
+								max-width: 25%
+								margin-right: 10px
+								margin-bottom: 10px
+				&.on
+					+b($cdn+"img/m-q-bg-small.png",no-repeat,top,center,100% 100%)
+					padding-bottom: 10px
+					.icon-more
+						+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
+						+transform(scale3d(1,-1,1))
+					.answer-box
+						+hide
+					.outlink
+						+hide
+				// &.small
+				// 	background: none
+				// 	padding-bottom: 10px
+				// 	margin-top: 25px
+				// 	.title
+				// 		+b($cdn+"img/m-question-bg.png",repeat,top,center,100% 100%)
+				// 		+p(10px 10%)
+				// 		p
+				// 			+hide
+				// 		.icon
+				// 			+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
+				// 			+wh(20px,20px)
+				// 			+posa
+				// 			+tr(50%,10px)
+				// 			left: auto
+				// 			margin-top: -10px
+				// 	.answer-box
+				// 		margin-top: -10px
+				// 		padding-top: 8px
+				// 		+hide
+				// 	.answer
+				// 		&:last-child
+				// 			padding-bottom: 20px
+				// 	.outlink
+				// 		+hide
+				// &.small.on
+				// 	.icon
+				// 		+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
+				// 		+transform(scale3d(1,-1,1))
+				// 	.answer-box
+				// 		+show
+				// 	.outlink
+				// 		+show
+						
+
+.outlink
+	z-index: 99
+
+
+.answer
+	+posr
+	.likeanswer
+		+posa
+		+tr(0,0)
+		+p(15px)
+		+font-size(0.8rem)
+		&.on
+			.icon
+				+b($cdn+"img/heart-on.png",no-repeat,left,center,100% 100%)
+		.icon
+			+wh(17px,17px)
+			+show-inline
+			+b($cdn+"img/heart-off.png",no-repeat,left,center,100% 100%)
+			font-size: 0
+			margin-right: 4px
+			img
+				opacity: 0
+		.likeanswer-text
+			+show-inline
+			color: #333
+			line-height: 17px
+			vertical-align: top
+

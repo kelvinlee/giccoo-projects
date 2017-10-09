@@ -1,0 +1,325 @@
+@import sass/base
+@import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+@import box
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "http://image.giccoo.com/projects/friso/"
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+video
+	+w
+	+h(auto)
+
+.wechat-share-hide,.load-before
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+	+h(1px)
+
+.main
+	+w
+	+m
+	+b($cdn+"img/bg.jpg",repeat,top,center,100% 1px)
+	min-width: 1024px
+
+.banner
+	// +b($cdn+"img/banner.jpg",no-repeat,center,bottom,cover)
+	// +h(500px)
+	+posr
+	+m
+	max-width: 1624px
+	.bottle
+		+posa
+		+br(0,16.5%)
+		+wh(11%,35%)
+		+show
+		z-index: 999
+	.row.logo
+		+posa
+		top: 0
+		+w
+		min-width: 1024px
+.focus
+	margin-top: 25px
+
+.age
+	+w(92%)
+	+m
+	margin-top: 25px
+	.age-box
+		+b($cdn+"img/m-q-bg.jpg",no-repeat,top,center,100% 100%)
+		+p(35px 30px)
+		p
+			+m
+			font-size: 20px
+			color: #7a512d
+			line-height: 1.8em
+
+.line
+	+text-center
+
+.tzw
+	.title
+		font-size: 0
+	.content
+		+b($cdn+"img/m-tzw-bg.png",repeat,top,center,100% 1px)
+		+posr
+		min-height: 200px
+		padding-bottom: 20px;
+		.footer
+			font-size: 0
+			bottom: -20px
+			+posa
+		.outlink
+			+posa
+			+bl(-40px,50%)
+			+iw(200,640,100%)
+			+h(50px)
+			+b($cdn+"img/m-iwask.png",no-repeat,center,center,contain)
+			font-size: 0
+			margin-left: -15.5%
+			img
+				+hide
+		h2
+			font-size: 20px
+			+w(80%)
+			+m(0 auto)
+			+p(15px 0)
+			font-weight: 400
+			color: #7a512d
+
+		.answer-box
+			+w(82%)
+			+m
+			+b($cdn+"img/m-answer-bg.png",repeat,top,center,100% 1px)
+			border-radius: 6px
+			border: solid 1px #a7852c
+			.answer
+				border-bottom: solid 1px #a7852c
+				+p(15px)
+				font-size: 16px
+				&:last-child
+					border-bottom: none
+				.by
+					display: inline-block
+					font-size: 16px
+					+w
+					color: #7a512d
+					// +p(6px 0)
+					padding-bottom: 6px
+				.answer-text
+					+w
+					display: inline-block
+					font-size: 16px
+					line-height: 1.2em
+					color: #3b3b3d
+					img
+						vertical-align: top
+						float: left
+						max-width: 25%
+						margin-right: 10px
+						margin-bottom: 10px
+
+.ten-q
+	margin-top: 65px
+.q-list
+	+posr
+	min-height: 200px
+	.loading
+		+posa
+		+tl(50%,50%)
+	.question-list
+		+w(92%)
+		+m
+		// margin-top: 65px
+		.question-box
+			+b($cdn+"img/m-q-bg.jpg",no-repeat,top,center,100% 100%)
+			margin-top: 45px
+			padding-bottom: 40px
+			+posr
+			.outlink
+				+posa
+				+bl(-22px,50%)
+				+iw(200,640,100%)
+				+h(50px)
+				+b($cdn+"img/outlink.png",no-repeat,center,center,contain)
+				font-size: 0
+				margin-left: -15.5%
+				img
+					+hide
+
+			.title
+				color: #7a512d
+				+p(15px 40px)
+				padding-left: 120px
+				+posr
+				cursor: pointer
+				h2,p
+					+m
+				h2
+					font-size: 20px
+					font-weight: 400
+					line-height: 1.2em
+				p
+					font-size: 16px
+				.numbs
+					margin-top: 6px
+				.icon
+					+posa
+					+tl(0%,-10px)
+					+w(120px)
+					+h
+					+b($cdn+"img/m-icon-an.png",no-repeat,left,center,contain)
+				.icon-more
+					+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
+					+wh(20px,20px)
+					+posa
+					+tr(50%,10px)
+					left: auto
+					margin-top: -10px
+			.answer-box
+				+w(90%)
+				+m
+				+b($cdn+"img/m-answer-bg.png",repeat,top,center,100% 1px)
+				border-radius: 6px
+				border: solid 1px #a7852c
+				.answer
+					border-bottom: solid 1px #a7852c
+					+p(15px)
+					font-size: 16px
+					&:last-child
+						border-bottom: none
+					.by
+						display: inline-block
+						font-size: 16px
+						+w
+						color: #7a512d
+						// +p(6px 0)
+						padding-bottom: 6px
+					.answer-text
+						display: inline-block
+						font-size: 16px
+						+w
+						line-height: 1.2em
+						color: #3b3b3d
+						img
+							vertical-align: top
+							float: left
+							max-width: 25%
+							margin-right: 10px
+							margin-bottom: 10px
+				
+			&.on
+				+b($cdn+"img/m-q-bg-small.png",no-repeat,top,center,100% 100%)
+				padding-bottom: 10px
+				.icon-more
+					+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
+					+transform(scale3d(1,-1,1))
+				.answer-box
+					+hide
+				.outlink
+					+hide
+
+
+			// &.small
+			// 	background: none
+			// 	padding-bottom: 10px
+			// 	.title
+			// 		+b($cdn+"img/m-question-bg.png",repeat,top,center,100% 100%)
+			// 		+p(20px 10%)
+			// 		cursor: pointer
+			// 		p
+			// 			+hide
+			// 		.icon
+			// 			+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
+			// 			+wh(20px,20px)
+			// 			+posa
+			// 			+tr(50%,10px)
+			// 			left: auto
+			// 			margin-top: -10px
+			// 	.answer-box
+			// 		margin-top: -10px
+			// 		padding-top: 8px
+			// 		+hide
+			// 	.answer
+			// 		&:last-child
+			// 			padding-bottom: 30px
+			// 	.outlink
+			// 		+hide
+			// &.small.on
+			// 	.icon
+			// 		+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
+			// 		+transform(scale3d(1,-1,1))
+			// 	.answer-box
+			// 		+show
+			// 	.outlink
+			// 		+show
+
+.kv
+	margin-top: 25px
+
+.legal
+	margin-top: 45px
+
+.video
+	margin-top: 25px
+	h3
+		+text-center
+		color: #7a512d
+
+.note-text
+	color: #7a512d
+	h3
+		+text-center
+	h4
+		+m
+
+.free
+	font-size: 0
+	margin-top: 25px
+
+.footer
+	+w
+	font-size: 0
+	max-width: 1624px
+	+m
+	img
+		+w
+
+
+.answer
+	+posr
+	.likeanswer
+		+posa
+		+tr(0,0)
+		+p(15px)
+		font-size: 16px
+		cursor: pointer
+		&.on
+			cursor: default
+			.icon
+				+b($cdn+"img/heart-on.png",no-repeat,left,center,100% 100%)
+		.icon
+			+wh(17px,17px)
+			+show-inline
+			+b($cdn+"img/heart-off.png",no-repeat,left,center,100% 100%)
+			font-size: 0
+			margin-right: 4px
+			img
+				opacity: 0
+		.likeanswer-text
+			+show-inline
+			color: #333
+			line-height: 17px
+			vertical-align: top
+

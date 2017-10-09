@@ -3,7 +3,7 @@ register
 		.form-grounp
 			label(for="username") 姓名
 			input#username(type="text",name="username")
-		//- .form-grounp
+		.form-grounp
 			label(for="") 性别
 			.comb
 				label(for="man") 先生
@@ -14,54 +14,50 @@ register
 			label(for="mobile") 手机号码
 			input#mobile(type="text",name="mobile")
 		.form-grounp
-			label(for="province") 所在省/市
+			label(for="province") 所在省/市:
 			.comb
 				.select
 					span {provinceName}
 					select#province(name="province",onchange="{changeProvince}")
-						option(each="{cityData}",value="{name}") {name}
+						option(each="{name in province}",value="{name}") {name}
 				.select
 					span {cityName}
 					select#city(name="city",onchange="{changeCity}")
-						option(each="{city}",value="{name}") {name}
+						option(each="{name in city}",value="{name}") {name}
 		.form-grounp
 			label(for="dealer") 经销商
 			.select
 				span {dealerName}
 				select#dealer(name="dealer",onchange="{changeDealer}")
-					option(each="{dealer}",value="{code}") {name}
-		//- .form-grounp
-			label(for="type") 试驾车型
-			.select
-				span {typeName}
-				select#type(name="type",onchange="{changeType}")
-					option(each="{name in type}",value="{name}") {name}
-
+					option(each="{dealer}",value="{name}") {name}
+		.form-check
+			.checkbox
+				input(type="checkbox",checked,name="state",value="1")
+			label 我已阅读并接受隐私条款：
+		.form-grounp
+			p 您的个人资料有可能提交至马自达厂商及其授权经销商与您进一步沟通试驾，购车等事宜。
 		.form-btn
 			button.submit(type="submit")
 				img(src="img/submit.png")
 				
 	script(type="text/coffeescript").
 		self = this
-		@cityData = cityData
-		@city = @cityData[0]["sub"]
-		@provinceName = @cityData[0].name
-		@cityName = @city[0].name
-		# @type = _type
-		# @typeName = @type[0]
+		@cityData = _citys
 		province = []
 		for name of @cityData
-			`name = name`
 			province.push name
+		console.log province
 		city = []
 		for name of @cityData[province[0]]
-			`name = name`
 			city.push name
-
+		
+		dealer = @cityData[province[0]][city[0]]
+		console.log city,dealer
 		@province = province
-		
+		@city = city
 		@dealer = dealer
-		
+		@provinceName = @province[0]
+		@cityName = @city[0]
 		@dealerName = @dealer[0].name
 		@firstUpdate = true
 		@on 'update', ->
@@ -72,27 +68,24 @@ register
 			@dealerName = $('[name=dealer] [value=' + $('[name=dealer]', @root).val() + ']', @root).text()
 			return
 
-		# @changeType = (evt) ->
-		# 	@typeName = $('[name=type]', self.root).val()
-		# 	self.update()
-		# 	return
 		@changeCity = (evt) ->
-			# newName = $('[name=province]', self.root).val()
-			# newCity = $('[name=city]', @root).val()
-			# dealer = self.cityData[newName][newCity]
-			# self.dealer = dealer
+			newName = $('[name=province]', self.root).val()
+			newCity = $('[name=city]', @root).val()
+			dealer = self.cityData[newName][newCity]
+			self.dealer = dealer
 			self.update()
 			return
 
 		@changeProvince = (evt) ->
-			name = $('[name=province]', @root).val()
-			i = @cityData.length - 1
-			while i >= 0
-				if @cityData[i].name == name
-					@city = @cityData[i]['sub']
-					@update()
-					break
-				i--
+			newName = $('[name=province]', self.root).val()
+			city = []
+			for name of self.cityData[newName]
+				city.push name
+			dealer = self.cityData[newName][city[0]]
+			self.city = city
+			self.dealer = dealer
+			self.update()
+			return
 
 		@changeDealer = (evt) ->
 			self.update()
@@ -103,18 +96,28 @@ register
 			data.push
 				name: 'dealername'
 				value: self.dealerName
+
 			if $('[name=username]', @root).val().length < 1 or $('[name=username]', @root).val() == ''
-				SendNote '姓名不能为空'
+				alert '姓名不能为空'
 				return false
 			if $('[name=mobile]', @root).val().length < 1 or $('[name=mobile]', @root).val() == ''
-				SendNote '手机号码不能为空'
+				alert '手机号码不能为空'
+				return false
+			checked = false
+			for item in data
+				if item.name == "state"
+					checked = true
+			if !checked
+				alert("我已阅读并接受隐私条款")
 				return false
 			$.post opts.action, data, (msg) ->
 				#- 提交
 				if msg.recode == 200
-					SendNote '注册成功'
+					#- alert("注册成功")
 					#- window.location.href = "http://www.landrover.com.cn/vehicles/range-rover-sport/range-rover-sport-svr.html"
+					alert '注册成功'
 				else
-					SendNote msg.reason
+					#- alert(msg.reason)
+					alert msg.reason
 				return
 			false
