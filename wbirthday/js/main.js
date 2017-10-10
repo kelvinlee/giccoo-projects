@@ -115,6 +115,7 @@ function setSlide(){
     //bigN.css({"opacity":0,"left":"0%"})
     picN[i].css({"opacity":1,"top":"0%"})
    tN[i].css({"opacity":1,"bottom":"0%"})
+    yN[i].css({"opacity":1,"bottom":"0%"})
     //car.css({"opacity":0,"top":"100%"})
     //end.css({"opacity":0,"top":"100%"})
  
@@ -122,7 +123,7 @@ function setSlide(){
     //TweenLite.to(bigN,4,{opacity:1,left:"50%",ease:Quint.easeOut})
     TweenLite.from(picN[i],1,{opacity:0,rotationZ:30,scale:16})
     TweenLite.from(tN[i],2,{opacity:0,delay:.5})
-    TweenLite.from(yN[i],.5,{opacity:0,"bottom":"-10%",delay:.1})
+    TweenLite.from(yN[i],1,{opacity:0,y:"5%",delay:0})
 
 
   }
