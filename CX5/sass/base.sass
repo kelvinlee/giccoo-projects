@@ -9,6 +9,16 @@ $cdn : "../"
 @if not $debug
 	$cdn : "http://image.giccoo.com/projects/CX5/"
 
++keyframes(fadeOut80)
+	0%
+		+transform(translate3d(0,0,0))
+		opacity: 0
+	20%
+		opacity: 1
+	100%
+		+transform(translate3d(60%,0,0))
+		opacity: 0
+
 // animation, delay, duration
 @for $i from 1 through 30
 	.delay-#{$i}
@@ -158,6 +168,38 @@ $margin: 8%
 		margin-top: 12%
 	.btn-1
 		margin-top: 10%
+		+posr
+		.light
+			+posa
+			+tl
+			+w
+			+h
+			+b($cdn+"img/homepage-text-2-light.png",no-repeat,center,center,cover)
+			z-index: 109
+		.star
+			+posa
+			z-index: 109
+			.star-box
+				+w
+				+h
+				+b("http://image.giccoo.com/projects/managers/img/star.png",no-repeat,center,center,cover)
+		.star-1
+			+bl(5%,10%)
+			+wh(26px,26px)
+		.star-2
+			+bl(15.5%,35%)
+			+wh(22px,22px)
+		.star-3
+			+bl(4%,75%)
+			+wh(20px,20px)
+		.star-4
+			+bl(0%,65%)
+			+wh(26px,26px)
+		.star-5
+			+bl(0%,45%)
+			+wh(30px,30px)
+			+hide
+
 	.car
 		+posa
 		+bl(8%,0)
