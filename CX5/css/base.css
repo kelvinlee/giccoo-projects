@@ -499,27 +499,63 @@ ul {
 
 @-webkit-keyframes fadeOut80 {
   0% {
-    -webkit-transform: translate3d(-60px, 0, 0);
-            transform: translate3d(-60px, 0, 0);
-    opacity: 0; }
+    opacity: 0;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  5% {
+    opacity: 0.8;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
   20% {
-    opacity: 1; }
+    opacity: 0;
+    -webkit-transform: scale(1.4, 1.4);
+            transform: scale(1.4, 1.4); }
+  25% {
+    opacity: 0;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  30% {
+    opacity: 0.8;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  45% {
+    opacity: 0;
+    -webkit-transform: scale(1.4, 1.4);
+            transform: scale(1.4, 1.4); }
   100% {
-    -webkit-transform: translate3d(320px, 0, 0);
-            transform: translate3d(320px, 0, 0);
-    opacity: 0; } }
+    opacity: 0;
+    -webkit-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8); } }
 
 @keyframes fadeOut80 {
   0% {
-    -webkit-transform: translate3d(-60px, 0, 0);
-            transform: translate3d(-60px, 0, 0);
-    opacity: 0; }
+    opacity: 0;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  5% {
+    opacity: 0.8;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
   20% {
-    opacity: 1; }
+    opacity: 0;
+    -webkit-transform: scale(1.4, 1.4);
+            transform: scale(1.4, 1.4); }
+  25% {
+    opacity: 0;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  30% {
+    opacity: 0.8;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  45% {
+    opacity: 0;
+    -webkit-transform: scale(1.4, 1.4);
+            transform: scale(1.4, 1.4); }
   100% {
-    -webkit-transform: translate3d(320px, 0, 0);
-            transform: translate3d(320px, 0, 0);
-    opacity: 0; } }
+    opacity: 0;
+    -webkit-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8); } }
 
 .fadeOut80 {
   -webkit-animation-name: fadeOut80;
