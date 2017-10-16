@@ -652,8 +652,6 @@ updateLikeOn = ->
 			if localStorage.getItem("id-#{id}-#{i}")
 				$(".likeanswer[rel=#{i}]",this).addClass "on"
 
-
-
 window.onload = ->
 	MK = $("body").width()/$("body").height()
 	defaultTop = $(".logo").offset().top
@@ -668,10 +666,13 @@ window.onload = ->
 		else
 			$(this).parent().addClass "on"
 	$(".main .logo").on "click", (evt)->
-			scrollTop = document.scrollingElement.scrollTop
-			document.body.style.top = -scrollTop + 'px'
 			$("body").addClass "pop-open"
 			$(".pop").addClass "on"
+			try
+				scrollTop = document.scrollingElement.scrollTop
+				document.body.style.top = -scrollTop + 'px'
+			catch e
+				console.log e
 			_hmt.push(['_trackEvent', "friso", "移动端浮层", "打开", "-"])
 	
 	$(".pop .close").on "click", (evt)->

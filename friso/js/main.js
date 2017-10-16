@@ -750,10 +750,16 @@ window.onload = function() {
     }
   });
   $(".main .logo").on("click", function(evt) {
-    scrollTop = document.scrollingElement.scrollTop;
-    document.body.style.top = -scrollTop + 'px';
+    var e;
     $("body").addClass("pop-open");
     $(".pop").addClass("on");
+    try {
+      scrollTop = document.scrollingElement.scrollTop;
+      document.body.style.top = -scrollTop + 'px';
+    } catch (error1) {
+      e = error1;
+      console.log(e);
+    }
     return _hmt.push(['_trackEvent', "friso", "移动端浮层", "打开", "-"]);
   });
   $(".pop .close").on("click", function(evt) {
