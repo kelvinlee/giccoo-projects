@@ -692,6 +692,7 @@ window.onload = ->
 	if IsPC() and $(".main").is(".mobile")
 		return window.location.href = "pc.html"
 
+	# music
 
 	updateLoad()
 	if wx?

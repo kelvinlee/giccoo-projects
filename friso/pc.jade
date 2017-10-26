@@ -33,6 +33,9 @@ block content
 					.column.large-2
 						.logo
 							img(src="#{url}img/logo.png")
+					.column.large-10
+						playsound.playsound(src="http://image.giccoo.com/projects/friso/mp3/rap.160.mp3",icon="true",iconplay="http://image.giccoo.com/projects/libs/img/audio-play.png",iconstop="http://image.giccoo.com/projects/libs/img/audio-stop.png")
+
 		.content
 			.row
 				.section-content
@@ -78,7 +81,7 @@ block content
 							a(href="https://frisoprestige.tmall.com/p/rd521921.htm")
 								img(src="#{url}img/free.png")
 						.video
-							video(width=640,height=360,poster="#{url}img/pop-video.jpg",src="http://image.giccoo.com/projects/friso/video/mobile.mp4",controls="true",webkit-playsinline,playsinline,autoplay)
+							video(width=640,height=360,poster="#{url}img/pop-video.jpg",src="http://image.giccoo.com/projects/friso/video/mobile.mp4",controls="true",webkit-playsinline,playsinline)
 						.note-text
 							h3 皇家美素佳儿
 							p 100%荷兰原装进口，来自荷兰自家牧场，新鲜直取皇家第一道奶源<sup>**</sup>，由“食品硅谷”荷兰瓦赫宁根研究中心75年科技突破，解密1:25<sup>*</sup>天然营养精华，凝萃三大天然珍稀营养，延续母爱力量，助力宝宝多方位成长，和妈妈拥有更多珍贵体验。
@@ -99,6 +102,7 @@ block js
 	script(src="http://image.giccoo.com/projects/libs/js/min/jquery.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/localforage.min.js")
+	script(src="/libs/js/tags/playsound.js")
 	script(src="js/friso.js?v=3")
 	script(src="js/main.js?v=3")
 	

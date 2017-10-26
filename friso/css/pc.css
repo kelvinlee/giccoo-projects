@@ -1475,6 +1475,26 @@ ul {
   -webkit-animation-duration: 3000ms;
           animation-duration: 3000ms; }
 
+@-webkit-keyframes second {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes second {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 video {
   width: 100%;
   height: auto; }
@@ -1486,6 +1506,21 @@ video {
   display: none;
   width: 1px;
   height: 1px; }
+
+.playsound {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 50px;
+  z-index: 99;
+  font-size: 0; }
+  .playsound .play {
+    -webkit-animation: second 4s ease;
+            animation: second 4s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
 
 .main {
   width: 100%;
