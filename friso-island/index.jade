@@ -1,0 +1,117 @@
+extends ../libs/jade/layout-clean
+block title
+	| 知乎北鼻版-天真星球
+
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="/libs/css/animate.min.css")
+	link(rel="stylesheet",href="/libs/css/photo-sphere-viewer.min.css")
+	link(rel="stylesheet",href="css/base.css")
+	//- script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
+
+block content
+	- url = "http://image.giccoo.com/projects/friso-island/"
+	- url = "./"
+
+	#load.loading(v-if="!loadend")
+		.ball-spin-fade-loader
+			-for (var i=0;i<8;i++)
+				div
+	#main.main(style="display: none")
+		#navbar
+			.logo(@click.prevent.stop="backNormal")
+				img(src="./img/logo.png")
+			.stars.fadeIn.animated(v-show="show")
+				.star(v-for="star in stars",:class="{on:star}")
+					img(:src="'./img/star-'+(star?'on':'off')+'.png'")
+		#page-one(:class="{hide: notShowTime}")
+			.light
+			.island-list
+				-for (var i = 1; i < 6; i++)
+					.planet.blur(class="planet-#{i}")
+						img(src="./img/planet-#{i}.png")
+			.texts.fadeIn.animated
+				.bg-box.fadeIn.animated.delay-24.duration-10
+				.content
+					.title
+						img(src="./img/planet-title.png")
+					.text-list
+						p.fadeInUp.animated.duration-10(v-for="(text,index) in texts",:class="'delay-'+index*3") {{text}}
+				.btn-start.fadeIn.animated.delay-26.duration-10(@click.prevent.stop="getStart")
+					img(src="./img/btn-start.png")
+
+		#planet-page(:class="{show: show,opened: opened,blur: blur}")
+			.page-planets
+				#planets
+				transition(name="planet-note")
+					.planets-note(v-if="shownote")
+						.btn-start-control(@click.prevent.stop="startG")
+							img(src="./img/btn-start-control.png")
+						.texts
+							p.fadeInUp.animated.delay-2 点击探索星球后移动手机屏幕来探索   
+							p.fadeInUp.animated.delay-4 每完成一个探索，即获得一枚北鼻勋章。
+							p.fadeInUp.animated.delay-6 集齐五枚勋章，赢取皇家尊礼。
+			transition(name="planet-content")
+				.planets-content(v-show="opened")
+					.planet-island
+						img(:src="'./img/'+planetName+'.png'")
+					.answer-box
+						.answers#answers(:class="{moving: moving, movend: !moving}")
+							.question.fadeInUp.animated
+								.avatar
+									img(src="./img/avatar-baby.jpg")
+									.mark
+								.answer-text
+									span {{planet.question}}
+							.answer.animated.duration-4.delay-1(v-for="(item,index) in planet.answers",:class="[{hide: info[planet.answers.indexOf(item)]?false:true,fadeIn:index>=1,fadeInUp:index<1}]")
+								.avatar
+									img(:src="'./img/'+item.avatar")
+									.mark
+								.answer-text
+									span {{item.author}}
+									p {{item.answer}}
+					.btn-goon.fadeIn.animated.duration-10.delay-10(@click.prevent.stop="keepgoing")
+						img(src="./img/btn-goon.png")
+
+		#planet-last-page.fadeIn.animated(v-show="opened",style="display: none")
+			.title.tada.animated.duration-10.delay-4
+				img(src="./img/lastpage-title.png")
+			.island.tada.animated.duration-10.delay-6
+				img(src="./img/planet-2.png")
+			.texts.tada.animated.duration-10.delay-8
+				img(src="./img/lastpage-text.png")
+			.btn.tada.animated.duration-10.delay-10
+				img(src="./img/btn-end.png")
+				a.btn-left(href="https://www.zhihu.com/org/frisomei-su-jia-er-63") &nbsp;
+				a.btn-right(href="https://tb.cn/EaTKhaw") &nbsp;
+
+block js
+	- url = "/"
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/riot.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/localforage.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/axios.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
+	//- script(src="/libs/js/min/axios.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/tweenjs.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/three.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/Three.DeviceOrientationControls.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/D.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/doT.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/uevent.min.js")
+	// script(src="http://image.giccoo.com/projects/libs/js/min/photo-sphere-viewer.min.js")
+	script(src="/libs/js/photo-sphere-viewer.js")
+	//- script(src="js/Note-build.js")
+	script(src="js/main.js")
+
+	

@@ -1,0 +1,449 @@
+@import sass/base
+@import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "http://image.giccoo.com/projects/CX5/"
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
++keyframes(second)
+	0%
+		+transform(rotate(0deg))
+	100%
+		+transform(rotate(360deg))
+
++keyframes(island)
+	0%,100%
+		+transform(translate3d(0,0,0) scale(1,1))
+		opacity: 1
+	50%
+		+transform(translate3d(0,20px,0) scale(0.96,0.96))
+		opacity: 0.9
+
++keyframes(planet-1)
+	0%
+		+transform(translate3d(0,0,0) scale(0,0))
+		opacity: 0
+	70%
+		opacity: 0.6
+	100%
+		+transform(translate3d(-300px,-300px,0) scale(2,2))
+		opacity: 0
+
++keyframes(planet-2)
+	0%
+		+transform(translate3d(0,0,0) scale(0,0))
+		opacity: 0
+	80%
+		opacity: 0.6
+	100%
+		+transform(translate3d(300px,-200px,0) scale(3,3))
+		opacity: 0
+
++keyframes(planet-3)
+	0%
+		+transform(translate3d(0,0,0) scale(0,0))
+		opacity: 0
+	70%
+		opacity: 0.6
+	100%
+		+transform(translate3d(-270px,300px,0) scale(2.4,2.4))
+		opacity: 0
+
++keyframes(planet-4)
+	0%
+		+transform(translate3d(0,0,0) scale(0,0))
+		opacity: 0
+	80%
+		opacity: 0.6
+	100%
+		+transform(translate3d(320px,300px,0) scale(2.2,2.2))
+		opacity: 0
+
++keyframes(planet-5)
+	0%
+		+transform(translate3d(0,0,0) scale(0,0))
+		opacity: 0
+	80%
+		opacity: 0.6
+	100%
+		+transform(translate3d(0,-400px,0) scale(3,3))
+		opacity: 0
+
++keyframes(balloon-big)
+	0%
+		+transform(translate3d(0,0,0) scale(1,1))
+		opacity: 0
+	10%,90%
+		opacity: 1
+	100%
+		+transform(translate3d(0,-100px,0) scale(0.9,0.9))
+		opacity: 0
+
++keyframes(balloon-small)
+	0%
+		+transform(translate3d(0,0,0) scale(1,1))
+		opacity: 0
+	10%,90%
+		opacity: 1
+	100%
+		+transform(translate3d(0,-40px,0) scale(0.9,0.9))
+		opacity: 0
+
+
+html,body
+	+w
+	+h
+
+body
+	color: #fff
+	+bc(#e1ce96)
+video
+	+w
+	+h(auto)
+body.pop-open
+	position: fixed
+	width: 100%
+
+.wechat-share-hide,.load-before
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+	+h(1px)
+
+.playsound
+	+posa
+	+tr(1rem,1rem)
+	+iw(58)
+	z-index: 99
+	font-size: 0
+	.play
+		+animation(second,4s,ease,infinite)
+
+.hide
+	display: none
+
+.main
+	+w
+	+h
+	+posr
+	+overhide
+
+.page-planets
+	+w
+	+h
+
+#planet-page,#planet-last-page
+	+w
+	+h
+	+posa
+	+tl
+#planet-page
+	// +bc(#fff)
+	color: #9a6634
+	+hide
+	&.show
+		+show
+	#answers
+		+h(74%)
+		+w(80%)
+		// padding: 2% 0
+		+posa
+		+tl(15%,10%)
+		+br(11%,10%)
+		&.moving
+			+overhide
+		&.movend
+			+touch
+	.planets-content
+		+posa
+		+tl
+		+w
+		+h
+		+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+		z-index: 100
+		.planet-island
+			+posa
+			+tl(-5%,5%)
+			+w(90%)
+		.answer-box
+			+posa
+			+bl(10%,0%)
+			+wh(100%,70%)
+			+b($cdn+"img/answer-box.png",no-repeat,center,center,100% 100%)
+			.answers
+				.answer,.question
+					margin-top: 20px
+					.answer-text,.avatar
+						display: inline-block
+						+posr
+					.avatar
+						+w(13%)
+						margin-right: 5%
+						vertical-align: bottom
+						margin-bottom: 15px
+						font-size: 0
+						+posr
+						img
+							border-radius: 8px
+							+overhide
+							+w(98%)
+						.mark
+							+posa
+							+tl
+							+w
+							+h
+							+b($cdn+"img/avatar-mark.png",no-repeat,center,center,100% 100%)
+							z-index: 99
+					.answer-text
+						+w(70%)
+						+bc(#fff)
+						border-radius: 5px
+						padding: 4.5%
+						line-height: 1.4em
+						box-shadow: 2px 2px 4px #e1ce96,-2px -2px 4px #e1ce96
+						+font-size(0.8rem)
+						&:after
+							$size: 8px
+							content: " "
+							display: block
+							width: 0
+							height: 0
+							border-top: $size/2 solid transparent
+							border-right: $size solid #fff
+							border-bottom: $size/2 solid transparent
+							+posa
+							+bl(32px,-$size)
+						span
+							font-weight: bold
+						p
+							+m
+
+				.answer
+					&:last-child
+						// +bc(#000)
+						+posr
+						.answer-text
+							&:after
+								left: auto
+								right: -8px
+								+transform(scale(-1,1))
+						.avatar
+							+posa
+							+br
+							margin-left: 5%
+							margin-right: 0
+
+		.btn-goon
+			+w(70%)
+			+posa
+			+bl(2%,15%)
+
+.planet-content-enter-active
+	transition: all .3s ease
+.planet-content-leave-active
+	transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+.planet-content-enter, .planet-content-leave-to
+	transform: translateY(200px);
+	opacity: 0;
+
+.planet-note-enter-active
+	transition: all .6s ease
+.planet-note-leave-active
+	transition: all .6s ease
+.planet-note-enter, .planet-note-leave-to
+	transform: translateY(120px);
+	opacity: 0;
+
+.loading,#page-one,.sorryContent
+	+posa
+	+tl
+	+w
+	+h
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+
+.loading
+	z-index: 1009
+	.ball-spin-fade-loader
+		+posa
+		+tl(50%,50%)
+
+.sorryContent
+	.text
+		+posa
+		+tl(50%,10%)
+		+w(80%)
+		+text-center
+		+transform(translate3d(0,-50%,0))
+		line-height: 1.6em
+
+#page-one
+	z-index: 209
+	+b($cdn+"img/bg-light.jpg",no-repeat,center,center,cover)
+	.light,.island-list
+		+posa
+		+tl
+		+w
+		+h
+	.light
+		// +b($cdn+"img/light.png",no-repeat,center,center,cover)
+		// z-index: -1
+		+hide
+	.island-list
+		.planet
+			+posa
+			+tl(50%,50%)
+			+w(20%)
+			margin-left: -5%
+			margin-top: -5%
+			&.blur
+				filter: blur(4px)
+		@for $i from 1 through 5
+			.planet-#{$i}
+				$time: 4500ms
+				+animation("planet-#{$i}",$time,ease,infinite)
+				animation-delay: $i*($time/5)
+				animation-duration: $time - $i*100ms
+	.texts
+		+posa
+		+tl(20%)
+		+w
+		padding-top: 100%
+		.content,.bg-box
+			+posa
+			+tl
+			+w
+			+h
+		.btn-start
+			+posa
+			+bl(-40px,15%)
+			+w(70%)
+		.bg-box
+			+tl(4%)
+			+b($cdn+"img/homepage-box.png",no-repeat,center,center,cover)
+			+transform(scale(0.95,0.95))
+		.title
+			+w(50%)
+			+m
+		.text-list
+			margin-top: 15px
+			p
+				+m
+				color: #81500b
+				+text-center
+				+font-size(0.9rem)
+				letter-spacing: 0.2em
+				line-height: 1.8em
+
+#navbar
+	+posa
+	+tl
+	+w
+	z-index: 300
+	.logo
+		+posa
+		+tl(0,6%)
+		+iw(221,640,100%)
+	.stars
+		+posa
+		+tr(8px,2%)
+		+w(50%)
+		+text-right
+		.star
+			display: inline-block
+			+iw(40,320,100%)
+
+#planets
+	+w
+	+h
+	+posr
+	.planet-loading
+		+posa
+		+tl(50%,50%)
+	.planet
+		+posr
+		+animation("island",5s,linear,infinite)
+		transform-origin: center center
+		.planet-medal
+			+posa
+			+tl
+
+.psv-container
+	// background: radial-gradient(#e5d298,#e0c580 16%,#f0dca8 33%,#f8f8f8 49%,#ecd69e 66%,#e8cf8e 82%,#e0c580 100%)
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)	
+
+
+#planet-last-page
+	+overhide
+	.title	
+		+w
+		margin-top: 18%
+	.island
+		+w(70%)
+		+m
+		margin-top: -12%
+	.texts
+		+w(90%)
+		+m
+		margin-top: -35%
+	.btn
+		+posr
+		+w(90%)
+		+m
+		z-index: 109
+		margin-top: -19%
+		.btn-left,.btn-right
+			+posa
+			+w(50%)
+			+h
+			+show
+			text-decoration: none
+			font-size: 0
+		.btn-left
+			+tl
+		.btn-right
+			+tr
+
+
+.blur
+	filter: blur(10px)
+	opacity: 0.8
+
+.planets-note
+	+posa
+	+bl(2%)
+	+w
+	z-index: 199
+	.btn-start-control
+		+w(65%)
+		+m
+	.texts
+		+m(20px 0)
+		p
+			+m
+			+text-center
+			line-height: 1.6em
+			text-shadow: 1px 1px 3px #fff
+			+font-size(0.8rem)
+
+.planet-balloon-big
+	+posr
+	z-index: -1
+	+w(100px)
+	+animation(balloon-big,5s,ease-in,infinite)
+	animation-delay: 200ms
+.planet-balloon-small
+	+posr
+	z-index: -1
+	+w(45px)
+	+animation(balloon-small,6s,ease-out,infinite)
+
