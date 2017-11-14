@@ -1,0 +1,71 @@
+*{margin: 0;padding: 0;}
+html,body{width:100%;height: 100%;position: relative;overflow:hidden;}
+img{ width: 100%; }
+.wechat-share {  position: absolute;  top: -1000px;  left: 0px;  z-index: -100;  width: 1px; }
+.page{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+}
+.bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+}
+.centerPart{
+	position: absolute;
+	width: 21.16%;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+       		transform: translate3d(-50%, -50%, 0);
+    font-size: 0;
+	/*-webkit-transform-origin:50% 0%;
+    		transform-origin:50% 0%;*/
+}
+
+#loadingNum{
+	position: absolute;
+	font-size: 0.6em;
+	color: #3cd739;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+       		transform: translate3d(-50%, -50%, 0);
+
+}
+#loadingPage{
+	display: block;
+}
+
+.p1pic{
+	position: absolute;
+	width: 100%;
+	top: 56.3%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+       		transform: translate3d(-50%, -50%, 0);
+
+}
+.p1btn{
+	position: absolute;
+	width: 30%;
+	top: 82.8%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+       		transform: translate3d(-50%, -50%, 0);
+    font-size: 0;
+    display: none;
+
+	/*-webkit-transform-origin:50% 0%;
+    		transform-origin:50% 0%;*/
+}
+.bottomPart{
+	position: absolute;
+	width: 100%;
+	bottom: 0%;
+}
+
