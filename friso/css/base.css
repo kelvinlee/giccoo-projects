@@ -1475,6 +1475,26 @@ ul {
   -webkit-animation-duration: 3000ms;
           animation-duration: 3000ms; }
 
+@-webkit-keyframes second {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes second {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 html, body {
   width: 100%;
   height: 100%; }
@@ -1498,6 +1518,24 @@ body.pop-open {
   display: none;
   width: 1px;
   height: 1px; }
+
+.playsound {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 9.0625%;
+  margin: 0 auto;
+  z-index: 99;
+  font-size: 0; }
+  .iphone4 .playsound {
+    width: 7.25%; }
+  .playsound .play {
+    -webkit-animation: second 4s ease;
+            animation: second 4s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
 
 .pop {
   position: fixed;

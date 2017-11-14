@@ -6,7 +6,7 @@ block title
 block css
 	meta(name="author",content="m.giccoo.com")
 	//- link(rel="stylesheet",href="../libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
-	link(rel="stylesheet",href="css/base.css?v=3")
+	link(rel="stylesheet",href="css/base.css?v=4")
 	script.
 		var _hmt = _hmt || [];
 		(function() {
@@ -28,6 +28,7 @@ block content
 			img(src="#{url}img/m-banner.jpg")
 			.logo
 				img(src="#{url}img/m-logo.png")
+			playsound.playsound(src="http://image.giccoo.com/projects/friso/mp3/rap.160.mp3",icon="true",iconplay="http://image.giccoo.com/projects/libs/img/audio-play.png",iconstop="http://image.giccoo.com/projects/libs/img/audio-stop.png")
 		.age
 			.age-box
 				p 宝宝脑洞超级大，总会问出萌到你，却又问倒你的问题。皇家美素佳儿联合知乎推出「知乎·北鼻版」，打造首个婴幼儿知识问答互动空间，征集宝宝的「天真问题」和知友的「认真回答」。皇家美素佳儿相信，宝宝的每一个天真问题，都值得尊重。
@@ -91,6 +92,7 @@ block js
 	script(src="http://image.giccoo.com/projects/libs/js/min/jquery.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/localforage.min.js")
-	script(src="js/friso.js?v=3")
-	script(src="js/main.js?v=3")
+	script(src="/libs/js/tags/playsound.js")
+	script(src="js/friso.js?v=4")
+	script(src="js/main.js?v=4")
 	

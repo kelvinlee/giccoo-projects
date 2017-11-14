@@ -1,4 +1,4 @@
-riot.tag2('playsound', '<div if="{icon}" onclick="{change}" class="icon-play {type}"><img riot-src="{iconNow}"></div> <audio id="playgrounp" riot-src="{src}" autoplay="true" loop="loop"></audio>', '', '', function(opts) {
+riot.tag2('playsound', '<div if="{icon}" onclick="{change}" class="icon-play {type}"><img src="{iconNow}"></div> <audio id="playgrounp" riot-src="{src}" autoplay="true" loop="loop"></audio>', '', '', function(opts) {
     var self = this
     this.src = opts.src
     this.icon = opts.icon

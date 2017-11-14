@@ -497,6 +497,70 @@ ul {
       -webkit-transform: translate3d(0, -100%, 0);
               transform: translate3d(0, -100%, 0); }
 
+@-webkit-keyframes fadeOut80 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  5% {
+    opacity: 0.8;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  20% {
+    opacity: 0;
+    -webkit-transform: scale(1.4, 1.4);
+            transform: scale(1.4, 1.4); }
+  25% {
+    opacity: 0;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  30% {
+    opacity: 0.8;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  45% {
+    opacity: 0;
+    -webkit-transform: scale(1.4, 1.4);
+            transform: scale(1.4, 1.4); }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8); } }
+
+@keyframes fadeOut80 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  5% {
+    opacity: 0.8;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  20% {
+    opacity: 0;
+    -webkit-transform: scale(1.4, 1.4);
+            transform: scale(1.4, 1.4); }
+  25% {
+    opacity: 0;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  30% {
+    opacity: 0.8;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  45% {
+    opacity: 0;
+    -webkit-transform: scale(1.4, 1.4);
+            transform: scale(1.4, 1.4); }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8); } }
+
+.fadeOut80 {
+  -webkit-animation-name: fadeOut80;
+          animation-name: fadeOut80; }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -890,7 +954,53 @@ body {
   .page-homepage .text-1 {
     margin-top: 12%; }
   .page-homepage .btn-1 {
-    margin-top: 10%; }
+    margin-top: 10%;
+    position: relative; }
+    .page-homepage .btn-1 .light {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background: url("../img/homepage-text-2-light.png") no-repeat center center;
+      background-size: cover;
+      background-color: transparent;
+      z-index: 109; }
+    .page-homepage .btn-1 .star {
+      position: absolute;
+      z-index: 109; }
+      .page-homepage .btn-1 .star .star-box {
+        width: 100%;
+        height: 100%;
+        background: url("http://image.giccoo.com/projects/managers/img/star.png") no-repeat center center;
+        background-size: cover;
+        background-color: transparent; }
+    .page-homepage .btn-1 .star-1 {
+      bottom: 5%;
+      left: 10%;
+      width: 26px;
+      height: 26px; }
+    .page-homepage .btn-1 .star-2 {
+      bottom: 15.5%;
+      left: 35%;
+      width: 22px;
+      height: 22px; }
+    .page-homepage .btn-1 .star-3 {
+      bottom: 4%;
+      left: 75%;
+      width: 20px;
+      height: 20px; }
+    .page-homepage .btn-1 .star-4 {
+      bottom: 0%;
+      left: 65%;
+      width: 26px;
+      height: 26px; }
+    .page-homepage .btn-1 .star-5 {
+      bottom: 0%;
+      left: 45%;
+      width: 30px;
+      height: 30px;
+      display: none; }
   .page-homepage .car {
     position: absolute;
     bottom: 8%;
