@@ -53,9 +53,6 @@ var doorH//门背景高
 
 
 function loading(){
-  // TweenLite.set($("#loading1"),{'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)'})
-  // TweenLite.set($("#loading2"),{'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)'})
-  // TweenLite.set($("#loading3"),{'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)'})
 
   TweenLite.from($("#loadingBG"),.5,{opacity:0,delay:.5})
 
@@ -95,12 +92,12 @@ function page1in(){
   for (var i = 0; i < p1picA.length; i++) {
     if(i==0||i==1||i==5||i==6){
       TweenLite.set(p1picA[i],{scale:1,opacity:0,x:"+=180",y:"+=180",rotationX:180,rotationY:180,z:1500,overwrite:0})
-      TweenLite.to(p1picA[i],2.5,{scale:1,opacity:1,x:"-=180",y:"-=180",rotationX:0,rotationY:0,z:0,delay:.15*i,ease:Expo.easeOut})
+      TweenLite.to(p1picA[i],5.5,{scale:1,opacity:1,x:"-=180",y:"-=180",rotationX:0,rotationY:0,z:0,delay:.15*i,ease:Expo.easeOut})
     }else{
       //TweenLite.set(p1picA[i],{opacity:0,x:"-=180"})
       TweenLite.set(p1picA[i],{scale:1,opacity:0,x:"-=180",y:"-=180",rotationX:180,rotationY:180,z:1500,overwrite:0})
       //TweenLite.to(p1picA[i],1.5,{opacity:1,x:"+=180",delay:.15*i,ease:Expo.easeOut})
-      TweenLite.to(p1picA[i],2.5,{scale:1,opacity:1,x:"+=180",y:"+=180",rotationX:0,rotationY:0,z:0,delay:.15*i,ease:Expo.easeOut})
+      TweenLite.to(p1picA[i],5.5,{scale:1,opacity:1,x:"+=180",y:"+=180",rotationX:0,rotationY:0,z:0,delay:.15*i,ease:Expo.easeOut})
     }
   };
   TweenLite.set($("#p1pic8"),{opacity:1})

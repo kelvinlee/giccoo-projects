@@ -26,18 +26,7 @@ img{ width: 100%; }
 	/*-webkit-transform-origin:50% 0%;
     		transform-origin:50% 0%;*/
 }
-/*#loading1{
-	-webkit-transform: translate3d(-50%, -50%, 0);
-       		transform: translate3d(-50%, -50%, 0);
-}
-#loading2{
-	-webkit-transform: translate3d(-50%, -50%, 0);
-       		transform: translate3d(-50%, -50%, 0);
-}
-#loading3{
-	-webkit-transform: translate3d(-50%, -50%, 0);
-       		transform: translate3d(-50%, -50%, 0);
-}*/
+
 
 #loadingNum{
 	position: absolute;
