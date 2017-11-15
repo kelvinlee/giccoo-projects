@@ -200,7 +200,7 @@ function page2in(){
 
 function page2zoomIn(){
   nowPage=1
-  //alert("zoomIn")
+  alert("zoomIn")
 }
 
 //===============放大按钮动画=========
@@ -218,32 +218,41 @@ function showZoomBtn(){
 function zoomAni1(){
 
 
-  TweenLite.to($('#arrowL'),1,{opacity:1,x:"-=20",y:"+=15",rotation:"+=0"  ,ease:Expo.easeOut})
-  TweenLite.to($('#OL'),    1,{opacity:1,x:"-=20",y:"+=15",rotation:"+=180"})
-  TweenLite.to($('#arrowR'),1,{opacity:1,x:"+=20",y:"-=15",rotation:"+=0"  ,ease:Expo.easeOut,onComplete:zoomAni2})
-  TweenLite.to($('#OR'),    1,{opacity:1,x:"+=20",y:"-=15",rotation:"+=180"})
+  TweenLite.to($('#arrowL'),1,{opacity:1,x:"-=10",y:"+=7.5",rotation:"+=0"  })
+  TweenLite.to($('#OL'),    1,{opacity:1,x:"-=10",y:"+=7.5",rotation:"+=180",delay:.15})
+  TweenLite.to($('#arrowR'),1,{opacity:1,x:"+=10",y:"-=7.5",rotation:"+=0"  })
+  TweenLite.to($('#OR'),    1,{opacity:1,x:"+=10",y:"-=7.5",rotation:"+=180",delay:.15,onComplete:zoomAni2})
 }
 
 function zoomAni2(){
 
-  TweenLite.to($('#arrowL'),1,{opacity:0,x:"-=20",y:"+=15",rotation:"+=0"  ,ease:Cubic.easeOut})
-  TweenLite.to($('#OL'),    1,{opacity:0,x:"-=20",y:"+=15",rotation:"+=180"})
-  TweenLite.to($('#arrowR'),1,{opacity:0,x:"+=20",y:"-=15",rotation:"+=0"  ,ease:Cubic.easeOut,onComplete:zoomAni3})
-  TweenLite.to($('#OR'),    1,{opacity:0,x:"+=20",y:"-=15",rotation:"+=180"})
+  TweenLite.to($('#arrowL'),1,{opacity:0,x:"-=20",y:"+=15",rotation:"+=0"  })
+  TweenLite.to($('#OL'),    1,{opacity:0,x:"-=20",y:"+=15",rotation:"+=180",delay:.15})
+  TweenLite.to($('#arrowR'),1,{opacity:0,x:"+=20",y:"-=15",rotation:"+=0"  })
+  TweenLite.to($('#OR'),    1,{opacity:0,x:"+=20",y:"-=15",rotation:"+=180",delay:.15,onComplete:zoomAni3})
 }
 
 function zoomAni3(){
-  TweenLite.to($('#arrowL'),0.1,{opacity:0,x:"+=40",y:"-=30"})
-  TweenLite.to($('#OL'),    0.1,{opacity:0,x:"+=40",y:"-=30"})
-  TweenLite.to($('#arrowR'),0.1,{opacity:0,x:"-=40",y:"+=30",onComplete:zoomAni1})
-  TweenLite.to($('#OR'),    0.1,{opacity:0,x:"-=40",y:"+=30"})
+  TweenLite.to($('#arrowL'),0.1,{opacity:0,x:"+=30",y:"-=22.5"})
+  TweenLite.to($('#OL'),    0.1,{opacity:0,x:"+=30",y:"-=22.5"})
+  TweenLite.to($('#arrowR'),0.1,{opacity:0,x:"-=30",y:"+=22.5",onComplete:zoomAni1})
+  TweenLite.to($('#OR'),    0.1,{opacity:0,x:"-=30",y:"+=22.5"})
 }
 
+
+
+
+
 //===============放大手势============
+
+    $("body").on('touchmove',function(e){
+      e.preventdefault();
+    })
+
     var touchstartevent = [];
     var toucholdevent = [];
     //window.hinthide = false;
-    $('#page2').on('touchstart', function (e) {
+    $('#zoom').on('touchstart', function (e) {
       touchstartevent = [{}, {}];
       toucholdevent = [{}, {}];
     }).on('touchmove', function (e) {
@@ -275,7 +284,7 @@ function zoomAni3(){
       return Math.sqrt((e[0].pageX - e[1].pageX) * (e[0].pageX - e[1].pageX) + (e[0].pageY - e[1].pageY) * (e[0].pageY - e[1].pageY));
     }
 
-    $('#page2').click(function(){
+    $('#zoom').click(function(){
       page2zoomIn()
     });
 
