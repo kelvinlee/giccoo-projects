@@ -35,7 +35,7 @@ var loadWechatConfig = function() {
 //========总
 
 var container=$('body')
-TweenMax.set(container, {perspective:500})
+TweenMax.set(container, {perspective:100})
 var p1picA=[$("#p1pic1"),$("#p1pic2"),$("#p1pic3"),$("#p1pic4"),$("#p1pic5"),$("#p1pic6"),$("#p1pic7")];
 
 
