@@ -55,13 +55,13 @@ var doorH//门背景高
 function loading(){
   TweenLite.from($(loadingBG),.5,{opacity:0,delay:.5})
 
-  TweenLite.from($(loading1),1,{rotation:100,opacity:-1,scale:0.5,delay:1,overwrite:0})
-  TweenLite.from($(loading2),1,{opacity:0,scale:-10,delay:1.2,overwrite:0,ease:Elastic.easeOut})
-  TweenLite.from($(loading3),0.5,{rotation:180,opacity:0,scale:1.5,delay:1.4,overwrite:0})
+  TweenLite.from($(loading1),1,{rotation:100,opacity:-1,scale:0.5,delay:1,overwrite:0,'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)'})
+  TweenLite.from($(loading2),1,{opacity:0,scale:-10,delay:1.2,overwrite:0,ease:Elastic.easeOut,'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)'})
+  TweenLite.from($(loading3),0.5,{rotation:180,opacity:0,scale:1.5,delay:1.4,overwrite:0,'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)'})
 
-  TweenLite.to($(loading1),10,{rotation:1440,delay:2})
-  TweenLite.to($(loading2),10,{rotationZ:-360,delay:2})
-  TweenLite.to($(loading3),10,{rotation:360,delay:2})
+  TweenLite.to($(loading1),10,{rotation:1440,delay:2,'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)'})
+  TweenLite.to($(loading2),10,{rotationZ:-360,delay:2,'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)'})
+  TweenLite.to($(loading3),10,{rotation:360,delay:2,'transform':'translate3d(-50%,-50%,0)','-webkit-transform':'translate3d(-50%,-50%,0)'})
 
  TweenLite.to(this,1,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
  
