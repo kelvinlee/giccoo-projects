@@ -35,7 +35,7 @@ var loadWechatConfig = function() {
 //========总
 
 var container=$('body')
-TweenMax.set(container, {perspective:100})
+TweenMax.set(container, {perspective:50})
 var p1picA=[$("#p1pic1"),$("#p1pic2"),$("#p1pic3"),$("#p1pic4"),$("#p1pic5"),$("#p1pic6"),$("#p1pic7")];
 
 
@@ -71,7 +71,7 @@ function loading(){
   TweenLite.to($("#loading2"),10,{rotationZ:-360,delay:2,x:"-50%",y:"-50%"})
   TweenLite.to($("#loading3"),10,{rotation:360,delay:2,x:"-50%",y:"-50%"})
 
- TweenLite.to(this,1,{loadNum:1000,delay:2,onComplete:loadingFinish})//<===========改这里
+ TweenLite.to(this,1,{loadNum:500,delay:2,onComplete:loadingFinish})//<===========改这里
  
 }
 
