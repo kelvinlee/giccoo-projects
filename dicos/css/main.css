@@ -1,10 +1,7 @@
 *{margin: 0;padding: 0;}
 html,body{
 	width:100%;height: 100%;position: relative;overflow:hidden;
-	perspective:50;
-	-webkit-perspective: 50;
-	transform-style:preserve-3d;
-	-webkit-transform-style:preserve-3d;}
+}
 img{ width: 100%; }
 .wechat-share {  position: absolute;  top: -1000px;  left: 0px;  z-index: -100;  width: 1px; }
 .page{
@@ -13,6 +10,10 @@ img{ width: 100%; }
 	width: 100%;
 	height: 100%;
 	overflow:hidden;
+			perspective:50;
+	-webkit-perspective: 50;
+			transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
 }
 .bg{
 	position: absolute;
