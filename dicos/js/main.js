@@ -35,7 +35,7 @@ var loadWechatConfig = function() {
 //========总
 
 var container=$('body')
-TweenMax.set(container, {perspective:50})
+TweenMax.set(container, {perspective:500})
 var p1picA=[$("#p1pic1"),$("#p1pic2"),$("#p1pic3"),$("#p1pic4"),$("#p1pic5"),$("#p1pic6"),$("#p1pic7")];
 
 
@@ -71,7 +71,7 @@ function loading(){
   TweenLite.to($("#loading2"),10,{rotationZ:-360,delay:2,x:"-50%",y:"-50%"})
   TweenLite.to($("#loading3"),10,{rotation:360,delay:2,x:"-50%",y:"-50%"})
 
- TweenLite.to(this,1,{loadNum:500,delay:2,onComplete:loadingFinish})//<===========改这里
+ TweenLite.to(this,1,{loadNum:200,delay:2,onComplete:loadingFinish})//<===========改这里
  
 }
 
@@ -94,11 +94,11 @@ function page1in(){
   //alert("第一页显示")
   for (var i = 0; i < p1picA.length; i++) {
     if(i==0||i==1||i==5||i==6){
-      TweenLite.set(p1picA[i],{opacity:0,x:"+=180",y:"+=180",rotationX:180,rotationY:180,z:1500,overwrite:0})
+      TweenLite.set(p1picA[i],{opacity:0,x:"+=180",y:"+=180",rotationX:180,rotationY:180,z:-1500,overwrite:0})
       TweenLite.to(p1picA[i],1.5,{opacity:1,x:"-=180",y:"-=180",rotationX:0,rotationY:0,z:0,delay:.15*i,ease:Expo.easeOut})
     }else{
       //TweenLite.set(p1picA[i],{opacity:0,x:"-=180"})
-      TweenLite.set(p1picA[i],{opacity:0,x:"-=180",y:"-=180",rotationX:180,rotationY:180,z:1500,overwrite:0})
+      TweenLite.set(p1picA[i],{opacity:0,x:"-=180",y:"-=180",rotationX:180,rotationY:180,z:-1500,overwrite:0})
       //TweenLite.to(p1picA[i],1.5,{opacity:1,x:"+=180",delay:.15*i,ease:Expo.easeOut})
       TweenLite.to(p1picA[i],1.5,{opacity:1,x:"+=180",y:"+=180",rotationX:0,rotationY:0,z:0,delay:.15*i,ease:Expo.easeOut})
     }
