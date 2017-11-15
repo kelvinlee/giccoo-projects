@@ -59,6 +59,10 @@ function loading(){
 
   TweenLite.from($("#loadingBG"),.5,{opacity:0,delay:.5})
 
+  TweenLite.set($("#loading1"),{x:"-50%",y:"-50%"})
+  TweenLite.set($("#loading2"),{x:"-50%",y:"-50%"})
+  TweenLite.set($("#loading3"),{x:"-50%",y:"-50%"})
+
   TweenLite.from($("#loading1"),1,{rotation:100,opacity:-1,scale:0.5,delay:1,overwrite:0,x:"-50%",y:"-50%"})
   TweenLite.from($("#loading2"),1,{opacity:0,scale:-10,delay:1.2,overwrite:0,ease:Elastic.easeOut,x:"-50%",y:"-50%"})
   TweenLite.from($("#loading3"),0.5,{rotation:180,opacity:0,scale:1.5,delay:1.4,overwrite:0,x:"-50%",y:"-50%"})
