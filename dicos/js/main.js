@@ -23,6 +23,7 @@ $(document).ready(function load (){
 
 });
 
+$('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
 
 var loadWechatConfig = function() {
   var hm, s, url;
@@ -245,9 +246,7 @@ function zoomAni3(){
 
 //===============放大手势============
 
-    $("body").on('touchmove',function(e){
-      e.preventdefault();
-    })
+
 
     var touchstartevent = [];
     var toucholdevent = [];
