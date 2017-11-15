@@ -1,0 +1,1360 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+* {
+  -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  font-family: Tahoma,Arial,Roboto,Droid Sans,Helvetica Neue,Droid Sans Fallback,Microsoft YaHei,SimHei,Heiti SC,Hiragino Sans GB,Simsun,sans-self; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+img {
+  max-width: 100%; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.pages {
+  display: block;
+  height: 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative; }
+  .pages .page {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none; }
+    .pages .page .next-point {
+      width: 20px;
+      height: 30px;
+      position: absolute;
+      bottom: 2%;
+      left: 50%;
+      margin-left: -10px;
+      z-index: 99;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      font-size: 0; }
+      .pages .page .next-point span {
+        width: 20px;
+        height: 10px;
+        display: inline-block;
+        -webkit-animation: Flash 2s ease;
+                animation: Flash 2s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        margin-bottom: -2px;
+        background: url("http://disk.giccoo.com/projects/libs/img/arrow-next.png") no-repeat center center;
+        background-size: cover;
+        background-color: transparent; }
+        .pages .page .next-point span:nth-child(n+1) {
+          -webkit-animation-delay: 100ms;
+                  animation-delay: 100ms; }
+        .pages .page .next-point span:nth-child(n+2) {
+          -webkit-animation-delay: 300ms;
+                  animation-delay: 300ms; }
+        .pages .page .next-point span:nth-child(n+3) {
+          -webkit-animation-delay: 500ms;
+                  animation-delay: 500ms; }
+    .pages .page.first {
+      display: block; }
+    .pages .page h1, .pages .page h2 {
+      margin: 0 auto; }
+    .pages .page.riot-up-active, .pages .page.riot-down-active {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+    .pages .page.riot-up-leave {
+      -webkit-transform: translate3d(0, -100%, 0);
+              transform: translate3d(0, -100%, 0); }
+    .pages .page.riot-up {
+      -webkit-transform: translate3d(0, 100%, 0);
+              transform: translate3d(0, 100%, 0); }
+    .pages .page.riot-down-leave {
+      -webkit-transform: translate3d(0, 100%, 0);
+              transform: translate3d(0, 100%, 0); }
+    .pages .page.riot-down {
+      -webkit-transform: translate3d(0, -100%, 0);
+              transform: translate3d(0, -100%, 0); }
+
+.loader {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999; }
+  .loader .loader-icon {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 100px;
+    height: 100px; }
+  .loader .loader-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff; }
+    @media only screen and (min-width: 321px) and (max-width: 399px) {
+      .loader .loader-text {
+        font-size: 1.1rem; } }
+    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+      .loader .loader-text {
+        font-size: 1.1rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 767px) {
+      .loader .loader-text {
+        font-size: 1.2rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+      .loader .loader-text {
+        font-size: 1.2rem; } }
+
+@-webkit-keyframes ball-spin-fade-loader {
+  50% {
+    opacity: 0.3;
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+@keyframes ball-spin-fade-loader {
+  50% {
+    opacity: 0.3;
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+.ball-spin-fade-loader {
+  position: relative;
+  top: -10px;
+  left: -10px; }
+  .ball-spin-fade-loader > div {
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin: 2px;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    position: absolute; }
+    .ball-spin-fade-loader > div:nth-child(1) {
+      top: 25px;
+      left: 0;
+      -webkit-animation: ball-spin-fade-loader 1s -0.96s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.96s infinite linear; }
+    .ball-spin-fade-loader > div:nth-child(2) {
+      top: 17.04545px;
+      left: 17.04545px;
+      -webkit-animation: ball-spin-fade-loader 1s -0.84s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.84s infinite linear; }
+    .ball-spin-fade-loader > div:nth-child(3) {
+      top: 0;
+      left: 25px;
+      -webkit-animation: ball-spin-fade-loader 1s -0.72s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.72s infinite linear; }
+    .ball-spin-fade-loader > div:nth-child(4) {
+      top: -17.04545px;
+      left: 17.04545px;
+      -webkit-animation: ball-spin-fade-loader 1s -0.6s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.6s infinite linear; }
+    .ball-spin-fade-loader > div:nth-child(5) {
+      top: -25px;
+      left: 0;
+      -webkit-animation: ball-spin-fade-loader 1s -0.48s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.48s infinite linear; }
+    .ball-spin-fade-loader > div:nth-child(6) {
+      top: -17.04545px;
+      left: -17.04545px;
+      -webkit-animation: ball-spin-fade-loader 1s -0.36s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.36s infinite linear; }
+    .ball-spin-fade-loader > div:nth-child(7) {
+      top: 0;
+      left: -25px;
+      -webkit-animation: ball-spin-fade-loader 1s -0.24s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.24s infinite linear; }
+    .ball-spin-fade-loader > div:nth-child(8) {
+      top: 17.04545px;
+      left: -17.04545px;
+      -webkit-animation: ball-spin-fade-loader 1s -0.12s infinite linear;
+      animation: ball-spin-fade-loader 1s -0.12s infinite linear; }
+
+.delay-1 {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms; }
+
+.duration-1 {
+  -webkit-animation-duration: 100ms;
+          animation-duration: 100ms; }
+
+.delay-2 {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms; }
+
+.duration-2 {
+  -webkit-animation-duration: 200ms;
+          animation-duration: 200ms; }
+
+.delay-3 {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms; }
+
+.duration-3 {
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms; }
+
+.delay-4 {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms; }
+
+.duration-4 {
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms; }
+
+.delay-5 {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms; }
+
+.duration-5 {
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms; }
+
+.delay-6 {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms; }
+
+.duration-6 {
+  -webkit-animation-duration: 600ms;
+          animation-duration: 600ms; }
+
+.delay-7 {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms; }
+
+.duration-7 {
+  -webkit-animation-duration: 700ms;
+          animation-duration: 700ms; }
+
+.delay-8 {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms; }
+
+.duration-8 {
+  -webkit-animation-duration: 800ms;
+          animation-duration: 800ms; }
+
+.delay-9 {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms; }
+
+.duration-9 {
+  -webkit-animation-duration: 900ms;
+          animation-duration: 900ms; }
+
+.delay-10 {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms; }
+
+.duration-10 {
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms; }
+
+.delay-11 {
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms; }
+
+.duration-11 {
+  -webkit-animation-duration: 1100ms;
+          animation-duration: 1100ms; }
+
+.delay-12 {
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms; }
+
+.duration-12 {
+  -webkit-animation-duration: 1200ms;
+          animation-duration: 1200ms; }
+
+.delay-13 {
+  -webkit-animation-delay: 1300ms;
+          animation-delay: 1300ms; }
+
+.duration-13 {
+  -webkit-animation-duration: 1300ms;
+          animation-duration: 1300ms; }
+
+.delay-14 {
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms; }
+
+.duration-14 {
+  -webkit-animation-duration: 1400ms;
+          animation-duration: 1400ms; }
+
+.delay-15 {
+  -webkit-animation-delay: 1500ms;
+          animation-delay: 1500ms; }
+
+.duration-15 {
+  -webkit-animation-duration: 1500ms;
+          animation-duration: 1500ms; }
+
+.delay-16 {
+  -webkit-animation-delay: 1600ms;
+          animation-delay: 1600ms; }
+
+.duration-16 {
+  -webkit-animation-duration: 1600ms;
+          animation-duration: 1600ms; }
+
+.delay-17 {
+  -webkit-animation-delay: 1700ms;
+          animation-delay: 1700ms; }
+
+.duration-17 {
+  -webkit-animation-duration: 1700ms;
+          animation-duration: 1700ms; }
+
+.delay-18 {
+  -webkit-animation-delay: 1800ms;
+          animation-delay: 1800ms; }
+
+.duration-18 {
+  -webkit-animation-duration: 1800ms;
+          animation-duration: 1800ms; }
+
+.delay-19 {
+  -webkit-animation-delay: 1900ms;
+          animation-delay: 1900ms; }
+
+.duration-19 {
+  -webkit-animation-duration: 1900ms;
+          animation-duration: 1900ms; }
+
+.delay-20 {
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms; }
+
+.duration-20 {
+  -webkit-animation-duration: 2000ms;
+          animation-duration: 2000ms; }
+
+.delay-21 {
+  -webkit-animation-delay: 2100ms;
+          animation-delay: 2100ms; }
+
+.duration-21 {
+  -webkit-animation-duration: 2100ms;
+          animation-duration: 2100ms; }
+
+.delay-22 {
+  -webkit-animation-delay: 2200ms;
+          animation-delay: 2200ms; }
+
+.duration-22 {
+  -webkit-animation-duration: 2200ms;
+          animation-duration: 2200ms; }
+
+.delay-23 {
+  -webkit-animation-delay: 2300ms;
+          animation-delay: 2300ms; }
+
+.duration-23 {
+  -webkit-animation-duration: 2300ms;
+          animation-duration: 2300ms; }
+
+.delay-24 {
+  -webkit-animation-delay: 2400ms;
+          animation-delay: 2400ms; }
+
+.duration-24 {
+  -webkit-animation-duration: 2400ms;
+          animation-duration: 2400ms; }
+
+.delay-25 {
+  -webkit-animation-delay: 2500ms;
+          animation-delay: 2500ms; }
+
+.duration-25 {
+  -webkit-animation-duration: 2500ms;
+          animation-duration: 2500ms; }
+
+.delay-26 {
+  -webkit-animation-delay: 2600ms;
+          animation-delay: 2600ms; }
+
+.duration-26 {
+  -webkit-animation-duration: 2600ms;
+          animation-duration: 2600ms; }
+
+.delay-27 {
+  -webkit-animation-delay: 2700ms;
+          animation-delay: 2700ms; }
+
+.duration-27 {
+  -webkit-animation-duration: 2700ms;
+          animation-duration: 2700ms; }
+
+.delay-28 {
+  -webkit-animation-delay: 2800ms;
+          animation-delay: 2800ms; }
+
+.duration-28 {
+  -webkit-animation-duration: 2800ms;
+          animation-duration: 2800ms; }
+
+.delay-29 {
+  -webkit-animation-delay: 2900ms;
+          animation-delay: 2900ms; }
+
+.duration-29 {
+  -webkit-animation-duration: 2900ms;
+          animation-duration: 2900ms; }
+
+.delay-30 {
+  -webkit-animation-delay: 3000ms;
+          animation-delay: 3000ms; }
+
+.duration-30 {
+  -webkit-animation-duration: 3000ms;
+          animation-duration: 3000ms; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+body {
+  color: #936c2e;
+  background-color: #f5cda1; }
+
+video {
+  width: 100%;
+  height: auto; }
+
+body.pop-open {
+  position: fixed;
+  width: 100%; }
+
+.wechat-share-hide, .load-before {
+  position: absolute;
+  top: -1000px;
+  left: 0px;
+  display: none;
+  width: 1px;
+  height: 1px; }
+
+.playsound {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 9.0625%;
+  margin: 0 auto;
+  z-index: 99;
+  font-size: 0; }
+  .iphone4 .playsound {
+    width: 7.25%; }
+  .playsound .play {
+    -webkit-animation: second 4s ease;
+            animation: second 4s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+
+.hide {
+  display: none; }
+
+.main, #lab {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  max-width: 640px;
+  overflow: hidden; }
+  .main .page, #lab .page {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+
+h1, h2, h3, p {
+  margin: 0 auto;
+  line-height: 1.6em; }
+
+h1 {
+  font-size: 1.4rem; }
+  @media only screen and (min-width: 321px) and (max-width: 399px) {
+    h1 {
+      font-size: 1.54rem; } }
+  @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+    h1 {
+      font-size: 1.54rem; } }
+  @media only screen and (min-width: 399px) and (max-width: 767px) {
+    h1 {
+      font-size: 1.68rem; } }
+  @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+    h1 {
+      font-size: 1.68rem; } }
+
+h2 {
+  font-size: 1rem; }
+  @media only screen and (min-width: 321px) and (max-width: 399px) {
+    h2 {
+      font-size: 1.1rem; } }
+  @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+    h2 {
+      font-size: 1.1rem; } }
+  @media only screen and (min-width: 399px) and (max-width: 767px) {
+    h2 {
+      font-size: 1.2rem; } }
+  @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+    h2 {
+      font-size: 1.2rem; } }
+  h2.small {
+    font-size: 1rem;
+    font-weight: normal; }
+    @media only screen and (min-width: 321px) and (max-width: 399px) {
+      h2.small {
+        font-size: 1.1rem; } }
+    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+      h2.small {
+        font-size: 1.1rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 767px) {
+      h2.small {
+        font-size: 1.2rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+      h2.small {
+        font-size: 1.2rem; } }
+
+p {
+  font-size: 0.8rem; }
+  @media only screen and (min-width: 321px) and (max-width: 399px) {
+    p {
+      font-size: 0.88rem; } }
+  @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+    p {
+      font-size: 0.88rem; } }
+  @media only screen and (min-width: 399px) and (max-width: 767px) {
+    p {
+      font-size: 0.96rem; } }
+  @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+    p {
+      font-size: 0.96rem; } }
+  p .large {
+    font-size: 1rem; }
+    @media only screen and (min-width: 321px) and (max-width: 399px) {
+      p .large {
+        font-size: 1.1rem; } }
+    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+      p .large {
+        font-size: 1.1rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 767px) {
+      p .large {
+        font-size: 1.2rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+      p .large {
+        font-size: 1.2rem; } }
+
+.btn {
+  display: inline-block;
+  padding: 0.2em 0.8em;
+  background-color: #bc7123;
+  border-radius: 0.6em;
+  color: #fff;
+  cursor: pointer; }
+
+.loading {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: url("../img/loading-bg.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent;
+  z-index: 600; }
+  .loading .text {
+    font-size: 0.8rem;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 30%;
+    left: 0px; }
+    @media only screen and (min-width: 321px) and (max-width: 399px) {
+      .loading .text {
+        font-size: 0.88rem; } }
+    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+      .loading .text {
+        font-size: 0.88rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 767px) {
+      .loading .text {
+        font-size: 0.96rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+      .loading .text {
+        font-size: 0.96rem; } }
+
+.page-animation-enter-active {
+  -webkit-animation: flipInY 1s ease;
+          animation: flipInY 1s ease;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial; }
+
+.page-animation-leave-active {
+  -webkit-animation: flipOutY 1s ease;
+          animation: flipOutY 1s ease;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s; }
+
+.printer-animation-enter-active {
+  -webkit-animation: fadeInUp 1s ease;
+          animation: fadeInUp 1s ease;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial; }
+
+.printer-animation-leave-active {
+  -webkit-animation: fadeOutDown 1s ease;
+          animation: fadeOutDown 1s ease;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial; }
+
+.overpage-animation-enter-active {
+  -webkit-animation: fadeInUp 1s ease;
+          animation: fadeInUp 1s ease;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial; }
+
+.overpage-animation-leave-active {
+  -webkit-animation: fadeOutDown 1s ease;
+          animation: fadeOutDown 1s ease;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial; }
+
+.note-animation-enter-active {
+  -webkit-animation: fadeInUp 1s ease;
+          animation: fadeInUp 1s ease;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial; }
+
+.note-animation-leave-active {
+  -webkit-animation: fadeOutDown 1s ease;
+          animation: fadeOutDown 1s ease;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial; }
+
+#lab {
+  background: url("../img/homepage-bg.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+
+.page {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; }
+
+.lab-start .content {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  width: 90%;
+  text-align: right;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+  color: #bc7123; }
+
+.lab-start h1 {
+  margin-right: -5%;
+  margin-bottom: 0.4em; }
+
+.lab-start .btn {
+  margin-top: 0.8em; }
+
+.lab-questions .page-box {
+  background: url("../img/page.png") no-repeat center center;
+  background-size: contain;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  -webkit-transform-origin: right center;
+          transform-origin: right center; }
+  .lab-questions .page-box.answer-page-1 {
+    z-index: 103; }
+  .lab-questions .page-box.answer-page-2 {
+    z-index: 102; }
+  .lab-questions .page-box.answer-page-3 {
+    z-index: 101; }
+  .lab-questions .page-box .content {
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    overflow: hidden;
+    text-align: center; }
+    .lab-questions .page-box .content h2, .lab-questions .page-box .content p {
+      text-align: center; }
+    .lab-questions .page-box .content .answers {
+      width: 80%;
+      margin: 0 auto; }
+      .lab-questions .page-box .content .answers .answer {
+        font-size: 0.6rem;
+        margin-top: 20px;
+        position: relative; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .lab-questions .page-box .content .answers .answer {
+            font-size: 0.66rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .lab-questions .page-box .content .answers .answer {
+            font-size: 0.66rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .lab-questions .page-box .content .answers .answer {
+            font-size: 0.72rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .lab-questions .page-box .content .answers .answer {
+            font-size: 0.72rem; } }
+        .iphone4 .lab-questions .page-box .content .answers .answer {
+          margin-top: 10px; }
+        .lab-questions .page-box .content .answers .answer .checkbox {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          -webkit-transform: translate3d(0, -50%, 0);
+                  transform: translate3d(0, -50%, 0);
+          display: inline-block;
+          width: 14px;
+          height: 14px;
+          font-size: 0;
+          border: solid 1px #936c2e;
+          vertical-align: top; }
+          .lab-questions .page-box .content .answers .answer .checkbox .right {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 18px;
+            height: 18px;
+            background: url("../img/right.png") no-repeat center center;
+            background-size: cover;
+            background-color: transparent; }
+        .lab-questions .page-box .content .answers .answer .text {
+          display: inline-block;
+          width: 85%;
+          margin-left: 15%;
+          line-height: 1.4em;
+          text-align: left; }
+    .lab-questions .page-box .content .names {
+      text-align: center;
+      margin: 30px 0;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-size: 0.6rem; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .lab-questions .page-box .content .names {
+          font-size: 0.66rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .lab-questions .page-box .content .names {
+          font-size: 0.66rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .lab-questions .page-box .content .names {
+          font-size: 0.72rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .lab-questions .page-box .content .names {
+          font-size: 0.72rem; } }
+      .iphone4 .lab-questions .page-box .content .names {
+        margin-top: 20px; }
+      .lab-questions .page-box .content .names input {
+        border: 0;
+        border-bottom: solid 1px #bc7123;
+        width: 30%;
+        outline: none;
+        border-radius: 0;
+        text-align: center; }
+    .lab-questions .page-box .content .btn {
+      margin: 0 auto;
+      display: inline-block; }
+
+.lab-printer {
+  background: url("../img/bg.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+  .lab-printer .printer-bottom, .lab-printer .printer-bg {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    font-size: 0;
+    z-index: 5; }
+  .lab-printer .printer-bg {
+    z-index: 1; }
+  .lab-printer .printer-page, .lab-printer .over-page, .lab-printer .note-page {
+    position: absolute;
+    bottom: 0;
+    left: 7%;
+    width: 86%;
+    height: 90%;
+    background-color: #fff;
+    text-align: center;
+    z-index: 2;
+    -webkit-box-shadow: 1px 1px 3px #999,-1px -1px 3px #999;
+            box-shadow: 1px 1px 3px #999,-1px -1px 3px #999;
+    color: #615b64; }
+  .lab-printer .printer-page .face {
+    width: 45%;
+    margin: 0 auto;
+    margin-top: 10%; }
+  .lab-printer .printer-page .item {
+    width: 65%;
+    margin: 0 auto;
+    margin-bottom: 5%; }
+  .lab-printer .printer-page h1 {
+    color: #e5bf9c; }
+  .lab-printer .printer-page .arrow-down {
+    width: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    -webkit-animation: fadeOutDown 2s linear;
+            animation: fadeOutDown 2s linear;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+  .lab-printer .over-page .text-for {
+    margin-top: 10%; }
+    .lab-printer .over-page .text-for .nickname {
+      display: inline-block;
+      min-width: 50px;
+      border-bottom: solid 1px #615b64; }
+  .lab-printer .over-page .tips {
+    width: 70%;
+    margin: 10px auto; }
+    .iphone4 .lab-printer .over-page .tips {
+      width: 60%;
+      margin: 6px auto; }
+  .lab-printer .over-page .texts p, .lab-printer .over-page .text-for p {
+    font-size: 0.6rem; }
+    @media only screen and (min-width: 321px) and (max-width: 399px) {
+      .lab-printer .over-page .texts p, .lab-printer .over-page .text-for p {
+        font-size: 0.66rem; } }
+    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+      .lab-printer .over-page .texts p, .lab-printer .over-page .text-for p {
+        font-size: 0.66rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 767px) {
+      .lab-printer .over-page .texts p, .lab-printer .over-page .text-for p {
+        font-size: 0.72rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+      .lab-printer .over-page .texts p, .lab-printer .over-page .text-for p {
+        font-size: 0.72rem; } }
+  .lab-printer .over-page .btn {
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 4px; }
+  .lab-printer .over-page .link {
+    font-size: 0.6rem;
+    color: #aa6a00;
+    text-decoration: underline; }
+    @media only screen and (min-width: 321px) and (max-width: 399px) {
+      .lab-printer .over-page .link {
+        font-size: 0.66rem; } }
+    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+      .lab-printer .over-page .link {
+        font-size: 0.66rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 767px) {
+      .lab-printer .over-page .link {
+        font-size: 0.72rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+      .lab-printer .over-page .link {
+        font-size: 0.72rem; } }
+  .lab-printer .note-page {
+    z-index: 10; }
+    .lab-printer .note-page .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 25px;
+      height: 25px;
+      font-size: 0; }
+    .lab-printer .note-page .note-box {
+      border: dashed 1px #9e5900;
+      width: 70%;
+      margin: 0 auto;
+      padding: 5%;
+      border-radius: 10px;
+      margin-top: 30%; }
+      .lab-printer .note-page .note-box h2 {
+        color: #9e5900;
+        font-size: 1.8rem; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .lab-printer .note-page .note-box h2 {
+            font-size: 1.98rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .lab-printer .note-page .note-box h2 {
+            font-size: 1.98rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .lab-printer .note-page .note-box h2 {
+            font-size: 2.16rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .lab-printer .note-page .note-box h2 {
+            font-size: 2.16rem; } }
+      .lab-printer .note-page .note-box p {
+        color: #9e5900;
+        margin: 5px 0;
+        font-size: 0.8rem;
+        margin-top: 0; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .lab-printer .note-page .note-box p {
+            font-size: 0.88rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .lab-printer .note-page .note-box p {
+            font-size: 0.88rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .lab-printer .note-page .note-box p {
+            font-size: 0.96rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .lab-printer .note-page .note-box p {
+            font-size: 0.96rem; } }
+      .lab-printer .note-page .note-box .btn {
+        font-size: 0.7rem;
+        padding: 10px 10px; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .lab-printer .note-page .note-box .btn {
+            font-size: 0.77rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .lab-printer .note-page .note-box .btn {
+            font-size: 0.77rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .lab-printer .note-page .note-box .btn {
+            font-size: 0.84rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .lab-printer .note-page .note-box .btn {
+            font-size: 0.84rem; } }
+
+.slider {
+  width: 100%;
+  overflow: hidden; }
+  .slider .slider-list {
+    width: 100%;
+    white-space: nowrap;
+    font-size: 0; }
+    .slider .slider-list.slider-0 {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+    .slider .slider-list.slider-1 {
+      -webkit-transform: translate3d(-100%, 0, 0);
+              transform: translate3d(-100%, 0, 0);
+      -webkit-transition: all .5s ease;
+      transition: all .5s ease; }
+    .slider .slider-list.slider-2 {
+      -webkit-transform: translate3d(-200%, 0, 0);
+              transform: translate3d(-200%, 0, 0);
+      -webkit-transition: all .5s ease;
+      transition: all .5s ease; }
+    .slider .slider-list.slider-3 {
+      -webkit-transform: translate3d(-300%, 0, 0);
+              transform: translate3d(-300%, 0, 0);
+      -webkit-transition: all .5s ease;
+      transition: all .5s ease; }
+    .slider .slider-list.slider-4 {
+      -webkit-transform: translate3d(-400%, 0, 0);
+              transform: translate3d(-400%, 0, 0);
+      -webkit-transition: all .5s ease;
+      transition: all .5s ease; }
+    .slider .slider-list .slide {
+      width: 100%;
+      display: inline-block; }

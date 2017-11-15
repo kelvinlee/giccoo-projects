@@ -1,0 +1,330 @@
+@import sass/base
+@import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "http://image.giccoo.com/projects/CX5/"
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+html,body
+	+w
+	+h
+
+body
+	color: #936c2e
+	+bc(#f5cda1)
+video
+	+w
+	+h(auto)
+body.pop-open
+	position: fixed
+	width: 100%
+
+.wechat-share-hide,.load-before
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+	+h(1px)
+
+.playsound
+	+posa
+	+tr(1rem,1rem)
+	+iw(58)
+	z-index: 99
+	font-size: 0
+	.play
+		+animation(second,4s,ease,infinite)
+
+.hide
+	display: none
+
+.main,#lab
+	+w
+	+h
+	+posr
+	max-width: 640px
+	+overhide
+	.page
+		+posr
+		+w
+		+h
+
+h1,h2,h3,p
+	+m
+	line-height: 1.6em
+h1
+	+font-size(1.4rem)
+h2
+	+font-size(1rem)
+	&.small
+		+font-size(1rem)
+		font-weight: normal
+p
+	+font-size(0.8rem)
+	.large
+		+font-size(1rem)
+
+.btn
+	display: inline-block
+	+p(0.2em 0.8em)
+	+bc(#bc7123)
+	border-radius: 0.6em
+	color: #fff
+	cursor: pointer
+
+
+.loading
+	+posa
+	+tl
+	+w
+	+h
+	+b($cdn+"img/loading-bg.jpg",no-repeat,center,center,cover)
+	z-index: 600
+	.text
+		+font-size(0.8rem)
+		color: #fff
+		+text-center
+		+w
+		+posa
+		+bl(30%)
+
+.page-animation-enter-active
+	// transition: all .3s ease
+	+animation(flipInY,1s,ease)
+.page-animation-leave-active
+	// transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+	+animation(flipOutY,1s,ease)
+	animation-delay: .5s
+.page-animation-enter, .page-animation-leave-to
+	// opacity: 0
+
+.printer-animation-enter-active
+	+animation(fadeInUp,1s,ease)
+.printer-animation-leave-active
+	+animation(fadeOutDown,1s,ease)
+.printer-animation-enter, .printer-animation-leave-to
+
+.overpage-animation-enter-active
+	+animation(fadeInUp,1s,ease)
+.overpage-animation-leave-active
+	+animation(fadeOutDown,1s,ease)
+.overpage-animation-enter, .overpage-animation-leave-to
+
+.note-animation-enter-active
+	+animation(fadeInUp,1s,ease)
+.note-animation-leave-active
+	+animation(fadeOutDown,1s,ease)
+.note-animation-enter, .note-animation-leave-to
+
+#lab
+	+b($cdn+"img/homepage-bg.jpg",no-repeat,center,center,cover)
+.page
+	+posa
+	+tl
+	+w
+	+h
+
+.lab-start
+	.content
+		+posa
+		+tr(50%,5%)
+		+w(90%)
+		+text-right
+		+transform(translate3d(0,-50%,0))
+		color: #bc7123
+	h1
+		margin-right: -5%
+		margin-bottom: 0.4em
+	.btn
+		margin-top: 0.8em
+
+.lab-questions
+	.page-box
+		+b($cdn+"img/page.png",no-repeat,center,center,contain)
+		+w
+		+h
+		+posa
+		+tl
+		transform-origin: right center
+		&.answer-page-1
+			z-index: 103
+		&.answer-page-2
+			z-index: 102
+		&.answer-page-3
+			z-index: 101
+		.content
+			+posa
+			+tl(25%,15%)
+			+w(70%)
+			+h(70%)
+			+overhide
+			+text-center
+			h2,p
+				+text-center
+			.answers
+				+w(80%)
+				+m
+				.answer
+					+font-size(0.6rem)
+					margin-top: 20px
+					.iphone4 &
+						margin-top: 10px
+					+posr
+					.checkbox
+						+posa
+						+tl(50%,0)
+						+transform(translate3d(0,-50%,0))
+						display: inline-block
+						+wh(14px,14px)
+						font-size: 0
+						border: solid 1px #936c2e
+						vertical-align: top
+						// float: left
+						.right
+							+posa
+							+tr(-4px,-4px)
+							+wh(18px,18px)
+							+b($cdn+"img/right.png",no-repeat,center,center,cover)
+					.text
+						display: inline-block
+						+w(85%)
+						margin-left: 15%
+						line-height: 1.4em
+						+text-left
+			.names
+				+text-center
+				+m(30px 0)
+				margin-top: 40px
+				margin-bottom: 20px
+				+font-size(0.6rem)
+				.iphone4 &
+					margin-top: 20px
+
+				input
+					border: 0
+					border-bottom: solid 1px #bc7123
+					+w(30%)
+					outline: none
+					border-radius: 0
+					+text-center
+			.btn
+				+m
+				display: inline-block
+
+
+.lab-printer
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)	
+	.printer-bottom,.printer-bg
+		+posa
+		+bl
+		+w
+		font-size: 0
+		z-index: 5
+	.printer-bg
+		z-index: 1
+	.printer-page,.over-page,.note-page
+		+posa
+		+bl(0,7%)
+		+w(86%)
+		+h(90%)
+		+bc(#fff)
+		+text-center
+		z-index: 2
+		box-shadow: 1px 1px 3px #999,-1px -1px 3px #999
+		color: #615b64
+	.printer-page
+		.face
+			+w(45%)
+			+m
+			margin-top: 10%
+		.item
+			+w(65%)
+			+m
+			margin-bottom: 5%
+		h1
+			color: #e5bf9c
+		.arrow-down
+			+w(20px)
+			+m
+			margin-top: 20px
+			+animation(fadeOutDown,2s,linear,infinite)
+	.over-page
+		.text-for
+			margin-top: 10%
+			.nickname
+				display: inline-block
+				min-width: 50px
+				border-bottom: solid 1px #615b64
+		.tips
+			+w(70%)
+			+m(10px auto)
+			.iphone4 &
+				+w(60%)
+				+m(6px auto)
+		.texts,.text-for
+			p
+				+font-size(0.6rem)
+		.btn
+			// +m(10px auto)
+			+m
+			margin-top: 10px
+			margin-bottom: 4px
+		.link
+			+font-size(0.6rem)
+			color: #aa6a00
+			text-decoration: underline
+
+	.note-page
+		z-index: 10
+		// +hide
+		.close
+			+posa
+			+tr(10px,10px)
+			+wh(25px,25px)
+			font-size: 0
+		.note-box
+			border: dashed 1px #9e5900
+			+w(70%)
+			+m
+			+p(5%)
+			border-radius: 10px
+			margin-top: 30%
+			h2
+				color: #9e5900
+				+font-size(1.8rem)
+			p
+				color: #9e5900
+				+m(5px 0)
+				+font-size(0.8rem)
+				margin-top: 0
+			.btn
+				+font-size(0.7rem)
+				+p(10px 10px)
+
+.slider
+	+w
+	+overhide
+	.slider-list
+		+w
+		white-space: nowrap
+		font-size: 0
+		&.slider-0
+			+transform(translate3d(0,0,0))
+		@for $i from 1 through 4
+			&.slider-#{$i}
+				+transform(translate3d(-100%*$i,0,0))
+				transition: all .5s ease
+			
+		.slide
+			+w
+			display: inline-block
+
