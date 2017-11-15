@@ -34,12 +34,11 @@ var loadWechatConfig = function() {
 };
 //========总
 
-// var container=$('body')
-// TweenMax.set(container, {perspective:50,"-webkit-perspective": 50,"-webkit-transform-style":"preserve-3d","transform-style":"preserve-3d"})
+
 var p1picA=[$("#p1pic1"),$("#p1pic2"),$("#p1pic3"),$("#p1pic4"),$("#p1pic5"),$("#p1pic6"),$("#p1pic7")];
 
 
-//======================loading动画
+
 var loadNum=0.0
 var setInt= window.setInterval(function(){
   $("#loadingNum").text(parseInt(loadNum));
@@ -51,7 +50,10 @@ var doorBG=$("#fdoor")
 var doorW//门背景宽
 var doorH//门背景高
 
+var ifLR//判断左右动画还是上下动画
+var nowPage=0
 
+//======================loading动画
 function loading(){
 
   TweenLite.from($("#loadingBG"),.5,{opacity:0,delay:.5})
@@ -66,9 +68,9 @@ function loading(){
 
   TweenLite.to($("#loading1"),10,{rotation:1440,delay:2,x:"-50%",y:"-50%"})
   TweenLite.to($("#loading2"),10,{rotation:-360,delay:2,x:"-50%",y:"-50%"})
-  TweenLite.to($("#loading3"),10,{rotation:360,delay:2,x:"-50%",y:"-50%",rotationY:2000})
+  TweenLite.to($("#loading3"),10,{rotation:360,delay:2,x:"-50%",y:"-50%"})
 
- TweenLite.to(this,10,{loadNum:300,delay:2,onComplete:loadingFinish})//<===========改这里
+ TweenLite.to(this,1,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
  
 }
 
@@ -92,12 +94,12 @@ function page1in(){
   for (var i = 0; i < p1picA.length; i++) {
     if(i==0||i==1||i==5||i==6){
       TweenLite.set(p1picA[i],{scale:1,opacity:0,x:"+=180",y:"+=180",rotationX:180,rotationY:180,z:1500,overwrite:0})
-      TweenLite.to(p1picA[i],5.5,{scale:1,opacity:1,x:"-=180",y:"-=180",rotationX:0,rotationY:0,z:0,delay:.15*i,ease:Expo.easeOut})
+      TweenLite.to(p1picA[i],1.5,{scale:1,opacity:1,x:"-=180",y:"-=180",rotationX:0,rotationY:0,z:0,delay:.15*i,ease:Expo.easeOut})
     }else{
       //TweenLite.set(p1picA[i],{opacity:0,x:"-=180"})
       TweenLite.set(p1picA[i],{scale:1,opacity:0,x:"-=180",y:"-=180",rotationX:180,rotationY:180,z:1500,overwrite:0})
       //TweenLite.to(p1picA[i],1.5,{opacity:1,x:"+=180",delay:.15*i,ease:Expo.easeOut})
-      TweenLite.to(p1picA[i],5.5,{scale:1,opacity:1,x:"+=180",y:"+=180",rotationX:0,rotationY:0,z:0,delay:.15*i,ease:Expo.easeOut})
+      TweenLite.to(p1picA[i],1.5,{scale:1,opacity:1,x:"+=180",y:"+=180",rotationX:0,rotationY:0,z:0,delay:.15*i,ease:Expo.easeOut})
     }
   };
   TweenLite.set($("#p1pic8"),{opacity:1})
@@ -162,16 +164,19 @@ $("#page1").click(function(){
   //屏幕自适应
   screenW=document.body.offsetWidth 
   screenH=document.body.offsetHeight
-  if(screenW/screenH>=1234/2198){
+  if(screenW/screenH>=1234/2198){//胖屏幕，bg上下超出
 
     doorW=screenW
     doorH=screenW/1234*2198
+    ifLR=1
+    TweenLite.set(doorBG,{y:0})
 
-  }else{
+  }else{//瘦屏幕，bg左右超出
 
     doorW=screenH/2198*1234
     doorH=screenH
-
+    ifLR=0
+    TweenLite.set(doorBG,{x:screenW-doorW})
   }
 
   doorBG.css({width:doorW,height:doorH})
@@ -181,7 +186,60 @@ $("#page1").click(function(){
 })
 
 //===============门口动画 page2
+function page2in(){
+  if(ifLR==1){//上下超出，上下移动
+    TweenLite.set(doorBG,{y:screenH-doorH,onComplete:showZoomBtn})
+    TweenLite.from(doorBG,3,{y:0})
+  }else{
+    TweenLite.set(doorBG,{x:0})
+    TweenLite.from(doorBG,3,{x:screenW-doorW,onComplete:showZoomBtn})
+  }
 
+
+}
+
+function page2zoomIn(){
+  nowPage=1
+  //alert("zoomIn")
+}
+
+//===============放大按钮动画=========
+function showZoomBtn(){
+  TweenLite.set($('#zoom'),{display:"block"})
+  TweenLite.from($('#zoom'),1,{opacity:0})
+
+  TweenLite.set($('#arrowL'),{opacity:0,x:"-=0",y:"-=0"})
+  TweenLite.set($('#OL'),    {opacity:0,x:"-=0",y:"-=0"})
+  TweenLite.set($('#arrowR'),{opacity:0,x:"+=0",y:"+=0"})
+  TweenLite.set($('#OR'),    {opacity:0,x:"+=0",y:"+=0"})
+  zoomAni1()
+}
+
+function zoomAni1(){
+
+
+  TweenLite.to($('#arrowL'),1,{opacity:1,x:"-=20",y:"+=15",rotation:"+=0"  ,ease:Expo.easeOut})
+  TweenLite.to($('#OL'),    1,{opacity:1,x:"-=20",y:"+=15",rotation:"+=180"})
+  TweenLite.to($('#arrowR'),1,{opacity:1,x:"+=20",y:"-=15",rotation:"+=0"  ,ease:Expo.easeOut,onComplete:zoomAni2})
+  TweenLite.to($('#OR'),    1,{opacity:1,x:"+=20",y:"-=15",rotation:"+=180"})
+}
+
+function zoomAni2(){
+
+  TweenLite.to($('#arrowL'),1,{opacity:0,x:"-=20",y:"+=15",rotation:"+=0"  ,ease:Cubic.easeOut})
+  TweenLite.to($('#OL'),    1,{opacity:0,x:"-=20",y:"+=15",rotation:"+=180"})
+  TweenLite.to($('#arrowR'),1,{opacity:0,x:"+=20",y:"-=15",rotation:"+=0"  ,ease:Cubic.easeOut,onComplete:zoomAni3})
+  TweenLite.to($('#OR'),    1,{opacity:0,x:"+=20",y:"-=15",rotation:"+=180"})
+}
+
+function zoomAni3(){
+  TweenLite.to($('#arrowL'),0.1,{opacity:0,x:"+=40",y:"-=30"})
+  TweenLite.to($('#OL'),    0.1,{opacity:0,x:"+=40",y:"-=30"})
+  TweenLite.to($('#arrowR'),0.1,{opacity:0,x:"-=40",y:"+=30",onComplete:zoomAni1})
+  TweenLite.to($('#OR'),    0.1,{opacity:0,x:"-=40",y:"+=30"})
+}
+
+//===============放大手势============
     var touchstartevent = [];
     var toucholdevent = [];
     //window.hinthide = false;
@@ -204,9 +262,11 @@ $("#page1").click(function(){
     }).on('touchend', function (e) {
       if (!touchstartevent[0].pageY) return;
       if (lengthFun(toucholdevent) - lengthFun(touchstartevent) > 100 ) {
-        //window.gameEnd = true;
-        //stage.children[0].play();
-        alert("zoomIn")
+        //alert("zoomIn")
+        if (nowPage==0) {
+          page2zoomIn()
+        };
+
       }
       touchstartevent = [{}, {}];
       toucholdevent = [{}, {}];
@@ -215,11 +275,12 @@ $("#page1").click(function(){
       return Math.sqrt((e[0].pageX - e[1].pageX) * (e[0].pageX - e[1].pageX) + (e[0].pageY - e[1].pageY) * (e[0].pageY - e[1].pageY));
     }
 
+    $('#page2').click(function(){
+      page2zoomIn()
+    });
 
 
-function page2in(){
-  
-}
+
   
 
 
