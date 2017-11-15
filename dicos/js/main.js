@@ -34,8 +34,8 @@ var loadWechatConfig = function() {
 };
 //========总
 
-var container=$('body')
-TweenMax.set(container, {perspective:50,"-webkit-perspective": 50,"-webkit-transform-style":"preserve-3d","transform-style":"preserve-3d"})
+// var container=$('body')
+// TweenMax.set(container, {perspective:50,"-webkit-perspective": 50,"-webkit-transform-style":"preserve-3d","transform-style":"preserve-3d"})
 var p1picA=[$("#p1pic1"),$("#p1pic2"),$("#p1pic3"),$("#p1pic4"),$("#p1pic5"),$("#p1pic6"),$("#p1pic7")];
 
 
