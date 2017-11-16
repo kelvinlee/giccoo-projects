@@ -79,7 +79,7 @@ Vue.component("slider", {
   }
 });
 
-apiURL = "api.giccoo.com:8881";
+apiURL = "api.giccoo.com";
 
 load = {};
 
