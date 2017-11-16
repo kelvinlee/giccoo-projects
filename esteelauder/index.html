@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" xmlns:wb="http://open.weibo.com/wb" class="no-js">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -11,7 +11,7 @@
   </head>
   <body>
     <div id="load" v-if="!loadend" class="loading">
-      <div class="text">Loading...{{animatedNumber}}</div>
+      <div class="text">Loading...{{animatedNumber}}%</div>
     </div>
     <div class="main">
       <div id="lab">
@@ -20,8 +20,8 @@
             <h2 class="small fadeInRight animated duration-10">雅诗兰黛</h2>
             <h1 class="fadeInRight animated duration-10 delay-2">「美肌万能研究室」</h1>
             <p class="large fadeInRight animated duration-10 delay-4">你是我们精心选中的贵宾</p>
-            <p class="large fadeInRight animated duration-10 delay-6">来这里，开启你肌肤奥秘的探索</p>
-            <div @click.prevent.stop="startPrinterFun" class="btn fadeInRight animated duration-10 delay-8">即刻开启</div>
+            <p class="large fadeInRight animated duration-10 delay-8">来这里，开启你肌肤奥秘的探索</p>
+            <div @click.prevent.stop="startGo" class="btn fadeInRight animated duration-10 delay-12">即刻开启</div>
           </div>
         </div>
         <div v-show="startquestion" class="page lab-questions fadeIn animated">
@@ -39,7 +39,7 @@
                   </div>
                 </div>
                 <div v-if="answerFinished &amp;&amp; index==2" class="names fadeInLeft animated"><span>最后，我们怎么称呼您？</span>
-                  <input v-modal="nickname">
+                  <input v-model="nickname">
                 </div>
                 <div v-if="answerFinished &amp;&amp; index==2" @click.prevent.stop="startPrinterFun" class="btn small fadeInRight animated">提交查看你的肌密</div>
               </div>
@@ -83,6 +83,17 @@
             </div>
           </transition>
           <transition name="note-animation">
+            <div id="note-page" v-show="shownote" class="note-page">
+              <div @click.prevent.stop="closenote" class="close"><img :src="'./img/close.png'"></div>
+              <div class="note-box">
+                <p>活动规则</p>
+                <p>1.活动时间：2017年11月17日——2017年11月30日</p>
+                <p>2.根据页面提示参与测试，并晒出为你的“万能美肌贴士”截图至微博并@雅诗兰黛，我们将随机抽取幸运粉丝获得万能面霜正装1份</p>
+                <p>3.雅诗兰黛多效智妍精华霜正装（一人一份，共10份）</p>
+              </div>
+            </div>
+          </transition>
+          <transition name="note-animation">
             <div id="note-page" v-show="sharesuccess" class="note-page">
               <div @click.prevent.stop="closeshare" class="close"><img :src="'./img/close.png'"></div>
               <div class="note-box">
@@ -95,7 +106,7 @@
         </div>
       </div>
     </div>
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1605288503" charset="utf-8"></script>
     <script src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js"></script>
     <script src="http://image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
     <script src="http://image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
