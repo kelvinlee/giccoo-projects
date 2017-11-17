@@ -1,20 +1,41 @@
 # @codekit-prepend "coffee/css3Prefix"
 
 Vue.component "slider",
-	template: '<div><div class="slider-list" :class="\'slider-\'+now"><slot/><slot/></div></div>'
+	template: '<div><div class="slider-list" v-bind:style="{transform: \'translate3d(\'+x+\'px,0,0)\',transitionDuration: duration+\'s\'}" ><slot/></div></div>'
 	data: ->
 		return
+			root: null
 			moving: false
 			timeout: null
 			now: 0
 			max: 2
 			time: 3000
 			delay: 3000
+			duration: 0
+			offset:
+				resistance: 1
+				lastSlide: 1
+				scrollableArea: 320
+				isScrolling: false
+				lastw: 0
+				w: 320
+				x: 0
+				y: 0
+				deltaX: 0
+				deltaY: 0
+			slideNumber: 0
+			move: false
+			startTime: 0
+			x: 0
+			y: 0
 	props: ['overpage']
 	watch:
 		overpage: (newV,oldV)->
 			# console.log(newV,oldV)
 			@start() if newV
+	# computed:
+	# 	color: ->
+	# 		return "#f2f2f2"
 	methods:
 		start: ->
 			@stopAll()
@@ -25,6 +46,7 @@ Vue.component "slider",
 			# console.log "move to next"
 			@stopAll()
 			if @now >= @max
+				@animationEnd()
 				return false
 				@now = 0
 				@timeout = setTimeout =>
@@ -32,17 +54,64 @@ Vue.component "slider",
 				,10
 				return false
 			else
+				@offset.w = @$el.offsetWidth
+				@duration = 0.5
 				@now = @now+1
+				@x = - (@now * @offset.w)
+				@setSlideNumber 0
 			@timeout = setTimeout =>
 				@moveNext()
 			,@time
 		stopAll: ->
 			clearTimeout @timeout
+		setSlideNumber: (offset) ->
+			# if @moved
+			round = if offset then (if @offset.deltaX < 0 then 'ceil' else 'floor') else 'round'
+			slideNumber = Math[round](@x / (@offset.scrollableArea / @list.length))
+			slideNumber += offset
+			slideNumber = Math.min(slideNumber, 0)
+			@slideNumber = Math.max(-(@list.length - 1), slideNumber) % @list.length
+			# console.log @slideNumber
+		touchstart: (evt)->
+			touch = evt.touches[0]
+			@duration = 0
+			@moved = false
+			@startTime = +new Date
+			@offset.w = @$el.offsetWidth
+			@offset.x = touch.pageX
+			@offset.y = touch.pageY
+			@offset.lastw = @x
+			@offset.lastSlide = -(@list.length - 1)
+			@offset.scrollableArea = @offset.w * @list.length
+			@setSlideNumber 0
+			# console.log @offset
+		touchmove: (evt)->
+			touch = evt.touches[0]
+			@offset.deltaX = touch.pageX - @offset.x
+			pageX = touch.pageX
+
+			@x = @offset.deltaX / @offset.resistance + @offset.lastw
+			@offset.resistance = if @slideNumber == 0 and @offset.deltaX > 0 then pageX / @offset.w + 1.25 else if @slideNumber == @offset.lastSlide and @offset.deltaX < 0 then (@offset.w - Math.abs(pageX)) / @offset.w + 1.25 else 1
+
+			# console.log touch.pageX,@offset.x,pageX,@offset.deltaX,@offset.resistance,@offset.lastw
+			@moved = true
+		touchend: (evt)->
+			if @moved
+				oldslideNumber = @slideNumber
+				@setSlideNumber if +new Date - (@startTime) < 1000 and Math.abs(@offset.deltaX) > 15 then (if @offset.deltaX < 0 then -1 else 1) else 0
+				@x = @slideNumber * @offset.w
+				@duration = 0.2
+				if @slideNumber == 0 and oldslideNumber == -(@list.length - 1)
+					@x = (oldslideNumber - 1) * @offset.w
+				if oldslideNumber == 0 and @slideNumber == -(@list.length - 1)
+					@x = 1 * @offset.w
+		animationEnd: ->
+			@$el.addEventListener 'touchstart',@touchstart.bind @
+			@$el.addEventListener 'touchmove',@touchmove.bind @
+			@$el.addEventListener 'touchend',@touchend.bind @
 	mounted: (el)->
-		# console.log this.moving,this.moveNext()
-		# @timeout = setTimeout =>
-		# 	@moveNext()
-		# ,@time
+		@list = @$el.children[0].children
+
 apiURL = "api.giccoo.com"
 load = {}
 lab = {}
@@ -116,6 +185,7 @@ window.onload = ->
 					,100
 		mounted: ->
 			this.number = 15
+			console.log @,@$el
 			ask()
 
 initLab = ->

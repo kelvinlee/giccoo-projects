@@ -19,7 +19,7 @@ block css
 
 block content
 	- url = "http://image.giccoo.com/projects/friso-island/"
-	- url = "./"
+	//- - url = "./"
 
 	#load.loading(v-if="!loadend")
 		.ball-spin-fade-loader
@@ -28,7 +28,7 @@ block content
 	#main.main(style="display: none")
 		#navbar
 			.logo(@click.prevent.stop="backNormal")
-				img(src="./img/logo.png")
+				img(src="#{url}img/logo.png")
 			.stars.fadeIn.animated(v-show="show")
 				.star(v-for="star in stars",:class="{on:star}")
 					img(:src="'./img/star-'+(star?'on':'off')+'.png'")
@@ -37,16 +37,16 @@ block content
 			.island-list
 				-for (var i = 1; i < 6; i++)
 					.planet.blur(class="planet-#{i}")
-						img(src="./img/planet-#{i}.png")
+						img(src="#{url}img/planet-#{i}.png")
 			.texts.fadeIn.animated
 				.bg-box.fadeIn.animated.delay-24.duration-10
 				.content
 					.title
-						img(src="./img/planet-title.png")
+						img(src="#{url}img/planet-title.png")
 					.text-list
 						p.fadeInUp.animated.duration-10(v-for="(text,index) in texts",:class="'delay-'+index*3") {{text}}
 				.btn-start.fadeIn.animated.delay-26.duration-10(@click.prevent.stop="getStart")
-					img(src="./img/btn-start.png")
+					img(src="#{url}img/btn-start.png")
 
 		#planet-page(:class="{show: show,opened: opened,blur: blur}")
 			.page-planets
@@ -54,7 +54,7 @@ block content
 				transition(name="planet-note")
 					.planets-note(v-if="shownote")
 						.btn-start-control(@click.prevent.stop="startG")
-							img(src="./img/btn-start-control.png")
+							img(src="#{url}img/btn-start-control.png")
 						.texts
 							p.fadeInUp.animated.delay-2 点击探索星球后移动手机屏幕来探索   
 							p.fadeInUp.animated.delay-4 每完成一个探索，即获得一枚北鼻勋章。
@@ -67,7 +67,7 @@ block content
 						.answers#answers(:class="{moving: moving, movend: !moving}")
 							.question.fadeInUp.animated
 								.avatar
-									img(src="./img/avatar-baby.jpg")
+									img(src="#{url}img/avatar-baby.jpg")
 									.mark
 								.answer-text
 									span {{planet.question}}
@@ -79,17 +79,17 @@ block content
 									span {{item.author}}
 									p {{item.answer}}
 					.btn-goon.fadeIn.animated.duration-10.delay-10(@click.prevent.stop="keepgoing")
-						img(src="./img/btn-goon.png")
+						img(src="#{url}img/btn-goon.png")
 
 		#planet-last-page.fadeIn.animated(v-show="opened",style="display: none")
 			.title.tada.animated.duration-10.delay-4
-				img(src="./img/lastpage-title.png")
+				img(src="#{url}img/lastpage-title.png")
 			.island.tada.animated.duration-10.delay-6
-				img(src="./img/planet-2.png")
+				img(src="#{url}img/planet-2.png")
 			.texts.tada.animated.duration-10.delay-8
-				img(src="./img/lastpage-text.png")
+				img(src="#{url}img/lastpage-text.png")
 			.btn.tada.animated.duration-10.delay-10
-				img(src="./img/btn-end.png")
+				img(src="#{url}img/btn-end.png")
 				a.btn-left(href="https://www.zhihu.com/org/frisomei-su-jia-er-63") &nbsp;
 				a.btn-right(href="https://tb.cn/EaTKhaw") &nbsp;
 

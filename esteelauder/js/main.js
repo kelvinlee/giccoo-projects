@@ -36,15 +36,34 @@ if (css3Prefix) {
 
 // @codekit-prepend "coffee/css3Prefix"
 Vue.component("slider", {
-  template: '<div><div class="slider-list" :class="\'slider-\'+now"><slot/><slot/></div></div>',
+  template: '<div><div class="slider-list" v-bind:style="{transform: \'translate3d(\'+x+\'px,0,0)\',transitionDuration: duration+\'s\'}" ><slot/></div></div>',
   data: function data() {
     return {
+      root: null,
       moving: false,
       timeout: null,
       now: 0,
       max: 2,
       time: 3000,
-      delay: 3000
+      delay: 3000,
+      duration: 0,
+      offset: {
+        resistance: 1,
+        lastSlide: 1,
+        scrollableArea: 320,
+        isScrolling: false,
+        lastw: 0,
+        w: 320,
+        x: 0,
+        y: 0,
+        deltaX: 0,
+        deltaY: 0
+      },
+      slideNumber: 0,
+      move: false,
+      startTime: 0,
+      x: 0,
+      y: 0
     };
   },
   props: ['overpage'],
@@ -56,6 +75,9 @@ Vue.component("slider", {
       }
     }
   },
+  // computed:
+  // 	color: ->
+  // 		return "#f2f2f2"
   methods: {
     start: function start() {
       var _this = this;
@@ -71,6 +93,7 @@ Vue.component("slider", {
       // console.log "move to next"
       this.stopAll();
       if (this.now >= this.max) {
+        this.animationEnd();
         return false;
         this.now = 0;
         this.timeout = setTimeout(function () {
@@ -78,7 +101,11 @@ Vue.component("slider", {
         }, 10);
         return false;
       } else {
+        this.offset.w = this.$el.offsetWidth;
+        this.duration = 0.5;
         this.now = this.now + 1;
+        this.x = -(this.now * this.offset.w);
+        this.setSlideNumber(0);
       }
       return this.timeout = setTimeout(function () {
         return _this2.moveNext();
@@ -86,15 +113,68 @@ Vue.component("slider", {
     },
     stopAll: function stopAll() {
       return clearTimeout(this.timeout);
+    },
+    setSlideNumber: function setSlideNumber(offset) {
+      var round, slideNumber;
+      // if @moved
+      round = offset ? this.offset.deltaX < 0 ? 'ceil' : 'floor' : 'round';
+      slideNumber = Math[round](this.x / (this.offset.scrollableArea / this.list.length));
+      slideNumber += offset;
+      slideNumber = Math.min(slideNumber, 0);
+      return this.slideNumber = Math.max(-(this.list.length - 1), slideNumber) % this.list.length;
+    },
+    // console.log @slideNumber
+    touchstart: function touchstart(evt) {
+      var touch;
+      touch = evt.touches[0];
+      this.duration = 0;
+      this.moved = false;
+      this.startTime = +new Date();
+      this.offset.w = this.$el.offsetWidth;
+      this.offset.x = touch.pageX;
+      this.offset.y = touch.pageY;
+      this.offset.lastw = this.x;
+      this.offset.lastSlide = -(this.list.length - 1);
+      this.offset.scrollableArea = this.offset.w * this.list.length;
+      return this.setSlideNumber(0);
+    },
+    // console.log @offset
+    touchmove: function touchmove(evt) {
+      var pageX, touch;
+      touch = evt.touches[0];
+      this.offset.deltaX = touch.pageX - this.offset.x;
+      pageX = touch.pageX;
+      this.x = this.offset.deltaX / this.offset.resistance + this.offset.lastw;
+      this.offset.resistance = this.slideNumber === 0 && this.offset.deltaX > 0 ? pageX / this.offset.w + 1.25 : this.slideNumber === this.offset.lastSlide && this.offset.deltaX < 0 ? (this.offset.w - Math.abs(pageX)) / this.offset.w + 1.25 : 1;
+      // console.log touch.pageX,@offset.x,pageX,@offset.deltaX,@offset.resistance,@offset.lastw
+      return this.moved = true;
+    },
+    touchend: function touchend(evt) {
+      var oldslideNumber;
+      if (this.moved) {
+        oldslideNumber = this.slideNumber;
+        this.setSlideNumber(+new Date() - this.startTime < 1000 && Math.abs(this.offset.deltaX) > 15 ? this.offset.deltaX < 0 ? -1 : 1 : 0);
+        this.x = this.slideNumber * this.offset.w;
+        this.duration = 0.2;
+        if (this.slideNumber === 0 && oldslideNumber === -(this.list.length - 1)) {
+          this.x = (oldslideNumber - 1) * this.offset.w;
+        }
+        if (oldslideNumber === 0 && this.slideNumber === -(this.list.length - 1)) {
+          return this.x = 1 * this.offset.w;
+        }
+      }
+    },
+    animationEnd: function animationEnd() {
+      this.$el.addEventListener('touchstart', this.touchstart.bind(this));
+      this.$el.addEventListener('touchmove', this.touchmove.bind(this));
+      return this.$el.addEventListener('touchend', this.touchend.bind(this));
     }
   },
-  mounted: function mounted(el) {}
+  mounted: function mounted(el) {
+    return this.list = this.$el.children[0].children;
+  }
 });
 
-// console.log this.moving,this.moveNext()
-// @timeout = setTimeout =>
-// 	@moveNext()
-// ,@time
 apiURL = "api.giccoo.com";
 
 load = {};
@@ -232,6 +312,7 @@ window.onload = function () {
     },
     mounted: function mounted() {
       this.number = 15;
+      console.log(this, this.$el);
       return ask();
     }
   });
