@@ -57,18 +57,18 @@
           </transition>
         </div>
         <div v-if="startprinter" class="page lab-printer">
-          <div class="printer-bottom"><img :src="'./img/printer-bottom.png'"></div>
-          <div class="printer-bg"><img :src="'./img/printer-bg.png'"></div>
+          <div class="printer-bottom"><img :src="'http://image.giccoo.com/projects/esteelauder/img/printer-bottom.png'"></div>
+          <div class="printer-bg"><img :src="'http://image.giccoo.com/projects/esteelauder/img/printer-bg.png'"></div>
           <transition name="printer-animation">
             <div id="printer-page" v-show="printerover" v-touch="gotoProFun" class="printer-page fadeInUp animated duration-20">
-              <div class="face fadeIn aniamted delay-3"><img :src="'./img/face.jpg'"></div>
-              <div class="item fadeIn aniamted delay-5"><img :src="'./img/line-'+score.join('-')+'.jpg'"></div>
+              <div class="face fadeIn aniamted delay-3"><img :src="'http://image.giccoo.com/projects/esteelauder/img/face.jpg'"></div>
+              <div class="item fadeIn aniamted delay-5"><img :src="'http://image.giccoo.com/projects/esteelauder/img/line-'+score.join('-')+'.jpg'"></div>
               <div class="texts">
                 <p class="fadeInUp aniamted delay-7">整体报告显示你拥有</p>
                 <h1 class="fadeInUp aniamted delay-9">{{printer.title}}</h1>
                 <p class="fadeInUp aniamted delay-11">{{printer.description}}</p>
                 <p class="fadeInUp aniamted delay-13">想还原完美肌肤吗？下滑有妙招！</p>
-                <div @click="gotoProFun" class="icon arrow-down fadeInUp aniamted delay-15"><img :src="'./img/arrow-down.png'"></div>
+                <div @click="gotoProFun" class="icon arrow-down fadeInUp aniamted delay-15"><img :src="'http://image.giccoo.com/projects/esteelauder/img/arrow-down.png'"></div>
               </div>
             </div>
           </transition>
@@ -80,9 +80,9 @@
               </div>
               <div class="tips">
                 <slider id="slider" :overpage="overpage" class="slider">
-                  <div class="slide"><img :src="'./img/product-1.jpg'"></div>
-                  <div class="slide"><img :src="'./img/product-2.jpg'"></div>
-                  <div class="slide"><img :src="'./img/product-3.jpg'"></div>
+                  <div class="slide"><img :src="'http://image.giccoo.com/projects/esteelauder/img/product-1.jpg'"></div>
+                  <div class="slide"><img :src="'http://image.giccoo.com/projects/esteelauder/img/product-2.jpg'"></div>
+                  <div class="slide"><img :src="'http://image.giccoo.com/projects/esteelauder/img/product-3.jpg'"></div>
                 </slider>
               </div>
               <div class="texts">
@@ -94,7 +94,7 @@
           </transition>
           <transition name="note-animation">
             <div id="note-page" v-show="shownote" class="note-page">
-              <div @click.prevent.stop="closenote" class="close"><img :src="'./img/close.png'"></div>
+              <div @click.prevent.stop="closenote" class="close"><img :src="'http://image.giccoo.com/projects/esteelauder/img/close.png'"></div>
               <div class="note-box">
                 <p>活动规则</p>
                 <p>1.活动时间：2017年11月17日——2017年11月30日</p>
@@ -105,7 +105,7 @@
           </transition>
           <transition name="note-animation">
             <div id="note-page" v-show="sharesuccess" class="note-page">
-              <div @click.prevent.stop="closeshare" class="close"><img :src="'./img/close.png'"></div>
+              <div @click.prevent.stop="closeshare" class="close"><img :src="'http://image.giccoo.com/projects/esteelauder/img/close.png'"></div>
               <div class="note-box">
                 <h2>报告分享成功</h2>
                 <p>请关注官方微博后续开奖结果</p>
