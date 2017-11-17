@@ -351,9 +351,12 @@ initLab = function initLab() {
         this.started = false;
         return this.startquestion = true;
       },
-      selecteFun: function selecteFun(answer, index) {
+      selecteFun: function selecteFun(answer, indexP, index) {
+        console.log(indexP, this.answer);
         if (this.waiting || this.answerFinished || this.answer === 3) {
-          // console.log answer
+          return false;
+        }
+        if (indexP !== this.answer) {
           return false;
         }
         // console.log @answer

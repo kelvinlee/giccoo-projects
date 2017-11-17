@@ -27,11 +27,13 @@
       <div id="lab">
         <div v-show="started" class="page lab-start">
           <div class="content">
-            <h2 class="small fadeInRight animated duration-10">雅诗兰黛</h2>
-            <h1 class="fadeInRight animated duration-10 delay-2">「美肌万能研究室」</h1>
-            <p class="large fadeInRight animated duration-10 delay-4">你是我们精心选中的贵宾</p>
-            <p class="large fadeInRight animated duration-10 delay-8">来这里，开启你肌肤奥秘的探索</p>
-            <div @click.prevent.stop="startGo" class="btn fadeInRight animated duration-10 delay-12">即刻开启</div>
+            <div class="box fadeInRight animated duration-10">
+              <h2 class="small">雅诗兰黛</h2>
+              <h1>「美肌万能研究室」</h1>
+              <p class="large">你是我们精心选中的贵宾</p>
+              <p class="large">来这里，开启你肌肤奥秘的探索</p>
+              <div @click.prevent.stop="startGo" class="btn">即刻开启</div>
+            </div>
           </div>
         </div>
         <div v-show="startquestion" class="page lab-questions fadeIn animated">
@@ -41,7 +43,7 @@
                 <h2>我们总有「这样就够了」的时刻</h2>
                 <p>以下哪种情况最符合你？</p>
                 <div class="answers">
-                  <div v-for="answer,index in answers" @click.prevent.stop="selecteFun(answer,index)" :class="'delay-'+index*2" class="answer fadeInRight animated">
+                  <div v-for="answer,indexi in answers" @click.prevent.stop="selecteFun(answer,index,indexi)" class="answer fadeIn animated">
                     <div class="checkbox">
                       <div v-if="answer.selected" class="right"></div>
                     </div>
@@ -51,7 +53,7 @@
                 <div v-if="answerFinished &amp;&amp; index==2" class="names fadeInLeft animated"><span>最后，我们怎么称呼您？</span>
                   <input v-model="nickname">
                 </div>
-                <div v-if="answerFinished &amp;&amp; index==2" @click.prevent.stop="startPrinterFun" class="btn small fadeInRight animated">提交查看你的肌密</div>
+                <div v-if="answerFinished &amp;&amp; index==2" @click.prevent.stop="startPrinterFun" class="btn small fadeInRight animated">提交查看你的肌密报告</div>
               </div>
             </div>
           </transition>

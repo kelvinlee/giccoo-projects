@@ -25,11 +25,12 @@ block content
 		#lab
 			.page.lab-start(v-show="started")
 				.content
-					h2.small.fadeInRight.animated.duration-10 雅诗兰黛
-					h1.fadeInRight.animated.duration-10.delay-2 「美肌万能研究室」
-					p.large.fadeInRight.animated.duration-10.delay-4 你是我们精心选中的贵宾
-					p.large.fadeInRight.animated.duration-10.delay-8 来这里，开启你肌肤奥秘的探索
-					.btn.fadeInRight.animated.duration-10.delay-12(@click.prevent.stop="startGo") 即刻开启
+					.box.fadeInRight.animated.duration-10
+						h2.small 雅诗兰黛
+						h1 「美肌万能研究室」
+						p.large 你是我们精心选中的贵宾
+						p.large 来这里，开启你肌肤奥秘的探索
+						.btn(@click.prevent.stop="startGo") 即刻开启
 			.page.lab-questions.fadeIn.animated(v-show="startquestion")
 				transition(name="page-animation",v-for="answers,index in answerlist")
 					.page-box(v-show="answerShow[index]",:class="'answer-page-'+(index+1)")
@@ -37,14 +38,14 @@ block content
 							h2 我们总有「这样就够了」的时刻
 							p 以下哪种情况最符合你？
 							.answers
-								.answer.fadeInRight.animated(v-for="answer,index in answers",@click.prevent.stop="selecteFun(answer,index)",:class="'delay-'+index*2")
+								.answer.fadeIn.animated(v-for="answer,indexi in answers",@click.prevent.stop="selecteFun(answer,index,indexi)")
 									.checkbox
 										.right(v-if="answer.selected")
 									.text {{answer.text}}
 							.names.fadeInLeft.animated(v-if="answerFinished && index==2")
 								span 最后，我们怎么称呼您？
 								input(v-model="nickname")
-							.btn.small.fadeInRight.animated(v-if="answerFinished && index==2",@click.prevent.stop="startPrinterFun") 提交查看你的肌密
+							.btn.small.fadeInRight.animated(v-if="answerFinished && index==2",@click.prevent.stop="startPrinterFun") 提交查看你的肌密报告
 			.page.lab-printer(v-if="startprinter")
 				.printer-bottom
 					img(:src="'#{url}img/printer-bottom.png'")

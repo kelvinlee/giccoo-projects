@@ -218,9 +218,10 @@ initLab = ->
 			startGo: ->
 				@started = false
 				@startquestion = true
-			selecteFun: (answer,index)->
-				# console.log answer
+			selecteFun: (answer,indexP,index)->
+				console.log indexP,@answer
 				return false if @waiting or @answerFinished or @answer is 3
+				return false if indexP isnt @answer
 				# console.log @answer
 				answer.selected = true
 				@answerShow[@answer] = false if @answer < 2

@@ -1002,16 +1002,16 @@ p {
       font-size: 18px; }
 
 .page-animation-enter-active {
-  -webkit-animation: flipInY 1s ease;
-          animation: flipInY 1s ease;
+  -webkit-animation: fadeIn 0.5s ease;
+          animation: fadeIn 0.5s ease;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   -webkit-animation-iteration-count: initial;
           animation-iteration-count: initial; }
 
 .page-animation-leave-active {
-  -webkit-animation: flipOutY 1s ease;
-          animation: flipOutY 1s ease;
+  -webkit-animation: fadeOut 0.5s ease;
+          animation: fadeOut 0.5s ease;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   -webkit-animation-iteration-count: initial;
