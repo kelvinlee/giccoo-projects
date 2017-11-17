@@ -105,12 +105,15 @@ p
 	+b($cdn+"img/loading-bg.jpg",no-repeat,center,center,cover)
 	z-index: 600
 	.text
+		+hide
 		+font-size(0.8rem)
 		color: #fff
 		+text-center
 		+w
 		+posa
 		+bl(30%)
+		&.show
+			+show
 		.pc &
 			font-size: 18px
 
@@ -125,7 +128,7 @@ p
 	// opacity: 0
 
 .printer-animation-enter-active
-	+animation(fadeInUp,1s,ease)
+	+animation(fadeInUp,2s,ease)
 .printer-animation-leave-active
 	+animation(fadeOutDown,1s,ease)
 .printer-animation-enter, .printer-animation-leave-to
@@ -282,8 +285,9 @@ p
 			color: #e5bf9c
 		.arrow-down
 			+w(20px)
+			+p(10px)
 			+m
-			margin-top: 20px
+			margin-top: 10px
 			+animation(fadeOutDown,2s,linear,infinite)
 	.over-page
 		.text-for

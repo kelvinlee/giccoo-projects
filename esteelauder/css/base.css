@@ -976,6 +976,7 @@ p {
   background-color: transparent;
   z-index: 600; }
   .loading .text {
+    display: none;
     font-size: 0.8rem;
     color: #fff;
     text-align: center;
@@ -995,6 +996,8 @@ p {
     @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
       .loading .text {
         font-size: 0.96rem; } }
+    .loading .text.show {
+      display: block; }
     .pc .loading .text {
       font-size: 18px; }
 
@@ -1017,8 +1020,8 @@ p {
           animation-delay: .5s; }
 
 .printer-animation-enter-active {
-  -webkit-animation: fadeInUp 1s ease;
-          animation: fadeInUp 1s ease;
+  -webkit-animation: fadeInUp 2s ease;
+          animation: fadeInUp 2s ease;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   -webkit-animation-iteration-count: initial;
@@ -1260,8 +1263,9 @@ p {
       color: #e5bf9c; }
     .lab-printer .printer-page .arrow-down {
       width: 20px;
+      padding: 10px;
       margin: 0 auto;
-      margin-top: 20px;
+      margin-top: 10px;
       -webkit-animation: fadeOutDown 2s linear;
               animation: fadeOutDown 2s linear;
       -webkit-animation-fill-mode: both;

@@ -11,7 +11,7 @@
   </head>
   <body>
     <div id="load" v-if="!loadend" class="loading">
-      <div class="text">Loading...{{animatedNumber}}%</div>
+      <div :class="{show: show}" class="text">Loading...{{animatedNumber}}%</div>
     </div>
     <div class="main">
       <div id="lab">
@@ -50,7 +50,7 @@
           <div class="printer-bottom"><img :src="'./img/printer-bottom.png'"></div>
           <div class="printer-bg"><img :src="'./img/printer-bg.png'"></div>
           <transition name="printer-animation">
-            <div id="printer-page" v-show="printerover" v-touch="gotoProFun" class="printer-page fadeInUp animated">
+            <div id="printer-page" v-show="printerover" v-touch="gotoProFun" class="printer-page fadeInUp animated duration-20">
               <div class="face fadeIn aniamted delay-3"><img :src="'./img/face.jpg'"></div>
               <div class="item fadeIn aniamted delay-5"><img :src="'./img/line-'+score.join('-')+'.jpg'"></div>
               <div class="texts">
@@ -58,18 +58,18 @@
                 <h1 class="fadeInUp aniamted delay-9">{{printer.title}}</h1>
                 <p class="fadeInUp aniamted delay-11">{{printer.description}}</p>
                 <p class="fadeInUp aniamted delay-13">想还原完美肌肤吗？下滑有妙招！</p>
-                <div class="icon arrow-down fadeInUp aniamted delay-15"><img :src="'./img/arrow-down.png'"></div>
+                <div @click="gotoProFun" class="icon arrow-down fadeInUp aniamted delay-15"><img :src="'./img/arrow-down.png'"></div>
               </div>
             </div>
           </transition>
-          <transition name="overpage-animation">
-            <div id="over-page" v-show="!printerover" class="over-page">
+          <transition name="printer-animation">
+            <div id="over-page" v-show="overpage" class="over-page">
               <div class="text-for">
                 <p>TO: <span class="nickname">{{nickname}}</span></p>
                 <p>送上一份还原完美肌的万能贴士！</p>
               </div>
               <div class="tips">
-                <slider id="slider" class="slider">
+                <slider id="slider" :overpage="overpage" class="slider">
                   <div class="slide"><img :src="'./img/product-1.jpg'"></div>
                   <div class="slide"><img :src="'./img/product-2.jpg'"></div>
                   <div class="slide"><img :src="'./img/product-3.jpg'"></div>
@@ -110,7 +110,7 @@
     <script src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js"></script>
     <script src="http://image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
     <script src="http://image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
+    <script src="http://image.giccoo.com/projects/libs/js/min/tween.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

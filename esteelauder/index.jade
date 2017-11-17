@@ -20,7 +20,7 @@ block content
 	- url = "./"
 
 	#load.loading(v-if="!loadend")
-		.text Loading...{{animatedNumber}}%
+		.text(:class="{show: show}") Loading...{{animatedNumber}}%
 	.main
 		#lab
 			.page.lab-start(v-show="started")
@@ -51,7 +51,7 @@ block content
 				.printer-bg
 					img(:src="'#{url}img/printer-bg.png'")
 				transition(name="printer-animation")
-					#printer-page.printer-page.fadeInUp.animated(v-show="printerover",v-touch="gotoProFun")
+					#printer-page.printer-page.fadeInUp.animated.duration-20(v-show="printerover",v-touch="gotoProFun")
 						.face.fadeIn.aniamted.delay-3
 							img(:src="'#{url}img/face.jpg'")
 						.item.fadeIn.aniamted.delay-5
@@ -61,17 +61,17 @@ block content
 							h1.fadeInUp.aniamted.delay-9 {{printer.title}}
 							p.fadeInUp.aniamted.delay-11 {{printer.description}}
 							p.fadeInUp.aniamted.delay-13 想还原完美肌肤吗？下滑有妙招！
-							.icon.arrow-down.fadeInUp.aniamted.delay-15
+							.icon.arrow-down.fadeInUp.aniamted.delay-15(@click="gotoProFun")
 								img(:src="'#{url}img/arrow-down.png'")
-				transition(name="overpage-animation")
-					#over-page.over-page(v-show="!printerover")
+				transition(name="printer-animation")
+					#over-page.over-page(v-show="overpage")
 						.text-for
 							p TO: 
 								span.nickname {{nickname}}
 							p 送上一份还原完美肌的万能贴士！
 						.tips
 							//- img(:src="'product-'+product+'.jpg'")
-							slider#slider.slider
+							slider#slider.slider(:overpage="overpage")
 								.slide
 									img(:src="'#{url}img/product-1.jpg'")
 								.slide
@@ -108,7 +108,7 @@ block js
 	script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/axios.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
-	script(src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4")
+	script(src="http://image.giccoo.com/projects/libs/js/min/tween.min.js")
 	script(src="js/main.js")
 
 	

@@ -43,42 +43,58 @@ Vue.component("slider", {
       timeout: null,
       now: 0,
       max: 2,
-      time: 3000
+      time: 3000,
+      delay: 3000
     };
   },
+  props: ['overpage'],
+  watch: {
+    overpage: function overpage(newV, oldV) {
+      if (newV) {
+        // console.log(newV,oldV)
+        return this.start();
+      }
+    }
+  },
   methods: {
-    moveNext: function moveNext() {
+    start: function start() {
       var _this = this;
+
+      this.stopAll();
+      return this.timeout = setTimeout(function () {
+        return _this.moveNext();
+      }, this.time);
+    },
+    moveNext: function moveNext() {
+      var _this2 = this;
 
       // console.log "move to next"
       this.stopAll();
-      if (this.now > this.max) {
+      if (this.now >= this.max) {
+        return false;
         this.now = 0;
         this.timeout = setTimeout(function () {
-          return _this.moveNext();
+          return _this2.moveNext();
         }, 10);
         return false;
       } else {
         this.now = this.now + 1;
       }
       return this.timeout = setTimeout(function () {
-        return _this.moveNext();
+        return _this2.moveNext();
       }, this.time);
     },
     stopAll: function stopAll() {
       return clearTimeout(this.timeout);
     }
   },
-  mounted: function mounted(el) {
-    var _this2 = this;
-
-    // console.log this.moving,this.moveNext()
-    return this.timeout = setTimeout(function () {
-      return _this2.moveNext();
-    }, this.time);
-  }
+  mounted: function mounted(el) {}
 });
 
+// console.log this.moving,this.moveNext()
+// @timeout = setTimeout =>
+// 	@moveNext()
+// ,@time
 apiURL = "api.giccoo.com";
 
 load = {};
@@ -180,6 +196,7 @@ window.onload = function () {
     el: '#load',
     data: {
       loadend: false,
+      show: true,
       number: 0,
       animatedNumber: 0
     },
@@ -233,6 +250,7 @@ initLab = function initLab() {
       nickname: "",
       waiting: false,
       printerover: false,
+      overpage: false,
       sended: false,
       sharesuccess: false,
       shownote: false,
@@ -257,7 +275,7 @@ initLab = function initLab() {
           // console.log answer
           return false;
         }
-        console.log(this.answer);
+        // console.log @answer
         answer.selected = true;
         if (this.answer < 2) {
           this.answerShow[this.answer] = false;
@@ -287,20 +305,20 @@ initLab = function initLab() {
           this.printer.title = shareTitles[0];
         }
         if (this.score[2] <= this.score[1] && this.score[2] <= this.score[0]) {
-          this.printer.description = shareDescription[2];
+          return this.printer.description = shareDescription[2];
         } else if (this.score[1] <= this.score[2] && this.score[1] <= this.score[0]) {
-          this.printer.description = shareDescription[1];
+          return this.printer.description = shareDescription[1];
         } else if (this.score[0] <= this.score[1] && this.score[0] <= this.score[2]) {
-          this.printer.description = shareDescription[0];
+          return this.printer.description = shareDescription[0];
         } else {
-          this.printer.description = shareDescription[2];
+          return this.printer.description = shareDescription[2];
         }
-        return console.log(this.sendPostFun);
       },
+      // console.log @sendPostFun
       sendPostFun: function sendPostFun() {
         var self;
-        // console.log @sended
         if (this.sended) {
+          // console.log @sended
           return false;
         }
         self = this;
@@ -331,7 +349,8 @@ initLab = function initLab() {
         if (!this.printerover) {
           return false;
         }
-        return this.printerover = false;
+        this.printerover = false;
+        return this.overpage = true;
       }
     },
     directives: {

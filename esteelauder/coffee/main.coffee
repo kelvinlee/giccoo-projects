@@ -9,11 +9,23 @@ Vue.component "slider",
 			now: 0
 			max: 2
 			time: 3000
+			delay: 3000
+	props: ['overpage']
+	watch:
+		overpage: (newV,oldV)->
+			# console.log(newV,oldV)
+			@start() if newV
 	methods:
+		start: ->
+			@stopAll()
+			@timeout = setTimeout =>
+				@moveNext()
+			,@time
 		moveNext: ->
 			# console.log "move to next"
 			@stopAll()
-			if @now > @max
+			if @now >= @max
+				return false
 				@now = 0
 				@timeout = setTimeout =>
 					@moveNext()
@@ -28,9 +40,9 @@ Vue.component "slider",
 			clearTimeout @timeout
 	mounted: (el)->
 		# console.log this.moving,this.moveNext()
-		@timeout = setTimeout =>
-			@moveNext()
-		,@time
+		# @timeout = setTimeout =>
+		# 	@moveNext()
+		# ,@time
 apiURL = "api.giccoo.com"
 load = {}
 lab = {}
@@ -79,6 +91,7 @@ window.onload = ->
 		el: '#load'
 		data:
 			loadend: false
+			show: true
 			number: 0
 			animatedNumber: 0
 		watch: 
@@ -118,6 +131,7 @@ initLab = ->
 			nickname: ""
 			waiting: false
 			printerover: false
+			overpage: false
 			sended: false
 			sharesuccess: false
 			shownote: false
@@ -137,13 +151,12 @@ initLab = ->
 			selecteFun: (answer,index)->
 				# console.log answer
 				return false if @waiting or @answerFinished or @answer is 3
-				console.log @answer
+				# console.log @answer
 				answer.selected = true
 				@answerShow[@answer] = false if @answer < 2
 				@score[@answer] = answer.id if @answer <= 2
 				@answer = @answer + 1
-				if @answer is 3
-					@answerFinished = true
+				@answerFinished = true if @answer is 3
 			startPrinterFun: ->
 				@started = false
 				@startquestion = false
@@ -167,14 +180,11 @@ initLab = ->
 					@printer.description = shareDescription[0]
 				else
 					@printer.description = shareDescription[2]
-
-
-				console.log @sendPostFun
+				# console.log @sendPostFun
 				
 			sendPostFun: ->
 				# console.log @sended
-				if @sended
-					return false 
+				return false if @sended
 				self = this
 				axios.get "http://"+apiURL+"/esteelauder/shareTo/?id="+@score.join("-")
 				.then (msg)->
@@ -196,6 +206,8 @@ initLab = ->
 			gotoProFun: (de)->
 				return false if not @printerover
 				@printerover = false
+				@overpage = true
+
 			
 		directives:
 			touch:
