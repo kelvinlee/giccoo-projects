@@ -971,7 +971,7 @@ p {
   left: 0px;
   width: 100%;
   height: 100%;
-  background: url("../img/loading-bg.jpg") no-repeat center center;
+  background: url("http://image.giccoo.com/projects/esteelauder/img/loading-bg.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent;
   z-index: 600; }
@@ -1068,7 +1068,7 @@ p {
           animation-iteration-count: initial; }
 
 #lab {
-  background: url("../img/homepage-bg.jpg") no-repeat center center;
+  background: url("http://image.giccoo.com/projects/esteelauder/img/homepage-bg.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
@@ -1097,7 +1097,7 @@ p {
   margin-top: 0.8em; }
 
 .lab-questions .page-box {
-  background: url("../img/page.png") no-repeat center center;
+  background: url("http://image.giccoo.com/projects/esteelauder/img/page.png") no-repeat center center;
   background-size: contain;
   background-color: transparent;
   width: 100%;
@@ -1167,7 +1167,7 @@ p {
             right: -4px;
             width: 18px;
             height: 18px;
-            background: url("../img/right.png") no-repeat center center;
+            background: url("http://image.giccoo.com/projects/esteelauder/img/right.png") no-repeat center center;
             background-size: cover;
             background-color: transparent; }
         .lab-questions .page-box .content .answers .answer .text {
@@ -1225,7 +1225,7 @@ p {
         font-size: 16px; }
 
 .lab-printer {
-  background: url("../img/bg.jpg") no-repeat center center;
+  background: url("http://image.giccoo.com/projects/esteelauder/img/bg.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
   .lab-printer .printer-bottom, .lab-printer .printer-bg {
