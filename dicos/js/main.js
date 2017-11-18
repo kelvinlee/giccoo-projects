@@ -167,7 +167,7 @@ $("#page1").click(function(){
 
   TweenLite.to($("#page1"),.4,{delay:0.3,opacity:0,display:"none",onComplete:page2in})
   $("#page2").css({display:"block"})
-
+  document.getElementById('audio').play()
 
   //屏幕自适应
   screenW=document.body.offsetWidth 
@@ -208,7 +208,7 @@ $("#page1").click(function(){
 
 function page2in(){
   $("#audioPlay").css({display:"block"})
-  document.getElementById('audio').play()
+  // document.getElementById('audio').play()
   if(ifLR==1){//上下超出，上下移动
     TweenLite.set(doorBG,{y:screenH-doorH,onComplete:showZoomBtn})
     TweenLite.from(doorBG,3,{y:0})
