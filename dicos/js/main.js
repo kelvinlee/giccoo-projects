@@ -270,7 +270,7 @@ function page2zoomIn2(){
 
 function page3in(){
   TweenLite.to(innerBG,6,{x:screenW-innerW,ease:Quad.easeInOut})
-  document.getElementById('videoA').play()
+  //document.getElementById('videoA').play()
   showHand()
 
 }
@@ -551,6 +551,7 @@ function zoomAni3(){
         //alert("zoomIn")
         if (nowPage==0) {
           page2zoomIn()
+          document.getElementById('videoA').play()
         }else if(nowPage==1){
           page3zoomIn()
         }else if(nowPage==2){
