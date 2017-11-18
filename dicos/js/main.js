@@ -76,7 +76,7 @@ function loading(){
   TweenLite.to($("#loading2"),10,{rotation:-360,delay:2,x:"-50%",y:"-50%"})
   TweenLite.to($("#loading3"),10,{rotation:360,delay:2,x:"-50%",y:"-50%"})
 
- TweenLite.to(this,1,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
+ TweenLite.to(this,5,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
  
 }
 
