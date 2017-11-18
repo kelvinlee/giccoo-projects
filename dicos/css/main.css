@@ -146,7 +146,8 @@ img{ width: 100%; }
 	-webkit-transform: translate3d(-50%, -50%, 0);
        		transform: translate3d(-50%, -50%, 0);
     display: none;
-	
+	-webkit-transform-origin:50% 32.4%;
+			transform-origin:50% 32.4%;
 }
 #p5food{
 	bottom: -5%;

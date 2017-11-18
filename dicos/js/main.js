@@ -269,7 +269,7 @@ function page2zoomIn2(){
 
 
 function page3in(){
-  TweenLite.to(innerBG,6,{x:screenW-innerW-1,ease:Quad.easeInOut})
+  TweenLite.to(innerBG,6,{x:screenW-innerW+1,ease:Quad.easeInOut})
   //document.getElementById('videoA').play()
   showHand()
 
@@ -368,7 +368,7 @@ function openDoor(){
   TweenLite.set($("#p4door2"),{display:"block",width:screenH,opacity:5})
 
   //TweenLite.to($("#p4door2"),2,{rotationX:90*0.685,z:-screenH/3*0.596,top:"20.91%",display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})//23
-  TweenLite.to($("#p4door2"),2,{rotationX:63,z:500,display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})
+  TweenLite.to($("#p4door2"),2,{rotationX:70,scale:0.45,display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})
   // alert("ddd")
 }
 
