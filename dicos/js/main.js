@@ -53,6 +53,11 @@ var doorH//门背景高
 
 var ifLR//判断左右动画还是上下动画
 var nowPage=0
+var innerBG=$("#innerBG")
+var innerW
+var innerH
+
+var videoDiv=$("#video1")
 
 //======================loading动画
 function loading(){
@@ -90,6 +95,13 @@ function loadingFinish(){
 //===================loading动画结束
 
 
+
+
+
+
+
+
+
 function page1in(){
   //alert("第一页显示")
   for (var i = 0; i < p1picA.length; i++) {
@@ -121,12 +133,7 @@ function page1done(){
   TweenLite.to($("#p1btn4"),1,{opacity:1,scale:.6,delay:0.4,ease:Back.easeOut,onComplete:page1loop})
 
 }
-// function page1Tloop(){
-//   TweenLite.to($("#p1t"),1.85,{opacity:.3,onComplete:page1TloopB})
-// }
-// function page1TloopB(){
-//   TweenLite.to($("#p1t"),1.85,{opacity:1,onComplete:page1Tloop})
-// }
+
 function page1loop(){
   // if(loop1==1){
     TweenLite.to($("#p1btn3"),.3,{opacity:1,scale:.9,rotation:"+=30",delay:0.0,ease:Back.easeOut})
@@ -186,8 +193,21 @@ $("#page1").click(function(){
 
 })
 
+
+
+
+
+
+
+
 //===============门口动画 page2
+
+
+
+
+
 function page2in(){
+  document.getElementById('audio').play()
   if(ifLR==1){//上下超出，上下移动
     TweenLite.set(doorBG,{y:screenH-doorH,onComplete:showZoomBtn})
     TweenLite.from(doorBG,3,{y:0})
@@ -199,12 +219,269 @@ function page2in(){
 
 }
 
+var videoH
+var videoW
+
+
 function page2zoomIn(){
   nowPage=1
-  alert("zoomIn")
+  //alert("zoomIn")
+  TweenLite.set($('#zoom'),{display:"none"})
+  TweenLite.to($('#p2t'),1,{opacity:0,display:"none"})
+
+  doorW=screenW/640*1234
+  doorH=screenW/640*2198
+
+  TweenLite.to(doorBG,2,{x:screenW/2-doorW*0.3185,y:screenH/2-doorH*0.707,width:doorW,height:doorH,ease:Quad.easeOut,onComplete:page2zoomIn2})
+}
+
+var foodW
+var foodH
+function page2zoomIn2(){
+
+  doorW=screenW/640*1234*2
+  doorH=screenW/640*2198*2
+
+  TweenLite.to(doorBG,1,{display:"none",opacity:0,x:screenW/2-doorW*0.3185+80,y:screenH/2-doorH*0.707-80,width:doorW,height:doorH,ease:Quad.easeIn,onComplete:page3in})
+  $("#page3").css({display:"block"})
+  TweenLite.set($("#page2"),{display:"none",delay:1})
+  innerH=screenH
+  innerW=screenH/1000*1606
+  TweenLite.set(innerBG,{x:0,y:0,width:innerW,height:innerH})
+
+  videoW=innerW/1606*390
+  videoH=innerH/1000*178
+  TweenLite.set(videoDiv,{x:620/1000*innerH,y:178/1000*innerH,width:videoW,height:videoH})
+  TweenLite.set($("#videoA"),{width:videoW,height:videoH})
+
+  foodH=screenH*0.151
+  foodW=screenH*0.151
+  TweenLite.set($("#p4bg"),{x:innerW*0.3717,y:innerH*0.397,width:foodW,height:foodH,opacity:0})
+  //TweenLite.set($("#p4door"),{x:innerW*0.3717,y:innerH*0.397,width:foodW,height:foodH,opacity:0})
+  // alert(foodW)
+
+}
+
+
+
+//===============室内动画 page3
+
+
+function page3in(){
+  TweenLite.to(innerBG,6,{x:screenW-innerW,ease:Quad.easeInOut})
+  document.getElementById('videoA').play()
+  showHand()
+
+}
+function showHand(){
+  $("#phone").css({display:"block"})
+  $("#screen2").css({display:"none"})
+  $("#screen3").css({display:"none"})
+  $("#screen4").css({display:"none"})
+  $("#handR2").css({display:"none"})
+  $("#p3t").css({display:"block"})
+  TweenLite.from($("#handL"),1,{y:"+=500",x:"-=500",opacity:0,delay:3,onComplete:click1})
+  TweenLite.from($("#screen1"),1,{y:"+=500",x:"-=500",opacity:0,delay:3})
+  TweenLite.from($("#handR1"),1,{y:"+=500",x:"+=500",opacity:0,delay:3.8})
+  TweenLite.from($("#p3t"),2,{y:"+=50",opacity:0,delay:3.8,ease:Elastic.easeOut})
+}
+function click1(){
+  TweenLite.set($("#screen2"),{display:"block",opacity:0})
+  TweenLite.set($("#screen3"),{display:"block",opacity:0})
+  TweenLite.set($("#screen4"),{display:"block",opacity:0})
+  TweenLite.set($("#handR2"),{display:"block",opacity:0})
+
+
+  TweenLite.to($("#screen2"),0.5,{opacity:1,delay:1.15})
+
+  TweenLite.set($("#handR1"),{opacity:0,delay:1,overwrite:0})
+  TweenLite.set($("#handR2"),{opacity:1,delay:1,overwrite:0})
+
+  TweenLite.set($("#handR1"),{opacity:1,delay:1.15,overwrite:0})
+  TweenLite.set($("#handR2"),{opacity:0,delay:1.15,overwrite:0})
+
+
+
+  TweenLite.to($("#screen3"),0.5,{opacity:1,delay:2.15})
+  
+  TweenLite.set($("#handR1"),{opacity:0,delay:2,overwrite:0})
+  TweenLite.set($("#handR2"),{opacity:1,delay:2,overwrite:0})
+
+  TweenLite.set($("#handR1"),{opacity:1,delay:2.15,overwrite:0})
+  TweenLite.set($("#handR2"),{opacity:0,delay:2.15,overwrite:0})
+
+
+  TweenLite.to($("#screen4"),0.5,{opacity:1,delay:3.15,onComplete:hideHand})
+
+  
+  TweenLite.set($("#handR1"),{opacity:0,delay:3,overwrite:0})
+  TweenLite.set($("#handR2"),{opacity:1,delay:3,overwrite:0})
+
+  TweenLite.set($("#handR1"),{opacity:1,delay:3.15,overwrite:0})
+  TweenLite.set($("#handR2"),{opacity:0,delay:3.15,overwrite:0})
+
+  TweenLite.to($("#handR1"),.8,{y:"+=500",x:"+=200",delay:3.15,ease:Expo.easeIn})
+}
+
+function hideHand(){
+  TweenLite.to($("#phone"),.8,{y:"+=1000",x:"-=100",delay:.5,ease:Expo.easeIn})
+  //TweenLite.to($("#handR1"),1,{y:"+=500",x:"+=200",delay:0.5,ease:Expo.easeIn})
+
+
+  //innerH*=1.2
+  //innerW*=1.2
+  TweenLite.to(innerBG,2,{x:screenW/2-innerW*0.5087,y:screenH/2-innerH*0.447,scale:1.2,delay:1,ease:Quad.easeInOut,onComplete:p3end})
+  TweenLite.to($("#p3t"),1,{opacity:0,display:"none",delay:1})
+}
+
+function p3end(){
+  $("#p3t2").css({display:"block"})
+  TweenLite.from($("#p3t2"),1.5,{y:"-=50",opacity:0,delay:0,ease:Elastic.easeOut})
+  TweenLite.set($('#zoom'),{display:"block"})
+}
+
+
+function page3zoomIn(){
+  nowPage=2
+   TweenLite.set($('#zoom'),{display:"none"})
+   TweenLite.set($("#p3t2"),{display:"none"})
+
+   innerW/=0.151
+   innerH/=0.151
+
+   TweenLite.to(innerBG,1,{scale:1,width:innerW,height:innerH,x:screenW/2-0.4191*innerW,y:screenH/2-.473*innerH})
+
+   //TweenLite.to($("#p4bg"),1,{opacity:1})
+   //TweenLite.to($("#p4door"),1,{opacity:1})
+
+   TweenLite.to($("#p4bg"),1,{x:innerW*0.3717,y:innerH*0.397,width:foodW/0.151,height:foodH/0.151,opacity:1,onComplete:openDoor})
+   //TweenLite.to($("#p4door"),1,{x:innerW*0.3717,y:innerH*0.397,width:foodW/0.151,height:foodH/0.151,opacity:1,onComplete:openDoor}) 
+   
+
+}
+
+function openDoor(){
+  //TweenLite.set($("#page4"),{display:"block"})
+  //TweenLite.set($("#p4door"),{"perspective":300,"-webkit-perspective":300,"transform-style":"preserve-3d","-webkit-transform-style":"preserve-3d"})
+  TweenLite.set($("#p4door"),{display:"none"})
+  TweenLite.set($("#p4door2"),{display:"block",width:screenH,opacity:5})
+
+  TweenLite.to($("#p4door2"),2,{rotationX:90*18.5/27,z:-screenH/3*23/27*.7,top:"20.91%",display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})//23
+  // alert("ddd")
+}
+
+function showP5(){
+   TweenLite.set($("#page5"),{display:"block"})
+   TweenLite.from($("#p5food"),.5,{y:"+=200",opacity:0,delay:1-1+1})
+   TweenLite.from($("#p5logo"),1.5,{y:"-=100",opacity:0,ease:Elastic.easeOut,delay:1.2-1+1})
+   TweenLite.from($("#p5bg"),.5,{y:"-=1000",opacity:0,delay:1.4-1})
+   TweenLite.set($('#zoom'),{display:"block",delay:1.5-1,top:"-12%",left:"10%"})
+
+}
+
+
+
+var markH
+var markW
+var ifClickA=[0,0,0,0]
+
+function page6in(){
+ // alert("最后出鸡子了！") 
+   TweenLite.to($("#p5food"),.5,{y:"+=200",opacity:0})
+   TweenLite.to($("#p5logo"),.5,{y:"-=100",opacity:0})
+   TweenLite.to($("#p5bg"),.5,{opacity:0})
+   TweenLite.set($("#page5"),{display:"none",delay:0.5})
+   TweenLite.set($("#page6"),{display:"block"})
+   TweenLite.set($('#zoom'),{display:"none"})
+   TweenLite.set($("#page3"),{display:"none"})
+
+
+   TweenLite.from($("#p6t1"),1.5,{y:"+=50",opacity:0,ease:Elastic.easeOut,delay:0.5+0.1*0})
+   TweenLite.from($("#p6t2"),1.5,{y:"+=50",opacity:0,ease:Elastic.easeOut,delay:0.5+0.1*1})
+   TweenLite.from($("#p6t3"),1.5,{y:"+=50",opacity:0,ease:Elastic.easeOut,delay:0.5+0.1*2})
+   TweenLite.from($("#chicken"),1.5,{y:"+=50",opacity:0,ease:Elastic.easeOut,delay:0.5+0.1*3})
+
+   markW=screenW
+   markH=screenW/640*652
+
+   TweenLite.set($("#p6mark4"),{width:markW,height:markH})
+
+   TweenLite.set($("#markV1"),{width:markW/640*109,height:markW/640*109,left:"14.53%",top:"65.80%"})
+   TweenLite.set($("#markV2"),{width:markW/640*109,height:markW/640*109,left:"74.22%",top:"68.4%"})
+   TweenLite.set($("#markX1"),{width:markW/640*109,height:markW/640*109,left:"12.19%",top:"4.75%"})//111
+   TweenLite.set($("#markX2"),{width:markW/640*109,height:markW/640*109,left:"78.13%",top:"12.58%"})
+
+
+
+
+   TweenLite.from($("#p6mark4"),1.5,{opacity:0,delay:0.5+0.1*4})
+
+
+
+}
+
+$("#markV1").click(function(){
+  if(ifClickA[0]==0){
+    ifClickA[0]=1
+    TweenLite.set($("#markV1"),{opacity:1})
+    TweenLite.from($("#markV1"),1.5,{opacity:0,scale:0,ease:Elastic.easeOut})
+    checkResult()
+  }
+});
+$("#markV2").click(function(){
+  if(ifClickA[1]==0){
+    ifClickA[1]=1
+    TweenLite.set($("#markV2"),{opacity:1})
+    TweenLite.from($("#markV2"),1.5,{opacity:0,scale:0,ease:Elastic.easeOut})
+    checkResult()
+  }
+});
+$("#markX1").click(function(){
+  if(ifClickA[2]==0){
+    ifClickA[2]=1
+    TweenLite.set($("#markX1"),{opacity:1})
+    TweenLite.from($("#markX1"),1.5,{opacity:0,scale:0,ease:Elastic.easeOut})
+    //checkResult()
+  }
+});
+$("#markX2").click(function(){
+  if(ifClickA[3]==0){
+    ifClickA[3]=1
+    TweenLite.set($("#markX2"),{opacity:1})
+    TweenLite.from($("#markX2"),1.5,{opacity:0,scale:0,ease:Elastic.easeOut})
+    //checkResult()
+  }
+});
+
+
+function checkResult(){
+
+  if((ifClickA[0]+ifClickA[1])==2){
+    //alert("ddd")
+    TweenLite.set($("#p6hint"),{display:"block",delay:1.5})
+    TweenLite.from($("#p6hint"),1.5,{opacity:0,y:"+=100",ease:Elastic.easeOut,onComplete:hideResult,delay:1.5})
+    
+    TweenLite.set($("#chicken"),{display:"none",delay:1.5})
+    TweenLite.set($("#p6t1"),{display:"none",delay:1.5})
+    TweenLite.set($("#p6t2"),{display:"none",delay:1.5})
+    TweenLite.set($("#p6t3"),{display:"none",delay:1.5})
+    TweenLite.set($("#p6mark4"),{display:"none",delay:1.5})
+    TweenLite.set($("#markV1"),{display:"none",delay:1.5})
+    TweenLite.set($("#markV2"),{display:"none",delay:1.5})
+    TweenLite.set($("#markX1"),{display:"none",delay:1.5})
+    TweenLite.set($("#markX2"),{display:"none",delay:1.5})
+    
+  }
+}
+
+function hideResult(){
+  TweenLite.to($("#p6hint"),.5,{opacity:0,y:"-=100",delay:2,display:"none"})
 }
 
 //===============放大按钮动画=========
+
+
+
 function showZoomBtn(){
   TweenLite.set($('#zoom'),{display:"block"})
   TweenLite.from($('#zoom'),1,{opacity:0})
@@ -273,6 +550,10 @@ function zoomAni3(){
         //alert("zoomIn")
         if (nowPage==0) {
           page2zoomIn()
+        }else if(nowPage==1){
+          page3zoomIn()
+        }else if(nowPage==2){
+          page6in()
         };
 
       }
@@ -284,11 +565,46 @@ function zoomAni3(){
     }
 
     $('#zoom').click(function(){
-      page2zoomIn()
+        if (nowPage==0) {
+          page2zoomIn()
+        }else if(nowPage==1){
+          page3zoomIn()
+        }else if(nowPage==2){
+          page6in()
+        };
     });
 
 
 
   
+//==========音乐=======
+var audio;
+    function initAudio(id){
+        audio=document.getElementById(id);
+    };
+
+    window.onload=function(){
+        initAudio("audio");
+         if (audio.paused) {
+            $("#audioPlay").removeClass("stopM").addClass("playM")
+            //this.style.backgrundImage='url("../img/musicOn.png")';
+        }else{
+            $("#audioPlay").removeClass("playM").addClass("stopM")
+            //this.style.backgrundImage='url("../img/musicOff.png")';
+        };
+    }
+    var ap=document.getElementById("audioPlay");
+    $("#audioPlay").on("click",function(){
+        if (audio.paused) {
+            audio.play();
+            $("#audioPlay").removeClass("playM").addClass("stopM")
+            //this.style.backgrundImage='url("../img/musicOn.png")';
+        }else{
+            audio.pause();
+            $("#audioPlay").removeClass("stopM").addClass("playM")
+            //this.style.backgrundImage='url("../img/musicOff.png")';
+        };
+    });
+
 
 
