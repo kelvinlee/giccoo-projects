@@ -269,7 +269,7 @@ function page2zoomIn2(){
 
 
 function page3in(){
-  TweenLite.to(innerBG,6,{x:screenW-innerW,ease:Quad.easeInOut})
+  TweenLite.to(innerBG,6,{x:screenW-innerW-1,ease:Quad.easeInOut})
   //document.getElementById('videoA').play()
   showHand()
 
