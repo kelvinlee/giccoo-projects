@@ -207,6 +207,7 @@ $("#page1").click(function(){
 
 
 function page2in(){
+  $("#audioPlay").css({display:"block"})
   document.getElementById('audio').play()
   if(ifLR==1){//上下超出，上下移动
     TweenLite.set(doorBG,{y:screenH-doorH,onComplete:showZoomBtn})
