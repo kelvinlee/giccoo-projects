@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" xmlns:wb="http://open.weibo.com/wb" class="no-js">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -7,21 +7,33 @@
     <title>雅诗兰黛美肌万能研究室</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
-    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/base.css?v=4">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+      	var hm = document.createElement("script");
+      	hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+      	var s = document.getElementsByTagName("script")[0]; 
+      	s.parentNode.insertBefore(hm, s);
+      })();
+      
+    </script>
   </head>
   <body>
     <div id="load" v-if="!loadend" class="loading">
-      <div class="text">Loading...{{animatedNumber}}</div>
+      <div :class="{show: show}" class="text">Loading...{{animatedNumber}}%</div>
     </div>
     <div class="main">
       <div id="lab">
         <div v-show="started" class="page lab-start">
           <div class="content">
-            <h2 class="small fadeInRight animated duration-10">雅诗兰黛</h2>
-            <h1 class="fadeInRight animated duration-10 delay-2">「美肌万能研究室」</h1>
-            <p class="large fadeInRight animated duration-10 delay-4">你是我们精心选中的贵宾</p>
-            <p class="large fadeInRight animated duration-10 delay-6">来这里，开启你肌肤奥秘的探索</p>
-            <div @click.prevent.stop="startPrinterFun" class="btn fadeInRight animated duration-10 delay-8">即刻开启</div>
+            <div class="box fadeInRight animated duration-10">
+              <h2 class="small">雅诗兰黛</h2>
+              <h1>「美肌万能研究室」</h1>
+              <p class="large">你是我们精心选中的贵宾</p>
+              <p class="large">来这里，开启你肌肤奥秘的探索</p>
+              <div @click.prevent.stop="startGo" class="btn">即刻开启</div>
+            </div>
           </div>
         </div>
         <div v-show="startquestion" class="page lab-questions fadeIn animated">
@@ -31,7 +43,7 @@
                 <h2>我们总有「这样就够了」的时刻</h2>
                 <p>以下哪种情况最符合你？</p>
                 <div class="answers">
-                  <div v-for="answer,index in answers" @click.prevent.stop="selecteFun(answer,index)" :class="'delay-'+index*2" class="answer fadeInRight animated">
+                  <div v-for="answer,indexi in answers" @click.prevent.stop="selecteFun(answer,index,indexi)" class="answer fadeIn animated">
                     <div class="checkbox">
                       <div v-if="answer.selected" class="right"></div>
                     </div>
@@ -39,40 +51,40 @@
                   </div>
                 </div>
                 <div v-if="answerFinished &amp;&amp; index==2" class="names fadeInLeft animated"><span>最后，我们怎么称呼您？</span>
-                  <input v-modal="nickname">
+                  <input v-model="nickname">
                 </div>
-                <div v-if="answerFinished &amp;&amp; index==2" @click.prevent.stop="startPrinterFun" class="btn small fadeInRight animated">提交查看你的肌密</div>
+                <div v-if="answerFinished &amp;&amp; index==2" @click.prevent.stop="startPrinterFun" class="btn small fadeInRight animated">提交查看你的肌密报告</div>
               </div>
             </div>
           </transition>
         </div>
         <div v-if="startprinter" class="page lab-printer">
-          <div class="printer-bottom"><img :src="'./img/printer-bottom.png'"></div>
-          <div class="printer-bg"><img :src="'./img/printer-bg.png'"></div>
+          <div class="printer-bottom"><img :src="'http://image.giccoo.com/projects/esteelauder/img/printer-bottom.png'"></div>
+          <div class="printer-bg"><img :src="'http://image.giccoo.com/projects/esteelauder/img/printer-bg.png'"></div>
           <transition name="printer-animation">
-            <div id="printer-page" v-show="printerover" v-touch="gotoProFun" class="printer-page fadeInUp animated">
-              <div class="face fadeIn aniamted delay-3"><img :src="'./img/face.jpg'"></div>
-              <div class="item fadeIn aniamted delay-5"><img :src="'./img/line-'+score.join('-')+'.jpg'"></div>
+            <div id="printer-page" v-show="printerover" v-touch="gotoProFun" class="printer-page fadeInUp animated duration-20">
+              <div class="face fadeIn aniamted delay-3"><img :src="'http://image.giccoo.com/projects/esteelauder/img/face.jpg'"></div>
+              <div class="item fadeIn aniamted delay-5"><img :src="'http://image.giccoo.com/projects/esteelauder/img/line-'+score.join('-')+'.jpg'"></div>
               <div class="texts">
                 <p class="fadeInUp aniamted delay-7">整体报告显示你拥有</p>
                 <h1 class="fadeInUp aniamted delay-9">{{printer.title}}</h1>
                 <p class="fadeInUp aniamted delay-11">{{printer.description}}</p>
                 <p class="fadeInUp aniamted delay-13">想还原完美肌肤吗？下滑有妙招！</p>
-                <div class="icon arrow-down fadeInUp aniamted delay-15"><img :src="'./img/arrow-down.png'"></div>
+                <div @click="gotoProFun" class="icon arrow-down fadeInUp aniamted delay-15"><img :src="'http://image.giccoo.com/projects/esteelauder/img/arrow-down.png'"></div>
               </div>
             </div>
           </transition>
-          <transition name="overpage-animation">
-            <div id="over-page" v-show="!printerover" class="over-page">
+          <transition name="printer-animation">
+            <div id="over-page" v-show="overpage" class="over-page">
               <div class="text-for">
                 <p>TO: <span class="nickname">{{nickname}}</span></p>
                 <p>送上一份还原完美肌的万能贴士！</p>
               </div>
               <div class="tips">
-                <slider id="slider" class="slider">
-                  <div class="slide"><img :src="'./img/product-1.jpg'"></div>
-                  <div class="slide"><img :src="'./img/product-2.jpg'"></div>
-                  <div class="slide"><img :src="'./img/product-3.jpg'"></div>
+                <slider id="slider" :overpage="overpage" class="slider">
+                  <div class="slide"><img :src="'http://image.giccoo.com/projects/esteelauder/img/product-1.jpg'"></div>
+                  <div class="slide"><img :src="'http://image.giccoo.com/projects/esteelauder/img/product-2.jpg'"></div>
+                  <div class="slide"><img :src="'http://image.giccoo.com/projects/esteelauder/img/product-3.jpg'"></div>
                 </slider>
               </div>
               <div class="texts">
@@ -83,8 +95,19 @@
             </div>
           </transition>
           <transition name="note-animation">
+            <div id="note-page" v-show="shownote" class="note-page">
+              <div @click.prevent.stop="closenote" class="close"><img :src="'http://image.giccoo.com/projects/esteelauder/img/close.png'"></div>
+              <div class="note-box">
+                <p>活动规则</p>
+                <p>1.活动时间：2017年11月17日——2017年11月30日</p>
+                <p>2.根据页面提示参与测试，并晒出为你的“万能美肌贴士”截图至微博并@雅诗兰黛，我们将随机抽取幸运粉丝获得万能面霜正装1份</p>
+                <p>3.雅诗兰黛多效智妍精华霜正装（一人一份，共10份）</p>
+              </div>
+            </div>
+          </transition>
+          <transition name="note-animation">
             <div id="note-page" v-show="sharesuccess" class="note-page">
-              <div @click.prevent.stop="closeshare" class="close"><img :src="'./img/close.png'"></div>
+              <div @click.prevent.stop="closeshare" class="close"><img :src="'http://image.giccoo.com/projects/esteelauder/img/close.png'"></div>
               <div class="note-box">
                 <h2>报告分享成功</h2>
                 <p>请关注官方微博后续开奖结果</p>
@@ -95,11 +118,11 @@
         </div>
       </div>
     </div>
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1605288503" charset="utf-8"></script>
     <script src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js"></script>
     <script src="http://image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
     <script src="http://image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
-    <script src="js/main.js"></script>
+    <script src="http://image.giccoo.com/projects/libs/js/min/tween.min.js"></script>
+    <script src="js/main.js?v=4"></script>
   </body>
 </html>

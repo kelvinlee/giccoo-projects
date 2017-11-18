@@ -2,10 +2,10 @@
 @import ../../libs/sass/parallax
 @import ../../libs/sass/loader-ball
 
-$debug : true
+$debug : false
 $cdn : "../"
 @if not $debug
-	$cdn : "http://image.giccoo.com/projects/CX5/"
+	$cdn : "http://image.giccoo.com/projects/esteelauder/"
 
 // animation, delay, duration
 @for $i from 1 through 30
@@ -52,6 +52,8 @@ body.pop-open
 	+h
 	+posr
 	max-width: 640px
+	max-height: 880px
+	+m
 	+overhide
 	.page
 		+posr
@@ -63,15 +65,25 @@ h1,h2,h3,p
 	line-height: 1.6em
 h1
 	+font-size(1.4rem)
+	.pc &
+		font-size: 28px
 h2
 	+font-size(1rem)
+	.pc &
+		font-size: 24px
 	&.small
 		+font-size(1rem)
 		font-weight: normal
+		.pc &
+			font-size: 18px
 p
 	+font-size(0.8rem)
+	.pc &
+		font-size: 16px
 	.large
 		+font-size(1rem)
+		.pc &
+			font-size: 18px
 
 .btn
 	display: inline-block
@@ -80,6 +92,9 @@ p
 	border-radius: 0.6em
 	color: #fff
 	cursor: pointer
+	+font-size(1rem)
+	.pc &
+		font-size: 18px
 
 
 .loading
@@ -90,25 +105,30 @@ p
 	+b($cdn+"img/loading-bg.jpg",no-repeat,center,center,cover)
 	z-index: 600
 	.text
+		+hide
 		+font-size(0.8rem)
 		color: #fff
 		+text-center
 		+w
 		+posa
 		+bl(30%)
+		&.show
+			+show
+		.pc &
+			font-size: 18px
 
 .page-animation-enter-active
 	// transition: all .3s ease
-	+animation(flipInY,1s,ease)
+	+animation(fadeIn,0.5s,ease)
 .page-animation-leave-active
 	// transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0)
-	+animation(flipOutY,1s,ease)
+	+animation(fadeOut,0.5s,ease)
 	animation-delay: .5s
 .page-animation-enter, .page-animation-leave-to
 	// opacity: 0
 
 .printer-animation-enter-active
-	+animation(fadeInUp,1s,ease)
+	+animation(fadeInUp,2s,ease)
 .printer-animation-leave-active
 	+animation(fadeOutDown,1s,ease)
 .printer-animation-enter, .printer-animation-leave-to
@@ -175,9 +195,14 @@ p
 				+m
 				.answer
 					+font-size(0.6rem)
+					.pc &
+						font-size: 16px
 					margin-top: 20px
+					cursor: pointer
 					.iphone4 &
 						margin-top: 10px
+					.pc &
+						margin-top: 30px
 					+posr
 					.checkbox
 						+posa
@@ -206,6 +231,8 @@ p
 				margin-top: 40px
 				margin-bottom: 20px
 				+font-size(0.6rem)
+				.pc &
+					font-size: 16px
 				.iphone4 &
 					margin-top: 20px
 
@@ -218,7 +245,10 @@ p
 					+text-center
 			.btn
 				+m
+				+font-size(0.8rem)
 				display: inline-block
+				.pc &
+					font-size: 16px
 
 
 .lab-printer
@@ -242,6 +272,7 @@ p
 		box-shadow: 1px 1px 3px #999,-1px -1px 3px #999
 		color: #615b64
 	.printer-page
+		cursor: move
 		.face
 			+w(45%)
 			+m
@@ -254,34 +285,43 @@ p
 			color: #e5bf9c
 		.arrow-down
 			+w(20px)
+			+p(10px)
 			+m
-			margin-top: 20px
+			margin-top: 10px
 			+animation(fadeOutDown,2s,linear,infinite)
 	.over-page
 		.text-for
-			margin-top: 10%
+			color: #c67a00
+			+text-left
+			+w(66%)
+			+m
+			margin-top: 20%
 			.nickname
 				display: inline-block
 				min-width: 50px
-				border-bottom: solid 1px #615b64
+				border-bottom: solid 1px #c67a00
 		.tips
-			+w(70%)
+			+w(100%)
 			+m(10px auto)
 			.iphone4 &
-				+w(60%)
+				// +w(60%)
 				+m(6px auto)
 		.texts,.text-for
 			p
 				+font-size(0.6rem)
 		.btn
 			// +m(10px auto)
+			+font-size(0.8rem)
 			+m
 			margin-top: 10px
 			margin-bottom: 4px
+			.pc &
+				font-size: 16px
 		.link
 			+font-size(0.6rem)
 			color: #aa6a00
 			text-decoration: underline
+			cursor: pointer
 
 	.note-page
 		z-index: 10
@@ -291,6 +331,7 @@ p
 			+tr(10px,10px)
 			+wh(25px,25px)
 			font-size: 0
+			cursor: pointer
 		.note-box
 			border: dashed 1px #9e5900
 			+w(70%)

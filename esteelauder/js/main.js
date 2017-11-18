@@ -1,6 +1,6 @@
 'use strict';
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, apiURL, ask, css3Prefix, i, initLab, j, lab, len, load, loadWechatConfig, mTestElement, sendPost, shareContent, token;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, answerlists, apiURL, ask, css3Prefix, i, initLab, j, lab, len, load, loadWechatConfig, mTestElement, sendPost, shareContent, shareDescription, shareTitles, token;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -36,46 +36,142 @@ if (css3Prefix) {
 
 // @codekit-prepend "coffee/css3Prefix"
 Vue.component("slider", {
-  template: '<div><div class="slider-list" :class="\'slider-\'+now"><slot/><slot/></div></div>',
+  template: '<div><div class="slider-list" v-bind:style="{transform: \'translate3d(\'+x+\'px,0,0)\',transitionDuration: duration+\'s\'}" ><slot/></div></div>',
   data: function data() {
     return {
+      root: null,
       moving: false,
       timeout: null,
       now: 0,
       max: 2,
-      time: 3000
+      time: 3000,
+      delay: 3000,
+      duration: 0,
+      offset: {
+        resistance: 1,
+        lastSlide: 1,
+        scrollableArea: 320,
+        isScrolling: false,
+        lastw: 0,
+        w: 320,
+        x: 0,
+        y: 0,
+        deltaX: 0,
+        deltaY: 0
+      },
+      slideNumber: 0,
+      move: false,
+      startTime: 0,
+      x: 0,
+      y: 0
     };
   },
+  props: ['overpage'],
+  watch: {
+    overpage: function overpage(newV, oldV) {
+      if (newV) {
+        // console.log(newV,oldV)
+        return this.start();
+      }
+    }
+  },
+  // computed:
+  // 	color: ->
+  // 		return "#f2f2f2"
   methods: {
-    moveNext: function moveNext() {
+    start: function start() {
       var _this = this;
 
-      // console.log "move to next"
       this.stopAll();
-      if (this.now > this.max) {
-        this.now = 0;
-        this.timeout = setTimeout(function () {
-          return _this.moveNext();
-        }, 10);
-        return false;
-      } else {
-        this.now = this.now + 1;
-      }
       return this.timeout = setTimeout(function () {
         return _this.moveNext();
       }, this.time);
     },
+    moveNext: function moveNext() {
+      var _this2 = this;
+
+      // console.log "move to next"
+      this.stopAll();
+      if (this.now >= this.max) {
+        this.animationEnd();
+        return false;
+        this.now = 0;
+        this.timeout = setTimeout(function () {
+          return _this2.moveNext();
+        }, 10);
+        return false;
+      } else {
+        this.offset.w = this.$el.offsetWidth;
+        this.duration = 0.5;
+        this.now = this.now + 1;
+        this.x = -(this.now * this.offset.w);
+        this.setSlideNumber(0);
+      }
+      return this.timeout = setTimeout(function () {
+        return _this2.moveNext();
+      }, this.time);
+    },
     stopAll: function stopAll() {
       return clearTimeout(this.timeout);
+    },
+    setSlideNumber: function setSlideNumber(offset) {
+      var round, slideNumber;
+      // if @moved
+      round = offset ? this.offset.deltaX < 0 ? 'ceil' : 'floor' : 'round';
+      slideNumber = Math[round](this.x / (this.offset.scrollableArea / this.list.length));
+      slideNumber += offset;
+      slideNumber = Math.min(slideNumber, 0);
+      return this.slideNumber = Math.max(-(this.list.length - 1), slideNumber) % this.list.length;
+    },
+    // console.log @slideNumber
+    touchstart: function touchstart(evt) {
+      var touch;
+      touch = evt.touches[0];
+      this.duration = 0;
+      this.moved = false;
+      this.startTime = +new Date();
+      this.offset.w = this.$el.offsetWidth;
+      this.offset.x = touch.pageX;
+      this.offset.y = touch.pageY;
+      this.offset.lastw = this.x;
+      this.offset.lastSlide = -(this.list.length - 1);
+      this.offset.scrollableArea = this.offset.w * this.list.length;
+      return this.setSlideNumber(0);
+    },
+    // console.log @offset
+    touchmove: function touchmove(evt) {
+      var pageX, touch;
+      touch = evt.touches[0];
+      this.offset.deltaX = touch.pageX - this.offset.x;
+      pageX = touch.pageX;
+      this.x = this.offset.deltaX / this.offset.resistance + this.offset.lastw;
+      this.offset.resistance = this.slideNumber === 0 && this.offset.deltaX > 0 ? pageX / this.offset.w + 1.25 : this.slideNumber === this.offset.lastSlide && this.offset.deltaX < 0 ? (this.offset.w - Math.abs(pageX)) / this.offset.w + 1.25 : 1;
+      // console.log touch.pageX,@offset.x,pageX,@offset.deltaX,@offset.resistance,@offset.lastw
+      return this.moved = true;
+    },
+    touchend: function touchend(evt) {
+      var oldslideNumber;
+      if (this.moved) {
+        oldslideNumber = this.slideNumber;
+        this.setSlideNumber(+new Date() - this.startTime < 1000 && Math.abs(this.offset.deltaX) > 15 ? this.offset.deltaX < 0 ? -1 : 1 : 0);
+        this.x = this.slideNumber * this.offset.w;
+        this.duration = 0.2;
+        if (this.slideNumber === 0 && oldslideNumber === -(this.list.length - 1)) {
+          this.x = (oldslideNumber - 1) * this.offset.w;
+        }
+        if (oldslideNumber === 0 && this.slideNumber === -(this.list.length - 1)) {
+          return this.x = 1 * this.offset.w;
+        }
+      }
+    },
+    animationEnd: function animationEnd() {
+      this.$el.addEventListener('touchstart', this.touchstart.bind(this));
+      this.$el.addEventListener('touchmove', this.touchmove.bind(this));
+      return this.$el.addEventListener('touchend', this.touchend.bind(this));
     }
   },
   mounted: function mounted(el) {
-    var _this2 = this;
-
-    // console.log this.moving,this.moveNext()
-    return this.timeout = setTimeout(function () {
-      return _this2.moveNext();
-    }, this.time);
+    return this.list = this.$el.children[0].children;
   }
 });
 
@@ -96,6 +192,76 @@ shareContent = {
   cancel: function cancel() {}
 };
 
+answerlists = [[{
+  selected: false,
+  text: "小细纹干嘛大惊小怪？可能最近笑太多！",
+  id: 3
+}, {
+  selected: false,
+  text: "照镜子感觉老了许多，先补水再说！",
+  id: 2
+}, {
+  selected: false,
+  text: "没事按摩一下，皱纹慢慢会消失！",
+  id: 1
+}], [{
+  selected: false,
+  text: "面色不均匀，压点粉饼就好了~",
+  id: 3
+}, {
+  selected: false,
+  text: "面色发黄？涂点腮红拯救一下！",
+  id: 2
+}, {
+  selected: false,
+  text: "脸色有点暗沉，多睡两觉补一补~",
+  id: 1
+}], [{
+  selected: false,
+  text: "小脸不Q弹，补点胶原蛋白~~",
+  id: 3
+}, {
+  selected: false,
+  text: "脸不紧致，赶紧用按摩仪提拉一下！",
+  id: 2
+}, {
+  selected: false,
+  text: "粗糙起皮，做个去角质就好啦~~",
+  id: 1
+}]];
+
+answerlists[0].sort(function () {
+  if (Math.random() > 0.5) {
+    return -1;
+  } else {
+    return 1;
+  }
+});
+
+answerlists[1].sort(function () {
+  if (Math.random() > 0.5) {
+    return -1;
+  } else {
+    return 1;
+  }
+});
+
+answerlists[2].sort(function () {
+  if (Math.random() > 0.5) {
+    return -1;
+  } else {
+    return 1;
+  }
+});
+
+shareTitles = ["鲜嫩丝滑奶茶肌", "光泽亮润陶瓷肌", "吹弹可破蛋白肌"];
+
+shareDescription = ["但是你的皱纹一带一条指数偏高", "但是你的脸色亮度有待提升", "但是你的小脸紧致程度有所下降"];
+
+// window.WeiboJS.init
+// 	appkey: "1605288503"
+// 	debug: true
+// 	timestamp: new Date().getTime()
 window.onload = function () {
   var MK, body;
   body = document.getElementsByTagName("body")[0];
@@ -103,10 +269,14 @@ window.onload = function () {
   if (body.offsetHeight <= 480 || MK > 0.65) {
     body.className = "iphone4";
   }
+  if (body.offsetWidth >= 640) {
+    body.className = "pc";
+  }
   return load = new Vue({
     el: '#load',
     data: {
       loadend: false,
+      show: true,
       number: 0,
       animatedNumber: 0
     },
@@ -142,6 +312,7 @@ window.onload = function () {
     },
     mounted: function mounted() {
       this.number = 15;
+      console.log(this, this.$el);
       return ask();
     }
   });
@@ -160,50 +331,16 @@ initLab = function initLab() {
       nickname: "",
       waiting: false,
       printerover: false,
+      overpage: false,
       sended: false,
       sharesuccess: false,
+      shownote: false,
       touchdata: "up",
       printer: {
         title: "鲜嫩丝滑奶茶肌",
         description: "但是你的脸色亮度有待提升"
       },
-      answerlist: [[{
-        selected: false,
-        text: "小细纹干嘛大惊小怪？可能最近笑太多！",
-        id: 3
-      }, {
-        selected: false,
-        text: "照镜子感觉老了许多，先补水再说！",
-        id: 2
-      }, {
-        selected: false,
-        text: "没事按摩一下，皱纹慢慢会消失！",
-        id: 1
-      }], [{
-        selected: false,
-        text: "面色不均匀，压点粉饼就好了~",
-        id: 3
-      }, {
-        selected: false,
-        text: "面色发黄？涂点腮红拯救一下！",
-        id: 2
-      }, {
-        selected: false,
-        text: "脸色有点暗沉，多睡两觉补一补~",
-        id: 1
-      }], [{
-        selected: false,
-        text: "小脸不Q弹，补点胶原蛋白~~",
-        id: 3
-      }, {
-        selected: false,
-        text: "脸不紧致，赶紧用按摩仪提拉一下！",
-        id: 2
-      }, {
-        selected: false,
-        text: "粗糙起皮，做个去角质就好啦~~",
-        id: 1
-      }]],
+      answerlist: answerlists,
       answerShow: [true, true, true]
     },
     // computed:
@@ -214,12 +351,15 @@ initLab = function initLab() {
         this.started = false;
         return this.startquestion = true;
       },
-      selecteFun: function selecteFun(answer, index) {
+      selecteFun: function selecteFun(answer, indexP, index) {
+        console.log(indexP, this.answer);
         if (this.waiting || this.answerFinished || this.answer === 3) {
-          // console.log answer
           return false;
         }
-        console.log(this.answer);
+        if (indexP !== this.answer) {
+          return false;
+        }
+        // console.log @answer
         answer.selected = true;
         if (this.answer < 2) {
           this.answerShow[this.answer] = false;
@@ -239,16 +379,34 @@ initLab = function initLab() {
         this.startprinter = true;
         this.printerover = true;
         p = document.getElementById("printer-page");
-        return console.log(this.sendPostFun);
+        if (this.score[0] >= this.score[1] && this.score[0] >= this.score[2]) {
+          this.printer.title = shareTitles[0];
+        } else if (this.score[1] >= this.score[2] && this.score[1] >= this.score[0]) {
+          this.printer.title = shareTitles[1];
+        } else if (this.score[2] >= this.score[1] && this.score[2] >= this.score[0]) {
+          this.printer.title = shareTitles[2];
+        } else {
+          this.printer.title = shareTitles[0];
+        }
+        if (this.score[2] <= this.score[1] && this.score[2] <= this.score[0]) {
+          return this.printer.description = shareDescription[2];
+        } else if (this.score[1] <= this.score[2] && this.score[1] <= this.score[0]) {
+          return this.printer.description = shareDescription[1];
+        } else if (this.score[0] <= this.score[1] && this.score[0] <= this.score[2]) {
+          return this.printer.description = shareDescription[0];
+        } else {
+          return this.printer.description = shareDescription[2];
+        }
       },
+      // console.log @sendPostFun
       sendPostFun: function sendPostFun() {
         var self;
-        // console.log @sended
         if (this.sended) {
+          // console.log @sended
           return false;
         }
         self = this;
-        return axios.get("http://" + apiURL + "/esteelauder/shareTo").then(function (msg) {
+        return axios.get("http://" + apiURL + "/esteelauder/shareTo/?id=" + this.score.join("-")).then(function (msg) {
           if (msg.data.recode === 200) {
             self.sended = true;
             self.sharesuccess = true;
@@ -261,17 +419,22 @@ initLab = function initLab() {
       },
       // alert "发布成功"
       closeshare: function closeshare() {
-        self.sharesuccess = false;
-        return self.sended = false;
+        this.sharesuccess = false;
+        return this.sended = false;
       },
-      openNoteFun: function openNoteFun(de) {
-        return console.log("openNoteFun", de);
+      closenote: function closenote() {
+        return this.shownote = false;
+      },
+      openNoteFun: function openNoteFun() {
+        // console.log "openNoteFun",de
+        return this.shownote = true;
       },
       gotoProFun: function gotoProFun(de) {
         if (!this.printerover) {
           return false;
         }
-        return this.printerover = false;
+        this.printerover = false;
+        return this.overpage = true;
       }
     },
     directives: {
@@ -286,21 +449,36 @@ initLab = function initLab() {
         bind: function bind(el, binding, vnode) {
           el.addEventListener("touchstart", binding.def.touchstart.bind(binding));
           el.addEventListener("touchmove", binding.def.touchmove.bind(binding));
-          return el.addEventListener("touchend", binding.def.touchend.bind(binding));
+          el.addEventListener("touchend", binding.def.touchend.bind(binding));
+          el.addEventListener("mousedown", binding.def.touchstart.bind(binding));
+          el.addEventListener("mousemove", binding.def.touchmove.bind(binding));
+          return el.addEventListener("mouseup", binding.def.touchend.bind(binding));
         },
         touchstart: function touchstart(evt) {
           var touch;
-          touch = evt.touches[0];
-          this.def.default.x = touch.pageX;
-          this.def.default.y = touch.pageY;
-          return this.def.default.start = true;
+          evt.preventDefault();
+          if (evt.type === "mousedown") {
+            this.def.default.x = evt.pageX;
+            this.def.default.y = evt.pageY;
+            return this.def.default.start = true;
+          } else {
+            touch = evt.touches[0];
+            this.def.default.x = touch.pageX;
+            this.def.default.y = touch.pageY;
+            return this.def.default.start = true;
+          }
         },
         touchmove: function touchmove(evt) {
           var deY, touch;
+          evt.preventDefault();
           if (!this.def.default.start) {
             return false;
           }
-          touch = evt.touches[0];
+          if (evt.type === "mousemove") {
+            touch = evt;
+          } else {
+            touch = evt.touches[0];
+          }
           this.def.default.moving = true;
           deY = this.def.default.y - touch.pageY;
           if (deY > 50) {
@@ -315,6 +493,7 @@ initLab = function initLab() {
           }
         },
         touchend: function touchend(evt) {
+          evt.preventDefault();
           this.def.default.start = false;
           return this.def.default.moving = false;
         }
@@ -324,6 +503,8 @@ initLab = function initLab() {
 };
 
 ask = function ask() {
+  // WB2.logout ->
+  // 	console.log WB2.checkLogin()
   // return false
   axios.defaults.withCredentials = true;
   return axios.get("http://" + apiURL + "/esteelauder/ask").then(function (msg) {
