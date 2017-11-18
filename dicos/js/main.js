@@ -367,7 +367,8 @@ function openDoor(){
   TweenLite.set($("#p4door"),{display:"none"})
   TweenLite.set($("#p4door2"),{display:"block",width:screenH,opacity:5})
 
-  TweenLite.to($("#p4door2"),2,{rotationX:90*0.685,z:-screenH/3*0.596,y:"-=50",display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})//23
+  //TweenLite.to($("#p4door2"),2,{rotationX:90*0.685,z:-screenH/3*0.596,top:"20.91%",display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})//23
+  TweenLite.to($("#p4door2"),2,{rotationX:90*0.685,display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})
   // alert("ddd")
 }
 
