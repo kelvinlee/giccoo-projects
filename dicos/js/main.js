@@ -550,8 +550,9 @@ function zoomAni3(){
       if (lengthFun(toucholdevent) - lengthFun(touchstartevent) > 100 ) {
         //alert("zoomIn")
         if (nowPage==0) {
-          page2zoomIn()
           document.getElementById('videoA').play()
+          page2zoomIn()
+          
         }else if(nowPage==1){
           page3zoomIn()
         }else if(nowPage==2){
@@ -568,6 +569,7 @@ function zoomAni3(){
 
     $('#zoom').click(function(){
         if (nowPage==0) {
+           document.getElementById('videoA').play()
           page2zoomIn()
         }else if(nowPage==1){
           page3zoomIn()
