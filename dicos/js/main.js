@@ -4,8 +4,8 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "2017德克士的100个改变",
-      desc: "",
+      title: "2017德克士100个改变",
+      desc: "从数字化进阶智能化，从舒食转向新鲜，从消费升级为尊享",
       link: "http://m.giccoo.com/dicos/",
       imgUrl: "http://m.giccoo.com/dicos/img/ico.jpg",
       success: function() {},
@@ -76,7 +76,7 @@ function loading(){
   TweenLite.to($("#loading2"),10,{rotation:-360,delay:2,x:"-50%",y:"-50%"})
   TweenLite.to($("#loading3"),10,{rotation:360,delay:2,x:"-50%",y:"-50%"})
 
- TweenLite.to(this,10,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
+ TweenLite.to(this,12,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
  
 }
 
@@ -377,6 +377,7 @@ function showP5(){
    TweenLite.from($("#p5food"),.5,{y:"+=200",opacity:0,delay:1-1+1})
    TweenLite.from($("#p5logo"),1.5,{y:"-=100",opacity:0,ease:Elastic.easeOut,delay:1.2-1+1})
    TweenLite.from($("#p5bg"),.5,{y:"-=1000",opacity:0,delay:1.4-1})
+   TweenLite.from($("#p5t"),1.5,{y:"-=100",opacity:0,ease:Elastic.easeOut,delay:1.2-1+1-.1})
    TweenLite.set($('#zoom'),{display:"block",delay:1.5-1,top:"-12%",left:"10%"})
 
 }
