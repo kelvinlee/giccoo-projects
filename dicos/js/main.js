@@ -11,6 +11,9 @@ function aaa(){
 }
 
 $("img").on("load",aaa);
+$("img[data-src]").each(function(){
+  $(this).attr("src",$(this).attr("data-src"))
+})
 
 // alert($("img").length)
 
