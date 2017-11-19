@@ -76,7 +76,7 @@ function loading(){
   TweenLite.to($("#loading2"),10,{rotation:-360,delay:2,x:"-50%",y:"-50%"})
   TweenLite.to($("#loading3"),10,{rotation:360,delay:2,x:"-50%",y:"-50%"})
 
- TweenLite.to(this,6,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
+ TweenLite.to(this,4,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
  
 }
 
@@ -90,7 +90,7 @@ function loadingFinish(){
       TweenLite.set(p1picA[i],{opacity:0})
   };
    TweenLite.set($("#p1pic8"),{opacity:0})
-   TweenLite.set($("#p1t"),{opacity:0})
+   // TweenLite.set($("#p1t"),{opacity:0})
 
    document.getElementById('audio').play()
 }
@@ -125,9 +125,9 @@ function page1in(){
 function page1done(){
 
   $(".p1btn").css({display:"block",opacity:0})
-  $("#p1t").css({opacity:0})
+  // $("#p1t").css({opacity:0})
 
-  TweenLite.to($("#p1t"),1,{opacity:1,ease:Expo.easeOut})//,onComplete:page1Tloop
+  // TweenLite.to($("#p1t"),1,{opacity:1,ease:Expo.easeOut})//,onComplete:page1Tloop
 
   TweenLite.to($("#p1btn3"),1,{opacity:1,scale:.6,delay:0.1,ease:Back.easeOut})
   TweenLite.to($("#p1btn2"),1,{opacity:1,scale:.6,delay:0.2,ease:Back.easeOut})
