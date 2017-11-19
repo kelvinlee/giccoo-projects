@@ -76,7 +76,7 @@ function loading(){
   TweenLite.to($("#loading2"),10,{rotation:-360,delay:2,x:"-50%",y:"-50%"})
   TweenLite.to($("#loading3"),10,{rotation:360,delay:2,x:"-50%",y:"-50%"})
 
- TweenLite.to(this,12,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
+ TweenLite.to(this,8,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
  
 }
 
@@ -91,6 +91,8 @@ function loadingFinish(){
   };
    TweenLite.set($("#p1pic8"),{opacity:0})
    TweenLite.set($("#p1t"),{opacity:0})
+
+   document.getElementById('audio').play()
 }
 //===================loading动画结束
 
@@ -573,6 +575,22 @@ function zoomAni3(){
           touchstartevent[1].pageX = e.originalEvent.touches[1].pageX;
           touchstartevent[1].pageY = e.originalEvent.touches[1].pageY;
         }
+      }
+
+
+      if (!touchstartevent[0].pageY) return;
+      if (lengthFun(toucholdevent) - lengthFun(touchstartevent) > 50 ) {
+        //alert("zoomIn")
+        if (nowPage==0) {
+          //document.getElementById('videoA').play()
+          page2zoomIn()
+          
+        }else if(nowPage==1){
+          page3zoomIn()
+        }else if(nowPage==2){
+          page6in()
+        };
+
       }
     }).on('touchend', function (e) {
       if (!touchstartevent[0].pageY) return;
