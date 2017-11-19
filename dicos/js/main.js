@@ -193,12 +193,12 @@ $("#page1").click(function(){
  TweenLite.killTweensOf($("#p1btn3"))
  TweenLite.killTweensOf($("#p1btn4"))
  // loop1=0
-  TweenLite.to($("#p1btn3"),.4,{opacity:0,scale:1.6,rotation:"+=0",delay:0.10-0.1,display:"none"})
-  TweenLite.to($("#p1btn2"),.4,{opacity:0,scale:1.6,rotation:"-=0",delay:0.15-0.1,display:"none"})
-  TweenLite.to($("#p1btn1"),.4,{opacity:0,scale:1.6,rotation:"-=0",delay:0.20-0.1,display:"none"})
-  TweenLite.to($("#p1btn4"),.4,{opacity:0,scale:1.6,rotation:"+=0",delay:0.25-0.1,display:"none"})
+  TweenLite.to($("#p1btn3"),1.4,{opacity:0,scale:1.6,rotation:"+=0",delay:0.10-0.1,display:"none"})
+  TweenLite.to($("#p1btn2"),1.4,{opacity:0,scale:1.6,rotation:"-=0",delay:0.15-0.1,display:"none"})
+  TweenLite.to($("#p1btn1"),1.4,{opacity:0,scale:1.6,rotation:"-=0",delay:0.20-0.1,display:"none"})
+  TweenLite.to($("#p1btn4"),1.4,{opacity:0,scale:1.6,rotation:"+=0",delay:0.25-0.1,display:"none"})
 
-  TweenLite.to($("#page1"),.4,{delay:0.3,opacity:0,display:"none",onComplete:page2in})
+  TweenLite.to($("#page1"),1.4,{delay:0.3,opacity:0,display:"none",onComplete:page2in})
   $("#page2").css({display:"block"})
   document.getElementById('audio').play()
 
