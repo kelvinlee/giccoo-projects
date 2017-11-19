@@ -4,8 +4,8 @@ var picNum=0
 function aaa(){
   console.log(picNum)
   picNum++
-  $("#loadingNum").text(parseInt(picNum/$("img").length*100));
-  if(picNum==$("img").length){
+  $("#loadingNum").text(parseInt(picNum/$("img[data-src]").length*100));
+  if(picNum==$("img[data-src]").length){
     loadingFinish()
   }
 }
