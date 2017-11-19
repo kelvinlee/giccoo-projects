@@ -498,7 +498,7 @@ $("#btn1").click(function(){
 
 
 $("#btn2").click(function(){
-  TweenLite.set($('#sharePage'),{display:"block"})
+  TweenLite.set($('#sharePage'),{display:"block",opacity:1})
   TweenLite.from($('#sharePage'),1,{opacity:0})
   
 });
