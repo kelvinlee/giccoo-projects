@@ -198,7 +198,7 @@ $("#page1").click(function(){
   TweenLite.to($("#p1btn1"),.4,{opacity:0,scale:1.6,rotation:"-=0",delay:0.20-0.1,display:"none"})
   TweenLite.to($("#p1btn4"),.4,{opacity:0,scale:1.6,rotation:"+=0",delay:0.25-0.1,display:"none"})
 
-  TweenLite.to($("#page1"),1,{delay:.7,opacity:0,display:"none",onComplete:page2in})
+  TweenLite.to($("#page1"),.4,{delay:.7,opacity:0,display:"none",onComplete:page2in})
   $("#page2").css({display:"block"})
   document.getElementById('audio').play()
 
