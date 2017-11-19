@@ -76,7 +76,7 @@ function loading(){
   TweenLite.to($("#loading2"),10,{rotation:-360,delay:2,x:"-50%",y:"-50%"})
   TweenLite.to($("#loading3"),10,{rotation:360,delay:2,x:"-50%",y:"-50%"})
 
- TweenLite.to(this,5,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
+ TweenLite.to(this,10,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
  
 }
 
@@ -460,8 +460,8 @@ function checkResult(){
 
   if((ifClickA[0]+ifClickA[1])==2){
     //alert("ddd")
-    TweenLite.set($("#p6hint"),{display:"block",delay:1.5})
-    TweenLite.from($("#p6hint"),1.5,{opacity:0,y:"+=100",ease:Elastic.easeOut,onComplete:hideResult,delay:1.5})
+    TweenLite.set($("#p6hint"),{display:"block",delay:0})
+    TweenLite.from($("#p6hint"),1.5,{opacity:0,y:"+=100",ease:Elastic.easeOut,onComplete:hideResult,delay:0})
     
     TweenLite.set($("#chicken"),{display:"none",delay:1.5})
     TweenLite.set($("#p6t1"),{display:"none",delay:1.5})
@@ -477,7 +477,7 @@ function checkResult(){
 }
 
 function hideResult(){
-  TweenLite.to($("#p6hint"),.5,{opacity:0,y:"-=100",delay:2,display:"none"})
+  TweenLite.set($("#p6hint"),{opacity:0,y:"-=100",display:"none"})
 }
 
 //===============放大按钮动画=========
@@ -548,10 +548,10 @@ function zoomAni3(){
       }
     }).on('touchend', function (e) {
       if (!touchstartevent[0].pageY) return;
-      if (lengthFun(toucholdevent) - lengthFun(touchstartevent) > 100 ) {
+      if (lengthFun(toucholdevent) - lengthFun(touchstartevent) > 50 ) {
         //alert("zoomIn")
         if (nowPage==0) {
-          document.getElementById('videoA').play()
+          //document.getElementById('videoA').play()
           page2zoomIn()
           
         }else if(nowPage==1){
@@ -570,7 +570,7 @@ function zoomAni3(){
 
     $('#zoom').click(function(){
         if (nowPage==0) {
-           document.getElementById('videoA').play()
+           //document.getElementById('videoA').play()
           page2zoomIn()
         }else if(nowPage==1){
           page3zoomIn()
