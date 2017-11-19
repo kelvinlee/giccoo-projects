@@ -584,11 +584,13 @@ function zoomAni3(){
         if (nowPage==0) {
           //document.getElementById('videoA').play()
           page2zoomIn()
-          
+          return;
         }else if(nowPage==1){
           page3zoomIn()
+          return;
         }else if(nowPage==2){
           page6in()
+          return;
         };
 
       }
