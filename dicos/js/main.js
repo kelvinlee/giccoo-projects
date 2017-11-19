@@ -1,21 +1,25 @@
 var picNum=0
-
+var loadNum=0.0
 
 function aaa(){
   console.log(picNum)
   picNum++
-  $("#loadingNum").text(parseInt(picNum/$("img[data-src]").length*100-2));
+  loadNum=picNum/$("img[data-src]").length*100
+  $("#loadingNum").text(parseInt(loadNum));
+  //TweenLite.to(this,1,{loadNum:picNum/$("img[data-src]").length*100})
+  //$("#loadingNum").text(parseInt(picNum/$("img[data-src]").length*100-2));
   if(picNum==$("img[data-src]").length){
     loadingFinish()
+    //TweenLite.to($(document),5,{loadNum:100,onComplete:loadingFinish})
   }
 }
 
-$("img").on("load",aaa);
-$("img[data-src]").each(function(){
-  $(this).attr("src",$(this).attr("data-src"))
-})
+// $("img").on("load",aaa);
+// $("img[data-src]").each(function(){
+//   $(this).attr("src",$(this).attr("data-src"))
+// })
 
-// alert($("img").length)
+
 
 $(document).ready(function load (){
 	loadWechatConfig();
@@ -60,9 +64,9 @@ var p1picA=[$("#p1pic1"),$("#p1pic2"),$("#p1pic3"),$("#p1pic4"),$("#p1pic5"),$("
 
 
 
-var loadNum=0.0
+
 var setInt= window.setInterval(function(){
-  //$("#loadingNum").text(parseInt(loadNum));
+  $("#loadingNum").text(parseInt(loadNum));
  },100);
 // var loop1=1
 var screenW//屏幕宽
@@ -90,7 +94,7 @@ function loading(){
 
   TweenLite.from($("#loading1"),1,{rotation:100,opacity:-1,scale:0.5,delay:1,overwrite:0,x:"-50%",y:"-50%"})
   TweenLite.from($("#loading2"),1,{opacity:0,scale:-10,delay:1.2,overwrite:0,ease:Elastic.easeOut,x:"-50%",y:"-50%"})
-  TweenLite.from($("#loading3"),0.5,{rotation:180,opacity:0,scale:1.5,delay:1.4,overwrite:0,x:"-50%",y:"-50%"})
+  TweenLite.from($("#loading3"),0.5,{rotation:180,opacity:0,scale:1.5,delay:1.4,overwrite:0,x:"-50%",y:"-50%",onComplete:setloading})
 
   TweenLite.to($("#loading1"),10,{rotation:1440,delay:2,x:"-50%",y:"-50%"})
   TweenLite.to($("#loading2"),10,{rotation:-360,delay:2,x:"-50%",y:"-50%"})
@@ -101,7 +105,12 @@ function loading(){
 
 }
 
-
+function setloading(){
+  $("img").on("load",aaa);
+  $("img[data-src]").each(function(){
+    $(this).attr("src",$(this).attr("data-src"))
+  })
+}
 
 function loadingFinish(){
   //alert("loading完成");
