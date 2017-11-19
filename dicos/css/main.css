@@ -32,8 +32,6 @@ img{ width: 100%; }
 	-webkit-transform: translate3d(-50%, -50%, 0);
        		transform: translate3d(-50%, -50%, 0);
     font-size: 0;
-	/*-webkit-transform-origin:50% 0%;
-    		transform-origin:50% 0%;*/
 }
 
 
@@ -70,8 +68,6 @@ img{ width: 100%; }
     font-size: 0;
     display: none;
 
-	/*-webkit-transform-origin:50% 0%;
-    		transform-origin:50% 0%;*/
 }
 .bottomPart{
 	position: absolute;
@@ -81,7 +77,6 @@ img{ width: 100%; }
 }
 #fdoor{
 	position: absolute;
-	/*bottom: 0;*/
 }
 #innerBG{
 	position: absolute;
@@ -127,12 +122,6 @@ img{ width: 100%; }
 #p3t2{
 	display: none;
 }
-/*#p4bg{
-	position: absolute;
-	font-size: 0;
-	width: 100%;
-	height: 100%;
-}*/
 #p4door2{
 	position: absolute;
 	font-size: 0;
@@ -170,4 +159,27 @@ img{ width: 100%; }
 }
 #audioPlay{
 	display: none;
+}
+.alphaBtn{
+	position: absolute;
+	background-color: #000000;
+	opacity: 0;
+	display: none;
+}
+#btn1{
+	width: 50%;
+	height: 20%;
+	bottom: 5%;
+	left: 0;
+}
+#btn2{
+	width: 50%;
+	height: 20%;
+	bottom: 5%;
+	left: 50%;
+}
+#blackLayer{
+	background-color: #000000;
+	opacity: 0.7;
+
 }

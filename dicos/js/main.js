@@ -226,7 +226,6 @@ var videoW
 
 function page2zoomIn(){
   nowPage=1
-  //alert("zoomIn")
   TweenLite.set($('#zoom'),{display:"none"})
   TweenLite.to($('#p2t'),1,{opacity:0,display:"none"})
 
@@ -326,11 +325,7 @@ function click1(){
 
 function hideHand(){
   TweenLite.to($("#phone"),.8,{y:"+=1000",x:"-=100",delay:.5,ease:Expo.easeIn})
-  //TweenLite.to($("#handR1"),1,{y:"+=500",x:"+=200",delay:0.5,ease:Expo.easeIn})
 
-
-  //innerH*=1.2
-  //innerW*=1.2
   TweenLite.to(innerBG,2,{x:screenW/2-innerW*0.5087,y:screenH/2-innerH*0.447,scale:1.2,delay:1,ease:Quad.easeInOut,onComplete:p3end})
   TweenLite.to($("#p3t"),1,{opacity:0,display:"none",delay:1})
 }
@@ -369,7 +364,6 @@ function openDoor(){
 
   //TweenLite.to($("#p4door2"),2,{rotationX:90*0.685,z:-screenH/3*0.596,top:"20.91%",display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})//23
   TweenLite.to($("#p4door2"),2,{rotationX:70,scale:0.45,display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})
-  // alert("ddd")
 }
 
 function showP5(){
@@ -475,13 +469,44 @@ function checkResult(){
     TweenLite.set($("#markV2"),{display:"none",delay:1.5})
     TweenLite.set($("#markX1"),{display:"none",delay:1.5})
     TweenLite.set($("#markX2"),{display:"none",delay:1.5})
+
+    TweenLite.set($("#page7"),{display:"block",delay:1.5,onComplete:setPage7})
+
     
   }
 }
 
+
 function hideResult(){
   TweenLite.set($("#p6hint"),{opacity:0,y:"-=100",display:"none"})
 }
+
+
+
+
+
+function setPage7(){
+  TweenLite.set($('#btn1'),{display:"block"})
+  TweenLite.set($('#btn2'),{display:"block"})
+}
+
+
+$("#btn1").click(function(){
+  window.location.href="http://prj.verystar.cn/dicos-futureshop/index?wxqr_scene_id=113";
+  
+});
+
+
+$("#btn2").click(function(){
+  TweenLite.set($('#sharePage'),{display:"block"})
+  TweenLite.from($('#sharePage'),1,{opacity:0})
+  
+});
+
+$("#sharePage").click(function(){
+  TweenLite.to($('#sharePage'),.5,{opacity:0,display:"none"})
+  
+});
 
 //===============放大按钮动画=========
 
