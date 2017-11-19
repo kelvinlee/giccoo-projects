@@ -391,6 +391,7 @@ var ifClickA=[0,0,0,0]
 
 function page6in(){
  // alert("最后出鸡子了！") 
+  nowPage=5
    TweenLite.to($("#p5food"),.5,{y:"+=200",opacity:0})
    TweenLite.to($("#p5logo"),.5,{y:"-=100",opacity:0})
    TweenLite.to($("#p5t"),.5,{y:"-=100",opacity:0})
