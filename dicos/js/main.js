@@ -4,7 +4,7 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "2017德克士100个改变",
+      title: "2017德克士100个改变",//2017德克士100个改变
       desc: "从数字化进阶智能化，从舒食转向新鲜，从消费升级为尊享",
       link: "http://m.giccoo.com/dicos/",
       imgUrl: "http://m.giccoo.com/dicos/img/ico.jpg",
