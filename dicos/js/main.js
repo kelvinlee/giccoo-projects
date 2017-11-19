@@ -76,7 +76,7 @@ function loading(){
   TweenLite.to($("#loading2"),10,{rotation:-360,delay:2,x:"-50%",y:"-50%"})
   TweenLite.to($("#loading3"),10,{rotation:360,delay:2,x:"-50%",y:"-50%"})
 
- TweenLite.to(this,8,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
+ TweenLite.to(this,6,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
  
 }
 
@@ -227,7 +227,7 @@ var videoW
 
 
 function page2zoomIn(){
-  nowPage=1
+  nowPage=0.5
   TweenLite.set($('#zoom'),{display:"none"})
   TweenLite.to($('#p2t'),1,{opacity:0,display:"none"})
 
@@ -241,6 +241,7 @@ var foodW
 var foodH
 function page2zoomIn2(){
 
+  
   doorW=screenW/640*1234*2
   doorH=screenW/640*2198*2
 
@@ -335,12 +336,13 @@ function hideHand(){
 function p3end(){
   $("#p3t2").css({display:"block"})
   TweenLite.from($("#p3t2"),1.5,{y:"-=50",opacity:0,delay:0,ease:Elastic.easeOut})
+  nowPage=1
   TweenLite.set($('#zoom'),{display:"block"})
 }
 
 
 function page3zoomIn(){
-  nowPage=2
+  nowPage=1.5
    TweenLite.set($('#zoom'),{display:"none"})
    TweenLite.set($("#p3t2"),{display:"none"})
 
@@ -359,6 +361,7 @@ function page3zoomIn(){
 }
 
 function openDoor(){
+
   //TweenLite.set($("#page4"),{display:"block"})
   //TweenLite.set($("#p4door"),{"perspective":300,"-webkit-perspective":300,"transform-style":"preserve-3d","-webkit-transform-style":"preserve-3d"})
   TweenLite.set($("#p4door"),{display:"none"})
@@ -374,6 +377,8 @@ function showP5(){
    TweenLite.from($("#p5logo"),1.5,{y:"-=100",opacity:0,ease:Elastic.easeOut,delay:1.2-1+1})
    TweenLite.from($("#p5bg"),.5,{y:"-=1000",opacity:0,delay:1.4-1})
    TweenLite.from($("#p5t"),1.5,{y:"-=100",opacity:0,ease:Elastic.easeOut,delay:1.2-1+1-.1})
+
+   nowPage=2
    TweenLite.set($('#zoom'),{display:"block",delay:1.5-1,top:"-12%",left:"10%"})
 
 }
