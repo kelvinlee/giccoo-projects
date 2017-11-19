@@ -373,19 +373,35 @@ function openDoor(){
   TweenLite.set($("#p4door2"),{display:"block",width:screenH,opacity:5})
 
   //TweenLite.to($("#p4door2"),2,{rotationX:90*0.685,z:-screenH/3*0.596,top:"20.91%",display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})//23
-  TweenLite.to($("#p4door2"),1.5,{rotationX:70,scale:0.45,display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})
+  TweenLite.to($("#p4door2"),1.5,{rotationX:70,scale:0.45,display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})//,onComplete:showP5
 }
 
 function showP5(){
+  nowPage=2
+  TweenLite.set($('#zoom'),{display:"block",delay:1.5-1,top:"5%",left:"10%"})
+
+}
+
+function showP5b(){
+  TweenLite.set($("#innerBG2"),{display:"none"})
+    TweenLite.set($("#p4bg"),{opacity:2})
+   TweenLite.to($("#p4bg"),1,{scale:2,opacity:0,onComplete:setZoom})
+   
+
    TweenLite.set($("#page5"),{display:"block"})
-   TweenLite.from($("#p5food"),.5,{y:"+=200",opacity:0,delay:1-1+1})
+  //TweenLite.from($("#p5food"),.5,{y:"+=200",opacity:0,delay:1-1+1})
    TweenLite.from($("#p5logo"),1.5,{y:"-=100",opacity:0,ease:Elastic.easeOut,delay:1.2-1+1})
-   TweenLite.from($("#p5bg"),.5,{y:"-=1000",opacity:0,delay:1.4-1})
+   //TweenLite.from($("#p5bg"),.5,{opacity:0,delay:1.4-1})
    TweenLite.from($("#p5t"),1.5,{y:"-=100",opacity:0,ease:Elastic.easeOut,delay:1.2-1+1-.1})
 
-   nowPage=2
-   TweenLite.set($('#zoom'),{display:"block",delay:1.5-1,top:"-12%",left:"10%"})
+   nowPage=2.5
+   TweenLite.set($('#zoom'),{display:"none"})
+   
 
+}
+function setZoom(){
+  nowPage=3
+  TweenLite.set($('#zoom'),{display:"block",delay:1.5-1,top:"-12%",left:"10%"})
 }
 
 
@@ -600,6 +616,9 @@ function zoomAni3(){
           page3zoomIn()
           return;
         }else if(nowPage==2){
+          showP5b()
+          return;
+        }else if(nowPage==3){
           page6in()
           return;
         };
@@ -634,7 +653,11 @@ function zoomAni3(){
         }else if(nowPage==1){
           page3zoomIn()
         }else if(nowPage==2){
+          showP5b()
+          return;
+        }else if(nowPage==3){
           page6in()
+          return;
         };
     });
 
