@@ -213,10 +213,10 @@ function page2in(){
   // document.getElementById('audio').play()
   if(ifLR==1){//上下超出，上下移动
     TweenLite.set(doorBG,{y:screenH-doorH,onComplete:showZoomBtn})
-    TweenLite.from(doorBG,3,{y:0})
+    TweenLite.from(doorBG,2,{y:0})
   }else{
     TweenLite.set(doorBG,{x:0})
-    TweenLite.from(doorBG,3,{x:screenW-doorW,onComplete:showZoomBtn})
+    TweenLite.from(doorBG,2,{x:screenW-doorW,onComplete:showZoomBtn})
   }
 
 
@@ -234,7 +234,8 @@ function page2zoomIn(){
   doorW=screenW/640*1234
   doorH=screenW/640*2198
 
-  TweenLite.to(doorBG,2,{x:screenW/2-doorW*0.3185,y:screenH/2-doorH*0.707,width:doorW,height:doorH,ease:Quad.easeOut,onComplete:page2zoomIn2})
+  //TweenLite.to(doorBG,1.5,{x:screenW/2-doorW*0.3185,y:screenH/2-doorH*0.707,width:doorW,height:doorH,ease:Quad.easeIn,onComplete:page2zoomIn2})
+  page2zoomIn2();
 }
 
 var foodW
@@ -245,9 +246,13 @@ function page2zoomIn2(){
   doorW=screenW/640*1234*2
   doorH=screenW/640*2198*2
 
-  TweenLite.to(doorBG,1,{display:"none",opacity:0,x:screenW/2-doorW*0.3185+80,y:screenH/2-doorH*0.707-80,width:doorW,height:doorH,ease:Quad.easeIn,onComplete:page3in})
+  TweenLite.set(doorBG,{opacity:2})
+
+  TweenLite.to(doorBG,2,{x:screenW/2-doorW*0.3185,opacity:0,y:screenH/2-doorH*0.707,width:doorW,height:doorH,ease:Quad.easeIn,onComplete:page3in})
+
+ // TweenLite.to(doorBG,.5,{display:"none",opacity:0,x:screenW/2-doorW*0.3185+80,y:screenH/2-doorH*0.707-80,width:doorW,height:doorH,ease:Quad.easeIn,onComplete:page3in})
   $("#page3").css({display:"block"})
-  TweenLite.set($("#page2"),{display:"none",delay:1})
+  TweenLite.set($("#page2"),{display:"none",delay:2})
   innerH=screenH
   innerW=screenH/1000*1606
   TweenLite.set(innerBG,{x:0,y:0,width:innerW,height:innerH})
@@ -271,7 +276,7 @@ function page2zoomIn2(){
 
 
 function page3in(){
-  TweenLite.to(innerBG,6,{x:screenW-innerW+1,ease:Quad.easeInOut})
+  TweenLite.to(innerBG,5,{x:screenW-innerW+1,ease:Quad.easeInOut})
   //document.getElementById('videoA').play()
   showHand()
 
@@ -283,10 +288,10 @@ function showHand(){
   $("#screen4").css({display:"none"})
   $("#handR2").css({display:"none"})
   $("#p3t").css({display:"block"})
-  TweenLite.from($("#handL"),1,{y:"+=500",x:"-=500",opacity:0,delay:3,onComplete:click1})
-  TweenLite.from($("#screen1"),1,{y:"+=500",x:"-=500",opacity:0,delay:3})
-  TweenLite.from($("#handR1"),1,{y:"+=500",x:"+=500",opacity:0,delay:3.8})
-  TweenLite.from($("#p3t"),2,{y:"+=50",opacity:0,delay:3.8,ease:Elastic.easeOut})
+  TweenLite.from($("#handL"),1,{y:"+=500",x:"-=500",opacity:0,delay:1.5,onComplete:click1})
+  TweenLite.from($("#screen1"),1,{y:"+=500",x:"-=500",opacity:0,delay:1.5})
+  TweenLite.from($("#handR1"),1,{y:"+=500",x:"+=500",opacity:0,delay:2.3})
+  TweenLite.from($("#p3t"),2,{y:"+=50",opacity:0,delay:2.3,ease:Elastic.easeOut})
 }
 function click1(){
   TweenLite.set($("#screen2"),{display:"block",opacity:0})
@@ -327,9 +332,9 @@ function click1(){
 }
 
 function hideHand(){
-  TweenLite.to($("#phone"),.8,{y:"+=1000",x:"-=100",delay:.5,ease:Expo.easeIn})
+  TweenLite.to($("#phone"),.8,{y:"+=1000",x:"-=100",delay:0,ease:Expo.easeIn})
 
-  TweenLite.to(innerBG,2,{x:screenW/2-innerW*0.5087,y:screenH/2-innerH*0.447,scale:1.2,delay:1,ease:Quad.easeInOut,onComplete:p3end})
+  TweenLite.to(innerBG,1.5,{x:screenW/2-innerW*0.5087,y:screenH/2-innerH*0.447,scale:1.2,delay:0,ease:Quad.easeInOut,onComplete:p3end})
   TweenLite.to($("#p3t"),1,{opacity:0,display:"none",delay:1})
 }
 
@@ -368,7 +373,7 @@ function openDoor(){
   TweenLite.set($("#p4door2"),{display:"block",width:screenH,opacity:5})
 
   //TweenLite.to($("#p4door2"),2,{rotationX:90*0.685,z:-screenH/3*0.596,top:"20.91%",display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})//23
-  TweenLite.to($("#p4door2"),2,{rotationX:70,scale:0.45,display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})
+  TweenLite.to($("#p4door2"),1.5,{rotationX:70,scale:0.45,display:"none",opacity:0,ease:Cubic.easeIn,onComplete:showP5})
 }
 
 function showP5(){
