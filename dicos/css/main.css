@@ -165,6 +165,8 @@ img{ width: 100%; }
 	background-color: #000000;
 	opacity: 0;
 	display: none;
+	-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;
 }
 #btn1{
 	width: 50%;
