@@ -163,6 +163,8 @@ img{ width: 100%;
 }
 #audioPlay{
 	display: none;
+		-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;
 }
 .alphaBtn{
 	position: absolute;
