@@ -1,3 +1,18 @@
+var picNum=0
+
+
+function aaa(){
+  console.log(picNum)
+  picNum++
+  $("#loadingNum").text(parseInt(picNum/$("img").length*100));
+  if(picNum==$("img").length){
+    loadingFinish()
+  }
+}
+
+$("img").on("load",aaa);
+
+// alert($("img").length)
 
 $(document).ready(function load (){
 	loadWechatConfig();
@@ -16,6 +31,8 @@ $(document).ready(function load (){
     wx.onMenuShareQQ(shareContent);
     return wx.onMenuShareWeibo(shareContent);
   });
+
+
   loading();
 
 
@@ -42,7 +59,7 @@ var p1picA=[$("#p1pic1"),$("#p1pic2"),$("#p1pic3"),$("#p1pic4"),$("#p1pic5"),$("
 
 var loadNum=0.0
 var setInt= window.setInterval(function(){
-  $("#loadingNum").text(parseInt(loadNum));
+  //$("#loadingNum").text(parseInt(loadNum));
  },100);
 // var loop1=1
 var screenW//屏幕宽
@@ -76,9 +93,11 @@ function loading(){
   TweenLite.to($("#loading2"),10,{rotation:-360,delay:2,x:"-50%",y:"-50%"})
   TweenLite.to($("#loading3"),10,{rotation:360,delay:2,x:"-50%",y:"-50%"})
 
- TweenLite.to(this,4,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
- 
+
+ //TweenLite.to(this,4,{loadNum:100,delay:2,onComplete:loadingFinish})//<===========改这里
+
 }
+
 
 
 function loadingFinish(){
