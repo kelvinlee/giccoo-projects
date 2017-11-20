@@ -60,7 +60,7 @@ var loadWechatConfig = function() {
 //========总
 
 
-var p1picA=[$("#p1pic1"),$("#p1pic2"),$("#p1pic3"),$("#p1pic4"),$("#p1pic5"),$("#p1pic6"),$("#p1pic7")];
+var p1picA=[$("#p1pic1"),$("#p1pic2"),$("#p1pic3"),$("#p1pic4"),$("#p1pic6"),$("#p1pic7")];//$("#p1pic5"),
 
 
 
@@ -121,7 +121,7 @@ function loadingFinish(){
       TweenLite.set(p1picA[i],{opacity:0})
   };
    TweenLite.set($("#p1pic8"),{opacity:0})
-   // TweenLite.set($("#p1t"),{opacity:0})
+    TweenLite.set($("#p1t"),{opacity:0})
 
    document.getElementById('audio').play()
 }
@@ -156,9 +156,9 @@ function page1in(){
 function page1done(){
 
   $(".p1btn").css({display:"block",opacity:0})
-  // $("#p1t").css({opacity:0})
+   $("#p1t").css({opacity:0})
 
-  // TweenLite.to($("#p1t"),1,{opacity:1,ease:Expo.easeOut})//,onComplete:page1Tloop
+   TweenLite.to($("#p1t"),1,{opacity:1,ease:Expo.easeOut})//,onComplete:page1Tloop
 
   TweenLite.to($("#p1btn3"),1,{opacity:1,scale:.6,delay:0.1,ease:Back.easeOut})
   TweenLite.to($("#p1btn2"),1,{opacity:1,scale:.6,delay:0.2,ease:Back.easeOut})
