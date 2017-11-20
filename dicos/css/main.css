@@ -186,6 +186,13 @@ img{ width: 100%;
 	bottom: 5%;
 	left: 50%;
 }
+#btn3{
+	width: 18.5%;
+	height: 11%;
+	top: 0%;
+	right: 0%;
+	display: block;
+}
 #blackLayer{
 	background-color: #000000;
 	opacity: 0.7;
@@ -193,5 +200,12 @@ img{ width: 100%;
 }
 #zoom{
 	-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;
+}
+#QRPage{
+	background-color: #ffffff;
+}
+#page1{
+			-webkit-tap-highlight-color: transparent;
 			tap-highlight-color: transparent;
 }

@@ -552,8 +552,9 @@ function setPage7(){
 
 
 $("#btn1").click(function(){
-  window.location.href="http://prj.verystar.cn/dicos-futureshop/index?wxqr_scene_id=113";
-  
+  //window.location.href="http://prj.verystar.cn/dicos-futureshop/index?wxqr_scene_id=113";
+  TweenLite.set($('#QRPage'),{display:"block",opacity:1})
+  TweenLite.from($('#QRPage'),1,{opacity:0})
 });
 
 
@@ -568,6 +569,11 @@ $("#sharePage").click(function(){
   
 });
 
+$("#btn3").click(function(){
+  //window.location.href="http://prj.verystar.cn/dicos-futureshop/index?wxqr_scene_id=113";
+  //TweenLite.set($('#QRPage'),{display:"none",opacity:1})
+  TweenLite.to($('#QRPage'),.5,{opacity:0,display:"none"})
+});
 //===============放大按钮动画=========
 
 
