@@ -17,7 +17,7 @@ block css
 
 block content
 	- url = "http://image.giccoo.com/projects/esteelauder/"
-	//- - url = "./"
+	//- url = "./"
 
 	#load.loading(v-if="!loadend")
 		.text(:class="{show: show}") Loading...{{animatedNumber}}%
@@ -47,16 +47,16 @@ block content
 								input(v-model="nickname")
 							.btn.small.fadeInRight.animated(v-if="answerFinished && index==2",@click.prevent.stop="startPrinterFun") 提交查看你的肌密报告
 			.page.lab-printer(v-if="startprinter")
-				.printer-bottom
+				//- .printer-bottom
 					img(:src="'#{url}img/printer-bottom.png'")
-				.printer-bg
+				//- .printer-bg
 					img(:src="'#{url}img/printer-bg.png'")
 				transition(name="printer-animation")
-					#printer-page.printer-page.fadeInUp.animated.duration-20(v-show="printerover",v-touch="gotoProFun")
+					#printer-page.printer-page.fadeIn.animated.duration-10(v-show="printerover",v-touch="gotoProFun")
 						.face.fadeIn.aniamted.delay-3
-							img(:src="'#{url}img/face.jpg'")
+							img(:src="'#{url}img/face.png'")
 						.item.fadeIn.aniamted.delay-5
-							img(:src="'#{url}img/line-'+score.join('-')+'.jpg'")
+							img(:src="'#{url}img/line-'+score.join('-')+'.png'")
 						.texts
 							p.fadeInUp.aniamted.delay-7 整体报告显示你拥有
 							h1.fadeInUp.aniamted.delay-9 {{printer.title}}
@@ -74,32 +74,34 @@ block content
 							//- img(:src="'product-'+product+'.jpg'")
 							slider#slider.slider(:overpage="overpage")
 								.slide
-									img(:src="'#{url}img/product-1.jpg'")
+									img(:src="'#{url}img/product-1.png'")
 								.slide
-									img(:src="'#{url}img/product-2.jpg'")
+									img(:src="'#{url}img/product-2.png'")
 								.slide
-									img(:src="'#{url}img/product-3.jpg'")
+									img(:src="'#{url}img/product-3.png'")
 						.texts
 							p 分享你的肌密报告<br/>即有机会赢取万能面霜正装
 						.btn.btn-post(@click.prevent.stop="sendPostFun") 发布你的肌密报告
 						.link(@click.prevent.stop="openNoteFun") *详细活动规则请点击查看
 				transition(name="note-animation")
 					#note-page.note-page(v-show="shownote")
-						.close(@click.prevent.stop="closenote")
-							img(:src="'#{url}img/close.png'")
-						.note-box
-							p 活动规则
-							p 1.活动时间：2017年11月17日——2017年11月30日
-							p 2.根据页面提示参与测试，并晒出为你的“万能美肌贴士”截图至微博并@雅诗兰黛，我们将随机抽取幸运粉丝获得万能面霜正装1份
-							p 3.雅诗兰黛多效智妍精华霜正装（一人一份，共10份）
+						.blank
+							.close(@click.prevent.stop="closenote")
+								img(:src="'#{url}img/close.png'")
+							.note-box
+								p 活动规则
+								p 1.活动时间：2017年11月17日——2017年11月30日
+								p 2.根据页面提示参与测试，并晒出为你的“万能美肌贴士”截图至微博并@雅诗兰黛，我们将随机抽取幸运粉丝获得万能面霜正装1份
+								p 3.雅诗兰黛多效智妍精华霜正装（一人一份，共10份）
 				transition(name="note-animation")
 					#note-page.note-page(v-show="sharesuccess")
-						.close(@click.prevent.stop="closeshare")
-							img(:src="'#{url}img/close.png'")
-						.note-box
-							h2 报告分享成功
-							p 请关注官方微博后续开奖结果
-							.btn 我们为你准备了雅粉专属服务<br/>快去线下门店体验还原完美肌肤吧！
+						.blank
+							.close(@click.prevent.stop="closeshare")
+								img(:src="'#{url}img/close.png'")
+							.note-box
+								h2 报告分享成功
+								p 请关注官方微博后续开奖结果
+								.btn 我们为你准备了雅粉专属服务<br/>快去线下门店体验还原完美肌肤吧！
 
 
 block js

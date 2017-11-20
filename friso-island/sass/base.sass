@@ -2,7 +2,7 @@
 @import ../../libs/sass/parallax
 @import ../../libs/sass/loader-ball
 
-$debug : false
+$debug : true
 $cdn : "../"
 @if not $debug
 	$cdn : "http://image.giccoo.com/projects/friso-island/"
@@ -122,7 +122,7 @@ body.pop-open
 
 .playsound
 	+posa
-	+tr(1rem,1rem)
+	+tr(0.5rem,2%)
 	+iw(58)
 	z-index: 99
 	font-size: 0
@@ -227,6 +227,10 @@ body.pop-open
 							font-weight: bold
 						p
 							+m
+						.legal
+							margin-top: 5px
+							color: #c2c2c2
+							+font-size(0.6rem)
 
 				.answer
 					&:last-child
@@ -355,7 +359,7 @@ body.pop-open
 		+iw(221,640,100%)
 	.stars
 		+posa
-		+tr(8px,2%)
+		+tr(8px,13%)
 		+w(50%)
 		+text-right
 		.star

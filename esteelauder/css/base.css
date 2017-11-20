@@ -1020,48 +1020,48 @@ p {
           animation-delay: .5s; }
 
 .printer-animation-enter-active {
-  -webkit-animation: fadeInUp 2s ease;
-          animation: fadeInUp 2s ease;
+  -webkit-animation: fadeIn 1s ease;
+          animation: fadeIn 1s ease;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   -webkit-animation-iteration-count: initial;
           animation-iteration-count: initial; }
 
 .printer-animation-leave-active {
-  -webkit-animation: fadeOutDown 1s ease;
-          animation: fadeOutDown 1s ease;
+  -webkit-animation: fadeOut 1s ease;
+          animation: fadeOut 1s ease;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   -webkit-animation-iteration-count: initial;
           animation-iteration-count: initial; }
 
 .overpage-animation-enter-active {
-  -webkit-animation: fadeInUp 1s ease;
-          animation: fadeInUp 1s ease;
+  -webkit-animation: fadeIn 0.5s ease;
+          animation: fadeIn 0.5s ease;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   -webkit-animation-iteration-count: initial;
           animation-iteration-count: initial; }
 
 .overpage-animation-leave-active {
-  -webkit-animation: fadeOutDown 1s ease;
-          animation: fadeOutDown 1s ease;
+  -webkit-animation: fadeOut 0.5s ease;
+          animation: fadeOut 0.5s ease;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   -webkit-animation-iteration-count: initial;
           animation-iteration-count: initial; }
 
 .note-animation-enter-active {
-  -webkit-animation: fadeInUp 1s ease;
-          animation: fadeInUp 1s ease;
+  -webkit-animation: fadeIn 0.5s ease;
+          animation: fadeIn 0.5s ease;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   -webkit-animation-iteration-count: initial;
           animation-iteration-count: initial; }
 
 .note-animation-leave-active {
-  -webkit-animation: fadeOutDown 1s ease;
-          animation: fadeOutDown 1s ease;
+  -webkit-animation: fadeOut 0.5s ease;
+          animation: fadeOut 0.5s ease;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   -webkit-animation-iteration-count: initial;
@@ -1225,7 +1225,7 @@ p {
         font-size: 16px; }
 
 .lab-printer {
-  background: url("http://image.giccoo.com/projects/esteelauder/img/bg.jpg") no-repeat center center;
+  background: url("http://image.giccoo.com/projects/esteelauder/img/bg-new.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
   .lab-printer .printer-bottom, .lab-printer .printer-bg {
@@ -1239,22 +1239,22 @@ p {
     z-index: 1; }
   .lab-printer .printer-page, .lab-printer .over-page, .lab-printer .note-page {
     position: absolute;
-    bottom: 0;
-    left: 7%;
-    width: 86%;
-    height: 90%;
-    background-color: #fff;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
     text-align: center;
     z-index: 2;
-    -webkit-box-shadow: 1px 1px 3px #999,-1px -1px 3px #999;
-            box-shadow: 1px 1px 3px #999,-1px -1px 3px #999;
     color: #615b64; }
   .lab-printer .printer-page {
-    cursor: move; }
+    cursor: move;
+    width: 80%;
+    top: 0;
+    left: 10%; }
     .lab-printer .printer-page .face {
       width: 45%;
       margin: 0 auto;
-      margin-top: 10%; }
+      margin-top: 20%; }
     .lab-printer .printer-page .item {
       width: 65%;
       margin: 0 auto;
@@ -1275,7 +1275,7 @@ p {
   .lab-printer .over-page .text-for {
     color: #c67a00;
     text-align: left;
-    width: 66%;
+    width: 80%;
     margin: 0 auto;
     margin-top: 20%; }
     .lab-printer .over-page .text-for .nickname {
@@ -1284,23 +1284,27 @@ p {
       border-bottom: solid 1px #c67a00; }
   .lab-printer .over-page .tips {
     width: 100%;
-    margin: 10px auto; }
+    margin: 8% auto; }
     .iphone4 .lab-printer .over-page .tips {
       margin: 6px auto; }
   .lab-printer .over-page .texts p, .lab-printer .over-page .text-for p {
-    font-size: 0.6rem; }
+    font-size: 0.8rem; }
     @media only screen and (min-width: 321px) and (max-width: 399px) {
       .lab-printer .over-page .texts p, .lab-printer .over-page .text-for p {
-        font-size: 0.66rem; } }
+        font-size: 0.88rem; } }
     @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
       .lab-printer .over-page .texts p, .lab-printer .over-page .text-for p {
-        font-size: 0.66rem; } }
+        font-size: 0.88rem; } }
     @media only screen and (min-width: 399px) and (max-width: 767px) {
       .lab-printer .over-page .texts p, .lab-printer .over-page .text-for p {
-        font-size: 0.72rem; } }
+        font-size: 0.96rem; } }
     @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
       .lab-printer .over-page .texts p, .lab-printer .over-page .text-for p {
-        font-size: 0.72rem; } }
+        font-size: 0.96rem; } }
+  .lab-printer .over-page .text-for p:last-child {
+    padding: 5px 0;
+    border-bottom: solid 1px #c67a00;
+    display: inline-block; }
   .lab-printer .over-page .btn {
     font-size: 0.8rem;
     margin: 0 auto;
@@ -1338,22 +1342,33 @@ p {
       .lab-printer .over-page .link {
         font-size: 0.72rem; } }
   .lab-printer .note-page {
-    z-index: 10; }
+    z-index: 10;
+    background: url("http://image.giccoo.com/projects/esteelauder/img/bg-new.jpg") no-repeat center center;
+    background-size: cover;
+    background-color: transparent; }
+    .lab-printer .note-page .blank {
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      width: 70%;
+      -webkit-transform: translate3d(0, -50%, 0);
+              transform: translate3d(0, -50%, 0);
+      background-color: #fff;
+      padding: 10%; }
     .lab-printer .note-page .close {
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: 5px;
+      right: 5px;
       width: 25px;
       height: 25px;
       font-size: 0;
       cursor: pointer; }
     .lab-printer .note-page .note-box {
       border: dashed 1px #9e5900;
-      width: 70%;
+      width: auto;
       margin: 0 auto;
       padding: 5%;
-      border-radius: 10px;
-      margin-top: 30%; }
+      border-radius: 10px; }
       .lab-printer .note-page .note-box h2 {
         color: #9e5900;
         font-size: 1.8rem; }

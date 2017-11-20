@@ -19,7 +19,7 @@ block css
 
 block content
 	- url = "http://image.giccoo.com/projects/friso-island/"
-	//- - url = "./"
+	- url = "./"
 
 	#load.loading(v-if="!loadend")
 		.ball-spin-fade-loader
@@ -29,6 +29,7 @@ block content
 		#navbar
 			.logo(@click.prevent.stop="backNormal")
 				img(src="#{url}img/logo.png")
+			player(autoplay="true")
 			.stars.fadeIn.animated(v-show="show")
 				.star(v-for="star in stars",:class="{on:star}")
 					img(:src="'./img/star-'+(star?'on':'off')+'.png'")
@@ -58,7 +59,8 @@ block content
 						.texts
 							p.fadeInUp.animated.delay-2 点击探索星球后移动手机屏幕来探索   
 							p.fadeInUp.animated.delay-4 每完成一个探索，即获得一枚北鼻勋章。
-							p.fadeInUp.animated.delay-6 集齐五枚勋章，赢取皇家尊礼。
+							p.fadeInUp.animated.delay-6 重复探索同一星球只会获得一枚北鼻勋章。
+							p.fadeInUp.animated.delay-8 集齐五枚勋章，赢取皇家尊礼。
 			transition(name="planet-content")
 				.planets-content(v-show="opened")
 					.planet-island
@@ -78,6 +80,7 @@ block content
 								.answer-text
 									span {{item.author}}
 									p {{item.answer}}
+									p.legal(v-if="item.legal") * 每100g荷兰鲜奶含4g乳脂，相当于每25g鲜奶含1g珍贵乳脂，数据来源于 Eurostat 欧盟统计局2009-2014年数据<br/>**新鲜直取荷兰自驾牧场的液态全脂牛奶
 					.btn-goon.fadeIn.animated.duration-10.delay-10(@click.prevent.stop="keepgoing")
 						img(src="#{url}img/btn-goon.png")
 
