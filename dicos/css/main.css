@@ -209,3 +209,6 @@ img{ width: 100%;
 			-webkit-tap-highlight-color: transparent;
 			tap-highlight-color: transparent;
 }
+#info2{
+	opacity: 0.01;
+}
