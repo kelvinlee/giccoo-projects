@@ -1514,6 +1514,36 @@ body.pop-open {
   margin: 0 auto;
 }
 
+#planet-page .planets-content .answer-box .answers .answer .answer-text .legal, #planet-page .planets-content .answer-box .answers .question .answer-text .legal {
+  margin-top: 5px;
+  color: #c2c2c2;
+  font-size: 0.6rem;
+}
+
+@media only screen and (min-width: 321px) and (max-width: 399px) {
+  #planet-page .planets-content .answer-box .answers .answer .answer-text .legal, #planet-page .planets-content .answer-box .answers .question .answer-text .legal {
+    font-size: 0.66rem;
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+  #planet-page .planets-content .answer-box .answers .answer .answer-text .legal, #planet-page .planets-content .answer-box .answers .question .answer-text .legal {
+    font-size: 0.66rem;
+  }
+}
+
+@media only screen and (min-width: 399px) and (max-width: 767px) {
+  #planet-page .planets-content .answer-box .answers .answer .answer-text .legal, #planet-page .planets-content .answer-box .answers .question .answer-text .legal {
+    font-size: 0.72rem;
+  }
+}
+
+@media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+  #planet-page .planets-content .answer-box .answers .answer .answer-text .legal, #planet-page .planets-content .answer-box .answers .question .answer-text .legal {
+    font-size: 0.72rem;
+  }
+}
+
 #planet-page .planets-content .answer-box .answers .answer:last-child {
   position: relative;
 }

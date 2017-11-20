@@ -128,21 +128,21 @@ p
 	// opacity: 0
 
 .printer-animation-enter-active
-	+animation(fadeInUp,2s,ease)
+	+animation(fadeIn,1s,ease)
 .printer-animation-leave-active
-	+animation(fadeOutDown,1s,ease)
+	+animation(fadeOut,1s,ease)
 .printer-animation-enter, .printer-animation-leave-to
 
 .overpage-animation-enter-active
-	+animation(fadeInUp,1s,ease)
+	+animation(fadeIn,0.5s,ease)
 .overpage-animation-leave-active
-	+animation(fadeOutDown,1s,ease)
+	+animation(fadeOut,0.5s,ease)
 .overpage-animation-enter, .overpage-animation-leave-to
 
 .note-animation-enter-active
-	+animation(fadeInUp,1s,ease)
+	+animation(fadeIn,0.5s,ease)
 .note-animation-leave-active
-	+animation(fadeOutDown,1s,ease)
+	+animation(fadeOut,0.5s,ease)
 .note-animation-enter, .note-animation-leave-to
 
 #lab
@@ -252,7 +252,7 @@ p
 
 
 .lab-printer
-	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)	
+	+b($cdn+"img/bg-new.jpg",no-repeat,center,center,cover)	
 	.printer-bottom,.printer-bg
 		+posa
 		+bl
@@ -263,20 +263,25 @@ p
 		z-index: 1
 	.printer-page,.over-page,.note-page
 		+posa
-		+bl(0,7%)
-		+w(86%)
-		+h(90%)
-		+bc(#fff)
+		+tl
+		// +bl(0,7%)
+		// +w(86%)
+		// +h(90%)
+		+w
+		+h
+		// +bc(#fff)
 		+text-center
 		z-index: 2
-		box-shadow: 1px 1px 3px #999,-1px -1px 3px #999
+		// box-shadow: 1px 1px 3px #999,-1px -1px 3px #999
 		color: #615b64
 	.printer-page
 		cursor: move
+		+w(80%)
+		+tl(0,10%)
 		.face
 			+w(45%)
 			+m
-			margin-top: 10%
+			margin-top: 20%
 		.item
 			+w(65%)
 			+m
@@ -293,7 +298,7 @@ p
 		.text-for
 			color: #c67a00
 			+text-left
-			+w(66%)
+			+w(80%)
 			+m
 			margin-top: 20%
 			.nickname
@@ -302,13 +307,18 @@ p
 				border-bottom: solid 1px #c67a00
 		.tips
 			+w(100%)
-			+m(10px auto)
+			+m(8% auto)
 			.iphone4 &
 				// +w(60%)
 				+m(6px auto)
 		.texts,.text-for
 			p
-				+font-size(0.6rem)
+				+font-size(0.8rem)
+		.text-for
+			p:last-child
+				padding: 5px 0
+				border-bottom: solid 1px #c67a00
+				display: inline-block
 		.btn
 			// +m(10px auto)
 			+font-size(0.8rem)
@@ -325,20 +335,28 @@ p
 
 	.note-page
 		z-index: 10
+		+b($cdn+"img/bg-new.jpg",no-repeat,center,center,cover)
 		// +hide
+		.blank
+			+posa
+			+tl(50%,5%)
+			+w(70%)
+			+transform(translate3d(0,-50%,0))
+			+bc(#fff)
+			+p(10%)
 		.close
 			+posa
-			+tr(10px,10px)
+			+tr(5px,5px)
 			+wh(25px,25px)
 			font-size: 0
 			cursor: pointer
 		.note-box
 			border: dashed 1px #9e5900
-			+w(70%)
+			+w(auto)
 			+m
 			+p(5%)
 			border-radius: 10px
-			margin-top: 30%
+			// margin-top: 30%
 			h2
 				color: #9e5900
 				+font-size(1.8rem)

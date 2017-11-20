@@ -1,5 +1,7 @@
 # @codekit-prepend "coffee/css3Prefix"
 
+_CDN = "http://image.giccoo.com/projects/friso-island/"
+_CDN = "./"
 planets = {}
 planetsList = {}
 planetinfopage = {}
@@ -33,7 +35,7 @@ planetInfo =
 			{author:"@常住锁妖塔",avatar:"avatar-19.jpg",answer:"小鸟可以带着小鱼飞，去看天上的云彩啊。小鱼可以带着小鸟去看海底的海藻呢。(^V^)"}
 			{author:"@举栗子的松鼠",avatar:"avatar-20.jpg",answer:"小鸟只要对着小鱼缸\"啾\"一下，他们就成为朋友了哦，就像这样 [轻轻的啾一下宝贝]"}
 			{author:"@陈小洁",avatar:"avatar-21.jpg",answer:"海鸟跟鱼相爱，只是一场意外。"}
-			{author:"@皇家美素佳儿",avatar:"avatar-0.jpg",answer:"小鸟可以陪小鱼看天上的云彩，小鱼可以带小鸟畅游海面。皇家美素佳儿新鲜直取皇家第一道奶源*，凝萃1:25**天然营养精华，和妈妈一起为北鼻找到大自然中滋养生命的奥秘，陪伴北鼻上天入地，一同成长。"}
+			{author:"@皇家美素佳儿",avatar:"avatar-0.jpg",legal:true,answer:"小鸟可以陪小鱼看天上的云彩，小鱼可以带小鸟畅游海面。皇家美素佳儿新鲜直取皇家第一道奶源*，凝萃1:25**天然营养精华，和妈妈一起为北鼻找到大自然中滋养生命的奥秘，陪伴北鼻上天入地，一同成长。"}
 		]
 	"planet-4":
 		question: "「为什么小牛冬天不穿衣服也不会感冒呢？」"
@@ -52,7 +54,7 @@ planetInfo =
 			{author:"@carl",avatar:"avatar-3.jpg",answer:"小宝宝，咱们哪个周末一起去动物园看看大熊猫，到底在用竹子干嘛，是吃竹子，还是在用竹子剔牙。"}
 			{author:"@冬霁",avatar:"avatar-4.jpg",answer:"大熊猫是在吃竹子，但是如果吃了竹子一不小心塞牙了，没准也会用竹子剔牙了吧。脑补，卖萌的大熊猫剔牙场景"}
 			{author:"@小风吹散大树叶",avatar:"avatar-5.jpg",answer:"只有牙齿不好的宝宝才会剔牙喔，所以你平时要好好刷牙，这样就不会塞牙了，熊猫宝宝也是这样的。熊猫宝宝用竹子剔牙可能是平时没有听熊猫妈妈的话好好刷牙。"}
-			{author:"@皇家美素佳儿",avatar:"avatar-0.jpg",answer:"每一位宝宝在妈妈的心中都是萌萌的「大熊猫」，心头的「国宝」。皇家美素佳儿新鲜直取皇家第一道奶源*，凝萃1:25**天然营养精华，因珍稀而珍贵，助力宝宝多方位成长。"}
+			{author:"@皇家美素佳儿",avatar:"avatar-0.jpg",legal:true,answer:"每一位宝宝在妈妈的心中都是萌萌的「大熊猫」，心头的「国宝」。皇家美素佳儿新鲜直取皇家第一道奶源*，凝萃1:25**天然营养精华，因珍稀而珍贵，助力宝宝多方位成长。"}
 		]
 load = {}
 fisrtPage = {}
@@ -65,6 +67,157 @@ shareContent =
 	imgUrl: "http://m.giccoo.com/friso-island/img/share.jpg"
 	success: ->
 	cancel: ->
+defaultY = 700
+markers = [
+	{
+		id: "planet-1"
+		x: 0
+		y: defaultY+380
+		html: '<div id="planet-1" class="planet planet-1"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-1.png" /></div>'
+	}
+	{
+		id: "planet-2"
+		x: 500
+		y: defaultY+200
+		html: '<div id="planet-2" class="planet planet-2"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-2.png" /></div>'
+	}
+	{
+		id: "planet-3"
+		x: 1000
+		y: defaultY+300
+		html: '<div id="planet-3" class="planet planet-3"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-3.png" /></div>'
+	}
+	{
+		id: "planet-4"
+		x: 1500
+		y: defaultY+360
+		html: '<div id="planet-4" class="planet planet-4"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-4.png" /></div>'
+	}
+	{
+		id: "planet-5"
+		x: 2000
+		y: defaultY+260
+		html: '<div id="planet-5" class="planet planet-5"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-5.png" /></div>'
+	}
+	{
+		id: "planet-10"
+		x: 2500
+		y: defaultY+380
+		html: '<div id="planet-10" class="planet planet-1"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-1.png" /></div>'
+	}
+	{
+		id: "planet-20"
+		x: 3000
+		y: defaultY+200
+		html: '<div id="planet-20" class="planet planet-2"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-2.png" /></div>'
+	}
+	{
+		id: "planet-30"
+		x: 3500
+		y: defaultY+300
+		html: '<div id="planet-30" class="planet planet-3"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-3.png" /></div>'
+	}
+	{
+		id: "planet-40"
+		x: 4000
+		y: defaultY+360
+		html: '<div id="planet-40" class="planet planet-4"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-4.png" /></div>'
+	}
+	{
+		id: "planet-50"
+		x: 4500
+		y: defaultY+260
+		html: '<div id="planet-50" class="planet planet-5"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-5.png" /></div>'
+	}
+	{
+		id: "balloon-1"
+		x: 840*0
+		y: defaultY+100
+		html: '<div class="planet-balloon-small balloon-1"><img src="'+_CDN+'img/balloon-small.png"/></div>'
+	}
+	{
+		id: "balloon-2"
+		x: 840*1
+		y: defaultY+200
+		html: '<div class="planet-balloon-small balloon-2"><img src="'+_CDN+'img/balloon-small.png"/></div>'
+	}
+	{
+		id: "balloon-3"
+		x: 840*2.2
+		y: defaultY+50
+		html: '<div class="planet-balloon-big balloon-3"><img src="'+_CDN+'img/balloon-big.png"/></div>'
+	}
+	{
+		id: "balloon-4"
+		x: 840*3.9
+		y: defaultY+400
+		html: '<div class="planet-balloon-small balloon-4"><img src="'+_CDN+'img/balloon-small.png"/></div>'
+	}
+	{
+		id: "balloon-5"
+		x: 840*4.6
+		y: defaultY+40
+		html: '<div class="planet-balloon-small balloon-5"><img src="'+_CDN+'img/balloon-small.png"/></div>'
+	}
+	{
+		id: "balloon-6"
+		x: 840*5.4
+		y: defaultY+140
+		html: '<div class="planet-balloon-big balloon-6"><img src="'+_CDN+'img/balloon-big.png"/></div>'
+	}
+	{
+		id: "balloon-7"
+		x: 840*5.4-220
+		y: defaultY+20
+		html: '<div class="planet-balloon-small balloon-7"><img src="'+_CDN+'img/balloon-small.png"/></div>'
+	}
+	{
+		id: "balloon-8"
+		x: 840*4.6-120
+		y: defaultY+140
+		html: '<div class="planet-balloon-big balloon-8"><img src="'+_CDN+'img/balloon-big.png"/></div>'
+	}
+	{
+		id: "balloon-9"
+		x: 840*3.9-120
+		y: defaultY+500
+		html: '<div class="planet-balloon-big balloon-9"><img src="'+_CDN+'img/balloon-big.png"/></div>'
+	}
+	{
+		id: "balloon-10"
+		x: 840*2.2-220
+		y: defaultY+150
+		html: '<div class="planet-balloon-small balloon-10"><img src="'+_CDN+'img/balloon-small.png"/></div>'
+	}
+	{
+		id: "balloon-11"
+		x: 840*1-190
+		y: defaultY+100
+		html: '<div class="planet-balloon-big balloon-11"><img src="'+_CDN+'img/balloon-big.png"/></div>'
+	}
+	{
+		id: "balloon-12"
+		x: 840*0+170
+		y: defaultY+200
+		html: '<div class="planet-balloon-big balloon-12"><img src="'+_CDN+'img/balloon-big.png"/></div>'
+	}
+]
+
+# for balloon
+for i in [0...10]
+	bs = if Math.random()>0.5 then "big" else "small"
+	ds = if bs is "big" then "small" else "big"
+	markers.push 
+		id: "balloon-"+(13+i)
+		x: (5000/i)
+		y: defaultY-parseInt (Math.random()*300)
+		html: '<div class="planet-balloon-'+bs+' balloon-'+(12+i)+'"><img src="'+_CDN+'img/balloon-'+bs+'.png"/></div>'
+	markers.push 
+		id: "balloon-"+(13*2+i)
+		x: (5000/i)
+		y: 1500-parseInt (Math.random()*400)
+		html: '<div class="planet-balloon-'+ds+' balloon-'+(12*2+i)+'"><img src="'+_CDN+'img/balloon-'+ds+'.png"/></div>'
+
 window.onload = ->
 	# initPlanets()
 	# initVuePlanetInfoPage()
@@ -190,6 +343,7 @@ initVuePlanetInfoPage = ->
 				if val
 					if not planetsList[@planetName].overreaded
 						planetsList[@planetName].overreaded = true
+						planetsList["planet-"+(parseInt(@planetName.replace("planet-",""))*10)].overreaded = true
 						setAstarLight()
 					self = @
 					@runMessage(0)
@@ -212,14 +366,19 @@ initVuePlanetsMedal = ->
 			el: "#planet-#{i}"
 			data: 
 				overreaded: false
+		planetsList["planet-#{i*10}"] = new Vue
+			el: "#planet-#{i*10}"
+			data: 
+				overreaded: false
 initPlanets = ->
-	defaultY = 700
+	
 	try
 		planets = new PhotoSphereViewer
-			panorama: "http://image.giccoo.com/projects/friso-island/img/planet-bg.jpg"
+			panorama: _CDN+"img/planet-bg.jpg"
 			container: document.getElementById "planets"
 			# loading_html: '<div class="planet-loading ball-spin-fade-loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'
 			loading_txt: '加载中...'
+			# fisheye: true
 			gyroscope: true
 			time_anim: 0
 			latitude_range: [-3*Math.PI/12, 3*Math.PI/12]
@@ -236,110 +395,7 @@ initPlanets = ->
 			# 			alert('Hello from custom button')
 			# 	}
 			# ]
-			markers: [
-				{
-					id: "planet-1"
-					x: 100
-					y: defaultY+380
-					html: '<div id="planet-1" class="planet planet-1"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="http://image.giccoo.com/projects/friso-island/img/planet-medal.png" /></div><img src="http://image.giccoo.com/projects/friso-island/img/planet-1.png" /></div>'
-				}
-				{
-					id: "planet-2"
-					x: -700
-					y: defaultY+200
-					html: '<div id="planet-2" class="planet planet-2"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="http://image.giccoo.com/projects/friso-island/img/planet-medal.png" /></div><img src="http://image.giccoo.com/projects/friso-island/img/planet-2.png" /></div>'
-				}
-				{
-					id: "planet-3"
-					x: -700*3
-					y: defaultY+300
-					html: '<div id="planet-3" class="planet planet-3"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="http://image.giccoo.com/projects/friso-island/img/planet-medal.png" /></div><img src="http://image.giccoo.com/projects/friso-island/img/planet-3.png" /></div>'
-				}
-				{
-					id: "planet-4"
-					x: 700*2
-					y: defaultY+360
-					html: '<div id="planet-4" class="planet planet-4"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="http://image.giccoo.com/projects/friso-island/img/planet-medal.png" /></div><img src="http://image.giccoo.com/projects/friso-island/img/planet-4.png" /></div>'
-				}
-				{
-					id: "planet-5"
-					x: 700
-					y: defaultY+260
-					html: '<div id="planet-5" class="planet planet-5"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="http://image.giccoo.com/projects/friso-island/img/planet-medal.png" /></div><img src="http://image.giccoo.com/projects/friso-island/img/planet-5.png" /></div>'
-				}
-				{
-					id: "balloon-1"
-					x: 840*0
-					y: defaultY+100
-					html: '<div class="planet-balloon-small balloon-1"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-small.png"/></div>'
-				}
-				{
-					id: "balloon-2"
-					x: 840*1
-					y: defaultY+200
-					html: '<div class="planet-balloon-small balloon-2"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-small.png"/></div>'
-				}
-				{
-					id: "balloon-3"
-					x: 840*2.2
-					y: defaultY+50
-					html: '<div class="planet-balloon-big balloon-3"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-big.png"/></div>'
-				}
-				{
-					id: "balloon-4"
-					x: 840*3.9
-					y: defaultY+400
-					html: '<div class="planet-balloon-small balloon-4"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-small.png"/></div>'
-				}
-				{
-					id: "balloon-5"
-					x: 840*4.6
-					y: defaultY+40
-					html: '<div class="planet-balloon-small balloon-5"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-small.png"/></div>'
-				}
-				{
-					id: "balloon-6"
-					x: 840*5.4
-					y: defaultY+140
-					html: '<div class="planet-balloon-big balloon-6"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-big.png"/></div>'
-				}
-				{
-					id: "balloon-7"
-					x: 840*5.4-220
-					y: defaultY+20
-					html: '<div class="planet-balloon-small balloon-7"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-small.png"/></div>'
-				}
-				{
-					id: "balloon-8"
-					x: 840*4.6-120
-					y: defaultY+140
-					html: '<div class="planet-balloon-big balloon-8"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-big.png"/></div>'
-				}
-				{
-					id: "balloon-9"
-					x: 840*3.9-120
-					y: defaultY+500
-					html: '<div class="planet-balloon-big balloon-9"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-big.png"/></div>'
-				}
-				{
-					id: "balloon-10"
-					x: 840*2.2-220
-					y: defaultY+150
-					html: '<div class="planet-balloon-small balloon-10"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-small.png"/></div>'
-				}
-				{
-					id: "balloon-11"
-					x: 840*1-190
-					y: defaultY+100
-					html: '<div class="planet-balloon-big balloon-11"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-big.png"/></div>'
-				}
-				{
-					id: "balloon-12"
-					x: 840*0+170
-					y: defaultY+200
-					html: '<div class="planet-balloon-big balloon-12"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-big.png"/></div>'
-				}
-			]
+			markers: markers
 		planets.on "ready", ->
 			console.log "ready"
 			# planets.startGyroscopeControl()
@@ -349,8 +405,11 @@ initPlanets = ->
 			# ,1000
 		planets.on "select-marker", (marker)->
 			console.log "id: ",marker.id
-			planetinfopage.planetName = marker.id
-			planetinfopage.planet = planetInfo[marker.id]
+			id = parseInt marker.id.replace("planet-","")
+			console.log id
+			id = if id > 5 then id/10 else id
+			planetinfopage.planetName = "planet-"+id
+			planetinfopage.planet = planetInfo["planet-"+id]
 			planetinfopage.opened = true
 			planetinfopage.shownote = false
 			

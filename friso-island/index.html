@@ -35,7 +35,7 @@
     </div>
     <div id="main" style="display: none" class="main">
       <div id="navbar">
-        <div @click.prevent.stop="backNormal" class="logo"><img src="http://image.giccoo.com/projects/friso-island/img/logo.png"></div>
+        <div @click.prevent.stop="backNormal" class="logo"><img src="./img/logo.png"></div>
         <div v-show="show" class="stars fadeIn animated">
           <div v-for="star in stars" :class="{on:star}" class="star"><img :src="'./img/star-'+(star?'on':'off')+'.png'"></div>
         </div>
@@ -43,21 +43,21 @@
       <div id="page-one" :class="{hide: notShowTime}">
         <div class="light"></div>
         <div class="island-list">
-          <div class="planet blur planet-1"><img src="http://image.giccoo.com/projects/friso-island/img/planet-1.png"></div>
-          <div class="planet blur planet-2"><img src="http://image.giccoo.com/projects/friso-island/img/planet-2.png"></div>
-          <div class="planet blur planet-3"><img src="http://image.giccoo.com/projects/friso-island/img/planet-3.png"></div>
-          <div class="planet blur planet-4"><img src="http://image.giccoo.com/projects/friso-island/img/planet-4.png"></div>
-          <div class="planet blur planet-5"><img src="http://image.giccoo.com/projects/friso-island/img/planet-5.png"></div>
+          <div class="planet blur planet-1"><img src="./img/planet-1.png"></div>
+          <div class="planet blur planet-2"><img src="./img/planet-2.png"></div>
+          <div class="planet blur planet-3"><img src="./img/planet-3.png"></div>
+          <div class="planet blur planet-4"><img src="./img/planet-4.png"></div>
+          <div class="planet blur planet-5"><img src="./img/planet-5.png"></div>
         </div>
         <div class="texts fadeIn animated">
           <div class="bg-box fadeIn animated delay-24 duration-10"></div>
           <div class="content">
-            <div class="title"><img src="http://image.giccoo.com/projects/friso-island/img/planet-title.png"></div>
+            <div class="title"><img src="./img/planet-title.png"></div>
             <div class="text-list">
               <p v-for="(text,index) in texts" :class="'delay-'+index*3" class="fadeInUp animated duration-10">{{text}}</p>
             </div>
           </div>
-          <div @click.prevent.stop="getStart" class="btn-start fadeIn animated delay-26 duration-10"><img src="http://image.giccoo.com/projects/friso-island/img/btn-start.png"></div>
+          <div @click.prevent.stop="getStart" class="btn-start fadeIn animated delay-26 duration-10"><img src="./img/btn-start.png"></div>
         </div>
       </div>
       <div id="planet-page" :class="{show: show,opened: opened,blur: blur}">
@@ -65,11 +65,12 @@
           <div id="planets"></div>
           <transition name="planet-note">
             <div v-if="shownote" class="planets-note">
-              <div @click.prevent.stop="startG" class="btn-start-control"><img src="http://image.giccoo.com/projects/friso-island/img/btn-start-control.png"></div>
+              <div @click.prevent.stop="startG" class="btn-start-control"><img src="./img/btn-start-control.png"></div>
               <div class="texts">
                 <p class="fadeInUp animated delay-2">点击探索星球后移动手机屏幕来探索   </p>
                 <p class="fadeInUp animated delay-4">每完成一个探索，即获得一枚北鼻勋章。</p>
-                <p class="fadeInUp animated delay-6">集齐五枚勋章，赢取皇家尊礼。</p>
+                <p class="fadeInUp animated delay-6">重复探索同一星球只会获得一枚北鼻勋章。</p>
+                <p class="fadeInUp animated delay-8">集齐五枚勋章，赢取皇家尊礼。</p>
               </div>
             </div>
           </transition>
@@ -80,7 +81,7 @@
             <div class="answer-box">
               <div id="answers" :class="{moving: moving, movend: !moving}" class="answers">
                 <div class="question fadeInUp animated">
-                  <div class="avatar"><img src="http://image.giccoo.com/projects/friso-island/img/avatar-baby.jpg">
+                  <div class="avatar"><img src="./img/avatar-baby.jpg">
                     <div class="mark"></div>
                   </div>
                   <div class="answer-text"><span>{{planet.question}}</span></div>
@@ -91,19 +92,20 @@
                   </div>
                   <div class="answer-text"><span>{{item.author}}</span>
                     <p>{{item.answer}}</p>
+                    <p v-if="item.legal" class="legal">* 每100g荷兰鲜奶含4g乳脂，相当于每25g鲜奶含1g珍贵乳脂，数据来源于 Eurostat 欧盟统计局2009-2014年数据<br/>**新鲜直取荷兰自驾牧场的液态全脂牛奶</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div @click.prevent.stop="keepgoing" class="btn-goon fadeIn animated duration-10 delay-10"><img src="http://image.giccoo.com/projects/friso-island/img/btn-goon.png"></div>
+            <div @click.prevent.stop="keepgoing" class="btn-goon fadeIn animated duration-10 delay-10"><img src="./img/btn-goon.png"></div>
           </div>
         </transition>
       </div>
       <div id="planet-last-page" v-show="opened" style="display: none" class="fadeIn animated">
-        <div class="title tada animated duration-10 delay-4"><img src="http://image.giccoo.com/projects/friso-island/img/lastpage-title.png"></div>
-        <div class="island tada animated duration-10 delay-6"><img src="http://image.giccoo.com/projects/friso-island/img/planet-2.png"></div>
-        <div class="texts tada animated duration-10 delay-8"><img src="http://image.giccoo.com/projects/friso-island/img/lastpage-text.png"></div>
-        <div class="btn tada animated duration-10 delay-10"><img src="http://image.giccoo.com/projects/friso-island/img/btn-end.png"><a href="https://www.zhihu.com/org/frisomei-su-jia-er-63" class="btn-left">&nbsp;</a><a href="https://tb.cn/EaTKhaw" class="btn-right">&nbsp;</a></div>
+        <div class="title tada animated duration-10 delay-4"><img src="./img/lastpage-title.png"></div>
+        <div class="island tada animated duration-10 delay-6"><img src="./img/planet-2.png"></div>
+        <div class="texts tada animated duration-10 delay-8"><img src="./img/lastpage-text.png"></div>
+        <div class="btn tada animated duration-10 delay-10"><img src="./img/btn-end.png"><a href="https://www.zhihu.com/org/frisomei-su-jia-er-63" class="btn-left">&nbsp;</a><a href="https://tb.cn/EaTKhaw" class="btn-right">&nbsp;</a></div>
       </div>
     </div>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>

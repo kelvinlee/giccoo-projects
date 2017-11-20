@@ -1,6 +1,6 @@
 'use strict';
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, createTimeWait, css3Prefix, fisrtPage, i, initPlanets, initVuePlanetInfoPage, initVuePlanetsMedal, j, jsList, lastPageShow, len, listLoaded, load, _loadAllScript, loadWechatConfig, loadedAll, mTestElement, planetInfo, planetinfopage, planetlastpage, planets, planetsList, planetstars, setAstarLight, shareContent;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, _CDN, bs, createTimeWait, css3Prefix, defaultY, ds, fisrtPage, i, initPlanets, initVuePlanetInfoPage, initVuePlanetsMedal, j, jsList, k, lastPageShow, len, listLoaded, load, _loadAllScript, loadWechatConfig, loadedAll, mTestElement, markers, planetInfo, planetinfopage, planetlastpage, planets, planetsList, planetstars, setAstarLight, shareContent;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -35,6 +35,10 @@ if (css3Prefix) {
 }
 
 // @codekit-prepend "coffee/css3Prefix"
+_CDN = "http://image.giccoo.com/projects/friso-island/";
+
+_CDN = "./";
+
 planets = {};
 
 planetsList = {};
@@ -116,6 +120,7 @@ planetInfo = {
     }, {
       author: "@皇家美素佳儿",
       avatar: "avatar-0.jpg",
+      legal: true,
       answer: "小鸟可以陪小鱼看天上的云彩，小鱼可以带小鸟畅游海面。皇家美素佳儿新鲜直取皇家第一道奶源*，凝萃1:25**天然营养精华，和妈妈一起为北鼻找到大自然中滋养生命的奥秘，陪伴北鼻上天入地，一同成长。"
     }]
   },
@@ -168,6 +173,7 @@ planetInfo = {
     }, {
       author: "@皇家美素佳儿",
       avatar: "avatar-0.jpg",
+      legal: true,
       answer: "每一位宝宝在妈妈的心中都是萌萌的「大熊猫」，心头的「国宝」。皇家美素佳儿新鲜直取皇家第一道奶源*，凝萃1:25**天然营养精华，因珍稀而珍贵，助力宝宝多方位成长。"
     }]
   }
@@ -189,6 +195,138 @@ shareContent = {
   success: function success() {},
   cancel: function cancel() {}
 };
+
+defaultY = 700;
+
+markers = [{
+  id: "planet-1",
+  x: 0,
+  y: defaultY + 380,
+  html: '<div id="planet-1" class="planet planet-1"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="' + _CDN + 'img/planet-medal.png" /></div><img src="' + _CDN + 'img/planet-1.png" /></div>'
+}, {
+  id: "planet-2",
+  x: 500,
+  y: defaultY + 200,
+  html: '<div id="planet-2" class="planet planet-2"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="' + _CDN + 'img/planet-medal.png" /></div><img src="' + _CDN + 'img/planet-2.png" /></div>'
+}, {
+  id: "planet-3",
+  x: 1000,
+  y: defaultY + 300,
+  html: '<div id="planet-3" class="planet planet-3"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="' + _CDN + 'img/planet-medal.png" /></div><img src="' + _CDN + 'img/planet-3.png" /></div>'
+}, {
+  id: "planet-4",
+  x: 1500,
+  y: defaultY + 360,
+  html: '<div id="planet-4" class="planet planet-4"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="' + _CDN + 'img/planet-medal.png" /></div><img src="' + _CDN + 'img/planet-4.png" /></div>'
+}, {
+  id: "planet-5",
+  x: 2000,
+  y: defaultY + 260,
+  html: '<div id="planet-5" class="planet planet-5"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="' + _CDN + 'img/planet-medal.png" /></div><img src="' + _CDN + 'img/planet-5.png" /></div>'
+}, {
+  id: "planet-10",
+  x: 2500,
+  y: defaultY + 380,
+  html: '<div id="planet-10" class="planet planet-1"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="' + _CDN + 'img/planet-medal.png" /></div><img src="' + _CDN + 'img/planet-1.png" /></div>'
+}, {
+  id: "planet-20",
+  x: 3000,
+  y: defaultY + 200,
+  html: '<div id="planet-20" class="planet planet-2"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="' + _CDN + 'img/planet-medal.png" /></div><img src="' + _CDN + 'img/planet-2.png" /></div>'
+}, {
+  id: "planet-30",
+  x: 3500,
+  y: defaultY + 300,
+  html: '<div id="planet-30" class="planet planet-3"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="' + _CDN + 'img/planet-medal.png" /></div><img src="' + _CDN + 'img/planet-3.png" /></div>'
+}, {
+  id: "planet-40",
+  x: 4000,
+  y: defaultY + 360,
+  html: '<div id="planet-40" class="planet planet-4"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="' + _CDN + 'img/planet-medal.png" /></div><img src="' + _CDN + 'img/planet-4.png" /></div>'
+}, {
+  id: "planet-50",
+  x: 4500,
+  y: defaultY + 260,
+  html: '<div id="planet-50" class="planet planet-5"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="' + _CDN + 'img/planet-medal.png" /></div><img src="' + _CDN + 'img/planet-5.png" /></div>'
+}, {
+  id: "balloon-1",
+  x: 840 * 0,
+  y: defaultY + 100,
+  html: '<div class="planet-balloon-small balloon-1"><img src="' + _CDN + 'img/balloon-small.png"/></div>'
+}, {
+  id: "balloon-2",
+  x: 840 * 1,
+  y: defaultY + 200,
+  html: '<div class="planet-balloon-small balloon-2"><img src="' + _CDN + 'img/balloon-small.png"/></div>'
+}, {
+  id: "balloon-3",
+  x: 840 * 2.2,
+  y: defaultY + 50,
+  html: '<div class="planet-balloon-big balloon-3"><img src="' + _CDN + 'img/balloon-big.png"/></div>'
+}, {
+  id: "balloon-4",
+  x: 840 * 3.9,
+  y: defaultY + 400,
+  html: '<div class="planet-balloon-small balloon-4"><img src="' + _CDN + 'img/balloon-small.png"/></div>'
+}, {
+  id: "balloon-5",
+  x: 840 * 4.6,
+  y: defaultY + 40,
+  html: '<div class="planet-balloon-small balloon-5"><img src="' + _CDN + 'img/balloon-small.png"/></div>'
+}, {
+  id: "balloon-6",
+  x: 840 * 5.4,
+  y: defaultY + 140,
+  html: '<div class="planet-balloon-big balloon-6"><img src="' + _CDN + 'img/balloon-big.png"/></div>'
+}, {
+  id: "balloon-7",
+  x: 840 * 5.4 - 220,
+  y: defaultY + 20,
+  html: '<div class="planet-balloon-small balloon-7"><img src="' + _CDN + 'img/balloon-small.png"/></div>'
+}, {
+  id: "balloon-8",
+  x: 840 * 4.6 - 120,
+  y: defaultY + 140,
+  html: '<div class="planet-balloon-big balloon-8"><img src="' + _CDN + 'img/balloon-big.png"/></div>'
+}, {
+  id: "balloon-9",
+  x: 840 * 3.9 - 120,
+  y: defaultY + 500,
+  html: '<div class="planet-balloon-big balloon-9"><img src="' + _CDN + 'img/balloon-big.png"/></div>'
+}, {
+  id: "balloon-10",
+  x: 840 * 2.2 - 220,
+  y: defaultY + 150,
+  html: '<div class="planet-balloon-small balloon-10"><img src="' + _CDN + 'img/balloon-small.png"/></div>'
+}, {
+  id: "balloon-11",
+  x: 840 * 1 - 190,
+  y: defaultY + 100,
+  html: '<div class="planet-balloon-big balloon-11"><img src="' + _CDN + 'img/balloon-big.png"/></div>'
+}, {
+  id: "balloon-12",
+  x: 840 * 0 + 170,
+  y: defaultY + 200,
+  html: '<div class="planet-balloon-big balloon-12"><img src="' + _CDN + 'img/balloon-big.png"/></div>'
+}];
+
+// for balloon
+for (i = k = 0; k < 10; i = ++k) {
+  bs = Math.random() > 0.5 ? "big" : "small";
+  ds = bs === "big" ? "small" : "big";
+  markers.push({
+    id: "balloon-" + (13 + i),
+    x: 5000 / i,
+    y: defaultY - parseInt(Math.random() * 300),
+    html: '<div class="planet-balloon-' + bs + ' balloon-' + (12 + i) + '"><img src="' + _CDN + 'img/balloon-' + bs + '.png"/></div>'
+  });
+  markers.push({
+    id: "balloon-" + (13 * 2 + i),
+    x: 5000 / i,
+    y: 1500 - parseInt(Math.random() * 400),
+    html: '<div class="planet-balloon-' + ds + ' balloon-' + (12 * 2 + i) + '"><img src="' + _CDN + 'img/balloon-' + ds + '.png"/></div>'
+  });
+}
 
 window.onload = function () {
   // initPlanets()
@@ -343,6 +481,7 @@ initVuePlanetInfoPage = function initVuePlanetInfoPage() {
         if (val) {
           if (!planetsList[this.planetName].overreaded) {
             planetsList[this.planetName].overreaded = true;
+            planetsList["planet-" + parseInt(this.planetName.replace("planet-", "")) * 10].overreaded = true;
             setAstarLight();
           }
           self = this;
@@ -368,12 +507,18 @@ initVuePlanetInfoPage = function initVuePlanetInfoPage() {
 };
 
 initVuePlanetsMedal = function initVuePlanetsMedal() {
-  var k, results;
+  var l, results;
   console.log("init vue");
   results = [];
-  for (i = k = 1; k < 6; i = ++k) {
-    results.push(planetsList['planet-' + i] = new Vue({
+  for (i = l = 1; l < 6; i = ++l) {
+    planetsList['planet-' + i] = new Vue({
       el: '#planet-' + i,
+      data: {
+        overreaded: false
+      }
+    });
+    results.push(planetsList['planet-' + i * 10] = new Vue({
+      el: '#planet-' + i * 10,
       data: {
         overreaded: false
       }
@@ -383,14 +528,14 @@ initVuePlanetsMedal = function initVuePlanetsMedal() {
 };
 
 initPlanets = function initPlanets() {
-  var defaultY, e;
-  defaultY = 700;
+  var e;
   try {
     planets = new PhotoSphereViewer({
-      panorama: "http://image.giccoo.com/projects/friso-island/img/planet-bg.jpg",
+      panorama: _CDN + "img/planet-bg.jpg",
       container: document.getElementById("planets"),
       // loading_html: '<div class="planet-loading ball-spin-fade-loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'
       loading_txt: '加载中...',
+      // fisheye: true
       gyroscope: true,
       time_anim: 0,
       latitude_range: [-3 * Math.PI / 12, 3 * Math.PI / 12],
@@ -407,92 +552,7 @@ initPlanets = function initPlanets() {
       // 			alert('Hello from custom button')
       // 	}
       // ]
-      markers: [{
-        id: "planet-1",
-        x: 100,
-        y: defaultY + 380,
-        html: '<div id="planet-1" class="planet planet-1"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="http://image.giccoo.com/projects/friso-island/img/planet-medal.png" /></div><img src="http://image.giccoo.com/projects/friso-island/img/planet-1.png" /></div>'
-      }, {
-        id: "planet-2",
-        x: -700,
-        y: defaultY + 200,
-        html: '<div id="planet-2" class="planet planet-2"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="http://image.giccoo.com/projects/friso-island/img/planet-medal.png" /></div><img src="http://image.giccoo.com/projects/friso-island/img/planet-2.png" /></div>'
-      }, {
-        id: "planet-3",
-        x: -700 * 3,
-        y: defaultY + 300,
-        html: '<div id="planet-3" class="planet planet-3"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="http://image.giccoo.com/projects/friso-island/img/planet-medal.png" /></div><img src="http://image.giccoo.com/projects/friso-island/img/planet-3.png" /></div>'
-      }, {
-        id: "planet-4",
-        x: 700 * 2,
-        y: defaultY + 360,
-        html: '<div id="planet-4" class="planet planet-4"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="http://image.giccoo.com/projects/friso-island/img/planet-medal.png" /></div><img src="http://image.giccoo.com/projects/friso-island/img/planet-4.png" /></div>'
-      }, {
-        id: "planet-5",
-        x: 700,
-        y: defaultY + 260,
-        html: '<div id="planet-5" class="planet planet-5"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="http://image.giccoo.com/projects/friso-island/img/planet-medal.png" /></div><img src="http://image.giccoo.com/projects/friso-island/img/planet-5.png" /></div>'
-      }, {
-        id: "balloon-1",
-        x: 840 * 0,
-        y: defaultY + 100,
-        html: '<div class="planet-balloon-small balloon-1"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-small.png"/></div>'
-      }, {
-        id: "balloon-2",
-        x: 840 * 1,
-        y: defaultY + 200,
-        html: '<div class="planet-balloon-small balloon-2"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-small.png"/></div>'
-      }, {
-        id: "balloon-3",
-        x: 840 * 2.2,
-        y: defaultY + 50,
-        html: '<div class="planet-balloon-big balloon-3"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-big.png"/></div>'
-      }, {
-        id: "balloon-4",
-        x: 840 * 3.9,
-        y: defaultY + 400,
-        html: '<div class="planet-balloon-small balloon-4"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-small.png"/></div>'
-      }, {
-        id: "balloon-5",
-        x: 840 * 4.6,
-        y: defaultY + 40,
-        html: '<div class="planet-balloon-small balloon-5"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-small.png"/></div>'
-      }, {
-        id: "balloon-6",
-        x: 840 * 5.4,
-        y: defaultY + 140,
-        html: '<div class="planet-balloon-big balloon-6"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-big.png"/></div>'
-      }, {
-        id: "balloon-7",
-        x: 840 * 5.4 - 220,
-        y: defaultY + 20,
-        html: '<div class="planet-balloon-small balloon-7"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-small.png"/></div>'
-      }, {
-        id: "balloon-8",
-        x: 840 * 4.6 - 120,
-        y: defaultY + 140,
-        html: '<div class="planet-balloon-big balloon-8"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-big.png"/></div>'
-      }, {
-        id: "balloon-9",
-        x: 840 * 3.9 - 120,
-        y: defaultY + 500,
-        html: '<div class="planet-balloon-big balloon-9"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-big.png"/></div>'
-      }, {
-        id: "balloon-10",
-        x: 840 * 2.2 - 220,
-        y: defaultY + 150,
-        html: '<div class="planet-balloon-small balloon-10"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-small.png"/></div>'
-      }, {
-        id: "balloon-11",
-        x: 840 * 1 - 190,
-        y: defaultY + 100,
-        html: '<div class="planet-balloon-big balloon-11"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-big.png"/></div>'
-      }, {
-        id: "balloon-12",
-        x: 840 * 0 + 170,
-        y: defaultY + 200,
-        html: '<div class="planet-balloon-big balloon-12"><img src="http://image.giccoo.com/projects/friso-island/img/balloon-big.png"/></div>'
-      }]
+      markers: markers
     });
     planets.on("ready", function () {
       console.log("ready");
@@ -503,9 +563,13 @@ initPlanets = function initPlanets() {
     // 	planets.startGyroscopeControl()
     // ,1000
     planets.on("select-marker", function (marker) {
+      var id;
       console.log("id: ", marker.id);
-      planetinfopage.planetName = marker.id;
-      planetinfopage.planet = planetInfo[marker.id];
+      id = parseInt(marker.id.replace("planet-", ""));
+      console.log(id);
+      id = id > 5 ? id / 10 : id;
+      planetinfopage.planetName = "planet-" + id;
+      planetinfopage.planet = planetInfo["planet-" + id];
       planetinfopage.opened = true;
       return planetinfopage.shownote = false;
     });
@@ -526,8 +590,8 @@ initPlanets = function initPlanets() {
 };
 
 setAstarLight = function setAstarLight() {
-  var item, k, l, len1, n, ref, ref1, run;
-  for (i = k = 0, ref = planetstars.stars.length; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
+  var item, l, len1, m, n, ref, ref1, run;
+  for (i = l = 0, ref = planetstars.stars.length; 0 <= ref ? l < ref : l > ref; i = 0 <= ref ? ++l : --l) {
     n = planetstars.stars.length - 1 - i;
     console.log(n, planetstars.stars.length - 1, n > 0);
     if (!planetstars.stars[n]) {
@@ -537,8 +601,8 @@ setAstarLight = function setAstarLight() {
   }
   run = true;
   ref1 = planetstars.stars;
-  for (l = 0, len1 = ref1.length; l < len1; l++) {
-    item = ref1[l];
+  for (m = 0, len1 = ref1.length; m < len1; m++) {
+    item = ref1[m];
     if (!item) {
       run = false;
       break;
