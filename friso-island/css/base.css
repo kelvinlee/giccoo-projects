@@ -1318,8 +1318,8 @@ body.pop-open {
 
 .playsound {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.5rem;
+  right: 2%;
   width: 9.0625%;
   margin: 0 auto;
   z-index: 99;
@@ -1398,7 +1398,7 @@ body.pop-open {
   left: 0px;
   width: 100%;
   height: 100%;
-  background: url("http://image.giccoo.com/projects/friso-island/img/bg.jpg") no-repeat center center;
+  background: url("../img/bg.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent;
   z-index: 100;
@@ -1417,7 +1417,7 @@ body.pop-open {
   left: 0%;
   width: 100%;
   height: 70%;
-  background: url("http://image.giccoo.com/projects/friso-island/img/answer-box.png") no-repeat center center;
+  background: url("../img/answer-box.png") no-repeat center center;
   background-size: 100% 100%;
   background-color: transparent;
 }
@@ -1452,7 +1452,7 @@ body.pop-open {
   left: 0px;
   width: 100%;
   height: 100%;
-  background: url("http://image.giccoo.com/projects/friso-island/img/avatar-mark.png") no-repeat center center;
+  background: url("../img/avatar-mark.png") no-repeat center center;
   background-size: 100% 100%;
   background-color: transparent;
   z-index: 99;
@@ -1608,7 +1608,7 @@ body.pop-open {
   left: 0px;
   width: 100%;
   height: 100%;
-  background: url("http://image.giccoo.com/projects/friso-island/img/bg.jpg") no-repeat center center;
+  background: url("../img/bg.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent;
 }
@@ -1636,7 +1636,7 @@ body.pop-open {
 
 #page-one {
   z-index: 209;
-  background: url("http://image.giccoo.com/projects/friso-island/img/bg-light.jpg") no-repeat center center;
+  background: url("../img/bg-light.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent;
 }
@@ -1758,7 +1758,7 @@ body.pop-open {
 #page-one .texts .bg-box {
   top: 4%;
   left: 0px;
-  background: url("http://image.giccoo.com/projects/friso-island/img/homepage-box.png") no-repeat center center;
+  background: url("../img/homepage-box.png") no-repeat center center;
   background-size: cover;
   background-color: transparent;
   -webkit-transform: scale(0.95, 0.95);
@@ -1830,7 +1830,7 @@ body.pop-open {
 #navbar .stars {
   position: absolute;
   top: 8px;
-  right: 2%;
+  right: 13%;
   width: 50%;
   text-align: right;
 }
@@ -1876,7 +1876,7 @@ body.pop-open {
 }
 
 .psv-container {
-  background: url("http://image.giccoo.com/projects/friso-island/img/bg.jpg") no-repeat center center;
+  background: url("../img/bg.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent;
 }

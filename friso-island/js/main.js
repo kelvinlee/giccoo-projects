@@ -35,6 +35,54 @@ if (css3Prefix) {
 }
 
 // @codekit-prepend "coffee/css3Prefix"
+Vue.component("player", {
+  template: '<div class="playsound"> <div class="icon-play" :class="{play: playing, pause: !playing}" @click="change"> <img :src="iconNow" /> </div> <audio src="http://image.giccoo.com/projects/friso/mp3/rap.160.mp3" autoplay="true"></audio> </div>',
+  data: function data() {
+    return {
+      playing: false,
+      iconPlay: "http://image.giccoo.com/projects/libs/img/audio-play.png",
+      iconStop: "http://image.giccoo.com/projects/libs/img/audio-stop.png"
+    };
+  },
+  props: {
+    autoplay: {
+      default: true
+    }
+  },
+  methods: {
+    play: function play() {
+      return this.playing = true;
+    },
+    pause: function pause() {
+      return this.playing = false;
+    },
+    change: function change() {
+      if (this.playing) {
+        this.audio.pause();
+      } else {
+        this.audio.play();
+      }
+      return console.log("play");
+    }
+  },
+  computed: {
+    iconNow: function iconNow() {
+      if (!this.playing) {
+        return this.iconPlay;
+      } else {
+        return this.iconStop;
+      }
+    }
+  },
+  mounted: function mounted(el) {
+    console.log("autoplay:", this.autoplay);
+    this.audio = this.$el.children[1];
+    this.audio.addEventListener("pause", this.pause.bind(this));
+    this.audio.addEventListener("play", this.play.bind(this));
+    return console.log(this.audio);
+  }
+});
+
 _CDN = "http://image.giccoo.com/projects/friso-island/";
 
 _CDN = "./";
@@ -566,7 +614,7 @@ initPlanets = function initPlanets() {
       var id;
       console.log("id: ", marker.id);
       id = parseInt(marker.id.replace("planet-", ""));
-      console.log(id);
+      console.log(id, marker.id);
       id = id > 5 ? id / 10 : id;
       planetinfopage.planetName = "planet-" + id;
       planetinfopage.planet = planetInfo["planet-" + id];

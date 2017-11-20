@@ -36,6 +36,7 @@
     <div id="main" style="display: none" class="main">
       <div id="navbar">
         <div @click.prevent.stop="backNormal" class="logo"><img src="./img/logo.png"></div>
+        <player autoplay="true"></player>
         <div v-show="show" class="stars fadeIn animated">
           <div v-for="star in stars" :class="{on:star}" class="star"><img :src="'./img/star-'+(star?'on':'off')+'.png'"></div>
         </div>
