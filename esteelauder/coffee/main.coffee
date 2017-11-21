@@ -150,6 +150,9 @@ shareDescription = ["但是你的皱纹一带一条指数偏高","但是你的�
 # 	debug: true
 # 	timestamp: new Date().getTime()
 window.onload = ->
+	if IsPC() and mobile
+		return window.location.href = "pc.html"
+		
 	body = document.getElementsByTagName("body")[0]
 	MK = body.offsetWidth/body.offsetHeight
 	if body.offsetHeight <= 480 or MK > 0.65
@@ -218,6 +221,7 @@ initLab = ->
 			startGo: ->
 				@started = false
 				@startquestion = true
+				stm_clicki('send', 'event', '即刻开启', '点击', '开始页面')
 			selecteFun: (answer,indexP,index)->
 				console.log indexP,@answer
 				return false if @waiting or @answerFinished or @answer is 3
@@ -228,6 +232,8 @@ initLab = ->
 				@score[@answer] = answer.id if @answer <= 2
 				@answer = @answer + 1
 				@answerFinished = true if @answer is 3
+
+				stm_clicki('send', 'event', '以下哪种情况最符合你？', '第'+indexP+'题', '答案'+answer.id)
 			startPrinterFun: ->
 				@started = false
 				@startquestion = false
@@ -252,6 +258,8 @@ initLab = ->
 				else
 					@printer.description = shareDescription[2]
 				# console.log @sendPostFun
+
+				stm_clicki('send', 'event', '提交查看你的肌密报告', '点击', '答题页面')
 				
 			sendPostFun: ->
 				# console.log @sended
@@ -266,6 +274,7 @@ initLab = ->
 						# alert msg 
 						console.log msg
 					# alert "发布成功"
+				stm_clicki('send', 'event', '发布你的肌密报告', '点击', '产品列表页')
 			closeshare: ->
 				@sharesuccess = false
 				@sended = false
@@ -274,10 +283,15 @@ initLab = ->
 			openNoteFun: ->
 				# console.log "openNoteFun",de
 				@shownote = true
+				stm_clicki('send', 'event', '*详细活动规则请点击查看', '点击', '产品列表页')
 			gotoProFun: (de)->
 				return false if not @printerover
 				@printerover = false
 				@overpage = true
+
+				stm_clicki('send', 'event', '下一页', '滑动', '报告页面')
+				if @nickname isnt ""
+					stm_clicki('send', 'event', '填写昵称', '输入', @nickname)
 
 			
 		directives:
@@ -364,4 +378,14 @@ loadWechatConfig = ->
 	s.parentNode.insertBefore hm, s
 	return
 		
-	
+IsPC = ->
+	userAgentInfo = navigator.userAgent
+	Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod')
+	flag = true
+	v = 0
+	while v < Agents.length
+		if userAgentInfo.indexOf(Agents[v]) > 0
+			flag = false
+			break
+		v++
+	flag	

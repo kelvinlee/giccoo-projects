@@ -1,0 +1,25 @@
+extends ../libs/jade/layout-clean
+block title
+	| 雅诗兰黛美肌万能研究室
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="css/pc.css?v=4")
+	script.
+		var mobile = false;
+	script.
+		(function(a, e, f, g, b, c, d) {a.ClickiTrackerName = b;
+		a[b] = a[b] || function() {(a[b].queue = a[b].queue || []).push(arguments)};
+		a[b].start = +new Date; c = e.createElement(f); d = e.getElementsByTagName(f)[0];
+		c.async = 1; c.src = g; d.parentNode.insertBefore(c, d)
+		})(window, document, 'script', '//stm-cdn.cn.miaozhen.com/clicki.min.js', 'stm_clicki');
+		stm_clicki('create', 'dc-1643', 'auto');
+		stm_clicki('send', 'pageview');
+
+block content
+	- url = "http://image.giccoo.com/projects/esteelauder/"
+	//- url = "./"
+	.main
+		img(src="#{url}img/pc.jpg")
+block js
+	script(src="js/pc.js?v=4")

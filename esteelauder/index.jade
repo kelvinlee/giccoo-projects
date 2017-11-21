@@ -7,13 +7,15 @@ block css
 	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
 	link(rel="stylesheet",href="css/base.css?v=4")
 	script.
-		var _hmt = _hmt || [];
-		(function() {
-			var hm = document.createElement("script");
-			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
-			var s = document.getElementsByTagName("script")[0]; 
-			s.parentNode.insertBefore(hm, s);
-		})();
+		var mobile = true;
+	script.
+		(function(a, e, f, g, b, c, d) {a.ClickiTrackerName = b;
+		a[b] = a[b] || function() {(a[b].queue = a[b].queue || []).push(arguments)};
+		a[b].start = +new Date; c = e.createElement(f); d = e.getElementsByTagName(f)[0];
+		c.async = 1; c.src = g; d.parentNode.insertBefore(c, d)
+		})(window, document, 'script', '//stm-cdn.cn.miaozhen.com/clicki.min.js', 'stm_clicki');
+		stm_clicki('create', 'dc-1643', 'auto');
+		stm_clicki('send', 'pageview');
 
 block content
 	- url = "http://image.giccoo.com/projects/esteelauder/"
