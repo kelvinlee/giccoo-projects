@@ -513,6 +513,7 @@ $("#markX2").click(function(){
   }
 });
 
+var delayT=0.02
 
 function checkResult(){
 
@@ -521,17 +522,30 @@ function checkResult(){
     TweenLite.set($("#p6hint"),{display:"block",delay:0})
     TweenLite.from($("#p6hint"),1.5,{opacity:0,y:"+=100",ease:Elastic.easeOut,onComplete:hideResult,delay:0})
     
-    TweenLite.set($("#chicken"),{display:"none",delay:1.5})
-    TweenLite.set($("#p6t1"),{display:"none",delay:1.5})
-    TweenLite.set($("#p6t2"),{display:"none",delay:1.5})
-    TweenLite.set($("#p6t3"),{display:"none",delay:1.5})
-    TweenLite.set($("#p6mark4"),{display:"none",delay:1.5})
-    TweenLite.set($("#markV1"),{display:"none",delay:1.5})
-    TweenLite.set($("#markV2"),{display:"none",delay:1.5})
-    TweenLite.set($("#markX1"),{display:"none",delay:1.5})
-    TweenLite.set($("#markX2"),{display:"none",delay:1.5})
+    // TweenLite.set($("#chicken"),{display:"none",delay:1.5})
+    // TweenLite.set($("#p6t1"),{display:"none",delay:1.5})
+    // TweenLite.set($("#p6t2"),{display:"none",delay:1.5})
+    // TweenLite.set($("#p6t3"),{display:"none",delay:1.5})
+    // TweenLite.set($("#p6mark4"),{display:"none",delay:1.5})
+    // TweenLite.set($("#markV1"),{display:"none",delay:1.5})
+    // TweenLite.set($("#markV2"),{display:"none",delay:1.5})
+    // TweenLite.set($("#markX1"),{display:"none",delay:1.5})
+    // TweenLite.set($("#markX2"),{display:"none",delay:1.5})
 
-    TweenLite.set($("#page7"),{display:"block",delay:1.5,onComplete:setPage7})
+    // TweenLite.set($("#page7"),{display:"block",delay:1.5,onComplete:setPage7})
+
+
+    TweenLite.to($("#chicken"),1,{opacity:0,y:"-=80",display:"none",delay:1.5+delayT*0,ease:Expo.easeOut})
+    TweenLite.to($("#p6t1"),   1,{opacity:0,y:"-=80",display:"none",delay:1.5+delayT*1,ease:Expo.easeOut})
+    TweenLite.to($("#p6t2"),   1,{opacity:0,y:"-=80",display:"none",delay:1.5+delayT*2,ease:Expo.easeOut})
+    TweenLite.to($("#p6t3"),   1,{opacity:0,y:"-=80",display:"none",delay:1.5+delayT*3,ease:Expo.easeOut})
+    TweenLite.to($("#p6mark4"),1,{opacity:0,y:"-=80",display:"none",delay:1.5+delayT*4,ease:Expo.easeOut})
+    TweenLite.to($("#markV1"), 1,{opacity:0,y:"-= 0",display:"none",delay:1.5+delayT*5,ease:Expo.easeOut})
+    TweenLite.to($("#markV2"), 1,{opacity:0,y:"-= 0",display:"none",delay:1.5+delayT*6,ease:Expo.easeOut})
+    TweenLite.to($("#markX1"), 1,{opacity:0,y:"-= 0",display:"none",delay:1.5+delayT*7,ease:Expo.easeOut})
+    TweenLite.to($("#markX2"), 1,{opacity:0,y:"-= 0",display:"none",delay:1.5+delayT*8,ease:Expo.easeOut})
+
+    TweenLite.set($("#page7"),{display:"block",delay:2,onComplete:setPage7})
 
     
   }
@@ -539,7 +553,7 @@ function checkResult(){
 
 
 function hideResult(){
-  TweenLite.set($("#p6hint"),{opacity:0,y:"-=100",display:"none"})
+  TweenLite.set($("#p6hint"),{opacity:0,y:"-=0",display:"none"})
 }
 
 
@@ -547,6 +561,12 @@ function hideResult(){
 
 
 function setPage7(){
+  //TweenLite.from($("#page7"),1,{opacity:0,y:"+=90",ease:Expo.easeOut})
+
+  TweenLite.from($("#info1"),1,{opacity:0,y:"+=90",ease:Expo.easeOut})
+  TweenLite.from($("#p7btn"),1,{opacity:0,y:"+=90",ease:Expo.easeOut,delay:.1})
+  
+
   TweenLite.set($('#btn1'),{display:"block"})
   TweenLite.set($('#btn2'),{display:"block"})
 }
