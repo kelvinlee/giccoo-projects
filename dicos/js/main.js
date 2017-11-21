@@ -27,7 +27,7 @@ $(document).ready(function load (){
     var shareContent;
     shareContent = {
       title: "德克士大变身的秘密究竟是?",//
-      desc: "从数字化进阶智能化，从舒食转向新鲜，从消费升级为尊享",
+      desc: "从数字化进阶智能化，从舒食深化新鲜，从消费升级为尊享",
       link: "http://m.giccoo.com/dicos/",
       imgUrl: "http://m.giccoo.com/dicos/img/ico.jpg",
       success: function() {},
