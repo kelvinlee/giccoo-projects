@@ -19,14 +19,15 @@ function aaa(){
 //   $(this).attr("src",$(this).attr("data-src"))
 // })
 
-
+var titleA=["德克士大变身的秘密究竟是?","德克士大变身的秘密究竟是","德克士大变身秘密究竟是?"]
+console.log(titleA[parseInt(Math.random()*3)])
 
 $(document).ready(function load (){
 	loadWechatConfig();
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "德克士大变身的秘密究竟是?",//
+      title: titleA[parseInt(Math.random()*3)],//
       desc: "从数字化进阶智能化，从舒食深化新鲜，从消费升级为尊享",
       link: "http://m.giccoo.com/dicos/",
       imgUrl: "http://m.giccoo.com/dicos/img/ico.jpg",
