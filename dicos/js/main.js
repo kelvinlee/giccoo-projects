@@ -19,7 +19,7 @@ function aaa(){
 //   $(this).attr("src",$(this).attr("data-src"))
 // })
 
-var titleA=["德克士大变身的秘密究竟是?","德克士大变身的秘密究竟是？","德克士大变身的秘密究竟是?"]
+var titleA=["有料！德克士大改变等你来发现","探索！德克士大变身的秘密究竟是？","惊叹！去德克士竟能穿越未来？"]
 console.log(titleA[parseInt(Math.random()*3)])
 
 $(document).ready(function load (){
@@ -28,7 +28,7 @@ $(document).ready(function load (){
     var shareContent;
     shareContent = {
       title: titleA[parseInt(Math.random()*3)],//
-      desc: "从数字化进阶智能化，从舒食深化新鲜，从消费升级为尊享",
+      desc: "数字化进阶为智能化，舒食深化为新鲜，会员晋级为尊享",
       link: "http://m.giccoo.com/dicos/",
       imgUrl: "http://m.giccoo.com/dicos/img/ico.jpg",
       success: function() {},
