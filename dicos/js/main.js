@@ -19,7 +19,7 @@ function aaa(){
 //   $(this).attr("src",$(this).attr("data-src"))
 // })
 
-var titleA=["德克士大变身的秘密究竟是?","德克士大变身的秘密究竟是","德克士大变身秘密究竟是?"]
+var titleA=["德克士大变身的秘密究竟是?","德克士大变身的秘密究竟是？","德克士大变身的秘密究竟是?"]
 console.log(titleA[parseInt(Math.random()*3)])
 
 $(document).ready(function load (){
