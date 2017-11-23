@@ -34,7 +34,6 @@ if (css3Prefix) {
   ANIMATION_END_NAME = ANIMATION_END_NAMES[css3Prefix];
 }
 
-// @codekit-prepend "coffee/css3Prefix"
 Vue.component("player", {
   template: '<div class="playsound"> <div class="icon-play" :class="{play: playing, pause: !playing}" @click="change"> <img :src="iconNow" /> </div> <audio src="http://image.giccoo.com/projects/friso/mp3/rap.160.mp3" autoplay="true"></audio> </div>',
   data: function data() {
@@ -50,6 +49,10 @@ Vue.component("player", {
     }
   },
   methods: {
+    playTime: function playTime(time) {
+      this.audio.currentTime = time;
+      return this.audio.play();
+    },
     play: function play() {
       return this.playing = true;
     },
@@ -83,6 +86,8 @@ Vue.component("player", {
   }
 });
 
+// @codekit-prepend "coffee/css3Prefix"
+// @codekit-prepend "./player.coffee"
 _CDN = "http://image.giccoo.com/projects/friso-island/";
 
 _CDN = "./";
@@ -99,6 +104,7 @@ planetstars = {};
 
 planetInfo = {
   "planet-1": {
+    time: 52.5,
     question: "「乌龟脱了衣服之后会不会跑快一点？」",
     answers: [{
       author: "@落夏",
@@ -123,6 +129,7 @@ planetInfo = {
     }]
   },
   "planet-2": {
+    time: 94.6,
     question: "「为什么喝完牛奶会有白胡子？」",
     answers: [{
       author: "@左左",
@@ -148,6 +155,7 @@ planetInfo = {
   },
   // {author:"@",avatar:".jpg",answer:""}
   "planet-3": {
+    time: 84.4,
     question: "「小鸟怎么才能和小鱼成为朋友呢？」",
     answers: [{
       author: "@郭小野",
@@ -173,6 +181,7 @@ planetInfo = {
     }]
   },
   "planet-4": {
+    time: 42.2,
     question: "「为什么小牛冬天不穿衣服也不会感冒呢？」",
     answers: [{
       author: "@Bonita是少女啊",
@@ -197,6 +206,7 @@ planetInfo = {
     }]
   },
   "planet-5": {
+    time: 31.4,
     question: "「大熊猫是用竹子在刷牙吗？」",
     answers: [{
       author: "@程泉",
@@ -619,7 +629,8 @@ initPlanets = function initPlanets() {
       planetinfopage.planetName = "planet-" + id;
       planetinfopage.planet = planetInfo["planet-" + id];
       planetinfopage.opened = true;
-      return planetinfopage.shownote = false;
+      planetinfopage.shownote = false;
+      return planetstars.$children[0].playTime(planetInfo["planet-" + id].time);
     });
   } catch (error) {
 
