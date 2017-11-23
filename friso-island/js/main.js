@@ -35,10 +35,13 @@ if (css3Prefix) {
 }
 
 Vue.component("player", {
-  template: '<div class="playsound"> <div class="icon-play" :class="{play: playing, pause: !playing}" @click="change"> <img :src="iconNow" /> </div> <audio src="http://image.giccoo.com/projects/friso/mp3/rap.160.mp3" autoplay="true"></audio> </div>',
+  template: '<div class="playsound"> <div class="icon-play" :class="{play: playing, pause: !playing}" @click="change"> <img :src="iconNow" /> </div> <audio :src="src" loop="loop"></audio> <audio :src="otherSrc"></audio> </div>',
   data: function data() {
     return {
+      src: "./mp3/bgm.mp3",
+      otherSrc: "",
       playing: false,
+      stoped: false,
       iconPlay: "http://image.giccoo.com/projects/libs/img/audio-play.png",
       iconStop: "http://image.giccoo.com/projects/libs/img/audio-stop.png"
     };
@@ -49,9 +52,19 @@ Vue.component("player", {
     }
   },
   methods: {
-    playTime: function playTime(time) {
-      this.audio.currentTime = time;
-      return this.audio.play();
+    playOther: function playOther(url) {
+      // @audio.currentTime = time
+      this.audio.pause();
+      this.audioOther.src = url;
+      this.audioOther.play();
+      return console.log("play other");
+    },
+    reset: function reset() {
+      console.log("reset");
+      if (!this.stoped) {
+        this.audio.play();
+        return this.audioOther.pause();
+      }
     },
     play: function play() {
       return this.playing = true;
@@ -59,12 +72,21 @@ Vue.component("player", {
     pause: function pause() {
       return this.playing = false;
     },
+    otherend: function otherend() {
+      console.log("end");
+      if (!this.stoped) {
+        return this.audio.play();
+      }
+    },
     change: function change() {
       if (this.playing) {
         this.audio.pause();
+        this.stoped = true;
       } else {
         this.audio.play();
+        this.stoped = false;
       }
+      this.audioOther.pause();
       return console.log("play");
     }
   },
@@ -80,9 +102,11 @@ Vue.component("player", {
   mounted: function mounted(el) {
     console.log("autoplay:", this.autoplay);
     this.audio = this.$el.children[1];
+    this.audioOther = this.$el.children[2];
     this.audio.addEventListener("pause", this.pause.bind(this));
     this.audio.addEventListener("play", this.play.bind(this));
-    return console.log(this.audio);
+    this.audioOther.addEventListener("ended", this.otherend.bind(this));
+    return console.log(this.audio, this.audioOther, this.playing);
   }
 });
 
@@ -104,7 +128,7 @@ planetstars = {};
 
 planetInfo = {
   "planet-1": {
-    time: 52.5,
+    url: "./mp3/turtle.mp3",
     question: "「乌龟脱了衣服之后会不会跑快一点？」",
     answers: [{
       author: "@落夏",
@@ -129,7 +153,7 @@ planetInfo = {
     }]
   },
   "planet-2": {
-    time: 94.6,
+    url: "./mp3/beard.mp3",
     question: "「为什么喝完牛奶会有白胡子？」",
     answers: [{
       author: "@左左",
@@ -155,7 +179,7 @@ planetInfo = {
   },
   // {author:"@",avatar:".jpg",answer:""}
   "planet-3": {
-    time: 84.4,
+    url: "./mp3/bird.mp3",
     question: "「小鸟怎么才能和小鱼成为朋友呢？」",
     answers: [{
       author: "@郭小野",
@@ -181,7 +205,7 @@ planetInfo = {
     }]
   },
   "planet-4": {
-    time: 42.2,
+    url: "./mp3/cow.mp3",
     question: "「为什么小牛冬天不穿衣服也不会感冒呢？」",
     answers: [{
       author: "@Bonita是少女啊",
@@ -206,7 +230,7 @@ planetInfo = {
     }]
   },
   "planet-5": {
-    time: 31.4,
+    url: "./mp3/panda.mp3",
     question: "「大熊猫是用竹子在刷牙吗？」",
     answers: [{
       author: "@程泉",
@@ -400,7 +424,8 @@ window.onload = function () {
     el: "#navbar",
     data: {
       stars: [false, false, false, false, false],
-      show: false
+      show: false,
+      bgm: false
     },
     methods: {
       backNormal: function backNormal() {
@@ -418,8 +443,10 @@ window.onload = function () {
           return planetinfopage.opendG = false;
         }
       }
-    }
+    },
+    mounted: function mounted() {}
   });
+  // console.log "navbar end:",planetstars.$children[0].playing
   fisrtPage = new Vue({
     el: "#page-one",
     data: {
@@ -430,6 +457,8 @@ window.onload = function () {
       getStart: function getStart() {
         this.notShowTime = true;
         planetstars.show = true;
+        planetstars.bgm = true;
+        planetstars.$children[0].change();
         // initPlanets()
         return initVuePlanetInfoPage();
       }
@@ -491,6 +520,7 @@ initVuePlanetInfoPage = function initVuePlanetInfoPage() {
       },
       keepgoing: function keepgoing() {
         this.opened = false;
+        planetstars.$children[0].reset();
         if (lastPageShow) {
           console.log("open last page");
           this.shownote = false;
@@ -630,7 +660,7 @@ initPlanets = function initPlanets() {
       planetinfopage.planet = planetInfo["planet-" + id];
       planetinfopage.opened = true;
       planetinfopage.shownote = false;
-      return planetstars.$children[0].playTime(planetInfo["planet-" + id].time);
+      return planetstars.$children[0].playOther(planetInfo["planet-" + id].url);
     });
   } catch (error) {
 

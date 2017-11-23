@@ -14,6 +14,8 @@ $cdn : "../"
 	.duration-#{$i}
 		animation-duration: $i*100ms
 
+.bold
+	font-weight: bold
 html,body
 	+w
 	+h
@@ -80,10 +82,10 @@ p
 	+font-size(0.8rem)
 	.pc &
 		font-size: 16px
-	.large
+	&.large
 		+font-size(1rem)
 		.pc &
-			font-size: 18px
+			font-size: 20px
 
 .btn
 	display: inline-block
@@ -112,6 +114,7 @@ p
 		+w
 		+posa
 		+bl(30%)
+		font-family: "MHGBLU"
 		&.show
 			+show
 		.pc &
@@ -163,7 +166,7 @@ p
 		color: #bc7123
 	h1
 		margin-right: -5%
-		margin-bottom: 0.4em
+		margin-bottom: 0.6em
 	.btn
 		margin-top: 0.8em
 
@@ -183,11 +186,13 @@ p
 			z-index: 101
 		.content
 			+posa
-			+tl(25%,15%)
+			+tl(18%,15%)
 			+w(70%)
 			+h(70%)
 			+overhide
 			+text-center
+			h2
+				+font-size(1.2rem)
 			h2,p
 				+text-center
 			.answers
@@ -278,10 +283,17 @@ p
 		cursor: move
 		+w(80%)
 		+tl(0,10%)
-		.face
-			+w(45%)
-			+m
+		.texts
 			margin-top: 20%
+			font-size: 0
+			// +b($cdn+"img/text.png",no-repeat,center,top,cover)
+			// +p(5% 0)
+			.d
+				+p(1% 0)
+		.face
+			+w(50%)
+			+m
+			margin-top: 0
 		.item
 			+w(65%)
 			+m
@@ -295,19 +307,21 @@ p
 			margin-top: 10px
 			+animation(fadeOutDown,2s,linear,infinite)
 	.over-page
+		.texts
+			margin-top: -5%
 		.text-for
-			color: #c67a00
-			+text-left
+			color: #666666
+			+text-center
 			+w(80%)
 			+m
-			margin-top: 20%
+			margin-top: 10%
 			.nickname
 				display: inline-block
 				min-width: 50px
-				border-bottom: solid 1px #c67a00
+				border-bottom: solid 1px #666666
 		.tips
 			+w(100%)
-			+m(8% auto)
+			+m(6% auto)
 			.iphone4 &
 				// +w(60%)
 				+m(6px auto)
@@ -325,6 +339,9 @@ p
 			+m
 			margin-top: 10px
 			margin-bottom: 4px
+			// +p(0 20px)
+			padding-left: 40px
+			padding-right: 40px
 			.pc &
 				font-size: 16px
 		.link
@@ -339,19 +356,19 @@ p
 		// +hide
 		.blank
 			+posa
-			+tl(50%,5%)
-			+w(70%)
+			+tl(50%,0)
+			+w(100%)
 			+transform(translate3d(0,-50%,0))
-			+bc(#fff)
-			+p(10%)
+			// +bc(#fff)
+			// +p(10%)
 		.close
 			+posa
-			+tr(5px,5px)
+			+tr(10px,10px)
 			+wh(25px,25px)
 			font-size: 0
 			cursor: pointer
 		.note-box
-			border: dashed 1px #9e5900
+			// border: dashed 1px #9e5900
 			+w(auto)
 			+m
 			+p(5%)
@@ -372,6 +389,17 @@ p
 .slider
 	+w
 	+overhide
+	+posr
+	.slider-left,.slider-right
+		+posa
+		+w(25px)
+		font-size: 0
+		z-index: 2
+	.slider-left
+		+tl(50%,2%)
+	.slider-right
+		+tr(50%,2%)
+		+transform(scale(-1,1))
 	.slider-list
 		+w
 		white-space: nowrap

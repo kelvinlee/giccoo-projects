@@ -7,6 +7,7 @@
     <title>雅诗兰黛美肌万能研究室</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
+    <link rel="stylesheet" href="font/MHGBLU.css?v=4">
     <link rel="stylesheet" href="css/base.css?v=4">
     <script>var mobile = true;</script>
     <script>
@@ -31,8 +32,7 @@
             <div class="box fadeInRight animated duration-10">
               <h2 class="small">雅诗兰黛</h2>
               <h1>「美肌万能研究室」</h1>
-              <p class="large">你是我们精心选中的贵宾</p>
-              <p class="large">来这里，开启你肌肤奥秘的探索</p>
+              <p class="large bold">美丽的你，来这里找寻你的美肌秘密</p>
               <div @click.prevent.stop="startGo" class="btn">即刻开启</div>
             </div>
           </div>
@@ -41,8 +41,8 @@
           <transition name="page-animation" v-for="answers,index in answerlist">
             <div v-show="answerShow[index]" :class="'answer-page-'+(index+1)" class="page-box">
               <div class="content">
-                <h2>我们总有「这样就够了」的时刻</h2>
-                <p>以下哪种情况最符合你？</p>
+                <h2>生活中，<br/>你也有“随意”的一面吗？</h2>
+                <p>单选勾出以下最符合你的状况</p>
                 <div class="answers">
                   <div v-for="answer,indexi in answers" @click.prevent.stop="selecteFun(answer,index,indexi)" class="answer fadeIn animated">
                     <div class="checkbox">
@@ -62,22 +62,18 @@
         <div v-if="startprinter" class="page lab-printer">
           <transition name="printer-animation">
             <div id="printer-page" v-show="printerover" v-touch="gotoProFun" class="printer-page fadeIn animated duration-10">
+              <div class="texts"><img :src="'http://image.giccoo.com/projects/esteelauder/img/'+printer.title+'.png'">
+                <div class="d"><img :src="'http://image.giccoo.com/projects/esteelauder/img/'+printer.description+'.png'"></div><img :src="'http://image.giccoo.com/projects/esteelauder/img/text-end.png'">
+              </div>
               <div class="face fadeIn aniamted delay-3"><img :src="'http://image.giccoo.com/projects/esteelauder/img/face.png'"></div>
               <div class="item fadeIn aniamted delay-5"><img :src="'http://image.giccoo.com/projects/esteelauder/img/line-'+score.join('-')+'.png'"></div>
-              <div class="texts">
-                <p class="fadeInUp aniamted delay-7">整体报告显示你拥有</p>
-                <h1 class="fadeInUp aniamted delay-9">{{printer.title}}</h1>
-                <p class="fadeInUp aniamted delay-11">{{printer.description}}</p>
-                <p class="fadeInUp aniamted delay-13">想还原完美肌肤吗？下滑有妙招！</p>
-                <div @click="gotoProFun" class="icon arrow-down fadeInUp aniamted delay-15"><img :src="'http://image.giccoo.com/projects/esteelauder/img/arrow-down.png'"></div>
-              </div>
+              <div @click="gotoProFun" class="icon arrow-down fadeInUp aniamted delay-15"><img :src="'http://image.giccoo.com/projects/esteelauder/img/arrow-down.png'"></div>
             </div>
           </transition>
           <transition name="printer-animation">
             <div id="over-page" v-show="overpage" class="over-page">
               <div class="text-for">
-                <p>TO: <span class="nickname">{{nickname}}</span></p>
-                <p>送上一份还原完美肌的万能贴士！</p>
+                <h2>Hi，<span class="nickname">{{nickname}}</span><br/>你的万能美肌法宝在这里！</h2>
               </div>
               <div class="tips">
                 <slider id="slider" :overpage="overpage" class="slider">
@@ -87,34 +83,25 @@
                 </slider>
               </div>
               <div class="texts">
-                <p>分享你的肌密报告<br/>即有机会赢取万能面霜正装</p>
+                <p>分享你的独家“肌密”<br/>即有机会赢取万能面霜正装</p>
               </div>
-              <div @click.prevent.stop="sendPostFun" class="btn btn-post">发布你的肌密报告</div>
+              <div @click.prevent.stop="sendPostFun" class="btn btn-post">一键发布</div>
               <div @click.prevent.stop="openNoteFun" class="link">*详细活动规则请点击查看</div>
             </div>
           </transition>
           <transition name="note-animation">
             <div id="note-page" v-show="shownote" class="note-page">
+              <div @click.prevent.stop="closenote" class="close"><img :src="'http://image.giccoo.com/projects/esteelauder/img/close.png'"></div>
               <div class="blank">
-                <div @click.prevent.stop="closenote" class="close"><img :src="'http://image.giccoo.com/projects/esteelauder/img/close.png'"></div>
-                <div class="note-box">
-                  <p>活动规则</p>
-                  <p>1.活动时间：2017年11月17日——2017年11月30日</p>
-                  <p>2.根据页面提示参与测试，并晒出为你的“万能美肌贴士”截图至微博并@雅诗兰黛，我们将随机抽取幸运粉丝获得万能面霜正装1份</p>
-                  <p>3.雅诗兰黛多效智妍精华霜正装（一人一份，共10份）</p>
-                </div>
+                <div class="note-box"><img :src="'http://image.giccoo.com/projects/esteelauder/img/note-text.png'"></div>
               </div>
             </div>
           </transition>
           <transition name="note-animation">
             <div id="note-page" v-show="sharesuccess" class="note-page">
+              <div @click.prevent.stop="closeshare" class="close"><img :src="'http://image.giccoo.com/projects/esteelauder/img/close.png'"></div>
               <div class="blank">
-                <div @click.prevent.stop="closeshare" class="close"><img :src="'http://image.giccoo.com/projects/esteelauder/img/close.png'"></div>
-                <div class="note-box">
-                  <h2>报告分享成功</h2>
-                  <p>请关注官方微博后续开奖结果</p>
-                  <div class="btn">我们为你准备了雅粉专属服务<br/>快去线下门店体验还原完美肌肤吧！</div>
-                </div>
+                <div class="note-box"><img :src="'http://image.giccoo.com/projects/esteelauder/img/share-success.png'"></div>
               </div>
             </div>
           </transition>

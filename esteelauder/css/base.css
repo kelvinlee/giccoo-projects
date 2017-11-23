@@ -796,6 +796,9 @@ ul {
   -webkit-animation-duration: 3000ms;
           animation-duration: 3000ms; }
 
+.bold {
+  font-weight: bold; }
+
 html, body {
   width: 100%;
   height: 100%; }
@@ -925,22 +928,22 @@ p {
       font-size: 0.96rem; } }
   .pc p {
     font-size: 16px; }
-  p .large {
+  p.large {
     font-size: 1rem; }
     @media only screen and (min-width: 321px) and (max-width: 399px) {
-      p .large {
+      p.large {
         font-size: 1.1rem; } }
     @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-      p .large {
+      p.large {
         font-size: 1.1rem; } }
     @media only screen and (min-width: 399px) and (max-width: 767px) {
-      p .large {
+      p.large {
         font-size: 1.2rem; } }
     @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-      p .large {
+      p.large {
         font-size: 1.2rem; } }
-    .pc p .large {
-      font-size: 18px; }
+    .pc p.large {
+      font-size: 20px; }
 
 .btn {
   display: inline-block;
@@ -983,7 +986,8 @@ p {
     width: 100%;
     position: absolute;
     bottom: 30%;
-    left: 0px; }
+    left: 0px;
+    font-family: "MHGBLU"; }
     @media only screen and (min-width: 321px) and (max-width: 399px) {
       .loading .text {
         font-size: 0.88rem; } }
@@ -1091,7 +1095,7 @@ p {
 
 .lab-start h1 {
   margin-right: -5%;
-  margin-bottom: 0.4em; }
+  margin-bottom: 0.6em; }
 
 .lab-start .btn {
   margin-top: 0.8em; }
@@ -1115,12 +1119,26 @@ p {
     z-index: 101; }
   .lab-questions .page-box .content {
     position: absolute;
-    top: 25%;
+    top: 18%;
     left: 15%;
     width: 70%;
     height: 70%;
     overflow: hidden;
     text-align: center; }
+    .lab-questions .page-box .content h2 {
+      font-size: 1.2rem; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .lab-questions .page-box .content h2 {
+          font-size: 1.32rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .lab-questions .page-box .content h2 {
+          font-size: 1.32rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .lab-questions .page-box .content h2 {
+          font-size: 1.44rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .lab-questions .page-box .content h2 {
+          font-size: 1.44rem; } }
     .lab-questions .page-box .content h2, .lab-questions .page-box .content p {
       text-align: center; }
     .lab-questions .page-box .content .answers {
@@ -1251,10 +1269,15 @@ p {
     width: 80%;
     top: 0;
     left: 10%; }
+    .lab-printer .printer-page .texts {
+      margin-top: 20%;
+      font-size: 0; }
+      .lab-printer .printer-page .texts .d {
+        padding: 1% 0; }
     .lab-printer .printer-page .face {
-      width: 45%;
+      width: 50%;
       margin: 0 auto;
-      margin-top: 20%; }
+      margin-top: 0; }
     .lab-printer .printer-page .item {
       width: 65%;
       margin: 0 auto;
@@ -1272,19 +1295,21 @@ p {
               animation-fill-mode: both;
       -webkit-animation-iteration-count: infinite;
               animation-iteration-count: infinite; }
+  .lab-printer .over-page .texts {
+    margin-top: -5%; }
   .lab-printer .over-page .text-for {
-    color: #c67a00;
-    text-align: left;
+    color: #666666;
+    text-align: center;
     width: 80%;
     margin: 0 auto;
-    margin-top: 20%; }
+    margin-top: 10%; }
     .lab-printer .over-page .text-for .nickname {
       display: inline-block;
       min-width: 50px;
-      border-bottom: solid 1px #c67a00; }
+      border-bottom: solid 1px #666666; }
   .lab-printer .over-page .tips {
     width: 100%;
-    margin: 8% auto; }
+    margin: 6% auto; }
     .iphone4 .lab-printer .over-page .tips {
       margin: 6px auto; }
   .lab-printer .over-page .texts p, .lab-printer .over-page .text-for p {
@@ -1309,7 +1334,9 @@ p {
     font-size: 0.8rem;
     margin: 0 auto;
     margin-top: 10px;
-    margin-bottom: 4px; }
+    margin-bottom: 4px;
+    padding-left: 40px;
+    padding-right: 40px; }
     @media only screen and (min-width: 321px) and (max-width: 399px) {
       .lab-printer .over-page .btn {
         font-size: 0.88rem; } }
@@ -1349,22 +1376,19 @@ p {
     .lab-printer .note-page .blank {
       position: absolute;
       top: 50%;
-      left: 5%;
-      width: 70%;
+      left: 0;
+      width: 100%;
       -webkit-transform: translate3d(0, -50%, 0);
-              transform: translate3d(0, -50%, 0);
-      background-color: #fff;
-      padding: 10%; }
+              transform: translate3d(0, -50%, 0); }
     .lab-printer .note-page .close {
       position: absolute;
-      top: 5px;
-      right: 5px;
+      top: 10px;
+      right: 10px;
       width: 25px;
       height: 25px;
       font-size: 0;
       cursor: pointer; }
     .lab-printer .note-page .note-box {
-      border: dashed 1px #9e5900;
       width: auto;
       margin: 0 auto;
       padding: 5%;
@@ -1419,7 +1443,21 @@ p {
 
 .slider {
   width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
+  .slider .slider-left, .slider .slider-right {
+    position: absolute;
+    width: 25px;
+    font-size: 0;
+    z-index: 2; }
+  .slider .slider-left {
+    top: 50%;
+    left: 2%; }
+  .slider .slider-right {
+    top: 50%;
+    right: 2%;
+    -webkit-transform: scale(-1, 1);
+            transform: scale(-1, 1); }
   .slider .slider-list {
     width: 100%;
     white-space: nowrap;

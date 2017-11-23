@@ -29,7 +29,7 @@ block content
 		#navbar
 			.logo(@click.prevent.stop="backNormal")
 				img(src="#{url}img/logo.png")
-			player(autoplay="true")
+			player(autoplay="true",v-show="bgm")
 			.stars.fadeIn.animated(v-show="show")
 				.star(v-for="star in stars",:class="{on:star}")
 					img(:src="'./img/star-'+(star?'on':'off')+'.png'")

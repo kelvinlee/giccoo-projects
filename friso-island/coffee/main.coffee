@@ -10,7 +10,7 @@ planetlastpage = {}
 planetstars = {}
 planetInfo =
 	"planet-1":
-		time: 52.5
+		url: "./mp3/turtle.mp3"
 		question: "「乌龟脱了衣服之后会不会跑快一点？」"
 		answers: [
 			{author:"@落夏",avatar:"avatar-6.jpg",answer:"小乌龟脱了衣服会害羞的，所以我们还是不要为难它吧。"}
@@ -21,7 +21,7 @@ planetInfo =
 		]
 		
 	"planet-2":
-		time: 94.6
+		url: "./mp3/beard.mp3"
 		question: "「为什么喝完牛奶会有白胡子？」"
 		answers: [
 			{author:"@左左",avatar:"avatar-14.jpg",answer:"因为牛奶亲了你一下吖"}
@@ -32,7 +32,7 @@ planetInfo =
 			# {author:"@",avatar:".jpg",answer:""}
 		]
 	"planet-3":
-		time: 84.4
+		url: "./mp3/bird.mp3"
 		question: "「小鸟怎么才能和小鱼成为朋友呢？」"
 		answers: [
 			{author:"@郭小野",avatar:"avatar-18.jpg",answer:"合体变身成「 飞鱼」，瞬间成为形影不离的好朋友。"}
@@ -42,7 +42,7 @@ planetInfo =
 			{author:"@皇家美素佳儿",avatar:"avatar-0.jpg",legal:true,answer:"小鸟可以陪小鱼看天上的云彩，小鱼可以带小鸟畅游海面。皇家美素佳儿新鲜直取皇家第一道奶源*，凝萃1:25**天然营养精华，和妈妈一起为北鼻找到大自然中滋养生命的奥秘，陪伴北鼻上天入地，一同成长。"}
 		]
 	"planet-4":
-		time: 42.2
+		url: "./mp3/cow.mp3"
 		question: "「为什么小牛冬天不穿衣服也不会感冒呢？」"
 		answers: [
 			{author:"@Bonita是少女啊",avatar:"avatar-10.jpg",answer:"因为牛皮厚呀，吹不冻（动）呀"}
@@ -52,7 +52,7 @@ planetInfo =
 			{author:"@皇家美素佳儿",avatar:"avatar-0.jpg",answer:"荷兰菲仕兰自家牧场，那里的农夫对待小牛就像亲人一样。农夫会用手指给小牛练习吮吸能力，锻炼身体，让小牛更好地喝牛妈妈的奶。牛奶是奶牛妈妈对小牛的爱，让小牛不畏寒冷；皇家美素佳儿延续母爱的力量，为宝宝增强免疫力，守护宝宝身体棒棒。即便如此，宝宝冬天也一定要穿衣服保暖哦～"}
 		]
 	"planet-5":
-		time: 31.4
+		url: "./mp3/panda.mp3"
 		question: "「大熊猫是用竹子在刷牙吗？」"
 		answers: [
 			{author:"@程泉",avatar:"avatar-1.jpg",answer:"熊猫爱吃竹子，但竹子刺多，总有些不乖的，卡在牙齿缝，所以要用竹子剔牙，就像你爱吃糖，可总有糖黏在牙齿上，所以要用糖把牙齿上的糖黏下来。不过呢，糖对牙齿有害，吃完记得刷牙哦。"}
@@ -239,6 +239,7 @@ window.onload = ->
 		data:
 			stars: [false,false,false,false,false]
 			show: false
+			bgm: false
 		methods:
 			backNormal: ->
 				if planetinfopage.opened
@@ -249,7 +250,8 @@ window.onload = ->
 				if planetinfopage.shownote?
 					planetinfopage.shownote = true
 					planetinfopage.opendG = false 
-
+		mounted: ->
+			# console.log "navbar end:",planetstars.$children[0].playing
 	fisrtPage = new Vue
 		el: "#page-one"
 		data:
@@ -267,6 +269,8 @@ window.onload = ->
 			getStart: ->
 				@notShowTime = true
 				planetstars.show = true
+				planetstars.bgm = true
+				planetstars.$children[0].change()
 				# initPlanets()
 				initVuePlanetInfoPage()
 		created: ->
@@ -293,7 +297,6 @@ window.onload = ->
 loadedAll = ->
 	initVuePlanetInfoPage()
 initVuePlanetInfoPage = ->
-
 	planetinfopage = new Vue
 		el: "#planet-page"
 		data:
@@ -315,6 +318,7 @@ initVuePlanetInfoPage = ->
 				createjs.Tween.get(dom).wait(100).to({scrollTop: dom.scrollHeight},400,createjs.Ease.linear)
 			keepgoing: ->
 				@opened = false
+				planetstars.$children[0].reset()
 				if lastPageShow
 					console.log "open last page"
 					@shownote = false
@@ -418,7 +422,7 @@ initPlanets = ->
 			planetinfopage.planet = planetInfo["planet-"+id]
 			planetinfopage.opened = true
 			planetinfopage.shownote = false
-			planetstars.$children[0].playTime planetInfo["planet-"+id].time
+			planetstars.$children[0].playOther planetInfo["planet-"+id].url
 			
 			# longitude_range: [-3*Math.PI/4, 3*Math.PI/4]
 	catch e

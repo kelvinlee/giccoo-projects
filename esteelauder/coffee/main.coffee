@@ -1,7 +1,15 @@
 # @codekit-prepend "coffee/css3Prefix"
 
 Vue.component "slider",
-	template: '<div><div class="slider-list" v-bind:style="{transform: \'translate3d(\'+x+\'px,0,0)\',transitionDuration: duration+\'s\'}" ><slot/></div></div>'
+	template: '
+	<div>
+		<div class="slider-list" v-bind:style="{transform: \'translate3d(\'+x+\'px,0,0)\',transitionDuration: duration+\'s\'}" >
+			<slot/>
+		</div>
+		<div class="slider-left" @click="moveLeft"><img src="./img/arrow-left.png" /></div>
+		<div class="slider-right" @click="moveRight"><img src="./img/arrow-left.png" /></div>
+	</div>
+	'
 	data: ->
 		return
 			root: null
@@ -12,6 +20,7 @@ Vue.component "slider",
 			time: 3000
 			delay: 3000
 			duration: 0
+			overauto: false
 			offset:
 				resistance: 1
 				lastSlide: 1
@@ -42,6 +51,18 @@ Vue.component "slider",
 			@timeout = setTimeout =>
 				@moveNext()
 			,@time
+		moveLeft: ->
+			return false if Math.abs(@slideNumber) >= @max or @moved
+			@duration = 0.2
+			@slideNumber = @slideNumber-1
+			@x = - (Math.abs(@slideNumber) * @offset.w)
+			console.log @x,@slideNumber
+
+		moveRight: ->
+			return false if Math.abs(@slideNumber) <= 0 or @moved
+			@duration = 0.2
+			@slideNumber = @slideNumber+1
+			@x = - (Math.abs(@slideNumber) * @offset.w)
 		moveNext: ->
 			# console.log "move to next"
 			@stopAll()
@@ -101,6 +122,7 @@ Vue.component "slider",
 				@setSlideNumber if +new Date - (@startTime) < 1000 and Math.abs(@offset.deltaX) > 15 then (if @offset.deltaX < 0 then -1 else 1) else 0
 				@x = @slideNumber * @offset.w
 				@duration = 0.2
+				@moved = false
 				if @slideNumber == 0 and oldslideNumber == -(@list.length - 1)
 					@x = (oldslideNumber - 1) * @offset.w
 				if oldslideNumber == 0 and @slideNumber == -(@list.length - 1)
@@ -109,6 +131,7 @@ Vue.component "slider",
 			@$el.addEventListener 'touchstart',@touchstart.bind @
 			@$el.addEventListener 'touchmove',@touchmove.bind @
 			@$el.addEventListener 'touchend',@touchend.bind @
+			@overauto = true
 	mounted: (el)->
 		@list = @$el.children[0].children
 
@@ -143,8 +166,8 @@ answerlists = [
 answerlists[0].sort -> return if Math.random()>0.5 then -1 else 1
 answerlists[1].sort -> return if Math.random()>0.5 then -1 else 1
 answerlists[2].sort -> return if Math.random()>0.5 then -1 else 1
-shareTitles = ["鲜嫩丝滑奶茶肌","光泽亮润陶瓷肌","吹弹可破蛋白肌"]
-shareDescription = ["但是你的皱纹一带一条指数偏高","但是你的脸色亮度有待提升","但是你的小脸紧致程度有所下降"]
+shareTitles = ["t-1","t-2","t-3"]
+shareDescription = ["d-1","d-2","d-3"]
 # window.WeiboJS.init
 # 	appkey: "1605288503"
 # 	debug: true
