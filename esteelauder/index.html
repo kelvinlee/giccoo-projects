@@ -32,7 +32,7 @@
             <div class="box fadeInRight animated duration-10">
               <h2 class="small">雅诗兰黛</h2>
               <h1>「美肌万能研究室」</h1>
-              <p class="large bold">美丽的你，来这里找寻你的美肌秘密</p>
+              <p class="large bold">来这里找寻你的美肌秘密</p>
               <div @click.prevent.stop="startGo" class="btn">即刻开启</div>
             </div>
           </div>
@@ -41,8 +41,8 @@
           <transition name="page-animation" v-for="answers,index in answerlist">
             <div v-show="answerShow[index]" :class="'answer-page-'+(index+1)" class="page-box">
               <div class="content">
-                <h2>生活中，<br/>你也有“随意”的一面吗？</h2>
-                <p>单选勾出以下最符合你的状况</p>
+                <h2>生活中，以下哪个是<br/>你“在意”过的事？</h2>
+                <p>单选勾出最符合你的状况</p>
                 <div class="answers">
                   <div v-for="answer,indexi in answers" @click.prevent.stop="selecteFun(answer,index,indexi)" class="answer fadeIn animated">
                     <div class="checkbox">
@@ -62,24 +62,24 @@
         <div v-if="startprinter" class="page lab-printer">
           <transition name="printer-animation">
             <div id="printer-page" v-show="printerover" v-touch="gotoProFun" class="printer-page fadeIn animated duration-10">
-              <div class="texts"><img :src="'http://image.giccoo.com/projects/esteelauder/img/'+printer.title+'.png'">
-                <div class="d"><img :src="'http://image.giccoo.com/projects/esteelauder/img/'+printer.description+'.png'"></div><img :src="'http://image.giccoo.com/projects/esteelauder/img/text-end.png'">
+              <div class="texts"><img :src="'./img/'+printer.title+'.png'">
+                <div class="d"><img :src="'./img/'+printer.description+'.png'"></div>
               </div>
-              <div class="face fadeIn aniamted delay-3"><img :src="'http://image.giccoo.com/projects/esteelauder/img/face.png'"></div>
-              <div class="item fadeIn aniamted delay-5"><img :src="'http://image.giccoo.com/projects/esteelauder/img/line-'+score.join('-')+'.png'"></div>
-              <div @click="gotoProFun" class="icon arrow-down fadeInUp aniamted delay-15"><img :src="'http://image.giccoo.com/projects/esteelauder/img/arrow-down.png'"></div>
+              <div class="face fadeIn aniamted delay-3"><img :src="'./img/face.png'"></div>
+              <div class="item fadeIn aniamted delay-5"><img :src="'./img/line-'+score.join('-')+'.png'"></div>
+              <div @click="gotoProFun" class="icon arrow-down fadeInUp aniamted delay-15"><img :src="'./img/arrow-down.png'"></div>
             </div>
           </transition>
           <transition name="printer-animation">
             <div id="over-page" v-show="overpage" class="over-page">
               <div class="text-for">
-                <h2>Hi，<span class="nickname">{{nickname}}</span><br/>你的万能美肌法宝在这里！</h2>
+                <h2>多种肌肤问题<br/>肌因黄金修护组，全帮你搞定！</h2>
               </div>
               <div class="tips">
                 <slider id="slider" :overpage="overpage" class="slider">
-                  <div class="slide"><img :src="'http://image.giccoo.com/projects/esteelauder/img/product-1.png'"></div>
-                  <div class="slide"><img :src="'http://image.giccoo.com/projects/esteelauder/img/product-2.png'"></div>
-                  <div class="slide"><img :src="'http://image.giccoo.com/projects/esteelauder/img/product-3.png'"></div>
+                  <div class="slide"><img :src="'./img/product-1.png'"></div>
+                  <div class="slide"><img :src="'./img/product-2.png'"></div>
+                  <div class="slide"><img :src="'./img/product-3.png'"></div>
                 </slider>
               </div>
               <div class="texts">
@@ -91,17 +91,17 @@
           </transition>
           <transition name="note-animation">
             <div id="note-page" v-show="shownote" class="note-page">
-              <div @click.prevent.stop="closenote" class="close"><img :src="'http://image.giccoo.com/projects/esteelauder/img/close.png'"></div>
+              <div @click.prevent.stop="closenote" class="close"><img :src="'./img/close.png'"></div>
               <div class="blank">
-                <div class="note-box"><img :src="'http://image.giccoo.com/projects/esteelauder/img/note-text.png'"></div>
+                <div class="note-box"><img :src="'./img/note-text.png'"></div>
               </div>
             </div>
           </transition>
           <transition name="note-animation">
             <div id="note-page" v-show="sharesuccess" class="note-page">
-              <div @click.prevent.stop="closeshare" class="close"><img :src="'http://image.giccoo.com/projects/esteelauder/img/close.png'"></div>
+              <div @click.prevent.stop="closeshare" class="close"><img :src="'./img/close.png'"></div>
               <div class="blank">
-                <div class="note-box"><img :src="'http://image.giccoo.com/projects/esteelauder/img/share-success.png'"></div>
+                <div class="note-box"><img :src="'./img/share-success.png'"></div>
               </div>
             </div>
           </transition>
