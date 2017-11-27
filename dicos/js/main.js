@@ -571,12 +571,53 @@ function setPage7(){
   TweenLite.set($('#btn2'),{display:"block"})
 }
 
-
+var iflike=0
 $("#btn1").click(function(){
   //window.location.href="http://prj.verystar.cn/dicos-futureshop/index?wxqr_scene_id=113";
   TweenLite.set($('#QRPage'),{display:"block",opacity:1})
   TweenLite.from($('#QRPage'),1,{opacity:0})
+
+  if (iflike==0) {
+      //这里反馈
+
+      //=======
+      $.post("http://api.giccoo.com/count/update", {id: "jiaomu1"},function(msg){
+        if (msg.recode == 200) {
+          //alert("update success")
+          // nowNum++
+          // setText()
+        }else{
+          //alert("update faild")
+        }
+      })
+      //=======
+    };
+
+    iflike=1
 });
+
+
+// $("#like").click(function(){
+//     $("#like2").css({"display":"block"});
+//     if (iflike==0) {
+//       //这里反馈
+
+//       //=======
+//       $.post("http://api.giccoo.com/count/update", {id: "jiaomu1"},function(msg){
+//         if (msg.recode == 200) {
+//           //alert("update success")
+//           nowNum++
+//           setText()
+//         }else{
+//           //alert("update faild")
+//         }
+//       })
+//       //=======
+//     };
+
+//     iflike=1
+
+//   })
 
 
 $("#btn2").click(function(){
