@@ -270,7 +270,7 @@ window.onload = ->
 				@notShowTime = true
 				planetstars.show = true
 				planetstars.bgm = true
-				planetstars.$children[0].change()
+				# planetstars.$children[0].change()
 				# initPlanets()
 				initVuePlanetInfoPage()
 		created: ->
