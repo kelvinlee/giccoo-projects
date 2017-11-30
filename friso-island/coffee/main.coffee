@@ -306,7 +306,7 @@ initVuePlanetInfoPage = ->
 			info: []
 			openlist: planetOpenList
 			opened: false
-			shownote: true
+			shownote: false
 			shownotetext: true
 			opendG: false
 			moving: false
@@ -390,7 +390,6 @@ initVuePlanetsMedal = ->
 			data: 
 				overreaded: false
 initPlanets = ->
-	
 	try
 		planets = new PhotoSphereViewer
 			panorama: _CDN+"img/planet-bg.jpg"
@@ -417,6 +416,7 @@ initPlanets = ->
 			markers: markers
 		planets.on "ready", ->
 			console.log "ready"
+			planetinfopage.shownote = true
 			# planets.startGyroscopeControl()
 			initVuePlanetsMedal()
 			# setTimeout ->

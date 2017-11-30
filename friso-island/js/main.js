@@ -499,7 +499,7 @@ initVuePlanetInfoPage = function() {
       info: [],
       openlist: planetOpenList,
       opened: false,
-      shownote: true,
+      shownote: false,
       shownotetext: true,
       opendG: false,
       moving: false,
@@ -638,6 +638,7 @@ initPlanets = function() {
     });
     planets.on("ready", function() {
       console.log("ready");
+      planetinfopage.shownote = true;
       return initVuePlanetsMedal();
     });
     planets.on("select-marker", function(marker) {
