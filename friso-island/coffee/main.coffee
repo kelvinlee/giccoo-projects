@@ -80,61 +80,61 @@ markers = [
 		id: "planet-1"
 		x: 0
 		y: defaultY+380
-		html: '<div id="planet-1" class="planet planet-1"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-1.png" /></div>'
+		html: '<div id="planet-1" class="planet planet-1"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-1.png" /></div>'
 	}
 	{
 		id: "planet-2"
 		x: 500
 		y: defaultY+200
-		html: '<div id="planet-2" class="planet planet-2"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-2.png" /></div>'
+		html: '<div id="planet-2" class="planet planet-2"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-2.png" /></div>'
 	}
 	{
 		id: "planet-3"
 		x: 1000
 		y: defaultY+300
-		html: '<div id="planet-3" class="planet planet-3"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-3.png" /></div>'
+		html: '<div id="planet-3" class="planet planet-3"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-3.png" /></div>'
 	}
 	{
 		id: "planet-4"
 		x: 1500
 		y: defaultY+360
-		html: '<div id="planet-4" class="planet planet-4"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-4.png" /></div>'
+		html: '<div id="planet-4" class="planet planet-4"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-4.png" /></div>'
 	}
 	{
 		id: "planet-5"
 		x: 2000
 		y: defaultY+260
-		html: '<div id="planet-5" class="planet planet-5"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-5.png" /></div>'
+		html: '<div id="planet-5" class="planet planet-5"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-5.png" /></div>'
 	}
 	{
 		id: "planet-10"
 		x: 2500
 		y: defaultY+380
-		html: '<div id="planet-10" class="planet planet-1"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-1.png" /></div>'
+		html: '<div id="planet-10" class="planet planet-1"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-1.png" /></div>'
 	}
 	{
 		id: "planet-20"
 		x: 3000
 		y: defaultY+200
-		html: '<div id="planet-20" class="planet planet-2"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-2.png" /></div>'
+		html: '<div id="planet-20" class="planet planet-2"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-2.png" /></div>'
 	}
 	{
 		id: "planet-30"
 		x: 3500
 		y: defaultY+300
-		html: '<div id="planet-30" class="planet planet-3"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-3.png" /></div>'
+		html: '<div id="planet-30" class="planet planet-3"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-3.png" /></div>'
 	}
 	{
 		id: "planet-40"
 		x: 4000
 		y: defaultY+360
-		html: '<div id="planet-40" class="planet planet-4"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-4.png" /></div>'
+		html: '<div id="planet-40" class="planet planet-4"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-4.png" /></div>'
 	}
 	{
 		id: "planet-50"
 		x: 4500
 		y: defaultY+260
-		html: '<div id="planet-50" class="planet planet-5"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-5.png" /></div>'
+		html: '<div id="planet-50" class="planet planet-5"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-5.png" /></div>'
 	}
 	{
 		id: "balloon-1"
