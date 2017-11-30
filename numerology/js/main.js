@@ -24,7 +24,7 @@ $(document).ready(function load (){
 });
 
 
-
+$('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
 //====================LOADING=================
 function loadingAni(){
   $("#loadingPG").css({"display":"block"})
