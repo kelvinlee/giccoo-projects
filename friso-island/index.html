@@ -38,7 +38,7 @@
         <div @click.prevent.stop="backNormal" class="logo"><img src="./img/logo.png"></div>
         <player autoplay="true" v-show="bgm"></player>
         <div v-show="show" class="stars fadeIn animated">
-          <div v-for="star in stars" :class="{on:star}" class="star"><img :src="'./img/star-'+(star?'on':'off')+'.png'"></div>
+          <div v-for="star in stars" :class="{on:star}" class="star"><img :src="'./img/star-off.png'"><img v-show="star" :src="'./img/star-on.png'" class="on fadeIn animated delay-20"></div>
         </div>
       </div>
       <div id="page-one" :class="{hide: notShowTime}">
@@ -63,22 +63,36 @@
       </div>
       <div id="planet-page" :class="{show: show,opened: opened,blur: blur}">
         <div class="page-planets">
-          <div id="planets"></div>
-          <transition name="planet-note">
-            <div v-if="shownote" class="planets-note">
-              <div @click.prevent.stop="startG" class="btn-start-control"><img src="./img/btn-start-control.png"></div>
+          <div id="planets">
+            <div v-show="shownotetext" class="planets-note-text">
               <div class="texts">
-                <p class="fadeInUp animated delay-2">点击探索星球后移动手机屏幕来探索   </p>
-                <p class="fadeInUp animated delay-4">每完成一个探索，即获得一枚北鼻勋章。</p>
-                <p class="fadeInUp animated delay-6">重复探索同一星球只会获得一枚北鼻勋章。</p>
-                <p class="fadeInUp animated delay-8">集齐五枚勋章，赢取皇家尊礼。</p>
+                <p class="fadeInUp animated delay-5">每完成一个探索，即获得一枚北鼻勋章。</p>
+                <p class="fadeInUp animated delay-7">重复探索同一星球只会获得一枚北鼻勋章。</p>
+                <p class="fadeInUp animated delay-9">集齐五枚勋章，赢取皇家尊礼。</p>
+                <p class="fadeInUp animated delay-11">您当前拥有{{openlist.length}}枚勋章。</p>
               </div>
+            </div>
+          </div>
+          <transition name="planet-note">
+            <div v-show="shownote" class="planets-note">
+              <div @click.prevent.stop="startG" class="box"><img src="./img/note-box.png">
+                <div class="phone"><img src="./img/phone.png"></div>
+              </div>
+              <!-- .btn-start-control(@click.prevent.stop="startG")-->
+              <!-- 	img(src="#{url}img/btn-start-control.png")-->
+              <!-- .texts-->
+              <!-- 	p.fadeInUp.animated.delay-2 点击探索星球后移动手机屏幕来探索   -->
+              <!-- 	p.fadeInUp.animated.delay-4 每完成一个探索，即获得一枚北鼻勋章。-->
+              <!-- 	p.fadeInUp.animated.delay-6 重复探索同一星球只会获得一枚北鼻勋章。-->
+              <!-- 	p.fadeInUp.animated.delay-8 集齐五枚勋章，赢取皇家尊礼。-->
             </div>
           </transition>
         </div>
         <transition name="planet-content">
           <div v-show="opened" class="planets-content">
-            <div class="planet-island"><img :src="'./img/'+planetName+'.png'"></div>
+            <div class="planet-island"><img :src="'./img/'+planetName+'.png'">
+              <div v-show="showstar" class="star"><img :src="'./img/star-on.png'"></div>
+            </div>
             <div class="answer-box">
               <div id="answers" :class="{moving: moving, movend: !moving}" class="answers">
                 <div class="question fadeInUp animated">
@@ -98,6 +112,8 @@
                 </div>
               </div>
             </div>
+            <!-- .note-text.fadeOut.animated.delay-30-->
+            <!-- 	p 恭喜获得第{{openlist.length}}个勋章<br/>集齐五枚勋章，赢取皇家尊礼。-->
             <div @click.prevent.stop="keepgoing" class="btn-goon fadeIn animated duration-10 delay-10"><img src="./img/btn-goon.png"></div>
           </div>
         </transition>

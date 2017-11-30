@@ -4,7 +4,7 @@ Vue.component "player",
 			<div class="icon-play" :class="{play: playing, pause: !playing}" @click="change">
 				<img :src="iconNow" />
 			</div>
-			<audio :src="src" autoplay="true" loop="loop"></audio>
+			<audio :src="src" autoplay="autoplay" loop="loop"></audio>
 			<audio :src="otherSrc"></audio>
 		</div>
 		'
@@ -59,4 +59,5 @@ Vue.component "player",
 		@audio.addEventListener "pause", @pause.bind @
 		@audio.addEventListener "play", @play.bind @
 		@audioOther.addEventListener "ended", @otherend.bind @
+		@audio.play()
 		console.log @audio,@audioOther,@playing
