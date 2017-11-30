@@ -29,6 +29,7 @@ $('body')[0].addEventListener('touchmove', function (event) {event.preventDefaul
 function loadingAni(){
   $("#loadingPG").css({"display":"block"})
   TweenLite.set($("#loadingC1"),{x:"-50%",y:"-50%"})
+  TweenLite.set($("#loadingC2"),{x:"-50%",y:"-50%"})
   TweenLite.to($("#loadingC1"),10,{rotation:720,ease:Linear.easeOut})
   TweenLite.to($("#loadingC2"),1,{rotation:-720,ease:Linear.easeIn,onComplete:page1in})
 
