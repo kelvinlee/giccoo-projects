@@ -4,10 +4,10 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "智·混动 MAX秀",
-      desc: "人人都是隐藏的跨界高手",
-      link: "http://m.giccoo.com/maxshow/",
-      imgUrl: "http://m.giccoo.com/maxshow/img/ico.jpg",
+      title: "奇门遁甲",
+      desc: "乾坤万象，其乐无穷，12.15日，燃情上映！",
+      link: "http://m.giccoo.com/numerology/",
+      imgUrl: "http://m.giccoo.com/numerology/img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };
@@ -28,6 +28,7 @@ $('body')[0].addEventListener('touchmove', function (event) {event.preventDefaul
 //====================LOADING=================
 function loadingAni(){
   $("#loadingPG").css({"display":"block"})
+  TweenLite.set($("#loadingC1"),{x:"-50%",y:"-50%"})
   TweenLite.to($("#loadingC1"),10,{rotation:720,ease:Linear.easeOut})
   TweenLite.to($("#loadingC2"),1,{rotation:-720,ease:Linear.easeIn,onComplete:page1in})
 
