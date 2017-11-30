@@ -1,0 +1,220 @@
+*{margin: 0;padding: 0;}
+html,body{width:100%;height: 100%;position: relative;overflow:hidden;background-color: #000000;}
+img{ width: 100%; }
+.wechat-share {  position: absolute;  top: -1000px;  left: 0px;  z-index: -100;  width: 1px; }
+.page{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.centerPart{
+	position: absolute;
+	left:50%;
+	top:40%;
+	font-size: 0;
+	-webkit-transform:translate3d(-50%,-50%,0);
+			transform:translate3d(-50%,-50%,0);
+}
+.topPart{
+	position: absolute;
+	width: 100%;
+	top: 0;
+}
+
+.bottomPart{
+	position: absolute;
+	width: 100%;
+	bottom: -5%;
+}
+.blackLayer{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: #000000;
+	opacity: 0.9;
+}
+.alphaBtn{
+	position: absolute;
+	background: #990099;
+	opacity: 0.5;/*========================= 透明按钮改这里 =========================*/
+}
+
+.p1btn{
+	width: 30%;
+	height: 23.2%;
+	-webkit-transform:translate3d(-50%,-50%,0);
+			transform:translate3d(-50%,-50%,0);
+}
+.g1btn{
+	width: 31.72%;
+	height: 6.5%;
+	bottom: 0;
+	/*-webkit-transform:translate3d(-50%,-50%,0);
+			transform:translate3d(-50%,-50%,0);*/
+}
+.g2btn{
+	width: 31.72%;
+	height: 7%;
+	top: 77.77%;
+	/*-webkit-transform:translate3d(-50%,-50%,0);
+			transform:translate3d(-50%,-50%,0);*/
+}
+.musicBtn{
+	width: 100%;
+	height: 7%;
+	/*-webkit-transform:translate3d(-50%,-50%,0);
+			transform:translate3d(-50%,-50%,0);*/
+}
+#musicBtn1{
+	top: 31%;
+}
+#musicBtn2{
+	top: 45%;
+}
+#musicBtn3{
+	top: 58.5%;
+}
+.musicGif{
+	position: absolute;
+	width: 8.59375%;
+	left: 28.75%;
+	opacity: 0;
+}
+#gif1{
+	top:32.94%;
+}
+#gif2{
+	top:46.65%;
+}
+#gif3{
+	top:60.36%;
+}
+.blur{
+	top:50%;
+	width: 100%;
+}
+.hint{
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	-webkit-transform:translate3d(-50%,-50%,0);
+			transform:translate3d(-50%,-50%,0);
+}
+
+.topbg{
+	position: absolute;
+	background-color: #000000;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+.rightIco{
+	display: "none";
+	opacity: 0;
+}
+.rightbtn{
+	height: 6.5%;
+	width: 100%;
+}
+
+#resultPage{
+	opacity: 0.9;
+}
+
+#shareLayer{
+	height: 100%;
+	display: none;
+}
+#sharePic{
+	position: absolute;
+	width: 100%;
+
+}
+
+
+#btnShare1{
+	top:75.66%;
+}
+#btnShare2{
+	top:75.66%;
+}
+#btnNext1{
+	top:68.56%;
+}
+#btnNext2{
+	top:68.56%;
+	width: 50%;
+	right: 0;
+}
+#btnPrize1{
+	top:61.65%;
+}
+#btnPrize2{
+	top:61.65%;
+}
+#btnAgain{
+	top:68.56%;
+	width: 50%;
+	left: 0;
+}
+#p1btn1{
+	left: 50%;
+	top: 64.38%;
+}
+#p1btn2{
+	left: 29.38%;
+	top: 86.37%;
+}
+#p1btn3{
+	left: 70.94%;
+	top: 86.37%;
+}
+#loadingC1{
+	width: 29.375%;
+}
+#loadingC2{
+	width: 29.375%;
+}
+#loadingT{
+	font-size: 0.8em;
+	color: #eee59b;
+}
+#loadingT1{
+	width: 100%;
+}
+#loadingT2{
+	width: 100%;
+}
+#gameHint{
+	background-color: #000000;
+	opacity: 0.9; 
+}
+#g1btn1{
+	left: 3.28%;
+}
+#g1btn2{
+	left: 35%;
+}
+#g1btn3{
+	right: 1.28%;
+}
+
+#g2btn1{
+	left: 3.28%;
+}
+#g2btn2{
+	left: 35%;
+}
+#g2btn3{
+	right: 1.28%;
+}

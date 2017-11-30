@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>奇门遁甲</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<!-- <div class="wechat-share"><img src="img/ico.jpg"></div> -->
+
+
+<!-- ==============游戏1============== -->
+<div class="page" id="game1">
+	<div class="topbg" id="g1BG"><img src="img/g1bg.jpg" width="100%" height="100%"></div>
+	<div class="topPart" id="g1t">
+		<img src="img/g1t.png" width="100%" height="100%">
+		<div class="alphaBtn g1btn" id="g1btn1"></div>
+		<div class="alphaBtn g1btn" id="g1btn2"></div>
+		<div class="alphaBtn g1btn" id="g1btn3"></div>
+	</div>
+
+
+</div>
+
+<!-- ==============游戏2============== -->
+<div class="page" id="game2">
+	<div class="bg" id="g2BG"><img src="img/g2bg.jpg" width="100%" height="100%"></div>
+	<div class="topPart" id="g2t">
+		<img src="img/g2t.png" width="100%" height="100%">
+		<div class="musicGif" id="gif1"><img src="img/playing.gif" width="100%"></div>
+		<div class="musicGif" id="gif2"><img src="img/playing.gif" width="100%"></div>
+		<div class="musicGif" id="gif3"><img src="img/playing.gif" width="100%"></div>
+
+
+		<div class="alphaBtn g2btn" id="g2btn1"></div>
+		<div class="alphaBtn g2btn" id="g2btn2"></div>
+		<div class="alphaBtn g2btn" id="g2btn3"></div>
+
+		<div class="alphaBtn musicBtn" id="musicBtn1"></div>
+		<div class="alphaBtn musicBtn" id="musicBtn2"></div>
+		<div class="alphaBtn musicBtn" id="musicBtn3"></div>
+	</div>
+
+<audio src="mp3/bg.mp3" id="audio1" loop="loop" hidden="hidden"></audio>
+<audio src="mp3/nwdsl.mp3" id="audio2" loop="loop" hidden="hidden"></audio>
+<audio src="mp3/ssld.mp3" id="audio3" loop="loop" hidden="hidden"></audio>
+</div>
+
+<!-- ==============游戏3============== -->
+<div class="page" id="game3">
+	<div class="topbg" id="g3BG"><img src="img/g3bg.jpg" width="100%" height="100%"></div>
+
+
+</div>
+
+
+<!-- ==============正确/错误页============== -->
+
+<div class="page" id="resultPage">
+	<div class="topPart" id="rightBG">
+		<img src="img/right.jpg" width="100%">
+		<div class="alphaBtn rightbtn" id="btnShare1"></div>
+		<div class="alphaBtn rightbtn" id="btnNext1"></div>
+		<div class="alphaBtn rightbtn" id="btnPrize1"></div>
+	</div>
+	<div class="topPart" id="wrongBG">
+		<img src="img/wrong.jpg" width="100%">
+		<div class="alphaBtn rightbtn" id="btnShare2"></div>
+		<div class="alphaBtn rightbtn" id="btnNext2"></div>
+		<div class="alphaBtn rightbtn" id="btnPrize2"></div>
+		<div class="alphaBtn rightbtn" id="btnAgain"></div>
+	</div>
+	<div class="topPart rightIco" id="rightIco1"><img src="img/right1.png" width="100%"></div>
+	<div class="topPart rightIco" id="rightIco2"><img src="img/right2.png" width="100%"></div>
+	<div class="topPart rightIco" id="rightIco3"><img src="img/right3.png" width="100%"></div>
+	
+	<div class="topPart" id="shareLayer">
+		<div class="blackLayer" id="shareBG"></div>
+		<div class="topPart" id="sharePic"><img src="img/share.png" width="100%"></div>
+	</div>
+	
+
+</div>
+
+
+
+
+
+
+<!-- ==============第一页============== -->
+
+<div class="page" id="page1">
+	<div class="bg" id="p1BG"><img src="img/bg1.jpg" width="100%" height="100%"></div>
+		
+
+	<div class="topPart" id="p1title"><img src="img/p1title.png" width="100" height="100%"></div>
+	<div class="topPart" id="p1t1"><img src="img/p1t1.png" width="100" height="100%"></div>
+	<div class="topPart" id="p1btns">
+		<img src="img/p1btns.png" width="100" height="100%">
+		<div class="alphaBtn p1btn" id="p1btn1"></div>
+		<div class="alphaBtn p1btn" id="p1btn2"></div>
+		<div class="alphaBtn p1btn" id="p1btn3"></div>
+	</div>
+
+	<div class="bottomPart" id="p1t2"><img src="img/p1t2.png" width="100%"></div>
+	<div class="bottomPart" id="p1light"><img src="img/p1light.png" width="100%"></div>
+
+	<div class="topPart" id="ruleBtn"><img src="img/p1ruleBtn.png" width="100" height="100%"></div>
+
+	<div class="page" id="rule">
+		<div class="blackLayer" id="ruleBG"></div>
+		<div class="topPart"><img src="img/rule.png" width="100%"></div>
+	</div>
+	
+
+</div>
+
+<!-- ==============进入游戏前动画============== -->
+
+<div class="page" id="goGameAni">
+	<div class="blackLayer" id="goGameBG"></div>
+	<div class="centerPart blur" id="blur1"><img src="img/blur1.png" width="100%"></div>
+	<div class="centerPart blur" id="blur2"><img src="img/blur2.png" width="100%"></div>
+	<div class="centerPart blur" id="blur3"><img src="img/blur3.png" width="100%"></div>
+</div>
+<div class="page" id="gameHint">
+
+	<div class="hint" id="hint1"><img src="img/hint1.jpg" width="100%"></div>
+	<div class="hint" id="hint2"><img src="img/hint2.jpg" width="100%"></div>
+	<div class="hint" id="hint3"><img src="img/hint3.jpg" width="100%"></div>
+
+</div>
+
+
+
+
+
+
+
+<!-- ==============LOADING============== -->
+
+<div class="page" id="loadingPG">
+	<div class="bg" id="loadingBG"><img src="img/loadingBG.jpg" width="100%" height="100%"></div>
+	<div class="centerPart" id="loadingC1"><img src="img/loadingC1.png" width="100" height="100%"></div>
+	<div class="centerPart" id="loadingC2"><img src="img/loadingC2.png" width="100" height="100%"></div>
+	<div class="centerPart" id="loadingT">100%</div>
+
+	<div class="centerPart" id="loadingT1"><img src="img/loadingT1.png" width="100%"></div>
+	<div class="centerPart" id="loadingT2"><img src="img/loadingT2.png" width="100%"></div>
+
+	<div class="bottomPart" id="loadingT3"><img src="img/loadingT3.png" width="100%"></div>
+
+</div>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+<script type="text/javascript" src="js/TweenMax.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
