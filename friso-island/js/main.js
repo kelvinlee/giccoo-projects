@@ -463,6 +463,7 @@ window.onload = function() {
         this.notShowTime = true;
         planetstars.show = true;
         planetstars.bgm = true;
+        planetstars.$children[0].audio.play();
         return initVuePlanetInfoPage();
       }
     },
@@ -473,16 +474,9 @@ window.onload = function() {
       return document.getElementById("main").style.display = "block";
     }
   });
-  if (typeof wx !== "undefined" && wx !== null) {
-    console.log("load wx");
-    wx.ready(function() {
-      wx.onMenuShareTimeline(shareContent);
-      wx.onMenuShareAppMessage(shareContent);
-      wx.onMenuShareQQ(shareContent);
-      return wx.onMenuShareWeibo(shareContent);
-    });
-    return loadWechatConfig();
-  }
+  return document.addEventListener("WeixinJSBridgeReady", function() {
+    return planetstars.$children[0].audio.play();
+  }, false);
 };
 
 loadedAll = function() {

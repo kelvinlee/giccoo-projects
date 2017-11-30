@@ -20,7 +20,8 @@ block css
 block content
 	- url = "http://image.giccoo.com/projects/friso-island/"
 	- url = "./"
-	//- audio(id="bgm",src="./mp3/bgm.mp3",autoplay="true",loop="loop")
+	//- audio(id="bgm",src="./mp3/bgm.mp3",autoplay="autoplay",loop)
+	
 	#load.loading(v-if="!loadend")
 		.ball-spin-fade-loader
 			-for (var i=0;i<8;i++)

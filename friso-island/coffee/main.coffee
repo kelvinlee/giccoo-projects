@@ -225,6 +225,10 @@ for i in [0...5]
 		y: 1500-parseInt (Math.random()*400)
 		html: '<div class="planet-balloon-'+ds+' balloon-'+(12*2+i)+'"><img src="'+_CDN+'img/balloon-'+ds+'.png"/></div>'
 
+# bgm = document.getElementById("bgm")
+# window.addEventListener "touchstart", ->
+# 	bgm.play()
+
 window.onload = ->
 	# initPlanets()
 	# initVuePlanetInfoPage()
@@ -270,7 +274,7 @@ window.onload = ->
 				@notShowTime = true
 				planetstars.show = true
 				planetstars.bgm = true
-				# planetstars.$children[0].change()
+				planetstars.$children[0].audio.play()
 				# initPlanets()
 				initVuePlanetInfoPage()
 		created: ->
@@ -278,22 +282,17 @@ window.onload = ->
 			load.loadend = true
 			@notShowTime = false
 			document.getElementById("main").style.display = "block"
-
-			# setTimeout ->
-			# 	loadAllScript()
-			# ,1000
-			# initVuePlanetInfoPage()
-
-	if wx?
-		console.log "load wx"
-		# wx.error (res)->
-		# 	console.log res
-		wx.ready ->	
-			wx.onMenuShareTimeline shareContent
-			wx.onMenuShareAppMessage shareContent
-			wx.onMenuShareQQ shareContent
-			wx.onMenuShareWeibo shareContent
-		loadWechatConfig()
+			
+	document.addEventListener "WeixinJSBridgeReady",->
+		planetstars.$children[0].audio.play()
+	,false
+	# if wx?
+	# 	wx.ready ->	
+	# 		wx.onMenuShareTimeline shareContent
+	# 		wx.onMenuShareAppMessage shareContent
+	# 		wx.onMenuShareQQ shareContent
+	# 		wx.onMenuShareWeibo shareContent
+	# 	loadWechatConfig()
 loadedAll = ->
 	initVuePlanetInfoPage()
 initVuePlanetInfoPage = ->
