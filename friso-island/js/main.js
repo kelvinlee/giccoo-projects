@@ -474,9 +474,18 @@ window.onload = function() {
       return document.getElementById("main").style.display = "block";
     }
   });
-  return document.addEventListener("WeixinJSBridgeReady", function() {
+  document.addEventListener("WeixinJSBridgeReady", function() {
     return planetstars.$children[0].audio.play();
   }, false);
+  if (typeof wx !== "undefined" && wx !== null) {
+    wx.ready(function() {
+      wx.onMenuShareTimeline(shareContent);
+      wx.onMenuShareAppMessage(shareContent);
+      wx.onMenuShareQQ(shareContent);
+      return wx.onMenuShareWeibo(shareContent);
+    });
+    return loadWechatConfig();
+  }
 };
 
 loadedAll = function() {

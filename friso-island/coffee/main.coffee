@@ -286,13 +286,13 @@ window.onload = ->
 	document.addEventListener "WeixinJSBridgeReady",->
 		planetstars.$children[0].audio.play()
 	,false
-	# if wx?
-	# 	wx.ready ->	
-	# 		wx.onMenuShareTimeline shareContent
-	# 		wx.onMenuShareAppMessage shareContent
-	# 		wx.onMenuShareQQ shareContent
-	# 		wx.onMenuShareWeibo shareContent
-	# 	loadWechatConfig()
+	if wx?
+		wx.ready ->	
+			wx.onMenuShareTimeline shareContent
+			wx.onMenuShareAppMessage shareContent
+			wx.onMenuShareQQ shareContent
+			wx.onMenuShareWeibo shareContent
+		loadWechatConfig()
 loadedAll = ->
 	initVuePlanetInfoPage()
 initVuePlanetInfoPage = ->
