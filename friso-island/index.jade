@@ -20,7 +20,8 @@ block css
 block content
 	- url = "http://image.giccoo.com/projects/friso-island/"
 	- url = "./"
-
+	//- audio(id="bgm",src="./mp3/bgm.mp3",autoplay="autoplay",loop)
+	
 	#load.loading(v-if="!loadend")
 		.ball-spin-fade-loader
 			-for (var i=0;i<8;i++)
@@ -32,7 +33,9 @@ block content
 			player(autoplay="true",v-show="bgm")
 			.stars.fadeIn.animated(v-show="show")
 				.star(v-for="star in stars",:class="{on:star}")
-					img(:src="'./img/star-'+(star?'on':'off')+'.png'")
+					img(:src="'./img/star-off.png'")
+					img(class="on fadeIn animated delay-20",v-show="star",:src="'./img/star-on.png'")
+
 		#page-one(:class="{hide: notShowTime}")
 			.light
 			.island-list
@@ -52,19 +55,31 @@ block content
 		#planet-page(:class="{show: show,opened: opened,blur: blur}")
 			.page-planets
 				#planets
-				transition(name="planet-note")
-					.planets-note(v-if="shownote")
-						.btn-start-control(@click.prevent.stop="startG")
-							img(src="#{url}img/btn-start-control.png")
+					.planets-note-text(v-show="shownotetext")
 						.texts
-							p.fadeInUp.animated.delay-2 点击探索星球后移动手机屏幕来探索   
-							p.fadeInUp.animated.delay-4 每完成一个探索，即获得一枚北鼻勋章。
-							p.fadeInUp.animated.delay-6 重复探索同一星球只会获得一枚北鼻勋章。
-							p.fadeInUp.animated.delay-8 集齐五枚勋章，赢取皇家尊礼。
+							p.fadeInUp.animated.delay-5 每完成一个探索，即获得一枚北鼻勋章。
+							p.fadeInUp.animated.delay-7 重复探索同一星球只会获得一枚北鼻勋章。
+							p.fadeInUp.animated.delay-9 集齐五枚勋章，赢取皇家尊礼。
+							p.fadeInUp.animated.delay-11 您当前拥有{{openlist.length}}枚勋章。
+				transition(name="planet-note")
+					.planets-note(v-show="shownote")
+						.box(@click.prevent.stop="startG")
+							img(src="#{url}img/note-box.png")
+							.phone
+								img(src="#{url}img/phone.png")
+						// .btn-start-control(@click.prevent.stop="startG")
+						// 	img(src="#{url}img/btn-start-control.png")
+						// .texts
+						// 	p.fadeInUp.animated.delay-2 点击探索星球后移动手机屏幕来探索   
+						// 	p.fadeInUp.animated.delay-4 每完成一个探索，即获得一枚北鼻勋章。
+						// 	p.fadeInUp.animated.delay-6 重复探索同一星球只会获得一枚北鼻勋章。
+						// 	p.fadeInUp.animated.delay-8 集齐五枚勋章，赢取皇家尊礼。
 			transition(name="planet-content")
 				.planets-content(v-show="opened")
 					.planet-island
 						img(:src="'./img/'+planetName+'.png'")
+						.star(v-show="showstar")
+							img(:src="'./img/star-on.png'")
 					.answer-box
 						.answers#answers(:class="{moving: moving, movend: !moving}")
 							.question.fadeInUp.animated
@@ -81,6 +96,8 @@ block content
 									span {{item.author}}
 									p {{item.answer}}
 									p.legal(v-if="item.legal") * 每100g荷兰鲜奶含4g乳脂，相当于每25g鲜奶含1g珍贵乳脂，数据来源于 Eurostat 欧盟统计局2009-2014年数据<br/>**新鲜直取荷兰自驾牧场的液态全脂牛奶
+					// .note-text.fadeOut.animated.delay-30
+					// 	p 恭喜获得第{{openlist.length}}个勋章<br/>集齐五枚勋章，赢取皇家尊礼。
 					.btn-goon.fadeIn.animated.duration-10.delay-10(@click.prevent.stop="keepgoing")
 						img(src="#{url}img/btn-goon.png")
 

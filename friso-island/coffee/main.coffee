@@ -62,6 +62,7 @@ planetInfo =
 			{author:"@小风吹散大树叶",avatar:"avatar-5.jpg",answer:"只有牙齿不好的宝宝才会剔牙喔，所以你平时要好好刷牙，这样就不会塞牙了，熊猫宝宝也是这样的。熊猫宝宝用竹子剔牙可能是平时没有听熊猫妈妈的话好好刷牙。"}
 			{author:"@皇家美素佳儿",avatar:"avatar-0.jpg",legal:true,answer:"每一位宝宝在妈妈的心中都是萌萌的「大熊猫」，心头的「国宝」。皇家美素佳儿新鲜直取皇家第一道奶源*，凝萃1:25**天然营养精华，因珍稀而珍贵，助力宝宝多方位成长。"}
 		]
+planetOpenList = []
 load = {}
 fisrtPage = {}
 lastPageShow = false
@@ -79,61 +80,61 @@ markers = [
 		id: "planet-1"
 		x: 0
 		y: defaultY+380
-		html: '<div id="planet-1" class="planet planet-1"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-1.png" /></div>'
+		html: '<div id="planet-1" class="planet planet-1"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-1.png" /></div>'
 	}
 	{
 		id: "planet-2"
 		x: 500
 		y: defaultY+200
-		html: '<div id="planet-2" class="planet planet-2"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-2.png" /></div>'
+		html: '<div id="planet-2" class="planet planet-2"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-2.png" /></div>'
 	}
 	{
 		id: "planet-3"
 		x: 1000
 		y: defaultY+300
-		html: '<div id="planet-3" class="planet planet-3"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-3.png" /></div>'
+		html: '<div id="planet-3" class="planet planet-3"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-3.png" /></div>'
 	}
 	{
 		id: "planet-4"
 		x: 1500
 		y: defaultY+360
-		html: '<div id="planet-4" class="planet planet-4"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-4.png" /></div>'
+		html: '<div id="planet-4" class="planet planet-4"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-4.png" /></div>'
 	}
 	{
 		id: "planet-5"
 		x: 2000
 		y: defaultY+260
-		html: '<div id="planet-5" class="planet planet-5"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-5.png" /></div>'
+		html: '<div id="planet-5" class="planet planet-5"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-5.png" /></div>'
 	}
 	{
 		id: "planet-10"
 		x: 2500
 		y: defaultY+380
-		html: '<div id="planet-10" class="planet planet-1"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-1.png" /></div>'
+		html: '<div id="planet-10" class="planet planet-1"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-1.png" /></div>'
 	}
 	{
 		id: "planet-20"
 		x: 3000
 		y: defaultY+200
-		html: '<div id="planet-20" class="planet planet-2"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-2.png" /></div>'
+		html: '<div id="planet-20" class="planet planet-2"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-2.png" /></div>'
 	}
 	{
 		id: "planet-30"
 		x: 3500
 		y: defaultY+300
-		html: '<div id="planet-30" class="planet planet-3"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-3.png" /></div>'
+		html: '<div id="planet-30" class="planet planet-3"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-3.png" /></div>'
 	}
 	{
 		id: "planet-40"
 		x: 4000
 		y: defaultY+360
-		html: '<div id="planet-40" class="planet planet-4"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-4.png" /></div>'
+		html: '<div id="planet-40" class="planet planet-4"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-4.png" /></div>'
 	}
 	{
 		id: "planet-50"
 		x: 4500
 		y: defaultY+260
-		html: '<div id="planet-50" class="planet planet-5"><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-5.png" /></div>'
+		html: '<div id="planet-50" class="planet planet-5"><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-5.png" /></div>'
 	}
 	{
 		id: "balloon-1"
@@ -210,7 +211,7 @@ markers = [
 ]
 
 # for balloon
-for i in [0...10]
+for i in [0...5]
 	bs = if Math.random()>0.5 then "big" else "small"
 	ds = if bs is "big" then "small" else "big"
 	markers.push 
@@ -220,9 +221,13 @@ for i in [0...10]
 		html: '<div class="planet-balloon-'+bs+' balloon-'+(12+i)+'"><img src="'+_CDN+'img/balloon-'+bs+'.png"/></div>'
 	markers.push 
 		id: "balloon-"+(13*2+i)
-		x: (5000/i)
+		x: (4700/i)
 		y: 1500-parseInt (Math.random()*400)
 		html: '<div class="planet-balloon-'+ds+' balloon-'+(12*2+i)+'"><img src="'+_CDN+'img/balloon-'+ds+'.png"/></div>'
+
+# bgm = document.getElementById("bgm")
+# window.addEventListener "touchstart", ->
+# 	bgm.play()
 
 window.onload = ->
 	# initPlanets()
@@ -244,7 +249,6 @@ window.onload = ->
 			backNormal: ->
 				if planetinfopage.opened
 					return false
-
 				planets.stopGyroscopeControl() if planets isnt {} and planets.stopGyroscopeControl?
 				planets.startAutorotate() if planets isnt {} and planets.stopGyroscopeControl?
 				if planetinfopage.shownote?
@@ -270,7 +274,7 @@ window.onload = ->
 				@notShowTime = true
 				planetstars.show = true
 				planetstars.bgm = true
-				planetstars.$children[0].change()
+				planetstars.$children[0].audio.play()
 				# initPlanets()
 				initVuePlanetInfoPage()
 		created: ->
@@ -278,16 +282,11 @@ window.onload = ->
 			load.loadend = true
 			@notShowTime = false
 			document.getElementById("main").style.display = "block"
-
-			# setTimeout ->
-			# 	loadAllScript()
-			# ,1000
-			# initVuePlanetInfoPage()
-
+			
+	document.addEventListener "WeixinJSBridgeReady",->
+		planetstars.$children[0].audio.play()
+	,false
 	if wx?
-		console.log "load wx"
-		# wx.error (res)->
-		# 	console.log res
 		wx.ready ->	
 			wx.onMenuShareTimeline shareContent
 			wx.onMenuShareAppMessage shareContent
@@ -304,10 +303,13 @@ initVuePlanetInfoPage = ->
 			planetName: "planet-1"
 			planet: planetInfo["planet-1"]
 			info: []
+			openlist: planetOpenList
 			opened: false
-			shownote: true
+			shownote: false
+			shownotetext: true
 			opendG: false
 			moving: false
+			showstar: true
 			blur: false
 			cacheTimeout: {}
 		methods:
@@ -318,7 +320,10 @@ initVuePlanetInfoPage = ->
 				createjs.Tween.get(dom).wait(100).to({scrollTop: dom.scrollHeight},400,createjs.Ease.linear)
 			keepgoing: ->
 				@opened = false
+				@shownotetext = true
 				planetstars.$children[0].reset()
+				planets.startGyroscopeControl()
+				console.log "start"
 				if lastPageShow
 					console.log "open last page"
 					@shownote = false
@@ -354,10 +359,13 @@ initVuePlanetInfoPage = ->
 					if not planetsList[@planetName].overreaded
 						planetsList[@planetName].overreaded = true
 						planetsList["planet-"+(parseInt(@planetName.replace("planet-",""))*10)].overreaded = true
+						planetOpenList.push true
 						setAstarLight()
+					else
+						@showstar = false
 					self = @
 					@runMessage(0)
-						
+					planets.stopGyroscopeControl()
 				else
 					clearTimeout @cacheTimeout
 					setTimeout =>
@@ -381,7 +389,6 @@ initVuePlanetsMedal = ->
 			data: 
 				overreaded: false
 initPlanets = ->
-	
 	try
 		planets = new PhotoSphereViewer
 			panorama: _CDN+"img/planet-bg.jpg"
@@ -408,6 +415,7 @@ initPlanets = ->
 			markers: markers
 		planets.on "ready", ->
 			console.log "ready"
+			planetinfopage.shownote = true
 			# planets.startGyroscopeControl()
 			initVuePlanetsMedal()
 			# setTimeout ->
@@ -415,14 +423,18 @@ initPlanets = ->
 			# ,1000
 		planets.on "select-marker", (marker)->
 			console.log "id: ",marker.id
-			id = parseInt marker.id.replace("planet-","")
-			console.log id,marker.id
-			id = if id > 5 then id/10 else id
-			planetinfopage.planetName = "planet-"+id
-			planetinfopage.planet = planetInfo["planet-"+id]
-			planetinfopage.opened = true
-			planetinfopage.shownote = false
-			planetstars.$children[0].playOther planetInfo["planet-"+id].url
+			if marker.id.indexOf("planet-") >= 0
+				id = parseInt marker.id.replace("planet-","")
+				console.log id,marker.id
+				id = if id > 5 then id/10 else id
+				planetinfopage.planetName = "planet-"+id
+				planetinfopage.planet = planetInfo["planet-"+id]
+				planetinfopage.showstar = true
+				planetinfopage.shownotetext = false
+				planetinfopage.opened = true
+				planetinfopage.shownote = false
+				planetstars.$children[0].playOther planetInfo["planet-"+id].url
+
 			
 			# longitude_range: [-3*Math.PI/4, 3*Math.PI/4]
 	catch e
@@ -484,4 +496,7 @@ loadWechatConfig = ->
 	s.parentNode.insertBefore hm, s
 	return
 		
-	
+# document.addEventListener 'DOMContentLoaded', ->
+# 	audio = document.getElementById('bgm')
+# 	audio.play()
+# 	console.log "bgm play"

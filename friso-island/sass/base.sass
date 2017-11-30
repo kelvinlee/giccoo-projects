@@ -14,6 +14,40 @@ $cdn : "../"
 	.duration-#{$i}
 		animation-duration: $i*100ms
 
++keyframes(symbolFly)
+	0%
+		+transform(translate3d(0,0,0))
+		opacity: 0
+	20%,80%
+		opacity: 0.6
+	100%
+		+transform(translate3d(0,-200px,0))
+		opacity: 0
+
++keyframes(symbolFly2)
+	0%
+		+transform(translate3d(0,0,0))
+		opacity: 0
+	20%,80%
+		opacity: 0.4
+	100%
+		+transform(translate3d(0,-100px,0))
+		opacity: 0
+
++keyframes(phone)
+	0%,100%
+		+transform(scale3d(1,1,1))
+	50%
+		+transform(scale3d(0.8,1,1))
+
++keyframes(starMove)
+	0%
+		+transform(translate3d(0,0,0) scale3d(1,1,1))
+		opacity: 1
+	100%
+		+transform(translate3d(260%,-140%,0) scale3d(0.5,0.5,1))
+		opacity: 0
+
 +keyframes(second)
 	0%
 		+transform(rotate(0deg))
@@ -175,6 +209,16 @@ body.pop-open
 			+posa
 			+tl(-5%,5%)
 			+w(90%)
+			.star
+				+posa
+				+tl(50%,23%)
+				+w(20%)
+				margin-left: -10%
+				margin-top: -10%
+				+animation(starMove,1.5s,ease-out)
+				animation-delay: 500ms
+				img
+					+w
 		.answer-box
 			+posa
 			+bl(10%,0%)
@@ -246,7 +290,11 @@ body.pop-open
 							+br
 							margin-left: 5%
 							margin-right: 0
-
+		.note-text
+			+w(70%)
+			+posa
+			+bl(2%,15%)
+			+text-center
 		.btn-goon
 			+w(70%)
 			+posa
@@ -365,6 +413,10 @@ body.pop-open
 		.star
 			display: inline-block
 			+iw(40,320,100%)
+			+posr
+			.on
+				+posa
+				+tl
 
 #planets
 	+w
@@ -377,9 +429,18 @@ body.pop-open
 		+posr
 		+animation("island",5s,linear,infinite)
 		transform-origin: center center
+		> img
+			+posr
+			z-index: 10
 		.planet-medal
 			+posa
 			+tl
+			z-index: 11
+		.msg-note
+			+w(40%)
+			+posa
+			+tl(10%)
+
 
 .psv-container
 	// background: radial-gradient(#e5d298,#e0c580 16%,#f0dca8 33%,#f8f8f8 49%,#ecd69e 66%,#e8cf8e 82%,#e0c580 100%)
@@ -422,14 +483,11 @@ body.pop-open
 	filter: blur(10px)
 	opacity: 0.8
 
-.planets-note
+.planets-note-text
 	+posa
 	+bl(2%)
 	+w
-	z-index: 199
-	.btn-start-control
-		+w(65%)
-		+m
+	z-index: 198
 	.texts
 		+m(20px 0)
 		p
@@ -438,6 +496,29 @@ body.pop-open
 			line-height: 1.6em
 			text-shadow: 1px 1px 3px #fff
 			+font-size(0.8rem)
+.planets-note
+	+posa
+	+bl
+	+w
+	+h
+	// +b($cdn+"img/note-bg.png",no-repeat,center,center,cover)
+	+bc(rgba(237,226,196,0.6))
+	z-index: 199
+	// +hide
+	.box
+		+posa
+		+tl(50%)
+		+transform(translate3d(0,-50%,0))
+		.phone
+			+posa
+			+tl(23%,50%)
+			+w(10%)
+			+animation(phone,2s,linear,infinite)
+			margin-left: -5%
+	.btn-start-control
+		+w(65%)
+		+m
+	
 
 .planet-balloon-big
 	+posr
@@ -450,4 +531,23 @@ body.pop-open
 	z-index: -1
 	+w(45px)
 	+animation(balloon-small,6s,ease-out,infinite)
+
+.music-symbol
+	+posa
+	+tl(50%,20%)
+	z-index: 99
+	+w(40px)
+	+animation(symbolFly2,2s,ease,infinite)
+	&.small
+		+w(30px)
+		+tl(60%,80%)
+		+animation(symbolFly,2.5s,linear,infinite)
+	&.medium
+		+w(25px)
+		+animation(symbolFly,3s,ease-out,infinite)
+		+tl(90%,40%)
+	&.large
+		+w(30px)
+		+animation(symbolFly2,3.5s,ease-in,infinite)
+		+tl(70%,60%)
 
