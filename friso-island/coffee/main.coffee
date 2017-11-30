@@ -221,7 +221,7 @@ for i in [0...5]
 		html: '<div class="planet-balloon-'+bs+' balloon-'+(12+i)+'"><img src="'+_CDN+'img/balloon-'+bs+'.png"/></div>'
 	markers.push 
 		id: "balloon-"+(13*2+i)
-		x: (5000/i)
+		x: (4700/i)
 		y: 1500-parseInt (Math.random()*400)
 		html: '<div class="planet-balloon-'+ds+' balloon-'+(12*2+i)+'"><img src="'+_CDN+'img/balloon-'+ds+'.png"/></div>'
 
