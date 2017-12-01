@@ -220,6 +220,77 @@ function setMusicGif(){
   TweenLite.set($("#gif3"),{opacity:musicStateA[2]})
 }
 
+//==================== Game 3 =================
+
+var screenW
+var screenH
+
+
+screenW=document.body.offsetWidth 
+screenH=document.body.offsetHeight
+
+var oldX
+var oldY
+
+var nowX
+var nowY
+
+var ifPlayingGame3=0
+var fire=$("#bigfire")
+
+var fireSize=0
+
+$("body").on('touchstart',function (e){
+  oldX=e.originalEvent.touches[0].pageX
+  oldY=e.originalEvent.touches[0].pageY
+
+  nowX=e.originalEvent.touches[0].pageX
+  nowY=e.originalEvent.touches[0].pageY
+   
+
+}).on('touchmove',function (e){
+  oldX=nowX
+  oldY=nowY
+
+
+  nowX=e.originalEvent.touches[0].pageX
+  nowY=e.originalEvent.touches[0].pageY
+  if(ifPlayingGame3==1&&nowY<downline&&nowY>topline){
+    fireSize+=Math.sqrt((nowY-oldY)*(nowY-oldY)+(nowX-oldX)*(nowX-oldX))/Math.sqrt(screenW*screenW+screenH*screenH)/2
+    //console.log(fireSize) 
+    console.log('nowY=',nowY,'   nowX=',nowX) 
+  }
+
+})
+
+var setInt
+var topline=360
+var downline=787
+
+
+game3();
+
+
+function game3(){
+  ifPlayingGame3=1
+  topline=screenW/640*360
+  downline=screenW/640*787
+  setInt= window.setInterval(setFireSize,50);
+  //window.clearInterval(setInt);
+
+}
+
+function setFireSize(){
+
+  fireSize-= 0.1/4
+
+
+
+
+  fireSize=Math.max(fireSize,0)
+  TweenLite.set(fire,{scale:fireSize,x:"-50%",y:"-50%"})
+}
+
 
 
 //==================== 结果页 =================
