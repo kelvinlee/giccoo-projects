@@ -299,7 +299,8 @@ function game3(){
   createjs.Ticker.addEventListener("tick",handleTick);
   Time=new Date()
   lastTime=Time.getTime()
-  
+  TweenLite.set($("#g3BG2"),{display:"none"})
+  TweenLite.set($("#theGif"),{display:"block",opacity:0})
 }
 
 function handleTick(event){
@@ -315,6 +316,21 @@ function setFireSize(){
 
   fireSize=Math.max(fireSize,0)
   TweenLite.set(fire,{scale:fireSize,x:"-50%",y:"-50%",left:312/640*screenW,top:570/640*screenW})
+  if(fireSize>=2){
+    TweenLite.set($("#g3BG2"),{display:"block"})
+    TweenLite.to(fire,1,{scale:4,x:"-50%",y:"-50%",left:312/640*screenW,top:570/640*screenW,opacity:0,onComplete:game3done})
+      TweenLite.set($("#theGif"),{display:"none"})
+   
+  }
+}
+
+function game3done(){
+  window.clearInterval(setInt);
+  gameStateA[2]=1
+  TweenLite.set($("#theGif"),{display:"block",x:24/640*screenW,y:277/640*screenW,width:600/640*screenW,height:356/640*screenW,opacity:1})
+  TweenLite.to(fire,1.5,{onComplete:gameEnd})
+
+ // gameEnd();
 }
 //var fireA=[]
 function addFire(_x,_y){
@@ -398,16 +414,28 @@ function showGame(){
   TweenLite.from($("#gameHint" ),.5,{opacity:0})
 
 }
+var rtA=[$("#r1t"),$("#r2t"),$("#r3t")]
+var wtA=[$("#w1t"),$("#w2t"),$("#w3t")]
 function gameEnd(){
-  
+    TweenLite.set(rtA[0],{display:"none"})
+    TweenLite.set(rtA[1],{display:"none"})
+    TweenLite.set(rtA[2],{display:"none"})
+    TweenLite.set(wtA[0],{display:"none"})
+    TweenLite.set(wtA[1],{display:"none"})
+    TweenLite.set(wtA[2],{display:"none"})
+
   TweenLite.set($("#resultPage"),{display:"block",opacity:1})
   TweenLite.from($("#resultPage"),1,{opacity:0})
   if(gameStateA[nowGame]==1){//得一分
     TweenLite.set($("#rightBG"),{display:"block"})
     TweenLite.set($("#wrongBG"),{display:"none"})
+    
+    TweenLite.set(rtA[nowGame],{display:"block"})
   }else{
     TweenLite.set($("#rightBG"),{display:"none"})
     TweenLite.set($("#wrongBG"),{display:"block"})
+    
+    TweenLite.set(wtA[nowGame],{display:"block"})
   }
 
 

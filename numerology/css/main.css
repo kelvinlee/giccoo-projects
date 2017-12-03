@@ -239,3 +239,7 @@ img{ width: 100%; }
 #g2btn3{
 	right: 1.28%;
 }
+#theGif{
+	position: absolute;
+	display: none;
+}
