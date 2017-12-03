@@ -240,6 +240,7 @@ var fire=$("#bigfire")
 
 var fireSize=0
 
+
 $("body").on('touchstart',function (e){
   oldX=e.originalEvent.touches[0].pageX
   oldY=e.originalEvent.touches[0].pageY
@@ -259,6 +260,15 @@ $("body").on('touchstart',function (e){
     fireSize+=Math.sqrt((nowY-oldY)*(nowY-oldY)+(nowX-oldX)*(nowX-oldX))/Math.sqrt(screenW*screenW+screenH*screenH)/2
     //console.log(fireSize) 
     console.log('nowY=',nowY,'   nowX=',nowX) 
+
+    Time= new Date()
+    nowTime=Time.getTime()
+    if(nowTime-lastTime>10){
+      addFire(nowX,nowY)
+      lastTime=nowTime
+    }
+
+
   }
 
 })
@@ -267,6 +277,12 @@ var setInt
 var topline=360
 var downline=787
 
+var stage = new createjs.Stage("mianCanvas");
+//var sFire = new createjs.Bitmap("img/littleFire.png");
+
+var Time=new Date()
+var lastTime
+var nowTime
 
 game3();
 
@@ -278,6 +294,16 @@ function game3(){
   setInt= window.setInterval(setFireSize,50);
   //window.clearInterval(setInt);
 
+ // stage.addChild(sFire)
+  createjs.Ticker.framerage = 30;
+  createjs.Ticker.addEventListener("tick",handleTick);
+  Time=new Date()
+  lastTime=Time.getTime()
+  
+}
+
+function handleTick(event){
+  stage.update()
 }
 
 function setFireSize(){
@@ -288,10 +314,21 @@ function setFireSize(){
 
 
   fireSize=Math.max(fireSize,0)
-  TweenLite.set(fire,{scale:fireSize,x:"-50%",y:"-50%"})
+  TweenLite.set(fire,{scale:fireSize,x:"-50%",y:"-50%",left:312/640*screenW,top:570/640*screenW})
 }
+//var fireA=[]
+function addFire(_x,_y){
+  var sFire = new createjs.Bitmap("img/littleFire.png");
+  stage.addChild(sFire)
 
+  TweenLite.set(sFire,{width:100*Math.random(),height:100*Math.random(),scale:0,rotation:Math.random()*360})
 
+  sFire.x=_x*640/screenW
+  sFire.y=_y*1028/screenH
+  TweenLite.to(sFire,.5,{scale:1.5*Math.random()+.5,overwrite:0})
+  TweenLite.to(sFire,.25,{alpha:0,delay:.25})
+
+}
 
 //==================== 结果页 =================
 
