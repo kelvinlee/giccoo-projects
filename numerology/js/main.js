@@ -28,11 +28,11 @@ $('body')[0].addEventListener('touchmove', function (event) {event.preventDefaul
 //====================LOADING=================
 function loadingAni(){
   $("#loadingPG").css({"display":"block"})
+  var n = 0
   TweenLite.set($("#loadingC1"),{x:"-50%",y:"-50%"})
   TweenLite.set($("#loadingC2"),{x:"-50%",y:"-50%"})
   TweenLite.to($("#loadingC1"),10,{rotation:720,ease:Linear.easeOut})
-  TweenLite.to($("#loadingC2"),1,{rotation:-720,ease:Linear.easeIn,onComplete:page1in})
-
+  TweenLite.to($("#loadingC2"),3,{rotation:-720,ease:Linear.easeIn,onUpdate:function(){ n = n+parseInt(Math.random()*5); if (n >= 100) {n = 100} $("#loadingT").text(n+"%") },onComplete:page1in})
 }
 
 
@@ -328,7 +328,8 @@ function game3done(){
   window.clearInterval(setInt);
   gameStateA[2]=1
   TweenLite.set($("#theGif"),{display:"block",x:24/640*screenW,y:277/640*screenW,width:600/640*screenW,height:356/640*screenW,opacity:1})
-  TweenLite.to(fire,1.5,{onComplete:gameEnd})
+  $("#video")[0].play()
+  TweenLite.to(fire,2.5,{onComplete:gameEnd})
 
  // gameEnd();
 }

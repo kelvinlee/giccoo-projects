@@ -85,16 +85,16 @@
 		<div class="alphaBtn musicBtn" id="musicBtn3"></div>
 	</div>
 
-	<audio src="mp3/bg.mp3" id="audio1" loop="loop" hidden="hidden"></audio>
-	<audio src="mp3/nwdsl.mp3" id="audio2" loop="loop" hidden="hidden"></audio>
-	<audio src="mp3/ssld.mp3" id="audio3" loop="loop" hidden="hidden"></audio>
+	<audio src="mp3/bg.mp3" id="audio1" preload="false" loop="loop" hidden="hidden"></audio>
+	<audio src="mp3/nwdsl.mp3" id="audio2" preload="false" loop="loop" hidden="hidden"></audio>
+	<audio src="mp3/ssld.mp3" id="audio3" preload="false" loop="loop" hidden="hidden"></audio>
 </div>
 
 <!-- ==============游戏3============== -->
 <div class="page" id="game3">
 	<div class="topbg" id="g3BG"><img src="img/g3bg.jpg" width="100%" height="100%"></div>
 	<div class="topbg" id="g3BG2"><img src="img/g3bg2.jpg" width="100%" height="100%"></div>
-	<div id="theGif"><img src="img/1.gif" width="100%" height="100%"></div>
+	<div id="theGif"><video id="video" src="video/video.mp4" preload="false" webkit-playsinline="true" playsinline="true"></video></div>
 	
 
 	<div class="fire" id="bigfire"><img src="img/fire.png" width="100%" height="100%"></div>
@@ -204,7 +204,7 @@
 	<div class="bg" id="loadingBG"><img src="img/loadingBG.jpg" width="100%" height="100%"></div>
 	<div class="centerPart" id="loadingC1"><img src="img/loadingC1.png" width="100" height="100%"></div>
 	<div class="centerPart" id="loadingC2"><img src="img/loadingC2.png" width="100" height="100%"></div>
-	<div class="centerPart" id="loadingT">100%</div>
+	<div class="centerPart" id="loadingT">0%</div>
 
 	<div class="centerPart" id="loadingT1"><img src="img/loadingT1.png" width="100%"></div>
 	<div class="centerPart" id="loadingT2"><img src="img/loadingT2.png" width="100%"></div>
@@ -219,7 +219,7 @@
 <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
 <script type="text/javascript" src="js/TweenMax.min.js"></script>
 <script type="text/javascript" src="js/easeljs.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/main-build.js"></script>
 <script type="text/javascript" src="js/award.js"></script>
 </body>
 </html>

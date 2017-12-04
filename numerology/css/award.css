@@ -861,3 +861,6 @@ ul {
       .award-pop .success .center .btn {
         padding-top: 10px;
         padding-bottom: 20px; }
+
+#theGif video {
+  width: 100%; }
