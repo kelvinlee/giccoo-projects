@@ -175,7 +175,8 @@ ask_update = function ask_update(i) {
   return axios.get("http://" + apiURL + "/wechat/numerology/update/").then(function (msg) {
     console.log("msg:", msg.data);
     if (msg.data.recode === 200) {
-      return _updateNames[name] = true;
+      _updateNames[name] = true;
+      return awardBox.times = awardBox.times + 1;
     } else if (msg.data.recode === 201) {
       return alert("请使用微信打开此页面参与活动");
     }

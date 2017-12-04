@@ -121,6 +121,7 @@ ask_update = (i)->
 		console.log "msg:",msg.data
 		if msg.data.recode is 200
 			_updateNames[name] = true
+			awardBox.times = awardBox.times + 1
 		else if msg.data.recode is 201
 			alert "请使用微信打开此页面参与活动"
 		# else
