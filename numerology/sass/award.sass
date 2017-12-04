@@ -1,0 +1,144 @@
+@import sass/base
++keyframes(outc)
+	0%
+		+transform(rotate(0deg))
+	100%
+		+transform(rotate(360deg))
++keyframes(inc)
+	0%
+		+transform(rotate(0deg))
+	100%
+		+transform(rotate(-360deg))
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+.relative
+	+posr
+.page-award
+	// +show
+	z-index: 109
+	.time
+		+b("../img/award-time-bg.png",no-repeat,right,center,100% 100%)
+		+posa
+		+tr(3%)
+		color: #eee69c
+		+font-size(0.8rem)
+		+p(5px 20px 5px 10px)
+	.topPart
+		+iw(640)
+	.award-box
+		+posr
+		+iw(640)
+
+		.award-outside,.award-inside,.award-btn
+			+posa
+			+tl
+			font-size: 0
+			transform-orign: center center
+		.award-outside
+			z-index: 2
+		.award-inside
+			z-index: 3
+		.award-btn
+			+posr
+			z-index: 4
+		&.on
+			.award-outside
+				+animation(outc,4s,linear,infinite)
+			// .award-inside
+			// 	+tran(all,2s,linear)
+			// 	+transform(rotate(-360deg*2))
+		&.open
+			.award-outside
+				+animation(outc,4s,linear,infinite)
+		&.aiqiyiyear
+			.award-inside
+				+tran(all,3s,ease-out)
+				+transform(rotate(-360deg*4-360deg))
+		&.ticket
+			.award-inside
+				+tran(all,3s,ease-out)
+				+transform(rotate(-360deg*4-75deg))
+		&.aiqiyi
+			.award-inside
+				+tran(all,3s,ease-out)
+				+transform(rotate(-360deg*4-130deg))
+		&.none
+			.award-inside
+				+tran(all,3s,ease-out)
+				+transform(rotate(-360deg*4-180deg))
+
+	.award-info
+		+posr
+		z-index: 2
+		+text-center
+		a
+			color: #c99942
+			padding-bottom: 5px
+			text-decoration: none
+			+show-inline
+			border-bottom: solid 1px #c99942
+			+font-size(0.8rem)
+			margin-right: 10px
+			margin-left: 10px
+
+.award-pop
+	+hide
+	z-index: 110
+	+bc(rgba(0,0,0,0.9))
+	font-size: 0
+	.topPart
+		+bc(rgba(0,0,0,0.9))
+		+posa
+		+tl
+		+w
+		+h
+	.fail
+		+posa
+		+tl(20%)
+		.close
+			+posa
+			+tr(0,0)
+			+wh(50px,50px)
+		.share-btn
+			+posa
+			+bl(0,0)
+			+wh(100%,40%)
+	.success
+		+posa
+		+tl(20%)
+		.top
+			+posr
+			.close
+				+posa
+				+tr
+				+wh(50px,50px)
+			.title
+				+posa
+				+tl(23%)
+			.name
+				+posa
+				+tl(62.5%)
+			.code
+				+posa
+				+bl(13%)
+				+font-size(0.8rem)
+				+text-center
+				+w
+				+show
+				letter-spacing: 1px
+				color: #000
+		.center
+			+b("../img/award-box-center.png",repeat-y,center,top,100% auto)
+			+font-size(0.8rem)
+			color: #c5923a
+			p
+				+p(0 10%)
+			.btn
+				padding-top: 10px
+				padding-bottom: 20px
+		.bottom

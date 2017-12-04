@@ -4,11 +4,54 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<title>奇门遁甲</title>
+	<link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/award.css">
 </head>
 <body>
 <!-- <div class="wechat-share"><img src="img/ico.jpg"></div> -->
 
+<!-- ==============抽奖============== -->
+<div id="award" class="page page-award">
+	<div class="bg"><img src="img/bg1.jpg" width="100%" height="100%"></div>
+	<div class="time">你还有{{times}}次收奖机会</div>
+	<div class="topPart relative fadeInUp animated delay-2"><img src="img/p1title.png" width="100" height="100%"></div>
+
+	<div class="award-box zoomIn animated delay-5" :class="boxClass">
+		<div class="award-outside"><img src="img/award-outside.png" width="100%" height="100%"></div>
+		<div class="award-inside"><img src="img/award-inside.png" width="100%" height="100%"></div>
+		<div class="award-btn" @click.prevent.stop="go"><img src="img/award-btn.png" width="100%" height="100%"></div>
+	</div>
+
+	<div class="award-info">
+		<a href="#" @click.prevent.stop="my">我的中奖记录</a>
+		<a href="#" @click.prevent.stop="back">继续游戏</a>
+	</div>
+</div>
+
+<!-- ==============抽奖-结果============== -->
+<div id="award-over" class="page award-pop fadeIn animated">
+	<div class="fail" v-if="!success">
+		<img src="img/award-fail.jpg" />
+		<div class="close" @click.prevent.stop="close"></div>
+		<div class="share-btn" @click.prevent.stop="openShare"></div>
+	</div>
+	<div class="success" v-if="success">
+		<div class="top">
+			<img src="img/award-box-top.png" width="100%">
+			<div class="close" @click.prevent.stop="close"></div>
+			<div class="title"><img :src="'img/award-'+type+'-title.png'" width="100%"></div>
+			<div class="name"><img :src="'img/award-'+type+'-name.png'" width="100%"></div>
+			<div class="code">{{code}}</div>
+		</div>
+		<div class="center">
+			<div class="btn" @click.prevent.stop="openHow" v-show="!how"><img src="img/award-btn-how.png" width="100%"></div>
+			<p v-show="how">兑换方式：<br/>点击立即兑换→选择充值账号（手机号） →输入“电子兑换码” →确认兑换→登录APP授权→使用</p>
+		</div>
+		<div class="bottom"><img src="img/award-box-bottom.png" width="100%"></div>
+	</div>
+	<div class="topPart" v-show="share" @click.prevent.stop="openShare"><img src="img/share.png" width="100%"></div>
+</div>
 
 <!-- ==============游戏1============== -->
 <div class="page" id="game1">
@@ -42,9 +85,9 @@
 		<div class="alphaBtn musicBtn" id="musicBtn3"></div>
 	</div>
 
-<audio src="mp3/bg.mp3" id="audio1" loop="loop" hidden="hidden"></audio>
-<audio src="mp3/nwdsl.mp3" id="audio2" loop="loop" hidden="hidden"></audio>
-<audio src="mp3/ssld.mp3" id="audio3" loop="loop" hidden="hidden"></audio>
+	<audio src="mp3/bg.mp3" id="audio1" loop="loop" hidden="hidden"></audio>
+	<audio src="mp3/nwdsl.mp3" id="audio2" loop="loop" hidden="hidden"></audio>
+	<audio src="mp3/ssld.mp3" id="audio3" loop="loop" hidden="hidden"></audio>
 </div>
 
 <!-- ==============游戏3============== -->
@@ -171,9 +214,12 @@
 </div>
 
 <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="http://image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
+<script src="http://image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
 <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
 <script type="text/javascript" src="js/TweenMax.min.js"></script>
 <script type="text/javascript" src="js/easeljs.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/award.js"></script>
 </body>
 </html>

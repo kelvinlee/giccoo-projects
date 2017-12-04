@@ -8,7 +8,7 @@ $(document).ready(function load (){
       desc: "乾坤万象，其乐无穷，12.15日，燃情上映！",
       link: "http://m.giccoo.com/numerology/",
       imgUrl: "http://m.giccoo.com/numerology/img/ico.jpg",
-      success: function() {},
+      success: function() {ask_update(3)},
       cancel: function() {}
     };
     wx.onMenuShareTimeline(shareContent);
@@ -393,7 +393,7 @@ function nextGame(){
     nowGame=2
     showGame()
   }else{
-    alert("玩完了去抽奖")
+    // alert("玩完了去抽奖")
     goPrize()
   }
 }
@@ -417,20 +417,22 @@ function showGame(){
 var rtA=[$("#r1t"),$("#r2t"),$("#r3t")]
 var wtA=[$("#w1t"),$("#w2t"),$("#w3t")]
 function gameEnd(){
-    TweenLite.set(rtA[0],{display:"none"})
-    TweenLite.set(rtA[1],{display:"none"})
-    TweenLite.set(rtA[2],{display:"none"})
-    TweenLite.set(wtA[0],{display:"none"})
-    TweenLite.set(wtA[1],{display:"none"})
-    TweenLite.set(wtA[2],{display:"none"})
+  
+
+  TweenLite.set(rtA[0],{display:"none"})
+  TweenLite.set(rtA[1],{display:"none"})
+  TweenLite.set(rtA[2],{display:"none"})
+  TweenLite.set(wtA[0],{display:"none"})
+  TweenLite.set(wtA[1],{display:"none"})
+  TweenLite.set(wtA[2],{display:"none"})
 
   TweenLite.set($("#resultPage"),{display:"block",opacity:1})
   TweenLite.from($("#resultPage"),1,{opacity:0})
   if(gameStateA[nowGame]==1){//得一分
     TweenLite.set($("#rightBG"),{display:"block"})
     TweenLite.set($("#wrongBG"),{display:"none"})
-    
     TweenLite.set(rtA[nowGame],{display:"block"})
+    ask_update(nowGame)
   }else{
     TweenLite.set($("#rightBG"),{display:"none"})
     TweenLite.set($("#wrongBG"),{display:"block"})
@@ -452,7 +454,8 @@ function gameEnd(){
 }
 //==================== 抽奖页 =================
 function goPrize(){
-  alert("去抽奖")
+  // alert("去抽奖")
+  openAward()
 }
 
 //===========================================
