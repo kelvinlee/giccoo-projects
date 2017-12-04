@@ -32,7 +32,7 @@ function loadingAni(){
   TweenLite.set($("#loadingC1"),{x:"-50%",y:"-50%"})
   TweenLite.set($("#loadingC2"),{x:"-50%",y:"-50%"})
   TweenLite.to($("#loadingC1"),10,{rotation:720,ease:Linear.easeOut})
-  TweenLite.to($("#loadingC2"),3,{rotation:-720,ease:Linear.easeIn,onUpdate:function(){ n = n+parseInt(Math.random()*5); if (n >= 100) {n = 100} $("#loadingT").text(n+"%") },onComplete:page1in})
+  TweenLite.to($("#loadingC2"),3,{rotation:-720,ease:Linear.easeIn,onUpdate:function(){ n = n+(Math.random()+0.3); if (n >= 100) {n = 100} $("#loadingT").text(parseInt(n)+"%") },onComplete:page1in})
 }
 
 
