@@ -327,7 +327,7 @@ function setFireSize(){
 function game3done(){
   window.clearInterval(setInt);
   gameStateA[2]=1
-  TweenLite.set($("#theGif"),{display:"block",x:24/640*screenW,y:277/640*screenW,width:600/640*screenW,height:356/640*screenW,opacity:1})
+  TweenLite.set($("#theGif"),{display:"block",x:24/640*screenW,y:260/640*screenW,width:600/640*screenW,height:392/640*screenW,opacity:1})
   $("#video")[0].play()
   TweenLite.to(fire,2.5,{onComplete:gameEnd})
 

@@ -862,5 +862,9 @@ ul {
         padding-top: 10px;
         padding-bottom: 20px; }
 
-#theGif video {
-  width: 100%; }
+#theGif {
+  overflow: hidden;
+  border-radius: 8%; }
+  #theGif video {
+    width: 120%;
+    margin-left: -10%; }
