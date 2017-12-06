@@ -55,7 +55,7 @@
 		&.open
 			.award-outside
 				+animation(outc,4s,linear,infinite)
-		&.aiqiyiyear
+		&.leshiyear
 			.award-inside
 				+tran(all,3s,ease-out)
 				+transform(rotate(-360deg*4-360deg))
@@ -63,7 +63,7 @@
 			.award-inside
 				+tran(all,3s,ease-out)
 				+transform(rotate(-360deg*4-75deg))
-		&.aiqiyi
+		&.leshi
 			.award-inside
 				+tran(all,3s,ease-out)
 				+transform(rotate(-360deg*4-130deg))
@@ -85,7 +85,6 @@
 			+font-size(0.8rem)
 			margin-right: 10px
 			margin-left: 10px
-
 .award-pop
 	+hide
 	z-index: 110
@@ -142,7 +141,14 @@
 				padding-top: 10px
 				padding-bottom: 20px
 		.bottom
-
+.how
+	p
+		margin-top: 0.4em
+		&:first-child
+			margin-top: 0
+	.note
+		+font-size(0.6rem)
+		color: #aaa
 
 #theGif
 	+overhide

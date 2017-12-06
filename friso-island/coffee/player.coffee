@@ -4,14 +4,14 @@ Vue.component "player",
 			<div class="icon-play" :class="{play: playing, pause: !playing}" @click="change">
 				<img :src="iconNow" />
 			</div>
-			<audio :src="src" autoplay="autoplay" loop="loop"></audio>
-			<audio :src="otherSrc"></audio>
+			<audio :src="src" autoplay="autoplay" preload="true" loop="loop"></audio>
+			<audio :src="item" :id="\'music\'+index" preload="true" v-for="item,index in otherSrc"></audio>
 		</div>
 		'
 	data: ->
 		return
 			src: "./mp3/bgm.mp3"
-			otherSrc: ""
+			otherSrc: ["./mp3/turtle.mp3","./mp3/beard.mp3","./mp3/bird.mp3","./mp3/cow.mp3","./mp3/panda.mp3"]
 			playing: false
 			stoped: false
 			iconPlay: "http://image.giccoo.com/projects/libs/img/audio-stop.png"
@@ -21,14 +21,18 @@ Vue.component "player",
 		autoplay:
 			default: true
 	methods:
+		pauseAll: ->
+			for i in [0...@otherSrc.length]
+				document.getElementById("music"+i).pause()
 		playOther: (url)->
 			# @audio.currentTime = time
 			@audio.pause()
-			@audioOther.src = url
-			@audioOther.play()
-			console.log "play other"
+			for i in [0...@otherSrc.length]
+				if @otherSrc.indexOf(url) is i
+					document.getElementById("music"+i).play()
+				else
+					document.getElementById("music"+i).pause()
 		reset: ->
-			console.log "reset"
 			if not @stoped
 				@audio.play()
 				@audioOther.pause()
@@ -37,7 +41,6 @@ Vue.component "player",
 		pause: ->
 			@playing = false
 		otherend: ->
-			console.log "end"
 			@audio.play() if not @stoped
 		change: ->
 			if @playing
@@ -46,18 +49,18 @@ Vue.component "player",
 			else
 				@audio.play()
 				@stoped = false
-			@audioOther.pause()
-			console.log "play"
+				
+			@pauseAll()
 	computed:
 		iconNow: ->
 			return if !@playing then @iconPlay else @iconStop
 
 	mounted: (el)->
-		console.log "autoplay:",@autoplay
 		@audio = @$el.children[1]
-		@audioOther = @$el.children[2]
+		# @audioOther = @$el.children[2]
 		@audio.addEventListener "pause", @pause.bind @
 		@audio.addEventListener "play", @play.bind @
-		@audioOther.addEventListener "ended", @otherend.bind @
+		for i in [0...@otherSrc.length]
+			document.getElementById("music"+i).addEventListener "ended", @otherend.bind @
 		@audio.play()
-		console.log @audio,@audioOther,@playing
+		# console.log @audio,@audioOther,@playing

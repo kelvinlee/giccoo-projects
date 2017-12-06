@@ -14,6 +14,26 @@ $cdn : "../"
 	.duration-#{$i}
 		animation-duration: $i*100ms
 
++keyframes(cloudFly)
+	0%
+		+transform(translate3d(-100px,0,0))
+		opacity: 0
+	25%,75%
+		opacity: 1
+	100%
+		+transform(translate3d(400px,0,0))
+		opacity: 0
+
++keyframes(cloudFly2)
+	0%
+		+transform(translate3d(-220px,0,0))
+		opacity: 0
+	25%,75%
+		opacity: 0.8
+	100%
+		+transform(translate3d(480px,0,0))
+		opacity: 0
+
 +keyframes(symbolFly)
 	0%
 		+transform(translate3d(0,0,0))
@@ -504,7 +524,7 @@ body.pop-open
 	// +b($cdn+"img/note-bg.png",no-repeat,center,center,cover)
 	+bc(rgba(237,226,196,0.6))
 	z-index: 199
-	// +hide
+	+hide
 	.box
 		+posa
 		+tl(50%)
@@ -531,6 +551,42 @@ body.pop-open
 	z-index: -1
 	+w(45px)
 	+animation(balloon-small,6s,ease-out,infinite)
+
+
+.cloud
+	+posa
+	+bl
+	+w(60%)
+	z-index: -1
+	+animation(cloudFly,8s,linear,infinite)
+.cloud2
+	+posa
+	+bl(30%)
+	+w(40%)
+	z-index: -1
+	+animation(cloudFly2,12s,ease-in-out,infinite)
+.bird
+	+posa
+	+tl
+	+wh(40px,40px)
+	+b($cdn+"img/bird.png",no-repeat,center,center,contain)
+
+@for $i from 1 through 5
+	.planet-#{$i}
+		.cloud
+			+bl(random(10)+2%)
+			animation-duration: random(10)+5s
+			animation-delay: random(800)+100ms 
+		.cloud2
+			+bl(random(10)+30%)
+			animation-duration: random(10)+5s
+
+@for $i from 1 through 20
+	.bird-#{$i}
+		$size: (random(60)+40)/100
+		$deg: 45 - random(90) * 1deg
+		+transform(translate3d(-100%,0,0) scale3d($size,$size,1) rotate($deg))
+		// +animation("bird-"+$i%5,random(4)+2s,ease,infinite)
 
 .music-symbol
 	+posa

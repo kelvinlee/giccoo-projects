@@ -722,7 +722,7 @@ ul {
               animation-fill-mode: both;
       -webkit-animation-iteration-count: infinite;
               animation-iteration-count: infinite; }
-    .page-award .award-box.aiqiyiyear .award-inside {
+    .page-award .award-box.leshiyear .award-inside {
       -webkit-transition: all 3s ease-out;
       transition: all 3s ease-out;
       -webkit-transform: rotate(-1800deg);
@@ -732,7 +732,7 @@ ul {
       transition: all 3s ease-out;
       -webkit-transform: rotate(-1515deg);
               transform: rotate(-1515deg); }
-    .page-award .award-box.aiqiyi .award-inside {
+    .page-award .award-box.leshi .award-inside {
       -webkit-transition: all 3s ease-out;
       transition: all 3s ease-out;
       -webkit-transform: rotate(-1570deg);
@@ -861,6 +861,27 @@ ul {
       .award-pop .success .center .btn {
         padding-top: 10px;
         padding-bottom: 20px; }
+
+.how p {
+  margin-top: 0.4em; }
+  .how p:first-child {
+    margin-top: 0; }
+
+.how .note {
+  font-size: 0.6rem;
+  color: #aaa; }
+  @media only screen and (min-width: 321px) and (max-width: 399px) {
+    .how .note {
+      font-size: 0.66rem; } }
+  @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+    .how .note {
+      font-size: 0.66rem; } }
+  @media only screen and (min-width: 399px) and (max-width: 767px) {
+    .how .note {
+      font-size: 0.72rem; } }
+  @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+    .how .note {
+      font-size: 0.72rem; } }
 
 #theGif {
   overflow: hidden;

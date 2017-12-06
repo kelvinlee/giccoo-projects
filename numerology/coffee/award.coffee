@@ -86,7 +86,6 @@ initPop = ->
 			share: false
 			type: "ticket"
 			code: "none"
-
 		methods:
 			openHow: ->
 				@how = !@how

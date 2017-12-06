@@ -46,7 +46,18 @@
 		</div>
 		<div class="center">
 			<div class="btn" @click.prevent.stop="openHow" v-show="!how"><img src="img/award-btn-how.png" width="100%"></div>
-			<p v-show="how">兑换方式：<br/>点击立即兑换→选择充值账号（手机号） →输入“电子兑换码” →确认兑换→登录APP授权→使用</p>
+			<div class="how" v-show="how && (type=='leshi' || type=='leshiyear')">
+				<p>乐视视频新用户注册完毕后直接登录乐视视频APP，点击“个人中心”-“开通会员”-“使用兑换码”-兑换</p>
+				<p>乐视视频老用户直接登录乐视视频APP，点击“个人中心”-“开通会员”-“使用兑换码”-兑换）</p>
+				<p class="note">乐视会员卡月卡仅限在“乐视PC端” 、“乐视APP” 使用。</p>
+				<p class="note">本次活动最终归属权归xx所有。</p>
+			</div>
+			<div class="how" v-show="how && type=='ticket'">
+				<p>打开淘票票APP或支付宝－淘票票，新用户注册完毕后，点击右下角-“我的”-选择“优惠券”-右上角点击“添加优惠券”-在输入框中输入兑换码，即添加成功。</p>
+				<p>淘票票老用户直接登录淘票票APP或支付宝－淘票票，点击右下角-“我的”-选择“优惠券”-右上角点击“添加优惠券”-在输入框中输入兑换码，即添加成功。</p>
+				<p class="note">电子兑换码仅限在“淘票票APP” 或支付宝－淘票票使用。</p>
+				<p class="note">本次活动最终归属权归xx所有。</p>
+			</div>
 		</div>
 		<div class="bottom"><img src="img/award-box-bottom.png" width="100%"></div>
 	</div>
