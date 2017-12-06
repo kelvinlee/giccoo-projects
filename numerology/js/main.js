@@ -23,7 +23,7 @@ $(document).ready(function load (){
     loadingAni()
 });
 
-
+var loadingTA=[$("#loadingT11"),$("#loadingT22"),$("#loadingT33"),$("#loadingT44"),$("#loadingT55"),$("#loadingT66"),$("#loadingT77")]
 $('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
 //====================LOADING=================
 function loadingAni(){
@@ -32,7 +32,12 @@ function loadingAni(){
   TweenLite.set($("#loadingC1"),{x:"-50%",y:"-50%"})
   TweenLite.set($("#loadingC2"),{x:"-50%",y:"-50%"})
   TweenLite.to($("#loadingC1"),10,{rotation:720,ease:Linear.easeOut})
-  TweenLite.to($("#loadingC2"),3,{rotation:-720,ease:Linear.easeIn,onUpdate:function(){ n = n+(Math.random()+0.3); if (n >= 100) {n = 100} $("#loadingT").text(parseInt(n)+"%") },onComplete:page1in})
+  TweenLite.to($("#loadingC2"),6,{rotation:-720,ease:Linear.easeIn,onUpdate:function(){ n = n+(Math.random()+0.3); if (n >= 100) {n = 100} $("#loadingT").text(parseInt(n)+"%") },onComplete:page1in})
+
+  for (var i =  0; i < loadingTA.length; i++) {
+    TweenLite.set(loadingTA[i],{width:"100%"})
+    TweenLite.from(loadingTA[i],2,{y:"+=50",opacity:0,delay:i*.5})
+  };
 }
 
 
@@ -112,7 +117,7 @@ function goGameHint(){
 }
 $(".hint").click(function(){
   //TweenLite.set(gameA[nowGame],{display:"block"})
-  TweenLite.to($("#gameHint" ),1,{display:"none",opacity:0})
+  TweenLite.to($("#gameHint" ),1,{display:"none",opacity:0,scale:1.5})
 })
 
 
@@ -122,11 +127,11 @@ var gameStateA=[0,0,0]//============0代表没玩，1代表玩了得一分，2�
 
 
 $("#g1btn1").click(function(){
-  gameStateA[0]=2;
+  gameStateA[0]=1;
   gameEnd();
 })
 $("#g1btn2").click(function(){
-  gameStateA[0]=1;
+  gameStateA[0]=2;
   gameEnd();
 })
 $("#g1btn3").click(function(){
@@ -147,7 +152,7 @@ $("#g2btn1").click(function(){
   setMusicGif();
 })
 $("#g2btn2").click(function(){
-  gameStateA[1]=1;
+  gameStateA[1]=2;
   gameEnd();
   audio1.pause();
   audio2.pause();
@@ -156,7 +161,7 @@ $("#g2btn2").click(function(){
   setMusicGif();
 })
 $("#g2btn3").click(function(){
-  gameStateA[1]=2;
+  gameStateA[1]=1;
   gameEnd();
   audio1.pause();
   audio2.pause();
@@ -241,6 +246,11 @@ var fire=$("#bigfire")
 var fireSize=0
 
 
+$("#g3btn").click(function(){
+  window.location.href="http://www.baidu.com";
+})
+
+
 $("body").on('touchstart',function (e){
   oldX=e.originalEvent.touches[0].pageX
   oldY=e.originalEvent.touches[0].pageY
@@ -259,7 +269,7 @@ $("body").on('touchstart',function (e){
   if(ifPlayingGame3==1&&nowY<downline&&nowY>topline){
     fireSize+=Math.sqrt((nowY-oldY)*(nowY-oldY)+(nowX-oldX)*(nowX-oldX))/Math.sqrt(screenW*screenW+screenH*screenH)/2
     //console.log(fireSize) 
-    console.log('nowY=',nowY,'   nowX=',nowX) 
+    //console.log('nowY=',nowY,'   nowX=',nowX) 
 
     Time= new Date()
     nowTime=Time.getTime()
@@ -277,7 +287,7 @@ var setInt
 var topline=360
 var downline=787
 
-var stage = new createjs.Stage("mianCanvas");
+var stage = new createjs.Stage("mainCanvas");
 //var sFire = new createjs.Bitmap("img/littleFire.png");
 
 var Time=new Date()
@@ -318,18 +328,24 @@ function setFireSize(){
   TweenLite.set(fire,{scale:fireSize,x:"-50%",y:"-50%",left:312/640*screenW,top:570/640*screenW})
   if(fireSize>=2){
     TweenLite.set($("#g3BG2"),{display:"block"})
+    TweenLite.set($("#g3btn"),{display:"block",y:981/750*screenW})
     TweenLite.to(fire,1,{scale:4,x:"-50%",y:"-50%",left:312/640*screenW,top:570/640*screenW,opacity:0,onComplete:game3done})
       TweenLite.set($("#theGif"),{display:"none"})
-   
+    $("#video")[0].play()
+    window.clearInterval(setInt);
+    TweenLite.set($("#mainCanvas"),{display:"none"})
+
+    //alert("dddd")
   }
 }
 
 function game3done(){
-  window.clearInterval(setInt);
+  //window.clearInterval(setInt);
+  TweenLite.set($("#bigfire"),{display:"none"})
   gameStateA[2]=1
   TweenLite.set($("#theGif"),{display:"block",x:24/640*screenW,y:260/640*screenW,width:600/640*screenW,height:392/640*screenW,opacity:1})
-  $("#video")[0].play()
-  TweenLite.to(fire,2.5,{onComplete:gameEnd})
+  // $("#video")[0].play()
+  TweenLite.to(fire,11.5,{onComplete:gameEnd})
 
  // gameEnd();
 }
@@ -407,7 +423,7 @@ function showGame(){
   TweenLite.set(gameA[nowGame],{display:"block"})
 
   
-  TweenLite.set($("#gameHint" ),{display:"block",opacity:1,overwrite:0})
+  TweenLite.set($("#gameHint" ),{display:"block",opacity:1,overwrite:0,scale:1})
   TweenLite.set(hintA[0],{display:"none",opacity:1})
   TweenLite.set(hintA[1],{display:"none",opacity:1})
   TweenLite.set(hintA[2],{display:"none",opacity:1})
