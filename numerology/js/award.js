@@ -39,16 +39,16 @@ window.onload = function () {
   if (body.offsetWidth >= 640) {
     body.className = "pc";
   }
-  return ask(function (data) {
-    var time;
-    console.log(data);
-    time = 0;
-    if (data.info != null) {
-      time = data.info.count - data.info.award;
-    }
-    initAward(time);
-    return initPop();
-  });
+  // return ask(function (data) {
+  //   var time;
+  //   console.log(data);
+  //   time = 0;
+  //   if (data.info != null) {
+  //     time = data.info.count - data.info.award;
+  //   }
+  //   initAward(time);
+  //   return initPop();
+  // });
 };
 
 openAward = function openAward() {

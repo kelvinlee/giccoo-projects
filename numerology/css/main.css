@@ -141,7 +141,7 @@ img{ width: 100%; }
 }
 
 
-#mianCanvas{
+#mainCanvas{
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -242,4 +242,10 @@ img{ width: 100%; }
 #theGif{
 	position: absolute;
 	display: none;
+}
+#g3btn{
+	width: 50%;
+	height: 100px;
+	left: 25%;
+	top: 50%;
 }
