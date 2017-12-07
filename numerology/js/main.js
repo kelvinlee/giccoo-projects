@@ -34,15 +34,39 @@ function loadingAni(){
   TweenLite.to($("#loadingC1"),10,{rotation:720,ease:Linear.easeOut})
   TweenLite.to($("#loadingC2"),6,{rotation:-720,ease:Linear.easeIn,onUpdate:function(){ n = n+(Math.random()+0.3); if (n >= 100) {n = 100} $("#loadingT").text(parseInt(n)+"%") },onComplete:page1in})
 
+  loadingSound.play()
+
   for (var i =  0; i < loadingTA.length; i++) {
     TweenLite.set(loadingTA[i],{width:"100%"})
     TweenLite.from(loadingTA[i],2,{y:"+=50",opacity:0,delay:i*.5})
   };
 }
+//===================音乐初始化=====================
+
+var bgm=document.getElementById("bgm");
+var fireSound=document.getElementById("fireSound");
+var g1Sound=document.getElementById("g1Sound");
+var g2Sound=document.getElementById("g2Sound");
+var g3Sound=document.getElementById("g3Sound");
+var failSound=document.getElementById("failSound");
+var loadingSound=document.getElementById("loadingSound");
+
+
+iniListenSound();
+
+function iniListenSound(){
+  document.addEventListener("WeixinJSBridgeReady",function(){
+    bgm.play()
+  },false)
+}
+
 
 
 //====================首页动画+互动============
 function page1in(){
+  loadingSound.pause()
+  //bgm.play()
+
   $("#loadingPG").css({"display":"none"})
   $("#page1").css({"display":"block"})
 
@@ -73,14 +97,17 @@ var nowGame=999
 
 $("#p1btn1").click(function(){
   nowGame=0;
+  g1Sound.play()
   goGameHint();
 })
 $("#p1btn2").click(function(){
   nowGame=1;
+  g2Sound.play()
   goGameHint();
 })
 $("#p1btn3").click(function(){
   nowGame=2;
+  g3Sound.play()
   goGameHint();
 })
 
@@ -118,6 +145,9 @@ function goGameHint(){
 $(".hint").click(function(){
   //TweenLite.set(gameA[nowGame],{display:"block"})
   TweenLite.to($("#gameHint" ),1,{display:"none",opacity:0,scale:1.5})
+  if(nowGame==2){
+    game3()
+  }
 })
 
 
@@ -258,6 +288,9 @@ $("body").on('touchstart',function (e){
   nowX=e.originalEvent.touches[0].pageX
   nowY=e.originalEvent.touches[0].pageY
    
+   if(ifPlayingGame3==1){
+    fireSound.play()
+   }
 
 }).on('touchmove',function (e){
   oldX=nowX
@@ -281,6 +314,10 @@ $("body").on('touchstart',function (e){
 
   }
 
+}).on('touchend',function(){
+
+    fireSound.pause()
+
 })
 
 var setInt
@@ -294,7 +331,7 @@ var Time=new Date()
 var lastTime
 var nowTime
 
-game3();
+//game3();
 
 
 function game3(){
@@ -311,6 +348,18 @@ function game3(){
   lastTime=Time.getTime()
   TweenLite.set($("#g3BG2"),{display:"none"})
   TweenLite.set($("#theGif"),{display:"block",opacity:0})
+
+  TweenLite.set(this,{delay:10,onComplete:game3fail})
+}
+
+function game3fail(){
+  if(ifPlayingGame3==1){
+    ifPlayingGame3=0
+    gameStateA[2]=2
+    gameEnd()
+  }
+
+  
 }
 
 function handleTick(event){
@@ -334,6 +383,7 @@ function setFireSize(){
     $("#video")[0].play()
     window.clearInterval(setInt);
     TweenLite.set($("#mainCanvas"),{display:"none"})
+    ifPlayingGame3=0
 
     //alert("dddd")
   }
@@ -368,6 +418,10 @@ function addFire(_x,_y){
 $("#btnAgain").click(function(){
   TweenLite.to($("#resultPage"),.5,{opacity:0})
   TweenLite.set($("#resultPage"),{display:"none",delay:.5})
+  if(nowGame==2){
+    ifPlayingGame3=1
+    setInt= window.setInterval(setFireSize,50);
+  }
 })
 
 $("#btnShare1").click(function(){
@@ -421,6 +475,9 @@ function showGame(){
   TweenLite.set(gameA[1],{display:"none"})
   TweenLite.set(gameA[2],{display:"none"})
   TweenLite.set(gameA[nowGame],{display:"block"})
+  // if(nowGame==2){
+  //   game3();
+  // }
 
   
   TweenLite.set($("#gameHint" ),{display:"block",opacity:1,overwrite:0,scale:1})
@@ -453,7 +510,7 @@ function gameEnd(){
   }else{
     TweenLite.set($("#rightBG"),{display:"none"})
     TweenLite.set($("#wrongBG"),{display:"block"})
-    
+    failSound.play()
     TweenLite.set(wtA[nowGame],{display:"block"})
   }
 
