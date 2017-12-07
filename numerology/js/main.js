@@ -34,7 +34,8 @@ function loadingAni(){
   TweenLite.to($("#loadingC1"),10,{rotation:720,ease:Linear.easeOut})
   TweenLite.to($("#loadingC2"),6,{rotation:-720,ease:Linear.easeIn,onUpdate:function(){ n = n+(Math.random()+0.3); if (n >= 100) {n = 100} $("#loadingT").text(parseInt(n)+"%") },onComplete:page1in})
 
-  loadingSound.play()
+  // loadingSound.play()
+  iniListenSound();
 
   for (var i =  0; i < loadingTA.length; i++) {
     TweenLite.set(loadingTA[i],{width:"100%"})
@@ -52,11 +53,11 @@ var failSound=document.getElementById("failSound");
 var loadingSound=document.getElementById("loadingSound");
 
 
-iniListenSound();
+
 
 function iniListenSound(){
   document.addEventListener("WeixinJSBridgeReady",function(){
-    bgm.play()
+    loadingSound.play()
   },false)
 }
 
@@ -65,7 +66,7 @@ function iniListenSound(){
 //====================首页动画+互动============
 function page1in(){
   loadingSound.pause()
-  //bgm.play()
+  bgm.play()
 
   $("#loadingPG").css({"display":"none"})
   $("#page1").css({"display":"block"})
