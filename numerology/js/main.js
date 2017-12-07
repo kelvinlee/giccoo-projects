@@ -32,13 +32,13 @@ function loadingAni(){
   TweenLite.set($("#loadingC1"),{x:"-50%",y:"-50%"})
   TweenLite.set($("#loadingC2"),{x:"-50%",y:"-50%"})
   TweenLite.to($("#loadingC1"),10,{rotation:720,ease:Linear.easeOut})
-  TweenLite.to($("#loadingC2"),6,{rotation:-720,ease:Linear.easeIn,onUpdate:function(){ n = n+(Math.random()+0.3); if (n >= 100) {n = 100} $("#loadingT").text(parseInt(n)+"%") },onComplete:page1in})
+  TweenLite.to($("#loadingC2"),6000,{rotation:-720,ease:Linear.easeIn,onUpdate:function(){ n = n+(Math.random()+0.3); if (n >= 100) {n = 100} $("#loadingT").text(parseInt(n)+"%") },onComplete:page1in})
 
   // loadingSound.play()
   iniListenSound();
 
   for (var i =  0; i < loadingTA.length; i++) {
-    TweenLite.set(loadingTA[i],{width:"100%"})
+    TweenLite.set(loadingTA[i],{width:"100%",y:"-50%"})
     TweenLite.from(loadingTA[i],2,{y:"+=50",opacity:0,delay:i*.5})
   };
 }
@@ -350,7 +350,7 @@ function game3(){
   TweenLite.set($("#g3BG2"),{display:"none"})
   TweenLite.set($("#theGif"),{display:"block",opacity:0})
 
-  TweenLite.set(this,{delay:10,onComplete:game3fail})
+  TweenLite.set(this,{delay:6,onComplete:game3fail})
 }
 
 function game3fail(){
