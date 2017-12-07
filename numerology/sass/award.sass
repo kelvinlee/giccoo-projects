@@ -16,6 +16,14 @@
 	.duration-#{$i}
 		animation-duration: $i*100ms
 
+.planet-note-enter-active
+	transition: all 1.6s ease
+.planet-note-leave-active
+	transition: all 1.6s ease
+.planet-note-enter, .planet-note-leave-to
+	transform: translateY(120px);
+	opacity: 0;
+
 .relative
 	+posr
 .page-award
@@ -156,3 +164,27 @@
 	video
 		+w(120%)
 		margin-left: -10%
+
+.note
+	+posa
+	+tl
+	+w
+	+h
+	+bc(rgba(0,0,0,0.9))
+	z-index: -1
+	&.show
+		z-index: 99999
+	.box
+		+posa
+		+tl(50%,10%)
+		+w(70%)
+		+p(5%)
+		+b(rgb(0,0,0))
+		+text-center
+		margin-top: -10%
+		// +transform(translate3d(-50%,-50%,0))
+		border: solid 1px #eee69c
+		color: #eee69c
+		p
+			+font-size(0.8rem)
+			line-height: 1.4em

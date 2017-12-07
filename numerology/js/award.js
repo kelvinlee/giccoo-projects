@@ -1,6 +1,6 @@
 "use strict";
 
-var _updateNames, apiURL, ask, ask_award, ask_my, ask_update, awardBox, awardPop, initAward, initPop, openAward, shareContent, updateShareContent;
+var _updateNames, apiURL, ask, ask_award, ask_my, ask_update, awardBox, awardPop, initAward, initNote, initPop, myCount, note, openAward, shareContent, updateShareContent;
 
 apiURL = "api.giccoo.com";
 
@@ -17,6 +17,10 @@ _updateNames = {
 awardPop = {};
 
 awardBox = {};
+
+myCount = 0;
+
+note = {};
 
 shareContent = {
   title: "奇门遁甲，乾坤万象，其乐无穷，12.15日，燃情上映！",
@@ -39,16 +43,18 @@ window.onload = function () {
   if (body.offsetWidth >= 640) {
     body.className = "pc";
   }
-  // return ask(function (data) {
-  //   var time;
-  //   console.log(data);
-  //   time = 0;
-  //   if (data.info != null) {
-  //     time = data.info.count - data.info.award;
-  //   }
-  //   initAward(time);
-  //   return initPop();
-  // });
+  return ask(function (data) {
+    var time;
+    console.log(data);
+    time = 0;
+    if (data.info != null) {
+      myCount = data.info.count;
+      time = data.info.count - data.info.award;
+    }
+    initAward(time);
+    initPop();
+    return initNote();
+  });
 };
 
 openAward = function openAward() {
@@ -67,6 +73,10 @@ initAward = function initAward(time) {
       go: function go() {
         var self;
         // @boxClass = "on"
+        if (myCount <= 0) {
+          note.send("你未达到抽奖资格<br/>分享到朋友圈可获得一次抽奖机会！");
+          return false;
+        }
         self = this;
         if (this.times - 1 > 0) {
           this.times = this.times - 1;
@@ -81,7 +91,8 @@ initAward = function initAward(time) {
               awardPop.type = type;
               awardPop.success = true;
               awardPop.code = code;
-              return $("#award-over").fadeIn();
+              $("#award-over").fadeIn();
+              return document.getElementsById("zhongjiang").play();
             }, 3500);
           } else {
             self.boxClass = "open none";
@@ -111,6 +122,40 @@ initAward = function initAward(time) {
       },
       default: function _default() {
         return this.boxClass = "on";
+      }
+    }
+  });
+};
+
+initNote = function initNote() {
+  return note = new Vue({
+    el: "#note",
+    data: {
+      notetext: "",
+      showtime: 4000,
+      timeout: null,
+      show: false,
+      boxshow: false
+    },
+    methods: {
+      close: function close() {
+        clearTimeout(this.timeout);
+        this.show = false;
+        return this.boxshow = false;
+      },
+      send: function send(text) {
+        var self;
+        clearTimeout(this.timeout);
+        self = this;
+        self.notetext = text;
+        self.show = true;
+        this.boxshow = true;
+        return this.timeout = setTimeout(function () {
+          self.boxshow = false;
+          return setTimeout(function () {
+            return self.show = false;
+          }, 500);
+        }, this.showtime);
       }
     }
   });
@@ -172,17 +217,18 @@ ask_update = function ask_update(i) {
   if (_updateNames[name]) {
     return false;
   }
+  myCount++;
   return axios.get("http://" + apiURL + "/wechat/numerology/update/").then(function (msg) {
     console.log("msg:", msg.data);
     if (msg.data.recode === 200) {
       _updateNames[name] = true;
       return awardBox.times = awardBox.times + 1;
     } else if (msg.data.recode === 201) {
-      return alert("请使用微信打开此页面参与活动");
+      return note.send("请使用微信打开此页面参与活动");
     }
     // else
   }).catch(function (err) {
-    return alert("服务器请求失败,请重试");
+    return note.send("服务器请求失败,请重试");
   });
 };
 
@@ -195,10 +241,10 @@ ask_award = function ask_award(callback) {
     } else if (msg.data.recode === 301) {
       return callback(301);
     } else {
-      return alert(msg.data.reason);
+      return note.send(msg.data.reason);
     }
   }).catch(function (err) {
-    return alert("服务器请求失败,请重试");
+    return note.send("服务器请求失败,请重试");
   });
 };
 
@@ -208,10 +254,10 @@ ask_my = function ask_my(callback) {
     if (msg.data.recode === 200) {
       return callback(msg.data.info);
     } else {
-      return alert(msg.data.reason);
+      return note.send(msg.data.reason);
     }
   }).catch(function (err) {
-    return alert("服务器请求失败,请重试");
+    return note.send("服务器请求失败,请重试");
   });
 };
 

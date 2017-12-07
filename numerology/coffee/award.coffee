@@ -8,6 +8,8 @@ _updateNames =
 	share: false
 awardPop = {}
 awardBox = {}
+myCount = 0
+note = {}
 shareContent =
 	title: "奇门遁甲，乾坤万象，其乐无穷，12.15日，燃情上映！",
 	desc: "乾坤万象，其乐无穷，12.15日，燃情上映！",
@@ -27,9 +29,11 @@ window.onload = ->
 		console.log data
 		time = 0
 		if data.info?
+			myCount = data.info.count
 			time = data.info.count - data.info.award
 		initAward time
 		initPop()
+		initNote()
 
 openAward = ->
 	$("#award").fadeIn()
@@ -44,6 +48,9 @@ initAward = (time)->
 		methods:
 			go: ->
 				# @boxClass = "on"
+				if myCount <= 0
+					note.send "你未达到抽奖资格<br/>分享到朋友圈可获得一次抽奖机会！"
+					return false
 				self = @
 				@times = @times - 1 if (@times - 1) > 0
 				ask_award (recode,type = "none",code)->
@@ -54,6 +61,7 @@ initAward = (time)->
 							awardPop.success = true
 							awardPop.code = code
 							$("#award-over").fadeIn()
+							document.getElementsById("zhongjiang").play()
 						,3500
 					else
 						self.boxClass = "open none"
@@ -76,6 +84,34 @@ initAward = (time)->
 				$("#award").fadeOut()
 			default: ->
 				@boxClass = "on"
+
+initNote = ->
+	note = new Vue
+		el: "#note"
+		data:
+			notetext: ""
+			showtime: 4000
+			timeout: null
+			show: false
+			boxshow: false
+		methods:
+			close: ->
+				clearTimeout @timeout
+				@show = false
+				@boxshow = false
+			send: (text)->
+				clearTimeout @timeout
+				self = @
+				self.notetext = text
+				self.show = true
+				@boxshow = true
+				@timeout = setTimeout ->
+					self.boxshow = false
+					setTimeout ->
+						self.show = false
+					,500
+				,@showtime
+
 
 initPop = ->
 	awardPop = new Vue
@@ -115,6 +151,7 @@ ask_update = (i)->
 		shareContent.title = "我的江湖绝学是雾隐门排行第七的“霹雳火”！ 12.15日《奇门遁甲》全国首映，侠客天团强势来袭，热血江湖等你来战！" if i is 2
 		updateShareContent shareContent
 	return false if _updateNames[name]
+	myCount++
 	axios.get "http://"+apiURL+"/wechat/numerology/update/"
 	.then (msg)->
 		console.log "msg:",msg.data
@@ -122,10 +159,10 @@ ask_update = (i)->
 			_updateNames[name] = true
 			awardBox.times = awardBox.times + 1
 		else if msg.data.recode is 201
-			alert "请使用微信打开此页面参与活动"
+			note.send "请使用微信打开此页面参与活动"
 		# else
 	.catch (err)->
-		alert "服务器请求失败,请重试"
+		note.send "服务器请求失败,请重试"
 
 ask_award = (callback)->
 	axios.get "http://"+apiURL+"/wechat/numerology/award/"
@@ -137,9 +174,9 @@ ask_award = (callback)->
 		else if msg.data.recode is 301
 			callback 301
 		else
-			alert msg.data.reason
+			note.send msg.data.reason
 	.catch (err)->
-		alert "服务器请求失败,请重试"
+		note.send "服务器请求失败,请重试"
 
 ask_my = (callback)->
 	axios.get "http://"+apiURL+"/wechat/numerology/my/"
@@ -148,9 +185,9 @@ ask_my = (callback)->
 		if msg.data.recode is 200
 			callback msg.data.info
 		else
-			alert msg.data.reason
+			note.send msg.data.reason
 	.catch (err)->
-		alert "服务器请求失败,请重试"
+		note.send "服务器请求失败,请重试"
 
 updateShareContent = (shareContent)->
 	console.log shareContent

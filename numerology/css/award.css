@@ -657,6 +657,19 @@ ul {
   -webkit-animation-duration: 3000ms;
           animation-duration: 3000ms; }
 
+.planet-note-enter-active {
+  -webkit-transition: all 1.6s ease;
+  transition: all 1.6s ease; }
+
+.planet-note-leave-active {
+  -webkit-transition: all 1.6s ease;
+  transition: all 1.6s ease; }
+
+.planet-note-enter, .planet-note-leave-to {
+  -webkit-transform: translateY(120px);
+          transform: translateY(120px);
+  opacity: 0; }
+
 .relative {
   position: relative; }
 
@@ -889,3 +902,42 @@ ul {
   #theGif video {
     width: 120%;
     margin-left: -10%; }
+
+.note {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: -1; }
+  .note.show {
+    z-index: 99999; }
+  .note .box {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 70%;
+    padding: 5%;
+    background: url(black) no-repeat top left;
+    background-size: initial;
+    background-color: transparent;
+    text-align: center;
+    margin-top: -10%;
+    border: solid 1px #eee69c;
+    color: #eee69c; }
+    .note .box p {
+      font-size: 0.8rem;
+      line-height: 1.4em; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .note .box p {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .note .box p {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .note .box p {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .note .box p {
+          font-size: 0.96rem; } }
