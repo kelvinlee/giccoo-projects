@@ -38,7 +38,7 @@ function loadingAni(){
   iniListenSound();
 
   for (var i =  0; i < loadingTA.length; i++) {
-    TweenLite.set(loadingTA[i],{width:"100%",y:"-50%"})
+    TweenLite.set(loadingTA[i],{width:"100%",x:"-50%",y:"-50%"})
     TweenLite.from(loadingTA[i],2,{y:"+=50",opacity:0,delay:i*.5})
   };
 }
