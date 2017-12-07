@@ -47,8 +47,8 @@ block content
 				.content
 					.title
 						img(src="#{url}img/planet-title.png")
-					.text-list
-						p.fadeInUp.animated.duration-10(v-for="(text,index) in texts",:class="'delay-'+index*3") {{text}}
+					#textcontent.text-list
+						p.animated.duration-10(v-for="(text,index) in texts",:class="{overhide: overhide,fadeInUp: index<=6,fadeIn: index > 6,hide: !info[index]}",v-html="text")
 				.btn-start.fadeIn.animated.delay-26.duration-10(@click.prevent.stop="getStart")
 					img(src="#{url}img/btn-start.png")
 
@@ -57,10 +57,10 @@ block content
 				#planets
 					.planets-note-text(v-show="shownotetext")
 						.texts
-							p.fadeInUp.animated.delay-5 每完成一个探索，即获得一枚北鼻勋章。
-							p.fadeInUp.animated.delay-7 重复探索同一星球只会获得一枚北鼻勋章。
-							p.fadeInUp.animated.delay-9 集齐五枚勋章，赢取皇家尊礼。
-							p.fadeInUp.animated.delay-11 您当前拥有{{openlist.length}}枚勋章。
+							p.fadeInUp.animated.delay-5 恭喜你！
+							p.fadeInUp.animated.delay-7 你完成一颗天真星球的探索，
+							p.fadeInUp.animated.delay-9 获得了{{openlist.length}}枚萌萌哒北鼻勋章。
+							p.fadeInUp.animated.delay-11 继续加油探索吧！
 				transition(name="planet-note")
 					.planets-note(v-show="shownote")
 						.box(@click.prevent.stop="startG")

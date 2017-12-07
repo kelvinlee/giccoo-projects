@@ -177,61 +177,61 @@ markers = markers.concat [
 		id: "planet-1"
 		x: 0
 		y: defaultY+380
-		html: '<div id="planet-1" class="planet planet-1"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-1.png" /></div>'
+		html: '<div id="planet-1" class="planet planet-1"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div class="msg-note note-1"><div class="message"><p>哎，兔子又来找我赛跑</p></div></div><div class="msg-note note-2"><div class="message"><p>这次你脱了衣服试试</p></div></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-1.png" /></div>'
 	}
 	{
 		id: "planet-2"
 		x: 500
 		y: defaultY+200
-		html: '<div id="planet-2" class="planet planet-2"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-2.png" /></div>'
+		html: '<div id="planet-2" class="planet planet-2"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div class="msg-note note-1"><div class="message"><p>喝完牛奶长白胡子啦</p></div></div><div class="msg-note note-2"><div class="message"><p>奶牛偷偷亲了你一下吖</p></div></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-2.png" /></div>'
 	}
 	{
 		id: "planet-3"
 		x: 1000
 		y: defaultY+300
-		html: '<div id="planet-3" class="planet planet-3"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-3.png" /></div>'
+		html: '<div id="planet-3" class="planet planet-3"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div class="msg-note note-1"><div class="message"><p>小鸟，我想跟你一起玩</p></div></div><div class="msg-note note-2"><div class="message"><p>那你能先学会飞吗？</p></div></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-3.png" /></div>'
 	}
 	{
 		id: "planet-4"
 		x: 1500
 		y: defaultY+360
-		html: '<div id="planet-4" class="planet planet-4"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-4.png" /></div>'
+		html: '<div id="planet-4" class="planet planet-4"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div class="msg-note note-1"><div class="message"><p>哇，下❄️了</p></div></div><div class="msg-note note-2"><div class="message"><p>来首freestyle吧，哞～</p></div></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-4.png" /></div>'
 	}
 	{
 		id: "planet-5"
 		x: 2000
 		y: defaultY+260
-		html: '<div id="planet-5" class="planet planet-5"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-5.png" /></div>'
+		html: '<div id="planet-5" class="planet planet-5"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div class="msg-note note-1"><div class="message"><p>竹子好好吃</p></div></div><div class="msg-note note-2"><div class="message"><p>牙口棒，吃嘛嘛香</p></div></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-5.png" /></div>'
 	}
 	{
 		id: "planet-10"
 		x: 2500
 		y: defaultY+380
-		html: '<div id="planet-10" class="planet planet-1"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-1.png" /></div>'
+		html: '<div id="planet-10" class="planet planet-1"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div class="msg-note note-1"><div class="message"><p>哎，兔子又来找我赛跑</p></div></div><div class="msg-note note-2"><div class="message"><p>这次你脱了衣服试试</p></div></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-1.png" /></div>'
 	}
 	{
 		id: "planet-20"
 		x: 3000
 		y: defaultY+200
-		html: '<div id="planet-20" class="planet planet-2"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-2.png" /></div>'
+		html: '<div id="planet-20" class="planet planet-2"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div class="msg-note note-1"><div class="message"><p>喝完牛奶长白胡子啦</p></div></div><div class="msg-note note-2"><div class="message"><p>奶牛偷偷亲了你一下吖</p></div></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-2.png" /></div>'
 	}
 	{
 		id: "planet-30"
 		x: 3500
 		y: defaultY+300
-		html: '<div id="planet-30" class="planet planet-3"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-3.png" /></div>'
+		html: '<div id="planet-30" class="planet planet-3"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div class="msg-note note-1"><div class="message"><p>小鸟，我想跟你一起玩</p></div></div><div class="msg-note note-2"><div class="message"><p>那你能先学会飞吗？</p></div></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-3.png" /></div>'
 	}
 	{
 		id: "planet-40"
 		x: 4000
 		y: defaultY+360
-		html: '<div id="planet-40" class="planet planet-4"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-1.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-4.png" /></div>'
+		html: '<div id="planet-40" class="planet planet-4"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div class="msg-note note-1"><div class="message"><p>哇，下❄️了</p></div></div><div class="msg-note note-2"><div class="message"><p>来首freestyle吧，哞～</p></div></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-4.png" /></div>'
 	}
 	{
 		id: "planet-50"
 		x: 4500
 		y: defaultY+260
-		html: '<div id="planet-50" class="planet planet-5"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div v-if="!overreaded" class="msg-note"><img src="'+_CDN+'img/msg-note-2.png" /></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-5.png" /></div>'
+		html: '<div id="planet-50" class="planet planet-5"><div class="cloud"><img src="'+_CDN+'img/cloud-1.png" /></div><div class="cloud2"><img src="'+_CDN+'img/cloud-2.png" /></div><div class="music-symbol"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol small"><img src="'+_CDN+'img/music2.png" /></div><div class="music-symbol large"><img src="'+_CDN+'img/music1.png" /></div><div class="music-symbol medium"><img src="'+_CDN+'img/music2.png" /></div><div class="msg-note note-1"><div class="message"><p>竹子好好吃</p></div></div><div class="msg-note note-2"><div class="message"><p>牙口棒，吃嘛嘛香</p></div></div><div v-if="overreaded" class="planet-medal animated fadeIn duration-10"><img src="'+_CDN+'img/planet-medal.png" /></div><img src="'+_CDN+'img/planet-5.png" /></div>'
 	}
 ]
 
@@ -267,16 +267,42 @@ window.onload = ->
 		el: "#page-one"
 		data:
 			notShowTime: true
+			info: []
 			texts:[
-				"每个天真星球上"
-				"都藏着一个脑洞大开的"
-				"天真提问"
-				"和皇家美素佳儿"
-				"一起探索星球"
-				"用知识穿越孩次元"
+				"人类世界即将迎来新年的欢聚"
+				"当然少不了宝宝们的戏份"
+				"他们脑洞大开的十万个为什么"
+				"你，准备好见招拆招了吗？"
+				"&nbsp;"
+				"在孩次元的宇宙中"
+				"每一个天真星球"
+				"有一群知识渊博的公民"
+				"讨论着一个脑洞大开的天真提问"
+				"&nbsp;"
+				"即刻开始唤醒知识"
+				"与皇家美素佳儿一起"
+				"进入孩次元的宇宙"
+				"探索天真星球"
 			]
-
+			mytimeout: null
+			overhide: true
 		methods:
+			runMessage: (i)->
+				clearTimeout @mytimeout
+				if i >= @texts.length
+					@overhide = false
+					return false 
+				@info.push true
+				i++
+				@mytimeout = setTimeout =>
+					@runMessage(i)
+					@autoScroll()
+				,600
+			autoScroll: ->
+				dom = document.getElementById("textcontent")
+				if dom.scrollHeight < dom.offsetHeight
+					return false
+				createjs.Tween.get(dom).wait(100).to({scrollTop: dom.scrollHeight},400,createjs.Ease.linear)
 			getStart: ->
 				@notShowTime = true
 				planetstars.show = true
@@ -288,6 +314,7 @@ window.onload = ->
 			console.log "created. ready to animation"
 			load.loadend = true
 			@notShowTime = false
+			@runMessage(0)
 			document.getElementById("main").style.display = "block"
 			
 	document.addEventListener "WeixinJSBridgeReady",->
