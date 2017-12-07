@@ -469,9 +469,18 @@ function nextGame(){
     showGame()
   }else{
     // alert("玩完了去抽奖")
+
     goPrize()
   }
 }
+
+function resetGame(){
+  if(gameStateA[0]==2){gameStateA[0]=0}
+  if(gameStateA[1]==2){gameStateA[1]=0}
+  if(gameStateA[2]==2){gameStateA[2]=0}
+   nextGame() 
+}
+
 function showGame(){
   TweenLite.to($("#resultPage"),.5,{opacity:0})
   TweenLite.set($("#resultPage"),{display:"none",delay:.5})
