@@ -52,6 +52,8 @@ var g3Sound=document.getElementById("g3Sound");
 var failSound=document.getElementById("failSound");
 var loadingSound=document.getElementById("loadingSound");
 
+var g3failSound=document.getElementById("g3failSound");
+
 
 
 
@@ -352,6 +354,8 @@ function game3(){
   TweenLite.set($("#theGif"),{display:"block",opacity:0})
 
   TweenLite.set(this,{delay:6,onComplete:game3fail})
+  g3failSound.currentTime=0
+  g3failSound.play()
 }
 
 function game3fail(){
@@ -387,7 +391,7 @@ function setFireSize(){
     window.clearInterval(setInt);
     TweenLite.set($("#mainCanvas"),{display:"none"})
     ifPlayingGame3=0
-
+    g3failSound.pause()
     //alert("dddd")
   }
 }
@@ -425,6 +429,8 @@ $("#btnAgain").click(function(){
     ifPlayingGame3=1
     //setInt= window.setInterval(setFireSize,50);
     TweenLite.set(this,{delay:6,onComplete:game3fail})
+    g3failSound.currentTime=0
+    g3failSound.play()
   }
 })
 
