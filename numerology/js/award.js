@@ -118,9 +118,9 @@ initAward = function initAward(time) {
         });
       },
       back: function back() {
-        $("#award").fadeOut();
-        return resetGame();
+        return $("#award").fadeOut();
       },
+      // resetGame()
       default: function _default() {
         return this.boxClass = "on";
       }

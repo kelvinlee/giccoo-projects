@@ -159,11 +159,26 @@
 		color: #aaa
 
 #theGif
+	+show
 	+overhide
 	border-radius: 8%
+	+w(320px)
+	+h(320px)
+	opacity: 0
+	z-index: -1
 	video
 		+w(120%)
 		margin-left: -10%
+		+posa
+		+tl
+		z-index: 100
+	#videogame
+		+posa
+		// +tl(-1000px,-100px)
+		+tl
+		+w(70%)
+		z-index: 1000
+		opacity: 1
 
 .note-pop
 	+posa
@@ -188,3 +203,13 @@
 		p
 			+font-size(0.8rem)
 			line-height: 1.4em
+
+
+
+// #game3
+// 	+show
+// 	z-index: 1000
+// 	#theGif
+// 		+show
+// 	#bigfire,#mainCanvas
+// 		+hide

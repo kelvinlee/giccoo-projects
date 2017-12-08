@@ -21,6 +21,12 @@ $(document).ready(function load() {
   });
 
   loadingAni();
+  $("#video")[0].addEventListener("timeupdate", function () {
+    console.log(this.currentTime);
+    if (ifPlayingGame3 != 0 && this.currentTime > 1.5 && this.currentTime < 2.9) {
+      this.currentTime = 0;
+    }
+  });
 });
 
 var loadingTA = [$("#loadingT11"), $("#loadingT22"), $("#loadingT33"), $("#loadingT44"), $("#loadingT55"), $("#loadingT66"), $("#loadingT77")];
@@ -275,7 +281,7 @@ $("#g3btn").click(function () {
   window.location.href = "http://www.baidu.com";
 });
 
-$("body").on('touchstart', function (e) {
+$("#game3").on('touchstart', function (e) {
   oldX = e.originalEvent.touches[0].pageX;
   oldY = e.originalEvent.touches[0].pageY;
 
@@ -304,8 +310,12 @@ $("body").on('touchstart', function (e) {
     }
   }
 }).on('touchend', function () {
-
   fireSound.pause();
+  // setTimeout(function(){
+  //   if (fireSize>2) {
+  //     $("#video")[0].play()
+  //   }
+  // },300)
 });
 
 var setInt;
@@ -335,9 +345,13 @@ function game3() {
   Time = new Date();
   lastTime = Time.getTime();
   TweenLite.set($("#g3BG2"), { display: "none" });
-  TweenLite.set($("#theGif"), { display: "block", opacity: 0 });
+  // TweenLite.set($("#theGif"),{display:"block",opacity:0})
+  // TweenLite.set($("#theGif"),{display:"block"})
 
   TweenLite.set(this, { delay: 6, onComplete: game3fail });
+
+  $("#video")[0].currentTime = 0;
+  $("#video")[0].play();
 }
 
 function game3fail() {
@@ -353,7 +367,6 @@ function handleTick(event) {
 }
 
 function setFireSize() {
-
   fireSize -= 0.1 / 4;
 
   fireSize = Math.max(fireSize, 0);
@@ -362,8 +375,8 @@ function setFireSize() {
     TweenLite.set($("#g3BG2"), { display: "block" });
     TweenLite.set($("#g3btn"), { display: "block", y: 981 / 750 * screenW });
     TweenLite.to(fire, 1, { scale: 4, x: "-50%", y: "-50%", left: 312 / 640 * screenW, top: 570 / 640 * screenW, opacity: 0, onComplete: game3done });
-    TweenLite.set($("#theGif"), { display: "none" });
-    $("#video")[0].play();
+    // TweenLite.set($("#theGif"),{display:"none"})
+    $("#video")[0].currentTime = 3;
     window.clearInterval(setInt);
     TweenLite.set($("#mainCanvas"), { display: "none" });
     ifPlayingGame3 = 0;
@@ -376,8 +389,8 @@ function game3done() {
   //window.clearInterval(setInt);
   TweenLite.set($("#bigfire"), { display: "none" });
   gameStateA[2] = 1;
+  $("#theGif").css({ zIndex: 1000 });
   TweenLite.set($("#theGif"), { display: "block", x: 24 / 640 * screenW, y: 260 / 640 * screenW, width: 600 / 640 * screenW, height: 392 / 640 * screenW, opacity: 1 });
-  // $("#video")[0].play()
   TweenLite.to(fire, 11.5, { onComplete: gameEnd });
 
   // gameEnd();
@@ -491,6 +504,8 @@ var rtA = [$("#r1t"), $("#r2t"), $("#r3t")];
 var wtA = [$("#w1t"), $("#w2t"), $("#w3t")];
 function gameEnd() {
 
+  $("#video")[0].pause();
+  $("#theGif").css({ opacity: 0 });
   TweenLite.set(rtA[0], { display: "none" });
   TweenLite.set(rtA[1], { display: "none" });
   TweenLite.set(rtA[2], { display: "none" });

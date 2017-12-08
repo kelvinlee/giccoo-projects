@@ -82,7 +82,7 @@ initAward = (time)->
 						$("#award-over").fadeIn()
 			back: ->
 				$("#award").fadeOut()
-				resetGame()
+				# resetGame()
 			default: ->
 				@boxClass = "on"
 

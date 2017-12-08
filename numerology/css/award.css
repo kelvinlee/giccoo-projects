@@ -897,11 +897,27 @@ ul {
       font-size: 0.72rem; } }
 
 #theGif {
+  display: block;
   overflow: hidden;
-  border-radius: 8%; }
+  border-radius: 8%;
+  width: 320px;
+  height: 320px;
+  opacity: 0;
+  z-index: -1; }
   #theGif video {
     width: 120%;
-    margin-left: -10%; }
+    margin-left: -10%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 100; }
+  #theGif #videogame {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 70%;
+    z-index: 1000;
+    opacity: 1; }
 
 .note-pop {
   position: absolute;
