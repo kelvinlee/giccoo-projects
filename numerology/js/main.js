@@ -465,31 +465,31 @@ function showShare(){
 }
 var gSound=[g1Sound,g2Sound,g3Sound]
 function nextGame(){
-  // if(gameStateA[0]==0){
-  //   nowGame=0
-  //   g1Sound.play();
-  //   showGame()
-  // }else if(gameStateA[1]==0){
-  //   nowGame=1
-  //   g2Sound.play();
-  //   showGame()
-  // }else if(gameStateA[2]==0){
-  //   nowGame=2
-  //   g3Sound.play();
-  //   showGame()
-  // }else{
-  //   // alert("玩完了去抽奖")
-
-  //   goPrize()
-  // }
-  nowGame++
-  if(nowGame>=3){
+  if(gameStateA[0]==0){
     nowGame=0
+    g1Sound.play();
+    showGame()
+  }else if(gameStateA[1]==0){
+    nowGame=1
+    g2Sound.play();
+    showGame()
+  }else if(gameStateA[2]==0){
+    nowGame=2
+    g3Sound.play();
+    showGame()
+  }else{
+    // alert("玩完了去抽奖")
+
+    //goPrize()
   }
-  gSound[nowGame].play()
+  // nowGame++
+  // if(nowGame>=3){
+  //   nowGame=0
+  // }
+  // gSound[nowGame].play()
 
 
-  showGame()
+  // showGame()
 
 }
 
@@ -550,6 +550,11 @@ function gameEnd(){
     TweenLite.set($("#wrongBG"),{display:"block"})
     failSound.play()
     TweenLite.set(wtA[nowGame],{display:"block"})
+    if(gameStateA[0]+gameStateA[1]+gameStateA[2]==5&&gameStateA[nowGame]==2){
+      TweenLite.set($("#wrongAllBG"),{display:"block"})
+      TweenLite.set($("#btnNext2"),{display:"none"})
+      // alert("?")
+    }
   }
 
 
