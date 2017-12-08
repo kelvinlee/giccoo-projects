@@ -427,7 +427,7 @@ $("#btnAgain").click(function(){
   TweenLite.set($("#resultPage"),{display:"none",delay:.5})
   if(nowGame==2){
     ifPlayingGame3=1
-    //setInt= window.setInterval(setFireSize,50);
+    setInt= window.setInterval(setFireSize,50);
     TweenLite.set(this,{delay:6,onComplete:game3fail})
     g3failSound.currentTime=0
     g3failSound.play()
