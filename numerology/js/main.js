@@ -477,10 +477,21 @@ function nextGame(){
     nowGame=2
     g3Sound.play();
     showGame()
-  }else{
+  }else if(gameStateA[0]==2){
     // alert("玩完了去抽奖")
 
     //goPrize()
+    nowGame=0
+    g1Sound.play();
+    showGame()
+  }else if(gameStateA[1]==2){
+    nowGame=1
+    g1Sound.play();
+    showGame()
+  }else if(gameStateA[2]==2){
+    nowGame=2
+    g1Sound.play();
+    showGame()
   }
   // nowGame++
   // if(nowGame>=3){
