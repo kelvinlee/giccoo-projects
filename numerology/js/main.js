@@ -339,6 +339,7 @@ function game3(){
   ifPlayingGame3=1
   topline=screenW/640*360
   downline=screenW/640*787
+  window.clearInterval(setInt);
   setInt= window.setInterval(setFireSize,50);
   //window.clearInterval(setInt);
 
@@ -355,6 +356,7 @@ function game3(){
 
 function game3fail(){
   if(ifPlayingGame3==1){
+    window.clearInterval(setInt);
     ifPlayingGame3=0
     gameStateA[2]=2
     gameEnd()
@@ -421,7 +423,8 @@ $("#btnAgain").click(function(){
   TweenLite.set($("#resultPage"),{display:"none",delay:.5})
   if(nowGame==2){
     ifPlayingGame3=1
-    setInt= window.setInterval(setFireSize,50);
+    //setInt= window.setInterval(setFireSize,50);
+    TweenLite.set(this,{delay:6,onComplete:game3fail})
   }
 })
 
