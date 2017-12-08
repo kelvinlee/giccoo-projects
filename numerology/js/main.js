@@ -539,6 +539,11 @@ function gameEnd(){
     TweenLite.set($("#wrongBG"),{display:"none"})
     TweenLite.set(rtA[nowGame],{display:"block"})
     ask_update(nowGame)
+
+    if(gameStateA==[1,1,1]){
+      TweenLite.set($("#rightAllBG"),{display:"block"})
+      TweenLite.set($("#btnNext1"),{display:"none"})
+    }
   }else{
     TweenLite.set($("#rightBG"),{display:"none"})
     TweenLite.set($("#wrongBG"),{display:"block"})
