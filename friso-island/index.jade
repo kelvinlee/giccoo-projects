@@ -49,7 +49,7 @@ block content
 						img(src="#{url}img/planet-title.png")
 					#textcontent.text-list
 						.content-text.moveTop(:class="{move: animate,go: animate}")
-							p.fadeInUp.animated.duration-10(v-for="(text,index) in texts",:class="'delay-'+(index*4+5)",v-html="text")
+							p.fadeInUp.animated.duration-7(v-for="(text,index) in texts",:class="'delay-'+(index*4+5)",v-html="text")
 				.btn-start.fadeIn.animated.delay-26.duration-10(@click.prevent.stop="getStart")
 					img(src="#{url}img/btn-start.png")
 
