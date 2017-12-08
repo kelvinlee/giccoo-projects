@@ -45,7 +45,7 @@ img{ width: 100%; }
 .alphaBtn{
 	position: absolute;
 	background: #990099;
-	opacity: 0;/*========================= 透明按钮改这里 =========================*/
+	opacity: 0.5;/*========================= 透明按钮改这里 =========================*/
 	-webkit-tap-highlight-color: transparent;
 			tap-highlight-color: transparent;
 }

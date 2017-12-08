@@ -543,6 +543,7 @@ function gameEnd(){
     if(gameStateA[0]*gameStateA[1]*gameStateA[2]==1){
       TweenLite.set($("#rightAllBG"),{display:"block"})
       TweenLite.set($("#btnNext1"),{display:"none"})
+      alert("?")
     }
   }else{
     TweenLite.set($("#rightBG"),{display:"none"})
