@@ -8,7 +8,7 @@ $cdn : "../"
 	$cdn : "http://image.giccoo.com/projects/friso-island/"
 
 // animation, delay, duration
-@for $i from 1 through 30
+@for $i from 1 through 60
 	.delay-#{$i}
 		animation-delay: $i*100ms
 	.duration-#{$i}
@@ -408,6 +408,19 @@ body.pop-open
 			+m
 		.text-list
 			margin-top: 15px
+			margin-left: 5%
+			+w(90%)
+			+h(1.8em*6)
+			+font-size(0.9rem)
+			+overhide
+			.content-text
+				&.move
+					transition: all 4.2s linear
+					transition-delay: 1.8s
+				&.go
+					+transform(translate3d(0,-1.8em*8,0))
+			&.overhide
+				+overhide
 			p
 				+m
 				color: #81500b
@@ -456,10 +469,10 @@ body.pop-open
 			+posa
 			+tl
 			z-index: 11
-		.msg-note
-			+w(40%)
-			+posa
-			+tl(10%)
+		// .msg-note
+			// +w(40%)
+		// 	+posa
+		// 	+tl(10%)
 
 
 .psv-container
@@ -524,7 +537,7 @@ body.pop-open
 	// +b($cdn+"img/note-bg.png",no-repeat,center,center,cover)
 	+bc(rgba(237,226,196,0.6))
 	z-index: 199
-	+hide
+	// +hide
 	.box
 		+posa
 		+tl(50%)
@@ -607,3 +620,110 @@ body.pop-open
 		+animation(symbolFly2,3.5s,ease-in,infinite)
 		+tl(70%,60%)
 
+.planet
+	.msg-note
+		+posa
+		+tl
+		min-width: 100px
+		height: 45px
+		line-height: 34px
+	.message
+		+w
+		+posr
+		+h
+		+b($cdn+"img/msg-note-center.png",repeat,left,top,auto 100%)
+		+font-size(0.8rem)
+		p
+			+m
+			+p
+			white-space: nowrap
+		&:before
+			content: " "
+			+show
+			+posa
+			+tl(0,-10px)
+			+w(10px)
+			+h
+			+b($cdn+"img/msg-note-left.png",no-repeat,left,top,cover)
+		&:after
+			content: " "
+			+show
+			+posa
+			+tr(0,-20px/2)
+			+w(65px/2)
+			+h
+			+b($cdn+"img/msg-note-right.png",no-repeat,right,top,cover)
+			z-index: -1
+
+.psv-marker--visible
+
+	.planet-1
+		.note-1
+			+tl(10%,-10%)
+			.message
+				+animation(bounceIn,1s,ease)
+				animation-delay: 700ms
+		.note-2
+			+tl(7%,45%)
+			+transform(scale3d(-1,1,1))
+			p
+				+transform(scale3d(-1,1,1))	
+			.message
+				+animation(bounceIn,1s,ease)
+				animation-delay: 1200ms
+	.planet-2
+		.note-1
+			+tl(10%,12%)
+			.message
+				+animation(bounceIn,1s,ease)
+				animation-delay: 700ms
+		.note-2
+			+tl(4%,62%)
+			+transform(scale3d(-1,1,1))
+			p
+				+transform(scale3d(-1,1,1))	
+			.message
+				+animation(bounceIn,1s,ease)
+				animation-delay: 1200ms
+	.planet-3
+		.note-1
+			+tl(24%,12%)
+			.message
+				+animation(bounceIn,1s,ease)
+				animation-delay: 700ms
+		.note-2
+			+tl(-4%,32%)
+			// +transform(scale3d(-1,1,1))
+			// p
+			// 	+transform(scale3d(-1,1,1))	
+			.message
+				+animation(bounceIn,1s,ease)
+				animation-delay: 1200ms
+	.planet-4
+		.note-1
+			+tl(12%,12%)
+			.message
+				+animation(bounceIn,1s,ease)
+				animation-delay: 700ms
+		.note-2
+			+tl(18%,62%)
+			+transform(scale3d(-1,1,1))
+			p
+				+transform(scale3d(-1,1,1))	
+			.message
+				+animation(bounceIn,1s,ease)
+				animation-delay: 1200ms
+	.planet-5
+		.note-1
+			+tl(12%,17%)
+			.message
+				+animation(bounceIn,1s,ease)
+				animation-delay: 700ms
+		.note-2
+			+tl(18%,59%)
+			+transform(scale3d(-1,1,1))
+			p
+				+transform(scale3d(-1,1,1))	
+			.message
+				+animation(bounceIn,1s,ease)
+				animation-delay: 1200ms

@@ -51,11 +51,13 @@
           <div class="planet blur planet-5"><img src="./img/planet-5.png"></div>
         </div>
         <div class="texts fadeIn animated">
-          <div class="bg-box fadeIn animated delay-24 duration-10"></div>
+          <div class="bg-box fadeIn animated duration-10"></div>
           <div class="content">
             <div class="title"><img src="./img/planet-title.png"></div>
-            <div class="text-list">
-              <p v-for="(text,index) in texts" :class="'delay-'+index*3" class="fadeInUp animated duration-10">{{text}}</p>
+            <div id="textcontent" class="text-list">
+              <div :class="{move: animate,go: animate}" class="content-text moveTop">
+                <p v-for="(text,index) in texts" :class="'delay-'+(index*4+5)" v-html="text" class="fadeInUp animated duration-7"></p>
+              </div>
             </div>
           </div>
           <div @click.prevent.stop="getStart" class="btn-start fadeIn animated delay-26 duration-10"><img src="./img/btn-start.png"></div>
@@ -64,12 +66,12 @@
       <div id="planet-page" :class="{show: show,opened: opened,blur: blur}">
         <div class="page-planets">
           <div id="planets">
-            <div v-show="shownotetext" class="planets-note-text">
+            <div v-show="shownotetext &amp;&amp; openlist.length&gt;0" class="planets-note-text">
               <div class="texts">
-                <p class="fadeInUp animated delay-5">每完成一个探索，即获得一枚北鼻勋章。</p>
-                <p class="fadeInUp animated delay-7">重复探索同一星球只会获得一枚北鼻勋章。</p>
-                <p class="fadeInUp animated delay-9">集齐五枚勋章，赢取皇家尊礼。</p>
-                <p class="fadeInUp animated delay-11">您当前拥有{{openlist.length}}枚勋章。</p>
+                <p class="fadeInUp animated delay-5">恭喜你！</p>
+                <p class="fadeInUp animated delay-7">你完成一颗天真星球的探索，</p>
+                <p class="fadeInUp animated delay-9">获得了{{openlist.length}}枚萌萌哒北鼻勋章。</p>
+                <p class="fadeInUp animated delay-11">继续加油探索吧！</p>
               </div>
             </div>
           </div>

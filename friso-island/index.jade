@@ -43,24 +43,25 @@ block content
 					.planet.blur(class="planet-#{i}")
 						img(src="#{url}img/planet-#{i}.png")
 			.texts.fadeIn.animated
-				.bg-box.fadeIn.animated.delay-24.duration-10
+				.bg-box.fadeIn.animated.duration-10
 				.content
 					.title
 						img(src="#{url}img/planet-title.png")
-					.text-list
-						p.fadeInUp.animated.duration-10(v-for="(text,index) in texts",:class="'delay-'+index*3") {{text}}
+					#textcontent.text-list
+						.content-text.moveTop(:class="{move: animate,go: animate}")
+							p.fadeInUp.animated.duration-7(v-for="(text,index) in texts",:class="'delay-'+(index*4+5)",v-html="text")
 				.btn-start.fadeIn.animated.delay-26.duration-10(@click.prevent.stop="getStart")
 					img(src="#{url}img/btn-start.png")
 
 		#planet-page(:class="{show: show,opened: opened,blur: blur}")
 			.page-planets
 				#planets
-					.planets-note-text(v-show="shownotetext")
+					.planets-note-text(v-show="shownotetext && openlist.length>0")
 						.texts
-							p.fadeInUp.animated.delay-5 每完成一个探索，即获得一枚北鼻勋章。
-							p.fadeInUp.animated.delay-7 重复探索同一星球只会获得一枚北鼻勋章。
-							p.fadeInUp.animated.delay-9 集齐五枚勋章，赢取皇家尊礼。
-							p.fadeInUp.animated.delay-11 您当前拥有{{openlist.length}}枚勋章。
+							p.fadeInUp.animated.delay-5 恭喜你！
+							p.fadeInUp.animated.delay-7 你完成一颗天真星球的探索，
+							p.fadeInUp.animated.delay-9 获得了{{openlist.length}}枚萌萌哒北鼻勋章。
+							p.fadeInUp.animated.delay-11 继续加油探索吧！
 				transition(name="planet-note")
 					.planets-note(v-show="shownote")
 						.box(@click.prevent.stop="startG")

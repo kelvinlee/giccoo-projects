@@ -52,7 +52,7 @@ initAward = (time)->
 					note.send "你未达到抽奖资格<br/>分享到朋友圈可获得一次抽奖机会！"
 					return false
 				self = @
-				@times = @times - 1 if (@times - 1) > 0
+				@times = @times - 1 if (@times - 1) >= 0
 				ask_award (recode,type = "none",code)->
 					if recode is 200
 						self.boxClass = "open "+type
@@ -61,7 +61,7 @@ initAward = (time)->
 							awardPop.success = true
 							awardPop.code = code
 							$("#award-over").fadeIn()
-							document.getElementsById("zhongjiang").play()
+							document.getElementById("zhongjiang").play()
 						,3500
 					else
 						self.boxClass = "open none"
@@ -82,6 +82,7 @@ initAward = (time)->
 						$("#award-over").fadeIn()
 			back: ->
 				$("#award").fadeOut()
+				resetGame()
 			default: ->
 				@boxClass = "on"
 

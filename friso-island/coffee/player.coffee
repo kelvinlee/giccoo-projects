@@ -35,7 +35,8 @@ Vue.component "player",
 		reset: ->
 			if not @stoped
 				@audio.play()
-				@audioOther.pause()
+				@pauseAll()
+				# @audioOther.pause()
 		play: ->
 			@playing = true
 		pause: ->

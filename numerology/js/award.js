@@ -78,7 +78,7 @@ initAward = function initAward(time) {
           return false;
         }
         self = this;
-        if (this.times - 1 > 0) {
+        if (this.times - 1 >= 0) {
           this.times = this.times - 1;
         }
         return ask_award(function (recode) {
@@ -92,7 +92,7 @@ initAward = function initAward(time) {
               awardPop.success = true;
               awardPop.code = code;
               $("#award-over").fadeIn();
-              return document.getElementsById("zhongjiang").play();
+              return document.getElementById("zhongjiang").play();
             }, 3500);
           } else {
             self.boxClass = "open none";
@@ -118,7 +118,8 @@ initAward = function initAward(time) {
         });
       },
       back: function back() {
-        return $("#award").fadeOut();
+        $("#award").fadeOut();
+        return resetGame();
       },
       default: function _default() {
         return this.boxClass = "on";
