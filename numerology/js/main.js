@@ -550,7 +550,7 @@ function gameEnd(){
     TweenLite.set($("#wrongBG"),{display:"block"})
     failSound.play()
     TweenLite.set(wtA[nowGame],{display:"block"})
-    if(gameStateA[0]+gameStateA[1]+gameStateA[2]==5&&gameStateA[nowGame]==2){
+    if(gameStateA[0]+gameStateA[1]+gameStateA[2]==4&&gameStateA[nowGame]==2&&gameStateA[0]*gameStateA[1]*gameStateA[2]!=0){
       TweenLite.set($("#wrongAllBG"),{display:"block"})
       TweenLite.set($("#btnNext2"),{display:"none"})
       // alert("?")
