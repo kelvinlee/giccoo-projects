@@ -77,9 +77,10 @@ Vue.component("player", {
     reset: function reset() {
       if (!this.stoped) {
         this.audio.play();
-        return this.audioOther.pause();
+        return this.pauseAll();
       }
     },
+    // @audioOther.pause()
     play: function play() {
       return this.playing = true;
     },
@@ -479,7 +480,8 @@ window.onload = function () {
       info: [],
       texts: ["人类世界即将迎来新年的欢聚", "当然少不了宝宝们的戏份", "他们脑洞大开的十万个为什么", "你，准备好见招拆招了吗？", "&nbsp;", "在孩次元的宇宙中", "每一个天真星球", "有一群知识渊博的公民", "讨论着一个脑洞大开的天真提问", "&nbsp;", "即刻开始唤醒知识", "与皇家美素佳儿一起", "进入孩次元的宇宙", "探索天真星球"],
       mytimeout: null,
-      overhide: true
+      overhide: true,
+      animate: false
     },
     methods: {
       runMessage: function runMessage(i) {
@@ -517,11 +519,16 @@ window.onload = function () {
       }
     },
     created: function created() {
+      var _this2 = this;
+
       console.log("created. ready to animation");
       load.loadend = true;
       this.notShowTime = false;
-      this.runMessage(0);
-      return document.getElementById("main").style.display = "block";
+      // @runMessage(0)
+      document.getElementById("main").style.display = "block";
+      return setTimeout(function () {
+        return _this2.animate = true;
+      }, 10);
     }
   });
   document.addEventListener("WeixinJSBridgeReady", function () {
@@ -599,7 +606,7 @@ initVuePlanetInfoPage = function initVuePlanetInfoPage() {
         return planets.startGyroscopeControl();
       },
       runMessage: function runMessage(i) {
-        var _this2 = this;
+        var _this3 = this;
 
         var n;
         if (!this.opened || i > this.planet.answers.length - 1) {
@@ -609,17 +616,17 @@ initVuePlanetInfoPage = function initVuePlanetInfoPage() {
         this.moving = true;
         n = i + 1;
         return this.cacheTimeout = setTimeout(function () {
-          _this2.info.push(true);
+          _this3.info.push(true);
           if (n > 1) {
-            _this2.answersScroll();
+            _this3.answersScroll();
           }
-          return _this2.runMessage(n);
+          return _this3.runMessage(n);
         }, createTimeWait);
       }
     },
     watch: {
       opened: function opened(val) {
-        var _this3 = this;
+        var _this4 = this;
 
         var self;
         if (val) {
@@ -637,7 +644,7 @@ initVuePlanetInfoPage = function initVuePlanetInfoPage() {
         } else {
           clearTimeout(this.cacheTimeout);
           return setTimeout(function () {
-            return _this3.info = [];
+            return _this4.info = [];
           }, 300);
         }
       }

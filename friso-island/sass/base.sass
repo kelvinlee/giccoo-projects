@@ -8,7 +8,7 @@ $cdn : "../"
 	$cdn : "http://image.giccoo.com/projects/friso-island/"
 
 // animation, delay, duration
-@for $i from 1 through 30
+@for $i from 1 through 60
 	.delay-#{$i}
 		animation-delay: $i*100ms
 	.duration-#{$i}
@@ -412,7 +412,13 @@ body.pop-open
 			+w(90%)
 			+h(1.8em*6)
 			+font-size(0.9rem)
-			+touch
+			+overhide
+			.content-text
+				&.move
+					transition: all 4.2s linear
+					transition-delay: 1.8s
+				&.go
+					+transform(translate3d(0,-1.8em*8,0))
 			&.overhide
 				+overhide
 			p

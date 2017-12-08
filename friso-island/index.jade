@@ -43,19 +43,20 @@ block content
 					.planet.blur(class="planet-#{i}")
 						img(src="#{url}img/planet-#{i}.png")
 			.texts.fadeIn.animated
-				.bg-box.fadeIn.animated.delay-24.duration-10
+				.bg-box.fadeIn.animated.duration-10
 				.content
 					.title
 						img(src="#{url}img/planet-title.png")
 					#textcontent.text-list
-						p.animated.duration-10(v-for="(text,index) in texts",:class="{overhide: overhide,fadeInUp: index<=6,fadeIn: index > 6,hide: !info[index]}",v-html="text")
+						.content-text.moveTop(:class="{move: animate,go: animate}")
+							p.fadeInUp.animated.duration-10(v-for="(text,index) in texts",:class="'delay-'+(index*4+5)",v-html="text")
 				.btn-start.fadeIn.animated.delay-26.duration-10(@click.prevent.stop="getStart")
 					img(src="#{url}img/btn-start.png")
 
 		#planet-page(:class="{show: show,opened: opened,blur: blur}")
 			.page-planets
 				#planets
-					.planets-note-text(v-show="shownotetext")
+					.planets-note-text(v-show="shownotetext && openlist.length>0")
 						.texts
 							p.fadeInUp.animated.delay-5 恭喜你！
 							p.fadeInUp.animated.delay-7 你完成一颗天真星球的探索，

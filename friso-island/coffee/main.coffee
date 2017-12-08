@@ -286,6 +286,7 @@ window.onload = ->
 			]
 			mytimeout: null
 			overhide: true
+			animate: false
 		methods:
 			runMessage: (i)->
 				clearTimeout @mytimeout
@@ -310,12 +311,16 @@ window.onload = ->
 				planetstars.$children[0].audio.play()
 				# initPlanets()
 				initVuePlanetInfoPage()
+
 		created: ->
 			console.log "created. ready to animation"
 			load.loadend = true
 			@notShowTime = false
-			@runMessage(0)
+			# @runMessage(0)
 			document.getElementById("main").style.display = "block"
+			setTimeout =>
+				@animate = true
+			,10
 			
 	document.addEventListener "WeixinJSBridgeReady",->
 		planetstars.$children[0].audio.play()
