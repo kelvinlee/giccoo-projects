@@ -341,7 +341,7 @@ function game3(){
   ifPlayingGame3=1
   topline=screenW/640*360
   downline=screenW/640*787
-  window.clearInterval(setInt);
+  //window.clearInterval(setInt);
   setInt= window.setInterval(setFireSize,50);
   //window.clearInterval(setInt);
 
