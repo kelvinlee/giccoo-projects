@@ -540,7 +540,7 @@ function gameEnd(){
     TweenLite.set(rtA[nowGame],{display:"block"})
     ask_update(nowGame)
 
-    if(gameStateA==[1,1,1]){
+    if(gameStateA[0]*gameStateA[1]*gameStateA[2]==1){
       TweenLite.set($("#rightAllBG"),{display:"block"})
       TweenLite.set($("#btnNext1"),{display:"none"})
     }
