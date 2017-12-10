@@ -12,7 +12,7 @@ myCount = 0
 myAward = 0
 note = {}
 shareContent =
-	title: "奇门遁甲，乾坤万象，其乐无穷，12.15日，燃情上映！",
+	title: "奇罗万象，万法归宗。12月15日《奇门遁甲》全国首映，侠客天团热血登场，与雾隐门一起大战天外来妖！",
 	desc: "乾坤万象，其乐无穷，12.15日，燃情上映！",
 	link: "http://m.giccoo.com/numerology/",
 	imgUrl: "http://m.giccoo.com/numerology/img/ico.jpg",
@@ -47,9 +47,11 @@ initAward = (time)->
 			start: false
 			times: time
 			boxClass: "on"
+			awarding: false
 		methods:
 			go: ->
 				# @boxClass = "on"
+				return false if @awarding
 				if myCount <= 0
 					note.send "你未达到抽奖资格<br/>分享到朋友圈可获得一次抽奖机会！"
 					return false
@@ -63,6 +65,7 @@ initAward = (time)->
 				self = @
 				@times = @times - 1 if (@times - 1) >= 0
 				myAward++
+				@awarding = true
 				ask_award (recode,type = "none",code)->
 					if recode is 200
 						self.boxClass = "open "+type
@@ -70,6 +73,7 @@ initAward = (time)->
 							awardPop.type = type
 							awardPop.success = true
 							awardPop.code = code
+							awardBox.awarding = false
 							$("#award-over").fadeIn()
 							document.getElementById("zhongjiang").play()
 						,3500
@@ -77,6 +81,7 @@ initAward = (time)->
 						self.boxClass = "open none"
 						setTimeout ->
 							awardPop.success = false
+							awardBox.awarding = false
 							$("#award-over").fadeIn()
 						,3500
 			my: ->
@@ -116,12 +121,12 @@ initNote = ->
 				self.notetext = text
 				self.show = true
 				@boxshow = true
-				@timeout = setTimeout ->
-					self.boxshow = false
-					setTimeout ->
-						self.show = false
-					,500
-				,@showtime
+				# @timeout = setTimeout ->
+				# 	self.boxshow = false
+				# 	setTimeout ->
+				# 		self.show = false
+				# 	,500
+				# ,@showtime
 
 
 initPop = ->
@@ -157,9 +162,9 @@ ask_update = (i)->
 	names = ["game1","game2","game3","share"]
 	name = names[i]
 	if i < 3
-		shareContent.title = "我的江湖绝学是雾隐门排行第五的“千里眼”！ 12.15日《奇门遁甲》全国首映，侠客天团强势来袭，热血江湖等你来战！" if i is 0
-		shareContent.title = "我的江湖绝学是雾隐门排行第四的“顺风耳”！ 12.15日《奇门遁甲》全国首映，侠客天团强势来袭，热血江湖等你来战！" if i is 1
-		shareContent.title = "我的江湖绝学是雾隐门排行第七的“霹雳火”！ 12.15日《奇门遁甲》全国首映，侠客天团强势来袭，热血江湖等你来战！" if i is 2
+		shareContent.title = "原来我的江湖绝学是“千里眼”！快来与我一起勇闯热血江湖！" if i is 0
+		shareContent.title = "原来我的江湖绝学是“顺风耳”！快来与我一起勇闯热血江湖！" if i is 1
+		shareContent.title = "原来我的江湖绝学是“霹雳火”！快来与我一起勇闯热血江湖！" if i is 2
 		updateShareContent shareContent
 	return false if _updateNames[name]
 	myCount++
@@ -200,14 +205,15 @@ ask_my = (callback)->
 	.catch (err)->
 		note.send "服务器请求失败,请重试"
 
+gameFailUpdateShareContent = ->
+	shareContent.title = "侠士，妖人祸国，遁甲现世，快来与我一起除魔卫道！"
+	updateShareContent shareContent
+
 updateShareContent = (shareContent)->
 	console.log shareContent
 	wx.onMenuShareTimeline shareContent
 	wx.onMenuShareAppMessage shareContent
 	wx.onMenuShareQQ shareContent
 	wx.onMenuShareWeibo shareContent
-
-
-
 
 

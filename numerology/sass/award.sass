@@ -150,13 +150,16 @@
 				padding-bottom: 20px
 		.bottom
 .how
+	max-height: 200px
+	+touch
 	p
 		margin-top: 0.4em
 		&:first-child
 			margin-top: 0
-	.note
+	.note,a
 		+font-size(0.6rem)
 		color: #aaa
+		word-break: break-all
 
 #theGif
 	+show
@@ -194,12 +197,32 @@
 		+tl(50%,10%)
 		+w(70%)
 		+p(5%)
-		+b(rgb(0,0,0))
+		// +b(rgb(0,0,0))
 		+text-center
 		margin-top: -10%
 		// +transform(translate3d(-50%,-50%,0))
-		border: solid 1px #eee69c
+		// border: solid 1px #eee69c
 		color: #eee69c
+		+b("../img/pop-center.png",repeat,top,center,100% auto)
+		&:before
+			content: " "
+			+posa
+			+tl(-20px)
+			+w
+			+h(20px)
+			+b("../img/pop-top.png",repeat,top,center,100% auto)
+		&:after
+			content: " "
+			+posa
+			+bl(-20px)
+			+w
+			+h(20px)
+			+b("../img/pop-bottom.png",repeat,bottom,center,100% auto)
+		.close
+			+posa
+			+tr(-80%,-5%)
+			+wh(30px,30px)
+			font-size: 0
 		p
 			+font-size(0.8rem)
 			line-height: 1.4em

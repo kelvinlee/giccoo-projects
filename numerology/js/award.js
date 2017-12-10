@@ -1,6 +1,6 @@
 "use strict";
 
-var _updateNames, apiURL, ask, ask_award, ask_my, ask_update, awardBox, awardPop, initAward, initNote, initPop, myAward, myCount, note, openAward, shareContent, updateShareContent;
+var _updateNames, apiURL, ask, ask_award, ask_my, ask_update, awardBox, awardPop, gameFailUpdateShareContent, initAward, initNote, initPop, myAward, myCount, note, openAward, shareContent, updateShareContent;
 
 apiURL = "api.giccoo.com";
 
@@ -25,7 +25,7 @@ myAward = 0;
 note = {};
 
 shareContent = {
-  title: "奇门遁甲，乾坤万象，其乐无穷，12.15日，燃情上映！",
+  title: "奇罗万象，万法归宗。12月15日《奇门遁甲》全国首映，侠客天团热血登场，与雾隐门一起大战天外来妖！",
   desc: "乾坤万象，其乐无穷，12.15日，燃情上映！",
   link: "http://m.giccoo.com/numerology/",
   imgUrl: "http://m.giccoo.com/numerology/img/ico.jpg",
@@ -70,12 +70,16 @@ initAward = function initAward(time) {
     data: {
       start: false,
       times: time,
-      boxClass: "on"
+      boxClass: "on",
+      awarding: false
     },
     methods: {
       go: function go() {
         var self;
-        // @boxClass = "on"
+        if (this.awarding) {
+          // @boxClass = "on"
+          return false;
+        }
         if (myCount <= 0) {
           note.send("你未达到抽奖资格<br/>分享到朋友圈可获得一次抽奖机会！");
           return false;
@@ -93,6 +97,7 @@ initAward = function initAward(time) {
           this.times = this.times - 1;
         }
         myAward++;
+        this.awarding = true;
         return ask_award(function (recode) {
           var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "none";
           var code = arguments[2];
@@ -103,6 +108,7 @@ initAward = function initAward(time) {
               awardPop.type = type;
               awardPop.success = true;
               awardPop.code = code;
+              awardBox.awarding = false;
               $("#award-over").fadeIn();
               return document.getElementById("zhongjiang").play();
             }, 3500);
@@ -110,6 +116,7 @@ initAward = function initAward(time) {
             self.boxClass = "open none";
             return setTimeout(function () {
               awardPop.success = false;
+              awardBox.awarding = false;
               return $("#award-over").fadeIn();
             }, 3500);
           }
@@ -162,18 +169,18 @@ initNote = function initNote() {
         self = this;
         self.notetext = text;
         self.show = true;
-        this.boxshow = true;
-        return this.timeout = setTimeout(function () {
-          self.boxshow = false;
-          return setTimeout(function () {
-            return self.show = false;
-          }, 500);
-        }, this.showtime);
+        return this.boxshow = true;
       }
     }
   });
 };
 
+// @timeout = setTimeout ->
+// 	self.boxshow = false
+// 	setTimeout ->
+// 		self.show = false
+// 	,500
+// ,@showtime
 initPop = function initPop() {
   return awardPop = new Vue({
     el: "#award-over",
@@ -217,13 +224,13 @@ ask_update = function ask_update(i) {
   name = names[i];
   if (i < 3) {
     if (i === 0) {
-      shareContent.title = "我的江湖绝学是雾隐门排行第五的“千里眼”！ 12.15日《奇门遁甲》全国首映，侠客天团强势来袭，热血江湖等你来战！";
+      shareContent.title = "原来我的江湖绝学是“千里眼”！快来与我一起勇闯热血江湖！";
     }
     if (i === 1) {
-      shareContent.title = "我的江湖绝学是雾隐门排行第四的“顺风耳”！ 12.15日《奇门遁甲》全国首映，侠客天团强势来袭，热血江湖等你来战！";
+      shareContent.title = "原来我的江湖绝学是“顺风耳”！快来与我一起勇闯热血江湖！";
     }
     if (i === 2) {
-      shareContent.title = "我的江湖绝学是雾隐门排行第七的“霹雳火”！ 12.15日《奇门遁甲》全国首映，侠客天团强势来袭，热血江湖等你来战！";
+      shareContent.title = "原来我的江湖绝学是“霹雳火”！快来与我一起勇闯热血江湖！";
     }
     updateShareContent(shareContent);
   }
@@ -272,6 +279,11 @@ ask_my = function ask_my(callback) {
   }).catch(function (err) {
     return note.send("服务器请求失败,请重试");
   });
+};
+
+gameFailUpdateShareContent = function gameFailUpdateShareContent() {
+  shareContent.title = "侠士，妖人祸国，遁甲现世，快来与我一起除魔卫道！";
+  return updateShareContent(shareContent);
 };
 
 updateShareContent = function updateShareContent(shareContent) {

@@ -1,11 +1,22 @@
 "use strict";
 
+//===================音乐初始化=====================
+
+var bgm = document.getElementById("bgm");
+var fireSound = document.getElementById("fireSound");
+var g1Sound = document.getElementById("g1Sound");
+var g2Sound = document.getElementById("g2Sound");
+var g3Sound = document.getElementById("g3Sound");
+var failSound = document.getElementById("failSound");
+var loadingSound = document.getElementById("loadingSound");
+var g3failSound = document.getElementById("g3failSound");
+
 $(document).ready(function load() {
   loadWechatConfig();
   wx.ready(function () {
     var shareContent;
     shareContent = {
-      title: "奇门遁甲",
+      title: "奇罗万象，万法归宗。12.15日《奇门遁甲》全国首映，侠客天团热血登场，与雾隐门一起大战天外来妖！",
       desc: "乾坤万象，其乐无穷，12.15日，燃情上映！",
       link: "http://m.giccoo.com/numerology/",
       imgUrl: "http://m.giccoo.com/numerology/img/ico.jpg",
@@ -27,6 +38,12 @@ $(document).ready(function load() {
       this.currentTime = 0;
     }
   });
+  $("#loadingSound")[0].addEventListener("timeupdate", function () {
+    console.log(this.currentTime);
+    if (this.currentTime > 5) {
+      bgm.play();
+    }
+  });
 });
 
 var loadingTA = [$("#loadingT11"), $("#loadingT22"), $("#loadingT33"), $("#loadingT44"), $("#loadingT55"), $("#loadingT66"), $("#loadingT77")];
@@ -40,8 +57,8 @@ function loadingAni() {
   TweenLite.set($("#loadingC1"), { x: "-50%", y: "-50%" });
   TweenLite.set($("#loadingC2"), { x: "-50%", y: "-50%" });
   TweenLite.to($("#loadingC1"), 10, { rotation: 720, ease: Linear.easeOut });
-  TweenLite.to($("#loadingC2"), 6, { rotation: -720, ease: Linear.easeIn, onUpdate: function onUpdate() {
-      n = n + (Math.random() + 0.1);if (n >= 100) {
+  TweenLite.to($("#loadingC2"), 4, { rotation: -720, ease: Linear.easeIn, onUpdate: function onUpdate() {
+      n = n + (Math.random() + 0.3);if (n >= 100) {
         n = 100;
       }$("#loadingT").text(parseInt(n) + "%");
     }, onComplete: page1in });
@@ -51,31 +68,25 @@ function loadingAni() {
 
   for (var i = 0; i < loadingTA.length; i++) {
     TweenLite.set(loadingTA[i], { width: "100%", x: "-50%", y: "-50%" });
-    TweenLite.from(loadingTA[i], 2, { y: "+=50", opacity: 0, delay: i * .5 });
+    TweenLite.from(loadingTA[i], 1.2, { y: "+=50", opacity: 0, delay: i * .2 });
   };
 }
-//===================音乐初始化=====================
 
-var bgm = document.getElementById("bgm");
-var fireSound = document.getElementById("fireSound");
-var g1Sound = document.getElementById("g1Sound");
-var g2Sound = document.getElementById("g2Sound");
-var g3Sound = document.getElementById("g3Sound");
-var failSound = document.getElementById("failSound");
-var loadingSound = document.getElementById("loadingSound");
-
-var g3failSound = document.getElementById("g3failSound");
+//===================音乐初始化 2=====================
 
 function iniListenSound() {
   document.addEventListener("WeixinJSBridgeReady", function () {
     loadingSound.play();
+    setTimeout(function () {
+      bgm.play();
+    }, 400);
   }, false);
 }
 
 //====================首页动画+互动============
 function page1in() {
-  loadingSound.pause();
   bgm.play();
+  loadingSound.pause();
 
   $("#loadingPG").css({ "display": "none" });
   $("#page1").css({ "display": "block" });
@@ -106,16 +117,19 @@ var nowGame = 999;
 
 $("#p1btn1").click(function () {
   nowGame = 0;
+  g1Sound.currentTime = 0;
   g1Sound.play();
   goGameHint();
 });
 $("#p1btn2").click(function () {
   nowGame = 1;
+  g2Sound.currentTime = 0;
   g2Sound.play();
   goGameHint();
 });
 $("#p1btn3").click(function () {
   nowGame = 2;
+  g3Sound.currentTime = 0;
   g3Sound.play();
   goGameHint();
 });
@@ -280,7 +294,7 @@ var fire = $("#bigfire");
 var fireSize = 0;
 
 $("#g3btn").click(function () {
-  window.location.href = "http://www.baidu.com";
+  window.location.href = "http://www.le.com/ptv/vplay/31278988.html#vid=31278988";
 });
 
 $("#game3").on('touchstart', function (e) {
@@ -384,6 +398,7 @@ function setFireSize() {
     TweenLite.to(fire, 1, { scale: 4, x: "-50%", y: "-50%", left: 312 / 640 * screenW, top: 570 / 640 * screenW, opacity: 0, onComplete: game3done });
     // TweenLite.set($("#theGif"),{display:"none"})
     $("#video")[0].currentTime = 3;
+    $("#video")[0].play();
     window.clearInterval(setInt);
     TweenLite.set($("#mainCanvas"), { display: "none" });
     ifPlayingGame3 = 0;
@@ -558,8 +573,10 @@ function gameEnd() {
       // alert("?")
     }
   } else {
+    gameFailUpdateShareContent();
     TweenLite.set($("#rightBG"), { display: "none" });
     TweenLite.set($("#wrongBG"), { display: "block" });
+    failSound.currentTime = 0;
     failSound.play();
     TweenLite.set(wtA[nowGame], { display: "block" });
     if (gameStateA[0] + gameStateA[1] + gameStateA[2] == 4 && gameStateA[nowGame] == 2 && gameStateA[0] * gameStateA[1] * gameStateA[2] != 0) {
