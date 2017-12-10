@@ -910,10 +910,10 @@ ul {
   opacity: 0;
   z-index: -1; }
   #theGif video {
-    width: 120%;
-    margin-left: -10%;
+    width: 100%;
+    margin-left: 0;
     position: absolute;
-    top: 0px;
+    top: 10%;
     left: 0px;
     z-index: 100; }
   #theGif #videogame {

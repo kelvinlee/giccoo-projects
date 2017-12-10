@@ -16,13 +16,11 @@
 	<div class="bg"><img src="img/bg1.jpg" width="100%" height="100%"></div>
 	<div class="time">你还有{{times}}次抽奖机会</div>
 	<div class="topPart relative fadeInUp animated delay-2"><img src="img/p1title.png" width="100" height="100%"></div>
-
 	<div class="award-box zoomIn animated delay-5" :class="boxClass">
 		<div class="award-outside"><img src="img/award-outside.png" width="100%" height="100%"></div>
 		<div class="award-inside"><img src="img/award-inside.png" width="100%" height="100%"></div>
 		<div class="award-btn" @click.prevent.stop="go"><img src="img/award-btn.png" width="100%" height="100%"></div>
 	</div>
-
 	<div class="award-info">
 		<a href="#" @click.prevent.stop="my">我的中奖记录</a>
 		<a href="#" @click.prevent.stop="back">继续闯关获得抽奖机会</a>
@@ -47,10 +45,6 @@
 		<div class="center">
 			<div class="btn" @click.prevent.stop="openHow" v-show="!how"><img src="img/award-btn-how.png" width="100%"></div>
 			<div class="how" v-show="how && (type=='leshi' || type=='leshiyear')">
-				<!-- <p>乐视视频新用户注册完毕后直接登录乐视视频APP，点击“个人中心”-“开通会员”-“使用兑换码”-兑换</p>
-				<p>乐视视频老用户直接登录乐视视频APP，点击“个人中心”-“开通会员”-“使用兑换码”-兑换）</p>
-				<p class="note">乐视会员卡月卡仅限在“乐视PC端” 、“乐视APP” 使用。</p>
-				<p class="note">本次活动最终归属权归乐视影业所有。</p> -->
 				<p>兑换方式：注册/登录乐视网，进入会员频道，点击右上角【兑换码】，输入兑换码即可激活使用。</p>
 				<p>兑换链接：PC <a href="http://zhifu.letv.com/exchange">http://zhifu.letv.com/exchange</a></p>
 				<p>M站 <a href="http://minisite.letv.com/msite/coffeecode/index.shtml">http://minisite.letv.com/msite/coffeecode/index.shtml</a></p>
@@ -65,11 +59,6 @@
 				<p>6．选座成功后凭取票短信至影院自助机或前台取票。如未收到取票短信，请登录淘票票客户端（最新版）-我的-电影票查看。</p>
 				<p>7．由于影院系统原因，在线选座时可能会有少量出票失败的概率，请用户关注出票情况。如出票失败，用户将收到提醒短信，兑换码可重新使用。</p>
 				<p>8．如有其它疑问请致电客服热线：057188157838</p>
-				
-				<!-- <p>打开淘票票APP或支付宝－淘票票，新用户注册完毕后，点击右下角-“我的”-选择“优惠券”-右上角点击“添加优惠券”-在输入框中输入兑换码，即添加成功。</p>
-				<p>淘票票老用户直接登录淘票票APP或支付宝－淘票票，点击右下角-“我的”-选择“优惠券”-右上角点击“添加优惠券”-在输入框中输入兑换码，即添加成功。</p>
-				<p class="note">电子兑换码仅限在“淘票票APP” 或支付宝－淘票票使用。</p>
-				<p class="note">本次活动最终归属权归乐视影业所有。</p> -->
 			</div>
 		</div>
 		<div class="bottom"><img src="img/award-box-bottom.png" width="100%"></div>
@@ -98,8 +87,6 @@
 		<div class="alphaBtn g1btn" id="g1btn2"></div>
 		<div class="alphaBtn g1btn" id="g1btn3"></div>
 	</div>
-
-
 </div>
 
 <!-- ==============游戏2============== -->
@@ -110,17 +97,13 @@
 		<div class="musicGif" id="gif1"><img src="img/playing.gif" width="100%"></div>
 		<div class="musicGif" id="gif2"><img src="img/playing.gif" width="100%"></div>
 		<div class="musicGif" id="gif3"><img src="img/playing.gif" width="100%"></div>
-
-
 		<div class="alphaBtn g2btn" id="g2btn1"></div>
 		<div class="alphaBtn g2btn" id="g2btn2"></div>
 		<div class="alphaBtn g2btn" id="g2btn3"></div>
-
 		<div class="alphaBtn musicBtn" id="musicBtn1"></div>
 		<div class="alphaBtn musicBtn" id="musicBtn2"></div>
 		<div class="alphaBtn musicBtn" id="musicBtn3"></div>
 	</div>
-
 	<audio src="mp3/bg.mp3" id="audio1" preload="false" loop="loop" hidden="hidden"></audio>
 	<audio src="mp3/nwdsl.mp3" id="audio2" preload="false" loop="loop" hidden="hidden"></audio>
 	<audio src="mp3/ssld.mp3" id="audio3" preload="false" loop="loop" hidden="hidden"></audio>
@@ -136,13 +119,8 @@
 	<div id="theGif">
 		<video id="video" src="http://image.giccoo.com/projects/numerology/video/video.mp4" preload="auto" webkit-playsinline="true" playsinline="true"></video>
 	</div>
-
-
 	<div class="fire" id="bigfire"><img src="img/fire.png" width="100%" height="100%"></div>
-
 	<canvas id="mainCanvas" width="640" height="1028"></canvas>
-
-
 </div>
 
 
@@ -173,30 +151,16 @@
 	<div class="topPart rightIco" id="rightIco1"><img src="img/right1.png" width="100%"></div>
 	<div class="topPart rightIco" id="rightIco2"><img src="img/right2.png" width="100%"></div>
 	<div class="topPart rightIco" id="rightIco3"><img src="img/right3.png" width="100%"></div>
-
-	
-
-	
-	
 	<div class="topPart" id="shareLayer">
 		<div class="blackLayer" id="shareBG"></div>
 		<div class="topPart" id="sharePic"><img src="img/share.png" width="100%"></div>
 	</div>
-	
-
 </div>
-
-
-
-
-
 
 <!-- ==============第一页============== -->
 
 <div class="page" id="page1">
 	<div class="bg" id="p1BG"><img src="img/bg1.jpg" width="100%" height="100%"></div>
-		
-
 	<div class="topPart" id="p1title"><img src="img/p1title.png" width="100" height="100%"></div>
 	<div class="topPart" id="p1t1"><img src="img/p1t1.png" width="100" height="100%"></div>
 	<div class="topPart" id="p1btns">
@@ -205,18 +169,13 @@
 		<div class="alphaBtn p1btn" id="p1btn2"></div>
 		<div class="alphaBtn p1btn" id="p1btn3"></div>
 	</div>
-
 	<div class="bottomPart" id="p1t2"><img src="img/p1t2.png" width="100%"></div>
 	<div class="bottomPart" id="p1light"><img src="img/p1light.png" width="100%"></div>
-
 	<div class="topPart" id="ruleBtn"><img src="img/p1ruleBtn.png" width="100" height="100%"></div>
-
 	<div class="page" id="rule">
 		<div class="blackLayer" id="ruleBG"></div>
 		<div class="topPart"><img src="img/rule.png" width="100%"></div>
 	</div>
-	
-
 </div>
 
 <!-- ==============进入游戏前动画============== -->
@@ -228,18 +187,10 @@
 	<div class="centerPart blur" id="blur3"><img src="img/blur3.png" width="100%"></div>
 </div>
 <div class="page" id="gameHint">
-
 	<div class="hint" id="hint1"><img src="img/hint1.jpg" width="100%"></div>
 	<div class="hint" id="hint2"><img src="img/hint2.jpg" width="100%"></div>
 	<div class="hint" id="hint3"><img src="img/hint3.jpg" width="100%"></div>
-
 </div>
-
-
-
-
-
-
 
 <!-- ==============LOADING============== -->
 
@@ -248,7 +199,6 @@
 	<div class="centerPart" id="loadingC1"><img src="img/loadingC1.png" width="100" height="100%"></div>
 	<div class="centerPart" id="loadingC2"><img src="img/loadingC2.png" width="100" height="100%"></div>
 	<div class="centerPart" id="loadingT">0%</div>
-
 	<div class="centerPart" id="loadingT11"><img src="img/loadingT11.png" width="100%"></div>
 	<div class="centerPart" id="loadingT22"><img src="img/loadingT22.png" width="100%"></div>
 	<div class="centerPart" id="loadingT33"><img src="img/loadingT33.png" width="100%"></div>
@@ -256,15 +206,11 @@
 	<div class="centerPart" id="loadingT55"><img src="img/loadingT55.png" width="100%"></div>
 	<div class="centerPart" id="loadingT66"><img src="img/loadingT66.png" width="100%"></div>
 	<div class="centerPart" id="loadingT77"><img src="img/loadingT77.png" width="100%"></div>
-
-
 	<div class="bottomPart" id="loadingT3"><img src="img/loadingT3.png" width="100%"></div>
-
 </div>
 
 <audio src="mp3/bgm.mp3" id="bgm" preload="auto" loop="loop" hidden="hidden"></audio>
 <audio src="mp3/loadingM.mp3" id="loadingSound" preload="auto" autoplay="true" hidden="hidden"></audio>
-
 <audio src="mp3/fire.mp3" id="fireSound" preload="auto" loop="loop" hidden="hidden"></audio>
 <audio src="mp3/g1.mp3" id="g1Sound" preload="auto"  hidden="hidden"></audio>
 <audio src="mp3/g2.mp3" id="g2Sound" preload="auto"  hidden="hidden"></audio>

@@ -33,8 +33,8 @@ $(document).ready(function load() {
 
   loadingAni();
   $("#video")[0].addEventListener("timeupdate", function () {
-    console.log(this.currentTime);
-    if (ifPlayingGame3 != 0 && this.currentTime > 1.5 && this.currentTime < 2.9) {
+    // console.log(this.currentTime);
+    if (ifPlayingGame3 != 0 && this.currentTime > 0.5 && this.currentTime < 1.9) {
       this.currentTime = 0;
     }
   });
@@ -79,7 +79,7 @@ function iniListenSound() {
 
 //====================首页动画+互动============
 function page1in() {
-  bgm.currentTime = 0;
+  // bgm.currentTime = 0
   bgm.play();
   loadingSound.pause();
 
@@ -392,7 +392,7 @@ function setFireSize() {
     TweenLite.set($("#g3btn"), { display: "block", y: 981 / 750 * screenW });
     TweenLite.to(fire, 1, { scale: 4, x: "-50%", y: "-50%", left: 312 / 640 * screenW, top: 570 / 640 * screenW, opacity: 0, onComplete: game3done });
     // TweenLite.set($("#theGif"),{display:"none"})
-    $("#video")[0].currentTime = 3;
+    $("#video")[0].currentTime = 2;
     $("#video")[0].play();
     window.clearInterval(setInt);
     TweenLite.set($("#mainCanvas"), { display: "none" });
@@ -408,7 +408,7 @@ function game3done() {
   gameStateA[2] = 1;
   $("#theGif").css({ zIndex: 1000 });
   TweenLite.set($("#theGif"), { display: "block", x: 24 / 640 * screenW, y: 260 / 640 * screenW, width: 600 / 640 * screenW, height: 392 / 640 * screenW, opacity: 1 });
-  TweenLite.to(fire, 11.5, { onComplete: gameEnd });
+  TweenLite.to(fire, 10.5, { onComplete: gameEnd });
 
   // gameEnd();
 }
