@@ -58,6 +58,8 @@ var g3Sound=document.getElementById("g3Sound");
 var failSound=document.getElementById("failSound");
 var loadingSound=document.getElementById("loadingSound");
 
+var g3failSound=document.getElementById("g3failSound");
+
 
 
 
@@ -346,6 +348,7 @@ function game3(){
   ifPlayingGame3=1
   topline=screenW/640*360
   downline=screenW/640*787
+  //window.clearInterval(setInt);
   setInt= window.setInterval(setFireSize,50);
   //window.clearInterval(setInt);
 
@@ -362,10 +365,14 @@ function game3(){
 
   $("#video")[0].currentTime = 0
   $("#video")[0].play()
+
+  g3failSound.currentTime=0
+  g3failSound.play()
 }
 
 function game3fail(){
   if(ifPlayingGame3==1){
+    window.clearInterval(setInt);
     ifPlayingGame3=0
     gameStateA[2]=2
     gameEnd()
@@ -390,7 +397,7 @@ function setFireSize(){
     window.clearInterval(setInt);
     TweenLite.set($("#mainCanvas"),{display:"none"})
     ifPlayingGame3=0
-
+    g3failSound.pause()
     //alert("dddd")
   }
 }
@@ -427,6 +434,9 @@ $("#btnAgain").click(function(){
   if(nowGame==2){
     ifPlayingGame3=1
     setInt= window.setInterval(setFireSize,50);
+    TweenLite.set(this,{delay:6,onComplete:game3fail})
+    g3failSound.currentTime=0
+    g3failSound.play()
   }
 })
 
@@ -461,31 +471,42 @@ function showShare(){
 }
 var gSound=[g1Sound,g2Sound,g3Sound]
 function nextGame(){
-  // if(gameStateA[0]==0){
-  //   nowGame=0
-  //   g1Sound.play();
-  //   showGame()
-  // }else if(gameStateA[1]==0){
-  //   nowGame=1
-  //   g2Sound.play();
-  //   showGame()
-  // }else if(gameStateA[2]==0){
-  //   nowGame=2
-  //   g3Sound.play();
-  //   showGame()
-  // }else{
-  //   // alert("玩完了去抽奖")
-
-  //   goPrize()
-  // }
-  nowGame++
-  if(nowGame>=3){
+  if(gameStateA[0]==0){
     nowGame=0
+    g1Sound.play();
+    showGame()
+  }else if(gameStateA[1]==0){
+    nowGame=1
+    g2Sound.play();
+    showGame()
+  }else if(gameStateA[2]==0){
+    nowGame=2
+    g3Sound.play();
+    showGame()
+  }else if(gameStateA[0]==2){
+    // alert("玩完了去抽奖")
+
+    //goPrize()
+    nowGame=0
+    g1Sound.play();
+    showGame()
+  }else if(gameStateA[1]==2){
+    nowGame=1
+    g1Sound.play();
+    showGame()
+  }else if(gameStateA[2]==2){
+    nowGame=2
+    g1Sound.play();
+    showGame()
   }
-  gSound[nowGame].play()
+  // nowGame++
+  // if(nowGame>=3){
+  //   nowGame=0
+  // }
+  // gSound[nowGame].play()
 
 
-  showGame()
+  // showGame()
 
 }
 
@@ -536,11 +557,22 @@ function gameEnd(){
     TweenLite.set($("#wrongBG"),{display:"none"})
     TweenLite.set(rtA[nowGame],{display:"block"})
     ask_update(nowGame)
+
+    if(gameStateA[0]*gameStateA[1]*gameStateA[2]==1){
+      TweenLite.set($("#rightAllBG"),{display:"block"})
+      TweenLite.set($("#btnNext1"),{display:"none"})
+      // alert("?")
+    }
   }else{
     TweenLite.set($("#rightBG"),{display:"none"})
     TweenLite.set($("#wrongBG"),{display:"block"})
     failSound.play()
     TweenLite.set(wtA[nowGame],{display:"block"})
+    if(gameStateA[0]+gameStateA[1]+gameStateA[2]==4&&gameStateA[nowGame]==2&&gameStateA[0]*gameStateA[1]*gameStateA[2]!=0){
+      TweenLite.set($("#wrongAllBG"),{display:"block"})
+      TweenLite.set($("#btnNext2"),{display:"none"})
+      // alert("?")
+    }
   }
 
 

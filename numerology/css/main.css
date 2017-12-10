@@ -249,3 +249,9 @@ img{ width: 100%; }
 	left: 25%;
 	top: 50%;
 }
+#rightAllBG{
+	display: none;
+}
+#wrongAllBG{
+	display: none;
+}
