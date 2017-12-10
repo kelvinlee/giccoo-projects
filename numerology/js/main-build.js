@@ -448,24 +448,32 @@ function showShare() {
   TweenLite.set($("#shareLayer"), { display: "block", opacity: 1 });
   TweenLite.from($("#shareLayer"), .5, { opacity: 0 });
 }
+var gSound = [g1Sound, g2Sound, g3Sound];
 function nextGame() {
-  if (gameStateA[0] == 0) {
-    nowGame = 0;
-    g1Sound.play();
-    showGame();
-  } else if (gameStateA[1] == 0) {
-    nowGame = 1;
-    g2Sound.play();
-    showGame();
-  } else if (gameStateA[2] == 0) {
-    nowGame = 2;
-    g3Sound.play();
-    showGame();
-  } else {
-    // alert("玩完了去抽奖")
+  // if(gameStateA[0]==0){
+  //   nowGame=0
+  //   g1Sound.play();
+  //   showGame()
+  // }else if(gameStateA[1]==0){
+  //   nowGame=1
+  //   g2Sound.play();
+  //   showGame()
+  // }else if(gameStateA[2]==0){
+  //   nowGame=2
+  //   g3Sound.play();
+  //   showGame()
+  // }else{
+  //   // alert("玩完了去抽奖")
 
-    goPrize();
+  //   goPrize()
+  // }
+  nowGame++;
+  if (nowGame >= 3) {
+    nowGame = 0;
   }
+  gSound[nowGame].play();
+
+  showGame();
 }
 
 function resetGame() {
@@ -505,7 +513,7 @@ var wtA = [$("#w1t"), $("#w2t"), $("#w3t")];
 function gameEnd() {
 
   $("#video")[0].pause();
-  $("#theGif").css({ opacity: 0 });
+  $("#theGif").css({ opacity: 0, zIndex: -1 });
   TweenLite.set(rtA[0], { display: "none" });
   TweenLite.set(rtA[1], { display: "none" });
   TweenLite.set(rtA[2], { display: "none" });

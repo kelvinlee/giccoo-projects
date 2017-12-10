@@ -521,7 +521,7 @@ var wtA=[$("#w1t"),$("#w2t"),$("#w3t")]
 function gameEnd(){
   
   $("#video")[0].pause()
-  $("#theGif").css({opacity: 0})
+  $("#theGif").css({opacity: 0,zIndex: -1})
   TweenLite.set(rtA[0],{display:"none"})
   TweenLite.set(rtA[1],{display:"none"})
   TweenLite.set(rtA[2],{display:"none"})

@@ -1,6 +1,6 @@
 "use strict";
 
-var _updateNames, apiURL, ask, ask_award, ask_my, ask_update, awardBox, awardPop, initAward, initNote, initPop, myCount, note, openAward, shareContent, updateShareContent;
+var _updateNames, apiURL, ask, ask_award, ask_my, ask_update, awardBox, awardPop, initAward, initNote, initPop, myAward, myCount, note, openAward, shareContent, updateShareContent;
 
 apiURL = "api.giccoo.com";
 
@@ -19,6 +19,8 @@ awardPop = {};
 awardBox = {};
 
 myCount = 0;
+
+myAward = 0;
 
 note = {};
 
@@ -49,6 +51,7 @@ window.onload = function () {
     time = 0;
     if (data.info != null) {
       myCount = data.info.count;
+      myAward = data.info.award;
       time = data.info.count - data.info.award;
     }
     initAward(time);
@@ -77,10 +80,19 @@ initAward = function initAward(time) {
           note.send("你未达到抽奖资格<br/>分享到朋友圈可获得一次抽奖机会！");
           return false;
         }
+        if (myAward >= 4) {
+          note.send("啊哦~今日抽奖机会已经全部用完，明天再来战！");
+          return false;
+        }
+        if (this.times <= 0) {
+          note.send("参加游戏或分享活动获得抽奖次数");
+          return false;
+        }
         self = this;
         if (this.times - 1 >= 0) {
           this.times = this.times - 1;
         }
+        myAward++;
         return ask_award(function (recode) {
           var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "none";
           var code = arguments[2];

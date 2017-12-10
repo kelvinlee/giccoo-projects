@@ -9,6 +9,7 @@ _updateNames =
 awardPop = {}
 awardBox = {}
 myCount = 0
+myAward = 0
 note = {}
 shareContent =
 	title: "奇门遁甲，乾坤万象，其乐无穷，12.15日，燃情上映！",
@@ -30,6 +31,7 @@ window.onload = ->
 		time = 0
 		if data.info?
 			myCount = data.info.count
+			myAward = data.info.award
 			time = data.info.count - data.info.award
 		initAward time
 		initPop()
@@ -51,8 +53,16 @@ initAward = (time)->
 				if myCount <= 0
 					note.send "你未达到抽奖资格<br/>分享到朋友圈可获得一次抽奖机会！"
 					return false
+				if myAward >= 4
+					note.send "啊哦~今日抽奖机会已经全部用完，明天再来战！"
+					return false
+				if @times <= 0
+					note.send "参加游戏或分享活动获得抽奖次数"
+					return false
+				
 				self = @
 				@times = @times - 1 if (@times - 1) >= 0
+				myAward++
 				ask_award (recode,type = "none",code)->
 					if recode is 200
 						self.boxClass = "open "+type
