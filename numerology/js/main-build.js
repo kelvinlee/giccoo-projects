@@ -38,12 +38,6 @@ $(document).ready(function load() {
       this.currentTime = 0;
     }
   });
-  $("#loadingSound")[0].addEventListener("timeupdate", function () {
-    console.log(this.currentTime);
-    if (this.currentTime > 5) {
-      bgm.play();
-    }
-  });
 });
 
 var loadingTA = [$("#loadingT11"), $("#loadingT22"), $("#loadingT33"), $("#loadingT44"), $("#loadingT55"), $("#loadingT66"), $("#loadingT77")];
@@ -85,6 +79,7 @@ function iniListenSound() {
 
 //====================首页动画+互动============
 function page1in() {
+  bgm.currentTime = 0;
   bgm.play();
   loadingSound.pause();
 
