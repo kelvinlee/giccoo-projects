@@ -1041,6 +1041,9 @@ ul {
 .iphone4 #resultPage > .topPart {
   top: -5%; }
 
+.iphone4 #resultPage #shareLayer {
+  top: 5%; }
+
 .iphone4 .bottomPart {
   bottom: -15%; }
 
