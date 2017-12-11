@@ -11,6 +11,7 @@ awardBox = {}
 myCount = 0
 myAward = 0
 note = {}
+player = {}
 shareContent =
 	title: "奇罗万象，万法归宗。12月15日《奇门遁甲》全国首映，侠客天团热血登场，与雾隐门一起大战天外来妖！",
 	desc: "乾坤万象，其乐无穷，12.15日，燃情上映！",
@@ -36,6 +37,40 @@ window.onload = ->
 		initAward time
 		initPop()
 		initNote()
+		initPlayer()
+
+initPlayer = ->
+	player = new Vue
+		el: "#bgmCtrl"
+		data:
+			audio: null
+			src: "./mp3/bgm.mp3"
+			playing: false
+			stoped: false
+			iconPlay: "http://image.giccoo.com/projects/libs/img/audio-stop.png"
+			iconStop: "http://image.giccoo.com/projects/libs/img/audio-play.png"
+		methods:
+			play: ->
+				@playing = true
+			pause: ->
+				@playing = false
+			change: ->
+				if @playing
+					@audio.pause()
+					@stoped = true
+				else
+					@audio.play()
+					@stoped = false
+		computed:
+			iconNow: ->
+				return if !@playing then @iconPlay else @iconStop
+
+		mounted: (el)->
+			@audio = document.getElementById "bgm"
+			console.log "audio:",@audio
+			# @audioOther = @$el.children[2]
+			@audio.addEventListener "pause", @pause.bind @
+			@audio.addEventListener "play", @play.bind @
 
 openAward = ->
 	$("#award").fadeIn()

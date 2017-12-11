@@ -1,6 +1,6 @@
 "use strict";
 
-var _updateNames, apiURL, ask, ask_award, ask_my, ask_update, awardBox, awardPop, gameFailUpdateShareContent, initAward, initNote, initPop, myAward, myCount, note, openAward, shareContent, updateShareContent;
+var _updateNames, apiURL, ask, ask_award, ask_my, ask_update, awardBox, awardPop, gameFailUpdateShareContent, initAward, initNote, initPlayer, initPop, myAward, myCount, note, openAward, player, shareContent, updateShareContent;
 
 apiURL = "api.giccoo.com";
 
@@ -23,6 +23,8 @@ myCount = 0;
 myAward = 0;
 
 note = {};
+
+player = {};
 
 shareContent = {
   title: "奇罗万象，万法归宗。12月15日《奇门遁甲》全国首映，侠客天团热血登场，与雾隐门一起大战天外来妖！",
@@ -56,7 +58,55 @@ window.onload = function () {
     }
     initAward(time);
     initPop();
-    return initNote();
+    initNote();
+    return initPlayer();
+  });
+};
+
+initPlayer = function initPlayer() {
+  return player = new Vue({
+    el: "#bgmCtrl",
+    data: {
+      audio: null,
+      src: "./mp3/bgm.mp3",
+      playing: false,
+      stoped: false,
+      iconPlay: "http://image.giccoo.com/projects/libs/img/audio-stop.png",
+      iconStop: "http://image.giccoo.com/projects/libs/img/audio-play.png"
+    },
+    methods: {
+      play: function play() {
+        return this.playing = true;
+      },
+      pause: function pause() {
+        return this.playing = false;
+      },
+      change: function change() {
+        if (this.playing) {
+          this.audio.pause();
+          return this.stoped = true;
+        } else {
+          this.audio.play();
+          return this.stoped = false;
+        }
+      }
+    },
+    computed: {
+      iconNow: function iconNow() {
+        if (!this.playing) {
+          return this.iconPlay;
+        } else {
+          return this.iconStop;
+        }
+      }
+    },
+    mounted: function mounted(el) {
+      this.audio = document.getElementById("bgm");
+      console.log("audio:", this.audio);
+      // @audioOther = @$el.children[2]
+      this.audio.addEventListener("pause", this.pause.bind(this));
+      return this.audio.addEventListener("play", this.play.bind(this));
+    }
   });
 };
 

@@ -30,12 +30,11 @@ $(document).ready(function load (){
 
 
   loadingAni()
-  $("#video")[0].addEventListener("timeupdate",function(){
-    // console.log(this.currentTime);
-    if (ifPlayingGame3 != 0 && this.currentTime>0.5 && this.currentTime<1.9) {
-      this.currentTime = 0;
-    }
-  })
+  // $("#video")[0].addEventListener("timeupdate",function(){
+  //   if (this.currentTime >9.4) {
+  //     gameEnd()
+  //   }
+  // })
 });
 
 var loadingTA=[$("#loadingT11"),$("#loadingT22"),$("#loadingT33"),$("#loadingT44"),$("#loadingT55"),$("#loadingT66"),$("#loadingT77")]
@@ -294,6 +293,9 @@ var fireSize=0
 $("#g3btn").click(function(){
   window.location.href="http://www.le.com/ptv/vplay/31278988.html#vid=31278988";
 })
+$("#g3btngoon").click(function(){
+  gameEnd();
+})
 
 
 $("#game3").on('touchstart',function (e){
@@ -369,8 +371,8 @@ function game3(){
 
   TweenLite.set(this,{delay:6,onComplete:game3fail})
 
-  $("#video")[0].currentTime = 0
-  $("#video")[0].play()
+  // $("#video")[0].currentTime = 2
+  // $("#video")[0].play()
 
   g3failSound.currentTime=0
   g3failSound.play()
@@ -397,10 +399,11 @@ function setFireSize(){
   if(fireSize>=2){
     TweenLite.set($("#g3BG2"),{display:"block"})
     TweenLite.set($("#g3btn"),{display:"block",y:981/750*screenW})
+    TweenLite.set($("#g3btngoon"),{display:"block",y:981/750*screenW})
     TweenLite.to(fire,1,{scale:4,x:"-50%",y:"-50%",left:312/640*screenW,top:570/640*screenW,opacity:0,onComplete:game3done})
     // TweenLite.set($("#theGif"),{display:"none"})
-    $("#video")[0].currentTime = 2
-    $("#video")[0].play()
+    // $("#video")[0].currentTime = 2
+    // $("#video")[0].play()
     window.clearInterval(setInt);
     TweenLite.set($("#mainCanvas"),{display:"none"})
     ifPlayingGame3=0
@@ -415,7 +418,7 @@ function game3done(){
   gameStateA[2]=1
   $("#theGif").css({zIndex: 1000})
   TweenLite.set($("#theGif"),{display:"block",x:24/640*screenW,y:260/640*screenW,width:600/640*screenW,height:392/640*screenW,opacity:1})
-  TweenLite.to(fire,10.5,{onComplete:gameEnd})
+  // TweenLite.to(fire,10.5,{onComplete:gameEnd})
 
  // gameEnd();
 }
@@ -547,9 +550,9 @@ function showGame(){
 var rtA=[$("#r1t"),$("#r2t"),$("#r3t")]
 var wtA=[$("#w1t"),$("#w2t"),$("#w3t")]
 function gameEnd(){
-  
+  console.log("end")
   $("#video")[0].pause()
-  $("#theGif").css({opacity: 0,zIndex: -1})
+  $("#theGif").css({display: "none", opacity: 0, zIndex: -1})
   TweenLite.set(rtA[0],{display:"none"})
   TweenLite.set(rtA[1],{display:"none"})
   TweenLite.set(rtA[2],{display:"none"})
@@ -559,6 +562,7 @@ function gameEnd(){
 
   TweenLite.set($("#resultPage"),{display:"block",opacity:1})
   TweenLite.from($("#resultPage"),1,{opacity:0})
+
   if(gameStateA[nowGame]==1){//得一分
     TweenLite.set($("#rightBG"),{display:"block"})
     TweenLite.set($("#wrongBG"),{display:"none"})

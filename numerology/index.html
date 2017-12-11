@@ -10,7 +10,12 @@
 </head>
 <body>
 <!-- <div class="wechat-share"><img src="img/ico.jpg"></div> -->
-
+<!-- ==============bgmCtrl============== -->
+<div id="bgmCtrl" class="playsound">
+	<div class="icon-play" :class="{play: playing, pause: !playing}" @click="change">
+		<img :src="iconNow" />
+	</div>
+</div>
 <!-- ==============抽奖============== -->
 <div id="award" class="page page-award">
 	<div class="bg"><img src="img/bg1.jpg" width="100%" height="100%"></div>
@@ -115,17 +120,16 @@
 	<div class="topbg" id="g3BG2">
 		<div class="topbg"><img src="img/g3bg2.jpg" width="100%" height="100%"></div>
 		<div class="alphaBtn" id="g3btn"></div>
+		<div class="alphaBtn" id="g3btngoon"></div>
 	</div>
 	<div id="theGif">
-		<video id="video" src="http://image.giccoo.com/projects/numerology/video/video.mp4" preload="auto" webkit-playsinline="true" playsinline="true"></video>
+		<video id="video" poster="img/video-p.jpg" src="http://image.giccoo.com/projects/numerology/video/video.mp4?start=0" preload="auto"  x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" webkit-playsinline="true" playsinline="true" controls="true"></video>
 	</div>
 	<div class="fire" id="bigfire"><img src="img/fire.png" width="100%" height="100%"></div>
 	<canvas id="mainCanvas" width="640" height="1028"></canvas>
 </div>
 
-
 <!-- ==============正确/错误页============== -->
-
 <div class="page" id="resultPage">
 	<div class="topPart" id="rightBG">
 		<img src="img/right.jpg" width="100%">
@@ -158,7 +162,6 @@
 </div>
 
 <!-- ==============第一页============== -->
-
 <div class="page" id="page1">
 	<div class="bg" id="p1BG"><img src="img/bg1.jpg" width="100%" height="100%"></div>
 	<div class="topPart" id="p1title"><img src="img/p1title.png" width="100" height="100%"></div>
@@ -179,7 +182,6 @@
 </div>
 
 <!-- ==============进入游戏前动画============== -->
-
 <div class="page" id="goGameAni">
 	<div class="blackLayer" id="goGameBG"></div>
 	<div class="centerPart blur" id="blur1"><img src="img/blur1.png" width="100%"></div>
@@ -222,9 +224,9 @@
 <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script src="http://image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
 <script src="http://image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
-<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
-<script type="text/javascript" src="js/TweenMax.min.js"></script>
-<script type="text/javascript" src="js/easeljs.min.js"></script>
+<script type="text/javascript" src="http://image.giccoo.com/projects/libs/js/min/jquery.min.js"></script>
+<script type="text/javascript" src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
+<script type="text/javascript" src="http://image.giccoo.com/projects/libs/js/min/easeljs.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/award.js"></script>
 </body>

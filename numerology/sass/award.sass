@@ -9,12 +9,26 @@
 		+transform(rotate(0deg))
 	100%
 		+transform(rotate(-360deg))
++keyframes(second)
+	0%
+		+transform(rotate(0deg))
+	100%
+		+transform(rotate(360deg))
 // animation, delay, duration
 @for $i from 1 through 30
 	.delay-#{$i}
 		animation-delay: $i*100ms
 	.duration-#{$i}
 		animation-duration: $i*100ms
+
+.playsound
+	+posa
+	+tl(0.5rem,2%)
+	+iw(58)
+	z-index: 99
+	font-size: 0
+	.play
+		+animation(second,4s,ease,infinite)
 
 .planet-note-enter-active
 	transition: all 1.6s ease
@@ -162,13 +176,14 @@
 		word-break: break-all
 
 #theGif
-	+show
+	// +show
 	+overhide
 	border-radius: 8%
 	+w(320px)
 	+h(320px)
 	opacity: 0
 	z-index: -1
+	+hide
 	video
 		+w(100%)
 		// margin-left: -10%
@@ -176,6 +191,8 @@
 		+posa
 		+tl(10%)
 		z-index: 100
+	#video
+		// +hide
 	#videogame
 		+posa
 		// +tl(-1000px,-100px)
