@@ -1026,3 +1026,12 @@ ul {
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
         .note-pop .box p {
           font-size: 0.96rem; } }
+
+.iphone4 .bottomPart {
+  bottom: -15%; }
+
+.iphone4 .page#game3, .iphone4 .page#game2, .iphone4 .page#game1, .iphone4 .page#resultPage {
+  top: -5%; }
+
+.iphone4 #page1 {
+  top: 0; }
