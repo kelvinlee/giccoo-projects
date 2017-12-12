@@ -949,10 +949,8 @@ ul {
   display: none; }
   #theGif video {
     width: 100%;
+    height: 100%;
     margin-left: 0;
-    position: absolute;
-    top: 5%;
-    left: 0px;
     z-index: 100; }
   #theGif #videogame {
     position: absolute;
