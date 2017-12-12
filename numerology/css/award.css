@@ -951,7 +951,7 @@ ul {
     width: 100%;
     margin-left: 0;
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: 0px;
     z-index: 100; }
   #theGif #videogame {
@@ -1026,6 +1026,34 @@ ul {
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
         .note-pop .box p {
           font-size: 0.96rem; } }
+
+#g3btn, #g3btngoon, #goaward {
+  position: absolute;
+  width: 100%; }
+
+#g3btn {
+  bottom: 19%;
+  left: 0px;
+  height: 6%;
+  top: auto; }
+
+#g3btngoon {
+  bottom: 26%;
+  left: 0px;
+  height: 6%;
+  top: auto; }
+
+#goaward {
+  bottom: 32%;
+  left: 0px;
+  height: 6%;
+  top: auto; }
+
+.topbg {
+  font-size: 0; }
+
+.topbg > .topbg {
+  position: relative; }
 
 .iphone4 #page1 .topPart {
   top: -5%; }
