@@ -949,10 +949,8 @@ ul {
   display: none; }
   #theGif video {
     width: 100%;
+    height: 100%;
     margin-left: 0;
-    position: absolute;
-    top: 10%;
-    left: 0px;
     z-index: 100; }
   #theGif #videogame {
     position: absolute;
@@ -1026,3 +1024,59 @@ ul {
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
         .note-pop .box p {
           font-size: 0.96rem; } }
+
+#g3btn, #g3btngoon, #goaward {
+  position: absolute;
+  width: 100%; }
+
+#g3btn {
+  bottom: 19%;
+  left: 0px;
+  height: 6%;
+  top: auto; }
+
+#g3btngoon {
+  bottom: 26%;
+  left: 0px;
+  height: 6%;
+  top: auto; }
+
+#goaward {
+  bottom: 32%;
+  left: 0px;
+  height: 6%;
+  top: auto; }
+
+.topbg {
+  font-size: 0; }
+
+.topbg > .topbg {
+  position: relative; }
+
+.iphone4 #page1 .topPart {
+  top: -5%; }
+  .iphone4 #page1 .topPart#ruleBtn {
+    top: 0%; }
+
+.iphone4 #g2t {
+  top: -5%; }
+
+.iphone4 #g1t {
+  top: -2%; }
+
+.iphone4 #resultPage > .topPart {
+  top: -5%; }
+
+.iphone4 #resultPage #shareLayer {
+  top: 5%; }
+
+.iphone4 .bottomPart {
+  bottom: -15%; }
+
+.iphone4 .page#game3, .iphone4 .page#game2, .iphone4 .page#game1, .iphone4 .page#resultPage {
+  top: -5%; }
+  .iphone4 .page#game3 .bg, .iphone4 .page#game2 .bg, .iphone4 .page#game1 .bg, .iphone4 .page#resultPage .bg {
+    top: 5%; }
+
+.iphone4 #page1 {
+  top: 0; }

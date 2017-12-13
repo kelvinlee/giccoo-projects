@@ -8,6 +8,7 @@ var g3Sound=document.getElementById("g3Sound");
 var failSound=document.getElementById("failSound");
 var loadingSound=document.getElementById("loadingSound");
 var g3failSound=document.getElementById("g3failSound");
+var successSound=document.getElementById("successSound");
 
 
 $(document).ready(function load (){
@@ -15,7 +16,7 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "奇罗万象，万法归宗。12月15日《奇门遁甲》全国首映，侠客天团热血登场，与雾隐门一起大战天外来妖！",
+      title: "千奇百怪，其乐无穷。12月15日《奇门遁甲》全国首映，侠客天团热血登场，与雾隐门一起大战天外来妖！",
       desc: "乾坤万象，其乐无穷，12月15日，燃情上映！",
       link: "http://m.giccoo.com/numerology/",
       imgUrl: "http://m.giccoo.com/numerology/img/ico.jpg",
@@ -293,9 +294,9 @@ var fireSize=0
 $("#g3btn").click(function(){
   window.location.href="http://www.le.com/ptv/vplay/31278988.html#vid=31278988";
 })
-$("#g3btngoon").click(function(){
-  gameEnd();
-})
+// $("#g3btngoon").click(function(){
+//   gameEnd();
+// })
 
 
 $("#game3").on('touchstart',function (e){
@@ -356,6 +357,9 @@ function game3(){
   ifPlayingGame3=1
   topline=screenW/640*360
   downline=screenW/640*787
+  fireSize=0
+  TweenLite.set(fire,{scale:fireSize, opacity:1,x:"-50%",y:"-50%",left:312/640*screenW,top:570/640*screenW})
+  TweenLite.set($("#bigfire"),{display:"block"})
   //window.clearInterval(setInt);
   setInt= window.setInterval(setFireSize,50);
   //window.clearInterval(setInt);
@@ -365,7 +369,9 @@ function game3(){
   createjs.Ticker.addEventListener("tick",handleTick);
   Time=new Date()
   lastTime=Time.getTime()
-  TweenLite.set($("#g3BG2"),{display:"none"})
+  $("#g3BG2").hide()
+  $("#theGif").hide()
+  // TweenLite.set($("#g3BG2"),{display:"none"})
   // TweenLite.set($("#theGif"),{display:"block",opacity:0})
   // TweenLite.set($("#theGif"),{display:"block"})
 
@@ -398,12 +404,12 @@ function setFireSize(){
   TweenLite.set(fire,{scale:fireSize,x:"-50%",y:"-50%",left:312/640*screenW,top:570/640*screenW})
   if(fireSize>=2){
     TweenLite.set($("#g3BG2"),{display:"block"})
-    TweenLite.set($("#g3btn"),{display:"block",y:981/750*screenW})
-    TweenLite.set($("#g3btngoon"),{display:"block",y:981/750*screenW})
+    // TweenLite.set($("#g3btn"),{display:"block",y:981/750*screenW})
+    // TweenLite.set($("#g3btngoon"),{display:"block",y:981/750*screenW})
     TweenLite.to(fire,1,{scale:4,x:"-50%",y:"-50%",left:312/640*screenW,top:570/640*screenW,opacity:0,onComplete:game3done})
     // TweenLite.set($("#theGif"),{display:"none"})
-    // $("#video")[0].currentTime = 2
-    // $("#video")[0].play()
+    successSound.currentTime = 0
+    successSound.play()
     window.clearInterval(setInt);
     TweenLite.set($("#mainCanvas"),{display:"none"})
     ifPlayingGame3=0
@@ -417,7 +423,7 @@ function game3done(){
   TweenLite.set($("#bigfire"),{display:"none"})
   gameStateA[2]=1
   $("#theGif").css({zIndex: 1000})
-  TweenLite.set($("#theGif"),{display:"block",x:24/640*screenW,y:260/640*screenW,width:600/640*screenW,height:392/640*screenW,opacity:1})
+  TweenLite.set($("#theGif"),{display:"block",x:80/750*screenW,y:269/750*screenW,width:590/750*screenW,height:387/750*screenW,opacity:1})
   // TweenLite.to(fire,10.5,{onComplete:gameEnd})
 
  // gameEnd();
@@ -468,10 +474,19 @@ $("#btnPrize2").click(function(){
   goPrize()
 })
 
+$("#goaward").click(function(){
+  $("#theGif").hide()
+  goPrize()
+})
+
 $("#btnNext1").click(function(){
   nextGame()
 })
 $("#btnNext2").click(function(){
+  nextGame()
+})
+$("#g3btngoon").click(function(){
+  $("#theGif").hide()
   nextGame()
 })
 
@@ -481,34 +496,41 @@ function showShare(){
 }
 var gSound=[g1Sound,g2Sound,g3Sound]
 function nextGame(){
-  if(gameStateA[0]==0){
-    nowGame=0
-    g1Sound.play();
-    showGame()
-  }else if(gameStateA[1]==0){
-    nowGame=1
-    g2Sound.play();
-    showGame()
-  }else if(gameStateA[2]==0){
-    nowGame=2
-    g3Sound.play();
-    showGame()
-  }else if(gameStateA[0]==2){
-    // alert("玩完了去抽奖")
-
-    //goPrize()
-    nowGame=0
-    g1Sound.play();
-    showGame()
-  }else if(gameStateA[1]==2){
-    nowGame=1
-    g1Sound.play();
-    showGame()
-  }else if(gameStateA[2]==2){
-    nowGame=2
-    g1Sound.play();
-    showGame()
+  nowGame++
+  if (nowGame >= 3) {
+    nowGame = 0
   }
+  gSound[nowGame].play()
+  showGame()
+
+  // if(gameStateA[0]==0){
+  //   nowGame=0
+  //   g1Sound.play();
+  //   showGame()
+  // }else if(gameStateA[1]==0){
+  //   nowGame=1
+  //   g2Sound.play();
+  //   showGame()
+  // }else if(gameStateA[2]==0){
+  //   nowGame=2
+  //   g3Sound.play();
+  //   showGame()
+  // }else if(gameStateA[0]==2){
+  //   // alert("玩完了去抽奖")
+
+  //   //goPrize()
+  //   nowGame=0
+  //   g1Sound.play();
+  //   showGame()
+  // }else if(gameStateA[1]==2){
+  //   nowGame=1
+  //   g1Sound.play();
+  //   showGame()
+  // }else if(gameStateA[2]==2){
+  //   nowGame=2
+  //   g1Sound.play();
+  //   showGame()
+  // }
   // nowGame++
   // if(nowGame>=3){
   //   nowGame=0
@@ -521,10 +543,11 @@ function nextGame(){
 }
 
 function resetGame(){
-  if(gameStateA[0]==2){gameStateA[0]=0}
-  if(gameStateA[1]==2){gameStateA[1]=0}
-  if(gameStateA[2]==2){gameStateA[2]=0}
-   nextGame() 
+  if ($("#g3BG2").is(":visible") ) {
+    setTimeout(function(){
+      $("#theGif").show()
+    },400)
+  }
 }
 
 function showGame(){
@@ -568,12 +591,13 @@ function gameEnd(){
     TweenLite.set($("#wrongBG"),{display:"none"})
     TweenLite.set(rtA[nowGame],{display:"block"})
     ask_update(nowGame)
-
-    if(gameStateA[0]*gameStateA[1]*gameStateA[2]==1){
-      TweenLite.set($("#rightAllBG"),{display:"block"})
-      TweenLite.set($("#btnNext1"),{display:"none"})
-      // alert("?")
-    }
+    successSound.currentTime = 0
+    successSound.play()
+    // if(gameStateA[0]*gameStateA[1]*gameStateA[2]==1){
+    //   TweenLite.set($("#rightAllBG"),{display:"block"})
+    //   TweenLite.set($("#btnNext1"),{display:"none"})
+    //   // alert("?")
+    // }
   }else{
     gameFailUpdateShareContent()
     TweenLite.set($("#rightBG"),{display:"none"})
@@ -581,11 +605,11 @@ function gameEnd(){
     failSound.currentTime = 0
     failSound.play()
     TweenLite.set(wtA[nowGame],{display:"block"})
-    if(gameStateA[0]+gameStateA[1]+gameStateA[2]==4&&gameStateA[nowGame]==2&&gameStateA[0]*gameStateA[1]*gameStateA[2]!=0){
-      TweenLite.set($("#wrongAllBG"),{display:"block"})
-      TweenLite.set($("#btnNext2"),{display:"none"})
-      // alert("?")
-    }
+    // if(gameStateA[0]+gameStateA[1]+gameStateA[2]==4&&gameStateA[nowGame]==2&&gameStateA[0]*gameStateA[1]*gameStateA[2]!=0){
+    //   TweenLite.set($("#wrongAllBG"),{display:"block"})
+    //   TweenLite.set($("#btnNext2"),{display:"none"})
+    //   // alert("?")
+    // }
   }
 
 

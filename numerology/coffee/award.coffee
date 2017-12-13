@@ -13,7 +13,7 @@ myAward = 0
 note = {}
 player = {}
 shareContent =
-	title: "奇罗万象，万法归宗。12月15日《奇门遁甲》全国首映，侠客天团热血登场，与雾隐门一起大战天外来妖！",
+	title: "千奇百怪，其乐无穷。12月15日《奇门遁甲》全国首映，侠客天团热血登场，与雾隐门一起大战天外来妖！",
 	desc: "乾坤万象，其乐无穷，12.15日，燃情上映！",
 	link: "http://m.giccoo.com/numerology/",
 	imgUrl: "http://m.giccoo.com/numerology/img/ico.jpg",
@@ -132,7 +132,7 @@ initAward = (time)->
 						$("#award-over").fadeIn()
 			back: ->
 				$("#award").fadeOut()
-				# resetGame()
+				resetGame()
 			default: ->
 				@boxClass = "on"
 

@@ -185,11 +185,12 @@
 	z-index: -1
 	+hide
 	video
-		+w(100%)
+		+w
+		+h
 		// margin-left: -10%
 		margin-left: 0
-		+posa
-		+tl(10%)
+		// +posa
+		// +tl(5%)
 		z-index: 100
 	#video
 		// +hide
@@ -254,3 +255,53 @@
 // 		+show
 // 	#bigfire,#mainCanvas
 // 		+hide
+
+// for iphone 4
+
+// #resultPage
+// 	+show
+// 	z-index: 999999
+#g3btn,#g3btngoon,#goaward
+	+posa
+	+w
+#g3btn
+	+bl(19%)
+	+h(6%)
+	top: auto
+#g3btngoon
+	+bl(26%)
+	+h(6%)
+	top: auto
+#goaward
+	+bl(32%)
+	+h(6%)
+	top: auto
+
+.topbg
+	font-size: 0
+.topbg > .topbg
+	+posr
+.iphone4
+	#page1 .topPart
+		top: -5%
+		&#ruleBtn
+			top: 0%
+	#g2t
+		top: -5%
+	#g1t
+		top: -2%
+	#resultPage > .topPart
+		top: -5%
+	#resultPage #shareLayer
+		top: 5%
+	// #game3 #g3BG2
+	// 	top: -5%
+	.bottomPart
+		bottom: -15%
+	.page#game3,.page#game2,.page#game1,.page#resultPage
+		top: -5%
+		.bg
+			top: 5%
+	#page1
+		top: 0
+
