@@ -14,7 +14,7 @@ note = {}
 player = {}
 shareContent =
 	title: "千奇百怪，奇乐无穷。12月14日《奇门遁甲》全国首映，侠客天团热血登场，与雾隐门一起大战天外来妖！",
-	desc: "千奇百怪，奇乐无穷，12月14日，燃情上映！",
+	desc: "千奇百怪，奇乐无穷，12月14日，奇幻上映！",
 	link: "http://m.giccoo.com/numerology/",
 	imgUrl: "http://m.giccoo.com/numerology/img/ico.jpg",
 	success: -> ask_update(3)
