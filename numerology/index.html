@@ -5,11 +5,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<title>奇门遁甲</title>
 	<link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css?v=1.1">
-	<link rel="stylesheet" type="text/css" href="css/award.css?v=1.1">
+	<link rel="stylesheet" type="text/css" href="css/main.css?v=2.0">
+	<link rel="stylesheet" type="text/css" href="css/award.css?v=2.0">
+	<script>
+      var _hmt = _hmt || [];
+      (function() {
+      	var hm = document.createElement("script");
+      	hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+      	var s = document.getElementsByTagName("script")[0]; 
+      	s.parentNode.insertBefore(hm, s);
+      })();
+   </script>
 </head>
 <body>
-<!-- <div class="wechat-share"><img src="img/ico.jpg"></div> -->
+<!-- <div class="wechat-share"><img src="http://image.giccoo.com/projects/numerology/img/ico.jpg"></div> -->
 <!-- ==============bgmCtrl============== -->
 <div id="bgmCtrl" class="playsound">
 	<div class="icon-play" :class="{play: playing, pause: !playing}" @click="change">
@@ -18,13 +27,13 @@
 </div>
 <!-- ==============抽奖============== -->
 <div id="award" class="page page-award">
-	<div class="bg"><img src="img/bg1.jpg" width="100%" height="100%"></div>
+	<div class="bg"><img src="http://image.giccoo.com/projects/numerology/img/bg1.jpg" width="100%" height="100%"></div>
 	<div class="time">你还有{{times}}次抽奖机会</div>
-	<div class="topPart relative fadeInUp animated delay-2"><img src="img/p1title.png" width="100" height="100%"></div>
+	<div class="topPart relative fadeInUp animated delay-2"><img src="http://image.giccoo.com/projects/numerology/img/p1title.png" width="100" height="100%"></div>
 	<div class="award-box zoomIn animated delay-5" :class="boxClass">
-		<div class="award-outside"><img src="img/award-outside.png" width="100%" height="100%"></div>
-		<div class="award-inside"><img src="img/award-inside.png" width="100%" height="100%"></div>
-		<div class="award-btn" @click.prevent.stop="go"><img src="img/award-btn.png" width="100%" height="100%"></div>
+		<div class="award-outside"><img src="http://image.giccoo.com/projects/numerology/img/award-outside.png" width="100%" height="100%"></div>
+		<div class="award-inside"><img src="http://image.giccoo.com/projects/numerology/img/award-inside.png" width="100%" height="100%"></div>
+		<div class="award-btn" @click.prevent.stop="go"><img src="http://image.giccoo.com/projects/numerology/img/award-btn.png" width="100%" height="100%"></div>
 	</div>
 	<div class="award-info">
 		<a href="#" @click.prevent.stop="my">我的中奖记录</a>
@@ -35,20 +44,20 @@
 <!-- ==============抽奖-结果============== -->
 <div id="award-over" class="page award-pop fadeIn animated">
 	<div class="fail" v-if="!success">
-		<img src="img/award-fail.jpg" />
+		<img src="http://image.giccoo.com/projects/numerology/img/award-fail.jpg" />
 		<div class="close" @click.prevent.stop="close"></div>
 		<div class="share-btn" @click.prevent.stop="openShare"></div>
 	</div>
 	<div class="success" v-if="success">
 		<div class="top">
-			<img src="img/award-box-top.png" width="100%">
+			<img src="http://image.giccoo.com/projects/numerology/img/award-box-top.png" width="100%">
 			<div class="close" @click.prevent.stop="close"></div>
 			<div class="title"><img :src="'img/award-'+type+'-title.png'" width="100%"></div>
 			<div class="name"><img :src="'img/award-'+type+'-name.png'" width="100%"></div>
 			<div class="code">{{code}}</div>
 		</div>
 		<div class="center">
-			<div class="btn" @click.prevent.stop="openHow" v-show="!how"><img src="img/award-btn-how.png" width="100%"></div>
+			<div class="btn" @click.prevent.stop="openHow" v-show="!how"><img src="http://image.giccoo.com/projects/numerology/img/award-btn-how.png" width="100%"></div>
 			<div class="how" v-show="how && (type=='leshi' || type=='leshiyear')">
 				<p>兑换方式：注册/登录乐视网，进入会员频道，点击右上角【兑换码】，输入兑换码即可激活使用。</p>
 				<p>兑换链接：PC <a href="http://zhifu.letv.com/exchange">http://zhifu.letv.com/exchange</a></p>
@@ -66,9 +75,9 @@
 				<p>8．如有其它疑问请致电客服热线：057188157838</p>
 			</div>
 		</div>
-		<div class="bottom"><img src="img/award-box-bottom.png" width="100%"></div>
+		<div class="bottom"><img src="http://image.giccoo.com/projects/numerology/img/award-box-bottom.png" width="100%"></div>
 	</div>
-	<div class="topPart" v-show="share" @click.prevent.stop="openShare"><img src="img/share.png" width="100%"></div>
+	<div class="topPart" v-show="share" @click.prevent.stop="openShare"><img src="http://image.giccoo.com/projects/numerology/img/share.png" width="100%"></div>
 </div>
 
 <!-- ==============浮层============== -->
@@ -76,7 +85,7 @@
 <div id="note" class="note-pop fadeIn animated" :class="{show: show}" v-show="show">
 	<transition name="custom-classes-transition" enter-active-class="animated bounceIn delay-2 duration-10" leave-active-class="animated zoomOut">
 		<div class="box" v-show="boxshow">
-			<div class="close"  @click.prevent.stop="close"><img src="./img/close.png" /></div>
+			<div class="close"  @click.prevent.stop="close"><img src="http://image.giccoo.com/projects/numerology/img/close.png" /></div>
 			<p v-html="notetext"></p>
 		</div>
 	</transition>
@@ -85,9 +94,9 @@
 
 <!-- ==============游戏1============== -->
 <div class="page" id="game1">
-	<div class="topbg" id="g1BG"><img src="img/g1bg.jpg" width="100%" height="100%"></div>
+	<div class="topbg" id="g1BG"><img src="http://image.giccoo.com/projects/numerology/img/g1bg.jpg" width="100%" height="100%"></div>
 	<div class="topPart" id="g1t">
-		<img src="img/g1t.png" width="100%" height="100%">
+		<img src="http://image.giccoo.com/projects/numerology/img/g1t.png" width="100%" height="100%">
 		<div class="alphaBtn g1btn" id="g1btn1"></div>
 		<div class="alphaBtn g1btn" id="g1btn2"></div>
 		<div class="alphaBtn g1btn" id="g1btn3"></div>
@@ -96,12 +105,12 @@
 
 <!-- ==============游戏2============== -->
 <div class="page" id="game2">
-	<div class="bg" id="g2BG"><img src="img/g2bg.jpg" width="100%" height="100%"></div>
+	<div class="bg" id="g2BG"><img src="http://image.giccoo.com/projects/numerology/img/g2bg.jpg" width="100%" height="100%"></div>
 	<div class="topPart" id="g2t">
-		<img src="img/g2t.png" width="100%" height="100%">
-		<div class="musicGif" id="gif1"><img src="img/playing.gif" width="100%"></div>
-		<div class="musicGif" id="gif2"><img src="img/playing.gif" width="100%"></div>
-		<div class="musicGif" id="gif3"><img src="img/playing.gif" width="100%"></div>
+		<img src="http://image.giccoo.com/projects/numerology/img/g2t.png" width="100%" height="100%">
+		<div class="musicGif" id="gif1"><img src="http://image.giccoo.com/projects/numerology/img/playing.gif" width="100%"></div>
+		<div class="musicGif" id="gif2"><img src="http://image.giccoo.com/projects/numerology/img/playing.gif" width="100%"></div>
+		<div class="musicGif" id="gif3"><img src="http://image.giccoo.com/projects/numerology/img/playing.gif" width="100%"></div>
 		<div class="alphaBtn g2btn" id="g2btn1"></div>
 		<div class="alphaBtn g2btn" id="g2btn2"></div>
 		<div class="alphaBtn g2btn" id="g2btn3"></div>
@@ -116,113 +125,113 @@
 
 <!-- ==============游戏3============== -->
 <div class="page" id="game3">
-	<div class="topbg" id="g3BG"><img src="img/g3bg.jpg" width="100%" height="100%"></div>
+	<div class="topbg" id="g3BG"><img src="http://image.giccoo.com/projects/numerology/img/g3bg.jpg" width="100%" height="100%"></div>
 	<div class="topbg" id="g3BG2">
-		<div class="topbg"><img id="g3BG2bg" src="img/g3bg2.jpg" width="100%" height="100%"></div>
+		<div class="topbg"><img id="g3BG2bg" src="http://image.giccoo.com/projects/numerology/img/g3bg2.jpg" width="100%" height="100%"></div>
 		<div class="alphaBtn" id="goaward"></div>
 		<div class="alphaBtn" id="g3btngoon"></div>
 		<div class="alphaBtn" id="g3btn"></div>
 	</div>
 	<div id="theGif">
 		<!--   x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" -->
-		<video id="video" poster="img/video-p.jpg" src="http://image.giccoo.com/projects/numerology/video/video.mp4?start=0" preload="auto" webkit-playsinline="true" playsinline="true" controls="true"></video>
+		<video id="video" poster="http://image.giccoo.com/projects/numerology/img/video-p.jpg" src="http://image.giccoo.com/projects/numerology/video/video.mp4?start=0" preload="auto" webkit-playsinline="true" playsinline="true" controls="true"></video>
 	</div>
-	<div class="fire" id="bigfire"><img src="img/fire.png" width="100%" height="100%"></div>
+	<div class="fire" id="bigfire"><img src="http://image.giccoo.com/projects/numerology/img/fire.png" width="100%" height="100%"></div>
 	<canvas id="mainCanvas" width="640" height="1028"></canvas>
 </div>
 
 <!-- ==============正确/错误页============== -->
 <div class="page" id="resultPage">
 	<div class="topPart" id="rightBG">
-		<img src="img/right.jpg" width="100%">
-		<div class="topPart" id="rightAllBG"><img src="img/rightAll.jpg" width="100%"></div>
-		<div class="topPart" id="r1t"><img src="img/r1t.png" width="100%"></div>
-		<div class="topPart" id="r2t"><img src="img/r2t.png" width="100%"></div>
-		<div class="topPart" id="r3t"><img src="img/r3t.png" width="100%"></div>
+		<img src="http://image.giccoo.com/projects/numerology/img/right.jpg" width="100%">
+		<div class="topPart" id="rightAllBG"><img src="http://image.giccoo.com/projects/numerology/img/rightAll.jpg" width="100%"></div>
+		<div class="topPart" id="r1t"><img src="http://image.giccoo.com/projects/numerology/img/r1t.png" width="100%"></div>
+		<div class="topPart" id="r2t"><img src="http://image.giccoo.com/projects/numerology/img/r2t.png" width="100%"></div>
+		<div class="topPart" id="r3t"><img src="http://image.giccoo.com/projects/numerology/img/r3t.png" width="100%"></div>
 		<div class="alphaBtn rightbtn" id="btnShare1"></div>
 		<div class="alphaBtn rightbtn" id="btnNext1"></div>
 		<div class="alphaBtn rightbtn" id="btnPrize1"></div>
 	</div>
 	<div class="topPart" id="wrongBG">
-		<img src="img/wrong.jpg" width="100%">
-		<div class="topPart" id="wrongAllBG"><img src="img/wrongAll.jpg" width="100%"></div>
-		<div class="topPart" id="w1t"><img src="img/w1t.png" width="100%"></div>
-		<div class="topPart" id="w2t"><img src="img/w2t.png" width="100%"></div>
-		<div class="topPart" id="w3t"><img src="img/w3t.png" width="100%"></div>
+		<img src="http://image.giccoo.com/projects/numerology/img/wrong.jpg" width="100%">
+		<div class="topPart" id="wrongAllBG"><img src="http://image.giccoo.com/projects/numerology/img/wrongAll.jpg" width="100%"></div>
+		<div class="topPart" id="w1t"><img src="http://image.giccoo.com/projects/numerology/img/w1t.png" width="100%"></div>
+		<div class="topPart" id="w2t"><img src="http://image.giccoo.com/projects/numerology/img/w2t.png" width="100%"></div>
+		<div class="topPart" id="w3t"><img src="http://image.giccoo.com/projects/numerology/img/w3t.png" width="100%"></div>
 		<div class="alphaBtn rightbtn" id="btnShare2"></div>
 		<div class="alphaBtn rightbtn" id="btnNext2"></div>
 		<div class="alphaBtn rightbtn" id="btnPrize2"></div>
 		<div class="alphaBtn rightbtn" id="btnAgain"></div>
 	</div>
-	<div class="topPart rightIco" id="rightIco1"><img src="img/right1.png" width="100%"></div>
-	<div class="topPart rightIco" id="rightIco2"><img src="img/right2.png" width="100%"></div>
-	<div class="topPart rightIco" id="rightIco3"><img src="img/right3.png" width="100%"></div>
+	<div class="topPart rightIco" id="rightIco1"><img src="http://image.giccoo.com/projects/numerology/img/right1.png" width="100%"></div>
+	<div class="topPart rightIco" id="rightIco2"><img src="http://image.giccoo.com/projects/numerology/img/right2.png" width="100%"></div>
+	<div class="topPart rightIco" id="rightIco3"><img src="http://image.giccoo.com/projects/numerology/img/right3.png" width="100%"></div>
 	<div class="topPart" id="shareLayer">
 		<div class="blackLayer" id="shareBG"></div>
-		<div class="topPart" id="sharePic"><img src="img/share.png" width="100%"></div>
+		<div class="topPart" id="sharePic"><img src="http://image.giccoo.com/projects/numerology/img/share.png" width="100%"></div>
 	</div>
 </div>
 
 <!-- ==============第一页============== -->
 <div class="page" id="page1">
-	<div class="bg" id="p1BG"><img src="img/bg1.jpg" width="100%" height="100%"></div>
-	<div class="topPart" id="p1title"><img src="img/p1title.png" width="100" height="100%"></div>
-	<div class="topPart" id="p1t1"><img src="img/p1t1.png" width="100" height="100%"></div>
+	<div class="bg" id="p1BG"><img src="http://image.giccoo.com/projects/numerology/img/bg1.jpg" width="100%" height="100%"></div>
+	<div class="topPart" id="p1title"><img src="http://image.giccoo.com/projects/numerology/img/p1title.png" width="100" height="100%"></div>
+	<div class="topPart" id="p1t1"><img src="http://image.giccoo.com/projects/numerology/img/p1t1.png" width="100" height="100%"></div>
 	<div class="topPart" id="p1btns">
-		<img src="img/p1btns.png" width="100" height="100%">
+		<img src="http://image.giccoo.com/projects/numerology/img/p1btns.png" width="100" height="100%">
 		<div class="alphaBtn p1btn" id="p1btn1"></div>
 		<div class="alphaBtn p1btn" id="p1btn2"></div>
 		<div class="alphaBtn p1btn" id="p1btn3"></div>
 	</div>
-	<div class="bottomPart" id="p1t2"><img src="img/p1t2.png" width="100%"></div>
-	<div class="bottomPart" id="p1light"><img src="img/p1light.png" width="100%"></div>
-	<div class="topPart" id="ruleBtn"><img src="img/p1ruleBtn.png" width="100" height="100%"></div>
+	<div class="bottomPart" id="p1t2"><img src="http://image.giccoo.com/projects/numerology/img/p1t2.png" width="100%"></div>
+	<div class="bottomPart" id="p1light"><img src="http://image.giccoo.com/projects/numerology/img/p1light.png" width="100%"></div>
+	<div class="topPart" id="ruleBtn"><img src="http://image.giccoo.com/projects/numerology/img/p1ruleBtn.png" width="100" height="100%"></div>
 	<div class="page" id="rule">
 		<div class="blackLayer" id="ruleBG"></div>
-		<div class="topPart"><img src="img/rule.png" width="100%"></div>
+		<div class="topPart"><img src="http://image.giccoo.com/projects/numerology/img/rule.png" width="100%"></div>
 	</div>
 </div>
 
 <!-- ==============进入游戏前动画============== -->
 <div class="page" id="goGameAni">
 	<div class="blackLayer" id="goGameBG"></div>
-	<div class="centerPart blur" id="blur1"><img src="img/blur1.png" width="100%"></div>
-	<div class="centerPart blur" id="blur2"><img src="img/blur2.png" width="100%"></div>
-	<div class="centerPart blur" id="blur3"><img src="img/blur3.png" width="100%"></div>
+	<div class="centerPart blur" id="blur1"><img src="http://image.giccoo.com/projects/numerology/img/blur1.png" width="100%"></div>
+	<div class="centerPart blur" id="blur2"><img src="http://image.giccoo.com/projects/numerology/img/blur2.png" width="100%"></div>
+	<div class="centerPart blur" id="blur3"><img src="http://image.giccoo.com/projects/numerology/img/blur3.png" width="100%"></div>
 </div>
 <div class="page" id="gameHint">
-	<div class="hint" id="hint1"><img src="img/hint1.jpg" width="100%"></div>
-	<div class="hint" id="hint2"><img src="img/hint2.jpg" width="100%"></div>
-	<div class="hint" id="hint3"><img src="img/hint3.jpg" width="100%"></div>
+	<div class="hint" id="hint1"><img src="http://image.giccoo.com/projects/numerology/img/hint1.jpg" width="100%"></div>
+	<div class="hint" id="hint2"><img src="http://image.giccoo.com/projects/numerology/img/hint2.jpg" width="100%"></div>
+	<div class="hint" id="hint3"><img src="http://image.giccoo.com/projects/numerology/img/hint3.jpg" width="100%"></div>
 </div>
 
 <!-- ==============LOADING============== -->
 
 <div class="page" id="loadingPG">
-	<div class="bg" id="loadingBG"><img src="img/loadingBG.jpg" width="100%" height="100%"></div>
-	<div class="centerPart" id="loadingC1"><img src="img/loadingC1.png" width="100" height="100%"></div>
-	<div class="centerPart" id="loadingC2"><img src="img/loadingC2.png" width="100" height="100%"></div>
+	<div class="bg" id="loadingBG"><img src="http://image.giccoo.com/projects/numerology/img/loadingBG.jpg" width="100%" height="100%"></div>
+	<div class="centerPart" id="loadingC1"><img src="http://image.giccoo.com/projects/numerology/img/loadingC1.png" width="100" height="100%"></div>
+	<div class="centerPart" id="loadingC2"><img src="http://image.giccoo.com/projects/numerology/img/loadingC2.png" width="100" height="100%"></div>
 	<div class="centerPart" id="loadingT">0%</div>
-	<div class="centerPart" id="loadingT11"><img src="img/loadingT11.png" width="100%"></div>
-	<div class="centerPart" id="loadingT22"><img src="img/loadingT22.png" width="100%"></div>
-	<div class="centerPart" id="loadingT33"><img src="img/loadingT33.png" width="100%"></div>
-	<div class="centerPart" id="loadingT44"><img src="img/loadingT44.png" width="100%"></div>
-	<div class="centerPart" id="loadingT55"><img src="img/loadingT55.png" width="100%"></div>
-	<div class="centerPart" id="loadingT66"><img src="img/loadingT66.png" width="100%"></div>
-	<div class="centerPart" id="loadingT77"><img src="img/loadingT77.png" width="100%"></div>
-	<div class="bottomPart" id="loadingT3"><img src="img/loadingT3.png" width="100%"></div>
+	<div class="centerPart" id="loadingT11"><img src="http://image.giccoo.com/projects/numerology/img/loadingT11.png" width="100%"></div>
+	<div class="centerPart" id="loadingT22"><img src="http://image.giccoo.com/projects/numerology/img/loadingT22.png" width="100%"></div>
+	<div class="centerPart" id="loadingT33"><img src="http://image.giccoo.com/projects/numerology/img/loadingT33.png" width="100%"></div>
+	<div class="centerPart" id="loadingT44"><img src="http://image.giccoo.com/projects/numerology/img/loadingT44.png" width="100%"></div>
+	<div class="centerPart" id="loadingT55"><img src="http://image.giccoo.com/projects/numerology/img/loadingT55.png" width="100%"></div>
+	<div class="centerPart" id="loadingT66"><img src="http://image.giccoo.com/projects/numerology/img/loadingT66.png" width="100%"></div>
+	<div class="centerPart" id="loadingT77"><img src="http://image.giccoo.com/projects/numerology/img/loadingT77.png" width="100%"></div>
+	<div class="bottomPart" id="loadingT3"><img src="http://image.giccoo.com/projects/numerology/img/loadingT3.png" width="100%"></div>
 </div>
 
-<audio src="mp3/bgm.mp3" id="bgm" preload="auto" loop="loop" hidden="hidden"></audio>
-<audio src="mp3/loadingM.mp3" id="loadingSound" preload="auto" autoplay="true" hidden="hidden"></audio>
-<audio src="mp3/fire.mp3" id="fireSound" preload="auto" loop="loop" hidden="hidden"></audio>
-<audio src="mp3/g1.mp3" id="g1Sound" preload="auto"  hidden="hidden"></audio>
-<audio src="mp3/g2.mp3" id="g2Sound" preload="auto"  hidden="hidden"></audio>
-<audio src="mp3/g3.mp3" id="g3Sound" preload="auto"  hidden="hidden"></audio>
-<audio src="mp3/fail.mp3" id="failSound" preload="auto"  hidden="hidden"></audio>
-<audio src="mp3/zhongjiang.mp3" id="zhongjiang" preload="auto"  hidden="hidden"></audio>
-<audio src="mp3/game3fail.mp3" id="g3failSound" preload="auto"  hidden="hidden"></audio>
-<audio src="mp3/successSound.mp3" id="successSound" preload="auto"  hidden="hidden"></audio>
+<audio src="http://image.giccoo.com/projects/numerology/mp3/bgm.mp3" id="bgm" preload="auto" loop="loop" hidden="hidden"></audio>
+<audio src="http://image.giccoo.com/projects/numerology/mp3/loadingM.mp3" id="loadingSound" preload="auto" autoplay="true" hidden="hidden"></audio>
+<audio src="http://image.giccoo.com/projects/numerology/mp3/fire.mp3" id="fireSound" preload="auto" loop="loop" hidden="hidden"></audio>
+<audio src="http://image.giccoo.com/projects/numerology/mp3/g1.mp3" id="g1Sound" preload="auto"  hidden="hidden"></audio>
+<audio src="http://image.giccoo.com/projects/numerology/mp3/g2.mp3" id="g2Sound" preload="auto"  hidden="hidden"></audio>
+<audio src="http://image.giccoo.com/projects/numerology/mp3/g3.mp3" id="g3Sound" preload="auto"  hidden="hidden"></audio>
+<audio src="http://image.giccoo.com/projects/numerology/mp3/fail.mp3" id="failSound" preload="auto"  hidden="hidden"></audio>
+<audio src="http://image.giccoo.com/projects/numerology/mp3/zhongjiang.mp3" id="zhongjiang" preload="auto"  hidden="hidden"></audio>
+<audio src="http://image.giccoo.com/projects/numerology/mp3/game3fail.mp3" id="g3failSound" preload="auto"  hidden="hidden"></audio>
+<audio src="http://image.giccoo.com/projects/numerology/mp3/successSound.mp3" id="successSound" preload="auto"  hidden="hidden"></audio>
 
 <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script src="http://image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
@@ -230,7 +239,7 @@
 <script type="text/javascript" src="http://image.giccoo.com/projects/libs/js/min/jquery.min.js"></script>
 <script type="text/javascript" src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
 <script type="text/javascript" src="http://image.giccoo.com/projects/libs/js/min/easeljs.min.js"></script>
-<script type="text/javascript" src="js/main.js?v=1.1"></script>
-<script type="text/javascript" src="js/award.js?v=1.1"></script>
+<script type="text/javascript" src="js/main-build.js?v=2.0"></script>
+<script type="text/javascript" src="js/award.js?v=2.0"></script>
 </body>
 </html>
