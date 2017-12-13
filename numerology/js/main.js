@@ -16,8 +16,8 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "千奇百怪，其乐无穷。12月15日《奇门遁甲》全国首映，侠客天团热血登场，与雾隐门一起大战天外来妖！",
-      desc: "乾坤万象，其乐无穷，12月15日，燃情上映！",
+      title: "千奇百怪，其乐无穷。12月14日《奇门遁甲》全国首映，侠客天团热血登场，与雾隐门一起大战天外来妖！",
+      desc: "千奇百怪，其乐无穷，12月14日，燃情上映！",
       link: "http://m.giccoo.com/numerology/",
       imgUrl: "http://m.giccoo.com/numerology/img/ico.jpg",
       success: function() {ask_update(3)},
@@ -404,6 +404,15 @@ function setFireSize(){
   TweenLite.set(fire,{scale:fireSize,x:"-50%",y:"-50%",left:312/640*screenW,top:570/640*screenW})
   if(fireSize>=2){
     TweenLite.set($("#g3BG2"),{display:"block"})
+    if(gameStateA[0]*gameStateA[1]>0){
+      $("#g3BG2bg").attr("src",$("#g3BG2bg").attr("src").replace("g3bg2.jpg","g3bg2over.jpg"))
+      for (var i = gameStateA.length - 1; i >= 0; i--) {
+        gameStateA[i] = 0
+      }
+    }else{
+      $("#g3BG2bg").attr("src").replace("g3bg2over.jpg","g3bg2.jpg")
+    }
+    
     // TweenLite.set($("#g3btn"),{display:"block",y:981/750*screenW})
     // TweenLite.set($("#g3btngoon"),{display:"block",y:981/750*screenW})
     TweenLite.to(fire,1,{scale:4,x:"-50%",y:"-50%",left:312/640*screenW,top:570/640*screenW,opacity:0,onComplete:game3done})
@@ -573,7 +582,7 @@ function showGame(){
 var rtA=[$("#r1t"),$("#r2t"),$("#r3t")]
 var wtA=[$("#w1t"),$("#w2t"),$("#w3t")]
 function gameEnd(){
-  console.log("end")
+
   $("#video")[0].pause()
   $("#theGif").css({display: "none", opacity: 0, zIndex: -1})
   TweenLite.set(rtA[0],{display:"none"})
@@ -593,11 +602,14 @@ function gameEnd(){
     ask_update(nowGame)
     successSound.currentTime = 0
     successSound.play()
-    // if(gameStateA[0]*gameStateA[1]*gameStateA[2]==1){
-    //   TweenLite.set($("#rightAllBG"),{display:"block"})
-    //   TweenLite.set($("#btnNext1"),{display:"none"})
-    //   // alert("?")
-    // }
+    if(gameStateA[0]*gameStateA[1]*gameStateA[2]>0){
+      TweenLite.set($("#rightAllBG"),{display:"block"})
+      // TweenLite.set($("#btnNext1"),{display:"none"})
+      // alert("?")
+      // for (var i = gameStateA.length - 1; i >= 0; i--) {
+      //   gameStateA[i] = 0
+      // }
+    }
   }else{
     gameFailUpdateShareContent()
     TweenLite.set($("#rightBG"),{display:"none"})
@@ -605,13 +617,18 @@ function gameEnd(){
     failSound.currentTime = 0
     failSound.play()
     TweenLite.set(wtA[nowGame],{display:"block"})
+    if(gameStateA[0]*gameStateA[1]*gameStateA[2]>0){
+      TweenLite.set($("#wrongAllBG"),{display:"block"})
+      // for (var i = gameStateA.length - 1; i >= 0; i--) {
+      //   gameStateA[i] = 0
+      // }
+    }
     // if(gameStateA[0]+gameStateA[1]+gameStateA[2]==4&&gameStateA[nowGame]==2&&gameStateA[0]*gameStateA[1]*gameStateA[2]!=0){
     //   TweenLite.set($("#wrongAllBG"),{display:"block"})
     //   TweenLite.set($("#btnNext2"),{display:"none"})
     //   // alert("?")
     // }
   }
-
 
   for (var i = 0; i < 3; i++) {
     if (gameStateA[i]==1) {
@@ -621,7 +638,12 @@ function gameEnd(){
       TweenLite.set(icoA[i],{display:"none",opacity:0})
     }
   };
-  
+  console.log(gameStateA[0]*gameStateA[1]*gameStateA[2])
+  if(gameStateA[0]*gameStateA[1]*gameStateA[2]>0){
+    for (var i = gameStateA.length - 1; i >= 0; i--) {
+      gameStateA[i] = 0
+    }
+  }
 
 }
 //==================== 抽奖页 =================
