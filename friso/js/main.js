@@ -676,6 +676,7 @@ updateLoad = function() {
 window.onscroll = function(evt) {
   var top;
   top = document.scrollingElement.scrollTop;
+  if ($(".logo").length<=0){return true}
   if (getdefaultTop && (top > defaultTop)) {
     return $(".logo").addClass("scroll");
   } else {
@@ -737,8 +738,10 @@ updateLikeOn = function() {
 window.onload = function() {
   var MK;
   MK = $("body").width() / $("body").height();
+  if ($(".logo").length>0) {
   defaultTop = $(".logo").offset().top;
   getdefaultTop = true;
+  }
   if ($("body").height() <= 460 || MK > 0.65) {
     $("body").addClass("iphone4");
   }
