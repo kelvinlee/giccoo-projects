@@ -5,7 +5,7 @@ $(document).ready(function load (){
     var shareContent;
     shareContent = {
       title: "知食日报",
-      desc: "",
+      desc: "啤酒与美食的搭配可没你想到的那么简单！",
       link: "http://m.giccoo.com/zhihunews/",
       imgUrl: "http://m.giccoo.com/zhihunews/img/ico.jpg",
       success: function() {},
