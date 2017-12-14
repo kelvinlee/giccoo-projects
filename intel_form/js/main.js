@@ -126,7 +126,7 @@ function getStart(){
 
 function checkNum(){
   for (var i = 0; i < 27; i++) {
-    var url="http://api.giccoo.com/count/get/intel"+parseInt(i)
+    var url="http://api.giccoo.com/count/get/intel"+parseInt(i)+"/"
     $.get(url,function(msg){
         if (msg.recode == 200) {
           result27A[i]=msg.info[0].count
