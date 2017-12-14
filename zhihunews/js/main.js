@@ -123,9 +123,11 @@ function setPage(){
   function endTouch(event){
     if (pageUpDown == 1) {
       //alert("上一页")
+      $("#video")[0].pause()
       nowPage--
     }else if (pageUpDown == -1) {
       //alert("下一页")
+      $("#video")[0].pause()
       nowPage++
     }else if (pageUpDown==0) {
       //alert("不翻页")
@@ -206,7 +208,7 @@ $("#playBtn").click(function(){
 
 $("#video").click(function(){
   $("#video")[0].pause()
-  TweenLite.set($("#playBtn"),{display:"block"})
+  //TweenLite.set($("#playBtn"),{display:"block"})
 })
 
 $("#p3btn").click(function(){
