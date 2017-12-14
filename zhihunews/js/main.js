@@ -68,6 +68,8 @@ function loadingAni(){
   TweenLite.to($("#p1hand"),1,{left:"12%",delay:2,onComplete:moveHand})
 
   TweenLite.to($("#p1hint"),1,{opacity:0,delay:6,onComplete:killHint})
+
+  TweenLite.set($("#page1"),{display:"block"})
 }
 function killHint(){
   TweenLite.set($("#p1hint"),{display:"none"})

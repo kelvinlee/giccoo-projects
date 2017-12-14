@@ -25,6 +25,11 @@ img{ width: 100%; }
 	position: absolute;overflow: hidden;
 	width: 100%;height: 100%;
 }
+.pageA{
+	position: absolute;overflow: hidden;
+	width: 100%;height: 100%;
+	display: none;
+}
 .bg{
 	position: absolute;font-size: 0;
 	width: 100%;height: 100%;
@@ -94,7 +99,7 @@ h2{
 	top:0;
 	background-color: #403d3b;
 	color: #e9e4d7;
-	font-size: .8rem;
+	font-size: 1rem;
 	text-align: center;
 /*	height: 54.6785%;*/
 }
@@ -103,7 +108,7 @@ h2{
 	top:0;
 	/*background-color: #403d3b;*/
 	color: #e9e4d7;
-	font-size: .8rem;
+	font-size: 1rem;
 	text-align: right;
 	width: 90.625%;
 	right: 4.6875%;
@@ -112,7 +117,7 @@ h2{
 	position: absolute;
 	top:0;
 	color: #403d3b;
-	font-size: .8rem;
+	font-size: 1rem;
 	text-align: left;
 }
 /*.inPart{
