@@ -94,6 +94,7 @@ function setPage(){
 
   var nowPage = 0;
   var startX = 0;
+  var startY = 0;
   var startScrollTop;
   var pageUpDown =-1
   var pageA=[$('#page1'),$('#page2'),$('#page3'),$('#page5'),$('#page6'),$('#page7')]
@@ -101,18 +102,23 @@ function setPage(){
 
   function startTouch(event){
     startX=event.touches[0].clientX
+    startY=event.touches[0].clientY
     pageUpDown=0
 
   }
   function moveTouch(event){
     var nowX=event.touches[0].clientX
-    if (nowX-startX>80&&nowPage!=0) {
-      pageUpDown=1
-    }else if (nowX-startX< -80&&nowPage!=5) {
-      pageUpDown=-1
-    }else{
-      pageUpDown=0
-    };    
+    var nowY=event.touches[0].clientY
+    if(Math.sqrt(nowX-startX)>Math.sqrt(nowY-startY)){
+      if (nowX-startX>80&&nowPage!=0) {
+       pageUpDown=1
+      }else if (nowX-startX< -80&&nowPage!=5) {
+        pageUpDown=-1
+      }else{
+       pageUpDown=0
+      };  
+    }
+      
   }
   function endTouch(event){
     if (pageUpDown == 1) {
