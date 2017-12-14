@@ -130,6 +130,7 @@ function checkNum(){
     $.get(url,function(msg){
         if (msg.recode == 200) {
           result27A[i]=msg.info[0].count
+          console.log(msg.info[0].count)
         }else{
 
         }
