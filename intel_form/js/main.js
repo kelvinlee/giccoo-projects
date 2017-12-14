@@ -1,4 +1,19 @@
 
+var result27A=[0,0,0,0,0,
+0,0,0,0,0,
+0,0,0,0,0,
+0,0,0,0,0,
+0,0,0,0,0,
+0,0]//总结果
+
+var userResultA=[0,0,0,0,0,
+0,0,0,0,0,
+0,0,0,0,0,
+0,0,0,0,0,
+0,0,0,0,0,
+0,0]//选择结果
+
+
 $(document).ready(function load (){
 	loadWechatConfig();
   	wx.ready(function() {
@@ -57,6 +72,8 @@ var result4A=[0,0,0,0]
 var result5A=[0,0,0,0,0,0,0,0]
 var result6A=[0,0,0,0,0,0,0,0,0]
 
+
+
 function getStart(){
    TweenLite.set($("#btn"),{y:1907/640*screenW})
    TweenLite.set($("#hint1"),{y:1907/640*screenW})
@@ -102,16 +119,11 @@ function getStart(){
 
 
   checkNum()
-   console.log(result27A)
+   //console.log(result27A)
 }
 
 
-var result27A=[0,0,0,0,0,
-0,0,0,0,0,
-0,0,0,0,0,
-0,0,0,0,0,
-0,0,0,0,0,
-0,0]//总结果
+
 function checkNum(){
   for (var i = 0; i < 27; i++) {
     var url="http://api.giccoo.com/count/get/intel"+parseInt(i)
@@ -158,12 +170,7 @@ $("#btn").click(function(){
   }
 })
 
-var userResultA=[0,0,0,0,0,
-0,0,0,0,0,
-0,0,0,0,0,
-0,0,0,0,0,
-0,0,0,0,0,
-0,0]//选择结果
+
 
 function goSubmit(){
   userResultA[0]=result1A[0]
