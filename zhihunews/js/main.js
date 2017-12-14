@@ -23,7 +23,7 @@ $(document).ready(function load (){
 
 });
 
-$('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
+//$('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
 var screenW
 var screenH
 
@@ -132,7 +132,7 @@ function setPage(){
       }
 
 
-      if (i<nowPage) {TweenLite.to(pageA[i],.8,{rotationY:-180,left:"-100%",z:500})};
+      if (i<nowPage) {TweenLite.to(pageA[i],1.2,{rotationY:-180,left:"-100%",z:600})};
       if (i>nowPage) {TweenLite.to(pageA[i],.8,{rotationY:0,left:"0%",z:0});};
       if (i==nowPage) {TweenLite.to(pageA[i],.8,{rotationY:0,left:"0%",z:0});};
     }; 
