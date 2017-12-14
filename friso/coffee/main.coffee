@@ -599,6 +599,7 @@ defaultInfo = if localStorage.getItem("defaultInfo") then JSON.parse(localStorag
 
 riot.mount("*")
 
+
 updateLoad = ->
 	$.ajax
 		type: "get"
@@ -616,7 +617,7 @@ updateLoad = ->
 
 window.onscroll = (evt)->
 	top = document.scrollingElement.scrollTop
-	# console.log top,$(".logo").offset().top
+
 	if getdefaultTop && (top > defaultTop)
 		$(".logo").addClass "scroll"
 	else
