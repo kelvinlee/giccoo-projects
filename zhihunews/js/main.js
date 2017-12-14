@@ -109,7 +109,7 @@ function setPage(){
   function moveTouch(event){
     var nowX=event.touches[0].clientX
     var nowY=event.touches[0].clientY
-    if(Math.sqrt(nowX-startX)>Math.sqrt(nowY-startY)){
+    if((nowX-startX)*(nowX-startX)>(nowY-startY)*(nowY-startY)){
       if (nowX-startX>80&&nowPage!=0) {
        pageUpDown=1
       }else if (nowX-startX< -80&&nowPage!=5) {
