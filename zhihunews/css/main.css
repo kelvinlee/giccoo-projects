@@ -36,12 +36,94 @@ img{ width: 100%; }
     left: 50%;
     top: 50%;
 }
+.topPart{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	font-size: 0;
+}
+.bottomPart{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	font-size: 0;
+}
+.mainPart{
+	position: absolute;
+	width: 100%;
+	overflow: scroll;
+}
+
+.mainPart2{
+	position: absolute;
+	width: 87.5%;
+	overflow: scroll;
+	left: 6.25%;
+}
+.midPart{
+	position: absolute;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+       		transform: translate3d(-50%, -50%, 0);
+    left: 50%;
+    top: 50%;
+    width: 100%;
+
+}
+.p5pic{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+p{
+	margin-top: 0em;
+	margin-bottom: 1em;
+}
+h1{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-size: 1.5em;
+}
+h2{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-size: 1em;
+}
+.yearDiv{
+	position: absolute;
+	top:0;
+	background-color: #403d3b;
+	color: #e9e4d7;
+	font-size: .8rem;
+	text-align: center;
+/*	height: 54.6785%;*/
+}
+.yearDiv1{
+	position: absolute;
+	top:0;
+	/*background-color: #403d3b;*/
+	color: #e9e4d7;
+	font-size: .8rem;
+	text-align: right;
+	width: 90.625%;
+	right: 4.6875%;
+}
+.dateDiv{
+	position: absolute;
+	top:0;
+	color: #403d3b;
+	font-size: .8rem;
+	text-align: left;
+}
+/*.inPart{
+	width: 100%;
+}*/
 #loadingT{
 	width: 56.09375%;
 }
 #loadingBar1{
 	position: absolute;
-	width: 100%;
+	width: 0%;
 	height: 6%;
 	background-color: #8c2f26;
 	bottom: 0;
@@ -53,4 +135,53 @@ img{ width: 100%; }
 	background-color: #8c2f26;
 	bottom: 0;
 	opacity: .5;
+}
+#p1videoPic{
+	position: absolute;
+	width: 100%;
+}
+
+#p1video{
+	position: absolute;
+	width: 85.9375%;
+	top: 0;
+	left: 7.03125%;
+}
+#playBtn{
+	position: absolute;
+	width: 85.78125%;
+	left: 7.109375%;
+	/*background-color: #990088;*/
+}
+#videoDiv{
+	position: absolute;
+	width: 85.78125%;
+	left: 7.109375%;
+}
+#video{
+	position: absolute;
+	width: 100%;
+	top:0;
+	left: 0;
+	display: none;
+}
+.alphaBtn{
+	position: absolute;
+	width: 80%;
+	height: 15%;
+	opacity: 0;
+	background-color: #567890;
+	left: 10%;
+	bottom: 0;
+}
+.content{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	perspective:500;
+	-webkit-perspective: 500;
+			transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
 }
