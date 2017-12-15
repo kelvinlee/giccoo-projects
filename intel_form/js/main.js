@@ -4,18 +4,18 @@ var result27A=[0,0,0,0,0,
 0,0,0,0,0,
 0,0,0,0,0,
 0,0,0,0,0,
-0,0]//总结果
+0,0,0,0]//总结果
 
 var userResultA=[0,0,0,0,0,
 0,0,0,0,0,
 0,0,0,0,0,
 0,0,0,0,0,
 0,0,0,0,0,
-0,0]//选择结果
+0,0,0,0]//选择结果
 
 var checkA=[$("#check1"),$("#check2"),$("#check3"),$("#check4"),$("#check5"),$("#check6"),$("#check7"),$("#check8"),$("#check9"),$("#check10"),
 $("#check11"),$("#check12"),$("#check13"),$("#check14"),$("#check15"),$("#check16"),$("#check17"),$("#check18"),$("#check19"),$("#check20"),
-$("#check21"),$("#check22"),$("#check23"),$("#check24"),$("#check25"),$("#check26"),$("#check27")]
+$("#check21"),$("#check22"),$("#check23"),$("#check24"),$("#check25"),$("#check26"),$("#check27"),$("#check28"),$("#check29")]
 
 
 var q1A=[$("#check1"),$("#check2")]
@@ -23,14 +23,16 @@ var q2A=[$("#check3"),$("#check4")]
 var q3A=[$("#check5"),$("#check6")]
 var q4A=[$("#check7"),$("#check8"),$("#check9"),$("#check10")]
 var q5A=[$("#check11"),$("#check12"),$("#check13"),$("#check14"),$("#check15"),$("#check16"),$("#check17"),$("#check18")]
-var q6A=[$("#check19"),$("#check20"),$("#check21"),$("#check22"),$("#check23"),$("#check24"),$("#check25"),$("#check26"),$("#check27")]
+var q6A=[$("#check19"),$("#check20")]
+var q7A=[$("#check21"),$("#check22"),$("#check23"),$("#check24"),$("#check25"),$("#check26"),$("#check27"),$("#check28"),$("#check29")]
 
 var result1A=[0,0]
 var result2A=[0,0]
 var result3A=[0,0]
 var result4A=[0,0,0,0]
 var result5A=[0,0,0,0,0,0,0,0]
-var result6A=[0,0,0,0,0,0,0,0,0]
+var result6A=[0,0]
+var result7A=[0,0,0,0,0,0,0,0,0]
 
 $(document).ready(function load (){
 	loadWechatConfig();
@@ -77,31 +79,32 @@ $("#number6"),$("#number7"),$("#number8"),$("#number9"),$("#number10"),
 $("#number11"),$("#number12"),$("#number13"),$("#number14"),$("#number15"),
 $("#number16"),$("#number17"),$("#number18"),$("#number19"),$("#number20"),
 $("#number21"),$("#number22"),$("#number23"),$("#number24"),$("#number25"),
-$("#number26"),$("#number27")]
+$("#number26"),$("#number27"),$("#number28"),$("#number29")]
 
 var barA=[$("#bar1"),$("#bar2"),$("#bar3"),$("#bar4"),$("#bar5"),
 $("#bar6"),$("#bar7"),$("#bar8"),$("#bar9"),$("#bar10"),
 $("#bar11"),$("#bar12"),$("#bar13"),$("#bar14"),$("#bar15"),
 $("#bar16"),$("#bar17"),$("#bar18"),$("#bar19"),$("#bar20"),
 $("#bar21"),$("#bar22"),$("#bar23"),$("#bar24"),$("#bar25"),
-$("#bar26"),$("#bar27")]
+$("#bar26"),$("#bar27"),$("#bar28"),$("#bar29")]
 
-var yA=[545,582, 690,727, 835,872, 980,1017,1054,1091, 1197,1233,1269,1305,1341,1377,1413,1449, 1558,1594,1630,1666,1702,1738,1774,1810,1846]
+var yA=[545,582, 690,727, 835,872, 980,1017,1054,1091, 1197,1233,1269,1305,1341,1377,1413,1449,1558,1594 ,1558+140,1594+140,1630+140,1666+140,1702+140,1738+140,1774+140,1810+140,1846+140]
 
 function getStart(){
-   TweenLite.set($("#btn"),{y:1907/640*screenW})
-   TweenLite.set($("#hint1"),{y:1907/640*screenW})
-   TweenLite.set($("#hint2"),{y:1907/640*screenW})
-   TweenLite.set($("#hint3"),{y:1907/640*screenW})
-   TweenLite.set($("#hint4"),{y:1907/640*screenW})
-   TweenLite.set($("#hint5"),{y:1907/640*screenW})
-   TweenLite.set($("#hint6"),{y:1907/640*screenW})
+   TweenLite.set($("#btn"),{y:2047/640*screenW})
+   TweenLite.set($("#hint1"),{y:2047/640*screenW})
+   TweenLite.set($("#hint2"),{y:2047/640*screenW})
+   TweenLite.set($("#hint3"),{y:2047/640*screenW})
+   TweenLite.set($("#hint4"),{y:2047/640*screenW})
+   TweenLite.set($("#hint5"),{y:2047/640*screenW})
+   TweenLite.set($("#hint6"),{y:2047/640*screenW})
+   TweenLite.set($("#hint7"),{y:2047/640*screenW})
 
-   TweenLite.set($("#btn1"),{y:2029/640*screenW,height:230/640*screenW})
-   TweenLite.set($("#btn2"),{y:(2029+230)/640*screenW,height:230/640*screenW})
+   TweenLite.set($("#btn1"),{y:(2029+140)/640*screenW,height:230/640*screenW})
+   TweenLite.set($("#btn2"),{y:(2029+230+140)/640*screenW,height:230/640*screenW})
 
 
-for (var i = 0; i < 27; i++) {
+for (var i = 0; i < 29; i++) {
   TweenLite.set(checkA[i],{y:yA[i]/640*screenW})
   TweenLite.set(numberA[i],{y:yA[i]/640*screenW})
   TweenLite.set(barA[i],{y:(yA[i]+12)/640*screenW,width:0,height:10/640*screenW})
@@ -127,40 +130,47 @@ $("#btn2").click(function(){
 })
 
 function checkNum(){
-    $.get("http://api.giccoo.com/count/get/intel0",function(msg){if (msg.recode == 200) {result27A[0]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel1",function(msg){if (msg.recode == 200) {result27A[1]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel2",function(msg){if (msg.recode == 200) {result27A[2]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel3",function(msg){if (msg.recode == 200) {result27A[3]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel4",function(msg){if (msg.recode == 200) {result27A[4]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_0",function(msg){if (msg.recode == 200) {result27A[0]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_1",function(msg){if (msg.recode == 200) {result27A[1]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_2",function(msg){if (msg.recode == 200) {result27A[2]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_3",function(msg){if (msg.recode == 200) {result27A[3]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_4",function(msg){if (msg.recode == 200) {result27A[4]= msg.info[0].count}})
 
-    $.get("http://api.giccoo.com/count/get/intel5",function(msg){if (msg.recode == 200) {result27A[5]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel6",function(msg){if (msg.recode == 200) {result27A[6]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel7",function(msg){if (msg.recode == 200) {result27A[7]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel8",function(msg){if (msg.recode == 200) {result27A[8]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel9",function(msg){if (msg.recode == 200) {result27A[9]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_5",function(msg){if (msg.recode == 200) {result27A[5]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_6",function(msg){if (msg.recode == 200) {result27A[6]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_7",function(msg){if (msg.recode == 200) {result27A[7]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_8",function(msg){if (msg.recode == 200) {result27A[8]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_9",function(msg){if (msg.recode == 200) {result27A[9]= msg.info[0].count}})
 
-    $.get("http://api.giccoo.com/count/get/intel10",function(msg){if (msg.recode == 200) {result27A[10]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel11",function(msg){if (msg.recode == 200) {result27A[11]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel12",function(msg){if (msg.recode == 200) {result27A[12]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel13",function(msg){if (msg.recode == 200) {result27A[13]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel14",function(msg){if (msg.recode == 200) {result27A[14]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_10",function(msg){if (msg.recode == 200) {result27A[10]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_11",function(msg){if (msg.recode == 200) {result27A[11]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_12",function(msg){if (msg.recode == 200) {result27A[12]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_13",function(msg){if (msg.recode == 200) {result27A[13]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_14",function(msg){if (msg.recode == 200) {result27A[14]= msg.info[0].count}})
 
-    $.get("http://api.giccoo.com/count/get/intel15",function(msg){if (msg.recode == 200) {result27A[15]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel16",function(msg){if (msg.recode == 200) {result27A[16]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel17",function(msg){if (msg.recode == 200) {result27A[17]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel18",function(msg){if (msg.recode == 200) {result27A[18]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel19",function(msg){if (msg.recode == 200) {result27A[19]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_15",function(msg){if (msg.recode == 200) {result27A[15]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_16",function(msg){if (msg.recode == 200) {result27A[16]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_17",function(msg){if (msg.recode == 200) {result27A[17]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_18",function(msg){if (msg.recode == 200) {result27A[18]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_19",function(msg){if (msg.recode == 200) {result27A[19]= msg.info[0].count}})
 
-    $.get("http://api.giccoo.com/count/get/intel20",function(msg){if (msg.recode == 200) {result27A[20]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel21",function(msg){if (msg.recode == 200) {result27A[21]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel22",function(msg){if (msg.recode == 200) {result27A[22]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel23",function(msg){if (msg.recode == 200) {result27A[23]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel24",function(msg){if (msg.recode == 200) {result27A[24]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_20",function(msg){if (msg.recode == 200) {result27A[20]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_21",function(msg){if (msg.recode == 200) {result27A[21]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_22",function(msg){if (msg.recode == 200) {result27A[22]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_23",function(msg){if (msg.recode == 200) {result27A[23]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_24",function(msg){if (msg.recode == 200) {result27A[24]= msg.info[0].count}})
 
-    $.get("http://api.giccoo.com/count/get/intel25",function(msg){if (msg.recode == 200) {result27A[25]= msg.info[0].count}})
-    $.get("http://api.giccoo.com/count/get/intel26",function(msg){if (msg.recode == 200) {result27A[26]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_25",function(msg){if (msg.recode == 200) {result27A[25]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_26",function(msg){if (msg.recode == 200) {result27A[26]= msg.info[0].count}})
+
+    $.get("http://api.giccoo.com/count/get/intel_27",function(msg){if (msg.recode == 200) {result27A[27]= msg.info[0].count}})
+    $.get("http://api.giccoo.com/count/get/intel_28",function(msg){if (msg.recode == 200) {result27A[28]= msg.info[0].count}})
 
 
+
+    setTimeout(function(){
+      console.log("result27A[28]="+result27A[28])
+    },2000)
 
 
 
@@ -186,9 +196,12 @@ $("#btn").click(function(){
   }else if((result5A[0]+result5A[1]+result5A[2]+result5A[3]+result5A[4]+result5A[5]+result5A[6]+result5A[7])==0){
     TweenLite.set($(".hint"),{opacity:0})
     TweenLite.set($("#hint5"),{opacity:1})
-  }else if((result6A[0]+result6A[1]+result6A[2]+result6A[3]+result6A[4]+result6A[5]+result6A[6]+result6A[7]+result6A[8])==0){
+  }else if((result6A[0]+result6A[1])==0){
     TweenLite.set($(".hint"),{opacity:0})
     TweenLite.set($("#hint6"),{opacity:1})
+  }else if((result7A[0]+result7A[1]+result7A[2]+result7A[3]+result7A[4]+result7A[5]+result7A[6]+result7A[7]+result7A[8])==0){
+    TweenLite.set($(".hint"),{opacity:0})
+    TweenLite.set($("#hint7"),{opacity:1})
   }else{
     TweenLite.set($(".hint"),{opacity:0})
     TweenLite.set($("#btn"),{opacity:1})
@@ -227,19 +240,22 @@ function goSubmit(){
 
   userResultA[18]=result6A[0]
   userResultA[19]=result6A[1]
-  userResultA[20]=result6A[2]
-  userResultA[21]=result6A[3]
-  userResultA[22]=result6A[4]
-  userResultA[23]=result6A[5]
-  userResultA[24]=result6A[6]
-  userResultA[25]=result6A[7]
-  userResultA[26]=result6A[8]
+
+  userResultA[20]=result7A[0]
+  userResultA[21]=result7A[1]
+  userResultA[22]=result7A[2]
+  userResultA[23]=result7A[3]
+  userResultA[24]=result7A[4]
+  userResultA[25]=result7A[5]
+  userResultA[26]=result7A[6]
+  userResultA[27]=result7A[7]
+  userResultA[28]=result7A[8]
 
 
   for (var i = 0; i < userResultA.length; i++) {
     
     if(userResultA[i]==1){
-        var _id="intel"+parseInt(i)
+        var _id="intel_"+parseInt(i)
         result27A[i]++
         $.post("http://api.giccoo.com/count/update", {id: _id},function(msg){
           if (msg.recode == 200) {}else{}
@@ -376,58 +392,69 @@ q5A[7].click(function(){
   TweenLite.set(q5A[7],{opacity:1})
   result5A=[0,0,0,0,0,0,0,1]
 })
-
 //==========================================
 q6A[0].click(function(){
   for (var i = 0; i < q6A.length; i++) {    TweenLite.set(q6A[i],{opacity:0})  }
   TweenLite.set(q6A[0],{opacity:1})
-  result6A=[1,0,0,0,0,0,0,0,0]
+  result6A=[1,0]
 })
 
 q6A[1].click(function(){
   for (var i = 0; i < q6A.length; i++) {    TweenLite.set(q6A[i],{opacity:0})  }
   TweenLite.set(q6A[1],{opacity:1})
-  result6A=[0,1,0,0,0,0,0,0,0]
+  result6A=[0,1]
+})
+//==========================================
+q7A[0].click(function(){
+  for (var i = 0; i < q7A.length; i++) {    TweenLite.set(q7A[i],{opacity:0})  }
+  TweenLite.set(q7A[0],{opacity:1})
+  result7A=[1,0,0,0,0,0,0,0,0]
 })
 
-q6A[2].click(function(){
-  for (var i = 0; i < q6A.length; i++) {    TweenLite.set(q6A[i],{opacity:0})  }
-  TweenLite.set(q6A[2],{opacity:1})
-  result6A=[0,0,1,0,0,0,0,0,0]
+q7A[1].click(function(){
+  for (var i = 0; i < q7A.length; i++) {    TweenLite.set(q7A[i],{opacity:0})  }
+  TweenLite.set(q7A[1],{opacity:1})
+  result7A=[0,1,0,0,0,0,0,0,0]
 })
 
-q6A[3].click(function(){
-  for (var i = 0; i < q6A.length; i++) {    TweenLite.set(q6A[i],{opacity:0})  }
-  TweenLite.set(q6A[3],{opacity:1})
-  result6A=[0,0,0,1,0,0,0,0,0]
+q7A[2].click(function(){
+  for (var i = 0; i < q7A.length; i++) {    TweenLite.set(q7A[i],{opacity:0})  }
+  TweenLite.set(q7A[2],{opacity:1})
+  result7A=[0,0,1,0,0,0,0,0,0]
 })
 
-q6A[4].click(function(){
-  for (var i = 0; i < q6A.length; i++) {    TweenLite.set(q6A[i],{opacity:0})  }
-  TweenLite.set(q6A[4],{opacity:1})
-  result6A=[0,0,0,0,1,0,0,0,0]
+q7A[3].click(function(){
+  for (var i = 0; i < q7A.length; i++) {    TweenLite.set(q7A[i],{opacity:0})  }
+  TweenLite.set(q7A[3],{opacity:1})
+  result7A=[0,0,0,1,0,0,0,0,0]
 })
 
-q6A[5].click(function(){
-  for (var i = 0; i < q6A.length; i++) {    TweenLite.set(q6A[i],{opacity:0})  }
-  TweenLite.set(q6A[5],{opacity:1})
-  result6A=[0,0,0,0,0,1,0,0,0]
+q7A[4].click(function(){
+  for (var i = 0; i < q7A.length; i++) {    TweenLite.set(q7A[i],{opacity:0})  }
+  TweenLite.set(q7A[4],{opacity:1})
+  result7A=[0,0,0,0,1,0,0,0,0]
 })
 
-q6A[6].click(function(){
-  for (var i = 0; i < q6A.length; i++) {    TweenLite.set(q6A[i],{opacity:0})  }
-  TweenLite.set(q6A[6],{opacity:1})
-  result6A=[0,0,0,0,0,0,1,0,0]
+q7A[5].click(function(){
+  for (var i = 0; i < q7A.length; i++) {    TweenLite.set(q7A[i],{opacity:0})  }
+  TweenLite.set(q7A[5],{opacity:1})
+  result7A=[0,0,0,0,0,1,0,0,0]
 })
 
-q6A[7].click(function(){
-  for (var i = 0; i < q6A.length; i++) {    TweenLite.set(q6A[i],{opacity:0})  }
-  TweenLite.set(q6A[7],{opacity:1})
-  result6A=[0,0,0,0,0,0,0,1,0]
+q7A[6].click(function(){
+  for (var i = 0; i < q7A.length; i++) {    TweenLite.set(q7A[i],{opacity:0})  }
+  TweenLite.set(q7A[6],{opacity:1})
+  result7A=[0,0,0,0,0,0,1,0,0]
 })
 
-q6A[8].click(function(){
-  for (var i = 0; i < q6A.length; i++) {    TweenLite.set(q6A[i],{opacity:0})  }
-  TweenLite.set(q6A[8],{opacity:1})
-  result6A=[0,0,0,0,0,0,0,0,1]
+q7A[7].click(function(){
+  for (var i = 0; i < q7A.length; i++) {    TweenLite.set(q7A[i],{opacity:0})  }
+  TweenLite.set(q7A[7],{opacity:1})
+  result7A=[0,0,0,0,0,0,0,1,0]
+})
+
+q7A[8].click(function(){
+  for (var i = 0; i < q7A.length; i++) {    TweenLite.set(q7A[i],{opacity:0})  }
+  TweenLite.set(q7A[8],{opacity:1})
+  result7A=[0,0,0,0,0,0,0,0,1]
 })
