@@ -119,11 +119,11 @@ for (var i = 0; i < 27; i++) {
 }
 
 $("#btn1").click(function(){
-  window.location.href = "https://www.zhihu.com/question/263562501"
+  window.location.href = "https://www.intel.cn/content/www/cn/zh/business/small-business/overview.html"
 })
 
 $("#btn2").click(function(){
-  window.location.href = "https://www.zhihu.com/question/263562501"
+  window.location.href = "https://sale.jd.com/act/lezftNCZF0K.html?cpdad=1DLSUE"
 })
 
 function checkNum(){
