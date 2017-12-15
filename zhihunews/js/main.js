@@ -5,7 +5,7 @@ $(document).ready(function load (){
     var shareContent;
     shareContent = {
       title: "知食日报",
-      desc: "啤酒与美食的搭配可没你想到的那么简单！",
+      desc: "让你重新认识手上这杯啤酒",
       link: "http://m.giccoo.com/zhihunews/",
       imgUrl: "http://m.giccoo.com/zhihunews/img/ico.jpg",
       success: function() {},
@@ -110,9 +110,9 @@ function setPage(){
     var nowX=event.touches[0].clientX
     var nowY=event.touches[0].clientY
     if((nowX-startX)*(nowX-startX)>(nowY-startY)*(nowY-startY)*2){
-      if (nowX-startX>80&&nowPage!=0) {
+      if (nowX-startX>80&&nowPage!=0) {//&&nowPage!=0
        pageUpDown=1
-      }else if (nowX-startX< -80&&nowPage!=5) {
+      }else if (nowX-startX< -80) {//&&nowPage!=5
         pageUpDown=-1
       }else{
        pageUpDown=0
@@ -125,10 +125,16 @@ function setPage(){
       //alert("上一页")
       $("#video")[0].pause()
       nowPage--
+      if (nowPage<0) {
+        nowPage=5
+      };
     }else if (pageUpDown == -1) {
       //alert("下一页")
       $("#video")[0].pause()
       nowPage++
+      if (nowPage>5) {
+        nowPage=0
+      };
     }else if (pageUpDown==0) {
       //alert("不翻页")
     };

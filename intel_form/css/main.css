@@ -52,3 +52,33 @@ img{ width: 100%; }
 	opacity: 0;
 	top: 0;
 }
+.theNumber{
+	position: absolute;
+	left: 75%;
+	color: #ffffff;
+	font-size: 0.8rem;
+	opacity: 0;
+}
+.theBar1{
+	position: absolute;
+	right: 26%;
+	background-color: #3271bf;
+	opacity: 0;
+	display: block;
+	z-index: 1000;
+}
+.theBar2{
+	position: absolute;
+	right: 26%;
+	background-color: #ffffff;
+	opacity: 0;
+	display: block;
+	z-index: 1000;
+
+}
+.alphaBtn{
+	position: absolute;
+	width: 100%;
+	background-color: #567890;
+	opacity: 0;
+}
