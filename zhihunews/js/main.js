@@ -26,7 +26,7 @@ $(document).ready(function load (){
 // $('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
 document.addEventListener('touchmove', function (event) {
 
-  if(nowPage!=1&&nowPage!=3){
+  if(nowPage!=1&&nowPage!=3&&nowPage!=5){
     event.preventDefault();
   }
   
@@ -124,6 +124,7 @@ function setPage(){
     if (pageUpDown == 1) {
       //alert("上一页")
       $("#video")[0].pause()
+      $("#video2")[0].pause()
       nowPage--
       if (nowPage<0) {
         nowPage=5
@@ -131,6 +132,7 @@ function setPage(){
     }else if (pageUpDown == -1) {
       //alert("下一页")
       $("#video")[0].pause()
+      $("#video2")[0].pause()
       nowPage++
       if (nowPage>5) {
         nowPage=0
