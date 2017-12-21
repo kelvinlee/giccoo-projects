@@ -223,6 +223,10 @@ $("#p3btn").click(function(){
   window.location.href = "https://www.zhihu.com/question/263562501"
 })
 
+$("#p6btn").click(function(){
+  window.location.href = "https://www.zhihu.com/publications/book/119559007"
+})
+
 $("#p1hint").click(function(){
   TweenLite.to($("#p1hint"),.5,{opacity:0,onComplete:killHint})
 })
