@@ -277,7 +277,7 @@ function setResult(){
   var all=result27A[0]+result27A[1]
    for (var i = 0; i < result27A.length; i++) {
       var prst=result27A[i]/all*100
-      numberA[i][0].innerHTML=parseInt(prst)+"%("+parseInt(result27A[i])+"人)"
+      numberA[i][0].innerHTML=parseInt(prst)+"%("+parseInt(result27A[i]*7)+"人)"
       TweenLite.to(barA[i],1.5,{y:(yA[i]+12)/640*screenW,width:result27A[i]/all*200/640*screenW,height:10/640*screenW})     
   };
   TweenLite.set($(".theNumber"),{opacity:1})
