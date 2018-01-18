@@ -54,3 +54,6 @@ function loadingAni2(){
   TweenLite.set($("#loadingBar"),{height:screenH-screenW/640*1000})
   TweenLite.set($("#loadingBG"),{display:"none"})
 }
+$("#videoLayer").click(function(){
+  $("#video")[0].play()
+})
