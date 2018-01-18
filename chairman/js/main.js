@@ -51,6 +51,7 @@ function loadingAni(){
 
 function loadingAni2(){
   // TweenLite.set($("#loadingBar"),{display:"none"})
+  $("#audio")[0].play()
   TweenLite.set($("#loadingBar"),{height:screenH-screenW/640*1000})
   TweenLite.set($("#loadingBG"),{display:"none"})
 }
