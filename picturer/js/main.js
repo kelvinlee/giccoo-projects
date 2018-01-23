@@ -2,7 +2,7 @@
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var $_GET, ANIMATION_END_NAME, ANIMATION_END_NAMES, INDEX, Loader, SendNote, Store, TRANSITION_END_NAME, TRANSITION_END_NAMES, UpdateShare, UpdateShareContent, VENDORS, _loader, cdn, closeWaiting, css3Prefix, debug, defaultWords, global, hideShareWechat, i, isMM, k, layzr, len, link, loadStart, loadWechatConfig, mTestElement, opendWaiting, qrcode, selectFiles, sending, tm, uploadImage;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, SendNote, Store, TRANSITION_END_NAME, TRANSITION_END_NAMES, UpdateShare, VENDORS, cdn, css3Prefix, debug, hideShareWechat, i, j, layzr, len, loadStart, mTestElement, qrcode, share, shareCall, shareOneToAll, tm;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -22,8 +22,8 @@ ANIMATION_END_NAMES = {
 
 mTestElement = document.createElement("div");
 
-for (k = 0, len = VENDORS.length; k < len; k++) {
-    i = VENDORS[k];
+for (j = 0, len = VENDORS.length; j < len; j++) {
+    i = VENDORS[j];
     css3Prefix = i;
     if (css3Prefix + "Transition" in mTestElement.style) {
         break;
@@ -908,107 +908,48 @@ debug = false;
 
 cdn = "";
 
-isMM = false;
-
 // cdn = "http://disk.giccoo.com/projects/Yili-Eat-World/" unless debug
-global = {};
-
-// link = "http://api.giccoo.com"
-link = "http://localhost:8881";
-
-defaultWords = ["谁说旅行就是凑热闹？", "谁说旅行就是装文艺?", "谁说旅行就是去度假?", "谁说旅行就是拍别人?"];
-
-INDEX = parseInt(Math.random() * defaultWords.length);
-
-global.INDEX = INDEX;
-
 window.onload = function () {
-    riot.mount("*");
-    shareDefault.title = defaultWords[INDEX];
-    loadWechatConfig();
-    wx.ready(function () {
-        var AppMShareContent, TimelineShareContent;
-        AppMShareContent = {
-            title: shareDefault.title,
-            desc: shareDefault.text,
-            link: shareDefault.url,
-            imgUrl: shareDefault.pic,
-            success: function success() {},
-            // alert "success"
-            cancel: function cancel() {}
-        };
-        // alert "cancel"
-        TimelineShareContent = {
-            title: shareDefault.title,
-            desc: shareDefault.text,
-            link: shareDefault.url,
-            imgUrl: shareDefault.pic,
-            success: function success() {},
-            // alert "success"
-            cancel: function cancel() {}
-        };
-        // alert "cancel"
-        wx.onMenuShareTimeline(TimelineShareContent);
-        wx.onMenuShareAppMessage(AppMShareContent);
-        wx.onMenuShareQQ(AppMShareContent);
-        return wx.onMenuShareWeibo(TimelineShareContent);
-    });
-    if ($_GET["id"]) {
-        return $.get(link + "/sayno/mfw/share/", {
-            id: $_GET["id"]
-        }, function (msg) {
-            var text;
-            if (msg.recode === 200) {
-                $("#imghere").append('<img src=\'http://image.giccoo.com/sayno/mfw/' + msg.info.image + '@!large\'  />');
-                text = defaultWords[defaultWords.indexOf(msg.info.message)];
-                return UpdateShareContent(text, null, "http://m.giccoo.com/sayno_mfw/share.html?id=" + msg.info.id, "http://image.giccoo.com/sayno/mfw/small-" + msg.info.image);
-            } else {
-                // window.location.href = "http://m.giccoo.com/sayno_mfw/"
-                return console.log("href");
-            }
-        });
+    var ep;
+    // $("#loading").hide()
+    if (document.getElementById("qrcode").getStyle("display") === "block") {
+        qrcode();
+        return false;
     }
-};
-
-UpdateShare = function UpdateShare() {
-    var TimelineShareContent;
-    TimelineShareContent = {
-        title: shareDefault.title,
-        desc: shareDefault.text,
-        link: shareDefault.url,
-        imgUrl: shareDefault.pic,
-        success: function success() {},
-        // alert "success"
-        cancel: function cancel() {}
-    };
-    // alert "cancel"
-    return wx.onMenuShareTimeline(TimelineShareContent);
-};
-
-loadWechatConfig = function loadWechatConfig() {
-    var hm, s, url;
-    url = encodeURIComponent(window.location.href.split("#")[0]);
-    hm = document.createElement('script');
-    hm.src = "http://api.giccoo.com/config?url=" + url;
-    s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(hm, s);
-};
-
-selectFiles = function selectFiles() {
-    var self;
-    console.log(this);
-    self = this;
-    // data =  ""
-    // self.passImage 'data:image/jpeg;base64,' + data
-    // self.passImage "http://localhost:5757/sayno/img/add-image.jpg"
-    // return false
-    return mm.invoke('readImage', {
-        'id': 'image',
-        'method': 0,
-        'type': 'base64'
-    }, function (id, data, size, type) {
-        // document.getElementById(id).src = 'data:image/jpeg;base64,' + data
-        self.passImage('data:image/jpeg;base64,' + data);
+    riot.mount("*");
+    ep = $(".load-progress .n");
+    tm = setInterval(function () {
+        var v;
+        if (parseInt(ep.html()) >= 96) {
+            clearInterval(tm);
+            return false;
+        }
+        v = parseInt(ep.html()) + parseInt(Math.random() * 5);
+        ep.html(v + "%");
+        return $(".load-item-note1").css({
+            height: 40 * v * 0.01 + "%"
+        });
+    }, 100);
+    if ($("body").height() <= 460) {
+        $("body").addClass("iphone4");
+    }
+    setTimeout(function () {
+        return loadStart();
+    }, 2500);
+    $(document).on("click", ".icon-wechat", function () {
+        // console.log "abcd"
+        return $(".share-wechat").show();
+    });
+    return $.get('http://api.giccoo.com/momo/config', {
+        url: window.location.href
+    }, function (resp) {
+        var config;
+        config = resp;
+        console.log("back config:", config);
+        return mm.invoke('initConfig', config, function (resq) {
+            // alert resq
+            return UpdateShare();
+        });
     });
 };
 
@@ -1049,131 +990,6 @@ loadStart = function loadStart() {
     });
 };
 
-sending = false;
-
-uploadImage = function uploadImage(next) {
-    var createFullImage, data;
-    if (sending) {
-        return SendNote("正在提交请稍后");
-    }
-    data = {};
-    data.image = global.canvas.getContent();
-    if (!data.image) {
-        return SendNote("请先选择照片");
-    }
-    data.message = $("#title").val();
-    data.nickname = userInfo.name;
-    data.avatar = userInfo.avatar;
-    createFullImage = function createFullImage(callback) {
-        var canvas, ctx, image, input, loadAll, logo, slogen, times, title;
-        canvas = document.createElement("canvas");
-        canvas.width = 480;
-        canvas.height = 680;
-        canvas.className = "testCanvas";
-        ctx = canvas.getContext("2d");
-        ctx.fillStyle = "#ffffff";
-        ctx.fillRect(0, 0, 480, 680);
-        times = 0;
-        loadAll = function loadAll() {
-            console.log(times);
-            // return false
-            if (times >= 4) {
-                data.image = canvas.toDataURL("image/png");
-                return callback();
-            } else {
-                // console.log "callback"
-                return times++;
-            }
-        };
-        image = new Image();
-        image.onload = function () {
-            ctx.drawImage(image, 25, 25, 430, 430);
-            ctx.font = "16px bold Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self";
-            ctx.lineWidth = 2;
-            ctx.textAlign = "right";
-            // ctx.strokeStyle = "#ffffff"
-            // ctx.strokeText("@"+data.nickname, 435, 485, 430)
-            ctx.fillStyle = "#000000";
-            ctx.fillText("@" + data.nickname, 435, 485, 430);
-            return loadAll();
-        };
-        image.src = data.image;
-        logo = new Image();
-        logo.onload = function () {
-            ctx.drawImage(logo, 35, 35, 120 * 1.2, 30 * 1.2);
-            return loadAll();
-        };
-        logo.src = "./img/logo-mark.png";
-        title = new Image();
-        title.onload = function () {
-            var height;
-            height = 40;
-            ctx.drawImage(title, 25, 430 + height, title.width, title.height);
-            // ctx.beginPath()
-            // ctx.lineWidth = 2
-            // ctx.moveTo(25,430+height+10+title.height)
-            // ctx.lineTo(270,430+height+10+title.height)
-            // ctx.stroke()
-            return loadAll();
-        };
-        title.src = "./img/build-title.png";
-        slogen = new Image();
-        slogen.onload = function () {
-            ctx.drawImage(slogen, 480 - slogen.width - 25, 680 - slogen.height - 25, slogen.width, slogen.height);
-            return loadAll();
-        };
-        slogen.src = "./img/image-slogen.png";
-        input = new Image();
-        input.onload = function () {
-            var height;
-            height = 40 + 35;
-            console.log(data.message, data.message === "");
-            if (data.message === "" || data.message == null) {
-                ctx.drawImage(input, 25, 430 + height, input.width, 35);
-            } else {
-                ctx.textAlign = "left";
-                ctx.font = "22px bold Tahoma, Arial, Roboto, Droid Sans, Helvetica Neue, Droid Sans Fallback, Microsoft YaHei, SimHei, Heiti SC, Hiragino Sans GB, Simsun, sans-self";
-                ctx.fillStyle = "#000000";
-                ctx.fillText(data.message, 25, 430 + height - 10 + input.height);
-            }
-            // ctx.beginPath()
-            // ctx.lineWidth = 2
-            // ctx.moveTo(25,430+height+5+35)
-            // ctx.lineTo(270,430+height+5+35)
-            // ctx.stroke()
-            return loadAll();
-        };
-        input.src = "./img/select-" + (global.INDEX + 1) + ".png";
-        $("body").append(canvas);
-    };
-    sending = true;
-    opendWaiting();
-    return createFullImage(function () {
-        data.message = defaultWords[INDEX];
-        return $.post(link + "/sayno/mfw/create", data, function (msg) {
-            sending = false;
-            if (msg.recode === 200) {
-                // alert "Success"
-                // showShare()
-                next(msg);
-            } else {
-                SendNote(msg.reason);
-            }
-            return closeWaiting();
-        });
-    });
-};
-
-// 显示上传等待界面.
-opendWaiting = function opendWaiting() {
-    return Loader("upload", "正在上传中请稍后", "ball");
-};
-
-// 关闭上传等待.
-closeWaiting = function closeWaiting() {
-    return Loader("upload");
-};
-
 // loadOther = ->
 // 	layzr = new Layzr
 // 		selector: '[data-src]'
@@ -1185,57 +1001,109 @@ SendNote = function SendNote(msg) {
     return riot.mount("note");
 };
 
-_loader = {};
-
-Loader = function Loader(id) {
-    var title = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-    var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "ball";
-    var time = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0;
-    var more = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : "";
-
-    if ($("#" + id).length > 0) {
-        return _loader[id].loadend();
+share = {
+    call: function call() {
+        return shareCall();
     }
-    $("body").append("<loader id='" + id + "' title='" + title + "' type='" + type + ('\' time=\'' + time + '\'>' + more + '</loader>'));
-    return riot.mount("loader");
 };
 
-UpdateShareContent = function UpdateShareContent() {
-    var title = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-    var text = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-    var url = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
-    var pic = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
-
-    if (title != null) {
-        shareDefault.title = title;
+UpdateShare = function UpdateShare() {
+    var Config, e;
+    shareOneConfig.title = shareDefault.title;
+    shareOneConfig.text = shareDefault.text;
+    shareOneConfig.url = shareDefault.url;
+    shareOneConfig.pic = shareDefault.pic;
+    shareOneConfig.resource.icon = shareDefault.pic;
+    shareOneConfig.resource.link = shareDefault.url;
+    shareOneConfig.resource.title = shareDefault.title;
+    shareOneConfig.resource.desc = shareDefault.text;
+    try {
+        Config = {
+            enable: {
+                ui_btn: 1
+            },
+            share: {
+                title: shareDefault.title,
+                text: shareDefault.text,
+                url: shareDefault.url,
+                pic: shareDefault.pic,
+                token: '87d9yxBlJPJ0Enw2urLSr%2F09le0CT0Jw6Pjl1yZI7dTq',
+                callback: '',
+                apps: ['momo_feed', 'momo_contacts', 'weixin', 'weixin_friend'],
+                configs: {
+                    momo_feed: {
+                        title: shareDefault.title,
+                        text: shareDefault.text,
+                        url: shareDefault.url,
+                        pic: shareDefault.pic,
+                        resource: {
+                            icon: shareDefault.pic,
+                            link: shareDefault.url,
+                            title: shareDefault.title,
+                            desc: shareDefault.text,
+                            ignore_pic: 1
+                        }
+                    },
+                    momo_friend: shareDefault,
+                    momo_discuss: shareDefault,
+                    momo_group: shareDefault
+                }
+            },
+            ui_btn: {
+                title: '',
+                dropdown: 0,
+                buttons: [{
+                    text: "分享",
+                    icon: '',
+                    action: 0,
+                    param: {
+                        callback: "share.call"
+                    }
+                }]
+            }
+        };
+        // alert JSON.stringify Config
+        return mm.invoke('init', Config);
+    } catch (error) {
+        e = error;
+        return console.log(e);
     }
-    if (text != null) {
-        shareDefault.text = text;
-    }
-    if (url != null) {
-        shareDefault.url = url;
-    }
-    if (pic != null) {
-        shareDefault.pic = pic;
-    }
-    return UpdateShare();
 };
 
-$_GET = function () {
-    var get, j, l, len1, u, url;
-    url = window.document.location.href.toString();
-    u = url.split('?');
-    if (typeof u[1] === 'string') {
-        u = u[1].split('&');
-        get = {};
-        console.log(u);
-        for (l = 0, len1 = u.length; l < len1; l++) {
-            i = u[l];
-            j = i.split('=');
-            get[j[0]] = j[1];
+shareOneToAll = function shareOneToAll() {
+    console.log(shareOneConfig);
+    // alert shareOneConfig
+    return mm.invoke('shareOne', shareOneConfig, function (resp) {
+        return SendNote("分享成功!");
+    });
+};
+
+shareCall = function shareCall() {
+    return mm.invoke('callShare', {
+        title: shareDefault.title,
+        text: shareDefault.text,
+        url: shareDefault.url,
+        pic: shareDefault.pic,
+        token: '87d9yxBlJPJ0Enw2urLSr%2F09le0CT0Jw6Pjl1yZI7dTq',
+        callback: '',
+        apps: ['momo_feed', 'momo_contacts', 'weixin', 'weixin_friend'],
+        configs: {
+            momo_feed: {
+                title: shareDefault.title,
+                text: shareDefault.text,
+                url: shareDefault.url,
+                pic: shareDefault.pic,
+                resource: {
+                    icon: shareDefault.pic,
+                    link: shareDefault.url,
+                    title: shareDefault.title,
+                    desc: shareDefault.text,
+                    ignore_pic: 1
+                }
+            },
+            momo_friend: shareDefault,
+            momo_discuss: shareDefault,
+            momo_group: shareDefault
         }
-        return get;
-    } else {
-        return {};
-    }
-}();
+    });
+};

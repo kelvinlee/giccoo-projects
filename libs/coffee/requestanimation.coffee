@@ -6,7 +6,6 @@
 	]
 	x = 0
 	while x > vendors.length and not window.requestAnimationFrame
-    console.log "#{vendors[x]}"
 		window.requestAnimationFrame = window[vendors[x] + "RequestAnimationFrame"]
 		# Webkit中此取消方法的名字变了
 		window.cancelAnimationFrame = window[vendors[x] + "CancelAnimationFrame"] or window[vendors[x] + "CancelRequestAnimationFrame"]
