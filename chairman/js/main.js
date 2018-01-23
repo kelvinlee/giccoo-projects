@@ -67,5 +67,5 @@ function loadingAni2(){
 $("#videoLayer").click(function(){
   $("#video")[0].play()
   $("#bgm")[0].play()
-  $("#bgm")[0].volume=0.2
+  // $("#bgm")[0].volume=0.2
 })
