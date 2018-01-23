@@ -1,0 +1,90 @@
+doctype
+html(lang="en").no-js
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible",content="IE=edge,chrome=1")
+		meta(name="viewport",content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0")
+		title Map
+		
+		script(src="http://api.map.baidu.com/api?v=2.0&ak=l4F677V3w1Z6Gn5H9xRs4GQDB4eLLA6W")
+		script(src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js")
+		script(src="../libs/js/cityData.js")
+		//- script(src="//unpkg.com/inmap/dist/inmap.min.js")
+
+	body
+		div(id="allmap",style="width:100%;height:800px")
+
+		script.
+			var map = new BMap.Map("allmap");
+			map.centerAndZoom(new BMap.Point(116.403765, 39.914850), 5);
+			map.disableScrollWheelZoom();
+			var areaId = 0;
+			var points = [];
+			function getBoundary(id){
+				var name = cityData[id].name;
+				var bdary = new BMap.Boundary();
+				areaId = id;
+				console.log(name);
+				bdary.get(name, function(rs){			//获取行政区域
+					map.clearOverlays();							//清除地图覆盖物			 
+					var count = rs.boundaries.length; //行政区域的点有多少个
+					if (count === 0) {
+						alert('未能获取当前输入行政区域');
+						return ;
+					}
+					var pointArray = [];
+					for (var i = 0; i < count; i++) {
+						var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgba(0,0,0,0.3)",strokeWeight: 0, strokeColor: "rgba(0,255,0,0)"}); //建立多边形覆盖物
+						map.addOverlay(ply);	//添加覆盖物
+						pointArray = pointArray.concat(ply.getPath());
+					}
+					map.setViewport(pointArray);		//调整视野
+					
+				});
+				setTimeout(function(){
+					for (var i = 0;i< cityData[id].sub.length;i++) {
+						var _i = i;
+						setTimeout(getOnePirece,20*i,cityData[id].sub[_i].name,_i);
+					}
+					console.log(cityData[id].sub.length);
+				},20)
+			}
+			function getOnePirece(name,index){
+				var bdary = new BMap.Boundary();
+				//- console.log(name);
+				name = name.replace("市","");
+				bdary.get(name, function(rs){			 		//获取行政区域
+					//- console.log(name,rs.boundaries.length,rs.boundaries);
+					var count = rs.boundaries.length; //行政区域的点有多少个
+					if (count === 0) {
+						alert('未能获取当前输入行政区域');
+						return ;
+					}
+					var pointArray = [];
+					for (var i = 0; i < count; i++) {
+						//- var random = Math.random()*50+50;
+						//- var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgba(255,255,255,"+random/100+")",strokeWeight: 0, strokeColor: "rgba(0,0,0,0)"}); //建立多边形覆盖物
+						//- console.log(rs.boundaries[i].split(";"));
+						var list = rs.boundaries[i].split(";");
+						for (var k=0;k<list.length;k++) {
+							points.push({
+								"lng": list[k].split(",")[0],
+								"lat": list[k].split(",")[1],
+								"count": parseInt(Math.random()*10)
+							});
+						}
+						//- console.log(i >= count-1 && index >= cityData[areaId].sub.length-1);
+						if (i == count-1 && index >= cityData[areaId].sub.length-1) {
+							//- console.log(points.length);
+							var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":5});
+							map.addOverlay(heatmapOverlay);
+							heatmapOverlay.setDataSet({data:points,max:100});
+							heatmapOverlay.show();
+						}
+					}
+				});		
+			}
+
+			setTimeout(function(){
+				getBoundary(5);
+			}, 2000);
