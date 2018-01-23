@@ -52,7 +52,7 @@ function loadingAni(){
 
 
   TweenLite.set($("#loadingBar"),{height:screenW/640*1000*15/1000-screenW/640*1000+screenH})
-  TweenLite.to($("#loadingBar"),3,{width:"100%",onComplete:loadingAni2})
+  TweenLite.to($("#loadingBar"),2,{width:"100%",onComplete:loadingAni2})
 
   iniListenSound()
 }
