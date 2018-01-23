@@ -66,7 +66,8 @@ function loadingAni2(){
   TweenLite.set($("#loadingBG"),{display:"none"})
 }
 $("#videoLayer").click(function(){
+  TweenLite.set($("#loadingBar"),{"background-color":"#802e21"})
   $("#video")[0].play()
-  $("#bgm")[0].play()
+  // $("#bgm")[0].play()
   // $("#bgm")[0].volume=0.2
 })
