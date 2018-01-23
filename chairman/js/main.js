@@ -38,6 +38,12 @@ var loadWechatConfig = function() {
   s.parentNode.insertBefore(hm, s);
 };
 
+//微信端背景音乐播放
+    function iniListenSound(){
+        // document.addEventListener("WeixinJSBridgeReady", function(){
+        //     sound.play();
+        // }, false);
+    }
 
 function loadingAni(){
   screenW=document.body.offsetWidth 
@@ -46,15 +52,22 @@ function loadingAni(){
 
 
   TweenLite.set($("#loadingBar"),{height:screenW/640*1000*15/1000-screenW/640*1000+screenH})
-  TweenLite.to($("#loadingBar"),3,{width:"100%",onComplete:loadingAni2})
+  TweenLite.to($("#loadingBar"),2,{width:"100%",onComplete:loadingAni2})
+
+  iniListenSound()
 }
 
 function loadingAni2(){
   // TweenLite.set($("#loadingBar"),{display:"none"})
+  
   $("#audio")[0].play()
   TweenLite.set($("#loadingBar"),{height:screenH-screenW/640*1000})
+  //TweenLite.set($("#loadingBar"),{display:"none"})
   TweenLite.set($("#loadingBG"),{display:"none"})
 }
 $("#videoLayer").click(function(){
+  TweenLite.set($("#loadingBar"),{"background-color":"#802e21"})
   $("#video")[0].play()
+  // $("#bgm")[0].play()
+  // $("#bgm")[0].volume=0.2
 })
