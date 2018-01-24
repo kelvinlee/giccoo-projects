@@ -4,7 +4,7 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "董事长拜年",
+      title: "魏应行董事长送新春祝福",
       desc: "祝春节快乐 合家幸福",
       link: "http://m.giccoo.com/chairman/",
       imgUrl: "http://m.giccoo.com/chairman/img/ico.jpg",
