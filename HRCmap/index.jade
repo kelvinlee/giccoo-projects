@@ -9,18 +9,46 @@ html(lang="en").no-js
 		script(src="http://api.map.baidu.com/api?v=2.0&ak=l4F677V3w1Z6Gn5H9xRs4GQDB4eLLA6W")
 		script(src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js")
 		script(src="../libs/js/cityData.js")
-		//- script(src="//unpkg.com/inmap/dist/inmap.min.js")
-
+		script(src="//unpkg.com/inmap/dist/inmap.min.js")
+		style.
+			 .BMap_cpyCtrl,.BMap_noprint,.anchorBL {
+			 	display: none;
+			 }
 	body
 		div(id="allmap",style="width:100%;height:800px")
 
 		script.
-			var map = new BMap.Map("allmap");
-			map.centerAndZoom(new BMap.Point(116.403765, 39.914850), 5);
+			var inmap = new inMap.Map({
+				id: "allmap",
+				skin: "WhiteLover",
+				center: [116.403765, 39.914850],
+				zoom: {
+					show: false
+				}
+			});
+			var map = inmap.map;
+			//- map.centerAndZoom(new BMap.Point(116.403765, 39.914850), 5);
 			map.disableScrollWheelZoom();
 			var points = [];
 			var areaId = 0;
+			
 
+			function coverAll() {
+				var bdary = new BMap.Boundary();
+				bdary.get("中国", function(rs){
+					var count = rs.boundaries.length; //行政区域的点有多少个
+					if (count === 0) {
+						alert('未能获取当前输入行政区域');
+						return ;
+					}
+					var pointArray = [];
+					for (var i = 0; i < count; i++) {
+						var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgb(255,255,255)",strokeWeight: 0, strokeColor: "rgba(255,255,255,0)"}); //建立多边形覆盖物
+						map.addOverlay(ply);	//添加覆盖物
+						pointArray = pointArray.concat(ply.getPath());
+					}
+				})
+			}
 			function getBoundary(id){
 				areaId = id;
 				var name = cityData[id].name;
@@ -34,7 +62,7 @@ html(lang="en").no-js
 					}
 					var pointArray = [];
 					for (var i = 0; i < count; i++) {
-						var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgba(0,0,0,0.3)",strokeWeight: 0, strokeColor: "rgba(0,255,0,0)"}); //建立多边形覆盖物
+						var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgba(0,50,255,0.8)",strokeWeight: 0, strokeColor: "rgba(0,255,0,0)"}); //建立多边形覆盖物
 						map.addOverlay(ply);	//添加覆盖物
 						pointArray = pointArray.concat(ply.getPath());
 					}
@@ -62,7 +90,8 @@ html(lang="en").no-js
 					var pointArray = [];
 					for (var i = 0; i < count; i++) {
 						var random = Math.random()*100;
-						var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgba("+parseInt(random+155)+",255,255,"+Math.random()*30+70+")",strokeWeight: 0, strokeColor: "rgba(0,0,0,0)"}); //建立多边形覆盖物
+						console.log(random);
+						var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgba(0,"+parseInt(random+100)+",255,0.8)",strokeWeight: 0, strokeColor: "rgba(0,0,0,0)"}); //建立多边形覆盖物
 						//- console.log(ply);
 						map.addOverlay(ply);	//添加覆盖物
 						pointArray = pointArray.concat(ply.getPath());
@@ -77,9 +106,9 @@ html(lang="en").no-js
 						if (i == count-1 && index >= cityData[areaId].sub.length-1) {
 							//- console.log(points.length);
 							var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20,"gradient":{
-								.1:"rgb(205, 255, 255)",
-								.4:"rgb(225, 255, 255)",
-								.8:"rgb(255, 255, 255)"
+								.1:"rgb(0, 200, 255)",
+								.4:"rgb(0, 225, 255)",
+								.8:"rgb(0, 255, 255)"
 							}});
 							map.addOverlay(heatmapOverlay);
 							heatmapOverlay.setDataSet({data:points,max:100});
@@ -88,7 +117,8 @@ html(lang="en").no-js
 					}
 				});		
 			}
-
+	
 			setTimeout(function(){
+				coverAll();
 				getBoundary(0);
 			}, 2000);

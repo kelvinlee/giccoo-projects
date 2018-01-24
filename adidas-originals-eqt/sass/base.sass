@@ -1,0 +1,73 @@
+@import sass/base
+@import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "http://image.giccoo.com/projects/adidas-originals-eqt/"
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+$fontColor: #fff;
+$pageMainBGColor: #e1ce96;
+
+html,body
+	+w
+	+h
+
+body
+	color: $fontColor
+	+bc($pageMainBGColor)
+video,canvas
+	+w
+	+h(auto)
+body
+
+.wechat-share-hide,.load-before
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+	+h(1px)
+
+.playsound
+	+posa
+	+tr(0.5rem,2%)
+	+iw(58)
+	z-index: 99
+	font-size: 0
+	.play
+		+animation(second,4s,ease,infinite)
+
+.hide
+	display: none
+
+.main
+	+w
+	+h
+	+posr
+	+overhide
+
+.planet-content-enter-active
+	transition: all .3s ease
+.planet-content-leave-active
+	transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+.planet-content-enter, .planet-content-leave-to
+	transform: translateY(200px);
+	opacity: 0;
+
+.loading
+	+posa
+	+tl
+	+w
+	+h
+	.ball-spin-fade-loader
+		+posa
+		+tl(50%,50%)
+
