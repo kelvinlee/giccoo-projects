@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -556,6 +557,54 @@ ul {
       -webkit-animation: ball-spin-fade-loader 1s -0.12s infinite linear;
       animation: ball-spin-fade-loader 1s -0.12s infinite linear; }
 
+@-webkit-keyframes light {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%); }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%); } }
+
+@keyframes light {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%); }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%); } }
+
+.light {
+  -webkit-animation-name: light;
+          animation-name: light; }
+
+@-webkit-keyframes fingermove {
+  0% {
+    -webkit-transform: translateX(0px) rotate(-90deg);
+            transform: translateX(0px) rotate(-90deg);
+    opacity: 0; }
+  10%, 90% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translateX(250px) rotate(-90deg);
+            transform: translateX(250px) rotate(-90deg);
+    opacity: 0; } }
+
+@keyframes fingermove {
+  0% {
+    -webkit-transform: translateX(0px) rotate(-90deg);
+            transform: translateX(0px) rotate(-90deg);
+    opacity: 0; }
+  10%, 90% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translateX(250px) rotate(-90deg);
+            transform: translateX(250px) rotate(-90deg);
+    opacity: 0; } }
+
+.fingermove {
+  -webkit-animation-name: fingermove;
+          animation-name: fingermove; }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -801,12 +850,15 @@ html, body {
   height: 100%; }
 
 body {
-  color: #fff;
-  background-color: #e1ce96; }
+  color: #ffffff;
+  background-color: #000000; }
 
 video, canvas {
   width: 100%;
   height: auto; }
+
+body {
+  overflow: hidden; }
 
 .wechat-share-hide, .load-before {
   position: absolute;
@@ -841,7 +893,9 @@ video, canvas {
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: hidden; }
+  overflow: scroll;
+  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch; }
 
 .planet-content-enter-active {
   -webkit-transition: all .3s ease;
@@ -861,8 +915,382 @@ video, canvas {
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  background-color: #000;
+  z-index: 10010; }
   .loading .ball-spin-fade-loader {
     position: absolute;
     top: 50%;
     left: 50%; }
+
+.player, .video {
+  position: relative;
+  width: auto;
+  display: inline-block;
+  font-size: 0; }
+  .player .ytp-svg-fill, .video .ytp-svg-fill {
+    fill: #fff; }
+  .player .icon-play, .video .icon-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 40%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0);
+    border: solid 2px #fff;
+    border-radius: 50%;
+    background-color: transparent;
+    overflow: hidden; }
+
+.video .icon-play {
+  top: 50%;
+  left: 50%;
+  height: auto;
+  background-color: rgba(80, 80, 80, 0.6);
+  width: 20%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0); }
+
+.logo {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 12.8125%;
+  margin: 0 auto;
+  z-index: 10002; }
+  .iphone4 .logo {
+    width: 12.8125%; }
+
+.banner, .footer {
+  font-size: 0; }
+
+.banner {
+  position: relative; }
+  .banner > .title {
+    position: absolute;
+    top: 36%;
+    left: 0px;
+    width: 100%; }
+  .banner .finger {
+    position: absolute;
+    top: 60%;
+    left: 0%;
+    width: 90%;
+    z-index: 999; }
+    .banner .finger .lights {
+      width: 100%; }
+      .banner .finger .lights .light {
+        width: 100%;
+        height: 25px;
+        background-color: rgba(255, 255, 255, 0.3);
+        margin-top: 10px; }
+        .banner .finger .lights .light:first-child {
+          margin-top: 0; }
+    .banner .finger .f {
+      position: absolute;
+      top: 10px;
+      left: 10%;
+      width: 12.5%;
+      margin: 0 auto;
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg);
+      -webkit-animation: fingermove 4s ease;
+              animation: fingermove 4s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+      .iphone4 .banner .finger .f {
+        width: 12.5%; }
+    .banner .finger .a {
+      position: absolute;
+      top: 0;
+      left: 5%;
+      width: 6.25%;
+      margin: 0 auto;
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg); }
+      .iphone4 .banner .finger .a {
+        width: 6.25%; }
+    .banner .finger .texts {
+      position: absolute;
+      bottom: 0;
+      left: 5%;
+      font-size: 0.6rem;
+      line-height: 1.6em; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .banner .finger .texts {
+          font-size: 0.66rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .banner .finger .texts {
+          font-size: 0.66rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .banner .finger .texts {
+          font-size: 0.72rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .banner .finger .texts {
+          font-size: 0.72rem; } }
+      .banner .finger .texts p {
+        margin: 0 auto; }
+  .banner .player-banner {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 40%; }
+    .banner .player-banner .title {
+      position: absolute;
+      bottom: 0%;
+      left: -100%;
+      width: 100%;
+      z-index: 10; }
+      .banner .player-banner .title p {
+        font-size: 0.6rem;
+        text-align: right;
+        margin: 0 auto;
+        padding: 0 0.5em 0 0; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .banner .player-banner .title p {
+            font-size: 0.66rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .banner .player-banner .title p {
+            font-size: 0.66rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .banner .player-banner .title p {
+            font-size: 0.72rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .banner .player-banner .title p {
+            font-size: 0.72rem; } }
+
+.fingers {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  text-align: center; }
+  .fingers .finger {
+    width: 15.625%;
+    margin: 0 auto; }
+    .iphone4 .fingers .finger {
+      width: 15.625%; }
+  .fingers .texts p {
+    margin: 0 auto; }
+  .fingers .arrows {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%; }
+    .fingers .arrows .arrow {
+      position: absolute;
+      width: 7.8125%;
+      margin: 0 auto;
+      -webkit-animation: fadeOutDown 2s ease;
+              animation: fadeOutDown 2s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+      .iphone4 .fingers .arrows .arrow {
+        width: 7.8125%; }
+    .fingers .arrows .arrow-0 {
+      top: 54.6962212464px;
+      left: 10%;
+      -webkit-animation-delay: 100ms;
+              animation-delay: 100ms;
+      -webkit-animation-duration: 1746.57695724ms;
+              animation-duration: 1746.57695724ms; }
+    .fingers .arrows .arrow-1 {
+      top: 15.9831836223px;
+      left: 25%;
+      -webkit-animation-delay: 400ms;
+              animation-delay: 400ms;
+      -webkit-animation-duration: 1067.42952623ms;
+              animation-duration: 1067.42952623ms; }
+    .fingers .arrows .arrow-2 {
+      top: 59.7110007729px;
+      left: 75%;
+      -webkit-animation-delay: 300ms;
+              animation-delay: 300ms;
+      -webkit-animation-duration: 1916.38826222ms;
+              animation-duration: 1916.38826222ms; }
+    .fingers .arrows .arrow-3 {
+      top: 38.6124279326px;
+      left: 90%;
+      -webkit-animation-delay: 200ms;
+              animation-delay: 200ms;
+      -webkit-animation-duration: 1435.36137959ms;
+              animation-duration: 1435.36137959ms; }
+
+.player-list {
+  width: 80%;
+  margin: 0 auto; }
+  .player-list .player-item {
+    width: 64%;
+    margin-top: 4rem; }
+    .player-list .player-item:first-child {
+      margin-top: -2rem; }
+    .player-list .player-item:nth-child(even) {
+      margin-left: 36%; }
+      .player-list .player-item:nth-child(even) .player .icon-play {
+        right: auto;
+        left: 5%; }
+      .player-list .player-item:nth-child(even) .player:before {
+        left: auto;
+        right: 100%; }
+      .player-list .player-item:nth-child(even) .player:after {
+        left: auto;
+        right: 45%;
+        background: url("../img/line-b.png") no-repeat center center;
+        background-size: contain;
+        background-color: transparent; }
+      .player-list .player-item:nth-child(even) .title {
+        text-align: right;
+        padding: 0.4em 0.8em 0 0; }
+        .player-list .player-item:nth-child(even) .title:before {
+          content: " ";
+          left: auto;
+          top: 0px;
+          right: 0px;
+          width: 0.3em;
+          height: 95%;
+          background-color: #4d4e4e; }
+      .player-list .player-item:nth-child(even) .desc {
+        text-align: right; }
+    .player-list .player-item .player .icon-play {
+      top: auto;
+      left: auto;
+      bottom: 5%;
+      right: 5%;
+      width: 15%;
+      height: 15%;
+      background-color: rgba(70, 70, 70, 0.5);
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+    .player-list .player-item .player:before {
+      content: "点击播放歌曲";
+      font-size: 0.6rem;
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 0.7rem;
+      padding: 0.3em 0.4em;
+      background-color: #4d4e4e;
+      text-align: center; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .player-list .player-item .player:before {
+          font-size: 0.66rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .player-list .player-item .player:before {
+          font-size: 0.66rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .player-list .player-item .player:before {
+          font-size: 0.72rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .player-list .player-item .player:before {
+          font-size: 0.72rem; } }
+    .player-list .player-item .player:after {
+      content: " ";
+      position: absolute;
+      top: 20%;
+      left: 45%;
+      width: 110%;
+      height: 110%;
+      background: url("../img/line.png") no-repeat center center;
+      background-size: contain;
+      background-color: transparent;
+      z-index: -1; }
+    .player-list .player-item .player.play:after {
+      -webkit-animation: pulse 1.4s ease;
+              animation: pulse 1.4s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+    .player-list .player-item p {
+      font-size: 0.8rem;
+      line-height: 1.4em; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .player-list .player-item p {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .player-list .player-item p {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .player-list .player-item p {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .player-list .player-item p {
+          font-size: 0.96rem; } }
+    .player-list .player-item .title {
+      position: relative;
+      padding: 0.4em 0 0 0.8em; }
+      .player-list .player-item .title:before {
+        content: " ";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 0.4em;
+        height: 95%;
+        background-color: #4d4e4e; }
+    .player-list .player-item .desc p {
+      margin-top: 0.3em; }
+
+.pop {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.3); }
+  .pop .lights {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1; }
+    .pop .lights .light {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 5%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.4);
+      -webkit-animation: light 1.5s ease;
+              animation: light 1.5s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: initial;
+              animation-iteration-count: initial; }
+    .pop .lights .light-0 {
+      top: 0;
+      left: 25%;
+      -webkit-animation-delay: 100ms;
+              animation-delay: 100ms; }
+    .pop .lights .light-1 {
+      top: 0;
+      left: 50%;
+      -webkit-animation-delay: 300ms;
+              animation-delay: 300ms; }
+    .pop .lights .light-2 {
+      top: 0;
+      left: 75%;
+      -webkit-animation-delay: 500ms;
+              animation-delay: 500ms; }
+  .pop .video-box {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+    .pop .video-box .close {
+      position: absolute;
+      top: -10%;
+      right: 3%;
+      font-size: 0;
+      z-index: 1000;
+      width: 4.6875%;
+      margin: 0 auto; }
+      .iphone4 .pop .video-box .close {
+        width: 4.6875%; }

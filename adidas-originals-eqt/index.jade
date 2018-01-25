@@ -1,7 +1,6 @@
 extends ../libs/jade/layout-clean
 block title
-	| Adidas
-
+	| 跟上鹿晗，一起#原创不息#
 
 block css
 	meta(name="author",content="m.giccoo.com")
@@ -17,23 +16,70 @@ block css
 		})();
 
 block content
-	- url = "http://image.giccoo.com/projects/adidas-originals-eqt/"
-	- url = "./"
+	- url = "http://image.giccoo.com/projects/adidas-originals-eqt"
+	- url = "."
 	
 	#load.loading(v-if="!loadend")
 		.ball-spin-fade-loader
 			-for (var i=0;i<8;i++)
 				div
-	#main.main
-		#player
-			//- player(src="http://music.163.com/song/media/outer/url?id=432506345")
-			mp4(src="../lamer/video/video.mp4")
-		
+	.logo
+		img(src="#{url}/img/logo.png")
+	//- #fingers.fingers(:style="{transform: 'translate3d(0,'+(-200+(y*1.4))+'px,0)'}")
+		.finger
+			img(src="#{url}/img/finger.png")
+		.texts
+			p 三指向下拖动<br/>播放精彩视频
+		.arrows
+			-for (var i=0;i<4;i++)
+				.arrow(class="arrow-#{i}")
+					img(src="#{url}/img/arrow.png")
+	#main.main(:style="{transform: 'translate3d(0,'+y+'px,0)',transition: 'all '+duration+'s linear'}")
+		.banner
+			img(src="#{url}/img/homepage-bg.jpg")
+			.title.fadeInDown.animated.delay-10.duration-10
+				img(src="#{url}/img/homepage-title.png")
+			.finger.fadeIn.animated(v-show="leftnote")
+				.lights
+					-for (var i=0;i<3;i++)
+						.light(class="light-#{i} delay-#{i*2+1}")
+				.a
+					img(src="#{url}/img/arrow.png")
+				.f
+					img(src="#{url}/img/finger.png")
+				.texts
+					p 三指向右拖动<br/>播放精彩视频
+			.player-banner.fadeIn.animated.delay-13.duration-10
+				.title
+					p 《追梦赤子心》<br/>演唱 鹿晗
+				player(name="《追梦赤子心》",v-on:pause="pause",v-on:play="stopall",thumb="#{url}/img/thumb-5.jpg",src="http://music.163.com/song/media/outer/url?id=504646547")
+		//- .player-list
+			- var ids = ["418603445","32619147","520459383","417833348"]
+			- var names = ["《重返十七岁》","《请到长城来滑雪》","《New World》","《超越无限》"]
+			- var songer = ["演唱 鹿晗 陈嘉桦等","演唱 鹿晗 陶喆","演唱 VaVa Krewella等","演唱 林俊杰"]
+			- var desc = ["趁现在脚步飞扬不会累<br/>赶赴一场关于青春的约会","请你来滑雪<br/>追梦的路线没有边界","It's a new world,<br/>Yeah we coming up.","汗水蒸发在昨天<br/>我的今天 都为了更强的明天"]
+			- for ( var i = 1 ; i <= 4 ; i++ )
+				.player-item(class="player-item-#{i}")
+					.title
+						p #{names[i-1]}<br/>#{songer[i-1]}
+					player(name="#{names[i-1]}",v-on:play="stopall",thumb="#{url}/img/thumb-#{i}.jpg",src="http://music.163.com/song/media/outer/url?id=#{ids[i-1]}")
+					.desc
+						p !{desc[i-1]}
+
+		.footer
+			img(src="#{url}/img/homepage-bottom.jpg")
+	
+	#videopop.pop.fadeIn.animated(v-if="show")
+		.video-box.fadeIn.animated.delay-0
+			.close(@click="close")
+				img(src="#{url}/img/close.png")
+			mp4(playsinline="true",src="http://image.giccoo.com/projects/adidas-originals-eqt/video/video.mp4",poster="#{url}/img/video.jpg")
+
 
 block js
 	- url = "/"
 	//- script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
-	script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/tweenjs.min.js")
 	script(src="js/main.js")

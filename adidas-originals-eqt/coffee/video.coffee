@@ -1,10 +1,13 @@
 Vue.component "mp4",
 	template:'
 		<div class="video">
-			<div v-if="andriod" class="icon-play" :class="{play: playing, pause: !playing}" @click="change">
-				<img :src="iconNow" />
+			<div v-if="andriod" class="icon-play" :class="{hide: playing, pause: !playing}" @click="change">
+				<svg v-show="!playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-39"></use><path class="ytp-svg-fill" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"></path></svg>
+				<svg v-show="playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-40"></use><path class="ytp-svg-fill" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z"></path></svg>
 			</div>
-			<video :class="{hide: andriod}" :width="width" :height="height" controls="true" :src="src" :id="videoid" x5-video-player-type="h5" x5-video-player-fullscreen="true" x-webkit-airplay="allow" webkit-playsinline playsinline :poster="poster"></video>
+			<!--  -->
+			<video v-if="!playsinline" :width="width" :height="height" controls="true" :src="src" :id="videoid" :poster="poster"></video>
+			<video v-if="playsinline" :class="{hide: andriod}" :width="width" :height="height" controls="true" :src="src" :id="videoid" :poster="poster" x5-video-player-type="h5" x5-video-player-fullscreen="true" x-webkit-airplay="allow" webkit-playsinline playsinline></video>
 			<canvas v-if="andriod" :id="canvasid" :width="width" :height="height" @click="change"></canvas>
 		</div>
 		'
@@ -17,6 +20,8 @@ Vue.component "mp4",
 			iconStop: "http://image.giccoo.com/projects/libs/img/audio-play.png"
 			
 	props:
+		playsinline:
+			default: false
 		videoid:
 			default: "video"
 		src:
@@ -43,6 +48,8 @@ Vue.component "mp4",
 			@playing = true
 		pause: ->
 			@playing = false
+		stop: ->
+			@video.pause() if @video 
 		ended: ->
 			@playing = false
 		change: ->
@@ -52,17 +59,21 @@ Vue.component "mp4",
 			else
 				@video.play()
 				@stoped = false
+				_hmt? and _hmt.push(['_trackEvent', "adidas-originals-eqt", "video", "play", "-"])
 				@animate()
+
 		initCanvas: ->
 			canvas = document.getElementById(@canvasid)
 			context = canvas.getContext('2d')
 			if @poster
 				poster = new Image()
 				poster.src = @poster
-				context.drawImage(poster,0,0,canvas.width,canvas.height)
+				poster.onload = ->
+					context.drawImage(poster,0,0,canvas.width,canvas.height)
 
 		animate: ->
 			canvas = document.getElementById(@canvasid)
+			return false unless canvas
 			context = canvas.getContext('2d')
 			context.drawImage(@video,0,0,canvas.width,canvas.height)
 			if not @stoped
@@ -71,7 +82,7 @@ Vue.component "mp4",
 	mounted: (el)->
 		u = navigator.userAgent
 		isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1
-		if isAndroid
+		if isAndroid and @playsinline
 			@andriod = true
 			@video = document.getElementById @videoid
 			@video.addEventListener "pause", @pause.bind @

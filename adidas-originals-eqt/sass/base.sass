@@ -7,6 +7,21 @@ $cdn : "../"
 @if not $debug
 	$cdn : "http://image.giccoo.com/projects/adidas-originals-eqt/"
 
++keyframes(light)
+	0%
+		transform: translateY(-100%)
+	100%
+		transform: translateY(100%)
++keyframes(fingermove)
+	0%
+		transform: translateX(0px) rotate(-90deg)
+		opacity: 0
+	10%,90%
+		opacity: 1
+	100%
+		transform: translateX(250px) rotate(-90deg)
+		opacity: 0
+
 // animation, delay, duration
 @for $i from 1 through 30
 	.delay-#{$i}
@@ -14,8 +29,8 @@ $cdn : "../"
 	.duration-#{$i}
 		animation-duration: $i*100ms
 
-$fontColor: #fff;
-$pageMainBGColor: #e1ce96;
+$fontColor: #ffffff;
+$pageMainBGColor: #000000;
 
 html,body
 	+w
@@ -28,6 +43,7 @@ video,canvas
 	+w
 	+h(auto)
 body
+	+overhide
 
 .wechat-share-hide,.load-before
 	+posa
@@ -52,7 +68,7 @@ body
 	+w
 	+h
 	+posr
-	+overhide
+	+touch
 
 .planet-content-enter-active
 	transition: all .3s ease
@@ -67,7 +83,271 @@ body
 	+tl
 	+w
 	+h
+	+bc(#000)
+	z-index: 10010
 	.ball-spin-fade-loader
 		+posa
 		+tl(50%,50%)
+
+.player,.video
+	$iconColor: #fff
+	$iconBColor: rgba(0,0,0,0.0)
+	+posr
+	+w(auto)
+	display: inline-block
+	font-size: 0
+	.ytp-svg-fill
+		fill: $iconColor
+	// .ytp-svg-shadow
+	// 	stroke: #000
+	// 	stroke-opacity: .15
+	// 	stroke-width: 2px
+	// 	fill: none
+	.icon-play
+		+posa
+		+tl(50%,50%)
+		+wh(40%,40%)
+		+transform(translate3d(-50%,-50%,0))
+		border: solid 2px $iconColor
+		border-radius: 50%
+		+bc($iconBColor)
+		+overhide
+.video
+	.icon-play
+		+tl(50%,50%)
+		+h(auto)
+		+bc(rgba(80,80,80,0.6))
+		+w(20%)
+		+transform(translate3d(-50%,-50%,0))
+
+.logo
+	+posa
+	+tl(5%,5%)
+	+iw(82,640,100%)
+	z-index: 10002
+
+.banner,.footer
+	font-size: 0
+
+.banner
+	+posr
+	> .title
+		+posa
+		+tl(36%)
+		+w
+	.finger
+		+posa
+		+tl(60%,0%)
+		+w(90%)
+		z-index: 999
+		.lights
+			+w
+			.light
+				+wh(100%,25px)
+				+bc(rgba(255,255,255,0.3))
+				margin-top: 10px
+				&:first-child
+					margin-top: 0
+		.f
+			+posa
+			+tl(10px,10%)
+			+iw(80,640,100%)
+			+transform(rotate(-90deg))
+			+animation("fingermove",4s,ease,infinite)
+		.a
+			+posa
+			+tl(0,5%)
+			+iw(40,640,100%)
+			+transform(rotate(-90deg))
+		.texts
+			+posa
+			+bl(0,5%)
+			+font-size(0.6rem)
+			line-height: 1.6em
+			p
+				+m
+	.player-banner
+		+posa
+		+tl(60%,50%)
+		+w(40%)
+		.title
+			+posa
+			+bl(0%,-100%)
+			+w
+			z-index: 10
+			p
+				+font-size(0.6rem)
+				+text-right
+				+m
+				padding: 0 0.5em 0 0
+
+.fingers
+	+posa
+	+tl
+	+w
+	+text-center
+	.finger
+		+iw(100,640,100%)
+	.texts
+		p
+			+m
+	.arrows
+		+posa
+		+tl
+		+w
+		.arrow
+			+posa
+			+iw(50,640,100%)
+			+animation(fadeOutDown,2s,ease,infinite)
+		.arrow-0
+			+tl(random()*100px,10%)
+			animation-delay: 100ms
+			animation-duration: 1000ms + random()*1000ms
+		.arrow-1
+			+tl(random()*50px,25%)
+			animation-delay: 400ms
+			animation-duration: 1000ms + random()*1000ms
+		.arrow-2
+			+tl(random()*100px,75%)
+			animation-delay: 300ms
+			animation-duration: 1000ms + random()*1000ms
+		.arrow-3
+			+tl(random()*70px,90%)
+			animation-delay: 200ms
+			animation-duration: 1000ms + random()*1000ms
+
+
+
+.player-list
+	+w(80%)
+	+m
+	$itemSize: 64%
+	$lineS: 0.8em
+	$lineW: 0.3em
+	.player-item
+		+w($itemSize)
+		margin-top: 4rem
+		&:first-child
+			margin-top: -2rem
+		&:nth-child(even)
+			margin-left: 100% - $itemSize
+			.player
+				.icon-play
+					right: auto
+					left: 5%
+				&:before
+					left: auto
+					right: 100%
+				&:after
+					left: auto
+					right: 45%
+					+b($cdn+"img/line-b.png",no-repeat,center,center,contain)
+			.title
+				+text-right
+				padding: 0.4em $lineS 0 0 
+				&:before
+					content: " "
+					left: auto
+					+tr
+					+wh($lineW,95%)
+					+bc(#4d4e4e)
+			.desc
+				+text-right
+		.player
+			.icon-play
+				+tl(auto,auto)
+				+br(5%,5%)
+				+wh(15%,15%)
+				+bc(rgba(70,70,70,0.5))
+				+transform(translate3d(0,0,0))
+			&:before
+				content: "点击播放歌曲"
+				+font-size(0.6rem)
+				+posa
+				+tl(50%,100%)
+				+w(0.7rem)
+				+p(0.3em 0.4em)
+				+bc(#4d4e4e)
+				+text-center
+			&:after
+				content: " "
+				+posa
+				+tl(20%,45%)
+				+wh(110%,110%)
+				+b($cdn+"img/line.png",no-repeat,center,center,contain)
+				z-index: -1
+			&.play
+				&:after
+					+animation("pulse",1.4s,ease,infinite)
+
+		p
+			+font-size(0.8rem)
+			line-height: 1.4em
+		.title
+			+posr
+			padding: 0.4em 0 0 $lineS
+			&:before
+				content: " "
+				+posa
+				+tl
+				+wh(0.4em,95%)
+				+bc(#4d4e4e)
+		.desc
+			p
+				margin-top: 0.3em
+
+
+
+
+.pop
+	$bgColor: rgba(0,0,0,0.3)
+	+posa
+	+tl
+	+w
+	+h
+	z-index: 1000
+	+bc($bgColor)
+	.lights
+		+posa
+		+tl
+		+w
+		+h
+		z-index: -1
+		.light
+			+posa
+			+tl
+			+w(5%)
+			+h(100%)
+			+bc(rgba(255,255,255,0.4))
+			+animation(light,1.5s,ease)
+		.light-0
+			+tl(0,25%)
+			animation-delay: 100ms
+		.light-1
+			+tl(0,50%)
+			animation-delay: 300ms
+		.light-2
+			+tl(0,75%)
+			animation-delay: 500ms
+
+	.video-box
+		+posa
+		+tl(50%)
+		+transform(translateY(-50%))
+
+		.close
+			+posa
+			+tr(-10%,3%)
+			font-size: 0
+			z-index: 1000
+			+iw(30,640,100%)
+
+
+// .video
+// 	+posr
+// 	.icon-play
+// 		+posa
+// 		+tl(40%,40%)
+// 		+w(10%)
+// 		font-size: 0
 
