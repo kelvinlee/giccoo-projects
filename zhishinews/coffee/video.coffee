@@ -43,6 +43,7 @@ Vue.component "mp4",
 		# 	return if !@playing then @iconPlay else @iconStop
 	methods:
 		play: ->
+			@video.play() if @video
 			@playing = true
 		pause: ->
 			@playing = false
@@ -80,12 +81,12 @@ Vue.component "mp4",
 	mounted: (el)->
 		u = navigator.userAgent
 		isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1
+		@video = document.getElementById @videoid
+		@video.addEventListener "pause", @pause.bind @
+		@video.addEventListener "playing", @play.bind @
+		@video.addEventListener "ended", @ended.bind @
 		if isAndroid and @playsinline
 			@andriod = true
-			@video = document.getElementById @videoid
-			@video.addEventListener "pause", @pause.bind @
-			@video.addEventListener "playing", @play.bind @
-			@video.addEventListener "ended", @ended.bind @
 			setTimeout =>
 				@initCanvas()
 			,20

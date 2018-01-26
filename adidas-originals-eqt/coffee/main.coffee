@@ -51,7 +51,6 @@ window.onload = ->
 					if self isnt item
 						item.pause()
 				@leftnote = self is @$children[0]
-
 			touchstart: (evt)->
 				touch = evt.touches
 				@default.y = touch[0].pageY
@@ -84,7 +83,6 @@ window.onload = ->
 				tempX = touch[0].pageX - @default.x
 				if (tempX > 50 or tempX < -50) and @leftnote
 					@showPop()
-
 			end: (evt)->
 
 		watch:

@@ -6,7 +6,7 @@ block css
 	meta(name="author",content="m.giccoo.com")
 	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
 	link(rel="stylesheet",href="css/base.css")
-	//- script.
+	script.
 		var _hmt = _hmt || [];
 		(function() {
 			var hm = document.createElement("script");
@@ -53,7 +53,7 @@ block content
 				.title
 					p 《追梦赤子心》<br/>演唱 鹿晗
 				player(name="《追梦赤子心》",v-on:pause="pause",v-on:play="stopall",thumb="#{url}/img/thumb-5.jpg",src="http://music.163.com/song/media/outer/url?id=504646547")
-		//- .player-list
+		.player-list
 			- var ids = ["418603445","32619147","520459383","417833348"]
 			- var names = ["《重返十七岁》","《请到长城来滑雪》","《New World》","《超越无限》"]
 			- var songer = ["演唱 鹿晗 陈嘉桦等","演唱 鹿晗 陶喆","演唱 VaVa Krewella等","演唱 林俊杰"]
@@ -73,7 +73,7 @@ block content
 		.video-box.fadeIn.animated.delay-0
 			.close(@click="close")
 				img(src="#{url}/img/close.png")
-			mp4(playsinline="true",src="http://image.giccoo.com/projects/adidas-originals-eqt/video/video.mp4",poster="#{url}/img/video.jpg")
+			mp4(src="http://image.giccoo.com/projects/adidas-originals-eqt/video/video.mp4",poster="#{url}/img/video.jpg")
 
 
 block js
@@ -81,7 +81,7 @@ block js
 	//- script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
-	script(src="http://image.giccoo.com/projects/libs/js/min/tweenjs.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/tweenjs.min.js")
 	script(src="js/main.js")
 
 	

@@ -1,0 +1,192 @@
+@import sass/base
+// @import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "http://image.giccoo.com/projects/zhishinews/"
+
++keyframes(light)
+	0%
+		transform: translateY(-100%)
+	100%
+		transform: translateY(100%)
++keyframes(fingermove)
+	0%
+		transform: translateX(0px) rotate(-90deg)
+		opacity: 0
+	10%,90%
+		opacity: 1
+	100%
+		transform: translateX(250px) rotate(-90deg)
+		opacity: 0
+
+// animation, delay, duration
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
+$fontColor: #ffffff;
+$pageMainBGColor: #000000;
+
+html,body
+	+w
+	+h
+
+body
+	color: $fontColor
+	+bc($pageMainBGColor)
+video,canvas
+	+w
+	+h(auto)
+body
+	+overhide
+
+.wechat-share-hide,.load-before
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+	+h(1px)
+
+.playsound
+	+posa
+	+tr(0.5rem,2%)
+	+iw(58)
+	z-index: 99
+	font-size: 0
+	.play
+		+animation(second,4s,ease,infinite)
+
+.hide
+	display: none
+
+.main
+	+w
+	+h
+	+posr
+	+touch
+.page-animation-enter-active
+	transition: all 10.6s ease
+.page-animation-leave-active
+	transition: all 10.6s linear
+.page-animation-enter, .page-animation-leave-to
+	z-index: 100
+	opacity: 0
+
+.loading
+	+posa
+	+tl
+	+w
+	+h
+	+bc(#000)
+	z-index: 10010
+	.ball-spin-fade-loader
+		+posa
+		+tl(50%,50%)
+
+.player,.video
+	$iconColor: #fff
+	$iconBColor: rgba(0,0,0,0.0)
+	+posr
+	+w(auto)
+	display: inline-block
+	font-size: 0
+	.ytp-svg-fill
+		fill: $iconColor
+	// .ytp-svg-shadow
+	// 	stroke: #000
+	// 	stroke-opacity: .15
+	// 	stroke-width: 2px
+	// 	fill: none
+	.icon-play
+		+posa
+		+tl(50%,50%)
+		+wh(40%,40%)
+		+transform(translate3d(-50%,-50%,0))
+		border: solid 2px $iconColor
+		border-radius: 50%
+		+bc($iconBColor)
+		+overhide
+.video
+	.icon-play
+		+tl(50%,50%)
+		+h(auto)
+		+bc(rgba(80,80,80,0.6))
+		+w(20%)
+		+transform(translate3d(-50%,-50%,0))
+
+.f0
+	font-size: 0
+
+.pop
+	$bgColor: rgba(0,0,0,0.3)
+	+posa
+	+tl
+	+w
+	+h
+	z-index: 1000
+	+bc($bgColor)
+
+	.video-box
+		+posa
+		+tl(50%)
+		+transform(translateY(-50%))
+
+		.close
+			+posa
+			+tr(-10%,3%)
+			font-size: 0
+			z-index: 1000
+			+iw(30,640,100%)
+
+.pages
+	+w
+	+h
+	+posr
+	+overhide
+	perspective: 500
+	-webkit-perspective: 500
+			transform-style: preserve-3d
+	-webkit-transform-style: preserve-3d
+	.page
+		+posa
+		+tl
+		+w
+		+h
+		+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+		z-index: 10
+		&.on
+			z-index: 20
+		&.overhide
+			+overhide
+		&.touch
+			+touch
+
+.page-1
+	.homepage
+		+w(90%)
+		+m
+	.logo
+		+posa
+		+tl(2%,10%)
+		+iw(180,640,100%)
+
+.page-2
+	.tabs
+		+posr
+		.tab-1
+			.btn
+				+posa
+				+tr
+				+w(50%)
+				+h
+		.tab-2
+			.btn
+				+posa
+				+tl
+				+w(50%)
+				+h

@@ -1,0 +1,68 @@
+extends ../libs/jade/layout-clean
+block title
+	| 知食日报 • 啤酒择学课
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
+	link(rel="stylesheet",href="css/base.css")
+	//- script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
+
+block content
+	- url = "http://image.giccoo.com/projects/adidas-originals-eqt"
+	- url = "."
+	
+	//- #load.loading(v-if="!loadend")
+		p loading
+
+	#main.main
+		pages(:pagenow="pagenow")
+			.page.page-1
+				.logo.f0
+					img(src="#{url}/img/dazhong-logo.png")
+				.homepage.f0
+					img(src="#{url}/img/homepage.jpg")
+
+			.page.page-2.touch
+				.title.f0
+					img(src="#{url}/img/page-2-title.jpg")
+				.tabs.f0
+					.tab.tab-1(v-show="tab")
+						img(src="#{url}/img/page-2-tab-1.jpg")
+						.btn(@click.stop.prevent="changetab")
+					.tab.tab-2(v-show="!tab")
+						img(src="#{url}/img/page-2-tab-2.jpg")
+						.btn(@click.stop.prevent="changetab")
+				.content.f0
+					img(v-show="tab",src="#{url}/img/page-2-content-1.jpg")
+					img(v-show="!tab",src="#{url}/img/page-2-content-2.jpg")
+
+			.page.page-3.touch.f0
+				.video.video-1(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/adidas-originals-eqt/video/video.mp4','./video/p-1.jpg')")
+					img(src="#{url}/img/page-3-1.jpg")
+				.video.video-2(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/adidas-originals-eqt/video/video.mp4','./video/p-2.jpg')")
+					img(src="#{url}/img/page-3-2.jpg")
+				.video.video-3
+					img(src="#{url}/img/page-3-3.jpg")
+
+	#videopop.pop.fadeIn.animated(v-show="show")
+		.video-box.fadeIn.animated.delay-0
+			.close(@click="close")
+				img(src="#{url}/img/close.png")
+			mp4(:src="src",:poster="poster")
+block js
+	- url = "/"
+	//- script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
+	script(src="/zhihunews/js/TweenMax.min.js")
+	script(src="js/main.js")
+
+	

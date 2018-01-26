@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -377,76 +376,6 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none; }
-
-.pages {
-  display: block;
-  height: 100%;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative; }
-  .pages .page {
-    width: 100%;
-    height: 100%;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    display: none; }
-    .pages .page .next-point {
-      width: 20px;
-      height: 30px;
-      position: absolute;
-      bottom: 2%;
-      left: 50%;
-      margin-left: -10px;
-      z-index: 99;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-      font-size: 0; }
-      .pages .page .next-point span {
-        width: 20px;
-        height: 10px;
-        display: inline-block;
-        -webkit-animation: Flash 2s ease;
-                animation: Flash 2s ease;
-        -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        margin-bottom: -2px;
-        background: url("http://disk.giccoo.com/projects/libs/img/arrow-next.png") no-repeat center center;
-        background-size: cover;
-        background-color: transparent; }
-        .pages .page .next-point span:nth-child(n+1) {
-          -webkit-animation-delay: 100ms;
-                  animation-delay: 100ms; }
-        .pages .page .next-point span:nth-child(n+2) {
-          -webkit-animation-delay: 300ms;
-                  animation-delay: 300ms; }
-        .pages .page .next-point span:nth-child(n+3) {
-          -webkit-animation-delay: 500ms;
-                  animation-delay: 500ms; }
-    .pages .page.first {
-      display: block; }
-    .pages .page h1, .pages .page h2 {
-      margin: 0 auto; }
-    .pages .page.riot-up-active, .pages .page.riot-down-active {
-      -webkit-transform: translate3d(0, 0, 0);
-              transform: translate3d(0, 0, 0); }
-    .pages .page.riot-up-leave {
-      -webkit-transform: translate3d(0, -100%, 0);
-              transform: translate3d(0, -100%, 0); }
-    .pages .page.riot-up {
-      -webkit-transform: translate3d(0, 100%, 0);
-              transform: translate3d(0, 100%, 0); }
-    .pages .page.riot-down-leave {
-      -webkit-transform: translate3d(0, 100%, 0);
-              transform: translate3d(0, 100%, 0); }
-    .pages .page.riot-down {
-      -webkit-transform: translate3d(0, -100%, 0);
-              transform: translate3d(0, -100%, 0); }
 
 .loader {
   position: absolute;
@@ -897,17 +826,16 @@ body {
   overflow-scrolling: touch;
   -webkit-overflow-scrolling: touch; }
 
-.planet-content-enter-active {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease; }
+.page-animation-enter-active {
+  -webkit-transition: all 10.6s ease;
+  transition: all 10.6s ease; }
 
-.planet-content-leave-active {
-  -webkit-transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
-  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1); }
+.page-animation-leave-active {
+  -webkit-transition: all 10.6s linear;
+  transition: all 10.6s linear; }
 
-.planet-content-enter, .planet-content-leave-to {
-  -webkit-transform: translateY(200px);
-          transform: translateY(200px);
+.page-animation-enter, .page-animation-leave-to {
+  z-index: 100;
   opacity: 0; }
 
 .loading {
@@ -952,288 +880,8 @@ body {
   -webkit-transform: translate3d(-50%, -50%, 0);
           transform: translate3d(-50%, -50%, 0); }
 
-.logo {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  width: 12.8125%;
-  margin: 0 auto;
-  z-index: 10002; }
-  .iphone4 .logo {
-    width: 12.8125%; }
-
-.banner, .footer {
+.f0 {
   font-size: 0; }
-
-.banner {
-  position: relative; }
-  .banner > .title {
-    position: absolute;
-    top: 36%;
-    left: 0px;
-    width: 100%; }
-  .banner .finger {
-    position: absolute;
-    top: 60%;
-    left: 0%;
-    width: 90%;
-    z-index: 999; }
-    .banner .finger .lights {
-      width: 100%; }
-      .banner .finger .lights .light {
-        width: 100%;
-        height: 25px;
-        background-color: rgba(255, 255, 255, 0.3);
-        margin-top: 10px; }
-        .banner .finger .lights .light:first-child {
-          margin-top: 0; }
-    .banner .finger .f {
-      position: absolute;
-      top: 10px;
-      left: 10%;
-      width: 12.5%;
-      margin: 0 auto;
-      -webkit-transform: rotate(-90deg);
-              transform: rotate(-90deg);
-      -webkit-animation: fingermove 4s ease;
-              animation: fingermove 4s ease;
-      -webkit-animation-fill-mode: both;
-              animation-fill-mode: both;
-      -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite; }
-      .iphone4 .banner .finger .f {
-        width: 12.5%; }
-    .banner .finger .a {
-      position: absolute;
-      top: 0;
-      left: 5%;
-      width: 6.25%;
-      margin: 0 auto;
-      -webkit-transform: rotate(-90deg);
-              transform: rotate(-90deg); }
-      .iphone4 .banner .finger .a {
-        width: 6.25%; }
-    .banner .finger .texts {
-      position: absolute;
-      bottom: 0;
-      left: 5%;
-      font-size: 0.6rem;
-      line-height: 1.6em; }
-      @media only screen and (min-width: 321px) and (max-width: 399px) {
-        .banner .finger .texts {
-          font-size: 0.66rem; } }
-      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-        .banner .finger .texts {
-          font-size: 0.66rem; } }
-      @media only screen and (min-width: 399px) and (max-width: 767px) {
-        .banner .finger .texts {
-          font-size: 0.72rem; } }
-      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-        .banner .finger .texts {
-          font-size: 0.72rem; } }
-      .banner .finger .texts p {
-        margin: 0 auto; }
-  .banner .player-banner {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    width: 40%; }
-    .banner .player-banner .title {
-      position: absolute;
-      bottom: 0%;
-      left: -100%;
-      width: 100%;
-      z-index: 10; }
-      .banner .player-banner .title p {
-        font-size: 0.6rem;
-        text-align: right;
-        margin: 0 auto;
-        padding: 0 0.5em 0 0; }
-        @media only screen and (min-width: 321px) and (max-width: 399px) {
-          .banner .player-banner .title p {
-            font-size: 0.66rem; } }
-        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-          .banner .player-banner .title p {
-            font-size: 0.66rem; } }
-        @media only screen and (min-width: 399px) and (max-width: 767px) {
-          .banner .player-banner .title p {
-            font-size: 0.72rem; } }
-        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-          .banner .player-banner .title p {
-            font-size: 0.72rem; } }
-
-.fingers {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  text-align: center; }
-  .fingers .finger {
-    width: 15.625%;
-    margin: 0 auto; }
-    .iphone4 .fingers .finger {
-      width: 15.625%; }
-  .fingers .texts p {
-    margin: 0 auto; }
-  .fingers .arrows {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%; }
-    .fingers .arrows .arrow {
-      position: absolute;
-      width: 7.8125%;
-      margin: 0 auto;
-      -webkit-animation: fadeOutDown 2s ease;
-              animation: fadeOutDown 2s ease;
-      -webkit-animation-fill-mode: both;
-              animation-fill-mode: both;
-      -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite; }
-      .iphone4 .fingers .arrows .arrow {
-        width: 7.8125%; }
-    .fingers .arrows .arrow-0 {
-      top: 47.602156516px;
-      left: 10%;
-      -webkit-animation-delay: 100ms;
-              animation-delay: 100ms;
-      -webkit-animation-duration: 1007.51930939ms;
-              animation-duration: 1007.51930939ms; }
-    .fingers .arrows .arrow-1 {
-      top: 10.365580743px;
-      left: 25%;
-      -webkit-animation-delay: 400ms;
-              animation-delay: 400ms;
-      -webkit-animation-duration: 1434.36907201ms;
-              animation-duration: 1434.36907201ms; }
-    .fingers .arrows .arrow-2 {
-      top: 86.1460323097px;
-      left: 75%;
-      -webkit-animation-delay: 300ms;
-              animation-delay: 300ms;
-      -webkit-animation-duration: 1991.87049295ms;
-              animation-duration: 1991.87049295ms; }
-    .fingers .arrows .arrow-3 {
-      top: 16.0885100007px;
-      left: 90%;
-      -webkit-animation-delay: 200ms;
-              animation-delay: 200ms;
-      -webkit-animation-duration: 1503.02556132ms;
-              animation-duration: 1503.02556132ms; }
-
-.player-list {
-  width: 80%;
-  margin: 0 auto; }
-  .player-list .player-item {
-    width: 64%;
-    margin-top: 4rem; }
-    .player-list .player-item:first-child {
-      margin-top: -2rem; }
-    .player-list .player-item:nth-child(even) {
-      margin-left: 36%; }
-      .player-list .player-item:nth-child(even) .player .icon-play {
-        right: auto;
-        left: 5%; }
-      .player-list .player-item:nth-child(even) .player:before {
-        left: auto;
-        right: 100%; }
-      .player-list .player-item:nth-child(even) .player:after {
-        left: auto;
-        right: 45%;
-        background: url("../img/line-b.png") no-repeat center center;
-        background-size: contain;
-        background-color: transparent; }
-      .player-list .player-item:nth-child(even) .title {
-        text-align: right;
-        padding: 0.4em 0.8em 0 0; }
-        .player-list .player-item:nth-child(even) .title:before {
-          content: " ";
-          left: auto;
-          top: 0px;
-          right: 0px;
-          width: 0.3em;
-          height: 95%;
-          background-color: #4d4e4e; }
-      .player-list .player-item:nth-child(even) .desc {
-        text-align: right; }
-    .player-list .player-item .player .icon-play {
-      top: auto;
-      left: auto;
-      bottom: 5%;
-      right: 5%;
-      width: 15%;
-      height: 15%;
-      background-color: rgba(70, 70, 70, 0.5);
-      -webkit-transform: translate3d(0, 0, 0);
-              transform: translate3d(0, 0, 0); }
-    .player-list .player-item .player:before {
-      content: "点击播放歌曲";
-      font-size: 0.6rem;
-      position: absolute;
-      top: 50%;
-      left: 100%;
-      width: 0.7rem;
-      padding: 0.3em 0.4em;
-      background-color: #4d4e4e;
-      text-align: center; }
-      @media only screen and (min-width: 321px) and (max-width: 399px) {
-        .player-list .player-item .player:before {
-          font-size: 0.66rem; } }
-      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-        .player-list .player-item .player:before {
-          font-size: 0.66rem; } }
-      @media only screen and (min-width: 399px) and (max-width: 767px) {
-        .player-list .player-item .player:before {
-          font-size: 0.72rem; } }
-      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-        .player-list .player-item .player:before {
-          font-size: 0.72rem; } }
-    .player-list .player-item .player:after {
-      content: " ";
-      position: absolute;
-      top: 20%;
-      left: 45%;
-      width: 110%;
-      height: 110%;
-      background: url("../img/line.png") no-repeat center center;
-      background-size: contain;
-      background-color: transparent;
-      z-index: -1; }
-    .player-list .player-item .player.play:after {
-      -webkit-animation: pulse 1.4s ease;
-              animation: pulse 1.4s ease;
-      -webkit-animation-fill-mode: both;
-              animation-fill-mode: both;
-      -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite; }
-    .player-list .player-item p {
-      font-size: 0.8rem;
-      line-height: 1.4em; }
-      @media only screen and (min-width: 321px) and (max-width: 399px) {
-        .player-list .player-item p {
-          font-size: 0.88rem; } }
-      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-        .player-list .player-item p {
-          font-size: 0.88rem; } }
-      @media only screen and (min-width: 399px) and (max-width: 767px) {
-        .player-list .player-item p {
-          font-size: 0.96rem; } }
-      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-        .player-list .player-item p {
-          font-size: 0.96rem; } }
-    .player-list .player-item .title {
-      position: relative;
-      padding: 0.4em 0 0 0.8em; }
-      .player-list .player-item .title:before {
-        content: " ";
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 0.4em;
-        height: 95%;
-        background-color: #4d4e4e; }
-    .player-list .player-item .desc p {
-      margin-top: 0.3em; }
 
 .pop {
   position: absolute;
@@ -1243,41 +891,6 @@ body {
   height: 100%;
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.3); }
-  .pop .lights {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: -1; }
-    .pop .lights .light {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 5%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.4);
-      -webkit-animation: light 1.5s ease;
-              animation: light 1.5s ease;
-      -webkit-animation-fill-mode: both;
-              animation-fill-mode: both;
-      -webkit-animation-iteration-count: initial;
-              animation-iteration-count: initial; }
-    .pop .lights .light-0 {
-      top: 0;
-      left: 25%;
-      -webkit-animation-delay: 100ms;
-              animation-delay: 100ms; }
-    .pop .lights .light-1 {
-      top: 0;
-      left: 50%;
-      -webkit-animation-delay: 300ms;
-              animation-delay: 300ms; }
-    .pop .lights .light-2 {
-      top: 0;
-      left: 75%;
-      -webkit-animation-delay: 500ms;
-              animation-delay: 500ms; }
   .pop .video-box {
     position: absolute;
     top: 50%;
@@ -1294,3 +907,59 @@ body {
       margin: 0 auto; }
       .iphone4 .pop .video-box .close {
         width: 4.6875%; }
+
+.pages {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  perspective: 500;
+  -webkit-perspective: 500;
+    -webkit-perspective-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d; }
+  .pages .page {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: url("../img/bg.jpg") no-repeat center center;
+    background-size: cover;
+    background-color: transparent;
+    z-index: 10; }
+    .pages .page.on {
+      z-index: 20; }
+    .pages .page.overhide {
+      overflow: hidden; }
+    .pages .page.touch {
+      overflow: scroll;
+      overflow-scrolling: touch;
+      -webkit-overflow-scrolling: touch; }
+
+.page-1 .homepage {
+  width: 90%;
+  margin: 0 auto; }
+
+.page-1 .logo {
+  position: absolute;
+  top: 2%;
+  left: 10%;
+  width: 28.125%;
+  margin: 0 auto; }
+  .iphone4 .page-1 .logo {
+    width: 28.125%; }
+
+.page-2 .tabs {
+  position: relative; }
+  .page-2 .tabs .tab-1 .btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 50%;
+    height: 100%; }
+  .page-2 .tabs .tab-2 .btn {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50%;
+    height: 100%; }
