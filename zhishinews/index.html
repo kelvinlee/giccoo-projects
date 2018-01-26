@@ -10,8 +10,28 @@
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
-    <div id="main" class="main">
-      <pages :pagenow="pagenow">
+    <div id="load" v-if="!loadend" class="loading">
+      <transition name="page-animation">
+        <div v-if="loading" class="loading-page">
+          <div class="content">
+            <div class="load-text">
+              <div class="text"><img src="http://image.giccoo.com/projects/zhihunews/img/loadingT.png"></div>
+            </div>
+            <div class="progress">
+              <div :class="start" class="line"></div>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <transition v-on:leave="leave">
+        <div v-if="note" @click.stop.prevent="close" class="note">
+          <div class="hand"><img src="http://image.giccoo.com/projects/zhihunews/img/p1hand.png"></div>
+          <div class="bottom"><img src="http://image.giccoo.com/projects/zhihunews/img/p1arrow.png"></div>
+        </div>
+      </transition>
+    </div>
+    <div id="main" class="main f0">
+      <pages>
         <div class="page page-1">
           <div class="logo f0"><img src="./img/dazhong-logo.png"></div>
           <div class="homepage f0"><img src="./img/homepage.jpg"></div>
@@ -28,13 +48,9 @@
           </div>
           <div class="content f0"><img v-show="tab" src="./img/page-2-content-1.jpg"><img v-show="!tab" src="./img/page-2-content-2.jpg"></div>
         </div>
-        <div class="page page-3 touch f0">
-          <div @click.stop.prevent="changeplayer('http://image.giccoo.com/projects/adidas-originals-eqt/video/video.mp4','./video/p-1.jpg')" class="video video-1"><img src="./img/page-3-1.jpg"></div>
-          <div @click.stop.prevent="changeplayer('http://image.giccoo.com/projects/adidas-originals-eqt/video/video.mp4','./video/p-2.jpg')" class="video video-2"><img src="./img/page-3-2.jpg"></div>
-          <div class="video video-3"><img src="./img/page-3-3.jpg"></div>
-        </div>
       </pages>
     </div>
+    <div id="share" v-show="show" @click.stop.prevent="close" class="pop share fadeIn animated"><img src="./img/share.png"></div>
     <div id="videopop" v-show="show" class="pop fadeIn animated">
       <div class="video-box fadeIn animated delay-0">
         <div @click="close" class="close"><img src="./img/close.png"></div>
@@ -42,7 +58,7 @@
       </div>
     </div>
     <script src="http://image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
-    <script src="/zhihunews/js/TweenMax.min.js"></script>
+    <script src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

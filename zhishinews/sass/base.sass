@@ -13,14 +13,16 @@ $cdn : "../"
 	100%
 		transform: translateY(100%)
 +keyframes(fingermove)
+	0%,100%
+		transform: translateX(-100px)
+	50%
+		transform: translateX(100px)
++keyframes(progressline)
 	0%
-		transform: translateX(0px) rotate(-90deg)
-		opacity: 0
-	10%,90%
-		opacity: 1
+		width: 0%
 	100%
-		transform: translateX(250px) rotate(-90deg)
-		opacity: 0
+		width: 100%
+
 
 // animation, delay, duration
 @for $i from 1 through 30
@@ -70,11 +72,10 @@ body
 	+posr
 	+touch
 .page-animation-enter-active
-	transition: all 10.6s ease
+	transition: all .6s ease
 .page-animation-leave-active
-	transition: all 10.6s linear
+	transition: all .6s linear
 .page-animation-enter, .page-animation-leave-to
-	z-index: 100
 	opacity: 0
 
 .loading
@@ -82,11 +83,46 @@ body
 	+tl
 	+w
 	+h
-	+bc(#000)
+	+bc(rgba(0,0,0,0.5))
 	z-index: 10010
+	&.hidebg
+		background-image: none
 	.ball-spin-fade-loader
 		+posa
 		+tl(50%,50%)
+	.loading-page
+		+posa
+		+tl
+		+w
+		+h
+		+b($cdn+"img/bg.jpg",no-repeat,center,center,cover,#000)
+	.note
+		+posa
+		+bl
+		z-index: 109
+		.hand
+			+posa
+			+bl
+			+animation(fingermove,3s,ease,infinite)
+			z-index: 110
+	.content
+		+posa
+		+tl(50%,15%)
+		+w(70%)
+		+transform(translateY(-50%))
+		.progress
+			+w
+			+h(4px)
+			+bc(#ccc)
+			+posr
+			.line
+				+posa
+				+tl
+				+w(0%)
+				+h(4px)
+				+bc(#8c2f26)
+				&.on
+					+animation(progressline,2s,ease,1)
 
 .player,.video
 	$iconColor: #fff
@@ -123,7 +159,7 @@ body
 	font-size: 0
 
 .pop
-	$bgColor: rgba(0,0,0,0.3)
+	$bgColor: rgba(0,0,0,0.6)
 	+posa
 	+tl
 	+w
@@ -157,7 +193,8 @@ body
 		+tl
 		+w
 		+h
-		+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+		+b($cdn+"img/bg.jpg",no-repeat,center,center,cover,#000)
+		background-attachment: fixed
 		z-index: 10
 		&.on
 			z-index: 20
@@ -165,6 +202,9 @@ body
 			+overhide
 		&.touch
 			+touch
+		@for $i from 1 through 30
+			&.page-#{$i}
+				z-index: 20-$i
 
 .page-1
 	.homepage
@@ -190,3 +230,20 @@ body
 				+tl
 				+w(50%)
 				+h
+.page-5
+	.content
+		+posa
+		top: 50%
+		left: (100%-64%)/2
+		+transform(translateY(-50%))
+		+w(64%)
+		.outlink
+			+show
+			+posa
+			+bl
+			+wh(75%,40px)
+		.btn
+			+show
+			+posa
+			+br
+			+wh(25%,40px)

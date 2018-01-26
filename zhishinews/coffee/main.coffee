@@ -7,7 +7,7 @@ _CDN = "http://image.giccoo.com/projects/zhishinews/"
 _CDN = "./"
 load = {}
 main = {}
-finger = {}
+share = {}
 player = {}
 
 window.onload = ->
@@ -15,18 +15,50 @@ window.onload = ->
 		el: "#load"
 		data:
 			loadend: false
+			start: ""
+			note: false
+			loading: true
+			autoClose: null
+		methods:
+			close: ->
+				el = @$el.children[0]
+				clearTimeout @autoClose
+				TweenLite.to(el,0.6,{opacity:0,onComplete: ->
+					load.loadend = true
+				})
+			leave: (el,done)->
+				TweenLite.to(el,0.6,{opacity:0,onComplete: ->
+					done()
+					load.loadend = true
+				})
+				# console.log "el:",el,done
+
 		mounted: (el)->
 			initMain()
-			setTimeout ->
-				load.loadend = true
-			,3000
+			@start = "on"
+			setTimeout =>
+				# load.loadend = true
+				load.note = true
+				load.loading = false
+				@autoClose = setTimeout ->
+					load.note = false
+				,3000
+			,2000
 
 initMain = ->
+	share = new Vue
+		el: "#share"
+		data:
+			show: false
+		methods:
+			close: ->
+				@show = false
+
 	player = new Vue
 		el: "#videopop"
 		data:
-			src: "http://image.giccoo.com/projects/adidas-originals-eqt/video/video.mp4"
-			poster: "./img/video.jpg"
+			src: ""
+			poster: ""
 			show: false
 		methods:
 			close: ->
@@ -41,6 +73,8 @@ initMain = ->
 			pagenow: 0
 			tab: true
 		methods:
+			shareshow: ->
+				share.show = true
 			changetab: ->
 				@tab = !@tab
 			changeplayer: (src,poster)->

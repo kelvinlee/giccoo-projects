@@ -19,11 +19,24 @@ block content
 	- url = "http://image.giccoo.com/projects/adidas-originals-eqt"
 	- url = "."
 	
-	//- #load.loading(v-if="!loadend")
-		p loading
+	#load.loading(v-if="!loadend")
+		transition(name="page-animation")
+			.loading-page(v-if="loading")
+				.content
+					.load-text
+						.text
+							img(src="http://image.giccoo.com/projects/zhihunews/img/loadingT.png")
+					.progress
+						.line(:class="start")
+		transition(v-on:leave="leave")
+			.note(v-if="note",@click.stop.prevent="close")
+				.hand
+					img(src="http://image.giccoo.com/projects/zhihunews/img/p1hand.png")
+				.bottom
+					img(src="http://image.giccoo.com/projects/zhihunews/img/p1arrow.png")
 
-	#main.main
-		pages(:pagenow="pagenow")
+	#main.main.f0
+		pages
 			.page.page-1
 				.logo.f0
 					img(src="#{url}/img/dazhong-logo.png")
@@ -44,25 +57,45 @@ block content
 					img(v-show="tab",src="#{url}/img/page-2-content-1.jpg")
 					img(v-show="!tab",src="#{url}/img/page-2-content-2.jpg")
 
-			.page.page-3.touch.f0
-				.video.video-1(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/adidas-originals-eqt/video/video.mp4','./video/p-1.jpg')")
+			//- .page.page-3.touch.f0
+				.video.video-1(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhihunews/video/page-3-1.mp4','./img/page-3-p-1.jpg')")
 					img(src="#{url}/img/page-3-1.jpg")
-				.video.video-2(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/adidas-originals-eqt/video/video.mp4','./video/p-2.jpg')")
+				.video.video-2(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhihunews/video/page-3-2.mp4','./img/page-3-p-2.jpg')")
 					img(src="#{url}/img/page-3-2.jpg")
-				.video.video-3
+				.video.video-3(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhihunews/video/page-3-3.mp4','./img/page-3-p-3.jpg')")
 					img(src="#{url}/img/page-3-3.jpg")
+			//- .page.page-4.touch.f0
+				.title
+					img(src="#{url}/img/page-4-1.jpg")
+				.video.video-1(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhihunews/video/page-4-1.mp4','./img/page-4-p-1.jpg')")
+					img(src="#{url}/img/page-4-2.jpg")
+				.video.video-2(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhihunews/video/page-4-2.mp4','./img/page-4-p-2.jpg')")
+					img(src="#{url}/img/page-4-3.jpg")
+				.video.video-4(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhihunews/video/page-4-3.mp4','./img/page-4-p-3.jpg')")
+					img(src="#{url}/img/page-4-4.jpg")
+			//- .page.page-5.overhide.f0
+				.content
+					img(src="#{url}/img/page-5.jpg")
+					a.outlink(href="https://h5.dianping.com/app/app-poi-food-selection-guide/rank.html?notitlebar=1&cityid=*&activity_tlt=1116&utm_source=zhihu")
+					.btn.share(@click.stop.prevent="shareshow")
+			//- .page.page-6.touch.f0
+				.content
+					img(src="#{url}/img/page-6.jpg")
 
+	#share.pop.share.fadeIn.animated(v-show="show",@click.stop.prevent="close")
+		img(src="#{url}/img/share.png")
 	#videopop.pop.fadeIn.animated(v-show="show")
 		.video-box.fadeIn.animated.delay-0
 			.close(@click="close")
 				img(src="#{url}/img/close.png")
 			mp4(:src="src",:poster="poster")
+
 block js
 	- url = "/"
 	//- script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
-	script(src="/zhihunews/js/TweenMax.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
 	script(src="js/main.js")
 
 	

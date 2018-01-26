@@ -1,6 +1,6 @@
 'use strict';
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, _CDN, css3Prefix, finger, i, initMain, j, len, load, mTestElement, main, player;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, _CDN, css3Prefix, i, initMain, j, len, load, mTestElement, main, player, share;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -202,7 +202,7 @@ Vue.component("pages", {
   watch: {
     pagenow: function pagenow(now, old) {
       var dom, v;
-      console.log("pagenow:", now, old);
+      // console.log "pagenow:",now,old
       if (now >= this.count) {
         return false;
       }
@@ -226,12 +226,13 @@ Vue.component("pages", {
         zIndex: 100,
         z: 600,
         onComplete: function onComplete() {
-          return el.style = "";
+          return el.style = "display: none";
         }
       });
     },
     enter: function enter(el) {
       TweenLite.set(el, {
+        display: "block",
         rotationY: -180,
         left: "-100%",
         zIndex: 100,
@@ -289,7 +290,7 @@ Vue.component("pages", {
     },
     end: function end(evt) {
       var temp;
-      if (this.touchmoving < 3) {
+      if (this.touchmoving <= 2) {
         return false;
       }
       console.log(this.pageUpDown, this.touching, this.touchmoving);
@@ -331,7 +332,7 @@ load = {};
 
 main = {};
 
-finger = {};
+share = {};
 
 player = {};
 
@@ -339,23 +340,69 @@ window.onload = function () {
   return load = new Vue({
     el: "#load",
     data: {
-      loadend: false
+      loadend: false,
+      start: "",
+      note: false,
+      loading: true,
+      autoClose: null
     },
+    methods: {
+      close: function close() {
+        var el;
+        el = this.$el.children[0];
+        clearTimeout(this.autoClose);
+        return TweenLite.to(el, 0.6, {
+          opacity: 0,
+          onComplete: function onComplete() {
+            return load.loadend = true;
+          }
+        });
+      },
+      leave: function leave(el, done) {
+        return TweenLite.to(el, 0.6, {
+          opacity: 0,
+          onComplete: function onComplete() {
+            done();
+            return load.loadend = true;
+          }
+        });
+      }
+    },
+    // console.log "el:",el,done
     mounted: function mounted(el) {
+      var _this2 = this;
+
       initMain();
+      this.start = "on";
       return setTimeout(function () {
-        return load.loadend = true;
-      }, 3000);
+        // load.loadend = true
+        load.note = true;
+        load.loading = false;
+        return _this2.autoClose = setTimeout(function () {
+          return load.note = false;
+        }, 3000);
+      }, 2000);
     }
   });
 };
 
 initMain = function initMain() {
+  share = new Vue({
+    el: "#share",
+    data: {
+      show: false
+    },
+    methods: {
+      close: function close() {
+        return this.show = false;
+      }
+    }
+  });
   player = new Vue({
     el: "#videopop",
     data: {
-      src: "http://image.giccoo.com/projects/adidas-originals-eqt/video/video.mp4",
-      poster: "./img/video.jpg",
+      src: "",
+      poster: "",
       show: false
     },
     methods: {
@@ -375,6 +422,9 @@ initMain = function initMain() {
       tab: true
     },
     methods: {
+      shareshow: function shareshow() {
+        return share.show = true;
+      },
       changetab: function changetab() {
         return this.tab = !this.tab;
       },

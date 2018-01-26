@@ -17,7 +17,7 @@ Vue.component "pages",
 			default: 0
 	watch:
 		pagenow: (now,old)->
-			console.log "pagenow:",now,old
+			# console.log "pagenow:",now,old
 			if now >= @count
 				return false 
 			v = now - old
@@ -32,10 +32,10 @@ Vue.component "pages",
 	methods:
 		leave: (el)->
 			TweenLite.to(el,1.6,{rotationY:-180, left:"-100%", zIndex: 100, z: 600, onComplete: ->
-				el.style = ""
+				el.style = "display: none"
 			})
 		enter: (el)->
-			TweenLite.set(el,{rotationY:-180, left:"-100%", zIndex: 100, z: 600})
+			TweenLite.set(el,{display: "block",rotationY:-180, left:"-100%", zIndex: 100, z: 600})
 			TweenLite.to(el,.6,{rotationY:0, left:"0%", zIndex: 100, z: 0, onComplete: ->
 				el.style = ""
 			})
@@ -58,6 +58,7 @@ Vue.component "pages",
 			@touchmoving += 1
 			nowX=evt.touches[0].clientX
 			nowY=evt.touches[0].clientY
+			
 			if (nowX-@startX)*(nowX-@startX)>(nowY-@startY)*(nowY-@startY)*2 
 				if nowX-@startX>80&&@pagenow!=0
 					@pageUpDown = 1
@@ -67,7 +68,7 @@ Vue.component "pages",
 					@pageUpDown = 0
 
 		end: (evt)->
-			return false if @touchmoving < 3
+			return false if @touchmoving <= 2
 			console.log @pageUpDown,@touching,@touchmoving
 			if @pageUpDown == 1
 				@pagenow = @pagenow-1 if @pagenow > 0
