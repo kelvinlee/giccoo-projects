@@ -322,8 +322,8 @@ Vue.component("pages", {
 
 // @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/coffee/requestanimation"
-// @codekit-prepend "./video.coffee"
-// @codekit-prepend "./pages.coffee"
+// @codekit-prepend "../../libs/coffee/vue-video.coffee"
+// @codekit-prepend "../../libs/coffee/vue-book-pages.coffee"
 _CDN = "http://image.giccoo.com/projects/zhishinews/";
 
 _CDN = "./";
@@ -431,12 +431,13 @@ initMain = function initMain() {
       changeplayer: function changeplayer(src, poster) {
         player.src = src;
         player.poster = poster;
-        player.show = true;
-        return player.play();
+        return player.show = true;
       }
     }
   });
 };
+
+// player.play()
 
 // nextPage: (self)->
 // 	@pagenow = self.pagenow

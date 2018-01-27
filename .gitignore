@@ -3,13 +3,8 @@ node_modules
 .atom-build.json
 .sass-cache
 config.js
-*.zip
 config.codekit
 huxiu_ministation/static/.DS_Store
-
 .DS_Store
-
-.DS_Store
-config.codekit3
+*.zip
 *.mp4
-*.codekit3
