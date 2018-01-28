@@ -31,7 +31,9 @@ Vue.component "pages",
 				@enter dom
 	methods:
 		leave: (el)->
+			TweenLite.set(el,{display: "block"})
 			TweenLite.to(el,1.6,{rotationY:-180, left:"-100%", zIndex: 100, z: 600, onComplete: ->
+				el.scrollTop = 0
 				el.style = "display: none"
 			})
 		enter: (el)->
@@ -42,7 +44,9 @@ Vue.component "pages",
 		setNow: (el)->
 			for item in @$el.children
 				item.className = item.className.replace(" on","")
-			el.className += " on" if el?
+			if el?
+				el.className += " on"
+				el.scrollTop = 0
 
 		start: (evt)->
 			# @pagenow = @pagenow+1 if @pagenow < @count 
@@ -69,7 +73,7 @@ Vue.component "pages",
 
 		end: (evt)->
 			return false if @touchmoving <= 2
-			console.log @pageUpDown,@touching,@touchmoving
+			# console.log @pageUpDown,@touching,@touchmoving
 			if @pageUpDown == 1
 				@pagenow = @pagenow-1 if @pagenow > 0
 				temp = @$emit 'prev', @
@@ -87,5 +91,5 @@ Vue.component "pages",
 		@$el.addEventListener "touchend", @end.bind @
 
 		@count = @$el.children.length
-		console.log @$el.children[0],@pagenow
+		# console.log @$el.children[0],@pagenow
 		@setNow @$el.children[0]

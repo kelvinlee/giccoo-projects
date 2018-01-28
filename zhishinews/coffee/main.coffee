@@ -45,6 +45,7 @@ window.onload = ->
 				,3000
 			,2000
 
+	stopWebViewScroll()
 initMain = ->
 	share = new Vue
 		el: "#share"
@@ -87,3 +88,25 @@ initMain = ->
 			# 	@pagenow = self.pagenow
 				# console.log "next pagenow:",@pagenow
 			
+		mounted: (el)->
+			@$el.style = "display: block"
+stopWebViewScroll = ->
+	overscroll = (el)->
+		el.addEventListener 'touchstart', ->
+			top = el.scrollTop
+			totalScroll = el.scrollHeight
+			currentScroll = top + el.offsetHeight
+			if top is 0
+				el.scrollTop = 1
+			else if currentScroll is totalScroll
+				el.scrollTop = top -1
+		el.addEventListener "touchmove", (evt)->
+			if el.offsetHeight < el.scrollHeight
+				evt._isScroller = true
+	document.body.addEventListener "touchmove", (evt)->
+		unless evt._isScroller
+			evt.preventDefault()
+	for el in document.querySelectorAll(".touch")
+		overscroll el
+
+

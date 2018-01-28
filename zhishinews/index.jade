@@ -1,6 +1,6 @@
 extends ../libs/jade/layout-clean
 block title
-	| 知食日报 • 啤酒择学课
+	| 知食日报
 
 block css
 	meta(name="author",content="m.giccoo.com")
@@ -25,25 +25,24 @@ block content
 				.content
 					.load-text
 						.text
-							img(src="http://image.giccoo.com/projects/zhihunews/img/loadingT.png")
+							img(src="#{url}/img/load-text.png")
 					.progress
 						.line(:class="start")
 		transition(v-on:leave="leave")
-			.note(v-if="note",@click.stop.prevent="close")
+			div(v-if="note",:class="{note: note}",@click.stop.prevent="close")
 				.hand
 					img(src="http://image.giccoo.com/projects/zhihunews/img/p1hand.png")
 				.bottom
 					img(src="http://image.giccoo.com/projects/zhihunews/img/p1arrow.png")
 
-	#main.main.f0
+	#main.main.f0.hide
 		pages
-			.page.page-1
-				.logo.f0
-					img(src="#{url}/img/dazhong-logo.png")
+			.page.page-1.page-home
+				.bg
+					img(src="#{url}/img/bg.jpg")
 				.homepage.f0
 					img(src="#{url}/img/homepage.jpg")
-
-			.page.page-2.touch
+			.page.page-2.page-news.touch
 				.title.f0
 					img(src="#{url}/img/page-2-title.jpg")
 				.tabs.f0
@@ -56,31 +55,41 @@ block content
 				.content.f0
 					img(v-show="tab",src="#{url}/img/page-2-content-1.jpg")
 					img(v-show="!tab",src="#{url}/img/page-2-content-2.jpg")
-
-			.page.page-3.touch.f0
+			.page.page-3.page-video.overhide.f0
+				.bg
+					img(src="#{url}/img/bg.jpg")
 				.video.video-1(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-3-1.mp4','./img/page-3-p-1.jpg')")
 					img(src="#{url}/img/page-3-1.jpg")
+			.page.page-4.page-video.overhide.f0
+				.bg
+					img(src="#{url}/img/bg.jpg")
 				.video.video-2(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-3-2.mp4','./img/page-3-p-2.jpg')")
 					img(src="#{url}/img/page-3-2.jpg")
+			.page.page-5.page-video.overhide.f0
+				.bg
+					img(src="#{url}/img/bg.jpg")
 				.video.video-3(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-3-3.mp4','./img/page-3-p-3.jpg')")
 					img(src="#{url}/img/page-3-3.jpg")
-			.page.page-4.touch.f0
-				.title
-					img(src="#{url}/img/page-4-1.jpg")
+			.page.page-6.page-video.overhide.f0
 				.video.video-1(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-4-1.mp4','./img/page-4-p-1.jpg')")
-					img(src="#{url}/img/page-4-2.jpg")
+					img(src="#{url}/img/page-4-1.jpg")
+			.page.page-7.page-video.overhide.f0
 				.video.video-2(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-4-2.mp4','./img/page-4-p-2.jpg')")
-					img(src="#{url}/img/page-4-3.jpg")
+					img(src="#{url}/img/page-4-2.jpg")
+			.page.page-8.page-video.overhide.f0
 				.video.video-4(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-4-3.mp4','./img/page-4-p-3.jpg')")
-					img(src="#{url}/img/page-4-4.jpg")
-			//- .page.page-5.overhide.f0
+					img(src="#{url}/img/page-4-3.jpg")
+			.page.page-9.touch.f0
+				.content
+					img(src="#{url}/img/page-6.jpg")
+			.page.page-10.page-last.overhide.f0
+				.bg
+					img(src="#{url}/img/bg.jpg")
 				.content
 					img(src="#{url}/img/page-5.jpg")
 					a.outlink(href="https://h5.dianping.com/app/app-poi-food-selection-guide/rank.html?notitlebar=1&cityid=*&activity_tlt=1116&utm_source=zhihu")
 					.btn.share(@click.stop.prevent="shareshow")
-			//- .page.page-6.touch.f0
-				.content
-					img(src="#{url}/img/page-6.jpg")
+			
 
 	#share.pop.share.fadeIn.animated(v-show="show",@click.stop.prevent="close")
 		img(src="#{url}/img/share.png")

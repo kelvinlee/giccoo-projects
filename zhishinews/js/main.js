@@ -1,6 +1,6 @@
 'use strict';
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, _CDN, css3Prefix, i, initMain, j, len, load, mTestElement, main, player, share;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, _CDN, css3Prefix, i, initMain, j, len, load, mTestElement, main, player, share, stopWebViewScroll;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -220,12 +220,16 @@ Vue.component("pages", {
   },
   methods: {
     leave: function leave(el) {
+      TweenLite.set(el, {
+        display: "block"
+      });
       return TweenLite.to(el, 1.6, {
         rotationY: -180,
         left: "-100%",
         zIndex: 100,
         z: 600,
         onComplete: function onComplete() {
+          el.scrollTop = 0;
           return el.style = "display: none";
         }
       });
@@ -256,7 +260,8 @@ Vue.component("pages", {
         item.className = item.className.replace(" on", "");
       }
       if (el != null) {
-        return el.className += " on";
+        el.className += " on";
+        return el.scrollTop = 0;
       }
     },
     start: function start(evt) {
@@ -293,7 +298,7 @@ Vue.component("pages", {
       if (this.touchmoving <= 2) {
         return false;
       }
-      console.log(this.pageUpDown, this.touching, this.touchmoving);
+      // console.log @pageUpDown,@touching,@touchmoving
       if (this.pageUpDown === 1) {
         if (this.pagenow > 0) {
           this.pagenow = this.pagenow - 1;
@@ -315,7 +320,7 @@ Vue.component("pages", {
     this.$el.addEventListener("touchmove", this.move.bind(this));
     this.$el.addEventListener("touchend", this.end.bind(this));
     this.count = this.$el.children.length;
-    console.log(this.$el.children[0], this.pagenow);
+    // console.log @$el.children[0],@pagenow
     return this.setNow(this.$el.children[0]);
   }
 });
@@ -337,7 +342,7 @@ share = {};
 player = {};
 
 window.onload = function () {
-  return load = new Vue({
+  load = new Vue({
     el: "#load",
     data: {
       loadend: false,
@@ -384,6 +389,7 @@ window.onload = function () {
       }, 2000);
     }
   });
+  return stopWebViewScroll();
 };
 
 initMain = function initMain() {
@@ -433,12 +439,48 @@ initMain = function initMain() {
         player.poster = poster;
         return player.show = true;
       }
+    },
+    // player.play()
+
+    // nextPage: (self)->
+    // 	@pagenow = self.pagenow
+    // console.log "next pagenow:",@pagenow
+    mounted: function mounted(el) {
+      return this.$el.style = "display: block";
     }
   });
 };
 
-// player.play()
-
-// nextPage: (self)->
-// 	@pagenow = self.pagenow
-// console.log "next pagenow:",@pagenow
+stopWebViewScroll = function stopWebViewScroll() {
+  var el, k, len1, overscroll, ref, results;
+  overscroll = function overscroll(el) {
+    el.addEventListener('touchstart', function () {
+      var currentScroll, top, totalScroll;
+      top = el.scrollTop;
+      totalScroll = el.scrollHeight;
+      currentScroll = top + el.offsetHeight;
+      if (top === 0) {
+        return el.scrollTop = 1;
+      } else if (currentScroll === totalScroll) {
+        return el.scrollTop = top(-1);
+      }
+    });
+    return el.addEventListener("touchmove", function (evt) {
+      if (el.offsetHeight < el.scrollHeight) {
+        return evt._isScroller = true;
+      }
+    });
+  };
+  document.body.addEventListener("touchmove", function (evt) {
+    if (!evt._isScroller) {
+      return evt.preventDefault();
+    }
+  });
+  ref = document.querySelectorAll(".touch");
+  results = [];
+  for (k = 0, len1 = ref.length; k < len1; k++) {
+    el = ref[k];
+    results.push(overscroll(el));
+  }
+  return results;
+};

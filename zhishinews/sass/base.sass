@@ -107,20 +107,24 @@ body
 			z-index: 110
 	.content
 		+posa
-		+tl(50%,15%)
-		+w(70%)
+		+tl(50%,20%)
+		+w(60%)
 		+transform(translateY(-50%))
+		.load-text
+			font-size: 0
 		.progress
-			+w
+			+w(96%)
 			+h(4px)
 			+bc(#ccc)
+			+m
 			+posr
+			margin-top: 2px
 			.line
 				+posa
 				+tl
 				+w(0%)
 				+h(4px)
-				+bc(#8c2f26)
+				+bc(#000)
 				&.on
 					+animation(progressline,2s,ease,1)
 
@@ -193,11 +197,27 @@ body
 		+tl
 		+w
 		+h
-		+b($cdn+"img/bg.jpg",no-repeat,center,center,cover,#000)
+		// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover,#000)
+		+bc(#e3dbd5)
+		+hide
 		background-attachment: fixed
 		z-index: 10
+		.bg
+			+posa
+			+tl
+			+w
+			+h
+			z-index: -1
+			img
+				+w
+				+h
 		&.on
 			z-index: 20
+			+show
+			& + .page
+				+show
+				& + .page
+					+show
 		&.overhide
 			+overhide
 		&.touch
@@ -206,7 +226,7 @@ body
 			&.page-#{$i}
 				z-index: 20-$i
 
-.page-1
+.page-home
 	.homepage
 		+w(90%)
 		+m
@@ -214,8 +234,7 @@ body
 		+posa
 		+tl(2%,10%)
 		+iw(180,640,100%)
-
-.page-2
+.page-news
 	.tabs
 		+posr
 		.tab-1
@@ -230,7 +249,11 @@ body
 				+tl
 				+w(50%)
 				+h
-.page-5
+.page-video
+	.video
+		top: 50%
+		+transform(translateY(-50%))
+.page-last
 	.content
 		+posa
 		top: 50%
