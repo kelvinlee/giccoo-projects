@@ -36,7 +36,7 @@
           <div class="bg"><img src="./img/bg.jpg"></div>
           <div class="homepage f0"><img src="./img/homepage.jpg"></div>
         </div>
-        <div class="page page-2 page-news touch">
+        <page arrow="true" class="page page-2 page-news touch f0">
           <div class="title f0"><img src="./img/page-2-title.jpg"></div>
           <div class="tabs f0">
             <div v-show="tab" class="tab tab-1"><img src="./img/page-2-tab-1.jpg">
@@ -47,19 +47,12 @@
             </div>
           </div>
           <div class="content f0"><img v-show="tab" src="./img/page-2-content-1.jpg"><img v-show="!tab" src="./img/page-2-content-2.jpg"></div>
-        </div>
-        <div class="page page-3 page-video overhide f0">
-          <div class="bg"><img src="./img/bg.jpg"></div>
+        </page>
+        <page arrow="true" class="page page-3 touch f0">
           <div @click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-3-1.mp4','./img/page-3-p-1.jpg')" class="video video-1"><img src="./img/page-3-1.jpg"></div>
-        </div>
-        <div class="page page-4 page-video overhide f0">
-          <div class="bg"><img src="./img/bg.jpg"></div>
           <div @click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-3-2.mp4','./img/page-3-p-2.jpg')" class="video video-2"><img src="./img/page-3-2.jpg"></div>
-        </div>
-        <div class="page page-5 page-video overhide f0">
-          <div class="bg"><img src="./img/bg.jpg"></div>
           <div @click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-3-3.mp4','./img/page-3-p-3.jpg')" class="video video-3"><img src="./img/page-3-3.jpg"></div>
-        </div>
+        </page>
         <div class="page page-6 page-video overhide f0">
           <div @click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-4-1.mp4','./img/page-4-p-1.jpg')" class="video video-1"><img src="./img/page-4-1.jpg"></div>
         </div>
@@ -69,9 +62,9 @@
         <div class="page page-8 page-video overhide f0">
           <div @click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-4-3.mp4','./img/page-4-p-3.jpg')" class="video video-4"><img src="./img/page-4-3.jpg"></div>
         </div>
-        <div class="page page-9 touch f0">
+        <page arrow="true" class="page page-9 touch f0">
           <div class="content"><img src="./img/page-6.jpg"></div>
-        </div>
+        </page>
         <div class="page page-10 page-last overhide f0">
           <div class="bg"><img src="./img/bg.jpg"></div>
           <div class="content"><img src="./img/page-5.jpg"><a href="https://h5.dianping.com/app/app-poi-food-selection-guide/rank.html?notitlebar=1&amp;cityid=*&amp;activity_tlt=1116&amp;utm_source=zhihu" class="outlink"></a>

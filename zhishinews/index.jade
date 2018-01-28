@@ -42,7 +42,7 @@ block content
 					img(src="#{url}/img/bg.jpg")
 				.homepage.f0
 					img(src="#{url}/img/homepage.jpg")
-			.page.page-2.page-news.touch
+			page.page.page-2.page-news.touch.f0(arrow="true")
 				.title.f0
 					img(src="#{url}/img/page-2-title.jpg")
 				.tabs.f0
@@ -55,19 +55,11 @@ block content
 				.content.f0
 					img(v-show="tab",src="#{url}/img/page-2-content-1.jpg")
 					img(v-show="!tab",src="#{url}/img/page-2-content-2.jpg")
-			.page.page-3.page-video.overhide.f0
-				.bg
-					img(src="#{url}/img/bg.jpg")
+			page.page.page-3.touch.f0(arrow="true")
 				.video.video-1(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-3-1.mp4','./img/page-3-p-1.jpg')")
 					img(src="#{url}/img/page-3-1.jpg")
-			.page.page-4.page-video.overhide.f0
-				.bg
-					img(src="#{url}/img/bg.jpg")
 				.video.video-2(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-3-2.mp4','./img/page-3-p-2.jpg')")
 					img(src="#{url}/img/page-3-2.jpg")
-			.page.page-5.page-video.overhide.f0
-				.bg
-					img(src="#{url}/img/bg.jpg")
 				.video.video-3(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-3-3.mp4','./img/page-3-p-3.jpg')")
 					img(src="#{url}/img/page-3-3.jpg")
 			.page.page-6.page-video.overhide.f0
@@ -79,7 +71,7 @@ block content
 			.page.page-8.page-video.overhide.f0
 				.video.video-4(@click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-4-3.mp4','./img/page-4-p-3.jpg')")
 					img(src="#{url}/img/page-4-3.jpg")
-			.page.page-9.touch.f0
+			page.page.page-9.touch.f0(arrow="true")
 				.content
 					img(src="#{url}/img/page-6.jpg")
 			.page.page-10.page-last.overhide.f0

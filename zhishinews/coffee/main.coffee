@@ -1,6 +1,7 @@
 # @codekit-prepend "coffee/css3Prefix"
 # @codekit-prepend "../../libs/coffee/requestanimation"
 # @codekit-prepend "../../libs/coffee/vue-video.coffee"
+# @codekit-prepend "../../libs/coffee/vue-book-page.coffee"
 # @codekit-prepend "../../libs/coffee/vue-book-pages.coffee"
 
 _CDN = "http://image.giccoo.com/projects/zhishinews/"

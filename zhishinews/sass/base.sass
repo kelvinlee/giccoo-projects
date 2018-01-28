@@ -22,6 +22,13 @@ $cdn : "../"
 		width: 0%
 	100%
 		width: 100%
++keyframes(arrow)
+	0%
+		opacity: 1
+		+transform(translateY(0))
+	100%
+		opacity: 0
+		+transform(translateY(10px))
 
 
 // animation, delay, duration
@@ -202,6 +209,16 @@ body
 		+hide
 		background-attachment: fixed
 		z-index: 10
+		.arrow
+			+posf
+			+bl(2%,50%)
+			+transform(translateX(-50%))
+			+w(20px)
+			+h(20px)
+			font-size: 0
+			+b($cdn+"img/arrow-black.png",no-repeat,center,center, contain)
+			+animation(arrow,2.5s,ease,infinite)
+			// +bc(#000)
 		.bg
 			+posa
 			+tl

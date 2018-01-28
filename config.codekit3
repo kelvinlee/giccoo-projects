@@ -2612,6 +2612,17 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"\/libs\/coffee\/vue-book-page.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/libs\/js\/vue-book-page.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
 	"\/libs\/coffee\/vue-book-pages.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -3405,6 +3416,16 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"\/libs\/js\/vue-book-page.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/js\/vue-book-page-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
 		},
 	"\/libs\/qr\/308s.png": {
 		"ft": 32768,
@@ -5467,6 +5488,28 @@
 		"oA": 1,
 		"oAP": "\/build\/zhishinews\/css",
 		"oF": 0
+		},
+	"\/zhishinews\/img\/arrow-black.png": {
+		"ft": 32768,
+		"iS": 1685,
+		"oA": 0,
+		"oAP": "\/zhishinews\/img\/arrow-black.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhishinews\/img\/arrow-white.png": {
+		"ft": 32768,
+		"iS": 1665,
+		"oA": 0,
+		"oAP": "\/zhishinews\/img\/arrow-white.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/zhishinews\/img\/bg.jpg": {
 		"ft": 16384,

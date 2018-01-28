@@ -91,5 +91,6 @@ Vue.component "pages",
 		@$el.addEventListener "touchend", @end.bind @
 
 		@count = @$el.children.length
-		# console.log @$el.children[0],@pagenow
+		console.log @$el.querySelectorAll(".touch"),@pagenow
 		@setNow @$el.children[0]
+		

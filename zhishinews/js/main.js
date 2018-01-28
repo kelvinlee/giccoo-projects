@@ -182,6 +182,33 @@ Vue.component("mp4", {
   }
 });
 
+Vue.component("page", {
+  template: '<div> <slot></slot> <transition name="page-animation"> <div class="arrow" v-if="arrow" v-show="arrowShow"></div> </transition> </div>',
+  data: function data() {
+    return {
+      count: 0,
+      arrowShow: true
+    };
+  },
+  props: {
+    arrow: {
+      default: false
+    }
+  },
+  mounted: function mounted(el) {
+    var self;
+    self = this;
+    return this.$el.addEventListener("scroll", function (evt) {
+      console.log(self.$el.scrollTop);
+      if (self.$el.scrollTop >= 20) {
+        return self.arrowShow = false;
+      } else {
+        return self.arrowShow = true;
+      }
+    });
+  }
+});
+
 Vue.component("pages", {
   template: '<div class="pages"> <slot></slot> </div>',
   data: function data() {
@@ -320,7 +347,7 @@ Vue.component("pages", {
     this.$el.addEventListener("touchmove", this.move.bind(this));
     this.$el.addEventListener("touchend", this.end.bind(this));
     this.count = this.$el.children.length;
-    // console.log @$el.children[0],@pagenow
+    console.log(this.$el.querySelectorAll(".touch"), this.pagenow);
     return this.setNow(this.$el.children[0]);
   }
 });
@@ -328,6 +355,7 @@ Vue.component("pages", {
 // @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/coffee/requestanimation"
 // @codekit-prepend "../../libs/coffee/vue-video.coffee"
+// @codekit-prepend "../../libs/coffee/vue-book-page.coffee"
 // @codekit-prepend "../../libs/coffee/vue-book-pages.coffee"
 _CDN = "http://image.giccoo.com/projects/zhishinews/";
 

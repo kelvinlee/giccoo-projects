@@ -542,6 +542,30 @@ ul {
   -webkit-animation-name: progressline;
           animation-name: progressline; }
 
+@-webkit-keyframes arrow {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px); } }
+
+@keyframes arrow {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px); } }
+
+.arrow {
+  -webkit-animation-name: arrow;
+          animation-name: arrow; }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -991,6 +1015,24 @@ body {
     display: none;
     background-attachment: fixed;
     z-index: 10; }
+    .pages .page .arrow {
+      position: fixed;
+      bottom: 2%;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      font-size: 0;
+      background: url("../img/arrow-black.png") no-repeat center center;
+      background-size: contain;
+      background-color: transparent;
+      -webkit-animation: arrow 2.5s ease;
+              animation: arrow 2.5s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
     .pages .page .bg {
       position: absolute;
       top: 0px;
