@@ -59,6 +59,18 @@
           <div @click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-4-2.mp4','./img/page-4-p-2.jpg')" class="video video-2"><img src="./img/page-4-3.jpg"></div>
           <div @click.stop.prevent="changeplayer('http://image.giccoo.com/projects/zhishinews/video/page-4-3.mp4','./img/page-4-p-3.jpg')" class="video video-4"><img src="./img/page-4-4.jpg"></div>
         </div>
+
+        <div class="page page-5 overhide f0">
+            <div class="content"><img src="./img/page-5.jpg"/><a href="https://h5.dianping.com/app/app-poi-food-selection-guide/rank.html?notitlebar=1&amp;cityid=*&amp;activity_tlt=1116&amp;utm_source=zhihu" class="outlink"></a>
+            <div @click.stop.prevent="shareshow" class="btn share"></div>
+            </div>
+        </div>
+
+        <div class="page page-6 touch f0">
+            <div class="content"><img src="./img/page-6.jpg"/></div>
+        </div>
+
+
       </pages>
     </div>
     <div id="share" v-show="show" @click.stop.prevent="close" class="pop share fadeIn animated"><img src="./img/share.png"></div>
