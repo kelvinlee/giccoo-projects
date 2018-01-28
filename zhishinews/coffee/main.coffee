@@ -12,6 +12,22 @@ share = {}
 player = {}
 
 window.onload = ->
+	loadWechatConfig()
+	wx.ready ->
+		shareContent =
+			title: "知食日报"
+			desc: "黑珍珠餐厅指南,震撼发布!"
+			link: "http://m.giccoo.com/zhishinews/"
+			imgUrl: "http://m.giccoo.com/zhihunews/img/ico.jpg"
+			success: ->
+				# alert "success"
+			cancel: ->
+				# alert "cancel"
+		wx.onMenuShareTimeline shareContent
+		wx.onMenuShareAppMessage shareContent
+		wx.onMenuShareQQ shareContent
+		wx.onMenuShareWeibo shareContent
+
 	load = new Vue
 		el: "#load"
 		data:
@@ -111,3 +127,10 @@ stopWebViewScroll = ->
 		overscroll el
 
 
+loadWechatConfig = ->
+	url = encodeURIComponent window.location.href.split("#")[0]
+	hm = document.createElement('script')
+	hm.src = "http://api.giccoo.com/api/config?url="+url
+	s = document.getElementsByTagName('script')[0]
+	s.parentNode.insertBefore hm, s
+	return

@@ -1,6 +1,6 @@
 'use strict';
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, _CDN, css3Prefix, i, initMain, j, len, load, mTestElement, main, player, share, stopWebViewScroll;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, _CDN, css3Prefix, i, initMain, j, len, load, loadWechatConfig, mTestElement, main, player, share, stopWebViewScroll;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -370,6 +370,24 @@ share = {};
 player = {};
 
 window.onload = function () {
+  loadWechatConfig();
+  wx.ready(function () {
+    var shareContent;
+    shareContent = {
+      title: "知食日报",
+      desc: "黑珍珠餐厅指南,震撼发布!",
+      link: "http://m.giccoo.com/zhishinews/",
+      imgUrl: "http://m.giccoo.com/zhihunews/img/ico.jpg",
+      success: function success() {},
+      // alert "success"
+      cancel: function cancel() {}
+    };
+    // alert "cancel"
+    wx.onMenuShareTimeline(shareContent);
+    wx.onMenuShareAppMessage(shareContent);
+    wx.onMenuShareQQ(shareContent);
+    return wx.onMenuShareWeibo(shareContent);
+  });
   load = new Vue({
     el: "#load",
     data: {
@@ -511,4 +529,13 @@ stopWebViewScroll = function stopWebViewScroll() {
     results.push(overscroll(el));
   }
   return results;
+};
+
+loadWechatConfig = function loadWechatConfig() {
+  var hm, s, url;
+  url = encodeURIComponent(window.location.href.split("#")[0]);
+  hm = document.createElement('script');
+  hm.src = "http://api.giccoo.com/api/config?url=" + url;
+  s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(hm, s);
 };
