@@ -18,7 +18,6 @@ Vue.component "page",
 	mounted: (el)->
 		self = @
 		@$el.addEventListener "scroll", (evt)->
-			console.log self.$el.scrollTop
 			if self.$el.scrollTop >= 20
 				self.arrowShow = false
 			else

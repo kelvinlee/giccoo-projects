@@ -29,6 +29,13 @@ $cdn : "../"
 	100%
 		opacity: 0
 		+transform(translateY(10px))
++keyframes(arrow-right)
+	0%
+		opacity: 1
+		+transform(translateX(0) rotate(-90deg))
+	100%
+		opacity: 0
+		+transform(translateX(10px) rotate(-90deg))
 
 
 // animation, delay, duration
@@ -218,6 +225,12 @@ body
 			font-size: 0
 			+b($cdn+"img/arrow-black.png",no-repeat,center,center, contain)
 			+animation(arrow,2.5s,ease,infinite)
+			z-index: 109
+			&.right
+				+bl(auto,auto)
+				+tr(50%,2%)
+				+animation(arrow-right,2.5s,ease,infinite)
+				// animation: none
 			// +bc(#000)
 		.bg
 			+posa
@@ -280,10 +293,10 @@ body
 		.outlink
 			+show
 			+posa
-			+bl
-			+wh(75%,40px)
+			+bl(7%)
+			+wh(100%,6.5%)
 		.btn
 			+show
 			+posa
 			+br
-			+wh(25%,40px)
+			+wh(100%,6.5%)

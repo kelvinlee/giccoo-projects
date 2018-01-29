@@ -116,7 +116,7 @@ stopWebViewScroll = ->
 			if top is 0
 				el.scrollTop = 1
 			else if currentScroll is totalScroll
-				el.scrollTop = top -1
+				el.scrollTop = top-1
 		el.addEventListener "touchmove", (evt)->
 			if el.offsetHeight < el.scrollHeight
 				evt._isScroller = true

@@ -199,7 +199,6 @@ Vue.component("page", {
     var self;
     self = this;
     return this.$el.addEventListener("scroll", function (evt) {
-      console.log(self.$el.scrollTop);
       if (self.$el.scrollTop >= 20) {
         return self.arrowShow = false;
       } else {
@@ -508,7 +507,7 @@ stopWebViewScroll = function stopWebViewScroll() {
       if (top === 0) {
         return el.scrollTop = 1;
       } else if (currentScroll === totalScroll) {
-        return el.scrollTop = top(-1);
+        return el.scrollTop = top - 1;
       }
     });
     return el.addEventListener("touchmove", function (evt) {
