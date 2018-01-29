@@ -5553,6 +5553,16 @@
 		"opt": 1,
 		"q": 100
 		},
+	"\/zhishinews\/img\/ico.jpg": {
+		"ft": 16384,
+		"iS": 102196,
+		"oA": 0,
+		"oAP": "\/zhishinews\/img\/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/zhishinews\/img\/load-text.png": {
 		"ft": 32768,
 		"iS": 17384,

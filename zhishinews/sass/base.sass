@@ -36,7 +36,13 @@ $cdn : "../"
 	100%
 		opacity: 0
 		+transform(translateX(10px) rotate(-90deg))
-
++keyframes(arrow-top)
+	0%
+		opacity: 1
+		+transform(translateY(0) rotate(180deg))
+	100%
+		opacity: 0
+		+transform(translateY(-10px) rotate(180deg))
 
 // animation, delay, duration
 @for $i from 1 through 30
@@ -222,6 +228,7 @@ body
 			+transform(translateX(-50%))
 			+w(20px)
 			+h(20px)
+			margin-left: -10px
 			font-size: 0
 			+b($cdn+"img/arrow-black.png",no-repeat,center,center, contain)
 			+animation(arrow,2.5s,ease,infinite)
@@ -230,6 +237,11 @@ body
 				+bl(auto,auto)
 				+tr(50%,2%)
 				+animation(arrow-right,2.5s,ease,infinite)
+			&.top
+				+bl(auto,auto)
+				+tr(2%,50%)
+				margin-right: -20px
+				+animation(arrow-top,2.5s,ease,infinite)
 				// animation: none
 			// +bc(#000)
 		.bg

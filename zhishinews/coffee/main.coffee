@@ -18,7 +18,7 @@ window.onload = ->
 			title: "知食日报"
 			desc: "黑珍珠餐厅指南,震撼发布!"
 			link: "http://m.giccoo.com/zhishinews/"
-			imgUrl: "http://m.giccoo.com/zhihunews/img/ico.jpg"
+			imgUrl: "http://m.giccoo.com/zhishinews/img/ico.jpg"
 			success: ->
 				# alert "success"
 			cancel: ->

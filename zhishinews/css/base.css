@@ -590,6 +590,30 @@ ul {
   -webkit-animation-name: arrow-right;
           animation-name: arrow-right; }
 
+@-webkit-keyframes arrow-top {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0) rotate(180deg);
+            transform: translateY(0) rotate(180deg); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-10px) rotate(180deg);
+            transform: translateY(-10px) rotate(180deg); } }
+
+@keyframes arrow-top {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0) rotate(180deg);
+            transform: translateY(0) rotate(180deg); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-10px) rotate(180deg);
+            transform: translateY(-10px) rotate(180deg); } }
+
+.arrow-top {
+  -webkit-animation-name: arrow-top;
+          animation-name: arrow-top; }
+
 .delay-1 {
   -webkit-animation-delay: 100ms;
           animation-delay: 100ms; }
@@ -1047,6 +1071,7 @@ body {
               transform: translateX(-50%);
       width: 20px;
       height: 20px;
+      margin-left: -10px;
       font-size: 0;
       background: url("../img/arrow-black.png") no-repeat center center;
       background-size: contain;
@@ -1065,6 +1090,18 @@ body {
         right: 2%;
         -webkit-animation: arrow-right 2.5s ease;
                 animation: arrow-right 2.5s ease;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite; }
+      .pages .page .arrow.top {
+        bottom: auto;
+        left: auto;
+        top: 2%;
+        right: 50%;
+        margin-right: -20px;
+        -webkit-animation: arrow-top 2.5s ease;
+                animation: arrow-top 2.5s ease;
         -webkit-animation-fill-mode: both;
                 animation-fill-mode: both;
         -webkit-animation-iteration-count: infinite;

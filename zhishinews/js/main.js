@@ -183,28 +183,39 @@ Vue.component("mp4", {
 });
 
 Vue.component("page", {
-  template: '<div> <slot></slot> <transition name="page-animation"> <div class="arrow" v-if="arrow" v-show="arrowShow"></div> </transition> </div>',
+  template: '<div> <slot></slot> <transition name="page-animation"> <div class="arrow" v-if="arrow" v-show="arrowShow"></div> </transition> <transition name="page-animation"> <div class="arrow top" v-if="arrowtop" v-show="arrowTopShow"></div> </transition> </div>',
   data: function data() {
     return {
       count: 0,
-      arrowShow: true
+      arrowShow: true,
+      arrowTopShow: false
     };
   },
   props: {
     arrow: {
+      default: false
+    },
+    arrowtop: {
       default: false
     }
   },
   mounted: function mounted(el) {
     var self;
     self = this;
-    return this.$el.addEventListener("scroll", function (evt) {
-      if (self.$el.scrollTop >= 20) {
-        return self.arrowShow = false;
-      } else {
-        return self.arrowShow = true;
-      }
-    });
+    if (this.arrow || this.arrowtop) {
+      return this.$el.addEventListener("scroll", function (evt) {
+        if (self.$el.scrollTop >= 20) {
+          self.arrowShow = false;
+        } else {
+          self.arrowShow = true;
+        }
+        if (self.$el.scrollTop >= self.$el.scrollHeight / 2) {
+          return self.arrowTopShow = true;
+        } else {
+          return self.arrowTopShow = false;
+        }
+      });
+    }
   }
 });
 
@@ -376,7 +387,7 @@ window.onload = function () {
       title: "知食日报",
       desc: "黑珍珠餐厅指南,震撼发布!",
       link: "http://m.giccoo.com/zhishinews/",
-      imgUrl: "http://m.giccoo.com/zhihunews/img/ico.jpg",
+      imgUrl: "http://m.giccoo.com/zhishinews/img/ico.jpg",
       success: function success() {},
       // alert "success"
       cancel: function cancel() {}
