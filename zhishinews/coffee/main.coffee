@@ -15,7 +15,7 @@ window.onload = ->
 	loadWechatConfig()
 	wx.ready ->
 		shareContent =
-			title: "知食日报"
+			title: "一份「最」懂中国胃的美食指南"
 			desc: "黑珍珠餐厅指南,震撼发布!"
 			link: "http://m.giccoo.com/zhishinews/"
 			imgUrl: "http://m.giccoo.com/zhishinews/img/ico.jpg"
