@@ -7,7 +7,7 @@
 		"uuidString": "DE83B16E-0B46-434B-8780-3294DEF21C1E"
 		}
 	],
-"creatorBuild": "26148",
+"creatorBuild": "26261",
 "files": {
 	"\/.gitignore": {
 		"cB": 0,
@@ -775,7 +775,7 @@
 		},
 	"\/friso-island\/img\/avatar-10.jpg": {
 		"ft": 16384,
-		"iS": 7421,
+		"iS": 6732,
 		"oA": 0,
 		"oAP": "\/friso-island\/img\/avatar-10.jpg",
 		"oF": 0,
@@ -1526,7 +1526,7 @@
 		"oAP": "\/friso-island\/mp3\/beard.mp3",
 		"oF": 0
 		},
-	"\/friso-island\/mp3\/bgm.mp3": {
+	"\/friso-island\/mp3\/BGM.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
@@ -2392,6 +2392,31 @@
 		"oAP": "\/HRCmap\/points.html",
 		"oF": 2,
 		"oS": 0
+		},
+	"\/HRCmap\/README.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/README.html",
+		"oF": 0
+		},
+	"\/HRCmap\/README.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 0,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 0,
+		"oAP": "\/HRCmap\/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
 		},
 	"\/huawei_hb": {
 		"ft": 65536,
@@ -6497,6 +6522,10 @@
 		"id-match": {
 			"active": 0,
 			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
+			},
+		"implicit-arrow-linebreak": {
+			"active": 0,
+			"optionString": "'beside'"
 			},
 		"indent": {
 			"active": 0,
