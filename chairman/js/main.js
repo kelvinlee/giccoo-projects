@@ -74,7 +74,7 @@ $("#videoLayer").click(function(){
   $("#video")[0].play()
 
   descAnum=1
-  loadWechatConfig();
+  //loadWechatConfig();
   
   });
 
