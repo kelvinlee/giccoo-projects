@@ -9,7 +9,7 @@ $(document).ready(function load (){
     var shareContent;
     shareContent = {
       title: titleA[parseInt(Math.random()*3)]，//"魏应行董事长送新春祝福",
-      desc: descA[descAnum],
+      desc: "祝春节快乐 合家幸福"//descA[descAnum],
       link: "http://m.giccoo.com/chairman/",
       imgUrl: "http://m.giccoo.com/chairman/img/ico.jpg",
       success: function() {},
