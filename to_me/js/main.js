@@ -163,7 +163,7 @@ function showP1hint(){
   if(fristTime==1){
     TweenLite.set($("#p1hint"),{display:"block"})
     TweenLite.from($("#p1hint"),.5,{opacity:0,y:"-=20",overwrite:0})
-    TweenLite.to($("#p1hint"),.5,{opacity:0,y:"+=20",overwrite:0,delay:2})
+    TweenLite.to($("#p1hint"),.5,{opacity:0,overwrite:0,delay:2})
     TweenLite.set($("#p1hint"),{display:"none",delay:2.5})
   }
   
