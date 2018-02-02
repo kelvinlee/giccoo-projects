@@ -1,4 +1,6 @@
 var global = {};
+var descA=["2018我要努力...","2018我要努力，自己动手做一大桌菜。","2018我要努力，多蹦几场养生迪。","2018我要努力，成为更耐撕的职场戏精。","2018我要努力，把鹅厂猪厂的offer拿到手软。","2018我要努力，读比去年更多的书。","2018我要努力，带上爸妈去旅行。","2018我要努力，做一个精致猪猪女孩。","2018我要努力，为爱豆疯狂打call。","2018我要努力，不熬最深的夜，只敷最贵的面膜。","2018我要努力，告别「油腻」，重回「鲜肉」。"]
+var descAnum=0
 
 $(document).ready(function load (){
 	loadWechatConfig();
@@ -6,7 +8,7 @@ $(document).ready(function load (){
     var shareContent;
     shareContent = {
       title: "致努力的自己",
-      desc: "",
+      desc: descA[descAnum],
       link: "http://m.giccoo.com/to_me/",
       imgUrl: "http://m.giccoo.com/to_me/img/ico.jpg",
       success: function() {},
@@ -233,6 +235,25 @@ $("#btnStart").click(function(){
   TweenLite.set($("#doneLayer"),{display:"block",opacity:0})
   TweenLite.to($("#doneLayer"),1,{opacity:1})
   
+
+  descAnum=nowT+1
+  loadWechatConfig();
+  wx.ready(function() {
+    var shareContent;
+    shareContent = {
+      title: "致努力的自己",
+      desc: descA[descAnum],
+      link: "http://m.giccoo.com/to_me/",
+      imgUrl: "http://m.giccoo.com/to_me/img/ico.jpg",
+      success: function() {},
+      cancel: function() {}
+    };
+    wx.onMenuShareTimeline(shareContent);
+    wx.onMenuShareAppMessage(shareContent);
+    wx.onMenuShareQQ(shareContent);
+    return wx.onMenuShareWeibo(shareContent);
+  
+  });
 })
 
 $("#doneLayer").click(function(){
