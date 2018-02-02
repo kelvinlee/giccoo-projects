@@ -130,7 +130,7 @@ function titleAni(){
   TweenLite.from(line2,1.5,{y:"+=25",opacity:0,ease:Back.easeOut,delay:0.6})
 
   TweenLite.from($("#p1t"),2.5,{y:"+=0",opacity:0,ease:Back.easeOut,delay:td+1.6})
-  TweenLite.from($("#logo"),1.5,{y:"-=25",opacity:0,ease:Back.easeOut,delay:td+1.7})
+  TweenLite.from($("#logo"),1.5,{y:"-=25",opacity:0,ease:Back.easeOut,delay:td+1.7,onComplete:showP1hint})
   
 
   //======ren
@@ -156,6 +156,26 @@ function titleAni(){
   TweenLite.set(p1btn3,{width:"52.97%",right:0,height:screenW/640*455+12,bottom:0,display:"block"})
 
 }
+
+//=====p1提示
+var fristTime=1
+function showP1hint(){
+  if(fristTime==1){
+    TweenLite.set($("#p1hint"),{display:"block"})
+    TweenLite.from($("#p1hint"),.5,{opacity:0,y:"-=20",overwrite:0})
+    TweenLite.to($("#p1hint"),.5,{opacity:0,y:"+=20",overwrite:0,delay:2})
+    TweenLite.set($("#p1hint"),{display:"none",delay:2.5})
+  }
+  
+}
+
+$("#p1hint").click(function(){
+  TweenLite.set($("#p1hint"),{display:"none",delay:.5})
+  TweenLite.to($("#p1hint"),.5,{opacity:0})
+})
+
+
+//======
 var nowBtn=0
 p1btn1.click(function(){
   if(nowBtn!=1){
