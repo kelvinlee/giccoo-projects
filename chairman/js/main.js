@@ -1,5 +1,6 @@
 var titleA=["魏应行董事长送新春祝福","魏应行董事长送新春祝福","魏应行董事长送新春祝福"]
-
+var descA=["祝春节快乐 合家幸福","祝春节快乐,合家幸福"]
+var descAnum=0
 
 
 $(document).ready(function load (){
@@ -8,7 +9,7 @@ $(document).ready(function load (){
     var shareContent;
     shareContent = {
       title: titleA[parseInt(Math.random()*3)]，//"魏应行董事长送新春祝福",
-      desc: "祝春节快乐 合家幸福",
+      desc: descA[descAnum],
       link: "http://m.giccoo.com/chairman/",
       imgUrl: "http://m.giccoo.com/chairman/img/ico.jpg",
       success: function() {},
@@ -71,6 +72,25 @@ function loadingAni2(){
 $("#videoLayer").click(function(){
   TweenLite.set($("#loadingBar"),{"background-color":"#802e21"})
   $("#video")[0].play()
+
+  descAnum=1
+  loadWechatConfig();
+    wx.ready(function() {
+    var shareContent;
+    shareContent = {
+      title: titleA[parseInt(Math.random()*3)]，//"魏应行董事长送新春祝福",
+      desc: descA[descAnum],
+      link: "http://m.giccoo.com/chairman/",
+      imgUrl: "http://m.giccoo.com/chairman/img/ico.jpg",
+      success: function() {},
+      cancel: function() {}
+    };
+    wx.onMenuShareTimeline(shareContent);
+    wx.onMenuShareAppMessage(shareContent);
+    wx.onMenuShareQQ(shareContent);
+    return wx.onMenuShareWeibo(shareContent);
+  });
+
   // $("#bgm")[0].play()
   // $("#bgm")[0].volume=0.2
 })
