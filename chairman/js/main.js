@@ -75,20 +75,7 @@ $("#videoLayer").click(function(){
 
   descAnum=1
   loadWechatConfig();
-    wx.ready(function() {
-    var shareContent;
-    shareContent = {
-      title: titleA[parseInt(Math.random()*3)]，//"魏应行董事长送新春祝福",
-      desc: descA[descAnum],
-      link: "http://m.giccoo.com/chairman/",
-      imgUrl: "http://m.giccoo.com/chairman/img/ico.jpg",
-      success: function() {},
-      cancel: function() {}
-    };
-    wx.onMenuShareTimeline(shareContent);
-    wx.onMenuShareAppMessage(shareContent);
-    wx.onMenuShareQQ(shareContent);
-    return wx.onMenuShareWeibo(shareContent);
+  
   });
 
   // $("#bgm")[0].play()
