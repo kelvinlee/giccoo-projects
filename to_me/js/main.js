@@ -1,3 +1,4 @@
+var global = {};
 
 $(document).ready(function load (){
 	loadWechatConfig();
@@ -17,7 +18,7 @@ $(document).ready(function load (){
     return wx.onMenuShareWeibo(shareContent);
   });
     loading()
-
+    riot.mount("*")
 
 
 
@@ -88,6 +89,7 @@ var p1btn2=$("#p1btn2")
 var p1btn3=$("#p1btn3")
 
 function showHomePage(){
+
   TweenLite.set($("#page0"),{display:"block"})
   setSlide()
   setTopBtn()
@@ -96,7 +98,7 @@ function showHomePage(){
 function titleAni(){
     
   nowBtn=0
-  //TweenLite.set($("#page1"),{display:"block"})
+  
 
   //====title
   var td=1//titleDelay
@@ -212,6 +214,71 @@ function goPeople(){
     goPage()
     
 }
+//===================== 出现下一步按钮 =====================
+var ifDone=0
+$("#userUGC").click(function(){
+  if(ifDone==0){
+    TweenLite.set($("#btnStart"),{display:"block"})
+    ifDone=1
+  }
+})
+
+$("#btnStart").click(function(){
+  TweenLite.set($("#btnStart"),{display:"none"})
+  TweenLite.set($("#btnChangeT"),{display:"none"})
+  TweenLite.set($("#mask1"),{display:"none"})
+  TweenLite.set($("#QR"),{display:"block"})
+  TweenLite.set($(".icon-restart"),{display:"none"})
+  TweenLite.set($(".icon-rotation"),{display:"none"})
+  TweenLite.set($("#doneLayer"),{display:"block",opacity:0})
+  TweenLite.to($("#doneLayer"),1,{opacity:1})
+  
+})
+
+$("#doneLayer").click(function(){
+  
+  TweenLite.to($("#doneLayer"),1,{opacity:0})
+
+})
+
+//===================== 切换文案 =====================
+var tA=[$("#t1"),$("#t2"),$("#t3"),$("#t4"),$("#t5"),$("#t6"),$("#t7"),$("#t8"),$("#t9"),$("#t10")]
+var nowT=0
+var btnChangeT=$("#btnChangeT")
+function setT(){
+   TweenLite.set($("#QR"),{display:"none"})
+  nowT=parseInt(Math.random()*10)
+  TweenLite.set($(".tAll"),{display:"none"})
+  TweenLite.set(tA[nowT],{display:"block"})
+  TweenLite.set(btnChangeT,{width:"50%",left:"25%",height:screenW/640*116,y:screenW/640*347})
+}
+function changeT(){
+  TweenLite.set($(".tAll"),{display:"none"})
+  TweenLite.set(tA[nowT],{display:"block",x:0+screenW/640*12})
+  TweenLite.from(tA[nowT],1.5,{x:screenW/6,ease:Elastic.easeOut})
+}
+btnChangeT.click(function(){
+    nowT++
+    if (nowT==10) {
+      nowT=0
+    };
+    changeT()
+})
+
+//===================== 浮层动画 =====================
+function setPage4(){
+    TweenLite.set($("#hintLayer"),{display:"block",opacity:0})
+    TweenLite.to($("#hintLayer"),1,{opacity:1,overwrite:0,delay:.5})
+
+    TweenLite.set($("#doneLayer"),{display:"none",opacity:0})
+    
+}
+
+$("#hintLayer").click(function(){
+    TweenLite.to($("#hintLayer"),1,{opacity:0})
+    TweenLite.set($("#hintLayer"),{display:"none",delay:1})
+})
+
 //===================== 顶部按钮 =====================
 
 var topBtnClose=$("#topBtn0")
@@ -301,6 +368,14 @@ topBtn3.click(function(){
   }
 })
 
+topBtn4.click(function(){
+ // nowBtn=0
+ hideTopBtn()
+  nowPage=0
+  goPage()
+  
+})
+
 
 //===================== 翻页 =====================
 
@@ -370,6 +445,11 @@ function startTouch(event){
            }else{
               TweenLite.set($(".btnGroup"),{display:"block"})
            }
+
+           if (i==4) {
+              setPage4();
+              setT();
+           };
         };
         if (i>nowPage) {
           TweenLite.to(sliderA[i],.5,{top:"100%",display:'none'})
