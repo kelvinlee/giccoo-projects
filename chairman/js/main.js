@@ -75,7 +75,7 @@ $("#videoLayer").click(function(){
 
   descAnum=1
   loadWechatConfig();
-    wx.ready(function() {
+  wx.ready(function() {
     var shareContent;
     shareContent = {
       title: titleA[parseInt(Math.random()*3)],//"魏应行董事长送新春祝福",
@@ -89,7 +89,6 @@ $("#videoLayer").click(function(){
     wx.onMenuShareAppMessage(shareContent);
     wx.onMenuShareQQ(shareContent);
     return wx.onMenuShareWeibo(shareContent);
-  });
   
   });
 
