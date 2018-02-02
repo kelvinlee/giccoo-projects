@@ -272,7 +272,7 @@ function setPage4(){
     TweenLite.to($("#hintLayer"),1,{opacity:1,overwrite:0,delay:.5})
 
     TweenLite.set($("#doneLayer"),{display:"none",opacity:0})
-    
+    TweenLite.set($("#fakeL"),{display:"none"})
 }
 
 $("#hintLayer").click(function(){
