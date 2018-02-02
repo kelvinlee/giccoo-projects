@@ -109,4 +109,6 @@ img{ width: 100%; }
 	bottom: 10%;
 	display: none;
 }
-
+#fakeL{
+	display: none;
+}
