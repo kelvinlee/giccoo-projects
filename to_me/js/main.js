@@ -52,7 +52,7 @@ function loading(){
       TweenLite.to(loadT[i],1.5,{opacity:0,y:"-=0",delay:15+.1*i,overwrite:0})
     };
 
-    TweenLite.set($("#loadingPage"),{display:"none",delay:17.5-17,onComplete:showHomePage})//----------------------------------改这里
+    TweenLite.set($("#loadingPage"),{display:"none",delay:17.5-0,onComplete:showHomePage})//----------------------------------改这里
 
 }
 
