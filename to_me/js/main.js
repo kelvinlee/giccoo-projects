@@ -169,10 +169,10 @@ function showP1hint(){
   
 }
 
-$("#p1hint").click(function(){
-  TweenLite.set($("#p1hint"),{display:"none",delay:.5})
-  TweenLite.to($("#p1hint"),.5,{opacity:0})
-})
+// $("#p1hint").click(function(){
+//   TweenLite.set($("#p1hint"),{display:"none",delay:.5})
+//   TweenLite.to($("#p1hint"),.5,{opacity:0})
+// })
 
 
 //======
