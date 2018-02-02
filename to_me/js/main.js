@@ -236,8 +236,9 @@ $("#btnStart").click(function(){
 })
 
 $("#doneLayer").click(function(){
-  
+  TweenLite.set($("#doneLayer"),{display:"none",delay:1})
   TweenLite.to($("#doneLayer"),1,{opacity:0})
+
 
 })
 
