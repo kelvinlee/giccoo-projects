@@ -115,3 +115,21 @@ img{ width: 100%; }
 #p1hint{
 	display: none;
 }
+.playM{
+	background-image: url("../img/musicOn.png");
+}
+.stopM{
+	background-image: url("../img/musicOff.png");
+}
+#audioPlay{
+	width: 11.25%;
+	height: 6.3%;
+	
+	background-repeat:  no-repeat;
+	background-size: 100% 100%;
+	position: fixed;
+	bottom: 2%;
+	right: 2%;
+	z-index: 9999;
+
+}

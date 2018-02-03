@@ -1,5 +1,5 @@
 var global = {};
-var descA=["过去的一年里，你付出了哪些努力？未来的一年，你有什么小目标？","2018我要努力，手拿保温杯多蹦几场养身迪。","2018我要努力，找个最甜的人一起老去。","2018我要努力，把鹅厂猪厂狼厂的offer拿到手软。","2018我要努力，告别「油腻」，重回「鲜肉」。","2018我要努力，让发际线再低一点，低一点。","2018我要努力，成为更「耐撕」的职场白骨精。","2018我要努力，做一个精致的猪猪女孩。","2018我要努力，带上蛙（娃）儿子来一场说走就走的旅行。","2018我要努力，给我的爱豆疯狂打电话。","2018我要努力，不熬最深的夜，只敷最贵的面膜。"]
+var descA=["过去的一年里，你付出了哪些努力？未来的一年，你有什么小目标？","2018我要努力，手拿保温杯多蹦几场养身迪。","2018我要努力，找个最甜的人一起老去。","2018我要努力，把鹅厂猪厂狼厂的offer拿到手软。","2018我要努力，告别「油腻」，重回「鲜肉」。","2018我要努力，让发际线再低一点，低一点。","2018我要努力，成为更「耐撕」的职场白骨精。","2018我要努力，做一个精致的猪猪女孩。","2018我要努力，带上蛙儿子来一场说走就走的旅行。","2018我要努力，给我的爱豆疯狂打电话。","2018我要努力，不熬最深的夜，只敷最贵的面膜。","2018我要努力，瘦成一道闪电。","2018我要努力，读比去年多的书。","2018我要努力，自己动手做一桌菜。","2018我要努力，治好拖延症。","2018我要努力，赚人生第一桶金。"]
 var descAnum=0
 iniListenSound()
 $(document).ready(function load (){
@@ -60,11 +60,11 @@ function loading(){
   TweenLite.set($("#loadingPage"),{display:"block"})
     for (var i =  0; i < loadT.length; i++) {
       TweenLite.set(loadT[i],{top:"50%",y:"-50%"})
-      TweenLite.from(loadT[i],1.5,{opacity:0,y:"+=30",delay:1.0*i,scaleX:1.2,overwrite:0})
-      TweenLite.to(loadT[i],1.5,{opacity:0,y:"-=0",delay:10+.1*i,overwrite:0})
+      TweenLite.from(loadT[i],1.5,{opacity:0,y:"+=30",delay:0.1*i,scaleX:1.2,overwrite:0})
+      TweenLite.to(loadT[i],1.5,{opacity:0,y:"-=0",delay:3+.1*i,overwrite:0})
     };
 
-    TweenLite.set($("#loadingPage"),{display:"none",delay:12.5-0,onComplete:showHomePage})//----------------------------------改这里
+    TweenLite.set($("#loadingPage"),{display:"none",delay:5-0,onComplete:showHomePage})//----------------------------------改这里
 
 }
 
@@ -126,11 +126,11 @@ function titleAni(){
   TweenLite.set(drop2 ,{x:screenW/2,y:screenW/640*240,scale:0,opacity:0.5})
   TweenLite.set(drop2b,{x:0,y:screenW/640*200,scale:0,opacity:0})
 
-  TweenLite.to(drop1,8,{x:screenW*2,scaleX:2,delay:td+0,rotation:-0,opacity:0,ease:Linear.easeNone})
+  TweenLite.to(drop1,4,{x:screenW*2,scaleX:2,delay:td+0,rotation:-0,opacity:0,ease:Linear.easeNone})
   TweenLite.to(drop1b,1,{x:0,scale:2.5,delay:td+.1,rotation:40,opacity:0,ease:Linear.easeNone})
 
-  TweenLite.to(drop2,4,{scale:2.5,delay:td+.5,ease:Linear.easeNone})
-  TweenLite.to(drop2b,2,{scale:3,delay:td+.6,opacity:1})
+  TweenLite.to(drop2,2,{scale:2.5,delay:td+.5,ease:Linear.easeNone})
+  TweenLite.to(drop2b,1,{scale:3,delay:td+.6,opacity:1})
 
   //======line/t/logo
   TweenLite.set(line1,{display:"block",opacity:0.3})
@@ -270,6 +270,7 @@ $("#btnStart").click(function(){
   TweenLite.set($(".icon-restart"),{display:"none"})
   TweenLite.set($(".icon-rotation"),{display:"none"})
   TweenLite.set($("#doneLayer"),{display:"block",opacity:0})
+  TweenLite.set($("#audioPlay"),{display:"none",opacity:0})
   TweenLite.to($("#doneLayer"),1,{opacity:1})
   
 
@@ -301,12 +302,12 @@ $("#doneLayer").click(function(){
 })
 
 //===================== 切换文案 =====================
-var tA=[$("#t1"),$("#t2"),$("#t3"),$("#t4"),$("#t5"),$("#t6"),$("#t7"),$("#t8"),$("#t9"),$("#t10")]
+var tA=[$("#t1"),$("#t2"),$("#t3"),$("#t4"),$("#t5"),$("#t6"),$("#t7"),$("#t8"),$("#t9"),$("#t10"),$("#t11"),$("#t12"),$("#t13"),$("#t14"),$("#t15")]
 var nowT=0
 var btnChangeT=$("#btnChangeT")
 function setT(){
    TweenLite.set($("#QR"),{display:"none"})
-  nowT=parseInt(Math.random()*10)
+  nowT=parseInt(Math.random()*15)
   TweenLite.set($(".tAll"),{display:"none"})
   TweenLite.set(tA[nowT],{display:"block"})
   TweenLite.set(btnChangeT,{width:"50%",left:"25%",height:screenW/640*116,y:screenW/640*347})
@@ -318,7 +319,7 @@ function changeT(){
 }
 btnChangeT.click(function(){
     nowT++
-    if (nowT==10) {
+    if (nowT==15) {
       nowT=0
     };
     changeT()
@@ -518,3 +519,30 @@ function startTouch(event){
 
 //===================== 翻页 =====================
 
+   var audio;
+    function initAudio1(id){
+        audio=document.getElementById(id);
+    };
+
+    window.onload=function(){
+        initAudio1("bgm");
+         if (audio.paused) {
+            $("#audioPlay").removeClass("stopM").addClass("playM")
+            //this.style.backgrundImage='url("../img/musicOn.png")';
+        }else{
+            $("#audioPlay").removeClass("playM").addClass("stopM")
+            //this.style.backgrundImage='url("../img/musicOff.png")';
+        };
+    }
+    var ap=document.getElementById("audioPlay");
+    $("#audioPlay").on("click",function(){
+        if (audio.paused) {
+            audio.play();
+            $("#audioPlay").removeClass("playM").addClass("stopM")
+            //this.style.backgrundImage='url("../img/musicOn.png")';
+        }else{
+            audio.pause();
+            $("#audioPlay").removeClass("stopM").addClass("playM")
+            //this.style.backgrundImage='url("../img/musicOff.png")';
+        };
+    });
