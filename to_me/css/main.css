@@ -116,10 +116,10 @@ img{ width: 100%; }
 	display: none;
 }
 .playM{
-	background-image: url("../img/musicOn.png");
+	background-image: url("../img/musicOff.png");
 }
 .stopM{
-	background-image: url("../img/musicOff.png");
+	background-image: url("../img/musicOn.png");
 }
 #audioPlay{
 	width: 11%;
