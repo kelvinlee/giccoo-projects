@@ -1,8 +1,9 @@
 var global = {};
-var descA=["2018我要努力...","2018我要努力，自己动手做一大桌菜。","2018我要努力，多蹦几场养生迪。","2018我要努力，成为更耐撕的职场戏精。","2018我要努力，把鹅厂猪厂的offer拿到手软。","2018我要努力，读比去年更多的书。","2018我要努力，带上爸妈去旅行。","2018我要努力，做一个精致猪猪女孩。","2018我要努力，为爱豆疯狂打call。","2018我要努力，不熬最深的夜，只敷最贵的面膜。","2018我要努力，告别「油腻」，重回「鲜肉」。"]
+var descA=["过去的一年里，你付出了哪些努力？未来的一年，你有什么小目标？","2018我要努力，手拿保温杯多蹦几场养身迪。","2018我要努力，找个最甜的人一起老去。","2018我要努力，把鹅厂猪厂狼厂的offer拿到手软。","2018我要努力，告别「油腻」，重回「鲜肉」。","2018我要努力，让发际线再低一点，低一点。","2018我要努力，成为更「耐撕」的职场白骨精。","2018我要努力，做一个精致的猪猪女孩。","2018我要努力，带上蛙（娃）儿子来一场说走就走的旅行。","2018我要努力，给我的爱豆疯狂打电话。","2018我要努力，不熬最深的夜，只敷最贵的面膜。"]
 var descAnum=0
-
+iniListenSound()
 $(document).ready(function load (){
+
 	loadWechatConfig();
   	wx.ready(function() {
     var shareContent;
@@ -32,6 +33,15 @@ var screenH
 
 screenW=document.body.offsetWidth 
 screenH=document.body.offsetHeight
+
+var bgm=$("#bgm")[0]
+//微信端背景音乐播放
+function iniListenSound(){
+         document.addEventListener("WeixinJSBridgeReady", function(){
+             bgm.play();
+        }, false);
+}
+
 
 var loadWechatConfig = function() {
   var hm, s, url;
@@ -236,6 +246,13 @@ function goPeople(){
     goPage()
     
 }
+//===================== 文章下按钮 =====================
+$("#btnGo").click(function(){
+  nowPage=4
+  goPage()
+})
+
+
 //===================== 出现下一步按钮 =====================
 var ifDone=0
 $("#userUGC").click(function(){
@@ -445,7 +462,7 @@ function startTouch(event){
       event.preventDefault();
       if (nowY-startY>80&&nowPage!=0) {
         pageUpDown=1
-      }else if (nowY-startY< -80&&nowPage!=4) {
+      }else if (nowY-startY< -80&&nowPage!=3) {
         pageUpDown=-1
       }else{
         pageUpDown=0
