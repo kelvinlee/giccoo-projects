@@ -341,7 +341,6 @@ updateShare = (msg)->
 neteaseShare = ->
 	title1 = "有没有那么一首歌，让你想起……"
 	picUrl = _imgurl
-	alert picUrl
 	# picUrl = "http://m.giccoo.com/corona/img/ico.jpg"
 	redirectUrl = "http://m.giccoo.com/corona/"
 	# redirectUrl = ""
