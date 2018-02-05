@@ -52,10 +52,10 @@ window.onload = ->
 			wx.onMenuShareWeibo shareContent
 
 	# loading
-	load = new Vue
-		el: "#load"
-		data:
-			loadend: false
+	# load = new Vue
+	# 	el: "#load"
+	# 	data:
+	# 		loadend: false
 	# 检查分享回调, 是否显示用户创建的图片
 	if $_GET["id"] && $_GET["id"] > 0
 		axios.get info_link+"?id="+$_GET["id"]
@@ -82,9 +82,9 @@ window.onload = ->
 	# document.getElementById("bgm").addEventListener "play", ->
 	# 	alert "play"
 loadEnd = ->
-	setTimeout ->
-		load.loadend = true
-	,2000
+	# setTimeout ->
+	# 	load.loadend = true
+	# ,2000
 review = ->
 	view = new Vue
 		el: "#page-image"

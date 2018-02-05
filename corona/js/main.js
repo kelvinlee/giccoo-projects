@@ -1139,12 +1139,10 @@ window.onload = function () {
     });
   }
   // loading
-  load = new Vue({
-    el: "#load",
-    data: {
-      loadend: false
-    }
-  });
+  // load = new Vue
+  // 	el: "#load"
+  // 	data:
+  // 		loadend: false
   // 检查分享回调, 是否显示用户创建的图片
   if ($_GET["id"] && $_GET["id"] > 0) {
     axios.get(info_link + "?id=" + $_GET["id"]).then(function (msg) {
@@ -1176,12 +1174,11 @@ window.onload = function () {
 
 // document.getElementById("bgm").addEventListener "play", ->
 // 	alert "play"
-loadEnd = function loadEnd() {
-  return setTimeout(function () {
-    return load.loadend = true;
-  }, 2000);
-};
+loadEnd = function loadEnd() {};
 
+// setTimeout ->
+// 	load.loadend = true
+// ,2000
 review = function review() {
   var view;
   return view = new Vue({
