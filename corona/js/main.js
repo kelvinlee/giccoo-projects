@@ -1288,7 +1288,7 @@ init = function init() {
       loading: false,
       mount: true,
       animate: false,
-      buildshow: true,
+      buildshow: false,
       shareNote: false,
       shareNoteSys: false,
       pop: false,
