@@ -1,0 +1,154 @@
+extends ../libs/jade/layout-clean
+block title
+	| 一首歌，一段老友情
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
+	link(rel="stylesheet",href="css/base.css")
+	//- script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
+
+block content
+	- url = "http://image.giccoo.com/projects/corona"
+	- url = "."
+	
+	.load
+	audio#bgm(src="#{url}/mp3/bgm.mp3",loop="true")
+	#page-image.page.page-view-img.touch(v-show="show",style="display: none")
+		a.back(href="http://m.giccoo.com/corona/")
+			img(src="#{url}/img/icon-back.png")
+		img#view-img
+	#main.main(v-show="mount",style="display: none")
+		.logo-main
+			img(src="#{url}/img/logo.png")
+		.player-fix
+			.cursor
+				img(src="#{url}/img/music-touch.png")
+			.record.on(@click="playing = !playing")
+				img(src="#{url}/img/music.png")
+		.page.page-home
+			.btn.btn-enter(@click="animate = true")
+			.text.f0
+				img(src="#{url}/img/home-text.png")
+		.page.page-animate(v-show="animate")
+			- var time = 20;
+			.item.animte-frame-1.duration-10.fadeInBig.animated(class="delay-#{time*0}")
+			.item.animte-frame-2.duration-10.fadeInBig.animated(class="delay-#{time*1}")
+			.item.animte-frame-3.duration-10.fadeInBig.animated(class="delay-#{time*2}")
+			.item.animte-frame-4.duration-10.fadeInBig.animated(class="delay-#{time*3}")
+				.text.fadeOutUp.duration-15.animated(class="delay-#{time*5}")
+					img(src="#{url}/img/animate-bg-text.png")
+				.sunlight.fadeInUp.duration-10.animated(class="delay-#{time*5}")
+				.people.fadeInUp.durantion-12.animated(class="delay-#{time*5+7}")
+					img(src="#{url}/img/animate-2-2.png")
+				.text-1.fadeInUp.duration-10.animated(v-show="buildshow == false",class="delay-#{time*5+10+1}",@click="buildshow = true")
+					img(src="#{url}/img/animate-2-3.png")
+				.text-2.fadeInUp.duration-10.animated(v-show="buildshow == false",class="delay-#{time*5+10+3}")
+					img(src="#{url}/img/animate-2-4.png")
+				.text-3.fadeInUp.duration-10.animated(v-show="buildshow == false",class="delay-#{time*5+10+5}")
+					img(src="#{url}/img/animate-2-5.png")
+		transition(name="page-animation")
+			.page.page-build(v-show="buildshow && buildstep == 1")
+				.build.build-1
+					.title.f0
+						img(:src="'#{url}/img/page-build-music-title.png'")
+					.input
+						input(v-model="musicname")
+					.title.f0
+						img(:src="'#{url}/img/page-build-topic-title.png'")
+					.input
+						textarea(v-model="topic")
+					.reload(@click="reload")
+						img(:src="'#{url}/img/reload.png'")
+					.btn.btn-next(@click="gobuild")
+						img(:src="'#{url}/img/btn-next.png'")
+					.btn.btn-pop(@click="pop = true")
+						p * 活动奖品及细则
+				.pop.fadeInUp.animated.duration-10(v-show="pop")
+					.close(@click="pop = false")
+						img(:src="'#{url}/img/close.jpg'")
+					.content.touch.f0
+						img(:src="'#{url}/img/pop-info.jpg'")
+						.blank
+					.bg.f0
+						img(:src="'#{url}/img/pop-bg.jpg'")
+		transition(name="page-animation")
+			.page.page-build-2.build-2(v-show="buildstep == 2")
+				.logo.f0
+					img(:src="'#{url}/img/build-logo.png'")
+				.back.f0(@click="buildstep = 1")
+					img(:src="'#{url}/img/icon-back.png'")
+				.musicname {{musicname}}
+				.build-image.f0
+					.bg
+						img(:src="'#{url}/img/build-image.png'")
+					ctrl-image.ctrl-image
+						.preview
+							img#preview-img(:src="'#{url}/img/p-1.jpg'")
+				.left(@click="prevImage")
+					img(:src="'#{url}/img/arrow.png'")
+				.right(@click="nextImage")
+					img(:src="'#{url}/img/arrow.png'")
+				.topic(v-html="topichtml")
+				.btn.btn-build(@click="buildimage")
+					img(:src="'#{url}/img/btn-create.png'")
+		transition(name="page-animation")
+			.page.page-image(v-show="buildover")
+				.back(@click="goback",v-if="postfail")
+					img(src="#{url}/img/icon-back.png")
+				.content
+					canvas#result
+		transition(name="page-animation")
+			.page.share-note(v-show="shareNote",style="display: none",@click="shareNote = false")
+				img(:src="'#{url}/img/share-mark.png'")
+		transition(name="page-animation")
+			//-  && award != "" && award > 0 ,style="display: none"
+			.page.last-page(v-show='lastpage')
+				.logo
+					img(:src="'#{url}/img/award-logo.png'")
+				.box
+					.fail(v-show="noaward",style="display: none",@click="window.location.reload()")
+						img(:src="'#{url}/img/award-faild-text.jpg'")
+					.success(v-show="haveaward && register == false && registertext == false",style="display: none",@click="register = true")
+						img(:src="'#{url}/img/award-success-text.jpg'")
+					.register(v-if="haveaward && register")
+						h2 请填写您的详细信息
+						form.form#register(v-on:submit.prevent="onSubmit")
+							input(v-model="form.code",type="hidden")
+							input(v-model="form.random",type="hidden")
+							.form-grounp
+								label(for="username") 姓名:
+								input(v-model="form.username")
+							.form-grounp
+								label(for="mobile") 手机号码:
+								input(v-model="form.mobile")
+							.form-grounp
+								label(for="address") 详细地址:
+								input(v-model="form.address")
+							.form-btn
+								button.submit(type="submit")
+									img(:src="'img/submit.jpg'")
+					.text(v-show="registertext",style="display: none")
+						img(:src="'#{url}/img/award-send-text.png'")
+
+block js
+	- url = "/"
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	script(src="/libs/js/exif.js")
+	script(src="/libs/js/min/vue.min.js")
+	//- script(src="/libs/js/min/TweenMax.min.js")
+	script(src="/libs/js/min/axios.min.js")
+	script(src="js/main.js")
+	
+
+
+
+	
