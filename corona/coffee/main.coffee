@@ -141,7 +141,7 @@ init = ->
 				@topichtml = @topic.replace(/\n/g,"<br/>")
 			image: (val)->
 				console.log val
-				document.getElementById("preview-img").src = _CDN+"/img/p-"+val+".jpg"
+				document.getElementById("preview-img").src = "./img/p-"+val+".jpg"
 			award: (val)->
 				@form.code = val
 			# playing: (val)->

@@ -1249,7 +1249,7 @@ init = function init() {
       },
       image: function image(val) {
         console.log(val);
-        return document.getElementById("preview-img").src = _CDN + "/img/p-" + val + ".jpg";
+        return document.getElementById("preview-img").src = "./img/p-" + val + ".jpg";
       },
       award: function award(val) {
         return this.form.code = val;
