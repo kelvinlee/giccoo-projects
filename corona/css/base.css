@@ -3569,7 +3569,8 @@ body {
     width: 90%;
     text-align: center;
     margin: 0 auto;
-    padding: 10px 0px; }
+    padding: 10px 0px;
+    overflow: hidden; }
     .page-build .input:after {
       content: " ";
       position: absolute;

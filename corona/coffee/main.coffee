@@ -2,6 +2,7 @@
 # @codekit-prepend "../../libs/js/min/riot.min.js"
 # @codekit-prepend "../js/ctrl.js"
 
+_imgurl = ""
 global = {}
 main = {}
 pre = {}
@@ -248,8 +249,10 @@ init = ->
 			popshow: ->
 				# alert "show share"
 				neteaseShare()
+				main.showaward(waitTime)
 
 			showaward: (time)->
+				main.shareNoteSys = false
 				if @award > 0
 					@haveaward = true
 				else
@@ -334,10 +337,11 @@ updateShare = (msg)->
 		wx.onMenuShareAppMessage shareContent
 		wx.onMenuShareQQ shareContent
 		wx.onMenuShareWeibo shareContent
-_imgurl = ""
+
 neteaseShare = ->
 	title1 = "有没有那么一首歌，让你想起……"
 	picUrl = _imgurl
+	alert picUrl
 	# picUrl = "http://m.giccoo.com/corona/img/ico.jpg"
 	redirectUrl = "http://m.giccoo.com/corona/"
 	# redirectUrl = ""

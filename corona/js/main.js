@@ -1070,6 +1070,8 @@ riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas i
 // @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/js/min/riot.min.js"
 // @codekit-prepend "../js/ctrl.js"
+_imgurl = "";
+
 global = {};
 
 main = {};
@@ -1370,9 +1372,11 @@ init = function init() {
       },
       popshow: function popshow() {
         // alert "show share"
-        return neteaseShare();
+        neteaseShare();
+        return main.showaward(waitTime);
       },
       showaward: function showaward(time) {
+        main.shareNoteSys = false;
         if (this.award > 0) {
           this.haveaward = true;
         } else {
@@ -1447,7 +1451,7 @@ _runLongTexts = function runLongTexts(texts, ctx, x, y) {
 
 // 修改分享内容
 updateShare = function updateShare(msg) {
-  var _imgurl, id, imgUrl, shareContent;
+  var id, imgUrl, shareContent;
   imgUrl = 'http://image.giccoo.com/sayno/corona/' + msg.filename + '@!large';
   if (msg.info.insertId != null && msg.info.insertId > 0) {
     id = "?id=" + msg.info.insertId;
@@ -1483,12 +1487,11 @@ updateShare = function updateShare(msg) {
   }
 };
 
-_imgurl = "";
-
 neteaseShare = function neteaseShare() {
   var picUrl, redirectUrl, subTitle2, title1, title2;
   title1 = "有没有那么一首歌，让你想起……";
   picUrl = _imgurl;
+  alert(picUrl);
   // picUrl = "http://m.giccoo.com/corona/img/ico.jpg"
   redirectUrl = "http://m.giccoo.com/corona/";
   // redirectUrl = ""
