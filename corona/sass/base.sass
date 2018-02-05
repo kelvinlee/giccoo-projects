@@ -676,6 +676,18 @@ body
 		+w
 		+h(75%)
 		overflow: scroll
+		.texts
+			+font-size(0.8rem)
+			color: #000
+			p,h3
+				text-decoration: none
+				+w(90%)
+				+m(10px auto)
+				+text-center
+				+font-size(0.8rem)
+			h3
+				+font-size(0.9rem)
+
 	.bg
 		+posa
 		+bl(10%)
@@ -699,3 +711,12 @@ body
 		+w(10px)
 		+p(10px 20px)
 		+animation(moveleft,3s,ease,infinite)
+
+.ugc
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	opacity: 0
+	z-index: 1000

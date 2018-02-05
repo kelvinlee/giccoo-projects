@@ -12,10 +12,10 @@ sys = "other"
 # 《兄弟》
 name_list = ["一个像夏天一个像秋天","十年","有没有那么一首歌让你想起我","兄弟"]
 topic_list= [
-	"每天放学回家的路上，\n是属于我们两个人的单曲循环。"
-	"一遍遍唱着《十年》，\n十年了，你们都在哪儿？"
-	"老朋友，\n我突然有点想你们了。"
-	"嘿，兄弟，\n有什么事别一个人扛。"
+	"那年握着一个128MB的MP3，好像抓住了全世界。\n每天放学回家的路上，是属于我们两个人的单曲循环。"
+	"记得那年夏天，我们在操场一遍遍唱《十年》，\n十年了，你们都在哪儿？"
+	"好久不见，你们现在还好吗？\n老朋友，我突然有点想你们了。"
+	"嘿，兄弟，有什么事别一个人扛。\n一句话，兄弟我过来陪你。"
 ]
 waitTime = 5000
 imageLink = ""
@@ -27,11 +27,11 @@ changeImage = ->
 getRandom = (length)->
 	return parseInt(Math.random()*(length+1)-1)
 window.onload = ->
-	stopWebViewScroll()
 
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
 	else
+		stopWebViewScroll()
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
@@ -70,6 +70,7 @@ window.onload = ->
 		return false
 	init()
 init = ->
+	index = getRandom(name_list.length)
 	main = new Vue
 		el: "#main"
 		data:
@@ -77,12 +78,12 @@ init = ->
 			loading: false
 			mount: true
 			animate: false
-			buildshow: false
+			buildshow: true
 			shareNote: false
 			pop: false
 			buildstep: 1
-			musicname: name_list[getRandom(name_list.length)]
-			topic: topic_list[getRandom(topic_list.length)]
+			musicname: name_list[index]
+			topic: topic_list[index]
 			topichtml: "还记不记得那年夏天夜晚，<br/>我们站在湛蓝海岸"
 			image: 1
 			imageselect: false
@@ -96,6 +97,8 @@ init = ->
 			register: false
 			playing: false
 			postfail: false
+			ugc: false
+			ugcsrc: ""
 			cacheArea: ""
 			cacheName: ""
 			form:
@@ -147,9 +150,10 @@ init = ->
 					@image = 1
 			reload: ->
 				# 重置音乐和话题
-				@musicname = name_list[getRandom(name_list.length)]
-				@topic = topic_list[getRandom(topic_list.length)]
-				console.log "??"
+				index = getRandom(name_list.length)
+				@musicname = name_list[index]
+				@topic = topic_list[index]
+
 			gobuild: ->
 				# 进入下一步创建
 				if @musicname.length <= 0
@@ -191,7 +195,9 @@ init = ->
 					ctx.font = "28px '微软雅黑'"
 					runLongTexts self.topic,ctx,320,850
 
-					self.onUpload canvas.toDataURL("image/png")	
+					self.onUpload canvas.toDataURL("image/png")
+					self.ugc = true
+					self.ugcsrc = canvas.toDataURL("image/png")
 			onUpload: (image)->
 
 				main.loading = true
@@ -206,12 +212,12 @@ init = ->
 						main.faild()
 			success: (msg)->
 				# 上传图片成功
-				console.log msg
+				# console.log msg
 				updateShare msg
 				if msg.award?
 					@award = msg.award
 					@form.random = msg.random
-				console.log "sys:",sys
+				# console.log "sys:",sys
 				if sys is "NeteaseMusic"
 					main.showaward(waitTime)
 				else

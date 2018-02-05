@@ -1087,7 +1087,7 @@ sys = "other";
 // 《兄弟》
 name_list = ["一个像夏天一个像秋天", "十年", "有没有那么一首歌让你想起我", "兄弟"];
 
-topic_list = ["每天放学回家的路上，\n是属于我们两个人的单曲循环。", "一遍遍唱着《十年》，\n十年了，你们都在哪儿？", "老朋友，\n我突然有点想你们了。", "嘿，兄弟，\n有什么事别一个人扛。"];
+topic_list = ["那年握着一个128MB的MP3，好像抓住了全世界。\n每天放学回家的路上，是属于我们两个人的单曲循环。", "记得那年夏天，我们在操场一遍遍唱《十年》，\n十年了，你们都在哪儿？", "好久不见，你们现在还好吗？\n老朋友，我突然有点想你们了。", "嘿，兄弟，有什么事别一个人扛。\n一句话，兄弟我过来陪你。"];
 
 waitTime = 5000;
 
@@ -1103,10 +1103,10 @@ getRandom = function getRandom(length) {
 };
 
 window.onload = function () {
-  stopWebViewScroll();
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
   } else {
+    stopWebViewScroll();
     loadWechatConfig();
     wx.ready(function () {
       var shareContent;
@@ -1154,6 +1154,8 @@ window.onload = function () {
 };
 
 init = function init() {
+  var index;
+  index = getRandom(name_list.length);
   return main = new Vue({
     el: "#main",
     data: {
@@ -1161,12 +1163,12 @@ init = function init() {
       loading: false,
       mount: true,
       animate: false,
-      buildshow: false,
+      buildshow: true,
       shareNote: false,
       pop: false,
       buildstep: 1,
-      musicname: name_list[getRandom(name_list.length)],
-      topic: topic_list[getRandom(topic_list.length)],
+      musicname: name_list[index],
+      topic: topic_list[index],
       topichtml: "还记不记得那年夏天夜晚，<br/>我们站在湛蓝海岸",
       image: 1,
       imageselect: false,
@@ -1180,6 +1182,8 @@ init = function init() {
       register: false,
       playing: false,
       postfail: false,
+      ugc: false,
+      ugcsrc: "",
       cacheArea: "",
       cacheName: "",
       form: {
@@ -1252,9 +1256,9 @@ init = function init() {
       },
       reload: function reload() {
         // 重置音乐和话题
-        this.musicname = name_list[getRandom(name_list.length)];
-        this.topic = topic_list[getRandom(topic_list.length)];
-        return console.log("??");
+        index = getRandom(name_list.length);
+        this.musicname = name_list[index];
+        return this.topic = topic_list[index];
       },
       gobuild: function gobuild() {
         // 进入下一步创建
@@ -1302,7 +1306,9 @@ init = function init() {
           ctx.textAlign = 'center';
           ctx.font = "28px '微软雅黑'";
           _runLongTexts(self.topic, ctx, 320, 850);
-          return self.onUpload(canvas.toDataURL("image/png"));
+          self.onUpload(canvas.toDataURL("image/png"));
+          self.ugc = true;
+          return self.ugcsrc = canvas.toDataURL("image/png");
         };
       },
       onUpload: function onUpload(image) {
@@ -1321,13 +1327,13 @@ init = function init() {
       },
       success: function success(msg) {
         // 上传图片成功
-        console.log(msg);
+        // console.log msg
         updateShare(msg);
         if (msg.award != null) {
           this.award = msg.award;
           this.form.random = msg.random;
         }
-        console.log("sys:", sys);
+        // console.log "sys:",sys
         if (sys === "NeteaseMusic") {
           return main.showaward(waitTime);
         } else {

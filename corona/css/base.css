@@ -3898,6 +3898,53 @@ body {
     width: 100%;
     height: 75%;
     overflow: scroll; }
+    .pop .content .texts {
+      font-size: 0.8rem;
+      color: #000; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .pop .content .texts {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .pop .content .texts {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .pop .content .texts {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .pop .content .texts {
+          font-size: 0.96rem; } }
+      .pop .content .texts p, .pop .content .texts h3 {
+        text-decoration: none;
+        width: 90%;
+        margin: 10px auto;
+        text-align: center;
+        font-size: 0.8rem; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .pop .content .texts p, .pop .content .texts h3 {
+            font-size: 0.88rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .pop .content .texts p, .pop .content .texts h3 {
+            font-size: 0.88rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .pop .content .texts p, .pop .content .texts h3 {
+            font-size: 0.96rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .pop .content .texts p, .pop .content .texts h3 {
+            font-size: 0.96rem; } }
+      .pop .content .texts h3 {
+        font-size: 0.9rem; }
+        @media only screen and (min-width: 321px) and (max-width: 399px) {
+          .pop .content .texts h3 {
+            font-size: 0.99rem; } }
+        @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+          .pop .content .texts h3 {
+            font-size: 0.99rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 767px) {
+          .pop .content .texts h3 {
+            font-size: 1.08rem; } }
+        @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+          .pop .content .texts h3 {
+            font-size: 1.08rem; } }
   .pop .bg {
     position: absolute;
     bottom: 10%;
@@ -3929,3 +3976,14 @@ body {
             animation-fill-mode: both;
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite; }
+
+.ugc {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1000; }
