@@ -627,8 +627,8 @@ body
 		z-index: 10
 		+b($cdn+"img/mask-note.png",no-repeat,center,center,cover)
 		+bc(rgba(0,0,0,0.5))
-		// border-radius: 50%
-		// +overhide
+		border-radius: 50%
+		+overhide
 	.preview
 		+posa
 		+tl
@@ -670,6 +670,13 @@ body
 			+posa
 			+tl(15%,20%)
 			+w(60%)
+		.success
+			.award-text
+				+text-center
+				+font-size(1rem)
+				line-height: 1.6rem
+				font-weight: bold
+				+p(16px 0)
 	.register
 		color: #1a2840
 		+w(80%)
@@ -795,8 +802,16 @@ body
 	+tl
 	+w
 	+h
-	+bc(#000)
+	+bc(rgba(0,0,0,0.7))
 	z-index: 10010
+	.text
+		+posa
+		+tl(50%)
+		+transform(translate3d(0,-50%,0))
+		+w
+		+text-center
+		+font-size(0.8rem)
+		color: #fff
 	.ball-spin-fade-loader
 		+posa
 		+tl(50%,50%)

@@ -31,6 +31,9 @@ block content
 		.content
 			img#view-img
 	#main.main(v-show="mount",style="display: none")
+		.loading(v-show="loading")
+			.text 努力上传中请稍后...
+
 		.logo-main
 			img(src="#{url}/img/logo.png")
 		.player-fix
@@ -175,7 +178,8 @@ block content
 					.fail(v-show="noaward",style="display: none",@click="window.location.reload()")
 						img(:src="'#{url}/img/award-faild-text.jpg'")
 					.success(v-show="haveaward && register == false && registertext == false",style="display: none",@click="register = true")
-						img(:src="'#{url}/img/award-success-text.jpg'")
+						.award-text 恭喜您获得: <br/> {{awardText}}
+						img(:src="'./img/award-success-text.jpg'")
 					.register(v-if="haveaward && register")
 						h2 请填写您的详细信息
 						form.form#register(v-on:submit.prevent="onSubmit")

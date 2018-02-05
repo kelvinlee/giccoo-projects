@@ -2,6 +2,7 @@
 # @codekit-prepend "../../libs/js/min/riot.min.js"
 # @codekit-prepend "../js/ctrl.js"
 
+# http://api.giccoo.com/sayno/corona
 _CDN = ""
 _imgurl = ""
 global = {}
@@ -162,6 +163,7 @@ init = ->
 			ugcsrc: ""
 			cacheArea: ""
 			cacheName: ""
+			awardText: ""
 			form:
 				username: ""
 				mobile: ""
@@ -283,7 +285,7 @@ init = ->
 					self.ugcsrc = canvas.toDataURL("image/png")
 			onUpload: (image)->
 
-				main.loading = true
+				# main.loading = true
 				data = {
 					image: image
 				}
@@ -293,10 +295,15 @@ init = ->
 						main.success(msg.data)
 					else
 						main.faild()
+				.catch (e)->
+					# alert e
+					main.faild()
 			success: (msg)->
 				# 上传图片成功
 				# console.log msg
+				# main.loading =  false
 				updateShare msg
+				main.awardText = msg.awardname
 				if msg.award?
 					@award = msg.award
 					@form.random = msg.random
@@ -309,6 +316,7 @@ init = ->
 				else
 					main.shareNote = true
 			faild: ->
+				main.loading =  false
 				main.postfail = true
 				alert "图片上传失败,请返回重新操作"
 			popshow: ->
@@ -367,7 +375,7 @@ runLongTexts = (texts,ctx,x,y)->
 	all = texts.split('\n')
 	if texts.length > 0
 		text = all[0]
-		ctx.fillText(text,x,y)
+		ctx.fillText(text.replace(' (可编辑)',""),x,y)
 		list = texts.replace(text+"\n","")
 		list = list.replace(text,"")
 		y += 26*1.4

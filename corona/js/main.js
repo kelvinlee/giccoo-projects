@@ -1076,6 +1076,8 @@ riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas i
 // @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/js/min/riot.min.js"
 // @codekit-prepend "../js/ctrl.js"
+
+// http://api.giccoo.com/sayno/corona
 _CDN = "";
 
 _imgurl = "";
@@ -1313,6 +1315,7 @@ init = function init() {
       ugcsrc: "",
       cacheArea: "",
       cacheName: "",
+      awardText: "",
       form: {
         username: "",
         mobile: "",
@@ -1469,7 +1472,7 @@ init = function init() {
       },
       onUpload: function onUpload(image) {
         var data;
-        main.loading = true;
+        // main.loading = true
         data = {
           image: image
         };
@@ -1479,12 +1482,17 @@ init = function init() {
           } else {
             return main.faild();
           }
+        }).catch(function (e) {
+          // alert e
+          return main.faild();
         });
       },
       success: function success(msg) {
         // 上传图片成功
         // console.log msg
+        // main.loading =  false
         updateShare(msg);
+        main.awardText = msg.awardname;
         if (msg.award != null) {
           this.award = msg.award;
           this.form.random = msg.random;
@@ -1500,6 +1508,7 @@ init = function init() {
         }
       },
       faild: function faild() {
+        main.loading = false;
         main.postfail = true;
         return alert("图片上传失败,请返回重新操作");
       },
@@ -1576,7 +1585,7 @@ _runLongTexts = function runLongTexts(texts, ctx, x, y) {
   all = texts.split('\n');
   if (texts.length > 0) {
     text = all[0];
-    ctx.fillText(text, x, y);
+    ctx.fillText(text.replace(' (可编辑)', ""), x, y);
     list = texts.replace(text + "\n", "");
     list = list.replace(text, "");
     y += 26 * 1.4;

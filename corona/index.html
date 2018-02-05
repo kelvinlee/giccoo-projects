@@ -15,6 +15,9 @@
       <div class="content"><img id="view-img"></div>
     </div>
     <div id="main" v-show="mount" style="display: none" class="main">
+      <div v-show="loading" class="loading">
+        <div class="text">努力上传中请稍后...</div>
+      </div>
       <div class="logo-main"><img src="http://image.giccoo.com/projects/corona/img/logo.png"></div>
       <div class="player-fix">
         <div :class="{on: playing}" class="cursor"><img src="http://image.giccoo.com/projects/corona/img/music-touch.png"></div>
@@ -129,7 +132,9 @@
           <div class="logo"><img :src="'http://image.giccoo.com/projects/corona/img/award-logo.png'"></div>
           <div class="box">
             <div v-show="noaward" style="display: none" @click="window.location.reload()" class="fail"><img :src="'http://image.giccoo.com/projects/corona/img/award-faild-text.jpg'"></div>
-            <div v-show="haveaward &amp;&amp; register == false &amp;&amp; registertext == false" style="display: none" @click="register = true" class="success"><img :src="'http://image.giccoo.com/projects/corona/img/award-success-text.jpg'"></div>
+            <div v-show="haveaward &amp;&amp; register == false &amp;&amp; registertext == false" style="display: none" @click="register = true" class="success">
+              <div class="award-text">恭喜您获得: <br/> {{awardText}}</div><img :src="'./img/award-success-text.jpg'">
+            </div>
             <div v-if="haveaward &amp;&amp; register" class="register">
               <h2>请填写您的详细信息</h2>
               <form id="register" v-on:submit.prevent="onSubmit" class="form">
