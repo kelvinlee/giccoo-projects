@@ -3910,7 +3910,11 @@ body {
 .page-view-img {
   background-color: #fff;
   font-size: 0;
-  overflow: scroll; }
+  overflow: hidden; }
+  .page-view-img .content {
+    position: absolute;
+    bottom: 0px;
+    left: 0px; }
   .page-view-img .back {
     position: absolute;
     top: 10%;

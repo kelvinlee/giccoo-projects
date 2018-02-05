@@ -688,7 +688,10 @@ body
 .page-view-img
 	+bc(#fff)
 	font-size: 0
-	overflow: scroll
+	+overhide
+	.content
+		+posa
+		+bl
 	.back
 		+posa
 		+tl(10%,2%)

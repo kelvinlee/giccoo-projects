@@ -1273,7 +1273,7 @@ init = function init() {
         self = this;
         canvas = document.getElementById("result");
         canvas.width = 640;
-        canvas.height = 1136;
+        canvas.height = 1138;
         // canvas.className = "topall"
         ctx = canvas.getContext("2d");
         this.buildover = true;
@@ -1281,7 +1281,7 @@ init = function init() {
         bg = new Image();
         footer = new Image();
         image.onload = function (evt) {
-          ctx.drawImage(image, 320 - 300 / 2, 520 - 300 / 2, 300, 300);
+          ctx.drawImage(image, 320 - 280 / 2, 620 - 280 / 2, 280, 280);
           bg.onload = function (evt) {
             ctx.drawImage(bg, 0, 0, bg.width, bg.height);
             return writeText();
@@ -1297,14 +1297,14 @@ init = function init() {
           ctx.fillStyle = "#fff";
           ctx.textAlign = 'center';
           ctx.font = "24px '微软雅黑'";
-          ctx.fillText(self.musicnamefull, 320, 185);
+          ctx.fillText(self.musicnamefull, 320, 290);
           ctx.fillStyle = "#0c2440";
           ctx.textAlign = 'center';
           ctx.font = "28px '微软雅黑'";
-          _runLongTexts(self.topic, ctx, 320, 795);
-          return self.onUpload(canvas.toDataURL("image/png"));
+          return _runLongTexts(self.topic, ctx, 320, 850);
         };
       },
+      // self.onUpload canvas.toDataURL("image/png")	
       onUpload: function onUpload(image) {
         var data;
         main.loading = true;
@@ -1447,8 +1447,8 @@ updateShare = function updateShare(msg) {
 neteaseShare = function neteaseShare(id, img) {
   var picUrl, redirectUrl, subTitle2, title1, title2;
   title1 = "有没有那么一首歌，让你想起……";
-  // picUrl = img
-  picUrl = "http://m.giccoo.com/corona/img/ico.jpg";
+  picUrl = img;
+  // picUrl = "http://m.giccoo.com/corona/img/ico.jpg"
   redirectUrl = "http://m.giccoo.com/corona/" + id;
   // redirectUrl = ""
   title2 = "有没有那么一首歌，让你想起……";
