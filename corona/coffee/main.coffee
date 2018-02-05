@@ -77,7 +77,7 @@ init = ->
 			loading: false
 			mount: true
 			animate: false
-			buildshow: true
+			buildshow: false
 			shareNote: false
 			pop: false
 			buildstep: 1
@@ -191,7 +191,7 @@ init = ->
 					ctx.font = "28px '微软雅黑'"
 					runLongTexts self.topic,ctx,320,850
 
-					# self.onUpload canvas.toDataURL("image/png")	
+					self.onUpload canvas.toDataURL("image/png")	
 			onUpload: (image)->
 
 				main.loading = true

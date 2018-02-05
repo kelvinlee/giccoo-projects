@@ -3809,7 +3809,9 @@ body {
   .page-image .content {
     background-color: #fff;
     font-size: 0;
-    height: 100%; }
+    position: absolute;
+    bottom: 0px;
+    left: 0px; }
     .page-image .content canvas {
       width: 100%; }
 

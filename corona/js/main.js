@@ -1161,7 +1161,7 @@ init = function init() {
       loading: false,
       mount: true,
       animate: false,
-      buildshow: true,
+      buildshow: false,
       shareNote: false,
       pop: false,
       buildstep: 1,
@@ -1301,10 +1301,10 @@ init = function init() {
           ctx.fillStyle = "#0c2440";
           ctx.textAlign = 'center';
           ctx.font = "28px '微软雅黑'";
-          return _runLongTexts(self.topic, ctx, 320, 850);
+          _runLongTexts(self.topic, ctx, 320, 850);
+          return self.onUpload(canvas.toDataURL("image/png"));
         };
       },
-      // self.onUpload canvas.toDataURL("image/png")	
       onUpload: function onUpload(image) {
         var data;
         main.loading = true;
