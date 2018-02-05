@@ -20,20 +20,20 @@
         <div @click="playing = !playing" class="record on"><img src="./img/music.png"></div>
       </div>
       <div class="page page-home">
-        <div @click="animate = true" class="btn btn-enter"></div>
+        <div @click="animate = true,animatend = true" class="btn btn-enter"></div>
         <div class="text f0"><img src="./img/home-text.png"></div>
       </div>
       <div v-show="animate" class="page page-animate">
         <div class="item animte-frame-1 duration-10 fadeInBig animated delay-0"></div>
-        <div class="item animte-frame-2 duration-10 fadeInBig animated delay-20"></div>
-        <div class="item animte-frame-3 duration-10 fadeInBig animated delay-40"></div>
-        <div class="item animte-frame-4 duration-10 fadeInBig animated delay-60">
-          <div class="text fadeOutUp duration-15 animated delay-100"><img src="./img/animate-bg-text.png"></div>
-          <div class="sunlight fadeInUp duration-10 animated delay-100"></div>
-          <div class="people fadeInUp durantion-12 animated delay-107"><img src="./img/animate-2-2.png"></div>
-          <div v-show="buildshow == false" @click="buildshow = true" class="text-1 fadeInUp duration-10 animated delay-111"><img src="./img/animate-2-3.png"></div>
-          <div v-show="buildshow == false" class="text-2 fadeInUp duration-10 animated delay-113"><img src="./img/animate-2-4.png"></div>
-          <div v-show="buildshow == false" class="text-3 fadeInUp duration-10 animated delay-115"><img src="./img/animate-2-5.png"></div>
+        <div class="item animte-frame-2 duration-10 fadeInBig animated delay-25"></div>
+        <div class="item animte-frame-3 duration-10 fadeInBig animated delay-50"></div>
+        <div class="item animte-frame-4 duration-10 fadeInBig animated delay-75">
+          <div class="text fadeOutUp duration-15 animated delay-125"><img src="./img/animate-bg-text.png"></div>
+          <div class="sunlight fadeInUp duration-10 animated delay-125"></div>
+          <div class="people fadeInUp durantion-12 animated delay-132"><img src="./img/animate-2-2.png"></div>
+          <div id="btn-build-show" v-show="buildshow == false" @click="if (!animatend) {buildshow = true}" class="text-1 fadeInUp duration-10 animated delay-136"><img src="./img/animate-2-3.png"></div>
+          <div v-show="buildshow == false" class="text-2 fadeInUp duration-10 animated delay-138"><img src="./img/animate-2-4.png"></div>
+          <div v-show="buildshow == false" class="text-3 fadeInUp duration-10 animated delay-140"><img src="./img/animate-2-5.png"></div>
         </div>
       </div>
       <transition name="page-animation">
@@ -41,11 +41,11 @@
           <div class="build build-1">
             <div class="title f0"><img :src="'./img/page-build-music-title.png'"></div>
             <div class="input">
-              <input v-model="musicname">
+              <input v-model="musicname" @focus="focus" @blur="blur">
             </div>
             <div class="title f0"><img :src="'./img/page-build-topic-title.png'"></div>
             <div class="input">
-              <textarea v-model="topic"></textarea>
+              <textarea v-model="topic" @focus="focusArea" @blur="blurArea"></textarea>
             </div>
             <div @click="reload" class="reload"><img :src="'./img/reload.png'"></div>
             <div @click="gobuild" class="btn btn-next"><img :src="'./img/btn-next.png'"></div>
@@ -66,7 +66,7 @@
         <div v-show="buildstep == 2" class="page page-build-2 build-2">
           <div class="logo f0"><img :src="'./img/build-logo.png'"></div>
           <div @click="buildstep = 1" class="back f0"><img :src="'./img/icon-back.png'"></div>
-          <div class="musicname">{{musicname}}</div>
+          <div class="musicname">{{musicnamefull}}</div>
           <div class="build-image f0">
             <div class="bg"><img :src="'./img/build-image.png'"></div>
             <ctrl-image class="ctrl-image">

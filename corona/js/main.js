@@ -1,6 +1,40 @@
-"use strict";
+'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var $_GET, ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, changeImage, css3Prefix, getRandom, global, i, imageurl, info_link, init, l, len, loadWechatConfig, mTestElement, main, name_list, neteaseShare, post_url, pre, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare, waitTime;
+
+VENDORS = ["Moz", 'webkit', 'ms', 'O'];
+
+TRANSITION_END_NAMES = {
+  "Moz": "transitionend",
+  "webkit": "webkitTransitionEnd",
+  "ms": "MSTransitionEnd",
+  "O": "oTransitionEnd"
+};
+
+ANIMATION_END_NAMES = {
+  "Moz": "animationend",
+  "webkit": "webkitAnimationEnd",
+  "ms": "MSAnimationEnd",
+  "O": "oAnimationEnd"
+};
+
+mTestElement = document.createElement("div");
+
+for (l = 0, len = VENDORS.length; l < len; l++) {
+  i = VENDORS[l];
+  css3Prefix = i;
+  if (css3Prefix + "Transition" in mTestElement.style) {
+    break;
+  }
+  css3Prefix = false;
+}
+
+if (css3Prefix) {
+  TRANSITION_END_NAME = TRANSITION_END_NAMES[css3Prefix];
+  ANIMATION_END_NAME = ANIMATION_END_NAMES[css3Prefix];
+}
 
 /* Riot v2.3.15, @license MIT, (c) 2015 Muut Inc. + contributors */
 (function (e, t) {
@@ -272,7 +306,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           if (r[0] === t) ++i;else if (! --i) break;
         }n.lastIndex = i ? e.length : o.lastIndex;
       }
-    }var l = '"in this?this:' + ((typeof e === "undefined" ? "undefined" : _typeof(e)) !== "object" ? "global" : "window") + ").",
+    }var l = '"in this?this:' + ((typeof e === 'undefined' ? 'undefined' : _typeof(e)) !== "object" ? "global" : "window") + ").",
         p = /[,{][$\w]+:|(^ *|[^$\w\.])(?!(?:typeof|true|false|null|undefined|in|instanceof|is(?:Finite|NaN)|void|NaN|new|Date|RegExp|Math)(?![$\w]))([$_A-Za-z][$\w]*)/g,
         d = /^(?=(\.[$\w]+))\1(?:[^.[(]|$)/;function g(e, t, n) {
       var r;e = e.replace(p, function (e, t, n, i, o) {
@@ -442,14 +476,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         }
       });
     }D(this, "update", function (e) {
-      e = Q(e);H();if (e && (typeof y === "undefined" ? "undefined" : _typeof(y)) === s) {
+      e = Q(e);H();if (e && (typeof y === 'undefined' ? 'undefined' : _typeof(y)) === s) {
         k(e);y = e;
       }z(u, e);M();u.trigger("update", e);O(b, u);oe(function () {
         u.trigger("updated");
       });return this;
     });D(this, "mixin", function () {
       A(arguments, function (e) {
-        var t;e = (typeof e === "undefined" ? "undefined" : _typeof(e)) === a ? n.mixin(e) : e;if (R(e)) {
+        var t;e = (typeof e === 'undefined' ? 'undefined' : _typeof(e)) === a ? n.mixin(e) : e;if (R(e)) {
           t = new e();e = e.prototype;
         } else t = e;A(Object.getOwnPropertyNames(e), function (e) {
           if (e != "init") u[e] = R(t[e]) ? t[e].bind(u) : t[e];
@@ -547,7 +581,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       } else {
         if (e.bool) {
           r[i] = o;if (!o) return;
-        }if (o === 0 || o && (typeof o === "undefined" ? "undefined" : _typeof(o)) !== s) I(r, i, o);
+        }if (o === 0 || o && (typeof o === 'undefined' ? 'undefined' : _typeof(o)) !== s) I(r, i, o);
       }
     });
   }function A(e, t) {
@@ -555,7 +589,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       i = e[r];if (i != null && t(i, r) === false) r--;
     }return e;
   }function R(e) {
-    return (typeof e === "undefined" ? "undefined" : _typeof(e)) === l || false;
+    return (typeof e === 'undefined' ? 'undefined' : _typeof(e)) === l || false;
   }function $(e, t) {
     e.removeAttribute(t);
   }function j(e) {
@@ -690,9 +724,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       var r;if (e.tagName) {
         if (t && (!(r = k(e, u)) || r != t)) I(e, u, t);var i = fe(e, t || e.getAttribute(u) || e.tagName.toLowerCase(), n);if (i) f.push(i);
       } else if (e.length) A(e, p);
-    }C.inject();if ((typeof t === "undefined" ? "undefined" : _typeof(t)) === s) {
+    }C.inject();if ((typeof t === 'undefined' ? 'undefined' : _typeof(t)) === s) {
       n = t;t = 0;
-    }if ((typeof e === "undefined" ? "undefined" : _typeof(e)) === a) {
+    }if ((typeof e === 'undefined' ? 'undefined' : _typeof(e)) === a) {
       if (e === "*") e = i = l();else e += c(e.split(","));r = e ? J(e) : [];
     } else r = e;if (t === "*") {
       t = i || l();if (r.tagName) r = J(t, r);else {
@@ -705,11 +739,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     return A(i, function (e) {
       e.update();
     });
-  };n.Tag = S;if ((typeof exports === "undefined" ? "undefined" : _typeof(exports)) === s) module.exports = n;else if ((typeof define === "undefined" ? "undefined" : _typeof(define)) === l && _typeof(define.amd) !== c) define(function () {
+  };n.Tag = S;if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === s) module.exports = n;else if ((typeof define === 'undefined' ? 'undefined' : _typeof(define)) === l && _typeof(define.amd) !== c) define(function () {
     return n;
   });else e.riot = n;
 })(typeof window != "undefined" ? window : void 0);
-riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas id="imageCtrl" width="{width}" height="{height}"></canvas> <div show="{!uploaded &amp;&amp; !stop}" onclick="{selectImage}" class="image-input"> <input id="imageInput" if="{!_selectImage}" type="file" onchange="{changeImage}"> </div> <div show="{uploaded &amp;&amp; !stop}" onclick="{restart}" class="icon icon-restart"></div> <div show="{uploaded &amp;&amp; !stop}" onclick="{rotation}" class="icon icon-rotation"></div> <div show="{noted}" onclick="{hideNote}" class="mask-note fadeIn animated"></div> </div><yield></yield>', '', '', function (opts) {
+
+riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas id="imageCtrl" width="{width}" height="{height}"></canvas> <div onclick="{selectImage}" class="image-input"> <input id="imageInput"  type="file" onchange="{changeImage}"> </div> <div show="{uploaded &amp;&amp; !stop}" onclick="{restart}" class="icon icon-restart"></div> <div show="{uploaded &amp;&amp; !stop}" onclick="{rotation}" class="icon icon-rotation"></div> <div class="mask-note fadeIn animated"></div> </div><yield></yield>', '', '', function (opts) {
   var createObjectURLfun, defaultOrin, defaultType, logOrin, logSize, self;
 
   self = this;
@@ -1031,8 +1066,8 @@ riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas i
     return console.log("end", logSize, self.frame);
   };
 }, '{ }');
-var $_GET, changeImage, getRandom, global, imageurl, info_link, init, loadWechatConfig, main, name_list, neteaseShare, post_url, pre, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare;
 
+// @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/js/min/riot.min.js"
 // @codekit-prepend "../js/ctrl.js"
 global = {};
@@ -1049,9 +1084,12 @@ info_link = "http://api.giccoo.com/sayno/corona/get/";
 
 sys = "other";
 
-name_list = ["《一个像夏天一个像秋天》", "《十年》", "《有没有那么一首歌让你想起我》", "《兄弟》"];
+// 《兄弟》
+name_list = ["一个像夏天一个像秋天", "十年", "有没有那么一首歌让你想起我", "兄弟"];
 
 topic_list = ["那一年，握着一个128MB的MP3，\n好像抓住了全世界。\n每天放学回家的路上，\n是属于我们两个人的单曲循环。", "还记不记得那年夏天夜晚，\n我们坐在操场喝酒，\n一遍遍唱着《十年》，\n十年了，你们都在哪儿？", "好久不见，\n你们现在还好吗？\n老朋友，\n我突然有点想你们了。", "嘿，兄弟，\n有什么事别一个人扛。\n一句话，\n兄弟我过来陪你。"];
+
+waitTime = 5000;
 
 changeImage = function changeImage() {
   console.log("image changed");
@@ -1089,17 +1127,21 @@ window.onload = function () {
   // 检查分享回调, 是否显示用户创建的图片
   if ($_GET["id"] && $_GET["id"] > 0) {
     axios.get(info_link + "?id=" + $_GET["id"]).then(function (msg) {
+      alert(msg.data.recode);
       if (msg.data.recode === 200) {
-        // pre = new Vue
-        // 	el: "#page-image"
-        // 	data:
-        // 		show: true
-        // 	mounted: ->
-        document.getElementById("page-image").style = "display: block";
-        return document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/" + msg.data.info.image + "@!large";
+        alert(msg.data.info.image);
+        if (msg.data.info.image != null) {
+          document.getElementById("page-image").style = "display: block";
+          return document.getElementById("view-img").src = 'http://image.giccoo.com/sayno/corona/' + msg.data.info.image + '@!large';
+        } else {
+          return init();
+        }
       } else {
         return init();
       }
+    }).catch(function (e) {
+      alert(e);
+      return init();
     });
     return false;
   }
@@ -1110,10 +1152,11 @@ init = function init() {
   return main = new Vue({
     el: "#main",
     data: {
+      animatend: false,
       loading: false,
       mount: true,
       animate: false,
-      buildshow: false,
+      buildshow: true,
       shareNote: false,
       pop: false,
       buildstep: 1,
@@ -1132,6 +1175,8 @@ init = function init() {
       register: false,
       playing: false,
       postfail: false,
+      cacheArea: "",
+      cacheName: "",
       form: {
         username: "",
         mobile: "",
@@ -1159,8 +1204,35 @@ init = function init() {
         }
       }
     },
+    computed: {
+      musicnamefull: function musicnamefull() {
+        return "《" + this.musicname + "》";
+      }
+    },
     methods: {
       // 切换图片
+      focus: function focus(evt) {
+        if (name_list.indexOf(this.musicname) > -1) {
+          this.cacheName = this.musicname + "";
+          return this.musicname = "";
+        }
+      },
+      blur: function blur(evt) {
+        if (this.musicname === "") {
+          return this.musicname = this.cacheName;
+        }
+      },
+      focusArea: function focusArea(evt) {
+        if (topic_list.indexOf(this.topic) > -1) {
+          this.cacheArea = this.topic + "";
+          return this.topic = "";
+        }
+      },
+      blurArea: function blurArea(evt) {
+        if (this.topic === "") {
+          return this.topic = this.cacheArea;
+        }
+      },
       prevImage: function prevImage() {
         this.image--;
         if (this.image < 1) {
@@ -1181,7 +1253,15 @@ init = function init() {
       },
       gobuild: function gobuild() {
         // 进入下一步创建
-        return this.buildstep = 2;
+        if (this.musicname.length <= 0) {
+          return alert("请再想想属于我们的那首歌");
+        } else if (this.topic.split("\n").length > 4) {
+          return alert("请控制您丰富的感情在 4 行以内的文字.");
+        } else if (this.topic.length <= 0) {
+          return alert("请输入要对老朋友说的话");
+        } else {
+          return this.buildstep = 2;
+        }
       },
       buildimage: function buildimage() {
         var bg, canvas, ctx, footer, image, self, writeText;
@@ -1212,7 +1292,7 @@ init = function init() {
           ctx.fillStyle = "#fff";
           ctx.textAlign = 'center';
           ctx.font = "24px '微软雅黑'";
-          ctx.fillText(self.musicname, 320, 185);
+          ctx.fillText(self.musicnamefull, 320, 185);
           ctx.fillStyle = "#0c2440";
           ctx.textAlign = 'center';
           ctx.font = "28px '微软雅黑'";
@@ -1244,7 +1324,7 @@ init = function init() {
         }
         console.log("sys:", sys);
         if (sys === "NeteaseMusic") {
-          return main.showaward(2000);
+          return main.showaward(waitTime);
         } else {
           return main.shareNote = true;
         }
@@ -1303,7 +1383,11 @@ init = function init() {
     mounted: function mounted() {
       // console.log "mount"
       riot.mount("*");
-      return this.topichtml = this.topic.replace(/\n/g, "<br/>");
+      this.topichtml = this.topic.replace(/\n/g, "<br/>");
+      return document.getElementById("btn-build-show").addEventListener(ANIMATION_END_NAME, function (evt) {
+        console.log("can click");
+        return main.animatend = false;
+      });
     }
   });
 };
@@ -1325,7 +1409,7 @@ _runLongTexts = function runLongTexts(texts, ctx, x, y) {
 // 修改分享内容
 updateShare = function updateShare(msg) {
   var id, imgUrl, shareContent;
-  imgUrl = "http://image.giccoo.com/sayno/corona/" + msg.filename + "@!large";
+  imgUrl = 'http://image.giccoo.com/sayno/corona/' + msg.filename + '@!large';
   if (msg.info.insertId != null && msg.info.insertId > 0) {
     id = "?id=" + msg.info.insertId;
   } else {
@@ -1377,15 +1461,15 @@ loadWechatConfig = function loadWechatConfig() {
 };
 
 $_GET = function () {
-  var get, i, j, l, len, u, url;
+  var get, j, len1, m, u, url;
   url = window.document.location.href.toString();
   u = url.split('?');
   if (typeof u[1] === 'string') {
     u = u[1].split('&');
     get = {};
     console.log(u);
-    for (l = 0, len = u.length; l < len; l++) {
-      i = u[l];
+    for (m = 0, len1 = u.length; m < len1; m++) {
+      i = u[m];
       j = i.split('=');
       get[j[0]] = j[1];
     }
@@ -1396,7 +1480,7 @@ $_GET = function () {
 }();
 
 stopWebViewScroll = function stopWebViewScroll() {
-  var el, l, len, overscroll, ref, results;
+  var el, len1, m, overscroll, ref, results;
   overscroll = function overscroll(el) {
     el.addEventListener('touchstart', function () {
       var currentScroll, top, totalScroll;
@@ -1424,8 +1508,8 @@ stopWebViewScroll = function stopWebViewScroll() {
   ref = document.querySelectorAll(".touch");
   // console.log document.querySelectorAll(".touch")
   results = [];
-  for (l = 0, len = ref.length; l < len; l++) {
-    el = ref[l];
+  for (m = 0, len1 = ref.length; m < len1; m++) {
+    el = ref[m];
     results.push(overscroll(el));
   }
   return results;

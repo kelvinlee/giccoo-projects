@@ -34,11 +34,11 @@ block content
 			.record.on(@click="playing = !playing")
 				img(src="#{url}/img/music.png")
 		.page.page-home
-			.btn.btn-enter(@click="animate = true")
+			.btn.btn-enter(@click="animate = true,animatend = true")
 			.text.f0
 				img(src="#{url}/img/home-text.png")
 		.page.page-animate(v-show="animate")
-			- var time = 20;
+			- var time = 25;
 			.item.animte-frame-1.duration-10.fadeInBig.animated(class="delay-#{time*0}")
 			.item.animte-frame-2.duration-10.fadeInBig.animated(class="delay-#{time*1}")
 			.item.animte-frame-3.duration-10.fadeInBig.animated(class="delay-#{time*2}")
@@ -48,7 +48,7 @@ block content
 				.sunlight.fadeInUp.duration-10.animated(class="delay-#{time*5}")
 				.people.fadeInUp.durantion-12.animated(class="delay-#{time*5+7}")
 					img(src="#{url}/img/animate-2-2.png")
-				.text-1.fadeInUp.duration-10.animated(v-show="buildshow == false",class="delay-#{time*5+10+1}",@click="buildshow = true")
+				#btn-build-show.text-1.fadeInUp.duration-10.animated(v-show="buildshow == false",class="delay-#{time*5+10+1}",@click="if (!animatend) {buildshow = true}")
 					img(src="#{url}/img/animate-2-3.png")
 				.text-2.fadeInUp.duration-10.animated(v-show="buildshow == false",class="delay-#{time*5+10+3}")
 					img(src="#{url}/img/animate-2-4.png")
@@ -60,11 +60,11 @@ block content
 					.title.f0
 						img(:src="'#{url}/img/page-build-music-title.png'")
 					.input
-						input(v-model="musicname")
+						input(v-model="musicname",@focus="focus",@blur="blur")
 					.title.f0
 						img(:src="'#{url}/img/page-build-topic-title.png'")
 					.input
-						textarea(v-model="topic")
+						textarea(v-model="topic",@focus="focusArea",@blur="blurArea")
 					.reload(@click="reload")
 						img(:src="'#{url}/img/reload.png'")
 					.btn.btn-next(@click="gobuild")
@@ -85,7 +85,7 @@ block content
 					img(:src="'#{url}/img/build-logo.png'")
 				.back.f0(@click="buildstep = 1")
 					img(:src="'#{url}/img/icon-back.png'")
-				.musicname {{musicname}}
+				.musicname {{musicnamefull}}
 				.build-image.f0
 					.bg
 						img(:src="'#{url}/img/build-image.png'")

@@ -1,3 +1,4 @@
+# @codekit-prepend "coffee/css3Prefix"
 # @codekit-prepend "../../libs/js/min/riot.min.js"
 # @codekit-prepend "../js/ctrl.js"
 global = {}
@@ -7,14 +8,15 @@ imageurl = "http://api.giccoo.com/sayno/corona/create/"
 post_url = "http://api.giccoo.com/sayno/corona/insert/"
 info_link= "http://api.giccoo.com/sayno/corona/get/"
 sys = "other"
-name_list = ["《一个像夏天一个像秋天》","《十年》","《有没有那么一首歌让你想起我》","《兄弟》"]
+# 《兄弟》
+name_list = ["一个像夏天一个像秋天","十年","有没有那么一首歌让你想起我","兄弟"]
 topic_list= [
 	"那一年，握着一个128MB的MP3，\n好像抓住了全世界。\n每天放学回家的路上，\n是属于我们两个人的单曲循环。"
 	"还记不记得那年夏天夜晚，\n我们坐在操场喝酒，\n一遍遍唱着《十年》，\n十年了，你们都在哪儿？"
 	"好久不见，\n你们现在还好吗？\n老朋友，\n我突然有点想你们了。"
 	"嘿，兄弟，\n有什么事别一个人扛。\n一句话，\n兄弟我过来陪你。"
 ]
-
+waitTime = 5000
 
 changeImage = ->
 	console.log "image changed"
@@ -47,26 +49,30 @@ window.onload = ->
 	if $_GET["id"] && $_GET["id"] > 0
 		axios.get info_link+"?id="+$_GET["id"]
 		.then (msg)->
+			alert msg.data.recode
 			if msg.data.recode == 200
-				# pre = new Vue
-				# 	el: "#page-image"
-				# 	data:
-				# 		show: true
-				# 	mounted: ->
-				document.getElementById("page-image").style = "display: block"
-				document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{msg.data.info.image}@!large"
+				alert msg.data.info.image
+				if msg.data.info.image?
+					document.getElementById("page-image").style = "display: block"
+					document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{msg.data.info.image}@!large"
+				else
+					init()
 			else
 				init()
+		.catch (e)->
+			alert e
+			init()
 		return false
 	init()
 init = ->
 	main = new Vue
 		el: "#main"
 		data:
+			animatend: false
 			loading: false
 			mount: true
 			animate: false
-			buildshow: false
+			buildshow: true
 			shareNote: false
 			pop: false
 			buildstep: 1
@@ -85,6 +91,8 @@ init = ->
 			register: false
 			playing: false
 			postfail: false
+			cacheArea: ""
+			cacheName: ""
 			form:
 				username: ""
 				mobile: ""
@@ -92,6 +100,7 @@ init = ->
 				code: ""
 				random: ""
 		watch:
+
 			topic: ->
 				@topichtml = @topic.replace(/\n/g,"<br/>")
 			image: (val)->
@@ -104,9 +113,25 @@ init = ->
 					document.getElementById("bgm").play()
 				else
 					document.getElementById("bgm").pause()
-
+		computed:
+			musicnamefull: ->
+				return "《"+@musicname+"》"
 		methods:
 			# 切换图片
+			focus: (evt)->
+				if name_list.indexOf(@musicname) > -1
+					@cacheName = @musicname+""
+					@musicname = ""
+			blur: (evt)->
+				if @musicname is ""
+					@musicname = @cacheName
+			focusArea: (evt)->
+				if topic_list.indexOf(@topic) > -1
+					@cacheArea = @topic+""
+					@topic = ""
+			blurArea: (evt)->
+				if @topic is ""
+					@topic = @cacheArea
 			prevImage: ->
 				@image--
 				if @image < 1
@@ -122,7 +147,14 @@ init = ->
 				console.log "??"
 			gobuild: ->
 				# 进入下一步创建
-				@buildstep = 2
+				if @musicname.length <= 0
+					alert "请再想想属于我们的那首歌"
+				else if @topic.split("\n").length > 4
+					alert "请控制您丰富的感情在 4 行以内的文字."
+				else if @topic.length <= 0
+					alert "请输入要对老朋友说的话"
+				else
+					@buildstep = 2
 			buildimage: ->
 				self = @
 				canvas = document.getElementById "result"
@@ -148,14 +180,13 @@ init = ->
 					ctx.fillStyle = "#fff";
 					ctx.textAlign = 'center'
 					ctx.font = "24px '微软雅黑'"
-					ctx.fillText(self.musicname,320,185)
+					ctx.fillText(self.musicnamefull,320,185)
 					ctx.fillStyle = "#0c2440"
 					ctx.textAlign = 'center'
 					ctx.font = "28px '微软雅黑'"
 					runLongTexts self.topic,ctx,320,795
 
-					self.onUpload canvas.toDataURL("image/png")
-				
+					self.onUpload canvas.toDataURL("image/png")	
 			onUpload: (image)->
 
 				main.loading = true
@@ -168,7 +199,6 @@ init = ->
 						main.success(msg.data)
 					else
 						main.faild()
-					
 			success: (msg)->
 				# 上传图片成功
 				console.log msg
@@ -178,15 +208,12 @@ init = ->
 					@form.random = msg.random
 				console.log "sys:",sys
 				if sys is "NeteaseMusic"
-					main.showaward(2000)
+					main.showaward(waitTime)
 				else
 					main.shareNote = true
-
-
 			faild: ->
 				main.postfail = true
 				alert "图片上传失败,请返回重新操作"
-
 			showaward: (time)->
 				if @award > 0
 					@haveaward = true
@@ -195,7 +222,6 @@ init = ->
 				setTimeout ->
 					main.lastpage = true
 				,time
-
 			onSubmit: (evt)->
 				console.log @form
 				if @form.username.length < 1
@@ -226,6 +252,9 @@ init = ->
 			# console.log "mount"
 			riot.mount("*")
 			@topichtml = @topic.replace(/\n/g,"<br/>")
+			document.getElementById("btn-build-show").addEventListener ANIMATION_END_NAME, (evt)->
+				console.log "can click"
+				main.animatend = false
 
 # canvas 轮训文字
 runLongTexts = (texts,ctx,x,y)->
