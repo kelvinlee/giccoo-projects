@@ -343,7 +343,7 @@ body
 		&.overhide
 			+overhide
 		&.touch
-			+touch
+			overflow: scroll
 		@for $i from 1 through 30
 			&.page-#{$i}
 				z-index: 20-$i
@@ -576,7 +576,7 @@ body
 .page-image
 	z-index: 70
 	+bc(#fff)
-	+touch
+	overflow: scroll
 	.content
 		+bc(#fff)
 		font-size: 0
@@ -649,7 +649,7 @@ body
 		+tl(5%)
 		+w
 		+h(75%)
-		+touch
+		overflow: scroll
 	.bg
 		+posa
 		+bl(10%)
@@ -663,7 +663,7 @@ body
 .page-view-img
 	+bc(#fff)
 	font-size: 0
-	+touch
+	overflow: scroll
 	.back
 		+posa
 		+tl(10%,2%)

@@ -22,6 +22,8 @@ changeImage = ->
 getRandom = (length)->
 	return parseInt(Math.random()*(length+1)-1)
 window.onload = ->
+	stopWebViewScroll()
+
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
 	else
@@ -46,10 +48,12 @@ window.onload = ->
 		axios.get info_link+"?id="+$_GET["id"]
 		.then (msg)->
 			if msg.data.recode == 200
-				pre = new Vue
-					el: "#page-image"
-					data:
-						show: true
+				# pre = new Vue
+				# 	el: "#page-image"
+				# 	data:
+				# 		show: true
+				# 	mounted: ->
+				document.getElementById("page-image").style = "display: block"
 				document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{msg.data.info.image}@!large"
 			else
 				init()
@@ -290,3 +294,24 @@ $_GET = do ->
 		get
 	else
 		{}
+
+stopWebViewScroll = ->
+	overscroll = (el)->
+		el.addEventListener 'touchstart', ->
+			top = el.scrollTop
+			totalScroll = el.scrollHeight
+			currentScroll = top + el.offsetHeight
+			if top is 0
+				el.scrollTop = 1
+			else if currentScroll is totalScroll
+				el.scrollTop = top-1
+			# alert el.scrollTop
+		el.addEventListener "touchmove", (evt)->
+			if el.offsetHeight < el.scrollHeight
+				evt._isScroller = true
+	document.addEventListener "touchmove", (evt)->
+		unless evt._isScroller
+			evt.preventDefault()
+	# console.log document.querySelectorAll(".touch")
+	for el in document.querySelectorAll(".touch")
+		overscroll el

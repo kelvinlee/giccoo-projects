@@ -1031,7 +1031,7 @@ riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas i
     return console.log("end", logSize, self.frame);
   };
 }, '{ }');
-var $_GET, changeImage, getRandom, global, imageurl, info_link, init, loadWechatConfig, main, name_list, neteaseShare, post_url, pre, _runLongTexts, sys, topic_list, updateShare;
+var $_GET, changeImage, getRandom, global, imageurl, info_link, init, loadWechatConfig, main, name_list, neteaseShare, post_url, pre, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare;
 
 // @codekit-prepend "../../libs/js/min/riot.min.js"
 // @codekit-prepend "../js/ctrl.js"
@@ -1063,6 +1063,7 @@ getRandom = function getRandom(length) {
 };
 
 window.onload = function () {
+  stopWebViewScroll();
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
   } else {
@@ -1089,12 +1090,12 @@ window.onload = function () {
   if ($_GET["id"] && $_GET["id"] > 0) {
     axios.get(info_link + "?id=" + $_GET["id"]).then(function (msg) {
       if (msg.data.recode === 200) {
-        pre = new Vue({
-          el: "#page-image",
-          data: {
-            show: true
-          }
-        });
+        // pre = new Vue
+        // 	el: "#page-image"
+        // 	data:
+        // 		show: true
+        // 	mounted: ->
+        document.getElementById("page-image").style = "display: block";
         return document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/" + msg.data.info.image + "@!large";
       } else {
         return init();
@@ -1391,3 +1392,39 @@ $_GET = function () {
     return {};
   }
 }();
+
+stopWebViewScroll = function stopWebViewScroll() {
+  var el, l, len, overscroll, ref, results;
+  overscroll = function overscroll(el) {
+    el.addEventListener('touchstart', function () {
+      var currentScroll, top, totalScroll;
+      top = el.scrollTop;
+      totalScroll = el.scrollHeight;
+      currentScroll = top + el.offsetHeight;
+      if (top === 0) {
+        return el.scrollTop = 1;
+      } else if (currentScroll === totalScroll) {
+        return el.scrollTop = top - 1;
+      }
+    });
+    // alert el.scrollTop
+    return el.addEventListener("touchmove", function (evt) {
+      if (el.offsetHeight < el.scrollHeight) {
+        return evt._isScroller = true;
+      }
+    });
+  };
+  document.addEventListener("touchmove", function (evt) {
+    if (!evt._isScroller) {
+      return evt.preventDefault();
+    }
+  });
+  ref = document.querySelectorAll(".touch");
+  // console.log document.querySelectorAll(".touch")
+  results = [];
+  for (l = 0, len = ref.length; l < len; l++) {
+    el = ref[l];
+    results.push(overscroll(el));
+  }
+  return results;
+};
