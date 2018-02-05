@@ -3,9 +3,9 @@
 global = {}
 main = {}
 pre = {}
-imageurl = "http://192.168.3.16:8881/sayno/corona/create/"
-post_url = "http://192.168.3.16:8881/sayno/corona/insert/"
-info_link= "http://192.168.3.16:8881/sayno/corona/get/"
+imageurl = "http://api.giccoo.com/sayno/corona/create/"
+post_url = "http://api.giccoo.com/sayno/corona/insert/"
+info_link= "http://api.giccoo.com/sayno/corona/get/"
 sys = "other"
 name_list = ["《一个像夏天一个像秋天》","《十年》","《有没有那么一首歌让你想起我》","《兄弟》"]
 topic_list= [
@@ -84,6 +84,7 @@ init = ->
 			registertext: false
 			register: false
 			playing: false
+			postfail: false
 			form:
 				username: ""
 				mobile: ""
@@ -183,6 +184,7 @@ init = ->
 
 
 			faild: ->
+				main.postfail = true
 				alert "图片上传失败,请返回重新操作"
 
 			showaward: (time)->

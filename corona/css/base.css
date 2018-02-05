@@ -3779,6 +3779,18 @@ body {
   z-index: 70;
   background-color: #fff;
   overflow: scroll; }
+  .page-image .back {
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    width: 10px;
+    padding: 10px 20px;
+    -webkit-animation: moveleft 3s ease;
+            animation: moveleft 3s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
   .page-image .content {
     background-color: #fff;
     font-size: 0;

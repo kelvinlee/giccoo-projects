@@ -1041,11 +1041,11 @@ main = {};
 
 pre = {};
 
-imageurl = "http://192.168.3.16:8881/sayno/corona/create/";
+imageurl = "http://api.giccoo.com/sayno/corona/create/";
 
-post_url = "http://192.168.3.16:8881/sayno/corona/insert/";
+post_url = "http://api.giccoo.com/sayno/corona/insert/";
 
-info_link = "http://192.168.3.16:8881/sayno/corona/get/";
+info_link = "http://api.giccoo.com/sayno/corona/get/";
 
 sys = "other";
 
@@ -1131,6 +1131,7 @@ init = function init() {
       registertext: false,
       register: false,
       playing: false,
+      postfail: false,
       form: {
         username: "",
         mobile: "",
@@ -1249,6 +1250,7 @@ init = function init() {
         }
       },
       faild: function faild() {
+        main.postfail = true;
         return alert("图片上传失败,请返回重新操作");
       },
       showaward: function showaward(time) {

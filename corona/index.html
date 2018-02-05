@@ -81,7 +81,7 @@
       </transition>
       <transition name="page-animation">
         <div v-show="buildover" class="page page-image">
-          <div class="back"></div>
+          <div @click="goback" v-if="postfail" class="back"><img src="./img/icon-back.png"></div>
           <div class="content">
             <canvas id="result"></canvas>
           </div>

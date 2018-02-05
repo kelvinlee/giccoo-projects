@@ -101,7 +101,8 @@ block content
 					img(:src="'#{url}/img/btn-create.png'")
 		transition(name="page-animation")
 			.page.page-image(v-show="buildover")
-				.back
+				.back(@click="goback",v-if="postfail")
+					img(src="#{url}/img/icon-back.png")
 				.content
 					canvas#result
 		transition(name="page-animation")
