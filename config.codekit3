@@ -1100,7 +1100,7 @@
 		"oAP": "\/corona\/img\/pop-info.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/corona\/img\/quotes.png": {

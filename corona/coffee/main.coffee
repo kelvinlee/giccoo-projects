@@ -50,7 +50,7 @@ window.onload = ->
 
 	# 检查分享回调, 是否显示用户创建的图片
 	if $_GET["id"] && $_GET["id"] > 0
-		Vue.axios.get info_link+"?id="+$_GET["id"]
+		axios.get info_link+"?id="+$_GET["id"]
 		.then (msg)->
 			if msg.data.recode == 200
 				if msg.data.info.image?
