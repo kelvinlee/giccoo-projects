@@ -1186,7 +1186,7 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/corona\/js\/vue-axios-build.js",
 		"oF": 0,
 		"sC": 0,

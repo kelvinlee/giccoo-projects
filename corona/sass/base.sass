@@ -93,6 +93,11 @@ body
 			+posa
 			+tr(0,50%)
 			z-index: 103
+			transform: rotate(-30deg)
+			transform-origin: top left
+			transition: all 1s ease
+			&.on
+				transform: rotate(0deg)
 		.record
 			+w(40px)
 			+m(10px)

@@ -1,6 +1,6 @@
 'use strict';
 
-var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var $_GET, ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, changeImage, css3Prefix, getRandom, global, i, imageLink, imageurl, info_link, init, l, len, loadWechatConfig, mTestElement, main, name_list, neteaseShare, post_url, pre, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare, waitTime;
 
@@ -306,7 +306,7 @@ if (css3Prefix) {
           if (r[0] === t) ++i;else if (! --i) break;
         }n.lastIndex = i ? e.length : o.lastIndex;
       }
-    }var l = '"in this?this:' + ((typeof e === 'undefined' ? 'undefined' : _typeof2(e)) !== "object" ? "global" : "window") + ").",
+    }var l = '"in this?this:' + ((typeof e === 'undefined' ? 'undefined' : _typeof(e)) !== "object" ? "global" : "window") + ").",
         p = /[,{][$\w]+:|(^ *|[^$\w\.])(?!(?:typeof|true|false|null|undefined|in|instanceof|is(?:Finite|NaN)|void|NaN|new|Date|RegExp|Math)(?![$\w]))([$_A-Za-z][$\w]*)/g,
         d = /^(?=(\.[$\w]+))\1(?:[^.[(]|$)/;function g(e, t, n) {
       var r;e = e.replace(p, function (e, t, n, i, o) {
@@ -372,7 +372,7 @@ if (css3Prefix) {
       o = i.nextSibling;t.insertBefore(i, n._root);i = o;
     }
   }function N(e, t, n) {
-    $(e, "each");var r = _typeof2(k(e, "no-reorder")) !== a || $(e, "no-reorder"),
+    $(e, "each");var r = _typeof(k(e, "no-reorder")) !== a || $(e, "no-reorder"),
         i = q(e),
         f = o[i] || { tmpl: e.outerHTML },
         u = p.test(i),
@@ -467,23 +467,23 @@ if (css3Prefix) {
       });
     }function k(e) {
       for (var t in y) {
-        if (_typeof2(u[t]) !== c && Z(u, t)) u[t] = e[t];
+        if (_typeof(u[t]) !== c && Z(u, t)) u[t] = e[t];
       }
     }function H() {
       if (!u.parent || !g) return;A(Object.keys(u.parent), function (e) {
-        var t = !U(d, e) && U(S, e);if (_typeof2(u[e]) === c || t) {
+        var t = !U(d, e) && U(S, e);if (_typeof(u[e]) === c || t) {
           if (!t) S.push(e);u[e] = u.parent[e];
         }
       });
     }D(this, "update", function (e) {
-      e = Q(e);H();if (e && (typeof y === 'undefined' ? 'undefined' : _typeof2(y)) === s) {
+      e = Q(e);H();if (e && (typeof y === 'undefined' ? 'undefined' : _typeof(y)) === s) {
         k(e);y = e;
       }z(u, e);M();u.trigger("update", e);O(b, u);oe(function () {
         u.trigger("updated");
       });return this;
     });D(this, "mixin", function () {
       A(arguments, function (e) {
-        var t;e = (typeof e === 'undefined' ? 'undefined' : _typeof2(e)) === a ? n.mixin(e) : e;if (R(e)) {
+        var t;e = (typeof e === 'undefined' ? 'undefined' : _typeof(e)) === a ? n.mixin(e) : e;if (R(e)) {
           t = new e();e = e.prototype;
         } else t = e;A(Object.getOwnPropertyNames(e), function (e) {
           if (e != "init") u[e] = R(t[e]) ? t[e].bind(u) : t[e];
@@ -581,7 +581,7 @@ if (css3Prefix) {
       } else {
         if (e.bool) {
           r[i] = o;if (!o) return;
-        }if (o === 0 || o && (typeof o === 'undefined' ? 'undefined' : _typeof2(o)) !== s) I(r, i, o);
+        }if (o === 0 || o && (typeof o === 'undefined' ? 'undefined' : _typeof(o)) !== s) I(r, i, o);
       }
     });
   }function A(e, t) {
@@ -589,7 +589,7 @@ if (css3Prefix) {
       i = e[r];if (i != null && t(i, r) === false) r--;
     }return e;
   }function R(e) {
-    return (typeof e === 'undefined' ? 'undefined' : _typeof2(e)) === l || false;
+    return (typeof e === 'undefined' ? 'undefined' : _typeof(e)) === l || false;
   }function $(e, t) {
     e.removeAttribute(t);
   }function j(e) {
@@ -639,9 +639,9 @@ if (css3Prefix) {
   }function V(e) {
     return Array.isArray(e) || e instanceof Array;
   }function Z(e, t) {
-    var n = Object.getOwnPropertyDescriptor(e, t);return _typeof2(e[t]) === c || n && n.writable;
+    var n = Object.getOwnPropertyDescriptor(e, t);return _typeof(e[t]) === c || n && n.writable;
   }function Q(e) {
-    if (!(e instanceof S) && !(e && _typeof2(e.trigger) == l)) return e;var t = {};for (var n in e) {
+    if (!(e instanceof S) && !(e && _typeof(e.trigger) == l)) return e;var t = {};for (var n in e) {
       if (!U(d, n)) t[n] = e[n];
     }return t;
   }function G(e, t) {
@@ -724,9 +724,9 @@ if (css3Prefix) {
       var r;if (e.tagName) {
         if (t && (!(r = k(e, u)) || r != t)) I(e, u, t);var i = fe(e, t || e.getAttribute(u) || e.tagName.toLowerCase(), n);if (i) f.push(i);
       } else if (e.length) A(e, p);
-    }C.inject();if ((typeof t === 'undefined' ? 'undefined' : _typeof2(t)) === s) {
+    }C.inject();if ((typeof t === 'undefined' ? 'undefined' : _typeof(t)) === s) {
       n = t;t = 0;
-    }if ((typeof e === 'undefined' ? 'undefined' : _typeof2(e)) === a) {
+    }if ((typeof e === 'undefined' ? 'undefined' : _typeof(e)) === a) {
       if (e === "*") e = i = l();else e += c(e.split(","));r = e ? J(e) : [];
     } else r = e;if (t === "*") {
       t = i || l();if (r.tagName) r = J(t, r);else {
@@ -739,28 +739,10 @@ if (css3Prefix) {
     return A(i, function (e) {
       e.update();
     });
-  };n.Tag = S;if ((typeof exports === 'undefined' ? 'undefined' : _typeof2(exports)) === s) module.exports = n;else if ((typeof define === 'undefined' ? 'undefined' : _typeof2(define)) === l && _typeof2(define.amd) !== c) define(function () {
+  };n.Tag = S;if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === s) module.exports = n;else if ((typeof define === 'undefined' ? 'undefined' : _typeof(define)) === l && _typeof(define.amd) !== c) define(function () {
     return n;
   });else e.riot = n;
 })(typeof window != "undefined" ? window : void 0);
-
-"use strict";var _typeof = "function" == typeof Symbol && "symbol" == _typeof2(Symbol.iterator) ? function (o) {
-  return typeof o === 'undefined' ? 'undefined' : _typeof2(o);
-} : function (o) {
-  return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o === 'undefined' ? 'undefined' : _typeof2(o);
-};!function () {
-  function o(e, t) {
-    if (!o.installed) {
-      if (o.installed = !0, !t) return void console.error("You have to install axios");e.axios = t, Object.defineProperties(e.prototype, { axios: { get: function get() {
-            return t;
-          } }, $http: { get: function get() {
-            return t;
-          } } });
-    }
-  }"object" == ("undefined" == typeof exports ? "undefined" : _typeof(exports)) ? module.exports = o : "function" == typeof define && define.amd ? define([], function () {
-    return o;
-  }) : window.Vue && window.axios && Vue.use(o, window.axios);
-}();
 
 riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas id="imageCtrl" width="{width}" height="{height}"></canvas> <div onclick="{selectImage}" class="image-input"> <input id="imageInput"  type="file" onchange="{changeImage}"> </div> <div show="{uploaded &amp;&amp; !stop}" onclick="{restart}" class="icon icon-restart"></div> <div show="{uploaded &amp;&amp; !stop}" onclick="{rotation}" class="icon icon-rotation"></div> <div class="mask-note fadeIn animated"></div> </div><yield></yield>', '', '', function (opts) {
   var createObjectURLfun, defaultOrin, defaultType, logOrin, logSize, self;
@@ -1087,7 +1069,6 @@ riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas i
 
 // @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/js/min/riot.min.js"
-// @codekit-prepend "../js/vue-axios.js"
 // @codekit-prepend "../js/ctrl.js"
 global = {};
 
@@ -1148,13 +1129,11 @@ window.onload = function () {
   // 检查分享回调, 是否显示用户创建的图片
   if ($_GET["id"] && $_GET["id"] > 0) {
     Vue.axios.get(info_link + "?id=" + $_GET["id"]).then(function (msg) {
-      alert(msg.data.recode);
       if (msg.data.recode === 200) {
         if (msg.data.info.image != null) {
           imageLink = msg.data.info.image;
           document.getElementById("page-image").style = "display: block";
-          document.getElementById("view-img").src = 'http://image.giccoo.com/sayno/corona/' + msg.data.info.image + '@!large';
-          return alert(msg.data.info.image);
+          return document.getElementById("view-img").src = 'http://image.giccoo.com/sayno/corona/' + msg.data.info.image + '@!large';
         } else {
           return init();
         }
@@ -1162,7 +1141,6 @@ window.onload = function () {
         return init();
       }
     }).catch(function (e) {
-      alert(e);
       if (imageLink === "") {
         return init();
       } else {
@@ -1183,7 +1161,7 @@ init = function init() {
       loading: false,
       mount: true,
       animate: false,
-      buildshow: true,
+      buildshow: false,
       shareNote: false,
       pop: false,
       buildstep: 1,

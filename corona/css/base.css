@@ -3016,7 +3016,16 @@ body {
       position: absolute;
       top: 0;
       right: 50%;
-      z-index: 103; }
+      z-index: 103;
+      -webkit-transform: rotate(-30deg);
+              transform: rotate(-30deg);
+      -webkit-transform-origin: top left;
+              transform-origin: top left;
+      -webkit-transition: all 1s ease;
+      transition: all 1s ease; }
+      .main .player-fix .cursor.on {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg); }
     .main .player-fix .record {
       width: 40px;
       margin: 10px;

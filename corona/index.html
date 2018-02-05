@@ -16,7 +16,7 @@
     <div id="main" v-show="mount" style="display: none" class="main">
       <div class="logo-main"><img src="./img/logo.png"></div>
       <div class="player-fix">
-        <div class="cursor"><img src="./img/music-touch.png"></div>
+        <div :class="{on: playing}" class="cursor"><img src="./img/music-touch.png"></div>
         <div @click="playing = !playing" class="record on"><img src="./img/music.png"></div>
       </div>
       <div class="page page-home">

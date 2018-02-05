@@ -29,7 +29,7 @@ block content
 		.logo-main
 			img(src="#{url}/img/logo.png")
 		.player-fix
-			.cursor
+			.cursor(:class="{on: playing}")
 				img(src="#{url}/img/music-touch.png")
 			.record.on(@click="playing = !playing")
 				img(src="#{url}/img/music.png")
@@ -146,6 +146,7 @@ block js
 	script(src="/libs/js/min/vue.min.js")
 	//- script(src="/libs/js/min/TweenMax.min.js")
 	script(src="/libs/js/min/axios.min.js")
+	//- script(src="/libs/js/min/jquery.min.js")
 	script(src="js/main.js")
 	
 

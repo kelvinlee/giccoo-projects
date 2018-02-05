@@ -1,6 +1,5 @@
 # @codekit-prepend "coffee/css3Prefix"
 # @codekit-prepend "../../libs/js/min/riot.min.js"
-# @codekit-prepend "../js/vue-axios.js"
 # @codekit-prepend "../js/ctrl.js"
 
 global = {}
@@ -53,19 +52,16 @@ window.onload = ->
 	if $_GET["id"] && $_GET["id"] > 0
 		Vue.axios.get info_link+"?id="+$_GET["id"]
 		.then (msg)->
-			alert msg.data.recode
 			if msg.data.recode == 200
 				if msg.data.info.image?
 					imageLink = msg.data.info.image
 					document.getElementById("page-image").style = "display: block"
 					document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{msg.data.info.image}@!large"
-					alert msg.data.info.image
 				else
 					init()
 			else
 				init()
 		.catch (e)->
-			alert e
 			if imageLink is ""
 				init()
 			else
@@ -81,7 +77,7 @@ init = ->
 			loading: false
 			mount: true
 			animate: false
-			buildshow: true
+			buildshow: false
 			shareNote: false
 			pop: false
 			buildstep: 1
