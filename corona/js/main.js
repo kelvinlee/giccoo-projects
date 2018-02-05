@@ -2,7 +2,7 @@
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var $_GET, ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, _CDN, _imgurl, changeImage, css3Prefix, getRandom, global, i, imageLink, imageurl, info_link, init, l, len, load, loadEnd, loadWechatConfig, mTestElement, main, name_list, neteaseShare, pageAnimated, post_url, pre, review, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare, waitTime;
+var $_GET, ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, _CDN, _imgurl, changeImage, css3Prefix, getRandom, global, i, imageLink, imageurl, info_link, init, l, len, load, loadEnd, loadWechatConfig, mTestElement, main, name_list, neteaseShare, post_url, pre, review, runAnimate, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare, waitTime;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -1105,6 +1105,91 @@ waitTime = 10000;
 
 imageLink = "";
 
+runAnimate = function runAnimate() {
+  var line;
+  // dom = document.getElementById("animate")
+  // console.log TweenLite.to("#animate .animte-frame-1", 2, {backgroundColor:"#ff0000", width:"50%", top:"100px"});
+  line = new TimelineLite();
+  line.add(TweenLite.set("#animate .animte-frame-1", {
+    opacity: 0
+  }));
+  line.add(TweenLite.set("#animate .animte-frame-2", {
+    opacity: 0
+  }));
+  line.add(TweenLite.set("#animate .animte-frame-3", {
+    opacity: 0
+  }));
+  line.add(TweenLite.set("#animate .animte-frame-4", {
+    opacity: 0
+  }));
+  line.add(TweenLite.set("#animate .animte-frame-4 .text", {
+    y: 0,
+    opacity: 1
+  }));
+  line.add(TweenLite.set("#animate .animte-frame-4 .sunlight", {
+    y: 800,
+    opacity: 0
+  }));
+  line.add(TweenLite.set("#animate .animte-frame-4 .people", {
+    y: 400,
+    opacity: 0
+  }));
+  line.add(TweenLite.set("#animate .animte-frame-4 .text-1", {
+    y: 200,
+    opacity: 0
+  }));
+  line.add(TweenLite.set("#animate .animte-frame-4 .text-2", {
+    y: 200,
+    opacity: 0
+  }));
+  line.add(TweenLite.set("#animate .animte-frame-4 .text-3", {
+    y: 200,
+    opacity: 0
+  }));
+  // line.add TweenLite.to "#animate .animte-frame-1",1 ,{opacity: 1}
+  return line.to("#animate .animte-frame-1", 0.8, {
+    opacity: 1
+  }).to("#animate .animte-frame-2", 0.8, {
+    opacity: 1,
+    delay: 3
+  }).to("#animate .animte-frame-3", 0.8, {
+    opacity: 1,
+    delay: 3
+  }).to("#animate .animte-frame-4", 0.8, {
+    opacity: 1,
+    delay: 3
+  }).to("#animate .animte-frame-4 .text", 0.8, {
+    y: -800,
+    opacity: 0,
+    delay: 3
+  }).to("#animate .animte-frame-4 .sunlight", 0.8, {
+    y: 0,
+    opacity: 1,
+    delay: -1
+  }).to("#animate .animte-frame-4 .people", 0.8, {
+    y: 0,
+    opacity: 1,
+    delay: 0
+  }).to("#animate .animte-frame-4 .text-3", 0.6, {
+    y: 0,
+    opacity: 1,
+    delay: 0
+  }).to("#animate .animte-frame-4 .text-2", 0.6, {
+    y: 0,
+    opacity: 1,
+    delay: -0.3
+  }).to("#animate .animte-frame-4 .text-1", 0.6, {
+    y: 0,
+    opacity: 1,
+    delay: -0.3,
+    onComplete: function onComplete() {
+      // alert "over animate"
+      return main.animatend = false;
+    }
+  });
+};
+
+// line.add TweenLite.to "#animate .animte-frame-2",1 ,{opacity: 1,delay: 5}
 changeImage = function changeImage() {
   console.log("image changed");
   return main.imageselect = true;
@@ -1115,6 +1200,8 @@ getRandom = function getRandom(length) {
 };
 
 window.onload = function () {
+  // runAnimate()
+  // return false
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
   } else {
@@ -1238,7 +1325,7 @@ init = function init() {
     watch: {
       animate: function animate(val) {
         if (val) {
-          return pageAnimated();
+          return runAnimate();
         }
       },
       topic: function topic() {
@@ -1466,20 +1553,15 @@ init = function init() {
       // console.log "mount"
       riot.mount("*");
       this.topichtml = this.topic.replace(/\n/g, "<br/>");
-      document.getElementById("btn-build-show").addEventListener(ANIMATION_END_NAME, function (evt) {
-        console.log("can click");
-        return main.animatend = false;
-      });
+      // document.getElementById("btn-build-show").addEventListener ANIMATION_END_NAME, (evt)->
+      // 	console.log "can click"
+      // 	main.animatend = false
       return loadEnd();
     }
   });
 };
 
-pageAnimated = function pageAnimated() {};
-
-// TweenLite.to(el,0.6,{opacity:0,onComplete: ->
-// 	load.loadend = true
-// })
+// runAnimate()
 
 // canvas 轮训文字
 _runLongTexts = function runLongTexts(texts, ctx, x, y) {

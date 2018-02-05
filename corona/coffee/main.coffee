@@ -23,13 +23,48 @@ topic_list= [
 waitTime = 10000
 imageLink = ""
 
+runAnimate = ->
+	# dom = document.getElementById("animate")
+	# console.log TweenLite.to("#animate .animte-frame-1", 2, {backgroundColor:"#ff0000", width:"50%", top:"100px"});
+	line = new TimelineLite()
+	line.add TweenLite.set("#animate .animte-frame-1" ,{opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-2" ,{opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-3" ,{opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-4" ,{opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-4 .text" ,{y: 0, opacity: 1})
+	line.add TweenLite.set("#animate .animte-frame-4 .sunlight" ,{y: 800, opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-4 .people" ,{y: 400, opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-4 .text-1" ,{y: 200, opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-4 .text-2" ,{y: 200, opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-4 .text-3" ,{y: 200, opacity: 0})
+	# line.add TweenLite.to "#animate .animte-frame-1",1 ,{opacity: 1}
+	line.to("#animate .animte-frame-1", 0.8, {opacity: 1})
+	.to("#animate .animte-frame-2", 0.8, {opacity: 1, delay: 3})
+	.to("#animate .animte-frame-3", 0.8, {opacity: 1, delay: 3})
+	.to("#animate .animte-frame-4", 0.8, {opacity: 1, delay: 3})
+	.to("#animate .animte-frame-4 .text", 0.8, {y: -800, opacity: 0, delay: 3})
+	.to("#animate .animte-frame-4 .sunlight", 0.8, {y: 0, opacity: 1, delay: -1})
+	.to("#animate .animte-frame-4 .people", 0.8, {y: 0, opacity: 1, delay: 0})
+	.to("#animate .animte-frame-4 .text-3", 0.6, {y: 0, opacity: 1, delay: 0})
+	.to("#animate .animte-frame-4 .text-2", 0.6, {y: 0, opacity: 1, delay: -0.3})
+	.to("#animate .animte-frame-4 .text-1", 0.6, {y: 0, opacity: 1, delay: -0.3, onComplete: ->
+		# alert "over animate"
+		main.animatend = false
+	})
+	
 
+	# line.add TweenLite.to "#animate .animte-frame-2",1 ,{opacity: 1,delay: 5}
+
+ 
 changeImage = ->
 	console.log "image changed"
 	main.imageselect = true
 getRandom = (length)->
 	return parseInt(Math.random()*(length+1)-1)
 window.onload = ->
+
+	# runAnimate()
+	# return false
 
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
@@ -136,7 +171,7 @@ init = ->
 		watch:
 			animate: (val)->
 				if val
-					pageAnimated()
+					runAnimate()
 			topic: ->
 				@topichtml = @topic.replace(/\n/g,"<br/>")
 			image: (val)->
@@ -312,15 +347,12 @@ init = ->
 			# console.log "mount"
 			riot.mount("*")
 			@topichtml = @topic.replace(/\n/g,"<br/>")
-			document.getElementById("btn-build-show").addEventListener ANIMATION_END_NAME, (evt)->
-				console.log "can click"
-				main.animatend = false
+			# document.getElementById("btn-build-show").addEventListener ANIMATION_END_NAME, (evt)->
+			# 	console.log "can click"
+			# 	main.animatend = false
 			loadEnd()
+			# runAnimate()
 
-pageAnimated = ->
-	# TweenLite.to(el,0.6,{opacity:0,onComplete: ->
-	# 	load.loadend = true
-	# })
 
 # canvas 轮训文字
 runLongTexts = (texts,ctx,x,y)->

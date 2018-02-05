@@ -24,17 +24,17 @@
         <div @click="animate = true,animatend = true" class="btn btn-enter"></div>
         <div class="text f0"><img src="http://image.giccoo.com/projects/corona/img/home-text.png"></div>
       </div>
-      <div v-show="animate" class="page page-animate">
-        <div class="item animte-frame-1 duration-10 fadeIn animated delay-0"></div>
-        <div class="item animte-frame-2 duration-10 fadeIn animated delay-25"></div>
-        <div class="item animte-frame-3 duration-10 fadeIn animated delay-50"></div>
-        <div class="item animte-frame-4 duration-10 fadeIn animated delay-75">
-          <div class="text fadeOutUp duration-15 animated delay-125"><img src="http://image.giccoo.com/projects/corona/img/animate-bg-text.png"></div>
-          <div class="sunlight fadeInUp duration-10 animated delay-125"></div>
-          <div class="people fadeInUp durantion-12 animated delay-132"><img src="http://image.giccoo.com/projects/corona/img/animate-2-2.png"></div>
-          <div id="btn-build-show" v-show="buildshow == false" @click="if (!animatend) {buildshow = true}" class="text-1 fadeInUp duration-10 animated delay-136"><img src="http://image.giccoo.com/projects/corona/img/animate-2-3.png"></div>
-          <div v-show="buildshow == false" class="text-2 fadeInUp duration-10 animated delay-138"><img src="http://image.giccoo.com/projects/corona/img/animate-2-4.png"></div>
-          <div v-show="buildshow == false" class="text-3 fadeInUp duration-10 animated delay-140"><img src="http://image.giccoo.com/projects/corona/img/animate-2-5.png"></div>
+      <div id="animate" v-show="animate" class="page page-animate">
+        <div class="item animte-frame-1"></div>
+        <div class="item animte-frame-2"></div>
+        <div class="item animte-frame-3"></div>
+        <div class="item animte-frame-4">
+          <div class="text"><img src="http://image.giccoo.com/projects/corona/img/animate-bg-text.png"></div>
+          <div class="sunlight"></div>
+          <div class="people"><img src="http://image.giccoo.com/projects/corona/img/animate-2-2.png"></div>
+          <div id="btn-build-show" v-show="buildshow == false" @click="if (!animatend) {buildshow = true}" class="text-1"><img src="http://image.giccoo.com/projects/corona/img/animate-2-3.png"></div>
+          <div v-show="buildshow == false" class="text-2"><img src="http://image.giccoo.com/projects/corona/img/animate-2-4.png"></div>
+          <div v-show="buildshow == false" class="text-3"><img src="http://image.giccoo.com/projects/corona/img/animate-2-5.png"></div>
         </div>
       </div>
       <transition name="page-animation">
@@ -158,6 +158,7 @@
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <script src="http://image.giccoo.com/projects/libs/js/exif.js"></script>
     <script src="http://image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
+    <script src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
     <script src="http://image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
     <script src="js/main.js"></script>
   </body>

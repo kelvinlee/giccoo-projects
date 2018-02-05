@@ -23,7 +23,7 @@ block content
 		.ball-spin-fade-loader
 			-for (var i=0;i<8;i++)
 				div
-					
+
 	audio#bgm(src="#{url}/mp3/bgm.mp3",loop="true",preload="auto")
 	#page-image.page.page-view-img(v-show="show",style="display: none")
 		a.back(href="http://m.giccoo.com/corona/")
@@ -38,26 +38,43 @@ block content
 				img(src="#{url}/img/music-touch.png")
 			.record(:class="{on: playing}",@click="playbgm")
 				img(src="#{url}/img/music.png")
+		//- .page.page-animate#animate
+			- var time = 25;
+			.item.animte-frame-1
+			.item.animte-frame-2
+			.item.animte-frame-3
+			.item.animte-frame-4
+				.text
+					img(src="#{url}/img/animate-bg-text.png")
+				.sunlight
+				.people
+					img(src="#{url}/img/animate-2-2.png")
+				#btn-build-show.text-1
+					img(src="#{url}/img/animate-2-3.png")
+				.text-2
+					img(src="#{url}/img/animate-2-4.png")
+				.text-3
+					img(src="#{url}/img/animate-2-5.png")
 		.page.page-home
 			.btn.btn-enter(@click="animate = true,animatend = true")
 			.text.f0
 				img(src="#{url}/img/home-text.png")
-		.page.page-animate(v-show="animate")
+		.page.page-animate#animate(v-show="animate")
 			- var time = 25;
-			.item.animte-frame-1.duration-10.fadeIn.animated(class="delay-#{time*0}")
-			.item.animte-frame-2.duration-10.fadeIn.animated(class="delay-#{time*1}")
-			.item.animte-frame-3.duration-10.fadeIn.animated(class="delay-#{time*2}")
-			.item.animte-frame-4.duration-10.fadeIn.animated(class="delay-#{time*3}")
-				.text.fadeOutUp.duration-15.animated(class="delay-#{time*5}")
+			.item.animte-frame-1
+			.item.animte-frame-2
+			.item.animte-frame-3
+			.item.animte-frame-4
+				.text
 					img(src="#{url}/img/animate-bg-text.png")
-				.sunlight.fadeInUp.duration-10.animated(class="delay-#{time*5}")
-				.people.fadeInUp.durantion-12.animated(class="delay-#{time*5+7}")
+				.sunlight
+				.people
 					img(src="#{url}/img/animate-2-2.png")
-				#btn-build-show.text-1.fadeInUp.duration-10.animated(v-show="buildshow == false",class="delay-#{time*5+10+1}",@click="if (!animatend) {buildshow = true}")
+				#btn-build-show.text-1(v-show="buildshow == false",@click="if (!animatend) {buildshow = true}")
 					img(src="#{url}/img/animate-2-3.png")
-				.text-2.fadeInUp.duration-10.animated(v-show="buildshow == false",class="delay-#{time*5+10+3}")
+				.text-2(v-show="buildshow == false")
 					img(src="#{url}/img/animate-2-4.png")
-				.text-3.fadeInUp.duration-10.animated(v-show="buildshow == false",class="delay-#{time*5+10+5}")
+				.text-3(v-show="buildshow == false")
 					img(src="#{url}/img/animate-2-5.png")
 		transition(name="page-animation")
 			.page.page-build(v-show="buildshow && buildstep == 1")
@@ -183,7 +200,7 @@ block js
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/exif.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
-	//- script(src="/libs/js/min/TweenMax.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/axios.min.js")
 	//- script(src="/libs/js/min/jquery.min.js")
 	script(src="js/main.js")
