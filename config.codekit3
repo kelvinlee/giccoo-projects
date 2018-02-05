@@ -1182,6 +1182,16 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"\/corona\/js\/vue-axios.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/corona\/js\/vue-axios-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
 	"\/corona\/mp3\/bgm.mp3": {
 		"cB": 0,
 		"ft": 8192,

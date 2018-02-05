@@ -1,6 +1,8 @@
 # @codekit-prepend "coffee/css3Prefix"
 # @codekit-prepend "../../libs/js/min/riot.min.js"
+# @codekit-prepend "../js/vue-axios.js"
 # @codekit-prepend "../js/ctrl.js"
+
 global = {}
 main = {}
 pre = {}
@@ -17,6 +19,8 @@ topic_list= [
 	"嘿，兄弟，\n有什么事别一个人扛。\n一句话，\n兄弟我过来陪你。"
 ]
 waitTime = 5000
+imageLink = ""
+
 
 changeImage = ->
 	console.log "image changed"
@@ -47,21 +51,26 @@ window.onload = ->
 
 	# 检查分享回调, 是否显示用户创建的图片
 	if $_GET["id"] && $_GET["id"] > 0
-		axios.get info_link+"?id="+$_GET["id"]
+		Vue.axios.get info_link+"?id="+$_GET["id"]
 		.then (msg)->
 			alert msg.data.recode
 			if msg.data.recode == 200
-				alert msg.data.info.image
 				if msg.data.info.image?
+					imageLink = msg.data.info.image
 					document.getElementById("page-image").style = "display: block"
 					document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{msg.data.info.image}@!large"
+					alert msg.data.info.image
 				else
 					init()
 			else
 				init()
 		.catch (e)->
 			alert e
-			init()
+			if imageLink is ""
+				init()
+			else
+				document.getElementById("page-image").style = "display: block"
+				document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{imageLink}@!large"
 		return false
 	init()
 init = ->
@@ -193,7 +202,7 @@ init = ->
 				data = {
 					image: image
 				}
-				axios.post imageurl,data
+				Vue.axios.post imageurl,data
 				.then (msg)->
 					if msg.data.recode is 200
 						main.success(msg.data)
@@ -241,7 +250,7 @@ init = ->
 				data = {}
 				for k, v of @form
 					data[k] = v
-				axios.post url,data
+				Vue.axios.post url,data
 				.then (msg)->
 					if msg.data.recode is 200
 						main.registertext = true
