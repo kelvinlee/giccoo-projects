@@ -3044,7 +3044,7 @@ body {
         left: 0px;
         width: 100%;
         height: 100%;
-        background: url("../img/music-close.png") no-repeat center center;
+        background: url("http://image.giccoo.com/projects/corona/img/music-close.png") no-repeat center center;
         background-size: cover;
         background-color: transparent; }
       .main .player-fix .record.on:after {
@@ -3081,7 +3081,7 @@ body {
     left: 0px;
     width: 100%;
     height: 100%;
-    background: url("../img/bg.jpg") no-repeat center center;
+    background: url("http://image.giccoo.com/projects/corona/img/bg.jpg") no-repeat center center;
     background-size: cover;
     background-color: #000; }
   .loading .note {
@@ -3354,7 +3354,7 @@ body {
       height: 20px;
       margin-left: -10px;
       font-size: 0;
-      background: url("../img/arrow-black.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/corona/img/arrow-black.png") no-repeat center center;
       background-size: contain;
       background-color: transparent;
       -webkit-animation: arrow 2.5s ease;
@@ -3485,27 +3485,27 @@ body {
   height: 100%; }
 
 .animte-frame-1 {
-  background: url("../img/animate-1.jpg") no-repeat center center;
+  background: url("http://image.giccoo.com/projects/corona/img/animate-1.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
 .animte-frame-2 {
-  background: url("../img/animate-2.jpg") no-repeat center center;
+  background: url("http://image.giccoo.com/projects/corona/img/animate-2.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
 .animte-frame-3 {
-  background: url("../img/animate-3.jpg") no-repeat center center;
+  background: url("http://image.giccoo.com/projects/corona/img/animate-3.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
 .animte-frame-4 {
-  background: url("../img/animate-bg.jpg") no-repeat center center;
+  background: url("http://image.giccoo.com/projects/corona/img/animate-bg.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
 .sunlight {
-  background: url("../img/animate-2-1.jpg") no-repeat center center;
+  background: url("http://image.giccoo.com/projects/corona/img/animate-2-1.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
@@ -3534,7 +3534,7 @@ body {
   left: 0; }
 
 .page-home {
-  background: url("../img/home.jpg") no-repeat bottom center;
+  background: url("http://image.giccoo.com/projects/corona/img/home.jpg") no-repeat bottom center;
   background-size: cover;
   background-color: transparent; }
   .page-home .text {
@@ -3578,7 +3578,7 @@ body {
       right: 5px;
       width: 10px;
       height: 20px;
-      background: url("../img/icon-edit.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/corona/img/icon-edit.png") no-repeat center center;
       background-size: contain;
       background-color: transparent;
       z-index: 10; }
@@ -3616,7 +3616,7 @@ body {
       line-height: 1.6em;
       margin-left: 0.4em;
       vertical-align: middle;
-      background: url("../img/icon-reload.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/corona/img/icon-reload.png") no-repeat center center;
       background-size: contain;
       background-color: transparent; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
@@ -3639,7 +3639,7 @@ body {
 .page-build-2 {
   z-index: 40;
   color: #fff;
-  background: url("../img/build-bg.jpg") no-repeat center bottom;
+  background: url("http://image.giccoo.com/projects/corona/img/build-bg.jpg") no-repeat center bottom;
   background-size: cover;
   background-color: transparent; }
   .page-build-2 .back {
@@ -3708,7 +3708,7 @@ body {
       left: 10%;
       width: 25px;
       height: 25px;
-      background: url("../img/quotes.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/corona/img/quotes.png") no-repeat center center;
       background-size: contain;
       background-color: transparent; }
     .page-build-2 .topic:after {
@@ -3718,7 +3718,7 @@ body {
       right: 10%;
       width: 25px;
       height: 25px;
-      background: url("../img/quotes.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/corona/img/quotes.png") no-repeat center center;
       background-size: contain;
       background-color: transparent;
       -webkit-transform: scale(-1, -1);
@@ -3781,7 +3781,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 10;
-    background: url("../img/mask-note.png") no-repeat center center;
+    background: url("http://image.giccoo.com/projects/corona/img/mask-note.png") no-repeat center center;
     background-size: cover;
     background-color: transparent;
     background-color: rgba(0, 0, 0, 0.5);
@@ -3819,7 +3819,7 @@ body {
 
 .last-page {
   z-index: 80;
-  background: url("../img/build-bg.jpg") no-repeat bottom center;
+  background: url("http://image.giccoo.com/projects/corona/img/build-bg.jpg") no-repeat bottom center;
   background-size: cover;
   background-color: transparent; }
   .last-page .logo {
@@ -3827,7 +3827,7 @@ body {
     top: 5%;
     left: 0px; }
   .last-page .box {
-    background: url("../img/award-pop-bg.jpg") no-repeat bottom center;
+    background: url("http://image.giccoo.com/projects/corona/img/award-pop-bg.jpg") no-repeat bottom center;
     background-size: cover;
     background-color: transparent;
     position: absolute;
@@ -3969,7 +3969,7 @@ body {
   background-color: #fff;
   font-size: 0;
   overflow: hidden;
-  background: url("..//img/content-bg.png") repeat top center;
+  background: url("http://image.giccoo.com/projects/corona/img/content-bg.png") repeat top center;
   background-size: initial;
   background-color: transparent; }
   .page-view-img .content {
@@ -4004,7 +4004,7 @@ body {
   z-index: 1000; }
 
 .page-view-img, .page-image {
-  background: url("..//img/content-bg.png") no-repeat top center;
+  background: url("http://image.giccoo.com/projects/corona/img/content-bg.png") no-repeat top center;
   background-size: 100% 100%;
   background-color: transparent;
   overflow: hidden; }
@@ -4013,4 +4013,38 @@ body {
     top: 50%;
     left: 0px;
     -webkit-transform: translate3d(0, -50%, 0);
-            transform: translate3d(0, -50%, 0); }
+            transform: translate3d(0, -50%, 0);
+    width: 100%; }
+    .page-view-img .content .loading-text, .page-image .content .loading-text {
+      position: absolute;
+      top: 50%;
+      left: 0px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #666; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .page-view-img .content .loading-text, .page-image .content .loading-text {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .page-view-img .content .loading-text, .page-image .content .loading-text {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .page-view-img .content .loading-text, .page-image .content .loading-text {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .page-view-img .content .loading-text, .page-image .content .loading-text {
+          font-size: 0.96rem; } }
+
+.loading {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 10010; }
+  .loading .ball-spin-fade-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%; }

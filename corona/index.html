@@ -10,54 +10,65 @@
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
-    <div class="load"></div>
-    <audio id="bgm" src="./mp3/bgm.mp3" loop="true" preload="auto"></audio>
-    <div id="page-image" v-show="show" style="display: none" class="page page-view-img"><a href="http://m.giccoo.com/corona/" class="back"><img src="./img/icon-back.png"></a>
+    <div id="load" v-if="!loadend" class="loading">
+      <div class="ball-spin-fade-loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <audio id="bgm" src="http://image.giccoo.com/projects/corona/mp3/bgm.mp3" loop="true" preload="auto"></audio>
+    <div id="page-image" v-show="show" style="display: none" class="page page-view-img"><a href="http://m.giccoo.com/corona/" class="back"><img src="http://image.giccoo.com/projects/corona/img/icon-back.png"></a>
       <div class="content"><img id="view-img"></div>
     </div>
     <div id="main" v-show="mount" style="display: none" class="main">
-      <div class="logo-main"><img src="./img/logo.png"></div>
+      <div class="logo-main"><img src="http://image.giccoo.com/projects/corona/img/logo.png"></div>
       <div class="player-fix">
-        <div :class="{on: playing}" class="cursor"><img src="./img/music-touch.png"></div>
-        <div :class="{on: playing}" @click="playbgm" class="record"><img src="./img/music.png"></div>
+        <div :class="{on: playing}" class="cursor"><img src="http://image.giccoo.com/projects/corona/img/music-touch.png"></div>
+        <div :class="{on: playing}" @click="playbgm" class="record"><img src="http://image.giccoo.com/projects/corona/img/music.png"></div>
       </div>
       <div class="page page-home">
         <div @click="animate = true,animatend = true" class="btn btn-enter"></div>
-        <div class="text f0"><img src="./img/home-text.png"></div>
+        <div class="text f0"><img src="http://image.giccoo.com/projects/corona/img/home-text.png"></div>
       </div>
       <div v-show="animate" class="page page-animate">
         <div class="item animte-frame-1 duration-10 fadeIn animated delay-0"></div>
         <div class="item animte-frame-2 duration-10 fadeIn animated delay-25"></div>
         <div class="item animte-frame-3 duration-10 fadeIn animated delay-50"></div>
         <div class="item animte-frame-4 duration-10 fadeIn animated delay-75">
-          <div class="text fadeOutUp duration-15 animated delay-125"><img src="./img/animate-bg-text.png"></div>
+          <div class="text fadeOutUp duration-15 animated delay-125"><img src="http://image.giccoo.com/projects/corona/img/animate-bg-text.png"></div>
           <div class="sunlight fadeInUp duration-10 animated delay-125"></div>
-          <div class="people fadeInUp durantion-12 animated delay-132"><img src="./img/animate-2-2.png"></div>
-          <div id="btn-build-show" v-show="buildshow == false" @click="if (!animatend) {buildshow = true}" class="text-1 fadeInUp duration-10 animated delay-136"><img src="./img/animate-2-3.png"></div>
-          <div v-show="buildshow == false" class="text-2 fadeInUp duration-10 animated delay-138"><img src="./img/animate-2-4.png"></div>
-          <div v-show="buildshow == false" class="text-3 fadeInUp duration-10 animated delay-140"><img src="./img/animate-2-5.png"></div>
+          <div class="people fadeInUp durantion-12 animated delay-132"><img src="http://image.giccoo.com/projects/corona/img/animate-2-2.png"></div>
+          <div id="btn-build-show" v-show="buildshow == false" @click="if (!animatend) {buildshow = true}" class="text-1 fadeInUp duration-10 animated delay-136"><img src="http://image.giccoo.com/projects/corona/img/animate-2-3.png"></div>
+          <div v-show="buildshow == false" class="text-2 fadeInUp duration-10 animated delay-138"><img src="http://image.giccoo.com/projects/corona/img/animate-2-4.png"></div>
+          <div v-show="buildshow == false" class="text-3 fadeInUp duration-10 animated delay-140"><img src="http://image.giccoo.com/projects/corona/img/animate-2-5.png"></div>
         </div>
       </div>
       <transition name="page-animation">
         <div v-show="buildshow &amp;&amp; buildstep == 1" class="page page-build">
           <div class="build build-1">
-            <div class="title f0"><img :src="'./img/page-build-music-title.png'"></div>
+            <div class="title f0"><img :src="'http://image.giccoo.com/projects/corona/img/page-build-music-title.png'"></div>
             <div class="input">
               <input v-model="musicname" @focus="focus" @blur="blur">
             </div>
-            <div class="title f0"><img :src="'./img/page-build-topic-title.png'"></div>
+            <div class="title f0"><img :src="'http://image.giccoo.com/projects/corona/img/page-build-topic-title.png'"></div>
             <div class="input">
               <textarea v-model="topic" @focus="focusArea" @blur="blurArea"></textarea>
             </div>
-            <div @click="reload" class="reload"><img :src="'./img/reload.png'"></div>
-            <div @click="gobuild" class="btn btn-next"><img :src="'./img/btn-next.png'"></div>
+            <div @click="reload" class="reload"><img :src="'http://image.giccoo.com/projects/corona/img/reload.png'"></div>
+            <div @click="gobuild" class="btn btn-next"><img :src="'http://image.giccoo.com/projects/corona/img/btn-next.png'"></div>
             <div @click="pop = true" class="btn btn-pop">
               <p>* 活动奖品及细则</p>
             </div>
           </div>
           <div v-show="pop" class="pop fadeInUp animated duration-10">
-            <div @click="pop = false" class="close"><img :src="'./img/close.jpg'"></div>
-            <div class="content touch f0"><img :src="'./img/pop-info.jpg'">
+            <div @click="pop = false" class="close"><img :src="'http://image.giccoo.com/projects/corona/img/close.jpg'"></div>
+            <div class="content touch f0"><img :src="'http://image.giccoo.com/projects/corona/img/pop-info.jpg'" v-if="pop">
               <div class="texts">
                 <h3>四、活动规则：</h3>
                 <p>1、2018年2月6日至2018年2月11日期间，用户可以通过网易云音乐平台的科罗娜H5参与互动，分享后赢取好礼。</p>
@@ -85,49 +96,50 @@
               </div>
               <div class="blank"></div>
             </div>
-            <div class="bg f0"><img :src="'./img/pop-bg.jpg'"></div>
+            <div class="bg f0"><img :src="'http://image.giccoo.com/projects/corona/img/pop-bg.jpg'"></div>
           </div>
         </div>
       </transition>
       <transition name="page-animation">
         <div v-show="buildstep == 2" class="page page-build-2 build-2">
-          <div class="logo f0"><img :src="'./img/build-logo.png'"></div>
-          <div @click="buildstep = 1" class="back f0"><img :src="'./img/icon-back.png'"></div>
+          <div class="logo f0"><img :src="'http://image.giccoo.com/projects/corona/img/build-logo.png'"></div>
+          <div @click="buildstep = 1" class="back f0"><img :src="'http://image.giccoo.com/projects/corona/img/icon-back.png'"></div>
           <div class="musicname">{{musicnamefull}}</div>
           <div class="build-image f0">
-            <div class="bg"><img :src="'./img/build-image.png'"></div>
+            <div class="bg"><img :src="'http://image.giccoo.com/projects/corona/img/build-image.png'"></div>
             <ctrl-image class="ctrl-image">
-              <div class="preview"><img id="preview-img" :src="'./img/p-1.jpg'"></div>
+              <div class="preview"><img id="preview-img" :src="'http://image.giccoo.com/projects/corona/img/p-1.jpg'"></div>
             </ctrl-image>
           </div>
-          <div @click="prevImage" class="left"><img :src="'./img/arrow.png'"></div>
-          <div @click="nextImage" class="right"><img :src="'./img/arrow.png'"></div>
+          <div @click="prevImage" class="left"><img :src="'http://image.giccoo.com/projects/corona/img/arrow.png'"></div>
+          <div @click="nextImage" class="right"><img :src="'http://image.giccoo.com/projects/corona/img/arrow.png'"></div>
           <div v-html="topichtml" class="topic"></div>
-          <div @click="buildimage" class="btn btn-build"><img :src="'./img/btn-create.png'"></div>
+          <div @click="buildimage" class="btn btn-build"><img :src="'http://image.giccoo.com/projects/corona/img/btn-create.png'"></div>
         </div>
       </transition>
       <transition name="page-animation">
         <div v-show="buildover" class="page page-image">
-          <div @click="goback" v-if="postfail" class="back"><img src="./img/icon-back.png"></div>
+          <div @click="goback" v-if="postfail" class="back"><img src="http://image.giccoo.com/projects/corona/img/icon-back.png"></div>
           <div class="content">
-            <canvas id="result"></canvas><img v-if="ugc" :src="ugcsrc" class="ugc">
+            <div v-show="!creatEnd" class="loading-text">正在生成中...</div>
+            <canvas id="result" v-show="creatEnd" class="fadeIn animated"></canvas><img v-if="ugc" :src="ugcsrc" class="ugc">
           </div>
         </div>
       </transition>
       <transition name="page-animation">
-        <div v-show="shareNote" style="display: none" @click.stop="shareNote = false" class="page share-note"><img :src="'./img/share-mark.png'"><img v-if="ugc" :src="ugcsrc" class="ugc"></div>
+        <div v-show="shareNote" style="display: none" @click.stop="shareNote = false" class="page share-note"><img :src="'http://image.giccoo.com/projects/corona/img/share-mark.png'"><img v-if="ugc" :src="ugcsrc" class="ugc"></div>
       </transition>
       <transition name="page-animation">
         <div v-show="shareNoteSys" style="display: none" @click.stop="popshow" class="page share-note">
-          <div @click.stop="shareNoteSys = false" class="close"><img :src="'./img/icon-close.png'"></div><img :src="'./img/share-image.png'"><img v-if="ugc" :src="ugcsrc" class="ugc">
+          <div @click.stop="shareNoteSys = false" class="close"><img :src="'http://image.giccoo.com/projects/corona/img/icon-close.png'"></div><img :src="'http://image.giccoo.com/projects/corona/img/share-image.png'"><img v-if="ugc" :src="ugcsrc" class="ugc">
         </div>
       </transition>
       <transition name="page-animation">
         <div v-show="lastpage" class="page last-page">
-          <div class="logo"><img :src="'./img/award-logo.png'"></div>
+          <div class="logo"><img :src="'http://image.giccoo.com/projects/corona/img/award-logo.png'"></div>
           <div class="box">
-            <div v-show="noaward" style="display: none" @click="window.location.reload()" class="fail"><img :src="'./img/award-faild-text.jpg'"></div>
-            <div v-show="haveaward &amp;&amp; register == false &amp;&amp; registertext == false" style="display: none" @click="register = true" class="success"><img :src="'./img/award-success-text.jpg'"></div>
+            <div v-show="noaward" style="display: none" @click="window.location.reload()" class="fail"><img :src="'http://image.giccoo.com/projects/corona/img/award-faild-text.jpg'"></div>
+            <div v-show="haveaward &amp;&amp; register == false &amp;&amp; registertext == false" style="display: none" @click="register = true" class="success"><img :src="'http://image.giccoo.com/projects/corona/img/award-success-text.jpg'"></div>
             <div v-if="haveaward &amp;&amp; register" class="register">
               <h2>请填写您的详细信息</h2>
               <form id="register" v-on:submit.prevent="onSubmit" class="form">
@@ -150,15 +162,15 @@
                 </div>
               </form>
             </div>
-            <div v-show="registertext" style="display: none" class="text"><img :src="'./img/award-send-text.png'"></div>
+            <div v-show="registertext" style="display: none" class="text"><img :src="'http://image.giccoo.com/projects/corona/img/award-send-text.png'"></div>
           </div>
         </div>
       </transition>
     </div>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-    <script src="/libs/js/exif.js"></script>
-    <script src="/libs/js/min/vue.min.js"></script>
-    <script src="/libs/js/min/axios.min.js"></script>
+    <script src="http://image.giccoo.com/projects/libs/js/exif.js"></script>
+    <script src="http://image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
+    <script src="http://image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

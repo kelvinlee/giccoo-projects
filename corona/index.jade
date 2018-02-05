@@ -17,10 +17,14 @@ block css
 
 block content
 	- url = "http://image.giccoo.com/projects/corona"
-	- url = "."
+	//- - url = "."
 	
-	.load
-	audio#bgm(src="./mp3/bgm.mp3",loop="true",preload="auto")
+	#load.loading(v-if="!loadend")
+		.ball-spin-fade-loader
+			-for (var i=0;i<8;i++)
+				div
+					
+	audio#bgm(src="#{url}/mp3/bgm.mp3",loop="true",preload="auto")
 	#page-image.page.page-view-img(v-show="show",style="display: none")
 		a.back(href="http://m.giccoo.com/corona/")
 			img(src="#{url}/img/icon-back.png")
@@ -76,7 +80,7 @@ block content
 					.close(@click="pop = false")
 						img(:src="'#{url}/img/close.jpg'")
 					.content.touch.f0
-						img(:src="'#{url}/img/pop-info.jpg'")
+						img(:src="'#{url}/img/pop-info.jpg'",v-if="pop")
 						.texts
 							h3 四、活动规则：
 							p 1、2018年2月6日至2018年2月11日期间，用户可以通过网易云音乐平台的科罗娜H5参与互动，分享后赢取好礼。
@@ -129,7 +133,8 @@ block content
 				.back(@click="goback",v-if="postfail")
 					img(src="#{url}/img/icon-back.png")
 				.content
-					canvas#result
+					.loading-text(v-show="!creatEnd") 正在生成中...
+					canvas#result.fadeIn.animated(v-show="creatEnd")
 					img.ugc(v-if="ugc",:src="ugcsrc")
 		transition(name="page-animation")
 			.page.share-note(v-show="shareNote",style="display: none",@click.stop="shareNote = false")
@@ -176,10 +181,10 @@ block js
 	- url = "/"
 	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
-	script(src="/libs/js/exif.js")
-	script(src="/libs/js/min/vue.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/exif.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
 	//- script(src="/libs/js/min/TweenMax.min.js")
-	script(src="/libs/js/min/axios.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/axios.min.js")
 	//- script(src="/libs/js/min/jquery.min.js")
 	script(src="js/main.js")
 	

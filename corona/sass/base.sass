@@ -2,10 +2,10 @@
 // @import ../../libs/sass/parallax
 @import ../../libs/sass/loader-ball
 
-$debug : true
+$debug : false
 $cdn : "../"
 @if not $debug
-	$cdn : "http://image.giccoo.com/projects/zhishinews/"
+	$cdn : "http://image.giccoo.com/projects/corona/"
 
 // animation, delay, duration
 @for $i from 1 through 300
@@ -711,7 +711,7 @@ body
 	+bc(#fff)
 	font-size: 0
 	+overhide
-	+b($cdn+"/img/content-bg.png",repeat,top,center)
+	+b($cdn+"img/content-bg.png",repeat,top,center)
 	.content
 		+posa
 		+tl(50%)
@@ -734,9 +734,29 @@ body
 	z-index: 1000
 
 .page-view-img,.page-image
-	+b($cdn+"/img/content-bg.png",no-repeat,top,center,100% 100%)
+	+b($cdn+"img/content-bg.png",no-repeat,top,center,100% 100%)
 	+overhide
 	.content
 		+posa
 		+tl(50%)
 		+transform(translate3d(0,-50%,0))
+		+w
+		.loading-text
+			+posa
+			+tl(50%)
+			+w
+			+text-center
+			+font-size(0.8rem)
+			color: #666
+
+
+.loading
+	+posa
+	+tl
+	+w
+	+h
+	+bc(#000)
+	z-index: 10010
+	.ball-spin-fade-loader
+		+posa
+		+tl(50%,50%)

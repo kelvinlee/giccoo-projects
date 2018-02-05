@@ -2,7 +2,7 @@
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var $_GET, ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, _imgurl, changeImage, css3Prefix, getRandom, global, i, imageLink, imageurl, info_link, init, l, len, loadWechatConfig, mTestElement, main, name_list, neteaseShare, post_url, pre, review, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare, waitTime;
+var $_GET, ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, _CDN, _imgurl, changeImage, css3Prefix, getRandom, global, i, imageLink, imageurl, info_link, init, l, len, load, loadEnd, loadWechatConfig, mTestElement, main, name_list, neteaseShare, pageAnimated, post_url, pre, review, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare, waitTime;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -858,6 +858,7 @@ riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas i
       var canvas, ctx, h, w, x, y;
       canvas = document.getElementById("imageCtrl");
       ctx = canvas.getContext("2d");
+      ctx.save();
       w = image.width;
       h = image.height;
       if (w > h) {
@@ -882,12 +883,15 @@ riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas i
       ctx.drawImage(self.image, self.frame.x, self.frame.y, w, h);
       self.setDefault(self.frame.x, self.frame.y, w, h);
       self.frame.rotation = 90;
+      self.frame.rotation = 0;
+      ctx.restore();
       return self.init();
     };
     normalImage = function normalImage() {
       var canvas, ctx, h, w, x, y;
       canvas = document.getElementById("imageCtrl");
       ctx = canvas.getContext("2d");
+      ctx.save();
       w = image.width;
       h = image.height;
       if (w > h) {
@@ -908,6 +912,7 @@ riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas i
       ctx.clearRect(-10000, -10000, 50000, 50000);
       ctx.drawImage(image, x, y, w, h);
       self.setDefault(x, y, w, h);
+      ctx.restore();
       return self.init();
     };
     image.onload = drawCanvasImage;
@@ -963,7 +968,8 @@ riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas i
     ctx.translate(canvas.width / 2, canvas.height / 2);
     ctx.rotate(rotation);
     ctx.translate(-canvas.width / 2, -canvas.height / 2);
-    return ctx.drawImage(self.image, self.frame.x, self.frame.y, logSize.w, logSize.h);
+    ctx.drawImage(self.image, self.frame.x, self.frame.y, logSize.w, logSize.h);
+    ctx.rotate(-rotation);
   };
 
   this.getContent = function () {
@@ -1070,6 +1076,8 @@ riot.tag2('ctrl-image', '<div id="previewImage" class="image-content"> <canvas i
 // @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/js/min/riot.min.js"
 // @codekit-prepend "../js/ctrl.js"
+_CDN = "";
+
 _imgurl = "";
 
 global = {};
@@ -1077,6 +1085,8 @@ global = {};
 main = {};
 
 pre = {};
+
+load = {};
 
 imageurl = "http://api.giccoo.com/sayno/corona/create/";
 
@@ -1128,6 +1138,13 @@ window.onload = function () {
       return wx.onMenuShareWeibo(shareContent);
     });
   }
+  // loading
+  load = new Vue({
+    el: "#load",
+    data: {
+      loadend: false
+    }
+  });
   // 检查分享回调, 是否显示用户创建的图片
   if ($_GET["id"] && $_GET["id"] > 0) {
     axios.get(info_link + "?id=" + $_GET["id"]).then(function (msg) {
@@ -1159,12 +1176,21 @@ window.onload = function () {
 
 // document.getElementById("bgm").addEventListener "play", ->
 // 	alert "play"
+loadEnd = function loadEnd() {
+  return setTimeout(function () {
+    return load.loadend = true;
+  }, 2000);
+};
+
 review = function review() {
   var view;
   return view = new Vue({
     el: "#page-image",
     data: {
       show: true
+    },
+    mounted: function mounted() {
+      return loadEnd();
     }
   });
 };
@@ -1192,6 +1218,7 @@ init = function init() {
       buildresult: "",
       buildover: false,
       award: "",
+      creatEnd: false,
       lastpage: false,
       noaward: false,
       haveaward: false,
@@ -1212,12 +1239,17 @@ init = function init() {
       }
     },
     watch: {
+      animate: function animate(val) {
+        if (val) {
+          return pageAnimated();
+        }
+      },
       topic: function topic() {
         return this.topichtml = this.topic.replace(/\n/g, "<br/>");
       },
       image: function image(val) {
         console.log(val);
-        return document.getElementById("preview-img").src = "./img/p-" + val + ".jpg";
+        return document.getElementById("preview-img").src = _CDN + "/img/p-" + val + ".jpg";
       },
       award: function award(val) {
         return this.form.code = val;
@@ -1284,6 +1316,7 @@ init = function init() {
         return this.topic = topic_list[index];
       },
       gobuild: function gobuild() {
+        var len1, m, texts;
         // 进入下一步创建
         if (this.musicname.length <= 0) {
           return alert("请再想想属于我们的那首歌");
@@ -1292,6 +1325,14 @@ init = function init() {
         } else if (this.topic.length <= 0) {
           return alert("请输入要对老朋友说的话");
         } else {
+          texts = this.topic.split("\n");
+          for (m = 0, len1 = texts.length; m < len1; m++) {
+            i = texts[m];
+            console.log(i.replace(/[^\x00-\xff]/g, "01").length);
+            if (i.replace(/[^\x00-\xff]/g, "01").length > 40) {
+              return alert("请控制您丰富的感情当行文字不能超过20个中文字符以内");
+            }
+          }
           return this.buildstep = 2;
         }
       },
@@ -1329,6 +1370,7 @@ init = function init() {
           ctx.textAlign = 'center';
           ctx.font = "24px '微软雅黑'";
           _runLongTexts(self.topic, ctx, 320, 810);
+          main.creatEnd = true;
           self.onUpload(canvas.toDataURL("image/png"));
           self.ugc = true;
           return self.ugcsrc = canvas.toDataURL("image/png");
@@ -1427,13 +1469,20 @@ init = function init() {
       // console.log "mount"
       riot.mount("*");
       this.topichtml = this.topic.replace(/\n/g, "<br/>");
-      return document.getElementById("btn-build-show").addEventListener(ANIMATION_END_NAME, function (evt) {
+      document.getElementById("btn-build-show").addEventListener(ANIMATION_END_NAME, function (evt) {
         console.log("can click");
         return main.animatend = false;
       });
+      return loadEnd();
     }
   });
 };
+
+pageAnimated = function pageAnimated() {};
+
+// TweenLite.to(el,0.6,{opacity:0,onComplete: ->
+// 	load.loadend = true
+// })
 
 // canvas 轮训文字
 _runLongTexts = function runLongTexts(texts, ctx, x, y) {

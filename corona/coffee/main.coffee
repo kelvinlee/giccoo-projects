@@ -2,10 +2,12 @@
 # @codekit-prepend "../../libs/js/min/riot.min.js"
 # @codekit-prepend "../js/ctrl.js"
 
+_CDN = ""
 _imgurl = ""
 global = {}
 main = {}
 pre = {}
+load = {}
 imageurl = "http://api.giccoo.com/sayno/corona/create/"
 post_url = "http://api.giccoo.com/sayno/corona/insert/"
 info_link= "http://api.giccoo.com/sayno/corona/get/"
@@ -49,6 +51,11 @@ window.onload = ->
 			wx.onMenuShareQQ shareContent
 			wx.onMenuShareWeibo shareContent
 
+	# loading
+	load = new Vue
+		el: "#load"
+		data:
+			loadend: false
 	# 检查分享回调, 是否显示用户创建的图片
 	if $_GET["id"] && $_GET["id"] > 0
 		axios.get info_link+"?id="+$_GET["id"]
@@ -74,11 +81,17 @@ window.onload = ->
 	init()
 	# document.getElementById("bgm").addEventListener "play", ->
 	# 	alert "play"
+loadEnd = ->
+	setTimeout ->
+		load.loadend = true
+	,2000
 review = ->
 	view = new Vue
 		el: "#page-image"
 		data:
 			show: true
+		mounted: ->
+			loadEnd()
 
 init = ->
 	index = getRandom(name_list.length)
@@ -102,6 +115,7 @@ init = ->
 			buildresult: ""
 			buildover: false
 			award: ""
+			creatEnd: false
 			lastpage: false
 			noaward: false
 			haveaward: false
@@ -120,11 +134,14 @@ init = ->
 				code: ""
 				random: ""
 		watch:
+			animate: (val)->
+				if val
+					pageAnimated()
 			topic: ->
 				@topichtml = @topic.replace(/\n/g,"<br/>")
 			image: (val)->
 				console.log val
-				document.getElementById("preview-img").src = "./img/p-"+val+".jpg"
+				document.getElementById("preview-img").src = _CDN+"/img/p-"+val+".jpg"
 			award: (val)->
 				@form.code = val
 			# playing: (val)->
@@ -181,6 +198,11 @@ init = ->
 				else if @topic.length <= 0
 					alert "请输入要对老朋友说的话"
 				else
+					texts = @topic.split("\n")
+					for i in texts
+						console.log i.replace(/[^\x00-\xff]/g,"01").length
+						return alert "请控制您丰富的感情当行文字不能超过20个中文字符以内" if i.replace(/[^\x00-\xff]/g,"01").length > 40
+
 					@buildstep = 2
 			buildimage: ->
 				self = @
@@ -212,7 +234,7 @@ init = ->
 					ctx.textAlign = 'center'
 					ctx.font = "24px '微软雅黑'"
 					runLongTexts self.topic,ctx,320,810
-
+					main.creatEnd = true
 					self.onUpload canvas.toDataURL("image/png")
 					self.ugc = true
 					self.ugcsrc = canvas.toDataURL("image/png")
@@ -293,6 +315,12 @@ init = ->
 			document.getElementById("btn-build-show").addEventListener ANIMATION_END_NAME, (evt)->
 				console.log "can click"
 				main.animatend = false
+			loadEnd()
+
+pageAnimated = ->
+	# TweenLite.to(el,0.6,{opacity:0,onComplete: ->
+	# 	load.loadend = true
+	# })
 
 # canvas 轮训文字
 runLongTexts = (texts,ctx,x,y)->
