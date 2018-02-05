@@ -17,7 +17,7 @@
       <div class="logo-main"><img src="./img/logo.png"></div>
       <div class="player-fix">
         <div :class="{on: playing}" class="cursor"><img src="./img/music-touch.png"></div>
-        <div @click="playing = !playing" class="record on"><img src="./img/music.png"></div>
+        <div :class="{on: playing}" @click="playing = !playing" class="record"><img src="./img/music.png"></div>
       </div>
       <div class="page page-home">
         <div @click="animate = true,animatend = true" class="btn btn-enter"></div>

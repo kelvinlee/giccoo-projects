@@ -3027,16 +3027,28 @@ body {
         -webkit-transform: rotate(0deg);
                 transform: rotate(0deg); }
     .main .player-fix .record {
+      position: relative;
       width: 40px;
       margin: 10px;
-      font-size: 0; }
-      .main .player-fix .record.on {
-        -webkit-animation: second 2s linear;
-                animation: second 2s linear;
-        -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite; }
+      font-size: 0;
+      -webkit-animation: second 2s linear;
+              animation: second 2s linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+      .main .player-fix .record:after {
+        content: " ";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: url("../img/music-close.png") no-repeat center center;
+        background-size: cover;
+        background-color: transparent; }
+      .main .player-fix .record.on:after {
+        display: none; }
 
 .page-animation-enter-active {
   -webkit-transition: all .6s ease;
@@ -3592,7 +3604,7 @@ body {
         .page-build .input input, .page-build .input textarea {
           font-size: 1.2rem; } }
     .page-build .input textarea {
-      height: 6.4em; }
+      height: 3.2em; }
   .page-build .reload {
     text-align: center; }
     .page-build .reload .btn .icon-reload {
@@ -3636,7 +3648,7 @@ body {
     width: 10px;
     padding: 15px; }
   .page-build-2 .logo {
-    margin-top: 10px; }
+    margin-top: 12%; }
   .page-build-2 .musicname {
     text-align: center;
     font-size: 0.9rem;
@@ -3691,7 +3703,7 @@ body {
     .page-build-2 .topic:before {
       content: " ";
       position: absolute;
-      top: 0;
+      top: 20%;
       left: 10%;
       width: 25px;
       height: 25px;
@@ -3701,7 +3713,7 @@ body {
     .page-build-2 .topic:after {
       content: " ";
       position: absolute;
-      bottom: 0;
+      bottom: 20%;
       right: 10%;
       width: 25px;
       height: 25px;
@@ -3712,7 +3724,9 @@ body {
               transform: scale(-1, -1); }
 
 .build-image {
-  position: relative; }
+  position: relative;
+  width: 90%;
+  margin: 0 auto; }
 
 .ctrl-image {
   position: absolute;

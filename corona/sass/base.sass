@@ -99,11 +99,23 @@ body
 			&.on
 				transform: rotate(0deg)
 		.record
+			+posr
 			+w(40px)
 			+m(10px)
 			font-size: 0
+			+animation(second,2s,linear,infinite)
+			&:after
+				content: " "
+				+posa
+				+tl
+				+w
+				+h
+				+b($cdn+"img/music-close.png",no-repeat,center,center,cover)
 			&.on
-				+animation(second,2s,linear,infinite)
+				&:after
+					display: none
+				
+				
 .page-animation-enter-active
 	transition: all .6s ease
 .page-animation-leave-active
@@ -438,7 +450,7 @@ body
 			line-height: 1.6em
 
 		textarea
-			+h(1.6em*4)
+			+h(1.6em*2)
 	.reload
 		+text-center
 		.btn
@@ -465,7 +477,7 @@ body
 		+p(15px)
 
 	.logo
-		margin-top: 10px
+		margin-top: 12%
 	.musicname
 		+text-center
 		+font-size(0.9rem)
@@ -494,18 +506,20 @@ body
 		&:before
 			content: " "
 			+posa
-			+tl(0,10%)
+			+tl(20%,10%)
 			+wh(25px,25px)
 			+b($cdn+"img/quotes.png",no-repeat,center,center,contain)
 		&:after
 			content: " "
 			+posa
-			+br(0,10%)
+			+br(20%,10%)
 			+wh(25px,25px)
 			+b($cdn+"img/quotes.png",no-repeat,center,center,contain)
 			+transform(scale(-1,-1))
 .build-image
 	+posr
+	+w(90%)
+	+m
 .ctrl-image
 	+posa
 	+tl(27%,26%)

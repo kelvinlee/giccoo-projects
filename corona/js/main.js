@@ -1087,7 +1087,7 @@ sys = "other";
 // 《兄弟》
 name_list = ["一个像夏天一个像秋天", "十年", "有没有那么一首歌让你想起我", "兄弟"];
 
-topic_list = ["那一年，握着一个128MB的MP3，\n好像抓住了全世界。\n每天放学回家的路上，\n是属于我们两个人的单曲循环。", "还记不记得那年夏天夜晚，\n我们坐在操场喝酒，\n一遍遍唱着《十年》，\n十年了，你们都在哪儿？", "好久不见，\n你们现在还好吗？\n老朋友，\n我突然有点想你们了。", "嘿，兄弟，\n有什么事别一个人扛。\n一句话，\n兄弟我过来陪你。"];
+topic_list = ["每天放学回家的路上，\n是属于我们两个人的单曲循环。", "一遍遍唱着《十年》，\n十年了，你们都在哪儿？", "老朋友，\n我突然有点想你们了。", "嘿，兄弟，\n有什么事别一个人扛。"];
 
 waitTime = 5000;
 
@@ -1161,13 +1161,13 @@ init = function init() {
       loading: false,
       mount: true,
       animate: false,
-      buildshow: false,
+      buildshow: true,
       shareNote: false,
       pop: false,
       buildstep: 1,
       musicname: name_list[getRandom(name_list.length)],
       topic: topic_list[getRandom(topic_list.length)],
-      topichtml: "还记不记得那年夏天夜晚，<br/>我们站在湛蓝海岸，<br/>一遍遍嘶吼着《十年》。<br/>十年了，你们都在哪呢？",
+      topichtml: "还记不记得那年夏天夜晚，<br/>我们站在湛蓝海岸",
       image: 1,
       imageselect: false,
       buildresult: "",
@@ -1260,8 +1260,8 @@ init = function init() {
         // 进入下一步创建
         if (this.musicname.length <= 0) {
           return alert("请再想想属于我们的那首歌");
-        } else if (this.topic.split("\n").length > 4) {
-          return alert("请控制您丰富的感情在 4 行以内的文字.");
+        } else if (this.topic.split("\n").length > 2) {
+          return alert("请控制您丰富的感情在 2 行以内的文字.");
         } else if (this.topic.length <= 0) {
           return alert("请输入要对老朋友说的话");
         } else {
@@ -1311,7 +1311,7 @@ init = function init() {
         data = {
           image: image
         };
-        return Vue.axios.post(imageurl, data).then(function (msg) {
+        return axios.post(imageurl, data).then(function (msg) {
           if (msg.data.recode === 200) {
             return main.success(msg.data);
           } else {
@@ -1375,7 +1375,7 @@ init = function init() {
           v = ref[k];
           data[k] = v;
         }
-        return Vue.axios.post(url, data).then(function (msg) {
+        return axios.post(url, data).then(function (msg) {
           if (msg.data.recode === 200) {
             main.registertext = true;
             return main.register = false;

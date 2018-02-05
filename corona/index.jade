@@ -31,7 +31,7 @@ block content
 		.player-fix
 			.cursor(:class="{on: playing}")
 				img(src="#{url}/img/music-touch.png")
-			.record.on(@click="playing = !playing")
+			.record(:class="{on: playing}",@click="playing = !playing")
 				img(src="#{url}/img/music.png")
 		.page.page-home
 			.btn.btn-enter(@click="animate = true,animatend = true")

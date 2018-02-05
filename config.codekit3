@@ -1009,6 +1009,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/corona\/img\/music-close.png": {
+		"ft": 32768,
+		"iS": 2533,
+		"oA": 0,
+		"oAP": "\/corona\/img\/music-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/corona\/img\/music-touch.png": {
 		"ft": 32768,
 		"iS": 1848,
