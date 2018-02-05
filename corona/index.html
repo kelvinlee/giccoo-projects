@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="load"></div>
-    <audio id="bgm" src="http://image.giccoo.com/projects/corona/mp3/bgm.mp3" loop="true"></audio>
+    <audio id="bgm" src="./mp3/bgm.mp3" loop="true" preload="auto"></audio>
     <div id="page-image" v-show="show" style="display: none" class="page page-view-img"><a href="http://m.giccoo.com/corona/" class="back"><img src="./img/icon-back.png"></a>
       <div class="content"><img id="view-img"></div>
     </div>
@@ -19,7 +19,7 @@
       <div class="logo-main"><img src="./img/logo.png"></div>
       <div class="player-fix">
         <div :class="{on: playing}" class="cursor"><img src="./img/music-touch.png"></div>
-        <div :class="{on: playing}" @click="playing = !playing" class="record"><img src="./img/music.png"></div>
+        <div :class="{on: playing}" @click="playbgm" class="record"><img src="./img/music.png"></div>
       </div>
       <div class="page page-home">
         <div @click="animate = true,animatend = true" class="btn btn-enter"></div>

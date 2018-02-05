@@ -12,8 +12,8 @@ sys = "other"
 # 《兄弟》
 name_list = ["一个像夏天一个像秋天","十年","有没有那么一首歌让你想起我","兄弟"]
 topic_list= [
-	"那年握着一个128MB的MP3，好像抓住了全世界。\n每天放学回家的路上，是属于我们两个人的单曲循环。"
-	"记得那年夏天，我们在操场一遍遍唱《十年》，\n十年了，你们都在哪儿？"
+	"那年握着一个128MB的MP3，\n每天放学路上，是属于我们的单曲循环。"
+	"那年夏天，我们在操场唱着《十年》\n十年了，你们都在哪儿"
 	"好久不见，你们现在还好吗？\n老朋友，我突然有点想你们了。"
 	"嘿，兄弟，有什么事别一个人扛。\n一句话，兄弟我过来陪你。"
 ]
@@ -57,6 +57,7 @@ window.onload = ->
 					imageLink = msg.data.info.image
 					document.getElementById("page-image").style = "display: block"
 					document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{msg.data.info.image}@!large"
+					review()
 				else
 					init()
 			else
@@ -67,8 +68,17 @@ window.onload = ->
 			else
 				document.getElementById("page-image").style = "display: block"
 				document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{imageLink}@!large"
+				review()
 		return false
 	init()
+	# document.getElementById("bgm").addEventListener "play", ->
+	# 	alert "play"
+review = ->
+	view = new Vue
+		el: "#page-image"
+		data:
+			show: true
+
 init = ->
 	index = getRandom(name_list.length)
 	main = new Vue
@@ -78,7 +88,7 @@ init = ->
 			loading: false
 			mount: true
 			animate: false
-			buildshow: true
+			buildshow: false
 			shareNote: false
 			pop: false
 			buildstep: 1
@@ -108,7 +118,6 @@ init = ->
 				code: ""
 				random: ""
 		watch:
-
 			topic: ->
 				@topichtml = @topic.replace(/\n/g,"<br/>")
 			image: (val)->
@@ -116,16 +125,23 @@ init = ->
 				document.getElementById("preview-img").src = "./img/p-"+val+".jpg"
 			award: (val)->
 				@form.code = val
-			playing: (val)->
-				if val is true
-					document.getElementById("bgm").play()
-				else
-					document.getElementById("bgm").pause()
+			# playing: (val)->
+				# if val is true
+				# 	document.getElementById("bgm").play()
+				# else
+				# 	document.getElementById("bgm").pause()
 		computed:
 			musicnamefull: ->
 				return "《"+@musicname+"》"
 		methods:
 			# 切换图片
+			playbgm: ->
+				@playing = !@playing
+				if @playing
+					document.getElementById("bgm").play()
+				else
+					document.getElementById("bgm").pause()
+
 			focus: (evt)->
 				if name_list.indexOf(@musicname) > -1
 					@cacheName = @musicname+""
@@ -286,7 +302,10 @@ updateShare = (msg)->
 	else
 		id = ""
 	if sys is "NeteaseMusic"
-		neteaseShare id,imgUrl
+		img = new Image()
+		img.onload = ->
+			neteaseShare id,imgUrl
+		img.src = imgUrl
 	else
 		main.shareNote = true
 		shareContent =
@@ -313,7 +332,8 @@ neteaseShare = (id,img)->
 	# redirectUrl = ""
 	title2 = "有没有那么一首歌，让你想起……"
 	subTitle2 = " "
-	window.location.href = "orpheus://share/"+encodeURIComponent(title1)+"/"+encodeURIComponent(picUrl)+"/"+encodeURIComponent(redirectUrl)+"/"+encodeURIComponent(title2)+"/"+encodeURIComponent(subTitle2)
+	# window.location.href = "orpheus://share/"+encodeURIComponent(title1)+"/"+encodeURIComponent(picUrl)+"/"+encodeURIComponent(redirectUrl)+"/"+encodeURIComponent(title2)+"/"+encodeURIComponent(subTitle2)
+	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 
 loadWechatConfig = ->
 	url = encodeURIComponent window.location.href.split("#")[0]

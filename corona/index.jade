@@ -20,7 +20,7 @@ block content
 	- url = "."
 	
 	.load
-	audio#bgm(src="http://image.giccoo.com/projects/corona/mp3/bgm.mp3",loop="true")
+	audio#bgm(src="./mp3/bgm.mp3",loop="true",preload="auto")
 	#page-image.page.page-view-img(v-show="show",style="display: none")
 		a.back(href="http://m.giccoo.com/corona/")
 			img(src="#{url}/img/icon-back.png")
@@ -32,7 +32,7 @@ block content
 		.player-fix
 			.cursor(:class="{on: playing}")
 				img(src="#{url}/img/music-touch.png")
-			.record(:class="{on: playing}",@click="playing = !playing")
+			.record(:class="{on: playing}",@click="playbgm")
 				img(src="#{url}/img/music.png")
 		.page.page-home
 			.btn.btn-enter(@click="animate = true,animatend = true")

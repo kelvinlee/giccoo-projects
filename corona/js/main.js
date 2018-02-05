@@ -2,7 +2,7 @@
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var $_GET, ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, changeImage, css3Prefix, getRandom, global, i, imageLink, imageurl, info_link, init, l, len, loadWechatConfig, mTestElement, main, name_list, neteaseShare, post_url, pre, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare, waitTime;
+var $_GET, ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, changeImage, css3Prefix, getRandom, global, i, imageLink, imageurl, info_link, init, l, len, loadWechatConfig, mTestElement, main, name_list, neteaseShare, post_url, pre, review, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare, waitTime;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -1087,7 +1087,7 @@ sys = "other";
 // 《兄弟》
 name_list = ["一个像夏天一个像秋天", "十年", "有没有那么一首歌让你想起我", "兄弟"];
 
-topic_list = ["那年握着一个128MB的MP3，好像抓住了全世界。\n每天放学回家的路上，是属于我们两个人的单曲循环。", "记得那年夏天，我们在操场一遍遍唱《十年》，\n十年了，你们都在哪儿？", "好久不见，你们现在还好吗？\n老朋友，我突然有点想你们了。", "嘿，兄弟，有什么事别一个人扛。\n一句话，兄弟我过来陪你。"];
+topic_list = ["那年握着一个128MB的MP3，\n每天放学路上，是属于我们的单曲循环。", "那年夏天，我们在操场唱着《十年》\n十年了，你们都在哪儿", "好久不见，你们现在还好吗？\n老朋友，我突然有点想你们了。", "嘿，兄弟，有什么事别一个人扛。\n一句话，兄弟我过来陪你。"];
 
 waitTime = 5000;
 
@@ -1133,7 +1133,8 @@ window.onload = function () {
         if (msg.data.info.image != null) {
           imageLink = msg.data.info.image;
           document.getElementById("page-image").style = "display: block";
-          return document.getElementById("view-img").src = 'http://image.giccoo.com/sayno/corona/' + msg.data.info.image + '@!large';
+          document.getElementById("view-img").src = 'http://image.giccoo.com/sayno/corona/' + msg.data.info.image + '@!large';
+          return review();
         } else {
           return init();
         }
@@ -1145,12 +1146,25 @@ window.onload = function () {
         return init();
       } else {
         document.getElementById("page-image").style = "display: block";
-        return document.getElementById("view-img").src = 'http://image.giccoo.com/sayno/corona/' + imageLink + '@!large';
+        document.getElementById("view-img").src = 'http://image.giccoo.com/sayno/corona/' + imageLink + '@!large';
+        return review();
       }
     });
     return false;
   }
   return init();
+};
+
+// document.getElementById("bgm").addEventListener "play", ->
+// 	alert "play"
+review = function review() {
+  var view;
+  return view = new Vue({
+    el: "#page-image",
+    data: {
+      show: true
+    }
+  });
 };
 
 init = function init() {
@@ -1163,7 +1177,7 @@ init = function init() {
       loading: false,
       mount: true,
       animate: false,
-      buildshow: true,
+      buildshow: false,
       shareNote: false,
       pop: false,
       buildstep: 1,
@@ -1204,15 +1218,13 @@ init = function init() {
       },
       award: function award(val) {
         return this.form.code = val;
-      },
-      playing: function playing(val) {
-        if (val === true) {
-          return document.getElementById("bgm").play();
-        } else {
-          return document.getElementById("bgm").pause();
-        }
       }
     },
+    // playing: (val)->
+    // if val is true
+    // 	document.getElementById("bgm").play()
+    // else
+    // 	document.getElementById("bgm").pause()
     computed: {
       musicnamefull: function musicnamefull() {
         return "《" + this.musicname + "》";
@@ -1220,6 +1232,14 @@ init = function init() {
     },
     methods: {
       // 切换图片
+      playbgm: function playbgm() {
+        this.playing = !this.playing;
+        if (this.playing) {
+          return document.getElementById("bgm").play();
+        } else {
+          return document.getElementById("bgm").pause();
+        }
+      },
       focus: function focus(evt) {
         if (name_list.indexOf(this.musicname) > -1) {
           this.cacheName = this.musicname + "";
@@ -1419,7 +1439,7 @@ _runLongTexts = function runLongTexts(texts, ctx, x, y) {
 
 // 修改分享内容
 updateShare = function updateShare(msg) {
-  var id, imgUrl, shareContent;
+  var id, img, imgUrl, shareContent;
   imgUrl = 'http://image.giccoo.com/sayno/corona/' + msg.filename + '@!large';
   if (msg.info.insertId != null && msg.info.insertId > 0) {
     id = "?id=" + msg.info.insertId;
@@ -1427,7 +1447,11 @@ updateShare = function updateShare(msg) {
     id = "";
   }
   if (sys === "NeteaseMusic") {
-    return neteaseShare(id, imgUrl);
+    img = new Image();
+    img.onload = function () {
+      return neteaseShare(id, imgUrl);
+    };
+    return img.src = imgUrl;
   } else {
     main.shareNote = true;
     shareContent = {
@@ -1459,7 +1483,8 @@ neteaseShare = function neteaseShare(id, img) {
   // redirectUrl = ""
   title2 = "有没有那么一首歌，让你想起……";
   subTitle2 = " ";
-  return window.location.href = "orpheus://share/" + encodeURIComponent(title1) + "/" + encodeURIComponent(picUrl) + "/" + encodeURIComponent(redirectUrl) + "/" + encodeURIComponent(title2) + "/" + encodeURIComponent(subTitle2);
+  // window.location.href = "orpheus://share/"+encodeURIComponent(title1)+"/"+encodeURIComponent(picUrl)+"/"+encodeURIComponent(redirectUrl)+"/"+encodeURIComponent(title2)+"/"+encodeURIComponent(subTitle2)
+  return window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
 };
 
 loadWechatConfig = function loadWechatConfig() {

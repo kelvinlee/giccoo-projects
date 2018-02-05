@@ -1210,6 +1210,13 @@
 		"oAP": "\/corona\/mp3\/bgm.mp3",
 		"oF": 0
 		},
+	"\/corona\/mp3\/bgm2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/corona\/mp3\/bgm2.mp3",
+		"oF": 0
+		},
 	"\/corona\/sass\/base.sass": {
 		"aP": 1,
 		"bl": 0,
