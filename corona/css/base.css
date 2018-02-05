@@ -2922,6 +2922,54 @@ ul {
   -webkit-animation-name: second;
           animation-name: second; }
 
+@-webkit-keyframes littlemove {
+  0%, 50% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+            transform: translate3d(-10px, 0, 0);
+    opacity: 0.8; } }
+
+@keyframes littlemove {
+  0%, 50% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+            transform: translate3d(-10px, 0, 0);
+    opacity: 0.8; } }
+
+.littlemove {
+  -webkit-animation-name: littlemove;
+          animation-name: littlemove; }
+
+@-webkit-keyframes littlemoveright {
+  0%, 50% {
+    -webkit-transform: translate3d(0, 0, 0) scale(-1, 1);
+            transform: translate3d(0, 0, 0) scale(-1, 1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate3d(10px, 0, 0) scale(-1, 1);
+            transform: translate3d(10px, 0, 0) scale(-1, 1);
+    opacity: 0.8; } }
+
+@keyframes littlemoveright {
+  0%, 50% {
+    -webkit-transform: translate3d(0, 0, 0) scale(-1, 1);
+            transform: translate3d(0, 0, 0) scale(-1, 1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate3d(10px, 0, 0) scale(-1, 1);
+            transform: translate3d(10px, 0, 0) scale(-1, 1);
+    opacity: 0.8; } }
+
+.littlemoveright {
+  -webkit-animation-name: littlemoveright;
+          animation-name: littlemoveright; }
+
 @-webkit-keyframes moveleft {
   0%, 50% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -2945,6 +2993,32 @@ ul {
 .moveleft {
   -webkit-animation-name: moveleft;
           animation-name: moveleft; }
+
+@-webkit-keyframes showdarkandlight {
+  0% {
+    opacity: 0.8;
+    color: #ffee90; }
+  40%, 60% {
+    opacity: 1;
+    color: #fff; }
+  100% {
+    opacity: 0.8;
+    color: #ffee90; } }
+
+@keyframes showdarkandlight {
+  0% {
+    opacity: 0.8;
+    color: #ffee90; }
+  40%, 60% {
+    opacity: 1;
+    color: #fff; }
+  100% {
+    opacity: 0.8;
+    color: #ffee90; } }
+
+.showdarkandlight {
+  -webkit-animation-name: showdarkandlight;
+          animation-name: showdarkandlight; }
 
 html, body {
   width: 100%;
@@ -3558,6 +3632,13 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
   color: #fff; }
+  .page-build .btn-pop {
+    -webkit-animation: showdarkandlight 2s ease;
+            animation: showdarkandlight 2s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
   .page-build .build-1 {
     position: absolute;
     top: 50%;
@@ -3644,10 +3725,22 @@ body {
   background-color: transparent; }
   .page-build-2 .back {
     position: absolute;
-    top: 10%;
+    top: 10px;
     left: 10px;
     width: 10px;
-    padding: 15px; }
+    padding: 15px;
+    white-space: nowrap; }
+    .page-build-2 .back .icon {
+      display: inline-block;
+      vertical-align: middle;
+      width: 10px;
+      margin-right: 10px;
+      -webkit-animation: littlemove 2s ease;
+              animation: littlemove 2s ease;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
   .page-build-2 .logo {
     margin-top: 12%; }
   .page-build-2 .musicname {
@@ -3672,12 +3765,22 @@ body {
     padding: 10px; }
   .page-build-2 .left {
     top: 43%;
-    left: 3%; }
+    left: 3%;
+    -webkit-animation: littlemove 2s ease;
+            animation: littlemove 2s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
   .page-build-2 .right {
     top: 43%;
     right: 3%;
-    -webkit-transform: scale(-1, 1);
-            transform: scale(-1, 1); }
+    -webkit-animation: littlemoveright 2s ease;
+            animation: littlemoveright 2s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
   .page-build-2 .topic {
     width: 90%;
     position: relative;
@@ -3741,7 +3844,9 @@ body {
   .ctrl-image .image-content {
     position: relative;
     width: 100%;
-    z-index: 99; }
+    z-index: 99;
+    border-radius: 50%;
+    overflow: hidden; }
     .ctrl-image .image-content canvas {
       width: 100%;
       border-radius: 50%;
@@ -3784,14 +3889,14 @@ body {
     background: url("http://image.giccoo.com/projects/corona/img/mask-note.png") no-repeat center center;
     background-size: cover;
     background-color: transparent;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    overflow: hidden; }
+    background-color: rgba(0, 0, 0, 0.5); }
   .ctrl-image .preview {
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 1; }
+    z-index: 1;
+    border-radius: 50%;
+    overflow: hidden; }
 
 .page-image {
   z-index: 70;
@@ -3865,7 +3970,7 @@ body {
 
 .share-note {
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.5); }
+  background-color: rgba(0, 0, 0, 0.9); }
   .share-note .close {
     position: absolute;
     top: 30%;

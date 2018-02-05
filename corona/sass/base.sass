@@ -31,6 +31,22 @@ $pageMainBGColor: #ffffff;
 	100%
 		transform: rotate(360deg)
 
++keyframes(littlemove)
+	0%,50%
+		transform: translate3d(0,0,0)
+		opacity: 1
+	100%
+		transform: translate3d(-10px,0,0)
+		opacity: 0.8
+
++keyframes(littlemoveright)
+	0%,50%
+		transform: translate3d(0,0,0) scale(-1,1)
+		opacity: 1
+	100%
+		transform: translate3d(10px,0,0) scale(-1,1)
+		opacity: 0.8
+
 +keyframes(moveleft)
 	0%,50%
 		transform: translate3d(0,0,0)
@@ -39,6 +55,16 @@ $pageMainBGColor: #ffffff;
 		transform: translate3d(-50px,0,0)
 		opacity: 0
 
++keyframes(showdarkandlight)
+	0%
+		opacity: 0.8
+		color: #ffee90
+	40%,60%
+		opacity: 1
+		color: #fff
+	100%
+		opacity: 0.8
+		color: #ffee90
 
 html,body
 	+w
@@ -420,6 +446,8 @@ body
 	+bc(rgba(0,0,0,0.5))
 	+overhide
 	color: #fff
+	.btn-pop
+		+animation(showdarkandlight,2s,ease,infinite)
 	.build-1
 		+posa
 		+tl(50%)
@@ -473,10 +501,16 @@ body
 	+b($cdn+"img/build-bg.jpg",no-repeat,center,bottom,cover)
 	.back
 		+posa
-		+tl(10%,10px)
+		+tl(10px,10px)
 		+w(10px)
 		+p(15px)
-
+		white-space: nowrap
+		.icon
+			display: inline-block
+			vertical-align: middle
+			+w(10px)
+			margin-right: 10px
+			+animation(littlemove,2s,ease,infinite)
 	.logo
 		margin-top: 12%
 	.musicname
@@ -487,11 +521,13 @@ body
 		+posa
 		+w(13px)
 		+p(10px)
+
 	.left
 		+tl(43%,3%)
+		+animation(littlemove,2s,ease,infinite)
 	.right
 		+tr(43%,3%)
-		+transform(scale(-1,1))
+		+animation(littlemoveright,2s,ease,infinite)
 
 	.topic
 		+w(90%)
@@ -533,6 +569,8 @@ body
 		+posr
 		+w
 		z-index: 99
+		border-radius: 50%
+		+overhide
 		canvas
 			+w
 			border：none
@@ -589,12 +627,14 @@ body
 		z-index: 10
 		+b($cdn+"img/mask-note.png",no-repeat,center,center,cover)
 		+bc(rgba(0,0,0,0.5))
-		border-radius: 50%
-		+overhide
+		// border-radius: 50%
+		// +overhide
 	.preview
 		+posa
 		+tl
 		z-index: 1
+		border-radius: 50%
+		+overhide
 .page-image
 	z-index: 70
 	+bc(#fff)
@@ -652,7 +692,7 @@ body
 				+w(60%)
 .share-note
 	z-index: 100
-	+bc(rgba(0,0,0,0.5))
+	+bc(rgba(0,0,0,0.9))
 	.close
 		+posa
 		+tr(30%,10%)

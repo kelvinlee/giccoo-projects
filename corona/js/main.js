@@ -1097,9 +1097,9 @@ info_link = "http://api.giccoo.com/sayno/corona/get/";
 sys = "other";
 
 // 《兄弟》
-name_list = ["一个像夏天一个像秋天", "十年", "有没有那么一首歌让你想起我", "兄弟"];
+name_list = ["一个像夏天一个像秋天", "十年 (可编辑)", "有没有那么一首歌让你想起我", "兄弟"];
 
-topic_list = ["那年握着一个128MB的MP3，\n每天放学路上，是属于我们的单曲循环。", "那年夏天，我们在操场唱着《十年》\n十年了，你们都在哪儿", "好久不见，你们现在还好吗？\n老朋友，我突然有点想你们了。", "嘿，兄弟，有什么事别一个人扛。\n一句话，兄弟我过来陪你。"];
+topic_list = ["那年握着一个128MB的MP3，\n每天放学路上，是属于我们的单曲循环。", "那年夏天，我们在操场唱着《十年》\n十年了，你们都在哪儿 (可编辑)", "好久不见，你们现在还好吗？\n老朋友，我突然有点想你们了。", "嘿，兄弟，有什么事别一个人扛。\n一句话，兄弟我过来陪你。"];
 
 waitTime = 10000;
 
@@ -1146,22 +1146,21 @@ runAnimate = function runAnimate() {
     y: 200,
     opacity: 0
   }));
-  // line.add TweenLite.to "#animate .animte-frame-1",1 ,{opacity: 1}
   return line.to("#animate .animte-frame-1", 0.8, {
     opacity: 1
   }).to("#animate .animte-frame-2", 0.8, {
     opacity: 1,
-    delay: 3
+    delay: 3.5
   }).to("#animate .animte-frame-3", 0.8, {
     opacity: 1,
-    delay: 3
+    delay: 3.5
   }).to("#animate .animte-frame-4", 0.8, {
     opacity: 1,
-    delay: 3
+    delay: 3.5
   }).to("#animate .animte-frame-4 .text", 0.8, {
     y: -800,
     opacity: 0,
-    delay: 3
+    delay: 3.5
   }).to("#animate .animte-frame-4 .sunlight", 0.8, {
     y: 0,
     opacity: 1,
@@ -1205,7 +1204,7 @@ window.onload = function () {
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
   } else {
-    stopWebViewScroll();
+    // stopWebViewScroll()
     loadWechatConfig();
     wx.ready(function () {
       var shareContent;
@@ -1289,14 +1288,14 @@ init = function init() {
       loading: false,
       mount: true,
       animate: false,
-      buildshow: false,
+      buildshow: true,
       shareNote: false,
       shareNoteSys: false,
       pop: false,
       buildstep: 1,
-      musicname: name_list[index],
-      topic: topic_list[index],
-      topichtml: "还记不记得那年夏天夜晚，<br/>我们站在湛蓝海岸",
+      musicname: name_list[1],
+      topic: topic_list[1],
+      // topichtml: "还记不记得那年夏天夜晚，<br/>我们站在湛蓝海岸"
       image: 1,
       imageselect: false,
       buildresult: "",
@@ -1328,9 +1327,11 @@ init = function init() {
           return runAnimate();
         }
       },
-      topic: function topic() {
-        return this.topichtml = this.topic.replace(/\n/g, "<br/>");
-      },
+      // topic: ->
+      // 	temp = @topic.replace(/\n/g,"<br/>")
+      // 	temp = temp.replace(' (可编辑)',"")
+      // 	console.log temp
+      // 	@topichtml = temp
       image: function image(val) {
         console.log(val);
         return document.getElementById("preview-img").src = "./img/p-" + val + ".jpg";
@@ -1346,7 +1347,13 @@ init = function init() {
     // 	document.getElementById("bgm").pause()
     computed: {
       musicnamefull: function musicnamefull() {
-        return "《" + this.musicname + "》";
+        return "《" + this.musicname.replace(' (可编辑)', "") + "》";
+      },
+      topichtml: function topichtml() {
+        var temp;
+        temp = this.topic.replace(/\n/g, "<br/>");
+        temp = temp.replace(' (可编辑)', "");
+        return temp;
       }
     },
     methods: {
@@ -1552,7 +1559,7 @@ init = function init() {
     mounted: function mounted() {
       // console.log "mount"
       riot.mount("*");
-      this.topichtml = this.topic.replace(/\n/g, "<br/>");
+      // @topichtml = @topic.replace(/\n/g,"<br/>")
       // document.getElementById("btn-build-show").addEventListener ANIMATION_END_NAME, (evt)->
       // 	console.log "can click"
       // 	main.animatend = false

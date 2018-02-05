@@ -60,7 +60,7 @@
               <div class="texts">
                 <h3>四、活动规则：</h3>
                 <p>1、2018年2月6日至2018年2月11日期间，用户可以通过网易云音乐平台的科罗娜H5参与互动，分享后赢取好礼。</p>
-                <p>2、抽奖结果将在H5页面即时揭晓，如因任何原因未填写成功则将自动失去获奖资格。</p>
+                <p>2、抽奖结果将在H5页面即时揭晓，填写中奖资料信息必须在2个小时以为完成否则视为放弃奖品，如有作弊者视为自动放弃领奖资格，如因任何原因未填写成功则将自动失去获奖资格。</p>
                 <p>3、兑奖方式：</p>
                 <p>主办方将会在活动结束后的40个工作日内，将相应奖品根据消费者填报的具体地址和信息发货。</p>
                 <p>如主办方无法联系上中奖消费者领取以上奖项，则视消费者自动放弃获奖资格。</p>
@@ -68,7 +68,7 @@
                 <h3>六、领奖规则：</h3>
                 <p>1、 消费者在活动网站提交信息后用户将不能对个人信息进行修改，所有个人信息将作为获奖后领奖的凭证； </p>
                 <p>2、 本次活动奖品个人所得税由获奖者自理，活动主办方有权按照中华人民共和国个人所得税法的有关规定，代扣代缴获奖者在本次活动中依法应当缴纳的个人所得税；</p>
-                <p>3、 所有奖品以实物为准，不得再行转让或用于任何其他商业目的，所有奖品     仅限于个人使用，兑奖后不提供任何退换服务。</p>
+                <p>3、 所有奖品以实物为准，不得再行转让或用于任何其他商业目的，所有奖品仅限于个人使用，兑奖后不提供任何退换服务。</p>
                 <h3>七、其他说明：</h3>
                 <p>1、 活动参与者理解并同意，活动参与者本人在参加本活动前已完整阅读了本活动规则（包括活动网站的规则）；对活动规则已完全理解并全部同意。活动参与者保证，在活动过程中，将完全遵照活动规则的规定参与活动；凡在本此活动中涉嫌使用不正当手段者，或主办方确有证据证明认为其有舞弊或其他不正当行为的活动参与者，主办方有权取消其参与活动、兑换奖品的权利。如有违反活动规则的恶意刷票、破坏等行为，会对涉事账号进行封号和取消活动资格处理。</p>
                 <p>本活动仅限个人参与，参与者需年满 18 周岁（以本活动开始之日起为准），且具有完全民事行为能力。</p>
@@ -91,7 +91,9 @@
       <transition name="page-animation">
         <div v-show="buildstep == 2" class="page page-build-2 build-2">
           <div class="logo f0"><img :src="'http://image.giccoo.com/projects/corona/img/build-logo.png'"></div>
-          <div @click="buildstep = 1" class="back f0"><img :src="'http://image.giccoo.com/projects/corona/img/icon-back.png'"></div>
+          <div @click="buildstep = 1" class="back">
+            <div class="icon"><img :src="'http://image.giccoo.com/projects/corona/img/arrow.png'"></div>重新编辑
+          </div>
           <div class="musicname">{{musicnamefull}}</div>
           <div class="build-image f0">
             <div class="bg"><img :src="'http://image.giccoo.com/projects/corona/img/build-image.png'"></div>
