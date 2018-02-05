@@ -902,6 +902,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/corona\/img\/content-bg.png": {
+		"ft": 32768,
+		"iS": 943,
+		"oA": 0,
+		"oAP": "\/corona\/img\/content-bg.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/corona\/img\/create-bg.png": {
 		"ft": 32768,
 		"iS": 0,
@@ -912,6 +923,13 @@
 		"opt": 1,
 		"oT": 1,
 		"q": 100
+		},
+	"\/corona\/img\/create-bg_tmp439379389": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/corona\/img\/create-bg_tmp439379389",
+		"oF": 0
 		},
 	"\/corona\/img\/create-footer.jpg": {
 		"ft": 16384,
@@ -962,6 +980,17 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/corona\/img\/icon-close.png": {
+		"ft": 32768,
+		"iS": 861,
+		"oA": 0,
+		"oAP": "\/corona\/img\/icon-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
@@ -1136,6 +1165,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/corona\/img\/share-image.png": {
+		"ft": 32768,
+		"iS": 49463,
+		"oA": 0,
+		"oAP": "\/corona\/img\/share-image.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/corona\/img\/share-mark.png": {
 		"ft": 32768,
 		"iS": 21927,
@@ -1208,13 +1248,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/corona\/mp3\/bgm.mp3",
-		"oF": 0
-		},
-	"\/corona\/mp3\/bgm2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/corona\/mp3\/bgm2.mp3",
 		"oF": 0
 		},
 	"\/corona\/sass\/base.sass": {

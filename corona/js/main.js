@@ -2,7 +2,7 @@
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var $_GET, ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, changeImage, css3Prefix, getRandom, global, i, imageLink, imageurl, info_link, init, l, len, loadWechatConfig, mTestElement, main, name_list, neteaseShare, post_url, pre, review, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare, waitTime;
+var $_GET, ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, _imgurl, changeImage, css3Prefix, getRandom, global, i, imageLink, imageurl, info_link, init, l, len, loadWechatConfig, mTestElement, main, name_list, neteaseShare, post_url, pre, review, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare, waitTime;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -1179,6 +1179,7 @@ init = function init() {
       animate: false,
       buildshow: false,
       shareNote: false,
+      shareNoteSys: false,
       pop: false,
       buildstep: 1,
       musicname: name_list[index],
@@ -1305,7 +1306,7 @@ init = function init() {
         bg = new Image();
         footer = new Image();
         image.onload = function (evt) {
-          ctx.drawImage(image, 320 - 280 / 2, 620 - 280 / 2, 280, 280);
+          ctx.drawImage(image, 320 - 280 / 2, 570 - 280 / 2, 280, 280);
           bg.onload = function (evt) {
             ctx.drawImage(bg, 0, 0, bg.width, bg.height);
             return writeText();
@@ -1321,11 +1322,11 @@ init = function init() {
           ctx.fillStyle = "#fff";
           ctx.textAlign = 'center';
           ctx.font = "24px '微软雅黑'";
-          ctx.fillText(self.musicnamefull, 320, 290);
+          ctx.fillText(self.musicnamefull, 320, 270);
           ctx.fillStyle = "#0c2440";
           ctx.textAlign = 'center';
-          ctx.font = "28px '微软雅黑'";
-          _runLongTexts(self.topic, ctx, 320, 850);
+          ctx.font = "24px '微软雅黑'";
+          _runLongTexts(self.topic, ctx, 320, 810);
           self.onUpload(canvas.toDataURL("image/png"));
           self.ugc = true;
           return self.ugcsrc = canvas.toDataURL("image/png");
@@ -1355,7 +1356,10 @@ init = function init() {
         }
         // console.log "sys:",sys
         if (sys === "NeteaseMusic") {
-          return main.showaward(waitTime);
+          // main.showaward(waitTime)
+          return setTimeout(function () {
+            return main.shareNoteSys = true;
+          }, 1000);
         } else {
           return main.shareNote = true;
         }
@@ -1363,6 +1367,10 @@ init = function init() {
       faild: function faild() {
         main.postfail = true;
         return alert("图片上传失败,请返回重新操作");
+      },
+      popshow: function popshow() {
+        // alert "show share"
+        return neteaseShare();
       },
       showaward: function showaward(time) {
         if (this.award > 0) {
@@ -1439,7 +1447,7 @@ _runLongTexts = function runLongTexts(texts, ctx, x, y) {
 
 // 修改分享内容
 updateShare = function updateShare(msg) {
-  var id, img, imgUrl, shareContent;
+  var _imgurl, id, imgUrl, shareContent;
   imgUrl = 'http://image.giccoo.com/sayno/corona/' + msg.filename + '@!large';
   if (msg.info.insertId != null && msg.info.insertId > 0) {
     id = "?id=" + msg.info.insertId;
@@ -1447,12 +1455,13 @@ updateShare = function updateShare(msg) {
     id = "";
   }
   if (sys === "NeteaseMusic") {
-    img = new Image();
-    img.onload = function () {
-      return neteaseShare(id, imgUrl);
-    };
-    return img.src = imgUrl;
+    return _imgurl = imgUrl;
   } else {
+    // neteaseShare id,imgUrl
+    // img = new Image()
+    // img.onload = ->
+    // 	neteaseShare id,imgUrl
+    // img.src = imgUrl
     main.shareNote = true;
     shareContent = {
       title: "有没有那么一首歌，让你想起……",
@@ -1474,12 +1483,14 @@ updateShare = function updateShare(msg) {
   }
 };
 
-neteaseShare = function neteaseShare(id, img) {
+_imgurl = "";
+
+neteaseShare = function neteaseShare() {
   var picUrl, redirectUrl, subTitle2, title1, title2;
   title1 = "有没有那么一首歌，让你想起……";
-  picUrl = img;
+  picUrl = _imgurl;
   // picUrl = "http://m.giccoo.com/corona/img/ico.jpg"
-  redirectUrl = "http://m.giccoo.com/corona/" + id;
+  redirectUrl = "http://m.giccoo.com/corona/";
   // redirectUrl = ""
   title2 = "有没有那么一首歌，让你想起……";
   subTitle2 = " ";

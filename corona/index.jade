@@ -40,10 +40,10 @@ block content
 				img(src="#{url}/img/home-text.png")
 		.page.page-animate(v-show="animate")
 			- var time = 25;
-			.item.animte-frame-1.duration-10.fadeInBig.animated(class="delay-#{time*0}")
-			.item.animte-frame-2.duration-10.fadeInBig.animated(class="delay-#{time*1}")
-			.item.animte-frame-3.duration-10.fadeInBig.animated(class="delay-#{time*2}")
-			.item.animte-frame-4.duration-10.fadeInBig.animated(class="delay-#{time*3}")
+			.item.animte-frame-1.duration-10.fadeIn.animated(class="delay-#{time*0}")
+			.item.animte-frame-2.duration-10.fadeIn.animated(class="delay-#{time*1}")
+			.item.animte-frame-3.duration-10.fadeIn.animated(class="delay-#{time*2}")
+			.item.animte-frame-4.duration-10.fadeIn.animated(class="delay-#{time*3}")
 				.text.fadeOutUp.duration-15.animated(class="delay-#{time*5}")
 					img(src="#{url}/img/animate-bg-text.png")
 				.sunlight.fadeInUp.duration-10.animated(class="delay-#{time*5}")
@@ -132,9 +132,16 @@ block content
 					canvas#result
 					img.ugc(v-if="ugc",:src="ugcsrc")
 		transition(name="page-animation")
-			.page.share-note(v-show="shareNote",style="display: none",@click="shareNote = false")
+			.page.share-note(v-show="shareNote",style="display: none",@click.stop="shareNote = false")
 				img(:src="'#{url}/img/share-mark.png'")
 				img.ugc(v-if="ugc",:src="ugcsrc")
+		transition(name="page-animation")
+			.page.share-note(v-show="shareNoteSys",style="display: none",@click.stop="popshow")
+				.close(@click.stop="shareNoteSys = false")
+					img(:src="'#{url}/img/icon-close.png'")
+				img(:src="'#{url}/img/share-image.png'")
+				img.ugc(v-if="ugc",:src="ugcsrc")
+
 		transition(name="page-animation")
 			//-  && award != "" && award > 0 ,style="display: none"
 			.page.last-page(v-show='lastpage')

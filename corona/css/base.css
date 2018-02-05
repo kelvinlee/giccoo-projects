@@ -3783,7 +3783,9 @@ body {
     background: url("../img/mask-note.png") no-repeat center center;
     background-size: cover;
     background-color: transparent;
-    background-color: rgba(0, 0, 0, 0.5); }
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    overflow: hidden; }
   .ctrl-image .preview {
     position: absolute;
     top: 0px;
@@ -3805,13 +3807,12 @@ body {
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite; }
+            animation-iteration-count: infinite;
+    z-index: 109; }
   .page-image .content {
     background-color: #fff;
     font-size: 0;
-    position: absolute;
-    bottom: 0px;
-    left: 0px; }
+    position: absolute; }
     .page-image .content canvas {
       width: 100%; }
 
@@ -3864,6 +3865,13 @@ body {
 .share-note {
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.5); }
+  .share-note .close {
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    width: 45px;
+    padding: 10px;
+    z-index: 1001; }
 
 .topall {
   position: absolute;
@@ -3959,11 +3967,16 @@ body {
 .page-view-img {
   background-color: #fff;
   font-size: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  background: url("..//img/content-bg.png") repeat top center;
+  background-size: initial;
+  background-color: transparent; }
   .page-view-img .content {
     position: absolute;
-    bottom: 0px;
-    left: 0px; }
+    top: 50%;
+    left: 0px;
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0); }
   .page-view-img .back {
     position: absolute;
     top: 10%;
@@ -3975,7 +3988,8 @@ body {
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite; }
+            animation-iteration-count: infinite;
+    z-index: 109; }
 
 .ugc {
   position: absolute;
@@ -3987,3 +4001,15 @@ body {
   height: 100%;
   opacity: 0;
   z-index: 1000; }
+
+.page-view-img, .page-image {
+  background: url("..//img/content-bg.png") no-repeat top center;
+  background-size: 100% 100%;
+  background-color: transparent;
+  overflow: hidden; }
+  .page-view-img .content, .page-image .content {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0); }

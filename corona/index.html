@@ -26,10 +26,10 @@
         <div class="text f0"><img src="./img/home-text.png"></div>
       </div>
       <div v-show="animate" class="page page-animate">
-        <div class="item animte-frame-1 duration-10 fadeInBig animated delay-0"></div>
-        <div class="item animte-frame-2 duration-10 fadeInBig animated delay-25"></div>
-        <div class="item animte-frame-3 duration-10 fadeInBig animated delay-50"></div>
-        <div class="item animte-frame-4 duration-10 fadeInBig animated delay-75">
+        <div class="item animte-frame-1 duration-10 fadeIn animated delay-0"></div>
+        <div class="item animte-frame-2 duration-10 fadeIn animated delay-25"></div>
+        <div class="item animte-frame-3 duration-10 fadeIn animated delay-50"></div>
+        <div class="item animte-frame-4 duration-10 fadeIn animated delay-75">
           <div class="text fadeOutUp duration-15 animated delay-125"><img src="./img/animate-bg-text.png"></div>
           <div class="sunlight fadeInUp duration-10 animated delay-125"></div>
           <div class="people fadeInUp durantion-12 animated delay-132"><img src="./img/animate-2-2.png"></div>
@@ -115,7 +115,12 @@
         </div>
       </transition>
       <transition name="page-animation">
-        <div v-show="shareNote" style="display: none" @click="shareNote = false" class="page share-note"><img :src="'./img/share-mark.png'"><img v-if="ugc" :src="ugcsrc" class="ugc"></div>
+        <div v-show="shareNote" style="display: none" @click.stop="shareNote = false" class="page share-note"><img :src="'./img/share-mark.png'"><img v-if="ugc" :src="ugcsrc" class="ugc"></div>
+      </transition>
+      <transition name="page-animation">
+        <div v-show="shareNoteSys" style="display: none" @click.stop="popshow" class="page share-note">
+          <div @click.stop="shareNoteSys = false" class="close"><img :src="'./img/icon-close.png'"></div><img :src="'./img/share-image.png'"><img v-if="ugc" :src="ugcsrc" class="ugc">
+        </div>
       </transition>
       <transition name="page-animation">
         <div v-show="lastpage" class="page last-page">

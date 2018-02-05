@@ -90,6 +90,7 @@ init = ->
 			animate: false
 			buildshow: false
 			shareNote: false
+			shareNoteSys: false
 			pop: false
 			buildstep: 1
 			musicname: name_list[index]
@@ -192,7 +193,7 @@ init = ->
 				bg = new Image()
 				footer = new Image()
 				image.onload = (evt)->
-					ctx.drawImage(image, 320-280/2, 620-280/2, 280, 280)
+					ctx.drawImage(image, 320-280/2, 570-280/2, 280, 280)
 					bg.onload = (evt)->
 						ctx.drawImage(bg, 0, 0, bg.width, bg.height)
 						writeText()
@@ -205,11 +206,11 @@ init = ->
 					ctx.fillStyle = "#fff";
 					ctx.textAlign = 'center'
 					ctx.font = "24px '微软雅黑'"
-					ctx.fillText(self.musicnamefull,320,290)
+					ctx.fillText(self.musicnamefull,320,270)
 					ctx.fillStyle = "#0c2440"
 					ctx.textAlign = 'center'
-					ctx.font = "28px '微软雅黑'"
-					runLongTexts self.topic,ctx,320,850
+					ctx.font = "24px '微软雅黑'"
+					runLongTexts self.topic,ctx,320,810
 
 					self.onUpload canvas.toDataURL("image/png")
 					self.ugc = true
@@ -235,12 +236,19 @@ init = ->
 					@form.random = msg.random
 				# console.log "sys:",sys
 				if sys is "NeteaseMusic"
-					main.showaward(waitTime)
+					# main.showaward(waitTime)
+					setTimeout ->
+						main.shareNoteSys = true
+					,1000
 				else
 					main.shareNote = true
 			faild: ->
 				main.postfail = true
 				alert "图片上传失败,请返回重新操作"
+			popshow: ->
+				# alert "show share"
+				neteaseShare()
+
 			showaward: (time)->
 				if @award > 0
 					@haveaward = true
@@ -295,6 +303,7 @@ runLongTexts = (texts,ctx,x,y)->
 		runLongTexts list,ctx,x,y
 
 # 修改分享内容
+
 updateShare = (msg)->
 	imgUrl= "http://image.giccoo.com/sayno/corona/#{msg.filename}@!large"
 	if msg.info.insertId? && msg.info.insertId > 0
@@ -302,10 +311,12 @@ updateShare = (msg)->
 	else
 		id = ""
 	if sys is "NeteaseMusic"
-		img = new Image()
-		img.onload = ->
-			neteaseShare id,imgUrl
-		img.src = imgUrl
+		_imgurl = imgUrl
+		# neteaseShare id,imgUrl
+		# img = new Image()
+		# img.onload = ->
+		# 	neteaseShare id,imgUrl
+		# img.src = imgUrl
 	else
 		main.shareNote = true
 		shareContent =
@@ -323,12 +334,12 @@ updateShare = (msg)->
 		wx.onMenuShareAppMessage shareContent
 		wx.onMenuShareQQ shareContent
 		wx.onMenuShareWeibo shareContent
-
-neteaseShare = (id,img)->
+_imgurl = ""
+neteaseShare = ->
 	title1 = "有没有那么一首歌，让你想起……"
-	picUrl = img
+	picUrl = _imgurl
 	# picUrl = "http://m.giccoo.com/corona/img/ico.jpg"
-	redirectUrl = "http://m.giccoo.com/corona/"+id
+	redirectUrl = "http://m.giccoo.com/corona/"
 	# redirectUrl = ""
 	title2 = "有没有那么一首歌，让你想起……"
 	subTitle2 = " "
