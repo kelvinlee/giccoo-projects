@@ -60,11 +60,11 @@ function loading(){
   TweenLite.set($("#loadingPage"),{display:"block"})
     for (var i =  0; i < loadT.length; i++) {
       TweenLite.set(loadT[i],{top:"50%",y:"-50%"})
-      TweenLite.from(loadT[i],1.5,{opacity:0,y:"+=30",delay:0.1*i,scaleX:1,overwrite:0})
-      TweenLite.to(loadT[i],1.5,{opacity:0,y:"-=0",delay:3+.1*i,overwrite:0})
+      TweenLite.from(loadT[i],1.5,{opacity:0,y:"+=30",delay:0.1*i+1,scaleX:1,overwrite:0})
+      TweenLite.to(loadT[i],1.5,{opacity:0,y:"-=0",delay:3+.1*i+1,overwrite:0})
     };
 
-    TweenLite.set($("#loadingPage"),{display:"none",delay:5-0,onComplete:showHomePage})//----------------------------------改这里
+    TweenLite.set($("#loadingPage"),{display:"none",delay:5-0+1,onComplete:showHomePage})//----------------------------------改这里
 
 }
 
