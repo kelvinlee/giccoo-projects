@@ -8,7 +8,7 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "致努力的自己",
+      title: "2017这么努力，2018的小目标还远吗？",
       desc: descA[descAnum],
       link: "http://m.giccoo.com/to_me/",
       imgUrl: "http://m.giccoo.com/to_me/img/ico.jpg",
@@ -60,7 +60,7 @@ function loading(){
   TweenLite.set($("#loadingPage"),{display:"block"})
     for (var i =  0; i < loadT.length; i++) {
       TweenLite.set(loadT[i],{top:"50%",y:"-50%"})
-      TweenLite.from(loadT[i],1.5,{opacity:0,y:"+=30",delay:0.1*i,scaleX:1.2,overwrite:0})
+      TweenLite.from(loadT[i],1.5,{opacity:0,y:"+=30",delay:0.1*i,scaleX:1,overwrite:0})
       TweenLite.to(loadT[i],1.5,{opacity:0,y:"-=0",delay:3+.1*i,overwrite:0})
     };
 
@@ -279,7 +279,7 @@ $("#btnStart").click(function(){
   wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "致努力的自己",
+      title: "2017这么努力，2018的小目标还远吗？",
       desc: descA[descAnum],
       link: "http://m.giccoo.com/to_me/",
       imgUrl: "http://m.giccoo.com/to_me/img/ico.jpg",
