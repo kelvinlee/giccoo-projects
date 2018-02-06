@@ -924,6 +924,13 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/corona\/img\/create-bg_tmp265574189": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/corona\/img\/create-bg_tmp265574189",
+		"oF": 0
+		},
 	"\/corona\/img\/create-footer.jpg": {
 		"ft": 16384,
 		"iS": 21813,
@@ -1216,6 +1223,16 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"\/corona\/js\/fetch-build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/corona\/js\/fetch-build-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
 	"\/corona\/js\/fetch.js": {
 		"ft": 64,
 		"ma": 0,
@@ -1388,7 +1405,7 @@
 		},
 	"\/friso-island\/img\/avatar-10.jpg": {
 		"ft": 16384,
-		"iS": 6732,
+		"iS": 7421,
 		"oA": 0,
 		"oAP": "\/friso-island\/img\/avatar-10.jpg",
 		"oF": 0,
@@ -2044,7 +2061,7 @@
 		},
 	"\/friso-island\/img\/planet-bg.jpg": {
 		"ft": 16384,
-		"iS": 226896,
+		"iS": 194619,
 		"oA": 0,
 		"oAP": "\/friso-island\/img\/planet-bg.jpg",
 		"oF": 0,
@@ -2139,7 +2156,7 @@
 		"oAP": "\/friso-island\/mp3\/beard.mp3",
 		"oF": 0
 		},
-	"\/friso-island\/mp3\/BGM.mp3": {
+	"\/friso-island\/mp3\/bgm.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
