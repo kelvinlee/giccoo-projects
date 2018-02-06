@@ -101,6 +101,9 @@ window.onload = ->
 			if msg.info.image?
 				imageLink = msg.info.image
 				document.getElementById("page-image").style = "display: block"
+				document.getElementById("view-img").style = "display: none"
+				document.getElementById("view-img").onload = ->
+					document.getElementById("view-img").style = "display: block"
 				document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{msg.info.image}@!large"
 			else
 				init()
@@ -109,6 +112,9 @@ window.onload = ->
 				init()
 			else
 				document.getElementById("page-image").style = "display: block"
+				document.getElementById("view-img").style = "display: none"
+				document.getElementById("view-img").onload = ->
+					document.getElementById("view-img").style = "display: block"
 				document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{imageLink}@!large"
 				review()
 
