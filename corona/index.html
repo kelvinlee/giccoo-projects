@@ -21,9 +21,7 @@
   </head>
   <body>
     <audio id="bgm" src="http://image.giccoo.com/projects/corona/mp3/bgm.mp3" loop="true" preload="auto"></audio>
-    <div id="page-image" v-show="show" style="display: none" class="page page-view-img"><a href="http://m.giccoo.com/corona/" class="back"><img src="http://image.giccoo.com/projects/corona/img/icon-back.png"></a>
-      <div class="content"><img id="view-img"></div>
-    </div>
+    <div id="page-image" style="display: none" class="page page-view-img"><a href="http://m.giccoo.com/corona/" class="back"><img src="http://image.giccoo.com/projects/corona/img/icon-back.png"></a><img id="view-img" class="ugcimage"></div>
     <div id="main" v-show="mount" style="display: none" class="main">
       <div v-show="loading" class="loading">
         <div class="text">努力上传中请稍后...</div>

@@ -751,14 +751,12 @@ body
 	+overhide
 	+b($cdn+"img/content-bg.png",repeat,top,center)
 	+posr
-	.content
+	img.ugcimage
+		+posa
+		+tl(50%)
 		+w
-		+posr
-		img
-			+posa
-			+tl(50%)
-			+w
-			+transform(translate3d(0,-50%,0))
+		+h(auto)
+		+transform(translate3d(0,-50%,0))
 	.back
 		+posa
 		+tl(10%,2%)
