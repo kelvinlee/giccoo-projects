@@ -164,6 +164,7 @@ init = ->
 			cacheArea: ""
 			cacheName: ""
 			awardText: ""
+			awardlink: ""
 			form:
 				username: ""
 				mobile: ""
@@ -304,6 +305,7 @@ init = ->
 				# main.loading =  false
 				updateShare msg
 				main.awardText = msg.awardname
+				main.awardlink = msg.awardlink if msg.awardlink?
 				if msg.award?
 					@award = msg.award
 					@form.random = msg.random
@@ -333,6 +335,11 @@ init = ->
 				setTimeout ->
 					main.lastpage = true
 				,time
+			gotoregister: ->
+				if @awardlink is ""
+					@register = true
+				else
+					window.location.href = @awardlink
 			onSubmit: (evt)->
 				console.log @form
 				if @form.username.length < 1

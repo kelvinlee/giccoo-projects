@@ -177,7 +177,7 @@ block content
 				.box
 					.fail(v-show="noaward",style="display: none",@click="window.location.reload()")
 						img(:src="'#{url}/img/award-faild-text.jpg'")
-					.success(v-show="haveaward && register == false && registertext == false",style="display: none",@click="register = true")
+					.success(v-show="haveaward && register == false && registertext == false",style="display: none",@click="gotoregister")
 						.award-text 恭喜您获得: <br/> {{awardText}}
 						img(:src="'./img/award-success-text.jpg'")
 					.register(v-if="haveaward && register")
@@ -209,7 +209,7 @@ block js
 	script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/axios.min.js")
 	//- script(src="/libs/js/min/jquery.min.js")
-	script(src="js/main.js")
+	script(src="js/main.js?v=1")
 	
 
 

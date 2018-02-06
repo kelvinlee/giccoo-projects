@@ -142,7 +142,7 @@
           <div class="logo"><img :src="'http://image.giccoo.com/projects/corona/img/award-logo.png'"></div>
           <div class="box">
             <div v-show="noaward" style="display: none" @click="window.location.reload()" class="fail"><img :src="'http://image.giccoo.com/projects/corona/img/award-faild-text.jpg'"></div>
-            <div v-show="haveaward &amp;&amp; register == false &amp;&amp; registertext == false" style="display: none" @click="register = true" class="success">
+            <div v-show="haveaward &amp;&amp; register == false &amp;&amp; registertext == false" style="display: none" @click="gotoregister" class="success">
               <div class="award-text">恭喜您获得: <br/> {{awardText}}</div><img :src="'./img/award-success-text.jpg'">
             </div>
             <div v-if="haveaward &amp;&amp; register" class="register">
@@ -177,6 +177,6 @@
     <script src="http://image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
     <script src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
     <script src="http://image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=1"></script>
   </body>
 </html>
