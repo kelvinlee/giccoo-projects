@@ -94,16 +94,15 @@ window.onload = ->
 	# 		loadend: false
 	# 检查分享回调, 是否显示用户创建的图片
 	if $_GET["id"] && $_GET["id"] > 0
-		axios.get info_link+"?id="+$_GET["id"]
+		fetch info_link+"?id="+$_GET["id"]
 		.then (msg)->
-			if msg.data.recode == 200
-				if msg.data.info.image?
-					imageLink = msg.data.info.image
-					document.getElementById("page-image").style = "display: block"
-					document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{msg.data.info.image}@!large"
-					review()
-				else
-					init()
+			return msg.json()
+		.then (msg)->
+			console.log msg
+			if msg.info.image?
+				imageLink = msg.info.image
+				document.getElementById("page-image").style = "display: block"
+				document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{msg.info.image}@!large"
 			else
 				init()
 		.catch (e)->
@@ -113,7 +112,28 @@ window.onload = ->
 				document.getElementById("page-image").style = "display: block"
 				document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{imageLink}@!large"
 				review()
+
 		return false
+		# axios.get info_link+"?id="+$_GET["id"]
+		# .then (msg)->
+		# 	if msg.data.recode == 200
+		# 		if msg.data.info.image?
+		# 			imageLink = msg.data.info.image
+		# 			document.getElementById("page-image").style = "display: block"
+		# 			document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{msg.data.info.image}@!large"
+		# 			review()
+		# 		else
+		# 			init()
+		# 	else
+		# 		init()
+		# .catch (e)->
+		# 	if imageLink is ""
+		# 		init()
+		# 	else
+		# 		document.getElementById("page-image").style = "display: block"
+		# 		document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{imageLink}@!large"
+		# 		review()
+		# return false
 	init()
 	# document.getElementById("bgm").addEventListener "play", ->
 	# 	alert "play"
