@@ -98,7 +98,6 @@ window.onload = ->
 		.then (msg)->
 			return msg.json()
 		.then (msg)->
-			console.log msg
 			if msg.info.image?
 				imageLink = msg.info.image
 				document.getElementById("page-image").style = "display: block"

@@ -750,10 +750,15 @@ body
 	font-size: 0
 	+overhide
 	+b($cdn+"img/content-bg.png",repeat,top,center)
+	+posr
 	.content
-		+posa
-		+tl(50%)
-		+transform(translate3d(0,-50%,0))
+		+w
+		+posr
+		img
+			+posa
+			+tl(50%)
+			+w
+			+transform(translate3d(0,-50%,0))
 	.back
 		+posa
 		+tl(10%,2%)
