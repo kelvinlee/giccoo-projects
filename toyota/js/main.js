@@ -121,9 +121,9 @@ function startTouch(event){
         pageUpDown=0
       }; 
 
-      if (nowX-startX>80&&nowLayer!=0&&nowPage==1) {
+      if (nowX-startX>50&&nowLayer!=0&&nowPage==1) {
         pageLR=1
-      }else if (nowX-startX< -80&&nowLayer!=3&&nowPage==1) {
+      }else if (nowX-startX< -50&&nowLayer!=3&&nowPage==1) {
         pageLR=-1
       }else{
         pageLR=0
@@ -189,7 +189,7 @@ function startTouch(event){
           if (i==1) {ani2()};
           if (i==3) {ani4()};
           if (i!=0) {
-            TweenLite.set($('#videoDiv1'),{opacity:0})
+            //TweenLite.set($('#videoDiv1'),{opacity:0})
             $('#video1')[0].pause()
           };
 
