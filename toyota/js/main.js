@@ -54,7 +54,7 @@ function initPage(){
   TweenLite.set($('#p2pic1'),{left:0})
   TweenLite.set($('#p2title1'),{left:0})
   //TweenLite.set($('#videoDiv1'),{opacity:0})
-  TweenLite.set($('#videoDiv2'),{top:-(screenW/640*1138-screenH)/2})
+  TweenLite.set($('#videoDiv2'),{top:-(screenW/640*1138-screenH)/2,height:screenW/640*1138})
 }
 var p2A=[$("#p2t1"),$("#p2t2"),$("#p2t3")]
 var p4A=[$("#p4t1"),$("#p4t2"),$("#p4t3"),$("#p4t4"),$("#p4t5")]
