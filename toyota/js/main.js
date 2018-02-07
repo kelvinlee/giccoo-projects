@@ -67,6 +67,11 @@ $('#videoDiv1').click(function(){
   $('#video1')[0].play()
 })
 
+$('#videoDiv2').click(function(){
+  //TweenLite.set($('#videoDiv1'),{opacity:1})
+  $('#video2')[0].play()
+})
+
 function ani2(){
   for (var i = 0; i < p2A.length; i++) {
     TweenLite.set(p2A[i],{y:"-50%"})
