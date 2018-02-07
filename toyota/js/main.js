@@ -53,7 +53,7 @@ function initPage(){
   TweenLite.set($('#dot1'),{display:"block"})
   TweenLite.set($('#p2pic1'),{left:0})
   TweenLite.set($('#p2title1'),{left:0})
-  TweenLite.set($('#videoDiv1'),{opacity:0})
+  //TweenLite.set($('#videoDiv1'),{opacity:0})
   TweenLite.set($('#videoDiv2'),{top:-(screenW/640*1138-screenH)/2})
 }
 var p2A=[$("#p2t1"),$("#p2t2"),$("#p2t3")]
