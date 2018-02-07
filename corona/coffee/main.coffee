@@ -2,26 +2,61 @@
 # @codekit-prepend "../../libs/js/min/riot.min.js"
 # @codekit-prepend "../js/ctrl.js"
 
+# http://api.giccoo.com/sayno/corona
+_CDN = ""
 _imgurl = ""
 global = {}
 main = {}
 pre = {}
+load = {}
 imageurl = "http://api.giccoo.com/sayno/corona/create/"
 post_url = "http://api.giccoo.com/sayno/corona/insert/"
 info_link= "http://api.giccoo.com/sayno/corona/get/"
 sys = "other"
 # 《兄弟》
-name_list = ["一个像夏天一个像秋天","十年","有没有那么一首歌让你想起我","兄弟"]
+name_list = ["一个像夏天一个像秋天","十年 (可编辑)","有没有那么一首歌让你想起我","兄弟"]
 topic_list= [
 	"那年握着一个128MB的MP3，\n每天放学路上，是属于我们的单曲循环。"
-	"那年夏天，我们在操场唱着《十年》\n十年了，你们都在哪儿"
+	"那年夏天，我们在操场唱着《十年》\n十年了，你们都在哪儿 (可编辑)"
 	"好久不见，你们现在还好吗？\n老朋友，我突然有点想你们了。"
 	"嘿，兄弟，有什么事别一个人扛。\n一句话，兄弟我过来陪你。"
 ]
-waitTime = 5000
+waitTime = 10000
 imageLink = ""
 
+runAnimate = ->
+	# dom = document.getElementById("animate")
+	# console.log TweenLite.to("#animate .animte-frame-1", 2, {backgroundColor:"#ff0000", width:"50%", top:"100px"});
+	line = new TimelineLite()
+	line.add TweenLite.set("#animate .animte-frame-1" ,{opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-2" ,{opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-3" ,{opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-4" ,{opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-4 .text" ,{y: 0, opacity: 1})
+	line.add TweenLite.set("#animate .animte-frame-4 .sunlight" ,{y: 800, opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-4 .people" ,{y: 400, opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-4 .text-1" ,{y: 200, opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-4 .text-2" ,{y: 200, opacity: 0})
+	line.add TweenLite.set("#animate .animte-frame-4 .text-3" ,{y: 200, opacity: 0})
 
+	line.to("#animate .animte-frame-1", 0.8, {opacity: 1})
+	.to("#animate .animte-frame-2", 0.8, {opacity: 1, delay: 3.5})
+	.to("#animate .animte-frame-3", 0.8, {opacity: 1, delay: 3.5})
+	.to("#animate .animte-frame-4", 0.8, {opacity: 1, delay: 3.5})
+	.to("#animate .animte-frame-4 .text", 0.8, {y: -800, opacity: 0, delay: 3.5})
+	.to("#animate .animte-frame-4 .sunlight", 0.8, {y: 0, opacity: 1, delay: -1})
+	.to("#animate .animte-frame-4 .people", 0.8, {y: 0, opacity: 1, delay: 0})
+	.to("#animate .animte-frame-4 .text-3", 0.6, {y: 0, opacity: 1, delay: 0})
+	.to("#animate .animte-frame-4 .text-2", 0.6, {y: 0, opacity: 1, delay: -0.3})
+	.to("#animate .animte-frame-4 .text-1", 0.6, {y: 0, opacity: 1, delay: -0.3, onComplete: ->
+		# alert "over animate"
+		main.animatend = false
+	})
+	
+
+	# line.add TweenLite.to "#animate .animte-frame-2",1 ,{opacity: 1,delay: 5}
+
+ 
 changeImage = ->
 	console.log "image changed"
 	main.imageselect = true
@@ -29,10 +64,13 @@ getRandom = (length)->
 	return parseInt(Math.random()*(length+1)-1)
 window.onload = ->
 
+	# runAnimate()
+	# return false
+
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
 	else
-		stopWebViewScroll()
+		# stopWebViewScroll()
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
@@ -49,18 +87,24 @@ window.onload = ->
 			wx.onMenuShareQQ shareContent
 			wx.onMenuShareWeibo shareContent
 
+	# loading
+	# load = new Vue
+	# 	el: "#load"
+	# 	data:
+	# 		loadend: false
 	# 检查分享回调, 是否显示用户创建的图片
 	if $_GET["id"] && $_GET["id"] > 0
-		axios.get info_link+"?id="+$_GET["id"]
+		fetch info_link+"?id="+$_GET["id"]
 		.then (msg)->
-			if msg.data.recode == 200
-				if msg.data.info.image?
-					imageLink = msg.data.info.image
-					document.getElementById("page-image").style = "display: block"
-					document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{msg.data.info.image}@!large"
-					review()
-				else
-					init()
+			return msg.json()
+		.then (msg)->
+			if msg.info.image?
+				imageLink = msg.info.image
+				document.getElementById("page-image").style = "display: block"
+				document.getElementById("view-img").style = "display: none"
+				document.getElementById("view-img").onload = ->
+					document.getElementById("view-img").style = "display: block"
+				document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{msg.info.image}"
 			else
 				init()
 		.catch (e)->
@@ -68,17 +112,18 @@ window.onload = ->
 				init()
 			else
 				document.getElementById("page-image").style = "display: block"
-				document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{imageLink}@!large"
+				document.getElementById("view-img").style = "display: none"
+				document.getElementById("view-img").onload = ->
+					document.getElementById("view-img").style = "display: block"
+				document.getElementById("view-img").src = "http://image.giccoo.com/sayno/corona/#{imageLink}"
 				review()
+
 		return false
 	init()
-	# document.getElementById("bgm").addEventListener "play", ->
-	# 	alert "play"
+
+loadEnd = ->
+
 review = ->
-	view = new Vue
-		el: "#page-image"
-		data:
-			show: true
 
 init = ->
 	index = getRandom(name_list.length)
@@ -94,14 +139,15 @@ init = ->
 			shareNoteSys: false
 			pop: false
 			buildstep: 1
-			musicname: name_list[index]
-			topic: topic_list[index]
-			topichtml: "还记不记得那年夏天夜晚，<br/>我们站在湛蓝海岸"
+			musicname: name_list[1]
+			topic: topic_list[1]
+			# topichtml: "还记不记得那年夏天夜晚，<br/>我们站在湛蓝海岸"
 			image: 1
 			imageselect: false
 			buildresult: ""
 			buildover: false
 			award: ""
+			creatEnd: false
 			lastpage: false
 			noaward: false
 			haveaward: false
@@ -113,6 +159,8 @@ init = ->
 			ugcsrc: ""
 			cacheArea: ""
 			cacheName: ""
+			awardText: ""
+			awardlink: ""
 			form:
 				username: ""
 				mobile: ""
@@ -120,8 +168,15 @@ init = ->
 				code: ""
 				random: ""
 		watch:
-			topic: ->
-				@topichtml = @topic.replace(/\n/g,"<br/>")
+			animate: (val)->
+				if val
+					runAnimate()
+			# topic: ->
+			# 	temp = @topic.replace(/\n/g,"<br/>")
+			# 	temp = temp.replace(' (可编辑)',"")
+			# 	console.log temp
+			# 	@topichtml = temp
+
 			image: (val)->
 				console.log val
 				document.getElementById("preview-img").src = "./img/p-"+val+".jpg"
@@ -134,7 +189,11 @@ init = ->
 				# 	document.getElementById("bgm").pause()
 		computed:
 			musicnamefull: ->
-				return "《"+@musicname+"》"
+				return "《"+@musicname.replace(' (可编辑)',"")+"》"
+			topichtml: ->
+				temp = @topic.replace(/\n/g,"<br/>")
+				temp = temp.replace(' (可编辑)',"")
+				return temp
 		methods:
 			# 切换图片
 			playbgm: ->
@@ -181,6 +240,11 @@ init = ->
 				else if @topic.length <= 0
 					alert "请输入要对老朋友说的话"
 				else
+					texts = @topic.split("\n")
+					for i in texts
+						console.log i.replace(/[^\x00-\xff]/g,"01").length
+						return alert "请控制您丰富的感情当行文字不能超过20个中文字符以内" if i.replace(/[^\x00-\xff]/g,"01").length > 40
+
 					@buildstep = 2
 			buildimage: ->
 				self = @
@@ -212,13 +276,13 @@ init = ->
 					ctx.textAlign = 'center'
 					ctx.font = "24px '微软雅黑'"
 					runLongTexts self.topic,ctx,320,810
-
+					main.creatEnd = true
 					self.onUpload canvas.toDataURL("image/png")
 					self.ugc = true
 					self.ugcsrc = canvas.toDataURL("image/png")
 			onUpload: (image)->
 
-				main.loading = true
+				# main.loading = true
 				data = {
 					image: image
 				}
@@ -228,10 +292,16 @@ init = ->
 						main.success(msg.data)
 					else
 						main.faild()
+				.catch (e)->
+					# alert e
+					main.faild()
 			success: (msg)->
 				# 上传图片成功
 				# console.log msg
+				# main.loading =  false
 				updateShare msg
+				main.awardText = msg.awardname
+				main.awardlink = msg.awardlink if msg.awardlink?
 				if msg.award?
 					@award = msg.award
 					@form.random = msg.random
@@ -244,6 +314,7 @@ init = ->
 				else
 					main.shareNote = true
 			faild: ->
+				main.loading =  false
 				main.postfail = true
 				alert "图片上传失败,请返回重新操作"
 			popshow: ->
@@ -260,6 +331,11 @@ init = ->
 				setTimeout ->
 					main.lastpage = true
 				,time
+			gotoregister: ->
+				if @awardlink is ""
+					@register = true
+				else
+					window.location.href = @awardlink
 			onSubmit: (evt)->
 				console.log @form
 				if @form.username.length < 1
@@ -289,17 +365,20 @@ init = ->
 		mounted: ->
 			# console.log "mount"
 			riot.mount("*")
-			@topichtml = @topic.replace(/\n/g,"<br/>")
-			document.getElementById("btn-build-show").addEventListener ANIMATION_END_NAME, (evt)->
-				console.log "can click"
-				main.animatend = false
+			# @topichtml = @topic.replace(/\n/g,"<br/>")
+			# document.getElementById("btn-build-show").addEventListener ANIMATION_END_NAME, (evt)->
+			# 	console.log "can click"
+			# 	main.animatend = false
+			loadEnd()
+			# runAnimate()
+
 
 # canvas 轮训文字
 runLongTexts = (texts,ctx,x,y)->
 	all = texts.split('\n')
 	if texts.length > 0
 		text = all[0]
-		ctx.fillText(text,x,y)
+		ctx.fillText(text.replace(' (可编辑)',""),x,y)
 		list = texts.replace(text+"\n","")
 		list = list.replace(text,"")
 		y += 26*1.4

@@ -1,14 +1,12 @@
 @import sass/base
-// @import ../../libs/sass/parallax
-@import ../../libs/sass/loader-ball
 
-$debug : true
+$debug : false
 $cdn : "../"
 @if not $debug
-	$cdn : "http://image.giccoo.com/projects/zhishinews/"
+	$cdn : "http://image.giccoo.com/projects/corona/"
 
 // animation, delay, duration
-@for $i from 1 through 300
+@for $i from 1 through 10
 	.delay-#{$i}
 		animation-delay: $i*100ms
 	.duration-#{$i}
@@ -17,19 +15,28 @@ $cdn : "../"
 $fontColor: #000000;
 $pageMainBGColor: #ffffff;
 
-+keyframes(fadeInBig)
-	0%
-		// transform: scale(1.5,1.5)
-		opacity: 0
-	100%
-		// transform: scale(1,1)
-		opacity: 1
 
 +keyframes(second)
 	0%
 		transform: rotate(0deg)
 	100%
 		transform: rotate(360deg)
+
++keyframes(littlemove)
+	0%,50%
+		transform: translate3d(0,0,0)
+		opacity: 1
+	100%
+		transform: translate3d(-10px,0,0)
+		opacity: 0.8
+
++keyframes(littlemoveright)
+	0%,50%
+		transform: translate3d(0,0,0) scale(-1,1)
+		opacity: 1
+	100%
+		transform: translate3d(10px,0,0) scale(-1,1)
+		opacity: 0.8
 
 +keyframes(moveleft)
 	0%,50%
@@ -39,6 +46,16 @@ $pageMainBGColor: #ffffff;
 		transform: translate3d(-50px,0,0)
 		opacity: 0
 
++keyframes(showdarkandlight)
+	0%
+		opacity: 0.8
+		color: #ffee90
+	40%,60%
+		opacity: 1
+		color: #fff
+	100%
+		opacity: 0.8
+		color: #ffee90
 
 html,body
 	+w
@@ -420,6 +437,8 @@ body
 	+bc(rgba(0,0,0,0.5))
 	+overhide
 	color: #fff
+	.btn-pop
+		+animation(showdarkandlight,2s,ease,infinite)
 	.build-1
 		+posa
 		+tl(50%)
@@ -473,10 +492,16 @@ body
 	+b($cdn+"img/build-bg.jpg",no-repeat,center,bottom,cover)
 	.back
 		+posa
-		+tl(10%,10px)
+		+tl(10px,10px)
 		+w(10px)
 		+p(15px)
-
+		white-space: nowrap
+		.icon
+			display: inline-block
+			vertical-align: middle
+			+w(10px)
+			margin-right: 10px
+			+animation(littlemove,2s,ease,infinite)
 	.logo
 		margin-top: 12%
 	.musicname
@@ -487,11 +512,13 @@ body
 		+posa
 		+w(13px)
 		+p(10px)
+
 	.left
 		+tl(43%,3%)
+		+animation(littlemove,2s,ease,infinite)
 	.right
 		+tr(43%,3%)
-		+transform(scale(-1,1))
+		+animation(littlemoveright,2s,ease,infinite)
 
 	.topic
 		+w(90%)
@@ -533,6 +560,8 @@ body
 		+posr
 		+w
 		z-index: 99
+		border-radius: 50%
+		+overhide
 		canvas
 			+w
 			border：none
@@ -595,6 +624,8 @@ body
 		+posa
 		+tl
 		z-index: 1
+		border-radius: 50%
+		+overhide
 .page-image
 	z-index: 70
 	+bc(#fff)
@@ -630,6 +661,13 @@ body
 			+posa
 			+tl(15%,20%)
 			+w(60%)
+		.success
+			.award-text
+				+text-center
+				+font-size(1rem)
+				line-height: 1.6rem
+				font-weight: bold
+				+p(16px 0)
 	.register
 		color: #1a2840
 		+w(80%)
@@ -652,7 +690,7 @@ body
 				+w(60%)
 .share-note
 	z-index: 100
-	+bc(rgba(0,0,0,0.5))
+	+bc(rgba(0,0,0,0.9))
 	.close
 		+posa
 		+tr(30%,10%)
@@ -711,10 +749,13 @@ body
 	+bc(#fff)
 	font-size: 0
 	+overhide
-	+b($cdn+"/img/content-bg.png",repeat,top,center)
-	.content
+	+b($cdn+"img/content-bg.png",repeat,top,center)
+	+posr
+	img.ugcimage
 		+posa
 		+tl(50%)
+		+w
+		+h(auto)
 		+transform(translate3d(0,-50%,0))
 	.back
 		+posa
@@ -734,9 +775,37 @@ body
 	z-index: 1000
 
 .page-view-img,.page-image
-	+b($cdn+"/img/content-bg.png",no-repeat,top,center,100% 100%)
+	+b($cdn+"img/content-bg.png",no-repeat,top,center,100% 100%)
 	+overhide
 	.content
 		+posa
 		+tl(50%)
 		+transform(translate3d(0,-50%,0))
+		+w
+		.loading-text
+			+posa
+			+tl(50%)
+			+w
+			+text-center
+			+font-size(0.8rem)
+			color: #666
+
+
+.loading
+	+posa
+	+tl
+	+w
+	+h
+	+bc(rgba(0,0,0,0.7))
+	z-index: 10010
+	.text
+		+posa
+		+tl(50%)
+		+transform(translate3d(0,-50%,0))
+		+w
+		+text-center
+		+font-size(0.8rem)
+		color: #fff
+	.ball-spin-fade-loader
+		+posa
+		+tl(50%,50%)

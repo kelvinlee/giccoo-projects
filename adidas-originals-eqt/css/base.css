@@ -1093,33 +1093,33 @@ body {
       .iphone4 .fingers .arrows .arrow {
         width: 7.8125%; }
     .fingers .arrows .arrow-0 {
-      top: 47.602156516px;
+      top: 98.7068394666px;
       left: 10%;
       -webkit-animation-delay: 100ms;
               animation-delay: 100ms;
-      -webkit-animation-duration: 1007.51930939ms;
-              animation-duration: 1007.51930939ms; }
+      -webkit-animation-duration: 1632.2591355ms;
+              animation-duration: 1632.2591355ms; }
     .fingers .arrows .arrow-1 {
-      top: 10.365580743px;
+      top: 13.0450405229px;
       left: 25%;
       -webkit-animation-delay: 400ms;
               animation-delay: 400ms;
-      -webkit-animation-duration: 1434.36907201ms;
-              animation-duration: 1434.36907201ms; }
+      -webkit-animation-duration: 1913.9159051ms;
+              animation-duration: 1913.9159051ms; }
     .fingers .arrows .arrow-2 {
-      top: 86.1460323097px;
+      top: 59.537129387px;
       left: 75%;
       -webkit-animation-delay: 300ms;
               animation-delay: 300ms;
-      -webkit-animation-duration: 1991.87049295ms;
-              animation-duration: 1991.87049295ms; }
+      -webkit-animation-duration: 1449.9330833ms;
+              animation-duration: 1449.9330833ms; }
     .fingers .arrows .arrow-3 {
-      top: 16.0885100007px;
+      top: 33.4381264006px;
       left: 90%;
       -webkit-animation-delay: 200ms;
               animation-delay: 200ms;
-      -webkit-animation-duration: 1503.02556132ms;
-              animation-duration: 1503.02556132ms; }
+      -webkit-animation-duration: 1816.47052357ms;
+              animation-duration: 1816.47052357ms; }
 
 .player-list {
   width: 80%;
@@ -1140,7 +1140,7 @@ body {
       .player-list .player-item:nth-child(even) .player:after {
         left: auto;
         right: 45%;
-        background: url("../img/line-b.png") no-repeat center center;
+        background: url("http://image.giccoo.com/projects/adidas-originals-eqt/img/line-b.png") no-repeat center center;
         background-size: contain;
         background-color: transparent; }
       .player-list .player-item:nth-child(even) .title {
@@ -1195,7 +1195,7 @@ body {
       left: 45%;
       width: 110%;
       height: 110%;
-      background: url("../img/line.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/adidas-originals-eqt/img/line.png") no-repeat center center;
       background-size: contain;
       background-color: transparent;
       z-index: -1; }

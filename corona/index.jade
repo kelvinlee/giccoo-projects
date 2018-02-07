@@ -6,7 +6,7 @@ block css
 	meta(name="author",content="m.giccoo.com")
 	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
 	link(rel="stylesheet",href="css/base.css")
-	//- script.
+	script.
 		var _hmt = _hmt || [];
 		(function() {
 			var hm = document.createElement("script");
@@ -17,16 +17,22 @@ block css
 
 block content
 	- url = "http://image.giccoo.com/projects/corona"
-	- url = "."
+	//- - url = "."
 	
-	.load
-	audio#bgm(src="./mp3/bgm.mp3",loop="true",preload="auto")
-	#page-image.page.page-view-img(v-show="show",style="display: none")
+	//- #load.loading(v-if="!loadend")
+		.ball-spin-fade-loader
+			-for (var i=0;i<8;i++)
+				div
+
+	audio#bgm(src="#{url}/mp3/bgm.mp3",loop="true",preload="auto")
+	#page-image.page.page-view-img(style="display: none")
 		a.back(href="http://m.giccoo.com/corona/")
 			img(src="#{url}/img/icon-back.png")
-		.content
-			img#view-img
+		img#view-img.ugcimage
 	#main.main(v-show="mount",style="display: none")
+		.loading(v-show="loading")
+			.text 努力上传中请稍后...
+
 		.logo-main
 			img(src="#{url}/img/logo.png")
 		.player-fix
@@ -34,26 +40,43 @@ block content
 				img(src="#{url}/img/music-touch.png")
 			.record(:class="{on: playing}",@click="playbgm")
 				img(src="#{url}/img/music.png")
+		//- .page.page-animate#animate
+			- var time = 25;
+			.item.animte-frame-1
+			.item.animte-frame-2
+			.item.animte-frame-3
+			.item.animte-frame-4
+				.text
+					img(src="#{url}/img/animate-bg-text.png")
+				.sunlight
+				.people
+					img(src="#{url}/img/animate-2-2.png")
+				#btn-build-show.text-1
+					img(src="#{url}/img/animate-2-3.png")
+				.text-2
+					img(src="#{url}/img/animate-2-4.png")
+				.text-3
+					img(src="#{url}/img/animate-2-5.png")
 		.page.page-home
 			.btn.btn-enter(@click="animate = true,animatend = true")
 			.text.f0
 				img(src="#{url}/img/home-text.png")
-		.page.page-animate(v-show="animate")
+		.page.page-animate#animate(v-show="animate")
 			- var time = 25;
-			.item.animte-frame-1.duration-10.fadeIn.animated(class="delay-#{time*0}")
-			.item.animte-frame-2.duration-10.fadeIn.animated(class="delay-#{time*1}")
-			.item.animte-frame-3.duration-10.fadeIn.animated(class="delay-#{time*2}")
-			.item.animte-frame-4.duration-10.fadeIn.animated(class="delay-#{time*3}")
-				.text.fadeOutUp.duration-15.animated(class="delay-#{time*5}")
+			.item.animte-frame-1
+			.item.animte-frame-2
+			.item.animte-frame-3
+			.item.animte-frame-4
+				.text
 					img(src="#{url}/img/animate-bg-text.png")
-				.sunlight.fadeInUp.duration-10.animated(class="delay-#{time*5}")
-				.people.fadeInUp.durantion-12.animated(class="delay-#{time*5+7}")
+				.sunlight
+				.people
 					img(src="#{url}/img/animate-2-2.png")
-				#btn-build-show.text-1.fadeInUp.duration-10.animated(v-show="buildshow == false",class="delay-#{time*5+10+1}",@click="if (!animatend) {buildshow = true}")
+				#btn-build-show.text-1(v-show="buildshow == false",@click="if (!animatend) {buildshow = true}")
 					img(src="#{url}/img/animate-2-3.png")
-				.text-2.fadeInUp.duration-10.animated(v-show="buildshow == false",class="delay-#{time*5+10+3}")
+				.text-2(v-show="buildshow == false")
 					img(src="#{url}/img/animate-2-4.png")
-				.text-3.fadeInUp.duration-10.animated(v-show="buildshow == false",class="delay-#{time*5+10+5}")
+				.text-3(v-show="buildshow == false")
 					img(src="#{url}/img/animate-2-5.png")
 		transition(name="page-animation")
 			.page.page-build(v-show="buildshow && buildstep == 1")
@@ -76,11 +99,11 @@ block content
 					.close(@click="pop = false")
 						img(:src="'#{url}/img/close.jpg'")
 					.content.touch.f0
-						img(:src="'#{url}/img/pop-info.jpg'")
+						img(:src="'#{url}/img/pop-info.jpg'",v-if="pop")
 						.texts
 							h3 四、活动规则：
-							p 1、2018年2月6日至2018年2月11日期间，用户可以通过网易云音乐平台的科罗娜H5参与互动，分享后赢取好礼。
-							p 2、抽奖结果将在H5页面即时揭晓，如因任何原因未填写成功则将自动失去获奖资格。
+							p 1、2018年2月6日至2018年2月11日期间，用户可以通过网易云音乐平台的科罗娜H5参与互动，分享至社交平台，就有机会赢取奖品。（中奖机制为系统随机抽取）
+							p 2、抽奖结果将在H5页面即时揭晓，填写中奖资料信息必须在2个小时以为完成否则视为放弃奖品，如有作弊者视为自动放弃领奖资格，如因任何原因未填写成功则将自动失去获奖资格。
 							p 3、兑奖方式：
 							p 主办方将会在活动结束后的40个工作日内，将相应奖品根据消费者填报的具体地址和信息发货。
 							p 如主办方无法联系上中奖消费者领取以上奖项，则视消费者自动放弃获奖资格。
@@ -88,7 +111,7 @@ block content
 							h3 六、领奖规则：
 							p 1、 消费者在活动网站提交信息后用户将不能对个人信息进行修改，所有个人信息将作为获奖后领奖的凭证； 
 							p 2、 本次活动奖品个人所得税由获奖者自理，活动主办方有权按照中华人民共和国个人所得税法的有关规定，代扣代缴获奖者在本次活动中依法应当缴纳的个人所得税；
-							p 3、 所有奖品以实物为准，不得再行转让或用于任何其他商业目的，所有奖品     仅限于个人使用，兑奖后不提供任何退换服务。
+							p 3、 所有奖品以实物为准，不得再行转让或用于任何其他商业目的，所有奖品仅限于个人使用，兑奖后不提供任何退换服务。
 							h3 七、其他说明：
 							p 1、 活动参与者理解并同意，活动参与者本人在参加本活动前已完整阅读了本活动规则（包括活动网站的规则）；对活动规则已完全理解并全部同意。活动参与者保证，在活动过程中，将完全遵照活动规则的规定参与活动；凡在本此活动中涉嫌使用不正当手段者，或主办方确有证据证明认为其有舞弊或其他不正当行为的活动参与者，主办方有权取消其参与活动、兑换奖品的权利。如有违反活动规则的恶意刷票、破坏等行为，会对涉事账号进行封号和取消活动资格处理。
 							p 本活动仅限个人参与，参与者需年满 18 周岁（以本活动开始之日起为准），且具有完全民事行为能力。
@@ -108,8 +131,10 @@ block content
 			.page.page-build-2.build-2(v-show="buildstep == 2")
 				.logo.f0
 					img(:src="'#{url}/img/build-logo.png'")
-				.back.f0(@click="buildstep = 1")
-					img(:src="'#{url}/img/icon-back.png'")
+				.back(@click="buildstep = 1")
+					.icon
+						img(:src="'#{url}/img/arrow.png'")
+					| 重新编辑
 				.musicname {{musicnamefull}}
 				.build-image.f0
 					.bg
@@ -129,7 +154,8 @@ block content
 				.back(@click="goback",v-if="postfail")
 					img(src="#{url}/img/icon-back.png")
 				.content
-					canvas#result
+					.loading-text(v-show="!creatEnd") 正在生成中...
+					canvas#result.fadeIn.animated(v-show="creatEnd")
 					img.ugc(v-if="ugc",:src="ugcsrc")
 		transition(name="page-animation")
 			.page.share-note(v-show="shareNote",style="display: none",@click.stop="shareNote = false")
@@ -150,8 +176,9 @@ block content
 				.box
 					.fail(v-show="noaward",style="display: none",@click="window.location.reload()")
 						img(:src="'#{url}/img/award-faild-text.jpg'")
-					.success(v-show="haveaward && register == false && registertext == false",style="display: none",@click="register = true")
-						img(:src="'#{url}/img/award-success-text.jpg'")
+					.success(v-show="haveaward && register == false && registertext == false",style="display: none",@click="gotoregister")
+						.award-text 恭喜您获得: <br/> {{awardText}}
+						img(:src="'./img/award-success-text.jpg'")
 					.register(v-if="haveaward && register")
 						h2 请填写您的详细信息
 						form.form#register(v-on:submit.prevent="onSubmit")
@@ -176,12 +203,13 @@ block js
 	- url = "/"
 	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
-	script(src="/libs/js/exif.js")
-	script(src="/libs/js/min/vue.min.js")
-	//- script(src="/libs/js/min/TweenMax.min.js")
-	script(src="/libs/js/min/axios.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/exif.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/axios.min.js")
 	//- script(src="/libs/js/min/jquery.min.js")
-	script(src="js/main.js")
+	script(src="js/fetch.js")
+	script(src="js/main.js?v=1")
 	
 
 

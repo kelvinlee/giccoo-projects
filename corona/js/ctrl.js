@@ -112,6 +112,7 @@ this.passImage = function(src) {
     var canvas, ctx, h, w, x, y;
     canvas = document.getElementById("imageCtrl");
     ctx = canvas.getContext("2d");
+    ctx.save();
     w = image.width;
     h = image.height;
     if (w > h) {
@@ -136,12 +137,15 @@ this.passImage = function(src) {
     ctx.drawImage(self.image, self.frame.x, self.frame.y, w, h);
     self.setDefault(self.frame.x, self.frame.y, w, h);
     self.frame.rotation = 90;
+    self.frame.rotation = 0;
+    ctx.restore();
     return self.init();
   };
   normalImage = function() {
     var canvas, ctx, h, w, x, y;
     canvas = document.getElementById("imageCtrl");
     ctx = canvas.getContext("2d");
+    ctx.save();
     w = image.width;
     h = image.height;
     if (w > h) {
@@ -162,6 +166,7 @@ this.passImage = function(src) {
     ctx.clearRect(-10000, -10000, 50000, 50000);
     ctx.drawImage(image, x, y, w, h);
     self.setDefault(x, y, w, h);
+    ctx.restore();
     return self.init();
   };
   image.onload = drawCanvasImage;
@@ -217,7 +222,8 @@ this.rotation = function() {
   ctx.translate(canvas.width / 2, canvas.height / 2);
   ctx.rotate(rotation);
   ctx.translate(-canvas.width / 2, -canvas.height / 2);
-  return ctx.drawImage(self.image, self.frame.x, self.frame.y, logSize.w, logSize.h);
+  ctx.drawImage(self.image, self.frame.x, self.frame.y, logSize.w, logSize.h);
+  ctx.rotate(-rotation);
 };
 
 this.getContent = function() {

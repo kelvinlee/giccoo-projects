@@ -656,7 +656,7 @@
 	"\/corona\/coffee\/main.coffee": {
 		"ft": 32,
 		"ma": 0,
-		"mi": 0,
+		"mi": 1,
 		"oA": 0,
 		"oAP": "\/corona\/js\/main.js",
 		"oF": 0,
@@ -835,7 +835,7 @@
 		"oAP": "\/corona\/img\/award-success-text.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/corona\/img\/btn-create.png": {
@@ -924,11 +924,11 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/corona\/img\/create-bg_tmp439379389": {
+	"\/corona\/img\/create-bg_tmp265574189": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/corona\/img\/create-bg_tmp439379389",
+		"oAP": "\/corona\/img\/create-bg_tmp265574189",
 		"oF": 0
 		},
 	"\/corona\/img\/create-footer.jpg": {
@@ -1223,6 +1223,26 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"\/corona\/js\/fetch-build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/corona\/js\/fetch-build-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/corona\/js\/fetch.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/corona\/js\/fetch-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
 	"\/corona\/js\/main.js": {
 		"ft": 64,
 		"ma": 0,
@@ -1260,7 +1280,7 @@
 		"oA": 0,
 		"oAP": "\/corona\/css\/base.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/crown": {
