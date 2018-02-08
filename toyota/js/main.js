@@ -60,7 +60,7 @@ var p2A=[$("#p2t1"),$("#p2t2"),$("#p2t3")]
 var p4A=[$("#p4t1"),$("#p4t2"),$("#p4t3"),$("#p4t4"),$("#p4t5")]
 
 $("#p4btn").click(function(){
-  window.location.href = "http://www.toyota.com.cn/olympic/mobile/Olympics-Paralympics/"
+  window.location.href = "http://www.toyota.com.cn/olympic/mobile/"
 })
 $('#videoDiv1').click(function(){
   TweenLite.set($('#videoDiv1'),{opacity:1})
