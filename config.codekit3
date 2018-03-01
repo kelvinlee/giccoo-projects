@@ -7,7 +7,7 @@
 		"uuidString": "DE83B16E-0B46-434B-8780-3294DEF21C1E"
 		}
 	],
-"creatorBuild": "26261",
+"creatorBuild": "26268",
 "files": {
 	"\/.babelrc": {
 		"cB": 0,
@@ -27,6 +27,12 @@
 		"ft": 65536,
 		"oA": 1,
 		"oAP": "\/build\/2017-new-year",
+		"oF": 0
+		},
+	"\/ad": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/ad",
 		"oF": 0
 		},
 	"\/adidas": {
@@ -2156,7 +2162,7 @@
 		"oAP": "\/friso-island\/mp3\/beard.mp3",
 		"oF": 0
 		},
-	"\/friso-island\/mp3\/BGM.mp3": {
+	"\/friso-island\/mp3\/bgm.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
@@ -3348,7 +3354,7 @@
 		"ft": 65536,
 		"oA": 1,
 		"oAP": "\/build\/libs\/css",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/img\/audio-play.png": {
 		"ft": 32768,
@@ -5211,6 +5217,16 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"\/test\/js\/player.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/test\/js\/player-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
 	"\/test\/js\/transition.js": {
 		"ft": 64,
 		"ma": 0,
@@ -5226,6 +5242,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/test\/js\/app.js",
+		"oF": 0
+		},
+	"\/test\/tags\/player.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/test\/js\/player.js",
 		"oF": 0
 		},
 	"\/test\/tags\/transition.tag": {
@@ -6364,6 +6387,358 @@
 		"oAP": "\/build\/Tongshuai",
 		"oF": 0
 		},
+	"\/toyota\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/toyota\/css",
+		"oF": 0
+		},
+	"\/toyota\/img\/arrow.png": {
+		"ft": 32768,
+		"iS": 808,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/arrow.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/cover1.jpg": {
+		"ft": 16384,
+		"iS": 42226,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/cover1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/cover11.jpg": {
+		"ft": 16384,
+		"iS": 12776,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/cover11.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/cover2.jpg": {
+		"ft": 16384,
+		"iS": 38756,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/cover2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/cover3.jpg": {
+		"ft": 16384,
+		"iS": 41876,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/cover3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/dot1.png": {
+		"ft": 32768,
+		"iS": 5771,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/dot1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/dot2.png": {
+		"ft": 32768,
+		"iS": 5474,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/dot2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/dot3.png": {
+		"ft": 32768,
+		"iS": 5756,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/dot3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/dot4.png": {
+		"ft": 32768,
+		"iS": 5756,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/dot4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/ico.png": {
+		"ft": 32768,
+		"iS": 5796,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/ico.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p1top2.jpg": {
+		"ft": 16384,
+		"iS": 139066,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p1top2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/p2pic1.jpg": {
+		"ft": 16384,
+		"iS": 60368,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2pic1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/p2pic2.jpg": {
+		"ft": 16384,
+		"iS": 53231,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2pic2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/p2pic3.jpg": {
+		"ft": 16384,
+		"iS": 75256,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2pic3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/p2pic4.jpg": {
+		"ft": 16384,
+		"iS": 25919,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2pic4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/p2t1.png": {
+		"ft": 32768,
+		"iS": 9000,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2t1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p2t2.png": {
+		"ft": 32768,
+		"iS": 15599,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2t2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p2t3.png": {
+		"ft": 32768,
+		"iS": 43978,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2t3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p2title11.png": {
+		"ft": 32768,
+		"iS": 22573,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2title11.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p2title22.png": {
+		"ft": 32768,
+		"iS": 28338,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2title22.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p2title33.png": {
+		"ft": 32768,
+		"iS": 20552,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2title33.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p2title44.png": {
+		"ft": 32768,
+		"iS": 29399,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2title44.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p4bg.jpg": {
+		"ft": 16384,
+		"iS": 95096,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p4bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/p4btn.png": {
+		"ft": 32768,
+		"iS": 7388,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p4btn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p4t1.png": {
+		"ft": 32768,
+		"iS": 8834,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p4t1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p4t2.png": {
+		"ft": 32768,
+		"iS": 8718,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p4t2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p4t3.png": {
+		"ft": 32768,
+		"iS": 8170,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p4t3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p4t4.png": {
+		"ft": 32768,
+		"iS": 6350,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p4t4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p4t5.png": {
+		"ft": 32768,
+		"iS": 9171,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p4t5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/toyota\/index.html",
+		"oF": 0
+		},
+	"\/toyota\/js\/jquery-2.2.1.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/toyota\/js\/jquery-2.2.1.min-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/toyota\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/toyota\/js\/main-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/toyota\/js\/TweenMax.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/toyota\/js\/TweenMax.min-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
 	"\/upload": {
 		"ft": 65536,
 		"oA": 1,
@@ -6552,11 +6927,33 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/zhihunews\/img\/loadingline-squashed.png": {
+		"ft": 32768,
+		"iS": 21990,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/loadingline-squashed.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/zhihunews\/img\/loadingline.png": {
 		"ft": 32768,
 		"iS": 22027,
 		"oA": 0,
 		"oAP": "\/zhihunews\/img\/loadingline.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihunews\/img\/loadingT-squashed.png": {
+		"ft": 32768,
+		"iS": 12395,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/loadingT-squashed.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6574,11 +6971,33 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/zhihunews\/img\/p1arrow-squashed.png": {
+		"ft": 32768,
+		"iS": 8227,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/p1arrow-squashed.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/zhihunews\/img\/p1arrow.png": {
 		"ft": 32768,
 		"iS": 10077,
 		"oA": 0,
 		"oAP": "\/zhihunews\/img\/p1arrow.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihunews\/img\/p1blacklayer-squashed.png": {
+		"ft": 32768,
+		"iS": 4182,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/p1blacklayer-squashed.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6596,11 +7015,33 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/zhihunews\/img\/p1bottom-squashed.png": {
+		"ft": 32768,
+		"iS": 193607,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/p1bottom-squashed.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/zhihunews\/img\/p1bottom.png": {
 		"ft": 32768,
 		"iS": 106038,
 		"oA": 0,
 		"oAP": "\/zhihunews\/img\/p1bottom.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihunews\/img\/p1hand-squashed.png": {
+		"ft": 32768,
+		"iS": 3502,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/p1hand-squashed.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6618,11 +7059,33 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/zhihunews\/img\/p1line-squashed.png": {
+		"ft": 32768,
+		"iS": 325,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/p1line-squashed.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/zhihunews\/img\/p1line.png": {
 		"ft": 32768,
 		"iS": 327,
 		"oA": 0,
 		"oAP": "\/zhihunews\/img\/p1line.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihunews\/img\/p1top-squashed.png": {
+		"ft": 32768,
+		"iS": 23053,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/p1top-squashed.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6650,6 +7113,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/zhihunews\/img\/p2bottom-squashed.png": {
+		"ft": 32768,
+		"iS": 6708,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/p2bottom-squashed.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/zhihunews\/img\/p2bottom.png": {
 		"ft": 32768,
 		"iS": 9192,
@@ -6671,6 +7145,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/zhihunews\/img\/p2top-squashed.png": {
+		"ft": 32768,
+		"iS": 3358,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/p2top-squashed.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/zhihunews\/img\/p2top.png": {
 		"ft": 32768,
 		"iS": 4242,
@@ -6690,6 +7175,17 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"\/zhihunews\/img\/p3top-squashed.png": {
+		"ft": 32768,
+		"iS": 3153,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/p3top-squashed.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/zhihunews\/img\/p3top.png": {
@@ -6843,11 +7339,33 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/zhihunews\/img\/p5top-squashed.png": {
+		"ft": 32768,
+		"iS": 2920,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/p5top-squashed.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/zhihunews\/img\/p5top.png": {
 		"ft": 32768,
 		"iS": 4347,
 		"oA": 0,
 		"oAP": "\/zhihunews\/img\/p5top.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihunews\/img\/p6pic-squashed.png": {
+		"ft": 32768,
+		"iS": 174005,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/p6pic-squashed.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6869,6 +7387,17 @@
 		"iS": 216131,
 		"oA": 0,
 		"oAP": "\/zhihunews\/img\/p6pic.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihunews\/img\/p6top-squashed.png": {
+		"ft": 32768,
+		"iS": 3389,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/p6top-squashed.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -7066,11 +7595,33 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/zhihunews\/img\/p7top-squashed.png": {
+		"ft": 32768,
+		"iS": 3599,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/p7top-squashed.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/zhihunews\/img\/p7top.png": {
 		"ft": 32768,
 		"iS": 5923,
 		"oA": 0,
 		"oAP": "\/zhihunews\/img\/p7top.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihunews\/img\/playbtn-squashed.png": {
+		"ft": 32768,
+		"iS": 4061,
+		"oA": 0,
+		"oAP": "\/zhihunews\/img\/playbtn-squashed.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -7584,7 +8135,7 @@
 		"name": "Riot",
 		"predicateDataBase64Encoded": "YnBsaXN0MDDUAQIDBAUGYmNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QFgcIDxQcJicqMTU6Oz5CRktMT1VZXV9VJG51bGzTCQoLDA0OXxAXTlNDb21wb3VuZFByZWRpY2F0ZVR5cGVfEA9OU1N1YnByZWRpY2F0ZXNWJGNsYXNzEAKAAoAV0hALERNaTlMub2JqZWN0c6ESgAOAFNQLFRYXGBkaG18QEU5TUmlnaHRFeHByZXNzaW9uXxAQTlNMZWZ0RXhwcmVzc2lvbl8QE05TUHJlZGljYXRlT3BlcmF0b3KAE4AOgASAEdUdHh8gCyEiIyQlWU5TT3BlcmFuZF5OU1NlbGVjdG9yTmFtZV8QEE5TRXhwcmVzc2lvblR5cGVbTlNBcmd1bWVudHOABoAFEAOACIANXHZhbHVlRm9yS2V5OtIfCygpEAGAB9IrLC0uWiRjbGFzc25hbWVYJGNsYXNzZXNfEBBOU1NlbGZFeHByZXNzaW9uoy0vMFxOU0V4cHJlc3Npb25YTlNPYmplY3TSEAsyNKEzgAmADNMLHzY3ODlZTlNLZXlQYXRogAsQCoAKXWlucHV0RmlsZW5hbWXSKyw8PV8QHE5TS2V5UGF0aFNwZWNpZmllckV4cHJlc3Npb26jPC8w0issP0BeTlNNdXRhYmxlQXJyYXmjP0EwV05TQXJyYXnSKyxDRF8QE05TS2V5UGF0aEV4cHJlc3Npb26kQ0UvMF8QFE5TRnVuY3Rpb25FeHByZXNzaW9u00cfC0hJSl8QD05TQ29uc3RhbnRWYWx1ZYAPEACAEFQudGFn0issTU5fEBlOU0NvbnN0YW50VmFsdWVFeHByZXNzaW9uo00vMNQLUFFSU0kjVFpOU01vZGlmaWVyV05TRmxhZ3NeTlNPcGVyYXRvclR5cGWAEhBj0issVldfEBVOU0luUHJlZGljYXRlT3BlcmF0b3KjVlgwXxATTlNQcmVkaWNhdGVPcGVyYXRvctIrLFpbXxAVTlNDb21wYXJpc29uUHJlZGljYXRlo1pcMFtOU1ByZWRpY2F0ZdIrLEFeokEw0issYGFfEBNOU0NvbXBvdW5kUHJlZGljYXRlo2BcMF8QD05TS2V5ZWRBcmNoaXZlctFkZVRyb290gAEACAARABoAIwAtADIANwBQAFYAXQB3AIkAkACSAJQAlgCbAKYAqACqAKwAtQDJANwA8gD0APYA+AD6AQUBDwEeATEBPQE\/AUEBQwFFAUcBVAFZAVsBXQFiAW0BdgGJAY0BmgGjAagBqgGsAa4BtQG\/AcEBwwHFAdMB2AH3AfsCAAIPAhMCGwIgAjYCOwJSAlkCawJtAm8CcQJ2AnsClwKbAqQCrwK3AsYCyALKAs8C5wLrAwEDBgMeAyIDLgMzAzYDOwNRA1UDZwNqA28AAAAAAAACAQAAAAAAAABmAAAAAAAAAAAAAAAAAAADcQ==",
 		"runOrder": 0,
-		"scriptSourceString": "riot $CK_INPUT_PATH --type coffee $CK_OUTPUT_PATH",
+		"scriptSourceString": "riot $CK_INPUT_PATH --template pug --type coffee $CK_OUTPUT_PATH",
 		"scriptType": 1,
 		"uuidString": "33428578-B7DD-45D5-9B91-A6D30337465F"
 		}
@@ -7603,6 +8154,7 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
 	"babelConfigFileHandlingType": 1,
@@ -9585,7 +10137,7 @@
 		],
 	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
-	"skippedFoldersString": "log, \n_logs, \nlogs, \n_cache, \ncache, \n\/storage\/framework\/sessions, \nnode_modules,\nadidas,\nadidas-bug,\n2017-new-year,\nanpin,\nariel_chefnic,\natta,\nbmw_form,\nbmwm30,\nBMWX1,\nccb,\nchairman,\ncitynight,\ncitynight-meitu,\ncrown,\ncss,\nCX5,\ndayan,\ndazhong,\ndicos,\nelr4,\nesteelauder,\nfriso,\nfriso-inland,\nGmoive,\nhire,\nhuawei_hb,\nhuawei_matebook,\nhuaweiG7,\nhuxiu_ministation,\nintel_form,\ninv,\niwatch,\njac,\njac_a60,\njaguar,\njaguar_AOP,\njaguar_fpace,\njiaomu,\nlamer,\nlancome_form,\nLandrover,\nLandroverM,\nLandroverN,\nldl-c4l,\nldl-ix25,\nliamtest,\nlincoln_mkz,\nlkk,\nmanagers,\nMate8,\nmaxshsow,\nmengniu,\nnightparty,\nnumerology,\npicturer,\nproduct,\nqa,\nquaker,\nquakerinfo,\nredbook,\nroewe_i6,\nroewe_i6_pc,\nsayno_create,\nsayno_mfw,\nsayno_momo,\nshortout,\nshow,\nshowman,\nshrimp,\nstarwars,\nTongshuai,\nupload,\nushape,\nuvexpert,\nvolvo_s60l,\nvolvo_v40,\nvolvo_v40_momo,\nvolvo_v40_one,\nvolvo_v40_v40cc_momo,\nvolvo_v40_v40cc_one,\nvolvo_v40_v40cc_weipiaoer,\nvolvo_v40_v40cc_zhihu,\nvolvo_v40_v60,\nvolvo_xc60,\nvolvo_xc90,\nvolvo_xc90_201601,\nvolvo_xc90_t6,\nvolvov60,\nvolvov60wp,\nwaimai,\nwbirthday,\nweilan,\nxinsuteng,\nyears,\nyida,\nYili-Eat-World,\nYili-fridge,\nYili-sugar,\nzhiqu",
+	"skippedFoldersString": "log, \n_logs, \nlogs, \n_cache, \ncache, \n\/storage\/framework\/sessions, \nnode_modules,\nadidas,\nadidas-bug,\n2017-new-year,\nanpin,\nariel_chefnic,\natta,\nbmw_form,\nbmwm30,\nBMWX1,\nccb,\nchairman,\ncitynight,\ncitynight-meitu,\ncrown,\ncss,\nCX5,\ndayan,\ndazhong,\ndicos,\nelr4,\nesteelauder,\nfriso,\nfriso-inland,\nGmoive,\nhire,\nhuawei_hb,\nhuawei_matebook,\nhuaweiG7,\nhuxiu_ministation,\nintel_form,\ninv,\niwatch,\njac,\njac_a60,\njaguar,\njaguar_AOP,\njaguar_fpace,\njiaomu,\nlamer,\nlancome_form,\nLandrover,\nLandroverM,\nLandroverN,\nldl-c4l,\nldl-ix25,\nliamtest,\nlincoln_mkz,\nlkk,\nmanagers,\nMate8,\nmaxshsow,\nmengniu,\nnightparty,\nnumerology,\npicturer,\nproduct,\nqa,\nquaker,\nquakerinfo,\nredbook,\nroewe_i6,\nroewe_i6_pc,\nsayno_create,\nsayno_mfw,\nsayno_momo,\nshortout,\nshow,\nshowman,\nshrimp,\nstarwars,\nTongshuai,\nupload,\nushape,\nuvexpert,\nvolvo_s60l,\nvolvo_v40,\nvolvo_v40_momo,\nvolvo_v40_one,\nvolvo_v40_v40cc_momo,\nvolvo_v40_v40cc_one,\nvolvo_v40_v40cc_weipiaoer,\nvolvo_v40_v40cc_zhihu,\nvolvo_v40_v60,\nvolvo_xc60,\nvolvo_xc90,\nvolvo_xc90_201601,\nvolvo_xc90_t6,\nvolvov60,\nvolvov60wp,\nwaimai,\nwbirthday,\nweilan,\nxinsuteng,\nyears,\nyida,\nYili-Eat-World,\nYili-fridge,\nYili-sugar,\nzhiqu,\nad",
 	"sourceFolderName": "source",
 	"susyVersion": 3,
 	"uglifyDefinesString": "",

@@ -4,7 +4,12 @@ riotVUE =
 	
 	init: (opts)->
 		self = this
-		
+		if riots?
+			unless riots[@root.localName]?
+				riots[@root.localName] = []
+			if riots[@root.localName]?
+				riots[@root.localName].push @
+
 		# 设置数组变更通知
 		["pop","push","reverse","shift","unshift","slice","splice","sort","filter","forEach"].forEach (method)=>
 			original = self.arrayMethods[method]
@@ -16,10 +21,13 @@ riotVUE =
 					return 
 				return run this, arguments
 		# 给 data 内的所有属性绑定监控
-		@eachAll this,this.data
+		# @eachAll this,this.data
 		# @eachAll this,this.opts
 		# 设置 $set 和 $delete .
-		
+	BD: ->
+		@eachAll this,this.data
+		console.log this.data
+
 	eachAll: (self,data)->
 		for key of data
 			@createProperty self,data,key,data[key]
@@ -33,6 +41,7 @@ riotVUE =
 		temp = val
 		Object.defineProperty data, pro,
 			configurable: true
+			enumerable: true
 			get: ->
 				return temp
 			set: (value)->

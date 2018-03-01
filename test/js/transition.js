@@ -9,15 +9,20 @@ ishow = null;
 self = this;
 
 this.data = {
-  class: {
-    [`${beforeName}-enter-active`]: false,
-    [`${beforeName}-enter`]: false,
-    [`${beforeName}-leave-active`]: false,
-    [`${beforeName}-leave-to`]: false
-  }
+  class: {}
 };
 
-this.mixin(riotVUE);
+this.data.class[beforeName + "-enter-active"] = false;
+
+this.data.class[beforeName + "-enter"] = false;
+
+this.data.class[beforeName + "-leave-active"] = false;
+
+this.data.class[beforeName + "-leave-to"] = false;
+
+console.log(beforeName, this.data);
+
+this.BD();
 
 // Css 动画处理
 if (beforeName) {
@@ -28,28 +33,28 @@ if (beforeName) {
     ishow = this.root.getAttribute("ishow");
     if (this.root.getAttribute("ishow") === "true") {
       this.root.style.display = null;
-      this.data.class[`${beforeName}-enter-active`] = true;
-      this.data.class[`${beforeName}-enter`] = true;
-      this.data.class[`${beforeName}-leave-active`] = false;
-      this.data.class[`${beforeName}-leave-to`] = false;
+      this.data.class[beforeName + "-enter-active"] = true;
+      this.data.class[beforeName + "-enter"] = true;
+      this.data.class[beforeName + "-leave-active"] = false;
+      this.data.class[beforeName + "-leave-to"] = false;
       return setTimeout(function() {
-        return self.data.class[`${beforeName}-enter`] = false;
+        return self.data.class[beforeName + "-enter"] = false;
       }, 1);
     } else {
-      this.data.class[`${beforeName}-enter-active`] = false;
-      this.data.class[`${beforeName}-enter`] = false;
-      this.data.class[`${beforeName}-leave-active`] = true;
-      return this.data.class[`${beforeName}-leave-to`] = true;
+      this.data.class[beforeName + "-enter-active"] = false;
+      this.data.class[beforeName + "-enter"] = false;
+      this.data.class[beforeName + "-leave-active"] = true;
+      return this.data.class[beforeName + "-leave-to"] = true;
     }
   };
   this.end = function() {
     if (ishow == null) {
       this.root.style.display = "none";
     }
-    this.data.class[`${beforeName}-enter-active`] = false;
-    this.data.class[`${beforeName}-enter`] = false;
-    this.data.class[`${beforeName}-leave-active`] = false;
-    return this.data.class[`${beforeName}-leave-to`] = false;
+    this.data.class[beforeName + "-enter-active"] = false;
+    this.data.class[beforeName + "-enter"] = false;
+    this.data.class[beforeName + "-leave-active"] = false;
+    return this.data.class[beforeName + "-leave-to"] = false;
   };
   this.on("updated", this.cssAnimate);
   this.on("mount", function() {

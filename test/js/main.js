@@ -2,7 +2,7 @@
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, css3Prefix, global, i, j, len, mTestElement, riotVUE;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, css3Prefix, i, j, len, mTestElement, riotVUE, riots;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -42,9 +42,16 @@ riotVUE = {
   init: function init(opts) {
     var self;
     self = this;
-
+    if (typeof riots !== "undefined" && riots !== null) {
+      if (riots[this.root.localName] == null) {
+        riots[this.root.localName] = [];
+      }
+      if (riots[this.root.localName] != null) {
+        riots[this.root.localName].push(this);
+      }
+    }
     // 设置数组变更通知
-    ["pop", "push", "reverse", "shift", "unshift", "slice", "splice", "sort", "filter", "forEach"].forEach(function (method) {
+    return ["pop", "push", "reverse", "shift", "unshift", "slice", "splice", "sort", "filter", "forEach"].forEach(function (method) {
       var original;
       original = self.arrayMethods[method];
       return self.newArrProto[method] = function () {
@@ -57,11 +64,15 @@ riotVUE = {
         return run(this, arguments);
       };
     });
-    // 给 data 内的所有属性绑定监控
-    return this.eachAll(this, this.data);
   },
+  // 给 data 内的所有属性绑定监控
+  // @eachAll this,this.data
   // @eachAll this,this.opts
   // 设置 $set 和 $delete .
+  BD: function BD() {
+    this.eachAll(this, this.data);
+    return console.log(this.data);
+  },
   eachAll: function eachAll(self, data) {
     var key, results;
     results = [];
@@ -84,6 +95,7 @@ riotVUE = {
     temp = val;
     return Object.defineProperty(data, pro, {
       configurable: true,
+      enumerable: true,
       get: function get() {
         return temp;
       },
@@ -100,4 +112,6 @@ riotVUE = {
 
 // @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/coffee/riot-vue"
-global = {};
+riot.mixin(riotVUE);
+
+riots = {};
