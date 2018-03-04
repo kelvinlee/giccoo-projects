@@ -62,8 +62,8 @@
       		}
       		var pointArray = [];
       		for (var i = 0; i < count; i++) {
-      			var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgba(0,50,255,0.8)",strokeWeight: 0, strokeColor: "rgba(0,255,0,0)"}); //建立多边形覆盖物
-      			//- map.addOverlay(ply);	//添加覆盖物
+      			var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgba(255,255,255,0.2)",strokeWeight: 0, strokeColor: "rgba(0,255,0,0)"}); //建立多边形覆盖物
+      			map.addOverlay(ply);	//添加覆盖物
       			pointArray = pointArray.concat(ply.getPath());
       		}
       		map.setViewport(pointArray);		//调整视野
@@ -94,8 +94,10 @@
       			var random1 = parseInt(Math.random()*30);
       			var random2 = parseInt(Math.random()*30);
       			var random3 = parseInt(Math.random()*30);
-      			console.log((random1+random2+random3)/90);
-      			var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgba("+(random1+100)+","+(random2+100)+","+(random3+135)+",0.8)",strokeWeight: 0, strokeColor: "rgba(0,0,0,0)"}); //建立多边形覆盖物
+      			console.log((random1+random2+random3)/180 * 2.5);
+      			var op = 0.8;
+      			//- var op = (random1+random2+random3)/180 * 2.5;
+      			var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgba("+(random1+100)+","+(random2+100)+","+(random3+135)+","+op+")",strokeWeight: 0, strokeColor: "rgba(0,0,0,0)"}); //建立多边形覆盖物
       			//- console.log(ply);
       			map.addOverlay(ply);	//添加覆盖物
       			pointArray = pointArray.concat(ply.getPath());
@@ -106,18 +108,18 @@
       				points.push({
       					"lng": list[k].split(",")[0],
       					"lat": list[k].split(",")[1],
-      					"count": parseInt(random1/30)
+      					"count": parseInt((random1+random2+random3)/90)
       				});
       			}
       			if (i == count-1 && index >= cityData[areaId].sub.length-1) {
       				//- console.log(points.length);
       				var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20,"gradient":{
-      					.1:"rgb(100, 100, 145)",
+      					.2:"rgb(100, 100, 145)",
       					.4:"rgb(100, 120, 135)",
-      					.8:"rgb(120, 100, 135)"
+      					.6:"rgb(120, 100, 135)"
       				}});
       				map.addOverlay(heatmapOverlay);
-      				heatmapOverlay.setDataSet({data:points,max:100});
+      				heatmapOverlay.setDataSet({data:points,max:90});
       				//- heatmapOverlay.show();
       			}
       		}
