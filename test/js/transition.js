@@ -39,12 +39,14 @@ if (beforeName) {
       this.data.class[beforeName + "-leave-to"] = false;
       return setTimeout(function() {
         return self.data.class[beforeName + "-enter"] = false;
-      }, 1);
+      }, 0);
     } else {
       this.data.class[beforeName + "-enter-active"] = false;
       this.data.class[beforeName + "-enter"] = false;
       this.data.class[beforeName + "-leave-active"] = true;
-      return this.data.class[beforeName + "-leave-to"] = true;
+      return setTimeout(function() {
+        return self.data.class[beforeName + "-leave-to"] = true;
+      }, 0);
     }
   };
   this.end = function() {
@@ -59,14 +61,15 @@ if (beforeName) {
   this.on("updated", this.cssAnimate);
   this.on("mount", function() {
     ishow = !this.opts.ishow;
-    this.root.addEventListener(TRANSITION_END_NAME, this.end.bind(this));
-    this.root.addEventListener(ANIMATION_END_NAME, this.end.bind(this));
     if (ishow) {
+      // @root.addEventListener TRANSITION_END_NAME, @end.bind @
+      // @root.addEventListener ANIMATION_END_NAME, @end.bind @
       return this.root.style.display = "none";
     }
   });
 } else {
   // @opts.enter.call()
+
   // Js  动画处理
   this.enterDone = function() {};
   this.leaveDone = function() {
@@ -79,6 +82,7 @@ if (beforeName) {
     ishow = this.root.getAttribute("ishow");
     if (this.root.getAttribute("ishow") === "true") {
       this.root.style.display = null;
+      // @root.removeAttribute("style") if @root.style.length <= 0
       return this.opts.enter(this.root, this.enterDone.bind(this));
     } else {
       return this.opts.leave(this.root, this.leaveDone.bind(this));

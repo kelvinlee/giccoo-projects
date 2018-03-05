@@ -1,0 +1,18 @@
+@import sass/base
+// @import ../../libs/sass/parallax
+@import ../../libs/sass/loader-ball
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "http://image.giccoo.com/projects/zhishinews/"
+
+.page-animation-enter-active
+	transition: all .6s ease
+.page-animation-leave-active
+	transition: all .6s linear
+.page-animation-enter, .page-animation-leave-to
+	opacity: 0
+
+body
+	+bc(#fff)

@@ -1,6 +1,3 @@
 # @codekit-prepend "coffee/css3Prefix"
-# @codekit-prepend "../../libs/coffee/riot-vue"
+# @codekit-prepend "../../libs/riot3/base"
 
-riot.mixin riotVUE
-
-riots = {}

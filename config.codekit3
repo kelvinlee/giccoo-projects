@@ -7,7 +7,7 @@
 		"uuidString": "DE83B16E-0B46-434B-8780-3294DEF21C1E"
 		}
 	],
-"creatorBuild": "26268",
+"creatorBuild": "26330",
 "files": {
 	"\/.babelrc": {
 		"cB": 0,
@@ -1293,12 +1293,6 @@
 		"ft": 65536,
 		"oA": 1,
 		"oAP": "\/build\/crown",
-		"oF": 0
-		},
-	"\/css": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "\/build\/css",
 		"oF": 0
 		},
 	"\/CX5": {
@@ -3200,9 +3194,9 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/css3Prefix.js",
-		"oF": 1,
+		"oF": 0,
 		"oS": 1,
 		"sC": 0,
 		"tS": 1
@@ -3211,9 +3205,9 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/load.js",
-		"oF": 1,
+		"oF": 0,
 		"oS": 1,
 		"sC": 0,
 		"tS": 1
@@ -3224,7 +3218,7 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/libs\/js\/orientation.js",
-		"oF": 1,
+		"oF": 0,
 		"oS": 1,
 		"sC": 0,
 		"tS": 1
@@ -3233,9 +3227,9 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/qrcode.js",
-		"oF": 1,
+		"oF": 0,
 		"oS": 1,
 		"sC": 0,
 		"tS": 1
@@ -3246,7 +3240,7 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/libs\/js\/requestanimation.js",
-		"oF": 1,
+		"oF": 0,
 		"oS": 1,
 		"sC": 0,
 		"tS": 1
@@ -3266,9 +3260,9 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/share.js",
-		"oF": 1,
+		"oF": 0,
 		"oS": 1,
 		"sC": 0,
 		"tS": 1
@@ -3288,63 +3282,8 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/viewport.js",
-		"oF": 1,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/libs\/coffee\/vue-book-page.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/libs\/js\/vue-book-page.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/libs\/coffee\/vue-book-pages.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/libs\/js\/vue-book-pages.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/libs\/coffee\/vue-player.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/libs\/js\/vue-player.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/libs\/coffee\/vue-register.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/libs\/js\/vue-register.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/libs\/coffee\/vue-video.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/libs\/js\/vue-video.js",
 		"oF": 0,
 		"oS": 1,
 		"sC": 0,
@@ -3359,9 +3298,9 @@
 	"\/libs\/img\/audio-play.png": {
 		"ft": 32768,
 		"iS": 4396,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/audio-play.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -3370,9 +3309,9 @@
 	"\/libs\/img\/audio-stop.png": {
 		"ft": 32768,
 		"iS": 4619,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/audio-stop.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -3381,9 +3320,9 @@
 	"\/libs\/img\/loading-normal.png": {
 		"ft": 32768,
 		"iS": 2448,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/loading-normal.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -3392,9 +3331,9 @@
 	"\/libs\/img\/loading.png": {
 		"ft": 32768,
 		"iS": 4852,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/loading.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -3403,9 +3342,9 @@
 	"\/libs\/img\/logo.jpg": {
 		"ft": 16384,
 		"iS": 6971,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/logo.jpg",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
@@ -3413,9 +3352,9 @@
 	"\/libs\/img\/logo.png": {
 		"ft": 32768,
 		"iS": 3314,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/logo.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -3424,9 +3363,9 @@
 	"\/libs\/img\/qr.jpg": {
 		"ft": 16384,
 		"iS": 28004,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/qr.jpg",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
@@ -3434,9 +3373,9 @@
 	"\/libs\/img\/wechat.png": {
 		"ft": 32768,
 		"iS": 28228,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/wechat.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -3446,7 +3385,7 @@
 		"cB": 0,
 		"cOD": 1,
 		"ft": 512,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/jade\/layout-640.html",
 		"oF": 0,
 		"oS": 0
@@ -3455,7 +3394,7 @@
 		"cB": 0,
 		"cOD": 1,
 		"ft": 512,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/jade\/layout-clean-wb.html",
 		"oF": 0,
 		"oS": 0
@@ -3473,7 +3412,7 @@
 		"cB": 0,
 		"cOD": 1,
 		"ft": 512,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/jade\/layout-ng-clean.html",
 		"oF": 0,
 		"oS": 0
@@ -3491,7 +3430,7 @@
 		"cB": 0,
 		"cOD": 1,
 		"ft": 512,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/jade\/layout.html",
 		"oF": 0,
 		"oS": 0
@@ -3500,61 +3439,61 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/angular-animate-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/angular-route.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/angular-route-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/angular-touch.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/angular-touch-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/angular.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/angular-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/baidu.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/baidu-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/cityData.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/cityData-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/exif.js": {
 		"ft": 64,
@@ -3570,21 +3509,21 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/head.built-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/js.cookie.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js.cookie-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/js\/photo-sphere-viewer.min-build.js": {
 		"ft": 64,
@@ -3600,79 +3539,79 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/megapix-image-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/angular-animate.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/angular-animate.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/angular-animate.min.js.map": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/js\/min\/angular-animate.min.js.map",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/js\/min\/angular-route.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/angular-route.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/angular-route.min.js.map": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/js\/min\/angular-route.min.js.map",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/js\/min\/angular-touch.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/angular-touch.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/angular-touch.min.js.map": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/js\/min\/angular-touch.min.js.map",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/js\/min\/angular.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/angular.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/angular.min.js.map": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/js\/min\/angular.min.js.map",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/js\/min\/axios.min.js": {
 		"ft": 64,
@@ -3688,11 +3627,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/cityData-min-build.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/D.min.js": {
 		"ft": 64,
@@ -3718,11 +3657,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/easeljs-0.8.0.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/easeljs.min.js": {
 		"ft": 64,
@@ -3738,61 +3677,61 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/fastclick.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/flashaudioplugin-0.6.0.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/flashaudioplugin-0.6.0.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/jquery.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/jquery.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/layzr.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/layzr.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/localforage.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/localforage.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/movieclip-0.8.0.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/movieclip-0.8.0.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/photo-sphere-viewer.min.js": {
 		"ft": 64,
@@ -3808,39 +3747,39 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/preloadjs-0.4.1.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/preloadjs-0.6.0.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/preloadjs-0.6.0.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/qrcode.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/qrcode.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/react-dom-server.browser.development.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/react-dom-server.browser.development-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 1
 		},
@@ -3848,9 +3787,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/react-dom.development-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 1
 		},
@@ -3858,9 +3797,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/react-dom.production.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 1
 		},
@@ -3868,9 +3807,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/react.development-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 1
 		},
@@ -3878,9 +3817,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/react.production.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 1
 		},
@@ -3898,11 +3837,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/riot-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/riot.min.js": {
 		"ft": 64,
@@ -3910,19 +3849,19 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/libs\/js\/js\/riot.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/soundjs-0.6.0.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/soundjs-0.6.0.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/three.min.js": {
 		"ft": 64,
@@ -3938,9 +3877,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/Tone.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 1
 		},
@@ -3948,11 +3887,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/tween-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/tween.min.js": {
 		"ft": 64,
@@ -3968,11 +3907,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/tweenjs-0.6.0.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/tweenjs.min.js": {
 		"ft": 64,
@@ -4018,21 +3957,21 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/Zepto.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/parallax.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/parallax-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/photo-sphere-viewer-build.js": {
 		"ft": 64,
@@ -4058,36 +3997,36 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/pixi.dev-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/pixi.dev.js.map": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/js\/pixi.dev.js.map",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/js\/pixi.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/pixi-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/require.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/require-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 1
 		},
@@ -4115,11 +4054,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/playsound-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/Three.DeviceOrientationControls-build.js": {
 		"ft": 64,
@@ -4145,11 +4084,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/viewport-build.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/vue-book-page.js": {
 		"ft": 64,
@@ -4174,9 +4113,9 @@
 	"\/libs\/qr\/308s.png": {
 		"ft": 32768,
 		"iS": 35743,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/308s.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4185,9 +4124,9 @@
 	"\/libs\/qr\/a3-wechat.png": {
 		"ft": 32768,
 		"iS": 35279,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/a3-wechat.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4196,9 +4135,9 @@
 	"\/libs\/qr\/Aircraft.png": {
 		"ft": 32768,
 		"iS": 35302,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Aircraft.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4207,9 +4146,9 @@
 	"\/libs\/qr\/bmwx1.png": {
 		"ft": 32768,
 		"iS": 392,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/bmwx1.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4218,9 +4157,9 @@
 	"\/libs\/qr\/borafun.png": {
 		"ft": 32768,
 		"iS": 35395,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/borafun.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4229,9 +4168,9 @@
 	"\/libs\/qr\/ccb.png": {
 		"ft": 32768,
 		"iS": 34148,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/ccb.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4240,9 +4179,9 @@
 	"\/libs\/qr\/crown.png": {
 		"ft": 32768,
 		"iS": 35635,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/crown.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4251,9 +4190,9 @@
 	"\/libs\/qr\/Dettol.png": {
 		"ft": 32768,
 		"iS": 35668,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Dettol.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4262,9 +4201,9 @@
 	"\/libs\/qr\/Dior.png": {
 		"ft": 32768,
 		"iS": 35440,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Dior.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4273,9 +4212,9 @@
 	"\/libs\/qr\/Ebook.png": {
 		"ft": 32768,
 		"iS": 35699,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Ebook.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4284,9 +4223,9 @@
 	"\/libs\/qr\/G.png": {
 		"ft": 32768,
 		"iS": 34827,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/G.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4295,9 +4234,9 @@
 	"\/libs\/qr\/guagua.png": {
 		"ft": 32768,
 		"iS": 35798,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/guagua.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4306,9 +4245,9 @@
 	"\/libs\/qr\/Haier.png": {
 		"ft": 32768,
 		"iS": 35270,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Haier.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4317,9 +4256,9 @@
 	"\/libs\/qr\/Haierw.png": {
 		"ft": 32768,
 		"iS": 35595,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Haierw.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4328,9 +4267,9 @@
 	"\/libs\/qr\/inv.png": {
 		"ft": 32768,
 		"iS": 34440,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/inv.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4339,9 +4278,9 @@
 	"\/libs\/qr\/iwatch.png": {
 		"ft": 32768,
 		"iS": 35482,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/iwatch.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4350,9 +4289,9 @@
 	"\/libs\/qr\/lenovo.png": {
 		"ft": 32768,
 		"iS": 35445,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/lenovo.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4361,9 +4300,9 @@
 	"\/libs\/qr\/lijinji.png": {
 		"ft": 32768,
 		"iS": 35367,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/lijinji.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4372,9 +4311,9 @@
 	"\/libs\/qr\/lkk.png": {
 		"ft": 32768,
 		"iS": 34675,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/lkk.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4383,9 +4322,9 @@
 	"\/libs\/qr\/Noco.png": {
 		"ft": 32768,
 		"iS": 35527,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Noco.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4394,9 +4333,9 @@
 	"\/libs\/qr\/Queen.png": {
 		"ft": 32768,
 		"iS": 35711,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Queen.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4405,9 +4344,9 @@
 	"\/libs\/qr\/Rio2.png": {
 		"ft": 32768,
 		"iS": 35893,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Rio2.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4416,9 +4355,9 @@
 	"\/libs\/qr\/shrimp.png": {
 		"ft": 32768,
 		"iS": 35512,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/shrimp.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4427,9 +4366,9 @@
 	"\/libs\/qr\/Tongshuai.png": {
 		"ft": 32768,
 		"iS": 14536,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Tongshuai.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4438,9 +4377,9 @@
 	"\/libs\/qr\/vs.png": {
 		"ft": 32768,
 		"iS": 35631,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/vs.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4450,54 +4389,106 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/react\/timer.js",
-		"oF": 1,
+		"oF": 0,
 		"oS": 1,
 		"sC": 0,
 		"tS": 1
 		},
+	"\/libs\/riot3\/base.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/libs\/riot3\/base.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/riot3\/ctrl-image.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/libs\/riot3\/ctrl-image.js",
+		"oF": 0
+		},
+	"\/libs\/riot3\/note.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/js\/note-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/riot3\/note.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/libs\/riot3\/note.js",
+		"oF": 0
+		},
+	"\/libs\/riot3\/riot-note.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/libs\/js\/riot-note-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/riot3\/transition.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/libs\/riot3\/transition.js",
+		"oF": 0
+		},
 	"\/libs\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/base.sassc": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/base.sassc",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/sass\/base.sass": {
 		"aP": 1,
@@ -4506,9 +4497,9 @@
 		"dS": 0,
 		"ft": 2,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/css\/base.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4521,7 +4512,7 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/libs\/css\/loader-ball.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4532,9 +4523,9 @@
 		"dS": 0,
 		"ft": 2,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/css\/loader-pacman.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4547,7 +4538,7 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/libs\/css\/loader.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4560,7 +4551,7 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/libs\/css\/loading.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4573,7 +4564,7 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/libs\/css\/normal.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4586,7 +4577,7 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/libs\/css\/parallax.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4643,6 +4634,61 @@
 		"oAP": "\/libs\/tags\/slider.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/libs\/vue\/vue-book-page.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/vue\/vue-book-page.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/vue\/vue-book-pages.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/vue\/vue-book-pages.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/vue\/vue-player.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/vue\/vue-player.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/vue\/vue-register.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/vue\/vue-register.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/vue\/vue-video.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/vue\/vue-video.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
 		},
 	"\/lincoln_mkz": {
 		"ft": 65536,
@@ -5190,6 +5236,12 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"\/test\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/test\/css",
+		"oF": 0
+		},
 	"\/test\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -5236,6 +5288,19 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 1
+		},
+	"\/test\/sass\/base.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/test\/css\/base.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		},
 	"\/test\/tags\/app.tag": {
 		"cB": 0,
@@ -6927,33 +6992,11 @@
 		"opt": 0,
 		"q": 100
 		},
-	"\/zhihunews\/img\/loadingline-squashed.png": {
-		"ft": 32768,
-		"iS": 21990,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/loadingline-squashed.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/zhihunews\/img\/loadingline.png": {
 		"ft": 32768,
 		"iS": 22027,
 		"oA": 0,
 		"oAP": "\/zhihunews\/img\/loadingline.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/zhihunews\/img\/loadingT-squashed.png": {
-		"ft": 32768,
-		"iS": 12395,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/loadingT-squashed.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6971,33 +7014,11 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/zhihunews\/img\/p1arrow-squashed.png": {
-		"ft": 32768,
-		"iS": 8227,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/p1arrow-squashed.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/zhihunews\/img\/p1arrow.png": {
 		"ft": 32768,
 		"iS": 10077,
 		"oA": 0,
 		"oAP": "\/zhihunews\/img\/p1arrow.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/zhihunews\/img\/p1blacklayer-squashed.png": {
-		"ft": 32768,
-		"iS": 4182,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/p1blacklayer-squashed.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -7015,33 +7036,11 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/zhihunews\/img\/p1bottom-squashed.png": {
-		"ft": 32768,
-		"iS": 193607,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/p1bottom-squashed.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/zhihunews\/img\/p1bottom.png": {
 		"ft": 32768,
 		"iS": 106038,
 		"oA": 0,
 		"oAP": "\/zhihunews\/img\/p1bottom.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/zhihunews\/img\/p1hand-squashed.png": {
-		"ft": 32768,
-		"iS": 3502,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/p1hand-squashed.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -7059,33 +7058,11 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/zhihunews\/img\/p1line-squashed.png": {
-		"ft": 32768,
-		"iS": 325,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/p1line-squashed.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/zhihunews\/img\/p1line.png": {
 		"ft": 32768,
 		"iS": 327,
 		"oA": 0,
 		"oAP": "\/zhihunews\/img\/p1line.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/zhihunews\/img\/p1top-squashed.png": {
-		"ft": 32768,
-		"iS": 23053,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/p1top-squashed.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -7113,17 +7090,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/zhihunews\/img\/p2bottom-squashed.png": {
-		"ft": 32768,
-		"iS": 6708,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/p2bottom-squashed.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/zhihunews\/img\/p2bottom.png": {
 		"ft": 32768,
 		"iS": 9192,
@@ -7145,17 +7111,6 @@
 		"opt": 0,
 		"q": 100
 		},
-	"\/zhihunews\/img\/p2top-squashed.png": {
-		"ft": 32768,
-		"iS": 3358,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/p2top-squashed.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/zhihunews\/img\/p2top.png": {
 		"ft": 32768,
 		"iS": 4242,
@@ -7175,17 +7130,6 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"q": 100
-		},
-	"\/zhihunews\/img\/p3top-squashed.png": {
-		"ft": 32768,
-		"iS": 3153,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/p3top-squashed.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
 		"q": 100
 		},
 	"\/zhihunews\/img\/p3top.png": {
@@ -7339,33 +7283,11 @@
 		"opt": 0,
 		"q": 100
 		},
-	"\/zhihunews\/img\/p5top-squashed.png": {
-		"ft": 32768,
-		"iS": 2920,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/p5top-squashed.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/zhihunews\/img\/p5top.png": {
 		"ft": 32768,
 		"iS": 4347,
 		"oA": 0,
 		"oAP": "\/zhihunews\/img\/p5top.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/zhihunews\/img\/p6pic-squashed.png": {
-		"ft": 32768,
-		"iS": 174005,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/p6pic-squashed.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -7387,17 +7309,6 @@
 		"iS": 216131,
 		"oA": 0,
 		"oAP": "\/zhihunews\/img\/p6pic.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/zhihunews\/img\/p6top-squashed.png": {
-		"ft": 32768,
-		"iS": 3389,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/p6top-squashed.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -7595,33 +7506,11 @@
 		"opt": 0,
 		"q": 100
 		},
-	"\/zhihunews\/img\/p7top-squashed.png": {
-		"ft": 32768,
-		"iS": 3599,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/p7top-squashed.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/zhihunews\/img\/p7top.png": {
 		"ft": 32768,
 		"iS": 5923,
 		"oA": 0,
 		"oAP": "\/zhihunews\/img\/p7top.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/zhihunews\/img\/playbtn-squashed.png": {
-		"ft": 32768,
-		"iS": 4061,
-		"oA": 0,
-		"oAP": "\/zhihunews\/img\/playbtn-squashed.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
