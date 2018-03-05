@@ -129,9 +129,9 @@
       			if (i == count-1 && index >= cityData[areaId].sub.length-1) {
       				//- console.log(points.length);
       				var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20,"gradient":{
-      					0:"rgb(220,220,220)",
-      					.25:"rgb(220,220,220)",
-      					.5:"rgb(220,220,220)"
+      					0:"rgb(0,90,255)",
+      					.25:"rgb(180,0,255)",
+      					.5:"rgb(255,130,0)"
       				}});
       				map.addOverlay(heatmapOverlay);
       				heatmapOverlay.setDataSet({data:points,max:100});

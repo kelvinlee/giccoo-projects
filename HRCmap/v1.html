@@ -62,7 +62,7 @@
       		}
       		var pointArray = [];
       		for (var i = 0; i < count; i++) {
-      			var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgba(255,255,255,0.2)",strokeWeight: 0, strokeColor: "rgba(0,255,0,0)"}); //建立多边形覆盖物
+      			var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgba(0,0,0,0.2)",strokeWeight: 0, strokeColor: "rgba(0,255,0,0)"}); //建立多边形覆盖物
       			map.addOverlay(ply);	//添加覆盖物
       			pointArray = pointArray.concat(ply.getPath());
       		}
@@ -116,25 +116,24 @@
       			map.addOverlay(ply);	//添加覆盖物
       			pointArray = pointArray.concat(ply.getPath());
       
-      		
+      			
       			var list = rs.boundaries[i].split(";");
       			for (var k=0;k<list.length;k++) {
       				points.push({
       					"lng": list[k].split(",")[0],
       					"lat": list[k].split(",")[1],
-      					"count": _index
+      					"count": parseInt((random1+random2+random3)/90)
       				});
-      				console.log(_index > 0 ? 90/_index : 0);
       			}
       			if (i == count-1 && index >= cityData[areaId].sub.length-1) {
-      				//- console.log(points.length);
+      				console.log(colorss[_index],_index);
       				var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20,"gradient":{
-      					0:"rgb(220,220,220)",
-      					.25:"rgb(220,220,220)",
-      					.5:"rgb(220,220,220)"
+      					.2:"rgb(220,220,220)",
+      					.4:"rgb(220,220,220)",
+      					.6:"rgb(220,220,220)"
       				}});
       				map.addOverlay(heatmapOverlay);
-      				heatmapOverlay.setDataSet({data:points,max:100});
+      				heatmapOverlay.setDataSet({data:points,max:90});
       				//- heatmapOverlay.show();
       			}
       		}

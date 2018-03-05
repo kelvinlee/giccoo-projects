@@ -94,32 +94,47 @@ html(lang="en").no-js
 						var random1 = parseInt(Math.random()*30);
 						var random2 = parseInt(Math.random()*30);
 						var random3 = parseInt(Math.random()*30);
+
 						console.log((random1+random2+random3)/180 * 2.5);
+						
+						var colors = [
+							"rgba(0,90,255,0.8)",
+							"rgba(180,0,255,0.8)",
+							"rgba(255,130,0,0.8)"
+						];
+						var colorss = [
+							"rgb(0,90,255)",
+							"rgb(180,0,255)",
+							"rgb(255,130,0)"
+						];
+						var _index = parseInt(Math.random()*colors.length);
+
 						var op = 0.8;
 						//- var op = (random1+random2+random3)/180 * 2.5;
-						var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgba("+(random1+100)+","+(random2+100)+","+(random3+135)+","+op+")",strokeWeight: 0, strokeColor: "rgba(0,0,0,0)"}); //建立多边形覆盖物
+						var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: colors[_index],strokeWeight: 0, strokeColor: "rgba(0,0,0,0)"}); //建立多边形覆盖物
 						//- console.log(ply);
 						map.addOverlay(ply);	//添加覆盖物
 						pointArray = pointArray.concat(ply.getPath());
 
-
+					
 						var list = rs.boundaries[i].split(";");
 						for (var k=0;k<list.length;k++) {
 							points.push({
 								"lng": list[k].split(",")[0],
 								"lat": list[k].split(",")[1],
-								"count": parseInt((random1+random2+random3)/90)
+								"count": _index
 							});
+							console.log(_index > 0 ? 90/_index : 0);
 						}
 						if (i == count-1 && index >= cityData[areaId].sub.length-1) {
 							//- console.log(points.length);
 							var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20,"gradient":{
-								.2:"rgb(100, 100, 145)",
-								.4:"rgb(100, 120, 135)",
-								.6:"rgb(120, 100, 135)"
+								0:"rgb(220,220,220)",
+								.25:"rgb(220,220,220)",
+								.5:"rgb(220,220,220)"
 							}});
 							map.addOverlay(heatmapOverlay);
-							heatmapOverlay.setDataSet({data:points,max:90});
+							heatmapOverlay.setDataSet({data:points,max:100});
 							//- heatmapOverlay.show();
 						}
 					}

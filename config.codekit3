@@ -2991,13 +2991,6 @@
 		"oAP": "\/build\/hire",
 		"oF": 0
 		},
-	"\/HRCmap\/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/HRCmap\/index.html",
-		"oF": 0
-		},
 	"\/HRCmap\/index.jade": {
 		"cB": 0,
 		"cOD": 1,
@@ -3047,6 +3040,20 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"\/HRCmap\/v1.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/v1.html",
+		"oF": 0
+		},
+	"\/HRCmap\/v2.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/v2.html",
+		"oF": 0
 		},
 	"\/huawei_hb": {
 		"ft": 65536,
