@@ -675,16 +675,13 @@ updateLoad = function updateLoad() {
   });
 };
 
-window.onscroll = function (evt) {
-  var top;
-  top = document.scrollingElement.scrollTop;
-  if (getdefaultTop && top > defaultTop) {
-    return $(".logo").addClass("scroll");
-  } else {
-    return $(".logo").removeClass("scroll");
-  }
-};
+// window.onscroll = (evt)->
+// 	top = document.scrollingElement.scrollTop
 
+// 	if getdefaultTop && (top > defaultTop)
+// 		$(".logo").addClass "scroll"
+// 	else
+// 		$(".logo").removeClass "scroll"
 $(document).ready(function () {
   $("body").on("click", ".likeanswer", function () {
     var id, rel;
@@ -739,7 +736,7 @@ updateLikeOn = function updateLikeOn() {
 window.onload = function () {
   var MK;
   MK = $("body").width() / $("body").height();
-  defaultTop = $(".logo").offset().top;
+  // defaultTop = $(".logo").offset().top
   getdefaultTop = true;
   if ($("body").height() <= 460 || MK > 0.65) {
     $("body").addClass("iphone4");

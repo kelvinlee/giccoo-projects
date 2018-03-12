@@ -1338,12 +1338,6 @@
 		"oAP": "\/favicon.ico",
 		"oF": 0
 		},
-	"\/friso": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "\/build\/friso",
-		"oF": 0
-		},
 	"\/friso-island\/coffee\/main.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -2203,6 +2197,656 @@
 		"oF": 0,
 		"oS": 1,
 		"uL": 1
+		},
+	"\/friso\/coffee\/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/friso\/js\/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/friso\/coffee\/render.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/friso\/js\/render.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/friso\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/friso\/css",
+		"oF": 0
+		},
+	"\/friso\/img\/banner.jpg": {
+		"ft": 16384,
+		"iS": 269038,
+		"oA": 0,
+		"oAP": "\/friso\/img\/banner.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/bg.jpg": {
+		"ft": 16384,
+		"iS": 628,
+		"oA": 0,
+		"oAP": "\/friso\/img\/bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/focus.png": {
+		"ft": 32768,
+		"iS": 40367,
+		"oA": 0,
+		"oAP": "\/friso\/img\/focus.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/footer.jpg": {
+		"ft": 16384,
+		"iS": 291922,
+		"oA": 0,
+		"oAP": "\/friso\/img\/footer.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/footer.png": {
+		"ft": 32768,
+		"iS": 174269,
+		"oA": 0,
+		"oAP": "\/friso\/img\/footer.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/free.png": {
+		"ft": 32768,
+		"iS": 117809,
+		"oA": 0,
+		"oAP": "\/friso\/img\/free.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/heart-off.png": {
+		"ft": 32768,
+		"iS": 1374,
+		"oA": 0,
+		"oAP": "\/friso\/img\/heart-off.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/heart-on.png": {
+		"ft": 32768,
+		"iS": 1383,
+		"oA": 0,
+		"oAP": "\/friso\/img\/heart-on.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/kv.png": {
+		"ft": 32768,
+		"iS": 93279,
+		"oA": 0,
+		"oAP": "\/friso\/img\/kv.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/legal.png": {
+		"ft": 32768,
+		"iS": 5936,
+		"oA": 0,
+		"oAP": "\/friso\/img\/legal.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/line.png": {
+		"ft": 32768,
+		"iS": 4392,
+		"oA": 0,
+		"oAP": "\/friso\/img\/line.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/logo.png": {
+		"ft": 32768,
+		"iS": 22338,
+		"oA": 0,
+		"oAP": "\/friso\/img\/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-answer-bg.png": {
+		"ft": 32768,
+		"iS": 709,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-answer-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-banner.jpg": {
+		"ft": 16384,
+		"iS": 153614,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-banner.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-bg.png": {
+		"ft": 32768,
+		"iS": 560,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-footer.jpg": {
+		"ft": 16384,
+		"iS": 217924,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-footer.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-icon-an.png": {
+		"ft": 32768,
+		"iS": 10965,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-icon-an.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-icon-more.png": {
+		"ft": 32768,
+		"iS": 404,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-icon-more.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-icon-q.png": {
+		"ft": 32768,
+		"iS": 3664,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-icon-q.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-iwask.png": {
+		"ft": 32768,
+		"iS": 6353,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-iwask.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-line.png": {
+		"ft": 32768,
+		"iS": 4032,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-line.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-logo.png": {
+		"ft": 32768,
+		"iS": 10738,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-banner.jpg": {
+		"ft": 16384,
+		"iS": 60597,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-banner.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-banner.png": {
+		"ft": 32768,
+		"iS": 74111,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-banner.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-bg.png": {
+		"ft": 32768,
+		"iS": 607,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-close.png": {
+		"ft": 32768,
+		"iS": 1770,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-focus.png": {
+		"ft": 32768,
+		"iS": 69301,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-focus.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-free.png": {
+		"ft": 32768,
+		"iS": 182439,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-free.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-legal.png": {
+		"ft": 32768,
+		"iS": 5776,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-legal.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-video.jpg": {
+		"ft": 16384,
+		"iS": 41979,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-video.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-q-bg-small.png": {
+		"ft": 32768,
+		"iS": 39059,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-q-bg-small.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-q-bg.jpg": {
+		"ft": 16384,
+		"iS": 10039,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-q-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-q-bg.png": {
+		"ft": 32768,
+		"iS": 148050,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-q-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-question-bg.png": {
+		"ft": 32768,
+		"iS": 2725,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-question-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-ten-q.png": {
+		"ft": 32768,
+		"iS": 14522,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-ten-q.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-tzw-bg.jpg": {
+		"ft": 16384,
+		"iS": 487,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-tzw-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-tzw-bg.png": {
+		"ft": 32768,
+		"iS": 1338,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-tzw-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-tzw-footer.jpg": {
+		"ft": 16384,
+		"iS": 3965,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-tzw-footer.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-tzw-footer.png": {
+		"ft": 32768,
+		"iS": 12532,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-tzw-footer.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-tzw-title.jpg": {
+		"ft": 16384,
+		"iS": 18112,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-tzw-title.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-tzw-title.png": {
+		"ft": 32768,
+		"iS": 59014,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-tzw-title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/outlink.old.png": {
+		"ft": 32768,
+		"iS": 6647,
+		"oA": 0,
+		"oAP": "\/friso\/img\/outlink.old.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/outlink.png": {
+		"ft": 32768,
+		"iS": 19746,
+		"oA": 0,
+		"oAP": "\/friso\/img\/outlink.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/pop-video.jpg": {
+		"ft": 16384,
+		"iS": 47781,
+		"oA": 0,
+		"oAP": "\/friso\/img\/pop-video.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/share.jpg": {
+		"ft": 16384,
+		"iS": 33061,
+		"oA": 0,
+		"oAP": "\/friso\/img\/share.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/friso\/index.html",
+		"oF": 0
+		},
+	"\/friso\/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/friso\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/friso\/js\/friso.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/friso\/js\/friso-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/friso\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/friso\/js\/main-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/friso\/pc.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/friso\/pc.html",
+		"oF": 0
+		},
+	"\/friso\/pc.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/friso\/pc.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/friso\/sass\/base.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/friso\/css\/base.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/friso\/sass\/box.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/friso\/css\/box.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/friso\/sass\/pc.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/friso\/css\/pc.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/friso\/tags\/contentx.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/friso\/js\/contentx.js",
+		"oF": 0
+		},
+	"\/friso\/tags\/friso.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/friso\/js\/friso.js",
+		"oF": 0
+		},
+	"\/friso\/tags\/loader.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/friso\/js\/loader.js",
+		"oF": 0
+		},
+	"\/friso\/tags\/lottery.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/friso\/js\/lottery.js",
+		"oF": 0
+		},
+	"\/friso\/tags\/note.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/friso\/js\/note.js",
+		"oF": 0
+		},
+	"\/friso\/tags\/register.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/friso\/js\/register.js",
+		"oF": 0
+		},
+	"\/friso\/tags\/slider.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/friso\/js\/slider.js",
+		"oF": 0
 		},
 	"\/Gmovie\/css": {
 		"ft": 65536,
@@ -3241,7 +3885,7 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/qrcode.js",
 		"oF": 0,
 		"oS": 1,
@@ -3495,6 +4139,16 @@
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/libs\/js\/baidu-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/js\/cityData-build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/js\/cityData-build-build.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 1
@@ -10040,7 +10694,7 @@
 		],
 	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
-	"skippedFoldersString": "log, \n_logs, \nlogs, \n_cache, \ncache, \n\/storage\/framework\/sessions, \nnode_modules,\nadidas,\nadidas-bug,\n2017-new-year,\nanpin,\nariel_chefnic,\natta,\nbmw_form,\nbmwm30,\nBMWX1,\nccb,\nchairman,\ncitynight,\ncitynight-meitu,\ncrown,\ncss,\nCX5,\ndayan,\ndazhong,\ndicos,\nelr4,\nesteelauder,\nfriso,\nfriso-inland,\nGmoive,\nhire,\nhuawei_hb,\nhuawei_matebook,\nhuaweiG7,\nhuxiu_ministation,\nintel_form,\ninv,\niwatch,\njac,\njac_a60,\njaguar,\njaguar_AOP,\njaguar_fpace,\njiaomu,\nlamer,\nlancome_form,\nLandrover,\nLandroverM,\nLandroverN,\nldl-c4l,\nldl-ix25,\nliamtest,\nlincoln_mkz,\nlkk,\nmanagers,\nMate8,\nmaxshsow,\nmengniu,\nnightparty,\nnumerology,\npicturer,\nproduct,\nqa,\nquaker,\nquakerinfo,\nredbook,\nroewe_i6,\nroewe_i6_pc,\nsayno_create,\nsayno_mfw,\nsayno_momo,\nshortout,\nshow,\nshowman,\nshrimp,\nstarwars,\nTongshuai,\nupload,\nushape,\nuvexpert,\nvolvo_s60l,\nvolvo_v40,\nvolvo_v40_momo,\nvolvo_v40_one,\nvolvo_v40_v40cc_momo,\nvolvo_v40_v40cc_one,\nvolvo_v40_v40cc_weipiaoer,\nvolvo_v40_v40cc_zhihu,\nvolvo_v40_v60,\nvolvo_xc60,\nvolvo_xc90,\nvolvo_xc90_201601,\nvolvo_xc90_t6,\nvolvov60,\nvolvov60wp,\nwaimai,\nwbirthday,\nweilan,\nxinsuteng,\nyears,\nyida,\nYili-Eat-World,\nYili-fridge,\nYili-sugar,\nzhiqu,\nad",
+	"skippedFoldersString": "log, \n_logs, \nlogs, \n_cache, \ncache, \n\/storage\/framework\/sessions, \nnode_modules,\nadidas,\nadidas-bug,\n2017-new-year,\nanpin,\nariel_chefnic,\natta,\nbmw_form,\nbmwm30,\nBMWX1,\nccb,\nchairman,\ncitynight,\ncitynight-meitu,\ncrown,\ncss,\nCX5,\ndayan,\ndazhong,\ndicos,\nelr4,\nesteelauder,\nGmoive,\nhire,\nhuawei_hb,\nhuawei_matebook,\nhuaweiG7,\nhuxiu_ministation,\nintel_form,\ninv,\niwatch,\njac,\njac_a60,\njaguar,\njaguar_AOP,\njaguar_fpace,\njiaomu,\nlamer,\nlancome_form,\nLandrover,\nLandroverM,\nLandroverN,\nldl-c4l,\nldl-ix25,\nliamtest,\nlincoln_mkz,\nlkk,\nmanagers,\nMate8,\nmaxshsow,\nmengniu,\nnightparty,\nnumerology,\npicturer,\nproduct,\nqa,\nquaker,\nquakerinfo,\nredbook,\nroewe_i6,\nroewe_i6_pc,\nsayno_create,\nsayno_mfw,\nsayno_momo,\nshortout,\nshow,\nshowman,\nshrimp,\nstarwars,\nTongshuai,\nupload,\nushape,\nuvexpert,\nvolvo_s60l,\nvolvo_v40,\nvolvo_v40_momo,\nvolvo_v40_one,\nvolvo_v40_v40cc_momo,\nvolvo_v40_v40cc_one,\nvolvo_v40_v40cc_weipiaoer,\nvolvo_v40_v40cc_zhihu,\nvolvo_v40_v60,\nvolvo_xc60,\nvolvo_xc90,\nvolvo_xc90_201601,\nvolvo_xc90_t6,\nvolvov60,\nvolvov60wp,\nwaimai,\nwbirthday,\nweilan,\nxinsuteng,\nyears,\nyida,\nYili-Eat-World,\nYili-fridge,\nYili-sugar,\nzhiqu,\nad",
 	"sourceFolderName": "source",
 	"susyVersion": 3,
 	"uglifyDefinesString": "",
