@@ -29,12 +29,6 @@
 		"oAP": "\/build\/2017-new-year",
 		"oF": 0
 		},
-	"\/ad": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "\/build\/ad",
-		"oF": 0
-		},
 	"\/adidas": {
 		"ft": 65536,
 		"oA": 1,
@@ -291,13 +285,6 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
-		},
-	"\/adidas-originals-eqt\/video\/video.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/adidas-originals-eqt\/video\/video.mp4",
-		"oF": 0
 		},
 	"\/anpin": {
 		"ft": 65536,
@@ -2760,6 +2747,55 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/friso\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/parallax.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/friso\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/parallax.sassc",
+		"oF": 0
+		},
+	"\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc",
+		"oF": 0
+		},
+	"\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc",
+		"oF": 0
+		},
+	"\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc",
+		"oF": 0
+		},
+	"\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc",
+		"oF": 0
+		},
+	"\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc",
+		"oF": 0
+		},
+	"\/friso\/sass\/.sass-cache\/d1282a329554200f90c5d529d8ac5632eea34db3\/base.sassc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/friso\/sass\/.sass-cache\/d1282a329554200f90c5d529d8ac5632eea34db3\/base.sassc",
+		"oF": 0
+		},
 	"\/friso\/sass\/base.sass": {
 		"aP": 1,
 		"bl": 0,
@@ -2846,6 +2882,20 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/friso\/js\/slider.js",
+		"oF": 0
+		},
+	"\/friso\/video\/mobile.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/friso\/video\/mobile.mp4",
+		"oF": 0
+		},
+	"\/friso\/video\/pc.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/friso\/video\/pc.mp4",
 		"oF": 0
 		},
 	"\/Gmovie\/css": {
@@ -3635,6 +3685,13 @@
 		"oAP": "\/build\/hire",
 		"oF": 0
 		},
+	"\/HRCmap\/gz.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/gz.html",
+		"oF": 0
+		},
 	"\/HRCmap\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -3691,6 +3748,13 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"\/HRCmap\/sc.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/sc.html",
+		"oF": 0
 		},
 	"\/HRCmap\/v1.html": {
 		"cB": 0,
@@ -3798,6 +3862,13 @@
 		"ft": 65536,
 		"oA": 1,
 		"oAP": "\/build\/jiaomu",
+		"oF": 0
+		},
+	"\/kfcwow\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/kfcwow\/index.html",
 		"oF": 0
 		},
 	"\/lamer": {
@@ -8600,95 +8671,11 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
-		},
-	"\/zhishinews\/video\/1.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/1.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/2.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/2.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/3.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/3.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/d1.MP4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/d1.MP4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/d2.MP4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/d2.MP4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/d3.MP4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/d3.MP4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/page-3-1.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/page-3-1.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/page-3-2.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/page-3-2.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/page-3-3.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/page-3-3.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/page-4-1.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/page-4-1.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/page-4-2.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/page-4-2.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/page-4-3.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/page-4-3.mp4",
-		"oF": 0
 		}
 	},
 "hooks": [
 	{
-		"enabled": 1,
+		"enabled": 0,
 		"name": "Riot",
 		"predicateDataBase64Encoded": "YnBsaXN0MDDUAQIDBAUGYmNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QFgcIDxQcJicqMTU6Oz5CRktMT1VZXV9VJG51bGzTCQoLDA0OXxAXTlNDb21wb3VuZFByZWRpY2F0ZVR5cGVfEA9OU1N1YnByZWRpY2F0ZXNWJGNsYXNzEAKAAoAV0hALERNaTlMub2JqZWN0c6ESgAOAFNQLFRYXGBkaG18QEU5TUmlnaHRFeHByZXNzaW9uXxAQTlNMZWZ0RXhwcmVzc2lvbl8QE05TUHJlZGljYXRlT3BlcmF0b3KAE4AOgASAEdUdHh8gCyEiIyQlWU5TT3BlcmFuZF5OU1NlbGVjdG9yTmFtZV8QEE5TRXhwcmVzc2lvblR5cGVbTlNBcmd1bWVudHOABoAFEAOACIANXHZhbHVlRm9yS2V5OtIfCygpEAGAB9IrLC0uWiRjbGFzc25hbWVYJGNsYXNzZXNfEBBOU1NlbGZFeHByZXNzaW9uoy0vMFxOU0V4cHJlc3Npb25YTlNPYmplY3TSEAsyNKEzgAmADNMLHzY3ODlZTlNLZXlQYXRogAsQCoAKXWlucHV0RmlsZW5hbWXSKyw8PV8QHE5TS2V5UGF0aFNwZWNpZmllckV4cHJlc3Npb26jPC8w0issP0BeTlNNdXRhYmxlQXJyYXmjP0EwV05TQXJyYXnSKyxDRF8QE05TS2V5UGF0aEV4cHJlc3Npb26kQ0UvMF8QFE5TRnVuY3Rpb25FeHByZXNzaW9u00cfC0hJSl8QD05TQ29uc3RhbnRWYWx1ZYAPEACAEFQudGFn0issTU5fEBlOU0NvbnN0YW50VmFsdWVFeHByZXNzaW9uo00vMNQLUFFSU0kjVFpOU01vZGlmaWVyV05TRmxhZ3NeTlNPcGVyYXRvclR5cGWAEhBj0issVldfEBVOU0luUHJlZGljYXRlT3BlcmF0b3KjVlgwXxATTlNQcmVkaWNhdGVPcGVyYXRvctIrLFpbXxAVTlNDb21wYXJpc29uUHJlZGljYXRlo1pcMFtOU1ByZWRpY2F0ZdIrLEFeokEw0issYGFfEBNOU0NvbXBvdW5kUHJlZGljYXRlo2BcMF8QD05TS2V5ZWRBcmNoaXZlctFkZVRyb290gAEACAARABoAIwAtADIANwBQAFYAXQB3AIkAkACSAJQAlgCbAKYAqACqAKwAtQDJANwA8gD0APYA+AD6AQUBDwEeATEBPQE\/AUEBQwFFAUcBVAFZAVsBXQFiAW0BdgGJAY0BmgGjAagBqgGsAa4BtQG\/AcEBwwHFAdMB2AH3AfsCAAIPAhMCGwIgAjYCOwJSAlkCawJtAm8CcQJ2AnsClwKbAqQCrwK3AsYCyALKAs8C5wLrAwEDBgMeAyIDLgMzAzYDOwNRA1UDZwNqA28AAAAAAAACAQAAAAAAAABmAAAAAAAAAAAAAAAAAAADcQ==",
 		"runOrder": 0,
