@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Map</title>
+    <script src="http://api.map.baidu.com/api?v=2.0&amp;ak=l4F677V3w1Z6Gn5H9xRs4GQDB4eLLA6W"></script>
+    <script src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+    <script src="../libs/js/cityId.js"></script>
+    <!-- <script src="../libs/js/min/inmap.min.js"></script> -->
+    <style>
+       .BMap_cpyCtrl,.BMap_noprint,.anchorBL {
+       	display: none;
+       }
+       body {
+        margin: 0;
+       }
+    </style>
+  </head>
+  <body>
+    <div id="allmap" style="width:100%;height:640px"></div>
+    <script>
+      var points = [];
+      var areaId = 0;
+      var areaCount = 0;
+      var sh = -1;
+      var pushed = false;
+      var focusName = "海淀";
+      var map = new BMap.Map("allmap");
+      var province = 0;
+      var cityid = -1;
+      var RClist = [];
+      window.onload = function() {
+        console.log($_GET()['city'],$_GET()['province']);
+        if ($_GET()['province']) {
+          province = parseInt($_GET()['province']);
+        }
+        if ($_GET()['city']) {
+          cityid = parseInt($_GET()['city']);
+        }
+        if ($_GET()['data']) {
+          RClist = JSON.parse(decodeURIComponent($_GET()['data']));
+        }
+        map.centerAndZoom(new BMap.Point(116.403765, 39.914850), 5);
+        map.enableScrollWheelZoom();
+        var styleJson = [
+          {
+             'featureType': 'water',
+             'elementType': 'all',
+             'stylers': {
+               'color': '#dbe0e7'
+             }
+          },
+          {
+            'featureType': 'land',
+            'elementType': 'all',
+            'stylers': {
+              'color': '#f1f3f5'
+            }
+          },
+          {
+            'featureType': 'green',
+            'elementType': 'all',
+            'stylers': {
+              'color': '#e9ecf2'
+            }
+          },
+          {
+            'featureType': 'manmade',
+            'elementType': 'all',
+            'stylers': {
+              'color': '#dde1e8'
+            }
+          },
+          {
+            'featureType': 'building',
+            'elementType': 'all',
+            'stylers': {
+              'color': '#dde1e8'
+            }
+          },
+          {
+            'featureType': 'boundary',
+            'elementType': 'geometry',
+            'stylers': {
+              'color': '#d7dadf'
+            }
+          },
+          {
+            'featureType': 'railway',
+            'elementType': 'geometry',
+            'stylers': {
+              'hue': '#3d85c6',
+              'lightness': 63,
+              'saturation': 21,
+              'visibility': 'on'
+            }
+          },
+          {
+            'featureType': 'local',
+            'elementType': 'all',
+            'stylers': {
+              'color': '#e7ebf2',
+              'visibility': 'off'
+            }
+          },
+          {
+            'featureType': 'local',
+            'elementType': 'geometry.stroke',
+            'stylers': {
+              'color': '#b5bfc7',
+              'visibility': 'off'
+            }
+          },
+          {
+            'featureType': 'subway',
+            'elementType': 'all',
+            'stylers': {
+              'color': '#73b1df'
+            }
+          },
+          {
+            'featureType': 'poi',
+            'elementType': 'all',
+            'stylers': {
+              'color': '#b5bfc7',
+              'visibility': 'off'
+            }
+          },
+          {
+            'featureType': 'subway',
+            'elementType': 'all',
+            'stylers': {
+              'color': '#d9e3ea',
+              'visibility': 'off'
+            }
+          },
+          {
+            'featureType': 'highway',
+            'elementType': 'labels',
+            'stylers': {
+              'color': '#c6d4df',
+              'visibility': 'off'
+            }
+          },
+          {
+            'featureType': 'highway',
+            'elementType': 'geometry.stroke',
+            'stylers': {
+              'color': '#c1c9d5'
+            }
+          },
+          {
+            'featureType': 'highway',
+            'elementType': 'geometry.fill',
+            'stylers': {
+              'color': '#d3d8e1',
+              'visibility': 'on'
+            }
+          },
+          {
+            'featureType': 'arterial',
+            'elementType': 'labels',
+            'stylers': {
+              'visibility': 'on'
+            }
+          },
+          {
+            'featureType': 'administrative',
+            'elementType': 'labels',
+            'stylers': {
+              'visibility': 'off'
+            }
+          },
+          {
+            'featureType': 'background',
+            'elementType': 'labels',
+            'stylers': {
+              'visibility': 'off'
+            }
+          },
+          {
+            'featureType': 'arterial',
+            'elementType': 'geometry.fill',
+            'stylers': {
+              'color': '#e9ecf2'
+            }
+          },
+          {
+            'featureType': 'arterial',
+            'elementType': 'geometry.stroke',
+            'stylers': {
+              'color': '#d9dce3'
+            }
+          },
+          {
+            'featureType': 'arterial',
+            'elementType': 'labels.text.fill',
+            'stylers': {
+              'visibility': 'off'
+            }
+          }
+        ];
+        map.setMapStyle({styleJson:styleJson});
+        setTimeout(function(){
+          coverAll();
+          getBoundary(province);
+        },2000)
+      }
+      var $_GET = function(){var e,t,n,r,o,a;if(a=window.document.location.href.toString(),o=a.split("?"),"string"==typeof o[1]){for(o=o[1].split("&"),e={},console.log(o),r=0,n=o.length;r<n;r++)i=o[r],t=i.split("="),e[t[0]]=t[1];return e}return{}}
+      function coverAll() {
+        var bdary = new BMap.Boundary();
+        bdary.get("中国", function(rs){
+          var count = rs.boundaries.length; //行政区域的点有多少个
+          if (count === 0) {
+            alert('未能获取当前输入行政区域');
+            return ;
+          }
+          var pointArray = [];
+          for (var i = 0; i < count; i++) {
+            var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgb(255,255,255)",strokeWeight: 0, strokeColor: "rgba(255,255,255,0)"}); //建立多边形覆盖物
+            map.addOverlay(ply);  //添加覆盖物
+            pointArray = pointArray.concat(ply.getPath());
+          }
+        })
+      }
+      function getBoundary(id){
+        areaId = id;
+        var name = cityData[id].name;
+        var bdary = new BMap.Boundary();
+        bdary.get(name, function(rs){     //获取行政区域
+          //- map.clearOverlays();              //清除地图覆盖物      
+          var count = rs.boundaries.length; //行政区域的点有多少个
+          if (count === 0) {
+            alert('未能获取当前输入行政区域');
+            return ;
+          }
+          var pointArray = [];
+          for (var i = 0; i < count; i++) {
+            var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: "rgba(0,0,0,0)",strokeWeight: 0, strokeColor: "rgba(0,255,0,0)"}); //建立多边形覆盖物
+            map.addOverlay(ply);  //添加覆盖物
+            pointArray = pointArray.concat(ply.getPath());
+          }
+          map.setViewport(pointArray);    //调整视野
+      
+          getOnePirece(cityData[id].sub,0)
+        });
+      }
+      function getOnePirece(data,index,next){
+        var name = data[index].name;
+        var bdary = new BMap.Boundary();
+        var id = data[index].id;
+        var rc = 0;
+        for (var i=0;i<RClist.length;i++) {
+          if (RClist[i].cityId == id) { rc = RClist[i].rc ; break; }
+        }
+        // console.log(name,id,rc);
+        //获取行政区域
+        bdary.get(name, function(rs){         
+          areaCount++;
+          var count = rs.boundaries.length; //行政区域的点有多少个
+          if (count === 0) {
+            console.log('未能获取当前输入行政区域:'+name);
+          }else{
+            var pointArray = [];
+            // blue
+            for (var i = 0; i < count; i++) {
+              
+              var colors = [
+                "rgba(140,210,244,0.9)",
+                "rgba(195,204,35,0.9)",
+                "rgba(255,229,18,0.9)",
+                "rgba(246,143,30,0.9)",
+                "rgba(240,81,51,0.9)"
+              ];
+
+              var _index = rc;
+              
+              var op = 0.8;
+              //- var op = (random1+random2+random3)/180 * 2.5;
+              if (data[index].id && data[index].id == cityid){
+                var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: colors[_index],strokeWeight: 2, strokeColor: "rgba(255,255,255,1)"}); //建立多边形覆盖物
+                sh = index;
+              }else{
+                var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: colors[_index],strokeWeight: 0, strokeColor: "rgba(0,0,0,0)"}); //建立多边形覆盖物
+                map.addOverlay(ply);  //添加覆盖物
+              }
+              //- console.log(ply);
+              
+              pointArray = pointArray.concat(ply.getPath());
+            
+              var list = rs.boundaries[i].split(";");
+              for (var k=0;k<list.length;k++) {
+                points.push({
+                  "lng": list[k].split(",")[0],
+                  "lat": list[k].split(",")[1],
+                  "count": _index
+                });
+                //- console.log(_index > 0 ? 90/_index : 0);
+              }
+              if (!pushed && i == count-1 && index >= cityData[areaId].sub.length-1) {
+                
+                var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":parseInt(map.getZoom()),"gradient":{
+                  0   :"rgb(255,255,255)",
+                  .5 :"rgb(255,255,255)",
+                  .8  :"rgb(220,220,220)"
+                }});
+                map.addOverlay(heatmapOverlay);
+                heatmapOverlay.setDataSet({data:points,max:120});
+                pushed = true;
+                setLast(data,sh);
+              }
+            }
+          }
+          //- console.log(data.length , index);
+          if (data.length-1 > index) {
+            index++;
+            getOnePirece(data,index);
+          }
+        });   
+      }
+      function setLast(data,index) {
+        if (index < 0) {
+          if (window.callPhantom) { window.callPhantom('takeShot'); }
+          return false;
+        }
+        var name = data[index].name;
+        var bdary = new BMap.Boundary();
+        bdary.get(name, function(rs){         
+          //- console.log(name,rs.boundaries.length,rs.boundaries);
+          areaCount++;
+          console.log(name,rs,areaCount);
+          var count = rs.boundaries.length; //行政区域的点有多少个
+          if (count === 0) {
+            console.log('未能获取当前输入行政区域:'+name);
+          }else{
+            var pointArray = [];
+            // blue
+            for (var i = 0; i < count; i++) {
+
+              var colors = [
+                "rgba(240,81,51,0.9)",
+                "rgba(246,143,30,0.9)",
+                "rgba(255,229,18,0.9)",
+                "rgba(195,204,35,0.9)",
+                "rgba(140,210,244,0.9)"
+              ];
+
+              var _index = parseInt(Math.random()*colors.length);
+              var op = 0.8;
+              var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: colors[_index],strokeWeight: 2, strokeColor: "rgba(0,170,0,1)"}); //建立多边形覆盖物
+              map.addOverlay(ply);
+            }
+            setTimeout(function(){
+              if (window.callPhantom) { window.callPhantom('takeShot'); }
+            },500)
+          }
+        });
+      }
+    </script>
+    
+  </body>
+</html>

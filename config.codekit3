@@ -411,97 +411,6 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"\/BingoMe-share\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/loading.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/loading.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/46ca1e442f47e1f5a330cd0d222c1b3af91f8678\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/46ca1e442f47e1f5a330cd0d222c1b3af91f8678\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/47cafbbec40ad094dd351645a821a034f125a5ee\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/47cafbbec40ad094dd351645a821a034f125a5ee\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/47cafbbec40ad094dd351645a821a034f125a5ee\/mobile.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/47cafbbec40ad094dd351645a821a034f125a5ee\/mobile.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/slider.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/slider.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/d9430434f90b328049454da2ef3ad0296f6b7651\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/d9430434f90b328049454da2ef3ad0296f6b7651\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/e4a00663e5bcee63b9d1edb225c259d373d2fc69\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/e4a00663e5bcee63b9d1edb225c259d373d2fc69\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/fe6b30f47509b91f4794bfa3ce557522fc81e305\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/fe6b30f47509b91f4794bfa3ce557522fc81e305\/base.sassc",
-		"oF": 0
-		},
 	"\/BingoMe-share\/sass\/base.sass": {
 		"aP": 1,
 		"bl": 0,
@@ -2747,55 +2656,6 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/friso\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/parallax.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/friso\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/parallax.sassc",
-		"oF": 0
-		},
-	"\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc",
-		"oF": 0
-		},
-	"\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc",
-		"oF": 0
-		},
-	"\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc",
-		"oF": 0
-		},
-	"\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc",
-		"oF": 0
-		},
-	"\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/friso\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc",
-		"oF": 0
-		},
-	"\/friso\/sass\/.sass-cache\/d1282a329554200f90c5d529d8ac5632eea34db3\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/friso\/sass\/.sass-cache\/d1282a329554200f90c5d529d8ac5632eea34db3\/base.sassc",
-		"oF": 0
-		},
 	"\/friso\/sass\/base.sass": {
 		"aP": 1,
 		"bl": 0,
@@ -2882,20 +2742,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/friso\/js\/slider.js",
-		"oF": 0
-		},
-	"\/friso\/video\/mobile.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/friso\/video\/mobile.mp4",
-		"oF": 0
-		},
-	"\/friso\/video\/pc.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/friso\/video\/pc.mp4",
 		"oF": 0
 		},
 	"\/Gmovie\/css": {
@@ -3685,6 +3531,13 @@
 		"oAP": "\/build\/hire",
 		"oF": 0
 		},
+	"\/HRCmap\/build.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/build.html",
+		"oF": 0
+		},
 	"\/HRCmap\/gz.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -4234,6 +4087,16 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"\/libs\/js\/cityId.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/js\/cityId-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
 	"\/libs\/js\/exif.js": {
 		"ft": 64,
 		"ma": 0,
@@ -4428,6 +4291,16 @@
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/libs\/js\/js\/flashaudioplugin-0.6.0.min-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/js\/min\/inmap.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/js\/js\/inmap.min-build.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 1
@@ -5185,48 +5058,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/libs\/riot3\/transition.js",
-		"oF": 0
-		},
-	"\/libs\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/libs\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/base.sassc",
-		"oF": 0
-		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc",
-		"oF": 0
-		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc",
-		"oF": 0
-		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc",
-		"oF": 0
-		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc",
-		"oF": 0
-		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc",
 		"oF": 0
 		},
 	"\/libs\/sass\/base.sass": {
@@ -6239,69 +6070,6 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/04eff649fb43a2d18b8f16146642fe54fd46a1a2\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/04eff649fb43a2d18b8f16146642fe54fd46a1a2\/base.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/normal.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/normal.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/animation.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/animation.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/slider.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/slider.sassc",
-		"oF": 0
 		},
 	"\/ThreeMusketeers\/sass\/base.sass": {
 		"aP": 1,
