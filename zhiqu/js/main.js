@@ -122,13 +122,13 @@ debug = false;
 
 window.onload = function () {
   var _hm;
-  if (!debug) {
-    openid = $_GET["openid"];
-    if (openid == null || openid === "") {
-      window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3dd8b8d67e940c4&redirect_uri={url}&response_type=code&scope=snsapi_base&state=123#wechat_redirect".replace("{url}", encodeURIComponent(PubUrl + "/zhiqu/"));
-      return false;
-    }
-  }
+  // if (!debug) {
+  //   openid = $_GET["openid"];
+  //   if (openid == null || openid === "") {
+  //     window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3dd8b8d67e940c4&redirect_uri={url}&response_type=code&scope=snsapi_base&state=123#wechat_redirect".replace("{url}", encodeURIComponent(PubUrl + "/zhiqu/"));
+  //     return false;
+  //   }
+  // }
   _hm = new Image();
   _hm.src = "http://124.205.144.213/count/?name=html5&ts=" + new Date().getTime() + parseInt(Math.random() * 1000);
   $(".firstPage").show();

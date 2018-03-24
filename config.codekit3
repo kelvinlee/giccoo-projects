@@ -7,8 +7,15 @@
 		"uuidString": "DE83B16E-0B46-434B-8780-3294DEF21C1E"
 		}
 	],
-"creatorBuild": "26261",
+"creatorBuild": "26330",
 "files": {
+	"\/.babelrc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.babelrc",
+		"oF": 0
+		},
 	"\/.gitignore": {
 		"cB": 0,
 		"ft": 8192,
@@ -279,13 +286,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/adidas-originals-eqt\/video\/video.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/adidas-originals-eqt\/video\/video.mp4",
-		"oF": 0
-		},
 	"\/anpin": {
 		"ft": 65536,
 		"oA": 1,
@@ -410,97 +410,6 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/loading.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/loading.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/46ca1e442f47e1f5a330cd0d222c1b3af91f8678\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/46ca1e442f47e1f5a330cd0d222c1b3af91f8678\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/47cafbbec40ad094dd351645a821a034f125a5ee\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/47cafbbec40ad094dd351645a821a034f125a5ee\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/47cafbbec40ad094dd351645a821a034f125a5ee\/mobile.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/47cafbbec40ad094dd351645a821a034f125a5ee\/mobile.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/slider.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/slider.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/d9430434f90b328049454da2ef3ad0296f6b7651\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/d9430434f90b328049454da2ef3ad0296f6b7651\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/e4a00663e5bcee63b9d1edb225c259d373d2fc69\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/e4a00663e5bcee63b9d1edb225c259d373d2fc69\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/fe6b30f47509b91f4794bfa3ce557522fc81e305\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/fe6b30f47509b91f4794bfa3ce557522fc81e305\/base.sassc",
-		"oF": 0
 		},
 	"\/BingoMe-share\/sass\/base.sass": {
 		"aP": 1,
@@ -924,13 +833,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/corona\/img\/create-bg_tmp265574189": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/corona\/img\/create-bg_tmp265574189",
-		"oF": 0
-		},
 	"\/corona\/img\/create-footer.jpg": {
 		"ft": 16384,
 		"iS": 21813,
@@ -1289,12 +1191,6 @@
 		"oAP": "\/build\/crown",
 		"oF": 0
 		},
-	"\/css": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "\/build\/css",
-		"oF": 0
-		},
 	"\/CX5": {
 		"ft": 65536,
 		"oA": 1,
@@ -1336,12 +1232,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/favicon.ico",
-		"oF": 0
-		},
-	"\/friso": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "\/build\/friso",
 		"oF": 0
 		},
 	"\/friso-island\/coffee\/main.coffee": {
@@ -2156,7 +2046,7 @@
 		"oAP": "\/friso-island\/mp3\/beard.mp3",
 		"oF": 0
 		},
-	"\/friso-island\/mp3\/BGM.mp3": {
+	"\/friso-island\/mp3\/bgm.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
@@ -2203,6 +2093,656 @@
 		"oF": 0,
 		"oS": 1,
 		"uL": 1
+		},
+	"\/friso\/coffee\/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/friso\/js\/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/friso\/coffee\/render.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/friso\/js\/render.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/friso\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/friso\/css",
+		"oF": 0
+		},
+	"\/friso\/img\/banner.jpg": {
+		"ft": 16384,
+		"iS": 269038,
+		"oA": 0,
+		"oAP": "\/friso\/img\/banner.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/bg.jpg": {
+		"ft": 16384,
+		"iS": 628,
+		"oA": 0,
+		"oAP": "\/friso\/img\/bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/focus.png": {
+		"ft": 32768,
+		"iS": 40367,
+		"oA": 0,
+		"oAP": "\/friso\/img\/focus.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/footer.jpg": {
+		"ft": 16384,
+		"iS": 291922,
+		"oA": 0,
+		"oAP": "\/friso\/img\/footer.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/footer.png": {
+		"ft": 32768,
+		"iS": 174269,
+		"oA": 0,
+		"oAP": "\/friso\/img\/footer.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/free.png": {
+		"ft": 32768,
+		"iS": 117809,
+		"oA": 0,
+		"oAP": "\/friso\/img\/free.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/heart-off.png": {
+		"ft": 32768,
+		"iS": 1374,
+		"oA": 0,
+		"oAP": "\/friso\/img\/heart-off.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/heart-on.png": {
+		"ft": 32768,
+		"iS": 1383,
+		"oA": 0,
+		"oAP": "\/friso\/img\/heart-on.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/kv.png": {
+		"ft": 32768,
+		"iS": 93279,
+		"oA": 0,
+		"oAP": "\/friso\/img\/kv.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/legal.png": {
+		"ft": 32768,
+		"iS": 5936,
+		"oA": 0,
+		"oAP": "\/friso\/img\/legal.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/line.png": {
+		"ft": 32768,
+		"iS": 4392,
+		"oA": 0,
+		"oAP": "\/friso\/img\/line.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/logo.png": {
+		"ft": 32768,
+		"iS": 22338,
+		"oA": 0,
+		"oAP": "\/friso\/img\/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-answer-bg.png": {
+		"ft": 32768,
+		"iS": 709,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-answer-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-banner.jpg": {
+		"ft": 16384,
+		"iS": 153614,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-banner.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-bg.png": {
+		"ft": 32768,
+		"iS": 560,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-footer.jpg": {
+		"ft": 16384,
+		"iS": 217924,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-footer.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-icon-an.png": {
+		"ft": 32768,
+		"iS": 10965,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-icon-an.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-icon-more.png": {
+		"ft": 32768,
+		"iS": 404,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-icon-more.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-icon-q.png": {
+		"ft": 32768,
+		"iS": 3664,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-icon-q.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-iwask.png": {
+		"ft": 32768,
+		"iS": 6353,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-iwask.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-line.png": {
+		"ft": 32768,
+		"iS": 4032,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-line.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-logo.png": {
+		"ft": 32768,
+		"iS": 10738,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-banner.jpg": {
+		"ft": 16384,
+		"iS": 60597,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-banner.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-banner.png": {
+		"ft": 32768,
+		"iS": 74111,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-banner.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-bg.png": {
+		"ft": 32768,
+		"iS": 607,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-close.png": {
+		"ft": 32768,
+		"iS": 1770,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-focus.png": {
+		"ft": 32768,
+		"iS": 69301,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-focus.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-free.png": {
+		"ft": 32768,
+		"iS": 182439,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-free.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-legal.png": {
+		"ft": 32768,
+		"iS": 5776,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-legal.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-pop-video.jpg": {
+		"ft": 16384,
+		"iS": 41979,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-pop-video.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-q-bg-small.png": {
+		"ft": 32768,
+		"iS": 39059,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-q-bg-small.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-q-bg.jpg": {
+		"ft": 16384,
+		"iS": 10039,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-q-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-q-bg.png": {
+		"ft": 32768,
+		"iS": 148050,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-q-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-question-bg.png": {
+		"ft": 32768,
+		"iS": 2725,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-question-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-ten-q.png": {
+		"ft": 32768,
+		"iS": 14522,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-ten-q.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-tzw-bg.jpg": {
+		"ft": 16384,
+		"iS": 487,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-tzw-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-tzw-bg.png": {
+		"ft": 32768,
+		"iS": 1338,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-tzw-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-tzw-footer.jpg": {
+		"ft": 16384,
+		"iS": 3965,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-tzw-footer.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-tzw-footer.png": {
+		"ft": 32768,
+		"iS": 12532,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-tzw-footer.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/m-tzw-title.jpg": {
+		"ft": 16384,
+		"iS": 18112,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-tzw-title.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/m-tzw-title.png": {
+		"ft": 32768,
+		"iS": 59014,
+		"oA": 0,
+		"oAP": "\/friso\/img\/m-tzw-title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/outlink.old.png": {
+		"ft": 32768,
+		"iS": 6647,
+		"oA": 0,
+		"oAP": "\/friso\/img\/outlink.old.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/outlink.png": {
+		"ft": 32768,
+		"iS": 19746,
+		"oA": 0,
+		"oAP": "\/friso\/img\/outlink.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/friso\/img\/pop-video.jpg": {
+		"ft": 16384,
+		"iS": 47781,
+		"oA": 0,
+		"oAP": "\/friso\/img\/pop-video.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/img\/share.jpg": {
+		"ft": 16384,
+		"iS": 33061,
+		"oA": 0,
+		"oAP": "\/friso\/img\/share.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/friso\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/friso\/index.html",
+		"oF": 0
+		},
+	"\/friso\/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/friso\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/friso\/js\/friso.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/friso\/js\/friso-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/friso\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/friso\/js\/main-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/friso\/pc.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/friso\/pc.html",
+		"oF": 0
+		},
+	"\/friso\/pc.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/friso\/pc.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/friso\/sass\/base.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/friso\/css\/base.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/friso\/sass\/box.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/friso\/css\/box.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/friso\/sass\/pc.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/friso\/css\/pc.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/friso\/tags\/contentx.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/friso\/js\/contentx.js",
+		"oF": 0
+		},
+	"\/friso\/tags\/friso.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/friso\/js\/friso.js",
+		"oF": 0
+		},
+	"\/friso\/tags\/loader.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/friso\/js\/loader.js",
+		"oF": 0
+		},
+	"\/friso\/tags\/lottery.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/friso\/js\/lottery.js",
+		"oF": 0
+		},
+	"\/friso\/tags\/note.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/friso\/js\/note.js",
+		"oF": 0
+		},
+	"\/friso\/tags\/register.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/friso\/js\/register.js",
+		"oF": 0
+		},
+	"\/friso\/tags\/slider.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/friso\/js\/slider.js",
+		"oF": 0
 		},
 	"\/Gmovie\/css": {
 		"ft": 65536,
@@ -2991,6 +3531,20 @@
 		"oAP": "\/build\/hire",
 		"oF": 0
 		},
+	"\/HRCmap\/build.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/build.html",
+		"oF": 0
+		},
+	"\/HRCmap\/gz.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/gz.html",
+		"oF": 0
+		},
 	"\/HRCmap\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -3047,6 +3601,27 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"\/HRCmap\/sc.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/sc.html",
+		"oF": 0
+		},
+	"\/HRCmap\/v1.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/v1.html",
+		"oF": 0
+		},
+	"\/HRCmap\/v2.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/v2.html",
+		"oF": 0
 		},
 	"\/huawei_hb": {
 		"ft": 65536,
@@ -3142,6 +3717,13 @@
 		"oAP": "\/build\/jiaomu",
 		"oF": 0
 		},
+	"\/kfcwow\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/kfcwow\/index.html",
+		"oF": 0
+		},
 	"\/lamer": {
 		"ft": 65536,
 		"oA": 1,
@@ -3194,9 +3776,9 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/css3Prefix.js",
-		"oF": 1,
+		"oF": 0,
 		"oS": 1,
 		"sC": 0,
 		"tS": 1
@@ -3205,9 +3787,9 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/load.js",
-		"oF": 1,
+		"oF": 0,
 		"oS": 1,
 		"sC": 0,
 		"tS": 1
@@ -3218,7 +3800,7 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/libs\/js\/orientation.js",
-		"oF": 1,
+		"oF": 0,
 		"oS": 1,
 		"sC": 0,
 		"tS": 1
@@ -3229,7 +3811,7 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/libs\/js\/qrcode.js",
-		"oF": 1,
+		"oF": 0,
 		"oS": 1,
 		"sC": 0,
 		"tS": 1
@@ -3240,7 +3822,7 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/libs\/js\/requestanimation.js",
-		"oF": 1,
+		"oF": 0,
 		"oS": 1,
 		"sC": 0,
 		"tS": 1
@@ -3249,7 +3831,7 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/riot-vue.js",
 		"oF": 0,
 		"oS": 1,
@@ -3260,9 +3842,9 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/share.js",
-		"oF": 1,
+		"oF": 0,
 		"oS": 1,
 		"sC": 0,
 		"tS": 1
@@ -3282,63 +3864,8 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/viewport.js",
-		"oF": 1,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/libs\/coffee\/vue-book-page.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/libs\/js\/vue-book-page.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/libs\/coffee\/vue-book-pages.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/libs\/js\/vue-book-pages.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/libs\/coffee\/vue-player.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/libs\/js\/vue-player.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/libs\/coffee\/vue-register.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/libs\/js\/vue-register.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/libs\/coffee\/vue-video.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/libs\/js\/vue-video.js",
 		"oF": 0,
 		"oS": 1,
 		"sC": 0,
@@ -3348,14 +3875,14 @@
 		"ft": 65536,
 		"oA": 1,
 		"oAP": "\/build\/libs\/css",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/img\/audio-play.png": {
 		"ft": 32768,
 		"iS": 4396,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/audio-play.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -3364,9 +3891,9 @@
 	"\/libs\/img\/audio-stop.png": {
 		"ft": 32768,
 		"iS": 4619,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/audio-stop.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -3375,9 +3902,9 @@
 	"\/libs\/img\/loading-normal.png": {
 		"ft": 32768,
 		"iS": 2448,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/loading-normal.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -3386,9 +3913,9 @@
 	"\/libs\/img\/loading.png": {
 		"ft": 32768,
 		"iS": 4852,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/loading.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -3397,9 +3924,9 @@
 	"\/libs\/img\/logo.jpg": {
 		"ft": 16384,
 		"iS": 6971,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/logo.jpg",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
@@ -3407,9 +3934,9 @@
 	"\/libs\/img\/logo.png": {
 		"ft": 32768,
 		"iS": 3314,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/logo.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -3418,9 +3945,9 @@
 	"\/libs\/img\/qr.jpg": {
 		"ft": 16384,
 		"iS": 28004,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/qr.jpg",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
@@ -3428,9 +3955,9 @@
 	"\/libs\/img\/wechat.png": {
 		"ft": 32768,
 		"iS": 28228,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/img\/wechat.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -3440,7 +3967,7 @@
 		"cB": 0,
 		"cOD": 1,
 		"ft": 512,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/jade\/layout-640.html",
 		"oF": 0,
 		"oS": 0
@@ -3449,7 +3976,7 @@
 		"cB": 0,
 		"cOD": 1,
 		"ft": 512,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/jade\/layout-clean-wb.html",
 		"oF": 0,
 		"oS": 0
@@ -3467,7 +3994,7 @@
 		"cB": 0,
 		"cOD": 1,
 		"ft": 512,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/jade\/layout-ng-clean.html",
 		"oF": 0,
 		"oS": 0
@@ -3485,7 +4012,7 @@
 		"cB": 0,
 		"cOD": 1,
 		"ft": 512,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/jade\/layout.html",
 		"oF": 0,
 		"oS": 0
@@ -3494,61 +4021,81 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/angular-animate-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/angular-route.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/angular-route-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/angular-touch.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/angular-touch-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/angular.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/angular-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/baidu.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/baidu-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
+		},
+	"\/libs\/js\/cityData-build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/js\/cityData-build-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
 		},
 	"\/libs\/js\/cityData.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/cityData-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
+		},
+	"\/libs\/js\/cityId.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/js\/cityId-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
 		},
 	"\/libs\/js\/exif.js": {
 		"ft": 64,
@@ -3564,21 +4111,21 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/head.built-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/js.cookie.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js.cookie-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/js\/photo-sphere-viewer.min-build.js": {
 		"ft": 64,
@@ -3594,79 +4141,79 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/megapix-image-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/angular-animate.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/angular-animate.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/angular-animate.min.js.map": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/js\/min\/angular-animate.min.js.map",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/js\/min\/angular-route.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/angular-route.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/angular-route.min.js.map": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/js\/min\/angular-route.min.js.map",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/js\/min\/angular-touch.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/angular-touch.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/angular-touch.min.js.map": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/js\/min\/angular-touch.min.js.map",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/js\/min\/angular.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/angular.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/angular.min.js.map": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/js\/min\/angular.min.js.map",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/js\/min\/axios.min.js": {
 		"ft": 64,
@@ -3682,11 +4229,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/cityData-min-build.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/D.min.js": {
 		"ft": 64,
@@ -3712,11 +4259,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/easeljs-0.8.0.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/easeljs.min.js": {
 		"ft": 64,
@@ -3732,61 +4279,71 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/fastclick.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/flashaudioplugin-0.6.0.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/flashaudioplugin-0.6.0.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
+		},
+	"\/libs\/js\/min\/inmap.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/js\/js\/inmap.min-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
 		},
 	"\/libs\/js\/min\/jquery.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/jquery.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/layzr.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/layzr.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/localforage.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/localforage.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/movieclip-0.8.0.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/movieclip-0.8.0.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/photo-sphere-viewer.min.js": {
 		"ft": 64,
@@ -3802,39 +4359,39 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/preloadjs-0.4.1.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/preloadjs-0.6.0.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/preloadjs-0.6.0.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/qrcode.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/qrcode.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/react-dom-server.browser.development.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/react-dom-server.browser.development-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 1
 		},
@@ -3842,9 +4399,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/react-dom.development-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 1
 		},
@@ -3852,9 +4409,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/react-dom.production.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 1
 		},
@@ -3862,9 +4419,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/react.development-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 1
 		},
@@ -3872,9 +4429,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/react.production.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 1
 		},
@@ -3892,11 +4449,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/riot-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/riot.min.js": {
 		"ft": 64,
@@ -3904,19 +4461,19 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/libs\/js\/js\/riot.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/soundjs-0.6.0.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/soundjs-0.6.0.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/three.min.js": {
 		"ft": 64,
@@ -3932,9 +4489,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/Tone.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 1
 		},
@@ -3942,11 +4499,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/tween-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/tween.min.js": {
 		"ft": 64,
@@ -3962,11 +4519,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/tweenjs-0.6.0.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/min\/tweenjs.min.js": {
 		"ft": 64,
@@ -4012,21 +4569,21 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/Zepto.min-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/parallax.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/parallax-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/photo-sphere-viewer-build.js": {
 		"ft": 64,
@@ -4052,36 +4609,46 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/pixi.dev-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/pixi.dev.js.map": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/libs\/js\/pixi.dev.js.map",
-		"oF": 1
+		"oF": 0
 		},
 	"\/libs\/js\/pixi.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/pixi-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/require.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/require-build.js",
-		"oF": 1,
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/js\/riot-vue.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/js\/riot-vue-build.js",
+		"oF": 0,
 		"sC": 0,
 		"tS": 1
 		},
@@ -4099,11 +4666,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/js\/playsound-build.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/Three.DeviceOrientationControls-build.js": {
 		"ft": 64,
@@ -4129,11 +4696,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/js\/viewport-build.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/libs\/js\/vue-book-page.js": {
 		"ft": 64,
@@ -4158,9 +4725,9 @@
 	"\/libs\/qr\/308s.png": {
 		"ft": 32768,
 		"iS": 35743,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/308s.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4169,9 +4736,9 @@
 	"\/libs\/qr\/a3-wechat.png": {
 		"ft": 32768,
 		"iS": 35279,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/a3-wechat.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4180,9 +4747,9 @@
 	"\/libs\/qr\/Aircraft.png": {
 		"ft": 32768,
 		"iS": 35302,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Aircraft.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4191,9 +4758,9 @@
 	"\/libs\/qr\/bmwx1.png": {
 		"ft": 32768,
 		"iS": 392,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/bmwx1.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4202,9 +4769,9 @@
 	"\/libs\/qr\/borafun.png": {
 		"ft": 32768,
 		"iS": 35395,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/borafun.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4213,9 +4780,9 @@
 	"\/libs\/qr\/ccb.png": {
 		"ft": 32768,
 		"iS": 34148,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/ccb.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4224,9 +4791,9 @@
 	"\/libs\/qr\/crown.png": {
 		"ft": 32768,
 		"iS": 35635,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/crown.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4235,9 +4802,9 @@
 	"\/libs\/qr\/Dettol.png": {
 		"ft": 32768,
 		"iS": 35668,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Dettol.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4246,9 +4813,9 @@
 	"\/libs\/qr\/Dior.png": {
 		"ft": 32768,
 		"iS": 35440,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Dior.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4257,9 +4824,9 @@
 	"\/libs\/qr\/Ebook.png": {
 		"ft": 32768,
 		"iS": 35699,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Ebook.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4268,9 +4835,9 @@
 	"\/libs\/qr\/G.png": {
 		"ft": 32768,
 		"iS": 34827,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/G.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4279,9 +4846,9 @@
 	"\/libs\/qr\/guagua.png": {
 		"ft": 32768,
 		"iS": 35798,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/guagua.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4290,9 +4857,9 @@
 	"\/libs\/qr\/Haier.png": {
 		"ft": 32768,
 		"iS": 35270,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Haier.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4301,9 +4868,9 @@
 	"\/libs\/qr\/Haierw.png": {
 		"ft": 32768,
 		"iS": 35595,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Haierw.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4312,9 +4879,9 @@
 	"\/libs\/qr\/inv.png": {
 		"ft": 32768,
 		"iS": 34440,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/inv.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4323,9 +4890,9 @@
 	"\/libs\/qr\/iwatch.png": {
 		"ft": 32768,
 		"iS": 35482,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/iwatch.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4334,9 +4901,9 @@
 	"\/libs\/qr\/lenovo.png": {
 		"ft": 32768,
 		"iS": 35445,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/lenovo.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4345,9 +4912,9 @@
 	"\/libs\/qr\/lijinji.png": {
 		"ft": 32768,
 		"iS": 35367,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/lijinji.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4356,9 +4923,9 @@
 	"\/libs\/qr\/lkk.png": {
 		"ft": 32768,
 		"iS": 34675,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/lkk.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4367,9 +4934,9 @@
 	"\/libs\/qr\/Noco.png": {
 		"ft": 32768,
 		"iS": 35527,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Noco.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4378,9 +4945,9 @@
 	"\/libs\/qr\/Queen.png": {
 		"ft": 32768,
 		"iS": 35711,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Queen.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4389,9 +4956,9 @@
 	"\/libs\/qr\/Rio2.png": {
 		"ft": 32768,
 		"iS": 35893,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Rio2.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4400,9 +4967,9 @@
 	"\/libs\/qr\/shrimp.png": {
 		"ft": 32768,
 		"iS": 35512,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/shrimp.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4411,9 +4978,9 @@
 	"\/libs\/qr\/Tongshuai.png": {
 		"ft": 32768,
 		"iS": 14536,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/Tongshuai.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4422,9 +4989,9 @@
 	"\/libs\/qr\/vs.png": {
 		"ft": 32768,
 		"iS": 35631,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/qr\/vs.png",
-		"oF": 1,
+		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
@@ -4434,54 +5001,64 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/react\/timer.js",
-		"oF": 1,
+		"oF": 0,
 		"oS": 1,
 		"sC": 0,
 		"tS": 1
 		},
-	"\/libs\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
+	"\/libs\/riot3\/base.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
 		"oA": 1,
-		"oAP": "\/libs\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/base.sassc",
-		"oF": 1
+		"oAP": "\/libs\/riot3\/base.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
 		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc": {
+	"\/libs\/riot3\/ctrl-image.tag": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc",
-		"oF": 1
+		"oA": 0,
+		"oAP": "\/libs\/riot3\/ctrl-image.js",
+		"oF": 0
 		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc",
-		"oF": 1
+	"\/libs\/riot3\/note.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/js\/note-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
 		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc": {
+	"\/libs\/riot3\/note.tag": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc",
-		"oF": 1
+		"oA": 0,
+		"oAP": "\/libs\/riot3\/note.js",
+		"oF": 0
 		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc": {
-		"cB": 0,
-		"ft": 8192,
+	"\/libs\/riot3\/riot-note.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
 		"oA": 1,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc",
-		"oF": 1
+		"oAP": "\/libs\/js\/riot-note-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
 		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc": {
+	"\/libs\/riot3\/transition.tag": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc",
-		"oF": 1
+		"oA": 0,
+		"oAP": "\/libs\/riot3\/transition.js",
+		"oF": 0
 		},
 	"\/libs\/sass\/base.sass": {
 		"aP": 1,
@@ -4490,9 +5067,9 @@
 		"dS": 0,
 		"ft": 2,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/css\/base.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4505,7 +5082,7 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/libs\/css\/loader-ball.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4516,9 +5093,9 @@
 		"dS": 0,
 		"ft": 2,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/libs\/css\/loader-pacman.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4531,7 +5108,7 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/libs\/css\/loader.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4544,7 +5121,7 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/libs\/css\/loading.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4557,7 +5134,7 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/libs\/css\/normal.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4570,7 +5147,7 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/libs\/css\/parallax.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4627,6 +5204,61 @@
 		"oAP": "\/libs\/tags\/slider.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/libs\/vue\/vue-book-page.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/vue\/vue-book-page.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/vue\/vue-book-pages.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/vue\/vue-book-pages.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/vue\/vue-player.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/vue\/vue-player.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/vue\/vue-register.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/vue\/vue-register.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/vue\/vue-video.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/vue\/vue-video.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
 		},
 	"\/lincoln_mkz": {
 		"ft": 65536,
@@ -5163,6 +5795,104 @@
 		"oAP": "\/build\/starwars",
 		"oF": 0
 		},
+	"\/test\/coffee\/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/test\/js\/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/test\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/test\/css",
+		"oF": 0
+		},
+	"\/test\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/test\/index.html",
+		"oF": 0
+		},
+	"\/test\/js\/app.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/test\/js\/app-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/test\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/test\/js\/main-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/test\/js\/player.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/test\/js\/player-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/test\/js\/transition.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/test\/js\/transition-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/test\/sass\/base.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/test\/css\/base.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/test\/tags\/app.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/test\/js\/app.js",
+		"oF": 0
+		},
+	"\/test\/tags\/player.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/test\/js\/player.js",
+		"oF": 0
+		},
+	"\/test\/tags\/transition.tag": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/test\/js\/transition.js",
+		"oF": 0
+		},
 	"\/ThreeMusketeers\/coffee\/base.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -5340,69 +6070,6 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/04eff649fb43a2d18b8f16146642fe54fd46a1a2\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/04eff649fb43a2d18b8f16146642fe54fd46a1a2\/base.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/normal.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/normal.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/animation.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/animation.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/slider.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/slider.sassc",
-		"oF": 0
 		},
 	"\/ThreeMusketeers\/sass\/base.sass": {
 		"aP": 1,
@@ -6291,6 +6958,358 @@
 		"oA": 1,
 		"oAP": "\/build\/Tongshuai",
 		"oF": 0
+		},
+	"\/toyota\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/toyota\/css",
+		"oF": 0
+		},
+	"\/toyota\/img\/arrow.png": {
+		"ft": 32768,
+		"iS": 808,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/arrow.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/cover1.jpg": {
+		"ft": 16384,
+		"iS": 42226,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/cover1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/cover11.jpg": {
+		"ft": 16384,
+		"iS": 12776,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/cover11.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/cover2.jpg": {
+		"ft": 16384,
+		"iS": 38756,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/cover2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/cover3.jpg": {
+		"ft": 16384,
+		"iS": 41876,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/cover3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/dot1.png": {
+		"ft": 32768,
+		"iS": 5771,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/dot1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/dot2.png": {
+		"ft": 32768,
+		"iS": 5474,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/dot2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/dot3.png": {
+		"ft": 32768,
+		"iS": 5756,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/dot3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/dot4.png": {
+		"ft": 32768,
+		"iS": 5756,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/dot4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/ico.png": {
+		"ft": 32768,
+		"iS": 5796,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/ico.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p1top2.jpg": {
+		"ft": 16384,
+		"iS": 139066,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p1top2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/p2pic1.jpg": {
+		"ft": 16384,
+		"iS": 60368,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2pic1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/p2pic2.jpg": {
+		"ft": 16384,
+		"iS": 53231,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2pic2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/p2pic3.jpg": {
+		"ft": 16384,
+		"iS": 75256,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2pic3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/p2pic4.jpg": {
+		"ft": 16384,
+		"iS": 25919,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2pic4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/p2t1.png": {
+		"ft": 32768,
+		"iS": 9000,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2t1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p2t2.png": {
+		"ft": 32768,
+		"iS": 15599,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2t2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p2t3.png": {
+		"ft": 32768,
+		"iS": 43978,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2t3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p2title11.png": {
+		"ft": 32768,
+		"iS": 22573,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2title11.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p2title22.png": {
+		"ft": 32768,
+		"iS": 28338,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2title22.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p2title33.png": {
+		"ft": 32768,
+		"iS": 20552,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2title33.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p2title44.png": {
+		"ft": 32768,
+		"iS": 29399,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p2title44.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p4bg.jpg": {
+		"ft": 16384,
+		"iS": 95096,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p4bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/toyota\/img\/p4btn.png": {
+		"ft": 32768,
+		"iS": 7388,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p4btn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p4t1.png": {
+		"ft": 32768,
+		"iS": 8834,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p4t1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p4t2.png": {
+		"ft": 32768,
+		"iS": 8718,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p4t2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p4t3.png": {
+		"ft": 32768,
+		"iS": 8170,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p4t3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p4t4.png": {
+		"ft": 32768,
+		"iS": 6350,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p4t4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/img\/p4t5.png": {
+		"ft": 32768,
+		"iS": 9171,
+		"oA": 0,
+		"oAP": "\/toyota\/img\/p4t5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/toyota\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/toyota\/index.html",
+		"oF": 0
+		},
+	"\/toyota\/js\/jquery-2.2.1.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/toyota\/js\/jquery-2.2.1.min-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/toyota\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/toyota\/js\/main-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/toyota\/js\/TweenMax.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/toyota\/js\/TweenMax.min-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
 		},
 	"\/upload": {
 		"ft": 65536,
@@ -7420,95 +8439,11 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
-		},
-	"\/zhishinews\/video\/1.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/1.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/2.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/2.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/3.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/3.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/d1.MP4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/d1.MP4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/d2.MP4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/d2.MP4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/d3.MP4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/d3.MP4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/page-3-1.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/page-3-1.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/page-3-2.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/page-3-2.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/page-3-3.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/page-3-3.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/page-4-1.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/page-4-1.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/page-4-2.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/page-4-2.mp4",
-		"oF": 0
-		},
-	"\/zhishinews\/video\/page-4-3.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zhishinews\/video\/page-4-3.mp4",
-		"oF": 0
 		}
 	},
 "hooks": [
 	{
-		"enabled": 1,
+		"enabled": 0,
 		"name": "Riot",
 		"predicateDataBase64Encoded": "YnBsaXN0MDDUAQIDBAUGYmNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QFgcIDxQcJicqMTU6Oz5CRktMT1VZXV9VJG51bGzTCQoLDA0OXxAXTlNDb21wb3VuZFByZWRpY2F0ZVR5cGVfEA9OU1N1YnByZWRpY2F0ZXNWJGNsYXNzEAKAAoAV0hALERNaTlMub2JqZWN0c6ESgAOAFNQLFRYXGBkaG18QEU5TUmlnaHRFeHByZXNzaW9uXxAQTlNMZWZ0RXhwcmVzc2lvbl8QE05TUHJlZGljYXRlT3BlcmF0b3KAE4AOgASAEdUdHh8gCyEiIyQlWU5TT3BlcmFuZF5OU1NlbGVjdG9yTmFtZV8QEE5TRXhwcmVzc2lvblR5cGVbTlNBcmd1bWVudHOABoAFEAOACIANXHZhbHVlRm9yS2V5OtIfCygpEAGAB9IrLC0uWiRjbGFzc25hbWVYJGNsYXNzZXNfEBBOU1NlbGZFeHByZXNzaW9uoy0vMFxOU0V4cHJlc3Npb25YTlNPYmplY3TSEAsyNKEzgAmADNMLHzY3ODlZTlNLZXlQYXRogAsQCoAKXWlucHV0RmlsZW5hbWXSKyw8PV8QHE5TS2V5UGF0aFNwZWNpZmllckV4cHJlc3Npb26jPC8w0issP0BeTlNNdXRhYmxlQXJyYXmjP0EwV05TQXJyYXnSKyxDRF8QE05TS2V5UGF0aEV4cHJlc3Npb26kQ0UvMF8QFE5TRnVuY3Rpb25FeHByZXNzaW9u00cfC0hJSl8QD05TQ29uc3RhbnRWYWx1ZYAPEACAEFQudGFn0issTU5fEBlOU0NvbnN0YW50VmFsdWVFeHByZXNzaW9uo00vMNQLUFFSU0kjVFpOU01vZGlmaWVyV05TRmxhZ3NeTlNPcGVyYXRvclR5cGWAEhBj0issVldfEBVOU0luUHJlZGljYXRlT3BlcmF0b3KjVlgwXxATTlNQcmVkaWNhdGVPcGVyYXRvctIrLFpbXxAVTlNDb21wYXJpc29uUHJlZGljYXRlo1pcMFtOU1ByZWRpY2F0ZdIrLEFeokEw0issYGFfEBNOU0NvbXBvdW5kUHJlZGljYXRlo2BcMF8QD05TS2V5ZWRBcmNoaXZlctFkZVRyb290gAEACAARABoAIwAtADIANwBQAFYAXQB3AIkAkACSAJQAlgCbAKYAqACqAKwAtQDJANwA8gD0APYA+AD6AQUBDwEeATEBPQE\/AUEBQwFFAUcBVAFZAVsBXQFiAW0BdgGJAY0BmgGjAagBqgGsAa4BtQG\/AcEBwwHFAdMB2AH3AfsCAAIPAhMCGwIgAjYCOwJSAlkCawJtAm8CcQJ2AnsClwKbAqQCrwK3AsYCyALKAs8C5wLrAwEDBgMeAyIDLgMzAzYDOwNRA1UDZwNqA28AAAAAAAACAQAAAAAAAABmAAAAAAAAAAAAAAAAAAADcQ==",
 		"runOrder": 0,
@@ -7531,9 +8466,10 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
-	"babelConfigFileHandlingType": 0,
+	"babelConfigFileHandlingType": 1,
 	"babelCustomPluginsList": "",
 	"babelCustomPresetsList": "",
 	"babelInsertModuleIDs": 0,
@@ -7769,7 +8705,7 @@
 			"active": 0
 			}
 		},
-	"babelPresetType": 225,
+	"babelPresetType": 193,
 	"babelRetainLines": 0,
 	"bowerAbbreviatedPath": "bower_components",
 	"bowerAutoCreateInfoFile": 1,
@@ -9513,7 +10449,7 @@
 		],
 	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
-	"skippedFoldersString": "log, \n_logs, \nlogs, \n_cache, \ncache, \n\/storage\/framework\/sessions, \nnode_modules,\nadidas,\nadidas-bug,\n2017-new-year,\nanpin,\nariel_chefnic,\natta,\nbmw_form,\nbmwm30,\nBMWX1,\nccb,\nchairman,\ncitynight,\ncitynight-meitu,\ncrown,\ncss,\nCX5,\ndayan,\ndazhong,\ndicos,\nelr4,\nesteelauder,\nfriso,\nfriso-inland,\nGmoive,\nhire,\nhuawei_hb,\nhuawei_matebook,\nhuaweiG7,\nhuxiu_ministation,\nintel_form,\ninv,\niwatch,\njac,\njac_a60,\njaguar,\njaguar_AOP,\njaguar_fpace,\njiaomu,\nlamer,\nlancome_form,\nLandrover,\nLandroverM,\nLandroverN,\nldl-c4l,\nldl-ix25,\nliamtest,\nlincoln_mkz,\nlkk,\nmanagers,\nMate8,\nmaxshsow,\nmengniu,\nnightparty,\nnumerology,\npicturer,\nproduct,\nqa,\nquaker,\nquakerinfo,\nredbook,\nroewe_i6,\nroewe_i6_pc,\nsayno_create,\nsayno_mfw,\nsayno_momo,\nshortout,\nshow,\nshowman,\nshrimp,\nstarwars,\nTongshuai,\nupload,\nushape,\nuvexpert,\nvolvo_s60l,\nvolvo_v40,\nvolvo_v40_momo,\nvolvo_v40_one,\nvolvo_v40_v40cc_momo,\nvolvo_v40_v40cc_one,\nvolvo_v40_v40cc_weipiaoer,\nvolvo_v40_v40cc_zhihu,\nvolvo_v40_v60,\nvolvo_xc60,\nvolvo_xc90,\nvolvo_xc90_201601,\nvolvo_xc90_t6,\nvolvov60,\nvolvov60wp,\nwaimai,\nwbirthday,\nweilan,\nxinsuteng,\nyears,\nyida,\nYili-Eat-World,\nYili-fridge,\nYili-sugar,\nzhiqu",
+	"skippedFoldersString": "log, \n_logs, \nlogs, \n_cache, \ncache, \n\/storage\/framework\/sessions, \nnode_modules,\nadidas,\nadidas-bug,\n2017-new-year,\nanpin,\nariel_chefnic,\natta,\nbmw_form,\nbmwm30,\nBMWX1,\nccb,\nchairman,\ncitynight,\ncitynight-meitu,\ncrown,\ncss,\nCX5,\ndayan,\ndazhong,\ndicos,\nelr4,\nesteelauder,\nGmoive,\nhire,\nhuawei_hb,\nhuawei_matebook,\nhuaweiG7,\nhuxiu_ministation,\nintel_form,\ninv,\niwatch,\njac,\njac_a60,\njaguar,\njaguar_AOP,\njaguar_fpace,\njiaomu,\nlamer,\nlancome_form,\nLandrover,\nLandroverM,\nLandroverN,\nldl-c4l,\nldl-ix25,\nliamtest,\nlincoln_mkz,\nlkk,\nmanagers,\nMate8,\nmaxshsow,\nmengniu,\nnightparty,\nnumerology,\npicturer,\nproduct,\nqa,\nquaker,\nquakerinfo,\nredbook,\nroewe_i6,\nroewe_i6_pc,\nsayno_create,\nsayno_mfw,\nsayno_momo,\nshortout,\nshow,\nshowman,\nshrimp,\nstarwars,\nTongshuai,\nupload,\nushape,\nuvexpert,\nvolvo_s60l,\nvolvo_v40,\nvolvo_v40_momo,\nvolvo_v40_one,\nvolvo_v40_v40cc_momo,\nvolvo_v40_v40cc_one,\nvolvo_v40_v40cc_weipiaoer,\nvolvo_v40_v40cc_zhihu,\nvolvo_v40_v60,\nvolvo_xc60,\nvolvo_xc90,\nvolvo_xc90_201601,\nvolvo_xc90_t6,\nvolvov60,\nvolvov60wp,\nwaimai,\nwbirthday,\nweilan,\nxinsuteng,\nyears,\nyida,\nYili-Eat-World,\nYili-fridge,\nYili-sugar,\nzhiqu,\nad",
 	"sourceFolderName": "source",
 	"susyVersion": 3,
 	"uglifyDefinesString": "",

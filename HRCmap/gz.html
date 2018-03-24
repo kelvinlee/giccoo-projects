@@ -8,7 +8,7 @@
     <script src="http://api.map.baidu.com/api?v=2.0&amp;ak=l4F677V3w1Z6Gn5H9xRs4GQDB4eLLA6W"></script>
     <script src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
     <script src="../libs/js/cityData.js"></script>
-    <script src="//unpkg.com/inmap/dist/inmap.min.js"></script>
+    <script src="http://unpkg.com/inmap/dist/inmap.min.js"></script>
     <style>
        .BMap_cpyCtrl,.BMap_noprint,.anchorBL {
        	display: none;
@@ -83,7 +83,7 @@
       	bdary.get(name, function(rs){			 		//获取行政区域
       		//- console.log(name,rs.boundaries.length,rs.boundaries);
       		areaCount++;
-      		console.log(name,rs,areaCount);
+      		console.log(name,name.indexOf('绵阳'),rs,areaCount);
       		var count = rs.boundaries.length; //行政区域的点有多少个
       		if (count === 0) {
       			console.log('未能获取当前输入行政区域:'+name);
@@ -114,7 +114,11 @@
       
       				var op = 0.8;
       				//- var op = (random1+random2+random3)/180 * 2.5;
-      				var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: colors[_index],strokeWeight: 0, strokeColor: "rgba(0,0,0,0)"}); //建立多边形覆盖物
+              if (name.indexOf('绵阳') > -1){
+                var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: colors[_index],strokeWeight: 2, strokeColor: "rgba(255,255,255,0.9)"}); //建立多边形覆盖物
+              }else{
+      				  var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: colors[_index],strokeWeight: 0, strokeColor: "rgba(0,0,0,0)"}); //建立多边形覆盖物
+              }
       				//- console.log(ply);
       				map.addOverlay(ply);	//添加覆盖物
       				pointArray = pointArray.concat(ply.getPath());
@@ -130,7 +134,7 @@
       				}
       				if (i == count-1 && index >= cityData[areaId].sub.length-1) {
       
-      					var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":15,"gradient":{
+      					var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":7,"gradient":{
       						0   :"rgb(220,220,220)",
       						.25 :"rgb(220,220,220)",
       						.5  :"rgb(220,220,220)"
@@ -153,7 +157,7 @@
       
       setTimeout(function(){
       	coverAll();
-      	getBoundary(0);
+      	getBoundary(18);
       }, 2000);
     </script>
   </body>

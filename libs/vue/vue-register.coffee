@@ -1,8 +1,7 @@
 Vue.component "form-grounp",
   template:'
     <div class="form-grounp">
-      <lable for="name">{{title}}</lable>
-      <input type="text" name="name" value="value">
+      
     </div>
     '
   data: ->
@@ -14,11 +13,11 @@ Vue.component "form-grounp",
 
 
   props:
-    title:
-      default: ""
-    name:
-      default: ""
+    list:
+      default: []
     
 
   methods:
     submit: (evt)->
+  mounted: (el)->
+    console.log el,this

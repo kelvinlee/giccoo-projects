@@ -8,7 +8,7 @@
     <script src="http://api.map.baidu.com/api?v=2.0&amp;ak=l4F677V3w1Z6Gn5H9xRs4GQDB4eLLA6W"></script>
     <script src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
     <script src="../libs/js/cityData.js"></script>
-    <script src="//unpkg.com/inmap/dist/inmap.min.js"></script>
+    <script src="http://unpkg.com/inmap/dist/inmap.min.js"></script>
     <style>
        .BMap_cpyCtrl,.BMap_noprint,.anchorBL {
        	display: none;
@@ -35,7 +35,8 @@
       var points = [];
       var areaId = 0;
       var areaCount = 0;
-      
+      var sh = 0;
+      var pushed = false;
       
       function coverAll() {
       	var bdary = new BMap.Boundary();
@@ -80,7 +81,8 @@
       	var bdary = new BMap.Boundary();
       	//- console.log(name);
       	//- name = name.replace("市","");
-      	bdary.get(name, function(rs){			 		//获取行政区域
+        //获取行政区域
+      	bdary.get(name, function(rs){			 		
       		//- console.log(name,rs.boundaries.length,rs.boundaries);
       		areaCount++;
       		console.log(name,rs,areaCount);
@@ -114,9 +116,15 @@
       
       				var op = 0.8;
       				//- var op = (random1+random2+random3)/180 * 2.5;
-      				var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: colors[_index],strokeWeight: 0, strokeColor: "rgba(0,0,0,0)"}); //建立多边形覆盖物
+      				if (name.indexOf('绵阳') > -1){
+                var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: colors[_index],strokeWeight: 2, strokeColor: "rgba(255,255,255,1)"}); //建立多边形覆盖物
+                sh = index;
+              }else{
+                var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: colors[_index],strokeWeight: 0, strokeColor: "rgba(0,0,0,0)"}); //建立多边形覆盖物
+                map.addOverlay(ply);  //添加覆盖物
+              }
       				//- console.log(ply);
-      				map.addOverlay(ply);	//添加覆盖物
+      				
       				pointArray = pointArray.concat(ply.getPath());
       			
       				var list = rs.boundaries[i].split(";");
@@ -128,17 +136,17 @@
       					});
       					//- console.log(_index > 0 ? 90/_index : 0);
       				}
-      				if (i == count-1 && index >= cityData[areaId].sub.length-1) {
-      
-      					var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":15,"gradient":{
+      				if (!pushed && i == count-1 && index >= cityData[areaId].sub.length-1) {
+                
+      					var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":5,"gradient":{
       						0   :"rgb(220,220,220)",
       						.25 :"rgb(220,220,220)",
       						.5  :"rgb(220,220,220)"
       					}});
       					map.addOverlay(heatmapOverlay);
       					heatmapOverlay.setDataSet({data:points,max:100});
-      
-      
+                pushed = true;
+                setLast(data,sh);
       					if (window.callPhantom) { window.callPhantom('takeShot'); }
       				}
       			}
@@ -150,10 +158,51 @@
       		}
       	});		
       }
+      function setLast(data,index) {
+        var name = data[index].name;
+        var bdary = new BMap.Boundary();
+        bdary.get(name, function(rs){         
+          //- console.log(name,rs.boundaries.length,rs.boundaries);
+          areaCount++;
+          console.log(name,rs,areaCount);
+          var count = rs.boundaries.length; //行政区域的点有多少个
+          if (count === 0) {
+            console.log('未能获取当前输入行政区域:'+name);
+          }else{
+            var pointArray = [];
+            // blue
+            for (var i = 0; i < count; i++) {
+              
+              var random1 = parseInt(Math.random()*30);
+              var random2 = parseInt(Math.random()*30);
+              var random3 = parseInt(Math.random()*30);
+      
+              //- console.log((random1+random2+random3)/180 * 2.5);
+              
+              var colors = [
+                "rgba(240,81,51,0.9)",
+                "rgba(246,143,30,0.9)",
+                "rgba(255,229,18,0.9)",
+                "rgba(195,204,35,0.9)",
+                "rgba(140,210,244,0.9)"
+              ];
+              var colorss = [
+                "rgb(0,90,255)",
+                "rgb(180,0,255)",
+                "rgb(255,130,0)"
+              ];
+              var _index = parseInt(Math.random()*colors.length);
+              var op = 0.8;
+              var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: colors[_index],strokeWeight: 2, strokeColor: "rgba(0,170,0,1)"}); //建立多边形覆盖物
+              map.addOverlay(ply);
+            }
+          }
+        });
+      }
       
       setTimeout(function(){
       	coverAll();
-      	getBoundary(0);
+      	getBoundary(22);
       }, 2000);
     </script>
   </body>

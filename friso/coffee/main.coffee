@@ -615,13 +615,13 @@ updateLoad = ->
 				console.log "update loaded"
 		error: (error)->
 
-window.onscroll = (evt)->
-	top = document.scrollingElement.scrollTop
+# window.onscroll = (evt)->
+# 	top = document.scrollingElement.scrollTop
 
-	if getdefaultTop && (top > defaultTop)
-		$(".logo").addClass "scroll"
-	else
-		$(".logo").removeClass "scroll"
+# 	if getdefaultTop && (top > defaultTop)
+# 		$(".logo").addClass "scroll"
+# 	else
+# 		$(".logo").removeClass "scroll"
 
 $(document).ready ->
 	$("body").on "click",".likeanswer", ->
@@ -655,7 +655,7 @@ updateLikeOn = ->
 
 window.onload = ->
 	MK = $("body").width()/$("body").height()
-	defaultTop = $(".logo").offset().top
+	# defaultTop = $(".logo").offset().top
 	getdefaultTop = true
 	if $("body").height() <= 460 or MK > 0.65
 		$("body").addClass "iphone4"
