@@ -43,17 +43,21 @@ var loadWechatConfig = function() {
 var stage = new createjs.Stage("mainCanvas");
 
 function initAll(){
-  createjs.Ticker.framerage = 20;
-  createjs.Ticker.addEventListener("tick",handleTick);
-  setSky(30)
+  // createjs.Ticker.framerage = 50;
+  // createjs.Ticker.addEventListener("tick",handleTick);
+  setSky(1)
   skyMove=[-31.3,0]
   getStart()
+  handleTick()
 }
 
-function handleTick(event){
-  moveSky()
-  stage.update()
+function handleTick(){
+  moveSky();
   
+  stage.update();
+  requestAnimationFrame(function(){
+    handleTick();
+  })
 }
 
 //==================星空==================
@@ -74,14 +78,16 @@ function setSky(_starNum){
 
 function moveSky(){
   for (var i = 0; i < starA.length; i++) {
-    starA[i].x+=skyMove[0]*starA[i].scaleX*starA[i].scaleX*starA[i].scaleX*starA[i].scaleX
-    starA[i].y+=skyMove[1]*starA[i].scaleX*starA[i].scaleX*starA[i].scaleX*starA[i].scaleX
+    starA[i].x+=skyMove[i]*starA[i].scaleX*starA[i].scaleX*starA[i].scaleX*starA[i].scaleX
+    console.log(starA[i].x);
+    // starA[i].y+=skyMove[1]*starA[i].scaleX*starA[i].scaleX*starA[i].scaleX*starA[i].scaleX
 
-    if(starA[i].x<0){starA[i].x+=640}
-    if(starA[i].x>640){starA[i].x-=640}
-    if(starA[i].y<0){starA[i].y+=640}
-    if(starA[i].y>640){starA[i].y-=640}
+    if(starA[i].x<0){starA[i].x = 640}
+    // if(starA[i].x>640){starA[i].x-=640}
+    // if(starA[i].y<0){starA[i].y+=640}
+    // if(starA[i].y>640){starA[i].y-=640}
   };
+  
 }
 
 //====================================
