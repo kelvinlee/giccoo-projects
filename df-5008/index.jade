@@ -1,0 +1,114 @@
+extends ../libs/jade/layout-clean
+block title
+	| 一首歌，一段老友情
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
+	link(rel="stylesheet",href="css/base.css")
+	//- script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
+
+block content
+	- url = "http://image.giccoo.com/projects/corona"
+	//- - url = "."
+	
+	//- #load.loading(v-if="!loadend")
+		.ball-spin-fade-loader
+			-for (var i=0;i<8;i++)
+				div
+
+	#page-image.page.page-view-img(style="display: none")
+		a.back(href="http://m.giccoo.com/corona/")
+			img(src="#{url}/img/icon-back.png")
+		img#view-img.ugcimage
+	#main.main(v-show="mount",style="display: none")
+		.loading(v-show="loading")
+			.text 努力上传中请稍后...
+
+		.logo-main
+			img(src="#{url}/img/logo.png")
+		
+		.page.page-home(v-show="homepageShow")
+			.start(@click="start")
+
+		//- 制作页
+		transition(name="page-animation")
+			.page.page-build(v-show="buildshow && buildstep == 1")
+				.build.build-1
+					.title.f0
+						img(:src="'#{url}/img/page-build-topic-title.png'")
+					.input
+						textarea(v-model="topic",@focus="focusArea",@blur="blurArea")
+					.music-list
+						.left(@click="musicSelectPrev")
+						.right(@click="musicSelectNext")
+						.music-name
+							h3 {{musicname}}
+							p {{musicdesc}}
+					.btn.btn-next(@click="gobuild")
+						img(:src="'#{url}/img/btn-next.png'")
+					
+	
+		//- 选择心情页
+		transition(name="page-animation")
+			.page.page-build-2.build-2(v-show="buildstep == 2")
+				.message-list
+					.btn.btn-1(@click="selectContent($event,1)")
+					.btn.btn-2(@click="selectContent($event,2)")
+					.btn.btn-3(@click="selectContent($event,3)")
+					.btn.btn-4(@click="selectContent($event,4)")
+				.btn.btn-build(@click="buildimage")
+					img(:src="'#{url}/img/btn-create.png'")
+
+		//- 生成结果页
+		transition(name="page-animation")
+			.page.page-image(v-show="buildover")
+				.content
+					.bg
+						canvas#result.fadeIn.animated(v-show="creatEnd")
+					.btn.btn-share(@click="share")
+						img(src="./img/btn-share.png")
+					.btn.btn-save
+						img(src="./img/btn-save.png")
+						img.ugc(v-if="ugc",:src="ugcsrc")
+
+		//- 注册页面
+		transition(name="page-animation")
+			.page.register-page(v-show='lastpage')
+				.register(v-show="register")
+					.title
+						img(src="./img/register-icon.png")
+					p 填写联系信息,将有机会获得网易云音乐会员!
+					form.form#register(v-on:submit.prevent="onSubmit")
+						.form-grounp
+							label(for="username") 姓名:
+							input(v-model="form.username")
+						.form-grounp
+							label(for="mobile") 手机号码:
+							input(v-model="form.mobile")
+						.form-btn
+							button.submit(type="submit")
+								img(:src="'img/btn-submit.jpg'")
+
+block js
+	- url = "/"
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/exif.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+	//- script(src="/libs/js/min/jquery.min.js")
+	script(src="js/fetch.js")
+	script(src="js/main.js?v=1")
+	
+
+
+
+	
