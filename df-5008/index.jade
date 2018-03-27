@@ -77,7 +77,7 @@ block content
 					.btn.btn-2.fadeInRight.animated.duration-8.delay-3(:class="{index: contentIndex == 2}",@click="selectContent($event,2)")
 					.btn.btn-3.fadeInLeft.animated.duration-8.delay-5(:class="{index: contentIndex == 3}",@click="selectContent($event,3)")
 					.btn.btn-4.fadeInRight.animated.duration-8.delay-7(:class="{index: contentIndex == 4}",@click="selectContent($event,4)")
-				.btn.btn-next.fadeInUp.duration-8.delay-9(@click="buildimage")
+				.btn.btn-next.fadeInUp.duration-20(@click="buildimage")
 					img(:src="'#{url}/img/btn-create.png'")
 
 		//- 生成结果页
