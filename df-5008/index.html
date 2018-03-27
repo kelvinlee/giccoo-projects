@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>一首歌，一段老友情</title>
+    <meta name="author" content="m.giccoo.com">
+    <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
+    <link rel="stylesheet" href="css/base.css">
+  </head>
+  <body>
+    <!-- - url = "http://image.giccoo.com/projects/df-5008"-->
+    <div id="main" v-show="mount" style="display: none" class="main">
+      <div class="logo-main"><img src="./img/logo.png"></div>
+      <transition name="page-animation">
+        <div v-show="homepageShow" class="page page-home">
+          <div class="bg f0"><img src="./img/homepage-bg.jpg">
+            <div class="bg-mark f0">
+              <div class="mark"><img src="./img/homepage-bg-m.png"></div>
+              <div class="text fadeInUp animated duration-40 delay-3"><img src="./img/homepage-text.png"></div>
+            </div>
+          </div>
+          <div class="text-list">
+            <p class="fadeInUp animated duration-15 delay-25">初春时节正是草长莺飞</p>
+            <p class="fadeInUp animated duration-16 delay-26">冬眠的沉寂过后带来的</p>
+            <p class="fadeInUp animated duration-17 delay-27">或是工作的变迁</p>
+            <p class="fadeInUp animated duration-18 delay-28">或是远游的冲动</p>
+            <p class="fadeInUp animated duration-19 delay-29">抑或爱恋的芬芳</p>
+            <p class="fadeInUp animated duration-20 delay-30">... ...</p>
+          </div>
+          <div @click="start" class="start fadeInUp animated duration-8 delay-35">
+            <p>与东风标致5008照见此刻内心<br/>驱驰远方心境之旅</p>
+            <div class="start-btn"><img src="./img/start-btn.png"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-animation">
+        <div v-show="buildshow &amp;&amp; buildstep == 1" class="page page-build">
+          <div class="build build-1">
+            <div class="title f0"><img :src="'./img/page-build-topic-title.png'"></div>
+            <div class="input">
+              <textarea v-model="topic" @focus="focusArea" @blur="blurArea"></textarea>
+            </div>
+            <div class="music-list">
+              <div @click="musicSelectPrev" class="left"></div>
+              <div @click="musicSelectNext" class="right"></div>
+              <audio id="audio-music" :src="audioSRC"></audio>
+              <div :class="{playing: playing}" @click="pause" class="music-name">
+                <h3>{{musicname}}</h3>
+                <p>{{musicdesc}}</p>
+              </div>
+            </div>
+            <div @click="gobuild" class="btn btn-next"><img :src="'./img/btn-next.png'"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-animation">
+        <div v-show="buildstep == 2" class="page page-build-2 build-2">
+          <div class="message-list">
+            <div :class="{index: contentIndex == 1}" @click="selectContent($event,1)" class="btn btn-1 fadeInLeft animated duration-8 delay-1"></div>
+            <div :class="{index: contentIndex == 2}" @click="selectContent($event,2)" class="btn btn-2 fadeInRight animated duration-8 delay-3"></div>
+            <div :class="{index: contentIndex == 3}" @click="selectContent($event,3)" class="btn btn-3 fadeInLeft animated duration-8 delay-5"></div>
+            <div :class="{index: contentIndex == 4}" @click="selectContent($event,4)" class="btn btn-4 fadeInRight animated duration-8 delay-7"></div>
+          </div>
+          <div @click="buildimage" class="btn btn-next fadeInUp duration-20"><img :src="'./img/btn-create.png'"></div>
+        </div>
+      </transition>
+      <transition name="page-animation">
+        <div v-show="buildover" class="page page-image">
+          <div class="content">
+            <div class="bg"><img v-if="ugc" :src="ugcsrc" class="ugc"><img v-if="qr" :src="qrsrc" class="longsave"></div>
+            <div @click="share" class="btn btn-share"><img src="./img/btn-share.png"></div>
+            <div class="btn btn-save"><img src="./img/btn-save.png"><img v-if="qr" :src="qrsrc" class="longsave">
+              <canvas id="result" v-show="creatEnd" class="fadeIn animated"></canvas>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="lastpage" class="page register-page">
+          <div v-show="register" class="register">
+            <div class="title"><img src="./img/register-icon.png"></div>
+            <p class="desc">填写联系信息,<br/>将有机会获得网易云音乐会员!</p>
+            <form id="register" v-on:submit.prevent="onSubmit" class="form">
+              <div class="form-grounp">
+                <label for="username" class="label-icon-name">姓名</label>
+                <input id="username" name="username" v-model="form.username">
+              </div>
+              <div class="form-grounp">
+                <label for="mobile" class="label-icon-mobile">电话</label>
+                <input id="mobile" name="mobile" v-model="form.mobile">
+              </div>
+              <div class="form-btn">
+                <button type="submit" class="submit"><img :src="'img/btn-submit.png'"></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="wechatshare" @click="closeshare" class="page wechat-sharepage">
+          <div class="content"><img src="./img/wechat-sharepage.png"></div>
+        </div>
+      </transition>
+    </div>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="http://image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
+    <script src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
+    <script src="http://image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
+    <script src="js/main.js?v=1"></script>
+  </body>
+</html>

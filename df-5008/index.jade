@@ -1,0 +1,134 @@
+extends ../libs/jade/layout-clean
+block title
+	| 一首歌，一段老友情
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
+	link(rel="stylesheet",href="css/base.css")
+	//- script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
+
+block content
+	// - url = "http://image.giccoo.com/projects/df-5008"
+	- url = "."
+	
+	#main.main(v-show="mount",style="display: none")
+		//- .loading(v-show="loading")
+		//- 	.load-icon
+		//- 		img(src="#{url}/img/load-icon.png")
+		//- 	.text 正在生成<br/>你的心境卡
+
+		.logo-main
+			img(src="#{url}/img/logo.png")
+		
+		transition(name="page-animation")
+			.page.page-home(v-show="homepageShow")
+				.bg.f0
+					img(src="#{url}/img/homepage-bg.jpg")
+					.bg-mark.f0
+						.mark
+							img(src="#{url}/img/homepage-bg-m.png")
+						.text.fadeInUp.animated.duration-40.delay-3
+							img(src="#{url}/img/homepage-text.png")
+				.text-list
+					p.fadeInUp.animated.duration-15.delay-25 初春时节正是草长莺飞
+					p.fadeInUp.animated.duration-16.delay-26 冬眠的沉寂过后带来的
+					p.fadeInUp.animated.duration-17.delay-27 或是工作的变迁
+					p.fadeInUp.animated.duration-18.delay-28 或是远游的冲动
+					p.fadeInUp.animated.duration-19.delay-29 抑或爱恋的芬芳
+					p.fadeInUp.animated.duration-20.delay-30 ... ...
+				.start.fadeInUp.animated.duration-8.delay-35(@click="start")
+					p 与东风标致5008照见此刻内心<br/>驱驰远方心境之旅
+					.start-btn
+						img(src="#{url}/img/start-btn.png")
+
+		//- 制作页
+		transition(name="page-animation")
+			.page.page-build(v-show="buildshow && buildstep == 1")
+				.build.build-1
+					.title.f0
+						img(:src="'#{url}/img/page-build-topic-title.png'")
+					//- 单行不能超过6个字
+					.input
+						textarea(v-model="topic",@focus="focusArea",@blur="blurArea")
+					.music-list
+						.left(@click="musicSelectPrev")
+						.right(@click="musicSelectNext")
+						audio#audio-music(:src="audioSRC")
+						.music-name(:class="{playing: playing}",@click="pause")
+							h3 {{musicname}}
+							p {{musicdesc}}
+					.btn.btn-next(@click="gobuild")
+						img(:src="'#{url}/img/btn-next.png'")
+					
+	
+		//- 选择心情页
+		transition(name="page-animation")
+			.page.page-build-2.build-2(v-show="buildstep == 2")
+				.message-list
+					.btn.btn-1.fadeInLeft.animated.duration-8.delay-1(:class="{index: contentIndex == 1}",@click="selectContent($event,1)")
+					.btn.btn-2.fadeInRight.animated.duration-8.delay-3(:class="{index: contentIndex == 2}",@click="selectContent($event,2)")
+					.btn.btn-3.fadeInLeft.animated.duration-8.delay-5(:class="{index: contentIndex == 3}",@click="selectContent($event,3)")
+					.btn.btn-4.fadeInRight.animated.duration-8.delay-7(:class="{index: contentIndex == 4}",@click="selectContent($event,4)")
+				.btn.btn-next.fadeInUp.duration-20(@click="buildimage")
+					img(:src="'#{url}/img/btn-create.png'")
+
+		//- 生成结果页
+		transition(name="page-animation")
+			.page.page-image(v-show="buildover")
+				.content
+					.bg
+						img.ugc(v-if="ugc",:src="ugcsrc")
+						img.longsave(v-if="qr",:src="qrsrc")
+					.btn.btn-share(@click="share")
+						img(src="#{url}/img/btn-share.png")
+					.btn.btn-save
+						img(src="#{url}/img/btn-save.png")
+						img.longsave(v-if="qr",:src="qrsrc")
+						canvas#result.fadeIn.animated(v-show="creatEnd")
+						
+
+		//- 注册页面
+		transition(name="page-fade")
+			.page.register-page(v-show='lastpage')
+				.register(v-show="register")
+					.title
+						img(src="#{url}/img/register-icon.png")
+					p.desc 填写联系信息,<br/>将有机会获得网易云音乐会员!
+					form.form#register(v-on:submit.prevent="onSubmit")
+						.form-grounp
+							label.label-icon-name(for="username") 姓名
+							input#username(name="username",v-model="form.username")
+						.form-grounp
+							label.label-icon-mobile(for="mobile") 电话
+							input#mobile(name="mobile",v-model="form.mobile")
+						.form-btn
+							button.submit(type="submit")
+								img(:src="'img/btn-submit.png'")
+		//- wechat share page
+		transition(name="page-fade")
+			.page.wechat-sharepage(v-show="wechatshare",@click="closeshare")
+				.content
+					img(src="#{url}/img/wechat-sharepage.png")
+block js
+	- url = "/"
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/exif.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+	//- script(src="/libs/js/min/jquery.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/axios.min.js")
+	script(src="js/main.js?v=1")
+	
+
+
+
+	
