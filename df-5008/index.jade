@@ -26,7 +26,7 @@ block content
 		//- 	.text 正在生成<br/>你的心境卡
 
 		.logo-main
-			img(src="#{url}/img/logo.png")
+			img(src="http://image.giccoo.com/projects/corona/img/logo.png")
 		
 		transition(name="page-animation")
 			.page.page-home(v-show="homepageShow")
@@ -73,11 +73,11 @@ block content
 		transition(name="page-animation")
 			.page.page-build-2.build-2(v-show="buildstep == 2")
 				.message-list
-					.btn.btn-1.fadeInLeft.animated.duration-8.delay-1(:class="{index: contentIndex == 1}",@click="selectContent($event,1)")
-					.btn.btn-2.fadeInRight.animated.duration-8.delay-3(:class="{index: contentIndex == 2}",@click="selectContent($event,2)")
-					.btn.btn-3.fadeInLeft.animated.duration-8.delay-5(:class="{index: contentIndex == 3}",@click="selectContent($event,3)")
-					.btn.btn-4.fadeInRight.animated.duration-8.delay-7(:class="{index: contentIndex == 4}",@click="selectContent($event,4)")
-				.btn.btn-next.fadeInUp.duration-20(@click="buildimage")
+					.btn.f0.btn-1.fadeInLeft.animated.duration-8.delay-1(:class="{index: contentIndex == 1}",@click="selectContent($event,1)")
+					.btn.f0.btn-2.fadeInRight.animated.duration-8.delay-3(:class="{index: contentIndex == 2}",@click="selectContent($event,2)")
+					.btn.f0.btn-3.fadeInLeft.animated.duration-8.delay-5(:class="{index: contentIndex == 3}",@click="selectContent($event,3)")
+					.btn.f0.btn-4.fadeInRight.animated.duration-8.delay-7(:class="{index: contentIndex == 4}",@click="selectContent($event,4)")
+				.btn.f0.btn-next.fadeInUp.duration-20(@click="buildimage")
 					img(:src="'#{url}/img/btn-create.png'")
 
 		//- 生成结果页
@@ -123,7 +123,7 @@ block js
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/exif.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
-	script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
 	//- script(src="/libs/js/min/jquery.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/axios.min.js")
 	script(src="js/main.js?v=1")
