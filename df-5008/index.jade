@@ -20,10 +20,10 @@ block content
 	- url = "."
 	
 	#main.main(v-show="mount",style="display: none")
-		.loading(v-show="loading")
-			.load-icon
-				img(src="#{url}/img/load-icon.png")
-			.text 正在生成<br/>你的心境卡
+		//- .loading(v-show="loading")
+		//- 	.load-icon
+		//- 		img(src="#{url}/img/load-icon.png")
+		//- 	.text 正在生成<br/>你的心境卡
 
 		.logo-main
 			img(src="#{url}/img/logo.png")
@@ -31,17 +31,20 @@ block content
 		transition(name="page-animation")
 			.page.page-home(v-show="homepageShow")
 				.bg.f0
-					img(src="#{url}/img/homepage-bg-m.png")
-				.text.fadeInUp.animated.duration-15
-					img(src="#{url}/img/homepage-text.png")
+					img(src="#{url}/img/homepage-bg.jpg")
+					.bg-mark.f0
+						.mark
+							img(src="#{url}/img/homepage-bg-m.png")
+						.text.fadeInUp.animated.duration-40.delay-3
+							img(src="#{url}/img/homepage-text.png")
 				.text-list
-					p.fadeInUp.animated.duration-10.delay-5 初春时节正是草长莺飞
-					p.fadeInUp.animated.duration-10.delay-6 冬眠的沉寂过后带来的
-					p.fadeInUp.animated.duration-10.delay-7 或是工作的变迁
-					p.fadeInUp.animated.duration-10.delay-8 或是远游的冲动
-					p.fadeInUp.animated.duration-10.delay-9 抑或爱恋的芬芳
-					p.fadeInUp.animated.duration-10.delay-10 ... ...
-				.start(@click="start")
+					p.fadeInUp.animated.duration-15.delay-25 初春时节正是草长莺飞
+					p.fadeInUp.animated.duration-16.delay-26 冬眠的沉寂过后带来的
+					p.fadeInUp.animated.duration-17.delay-27 或是工作的变迁
+					p.fadeInUp.animated.duration-18.delay-28 或是远游的冲动
+					p.fadeInUp.animated.duration-19.delay-29 抑或爱恋的芬芳
+					p.fadeInUp.animated.duration-20.delay-30 ... ...
+				.start.fadeInUp.animated.duration-8.delay-35(@click="start")
 					p 与东风标致5008照见此刻内心<br/>驱驰远方心境之旅
 					.start-btn
 						img(src="#{url}/img/start-btn.png")
@@ -108,7 +111,7 @@ block content
 							input#mobile(name="mobile",v-model="form.mobile")
 						.form-btn
 							button.submit(type="submit")
-								img(:src="'img/btn-submit.jpg'")
+								img(:src="'img/btn-submit.png'")
 		//- wechat share page
 		transition(name="page-fade")
 			.page.wechat-sharepage(v-show="wechatshare",@click="closeshare")

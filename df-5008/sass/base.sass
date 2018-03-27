@@ -13,7 +13,7 @@ $cdn : "../"
 		animation-duration: $i*100ms
 
 $fontColor: #ffffff;
-$pageMainBGColor: #000000;
+$pageMainBGColor: #ffffff;
 
 
 +keyframes(second)
@@ -95,6 +95,7 @@ body
 	+h
 	+posr
 	+overhide
+	+bc(#000)
 	.logo-main
 		+posa
 		+tl
@@ -325,51 +326,73 @@ body
 	+overhide
 
 .page-home
+	+b("../img/repeat.jpg",repeat-y,top,center,100% auto)
 	.bg
 		+w
 		+posa
 		+bl
+	.bg-mark
+		+posa
+		+w
+		+h(50%)
+		+bl(42.3%,0)
+		+overhide
+		.mark
+			+posa
+			+bl
+			z-index: 9
 	.text
 		+posa
 		+tr(20%,10%)
+		+w(40%)
+		z-index: 8
 	.text-list
 		+posa
-		+bl(50%,5%)
+		+bl(38%,5%)
 		+w(50%)
 		p
 			+m(0.1rem)
 			+font-size(0.8rem)
+			color: #0c2a26
 	.start
 		+w(80%)
 		+posa
-		+bl(5%,10%)
+		+bl(0,10%)
 		+text-center
-		.btn-start
+		p
+			+m
+		.start-btn
 			display: show-inline
-			+wh(3rem,3rem)
+			+wh(5rem,5rem)
+			+m
+.page-build,.page-build-2
+	+b("../img/page-build-bg.jpg",no-repeat,bottom,center,cover)
 
 .page-build
 	.title
 		+posa
-		+tl(15%,50%)
-		+wh(40px,40px)
-		margin-left: -20px
+		+tl(10%,50%)
+		+wh(3rem,3rem)
+		margin-left: -1.5rem
 	.input
 		+posa
-		+tl(25%,18.75%)
+		+tl(20%,18.75%)
 		+w(62.5%)
 		&:before
 			content: " "
 			+posa
-			+tl(-15px,0)
-			+wh(30px,30px)
-			+bc(#fff)
+			+tl(-15px,-40px)
+			+wh(3rem,3rem)
+			// +bc(#fff)
+			+b("../img/yinhao.png",no-repeat,center,center,cover)
 		&:after
 			content: " "
 			+posa
-			+br(-15px,0)
-			+wh(30px,30px)
-			+bc(#fff)
+			+br(-15px,-40px)
+			+wh(3rem,3rem)
+			// +bc(#fff)
+			+b("../img/yinhao.png",no-repeat,center,center,cover)
+			+transform(scale(-1,-1))
 		textarea
 			+w(80%)
 			+h
@@ -383,22 +406,26 @@ body
 			margin-left: 10%;
 	.music-list
 		+posa
-		+tl(45%,5%)
+		+tl(40%,5%)
 		+w(90%)
 		padding: 10px 20px
 		border: solid 1px #fff
 		box-sizing: border-box
+		border-radius: 5px
+		+bc(rgba(255,255,255,0.3))
 		+text-center
 		.left,.right
+			$size: 50px
 			+posa
-			+wh(30px,30px)
-			+bc(#fff)
-			margin-top: -15px
+			+wh($size,$size)
+			// +bc(#fff)
+			margin-top: -$size/2
 		.left
 			+tl(50%,20px)
-
+			+b("../img/btn-m-prev.png",no-repeat,center,center,cover)
 		.right
 			+tr(50%,20px)
+			+b("../img/btn-m-next.png",no-repeat,center,center,cover)
 		.music-name
 			+w(50%)
 			display: show-inline
@@ -416,50 +443,55 @@ body
 				text-shadow: 1px 1px 1px #000
 	.btn-next
 		+posa
-		+bl(20%,25%)
+		+bl(30%,25%)
 		+w(50%)
 		+text-center
-		+h(30px)
-		+bc(#fff)
 
 .page-build-2
 	.message-list
 		+posa
-		+tl(15%,10%)
+		+tl(10%,10%)
 		+w(80%)
 		.btn
 			+w
-			+h(30px)
+			+h(3rem)
 			+bc(rgba(255,255,255,0.3))
 			border: solid 1px #fff
 			border-radius: 8px
 			margin-bottom: 10px
+			font-size: 0
 			+overhide
 			+tran
+			&.btn-1
+				+b("../img/text-1.png",no-repeat,center,center,cover,rgba(255,255,255,0.1))
+			&.btn-2
+				+b("../img/text-2.png",no-repeat,center,center,cover,rgba(255,255,255,0.1))
+			&.btn-3
+				+b("../img/text-3.png",no-repeat,center,center,cover,rgba(255,255,255,0.1))
+			&.btn-4
+				+b("../img/text-4.png",no-repeat,center,center,cover,rgba(255,255,255,0.1))
 			&.index
-				+bc(rgba(255,255,255,0.6))
+				+bc(rgba(255,255,255,0.4))
+			
+
 
 	.btn-next
 		+posa
-		+bl(20%,25%)
+		+bl(30%,25%)
 		+w(50%)
 		+text-center
-		+h(30px)
-		+bc(#fff)
 
 .page-image
 	.btn-share
 		+posa
-		+bl(3%,10%)
-		+w(35%)
-		+h(40px)
+		+bl
+		+w(50%)
 		+overhide
 		z-index: 9
 	.btn-save
 		+posa
-		+br(3%,10%)
-		+w(35%)
-		+h(40px)
+		+br
+		+w(50%)
 		+overhide
 		z-index: 9
 		.longsave
@@ -474,6 +506,7 @@ body
 
 .register-page
 	+bc(rgba(0,0,0,0.8))
+	z-index: 109
 	.register
 		+w(80%)
 		margin-left: 10%
@@ -481,8 +514,8 @@ body
 		.title
 			+m
 			+w(30%)
-			+h(30px)
-			+bc(#fff)
+			// +h(30px)
+			// +bc(#fff)
 			margin-bottom: 10px
 		.desc
 			+m
@@ -512,12 +545,17 @@ body
 					+tl(50%,$size/2)
 					+wh($size,$size)
 					margin-top: -$size/2
-					+bc(red)
+			.label-icon-name
+				&:before
+					+b("../img/icon-name.png",no-repeat,center,center,cover)
+			.label-icon-mobile
+				&:before
+					+b("../img/icon-phone.png",no-repeat,center,center,cover)
 			.form-btn
 				margin-top: 20px
 				.submit
 					+w
 
 .wechat-sharepage
-	+bc(rgba(255,255,255,0.8))
+	+bc(rgba(0,0,0,0.8))
 	z-index: 109

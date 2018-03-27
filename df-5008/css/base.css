@@ -793,10 +793,6 @@ ul {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
-.second {
-  -webkit-animation-name: second;
-          animation-name: second; }
-
 @-webkit-keyframes littlemove {
   0%, 50% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -816,10 +812,6 @@ ul {
     -webkit-transform: translate3d(-10px, 0, 0);
             transform: translate3d(-10px, 0, 0);
     opacity: 0.8; } }
-
-.littlemove {
-  -webkit-animation-name: littlemove;
-          animation-name: littlemove; }
 
 @-webkit-keyframes littlemoveright {
   0%, 50% {
@@ -841,10 +833,6 @@ ul {
             transform: translate3d(10px, 0, 0) scale(-1, 1);
     opacity: 0.8; } }
 
-.littlemoveright {
-  -webkit-animation-name: littlemoveright;
-          animation-name: littlemoveright; }
-
 @-webkit-keyframes moveleft {
   0%, 50% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -864,10 +852,6 @@ ul {
     -webkit-transform: translate3d(-50px, 0, 0);
             transform: translate3d(-50px, 0, 0);
     opacity: 0; } }
-
-.moveleft {
-  -webkit-animation-name: moveleft;
-          animation-name: moveleft; }
 
 @-webkit-keyframes showdarkandlight {
   0% {
@@ -891,10 +875,6 @@ ul {
     opacity: 0.8;
     color: #ffee90; } }
 
-.showdarkandlight {
-  -webkit-animation-name: showdarkandlight;
-          animation-name: showdarkandlight; }
-
 html, body {
   width: 100%;
   height: 100%;
@@ -902,7 +882,7 @@ html, body {
 
 body {
   color: #ffffff;
-  background-color: #000000; }
+  background-color: #ffffff; }
 
 video, canvas {
   width: 100%;
@@ -944,7 +924,8 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: #000; }
   .main .logo-main {
     position: absolute;
     top: 0px;
@@ -1333,78 +1314,108 @@ body {
   height: 100%;
   overflow: hidden; }
 
-.page-home .bg {
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
-  left: 0px; }
+.page-home {
+  background: url("../img/repeat.jpg") repeat-y top center;
+  background-size: 100% auto;
+  background-color: transparent; }
+  .page-home .bg {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px; }
+  .page-home .bg-mark {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 42.3%;
+    left: 0;
+    overflow: hidden; }
+    .page-home .bg-mark .mark {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      z-index: 9; }
+  .page-home .text {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 40%;
+    z-index: 8; }
+  .page-home .text-list {
+    position: absolute;
+    bottom: 38%;
+    left: 5%;
+    width: 50%; }
+    .page-home .text-list p {
+      margin: 0.1rem;
+      font-size: 0.8rem;
+      color: #0c2a26; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .page-home .text-list p {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .page-home .text-list p {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .page-home .text-list p {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .page-home .text-list p {
+          font-size: 0.96rem; } }
+  .page-home .start {
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    text-align: center; }
+    .page-home .start p {
+      margin: 0 auto; }
+    .page-home .start .start-btn {
+      display: show-inline;
+      width: 5rem;
+      height: 5rem;
+      margin: 0 auto; }
 
-.page-home .text {
-  position: absolute;
-  top: 20%;
-  right: 10%; }
-
-.page-home .text-list {
-  position: absolute;
-  bottom: 50%;
-  left: 5%;
-  width: 50%; }
-  .page-home .text-list p {
-    margin: 0.1rem;
-    font-size: 0.8rem; }
-    @media only screen and (min-width: 321px) and (max-width: 399px) {
-      .page-home .text-list p {
-        font-size: 0.88rem; } }
-    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-      .page-home .text-list p {
-        font-size: 0.88rem; } }
-    @media only screen and (min-width: 399px) and (max-width: 767px) {
-      .page-home .text-list p {
-        font-size: 0.96rem; } }
-    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-      .page-home .text-list p {
-        font-size: 0.96rem; } }
-
-.page-home .start {
-  width: 80%;
-  position: absolute;
-  bottom: 5%;
-  left: 10%;
-  text-align: center; }
-  .page-home .start .btn-start {
-    display: show-inline;
-    width: 3rem;
-    height: 3rem; }
+.page-build, .page-build-2 {
+  background: url("../img/page-build-bg.jpg") no-repeat bottom center;
+  background-size: cover;
+  background-color: transparent; }
 
 .page-build .title {
   position: absolute;
-  top: 15%;
+  top: 10%;
   left: 50%;
-  width: 40px;
-  height: 40px;
-  margin-left: -20px; }
+  width: 3rem;
+  height: 3rem;
+  margin-left: -1.5rem; }
 
 .page-build .input {
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 18.75%;
   width: 62.5%; }
   .page-build .input:before {
     content: " ";
     position: absolute;
     top: -15px;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    background-color: #fff; }
+    left: -40px;
+    width: 3rem;
+    height: 3rem;
+    background: url("../img/yinhao.png") no-repeat center center;
+    background-size: cover;
+    background-color: transparent; }
   .page-build .input:after {
     content: " ";
     position: absolute;
     bottom: -15px;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    background-color: #fff; }
+    right: -40px;
+    width: 3rem;
+    height: 3rem;
+    background: url("../img/yinhao.png") no-repeat center center;
+    background-size: cover;
+    background-color: transparent;
+    -webkit-transform: scale(-1, -1);
+            transform: scale(-1, -1); }
   .page-build .input textarea {
     width: 80%;
     height: 100%;
@@ -1431,26 +1442,33 @@ body {
 
 .page-build .music-list {
   position: absolute;
-  top: 45%;
+  top: 40%;
   left: 5%;
   width: 90%;
   padding: 10px 20px;
   border: solid 1px #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
   text-align: center; }
   .page-build .music-list .left, .page-build .music-list .right {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: #fff;
-    margin-top: -15px; }
+    width: 50px;
+    height: 50px;
+    margin-top: -25px; }
   .page-build .music-list .left {
     top: 50%;
-    left: 20px; }
+    left: 20px;
+    background: url("../img/btn-m-prev.png") no-repeat center center;
+    background-size: cover;
+    background-color: transparent; }
   .page-build .music-list .right {
     top: 50%;
-    right: 20px; }
+    right: 20px;
+    background: url("../img/btn-m-next.png") no-repeat center center;
+    background-size: cover;
+    background-color: transparent; }
   .page-build .music-list .music-name {
     width: 50%;
     display: show-inline;
@@ -1494,55 +1512,66 @@ body {
 
 .page-build .btn-next {
   position: absolute;
-  bottom: 20%;
+  bottom: 30%;
   left: 25%;
   width: 50%;
-  text-align: center;
-  height: 30px;
-  background-color: #fff; }
+  text-align: center; }
 
 .page-build-2 .message-list {
   position: absolute;
-  top: 15%;
+  top: 10%;
   left: 10%;
   width: 80%; }
   .page-build-2 .message-list .btn {
     width: 100%;
-    height: 30px;
+    height: 3rem;
     background-color: rgba(255, 255, 255, 0.3);
     border: solid 1px #fff;
     border-radius: 8px;
     margin-bottom: 10px;
+    font-size: 0;
     overflow: hidden;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease; }
+    .page-build-2 .message-list .btn.btn-1 {
+      background: url("../img/text-1.png") no-repeat center center;
+      background-size: cover;
+      background-color: rgba(255, 255, 255, 0.1); }
+    .page-build-2 .message-list .btn.btn-2 {
+      background: url("../img/text-2.png") no-repeat center center;
+      background-size: cover;
+      background-color: rgba(255, 255, 255, 0.1); }
+    .page-build-2 .message-list .btn.btn-3 {
+      background: url("../img/text-3.png") no-repeat center center;
+      background-size: cover;
+      background-color: rgba(255, 255, 255, 0.1); }
+    .page-build-2 .message-list .btn.btn-4 {
+      background: url("../img/text-4.png") no-repeat center center;
+      background-size: cover;
+      background-color: rgba(255, 255, 255, 0.1); }
     .page-build-2 .message-list .btn.index {
-      background-color: rgba(255, 255, 255, 0.6); }
+      background-color: rgba(255, 255, 255, 0.4); }
 
 .page-build-2 .btn-next {
   position: absolute;
-  bottom: 20%;
+  bottom: 30%;
   left: 25%;
   width: 50%;
-  text-align: center;
-  height: 30px;
-  background-color: #fff; }
+  text-align: center; }
 
 .page-image .btn-share {
   position: absolute;
-  bottom: 3%;
-  left: 10%;
-  width: 35%;
-  height: 40px;
+  bottom: 0px;
+  left: 0px;
+  width: 50%;
   overflow: hidden;
   z-index: 9; }
 
 .page-image .btn-save {
   position: absolute;
-  bottom: 3%;
-  right: 10%;
-  width: 35%;
-  height: 40px;
+  bottom: 0px;
+  right: 0px;
+  width: 50%;
   overflow: hidden;
   z-index: 9; }
   .page-image .btn-save .longsave {
@@ -1558,7 +1587,8 @@ body {
   opacity: 0; }
 
 .register-page {
-  background-color: rgba(0, 0, 0, 0.8); }
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 109; }
   .register-page .register {
     width: 80%;
     margin-left: 10%;
@@ -1566,8 +1596,6 @@ body {
     .register-page .register .title {
       margin: 0 auto;
       width: 30%;
-      height: 30px;
-      background-color: #fff;
       margin-bottom: 10px; }
     .register-page .register .desc {
       margin: 0 auto;
@@ -1607,13 +1635,20 @@ body {
       left: 10px;
       width: 20px;
       height: 20px;
-      margin-top: -10px;
-      background-color: red; }
+      margin-top: -10px; }
+    .register-page .register .form .label-icon-name:before {
+      background: url("../img/icon-name.png") no-repeat center center;
+      background-size: cover;
+      background-color: transparent; }
+    .register-page .register .form .label-icon-mobile:before {
+      background: url("../img/icon-phone.png") no-repeat center center;
+      background-size: cover;
+      background-color: transparent; }
     .register-page .register .form .form-btn {
       margin-top: 20px; }
       .register-page .register .form .form-btn .submit {
         width: 100%; }
 
 .wechat-sharepage {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 109; }

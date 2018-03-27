@@ -12,24 +12,24 @@
   <body>
     <!-- - url = "http://image.giccoo.com/projects/df-5008"-->
     <div id="main" v-show="mount" style="display: none" class="main">
-      <div v-show="loading" class="loading">
-        <div class="load-icon"><img src="./img/load-icon.png"></div>
-        <div class="text">正在生成<br/>你的心境卡</div>
-      </div>
       <div class="logo-main"><img src="./img/logo.png"></div>
       <transition name="page-animation">
         <div v-show="homepageShow" class="page page-home">
-          <div class="bg f0"><img src="./img/homepage-bg-m.png"></div>
-          <div class="text fadeInUp animated duration-15"><img src="./img/homepage-text.png"></div>
-          <div class="text-list">
-            <p class="fadeInUp animated duration-10 delay-5">初春时节正是草长莺飞</p>
-            <p class="fadeInUp animated duration-10 delay-6">冬眠的沉寂过后带来的</p>
-            <p class="fadeInUp animated duration-10 delay-7">或是工作的变迁</p>
-            <p class="fadeInUp animated duration-10 delay-8">或是远游的冲动</p>
-            <p class="fadeInUp animated duration-10 delay-9">抑或爱恋的芬芳</p>
-            <p class="fadeInUp animated duration-10 delay-10">... ...</p>
+          <div class="bg f0"><img src="./img/homepage-bg.jpg">
+            <div class="bg-mark f0">
+              <div class="mark"><img src="./img/homepage-bg-m.png"></div>
+              <div class="text fadeInUp animated duration-40 delay-3"><img src="./img/homepage-text.png"></div>
+            </div>
           </div>
-          <div @click="start" class="start">
+          <div class="text-list">
+            <p class="fadeInUp animated duration-15 delay-25">初春时节正是草长莺飞</p>
+            <p class="fadeInUp animated duration-16 delay-26">冬眠的沉寂过后带来的</p>
+            <p class="fadeInUp animated duration-17 delay-27">或是工作的变迁</p>
+            <p class="fadeInUp animated duration-18 delay-28">或是远游的冲动</p>
+            <p class="fadeInUp animated duration-19 delay-29">抑或爱恋的芬芳</p>
+            <p class="fadeInUp animated duration-20 delay-30">... ...</p>
+          </div>
+          <div @click="start" class="start fadeInUp animated duration-8 delay-35">
             <p>与东风标致5008照见此刻内心<br/>驱驰远方心境之旅</p>
             <div class="start-btn"><img src="./img/start-btn.png"></div>
           </div>
@@ -92,7 +92,7 @@
                 <input id="mobile" name="mobile" v-model="form.mobile">
               </div>
               <div class="form-btn">
-                <button type="submit" class="submit"><img :src="'img/btn-submit.jpg'"></button>
+                <button type="submit" class="submit"><img :src="'img/btn-submit.png'"></button>
               </div>
             </form>
           </div>

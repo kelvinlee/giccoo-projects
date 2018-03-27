@@ -93,15 +93,15 @@ init = ->
 			gobuild: ->
 				if @topic is topic_list[0]
 					return alert "请输入您自己的心境感悟"
-				else if @topic.split("\n").length > 2
-					return alert "请控制您丰富的感情在 2 行以内的文字."
+				else if @topic.split("\n").length > 4
+					return alert "请控制您丰富的感情在 4 行以内的文字."
 				else if @topic.length <= 0
 					return alert "请输入您自己的心境感悟"
 				else
 					texts = @topic.split("\n")
 					for i in texts
 						console.log i.replace(/[^\x00-\xff]/g,"01").length
-						return alert "请控制您丰富的感情当行文字不能超过20个中文字符以内" if i.replace(/[^\x00-\xff]/g,"01").length > 40
+						return alert "请控制您丰富的感情,单行文字不能超过15个中文字符以内" if i.replace(/[^\x00-\xff]/g,"01").length > 30
 
 				@buildstep = 2
 				
@@ -141,32 +141,34 @@ init = ->
 				self = @
 				canvas = document.getElementById "result"
 				canvas.width = 640
-				canvas.height = 1138
+				canvas.height = 1024
 				# canvas.className = "topall"
 				ctx = canvas.getContext("2d")
 				@buildover = true
 				bg = new Image()
-				# bg.onload = (evt)->
-				# 	ctx.drawImage(bg, 0, 0, bg.width, bg.height)
-				#		writeText()
-				# bg.src = "./img/create-bg.jpg"
+				bg.onload = (evt)->
+					ctx.drawImage(bg, 0, 0, bg.width, bg.height)
+					writeText()
+				bg.src = "./img/bg-#{self.contentIndex}.jpg"
 				
 				writeText = ->
 					ctx.fillStyle = "#fff";
 					ctx.textAlign = 'center'
 					ctx.font = "56px '微软雅黑'"
-					ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
-					ctx.shadowBlur = 2;
+					ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+					ctx.shadowBlur = 5;
 					# ctx.fillText(name_list[self.contentIndex-1],320,270)
-					runLongTexts name_list[self.contentIndex-1],ctx,320,370
+					runLongTexts name_list[self.contentIndex-1],ctx,320,440
 					ctx.fillStyle = "#fff"
 					ctx.textAlign = 'center'
 					ctx.font = "30px '微软雅黑'"
-					runLongTexts self.topic,ctx,320,160
+					MAX = self.topic.split('\n').length
+					removeH = MAX * (30*1)
+					runLongTexts self.topic,ctx,320,294-removeH
 					ctx.font = "30px '微软雅黑' bold"
-					ctx.fillText(self.musicname,320,960)
+					ctx.fillText(self.musicname,320,790)
 					ctx.font = "24px '微软雅黑'"
-					ctx.fillText(self.musicdesc,320,1000)
+					ctx.fillText(self.musicdesc,320,830)
 					
 					# self.onUpload canvas.toDataURL("image/png")
 					self.ugc = true
@@ -182,7 +184,7 @@ init = ->
 						self.qr = true
 						self.qrsrc = canvas.toDataURL("image/png")
 					qr.src = "./img/qrcode.png"
-				writeText()
+				# writeText()
 
 				@buildshow = false
 				@buildstep = 1
@@ -232,7 +234,9 @@ init = ->
 						alert msg.data.reason
 
 		mounted: ->
-			@mount = true
+			setTimeout ->
+				main.mount = true
+			,100
 # canvas 轮训文字
 runLongTexts = (texts,ctx,x,y)->
 	all = texts.split('\n')
