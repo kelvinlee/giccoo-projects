@@ -221,6 +221,8 @@ init = ->
 				# add content
 				for k, v of @form
 					data[k] = v
+				data['content'] = main.topic
+				data['music'] = music_list[main.musicIndex].name
 				axios.post url,data
 				.then (msg)->
 					if msg.data.recode is 200

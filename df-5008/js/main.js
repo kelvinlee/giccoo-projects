@@ -346,6 +346,8 @@ init = function() {
           v = ref[k];
           data[k] = v;
         }
+        data['content'] = main.topic;
+        data['music'] = music_list[main.musicIndex].name;
         return axios.post(url, data).then(function(msg) {
           if (msg.data.recode === 200) {
             alert("参与成功");
