@@ -66,43 +66,6 @@
           <div @click="buildimage" class="btn f0 btn-next fadeInUp duration-20"><img :src="'./img/btn-create.png'"></div>
         </div>
       </transition>
-      <transition name="page-animation">
-        <div v-show="buildover" class="page page-image">
-          <div class="content">
-            <div class="bg"><img v-if="ugc" :src="ugcsrc" class="ugc"><img v-if="qr" :src="qrsrc" class="longsave"></div>
-            <div @click="share" class="btn btn-share"><img src="./img/btn-share.png"></div>
-            <div class="btn btn-save"><img src="./img/btn-save.png"><img v-if="qr" :src="qrsrc" class="longsave">
-              <canvas id="result" v-show="creatEnd" class="fadeIn animated"></canvas>
-            </div>
-          </div>
-        </div>
-      </transition>
-      <transition name="page-fade">
-        <div v-show="lastpage" class="page register-page">
-          <div v-show="register" class="register">
-            <div class="title"><img src="./img/register-icon.png"></div>
-            <p class="desc">填写联系信息,<br/>将有机会获得网易云音乐会员!</p>
-            <form id="register" v-on:submit.prevent="onSubmit" class="form">
-              <div class="form-grounp">
-                <label for="username" class="label-icon-name">姓名</label>
-                <input id="username" name="username" v-model="form.username">
-              </div>
-              <div class="form-grounp">
-                <label for="mobile" class="label-icon-mobile">电话</label>
-                <input id="mobile" name="mobile" v-model="form.mobile">
-              </div>
-              <div class="form-btn">
-                <button type="submit" class="submit"><img :src="'img/btn-submit.png'"></button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </transition>
-      <transition name="page-fade">
-        <div v-show="wechatshare" @click="closeshare" class="page wechat-sharepage">
-          <div class="content"><img src="./img/wechat-sharepage.png"></div>
-        </div>
-      </transition>
     </div>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <script src="http://image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
