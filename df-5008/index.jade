@@ -26,10 +26,10 @@ block content
 		//- 	.text 正在生成<br/>你的心境卡
 
 		.logo-main
-			img(src="http://image.giccoo.com/projects/corona/img/logo.png")
+			img(src="#{url}/img/logo.png")
 		
 		transition(name="page-animation")
-			.page.page-home(v-show="homepageShow")
+			.page.page-home#page-home(v-show="homepageShow")
 				.bg.f0
 					img(src="#{url}/img/homepage-bg.jpg")
 					.bg-mark.f0

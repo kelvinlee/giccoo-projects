@@ -197,7 +197,8 @@ init = function() {
         return document.getElementById("audio-music").play();
       },
       changPlay: function() {
-        return this.playing = true;
+        this.playing = true;
+        return (typeof _hmt !== "undefined" && _hmt !== null) && _hmt.push(['_trackEvent', "df-5008", "music", music_list[this.musicIndex].name, "-"]);
       },
       changEnd: function() {
         return this.playing = false;

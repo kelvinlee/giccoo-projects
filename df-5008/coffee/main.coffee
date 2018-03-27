@@ -124,6 +124,7 @@ init = ->
 				document.getElementById("audio-music").play()
 			changPlay: ->
 				@playing = true
+				_hmt? and _hmt.push(['_trackEvent', "df-5008", "music", music_list[@musicIndex].name, "-"])
 			changEnd: ->
 				@playing = false
 			pause: ->
