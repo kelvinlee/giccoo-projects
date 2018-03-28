@@ -278,6 +278,9 @@ function p1ani3(){
 var copy0urlA=["img/copy0a.png","img/copy0b.png","img/copy0c.png","img/copy0d.png","img/copy0e.png","img/copy0f.png","img/copy0g.png","img/copy0h.png","img/copy0i.png"]
 var copy0A=[]
 var stage1b=new createjs.Container()
+var p0btn = new createjs.Bitmap("img/p0btn.png")
+var p0t = new createjs.Bitmap("img/p0t.png")
+var p0glow = new createjs.Bitmap("img/circle_glow.png")
 function p1ani4(){
   screenMove=[0,0]
   skyMove.x=-1
@@ -297,9 +300,7 @@ function p1ani4(){
     copy0A.push(copy0)
     TweenLite.from(copy0,1.5,{y:-200,alpha:0,delay:1-i*.05})
   };
-  var p0btn = new createjs.Bitmap("img/p0btn.png")
-  var p0t = new createjs.Bitmap("img/p0t.png")
-  var p0glow = new createjs.Bitmap("img/circle_glow.png")
+
 
   setTimeout(function(){
       stage1b.addChild(p0btn)
@@ -314,7 +315,41 @@ function p1ani4(){
       TweenLite.from(p0btn,1,{alpha:0,y:20,delay:.1})
       TweenLite.from(p0t,1,{alpha:0,y:20,delay:.2})
       TweenLite.from(p0glow,1,{scale:0,alpha:0,delay:.3})
+
+      $("#p0_btn")[0].addEventListener("touchstart",p0btnDown)
+      $("#p0_btn")[0].addEventListener("touchend",p0btnUp)
+
+
   },2500)
 
 
+}
+var canGo=1
+function p0btnDown(){
+  canGo=1
+  TweenLite.to(p0glow,3,{scale:4,alpha:1,onComplete:goP1})
+  for (var i = 0; i < copy0A.length; i++) {
+    TweenLite.to(copy0A[i],3,{alpha:.5,x:Math.random()*100-50,y:Math.random()*100-50})
+  };
+}
+function p0btnUp(){
+  canGo=0
+  TweenLite.to(p0glow,.5,{scale:0,alpha:0})
+  for (var i = 0; i < copy0A.length; i++) {
+    TweenLite.to(copy0A[i],.5,{alpha:1,x:0,y:0})
+  };
+}
+function goP1(){
+  if(canGo==1){
+    $("#p0_btn")[0].removeEventListener("touchstart",p0btnDown)
+    $("#p0_btn")[0].removeEventListener("touchend",p0btnUp)
+    TweenLite.to(p0glow,.5,{scale:8,alpha:0})
+    for (var i = 0; i < copy0A.length; i++) {
+      TweenLite.to(copy0A[i],.5,{alpha:0,x:0,y:0})
+    };
+    TweenLite.to(p0btn,.5,{alpha:0})
+    TweenLite.to(p0t,.5,{alpha:0})
+  }else{
+
+  }
 }
