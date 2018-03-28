@@ -124,7 +124,7 @@ function moveSky(){
   
 }
 
-//===================第一页===============
+//===================首页动画开始===============
 var walk1bA=[]
 var stage1 = new createjs.Container()
 var stage1fp = new createjs.Container()
@@ -349,6 +349,14 @@ function goP1(){
     };
     TweenLite.to(p0btn,.5,{alpha:0})
     TweenLite.to(p0t,.5,{alpha:0})
-    ani1.test2()
+    ani1start()//========================进入第一动画
   }
+}
+
+//============================首页动画结束
+
+//============================第一页开始
+var stage_1=new createjs.Container()
+function ani1start(){
+  stage.addChild(stage_1)
 }

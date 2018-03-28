@@ -32,7 +32,7 @@ music_list = [{
   desc: "牛奶咖啡",
   src: "http://music.163.com/song/media/outer/url?id=476987525"
 }, {
-  name: "边走边喝",
+  name: "边走边唱",
   desc: "黄磊",
   src: "http://music.163.com/song/media/outer/url?id=92613"
 }, {
