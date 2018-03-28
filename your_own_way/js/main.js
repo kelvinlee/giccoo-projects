@@ -277,6 +277,7 @@ function p1ani3(){
 
 var copy0urlA=["img/copy0a.png","img/copy0b.png","img/copy0c.png","img/copy0d.png","img/copy0e.png","img/copy0f.png","img/copy0g.png","img/copy0h.png","img/copy0i.png"]
 var copy0A=[]
+var stage1b=new createjs.Container()
 function p1ani4(){
   screenMove=[0,0]
   skyMove.x=-1
@@ -289,10 +290,31 @@ function p1ani4(){
   TweenLite.to(skyMove,3,{x:-1,y:0,delay:.5})
   TweenLite.to(stage1,4,{y:700,delay:.5,scaleY:.7})
 
+  stage.addChild(stage1b)
   for (var i = 0; i < copy0urlA.length; i++) {
     var copy0=new createjs.Bitmap(copy0urlA[i])
-    stage.addChild(copy0)
+    stage1b.addChild(copy0)
     copy0A.push(copy0)
     TweenLite.from(copy0,1.5,{y:-200,alpha:0,delay:1-i*.05})
   };
+  var p0btn = new createjs.Bitmap("img/p0btn.png")
+  var p0t = new createjs.Bitmap("img/p0t.png")
+  var p0glow = new createjs.Bitmap("img/circle_glow.png")
+
+  setTimeout(function(){
+      stage1b.addChild(p0btn)
+      stage1b.addChild(p0t)
+      stage1b.addChild(p0glow)
+
+      p0glow.regX=50
+      p0glow.regY=50
+      p0glow.x=320
+      p0glow.y=840
+      p0glow.scaleX=p0glow.scaleY=2
+      TweenLite.from(p0btn,1,{alpha:0,y:20,delay:.1})
+      TweenLite.from(p0t,1,{alpha:0,y:20,delay:.2})
+      TweenLite.from(p0glow,1,{scale:0,alpha:0,delay:.3})
+  },2500)
+
+
 }
