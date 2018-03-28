@@ -182,7 +182,7 @@ function getStart(){
 
   stage1.addChild(stage1fp)
   stage1.addChild(hillA[5])//====最近的山
-  p1ani1()
+  p0ani1()
 }
 
 
@@ -233,12 +233,12 @@ function moveHills(){
 }
 
 var titleA=[]
-function p1ani1(){
+function p0ani1(){
   var t1=5
   screenMove=[0,0]
   skyMove.x=-1//=[-1,0]
   //boy1.x=(320-25)*(6-t1)/6
-  TweenLite.to(boy1,t1,{x:320-25,ease:Linear.easeNone,onComplete:p1ani2})
+  TweenLite.to(boy1,t1,{x:320-25,ease:Linear.easeNone,onComplete:p0ani2})
 
     //=======标题1
   
@@ -250,7 +250,7 @@ function p1ani1(){
 
     
     if(i==7){
-      TweenLite.from(p1title,3,{y:p1title.y+50,alpha:0,delay:1+i*.5,ease:Back.easeOut,onComplete:p1ani3})
+      TweenLite.from(p1title,3,{y:p1title.y+50,alpha:0,delay:1+i*.5,ease:Back.easeOut,onComplete:p0ani3})
     }else{
       TweenLite.from(p1title,3,{y:p1title.y+50,alpha:0,delay:1+i*.5,ease:Back.easeOut})
     }
@@ -258,7 +258,7 @@ function p1ani1(){
   };
 }
 var lookup= new createjs.Bitmap("img/man_lookup.png")
-function p1ani2(){
+function p0ani2(){
   screenMove=[-1,0]
   skyMove.x=-1.5//
   stage1.addChild(lookup)
@@ -266,10 +266,10 @@ function p1ani2(){
   lookup.y=boy1.y
   lookup.alpha=0
 }
-function p1ani3(){
+function p0ani3(){
   for (var i = 1; i < 8; i++) {    
     if(i==7){
-      TweenLite.to(titleA[i-1],3,{x:-320,alpha:0,delay:i*0,ease:Linear.easeNone,onComplete:p1ani4})
+      TweenLite.to(titleA[i-1],3,{x:-320,alpha:0,delay:i*0,ease:Linear.easeNone,onComplete:p0ani4})
     }else{
       TweenLite.to(titleA[i-1],3-Math.random(),{x:-320,alpha:0,delay:i*0,ease:Linear.easeNone})
     }
@@ -283,7 +283,7 @@ var stage1b=new createjs.Container()
 var p0btn = new createjs.Bitmap("img/p0btn.png")
 var p0t = new createjs.Bitmap("img/p0t.png")
 var p0glow = new createjs.Bitmap("img/circle_glow.png")
-function p1ani4(){
+function p0ani4(){
   screenMove=[0,0]
   skyMove.x=-1
   skyMove.y=0
@@ -320,12 +320,10 @@ function p1ani4(){
 
       $("#p0_btn")[0].addEventListener("touchstart",p0btnDown)
       $("#p0_btn")[0].addEventListener("touchend",p0btnUp)
-
-
   },2500)
-
-
 }
+
+
 var canGo=1
 function p0btnDown(){
   canGo=1
@@ -351,7 +349,6 @@ function goP1(){
     };
     TweenLite.to(p0btn,.5,{alpha:0})
     TweenLite.to(p0t,.5,{alpha:0})
-  }else{
-
+    ani1.test2()
   }
 }
