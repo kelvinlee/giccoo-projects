@@ -1412,6 +1412,13 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/df-5008\/img\/btn-save.png.zip": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/df-5008\/img\/btn-save.png.zip",
+		"oF": 0
+		},
 	"\/df-5008\/img\/btn-share.png": {
 		"ft": 32768,
 		"iS": 10413,
@@ -1532,7 +1539,7 @@
 		},
 	"\/df-5008\/img\/qrcode.png": {
 		"ft": 32768,
-		"iS": 1508,
+		"iS": 1863,
 		"oA": 0,
 		"oAP": "\/df-5008\/img\/qrcode.png",
 		"oF": 0,
