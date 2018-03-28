@@ -46,7 +46,8 @@ function initAll(){
    createjs.Ticker.framerage = 50;
    createjs.Ticker.addEventListener("tick",handleTick);
   setSky(50)
-  skyMove=[-1,0]
+  skyMove.x=-1
+  skyMove.y=0
   getStart()
   tick();
 }
@@ -91,7 +92,7 @@ function handleTick(){
 
 //==================星空==================
 var starA=[]
-var skyMove=[0,0]
+var skyMove={x:0,y:0}//[0,0]
 function setSky(_starNum){
   for (var i = 0; i < _starNum; i++) {
     //var AstarContainer = new createjs.Container()
@@ -108,8 +109,8 @@ function setSky(_starNum){
 
 function moveSky(){
   for (var i = 0; i < starA.length; i++) {
-    starA[i].x+=skyMove[0]*(starA[i].scaleY*starA[i].scaleY*starA[i].scaleY*starA[i].scaleY)
-    starA[i].y+=skyMove[1]*(starA[i].scaleY*starA[i].scaleY*starA[i].scaleY*starA[i].scaleY)
+    starA[i].x+=skyMove.x*(starA[i].scaleY*starA[i].scaleY*starA[i].scaleY*starA[i].scaleY)
+    starA[i].y+=skyMove.y*(starA[i].scaleY*starA[i].scaleY*starA[i].scaleY*starA[i].scaleY)
 
     starA[i].alpha=Math.random()*60
 
@@ -233,7 +234,7 @@ var titleA=[]
 function p1ani1(){
   var t1=5
   screenMove=[0,0]
-  skyMove=[-1,0]
+  skyMove.x=-1//=[-1,0]
   //boy1.x=(320-25)*(6-t1)/6
   TweenLite.to(boy1,t1,{x:320-25,ease:Linear.easeNone,onComplete:p1ani2})
 
@@ -254,30 +255,44 @@ function p1ani1(){
 
   };
 }
+var lookup= new createjs.Bitmap("img/man_lookup.png")
 function p1ani2(){
   screenMove=[-1,0]
-  skyMove=[-1.5,0]
+  skyMove.x=-1.5//
+  stage1.addChild(lookup)
+  lookup.x=boy1.x
+  lookup.y=boy1.y
+  lookup.alpha=0
 }
 function p1ani3(){
   for (var i = 1; i < 8; i++) {    
     if(i==7){
       TweenLite.to(titleA[i-1],3,{x:-320,alpha:0,delay:i*0,ease:Linear.easeNone,onComplete:p1ani4})
     }else{
-      TweenLite.to(titleA[i-1],3,{x:-320,alpha:0,delay:i*0,ease:Linear.easeNone})
+      TweenLite.to(titleA[i-1],3-Math.random(),{x:-320,alpha:0,delay:i*0,ease:Linear.easeNone})
     }
 
   };
 }
 
-
+var copy0urlA=["img/copy0a.png","img/copy0b.png","img/copy0c.png","img/copy0d.png","img/copy0e.png","img/copy0f.png","img/copy0g.png","img/copy0h.png","img/copy0i.png"]
+var copy0A=[]
 function p1ani4(){
   screenMove=[0,0]
-  skyMove=[0,3]
-  var lookup= new createjs.Bitmap("img/man_lookup.png")
-  stage1.addChild(lookup)
-  lookup.x=boy1.x
-  lookup.y=boy1.y
+  skyMove.x=-1
+  skyMove.y=0
+  
+  lookup.alpha=1
   stage1.removeChild(boy1)
   boy1.stop()
-  TweenLite.to(stage1,4,{y:500})
+  TweenLite.set(skyMove,{x:0,y:8,delay:.5,overwrite:0})
+  TweenLite.to(skyMove,3,{x:-1,y:0,delay:.5})
+  TweenLite.to(stage1,4,{y:700,delay:.5,scaleY:.7})
+
+  for (var i = 0; i < copy0urlA.length; i++) {
+    var copy0=new createjs.Bitmap(copy0urlA[i])
+    stage.addChild(copy0)
+    copy0A.push(copy0)
+    TweenLite.from(copy0,1.5,{y:-200,alpha:0,delay:1-i*.05})
+  };
 }
