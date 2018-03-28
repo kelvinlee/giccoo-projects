@@ -1,12 +1,12 @@
 extends ../libs/jade/layout-clean
 block title
-	| 一首歌，一段老友情
+	| 吾有心语，享，往远方
 
 block css
 	meta(name="author",content="m.giccoo.com")
 	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
 	link(rel="stylesheet",href="css/base.css")
-	//- script.
+	script.
 		var _hmt = _hmt || [];
 		(function() {
 			var hm = document.createElement("script");
@@ -61,7 +61,7 @@ block content
 					.music-list
 						.left(@click="musicSelectPrev")
 						.right(@click="musicSelectNext")
-						audio#audio-music(:src="audioSRC")
+						audio#audio-music(preload="auto",src="http://music.163.com/song/media/outer/url?id=28815250")
 						.music-name(:class="{playing: playing}",@click="pause")
 							h3 {{musicname}}
 							p {{musicdesc}}
@@ -81,7 +81,7 @@ block content
 					img(:src="'#{url}/img/btn-create.png'")
 
 		//- 生成结果页
-		//- transition(name="page-animation")
+		transition(name="page-animation")
 			.page.page-image(v-show="buildover")
 				.content
 					.bg
@@ -96,7 +96,7 @@ block content
 						
 
 		//- 注册页面
-		//- transition(name="page-fade")
+		transition(name="page-fade")
 			.page.register-page(v-show='lastpage')
 				.register(v-show="register")
 					.title
@@ -113,7 +113,7 @@ block content
 							button.submit(type="submit")
 								img(:src="'img/btn-submit.png'")
 		//- wechat share page
-		//- transition(name="page-fade")
+		transition(name="page-fade")
 			.page.wechat-sharepage(v-show="wechatshare",@click="closeshare")
 				.content
 					img(src="#{url}/img/wechat-sharepage.png")

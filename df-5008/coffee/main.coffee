@@ -8,6 +8,7 @@ post_url = "http://api.giccoo.com/df5008/insert/"
 sys = "other"
 noteText = "长按识别二维码，\n去往2018年的远方。"
 name_list = ["心之所向\n即为吾乡","淡泊明志\n宁静致远","愿得浮生\n半日闲","一屋两人\n三餐四季"]
+# http://music.163.com/song/media/outer/url?id=92613
 music_list = [
 	{name:"平凡之路",desc:"朴树",src:"http://music.163.com/song/media/outer/url?id=28815250"},
 	{name:"咖喱咖喱",desc:"牛奶咖啡",src:"http://music.163.com/song/media/outer/url?id=476987525"},
@@ -85,6 +86,7 @@ init = ->
 			start: ->
 				@buildshow = true
 				@homepageShow = false
+				document.getElementById("audio-music").play()
 			gobuild: ->
 				if @topic is topic_list[0]
 					return alert "请输入您自己的心境感悟"
@@ -117,10 +119,11 @@ init = ->
 					return false
 				@play()
 			play: ->
-				@audioSRC = music_list[@musicIndex].src
+				# @audioSRC = music_list[@musicIndex].src
+				document.getElementById("audio-music").src = music_list[@musicIndex].src
 				document.getElementById("audio-music").addEventListener "play", @changPlay.bind @
 				document.getElementById("audio-music").addEventListener "pause", @changEnd.bind @
-				document.getElementById("audio-music").addEventListener "end", @changEnd.bind @
+				document.getElementById("audio-music").addEventListener "ended", @changEnd.bind @
 				document.getElementById("audio-music").play()
 			changPlay: ->
 				@playing = true
@@ -142,9 +145,13 @@ init = ->
 				ctx = canvas.getContext("2d")
 				@buildover = true
 				bg = new Image()
+				logo = new Image()
 				bg.onload = (evt)->
 					ctx.drawImage(bg, 0, 0, bg.width, bg.height)
-					writeText()
+					logo.onload = ->
+						ctx.drawImage(logo, 0, 0, logo.width, logo.height)
+						writeText()
+					logo.src="./img/logo.png"
 				bg.src = "./img/bg-#{self.contentIndex}.jpg"
 				
 				writeText = ->
