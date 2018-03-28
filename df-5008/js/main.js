@@ -171,17 +171,21 @@ init = function init() {
       },
       musicSelectPrev: function musicSelectPrev() {
         this.musicIndex += -1;
-        if (this.musicIndex <= 0) {
-          this.musicIndex = 0;
-          return false;
+        if (this.musicIndex < 0) {
+          //this.musicIndex = 0;
+          this.musicIndex = music_list.length - 1;
+          return this.play();
+          //return false;
         }
         return this.play();
       },
       musicSelectNext: function musicSelectNext() {
         this.musicIndex += 1;
         if (this.musicIndex > music_list.length - 1) {
-          this.musicIndex = music_list.length - 1;
-          return false;
+          //this.musicIndex = music_list.length - 1;
+          this.musicIndex = 0;
+          return this.play();
+          //return false;
         }
         return this.play();
       },
