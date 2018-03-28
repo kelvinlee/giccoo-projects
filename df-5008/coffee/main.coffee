@@ -1,8 +1,3 @@
-# @codekit-prepend "coffee/css3Prefix"
-# @codekit-prepend "../../libs/js/min/riot.min.js"
-# @codekit-prepend "../js/ctrl.js"
-
-# http://api.giccoo.com/sayno/corona
 _CDN = ""
 _imgurl = ""
 global = {}
@@ -14,16 +9,16 @@ sys = "other"
 noteText = "长按识别二维码，\n去往2018年的远方。"
 name_list = ["心之所向\n即为吾乡","淡泊明志\n宁静致远","愿得浮生\n半日闲","一屋两人\n三餐四季"]
 music_list = [
-	{name:"平凡之路",desc:"朴树",src:"http://music.163.com/#/song?id=28815250"},
-	{name:"咖喱咖喱",desc:"牛奶咖啡",src:"http://music.163.com/#/song?id=476987525"},
-	{name:"边走边喝",desc:"黄磊",src:"http://music.163.com/#/song?id=92613"}
-	{name:"微笑的仙人掌",desc:"彭靖惠",src:"http://music.163.com/#/song?id=280668"}
-	{name:"Friends",desc:"彭靖惠",src:"http://music.163.com/#/song?id=280684"}
-	{name:"国境之南",desc:"范逸臣",src:"http://music.163.com/#/song?id=4873061"}
-	{name:"下一站，幸福",desc:"彭靖惠",src:"http://music.163.com/#/song?id=280649"}
-	{name:"环游世界",desc:"小旺福",src:"http://music.163.com/#/song?id=385640"}
-	{name:"爱是有故事的旅行",desc:"李泉",src:"http://music.163.com/#/song?id=111801"}
-	{name:"Taipei City，台北城市",desc:"陈奕迅",src:"http://music.163.com/#/song?id=67829"}
+	{name:"平凡之路",desc:"朴树",src:"http://music.163.com/song/media/outer/url?id=28815250"},
+	{name:"咖喱咖喱",desc:"牛奶咖啡",src:"http://music.163.com/song/media/outer/url?id=476987525"},
+	{name:"边走边喝",desc:"黄磊",src:"http://music.163.com/song/media/outer/url?id=92613"}
+	{name:"微笑的仙人掌",desc:"彭靖惠",src:"http://music.163.com/song/media/outer/url?id=280668"}
+	{name:"Friends",desc:"彭靖惠",src:"http://music.163.com/song/media/outer/url?id=280684"}
+	{name:"国境之南",desc:"范逸臣",src:"http://music.163.com/song/media/outer/url?id=4873061"}
+	{name:"下一站，幸福",desc:"彭靖惠",src:"http://music.163.com/song/media/outer/url?id=280649"}
+	{name:"环游世界",desc:"小旺福",src:"http://music.163.com/song/media/outer/url?id=385640"}
+	{name:"爱是有故事的旅行",desc:"李泉",src:"http://music.163.com/song/media/outer/url?id=111801"}
+	{name:"Taipei City，台北城市",desc:"陈奕迅",src:"http://music.163.com/song/media/outer/url?id=67829"}
 ]
 topic_list= [
 	"点击留下自己的\n心境感悟"
@@ -40,10 +35,10 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "东风-5008"
-				desc: " "
-				link: "http://m.giccoo.com/df-5008/"
-				imgUrl: "http://m.giccoo.com/df-5008/img/ico.jpg"
+				title: "吾有心语，享，往远方"
+				desc: "心之所向，即为远方。"
+				link: "http://peugeot.music.163.com/df-5008/"
+				imgUrl: "http://peugeot.music.163.com/df-5008/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
@@ -58,9 +53,9 @@ init = ->
 	main = new Vue
 		el: "#main"
 		data:
+			homepageShow: true
 			mount: false
 			loading: false
-			homepageShow: true
 			lastpage: false
 			buildshow: false
 			buildstep: 1
@@ -129,6 +124,7 @@ init = ->
 				document.getElementById("audio-music").play()
 			changPlay: ->
 				@playing = true
+				_hmt? and _hmt.push(['_trackEvent', "df-5008", "music", music_list[@musicIndex].name, "-"])
 			changEnd: ->
 				@playing = false
 			pause: ->
@@ -164,7 +160,7 @@ init = ->
 					ctx.font = "30px '微软雅黑'"
 					MAX = self.topic.split('\n').length
 					removeH = MAX * (30*1)
-					runLongTexts self.topic,ctx,320,294-removeH
+					runLongTexts self.topic,ctx,320,284-removeH
 					ctx.font = "30px '微软雅黑' bold"
 					ctx.fillText(self.musicname,320,790)
 					ctx.font = "24px '微软雅黑'"
@@ -179,8 +175,8 @@ init = ->
 					qr.onload = ->
 						ctx.textAlign = 'left'
 						ctx.font = "20px '微软雅黑'"
-						runLongTexts noteText,ctx,100,1138-60
-						ctx.drawImage(qr, 10, 1138-80-10, 80, 80)
+						runLongTexts noteText,ctx,100,1024-56
+						ctx.drawImage(qr, 10, 1024-80-10, 80, 80)
 						self.qr = true
 						self.qrsrc = canvas.toDataURL("image/png")
 					qr.src = "./img/qrcode.png"
@@ -266,8 +262,8 @@ updateShare = (msg)->
 	else
 		main.shareNote = true
 		shareContent =
-			title: "有没有那么一首歌，让你想起……"
-			desc: ""
+			title: "吾有心语，享，往远方"
+			desc: "心之所向，即为远方。"
 			link: "http://m.giccoo.com/corona/"+id
 			imgUrl: "http://m.giccoo.com/corona/img/ico.jpg"
 			success: ->
@@ -282,11 +278,11 @@ updateShare = (msg)->
 		wx.onMenuShareWeibo shareContent
 
 neteaseShare = ->
-	title1 = "有没有那么一首歌，让你想起……"
-	picUrl = "http://m.giccoo.com/corona/img/ico.jpg"
-	redirectUrl = "http://m.giccoo.com/df-5008/"
-	title2 = "有没有那么一首歌，让你想起……"
-	subTitle2 = "有没有那么一首歌，让你想起……"
+	title1 = "吾有心语，享，往远方"
+	picUrl = "http://peugeot.music.163.com/df-5008/img/ico.jpg"
+	redirectUrl = "http://peugeot.music.163.com/df-5008/"
+	title2 = "吾有心语，享，往远方"
+	subTitle2 = "心之所向，即为远方。"
 	window.location.href = "orpheus://share/"+encodeURIComponent(title1)+"/"+encodeURIComponent(picUrl)+"/"+encodeURIComponent(redirectUrl)+"/"+encodeURIComponent(title2)+"/"+encodeURIComponent(subTitle2)
 	# window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "run after?"

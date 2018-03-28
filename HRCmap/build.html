@@ -251,9 +251,9 @@
         var name = data[index].name;
         var bdary = new BMap.Boundary();
         var id = data[index].id;
-        var rc = 0;
+        var rc = 2;
         for (var i=0;i<RClist.length;i++) {
-          if (RClist[i].cityId == id) { rc = RClist[i].rc ; break; }
+          if (RClist[i]._id == id) { rc = parseInt(RClist[i].level) ; break; }
         }
         // console.log(name,id,rc);
         //获取行政区域
@@ -275,7 +275,7 @@
                 "rgba(240,81,51,0.9)"
               ];
 
-              var _index = rc;
+              var _index = rc-1;
               
               var op = 0.8;
               //- var op = (random1+random2+random3)/180 * 2.5;
@@ -327,6 +327,11 @@
         }
         var name = data[index].name;
         var bdary = new BMap.Boundary();
+        var id = data[index].id;
+        var rc = 2;
+        for (var i=0;i<RClist.length;i++) {
+          if (RClist[i]._id == id) { rc = parseInt(RClist[i].level) ; break; }
+        }
         bdary.get(name, function(rs){         
           //- console.log(name,rs.boundaries.length,rs.boundaries);
           areaCount++;
@@ -340,14 +345,14 @@
             for (var i = 0; i < count; i++) {
 
               var colors = [
-                "rgba(240,81,51,0.9)",
-                "rgba(246,143,30,0.9)",
-                "rgba(255,229,18,0.9)",
+                "rgba(140,210,244,0.9)",
                 "rgba(195,204,35,0.9)",
-                "rgba(140,210,244,0.9)"
+                "rgba(255,229,18,0.9)",
+                "rgba(246,143,30,0.9)",
+                "rgba(240,81,51,0.9)"
               ];
 
-              var _index = parseInt(Math.random()*colors.length);
+              var _index = rc-1;
               var op = 0.8;
               var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: colors[_index],strokeWeight: 2, strokeColor: "rgba(0,170,0,1)"}); //建立多边形覆盖物
               map.addOverlay(ply);
