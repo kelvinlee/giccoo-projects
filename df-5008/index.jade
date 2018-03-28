@@ -61,7 +61,7 @@ block content
 					.music-list
 						.left(@click="musicSelectPrev")
 						.right(@click="musicSelectNext")
-						audio#audio-music(:src="audioSRC")
+						audio#audio-music(preload="auto",src="http://music.163.com/song/media/outer/url?id=28815250")
 						.music-name(:class="{playing: playing}",@click="pause")
 							h3 {{musicname}}
 							p {{musicdesc}}

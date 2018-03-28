@@ -45,7 +45,7 @@
             <div class="music-list">
               <div @click="musicSelectPrev" class="left"></div>
               <div @click="musicSelectNext" class="right"></div>
-              <audio id="audio-music" :src="audioSRC"></audio>
+              <audio id="audio-music" preload="auto" src="http://music.163.com/song/media/outer/url?id=28815250"></audio>
               <div :class="{playing: playing}" @click="pause" class="music-name">
                 <h3>{{musicname}}</h3>
                 <p>{{musicdesc}}</p>

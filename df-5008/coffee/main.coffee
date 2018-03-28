@@ -119,10 +119,11 @@ init = ->
 					return false
 				@play()
 			play: ->
-				@audioSRC = music_list[@musicIndex].src
+				# @audioSRC = music_list[@musicIndex].src
+				document.getElementById("audio-music").src = music_list[@musicIndex].src
 				document.getElementById("audio-music").addEventListener "play", @changPlay.bind @
 				document.getElementById("audio-music").addEventListener "pause", @changEnd.bind @
-				document.getElementById("audio-music").addEventListener "end", @changEnd.bind @
+				document.getElementById("audio-music").addEventListener "ended", @changEnd.bind @
 				document.getElementById("audio-music").play()
 			changPlay: ->
 				@playing = true

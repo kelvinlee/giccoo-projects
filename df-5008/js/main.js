@@ -183,10 +183,11 @@ init = function init() {
         return this.play();
       },
       play: function play() {
-        this.audioSRC = music_list[this.musicIndex].src;
+        // @audioSRC = music_list[@musicIndex].src
+        document.getElementById("audio-music").src = music_list[this.musicIndex].src;
         document.getElementById("audio-music").addEventListener("play", this.changPlay.bind(this));
         document.getElementById("audio-music").addEventListener("pause", this.changEnd.bind(this));
-        document.getElementById("audio-music").addEventListener("end", this.changEnd.bind(this));
+        document.getElementById("audio-music").addEventListener("ended", this.changEnd.bind(this));
         return document.getElementById("audio-music").play();
       },
       changPlay: function changPlay() {
