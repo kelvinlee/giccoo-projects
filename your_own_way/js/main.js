@@ -329,9 +329,9 @@ function p1ani4(){
 var canGo=1
 function p0btnDown(){
   canGo=1
-  TweenLite.to(p0glow,3,{scale:4,alpha:1,onComplete:goP1})
+  TweenLite.to(p0glow,2,{scale:4,alpha:1,onComplete:goP1})
   for (var i = 0; i < copy0A.length; i++) {
-    TweenLite.to(copy0A[i],3,{alpha:.5,x:Math.random()*100-50,y:Math.random()*100-50})
+    TweenLite.to(copy0A[i],2,{alpha:.5,x:Math.random()*100-50,y:Math.random()*100-50})
   };
 }
 function p0btnUp(){
