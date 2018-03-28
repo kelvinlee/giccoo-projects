@@ -25,6 +25,7 @@ $(document).ready(function load (){
 });
 
 $('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
+$('body')[0].addEventListener('touchstart', function (event) {event.preventDefault();}, false);
 var screenW
 var screenH
 
