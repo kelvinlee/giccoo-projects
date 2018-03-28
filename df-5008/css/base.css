@@ -1458,6 +1458,36 @@ body {
     width: 50px;
     height: 50px;
     margin-top: -25px; }
+    .page-build .music-list .left .note-message, .page-build .music-list .right .note-message {
+      position: absolute;
+      bottom: -75%;
+      left: 50%;
+      -webkit-transform: translate3d(-50%, 0, 0);
+              transform: translate3d(-50%, 0, 0);
+      font-size: 0.8rem;
+      white-space: nowrap; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .page-build .music-list .left .note-message, .page-build .music-list .right .note-message {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .page-build .music-list .left .note-message, .page-build .music-list .right .note-message {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .page-build .music-list .left .note-message, .page-build .music-list .right .note-message {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .page-build .music-list .left .note-message, .page-build .music-list .right .note-message {
+          font-size: 0.96rem; } }
+      .page-build .music-list .left .note-message:after, .page-build .music-list .right .note-message:after {
+        content: " ";
+        border-top: 10px solid white;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        position: absolute;
+        top: -30%;
+        left: 50%;
+        -webkit-transform: rotate(45deg) translate3d(-100%, 0, 0);
+                transform: rotate(45deg) translate3d(-100%, 0, 0); }
   .page-build .music-list .left {
     top: 50%;
     left: 20px;
@@ -1475,7 +1505,38 @@ body {
     display: show-inline;
     margin: 0 auto;
     -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease; }
+    transition: all 0.5s ease;
+    position: relative; }
+    .page-build .music-list .music-name .note-message {
+      position: absolute;
+      top: -130%;
+      left: 50%;
+      -webkit-transform: translate3d(-50%, 0, 0);
+              transform: translate3d(-50%, 0, 0);
+      font-size: 0.8rem;
+      white-space: nowrap; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .page-build .music-list .music-name .note-message {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .page-build .music-list .music-name .note-message {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .page-build .music-list .music-name .note-message {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .page-build .music-list .music-name .note-message {
+          font-size: 0.96rem; } }
+      .page-build .music-list .music-name .note-message:after {
+        content: " ";
+        border-top: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid white;
+        position: absolute;
+        bottom: -30%;
+        left: 50%;
+        -webkit-transform: rotate(-45deg) translate3d(-100%, 0, 0);
+                transform: rotate(-45deg) translate3d(-100%, 0, 0); }
     .page-build .music-list .music-name.playing {
       opacity: 0.7; }
     .page-build .music-list .music-name h3 {
@@ -1520,7 +1581,7 @@ body {
 
 .page-build-2 .message-list {
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 10%;
   width: 80%; }
   .page-build-2 .message-list .btn {

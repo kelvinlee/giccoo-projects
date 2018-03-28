@@ -423,17 +423,47 @@ body
 			+wh($size,$size)
 			// +bc(#fff)
 			margin-top: -$size/2
+			.note-message
+				+posa
+				+bl(-75%,50%)
+				+transform(translate3d(-50%,0,0))
+				+font-size(0.8rem)
+				white-space: nowrap
+				&:after
+					content: " "
+					border-top: 10px solid white
+					border-right: 10px solid transparent
+					border-bottom: 10px solid transparent
+					+posa
+					+tl(-30%,50%)
+					+transform(rotate(45deg) translate3d(-100%,0,0))
 		.left
 			+tl(50%,20px)
 			+b("../img/btn-m-prev.png",no-repeat,center,center,cover)
 		.right
 			+tr(50%,20px)
 			+b("../img/btn-m-next.png",no-repeat,center,center,cover)
+
 		.music-name
 			+w(50%)
 			display: show-inline
 			+m
 			+tran
+			+posr
+			.note-message
+				+posa
+				+tl(-130%,50%)
+				+transform(translate3d(-50%,0,0))
+				+font-size(0.8rem)
+				white-space: nowrap
+				&:after
+					content: " "
+					border-top: 10px solid transparent
+					border-right: 10px solid transparent
+					border-bottom: 10px solid white
+					+posa
+					+bl(-30%,50%)
+					+transform(rotate(-45deg) translate3d(-100%,0,0))
 			&.playing
 				opacity: 0.7
 			h3
@@ -453,7 +483,7 @@ body
 .page-build-2
 	.message-list
 		+posa
-		+tl(10%,10%)
+		+tl(15%,10%)
 		+w(80%)
 		.btn
 			+w

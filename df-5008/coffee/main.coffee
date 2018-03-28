@@ -86,6 +86,9 @@ init = ->
 			start: ->
 				@buildshow = true
 				@homepageShow = false
+				document.getElementById("audio-music").addEventListener "play", @changPlay.bind @
+				document.getElementById("audio-music").addEventListener "pause", @changEnd.bind @
+				document.getElementById("audio-music").addEventListener "ended", @changEnd.bind @
 				document.getElementById("audio-music").play()
 			gobuild: ->
 				if @topic is topic_list[0]
@@ -121,9 +124,6 @@ init = ->
 			play: ->
 				# @audioSRC = music_list[@musicIndex].src
 				document.getElementById("audio-music").src = music_list[@musicIndex].src
-				document.getElementById("audio-music").addEventListener "play", @changPlay.bind @
-				document.getElementById("audio-music").addEventListener "pause", @changEnd.bind @
-				document.getElementById("audio-music").addEventListener "ended", @changEnd.bind @
 				document.getElementById("audio-music").play()
 			changPlay: ->
 				@playing = true
@@ -131,7 +131,10 @@ init = ->
 			changEnd: ->
 				@playing = false
 			pause: ->
-				document.getElementById("audio-music").pause()
+				if @playing
+					document.getElementById("audio-music").pause()
+				else
+					document.getElementById("audio-music").play()
 			buildimage: ->
 				if @contentIndex < 1 or @contentIndex > 4
 					return alert "请选择意愿场景"

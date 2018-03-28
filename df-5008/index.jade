@@ -61,8 +61,12 @@ block content
 					.music-list
 						.left(@click="musicSelectPrev")
 						.right(@click="musicSelectNext")
+							.note-message.fadeOutDown.animated.delay-25.duration-10(style="display: none")
+								span 播放下一首
 						audio#audio-music(preload="auto",src="http://music.163.com/song/media/outer/url?id=28815250")
 						.music-name(:class="{playing: playing}",@click="pause")
+							.note-message.fadeOutUp.animated.delay-18.duration-10(style="display: none")
+								span 点击,暂停/播放
 							h3 {{musicname}}
 							p {{musicdesc}}
 					.btn.btn-next(@click="gobuild")

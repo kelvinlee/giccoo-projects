@@ -140,6 +140,9 @@ init = function init() {
       start: function start() {
         this.buildshow = true;
         this.homepageShow = false;
+        document.getElementById("audio-music").addEventListener("play", this.changPlay.bind(this));
+        document.getElementById("audio-music").addEventListener("pause", this.changEnd.bind(this));
+        document.getElementById("audio-music").addEventListener("ended", this.changEnd.bind(this));
         return document.getElementById("audio-music").play();
       },
       gobuild: function gobuild() {
@@ -185,9 +188,6 @@ init = function init() {
       play: function play() {
         // @audioSRC = music_list[@musicIndex].src
         document.getElementById("audio-music").src = music_list[this.musicIndex].src;
-        document.getElementById("audio-music").addEventListener("play", this.changPlay.bind(this));
-        document.getElementById("audio-music").addEventListener("pause", this.changEnd.bind(this));
-        document.getElementById("audio-music").addEventListener("ended", this.changEnd.bind(this));
         return document.getElementById("audio-music").play();
       },
       changPlay: function changPlay() {
@@ -198,7 +198,11 @@ init = function init() {
         return this.playing = false;
       },
       pause: function pause() {
-        return document.getElementById("audio-music").pause();
+        if (this.playing) {
+          return document.getElementById("audio-music").pause();
+        } else {
+          return document.getElementById("audio-music").play();
+        }
       },
       buildimage: function buildimage() {
         var bg, canvas, ctx, logo, self, writeText;
