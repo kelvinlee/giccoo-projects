@@ -1,6 +1,6 @@
 "use strict";
 
-var $_GET, _CDN, _imgurl, getRandom, global, init, load, loadWechatConfig, main, music_list, name_list, neteaseShare, noteText, post_url, pre, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare;
+var $_GET, _CDN, _imgurl, getRandom, global, init, load, loadWechatConfig, main, music_list, name_list, neteaseShare, noteText, post_message_url, post_url, pre, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare;
 
 _CDN = "";
 
@@ -15,6 +15,8 @@ pre = {};
 load = {};
 
 post_url = "http://api.giccoo.com/df5008/insert/";
+
+post_message_url = "http://api.giccoo.com/df5008/message/";
 
 sys = "other";
 
@@ -295,6 +297,15 @@ init = function init() {
         if (this.topic === "") {
           return this.topic = this.cacheArea;
         }
+      },
+      closeregister: function closeregister() {
+        var data;
+        this.lastpage = false;
+        data = {};
+        data['content'] = main.topic;
+        return axios.post(post_message_url, data).then(function (msg) {
+          return console.log(msg);
+        });
       },
       onSubmit: function onSubmit(evt) {
         var data, k, ref, reg, url, v;

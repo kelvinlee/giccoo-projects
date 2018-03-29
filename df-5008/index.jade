@@ -105,6 +105,8 @@ block content
 		transition(name="page-fade")
 			.page.register-page(v-show='lastpage')
 				.register(v-show="register")
+					.close(@click="closeregister")
+						img(src="#{url}/img/icon-close.png")
 					.title
 						img(src="#{url}/img/register-icon.png")
 					p.desc 填写联系信息,<br/>将有机会获得网易云音乐会员!

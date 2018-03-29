@@ -1705,6 +1705,13 @@ body {
 .register-page {
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 109; }
+  .register-page .close {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 0; }
   .register-page .register {
     width: 80%;
     margin-left: 10%;

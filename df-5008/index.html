@@ -54,14 +54,14 @@
             </div>
             <div class="music-list">
               <div @click="musicSelectPrev" class="left">
-                <div class="note-message fadeOut animated delay-30 duration-10"><span>播放上一首</span></div>
+                <div class="note-message fadeOutDown animated delay-30 duration-10"><span>播放上一首</span></div>
               </div>
               <div @click="musicSelectNext" class="right">
-                <div class="note-message fadeOut animated delay-30 duration-10"><span>播放下一首</span></div>
+                <div class="note-message fadeOutDown animated delay-30 duration-10"><span>播放下一首</span></div>
               </div>
               <audio id="audio-music" preload="auto" src="http://music.163.com/song/media/outer/url?id=28815250"></audio>
               <div :class="{playing: playing}" @click="pause" class="music-name">
-                <div class="note-message fadeOut animated delay-23 duration-10"><span>点击,暂停/播放</span></div>
+                <div class="note-message fadeOutUp animated delay-23 duration-10"><span>点击,暂停/播放</span></div>
                 <h3>{{musicname}}</h3>
                 <p>{{musicdesc}}</p>
               </div>
@@ -95,6 +95,7 @@
       <transition name="page-fade">
         <div v-show="lastpage" class="page register-page">
           <div v-show="register" class="register">
+            <div @click="closeregister" class="close"><img src="./img/icon-close.png"></div>
             <div class="title"><img src="./img/register-icon.png"></div>
             <p class="desc">填写联系信息,<br/>将有机会获得网易云音乐会员!</p>
             <form id="register" v-on:submit.prevent="onSubmit" class="form">

@@ -5,6 +5,7 @@ main = {}
 pre = {}
 load = {}
 post_url = "http://api.giccoo.com/df5008/insert/"
+post_message_url = "http://api.giccoo.com/df5008/message/"
 sys = "other"
 noteText = "长按识别二维码，\n去往2018年的远方。"
 name_list = ["心之所向\n即为吾乡","淡泊明志\n宁静致远","愿得浮生\n半日闲","一屋两人\n三餐四季"]
@@ -219,7 +220,13 @@ init = ->
 
 			blurArea: (evt)->
 				@topic = @cacheArea if @topic is ""
-					
+			closeregister: ->
+				@lastpage = false
+				data = {}
+				data['content'] = main.topic
+				axios.post post_message_url,data
+				.then (msg)->
+					console.log msg
 			onSubmit: (evt)->
 				if @form.username.length < 1
 					alert '姓名不能为空'
