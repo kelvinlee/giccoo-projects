@@ -1389,7 +1389,20 @@ body {
     left: 10%;
     text-align: center; }
     .page-home .start p {
-      margin: 0 auto; }
+      margin: 0 auto;
+      font-size: 0.8rem; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .page-home .start p {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .page-home .start p {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .page-home .start p {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .page-home .start p {
+          font-size: 0.96rem; } }
     .page-home .start .start-btn {
       display: inline-block;
       position: relative;
