@@ -60,12 +60,14 @@ block content
 						textarea(v-model="topic",@focus="focusArea",@blur="blurArea")
 					.music-list
 						.left(@click="musicSelectPrev")
+							.note-message.fadeOutDown.animated.delay-30.duration-10
+								span 播放上一首
 						.right(@click="musicSelectNext")
-							.note-message.fadeOutDown.animated.delay-25.duration-10(style="display: none")
+							.note-message.fadeOutDown.animated.delay-30.duration-10
 								span 播放下一首
 						audio#audio-music(preload="auto",src="http://music.163.com/song/media/outer/url?id=28815250")
 						.music-name(:class="{playing: playing}",@click="pause")
-							.note-message.fadeOutUp.animated.delay-18.duration-10(style="display: none")
+							.note-message.fadeOutUp.animated.delay-23.duration-10
 								span 点击,暂停/播放
 							h3 {{musicname}}
 							p {{musicdesc}}

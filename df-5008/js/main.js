@@ -100,6 +100,13 @@ window.onload = function () {
 };
 
 init = function init() {
+  var TrueH, TrueW;
+  TrueH = document.documentElement.clientHeight;
+  TrueW = document.documentElement.clientWidth;
+  document.body.style.height = TrueH + "px";
+  if (TrueW / TrueH >= 0.64) {
+    document.documentElement.className += " iphone4";
+  }
   return main = new Vue({
     el: "#main",
     data: {
@@ -171,22 +178,18 @@ init = function init() {
       },
       musicSelectPrev: function musicSelectPrev() {
         this.musicIndex += -1;
-        if (this.musicIndex < 0) {
-          //this.musicIndex = 0;
+        if (this.musicIndex <= 0) {
           this.musicIndex = music_list.length - 1;
-          return this.play();
-          //return false;
         }
+        // return false
         return this.play();
       },
       musicSelectNext: function musicSelectNext() {
         this.musicIndex += 1;
         if (this.musicIndex > music_list.length - 1) {
-          //this.musicIndex = music_list.length - 1;
           this.musicIndex = 0;
-          return this.play();
-          //return false;
         }
+        // return false
         return this.play();
       },
       play: function play() {
@@ -225,21 +228,16 @@ init = function init() {
         logo = new Image();
         bg.onload = function (evt) {
           ctx.drawImage(bg, 0, 0, bg.width, bg.height);
-          logo.onload = function () {
-            ctx.drawImage(logo, 0, 0, logo.width, logo.height);
-            return writeText();
-          };
-          return logo.src = "./img/logo.png";
+          return writeText();
         };
         bg.src = "./img/bg-" + self.contentIndex + ".jpg";
         writeText = function writeText() {
           var MAX, qr, removeH;
           ctx.fillStyle = "#fff";
           ctx.textAlign = 'center';
-          ctx.font = "56px '微软雅黑'";
+          // ctx.font = "56px '微软雅黑'"
           ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
           ctx.shadowBlur = 5;
-          _runLongTexts(name_list[self.contentIndex - 1], ctx, 320, 440);
           ctx.fillStyle = "#fff";
           ctx.textAlign = 'center';
           ctx.font = "30px '微软雅黑'";
@@ -262,8 +260,12 @@ init = function init() {
             ctx.font = "20px '微软雅黑'";
             _runLongTexts(noteText, ctx, 100, 1024 - 56);
             ctx.drawImage(qr, 10, 1024 - 80 - 10, 80, 80);
-            self.qr = true;
-            return self.qrsrc = canvas.toDataURL("image/png");
+            logo.onload = function () {
+              ctx.drawImage(logo, 0, 0, logo.width, logo.height);
+              self.qr = true;
+              return self.qrsrc = canvas.toDataURL("image/png");
+            };
+            return logo.src = "./img/logo.png";
           };
           return qr.src = "./img/qrcode.png";
         };

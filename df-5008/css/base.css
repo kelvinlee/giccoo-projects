@@ -793,6 +793,10 @@ ul {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 @-webkit-keyframes littlemove {
   0%, 50% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -812,6 +816,10 @@ ul {
     -webkit-transform: translate3d(-10px, 0, 0);
             transform: translate3d(-10px, 0, 0);
     opacity: 0.8; } }
+
+.littlemove {
+  -webkit-animation-name: littlemove;
+          animation-name: littlemove; }
 
 @-webkit-keyframes littlemoveright {
   0%, 50% {
@@ -833,6 +841,10 @@ ul {
             transform: translate3d(10px, 0, 0) scale(-1, 1);
     opacity: 0.8; } }
 
+.littlemoveright {
+  -webkit-animation-name: littlemoveright;
+          animation-name: littlemoveright; }
+
 @-webkit-keyframes moveleft {
   0%, 50% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -852,6 +864,10 @@ ul {
     -webkit-transform: translate3d(-50px, 0, 0);
             transform: translate3d(-50px, 0, 0);
     opacity: 0; } }
+
+.moveleft {
+  -webkit-animation-name: moveleft;
+          animation-name: moveleft; }
 
 @-webkit-keyframes showdarkandlight {
   0% {
@@ -874,6 +890,10 @@ ul {
   100% {
     opacity: 0.8;
     color: #ffee90; } }
+
+.showdarkandlight {
+  -webkit-animation-name: showdarkandlight;
+          animation-name: showdarkandlight; }
 
 html, body {
   width: 100%;
@@ -1382,6 +1402,10 @@ body {
   background-size: cover;
   background-color: transparent; }
 
+.page-build .build {
+  width: 100%;
+  height: 100%; }
+
 .page-build .title {
   position: absolute;
   top: 10%;
@@ -1389,6 +1413,10 @@ body {
   width: 4rem;
   height: 4rem;
   margin-left: -2rem; }
+  .iphone4 .page-build .title {
+    width: 3rem;
+    height: 3rem;
+    margin-left: -1.5rem; }
 
 .page-build .input {
   position: absolute;
@@ -1453,6 +1481,11 @@ body {
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.3);
   text-align: center; }
+  .iphone4 .page-build .music-list {
+    -webkit-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8);
+    -webkit-transform-origin: top center;
+            transform-origin: top center; }
   .page-build .music-list .left, .page-build .music-list .right {
     position: absolute;
     width: 50px;
@@ -1584,6 +1617,11 @@ body {
   top: 15%;
   left: 10%;
   width: 80%; }
+  .iphone4 .page-build-2 .message-list {
+    -webkit-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8);
+    -webkit-transform-origin: top center;
+            transform-origin: top center; }
   .page-build-2 .message-list .btn {
     width: 100%;
     height: 3rem;
@@ -1620,6 +1658,22 @@ body {
   left: 25%;
   width: 50%;
   text-align: center; }
+
+.page-image .bg {
+  font-size: 0; }
+
+.iphone4 .page-image .bg {
+  position: absolute;
+  bottom: 50%;
+  left: 0px;
+  -webkit-transform: translate3d(0, 50%, 0);
+          transform: translate3d(0, 50%, 0); }
+
+.iphone4 .page-image .btn-share, .iphone4 .page-image .btn-save {
+  -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center; }
 
 .page-image .btn-share {
   position: absolute;

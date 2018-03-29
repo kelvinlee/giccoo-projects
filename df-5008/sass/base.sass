@@ -372,11 +372,17 @@ body
 	+b("../img/page-build-bg.jpg",no-repeat,bottom,center,cover)
 
 .page-build
+	.build
+		+w
+		+h
 	.title
 		+posa
 		+tl(10%,50%)
 		+wh(4rem,4rem)
 		margin-left: -2rem
+		.iphone4 &
+			+wh(3rem,3rem)
+			margin-left: -1.5rem
 	.input
 		+posa
 		+tl(20%,18.75%)
@@ -417,6 +423,9 @@ body
 		border-radius: 5px
 		+bc(rgba(255,255,255,0.3))
 		+text-center
+		.iphone4 &
+			+transform(scale(0.8,0.8))
+			transform-origin: top center
 		.left,.right
 			$size: 50px
 			+posa
@@ -485,6 +494,9 @@ body
 		+posa
 		+tl(15%,10%)
 		+w(80%)
+		.iphone4 &
+			+transform(scale(0.8,0.8))
+			transform-origin: top center
 		.btn
 			+w
 			+h(3rem)
@@ -515,6 +527,17 @@ body
 		+text-center
 
 .page-image
+	.bg
+		font-size: 0
+	.iphone4 &
+		.bg
+			+posa
+			+bl(50%)
+			+transform(translate3d(0,50%,0))
+	.btn-share,.btn-save
+		.iphone4 &
+			+transform(scale(0.9,0.9))
+			transform-origin: bottom center
 	.btn-share
 		+posa
 		+bl
