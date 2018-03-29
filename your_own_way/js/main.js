@@ -45,49 +45,47 @@ var loadWechatConfig = function() {
 var stage = new createjs.Stage("mainCanvas");
 
 function initAll(){
-   createjs.Ticker.framerage = 50;
+   //createjs.Ticker.framerage = 100;
+   createjs.Ticker.timingMode = createjs.Ticker.RAF;
    createjs.Ticker.addEventListener("tick",handleTick);
   setSky(50)
   skyMove.x=-1
   skyMove.y=0
-  getStart()
-  tick();
+   //======getStart()
+  ani1start()
+  //tick();
 }
 
 
 //======================时间控制
-
-var fps = 30;
-var now;
-var then = Date.now();
-var interval = 1000/fps;
-var delta;
-window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-
-function tick() {
-　　if(window.requestAnimationFrame)
-   {
-　　    requestAnimationFrame(tick);
-　　    now = Date.now();
-　　    delta = now - then;
-　　    if (delta > interval) {
-        // 这里不能简单then=now，否则还会出现上边简单做法的细微时间差问题。例如fps=10，每帧100ms，而现在每16ms（60fps）执行一次draw。16*7=112>100，需要7次才实际绘制一次。这个情况下，实际10帧需要112*10=1120ms>1000ms才绘制完成。
-　　　　    then = now - (delta % interval);
-　　　　    handleTick(); // ... Code for Drawing the Frame ...
-　　    }
-   }
-   else
-   {
-       setTimeout(tick, interval);
-　　　　handleTick();
-   }
-}
-
-
+// var fps = 30;
+// var now;
+// var then = Date.now();
+// var interval = 1000/fps;
+// var delta;
+// window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+// function tick() {
+// 　　if(window.requestAnimationFrame)
+//    {
+// 　　    requestAnimationFrame(tick);
+// 　　    now = Date.now();
+// 　　    delta = now - then;
+// 　　    if (delta > interval) {
+//         // 这里不能简单then=now，否则还会出现上边简单做法的细微时间差问题。例如fps=10，每帧100ms，而现在每16ms（60fps）执行一次draw。16*7=112>100，需要7次才实际绘制一次。这个情况下，实际10帧需要112*10=1120ms>1000ms才绘制完成。
+// 　　　　    then = now - (delta % interval);
+// 　　　　    handleTick(); // ... Code for Drawing the Frame ...
+// 　　    }
+//    }
+//    else
+//    {
+//        setTimeout(tick, interval);
+// 　　　　handleTick();
+//    }
+// }
 //=============================每秒30次的HandleTick
 
 function handleTick(){
-  setFootPrints()
+   //======setFootPrints()
   moveSky();
   stage.update();
 }
@@ -354,9 +352,54 @@ function goP1(){
 }
 
 //============================首页动画结束
+//============================公用
+//==========改变文案
+var textA=[]
+var nowTextNum=0
+function initText(){
+  for (var i = 1; i < 16; i++) {
+    var a_text=new createjs.Bitmap("img/p"+i+"t.png")
+    textA.push(a_text)
+    a_text.regX=320
+    a_text.regY=50
+    a_text.x=320
+    a_text.y=762
+    downText.addChild(a_text)
+    a_text.visible=false
+    a_text.alpha=0
+    a_text.scaleX=a_text.scaleY=.5
+  };
+  nextText()
+}
+
+function nextText(){
+  var i=nowTextNum
+  textA[i].visible=true
+  TweenLite.to(textA[i],1,{alpha:1,scaleX:1,scaleY:1})
+  if(i>0){
+    TweenLite.to(textA[i-1],1,{alpha:0,scaleX:1,scaleY:2})
+  }
+  if(i>1){
+    textA[i-2].visible=false
+    downText.removeChild(textA[i-2])
+  }
+  nowTextNum++
+}
+//==========下按钮
+function initHomeBtn(){
+  var shape=new createjs.Shape()
+  shape.graphics.beginFill("#ff0000").arc(28,28,28,0,Math.PI);//beginPath().stroke()
+}
 
 //============================第一页开始
 var stage_1=new createjs.Container()
+var downText=new createjs.Container()
+var homeBtn=new createjs.Container()
 function ani1start(){
   stage.addChild(stage_1)
+  stage_1.addChild(downText)
+  stage_1.addChild(homeBtn)
+  initText()
+  initHomeBtn()
 }
+
