@@ -579,13 +579,33 @@ var word2=new createjs.Bitmap("img/word2.png")
 function ani1end(){
   stage_1.removeChild(manSit)
   stage.addChild(stage_2)
+  manJump.alpha=1
   manJump.play()
   TweenLite.to(stage_1,1,{x:-640})
-  TweenLite.to(manJump,1,{x:200})
+  TweenLite.to(manJump,1,{x:230,y:250})
+  TweenLite.to(homeBtn,1,{alpha:1})
+  TweenLite.set($("home_btn"),{display:"block",delay:1})
   stage_2.addChild(word2)
   word2.regX=100
   word2.regY=50
   word2.x=740
   word2.y=436
   TweenLite.to(word2,1,{x:320})
+  createjs.Ticker.addEventListener("tick",setQmark);
+}
+var qMarkA=[]
+function setQmark(){
+  
+  if (Math.random()>.0) {
+    var qMark=new createjs.Bitmap("img/qmark.png")
+    stage_2.addChild(qMark)
+    qMarkA.push(qMark)
+    qMark.regX=13
+    qMark.regY=22
+    qMark.scaleX=qMark.scaleY=Math.random()+.5
+    qMark.x=word2.x+Math.random()*300-150
+    qMark.y=word2.y+Math.random()*100-50-10
+    qMark.alpha=0
+    TweenLite.to(qMark,2+Math.random(),{x:(qMark.x+word2.x)/2,scale:0,y:qMark.y-(200+Math.random()*150),rotation:Math.random()*180-90,alpha:.5,visible:"false"})
+  };
 }
