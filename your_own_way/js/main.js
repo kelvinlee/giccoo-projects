@@ -25,7 +25,7 @@ $(document).ready(function load (){
 });
 
 $('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
-$('body')[0].addEventListener('touchstart', function (event) {event.preventDefault();}, false);
+//$('body')[0].addEventListener('touchstart', function (event) {event.preventDefault();}, false);
 $('#p0_btn')[0].addEventListener('touchstart', function (event) {event.preventDefault();}, false);
 var screenW
 var screenH
@@ -51,8 +51,8 @@ function initAll(){
   setSky(50)
   skyMove.x=-1
   skyMove.y=0
-   //======getStart()
-  ani1start()
+  getStart()
+   //======ani1start()
   //tick();
 }
 
@@ -85,7 +85,7 @@ function initAll(){
 //=============================每秒30次的HandleTick
 
 function handleTick(){
-   //======setFootPrints()
+   setFootPrints()
   moveSky();
   stage.update();
 }
@@ -353,6 +353,19 @@ function goP1(){
 
 //============================首页动画结束
 //============================公用
+var nowPage=1
+//==========下一个 按钮
+$("#home_btn").click(function(){
+  $("#home_btn").css({display:"none"})
+  nowPage++
+  TweenLite.to(homeBtn,.5,{alpha:0})
+  nextText()
+  switch(nowPage){
+    case 2:
+      ani1end();
+      break;
+  }
+})
 //==========改变文案
 var textA=[]
 var nowTextNum=0
@@ -386,20 +399,181 @@ function nextText(){
   nowTextNum++
 }
 //==========下按钮
+var homebtn1=new createjs.Bitmap("img/homebtn1.png")
+var homebtn2=new createjs.Bitmap("img/homebtn2.png")
 function initHomeBtn(){
-  var shape=new createjs.Shape()
-  shape.graphics.beginFill("#ff0000").arc(28,28,28,0,Math.PI);//beginPath().stroke()
+  homeBtn.addChild(homebtn1)
+  homeBtn.addChild(homebtn2)
+  homebtn1.regX=homebtn1.regY=28
+  homebtn2.regX=homebtn2.regY=30
+  homebtn1.x=homebtn2.x=320
+  homebtn1.y=homebtn2.y=887
+  homebtn2.scaleX=homebtn2.scaleY=1.2
+  homeBtnGlow()
 }
+function homeBtnGlow(){
+  TweenLite.set(homebtn2,{scale:1.1,alpha:0})
+  TweenLite.to(homebtn2,1,{scale:1.45,alpha:1,overwrite:0,ease:Linear.easeNone})
+  TweenLite.to(homebtn2,1,{scale:2,alpha:0,delay:1,onComplete:homeBtnGlow})
+}
+
+//========== 坐->站起来
+var standupA=[]
+var manSit
+function setManSit(){
+  for (var i = 1; i <71 ; i++) {
+    if(i<10){var str="img/standup/man000"+i+".png"}else{var str="img/standup/man00"+i+".png"}
+    standupA.push(str)
+  };
+
+  var manStandup_s = new createjs.SpriteSheet({
+              "images": standupA, //动画人物图片来自base64编码字符串
+              "frames": {"height": 150,  "width": 100},
+              "animations": { run: [0,69]}
+          });
+          
+  manSit = new createjs.Sprite(manStandup_s, "run");
+  manSit.stop();//播放动画
+  stage_1.addChild(manSit);
+  manSit.x=344
+  manSit.y=265
+  manSit.addEventListener("animationend",function(event){
+    manSit.stop();
+  })
+}
+
+//========== 小跳
+var jumpA=[]
+var manJump
+function setManJump(){
+  for (var i = 1; i <42 ; i++) {
+    if(i<10){var str="img/jump_s/man000"+i+".png"}else{var str="img/jump_s/man00"+i+".png"}
+    jumpA.push(str)
+    jumpA.push(str)
+  };
+
+  var manJump_s = new createjs.SpriteSheet({
+              "images": jumpA, //动画人物图片来自base64编码字符串
+              "frames": {"height": 150,  "width": 100},
+              "animations": { run: [0,81]}
+              // "framerate": 20
+
+          });
+          
+  manJump = new createjs.Sprite(manJump_s, "run");
+  manJump.stop();//播放动画
+  stage_2.addChild(manJump);
+  manJump.x=344
+  manJump.y=265
+  manJump.addEventListener("animationend",function(event){
+    manJump.stop();
+  })
+}
+
 
 //============================第一页开始
 var stage_1=new createjs.Container()
 var downText=new createjs.Container()
 var homeBtn=new createjs.Container()
+var word1=new createjs.Bitmap("img/word1.png")
+
+var leafroot=new createjs.Shape()
+var p1leaf1=new createjs.Bitmap("img/p1leaf1.png")
+var p1leaf2=new createjs.Bitmap("img/p1leaf1.png")
+
+var dotGlow=new createjs.Container()
+var dotGlow2=new createjs.Container()
+
 function ani1start(){
+  $("#p0_btn").css({display:"none"})
   stage.addChild(stage_1)
-  stage_1.addChild(downText)
-  stage_1.addChild(homeBtn)
+  stage.addChild(downText)
+  stage.addChild(homeBtn)
   initText()
   initHomeBtn()
-}
 
+  stage_1.addChild(word1)
+  word1.regX=100
+  word1.regY=50
+  word1.x=320
+  word1.y=436
+
+  //========树苗
+  var t2=0
+
+  stage_1.addChild(leafroot)
+  leafroot.graphics.beginFill("#ffffff").drawRect(0,0,3,-3);
+  leafroot.x=250
+  leafroot.y=390
+  TweenLite.to(leafroot,8,{scaleY:10,ease:Elastic.easeOut,delay:1+t2})
+  stage_1.addChild(p1leaf1)
+  stage_1.addChild(p1leaf2)
+  p1leaf1.x=p1leaf2.x=251
+  p1leaf1.y=p1leaf2.y=387
+  p1leaf1.rotation=225//180
+  p1leaf2.rotation=225//270
+  p1leaf1.scaleX=p1leaf1.scaleY=1/10
+  p1leaf2.scaleX=p1leaf2.scaleY=.6/10
+  TweenLite.to(p1leaf1,8,{scale:1,rotation:180,y:387-27,ease:Elastic.easeOut,delay:1+t2})
+  TweenLite.to(p1leaf2,8,{scale:.6,rotation:270,y:387-27,ease:Elastic.easeOut,delay:1+t2})
+
+  setManSit()
+  setDotGlow()
+  homeBtn.alpha=0
+  TweenLite.to(homeBtn,.5,{alpha:1,delay:6,onComplete:p1done})
+  $("#home_btn").css({display:"none"})
+}
+function p1done(){
+  $("#home_btn").css({display:"block"})
+}
+//====光点汇聚
+
+function setDotGlow(){
+  var t1=3
+  for (var i = 0; i < 200; i++) {
+    var dot=new createjs.Bitmap("img/star.png")
+    dotGlow.addChild(dot)
+    dot.regX=dot.regY=5
+    dot.x=Math.random()*1600-800
+    dot.y=Math.random()*1600-800
+    dot.scaleX=dot.scaleY=Math.random()
+    dot.alpha=0
+    TweenLite.to(dot,1+Math.random()*3,{x:0,y:0,alpha:1,ease:Back.easeOut,delay:Math.random()+0+t1})
+
+    var dot2=new createjs.Bitmap("img/star.png")
+    dotGlow2.addChild(dot2)
+    dot2.regX=dot2.regY=5
+    dot2.x=Math.random()*800-400
+    dot2.y=Math.random()*800-400
+    dot2.scaleX=dot2.scaleY=Math.random()
+    dot2.alpha=0
+    TweenLite.to(dot2,1+Math.random()*3,{rotation:Math.random()*720,x:0,y:0,alpha:.1,scale:Math.random()*8,ease:Back.easeOut,delay:Math.random()+t1,overwrite:0})
+    TweenLite.to(dot2,1+Math.random(),{alpha:0,delay:3.5+t1})
+  };
+  stage_1.addChild(dotGlow)
+  dotGlow.x=385
+  dotGlow.y=385
+  stage_1.addChild(dotGlow2)
+  dotGlow2.x=385
+  dotGlow2.y=385
+  TweenLite.to(dotGlow,5,{rotation:720,ease:Linear.easeNone,delay:t1})
+  TweenLite.to(dotGlow2,5,{rotation:1360,ease:Linear.easeNone,delay:t1})
+  manSit.alpha=0
+  TweenLite.to(manSit,2,{alpha:1,delay:2+t1})
+  setTimeout(function(){
+    stage_1.removeChild(dotGlow)
+    stage_1.removeChild(dotGlow2)
+  },5000+t1*1000)
+}
+var stage_2=new createjs.Container()
+//===========================第一页进入第二页
+function ani1end(){
+  manSit.play()
+  setManJump()
+  
+  setTimeout(function(){
+    stage_1.removeChild(manSit)
+    stage.addChild(stage_2)
+    manJump.play()
+  },1000)
+}

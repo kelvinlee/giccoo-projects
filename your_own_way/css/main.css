@@ -62,3 +62,10 @@ img{ width: 100%; }
 	bottom: 0;
 	left: 25%;
 }
+#home_btn{
+	width: 50%;
+	height: 30%;
+	bottom: 0;
+	left: 25%;
+	display: none;
+}
