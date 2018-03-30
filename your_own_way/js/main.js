@@ -51,8 +51,8 @@ function initAll(){
   setSky(50)
   skyMove.x=-1
   skyMove.y=0
-  getStart()
-   //======ani1start()
+   //======getStart()
+  ani1start()
   //tick();
 }
 
@@ -85,7 +85,7 @@ function initAll(){
 //=============================每秒30次的HandleTick
 
 function handleTick(){
-   setFootPrints()
+    //======setFootPrints()
   moveSky();
   stage.update();
 }
@@ -439,7 +439,9 @@ function setManSit(){
   manSit.y=265
   manSit.addEventListener("animationend",function(event){
     manSit.stop();
+    manJump.alpha=1
   })
+  manSit.alpha=0
 }
 
 //========== 小跳
@@ -462,12 +464,13 @@ function setManJump(){
           
   manJump = new createjs.Sprite(manJump_s, "run");
   manJump.stop();//播放动画
-  stage_2.addChild(manJump);
+  stage.addChild(manJump);
   manJump.x=344
   manJump.y=265
   manJump.addEventListener("animationend",function(event){
     manJump.stop();
   })
+  manJump.alpha=0
 }
 
 
@@ -497,6 +500,8 @@ function ani1start(){
   word1.regY=50
   word1.x=320
   word1.y=436
+
+  setManJump()
 
   //========树苗
   var t2=0
@@ -558,22 +563,49 @@ function setDotGlow(){
   dotGlow2.y=385
   TweenLite.to(dotGlow,5,{rotation:720,ease:Linear.easeNone,delay:t1})
   TweenLite.to(dotGlow2,5,{rotation:1360,ease:Linear.easeNone,delay:t1})
-  manSit.alpha=0
+
   TweenLite.to(manSit,2,{alpha:1,delay:2+t1})
   setTimeout(function(){
     stage_1.removeChild(dotGlow)
     stage_1.removeChild(dotGlow2)
+    manSit.play()
   },5000+t1*1000)
+
 }
-var stage_2=new createjs.Container()
+
 //===========================第一页进入第二页
+var stage_2=new createjs.Container()
+var word2=new createjs.Bitmap("img/word2.png")
 function ani1end(){
-  manSit.play()
-  setManJump()
+  stage_1.removeChild(manSit)
+  stage.addChild(stage_2)
+  manJump.alpha=1
+  manJump.play()
+  TweenLite.to(stage_1,1,{x:-640})
+  TweenLite.to(manJump,1,{x:230,y:250})
+  TweenLite.to(homeBtn,1,{alpha:1})
+  TweenLite.set($("home_btn"),{display:"block",delay:1})
+  stage_2.addChild(word2)
+  word2.regX=100
+  word2.regY=50
+  word2.x=740
+  word2.y=436
+  TweenLite.to(word2,1,{x:320})
+  createjs.Ticker.addEventListener("tick",setQmark);
+}
+var qMarkA=[]
+function setQmark(){
   
-  setTimeout(function(){
-    stage_1.removeChild(manSit)
-    stage.addChild(stage_2)
-    manJump.play()
-  },1000)
+  if (Math.random()>.0) {
+    var qMark=new createjs.Bitmap("img/qmark.png")
+    stage_2.addChild(qMark)
+    qMarkA.push(qMark)
+    qMark.regX=13
+    qMark.regY=22
+    qMark.scaleX=qMark.scaleY=Math.random()+.5
+    qMark.x=word2.x+Math.random()*300-150
+    qMark.y=word2.y+Math.random()*100-50-10
+    qMark.alpha=0
+    TweenLite.to(qMark,2+Math.random(),{x:(qMark.x+word2.x)/2,scale:0,y:qMark.y-(200+Math.random()*150),rotation:Math.random()*180-90,alpha:.5,visible:"false"})
+  };
 }
