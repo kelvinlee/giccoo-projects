@@ -793,6 +793,10 @@ ul {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
+.second {
+  -webkit-animation-name: second;
+          animation-name: second; }
+
 @-webkit-keyframes littlemove {
   0%, 50% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -812,6 +816,10 @@ ul {
     -webkit-transform: translate3d(-10px, 0, 0);
             transform: translate3d(-10px, 0, 0);
     opacity: 0.8; } }
+
+.littlemove {
+  -webkit-animation-name: littlemove;
+          animation-name: littlemove; }
 
 @-webkit-keyframes littlemoveright {
   0%, 50% {
@@ -833,6 +841,10 @@ ul {
             transform: translate3d(10px, 0, 0) scale(-1, 1);
     opacity: 0.8; } }
 
+.littlemoveright {
+  -webkit-animation-name: littlemoveright;
+          animation-name: littlemoveright; }
+
 @-webkit-keyframes moveleft {
   0%, 50% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -852,6 +864,10 @@ ul {
     -webkit-transform: translate3d(-50px, 0, 0);
             transform: translate3d(-50px, 0, 0);
     opacity: 0; } }
+
+.moveleft {
+  -webkit-animation-name: moveleft;
+          animation-name: moveleft; }
 
 @-webkit-keyframes showdarkandlight {
   0% {
@@ -874,6 +890,10 @@ ul {
   100% {
     opacity: 0.8;
     color: #ffee90; } }
+
+.showdarkandlight {
+  -webkit-animation-name: showdarkandlight;
+          animation-name: showdarkandlight; }
 
 html, body {
   width: 100%;
@@ -1191,7 +1211,7 @@ body {
       height: 20px;
       margin-left: -10px;
       font-size: 0;
-      background: url("http://image.giccoo.com/projects/corona/img/arrow-black.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/df-5008/img/arrow-black.png") no-repeat center center;
       background-size: contain;
       background-color: transparent;
       -webkit-animation: arrow 2.5s ease;
@@ -1315,7 +1335,7 @@ body {
   overflow: hidden; }
 
 .page-home {
-  background: url("../img/repeat.jpg") repeat-y top center;
+  background: url("http://image.giccoo.com/projects/df-5008/img/repeat.jpg") repeat-y top center;
   background-size: 100% auto;
   background-color: transparent; }
   .page-home .bg {
@@ -1369,7 +1389,20 @@ body {
     left: 10%;
     text-align: center; }
     .page-home .start p {
-      margin: 0 auto; }
+      margin: 0 auto;
+      font-size: 0.8rem; }
+      @media only screen and (min-width: 321px) and (max-width: 399px) {
+        .page-home .start p {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+        .page-home .start p {
+          font-size: 0.88rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 767px) {
+        .page-home .start p {
+          font-size: 0.96rem; } }
+      @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+        .page-home .start p {
+          font-size: 0.96rem; } }
     .page-home .start .start-btn {
       display: inline-block;
       position: relative;
@@ -1378,9 +1411,13 @@ body {
       margin: 0 auto; }
 
 .page-build, .page-build-2 {
-  background: url("../img/page-build-bg.jpg") no-repeat bottom center;
+  background: url("http://image.giccoo.com/projects/df-5008/img/page-build-bg.jpg") no-repeat bottom center;
   background-size: cover;
   background-color: transparent; }
+
+.page-build .build {
+  width: 100%;
+  height: 100%; }
 
 .page-build .title {
   position: absolute;
@@ -1389,6 +1426,10 @@ body {
   width: 4rem;
   height: 4rem;
   margin-left: -2rem; }
+  .iphone4 .page-build .title {
+    width: 3rem;
+    height: 3rem;
+    margin-left: -1.5rem; }
 
 .page-build .input {
   position: absolute;
@@ -1402,7 +1443,7 @@ body {
     left: -40px;
     width: 3rem;
     height: 3rem;
-    background: url("../img/yinhao.png") no-repeat center center;
+    background: url("http://image.giccoo.com/projects/df-5008/img/yinhao.png") no-repeat center center;
     background-size: cover;
     background-color: transparent; }
   .page-build .input:after {
@@ -1412,7 +1453,7 @@ body {
     right: -40px;
     width: 3rem;
     height: 3rem;
-    background: url("../img/yinhao.png") no-repeat center center;
+    background: url("http://image.giccoo.com/projects/df-5008/img/yinhao.png") no-repeat center center;
     background-size: cover;
     background-color: transparent;
     -webkit-transform: scale(-1, -1);
@@ -1453,6 +1494,11 @@ body {
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.3);
   text-align: center; }
+  .iphone4 .page-build .music-list {
+    -webkit-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8);
+    -webkit-transform-origin: top center;
+            transform-origin: top center; }
   .page-build .music-list .left, .page-build .music-list .right {
     position: absolute;
     width: 50px;
@@ -1491,13 +1537,13 @@ body {
   .page-build .music-list .left {
     top: 50%;
     left: 20px;
-    background: url("../img/btn-m-prev.png") no-repeat center center;
+    background: url("http://image.giccoo.com/projects/df-5008/img/btn-m-prev.png") no-repeat center center;
     background-size: cover;
     background-color: transparent; }
   .page-build .music-list .right {
     top: 50%;
     right: 20px;
-    background: url("../img/btn-m-next.png") no-repeat center center;
+    background: url("http://image.giccoo.com/projects/df-5008/img/btn-m-next.png") no-repeat center center;
     background-size: cover;
     background-color: transparent; }
   .page-build .music-list .music-name {
@@ -1584,6 +1630,11 @@ body {
   top: 15%;
   left: 10%;
   width: 80%; }
+  .iphone4 .page-build-2 .message-list {
+    -webkit-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8);
+    -webkit-transform-origin: top center;
+            transform-origin: top center; }
   .page-build-2 .message-list .btn {
     width: 100%;
     height: 3rem;
@@ -1596,19 +1647,19 @@ body {
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease; }
     .page-build-2 .message-list .btn.btn-1 {
-      background: url("../img/text-1.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/df-5008/img/text-1.png") no-repeat center center;
       background-size: cover;
       background-color: rgba(255, 255, 255, 0.1); }
     .page-build-2 .message-list .btn.btn-2 {
-      background: url("../img/text-2.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/df-5008/img/text-2.png") no-repeat center center;
       background-size: cover;
       background-color: rgba(255, 255, 255, 0.1); }
     .page-build-2 .message-list .btn.btn-3 {
-      background: url("../img/text-3.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/df-5008/img/text-3.png") no-repeat center center;
       background-size: cover;
       background-color: rgba(255, 255, 255, 0.1); }
     .page-build-2 .message-list .btn.btn-4 {
-      background: url("../img/text-4.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/df-5008/img/text-4.png") no-repeat center center;
       background-size: cover;
       background-color: rgba(255, 255, 255, 0.1); }
     .page-build-2 .message-list .btn.index {
@@ -1620,6 +1671,22 @@ body {
   left: 25%;
   width: 50%;
   text-align: center; }
+
+.page-image .bg {
+  font-size: 0; }
+
+.iphone4 .page-image .bg {
+  position: absolute;
+  bottom: 50%;
+  left: 0px;
+  -webkit-transform: translate3d(0, 50%, 0);
+          transform: translate3d(0, 50%, 0); }
+
+.iphone4 .page-image .btn-share, .iphone4 .page-image .btn-save {
+  -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center; }
 
 .page-image .btn-share {
   position: absolute;
@@ -1651,6 +1718,13 @@ body {
 .register-page {
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 109; }
+  .register-page .close {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 0; }
   .register-page .register {
     width: 80%;
     margin-left: 10%;
@@ -1700,11 +1774,11 @@ body {
       height: 20px;
       margin-top: -10px; }
     .register-page .register .form .label-icon-name:before {
-      background: url("../img/icon-name.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/df-5008//img/icon-name.png") no-repeat center center;
       background-size: cover;
       background-color: transparent; }
     .register-page .register .form .label-icon-mobile:before {
-      background: url("../img/icon-phone.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/df-5008//img/icon-phone.png") no-repeat center center;
       background-size: cover;
       background-color: transparent; }
     .register-page .register .form .form-btn {

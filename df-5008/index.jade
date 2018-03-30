@@ -16,8 +16,8 @@ block css
 		})();
 
 block content
-	// - url = "http://image.giccoo.com/projects/df-5008"
-	- url = "."
+	- url = "http://image.giccoo.com/projects/df-5008"
+	//- url = "."
 	
 	#main.main(v-show="mount",style="display: none")
 		//- .loading(v-show="loading")
@@ -60,12 +60,14 @@ block content
 						textarea(v-model="topic",@focus="focusArea",@blur="blurArea")
 					.music-list
 						.left(@click="musicSelectPrev")
+							.note-message.fadeOutDown.animated.delay-30.duration-10
+								span 播放上一首
 						.right(@click="musicSelectNext")
-							.note-message.fadeOutDown.animated.delay-25.duration-10(style="display: none")
+							.note-message.fadeOutDown.animated.delay-30.duration-10
 								span 播放下一首
 						audio#audio-music(preload="auto",src="http://music.163.com/song/media/outer/url?id=28815250")
 						.music-name(:class="{playing: playing}",@click="pause")
-							.note-message.fadeOutUp.animated.delay-18.duration-10(style="display: none")
+							.note-message.fadeOutUp.animated.delay-23.duration-10
 								span 点击,暂停/播放
 							h3 {{musicname}}
 							p {{musicdesc}}
@@ -103,6 +105,8 @@ block content
 		transition(name="page-fade")
 			.page.register-page(v-show='lastpage')
 				.register(v-show="register")
+					.close(@click="closeregister")
+						img(src="#{url}/img/icon-close.png")
 					.title
 						img(src="#{url}/img/register-icon.png")
 					p.desc 填写联系信息,<br/>将有机会获得网易云音乐会员!

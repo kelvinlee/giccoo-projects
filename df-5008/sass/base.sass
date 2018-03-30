@@ -3,7 +3,7 @@
 $debug : false
 $cdn : "../"
 @if not $debug
-	$cdn : "http://image.giccoo.com/projects/corona/"
+	$cdn : "http://image.giccoo.com/projects/df-5008/"
 
 // animation, delay, duration
 @for $i from 1 through 50
@@ -326,7 +326,7 @@ body
 	+overhide
 
 .page-home
-	+b("../img/repeat.jpg",repeat-y,top,center,100% auto)
+	+b($cdn+"img/repeat.jpg",repeat-y,top,center,100% auto)
 	.bg
 		+w
 		+posa
@@ -361,6 +361,7 @@ body
 		+text-center
 		p
 			+m
+			+font-size(0.8rem)
 		.start-btn
 			display: inline-block
 			+posr
@@ -369,14 +370,20 @@ body
 			
 
 .page-build,.page-build-2
-	+b("../img/page-build-bg.jpg",no-repeat,bottom,center,cover)
+	+b($cdn+"img/page-build-bg.jpg",no-repeat,bottom,center,cover)
 
 .page-build
+	.build
+		+w
+		+h
 	.title
 		+posa
 		+tl(10%,50%)
 		+wh(4rem,4rem)
 		margin-left: -2rem
+		.iphone4 &
+			+wh(3rem,3rem)
+			margin-left: -1.5rem
 	.input
 		+posa
 		+tl(20%,18.75%)
@@ -387,14 +394,14 @@ body
 			+tl(-15px,-40px)
 			+wh(3rem,3rem)
 			// +bc(#fff)
-			+b("../img/yinhao.png",no-repeat,center,center,cover)
+			+b($cdn+"img/yinhao.png",no-repeat,center,center,cover)
 		&:after
 			content: " "
 			+posa
 			+br(-15px,-40px)
 			+wh(3rem,3rem)
 			// +bc(#fff)
-			+b("../img/yinhao.png",no-repeat,center,center,cover)
+			+b($cdn+"img/yinhao.png",no-repeat,center,center,cover)
 			+transform(scale(-1,-1))
 		textarea
 			+w(80%)
@@ -417,6 +424,9 @@ body
 		border-radius: 5px
 		+bc(rgba(255,255,255,0.3))
 		+text-center
+		.iphone4 &
+			+transform(scale(0.8,0.8))
+			transform-origin: top center
 		.left,.right
 			$size: 50px
 			+posa
@@ -439,10 +449,10 @@ body
 					+transform(rotate(45deg) translate3d(-100%,0,0))
 		.left
 			+tl(50%,20px)
-			+b("../img/btn-m-prev.png",no-repeat,center,center,cover)
+			+b($cdn+"img/btn-m-prev.png",no-repeat,center,center,cover)
 		.right
 			+tr(50%,20px)
-			+b("../img/btn-m-next.png",no-repeat,center,center,cover)
+			+b($cdn+"img/btn-m-next.png",no-repeat,center,center,cover)
 
 		.music-name
 			+w(50%)
@@ -485,6 +495,9 @@ body
 		+posa
 		+tl(15%,10%)
 		+w(80%)
+		.iphone4 &
+			+transform(scale(0.8,0.8))
+			transform-origin: top center
 		.btn
 			+w
 			+h(3rem)
@@ -496,13 +509,13 @@ body
 			+overhide
 			+tran
 			&.btn-1
-				+b("../img/text-1.png",no-repeat,center,center,cover,rgba(255,255,255,0.1))
+				+b($cdn+"img/text-1.png",no-repeat,center,center,cover,rgba(255,255,255,0.1))
 			&.btn-2
-				+b("../img/text-2.png",no-repeat,center,center,cover,rgba(255,255,255,0.1))
+				+b($cdn+"img/text-2.png",no-repeat,center,center,cover,rgba(255,255,255,0.1))
 			&.btn-3
-				+b("../img/text-3.png",no-repeat,center,center,cover,rgba(255,255,255,0.1))
+				+b($cdn+"img/text-3.png",no-repeat,center,center,cover,rgba(255,255,255,0.1))
 			&.btn-4
-				+b("../img/text-4.png",no-repeat,center,center,cover,rgba(255,255,255,0.1))
+				+b($cdn+"img/text-4.png",no-repeat,center,center,cover,rgba(255,255,255,0.1))
 			&.index
 				+bc(rgba(255,255,255,0.4))
 			
@@ -515,6 +528,17 @@ body
 		+text-center
 
 .page-image
+	.bg
+		font-size: 0
+	.iphone4 &
+		.bg
+			+posa
+			+bl(50%)
+			+transform(translate3d(0,50%,0))
+	.btn-share,.btn-save
+		.iphone4 &
+			+transform(scale(0.9,0.9))
+			transform-origin: bottom center
 	.btn-share
 		+posa
 		+bl
@@ -540,6 +564,11 @@ body
 .register-page
 	+bc(rgba(0,0,0,0.8))
 	z-index: 109
+	.close
+		+posa
+		+tr(5%,5%)
+		+wh(2rem,2rem)
+		font-size: 0
 	.register
 		+w(80%)
 		margin-left: 10%
@@ -581,10 +610,10 @@ body
 					margin-top: -$size/2
 			.label-icon-name
 				&:before
-					+b("../img/icon-name.png",no-repeat,center,center,cover)
+					+b($cdn+"/img/icon-name.png",no-repeat,center,center,cover)
 			.label-icon-mobile
 				&:before
-					+b("../img/icon-phone.png",no-repeat,center,center,cover)
+					+b($cdn+"/img/icon-phone.png",no-repeat,center,center,cover)
 			.form-btn
 				margin-top: 20px
 				.submit

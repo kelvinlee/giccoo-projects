@@ -5,6 +5,7 @@ main = {}
 pre = {}
 load = {}
 post_url = "http://api.giccoo.com/df5008/insert/"
+post_message_url = "http://api.giccoo.com/df5008/message/"
 sys = "other"
 noteText = "长按识别二维码，\n去往2018年的远方。"
 name_list = ["心之所向\n即为吾乡","淡泊明志\n宁静致远","愿得浮生\n半日闲","一屋两人\n三餐四季"]
@@ -12,7 +13,7 @@ name_list = ["心之所向\n即为吾乡","淡泊明志\n宁静致远","愿得�
 music_list = [
 	{name:"平凡之路",desc:"朴树",src:"http://music.163.com/song/media/outer/url?id=28815250"},
 	{name:"咖喱咖喱",desc:"牛奶咖啡",src:"http://music.163.com/song/media/outer/url?id=476987525"},
-	{name:"边走边喝",desc:"黄磊",src:"http://music.163.com/song/media/outer/url?id=92613"}
+	{name:"边走边唱",desc:"黄磊",src:"http://music.163.com/song/media/outer/url?id=92613"}
 	{name:"微笑的仙人掌",desc:"彭靖惠",src:"http://music.163.com/song/media/outer/url?id=280668"}
 	{name:"Friends",desc:"彭靖惠",src:"http://music.163.com/song/media/outer/url?id=280684"}
 	{name:"国境之南",desc:"范逸臣",src:"http://music.163.com/song/media/outer/url?id=4873061"}
@@ -51,6 +52,12 @@ window.onload = ->
 	init()
 
 init = ->
+	TrueH = document.documentElement.clientHeight
+	TrueW = document.documentElement.clientWidth
+	document.body.style.height = TrueH+"px"
+	if TrueW/TrueH >= 0.64
+		document.documentElement.className += " iphone4"
+
 	main = new Vue
 		el: "#main"
 		data:
@@ -112,14 +119,14 @@ init = ->
 			musicSelectPrev: ->
 				@musicIndex += -1
 				if @musicIndex <= 0
-					@musicIndex = 0
-					return false
+					@musicIndex = music_list.length - 1
+					# return false
 				@play()
 			musicSelectNext: ->
 				@musicIndex += 1
 				if @musicIndex > (music_list.length-1)
-					@musicIndex = music_list.length-1
-					return false
+					@musicIndex = 0
+					# return false
 				@play()
 			play: ->
 				# @audioSRC = music_list[@musicIndex].src
@@ -151,20 +158,18 @@ init = ->
 				logo = new Image()
 				bg.onload = (evt)->
 					ctx.drawImage(bg, 0, 0, bg.width, bg.height)
-					logo.onload = ->
-						ctx.drawImage(logo, 0, 0, logo.width, logo.height)
-						writeText()
-					logo.src="./img/logo.png"
+					writeText()
+
 				bg.src = "./img/bg-#{self.contentIndex}.jpg"
 				
 				writeText = ->
 					ctx.fillStyle = "#fff";
 					ctx.textAlign = 'center'
-					ctx.font = "56px '微软雅黑'"
+					# ctx.font = "56px '微软雅黑'"
 					ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
 					ctx.shadowBlur = 5;
 					# ctx.fillText(name_list[self.contentIndex-1],320,270)
-					runLongTexts name_list[self.contentIndex-1],ctx,320,440
+					# runLongTexts name_list[self.contentIndex-1],ctx,320,440
 					ctx.fillStyle = "#fff"
 					ctx.textAlign = 'center'
 					ctx.font = "30px '微软雅黑'"
@@ -187,8 +192,11 @@ init = ->
 						ctx.font = "20px '微软雅黑'"
 						runLongTexts noteText,ctx,100,1024-56
 						ctx.drawImage(qr, 10, 1024-80-10, 80, 80)
-						self.qr = true
-						self.qrsrc = canvas.toDataURL("image/png")
+						logo.onload = ->
+							ctx.drawImage(logo, 0, 0, logo.width, logo.height)
+							self.qr = true
+							self.qrsrc = canvas.toDataURL("image/png")
+						logo.src="./img/logo.png"
 					qr.src = "./img/qrcode.png"
 				# writeText()
 
@@ -212,7 +220,13 @@ init = ->
 
 			blurArea: (evt)->
 				@topic = @cacheArea if @topic is ""
-					
+			closeregister: ->
+				@lastpage = false
+				data = {}
+				data['content'] = main.topic
+				axios.post post_message_url,data
+				.then (msg)->
+					console.log msg
 			onSubmit: (evt)->
 				if @form.username.length < 1
 					alert '姓名不能为空'

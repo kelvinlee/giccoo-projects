@@ -20,15 +20,14 @@
     </script>
   </head>
   <body>
-    <!-- - url = "http://image.giccoo.com/projects/df-5008"-->
     <div id="main" v-show="mount" style="display: none" class="main">
-      <div class="logo-main"><img src="./img/logo.png"></div>
+      <div class="logo-main"><img src="http://image.giccoo.com/projects/df-5008/img/logo.png"></div>
       <transition name="page-animation">
         <div id="page-home" v-show="homepageShow" class="page page-home">
-          <div class="bg f0"><img src="./img/homepage-bg.jpg">
+          <div class="bg f0"><img src="http://image.giccoo.com/projects/df-5008/img/homepage-bg.jpg">
             <div class="bg-mark f0">
-              <div class="mark"><img src="./img/homepage-bg-m.png"></div>
-              <div class="text fadeInUp animated duration-40 delay-3"><img src="./img/homepage-text.png"></div>
+              <div class="mark"><img src="http://image.giccoo.com/projects/df-5008/img/homepage-bg-m.png"></div>
+              <div class="text fadeInUp animated duration-40 delay-3"><img src="http://image.giccoo.com/projects/df-5008/img/homepage-text.png"></div>
             </div>
           </div>
           <div class="text-list">
@@ -41,34 +40,32 @@
           </div>
           <div @click="start" class="start fadeInUp animated duration-8 delay-35">
             <p>与东风标致5008照见此刻内心<br/>驱驰远方心境之旅</p>
-            <div class="start-btn"><img src="./img/start-btn.png"></div>
+            <div class="start-btn"><img src="http://image.giccoo.com/projects/df-5008/img/start-btn.png"></div>
           </div>
         </div>
       </transition>
       <transition name="page-animation">
         <div v-show="buildshow &amp;&amp; buildstep == 1" class="page page-build">
           <div class="build build-1">
-            <div class="title f0"><img :src="'./img/page-build-topic-title.png'"></div>
+            <div class="title f0"><img :src="'http://image.giccoo.com/projects/df-5008/img/page-build-topic-title.png'"></div>
             <div class="input">
               <textarea v-model="topic" @focus="focusArea" @blur="blurArea"></textarea>
             </div>
             <div class="music-list">
               <div @click="musicSelectPrev" class="left">
-                <div style="display: block" class="note-message fadeOut animated delay-30 duration-10"><span>播放上一首</span></div>
-
+                <div class="note-message fadeOutDown animated delay-30 duration-10"><span>播放上一首</span></div>
               </div>
-
               <div @click="musicSelectNext" class="right">
-                <div style="display: block" class="note-message fadeOut animated delay-30 duration-10"><span>播放下一首</span></div>
+                <div class="note-message fadeOutDown animated delay-30 duration-10"><span>播放下一首</span></div>
               </div>
               <audio id="audio-music" preload="auto" src="http://music.163.com/song/media/outer/url?id=28815250"></audio>
               <div :class="{playing: playing}" @click="pause" class="music-name">
-                <div style="display: block" class="note-message fadeOut animated delay-23 duration-10"><span>点击,暂停/播放</span></div>
+                <div class="note-message fadeOutUp animated delay-23 duration-10"><span>点击,暂停/播放</span></div>
                 <h3>{{musicname}}</h3>
                 <p>{{musicdesc}}</p>
               </div>
             </div>
-            <div @click="gobuild" class="btn btn-next"><img :src="'./img/btn-next.png'"></div>
+            <div @click="gobuild" class="btn btn-next"><img :src="'http://image.giccoo.com/projects/df-5008/img/btn-next.png'"></div>
           </div>
         </div>
       </transition>
@@ -80,15 +77,15 @@
             <div :class="{index: contentIndex == 3}" @click="selectContent($event,3)" class="btn f0 btn-3 fadeInLeft animated duration-8 delay-5"></div>
             <div :class="{index: contentIndex == 4}" @click="selectContent($event,4)" class="btn f0 btn-4 fadeInRight animated duration-8 delay-7"></div>
           </div>
-          <div @click="buildimage" class="btn f0 btn-next fadeInUp duration-20"><img :src="'./img/btn-create.png'"></div>
+          <div @click="buildimage" class="btn f0 btn-next fadeInUp duration-20"><img :src="'http://image.giccoo.com/projects/df-5008/img/btn-create.png'"></div>
         </div>
       </transition>
       <transition name="page-animation">
         <div v-show="buildover" class="page page-image">
           <div class="content">
             <div class="bg"><img v-if="ugc" :src="ugcsrc" class="ugc"><img v-if="qr" :src="qrsrc" class="longsave"></div>
-            <div @click="share" class="btn btn-share"><img src="./img/btn-share.png"></div>
-            <div class="btn btn-save"><img src="./img/btn-save.png"><img v-if="qr" :src="qrsrc" class="longsave">
+            <div @click="share" class="btn btn-share"><img src="http://image.giccoo.com/projects/df-5008/img/btn-share.png"></div>
+            <div class="btn btn-save"><img src="http://image.giccoo.com/projects/df-5008/img/btn-save.png"><img v-if="qr" :src="qrsrc" class="longsave">
               <canvas id="result" v-show="creatEnd" class="fadeIn animated"></canvas>
             </div>
           </div>
@@ -97,7 +94,8 @@
       <transition name="page-fade">
         <div v-show="lastpage" class="page register-page">
           <div v-show="register" class="register">
-            <div class="title"><img src="./img/register-icon.png"></div>
+            <div @click="closeregister" class="close"><img src="http://image.giccoo.com/projects/df-5008/img/icon-close.png"></div>
+            <div class="title"><img src="http://image.giccoo.com/projects/df-5008/img/register-icon.png"></div>
             <p class="desc">填写联系信息,<br/>将有机会获得网易云音乐会员!</p>
             <form id="register" v-on:submit.prevent="onSubmit" class="form">
               <div class="form-grounp">
@@ -117,7 +115,7 @@
       </transition>
       <transition name="page-fade">
         <div v-show="wechatshare" @click="closeshare" class="page wechat-sharepage">
-          <div class="content"><img src="./img/wechat-sharepage.png"></div>
+          <div class="content"><img src="http://image.giccoo.com/projects/df-5008/img/wechat-sharepage.png"></div>
         </div>
       </transition>
     </div>
