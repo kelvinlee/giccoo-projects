@@ -112,6 +112,7 @@ init = function init() {
   return main = new Vue({
     el: "#main",
     data: {
+      wy: false,
       homepageShow: true,
       mount: false,
       loading: false,
@@ -307,6 +308,7 @@ init = function init() {
           return console.log(msg);
         });
       },
+      shareImage: function shareImage() {},
       onSubmit: function onSubmit(evt) {
         var data, k, ref, reg, url, v;
         if (this.form.username.length < 1) {
@@ -343,6 +345,9 @@ init = function init() {
       }
     },
     mounted: function mounted() {
+      if (sys === "NeteaseMusic") {
+        this.wy = true;
+      }
       return setTimeout(function () {
         return main.mount = true;
       }, 100);

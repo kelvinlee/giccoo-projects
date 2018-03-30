@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Map</title>
+    <script src="http://api.map.baidu.com/api?v=2.0&amp;ak=l4F677V3w1Z6Gn5H9xRs4GQDB4eLLA6W"></script>
+    <script src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+    <script src="../libs/js/cityId.js"></script>
+    <!-- <script src="../libs/js/min/inmap.min.js"></script> -->
+    <style>
+       .BMap_cpyCtrl,.BMap_noprint,.anchorBL {
+        display: none;
+       }
+       body {
+        margin: 0;
+       }
+    </style>
+  </head>
+  <body>
+    <div id="mapDiv" style="width:100%;height:640px"></div>
+  </body>
+  <script type="text/javascript" src='http://webapi.amap.com/maps?v=1.4.0&key=dded2a835705075fc59578df3ab610f8'></script>
+  <script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+  <script type="text/javascript">
+    var map = new AMap.Map('mapDiv', {
+      mapStyle: 'amap://styles/b45e7e39246bc931b7c8da3d5ac64d12'
+    });
+    map.setMapStyle('amap://styles/b45e7e39246bc931b7c8da3d5ac64d12');
+
+    AMapUI.load(['ui/geo/DistrictExplorer', 'lib/$'], function(DistrictExplorer, $) {
+      //创建一个实例
+      var districtExplorer = window.districtExplorer = new DistrictExplorer({
+        eventSupport: true, //打开事件支持
+        map: map
+      });
+      
+    });
+        
+  </script>
+  <script>
+    
+  </script>
+</html>

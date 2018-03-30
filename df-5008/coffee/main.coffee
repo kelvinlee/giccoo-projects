@@ -61,6 +61,7 @@ init = ->
 	main = new Vue
 		el: "#main"
 		data:
+			wy: false
 			homepageShow: true
 			mount: false
 			loading: false
@@ -227,6 +228,8 @@ init = ->
 				axios.post post_message_url,data
 				.then (msg)->
 					console.log msg
+			shareImage: ->
+
 			onSubmit: (evt)->
 				if @form.username.length < 1
 					alert '姓名不能为空'
@@ -254,6 +257,8 @@ init = ->
 						alert msg.data.reason
 
 		mounted: ->
+			if sys is "NeteaseMusic"
+				@.wy = true
 			setTimeout ->
 				main.mount = true
 			,100
