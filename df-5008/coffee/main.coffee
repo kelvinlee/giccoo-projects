@@ -225,7 +225,7 @@ init = ->
 				@lastpage = false
 				data = {}
 				data['content'] = main.topic
-				axios.post post_message_url,data
+				axios.get post_message_url,data
 				.then (msg)->
 					console.log msg
 			shareImage: ->
@@ -248,7 +248,7 @@ init = ->
 					data[k] = v
 				data['content'] = main.topic
 				data['music'] = music_list[main.musicIndex].name
-				axios.post url,data
+				axios.get url,data
 				.then (msg)->
 					if msg.data.recode is 200
 						alert "参与成功"

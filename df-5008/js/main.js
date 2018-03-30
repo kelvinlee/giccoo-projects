@@ -304,7 +304,7 @@ init = function init() {
         this.lastpage = false;
         data = {};
         data['content'] = main.topic;
-        return axios.post(post_message_url, data).then(function (msg) {
+        return axios.get(post_message_url, data).then(function (msg) {
           return console.log(msg);
         });
       },
@@ -334,7 +334,7 @@ init = function init() {
         }
         data['content'] = main.topic;
         data['music'] = music_list[main.musicIndex].name;
-        return axios.post(url, data).then(function (msg) {
+        return axios.get(url, data).then(function (msg) {
           if (msg.data.recode === 200) {
             alert("参与成功");
             return main.lastpage = false;
