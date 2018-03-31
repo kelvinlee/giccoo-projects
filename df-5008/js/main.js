@@ -28,43 +28,43 @@ name_list = ["心之所向\n即为吾乡", "淡泊明志\n宁静致远", "愿得
 music_list = [{
   name: "平凡之路",
   desc: "朴树",
-  src: "http://music.163.com/song/media/outer/url?id=28815250"
+  src: "//music.163.com/song/media/outer/url?id=28815250"
 }, {
   name: "咖喱咖喱",
   desc: "牛奶咖啡",
-  src: "http://music.163.com/song/media/outer/url?id=476987525"
+  src: "//music.163.com/song/media/outer/url?id=476987525"
 }, {
   name: "边走边唱",
   desc: "黄磊",
-  src: "http://music.163.com/song/media/outer/url?id=92613"
+  src: "//music.163.com/song/media/outer/url?id=92613"
 }, {
   name: "微笑的仙人掌",
   desc: "彭靖惠",
-  src: "http://music.163.com/song/media/outer/url?id=280668"
+  src: "//music.163.com/song/media/outer/url?id=280668"
 }, {
   name: "Friends",
   desc: "彭靖惠",
-  src: "http://music.163.com/song/media/outer/url?id=280684"
+  src: "//music.163.com/song/media/outer/url?id=280684"
 }, {
   name: "国境之南",
   desc: "范逸臣",
-  src: "http://music.163.com/song/media/outer/url?id=4873061"
+  src: "//music.163.com/song/media/outer/url?id=4873061"
 }, {
   name: "下一站，幸福",
   desc: "彭靖惠",
-  src: "http://music.163.com/song/media/outer/url?id=280649"
+  src: "//music.163.com/song/media/outer/url?id=280649"
 }, {
   name: "环游世界",
   desc: "小旺福",
-  src: "http://music.163.com/song/media/outer/url?id=385640"
+  src: "//music.163.com/song/media/outer/url?id=385640"
 }, {
   name: "爱是有故事的旅行",
   desc: "李泉",
-  src: "http://music.163.com/song/media/outer/url?id=111801"
+  src: "//music.163.com/song/media/outer/url?id=111801"
 }, {
   name: "Taipei City，台北城市",
   desc: "陈奕迅",
-  src: "http://music.163.com/song/media/outer/url?id=67829"
+  src: "//music.163.com/song/media/outer/url?id=67829"
 }];
 
 topic_list = ["点击留下自己的\n心境感悟"];
