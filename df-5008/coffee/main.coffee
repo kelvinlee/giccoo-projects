@@ -4,8 +4,8 @@ global = {}
 main = {}
 pre = {}
 load = {}
-post_url = "http://api.giccoo.com/df5008/insert/"
-post_message_url = "http://api.giccoo.com/df5008/message/"
+post_url = "//api.giccoo.com/df5008/insert/"
+post_message_url = "//api.giccoo.com/df5008/message/"
 sys = "other"
 noteText = "长按识别二维码，\n去往2018年的远方。"
 name_list = ["心之所向\n即为吾乡","淡泊明志\n宁静致远","愿得浮生\n半日闲","一屋两人\n三餐四季"]
@@ -39,8 +39,8 @@ window.onload = ->
 			shareContent =
 				title: "吾有心语，享，往远方"
 				desc: "心之所向，即为远方。"
-				link: "http://peugeot.music.163.com/df-5008/"
-				imgUrl: "http://peugeot.music.163.com/df-5008/img/ico.jpg"
+				link: "https://peugeot.music.163.com/df-5008/"
+				imgUrl: "https://peugeot.music.163.com/df-5008/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
@@ -276,7 +276,7 @@ runLongTexts = (texts,ctx,x,y)->
 # 修改分享内容
 
 updateShare = (msg)->
-	imgUrl= "http://image.giccoo.com/sayno/corona/#{msg.filename}@!large"
+	imgUrl= "https://image.giccoo.com/sayno/corona/#{msg.filename}@!large"
 	if msg.info.insertId? && msg.info.insertId > 0
 		id = "?id="+msg.info.insertId
 	else
@@ -293,8 +293,8 @@ updateShare = (msg)->
 		shareContent =
 			title: "吾有心语，享，往远方"
 			desc: "心之所向，即为远方。"
-			link: "http://m.giccoo.com/corona/"+id
-			imgUrl: "http://m.giccoo.com/corona/img/ico.jpg"
+			link: "https://m.giccoo.com/corona/"+id
+			imgUrl: "https://m.giccoo.com/corona/img/ico.jpg"
 			success: ->
 				# alert "success"
 				main.shareNote = false
@@ -308,8 +308,8 @@ updateShare = (msg)->
 
 neteaseShare = ->
 	title1 = "吾有心语，享，往远方"
-	picUrl = "http://peugeot.music.163.com/df-5008/img/ico.jpg"
-	redirectUrl = "http://peugeot.music.163.com/df-5008/"
+	picUrl = "https://peugeot.music.163.com/df-5008/img/ico.jpg"
+	redirectUrl = "https://peugeot.music.163.com/df-5008/"
 	title2 = "吾有心语，享，往远方"
 	subTitle2 = "心之所向，即为远方。"
 	window.location.href = "orpheus://share/"+encodeURIComponent(title1)+"/"+encodeURIComponent(picUrl)+"/"+encodeURIComponent(redirectUrl)+"/"+encodeURIComponent(title2)+"/"+encodeURIComponent(subTitle2)
@@ -319,7 +319,7 @@ neteaseShare = ->
 loadWechatConfig = ->
 	url = encodeURIComponent window.location.href.split("#")[0]
 	hm = document.createElement('script')
-	hm.src = "http://api.giccoo.com/api/config?url="+url
+	hm.src = "//api.giccoo.com/api/config?url="+url
 	s = document.getElementsByTagName('script')[0]
 	s.parentNode.insertBefore hm, s
 	return

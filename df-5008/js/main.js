@@ -14,9 +14,9 @@ pre = {};
 
 load = {};
 
-post_url = "http://api.giccoo.com/df5008/insert/";
+post_url = "//api.giccoo.com/df5008/insert/";
 
-post_message_url = "http://api.giccoo.com/df5008/message/";
+post_message_url = "//api.giccoo.com/df5008/message/";
 
 sys = "other";
 
@@ -85,8 +85,8 @@ window.onload = function () {
       shareContent = {
         title: "吾有心语，享，往远方",
         desc: "心之所向，即为远方。",
-        link: "http://peugeot.music.163.com/df-5008/",
-        imgUrl: "http://peugeot.music.163.com/df-5008/img/ico.jpg",
+        link: "https://peugeot.music.163.com/df-5008/",
+        imgUrl: "https://peugeot.music.163.com/df-5008/img/ico.jpg",
         success: function success() {},
         // alert "success"
         cancel: function cancel() {}
@@ -372,7 +372,7 @@ _runLongTexts = function runLongTexts(texts, ctx, x, y) {
 // 修改分享内容
 updateShare = function updateShare(msg) {
   var id, imgUrl, shareContent;
-  imgUrl = "http://image.giccoo.com/sayno/corona/" + msg.filename + "@!large";
+  imgUrl = "https://image.giccoo.com/sayno/corona/" + msg.filename + "@!large";
   if (msg.info.insertId != null && msg.info.insertId > 0) {
     id = "?id=" + msg.info.insertId;
   } else {
@@ -390,8 +390,8 @@ updateShare = function updateShare(msg) {
     shareContent = {
       title: "吾有心语，享，往远方",
       desc: "心之所向，即为远方。",
-      link: "http://m.giccoo.com/corona/" + id,
-      imgUrl: "http://m.giccoo.com/corona/img/ico.jpg",
+      link: "https://m.giccoo.com/corona/" + id,
+      imgUrl: "https://m.giccoo.com/corona/img/ico.jpg",
       success: function success() {
         // alert "success"
         main.shareNote = false;
@@ -410,8 +410,8 @@ updateShare = function updateShare(msg) {
 neteaseShare = function neteaseShare() {
   var picUrl, redirectUrl, subTitle2, title1, title2;
   title1 = "吾有心语，享，往远方";
-  picUrl = "http://peugeot.music.163.com/df-5008/img/ico.jpg";
-  redirectUrl = "http://peugeot.music.163.com/df-5008/";
+  picUrl = "https://peugeot.music.163.com/df-5008/img/ico.jpg";
+  redirectUrl = "https://peugeot.music.163.com/df-5008/";
   title2 = "吾有心语，享，往远方";
   subTitle2 = "心之所向，即为远方。";
   window.location.href = "orpheus://share/" + encodeURIComponent(title1) + "/" + encodeURIComponent(picUrl) + "/" + encodeURIComponent(redirectUrl) + "/" + encodeURIComponent(title2) + "/" + encodeURIComponent(subTitle2);
@@ -423,7 +423,7 @@ loadWechatConfig = function loadWechatConfig() {
   var hm, s, url;
   url = encodeURIComponent(window.location.href.split("#")[0]);
   hm = document.createElement('script');
-  hm.src = "http://api.giccoo.com/api/config?url=" + url;
+  hm.src = "//api.giccoo.com/api/config?url=" + url;
   s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(hm, s);
 };
