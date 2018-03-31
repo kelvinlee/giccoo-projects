@@ -23,6 +23,13 @@
 		"oAP": "\/.gitignore",
 		"oF": 0
 		},
+	"\/.well-known\/pki-validation\/fileauth.txt": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.well-known\/pki-validation\/fileauth.txt",
+		"oF": 0
+		},
 	"\/2017-new-year": {
 		"ft": 65536,
 		"oA": 1,
@@ -9062,6 +9069,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/your_own_way\/img\/qmark.png": {
+		"ft": 32768,
+		"iS": 587,
+		"oA": 0,
+		"oAP": "\/your_own_way\/img\/qmark.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/your_own_way\/img\/standup\/man0001.png": {
 		"ft": 32768,
 		"iS": 1369,
@@ -10613,6 +10631,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/your_own_way\/img\/word2.png": {
+		"ft": 32768,
+		"iS": 7099,
+		"oA": 0,
+		"oAP": "\/your_own_way\/img\/word2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/your_own_way\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -10646,6 +10675,16 @@
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/your_own_way\/js\/main-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/your_own_way\/js\/main1.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/your_own_way\/js\/main1-build.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 1
