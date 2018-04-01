@@ -1,6 +1,6 @@
 "use strict";
 
-var $_GET, _CDN, _imgurl, getRandom, global, init, load, loadWechatConfig, main, music_list, name_list, neteaseShare, noteText, post_message_url, post_url, pre, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare;
+var $_GET, _CDN, _imgurl, getRandom, global, imageurl, init, load, loadWechatConfig, main, music_list, name_list, neteaseShare, neteaseShareImage, noteText, post_message_url, post_url, pre, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare;
 
 _CDN = "";
 
@@ -15,6 +15,8 @@ pre = {};
 load = {};
 
 post_url = "//api.giccoo.com/df5008/insert/";
+
+imageurl = "//api.giccoo.com/sayno/df5008/create/";
 
 post_message_url = "//api.giccoo.com/df5008/message/";
 
@@ -133,6 +135,7 @@ init = function init() {
       playing: false,
       wechatshare: false,
       audioSRC: music_list[0].src,
+      shareImageLink: "",
       form: {
         username: "",
         mobile: ""
@@ -234,6 +237,7 @@ init = function init() {
           return writeText();
         };
         bg.src = "./img/bg-" + self.contentIndex + ".jpg";
+        // console.log bg.src
         writeText = function writeText() {
           var MAX, qr, removeH;
           ctx.fillStyle = "#fff";
@@ -266,7 +270,8 @@ init = function init() {
             logo.onload = function () {
               ctx.drawImage(logo, 0, 0, logo.width, logo.height);
               self.qr = true;
-              return self.qrsrc = canvas.toDataURL("image/png");
+              self.qrsrc = canvas.toDataURL("image/png");
+              return self.upload(canvas.toDataURL("image/png"));
             };
             return logo.src = "./img/logo.png";
           };
@@ -277,6 +282,30 @@ init = function init() {
         this.buildstep = 1;
         this.buildover = true;
         return this.lastpage = true;
+      },
+      upload: function upload(image) {
+        var data;
+        // console.log "upload:"
+        data = {
+          image: image
+        };
+        return axios.post(imageurl, data).then(function (msg) {
+          if (msg.data.recode === 200) {
+            return main.success(msg.data);
+          } else {
+            return main.faild();
+          }
+        }).catch(function (e) {
+          // alert e
+          return main.faild();
+        });
+      },
+      faild: function faild() {
+        return console.log("err");
+      },
+      success: function success(data) {
+        console.log("data", data.info);
+        return this.shareImageLink = data.info;
       },
       share: function share() {
         if (sys === "NeteaseMusic") {
@@ -308,7 +337,9 @@ init = function init() {
           return console.log(msg);
         });
       },
-      shareImage: function shareImage() {},
+      shareImage: function shareImage() {
+        return neteaseShareImage();
+      },
       onSubmit: function onSubmit(evt) {
         var data, k, ref, reg, url, v;
         if (this.form.username.length < 1) {
@@ -417,6 +448,15 @@ neteaseShare = function neteaseShare() {
   window.location.href = "orpheus://share/" + encodeURIComponent(title1) + "/" + encodeURIComponent(picUrl) + "/" + encodeURIComponent(redirectUrl) + "/" + encodeURIComponent(title2) + "/" + encodeURIComponent(subTitle2);
   // window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
   return console.log("run after?");
+};
+
+neteaseShareImage = function neteaseShareImage() {
+  var picUrl, redirectUrl, title1;
+  title1 = "吾有心语，享，往远方";
+  picUrl = "https://image.giccoo.com/sayno/df5008/" + main.shareImageLink + "@!large";
+  redirectUrl = "https://peugeot.music.163.com/df-5008/";
+  console.log("orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1));
+  return window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
 };
 
 loadWechatConfig = function loadWechatConfig() {

@@ -5,6 +5,7 @@ main = {}
 pre = {}
 load = {}
 post_url = "//api.giccoo.com/df5008/insert/"
+imageurl = "//api.giccoo.com/sayno/df5008/create/"
 post_message_url = "//api.giccoo.com/df5008/message/"
 sys = "other"
 noteText = "长按识别二维码，\n去往2018年的远方。"
@@ -82,6 +83,7 @@ init = ->
 			playing: false
 			wechatshare: false
 			audioSRC: music_list[0].src
+			shareImageLink: ""
 			form:
 				username: ""
 				mobile: ""
@@ -162,7 +164,7 @@ init = ->
 					writeText()
 
 				bg.src = "./img/bg-#{self.contentIndex}.jpg"
-				
+				# console.log bg.src
 				writeText = ->
 					ctx.fillStyle = "#fff";
 					ctx.textAlign = 'center'
@@ -197,6 +199,7 @@ init = ->
 							ctx.drawImage(logo, 0, 0, logo.width, logo.height)
 							self.qr = true
 							self.qrsrc = canvas.toDataURL("image/png")
+							self.upload canvas.toDataURL("image/png")
 						logo.src="./img/logo.png"
 					qr.src = "./img/qrcode.png"
 				# writeText()
@@ -205,7 +208,25 @@ init = ->
 				@buildstep = 1
 				@buildover = true
 				@lastpage = true
-
+			upload: (image)->
+				# console.log "upload:"
+				data = {
+					image: image
+				}
+				axios.post imageurl,data
+				.then (msg)->
+					if msg.data.recode is 200
+						main.success(msg.data)
+					else
+						main.faild()
+				.catch (e)->
+					# alert e
+					main.faild()
+			faild: ->
+				console.log "err"
+			success: (data)->
+				console.log "data",data.info
+				@shareImageLink = data.info
 			share: ->
 				if sys is "NeteaseMusic"
 					neteaseShare()
@@ -229,7 +250,7 @@ init = ->
 				.then (msg)->
 					console.log msg
 			shareImage: ->
-
+				neteaseShareImage()
 			onSubmit: (evt)->
 				if @form.username.length < 1
 					alert '姓名不能为空'
@@ -315,6 +336,12 @@ neteaseShare = ->
 	window.location.href = "orpheus://share/"+encodeURIComponent(title1)+"/"+encodeURIComponent(picUrl)+"/"+encodeURIComponent(redirectUrl)+"/"+encodeURIComponent(title2)+"/"+encodeURIComponent(subTitle2)
 	# window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "run after?"
+neteaseShareImage = ->
+	title1 = "吾有心语，享，往远方"
+	picUrl = "https://image.giccoo.com/sayno/df5008/"+main.shareImageLink+"@!large"
+	redirectUrl = "https://peugeot.music.163.com/df-5008/"
+	console.log "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
+	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 
 loadWechatConfig = ->
 	url = encodeURIComponent window.location.href.split("#")[0]

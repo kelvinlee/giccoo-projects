@@ -23,13 +23,6 @@
 		"oAP": "\/.gitignore",
 		"oF": 0
 		},
-	"\/.well-known\/pki-validation\/fileauth.txt": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/.well-known\/pki-validation\/fileauth.txt",
-		"oF": 0
-		},
 	"\/2017-new-year": {
 		"ft": 65536,
 		"oA": 1,
@@ -1415,6 +1408,17 @@
 		"iS": 11183,
 		"oA": 0,
 		"oAP": "\/df-5008\/img\/btn-next.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-5008\/img\/btn-save-2.png": {
+		"ft": 32768,
+		"iS": 7449,
+		"oA": 0,
+		"oAP": "\/df-5008\/img\/btn-save-2.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
