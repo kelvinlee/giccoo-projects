@@ -1,0 +1,158 @@
+@import "base";
+
+.contanier{
+  text-align: center;
+  color: #1b7339;
+  font-size: px(28);
+  padding-bottom: px(100);
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+
+.weather-con{
+  padding: px(28) px(36);
+  background: url("../img/top-bg.jpg") no-repeat;
+  background-size: cover;
+  background-position-y: px(-133);
+
+  .today-status{
+    margin-top: px(98);
+    font-size: px(66);
+
+  }
+  .tips{
+    margin-top: px(60);
+  }
+}
+
+.today-detail-con{
+  width: 100%;
+  height: px(147);
+  background: url("../img/detail-bg.jpg") no-repeat;
+  background-size: cover;
+
+  padding: px(30) px(36) 0 px(36);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: normal;
+  color: #fff;
+
+  .today{
+    font-size: px(36);
+    text-align: left;
+  }
+
+  .today-tem,.nums{
+    font-size: px(60);
+    line-height: px(60);
+    font-weight: bolder;
+  }
+  .cloud-bar{
+    width: px(90);
+  }
+  .white-line{
+    width: px(2);
+    height: px(82);
+    background-color: white;
+  }
+
+  .today-air-condition{
+    .pm2-5-con{
+      .pm2-5{
+        font-size: px(30);
+        line-height: px(30);
+        color: white;
+      }
+    }
+    .air-bar{
+      width: px(190);
+    }
+  }
+  .bar{
+    margin-top: px(6);
+    font-size: px(20);
+    background-color: white;
+    color: #1b7339;
+    text-align: center;
+    line-height: px(26);
+    border-radius: px(14);
+    height: px(26);
+    letter-spacing: px(2);
+  }
+}
+.banner{
+  width: 100%;
+  height: px(310);
+  background: url("../img/banner.jpg") no-repeat;
+  background-size: cover;
+}
+
+.buy-con{
+  padding: px(33) 0 px(42) 0;
+  background-color: white;
+
+  .buyES-img{
+    width: 100%;
+    height: px(109);
+  }
+
+  .btns-con{
+    margin-top: px(22);
+    padding: 0 px(40);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .space{
+      width: px(34);
+    }
+    .btn{
+      //padding: 0 px(10);
+      width: px(247);
+      height: px(55);
+      background: url("../img/btn-bg.png") no-repeat;
+      background-size: cover;
+      color: white;
+      font-size: px(22);
+      text-align: center;
+      line-height: px(55);
+    }
+
+  }
+}
+
+.class-con{
+
+  .title{
+    width: 100%;
+    height: px(100);
+    background: url("../img/class-title.jpg") no-repeat;
+    background-size: cover;
+  }
+  .questions-con{
+    padding: 0 px(36);
+
+    a{
+      display: block;
+    }
+    .question{
+      width: 100%;
+      height: px(66);
+      text-align: left;
+      border-bottom: #1b7339 solid 1px;
+    }
+    .text{
+      padding-left: px(10);
+      padding-top: px(20);
+      font-size: px(28);
+      //line-height: px(34);
+      color: #1b7339;
+      letter-spacing: px(2);
+    }
+  }
+}

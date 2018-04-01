@@ -1,0 +1,113 @@
+
+@function px($value) {
+  @return $value / 100 + rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body, div, img, span, a, table, tr, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  color: inherit;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  //color: #000;
+  //font-size: 20px;
+  //background: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: fzltzh;
+  font-weight: bold;
+  font-size: px(54);
+  line-height: px(54);
+  text-align: left;
+  color: black;
+}
+
+.h1-line {
+  margin-top: px(32);
+  width: px(74);
+  height: px(2);
+  background-color: black;
+}
+
+.content {
+  padding-top: px(102);
+}
+
+.swiper-wrapper {
+  transition-timing-function: cubic-bezier(1, 0.01, 0.56, 0.91) !important;
+}
+
+li {
+  list-style: none;
+}
+
+div {
+  box-sizing: border-box;
+  background-size: 100% 100%;
+}
+
+.pa {
+  position: absolute;
+}
+
+.pr {
+  position: relative;
+}
+
+.pf {
+  position: fixed;
+}
+
+.dn {
+  display: none;
+}
+
+.db {
+  display: block;
+}
+
+.cp {
+  cursor: pointer;
+}
+
+.full {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fulljustify {
+  text-align: justify;
+}
+
+.fulljustify:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+$site_width: 750;
+
