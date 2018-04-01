@@ -1,4 +1,5 @@
 const cityUrl = 'http://h5-lbs.api.moji.com/location/location'
+const getWeatherInfoUrl = 'http://g.giccoo.com/sensitivity/api/city/p/'
 
 var app = new Vue({
 	el: '#app',
@@ -18,8 +19,16 @@ var app = new Vue({
 		axios.get('./config/question.json').then(res => {
 			// console.log(res.data)
 			let data = res.data;
-			console.log(this)
+			console.log(data)
 			this.quesionList = data;
+		})
+
+		var cityId = '2';
+		axios.post(getWeatherInfoUrl+cityId).then(res => {
+			console.log("getWeatherInfoUrl")
+			// console.log(res.data)
+			// let data = res.data;
+			console.log(res)
 		})
 
 
