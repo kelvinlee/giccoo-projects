@@ -54,9 +54,17 @@
 	</div>
 </div>
 
-<script src="js/rem.js"></script>
+<div class="popUp">
+	<div class="pop-con">
+
+	</div>
+</div>
+
+<script src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
 <script src="/libs/js/min/vue.min.js"></script>
 <script src="/libs/js/min/axios.min.js"></script>
+<script src="js/vue-spinner.min.js"></script>
+<script src="js/rem.js"></script>
 <script src="js/index.js"></script>
 <!-- endbuild -->
 
@@ -83,16 +91,6 @@
 			});
 	})*/
 
-	window.addEventListener('resize', _onResize);
-	_onResize();
-
-	function _onResize() {
-		var docEl = document.documentElement;
-		var default_value = 640;
-		var clientWidth = docEl.clientWidth;
-		var scale = 1;
-		docEl.style.fontSize = 100 * scale * (clientWidth / default_value) + 'px';
-	}
 </script>
 </body>
 </html>
