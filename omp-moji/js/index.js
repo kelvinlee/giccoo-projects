@@ -1,5 +1,5 @@
 const cityUrl = 'http://h5-lbs.api.moji.com/location/location'
-const getWeatherInfoUrl = 'http://g.giccoo.com/sensitivity/api/city/p/'
+const getWeatherInfoUrl = 'http://g.giccoo.com/sensitivity/api/city/p/2'
 
 var app = new Vue({
 	el: '#app',
@@ -12,6 +12,9 @@ var app = new Vue({
 		//地理位置授权
 		console.log('beforecreate')
 	},
+	beforeMount:function(){
+
+	},
 	created: function () {
 		//init
 		console.log('init')
@@ -23,8 +26,14 @@ var app = new Vue({
 			this.quesionList = data;
 		})
 
-		var cityId = '2';
-		axios.post(getWeatherInfoUrl+cityId).then(res => {
+		/*this.$http.jsonp(getWeatherInfoUrl,{params:{"callback":"jsonPCallback"}})
+			.then(function(data){
+				console.log(data)
+			})
+*/
+
+		// var cityId = '2';
+		axios.post(getWeatherInfoUrl).then(res => {
 			console.log("getWeatherInfoUrl")
 			// console.log(res.data)
 			// let data = res.data;
