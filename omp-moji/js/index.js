@@ -1,5 +1,5 @@
 // const getLocaltionUrl = 'http://h5-lbs.api.moji.com/location/location'
-const getLocaltionCityUrl = 'http://g.giccoo.com/sensitivity/api/local/' //lat/39.98246/log/117.079222
+const getLocaltionCityUrl = 'https://g.giccoo.com/sensitivity/api/local/' //lat/39.98246/log/117.079222
 const getWeatherInfoUrl = 'https://g.giccoo.com/sensitivity/api/city/p/'
 const firstRender = true;
 // const getcoordPath = 'http://g.giccoo.com/api/ip/'
