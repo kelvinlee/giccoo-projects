@@ -413,7 +413,7 @@ img {
 
 .bar-con {
   position: absolute;
-  bottom: 0.4rem;
+  bottom: 0.2rem;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
   width: 100%;
