@@ -52,8 +52,8 @@ let app = new Vue({
 			'latitude':36.677397, //石景山
 			'longitude':117.106564
 		}
-		testLocation(this,point);//测试位置
-		// getUserPosition(this);//获取位置
+		// testLocation(this,point);//测试位置
+		getUserPosition(this);//获取位置
 
 		//加载本地数据
 		this.$http.get('./config/question.json').then((res) => {
@@ -181,13 +181,40 @@ let app = new Vue({
 					getLocaltion(point, function (res) {
 						console.log(res);
 						let data = res.result;
-						app.area = String(data.detail.split(',')[1])
+						// app.area = String(data.detail.split(',')[1])
+						app.area = String(data.cityName)
+						//根据城市地区判断有无商店
+						let city = String(data.detail.split(',')[0])
+						app.$http.get('./config/ka.json').then((res) => {
+							console.log(res)
+							let kaJson = res.data
+							// let localStore = getStoreList(storeJson, data)
+							let ka = getKaInfo(kaJson,city);
+							if (ka.length>0){
+								console.log(ka)
+								app.ifStore = true
+								app.storeName = ka[0].storeName
+								app.storeLogo = ka[0].logo
+								if(ka[0].url){
+									//电商
+									app.ifEshop = true
+									app.buyUrl = ka[0].url
+								}else {
+									app.ifEshop = false
+								}
+							}else {
+								//没有匹配
+								app.ifStore = false
+							}
+						}, (res) => {
+							//error
+							console.log("获取Store json失败", res)
+						})
 
 						//根据城市ID获取相关信息
 						app.$http.get(getWeatherInfoUrl + data.cityId).then((res) => {
 							let data = res.data.data
 							console.log(data)
-							app.area = data.cityName
 							app.weather = data.condition.condition
 							app.wind = data.condition.windDir
 							app.windLevel = data.condition.windLevel

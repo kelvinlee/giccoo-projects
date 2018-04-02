@@ -1,12 +1,18 @@
 <html>
 <head>
-	<meta charset="UTF-8" name="viewport"
-		  content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8" name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 	<meta name="format-detection" content="telephone=no">
 	<title>omp</title>
 	<link rel="stylesheet" href="">
 	<link rel="stylesheet" href="css/index.css">
+	<script> //force to https except localhost
+		if (window.location.href.indexOf('localhost') <= 0) {
+			if (location.protocol != 'https:') {
+				location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+			}
+		}
+	</script>
 </head>
 <body>
 <div id="app" class="contanier">
@@ -67,10 +73,7 @@
 						<div class="address">{{item.address}}</div>
 					</li>
 				</ul>
-				<!--<div class="slidebar">
-					<div class="bar"></div>
-					<div class="slide"></div>
-				</div>-->
+
 			</div>
 
 			<div class="close" v-on:click="closeStore"></div>
@@ -92,9 +95,6 @@
 </div>
 
 
-
-<!--<script src="/libs/js/min/jquery.min.js"></script>-->
-<!--<script src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>-->
 <script src="/libs/js/min/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
 <script src="js/bscroll.min.js"></script>
