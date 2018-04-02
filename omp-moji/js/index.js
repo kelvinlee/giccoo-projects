@@ -49,8 +49,8 @@ let app = new Vue({
 		//init
 		console.log('init')
 		let point = {
-			'latitude':23.136399, //石景山
-			'longitude':113.36198
+			'latitude':36.677397, //石景山
+			'longitude':117.106564
 		}
 		testLocation(this,point);//测试位置
 		// getUserPosition(this);//获取位置
@@ -365,8 +365,6 @@ function getStoreList(storeJson, cityInfo) {
 			if (city.indexOf(storeJson[i].city) >= 0) {
 				//如果 有城市
 				locationCityStoreList.push(storeJson[i])
-			} else {
-				//没有在所在城市找到药店
 			}
 		}
 	}
@@ -378,15 +376,11 @@ function getStoreList(storeJson, cityInfo) {
 				if (areaName.indexOf(locationCityStoreList[i].area) >= 0) {
 					//如果 区域
 					locationAreaStoreList.push(locationCityStoreList[i])
-				} else {
-					//没有在所在区域找到药店
 				}
 			} else {
 				if (locationCityStoreList[i].area.indexOf(areaName) >= 0) {
 					//如果 区域
 					locationAreaStoreList.push(locationCityStoreList[i])
-				} else {
-					//没有在所在区域找到药店
 				}
 			}
 		}
@@ -395,8 +389,10 @@ function getStoreList(storeJson, cityInfo) {
 	console.log(locationAreaStoreList)
 
 	if (locationAreaStoreList.length > 0) {
-		return locationAreaStoreList
-	} else {
-		return locationCityStoreList
+		return locationAreaStoreList //如果有区域，返回区域
+	} else if (locationAreaStoreList.length <= 0 && locationCityStoreList.length >0){
+		return locationCityStoreList //如果没有区域，有城市，返回城市
+	}else if(locationAreaStoreList.length <= 0 && locationCityStoreList.length <=0){
+		return storeJson //如果都没有，返回所有
 	}
 }
