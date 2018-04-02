@@ -4,23 +4,24 @@ global = {}
 main = {}
 pre = {}
 load = {}
-post_url = "http://api.giccoo.com/df5008/insert/"
-post_message_url = "http://api.giccoo.com/df5008/message/"
+post_url = "//api.giccoo.com/df5008/insert/"
+imageurl = "//api.giccoo.com/sayno/df5008/create/"
+post_message_url = "//api.giccoo.com/df5008/message/"
 sys = "other"
 noteText = "长按识别二维码，\n去往2018年的远方。"
 name_list = ["心之所向\n即为吾乡","淡泊明志\n宁静致远","愿得浮生\n半日闲","一屋两人\n三餐四季"]
 # http://music.163.com/song/media/outer/url?id=92613
 music_list = [
-	{name:"平凡之路",desc:"朴树",src:"http://music.163.com/song/media/outer/url?id=28815250"},
-	{name:"咖喱咖喱",desc:"牛奶咖啡",src:"http://music.163.com/song/media/outer/url?id=476987525"},
-	{name:"边走边唱",desc:"黄磊",src:"http://music.163.com/song/media/outer/url?id=92613"}
-	{name:"微笑的仙人掌",desc:"彭靖惠",src:"http://music.163.com/song/media/outer/url?id=280668"}
-	{name:"Friends",desc:"彭靖惠",src:"http://music.163.com/song/media/outer/url?id=280684"}
-	{name:"国境之南",desc:"范逸臣",src:"http://music.163.com/song/media/outer/url?id=4873061"}
-	{name:"下一站，幸福",desc:"彭靖惠",src:"http://music.163.com/song/media/outer/url?id=280649"}
-	{name:"环游世界",desc:"小旺福",src:"http://music.163.com/song/media/outer/url?id=385640"}
-	{name:"爱是有故事的旅行",desc:"李泉",src:"http://music.163.com/song/media/outer/url?id=111801"}
-	{name:"Taipei City，台北城市",desc:"陈奕迅",src:"http://music.163.com/song/media/outer/url?id=67829"}
+	{name:"平凡之路",desc:"朴树",src:"//music.163.com/song/media/outer/url?id=28815250"},
+	{name:"咖喱咖喱",desc:"牛奶咖啡",src:"//music.163.com/song/media/outer/url?id=476987525"},
+	{name:"边走边唱",desc:"黄磊",src:"//music.163.com/song/media/outer/url?id=92613"}
+	{name:"微笑的仙人掌",desc:"彭靖惠",src:"//music.163.com/song/media/outer/url?id=280668"}
+	{name:"Friends",desc:"彭靖惠",src:"//music.163.com/song/media/outer/url?id=280684"}
+	{name:"国境之南",desc:"范逸臣",src:"//music.163.com/song/media/outer/url?id=4873061"}
+	{name:"下一站，幸福",desc:"彭靖惠",src:"//music.163.com/song/media/outer/url?id=280649"}
+	{name:"环游世界",desc:"小旺福",src:"//music.163.com/song/media/outer/url?id=385640"}
+	{name:"爱是有故事的旅行",desc:"李泉",src:"//music.163.com/song/media/outer/url?id=111801"}
+	{name:"Taipei City，台北城市",desc:"陈奕迅",src:"//music.163.com/song/media/outer/url?id=67829"}
 ]
 topic_list= [
 	"点击留下自己的\n心境感悟"
@@ -39,8 +40,8 @@ window.onload = ->
 			shareContent =
 				title: "吾有心语，享，往远方"
 				desc: "心之所向，即为远方。"
-				link: "http://peugeot.music.163.com/df-5008/"
-				imgUrl: "http://peugeot.music.163.com/df-5008/img/ico.jpg"
+				link: "https://peugeot.music.163.com/df-5008/"
+				imgUrl: "https://peugeot.music.163.com/df-5008/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
@@ -61,6 +62,7 @@ init = ->
 	main = new Vue
 		el: "#main"
 		data:
+			wy: false
 			homepageShow: true
 			mount: false
 			loading: false
@@ -81,6 +83,7 @@ init = ->
 			playing: false
 			wechatshare: false
 			audioSRC: music_list[0].src
+			shareImageLink: ""
 			form:
 				username: ""
 				mobile: ""
@@ -161,7 +164,7 @@ init = ->
 					writeText()
 
 				bg.src = "./img/bg-#{self.contentIndex}.jpg"
-				
+				# console.log bg.src
 				writeText = ->
 					ctx.fillStyle = "#fff";
 					ctx.textAlign = 'center'
@@ -196,6 +199,7 @@ init = ->
 							ctx.drawImage(logo, 0, 0, logo.width, logo.height)
 							self.qr = true
 							self.qrsrc = canvas.toDataURL("image/png")
+							self.upload canvas.toDataURL("image/png")
 						logo.src="./img/logo.png"
 					qr.src = "./img/qrcode.png"
 				# writeText()
@@ -204,7 +208,25 @@ init = ->
 				@buildstep = 1
 				@buildover = true
 				@lastpage = true
-
+			upload: (image)->
+				# console.log "upload:"
+				data = {
+					image: image
+				}
+				axios.post imageurl,data
+				.then (msg)->
+					if msg.data.recode is 200
+						main.success(msg.data)
+					else
+						main.faild()
+				.catch (e)->
+					# alert e
+					main.faild()
+			faild: ->
+				console.log "err"
+			success: (data)->
+				console.log "data",data.info
+				@shareImageLink = data.info
 			share: ->
 				if sys is "NeteaseMusic"
 					neteaseShare()
@@ -227,6 +249,8 @@ init = ->
 				axios.post post_message_url,data
 				.then (msg)->
 					console.log msg
+			shareImage: ->
+				neteaseShareImage()
 			onSubmit: (evt)->
 				if @form.username.length < 1
 					alert '姓名不能为空'
@@ -254,6 +278,8 @@ init = ->
 						alert msg.data.reason
 
 		mounted: ->
+			if sys is "NeteaseMusic"
+				@.wy = true
 			setTimeout ->
 				main.mount = true
 			,100
@@ -271,7 +297,7 @@ runLongTexts = (texts,ctx,x,y)->
 # 修改分享内容
 
 updateShare = (msg)->
-	imgUrl= "http://image.giccoo.com/sayno/corona/#{msg.filename}@!large"
+	imgUrl= "https://image.giccoo.com/sayno/corona/#{msg.filename}@!large"
 	if msg.info.insertId? && msg.info.insertId > 0
 		id = "?id="+msg.info.insertId
 	else
@@ -288,8 +314,8 @@ updateShare = (msg)->
 		shareContent =
 			title: "吾有心语，享，往远方"
 			desc: "心之所向，即为远方。"
-			link: "http://m.giccoo.com/corona/"+id
-			imgUrl: "http://m.giccoo.com/corona/img/ico.jpg"
+			link: "https://m.giccoo.com/corona/"+id
+			imgUrl: "https://m.giccoo.com/corona/img/ico.jpg"
 			success: ->
 				# alert "success"
 				main.shareNote = false
@@ -303,18 +329,24 @@ updateShare = (msg)->
 
 neteaseShare = ->
 	title1 = "吾有心语，享，往远方"
-	picUrl = "http://peugeot.music.163.com/df-5008/img/ico.jpg"
-	redirectUrl = "http://peugeot.music.163.com/df-5008/"
+	picUrl = "https://peugeot.music.163.com/df-5008/img/ico.jpg"
+	redirectUrl = "https://peugeot.music.163.com/df-5008/"
 	title2 = "吾有心语，享，往远方"
 	subTitle2 = "心之所向，即为远方。"
 	window.location.href = "orpheus://share/"+encodeURIComponent(title1)+"/"+encodeURIComponent(picUrl)+"/"+encodeURIComponent(redirectUrl)+"/"+encodeURIComponent(title2)+"/"+encodeURIComponent(subTitle2)
 	# window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "run after?"
+neteaseShareImage = ->
+	title1 = "吾有心语，享，往远方"
+	picUrl = "https://image.giccoo.com/sayno/df5008/"+main.shareImageLink+"@!large"
+	redirectUrl = "https://peugeot.music.163.com/df-5008/"
+	console.log "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
+	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 
 loadWechatConfig = ->
 	url = encodeURIComponent window.location.href.split("#")[0]
 	hm = document.createElement('script')
-	hm.src = "http://api.giccoo.com/api/config?url="+url
+	hm.src = "//api.giccoo.com/api/config?url="+url
 	s = document.getElementsByTagName('script')[0]
 	s.parentNode.insertBefore hm, s
 	return

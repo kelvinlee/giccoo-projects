@@ -4,7 +4,8 @@ block title
 
 block css
 	meta(name="author",content="m.giccoo.com")
-	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
+	//- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+	link(rel="stylesheet",href="//image.giccoo.com/projects/libs/css/animate.min.css")
 	link(rel="stylesheet",href="css/base.css")
 	script.
 		var _hmt = _hmt || [];
@@ -16,7 +17,7 @@ block css
 		})();
 
 block content
-	- url = "http://image.giccoo.com/projects/df-5008"
+	- url = "//image.giccoo.com/projects/df-5008"
 	//- url = "."
 	
 	#main.main(v-show="mount",style="display: none")
@@ -95,7 +96,11 @@ block content
 						img.longsave(v-if="qr",:src="qrsrc")
 					.btn.btn-share(@click="share")
 						img(src="#{url}/img/btn-share.png")
-					.btn.btn-save
+					.btn.btn-save(@click="shareImage",v-if="wy")
+						img(src="#{url}/img/btn-save-2.png")
+						img.longsave(v-if="qr",:src="qrsrc")
+						canvas#result.fadeIn.animated(v-show="creatEnd")
+					.btn.btn-save(v-if="!wy")
 						img(src="#{url}/img/btn-save.png")
 						img.longsave(v-if="qr",:src="qrsrc")
 						canvas#result.fadeIn.animated(v-show="creatEnd")
@@ -127,13 +132,13 @@ block content
 					img(src="#{url}/img/wechat-sharepage.png")
 block js
 	- url = "/"
-	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/exif.js")
-	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
+	script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
 	//- script(src="/libs/js/min/jquery.min.js")
-	script(src="http://image.giccoo.com/projects/libs/js/min/axios.min.js")
+	script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
 	script(src="js/main.js?v=1")
 	
 

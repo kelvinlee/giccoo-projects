@@ -200,15 +200,18 @@
               var op = 0.8;
               var ply = new BMap.Polygon(rs.boundaries[i], {fillColor: colors[_index],strokeWeight: 2, strokeColor: "rgba(0,170,0,1)"}); //建立多边形覆盖物
               map.addOverlay(ply);
+              if (window.DOMContentLoaded) {
+                window.DOMContentLoaded();
+              }
             }
           }
         });
       }
       
-      setTimeout(function(){
-      	coverAll();
-      	getBoundary(8);
-      }, 2000);
+      // setTimeout(function(){
+    	coverAll();
+    	getBoundary(8);
+      // }, 10);
     </script>
   </body>
 </html>

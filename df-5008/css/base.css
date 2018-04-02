@@ -1211,7 +1211,7 @@ body {
       height: 20px;
       margin-left: -10px;
       font-size: 0;
-      background: url("http://image.giccoo.com/projects/df-5008/img/arrow-black.png") no-repeat center center;
+      background: url("//image.giccoo.com/projects/df-5008/img/arrow-black.png") no-repeat center center;
       background-size: contain;
       background-color: transparent;
       -webkit-animation: arrow 2.5s ease;
@@ -1335,7 +1335,7 @@ body {
   overflow: hidden; }
 
 .page-home {
-  background: url("http://image.giccoo.com/projects/df-5008/img/repeat.jpg") repeat-y top center;
+  background: url("//image.giccoo.com/projects/df-5008/img/repeat.jpg") repeat-y top center;
   background-size: 100% auto;
   background-color: transparent; }
   .page-home .bg {
@@ -1411,7 +1411,7 @@ body {
       margin: 0 auto; }
 
 .page-build, .page-build-2 {
-  background: url("http://image.giccoo.com/projects/df-5008/img/page-build-bg.jpg") no-repeat bottom center;
+  background: url("//image.giccoo.com/projects/df-5008/img/page-build-bg.jpg") no-repeat bottom center;
   background-size: cover;
   background-color: transparent; }
 
@@ -1443,7 +1443,7 @@ body {
     left: -40px;
     width: 3rem;
     height: 3rem;
-    background: url("http://image.giccoo.com/projects/df-5008/img/yinhao.png") no-repeat center center;
+    background: url("//image.giccoo.com/projects/df-5008/img/yinhao.png") no-repeat center center;
     background-size: cover;
     background-color: transparent; }
   .page-build .input:after {
@@ -1453,7 +1453,7 @@ body {
     right: -40px;
     width: 3rem;
     height: 3rem;
-    background: url("http://image.giccoo.com/projects/df-5008/img/yinhao.png") no-repeat center center;
+    background: url("//image.giccoo.com/projects/df-5008/img/yinhao.png") no-repeat center center;
     background-size: cover;
     background-color: transparent;
     -webkit-transform: scale(-1, -1);
@@ -1537,13 +1537,13 @@ body {
   .page-build .music-list .left {
     top: 50%;
     left: 20px;
-    background: url("http://image.giccoo.com/projects/df-5008/img/btn-m-prev.png") no-repeat center center;
+    background: url("//image.giccoo.com/projects/df-5008/img/btn-m-prev.png") no-repeat center center;
     background-size: cover;
     background-color: transparent; }
   .page-build .music-list .right {
     top: 50%;
     right: 20px;
-    background: url("http://image.giccoo.com/projects/df-5008/img/btn-m-next.png") no-repeat center center;
+    background: url("//image.giccoo.com/projects/df-5008/img/btn-m-next.png") no-repeat center center;
     background-size: cover;
     background-color: transparent; }
   .page-build .music-list .music-name {
@@ -1647,19 +1647,19 @@ body {
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease; }
     .page-build-2 .message-list .btn.btn-1 {
-      background: url("http://image.giccoo.com/projects/df-5008/img/text-1.png") no-repeat center center;
+      background: url("//image.giccoo.com/projects/df-5008/img/text-1.png") no-repeat center center;
       background-size: cover;
       background-color: rgba(255, 255, 255, 0.1); }
     .page-build-2 .message-list .btn.btn-2 {
-      background: url("http://image.giccoo.com/projects/df-5008/img/text-2.png") no-repeat center center;
+      background: url("//image.giccoo.com/projects/df-5008/img/text-2.png") no-repeat center center;
       background-size: cover;
       background-color: rgba(255, 255, 255, 0.1); }
     .page-build-2 .message-list .btn.btn-3 {
-      background: url("http://image.giccoo.com/projects/df-5008/img/text-3.png") no-repeat center center;
+      background: url("//image.giccoo.com/projects/df-5008/img/text-3.png") no-repeat center center;
       background-size: cover;
       background-color: rgba(255, 255, 255, 0.1); }
     .page-build-2 .message-list .btn.btn-4 {
-      background: url("http://image.giccoo.com/projects/df-5008/img/text-4.png") no-repeat center center;
+      background: url("//image.giccoo.com/projects/df-5008/img/text-4.png") no-repeat center center;
       background-size: cover;
       background-color: rgba(255, 255, 255, 0.1); }
     .page-build-2 .message-list .btn.index {
@@ -1774,11 +1774,11 @@ body {
       height: 20px;
       margin-top: -10px; }
     .register-page .register .form .label-icon-name:before {
-      background: url("http://image.giccoo.com/projects/df-5008//img/icon-name.png") no-repeat center center;
+      background: url("//image.giccoo.com/projects/df-5008/img/icon-name.png") no-repeat center center;
       background-size: cover;
       background-color: transparent; }
     .register-page .register .form .label-icon-mobile:before {
-      background: url("http://image.giccoo.com/projects/df-5008//img/icon-phone.png") no-repeat center center;
+      background: url("//image.giccoo.com/projects/df-5008/img/icon-phone.png") no-repeat center center;
       background-size: cover;
       background-color: transparent; }
     .register-page .register .form .form-btn {

@@ -1,6 +1,6 @@
 "use strict";
 
-var $_GET, _CDN, _imgurl, getRandom, global, init, load, loadWechatConfig, main, music_list, name_list, neteaseShare, noteText, post_message_url, post_url, pre, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare;
+var $_GET, _CDN, _imgurl, getRandom, global, imageurl, init, load, loadWechatConfig, main, music_list, name_list, neteaseShare, neteaseShareImage, noteText, post_message_url, post_url, pre, _runLongTexts, stopWebViewScroll, sys, topic_list, updateShare;
 
 _CDN = "";
 
@@ -14,9 +14,11 @@ pre = {};
 
 load = {};
 
-post_url = "http://api.giccoo.com/df5008/insert/";
+post_url = "//api.giccoo.com/df5008/insert/";
 
-post_message_url = "http://api.giccoo.com/df5008/message/";
+imageurl = "//api.giccoo.com/sayno/df5008/create/";
+
+post_message_url = "//api.giccoo.com/df5008/message/";
 
 sys = "other";
 
@@ -28,43 +30,43 @@ name_list = ["心之所向\n即为吾乡", "淡泊明志\n宁静致远", "愿得
 music_list = [{
   name: "平凡之路",
   desc: "朴树",
-  src: "http://music.163.com/song/media/outer/url?id=28815250"
+  src: "//music.163.com/song/media/outer/url?id=28815250"
 }, {
   name: "咖喱咖喱",
   desc: "牛奶咖啡",
-  src: "http://music.163.com/song/media/outer/url?id=476987525"
+  src: "//music.163.com/song/media/outer/url?id=476987525"
 }, {
   name: "边走边唱",
   desc: "黄磊",
-  src: "http://music.163.com/song/media/outer/url?id=92613"
+  src: "//music.163.com/song/media/outer/url?id=92613"
 }, {
   name: "微笑的仙人掌",
   desc: "彭靖惠",
-  src: "http://music.163.com/song/media/outer/url?id=280668"
+  src: "//music.163.com/song/media/outer/url?id=280668"
 }, {
   name: "Friends",
   desc: "彭靖惠",
-  src: "http://music.163.com/song/media/outer/url?id=280684"
+  src: "//music.163.com/song/media/outer/url?id=280684"
 }, {
   name: "国境之南",
   desc: "范逸臣",
-  src: "http://music.163.com/song/media/outer/url?id=4873061"
+  src: "//music.163.com/song/media/outer/url?id=4873061"
 }, {
   name: "下一站，幸福",
   desc: "彭靖惠",
-  src: "http://music.163.com/song/media/outer/url?id=280649"
+  src: "//music.163.com/song/media/outer/url?id=280649"
 }, {
   name: "环游世界",
   desc: "小旺福",
-  src: "http://music.163.com/song/media/outer/url?id=385640"
+  src: "//music.163.com/song/media/outer/url?id=385640"
 }, {
   name: "爱是有故事的旅行",
   desc: "李泉",
-  src: "http://music.163.com/song/media/outer/url?id=111801"
+  src: "//music.163.com/song/media/outer/url?id=111801"
 }, {
   name: "Taipei City，台北城市",
   desc: "陈奕迅",
-  src: "http://music.163.com/song/media/outer/url?id=67829"
+  src: "//music.163.com/song/media/outer/url?id=67829"
 }];
 
 topic_list = ["点击留下自己的\n心境感悟"];
@@ -85,8 +87,8 @@ window.onload = function () {
       shareContent = {
         title: "吾有心语，享，往远方",
         desc: "心之所向，即为远方。",
-        link: "http://peugeot.music.163.com/df-5008/",
-        imgUrl: "http://peugeot.music.163.com/df-5008/img/ico.jpg",
+        link: "https://peugeot.music.163.com/df-5008/",
+        imgUrl: "https://peugeot.music.163.com/df-5008/img/ico.jpg",
         success: function success() {},
         // alert "success"
         cancel: function cancel() {}
@@ -112,6 +114,7 @@ init = function init() {
   return main = new Vue({
     el: "#main",
     data: {
+      wy: false,
       homepageShow: true,
       mount: false,
       loading: false,
@@ -132,6 +135,7 @@ init = function init() {
       playing: false,
       wechatshare: false,
       audioSRC: music_list[0].src,
+      shareImageLink: "",
       form: {
         username: "",
         mobile: ""
@@ -233,6 +237,7 @@ init = function init() {
           return writeText();
         };
         bg.src = "./img/bg-" + self.contentIndex + ".jpg";
+        // console.log bg.src
         writeText = function writeText() {
           var MAX, qr, removeH;
           ctx.fillStyle = "#fff";
@@ -265,7 +270,8 @@ init = function init() {
             logo.onload = function () {
               ctx.drawImage(logo, 0, 0, logo.width, logo.height);
               self.qr = true;
-              return self.qrsrc = canvas.toDataURL("image/png");
+              self.qrsrc = canvas.toDataURL("image/png");
+              return self.upload(canvas.toDataURL("image/png"));
             };
             return logo.src = "./img/logo.png";
           };
@@ -276,6 +282,30 @@ init = function init() {
         this.buildstep = 1;
         this.buildover = true;
         return this.lastpage = true;
+      },
+      upload: function upload(image) {
+        var data;
+        // console.log "upload:"
+        data = {
+          image: image
+        };
+        return axios.post(imageurl, data).then(function (msg) {
+          if (msg.data.recode === 200) {
+            return main.success(msg.data);
+          } else {
+            return main.faild();
+          }
+        }).catch(function (e) {
+          // alert e
+          return main.faild();
+        });
+      },
+      faild: function faild() {
+        return console.log("err");
+      },
+      success: function success(data) {
+        console.log("data", data.info);
+        return this.shareImageLink = data.info;
       },
       share: function share() {
         if (sys === "NeteaseMusic") {
@@ -306,6 +336,9 @@ init = function init() {
         return axios.post(post_message_url, data).then(function (msg) {
           return console.log(msg);
         });
+      },
+      shareImage: function shareImage() {
+        return neteaseShareImage();
       },
       onSubmit: function onSubmit(evt) {
         var data, k, ref, reg, url, v;
@@ -343,6 +376,9 @@ init = function init() {
       }
     },
     mounted: function mounted() {
+      if (sys === "NeteaseMusic") {
+        this.wy = true;
+      }
       return setTimeout(function () {
         return main.mount = true;
       }, 100);
@@ -367,7 +403,7 @@ _runLongTexts = function runLongTexts(texts, ctx, x, y) {
 // 修改分享内容
 updateShare = function updateShare(msg) {
   var id, imgUrl, shareContent;
-  imgUrl = "http://image.giccoo.com/sayno/corona/" + msg.filename + "@!large";
+  imgUrl = "https://image.giccoo.com/sayno/corona/" + msg.filename + "@!large";
   if (msg.info.insertId != null && msg.info.insertId > 0) {
     id = "?id=" + msg.info.insertId;
   } else {
@@ -385,8 +421,8 @@ updateShare = function updateShare(msg) {
     shareContent = {
       title: "吾有心语，享，往远方",
       desc: "心之所向，即为远方。",
-      link: "http://m.giccoo.com/corona/" + id,
-      imgUrl: "http://m.giccoo.com/corona/img/ico.jpg",
+      link: "https://m.giccoo.com/corona/" + id,
+      imgUrl: "https://m.giccoo.com/corona/img/ico.jpg",
       success: function success() {
         // alert "success"
         main.shareNote = false;
@@ -405,8 +441,8 @@ updateShare = function updateShare(msg) {
 neteaseShare = function neteaseShare() {
   var picUrl, redirectUrl, subTitle2, title1, title2;
   title1 = "吾有心语，享，往远方";
-  picUrl = "http://peugeot.music.163.com/df-5008/img/ico.jpg";
-  redirectUrl = "http://peugeot.music.163.com/df-5008/";
+  picUrl = "https://peugeot.music.163.com/df-5008/img/ico.jpg";
+  redirectUrl = "https://peugeot.music.163.com/df-5008/";
   title2 = "吾有心语，享，往远方";
   subTitle2 = "心之所向，即为远方。";
   window.location.href = "orpheus://share/" + encodeURIComponent(title1) + "/" + encodeURIComponent(picUrl) + "/" + encodeURIComponent(redirectUrl) + "/" + encodeURIComponent(title2) + "/" + encodeURIComponent(subTitle2);
@@ -414,11 +450,20 @@ neteaseShare = function neteaseShare() {
   return console.log("run after?");
 };
 
+neteaseShareImage = function neteaseShareImage() {
+  var picUrl, redirectUrl, title1;
+  title1 = "吾有心语，享，往远方";
+  picUrl = "https://image.giccoo.com/sayno/df5008/" + main.shareImageLink + "@!large";
+  redirectUrl = "https://peugeot.music.163.com/df-5008/";
+  console.log("orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1));
+  return window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
+};
+
 loadWechatConfig = function loadWechatConfig() {
   var hm, s, url;
   url = encodeURIComponent(window.location.href.split("#")[0]);
   hm = document.createElement('script');
-  hm.src = "http://api.giccoo.com/api/config?url=" + url;
+  hm.src = "//api.giccoo.com/api/config?url=" + url;
   s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(hm, s);
 };
