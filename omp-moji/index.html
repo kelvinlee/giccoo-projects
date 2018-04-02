@@ -35,13 +35,13 @@
 	<div class="buy-con">
 		<div class="storeCon" v-if="ifStore">
 			<div class="buyES-img">
-				<img src="img/logo/icon24.png">
+				<img v-bind:src="storeLogo">
 			</div>
-			<div class="buy-text">- 立即前往全市各{{storeName}}购买 -</div>
+			<div class="buy-text" v-if="ifEshop">- 立即前往全市各{{storeName}}购买 -</div>
 		</div>
 		<div class="btns-con">
-			<div class="btn buy-btn">立即购买</div>
-			<div class="space"></div>
+			<a :href="buyUrl" class="btn buy-btn" v-if="ifEshop">立即购买</a>
+			<div class="space" v-if="ifStore"></div>
 			<div class="btn store-btn" v-on:click="showStore">药房地址一览</div>
 		</div>
 	</div>
@@ -74,6 +74,12 @@
 			</div>
 
 			<div class="close" v-on:click="closeStore"></div>
+		</div>
+		<div class="bar-con">
+			<div class="store-logo" v-if="ifStore">
+				<img v-bind:src="storeLogo">
+			</div>
+			<div class="static-text">各门店详细地址</div>
 		</div>
 	</div>
 

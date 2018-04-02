@@ -4,7 +4,7 @@ const getWeatherInfoUrl = 'https://g.giccoo.com/sensitivity/api/city/p/'
 // const firstRender = true
 // const getcoordPath = 'http://g.giccoo.com/api/ip/'
 
-var app = new Vue({
+let app = new Vue({
 	el: '#app',
 	data: {
 		area:'朝阳',
@@ -19,6 +19,9 @@ var app = new Vue({
 		airQuality:'',
 		ifStore:true, //是否有本地药店
 		storeName:'',//药店名称
+		storeLogo:'', //药店LOGO
+		buyUrl:'',//立即购买
+		ifEshop:false,//是否有电商链接
 
 		quesionList: [],
 		storeList: [],
@@ -46,8 +49,8 @@ var app = new Vue({
 		//init
 		console.log('init')
 		let point = {
-			'latitude':39.906523, //石景山
-			'longitude':116.256228
+			'latitude':23.136399, //石景山
+			'longitude':113.36198
 		}
 		testLocation(this,point);//测试位置
 		// getUserPosition(this);//获取位置
@@ -71,14 +74,43 @@ var app = new Vue({
 				if (res.status == 200) {
 					//获取城市成功
 					console.log(res);
-					var data = res.body.result;
+					let data = res.body.result;
+					app.area = String(data.cityName)
+					//根据城市地区判断有无商店
+					let city = String(data.detail.split(',')[0])
+					app.$http.get('./config/ka.json').then((res) => {
+						console.log(res)
+						let kaJson = res.data
+						// let localStore = getStoreList(storeJson, data)
+						let ka = getKaInfo(kaJson,city);
+						if (ka.length>0){
+							console.log(ka)
+							app.ifStore = true
+							app.storeName = ka[0].storeName
+							app.storeLogo = ka[0].logo
+
+							if(ka[0].url){
+								//电商
+								app.ifEshop = true
+								app.buyUrl = ka[0].url
+							}else {
+								app.ifEshop = false
+							}
+
+						}else {
+							//没有匹配
+							app.ifStore = false
+						}
+					}, (res) => {
+						//error
+						console.log("获取Store json失败", res)
+					})
 
 					//根据城市ID获取相关信息
 					app.$http.get(getWeatherInfoUrl + data.cityId).then((res) => {
 						app.loading = false
 						let data = res.data.data
 						console.log(data)
-						app.area = data.cityName
 						app.weather = data.condition.condition
 						app.wind = data.condition.windDir
 						app.windLevel = data.condition.windLevel
@@ -100,6 +132,8 @@ var app = new Vue({
 						function getObjFirst(obj) {
 							for (let i in obj) return obj[i];
 						}
+					},(res) =>{
+						console.log("获取城市天气信息错误")
 					})
 
 
@@ -108,12 +142,8 @@ var app = new Vue({
 						let storeJson = res.data
 						let localStore = getStoreList(storeJson, data)
 						app.storeList = localStore
-						// console.log(app.storeList)
 						//初始化滚动条
-						// app.storePopup = true
-						// console.log("初始化scroll")
 						initBscroll();
-						// app.storePopup = false
 					}, (res) => {
 						//error
 						console.log("获取Store json失败", res)
@@ -130,7 +160,7 @@ var app = new Vue({
 		}
 		//使用浏览器获取用户位置
 		function getUserPosition(app) {
-			var options = {
+			let options = {
 				enableHighAccuracy: true,
 				maximumAge: 1000
 			}
@@ -150,7 +180,8 @@ var app = new Vue({
 					//坐标换城市
 					getLocaltion(point, function (res) {
 						console.log(res);
-						var data = res.result;
+						let data = res.result;
+						app.area = String(data.detail.split(',')[1])
 
 						//根据城市ID获取相关信息
 						app.$http.get(getWeatherInfoUrl + data.cityId).then((res) => {
@@ -268,21 +299,40 @@ var app = new Vue({
 
 })
 
+//获取KA信息
+function getKaInfo(kaJson,city){
+	console.log(kaJson,city)
+	var kaList = [];
+
+	for(var i in kaJson){
+		if(city.indexOf(kaJson[i].city) >=0){
+			//有匹配
+			kaList.push(kaJson[i])
+		}else {
+			//无匹配
+
+		}
+	}
+	return kaList;
+
+}
+
 //空气质量判断
-function getAirCondition(pm25){
-	var nums = pm25;
-	if(nums<=50){
+function getAirCondition(pm25) {
+	let nums = pm25;
+	if (nums <= 50) {
 		return '空气质量优'
-	}else if(nums>50 && nums<=100){
+	} else if (nums > 50 && nums <= 100) {
 		return '空气质量良'
-	}else if(nums>100 && nums<=200){
+	} else if (nums > 100 && nums <= 200) {
 		return '轻度污染'
-	}else if(nums>200 && nums<=300){
+	} else if (nums > 200 && nums <= 300) {
 		return '中度污染'
-	}else if(nums>300){
+	} else if (nums > 300) {
 		return '严重污染'
 	}
 }
+
 //初始化滚动条插件
 function initBscroll() {
 	// console.log(document)
@@ -298,60 +348,55 @@ function initBscroll() {
 }
 
 //获取商店列表
-	function getStoreList(storeJson, cityInfo) {
-		let data = cityInfo
-		console.log(data)
-		let cityId = data.cityId
-		let areaName = data.cityName
-		let city = String(data.detail.split(',')[0])
-		console.log(areaName)
-		console.log(city)
+function getStoreList(storeJson, cityInfo) {
+	let data = cityInfo
+	console.log(data)
+	let cityId = data.cityId
+	let areaName = data.cityName
+	let city = String(data.detail.split(',')[0])
+	console.log(areaName)
+	console.log(city)
 
-		let locationCityStoreList = []
-		let locationAreaStoreList = []
-		for (var i in storeJson) {
-			if (storeJson[i].city) {
-				console.log(storeJson[i].city)
-				if (city.indexOf(storeJson[i].city) >= 0) {
-					//如果 有城市
-					locationCityStoreList.push(storeJson[i])
-				} else {
-					//没有在所在城市找到药店
-				}
+	let locationCityStoreList = []
+	let locationAreaStoreList = []
+	for (let i in storeJson) {
+		if (storeJson[i].city) {
+			console.log(storeJson[i].city)
+			if (city.indexOf(storeJson[i].city) >= 0) {
+				//如果 有城市
+				locationCityStoreList.push(storeJson[i])
+			} else {
+				//没有在所在城市找到药店
 			}
-		}
-
-		//匹配区域
-		if (locationCityStoreList.length > 0) {
-			for (var i in locationCityStoreList) {
-				if (areaName.length >= locationCityStoreList[i].area.length) { //判断哪个字符多
-					if (areaName.indexOf(locationCityStoreList[i].area) >= 0) {
-						//如果 区域
-						locationAreaStoreList.push(locationCityStoreList[i])
-					} else {
-						//没有在所在区域找到药店
-					}
-				} else {
-					if (locationCityStoreList[i].area.indexOf(areaName) >= 0) {
-						//如果 区域
-						locationAreaStoreList.push(locationCityStoreList[i])
-					} else {
-						//没有在所在区域找到药店
-					}
-				}
-
-				function searchArea(a, b) {
-
-				}
-
-			}
-		}
-		console.log(locationCityStoreList)
-		console.log(locationAreaStoreList)
-
-		if (locationAreaStoreList.length > 0) {
-			return locationAreaStoreList
-		} else {
-			return locationCityStoreList
 		}
 	}
+
+	//匹配区域
+	if (locationCityStoreList.length > 0) {
+		for (let i in locationCityStoreList) {
+			if (areaName.length >= locationCityStoreList[i].area.length) { //判断哪个字符多
+				if (areaName.indexOf(locationCityStoreList[i].area) >= 0) {
+					//如果 区域
+					locationAreaStoreList.push(locationCityStoreList[i])
+				} else {
+					//没有在所在区域找到药店
+				}
+			} else {
+				if (locationCityStoreList[i].area.indexOf(areaName) >= 0) {
+					//如果 区域
+					locationAreaStoreList.push(locationCityStoreList[i])
+				} else {
+					//没有在所在区域找到药店
+				}
+			}
+		}
+	}
+	console.log(locationCityStoreList)
+	console.log(locationAreaStoreList)
+
+	if (locationAreaStoreList.length > 0) {
+		return locationAreaStoreList
+	} else {
+		return locationCityStoreList
+	}
+}

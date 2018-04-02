@@ -8,7 +8,7 @@
   padding-bottom: px(100);
 }
 img{
-  width: 100%;
+  //width: 100%;
   height: 100%;
 }
 
@@ -227,3 +227,24 @@ img{
   }
 }
 
+.bar-con{
+  position: absolute;
+  bottom: px(40);
+  left: 50%;
+  transform: translate3d(-50%,0,0);
+  width: 100%;
+  padding: 0 px(34);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .store-logo{
+    height: px(80);
+  }
+  .static-text{
+    font-size: px(28);
+    color: #1b7339;
+    text-align: center;
+  }
+}
