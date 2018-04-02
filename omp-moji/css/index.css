@@ -34,9 +34,6 @@ h1 {
   height: 0.02rem;
   background-color: black; }
 
-.content {
-  padding-top: 1.02rem; }
-
 .swiper-wrapper {
   transition-timing-function: cubic-bezier(1, 0.01, 0.56, 0.91) !important; }
 
@@ -194,5 +191,43 @@ img {
     font-size: 0.28rem;
     color: #1b7339;
     letter-spacing: 0.02rem; }
+
+.popUp {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white; }
+  .popUp .pop-con {
+    width: 100%;
+    background: url("../img/pop.jpg") no-repeat;
+    background-size: cover;
+    padding: 1.2rem 0.9rem; }
+    .popUp .pop-con .wrapper {
+      width: 5rem;
+      height: 7.62rem;
+      overflow: hidden;
+      position: relative; }
+      .popUp .pop-con .wrapper .content {
+        padding-right: 0.4rem; }
+        .popUp .pop-con .wrapper .content .storeItem {
+          margin-bottom: 0.35rem;
+          color: white;
+          text-align: left; }
+          .popUp .pop-con .wrapper .content .storeItem .store-name {
+            font-size: 0.26rem; }
+          .popUp .pop-con .wrapper .content .storeItem .address {
+            font-size: 0.2rem; }
+    .popUp .pop-con .bscroll-vertical-scrollbar {
+      width: 0.04rem;
+      background: #22b25a; }
+    .popUp .pop-con .bscroll-indicator {
+      width: 0.08rem;
+      border: none;
+      background: #22b25a; }
+    .popUp .pop-con .close {
+      width: 1.2rem;
+      height: 1.2rem; }
 
 /*# sourceMappingURL=index.css.map */
