@@ -1,4 +1,5 @@
 @import "base";
+@import "loading";
 
 .contanier{
   text-align: center;
@@ -203,9 +204,12 @@ img{
       background: #22b25a;
     }
     .close{
-      width: px(120);
-      height: px(120);
-
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: px(100);
+      height: px(100);
     }
   }
 }
+
