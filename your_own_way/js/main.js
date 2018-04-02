@@ -45,8 +45,8 @@ var loadWechatConfig = function() {
 var stage = new createjs.Stage("mainCanvas");
 
 function initAll(){
-   //createjs.Ticker.framerage = 100;
-   createjs.Ticker.timingMode = createjs.Ticker.RAF;
+   createjs.Ticker.framerate = 60;
+   //createjs.Ticker.timingMode = createjs.Ticker.RAF;
    createjs.Ticker.addEventListener("tick",handleTick);
   setSky(50)
   skyMove.x=-1
@@ -56,32 +56,6 @@ function initAll(){
   //tick();
 }
 
-
-//======================时间控制
-// var fps = 30;
-// var now;
-// var then = Date.now();
-// var interval = 1000/fps;
-// var delta;
-// window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-// function tick() {
-// 　　if(window.requestAnimationFrame)
-//    {
-// 　　    requestAnimationFrame(tick);
-// 　　    now = Date.now();
-// 　　    delta = now - then;
-// 　　    if (delta > interval) {
-//         // 这里不能简单then=now，否则还会出现上边简单做法的细微时间差问题。例如fps=10，每帧100ms，而现在每16ms（60fps）执行一次draw。16*7=112>100，需要7次才实际绘制一次。这个情况下，实际10帧需要112*10=1120ms>1000ms才绘制完成。
-// 　　　　    then = now - (delta % interval);
-// 　　　　    handleTick(); // ... Code for Drawing the Frame ...
-// 　　    }
-//    }
-//    else
-//    {
-//        setTimeout(tick, interval);
-// 　　　　handleTick();
-//    }
-// }
 //=============================每秒30次的HandleTick
 
 function handleTick(){
@@ -149,8 +123,6 @@ function getStart(){
     a_hill.y=hill_xyScale[i][1]
     a_hill.scaleX=a_hill.scaleY=hill_xyScale[i][2]
 
-    //TweenLite.to(a_hill,20,{x:a_hill.x-300,delay:6})
-
   };
 
   //=======男孩走
@@ -173,10 +145,6 @@ function getStart(){
 
   boy1.x=0
   boy1.y=780
-
-  //TweenLite.to(boy1,6,{x:320-25,ease:Linear.easeNone})
-
-
 
   stage1.addChild(stage1fp)
   stage1.addChild(hillA[5])//====最近的山
@@ -352,126 +320,6 @@ function goP1(){
 }
 
 //============================首页动画结束
-//============================公用
-var nowPage=1
-//==========下一个 按钮
-$("#home_btn").click(function(){
-  $("#home_btn").css({display:"none"})
-  nowPage++
-  TweenLite.to(homeBtn,.5,{alpha:0})
-  nextText()
-  switch(nowPage){
-    case 2:
-      ani1end();
-      break;
-  }
-})
-//==========改变文案
-var textA=[]
-var nowTextNum=0
-function initText(){
-  for (var i = 1; i < 16; i++) {
-    var a_text=new createjs.Bitmap("img/p"+i+"t.png")
-    textA.push(a_text)
-    a_text.regX=320
-    a_text.regY=50
-    a_text.x=320
-    a_text.y=762
-    downText.addChild(a_text)
-    a_text.visible=false
-    a_text.alpha=0
-    a_text.scaleX=a_text.scaleY=.5
-  };
-  nextText()
-}
-
-function nextText(){
-  var i=nowTextNum
-  textA[i].visible=true
-  TweenLite.to(textA[i],1,{alpha:1,scaleX:1,scaleY:1})
-  if(i>0){
-    TweenLite.to(textA[i-1],1,{alpha:0,scaleX:1,scaleY:2})
-  }
-  if(i>1){
-    textA[i-2].visible=false
-    downText.removeChild(textA[i-2])
-  }
-  nowTextNum++
-}
-//==========下按钮
-var homebtn1=new createjs.Bitmap("img/homebtn1.png")
-var homebtn2=new createjs.Bitmap("img/homebtn2.png")
-function initHomeBtn(){
-  homeBtn.addChild(homebtn1)
-  homeBtn.addChild(homebtn2)
-  homebtn1.regX=homebtn1.regY=28
-  homebtn2.regX=homebtn2.regY=30
-  homebtn1.x=homebtn2.x=320
-  homebtn1.y=homebtn2.y=887
-  homebtn2.scaleX=homebtn2.scaleY=1.2
-  homeBtnGlow()
-}
-function homeBtnGlow(){
-  TweenLite.set(homebtn2,{scale:1.1,alpha:0})
-  TweenLite.to(homebtn2,1,{scale:1.45,alpha:1,overwrite:0,ease:Linear.easeNone})
-  TweenLite.to(homebtn2,1,{scale:2,alpha:0,delay:1,onComplete:homeBtnGlow})
-}
-
-//========== 坐->站起来
-var standupA=[]
-var manSit
-function setManSit(){
-  for (var i = 1; i <71 ; i++) {
-    if(i<10){var str="img/standup/man000"+i+".png"}else{var str="img/standup/man00"+i+".png"}
-    standupA.push(str)
-  };
-
-  var manStandup_s = new createjs.SpriteSheet({
-              "images": standupA, //动画人物图片来自base64编码字符串
-              "frames": {"height": 150,  "width": 100},
-              "animations": { run: [0,69]}
-          });
-          
-  manSit = new createjs.Sprite(manStandup_s, "run");
-  manSit.stop();//播放动画
-  stage_1.addChild(manSit);
-  manSit.x=344
-  manSit.y=265
-  manSit.addEventListener("animationend",function(event){
-    manSit.stop();
-    manJump.alpha=1
-  })
-  manSit.alpha=0
-}
-
-//========== 小跳
-var jumpA=[]
-var manJump
-function setManJump(){
-  for (var i = 1; i <42 ; i++) {
-    if(i<10){var str="img/jump_s/man000"+i+".png"}else{var str="img/jump_s/man00"+i+".png"}
-    jumpA.push(str)
-    jumpA.push(str)
-  };
-
-  var manJump_s = new createjs.SpriteSheet({
-              "images": jumpA, //动画人物图片来自base64编码字符串
-              "frames": {"height": 150,  "width": 100},
-              "animations": { run: [0,81]}
-              // "framerate": 20
-
-          });
-          
-  manJump = new createjs.Sprite(manJump_s, "run");
-  manJump.stop();//播放动画
-  stage.addChild(manJump);
-  manJump.x=344
-  manJump.y=265
-  manJump.addEventListener("animationend",function(event){
-    manJump.stop();
-  })
-  manJump.alpha=0
-}
 
 
 //============================第一页开始
@@ -501,8 +349,6 @@ function ani1start(){
   word1.x=320
   word1.y=436
 
-  setManJump()
-
   //========树苗
   var t2=0
 
@@ -522,7 +368,8 @@ function ani1start(){
   TweenLite.to(p1leaf1,8,{scale:1,rotation:180,y:387-27,ease:Elastic.easeOut,delay:1+t2})
   TweenLite.to(p1leaf2,8,{scale:.6,rotation:270,y:387-27,ease:Elastic.easeOut,delay:1+t2})
 
-  setManSit()
+  setBoy()
+  boy.alpha=0
   setDotGlow()
   homeBtn.alpha=0
   TweenLite.to(homeBtn,.5,{alpha:1,delay:6,onComplete:p1done})
@@ -564,11 +411,11 @@ function setDotGlow(){
   TweenLite.to(dotGlow,5,{rotation:720,ease:Linear.easeNone,delay:t1})
   TweenLite.to(dotGlow2,5,{rotation:1360,ease:Linear.easeNone,delay:t1})
 
-  TweenLite.to(manSit,2,{alpha:1,delay:2+t1})
+  TweenLite.to(boy,2,{alpha:1,delay:2+t1})
   setTimeout(function(){
     stage_1.removeChild(dotGlow)
     stage_1.removeChild(dotGlow2)
-    manSit.play()
+    boy.gotoAndPlay("standup")
   },5000+t1*1000)
 
 }
@@ -576,36 +423,128 @@ function setDotGlow(){
 //===========================第一页进入第二页
 var stage_2=new createjs.Container()
 var word2=new createjs.Bitmap("img/word2.png")
-function ani1end(){
-  stage_1.removeChild(manSit)
+function ani1end(){//=======点击触发
   stage.addChild(stage_2)
-  manJump.alpha=1
-  manJump.play()
-  TweenLite.to(stage_1,1,{x:-640})
-  TweenLite.to(manJump,1,{x:230,y:250})
-  TweenLite.to(homeBtn,1,{alpha:1})
-  TweenLite.set($("home_btn"),{display:"block",delay:1})
+  boy.stop()
+  boy.gotoAndPlay("jump")
+  TweenLite.to(stage_1,1,{x:-640,delay:.03})
+  TweenLite.to(boy,1,{x:230,y:300,onComplete:ani2})
+  TweenLite.to(homeBtn,1,{alpha:1,delay:2})
+  TweenLite.set($("#home_btn"),{display:"block",delay:2})
   stage_2.addChild(word2)
   word2.regX=100
   word2.regY=50
   word2.x=740
-  word2.y=436
+  word2.y=486
   TweenLite.to(word2,1,{x:320})
   createjs.Ticker.addEventListener("tick",setQmark);
 }
-var qMarkA=[]
-function setQmark(){
+
+function ani2(){
+  boy.gotoAndPlay("walk")
+  TweenLite.to(boy,2,{x:330,y:300,ease:Linear.easeNone,onComplete:ani2Stand})
+}
+function ani2Stand(){
+  boy.gotoAndPlay("stand")
+}
+//===========================第二页进入第三页
+var stage_3=new createjs.Container()
+var word3=new createjs.Bitmap("img/word3.png")
+
+var stage_4=new createjs.Container()
+var word4=new createjs.Bitmap("img/word4.png")
+function ani2end(){//=======点击触发
+  boy.gotoAndPlay("jump")
+  TweenLite.to(boy,1,{x:230,y:250})
+  TweenLite.to(word2,1,{x:-640,delay:.03,onComplete:ani3})
   
-  if (Math.random()>.0) {
-    var qMark=new createjs.Bitmap("img/qmark.png")
-    stage_2.addChild(qMark)
-    qMarkA.push(qMark)
-    qMark.regX=13
-    qMark.regY=22
-    qMark.scaleX=qMark.scaleY=Math.random()+.5
-    qMark.x=word2.x+Math.random()*300-150
-    qMark.y=word2.y+Math.random()*100-50-10
-    qMark.alpha=0
-    TweenLite.to(qMark,2+Math.random(),{x:(qMark.x+word2.x)/2,scale:0,y:qMark.y-(200+Math.random()*150),rotation:Math.random()*180-90,alpha:.5,visible:"false"})
-  };
+  stage.addChild(stage_3)
+  stage_3.addChild(word3)
+  word3.regX=100
+  word3.regY=50
+  word3.x=740
+  word3.y=436
+  TweenLite.to(word3,1,{x:320})
+
+  stage.addChild(stage_4)
+  stage_4.addChild(word4)
+  word4.regX=123
+  word4.regY=50
+  word4.x=320
+  word4.y=436
+  stage_4.x=640
+
+  showHomeBtn(1)
+}
+
+function ani3(){
+  stage.removeChild(stage_2)
+  createjs.Ticker.removeEventListener("tick",setQmark);
+
+}
+
+function ani3end1(){//=======点击触发
+  boy.gotoAndPlay("jump")
+  TweenLite.to(stage_3,1,{x:-640,ease:Sine.easeNone})
+  TweenLite.to(boy,.5,{x:230-150,y:boy.y-20,ease:Sine.easeOut,overwrite:0})
+  TweenLite.to(boy,.5,{x:230,y:1000,ease:Sine.easeIn,onComplete:backToAni3,delay:.5})
+  TweenLite.to(stage_4,1,{x:0,ease:Sine.easeNone})
+}
+function backToAni3(){
+  TweenLite.to(stage_3,1,{x:0})
+  TweenLite.to(stage_4,1,{x:640})
+  TweenLite.set(boy,{x:230,y:250,alpha:0})
+  TweenLite.to(boy,1,{alpha:1,ease:Elastic.easeOut,delay:1,onComplete:showHomeBtn})
+  showHomeBtn(1)
+}
+
+function ani3end2(){//=======点击触发
+  boy.gotoAndPlay("startrun")
+  TweenLite.to(boy,.5,{x:boy.x+100,ease:Sine.easeNone,onComplete:ani3jump})
+  flyflower()
+}
+function ani3jump(){
+
+  boy.gotoAndPlay("jump")
+  TweenLite.to(boy,1,{x:180,y:boy.y+22,onComplete:ani4})
+  TweenLite.to(stage_3,1,{x:-640})
+  TweenLite.to(stage_4,1,{x:0})
+  setFlowerBlow()
+  setTimeout(function(){
+    flowerBlow.gotoAndPlay("blow")
+  },500)
+  
+}
+
+function ani4(){
+  setTimeout(function(){
+    boy.gotoAndPlay("walk")
+  },200)
+  
+  TweenLite.to(boy,2,{x:325,y:boy.y-10,delay:.2,onComplete:boyStand,ease:Linear.easeNone})
+  //stage_4.addChild(flowerBlow)
+  showHomeBtn()
+  
+}
+function boyStand(){
+  boy.gotoAndStop("stand")
+}
+
+function ani4end(){//====点击触发
+  hideLayer()
+   createjs.Ticker.removeEventListener("tick",flyingflower);
+  boy.gotoAndPlay("startrun")
+  TweenLite.to(stage_4,2,{x:-640,ease:Linear.easeNone,visible:false})
+  ani5()
+}
+
+var stage_56=new createjs.Container()
+var t500
+function ani5(){
+  TweenLite.to(boy,1,{x:280,rotation:10})
+  stage.addChild(stage_56)
+  t500=setInterval("addZi()",250)
+  createjs.Ticker.addEventListener("tick",setFire);
+  skyMove.x=-16
+  showHomeBtn(1)
 }
