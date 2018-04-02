@@ -11,30 +11,33 @@
 <body>
 <div id="app" class="contanier">
 	<div class="weather-con">
-		<div class="today-weather">今日朝阳：小雨转晴 微风3级</div>
-		<div class="today-status">较易发过敏</div>
-		<div class="tips">辅舒良提醒您，使用空调，如果不注重及时通风，导致房间内的空气不流通，引起吸入性过敏原大量积蓄，就会诱发过敏性疾病。</div>
+		<div class="today-weather">今日{{area}}：<span >{{weather}}</span><span class="wind">{{wind}}{{windLevel}}级</span></div>
+		<div class="today-status">{{allergyStatus}}</div>
+		<div class="tips">辅舒良提醒您，{{tips}}</div>
 	</div>
 	<div class="today-detail-con">
 		<div class="today">今天</div>
 		<div class="today-tem">
-			<div class="temperature">25°</div>
-			<div class="cloud-bar bar">多云</div>
+			<div class="temperature">{{temperature}}</div>
+			<div class="cloud-bar bar">{{cloud}}</div>
 		</div>
 		<div class="white-line"></div>
 		<div class="today-air-condition">
 			<div class="pm2-5-con">
-				<span class="nums">125</span>
+				<span class="nums">{{pmNums}}</span>
 				<span class="pm2-5">pm2.5</span>
 			</div>
-			<div class="air-bar bar">空气质量良好</div>
+			<div class="air-bar bar">{{airQuality}}</div>
 		</div>
 	</div>
 	<div class="banner"></div>
 
 	<div class="buy-con">
-		<div class="buyES-img">
-			<img src="img/es-banner.jpg" alt="">
+		<div class="storeCon" v-if="ifStore">
+			<div class="buyES-img">
+				<img src="img/logo/icon24.png">
+			</div>
+			<div class="buy-text">- 立即前往全市各{{storeName}}购买 -</div>
 		</div>
 		<div class="btns-con">
 			<div class="btn buy-btn">立即购买</div>
@@ -55,7 +58,7 @@
 		</div>
 	</div>
 
-	<div class="popUp" v-if="storePopup">
+	<div class="popUp" v-bind:style="{ display: storePopup }">
 		<div class="pop-con">
 			<div class="wrapper" id="wrapper">
 				<ul class="content">
@@ -94,28 +97,5 @@
 <script src="js/index.js"></script>
 <!-- endbuild -->
 
-<script>
-	/*$(function () {
-			var url = 'http://h5-lbs.api.moji.com/location/location'
-			var data = {
-					latitude: 39.206463,
-					longitude: 117.16287
-			}
-			$.ajax({
-					url: url,
-					async: false,
-					type: "POST",
-					dataType: "JSONP",
-					data: data,
-					success: function (result) {
-							console.log(result);
-					},
-					error: function (xhr, ajaxOptions, thrownError) {
-							console.log(xhr);
-					}
-			});
-	})*/
-
-</script>
 </body>
 </html>

@@ -18,6 +18,9 @@ img{
   background-size: cover;
   background-position-y: px(-133);
 
+  .wind{
+    margin-left: px(12);
+  }
   .today-status{
     margin-top: px(98);
     font-size: px(66);
@@ -96,10 +99,20 @@ img{
   padding: px(33) 0 px(42) 0;
   background-color: white;
 
-  .buyES-img{
-    width: 100%;
-    height: px(109);
+  .storeCon{
+
+    .buyES-img{
+      //width: px(80);
+      height: px(80);
+
+    }
+    .buy-text{
+      font-size: px(24);
+      color: #1b7339;
+      text-align: center;
+    }
   }
+
 
   .btns-con{
     margin-top: px(22);
@@ -165,6 +178,7 @@ img{
   top: 0;
   left: 0;
   background: white;
+  transition: all 0.6s;
 
   .pop-con{
     width: 100%;
