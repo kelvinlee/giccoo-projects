@@ -62,8 +62,8 @@ let app = new Vue({
 			'latitude':37.552439, //石景山
 			'longitude':121.390799
 		}
-		testLocation(this,point);//测试位置
-		// getUserPosition(this);//获取位置
+		// testLocation(this,point);//测试位置
+		getUserPosition(this);//获取位置
 
 		//加载本地数据
 		this.$http.get('./config/question.json').then((res) => {
