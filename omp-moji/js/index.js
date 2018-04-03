@@ -128,9 +128,9 @@ let app = new Vue({
 
 						app.temperature = data.condition.temp
 						app.cloud = data.condition.condition
-						app.pmNums = data.aqi.pm25
+						app.pmNums = data.aqi.value
 
-						app.airQuality = getAirCondition(data.aqi.pm25)
+						app.airQuality = getAirCondition(data.aqi.value)
 
 						let todayInfo = getObjFirst(data.liveIndex)
 						console.log(todayInfo)
@@ -241,7 +241,7 @@ let app = new Vue({
 							app.cloud = data.condition.condition
 							app.pmNums = data.aqi.pm25
 
-							app.airQuality = getAirCondition(data.aqi.pm25)
+							app.airQuality = getAirCondition(data.aqi.value)
 
 							let todayInfo = getObjFirst(data.liveIndex)
 							console.log(todayInfo)
