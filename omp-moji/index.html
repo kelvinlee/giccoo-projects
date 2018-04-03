@@ -43,11 +43,11 @@
 				<div class="buyES-img">
 					<img v-bind:src="storeLogo">
 				</div>
-				<div class="buy-text" v-if="ifEshop">- 立即前往全市各{{storeName}}购买 -</div>
+				<div class="buy-text" v-if="ifEshopText">- 立即前往全市各{{storeName}}购买 -</div>
 			</div>
 			<div class="btns-con">
 				<a :href="buyUrl" class="btn buy-btn" v-if="ifEshop">立即购买</a>
-				<div class="space" v-if="ifStore"></div>
+				<div class="space" v-if="ifEshop && ifLocalStore"></div>
 				<div class="btn store-btn" v-on:click="showStore" v-if="ifLocalStore">药房地址一览</div>
 			</div>
 		</div>

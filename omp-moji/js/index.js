@@ -2,13 +2,13 @@
 const getLocaltionCityUrl = 'https://g.giccoo.com/sensitivity/api/local/' //lat/39.98246/log/117.079222
 const getWeatherInfoUrl = 'https://g.giccoo.com/sensitivity/api/city/p/'
 
-const defultEshop ={
-  "storeAllName": "中美史克旗舰店",
-  "storeName": "中美史克旗舰店",
-  "eshop": "true",
-  "city": "其他",
-  "logo": "",
-  "url": "http://app.dslbuy.com/activityDetail.html?unifiedMerchandiseId=1010008000111942&token=2_3C274562CFA74473A34FC7E71B865D3D&from=singlemessage&isappinstalled=0"
+const defultEshop = {
+	"storeAllName": "中美史克旗舰店",
+	"storeName": "中美史克旗舰店",
+	"eshop": "true",
+	"city": "其他",
+	"logo": "",
+	"url": "http://app.dslbuy.com/activityDetail.html?unifiedMerchandiseId=1010008000111942&token=2_3C274562CFA74473A34FC7E71B865D3D&from=singlemessage&isappinstalled=0"
 }
 // const firstRender = true
 // const getcoordPath = 'http://g.giccoo.com/api/ip/'
@@ -16,31 +16,30 @@ const defultEshop ={
 let app = new Vue({
 	el: '#app',
 	data: {
-		area:'朝阳',
-		weather:'晴',
-		wind:'微风',
-		windLevel:'3',
-		allergyStatus:'较易发',
-		tips:'空气中漂浮过敏原，易过敏人群请减少外出时间，远离花草树木，穿着长袖长裤、注意防护。',
-		temperature:'25',
-		cloud:'多云',
-		pmNums:'181',
-		airQuality:'轻度污染',
-    ifLocalStore:true, //是否有本地药店
-		ifStore:true, //是否有本地电商引流
-		storeName:'',//药店名称
-		storeLogo:'', //药店LOGO
-		buyUrl:'',//立即购买
-		ifEshop:false,//是否有电商链接
+		area: '朝阳',
+		weather: '晴',
+		wind: '微风',
+		windLevel: '3',
+		allergyStatus: '较易发',
+		tips: '空气中漂浮过敏原，易过敏人群请减少外出时间，远离花草树木，穿着长袖长裤、注意防护。',
+		temperature: '25',
+		cloud: '多云',
+		pmNums: '181',
+		airQuality: '轻度污染',
+		ifLocalStore: true, //是否有本地药店
+		ifStore: true, //是否有本地电商引流
+		storeName: '',//药店名称
+		storeLogo: '', //药店LOGO
+		buyUrl: '',//立即购买
+		ifEshop: false,//是否有电商链接
+		ifEshopText: true, //是否有药店提示
 
 		quesionList: [],
 		storeList: [],
 		storePopup: 'none',
 		loading: false
 	},
-	watch: {
-
-	},
+	watch: {},
 	methods: {
 		closeStore: function () {
 			this.storePopup = 'none'
@@ -59,10 +58,10 @@ let app = new Vue({
 		//init
 		console.log('init')
 		let point = {
-			'latitude':37.552439, //石景山
-			'longitude':121.390799
+			'latitude': 31.860322, //石景山
+			'longitude': 117.268186,
 		}
-		// testLocation(this,point);//测试位置
+		// testLocation(this, point);//测试位置
 		getUserPosition(this);//获取位置
 
 		//加载本地数据
@@ -76,7 +75,7 @@ let app = new Vue({
 
 
 		//测试坐标信息
-		function testLocation(app,point){
+		function testLocation(app, point) {
 			app.loading = true
 			// let that = app
 			app.$http.get(getLocaltionCityUrl + 'lat/' + point.latitude + '/log/' + point.longitude).then((res) => {
@@ -91,26 +90,26 @@ let app = new Vue({
 					app.$http.get('./config/ka.json').then((res) => {
 						console.log(res)
 						let kaJson = res.data
-						let ka = getKaInfo(kaJson,city);
-						if (ka.length>0){
+						let ka = getKaInfo(kaJson, city);
+						if (ka.length > 0) {
 							console.log(ka)
 							app.ifStore = true
 							app.storeName = ka[0].storeName
 							app.storeLogo = ka[0].logo
 
-							if(ka[0].url){
+							if (ka[0].url) {
 								//电商
 								app.ifEshop = true
 								app.buyUrl = ka[0].url
-							}else {
+							} else {
 								app.ifEshop = false
 							}
 
-						}else {
+						} else {
 							//没有匹配 // 默认中美联合电商
 							app.ifStore = false
-              app.ifEshop = true
-              app.buyUrl = defultEshop.url
+							app.ifEshop = true
+							app.buyUrl = defultEshop.url
 						}
 					}, (res) => {
 						//error
@@ -134,16 +133,17 @@ let app = new Vue({
 
 						let todayInfo = getObjFirst(data.liveIndex)
 						console.log(todayInfo)
-						for(let i in todayInfo){
-							if(todayInfo[i].code == 32){
+						for (let i in todayInfo) {
+							if (todayInfo[i].code == 32) {
 								app.allergyStatus = todayInfo[i].status  //""极易发"" 过敏指数
 								app.tips = todayInfo[i].desc   //描述
 							}
 						}
+
 						function getObjFirst(obj) {
 							for (let i in obj) return obj[i];
 						}
-					},(res) =>{
+					}, (res) => {
 						console.log("获取城市天气信息错误")
 					})
 
@@ -153,12 +153,18 @@ let app = new Vue({
 						let storeJson = res.data
 						let localStore = getStoreList(storeJson, data)
 
-						if(localStore){
-              app.storeList = localStore
-              //初始化滚动条
-              initBscroll();
-						}else {
+						if (localStore) {
+							app.storeList = localStore
+							//初始化滚动条
+							initBscroll();
+							app.ifEshopText = true
+						} else {
 							app.ifLocalStore = false // 隐藏商店按钮
+							if(app.ifEshop){
+								app.ifEshopText = true
+							}else {
+								app.ifEshopText = false
+							}
 						}
 					}, (res) => {
 						//error
@@ -174,6 +180,7 @@ let app = new Vue({
 			})
 
 		}
+
 		//使用浏览器获取用户位置
 		function getUserPosition(app) {
 			let options = {
@@ -205,24 +212,24 @@ let app = new Vue({
 							console.log(res)
 							let kaJson = res.data
 							// let localStore = getStoreList(storeJson, data)
-							let ka = getKaInfo(kaJson,city);
-							if (ka.length>0){
+							let ka = getKaInfo(kaJson, city);
+							if (ka.length > 0) {
 								console.log(ka)
 								app.ifStore = true
 								app.storeName = ka[0].storeName
 								app.storeLogo = ka[0].logo
-								if(ka[0].url){
+								if (ka[0].url) {
 									//电商
 									app.ifEshop = true
 									app.buyUrl = ka[0].url
-								}else {
+								} else {
 									app.ifEshop = false
 								}
-							}else {
-                //没有匹配 // 默认中美联合电商
-                app.ifStore = false
-                app.ifEshop = true
-                app.buyUrl = defultEshop.url
+							} else {
+								//没有匹配 // 默认中美联合电商
+								app.ifStore = false
+								app.ifEshop = true
+								app.buyUrl = defultEshop.url
 							}
 						}, (res) => {
 							//error
@@ -245,12 +252,13 @@ let app = new Vue({
 
 							let todayInfo = getObjFirst(data.liveIndex)
 							console.log(todayInfo)
-							for(let i in todayInfo){
-								if(todayInfo[i].code == 32){
+							for (let i in todayInfo) {
+								if (todayInfo[i].code == 32) {
 									app.allergyStatus = todayInfo[i].status  //""极易发"" 过敏指数
 									app.tips = todayInfo[i].desc   //描述
 								}
 							}
+
 							function getObjFirst(obj) {
 								for (let i in obj) return obj[i];
 							}
@@ -261,13 +269,19 @@ let app = new Vue({
 						app.$http.get('./config/store.json').then((res) => {
 							let storeJson = res.data
 							let localStore = getStoreList(storeJson, data)
-              if(localStore){
-                app.storeList = localStore
-                //初始化滚动条
-                initBscroll();
-              }else {
-                app.ifLocalStore = false // 隐藏商店按钮
-              }
+							if (localStore) {
+								app.storeList = localStore
+								app.ifEshopText = true
+								//初始化滚动条
+								initBscroll();
+							} else {
+								app.ifLocalStore = false // 隐藏商店按钮
+								if(app.ifEshop){
+									app.ifEshopText = true
+								}else {
+									app.ifEshopText = false
+								}
+							}
 						}, (res) => {
 							//error
 							console.log("获取Store json失败", res)
@@ -345,15 +359,15 @@ let app = new Vue({
 })
 
 //获取KA信息
-function getKaInfo(kaJson,city){
-	console.log(kaJson,city)
+function getKaInfo(kaJson, city) {
+	console.log(kaJson, city)
 	var kaList = [];
 
-	for(var i in kaJson){
-		if(city.indexOf(kaJson[i].city) >=0){
+	for (var i in kaJson) {
+		if (city.indexOf(kaJson[i].city) >= 0) {
 			//有匹配
 			kaList.push(kaJson[i])
-		}else {
+		} else {
 			//无匹配
 
 		}
@@ -435,9 +449,9 @@ function getStoreList(storeJson, cityInfo) {
 
 	if (locationAreaStoreList.length > 0) {
 		return locationAreaStoreList //如果有区域，返回区域
-	} else if (locationAreaStoreList.length <= 0 && locationCityStoreList.length >0){
+	} else if (locationAreaStoreList.length <= 0 && locationCityStoreList.length > 0) {
 		return locationCityStoreList //如果没有区域，有城市，返回城市
-	}else if(locationAreaStoreList.length <= 0 && locationCityStoreList.length <=0){
+	} else if (locationAreaStoreList.length <= 0 && locationCityStoreList.length <= 0) {
 		return false //如果都没有，返回所有
 	}
 }
