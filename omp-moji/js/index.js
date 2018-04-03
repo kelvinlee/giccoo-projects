@@ -17,15 +17,15 @@ let app = new Vue({
 	el: '#app',
 	data: {
 		area:'朝阳',
-		weather:'',
-		wind:'',
-		windLevel:'',
-		allergyStatus:'',
-		tips:'',
-		temperature:'',
-		cloud:'',
-		pmNums:'',
-		airQuality:'',
+		weather:'晴',
+		wind:'微风',
+		windLevel:'3',
+		allergyStatus:'较易发',
+		tips:'空气中漂浮过敏原，易过敏人群请减少外出时间，远离花草树木，穿着长袖长裤、注意防护。',
+		temperature:'25',
+		cloud:'多云',
+		pmNums:'181',
+		airQuality:'轻度污染',
     ifLocalStore:true, //是否有本地药店
 		ifStore:true, //是否有本地电商引流
 		storeName:'',//药店名称
