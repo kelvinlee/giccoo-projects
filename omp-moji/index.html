@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8" name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -48,7 +47,7 @@
 		<div class="btns-con">
 			<a :href="buyUrl" class="btn buy-btn" v-if="ifEshop">立即购买</a>
 			<div class="space" v-if="ifStore"></div>
-			<div class="btn store-btn" v-on:click="showStore">药房地址一览</div>
+			<div class="btn store-btn" v-on:click="showStore" v-if="ifLocalStore">药房地址一览</div>
 		</div>
 	</div>
 

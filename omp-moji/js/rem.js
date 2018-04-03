@@ -2,6 +2,7 @@ var PageWidth = 640;
 var lastW;
 
 function __resize() {
+   console.log('__resize');
     var w = Math.min(window.innerWidth, document.body.clientWidth);
     var h = Math.min(window.innerHeight, document.body.clientHeight);
 

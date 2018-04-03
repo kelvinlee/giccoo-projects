@@ -1,6 +1,15 @@
 // const getLocaltionUrl = 'http://h5-lbs.api.moji.com/location/location'
 const getLocaltionCityUrl = 'https://g.giccoo.com/sensitivity/api/local/' //lat/39.98246/log/117.079222
 const getWeatherInfoUrl = 'https://g.giccoo.com/sensitivity/api/city/p/'
+
+const defultEshop ={
+  "storeAllName": "中美史克旗舰店",
+  "storeName": "中美史克旗舰店",
+  "eshop": "true",
+  "city": "其他",
+  "logo": "",
+  "url": "http://app.dslbuy.com/activityDetail.html?unifiedMerchandiseId=1010008000111942&token=2_3C274562CFA74473A34FC7E71B865D3D&from=singlemessage&isappinstalled=0"
+}
 // const firstRender = true
 // const getcoordPath = 'http://g.giccoo.com/api/ip/'
 
@@ -17,7 +26,8 @@ let app = new Vue({
 		cloud:'',
 		pmNums:'',
 		airQuality:'',
-		ifStore:true, //是否有本地药店
+    ifLocalStore:true, //是否有本地药店
+		ifStore:true, //是否有本地电商引流
 		storeName:'',//药店名称
 		storeLogo:'', //药店LOGO
 		buyUrl:'',//立即购买
@@ -49,11 +59,11 @@ let app = new Vue({
 		//init
 		console.log('init')
 		let point = {
-			'latitude':36.677397, //石景山
-			'longitude':117.106564
+			'latitude':37.552439, //石景山
+			'longitude':121.390799
 		}
-		// testLocation(this,point);//测试位置
-		getUserPosition(this);//获取位置
+		testLocation(this,point);//测试位置
+		// getUserPosition(this);//获取位置
 
 		//加载本地数据
 		this.$http.get('./config/question.json').then((res) => {
@@ -81,7 +91,6 @@ let app = new Vue({
 					app.$http.get('./config/ka.json').then((res) => {
 						console.log(res)
 						let kaJson = res.data
-						// let localStore = getStoreList(storeJson, data)
 						let ka = getKaInfo(kaJson,city);
 						if (ka.length>0){
 							console.log(ka)
@@ -98,8 +107,10 @@ let app = new Vue({
 							}
 
 						}else {
-							//没有匹配
+							//没有匹配 // 默认中美联合电商
 							app.ifStore = false
+              app.ifEshop = true
+              app.buyUrl = defultEshop.url
 						}
 					}, (res) => {
 						//error
@@ -141,9 +152,14 @@ let app = new Vue({
 					app.$http.get('./config/store.json').then((res) => {
 						let storeJson = res.data
 						let localStore = getStoreList(storeJson, data)
-						app.storeList = localStore
-						//初始化滚动条
-						initBscroll();
+
+						if(localStore){
+              app.storeList = localStore
+              //初始化滚动条
+              initBscroll();
+						}else {
+							app.ifLocalStore = false // 隐藏商店按钮
+						}
 					}, (res) => {
 						//error
 						console.log("获取Store json失败", res)
@@ -203,8 +219,10 @@ let app = new Vue({
 									app.ifEshop = false
 								}
 							}else {
-								//没有匹配
-								app.ifStore = false
+                //没有匹配 // 默认中美联合电商
+                app.ifStore = false
+                app.ifEshop = true
+                app.buyUrl = defultEshop.url
 							}
 						}, (res) => {
 							//error
@@ -243,13 +261,13 @@ let app = new Vue({
 						app.$http.get('./config/store.json').then((res) => {
 							let storeJson = res.data
 							let localStore = getStoreList(storeJson, data)
-							app.storeList = localStore
-							// console.log(app.storeList)
-							//初始化滚动条
-							// app.storePopup = true
-							// console.log("初始化scroll")
-							initBscroll();
-							// app.storePopup = false
+              if(localStore){
+                app.storeList = localStore
+                //初始化滚动条
+                initBscroll();
+              }else {
+                app.ifLocalStore = false // 隐藏商店按钮
+              }
 						}, (res) => {
 							//error
 							console.log("获取Store json失败", res)
@@ -420,6 +438,6 @@ function getStoreList(storeJson, cityInfo) {
 	} else if (locationAreaStoreList.length <= 0 && locationCityStoreList.length >0){
 		return locationCityStoreList //如果没有区域，有城市，返回城市
 	}else if(locationAreaStoreList.length <= 0 && locationCityStoreList.length <=0){
-		return storeJson //如果都没有，返回所有
+		return false //如果都没有，返回所有
 	}
 }
