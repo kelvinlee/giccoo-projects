@@ -8,7 +8,7 @@ var defultEshop = {
 	"eshop": "true",
 	"city": "其他",
 	"logo": "",
-	"url": "http://app.dslbuy.com/activityDetail.html?unifiedMerchandiseId=1010008000111942&token=2_3C274562CFA74473A34FC7E71B865D3D&from=singlemessage&isappinstalled=0"
+	"url": "https://detail.yao.95095.com/item.htm?id=522982673635"
 }
 // const firstRender = true
 
