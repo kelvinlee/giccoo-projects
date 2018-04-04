@@ -302,8 +302,11 @@ function getCityInfo(cityJson, area) {
 					// console.log("sub")
 					for(var v in obj.sub[j].sub){
 						// console.log(obj.sub[j].sub[v])
+						var _str = String(obj.sub[j].sub[v].name).replace(/县/,'')
+						var _str2 = _str.replace(/区/,'')
+						console.log(_str2)
 
-						if (area.indexOf(obj.sub[j].sub[v].name) >= 0) {
+						if (area.indexOf(_str2) >= 0) {
 							// console.log("有匹配")
 							return obj.sub[j].name
 						} else {
@@ -316,8 +319,12 @@ function getCityInfo(cityJson, area) {
 					}
 				}else {
 					// console.log(obj.sub)
+					//一级城市 直辖市列表
 					for(var v in obj.sub[j]){
-						if (area.indexOf(obj.sub[j][v].name) >= 0) {
+						var _str = String(obj.sub[j].name).replace(/县/,'')
+						var _str2 = _str.replace(/区/,'')
+						console.log(_str2)
+						if (area.indexOf(_str2) >= 0) {
 							return obj.name
 						}
 					}
