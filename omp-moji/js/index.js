@@ -64,12 +64,12 @@ let app = new Vue({
 		}
 		var cityid = getQueryString('cityid')
 		console.log(cityid)
-		/*if(cityid){
+		if(cityid){
 			getWeather(this,getWeatherInfoUrl + cityid +'/id/translate') //如果有cityid 直接不定位 拿天气数据
 		}else {
 			getUserPosition(this);//获取用户位置
-		}*/
-		testLocation(this, point);//测试位置
+		}
+		// testLocation(this, point);//测试位置
 
 		//加载本地数据
 		this.$http.get('./config/question.json').then((res) => {
