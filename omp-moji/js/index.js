@@ -210,7 +210,7 @@ var  app = new Vue({
 								//error
 								console.log("获取Store json失败", res)
 							})
-					},2000)
+					},800)
 					}, function(res) {
 						//error
 						console.log("获取Store json失败", res)
