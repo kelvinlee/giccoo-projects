@@ -11,6 +11,7 @@ const defultEshop = {
 	"url": "http://app.dslbuy.com/activityDetail.html?unifiedMerchandiseId=1010008000111942&token=2_3C274562CFA74473A34FC7E71B865D3D&from=singlemessage&isappinstalled=0"
 }
 // const firstRender = true
+
 // const getcoordPath = 'http://g.giccoo.com/api/ip/'
 
 let app = new Vue({
@@ -80,7 +81,6 @@ let app = new Vue({
 		})
 
 		function testLocation(app,point) {
-
 			getLocaltion(app,point, function (res) {
 				console.log(res);
 				let data = res.result;
@@ -286,27 +286,32 @@ function getCityInfo(cityJson, area) {
 	console.log(cityJson,area)
 	for (var i in cityJson) {
 		var obj = cityJson[i]
-		// console.log(obj)
-		for(var j in obj.sub){
-			// console.log(obj.sub)
-			if(obj.sub[j].sub){
-				for(var v in obj.sub[j].sub){
-					// console.log(obj.sub)
-					if (area.indexOf(obj.sub[j].sub[v].name) >= 0) {
-						return obj.sub[j].name
+		if (area.indexOf(obj.name) >= 0) {
+			return obj.name
+		} else {
+			// console.log(obj)
+			for(var j in obj.sub){
+				// console.log(obj.sub)
+				if(obj.sub[j].sub){
+					for(var v in obj.sub[j].sub){
+						// console.log(obj.sub)
+						if (area.indexOf(obj.sub[j].sub[v].name) >= 0) {
+							return obj.sub[j].name
+						} else {
+							//无匹配  如果匹配不到区 就匹配城市
+						}
+					}
+				}else {
+					if (area.indexOf(obj.sub[j].name) >= 0) {
+						return obj.name
 					} else {
+
 					}
 				}
-			}else {
-				if (area.indexOf(obj.sub[j].name) >= 0) {
-					console.log("addd")
-					return obj.name
-				} else {
-					//无匹配
-				}
-			}
 
+			}
 		}
+
 	}
 }
 
