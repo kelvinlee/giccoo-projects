@@ -156,58 +156,61 @@ var  app = new Vue({
 				app.$http.get('./config/cityData.json').then(function(res) {
 					console.log(res)
 					var  city = getCityInfo(res.data, area);
-					console.log(city)
 
-					var  cityInfo = {
-						area:area,
-						city:city
-					}
-					app.$http.get('./config/ka.json').then(function(res) {
-						console.log(res)
-						var  kaJson = res.data
-						var  ka = getKaInfo(kaJson, city);
-						// console.log(city,ka)
-						if (ka.length > 0) {
-							console.log(ka)
-							app.ifStore = true
-							app.storeName = ka[0].storeName
-							app.storeLogo = ka[0].logo
-							if (ka[0].url) {
-								//电商
-								app.ifEshop = true
-								app.buyUrl = ka[0].url
-							} else {
-								app.ifEshop = false
-							}
-						} else {
-							//没有匹配 // 默认中美联合电商
-							app.ifStore = false
-							app.ifEshop = true
-							app.buyUrl = defultEshop.url
+					setTimeout(function(){
+						console.log(city)
+
+						var  cityInfo = {
+							area:area,
+							city:city
 						}
-
-						//拿到城市区域 就去请求商店列表
-						app.$http.get('./config/store.json').then(function(res) {
-							var  storeJson = res.data
-							var  localStore = getStoreList(storeJson, cityInfo)
-							console.log(localStore)
-							if (localStore) {
-								app.storeList = localStore
-								app.ifEshopText = true
-								//初始化滚动条
-								initBscroll();
-							} else {
-								app.ifLocalStore = false // 隐藏商店按钮
-								if(app.ifEshop){
-									app.ifEshopText = true
-								}else {
-									app.ifEshopText = false
+						app.$http.get('./config/ka.json').then(function(res) {
+							console.log(res)
+							var  kaJson = res.data
+							var  ka = getKaInfo(kaJson, city);
+							// console.log(city,ka)
+							if (ka.length > 0) {
+								console.log(ka)
+								app.ifStore = true
+								app.storeName = ka[0].storeName
+								app.storeLogo = ka[0].logo
+								if (ka[0].url) {
+									//电商
+									app.ifEshop = true
+									app.buyUrl = ka[0].url
+								} else {
+									app.ifEshop = false
 								}
+							} else {
+								//没有匹配 // 默认中美联合电商
+								app.ifStore = false
+								app.ifEshop = true
+								app.buyUrl = defultEshop.url
 							}
-						}, function(res) {
-							//error
-							console.log("获取Store json失败", res)
-						})
+
+							//拿到城市区域 就去请求商店列表
+							app.$http.get('./config/store.json').then(function(res) {
+								var  storeJson = res.data
+								var  localStore = getStoreList(storeJson, cityInfo)
+								console.log(localStore)
+								if (localStore) {
+									app.storeList = localStore
+									app.ifEshopText = true
+									//初始化滚动条
+									initBscroll();
+								} else {
+									app.ifLocalStore = false // 隐藏商店按钮
+									if(app.ifEshop){
+										app.ifEshopText = true
+									}else {
+										app.ifEshopText = false
+									}
+								}
+							}, function(res) {
+								//error
+								console.log("获取Store json失败", res)
+							})
+					},2000)
 					}, function(res) {
 						//error
 						console.log("获取Store json失败", res)
