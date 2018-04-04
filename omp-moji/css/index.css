@@ -380,7 +380,7 @@ img {
   .popUp .pop-con {
     height: 100%;
     background: url("../img/pop.jpg") no-repeat;
-    background-size: contain;
+    background-size: 100% auto;
     padding: 1.2rem 0.9rem; }
     .popUp .pop-con .wrapper {
       width: 100%;
