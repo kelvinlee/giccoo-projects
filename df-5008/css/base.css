@@ -1355,6 +1355,13 @@ body {
       bottom: 0px;
       left: 0px;
       z-index: 9; }
+  .page-home .share-icon {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 1.5rem;
+    font-size: 0;
+    z-index: 109; }
   .page-home .text {
     position: absolute;
     top: 20%;
