@@ -777,6 +777,14 @@ ul {
   -webkit-animation-duration: 5000ms;
           animation-duration: 5000ms; }
 
+.delay-51 {
+  -webkit-animation-delay: 5100ms;
+          animation-delay: 5100ms; }
+
+.duration-51 {
+  -webkit-animation-duration: 5100ms;
+          animation-duration: 5100ms; }
+
 @-webkit-keyframes second {
   0% {
     -webkit-transform: rotate(0deg);
