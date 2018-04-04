@@ -59,8 +59,8 @@ let app = new Vue({
 		//init
 		console.log('init')
 		let point = {
-			'latitude': 29.866534, //石景山
-			'longitude': 121.582004,
+			'latitude':45.777454, //石景山
+			'longitude': 126.630727,
 		}
 		var cityid = getQueryString('cityid')
 		console.log(cityid)
@@ -69,14 +69,15 @@ let app = new Vue({
 		}else {
 			getUserPosition(this);//获取用户位置
 		}
+
 		// testLocation(this, point);//测试位置
 
 		//加载本地数据
-		this.$http.get('./config/question.json').then((res) => {
+		this.$http.get('./config/question.json').then(function(res) {
 			let data = res.data
 			console.log(data)
 			this.quesionList = data
-		}, (res) => {
+		}, function(res) {
 			console.log("加载问题json失败")
 		})
 
@@ -143,7 +144,7 @@ let app = new Vue({
 
 		function getWeather(app,apiUrl){
 			//根据城市ID获取相关信息
-			app.$http.get(apiUrl).then((res) => {
+			app.$http.get(apiUrl).then(function(res) {
 				let data = res.data.data
 				console.log(data)
 				//根据城市地区判断有无商店
@@ -152,7 +153,7 @@ let app = new Vue({
 
 				app.area = area
 
-				app.$http.get('./config/cityData.json').then((res) => {
+				app.$http.get('./config/cityData.json').then(function(res) {
 					console.log(res)
 					let city = getCityInfo(res.data, area);
 					console.log(city)
@@ -161,7 +162,7 @@ let app = new Vue({
 						area:area,
 						city:city
 					}
-					app.$http.get('./config/ka.json').then((res) => {
+					app.$http.get('./config/ka.json').then(function(res) {
 						console.log(res)
 						let kaJson = res.data
 						let ka = getKaInfo(kaJson, city);
@@ -186,7 +187,7 @@ let app = new Vue({
 						}
 
 						//拿到城市区域 就去请求商店列表
-						app.$http.get('./config/store.json').then((res) => {
+						app.$http.get('./config/store.json').then(function(res) {
 							let storeJson = res.data
 							let localStore = getStoreList(storeJson, cityInfo)
 							console.log(localStore)
@@ -203,11 +204,11 @@ let app = new Vue({
 									app.ifEshopText = false
 								}
 							}
-						}, (res) => {
+						}, function(res) {
 							//error
 							console.log("获取Store json失败", res)
 						})
-					}, (res) => {
+					}, function(res) {
 						//error
 						console.log("获取Store json失败", res)
 					})
@@ -242,7 +243,7 @@ let app = new Vue({
 
 		//获取城市列表
 		function getLocaltion(app,point, complete) {
-			app.$http.get(getLocaltionCityUrl + 'lat/' + point.latitude + '/log/' + point.longitude).then((res) => {
+			app.$http.get(getLocaltionCityUrl + 'lat/' + point.latitude + '/log/' + point.longitude).then(function(res) {
 				console.log(res);
 				if (res.status == 200) {
 					//获取城市成功
@@ -250,7 +251,7 @@ let app = new Vue({
 				} else {
 					console.log(res.statusText)
 				}
-			}, (err) => {
+			}, function(err) {
 				console.log("坐标转城市失败")
 				console.log(err);
 			})
