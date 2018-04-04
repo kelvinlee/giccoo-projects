@@ -321,8 +321,8 @@ function getCityInfo(cityJson, area, pname) {
 					}else {
 						// console.log(obj.sub)
 						//一级城市 直辖市列表
-						for(var v in obj.sub[j]){
-							var _str = String(obj.sub[j][v].name).replace(/县/,'')
+						for(var v in obj.sub){
+							var _str = String(obj.sub[v].name).replace(/县/,'')
 							var _str2 = _str.replace(/区/,'')
 							console.log(_str2)
 							if (area.indexOf(_str2) >= 0) {
