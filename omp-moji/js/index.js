@@ -14,7 +14,7 @@ const defultEshop = {
 
 // const getcoordPath = 'http://g.giccoo.com/api/ip/'
 
-let app = new Vue({
+var  app = new Vue({
 	el: '#app',
 	data: {
 		area: '朝阳',
@@ -58,7 +58,7 @@ let app = new Vue({
 	created: function () {
 		//init
 		console.log('init')
-		let point = {
+		var  point = {
 			'latitude':45.777454, //石景山
 			'longitude': 126.630727,
 		}
@@ -74,7 +74,7 @@ let app = new Vue({
 
 		//加载本地数据
 		this.$http.get('./config/question.json').then(function(res) {
-			let data = res.data
+			var  data = res.data
 			console.log(data)
 			this.quesionList = data
 		}, function(res) {
@@ -84,7 +84,7 @@ let app = new Vue({
 		function testLocation(app,point) {
 			getLocaltion(app,point, function (res) {
 				console.log(res);
-				let data = res.result;
+				var  data = res.result;
 				// app.area = String(data.detail.split(',')[1])
 				//坐标换城市
 
@@ -94,7 +94,7 @@ let app = new Vue({
 
 		//使用浏览器获取用户位置
 		function getUserPosition(app) {
-			let options = {
+			var  options = {
 				enableHighAccuracy: true,
 				maximumAge: 1000
 			}
@@ -105,7 +105,7 @@ let app = new Vue({
 				navigator.geolocation.getCurrentPosition(function (position) {
 					//成功
 					app.loading = false
-					let point = {
+					var  point = {
 						longitude: position.coords.longitude,//经度
 						latitude: position.coords.latitude//纬度
 					}
@@ -114,7 +114,7 @@ let app = new Vue({
 					//坐标换城市
 					getLocaltion(app,point, function (res) {
 						console.log(res);
-						let data = res.result;
+						var  data = res.result;
 						// app.area = String(data.detail.split(',')[1])
 						getWeather(app,getWeatherInfoUrl + data.cityId)
 					})
@@ -145,27 +145,27 @@ let app = new Vue({
 		function getWeather(app,apiUrl){
 			//根据城市ID获取相关信息
 			app.$http.get(apiUrl).then(function(res) {
-				let data = res.data.data
+				var  data = res.data.data
 				console.log(data)
 				//根据城市地区判断有无商店
-				let area = data.city.name
-				let pname = data.city.pname
+				var  area = data.city.name
+				var  pname = data.city.pname
 
 				app.area = area
 
 				app.$http.get('./config/cityData.json').then(function(res) {
 					console.log(res)
-					let city = getCityInfo(res.data, area);
+					var  city = getCityInfo(res.data, area);
 					console.log(city)
 
-					let cityInfo = {
+					var  cityInfo = {
 						area:area,
 						city:city
 					}
 					app.$http.get('./config/ka.json').then(function(res) {
 						console.log(res)
-						let kaJson = res.data
-						let ka = getKaInfo(kaJson, city);
+						var  kaJson = res.data
+						var  ka = getKaInfo(kaJson, city);
 						// console.log(city,ka)
 						if (ka.length > 0) {
 							console.log(ka)
@@ -188,8 +188,8 @@ let app = new Vue({
 
 						//拿到城市区域 就去请求商店列表
 						app.$http.get('./config/store.json').then(function(res) {
-							let storeJson = res.data
-							let localStore = getStoreList(storeJson, cityInfo)
+							var  storeJson = res.data
+							var  localStore = getStoreList(storeJson, cityInfo)
 							console.log(localStore)
 							if (localStore) {
 								app.storeList = localStore
@@ -224,9 +224,9 @@ let app = new Vue({
 
 				app.airQuality = getAirCondition(data.aqi.value)
 
-				let todayInfo = getObjFirst(data.liveIndex)
+				var  todayInfo = getObjFirst(data.liveIndex)
 				console.log(todayInfo)
-				for (let i in todayInfo) {
+				for (var  i in todayInfo) {
 					if (todayInfo[i].code == 32) {
 						app.allergyStatus = todayInfo[i].status  //""极易发"" 过敏指数
 						app.tips = todayInfo[i].desc   //描述
@@ -234,7 +234,7 @@ let app = new Vue({
 				}
 
 				function getObjFirst(obj) {
-					for (let i in obj) return obj[i];
+					for (var  i in obj) return obj[i];
 				}
 			})
 
@@ -269,10 +269,11 @@ let app = new Vue({
 
 //获取KA信息
 function getKaInfo(kaJson, city) {
-	console.log(kaJson, city)
+	// console.log(kaJson, city)
+	var _city = String(city)
 	var kaList = [];
 	for (var i in kaJson) {
-		if (city.indexOf(kaJson[i].city) >= 0) {
+		if (_city.indexOf(kaJson[i].city) >= 0) {
 			//有匹配
 			kaList.push(kaJson[i])
 		} else {
@@ -293,22 +294,31 @@ function getCityInfo(cityJson, area) {
 		} else {
 			// console.log(obj)
 			for(var j in obj.sub){
-				// console.log(obj.sub)
+				// console.log(obj.sub[i])
 				if(obj.sub[j].sub){
+					// console.log("sub")
 					for(var v in obj.sub[j].sub){
-						// console.log(obj.sub)
+						// console.log(obj.sub[j].sub[v])
+
 						if (area.indexOf(obj.sub[j].sub[v].name) >= 0) {
+							// console.log("有匹配")
 							return obj.sub[j].name
 						} else {
 							//无匹配  如果匹配不到区 就匹配城市
+							if (area.indexOf(obj.sub[j].name) >= 0) {
+								// console.log("有匹配")
+								return obj.sub[j].name
+							}
 						}
 					}
 				}else {
-					if (area.indexOf(obj.sub[j].name) >= 0) {
-						return obj.name
-					} else {
-
+					// console.log(obj.sub)
+					for(var v in obj.sub[j]){
+						if (area.indexOf(obj.sub[j][v].name) >= 0) {
+							return obj.name
+						}
 					}
+
 				}
 
 			}
@@ -319,7 +329,7 @@ function getCityInfo(cityJson, area) {
 
 //空气质量判断
 function getAirCondition(pm25) {
-	let nums = pm25;
+	var  nums = pm25;
 	if (nums <= 50) {
 		return '空气质量优'
 	} else if (nums > 50 && nums <= 100) {
@@ -337,7 +347,7 @@ function getAirCondition(pm25) {
 function initBscroll() {
 	// console.log(document)
 	console.log(document.getElementById('wrapper'))
-	let scroll = new BScroll(document.getElementById('wrapper'), {
+	var  scroll = new BScroll(document.getElementById('wrapper'), {
 		startX: 0,
 		startY: 0,
 		scrollbar: {
@@ -349,15 +359,15 @@ function initBscroll() {
 
 //获取商店列表
 function getStoreList(storeJson, cityInfo) {
-	// let cityId = data.cityId
-	let areaName = String(cityInfo.area)
-	let city = String(cityInfo.city)
+	// var  cityId = data.cityId
+	var  areaName = String(cityInfo.area)
+	var  city = String(cityInfo.city)
 	console.log(areaName)
 	console.log(city)
 
-	let locationCityStoreList = []
-	let locationAreaStoreList = []
-	for (let i in storeJson) {
+	var  locationCityStoreList = []
+	var  locationAreaStoreList = []
+	for (var  i in storeJson) {
 		if (storeJson[i].city) {
 			// console.log(storeJson[i].city)
 			if (city.indexOf(storeJson[i].city) >= 0) {
@@ -371,7 +381,7 @@ function getStoreList(storeJson, cityInfo) {
 	if (locationCityStoreList.length > 0) {
 		console.log(locationCityStoreList)
 
-		for (let i in locationCityStoreList) {
+		for (var  i in locationCityStoreList) {
 			var _area = String(locationCityStoreList[i].area)
 			if (areaName.length >= _area.length) { //判断哪个字符多
 				if (areaName.indexOf(_area) >= 0) {
