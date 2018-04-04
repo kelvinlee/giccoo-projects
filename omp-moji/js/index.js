@@ -1,8 +1,8 @@
 // const getLocaltionUrl = 'http://h5-lbs.api.moji.com/location/location'
-const getLocaltionCityUrl = 'https://g.giccoo.com/sensitivity/api/local/' //lat/39.98246/log/117.079222
-const getWeatherInfoUrl = 'https://g.giccoo.com/sensitivity/api/city/p/'
+var getLocaltionCityUrl = 'https://g.giccoo.com/sensitivity/api/local/' //lat/39.98246/log/117.079222
+var getWeatherInfoUrl = 'https://g.giccoo.com/sensitivity/api/city/p/'
 
-const defultEshop = {
+var defultEshop = {
 	"storeAllName": "中美史克旗舰店",
 	"storeName": "中美史克旗舰店",
 	"eshop": "true",
