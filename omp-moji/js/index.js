@@ -58,8 +58,8 @@ let app = new Vue({
 		//init
 		console.log('init')
 		let point = {
-			'latitude': 31.860322, //石景山
-			'longitude': 117.268186,
+			'latitude': 23.136399, //石景山
+			'longitude': 113.371466,
 		}
 		var cityid = getQueryString('cityid')
 		console.log(cityid)
@@ -79,6 +79,17 @@ let app = new Vue({
 			console.log("加载问题json失败")
 		})
 
+		function testLocation(app,point) {
+
+			getLocaltion(app,point, function (res) {
+				console.log(res);
+				let data = res.result;
+				// app.area = String(data.detail.split(',')[1])
+				//坐标换城市
+
+				getWeather(app,getWeatherInfoUrl + data.cityId)
+			})
+		}
 
 		//使用浏览器获取用户位置
 		function getUserPosition(app) {
@@ -100,7 +111,7 @@ let app = new Vue({
 					console.log('当前地址的经纬度：经度' + point.longitude + '，纬度' + point.latitude);
 
 					//坐标换城市
-					getLocaltion(point, function (res) {
+					getLocaltion(app,point, function (res) {
 						console.log(res);
 						let data = res.result;
 						// app.area = String(data.detail.split(',')[1])
@@ -137,60 +148,70 @@ let app = new Vue({
 				console.log(data)
 				//根据城市地区判断有无商店
 				let area = data.city.name
-				let city = data.city.pname
-				let cityInfo = {
-					area:area,
-					city:city
-				}
-				app.area = area
-				app.$http.get('./config/ka.json').then((res) => {
-					console.log(res)
-					let kaJson = res.data
-					let ka = getKaInfo(kaJson, city);
-					if (ka.length > 0) {
-						console.log(ka)
-						app.ifStore = true
-						app.storeName = ka[0].storeName
-						app.storeLogo = ka[0].logo
-						if (ka[0].url) {
-							//电商
-							app.ifEshop = true
-							app.buyUrl = ka[0].url
-						} else {
-							app.ifEshop = false
-						}
-					} else {
-						//没有匹配 // 默认中美联合电商
-						app.ifStore = false
-						app.ifEshop = true
-						app.buyUrl = defultEshop.url
-					}
+				let pname = data.city.pname
 
-					//拿到城市区域 就去请求商店列表
-					app.$http.get('./config/store.json').then((res) => {
-						let storeJson = res.data
-						let localStore = getStoreList(storeJson, cityInfo)
-						if (localStore) {
-							app.storeList = localStore
-							app.ifEshopText = true
-							//初始化滚动条
-							initBscroll();
-						} else {
-							app.ifLocalStore = false // 隐藏商店按钮
-							if(app.ifEshop){
-								app.ifEshopText = true
-							}else {
-								app.ifEshopText = false
+				app.area = area
+
+				app.$http.get('./config/cityData.json').then((res) => {
+					console.log(res)
+					let city = getCityInfo(res.data, area);
+					console.log(city)
+
+					let cityInfo = {
+						area:area,
+						city:city
+					}
+					app.$http.get('./config/ka.json').then((res) => {
+						console.log(res)
+						let kaJson = res.data
+						let ka = getKaInfo(kaJson, city);
+						// console.log(city,ka)
+						if (ka.length > 0) {
+							console.log(ka)
+							app.ifStore = true
+							app.storeName = ka[0].storeName
+							app.storeLogo = ka[0].logo
+							if (ka[0].url) {
+								//电商
+								app.ifEshop = true
+								app.buyUrl = ka[0].url
+							} else {
+								app.ifEshop = false
 							}
+						} else {
+							//没有匹配 // 默认中美联合电商
+							app.ifStore = false
+							app.ifEshop = true
+							app.buyUrl = defultEshop.url
 						}
+
+						//拿到城市区域 就去请求商店列表
+						app.$http.get('./config/store.json').then((res) => {
+							let storeJson = res.data
+							let localStore = getStoreList(storeJson, cityInfo)
+							if (localStore) {
+								app.storeList = localStore
+								app.ifEshopText = true
+								//初始化滚动条
+								initBscroll();
+							} else {
+								app.ifLocalStore = false // 隐藏商店按钮
+								if(app.ifEshop){
+									app.ifEshopText = true
+								}else {
+									app.ifEshopText = false
+								}
+							}
+						}, (res) => {
+							//error
+							console.log("获取Store json失败", res)
+						})
 					}, (res) => {
 						//error
 						console.log("获取Store json失败", res)
 					})
-				}, (res) => {
-					//error
-					console.log("获取Store json失败", res)
 				})
+
 				app.weather = data.condition.condition
 				app.wind = data.condition.windDir
 				app.windLevel = data.condition.windLevel
@@ -215,12 +236,11 @@ let app = new Vue({
 				}
 			})
 
-
-
 		}
 
+
 		//获取城市列表
-		function getLocaltion(point, complete) {
+		function getLocaltion(app,point, complete) {
 			app.$http.get(getLocaltionCityUrl + 'lat/' + point.latitude + '/log/' + point.longitude).then((res) => {
 				console.log(res);
 				if (res.status == 200) {
@@ -249,7 +269,6 @@ let app = new Vue({
 function getKaInfo(kaJson, city) {
 	console.log(kaJson, city)
 	var kaList = [];
-
 	for (var i in kaJson) {
 		if (city.indexOf(kaJson[i].city) >= 0) {
 			//有匹配
@@ -261,6 +280,34 @@ function getKaInfo(kaJson, city) {
 	}
 	return kaList;
 
+}//获取城市信息
+function getCityInfo(cityJson, area) {
+	// var kaList = [];
+	console.log(cityJson,area)
+	for (var i in cityJson) {
+		var obj = cityJson[i]
+		// console.log(obj)
+		for(var j in obj.sub){
+			// console.log(obj.sub)
+			if(obj.sub[j].sub){
+				for(var v in obj.sub[j].sub){
+					// console.log(obj.sub)
+					if (area.indexOf(obj.sub[j].sub[v].name) >= 0) {
+						return obj.sub[j].name
+					} else {
+					}
+				}
+			}else {
+				if (area.indexOf(obj.sub[j].name) >= 0) {
+					console.log("addd")
+					return obj.name
+				} else {
+					//无匹配
+				}
+			}
+
+		}
+	}
 }
 
 //空气质量判断
@@ -296,8 +343,8 @@ function initBscroll() {
 //获取商店列表
 function getStoreList(storeJson, cityInfo) {
 	// let cityId = data.cityId
-	let areaName = cityInfo.area
-	let city = cityInfo.city
+	let areaName = String(cityInfo.area)
+	let city = String(cityInfo.city)
 	console.log(areaName)
 	console.log(city)
 
@@ -305,7 +352,7 @@ function getStoreList(storeJson, cityInfo) {
 	let locationAreaStoreList = []
 	for (let i in storeJson) {
 		if (storeJson[i].city) {
-			console.log(storeJson[i].city)
+			// console.log(storeJson[i].city)
 			if (city.indexOf(storeJson[i].city) >= 0) {
 				//如果 有城市
 				locationCityStoreList.push(storeJson[i])
