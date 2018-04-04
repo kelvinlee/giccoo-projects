@@ -155,7 +155,7 @@ var  app = new Vue({
 
 				app.$http.get('./config/cityData.json').then(function(res) {
 					console.log(res)
-					var  city = getCityInfo(res.data, area);
+					var  city = getCityInfo(res.data, area, pname);
 
 					setTimeout(function(){
 						console.log(city)
@@ -287,50 +287,52 @@ function getKaInfo(kaJson, city) {
 	return kaList;
 
 }//获取城市信息
-function getCityInfo(cityJson, area) {
+function getCityInfo(cityJson, area, pname) {
 	// var kaList = [];
 	console.log(cityJson,area)
 	for (var i in cityJson) {
 		var obj = cityJson[i]
-		if (area.indexOf(obj.name) >= 0) {
-			return obj.name
-		} else {
-			// console.log(obj)
-			for(var j in obj.sub){
-				// console.log(obj.sub[i])
-				if(obj.sub[j].sub){
-					// console.log("sub")
-					for(var v in obj.sub[j].sub){
-						// console.log(obj.sub[j].sub[v])
-						var _str = String(obj.sub[j].sub[v].name).replace(/县/,'')
-						var _str2 = _str.replace(/区/,'')
-						console.log(_str2)
 
-						if (area.indexOf(_str2) >= 0) {
-							// console.log("有匹配")
-							return obj.sub[j].name
-						} else {
-							//无匹配  如果匹配不到区 就匹配城市
-							if (area.indexOf(obj.sub[j].name) >= 0) {
+		if(pname.indexOf(obj.name) >= 0){ //  省
+			if (area.indexOf(obj.name) >= 0) {
+				return obj.name
+			} else {
+				// console.log(obj)
+				for(var j in obj.sub){
+					// console.log(obj.sub[i])
+					if(obj.sub[j].sub){
+						// console.log("sub")
+						for(var v in obj.sub[j].sub){
+							// console.log(obj.sub[j].sub[v])
+							var _str = String(obj.sub[j].sub[v].name).replace(/县/,'')
+							var _str2 = _str.replace(/区/,'')
+
+							if (area.indexOf(_str2) >= 0) {
 								// console.log("有匹配")
 								return obj.sub[j].name
+							} else {
+								//无匹配  如果匹配不到区 就匹配城市
+								if (area.indexOf(obj.sub[j].name) >= 0) {
+									// console.log("有匹配")
+									return obj.sub[j].name
+								}
 							}
 						}
-					}
-				}else {
-					// console.log(obj.sub)
-					//一级城市 直辖市列表
-					for(var v in obj.sub[j]){
-						var _str = String(obj.sub[j].name).replace(/县/,'')
-						var _str2 = _str.replace(/区/,'')
-						console.log(_str2)
-						if (area.indexOf(_str2) >= 0) {
-							return obj.name
+					}else {
+						// console.log(obj.sub)
+						//一级城市 直辖市列表
+						for(var v in obj.sub[j]){
+							var _str = String(obj.sub[j][v].name).replace(/县/,'')
+							var _str2 = _str.replace(/区/,'')
+							console.log(_str2)
+							if (area.indexOf(_str2) >= 0) {
+								return obj.name
+							}
 						}
+
 					}
 
 				}
-
 			}
 		}
 
