@@ -59,17 +59,17 @@ let app = new Vue({
 		//init
 		console.log('init')
 		let point = {
-			'latitude': 23.136399, //石景山
-			'longitude': 113.371466,
+			'latitude': 29.866534, //石景山
+			'longitude': 121.582004,
 		}
 		var cityid = getQueryString('cityid')
 		console.log(cityid)
-		if(cityid){
+		/*if(cityid){
 			getWeather(this,getWeatherInfoUrl + cityid +'/id/translate') //如果有cityid 直接不定位 拿天气数据
 		}else {
 			getUserPosition(this);//获取用户位置
-		}
-		// testLocation(this, point);//测试位置
+		}*/
+		testLocation(this, point);//测试位置
 
 		//加载本地数据
 		this.$http.get('./config/question.json').then((res) => {
@@ -189,6 +189,7 @@ let app = new Vue({
 						app.$http.get('./config/store.json').then((res) => {
 							let storeJson = res.data
 							let localStore = getStoreList(storeJson, cityInfo)
+							console.log(localStore)
 							if (localStore) {
 								app.storeList = localStore
 								app.ifEshopText = true
@@ -367,14 +368,17 @@ function getStoreList(storeJson, cityInfo) {
 
 	//匹配区域
 	if (locationCityStoreList.length > 0) {
+		console.log(locationCityStoreList)
+
 		for (let i in locationCityStoreList) {
-			if (areaName.length >= locationCityStoreList[i].area.length) { //判断哪个字符多
-				if (areaName.indexOf(locationCityStoreList[i].area) >= 0) {
+			var _area = String(locationCityStoreList[i].area)
+			if (areaName.length >= _area.length) { //判断哪个字符多
+				if (areaName.indexOf(_area) >= 0) {
 					//如果 区域
 					locationAreaStoreList.push(locationCityStoreList[i])
 				}
 			} else {
-				if (locationCityStoreList[i].area.indexOf(areaName) >= 0) {
+				if (_area.indexOf(areaName) >= 0) {
 					//如果 区域
 					locationAreaStoreList.push(locationCityStoreList[i])
 				}
