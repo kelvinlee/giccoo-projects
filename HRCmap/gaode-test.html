@@ -206,7 +206,7 @@
           var line = 0;
           for (var i=0;i<cityData[province].sub.length;i++) {
             var item = cityData[province].sub[i];
-            item.name = item.name.replace("县","").replace("区","").replace("市","");
+            item.name = item.name.replace("县","").replace("地区","").replace("区","").replace("市","");
             if (feature.properties.name == item.name || feature.properties.name.indexOf(item.name) > -1) {
               console.log("true",item.id,cityid);
               colorIndex = levels[item.id]?levels[item.id]-1:2;
