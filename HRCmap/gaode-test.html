@@ -46,9 +46,10 @@
     //创建地图 whitesmoke b45e7e39246bc931b7c8da3d5ac64d12
     var map = new AMap.Map('container', {
       zoom: 4,
-      mapStyle: 'amap://styles/whitesmoke'
+      mapStyle: "amap://styles/whitesmoke"
+      // mapStyle: "amap://styles/b45e7e39246bc931b7c8da3d5ac64d12"
     });
-    map.setFeatures([]);
+    map.setFeatures(['bg',"road"]);
     //just some colors
     var colors = [
       "#c2cd23", "#c2cd23", "#ffe512", "#f78f1e", "#f05133"
