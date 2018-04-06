@@ -6290,6 +6290,14 @@
 		"oAP": "\/omp-moji\/components\/modal.vue",
 		"oF": 0
 		},
+	"\/omp-moji\/config\/cityData.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/omp-moji\/config\/cityData-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/omp-moji\/config\/ka.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -6690,6 +6698,15 @@
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/omp-moji\/js\/bscroll.min-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/omp-moji\/js\/index-build.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/omp-moji\/js\/index-build-build.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 1
@@ -13739,6 +13756,364 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 1
+		},
+	"\/zhihu-huarun\/coffee\/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/js\/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/zhihu-huarun\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/zhihu-huarun\/css",
+		"oF": 0
+		},
+	"\/zhihu-huarun\/img\/bg-repeat.jpg": {
+		"ft": 16384,
+		"iS": 4376,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/bg-repeat.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/close.png": {
+		"ft": 32768,
+		"iS": 2126,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/err-1.png": {
+		"ft": 32768,
+		"iS": 74707,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/err-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/err-2.png": {
+		"ft": 32768,
+		"iS": 74079,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/err-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/err-3.png": {
+		"ft": 32768,
+		"iS": 52454,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/err-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/homepage-bg.jpg": {
+		"ft": 16384,
+		"iS": 213009,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/homepage-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/homepage-text.png": {
+		"ft": 32768,
+		"iS": 10536,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/homepage-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/homepage-title.png": {
+		"ft": 32768,
+		"iS": 17680,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/homepage-title.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/lastpage-bg.jpg": {
+		"ft": 16384,
+		"iS": 337986,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/lastpage-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/learnmore-1.png": {
+		"ft": 32768,
+		"iS": 10316,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/learnmore-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/learnmore-2.png": {
+		"ft": 32768,
+		"iS": 10587,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/learnmore-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/learnmore-3.png": {
+		"ft": 32768,
+		"iS": 10132,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/learnmore-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/learnmore-bg.png": {
+		"ft": 32768,
+		"iS": 34366,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/learnmore-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/move-left.png": {
+		"ft": 32768,
+		"iS": 4220,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/move-left.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/red.png": {
+		"ft": 32768,
+		"iS": 6037,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/red.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/room-1-bg.jpg": {
+		"ft": 16384,
+		"iS": 259825,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/room-1-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/room-1-learnmore.png": {
+		"ft": 32768,
+		"iS": 271783,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/room-1-learnmore.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/room-1-pop.png": {
+		"ft": 32768,
+		"iS": 263328,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/room-1-pop.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/room-1-stun.png": {
+		"ft": 32768,
+		"iS": 5501,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/room-1-stun.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/room-1-text.png": {
+		"ft": 32768,
+		"iS": 12788,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/room-1-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/room-2-bg.jpg": {
+		"ft": 16384,
+		"iS": 235362,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/room-2-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/room-2-learnmore.png": {
+		"ft": 32768,
+		"iS": 289874,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/room-2-learnmore.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/room-2-pop.png": {
+		"ft": 32768,
+		"iS": 247591,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/room-2-pop.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/room-2-text.png": {
+		"ft": 32768,
+		"iS": 14182,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/room-2-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/room-3-bg.jpg": {
+		"ft": 16384,
+		"iS": 235868,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/room-3-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/room-3-learnmore.png": {
+		"ft": 32768,
+		"iS": 274609,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/room-3-learnmore.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/room-3-pop.png": {
+		"ft": 32768,
+		"iS": 235144,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/room-3-pop.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/img\/room-3-text.png": {
+		"ft": 32768,
+		"iS": 11642,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/img\/room-3-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-huarun\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/zhihu-huarun\/index.html",
+		"oF": 0
+		},
+	"\/zhihu-huarun\/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/zhihu-huarun\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/js\/main-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/zhihu-huarun\/sass\/base.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/zhihu-huarun\/css\/base.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		},
 	"\/zhihunews\/css": {
 		"ft": 65536,
