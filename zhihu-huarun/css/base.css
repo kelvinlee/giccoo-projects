@@ -1235,13 +1235,6 @@ body {
 
 .err-2 {
   position: relative; }
-  .err-2 .body {
-    -webkit-animation: jumpErr 2s ease;
-            animation: jumpErr 2s ease;
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite; }
   .err-2 .red {
     width: 20%;
     padding-top: 20%;
