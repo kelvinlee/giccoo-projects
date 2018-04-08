@@ -4,52 +4,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>吾有心语，享，往远方</title>
+    <title>24小时健康享新家</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
-    <div id="main" :class="{rotate90: rotate == 90}" :style="{width: w+'px',height: h+'px'}" class="main">
+    <div id="main" v-show="mount" style="display: none" :class="{rotate90: rotate == 90}" :style="{width: w+'px',height: h+'px'}" class="main">
+      <transition name="page-fade">
+        <div v-show="poping" class="pop-box">
+          <div class="pop-content">
+            <div @click="poping = false" class="close"><img :src="'./img/close.png'"></div><img :src="popImage"><a v-show="popmore" :href="learnmorelink" class="more"></a>
+          </div>
+        </div>
+      </transition>
       <transition name="page-animation">
         <div id="page-home" v-show="roomIndex == 0" :class="{left: roomIndex &gt;= 0}" class="page page-home">
-          <div class="bg"><img src="./img/homepage-bg.jpg">
-            <div class="err-1"><img src="./img/err-1.png"></div>
-            <div class="err-2"><img src="./img/err-2.png">
+          <div class="bg"><img :src="'./img/homepage-bg.jpg'">
+            <div class="err-1"><img :src="'./img/err-1.png'"></div>
+            <div class="err-2"><img :src="'./img/err-2.png'">
               <div class="red red-1"></div>
               <div class="red red-2"></div>
               <div class="red red-3"></div>
               <div class="red red-4"></div>
             </div>
-            <div class="err-3"><img src="./img/err-3.png"></div>
+            <div class="err-3"><img :src="'./img/err-3.png'"></div>
           </div>
-          <div class="title"><img src="./img/homepage-title.png"></div>
-          <div class="text"><img src="./img/homepage-text.png"></div>
+          <div class="title"><img :src="'./img/homepage-title.png'"></div>
+          <div class="text"><img :src="'./img/homepage-text.png'"></div>
         </div>
       </transition>
       <transition name="page-animation">
         <div id="room-1" v-show="roomIndex == 1" :class="{now: roomIndex == 1,right: roomIndex &lt; 1,left: roomIndex &gt; 1}" class="page page-room">
-          <div class="bg"><img src="./img/room-1-bg.jpg">
-            <div class="stun zoomIn animated duration-4 delay-6"><img src="./img/room-1-stun.png"></div>
-            <div class="message-pop zoomInUp animated duration-12 delay-8"><img src="./img/room-1-text.png"></div>
-            <div class="err-1"><img src="./img/err-1.png"></div>
+          <div class="bg"><img :src="'./img/room-1-bg.jpg'">
+            <div class="stun zoomIn animated duration-4 delay-4"><img :src="'./img/room-1-stun.png'"></div>
+            <div class="message-pop zoomInUp animated duration-12 delay-6"><img :src="'./img/room-1-text.png'"></div>
+            <div @click="openErr(1)" class="err-1"><img :src="'./img/err-1.png'"></div>
           </div>
-          <div class="learnmore-btn bounceIn animated duration-12 delay-18"><img src="./img/learnmore-1.png"></div>
+          <div @click="openPop(1)" class="learnmore-btn bounceIn animated duration-12 delay-16"><img :src="'./img/learnmore-1.png'"></div>
+          <div class="next"><img :src="'./img/move-left.png'"></div>
         </div>
       </transition>
       <transition name="page-animation">
         <div id="room-2" v-show="roomIndex == 2" :class="{now: roomIndex == 2,right: roomIndex &lt; 2,left: roomIndex &gt; 2}" class="page page-room">
-          <div class="bg"><img src="./img/room-2-bg.jpg"></div>
+          <div class="bg"><img :src="'./img/room-2-bg.jpg'">
+            <div class="message-pop zoomInUp animated duration-12 delay-4"><img :src="'./img/room-2-text.png'"></div>
+            <div @click="openErr(2)" class="err-2"><img :src="'./img/err-2.png'">
+              <div class="red red-1"></div>
+              <div class="red red-2"></div>
+              <div class="red red-3"></div>
+              <div class="red red-4"></div>
+            </div>
+          </div>
+          <div @click="openPop(2)" class="learnmore-btn bounceIn animated duration-12 delay-14"><img :src="'./img/learnmore-2.png'"></div>
+          <div class="next"><img :src="'./img/move-left.png'"></div>
         </div>
       </transition>
       <transition name="page-animation">
         <div id="room-3" v-show="roomIndex == 3" :class="{now: roomIndex == 3,right: roomIndex &lt; 3,left: roomIndex &gt; 3}" class="page page-room">
-          <div class="bg"><img src="./img/room-3-bg.jpg"></div>
+          <div class="bg"><img :src="'./img/room-3-bg.jpg'">
+            <div class="message-pop zoomInUp animated duration-12 delay-4"><img :src="'./img/room-3-text.png'"></div>
+            <div @click="openErr(3)" class="err-3">
+              <div class="sc"><img :src="'./img/err-3.png'"></div>
+            </div>
+          </div>
+          <div @click="openPop(3)" class="learnmore-btn bounceIn animated duration-12 delay-14"><img :src="'./img/learnmore-3.png'"></div>
+          <div class="next"><img :src="'./img/move-left.png'"></div>
         </div>
       </transition>
       <transition name="page-animation">
         <div v-show="roomIndex == 4" :class="{now: roomIndex == 4,right: roomIndex &lt; 4,left: roomIndex &gt; 4}" class="page page-last">
-          <div class="bg"><img src="./img/lastpage-bg.jpg"></div>
+          <div class="bg"><img :src="'./img/lastpage-bg.jpg'"></div>
         </div>
       </transition>
     </div>

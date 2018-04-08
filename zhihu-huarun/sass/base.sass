@@ -35,7 +35,7 @@ $pageMainBGColor: #ffffff;
 		opacity: 1
 		+transform(scale(0,0))
 	40%
-		+transform(scale(2,2))
+		+transform(scale(3,3))
 		opacity: 0
 	100%
 		opacity: 0
@@ -256,11 +256,18 @@ body
 		+iw(313,1500,100%)
 		+bl(18%,25%)
 .page-room
+	font-size: 0
+	z-index: 1
 	.learnmore-btn
 		+iw(687,1500,100%)
 		+posa
 		+tr(5%,10%)
 		+b("../img/learnmore-bg.png",no-repeat,center,center,cover)
+	.next
+		+iw(145,1500,100%)
+		+posa
+		+tr(60%,10%)
+		+transform(translate3d(0,-50%,0))
 
 #room-1
 	.err-1
@@ -275,4 +282,49 @@ body
 		+posa
 		+bl(55%,6%)
 		+iw(469,1500,100%)
+#room-2
+	.err-2
+		+posa
+		+bl(34%,47%)
+		+iw(220,1500,100%)
+		+transform(scale(-1,1))
+	.message-pop
+		+posa
+		+bl(57%,12%)
+		+iw(469,1500,100%)
+#room-3
+	.err-3
+		+posa
+		+bl(30%,49%)
+		+iw(250,1500,100%)
+		.sc
+			+transform(scale(-1,1))
+	.message-pop
+		+posa
+		+bl(53%,18%)
+		+iw(365,1500,100%)
 
+
+.pop-box
+	+b(none)
+	+bc(rgba(0,0,0,0.75))
+	z-index: 9998
+	+posa
+	+tl
+	+w
+	+h
+	+overhide
+	+transform(translate3d(0,0,0))
+	.pop-content
+		+posr
+		+w(70%)
+		margin-left: 15%
+		.more
+			+posa
+			+br
+			+wh(50%,40%)
+
+	.close
+		+posa
+		+tr(10%,9%)
+		+w(7%)

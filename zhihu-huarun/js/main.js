@@ -1,6 +1,6 @@
 "use strict";
 
-var $_GET, _CDN, _imgurl, getRandom, global, init, load, loadWechatConfig, main, pre, stopWebViewScroll;
+var $_GET, _CDN, _imgurl, _learnmorelink, getRandom, global, init, load, loadWechatConfig, main, pre, stopWebViewScroll;
 
 _CDN = "";
 
@@ -14,35 +14,32 @@ pre = {};
 
 load = {};
 
+_learnmorelink = ["https://www.zhihu.com/question/268770483", "https://www.zhihu.com/question/268770615", "https://www.zhihu.com/question/268770266"];
+
 getRandom = function getRandom(length) {
   return parseInt(Math.random() * (length + 1) - 1);
 };
 
 window.onload = function () {
-  var sys;
   // runAnimate()
-  if (window.navigator.userAgent.indexOf("zhihu") > -1) {
-    sys = "zhihu";
-  } else {
-    loadWechatConfig();
-    wx.ready(function () {
-      var shareContent;
-      shareContent = {
-        title: "吾有心语，享，往远方",
-        desc: "心之所向，即为远方。",
-        link: "https://peugeot.music.163.com/df-5008/",
-        imgUrl: "https://peugeot.music.163.com/df-5008/img/ico.jpg",
-        success: function success() {},
-        // alert "success"
-        cancel: function cancel() {}
-      };
-      // alert "cancel"
-      wx.onMenuShareTimeline(shareContent);
-      wx.onMenuShareAppMessage(shareContent);
-      wx.onMenuShareQQ(shareContent);
-      return wx.onMenuShareWeibo(shareContent);
-    });
-  }
+  loadWechatConfig();
+  wx.ready(function () {
+    var shareContent;
+    shareContent = {
+      title: "24小时健康享新家",
+      desc: "华润漆A+系列，让你轻松24小时入住新家！",
+      link: "http://m.giccoo.com/zhihu-huarun/",
+      imgUrl: "http://m.giccoo.com/zhihu-huarun/img/ico.jpg",
+      success: function success() {},
+      // alert "success"
+      cancel: function cancel() {}
+    };
+    // alert "cancel"
+    wx.onMenuShareTimeline(shareContent);
+    wx.onMenuShareAppMessage(shareContent);
+    wx.onMenuShareQQ(shareContent);
+    return wx.onMenuShareWeibo(shareContent);
+  });
   return init();
 };
 
@@ -67,6 +64,10 @@ init = function init() {
       w: TrueH,
       h: TrueW,
       maxRoom: 4,
+      poping: false,
+      popImage: "",
+      learnmorelink: "",
+      popmore: false,
       default: {
         x: 0,
         animated: false
@@ -85,6 +86,19 @@ init = function init() {
       }
     },
     methods: {
+      openErr: function openErr(index) {
+        console.log(index);
+        this.poping = true;
+        this.popmore = false;
+        return this.popImage = "./img/room-" + index + "-pop.png";
+      },
+      openPop: function openPop(index) {
+        console.log(index);
+        this.poping = true;
+        this.popmore = true;
+        this.popImage = "./img/room-" + index + "-learnmore.png";
+        return this.learnmorelink = _learnmorelink[index - 1];
+      },
       changeRoom: function changeRoom() {
         return console.log(this.roomIndex);
       },
@@ -109,7 +123,8 @@ init = function init() {
       },
       move: function move(evt) {
         var pageX, touch;
-        if (this.default.animated) {
+        evt.preventDefault();
+        if (this.default.animated || this.poping) {
           return false;
         }
         touch = evt.touches[0];
@@ -140,14 +155,18 @@ init = function init() {
     if (mql.matches) {
       main.rotate = 90;
       main.w = TrueH;
-      main.h = TrueW;
+      return main.h = TrueW;
     } else {
       main.rotate = 0;
-      main.w = TrueW;
-      main.h = TrueH;
+      return setTimeout(function () {
+        TrueH = document.documentElement.clientHeight;
+        TrueW = document.documentElement.clientWidth;
+        main.w = TrueW;
+        return main.h = TrueH;
+      }, 1000);
     }
-    return console.log(main.rotate);
   };
+  // alert main.rotate
   mql = window.matchMedia('(orientation: portrait)');
   mql.addListener(handleOrientationChange);
   return handleOrientationChange();

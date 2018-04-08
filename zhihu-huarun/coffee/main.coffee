@@ -4,29 +4,30 @@ global = {}
 main = {}
 pre = {}
 load = {}
-
+_learnmorelink = [
+	"https://www.zhihu.com/question/268770483"
+	"https://www.zhihu.com/question/268770615"
+	"https://www.zhihu.com/question/268770266"
+]
 getRandom = (length)->
 	return parseInt(Math.random()*(length+1)-1)
 window.onload = ->
 	# runAnimate()
-	if window.navigator.userAgent.indexOf("zhihu") > -1
-		sys = "zhihu"
-	else
-		loadWechatConfig()
-		wx.ready ->
-			shareContent =
-				title: "吾有心语，享，往远方"
-				desc: "心之所向，即为远方。"
-				link: "https://peugeot.music.163.com/df-5008/"
-				imgUrl: "https://peugeot.music.163.com/df-5008/img/ico.jpg"
-				success: ->
-					# alert "success"
-				cancel: ->
-					# alert "cancel"
-			wx.onMenuShareTimeline shareContent
-			wx.onMenuShareAppMessage shareContent
-			wx.onMenuShareQQ shareContent
-			wx.onMenuShareWeibo shareContent
+	loadWechatConfig()
+	wx.ready ->
+		shareContent =
+			title: "24小时健康享新家"
+			desc: "华润漆A+系列，让你轻松24小时入住新家！"
+			link: "http://m.giccoo.com/zhihu-huarun/"
+			imgUrl: "http://m.giccoo.com/zhihu-huarun/img/ico.jpg"
+			success: ->
+				# alert "success"
+			cancel: ->
+				# alert "cancel"
+		wx.onMenuShareTimeline shareContent
+		wx.onMenuShareAppMessage shareContent
+		wx.onMenuShareQQ shareContent
+		wx.onMenuShareWeibo shareContent
 
 
 	init()
@@ -51,6 +52,10 @@ init = ->
 			w: TrueH
 			h: TrueW
 			maxRoom: 4
+			poping: false
+			popImage: ""
+			learnmorelink: ""
+			popmore: false
 			default:
 				x: 0
 				animated: false
@@ -60,6 +65,17 @@ init = ->
 			XY: ->
 				return if @.rotate is 90 then "pageY" else "pageX"
 		methods:
+			openErr: (index)->
+				console.log index
+				@.poping = true
+				@.popmore = false
+				@.popImage = "./img/room-#{index}-pop.png"
+			openPop: (index)->
+				console.log index
+				@.poping = true
+				@.popmore = true
+				@.popImage = "./img/room-#{index}-learnmore.png"
+				@.learnmorelink = _learnmorelink[index-1]
 			changeRoom: ->
 				console.log @roomIndex
 			moveNext: ->
@@ -77,7 +93,8 @@ init = ->
 				touch = evt.touches[0]
 				@.default.x = touch[@XY]
 			move: (evt)->
-				return false if @.default.animated
+				evt.preventDefault()
+				return false if @.default.animated or @.poping
 				touch = evt.touches[0]
 				pageX = touch[@XY]
 				if (pageX - @.default.x) > 50
@@ -103,9 +120,13 @@ init = ->
 			main.h = TrueW
 		else
 			main.rotate = 0
-			main.w = TrueW
-			main.h = TrueH
-		console.log main.rotate
+			setTimeout ->
+				TrueH = document.documentElement.clientHeight
+				TrueW = document.documentElement.clientWidth
+				main.w = TrueW
+				main.h = TrueH
+			,1000
+		# alert main.rotate
 	mql = window.matchMedia('(orientation: portrait)')
 	mql.addListener(handleOrientationChange)
 	handleOrientationChange()

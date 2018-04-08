@@ -6702,15 +6702,7 @@
 		"sC": 0,
 		"tS": 1
 		},
-	"\/omp-moji\/js\/index-build.js": {
-		"ft": 64,
 		"mi": 0,
-		"oA": 0,
-		"oAP": "\/omp-moji\/js\/index-build-build.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 1
-		},
 	"\/omp-moji\/js\/index.js": {
 		"ft": 64,
 		"ma": 0,
@@ -13790,8 +13782,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-huarun\/img\/close.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -13812,8 +13804,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-huarun\/img\/err-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -13867,7 +13859,7 @@
 		"oAP": "\/zhihu-huarun\/img\/lastpage-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/zhihu-huarun\/img\/learnmore-1.png": {
@@ -13876,8 +13868,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-huarun\/img\/learnmore-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -13931,8 +13923,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-huarun\/img\/red.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -13963,8 +13955,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-huarun\/img\/room-1-pop.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -13974,8 +13966,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-huarun\/img\/room-1-stun.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14006,8 +13998,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-huarun\/img\/room-2-learnmore.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14071,8 +14063,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-huarun\/img\/room-3-text.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},

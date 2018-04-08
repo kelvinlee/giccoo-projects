@@ -847,8 +847,8 @@ ul {
     -webkit-transform: scale(0, 0);
             transform: scale(0, 0); }
   40% {
-    -webkit-transform: scale(2, 2);
-            transform: scale(2, 2);
+    -webkit-transform: scale(3, 3);
+            transform: scale(3, 3);
     opacity: 0; }
   100% {
     opacity: 0; } }
@@ -859,8 +859,8 @@ ul {
     -webkit-transform: scale(0, 0);
             transform: scale(0, 0); }
   40% {
-    -webkit-transform: scale(2, 2);
-            transform: scale(2, 2);
+    -webkit-transform: scale(3, 3);
+            transform: scale(3, 3);
     opacity: 0; }
   100% {
     opacity: 0; } }
@@ -1268,17 +1268,30 @@ body {
   .iphone4 .page-home .err-3 {
     width: 20.8666666667%; }
 
-.page-room .learnmore-btn {
-  width: 45.8%;
-  margin: 0 auto;
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  background: url("../img/learnmore-bg.png") no-repeat center center;
-  background-size: cover;
-  background-color: transparent; }
-  .iphone4 .page-room .learnmore-btn {
-    width: 45.8%; }
+.page-room {
+  font-size: 0;
+  z-index: 1; }
+  .page-room .learnmore-btn {
+    width: 45.8%;
+    margin: 0 auto;
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    background: url("../img/learnmore-bg.png") no-repeat center center;
+    background-size: cover;
+    background-color: transparent; }
+    .iphone4 .page-room .learnmore-btn {
+      width: 45.8%; }
+  .page-room .next {
+    width: 9.6666666667%;
+    margin: 0 auto;
+    position: absolute;
+    top: 60%;
+    right: 10%;
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0); }
+    .iphone4 .page-room .next {
+      width: 9.6666666667%; }
 
 #room-1 .err-1 {
   position: absolute;
@@ -1306,3 +1319,74 @@ body {
   margin: 0 auto; }
   .iphone4 #room-1 .message-pop {
     width: 31.2666666667%; }
+
+#room-2 .err-2 {
+  position: absolute;
+  bottom: 34%;
+  left: 47%;
+  width: 14.6666666667%;
+  margin: 0 auto;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1); }
+  .iphone4 #room-2 .err-2 {
+    width: 14.6666666667%; }
+
+#room-2 .message-pop {
+  position: absolute;
+  bottom: 57%;
+  left: 12%;
+  width: 31.2666666667%;
+  margin: 0 auto; }
+  .iphone4 #room-2 .message-pop {
+    width: 31.2666666667%; }
+
+#room-3 .err-3 {
+  position: absolute;
+  bottom: 30%;
+  left: 49%;
+  width: 16.6666666667%;
+  margin: 0 auto; }
+  .iphone4 #room-3 .err-3 {
+    width: 16.6666666667%; }
+  #room-3 .err-3 .sc {
+    -webkit-transform: scale(-1, 1);
+            transform: scale(-1, 1); }
+
+#room-3 .message-pop {
+  position: absolute;
+  bottom: 53%;
+  left: 18%;
+  width: 24.3333333333%;
+  margin: 0 auto; }
+  .iphone4 #room-3 .message-pop {
+    width: 24.3333333333%; }
+
+.pop-box {
+  background: url(none) no-repeat top left;
+  background-size: initial;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 9998;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0); }
+  .pop-box .pop-content {
+    position: relative;
+    width: 70%;
+    margin-left: 15%; }
+    .pop-box .pop-content .more {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      width: 50%;
+      height: 40%; }
+  .pop-box .close {
+    position: absolute;
+    top: 10%;
+    right: 9%;
+    width: 7%; }
