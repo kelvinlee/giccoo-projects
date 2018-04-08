@@ -21,10 +21,10 @@ $pageMainBGColor: #ffffff;
 	100%
 		transform: rotate(360deg)
 +keyframes(fadeShow)
-	0%,65%,100%
+	0%,40%,80%,100%
 		opacity: 1
-	30%
-		opacity: 0.9
+	20%,60%
+		opacity: 0.7
 +keyframes(fly)
 	0%,100%
 		+transform(translate3d(0,0,0))
@@ -44,7 +44,22 @@ $pageMainBGColor: #ffffff;
 		opacity: 1
 	50%
 		opacity: 0.75
-
++keyframes(moveErr)
+	0%,100%
+		+transform(translate3d(0,0,0) scale(1,1))
+	50%
+		+transform(translate3d(-10px,0,0) scale(1,1))
+	51%
+		+transform(translate3d(-10px,0,0) scale(-1,1))
+	80%
+		+transform(translate3d(0,0,0) scale(-1,1))
+	81%
+		+transform(translate3d(0,0,0) scale(1,1))
++keyframes(jumpErr)
+	0%,15%,100%
+		+transform(translate3d(0,0,0) scale(1,1))
+	10%,11%
+		+transform(translate3d(0,-10px,0) scale(1.01,1.01))
 
 
 html,body
@@ -207,8 +222,12 @@ body
 		+transform(translate3d(0,50%,0))
 .err-1
 	+animation(fadeShow,3s,ease,infinite)
+	.body
+		+animation(moveErr,4s,ease,infinite)
 .err-2
 	+posr
+	.body
+		+animation(jumpErr,2s,ease,infinite)
 	.red
 		$size: 20%
 		+w($size)
@@ -263,6 +282,9 @@ body
 		+posa
 		+tr(5%,10%)
 		+b("../img/learnmore-bg.png",no-repeat,center,center,cover)
+		.body.on
+			+animation(tada,1s,ease)
+.page
 	.next
 		+iw(145,1500,100%)
 		+posa

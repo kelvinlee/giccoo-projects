@@ -68,6 +68,7 @@ init = function init() {
       popImage: "",
       learnmorelink: "",
       popmore: false,
+      timeAnimate: false,
       default: {
         x: 0,
         animated: false
@@ -143,10 +144,18 @@ init = function init() {
       }
     },
     mounted: function mounted($el, e) {
+      var _this = this;
+
       this.mount = true;
       this.$el.addEventListener('touchstart', this.start.bind(this));
       this.$el.addEventListener('touchmove', this.move.bind(this));
-      return this.$el.addEventListener('touchend', this.end.bind(this));
+      this.$el.addEventListener('touchend', this.end.bind(this));
+      return setInterval(function () {
+        _this.timeAnimate = true;
+        return setTimeout(function () {
+          return _this.timeAnimate = false;
+        }, 1000);
+      }, 3000);
     }
   });
   handleOrientationChange = function handleOrientationChange() {

@@ -21,17 +21,22 @@
       <transition name="page-animation">
         <div id="page-home" v-show="roomIndex == 0" :class="{left: roomIndex &gt;= 0}" class="page page-home">
           <div class="bg"><img :src="'./img/homepage-bg.jpg'">
-            <div class="err-1"><img :src="'./img/err-1.png'"></div>
-            <div class="err-2"><img :src="'./img/err-2.png'">
-              <div class="red red-1"></div>
-              <div class="red red-2"></div>
-              <div class="red red-3"></div>
-              <div class="red red-4"></div>
+            <div class="err-1">
+              <div class="body"><img :src="'./img/err-1.png'"></div>
+            </div>
+            <div class="err-2">
+              <div class="body"><img :src="'./img/err-2.png'">
+                <div class="red red-1"></div>
+                <div class="red red-2"></div>
+                <div class="red red-3"></div>
+                <div class="red red-4"></div>
+              </div>
             </div>
             <div class="err-3"><img :src="'./img/err-3.png'"></div>
           </div>
           <div class="title"><img :src="'./img/homepage-title.png'"></div>
           <div class="text"><img :src="'./img/homepage-text.png'"></div>
+          <div class="next"><img :src="'./img/move-left.png'"></div>
         </div>
       </transition>
       <transition name="page-animation">
@@ -39,9 +44,13 @@
           <div class="bg"><img :src="'./img/room-1-bg.jpg'">
             <div class="stun zoomIn animated duration-4 delay-4"><img :src="'./img/room-1-stun.png'"></div>
             <div class="message-pop zoomInUp animated duration-12 delay-6"><img :src="'./img/room-1-text.png'"></div>
-            <div @click="openErr(1)" class="err-1"><img :src="'./img/err-1.png'"></div>
+            <div @click="openErr(1)" class="err-1">
+              <div class="body"><img :src="'./img/err-1.png'"></div>
+            </div>
           </div>
-          <div @click="openPop(1)" class="learnmore-btn bounceIn animated duration-12 delay-16"><img :src="'./img/learnmore-1.png'"></div>
+          <div @click="openPop(1)" class="learnmore-btn bounceIn animated duration-12 delay-16">
+            <div :class="{on: timeAnimate}" class="body"><img :src="'./img/learnmore-1.png'"></div>
+          </div>
           <div class="next"><img :src="'./img/move-left.png'"></div>
         </div>
       </transition>
@@ -49,14 +58,18 @@
         <div id="room-2" v-show="roomIndex == 2" :class="{now: roomIndex == 2,right: roomIndex &lt; 2,left: roomIndex &gt; 2}" class="page page-room">
           <div class="bg"><img :src="'./img/room-2-bg.jpg'">
             <div class="message-pop zoomInUp animated duration-12 delay-4"><img :src="'./img/room-2-text.png'"></div>
-            <div @click="openErr(2)" class="err-2"><img :src="'./img/err-2.png'">
-              <div class="red red-1"></div>
-              <div class="red red-2"></div>
-              <div class="red red-3"></div>
-              <div class="red red-4"></div>
+            <div @click="openErr(2)" class="err-2">
+              <div class="body"><img :src="'./img/err-2.png'">
+                <div class="red red-1"></div>
+                <div class="red red-2"></div>
+                <div class="red red-3"></div>
+                <div class="red red-4"></div>
+              </div>
             </div>
           </div>
-          <div @click="openPop(2)" class="learnmore-btn bounceIn animated duration-12 delay-14"><img :src="'./img/learnmore-2.png'"></div>
+          <div @click="openPop(2)" class="learnmore-btn bounceIn animated duration-12 delay-14">
+            <div :class="{on: timeAnimate}" class="body"><img :src="'./img/learnmore-2.png'"></div>
+          </div>
           <div class="next"><img :src="'./img/move-left.png'"></div>
         </div>
       </transition>
@@ -68,7 +81,9 @@
               <div class="sc"><img :src="'./img/err-3.png'"></div>
             </div>
           </div>
-          <div @click="openPop(3)" class="learnmore-btn bounceIn animated duration-12 delay-14"><img :src="'./img/learnmore-3.png'"></div>
+          <div @click="openPop(3)" class="learnmore-btn bounceIn animated duration-12 delay-14">
+            <div :class="{on: timeAnimate}" class="body"><img :src="'./img/learnmore-3.png'"></div>
+          </div>
           <div class="next"><img :src="'./img/move-left.png'"></div>
         </div>
       </transition>

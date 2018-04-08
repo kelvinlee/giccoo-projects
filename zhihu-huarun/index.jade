@@ -38,19 +38,23 @@ block content
 				.bg
 					img(:src="'#{url}/img/homepage-bg.jpg'")
 					.err-1
-						img(:src="'#{url}/img/err-1.png'")
+						.body
+							img(:src="'#{url}/img/err-1.png'")
 					.err-2
-						img(:src="'#{url}/img/err-2.png'")
-						.red.red-1
-						.red.red-2
-						.red.red-3
-						.red.red-4
+						.body
+							img(:src="'#{url}/img/err-2.png'")
+							.red.red-1
+							.red.red-2
+							.red.red-3
+							.red.red-4
 					.err-3
 						img(:src="'#{url}/img/err-3.png'")
 				.title
 					img(:src="'#{url}/img/homepage-title.png'")
 				.text
 					img(:src="'#{url}/img/homepage-text.png'")
+				.next
+					img(:src="'#{url}/img/move-left.png'")
 				//- .content
 
 		transition(name="page-animation")
@@ -62,9 +66,11 @@ block content
 					.message-pop.zoomInUp.animated.duration-12.delay-6
 						img(:src="'#{url}/img/room-1-text.png'")
 					.err-1(@click="openErr(1)")
-						img(:src="'#{url}/img/err-1.png'")
+						.body
+							img(:src="'#{url}/img/err-1.png'")
 				.learnmore-btn.bounceIn.animated.duration-12.delay-16(@click="openPop(1)")
-					img(:src="'#{url}/img/learnmore-1.png'")
+					.body(:class="{on: timeAnimate}")
+						img(:src="'#{url}/img/learnmore-1.png'")
 				.next
 					img(:src="'#{url}/img/move-left.png'")
 
@@ -76,13 +82,15 @@ block content
 					.message-pop.zoomInUp.animated.duration-12.delay-4
 						img(:src="'#{url}/img/room-2-text.png'")
 					.err-2(@click="openErr(2)")
-						img(:src="'#{url}/img/err-2.png'")
-						.red.red-1
-						.red.red-2
-						.red.red-3
-						.red.red-4
+						.body
+							img(:src="'#{url}/img/err-2.png'")
+							.red.red-1
+							.red.red-2
+							.red.red-3
+							.red.red-4
 				.learnmore-btn.bounceIn.animated.duration-12.delay-14(@click="openPop(2)")
-					img(:src="'#{url}/img/learnmore-2.png'")
+					.body(:class="{on: timeAnimate}")
+						img(:src="'#{url}/img/learnmore-2.png'")
 				.next
 					img(:src="'#{url}/img/move-left.png'")
 		transition(name="page-animation")
@@ -95,7 +103,8 @@ block content
 						.sc
 							img(:src="'#{url}/img/err-3.png'")
 				.learnmore-btn.bounceIn.animated.duration-12.delay-14(@click="openPop(3)")
-					img(:src="'#{url}/img/learnmore-3.png'")
+					.body(:class="{on: timeAnimate}")
+						img(:src="'#{url}/img/learnmore-3.png'")
 				.next
 					img(:src="'#{url}/img/move-left.png'")
 		transition(name="page-animation")

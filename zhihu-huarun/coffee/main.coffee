@@ -28,8 +28,6 @@ window.onload = ->
 		wx.onMenuShareAppMessage shareContent
 		wx.onMenuShareQQ shareContent
 		wx.onMenuShareWeibo shareContent
-
-
 	init()
 
 init = ->
@@ -56,6 +54,7 @@ init = ->
 			popImage: ""
 			learnmorelink: ""
 			popmore: false
+			timeAnimate: false
 			default:
 				x: 0
 				animated: false
@@ -111,6 +110,13 @@ init = ->
 			@.$el.addEventListener 'touchstart', @.start.bind @
 			@.$el.addEventListener 'touchmove', @.move.bind @
 			@.$el.addEventListener 'touchend', @.end.bind @
+			setInterval =>
+				@.timeAnimate = true
+				setTimeout =>
+					@.timeAnimate = false
+				,1000
+			,3000
+
 	handleOrientationChange = ->
 		TrueH = document.documentElement.clientHeight
 		TrueW = document.documentElement.clientWidth
