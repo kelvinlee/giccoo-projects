@@ -46,9 +46,10 @@
     //创建地图 whitesmoke b45e7e39246bc931b7c8da3d5ac64d12
     var map = new AMap.Map('container', {
       zoom: 4,
-      mapStyle: 'amap://styles/whitesmoke'
+      mapStyle: "amap://styles/whitesmoke"
+      // mapStyle: "amap://styles/b45e7e39246bc931b7c8da3d5ac64d12"
     });
-    map.setFeatures([]);
+    map.setFeatures(['bg',"road"]);
     //just some colors
     var colors = [
       "#c2cd23", "#c2cd23", "#ffe512", "#f78f1e", "#f05133"
@@ -102,7 +103,7 @@
       }
     }
 
-    console.log(code, cityData[province].name);
+    // console.log(code, cityData[province].name);
 
     AMapUI.load(['ui/geo/DistrictExplorer', 'lib/$'], function(DistrictExplorer, $) {
       // 热力图
@@ -149,7 +150,7 @@
 
       //绘制区域面板的节点
       function renderAreaPanelNode(ele, props, color) {
-        console.log(props.adcode,props.name);
+        // console.log(props.adcode,props.name);
         
       }
 
@@ -158,7 +159,7 @@
 
         var props = areaNode.getProps();
 
-        console.log("",props.adcode,props.name);
+        // console.log("",props.adcode,props.name);
 
         var subFeatures = areaNode.getSubFeatures();
 
@@ -170,7 +171,7 @@
 
       //绘制某个区域的边界
       function renderAreaPolygons(areaNode) {
-        console.log(areaNode);
+        // console.log(areaNode);
         //更新地图视野
         map.setBounds(areaNode.getBounds(), null, null, true);
 
@@ -179,10 +180,10 @@
 
         //绘制子区域
         var subFeatures = areaNode.getSubFeatures();
-        console.log(subFeatures.length);
+        // console.log(subFeatures.length);
         // 循环对比 code/id
         districtExplorer.renderSubFeatures(areaNode, function(feature, index) {
-          console.log(feature,feature.properties.adcode,feature.properties.name);
+          // console.log(feature,feature.properties.adcode,feature.properties.name);
           // 边界点
           for (var i = feature.geometry.coordinates[0][0].length - 1; i >= 0; i--) {
             // console.log(feature.geometry.coordinates[0][0][i]);
@@ -205,9 +206,8 @@
           var line = 0;
           for (var i=0;i<cityData[province].sub.length;i++) {
             var item = cityData[province].sub[i];
-            item.name = item.name.replace("县","").replace("区","").replace("市","");
+            item.name = item.name.replace("县","").replace("地区","").replace("区","").replace("市","");
             if (feature.properties.name == item.name || feature.properties.name.indexOf(item.name) > -1) {
-              console.log("true",item.id,cityid);
               colorIndex = levels[item.id]?levels[item.id]-1:2;
               if (item.id == cityid) {
                 line = 2;
@@ -301,7 +301,7 @@
 
       //加载区域
       function loadAreaNode(adcode, callback) {
-        console.log(adcode);
+        // console.log(adcode);
         districtExplorer.loadAreaNode(adcode, function(error, areaNode) {
 
           if (error) {

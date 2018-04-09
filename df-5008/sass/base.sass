@@ -6,12 +6,11 @@ $cdn : "../"
 	$cdn : "//image.giccoo.com/projects/df-5008/"
 
 // animation, delay, duration
-@for $i from 1 through 50
+@for $i from 1 through 51
 	.delay-#{$i}
 		animation-delay: $i*100ms
 	.duration-#{$i}
 		animation-duration: $i*100ms
-
 $fontColor: #ffffff;
 $pageMainBGColor: #ffffff;
 
@@ -341,6 +340,12 @@ body
 			+posa
 			+bl
 			z-index: 9
+	.share-icon
+		+posa		
+		+br(2rem,2rem)
+		+w(1.5rem)
+		font-size: 0
+		z-index: 109
 	.text
 		+posa
 		+tr(20%,10%)

@@ -1,0 +1,134 @@
+extends ../libs/jade/layout-clean
+block title
+	| 24小时健康享新家
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	//- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+	link(rel="stylesheet",href="//image.giccoo.com/projects/libs/css/animate.min.css")
+	link(rel="stylesheet",href="css/base.css")
+	//- script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
+
+block content
+	//- url = "//image.giccoo.com/projects/zhihu-huarun"
+	-url = "."
+	
+	#main.main(v-show="mount",style="display: none",:class="{rotate90: rotate == 90}",:style="{width: w+'px',height: h+'px'}")
+		//- .loading(v-show="loading")
+		//- 	.load-icon
+		//- 		img(:src="'#{url}/img/load-icon.png'")
+		//- 	.text 正在生成<br/>你的心境卡
+		transition(name="page-fade")
+			.pop-box(v-show="poping")
+				.pop-content
+					.close(@click="poping = false")
+						img(:src="'#{url}/img/close.png'")
+					img(:src="popImage")
+					a.more(v-show="popmore",:href="learnmorelink")
+
+		transition(name="page-animation")
+			.page.page-home#page-home(v-show="roomIndex == 0",:class="{left: roomIndex >= 0}")
+				.bg
+					img(:src="'#{url}/img/homepage-bg.jpg'")
+					.err-1
+						.body
+							img(:src="'#{url}/img/err-1.png'")
+					.err-2
+						.body
+							img(:src="'#{url}/img/err-2.png'")
+							.red.red-1
+							.red.red-2
+							.red.red-3
+							.red.red-4
+					.err-3
+						img(:src="'#{url}/img/err-3.png'")
+				.title
+					img(:src="'#{url}/img/homepage-title.png'")
+				.text
+					img(:src="'#{url}/img/homepage-text.png'")
+				.next
+					img(:src="'#{url}/img/move-left.png'")
+				//- .content
+
+		transition(name="page-animation")
+			.page.page-room#room-1(v-show="roomIndex == 1",:class="{now: roomIndex == 1,right: roomIndex < 1,left: roomIndex > 1}")
+				.bg
+					img(:src="'#{url}/img/room-1-bg.jpg'")
+					.stun.zoomIn.animated.duration-4.delay-4
+						img(:src="'#{url}/img/room-1-stun.png'")
+					.message-pop.zoomInUp.animated.duration-12.delay-6
+						img(:src="'#{url}/img/room-1-text.png'")
+					.err-1(@click="openErr(1)")
+						.body
+							img(:src="'#{url}/img/err-1.png'")
+				.learnmore-btn.bounceIn.animated.duration-12.delay-16(@click="openPop(1)")
+					.body(:class="{on: timeAnimate}")
+						img(:src="'#{url}/img/learnmore-1.png'")
+				.next
+					img(:src="'#{url}/img/move-left.png'")
+
+
+		transition(name="page-animation")
+			.page.page-room#room-2(v-show="roomIndex == 2",:class="{now: roomIndex == 2,right: roomIndex < 2,left: roomIndex > 2}")
+				.bg
+					img(:src="'#{url}/img/room-2-bg.jpg'")
+					.message-pop.zoomInUp.animated.duration-12.delay-4
+						img(:src="'#{url}/img/room-2-text.png'")
+					.err-2(@click="openErr(2)")
+						.body
+							img(:src="'#{url}/img/err-2.png'")
+							.red.red-1
+							.red.red-2
+							.red.red-3
+							.red.red-4
+				.learnmore-btn.bounceIn.animated.duration-12.delay-14(@click="openPop(2)")
+					.body(:class="{on: timeAnimate}")
+						img(:src="'#{url}/img/learnmore-2.png'")
+				.next
+					img(:src="'#{url}/img/move-left.png'")
+		transition(name="page-animation")
+			.page.page-room#room-3(v-show="roomIndex == 3",:class="{now: roomIndex == 3,right: roomIndex < 3,left: roomIndex > 3}")
+				.bg
+					img(:src="'#{url}/img/room-3-bg.jpg'")
+					.message-pop.zoomInUp.animated.duration-12.delay-4
+						img(:src="'#{url}/img/room-3-text.png'")
+					.err-3(@click="openErr(3)")
+						.sc
+							img(:src="'#{url}/img/err-3.png'")
+				.learnmore-btn.bounceIn.animated.duration-12.delay-14(@click="openPop(3)")
+					.body(:class="{on: timeAnimate}")
+						img(:src="'#{url}/img/learnmore-3.png'")
+				.next
+					img(:src="'#{url}/img/move-left.png'")
+		transition(name="page-animation")
+			.page.page-last(v-show="roomIndex == 4",:class="{now: roomIndex == 4,right: roomIndex < 4,left: roomIndex > 4}")
+				.bg
+					img(:src="'#{url}/img/lastpage-bg.jpg'")
+		
+		//- transition(name="page-fade")
+		
+
+
+
+block js
+	- url = "/"
+	script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/exif.js")
+	script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+	//- script(src="/libs/js/min/jquery.min.js")
+	script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+	script(src="js/main.js?v=1")
+	
+
+
+
+	
