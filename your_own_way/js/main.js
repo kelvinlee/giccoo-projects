@@ -67,11 +67,14 @@ function handleTick(){
 //==================星空==================
 var starA=[]
 var skyMove={x:0,y:0}//[0,0]
+//var skyScale={x:1,y:1}
+var stage_star=new createjs.Container()
 function setSky(_starNum){
   for (var i = 0; i < _starNum; i++) {
     //var AstarContainer = new createjs.Container()
     var Astar = new createjs.Bitmap("img/star.png")
-    stage.addChild(Astar)
+    stage.addChild(stage_star)
+    stage_star.addChild(Astar)
     //stage.addChild(AstarContainer)
     starA.push(Astar)
     Astar.x=Math.random()*640
@@ -438,6 +441,8 @@ function ani1end(){//=======点击触发
   word2.y=486
   TweenLite.to(word2,1,{x:320})
   createjs.Ticker.addEventListener("tick",setQmark);
+
+
 }
 
 function ani2(){
@@ -531,7 +536,7 @@ function boyStand(){
 }
 
 function ani4end(){//====点击触发
-  hideLayer()
+  
    createjs.Ticker.removeEventListener("tick",flyingflower);
   boy.gotoAndPlay("startrun")
   TweenLite.to(stage_4,2,{x:-640,ease:Linear.easeNone,visible:false})
@@ -547,4 +552,228 @@ function ani5(){
   createjs.Ticker.addEventListener("tick",setFire);
   skyMove.x=-16
   showHomeBtn(1)
+}
+
+function ani5end(){
+  TweenLite.to(boy,1,{x:280,rotation:0})
+  ziA=["img/word6a.png","img/word6b.png"]
+  createjs.Ticker.removeEventListener("tick",setFire);
+  showHomeBtn(1)
+}
+function ani6end(){
+  skyMove.x=-1
+  boy.gotoAndPlay("fall")
+  TweenLite.to(boy,1,{y:boy.y+150,rotation:15,onComplete:ani7})
+  clearInterval(t500)
+  word6break()
+  showHomeBtn(2)
+}
+var stage_7=new createjs.Container()
+function ani7(){
+  stage.removeChild(stage_56)
+  stage.removeChild(stage_6)
+  stage.addChild(stage_7)
+  setBalloon()
+  setCloud()
+}
+
+function ani7end(){
+  //自由消失,准备进迷茫
+  ifLoop=0
+  TweenLite.to(balloon,1,{alpha:0,scale:.5,x:640,y:0,onComplete:ani8})
+  TweenLite.to(stage_Cloud,.5,{alpha:0,visible:false})
+}
+var stage_8=new createjs.Container()
+function ani8(){
+  stage.removeChild(stage_7)
+  stage.addChild(stage_8)
+  TweenLite.to(boy,2,{x:310,y:330,ease:Linear.easeNone})
+  TweenLite.to(skyMove,1.5,{x:0,y:-16,ease:Linear.easeNone})
+  createjs.Ticker.addEventListener("tick",confuse)
+  //TweenLite.from(this,10,{confuse_R:600})
+  showHomeBtn(1)
+}
+
+var stage_9=new createjs.Container()
+var word9=new createjs.Bitmap("img/word9.png")
+function ani8end(){
+  createjs.Ticker.removeEventListener("tick",confuse)
+  
+  TweenLite.to(skyMove,1.5,{x:-1,y:0,ease:Linear.easeNone})
+
+  stage.addChild(stage_9)
+  word9.regX=95.5
+  word9.regY=50.5
+  stage_9.addChild(word9)
+  word9.x=295+12
+  word9.y=510
+  TweenLite.from(word9,1.5,{alpha:0,y:1100-300,onComplete:ani9,ease:Linear.easeNone})
+  TweenLite.to(boy,1.45,{rotation:-25,x:290+12,y:350,ease:Linear.easeNone})
+
+}
+
+function ani9(){
+  TweenLite.set(boy,{rotation:0,x:322+12,y:320})
+  console.log("x=",boy.x,"y=",boy.y)
+  
+  boy.gotoAndPlay("goThink")
+  setBubble()
+  bubble.gotoAndPlay("think")
+  TweenLite.from(bubble,3,{scale:0,ease:Elastic.easeOut,delay:1.5})
+  setBubbleDot()
+  showHomeBtn(1)
+}
+var stage_10=new createjs.Container()
+var word10=new createjs.Bitmap("img/word10.png")
+var word10b=new createjs.Bitmap("img/word10b.png")
+var t500_flame
+function ani9end(){
+  ifDotLoop=0
+  TweenLite.set(stage_9,{alpha:0,visible:false})
+  //TweenLite.to(boy,1,{x:boy.x-52,onComplete:ani10})
+  
+  boy.gotoAndPlay("standup")
+  stage.addChild(stage_10)
+  stage_10.addChild(word10)
+  stage_10.addChild(word10b)
+  word10b.x=word10.x=209+52-40
+  word10b.y=word10.y=304+160-2
+  word10b.alpha=0
+ // TweenLite.from(word10,2,{x:word10.x-150,ease:Elastic.easeOut,onComplete:ani10})
+  //TweenLite.from(word10b,.5,{y:1000,ease:Sine.easeIn})
+  TweenLite.to(skyMove,1,{x:0,y:32,onComplete:ani10})
+  TweenLite.to(word10,1,{x:209,y:304})
+  TweenLite.to(word10b,1,{x:209,y:304,alpha:1})
+  TweenLite.to(boy,1,{x:boy.x-12,y:boy.y-158})
+  createjs.Ticker.addEventListener("tick",stage_shake)
+  t500_flame=setInterval(setRocket,250)
+  //createjs.Ticker.addEventListener("tick",setRocket)
+}
+
+function ani10(){
+  //createjs.Ticker.addEventListener("tick",stage_shake)
+  //shakeLv=10
+  console.log("ani10")
+  TweenLite.to(shakeLv,5,{xy:10,t:.5})
+  showHomeBtn(1)
+  
+}
+var t500_step
+var stage_11=new createjs.Container()
+function ani10end(){
+  clearInterval(t500_flame)
+  //createjs.Ticker.removeEventListener("tick",stage_shake)
+  TweenLite.to(word10,1,{y:1100,alpha:0,visible:false})
+  TweenLite.to(word10b,1,{y:1100,alpha:0,visible:false})
+  TweenLite.to(skyMove,1,{x:-10,y:8})
+  boy.gotoAndPlay("jump2")
+  TweenLite.to(boy,1,{x:320-140+70,y:270,rotation:-5,onComplete:ani11,ease:Sine.easeIn})
+  t500_step=setInterval(setStep,185)
+  stage.addChild(stage_11)
+  stage.addChild(boy)
+}
+function ani11(){
+  boy.gotoAndPlay("startrun")
+  showHomeBtn(1)
+}
+
+function ani11end(){
+  boy.gotoAndPlay("fall")
+  TweenLite.to(boy,1,{rotation:90,y:"+=100",x:"+=180",overwrite:0})
+  //TweenLite.to(boy,1,{rotation:45,y:"+=0",x:"+=0",overwrite:0,delay:1})
+  clearInterval(t500_step)
+  stepDisappear()
+  ifStep=0
+  skyMove.x=0
+  skyMove.y=-16
+  setWord12()
+  word12.x=320
+  word12.y=1800
+  word12.alpha=1
+  TweenLite.to(word12,1,{y:520,alpha:1,ease:Sine.easeIn,delay:1,onComplete:ani12})
+}
+function ani12(){
+  boy.gotoAndPlay("lay")
+  TweenLite.set(boy,{rotation:0,y:"-=40",x:"-=160"})
+
+  TweenLite.to(skyMove,1,{x:-1,y:0})
+  TweenLite.to(word12,1,{y:"-=100"}) 
+  TweenLite.to(boy,1,{y:"-=100"})
+  showHomeBtn(1)   
+}
+var word13=new createjs.Bitmap("img/word13.png")
+var stage_13=new createjs.Container()
+function ani12end(){
+  boy.gotoAndPlay("fall")
+  breakWord12()
+  boy.y+=50
+  stage.addChild(stage_13)
+  stage_13.addChild(word13)
+  word13.regX=49
+  word13.regY=0//88
+  word13.x=320
+  word13.y=500+500
+  word13.alpha=0
+  TweenLite.to(word13,1,{y:400,alpha:1,delay:1,onComplete:ani13,ease:Sine.easeIn})
+}
+
+function ani13(){
+  boy.gotoAndPlay("goSitRain")
+  boy.y-=20
+  TweenLite.to(skyMove,1,{x:-1,y:0})
+  setRain(150)
+  createjs.Ticker.addEventListener("tick",moveRain)
+  stage.addChild(stage_rain)
+  showHomeBtn()
+}
+var stage_14=new createjs.Container()
+function ani13end(){
+  stage.addChild(stage_14)
+  show14()
+  boy.gotoAndPlay("standup")
+}
+
+function ani14(){
+  boy.gotoAndPlay("startrun")
+  showHomeBtn()
+  TweenLite.to(skyMove,1,{x:-8})
+  TweenLite.to(rainMove,1,{x:-32,deg:45})
+}
+
+function ani14end(){
+  TweenLite.to(stage_rain,1,{alpha:0,visible:false})
+  word14.alpha=0
+  word15.alpha=0.3
+  word15.y=word14.y
+  TweenLite.to(word14b,1,{alpha:0,visible:false})
+  TweenLite.to(word15b,1,{alpha:1})
+  addBoy()
+  showHomeBtn(2)
+}
+function ani15end(){
+  boysStop()
+}
+var video_light= new createjs.Bitmap("img/video_light.png")
+function showMV(){
+  for(var i=0;i<boys.length;i++){
+    TweenLite.to(boys[i],1,{y:"+=200"})
+    
+    if(boys[i].x>320){
+      boys[i].gotoAndStop("look2")
+    }else{
+      boys[i].gotoAndStop("look1")
+    }
+  }
+  TweenLite.to(word15b,1,{y:"+=200"})
+  TweenLite.to(word15,1,{y:"+=200",alpha:0})
+  //stage.addChildAt(video_light,stage.numChildren)
+  stage.addChild(video_light)
+  video_light.scaleX=0
+  video_light.scaleY=1
+  video_light.regX=143
+  video_light.regY=404
+  video_light.alpha=0
+  video_light.x=320
+  video_light.y=1000
+  TweenLite.to(video_light,.5,{scaleY:2,scaleX:2,alpha:1})
 }
