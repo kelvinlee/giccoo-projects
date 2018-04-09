@@ -52,7 +52,7 @@ function initAll(){
   skyMove.x=-1
   skyMove.y=0
    //======getStart()
-  ani1start()
+  //ani1start()
   //tick();
 }
 
@@ -781,4 +781,15 @@ function showMV(){
   TweenLite.set(video1,{display:"block",opacity:0,top:"28%"})
   TweenLite.to(video1,.5,{opacity:1,top:"25%"})
   video1[0].play()
+  showHomeBtn(1)
+}
+
+function hideMV(){
+  video1[0].pause()
+  TweenLite.to(video1,1,{top:"50%",opacity:0})
+  TweenLite.to(video_light,1,{y:"+=250",visible:false,alpha:0})
+  TweenLite.to(word15b,1,{y:"+=250",visible:false,alpha:0})
+  for(var i=0;i<boys.length;i++){
+    TweenLite.to(boys[i],1,{y:"+=250",visible:false,alpha:0})
+  }
 }

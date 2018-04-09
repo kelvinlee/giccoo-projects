@@ -99,8 +99,11 @@ $("#home_btn").click(function(){
     case 16:
       ani15end()
       break;
+    case 17:
+      hideMV()
+      break;
   }
-  if(ifNew==1){
+  if(ifNew==1&&nowPage<=16){
       nextText()
   }
 })
@@ -144,7 +147,7 @@ function initText(){
 function nextText(){
   console.log(nowTextNum)
   var i=nowTextNum
-  if(i!=15){
+  if(i<15){
     textA[i].visible=true
     TweenLite.to(textA[i],1,{alpha:1,scaleX:1,scaleY:1})
   }else{
@@ -806,6 +809,8 @@ function setRain(_starNum){
   lighting.graphics.beginFill("#ffffff").drawRect(0, 0, 640, 1000);
   stage_rain.addChild(lighting)
   lighting.alpha=0
+  stage_rain.alpha=0
+  TweenLite.to(stage_rain,2,{alpha:1,delay:1})
 }
 
 function moveRain(){
