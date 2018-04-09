@@ -463,7 +463,7 @@ function showHomeBtn(_t){
 var qMarkA=[]
 function setQmark(){
   if (Math.random()>.5) {//Math.random()>.5//i=0;i<1;i++
-    var qMark=new createjs.Bitmap("img/qMark.png")
+    var qMark=new createjs.Bitmap("img/qmark.png")
     stage_2.addChild(qMark)
     qMarkA.push(qMark)
     qMark.regX=13
