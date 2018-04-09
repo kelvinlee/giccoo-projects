@@ -71,3 +71,10 @@ img{ width: 100%; }
 	-webkit-tap-highlight-color: transparent;
 			tap-highlight-color: transparent;
 }
+#video1{
+	position: absolute;
+	width: 90%;
+	top:25%;
+	left: 5%;
+	display: none;
+}

@@ -587,7 +587,7 @@ var stage_8=new createjs.Container()
 function ani8(){
   stage.removeChild(stage_7)
   stage.addChild(stage_8)
-  TweenLite.to(boy,2,{x:310,y:330,ease:Linear.easeNone})
+  TweenLite.to(boy,1.5,{x:310,y:330,ease:Sine.easeInOut})//,ease:Linear.easeNone
   TweenLite.to(skyMove,1.5,{x:0,y:-16,ease:Linear.easeNone})
   createjs.Ticker.addEventListener("tick",confuse)
   //TweenLite.from(this,10,{confuse_R:600})
@@ -741,7 +741,7 @@ function ani14(){
 }
 
 function ani14end(){
-  TweenLite.to(stage_rain,1,{alpha:0,visible:false})
+  TweenLite.to(stage_rain,3,{alpha:0,visible:false})
   word14.alpha=0
   word15.alpha=0.3
   word15.y=word14.y
@@ -754,6 +754,7 @@ function ani15end(){
   boysStop()
 }
 var video_light= new createjs.Bitmap("img/video_light.png")
+var video1=$("#video1")
 function showMV(){
   for(var i=0;i<boys.length;i++){
     TweenLite.to(boys[i],1,{y:"+=200"})
@@ -776,4 +777,7 @@ function showMV(){
   video_light.x=320
   video_light.y=1000
   TweenLite.to(video_light,.5,{scaleY:2,scaleX:2,alpha:1})
+  TweenLite.set(video1,{display:"block",opacity:0,top:"28%"})
+  TweenLite.to(video1,.5,{opacity:1,top:"25%"})
+  video1[0].play()
 }
