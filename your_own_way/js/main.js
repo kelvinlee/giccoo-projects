@@ -752,12 +752,13 @@ function ani14end(){
 }
 function ani15end(){
   boysStop()
+  //video1[0].play()
 }
 var video_light= new createjs.Bitmap("img/video_light.png")
 var video1=$("#video1")
 function showMV(){
   for(var i=0;i<boys.length;i++){
-    TweenLite.to(boys[i],1,{y:"+=200"})
+    //TweenLite.to(boys[i],1,{y:"+=200"})
     
     if(boys[i].x>320){
       boys[i].gotoAndStop("look2")
@@ -765,8 +766,8 @@ function showMV(){
       boys[i].gotoAndStop("look1")
     }
   }
-  TweenLite.to(word15b,1,{y:"+=200"})
-  TweenLite.to(word15,1,{y:"+=200",alpha:0})
+  // TweenLite.to(word15b,.5,{y:"+=200"})
+  // TweenLite.to(word15,.5,{y:"+=200",alpha:0})
   //stage.addChildAt(video_light,stage.numChildren)
   stage.addChild(video_light)
   video_light.scaleX=0

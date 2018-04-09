@@ -908,9 +908,11 @@ function boysStop(){
   //createjs.Ticker.addEventListener("tick",moveBoys)
   //TweenLite.to(this,5,{stopMark:640,ease:Linear.easeNone,onComplete:allStop})
   for(var i=0;i<boys.length;i++){
-    TweenLite.to(boys[i],1,{x:(boys.length-i)*640/boys.length+Math.random()*10-105,onComplete:showMV})
+    TweenLite.to(boys[i],.9,{x:(boys.length-i)*640/boys.length+Math.random()*10-105,y:"+=200",onComplete:showMV})
   }
   TweenLite.to(skyMove,1,{x:-1})
+  TweenLite.to(word15b,.9,{y:"+=200"})
+  TweenLite.to(word15,.9,{y:"+=200",alpha:0})
 }
 // var ifStandA=[0,0,0,0,0,0,0,0,0]
 // var cameraV=2
