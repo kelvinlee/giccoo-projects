@@ -49,9 +49,7 @@ init = function init() {
   TrueW = document.documentElement.clientWidth;
   console.log(TrueW, TrueH);
   // document.body.style.height = TrueH+"px"
-  if (TrueW / TrueH >= 0.64) {
-    document.documentElement.className += " iphone4";
-  }
+  // document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
   main = new Vue({
     el: "#main",
     data: {

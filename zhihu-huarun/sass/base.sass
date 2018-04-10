@@ -34,7 +34,7 @@ $pageMainBGColor: #ffffff;
 	0%
 		opacity: 1
 		+transform(scale(0,0))
-	40%
+	60%
 		+transform(scale(3,3))
 		opacity: 0
 	100%
@@ -60,6 +60,18 @@ $pageMainBGColor: #ffffff;
 		+transform(translate3d(0,0,0) scale(1,1))
 	10%,11%
 		+transform(translate3d(0,-10px,0) scale(1.01,1.01))
++keyframes(next)
+	0%
+		opacity: 1
+		+transform(translate3d(0,-50%,0))
+	10%
+		opacity: 1
+		+transform(translate3d(0,-50%,0))
+	60%
+		opacity: 1
+	100%
+		opacity: 0
+		+transform(translate3d(-20%,-50%,0))
 
 
 html,body
@@ -220,6 +232,10 @@ body
 		+posa
 		+bl(50%)
 		+transform(translate3d(0,50%,0))
+		.item
+			+posa
+			+bl
+			font-size: 0
 .err-1
 	+animation(fadeShow,3s,ease,infinite)
 	.body
@@ -227,9 +243,10 @@ body
 .err-2
 	+posr
 	.body
-		// +animation(jumpErr,2s,ease,infinite)
+		// +animation(fadeShow,5s,ease,infinite)
+		// animation-delay: 1500ms
 	.red
-		$size: 20%
+		$size: 30%
 		+w($size)
 		padding-top: $size
 		+b("../img/red.png",no-repeat,center,center,cover)
@@ -249,6 +266,9 @@ body
 
 .err-3
 	+animation(fly,4s,ease,infinite)
+	.sc
+		+animation(fadeShow,4s,ease,infinite)
+		animation-delay: 500ms
 .page-home
 	.title
 		+iw(740,1500,100%)
@@ -290,6 +310,7 @@ body
 		+posa
 		+tr(60%,10%)
 		+transform(translate3d(0,-50%,0))
+		+animation(next,2s,ease,infinite)
 
 #room-1
 	.err-1
@@ -325,6 +346,9 @@ body
 		+posa
 		+bl(53%,18%)
 		+iw(365,1500,100%)
+	.next
+		+iw(225,1500,100%)
+		right: 6%
 
 
 .pop-box
