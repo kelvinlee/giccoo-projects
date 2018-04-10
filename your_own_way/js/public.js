@@ -386,7 +386,7 @@ function setFlowerBlow(){
   });
 
   flowerBlow = new createjs.Sprite(flowerSheet)
-  stage_4.addChild(flowerBlow)
+  //stage_4.addChild(flowerBlow)
   flowerBlow.x=320-173*2-20
   flowerBlow.y=500-179*2+10
   //flowerBlow.scaleX=flowerBlow.scaleY=2
@@ -417,7 +417,7 @@ function flyingflower(){
     ff.scaleX=ff.scaleY=Math.random()*Math.random()*Math.random()*Math.random()*8+.3
     ff.x=Math.random()*640*ff.scaleX
 
-    TweenLite.to(fc,2+Math.random()*3,{x:-640*ff.scaleX,rotation:Math.random()*720-360,y:Math.random()*800+200})
+    TweenLite.to(fc,2+Math.random()*3,{x:-640*ff.scaleX,rotation:Math.random()*720-360,y:Math.random()*800+200,onComplete:removeTar,onCompleteParams:[stage,fc]})
     
     // var if3=1
     // if(Math.random()>.7){if3=-1}
@@ -427,6 +427,9 @@ function flyingflower(){
   }
 }
 
+function removeTar(_stage,_tar){
+  _stage.removeChild(_tar)
+}
 
 //==========显示home键
 function showHomeBtn(_t){
@@ -476,7 +479,7 @@ function setQmark(){
     qMark.y=word2.y+Math.random()*100-50-10
     qMark.alpha=0
     TweenLite.to(qMark,2+Math.random(),{x:(qMark.x+word2.x)/2,scale:0,y:qMark.y-(200+Math.random()*150),rotation:Math.random()*180-90,alpha:1,visible:"false",overwrite:0})
-    TweenLite.to(qMark,1+Math.random(),{alpha:0,delay:.5})
+    TweenLite.to(qMark,1+Math.random(),{alpha:0,delay:.5,onComplete:removeTar,onCompleteParams:[stage_2,qMark]})
   };
 }
 //=====================激情+叛逆 字挪动
@@ -512,7 +515,7 @@ function setFire(){
     fire.x=Math.random()*320+50
     fire.y=boy.y+Math.random()*20-10+150
     fire.alpha=0
-    TweenLite.to(fire,2+Math.random(),{x:(fire.x+word2.x)/2,scale:0,y:fire.y-(50+Math.random()*200),rotation:Math.random()*180-90,alpha:1,visible:"false",overwrite:0})
+    TweenLite.to(fire,2+Math.random(),{x:(fire.x+word2.x)/2,scale:0,y:fire.y-(50+Math.random()*200),rotation:Math.random()*180-90,alpha:1,visible:"false",overwrite:0,onComplete:removeTar,onCompleteParams:[stage_56,fire]})
     //TweenLite.to(fire,2+Math.random(),{alpha:0,delay:.5})
   };
 }
@@ -691,8 +694,8 @@ function confuse(){
     //TweenLite.to(word8,2+Math.random(),{x:(word8.x-0)/1,scale:0,y:word8.y-(20+Math.random()*20),rotation:Math.random()*60-30,alpha:1,visible:"false",overwrite:0})
     
     var _t=1+Math.random()*1.5
-    TweenLite.to(word8,_t,{x:0,scale:0,y:0,rotation:word8.rotation+180,alpha:1,visible:"false",overwrite:0,ease:Sine.easeOut})
-    TweenLite.to(ctr,_t,{alpha:.25,rotation:ctr.rotation-180,ease:Sine.easeOut,visible:"false"})
+    TweenLite.to(word8,_t,{x:0,scale:0,y:0,rotation:word8.rotation+180,alpha:1,visible:"false",overwrite:0,ease:Sine.easeOut,onComplete:removeTar,onCompleteParams:[ctr,word8]})
+    TweenLite.to(ctr,_t,{alpha:.25,rotation:ctr.rotation-180,ease:Sine.easeOut,visible:"false",onComplete:removeTar,onCompleteParams:[stage_8,ctr]})
   };
 }
 
@@ -754,7 +757,7 @@ function stepFall(_target){
 function stepDisappear(){
   for (var i = stepA.length - 1; i >= 0; i--) {
     if(stepA[i].visible=true){
-      TweenLite.to(stepA[i],1,{x:stepA[i].x-Math.random()*500,y:stepA[i].y-500-Math.random()*500})
+      TweenLite.to(stepA[i],1,{x:stepA[i].x-Math.random()*500,y:stepA[i].y-500-Math.random()*500,onComplete:removeTar,onCompleteParams:[stage_11,stepA[i]]})
     }
   };
 }
