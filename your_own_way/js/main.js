@@ -575,7 +575,7 @@ function ani4(){
   TweenLite.to(boy,2,{x:325,y:boy.y-10,delay:.2,onComplete:boyStand,ease:Linear.easeNone})
   //stage_4.addChild(flowerBlow)
   showHomeBtn()
-  
+  showHint1(0)
 }
 function boyStand(){
   if(ifani4==0){
@@ -616,6 +616,7 @@ function ani5end(){
   $("#flame")[0].pause()
   $("#flame2")[0].pause()
   showHomeBtn(1)
+  showHint1(1)
 }
 function ani6end(){
   skyMove.x=-1
@@ -655,6 +656,7 @@ function ani8(){
   createjs.Ticker.addEventListener("tick",confuse)
   //TweenLite.from(this,10,{confuse_R:600})
   showHomeBtn(1)
+  showHint1(1)
 }
 
 var stage_9=new createjs.Container()
@@ -685,6 +687,7 @@ function ani9(){
   TweenLite.from(bubble,3,{scale:0,ease:Elastic.easeOut,delay:1.5})
   setBubbleDot()
   showHomeBtn(1)
+  showHint1(1)
 }
 var stage_10=new createjs.Container()
 var word10=new createjs.Bitmap("img/word10.png")
@@ -719,6 +722,7 @@ function ani10(){
   console.log("ani10")
   TweenLite.to(shakeLv,5,{xy:10,t:.5})
   showHomeBtn(1)
+  showHint1(1)
   
 }
 var t500_step
@@ -740,6 +744,7 @@ function ani10end(){
 function ani11(){
   boy.gotoAndPlay("startrun")
   showHomeBtn(1)
+  showHint1(1)
 }
 
 function ani11end(){
@@ -764,7 +769,8 @@ function ani12(){
   TweenLite.to(skyMove,1,{x:-1,y:0})
   TweenLite.to(word12,1,{y:"-=100"}) 
   TweenLite.to(boy,1,{y:"-=100"})
-  showHomeBtn(1)   
+  showHomeBtn(1) 
+  showHint1(1)  
 }
 var word13=new createjs.Bitmap("img/word13.png")
 var stage_13=new createjs.Container()
@@ -790,6 +796,7 @@ function ani13(){
   createjs.Ticker.addEventListener("tick",moveRain)
   stage.addChild(stage_rain)
   showHomeBtn()
+  showHint1(0)
   
   setTimeout(function(){
     document.getElementById("rain").volume = 1;
@@ -806,6 +813,7 @@ function ani13end(){
 function ani14(){
   boy.gotoAndPlay("startrun")
   showHomeBtn(1)
+  showHint1(1)
   TweenLite.to(skyMove,1,{x:-8})
   TweenLite.to(rainMove,1,{x:-32,deg:45})
 }
@@ -821,6 +829,7 @@ function ani14end(){
   TweenLite.to(word15b,1,{alpha:1})
   addBoy()
   showHomeBtn(2)
+  showHint1(2)
 }
 function ani15end(){
   boysStop()

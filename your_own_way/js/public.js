@@ -10,6 +10,7 @@ $("#home_btn").click(function(){
   TweenLite.to(homeBtn,.5,{alpha:0})
   switch(nowPage){
     case 2:
+      $("#bgm")[0].play()
       ani1end();
       break;
     case 3:
@@ -135,8 +136,8 @@ var hint2=new createjs.Bitmap("img/hint2.png")
 function setHint(){
   stage.addChild(hint1)
   stage.addChild(hint2)
-  hint1.regY=hint2.regY=59
-  hint1.y=hint2.y=1000
+  //hint1.regY=hint2.regY=59
+  hint1.y=hint2.y=0
   hint1.alpha=hint2.alpha=0
 }
 
@@ -254,12 +255,26 @@ function showLayer(_i){
   };
   layerTA[_i-1].visible=true
   musicA[_i-1][0].play()
+  musicA[_i-1][0].volume = 0.01;
+  TweenLite.to(musicA[_i-1][0],3,{volume:1,ease:Linear.easeNone})
+
   downText.visible=false
+  TweenLite.to($("#bgm")[0],3,{volume:0.01,ease:Linear.easeNone})
+  //$("#bgm")[0].pause()
 }
 function hideLayer(){
+  //$("#bgm")[0].play()
+  //document.getElementById("bgm").volume = 0.01;
+  TweenLite.to($("#bgm")[0],5,{volume:.5,ease:Linear.easeNone})
   TweenLite.to(musicLayer,1,{x:640})
-  musicA[nowMusic][0].pause()
+  //musicA[nowMusic][0].pause()
+  TweenLite.to(musicA[nowMusic][0],2,{volume:.01,ease:Linear.easeNone,onComplete:musicPause,onCompleteParams:[musicA[nowMusic][0]]})
+
   downText.visible=true
+}
+
+function musicPause(_tar){
+  _tar.pause()
 }
 
 //=======================人 所有
