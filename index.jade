@@ -6,7 +6,13 @@ html(lang="en")
 		meta(name="viewport",content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0")
 		title Giccoo 作品集
 		link(rel="stylesheet",href="/libs/css/base.css")
-		
+		scirpt(async,src="https://www.googletagmanager.com/gtag/js?id=UA-66865226-1")
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-66865226-1');
+
 	body
 		h1 Giccoo 作品集
 		ul.list

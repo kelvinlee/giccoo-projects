@@ -48,7 +48,8 @@ block content
 							.red.red-3
 							.red.red-4
 					.err-3
-						img(:src="'#{url}/img/err-3.png'")
+						.sc
+							img(:src="'#{url}/img/err-3.png'")
 				.title
 					img(:src="'#{url}/img/homepage-title.png'")
 				.text
@@ -63,12 +64,12 @@ block content
 					img(:src="'#{url}/img/room-1-bg.jpg'")
 					.stun.zoomIn.animated.duration-4.delay-4
 						img(:src="'#{url}/img/room-1-stun.png'")
-					.message-pop.zoomInUp.animated.duration-12.delay-6
+					.message-pop.zoomInUp.animated.duration-18.delay-6
 						img(:src="'#{url}/img/room-1-text.png'")
 					.err-1(@click="openErr(1)")
 						.body
 							img(:src="'#{url}/img/err-1.png'")
-				.learnmore-btn.bounceIn.animated.duration-12.delay-16(@click="openPop(1)")
+				.learnmore-btn.bounceIn.animated.duration-18.delay-24(@click="openPop(1)")
 					.body(:class="{on: timeAnimate}")
 						img(:src="'#{url}/img/learnmore-1.png'")
 				.next
@@ -79,7 +80,7 @@ block content
 			.page.page-room#room-2(v-show="roomIndex == 2",:class="{now: roomIndex == 2,right: roomIndex < 2,left: roomIndex > 2}")
 				.bg
 					img(:src="'#{url}/img/room-2-bg.jpg'")
-					.message-pop.zoomInUp.animated.duration-12.delay-4
+					.message-pop.zoomInUp.animated.duration-18.delay-4
 						img(:src="'#{url}/img/room-2-text.png'")
 					.err-2(@click="openErr(2)")
 						.body
@@ -88,7 +89,7 @@ block content
 							.red.red-2
 							.red.red-3
 							.red.red-4
-				.learnmore-btn.bounceIn.animated.duration-12.delay-14(@click="openPop(2)")
+				.learnmore-btn.bounceIn.animated.duration-18.delay-22(@click="openPop(2)")
 					.body(:class="{on: timeAnimate}")
 						img(:src="'#{url}/img/learnmore-2.png'")
 				.next
@@ -97,20 +98,26 @@ block content
 			.page.page-room#room-3(v-show="roomIndex == 3",:class="{now: roomIndex == 3,right: roomIndex < 3,left: roomIndex > 3}")
 				.bg
 					img(:src="'#{url}/img/room-3-bg.jpg'")
-					.message-pop.zoomInUp.animated.duration-12.delay-4
+					.message-pop.zoomInUp.animated.duration-18.delay-4
 						img(:src="'#{url}/img/room-3-text.png'")
 					.err-3(@click="openErr(3)")
 						.sc
 							img(:src="'#{url}/img/err-3.png'")
-				.learnmore-btn.bounceIn.animated.duration-12.delay-14(@click="openPop(3)")
+				.learnmore-btn.bounceIn.animated.duration-18.delay-22(@click="openPop(3)")
 					.body(:class="{on: timeAnimate}")
 						img(:src="'#{url}/img/learnmore-3.png'")
 				.next
-					img(:src="'#{url}/img/move-left.png'")
+					img(:src="'#{url}/img/lastpage-next.png'")
 		transition(name="page-animation")
 			.page.page-last(v-show="roomIndex == 4",:class="{now: roomIndex == 4,right: roomIndex < 4,left: roomIndex > 4}")
 				.bg
 					img(:src="'#{url}/img/lastpage-bg.jpg'")
+					.item.lightSpeedIn.animated.duration-10.delay-9
+						.body.animated.duration-10(:class="{pulse: timeAnimate}")
+							img(:src="'#{url}/img/lastpage-1.png'")
+					.item.flipInX.animated.duration-6.delay-4
+						.body.animated.duration-10(:class="{pulse: timeAnimate}")
+							img(:src="'#{url}/img/lastpage-2.png'")
 		
 		//- transition(name="page-fade")
 		
