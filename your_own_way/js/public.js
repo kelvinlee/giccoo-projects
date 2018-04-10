@@ -96,10 +96,10 @@ $("#home_btn").click(function(){
     case 13:
       ani12end()
       $("#rain")[0].play()
-      document.getElementById("rain").volume = 0.01;
+      //document.getElementById("rain").volume = 0.01;
       setTimeout(function(){
         $("#rain2")[0].play()
-         document.getElementById("rain2").volume = 0.01;
+         //document.getElementById("rain2").volume = 0.01;
       },900)
       nowPage-=.5
       break;
