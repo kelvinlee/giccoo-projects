@@ -19,11 +19,13 @@ $("#home_btn").click(function(){
       nowPage-=.5
       break;
     case 4.5:
+      $("#ring")[0].play()
       ani3end2();
       ifNew=1
       nowPage-=.5
       break;
     case 5:
+      $("#ring")[0].pause()
       setLayer()
       showLayer(1)
       showHomeBtn()
@@ -31,6 +33,7 @@ $("#home_btn").click(function(){
       nowPage-=.5
       break;
     case 5.5:
+
       ani4end()
       hideLayer()
       ifNew=1
@@ -44,6 +47,8 @@ $("#home_btn").click(function(){
       nowPage-=.5
       break;
     case 7.5:
+      $("#wind")[0].pause()
+      $("#wind2")[0].pause()
       showLayer(2)
       showHomeBtn()
       ifNew=0
@@ -53,16 +58,23 @@ $("#home_btn").click(function(){
       ani7end()
       hideLayer()
       ifNew=1
+      $("#bubble")[0].play()
+      // setTimeout(function(){
+      //   $("#bubble2")[0].play()
+      // },900)
       break;
     case 9:
       ani8end()
+      $("#bubble")[0].pause()
+      //$("#bubble2")[0].pause()
       break;
     case 10:
       ani9end()
-      
+      $("#rocket")[0].play()
       nowPage-=.5
       break;
     case 10.5:
+      $("#rocket")[0].pause()
       showLayer(3)
       showHomeBtn()
       ifNew=0
@@ -80,6 +92,12 @@ $("#home_btn").click(function(){
       break;
     case 13:
       ani12end()
+      $("#rain")[0].play()
+      document.getElementById("rain").volume = 0.01;
+      setTimeout(function(){
+        $("#rain2")[0].play()
+         document.getElementById("rain2").volume = 0.01;
+      },900)
       nowPage-=.5
       break;
     case 13.5:
@@ -94,6 +112,8 @@ $("#home_btn").click(function(){
       ani13end()
       break;
     case 15:
+      $("#rain")[0].pause()
+      $("#rain2")[0].pause()
       ani14end()
       break;
     case 16:

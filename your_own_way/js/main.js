@@ -598,12 +598,20 @@ function ani5(){
   createjs.Ticker.addEventListener("tick",setFire);
   skyMove.x=-16
   showHomeBtn(1)
+  $("#flame")[0].play()
+  document.getElementById("flame").volume = 0.2;
+  setTimeout(function(){
+    $("#flame2")[0].play()
+    document.getElementById("flame2").volume = 0.2;
+  },500)
 }
 
 function ani5end(){
   TweenLite.to(boy,1,{x:280,rotation:0})
   ziA=["img/word6a.png","img/word6b.png"]
   createjs.Ticker.removeEventListener("tick",setFire);
+  $("#flame")[0].pause()
+  $("#flame2")[0].pause()
   showHomeBtn(1)
 }
 function ani6end(){
@@ -613,6 +621,12 @@ function ani6end(){
   clearInterval(t500)
   word6break()
   showHomeBtn(2)
+  $("#wind")[0].play()
+  document.getElementById("wind").volume = 0.3;
+  setTimeout(function(){
+    $("#wind2")[0].play()
+    document.getElementById("wind2").volume = 0.05;
+  },900)
 }
 var stage_7=new createjs.Container()
 function ani7(){
@@ -773,6 +787,11 @@ function ani13(){
   createjs.Ticker.addEventListener("tick",moveRain)
   stage.addChild(stage_rain)
   showHomeBtn()
+  
+  setTimeout(function(){
+    document.getElementById("rain").volume = 1;
+    document.getElementById("rain2").volume = 1;
+  },500)
 }
 var stage_14=new createjs.Container()
 function ani13end(){
