@@ -71,3 +71,36 @@ img{ width: 100%; }
 	-webkit-tap-highlight-color: transparent;
 			tap-highlight-color: transparent;
 }
+#video1{
+	position: absolute;
+	width: 90%;
+	top:25%;
+	left: 5%;
+	display: none;
+}
+#endBtn1{
+	width: 50%;
+	height: 15%;
+	bottom: 0;
+	left: 0%;
+	display: none;
+	-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;
+}
+#endBtn2{
+	width: 50%;
+	height: 15%;
+	bottom: 0;
+	right: 0%;
+	display: none;
+	-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;
+}
+#shareBtn{
+	position: absolute;
+	width: 11.25%;
+	top: 0;
+	right: 0;
+	-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;
+}

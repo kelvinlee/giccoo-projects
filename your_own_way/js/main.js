@@ -1,13 +1,20 @@
 
+var sys="other"
+
 $(document).ready(function load (){
-	loadWechatConfig();
+	if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
+    sys = "NeteaseMusic";
+
+  } else {
+    $("#shareBtn").css({"display":"none"})
+    loadWechatConfig();
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "智·混动 MAX秀",
-      desc: "人人都是隐藏的跨界高手",
-      link: "http://m.giccoo.com/maxshow/",
-      imgUrl: "http://m.giccoo.com/maxshow/img/ico.jpg",
+      title: "走自己的路，你永远独一无二",
+      desc: "愿为野马，四海为家",
+      link: "http://mazda.music.163.com/your_own_way/",
+      imgUrl: "http://mazda.music.163.com/your_own_way/img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };
@@ -15,14 +22,29 @@ $(document).ready(function load (){
     wx.onMenuShareAppMessage(shareContent);
     wx.onMenuShareQQ(shareContent);
     return wx.onMenuShareWeibo(shareContent);
-  });
+   });
 
-
+  }
     initAll()
 
 
 
 });
+
+$("#shareBtn").click(neteaseShare)
+
+
+function neteaseShare() {
+  var picUrl, redirectUrl, subTitle2, title1, title2;
+  title1 = "走自己的路，你永远独一无二";
+  picUrl = "https://mazda.music.163.com/your_own_way/img/ico.jpg";
+  redirectUrl = "https://mazda.music.163.com/your_own_way/";
+  title2 = "走自己的路，你永远独一无二";
+  subTitle2 = "愿为野马，四海为家";
+  window.location.href = "orpheus://share/" + encodeURIComponent(title1) + "/" + encodeURIComponent(picUrl) + "/" + encodeURIComponent(redirectUrl) + "/" + encodeURIComponent(title2) + "/" + encodeURIComponent(subTitle2);
+  // window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
+  return console.log("run after?");
+};
 
 $('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
 //$('body')[0].addEventListener('touchstart', function (event) {event.preventDefault();}, false);
@@ -48,18 +70,20 @@ function initAll(){
    createjs.Ticker.framerate = 60;
    //createjs.Ticker.timingMode = createjs.Ticker.RAF;
    createjs.Ticker.addEventListener("tick",handleTick);
+   createjs.Ticker.addEventListener("tick",setFootPrints);
+
   setSky(50)
   skyMove.x=-1
   skyMove.y=0
-   //======getStart()
-  ani1start()
+  getStart()
+  //ani1start()
   //tick();
 }
 
 //=============================每秒30次的HandleTick
 
 function handleTick(){
-    //======setFootPrints()
+    
   moveSky();
   stage.update();
 }
@@ -67,11 +91,14 @@ function handleTick(){
 //==================星空==================
 var starA=[]
 var skyMove={x:0,y:0}//[0,0]
+//var skyScale={x:1,y:1}
+var stage_star=new createjs.Container()
 function setSky(_starNum){
   for (var i = 0; i < _starNum; i++) {
     //var AstarContainer = new createjs.Container()
     var Astar = new createjs.Bitmap("img/star.png")
-    stage.addChild(Astar)
+    stage.addChild(stage_star)
+    stage_star.addChild(Astar)
     //stage.addChild(AstarContainer)
     starA.push(Astar)
     Astar.x=Math.random()*640
@@ -257,6 +284,7 @@ function p0ani4(){
   lookup.alpha=1
   stage1.removeChild(boy1)
   boy1.stop()
+  createjs.Ticker.removeEventListener("tick",setFootPrints);
   TweenLite.set(skyMove,{x:0,y:8,delay:.5,overwrite:0})
   TweenLite.to(skyMove,3,{x:-1,y:0,delay:.5})
   TweenLite.to(stage1,4,{y:700,delay:.5,scaleY:.7})
@@ -293,9 +321,9 @@ function p0ani4(){
 var canGo=1
 function p0btnDown(){
   canGo=1
-  TweenLite.to(p0glow,2,{scale:4,alpha:1,onComplete:goP1})
+  TweenLite.to(p0glow,1.5,{scale:4,alpha:1,onComplete:goP1})
   for (var i = 0; i < copy0A.length; i++) {
-    TweenLite.to(copy0A[i],2,{alpha:.5,x:Math.random()*100-50,y:Math.random()*100-50})
+    TweenLite.to(copy0A[i],1.5,{alpha:.5,x:Math.random()*100-50,y:Math.random()*100-50})
   };
 }
 function p0btnUp(){
@@ -336,6 +364,7 @@ var dotGlow=new createjs.Container()
 var dotGlow2=new createjs.Container()
 
 function ani1start(){
+
   $("#p0_btn").css({display:"none"})
   stage.addChild(stage_1)
   stage.addChild(downText)
@@ -380,6 +409,7 @@ function p1done(){
 }
 //====光点汇聚
 
+var ifani1=0
 function setDotGlow(){
   var t1=3
   for (var i = 0; i < 200; i++) {
@@ -415,7 +445,9 @@ function setDotGlow(){
   setTimeout(function(){
     stage_1.removeChild(dotGlow)
     stage_1.removeChild(dotGlow2)
-    boy.gotoAndPlay("standup")
+    if(ifani1==0){
+      boy.gotoAndPlay("standup")
+    }  
   },5000+t1*1000)
 
 }
@@ -426,7 +458,12 @@ var word2=new createjs.Bitmap("img/word2.png")
 function ani1end(){//=======点击触发
   stage.addChild(stage_2)
   boy.stop()
+  ifani1=1
   boy.gotoAndPlay("jump")
+
+  TweenLite.from(skyMove,1,{x:-16})
+
+
   TweenLite.to(stage_1,1,{x:-640,delay:.03})
   TweenLite.to(boy,1,{x:230,y:300,onComplete:ani2})
   TweenLite.to(homeBtn,1,{alpha:1,delay:2})
@@ -438,6 +475,8 @@ function ani1end(){//=======点击触发
   word2.y=486
   TweenLite.to(word2,1,{x:320})
   createjs.Ticker.addEventListener("tick",setQmark);
+
+
 }
 
 function ani2(){
@@ -455,6 +494,8 @@ var stage_4=new createjs.Container()
 var word4=new createjs.Bitmap("img/word4.png")
 function ani2end(){//=======点击触发
   boy.gotoAndPlay("jump")
+  TweenLite.from(skyMove,1,{x:-16})
+
   TweenLite.to(boy,1,{x:230,y:250})
   TweenLite.to(word2,1,{x:-640,delay:.03,onComplete:ani3})
   
@@ -485,37 +526,44 @@ function ani3(){
 
 function ani3end1(){//=======点击触发
   boy.gotoAndPlay("jump")
+  TweenLite.from(skyMove,.5,{x:-16})
+
   TweenLite.to(stage_3,1,{x:-640,ease:Sine.easeNone})
   TweenLite.to(boy,.5,{x:230-150,y:boy.y-20,ease:Sine.easeOut,overwrite:0})
   TweenLite.to(boy,.5,{x:230,y:1000,ease:Sine.easeIn,onComplete:backToAni3,delay:.5})
   TweenLite.to(stage_4,1,{x:0,ease:Sine.easeNone})
 }
 function backToAni3(){
+  //TweenLite.from(skyMove,.5,{x:16})
   TweenLite.to(stage_3,1,{x:0})
   TweenLite.to(stage_4,1,{x:640})
   TweenLite.set(boy,{x:230,y:250,alpha:0})
   TweenLite.to(boy,1,{alpha:1,ease:Elastic.easeOut,delay:1,onComplete:showHomeBtn})
   showHomeBtn(1)
+  setFlowerBlow()
 }
 
 function ani3end2(){//=======点击触发
   boy.gotoAndPlay("startrun")
+
   TweenLite.to(boy,.5,{x:boy.x+100,ease:Sine.easeNone,onComplete:ani3jump})
   flyflower()
 }
 function ani3jump(){
 
+  TweenLite.from(skyMove,1,{x:-16})
   boy.gotoAndPlay("jump")
   TweenLite.to(boy,1,{x:180,y:boy.y+22,onComplete:ani4})
   TweenLite.to(stage_3,1,{x:-640})
   TweenLite.to(stage_4,1,{x:0})
-  setFlowerBlow()
+  //setFlowerBlow()
+  stage_4.addChild(flowerBlow)
   setTimeout(function(){
     flowerBlow.gotoAndPlay("blow")
   },500)
   
 }
-
+var ifani4=0
 function ani4(){
   setTimeout(function(){
     boy.gotoAndPlay("walk")
@@ -527,12 +575,15 @@ function ani4(){
   
 }
 function boyStand(){
-  boy.gotoAndStop("stand")
+  if(ifani4==0){
+    boy.gotoAndStop("stand")
+  }
 }
 
 function ani4end(){//====点击触发
-  hideLayer()
+  
    createjs.Ticker.removeEventListener("tick",flyingflower);
+  ifani4=1
   boy.gotoAndPlay("startrun")
   TweenLite.to(stage_4,2,{x:-640,ease:Linear.easeNone,visible:false})
   ani5()
@@ -547,4 +598,324 @@ function ani5(){
   createjs.Ticker.addEventListener("tick",setFire);
   skyMove.x=-16
   showHomeBtn(1)
+}
+
+function ani5end(){
+  TweenLite.to(boy,1,{x:280,rotation:0})
+  ziA=["img/word6a.png","img/word6b.png"]
+  createjs.Ticker.removeEventListener("tick",setFire);
+  showHomeBtn(1)
+}
+function ani6end(){
+  skyMove.x=-1
+  boy.gotoAndPlay("fall")
+  TweenLite.to(boy,1,{y:boy.y+150,rotation:15,onComplete:ani7})
+  clearInterval(t500)
+  word6break()
+  showHomeBtn(2)
+}
+var stage_7=new createjs.Container()
+function ani7(){
+  stage.removeChild(stage_56)
+  stage.removeChild(stage_6)
+  stage.addChild(stage_7)
+  setBalloon()
+  setCloud()
+}
+
+function ani7end(){
+  //自由消失,准备进迷茫
+  ifLoop=0
+  TweenLite.to(balloon,1,{alpha:0,scale:.5,x:640,y:0,onComplete:ani8})
+  TweenLite.to(stage_Cloud,.5,{alpha:0,visible:false})
+}
+var stage_8=new createjs.Container()
+function ani8(){
+  stage.removeChild(stage_7)
+  stage.addChild(stage_8)
+  TweenLite.to(boy,1.5,{x:310,y:330,ease:Sine.easeInOut})//,ease:Linear.easeNone
+  TweenLite.to(skyMove,1.5,{x:0,y:-16,ease:Linear.easeNone})
+  createjs.Ticker.addEventListener("tick",confuse)
+  //TweenLite.from(this,10,{confuse_R:600})
+  showHomeBtn(1)
+}
+
+var stage_9=new createjs.Container()
+var word9=new createjs.Bitmap("img/word9.png")
+function ani8end(){
+  createjs.Ticker.removeEventListener("tick",confuse)
+  
+  TweenLite.to(skyMove,1.5,{x:-1,y:0,ease:Linear.easeNone})
+
+  stage.addChild(stage_9)
+  word9.regX=95.5
+  word9.regY=50.5
+  stage_9.addChild(word9)
+  word9.x=295+12
+  word9.y=510
+  TweenLite.from(word9,1.5,{alpha:0,y:1100-300,onComplete:ani9,ease:Linear.easeNone})
+  TweenLite.to(boy,1.45,{rotation:-25,x:290+12,y:350,ease:Linear.easeNone})
+
+}
+
+function ani9(){
+  TweenLite.set(boy,{rotation:0,x:322+12,y:320})
+  console.log("x=",boy.x,"y=",boy.y)
+  
+  boy.gotoAndPlay("goThink")
+  setBubble()
+  bubble.gotoAndPlay("think")
+  TweenLite.from(bubble,3,{scale:0,ease:Elastic.easeOut,delay:1.5})
+  setBubbleDot()
+  showHomeBtn(1)
+}
+var stage_10=new createjs.Container()
+var word10=new createjs.Bitmap("img/word10.png")
+var word10b=new createjs.Bitmap("img/word10b.png")
+var t500_flame
+function ani9end(){
+  ifDotLoop=0
+  TweenLite.set(stage_9,{alpha:0,visible:false})
+  //TweenLite.to(boy,1,{x:boy.x-52,onComplete:ani10})
+  
+  boy.gotoAndPlay("standup")
+  stage.addChild(stage_10)
+  stage_10.addChild(word10)
+  stage_10.addChild(word10b)
+  word10b.x=word10.x=209+52-40
+  word10b.y=word10.y=304+160-2
+  word10b.alpha=0
+ // TweenLite.from(word10,2,{x:word10.x-150,ease:Elastic.easeOut,onComplete:ani10})
+  //TweenLite.from(word10b,.5,{y:1000,ease:Sine.easeIn})
+  TweenLite.to(skyMove,1,{x:0,y:32,onComplete:ani10})
+  TweenLite.to(word10,1,{x:209,y:304})
+  TweenLite.to(word10b,1,{x:209,y:304,alpha:1})
+  TweenLite.to(boy,1,{x:boy.x-12,y:boy.y-158})
+  createjs.Ticker.addEventListener("tick",stage_shake)
+  t500_flame=setInterval(setRocket,250)
+  //createjs.Ticker.addEventListener("tick",setRocket)
+}
+
+function ani10(){
+  //createjs.Ticker.addEventListener("tick",stage_shake)
+  //shakeLv=10
+  console.log("ani10")
+  TweenLite.to(shakeLv,5,{xy:10,t:.5})
+  showHomeBtn(1)
+  
+}
+var t500_step
+var stage_11=new createjs.Container()
+function ani10end(){
+  clearInterval(t500_flame)
+  //createjs.Ticker.removeEventListener("tick",stage_shake)
+  TweenLite.to(word10,1,{y:1100,alpha:0,visible:false})
+  TweenLite.to(word10b,1,{y:1100,alpha:0,visible:false})
+  TweenLite.to(skyMove,1,{x:-10,y:8})
+  boy.gotoAndPlay("jump2")
+  TweenLite.to(boy,1,{x:320-140+70,y:270,rotation:-5,onComplete:ani11,ease:Sine.easeIn})
+  t500_step=setInterval(setStep,185)
+  stage.addChild(stage_11)
+  stage.addChild(boy)
+  stage.addChild(downText)
+
+}
+function ani11(){
+  boy.gotoAndPlay("startrun")
+  showHomeBtn(1)
+}
+
+function ani11end(){
+  boy.gotoAndPlay("fall")
+  TweenLite.to(boy,1,{rotation:90,y:"+=100",x:"+=180",overwrite:0})
+  //TweenLite.to(boy,1,{rotation:45,y:"+=0",x:"+=0",overwrite:0,delay:1})
+  clearInterval(t500_step)
+  stepDisappear()
+  ifStep=0
+  skyMove.x=0
+  skyMove.y=-16
+  setWord12()
+  word12.x=320
+  word12.y=1800
+  word12.alpha=1
+  TweenLite.to(word12,1,{y:520,alpha:1,ease:Sine.easeIn,delay:1,onComplete:ani12})
+}
+function ani12(){
+  boy.gotoAndPlay("lay")
+  TweenLite.set(boy,{rotation:0,y:"-=40",x:"-=160"})
+
+  TweenLite.to(skyMove,1,{x:-1,y:0})
+  TweenLite.to(word12,1,{y:"-=100"}) 
+  TweenLite.to(boy,1,{y:"-=100"})
+  showHomeBtn(1)   
+}
+var word13=new createjs.Bitmap("img/word13.png")
+var stage_13=new createjs.Container()
+function ani12end(){
+  boy.gotoAndPlay("fall")
+  breakWord12()
+  boy.y+=50
+  stage.addChild(stage_13)
+  stage_13.addChild(word13)
+  word13.regX=49
+  word13.regY=0//88
+  word13.x=320
+  word13.y=500+500
+  word13.alpha=0
+  TweenLite.to(word13,1,{y:400,alpha:1,delay:1,onComplete:ani13,ease:Sine.easeIn})
+}
+
+function ani13(){
+  boy.gotoAndPlay("goSitRain")
+  boy.y-=20
+  TweenLite.to(skyMove,1,{x:-1,y:0})
+  setRain(150)
+  createjs.Ticker.addEventListener("tick",moveRain)
+  stage.addChild(stage_rain)
+  showHomeBtn()
+}
+var stage_14=new createjs.Container()
+function ani13end(){
+  stage.addChild(stage_14)
+  show14()
+  boy.gotoAndPlay("standup")
+}
+
+function ani14(){
+  boy.gotoAndPlay("startrun")
+  showHomeBtn(1)
+  TweenLite.to(skyMove,1,{x:-8})
+  TweenLite.to(rainMove,1,{x:-32,deg:45})
+}
+
+function ani14end(){
+  TweenLite.to(stage_rain,3,{alpha:0,visible:false})
+  TweenLite.to(word14,1,{alpha:0})
+  TweenLite.to(word15,1,{alpha:0.3})
+  //word14.alpha=0
+  //word15.alpha=0.3
+  word15.y=word14.y
+  TweenLite.to(word14b,1,{alpha:0,visible:false})
+  TweenLite.to(word15b,1,{alpha:1})
+  addBoy()
+  showHomeBtn(2)
+}
+function ani15end(){
+  boysStop()
+  //video1[0].play()
+}
+var video_light= new createjs.Bitmap("img/video_light.png")
+var video1=$("#video1")
+function showMV(){
+  for(var i=0;i<boys.length;i++){
+    //TweenLite.to(boys[i],1,{y:"+=200"})
+    
+    if(boys[i].x>320){
+      boys[i].gotoAndStop("look2")
+    }else{
+      boys[i].gotoAndStop("look1")
+    }
+  }
+  // TweenLite.to(word15b,.5,{y:"+=200"})
+  // TweenLite.to(word15,.5,{y:"+=200",alpha:0})
+  //stage.addChildAt(video_light,stage.numChildren)
+  stage.addChild(video_light)
+  video_light.scaleX=0
+  video_light.scaleY=1
+  video_light.regX=143
+  video_light.regY=404
+  video_light.alpha=0
+  video_light.x=320
+  video_light.y=1000
+  TweenLite.to(video_light,.5,{scaleY:2,scaleX:2,alpha:1})
+  TweenLite.set(video1,{display:"block",opacity:0,top:"28%"})
+  TweenLite.to(video1,.5,{opacity:1,top:"25%"})
+  video1[0].play()
+  showHomeBtn(1)
+}
+
+function hideMV(){
+  //video1[0].pause()
+  TweenLite.to(video1,.99,{top:"50%",opacity:0,display:"none",onComplete:showEnd})
+  TweenLite.to(video_light,1,{y:"+=250",visible:false,alpha:0})
+  TweenLite.to(word15b,1,{y:"+=250",visible:false,alpha:0})
+  for(var i=0;i<boys.length;i++){
+    TweenLite.to(boys[i],1,{y:"+=250",visible:false,alpha:0})
+  }
+  skyMove.y=16
+  TweenLite.to(skyMove,1,{y:0})
+}
+var end_bottom=new createjs.Bitmap("img/end_bottom.png")
+var end_bottom2=new createjs.Bitmap("img/end_bottom2.png")
+var end_copy=new createjs.Bitmap("img/end_copy.png")
+var end_copy1=new createjs.Bitmap("img/end_copy1.png")
+var end_map=new createjs.Bitmap("img/end_map.jpg")
+var end_mark=new createjs.Bitmap("img/end_mark.png")
+
+function showEnd(){
+  video1[0].pause()
+  stage.addChild(end_bottom)
+  stage.addChild(end_bottom2)
+  stage.addChild(end_copy)
+  stage.addChild(end_copy1)
+  stage.addChild(end_map)
+  stage.addChild(end_mark)
+  end_bottom2.regX=end_bottom.regX=320
+  end_bottom2.regY=end_bottom.regY=283
+  end_bottom2.x=end_bottom.x=320
+  end_bottom2.y=end_bottom.y=1000
+
+
+  TweenLite.from(end_bottom,1,{alpha:0,y:1300,delay:.5})
+
+  TweenLite.from(end_copy,.5,{scaleY:.75,y:-250,alpha:0})
+
+  end_copy1.alpha=0
+  end_map.alpha=0
+  end_mark.alpha=0
+  end_bottom2.alpha=0
+
+  end_map.regX=198
+  end_map.regY=123.5
+  end_map.x=320
+  end_map.y=353
+
+  end_mark.y=-30
+
+  TweenLite.set($("#endBtn1"),{display:"block"})
+  TweenLite.set($("#endBtn2"),{display:"block"})
+}
+var ifbtn1=0
+$("#endBtn1").click(function(){
+  if(ifbtn1==0){
+    showEndLayer()
+  }else{
+    hideEndLayer()
+  }
+
+})
+$("#endBtn2").click(function(){
+  window.location.href="https://m.faw-mazda.com/cars/cx4/?utm_source=wangyiyunyinleSSL&utm_content=guanwang&utm_medium=guanwang&utm_campaign=20849691"
+})
+
+function showEndLayer(){
+  TweenLite.to(end_bottom2,.5,{alpha:.5})
+  TweenLite.to(end_copy,.5,{alpha:0})
+  TweenLite.to(end_copy1,.5,{alpha:1,delay:.5})
+  TweenLite.set(end_mark,.5,{y:-30})
+  TweenLite.to(end_mark,.5,{y:0,alpha:1,delay:.6})
+  TweenLite.set(end_map,.5,{scale:.8,alpha:0})
+  TweenLite.to(end_map,.5,{scale:1,alpha:1,delay:.5})
+  ifbtn1=1
+}
+
+function hideEndLayer(){
+  TweenLite.to(end_bottom2,.5,{alpha:0})
+  TweenLite.to(end_copy,.5,{alpha:1,delay:.5})
+  TweenLite.to(end_copy1,.5,{alpha:0})
+  TweenLite.set(end_mark,.5,{y:0})
+  TweenLite.to(end_mark,.5,{y:-30,alpha:0})
+  TweenLite.set(end_map,.5,{scale:1,alpha:1})
+  TweenLite.to(end_map,.5,{scale:.8,alpha:0})
+  ifbtn1=0
 }
