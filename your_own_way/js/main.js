@@ -13,8 +13,8 @@ $(document).ready(function load (){
     shareContent = {
       title: "走自己的路，你永远独一无二",
       desc: "愿为野马，四海为家",
-      link: "https://mazda.music.163.com/your_own_way/",
-      imgUrl: "https://mazda.music.163.com/your_own_way/img/ico.jpg",
+      link: "http://mazda.music.163.com/your_own_way/",
+      imgUrl: "http://mazda.music.163.com/your_own_way/img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };
