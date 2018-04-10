@@ -104,3 +104,12 @@ img{ width: 100%; }
 	-webkit-tap-highlight-color: transparent;
 			tap-highlight-color: transparent;
 }
+#closeBtn{
+	position: absolute;
+	width: 8.75%;
+	top: 0;
+	left: 0;
+	-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;
+	display:none;
+}

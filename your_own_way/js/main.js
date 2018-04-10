@@ -364,7 +364,7 @@ var dotGlow=new createjs.Container()
 var dotGlow2=new createjs.Container()
 
 function ani1start(){
-
+  setHint()
   $("#p0_btn").css({display:"none"})
   stage.addChild(stage_1)
   stage.addChild(downText)
@@ -406,6 +406,7 @@ function ani1start(){
 }
 function p1done(){
   $("#home_btn").css({display:"block"})
+  showHint1(0)
 }
 //====光点汇聚
 
@@ -475,7 +476,7 @@ function ani1end(){//=======点击触发
   word2.y=486
   TweenLite.to(word2,1,{x:320})
   createjs.Ticker.addEventListener("tick",setQmark);
-
+  showHint1(2)
 
 }
 
@@ -516,6 +517,7 @@ function ani2end(){//=======点击触发
   stage_4.x=640
 
   showHomeBtn(1)
+  showHint1(1)
 }
 
 function ani3(){
@@ -540,6 +542,7 @@ function backToAni3(){
   TweenLite.set(boy,{x:230,y:250,alpha:0})
   TweenLite.to(boy,1,{alpha:1,ease:Elastic.easeOut,delay:1,onComplete:showHomeBtn})
   showHomeBtn(1)
+  showHint2(1)
   setFlowerBlow()
 }
 
@@ -825,6 +828,7 @@ function ani15end(){
 }
 var video_light= new createjs.Bitmap("img/video_light.png")
 var video1=$("#video1")
+var video_title= new createjs.Bitmap("img/video_title.png")
 function showMV(){
   for(var i=0;i<boys.length;i++){
     //TweenLite.to(boys[i],1,{y:"+=200"})
@@ -849,6 +853,12 @@ function showMV(){
   TweenLite.to(video_light,.5,{scaleY:2,scaleX:2,alpha:1})
   TweenLite.set(video1,{display:"block",opacity:0,top:"28%"})
   TweenLite.to(video1,.5,{opacity:1,top:"25%"})
+
+  stage.addChild(video_title)
+  video_title.y=-40
+  TweenLite.from(video_title,1,{alpha:0})
+
+
   video1[0].play()
   showHomeBtn(1)
 }
@@ -863,6 +873,7 @@ function hideMV(){
   }
   skyMove.y=16
   TweenLite.to(skyMove,1,{y:0})
+  TweenLite.to(video_title,1,{y:"+=250",alpha:0})
 }
 var end_bottom=new createjs.Bitmap("img/end_bottom.png")
 var end_bottom2=new createjs.Bitmap("img/end_bottom2.png")
@@ -913,6 +924,15 @@ $("#endBtn1").click(function(){
   }
 
 })
+
+$("#closeBtn").click(function(){
+  if(ifbtn1==0){
+    showEndLayer()
+  }else{
+    hideEndLayer()
+  }
+
+})
 $("#endBtn2").click(function(){
   window.location.href="https://m.faw-mazda.com/cars/cx4/?utm_source=wangyiyunyinleSSL&utm_content=guanwang&utm_medium=guanwang&utm_campaign=20849691"
 })
@@ -926,6 +946,7 @@ function showEndLayer(){
   TweenLite.set(end_map,.5,{scale:.8,alpha:0})
   TweenLite.to(end_map,.5,{scale:1,alpha:1,delay:.5})
   ifbtn1=1
+  TweenLite.set($("#closeBtn"),{display:"block"})
 }
 
 function hideEndLayer(){
@@ -937,4 +958,5 @@ function hideEndLayer(){
   TweenLite.set(end_map,.5,{scale:1,alpha:1})
   TweenLite.to(end_map,.5,{scale:.8,alpha:0})
   ifbtn1=0
+  TweenLite.set($("#closeBtn"),{display:"none"})
 }

@@ -4,6 +4,8 @@ var nowPage=1
 var ifNew=1
 $("#home_btn").click(function(){
   $("#home_btn").css({display:"none"})
+  TweenLite.set(hint1,{alpha:0})
+  TweenLite.set(hint2,{alpha:0})
   nowPage++
   TweenLite.to(homeBtn,.5,{alpha:0})
   switch(nowPage){
@@ -127,6 +129,24 @@ $("#home_btn").click(function(){
       nextText()
   }
 })
+//==========提示
+var hint1=new createjs.Bitmap("img/hint1.png")
+var hint2=new createjs.Bitmap("img/hint2.png")
+function setHint(){
+  stage.addChild(hint1)
+  stage.addChild(hint2)
+  hint1.regY=hint2.regY=59
+  hint1.y=hint2.y=1000
+  hint1.alpha=hint2.alpha=0
+}
+
+function showHint1(_delay){
+  TweenLite.to(hint1,1,{alpha:1,delay:_delay})
+}
+function showHint2(_delay){
+  TweenLite.to(hint2,1,{alpha:1,delay:_delay})
+}
+
 //==========下按钮动画
 var homebtn1=new createjs.Bitmap("img/homebtn1.png")
 var homebtn2=new createjs.Bitmap("img/homebtn2.png")
