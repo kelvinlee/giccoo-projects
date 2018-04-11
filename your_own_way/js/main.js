@@ -32,16 +32,17 @@ $(document).ready(function load (){
 
 });
 
-
+var ifbgm=0
 var bgm=$("#bgm")[0]
 //微信端背景音乐播放
 function iniListenSound(){
          document.addEventListener("WeixinJSBridgeReady", function(){
              bgm.play();
+             ifbgm=1
+             TweenLite.set($("#musicOff"),{opacity:1})
         }, false);
 }
 
-<<<<<<< HEAD
 $("#musicOff").click(function(){
   if(ifbgm==0){
     bgm.play();
@@ -59,8 +60,6 @@ $("#video1").click(function(){
   if(ifbgm==1){bgm.pause();}
 })
 
-=======
->>>>>>> 39166b48c273c295b0a998be99e2753f848a3d92
 
 
 $("#shareBtn").click(neteaseShare)
@@ -398,10 +397,7 @@ function ani1start(){
   stage.removeChild(stage1)
   stage.removeChild(stage1b)
   stage.removeChild(stage1fp)
-<<<<<<< HEAD
   TweenLite.to($(".musicBtn"),1,{opacity:0,display:"none"})
-=======
->>>>>>> 39166b48c273c295b0a998be99e2753f848a3d92
 
 
   setHint()
