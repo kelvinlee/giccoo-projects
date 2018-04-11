@@ -73,8 +73,6 @@ var app = new Vue({
     },
 
     created: function () {
-
-
         //init
         console.log('init')
         var point = {
@@ -86,7 +84,11 @@ var app = new Vue({
         if (cityid) {
             getWeather(this, getWeatherInfoUrl + cityid + '/id/translate') //如果有cityid 直接不定位 拿天气数据
         } else {
-
+			if (window.location.href.indexOf('localhost') <= 0) {
+				if (location.protocol != 'https:') {
+					location.replace('https:' + window.location.href.substring(window.location.protocol.length));
+				}
+			}
             getUserPosition(this);//获取用户位置
         }
 
