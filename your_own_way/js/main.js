@@ -877,6 +877,7 @@ var video_light= new createjs.Bitmap("img/video_light.png")
 var video1=$("#video1")
 var video_title= new createjs.Bitmap("img/video_title.png")
 function showMV(){
+   bgm.pause();
   for(var i=0;i<boys.length;i++){
     //TweenLite.to(boys[i],1,{y:"+=200"})
     
