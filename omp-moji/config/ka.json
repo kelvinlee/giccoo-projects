@@ -39,14 +39,14 @@
     "storeAllName": "老百姓大药房连锁（天津）有限公司",
     "storeName": "老百姓大药房",
     "eshop": "false",
-    "city": "长沙",
+    "city": "天津",
     "logo": "img/logo/icon14.png"
   },
   {
     "storeAllName": "吉林大药房药业股份有限公司",
     "storeName": "吉林大药房",
     "eshop": "false",
-    "city": "长春",
+    "city": "吉林",
     "logo": "img/logo/icon17.png"
   },
   {
@@ -61,6 +61,13 @@
     "storeName": "成大方圆药房",
     "eshop": "false",
     "city": "沈阳",
+    "logo": "img/logo/icon13.png"
+  },
+  {
+    "storeAllName": "辽宁成大方圆医药连锁有限公司",
+    "storeName": "成大方圆药房",
+    "eshop": "false",
+    "city": "大连",
     "logo": "img/logo/icon13.png"
   },
   {
@@ -138,7 +145,7 @@
     "storeAllName": "广西鸿翔一心堂药业有限责任公司",
     "storeName": "一心堂大药房",
     "eshop": "false",
-    "city": "南宁",
+    "city": "柳州",
     "logo": "img/logo/icon5.png"
   },
   {
@@ -154,6 +161,13 @@
     "storeName": "吉林大药房",
     "eshop": "false",
     "city": "长春",
+    "logo": "img/logo/icon17.png"
+  },
+  {
+    "storeAllName": "吉林大药房药业股份有限公司",
+    "storeName": "吉林大药房",
+    "eshop": "false",
+    "city": "白城",
     "logo": "img/logo/icon17.png"
   },
   {
@@ -204,13 +218,6 @@
     "eshop": "false",
     "city": "银川",
     "logo": "img/logo/icon23.png"
-  },
-  {
-    "storeAllName": "吉林大药房药业股份有限公司",
-    "storeName": "吉林大药房",
-    "eshop": "false",
-    "city": "长春",
-    "logo": "img/logo/icon17.png"
   },
   {
     "storeAllName": "青岛同方药业连锁有限公司",
