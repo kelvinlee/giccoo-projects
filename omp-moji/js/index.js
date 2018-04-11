@@ -218,7 +218,7 @@ var app = new Vue({
                             app.$http.get('./config/store.json').then(function (res) {
                                 var storeJson = res.data
                                 var localStore = getStoreList(storeJson, cityInfo)
-                                console.log(localStore)
+                                // console.log(localStore)
                                 if (localStore) {
                                     app.storeList = localStore
                                     app.ifEshopText = true
@@ -315,7 +315,7 @@ function getKaInfo(kaJson, city) {
 }//获取城市信息
 function getCityInfo(cityJson, area, pname) {
     // var kaList = [];
-    console.log(cityJson, area)
+    // console.log(cityJson, area)
     for (var i in cityJson) {
         var obj = cityJson[i]
 
@@ -417,7 +417,7 @@ function getStoreList(storeJson, cityInfo) {
 
     //匹配区域
     if (locationCityStoreList.length > 0) {
-        console.log(locationCityStoreList)
+        // console.log(locationCityStoreList)
 
         for (var i in locationCityStoreList) {
             var _area = String(locationCityStoreList[i].area)
@@ -434,8 +434,8 @@ function getStoreList(storeJson, cityInfo) {
             }
         }
     }
-    console.log(locationCityStoreList)
-    console.log(locationAreaStoreList)
+    // console.log(locationCityStoreList)
+    // console.log(locationAreaStoreList)
 
     if (locationAreaStoreList.length > 0) {
         return locationAreaStoreList //如果有区域，返回区域
