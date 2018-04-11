@@ -923,7 +923,7 @@ function hideMV(){
 var end_bottom=new createjs.Bitmap("img/end_bottom.png")
 var end_bottom2=new createjs.Bitmap("img/end_bottom2.png")
 var end_copy=new createjs.Bitmap("img/end_copy.png")
-var end_copy1=new createjs.Bitmap("img/end_copy1.png")
+var end_copy1=new createjs.Bitmap("img/end_copy_1.png")
 var end_map=new createjs.Bitmap("img/end_map.jpg")
 var end_mark=new createjs.Bitmap("img/end_mark.png")
 
