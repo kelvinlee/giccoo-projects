@@ -6,11 +6,13 @@
 	<title>辅舒良</title>
 	<link rel="stylesheet" href="css/index.css">
 	<script> //force to https except localhost
-   /* if (window.location.href.indexOf('localhost') <= 0) {
-      if (location.protocol != 'https:') {
-        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-      }
-    }*/
+    if (window.location.href.indexOf('localhost') <= 0) {
+        if (document.referrer === '') {
+            if (location.protocol != 'https:') {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+        }
+    }
 	</script>
 </head>
 <body>
