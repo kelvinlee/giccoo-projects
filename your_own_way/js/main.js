@@ -39,17 +39,17 @@ function iniListenSound(){
          document.addEventListener("WeixinJSBridgeReady", function(){
              bgm.play();
              ifbgm=1
-             TweenLite.set($("#musicOff"),{opacity:1})
+             TweenLite.set($("#musicOff"),{opacity:0})
         }, false);
 }
 
 $("#musicOff").click(function(){
   if(ifbgm==0){
     bgm.play();
-    TweenLite.set($("#musicOff"),{opacity:1})
+    TweenLite.set($("#musicOff"),{opacity:0})
   }else{
     bgm.pause();
-    TweenLite.set($("#musicOff"),{opacity:0})
+    TweenLite.set($("#musicOff"),{opacity:1})
   }
   ifbgm++
   if(ifbgm==2){ifbgm=0}
@@ -57,7 +57,9 @@ $("#musicOff").click(function(){
 })
 
 $("#video1").click(function(){
-  if(ifbgm==1){bgm.pause();}
+  //if(ifbgm==1){bgm.pause();}
+  //alert("stop!")
+  bgm.pause();
 })
 
 
@@ -875,6 +877,7 @@ var video_light= new createjs.Bitmap("img/video_light.png")
 var video1=$("#video1")
 var video_title= new createjs.Bitmap("img/video_title.png")
 function showMV(){
+   bgm.pause();
   for(var i=0;i<boys.length;i++){
     //TweenLite.to(boys[i],1,{y:"+=200"})
     
@@ -970,14 +973,14 @@ $("#endBtn1").click(function(){
 
 })
 
-$("#closeBtn").click(function(){
-  if(ifbtn1==0){
-    showEndLayer()
-  }else{
-    hideEndLayer()
-  }
+// $("#closeBtn").click(function(){
+//   if(ifbtn1==0){
+//     showEndLayer()
+//   }else{
+//     hideEndLayer()
+//   }
 
-})
+// })
 $("#endBtn2").click(function(){
   window.location.href="https://m.faw-mazda.com/cars/cx4/?utm_source=wangyiyunyinleSSL&utm_content=guanwang&utm_medium=guanwang&utm_campaign=20849691"
 })
@@ -991,7 +994,7 @@ function showEndLayer(){
   TweenLite.set(end_map,.5,{scale:.8,alpha:0})
   TweenLite.to(end_map,.5,{scale:1,alpha:1,delay:.5})
   ifbtn1=1
-  TweenLite.set($("#closeBtn"),{display:"block"})
+  //TweenLite.set($("#closeBtn"),{display:"block"})
 }
 
 function hideEndLayer(){
@@ -1003,5 +1006,5 @@ function hideEndLayer(){
   TweenLite.set(end_map,.5,{scale:1,alpha:1})
   TweenLite.to(end_map,.5,{scale:.8,alpha:0})
   ifbtn1=0
-  TweenLite.set($("#closeBtn"),{display:"none"})
+  //TweenLite.set($("#closeBtn"),{display:"none"})
 }
