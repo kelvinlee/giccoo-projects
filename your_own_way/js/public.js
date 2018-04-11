@@ -10,7 +10,7 @@ $("#home_btn").click(function(){
   TweenLite.to(homeBtn,.5,{alpha:0})
   switch(nowPage){
     case 2:
-      $("#bgm")[0].play()
+      // $("#bgm")[0].play()
       ani1end();
       break;
     case 3:
@@ -522,9 +522,10 @@ function showHomeBtn(_t){
 
 //====================问号飘？？？？？
 var qMarkA=[]
+var qMarkC=new createjs.Bitmap("img/qmark.png")
 function setQmark(){
   if (Math.random()>.5) {//Math.random()>.5//i=0;i<1;i++
-    var qMark=new createjs.Bitmap("img/qmark.png")
+    var qMark=qMarkC.clone()//new createjs.Bitmap("img/qmark.png")
     stage_2.addChild(qMark)
     qMarkA.push(qMark)
     qMark.regX=13
@@ -556,11 +557,13 @@ function addZi(){
 }
 //====================火焰效果
 var fireA=[]
+var fireC1=new createjs.Bitmap("img/fire4.png")
+var fireC2=new createjs.Bitmap("img/fire6.png")
 function setFire(){
   for (i=0;i<2;i++) {//Math.random()>.5//
-    var fire=new createjs.Bitmap("img/fire4.png")
+    var fire=fireC1.clone()//new createjs.Bitmap("img/fire4.png")
     if(Math.random()>.5){
-      fire=new createjs.Bitmap("img/fire6.png")
+      fire=fireC2.clone()//new createjs.Bitmap("img/fire6.png")
     }
     stage_56.addChild(fire)
     fireA.push(fire)
@@ -848,11 +851,11 @@ var rainA=[]
 var rainMove={x:-16,y:64,deg:15}//[0,0]
 var lighting = new createjs.Shape();
  
-
+var dorpC = new createjs.Bitmap("img/rain1.png")
 function setRain(_starNum){
   for (var i = 0; i < _starNum; i++) {
     //var AstarContainer = new createjs.Container()
-    var dorp = new createjs.Bitmap("img/rain1.png")
+    var dorp = dorpC.clone()//new createjs.Bitmap("img/rain1.png")
     stage.addChild(stage_rain)
     stage_rain.addChild(dorp)
     //stage.addChild(AstarContainer)

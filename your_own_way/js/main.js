@@ -6,6 +6,7 @@ $(document).ready(function load (){
     sys = "NeteaseMusic";
 
   } else {
+    iniListenSound()
     $("#shareBtn").css({"display":"none"})
     loadWechatConfig();
   	wx.ready(function() {
@@ -30,6 +31,17 @@ $(document).ready(function load (){
 
 
 });
+
+
+var bgm=$("#bgm")[0]
+//微信端背景音乐播放
+function iniListenSound(){
+         document.addEventListener("WeixinJSBridgeReady", function(){
+             bgm.play();
+        }, false);
+}
+
+
 
 $("#shareBtn").click(neteaseShare)
 
@@ -184,16 +196,16 @@ var footPrints=[]
 var creatFootPrint
 var screenMove=[0,0]
 
-
+var fpC= new createjs.Bitmap("img/footprint.png")
 function setFootPrints(){
   if(boy1.currentFrame==0){
-    var fp= new createjs.Bitmap("img/footprint.png")
+    var fp= fpC.clone()// new createjs.Bitmap("img/footprint.png")
     stage1fp.addChild(fp)
     footPrints.push(fp)
     fp.x=boy1.x
     fp.y=boy1.y+3
   }else if (boy1.currentFrame==35) {
-    var fp= new createjs.Bitmap("img/footprint.png")
+    var fp= fpC.clone()//new createjs.Bitmap("img/footprint.png")
     stage1fp.addChild(fp)
     footPrints.push(fp)
     fp.x=boy1.x
@@ -364,6 +376,11 @@ var dotGlow=new createjs.Container()
 var dotGlow2=new createjs.Container()
 
 function ani1start(){
+  stage.removeChild(stage1)
+  stage.removeChild(stage1b)
+  stage.removeChild(stage1fp)
+
+
   setHint()
   $("#p0_btn").css({display:"none"})
   stage.addChild(stage_1)
