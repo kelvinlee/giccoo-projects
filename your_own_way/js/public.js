@@ -255,27 +255,20 @@ function showLayer(_i){
   };
   layerTA[_i-1].visible=true
   musicA[_i-1][0].play()
-  //musicA[_i-1][0].volume = 0.01;
-  //TweenLite.to(musicA[_i-1][0],3,{volume:1,ease:Linear.easeNone})
 
   downText.visible=false
-  //TweenLite.to($("#bgm")[0],3,{volume:0.01,ease:Linear.easeNone})
   $("#bgm")[0].pause()
 }
 function hideLayer(){
-  $("#bgm")[0].play()
-  //document.getElementById("bgm").volume = 0.01;
-  //TweenLite.to($("#bgm")[0],5,{volume:.5,ease:Linear.easeNone})
+  if(ifbgm==1){
+    bgm.play()
+  }
   TweenLite.to(musicLayer,1,{x:640})
   musicA[nowMusic][0].pause()
-  //TweenLite.to(musicA[nowMusic][0],2,{volume:.01,ease:Linear.easeNone,onComplete:musicPause,onCompleteParams:[musicA[nowMusic][0]]})
-
   downText.visible=true
 }
 
-function musicPause(_tar){
-  _tar.pause()
-}
+
 
 //=======================人 所有
 

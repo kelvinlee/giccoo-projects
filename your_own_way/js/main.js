@@ -56,6 +56,10 @@ $("#musicOff").click(function(){
 
 })
 
+$("#video1").click(function(){
+  if(ifbgm==1){bgm.pause();}
+})
+
 
 
 $("#shareBtn").click(neteaseShare)
@@ -74,7 +78,6 @@ function neteaseShare() {
 };
 
 $('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
-//$('body')[0].addEventListener('touchstart', function (event) {event.preventDefault();}, false);
 $('#p0_btn')[0].addEventListener('touchstart', function (event) {event.preventDefault();}, false);
 var screenW
 var screenH
@@ -394,7 +397,7 @@ function ani1start(){
   stage.removeChild(stage1)
   stage.removeChild(stage1b)
   stage.removeChild(stage1fp)
-  TweenLite.set($(".musicBtn"),{display:"none"})
+  TweenLite.to($(".musicBtn"),1,{opacity:0,display:"none"})
 
 
   setHint()
