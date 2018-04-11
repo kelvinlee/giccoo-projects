@@ -12,7 +12,7 @@ var defultEshop = {
 }
 // const firstRender = true
 
-// const getcoordPath = 'http://g.giccoo.com/api/ip/'
+var useIpApi = 'http://g.giccoo.com/api/ip/'
 
 var app = new Vue({
     el: '#app',
@@ -44,10 +44,27 @@ var app = new Vue({
     methods: {
         closeStore: function () {
             this.storePopup = 'none'
+			stm_clicki('send', 'event', this.area, '点击', '关闭药房地址浮层');
         },
         showStore: function () {
             this.storePopup = 'block'
-        }
+			stm_clicki('send', 'event', this.area, '点击', '药房地址按钮');
+        },
+		gotoBuy:function (buyUrl){
+			stm_clicki('send', 'event', this.area, '点击', '立即购买按钮');
+			setTimeout(function(){
+				window.location.href = buyUrl
+			},100)
+		},
+		//问题跳转链接加监测
+		listenToUrl:function (question,url){
+        	// alert(e)
+			console.log(question,url)
+			stm_clicki('send', 'event', question, '点击', '问题');
+			setTimeout(function(){
+				window.location.href = url
+			},100)
+		}
     },
     beforecreate: function () {
         //loading
@@ -56,6 +73,8 @@ var app = new Vue({
     },
 
     created: function () {
+
+
         //init
         console.log('init')
         var point = {
@@ -67,7 +86,7 @@ var app = new Vue({
         if (cityid) {
             getWeather(this, getWeatherInfoUrl + cityid + '/id/translate') //如果有cityid 直接不定位 拿天气数据
         } else {
-           
+
             getUserPosition(this);//获取用户位置
         }
 
@@ -78,6 +97,10 @@ var app = new Vue({
             var data = res.data
             console.log(data)
             this.quesionList = data
+
+			$('.question').on('click',function (e) {
+				console.log(e)
+			})
         }, function (res) {
             console.log("加载问题json失败")
         })
