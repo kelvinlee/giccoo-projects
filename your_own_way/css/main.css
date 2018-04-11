@@ -100,7 +100,7 @@ img{ width: 100%; }
 	position: absolute;
 	width: 11.25%;
 	top: 0;
-	right: 0;
+	left: 0;
 	-webkit-tap-highlight-color: transparent;
 			tap-highlight-color: transparent;
 }
@@ -112,4 +112,15 @@ img{ width: 100%; }
 	-webkit-tap-highlight-color: transparent;
 			tap-highlight-color: transparent;
 	display:none;
+}
+.musicBtn{
+	position: absolute;
+	width: 11.25%;
+	top: 0;
+	right: 0;
+	-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;
+}
+#musicOff{
+	opacity: 0;
 }
