@@ -57,7 +57,9 @@ $("#musicOff").click(function(){
 })
 
 $("#video1").click(function(){
-  if(ifbgm==1){bgm.pause();}
+  //if(ifbgm==1){bgm.pause();}
+  //alert("stop!")
+  bgm.pause();
 })
 
 
