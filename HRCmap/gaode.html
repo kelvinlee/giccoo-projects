@@ -26,6 +26,7 @@
   <script src="../libs/js/cityId.js"></script>
   <!-- UI组件库 1.0 -->
   <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+  <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
   <script>
     var province = 0;
     var cityid = -1;
@@ -41,291 +42,300 @@
     if ($_GET()['data']) {
       RClist = JSON.parse(decodeURIComponent($_GET()['data']));
     }
+    axios.get("http://g.giccoo.com/sensitivity/api/province/p/"+province).then(function(e){
+      console.log(e.data);
+      RClist = e.data.info;
+      create();
+    })
   </script>
   <script type="text/javascript">
     //创建地图 whitesmoke b45e7e39246bc931b7c8da3d5ac64d12
-    var map = new AMap.Map('container', {
-      zoom: 4,
-      mapStyle: "amap://styles/whitesmoke"
-      // mapStyle: "amap://styles/b45e7e39246bc931b7c8da3d5ac64d12"
-    });
-    map.setFeatures(['bg',"road"]);
-    //just some colors
-    var colors = [
-      "#c2cd23", "#c2cd23", "#ffe512", "#f78f1e", "#f05133"
-    ];
-    var provinces = [
-      {code:110000,name:"北京市"},
-      {code:120000,name:"天津市"},
-      {code:130000,name:"河北省"},
-      {code:140000,name:"山西省"},
-      {code:150000,name:"内蒙古自治区"},
-      {code:210000,name:"辽宁省"},
-      {code:220000,name:"吉林省"},
-      {code:230000,name:"黑龙江省"},
-      {code:310000,name:"上海市"},
-      {code:320000,name:"江苏省"},
-      {code:330000,name:"浙江省"},
-      {code:340000,name:"安徽省"},
-      {code:350000,name:"福建省"},
-      {code:360000,name:"江西省"},
-      {code:370000,name:"山东省"},
-      {code:410000,name:"河南省"},
-      {code:420000,name:"湖北省"},
-      {code:430000,name:"湖南省"},
-      {code:440000,name:"广东省"},
-      {code:450000,name:"广西壮族自治区"},
-      {code:460000,name:"海南省"},
-      {code:500000,name:"重庆市"},
-      {code:510000,name:"四川省"},
-      {code:520000,name:"贵州省"},
-      {code:530000,name:"云南省"},
-      {code:540000,name:"西藏自治区"},
-      {code:610000,name:"陕西省"},
-      {code:620000,name:"甘肃省"},
-      {code:630000,name:"青海省"},
-      {code:640000,name:"宁夏回族自治区"},
-      {code:650000,name:"新疆维吾尔自治区"},
-      {code:710000,name:"台湾省"},
-      {code:810000,name:"香港特别行政区"},
-      {code:820000,name:"澳门特别行政区"}
-    ];
-    var code = provinces[0].code;
-    for (var i=0;i<provinces.length;i++) {
-      if (provinces[i].name == cityData[province].name || provinces[i].name.indexOf(cityData[province].name)>-1) {
-        code = provinces[i].code;
-        break;
-      }
-    }
-    if (RClist.length > 0) {
-      for (var i=0;i<RClist.length;i++) {
-        levels[RClist[i]._id] = parseInt(RClist[i].level);
-      }
-    }
+    function create() {
 
-    // console.log(code, cityData[province].name);
-
-    AMapUI.load(['ui/geo/DistrictExplorer', 'lib/$'], function(DistrictExplorer, $) {
-      // 热力图
-      var Hmap =  Loca.create(map);
-      var layer = Loca.visualLayer({
-        container: Hmap,
-        type: 'heatmap',
-        shape: 'normal'
+      var map = new AMap.Map('container', {
+        zoom: 4,
+        mapStyle: "amap://styles/whitesmoke"
+        // mapStyle: "amap://styles/b45e7e39246bc931b7c8da3d5ac64d12"
       });
-
-      var list = [];
-      // var i = -1, length = heatmapData.length;
-      // while (++i < length) {
-      //   var item = heatmapData[i];
-      //   list.push({
-      //     coordinate: [item.lng, item.lat],
-      //     count: item.count
-      //   })
-      // }
-
-      
-
-      layer.setOptions({
-        style: {
-          radius: 5,
-          opacity: [0, 0.6],
-        },
-        gradient: {
-          0   :"rgb(255,255,255)",
-          .5 :"rgb(255,255,255)",
-          .8  :"rgb(220,220,220)"
+      map.setFeatures(['bg',"road"]);
+      //just some colors
+      var colors = [
+        "#c2cd23", "#c2cd23", "#ffe512", "#f78f1e", "#f05133"
+      ];
+      var provinces = [
+        {code:110000,name:"北京市"},
+        {code:120000,name:"天津市"},
+        {code:130000,name:"河北省"},
+        {code:140000,name:"山西省"},
+        {code:150000,name:"内蒙古自治区"},
+        {code:210000,name:"辽宁省"},
+        {code:220000,name:"吉林省"},
+        {code:230000,name:"黑龙江省"},
+        {code:310000,name:"上海市"},
+        {code:320000,name:"江苏省"},
+        {code:330000,name:"浙江省"},
+        {code:340000,name:"安徽省"},
+        {code:350000,name:"福建省"},
+        {code:360000,name:"江西省"},
+        {code:370000,name:"山东省"},
+        {code:410000,name:"河南省"},
+        {code:420000,name:"湖北省"},
+        {code:430000,name:"湖南省"},
+        {code:440000,name:"广东省"},
+        {code:450000,name:"广西壮族自治区"},
+        {code:460000,name:"海南省"},
+        {code:500000,name:"重庆市"},
+        {code:510000,name:"四川省"},
+        {code:520000,name:"贵州省"},
+        {code:530000,name:"云南省"},
+        {code:540000,name:"西藏自治区"},
+        {code:610000,name:"陕西省"},
+        {code:620000,name:"甘肃省"},
+        {code:630000,name:"青海省"},
+        {code:640000,name:"宁夏回族自治区"},
+        {code:650000,name:"新疆维吾尔自治区"},
+        {code:710000,name:"台湾省"},
+        {code:810000,name:"香港特别行政区"},
+        {code:820000,name:"澳门特别行政区"}
+      ];
+      var code = provinces[0].code;
+      for (var i=0;i<provinces.length;i++) {
+        if (provinces[i].name == cityData[province].name || provinces[i].name.indexOf(cityData[province].name)>-1) {
+          code = provinces[i].code;
+          break;
         }
-      });
+      }
+      if (RClist.length > 0) {
+        for (var i=0;i<RClist.length;i++) {
+          levels[RClist[i]._id] = parseInt(RClist[i].level);
+        }
+      }
 
-      
-      //创建一个实例
-      var districtExplorer = window.districtExplorer = new DistrictExplorer({
-        eventSupport: true, //打开事件支持
-        map: map
-      });
+      // console.log(code, cityData[province].name);
 
-      //当前聚焦的区域
-      var currentAreaNode = null;
+      AMapUI.load(['ui/geo/DistrictExplorer', 'lib/$'], function(DistrictExplorer, $) {
+        // 热力图
+        var Hmap =  Loca.create(map);
+        var layer = Loca.visualLayer({
+          container: Hmap,
+          type: 'heatmap',
+          shape: 'normal'
+        });
 
-      //绘制区域面板的节点
-      function renderAreaPanelNode(ele, props, color) {
-        // console.log(props.adcode,props.name);
+        var list = [];
+        // var i = -1, length = heatmapData.length;
+        // while (++i < length) {
+        //   var item = heatmapData[i];
+        //   list.push({
+        //     coordinate: [item.lng, item.lat],
+        //     count: item.count
+        //   })
+        // }
+
         
-      }
 
-      //填充某个节点的子区域列表
-      function renderAreaPanel(areaNode) {
+        layer.setOptions({
+          style: {
+            radius: 5,
+            opacity: [0, 0.6],
+          },
+          gradient: {
+            0   :"rgb(255,255,255)",
+            .5 :"rgb(255,255,255)",
+            .8  :"rgb(220,220,220)"
+          }
+        });
 
-        var props = areaNode.getProps();
+        
+        //创建一个实例
+        var districtExplorer = window.districtExplorer = new DistrictExplorer({
+          eventSupport: true, //打开事件支持
+          map: map
+        });
 
-        // console.log("",props.adcode,props.name);
+        //当前聚焦的区域
+        var currentAreaNode = null;
 
-        var subFeatures = areaNode.getSubFeatures();
-
-        //填充子区域
-        for (var i = 0, len = subFeatures.length; i < len; i++) {
-          // renderAreaPanelNode({}, areaNode.getPropsOfFeature(subFeatures[i]), colors[i % colors.length]);
+        //绘制区域面板的节点
+        function renderAreaPanelNode(ele, props, color) {
+          // console.log(props.adcode,props.name);
+          
         }
-      }
 
-      //绘制某个区域的边界
-      function renderAreaPolygons(areaNode) {
-        // console.log(areaNode);
-        //更新地图视野
-        map.setBounds(areaNode.getBounds(), null, null, true);
+        //填充某个节点的子区域列表
+        function renderAreaPanel(areaNode) {
 
-        //清除已有的绘制内容
-        districtExplorer.clearFeaturePolygons();
+          var props = areaNode.getProps();
 
-        //绘制子区域
-        var subFeatures = areaNode.getSubFeatures();
-        // console.log(subFeatures.length);
-        // 循环对比 code/id
-        districtExplorer.renderSubFeatures(areaNode, function(feature, index) {
-          // console.log(feature,feature.properties.adcode,feature.properties.name);
-          // 边界点
-          for (var i = feature.geometry.coordinates[0][0].length - 1; i >= 0; i--) {
-            // console.log(feature.geometry.coordinates[0][0][i]);
-            list.push({
-              coordinate: feature.geometry.coordinates[0][0][i],
-              count: 5+Math.random()*5
-            })
+          // console.log("",props.adcode,props.name);
+
+          var subFeatures = areaNode.getSubFeatures();
+
+          //填充子区域
+          for (var i = 0, len = subFeatures.length; i < len; i++) {
+            // renderAreaPanelNode({}, areaNode.getPropsOfFeature(subFeatures[i]), colors[i % colors.length]);
           }
-          
+        }
 
-          if (index >= subFeatures.length-1) {
-            layer.setData(list, {
-              lnglat: 'coordinate',
-              value: 'count'
-            });
-            layer.render();
-          }
+        //绘制某个区域的边界
+        function renderAreaPolygons(areaNode) {
+          // console.log(areaNode);
+          //更新地图视野
+          map.setBounds(areaNode.getBounds(), null, null, true);
 
-          var colorIndex = 4;
-          var line = 0;
-          for (var i=0;i<cityData[province].sub.length;i++) {
-            var item = cityData[province].sub[i];
-            item.name = item.name.replace("县","").replace("地区","").replace("区","").replace("市","");
-            if (feature.properties.name == item.name || feature.properties.name.indexOf(item.name) > -1) {
-              colorIndex = levels[item.id]?levels[item.id]-1:2;
-              if (item.id == cityid) {
-                line = 2;
-                var text = new AMap.Text({
-                  text: feature.properties.name,
-                  textAlign:'center', // 'left' 'right', 'center',
-                  verticalAlign:'middle', //middle 、bottom
-                  draggable: false,
-                  angle:0,
-                  style:{
-                    'background-color': "transparent",
-                    'color': "#fff",
-                    'border': 'none',
-                    'text-shadow': "1px 1px 3px #000"
-                  },
-                  position: feature.properties.center
-                });
-                text.setMap(map);
-              }
-              break;
+          //清除已有的绘制内容
+          districtExplorer.clearFeaturePolygons();
+
+          //绘制子区域
+          var subFeatures = areaNode.getSubFeatures();
+          // console.log(subFeatures.length);
+          // 循环对比 code/id
+          districtExplorer.renderSubFeatures(areaNode, function(feature, index) {
+            // console.log(feature,feature.properties.adcode,feature.properties.name);
+            // 边界点
+            for (var i = feature.geometry.coordinates[0][0].length - 1; i >= 0; i--) {
+              // console.log(feature.geometry.coordinates[0][0][i]);
+              list.push({
+                coordinate: feature.geometry.coordinates[0][0][i],
+                count: 5+Math.random()*5
+              })
             }
-          }
-          
-          // 根据 level 调整颜色值, 如果是当前地区, 增加外框.
-          var fillColor = colors[colorIndex];
-          var strokeColor = colors[colors.length - 1 - index % colors.length];
-          
+            
 
-          return {
+            if (index >= subFeatures.length-1) {
+              layer.setData(list, {
+                lnglat: 'coordinate',
+                value: 'count'
+              });
+              layer.render();
+            }
+
+            var colorIndex = 4;
+            var line = 0;
+            for (var i=0;i<cityData[province].sub.length;i++) {
+              var item = cityData[province].sub[i];
+              item.name = item.name.replace("县","").replace("地区","").replace("区","").replace("市","");
+              if (feature.properties.name == item.name || feature.properties.name.indexOf(item.name) > -1) {
+                colorIndex = levels[item.id]?levels[item.id]-1:2;
+                if (item.id == cityid) {
+                  line = 2;
+                  var text = new AMap.Text({
+                    text: feature.properties.name,
+                    textAlign:'center', // 'left' 'right', 'center',
+                    verticalAlign:'middle', //middle 、bottom
+                    draggable: false,
+                    angle:0,
+                    style:{
+                      'background-color': "transparent",
+                      'color': "#fff",
+                      'border': 'none',
+                      'text-shadow': "1px 1px 3px #000"
+                    },
+                    position: feature.properties.center
+                  });
+                  text.setMap(map);
+                }
+                break;
+              }
+            }
+            
+            // 根据 level 调整颜色值, 如果是当前地区, 增加外框.
+            var fillColor = colors[colorIndex];
+            var strokeColor = colors[colors.length - 1 - index % colors.length];
+            
+
+            return {
+              cursor: 'default',
+              bubble: true,
+              strokeColor: "rgba(0,170,0,1)", //线颜色
+              strokeOpacity: line>0?1:0, //线透明度
+              strokeWeight: line, //线宽
+              fillColor: fillColor, //填充色
+              fillOpacity: 0.7, //填充透明度
+            };
+          });
+
+          //绘制父区域
+          districtExplorer.renderParentFeature(areaNode, {
             cursor: 'default',
             bubble: true,
-            strokeColor: "rgba(0,170,0,1)", //线颜色
-            strokeOpacity: line>0?1:0, //线透明度
-            strokeWeight: line, //线宽
-            fillColor: fillColor, //填充色
-            fillOpacity: 0.7, //填充透明度
-          };
-        });
-
-        //绘制父区域
-        districtExplorer.renderParentFeature(areaNode, {
-          cursor: 'default',
-          bubble: true,
-          strokeColor: '#ccc', //线颜色
-          strokeOpacity: 0.2, //线透明度
-          strokeWeight: 1, //线宽
-          fillColor: null, //填充色
-          fillOpacity: 0.35, //填充透明度
-        });
-      }
-
-      //切换区域后刷新显示内容
-      function refreshAreaNode(areaNode) {
-
-        districtExplorer.setHoverFeature(null);
-
-        renderAreaPolygons(areaNode);
-
-      }
-
-      //切换区域
-      function switch2AreaNode(adcode, callback) {
-
-        if (currentAreaNode && ('' + currentAreaNode.getAdcode() === '' + adcode)) {
-          return;
+            strokeColor: '#ccc', //线颜色
+            strokeOpacity: 0.2, //线透明度
+            strokeWeight: 1, //线宽
+            fillColor: null, //填充色
+            fillOpacity: 0.35, //填充透明度
+          });
         }
 
-        loadAreaNode(adcode, function(error, areaNode) {
+        //切换区域后刷新显示内容
+        function refreshAreaNode(areaNode) {
 
-          if (error) {
+          districtExplorer.setHoverFeature(null);
 
-            if (callback) {
-              callback(error);
-            }
+          renderAreaPolygons(areaNode);
 
+        }
+
+        //切换区域
+        function switch2AreaNode(adcode, callback) {
+
+          if (currentAreaNode && ('' + currentAreaNode.getAdcode() === '' + adcode)) {
             return;
           }
 
-          currentAreaNode = window.currentAreaNode = areaNode;
+          loadAreaNode(adcode, function(error, areaNode) {
 
-          //设置当前使用的定位用节点
-          districtExplorer.setAreaNodesForLocating([currentAreaNode]);
+            if (error) {
 
-          refreshAreaNode(areaNode);
+              if (callback) {
+                callback(error);
+              }
 
-          if (callback) {
-            callback(null, areaNode);
-          }
-        });
-      }
-
-      //加载区域
-      function loadAreaNode(adcode, callback) {
-        // console.log(adcode);
-        districtExplorer.loadAreaNode(adcode, function(error, areaNode) {
-
-          if (error) {
-
-            if (callback) {
-              callback(error);
+              return;
             }
 
-            console.error(error);
+            currentAreaNode = window.currentAreaNode = areaNode;
 
-            return;
-          }
+            //设置当前使用的定位用节点
+            districtExplorer.setAreaNodesForLocating([currentAreaNode]);
 
-          // renderAreaPanel(areaNode);
+            refreshAreaNode(areaNode);
 
-          if (callback) {
-            callback(null, areaNode);
-          }
-        });
-      }
+            if (callback) {
+              callback(null, areaNode);
+            }
+          });
+        }
 
-      //全国
-      switch2AreaNode(code);
-    });
+        //加载区域
+        function loadAreaNode(adcode, callback) {
+          // console.log(adcode);
+          districtExplorer.loadAreaNode(adcode, function(error, areaNode) {
+
+            if (error) {
+
+              if (callback) {
+                callback(error);
+              }
+
+              console.error(error);
+
+              return;
+            }
+
+            // renderAreaPanel(areaNode);
+
+            if (callback) {
+              callback(null, areaNode);
+            }
+          });
+        }
+
+        //全国
+        switch2AreaNode(code);
+      });
+
+    }
   </script>
 </body>
 
