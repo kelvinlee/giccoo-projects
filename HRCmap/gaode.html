@@ -45,6 +45,7 @@
     axios.get("http://g.giccoo.com/sensitivity/api/province/p/"+province).then(function(e){
       console.log(e.data);
       RClist = e.data.info;
+      document.title = e.data.province;
       create();
     })
   </script>
