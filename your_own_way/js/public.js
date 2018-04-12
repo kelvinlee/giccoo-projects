@@ -131,8 +131,8 @@ $("#home_btn").click(function(){
   }
 })
 //==========提示
-var hint1=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/hint1.png")
-var hint2=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/hint2.png")
+var hint1=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/hint1.png")
+var hint2=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/hint2.png")
 function setHint(){
   stage.addChild(hint1)
   stage.addChild(hint2)
@@ -149,8 +149,8 @@ function showHint2(_delay){
 }
 
 //==========下按钮动画
-var homebtn1=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/homebtn1.png")
-var homebtn2=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/homebtn2.png")
+var homebtn1=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/homebtn1.png")
+var homebtn2=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/homebtn2.png")
 function initHomeBtn(){
   homeBtn.addChild(homebtn1)
   homeBtn.addChild(homebtn2)
@@ -171,7 +171,7 @@ var textA=[]
 var nowTextNum=0
 function initText(){
   for (var i = 1; i < 16; i++) {
-    var a_text=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/p"+i+"t.png")
+    var a_text=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/p"+i+"t.png")
     textA.push(a_text)
     a_text.regX=320
     a_text.regY=50
@@ -205,7 +205,7 @@ function nextText(){
 }
 //===================音乐浮层
 var musicLayer=new createjs.Container()
-var mlA=["http://image.giccoo.com/projects/your_own_way/img/layer1.png","http://image.giccoo.com/projects/your_own_way/img/layer2.png","http://image.giccoo.com/projects/your_own_way/img/layer3.png","http://image.giccoo.com/projects/your_own_way/img/layer4.png"]
+var mlA=["//image.giccoo.com/projects/your_own_way/img/layer1.png","//image.giccoo.com/projects/your_own_way/img/layer2.png","//image.giccoo.com/projects/your_own_way/img/layer3.png","//image.giccoo.com/projects/your_own_way/img/layer4.png"]
 var layerTA=[]
 
 var barGroup=new createjs.Container()
@@ -213,7 +213,7 @@ var barA=[]
 
 function setLayer(){
   stage.addChild(musicLayer)
-  var layerBG=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/layerbg.png")
+  var layerBG=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/layerbg.png")
   musicLayer.addChild(layerBG)
   for (var i = 0; i < 4; i++) {
     var layerT=new createjs.Bitmap(mlA[i])
@@ -280,49 +280,49 @@ var boySheet
 function setBoy(){
   var str
   for (var i = 1; i <=70 ; i++) {//站起来 0-69--70
-    if(i<10){str="http://image.giccoo.com/projects/your_own_way/img/standup/man000"+i+".png"}else{str="http://image.giccoo.com/projects/your_own_way/img/standup/man00"+i+".png"}
+    if(i<10){str="//image.giccoo.com/projects/your_own_way/img/standup/man000"+i+".png"}else{str="//image.giccoo.com/projects/your_own_way/img/standup/man00"+i+".png"}
     boyA.push(str)
   };
   for (var j = 1; j <=41 ; j++) {//跳 70-110--41
-    if(j<10){str="http://image.giccoo.com/projects/your_own_way/img/jump_s/man000"+j+".png"}else{str="http://image.giccoo.com/projects/your_own_way/img/jump_s/man00"+j+".png"}
+    if(j<10){str="//image.giccoo.com/projects/your_own_way/img/jump_s/man000"+j+".png"}else{str="//image.giccoo.com/projects/your_own_way/img/jump_s/man00"+j+".png"}
     boyA.push(str)
   };
   for (var k = 1; k <=69 ; k++) {//走 111-179--69
-    if(k<10){str="http://image.giccoo.com/projects/your_own_way/img/walk/man000"+k+".png"}else{str="http://image.giccoo.com/projects/your_own_way/img/walk/man00"+k+".png"}
+    if(k<10){str="//image.giccoo.com/projects/your_own_way/img/walk/man000"+k+".png"}else{str="//image.giccoo.com/projects/your_own_way/img/walk/man00"+k+".png"}
     boyA.push(str)
   };
   for (var l = 1; l <=15 ; l++) {//走 180-194--15
-    if(l<10){str="http://image.giccoo.com/projects/your_own_way/img/startrun/man000"+l+".png"}else{str="http://image.giccoo.com/projects/your_own_way/img/startrun/man00"+l+".png"}
+    if(l<10){str="//image.giccoo.com/projects/your_own_way/img/startrun/man000"+l+".png"}else{str="//image.giccoo.com/projects/your_own_way/img/startrun/man00"+l+".png"}
     boyA.push(str)
   };
   for (var m = 2; m <=20 ; m++) {//走 195-213--19
-    if(m<10){str="http://image.giccoo.com/projects/your_own_way/img/run/man000"+m+".png"}else{str="http://image.giccoo.com/projects/your_own_way/img/run/man00"+m+".png"}
+    if(m<10){str="//image.giccoo.com/projects/your_own_way/img/run/man000"+m+".png"}else{str="//image.giccoo.com/projects/your_own_way/img/run/man00"+m+".png"}
     boyA.push(str)
   };
   for (var n = 1; n <=30 ; n++) {//飘 214-243--30
-    if(n<10){str="http://image.giccoo.com/projects/your_own_way/img/fall/man000"+n+".png"}else{str="http://image.giccoo.com/projects/your_own_way/img/fall/man00"+n+".png"}
+    if(n<10){str="//image.giccoo.com/projects/your_own_way/img/fall/man000"+n+".png"}else{str="//image.giccoo.com/projects/your_own_way/img/fall/man00"+n+".png"}
     boyA.push(str)
   };
     //想 244-244--1
-    str="http://image.giccoo.com/projects/your_own_way/img/man_think.png"
+    str="//image.giccoo.com/projects/your_own_way/img/man_think.png"
     boyA.push(str)
 
   for (var o = 70; o >=1 ; o--) {//坐下 245-314--70
-    if(o<10){str="http://image.giccoo.com/projects/your_own_way/img/standup/man000"+o+".png"}else{str="http://image.giccoo.com/projects/your_own_way/img/standup/man00"+o+".png"}
+    if(o<10){str="//image.giccoo.com/projects/your_own_way/img/standup/man000"+o+".png"}else{str="//image.giccoo.com/projects/your_own_way/img/standup/man00"+o+".png"}
     boyA.push(str)
   };
     //趴 315-315--1
-    str="http://image.giccoo.com/projects/your_own_way/img/man_lay.png"
+    str="//image.giccoo.com/projects/your_own_way/img/man_lay.png"
     boyA.push(str)
   for (var p = 10; p <=30 ; p++) {//坐下 316-336--21
-    if(p<10){str="http://image.giccoo.com/projects/your_own_way/img/rain/man000"+p+".png"}else{str="http://image.giccoo.com/projects/your_own_way/img/rain/man00"+p+".png"}
+    if(p<10){str="//image.giccoo.com/projects/your_own_way/img/rain/man000"+p+".png"}else{str="//image.giccoo.com/projects/your_own_way/img/rain/man00"+p+".png"}
     boyA.push(str)
   };
     //看 337-337--1
-    str="http://image.giccoo.com/projects/your_own_way/img/man_look1.png"
+    str="//image.giccoo.com/projects/your_own_way/img/man_look1.png"
     boyA.push(str)
     //看 338-338--1
-    str="http://image.giccoo.com/projects/your_own_way/img/man_look2.png"
+    str="//image.giccoo.com/projects/your_own_way/img/man_look2.png"
     boyA.push(str)
 
   boySheet= new createjs.SpriteSheet({
@@ -363,7 +363,7 @@ var bubbleA=[]
 function setBubble(){
   var str
   for (var i = 1; i <=3 ; i++) {
-    str="http://image.giccoo.com/projects/your_own_way/img/bubble"+i+".png"
+    str="//image.giccoo.com/projects/your_own_way/img/bubble"+i+".png"
     bubbleA.push(str)
   };
 
@@ -392,7 +392,7 @@ var dotA=[]
 function setBubbleDot(){
   
   for (var i = 1; i <=3 ; i++) {
-    var dot=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/bubble_dot"+i+".png")
+    var dot=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/bubble_dot"+i+".png")
     dotA.push(dot)
     dot.alpha=0
     dot.regX=89
@@ -419,7 +419,7 @@ var flowerBlowA=[]
 function setFlowerBlow(){
   var str
   for (var i = 1; i <=54 ; i++) {
-    if(i<10){str="http://image.giccoo.com/projects/your_own_way/img/flower/f000"+i+".png"}else{str="http://image.giccoo.com/projects/your_own_way/img/flower/f00"+i+".png"}
+    if(i<10){str="//image.giccoo.com/projects/your_own_way/img/flower/f000"+i+".png"}else{str="//image.giccoo.com/projects/your_own_way/img/flower/f00"+i+".png"}
     flowerBlowA.push(str)
   };
 
@@ -444,7 +444,7 @@ function setFlowerBlow(){
 
 
 //=====花瓣飘
-var ffA=["http://image.giccoo.com/projects/your_own_way/img/ff2.png","http://image.giccoo.com/projects/your_own_way/img/ff2.png","http://image.giccoo.com/projects/your_own_way/img/ff3.png"]//====
+var ffA=["//image.giccoo.com/projects/your_own_way/img/ff2.png","//image.giccoo.com/projects/your_own_way/img/ff2.png","//image.giccoo.com/projects/your_own_way/img/ff3.png"]//====
 
 function flyflower(){
   
@@ -515,10 +515,10 @@ function showHomeBtn(_t){
 
 //====================问号飘？？？？？
 var qMarkA=[]
-var qMarkC=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/qmark.png")
+var qMarkC=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/qmark.png")
 function setQmark(){
   if (Math.random()>.5) {//Math.random()>.5//i=0;i<1;i++
-    var qMark=qMarkC.clone()//new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/qmark.png")
+    var qMark=qMarkC.clone()//new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/qmark.png")
     stage_2.addChild(qMark)
     qMarkA.push(qMark)
     qMark.regX=13
@@ -532,7 +532,7 @@ function setQmark(){
   };
 }
 //=====================激情+叛逆 字挪动
-var ziA=["http://image.giccoo.com/projects/your_own_way/img/word5a.png","http://image.giccoo.com/projects/your_own_way/img/word5b.png"]
+var ziA=["//image.giccoo.com/projects/your_own_way/img/word5a.png","//image.giccoo.com/projects/your_own_way/img/word5b.png"]
 var nowZi=0
 var AllZi=[]
 function addZi(){
@@ -550,13 +550,13 @@ function addZi(){
 }
 //====================火焰效果
 var fireA=[]
-var fireC1=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/fire4.png")
-var fireC2=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/fire6.png")
+var fireC1=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/fire4.png")
+var fireC2=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/fire6.png")
 function setFire(){
   for (i=0;i<2;i++) {//Math.random()>.5//
-    var fire=fireC1.clone()//new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/fire4.png")
+    var fire=fireC1.clone()//new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/fire4.png")
     if(Math.random()>.5){
-      fire=fireC2.clone()//new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/fire6.png")
+      fire=fireC2.clone()//new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/fire6.png")
     }
     stage_56.addChild(fire)
     fireA.push(fire)
@@ -576,7 +576,7 @@ var word6A=[]
 function word6break(){
   stage.addChild(stage_6)
   for (var i = 0; i < 4; i++) {
-    var word6part=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word6_"+i+".png")
+    var word6part=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/word6_"+i+".png")
     stage_6.addChild(word6part)
     word6A.push(word6part)
     word6part.regX=101
@@ -594,8 +594,8 @@ function word6break(){
 }
 //===============气球出现
 var balloon=new createjs.Container()
-var balloon1=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/balloon.png")
-var balloon2=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/balloon_line.png")
+var balloon1=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/balloon.png")
+var balloon2=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/balloon_line.png")
 
 var ifLoop=1
 
@@ -672,7 +672,7 @@ var cloudYA=[390,470,600,.21,.328,1,740-550,740-115,740-600]
 function setCloud(){
   stage.addChild(stage_Cloud)
   for (var i = 0; i < 3; i++) {
-    var a_cloud=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/cloud.png")
+    var a_cloud=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/cloud.png")
     cloudA.push(a_cloud)
     stage_Cloud.addChild(a_cloud)
     
@@ -715,7 +715,7 @@ var confuse_R=400
 function confuse(){
   for (i=0;i<1;i++) {//Math.random()>.5//i=0;i<1;i++
 
-    var word8=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word8.png")
+    var word8=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/word8.png")
     var ctr=new createjs.Container()
     stage_8.addChild(ctr)
     ctr.addChild(word8)
@@ -772,7 +772,7 @@ function stage_shake(){
 
 function setRocket(){
   if(Math.random()>.0){
-    var flame=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word10.png")
+    var flame=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/word10.png")
     stage_10.addChild(flame)
 
     flame.regX=100
@@ -788,7 +788,7 @@ var nowStep=1
 var stepA=[]
 var ifStep=1
 function setStep(){
-  var step=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/step"+nowStep+".png")
+  var step=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/step"+nowStep+".png")
   nowStep++
   if(nowStep==4){nowStep=1}
   step.regX=168-28.5
@@ -819,7 +819,7 @@ function setWord12(){
   
   stage.addChild(word12)
   for (var i = 1; i <= 4; i++) {
-    var word12part=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word12_"+i+".png")
+    var word12part=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/word12_"+i+".png")
     word12.addChild(word12part)
     word12A.push(word12part)
     word12part.regX=100
@@ -844,11 +844,11 @@ var rainA=[]
 var rainMove={x:-16,y:64,deg:15}//[0,0]
 var lighting = new createjs.Shape();
  
-var dorpC = new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/rain1.png")
+var dorpC = new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/rain1.png")
 function setRain(_starNum){
   for (var i = 0; i < _starNum; i++) {
     //var AstarContainer = new createjs.Container()
-    var dorp = dorpC.clone()//new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/rain1.png")
+    var dorp = dorpC.clone()//new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/rain1.png")
     stage.addChild(stage_rain)
     stage_rain.addChild(dorp)
     //stage.addChild(AstarContainer)
@@ -889,10 +889,10 @@ function moveRain(){
 }
 
 //==========show14
-var word14=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word14.png")
-var word14b=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word14_blur.png")
-var word15=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word15.png")
-var word15b=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word15_blur.png")
+var word14=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/word14.png")
+var word14b=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/word14_blur.png")
+var word15=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/word15.png")
+var word15b=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/word15_blur.png")
 function show14(){
   stage_14.addChild(word14)
   stage_14.addChild(word14b)
