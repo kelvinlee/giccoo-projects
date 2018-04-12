@@ -878,7 +878,7 @@ var video1=$("#video1")
 var video_title= new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/video_title.png")
 function showMV(){
    //bgm.pause();
-   TweenLite.set($("#videoPlayBtn"),{display:"block"}))
+   TweenLite.set($("#videoPlayBtn"),{display:"block"})
   for(var i=0;i<boys.length;i++){
     //TweenLite.to(boys[i],1,{y:"+=200"})
     
