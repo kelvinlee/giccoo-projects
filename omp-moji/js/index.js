@@ -12,7 +12,7 @@ var defultEshop = {
 }
 // const firstRender = true
 
-// const getcoordPath = 'http://g.giccoo.com/api/ip/'
+var useIpApi = 'http://g.giccoo.com/api/ip/'
 
 var app = new Vue({
     el: '#app',
@@ -44,10 +44,27 @@ var app = new Vue({
     methods: {
         closeStore: function () {
             this.storePopup = 'none'
+			stm_clicki('send', 'event', this.area, '点击', '关闭药房地址浮层');
         },
         showStore: function () {
             this.storePopup = 'block'
-        }
+			stm_clicki('send', 'event', this.area, '点击', '药房地址按钮');
+        },
+		gotoBuy:function (buyUrl){
+			stm_clicki('send', 'event', this.area, '点击', '立即购买按钮');
+			setTimeout(function(){
+				window.location.href = buyUrl
+			},100)
+		},
+		//问题跳转链接加监测
+		listenToUrl:function (question,url){
+        	// alert(e)
+			console.log(question,url)
+			stm_clicki('send', 'event', question, '点击', '问题');
+			setTimeout(function(){
+				window.location.href = url
+			},100)
+		}
     },
     beforecreate: function () {
         //loading
@@ -67,7 +84,11 @@ var app = new Vue({
         if (cityid) {
             getWeather(this, getWeatherInfoUrl + cityid + '/id/translate') //如果有cityid 直接不定位 拿天气数据
         } else {
-           
+			if (window.location.href.indexOf('localhost') <= 0) {
+				if (location.protocol != 'https:') {
+					location.replace('https:' + window.location.href.substring(window.location.protocol.length));
+				}
+			}
             getUserPosition(this);//获取用户位置
         }
 
@@ -78,6 +99,10 @@ var app = new Vue({
             var data = res.data
             console.log(data)
             this.quesionList = data
+
+			$('.question').on('click',function (e) {
+				console.log(e)
+			})
         }, function (res) {
             console.log("加载问题json失败")
         })
@@ -193,7 +218,7 @@ var app = new Vue({
                             app.$http.get('./config/store.json').then(function (res) {
                                 var storeJson = res.data
                                 var localStore = getStoreList(storeJson, cityInfo)
-                                console.log(localStore)
+                                // console.log(localStore)
                                 if (localStore) {
                                     app.storeList = localStore
                                     app.ifEshopText = true
@@ -290,7 +315,7 @@ function getKaInfo(kaJson, city) {
 }//获取城市信息
 function getCityInfo(cityJson, area, pname) {
     // var kaList = [];
-    console.log(cityJson, area)
+    // console.log(cityJson, area)
     for (var i in cityJson) {
         var obj = cityJson[i]
 
@@ -392,7 +417,7 @@ function getStoreList(storeJson, cityInfo) {
 
     //匹配区域
     if (locationCityStoreList.length > 0) {
-        console.log(locationCityStoreList)
+        // console.log(locationCityStoreList)
 
         for (var i in locationCityStoreList) {
             var _area = String(locationCityStoreList[i].area)
@@ -409,8 +434,8 @@ function getStoreList(storeJson, cityInfo) {
             }
         }
     }
-    console.log(locationCityStoreList)
-    console.log(locationAreaStoreList)
+    // console.log(locationCityStoreList)
+    // console.log(locationAreaStoreList)
 
     if (locationAreaStoreList.length > 0) {
         return locationAreaStoreList //如果有区域，返回区域
