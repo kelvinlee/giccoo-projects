@@ -1,136 +1,125 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8" name="viewport"
-		  content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8" name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta name="format-detection" content="telephone=no">
 	<title>辅舒良</title>
 	<link rel="stylesheet" href="css/index.css">
-	<script>
-
-	</script>
-	<script>
-		(function (a, e, f, g, b, c, d) {
-			a.ClickiTrackerName = b;
-			a[b] = a[b] || function () {
-				(a[b].queue = a[b].queue || []).push(arguments)
-			};
-			a[b].start = +new Date;
-			c = e.createElement(f);
-			d = e.getElementsByTagName(f)[0];
-			c.async = 1;
-			c.src = g;
-			d.parentNode.insertBefore(c, d)
-		})(window, document, 'script', '//stm-cdn.cn.miaozhen.com/clicki.min.js?v=' + Math.round(new Date().getTime() / 1000 / 300), 'stm_clicki');
-		stm_clicki('create', 'dc-2030', 'auto');
-		stm_clicki('send', 'pageview');
+	<script> //force to https except localhost
+    if (window.location.href.indexOf('localhost') <= 0) {
+        if (document.referrer === '') {
+            if (location.protocol != 'https:') {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+        }
+    }
 	</script>
 </head>
 <body>
-<div id="app" class="contanier">
-	<div class="weather-con">
-		<div class="today-weather">
-			今日{{area}}：<span>{{weather}}</span><span class="wind">{{wind}}{{windLevel}}级</span></div>
-		<div class="today-status">{{allergyStatus}}过敏</div>
-		<div class="tips">辅舒良提醒您，{{tips}}</div>
-	</div>
-	<div class="today-detail-con">
-		<div class="today">今天</div>
-		<div class="today-tem">
-			<div class="temperature">{{temperature}}°</div>
-			<div class="cloud-bar bar">{{cloud}}</div>
+	<div id="app" class="contanier">
+		<div class="weather-con">
+			<div class="today-weather">
+				今日{{area}}：<span>{{weather}}</span><span class="wind">{{wind}}{{windLevel}}级</span></div>
+			<div class="today-status">{{allergyStatus}}过敏</div>
+			<div class="tips">辅舒良提醒您，{{tips}}</div>
 		</div>
-		<div class="white-line"></div>
-		<div class="today-air-condition">
-			<div class="pm2-5-con">
-				<span class="nums">{{pmNums}}</span>
-				<span class="pm2-5">PM2.5</span>
+		<div class="today-detail-con">
+			<div class="today">今天</div>
+			<div class="today-tem">
+				<div class="temperature">{{temperature}}°</div>
+				<div class="cloud-bar bar">{{cloud}}</div>
 			</div>
-			<div class="air-bar bar">{{airQuality}}</div>
-		</div>
-	</div>
-	<div class="banner"></div>
-
-	<div class="buy-con">
-		<div class="storeCon" v-if="ifStore">
-			<div class="buyES-img">
-				<img v-bind:src="storeLogo">
-			</div>
-			<div class="buy-text" v-if="ifEshopText">- 立即前往全市各{{storeName}}购买 -</div>
-		</div>
-		<div class="btns-con">
-			<a v-on:click.stop="gotoBuy(buyUrl)" class="btn buy-btn" v-if="ifEshop">立即购买</a>
-			<div class="space" v-if="ifEshop && ifLocalStore"></div>
-			<div class="btn store-btn" v-on:click="showStore" v-if="ifLocalStore">药房地址一览</div>
-		</div>
-	</div>
-
-	<div class="class-con">
-		<div class="title"></div>
-		<div class="questions-con">
-			<div v-for="(item, index) in quesionList">
-				<a v-on:click.stop="listenToUrl(item.question,item.url)" class="question" >
-					<div class="text">{{item.question}}</div>
-				</a>
-			</div>
-
-		</div>
-	</div>
-
-	<div class="popUp" v-bind:style="{ display: storePopup }">
-		<div class="pop-con">
-			<div class="wrapper" id="wrapper">
-				<ul class="content">
-					<li v-for="item in storeList" class="storeItem">
-						<div class="store-name">{{item.storeName}}</div>
-						<div class="address">{{item.address}}</div>
-					</li>
-				</ul>
-
-			</div>
-
-			<div class="close" v-on:click="closeStore"></div>
-		</div>
-		<div class="bar-con">
-			<div class="store-logo" v-if="ifStore">
-				<img v-bind:src="storeLogo">
-			</div>
-			<div class="static-text">各门店详细地址</div>
-		</div>
-	</div>
-
-	<div class="loading-con" v-if="loading">
-		<div class="loading">
-			<div class="lds-spinner">
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
+			<div class="white-line"></div>
+			<div class="today-air-condition">
+				<div class="pm2-5-con">
+					<span class="nums">{{pmNums}}</span>
+					<span class="pm2-5">PM2.5</span>
+				</div>
+				<div class="air-bar bar">{{airQuality}}</div>
 			</div>
 		</div>
+		<div class="banner"></div>
+
+		<div class="buy-con">
+			<div class="storeCon" v-if="ifStore">
+				<div class="buyES-img">
+					<img v-bind:src="storeLogo">
+				</div>
+				<div class="buy-text" v-if="ifEshopText">- 立即前往全市各{{storeName}}购买 -</div>
+			</div>
+			<div class="btns-con">
+				<a :href="buyUrl" class="btn buy-btn" v-if="ifEshop">立即购买</a>
+				<div class="space" v-if="ifEshop && ifLocalStore"></div>
+				<div class="btn store-btn" v-on:click="showStore" v-if="ifLocalStore">药房地址一览</div>
+			</div>
+		</div>
+
+		<div class="class-con">
+			<div class="title"></div>
+			<div class="questions-con">
+				<div v-for="(item, index) in quesionList">
+					<a class="question" :href="item.url">
+						<div class="text">{{item.question}}</div>
+					</a>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="popUp" v-bind:style="{ display: storePopup }">
+			<div class="pop-con">
+				<div class="wrapper" id="wrapper">
+					<ul class="content">
+						<li v-for="item in storeList" class="storeItem">
+							<div class="store-name">{{item.storeName}}</div>
+							<div class="address">{{item.address}}</div>
+						</li>
+					</ul>
+
+				</div>
+
+				<div class="close" v-on:click="closeStore"></div>
+			</div>
+			<div class="bar-con">
+				<div class="store-logo" v-if="ifStore">
+					<img v-bind:src="storeLogo">
+				</div>
+				<div class="static-text">各门店详细地址</div>
+			</div>
+		</div>
+
+		<div class="loading-con" v-if="loading">
+			<div class="loading">
+				<div class="lds-spinner">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
-</div>
 
+	<script src="//image.giccoo.com/projects/libs/js/min/jquery.min.js"></script>
+	<script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
+	<script src="js/bscroll.min.js"></script>
+	<script src="js/rem-jq.js"></script>
+	<!--<script src="js/vUtil.min.js"></script>-->
 
-<script src="//image.giccoo.com/projects/libs/js/min/jquery.min.js"></script>
-<script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
-<script src="js/bscroll.min.js"></script>
-<script src="js/rem-jq.js"></script>
-<!--<script src="js/vUtil.min.js"></script>-->
-
-<!--<script src="js/vue-spinner.min.js"></script>-->
-<script src="js/index.js"></script>
-<!-- endbuild -->
+	<!--<script src="js/vue-spinner.min.js"></script>-->
+	<script src="js/index.js"></script>
+	<!-- endbuild -->
 
 </body>
 </html>
