@@ -914,7 +914,7 @@ function showMV(){
 $("#videoPlayBtn").click(function(){
   bgm.pause();
   video1[0].play();
-  TweenLite.set($("#videoPlayBtn"),{display:"none"}))
+  TweenLite.set($("#videoPlayBtn"),{display:"none"})
 })
 
 
