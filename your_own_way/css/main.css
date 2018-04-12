@@ -130,3 +130,13 @@ img{ width: 100%; }
 	width: 100%;
 
 }
+#videoPlayBtn{
+	position: absolute;
+	width: 80%;
+	height: 50%;
+	top: 25%;
+	left: 10%;
+	-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;
+	display: none;
+}

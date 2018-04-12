@@ -877,7 +877,8 @@ var video_light= new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/i
 var video1=$("#video1")
 var video_title= new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/video_title.png")
 function showMV(){
-   bgm.pause();
+   //bgm.pause();
+   TweenLite.set($("#videoPlayBtn"),{display:"block"}))
   for(var i=0;i<boys.length;i++){
     //TweenLite.to(boys[i],1,{y:"+=200"})
     
@@ -907,9 +908,15 @@ function showMV(){
   TweenLite.from(video_title,1,{alpha:0})
 
 
-  video1[0].play()
+  //video1[0].play()
   showHomeBtn(1)
 }
+$("#videoPlayBtn").click(function(){
+  bgm.pause();
+  video1[0].play();
+  TweenLite.set($("#videoPlayBtn"),{display:"none"}))
+})
+
 
 function hideMV(){
   //video1[0].pause()
