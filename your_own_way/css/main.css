@@ -98,9 +98,9 @@ img{ width: 100%; }
 }
 #shareBtn{
 	position: absolute;
-	width: 11.25%;
+	width: 11%;
 	top: 0;
-	left: 0;
+	right: 13.25%;
 	-webkit-tap-highlight-color: transparent;
 			tap-highlight-color: transparent;
 }
@@ -123,4 +123,10 @@ img{ width: 100%; }
 }
 #musicOff{
 	opacity: 1;
+}
+#logo{
+	position: absolute;
+	top: 0;
+	width: 100%;
+
 }
