@@ -989,7 +989,7 @@ $("#endBtn1").click(function(){
 
 // })
 $("#endBtn2").click(function(){
-  window.location.href="https://m.faw-mazda.com/cars/cx4/?utm_source=wangyiyunyinleSSL&utm_content=guanwang&utm_medium=guanwang&utm_campaign=20849691"
+  window.location.href="http://m.faw-mazda.com/cars/cx4/?utm_source=wangyiyunyinleSSL&utm_content=guanwang&utm_medium=guanwang&utm_campaign=20849691"
 })
 
 function showEndLayer(){
