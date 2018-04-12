@@ -904,7 +904,7 @@ function showMV(){
   TweenLite.to(video1,.5,{opacity:1,top:"25%"})
 
   stage.addChild(video_title)
-  video_title.y=-40+18
+  video_title.y=-40+20
   TweenLite.from(video_title,1,{alpha:0})
 
 
