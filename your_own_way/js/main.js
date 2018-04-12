@@ -128,7 +128,7 @@ var stage_star=new createjs.Container()
 function setSky(_starNum){
   for (var i = 0; i < _starNum; i++) {
     //var AstarContainer = new createjs.Container()
-    var Astar = new createjs.Bitmap("img/star.png")
+    var Astar = new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/star.png")
     stage.addChild(stage_star)
     stage_star.addChild(Astar)
     //stage.addChild(AstarContainer)
@@ -167,7 +167,7 @@ function getStart(){
   stage.addChild(stage1)
   //========地面
 
-  var ground = new createjs.Bitmap("img/ground.png") 
+  var ground = new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/ground.png") 
   stage1.addChild(ground)
   ground.y=750
   ground.scaleX=640
@@ -175,7 +175,7 @@ function getStart(){
   //========山
 
   for (var i = 0; i < 6; i++) {
-    var a_hill= new createjs.Bitmap("img/hill.png")
+    var a_hill= new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/hill.png")
     stage1.addChild(a_hill)
     hillA.push(a_hill)
     a_hill.x=hill_xyScale[i][0]//+100
@@ -186,7 +186,7 @@ function getStart(){
 
   //=======男孩走
   for (var i = 1; i <70 ; i++) {
-    if(i<10){var str="img/walk1/walk000"+i+".png"}else{var str="img/walk1/walk00"+i+".png"}
+    if(i<10){var str="http://image.giccoo.com/projects/your_own_way/img/walk1/walk000"+i+".png"}else{var str="http://image.giccoo.com/projects/your_own_way/img/walk1/walk00"+i+".png"}
     walk1bA.push(str)
   };
 
@@ -216,16 +216,16 @@ var footPrints=[]
 var creatFootPrint
 var screenMove=[0,0]
 
-var fpC= new createjs.Bitmap("img/footprint.png")
+var fpC= new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/footprint.png")
 function setFootPrints(){
   if(boy1.currentFrame==0){
-    var fp= fpC.clone()// new createjs.Bitmap("img/footprint.png")
+    var fp= fpC.clone()// new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/footprint.png")
     stage1fp.addChild(fp)
     footPrints.push(fp)
     fp.x=boy1.x
     fp.y=boy1.y+3
   }else if (boy1.currentFrame==35) {
-    var fp= fpC.clone()//new createjs.Bitmap("img/footprint.png")
+    var fp= fpC.clone()//new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/footprint.png")
     stage1fp.addChild(fp)
     footPrints.push(fp)
     fp.x=boy1.x
@@ -269,7 +269,7 @@ function p0ani1(){
   
 
   for (var i = 1; i < 8; i++) {
-    var p1title=new createjs.Bitmap("img/p1title"+i+".png")
+    var p1title=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/p1title"+i+".png")
     stage.addChild(p1title)
     titleA.push(p1title)
 
@@ -282,7 +282,7 @@ function p0ani1(){
 
   };
 }
-var lookup= new createjs.Bitmap("img/man_lookup.png")
+var lookup= new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/man_lookup.png")
 function p0ani2(){
   screenMove=[-1,0]
   skyMove.x=-1.5//
@@ -302,12 +302,12 @@ function p0ani3(){
   };
 }
 
-var copy0urlA=["img/copy0a.png","img/copy0b.png","img/copy0c.png","img/copy0d.png","img/copy0e.png","img/copy0f.png","img/copy0g.png","img/copy0h.png","img/copy0i.png"]
+var copy0urlA=["http://image.giccoo.com/projects/your_own_way/img/copy0a.png","http://image.giccoo.com/projects/your_own_way/img/copy0b.png","http://image.giccoo.com/projects/your_own_way/img/copy0c.png","http://image.giccoo.com/projects/your_own_way/img/copy0d.png","http://image.giccoo.com/projects/your_own_way/img/copy0e.png","http://image.giccoo.com/projects/your_own_way/img/copy0f.png","http://image.giccoo.com/projects/your_own_way/img/copy0g.png","http://image.giccoo.com/projects/your_own_way/img/copy0h.png","http://image.giccoo.com/projects/your_own_way/img/copy0i.png"]
 var copy0A=[]
 var stage1b=new createjs.Container()
-var p0btn = new createjs.Bitmap("img/p0btn.png")
-var p0t = new createjs.Bitmap("img/p0t.png")
-var p0glow = new createjs.Bitmap("img/circle_glow.png")
+var p0btn = new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/p0btn.png")
+var p0t = new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/p0t.png")
+var p0glow = new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/circle_glow.png")
 function p0ani4(){
   screenMove=[0,0]
   skyMove.x=-1
@@ -386,11 +386,11 @@ function goP1(){
 var stage_1=new createjs.Container()
 var downText=new createjs.Container()
 var homeBtn=new createjs.Container()
-var word1=new createjs.Bitmap("img/word1.png")
+var word1=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word1.png")
 
 var leafroot=new createjs.Shape()
-var p1leaf1=new createjs.Bitmap("img/p1leaf1.png")
-var p1leaf2=new createjs.Bitmap("img/p1leaf1.png")
+var p1leaf1=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/p1leaf1.png")
+var p1leaf2=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/p1leaf1.png")
 
 var dotGlow=new createjs.Container()
 var dotGlow2=new createjs.Container()
@@ -400,7 +400,7 @@ function ani1start(){
   stage.removeChild(stage1b)
   stage.removeChild(stage1fp)
   TweenLite.to($(".musicBtn"),1,{opacity:0,display:"none"})
-
+  TweenLite.to($("#shareBtn"),1,{right:"4%"})
 
   setHint()
   $("#p0_btn").css({display:"none"})
@@ -452,7 +452,7 @@ var ifani1=0
 function setDotGlow(){
   var t1=3
   for (var i = 0; i < 200; i++) {
-    var dot=new createjs.Bitmap("img/star.png")
+    var dot=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/star.png")
     dotGlow.addChild(dot)
     dot.regX=dot.regY=5
     dot.x=Math.random()*1600-800
@@ -461,7 +461,7 @@ function setDotGlow(){
     dot.alpha=0
     TweenLite.to(dot,1+Math.random()*3,{x:0,y:0,alpha:1,ease:Back.easeOut,delay:Math.random()+0+t1})
 
-    var dot2=new createjs.Bitmap("img/star.png")
+    var dot2=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/star.png")
     dotGlow2.addChild(dot2)
     dot2.regX=dot2.regY=5
     dot2.x=Math.random()*800-400
@@ -493,7 +493,7 @@ function setDotGlow(){
 
 //===========================第一页进入第二页
 var stage_2=new createjs.Container()
-var word2=new createjs.Bitmap("img/word2.png")
+var word2=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word2.png")
 function ani1end(){//=======点击触发
   stage.addChild(stage_2)
   boy.stop()
@@ -527,10 +527,10 @@ function ani2Stand(){
 }
 //===========================第二页进入第三页
 var stage_3=new createjs.Container()
-var word3=new createjs.Bitmap("img/word3.png")
+var word3=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word3.png")
 
 var stage_4=new createjs.Container()
-var word4=new createjs.Bitmap("img/word4.png")
+var word4=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word4.png")
 function ani2end(){//=======点击触发
   boy.gotoAndPlay("jump")
   TweenLite.from(skyMove,1,{x:-16})
@@ -649,7 +649,7 @@ function ani5(){
 
 function ani5end(){
   TweenLite.to(boy,1,{x:280,rotation:0})
-  ziA=["img/word6a.png","img/word6b.png"]
+  ziA=["http://image.giccoo.com/projects/your_own_way/img/word6a.png","http://image.giccoo.com/projects/your_own_way/img/word6b.png"]
   createjs.Ticker.removeEventListener("tick",setFire);
   $("#flame")[0].pause()
   $("#flame2")[0].pause()
@@ -698,7 +698,7 @@ function ani8(){
 }
 
 var stage_9=new createjs.Container()
-var word9=new createjs.Bitmap("img/word9.png")
+var word9=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word9.png")
 function ani8end(){
   createjs.Ticker.removeEventListener("tick",confuse)
   
@@ -728,8 +728,8 @@ function ani9(){
   showHint1(1)
 }
 var stage_10=new createjs.Container()
-var word10=new createjs.Bitmap("img/word10.png")
-var word10b=new createjs.Bitmap("img/word10b.png")
+var word10=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word10.png")
+var word10b=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word10b.png")
 var t500_flame
 function ani9end(){
   ifDotLoop=0
@@ -810,7 +810,7 @@ function ani12(){
   showHomeBtn(1) 
   showHint1(1)  
 }
-var word13=new createjs.Bitmap("img/word13.png")
+var word13=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/word13.png")
 var stage_13=new createjs.Container()
 function ani12end(){
   boy.gotoAndPlay("fall")
@@ -873,9 +873,9 @@ function ani15end(){
   boysStop()
   //video1[0].play()
 }
-var video_light= new createjs.Bitmap("img/video_light.png")
+var video_light= new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/video_light.png")
 var video1=$("#video1")
-var video_title= new createjs.Bitmap("img/video_title.png")
+var video_title= new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/video_title.png")
 function showMV(){
    bgm.pause();
   for(var i=0;i<boys.length;i++){
@@ -923,12 +923,12 @@ function hideMV(){
   TweenLite.to(skyMove,1,{y:0})
   TweenLite.to(video_title,1,{y:"+=250",alpha:0})
 }
-var end_bottom=new createjs.Bitmap("img/end_bottom.png")
-var end_bottom2=new createjs.Bitmap("img/end_bottom2.png")
-var end_copy=new createjs.Bitmap("img/end_copy.png")
-var end_copy1=new createjs.Bitmap("img/end_copy_1.png")
-var end_map=new createjs.Bitmap("img/end_map.jpg")
-var end_mark=new createjs.Bitmap("img/end_mark.png")
+var end_bottom=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/end_bottom.png")
+var end_bottom2=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/end_bottom2.png")
+var end_copy=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/end_copy.png")
+var end_copy1=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/end_copy_1b.png")
+var end_map=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/end_map.jpg")
+var end_mark=new createjs.Bitmap("http://image.giccoo.com/projects/your_own_way/img/end_mark.png")
 
 function showEnd(){
   video1[0].pause()
