@@ -4291,18 +4291,9 @@
 	"\/index.html": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/index.html",
 		"oF": 0
-		},
-	"\/index.jade": {
-		"cB": 0,
-		"cOD": 1,
-		"ft": 512,
-		"oA": 0,
-		"oAP": "\/index.html",
-		"oF": 0,
-		"oS": 0
 		},
 	"\/intel_form": {
 		"ft": 65536,
@@ -8950,17 +8941,6 @@
 		"iS": 34366,
 		"oA": 0,
 		"oAP": "\/zhihu-huarun\/img\/learnmore-bg.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/zhihu-huarun\/img\/level-5.png": {
-		"ft": 32768,
-		"iS": 6114,
-		"oA": 0,
-		"oAP": "\/zhihu-huarun\/img\/level-5.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
