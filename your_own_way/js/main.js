@@ -399,8 +399,8 @@ function ani1start(){
   stage.removeChild(stage1)
   stage.removeChild(stage1b)
   stage.removeChild(stage1fp)
-  TweenLite.to($(".musicBtn"),1,{opacity:0,display:"none"})
-  TweenLite.to($("#shareBtn"),1,{right:"4%"})
+  // TweenLite.to($(".musicBtn"),1,{opacity:0,display:"none"})
+  // TweenLite.to($("#shareBtn"),1,{right:"4%"})
 
   setHint()
   $("#p0_btn").css({display:"none"})
