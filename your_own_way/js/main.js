@@ -1026,22 +1026,26 @@ $("#endL").click(function(){
   if(nowPic==-1){
     nowPic=endMapA.length-1
   }
-  setPicLoop()
-  nowPic++
-  if(nowPic==endMapA.length){
-    nowPic=0
-  }
-})
-$("#endR").click(function(){
-  nowPic++
-  if(nowPic==endMapA.length){
-    nowPic=0
-  }
-  setPicLoop()
   nowPic--
   if(nowPic==-1){
     nowPic=endMapA.length-1
   }
+  setPicLoop()
+  // nowPic++
+  // if(nowPic==endMapA.length){
+  //   nowPic=0
+  // }
+})
+$("#endR").click(function(){
+  // nowPic++
+  // if(nowPic==endMapA.length){
+  //   nowPic=0
+  // }
+  setPicLoop()
+  // nowPic--
+  // if(nowPic==-1){
+  //   nowPic=endMapA.length-1
+  // }
 })
 
 // arrowL.on("click",function(){
