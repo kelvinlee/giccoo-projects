@@ -1026,57 +1026,32 @@ $("#endL").click(function(){
   if(nowPic==-1){
     nowPic=endMapA.length-1
   }
-  nowPic--
-  if(nowPic==-1){
-    nowPic=endMapA.length-1
-  }
-  setPicLoop()
+  setPicLoop2()
   // nowPic++
   // if(nowPic==endMapA.length){
   //   nowPic=0
   // }
 })
 $("#endR").click(function(){
-  // nowPic++
-  // if(nowPic==endMapA.length){
-  //   nowPic=0
-  // }
-  setPicLoop()
+  nowPic++
+  if(nowPic==endMapA.length){
+    nowPic=0
+  }
+  setPicLoop2()
   // nowPic--
   // if(nowPic==-1){
   //   nowPic=endMapA.length-1
   // }
 })
 
-// arrowL.on("click",function(){
-//   console.log("lll")
-//   nowPic++
-//   if(nowPic==endMapA.length){
-//     nowPic=0
-//   }
-//   setPicLoop()
-//   nowPic++
-//   if(nowPic==0){
-//     nowPic=endMapA.length
-//   }
-// })
-// arrowR.on("click",function(){
-//   console.log("rrr")
-//   nowPic++
-//   if(nowPic==endMapA.length){
-//     nowPic=0
-//   }
-//   setPicLoop()
-//   nowPic++
-//   if(nowPic==0){
-//     nowPic=endMapA.length
-//   }
-// })
 function setPicLoop(){
   nowPic++
   if(nowPic==endMapA.length){
     nowPic=0
   }
+  setPicLoop2()
+}
+function setPicLoop2(){
   for(var i=0;i<endMapA.length;i++){
     TweenLite.to(endMapA[i],.5,{alpha:0})
     if(i==nowPic){
