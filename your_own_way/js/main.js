@@ -1,16 +1,19 @@
 
 var sys="other"
 
+var shareHint=[]
+
 $(document).ready(function load (){
 	if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
     
     TweenLite.set($("#shareHint_APP"),{display:"block"})
-
+    shareHint.push($("#shareHint_APP"))
   } else {
     iniListenSound()
     $("#shareBtn").css({"display":"none"})
     TweenLite.set($("#shareHint_WX"),{display:"block"})
+    shareHint.push($("#shareHint_WX"))
     loadWechatConfig();
   	wx.ready(function() {
     var shareContent;
@@ -973,14 +976,14 @@ function showEnd(){
   TweenLite.set($("#endBtn1"),{display:"block"})
   TweenLite.set($("#endBtn2"),{display:"block"})
 
-  TweenLite.to($("topPart2"),1,{opacity:1,onComplete:hintLoop1})
+  TweenLite.to(shareHint[0],1,{opacity:1,onComplete:hintLoop1})
 }
 
 function hintLoop1(){
-  TweenLite.to($("topPart2"),1,{opacity:0.3,onComplete:hintLoop2})
+  TweenLite.to(shareHint[0],1,{opacity:0.3,onComplete:hintLoop2})
 }
 function hintLoop2(){
-  TweenLite.to($("topPart2"),1,{opacity:1,onComplete:hintLoop1})
+  TweenLite.to(shareHint[0],1,{opacity:1,onComplete:hintLoop1})
 }
 
 var ifbtn1=0
