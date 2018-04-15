@@ -7,12 +7,12 @@ $(document).ready(function load (){
 	if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
     
-    //TweenLite.set($("#shareHint_APP"),{display:"block"})
+    TweenLite.set($("#shareHint_APP"),{display:"block"})
     shareHint.push($("#shareHint_APP"))
   } else {
     iniListenSound()
     $("#shareBtn").css({"display":"none"})
-    //TweenLite.set($("#shareHint_WX"),{display:"block"})
+    TweenLite.set($("#shareHint_WX"),{display:"block"})
     shareHint.push($("#shareHint_WX"))
     loadWechatConfig();
   	wx.ready(function() {
@@ -961,6 +961,8 @@ var stage_endmap=new createjs.Container()
 //===var end_mark=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_mark.png")
 
 var nowPic=0
+var arrowL=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/arrow.png")
+var arrowR=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/arrow.png")
 function showEnd(){
   video1[0].pause()
   stage.addChild(end_bottom)
@@ -999,7 +1001,14 @@ function showEnd(){
       endMapA[i].alpha=1
     }
   }
-  
+  stage_endmap.addChild(arrowL)
+  stage_endmap.addChild(arrowR)
+
+  arrowL.x=-250
+  arrowR.x=250
+  arrowR.regX=arrowL.regX=20
+  arrowR.regY=arrowL.regY=26
+  arrowR.scaleX=-1
 
   setInterval(setPicLoop,5000)
 
@@ -1010,6 +1019,28 @@ function showEnd(){
 
   TweenLite.to(shareHint[0],1,{opacity:1,onComplete:hintLoop1})
 }
+arrowL.click(function(){
+  nowPic++
+  if(nowPic==endMapA.length){
+    nowPic=0
+  }
+  setPicLoop()
+  nowPic++
+  if(nowPic==0){
+    nowPic=endMapA.length
+  }
+})
+arrowR.click(function(){
+  nowPic++
+  if(nowPic==endMapA.length){
+    nowPic=0
+  }
+  setPicLoop()
+  nowPic++
+  if(nowPic==0){
+    nowPic=endMapA.length
+  }
+})
 function setPicLoop(){
   nowPic++
   if(nowPic==endMapA.length){
