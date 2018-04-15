@@ -942,7 +942,8 @@ function hideMV(){
 var end_bottom=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_bottom_b.png")
 var end_bottom2=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_bottom2.png")
 var end_copy=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_copy.png")
-var end_copy1=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_copy_1b.png")
+//===var end_copy1=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_copy_1b.png")
+var end_copy1=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_copy_2b.png")
 //===var end_map=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map.jpg")
 
 var end_map1=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map1.jpg")
@@ -998,6 +999,9 @@ function showEnd(){
       endMapA[i].alpha=1
     }
   }
+  
+
+  setInterval(setPicLoop,5000)
 
   //===end_mark.y=-30
 
@@ -1005,6 +1009,18 @@ function showEnd(){
   TweenLite.set($("#endBtn2"),{display:"block"})
 
   TweenLite.to(shareHint[0],1,{opacity:1,onComplete:hintLoop1})
+}
+function setPicLoop(){
+  nowPic++
+  if(nowPic==endMapA.length){
+    nowPic=0
+  }
+  for(var i=0;i<endMapA.length;i++){
+    TweenLite.to(endMapA[i],.5,{alpha:0})
+    if(i==nowPic){
+      TweenLite.to(endMapA[i],.5,{alpha:1})
+    }
+  }
 }
 
 function hintLoop1(){
@@ -1040,7 +1056,7 @@ function showEndLayer(){
   TweenLite.to(end_bottom2,.5,{alpha:.5})
   TweenLite.to(end_copy,.5,{alpha:0})
   TweenLite.to(end_copy1,.5,{alpha:1,delay:.5})
-  TweenLite.set(end_mark,.5,{y:-30})
+  //===TweenLite.set(end_mark,.5,{y:-30})
   //===TweenLite.to(end_mark,.5,{y:0,alpha:1,delay:.6})
   TweenLite.set(stage_endmap,.5,{scale:.8,alpha:0})
   TweenLite.to(stage_endmap,.5,{scale:1,alpha:1,delay:.5})
