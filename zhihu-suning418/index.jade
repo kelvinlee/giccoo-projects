@@ -1,0 +1,52 @@
+extends ../libs/jade/layout-clean
+block title
+	| 新电器生活主义
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	//- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+	//- link(rel="stylesheet",href="//image.giccoo.com/projects/libs/css/animate.min.css")
+	link(rel="stylesheet",href="css/base.css")
+	script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
+
+block content
+	//- url = "//image.giccoo.com/projects/zhihu-huarun"
+	-url = "."
+	
+	.main
+		a#logo.logo(href="https://www.suning.com/")
+			img(src="#{url}/img/logo.png")
+		.header
+			img(src="#{url}/img/header.jpg")
+		.p-1
+			img(src="#{url}/img/page-1.jpg")
+		a.btn-1(href="http://www.zhihu.com/question/271661899")
+			img(src="#{url}/img/btn-1.jpg")
+		.p-2
+			img(src="#{url}/img/page-2.jpg")
+		a.btn-2(href="https://www.suning.com/")
+			img(src="#{url}/img/btn-2.jpg")
+
+
+block js
+	- url = "/"
+	script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/exif.js")
+	//- script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+	//- script(src="/libs/js/min/jquery.min.js")
+	//- script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+	script(src="js/main.js?v=1")
+	
+
+
+
+	

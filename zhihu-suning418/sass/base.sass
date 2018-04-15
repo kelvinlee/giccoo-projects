@@ -1,0 +1,25 @@
+@import sass/base
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "//image.giccoo.com/projects/zhihu-suning418/"
+
+
+html,body
+	+w
+	+h
+	font-size: 0
+img
+	+w
+
+.main
+	+w
+	+h
+	+posr
+	+bc(#fff)
+
+.logo
+	+posf
+	+tr(-20%,5%)
+	+iw(150,1080,100%)
