@@ -4,10 +4,13 @@ var sys="other"
 $(document).ready(function load (){
 	if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
+    
+    TweenLite.set($("#shareHint_APP"),{display:"block"})
 
   } else {
     iniListenSound()
     $("#shareBtn").css({"display":"none"})
+    TweenLite.set($("#shareHint_WX"),{display:"block"})
     loadWechatConfig();
   	wx.ready(function() {
     var shareContent;
@@ -969,7 +972,17 @@ function showEnd(){
 
   TweenLite.set($("#endBtn1"),{display:"block"})
   TweenLite.set($("#endBtn2"),{display:"block"})
+
+  TweenLite.to($("topPart2"),1,{opacity:1,onComplete:hintLoop1})
 }
+
+function hintLoop1(){
+  TweenLite.to($("topPart2"),1,{opacity:0.3,onComplete:hintLoop2})
+}
+function hintLoop2(){
+  TweenLite.to($("topPart2"),1,{opacity:1,onComplete:hintLoop1})
+}
+
 var ifbtn1=0
 $("#endBtn1").click(function(){
   if(ifbtn1==0){
