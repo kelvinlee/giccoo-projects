@@ -980,7 +980,7 @@ function showEnd(){
 }
 
 function hintLoop1(){
-  TweenLite.to(shareHint[0],1,{opacity:0.3,onComplete:hintLoop2})
+  TweenLite.to(shareHint[0],1.5,{opacity:0.3,onComplete:hintLoop2})
 }
 function hintLoop2(){
   TweenLite.to(shareHint[0],1,{opacity:1,onComplete:hintLoop1})
