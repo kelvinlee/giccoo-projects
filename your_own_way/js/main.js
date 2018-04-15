@@ -1021,53 +1021,53 @@ function showEnd(){
 
   TweenLite.to(shareHint[0],1,{opacity:1,onComplete:hintLoop1})
 }
-// arrowL.click(function(){
-//   nowPic++
-//   if(nowPic==endMapA.length){
-//     nowPic=0
-//   }
-//   setPicLoop()
-//   nowPic++
-//   if(nowPic==0){
-//     nowPic=endMapA.length
-//   }
-// })
-// arrowR.click(function(){
-//   nowPic++
-//   if(nowPic==endMapA.length){
-//     nowPic=0
-//   }
-//   setPicLoop()
-//   nowPic++
-//   if(nowPic==0){
-//     nowPic=endMapA.length
-//   }
-// })
+$("#endL").click(function(){
+  nowPic--
+  if(nowPic==-1){
+    nowPic=endMapA.length-1
+  }
+  setPicLoop()
+  nowPic++
+  if(nowPic==endMapA.length){
+    nowPic=0
+  }
+})
+$("#endR").click(function(){
+  nowPic++
+  if(nowPic==endMapA.length){
+    nowPic=0
+  }
+  setPicLoop()
+  nowPic--
+  if(nowPic==-1){
+    nowPic=endMapA.length-1
+  }
+})
 
-arrowL.on("click",function(){
-  console.log("lll")
-  nowPic++
-  if(nowPic==endMapA.length){
-    nowPic=0
-  }
-  setPicLoop()
-  nowPic++
-  if(nowPic==0){
-    nowPic=endMapA.length
-  }
-})
-arrowR.on("click",function(){
-  console.log("rrr")
-  nowPic++
-  if(nowPic==endMapA.length){
-    nowPic=0
-  }
-  setPicLoop()
-  nowPic++
-  if(nowPic==0){
-    nowPic=endMapA.length
-  }
-})
+// arrowL.on("click",function(){
+//   console.log("lll")
+//   nowPic++
+//   if(nowPic==endMapA.length){
+//     nowPic=0
+//   }
+//   setPicLoop()
+//   nowPic++
+//   if(nowPic==0){
+//     nowPic=endMapA.length
+//   }
+// })
+// arrowR.on("click",function(){
+//   console.log("rrr")
+//   nowPic++
+//   if(nowPic==endMapA.length){
+//     nowPic=0
+//   }
+//   setPicLoop()
+//   nowPic++
+//   if(nowPic==0){
+//     nowPic=endMapA.length
+//   }
+// })
 function setPicLoop(){
   nowPic++
   if(nowPic==endMapA.length){
@@ -1120,6 +1120,8 @@ function showEndLayer(){
   TweenLite.to(stage_endmap,.5,{scale:1,alpha:1,delay:.5})
   ifbtn1=1
   //TweenLite.set($("#closeBtn"),{display:"block"})
+  TweenLite.set($("#endL"),{display:"block"})
+  TweenLite.set($("#endR"),{display:"block"})
 }
 
 function hideEndLayer(){
@@ -1132,4 +1134,6 @@ function hideEndLayer(){
   TweenLite.to(stage_endmap,.5,{scale:.8,alpha:0})
   ifbtn1=0
   //TweenLite.set($("#closeBtn"),{display:"none"})
+  TweenLite.set($("#endL"),{display:"none"})
+  TweenLite.set($("#endR"),{display:"none"})
 }

@@ -147,3 +147,23 @@ img{ width: 100%; }
 	display: none;
 	opacity: 0;
 }
+#endL{
+	position: absolute;
+	width: 18.75%;
+	left: 0;
+	height: 25%;
+	top: 25%;
+	-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;
+	display: none;
+}
+#endR{
+	position: absolute;
+	width: 18.75%;
+	right: 0;
+	height: 25%;
+	top: 25%;
+	-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;
+	display: none;
+}
