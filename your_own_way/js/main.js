@@ -7,12 +7,12 @@ $(document).ready(function load (){
 	if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
     
-    TweenLite.set($("#shareHint_APP"),{display:"block"})
+    //TweenLite.set($("#shareHint_APP"),{display:"block"})
     shareHint.push($("#shareHint_APP"))
   } else {
     iniListenSound()
     $("#shareBtn").css({"display":"none"})
-    TweenLite.set($("#shareHint_WX"),{display:"block"})
+    //TweenLite.set($("#shareHint_WX"),{display:"block"})
     shareHint.push($("#shareHint_WX"))
     loadWechatConfig();
   	wx.ready(function() {
