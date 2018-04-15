@@ -926,6 +926,7 @@ $("#videoPlayBtn").click(function(){
 
 function hideMV(){
   //video1[0].pause()
+  TweenLite.set($("#videoPlayBtn"),{display:"none"})
   TweenLite.to(video1,.99,{top:"50%",opacity:0,display:"none",onComplete:showEnd})
   TweenLite.to(video_light,1,{y:"+=250",visible:false,alpha:0})
   TweenLite.to(word15b,1,{y:"+=250",visible:false,alpha:0})
@@ -1004,8 +1005,9 @@ function showEnd(){
   stage_endmap.addChild(arrowL)
   stage_endmap.addChild(arrowR)
 
-  arrowL.x=-250
-  arrowR.x=250
+  arrowL.x=-250+320
+  arrowR.x=250+320
+  arrowL.y=arrowR.y=150
   arrowR.regX=arrowL.regX=20
   arrowR.regY=arrowL.regY=26
   arrowR.scaleX=-1
