@@ -999,6 +999,9 @@ function showEnd(){
       endMapA[i].alpha=1
     }
   }
+  
+
+  setInterval(setPicLoop,5000)
 
   //===end_mark.y=-30
 
@@ -1006,6 +1009,18 @@ function showEnd(){
   TweenLite.set($("#endBtn2"),{display:"block"})
 
   TweenLite.to(shareHint[0],1,{opacity:1,onComplete:hintLoop1})
+}
+function setPicLoop(){
+  nowPic++
+  if(nowPic==endMapA.length){
+    nowPic=0
+  }
+  for(var i=0;i<endMapA.length;i++){
+    TweenLite.to(endMapA[i],.5,{alpha:0})
+    if(i==nowPic){
+      TweenLite.to(endMapA[i],.5,{alpha:1})
+    }
+  }
 }
 
 function hintLoop1(){
