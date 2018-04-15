@@ -1019,7 +1019,30 @@ function showEnd(){
 
   TweenLite.to(shareHint[0],1,{opacity:1,onComplete:hintLoop1})
 }
-arrowL.click(function(){
+// arrowL.click(function(){
+//   nowPic++
+//   if(nowPic==endMapA.length){
+//     nowPic=0
+//   }
+//   setPicLoop()
+//   nowPic++
+//   if(nowPic==0){
+//     nowPic=endMapA.length
+//   }
+// })
+// arrowR.click(function(){
+//   nowPic++
+//   if(nowPic==endMapA.length){
+//     nowPic=0
+//   }
+//   setPicLoop()
+//   nowPic++
+//   if(nowPic==0){
+//     nowPic=endMapA.length
+//   }
+// })
+
+arrowL.on("click",function(){
   nowPic++
   if(nowPic==endMapA.length){
     nowPic=0
@@ -1030,7 +1053,7 @@ arrowL.click(function(){
     nowPic=endMapA.length
   }
 })
-arrowR.click(function(){
+arrowR.on("click",function(){
   nowPic++
   if(nowPic==endMapA.length){
     nowPic=0
