@@ -1005,9 +1005,9 @@ function showEnd(){
   stage_endmap.addChild(arrowL)
   stage_endmap.addChild(arrowR)
 
-  arrowL.x=-250+320
-  arrowR.x=250+320
-  arrowL.y=arrowR.y=150
+  arrowL.x=-250+198
+  arrowR.x=250+198
+  arrowL.y=arrowR.y=140
   arrowR.regX=arrowL.regX=20
   arrowR.regY=arrowL.regY=26
   arrowR.scaleX=-1
@@ -1045,6 +1045,7 @@ function showEnd(){
 // })
 
 arrowL.on("click",function(){
+  console.log("lll")
   nowPic++
   if(nowPic==endMapA.length){
     nowPic=0
@@ -1056,6 +1057,7 @@ arrowL.on("click",function(){
   }
 })
 arrowR.on("click",function(){
+  console.log("rrr")
   nowPic++
   if(nowPic==endMapA.length){
     nowPic=0
