@@ -947,16 +947,16 @@ var end_copy=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/e
 var end_copy1=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_copy_2b.png")
 //===var end_map=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map.jpg")
 
-var end_map1=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map1b.jpg")
-var end_map2=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map2b.jpg")
-var end_map3=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map3b.jpg")
-var end_map4=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map4b.jpg")
-var end_map5=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map5b.jpg")
-var end_map6=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map6b.jpg")
-var end_map7=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map7b.jpg")
-var end_map8=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map8b.jpg")
+var end_map1=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map1c.jpg")
+var end_map2=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map2c.jpg")
+var end_map3=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map3c.jpg")
+var end_map4=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map4c.jpg")
+var end_map5=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map5c.jpg")
+var end_map6=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map6c.jpg")
+var end_map7=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map7c.jpg")
+//var end_map8=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map8b.jpg")
 
-var endMapA=[end_map1,end_map2,end_map3,end_map4,end_map5,end_map6,end_map7,end_map8]
+var endMapA=[end_map1,end_map2,end_map3,end_map4,end_map5,end_map6,end_map7]
 var stage_endmap=new createjs.Container()
 
 //===var end_mark=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_mark.png")
