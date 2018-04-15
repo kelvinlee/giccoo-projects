@@ -936,21 +936,39 @@ function hideMV(){
   TweenLite.to(skyMove,1,{y:0})
   TweenLite.to(video_title,1,{y:"+=250",alpha:0})
 }
-var end_bottom=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_bottom.png")
+
+//===var end_bottom=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_bottom.png")
+
+var end_bottom=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_bottom_b.png")
 var end_bottom2=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_bottom2.png")
 var end_copy=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_copy.png")
 var end_copy1=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_copy_1b.png")
-var end_map=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map.jpg")
-var end_mark=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_mark.png")
+//===var end_map=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map.jpg")
 
+var end_map1=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map1.jpg")
+var end_map2=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map2.jpg")
+var end_map3=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map3.jpg")
+var end_map4=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map4.jpg")
+var end_map5=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map5.jpg")
+var end_map6=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map6.jpg")
+var end_map7=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map7.jpg")
+var end_map8=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_map8.jpg")
+
+var endMapA=[end_map1,end_map2,end_map3,end_map4,end_map5,end_map6,end_map7,end_map8]
+var stage_endmap=new createjs.Container()
+
+//===var end_mark=new createjs.Bitmap("//image.giccoo.com/projects/your_own_way/img/end_mark.png")
+
+var nowPic=0
 function showEnd(){
   video1[0].pause()
   stage.addChild(end_bottom)
   stage.addChild(end_bottom2)
   stage.addChild(end_copy)
   stage.addChild(end_copy1)
-  stage.addChild(end_map)
-  stage.addChild(end_mark)
+  //===stage.addChild(end_map)
+  stage.addChild(stage_endmap)
+  //===stage.addChild(end_mark)
   end_bottom2.regX=end_bottom.regX=320
   end_bottom2.regY=end_bottom.regY=283
   end_bottom2.x=end_bottom.x=320
@@ -962,16 +980,26 @@ function showEnd(){
   TweenLite.from(end_copy,.5,{scaleY:.75,y:-250,alpha:0})
 
   end_copy1.alpha=0
-  end_map.alpha=0
-  end_mark.alpha=0
+
+  //===end_mark.alpha=0
   end_bottom2.alpha=0
 
-  end_map.regX=198
-  end_map.regY=123.5
-  end_map.x=320
-  end_map.y=353
 
-  end_mark.y=-30
+  stage_endmap.alpha=0
+  stage_endmap.regX=198
+  stage_endmap.regY=123.5
+  stage_endmap.x=320
+  stage_endmap.y=353
+
+  for(var i=0;i<endMapA.length;i++){
+    stage_endmap.addChild(endMapA[i])
+    endMapA[i].alpha=0
+    if(i==nowPic){
+      endMapA[i].alpha=1
+    }
+  }
+
+  //===end_mark.y=-30
 
   TweenLite.set($("#endBtn1"),{display:"block"})
   TweenLite.set($("#endBtn2"),{display:"block"})
@@ -1013,9 +1041,9 @@ function showEndLayer(){
   TweenLite.to(end_copy,.5,{alpha:0})
   TweenLite.to(end_copy1,.5,{alpha:1,delay:.5})
   TweenLite.set(end_mark,.5,{y:-30})
-  TweenLite.to(end_mark,.5,{y:0,alpha:1,delay:.6})
-  TweenLite.set(end_map,.5,{scale:.8,alpha:0})
-  TweenLite.to(end_map,.5,{scale:1,alpha:1,delay:.5})
+  //===TweenLite.to(end_mark,.5,{y:0,alpha:1,delay:.6})
+  TweenLite.set(stage_endmap,.5,{scale:.8,alpha:0})
+  TweenLite.to(stage_endmap,.5,{scale:1,alpha:1,delay:.5})
   ifbtn1=1
   //TweenLite.set($("#closeBtn"),{display:"block"})
 }
@@ -1024,10 +1052,10 @@ function hideEndLayer(){
   TweenLite.to(end_bottom2,.5,{alpha:0})
   TweenLite.to(end_copy,.5,{alpha:1,delay:.5})
   TweenLite.to(end_copy1,.5,{alpha:0})
-  TweenLite.set(end_mark,.5,{y:0})
-  TweenLite.to(end_mark,.5,{y:-30,alpha:0})
-  TweenLite.set(end_map,.5,{scale:1,alpha:1})
-  TweenLite.to(end_map,.5,{scale:.8,alpha:0})
+  //===TweenLite.set(end_mark,.5,{y:0})
+  //===TweenLite.to(end_mark,.5,{y:-30,alpha:0})
+  TweenLite.set(stage_endmap,.5,{scale:1,alpha:1})
+  TweenLite.to(stage_endmap,.5,{scale:.8,alpha:0})
   ifbtn1=0
   //TweenLite.set($("#closeBtn"),{display:"none"})
 }
