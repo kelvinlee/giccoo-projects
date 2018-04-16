@@ -41,6 +41,7 @@ init = ->
 	main = new Vue
 		el: "#main"
 		data:
+			pc: false
 			homepageShow: true
 			mount: false
 			loading: false
@@ -89,12 +90,13 @@ init = ->
 				if @.roomIndex <= 0
 					@.roomIndex = 0
 			start: (evt)->
-				touch = evt.touches[0]
+				console.log evt
+				touch = if evt.touches? then evt.touches[0] else evt
 				@.default.x = touch[@XY]
 			move: (evt)->
 				evt.preventDefault()
 				return false if @.default.animated or @.poping
-				touch = evt.touches[0]
+				touch = if evt.touches? then evt.touches[0] else evt
 				pageX = touch[@XY]
 				if (pageX - @.default.x) > 50
 					@.default.animated = true
@@ -107,9 +109,16 @@ init = ->
 
 		mounted: ($el,e)->
 			@.mount = true
+			
+			if IsPC()
+				@.$el.addEventListener 'mousedown', @.start.bind @
+				@.$el.addEventListener 'mousemove', @.move.bind @
+				@.$el.addEventListener 'mouseup', @.end.bind @
+				@.pc = true
 			@.$el.addEventListener 'touchstart', @.start.bind @
 			@.$el.addEventListener 'touchmove', @.move.bind @
 			@.$el.addEventListener 'touchend', @.end.bind @
+
 			setInterval =>
 				@.timeAnimate = true
 				setTimeout =>
@@ -179,3 +188,15 @@ stopWebViewScroll = ->
 	# console.log document.querySelectorAll(".touch")
 	for el in document.querySelectorAll(".touch")
 		overscroll el
+
+IsPC = ->
+	userAgentInfo = navigator.userAgent
+	Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod')
+	flag = true
+	v = 0
+	while v < Agents.length
+		if userAgentInfo.indexOf(Agents[v]) > 0
+			flag = false
+			break
+		v++
+	flag	

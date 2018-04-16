@@ -20,7 +20,7 @@
     </script>
   </head>
   <body>
-    <div id="main" v-show="mount" style="display: none" :class="{rotate90: rotate == 90}" :style="{width: w+'px',height: h+'px'}" class="main">
+    <div id="main" v-show="mount" style="display: none" :class="{pc: pc,rotate90: rotate == 90}" :style="{width: w+'px',height: h+'px'}" class="main">
       <transition name="page-fade">
         <div v-show="poping" class="pop-box">
           <div class="pop-content">
@@ -102,7 +102,7 @@
       <transition name="page-animation">
         <div v-show="roomIndex == 4" :class="{now: roomIndex == 4,right: roomIndex &lt; 4,left: roomIndex &gt; 4}" class="page page-last">
           <div class="bg"><img :src="'./img/lastpage-bg.jpg'">
-            <div class="item lightSpeedIn animated duration-10 delay-9">
+            <div class="item bounceIn animated duration-10 delay-9">
               <div :class="{pulse: timeAnimate}" class="body animated duration-10"><img :src="'./img/lastpage-1.png'"></div>
             </div>
             <div class="item flipInX animated duration-6 delay-4">
@@ -114,7 +114,6 @@
     </div>
     <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
-    <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
     <script src="js/main.js?v=1"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 "use strict";
 
-var $_GET, _CDN, _imgurl, _learnmorelink, getRandom, global, init, load, loadWechatConfig, main, pre, stopWebViewScroll;
+var $_GET, IsPC, _CDN, _imgurl, _learnmorelink, getRandom, global, init, load, loadWechatConfig, main, pre, stopWebViewScroll;
 
 _CDN = "";
 
@@ -53,6 +53,7 @@ init = function init() {
   main = new Vue({
     el: "#main",
     data: {
+      pc: false,
       homepageShow: true,
       mount: false,
       loading: false,
@@ -117,7 +118,8 @@ init = function init() {
       },
       start: function start(evt) {
         var touch;
-        touch = evt.touches[0];
+        console.log(evt);
+        touch = evt.touches != null ? evt.touches[0] : evt;
         return this.default.x = touch[this.XY];
       },
       move: function move(evt) {
@@ -126,7 +128,7 @@ init = function init() {
         if (this.default.animated || this.poping) {
           return false;
         }
-        touch = evt.touches[0];
+        touch = evt.touches != null ? evt.touches[0] : evt;
         pageX = touch[this.XY];
         if (pageX - this.default.x > 50) {
           this.default.animated = true;
@@ -145,6 +147,12 @@ init = function init() {
       var _this = this;
 
       this.mount = true;
+      if (IsPC()) {
+        this.$el.addEventListener('mousedown', this.start.bind(this));
+        this.$el.addEventListener('mousemove', this.move.bind(this));
+        this.$el.addEventListener('mouseup', this.end.bind(this));
+        this.pc = true;
+      }
       this.$el.addEventListener('touchstart', this.start.bind(this));
       this.$el.addEventListener('touchmove', this.move.bind(this));
       this.$el.addEventListener('touchend', this.end.bind(this));
@@ -241,4 +249,20 @@ stopWebViewScroll = function stopWebViewScroll() {
     results.push(overscroll(el));
   }
   return results;
+};
+
+IsPC = function IsPC() {
+  var Agents, flag, userAgentInfo, v;
+  userAgentInfo = navigator.userAgent;
+  Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod');
+  flag = true;
+  v = 0;
+  while (v < Agents.length) {
+    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+      flag = false;
+      break;
+    }
+    v++;
+  }
+  return flag;
 };

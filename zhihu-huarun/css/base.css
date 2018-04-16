@@ -1028,7 +1028,13 @@ body {
   height: 100%;
   position: relative;
   overflow: hidden;
-  background-color: #fff; }
+  background-color: #fff;
+  max-width: 1280px;
+  margin: 0 auto;
+  cursor: move; }
+  .main.pc {
+    max-width: 1280px;
+    max-height: 800px; }
   .main.rotate90 {
     -webkit-transform: rotate(90deg) translate3d(0, -100%, 0);
             transform: rotate(90deg) translate3d(0, -100%, 0);
@@ -1276,6 +1282,15 @@ body {
 
 .err-2 {
   position: relative; }
+  .err-2 .body {
+    -webkit-animation: fadeShow 5s ease;
+            animation: fadeShow 5s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-delay: 1500ms;
+            animation-delay: 1500ms; }
   .err-2 .red {
     width: 30%;
     padding-top: 30%;

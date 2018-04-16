@@ -112,6 +112,12 @@ body
 	+posr
 	+overhide
 	+bc(#fff)
+	max-width: 1280px
+	+m
+	cursor: move
+	&.pc
+		max-width: 1280px
+		max-height: 800px
 	&.rotate90
 		+transform(rotate(90deg) translate3d(0,-100%,0))
 		transform-origin: top left
@@ -243,8 +249,8 @@ body
 .err-2
 	+posr
 	.body
-		// +animation(fadeShow,5s,ease,infinite)
-		// animation-delay: 1500ms
+		+animation(fadeShow,5s,ease,infinite)
+		animation-delay: 1500ms
 	.red
 		$size: 30%
 		+w($size)

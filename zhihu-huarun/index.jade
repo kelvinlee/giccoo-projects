@@ -20,11 +20,7 @@ block content
 	//- url = "//image.giccoo.com/projects/zhihu-huarun"
 	-url = "."
 	
-	#main.main(v-show="mount",style="display: none",:class="{rotate90: rotate == 90}",:style="{width: w+'px',height: h+'px'}")
-		//- .loading(v-show="loading")
-		//- 	.load-icon
-		//- 		img(:src="'#{url}/img/load-icon.png'")
-		//- 	.text 正在生成<br/>你的心境卡
+	#main.main(v-show="mount",style="display: none",:class="{pc: pc,rotate90: rotate == 90}",:style="{width: w+'px',height: h+'px'}")
 		transition(name="page-fade")
 			.pop-box(v-show="poping")
 				.pop-content
@@ -32,7 +28,6 @@ block content
 						img(:src="'#{url}/img/close.png'")
 					img(:src="popImage")
 					a.more(v-show="popmore",:href="learnmorelink")
-
 		transition(name="page-animation")
 			.page.page-home#page-home(v-show="roomIndex == 0",:class="{left: roomIndex >= 0}")
 				.bg
@@ -57,7 +52,6 @@ block content
 				.next
 					img(:src="'#{url}/img/move-left.png'")
 				//- .content
-
 		transition(name="page-animation")
 			.page.page-room#room-1(v-show="roomIndex == 1",:class="{now: roomIndex == 1,right: roomIndex < 1,left: roomIndex > 1}")
 				.bg
@@ -74,8 +68,6 @@ block content
 						img(:src="'#{url}/img/learnmore-1.png'")
 				.next
 					img(:src="'#{url}/img/move-left.png'")
-
-
 		transition(name="page-animation")
 			.page.page-room#room-2(v-show="roomIndex == 2",:class="{now: roomIndex == 2,right: roomIndex < 2,left: roomIndex > 2}")
 				.bg
@@ -112,16 +104,12 @@ block content
 			.page.page-last(v-show="roomIndex == 4",:class="{now: roomIndex == 4,right: roomIndex < 4,left: roomIndex > 4}")
 				.bg
 					img(:src="'#{url}/img/lastpage-bg.jpg'")
-					.item.lightSpeedIn.animated.duration-10.delay-9
+					.item.bounceIn.animated.duration-10.delay-9
 						.body.animated.duration-10(:class="{pulse: timeAnimate}")
 							img(:src="'#{url}/img/lastpage-1.png'")
 					.item.flipInX.animated.duration-6.delay-4
 						.body.animated.duration-10(:class="{pulse: timeAnimate}")
 							img(:src="'#{url}/img/lastpage-2.png'")
-		
-		//- transition(name="page-fade")
-		
-
 
 
 block js
@@ -132,7 +120,7 @@ block js
 	script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
 	//- script(src="/libs/js/min/jquery.min.js")
-	script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+	//- script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
 	script(src="js/main.js?v=1")
 	
 
