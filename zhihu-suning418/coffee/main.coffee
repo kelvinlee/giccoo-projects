@@ -1,4 +1,9 @@
-
+checklink = ->
+	if new Date().getTime() > new Date('2018-04-17 23:59:59')
+		window.location.href = "https://cuxiao.m.suning.com/418bfzhc.html?utm_source=yd-jrtt&utm_medium=cpc"
+	else
+		return true
+	return false
 window.onload = ->
 	# runAnimate()
 	console.log document.documentElement.clientWidth*0.74
