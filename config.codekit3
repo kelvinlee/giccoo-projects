@@ -4158,6 +4158,13 @@
 		"oAP": "\/HRCmap\/build.html",
 		"oF": 0
 		},
+	"\/HRCmap\/gaode-all.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/gaode-all.html",
+		"oF": 0
+		},
 	"\/HRCmap\/gaode-test.html": {
 		"cB": 0,
 		"ft": 8192,
