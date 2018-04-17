@@ -1,22 +1,511 @@
-doctype
-html(lang="en")
-	head
-		meta(charset="UTF-8")
-		meta(http-equiv="X-UA-Compatible",content="IE=edge,chrome=1")
-		meta(name="viewport",content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0")
-		title Giccoo 作品集
-		link(rel="stylesheet",href="/libs/css/base.css")
-		scirpt(async,src="https://www.googletagmanager.com/gtag/js?id=UA-66865226-1")
-		script.
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-66865226-1');
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title 北京薄荷犀牛 - Mintrhino
+    meta(name='description', content='良好的互动,是我们一直在追寻的状态。')
+    meta(name='keywords', content='h5制作,广告创意,数字营销,创意设计,app 开发,微信小程序开发')
+    meta(name='author', content='Giccoo')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
+    //if IE
+      meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    // Favicone Icon
+    link(rel='shortcut icon', type='image/x-icon', href='favicon.ico')
+    link(rel='icon', type='image/png', href='//image.giccoo.com/www/img/favicon.png')
+    link(rel='apple-touch-icon', href='//image.giccoo.com/www/img/favicon.png')
+    // CSS
+    link(href='//image.giccoo.com/www/css/style.css', rel='stylesheet', type='text/css')
+    link(href='//image.giccoo.com/www/css/bootstrap.css', rel='stylesheet', type='text/css')
+    link(href='//image.giccoo.com/www/css/font-awesome.css', rel='stylesheet', type='text/css')
+    link(href='//image.giccoo.com/www/css/ionicons.css', rel='stylesheet', type='text/css')
+    link(href='//image.giccoo.com/www/css/plugin/sidebar-menu.css', rel='stylesheet', type='text/css')
+    link(href='//image.giccoo.com/www/css/plugin/animate.css', rel='stylesheet', type='text/css')
+    link(href='//image.giccoo.com/www/css/jquery-ui.css', rel='stylesheet', type='text/css')
+  body
+    // Preloader
+    section#preloader
+      #loader.loader
+        .loader-img
+    // End Preloader
+    // Search Overlay Menu
+    .search-overlay-menu
+      span.search-overlay-close
+        i.ion.ion-ios-close-empty
+      form#searchform(role='search', action='../../../search.html', method='get')
+        input(value='', name='q', type='search', placeholder='Search...')
+        button(type='submit')
+          i.ion.ion-ios-search
+    // End Search Overlay Menu
+    // Site Wraper
+    .wrapper
+      // Header
+      header#header.header
+        .container.header-inner
+          // Logo
+          .logo
+            a(href='/')
+              img.logo-light(src='//image.giccoo.com/www/img/logo-white.png', alt='MINT RHINO')
+              img.logo-dark(src='//image.giccoo.com/www/img/logo-black.png', alt='MINT RHINO')
+          // End Logo
+          // Rightside Menu (Search, Cart, Bart icon)
+          // End Rightside Menu
+          // Mobile Navbar Icon
+          // End Mobile Navbar Icon
+          // Navbar Navigation
+          // End Navbar Navigation
+      // End Header
+      // Intro Section
+      section#intro
+        // Hero Slider Section
+        .flexslider.fullscreen-carousel.hero-slider-1
+          ul.slides
+            // Slide
+            li(data-slide='light-slide')
+              .slide-bg-image.overlay-light.parallax.parallax-section1(data-background-img='//image.giccoo.com/www/img/full/11.jpg')
+                .js-Slide-fullscreen-height.container
+                  .intro-content
+                    .intro-content-inner
+                      h2.h2  Hi，这里是薄荷犀牛 
+                      p.lead 我们是位于北京的一家独立数字创意机构
+            // Slide
+            li(data-slide='dark-slide')
+              .slide-bg-image.overlay-dark.dark-bg.parallax.parallax-section1(data-background-img='//image.giccoo.com/www/img/full/20.jpg')
+                .js-Slide-fullscreen-height.container
+                  .intro-content
+                    .intro-content-inner
+                      h2.h2 精致的设计，创新的技术
+                      p.lead 数字创意 & 产品策略 & 品牌构建
+                      br
+                      div
+                        a.btn.btn-md.btn-white-line(href='#service') 了解更多
+            // Slide
+            li(data-slide='light-slide')
+              .slide-bg-image.overlay-light.parallax.parallax-section1(data-background-img='//image.giccoo.com/www/img/full/02.jpg')
+                .js-Slide-fullscreen-height.container
+                  .intro-content
+                    .intro-content-inner
+                      h2.h2  有趣，有料，有心 
+                      p.lead 只是为了更好的创新和体验。
+                      br
+                      div
+                        a.btn.btn-md.btn-black-line(href='#work') 了解更多
+            // Slide
+            li(data-slide='dark-slide')
+              .slide-bg-image.overlay-dark.dark-bg.parallax.parallax-section1(data-background-img='//image.giccoo.com/www/img/full/18.jpg')
+                .js-Slide-fullscreen-height.container
+                  .intro-content
+                    .intro-content-inner
+                      h2.h2 单丝不成线，独木不成林
+                      p.lead 优秀的团队才能雕琢出优秀的作品。
+        // End Hero Slider Section
+      .clearfix
+      // End Intro Section
+      // About Section
+      section#about.wow.fadeIn.ptb.ptb-sm-80
+        .container
+          .row.text-center
+            .col-md-8.offset-md-2
+              h3.h4 关于薄荷犀牛
+              .spacer-15
+              p.lead
+                | 良好的互动,是我们一直在追寻的状态。
+                a.tipped(data-title='核心理念', data-tipper-options='{"direction":"top"}')
+                  b 让品牌带有温度的传递
+                | 我们认为最有价值的互动是由情感和技术完美融合产生的。让你的品牌从互动中被认知和传播。
+          .row.mt-80
+            // Welcome Content
+            .col-md-7.mb-30
+              h4 让复杂变简单.
+              .spacer-15
+              p
+                | 薄荷犀牛数字创意机构位于北京，对我们来说,最好的品牌是简单的，我们用对创造力的无限热情帮助客户成长，让品牌变得更简单，并融入我们的价值观。无论你是销售产品还是需要有巧妙的设计,我们将使你的业务更上一层楼。
+              p 在我们之中有摄影师、设计师、广告文编，动画师和开发人员。简单的把我们们联系在一起，创造出一个又一个动人的结晶。
+              .spacer-15
+              // <a class="btn-link-a">More About</a>
+            // End Welcome Content
+            // Skills
+            .col-md-5
+              .skillbar(data-percent='95%')
+                .skillbar-title 数字营销
+                .skill-bar-percent 95%
+                .skillbar-bar
+              .skillbar(data-percent='80%')
+                .skillbar-title 开发编程
+                .skill-bar-percent 80%
+                .skillbar-bar
+              .skillbar(data-percent='85%')
+                .skillbar-title 图形设计
+                .skill-bar-percent 85%
+                .skillbar-bar
+              .skillbar(data-percent='90%')
+                .skillbar-title 品牌建设
+                .skill-bar-percent 90%
+                .skillbar-bar
+            // End Skills
+      // End About Section
+      hr
+      // Service Section
+      section#service.ptb.ptb-sm-80
+        .wow.fadeInLeft.container.text-center
+          h3 我们提供的服务
+          .spacer-60
+          .row
+            .col-md-4.col-sm-6.mb-45
+              .page-icon-top
+                i.ion.ion-social-html5-outline
+              h5 网站建设 / Website 
+              p 在移动互联网的今天，做到优雅适的配于各种移动产品是一个合格网站的前提。
+            .col-md-4.col-sm-6.mb-45
+              .page-icon-top
+                i.ion.ion-ios-pie-outline
+              h5 数字营销 / Digital Marketing 
+              p 提供最新的营销策略，结合最新的开发技术，我们帮助客户的方式远远超越传统营销工具。
+            .col-md-4.col-sm-6.mb-45
+              .page-icon-top
+                i.ion.ion-iphone
+              h5 手机 Apps / Mobile Apps
+              p 我们用设计更好的解决问题并传达客户的想法，App 也不例外， 同时也是我们表达自我的一种方式。
+            .col-md-4.col-sm-6.mb-45
+              .page-icon-top
+                i.ion.ion-ios-infinite-outline
+              h5  微信小程序 / Wechat Apps 
+              p 结合本土特有的互联网优势，让你的品牌更好的被接纳和传播，有时候接地气也是一种能力。
+            .col-md-4.col-sm-6.mb-45
+              .page-icon-top
+                i.ion.ion-ios-gear-outline
+              h5 品牌建设 /brand 
+              p 我们的目的就是帮你实现在消费者心智中建立起个性鲜明的、清晰的品牌联想的战略目标。
+            .col-md-4.col-sm-6.mb-45
+              .page-icon-top
+                i.ion.ion-ios-compose-outline
+              h5 图形设计 /Graphic 
+              p 不仅是 UI 设计，在海报和产品上一样会用到图形的艺术，而且我们很喜欢并擅长这个领域。
+      // End Service Section
+      // Counter Section
+      section#counter.overlay-dark80.light-color.ptb-80(style="background-image: url('//image.giccoo.com/www/img/full/23.jpg');", data-stellar-background-ratio='0.5')
+        .container.text-center
+          .row
+            .col-md-3.mb-sm-30
+              h1.counter(data-count='15') 0
+              h6 获奖
+            .col-md-3.mb-sm-30
+              h1.counter(data-count='48') 0
+              h6 客户
+            .col-md-3.mb-sm-30
+              h1.counter(data-count='11') 0
+              h6 团队人数
+            .col-md-3.mb-sm-30
+              h1.counter(data-count='196') 0
+              h6 项目
+      // End Counter Section
+      // Work Section
+      section#work.wow.fadeIn.pt.pt-sm-80.text-center
+        .container
+          h3 部分作品
+          .spacer-30
+          // work Filter
+          .row
+            ul.col.container-filter.categories-filter
+              li
+                a.categories.active(data-filter='*') 全部 /all
+              li
+                a.categories(data-filter='.website') 网站 (h5)/ WEBSITE
+              li
+                a.categories(data-filter='.apps') apps
+              li
+                a.categories(data-filter='.mwx') 微信小程序 / Wechat App
+              li
+                a.categories(data-filter='.design') 图形设计 / Graphic 
+          // End work Filter
+        // Work Gallary
+        .container-fluid
+          .row
+            .col.container-grid.nf-col-4
+              - var list = [{"name":"德克士","class":"design","desc":"设计","url":"img/design/dekeshi.jpg"},{"name":"顶新集团贺新春","class":"design","desc":"设计","url":"img/design/dingxin.jpg"},{"name":"太古里海报","class":"design","desc":"设计","url":"img/design/taiguli.jpg"},{"name":"好123形象","class":"design","desc":"设计","url":"img/design/hao123.jpg"},{"name":"VIVE","class":"design","desc":"设计","url":"img/design/vive.jpg"},{"name":"北京现代-未知夜色","class":"website","desc":"H5","url":"img/website/bjxd.jpg"},{"name":"德克士-大变身的秘密","class":"website","desc":"H5","url":"img/website/dekeshi.jpg"},{"name":"一汽马自达-走自己的路","class":"website","desc":"H5","url":"img/website/yiqimazida.jpg"},{"name":"知乎-天真星球","class":"website","desc":"H5","url":"img/website/zhihutianzhenxingqiu.jpg"},{"name":"伊利-糖格分裂","class":"website","desc":"H5","url":"img/website/yili.jpg"},{"name":"致趣-致趣实验室","class":"website","desc":"H5","url":"img/website/zhiqu.jpg"},{"name":"下厨房-情暖冬月为爱“虾”厨","class":"website","desc":"H5","url":"img/website/xiachufang.jpg"},{"name":"统帅-小行走大改变","class":"website","desc":"H5","url":"img/website/tongshuai.jpg"},{"name":"Apple Watch","class":"website","desc":"H5","url":"img/website/applewatch.jpg"},{"name":"52区","class":"apps","desc":"App","url":"img/apps/52area.jpg"},{"name":"巨星在线","class":"apps","desc":"App","url":"img/apps/juxing.jpg"},{"name":"BingoMe","class":"apps","desc":"App","url":"img/apps/BingoMe.jpg"},{"name":"薄荷壁纸","class":"mwx","desc":"微信小程序","url":"img/mwx/bohe.jpg"},{"name":"城市过敏指数","class":"mwx","desc":"微信小程序","url":"img/mwx/guominzhishu.jpg"},{"name":"一心抄经","class":"mwx","desc":"微信小程序","url":"img/mwx/yixinchaojing.png"}];
+              - list.sort(function(a,b){return Math.random()>.5 ? -1 : 1;})
+              - for (var i=0;i<list.length;i++)
+                - var item = list[i];
+                .nf-item(class="#{item.class}")
+                  .item-box(style="padding-top: 70%;background: url('//image.giccoo.com/www/#{item.url}') no-repeat center top;background-size: cover;")
+                    a.cbox-gallary1(href='//image.giccoo.com/www/#{item.url}', title='#{item.name}')
+                      //- img.item-container(src='//image.giccoo.com/www/#{item.url}', alt='1')
+                      .item-mask
+                        .item-caption
+                          h5.white #{item.name}
+                          p.white #{item.desc}
 
-	body
-		h1 Giccoo 作品集
-		ul.list
-			-var list = ["G","308s","a3-wechat","shrimp","borafun","crown","Dettol","lkk","Noco","Queen","iwatch","vs","ccb","Ebook","guagua","Haier","Haierw","inv","lenovo","Rio2","Aircraft","Dior"]
-			-for (var item in list)
-				li
-					img(src="/libs/qr/#{list[item]}.png")
+        // End Work Gallary
+      // End Work Section
+      // Action Box Section
+      //- section#action-box.dark-bg.ptb-60
+        .container
+          .row
+            .col-md-8.col-sm-8
+              h4 还没看过瘾？没关系！
+              p.mb-0 如果你想了解更多的案例作品，点击按钮并扫描二维码就可以索取更丰富的资料，并了解更多案例故事。
+            .col-md-4.col-sm-4
+              a.btn.btn-md.btn-white.float-right.float-none-xs(href='mailto:miguel@giccoo.com') 更多案例
+      // End Action Box Section
+      // Process
+      section#process.ptb.ptb-sm-80
+        .wow.fadeInLeft.container.text-center
+          h3 合作流程
+          .spacer-60
+          .row
+            .col-md-2.col-sm-4.col-6
+              .tipped(data-title='Step1 - Skype Interview', data-tipper-options='{"direction":"top"}')
+                .page-icon-top
+                  i.ion.ion-ios-people-outline
+                h6 洽谈
+            .col-md-2.col-sm-4.col-6
+              .tipped(data-title='Step2 - Project Plan', data-tipper-options='{"direction":"top"}')
+                .page-icon-top
+                  i.ion.ion-ios-paper-outline
+                h6 方案
+            .col-md-2.col-sm-4.col-6
+              .tipped(data-title='Step3 - Design', data-tipper-options='{"direction":"top"}')
+                .page-icon-top
+                  i.ion.ion-ios-compose-outline
+                h6 设计
+            .col-md-2.col-sm-4.col-6
+              .tipped(data-title='Step4 - Development', data-tipper-options='{"direction":"top"}')
+                .page-icon-top
+                  i.ion.ion-ios-gear-outline
+                h6 开发
+            .col-md-2.col-sm-4.col-6
+              .tipped(data-title='Step5 - Testing', data-tipper-options='{"direction":"top"}')
+                .page-icon-top
+                  i.ion.ion-ios-pulse
+                h6 测试
+            .col-md-2.col-sm-4.col-6
+              .tipped(data-title='Step6 - Delivery', data-tipper-options='{"direction":"top"}')
+                .page-icon-top
+                  i.ion.ion-ios-clock-outline
+                h6 交付
+      // End Process
+      hr
+      // Testimonials
+      section#testimonial.overlay-dark80.dark-bg.ptb.ptb-sm-80(style="background-image: url('//image.giccoo.com/www/img/full/22.jpg');", data-stellar-background-ratio='0.5')
+        .container
+          .owl-carousel.testimonial-carousel.nf-carousel-theme.white
+            .item
+              .testimonial.text-center.dark-color
+                .container-icon
+                  i.fa.fa-quote-right
+                p.lead “通常广告费总有一半是浪费掉的，在这里也许你可以避免浪费掉那一部分。”
+                h6.quote-author
+                  | Bob.huang 
+                  span(style='font-weight: 400;')   (栩易灵动) 
+            .item
+              .testimonial.text-center.dark-color
+                .container-icon
+                  i.fa.fa-quote-right
+                p.lead
+                  | “We reject kings, presidents and voting.   We believe in: rough consensus and running code.”
+                h6.quote-author
+                  | David D. Clark 
+                  span(style='font-weight: 400;') ( USA )
+            .item
+              .testimonial.text-center.dark-color
+                .container-icon
+                  i.fa.fa-quote-right
+                p.lead " 如果错过互联网，与你擦肩而过的不仅是机会，而是整整一个时代!"
+                h6.quote-author
+                  | Adam Savage 
+                  span(style='font-weight: 400;') ( Silicon Valley )
+      // End Testimonials
+      // Features
+      section#features.ptb.ptb-sm-80
+        .container.text-center
+          h3.mt-sm 工作亮点
+          p.lead 全力以赴 & 精益求精
+          .spacer-60
+          .row
+            .wow.fadeInLeft.col-md-4.pt-80.pt-sm-0
+              .features-box-right
+                .features-icon-right
+                  i.ion.ion-ios-navigate-outline
+                h5 专业的建议
+                p 让船行驶的更快的同时还要避开海面下的冰山。
+              .features-box-right
+                .features-icon-right
+                  i.ion.ion-ios-lightbulb-outline
+                h5 出彩的创意
+                p 在用户会心一笑的那一刻，那才是我们创意真正的回报。
+              .features-box-right
+                .features-icon-right
+                  i.ion.ion-ios-color-wand-outline
+                h5 优雅的设计和代码
+                p 不管你看见或者看不见的，都再遵循着秩序之美。
+              .features-box-right
+                .features-icon-right
+                  i.ion.ion-ios-albums-outline
+                h5 丰富的项目经验
+                p 迄今数百个成功的项目，见证了我们的成长和能力。
+            .wow.fadeIn.col-md-4.hidden-sm.hidden-xs.text-center
+              img(src='//image.giccoo.com/www/img/moc-3.png')
+            .wow.fadeInRight.col-md-4.pt-80.pt-sm-0
+              .features-box-left
+                .features-icon-left
+                  i.ion.ion-ios-compose-outline
+                h5 关注您的需求
+                p 倾听是我们的必修课，所以我们都会交上一份让自己满意的“作业”。
+              .features-box-left
+                .features-icon-left
+                  i.ion.ion-ios-eye-outline
+                h5 多元化的视野
+                p 服务于硅谷的客户让我们更多机会提升自己，而且并不只局限在技术上的。
+              .features-box-left
+                .features-icon-left
+                  i.ion.ion-ios-paper-outline
+                h5 良好的口碑
+                p 只是客户口碑不够全面，来自同行的的口碑定让你信服。
+              .features-box-left
+                .features-icon-left
+                  i.ion.ion-ios-chatbubble-outline
+                h5 流畅的的沟通
+                p 就算是工作之外，也欢迎找我们喝点咖啡聊聊天（我们也有好茶）。
+      // End Features
+      hr
+      // Statement Section
+      section#statement.bg-img19.overlay-dark80.dark-bg.ptb.ptb-sm-80
+        .container.text-center
+          .row
+            .col-md-8.offset-md-2
+              .cbox-iframe
+                .page-icon-top
+                  i.ion.ion-ios-chatbubble-outline
+              h4 我们在专业领域，技术变革和创新营销中，始终基于以人为本的客户体验。
+              .spacer-15
+              // <a class="cbox-iframe btn btn-md btn-white" href="http://www.youtube.com/embed/VOJyrQa_WR4?rel=0&amp;wmode=transparent">Watch Video</a>
+      // End Statement Section
+      // Client Logos Section
+      section#client-logos.wow.fadeIn.ptb.ptb-sm-80
+        .container
+          .owl-carousel.client-carousel.nf-carousel-theme
+            .item
+              .client-logo
+                img(src='//image.giccoo.com/www/img/logos/01.png', alt='')
+            .item
+              .client-logo
+                img(src='//image.giccoo.com/www/img/logos/02.png', alt='')
+            .item
+              .client-logo
+                img(src='//image.giccoo.com/www/img/logos/03.png', alt='')
+            .item
+              .client-logo
+                img(src='//image.giccoo.com/www/img/logos/04.png', alt='')
+            .item
+              .client-logo
+                img(src='//image.giccoo.com/www/img/logos/05.png', alt='')
+            .item
+              .client-logo
+                img(src='//image.giccoo.com/www/img/logos/06.png', alt='')
+            .item
+              .client-logo
+                img(src='//image.giccoo.com/www/img/logos/08.png', alt='')
+            
+      // End Client Logos Section
+      // END CONTENT --------------------------------------------------------------------------
+      // FOOTER
+      footer.footer.pt-80
+        .container
+          .row.mb-60
+            // Logo
+            .col-md-3.col-sm-3.mb-xs-30
+              a.footer-logo(href='home.html')
+                img(src='//image.giccoo.com/www/img/logo-black.png')
+            // Logo
+            // Newsletter
+            .col-md-4.col-sm-5.mb-xs-30
+            // End Newsletter
+            // Social
+            .col-md-3.offset-md-2.col-sm-4
+              
+            // End Social
+          // Footer Info
+          .row.footer-info.mb-60
+            .col-md-3.col-sm-12.mb-sm-30
+              p.mb-xs-0  准备开始你的下一个项目吗?当你需要一个好的创意，放心吧，我们会帮你实现它，让更多的人了解并且传播这个好故事。
+              a.btn-link-a(href='mailto:miguel@giccoo.com') 联系我们
+            
+            .col-md-3.push-md-3.col-sm-12
+              p 北京市丰台区大成里秀园13号楼东侧楼三层
+              ul.link-small
+                li
+                  a(href='mailto:miguel@giccoo.com')
+                    i.fa.fa-envelope-o.left
+                    | miguel@giccoo.com
+                li
+                  a
+                    i.fa.fa-phone.left
+                    | +86 01 65000855
+          // End Footer Info
+        hr
+        // Copyright Bar
+        section.copyright.ptb-60
+          .container
+            p
+              | © 2015-2018 
+              a
+                b Beijing Mintrhino network and technology co., Ltd
+              | . All Rights Reserved.
+              br
+        // End Copyright Bar
+      // END FOOTER
+      // Scroll Top
+      a.scroll-top
+        i.fa.fa-angle-double-up
+      // End Scroll Top
+    // Site Wraper End
+    // JS
+    script(src='//image.giccoo.com/www/js/jquery-1.11.2.min.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/plugin/jquery.easing.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/jquery-ui.min.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/bootstrap.min.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/plugin/jquery.flexslider.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/plugin/jquery.fitvids.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/plugin/jquery.viewportchecker.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/plugin/jquery.stellar.min.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/plugin/wow.min.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/plugin/jquery.colorbox-min.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/plugin/owl.carousel.min.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/plugin/isotope.pkgd.min.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/plugin/masonry.pkgd.min.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/plugin/imagesloaded.pkgd.min.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/plugin/jquery.fs.tipper.min.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/plugin/mediaelement-and-player.min.js')
+    script(src='//image.giccoo.com/www/js/plugin/sidebar-menu.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/theme.js', type='text/javascript')
+    script(src='//image.giccoo.com/www/js/navigation.js', type='text/javascript')
+    script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
+    script(type='text/javascript').
+      var loadWechatConfig = null;
+      window.onload = function () {
+        // runAnimate()
+        loadWechatConfig();
+        wx.ready(function () {
+          var shareContent;
+          shareContent = {
+            title: "北京薄荷犀牛-Mintrhino",
+            desc: "良好的互动,是我们一直在追寻的状态。",
+            link: "http://www.giccoo.com/",
+            imgUrl: "http://www.giccoo.com/www/img/ico.jpg",
+            success: function success() {},
+            cancel: function cancel() {}
+          };
+          wx.onMenuShareTimeline(shareContent);
+          wx.onMenuShareAppMessage(shareContent);
+          wx.onMenuShareQQ(shareContent);
+          wx.onMenuShareWeibo(shareContent);
+        });
+      };
+      loadWechatConfig = function loadWechatConfig() {
+        var hm, s, url;
+        url = encodeURIComponent(window.location.href.split("#")[0]);
+        hm = document.createElement('script');
+        hm.src = "//api.giccoo.com/api/config?url=" + url;
+        s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+      };
+
