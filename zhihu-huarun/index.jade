@@ -104,10 +104,10 @@ block content
 			.page.page-last(v-show="roomIndex == 4",:class="{now: roomIndex == 4,right: roomIndex < 4,left: roomIndex > 4}")
 				.bg
 					img(:src="'#{url}/img/lastpage-bg.jpg'")
-					.item.bounceIn.animated.duration-10.delay-9
+					.item.bounceIn.animated.duration-32.delay-9
 						.body.animated.duration-10(:class="{pulse: timeAnimate}")
 							img(:src="'#{url}/img/lastpage-1.png'")
-					.item.flipInX.animated.duration-6.delay-4
+					.item.flipInX.animated.duration-10.delay-4
 						.body.animated.duration-10(:class="{pulse: timeAnimate}")
 							img(:src="'#{url}/img/lastpage-2.png'")
 
