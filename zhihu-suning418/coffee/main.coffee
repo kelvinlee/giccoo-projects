@@ -1,5 +1,5 @@
 checklink = ->
-	if new Date().getTime() > new Date('2018-04-17 23:59:59')
+	if new Date().getTime() > new Date('2018-04-17 23:59:59').getTime()
 		window.location.href = "https://cuxiao.m.suning.com/418bfzhc.html?utm_source=yd-jrtt&utm_medium=cpc"
 	else
 		return true
