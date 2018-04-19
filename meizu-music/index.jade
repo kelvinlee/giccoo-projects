@@ -1,0 +1,114 @@
+extends ../libs/jade/layout-clean
+block title
+	| MEIZU 时光重塑经典
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	//- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+	link(rel="stylesheet",href="//image.giccoo.com/projects/libs/css/animate.min.css")
+	link(rel="stylesheet",href="css/base.css")
+	//- script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
+
+block content
+	//- url = "//image.giccoo.com/projects/zhihu-huarun"
+	-url = "."
+	#load.loading
+		.content
+			.record
+				img(src="#{url}/img/load-record.png")
+				.light
+			#loadtext.load-text Loading...{{progress}}%
+	#main.main(v-show="mount",style="display: none",:style="{width: w+'px',height: h+'px'}")
+		.pages
+			transition(name="page-fade")
+				.page.page-build(v-show="homepageShow || gamepageShow")
+					.record
+						img(src="#{url}/img/record.jpg")
+						.light(:class="{moving: playing}")
+							img(src="#{url}/img/record-light.png")
+						.line(:class="{moving: playing}")
+							img(src="#{url}/img/record-line.png")
+					.note(@click="notepageShow = !notepageShow")
+						.question-mark(:class="{off: gameStarted}")
+							img(src="#{url}/img/question-mark.png")
+						.time-last(:class="{on: gameStarted,timeout: second<=5}") {{second}}
+							span s
+
+					.logo
+						img(src="#{url}/img/logo.png")
+					transition(name="page-animation")
+						.page-note(v-show="notepageShow")
+							.content(@click="notepageShow = !notepageShow")
+								img(src="#{url}/img/pop-info.png")
+					transition(name="page-fade")
+						.page-home(v-show="homepageShow")
+							.content
+								.title.music-symbol
+									img(src="#{url}/img/home-title.png")
+									// - for (var i=1;i<6;i++)
+										.symbol(class="symbel-#{i} symbel-type-#{i%2+1}")
+
+								.input
+									input(type="text",v-model="nickname",placeholder="请输入你的名字")
+								.btn(@click="startGame")
+									img(src="#{url}/img/btn-submit-name.png")
+
+					transition(name="page-fade")
+						.page-game(v-show="gamepageShow")
+							audio#audio(:src="gameMusicLink",preload="true",autoplay="false")
+							.pop(v-show="gameNotePop")
+								.content
+									p 测试即将开始  请打开声音！
+									.btn.btn-start(@click="gameStart")
+										img(src="#{url}/img/btn-start.png")
+							.pop-answer(v-show="showAnswerPop")
+								.success()
+									h2 {{answers[now]==1?"恭喜你回答正确":answers[now]==0?"很遗憾回答错误":"很遗憾时间到了"}}
+									p.name 《{{answerName}}》
+									.btn.btn-goon(v-show="now<4",@click="nextMusic")
+										img(src="#{url}/img/btn-goon.png")
+									.btn.btn-dna(v-show="now>=4",@click="gameEnd")
+										img(src="#{url}/img/btn-dna.png")
+							.content
+								.title
+									img(src="#{url}/img/game-title.png")
+									// - for (var i=1;i<6;i++)
+										.symbol(class="symbel-#{i} symbel-type-#{i%2+1}")
+								.game-content
+									.game-btns(:class="{en: lang!='cn'}")
+										.item(v-for="mark,index in markList",@click="selectMark(mark)")
+											{{mark}}
+									.game-input
+										.answer &nbsp;{{answer.join(' ')}}&nbsp;
+										.del(@click="delectOne")
+											img(src="#{url}/img/icon-del.png")
+										.chr(@click="checkAnswer")
+											img(src="#{url}/img/icon-check.png")
+			
+			transition(name="page-animation")
+				.page.page-ugc(v-show="ugcpageShow")
+
+			
+
+block js
+	- url = "/"
+	script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/exif.js")
+	script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+	//- script(src="/libs/js/min/jquery.min.js")
+	script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+	script(src="js/main.js?v=1")
+	
+
+
+
+	

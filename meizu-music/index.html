@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>MEIZU 时光重塑经典</title>
+    <meta name="author" content="m.giccoo.com">
+    <link rel="stylesheet" href="//image.giccoo.com/projects/libs/css/animate.min.css">
+    <link rel="stylesheet" href="css/base.css">
+  </head>
+  <body>
+    <div id="load" class="loading">
+      <div class="content">
+        <div class="record"><img src="./img/load-record.png">
+          <div class="light"></div>
+        </div>
+        <div id="loadtext" class="load-text">Loading...{{progress}}%</div>
+      </div>
+    </div>
+    <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">
+      <div class="pages">
+        <transition name="page-fade">
+          <div v-show="homepageShow || gamepageShow" class="page page-build">
+            <div class="record"><img src="./img/record.jpg">
+              <div :class="{moving: playing}" class="light"><img src="./img/record-light.png"></div>
+              <div :class="{moving: playing}" class="line"><img src="./img/record-line.png"></div>
+            </div>
+            <div @click="notepageShow = !notepageShow" class="note">
+              <div :class="{off: gameStarted}" class="question-mark"><img src="./img/question-mark.png"></div>
+              <div :class="{on: gameStarted,timeout: second&lt;=5}" class="time-last">{{second}}<span>s</span></div>
+            </div>
+            <div class="logo"><img src="./img/logo.png"></div>
+            <transition name="page-animation">
+              <div v-show="notepageShow" class="page-note">
+                <div @click="notepageShow = !notepageShow" class="content"><img src="./img/pop-info.png"></div>
+              </div>
+            </transition>
+            <transition name="page-fade">
+              <div v-show="homepageShow" class="page-home">
+                <div class="content">
+                  <div class="title music-symbol"><img src="./img/home-title.png">
+                    <!-- - for (var i=1;i<6;i++)
+                    .symbol(class="symbel- symbel-type-NaN")
+                    
+                    -->
+                  </div>
+                  <div class="input">
+                    <input type="text" v-model="nickname" placeholder="请输入你的名字">
+                  </div>
+                  <div @click="startGame" class="btn"><img src="./img/btn-submit-name.png"></div>
+                </div>
+              </div>
+            </transition>
+            <transition name="page-fade">
+              <div v-show="gamepageShow" class="page-game">
+                <audio id="audio" :src="gameMusicLink" preload="true" autoplay="false"></audio>
+                <div v-show="gameNotePop" class="pop">
+                  <div class="content">
+                    <p>测试即将开始  请打开声音！</p>
+                    <div @click="gameStart" class="btn btn-start"><img src="./img/btn-start.png"></div>
+                  </div>
+                </div>
+                <div v-show="showAnswerPop" class="pop-answer">
+                  <div class="success">
+                    <h2>{{answers[now]==1?"恭喜你回答正确":answers[now]==0?"很遗憾回答错误":"很遗憾时间到了"}}</h2>
+                    <p class="name">《{{answerName}}》</p>
+                    <div v-show="now&lt;4" @click="nextMusic" class="btn btn-goon"><img src="./img/btn-goon.png"></div>
+                    <div v-show="now&gt;=4" @click="gameEnd" class="btn btn-dna"><img src="./img/btn-dna.png"></div>
+                  </div>
+                </div>
+                <div class="content">
+                  <div class="title"><img src="./img/game-title.png">
+                    <!-- - for (var i=1;i<6;i++).symbol(class="symbel- symbel-type-NaN")
+                    -->
+                  </div>
+                  <div class="game-content">
+                    <div :class="{en: lang!='cn'}" class="game-btns">
+                      <div v-for="mark,index in markList" @click="selectMark(mark)" class="item">{{mark}}</div>
+                    </div>
+                    <div class="game-input">
+                      <div class="answer">&nbsp;{{answer.join(' ')}}&nbsp;</div>
+                      <div @click="delectOne" class="del"><img src="./img/icon-del.png"></div>
+                      <div @click="checkAnswer" class="chr"><img src="./img/icon-check.png"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </transition>
+          </div>
+        </transition>
+        <transition name="page-animation">
+          <div v-show="ugcpageShow" class="page page-ugc"></div>
+        </transition>
+      </div>
+    </div>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
+    <script src="js/main.js?v=1"></script>
+  </body>
+</html>

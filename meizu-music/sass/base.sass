@@ -1,0 +1,335 @@
+@import sass/base
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "//image.giccoo.com/projects/meizu-music/"
+
+// animation, delay, duration
+@for $i from 1 through 51
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+
++keyframes(second)
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)
++keyframes(fadeIn)
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+
+$fontColor: #ffffff;
+$pageMainBGColor: #ffffff;
+
+html,body
+	+w
+	+h
+
+body
+	color: $fontColor
+	+bc($pageMainBGColor)
+video,canvas
+	+w
+	+h(auto)
+body
+	+overhide
+
+.playsound
+	+posa
+	+tr(0.5rem,2%)
+	+iw(58)
+	z-index: 99
+	font-size: 0
+	.play
+		+animation(second,4s,ease,infinite)
+
+.hide
+	display: none
+
+.main
+	+w
+	+h
+	+posr
+	+overhide
+				
+				
+.page-animation-enter-active
+	transition: all .6s ease
+.page-animation-leave-active
+	transition: all .4s linear
+.page-animation-enter, .page-animation-leave-to
+	+transform(translate3d(0,100%,0))
+
+
+.page-fade-enter-active
+	transition: all 1.4s ease
+	opacity: 1
+.page-fade-leave-active
+	transition: all .4s linear
+	opacity: 1
+.page-fade-enter,.page-fade-leave-to
+	opacity: 0
+
+
+.f0
+	font-size: 0
+body
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+.loading
+	+w
+	+h
+	+posa
+	+tl
+	// +hide
+	.content
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+		+w(50%)
+		.record
+			font-size: 0
+			+w(90px)
+			+m
+			+posr
+			.light
+				+posa
+				+tl
+				+w
+				+h
+				+b($cdn+"img/load-record-light.png",no-repeat,center,center,cover)
+				+animation(second,8s,linear,infinite)
+		.load-text
+			+font-size(0.8rem)
+			+m
+			+text-center
+			margin-top: 1em
+
+.pages
+	+w
+	+h
+	+posr
+	+overhide
+	perspective: 500
+	-webkit-perspective: 500
+			transform-style: preserve-3d
+	-webkit-transform-style: preserve-3d
+	.page
+		+posa
+		+tl
+		+w
+		+h
+		background-attachment: fixed
+		z-index: 10
+		
+		.bg
+			+posa
+			+tl
+			+w
+			+h
+			z-index: -1
+			img
+				+w
+				+h
+	
+		&.overhide
+			+overhide
+		&.touch
+			overflow: scroll
+.page-build
+	.note
+		+posa
+		+tr(2%,2%)
+		+iw(40,640,100%)
+		+bc(rgba(255,255,255,0.3))
+		+p(2%)
+		border-radius: 50%
+		+overhide
+		.question-mark
+			font-size: 0
+			&.off
+				opacity: 0
+		.time-last
+			+posa
+			+tl(50%,50%)
+			+transform(translate3d(-50%,-50%,0))
+			+font-size(0.8rem)
+			color: #fff
+			+tran(all,0.4s,ease)
+			opacity: 0
+			margin-left: 0.1em
+			&.on
+				opacity: 1
+				+font-size(1rem)
+			&.timeout
+				color: red
+			span
+				font-size: 0.8em
+				margin-left: 0.2em
+				color: #fff
+
+	.logo
+		+posa
+		+bl(5%)
+		+w
+	.record
+		+posa
+		+w
+		+tl
+		font-size: 0
+		+overhide
+		.line
+			+posa
+			+tr(-18%,-8%)
+			+iw(170,640,100%)
+			transform-origin: top right
+			+tran(all,1.2s,ease)
+			&.moving
+				+transform(rotate(20deg))
+		.light
+			+posa
+			+br(11%,5%)
+			+iw(882,640,100%)
+			font-size: 0
+			&.moving
+				+animation(second,6s,linear,infinite)
+			// +b($cdn+"img/record-light.png",no-repeat,center,center,cover)
+
+.page-home,.page-game
+	+posa
+	+tl(50%)
+	+w
+	+transform(translate3d(0,-50%,0))
+	+text-center
+.page-home
+	p
+		+font-size(0.8rem)
+	h1
+		+font-size(0.8rem*2.4)
+		font-weight: bold
+	input
+		color: #fff
+		+bc(#705f4f)
+		border: none
+		box-shadow: none
+		+text-center
+		+p(0.3em 0)
+		+font-size(1rem)
+		outline: none
+		&::placeholder
+			color: #fff
+	.input
+		margin-top: 5%
+	.btn
+		+iw(186,640,100%)
+		margin-top: 5%
+	.logo
+		margin-top: 15%
+.page-note
+	+posa
+	+tl
+	+w
+	+h
+	z-index: 109
+	.content
+		+w(90%)
+		+posa
+		+bl(0,5%)
+		font-size: 0
+.page-game
+	+w
+	+h
+	.content,.success
+		+posa
+		+tl(50%)
+		+w
+		+transform(translate3d(0,-50%,0))
+		+text-center
+		z-index: 2
+	.pop,.pop-answer
+		+posa
+		+tl
+		+w
+		+h
+		z-index: 99
+	.pop
+		+bc(rgba(0,0,0,0.7))
+	.pop-answer
+		+bc(rgba(0,0,0,0.7))
+		+animation(fadeIn,0.6s,ease)
+		.success
+			+bc(rgba(255,255,255,0.8))
+			+w(80%)
+			margin-left: 10%
+			box-sizing: border-box
+			+p(10% 5%)
+			border-radius: 15px
+			h2
+				color: #be1e2d
+				+m
+				+font-size(0.8rem*1.6)
+			.name
+				color: #66513f
+				+m(5% 0)
+				+font-size(0.8rem)
+			.btn-goon
+				+iw(189,640*0.8,100%)
+			.btn-dna
+				+iw(389,640*0.8,100%)
+
+
+	.btn-start
+		+iw(189,640,100%)
+	h1
+		+font-size(0.8rem*2.4)
+		font-weight: bold
+		line-height: 0.8em
+		span
+			font-size: 0.6em
+			display: inline-block
+			+w
+			line-height: 1em
+			+m
+	.game-content
+		+w(90%)
+		+m
+		.game-input
+			+w
+			margin-top: 5%
+			.answer,.del,.chr
+				display: inline-block
+				+m(0 1%)
+				box-sizing: border-box
+				+p(2%)
+				+bc(rgba(255,255,255,0.75))
+				+w(2rem)
+				font-size: 0
+				border-radius: 5px
+			.answer
+				+bc(rgba(89,89,89,0.75))
+				+p(2%)
+				min-width: 60%
+				line-height: 1em
+				+font-size(1rem)
+				min-height: 1em
+				
+		.game-btns
+			.item
+				+w(76%/6)
+				box-sizing: border-box
+				+p(0.2rem)
+				display: inline-block
+				+m(2% 2%)
+				+bc(rgba(255,255,255,0.75))
+				border-radius: 5px
+				color: #313e4b
+				+font-size(1rem)
+				line-height: 1.6em
+			&.en
+				.item
+					+w(76%/3)
+

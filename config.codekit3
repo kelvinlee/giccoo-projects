@@ -1785,6 +1785,13 @@
 		"oAP": "\/build\/esteelauder",
 		"oF": 0
 		},
+	"\/favicon.ico": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/favicon.ico",
+		"oF": 0
+		},
 	"\/friso-island\/coffee\/main.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -6341,6 +6348,271 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"\/meizu-music\/coffee\/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/meizu-music\/js\/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/meizu-music\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/meizu-music\/css",
+		"oF": 0
+		},
+	"\/meizu-music\/img\/bg.jpg": {
+		"ft": 16384,
+		"iS": 134331,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/meizu-music\/img\/btn-dna.png": {
+		"ft": 32768,
+		"iS": 6142,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/btn-dna.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/btn-goon.png": {
+		"ft": 32768,
+		"iS": 2324,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/btn-goon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/btn-start.png": {
+		"ft": 32768,
+		"iS": 3859,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/btn-start.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/btn-submit-name.png": {
+		"ft": 32768,
+		"iS": 3624,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/btn-submit-name.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/game-title.png": {
+		"ft": 32768,
+		"iS": 33058,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/game-title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/home-title.png": {
+		"ft": 32768,
+		"iS": 32954,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/home-title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/icon-check.png": {
+		"ft": 32768,
+		"iS": 1605,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/icon-check.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/icon-del.png": {
+		"ft": 32768,
+		"iS": 1236,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/icon-del.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/load-record-light.png": {
+		"ft": 32768,
+		"iS": 11019,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/load-record-light.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/load-record.png": {
+		"ft": 32768,
+		"iS": 46678,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/load-record.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/logo.png": {
+		"ft": 32768,
+		"iS": 9251,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/music-symbol-1.png": {
+		"ft": 32768,
+		"iS": 1514,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/music-symbol-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/music-symbol-2.png": {
+		"ft": 32768,
+		"iS": 1738,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/music-symbol-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/pop-info.png": {
+		"ft": 32768,
+		"iS": 50301,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/pop-info.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/question-mark.png": {
+		"ft": 32768,
+		"iS": 1412,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/question-mark.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/record-light.png": {
+		"ft": 32768,
+		"iS": 61809,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/record-light.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/record-line.png": {
+		"ft": 32768,
+		"iS": 28687,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/record-line.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/record.jpg": {
+		"ft": 16384,
+		"iS": 124290,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/record.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/meizu-music\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/meizu-music\/index.html",
+		"oF": 0
+		},
+	"\/meizu-music\/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/meizu-music\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/meizu-music\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/meizu-music\/js\/main-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/meizu-music\/sass\/base.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/meizu-music\/css\/base.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		},
 	"\/mengniu": {
 		"ft": 65536,
@@ -15087,8 +15359,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-huarun\/img\/room-2-pop.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
