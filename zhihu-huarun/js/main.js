@@ -90,27 +90,33 @@ init = function init() {
         console.log(index);
         this.poping = true;
         this.popmore = false;
-        return this.popImage = "./img/room-" + index + "-pop.png";
+        this.popImage = "./img/room-" + index + "-pop.png";
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "huarun", "病毒", index, "-"]);
       },
       openPop: function openPop(index) {
         console.log(index);
         this.poping = true;
         this.popmore = true;
         this.popImage = "./img/room-" + index + "-learnmore.png";
-        return this.learnmorelink = _learnmorelink[index - 1];
+        this.learnmorelink = _learnmorelink[index - 1];
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "huarun", "危害", index, "-"]);
       },
-      changeRoom: function changeRoom() {
-        return console.log(this.roomIndex);
+      goto: function goto(link) {
+        // console.log link
+        setTimeout(function () {
+          return window.location.href = link;
+        }, 100);
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "huarun", "了解更多", link, "-"]);
       },
       moveNext: function moveNext() {
-        console.log("xiayige", this.roomIndex);
+        // console.log "xiayige",@.roomIndex
         this.roomIndex += 1;
         if (this.roomIndex >= this.maxRoom) {
           return this.roomIndex = this.maxRoom;
         }
       },
       movePrev: function movePrev() {
-        console.log("shangyige", this.roomIndex);
+        // console.log "shangyige",@.roomIndex
         this.roomIndex -= 1;
         if (this.roomIndex <= 0) {
           return this.roomIndex = 0;

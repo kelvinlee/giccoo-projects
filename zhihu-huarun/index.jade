@@ -27,7 +27,7 @@ block content
 					.close(@click="poping = false")
 						img(:src="'#{url}/img/close.png'")
 					img(:src="popImage")
-					a.more(v-show="popmore",:href="learnmorelink")
+					.more(v-show="popmore",:href="learnmorelink",@click="goto(learnmorelink)")
 		transition(name="page-animation")
 			.page.page-home#page-home(v-show="roomIndex == 0",:class="{left: roomIndex >= 0}")
 				.bg

@@ -70,22 +70,28 @@ init = ->
 				@.poping = true
 				@.popmore = false
 				@.popImage = "./img/room-#{index}-pop.png"
+				_hmt? and _hmt.push(['_trackEvent', "huarun", "病毒", index, "-"])
 			openPop: (index)->
 				console.log index
 				@.poping = true
 				@.popmore = true
 				@.popImage = "./img/room-#{index}-learnmore.png"
 				@.learnmorelink = _learnmorelink[index-1]
-			changeRoom: ->
-				console.log @roomIndex
+				_hmt? and _hmt.push(['_trackEvent', "huarun", "危害", index, "-"])
+			goto: (link)->
+				# console.log link
+				setTimeout =>
+					window.location.href = link
+				,100
+				_hmt? and _hmt.push(['_trackEvent', "huarun", "了解更多", link, "-"])
 			moveNext: ->
-				console.log "xiayige",@.roomIndex
+				# console.log "xiayige",@.roomIndex
 				@.roomIndex += 1
 				if @.roomIndex >= @.maxRoom
 					@.roomIndex = @.maxRoom
 
 			movePrev: ->
-				console.log "shangyige",@.roomIndex
+				# console.log "shangyige",@.roomIndex
 				@.roomIndex -= 1
 				if @.roomIndex <= 0
 					@.roomIndex = 0

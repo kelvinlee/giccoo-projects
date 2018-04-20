@@ -24,7 +24,8 @@
       <transition name="page-fade">
         <div v-show="poping" class="pop-box">
           <div class="pop-content">
-            <div @click="poping = false" class="close"><img :src="'./img/close.png'"></div><img :src="popImage"><a v-show="popmore" :href="learnmorelink" class="more"></a>
+            <div @click="poping = false" class="close"><img :src="'./img/close.png'"></div><img :src="popImage">
+            <div v-show="popmore" :href="learnmorelink" @click="goto(learnmorelink)" class="more"></div>
           </div>
         </div>
       </transition>
