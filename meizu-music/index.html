@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>MEIZU 时光重塑经典</title>
+    <title>听，时光的声音</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
@@ -15,10 +15,20 @@
         <div class="record"><img src="./img/load-record.png">
           <div class="light"></div>
         </div>
-        <div id="loadtext" class="load-text">Loading...{{progress}}%</div>
+        <div id="loadtext" v-show="mount" style="display: none" class="load-text">Loading...{{progress}}%</div>
       </div>
     </div>
     <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">
+      <transition name="page-fade">
+        <div v-show="loading" class="loading">
+          <div class="content">
+            <div class="record"><img src="./img/load-record.png">
+              <div class="light"></div>
+            </div>
+            <div class="load-text">...上传中...</div>
+          </div>
+        </div>
+      </transition>
       <div class="pages">
         <transition name="page-fade">
           <div v-show="homepageShow || gamepageShow" class="page page-build">
@@ -39,16 +49,27 @@
             <transition name="page-fade">
               <div v-show="homepageShow" class="page-home">
                 <div class="content">
-                  <div class="title music-symbol"><img src="./img/home-title.png">
-                    <!-- - for (var i=1;i<6;i++)
-                    .symbol(class="symbel- symbel-type-NaN")
-                    
-                    -->
+                  <div :class="{on: playing}" class="title music-symbol fadeInUp duration-8 animated delay-5"><img src="./img/home-title.png">
+                    <div class="symbol symbol-1 symbol-type-2">
+                      <div class="c"></div>
+                    </div>
+                    <div class="symbol symbol-2 symbol-type-1">
+                      <div class="c"></div>
+                    </div>
+                    <div class="symbol symbol-3 symbol-type-2">
+                      <div class="c"></div>
+                    </div>
+                    <div class="symbol symbol-4 symbol-type-1">
+                      <div class="c"></div>
+                    </div>
+                    <div class="symbol symbol-5 symbol-type-2">
+                      <div class="c"></div>
+                    </div>
                   </div>
-                  <div class="input">
-                    <input type="text" v-model="nickname" placeholder="请输入你的名字">
+                  <div class="input fadeInUp duration-8 animated delay-9">
+                    <input type="text" maxlength="10" v-model="nickname" placeholder="请输入你的名字">
                   </div>
-                  <div @click="startGame" class="btn"><img src="./img/btn-submit-name.png"></div>
+                  <div @click="startGame" class="btn fadeInUp duration-8 animated delay-12"><img src="./img/btn-submit-name.png"></div>
                 </div>
               </div>
             </transition>
@@ -70,27 +91,57 @@
                   </div>
                 </div>
                 <div class="content">
-                  <div class="title"><img src="./img/game-title.png">
-                    <!-- - for (var i=1;i<6;i++).symbol(class="symbel- symbel-type-NaN")
-                    -->
+                  <div :class="{on: playing}" class="title fadeInUp animated duration-8 delay-5"><img src="./img/game-title.png">
+                    <div class="symbol symbol-1 symbol-type-2">
+                      <div class="c"></div>
+                    </div>
+                    <div class="symbol symbol-2 symbol-type-1">
+                      <div class="c"></div>
+                    </div>
+                    <div class="symbol symbol-3 symbol-type-2">
+                      <div class="c"></div>
+                    </div>
+                    <div class="symbol symbol-4 symbol-type-1">
+                      <div class="c"></div>
+                    </div>
+                    <div class="symbol symbol-5 symbol-type-2">
+                      <div class="c"></div>
+                    </div>
                   </div>
-                  <div class="game-content">
+                  <div class="game-content fadeInUp animated duration-8 delay-9">
                     <div :class="{en: lang!='cn'}" class="game-btns">
                       <div v-for="mark,index in markList" @click="selectMark(mark)" class="item">{{mark}}</div>
                     </div>
-                    <div class="game-input">
+                    <div class="game-input fadeInUp animated duration-8 delay-12">
                       <div class="answer">&nbsp;{{answer.join(' ')}}&nbsp;</div>
                       <div @click="delectOne" class="del"><img src="./img/icon-del.png"></div>
                       <div @click="checkAnswer" class="chr"><img src="./img/icon-check.png"></div>
                     </div>
+                    <div :class="{on: errorShow}" class="error-text">回答错误请重新再答!</div>
                   </div>
                 </div>
               </div>
             </transition>
           </div>
         </transition>
+        <transition name="page-fade">
+          <div v-show="ugcpageShow" class="page page-ugc">
+            <canvas id="result" width="640" height="1138"></canvas>
+            <div class="ugc-bg"><img :src="ugc"></div>
+            <div class="ugc-save"><img :src="ugcqr"></div>
+            <div class="btns">
+              <div v-if="wy" @click="shareImage" class="btn btn-share"><img src="./img/btn-share.png"></div>
+              <div v-if="!wy" class="btn btn-saveimage"><img src="./img/btn-saveimage.png">
+                <div class="mark"><img :src="ugcqr"></div>
+              </div>
+              <div @click="regame" class="btn btn-regame"><img src="./img/btn-regame.png"></div>
+            </div>
+          </div>
+        </transition>
         <transition name="page-animation">
-          <div v-show="ugcpageShow" class="page page-ugc"></div>
+          <div v-show="shareSuccessShow" class="page page-success">
+            <div class="success"><a href="http://music.163.com/#/playlist/2192839055/"><img src="./img/share-success.png"></a></div>
+          </div>
         </transition>
       </div>
     </div>

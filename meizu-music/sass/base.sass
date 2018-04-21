@@ -22,6 +22,20 @@ $cdn : "../"
 		opacity: 0
 	100%
 		opacity: 1
++keyframes(symbelMove)
+	0%,100%
+		+transform(translate3d(0,0,0) scale(1,1) rsotate(0deg))
+	50%
+		+transform(translate3d(0,-30%,0) scale(0.8,0.8) rotate(120deg))
++keyframes(symbelMoveC)
+	0%,100%
+		+transform(translate3d(0,0,0))
+	30%
+		+transform(translate3d(40%,0,0))
+	60%
+		+transform(translate3d(-40%,0,0))
+
+
 
 $fontColor: #ffffff;
 $pageMainBGColor: #ffffff;
@@ -316,7 +330,16 @@ body
 				line-height: 1em
 				+font-size(1rem)
 				min-height: 1em
-				
+		.error-text
+			+w
+			color: red
+			padding-left: 19%
+			padding-top: 2%
+			box-sizing: border-box
+			+text-left
+			opacity: 0
+			&.on
+				opacity: 1
 		.game-btns
 			.item
 				+w(76%/6)
@@ -333,3 +356,102 @@ body
 				.item
 					+w(76%/3)
 
+.symbol
+	+posa
+	+tl
+	.c
+		+w
+		+h
+	.on &.symbol-type-1
+		+animation(symbelMove,4s,ease-in,infinite)
+		.c
+			+animation(symbelMoveC,4s,ease-in,infinite)
+	.on &.symbol-type-2
+		+animation(symbelMove,4s,ease-in,infinite)
+		.c
+			+animation(symbelMoveC,4s,ease-in,infinite)
+	&.symbol-type-1
+		+wh(20px,20px)
+		.c
+			+b($cdn+"img/music-symbol-1.png",no-repeat,center,center,cover)
+	&.symbol-type-2
+		+wh(30px,30px)
+		.c
+			+b($cdn+"img/music-symbol-2.png",no-repeat,center,center,cover)
+	&.symbol-1
+		+tl(30px,5%)
+		animation-delay: 1200ms
+		.c
+			animation-delay: 1200ms
+	&.symbol-2
+		+tl(-30px,12%)
+		animation-delay: 1200ms
+		animation-duration: 6s
+		// animation-direction: reverse
+		.c
+			animation-delay: 1200ms
+			animation-duration: 6s
+			animation-direction: reverse
+	&.symbol-3
+		+tl(-55px,60%)
+		animation-duration: 8s
+		animation-delay: 600ms
+		+transform(rotate(65deg) scale(1.1,1.1))
+		.c
+			animation-delay: 1200ms
+	&.symbol-4
+		+tr(55px,5%)
+		left: auto
+		animation-duration: 7s
+		+transform(rotate(-45deg))
+	&.symbol-5
+		+tr(-35px,2%)
+		left: auto
+		animation-duration: 5s
+		+transform(rotate(15deg) scale(0.8,0.8))
+
+#result
+	opacity: 0
+	+posa
+	+tl(-200%,-200%)
+
+.page-ugc
+	.ugc-bg
+		+posr
+		z-index: 1
+	.ugc-save
+		+posa
+		+tl
+		z-index: 4
+		opacity: 0
+	.btns
+		+posa
+		+br(12%,12%)
+		+iw(253,640,100%)
+		z-index: 5
+		.btn
+			margin-top: 5%
+			font-size: 0
+			+posr
+			& .mark
+				+posa
+				+tl
+				+w
+				+h
+				+br
+				z-index: 9
+				opacity: 0
+				+overhide
+
+.page-success
+	.success
+		+posa
+		+tl(50%,5%)
+		+w(90%)
+		+transform(translate3d(0,-50%,0))
+
+.main
+	.loading
+		+posa
+		z-index: 1009
+		+bc(rgba(0,0,0,0.75))

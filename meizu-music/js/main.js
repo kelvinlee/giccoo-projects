@@ -1,7 +1,41 @@
 "use strict";
 
-var $_GET, IsPC, _CDN, _answersList, _imgurl, _learnmorelink, answersList, getRandom, global, init, load, loadWechatConfig, main, pre, _randomSort, stopWebViewScroll;
+var _CDN, _END, _answersList, _imgurl, answersList, getRandom, global, imageurl, init, load, loadWechatConfig, main, neteaseShareImage, randomSort, _runLongText, sys;
 
+randomSort = function randomSort(obj) {
+  var newArr, oldarr, _randomSortFun;
+  newArr = [];
+  oldarr = obj;
+  _randomSortFun = function randomSortFun(arr, newArr) {
+    var random;
+    if (arr.length === 1) {
+      newArr.push(arr[0]);
+      return newArr;
+    }
+    random = Math.ceil(Math.random() * arr.length) - 1;
+    newArr.push(arr[random]);
+    arr.splice(random, 1);
+    return _randomSortFun(arr, newArr);
+  };
+  _randomSortFun(oldarr, newArr);
+  return newArr;
+};
+
+getRandom = function getRandom(length) {
+  return parseInt(Math.random() * (length + 1) - 1);
+};
+
+loadWechatConfig = function loadWechatConfig() {
+  var hm, s, url;
+  url = encodeURIComponent(window.location.href.split("#")[0]);
+  hm = document.createElement('script');
+  hm.src = "//api.giccoo.com/api/config?url=" + url;
+  s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(hm, s);
+};
+
+// @codekit-prepend "../../libs/coffee/randomSort"
+// @codekit-prepend "../../libs/coffee/loadWechatConfig"
 _CDN = "";
 
 _imgurl = "";
@@ -10,23 +44,11 @@ global = {};
 
 main = {};
 
-pre = {};
-
 load = {};
 
-_learnmorelink = ["https://www.zhihu.com/question/268770483", "https://www.zhihu.com/question/268770615", "https://www.zhihu.com/question/268770266"];
+sys = "";
 
-_randomSort = function randomSort(arr, newArr) {
-  var random;
-  if (arr.length === 1) {
-    newArr.push(arr[0]);
-    return newArr;
-  }
-  random = Math.ceil(Math.random() * arr.length) - 1;
-  newArr.push(arr[random]);
-  arr.splice(random, 1);
-  return _randomSort(arr, newArr);
-};
+imageurl = "//api.giccoo.com/api/upload/image64/";
 
 _answersList = [{
   lang: "cn",
@@ -105,37 +127,212 @@ _answersList = [{
   wrong: "faded,yours,funk,apologize,I'm,uptown"
 }];
 
-answersList = [];
-
-_randomSort(_answersList, answersList);
-
-getRandom = function getRandom(length) {
-  return parseInt(Math.random() * (length + 1) - 1);
+_END = {
+  100: [{
+    desc: "听歌识曲胜过AI的",
+    name: "绝代音雄"
+  }, {
+    desc: "资深音乐委员会的",
+    name: "曲库专家"
+  }, {
+    desc: "绝迹江湖，音乐即生命的",
+    name: "灵魂歌者"
+  }, {
+    desc: "蝉联榜首开口让人跪的",
+    name: "天生歌神"
+  }, {
+    desc: "在我的BGM中不会输的",
+    name: "至尊狂神"
+  }, {
+    desc: "精通中日韩英法俄六国音乐全方位无死穴的",
+    name: "天选之人"
+  }, {
+    desc: "音乐界敢称第二没人敢称第一睥睨天下的",
+    name: "独孤求败"
+  }, {
+    desc: "连喝速溶咖啡都要配上交响圆舞曲的",
+    name: "音乐世家"
+  }, {
+    desc: "就是难不倒行走中的",
+    name: "音乐百科全书"
+  }, {
+    desc: "地下室堆满了珍藏专辑的",
+    name: "音乐鉴赏师"
+  }],
+  80: [{
+    desc: "听歌百万不唱一首的",
+    name: "音乐指导家"
+  }, {
+    desc: "每晚都在修炼深藏不漏的",
+    name: "浴室演唱家"
+  }, {
+    desc: "成功打败听歌识曲功能的",
+    name: "社会人儿"
+  }, {
+    desc: "手握10T硬盘坐拥百箱专辑的",
+    name: "人肉点唱机"
+  }, {
+    desc: "站在潮流尖端跟紧节奏自由摇摆的",
+    name: "音乐大咖"
+  }, {
+    desc: "千年一遇公认最具潜力的",
+    name: "杰出青年"
+  }, {
+    desc: "猜歌界让对手闻风丧胆的",
+    name: "隐世高人"
+  }, {
+    desc: "被神选中凡人无法超越的",
+    name: "一代宗师"
+  }, {
+    desc: "拥有超大内存和相对音感的 ",
+    name: "人形MP3"
+  }, {
+    desc: "越努力越幸运十三亿奇迹的 ",
+    name: "全民导师"
+  }],
+  60: [{
+    desc: "常驻街头唱功一流的",
+    name: "地下音乐狂"
+  }, {
+    desc: "录音棚里起的比公鸡还早的",
+    name: "逐梦音乐圈少年"
+  }, {
+    desc: "唱歌app里略有些粉丝的",
+    name: "当代网红歌手"
+  }, {
+    desc: "大吉大利靠听歌吃鸡的",
+    name: "不羁玩家"
+  }, {
+    desc: "陶醉型忘词不忘摇摆的",
+    name: "歌唱王者"
+  }, {
+    desc: "站在潮流尖端跟紧节奏自顾摇摆的",
+    name: "音乐大咖"
+  }, {
+    desc: "昼伏夜出耳机即本体的",
+    name: "乐坛劳模"
+  }, {
+    desc: "正在强势崛起小有见解的",
+    name: "音乐评论家"
+  }, {
+    desc: "拥有超强爆发力即将走红的",
+    name: "乐坛新秀"
+  }, {
+    desc: "常年出没于各大音乐节的",
+    name: "VIP会员"
+  }],
+  40: [{
+    desc: "刚入坑还一脸茫然的",
+    name: "萌新小白"
+  }, {
+    desc: "革命尚未成功需再接再厉的",
+    name: "后起之秀"
+  }, {
+    desc: "徘徊在及格边缘只差临门一脚的",
+    name: "音乐系学生"
+  }, {
+    desc: "听得清也听不清只能听个大概的",
+    name: "差不多听者"
+  }, {
+    desc: "出租屋里写不出好歌的",
+    name: "唱作型歌手"
+  }, {
+    desc: "某大学乐队里第108号的",
+    name: "替补主唱"
+  }, {
+    desc: "身为音痴也不放弃的",
+    name: "空响奋斗家"
+  }, {
+    desc: "绝不妥切做一条平凡咸鱼的",
+    name: "燃乐爱好者"
+  }, {
+    desc: "剑走偏锋爱热门更爱小众音乐的",
+    name: "魔幻鬼才"
+  }, {
+    desc: "一切随缘不强求的",
+    name: "佛系听众"
+  }],
+  20: [{
+    desc: "什么歌听起来都差不多的",
+    name: "差不多先生"
+  }, {
+    desc: "冷板凳上待业多年的",
+    name: "候补DJ"
+  }, {
+    desc: "在浴室唱哭淋浴头的",
+    name: "灵魂歌唱家"
+  }, {
+    desc: "坐看台合唱也会被嫌弃的",
+    name: "超级粉丝"
+  }, {
+    desc: "五音不全蔓延至听觉系统的",
+    name: "音乐隔膜人"
+  }, {
+    desc: "离歌神还差一个珠穆朗玛峰的",
+    name: "普通路人"
+  }, {
+    desc: "中世纪凭想象力听歌的",
+    name: "练歌术士"
+  }, {
+    desc: "在地下室努力听歌扒谱的",
+    name: "五杀乐队主唱"
+  }, {
+    desc: "一站上舞台就腿抖的",
+    name: "后补练习生"
+  }],
+  0: [{
+    desc: "从外太空飞来威胁地球音乐的",
+    name: "音律破坏王"
+  }, {
+    desc: "来自外星对人类音乐一无所知的",
+    name: "宇宙音痴"
+  }, {
+    desc: "问世间歌为何物的",
+    name: "音乐绝缘体"
+  }, {
+    desc: "黑珍珠号上唱歌破音的",
+    name: "水手练习生"
+  }, {
+    desc: "各大音乐网站上听歌曲数均为零的",
+    name: "音乐黑洞"
+  }, {
+    desc: "一开嗓就让人人敬而远之的",
+    name: "旋律怪物"
+  }, {
+    desc: "从小就让音乐老师头痛无解的",
+    name: "音乐困难生"
+  }]
 };
+
+answersList = randomSort(_answersList);
 
 window.onload = function () {
   // runAnimate()
-  loadWechatConfig();
-  return wx.ready(function () {
-    var shareContent;
-    shareContent = {
-      title: "24小时健康享新家",
-      desc: "华润漆A+系列，让你轻松24小时入住新家！",
-      link: "http://m.giccoo.com/zhihu-huarun/",
-      imgUrl: "http://m.giccoo.com/zhihu-huarun/img/ico.jpg",
-      success: function success() {},
-      // alert "success"
-      cancel: function cancel() {}
-    };
-    // alert "cancel"
-    wx.onMenuShareTimeline(shareContent);
-    wx.onMenuShareAppMessage(shareContent);
-    wx.onMenuShareQQ(shareContent);
-    return wx.onMenuShareWeibo(shareContent);
-  });
+  if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
+    sys = "NeteaseMusic";
+  } else {
+    loadWechatConfig();
+    wx.ready(function () {
+      var shareContent;
+      shareContent = {
+        title: "哈喽！点击解密你的音乐DNA",
+        desc: "哪个才是隐藏在你基因中的音乐DNA？",
+        link: "http://m.giccoo.com/meizu-music/",
+        imgUrl: "http://m.giccoo.com/meizu-music/img/ico.jpg",
+        success: function success() {},
+        // alert "success"
+        cancel: function cancel() {}
+      };
+      // alert "cancel"
+      wx.onMenuShareTimeline(shareContent);
+      wx.onMenuShareAppMessage(shareContent);
+      wx.onMenuShareQQ(shareContent);
+      return wx.onMenuShareWeibo(shareContent);
+    });
+  }
+  return init();
 };
 
-// init()
 init = function init() {
   var TrueH, TrueW, timein;
   TrueH = document.documentElement.clientHeight;
@@ -147,7 +344,8 @@ init = function init() {
   load = new Vue({
     el: "#loadtext",
     data: {
-      progress: 0
+      progress: 0,
+      mount: true
     },
     mounted: function mounted() {
       var _this = this;
@@ -160,6 +358,8 @@ init = function init() {
           clearInterval(timein);
           main.mount = true;
           return setTimeout(function () {
+            // main.ugcpageShow = true
+            // main.buildUGC()
             main.homepageShow = true;
             return document.getElementById('load').style.display = "none";
           }, 100);
@@ -170,17 +370,20 @@ init = function init() {
   return main = new Vue({
     el: "#main",
     data: {
+      wy: false,
       homepageShow: false,
       gamepageShow: false,
       gameNotePop: false,
       ugcpageShow: false,
       notepageShow: false,
+      shareSuccessShow: false,
+      errorShow: false,
       mount: false,
       loading: false,
       w: TrueW,
       h: TrueH,
       audio: null,
-      nickname: "test",
+      nickname: "",
       gameMusicLink: "",
       markList: "??????????????????",
       answerName: "",
@@ -197,7 +400,10 @@ init = function init() {
         int: null
       },
       second: 16,
-      timeout: null
+      timeout: null,
+      shareImageLink: "",
+      ugcqr: "",
+      ugc: ""
     },
     computed: {
       XY: function XY() {
@@ -205,7 +411,9 @@ init = function init() {
       }
     },
     methods: {
-      checkMusic: function checkMusic() {},
+      regame: function regame() {
+        return window.location.reload();
+      },
       startGame: function startGame() {
         if (this.nickname === "") {
           alert("请输入你的名字");
@@ -239,7 +447,7 @@ init = function init() {
           temp = temp.concat(answersList[this.now].name.split(" "));
         }
         this.audio.src = answersList[this.now].srcs[Math.random() > 0.5 ? 0 : 1];
-        _randomSort(temp, this.markList);
+        this.markList = randomSort(temp);
         console.log("start time run");
         this.date.start = new Date();
         return this.runtime();
@@ -247,6 +455,11 @@ init = function init() {
       runtime: function runtime() {
         var _this2 = this;
 
+        clearTimeout(this.timeout);
+        this.timeout = null;
+        this.timeout = setTimeout(function () {
+          return _this2.timeoutshow();
+        }, 1000 * this.second);
         clearInterval(this.date.int);
         this.date.int = null;
         this.date.int = setInterval(function () {
@@ -256,9 +469,6 @@ init = function init() {
           }
           // console.log @.second
         }, 1000 / 20);
-        this.timeout = setTimeout(function () {
-          return _this2.timeoutshow();
-        }, 15000);
         // @.audio.addEventListener 'timeupdate', @.timeupdate.bind @
         this.audio.currentTime = 0;
         return this.audio.play();
@@ -276,12 +486,14 @@ init = function init() {
         if (this.showAnswerPop) {
           return false;
         }
+        this.errorShow = false;
         return this.answer.push(mark);
       },
       delectOne: function delectOne() {
         if (this.showAnswerPop) {
           return false;
         }
+        this.errorShow = false;
         return this.answer.pop();
       },
       checkAnswer: function checkAnswer() {
@@ -297,8 +509,14 @@ init = function init() {
           my = this.answer.join(' ');
         }
         console.log(my, answer.name);
+        if (my !== answer.name) {
+          return this.error();
+        }
         this.answers[this.now] = my === answer.name ? 1 : 0;
         return this.showAnswer(answer.name);
+      },
+      error: function error() {
+        return this.errorShow = true;
       },
       showAnswer: function showAnswer(answerName) {
         clearTimeout(this.timeout);
@@ -306,6 +524,7 @@ init = function init() {
         clearInterval(this.date.int);
         this.date.int = null;
         this.answerName = answerName;
+        this.errorShow = false;
         console.log(this.timeout);
         return this.showAnswerPop = true;
       },
@@ -317,114 +536,171 @@ init = function init() {
         return this.gameRun();
       },
       gameEnd: function gameEnd() {
-        var item, k, len, ref, soure;
+        var i, item, len, list, ref, soure;
         this.homepageShow = false;
         this.gamepageShow = false;
         soure = 100;
         ref = main.answers;
-        for (k = 0, len = ref.length; k < len; k++) {
-          item = ref[k];
+        for (i = 0, len = ref.length; i < len; i++) {
+          item = ref[i];
           if (item !== 1) {
             soure -= 20;
           }
         }
-        return console.log("soure:", soure);
+        list = _END[soure];
+        item = list[Math.floor(Math.random() * list.length)];
+        return this.buildUGC(item, soure);
+      },
+      buildUGC: function buildUGC(item) {
+        var _this3 = this;
+
+        var soure = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
+
+        var bg, canvas, ctx, writeText;
+        this.ugcpageShow = true;
+        console.log(item);
+        if (item == null) {
+          item = {
+            desc: "就是难不倒行走中的",
+            name: "音乐百科全书"
+          };
+        }
+        canvas = document.getElementById("result");
+        canvas.width = 640;
+        canvas.height = 1138;
+        // canvas.className = "topall"
+        ctx = canvas.getContext("2d");
+        bg = new Image();
+        bg.onload = function (evt) {
+          ctx.drawImage(bg, 0, 0, bg.width, bg.height);
+          return writeText(ctx);
+        };
+        bg.src = "./img/ugc/" + soure + ".jpg";
+        return writeText = function writeText(ctx) {
+          var qr, y;
+          ctx.fillStyle = "#fff";
+          ctx.textAlign = 'left';
+          // ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+          // ctx.shadowBlur = 5;
+          ctx.font = "normal normal 36px '微软雅黑'";
+          // ctx.fillText(@.nickname,110,226)
+          y = _runLongText(ctx, _this3.nickname, 180, 110, 226, 36 * 1.4);
+          ctx.font = "normal normal 23px '微软雅黑'";
+          ctx.fillText("您的经典值是", 110, y + 36);
+          ctx.font = "italic bold 94px '微软雅黑'";
+          ctx.textAlign = 'center';
+          ctx.fillText(soure, 370, 226 + 36);
+          ctx.textAlign = 'left';
+          ctx.font = "normal normal 36px '微软雅黑'";
+          // ctx.fillText(item.desc,110,226+36+80)
+          y = _runLongText(ctx, item.desc, 360, 110, y + 36 + 80, 36 * 1.4);
+          ctx.font = "normal bold 50px '微软雅黑'";
+          ctx.fillText(item.name, 110, y + 50 + 10);
+          _this3.ugc = canvas.toDataURL("image/png");
+          qr = new Image();
+          qr.onload = function () {
+            ctx.drawImage(qr, 640 - qr.width - 70, 1138 - qr.height - 46, qr.width, qr.height);
+            return _this3.ugcqr = canvas.toDataURL("image/png");
+          };
+          return qr.src = "./img/ugc/qr.png";
+        };
+      },
+      shareImage: function shareImage() {
+        this.loading = true;
+        return this.upload(this.ugcqr);
+      },
+      // if sys is "NeteaseMusic"
+      // neteaseShareImage()
+      upload: function upload(image) {
+        var data;
+        // console.log "upload:"
+        data = {
+          image: image,
+          folder: "meizumusic"
+        };
+        return axios.post(imageurl, data).then(function (msg) {
+          if (msg.data.recode === 200) {
+            return main.success(msg.data);
+          } else {
+            return main.faild();
+          }
+        }).catch(function (e) {
+          // alert e
+          return main.faild();
+        });
+      },
+      success: function success(data) {
+        var _this4 = this;
+
+        // 上传分享
+        // console.log data.info
+        this.loading = false;
+        this.shareImageLink = data.info;
+        neteaseShareImage();
+        return setTimeout(function () {
+          return _this4.shareSuccessShow = true;
+        }, 3000);
+      },
+      faild: function faild() {
+        // 换成长按保存
+        return this.loading = false;
       }
     },
     mounted: function mounted($el, e) {
-      var _this3 = this;
+      var _this5 = this;
 
+      // @.wy = true
+      if (sys === "NeteaseMusic") {
+        this.wy = true;
+      }
       // @.mount = true
       // @.gamepageShow = true
       // @.gameNotePop = true
       this.audio = document.getElementById("audio");
       this.audio.addEventListener("play", function () {
-        return _this3.playing = true;
+        return _this5.playing = true;
       });
-      this.audio.addEventListener("ended", function () {
-        return _this3.playing = false;
+      return this.audio.addEventListener("ended", function () {
+        return _this5.playing = false;
       });
-      return console.log(answersList, this.audio);
     }
   });
 };
 
-loadWechatConfig = function loadWechatConfig() {
-  var hm, s, url;
-  url = encodeURIComponent(window.location.href.split("#")[0]);
-  hm = document.createElement('script');
-  hm.src = "//api.giccoo.com/api/config?url=" + url;
-  s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(hm, s);
+// console.log answersList,@.audio
+neteaseShareImage = function neteaseShareImage() {
+  var picUrl, redirectUrl, title1;
+  title1 = "哈喽！点击解密你的音乐DNA";
+  picUrl = "http://image.giccoo.com/upload/meizumusic/" + main.shareImageLink + "@!large";
+  redirectUrl = "http://m.giccoo/meizu-music/";
+  console.log("orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1));
+  return window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
 };
 
-$_GET = function () {
-  var get, i, j, k, len, u, url;
-  url = window.document.location.href.toString();
-  u = url.split('?');
-  if (typeof u[1] === 'string') {
-    u = u[1].split('&');
-    get = {};
-    console.log(u);
-    for (k = 0, len = u.length; k < len; k++) {
-      i = u[k];
-      j = i.split('=');
-      get[j[0]] = j[1];
-    }
-    return get;
-  } else {
-    return {};
+// 计算长文字
+_runLongText = function runLongText(ctx, longText, maxW, x, y, lineH) {
+  var i, innerText, long, metrics, ref, text;
+  // console.log maxW
+  innerText = "";
+  long = false;
+  if (longText == null && longText.length <= 0) {
+    return y;
   }
-}();
-
-stopWebViewScroll = function stopWebViewScroll() {
-  var el, k, len, overscroll, ref, results;
-  overscroll = function overscroll(el) {
-    el.addEventListener('touchstart', function () {
-      var currentScroll, top, totalScroll;
-      top = el.scrollTop;
-      totalScroll = el.scrollHeight;
-      currentScroll = top + el.offsetHeight;
-      if (top === 0) {
-        return el.scrollTop = 1;
-      } else if (currentScroll === totalScroll) {
-        return el.scrollTop = top - 1;
-      }
-    });
-    // alert el.scrollTop
-    return el.addEventListener("touchmove", function (evt) {
-      if (el.offsetHeight < el.scrollHeight) {
-        return evt._isScroller = true;
-      }
-    });
-  };
-  document.addEventListener("touchmove", function (evt) {
-    if (!evt._isScroller) {
-      return evt.preventDefault();
-    }
-  });
-  ref = document.querySelectorAll(".touch");
-  // console.log document.querySelectorAll(".touch")
-  results = [];
-  for (k = 0, len = ref.length; k < len; k++) {
-    el = ref[k];
-    results.push(overscroll(el));
-  }
-  return results;
-};
-
-IsPC = function IsPC() {
-  var Agents, flag, userAgentInfo, v;
-  userAgentInfo = navigator.userAgent;
-  Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod');
-  flag = true;
-  v = 0;
-  while (v < Agents.length) {
-    if (userAgentInfo.indexOf(Agents[v]) > 0) {
-      flag = false;
+  for (text = i = 0, ref = longText.length; 0 <= ref ? i < ref : i > ref; text = 0 <= ref ? ++i : --i) {
+    // console.log longText[text]
+    innerText += longText[text];
+    metrics = ctx.measureText(innerText);
+    // console.log metrics , maxW
+    if (metrics.width >= maxW) {
+      ctx.fillText(innerText, x, y);
+      longText = longText.replace(innerText, "");
+      y = _runLongText(ctx, longText, maxW, x, y + lineH, lineH);
+      long = true;
       break;
     }
-    v++;
   }
-  return flag;
+  if (!long) {
+    ctx.fillText(innerText, x, y);
+  }
+  return y;
 };

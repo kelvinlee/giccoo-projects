@@ -1,7 +1,7 @@
 extends ../libs/jade/layout-clean
 block title
-	| MEIZU 时光重塑经典
-
+	| 听，时光的声音
+	
 block css
 	meta(name="author",content="m.giccoo.com")
 	//- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
@@ -24,8 +24,15 @@ block content
 			.record
 				img(src="#{url}/img/load-record.png")
 				.light
-			#loadtext.load-text Loading...{{progress}}%
+			#loadtext.load-text(v-show="mount",style="display: none") Loading...{{progress}}%
 	#main.main(v-show="mount",style="display: none",:style="{width: w+'px',height: h+'px'}")
+		transition(name="page-fade")
+			.loading(v-show="loading")
+				.content
+					.record
+						img(src="#{url}/img/load-record.png")
+						.light
+					.load-text ...上传中...
 		.pages
 			transition(name="page-fade")
 				.page.page-build(v-show="homepageShow || gamepageShow")
@@ -50,14 +57,15 @@ block content
 					transition(name="page-fade")
 						.page-home(v-show="homepageShow")
 							.content
-								.title.music-symbol
+								.title.music-symbol.fadeInUp.duration-8.animated.delay-5(:class="{on: playing}")
 									img(src="#{url}/img/home-title.png")
-									// - for (var i=1;i<6;i++)
-										.symbol(class="symbel-#{i} symbel-type-#{i%2+1}")
+									- for (var i=1;i<6;i++)
+										.symbol(class="symbol-#{i} symbol-type-#{i%2+1}")
+											.c
 
-								.input
-									input(type="text",v-model="nickname",placeholder="请输入你的名字")
-								.btn(@click="startGame")
+								.input.fadeInUp.duration-8.animated.delay-9
+									input(type="text",maxlength="10",v-model="nickname",placeholder="请输入你的名字")
+								.btn.fadeInUp.duration-8.animated.delay-12(@click="startGame")
 									img(src="#{url}/img/btn-submit-name.png")
 
 					transition(name="page-fade")
@@ -77,23 +85,45 @@ block content
 									.btn.btn-dna(v-show="now>=4",@click="gameEnd")
 										img(src="#{url}/img/btn-dna.png")
 							.content
-								.title
+								.title.fadeInUp.animated.duration-8.delay-5(:class="{on: playing}")
 									img(src="#{url}/img/game-title.png")
-									// - for (var i=1;i<6;i++)
-										.symbol(class="symbel-#{i} symbel-type-#{i%2+1}")
-								.game-content
+									- for (var i=1;i<6;i++)
+										.symbol(class="symbol-#{i} symbol-type-#{i%2+1}")
+											.c
+								.game-content.fadeInUp.animated.duration-8.delay-9
 									.game-btns(:class="{en: lang!='cn'}")
 										.item(v-for="mark,index in markList",@click="selectMark(mark)")
 											{{mark}}
-									.game-input
+									.game-input.fadeInUp.animated.duration-8.delay-12
 										.answer &nbsp;{{answer.join(' ')}}&nbsp;
 										.del(@click="delectOne")
 											img(src="#{url}/img/icon-del.png")
 										.chr(@click="checkAnswer")
 											img(src="#{url}/img/icon-check.png")
+									.error-text(:class="{on: errorShow}") 回答错误请重新再答!
+			
+			transition(name="page-fade")
+				.page.page-ugc(v-show="ugcpageShow")
+					canvas#result(width="640",height="1138")
+					.ugc-bg
+						img(:src="ugc")
+					.ugc-save
+						img(:src="ugcqr")
+					.btns
+						.btn.btn-share(v-if="wy",@click="shareImage")
+							img(src="#{url}/img/btn-share.png")
+						.btn.btn-saveimage(v-if="!wy")
+							img(src="#{url}/img/btn-saveimage.png")
+							.mark
+								img(:src="ugcqr")
+						.btn.btn-regame(@click="regame")
+							img(src="#{url}/img/btn-regame.png")
 			
 			transition(name="page-animation")
-				.page.page-ugc(v-show="ugcpageShow")
+				.page.page-success(v-show="shareSuccessShow")
+					.success
+						a(href="http://music.163.com/#/playlist/2192839055/")
+							img(src="#{url}/img/share-success.png")
 
 			
 

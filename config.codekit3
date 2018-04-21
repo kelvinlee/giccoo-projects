@@ -4431,12 +4431,45 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"\/libs\/coffee\/get.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/js\/get.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/coffee\/IsPC.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/js\/IsPC.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
 	"\/libs\/coffee\/load.coffee": {
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/libs\/js\/load.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/coffee\/loadWechatConfig.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/libs\/js\/loadWechatConfig.js",
 		"oF": 0,
 		"oS": 1,
 		"sC": 0,
@@ -4459,6 +4492,17 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/libs\/js\/qrcode.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/coffee\/randomSort.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/libs\/js\/randomSort.js",
 		"oF": 0,
 		"oS": 1,
 		"sC": 0,
@@ -5318,6 +5362,16 @@
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/libs\/js\/riot.3-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/js\/stopWebViewScroll.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/libs\/js\/stopWebViewScroll-build.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 1
@@ -6399,6 +6453,39 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/meizu-music\/img\/btn-regame.png": {
+		"ft": 32768,
+		"iS": 2749,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/btn-regame.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/btn-saveimage.png": {
+		"ft": 32768,
+		"iS": 4064,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/btn-saveimage.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/btn-share.png": {
+		"ft": 32768,
+		"iS": 2749,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/btn-share.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/meizu-music\/img\/btn-start.png": {
 		"ft": 32768,
 		"iS": 3859,
@@ -6504,8 +6591,8 @@
 		"oA": 0,
 		"oAP": "\/meizu-music\/img\/music-symbol-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -6515,8 +6602,8 @@
 		"oA": 0,
 		"oAP": "\/meizu-music\/img\/music-symbol-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -6573,6 +6660,105 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"\/meizu-music\/img\/share-success.png": {
+		"ft": 32768,
+		"iS": 83403,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/share-success.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/ugc\/0.jpg": {
+		"ft": 16384,
+		"iS": 230269,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/ugc\/0.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/meizu-music\/img\/ugc\/100.jpg": {
+		"ft": 16384,
+		"iS": 231464,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/ugc\/100.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/meizu-music\/img\/ugc\/20.jpg": {
+		"ft": 16384,
+		"iS": 229434,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/ugc\/20.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/meizu-music\/img\/ugc\/40.jpg": {
+		"ft": 16384,
+		"iS": 228483,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/ugc\/40.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/meizu-music\/img\/ugc\/60.jpg": {
+		"ft": 16384,
+		"iS": 230541,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/ugc\/60.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/meizu-music\/img\/ugc\/80.jpg": {
+		"ft": 16384,
+		"iS": 229942,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/ugc\/80.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/meizu-music\/img\/ugc\/qr.png": {
+		"ft": 32768,
+		"iS": 10751,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/ugc\/qr.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/meizu-music\/img\/ugc\/scan.png": {
+		"ft": 32768,
+		"iS": 3715,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/ugc\/scan.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/meizu-music\/index.html": {
