@@ -69,13 +69,13 @@ init = ->
 				console.log index
 				@.poping = true
 				@.popmore = false
-				@.popImage = "./img/room-#{index}-pop.png"
+				@.popImage = "//image.giccoo.com/projects/zhihu-huarun/img/room-#{index}-pop.png"
 				_hmt? and _hmt.push(['_trackEvent', "huarun", "病毒", index, "-"])
 			openPop: (index)->
 				console.log index
 				@.poping = true
 				@.popmore = true
-				@.popImage = "./img/room-#{index}-learnmore.png"
+				@.popImage = "//image.giccoo.com/projects/zhihu-huarun/img/room-#{index}-learnmore.png"
 				@.learnmorelink = _learnmorelink[index-1]
 				_hmt? and _hmt.push(['_trackEvent', "huarun", "危害", index, "-"])
 			goto: (link)->

@@ -90,14 +90,14 @@ init = function init() {
         console.log(index);
         this.poping = true;
         this.popmore = false;
-        this.popImage = "./img/room-" + index + "-pop.png";
+        this.popImage = "//image.giccoo.com/projects/zhihu-huarun/img/room-" + index + "-pop.png";
         return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "huarun", "病毒", index, "-"]);
       },
       openPop: function openPop(index) {
         console.log(index);
         this.poping = true;
         this.popmore = true;
-        this.popImage = "./img/room-" + index + "-learnmore.png";
+        this.popImage = "//image.giccoo.com/projects/zhihu-huarun/img/room-" + index + "-learnmore.png";
         this.learnmorelink = _learnmorelink[index - 1];
         return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "huarun", "危害", index, "-"]);
       },

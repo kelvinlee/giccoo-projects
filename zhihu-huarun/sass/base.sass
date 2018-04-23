@@ -3,7 +3,7 @@
 $debug : false
 $cdn : "../"
 @if not $debug
-	$cdn : "//image.giccoo.com/projects/df-5008/"
+	$cdn : "//image.giccoo.com/projects/zhihu-huarun/"
 
 // animation, delay, duration
 @for $i from 1 through 51
@@ -226,7 +226,7 @@ body
 	+w
 	+h
 	+overhide
-	+b("../img/bg-repeat.jpg",repeat,top,center)
+	+b($cdn+"img/bg-repeat.jpg",repeat,top,center)
 	background-size: 100% auto
 	.bg
 		+posa
@@ -255,7 +255,7 @@ body
 		$size: 30%
 		+w($size)
 		padding-top: $size
-		+b("../img/red.png",no-repeat,center,center,cover)
+		+b($cdn+"img/red.png",no-repeat,center,center,cover)
 		+posa
 		+animation(fadeZoom,2s,ease,infinite)
 	.red-1
@@ -307,7 +307,7 @@ body
 		+iw(687,1500,100%)
 		+posa
 		+tr(5%,10%)
-		+b("../img/learnmore-bg.png",no-repeat,center,center,cover)
+		+b($cdn+"img/learnmore-bg.png",no-repeat,center,center,cover)
 		.body.on
 			+animation(tada,1s,ease)
 .page
