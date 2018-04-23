@@ -319,11 +319,15 @@ window.onload = function () {
         desc: "哪个才是隐藏在你基因中的音乐DNA？",
         link: "http://m.giccoo.com/meizu-music/",
         imgUrl: "http://m.giccoo.com/meizu-music/img/ico.jpg",
-        success: function success() {},
-        // alert "success"
-        cancel: function cancel() {}
+        success: function success() {
+          // alert "success"
+          return main.shareSuccessShow = true;
+        },
+        cancel: function cancel() {
+          // alert "cancel"
+          return main.shareSuccessShow = false;
+        }
       };
-      // alert "cancel"
       wx.onMenuShareTimeline(shareContent);
       wx.onMenuShareAppMessage(shareContent);
       wx.onMenuShareQQ(shareContent);
@@ -414,6 +418,7 @@ init = function init() {
       regame: function regame() {
         return window.location.reload();
       },
+      // window.location.href = "http://m.giccoo.com/meizu-music/#regame"
       startGame: function startGame() {
         if (this.nickname === "") {
           alert("请输入你的名字");
@@ -591,9 +596,9 @@ init = function init() {
           ctx.textAlign = 'center';
           ctx.fillText(soure, 370, 226 + 36);
           ctx.textAlign = 'left';
-          ctx.font = "normal normal 36px '微软雅黑'";
+          ctx.font = "normal normal 32px '微软雅黑'";
           // ctx.fillText(item.desc,110,226+36+80)
-          y = _runLongText(ctx, item.desc, 360, 110, y + 36 + 80, 36 * 1.4);
+          y = _runLongText(ctx, item.desc, 32 * 14 + 5, 110, y + 36 + 80, 36 * 1.4);
           ctx.font = "normal bold 50px '微软雅黑'";
           ctx.fillText(item.name, 110, y + 50 + 10);
           _this3.ugc = canvas.toDataURL("image/png");
@@ -639,7 +644,7 @@ init = function init() {
         neteaseShareImage();
         return setTimeout(function () {
           return _this4.shareSuccessShow = true;
-        }, 3000);
+        }, 6000);
       },
       faild: function faild() {
         // 换成长按保存

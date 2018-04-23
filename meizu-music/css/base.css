@@ -937,17 +937,15 @@ body {
 .f0 {
   font-size: 0; }
 
-body {
-  background: url("../img/bg.jpg") no-repeat center center;
-  background-size: cover;
-  background-color: transparent; }
-
 .loading {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0px;
-  left: 0px; }
+  left: 0px;
+  background: url("../img/bg.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
   .loading .content {
     position: absolute;
     top: 50%;
@@ -1001,7 +999,10 @@ body {
   perspective: 500;
   -webkit-perspective: 500;
     -webkit-perspective-transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d; }
+  -webkit-transform-style: preserve-3d;
+  background: url("../img/bg.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
   .pages .page {
     position: absolute;
     top: 0px;
@@ -1091,7 +1092,8 @@ body {
   position: absolute;
   bottom: 5%;
   left: 0px;
-  width: 100%; }
+  width: 100%;
+  font-size: 0; }
 
 .page-build .record {
   position: absolute;
@@ -1514,6 +1516,9 @@ body {
   top: -200%;
   left: -200%; }
 
+.pages .page-ugc {
+  z-index: 19; }
+
 .page-ugc .ugc-bg {
   position: relative;
   z-index: 1; }
@@ -1528,14 +1533,14 @@ body {
 .page-ugc .btns {
   position: absolute;
   bottom: 12%;
-  right: 12%;
-  width: 39.53125%;
+  right: 5%;
+  width: 46.875%;
   margin: 0 auto;
   z-index: 5; }
   .iphone4 .page-ugc .btns {
-    width: 39.53125%; }
+    width: 46.875%; }
   .page-ugc .btns .btn {
-    margin-top: 5%;
+    margin-top: 9%;
     font-size: 0;
     position: relative; }
     .page-ugc .btns .btn .mark {
@@ -1549,6 +1554,9 @@ body {
       z-index: 9;
       opacity: 0;
       overflow: hidden; }
+
+.pages .page-success {
+  z-index: 29; }
 
 .page-success .success {
   position: absolute;

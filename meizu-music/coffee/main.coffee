@@ -110,8 +110,10 @@ window.onload = ->
 				imgUrl: "http://m.giccoo.com/meizu-music/img/ico.jpg"
 				success: ->
 					# alert "success"
+					main.shareSuccessShow = true
 				cancel: ->
 					# alert "cancel"
+					main.shareSuccessShow = false
 			wx.onMenuShareTimeline shareContent
 			wx.onMenuShareAppMessage shareContent
 			wx.onMenuShareQQ shareContent
@@ -188,6 +190,7 @@ init = ->
 		methods:
 			regame: ->
 				window.location.reload()
+				# window.location.href = "http://m.giccoo.com/meizu-music/#regame"
 			startGame: ->
 				if @.nickname is ""
 					alert "请输入你的名字"
@@ -319,9 +322,9 @@ init = ->
 					ctx.textAlign = 'center'
 					ctx.fillText(soure,370,226+36)
 					ctx.textAlign = 'left'
-					ctx.font = "normal normal 36px '微软雅黑'"
+					ctx.font = "normal normal 32px '微软雅黑'"
 					# ctx.fillText(item.desc,110,226+36+80)
-					y = runLongText ctx,item.desc,360,110,y+36+80,36*1.4
+					y = runLongText ctx,item.desc,32*14+5,110,y+36+80,36*1.4
 					ctx.font = "normal bold 50px '微软雅黑'"
 					ctx.fillText(item.name,110,y+50+10)
 
@@ -361,7 +364,7 @@ init = ->
 
 				setTimeout =>
 					@.shareSuccessShow = true
-				,3000
+				,6000
 			faild: ->
 				# 换成长按保存
 				@.loading = false

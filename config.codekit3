@@ -6530,6 +6530,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/meizu-music\/img\/ico.jpg": {
+		"ft": 16384,
+		"iS": 80866,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/meizu-music\/img\/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/meizu-music\/img\/icon-check.png": {
 		"ft": 32768,
 		"iS": 1605,
@@ -6668,8 +6679,8 @@
 		"oA": 0,
 		"oAP": "\/meizu-music\/img\/share-success.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -6745,8 +6756,8 @@
 		"oA": 0,
 		"oAP": "\/meizu-music\/img\/ugc\/qr.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},

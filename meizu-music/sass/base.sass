@@ -92,14 +92,14 @@ body
 
 .f0
 	font-size: 0
-body
-	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+
 .loading
 	+w
 	+h
 	+posa
 	+tl
 	// +hide
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
 	.content
 		+posa
 		+tl(50%,50%)
@@ -132,6 +132,7 @@ body
 	-webkit-perspective: 500
 			transform-style: preserve-3d
 	-webkit-transform-style: preserve-3d
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
 	.page
 		+posa
 		+tl
@@ -190,6 +191,7 @@ body
 		+posa
 		+bl(5%)
 		+w
+		font-size: 0
 	.record
 		+posa
 		+w
@@ -416,6 +418,8 @@ body
 	+tl(-200%,-200%)
 
 .page-ugc
+	.pages &
+		z-index: 19
 	.ugc-bg
 		+posr
 		z-index: 1
@@ -426,11 +430,11 @@ body
 		opacity: 0
 	.btns
 		+posa
-		+br(12%,12%)
-		+iw(253,640,100%)
+		+br(12%,5%)
+		+iw(300,640,100%)
 		z-index: 5
 		.btn
-			margin-top: 5%
+			margin-top: 9%
 			font-size: 0
 			+posr
 			& .mark
@@ -444,6 +448,8 @@ body
 				+overhide
 
 .page-success
+	.pages &
+		z-index: 29
 	.success
 		+posa
 		+tl(50%,5%)
