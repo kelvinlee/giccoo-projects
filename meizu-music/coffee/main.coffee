@@ -104,15 +104,15 @@ window.onload = ->
 		# window.newsappAPI.share.invokeShare
 		# 	wxUrl: "http://m.giccoo.com/meizu-music/"
 		# 	wxImg: "http://m.giccoo.com/meizu-music/img/ico.jpg"
-		# 	wxTitle: "哈喽！点击解密你的音乐DNA"
-		# 	wxText: "哪个才是隐藏在你基因中的音乐DNA？"
+		# 	wxTitle: "解密你的音乐DNA"
+		# 	wxText: "15秒听音识歌，重温经典时光"
 		# 	wbImg: "http://m.giccoo.com/meizu-music/img/ico.jpg"
 	else
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "哈喽！点击解密你的音乐DNA"
-				desc: "哪个才是隐藏在你基因中的音乐DNA？"
+				title: "解密你的音乐DNA"
+				desc: "15秒听音识歌，重温经典时光"
 				link: "http://m.giccoo.com/meizu-music/"
 				imgUrl: "http://m.giccoo.com/meizu-music/img/ico.jpg"
 				success: ->
@@ -382,7 +382,8 @@ init = ->
 			faild: ->
 				# 换成长按保存
 				@.loading = false
-
+			trySave: ->
+				console.log "try"
 		mounted: ($el,e)->
 			# @.wy = true
 			if sys is "NeteaseMusic"
@@ -398,15 +399,15 @@ init = ->
 			# console.log answersList,@.audio
 
 neteaseShare = ->
-	title1 = "哈喽！点击解密你的音乐DNA"
+	title1 = "解密你的音乐DNA"
 	picUrl = "http://m.giccoo.com/meizu-music/img/ico.jpg"
 	redirectUrl = "http://m.giccoo.com/meizu-music/"
-	title2 = "哈喽！点击解密你的音乐DNA"
-	subTitle2 = "哪个才是隐藏在你基因中的音乐DNA？"
+	title2 = "解密你的音乐DNA"
+	subTitle2 = "15秒听音识歌，重温经典时光"
 	window.location.href = "orpheus://share/"+encodeURIComponent(title1)+"/"+encodeURIComponent(picUrl)+"/"+encodeURIComponent(redirectUrl)+"/"+encodeURIComponent(title2)+"/"+encodeURIComponent(subTitle2)
 
 neteaseShareImage = ->
-	title1 = "哈喽！点击解密你的音乐DNA"
+	title1 = "解密你的音乐DNA"
 	picUrl = "http://image.giccoo.com/upload/meizumusic/"+main.shareImageLink+"@!large"
 	redirectUrl = "http://m.giccoo/meizu-music/"
 	console.log "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)

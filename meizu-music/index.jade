@@ -32,7 +32,7 @@ block content
 					.record
 						img(src="#{url}/img/load-record.png")
 						.light
-					.load-text ...上传中...
+					.load-text ...解密中...
 		.pages
 			transition(name="page-fade")
 				.page.page-build(v-show="homepageShow || gamepageShow")
@@ -107,14 +107,14 @@ block content
 					canvas#result(width="640",height="1138")
 					.ugc-bg
 						img(:src="ugc")
-					.ugc-save
+					.ugc-save(@click.stop.prevent="trySave")
 						img(:src="ugcqr")
 					.btns
 						// .btn.btn-share-web(v-if="wy",@click="shareWeb")
 							img(src="#{url}/img/btn-share-web.png")
 						.btn.btn-share(v-if="wy",@click="shareImage")
 							img(src="#{url}/img/btn-share.png")
-						.btn.btn-saveimage(v-if="!wy")
+						.btn.btn-saveimage(v-if="!wy",@click.stop.prevent="trySave")
 							img(src="#{url}/img/btn-saveimage.png")
 							.mark
 								img(:src="ugcqr")
