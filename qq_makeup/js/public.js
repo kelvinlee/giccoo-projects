@@ -1,0 +1,541 @@
+
+//===============第一页
+
+var p1circle=new createjs.Bitmap("img/p1cricle.png")
+var p1cA=[]
+var p1title1=new createjs.Bitmap("img/p1title1.png")
+var p1title2=new createjs.Bitmap("img/p1title2.png")
+var p1qMark=new createjs.Bitmap("img/p1qmark.png")
+var p1copy=new createjs.Bitmap("img/p1copy.png")
+var blackScreen=new createjs.Shape()
+var pinkScreen=new createjs.Shape()
+function setPage1 () {
+    //====黑屏幕
+  pinkScreen.graphics.beginFill("#ffacc6").drawRect(0,0,640,screenH);
+  stage_1.addChild(pinkScreen)
+
+  blackScreen.graphics.beginFill("#000000").drawRect(0,0,640,screenH);
+  stage_1.addChild(blackScreen)
+
+
+  //====化妆品们
+  for (var i = 1; i <= 16; i++) {
+    var p1c=new createjs.Bitmap("img/p1c"+i+".png")
+    p1cA.push(p1c)
+    stage_1.addChild(p1c)
+    p1c.x=320
+    p1c.y=331
+    p1c.regX=p1c.regY=320
+    if(i==10||i==11){
+      p1c.regX=p1c.regY=373
+    }
+    p1c.scale=.3
+    p1c.alpha=0
+  };
+
+  //====大圆
+  stage_1.addChild(p1circle)
+  p1circle.x=320
+  p1circle.y=331  
+  p1circle.regX=321.5
+  p1circle.regY=321.5
+  p1circle.alpha=0
+  p1circle.scale=1.2
+
+  //====文案+“?”
+  stage_1.addChild(p1title1)
+  stage_1.addChild(p1title2)
+  stage_1.addChild(p1qMark)
+
+  p1title1.x=p1title2.x=320
+  p1title1.y=p1title2.y=227.5
+  p1title1.regX=p1title2.regX=147
+  p1title1.regY=p1title2.regY=45.5
+
+  p1qMark.x=320
+  p1qMark.y=386
+  p1qMark.regX=66
+  p1qMark.regY=90.5 
+
+  //====气泡
+  stage_1.addChild(p1copy)
+  p1copy.x=585
+  p1copy.y=screenH-94
+  p1copy.regX=490
+  p1copy.regY=255
+  p1copy.scale=0
+
+}
+//==================第一页 问题出现
+function ani1_showQ(){
+  p1qMark.scale=0
+  p1title1.scale=p1title2.scale=1.5
+  p1title1.y=p1title2.y=227.5+100+50
+  p1title1.alpha=p1title2.alpha=0
+  TweenLite.to(p1title1,1,{y:227.5+100,alpha:1,delay:1,overwrite:0})
+  TweenLite.to(p1title2,1,{y:227.5+100,alpha:1,delay:1.1,overwrite:0,onComplete:ani1_showQ2})
+}
+function ani1_showQ2(){
+  var _t=.5
+  TweenLite.set(p1title1,{y:227.5+60,scale:1.3,delay:_t})
+  TweenLite.set(p1title2,{y:227.5+60,scale:1.3,delay:_t+.03})
+
+  TweenLite.to(p1title1,1.8,{y:227.5,scale:1,delay:_t,ease:Elastic.easeOut})
+  TweenLite.to(p1title2,1.8,{y:227.5,scale:1,delay:_t+.03,ease:Elastic.easeOut})
+
+  TweenLite.to(p1qMark,1.8,{scale:1,delay:_t+.06,ease:Elastic.easeOut})
+  TweenLite.to(p1circle,1.8,{scale:1,alpha:1,delay:_t,ease:Elastic.easeOut})
+
+  
+
+  for (var i = 0; i < p1cA.length; i++) {
+    TweenLite.set(p1cA[i],{alpha:1,delay:_t+.1})
+    TweenLite.to(p1cA[i],2,{scale:1,ease:Elastic.easeOut,delay:_t+.1+i*.07})
+    
+  };
+  TweenLite.to(blackScreen,.5,{y:screenH,alpha:1,delay:_t+.1})
+
+  TweenLite.to(p1copy,.9,{scale:1,delay:_t+1,ease:Back.easeOut})
+
+}
+//==========p1遮罩
+var p1Mask=new createjs.Shape()
+function addMask(){
+  p1Mask.graphics.beginFill("#ff0000").drawCircle(0,0,screenH)//.drawRect(0,0,640,screenH);
+  stage.addChildAt(p1Mask,0)
+  p1Mask.x=320
+  p1Mask.y=331
+  stage_1.mask=p1Mask
+}
+
+//===============钥匙飞
+var aKey=new createjs.Bitmap("img/p1keyb.png")
+var keyA=[]
+var ifkey=1
+function setFlyKey(){
+  var _n=30
+  for (var i = 0; i < _n; i++) {
+    var key=aKey.clone()
+    keyA.push(key)
+    stage_1.addChildAt(key,1)
+    key.regX=35
+    key.regY=75
+    key.x=Math.random()*640
+    key.y=screenH+Math.random()*150
+    TweenLite.to(key,1+Math.random()*1.5,{y:screenH-500+Math.random()*200,scale:0,alpha:0,onComplete:resetkey,onCompleteParams:[key]})
+  };
+
+
+
+  //createjs.Ticker.addEventListener("tick",keyFly);
+}
+
+function resetkey(_tar){
+  if(ifkey==1){
+    _tar.x=Math.random()*640
+    _tar.y=screenH+300
+    _tar.scale=(Math.random()*Math.random()*.5+.75)*.75
+    _tar.alpha=1
+    _tar.rotation=0
+    TweenLite.to(_tar,2+Math.random()*2,{delay:Math.random(),rotation:Math.random()*0-0,alpha:0,y:screenH-600+Math.random()*200,onComplete:resetkey,onCompleteParams:[_tar]})
+  }
+}
+
+//================底部按钮
+var btn_arrow=$("#btn_arrow")
+var nowPage=1
+function showBtn(_t){
+  TweenLite.set(btn_arrow,{display:"block",opacity:0,delay:_t})
+  TweenLite.to(btn_arrow,1,{opacity:1,delay:_t})
+}
+
+btn_arrow.click(function(){
+  console.log(nowPage)
+  nowPage++
+  TweenLite.set(btn_arrow,{display:"none"})
+  switch (nowPage){
+    case 2:
+      ani1end()
+      break;
+  }
+})
+
+//=====第二页
+var stage_2=new createjs.Container()
+var p2title=new createjs.Bitmap("img/p2title.png")
+var p2bg=new createjs.Bitmap("img/p2bg.jpg")
+
+var p2q=new createjs.Container()
+var p2q1=new createjs.Bitmap("img/p2q1.png")
+var p2q2=new createjs.Bitmap("img/p2q2.png")
+var p2q3=new createjs.Bitmap("img/p2q3.png")
+var p2qA=[p2q1,p2q2,p2q3]
+
+
+var p2btn1=new createjs.Container()
+var p2btn2=new createjs.Container()
+var p2btn3=new createjs.Container()
+
+var p2btnA=[]//p2btnA=[p2btn1,p2btn2,p2btn3]
+
+var p2btn_temp1=new createjs.Bitmap("img/p2btn.png")
+var p2btn_temp2=new createjs.Bitmap("img/p2btn.png")
+var p2btn_temp3=new createjs.Bitmap("img/p2btn.png")
+
+var p2rightA=[]
+var p2wrongA=[]
+
+var p2a_1A=[]
+var p2a_2A=[]
+var p2a_3A=[]
+
+var p2aA=[]//p2aA=[p2a_1A,p2a_2A,p2a_3A]
+
+var btnA=$("#btnA")
+var btnB=$("#btnB")
+var btnC=$("#btnC")
+var btnABC=[]
+
+function setPage2(){
+  stage.addChild(stage_2)
+  stage.addChild(stage_1)
+  //====背景
+  stage_2.addChild(p2bg)
+  p2bg.scaleY=screenH/1000
+  //====标题
+  stage_2.addChild(p2title)
+  p2title.regX=320
+  p2title.regY=280
+  p2title.x=320
+  p2title.y=280+40
+  //====问题
+  stage_2.addChild(p2q)
+  p2q.regX=320
+  p2q.regY=23
+  p2q.x=320
+  p2q.y=495+40
+  p2q.addChild(p2q1)
+  p2q.addChild(p2q2)
+  p2q.addChild(p2q3)
+  p2q1.alpha=1
+  p2q2.alpha=0
+  p2q3.alpha=0
+  //===按钮
+  stage_2.addChild(p2btn1)
+  stage_2.addChild(p2btn2)
+  stage_2.addChild(p2btn3)
+
+  p2btn1.addChild(p2btn_temp1)
+  p2btn2.addChild(p2btn_temp2)
+  p2btn3.addChild(p2btn_temp3)
+
+  p2btn1.x=p2btn2.x=p2btn3.x=320
+  p2btn1.y=583+40
+  p2btn2.y=583+40+100
+  p2btn3.y=583+40+200
+  p2btn1.regX=p2btn2.regX=p2btn3.regX=320
+  p2btn1.regY=p2btn2.regY=p2btn3.regY=32
+
+  p2btnA=[p2btn1,p2btn2,p2btn3]
+  p2aA=[p2a_1A,p2a_2A,p2a_3A]
+  btnABC=[btnA,btnB,btnC]
+
+  for (var i = 1; i <= 3; i++) {
+    //====按钮_对错
+    var p2right=new createjs.Bitmap("img/p2right.png")
+    p2rightA.push(p2right)
+    p2btnA[i-1].addChild(p2right)
+    p2right.regX=18.5
+    p2right.regY=17
+    p2right.x=125
+    p2right.y=32+27
+    p2right.scale=0
+
+    var p2wrong=new createjs.Bitmap("img/p2wrong.png")
+    p2wrongA.push(p2wrong)
+    p2btnA[i-1].addChild(p2wrong)
+    p2wrong.regX=18.5
+    p2wrong.regY=17
+    p2wrong.x=125
+    p2wrong.y=32+27
+    p2wrong.scale=0
+    //====按钮_文案
+    var p2a_a=new createjs.Bitmap("img/p2_"+i+"a.png")
+    var p2a_b=new createjs.Bitmap("img/p2_"+i+"b.png")
+    var p2a_c=new createjs.Bitmap("img/p2_"+i+"c.png")
+
+    p2aA[i-1].push(p2a_a)
+    p2aA[i-1].push(p2a_b)
+    p2aA[i-1].push(p2a_c)//===========p2aA[ [1a,1b,1c] , [2a,2b,2c] , [3a,3b,3c] ]
+
+    p2btnA[0].addChild(p2a_a)
+    p2btnA[1].addChild(p2a_b)
+    p2btnA[2].addChild(p2a_c)
+
+    if(i!=1){
+      p2a_a.alpha=p2a_b.alpha=p2a_c.alpha=0
+    }  
+    //====按钮_divBtn
+
+    TweenLite.set(btnABC[i-1],{height:screenW/640*70,y:screenW/640*(615+(i-1)*100),display:"block",delay:1})
+  };
+}
+
+//=================显示选择题页
+var p2A=[p2q,p2btn1,p2btn2,p2btn3]
+function showPage2(){
+  
+  TweenLite.from(p2title,.5,{y:"+=1000",delay:.2})
+  for (var i = 0; i < p2A.length; i++) {
+    TweenLite.from(p2A[i],2,{alpha:0,y:"+=100",ease:Elastic.easeOut,delay:.5+.05*i})
+  };
+
+}
+//========选择题按钮
+var userAnswer=0
+var nowQ=0
+var Answer=[[1,0,0],[1,0,0],[1,0,0]]
+btnA.click(function(){
+  console.log("选A")
+  userAnswer=0
+  TweenLite.set(btnA,{display:"none"})
+  goCheck()
+})
+btnB.click(function(){
+  console.log("选B")
+  userAnswer=1
+  TweenLite.set(btnB,{display:"none"})
+  goCheck()
+})
+btnC.click(function(){
+  console.log("选C")
+  userAnswer=2
+  TweenLite.set(btnC,{display:"none"})
+  if(nowQ<3){
+    goCheck()
+  }else{
+    ani2end()//===问答结束
+  }
+  
+})
+//=======判断对错
+function goCheck(){
+  if(Answer[nowQ][userAnswer]==1){
+    nowQ++
+    console.log("答对了")
+    TweenLite.set(btnA,{display:"none"})
+    TweenLite.set(btnB,{display:"none"})
+    TweenLite.set(btnC,{display:"none"})
+    if(nowQ<3){
+      TweenLite.set(btnA,{display:"block",delay:1})
+      TweenLite.set(btnB,{display:"block",delay:1})
+      TweenLite.set(btnC,{display:"block",delay:1})
+    }
+    
+    TweenLite.to(p2rightA[userAnswer],1,{scale:1.5,ease:Elastic.easeOut})
+    TweenLite.to(p2btnA[userAnswer],1,{scale:1.1,ease:Elastic.easeOut,onComplete:nextQ})
+  }else{
+    console.log("答错了")
+    
+    TweenLite.to(p2wrongA[userAnswer],1.5,{scale:1,ease:Elastic.easeOut})
+    TweenLite.from(p2btnA[userAnswer],1.5,{x:320+100,ease:Elastic.easeOut})
+
+  }
+}
+//=====问题切换
+function nextQ(){
+  if(nowQ<3){
+    for (var i = 0; i < p2A.length; i++) {
+      TweenLite.set(p2A[i],{alpha:0,scale:1,x:320,y:"+=100",delay:0})
+      TweenLite.to(p2A[i],2,{alpha:1,scale:1,x:320,y:"-=100",ease:Elastic.easeOut,delay:0+i*.05})
+    };
+    for (var j = 0; j < 3; j++) {
+      TweenLite.set(p2wrongA[j],{scale:0})
+      TweenLite.set(p2rightA[j],{scale:0})
+
+      if(j==nowQ){
+        p2qA[j].alpha=1
+      }else{
+        p2qA[j].alpha=0
+      }
+
+      for (var k = 0; k < 3; k++) {
+        if(j==nowQ){
+          p2aA[j][k].alpha=1
+        }else{
+          p2aA[j][k].alpha=0
+        }
+      };
+
+    };
+  }else{
+    console.log("问题结束！")
+    for (var i = 0; i < p2A.length; i++) {
+      TweenLite.to(p2A[i],.5,{alpha:0,scale:1,x:320,y:"+=100",delay:.2-i*.05})
+    };
+    setTimeout(endQ,700)
+  }
+}
+
+var endQ_a=new createjs.Bitmap("img/p2_endbtn.png")
+var p2q4=new createjs.Bitmap("img/p2q4.png")
+function endQ(){
+  TweenLite.set(btnC,{display:"block",delay:1})
+  
+  TweenLite.set(p2btn3,{y:"-=100",scale:0.5})
+  TweenLite.to(p2btn3,1.5,{alpha:1,scale:1,ease:Elastic.easeOut,delay:.2})
+  p2aA[2][2].alpha=0
+
+  p2btn3.addChild(endQ_a)
+  TweenLite.set(p2q,{y:"-=100"})
+  TweenLite.to(p2q,.5,{alpha:1})
+  p2q.addChild(p2q4)
+  p2q3.alpha=0
+}
+
+//=============第三页 设置
+var stage_3=new createjs.Container()
+var p3bg=new createjs.Bitmap("img/p3bg.jpg")
+var p3mirrowMC=new createjs.Container()
+var p3mirrow=new createjs.Bitmap("img/p3mirrow.png")
+var p3t=new createjs.Bitmap("img/p3t.png")
+var p3shandow=new createjs.Bitmap("img/p3mirrow_s.png")
+
+function setPage3(){
+  stage.addChild(blackScreen)
+  stage.addChild(stage_3)
+
+  blackScreen.alpha=1
+  blackScreen.x=0
+  blackScreen.y=0
+
+  //====背景
+  stage_3.addChild(p3bg)
+  p3bg.scaleY=screenH/1000
+  //====镜子
+  stage_3.addChild(p3mirrowMC)
+  p3mirrowMC.addChild(p3shandow)
+  p3mirrowMC.addChild(p3mirrow)
+  p3mirrowMC.addChild(p3t)
+
+  p3mirrowMC.regX=257
+  p3mirrowMC.regY=192
+  p3mirrowMC.x=333
+  p3mirrowMC.y=517
+
+  p3shandow.x=-80
+  p3shandow.y=-40
+  
+}
+//======p3浮动文字
+var p3tA=[]
+var p3t1=new createjs.Bitmap("img/p3t1.png")
+var p3t2=new createjs.Bitmap("img/p3t2.png")
+var p3t3=new createjs.Bitmap("img/p3t3.png")
+var p3t4=new createjs.Bitmap("img/p3t4.png")
+
+
+var p3tMCA=[]
+function setP3t(){
+  p3tA=[p3t1,p3t2,p3t3,p3t4]
+  for (var i = 0; i < p3tA.length; i++) {
+    var p3tMC=new createjs.Container()
+    stage_3.addChildAt(p3tMC,1)
+    p3tMC.addChild(p3tA[i])
+
+    p3tMCA.push(p3tMC)
+    p3tMCA[i].regX=163.5
+    p3tMCA[i].regY=40
+    p3tMCA[i].x=333+50
+    p3tMCA[i].y=517
+    p3tMCA[i].scale=0
+    p3tMCA[i].alpha=16
+    TweenLite.to(p3tMCA[i],3,{alpha:0,scale:1,x:"-=60",y:"-=400",onComplete:p3tLoop,onCompleteParams:[p3tMCA[i]],delay:.75*i,ease:Linear.easeNone})
+    TweenLite.to(p3tA[i],1,{x:"-=100",onComplete:p3tLoopX,onCompleteParams:[p3tA[i]],delay:1*i,ease:Sine.easeInOut})
+  };
+}
+var ifp3t=1
+function p3tLoop(_tar){
+  if(ifp3t==1){
+    TweenLite.set(_tar,{alpha:16,scale:0,x:"+=60",y:"+=400"})
+    TweenLite.to(_tar,3,{alpha:0,scale:1,x:"-=60",y:"-=400",onComplete:p3tLoop,onCompleteParams:[_tar],ease:Linear.easeNone})
+  }
+  
+}
+function p3tLoopX(_tar){
+  if(ifp3t==1){
+    TweenLite.to(_tar,1,{x:"+=100",onComplete:p3tLoopX2,onCompleteParams:[_tar],ease:Sine.easeInOut})
+  }
+}
+function p3tLoopX2(_tar){
+  TweenLite.to(_tar,1,{x:"-=100",onComplete:p3tLoopX,onCompleteParams:[_tar],ease:Sine.easeInOut})
+}
+//==========p3遮罩
+var p3Mask=new createjs.Shape()
+function p3addMask(){
+  p3Mask.graphics.beginFill("#ff0000").drawCircle(0,0,169)//.drawRect(0,0,640,screenH);
+  stage.addChildAt(p3Mask,0)
+  //p3Mask.regX=p3Mask.regY=169
+  p3Mask.x=-333
+  p3Mask.y=-517
+  stage_3.mask=p3Mask
+  p3maskAni()
+}
+function p3maskAni(){
+  var _t=1
+  p3mirrowMC.alpha=0
+  TweenLite.set(p3Mask,{x:-169*1.5,y:450,scale:1.5,delay:.5})
+  TweenLite.to(p3Mask,_t,{x:640+169*1.5,y:450,overwrite:0,delay:.5,ease:Linear.easeNone})
+  TweenLite.set(p3Mask,{scale:1,x:640+169,y:screenH+169,overwrite:0,delay:.5+_t})
+
+  TweenLite.to(p3mirrowMC,_t,{alpha:1,delay:.5+_t})
+  
+  TweenLite.to(p3Mask,_t,{x:333-180,y:517-130,overwrite:0,delay:.5+_t,ease:Sine.easeIn})
+  TweenLite.to(p3Mask,_t/2,{x:333+20,y:517-30,overwrite:0,delay:.5+_t+_t,ease:Sine.easeOut})
+  TweenLite.to(p3Mask,_t/2,{x:333,y:517,overwrite:0,delay:.5+_t+_t/2+_t})
+  TweenLite.to(p3Mask,.8,{scale:5,overwrite:0,delay:.5+_t+_t/2+_t/2+_t+.5,onComplete:P3run})
+
+  
+  
+}
+function P3run(){
+  //====p3t
+  setP3t()
+  //====p3镜子
+  setP3mirrow()
+}
+
+//=========镜子
+function setP3mirrow(){
+  TweenLite.to(p3mirrowMC,2,{y:"+=30",ease:Sine.easeInOut,onComplete:p3mirrowLoop})
+
+  p3mirrow.regX=257
+  p3mirrow.regY=192
+  p3mirrow.x=257
+  p3mirrow.y=192
+
+  
+  p3shandow.regX=257
+  p3shandow.regY=192
+  p3shandow.x=257-80
+  p3shandow.y=192-40
+
+ // TweenLite.to(p3mirrow,3,{rotation:"-=15",ease:Sine.easeInOut,onComplete:p3mirrowRLoop})//p3shandow
+ // TweenLite.to(p3shandow,3,{rotation:"-=15",ease:Sine.easeInOut})//
+}
+
+function p3mirrowLoop(){
+  TweenLite.to(p3mirrowMC,3,{y:"-=60",ease:Sine.easeInOut,onComplete:p3mirrowLoop2})
+}
+function p3mirrowLoop2(){
+  TweenLite.to(p3mirrowMC,3,{y:"+=60",ease:Sine.easeInOut,onComplete:p3mirrowLoop})
+}
+
+function p3mirrowRLoop(){
+  TweenLite.to(p3mirrow,3,{rotation:"+=15",ease:Sine.easeInOut,onComplete:p3mirrowRLoop2})
+  TweenLite.to(p3shandow,3,{rotation:"+=15",ease:Sine.easeInOut})
+}
+function p3mirrowRLoop2(){
+  TweenLite.to(p3mirrow,3,{rotation:"-=15",ease:Sine.easeInOut,onComplete:p3mirrowRLoop})
+  TweenLite.to(p3shandow,3,{rotation:"-=15",ease:Sine.easeInOut})
+} 
