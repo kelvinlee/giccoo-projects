@@ -122,7 +122,8 @@ body
 			+m
 			+text-center
 			margin-top: 1em
-
+.main
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
 .pages
 	+w
 	+h
@@ -132,7 +133,7 @@ body
 	-webkit-perspective: 500
 			transform-style: preserve-3d
 	-webkit-transform-style: preserve-3d
-	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	
 	.page
 		+posa
 		+tl
@@ -463,4 +464,5 @@ body
 	.loading
 		+posa
 		z-index: 1009
+		background: none
 		+bc(rgba(0,0,0,0.75))

@@ -97,9 +97,16 @@ _END =
 answersList = randomSort(_answersList)
 
 window.onload = ->
+	# neteaseShare()
 	# runAnimate()
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
+		# window.newsappAPI.share.invokeShare
+		# 	wxUrl: "http://m.giccoo.com/meizu-music/"
+		# 	wxImg: "http://m.giccoo.com/meizu-music/img/ico.jpg"
+		# 	wxTitle: "哈喽！点击解密你的音乐DNA"
+		# 	wxText: "哪个才是隐藏在你基因中的音乐DNA？"
+		# 	wbImg: "http://m.giccoo.com/meizu-music/img/ico.jpg"
 	else
 		loadWechatConfig()
 		wx.ready ->
@@ -284,6 +291,7 @@ init = ->
 				@.showAnswerPop = false
 				@.gameRun()
 			gameEnd: ->
+				@.audio.pause()
 				@.homepageShow = false
 				@.gamepageShow = false
 				soure = 100
@@ -293,7 +301,7 @@ init = ->
 				item = list[Math.floor(Math.random()*list.length)]
 				@.buildUGC item,soure
 			buildUGC: (item,soure = 100)->
-				@.ugcpageShow = true
+				@.loading = true
 				console.log item
 				unless item? 
 					item = {desc:"就是难不倒行走中的",name:"音乐百科全书"}
@@ -320,7 +328,7 @@ init = ->
 					ctx.fillText("您的经典值是",110,y+36)
 					ctx.font = "italic bold 94px '微软雅黑'"
 					ctx.textAlign = 'center'
-					ctx.fillText(soure,370,226+36)
+					ctx.fillText(soure,350,226+36)
 					ctx.textAlign = 'left'
 					ctx.font = "normal normal 30px '微软雅黑'"
 					# ctx.fillText(item.desc,110,226+36+80)
@@ -333,8 +341,14 @@ init = ->
 					qr.onload = =>
 						ctx.drawImage(qr, 640-qr.width-70, 1138-qr.height-46, qr.width, qr.height)
 						@.ugcqr = canvas.toDataURL("image/png")
+						@.loading = false
+						@.ugcpageShow = true
 					qr.src = "./img/ugc/qr.png"
-
+			shareWeb: ->
+				neteaseShare()
+				setTimeout =>
+					@.shareSuccessShow = true
+				,6000
 			shareImage: ->
 				@.loading = true
 				@.upload @.ugcqr
@@ -383,6 +397,13 @@ init = ->
 				@.playing = false
 			# console.log answersList,@.audio
 
+neteaseShare = ->
+	title1 = "哈喽！点击解密你的音乐DNA"
+	picUrl = "http://m.giccoo.com/meizu-music/img/ico.jpg"
+	redirectUrl = "http://m.giccoo.com/meizu-music/"
+	title2 = "哈喽！点击解密你的音乐DNA"
+	subTitle2 = "哪个才是隐藏在你基因中的音乐DNA？"
+	window.location.href = "orpheus://share/"+encodeURIComponent(title1)+"/"+encodeURIComponent(picUrl)+"/"+encodeURIComponent(redirectUrl)+"/"+encodeURIComponent(title2)+"/"+encodeURIComponent(subTitle2)
 
 neteaseShareImage = ->
 	title1 = "哈喽！点击解密你的音乐DNA"
@@ -393,21 +414,21 @@ neteaseShareImage = ->
 
 # 计算长文字
 runLongText = (ctx,longText,maxW,x,y,lineH)->
-  # console.log maxW
-  innerText = ""
-  long = false
-  return y if not longText? and longText.length <= 0
-  for text in [0...longText.length]
-    # console.log longText[text]
-    innerText += longText[text]
-    metrics = ctx.measureText(innerText)
-    # console.log metrics , maxW
-    if metrics.width >= maxW
-      ctx.fillText(innerText, x, y)
-      longText = longText.replace innerText,""
-      y = runLongText ctx,longText,maxW,x,y+lineH,lineH
-      long = true
-      break
-  
-  ctx.fillText(innerText, x, y) unless long
-  return y
+	# console.log maxW
+	innerText = ""
+	long = false
+	return y if not longText? and longText.length <= 0
+	for text in [0...longText.length]
+		# console.log longText[text]
+		innerText += longText[text]
+		metrics = ctx.measureText(innerText)
+		# console.log metrics , maxW
+		if metrics.width >= maxW
+			ctx.fillText(innerText, x, y)
+			longText = longText.replace innerText,""
+			y = runLongText ctx,longText,maxW,x,y+lineH,lineH
+			long = true
+			break
+	
+	ctx.fillText(innerText, x, y) unless long
+	return y

@@ -130,6 +130,8 @@
             <div class="ugc-bg"><img :src="ugc"></div>
             <div class="ugc-save"><img :src="ugcqr"></div>
             <div class="btns">
+              <!-- .btn.btn-share-web(v-if="wy",@click="shareWeb")img(src="./img/btn-share-web.png")
+              -->
               <div v-if="wy" @click="shareImage" class="btn btn-share"><img src="./img/btn-share.png"></div>
               <div v-if="!wy" class="btn btn-saveimage"><img src="./img/btn-saveimage.png">
                 <div class="mark"><img :src="ugcqr"></div>

@@ -110,6 +110,8 @@ block content
 					.ugc-save
 						img(:src="ugcqr")
 					.btns
+						// .btn.btn-share-web(v-if="wy",@click="shareWeb")
+							img(src="#{url}/img/btn-share-web.png")
 						.btn.btn-share(v-if="wy",@click="shareImage")
 							img(src="#{url}/img/btn-share.png")
 						.btn.btn-saveimage(v-if="!wy")
@@ -131,10 +133,8 @@ block js
 	- url = "/"
 	script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
-	//- script(src="http://image.giccoo.com/projects/libs/js/exif.js")
 	script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
-	//- script(src="/libs/js/min/jquery.min.js")
 	script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
 	script(src="js/main.js?v=1")
 	

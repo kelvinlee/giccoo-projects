@@ -1,6 +1,6 @@
 "use strict";
 
-var _CDN, _END, _answersList, _imgurl, answersList, getRandom, global, imageurl, init, load, loadWechatConfig, main, neteaseShareImage, randomSort, _runLongText, sys;
+var _CDN, _END, _answersList, _imgurl, answersList, getRandom, global, imageurl, init, load, loadWechatConfig, main, neteaseShare, neteaseShareImage, randomSort, _runLongText, sys;
 
 randomSort = function randomSort(obj) {
   var newArr, oldarr, _randomSortFun;
@@ -307,10 +307,17 @@ _END = {
 answersList = randomSort(_answersList);
 
 window.onload = function () {
+  // neteaseShare()
   // runAnimate()
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
   } else {
+    // window.newsappAPI.share.invokeShare
+    // 	wxUrl: "http://m.giccoo.com/meizu-music/"
+    // 	wxImg: "http://m.giccoo.com/meizu-music/img/ico.jpg"
+    // 	wxTitle: "哈喽！点击解密你的音乐DNA"
+    // 	wxText: "哪个才是隐藏在你基因中的音乐DNA？"
+    // 	wbImg: "http://m.giccoo.com/meizu-music/img/ico.jpg"
     loadWechatConfig();
     wx.ready(function () {
       var shareContent;
@@ -542,6 +549,7 @@ init = function init() {
       },
       gameEnd: function gameEnd() {
         var i, item, len, list, ref, soure;
+        this.audio.pause();
         this.homepageShow = false;
         this.gamepageShow = false;
         soure = 100;
@@ -562,7 +570,7 @@ init = function init() {
         var soure = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
 
         var bg, canvas, ctx, writeText;
-        this.ugcpageShow = true;
+        this.loading = true;
         console.log(item);
         if (item == null) {
           item = {
@@ -594,7 +602,7 @@ init = function init() {
           ctx.fillText("您的经典值是", 110, y + 36);
           ctx.font = "italic bold 94px '微软雅黑'";
           ctx.textAlign = 'center';
-          ctx.fillText(soure, 370, 226 + 36);
+          ctx.fillText(soure, 350, 226 + 36);
           ctx.textAlign = 'left';
           ctx.font = "normal normal 30px '微软雅黑'";
           // ctx.fillText(item.desc,110,226+36+80)
@@ -605,10 +613,20 @@ init = function init() {
           qr = new Image();
           qr.onload = function () {
             ctx.drawImage(qr, 640 - qr.width - 70, 1138 - qr.height - 46, qr.width, qr.height);
-            return _this3.ugcqr = canvas.toDataURL("image/png");
+            _this3.ugcqr = canvas.toDataURL("image/png");
+            _this3.loading = false;
+            return _this3.ugcpageShow = true;
           };
           return qr.src = "./img/ugc/qr.png";
         };
+      },
+      shareWeb: function shareWeb() {
+        var _this4 = this;
+
+        neteaseShare();
+        return setTimeout(function () {
+          return _this4.shareSuccessShow = true;
+        }, 6000);
       },
       shareImage: function shareImage() {
         this.loading = true;
@@ -635,7 +653,7 @@ init = function init() {
         });
       },
       success: function success(data) {
-        var _this4 = this;
+        var _this5 = this;
 
         // 上传分享
         // console.log data.info
@@ -643,7 +661,7 @@ init = function init() {
         this.shareImageLink = data.info;
         neteaseShareImage();
         return setTimeout(function () {
-          return _this4.shareSuccessShow = true;
+          return _this5.shareSuccessShow = true;
         }, 6000);
       },
       faild: function faild() {
@@ -652,7 +670,7 @@ init = function init() {
       }
     },
     mounted: function mounted($el, e) {
-      var _this5 = this;
+      var _this6 = this;
 
       // @.wy = true
       if (sys === "NeteaseMusic") {
@@ -663,16 +681,26 @@ init = function init() {
       // @.gameNotePop = true
       this.audio = document.getElementById("audio");
       this.audio.addEventListener("play", function () {
-        return _this5.playing = true;
+        return _this6.playing = true;
       });
       return this.audio.addEventListener("ended", function () {
-        return _this5.playing = false;
+        return _this6.playing = false;
       });
     }
   });
 };
 
 // console.log answersList,@.audio
+neteaseShare = function neteaseShare() {
+  var picUrl, redirectUrl, subTitle2, title1, title2;
+  title1 = "哈喽！点击解密你的音乐DNA";
+  picUrl = "http://m.giccoo.com/meizu-music/img/ico.jpg";
+  redirectUrl = "http://m.giccoo.com/meizu-music/";
+  title2 = "哈喽！点击解密你的音乐DNA";
+  subTitle2 = "哪个才是隐藏在你基因中的音乐DNA？";
+  return window.location.href = "orpheus://share/" + encodeURIComponent(title1) + "/" + encodeURIComponent(picUrl) + "/" + encodeURIComponent(redirectUrl) + "/" + encodeURIComponent(title2) + "/" + encodeURIComponent(subTitle2);
+};
+
 neteaseShareImage = function neteaseShareImage() {
   var picUrl, redirectUrl, title1;
   title1 = "哈喽！点击解密你的音乐DNA";
