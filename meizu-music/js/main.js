@@ -416,7 +416,7 @@ init = function init() {
     },
     methods: {
       regame: function regame() {
-        return window.location.reload();
+        return window.location.href = '//m.giccoo.com/meizu-music/?time=' + new Date().getTime();
       },
       // window.location.href = "http://m.giccoo.com/meizu-music/#regame"
       startGame: function startGame() {

@@ -189,7 +189,7 @@ init = ->
 				return "pageX"
 		methods:
 			regame: ->
-				window.location.reload()
+				window.location.href = '//m.giccoo.com/meizu-music/?time='+((new Date()).getTime())
 				# window.location.href = "http://m.giccoo.com/meizu-music/#regame"
 			startGame: ->
 				if @.nickname is ""

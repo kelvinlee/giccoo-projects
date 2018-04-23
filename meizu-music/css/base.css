@@ -1554,6 +1554,10 @@ body {
       z-index: 9;
       opacity: 0;
       overflow: hidden; }
+  .page-ugc .btns .btn-regame {
+    z-index: 99; }
+  .page-ugc .btns .btn-saveimage, .page-ugc .btns .btn-share {
+    z-index: 50; }
 
 .pages .page-success {
   z-index: 29; }
