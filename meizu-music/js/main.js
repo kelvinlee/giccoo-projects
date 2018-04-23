@@ -596,9 +596,9 @@ init = function init() {
           ctx.textAlign = 'center';
           ctx.fillText(soure, 370, 226 + 36);
           ctx.textAlign = 'left';
-          ctx.font = "normal normal 32px '微软雅黑'";
+          ctx.font = "normal normal 30px '微软雅黑'";
           // ctx.fillText(item.desc,110,226+36+80)
-          y = _runLongText(ctx, item.desc, 32 * 14 + 5, 110, y + 36 + 80, 36 * 1.4);
+          y = _runLongText(ctx, item.desc, 30 * 15 + 5, 110, y + 36 + 80, 36 * 1.4);
           ctx.font = "normal bold 50px '微软雅黑'";
           ctx.fillText(item.name, 110, y + 50 + 10);
           _this3.ugc = canvas.toDataURL("image/png");
