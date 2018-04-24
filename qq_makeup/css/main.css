@@ -73,3 +73,37 @@ img{ width: 100%; }
 	height: 50%;
 	top: 25%;
 }
+.caseBtn{
+
+}
+.casePage{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	display: none;
+}
+.casePic{
+	position: absolute;
+}
+
+#case1_1{
+	overflow: scroll;
+}
+
+#case2_1{
+	overflow: scroll;
+}
+#case2_2{
+	overflow: scroll;
+}
+#case2_3{
+	overflow: scroll;
+}
+
+#case4_1{
+	overflow: scroll;
+}

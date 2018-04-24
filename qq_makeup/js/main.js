@@ -4,10 +4,10 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "智·混动 MAX秀",
-      desc: "人人都是隐藏的跨界高手",
-      link: "http://m.giccoo.com/maxshow/",
-      imgUrl: "http://m.giccoo.com/maxshow/img/ico.jpg",
+      title: "你的美妆预算花对地方了吗？",
+      desc: "",
+      link: "http://m.giccoo.com/qq_makeup/",
+      imgUrl: "http://m.giccoo.com/qq_makeup/img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };
@@ -133,42 +133,68 @@ var case1=new createjs.Container()
 var case2=new createjs.Container()
 var case3=new createjs.Container()
 var case4=new createjs.Container()
+var caseEnd=new createjs.Container()
 var caseA=[]
 var caseBtnA=[[],[],[],[]]
 var caseBtnNumA=[2,3,2,1]
 
 function ani6end(){
-  stage.removeChild(stage_6)
+  setTimeout(function(){
+    stage.removeChild(stage_6)
+  },1500)
   caseA=[case1,case2,case3,case4]
   
   for (var i = 1; i <= 4; i++) {
     var caseBG=new createjs.Bitmap("img/casebg"+i+".jpg")
     var caseBGdown=new createjs.Bitmap("img/casebgdown.jpg")
     var caseCopy=new createjs.Bitmap("img/case"+i+"copy.png")
+    var pinkBG=pinkScreen.clone()
+
+    caseA[i-1].addChild(pinkBG)
     caseA[i-1].addChild(caseBG)
     caseA[i-1].addChild(caseBGdown)
     caseA[i-1].addChild(caseCopy)
     caseBGdown.y=screenH-408
     stage.addChild(caseA[i-1])
-    if(i!=1){
+    if(2!=1){
       caseA[i-1].y=screenH
     }
 
     for (var j = 1; j <= caseBtnNumA[i-1]; j++) {
+      
       var caseBtn=new createjs.Bitmap("img/case"+i+"btn"+j+".png")
+
       caseA[i-1].addChild(caseBtn)
       caseBtnA[j-1].push(caseBtn)
-      TweenLite.to(caseBtn,1,{alpha:.5,delay:(j-1)*.2,onComplete:btnLoop,onCompleteParams:[caseBtn]})
+      TweenLite.to(caseBtn,1,{alpha:.5,delay:(j-1)*.02,onComplete:btnLoop,onCompleteParams:[caseBtn]})
     };
 
   };
-}
+  var endTop=new createjs.Bitmap("img/endtop.jpg")
+  var enddown=new createjs.Bitmap("img/casebgdown.jpg")
+  var endCopy=new createjs.Bitmap("img/endcopy.png")
+  caseEnd.addChild(endTop)
+  caseEnd.addChild(enddown)
+  caseEnd.addChild(endCopy)
+  enddown.y=screenH-408
+  stage.addChild(caseEnd)
+  caseEnd.y=screenH
 
+  setSlide()
+  goPage()
+  TweenLite.set($("#end_arrow"),{display:"block"})
+
+  setCaseBtn()
+}
+$("#end_arrow").click(function(){
+  nowCase++
+  goPage()
+})
 function btnLoop(_tar){
   //TweenLite.set(_tar,{alpha:1})
   TweenLite.to(_tar,.5,{alpha:1,onComplete:btnLoop2,onCompleteParams:[_tar]})
 }
 function btnLoop2(_tar){
   //TweenLite.set(_tar,{alpha:1})
-  TweenLite.to(_tar,1,{alpha:.5,onComplete:btnLoop,onCompleteParams:[_tar],ease:Linear.easeNone})
+  TweenLite.to(_tar,.5,{alpha:.5,onComplete:btnLoop,onCompleteParams:[_tar],ease:Linear.easeNone})
 }
