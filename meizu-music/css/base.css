@@ -943,7 +943,7 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  background: url("../img/bg.jpg") no-repeat center center;
+  background: url("//image.giccoo.com/projects/meizu-music/img/bg.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
   .loading .content {
@@ -964,7 +964,7 @@ body {
         left: 0px;
         width: 100%;
         height: 100%;
-        background: url("../img/load-record-light.png") no-repeat center center;
+        background: url("//image.giccoo.com/projects/meizu-music/img/load-record-light.png") no-repeat center center;
         background-size: cover;
         background-color: transparent;
         -webkit-animation: second 8s linear;
@@ -992,7 +992,7 @@ body {
           font-size: 0.96rem; } }
 
 .main {
-  background: url("../img/bg.jpg") no-repeat center center;
+  background: url("//image.giccoo.com/projects/meizu-music/img/bg.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
@@ -1452,14 +1452,14 @@ body {
     width: 20px;
     height: 20px; }
     .symbol.symbol-type-1 .c {
-      background: url("../img/music-symbol-1.png") no-repeat center center;
+      background: url("//image.giccoo.com/projects/meizu-music/img/music-symbol-1.png") no-repeat center center;
       background-size: cover;
       background-color: transparent; }
   .symbol.symbol-type-2 {
     width: 30px;
     height: 30px; }
     .symbol.symbol-type-2 .c {
-      background: url("../img/music-symbol-2.png") no-repeat center center;
+      background: url("//image.giccoo.com/projects/meizu-music/img/music-symbol-2.png") no-repeat center center;
       background-size: cover;
       background-color: transparent; }
   .symbol.symbol-1 {

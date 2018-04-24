@@ -12,7 +12,7 @@
   <body>
     <div id="load" class="loading">
       <div class="content">
-        <div class="record"><img src="./img/load-record.png">
+        <div class="record"><img src="//image.giccoo.com/projects/meizu-music/img/load-record.png">
           <div class="light"></div>
         </div>
         <div id="loadtext" v-show="mount" style="display: none" class="load-text">Loading...{{progress}}%</div>
@@ -22,7 +22,7 @@
       <transition name="page-fade">
         <div v-show="loading" class="loading">
           <div class="content">
-            <div class="record"><img src="./img/load-record.png">
+            <div class="record"><img src="//image.giccoo.com/projects/meizu-music/img/load-record.png">
               <div class="light"></div>
             </div>
             <div class="load-text">...解密中...</div>
@@ -32,24 +32,24 @@
       <div class="pages">
         <transition name="page-fade">
           <div v-show="homepageShow || gamepageShow" class="page page-build">
-            <div class="record"><img src="./img/record.jpg">
-              <div :class="{moving: playing}" class="light"><img src="./img/record-light.png"></div>
-              <div :class="{moving: playing}" class="line"><img src="./img/record-line.png"></div>
+            <div class="record"><img src="//image.giccoo.com/projects/meizu-music/img/record.jpg">
+              <div :class="{moving: playing}" class="light"><img src="//image.giccoo.com/projects/meizu-music/img/record-light.png"></div>
+              <div :class="{moving: playing}" class="line"><img src="//image.giccoo.com/projects/meizu-music/img/record-line.png"></div>
             </div>
             <div @click="notepageShow = !notepageShow" class="note">
-              <div :class="{off: gameStarted}" class="question-mark"><img src="./img/question-mark.png"></div>
+              <div :class="{off: gameStarted}" class="question-mark"><img src="//image.giccoo.com/projects/meizu-music/img/question-mark.png"></div>
               <div :class="{on: gameStarted,timeout: second&lt;=5}" class="time-last">{{second}}<span>s</span></div>
             </div>
-            <div class="logo"><img src="./img/logo.png"></div>
+            <div class="logo"><img src="//image.giccoo.com/projects/meizu-music/img/logo.png"></div>
             <transition name="page-animation">
               <div v-show="notepageShow" class="page-note">
-                <div @click="notepageShow = !notepageShow" class="content"><img src="./img/pop-info.png"></div>
+                <div @click="notepageShow = !notepageShow" class="content"><img src="//image.giccoo.com/projects/meizu-music/img/pop-info.png"></div>
               </div>
             </transition>
             <transition name="page-fade">
               <div v-show="homepageShow" class="page-home">
                 <div class="content">
-                  <div :class="{on: playing}" class="title music-symbol fadeInUp duration-8 animated delay-5"><img src="./img/home-title.png">
+                  <div :class="{on: playing}" class="title music-symbol fadeInUp duration-8 animated delay-5"><img src="//image.giccoo.com/projects/meizu-music/img/home-title.png">
                     <div class="symbol symbol-1 symbol-type-2">
                       <div class="c"></div>
                     </div>
@@ -69,7 +69,7 @@
                   <div class="input fadeInUp duration-8 animated delay-9">
                     <input type="text" maxlength="10" v-model="nickname" placeholder="请输入你的名字">
                   </div>
-                  <div @click="startGame" class="btn fadeInUp duration-8 animated delay-12"><img src="./img/btn-submit-name.png"></div>
+                  <div @click="startGame" class="btn fadeInUp duration-8 animated delay-12"><img src="//image.giccoo.com/projects/meizu-music/img/btn-submit-name.png"></div>
                 </div>
               </div>
             </transition>
@@ -79,19 +79,19 @@
                 <div v-show="gameNotePop" class="pop">
                   <div class="content">
                     <p>测试即将开始  请打开声音！</p>
-                    <div @click="gameStart" class="btn btn-start"><img src="./img/btn-start.png"></div>
+                    <div @click="gameStart" class="btn btn-start"><img src="//image.giccoo.com/projects/meizu-music/img/btn-start.png"></div>
                   </div>
                 </div>
                 <div v-show="showAnswerPop" class="pop-answer">
                   <div class="success">
                     <h2>{{answers[now]==1?"恭喜你回答正确":answers[now]==0?"很遗憾回答错误":"很遗憾时间到了"}}</h2>
                     <p class="name">《{{answerName}}》</p>
-                    <div v-show="now&lt;4" @click="nextMusic" class="btn btn-goon"><img src="./img/btn-goon.png"></div>
-                    <div v-show="now&gt;=4" @click="gameEnd" class="btn btn-dna"><img src="./img/btn-dna.png"></div>
+                    <div v-show="now&lt;4" @click="nextMusic" class="btn btn-goon"><img src="//image.giccoo.com/projects/meizu-music/img/btn-goon.png"></div>
+                    <div v-show="now&gt;=4" @click="gameEnd" class="btn btn-dna"><img src="//image.giccoo.com/projects/meizu-music/img/btn-dna.png"></div>
                   </div>
                 </div>
                 <div class="content">
-                  <div :class="{on: playing}" class="title fadeInUp animated duration-8 delay-5"><img src="./img/game-title.png">
+                  <div :class="{on: playing}" class="title fadeInUp animated duration-8 delay-5"><img src="//image.giccoo.com/projects/meizu-music/img/game-title.png">
                     <div class="symbol symbol-1 symbol-type-2">
                       <div class="c"></div>
                     </div>
@@ -114,8 +114,8 @@
                     </div>
                     <div class="game-input fadeInUp animated duration-8 delay-12">
                       <div class="answer">&nbsp;{{answer.join(' ')}}&nbsp;</div>
-                      <div @click="delectOne" class="del"><img src="./img/icon-del.png"></div>
-                      <div @click="checkAnswer" class="chr"><img src="./img/icon-check.png"></div>
+                      <div @click="delectOne" class="del"><img src="//image.giccoo.com/projects/meizu-music/img/icon-del.png"></div>
+                      <div @click="checkAnswer" class="chr"><img src="//image.giccoo.com/projects/meizu-music/img/icon-check.png"></div>
                     </div>
                     <div :class="{on: errorShow}" class="error-text">回答错误请重新再答!</div>
                   </div>
@@ -130,19 +130,19 @@
             <div class="ugc-bg"><img :src="ugc"></div>
             <div @click.stop.prevent="trySave" class="ugc-save"><img :src="ugcqr"></div>
             <div class="btns">
-              <!-- .btn.btn-share-web(v-if="wy",@click="shareWeb")img(src="./img/btn-share-web.png")
+              <!-- .btn.btn-share-web(v-if="wy",@click="shareWeb")img(src="//image.giccoo.com/projects/meizu-music/img/btn-share-web.png")
               -->
-              <div v-if="wy" @click="shareImage" class="btn btn-share"><img src="./img/btn-share.png"></div>
-              <div v-if="!wy" @click.stop.prevent="trySave" class="btn btn-saveimage"><img src="./img/btn-saveimage.png">
+              <div v-if="wy" @click="shareImage" class="btn btn-share"><img src="//image.giccoo.com/projects/meizu-music/img/btn-share.png"></div>
+              <div v-if="!wy" @click.stop.prevent="trySave" class="btn btn-saveimage"><img src="//image.giccoo.com/projects/meizu-music/img/btn-saveimage.png">
                 <div class="mark"><img :src="ugcqr"></div>
               </div>
-              <div @click="regame" class="btn btn-regame"><img src="./img/btn-regame.png"></div>
+              <div @click="regame" class="btn btn-regame"><img src="//image.giccoo.com/projects/meizu-music/img/btn-regame.png"></div>
             </div>
           </div>
         </transition>
         <transition name="page-animation">
           <div v-show="shareSuccessShow" class="page page-success">
-            <div class="success"><a href="http://music.163.com/#/playlist/2192839055/"><img src="./img/share-success.png"></a></div>
+            <div class="success"><a href="http://music.163.com/#/playlist/2192839055/"><img src="//image.giccoo.com/projects/meizu-music/img/share-success.png"></a></div>
           </div>
         </transition>
       </div>
