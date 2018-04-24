@@ -531,8 +531,8 @@ function setP3mirrow(){
   p3shandow.x=257-80
   p3shandow.y=192-40
 
- // TweenLite.to(p3mirrow,3,{rotation:"-=15",ease:Sine.easeInOut,onComplete:p3mirrowRLoop})//p3shandow
- // TweenLite.to(p3shandow,3,{rotation:"-=15",ease:Sine.easeInOut})//
+  TweenLite.to(p3mirrow,3,{rotation:"-=15",ease:Sine.easeInOut,onComplete:p3mirrowRLoop})//p3shandow
+  TweenLite.to(p3shandow,3,{rotation:"-=15",ease:Sine.easeInOut})//
 }
 
 function p3mirrowLoop(){
@@ -866,21 +866,21 @@ function p5q1ani(){
   TweenLite.set(p5q3,{y:screenH-131,x:320,regX:320,regY:30,scale:0})
 
   TweenLite.to(p5bubble1,1,{scale:1,ease:Sine.easeOut,delay:.05})
-  TweenLite.to(p5q1,1.5,{scale:1,ease:Elastic.easeOut,delay:.5,onComplete:p5q2ani})
+  TweenLite.to(p5q1,1,{scale:1,ease:Back.easeOut,delay:.5,onComplete:p5q2ani})
 }
 function p5q2ani(){
   TweenLite.set(p5bubble1,{alpha:0,delay:.05})
   TweenLite.set(p5bubble2,{alpha:1,delay:.05})
   TweenLite.to(p5q1,.5,{y:"-=76",ease:Back.easeOut,delay:.05})
-  TweenLite.to(p5q2,1.5,{scale:1,ease:Elastic.easeOut,delay:.05,onComplete:p5q3ani})
+  TweenLite.to(p5q2,1,{scale:1,ease:Back.easeOut,delay:.05,onComplete:p5q3ani})
 }
 function p5q3ani(){
   TweenLite.set(p5bubble2,{alpha:0,delay:.05})
   TweenLite.set(p5bubble3,{alpha:1,delay:.05})
   TweenLite.to(p5q1,.5,{y:"-=76",ease:Back.easeOut,delay:.05})
   TweenLite.to(p5q2,.5,{y:"-=76",ease:Back.easeOut,delay:.05})
-  TweenLite.to(p5q3,1.5,{scale:1,ease:Elastic.easeOut,delay:.05})
-  showBtn(1.5)
+  TweenLite.to(p5q3,1,{scale:1,ease:Back.easeOut,delay:.05})
+  showBtn(0)
 }
 
 //=====灯亮
@@ -942,6 +942,8 @@ function setPage6(){
   p6Mask.y=500
   stage_6.mask=p6Mask
 
+
+
   stage_6.addChild(p6bg)
   stage_6.addChild(p6bag)
   stage_6.addChild(p6t)
@@ -981,3 +983,153 @@ $("#btnBag").click(function(){
   TweenLite.set($("#btnBag"),{display:"none"})
   ani6end()
 })
+//=======最后按钮
+var case1btn1=$("#case1btn1")
+var case1btn2=$("#case1btn2")
+
+var case2btn1=$("#case2btn1")
+var case2btn2=$("#case2btn2")
+var case2btn3=$("#case2btn3")
+
+var case3btn1=$("#case3btn1")
+var case3btn2=$("#case3btn2")
+
+var case4btn1=$("#case4btn1")
+
+var casebtnDivA=[[case1btn1,case1btn2],[case2btn1,case2btn2,case2btn3],[case3btn1,case3btn2],[case4btn1],[]]
+
+function setCaseBtn(){
+  casebtnDivA=[[case1btn1,case1btn2],[case2btn1,case2btn2,case2btn3],[case3btn1,case3btn2],[case4btn1],[]]
+  TweenLite.set(case1btn1,{height:35*screenW/640,width:103*screenW/640,left:360*screenW/640,top:765*screenW/640})
+  TweenLite.set(case1btn2,{height:35*screenW/640,width:106*screenW/640,left:484*screenW/640,top:765*screenW/640})
+
+  TweenLite.set(case2btn1,{height:35*screenW/640,width:149*screenW/640,left:212*screenW/640,top:770*screenW/640})
+  TweenLite.set(case2btn2,{height:35*screenW/640,width:92*screenW/640,left:382*screenW/640,top:770*screenW/640})
+  TweenLite.set(case2btn3,{height:35*screenW/640,width:95*screenW/640,left:495*screenW/640,top:770*screenW/640})
+
+  TweenLite.set(case3btn1,{height:35*screenW/640,width:150*screenW/640,left:318*screenW/640,top:802*screenW/640})
+  TweenLite.set(case3btn2,{height:35*screenW/640,width:100*screenW/640,left:490*screenW/640,top:802*screenW/640})
+
+  TweenLite.set(case4btn1,{height:35*screenW/640,width:105*screenW/640,left:486*screenW/640,top:745*screenW/640})
+}
+
+case1btn1.click(function(){
+  showCaseFuc($("#case1_1"))
+})
+case1btn2.click(function(){
+  showCaseFuc($("#case1_2"))
+})
+
+case2btn1.click(function(){
+  showCaseFuc($("#case2_1"))
+})
+case2btn2.click(function(){
+  showCaseFuc($("#case2_2"))
+})
+case2btn3.click(function(){
+  showCaseFuc($("#case2_3"))
+})
+
+case3btn1.click(function(){
+  showCaseFuc($("#case3_1"))
+})
+case3btn2.click(function(){
+  showCaseFuc($("#case3_2"))
+})
+
+case4btn1.click(function(){
+  showCaseFuc($("#case4_1"))
+})
+
+function showCaseFuc(_tar){
+  TweenLite.set(_tar,{display:"block",opacity:0})
+  TweenLite.to(_tar,.5,{opacity:1})
+}
+
+$(".closeBtn").click(function(){
+  $(".casePage").css({display:"none"})
+})
+
+//=====================翻页＝＝＝＝＝＝＝＝＝＝＝ 
+
+var nowCase = 0;
+var startY = 0;
+var startScrollTop;
+var pageUpDown =0
+var sliderA=[]
+
+
+function setSlide(){
+  sliderA=[case1,case2,case3,case4,caseEnd]
+  // $('.content')[0].addEventListener('touchstart',startTouch,false)
+  // $('.content')[0].addEventListener('touchmove',moveTouch,false)
+  // $('.content')[0].addEventListener('touchend',endTouch,false)
+  $('#mainCanvas')[0].addEventListener('touchstart',startTouch,false)
+  $('#mainCanvas')[0].addEventListener('touchmove',moveTouch,false)
+  $('#mainCanvas')[0].addEventListener('touchend',endTouch,false)
+  
+}
+
+  
+function startTouch(event){
+      startY=event.touches[0].clientY
+      pageUpDown=0
+    }
+    function moveTouch(event){
+      var nowY=event.touches[0].clientY
+      event.preventDefault();
+      if (nowY-startY>80&&nowCase!=0) {
+        pageUpDown=1
+      }else if (nowY-startY< -80&&nowCase!=4) {
+        pageUpDown=-1
+      }else{
+        pageUpDown=0
+      };  
+    }
+    function endTouch(event){
+      if (pageUpDown == 1) {
+        //alert("上一页")
+        nowCase--
+        goPage()
+      }else if (pageUpDown == -1) {
+        //alert("下一页")
+        nowCase++
+        goPage()
+      }else if (pageUpDown==0) {
+        //alert("不翻页")
+      };  
+    } 
+    function goPage(){
+       for (var i = 0; i < sliderA.length; i++) {
+        if (i<nowCase) {
+          TweenLite.to(sliderA[i],.5,{y:-screenH})//,ease:Back.easeOut
+        };
+        if (i==nowCase) {
+          TweenLite.to(sliderA[i],.5,{y:0})
+          if(i==4){TweenLite.set($("#end_arrow"),{display:"none"})}else{TweenLite.set($("#end_arrow"),{display:"block"})}
+          
+
+
+        };
+        if (i>nowCase) {
+          TweenLite.to(sliderA[i],.5,{y:screenH})
+        };
+        for (var j = 0; j < casebtnDivA[i].length; j++) {
+          if (i==nowCase){
+            TweenLite.set(casebtnDivA[i][j],{display:"block"})
+          }else{
+            TweenLite.set(casebtnDivA[i][j],{display:"none"})
+          } 
+        };
+       // console.log(casebtnDivA[2].length)
+
+
+
+
+       }
+
+
+       
+    }
+
+//=====================翻页＝＝＝＝＝＝＝＝＝＝＝
