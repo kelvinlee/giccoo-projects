@@ -104,4 +104,71 @@ function ani3end(){
   
   TweenLite.set($("#p4L"),{display:"block"})
   TweenLite.set($("#p4R"),{display:"block"})
+  showBtn(.5)
+}
+var stage_5=new createjs.Container()
+function ani4end(){
+  console.log("问题来了")
+  TweenLite.to(stage_4,.75,{y:-screenH,onComplete:ani5})
+  stage.addChild(stage_5)
+  stage_5.y=screenH
+  TweenLite.to(stage_5,.75,{y:0})
+  setPage5()
+  TweenLite.set($("#p4L"),{display:"none"})
+  TweenLite.set($("#p4R"),{display:"none"})
+}
+
+function ani5(){
+  stage.removeChild(stage_4)
+
+}
+var stage_6=new createjs.Container()
+function ani5end(){
+  
+  stage.addChild(stage_6)
+  setPage6()
+  ani6()
+}
+var case1=new createjs.Container()
+var case2=new createjs.Container()
+var case3=new createjs.Container()
+var case4=new createjs.Container()
+var caseA=[]
+var caseBtnA=[[],[],[],[]]
+var caseBtnNumA=[2,3,2,1]
+
+function ani6end(){
+  stage.removeChild(stage_6)
+  caseA=[case1,case2,case3,case4]
+  
+  for (var i = 1; i <= 4; i++) {
+    var caseBG=new createjs.Bitmap("img/casebg"+i+".jpg")
+    var caseBGdown=new createjs.Bitmap("img/casebgdown.jpg")
+    var caseCopy=new createjs.Bitmap("img/case"+i+"copy.png")
+    caseA[i-1].addChild(caseBG)
+    caseA[i-1].addChild(caseBGdown)
+    caseA[i-1].addChild(caseCopy)
+    caseBGdown.y=screenH-408
+    stage.addChild(caseA[i-1])
+    if(i!=1){
+      caseA[i-1].y=screenH
+    }
+
+    for (var j = 1; j <= caseBtnNumA[i-1]; j++) {
+      var caseBtn=new createjs.Bitmap("img/case"+i+"btn"+j+".png")
+      caseA[i-1].addChild(caseBtn)
+      caseBtnA[j-1].push(caseBtn)
+      TweenLite.to(caseBtn,1,{alpha:.5,delay:(j-1)*.2,onComplete:btnLoop,onCompleteParams:[caseBtn]})
+    };
+
+  };
+}
+
+function btnLoop(_tar){
+  //TweenLite.set(_tar,{alpha:1})
+  TweenLite.to(_tar,.5,{alpha:1,onComplete:btnLoop2,onCompleteParams:[_tar]})
+}
+function btnLoop2(_tar){
+  //TweenLite.set(_tar,{alpha:1})
+  TweenLite.to(_tar,1,{alpha:.5,onComplete:btnLoop,onCompleteParams:[_tar],ease:Linear.easeNone})
 }
