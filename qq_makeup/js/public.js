@@ -157,6 +157,9 @@ btn_arrow.click(function(){
     case 2:
       ani1end()
       break;
+    case 3:
+      ani3end()
+      break;
   }
 })
 
@@ -370,6 +373,7 @@ function nextQ(){
     };
   }else{
     console.log("问题结束！")
+    TweenLite.set(p2wrongA[2],{scale:0})
     for (var i = 0; i < p2A.length; i++) {
       TweenLite.to(p2A[i],.5,{alpha:0,scale:1,x:320,y:"+=100",delay:.2-i*.05})
     };
@@ -525,17 +529,118 @@ function setP3mirrow(){
 }
 
 function p3mirrowLoop(){
-  TweenLite.to(p3mirrowMC,3,{y:"-=60",ease:Sine.easeInOut,onComplete:p3mirrowLoop2})
+  if(ifp3t==1){
+    TweenLite.to(p3mirrowMC,3,{y:"-=60",ease:Sine.easeInOut,onComplete:p3mirrowLoop2})
+  }
+  
 }
 function p3mirrowLoop2(){
   TweenLite.to(p3mirrowMC,3,{y:"+=60",ease:Sine.easeInOut,onComplete:p3mirrowLoop})
 }
 
 function p3mirrowRLoop(){
-  TweenLite.to(p3mirrow,3,{rotation:"+=15",ease:Sine.easeInOut,onComplete:p3mirrowRLoop2})
-  TweenLite.to(p3shandow,3,{rotation:"+=15",ease:Sine.easeInOut})
+  if(ifp3t==1){
+    TweenLite.to(p3mirrow,3,{rotation:"+=15",ease:Sine.easeInOut,onComplete:p3mirrowRLoop2})
+    TweenLite.to(p3shandow,3,{rotation:"+=15",ease:Sine.easeInOut})
+  }
+  
 }
 function p3mirrowRLoop2(){
   TweenLite.to(p3mirrow,3,{rotation:"-=15",ease:Sine.easeInOut,onComplete:p3mirrowRLoop})
   TweenLite.to(p3shandow,3,{rotation:"-=15",ease:Sine.easeInOut})
 } 
+
+//==========第四页
+var stage_4=new createjs.Container()
+var p4t1=new createjs.Bitmap("img/p4t1.png")
+var p4t2=new createjs.Bitmap("img/p4t2.png")
+var p4t3=new createjs.Bitmap("img/p4t3.png")
+var p4t4=new createjs.Bitmap("img/p4t4.png")
+var p4tA=[]
+
+var nowP4=0
+
+var p4arrowL=new createjs.Bitmap("img/p4arrow.png")
+var p4arrowR=new createjs.Bitmap("img/p4arrow.png")
+var p4bg=new createjs.Bitmap("img/p4bg.png")
+var p4mcA=[]
+var p4maskA=[]
+var p4bgA=[]
+var p4border=new createjs.Bitmap("img/p4border.png")
+function setPage4(){
+  stage.addChild(stage_4)
+  //====背景
+  stage_4.addChild(p4bg)
+  //p4bg.scaleY=screenH/1000
+
+  p4tA=[p4t1,p4t2,p4t3,p4t4]
+  for (var i = 0; i < p4tA.length; i++) {
+    stage_4.addChild(p4tA[i])
+    p4tA[i].y=screenH-297
+    if(i!=nowP4){
+      p4tA[i].alpha=0
+    }
+
+    var p4mc=new createjs.Container()
+    p4mcA.push(p4mc)
+    p4mc.regX=p4mc.regY=160
+    stage_4.addChild(p4mc)
+
+    var p4Mask=new createjs.Shape()
+    p4Mask.graphics.beginFill("#ff0000").drawRect(0,0,320,320);
+    stage_4.addChildAt(p4Mask,0)
+    p4Mask.regX=p4Mask.regY=160
+    p4maskA.push(p4Mask)
+    p4mc.mask=p4Mask
+
+    var p4bg_s=new createjs.Shape()
+    p4mc.addChild(p4bg_s)
+    p4bgA.push(p4bg_s)
+  };
+  
+  TweenLite.set(p4mcA[0],{x:160,y:160})
+  TweenLite.set(p4mcA[1],{x:160+320,y:160})
+  TweenLite.set(p4mcA[2],{x:160,y:160+320})
+  TweenLite.set(p4mcA[3],{x:160+320,y:160+320})
+  TweenLite.set(p4maskA[0],{x:160,y:160})
+  TweenLite.set(p4maskA[1],{x:160+320,y:160})
+  TweenLite.set(p4maskA[2],{x:160,y:160+320})
+  TweenLite.set(p4maskA[3],{x:160+320,y:160+320})
+  p4bgA[0].graphics.beginFill("#3cd3b6").drawRect(0,0,320,320);
+  p4bgA[1].graphics.beginFill("#ffb4b3").drawRect(0,0,320,320);
+  p4bgA[2].graphics.beginFill("#f9dd9f").drawRect(0,0,320,320);
+  p4bgA[3].graphics.beginFill("#ff6565").drawRect(0,0,320,320);
+
+  stage_4.addChild(p4border)
+
+  stage_4.addChild(p4arrowL)
+  stage_4.addChild(p4arrowR)
+  p4arrowR.scaleX=-1
+  p4arrowL.y=p4arrowR.y=(screenH-640)/2+640
+  p4arrowL.x=0
+  p4arrowR.x=640
+  
+}
+
+$("#p4L").click(function(){
+  nowP4--
+  if(nowP4==-1){    nowP4=3  }
+  p4change()
+})
+$("#p4R").click(function(){
+  nowP4++
+  if(nowP4==4){    nowP4=0  }
+  p4change()
+})
+
+function p4change(){
+  console.log(nowP4)
+  for (var i = 0; i < 4; i++) {
+    if(i!=nowP4){
+      p4tA[i].alpha=0
+    }else{
+      p4tA[i].alpha=1
+    }
+    
+  };
+}

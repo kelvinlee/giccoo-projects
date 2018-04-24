@@ -92,4 +92,16 @@ function ani2end(){
 function ani3(){
   setPage3()
   p3addMask()
+  showBtn(4)
+}
+function ani3end(){
+  console.log("gogogo")
+  ifp3t=0
+  stage.removeChild(stage_3)
+  setPage4()
+  TweenLite.set($("#logo"),{display:"none"})
+  stage.removeChild(blackScreen)
+  
+  TweenLite.set($("#p4L"),{display:"block"})
+  TweenLite.set($("#p4R"),{display:"block"})
 }
