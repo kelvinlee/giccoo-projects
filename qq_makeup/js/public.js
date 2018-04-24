@@ -157,6 +157,15 @@ btn_arrow.click(function(){
     case 2:
       ani1end()
       break;
+    case 3:
+      ani3end()
+      break;
+    case 4:
+      ani4end()
+      break;
+    case 5:
+      ani5end()
+      break;
   }
 })
 
@@ -370,6 +379,7 @@ function nextQ(){
     };
   }else{
     console.log("问题结束！")
+    TweenLite.set(p2wrongA[2],{scale:0})
     for (var i = 0; i < p2A.length; i++) {
       TweenLite.to(p2A[i],.5,{alpha:0,scale:1,x:320,y:"+=100",delay:.2-i*.05})
     };
@@ -495,12 +505,13 @@ function p3maskAni(){
   TweenLite.to(p3Mask,_t/2,{x:333,y:517,overwrite:0,delay:.5+_t+_t/2+_t})
   TweenLite.to(p3Mask,.8,{scale:5,overwrite:0,delay:.5+_t+_t/2+_t/2+_t+.5,onComplete:P3run})
 
-  
-  
+  //====p3t
+  //setP3t()
+  setTimeout(setP3t,2000)
 }
 function P3run(){
   //====p3t
-  setP3t()
+  //setP3t()
   //====p3镜子
   setP3mirrow()
 }
@@ -525,17 +536,448 @@ function setP3mirrow(){
 }
 
 function p3mirrowLoop(){
-  TweenLite.to(p3mirrowMC,3,{y:"-=60",ease:Sine.easeInOut,onComplete:p3mirrowLoop2})
+  if(ifp3t==1){
+    TweenLite.to(p3mirrowMC,3,{y:"-=60",ease:Sine.easeInOut,onComplete:p3mirrowLoop2})
+  }
+  
 }
 function p3mirrowLoop2(){
   TweenLite.to(p3mirrowMC,3,{y:"+=60",ease:Sine.easeInOut,onComplete:p3mirrowLoop})
 }
 
 function p3mirrowRLoop(){
-  TweenLite.to(p3mirrow,3,{rotation:"+=15",ease:Sine.easeInOut,onComplete:p3mirrowRLoop2})
-  TweenLite.to(p3shandow,3,{rotation:"+=15",ease:Sine.easeInOut})
+  if(ifp3t==1){
+    TweenLite.to(p3mirrow,3,{rotation:"+=15",ease:Sine.easeInOut,onComplete:p3mirrowRLoop2})
+    TweenLite.to(p3shandow,3,{rotation:"+=15",ease:Sine.easeInOut})
+  }
+  
 }
 function p3mirrowRLoop2(){
   TweenLite.to(p3mirrow,3,{rotation:"-=15",ease:Sine.easeInOut,onComplete:p3mirrowRLoop})
   TweenLite.to(p3shandow,3,{rotation:"-=15",ease:Sine.easeInOut})
 } 
+
+//==========第四页
+var stage_4=new createjs.Container()
+var p4t1=new createjs.Bitmap("img/p4t1.png")
+var p4t2=new createjs.Bitmap("img/p4t2.png")
+var p4t3=new createjs.Bitmap("img/p4t3.png")
+var p4t4=new createjs.Bitmap("img/p4t4.png")
+var p4tA=[]
+
+var nowP4=0
+
+var p4arrowL=new createjs.Bitmap("img/p4arrow.png")
+var p4arrowR=new createjs.Bitmap("img/p4arrow.png")
+var p4bg=new createjs.Bitmap("img/p4bg.png")
+var p4mcA=[]
+var p4maskA=[]
+var p4bgA=[]
+var p4border=new createjs.Bitmap("img/p4border.png")
+
+var p4anibg=new createjs.Bitmap("img/p4anibg.jpg")
+function setPage4(){
+  stage.addChild(stage_4)
+  //====背景
+  stage_4.addChild(p4bg)
+  //p4bg.scaleY=screenH/1000
+  stage_4.addChild(p4anibg)
+
+  p4tA=[p4t1,p4t2,p4t3,p4t4]
+  for (var i = 0; i < p4tA.length; i++) {
+    stage_4.addChild(p4tA[i])
+    p4tA[i].y=screenH-297
+    if(i!=nowP4){
+      p4tA[i].alpha=0
+    }
+
+    
+
+    var p4mc=new createjs.Container()
+    p4mcA.push(p4mc)
+    p4mc.regX=p4mc.regY=160
+    stage_4.addChild(p4mc)
+
+    var p4Mask=new createjs.Shape()
+    p4Mask.graphics.beginFill("#ff0000").drawRect(0,0,320,320);
+    stage_4.addChildAt(p4Mask,0)
+    p4Mask.regX=p4Mask.regY=160
+    p4maskA.push(p4Mask)
+    p4mc.mask=p4Mask
+
+    var p4bg_s=new createjs.Shape()
+    p4mc.addChild(p4bg_s)
+    p4bgA.push(p4bg_s)
+  };
+  
+  TweenLite.set(p4mcA[0],{x:160,y:160})
+  TweenLite.set(p4mcA[1],{x:160+320,y:160})
+  TweenLite.set(p4mcA[2],{x:160,y:160+320})
+  TweenLite.set(p4mcA[3],{x:160+320,y:160+320})
+  TweenLite.set(p4maskA[0],{x:160,y:160})
+  TweenLite.set(p4maskA[1],{x:160+320,y:160})
+  TweenLite.set(p4maskA[2],{x:160,y:160+320})
+  TweenLite.set(p4maskA[3],{x:160+320,y:160+320})
+  p4bgA[0].graphics.beginFill("#3cd3b6").drawRect(0,0,320,320);
+  p4bgA[1].graphics.beginFill("#ffb4b3").drawRect(0,0,320,320);
+  p4bgA[2].graphics.beginFill("#f9dd9f").drawRect(0,0,320,320);
+  p4bgA[3].graphics.beginFill("#ff6565").drawRect(0,0,320,320);
+
+  stage_4.addChild(p4border)
+
+  stage_4.addChild(p4arrowL)
+  stage_4.addChild(p4arrowR)
+  p4arrowR.scaleX=-1
+  p4arrowL.y=p4arrowR.y=(screenH-640)/2+640
+  p4arrowL.x=0
+  p4arrowR.x=640
+  
+  p4change()
+  p4setAni1() 
+  p4setAni2()
+  p4setAni3()
+  p4setAni4()
+}
+
+$("#p4L").click(function(){
+  nowP4--
+  if(nowP4==-1){    nowP4=3  }
+  p4change()
+})
+$("#p4R").click(function(){
+  nowP4++
+  if(nowP4==4){    nowP4=0  }
+  p4change()
+})
+
+function p4change(){
+  console.log(nowP4)
+  for (var i = 0; i < 4; i++) {
+    if(i!=nowP4){
+      p4tA[i].alpha=0
+      p4mcA[i].alpha=0
+    }else{
+      p4tA[i].alpha=1
+      p4mcA[i].alpha=1
+    }
+    
+  };
+}
+
+
+//====p4 第一个动画
+var p4ani1hand=new createjs.Bitmap("img/p4ani1a.png")
+function p4setAni1(){
+  p4mcA[0].addChild(p4ani1hand)
+  TweenLite.set(p4ani1hand,{regX:107,regY:352,x:107,y:352})
+  TweenLite.to(p4ani1hand,1,{rotation:15,onComplete:p4ani1loop,ease:Linear.easeNone})
+  setFlyAge()
+}
+function p4ani1loop(){
+  TweenLite.to(p4ani1hand,1,{rotation:0,onComplete:p4ani1loop2,ease:Linear.easeNone})
+}
+function p4ani1loop2(){
+  TweenLite.to(p4ani1hand,1,{rotation:15,onComplete:p4ani1loop,ease:Linear.easeNone})
+}
+//===============00s飞
+var aAge=new createjs.Bitmap("img/p495s.png")
+//var aAgeb=new createjs.Bitmap("img/p400s.png")
+var ageA=[]
+function setFlyAge(){
+  var _n=30
+  for (var i = 0; i < _n; i++) {
+    if(i>_n/2){
+      var age=aAge.clone()
+    }else{
+      var age=aAge.clone()
+    }
+    
+    ageA.push(age)
+    p4mcA[0].addChildAt(age,1)
+    age.regX=28
+    age.regY=19.5
+    age.x=Math.random()*320
+    age.y=320+Math.random()*50
+    TweenLite.to(age,1+Math.random()*1.5,{y:160+Math.random()*100-50,scale:0,alpha:0,onComplete:resetAge,onCompleteParams:[age]})
+  };
+}
+
+function resetAge(_tar){
+  if(1==1){
+    _tar.x=Math.random()*320
+    _tar.y=320+Math.random()*50
+    _tar.scale=(Math.random()*Math.random()*.5+.75)*1.5
+    _tar.alpha=1
+    _tar.rotation=0
+    TweenLite.to(_tar,1+Math.random()*1.5,{y:160+Math.random()*100-100,scale:0,alpha:0,onComplete:resetAge,onCompleteParams:[_tar]})
+  }
+}
+//====p4第二个动画
+var p4ani2girl=new createjs.Bitmap("img/p4ani2girl.png")
+var p4ani2hand=new createjs.Bitmap("img/p4ani2hand.png")
+var p4ani2flash=new createjs.Bitmap("img/p4ani2flash.png")
+var p4ani2flash2=new createjs.Bitmap("img/p4ani2flash2.png")
+function p4setAni2(){
+  p4mcA[1].addChild(p4ani2girl)
+  p4mcA[1].addChild(p4ani2flash2)
+  p4mcA[1].addChild(p4ani2hand)
+  p4mcA[1].addChild(p4ani2flash)
+
+  p4ani2hand.y=50
+
+  p4setAni2Start()
+}
+function p4setAni2Start(){
+  p4ani2hand.alpha=0
+  p4ani2flash.alpha=0
+  p4ani2flash2.alpha=0
+  TweenLite.from(p4ani2flash,.75,{alpha:1,delay:0})
+  TweenLite.from(p4ani2flash2,1.25,{alpha:1.5,delay:0})
+  TweenLite.to(p4ani2hand,1,{y:0,alpha:1,delay:1.25,onComplete:p4setAni2End,ease:Back.easeOut})
+}
+function p4setAni2End(){
+  //TweenLite.to(p4ani2hand,.5,{y:50,alpha:-1,delay:.75,onComplete:p4setAni2Start})
+  TweenLite.set(p4ani2hand,{y:50,alpha:0,delay:.75,onComplete:p4setAni2Start})
+}
+//====p4第三个动画
+var p4ani3hand=new createjs.Bitmap("img/p4ani3hand.png")
+var p4ani3phone=new createjs.Bitmap("img/p4ani3phone.png")
+var p4ani3papper=new createjs.Bitmap("img/p4ani3papper.png")
+var p4ani3Mask=new createjs.Shape()
+function p4setAni3(){
+  console.log("ddddd")
+  p4ani3Mask.graphics.beginFill("#ff0000").drawRect(0,0,45,85);
+  p4mcA[2].addChildAt(p4ani3Mask,0)
+  p4ani3Mask.x=162
+  p4ani3Mask.y=33
+
+  p4ani3papper.mask=p4ani3Mask
+  p4mcA[2].addChild(p4ani3hand)
+  p4mcA[2].addChild(p4ani3phone)
+  p4mcA[2].addChild(p4ani3papper)
+  p4ani3papper.x=162
+  p4ani3papper.y=33
+
+
+
+  TweenLite.to(p4ani3hand,1,{x:"-=27",onComplete:p4ani3loop})
+}
+
+
+function p4ani3loop(){
+  TweenLite.to(p4ani3hand,1,{x:"+=27",onComplete:p4ani3loop2})
+  TweenLite.set(p4ani3papper,{y:33})
+  TweenLite.to(p4ani3papper,1,{y:33-85})
+}
+function p4ani3loop2(){
+  TweenLite.to(p4ani3hand,1,{x:"-=27",onComplete:p4ani3loop})
+  //TweenLite.set(p4ani3papper,{y:33})
+}
+
+//====p4第四个动画
+var p4ani4bg=new createjs.Bitmap("img/p4ani4bg.png")
+var p4ani4screen=new createjs.Bitmap("img/p4ani4screen.png")
+var p4ani4finger=new createjs.Bitmap("img/p4ani4finger.png")
+var p4ani4hand=new createjs.Bitmap("img/p4ani4hand.png")
+var p4ani4heart1=new createjs.Bitmap("img/p4ani4heart1.png")
+var p4ani4heart2=new createjs.Bitmap("img/p4ani4heart2.png")
+var p4ani4heart3=new createjs.Bitmap("img/p4ani4heart3.png")
+var p4ani4Mask=new createjs.Shape()
+function p4setAni4(){
+  p4ani4Mask.graphics.beginFill("#ff0000").drawRect(0,0,61,108);
+  p4mcA[3].addChildAt(p4ani4Mask,0)
+  p4ani4Mask.x=60
+  p4ani4Mask.y=59
+
+  p4ani4screen.mask=p4ani4Mask
+  p4mcA[3].addChild(p4ani4bg)
+  p4mcA[3].addChild(p4ani4screen)
+  p4mcA[3].addChild(p4ani4finger)
+  p4mcA[3].addChild(p4ani4heart1)
+  p4mcA[3].addChild(p4ani4heart2)
+  p4mcA[3].addChild(p4ani4heart3)
+  p4mcA[3].addChild(p4ani4hand)
+  p4ani4screen.x=60
+  p4ani4screen.y=59
+
+  p4ani4start()
+
+  p4ani4heart1.alpha=0
+  p4ani4heart2.alpha=0
+  p4ani4heart3.alpha=0
+
+  TweenLite.to(p4ani4heart1,1.2,{alpha:1,delay:0,onComplete:ani4heartLoop,onCompleteParams:[p4ani4heart1]})
+  TweenLite.to(p4ani4heart2,1.2,{alpha:1,delay:0.4,onComplete:ani4heartLoop,onCompleteParams:[p4ani4heart2]})
+  TweenLite.to(p4ani4heart3,1.2,{alpha:1,delay:0.8,onComplete:ani4heartLoop,onCompleteParams:[p4ani4heart3]})
+}
+function ani4heartLoop(_tar){
+  TweenLite.to(_tar,1.2,{alpha:0,delay:0,onComplete:ani4heartLoop2,onCompleteParams:[_tar]})
+}
+function ani4heartLoop2(_tar){
+  TweenLite.to(_tar,1.2,{alpha:1,delay:0,onComplete:ani4heartLoop,onCompleteParams:[_tar]})
+}
+function p4ani4start(){
+  TweenLite.set(p4ani4hand,{scale:1})
+  TweenLite.to(p4ani4hand,1,{y:-50+20,onComplete:p4ani4end,ease:Linear.easeNone})
+  TweenLite.set(p4ani4screen,{y:59})
+  TweenLite.to(p4ani4screen,2,{y:59-108})
+
+
+}
+function p4ani4end(){
+  TweenLite.set(p4ani4hand,{scale:1.02})
+  TweenLite.to(p4ani4hand,1,{scale:1,y:0+20,onComplete:p4ani4start})
+}
+
+
+//=========第五页
+var p5bg=new createjs.Bitmap("img/p5bg.jpg")
+var p5light1=new createjs.Bitmap("img/p5light1.png")
+var p5light2=new createjs.Bitmap("img/p5light2.png")
+
+function setPage5(){
+  stage_5.addChild(p5bg)
+  stage_5.addChild(p5light1)
+  stage_5.addChild(p5light2)
+  p5lightLoop()
+  setFlyQm()
+  p5q1ani()
+}
+var p5bubble1=new createjs.Bitmap("img/p5bubble1.png")
+var p5bubble2=new createjs.Bitmap("img/p5bubble2.png")
+var p5bubble3=new createjs.Bitmap("img/p5bubble3.png")
+
+var p5q1=new createjs.Bitmap("img/p5q1.png")
+var p5q2=new createjs.Bitmap("img/p5q2.png")
+var p5q3=new createjs.Bitmap("img/p5q3.png")
+function p5q1ani(){
+  stage_5.addChild(p5bubble1)
+  stage_5.addChild(p5bubble2)
+  stage_5.addChild(p5bubble3)
+  TweenLite.set(p5bubble1,{y:screenH,x:640,regX:640,regY:341,alpha:1,scale:0})
+  TweenLite.set(p5bubble2,{y:screenH,x:640,regX:640,regY:341,alpha:0})
+  TweenLite.set(p5bubble3,{y:screenH,x:640,regX:640,regY:341,alpha:0})
+
+  stage_5.addChild(p5q1)
+  stage_5.addChild(p5q2)
+  stage_5.addChild(p5q3)
+  TweenLite.set(p5q1,{y:screenH-131,x:320,regX:320,regY:30,scale:1})
+  TweenLite.set(p5q2,{y:screenH-131,x:320,regX:320,regY:30,scale:0})
+  TweenLite.set(p5q3,{y:screenH-131,x:320,regX:320,regY:30,scale:0})
+
+  TweenLite.to(p5bubble1,1,{scale:1,ease:Sine.easeOut,delay:.05})
+  TweenLite.to(p5q1,1.5,{scale:1,ease:Elastic.easeOut,delay:.5,onComplete:p5q2ani})
+}
+function p5q2ani(){
+  TweenLite.set(p5bubble1,{alpha:0,delay:.05})
+  TweenLite.set(p5bubble2,{alpha:1,delay:.05})
+  TweenLite.to(p5q1,.5,{y:"-=76",ease:Back.easeOut,delay:.05})
+  TweenLite.to(p5q2,1.5,{scale:1,ease:Elastic.easeOut,delay:.05,onComplete:p5q3ani})
+}
+function p5q3ani(){
+  TweenLite.set(p5bubble2,{alpha:0,delay:.05})
+  TweenLite.set(p5bubble3,{alpha:1,delay:.05})
+  TweenLite.to(p5q1,.5,{y:"-=76",ease:Back.easeOut,delay:.05})
+  TweenLite.to(p5q2,.5,{y:"-=76",ease:Back.easeOut,delay:.05})
+  TweenLite.to(p5q3,1.5,{scale:1,ease:Elastic.easeOut,delay:.05})
+  showBtn(1.5)
+}
+
+//=====灯亮
+function p5lightLoop(){
+  TweenLite.set(p5light1,{alpha:-1})
+  TweenLite.set(p5light2,{alpha:1})
+  TweenLite.to(p5light1,1,{alpha:1,onComplete:p5lightLoop2})
+  TweenLite.to(p5light2,1,{alpha:-1,ease:Sine.easeIn})
+}
+function p5lightLoop2(){
+  TweenLite.set(p5light1,{alpha:1})
+  TweenLite.set(p5light2,{alpha:-1})
+  TweenLite.to(p5light1,1,{alpha:-1,onComplete:p5lightLoop,ease:Sine.easeIn})
+  TweenLite.to(p5light2,1,{alpha:1})
+}
+
+//===============问号飞
+var aQm=new createjs.Bitmap("img/p5qm.png")
+var QmA=[]
+
+function setFlyQm(){
+  var _n=30
+  for (var i = 0; i < _n; i++) {
+    var Qm=aQm.clone()
+    QmA.push(Qm)
+    stage_5.addChildAt(Qm,1)
+    Qm.regX=35
+    Qm.regY=75
+    Qm.x=Math.random()*640
+    Qm.y=screenH+Math.random()*150
+    TweenLite.to(Qm,1+Math.random()*1.5,{y:screenH-500+Math.random()*200,scale:0,alpha:0,onComplete:resetQm,onCompleteParams:[Qm]})
+  };
+}
+
+function resetQm(_tar){
+  if(1==1){
+    _tar.x=Math.random()*640
+    _tar.y=screenH+300
+    _tar.scale=(Math.random()*Math.random()*.5+.75)*.75
+    _tar.alpha=1
+    _tar.rotation=0
+    TweenLite.to(_tar,2+Math.random()*2,{delay:Math.random(),rotation:Math.random()*0-0,alpha:0,y:screenH-600+Math.random()*200,onComplete:resetQm,onCompleteParams:[_tar]})
+  }
+}
+///============第六页 锦囊
+var p6bg=new createjs.Bitmap("img/p6bg.jpg")
+var p6bag=new createjs.Bitmap("img/p6bag.png")
+var p6t=new createjs.Bitmap("img/p6t.png")
+
+
+var p6Mask=new createjs.Shape()
+
+
+
+function setPage6(){
+  p6Mask.graphics.beginFill("#ff0000").drawCircle(0,0,160)//.drawRect(0,0,640,screenH);
+  stage.addChildAt(p6Mask,0)
+  p6Mask.x=320
+  p6Mask.y=500
+  stage_6.mask=p6Mask
+
+  stage_6.addChild(p6bg)
+  stage_6.addChild(p6bag)
+  stage_6.addChild(p6t)
+  p6bg.scaleY=screenH/1000
+
+  TweenLite.set(p6bag,{x:320,y:screenH/2,regX:125.5,regY:151.5})
+  TweenLite.set(p6t,{x:320,y:screenH/2+173,regX:320,regY:76})
+
+  p6bag.scale=0
+
+}
+
+function ani6(){
+  p6Mask.scale=0
+  TweenLite.to(p6Mask,1,{scale:1.1,ease:Back.easeOut,onComplete:showP6})
+
+  TweenLite.to(p6bag,1,{scale:1,ease:Elastic.easeOut,delay:.5})
+
+  TweenLite.from(p6t,1,{y:"+=50",alpha:0,delay:2,onComplete:bagEffect})
+  TweenLite.set($("#btnBag"),{display:"block"})
+}
+function showP6(){
+  TweenLite.to(p6Mask,.5,{scale:6,ease:Back.easeIn,delay:.02})
+}
+function bagEffect(){
+  stage.removeChild(stage_5)
+  TweenLite.to(p6bag,1,{y:"-=20",ease:Sine.easeInOut,onComplete:p6bagLoop})
+}
+function p6bagLoop(){
+  TweenLite.to(p6bag,2,{y:"+=40",ease:Sine.easeInOut,onComplete:p6bagLoop2})
+}
+function p6bagLoop2(){
+  TweenLite.to(p6bag,2,{y:"-=40",ease:Sine.easeInOut,onComplete:p6bagLoop})
+}
+
+$("#btnBag").click(function(){
+  TweenLite.set($("#btnBag"),{display:"none"})
+  ani6end()
+})
