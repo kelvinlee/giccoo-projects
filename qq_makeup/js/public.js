@@ -587,6 +587,8 @@ var p4border=new createjs.Bitmap("img/p4border.png")
 var p4anibg=new createjs.Bitmap("img/p4anibg.jpg")
 function setPage4(){
   stage.addChild(stage_4)
+  TweenLite.from(stage_4,.5,{y:screenH,onComplete:removeStage3})
+  TweenLite.to(stage_3,.5,{y:-screenH})
   //====背景
   stage_4.addChild(p4bg)
   //p4bg.scaleY=screenH/1000
@@ -647,6 +649,10 @@ function setPage4(){
   p4setAni3()
   p4setAni4()
 }
+function removeStage3(){
+  stage.removeChild(stage_3)
+}
+
 
 $("#p4L").click(function(){
   nowP4--
@@ -754,7 +760,6 @@ var p4ani3phone=new createjs.Bitmap("img/p4ani3phone.png")
 var p4ani3papper=new createjs.Bitmap("img/p4ani3papper.png")
 var p4ani3Mask=new createjs.Shape()
 function p4setAni3(){
-  console.log("ddddd")
   p4ani3Mask.graphics.beginFill("#ff0000").drawRect(0,0,45,85);
   p4mcA[2].addChildAt(p4ani3Mask,0)
   p4ani3Mask.x=162
