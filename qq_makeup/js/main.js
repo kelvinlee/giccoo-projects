@@ -1,5 +1,6 @@
 
 $(document).ready(function load (){
+  iniListenSound()
 	loadWechatConfig();
   	wx.ready(function() {
     var shareContent;
@@ -22,6 +23,32 @@ $(document).ready(function load (){
 
 
 });
+
+
+var ifbgm=0
+var bgm=$("#bgm")[0]
+//微信端背景音乐播放
+function iniListenSound(){
+         document.addEventListener("WeixinJSBridgeReady", function(){
+             bgm.play();
+             ifbgm=1
+             TweenLite.set($("#musicOff"),{opacity:0})
+        }, false);
+}
+
+$("#musicOff").click(function(){
+  if(ifbgm==0){
+    bgm.play();
+    TweenLite.set($("#musicOff"),{opacity:0})
+  }else{
+    bgm.pause();
+    TweenLite.set($("#musicOff"),{opacity:1})
+  }
+  ifbgm++
+  if(ifbgm==2){ifbgm=0}
+
+})
+
 
 $('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
 var screenW
@@ -98,7 +125,7 @@ function ani3(){
 function ani3end(){
   console.log("gogogo")
   ifp3t=0
-  stage.removeChild(stage_3)
+  
   setPage4()
   TweenLite.set($("#logo"),{display:"none"})
   stage.removeChild(blackScreen)
