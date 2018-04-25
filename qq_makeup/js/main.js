@@ -66,6 +66,7 @@ function ani1(){
   setFlyKey()
   showBtn(4)
   addMask()
+  setTimeout(setSlide,4000)
 }
 
 function ani1end(){
@@ -133,8 +134,15 @@ var case1=new createjs.Container()
 var case2=new createjs.Container()
 var case3=new createjs.Container()
 var case4=new createjs.Container()
+
+var case1b=new createjs.Container()
+var case2b=new createjs.Container()
+var case3b=new createjs.Container()
+var case4b=new createjs.Container()
+
 var caseEnd=new createjs.Container()
 var caseA=[]
+var casebA=[]
 var caseBtnA=[[],[],[],[]]
 var caseBtnNumA=[2,3,2,1]
 
@@ -143,7 +151,7 @@ function ani6end(){
     stage.removeChild(stage_6)
   },1500)
   caseA=[case1,case2,case3,case4]
-  
+  casebA=[case1b,case2b,case3b,case4b]
   for (var i = 1; i <= 4; i++) {
     var caseBG=new createjs.Bitmap("img/casebg"+i+".jpg")
     var caseBGdown=new createjs.Bitmap("img/casebgdown.jpg")
@@ -160,14 +168,27 @@ function ani6end(){
       caseA[i-1].y=screenH
     }
 
-    for (var j = 1; j <= caseBtnNumA[i-1]; j++) {
-      
-      var caseBtn=new createjs.Bitmap("img/case"+i+"btn"+j+".png")
+    var caseBGb=new createjs.Bitmap("img/casebg"+i+".jpg")
+    var caseBGdownb=new createjs.Bitmap("img/casebgdown.jpg")
+    var caseCopyb=new createjs.Bitmap("img/case"+i+"btn.png")
+    var pinkBGb=pinkScreen.clone()
 
-      caseA[i-1].addChild(caseBtn)
-      caseBtnA[j-1].push(caseBtn)
-      TweenLite.to(caseBtn,1,{alpha:.5,delay:(j-1)*.02,onComplete:btnLoop,onCompleteParams:[caseBtn]})
-    };
+    casebA[i-1].addChild(pinkBGb)
+    casebA[i-1].addChild(caseBGb)
+    casebA[i-1].addChild(caseBGdownb)
+    casebA[i-1].addChild(caseCopyb)
+    caseBGdownb.y=screenH-408
+    stage.addChild(casebA[i-1])
+    casebA[i-1].y=screenH
+
+    // for (var j = 1; j <= caseBtnNumA[i-1]; j++) {
+      
+    //   var caseBtn=new createjs.Bitmap("img/case"+i+"btn"+j+".png")
+
+    //   caseA[i-1].addChild(caseBtn)
+    //   caseBtnA[j-1].push(caseBtn)
+    //   TweenLite.to(caseBtn,1,{alpha:.5,delay:(j-1)*.02,onComplete:btnLoop,onCompleteParams:[caseBtn]})
+    // };
 
   };
   var endTop=new createjs.Bitmap("img/endtop.jpg")
@@ -180,7 +201,8 @@ function ani6end(){
   stage.addChild(caseEnd)
   caseEnd.y=screenH
 
-  setSlide()
+  ifnowEnd=1
+  //setSlide()
   goPage()
   TweenLite.set($("#end_arrow"),{display:"block"})
 
