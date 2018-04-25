@@ -27,7 +27,7 @@ $(document).ready(function load (){
 
 var ifbgm=0
 var bgm=$("#bgm")[0]
-//微信端背景音乐播放
+//微信端背景音乐播放...
 function iniListenSound(){
          document.addEventListener("WeixinJSBridgeReady", function(){
              bgm.play();
