@@ -303,7 +303,8 @@ function showPage2(){
 //========选择题按钮
 var userAnswer=0
 var nowQ=0
-var Answer=[[1,0,0],[1,0,0],[1,0,0]]
+var Answer=[[0,1,0],[0,1,0],[0,0,1]]
+var ifAllright=1
 btnA.click(function(){
   console.log("选A")
   userAnswer=0
@@ -345,6 +346,7 @@ function goCheck(){
     TweenLite.to(p2btnA[userAnswer],1,{scale:1.1,ease:Elastic.easeOut,onComplete:nextQ})
   }else{
     console.log("答错了")
+    ifAllright=0
     
     TweenLite.to(p2wrongA[userAnswer],1.5,{scale:1,ease:Elastic.easeOut})
     TweenLite.from(p2btnA[userAnswer],1.5,{x:320+100,ease:Elastic.easeOut})
@@ -380,6 +382,7 @@ function nextQ(){
   }else{
     console.log("问题结束！")
     TweenLite.set(p2wrongA[2],{scale:0})
+    TweenLite.set(p2rightA[2],{scale:0})
     for (var i = 0; i < p2A.length; i++) {
       TweenLite.to(p2A[i],.5,{alpha:0,scale:1,x:320,y:"+=100",delay:.2-i*.05})
     };
@@ -389,6 +392,7 @@ function nextQ(){
 
 var endQ_a=new createjs.Bitmap("img/p2_endbtn.png")
 var p2q4=new createjs.Bitmap("img/p2q4.png")
+var p2q4b=new createjs.Bitmap("img/p2q4b.png")
 function endQ(){
   TweenLite.set(btnC,{display:"block",delay:1})
   
@@ -399,7 +403,12 @@ function endQ(){
   p2btn3.addChild(endQ_a)
   TweenLite.set(p2q,{y:"-=100"})
   TweenLite.to(p2q,.5,{alpha:1})
-  p2q.addChild(p2q4)
+  if(ifAllright==1){
+    p2q.addChild(p2q4b)
+  }else{
+    p2q.addChild(p2q4)
+  }
+  
   p2q3.alpha=0
 }
 
@@ -996,21 +1005,33 @@ var case3btn2=$("#case3btn2")
 
 var case4btn1=$("#case4btn1")
 
-var casebtnDivA=[[case1btn1,case1btn2],[case2btn1,case2btn2,case2btn3],[case3btn1,case3btn2],[case4btn1],[]]
+var casebtnDivA=[[],[case1btn1,case1btn2],[],[case2btn1,case2btn2,case2btn3],[],[case3btn1,case3btn2],[],[case4btn1],[]]
 
 function setCaseBtn(){
-  casebtnDivA=[[case1btn1,case1btn2],[case2btn1,case2btn2,case2btn3],[case3btn1,case3btn2],[case4btn1],[]]
-  TweenLite.set(case1btn1,{height:35*screenW/640,width:103*screenW/640,left:360*screenW/640,top:765*screenW/640})
-  TweenLite.set(case1btn2,{height:35*screenW/640,width:106*screenW/640,left:484*screenW/640,top:765*screenW/640})
+  casebtnDivA=[[],[case1btn1,case1btn2],[],[case2btn1,case2btn2,case2btn3],[],[case3btn1,case3btn2],[],[case4btn1],[]]
+  // TweenLite.set(case1btn1,{height:35*screenW/640,width:103*screenW/640,left:360*screenW/640,top:765*screenW/640})
+  // TweenLite.set(case1btn2,{height:35*screenW/640,width:106*screenW/640,left:484*screenW/640,top:765*screenW/640})
 
-  TweenLite.set(case2btn1,{height:35*screenW/640,width:149*screenW/640,left:212*screenW/640,top:770*screenW/640})
-  TweenLite.set(case2btn2,{height:35*screenW/640,width:92*screenW/640,left:382*screenW/640,top:770*screenW/640})
-  TweenLite.set(case2btn3,{height:35*screenW/640,width:95*screenW/640,left:495*screenW/640,top:770*screenW/640})
+  // TweenLite.set(case2btn1,{height:35*screenW/640,width:149*screenW/640,left:212*screenW/640,top:770*screenW/640})
+  // TweenLite.set(case2btn2,{height:35*screenW/640,width:92*screenW/640,left:382*screenW/640,top:770*screenW/640})
+  // TweenLite.set(case2btn3,{height:35*screenW/640,width:95*screenW/640,left:495*screenW/640,top:770*screenW/640})
 
-  TweenLite.set(case3btn1,{height:35*screenW/640,width:150*screenW/640,left:318*screenW/640,top:802*screenW/640})
-  TweenLite.set(case3btn2,{height:35*screenW/640,width:100*screenW/640,left:490*screenW/640,top:802*screenW/640})
+  // TweenLite.set(case3btn1,{height:35*screenW/640,width:150*screenW/640,left:318*screenW/640,top:802*screenW/640})
+  // TweenLite.set(case3btn2,{height:35*screenW/640,width:100*screenW/640,left:490*screenW/640,top:802*screenW/640})
 
-  TweenLite.set(case4btn1,{height:35*screenW/640,width:105*screenW/640,left:486*screenW/640,top:745*screenW/640})
+  // TweenLite.set(case4btn1,{height:35*screenW/640,width:105*screenW/640,left:486*screenW/640,top:745*screenW/640})
+
+  TweenLite.set(case1btn1,{height:71*screenW/640,width:640*screenW/640,left:0*screenW/640,top:406*screenW/640})
+  TweenLite.set(case1btn2,{height:71*screenW/640,width:640*screenW/640,left:0*screenW/640,top:506*screenW/640})
+
+  TweenLite.set(case2btn1,{height:71*screenW/640,width:640*screenW/640,left:0*screenW/640,top:406*screenW/640})
+  TweenLite.set(case2btn2,{height:71*screenW/640,width:640*screenW/640,left:0*screenW/640,top:506*screenW/640})
+  TweenLite.set(case2btn3,{height:71*screenW/640,width:640*screenW/640,left:0*screenW/640,top:606*screenW/640})
+
+  TweenLite.set(case3btn1,{height:71*screenW/640,width:640*screenW/640,left:0*screenW/640,top:406*screenW/640})
+  TweenLite.set(case3btn2,{height:71*screenW/640,width:640*screenW/640,left:0*screenW/640,top:506*screenW/640})
+
+  TweenLite.set(case4btn1,{height:71*screenW/640,width:640*screenW/640,left:0*screenW/640,top:406*screenW/640})
 }
 
 case1btn1.click(function(){
@@ -1044,10 +1065,12 @@ case4btn1.click(function(){
 function showCaseFuc(_tar){
   TweenLite.set(_tar,{display:"block",opacity:0})
   TweenLite.to(_tar,.5,{opacity:1})
+  $(".closeBtn").css({display:"block"})
 }
 
 $(".closeBtn").click(function(){
   $(".casePage").css({display:"none"})
+  $(".closeBtn").css({display:"none"})
 })
 
 //=====================翻页＝＝＝＝＝＝＝＝＝＝＝ 
@@ -1057,10 +1080,10 @@ var startY = 0;
 var startScrollTop;
 var pageUpDown =0
 var sliderA=[]
-
+var ifnowEnd=0
 
 function setSlide(){
-  sliderA=[case1,case2,case3,case4,caseEnd]
+  sliderA=[case1,case1b,case2,case2b,case3,case3b,case4,case4b,caseEnd]
   // $('.content')[0].addEventListener('touchstart',startTouch,false)
   // $('.content')[0].addEventListener('touchmove',moveTouch,false)
   // $('.content')[0].addEventListener('touchend',endTouch,false)
@@ -1080,7 +1103,7 @@ function startTouch(event){
       event.preventDefault();
       if (nowY-startY>80&&nowCase!=0) {
         pageUpDown=1
-      }else if (nowY-startY< -80&&nowCase!=4) {
+      }else if (nowY-startY< -80&&nowCase!=8) {
         pageUpDown=-1
       }else{
         pageUpDown=0
@@ -1089,12 +1112,36 @@ function startTouch(event){
     function endTouch(event){
       if (pageUpDown == 1) {
         //alert("上一页")
-        nowCase--
-        goPage()
+        if(ifnowEnd==1){
+          nowCase--
+          goPage()
+        }else{
+
+        }
+        
       }else if (pageUpDown == -1) {
         //alert("下一页")
-        nowCase++
-        goPage()
+        if(ifnowEnd==1){
+          nowCase++
+          goPage()
+        }else if(btn_arrow.css("display")=="block"){
+          nowPage++
+        TweenLite.set(btn_arrow,{display:"none"})
+          switch (nowPage){
+            case 2:
+              ani1end()
+              break;
+            case 3:
+              ani3end()
+              break;
+            case 4:
+              ani4end()
+              break;
+            case 5:
+              ani5end()
+              break;
+          }
+        }
       }else if (pageUpDown==0) {
         //alert("不翻页")
       };  
@@ -1106,7 +1153,7 @@ function startTouch(event){
         };
         if (i==nowCase) {
           TweenLite.to(sliderA[i],.5,{y:0})
-          if(i==4){TweenLite.set($("#end_arrow"),{display:"none"})}else{TweenLite.set($("#end_arrow"),{display:"block"})}
+          if(i==8){TweenLite.set($("#end_arrow"),{display:"none"})}else{TweenLite.set($("#end_arrow"),{display:"block"})}
           
 
 
