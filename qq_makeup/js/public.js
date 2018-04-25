@@ -1066,11 +1066,13 @@ function showCaseFuc(_tar){
   TweenLite.set(_tar,{display:"block",opacity:0})
   TweenLite.to(_tar,.5,{opacity:1})
   $(".closeBtn").css({display:"block"})
+  $('body')[0].removeEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
 }
 
 $(".closeBtn").click(function(){
   $(".casePage").css({display:"none"})
   $(".closeBtn").css({display:"none"})
+  $('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
 })
 
 //=====================翻页＝＝＝＝＝＝＝＝＝＝＝ 
