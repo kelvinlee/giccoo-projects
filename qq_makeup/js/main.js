@@ -50,7 +50,7 @@ $("#musicOff").click(function(){
 })
 
 
-$('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
+//$('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
 var screenW
 var screenH
 
