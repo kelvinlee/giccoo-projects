@@ -18,11 +18,18 @@ $(document).ready(function load (){
     return wx.onMenuShareWeibo(shareContent);
   });
 
+
+  
+
+
+
   initAll()
 
 
 
 });
+
+
 
 
 var ifbgm=0
