@@ -585,6 +585,11 @@ var p4bgA=[]
 var p4border=new createjs.Bitmap("img/p4border.png")
 
 var p4anibg=new createjs.Bitmap("img/p4anibg.jpg")
+
+var ani1btn=$("#ani1")
+var ani2btn=$("#ani2")
+var ani3btn=$("#ani3")
+var ani4btn=$("#ani4")
 function setPage4(){
   stage.addChild(stage_4)
   TweenLite.from(stage_4,.5,{y:screenH,onComplete:removeStage3})
@@ -648,11 +653,33 @@ function setPage4(){
   p4setAni2()
   p4setAni3()
   p4setAni4()
+
+  TweenLite.set(ani1btn,{display:"block",width:screenW/2,height:screenW/2,x:0,y:0})
+  TweenLite.set(ani2btn,{display:"block",width:screenW/2,height:screenW/2,x:screenW/2,y:0})
+  TweenLite.set(ani3btn,{display:"block",width:screenW/2,height:screenW/2,x:0,y:screenW/2})
+  TweenLite.set(ani4btn,{display:"block",width:screenW/2,height:screenW/2,x:screenW/2,y:screenW/2})
+
 }
 function removeStage3(){
   stage.removeChild(stage_3)
 }
 
+ani1btn.click(function(){
+  nowP4=0
+  p4change()
+})
+ani2btn.click(function(){
+  nowP4=1
+  p4change()
+})
+ani3btn.click(function(){
+  nowP4=2
+  p4change()
+})
+ani4btn.click(function(){
+  nowP4=3
+  p4change()
+})
 
 $("#p4L").click(function(){
   nowP4--
@@ -1010,10 +1037,10 @@ var case3btn2=$("#case3btn2")
 
 var case4btn1=$("#case4btn1")
 
-var casebtnDivA=[[],[case1btn1,case1btn2],[],[case2btn1,case2btn2,case2btn3],[],[case3btn1,case3btn2],[],[case4btn1],[]]
+var casebtnDivA=[[],[case1btn1,case1btn2],[],[case2btn1,case2btn2,case2btn3],[],[case3btn1,case3btn2],[case4btn1],[]]
 
 function setCaseBtn(){
-  casebtnDivA=[[],[case1btn1,case1btn2],[],[case2btn1,case2btn2,case2btn3],[],[case3btn1,case3btn2],[],[case4btn1],[]]
+  casebtnDivA=[[],[case1btn1,case1btn2],[],[case2btn1,case2btn2,case2btn3],[],[case3btn1,case3btn2],[case4btn1],[]]
   // TweenLite.set(case1btn1,{height:35*screenW/640,width:103*screenW/640,left:360*screenW/640,top:765*screenW/640})
   // TweenLite.set(case1btn2,{height:35*screenW/640,width:106*screenW/640,left:484*screenW/640,top:765*screenW/640})
 
@@ -1036,7 +1063,7 @@ function setCaseBtn(){
   TweenLite.set(case3btn1,{height:71*screenW/640,width:640*screenW/640,left:0*screenW/640,top:406*screenW/640})
   TweenLite.set(case3btn2,{height:71*screenW/640,width:640*screenW/640,left:0*screenW/640,top:506*screenW/640})
 
-  TweenLite.set(case4btn1,{height:71*screenW/640,width:640*screenW/640,left:0*screenW/640,top:406*screenW/640})
+  TweenLite.set(case4btn1,{height:71*screenW/640,width:640*screenW/640,left:0*screenW/640,top:(406+396)*screenW/640})
 }
 
 case1btn1.click(function(){
@@ -1090,7 +1117,7 @@ var sliderA=[]
 var ifnowEnd=0
 
 function setSlide(){
-  sliderA=[case1,case1b,case2,case2b,case3,case3b,case4,case4b,caseEnd]
+  sliderA=[case1,case1b,case2,case2b,case3,case3b,case4,caseEnd]
   // $('.content')[0].addEventListener('touchstart',startTouch,false)
   // $('.content')[0].addEventListener('touchmove',moveTouch,false)
   // $('.content')[0].addEventListener('touchend',endTouch,false)
@@ -1110,7 +1137,7 @@ function startTouch(event){
       event.preventDefault();
       if (nowY-startY>80&&nowCase!=0) {
         pageUpDown=1
-      }else if (nowY-startY< -80&&nowCase!=8) {
+      }else if (nowY-startY< -80&&nowCase!=7) {
         pageUpDown=-1
       }else{
         pageUpDown=0
@@ -1160,7 +1187,7 @@ function startTouch(event){
         };
         if (i==nowCase) {
           TweenLite.to(sliderA[i],.5,{y:0})
-          if(i==8){TweenLite.set($("#end_arrow"),{display:"none"})}else{TweenLite.set($("#end_arrow"),{display:"block"})}
+          if(i==7){TweenLite.set($("#end_arrow"),{display:"none"})}else{TweenLite.set($("#end_arrow"),{display:"block"})}
           
 
 

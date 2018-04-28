@@ -136,6 +136,10 @@ function ani3end(){
 }
 var stage_5=new createjs.Container()
 function ani4end(){
+  TweenLite.set(ani1btn,{display:"none"})
+  TweenLite.set(ani2btn,{display:"none"})
+  TweenLite.set(ani3btn,{display:"none"})
+  TweenLite.set(ani4btn,{display:"none"})
   console.log("问题来了")
   TweenLite.to(stage_4,.75,{y:-screenH,onComplete:ani5})
   stage.addChild(stage_5)
