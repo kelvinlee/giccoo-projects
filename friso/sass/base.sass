@@ -6,7 +6,7 @@
 $debug : true
 $cdn : "../"
 @if not $debug
-	$cdn : "http://image.giccoo.com/projects/CX5/"
+	$cdn : "http://image.giccoo.com/projects/friso/"
 
 // animation, delay, duration
 @for $i from 1 through 30
@@ -62,6 +62,11 @@ body.pop-open
 	+hide
 	+b($cdn+"img/m-pop-bg.png",repeat,top,center,100% 1px)
 	z-index: 10009
+	.content
+		font-size: 0
+		.close
+			// min-height: 10%
+			+iw(60,640,100%)
 	&.on
 		+show
 	.close
@@ -207,7 +212,7 @@ body.pop-open
 			+tl(50%,50%)
 		.question-list
 			.question-box
-				+b($cdn+"img/m-q-bg.jpg",no-repeat,top,center,100% 100%)
+				+b($cdn+"img/m-q-bg-2.jpg",no-repeat,top,center,100% 100%)
 				margin-top: 45px
 				padding-bottom: 40px
 				+posr
@@ -292,44 +297,68 @@ body.pop-open
 						+hide
 					.outlink
 						+hide
-				// &.small
-				// 	background: none
-				// 	padding-bottom: 10px
-				// 	margin-top: 25px
-				// 	.title
-				// 		+b($cdn+"img/m-question-bg.png",repeat,top,center,100% 100%)
-				// 		+p(10px 10%)
-				// 		p
-				// 			+hide
-				// 		.icon
-				// 			+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
-				// 			+wh(20px,20px)
-				// 			+posa
-				// 			+tr(50%,10px)
-				// 			left: auto
-				// 			margin-top: -10px
-				// 	.answer-box
-				// 		margin-top: -10px
-				// 		padding-top: 8px
-				// 		+hide
-				// 	.answer
-				// 		&:last-child
-				// 			padding-bottom: 20px
-				// 	.outlink
-				// 		+hide
-				// &.small.on
-				// 	.icon
-				// 		+b($cdn+"img/m-icon-more.png",no-repeat,left,center,contain)
-				// 		+transform(scale3d(1,-1,1))
-				// 	.answer-box
-				// 		+show
-				// 	.outlink
-				// 		+show
-						
 
+		
+		.new-list
+			.question-list
+				.question-box
+					&.new
+						.answer-box
+							border: none
+							.answer
+								+p(8px 15px)
+								&:first-child
+									margin-top: 0
+								+posr
+								border: solid 1px #a7852c
+								margin-top: 5%
+								border-radius: 6px
+								&:nth-child(1)
+									.likeanswer
+										margin-right: 100/640*0.9*110%
+									&:after
+										content: " "
+										+posa
+										+tr(0,-2%)
+										+iw(110,640*0.9,100%)
+										+b($cdn+"img/list-icon-1.png",no-repeat,top,center,contain)
+										+h(40%)
+										margin-top: -4px
+								&:nth-child(2)
+									.likeanswer
+										margin-right: 100/640*0.9*110%
+									&:after
+										content: " "
+										+posa
+										+tr(0,-2%)
+										+iw(110,640*0.9,100%)
+										+b($cdn+"img/list-icon-2.png",no-repeat,top,center,contain)
+										+h(40%)
+										margin-top: -4px
+								&:nth-child(3)
+									.likeanswer
+										margin-right: 100/640*0.9*110%
+									&:after
+										content: " "
+										+posa
+										+tr(0,-2%)
+										+iw(110,640*0.9,100%)
+										+b($cdn+"img/list-icon-3.png",no-repeat,top,center,contain)
+										+h(40%)
+										margin-top: -4px
+								&:nth-child(4)
+									.likeanswer
+										margin-right: 100/640*0.9*110%
+									&:after
+										content: " "
+										+posa
+										+tr(0,-2%)
+										+iw(110,640*0.9,100%)
+										+b($cdn+"img/list-icon-4.png",no-repeat,top,center,contain)
+										+h(40%)
+										margin-top: -4px
 .outlink
 	z-index: 99
-
 
 .answer
 	+posr
@@ -355,3 +384,127 @@ body.pop-open
 			line-height: 17px
 			vertical-align: top
 
+p.center
+	+text-center
+
+.message
+	+w(90%)
+	+m
+	+box
+	color: #7a521d
+	p
+		+m
+		+p
+		+font-size(0.8rem)
+	.message-item
+		+w(80%)
+		+b($cdn+"img/message-bg.png",no-repeat,left,center, 100% 100%)
+		+p(5%)
+		+box
+		margin-top: 5%
+		padding-left: 10%
+		.name
+			+text-right
+			font-weight: bold
+			margin-top: 0.2em
+		&.right
+			padding-left: 5%
+			padding-right: 10%
+			+b($cdn+"img/message-right-bg.png",no-repeat,left,center, 100% 100%)
+			margin-left: 20%
+
+	.message-text
+		line-height: 1.8em
+		font-weight: bold
+		margin-top: 5%
+
+	.outlink
+		+show-inline
+		+m
+		+iw(255,640,100%)
+		margin-top: 5%
+
+.news
+	.news-item
+		+box
+		// +p(10%)
+		+w
+		margin-top: 5%
+		color: #784c03
+		.news-header
+			+p(0 7%)
+			+box
+			+w
+			.avatar
+				+w(20%)	
+				+show-inline
+			.desc
+				+w(70%)
+				+show-inline
+				vertical-align: top
+				+box
+				padding-top: 2.6%
+				margin-left: 5%
+				.name
+					+font-size(1rem)
+					font-weight: bold
+					line-height: 1.4em
+				.subtitle
+					+font-size(0.8rem)
+					line-height: 1.4em
+		.news-content
+			+box
+			+p(5% 10%)
+			+b($cdn+"img/news-bg.png",no-repeat,center,center,100% 100%)
+			h1
+				padding-top: 0.4em
+				+font-size(1.2rem)
+				+m
+				+text-center
+				+w(80%)
+			p
+				+font-size(0.8rem)
+				line-height: 1.4em
+		.outline
+			+m
+			+posr
+			+w(35%)
+			+show-inline
+			margin-left: 32.5%
+			+transform(translate3d(0,-50%,0))
+.tabs
+	+posr
+	.bg
+		.tab-bg-1,.tab-bg-2
+			+hide
+	&.t1
+		.bg
+			.tab-bg-1
+				+show
+	&.t2
+		.bg
+			.tab-bg-2
+				+show
+	.tab-1
+		+tr
+	.tab-2
+		+tl
+	.tab-1,.tab-2
+		+hide
+		+posa
+		+w(50%)
+		+h
+		z-index: 9
+		&.on
+			+show
+.tab
+	&.tab-1,&.tab-2
+		+hide
+		&.on
+			+show
+.tab
+	.age
+		margin-top: 5%
+
+.hide
+	+hide
