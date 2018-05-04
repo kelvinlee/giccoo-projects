@@ -1495,6 +1495,22 @@ ul {
   -webkit-animation-name: second;
           animation-name: second; }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn; }
+
 html, body {
   width: 100%;
   height: 100%; }
@@ -1552,7 +1568,13 @@ body.pop-open {
   background: url("../img/m-pop-bg.png") repeat top center;
   background-size: 100% 1px;
   background-color: transparent;
-  z-index: 10009; }
+  z-index: 10009;
+  -webkit-animation: fadeIn 1s ease-out;
+          animation: fadeIn 1s ease-out;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial; }
   .pop .content {
     font-size: 0; }
     .pop .content .close {
@@ -1777,6 +1799,7 @@ body.pop-open {
             .main .tzw .content .answer-box .answer .by {
               font-size: 0.96rem; } }
         .main .tzw .content .answer-box .answer .answer-text {
+          margin: 0 auto;
           display: inline-block;
           font-size: 0.8rem;
           width: 100%;
@@ -1944,6 +1967,7 @@ body.pop-open {
               .main .q-list .question-list .question-box .answer-box .answer .by {
                 font-size: 0.96rem; } }
           .main .q-list .question-list .question-box .answer-box .answer .answer-text {
+            margin: 0 auto;
             display: inline-block;
             font-size: 0.8rem;
             width: 100%;
@@ -1961,6 +1985,8 @@ body.pop-open {
             @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
               .main .q-list .question-list .question-box .answer-box .answer .answer-text {
                 font-size: 0.96rem; } }
+            .main .q-list .question-list .question-box .answer-box .answer .answer-text a {
+              color: #3b3b3d; }
             .main .q-list .question-list .question-box .answer-box .answer .answer-text img {
               vertical-align: top;
               float: left;

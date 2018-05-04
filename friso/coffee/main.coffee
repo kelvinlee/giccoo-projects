@@ -14,7 +14,7 @@ shareContent =
 	success: ->
 	cancel: ->
 # defaultInfo = if localStorage.getItem("defaultInfo") then JSON.parse(localStorage.getItem("defaultInfo")) else 
-defaultInfo = if localStorage.getItem("defaultInfo") then JSON.parse(localStorage.getItem("defaultInfo")) else [
+defaultInfo =[
 	{
 		id: 32,
 		question: "如果有天我在牛奶里游泳，会看到怎样的世界？",
@@ -31,7 +31,7 @@ defaultInfo = if localStorage.getItem("defaultInfo") then JSON.parse(localStorag
 		answer3by: "大球球",
 		answer3img: null,
 		answer3like: 44,
-		answer4: "如果宝宝能跳入奶瓶中，在牛奶中畅游，就会看到一起游泳的还有这些牛奶中的营养小功臣：天然乳脂OPO、天然乳磷脂和中短链脂肪酸等。它们「各司其职」，天然OPO助力营养和能量的吸收，中短链脂肪酸多方位守护身体强健，天然乳磷脂提高宝宝认知力，让宝宝在想象中无限畅游～",
+		answer4: "如果宝宝能跳入奶瓶中，在牛奶中畅游，就会看到一起游泳的还有这些牛奶中的营养小功臣：<a href=\'https://zhuanlan.zhihu.com/p/36008839\'>天然乳脂OPO</a>、<a href=\'https://zhuanlan.zhihu.com/p/36149483\'>天然乳磷脂</a>和<a href=\'https://zhuanlan.zhihu.com/p/36188149\'>中短链脂肪酸</a>等。它们「各司其职」，天然OPO助力营养和能量的吸收，中短链脂肪酸多方位守护身体强健，天然乳磷脂提高宝宝认知力，让宝宝在想象中无限畅游～",
 		answer4by: "皇家美素佳儿",
 		answer4img: null,
 		answer4like: 34,
@@ -57,7 +57,7 @@ defaultInfo = if localStorage.getItem("defaultInfo") then JSON.parse(localStorag
 		answer3by: "Norinori",
 		answer3img: null,
 		answer3like: 60,
-		answer4: "奶牛的心情非常重要，好心情的奶牛才能产出高品质的鲜奶。荷兰奶牛的乳脂率和乳脂蛋白率分别为4.4%和3.42%，普遍高于其他欧洲国家。 正是取自荷兰菲仕兰皇家天然牧场的奶源，皇家美素佳儿凝萃了天然乳脂精华，助力宝宝多方位成长，延续母爱的力量。所以，宝宝不用把奶牛带回家，就能体验到把奶牛当家人的味道啦。",
+		answer4: "奶牛的心情非常重要，好心情的奶牛才能产出高品质的鲜奶。荷兰奶牛的乳脂率和乳脂蛋白率分别为4.4%和3.42%，普遍高于其他欧洲国家。 正是取自荷兰菲仕兰皇家天然牧场的奶源，皇家美素佳儿凝萃了<a href=\'https://zhuanlan.zhihu.com/p/35918303\'>天然乳脂精华</a>，助力宝宝多方位成长，延续母爱的力量。所以，宝宝不用把奶牛带回家，就能体验到把奶牛当家人的味道啦。",
 		answer4by: "皇家美素佳儿",
 		answer4img: null,
 		answer4like: 40,
@@ -83,7 +83,7 @@ defaultInfo = if localStorage.getItem("defaultInfo") then JSON.parse(localStorag
 		answer3by: "Archey",
 		answer3img: null,
 		answer3like: 44,
-		answer4: "其实不光光是小牛，妈妈的味道也是我们人类宝宝最早的记忆，刚出生的宝宝，就能够分辨出妈妈的气味，熟悉妈妈的怀抱。皇家美素佳儿直取皇家第一道奶源，凝萃新鲜牛奶中珍贵的天然营养精华——天然OPO类似结构脂、天然中短链脂肪酸和天然乳磷脂，天然延续母爱力量，让宝宝找到「妈妈的味道」。",
+		answer4: "其实不光光是小牛，妈妈的味道也是我们人类宝宝最早的记忆，刚出生的宝宝，就能够分辨出妈妈的气味，熟悉妈妈的怀抱。皇家美素佳儿直取皇家第一道奶源，凝萃新鲜牛奶中珍贵的天然营养精华——<a href=\'https://zhuanlan.zhihu.com/p/36008839\'>天然OPO类似结构脂</a>、<a href=\'https://zhuanlan.zhihu.com/p/36188149\'>天然中短链脂肪酸</a>和<a href=\'https://zhuanlan.zhihu.com/p/36149483\'>天然乳磷脂</a>，天然延续母爱力量，让宝宝找到「妈妈的味道」。",
 		answer4by: "皇家美素佳儿",
 		answer4img: null,
 		answer4like: 23,
@@ -109,7 +109,7 @@ defaultInfo = if localStorage.getItem("defaultInfo") then JSON.parse(localStorag
 		answer3by: "且小瑞",
 		answer3img: null,
 		answer3like: 23,
-		answer4: "皇家美素佳儿直取皇家第一道奶源，萃取液态鲜奶中的天然乳脂，奶粉粉质如同雪花般质地细腻，冲泡时像牛奶冰沙一样入水即溶，充分保留了牛奶中珍贵的天然营养精华，助力宝宝多方位强健成长。",
+		answer4: "皇家美素佳儿直取皇家第一道奶源，萃取液态鲜奶中的<a href=\'https://zhuanlan.zhihu.com/p/35918303\'>天然乳脂</a>，奶粉粉质如同雪花般质地细腻，冲泡时像牛奶冰沙一样入水即溶，充分保留了牛奶中珍贵的天然营养精华，助力宝宝多方位强健成长。",
 		answer4by: "皇家美素佳儿",
 		answer4img: null,
 		answer4like: 34,
@@ -387,7 +387,7 @@ defaultInfo = if localStorage.getItem("defaultInfo") then JSON.parse(localStorag
 		answer1by: "汽车奇谈高小强",
 		answer1img: "",
 		answer1like: 71,
-		answer2: "奔跑起来，才会有风，皇家美素佳儿助力宝宝全方位成长，让宝宝自由奔跑，探索自然。宝宝想知道答案吗，首先要有一个壮壮的身体哦～",
+		answer2: "奔跑起来，才会有风，皇家美素佳儿助力宝宝多方位成长，让宝宝自由奔跑，探索自然。宝宝想知道答案吗，首先要有一个壮壮的身体哦～",
 		answer2by: "皇家美素佳儿",
 		answer2img: null,
 		answer2like: 27,
@@ -900,9 +900,7 @@ defaultInfo = if localStorage.getItem("defaultInfo") then JSON.parse(localStorag
 		sort: 1
 	}
 ]
-
 riot.mount("*")
-
 
 updateLoad = ->
 	# return false
@@ -991,6 +989,8 @@ window.onload = ->
 	$(".main .logo").on "click", (evt)->
 			$("body").addClass "pop-open"
 			$(".pop").addClass "on"
+			$(".pop img[data-src]").each (index)->
+				$(this).attr "src",$(this).attr "data-src"
 			try
 				scrollTop = document.scrollingElement.scrollTop
 				document.body.style.top = -scrollTop + 'px'
@@ -1041,6 +1041,7 @@ IsPC = ->
 			break
 		v++
 	flag
+
 loadWechatConfig = ->
 	url = encodeURIComponent window.location.href.split("#")[0]
 	hm = document.createElement('script')
@@ -1048,10 +1049,12 @@ loadWechatConfig = ->
 	s = document.getElementsByTagName('script')[0]
 	s.parentNode.insertBefore hm, s
 	return
+
 SendNote = (msg,time = 3000)->
 	$("body").append("<note title='"+msg+"' time='#{time}'></note>")
 	riot.mount("note")
 _loader = {}
+
 Loader = (id,title = "",type = "ball",time = 0,more = "")->
 	if $("#"+id).length > 0
 		return _loader[id].loadend()

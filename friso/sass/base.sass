@@ -20,6 +20,11 @@ $cdn : "../"
 		+transform(rotate(0deg))
 	100%
 		+transform(rotate(360deg))
++keyframes(fadeIn)
+	0%
+		opacity: 0
+	100%
+		opacity: 1
 
 html,body
 	+w
@@ -62,6 +67,7 @@ body.pop-open
 	+hide
 	+b($cdn+"img/m-pop-bg.png",repeat,top,center,100% 1px)
 	z-index: 10009
+	+animation(fadeIn,1s,ease-out)
 	.content
 		font-size: 0
 		.close
@@ -186,6 +192,7 @@ body.pop-open
 						// +p(6px 0)
 						padding-bottom: 6px
 					.answer-text
+						+m
 						display: inline-block
 						+font-size(0.8rem)
 						+w
@@ -276,11 +283,16 @@ body.pop-open
 							// +p(6px 0)
 							padding-bottom: 6px
 						.answer-text
+							+m
 							display: inline-block
 							+font-size(0.8rem)
 							+w
 							line-height: 1.2em
 							color: #3b3b3d
+							a
+								color: #3b3b3d	
+								// text-decoration: none
+								// font-weight: bold
 							img
 								vertical-align: top
 								float: left
