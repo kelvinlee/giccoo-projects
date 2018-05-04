@@ -94,7 +94,7 @@ getdefaultTop = false;
 
 shareContent = {
   title: "嘿,这里是发现天真和脑洞的「知乎北鼻版」",
-  desc: "小宝宝的问题千奇百怪，又萌又天真。如果有一个「知乎北鼻版」 会发生神马?",
+  desc: "天真问·认真答第二季奶萌回归！用最萌脑洞打开牛奶的神秘世界。",
   link: "http://m.giccoo.com/friso/",
   imgUrl: "http://m.giccoo.com/friso/img/share.jpg",
   success: function success() {},
