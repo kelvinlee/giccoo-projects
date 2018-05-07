@@ -1,0 +1,83 @@
+extends ../libs/jade/layout-clean
+block title
+	| 24小时健康享新家
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	//- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+	link(rel="stylesheet",href="//image.giccoo.com/projects/libs/css/animate.min.css")
+	link(rel="stylesheet",href="css/base.css")
+	//- script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
+
+block content
+	- url = "//image.giccoo.com/projects/lancome"
+	- url = "."
+	#load.loading
+		.content
+			.record
+				img(src="#{url}/img/item.png")
+			#loadtext.load-text(v-show="mount",style="display: none") Loading...{{progress}}%
+	#main.main(v-show="mount",style="display: none",:style="{width: w+'px',height: h+'px'}")
+		audio#bgm(:src="musiclink")
+		.page.page-home
+			.bg#stars
+			.content(v-show="homepageShow",@click="gotoAnswer")
+				.building.fadeIn.animated.duration-30.delay-10
+					img(src="#{url}/img/building.png")
+				.title
+					-for (var i=1; i<= 5; i++)
+						.t(class!="title-#{i} fadeInUp animated duration-12 delay-#{i*3}")
+							img(src="#{url}/img/title-#{i}.png")
+		transition(name="page-fade")
+			.page.page-answer(v-show="answerPageShow")
+				.answers(:class!="'on-'+now")
+					.bg#answer-bg
+					.answer.fadeIn.animated.duration-8.delay-3(v-for="item,index in answerList",:class!="'answer-'+index")
+						h1 {{item.question}}
+						.answer-list
+							.item(v-for="value,ind in item.answers",@click="select(ind)",:class="{right: answers[index] == ind}") {{value}}
+						.btn(@click="next")
+							img(v-if="index <= 1",src="#{url}/img/btn-next.png")
+							img(v-if="index > 1",src="#{url}/img/btn-done.png")
+		transition(name="page-fade")
+			.page.page-wait(v-show="waitPageShow")
+		transition(name="page-fade")
+			.page.page-ugc(v-show="ugcPageShow")
+				.bg#ugcbg
+					img(:src="ugcbg")
+					// canvas#ugc(width="640",height="1138")
+				.btn(v-if="wy")
+					img(src="#{url}/img/btn-save.png")
+				.btn(v-if="!wy")
+					img(src="#{url}/img/btn-long-save.png")
+					img.ugc(:src="ugc")
+		
+		transition(name="page-fade")
+			.page.page-last(v-show="lastPageShow")
+				.bg
+					a(href="#")
+						img(src="#{url}/img/last-page.jpg")
+
+
+block js
+	- url = "/"
+	script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+	script(src="/libs/js/min/pixi.min.js")
+	script(src="/libs/js/min/Tween.min.js")
+	//- script(src="/libs/js/min/jquery.min.js")
+	//- script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+	script(src="js/main.js?v=1")
+	
+
+
+
+	
