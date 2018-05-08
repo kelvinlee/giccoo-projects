@@ -52,7 +52,7 @@ block content
 					p Loading...
 		transition(name="page-fade")
 			.page.page-ugc(v-show="ugcPageShow")
-				.bg#ugcbg
+				.bg#ugcbg(:style="{transform: 'scale('+(1-smaller)+','+(1-smaller)+')'}")
 					img(:src="ugcbg")
 					img.ugc(:src="ugc")
 					// canvas#ugc(width="640",height="1138")
@@ -64,7 +64,7 @@ block content
 		
 		transition(name="page-fade")
 			.page.page-last(v-show="lastPageShow")
-				.bg
+				.bg(:style="{transform: 'scale('+(1-smaller)+','+(1-smaller)+')'}")
 					a(href="#")
 						img(src="#{url}/img/last-page.jpg")
 

@@ -156,7 +156,7 @@ _animate = function animate(time) {
 requestAnimationFrame(_animate);
 
 init = function init() {
-  var TrueH, TrueW;
+  var TrueH, TrueW, smaller;
   TrueH = document.documentElement.clientHeight;
   TrueW = document.documentElement.clientWidth;
   console.log(TrueW, TrueH);
@@ -168,6 +168,7 @@ init = function init() {
   if (TrueH >= 1138) {
     TrueH = 1138;
   }
+  smaller = TrueW / TrueH - 640 / 1138;
   load = new Vue({
     el: "#loadtext",
     data: {
@@ -218,6 +219,7 @@ init = function init() {
       audio: null,
       w: TrueW,
       h: TrueH,
+      smaller: smaller,
       now: 0,
       answerCanvas: null,
       score: 0,
@@ -1058,7 +1060,7 @@ Tn = function Tn() {
 
 neteaseShareImage = function neteaseShareImage() {
   var picUrl, redirectUrl, title1;
-  title1 = "吾有心语，享，往远方";
+  title1 = "点击测试你的孤独指数";
   picUrl = "https://image.giccoo.com/upload/lancome/" + main.shareImageLink + "@!large";
   redirectUrl = "https://m.giccoo.com/lancome/";
   console.log("orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1));

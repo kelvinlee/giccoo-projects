@@ -87,7 +87,7 @@ init = ->
 	# document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
 	TrueW = 640 if TrueW >= 640
 	TrueH = 1138 if TrueH >= 1138
-
+	smaller = (TrueW/TrueH-640/1138)
 	load = new Vue
 		el: "#loadtext"
 		data:
@@ -130,6 +130,7 @@ init = ->
 			audio: null
 			w: TrueW
 			h: TrueH
+			smaller: smaller
 			now: 0
 			answerCanvas: null
 			score: 0

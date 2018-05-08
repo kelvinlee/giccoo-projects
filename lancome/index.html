@@ -54,7 +54,7 @@
       </transition>
       <transition name="page-fade">
         <div v-show="ugcPageShow" class="page page-ugc">
-          <div id="ugcbg" class="bg"><img :src="ugcbg"><img :src="ugc" class="ugc">
+          <div id="ugcbg" :style="{transform: 'scale('+(1-smaller)+','+(1-smaller)+')'}" class="bg"><img :src="ugcbg"><img :src="ugc" class="ugc">
             <!-- canvas#ugc(width="640",height="1138")-->
           </div>
           <div v-if="wy" @click="upload" class="btn"><img src="./img/btn-save.png"></div>
@@ -63,7 +63,7 @@
       </transition>
       <transition name="page-fade">
         <div v-show="lastPageShow" class="page page-last">
-          <div class="bg"><a href="#"><img src="./img/last-page.jpg"></a></div>
+          <div :style="{transform: 'scale('+(1-smaller)+','+(1-smaller)+')'}" class="bg"><a href="#"><img src="./img/last-page.jpg"></a></div>
         </div>
       </transition>
     </div>

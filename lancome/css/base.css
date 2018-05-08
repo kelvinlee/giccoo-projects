@@ -1125,6 +1125,9 @@ body {
 
 .page-ugc {
   background-color: #e5f4fc; }
+  .page-ugc .bg {
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center; }
   .page-ugc .btn {
     position: absolute;
     bottom: 3%;
@@ -1144,3 +1147,6 @@ body {
 
 .page-last {
   background-color: #e5f4fc; }
+  .page-last .bg {
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center; }
