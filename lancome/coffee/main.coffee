@@ -768,7 +768,7 @@ Tn = (from = {x: 0},to = {x: 100},time = 800,callback)->
 	return tween
 
 neteaseShareImage = ->
-	title1 = "吾有心语，享，往远方"
+	title1 = "点击测试你的孤独指数"
 	picUrl = "https://image.giccoo.com/upload/lancome/"+main.shareImageLink+"@!large"
 	redirectUrl = "https://m.giccoo.com/lancome/"
 	console.log "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
