@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Tn, _CDN, _imgurl, _animate, ansStar, appStar, buildUGC, canvasImgs, createAnswer, createStar, getRandom, global, imageurl, init, load, loadWechatConfig, main, mark, myTime, myTimeLine, neteaseShareImage, pre, randomSort, scoreBox, scoreInfinity, scoreMusicTime, scoreShareTimes, scoreZore, shareTimes, shareTimesLine, stars, sys, textsBox;
+var Tn, _CDN, _imgurl, _animate, ansStar, appStar, buildUGC, canvasImgs, createAnswer, createStar, getRandom, global, imageurl, init, load, loadWechatConfig, main, mark, musicName, myTime, myTimeDetail, myTimeLine, neteaseShareImage, numberWith, pre, randomSort, scoreBox, scoreInfinity, scoreMusicTime, scoreShareTimes, scoreZore, shareMusicName, shareTimes, shareTimesLine, stars, sys, textsBox;
 
 randomSort = function randomSort(obj) {
   var newArr, oldarr, _randomSortFun;
@@ -101,11 +101,19 @@ scoreShareTimes = [20, 15, 6];
 
 myTimeLine = [20, 21, 22, 23, 24, 0, 1, 2, 3, 4];
 
-myTime = 20;
-
 shareTimesLine = [20, 15, 6];
 
-shareTimes = 30;
+myTime = 20; // 分享时间
+
+myTimeDetail = "20:25"; // 详细的分享时间
+
+shareTimes = 30; // 分享次数
+
+numberWith = 24249; // 多少人
+
+musicName = "夜空中最亮的星"; // 一起听的歌
+
+shareMusicName = "cheapest flight"; // 分享过的音乐
 
 canvasImgs = ["img/star.png", "img/answer-1-bg.jpg", "img/answer-1-mark-bg.jpg", "img/answer-2-bg.jpg", "img/mark-1.png", "img/mark-2.png", "img/item-elephant.png", "img/item-owl.png", "img/item-panda.png", "img/symbol.png"];
 
@@ -219,13 +227,13 @@ init = function init() {
       wy: false,
       shareImageLink: "",
       answerList: [{
-        question: "最近一次凌晨1:25还在听歌的你，觉得那时谁会陪着你？",
+        question: "\u6700\u8FD1\u4E00\u6B21\u51CC\u6668" + myTimeDetail + "\u8FD8\u5728\u542C\u6B4C\u7684\u4F60\uFF0C\u89C9\u5F97\u90A3\u65F6\u8C01\u4F1A\u966A\u7740\u4F60\uFF1F",
         answers: ["飞累了，借你家阳台歇歇的猫头鹰", "冰箱里那只舔着冰淇淋的蠢大象", "墙角边偷偷涂兰蔻发光眼霜的大熊猫"]
       }, {
-        question: "那一天云村有 24249 人和你一起在听《夜空中最亮的星》你觉得他们那时在干什么？",
+        question: "\u90A3\u4E00\u5929\u4E91\u6751\u6709 " + numberWith + " \u4EBA\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F",
         answers: ["敲击键盘的声音", "窃窃私语聊天的声音", "刷手机的声音"]
       }, {
-        question: "之前从云音乐分享过一首《cheapest flight》你觉得朋友圈的谁点开听过？",
+        question: "\u4E4B\u524D\u4ECE\u4E91\u97F3\u4E50\u5206\u4EAB\u8FC7\u4E00\u9996\u300A" + shareMusicName + "\u300B\u4F60\u89C9\u5F97\u670B\u53CB\u5708\u7684\u8C01\u70B9\u5F00\u542C\u8FC7\uFF1F",
         answers: ["最想让TA听到的那个人", "和我一样喜欢这类曲风的闺蜜", "我才不care有没有人点开听"]
       }],
       answers: [-1, -1, -1]
@@ -282,17 +290,19 @@ init = function init() {
         // ugcC.texts = textsBox[4][1]
         if (this.score === "∞") {
           ugcC.texts = textsBox[textsBox.length - 1][0];
-        } else if (this.score <= 100) {
-          box = textsBox[4];
-          ugcC.texts = box[Math.floor(Math.random() * box.length)];
-        } else if (this.score < 80) {
-          box = textsBox[3];
+        } else if (this.score <= 0) {
+          ugcC.texts = textsBox[0][0];
+        } else if (this.score < 40) {
+          box = textsBox[1];
           ugcC.texts = box[Math.floor(Math.random() * box.length)];
         } else if (this.score < 60) {
           box = textsBox[2];
           ugcC.texts = box[Math.floor(Math.random() * box.length)];
-        } else if (this.score < 40) {
-          box = textsBox[1];
+        } else if (this.score < 80) {
+          box = textsBox[3];
+          ugcC.texts = box[Math.floor(Math.random() * box.length)];
+        } else if (this.score <= 100) {
+          box = textsBox[4];
           ugcC.texts = box[Math.floor(Math.random() * box.length)];
         } else {
           ugcC.texts = textsBox[0][0];
@@ -1049,8 +1059,8 @@ Tn = function Tn() {
 neteaseShareImage = function neteaseShareImage() {
   var picUrl, redirectUrl, title1;
   title1 = "吾有心语，享，往远方";
-  picUrl = "https://image.giccoo.com/sayno/df5008/" + main.shareImageLink + "@!large";
-  redirectUrl = "https://peugeot.music.163.com/df-5008/";
+  picUrl = "https://image.giccoo.com/upload/lancome/" + main.shareImageLink + "@!large";
+  redirectUrl = "https://m.giccoo.com/lancome/";
   console.log("orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1));
   return window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
 };

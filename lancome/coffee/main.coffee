@@ -29,9 +29,14 @@ scoreZore = false
 scoreMusicTime = [8,14,28]
 scoreShareTimes= [20,15,6]
 myTimeLine = [20,21,22,23,24,0,1,2,3,4]
-myTime = 20 #
 shareTimesLine = [20,15,6]
-shareTimes = 30
+
+myTime = 20 # 分享时间
+myTimeDetail = "20:25" # 详细的分享时间
+shareTimes = 30 # 分享次数
+numberWith = 24249 # 多少人
+musicName = "夜空中最亮的星" # 一起听的歌
+shareMusicName = "cheapest flight" # 分享过的音乐
 canvasImgs = [
 	"img/star.png"
 	"img/answer-1-bg.jpg"
@@ -135,21 +140,21 @@ init = ->
 			shareImageLink: ""
 			answerList: [
 				{
-					question: "最近一次凌晨1:25还在听歌的你，觉得那时谁会陪着你？"
+					question: "最近一次凌晨#{myTimeDetail}还在听歌的你，觉得那时谁会陪着你？"
 					answers: [
 						"飞累了，借你家阳台歇歇的猫头鹰",
 						"冰箱里那只舔着冰淇淋的蠢大象",
 						"墙角边偷偷涂兰蔻发光眼霜的大熊猫"
 					]
 				},{
-					question: "那一天云村有 24249 人和你一起在听《夜空中最亮的星》你觉得他们那时在干什么？"
+					question: "那一天云村有 #{numberWith} 人和你一起在听《#{musicName}》你觉得他们那时在干什么？"
 					answers: [
 						"敲击键盘的声音",
 						"窃窃私语聊天的声音",
 						"刷手机的声音"
 					]
 				},{
-					question: "之前从云音乐分享过一首《cheapest flight》你觉得朋友圈的谁点开听过？"
+					question: "之前从云音乐分享过一首《#{shareMusicName}》你觉得朋友圈的谁点开听过？"
 					answers: [
 						"最想让TA听到的那个人",
 						"和我一样喜欢这类曲风的闺蜜",
@@ -197,17 +202,19 @@ init = ->
 				# ugcC.texts = textsBox[4][1]
 				if @.score is "∞"
 					ugcC.texts = textsBox[textsBox.length-1][0]
-				else if @.score <= 100
-					box = textsBox[4]
-					ugcC.texts = box[Math.floor(Math.random()*box.length)]
-				else if @.score < 80
-					box = textsBox[3]
+				else if @.score <= 0
+					ugcC.texts = textsBox[0][0]
+				else if @.score < 40
+					box = textsBox[1]
 					ugcC.texts = box[Math.floor(Math.random()*box.length)]
 				else if @.score < 60
 					box = textsBox[2]
 					ugcC.texts = box[Math.floor(Math.random()*box.length)]
-				else if @.score < 40
-					box = textsBox[1]
+				else if @.score < 80
+					box = textsBox[3]
+					ugcC.texts = box[Math.floor(Math.random()*box.length)]
+				else if @.score <= 100
+					box = textsBox[4]
 					ugcC.texts = box[Math.floor(Math.random()*box.length)]
 				else
 					ugcC.texts = textsBox[0][0]
@@ -762,7 +769,7 @@ Tn = (from = {x: 0},to = {x: 100},time = 800,callback)->
 
 neteaseShareImage = ->
 	title1 = "吾有心语，享，往远方"
-	picUrl = "https://image.giccoo.com/sayno/df5008/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://peugeot.music.163.com/df-5008/"
+	picUrl = "https://image.giccoo.com/upload/lancome/"+main.shareImageLink+"@!large"
+	redirectUrl = "https://m.giccoo.com/lancome/"
 	console.log "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
