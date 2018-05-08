@@ -1661,9 +1661,10 @@ body.pop-open {
   text-align: center; }
   .qrpage .content {
     margin: 0 auto;
-    margin-top: 15%;
+    margin-top: 20%;
     display: inline-block;
-    color: #000; }
+    color: #000;
+    width: 180px; }
 
 .main, .qrpage {
   background: url("http://image.giccoo.com/projects/friso/img/m-bg.png") repeat top center;
