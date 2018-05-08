@@ -48,10 +48,13 @@ block content
 							img(v-if="index > 1",src="#{url}/img/btn-done.png")
 		transition(name="page-fade")
 			.page.page-wait(v-show="waitPageShow")
+				.content
+					p Loading...
 		transition(name="page-fade")
 			.page.page-ugc(v-show="ugcPageShow")
 				.bg#ugcbg
 					img(:src="ugcbg")
+					img.ugc(:src="ugc")
 					// canvas#ugc(width="640",height="1138")
 				.btn(v-if="wy",@click="upload")
 					img(src="#{url}/img/btn-save.png")
@@ -74,7 +77,7 @@ block js
 	script(src="/libs/js/min/pixi.min.js")
 	script(src="/libs/js/min/Tween.min.js")
 	//- script(src="/libs/js/min/jquery.min.js")
-	//- script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+	script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
 	script(src="js/main.js?v=1")
 	
 

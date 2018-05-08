@@ -132,6 +132,7 @@ init = ->
 			ugc: null
 			ugcbg: null
 			wy: false
+			shareImageLink: ""
 			answerList: [
 				{
 					question: "最近一次凌晨1:25还在听歌的你，觉得那时谁会陪着你？"
@@ -240,7 +241,9 @@ init = ->
 				.catch (e)->
 					# alert e
 					main.faild()
-			success: ->
+			success: (data)->
+				@.shareImageLink = data.info
+				neteaseShareImage()
 				setTimeout =>
 					@.lastPageShow = true
 				,3000

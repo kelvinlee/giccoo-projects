@@ -46,11 +46,15 @@
         </div>
       </transition>
       <transition name="page-fade">
-        <div v-show="waitPageShow" class="page page-wait"></div>
+        <div v-show="waitPageShow" class="page page-wait">
+          <div class="content">
+            <p>Loading...</p>
+          </div>
+        </div>
       </transition>
       <transition name="page-fade">
         <div v-show="ugcPageShow" class="page page-ugc">
-          <div id="ugcbg" class="bg"><img :src="ugcbg">
+          <div id="ugcbg" class="bg"><img :src="ugcbg"><img :src="ugc" class="ugc">
             <!-- canvas#ugc(width="640",height="1138")-->
           </div>
           <div v-if="wy" @click="upload" class="btn"><img src="./img/btn-save.png"></div>
@@ -67,6 +71,7 @@
     <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
     <script src="/libs/js/min/pixi.min.js"></script>
     <script src="/libs/js/min/Tween.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
     <script src="js/main.js?v=1"></script>
   </body>
 </html>

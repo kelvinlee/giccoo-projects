@@ -217,6 +217,7 @@ init = function init() {
       ugc: null,
       ugcbg: null,
       wy: false,
+      shareImageLink: "",
       answerList: [{
         question: "最近一次凌晨1:25还在听歌的你，觉得那时谁会陪着你？",
         answers: ["飞累了，借你家阳台歇歇的猫头鹰", "冰箱里那只舔着冰淇淋的蠢大象", "墙角边偷偷涂兰蔻发光眼霜的大熊猫"]
@@ -330,9 +331,11 @@ init = function init() {
           return main.faild();
         });
       },
-      success: function success() {
+      success: function success(data) {
         var _this3 = this;
 
+        this.shareImageLink = data.info;
+        neteaseShareImage();
         return setTimeout(function () {
           return _this3.lastPageShow = true;
         }, 3000);

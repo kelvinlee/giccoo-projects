@@ -1130,14 +1130,17 @@ body {
     bottom: 3%;
     left: 8%;
     width: 40%; }
-    .page-ugc .btn .ugc {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      z-index: 99; }
+  .page-ugc .ugc {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 99; }
+
+.page-wait {
+  background-color: #e5f4fc; }
 
 .page-last {
   background-color: #e5f4fc; }
