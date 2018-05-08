@@ -2720,15 +2720,6 @@
 		"oAP": "\/friso\/mobile.html",
 		"oF": 0
 		},
-	"\/friso\/mobile.jade": {
-		"cB": 0,
-		"cOD": 1,
-		"ft": 512,
-		"oA": 0,
-		"oAP": "\/friso\/mobile.html",
-		"oF": 0,
-		"oS": 0
-		},
 	"\/friso\/mp4\/video-build.mp4": {
 		"cB": 0,
 		"ft": 8192,
@@ -2756,6 +2747,15 @@
 		"ft": 512,
 		"oA": 0,
 		"oAP": "\/friso\/pc.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/friso\/S2\/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/friso\/S2\/index.html",
 		"oF": 0,
 		"oS": 0
 		},

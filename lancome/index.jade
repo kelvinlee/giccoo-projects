@@ -1,6 +1,6 @@
 extends ../libs/jade/layout-clean
 block title
-	| 24小时健康享新家
+	| 孤独的人会发光
 
 block css
 	meta(name="author",content="m.giccoo.com")
@@ -53,7 +53,7 @@ block content
 				.bg#ugcbg
 					img(:src="ugcbg")
 					// canvas#ugc(width="640",height="1138")
-				.btn(v-if="wy")
+				.btn(v-if="wy",@click="upload")
 					img(src="#{url}/img/btn-save.png")
 				.btn(v-if="!wy")
 					img(src="#{url}/img/btn-long-save.png")

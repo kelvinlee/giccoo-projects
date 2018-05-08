@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>24小时健康享新家</title>
+    <title>孤独的人会发光</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
@@ -53,13 +53,13 @@
           <div id="ugcbg" class="bg"><img :src="ugcbg">
             <!-- canvas#ugc(width="640",height="1138")-->
           </div>
-          <div v-if="wy" class="btn"><img src="./img/btn-save.png"></div>
+          <div v-if="wy" @click="upload" class="btn"><img src="./img/btn-save.png"></div>
           <div v-if="!wy" class="btn"><img src="./img/btn-long-save.png"><img :src="ugc" class="ugc"></div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="lastPageShow" class="page page-last">
-          <div class="bg"><a href=""><img src="./img/last-page.jpg"></a></div>
+          <div class="bg"><a href="#"><img src="./img/last-page.jpg"></a></div>
         </div>
       </transition>
     </div>

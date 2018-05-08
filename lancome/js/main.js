@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Tn, _CDN, _imgurl, _animate, ansStar, appStar, buildUGC, canvasImgs, createAnswer, createStar, getRandom, global, init, load, loadWechatConfig, main, mark, myTime, myTimeLine, pre, randomSort, scoreBox, scoreInfinity, scoreMusicTime, scoreShareTimes, scoreZore, shareTimes, shareTimesLine, stars, sys, textsBox;
+var Tn, _CDN, _imgurl, _animate, ansStar, appStar, buildUGC, canvasImgs, createAnswer, createStar, getRandom, global, imageurl, init, load, loadWechatConfig, main, mark, myTime, myTimeLine, neteaseShareImage, pre, randomSort, scoreBox, scoreInfinity, scoreMusicTime, scoreShareTimes, scoreZore, shareTimes, shareTimesLine, stars, sys, textsBox;
 
 randomSort = function randomSort(obj) {
   var newArr, oldarr, _randomSortFun;
@@ -85,6 +85,8 @@ load = {};
 
 sys = null;
 
+imageurl = "//api.giccoo.com/api/upload/image64/";
+
 textsBox = [[["你是不识孤独滋味的少年", "永远意气风发", "永远活力四射", "音乐 是你生活的调味剂"]], [["你的感知神经似乎不太敏感", "偶尔空虚，经常充实才是生活常态", "寂寞的时候默念咒语", "把大家都变成猪你就不孤独啦"], ["你有时候也想45度静静仰望天空", "但眼泪似乎不太掉得下来", "孤独的感觉总是像龙卷风一样袭来", "不过还好", "你不是站在风暴中心的那个人"]], [["好险", "你距离显性孤独人口只差最后一步", "你希望微信能被秒回", "也希望朋友圈都有人点赞", "但大家似乎都不太给面子"], ["或许你有酒", "或许你有远方", "可是有时候", "你还是愿意待在家里", "做一只听着歌默默生长的蘑菇"]], [["你像一只小刺猬", "想露出软软的肚皮", "被温柔抚摸", "可是很多人惧怕你坚硬的刺", "而选择远离"], ["「你怎么会喜欢这个」", "「我觉得那个地方不好玩」", "「一把年纪该结婚了」", "永远有人在喋喋不休", "而你只想让他们闭嘴"]], [["在努力，在奔跑", "一个人的路总是艰苦", "可是一个人", "也更加恣肆，更加自由", "不如把孤独当成甜品 一口吃掉"], ["你是个总觉得差一点点的人", "差一点点就饱了", "差一点点就满足了", "连百分百的孤独感", "都觉得差了一点点"]], [["你幻想自己是一只鱼", "以为7秒就能忘记那种寂寞的感觉", "但是上帝并不理你", "你还是那个孤独到要爆炸的人类"]]];
 
 scoreBox = [[11, 17, 1], [2, 5, 12], [7, 9, 23]];
@@ -120,10 +122,10 @@ window.onload = function () {
     wx.ready(function () {
       var shareContent;
       shareContent = {
-        title: "24小时健康享新家",
-        desc: "华润漆A+系列，让你轻松24小时入住新家！",
-        link: "http://m.giccoo.com/zhihu-huarun/",
-        imgUrl: "http://m.giccoo.com/zhihu-huarun/img/ico.jpg",
+        title: "点击测试你的孤独指数",
+        desc: "与兰蔻一起，度过漫漫长夜",
+        link: "http://m.giccoo.com/lancome/",
+        imgUrl: "http://m.giccoo.com/lancome/img/ico.jpg",
         success: function success() {},
         // alert "success"
         cancel: function cancel() {}
@@ -306,14 +308,46 @@ init = function init() {
           }, 500);
         }, 500);
       },
-      buildUGC: function buildUGC() {
+      upload: function upload() {
+        var data, image;
+        // console.log "upload:"
+        image = this.ugc;
+        data = {
+          image: image,
+          folder: "lancome"
+        };
+        if (image == null) {
+          return main.faild();
+        }
+        return axios.post(imageurl, data).then(function (msg) {
+          if (msg.data.recode === 200) {
+            return main.success(msg.data);
+          } else {
+            return main.faild();
+          }
+        }).catch(function (e) {
+          // alert e
+          return main.faild();
+        });
+      },
+      success: function success() {
         var _this3 = this;
+
+        return setTimeout(function () {
+          return _this3.lastPageShow = true;
+        }, 3000);
+      },
+      faild: function faild() {
+        return this.lastPageShow = true;
+      },
+      buildUGC: function buildUGC() {
+        var _this4 = this;
 
         this.runScore();
         this.waitPageShow = true;
         setTimeout(function () {
-          _this3.waitPageShow = false;
-          return _this3.ugcPageShow = true;
+          _this4.waitPageShow = false;
+          return _this4.ugcPageShow = true;
         }, 3000);
         return this.createUGC();
       },
@@ -331,11 +365,11 @@ init = function init() {
         }
       },
       playSong: function playSong(i) {
-        var _this4 = this;
+        var _this5 = this;
 
         this.musiclink = "./mp3/mp3-" + i + ".mp3";
         return setTimeout(function () {
-          return _this4.audio.play();
+          return _this5.audio.play();
         }, 1000 / 30);
       },
       select: function select(index) {
@@ -646,7 +680,7 @@ createAnswer = function () {
     }, {
       key: "answer2Over",
       value: function answer2Over() {
-        var _this5 = this;
+        var _this6 = this;
 
         this.moving2 = false;
         this.ansStar.stage.removeChild(this.dom.bg2, this.dom.music);
@@ -656,7 +690,7 @@ createAnswer = function () {
         }, {
           x: 100
         }, 600, function (res) {
-          return _this5.dom.timeline.alpha = res.x / 100;
+          return _this6.dom.timeline.alpha = res.x / 100;
         });
       }
 
@@ -808,7 +842,7 @@ createAnswer = function () {
     }, {
       key: "select",
       value: function select(i) {
-        var _this6 = this;
+        var _this7 = this;
 
         var target, tempX, tempY, tween;
         this.answers[this.t] = i;
@@ -839,9 +873,9 @@ createAnswer = function () {
               this.scaleP.x = 1;
               this.scaleP.y = 1;
               return this.cache = setTimeout(function () {
-                _this6.dom.mark.visible = false;
-                _this6.dom.mark2.visible = true;
-                return _this6.dom.answer1bg.mask = _this6.dom.mark2;
+                _this7.dom.mark.visible = false;
+                _this7.dom.mark2.visible = true;
+                return _this7.dom.answer1bg.mask = _this7.dom.mark2;
                 // @.ansStar.stage.addChild @.dom.mark2
               }, 400);
             case 2:
@@ -869,27 +903,27 @@ createAnswer = function () {
           tween = this.tween = new TWEEN.Tween(tempX).to({
             x: 100
           }, 2000).easing(TWEEN.Easing.Cubic.Out).onUpdate(function () {
-            _this6.dom.symbol1.x = 99 - tempX.x * 0.3;
+            _this7.dom.symbol1.x = 99 - tempX.x * 0.3;
             if (tempX.x >= 90) {
-              _this6.dom.symbol1.alpha = (100 - tempX.x) / 10;
+              _this7.dom.symbol1.alpha = (100 - tempX.x) / 10;
             } else if (tempX.x <= 30) {
-              _this6.dom.symbol1.alpha = (tempX.x - 20) / 10;
+              _this7.dom.symbol1.alpha = (tempX.x - 20) / 10;
             } else {
-              _this6.dom.symbol1.alpha = 1;
+              _this7.dom.symbol1.alpha = 1;
             }
-            _this6.dom.symbol2.x = 110 - tempX.x * 0.2;
+            _this7.dom.symbol2.x = 110 - tempX.x * 0.2;
             if (tempX.x >= 90 - 10) {
-              _this6.dom.symbol2.alpha = (100 - 10 - tempX.x) / 10;
+              _this7.dom.symbol2.alpha = (100 - 10 - tempX.x) / 10;
             }
             if (tempX.x <= 20) {
-              _this6.dom.symbol2.alpha = (tempX.x - 10) / 10;
+              _this7.dom.symbol2.alpha = (tempX.x - 10) / 10;
             }
-            _this6.dom.symbol3.x = 128 - tempX.x * 0.1;
+            _this7.dom.symbol3.x = 128 - tempX.x * 0.1;
             if (tempX.x >= 90 - 20) {
-              _this6.dom.symbol3.alpha = (100 - 20 - tempX.x) / 10;
+              _this7.dom.symbol3.alpha = (100 - 20 - tempX.x) / 10;
             }
             if (tempX.x <= 10) {
-              return _this6.dom.symbol3.alpha = tempX.x / 10;
+              return _this7.dom.symbol3.alpha = tempX.x / 10;
             }
           }).start();
           tempY = {
@@ -898,9 +932,9 @@ createAnswer = function () {
           return tween = new TWEEN.Tween(tempY).to({
             y: -100
           }, 2000).easing(TWEEN.Easing.Cubic.In).onUpdate(function () {
-            _this6.dom.symbol1.y = 690 + tempY.y * 0.5;
-            _this6.dom.symbol2.y = 717 + tempY.y * 0.4;
-            return _this6.dom.symbol3.y = 720 + tempY.y * 0.3;
+            _this7.dom.symbol1.y = 690 + tempY.y * 0.5;
+            _this7.dom.symbol2.y = 717 + tempY.y * 0.4;
+            return _this7.dom.symbol3.y = 720 + tempY.y * 0.3;
           }).start();
         } else if (this.t === 2) {
           this.dom.timeline1.alpha = 0;
@@ -1007,4 +1041,13 @@ Tn = function Tn() {
     return callback(tempX);
   }).start();
   return tween;
+};
+
+neteaseShareImage = function neteaseShareImage() {
+  var picUrl, redirectUrl, title1;
+  title1 = "吾有心语，享，往远方";
+  picUrl = "https://image.giccoo.com/sayno/df5008/" + main.shareImageLink + "@!large";
+  redirectUrl = "https://peugeot.music.163.com/df-5008/";
+  console.log("orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1));
+  return window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
 };

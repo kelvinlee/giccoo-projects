@@ -9,6 +9,7 @@ main = {}
 pre = {}
 load = {}
 sys = null
+imageurl = "//api.giccoo.com/api/upload/image64/"
 
 textsBox = [
 	[["你是不识孤独滋味的少年","永远意气风发","永远活力四射","音乐 是你生活的调味剂"]]
@@ -54,10 +55,10 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "24小时健康享新家"
-				desc: "华润漆A+系列，让你轻松24小时入住新家！"
-				link: "http://m.giccoo.com/zhihu-huarun/"
-				imgUrl: "http://m.giccoo.com/zhihu-huarun/img/ico.jpg"
+				title: "点击测试你的孤独指数"
+				desc: "与兰蔻一起，度过漫漫长夜"
+				link: "http://m.giccoo.com/lancome/"
+				imgUrl: "http://m.giccoo.com/lancome/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
@@ -221,7 +222,30 @@ init = ->
 						@.ugc = ugcC.app.renderer.extract.base64()
 					,500
 				,500
-				
+			upload: ->
+				# console.log "upload:"
+				image = @.ugc
+				data = {
+					image: image
+					folder: "lancome"
+				}
+				unless image?
+					return main.faild()
+				axios.post imageurl,data
+				.then (msg)->
+					if msg.data.recode is 200
+						main.success(msg.data)
+					else
+						main.faild()
+				.catch (e)->
+					# alert e
+					main.faild()
+			success: ->
+				setTimeout =>
+					@.lastPageShow = true
+				,3000
+			faild: ->
+				@.lastPageShow = true
 			buildUGC: ->
 				@.runScore()
 
@@ -732,3 +756,10 @@ Tn = (from = {x: 0},to = {x: 100},time = 800,callback)->
 		callback tempX
 	.start()
 	return tween
+
+neteaseShareImage = ->
+	title1 = "吾有心语，享，往远方"
+	picUrl = "https://image.giccoo.com/sayno/df5008/"+main.shareImageLink+"@!large"
+	redirectUrl = "https://peugeot.music.163.com/df-5008/"
+	console.log "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
+	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)

@@ -1,4 +1,4 @@
-extends ../libs/jade/layout-clean
+extends ../../libs/jade/layout-clean
 block title
 	| 知乎·北鼻版
 
@@ -6,7 +6,7 @@ block title
 block css
 	meta(name="author",content="m.giccoo.com")
 	//- link(rel="stylesheet",href="../libs/css/animate.min.css",media="none",onload="if(media!='all')media='all'")
-	link(rel="stylesheet",href="css/base.css?v=4")
+	link(rel="stylesheet",href="../css/base.css?v=4")
 	script.
 		var _hmt = _hmt || [];
 		(function() {
@@ -18,14 +18,14 @@ block css
 
 block content
 	// - url = "http://image.giccoo.com/projects/friso/"
-	- url = "./"
+	- url = "../"
 	
 	.wechat-share-hide
 		img#share(src="http://image.giccoo.com/projects/friso/img/share.jpg")
 	
-	.main.mobile
+	.main.qr
 		.banner
-			img(src="img/m-banner-2.jpg")
+			img(src="#{url}img/m-banner-2.jpg")
 			.logo
 				img(src="#{url}img/m-logo.png")
 			playsound.playsound(src="http://image.giccoo.com/projects/friso/mp3/rap.new.mp3",icon="true",iconplay="http://image.giccoo.com/projects/libs/img/audio-play.png",iconstop="http://image.giccoo.com/projects/libs/img/audio-stop.png")
@@ -55,7 +55,7 @@ block content
 					p 睡前喂奶时，你被宝宝怎样的天真问题萌倒过？「天真问·认真答」第二季，皇家美素佳儿继续支持宝宝探索珍贵奥秘，用最萌脑洞打开牛奶的神奇世界。
 				p.center
 					a.outlink(href="https://www.zhihu.com/question/270492290")
-						img(src="./img/m-iwask.png")
+						img(src="#{url}img/m-iwask.png")
 			.line        
 				img(src="#{url}img/m-line.png")
 			.ten-q
@@ -169,6 +169,8 @@ block content
 		//- .pop-legal
 		//- 	img(src="#{url}img/m-pop-legal.png")
 	
+	.qrpage
+		
 
 block js
 	- url = "/"
@@ -178,6 +180,6 @@ block js
 	script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/localforage.min.js")
 	script(src="/libs/js/tags/playsound.js")
-	script(src="js/friso.js?v=4")
-	script(src="js/main.js?v=4")
+	script(src="../js/friso.js?v=4")
+	script(src="../js/main.js?v=4")
 	

@@ -1565,7 +1565,7 @@ body.pop-open {
   overflow-scrolling: touch;
   -webkit-overflow-scrolling: touch;
   display: none;
-  background: url("../img/m-pop-bg.png") repeat top center;
+  background: url("http://image.giccoo.com/projects/friso/img/m-pop-bg.png") repeat top center;
   background-size: 100% 1px;
   background-color: transparent;
   z-index: 10009;
@@ -1656,7 +1656,7 @@ body.pop-open {
           font-size: 0.96rem; } }
 
 .main {
-  background: url("../img/m-bg.png") repeat top center;
+  background: url("http://image.giccoo.com/projects/friso/img/m-bg.png") repeat top center;
   background-size: 100% 1px;
   background-color: transparent; }
   .main .logo, .main .banner, .main .footer {
@@ -1681,7 +1681,7 @@ body.pop-open {
     width: 92.5%;
     margin: 0 auto; }
     .main .age .age-box {
-      background: url("../img/m-q-bg.jpg") no-repeat top center;
+      background: url("http://image.giccoo.com/projects/friso/img/m-q-bg.jpg") no-repeat top center;
       background-size: 100% 100%;
       background-color: transparent;
       padding: 35px 20px; }
@@ -1711,7 +1711,7 @@ body.pop-open {
   .main .tzw .title {
     font-size: 0; }
   .main .tzw .content {
-    background: url("../img/m-tzw-bg.jpg") repeat top center;
+    background: url("http://image.giccoo.com/projects/friso/img/m-tzw-bg.jpg") repeat top center;
     background-size: 100% 1px;
     background-color: transparent;
     position: relative;
@@ -1726,7 +1726,7 @@ body.pop-open {
       width: 31.25%;
       margin: 0 auto;
       height: 50px;
-      background: url("../img/m-iwask.png") no-repeat center center;
+      background: url("http://image.giccoo.com/projects/friso/img/m-iwask.png") no-repeat center center;
       background-size: contain;
       background-color: transparent;
       font-size: 0;
@@ -1757,7 +1757,7 @@ body.pop-open {
     .main .tzw .content .answer-box {
       width: 82%;
       margin: 0 auto;
-      background: url("../img/m-answer-bg.png") repeat top center;
+      background: url("http://image.giccoo.com/projects/friso/img/m-answer-bg.png") repeat top center;
       background-size: 100% 1px;
       background-color: transparent;
       border-radius: 6px;
@@ -1837,7 +1837,7 @@ body.pop-open {
       top: 50%;
       left: 50%; }
     .main .q-list .question-list .question-box {
-      background: url("../img/m-q-bg-2.jpg") no-repeat top center;
+      background: url("http://image.giccoo.com/projects/friso/img/m-q-bg-2.jpg") no-repeat top center;
       background-size: 100% 100%;
       background-color: transparent;
       margin-top: 45px;
@@ -1850,7 +1850,7 @@ body.pop-open {
         width: 31.25%;
         margin: 0 auto;
         height: 50px;
-        background: url("../img/outlink.png") no-repeat center center;
+        background: url("http://image.giccoo.com/projects/friso/img/outlink.png") no-repeat center center;
         background-size: contain;
         background-color: transparent;
         font-size: 0;
@@ -1906,13 +1906,13 @@ body.pop-open {
           width: 32.0945945946%;
           margin: 0 auto;
           height: 100%;
-          background: url("../img/m-icon-an.png") no-repeat left center;
+          background: url("http://image.giccoo.com/projects/friso/img/m-icon-an.png") no-repeat left center;
           background-size: contain;
           background-color: transparent; }
           .iphone4 .main .q-list .question-list .question-box .title .icon {
             width: 32.0945945946%; }
         .main .q-list .question-list .question-box .title .icon-more {
-          background: url("../img/m-icon-more.png") no-repeat left center;
+          background: url("http://image.giccoo.com/projects/friso/img/m-icon-more.png") no-repeat left center;
           background-size: contain;
           background-color: transparent;
           width: 20px;
@@ -1925,7 +1925,7 @@ body.pop-open {
       .main .q-list .question-list .question-box .answer-box {
         width: 90%;
         margin: 0 auto;
-        background: url("../img/m-answer-bg.png") repeat top center;
+        background: url("http://image.giccoo.com/projects/friso/img/m-answer-bg.png") repeat top center;
         background-size: 100% 1px;
         background-color: transparent;
         border-radius: 6px;
@@ -1994,12 +1994,12 @@ body.pop-open {
               margin-right: 10px;
               margin-bottom: 10px; }
       .main .q-list .question-list .question-box.on {
-        background: url("../img/m-q-bg-small.png") no-repeat top center;
+        background: url("http://image.giccoo.com/projects/friso/img/m-q-bg-small.png") no-repeat top center;
         background-size: 100% 100%;
         background-color: transparent;
         padding-bottom: 10px; }
         .main .q-list .question-list .question-box.on .icon-more {
-          background: url("../img/m-icon-more.png") no-repeat left center;
+          background: url("http://image.giccoo.com/projects/friso/img/m-icon-more.png") no-repeat left center;
           background-size: contain;
           background-color: transparent;
           -webkit-transform: scale3d(1, -1, 1);
@@ -2027,7 +2027,7 @@ body.pop-open {
           right: -2%;
           width: 19.0972222222%;
           margin: 0 auto;
-          background: url("../img/list-icon-1.png") no-repeat top center;
+          background: url("http://image.giccoo.com/projects/friso/img/list-icon-1.png") no-repeat top center;
           background-size: contain;
           background-color: transparent;
           height: 40%;
@@ -2043,7 +2043,7 @@ body.pop-open {
           right: -2%;
           width: 19.0972222222%;
           margin: 0 auto;
-          background: url("../img/list-icon-2.png") no-repeat top center;
+          background: url("http://image.giccoo.com/projects/friso/img/list-icon-2.png") no-repeat top center;
           background-size: contain;
           background-color: transparent;
           height: 40%;
@@ -2059,7 +2059,7 @@ body.pop-open {
           right: -2%;
           width: 19.0972222222%;
           margin: 0 auto;
-          background: url("../img/list-icon-3.png") no-repeat top center;
+          background: url("http://image.giccoo.com/projects/friso/img/list-icon-3.png") no-repeat top center;
           background-size: contain;
           background-color: transparent;
           height: 40%;
@@ -2075,7 +2075,7 @@ body.pop-open {
           right: -2%;
           width: 19.0972222222%;
           margin: 0 auto;
-          background: url("../img/list-icon-4.png") no-repeat top center;
+          background: url("http://image.giccoo.com/projects/friso/img/list-icon-4.png") no-repeat top center;
           background-size: contain;
           background-color: transparent;
           height: 40%;
@@ -2107,14 +2107,14 @@ body.pop-open {
       .answer .likeanswer {
         font-size: 0.96rem; } }
     .answer .likeanswer.on .icon {
-      background: url("../img/heart-on.png") no-repeat left center;
+      background: url("http://image.giccoo.com/projects/friso/img/heart-on.png") no-repeat left center;
       background-size: 100% 100%;
       background-color: transparent; }
     .answer .likeanswer .icon {
       width: 17px;
       height: 17px;
       display: inline-block;
-      background: url("../img/heart-off.png") no-repeat left center;
+      background: url("http://image.giccoo.com/projects/friso/img/heart-off.png") no-repeat left center;
       background-size: 100% 100%;
       background-color: transparent;
       font-size: 0;
@@ -2154,7 +2154,7 @@ p.center {
         font-size: 0.96rem; } }
   .message .message-item {
     width: 80%;
-    background: url("../img/message-bg.png") no-repeat left center;
+    background: url("http://image.giccoo.com/projects/friso/img/message-bg.png") no-repeat left center;
     background-size: 100% 100%;
     background-color: transparent;
     padding: 5%;
@@ -2169,7 +2169,7 @@ p.center {
     .message .message-item.right {
       padding-left: 5%;
       padding-right: 10%;
-      background: url("../img/message-right-bg.png") no-repeat left center;
+      background: url("http://image.giccoo.com/projects/friso/img/message-right-bg.png") no-repeat left center;
       background-size: 100% 100%;
       background-color: transparent;
       margin-left: 20%; }
@@ -2243,7 +2243,7 @@ p.center {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 5% 10%;
-    background: url("../img/news-bg.png") no-repeat center center;
+    background: url("http://image.giccoo.com/projects/friso/img/news-bg.png") no-repeat center center;
     background-size: 100% 100%;
     background-color: transparent; }
     .news .news-item .news-content h1 {

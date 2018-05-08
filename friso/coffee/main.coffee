@@ -1014,6 +1014,10 @@ window.onload = ->
 
 	if IsPC() and $(".main").is(".mobile")
 		return window.location.href = "pc.html"
+	if IsPC() and $(".main").is(".qr")
+		$(".main").hide()
+		$(".qrpage").show()
+		return
 
 	# music
 

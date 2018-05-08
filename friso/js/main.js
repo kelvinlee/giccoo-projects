@@ -1112,6 +1112,11 @@ window.onload = function () {
   if (IsPC() && $(".main").is(".mobile")) {
     return window.location.href = "pc.html";
   }
+  if (IsPC() && $(".main").is(".qr")) {
+    $(".main").hide();
+    $(".qrpage").show();
+    return;
+  }
   // music
   updateLoad();
   if (typeof wx !== "undefined" && wx !== null) {
