@@ -1122,7 +1122,7 @@ window.onload = function () {
   if (typeof wx !== "undefined" && wx !== null) {
     console.log("load wx");
     // wx.error (res)->
-    // 	console.log res
+    //   console.log res
     wx.ready(function () {
       wx.onMenuShareTimeline(shareContent);
       wx.onMenuShareAppMessage(shareContent);

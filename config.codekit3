@@ -1814,6 +1814,17 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"\/friso\/coffee\/s2.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/friso\/js\/s2.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
 	"\/friso\/css": {
 		"ft": 65536,
 		"oA": 1,
@@ -2749,6 +2760,13 @@
 		"oAP": "\/friso\/pc.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/friso\/S2\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/friso\/S2\/index.html",
+		"oF": 0
 		},
 	"\/friso\/S2\/index.jade": {
 		"cB": 0,
