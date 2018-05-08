@@ -1,6 +1,6 @@
 'use strict';
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, IsPC, Loader, SendNote, Store, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, _loader, css3Prefix, defaultInfo, defaultTop, getdefaultTop, i, j, len, loadWechatConfig, mTestElement, qrcode, scrollTop, shareContent, updateLikeOn, updateLoad;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, IsPC, Loader, SendNote, Store, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, _IsPC, _loader, css3Prefix, defaultInfo, defaultTop, getdefaultTop, i, j, len, loadWechatConfig, mTestElement, qrcode, scrollTop, shareContent, updateLikeOn, updateLoad;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -84,6 +84,30 @@ qrcode = function qrcode() {
 // @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/coffee/requestanimation"
 // @codekit-prepend "../../libs/coffee/qrcode"
+IsPC = function IsPC() {
+  var Agents, flag, userAgentInfo, v;
+  userAgentInfo = navigator.userAgent;
+  Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod');
+  flag = true;
+  v = 0;
+  while (v < Agents.length) {
+    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+      flag = false;
+      break;
+    }
+    v++;
+  }
+  return flag;
+};
+
+_IsPC = false;
+
+if (IsPC() && $(".main").is(".qr")) {
+  $(".main").remove();
+  $(".qrpage").show();
+  _IsPC = true;
+}
+
 Store = {};
 
 scrollTop = 0;
@@ -954,7 +978,9 @@ defaultInfo = [{
   sort: 1
 }];
 
-riot.mount("*");
+if (!_IsPC) {
+  riot.mount("*");
+}
 
 updateLoad = function updateLoad() {
   // return false
@@ -990,6 +1016,9 @@ window.onscroll = function (evt) {
 };
 
 $(document).ready(function () {
+  if (_IsPC) {
+    return false;
+  }
   $("#tabs").on("click", function () {
     var el, target;
     el = $(".on", this);
@@ -1062,6 +1091,9 @@ updateLikeOn = function updateLikeOn() {
 
 window.onload = function () {
   var MK;
+  if (_IsPC) {
+    return false;
+  }
   MK = $("body").width() / $("body").height();
   if ($(".logo").length > 0) {
     defaultTop = $(".logo").offset().top;
@@ -1112,11 +1144,7 @@ window.onload = function () {
   if (IsPC() && $(".main").is(".mobile")) {
     return window.location.href = "pc.html";
   }
-  if (IsPC() && $(".main").is(".qr")) {
-    $(".main").hide();
-    $(".qrpage").show();
-    return;
-  }
+
   // music
   updateLoad();
   if (typeof wx !== "undefined" && wx !== null) {
@@ -1132,22 +1160,6 @@ window.onload = function () {
     loadWechatConfig();
   }
   return true;
-};
-
-IsPC = function IsPC() {
-  var Agents, flag, userAgentInfo, v;
-  userAgentInfo = navigator.userAgent;
-  Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod');
-  flag = true;
-  v = 0;
-  while (v < Agents.length) {
-    if (userAgentInfo.indexOf(Agents[v]) > 0) {
-      flag = false;
-      break;
-    }
-    v++;
-  }
-  return flag;
 };
 
 loadWechatConfig = function loadWechatConfig() {

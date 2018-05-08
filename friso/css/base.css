@@ -1655,71 +1655,81 @@ body.pop-open {
         .pop .pop-text h4 {
           font-size: 0.96rem; } }
 
-.main {
+.qrpage {
+  width: 100%;
+  height: 100%;
+  text-align: center; }
+  .qrpage .content {
+    margin: 0 auto;
+    margin-top: 15%;
+    display: inline-block;
+    color: #000; }
+
+.main, .qrpage {
   background: url("http://image.giccoo.com/projects/friso/img/m-bg.png") repeat top center;
   background-size: 100% 1px;
   background-color: transparent; }
-  .main .logo, .main .banner, .main .footer {
+  .main .logo, .main .banner, .main .footer, .qrpage .logo, .qrpage .banner, .qrpage .footer {
     font-size: 0; }
-  .main .logo {
+  .main .logo, .qrpage .logo {
     position: absolute;
     top: 71.5%;
     right: 0.3%;
     width: 24.53125%;
     margin: 0 auto;
     z-index: 1001; }
-    .iphone4 .main .logo {
+    .iphone4 .main .logo, .iphone4 .qrpage .logo {
       width: 24.53125%; }
-    .main .logo.scroll {
+    .main .logo.scroll, .qrpage .logo.scroll {
       position: fixed;
       top: 0;
       right: 0.3%; }
-  .main .banner {
+  .main .banner, .qrpage .banner {
     width: 100%;
     position: relative; }
-  .main .age {
+  .main .age, .qrpage .age {
     width: 92.5%;
     margin: 0 auto; }
-    .main .age .age-box {
+    .main .age .age-box, .qrpage .age .age-box {
       background: url("http://image.giccoo.com/projects/friso/img/m-q-bg.jpg") no-repeat top center;
       background-size: 100% 100%;
       background-color: transparent;
       padding: 35px 20px; }
-      .main .age .age-box p {
+      .main .age .age-box p, .qrpage .age .age-box p {
         margin: 0 auto;
         font-size: 0.8rem;
         color: #7a512d;
         line-height: 1.8em; }
         @media only screen and (min-width: 321px) and (max-width: 399px) {
-          .main .age .age-box p {
+          .main .age .age-box p, .qrpage .age .age-box p {
             font-size: 0.88rem; } }
         @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-          .main .age .age-box p {
+          .main .age .age-box p, .qrpage .age .age-box p {
             font-size: 0.88rem; } }
         @media only screen and (min-width: 399px) and (max-width: 767px) {
-          .main .age .age-box p {
+          .main .age .age-box p, .qrpage .age .age-box p {
             font-size: 0.96rem; } }
         @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-          .main .age .age-box p {
+          .main .age .age-box p, .qrpage .age .age-box p {
             font-size: 0.96rem; } }
-  .main .line {
+  .main .line, .qrpage .line {
     margin-top: -15px; }
-  .main .ten-q {
+  .main .ten-q, .qrpage .ten-q {
     width: 92%;
     margin: 0 auto;
     margin-top: 45px; }
-  .main .tzw .title {
+  .main .tzw .title, .qrpage .tzw .title {
     font-size: 0; }
-  .main .tzw .content {
+  .main .tzw .content, .qrpage .tzw .content {
     background: url("http://image.giccoo.com/projects/friso/img/m-tzw-bg.jpg") repeat top center;
     background-size: 100% 1px;
     background-color: transparent;
     position: relative;
     min-height: 200px; }
-    .main .tzw .content .footer {
+    .main .tzw .content .footer, .qrpage .tzw .content .footer {
       font-size: 0;
       padding-top: 20px; }
-    .main .tzw .content .outlink {
+    .main .tzw .content .outlink, .qrpage .tzw .content .outlink {
       position: absolute;
       bottom: -22px;
       left: 50%;
@@ -1731,11 +1741,11 @@ body.pop-open {
       background-color: transparent;
       font-size: 0;
       margin-left: -15.5%; }
-      .iphone4 .main .tzw .content .outlink {
+      .iphone4 .main .tzw .content .outlink, .iphone4 .qrpage .tzw .content .outlink {
         width: 31.25%; }
-      .main .tzw .content .outlink img {
+      .main .tzw .content .outlink img, .qrpage .tzw .content .outlink img {
         display: none; }
-    .main .tzw .content h2 {
+    .main .tzw .content h2, .qrpage .tzw .content h2 {
       font-size: 1rem;
       width: 80%;
       margin: 0 auto;
@@ -1743,18 +1753,18 @@ body.pop-open {
       font-weight: 400;
       color: #7a512d; }
       @media only screen and (min-width: 321px) and (max-width: 399px) {
-        .main .tzw .content h2 {
+        .main .tzw .content h2, .qrpage .tzw .content h2 {
           font-size: 1.1rem; } }
       @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-        .main .tzw .content h2 {
+        .main .tzw .content h2, .qrpage .tzw .content h2 {
           font-size: 1.1rem; } }
       @media only screen and (min-width: 399px) and (max-width: 767px) {
-        .main .tzw .content h2 {
+        .main .tzw .content h2, .qrpage .tzw .content h2 {
           font-size: 1.2rem; } }
       @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-        .main .tzw .content h2 {
+        .main .tzw .content h2, .qrpage .tzw .content h2 {
           font-size: 1.2rem; } }
-    .main .tzw .content .answer-box {
+    .main .tzw .content .answer-box, .qrpage .tzw .content .answer-box {
       width: 82%;
       margin: 0 auto;
       background: url("http://image.giccoo.com/projects/friso/img/m-answer-bg.png") repeat top center;
@@ -1762,43 +1772,43 @@ body.pop-open {
       background-color: transparent;
       border-radius: 6px;
       border: solid 1px #a7852c; }
-      .main .tzw .content .answer-box .answer {
+      .main .tzw .content .answer-box .answer, .qrpage .tzw .content .answer-box .answer {
         border-bottom: solid 1px #a7852c;
         padding: 15px;
         font-size: 0.8rem; }
         @media only screen and (min-width: 321px) and (max-width: 399px) {
-          .main .tzw .content .answer-box .answer {
+          .main .tzw .content .answer-box .answer, .qrpage .tzw .content .answer-box .answer {
             font-size: 0.88rem; } }
         @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-          .main .tzw .content .answer-box .answer {
+          .main .tzw .content .answer-box .answer, .qrpage .tzw .content .answer-box .answer {
             font-size: 0.88rem; } }
         @media only screen and (min-width: 399px) and (max-width: 767px) {
-          .main .tzw .content .answer-box .answer {
+          .main .tzw .content .answer-box .answer, .qrpage .tzw .content .answer-box .answer {
             font-size: 0.96rem; } }
         @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-          .main .tzw .content .answer-box .answer {
+          .main .tzw .content .answer-box .answer, .qrpage .tzw .content .answer-box .answer {
             font-size: 0.96rem; } }
-        .main .tzw .content .answer-box .answer:last-child {
+        .main .tzw .content .answer-box .answer:last-child, .qrpage .tzw .content .answer-box .answer:last-child {
           border-bottom: none; }
-        .main .tzw .content .answer-box .answer .by {
+        .main .tzw .content .answer-box .answer .by, .qrpage .tzw .content .answer-box .answer .by {
           display: inline-block;
           font-size: 0.8rem;
           width: 100%;
           color: #7a512d;
           padding-bottom: 6px; }
           @media only screen and (min-width: 321px) and (max-width: 399px) {
-            .main .tzw .content .answer-box .answer .by {
+            .main .tzw .content .answer-box .answer .by, .qrpage .tzw .content .answer-box .answer .by {
               font-size: 0.88rem; } }
           @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-            .main .tzw .content .answer-box .answer .by {
+            .main .tzw .content .answer-box .answer .by, .qrpage .tzw .content .answer-box .answer .by {
               font-size: 0.88rem; } }
           @media only screen and (min-width: 399px) and (max-width: 767px) {
-            .main .tzw .content .answer-box .answer .by {
+            .main .tzw .content .answer-box .answer .by, .qrpage .tzw .content .answer-box .answer .by {
               font-size: 0.96rem; } }
           @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-            .main .tzw .content .answer-box .answer .by {
+            .main .tzw .content .answer-box .answer .by, .qrpage .tzw .content .answer-box .answer .by {
               font-size: 0.96rem; } }
-        .main .tzw .content .answer-box .answer .answer-text {
+        .main .tzw .content .answer-box .answer .answer-text, .qrpage .tzw .content .answer-box .answer .answer-text {
           margin: 0 auto;
           display: inline-block;
           font-size: 0.8rem;
@@ -1806,44 +1816,44 @@ body.pop-open {
           line-height: 1.2em;
           color: #3b3b3d; }
           @media only screen and (min-width: 321px) and (max-width: 399px) {
-            .main .tzw .content .answer-box .answer .answer-text {
+            .main .tzw .content .answer-box .answer .answer-text, .qrpage .tzw .content .answer-box .answer .answer-text {
               font-size: 0.88rem; } }
           @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-            .main .tzw .content .answer-box .answer .answer-text {
+            .main .tzw .content .answer-box .answer .answer-text, .qrpage .tzw .content .answer-box .answer .answer-text {
               font-size: 0.88rem; } }
           @media only screen and (min-width: 399px) and (max-width: 767px) {
-            .main .tzw .content .answer-box .answer .answer-text {
+            .main .tzw .content .answer-box .answer .answer-text, .qrpage .tzw .content .answer-box .answer .answer-text {
               font-size: 0.96rem; } }
           @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-            .main .tzw .content .answer-box .answer .answer-text {
+            .main .tzw .content .answer-box .answer .answer-text, .qrpage .tzw .content .answer-box .answer .answer-text {
               font-size: 0.96rem; } }
-          .main .tzw .content .answer-box .answer .answer-text img {
+          .main .tzw .content .answer-box .answer .answer-text img, .qrpage .tzw .content .answer-box .answer .answer-text img {
             vertical-align: top;
             float: left;
             max-width: 25%;
             margin-right: 10px;
             margin-bottom: 10px; }
-  .main .free {
+  .main .free, .qrpage .free {
     width: 80%;
     margin: 0 auto;
     margin-top: 25px; }
-  .main .q-list {
+  .main .q-list, .qrpage .q-list {
     position: relative;
     width: 92.5%;
     margin: 0 auto;
     min-height: 200px; }
-    .main .q-list .loading {
+    .main .q-list .loading, .qrpage .q-list .loading {
       position: absolute;
       top: 50%;
       left: 50%; }
-    .main .q-list .question-list .question-box {
+    .main .q-list .question-list .question-box, .qrpage .q-list .question-list .question-box {
       background: url("http://image.giccoo.com/projects/friso/img/m-q-bg-2.jpg") no-repeat top center;
       background-size: 100% 100%;
       background-color: transparent;
       margin-top: 45px;
       padding-bottom: 40px;
       position: relative; }
-      .main .q-list .question-list .question-box .outlink {
+      .main .q-list .question-list .question-box .outlink, .qrpage .q-list .question-list .question-box .outlink {
         position: absolute;
         bottom: -22px;
         left: 50%;
@@ -1855,51 +1865,51 @@ body.pop-open {
         background-color: transparent;
         font-size: 0;
         margin-left: -15.5%; }
-        .iphone4 .main .q-list .question-list .question-box .outlink {
+        .iphone4 .main .q-list .question-list .question-box .outlink, .iphone4 .qrpage .q-list .question-list .question-box .outlink {
           width: 31.25%; }
-        .main .q-list .question-list .question-box .outlink img {
+        .main .q-list .question-list .question-box .outlink img, .qrpage .q-list .question-list .question-box .outlink img {
           display: none; }
-      .main .q-list .question-list .question-box .title {
+      .main .q-list .question-list .question-box .title, .qrpage .q-list .question-list .question-box .title {
         color: #7a512d;
         padding: 15px 40px;
         padding-left: 30%;
         position: relative;
         cursor: pointer; }
-        .main .q-list .question-list .question-box .title h2, .main .q-list .question-list .question-box .title p {
+        .main .q-list .question-list .question-box .title h2, .main .q-list .question-list .question-box .title p, .qrpage .q-list .question-list .question-box .title h2, .qrpage .q-list .question-list .question-box .title p {
           margin: 0 auto; }
-        .main .q-list .question-list .question-box .title h2 {
+        .main .q-list .question-list .question-box .title h2, .qrpage .q-list .question-list .question-box .title h2 {
           font-size: 1rem;
           font-weight: 400;
           line-height: 1.2em; }
           @media only screen and (min-width: 321px) and (max-width: 399px) {
-            .main .q-list .question-list .question-box .title h2 {
+            .main .q-list .question-list .question-box .title h2, .qrpage .q-list .question-list .question-box .title h2 {
               font-size: 1.1rem; } }
           @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-            .main .q-list .question-list .question-box .title h2 {
+            .main .q-list .question-list .question-box .title h2, .qrpage .q-list .question-list .question-box .title h2 {
               font-size: 1.1rem; } }
           @media only screen and (min-width: 399px) and (max-width: 767px) {
-            .main .q-list .question-list .question-box .title h2 {
+            .main .q-list .question-list .question-box .title h2, .qrpage .q-list .question-list .question-box .title h2 {
               font-size: 1.2rem; } }
           @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-            .main .q-list .question-list .question-box .title h2 {
+            .main .q-list .question-list .question-box .title h2, .qrpage .q-list .question-list .question-box .title h2 {
               font-size: 1.2rem; } }
-        .main .q-list .question-list .question-box .title p {
+        .main .q-list .question-list .question-box .title p, .qrpage .q-list .question-list .question-box .title p {
           font-size: 0.8rem; }
           @media only screen and (min-width: 321px) and (max-width: 399px) {
-            .main .q-list .question-list .question-box .title p {
+            .main .q-list .question-list .question-box .title p, .qrpage .q-list .question-list .question-box .title p {
               font-size: 0.88rem; } }
           @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-            .main .q-list .question-list .question-box .title p {
+            .main .q-list .question-list .question-box .title p, .qrpage .q-list .question-list .question-box .title p {
               font-size: 0.88rem; } }
           @media only screen and (min-width: 399px) and (max-width: 767px) {
-            .main .q-list .question-list .question-box .title p {
+            .main .q-list .question-list .question-box .title p, .qrpage .q-list .question-list .question-box .title p {
               font-size: 0.96rem; } }
           @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-            .main .q-list .question-list .question-box .title p {
+            .main .q-list .question-list .question-box .title p, .qrpage .q-list .question-list .question-box .title p {
               font-size: 0.96rem; } }
-        .main .q-list .question-list .question-box .title .numbs {
+        .main .q-list .question-list .question-box .title .numbs, .qrpage .q-list .question-list .question-box .title .numbs {
           margin-top: 6px; }
-        .main .q-list .question-list .question-box .title .icon {
+        .main .q-list .question-list .question-box .title .icon, .qrpage .q-list .question-list .question-box .title .icon {
           position: absolute;
           top: 0%;
           left: -2.3%;
@@ -1909,9 +1919,9 @@ body.pop-open {
           background: url("http://image.giccoo.com/projects/friso/img/m-icon-an.png") no-repeat left center;
           background-size: contain;
           background-color: transparent; }
-          .iphone4 .main .q-list .question-list .question-box .title .icon {
+          .iphone4 .main .q-list .question-list .question-box .title .icon, .iphone4 .qrpage .q-list .question-list .question-box .title .icon {
             width: 32.0945945946%; }
-        .main .q-list .question-list .question-box .title .icon-more {
+        .main .q-list .question-list .question-box .title .icon-more, .qrpage .q-list .question-list .question-box .title .icon-more {
           background: url("http://image.giccoo.com/projects/friso/img/m-icon-more.png") no-repeat left center;
           background-size: contain;
           background-color: transparent;
@@ -1922,7 +1932,7 @@ body.pop-open {
           right: 10px;
           left: auto;
           margin-top: -10px; }
-      .main .q-list .question-list .question-box .answer-box {
+      .main .q-list .question-list .question-box .answer-box, .qrpage .q-list .question-list .question-box .answer-box {
         width: 90%;
         margin: 0 auto;
         background: url("http://image.giccoo.com/projects/friso/img/m-answer-bg.png") repeat top center;
@@ -1930,43 +1940,43 @@ body.pop-open {
         background-color: transparent;
         border-radius: 6px;
         border: solid 1px #a7852c; }
-        .main .q-list .question-list .question-box .answer-box .answer {
+        .main .q-list .question-list .question-box .answer-box .answer, .qrpage .q-list .question-list .question-box .answer-box .answer {
           border-bottom: solid 1px #a7852c;
           padding: 15px;
           font-size: 0.8rem; }
           @media only screen and (min-width: 321px) and (max-width: 399px) {
-            .main .q-list .question-list .question-box .answer-box .answer {
+            .main .q-list .question-list .question-box .answer-box .answer, .qrpage .q-list .question-list .question-box .answer-box .answer {
               font-size: 0.88rem; } }
           @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-            .main .q-list .question-list .question-box .answer-box .answer {
+            .main .q-list .question-list .question-box .answer-box .answer, .qrpage .q-list .question-list .question-box .answer-box .answer {
               font-size: 0.88rem; } }
           @media only screen and (min-width: 399px) and (max-width: 767px) {
-            .main .q-list .question-list .question-box .answer-box .answer {
+            .main .q-list .question-list .question-box .answer-box .answer, .qrpage .q-list .question-list .question-box .answer-box .answer {
               font-size: 0.96rem; } }
           @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-            .main .q-list .question-list .question-box .answer-box .answer {
+            .main .q-list .question-list .question-box .answer-box .answer, .qrpage .q-list .question-list .question-box .answer-box .answer {
               font-size: 0.96rem; } }
-          .main .q-list .question-list .question-box .answer-box .answer:last-child {
+          .main .q-list .question-list .question-box .answer-box .answer:last-child, .qrpage .q-list .question-list .question-box .answer-box .answer:last-child {
             border-bottom: none; }
-          .main .q-list .question-list .question-box .answer-box .answer .by {
+          .main .q-list .question-list .question-box .answer-box .answer .by, .qrpage .q-list .question-list .question-box .answer-box .answer .by {
             display: inline-block;
             font-size: 0.8rem;
             width: 100%;
             color: #7a512d;
             padding-bottom: 6px; }
             @media only screen and (min-width: 321px) and (max-width: 399px) {
-              .main .q-list .question-list .question-box .answer-box .answer .by {
+              .main .q-list .question-list .question-box .answer-box .answer .by, .qrpage .q-list .question-list .question-box .answer-box .answer .by {
                 font-size: 0.88rem; } }
             @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-              .main .q-list .question-list .question-box .answer-box .answer .by {
+              .main .q-list .question-list .question-box .answer-box .answer .by, .qrpage .q-list .question-list .question-box .answer-box .answer .by {
                 font-size: 0.88rem; } }
             @media only screen and (min-width: 399px) and (max-width: 767px) {
-              .main .q-list .question-list .question-box .answer-box .answer .by {
+              .main .q-list .question-list .question-box .answer-box .answer .by, .qrpage .q-list .question-list .question-box .answer-box .answer .by {
                 font-size: 0.96rem; } }
             @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-              .main .q-list .question-list .question-box .answer-box .answer .by {
+              .main .q-list .question-list .question-box .answer-box .answer .by, .qrpage .q-list .question-list .question-box .answer-box .answer .by {
                 font-size: 0.96rem; } }
-          .main .q-list .question-list .question-box .answer-box .answer .answer-text {
+          .main .q-list .question-list .question-box .answer-box .answer .answer-text, .qrpage .q-list .question-list .question-box .answer-box .answer .answer-text {
             margin: 0 auto;
             display: inline-block;
             font-size: 0.8rem;
@@ -1974,53 +1984,53 @@ body.pop-open {
             line-height: 1.2em;
             color: #3b3b3d; }
             @media only screen and (min-width: 321px) and (max-width: 399px) {
-              .main .q-list .question-list .question-box .answer-box .answer .answer-text {
+              .main .q-list .question-list .question-box .answer-box .answer .answer-text, .qrpage .q-list .question-list .question-box .answer-box .answer .answer-text {
                 font-size: 0.88rem; } }
             @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
-              .main .q-list .question-list .question-box .answer-box .answer .answer-text {
+              .main .q-list .question-list .question-box .answer-box .answer .answer-text, .qrpage .q-list .question-list .question-box .answer-box .answer .answer-text {
                 font-size: 0.88rem; } }
             @media only screen and (min-width: 399px) and (max-width: 767px) {
-              .main .q-list .question-list .question-box .answer-box .answer .answer-text {
+              .main .q-list .question-list .question-box .answer-box .answer .answer-text, .qrpage .q-list .question-list .question-box .answer-box .answer .answer-text {
                 font-size: 0.96rem; } }
             @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
-              .main .q-list .question-list .question-box .answer-box .answer .answer-text {
+              .main .q-list .question-list .question-box .answer-box .answer .answer-text, .qrpage .q-list .question-list .question-box .answer-box .answer .answer-text {
                 font-size: 0.96rem; } }
-            .main .q-list .question-list .question-box .answer-box .answer .answer-text a {
+            .main .q-list .question-list .question-box .answer-box .answer .answer-text a, .qrpage .q-list .question-list .question-box .answer-box .answer .answer-text a {
               color: #3b3b3d; }
-            .main .q-list .question-list .question-box .answer-box .answer .answer-text img {
+            .main .q-list .question-list .question-box .answer-box .answer .answer-text img, .qrpage .q-list .question-list .question-box .answer-box .answer .answer-text img {
               vertical-align: top;
               float: left;
               max-width: 25%;
               margin-right: 10px;
               margin-bottom: 10px; }
-      .main .q-list .question-list .question-box.on {
+      .main .q-list .question-list .question-box.on, .qrpage .q-list .question-list .question-box.on {
         background: url("http://image.giccoo.com/projects/friso/img/m-q-bg-small.png") no-repeat top center;
         background-size: 100% 100%;
         background-color: transparent;
         padding-bottom: 10px; }
-        .main .q-list .question-list .question-box.on .icon-more {
+        .main .q-list .question-list .question-box.on .icon-more, .qrpage .q-list .question-list .question-box.on .icon-more {
           background: url("http://image.giccoo.com/projects/friso/img/m-icon-more.png") no-repeat left center;
           background-size: contain;
           background-color: transparent;
           -webkit-transform: scale3d(1, -1, 1);
                   transform: scale3d(1, -1, 1); }
-        .main .q-list .question-list .question-box.on .answer-box {
+        .main .q-list .question-list .question-box.on .answer-box, .qrpage .q-list .question-list .question-box.on .answer-box {
           display: none; }
-        .main .q-list .question-list .question-box.on .outlink {
+        .main .q-list .question-list .question-box.on .outlink, .qrpage .q-list .question-list .question-box.on .outlink {
           display: none; }
-    .main .q-list .new-list .question-list .question-box.new .answer-box {
+    .main .q-list .new-list .question-list .question-box.new .answer-box, .qrpage .q-list .new-list .question-list .question-box.new .answer-box {
       border: none; }
-      .main .q-list .new-list .question-list .question-box.new .answer-box .answer {
+      .main .q-list .new-list .question-list .question-box.new .answer-box .answer, .qrpage .q-list .new-list .question-list .question-box.new .answer-box .answer {
         padding: 8px 15px;
         position: relative;
         border: solid 1px #a7852c;
         margin-top: 5%;
         border-radius: 6px; }
-        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:first-child {
+        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:first-child, .qrpage .q-list .new-list .question-list .question-box.new .answer-box .answer:first-child {
           margin-top: 0; }
-        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(1) .likeanswer {
+        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(1) .likeanswer, .qrpage .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(1) .likeanswer {
           margin-right: 15.46875%; }
-        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(1):after {
+        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(1):after, .qrpage .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(1):after {
           content: " ";
           position: absolute;
           top: 0;
@@ -2032,11 +2042,11 @@ body.pop-open {
           background-color: transparent;
           height: 40%;
           margin-top: -4px; }
-          .iphone4 .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(1):after {
+          .iphone4 .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(1):after, .iphone4 .qrpage .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(1):after {
             width: 19.0972222222%; }
-        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(2) .likeanswer {
+        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(2) .likeanswer, .qrpage .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(2) .likeanswer {
           margin-right: 15.46875%; }
-        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(2):after {
+        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(2):after, .qrpage .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(2):after {
           content: " ";
           position: absolute;
           top: 0;
@@ -2048,11 +2058,11 @@ body.pop-open {
           background-color: transparent;
           height: 40%;
           margin-top: -4px; }
-          .iphone4 .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(2):after {
+          .iphone4 .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(2):after, .iphone4 .qrpage .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(2):after {
             width: 19.0972222222%; }
-        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(3) .likeanswer {
+        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(3) .likeanswer, .qrpage .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(3) .likeanswer {
           margin-right: 15.46875%; }
-        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(3):after {
+        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(3):after, .qrpage .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(3):after {
           content: " ";
           position: absolute;
           top: 0;
@@ -2064,11 +2074,11 @@ body.pop-open {
           background-color: transparent;
           height: 40%;
           margin-top: -4px; }
-          .iphone4 .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(3):after {
+          .iphone4 .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(3):after, .iphone4 .qrpage .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(3):after {
             width: 19.0972222222%; }
-        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(4) .likeanswer {
+        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(4) .likeanswer, .qrpage .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(4) .likeanswer {
           margin-right: 15.46875%; }
-        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(4):after {
+        .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(4):after, .qrpage .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(4):after {
           content: " ";
           position: absolute;
           top: 0;
@@ -2080,7 +2090,7 @@ body.pop-open {
           background-color: transparent;
           height: 40%;
           margin-top: -4px; }
-          .iphone4 .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(4):after {
+          .iphone4 .main .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(4):after, .iphone4 .qrpage .q-list .new-list .question-list .question-box.new .answer-box .answer:nth-child(4):after {
             width: 19.0972222222%; }
 
 .outlink {

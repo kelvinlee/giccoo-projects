@@ -2,6 +2,24 @@
 # @codekit-prepend "../../libs/coffee/requestanimation"
 # @codekit-prepend "../../libs/coffee/qrcode"
 
+IsPC = ->
+  userAgentInfo = navigator.userAgent
+  Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod')
+  flag = true
+  v = 0
+  while v < Agents.length
+    if userAgentInfo.indexOf(Agents[v]) > 0
+      flag = false
+      break
+    v++
+  flag
+
+_IsPC = false
+if IsPC() and $(".main").is(".qr")
+  $(".main").remove()
+  $(".qrpage").show()
+  _IsPC = true
+
 Store = {}
 scrollTop = 0
 defaultTop = 0
@@ -900,7 +918,7 @@ defaultInfo =[
     sort: 1
   }
 ]
-riot.mount("*")
+riot.mount("*") unless _IsPC
 
 updateLoad = ->
   # return false
@@ -927,6 +945,7 @@ window.onscroll = (evt)->
     $(".logo").removeClass "scroll"
 
 $(document).ready ->
+  return false if _IsPC
   $("#tabs").on "click", ->
     el = $(".on",this)
     $(".on",this).removeClass("on")
@@ -974,6 +993,7 @@ updateLikeOn = ->
         $(".likeanswer[rel=#{i}]",this).addClass "on"
 
 window.onload = ->
+  return false if _IsPC
   MK = $("body").width()/$("body").height()
   defaultTop = $(".logo").offset().top if $(".logo").length > 0
   getdefaultTop = true
@@ -1014,10 +1034,7 @@ window.onload = ->
 
   if IsPC() and $(".main").is(".mobile")
     return window.location.href = "pc.html"
-  if IsPC() and $(".main").is(".qr")
-    $(".main").hide()
-    $(".qrpage").show()
-    return
+  
 
   # music
 
@@ -1034,17 +1051,7 @@ window.onload = ->
     loadWechatConfig()
   return true
 
-IsPC = ->
-  userAgentInfo = navigator.userAgent
-  Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod')
-  flag = true
-  v = 0
-  while v < Agents.length
-    if userAgentInfo.indexOf(Agents[v]) > 0
-      flag = false
-      break
-    v++
-  flag
+
 
 loadWechatConfig = ->
   url = encodeURIComponent window.location.href.split("#")[0]

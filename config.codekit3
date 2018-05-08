@@ -2655,6 +2655,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/friso\/img\/qr.png": {
+		"ft": 32768,
+		"iS": 2795,
+		"oA": 0,
+		"oAP": "\/friso\/img\/qr.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/friso\/img\/share.jpg": {
 		"ft": 16384,
 		"iS": 33061,
@@ -2720,6 +2731,16 @@
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/friso\/js\/main-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/friso\/js\/s2.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/friso\/js\/s2-build.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 1
