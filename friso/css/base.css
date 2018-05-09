@@ -1658,7 +1658,8 @@ body.pop-open {
 .qrpage {
   width: 100%;
   height: 100%;
-  text-align: center; }
+  text-align: center;
+  display: none; }
   .qrpage .content {
     margin: 0 auto;
     margin-top: 20%;
