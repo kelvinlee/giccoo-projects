@@ -309,17 +309,12 @@ init = function init() {
         } else {
           ugcC.texts = textsBox[0][0];
         }
-        ugcC.init();
-        // ugcC.app.renderer.extract.canvas()
-        // console.log ugcC.app.renderer.extract.canvas()
-        ugcC.app.view.style.display = "none";
-        return setTimeout(function () {
+        ugcC.init(function () {
           _this2.ugcbg = ugcC.app.renderer.extract.canvas().toDataURL();
           ugcC.qr();
-          return setTimeout(function () {
-            return _this2.ugc = ugcC.app.renderer.extract.base64();
-          }, 500);
-        }, 500);
+          return _this2.ugc = ugcC.app.renderer.extract.base64();
+        });
+        return ugcC.app.view.style.display = "none";
       },
       upload: function upload() {
         var data, image;
@@ -463,7 +458,8 @@ buildUGC = function () {
         last.x = 105;
         last.y = lastY + 24 + 30;
         this.app.stage.addChild(last);
-        return this.app.renderer.render(this.app.stage);
+        this.app.renderer.render(this.app.stage);
+        return this.callback();
       }
     }, {
       key: "qr",
@@ -476,7 +472,8 @@ buildUGC = function () {
       }
     }, {
       key: "init",
-      value: function init() {
+      value: function init(callback) {
+        this.callback = callback;
         this.app = new PIXI.Application({
           width: 640,
           height: 1138,
@@ -495,6 +492,8 @@ buildUGC = function () {
   ;
 
   buildUGC.prototype.app = null;
+
+  buildUGC.prototype.callback = null;
 
   buildUGC.prototype.score = 0;
 

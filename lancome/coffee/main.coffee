@@ -220,17 +220,11 @@ init = ->
 				else
 					ugcC.texts = textsBox[0][0]
 				
-				ugcC.init()
-				# ugcC.app.renderer.extract.canvas()
-				# console.log ugcC.app.renderer.extract.canvas()
-				ugcC.app.view.style.display = "none"
-				setTimeout =>
+				ugcC.init =>
 					@.ugcbg = ugcC.app.renderer.extract.canvas().toDataURL()
 					ugcC.qr()
-					setTimeout =>
-						@.ugc = ugcC.app.renderer.extract.base64()
-					,500
-				,500
+					@.ugc = ugcC.app.renderer.extract.base64()
+				ugcC.app.view.style.display = "none"
 			upload: ->
 				# console.log "upload:"
 				image = @.ugc
@@ -305,6 +299,7 @@ init = ->
 
 class buildUGC
 	app: null
+	callback: null
 	score: 0
 	texts: ["你是个总觉得差一点点的人","差一点点就饱了","差一点点就满足了","连百分百的孤独感都觉得差了一点点"]
 	build: ->
@@ -334,13 +329,16 @@ class buildUGC
 		@.app.stage.addChild last
 
 		@.app.renderer.render @.app.stage
+
+		@.callback()
 	qr: ->
 		qr = new PIXI.Sprite PIXI.loader.resources["img/ugc-qr.png"].texture
 		qr.x = 430
 		qr.y = 706
 
 		@.app.stage.addChild qr
-	init: ->
+	init: (callback)->
+		@.callback = callback
 		@app = new PIXI.Application
 			width: 640
 			height: 1138
