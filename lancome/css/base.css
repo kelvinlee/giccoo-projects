@@ -1144,6 +1144,13 @@ body {
 
 .page-wait {
   background-color: #e5f4fc; }
+  .page-wait .content {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 100%;
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0); }
 
 .page-last {
   background-color: #e5f4fc; }
