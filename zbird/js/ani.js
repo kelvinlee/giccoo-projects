@@ -19,6 +19,8 @@ function ani1 () {
   TweenLite.from(p1Rhand,2.5,{x:320+30,y:(550-150)/1000*stageH,alpha:0,ease:Back.easeOut,delay:handT+0.05})
   TweenLite.from(p1box,2.5,{scale:.9,x:320,y:(573-150)/1000*stageH,alpha:0,ease:Back.easeOut,delay:handT+0})
 
+  TweenLite.set(flash,{x:320+12,y:(573-22)/1000*stageH,scale:1,alpha:1,delay:2.5+handT})
+
 
   for (var i = 0; i < 8 ; i++) {
     TweenLite.from(p1titleA[i],1.5,{scale:1.2,x:p1titleA[i].x+Math.random()*0-0,y:p1titleA[i].y+Math.random()*160-80,alpha:0,ease:Back.easeOut,delay:0.1*i})
@@ -46,6 +48,7 @@ function ani2(){
   TweenLite.set(step1Rbtn,{display:"none"})
   TweenLite.set(step1Nextbtn,{display:"none"})
   TweenLite.set(step1Backbtn,{display:"none"})
+  TweenLite.set(flash,{x:320+33,y:(460+38)/1000*stageH,scale:1,alpha:1})
 }
 
 var ifFirstSetpage3=1
@@ -55,6 +58,7 @@ var step1Nextbtn=$("#step1Nextbtn")
 var step1Backbtn=$("#step1Backbtn")
 
 function ani3(){
+  TweenLite.set(flash,{x:320+33,y:(460+40)/1000*stageH,scale:1,alpha:0})
   console.log("ani3")
   TweenLite.to(arrowDown,.5,{alpha:0})
   if(ifFirstSetpage3==1){
