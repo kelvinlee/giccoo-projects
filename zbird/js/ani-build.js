@@ -526,3 +526,4 @@ function setStep4(){
 
   console.log(504/1000*stageH)
 }
+

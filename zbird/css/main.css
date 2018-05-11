@@ -72,8 +72,40 @@ img{ width: 100%; }
 	width: 100%;
 	height: 100%;
 	display: none;
+	opacity: 0;
 }
-/*.musicBtn{
+.bottomPart{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	font-size: 0;
+}
+#endBtn{
+	display: none;
+}
+.endbtns{
+	width: 22%;
+	height: 17%;
+	bottom: 0;
+}
+#endBtn1{
+	left: 17%;
+}
+#endBtn2{
+	left: 39%;
+}
+#endBtn3{
+	left: 61%;
+}
+#shareHint{
+	position: absolute;
+	background-color: #000000;
+	opacity: .8;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.musicBtn{
 	position: absolute;
 	width: 12.35%;
 	top: 0;
@@ -83,4 +115,4 @@ img{ width: 100%; }
 }
 #musicOff{
 	opacity: 1;
-}*/
+}

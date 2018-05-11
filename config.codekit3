@@ -29,12 +29,6 @@
 		"oAP": "\/build\/2017-new-year",
 		"oF": 0
 		},
-	"\/ad": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "\/build\/ad",
-		"oF": 0
-		},
 	"\/adidas": {
 		"ft": 65536,
 		"oA": 1,
@@ -178,97 +172,6 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/loading.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/loading.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/46ca1e442f47e1f5a330cd0d222c1b3af91f8678\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/46ca1e442f47e1f5a330cd0d222c1b3af91f8678\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/47cafbbec40ad094dd351645a821a034f125a5ee\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/47cafbbec40ad094dd351645a821a034f125a5ee\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/47cafbbec40ad094dd351645a821a034f125a5ee\/mobile.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/47cafbbec40ad094dd351645a821a034f125a5ee\/mobile.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/slider.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/slider.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/d9430434f90b328049454da2ef3ad0296f6b7651\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/d9430434f90b328049454da2ef3ad0296f6b7651\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/e4a00663e5bcee63b9d1edb225c259d373d2fc69\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/e4a00663e5bcee63b9d1edb225c259d373d2fc69\/base.sassc",
-		"oF": 0
-		},
-	"\/BingoMe-share\/sass\/.sass-cache\/fe6b30f47509b91f4794bfa3ce557522fc81e305\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/BingoMe-share\/sass\/.sass-cache\/fe6b30f47509b91f4794bfa3ce557522fc81e305\/base.sassc",
-		"oF": 0
 		},
 	"\/BingoMe-share\/sass\/base.sass": {
 		"aP": 1,
@@ -2750,20 +2653,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/friso\/mobile.html",
-		"oF": 0
-		},
-	"\/friso\/mp4\/video-build.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/friso\/mp4\/video-build.mp4",
-		"oF": 0
-		},
-	"\/friso\/mp4\/video.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/friso\/mp4\/video.mp4",
 		"oF": 0
 		},
 	"\/friso\/pc.html": {
@@ -5815,48 +5704,6 @@
 		"oAP": "\/libs\/riot3\/transition.js",
 		"oF": 0
 		},
-	"\/libs\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/libs\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/base.sassc",
-		"oF": 0
-		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc",
-		"oF": 0
-		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc",
-		"oF": 0
-		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc",
-		"oF": 0
-		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc",
-		"oF": 0
-		},
-	"\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/libs\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc",
-		"oF": 0
-		},
 	"\/libs\/sass\/base.sass": {
 		"aP": 1,
 		"bl": 0,
@@ -6936,69 +6783,6 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/04eff649fb43a2d18b8f16146642fe54fd46a1a2\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/04eff649fb43a2d18b8f16146642fe54fd46a1a2\/base.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/normal.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/24098bd3e6b8cad38281555ee7fe29b40f1aef35\/normal.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/animation.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/animation.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/base.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/default.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/helper.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/normalize.scssc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/screen.sassc",
-		"oF": 0
-		},
-	"\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/slider.sassc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/ThreeMusketeers\/sass\/.sass-cache\/6cf3bbcb64f3683b2fc35e7bbe959473eccaae76\/slider.sassc",
-		"oF": 0
-		},
 	"\/ThreeMusketeers\/sass\/base.sass": {
 		"aP": 1,
 		"bl": 0,
@@ -7196,6 +6980,1504 @@
 		"ft": 65536,
 		"oA": 1,
 		"oAP": "\/build\/your_own_way",
+		"oF": 0
+		},
+	"\/zbird\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/zbird\/css",
+		"oF": 0
+		},
+	"\/zbird\/img\/bg.jpg": {
+		"ft": 16384,
+		"iS": 12153,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zbird\/img\/bg1.png": {
+		"ft": 32768,
+		"iS": 105608,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/bg1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/bg2.png": {
+		"ft": 32768,
+		"iS": 103559,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/bg2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/bg3.png": {
+		"ft": 32768,
+		"iS": 83579,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/bg3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/bg4.png": {
+		"ft": 32768,
+		"iS": 84460,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/bg4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/diamond1.png": {
+		"ft": 32768,
+		"iS": 14285,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/diamond1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/diamond2.png": {
+		"ft": 32768,
+		"iS": 16418,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/diamond2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/diamond3.png": {
+		"ft": 32768,
+		"iS": 12614,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/diamond3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/diamond4.png": {
+		"ft": 32768,
+		"iS": 14766,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/diamond4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/endbar.png": {
+		"ft": 32768,
+		"iS": 30052,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/endbar.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/endbtn.jpg": {
+		"ft": 16384,
+		"iS": 41217,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/endbtn.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zbird\/img\/endbtn.png": {
+		"ft": 32768,
+		"iS": 15786,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/endbtn.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/endt1.png": {
+		"ft": 32768,
+		"iS": 11039,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/endt1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/endt2.png": {
+		"ft": 32768,
+		"iS": 9777,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/endt2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/endt3.png": {
+		"ft": 32768,
+		"iS": 10056,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/endt3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/endt4.png": {
+		"ft": 32768,
+		"iS": 9836,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/endt4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/endt5.png": {
+		"ft": 32768,
+		"iS": 10427,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/endt5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/endt6.png": {
+		"ft": 32768,
+		"iS": 11569,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/endt6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/endt7.png": {
+		"ft": 32768,
+		"iS": 9783,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/endt7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/endt8.png": {
+		"ft": 32768,
+		"iS": 10041,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/endt8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/flash.png": {
+		"ft": 32768,
+		"iS": 3106,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/flash.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ico.jpg": {
+		"ft": 16384,
+		"iS": 14479,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zbird\/img\/logo.png": {
+		"ft": 32768,
+		"iS": 6970,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/music_off1.png": {
+		"ft": 32768,
+		"iS": 586,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/music_off1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/music_on1.png": {
+		"ft": 32768,
+		"iS": 1548,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/music_on1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p1box.png": {
+		"ft": 32768,
+		"iS": 40905,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p1box.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p1logo.png": {
+		"ft": 32768,
+		"iS": 7925,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p1logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p1one_hand.png": {
+		"ft": 32768,
+		"iS": 84082,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p1one_hand.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p1title.png": {
+		"ft": 32768,
+		"iS": 14060,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p1title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p1title1.png": {
+		"ft": 32768,
+		"iS": 4849,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p1title1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p1title2.png": {
+		"ft": 32768,
+		"iS": 4290,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p1title2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p1title3.png": {
+		"ft": 32768,
+		"iS": 4249,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p1title3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p1title4.png": {
+		"ft": 32768,
+		"iS": 3528,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p1title4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p1title5.png": {
+		"ft": 32768,
+		"iS": 5263,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p1title5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p1title6.png": {
+		"ft": 32768,
+		"iS": 4386,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p1title6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p1title7.png": {
+		"ft": 32768,
+		"iS": 5356,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p1title7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p1title8.png": {
+		"ft": 32768,
+		"iS": 5094,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p1title8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p1title_e.png": {
+		"ft": 32768,
+		"iS": 5528,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p1title_e.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p1title_line.png": {
+		"ft": 32768,
+		"iS": 3430,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p1title_line.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p2hand.png": {
+		"ft": 32768,
+		"iS": 80132,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p2hand.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p2heart.png": {
+		"ft": 32768,
+		"iS": 14982,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p2heart.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p2t1.png": {
+		"ft": 32768,
+		"iS": 3581,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p2t1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p2t2.png": {
+		"ft": 32768,
+		"iS": 3220,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p2t2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p2t3.png": {
+		"ft": 32768,
+		"iS": 3562,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p2t3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p2t4.png": {
+		"ft": 32768,
+		"iS": 2321,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p2t4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p2t5.png": {
+		"ft": 32768,
+		"iS": 3697,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p2t5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p2t6.png": {
+		"ft": 32768,
+		"iS": 3992,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p2t6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p2t7.png": {
+		"ft": 32768,
+		"iS": 2617,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p2t7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p2t8.png": {
+		"ft": 32768,
+		"iS": 3045,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p2t8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/p2title.png": {
+		"ft": 32768,
+		"iS": 5364,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/p2title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring1_1.png": {
+		"ft": 32768,
+		"iS": 16709,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring1_1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring1_2.png": {
+		"ft": 32768,
+		"iS": 19810,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring1_2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring1_3.png": {
+		"ft": 32768,
+		"iS": 20556,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring1_3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring1_4.png": {
+		"ft": 32768,
+		"iS": 17183,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring1_4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring1_5.png": {
+		"ft": 32768,
+		"iS": 19637,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring1_5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring1_6.png": {
+		"ft": 32768,
+		"iS": 19472,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring1_6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring2_1.png": {
+		"ft": 32768,
+		"iS": 15643,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring2_1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring2_2.png": {
+		"ft": 32768,
+		"iS": 18008,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring2_2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring2_3.png": {
+		"ft": 32768,
+		"iS": 17081,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring2_3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring2_4.png": {
+		"ft": 32768,
+		"iS": 17123,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring2_4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring3_1.png": {
+		"ft": 32768,
+		"iS": 27064,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring3_1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring3_2.png": {
+		"ft": 32768,
+		"iS": 26866,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring3_2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring3_3.png": {
+		"ft": 32768,
+		"iS": 16978,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring3_3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring3_4.png": {
+		"ft": 32768,
+		"iS": 25389,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring3_4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring4_1.png": {
+		"ft": 32768,
+		"iS": 22550,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring4_1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring4_2.png": {
+		"ft": 32768,
+		"iS": 15009,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring4_2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring4_3.png": {
+		"ft": 32768,
+		"iS": 20885,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring4_3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring4_4.png": {
+		"ft": 32768,
+		"iS": 16385,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring4_4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/ring4_5.png": {
+		"ft": 32768,
+		"iS": 22159,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ring4_5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/sharehint.png": {
+		"ft": 32768,
+		"iS": 2321,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/sharehint.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step12arrow.png": {
+		"ft": 32768,
+		"iS": 4291,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step12arrow.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step1btn.png": {
+		"ft": 32768,
+		"iS": 5271,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step1btn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step1icon1.png": {
+		"ft": 32768,
+		"iS": 12419,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step1icon1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step1icon2.png": {
+		"ft": 32768,
+		"iS": 12300,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step1icon2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step1icon3.png": {
+		"ft": 32768,
+		"iS": 12583,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step1icon3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step1icon4.png": {
+		"ft": 32768,
+		"iS": 13094,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step1icon4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step1title.png": {
+		"ft": 32768,
+		"iS": 16615,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step1title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step2btn.png": {
+		"ft": 32768,
+		"iS": 6358,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step2btn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step2title.png": {
+		"ft": 32768,
+		"iS": 16902,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step2title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step3arrow.png": {
+		"ft": 32768,
+		"iS": 5553,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step3arrow.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step3t1.png": {
+		"ft": 32768,
+		"iS": 7206,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step3t1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step3t2.png": {
+		"ft": 32768,
+		"iS": 4649,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step3t2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step3t3.png": {
+		"ft": 32768,
+		"iS": 4999,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step3t3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step3t4.png": {
+		"ft": 32768,
+		"iS": 6345,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step3t4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step3t5.png": {
+		"ft": 32768,
+		"iS": 6620,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step3t5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step3t6.png": {
+		"ft": 32768,
+		"iS": 6918,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step3t6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step3t7.png": {
+		"ft": 32768,
+		"iS": 5555,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step3t7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step3t8.png": {
+		"ft": 32768,
+		"iS": 6032,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step3t8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/step3title.png": {
+		"ft": 32768,
+		"iS": 37254,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/step3title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t1_1a.png": {
+		"ft": 32768,
+		"iS": 2184,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t1_1a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t1_1b.png": {
+		"ft": 32768,
+		"iS": 3336,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t1_1b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t1_2a.png": {
+		"ft": 32768,
+		"iS": 2429,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t1_2a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t1_2b.png": {
+		"ft": 32768,
+		"iS": 3589,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t1_2b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t1_3a.png": {
+		"ft": 32768,
+		"iS": 2469,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t1_3a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t1_3b.png": {
+		"ft": 32768,
+		"iS": 3850,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t1_3b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t1_4a.png": {
+		"ft": 32768,
+		"iS": 2647,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t1_4a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t1_4b.png": {
+		"ft": 32768,
+		"iS": 4538,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t1_4b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t1_5a.png": {
+		"ft": 32768,
+		"iS": 2446,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t1_5a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t1_5b.png": {
+		"ft": 32768,
+		"iS": 3824,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t1_5b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t1_6a.png": {
+		"ft": 32768,
+		"iS": 2132,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t1_6a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t1_6b.png": {
+		"ft": 32768,
+		"iS": 4085,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t1_6b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t2_1a.png": {
+		"ft": 32768,
+		"iS": 2102,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t2_1a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t2_1b.png": {
+		"ft": 32768,
+		"iS": 4066,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t2_1b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t2_2a.png": {
+		"ft": 32768,
+		"iS": 1760,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t2_2a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t2_2b.png": {
+		"ft": 32768,
+		"iS": 3216,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t2_2b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t2_3a.png": {
+		"ft": 32768,
+		"iS": 1753,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t2_3a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t2_3b.png": {
+		"ft": 32768,
+		"iS": 4590,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t2_3b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t2_4a.png": {
+		"ft": 32768,
+		"iS": 2172,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t2_4a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t2_4b.png": {
+		"ft": 32768,
+		"iS": 3576,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t2_4b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t3_1a.png": {
+		"ft": 32768,
+		"iS": 2249,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t3_1a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t3_1b.png": {
+		"ft": 32768,
+		"iS": 3389,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t3_1b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t3_2a.png": {
+		"ft": 32768,
+		"iS": 1988,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t3_2a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t3_2b.png": {
+		"ft": 32768,
+		"iS": 4147,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t3_2b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t3_3a.png": {
+		"ft": 32768,
+		"iS": 1770,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t3_3a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t3_3b.png": {
+		"ft": 32768,
+		"iS": 4802,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t3_3b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t3_4a.png": {
+		"ft": 32768,
+		"iS": 1811,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t3_4a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t3_4b.png": {
+		"ft": 32768,
+		"iS": 3537,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t3_4b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t4_1a.png": {
+		"ft": 32768,
+		"iS": 1696,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t4_1a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t4_1b.png": {
+		"ft": 32768,
+		"iS": 4508,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t4_1b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t4_2a.png": {
+		"ft": 32768,
+		"iS": 1881,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t4_2a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t4_2b.png": {
+		"ft": 32768,
+		"iS": 5231,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t4_2b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t4_3a.png": {
+		"ft": 32768,
+		"iS": 2036,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t4_3a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t4_3b.png": {
+		"ft": 32768,
+		"iS": 4972,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t4_3b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t4_4a.png": {
+		"ft": 32768,
+		"iS": 1800,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t4_4a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t4_4b.png": {
+		"ft": 32768,
+		"iS": 4728,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t4_4b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t4_5a.png": {
+		"ft": 32768,
+		"iS": 1955,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t4_5a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/t4_5b.png": {
+		"ft": 32768,
+		"iS": 4197,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/t4_5b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/img\/v.png": {
+		"ft": 32768,
+		"iS": 3215,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/v.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zbird\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/zbird\/index.html",
+		"oF": 0
+		},
+	"\/zbird\/js\/ani-build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/zbird\/js\/ani-build-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/zbird\/js\/ani.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/zbird\/js\/ani-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/zbird\/js\/easeljs.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/zbird\/js\/easeljs.min-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/zbird\/js\/jquery-2.2.1.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/zbird\/js\/jquery-2.2.1.min-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/zbird\/js\/main-build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/zbird\/js\/main-build-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/zbird\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/zbird\/js\/main-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/zbird\/js\/TweenMax.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/zbird\/js\/TweenMax.min-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/zbird\/mp3\/bgm.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/zbird\/mp3\/bgm.mp3",
 		"oF": 0
 		},
 	"\/zhihu-huarun": {
