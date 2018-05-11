@@ -8,7 +8,7 @@ $(document).ready(function load (){
     var shareContent;
     shareContent = {
       title: "520·送个大的",
-      desc: "为爱智选",
+      desc: "今夜我不关心人类，我只想你。",
       link: "http://m.giccoo.com/zbird/",
       imgUrl: "http://m.giccoo.com/zbird/img/ico.jpg",
       success: function() {},
