@@ -3,6 +3,7 @@ $(document).ready(function load (){
   //iniListenSound()
 	loadWechatConfig();
   initAll()
+  iniListenSound()
   	wx.ready(function() {
     var shareContent;
     shareContent = {
