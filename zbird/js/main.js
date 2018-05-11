@@ -141,9 +141,20 @@ var p1box=new createjs.Bitmap("img/p1box.png")
 
 var p1logo=new createjs.Bitmap("img/p1logo.png")
 
+var flash=new createjs.Container()
+var flash1=new createjs.Bitmap("img/flash.png")
+var flash2=new createjs.Bitmap("img/flash.png")
 
 function setPage1(){
   stage1.addChild(p1title)
+  //stage.addChild(flash)
+  flash.addChild(flash1)
+  flash.addChild(flash2)
+  TweenLite.set(flash,{x:320+12,y:(573-22)/1000*stageH,scale:0,alpha:0})//=============闪光
+  TweenLite.set(flash2,{x:0,y:0,regX:18.5,regY:18.5,scale:0})
+  TweenLite.set(flash1,{regX:18.5,regY:18.5,scale:0})
+  flashLoop1()
+  flashLoopB1()
   for (var i = 1; i <= 8; i++) {
     var _p1title=new createjs.Bitmap("img/p1title"+i+".png")
     p1titleA.push(_p1title)
@@ -189,6 +200,19 @@ function setPage2(){
  };
 
    
+}
+
+function flashLoop1(){
+  TweenLite.to(flash1,.3,{scale:1.39,rotation:"+=90",onComplete:flashLoop2,delay:Math.random()*0+2,ease:Linear.easeNone})
+}
+function flashLoop2(){
+  TweenLite.to(flash1,1.2,{scale:0,rotation:"+=270",onComplete:flashLoop1,ease:Linear.easeNone})
+}
+function flashLoopB1(){
+  TweenLite.to(flash2,.3,{scale:1.2,rotation:"-=90",onComplete:flashLoopB2,delay:Math.random()*0+2+.05,ease:Linear.easeNone})
+}
+function flashLoopB2(){
+  TweenLite.to(flash2,1.2,{scale:0,rotation:"-=270",onComplete:flashLoopB1,ease:Linear.easeNone})
 }
 
 
