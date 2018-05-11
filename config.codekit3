@@ -3557,6 +3557,7 @@
 		"oA": 0,
 		"oAP": "\/Gmovie\/index.html",
 		"oF": 0
+<<<<<<< HEAD
 		},
 	"\/Gmovie\/js\/myjs1.js": {
 		"ft": 64,
@@ -3628,6 +3629,312 @@
 		"cOD": 1,
 		"ft": 512,
 		"oA": 0,
+		"oAP": "\/HRCmap\/index.html",
+		"oF": 2,
+		"oS": 0
+		},
+	"\/HRCmap\/points.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/points.html",
+		"oF": 0
+		},
+	"\/HRCmap\/points.jade": {
+=======
+		},
+	"\/Gmovie\/js\/myjs1.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/Gmovie\/js\/myjs1-build.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/Gmovie\/mp3\/bgmusic1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/Gmovie\/mp3\/bgmusic1.mp3",
+		"oF": 0
+		},
+	"\/hire": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/hire",
+		"oF": 0
+		},
+	"\/HRCmap\/build.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/build.html",
+		"oF": 0
+		},
+	"\/HRCmap\/gaode-all.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/gaode-all.html",
+		"oF": 0
+		},
+	"\/HRCmap\/gaode-test.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/gaode-test.html",
+		"oF": 0
+		},
+	"\/HRCmap\/gaode.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/gaode.html",
+		"oF": 0
+		},
+	"\/HRCmap\/gz.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/gz.html",
+		"oF": 0
+		},
+	"\/HRCmap\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/index.html",
+		"oF": 0
+		},
+	"\/HRCmap\/index.jade": {
+>>>>>>> liam
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+<<<<<<< HEAD
+		"oAP": "\/HRCmap\/points.html",
+		"oF": 2,
+		"oS": 0
+		},
+	"\/HRCmap\/README.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/README.html",
+		"oF": 0
+		},
+	"\/HRCmap\/README.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 0,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 0,
+		"oAP": "\/HRCmap\/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/HRCmap\/sc.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/sc.html",
+		"oF": 0
+		},
+	"\/HRCmap\/sh.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/sh.html",
+		"oF": 0
+		},
+	"\/HRCmap\/v1.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/v1.html",
+		"oF": 0
+		},
+	"\/HRCmap\/v2.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/HRCmap\/v2.html",
+		"oF": 0
+		},
+	"\/huawei_hb": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/huawei_hb",
+		"oF": 0
+		},
+	"\/huawei_matebook": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/huawei_matebook",
+		"oF": 0
+		},
+	"\/huaweiG7": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/huaweiG7",
+		"oF": 0
+		},
+	"\/huxiu_ministation": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/huxiu_ministation",
+		"oF": 0
+		},
+	"\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/index.html",
+		"oF": 0
+		},
+	"\/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/intel_form": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/intel_form",
+		"oF": 0
+		},
+	"\/inv": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/inv",
+		"oF": 0
+		},
+	"\/iwatch": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/iwatch",
+		"oF": 0
+		},
+	"\/jac": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/jac",
+		"oF": 0
+		},
+	"\/jac_a60": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/jac_a60",
+		"oF": 0
+		},
+	"\/jaguar": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/jaguar",
+		"oF": 0
+		},
+	"\/jaguar_AOP": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/jaguar_AOP",
+		"oF": 0
+		},
+	"\/jaguar_fpace": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/jaguar_fpace",
+		"oF": 0
+		},
+	"\/jiaomu": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/jiaomu",
+		"oF": 0
+		},
+	"\/kfcwow": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/kfcwow",
+		"oF": 0
+		},
+	"\/lamer": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/lamer",
+		"oF": 0
+		},
+	"\/lancome\/coffee\/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/js\/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/lancome\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/lancome\/css",
+		"oF": 0
+		},
+	"\/lancome\/img\/answer-1-bg.jpg": {
+		"ft": 16384,
+		"iS": 69202,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/answer-1-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lancome\/img\/answer-1-mark-bg.jpg": {
+		"ft": 16384,
+		"iS": 18988,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/answer-1-mark-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/lancome\/img\/answer-2-bg.jpg": {
+		"ft": 16384,
+		"iS": 53492,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/answer-2-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/lancome\/img\/answer-3-bg.jpg": {
+		"ft": 16384,
+		"iS": 40823,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/answer-3-bg.jpg",
+=======
 		"oAP": "\/HRCmap\/index.html",
 		"oF": 2,
 		"oS": 0
@@ -3852,391 +4159,659 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/answer-2-bg.jpg",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/lancome\/img\/answer-3-bg.jpg": {
-		"ft": 16384,
-		"iS": 40823,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/answer-3-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
+<<<<<<< HEAD
 	"\/lancome\/img\/bg.jpg": {
 		"ft": 16384,
 		"iS": 10074,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/bg.jpg",
+=======
+	"\/lancome\/img\/answer-3-bg.jpg": {
+		"ft": 16384,
+		"iS": 40823,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/answer-3-bg.jpg",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/btn-done.png": {
 		"ft": 32768,
 		"iS": 2016,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/btn-done.png",
+=======
+	"\/lancome\/img\/bg.jpg": {
+		"ft": 16384,
+		"iS": 10074,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/bg.jpg",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/btn-long-save.png": {
 		"ft": 32768,
 		"iS": 4724,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/btn-long-save.png",
+=======
+	"\/lancome\/img\/btn-done.png": {
+		"ft": 32768,
+		"iS": 2016,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/btn-done.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/btn-next.png": {
 		"ft": 32768,
 		"iS": 2024,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/btn-next.png",
+=======
+	"\/lancome\/img\/btn-long-save.png": {
+		"ft": 32768,
+		"iS": 4724,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/btn-long-save.png",
+>>>>>>> liam
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/btn-save.png": {
 		"ft": 32768,
 		"iS": 3696,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/btn-save.png",
+=======
+	"\/lancome\/img\/btn-next.png": {
+		"ft": 32768,
+		"iS": 2024,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/btn-next.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/building.png": {
 		"ft": 32768,
 		"iS": 219524,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/building.png",
+=======
+	"\/lancome\/img\/btn-save.png": {
+		"ft": 32768,
+		"iS": 3696,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/btn-save.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/ico.jpg": {
 		"ft": 16384,
 		"iS": 33267,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/ico.jpg",
+=======
+	"\/lancome\/img\/building.png": {
+		"ft": 32768,
+		"iS": 219524,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/building.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/item-elephant.png": {
 		"ft": 32768,
 		"iS": 16543,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/item-elephant.png",
+=======
+	"\/lancome\/img\/ico.jpg": {
+		"ft": 16384,
+		"iS": 33267,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/ico.jpg",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/item-owl.png": {
 		"ft": 32768,
 		"iS": 6564,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/item-owl.png",
+=======
+	"\/lancome\/img\/item-elephant.png": {
+		"ft": 32768,
+		"iS": 16543,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/item-elephant.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/item-panda.png": {
 		"ft": 32768,
 		"iS": 21252,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/item-panda.png",
+=======
+	"\/lancome\/img\/item-owl.png": {
+		"ft": 32768,
+		"iS": 6564,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/item-owl.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/item.png": {
 		"ft": 32768,
 		"iS": 57116,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/item.png",
+=======
+	"\/lancome\/img\/item-panda.png": {
+		"ft": 32768,
+		"iS": 21252,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/item-panda.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/last-page.jpg": {
 		"ft": 16384,
 		"iS": 60490,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/last-page.jpg",
+=======
+	"\/lancome\/img\/item.png": {
+		"ft": 32768,
+		"iS": 57116,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/item.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/mark-1.png": {
 		"ft": 32768,
 		"iS": 22855,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/mark-1.png",
+=======
+	"\/lancome\/img\/last-page.jpg": {
+		"ft": 16384,
+		"iS": 60490,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/last-page.jpg",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/mark-2.png": {
 		"ft": 32768,
 		"iS": 53786,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/mark-2.png",
+=======
+	"\/lancome\/img\/mark-1.png": {
+		"ft": 32768,
+		"iS": 22855,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/mark-1.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/mobile-answer-1.png": {
 		"ft": 32768,
 		"iS": 4345,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/mobile-answer-1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/mobile-answer-2.png": {
+=======
+	"\/lancome\/img\/mark-2.png": {
 		"ft": 32768,
-		"iS": 4338,
+		"iS": 53786,
 		"oA": 0,
-		"oAP": "\/lancome\/img\/mobile-answer-2.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/mobile-answer-3.png": {
-		"ft": 32768,
-		"iS": 4417,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/mobile-answer-3.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/mobile-timeline.png": {
-		"ft": 32768,
-		"iS": 9123,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/mobile-timeline.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/right.png": {
-		"ft": 32768,
-		"iS": 1587,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/right.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/star.png": {
-		"ft": 32768,
-		"iS": 1015,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/star.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/symbol.png": {
-		"ft": 32768,
-		"iS": 950,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/symbol.png",
+		"oAP": "\/lancome\/img\/mark-2.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
+	"\/lancome\/img\/mobile-answer-2.png": {
+		"ft": 32768,
+		"iS": 4338,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/mobile-answer-2.png",
+=======
+	"\/lancome\/img\/mobile-answer-1.png": {
+		"ft": 32768,
+		"iS": 4345,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/mobile-answer-1.png",
+>>>>>>> liam
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+<<<<<<< HEAD
+	"\/lancome\/img\/mobile-answer-3.png": {
+		"ft": 32768,
+		"iS": 4417,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/mobile-answer-3.png",
+=======
+	"\/lancome\/img\/mobile-answer-2.png": {
+		"ft": 32768,
+		"iS": 4338,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/mobile-answer-2.png",
+>>>>>>> liam
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+<<<<<<< HEAD
+	"\/lancome\/img\/mobile-timeline.png": {
+		"ft": 32768,
+		"iS": 9123,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/mobile-timeline.png",
+=======
+	"\/lancome\/img\/mobile-answer-3.png": {
+		"ft": 32768,
+		"iS": 4417,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/mobile-answer-3.png",
+>>>>>>> liam
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+<<<<<<< HEAD
+	"\/lancome\/img\/right.png": {
+		"ft": 32768,
+		"iS": 1587,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/right.png",
+=======
+	"\/lancome\/img\/mobile-timeline.png": {
+		"ft": 32768,
+		"iS": 9123,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/mobile-timeline.png",
+>>>>>>> liam
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+<<<<<<< HEAD
+	"\/lancome\/img\/star.png": {
+		"ft": 32768,
+		"iS": 1015,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/star.png",
+=======
+	"\/lancome\/img\/right.png": {
+		"ft": 32768,
+		"iS": 1587,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/right.png",
+>>>>>>> liam
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+<<<<<<< HEAD
+	"\/lancome\/img\/symbol.png": {
+		"ft": 32768,
+		"iS": 950,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/symbol.png",
+=======
+	"\/lancome\/img\/star.png": {
+		"ft": 32768,
+		"iS": 1015,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/star.png",
+>>>>>>> liam
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+<<<<<<< HEAD
 	"\/lancome\/img\/title-1.png": {
 		"ft": 32768,
 		"iS": 6668,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/title-1.png",
+=======
+	"\/lancome\/img\/symbol.png": {
+		"ft": 32768,
+		"iS": 950,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/symbol.png",
+>>>>>>> liam
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/title-2.png": {
 		"ft": 32768,
 		"iS": 6662,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/title-2.png",
+=======
+	"\/lancome\/img\/title-1.png": {
+		"ft": 32768,
+		"iS": 6668,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/title-1.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/title-3.png": {
 		"ft": 32768,
 		"iS": 6241,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/title-3.png",
+=======
+	"\/lancome\/img\/title-2.png": {
+		"ft": 32768,
+		"iS": 6662,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/title-2.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/title-4.png": {
 		"ft": 32768,
 		"iS": 13583,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/title-4.png",
+=======
+	"\/lancome\/img\/title-3.png": {
+		"ft": 32768,
+		"iS": 6241,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/title-3.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/title-5.png": {
 		"ft": 32768,
 		"iS": 4930,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/title-5.png",
+=======
+	"\/lancome\/img\/title-4.png": {
+		"ft": 32768,
+		"iS": 13583,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/title-4.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/ugc-bg-1.jpg": {
 		"ft": 16384,
 		"iS": 57787,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/ugc-bg-1.jpg",
+=======
+	"\/lancome\/img\/title-5.png": {
+		"ft": 32768,
+		"iS": 4930,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/title-5.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/ugc-bg-2.jpg": {
 		"ft": 16384,
 		"iS": 52395,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/ugc-bg-2.jpg",
+=======
+	"\/lancome\/img\/ugc-bg-1.jpg": {
+		"ft": 16384,
+		"iS": 57787,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/ugc-bg-1.jpg",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/ugc-bg-3.jpg": {
 		"ft": 16384,
 		"iS": 54939,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/ugc-bg-3.jpg",
+=======
+	"\/lancome\/img\/ugc-bg-2.jpg": {
+		"ft": 16384,
+		"iS": 52395,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/ugc-bg-2.jpg",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/ugc-bg-4.jpg": {
 		"ft": 16384,
 		"iS": 48487,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/ugc-bg-4.jpg",
+=======
+	"\/lancome\/img\/ugc-bg-3.jpg": {
+		"ft": 16384,
+		"iS": 54939,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/ugc-bg-3.jpg",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/ugc-bg-5.jpg": {
 		"ft": 16384,
 		"iS": 44166,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/ugc-bg-5.jpg",
+=======
+	"\/lancome\/img\/ugc-bg-4.jpg": {
+		"ft": 16384,
+		"iS": 48487,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/ugc-bg-4.jpg",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/ugc-bg.jpg": {
 		"ft": 16384,
 		"iS": 25585,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/ugc-bg.jpg",
+=======
+	"\/lancome\/img\/ugc-bg-5.jpg": {
+		"ft": 16384,
+		"iS": 44166,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/ugc-bg-5.jpg",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/ugc-qr.png": {
 		"ft": 32768,
 		"iS": 11025,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/ugc-qr.png",
+=======
+	"\/lancome\/img\/ugc-bg.jpg": {
+		"ft": 16384,
+		"iS": 25585,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/ugc-bg.jpg",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"oT": 1,
 		"q": 100
 		},
+<<<<<<< HEAD
 	"\/lancome\/img\/wait.jpg": {
 		"ft": 16384,
 		"iS": 39521,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/wait.jpg",
+=======
+	"\/lancome\/img\/ugc-qr.png": {
+		"ft": 32768,
+		"iS": 11025,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/ugc-qr.png",
+>>>>>>> liam
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

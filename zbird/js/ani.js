@@ -522,7 +522,7 @@ function setStep4(){
       TweenLite.set(endt,{alpha:0})
     }
   };
-  TweenLite.set(endT,{x:320,y:504/1000*stageH})
+  TweenLite.set(endT,{x:320,y:500/1000*stageH})
 
   console.log(504/1000*stageH)
 }
