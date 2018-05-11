@@ -188,21 +188,41 @@ function setStep(){
     case 1:
       console.log("111")
       step1.visible=true
+<<<<<<< HEAD
+      step1.alpha=0
+      TweenLite.to(step1,1,{alpha:1})
+=======
+>>>>>>> liam
       goStep1()
     break;
     case 2:
       console.log("222")
       step2.visible=true
+<<<<<<< HEAD
+      step2.alpha=0
+      TweenLite.to(step2,1,{alpha:1})
+=======
+>>>>>>> liam
       goStep2()
     break;
     case 3:
       console.log("333")
       step3.visible=true
+<<<<<<< HEAD
+      step3.alpha=0
+      TweenLite.to(step3,1,{alpha:1})
+=======
+>>>>>>> liam
       goStep3()
     break;
     case 4:
       console.log("444")
       step4.visible=true
+<<<<<<< HEAD
+      step4.alpha=0
+      TweenLite.to(step4,1,{alpha:1})
+=======
+>>>>>>> liam
       goStep4()
     break;
   }
@@ -236,12 +256,89 @@ function goStep3(){
   TweenLite.set(step1Lbtn,{width:"50%",height:"60%",top:"20%",display:"block"})
   TweenLite.set(step1Rbtn,{width:"50%",height:"60%",top:"20%",display:"block"})
   TweenLite.to(theRing,.5,{y:(530)/1000*stageH})
+<<<<<<< HEAD
+  nowBG=parseInt(Math.random()*4)
+  setBG()
+  
+}
+function setBG(){
+    for (var j = 1; j <= 4; j++) {
+
+    
+    if((j-1)==nowBG){
+      console.log(nowBG)
+      TweenLite.set(bgA[j-1],{alpha:.5})
+    }else{
+      TweenLite.set(bgA[j-1],{alpha:0})
+    }
+  };
+}
+function setBG2(){
+  for (var j = 1; j <= 4; j++) {
+
+    
+    if((j-1)==nowBG){
+      console.log(nowBG)
+      TweenLite.set(endbgA[j-1],{alpha:1})
+    }else{
+      TweenLite.set(endbgA[j-1],{alpha:0})
+    }
+  };
+=======
+>>>>>>> liam
 }
 function goStep4(){
   TweenLite.set(step1Nextbtn,{display:"none"})
   TweenLite.set(step1Backbtn,{display:"none"})
   TweenLite.set(step1Lbtn,{display:"none"})
   TweenLite.set(step1Rbtn,{display:"none"})
+<<<<<<< HEAD
+  TweenLite.to(theRing,.5,{y:(530+145)/1000*stageH})
+  TweenLite.set(step4bar,{alpha:1,delay:0.45})
+  TweenLite.set(endBtn,{display:"block"})
+  TweenLite.set(step4bar,{alpha:1,delay:0.55,onComplete:savePic})
+  setEndWord()
+  setBG2()
+}
+function savePic(){
+  
+  document.getElementById("pngHolder").appendChild(convertCanvasToImage($("#mainCanvas")[0]));
+  TweenLite.set(step4bar,{alpha:0})
+  TweenLite.set($("#pngHolder"),{display:"block",opacity:0})
+  
+  TweenLite.set($("#endBtn1"),{display:"block"})
+  TweenLite.set($("#endBtn2"),{display:"block"})
+  TweenLite.set($("#endBtn3"),{display:"block"})
+}
+$("#endBtn1").click(function(){
+  nowStep=1
+  setStep()
+  nowDiamond=0
+  nowRing=0
+  nowWord=3//ddd
+  nowBG=parseInt(Math.random()*4)
+  goStep1()
+  TweenLite.set($("#endBtn1"),{display:"none"})
+  TweenLite.set($("#endBtn2"),{display:"none"})
+  TweenLite.set($("#endBtn3"),{display:"none"})
+  TweenLite.set(endBtn,{display:"none"})
+  document.getElementById('pngHolder').innerHTML = '';
+  TweenLite.set($("#pngHolder"),{display:"none"})
+
+})
+$("#endBtn2").click(function(){
+  
+  TweenLite.set($("#shareHint"),{display:"block",opacity:0})
+  TweenLite.to($("#shareHint"),.5,{display:"block",opacity:.8})
+})
+
+$("#shareHint").click(function(){
+  TweenLite.to($("#shareHint"),.5,{display:"none",opacity:0})
+})
+$("#endBtn3").click(function(){
+  window.location.href="http://www.zbird.com/"
+})
+=======
   TweenLite.to(theRing,.5,{y:(530+145)/1000*stageH,onComplete:savePic})
   setEndWord()
 }
@@ -252,6 +349,7 @@ function savePic(){
 
   TweenLite.set($("#pngHolder"),{display:"block"})
 }
+>>>>>>> liam
 function convertCanvasToImage(canvas) {
   var image = new Image();
   //image.crossOrigin="Anonymous"
@@ -452,7 +550,11 @@ function setStep4(){
       TweenLite.set(endt,{alpha:0})
     }
   };
+<<<<<<< HEAD
+  TweenLite.set(endT,{x:320,y:504/1000*stageH})
+=======
   TweenLite.set(endT,{x:320,y:500/1000*stageH})
+>>>>>>> liam
 
   console.log(504/1000*stageH)
 }

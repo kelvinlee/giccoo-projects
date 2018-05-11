@@ -6,10 +6,10 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "智·混动 MAX秀",
-      desc: "人人都是隐藏的跨界高手",
-      link: "http://m.giccoo.com/maxshow/",
-      imgUrl: "http://m.giccoo.com/maxshow/img/ico.jpg",
+      title: "520·送个大的",
+      desc: "为爱智选",
+      link: "http://m.giccoo.com/zbird/",
+      imgUrl: "http://m.giccoo.com/zbird/img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };
