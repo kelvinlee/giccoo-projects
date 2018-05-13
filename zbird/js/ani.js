@@ -282,18 +282,21 @@ $("#pngHolder")[0].addEventListener('touchstart',showScreenHint,false)
 
 var ifshowPng=0
 function showScreenHint(event){
-  if(ifshowPng==0){
-    TweenLite.set($("#screenHint"),{display:"block",delay:.5})
-    TweenLite.set($("#pngHolder"),{opacity:1})
-    TweenLite.set($("#musicOn"),{display:"none"})
-    TweenLite.set($("#musicOff"),{display:"none"})
-    ifshowPng=1
-  }else{
-    TweenLite.set($("#pngHolder"),{opacity:0})
-    TweenLite.set($("#musicOn"),{display:"block"})
-    TweenLite.set($("#musicOff"),{display:"block"})
-    ifshowPng=0
+  if(mode==2){
+    if(ifshowPng==0){
+      TweenLite.set($("#screenHint"),{display:"block",delay:.5})
+      TweenLite.set($("#pngHolder"),{opacity:1})
+      TweenLite.set($("#musicOn"),{display:"none"})
+      TweenLite.set($("#musicOff"),{display:"none"})
+      ifshowPng=1
+    }else{
+      TweenLite.set($("#pngHolder"),{opacity:0})
+      TweenLite.set($("#musicOn"),{display:"block"})
+      TweenLite.set($("#musicOff"),{display:"block"})
+      ifshowPng=0
+    }
   }
+
 }
   
 $("#screenHint").click(function(){
