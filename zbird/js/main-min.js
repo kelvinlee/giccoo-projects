@@ -1,6 +1,7 @@
 
 $(document).ready(function load (){
   //iniListenSound()
+  setMode()
 	loadWechatConfig();
   initAll()
   iniListenSound()
@@ -19,26 +20,20 @@ $(document).ready(function load (){
     wx.onMenuShareQQ(shareContent);
     return wx.onMenuShareWeibo(shareContent);
   });
-  if (window.navigator.userAgent.indexOf("Weibo") > -1) {
-    sys = "Weibo";
-    
-    alert("Weibo")
-  }
-  if (window.navigator.userAgent.indexOf("iPhone") > -1) {
-    sys = "iPhone";
-    
-    alert("iPhone")
-  }
-  if (window.navigator.userAgent.indexOf("Android") > -1||window.navigator.userAgent.indexOf("Adr") > -1) {
-    sys = "Android";
-    
-    alert("Android")
-  }
+  
 
 
 
 
 });
+var mode=1//1,长按，2截屏
+function setMode(){
+  if (window.navigator.userAgent.indexOf("Weibo") > -1||window.navigator.userAgent.indexOf("Android") > -1||window.navigator.userAgent.indexOf("Adr") > -1) {
+    mode=2
+  }
+}
+
+
 
 $('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
 var screenW
@@ -67,6 +62,7 @@ function iniListenSound(){
              bgm.play();
              ifbgm=1
              TweenLite.set($("#musicOff"),{opacity:0})
+             mode=1
         }, false);
 }
 $("#musicOff").click(function(){
@@ -85,7 +81,7 @@ $("#musicOff").click(function(){
 var stage = new createjs.Stage("mainCanvas");
 
 function initAll(){
-  alert(window.navigator.userAgent)//...
+
   stageW=640
   stageH=screenH/screenW*640
 
