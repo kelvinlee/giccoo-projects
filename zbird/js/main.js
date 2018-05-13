@@ -24,10 +24,15 @@ $(document).ready(function load (){
     
     alert("Weibo")
   }
-  if (window.navigator.userAgent.indexOf("ios") > -1) {
-    sys = "ios";
+  if (window.navigator.userAgent.indexOf("iPhone") > -1) {
+    sys = "iPhone";
     
-    alert("ios")
+    alert("iPhone")
+  }
+  if (window.navigator.userAgent.indexOf("Android") > -1||window.navigator.userAgent.indexOf("Adr") > -1) {
+    sys = "Android";
+    
+    alert("Android")
   }
 
 
