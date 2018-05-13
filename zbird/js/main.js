@@ -71,7 +71,7 @@ $("#musicOff").click(function(){
 var stage = new createjs.Stage("mainCanvas");
 
 function initAll(){
-  alert(window.navigator.userAgent)
+  alert(window.navigator.userAgent)//...
   stageW=640
   stageH=screenH/screenW*640
 
