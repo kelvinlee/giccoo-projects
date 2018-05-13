@@ -19,7 +19,16 @@ $(document).ready(function load (){
     wx.onMenuShareQQ(shareContent);
     return wx.onMenuShareWeibo(shareContent);
   });
-
+  if (window.navigator.userAgent.indexOf("Weibo") > -1) {
+    sys = "Weibo";
+    
+    alert("Weibo")
+  }
+  if (window.navigator.userAgent.indexOf("ios") > -1) {
+    sys = "ios";
+    
+    alert("ios")
+  }
 
 
 
