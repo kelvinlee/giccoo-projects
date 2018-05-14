@@ -1,14 +1,18 @@
 
+var shareT=["你站的方向连风吹过来都是暖的。","喜你为疾，药石无医。","海上月是天上月，眼前人是心上人。","我们站着，不说话，就十分美好。","今夜我不关心人类，我只想你。","你是一种感觉，写在夏夜晚风里面。","明天生动而具体，有且只有一个你。","人生苦短，劝你早日弃暗投我。"]
+var _n=parseInt(Math.random()*shareT.length)
 $(document).ready(function load (){
   //iniListenSound()
+  setMode()
 	loadWechatConfig();
   initAll()
   iniListenSound()
+
   	wx.ready(function() {
     var shareContent;
     shareContent = {
       title: "520·送个大的",
-      desc: "今夜我不关心人类，我只想你。",
+      desc: shareT[_n],
       link: "http://m.giccoo.com/zbird/",
       imgUrl: "http://m.giccoo.com/zbird/img/ico.jpg",
       success: function() {},
@@ -19,12 +23,20 @@ $(document).ready(function load (){
     wx.onMenuShareQQ(shareContent);
     return wx.onMenuShareWeibo(shareContent);
   });
-
+  
 
 
 
 
 });
+var mode=1//1,长按，2截屏
+function setMode(){
+  if (window.navigator.userAgent.indexOf("Weibo") > -1||window.navigator.userAgent.indexOf("Android") > -1||window.navigator.userAgent.indexOf("Adr") > -1) {
+    mode=2
+  }
+}
+
+
 
 $('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
 var screenW
@@ -53,6 +65,7 @@ function iniListenSound(){
              bgm.play();
              ifbgm=1
              TweenLite.set($("#musicOff"),{opacity:0})
+             mode=1
         }, false);
 }
 $("#musicOff").click(function(){
@@ -71,7 +84,7 @@ $("#musicOff").click(function(){
 var stage = new createjs.Stage("mainCanvas");
 
 function initAll(){
-  alert(window.navigator.userAgent)
+
   stageW=640
   stageH=screenH/screenW*640
 
@@ -252,7 +265,8 @@ var step3=new createjs.Container()
 var step4=new createjs.Container()
 
 var step1title=new createjs.Bitmap("img/step1title.png")
-var step1arrow=new createjs.Bitmap("img/step12arrow.png")
+var step1arrow1=new createjs.Bitmap("img/step12arrow1.png")
+var step1arrow2=new createjs.Bitmap("img/step12arrow2.png")
 var step1iconA=[]
 var step1btn=new createjs.Bitmap("img/step1btn.png")
 
@@ -271,8 +285,12 @@ function setPage3Step1(){
   step1.addChild(step1title)
   TweenLite.set(step1title,{x:320,y:255/1000*stageH,regX:320,regY:93})
 
-  step1.addChild(step1arrow)
-  TweenLite.set(step1arrow,{x:320,y:517/1000*stageH,regX:320,regY:57})
+  step1.addChild(step1arrow1)
+  step1.addChild(step1arrow2)
+  TweenLite.set(step1arrow1,{x:320,y:517/1000*stageH,regX:320,regY:57})
+  TweenLite.set(step1arrow2,{x:320,y:517/1000*stageH,regX:320,regY:57})
+
+  moveArrow()
 
   for (var i = 1; i <= 4; i++) {
     var step1icon=new createjs.Bitmap("img/step1icon"+i+".png")
@@ -296,8 +314,26 @@ function setPage3Step1(){
   TweenLite.set(step1btn,{x:320,y:866/1000*stageH,regX:320,regY:44})
 }
 
+//===
+function moveArrow(){
+  TweenLite.to(step1arrow1,1,{x:320-30,onComplete:moveArrow2})
+  TweenLite.to(step1arrow2,1,{x:320+30})
+}
 
+function moveArrow2(){
+  TweenLite.to(step1arrow1,1,{x:320,onComplete:moveArrow})
+  TweenLite.to(step1arrow2,1,{x:320})
+}
 
+function moveStep2Arrow(){
+  TweenLite.to(step2arrow1,1,{x:320-30,onComplete:moveStep2Arrow2})
+  TweenLite.to(step2arrow2,1,{x:320+30})
+}
+
+function moveStep2Arrow2(){
+  TweenLite.to(step2arrow1,1,{x:320,onComplete:moveStep2Arrow})
+  TweenLite.to(step2arrow2,1,{x:320})
+}
 
 
 //=====================翻页＝＝＝＝＝＝＝＝＝＝＝ 
