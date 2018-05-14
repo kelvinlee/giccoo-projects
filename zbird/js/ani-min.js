@@ -298,6 +298,14 @@ function showScreenHint(event){
   }
 
 }
+<<<<<<< HEAD
+=======
+
+// $("#btn").click(function(){
+//   typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", page1, "点击了btn", "-"]);
+// })//=====百度监测
+
+>>>>>>> liam
   
 $("#screenHint").click(function(){
   TweenLite.set($("#screenHint"),{display:"none"})
@@ -374,7 +382,12 @@ function setPage3(){
 }
 var theRing=new createjs.Container()
 var step2title=new createjs.Bitmap("img/step2title.png")
+<<<<<<< HEAD
 var step2arrow=new createjs.Bitmap("img/step12arrow.png")
+=======
+var step2arrow1=new createjs.Bitmap("img/step12arrow1.png")
+var step2arrow2=new createjs.Bitmap("img/step12arrow2.png")
+>>>>>>> liam
 var step2btn=new createjs.Bitmap("img/step2btn.png")
 var ringA=[[],[],[],[]]
 var ringNum=[6,4,4,5]
@@ -388,8 +401,16 @@ function setStep2(){
   step2.addChild(step2title)
   TweenLite.set(step2title,{x:320,y:255/1000*stageH,regX:320,regY:93})
 
+<<<<<<< HEAD
   step2.addChild(step2arrow)
   TweenLite.set(step2arrow,{x:320,y:517/1000*stageH,regX:320,regY:57})
+=======
+  step2.addChild(step2arrow1)
+  TweenLite.set(step2arrow1,{x:320,y:517/1000*stageH,regX:320,regY:57})
+  step2.addChild(step2arrow2)
+  TweenLite.set(step2arrow2,{x:320,y:517/1000*stageH,regX:320,regY:57})
+  moveStep2Arrow()
+>>>>>>> liam
 
   step2.addChild(step2btn)
   TweenLite.set(step2btn,{x:320,y:866/1000*stageH,regX:320,regY:44})
@@ -427,6 +448,11 @@ function setStep2(){
   };
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> liam
 function setRing(){
   console.log("nowDiamond=",nowDiamond,"nowRing=",nowRing)
   for (var i = 1; i <= 4; i++) {
