@@ -298,14 +298,11 @@ function showScreenHint(event){
   }
 
 }
-<<<<<<< HEAD
-=======
 
 // $("#btn").click(function(){
 //   typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", page1, "点击了btn", "-"]);
 // })//=====百度监测
 
->>>>>>> liam
   
 $("#screenHint").click(function(){
   TweenLite.set($("#screenHint"),{display:"none"})
