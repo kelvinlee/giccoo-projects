@@ -194,7 +194,6 @@ init = function init() {
           main.mount = true;
           return setTimeout(function () {
             // main.ugcpageShow = true
-            // main.buildUGC()
             main.homepageShow = true;
             // document.getElementById('load').style.display = "none"
             document.getElementById('load').className += " fadeOut animated";
@@ -223,6 +222,7 @@ init = function init() {
       now: 0,
       answerCanvas: null,
       score: 0,
+      scorebg: 1,
       musiclink: "",
       ugc: null,
       ugcbg: null,
@@ -292,28 +292,38 @@ init = function init() {
         // ugcC.texts = textsBox[4][1]
         if (this.score === "∞") {
           ugcC.texts = textsBox[textsBox.length - 1][0];
+          this.scorebg = 6;
         } else if (this.score <= 0) {
           ugcC.texts = textsBox[0][0];
+          this.scorebg = 1;
         } else if (this.score < 40) {
           box = textsBox[1];
           ugcC.texts = box[Math.floor(Math.random() * box.length)];
+          this.scorebg = 2;
         } else if (this.score < 60) {
           box = textsBox[2];
           ugcC.texts = box[Math.floor(Math.random() * box.length)];
+          this.scorebg = 3;
         } else if (this.score < 80) {
           box = textsBox[3];
           ugcC.texts = box[Math.floor(Math.random() * box.length)];
+          this.scorebg = 4;
         } else if (this.score <= 100) {
           box = textsBox[4];
           ugcC.texts = box[Math.floor(Math.random() * box.length)];
+          this.scorebg = 5;
         } else {
           ugcC.texts = textsBox[0][0];
+          this.scorebg = 1;
         }
         ugcC.init(function () {
           _this2.ugcbg = ugcC.app.renderer.extract.canvas().toDataURL();
-          ugcC.qr();
-          return _this2.ugc = ugcC.app.renderer.extract.base64();
-        });
+          return ugcC.qr(function () {
+            return setTimeout(function () {
+              return _this2.ugc = ugcC.app.renderer.extract.base64();
+            }, 100);
+          });
+        }, this.scorebg);
         return ugcC.app.view.style.display = "none";
       },
       upload: function upload() {
@@ -417,8 +427,8 @@ buildUGC = function () {
     _createClass(buildUGC, [{
       key: "build",
       value: function build() {
-        var bg, index, j, last, lastY, ref, score, t, text, title;
-        bg = new PIXI.Sprite(PIXI.loader.resources["img/ugc-bg-1.jpg"].texture);
+        var bg, index, j, last, lastY, qr, ref, score, t, text, title;
+        bg = new PIXI.Sprite(PIXI.loader.resources["img/ugc-bg-" + this.id + ".jpg"].texture);
         title = new PIXI.Text('你的孤独指数是：', {
           fontSize: 30,
           fill: 0x2d799b,
@@ -458,22 +468,23 @@ buildUGC = function () {
         last.x = 105;
         last.y = lastY + 24 + 30;
         this.app.stage.addChild(last);
+        qr = new PIXI.Sprite(PIXI.loader.resources["img/ugc-qr.png"].texture);
+        qr.x = 430;
+        qr.y = 706;
+        this.app.stage.addChild(qr);
         this.app.renderer.render(this.app.stage);
         return this.callback();
       }
     }, {
       key: "qr",
-      value: function qr() {
-        var qr;
-        qr = new PIXI.Sprite(PIXI.loader.resources["img/ugc-qr.png"].texture);
-        qr.x = 430;
-        qr.y = 706;
-        return this.app.stage.addChild(qr);
+      value: function qr(callback) {
+        return callback();
       }
     }, {
       key: "init",
-      value: function init(callback) {
+      value: function init(callback, id) {
         this.callback = callback;
+        this.id = id;
         this.app = new PIXI.Application({
           width: 640,
           height: 1138,
@@ -482,7 +493,7 @@ buildUGC = function () {
         });
         this.app.view.className = "ugcCanvas";
         document.getElementById('ugcbg').appendChild(this.app.view);
-        return PIXI.loader.add(["img/ugc-bg-1.jpg", "img/ugc-qr.png"]).load(this.build.bind(this));
+        return PIXI.loader.add(["img/ugc-bg-" + id + ".jpg", "img/ugc-qr.png"]).load(this.build.bind(this));
       }
     }]);
 
@@ -496,6 +507,8 @@ buildUGC = function () {
   buildUGC.prototype.callback = null;
 
   buildUGC.prototype.score = 0;
+
+  buildUGC.prototype.id = 1;
 
   buildUGC.prototype.texts = ["你是个总觉得差一点点的人", "差一点点就饱了", "差一点点就满足了", "连百分百的孤独感都觉得差了一点点"];
 

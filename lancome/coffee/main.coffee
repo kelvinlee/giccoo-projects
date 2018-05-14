@@ -107,7 +107,6 @@ init = ->
 					main.mount = true
 					setTimeout ->
 						# main.ugcpageShow = true
-						# main.buildUGC()
 						main.homepageShow = true
 						# document.getElementById('load').style.display = "none"
 						document.getElementById('load').className += " fadeOut animated"
@@ -134,6 +133,7 @@ init = ->
 			now: 0
 			answerCanvas: null
 			score: 0
+			scorebg: 1
 			musiclink: ""
 			ugc: null
 			ugcbg: null
@@ -203,27 +203,37 @@ init = ->
 				# ugcC.texts = textsBox[4][1]
 				if @.score is "∞"
 					ugcC.texts = textsBox[textsBox.length-1][0]
+					@.scorebg = 6
 				else if @.score <= 0
 					ugcC.texts = textsBox[0][0]
+					@.scorebg = 1
 				else if @.score < 40
 					box = textsBox[1]
 					ugcC.texts = box[Math.floor(Math.random()*box.length)]
+					@.scorebg = 2
 				else if @.score < 60
 					box = textsBox[2]
 					ugcC.texts = box[Math.floor(Math.random()*box.length)]
+					@.scorebg = 3
 				else if @.score < 80
 					box = textsBox[3]
 					ugcC.texts = box[Math.floor(Math.random()*box.length)]
+					@.scorebg = 4
 				else if @.score <= 100
 					box = textsBox[4]
 					ugcC.texts = box[Math.floor(Math.random()*box.length)]
+					@.scorebg = 5
 				else
 					ugcC.texts = textsBox[0][0]
+					@.scorebg = 1
 				
 				ugcC.init =>
 					@.ugcbg = ugcC.app.renderer.extract.canvas().toDataURL()
-					ugcC.qr()
-					@.ugc = ugcC.app.renderer.extract.base64()
+					ugcC.qr =>
+						setTimeout =>
+							@.ugc = ugcC.app.renderer.extract.base64()
+						,100
+				,@.scorebg
 				ugcC.app.view.style.display = "none"
 			upload: ->
 				# console.log "upload:"
@@ -301,9 +311,10 @@ class buildUGC
 	app: null
 	callback: null
 	score: 0
+	id: 1
 	texts: ["你是个总觉得差一点点的人","差一点点就饱了","差一点点就满足了","连百分百的孤独感都觉得差了一点点"]
 	build: ->
-		bg = new PIXI.Sprite PIXI.loader.resources["img/ugc-bg-1.jpg"].texture
+		bg = new PIXI.Sprite PIXI.loader.resources["img/ugc-bg-#{@.id}.jpg"].texture
 
 		title = new PIXI.Text('你的孤独指数是：',{fontSize: 30, fill : 0x2d799b, align : 'left'});
 		title.x = 105
@@ -328,17 +339,20 @@ class buildUGC
 		last.y = lastY + 24 + 30
 		@.app.stage.addChild last
 
-		@.app.renderer.render @.app.stage
-
-		@.callback()
-	qr: ->
 		qr = new PIXI.Sprite PIXI.loader.resources["img/ugc-qr.png"].texture
 		qr.x = 430
 		qr.y = 706
 
 		@.app.stage.addChild qr
-	init: (callback)->
+
+		@.app.renderer.render @.app.stage
+
+		@.callback()
+	qr: (callback)->
+		callback()
+	init: (callback,id)->
 		@.callback = callback
+		@.id = id
 		@app = new PIXI.Application
 			width: 640
 			height: 1138
@@ -347,7 +361,7 @@ class buildUGC
 		@.app.view.className = "ugcCanvas"
 		document.getElementById('ugcbg').appendChild @.app.view
 		PIXI.loader.add([
-			"img/ugc-bg-1.jpg"
+			"img/ugc-bg-#{id}.jpg"
 			"img/ugc-qr.png"
 		]).load(@.build.bind(@))
 
