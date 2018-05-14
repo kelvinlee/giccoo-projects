@@ -40,7 +40,7 @@ block content
 				.answers(:class!="'on-'+now")
 					.bg#answer-bg
 					.answer.fadeIn.animated.duration-8.delay-3(v-for="item,index in answerList",:class!="'answer-'+index")
-						h1 {{item.question}}
+						h1(v-html="item.question.length > 1 ? item.question[questionMark] : item.question[0]")
 						.answer-list
 							.item(v-for="value,ind in item.answers",@click="select(ind)",:class="{right: answers[index] == ind}") {{value}}
 						.btn(@click="next")

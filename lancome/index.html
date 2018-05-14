@@ -36,7 +36,7 @@
           <div :class="'on-'+now" class="answers">
             <div id="answer-bg" class="bg"></div>
             <div v-for="item,index in answerList" :class="'answer-'+index" class="answer fadeIn animated duration-8 delay-3">
-              <h1>{{item.question}}</h1>
+              <h1 v-html="item.question.length &gt; 1 ? item.question[questionMark] : item.question[0]"></h1>
               <div class="answer-list">
                 <div v-for="value,ind in item.answers" @click="select(ind)" :class="{right: answers[index] == ind}" class="item">{{value}}</div>
               </div>

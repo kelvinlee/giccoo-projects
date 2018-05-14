@@ -29,12 +29,12 @@ scoreZore = false
 scoreMusicTime = [8,14,28]
 scoreShareTimes= [20,15,6]
 myTimeLine = [20,21,22,23,24,0,1,2,3,4]
-shareTimesLine = [20,15,6]
+# shareTimesLine = [20,15,6]
 
 myTime = 20 # 分享时间
 myTimeDetail = "20:25" # 详细的分享时间
-shareTimes = 30 # 分享次数
-numberWith = 24249 # 多少人
+# shareTimes = 30 # 分享次数
+# numberWith = 24249 # 多少人
 musicName = "夜空中最亮的星" # 一起听的歌
 shareMusicName = "cheapest flight" # 分享过的音乐
 canvasImgs = [
@@ -139,23 +139,30 @@ init = ->
 			ugcbg: null
 			wy: false
 			shareImageLink: ""
+			questionMark: 0
 			answerList: [
 				{
-					question: "最近一次凌晨#{myTimeDetail}还在听歌的你，觉得那时谁会陪着你？"
+					question: ["最近一次凌晨#{myTimeDetail}还在听歌的你，觉得那时谁会陪着你？"]
 					answers: [
 						"飞累了，借你家阳台歇歇的猫头鹰",
 						"冰箱里那只舔着冰淇淋的蠢大象",
 						"墙角边偷偷涂兰蔻发光眼霜的大熊猫"
 					]
 				},{
-					question: "那一天云村有 #{numberWith} 人和你一起在听《#{musicName}》你觉得他们那时在干什么？"
+					question: 
+						[
+							"那一天，云村和你一起在听《#{musicName}》的人，比英国的晴天还少；你觉得他们那时在干什么？"
+							"那一天，云村和你一起在听《#{musicName}》的人，多到服务器瘫痪；你觉得他们那时在干什么？"
+							"那一天，云村和你一起在听《#{musicName}》的人，和大迁徙时的角马一样多；你觉得他们那时在干什么？"
+							"那一天，云村和你一起在听《#{musicName}》的人，比理工大的女生还少。你觉得他们那时在干什么？"
+						]
 					answers: [
 						"敲击键盘的声音",
 						"窃窃私语聊天的声音",
 						"刷手机的声音"
 					]
 				},{
-					question: "之前从云音乐分享过一首《#{shareMusicName}》你觉得朋友圈的谁点开听过？"
+					question: ["之前从云音乐分享过一首《#{shareMusicName}》你觉得朋友圈的谁点开听过？"]
 					answers: [
 						"最想让TA听到的那个人",
 						"和我一样喜欢这类曲风的闺蜜",
@@ -183,15 +190,13 @@ init = ->
 					when 9
 						@.score = "∞"
 				@.score = "∞" if scoreInfinity
-				if @.score < 100
-					if shareTimes > 1000
-						@.score = 0
-					else if shareTimes > 100
-						@.score += 6
-					else if shareTimes > 10
-						@.score += 15
-					else
-						@.score += 20
+				if @.score <= 80
+					@.score += 16 if @.questionMark is 0
+					@.score = 0 if @.questionMark is 1
+					@.score += 6 if @.questionMark is 2
+					@.score += 20 if @.questionMark is 3
+						
+
 
 				console.log @.score
 
@@ -303,6 +308,7 @@ init = ->
 			if sys is "NeteaseMusic"
 				@.wy = true
 			@.mount = true
+			@.questionMark = Math.floor(Math.random()*@.answerList[1].question.length)
 			@.audio = document.getElementById "bgm"
 			# @.answerPageShow = true
 			@.answerCanvas = new createAnswer()

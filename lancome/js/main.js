@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Tn, _CDN, _imgurl, _animate, ansStar, appStar, buildUGC, canvasImgs, createAnswer, createStar, getRandom, global, imageurl, init, load, loadWechatConfig, main, mark, musicName, myTime, myTimeDetail, myTimeLine, neteaseShareImage, numberWith, pre, randomSort, scoreBox, scoreInfinity, scoreMusicTime, scoreShareTimes, scoreZore, shareMusicName, shareTimes, shareTimesLine, stars, sys, textsBox;
+var Tn, _CDN, _imgurl, _animate, ansStar, appStar, buildUGC, canvasImgs, createAnswer, createStar, getRandom, global, imageurl, init, load, loadWechatConfig, main, mark, musicName, myTime, myTimeDetail, myTimeLine, neteaseShareImage, pre, randomSort, scoreBox, scoreInfinity, scoreMusicTime, scoreShareTimes, scoreZore, shareMusicName, stars, sys, textsBox;
 
 randomSort = function randomSort(obj) {
   var newArr, oldarr, _randomSortFun;
@@ -101,16 +101,13 @@ scoreShareTimes = [20, 15, 6];
 
 myTimeLine = [20, 21, 22, 23, 24, 0, 1, 2, 3, 4];
 
-shareTimesLine = [20, 15, 6];
-
+// shareTimesLine = [20,15,6]
 myTime = 20; // 分享时间
 
 myTimeDetail = "20:25"; // 详细的分享时间
 
-shareTimes = 30; // 分享次数
-
-numberWith = 24249; // 多少人
-
+// shareTimes = 30 # 分享次数
+// numberWith = 24249 # 多少人
 musicName = "夜空中最亮的星"; // 一起听的歌
 
 shareMusicName = "cheapest flight"; // 分享过的音乐
@@ -228,14 +225,15 @@ init = function init() {
       ugcbg: null,
       wy: false,
       shareImageLink: "",
+      questionMark: 0,
       answerList: [{
-        question: "\u6700\u8FD1\u4E00\u6B21\u51CC\u6668" + myTimeDetail + "\u8FD8\u5728\u542C\u6B4C\u7684\u4F60\uFF0C\u89C9\u5F97\u90A3\u65F6\u8C01\u4F1A\u966A\u7740\u4F60\uFF1F",
+        question: ["\u6700\u8FD1\u4E00\u6B21\u51CC\u6668" + myTimeDetail + "\u8FD8\u5728\u542C\u6B4C\u7684\u4F60\uFF0C\u89C9\u5F97\u90A3\u65F6\u8C01\u4F1A\u966A\u7740\u4F60\uFF1F"],
         answers: ["飞累了，借你家阳台歇歇的猫头鹰", "冰箱里那只舔着冰淇淋的蠢大象", "墙角边偷偷涂兰蔻发光眼霜的大熊猫"]
       }, {
-        question: "\u90A3\u4E00\u5929\u4E91\u6751\u6709 " + numberWith + " \u4EBA\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F",
+        question: ["\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u6BD4\u82F1\u56FD\u7684\u6674\u5929\u8FD8\u5C11\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u591A\u5230\u670D\u52A1\u5668\u762B\u75EA\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u548C\u5927\u8FC1\u5F99\u65F6\u7684\u89D2\u9A6C\u4E00\u6837\u591A\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u6BD4\u7406\u5DE5\u5927\u7684\u5973\u751F\u8FD8\u5C11\u3002\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F"],
         answers: ["敲击键盘的声音", "窃窃私语聊天的声音", "刷手机的声音"]
       }, {
-        question: "\u4E4B\u524D\u4ECE\u4E91\u97F3\u4E50\u5206\u4EAB\u8FC7\u4E00\u9996\u300A" + shareMusicName + "\u300B\u4F60\u89C9\u5F97\u670B\u53CB\u5708\u7684\u8C01\u70B9\u5F00\u542C\u8FC7\uFF1F",
+        question: ["\u4E4B\u524D\u4ECE\u4E91\u97F3\u4E50\u5206\u4EAB\u8FC7\u4E00\u9996\u300A" + shareMusicName + "\u300B\u4F60\u89C9\u5F97\u670B\u53CB\u5708\u7684\u8C01\u70B9\u5F00\u542C\u8FC7\uFF1F"],
         answers: ["最想让TA听到的那个人", "和我一样喜欢这类曲风的闺蜜", "我才不care有没有人点开听"]
       }],
       answers: [-1, -1, -1]
@@ -268,14 +266,17 @@ init = function init() {
         if (scoreInfinity) {
           this.score = "∞";
         }
-        if (this.score < 100) {
-          if (shareTimes > 1000) {
+        if (this.score <= 80) {
+          if (this.questionMark === 0) {
+            this.score += 16;
+          }
+          if (this.questionMark === 1) {
             this.score = 0;
-          } else if (shareTimes > 100) {
+          }
+          if (this.questionMark === 2) {
             this.score += 6;
-          } else if (shareTimes > 10) {
-            this.score += 15;
-          } else {
+          }
+          if (this.questionMark === 3) {
             this.score += 20;
           }
         }
@@ -411,6 +412,7 @@ init = function init() {
         this.wy = true;
       }
       this.mount = true;
+      this.questionMark = Math.floor(Math.random() * this.answerList[1].question.length);
       this.audio = document.getElementById("bgm");
       // @.answerPageShow = true
       return this.answerCanvas = new createAnswer();
