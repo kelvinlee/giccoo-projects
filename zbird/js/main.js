@@ -74,11 +74,11 @@ $("#musicOff").click(function(){
   if(ifbgm==0){
     bgm.play();
     TweenLite.set($("#musicOff"),{opacity:0})
-    typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", musicBtn, "playMusic", "-"]);
+    typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", "musicBtn", "playMusic", "-"]);
   }else{
     bgm.pause();
     TweenLite.set($("#musicOff"),{opacity:1})
-    typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", musicBtn, "stopMusic", "-"]);
+    typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", "musicBtn", "stopMusic", "-"]);
   }
   ifbgm++
   if(ifbgm==2){ifbgm=0}
