@@ -77,15 +77,15 @@ function ani3(){
 
 
 step1Lbtn.click(function(){
-  if(nowStep==1){    step1L()  }
-  if(nowStep==2){    step2L()  }
-  if(nowStep==3){    step3L()  }
+  if(nowStep==1){    step1L()  ;typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", page1, "leftArrow", "-"]);}
+  if(nowStep==2){    step2L()  ;typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", page2, "leftArrow", "-"]);}
+  if(nowStep==3){    step3L()  ;typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", page3, "leftArrow", "-"]);}
 })
 
 step1Rbtn.click(function(){
-  if(nowStep==1){    step1R()  }
-  if(nowStep==2){    step2R()  }
-  if(nowStep==3){    step3R()  }
+  if(nowStep==1){    step1R()  ;typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", page1, "rightArrow", "-"]);}
+  if(nowStep==2){    step2R()  ;typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", page2, "rightArrow", "-"]);}
+  if(nowStep==3){    step3R()  ;typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", page3, "rightArrow", "-"]);}
 })
 //================step1 左右按钮
 var rlX//=150
@@ -145,6 +145,7 @@ var ifcanupdown=1
 step1Nextbtn.click(function(){
   //step1.visible=false
   //step2.visible=true
+  typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", nowStep, "nextBtn", "-"]);
   ifcanupdown=0
   nowStep++
   setStep()
@@ -152,6 +153,7 @@ step1Nextbtn.click(function(){
 step1Backbtn.click(function(){
   //step1.visible=false
   //step2.visible=true
+  typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", nowStep, "backBtn", "-"]);
   ifcanupdown=0
   nowStep--
   setStep()
@@ -351,19 +353,22 @@ $("#endBtn1").click(function(){
   TweenLite.set(endBtn,{display:"none"})
   document.getElementById('pngHolder').innerHTML = '';
   TweenLite.set($("#pngHolder"),{display:"none"})
-
+  typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", page4, "replay", "-"]);
 })
 $("#endBtn2").click(function(){
   
   TweenLite.set($("#shareHint"),{display:"block",opacity:0})
   TweenLite.to($("#shareHint"),.5,{display:"block",opacity:.8})
+  typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", page4, "shareHint", "-"]);
 })
 
 $("#shareHint").click(function(){
   TweenLite.to($("#shareHint"),.5,{display:"none",opacity:0})
+  
 })
 $("#endBtn3").click(function(){
-  window.location.href="http://www.zbird.com/"
+  typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", page4, "goWebsite", "-"]);
+  window.location.href="https://www.zbird.com/"
 })
 function convertCanvasToImage(canvas) {
   var image = new Image();

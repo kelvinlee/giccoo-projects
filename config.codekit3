@@ -68831,14 +68831,25 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/zbird\/img\/endbar.jpg": {
+		"ft": 16384,
+		"iS": 14452,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/endbar.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
 	"\/zbird\/img\/endbar.png": {
 		"ft": 32768,
 		"iS": 30052,
 		"oA": 0,
 		"oAP": "\/zbird\/img\/endbar.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -68974,34 +68985,34 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/zbird\/img\/ico1.jpg": {
+	"\/zbird\/img\/icon1.jpg": {
 		"ft": 16384,
 		"iS": 11951,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/zbird\/img\/ico1.jpg",
+		"oAP": "\/zbird\/img\/icon1.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/zbird\/img\/ico2.jpg": {
+	"\/zbird\/img\/icon2.jpg": {
 		"ft": 16384,
-		"iS": 14479,
+		"iS": 5488,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/zbird\/img\/ico2.jpg",
+		"oAP": "\/zbird\/img\/icon2.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/zbird\/img\/icon6.jpg": {
+	"\/zbird\/img\/icon3.jpg": {
 		"ft": 16384,
 		"iS": 8501,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/zbird\/img\/icon6.jpg",
+		"oAP": "\/zbird\/img\/icon3.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -70239,7 +70250,7 @@
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/zbird\/js\/ani-min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 0,
 		"tS": 0
 		},
