@@ -156,7 +156,7 @@ block content
 				.bg
 					img(src="#{url}/img/page-#{pageId}-bg.jpg")
 					.animations#dog
-						
+
 				.content
 					.left(@click="movePrev")
 					//- .right(@click="moveNext")
@@ -169,7 +169,7 @@ block content
 
 
 		transition(name="page-fade")
-			.page.page-regisiter(v-show="regisiterPageShow")
+			.page.page-regisiter(v-show="false && regisiterPageShow")
 				.content
 					form.form
 						.form-title

@@ -215,7 +215,7 @@ rain = function () {
           rain.x = 640 - rain.width * 1.5 - Math.random() * 640;
           rain.vx = rain.x;
           rain.y = Math.random() * (1138 - rain.width);
-          rain.vy = Math.random() * 4 + 7;
+          rain.vy = Math.random() * 8 + 7;
           if (i % 4 + 1 === 4) {
             random = Math.random() * 0.5 + 0.2;
             rain.scale.x = random;
