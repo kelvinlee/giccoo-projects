@@ -12,13 +12,17 @@ $cdn : "../"
 	.duration-#{$i}
 		animation-duration: $i*100ms
 $fontColor: #ffffff;
-$pageMainBGColor: #030744;
+$pageMainBGColor: #000000;
 
++keyframes(lightShow)
+	0%,100%
+		opacity: 1
+	50%
+		opacity: 0.2
 
 html,body
 	+w
 	+h
-
 body
 	color: $fontColor
 	+bc($pageMainBGColor)
@@ -66,8 +70,12 @@ body
 	&.rotate90
 		+transform(rotate(90deg) translate3d(0,-100%,0))
 		transform-origin: top left
-				
-				
+
+	.nav
+		+posa			
+		+tl
+		z-index: 109
+
 .page-animation-enter-active
 	transition: all .4s linear
 .page-animation-leave-active
@@ -141,6 +149,14 @@ body
 		+posa
 		+bl
 		font-size: 0
+		.animations
+			+posa
+			+tl
+			+w
+			+h
+			.item
+				+posa
+				+tl
 
 .loading
 	+w
@@ -153,133 +169,94 @@ body
 		+posa
 		+tl(50%,50%)
 		+transform(translate3d(-50%,-50%,0))
-		+w(50%)
-		.record
-			font-size: 0
-			+w(90px)
-			+m
+		+w
+		.line
+			+w
 			+posr
-			.light
+		.texts
+			+text-center
+			+posa
+			+tl(50%)
+			padding-left: 1rem
+			+box
+			+w
+
+.font
+	+show-inline
+	text-indent: -99px
+	+font-size(0.8rem)
+	+w(1em)
+	+w(1em)
+	+overhide
+@for $i from 0 through 9
+	.font-#{$i}
+		+b($cdn+"img/font-#{$i}.png",no-repeat,center,center,cover)
+.font-last
+	+b($cdn+"img/font-last.png",no-repeat,center,center,cover)
+
+.page
+	.content
+		.btn-start
+			+posa
+			+bl(1%,50%)
+			+iw(240,640,100%)
+			+h(10%)
+			+b($cdn+"img/btn-start.png",no-repeat,center,center,contain)
+			+transform(translate3d(-50%,0,0))
+		.texts
+			+posa
+			+tl(28%)
+			+transform(translate3d(0,-50%,0))
+			.text
 				+posa
 				+tl
-				+w
-				+h
-				+b($cdn+"img/load-record-light.png",no-repeat,center,center,cover)
-				+animation(second,8s,linear,infinite)
-		.load-text
-			+font-size(0.8rem)
-			+m
-			+text-center
-			margin-top: 1em
+			.text-1
+				+posr
+		.right,.left
+			+posa
+			+w(2rem)
+			+h(2rem)
+			top: 50%
+			+transform(translate3d(0,-50%,0))
+		.right
+			right: 1%
+			+b($cdn+"img/right.png",no-repeat,center,center,cover)
+		.left
+			left: 1%
+			+b($cdn+"img/left.png",no-repeat,center,center,cover)
+
+.smaller
+	.page
+		.bg
+			+tl(50%)
+			+transform(translate3d(0,-50%,0))
+			bottom: auto
+
+
+.bgm
+	+posa
+	+br(82%,2%)
+	z-index: 99
+	+iw(60,640,100%)
+	.noteMsg
+		+posa
+		+tl(50%,0)
+		+m
+		+font-size(0.6rem)
+		+transform(translate3d(-110%,-50%,0))
+		white-space: nowrap
 
 .page-home
-	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+tl
 	.content
 		+posa
-		+tl
 		+w
 		+h
-		.building
-			+posa
-			+bl
-			font-size: 0
-		.title
-			+posa
-			+tl(20%)
-			.title-4,.title-5
-				margin-top: 5px
+		.texts
+			+tl(35%)
 
-.page-answer
-	.bg
-		font-size: 0
-	.answer
+.page-2
+	.hair
 		+posa
-		h1
-			+font-size(1rem)
-		.item
-			+font-size(0.7rem)
-			+p(0.3rem 0)
-			+box
-			padding-left: 12%
-			+posr
-			line-height: 1.4em
-			+m(0.4em 0)
-			&:before
-				content: " "
-				+posa
-				+tl(50%)
-				+wh(1rem,1rem)
-				border: solid 1px #fff
-				+transform(translate3d(0,-50%,0))
-			&.right
-				&:after
-					content: " "
-					+posa
-					+tl(40%)
-					+wh(1.6rem,1.6rem)
-					+transform(translate3d(0,-50%,0))
-					+b($cdn+"img/right.png",no-repeat,center,center,cover)
-					+animation(fadeIn,0.6s,ease)
+		+tl(63.55%)
 
-		.btn
-			margin-top: 6%
-			+w(35%)
-			margin-left: 64%
-		&.answer-0
-			+br(10%,2%)
-			+w(56%)
-			+hide
-		&.answer-1
-			+tl(10%,10%)
-			+w(70%)
-			+hide
-			.btn
-				margin-left: 0
-				+w(30%)
-		&.answer-2
-			+tl(5%,15%)
-			+w(70%)
-			+hide
-			.btn
-				margin-left: 0
-				+w(30%)
-		
-	.answers
-		&.on-0
-			.answer.answer-0
-				+show
-		&.on-1
-			.answer.answer-1
-				+show
-		&.on-2
-			.answer.answer-2
-				+show
-
-.page-ugc
-	+bc(#e5f4fc)
-	.bg
-		transform-origin: bottom center
-	.btn
-		+posa
-		+bl(3%,8%)
-		+w(40%)
-	.ugc
-		+posa
-		+tl
-		+w
-		+h
-		opacity: 0
-		z-index: 99
-
-.page-wait
-	+bc(#e5f4fc)
-	.content
-		+posa
-		+tl(50%)
-		+w
-		+transform(translate3d(0,-50%,0))
-.page-last
-	+bc(#e5f4fc)
-	.bg
-		transform-origin: bottom center
-	

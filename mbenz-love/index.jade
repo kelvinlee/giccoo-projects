@@ -1,0 +1,102 @@
+extends ../libs/jade/layout-clean
+block title
+	| 孤独的人会发光
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	//- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+	link(rel="stylesheet",href="//image.giccoo.com/projects/libs/css/animate.min.css")
+	link(rel="stylesheet",href="css/base.css")
+	//- script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
+
+block content
+	- url = "//image.giccoo.com/projects/mbenz-love";
+	- url = ".";
+	//- #load.loading
+		.content
+			.line
+				img(src="#{url}/img/loading-line.png")
+				.texts(v-html="progressText")
+
+	#main.main(v-show="mount",style="display: none",:style="{width: w+'px',height: h+'px'}",:class="{smaller: smaller}")
+		//- .bgm(@click="play")
+			audio#bgm(:src="musiclink")
+			img(:src="'#{url}/img/audio-'+playing+'.png'")
+			transition(name="page-fade")
+				p.noteMsg(v-show="noteMsg") 为保证体验效果<br/>请打开音乐
+		.nav
+			.logo
+				img(src="#{url}/img/navbar.jpg")
+
+		transition(name="page-animation")
+			.page.page-home(v-show="pageIndex == 0",:class="{left: pageIndex >= 0}")
+				.bg
+					img(src="#{url}/img/page-home-bg.jpg")
+				.content
+					.texts
+						-for (var i=1;i<=5;i++)
+							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
+								img(src="#{url}/img/page-home-text-#{i}.png")
+						-;
+		transition(name="page-animation")
+			- pageId = 1;
+			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+				.bg
+					img(src="#{url}/img/page-1-bg.jpg")
+					.animations#stars
+				.content
+					.right(@click="moveNext")
+					.texts
+						-for (var i=1;i<=4;i++)
+							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
+								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
+						-;
+					.btn.btn-start(@click="gameStart(#{pageId})")
+		transition(name="page-animation")
+			- pageId = 2;
+			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+				.bg
+					img(src="#{url}/img/page-2-bg.jpg")
+					.animations
+						.hair
+							img(src="#{url}/img/page-2-hair.gif")
+				.content
+					.left(@click="movePrev")
+					.right(@click="moveNext")
+					.texts
+						-for (var i=1;i<=4;i++)
+							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
+								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
+						-;
+					.btn.btn-start(@click="gameStart(#{pageId})")
+		transition(name="page-fade")
+			.page.page-regisiter(v-show="regisiterPageShow")
+		transition(name="page-fade")
+			.page.page-record(v-show="recordPageShow")
+
+		transition(name="page-fade")
+			.page.page-ugc(v-show="ugcPageShow")
+				//- http://music.163.com/playlist?id=2222381288
+
+block js
+	- url = "/";
+	script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+	script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
+	script(src="//image.giccoo.com/projects/libs/js/min/Tween.min.js")
+	//- script(src="/libs/js/min/jquery.min.js")
+	script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+	script(src="js/main.js?v=1")
+	
+
+
+
+	
