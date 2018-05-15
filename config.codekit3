@@ -69061,12 +69061,34 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/zbird\/img\/ico.jpg": {
+	"\/zbird\/img\/ico1.jpg": {
+		"ft": 16384,
+		"iS": 11951,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/ico1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zbird\/img\/ico2.jpg": {
 		"ft": 16384,
 		"iS": 14479,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/zbird\/img\/ico.jpg",
+		"oAP": "\/zbird\/img\/ico2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zbird\/img\/icon6.jpg": {
+		"ft": 16384,
+		"iS": 8501,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/icon6.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -70373,13 +70395,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/zbird\/mp3\/bgm.mp3",
-		"oF": 0
-		},
-	"\/zbird\/mp3\/Tender Piano loop.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/zbird\/mp3\/Tender Piano loop.mp3",
 		"oF": 0
 		},
 	"\/zhihu-huarun\/coffee\/main.coffee": {

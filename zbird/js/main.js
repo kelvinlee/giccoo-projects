@@ -1,6 +1,8 @@
 
 var shareT=["你站的方向连风吹过来都是暖的。","喜你为疾，药石无医。","海上月是天上月，眼前人是心上人。","我们站着，不说话，就十分美好。","今夜我不关心人类，我只想你。","你是一种感觉，写在夏夜晚风里面。","明天生动而具体，有且只有一个你。","人生苦短，劝你早日弃暗投我。"]
+var shareIcon=["http://m.giccoo.com/zbird/img/ico1.jpg","http://m.giccoo.com/zbird/img/ico2.jpg","http://m.giccoo.com/zbird/img/ico3.jpg"]
 var _n=parseInt(Math.random()*shareT.length)
+var _n2=parseInt(Math.random()*shareIcon.length)
 $(document).ready(function load (){
   //iniListenSound()
   setMode()
@@ -14,7 +16,7 @@ $(document).ready(function load (){
       title: "520·送个大的",
       desc: shareT[_n],
       link: "http://m.giccoo.com/zbird/",
-      imgUrl: "http://m.giccoo.com/zbird/img/ico.jpg",
+      imgUrl: shareIcon[_n2],
       success: function() {},
       cancel: function() {}
     };
