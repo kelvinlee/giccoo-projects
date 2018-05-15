@@ -68918,14 +68918,25 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/zbird\/img\/endbar.jpg": {
+		"ft": 16384,
+		"iS": 14452,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zbird\/img\/endbar.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
 	"\/zbird\/img\/endbar.png": {
 		"ft": 32768,
 		"iS": 30052,
 		"oA": 0,
 		"oAP": "\/zbird\/img\/endbar.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
