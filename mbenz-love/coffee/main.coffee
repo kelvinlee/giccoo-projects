@@ -13,6 +13,12 @@ pre = {}
 load = {}
 sys = null
 imageurl = "//api.giccoo.com/api/upload/image64/"
+provinces = ["江苏","浙江","安徽","上海","北京","吉林","辽宁","山东","天津","河南","湖南","广东","福建","江西","四川","重庆","贵州","云南","湖北","陕西"]
+citys = []
+dealers = []
+for p in provinces
+	citys[p] = []
+	dealers[p] = {}
 
 citys["江苏"].push "常州市"
 dealers["江苏"]["常州市"] = []
