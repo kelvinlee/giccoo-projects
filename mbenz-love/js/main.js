@@ -2,9 +2,11 @@
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var IsPC, Sprite, Tn, _CDN, _imgurl, _animate, getRandom, global, imageurl, init, load, loadWechatConfig, loader, main, neteaseShareImage, pre, randomSort, res, stars, sys;
+var IsPC, Sprite, Tn, UGC, _CDN, _imgurl, _animate, _citys, _dealers, getRandom, global, imageurl, init, j, len, load, loadWechatConfig, loader, main, neteaseShareImage, p, pre, provinces, randomSort, res, stars, sys;
 
 randomSort = function randomSort(obj) {
   var newArr, oldarr, _randomSortFun;
@@ -129,7 +131,6 @@ stars = function () {
       key: "build",
       value: function build() {
         var i, j, star;
-        console.log(this.stars);
         for (i = j = 1; j < 10; i = ++j) {
           star = new Sprite(res["img/page-1-star-" + (i % 3 + 1) + ".png"].texture);
           star.x = Math.random() * (640 - star.width);
@@ -139,7 +140,6 @@ stars = function () {
           this.stars.push(star);
           this.app.stage.addChild(star);
         }
-        console.log(this.stars);
         return this.app.ticker.add(this.loop.bind(this));
       }
     }, {
@@ -170,7 +170,109 @@ stars = function () {
   return stars;
 }.call(undefined);
 
-// rain
+UGC = function () {
+  // rain
+  var UGC = function () {
+    _createClass(UGC, [{
+      key: "loop",
+      value: function loop(detail) {
+        if (!this.moving) {
+          return false;
+        }
+      }
+    }]);
+
+    function UGC(options) {
+      _classCallCheck(this, UGC);
+
+      this.id = options.id;
+      this.bg = options.bg;
+      this.wy = options.wy;
+      this.background = options.background;
+      this.ugc = options.ugc;
+
+      this.init();
+    }
+
+    _createClass(UGC, [{
+      key: "get",
+      value: function get() {
+        var _this = this;
+
+        this.qr.x = 20;
+        this.qr.y = 1138 + 4 - 20 - this.qr.height;
+        return setTimeout(function () {
+          _this.saveUGC = _this.app.view.toDataURL();
+          return _this.ugc();
+        }, 100);
+      }
+    }, {
+      key: "build",
+      value: function build() {
+        var animate, bg, mark, qr, save, saveText;
+        console.log(res["img/page-" + this.id + "-bg.jpg"].texture);
+        bg = new Sprite(res["img/page-" + this.id + "-bg.jpg"].texture);
+        this.app.stage.addChild(bg);
+        if (this.bg != null) {
+          animate = new Sprite(PIXI.Texture.fromCanvas(this.bg));
+          this.app.stage.addChild(animate);
+        }
+        this.mark = mark = new Sprite(res["img/mark.png"].texture);
+        mark.x = (640 - mark.width) / 2;
+        mark.y = (1138 - mark.height) / 2;
+        qr = this.qr = new Sprite(res["img/ugc-qr.png"].texture);
+        this.qr.x = 20;
+        this.qr.y = 1138 + 4 - 20 - this.qr.height;
+        this.app.stage.addChild(qr);
+        this.app.renderer.render(this.app.stage);
+        this.saveUGC = this.app.view.toDataURL();
+        this.ugc();
+        qr.x = mark.x + 20;
+        qr.y = mark.y + mark.height - qr.height - 20;
+        this.app.stage.addChildAt(mark, 1);
+        saveText = "img/long-save.png";
+        if (this.wy != null && this.wy) {
+          saveText = "img/save-text.png";
+        }
+        save = new Sprite(res[saveText].texture);
+        save.x = 640 - mark.x - save.width - 20;
+        save.y = mark.y + mark.height - save.height - 20;
+        return this.app.stage.addChild(save);
+      }
+
+      // @.over()
+
+    }, {
+      key: "init",
+      value: function init() {
+        this.app = new PIXI.Application({
+          width: 640,
+          height: 1138,
+          transparent: true,
+          preserveDrawingBuffer: true
+        });
+        document.getElementById('ugc').appendChild(this.app.view);
+        return PIXI.loader.add(["img/page-" + this.id + "-bg.jpg", "img/ugc-qr.png", "img/mark.png", "img/long-save.png", "img/save-text.png"]).load(this.build.bind(this));
+      }
+    }]);
+
+    return UGC;
+  }();
+
+  ;
+
+  UGC.prototype.app = null;
+
+  UGC.prototype.moving = true;
+
+  UGC.prototype.saveUGC = null;
+
+  UGC.prototype.qr = null;
+
+  UGC.prototype.mark = null;
+
+  return UGC;
+}.call(undefined);
 
 // @codekit-prepend "../../libs/coffee/randomSort"
 // @codekit-prepend "../../libs/coffee/requestanimation"
@@ -192,6 +294,320 @@ load = {};
 sys = null;
 
 imageurl = "//api.giccoo.com/api/upload/image64/";
+
+provinces = ["江苏", "浙江", "安徽", "上海", "北京", "吉林", "辽宁", "山东", "天津", "河南", "湖南", "广东", "福建", "江西", "四川", "重庆", "贵州", "云南", "湖北", "陕西"];
+
+_citys = [];
+
+_dealers = [];
+
+for (j = 0, len = provinces.length; j < len; j++) {
+  p = provinces[j];
+  _citys[p] = [];
+  _dealers[p] = {};
+}
+
+_citys["江苏"].push("常州市");
+
+_dealers["江苏"]["常州市"] = [];
+
+_citys["浙江"].push("杭州市");
+
+_dealers["浙江"]["杭州市"] = [];
+
+_citys["安徽"].push("合肥市");
+
+_dealers["安徽"]["合肥市"] = [];
+
+_citys["浙江"].push("嘉兴市");
+
+_dealers["浙江"]["嘉兴市"] = [];
+
+_citys["浙江"].push("义乌市");
+
+_dealers["浙江"]["义乌市"] = [];
+
+_citys["江苏"].push("南京市");
+
+_dealers["江苏"]["南京市"] = [];
+
+_citys["江苏"].push("南通市");
+
+_dealers["江苏"]["南通市"] = [];
+
+_citys["浙江"].push("宁波市");
+
+_dealers["浙江"]["宁波市"] = [];
+
+_citys["上海"].push("上海");
+
+_dealers["上海"]["上海"] = [];
+
+_citys["浙江"].push("绍兴市");
+
+_dealers["浙江"]["绍兴市"] = [];
+
+_citys["江苏"].push("苏州市");
+
+_dealers["江苏"]["苏州市"] = [];
+
+_citys["浙江"].push("台州市");
+
+_dealers["浙江"]["台州市"] = [];
+
+_citys["浙江"].push("温州市");
+
+_dealers["浙江"]["温州市"] = [];
+
+_citys["江苏"].push("无锡市");
+
+_dealers["江苏"]["无锡市"] = [];
+
+_citys["江苏"].push("扬州市");
+
+_dealers["江苏"]["扬州市"] = [];
+
+_citys["北京"].push("北京");
+
+_dealers["北京"]["北京"] = [];
+
+_citys["吉林"].push("长春市");
+
+_dealers["吉林"]["长春市"] = [];
+
+_citys["辽宁"].push("大连市");
+
+_dealers["辽宁"]["大连市"] = [];
+
+_citys["山东"].push("济南市");
+
+_dealers["山东"]["济南市"] = [];
+
+_citys["山东"].push("青岛市");
+
+_dealers["山东"]["青岛市"] = [];
+
+_citys["辽宁"].push("沈阳市");
+
+_dealers["辽宁"]["沈阳市"] = [];
+
+_citys["天津"].push("天津");
+
+_dealers["天津"]["天津"] = [];
+
+_citys["河南"].push("郑州市");
+
+_dealers["河南"]["郑州市"] = [];
+
+_citys["湖南"].push("长沙市");
+
+_dealers["湖南"]["长沙市"] = [];
+
+_citys["广东"].push("东莞市");
+
+_dealers["广东"]["东莞市"] = [];
+
+_citys["广东"].push("佛山市");
+
+_dealers["广东"]["佛山市"] = [];
+
+_citys["福建"].push("福州市");
+
+_dealers["福建"]["福州市"] = [];
+
+_citys["广东"].push("广州市");
+
+_dealers["广东"]["广州市"] = [];
+
+_citys["江西"].push("南昌市");
+
+_dealers["江西"]["南昌市"] = [];
+
+_citys["广东"].push("深圳市");
+
+_dealers["广东"]["深圳市"] = [];
+
+_citys["福建"].push("厦门市");
+
+_dealers["福建"]["厦门市"] = [];
+
+_citys["广东"].push("珠海市");
+
+_dealers["广东"]["珠海市"] = [];
+
+_citys["四川"].push("乐山市");
+
+_dealers["四川"]["乐山市"] = [];
+
+_citys["四川"].push("成都市");
+
+_dealers["四川"]["成都市"] = [];
+
+_citys["重庆"].push("重庆");
+
+_dealers["重庆"]["重庆"] = [];
+
+_citys["贵州"].push("贵阳市");
+
+_dealers["贵州"]["贵阳市"] = [];
+
+_citys["云南"].push("昆明市");
+
+_dealers["云南"]["昆明市"] = [];
+
+_citys["湖北"].push("武汉市");
+
+_dealers["湖北"]["武汉市"] = [];
+
+_citys["陕西"].push("西安市");
+
+_dealers["陕西"]["西安市"] = [];
+
+_dealers["江苏"]["常州市"].push("常州万帮汽车销售服务有限公司");
+
+_dealers["浙江"]["杭州市"].push("杭州东星行汽车维修有限公司");
+
+_dealers["浙江"]["杭州市"].push("杭州中升之星汽车销售服务有限公司");
+
+_dealers["浙江"]["杭州市"].push("浙江之信汽车有限公司");
+
+_dealers["浙江"]["杭州市"].push("浙江星杭汽车有限公司");
+
+_dealers["安徽"]["合肥市"].push("合肥利之星汽车服务有限公司");
+
+_dealers["浙江"]["嘉兴市"].push("嘉兴宝利德汽车有限公司");
+
+_dealers["浙江"]["义乌市"].push("义乌利星汽车有限公司");
+
+_dealers["浙江"]["义乌市"].push("义乌市新徽汽车销售服务有限公司");
+
+_dealers["浙江"]["义乌市"].push("义乌欧龙汽车销售服务有限公司");
+
+_dealers["江苏"]["南京市"].push("南京万帮新区汽车销售服务有限公司");
+
+_dealers["江苏"]["南京市"].push("南京中升之星汽车销售服务有限公司");
+
+_dealers["江苏"]["南京市"].push("南京宁星汽车维修服务有限公司");
+
+_dealers["江苏"]["南通市"].push("南通之星汽车维修服务有限公司");
+
+_dealers["江苏"]["南通市"].push("南通文峰伟恒汽车销售服务有限公司");
+
+_dealers["浙江"]["宁波市"].push("宁波利星汽车服务有限公司");
+
+_dealers["浙江"]["宁波市"].push("浙江慈吉之星汽车有限公司");
+
+_dealers["上海"]["上海"].push("上海东华之星汽车维修服务有限公司");
+
+_dealers["上海"]["上海"].push("上海东驰汽车有限公司");
+
+_dealers["上海"]["上海"].push("上海中升之星汽车销售服务有限公司");
+
+_dealers["上海"]["上海"].push("上海冠松之星汽车销售服务有限公司");
+
+_dealers["上海"]["上海"].push("上海利星汽车维修有限公司");
+
+_dealers["上海"]["上海"].push("上海宝利德汽车有限公司");
+
+_dealers["上海"]["上海"].push("上海星瀚汽车维修服务有限公司");
+
+_dealers["上海"]["上海"].push("上海汇之星汽车维修服务有限公司");
+
+_dealers["上海"]["上海"].push("上海闵星汽车服务有限公司");
+
+_dealers["浙江"]["绍兴市"].push("绍兴之星汽车有限公司");
+
+_dealers["江苏"]["苏州市"].push("常熟中升之星汽车销售服务有限公司");
+
+_dealers["江苏"]["苏州市"].push("苏州元星汽车服务有限公司");
+
+_dealers["江苏"]["苏州市"].push("苏州海星汽车销售服务有限公司");
+
+_dealers["江苏"]["苏州市"].push("苏州海星高新汽车销售服务有限公司");
+
+_dealers["浙江"]["台州市"].push("台州德星汽车有限公司");
+
+_dealers["浙江"]["温州市"].push("温州之星汽车有限公司");
+
+_dealers["江苏"]["无锡市"].push("无锡中升星辉汽车销售服务有限公司");
+
+_dealers["江苏"]["无锡市"].push("江阴利之星汽车维修服务有限公司");
+
+_dealers["江苏"]["扬州市"].push("扬州利之星汽车维修服务有限公司");
+
+_dealers["北京"]["北京"].push("利星行平治（北京）汽车有限公司");
+
+_dealers["北京"]["北京"].push("北京中升之星汽车销售服务有限公司");
+
+_dealers["北京"]["北京"].push("北京博瑞祥驰汽车销售服务有限公司");
+
+_dealers["北京"]["北京"].push("北京波士瑞达汽车销售服务有限公司");
+
+_dealers["北京"]["北京"].push("北京百得利之星汽车销售有限公司");
+
+_dealers["吉林"]["长春市"].push("长春华星行汽车销售服务有限公司");
+
+_dealers["辽宁"]["大连市"].push("大连中升之星汽车销售服务有限公司");
+
+_dealers["山东"]["济南市"].push("济南之星汽车服务有限公司");
+
+_dealers["山东"]["青岛市"].push("青岛三合汽车销售有限公司");
+
+_dealers["山东"]["青岛市"].push("青岛之星汽车服务有限公司");
+
+_dealers["辽宁"]["沈阳市"].push("辽宁之星汽车维修服务有限公司");
+
+_dealers["天津"]["天津"].push("天津市庞大之星汽车销售服务有限公司");
+
+_dealers["河南"]["郑州市"].push("郑州利星汽车有限公司");
+
+_dealers["湖南"]["长沙市"].push("湖南仁孚汽车销售服务有限公司");
+
+_dealers["广东"]["东莞市"].push("东莞溢华汽车销售服务有限公司");
+
+_dealers["广东"]["佛山市"].push("佛山中升之星汽车销售服务有限公司");
+
+_dealers["福建"]["福州市"].push("福州东星汽车维修服务有限公司");
+
+_dealers["广东"]["广州市"].push("广东仁孚怡邦汽车销售服务有限公司");
+
+_dealers["广东"]["广州市"].push("广州市龙星行汽车销售服务有限公司");
+
+_dealers["广东"]["广州市"].push("广州鸿粤星辉汽车销售服务有限公司");
+
+_dealers["江西"]["南昌市"].push("南昌迎星汽车销售服务有限公司");
+
+_dealers["江西"]["南昌市"].push("江西华宏星汽车有限公司");
+
+_dealers["广东"]["深圳市"].push("深圳市仁孚特力汽车服务有限公司");
+
+_dealers["广东"]["深圳市"].push("深圳市大兴宝德汽车销售服务有限公司");
+
+_dealers["广东"]["深圳市"].push("深圳市鹏峰汽车销售服务有限公司");
+
+_dealers["福建"]["厦门市"].push("厦门市东之星汽车销售有限公司");
+
+_dealers["广东"]["珠海市"].push("珠海仁孚汽车销售服务有限公司");
+
+_dealers["四川"]["乐山市"].push("四川华星锦业汽车销售服务有限公司");
+
+_dealers["四川"]["成都市"].push("成都仁孚汽车销售服务有限公司");
+
+_dealers["重庆"]["重庆"].push("仁孚美源(重庆)汽车服务有限公司南岸分公司");
+
+_dealers["重庆"]["重庆"].push("仁孚美源(重庆)汽车服务有限公司");
+
+_dealers["重庆"]["重庆"].push("重庆商社麒兴汽车销售服务有限公司");
+
+_dealers["重庆"]["重庆"].push("重庆星顺汽车有限公司");
+
+_dealers["贵州"]["贵阳市"].push("贵州贵星汽车销售服务有限公司");
+
+_dealers["云南"]["昆明市"].push("云南俊星汽车销售有限公司");
+
+_dealers["湖北"]["武汉市"].push("武汉星威汽车销售服务有限公司");
+
+_dealers["陕西"]["西安市"].push("西安利之星汽车有限公司");
 
 getRandom = function getRandom(length) {
   return parseInt(Math.random() * (length + 1) - 1);
@@ -232,10 +648,10 @@ _animate = function animate(time) {
 requestAnimationFrame(_animate);
 
 init = function init() {
-  var TrueH, TrueW, smaller;
+  var TrueH, TrueW, navH, smaller;
   TrueH = document.documentElement.clientHeight;
   TrueW = document.documentElement.clientWidth;
-  console.log(TrueW, TrueH);
+  console.log(TrueW / 640 * 94 / TrueH * 100);
   if (TrueW >= 640) {
     // document.body.style.height = TrueH+"px"
     // document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
@@ -245,6 +661,7 @@ init = function init() {
     TrueH = 1138;
   }
   smaller = TrueW / 640 * 1138 > TrueH;
+  navH = Math.ceil(TrueW / 640 * 94 / TrueH * 100);
   load = new Vue({
     el: "#load",
     data: {
@@ -254,26 +671,26 @@ init = function init() {
     },
     computed: {
       progressText: function progressText() {
-        var html, i, j, ref, text;
+        var html, i, k, ref, text;
         html = "";
         text = this.progress.toString();
-        for (i = j = 0, ref = text.length; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
+        for (i = k = 0, ref = text.length; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
           html += "<span class='font font-" + text[i] + "'>" + text[i] + "</span>";
         }
         return html + '<span class="font font-last">%</span>';
       }
     },
     mounted: function mounted() {
-      var _this = this;
+      var _this2 = this;
 
       var timein;
       // @.progress = 10
       this.mount = true;
       return timein = setInterval(function () {
-        _this.progress += 3;
-        if (_this.progress >= 100) {
+        _this2.progress += 3;
+        if (_this2.progress >= 100) {
           clearInterval(timein);
-          _this.progress = 100;
+          _this2.progress = 100;
           main.build();
           return main.homepageShow = true;
         }
@@ -283,13 +700,16 @@ init = function init() {
   return main = new Vue({
     el: "#main",
     data: {
+      navH: navH,
       pc: false,
+      wy: false,
       smaller: smaller,
       homepageShow: false,
       recordPageShow: false,
       ugcPageShow: false,
       regisiterPageShow: false,
       lastPageShow: false,
+      recording: false,
       mount: false,
       audio: null,
       playing: "play",
@@ -300,16 +720,73 @@ init = function init() {
       pageIndex: 0,
       moving: true,
       musiclink: "mp3/bgm.mp3",
+      pageBG: [],
+      ugc: null,
+      ugcbg: null,
       default: {
         x: 0,
         animated: false
       },
-      XY: "pageX"
+      XY: "pageX",
+      form: _defineProperty({
+        username: "",
+        mobile: "",
+        sex: 1,
+        detail: 1,
+        dealer: "",
+        province: "",
+        city: ""
+      }, "detail", 1),
+      provinces: provinces
     },
-    // computed:
+    computed: {
+      citys: function citys() {
+        if (this.form.province === "") {
+          return [];
+        }
+        return _citys[this.form.province];
+      },
+      dealers: function dealers() {
+        if (this.form.city === "") {
+          return [];
+        }
+        return _dealers[this.form.province][this.form.city];
+      }
+    },
+    watch: {
+      "form.province": function formProvince(newVal, oldVal) {
+        return this.form.city = "";
+      },
+      "form.city": function formCity(newVal, oldVal) {
+        return this.form.dealer = "";
+      }
+    },
     methods: {
       gameStart: function gameStart(Id) {
-        return console.log("id:", Id);
+        var _this3 = this;
+
+        var _ugc;
+        console.log("id:", Id);
+        _ugc = new UGC({
+          id: Id,
+          wy: this.wy,
+          bg: this.pageBG[Id] != null ? this.pageBG[Id].app.view : null,
+          background: function background() {
+            return _this3.ugcbg = _ugc.saveUGC;
+          },
+          ugc: function ugc() {
+            return _this3.ugc = _ugc.saveUGC;
+          }
+        });
+        return this.recordPageShow = true;
+      },
+      recordStart: function recordStart(evt) {
+        evt.preventDefault();
+        return this.recording = true;
+      },
+      recordEnd: function recordEnd(evt) {
+        evt.preventDefault();
+        return this.recording = false;
       },
       play: function play() {
         if (this.playing === "stop") {
@@ -324,9 +801,43 @@ init = function init() {
       audiopause: function audiopause() {
         return this.playing = "play";
       },
+      submit: function submit() {
+        var _this4 = this;
+
+        if (this.form.username === "") {
+          return alert("请输入用户名");
+        }
+        if (this.form.mobile === "") {
+          return alert("请输入联系电话");
+        }
+        if (this.form.province === "") {
+          return alert("请选择省份");
+        }
+        if (this.form.city === "") {
+          return alert("请选择城市");
+        }
+        if (this.form.dealer === "") {
+          return alert("请选择经销商");
+        }
+        if (this.form.detail !== 1) {
+          return alert("请选择将资料提交给主办方");
+        }
+        // "//api.giccoo.com/mbenz-love/insert"
+
+        return axios.post("http://localhost:8881/mbenz-love/insert/", this.form).then(function (msg) {
+          if (msg.data.recode === 200) {
+            alert("提交成功");
+            return _this4.regisiterPageShow = false;
+          } else {
+            return alert(msg.data.reason);
+          }
+        }).catch(function (e) {
+          return alert("提交失败请重试");
+        });
+      },
       build: function build() {
-        this.page1BG = new stars();
-        return this.page1BG.init();
+        this.pageBG[1] = new stars();
+        return this.pageBG[1].init();
       },
       moveNext: function moveNext() {
         // console.log "xiayige",@.pageIndex
@@ -344,7 +855,7 @@ init = function init() {
       },
       start: function start(evt) {
         var touch;
-        console.log(evt);
+        // console.log evt
         this.noteMsg = false;
         touch = evt.touches != null ? evt.touches[0] : evt;
         return this.default.x = touch[this.XY];
@@ -376,15 +887,20 @@ init = function init() {
       }
       this.mount = true;
       this.audio = document.getElementById("bgm");
+      this.recordDom = document.getElementById("record");
       if (IsPC()) {
         this.$el.addEventListener('mousedown', this.start.bind(this));
         this.$el.addEventListener('mousemove', this.move.bind(this));
         this.$el.addEventListener('mouseup', this.end.bind(this));
+        this.recordDom.addEventListener('mousedown', this.recordStart.bind(this));
+        this.recordDom.addEventListener('mouseup', this.recordEnd.bind(this));
         this.pc = true;
       }
       this.$el.addEventListener('touchstart', this.start.bind(this));
       this.$el.addEventListener('touchmove', this.move.bind(this));
       this.$el.addEventListener('touchend', this.end.bind(this));
+      this.recordDom.addEventListener('touchstart', this.recordStart.bind(this));
+      this.recordDom.addEventListener('touchend', this.recordEnd.bind(this));
       if (this.audio) {
         this.audio.addEventListener("play", this.audioplay.bind(this));
       }
