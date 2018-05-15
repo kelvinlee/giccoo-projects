@@ -1,6 +1,6 @@
 extends ../libs/jade/layout-clean
 block title
-	| 孤独的人会发光
+	| 我的爱情宣言
 
 block css
 	meta(name="author",content="m.giccoo.com")
@@ -31,16 +31,17 @@ block content
 			img(:src="'#{url}/img/audio-'+playing+'.png'")
 			transition(name="page-fade")
 				p.noteMsg(v-show="noteMsg") 为保证体验效果<br/>请打开音乐
-		.nav
+		#nav.nav
 			.logo
 				img(src="#{url}/img/navbar.jpg")
+				a.sj(href="https://special.mercedes-benz.com.cn/2018-dream-car/mobi/#e-cab")
 
 		transition(name="page-animation")
 			.page.page-home(v-show="pageIndex == 0",:class="{left: pageIndex >= 0}")
 				.bg
 					img(src="#{url}/img/page-home-bg.jpg")
 				.content
-					.texts
+					.texts(:style="{top: navH+'%'}")
 						-for (var i=1;i<=5;i++)
 							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
 								img(src="#{url}/img/page-home-text-#{i}.png")
@@ -53,7 +54,7 @@ block content
 					.animations#stars
 				.content
 					.right(@click="moveNext")
-					.texts
+					.texts(:style="{top: navH+'%'}")
 						-for (var i=1;i<=4;i++)
 							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
 								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
@@ -70,7 +71,7 @@ block content
 				.content
 					.left(@click="movePrev")
 					.right(@click="moveNext")
-					.texts
+					.texts(:style="{top: navH+'%'}")
 						-for (var i=1;i<=4;i++)
 							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
 								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
@@ -78,12 +79,94 @@ block content
 					.btn.btn-start(@click="gameStart(#{pageId})")
 		transition(name="page-fade")
 			.page.page-regisiter(v-show="regisiterPageShow")
+				.content
+					form.form
+						.form-title
+							img(src="#{url}/img/form-title.png")
+						.form-group
+							label(for="username")
+								img(src="#{url}/img/form-label-name.png")
+							input#username(type="text",v-model="form.username")
+						.form-group
+							label
+								img(src="#{url}/img/form-label-sex.png")
+							.form-group-items
+								.item
+									input#man(type="radio",value="1",v-model="form.sex")
+									label.text(for="man")
+										img(src="#{url}/img/form-man.png")
+								.item
+									input#woman(type="radio",value="0",v-model="form.sex")
+									label.text(for="woman")
+										img(src="#{url}/img/form-woman.png")
+						.form-group
+							label(for="mobile")
+								img#mobile(src="#{url}/img/form-label-mobile.png")
+							input(type="text",v-model="form.mobile")
+						.form-group
+							label
+								img(src="#{url}/img/form-label-p.png")
+							.form-group-items
+								.item.select
+									span {{form.province != "" ? form.province : "请选择"}}
+									select(v-model="form.province")
+										option(value="") 请选择
+										option(v-for="option in provinces" v-bind:value="option") {{option}}
+								.item.c
+									.text.big
+										img(src="#{url}/img/form-label-c.png")
+								.item.select
+									span {{form.city != "" ? form.city : "请选择"}}
+									select(v-model="form.city")
+										option(value="") 请选择
+										option(v-for="option in citys" v-bind:value="option") {{option}}
+						.form-group
+							label
+								img(src="#{url}/img/form-label-de.png")
+							.select
+								span {{form.dealer != "" ? form.dealer : "请选择"}}
+								select(v-model="form.dealer")
+									option(value="") 请选择
+									option(v-for="option in dealers" v-bind:value="option") {{option}}
+						.form-group
+							label
+								img(src="#{url}/img/form-label-detail.png")
+							.form-group-items.box
+								.item
+									input#detail(type="checkbox",value="1",checked,v-model="form.detail")
+									label(for="detail") 我同意以上信息提交给主办方
+						.form-btn(@click="submit")
+							img(src="#{url}/img/btn-submit.png")
+						.close(@click="regisiterPageShow = false")
+							img(src="#{url}/img/form-close.png")
+
 		transition(name="page-fade")
 			.page.page-record(v-show="recordPageShow")
+				.content
+					#record.record(:class="{off: !recording,on: recording}")
+						.mic
+							img(src="#{url}/img/page-record-microphone.png")
+						.progress
+							.wrapper.r
+								.circleProgress.rightcircle
+							.wrapper.l
+								.circleProgress.leftcircle
+
 
 		transition(name="page-fade")
 			.page.page-ugc(v-show="ugcPageShow")
 				//- http://music.163.com/playlist?id=2222381288
+				.bg#ugc
+					//- img(:src="ugcbg")
+				.content
+					.mark(v-if="wy",@click="share")
+					.mark(v-if="!wy")
+						img(:src="ugc")
+					.btns
+						.btn.btn-reg(@click="regisiterPageShow = true")
+							img(src="#{url}/img/btn-reg.png")
+						.btn.btn-music
+							img(src="#{url}/img/btn-music.png")
 
 block js
 	- url = "/";

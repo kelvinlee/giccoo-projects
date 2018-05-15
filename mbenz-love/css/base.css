@@ -801,6 +801,46 @@ ul {
   -webkit-animation-name: lightShow;
           animation-name: lightShow; }
 
+@-webkit-keyframes circleProgressLoad_right {
+  0% {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg); }
+  50%, 100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); } }
+
+@keyframes circleProgressLoad_right {
+  0% {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg); }
+  50%, 100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); } }
+
+.circleProgressLoad_right {
+  -webkit-animation-name: circleProgressLoad_right;
+          animation-name: circleProgressLoad_right; }
+
+@-webkit-keyframes circleProgressLoad_left {
+  0%, 50% {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg); }
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); } }
+
+@keyframes circleProgressLoad_left {
+  0%, 50% {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg); }
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); } }
+
+.circleProgressLoad_left {
+  -webkit-animation-name: circleProgressLoad_left;
+          animation-name: circleProgressLoad_left; }
+
 html, body {
   width: 100%;
   height: 100%; }
@@ -1079,53 +1119,54 @@ body {
   background-size: cover;
   background-color: transparent; }
 
-.page .content .btn-start {
+.page .content {
   position: absolute;
-  bottom: 1%;
-  left: 50%;
-  width: 37.5%;
-  margin: 0 auto;
-  height: 10%;
-  background: url("../img/btn-start.png") no-repeat center center;
-  background-size: contain;
-  background-color: transparent;
-  -webkit-transform: translate3d(-50%, 0, 0);
-          transform: translate3d(-50%, 0, 0); }
-  .iphone4 .page .content .btn-start {
-    width: 37.5%; }
-
-.page .content .texts {
-  position: absolute;
-  top: 28%;
+  top: 0px;
   left: 0px;
-  -webkit-transform: translate3d(0, -50%, 0);
-          transform: translate3d(0, -50%, 0); }
-  .page .content .texts .text {
+  width: 100%;
+  height: 100%; }
+  .page .content .btn-start {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    width: 37.5%;
+    margin: 0 auto;
+    height: 10%;
+    background: url("../img/btn-start.png") no-repeat center center;
+    background-size: contain;
+    background-color: transparent;
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0); }
+    .iphone4 .page .content .btn-start {
+      width: 37.5%; }
+  .page .content .texts {
     position: absolute;
     top: 0px;
-    left: 0px; }
-  .page .content .texts .text-1 {
-    position: relative; }
-
-.page .content .right, .page .content .left {
-  position: absolute;
-  width: 2rem;
-  height: 2rem;
-  top: 50%;
-  -webkit-transform: translate3d(0, -50%, 0);
-          transform: translate3d(0, -50%, 0); }
-
-.page .content .right {
-  right: 1%;
-  background: url("../img/right.png") no-repeat center center;
-  background-size: cover;
-  background-color: transparent; }
-
-.page .content .left {
-  left: 1%;
-  background: url("../img/left.png") no-repeat center center;
-  background-size: cover;
-  background-color: transparent; }
+    left: 0px;
+    margin-top: 5%; }
+    .page .content .texts .text {
+      position: absolute;
+      top: 0px;
+      left: 0px; }
+    .page .content .texts .text-1 {
+      position: relative; }
+  .page .content .right, .page .content .left {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 50%;
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0); }
+  .page .content .right {
+    right: 1%;
+    background: url("../img/right.png") no-repeat center center;
+    background-size: cover;
+    background-color: transparent; }
+  .page .content .left {
+    left: 1%;
+    background: url("../img/left.png") no-repeat center center;
+    background-size: cover;
+    background-color: transparent; }
 
 .smaller .page .bg {
   top: 50%;
@@ -1172,11 +1213,245 @@ body {
     position: absolute;
     width: 100%;
     height: 100%; }
-    .page-home .content .texts {
-      top: 35%;
-      left: 0px; }
 
 .page-2 .hair {
   position: absolute;
   top: 63.55%;
   left: 0px; }
+
+.page-regisiter {
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 108; }
+  .page-regisiter .form {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+    width: 80%;
+    margin: 0 auto;
+    background: url("../img/form-bg.jpg") repeat top center;
+    background-size: 100% auto;
+    background-color: transparent;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 2%;
+    padding-bottom: 10%;
+    font-size: 0.8rem;
+    color: #555; }
+    @media only screen and (min-width: 321px) and (max-width: 399px) {
+      .page-regisiter .form {
+        font-size: 0.88rem; } }
+    @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+      .page-regisiter .form {
+        font-size: 0.88rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 767px) {
+      .page-regisiter .form {
+        font-size: 0.96rem; } }
+    @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+      .page-regisiter .form {
+        font-size: 0.96rem; } }
+    .page-regisiter .form .form-title {
+      width: 50%;
+      margin: 0 auto;
+      padding: 1rem 0; }
+    .page-regisiter .form .form-group {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 0.6rem 0; }
+      .page-regisiter .form .form-group label {
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: 0.2rem 0;
+        padding-right: 5%;
+        position: relative;
+        line-height: 1.4em;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        box-align: center; }
+        .page-regisiter .form .form-group label img {
+          display: inline-block;
+          vertical-align: middle; }
+      .page-regisiter .form .form-group input, .page-regisiter .form .form-group select, .page-regisiter .form .form-group .form-group-items, .page-regisiter .form .form-group .form-group-line, .page-regisiter .form .form-group .select {
+        -webkit-box-flex: 4;
+            -ms-flex: 4;
+                flex: 4; }
+      .page-regisiter .form .form-group input, .page-regisiter .form .form-group .select {
+        border: solid 1px #555;
+        outline: none;
+        background-color: #5a5a5a;
+        color: #fff;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: 0.2rem 0;
+        line-height: 1.4em;
+        text-indent: 0.4rem; }
+      .page-regisiter .form .form-group .box {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: 0.3rem 0;
+        line-height: 1.4em; }
+      .page-regisiter .form .form-group .select {
+        position: relative; }
+        .page-regisiter .form .form-group .select select {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          bottom: 0px;
+          right: 0px;
+          width: 100%;
+          height: 100%;
+          z-index: 99;
+          opacity: 0; }
+    .page-regisiter .form .form-group-items {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .page-regisiter .form .form-group-items .item {
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        margin: 0 auto;
+        padding: 0; }
+        .page-regisiter .form .form-group-items .item.r {
+          text-align: right; }
+        .page-regisiter .form .form-group-items .item.c {
+          text-align: center; }
+        .page-regisiter .form .form-group-items .item.select {
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          padding: 0.2rem 0;
+          line-height: 1.4em; }
+        .page-regisiter .form .form-group-items .item input {
+          vertical-align: middle; }
+        .page-regisiter .form .form-group-items .item .text {
+          vertical-align: middle;
+          width: 1.3rem;
+          display: inline-block;
+          font-size: 0;
+          height: 100%; }
+          .page-regisiter .form .form-group-items .item .text.big {
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            padding: 0.3rem 0;
+            width: 38%;
+            text-align: center;
+            margin: 0 auto;
+            display: inline-block; }
+            .page-regisiter .form .form-group-items .item .text.big img {
+              display: inline-block;
+              vertical-align: middle; }
+    .page-regisiter .form .form-btn {
+      width: 40%;
+      margin: 0 auto;
+      margin-top: 1rem; }
+    .page-regisiter .form .close {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 23.5%;
+      -webkit-transform: translate3d(-50%, 50%, 0);
+              transform: translate3d(-50%, 50%, 0); }
+
+.page-record {
+  z-index: 108;
+  background: url("../img/page-record-bg.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
+  .page-record .record {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    background-color: #fff;
+    border-radius: 50%;
+    font-size: 0;
+    overflow: hidden; }
+    .page-record .record .mic {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      -webkit-transform: translate3d(-50%, -50%, 0);
+              transform: translate3d(-50%, -50%, 0); }
+    .page-record .record .progress {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 40px;
+      height: 40px;
+      z-index: 99;
+      font-size: 0;
+      overflow: hidden; }
+      .page-record .record .progress .wrapper {
+        width: 20px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        overflow: hidden; }
+        .page-record .record .progress .wrapper.r {
+          right: 0; }
+        .page-record .record .progress .wrapper.l {
+          left: 0; }
+      .page-record .record .progress .circleProgress {
+        position: absolute;
+        top: 0;
+        width: 34.4px;
+        height: 34.4px;
+        border: solid 2.8px transparent;
+        border-radius: 50%;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+        .page-record .record .progress .circleProgress.rightcircle {
+          border-top: 2.8px solid #b5272d;
+          border-right: 2.8px solid #b5272d;
+          right: 0; }
+        .page-record .record .progress .circleProgress.leftcircle {
+          border-bottom: 2.8px solid #b5272d;
+          border-left: 2.8px solid #b5272d;
+          left: 0; }
+    .page-record .record.off .progress .circleProgress {
+      -webkit-transform: rotate(-135deg);
+              transform: rotate(-135deg); }
+    .page-record .record.on .progress .circleProgress.rightcircle {
+      -webkit-animation: circleProgressLoad_right 5s linear;
+              animation: circleProgressLoad_right 5s linear; }
+    .page-record .record.on .progress .circleProgress.leftcircle {
+      -webkit-animation: circleProgressLoad_left 5s linear;
+              animation: circleProgressLoad_left 5s linear; }
+
+.page-ugc {
+  z-index: 108; }
+  .page-ugc .btns {
+    position: absolute;
+    width: 100%;
+    bottom: 1%;
+    left: 0px;
+    text-align: center; }
+    .page-ugc .btns .btn {
+      width: 49%;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      font-size: 0;
+      display: inline-block; }
+  .page-ugc .mark {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    opacity: 0; }

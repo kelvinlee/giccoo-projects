@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>孤独的人会发光</title>
+    <title>我的爱情宣言</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
     <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" :class="{smaller: smaller}" class="main">
-      <div class="nav">
-        <div class="logo"><img src="./img/navbar.jpg"></div>
+      <div id="nav" class="nav">
+        <div class="logo"><img src="./img/navbar.jpg"><a href="https://special.mercedes-benz.com.cn/2018-dream-car/mobi/#e-cab" class="sj"></a></div>
       </div>
       <transition name="page-animation">
         <div v-show="pageIndex == 0" :class="{left: pageIndex &gt;= 0}" class="page page-home">
           <div class="bg"><img src="./img/page-home-bg.jpg"></div>
           <div class="content">
-            <div class="texts">
+            <div :style="{top: navH+'%'}" class="texts">
               <div class="text text-1 fadeInUp animated duration-6 delay-3"><img src="./img/page-home-text-1.png"></div>
               <div class="text text-2 fadeInUp animated duration-7 delay-4"><img src="./img/page-home-text-2.png"></div>
               <div class="text text-3 fadeInUp animated duration-8 delay-5"><img src="./img/page-home-text-3.png"></div>
@@ -35,7 +35,7 @@
           </div>
           <div class="content">
             <div @click="moveNext" class="right"></div>
-            <div class="texts">
+            <div :style="{top: navH+'%'}" class="texts">
               <div class="text text-1 fadeInUp animated duration-6 delay-3"><img src="./img/page-1-text-1.png"></div>
               <div class="text text-2 fadeInUp animated duration-7 delay-4"><img src="./img/page-1-text-2.png"></div>
               <div class="text text-3 fadeInUp animated duration-8 delay-5"><img src="./img/page-1-text-3.png"></div>
@@ -55,7 +55,7 @@
           <div class="content">
             <div @click="movePrev" class="left"></div>
             <div @click="moveNext" class="right"></div>
-            <div class="texts">
+            <div :style="{top: navH+'%'}" class="texts">
               <div class="text text-1 fadeInUp animated duration-6 delay-3"><img src="./img/page-2-text-1.png"></div>
               <div class="text text-2 fadeInUp animated duration-7 delay-4"><img src="./img/page-2-text-2.png"></div>
               <div class="text text-3 fadeInUp animated duration-8 delay-5"><img src="./img/page-2-text-3.png"></div>
@@ -66,13 +66,104 @@
         </div>
       </transition>
       <transition name="page-fade">
-        <div v-show="regisiterPageShow" class="page page-regisiter"></div>
+        <div v-show="regisiterPageShow" class="page page-regisiter">
+          <div class="content">
+            <form class="form">
+              <div class="form-title"><img src="./img/form-title.png"></div>
+              <div class="form-group">
+                <label for="username"><img src="./img/form-label-name.png"></label>
+                <input id="username" type="text" v-model="form.username">
+              </div>
+              <div class="form-group">
+                <label><img src="./img/form-label-sex.png"></label>
+                <div class="form-group-items">
+                  <div class="item">
+                    <input id="man" type="radio" value="1" v-model="form.sex">
+                    <label for="man" class="text"><img src="./img/form-man.png"></label>
+                  </div>
+                  <div class="item">
+                    <input id="woman" type="radio" value="0" v-model="form.sex">
+                    <label for="woman" class="text"><img src="./img/form-woman.png"></label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="mobile"><img id="mobile" src="./img/form-label-mobile.png"></label>
+                <input type="text" v-model="form.mobile">
+              </div>
+              <div class="form-group">
+                <label><img src="./img/form-label-p.png"></label>
+                <div class="form-group-items">
+                  <div class="item select"><span>{{form.province != "" ? form.province : "请选择"}}</span>
+                    <select v-model="form.province">
+                      <option value="">请选择</option>
+                      <option v-for="option in provinces" v-bind:value="option">{{option}}</option>
+                    </select>
+                  </div>
+                  <div class="item c">
+                    <div class="text big"><img src="./img/form-label-c.png"></div>
+                  </div>
+                  <div class="item select"><span>{{form.city != "" ? form.city : "请选择"}}</span>
+                    <select v-model="form.city">
+                      <option value="">请选择</option>
+                      <option v-for="option in citys" v-bind:value="option">{{option}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label><img src="./img/form-label-de.png"></label>
+                <div class="select"><span>{{form.dealer != "" ? form.dealer : "请选择"}}</span>
+                  <select v-model="form.dealer">
+                    <option value="">请选择</option>
+                    <option v-for="option in dealers" v-bind:value="option">{{option}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label><img src="./img/form-label-detail.png"></label>
+                <div class="form-group-items box">
+                  <div class="item">
+                    <input id="detail" type="checkbox" value="1" checked v-model="form.detail">
+                    <label for="detail">我同意以上信息提交给主办方</label>
+                  </div>
+                </div>
+              </div>
+              <div @click="submit" class="form-btn"><img src="./img/btn-submit.png"></div>
+              <div @click="regisiterPageShow = false" class="close"><img src="./img/form-close.png"></div>
+            </form>
+          </div>
+        </div>
       </transition>
       <transition name="page-fade">
-        <div v-show="recordPageShow" class="page page-record"></div>
+        <div v-show="recordPageShow" class="page page-record">
+          <div class="content">
+            <div id="record" :class="{off: !recording,on: recording}" class="record">
+              <div class="mic"><img src="./img/page-record-microphone.png"></div>
+              <div class="progress">
+                <div class="wrapper r">
+                  <div class="circleProgress rightcircle"></div>
+                </div>
+                <div class="wrapper l">
+                  <div class="circleProgress leftcircle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </transition>
       <transition name="page-fade">
         <div v-show="ugcPageShow" class="page page-ugc">
+          <div id="ugc" class="bg">
+          </div>
+          <div class="content">
+            <div v-if="wy" @click="share" class="mark"></div>
+            <div v-if="!wy" class="mark"><img :src="ugc"></div>
+            <div class="btns">
+              <div @click="regisiterPageShow = true" class="btn btn-reg"><img src="./img/btn-reg.png"></div>
+              <div class="btn btn-music"><img src="./img/btn-music.png"></div>
+            </div>
+          </div>
         </div>
       </transition>
     </div>

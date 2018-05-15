@@ -20,6 +20,18 @@ $pageMainBGColor: #000000;
 	50%
 		opacity: 0.2
 
++keyframes(circleProgressLoad_right)
+	0%
+		transform: rotate(-135deg)
+	50%,100%
+		transform: rotate(45deg)
+
++keyframes(circleProgressLoad_left)
+	0%,50%
+		transform: rotate(-135deg)
+	100%
+		transform: rotate(45deg)
+
 html,body
 	+w
 	+h
@@ -181,6 +193,7 @@ body
 			+box
 			+w
 
+
 .font
 	+show-inline
 	text-indent: -99px
@@ -196,6 +209,10 @@ body
 
 .page
 	.content
+		+posa
+		+tl
+		+w
+		+h
 		.btn-start
 			+posa
 			+bl(1%,50%)
@@ -205,8 +222,9 @@ body
 			+transform(translate3d(-50%,0,0))
 		.texts
 			+posa
-			+tl(28%)
-			+transform(translate3d(0,-50%,0))
+			+tl
+			// +transform(translate3d(0,-50%,0))
+			margin-top: 5%
 			.text
 				+posa
 				+tl
@@ -230,6 +248,7 @@ body
 		.bg
 			+tl(50%)
 			+transform(translate3d(0,-50%,0))
+			// +tl
 			bottom: auto
 
 
@@ -253,10 +272,198 @@ body
 		+w
 		+h
 		.texts
-			+tl(35%)
 
 .page-2
 	.hair
 		+posa
 		+tl(63.55%)
 
+.page-regisiter
+	+bc(rgba(0,0,0,0.7))
+	z-index: 108
+	.form
+		+posa
+		+tl(50%,10%)
+		+transform(translate3d(0,-50%,0))
+		+w(80%)
+		+m
+		+b($cdn+"img/form-bg.jpg",repeat,top,center,100% auto)
+		+box
+		+p(2%)
+		padding-bottom: 10%
+		+font-size(0.8rem)
+		color: #555
+		.form-title
+			+w(50%)
+			+m
+			+p(1rem 0)
+		.form-group
+			display: flex
+			+box
+			+p(0.6rem 0)
+			label
+				flex: 1
+				+box
+				+p(0.2rem 0)
+				padding-right: 5%
+				+posr
+				line-height: 1.4em
+				justify-content: center
+				align-items: center
+				box-align: center
+				img
+					+show-inline
+					vertical-align: middle
+			input,select,.form-group-items,.form-group-line,.select
+				flex: 4
+			input,.select
+				border: solid 1px #555
+				outline: none
+				+bc(#5a5a5a)
+				color: #fff
+				+box
+				+p(0.2rem 0)
+				line-height: 1.4em
+				text-indent: 0.4rem
+			.box
+				+box
+				+p(0.3rem 0)
+				line-height: 1.4em
+			.select
+				+posr
+				select
+					+posa
+					+tl
+					+br
+					+w
+					+h
+					z-index: 99
+					opacity: 0
+		.form-group-items
+			display: flex
+			.item
+				flex: 1
+				+m
+				+p
+				&.r
+					+text-right
+				&.c
+					+text-center
+				&.select
+					+box
+					+p(0.2rem 0)
+					line-height: 1.4em
+				input
+					vertical-align: middle
+				.text
+					vertical-align: middle
+					+w(1.3rem)
+					+show-inline
+					font-size: 0
+					+h
+					&.big
+						+box
+						+p(0.3rem 0)
+						+w(38%)
+						+text-center
+						+m
+						+show-inline
+						img
+							+show-inline
+							vertical-align: middle
+		.form-btn
+			+w(40%)
+			+m
+			margin-top: 1rem
+		.close
+			+posa
+			+bl(0,50%)
+			+w(23.5%)
+			+transform(translate3d(-50%,50%,0))
+
+.page-record
+	z-index: 108
+	+b($cdn+"img/page-record-bg.jpg",no-repeat,center,center,cover)
+	.record
+		$size: 40px
+		$borderSize: $size * .07
+		+posa
+		+bl(1%,50%)
+		+transform(translate3d(-50%,0,0))
+		+w($size)
+		+h($size)
+		// +box
+		+p($size*0.1)
+		+bc(#fff)
+		border-radius: 50%
+		font-size: 0
+		+overhide
+		.mic
+			+posa
+			+tl(50%,50%)
+			+w(50%)
+			+transform(translate3d(-50%,-50%,0))
+		.progress
+			+posa
+			+tl(10%,10%)
+			+w($size)
+			+h($size)
+			z-index: 99
+			font-size: 0
+			+overhide
+			.wrapper
+				+w($size/2)
+				+h
+				+posa
+				top: 0
+				+overhide
+				&.r
+					right: 0
+				&.l
+					left: 0
+			.circleProgress
+				+posa
+				top: 0
+				+w($size - $borderSize*2)
+				+h($size - $borderSize*2)
+				border: solid $borderSize transparent
+				border-radius: 50%
+				transform: rotate(45deg)
+				&.rightcircle
+					border-top: $borderSize solid #b5272d
+					border-right: $borderSize solid #b5272d
+					right: 0
+				&.leftcircle
+					border-bottom: $borderSize solid #b5272d
+					border-left: $borderSize solid #b5272d
+					left: 0
+		&.off
+			.progress
+				.circleProgress
+					transform: rotate(-135deg)
+		&.on
+			.progress
+				.circleProgress
+					&.rightcircle
+						animation: circleProgressLoad_right 5s linear
+					&.leftcircle
+						animation: circleProgressLoad_left 5s linear
+
+
+.page-ugc
+	z-index: 108
+	.btns
+		+posa
+		+w
+		+bl(1%)
+		+text-center
+		.btn
+			+w(49%)
+			+box
+			font-size: 0
+			+show-inline
+	.mark
+		+posa
+		+tl(10%,10%)
+		+wh(80%,80%)
+		opacity: 0
