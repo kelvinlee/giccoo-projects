@@ -368,7 +368,7 @@ $("#shareHint").click(function(){
 })
 $("#endBtn3").click(function(){
   typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", nowStep, "goWebsite", "-"]);
-  window.location.href="https://www.zbird.com/"
+  window.location.href="http://www.zbird.com/"
 })
 function convertCanvasToImage(canvas) {
   var image = new Image();
