@@ -1,6 +1,6 @@
 
 var shareT=["你站的方向连风吹过来都是暖的。","喜你为疾，药石无医。","海上月是天上月，眼前人是心上人。","我们站着，不说话，就十分美好。","今夜我不关心人类，我只想你。","你是一种感觉，写在夏夜晚风里面。","明天生动而具体，有且只有一个你。","人生苦短，劝你早日弃暗投我。"]
-var shareIcon=["http://m.giccoo.com/zbird/img/ico1.jpg","http://m.giccoo.com/zbird/img/ico2.jpg","http://m.giccoo.com/zbird/img/ico3.jpg"]
+var shareIcon=["https://m.giccoo.com/zbird/img/icon1.jpg","https://m.giccoo.com/zbird/img/icon2.jpg","https://m.giccoo.com/zbird/img/icon3.jpg"]
 var _n=parseInt(Math.random()*shareT.length)
 var _n2=parseInt(Math.random()*shareIcon.length)
 $(document).ready(function load (){
@@ -13,9 +13,9 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "520·送个大的",
+      title: "520 · 送个大的",
       desc: shareT[_n],
-      link: "http://m.giccoo.com/zbird/",
+      link: "https://m.giccoo.com/zbird/",
       imgUrl: shareIcon[_n2],
       success: function() {},
       cancel: function() {}
@@ -54,7 +54,7 @@ var loadWechatConfig = function() {
   var hm, s, url;
   url = encodeURIComponent(window.location.href.split("#")[0]);
   hm = document.createElement('script');
-  hm.src = "http://api.giccoo.com/api/config?url=" + url;
+  hm.src = "//api.giccoo.com/api/config?url=" + url;
   s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(hm, s);
 };
@@ -74,9 +74,11 @@ $("#musicOff").click(function(){
   if(ifbgm==0){
     bgm.play();
     TweenLite.set($("#musicOff"),{opacity:0})
+    typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", musicBtn, "playMusic", "-"]);
   }else{
     bgm.pause();
     TweenLite.set($("#musicOff"),{opacity:1})
+    typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", musicBtn, "stopMusic", "-"]);
   }
   ifbgm++
   if(ifbgm==2){ifbgm=0}
