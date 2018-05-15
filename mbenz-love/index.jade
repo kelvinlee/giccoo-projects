@@ -19,14 +19,19 @@ block css
 block content
 	- url = "//image.giccoo.com/projects/mbenz-love";
 	- url = ".";
-	//- #load.loading
-		.content
-			.line
-				img(src="#{url}/img/loading-line.png")
-				.texts(v-html="progressText")
+	//- #load.loading(:class="{hide:kill}")
+		.full.animated.duration-7(:class="{fadeOut: !mount}")
+			.content
+				.line
+					img(src="#{url}/img/loading-line.png")
+					.texts(v-html="progressText")
+						-for (var i=0;i<=9;i++)
+							span(class="opc font font-#{i}") #{i}
+						-;
+						span(class="opc font font-last") %
 
 	#main.main(v-show="mount",style="display: none",:style="{width: w+'px',height: h+'px'}",:class="{smaller: smaller}")
-		//- .bgm(@click="play")
+		.bgm(@click="play")
 			audio#bgm(:src="musiclink")
 			img(:src="'#{url}/img/audio-'+playing+'.png'")
 			transition(name="page-fade")
@@ -41,7 +46,7 @@ block content
 				.bg
 					img(src="#{url}/img/page-home-bg.jpg")
 				.content
-					.texts(:style="{top: navH+'%'}")
+					//- .texts(:style="{top: navH+'%'}")
 						-for (var i=1;i<=5;i++)
 							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
 								img(src="#{url}/img/page-home-text-#{i}.png")
@@ -77,6 +82,92 @@ block content
 								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
 						-;
 					.btn.btn-start(@click="gameStart(#{pageId})")
+		transition(name="page-animation")
+			- pageId = 3;
+			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+				.bg
+					img(src="#{url}/img/page-#{pageId}-bg.jpg")
+					.animations
+						.ball
+							img(src="#{url}/img/page-3-ball.png")
+				.content
+					.left(@click="movePrev")
+					.right(@click="moveNext")
+					.texts(:style="{top: navH+'%'}")
+						-for (var i=1;i<=3;i++)
+							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
+								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
+						-;
+					.btn.btn-start(@click="gameStart(#{pageId})")
+		transition(name="page-animation")
+			- pageId = 4;
+			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+				.bg
+					img(src="#{url}/img/page-#{pageId}-bg.jpg")
+					.animations#rain
+						
+				.content
+					.left(@click="movePrev")
+					.right(@click="moveNext")
+					.texts(:style="{top: navH+'%'}")
+						-for (var i=1;i<=4;i++)
+							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
+								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
+						-;
+					.btn.btn-start(@click="gameStart(#{pageId})")
+		transition(name="page-animation")
+			- pageId = 5;
+			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+				.bg
+					img(src="#{url}/img/page-#{pageId}-bg.jpg")
+					.animations
+						.snow
+							img(src="#{url}/img/page-#{pageId}-snow.gif")
+				.content
+					.left(@click="movePrev")
+					.right(@click="moveNext")
+					.texts(:style="{top: navH+'%'}")
+						-for (var i=1;i<=4;i++)
+							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
+								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
+						-;
+					.btn.btn-start(@click="gameStart(#{pageId})")
+		transition(name="page-animation")
+			- pageId = 6;
+			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+				.bg
+					img(src="#{url}/img/page-#{pageId}-bg.jpg")
+					.animations#cloud
+						.mark
+							img(src="#{url}/img/page-#{pageId}-mark.png")
+
+				.content
+					.left(@click="movePrev")
+					.right(@click="moveNext")
+					.texts(:style="{top: navH+'%'}")
+						-for (var i=1;i<=3;i++)
+							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
+								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
+						-;
+					.btn.btn-start(@click="gameStart(#{pageId})")
+		transition(name="page-animation")
+			- pageId = 7;
+			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+				.bg
+					img(src="#{url}/img/page-#{pageId}-bg.jpg")
+					.animations#dog
+						
+				.content
+					.left(@click="movePrev")
+					//- .right(@click="moveNext")
+					.texts(:style="{top: navH+'%'}")
+						-for (var i=1;i<=5;i++)
+							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
+								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
+						-;
+					.btn.btn-start(@click="gameStart(#{pageId})")
+
+
 		transition(name="page-fade")
 			.page.page-regisiter(v-show="regisiterPageShow")
 				.content
@@ -165,7 +256,7 @@ block content
 					.btns
 						.btn.btn-reg(@click="regisiterPageShow = true")
 							img(src="#{url}/img/btn-reg.png")
-						.btn.btn-music
+						a.btn.btn-music(href="http://music.163.com/playlist?id=2222381288")
 							img(src="#{url}/img/btn-music.png")
 
 block js

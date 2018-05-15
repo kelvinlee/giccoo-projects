@@ -4,6 +4,7 @@
  # @codekit-prepend "../../libs/coffee/ispc"
  # @codekit-prepend "./pixi"
 
+# 法国。荷兰。巴西，英国，韩国，泰国，日本
 
 _CDN = ""
 _imgurl = ""
@@ -16,6 +17,7 @@ imageurl = "//api.giccoo.com/api/upload/image64/"
 provinces = ["江苏","浙江","安徽","上海","北京","吉林","辽宁","山东","天津","河南","湖南","广东","福建","江西","四川","重庆","贵州","云南","湖北","陕西"]
 citys = []
 dealers = []
+startTime = new Date().getTime()
 for p in provinces
 	citys[p] = []
 	dealers[p] = {}
@@ -173,6 +175,37 @@ dealers["云南"]["昆明市"].push "云南俊星汽车销售有限公司"
 dealers["湖北"]["武汉市"].push "武汉星威汽车销售服务有限公司"
 dealers["陕西"]["西安市"].push "西安利之星汽车有限公司"
 
+load = new Vue
+	el: "#load"
+	data:
+		progress: 0
+		mount: false
+		kill: false
+		progressOn: 50+Math.floor Math.random()*30
+	computed:
+		progressText: ->
+			html = ""
+			text = @.progress.toString()
+			for i in [0...text.length]
+				html += "<span class='font font-#{text[i]}'>#{text[i]}</span>"
+			return html+'<span class="font font-last">%</span>'
+	mounted: ->
+		# @.progress = 10
+		@.mount = true
+		timein = setInterval =>
+			@.progress += 2
+			@.progress = @.progressOn if @.progress > @.progressOn
+
+			if @.progress >= 100
+				clearInterval timein
+				console.log "loaded:",(new Date().getTime() - startTime)/1000,"s"
+				@.progress = 100
+				@.mount = false
+				setTimeout =>
+					@.kill = true
+				,700
+		,1000/20
+
 getRandom = (length)->
 	return parseInt(Math.random()*(length+1)-1)
 window.onload = ->
@@ -205,39 +238,13 @@ requestAnimationFrame animate
 init = ->
 	TrueH = document.documentElement.clientHeight
 	TrueW = document.documentElement.clientWidth
-	console.log TrueW / 640 * 94 / TrueH * 100
+	# console.log new Date().getTime() - startTime
 	# document.body.style.height = TrueH+"px"
 	# document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
 	TrueW = 640 if TrueW >= 640
 	TrueH = 1138 if TrueH >= 1138
 	smaller = TrueW/640*1138 > TrueH
 	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
-
-	load = new Vue
-		el: "#load"
-		data:
-			progress: 0
-			mount: false
-			progressOn: 0
-		computed:
-			progressText: ->
-				html = ""
-				text = @.progress.toString()
-				for i in [0...text.length]
-					html += "<span class='font font-#{text[i]}'>#{text[i]}</span>"
-				return html+'<span class="font font-last">%</span>'
-		mounted: ->
-			# @.progress = 10
-			@.mount = true
-			timein = setInterval =>
-				@.progress += 3
-				if @.progress >= 100
-					clearInterval timein
-					@.progress = 100
-					main.build()
-					main.homepageShow = true
-					
-			,1000/20
 
 	main = new Vue
 		el: "#main"
@@ -258,7 +265,7 @@ init = ->
 			noteMsg: true
 			w: TrueW
 			h: TrueH
-			maxPage: 8
+			maxPage: 7
 			pageIndex: 0
 			moving: true
 			musiclink: "mp3/bgm.mp3"
@@ -279,6 +286,7 @@ init = ->
 				city: ""
 				detail: 1
 			provinces: provinces
+			cache: null
 		computed:
 			citys: ->
 				return [] if @.form.province is ""
@@ -306,8 +314,14 @@ init = ->
 			recordStart: (evt)->
 				evt.preventDefault()
 				@.recording = true
+				# ugc page show
+				# @.cache = setTimeout =>
+				# 	@.ugcPageShow = true
+				# ,5000
+
 			recordEnd: (evt)->
 				evt.preventDefault()
+				clearTimeout @.cache
 				@.recording = false
 			play: ->
 				if @.playing is "stop"
@@ -342,6 +356,14 @@ init = ->
 				@.pageBG[1] = new stars()
 				@.pageBG[1].init()
 
+				@.pageBG[4] = new rain()
+				@.pageBG[4].init()
+
+				@.pageBG[6] = new cloud()
+				@.pageBG[6].init()
+
+				@.pageBG[7] = new dog()
+				@.pageBG[7].init()
 			moveNext: ->
 				# console.log "xiayige",@.pageIndex
 				@.pageIndex += 1
@@ -375,7 +397,13 @@ init = ->
 		mounted: ($el,e)->
 			if sys is "NeteaseMusic"
 				@.wy = true
+			# @.mount = true
+			
 			@.mount = true
+			@.build()
+
+			load.progressOn = 95
+
 			@.audio = document.getElementById "bgm"
 			@.recordDom = document.getElementById "record"
 			if IsPC()

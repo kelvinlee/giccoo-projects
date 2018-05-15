@@ -32,6 +32,19 @@ $pageMainBGColor: #000000;
 	100%
 		transform: rotate(45deg)
 
++keyframes(ball)
+	0%,100%
+		+transform(scale(1,1) translate3d(0,0,0))
+		opacity: 0.8
+	25%
+		+transform(scale(0.95,0.95) translate3d(5%,-15%,0))
+	50%
+		+transform(scale(0.8,0.8) translate3d(0,-30%,0))
+		opacity: 1
+	75%
+		+transform(scale(0.95,0.95) translate3d(-5%,-15%,0))
+	
+
 html,body
 	+w
 	+h
@@ -87,6 +100,12 @@ body
 		+posa			
 		+tl
 		z-index: 109
+		.sj
+			+posa
+			+tr
+			+w(40%)
+			+h
+			+show-inline
 
 .page-animation-enter-active
 	transition: all .4s linear
@@ -176,7 +195,13 @@ body
 	+posa
 	+tl
 	// +hide
-	z-index: 4
+	z-index: 200
+	.full
+		+posa
+		+tl
+		+w
+		+h
+		+bc(#000)
 	.content
 		+posa
 		+tl(50%,50%)
@@ -201,6 +226,8 @@ body
 	+w(1em)
 	+w(1em)
 	+overhide
+	&.opc
+		opacity: 0
 @for $i from 0 through 9
 	.font-#{$i}
 		+b($cdn+"img/font-#{$i}.png",no-repeat,center,center,cover)
@@ -246,9 +273,9 @@ body
 .smaller
 	.page
 		.bg
-			+tl(50%)
-			+transform(translate3d(0,-50%,0))
-			// +tl
+			// +tl(50%)
+			// +transform(translate3d(0,-50%,0))
+			+tl
 			bottom: auto
 
 
@@ -277,7 +304,17 @@ body
 	.hair
 		+posa
 		+tl(63.55%)
-
+.page-3
+	.ball
+		+posa
+		+tr(20%,15%)
+		+iw(70)
+		+animation(ball,8s,linear,infinite)
+.page-6
+	.mark
+		+posa
+		+tl(18.2%)
+		+w
 .page-regisiter
 	+bc(rgba(0,0,0,0.7))
 	z-index: 108
@@ -382,13 +419,13 @@ body
 			+transform(translate3d(-50%,50%,0))
 
 .page-record
-	z-index: 108
+	z-index: 99
 	+b($cdn+"img/page-record-bg.jpg",no-repeat,center,center,cover)
 	.record
-		$size: 40px
+		$size: 3rem
 		$borderSize: $size * .07
 		+posa
-		+bl(1%,50%)
+		+bl(4%,50%)
 		+transform(translate3d(-50%,0,0))
 		+w($size)
 		+h($size)
@@ -405,7 +442,7 @@ body
 			+transform(translate3d(-50%,-50%,0))
 		.progress
 			+posa
-			+tl(10%,10%)
+			+tl(10%,8%)
 			+w($size)
 			+h($size)
 			z-index: 99
@@ -449,9 +486,8 @@ body
 					&.leftcircle
 						animation: circleProgressLoad_left 5s linear
 
-
 .page-ugc
-	z-index: 108
+	z-index: 100
 	.btns
 		+posa
 		+w
@@ -464,6 +500,7 @@ body
 			+show-inline
 	.mark
 		+posa
-		+tl(10%,10%)
-		+wh(80%,80%)
+		+tl(15%,10%)
+		+wh(80%,70%)
+		+overhide
 		opacity: 0

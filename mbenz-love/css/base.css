@@ -841,6 +841,42 @@ ul {
   -webkit-animation-name: circleProgressLoad_left;
           animation-name: circleProgressLoad_left; }
 
+@-webkit-keyframes ball {
+  0%, 100% {
+    -webkit-transform: scale(1, 1) translate3d(0, 0, 0);
+            transform: scale(1, 1) translate3d(0, 0, 0);
+    opacity: 0.8; }
+  25% {
+    -webkit-transform: scale(0.95, 0.95) translate3d(5%, -15%, 0);
+            transform: scale(0.95, 0.95) translate3d(5%, -15%, 0); }
+  50% {
+    -webkit-transform: scale(0.8, 0.8) translate3d(0, -30%, 0);
+            transform: scale(0.8, 0.8) translate3d(0, -30%, 0);
+    opacity: 1; }
+  75% {
+    -webkit-transform: scale(0.95, 0.95) translate3d(-5%, -15%, 0);
+            transform: scale(0.95, 0.95) translate3d(-5%, -15%, 0); } }
+
+@keyframes ball {
+  0%, 100% {
+    -webkit-transform: scale(1, 1) translate3d(0, 0, 0);
+            transform: scale(1, 1) translate3d(0, 0, 0);
+    opacity: 0.8; }
+  25% {
+    -webkit-transform: scale(0.95, 0.95) translate3d(5%, -15%, 0);
+            transform: scale(0.95, 0.95) translate3d(5%, -15%, 0); }
+  50% {
+    -webkit-transform: scale(0.8, 0.8) translate3d(0, -30%, 0);
+            transform: scale(0.8, 0.8) translate3d(0, -30%, 0);
+    opacity: 1; }
+  75% {
+    -webkit-transform: scale(0.95, 0.95) translate3d(-5%, -15%, 0);
+            transform: scale(0.95, 0.95) translate3d(-5%, -15%, 0); } }
+
+.ball {
+  -webkit-animation-name: ball;
+          animation-name: ball; }
+
 html, body {
   width: 100%;
   height: 100%; }
@@ -911,6 +947,13 @@ body {
     top: 0px;
     left: 0px;
     z-index: 109; }
+    .main .nav .sj {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 40%;
+      height: 100%;
+      display: inline-block; }
 
 .page-animation-enter-active {
   -webkit-transition: all .4s linear;
@@ -1023,7 +1066,14 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: 4; }
+  z-index: 200; }
+  .loading .full {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000; }
   .loading .content {
     position: absolute;
     top: 50%;
@@ -1063,6 +1113,8 @@ body {
   @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
     .font {
       font-size: 0.96rem; } }
+  .font.opc {
+    opacity: 0; }
 
 .font-0 {
   background: url("../img/font-0.png") no-repeat center center;
@@ -1169,10 +1221,8 @@ body {
     background-color: transparent; }
 
 .smaller .page .bg {
-  top: 50%;
+  top: 0px;
   left: 0px;
-  -webkit-transform: translate3d(0, -50%, 0);
-          transform: translate3d(0, -50%, 0);
   bottom: auto; }
 
 .bgm {
@@ -1218,6 +1268,27 @@ body {
   position: absolute;
   top: 63.55%;
   left: 0px; }
+
+.page-3 .ball {
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  width: 10.9375%;
+  margin: 0 auto;
+  -webkit-animation: ball 8s linear;
+          animation: ball 8s linear;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; }
+  .iphone4 .page-3 .ball {
+    width: 8.75%; }
+
+.page-6 .mark {
+  position: absolute;
+  top: 18.2%;
+  left: 0px;
+  width: 100%; }
 
 .page-regisiter {
   background-color: rgba(0, 0, 0, 0.7);
@@ -1364,19 +1435,19 @@ body {
               transform: translate3d(-50%, 50%, 0); }
 
 .page-record {
-  z-index: 108;
+  z-index: 99;
   background: url("../img/page-record-bg.jpg") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
   .page-record .record {
     position: absolute;
-    bottom: 1%;
+    bottom: 4%;
     left: 50%;
     -webkit-transform: translate3d(-50%, 0, 0);
             transform: translate3d(-50%, 0, 0);
-    width: 40px;
-    height: 40px;
-    padding: 4px;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.3rem;
     background-color: #fff;
     border-radius: 50%;
     font-size: 0;
@@ -1391,14 +1462,14 @@ body {
     .page-record .record .progress {
       position: absolute;
       top: 10%;
-      left: 10%;
-      width: 40px;
-      height: 40px;
+      left: 8%;
+      width: 3rem;
+      height: 3rem;
       z-index: 99;
       font-size: 0;
       overflow: hidden; }
       .page-record .record .progress .wrapper {
-        width: 20px;
+        width: 1.5rem;
         height: 100%;
         position: absolute;
         top: 0;
@@ -1410,19 +1481,19 @@ body {
       .page-record .record .progress .circleProgress {
         position: absolute;
         top: 0;
-        width: 34.4px;
-        height: 34.4px;
-        border: solid 2.8px transparent;
+        width: 2.58rem;
+        height: 2.58rem;
+        border: solid 0.21rem transparent;
         border-radius: 50%;
         -webkit-transform: rotate(45deg);
                 transform: rotate(45deg); }
         .page-record .record .progress .circleProgress.rightcircle {
-          border-top: 2.8px solid #b5272d;
-          border-right: 2.8px solid #b5272d;
+          border-top: 0.21rem solid #b5272d;
+          border-right: 0.21rem solid #b5272d;
           right: 0; }
         .page-record .record .progress .circleProgress.leftcircle {
-          border-bottom: 2.8px solid #b5272d;
-          border-left: 2.8px solid #b5272d;
+          border-bottom: 0.21rem solid #b5272d;
+          border-left: 0.21rem solid #b5272d;
           left: 0; }
     .page-record .record.off .progress .circleProgress {
       -webkit-transform: rotate(-135deg);
@@ -1435,7 +1506,7 @@ body {
               animation: circleProgressLoad_left 5s linear; }
 
 .page-ugc {
-  z-index: 108; }
+  z-index: 100; }
   .page-ugc .btns {
     position: absolute;
     width: 100%;
@@ -1450,8 +1521,9 @@ body {
       display: inline-block; }
   .page-ugc .mark {
     position: absolute;
-    top: 10%;
+    top: 15%;
     left: 10%;
     width: 80%;
-    height: 80%;
+    height: 70%;
+    overflow: hidden;
     opacity: 0; }
