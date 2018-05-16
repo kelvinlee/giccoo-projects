@@ -53,7 +53,7 @@ var userAnswer=[0,0,0,0,0,0,0,0,0,0]
 
 
 
-$('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
+//$('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件
 var screenW
 var screenH
 
@@ -317,6 +317,23 @@ function savePic(){
   document.getElementById("pngHolder").appendChild(convertCanvasToImage($("#mainCanvas")[0]));
   //TweenLite.set($("#pngHolder"),{display:"block",opacity:1})
 }
+$("#btnshare").click(function(){
+
+})
+
+function neteaseShare() {
+  var picUrl, redirectUrl, subTitle2, title1, title2;
+  title1 = "高考，你准备好了吗";
+  picUrl = "http://m.giccoo.com/gaokao";
+  redirectUrl = "http://m.giccoo.com/gaokao";
+  title2 = "高考，你准备好了吗";
+  subTitle2 = "";
+  window.location.href = "orpheus://share/" + encodeURIComponent(title1) + "/" + encodeURIComponent(picUrl) + "/" + encodeURIComponent(redirectUrl) + "/" + encodeURIComponent(title2) + "/" + encodeURIComponent(subTitle2);
+  // window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
+  return console.log("run after?");
+};
+
+
 var data
 $("#endbtn1").click(function(){//===网易
   if(sys=="other"){
