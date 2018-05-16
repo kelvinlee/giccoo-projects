@@ -318,7 +318,7 @@ function savePic(){
   //TweenLite.set($("#pngHolder"),{display:"block",opacity:1})
 }
 var data
-$("#endbtn1").click(function(){//============网易分享
+$("#endbtn1").click(function(){
   if(sys=="other"){
     TweenLite.set($("#pngHolder"),{display:"block",opacity:1})
     TweenLite.set($("#shareHint"),{display:"block"})
