@@ -116,7 +116,7 @@ function setLoadingBar(){
   loadingBar.graphics.beginFill("#ffffff").drawRect(0, 285, 358, 4);
   TweenLite.set(loadingBar,{regX:0,regY:150.5,x:132,y:425.5/1000*stageH,scaleX:0})
 
-  TweenLite.to(loadingBar,.5,{scaleX:1,ease:Linear.easeNone,onComplete:loadingDone})//======loading时间
+  TweenLite.to(loadingBar,1.5,{scaleX:1,ease:Linear.easeNone,onComplete:loadingDone})//======loading时间
 }
 
 function loadingDone(){
