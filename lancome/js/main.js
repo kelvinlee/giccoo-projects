@@ -217,6 +217,7 @@ init = function init() {
       ugcPageShow: false,
       waitPageShow: false,
       lastPageShow: false,
+      waitPageBox: false,
       mount: false,
       audio: null,
       w: TrueW,
@@ -226,7 +227,8 @@ init = function init() {
       answerCanvas: null,
       score: 0,
       scorebg: 1,
-      musiclink: "//image.giccoo.com/projects/lancome/mp3/bgm.mp3",
+      musiclink: "",
+      bgmlink: "//image.giccoo.com/projects/lancome/mp3/bgm.mp3",
       playing: false,
       ugc: null,
       ugcbg: null,
@@ -383,15 +385,22 @@ init = function init() {
         return this.lastPageShow = true;
       },
       buildUGC: function buildUGC() {
-        var _this4 = this;
-
         this.runScore();
         this.waitPageShow = true;
-        setTimeout(function () {
+        // setTimeout =>
+        // 	@.waitPageShow = false
+        // 	@.ugcPageShow = true
+        // ,3000
+        return this.createUGC();
+      },
+      gotoUGC: function gotoUGC() {
+        var _this4 = this;
+
+        this.waitPageBox = true;
+        return setTimeout(function () {
           _this4.waitPageShow = false;
           return _this4.ugcPageShow = true;
         }, 3000);
-        return this.createUGC();
       },
       next: function next() {
         if (this.answers[this.now] <= -1) {
@@ -411,7 +420,7 @@ init = function init() {
 
         this.musiclink = "./mp3/mp3-" + i + ".mp3";
         return setTimeout(function () {
-          return _this5.audio.play();
+          return _this5.audiomusic.play();
         }, 1000 / 30);
       },
       select: function select(index) {
@@ -435,6 +444,7 @@ init = function init() {
       this.mount = true;
       this.questionMark = Math.floor(Math.random() * this.answerList[1].question.length);
       this.audio = document.getElementById("bgm");
+      this.audiomusic = document.getElementById("music");
       // @.answerPageShow = true
       this.answerCanvas = new createAnswer();
       if (this.audio) {

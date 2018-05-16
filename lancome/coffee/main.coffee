@@ -127,6 +127,7 @@ init = ->
 			ugcPageShow: false
 			waitPageShow: false
 			lastPageShow: false
+			waitPageBox: false
 			mount: false
 			audio: null
 			w: TrueW
@@ -136,7 +137,8 @@ init = ->
 			answerCanvas: null
 			score: 0
 			scorebg: 1
-			musiclink: "//image.giccoo.com/projects/lancome/mp3/bgm.mp3"
+			musiclink: ""
+			bgmlink: "//image.giccoo.com/projects/lancome/mp3/bgm.mp3"
 			playing: false
 			ugc: null
 			ugcbg: null
@@ -285,12 +287,17 @@ init = ->
 				@.runScore()
 
 				@.waitPageShow = true
+				# setTimeout =>
+				# 	@.waitPageShow = false
+				# 	@.ugcPageShow = true
+				# ,3000
+				@.createUGC()
+			gotoUGC: ->
+				@.waitPageBox = true
 				setTimeout =>
 					@.waitPageShow = false
 					@.ugcPageShow = true
 				,3000
-				@.createUGC()
-			
 			next: ->
 				return false if @.answers[@.now] <= -1
 				if @.now >= 2
@@ -304,7 +311,7 @@ init = ->
 			playSong: (i)->
 				@.musiclink = "./mp3/mp3-#{i}.mp3"
 				setTimeout =>
-					@.audio.play()
+					@.audiomusic.play()
 				,1000/30
 
 			select: (index)->
@@ -325,6 +332,7 @@ init = ->
 			@.mount = true
 			@.questionMark = Math.floor(Math.random()*@.answerList[1].question.length)
 			@.audio = document.getElementById "bgm"
+			@.audiomusic = document.getElementById "music"
 			# @.answerPageShow = true
 			@.answerCanvas = new createAnswer()
 

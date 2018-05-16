@@ -4375,6 +4375,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/lancome\/img\/wait-box.jpg": {
+		"ft": 16384,
+		"iS": 24292,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/wait-box.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/lancome\/img\/wait.jpg": {
 		"ft": 16384,
 		"iS": 39521,
@@ -4383,7 +4394,7 @@
 		"oAP": "\/lancome\/img\/wait.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/index.html": {
@@ -4411,6 +4422,13 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 1
+		},
+	"\/lancome\/mp3\/bgm.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/lancome\/mp3\/bgm.mp3",
+		"oF": 0
 		},
 	"\/lancome\/mp3\/mp3-0.mp3": {
 		"cB": 0,
@@ -6700,7 +6718,7 @@
 		},
 	"\/mbenz-love\/img\/page-1-text.png": {
 		"ft": 32768,
-		"iS": 77294,
+		"iS": 77461,
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-1-text.png",
 		"oF": 0,

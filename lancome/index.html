@@ -20,7 +20,8 @@
       <div class="player-fix">
         <div :class="{on: playing}" class="cursor"><img src="./img/music-touch.png"></div>
         <div :class="{on: playing}" @click="playbgm" class="record"><img src="./img/music.png"></div>
-        <audio id="bgm" :src="musiclink" loop="true"></audio>
+        <audio id="bgm" :src="bgmlink" loop="true"></audio>
+        <audio id="music" :src="musiclink"></audio>
       </div>
       <div class="page page-home">
         <div id="stars" class="bg"></div>
@@ -52,7 +53,10 @@
       </transition>
       <transition name="page-fade">
         <div v-show="waitPageShow" class="page page-wait">
-          <div class="content"><a href="https://h5.m.taobao.com/weapp/view_page.htm?page=shop/activity&amp;userId=2360209412&amp;shopId=115862174&amp;pageId=28363464"><img src="./img/wait.jpg"></a></div>
+          <div v-show="!waitPageBox" @click="gotoUGC" class="content"><img src="./img/wait-box.jpg"></div>
+          <transition name="page-fade">
+            <div v-show="waitPageBox" class="content"><a href="https://h5.m.taobao.com/weapp/view_page.htm?page=shop/activity&amp;userId=2360209412&amp;shopId=115862174&amp;pageId=28363464"><img src="./img/wait.jpg"></a></div>
+          </transition>
         </div>
       </transition>
       <transition name="page-fade">

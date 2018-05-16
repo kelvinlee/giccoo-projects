@@ -57,16 +57,13 @@ block content
 				.bg
 					img(src="#{url}/img/page-1-bg.jpg")
 					.animations#stars
+						
 				.content
-					.right(@click="moveNext")
 					.texts(:style="{top: navH+'%'}")
-						//- .text
 						img(src="#{url}/img/page-#{pageId}-text.png")
-						// -for (var i=1;i<=4;i++)
-							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
-								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
-						// -;
+					.right(@click="moveNext")
 					.btn.btn-start(@click="gameStart(#{pageId})")
+
 		transition(name="page-animation")
 			- pageId = 2;
 			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
