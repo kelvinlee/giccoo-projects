@@ -4,7 +4,6 @@
  # @codekit-prepend "../../libs/coffee/ispc"
  # @codekit-prepend "./pixi"
 
-# 法国。荷兰。巴西，英国，韩国，泰国，日本
 
 _CDN = ""
 _imgurl = ""
@@ -17,7 +16,6 @@ imageurl = "//api.giccoo.com/api/upload/image64/"
 provinces = ["江苏","浙江","安徽","上海","北京","吉林","辽宁","山东","天津","河南","湖南","广东","福建","江西","四川","重庆","贵州","云南","湖北","陕西"]
 citys = []
 dealers = []
-startTime = new Date().getTime()
 for p in provinces
 	citys[p] = []
 	dealers[p] = {}
@@ -175,37 +173,6 @@ dealers["云南"]["昆明市"].push "云南俊星汽车销售有限公司"
 dealers["湖北"]["武汉市"].push "武汉星威汽车销售服务有限公司"
 dealers["陕西"]["西安市"].push "西安利之星汽车有限公司"
 
-load = new Vue
-	el: "#load"
-	data:
-		progress: 0
-		mount: false
-		kill: false
-		progressOn: 50+Math.floor Math.random()*30
-	computed:
-		progressText: ->
-			html = ""
-			text = @.progress.toString()
-			for i in [0...text.length]
-				html += "<span class='font font-#{text[i]}'>#{text[i]}</span>"
-			return html+'<span class="font font-last">%</span>'
-	mounted: ->
-		# @.progress = 10
-		@.mount = true
-		timein = setInterval =>
-			@.progress += 2
-			@.progress = @.progressOn if @.progress > @.progressOn
-
-			if @.progress >= 100
-				clearInterval timein
-				console.log "loaded:",(new Date().getTime() - startTime)/1000,"s"
-				@.progress = 100
-				@.mount = false
-				setTimeout =>
-					@.kill = true
-				,700
-		,1000/20
-
 getRandom = (length)->
 	return parseInt(Math.random()*(length+1)-1)
 window.onload = ->
@@ -216,10 +183,10 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "爱有千万种风情，我只要一种独行"
-				desc: "大声告诉你，这一种才是我要的爱情！"
-				link: "http://m.giccoo.com/mbenz-love/"
-				imgUrl: "http://m.giccoo.com/mbenz-love/img/ico.jpg"
+				title: "点击测试你的孤独指数"
+				desc: "与兰蔻一起，度过漫漫长夜"
+				link: "http://m.giccoo.com/lancome/"
+				imgUrl: "http://m.giccoo.com/lancome/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
@@ -238,14 +205,39 @@ requestAnimationFrame animate
 init = ->
 	TrueH = document.documentElement.clientHeight
 	TrueW = document.documentElement.clientWidth
-	# console.log new Date().getTime() - startTime
+	console.log TrueW / 640 * 94 / TrueH * 100
 	# document.body.style.height = TrueH+"px"
 	# document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
 	TrueW = 640 if TrueW >= 640
 	TrueH = 1138 if TrueH >= 1138
-	# alert TrueW+","+TrueH
 	smaller = TrueW/640*1138 > TrueH
 	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
+
+	load = new Vue
+		el: "#load"
+		data:
+			progress: 0
+			mount: false
+			progressOn: 0
+		computed:
+			progressText: ->
+				html = ""
+				text = @.progress.toString()
+				for i in [0...text.length]
+					html += "<span class='font font-#{text[i]}'>#{text[i]}</span>"
+				return html+'<span class="font font-last">%</span>'
+		mounted: ->
+			# @.progress = 10
+			@.mount = true
+			timein = setInterval =>
+				@.progress += 3
+				if @.progress >= 100
+					clearInterval timein
+					@.progress = 100
+					main.build()
+					main.homepageShow = true
+					
+			,1000/20
 
 	main = new Vue
 		el: "#main"
@@ -266,7 +258,7 @@ init = ->
 			noteMsg: true
 			w: TrueW
 			h: TrueH
-			maxPage: 7
+			maxPage: 8
 			pageIndex: 0
 			moving: true
 			musiclink: "mp3/bgm.mp3"
@@ -287,7 +279,6 @@ init = ->
 				city: ""
 				detail: 1
 			provinces: provinces
-			cache: null
 		computed:
 			citys: ->
 				return [] if @.form.province is ""
@@ -306,7 +297,10 @@ init = ->
 				ugc = new UGC 
 					id: Id ,
 					wy: @.wy
+<<<<<<< HEAD
 					small: !@.smaller
+=======
+>>>>>>> 35e7a41bec2b28c0167e53ef9313c3ec37af2073
 					bg : if @.pageBG[Id]? then @.pageBG[Id].app.view else null , 
 					background: =>
 						@ugcbg = ugc.saveUGC
@@ -316,14 +310,16 @@ init = ->
 			recordStart: (evt)->
 				evt.preventDefault()
 				@.recording = true
+<<<<<<< HEAD
 				# ugc page show
 				@.cache = setTimeout =>
 					@.ugcPageShow = true
 				,5000
 
+=======
+>>>>>>> 35e7a41bec2b28c0167e53ef9313c3ec37af2073
 			recordEnd: (evt)->
 				evt.preventDefault()
-				clearTimeout @.cache
 				@.recording = false
 			play: ->
 				if @.playing is "stop"
@@ -344,7 +340,7 @@ init = ->
 
 				# "//api.giccoo.com/mbenz-love/insert"
 				# 
-				axios.post "//api.giccoo.com/mbenz-love/insert/",@.form
+				axios.post "http://localhost:8881/mbenz-love/insert/",@.form
 				.then (msg)=>
 					if msg.data.recode is 200
 						alert "提交成功"
@@ -353,61 +349,11 @@ init = ->
 						alert msg.data.reason
 				.catch (e)=>
 					alert "提交失败请重试"
-			getIp: ->
-				axios.get "//api.giccoo.com/api/ip/",{}
-				.then (msg)=>
-					# console.log msg
-					if msg.data.recode is 200 and msg.data.info.content.address_detail?
-						address = msg.data.info.content.address_detail
-						# console.log address
-						# address = {city:"北京市",province:"北京市"}
-						for item in provinces
-							if address.province.indexOf(item) > -1
-								@.form.province = item
-								for city in @.citys
-									if address.city.indexOf(city) > -1
-										setTimeout =>
-											@.form.city = city
-											setTimeout =>
-												@.form.dealer = @.dealers[0]
-											,10
-										,10
-										break
-								break
-			share: ->
-				image = @.ugc
-				data = {
-					image: image
-					folder: "mbenzlove"
-				}
-				unless image?
-					return main.faild()
-				axios.post imageurl,data
-				.then (msg)->
-					if msg.data.recode is 200
-						main.success(msg.data)
-					else
-						main.faild()
-				.catch (e)->
-					# alert e
-					main.faild()
-			success: (data)->
-				@.shareImageLink = data.info
-				neteaseShareImage()
-			faild: ->
 
 			build: ->
 				@.pageBG[1] = new stars()
 				@.pageBG[1].init()
 
-				@.pageBG[4] = new rain()
-				@.pageBG[4].init()
-
-				@.pageBG[6] = new cloud()
-				@.pageBG[6].init()
-
-				@.pageBG[7] = new dog()
-				@.pageBG[7].init()
 			moveNext: ->
 				# console.log "xiayige",@.pageIndex
 				@.pageIndex += 1
@@ -441,13 +387,7 @@ init = ->
 		mounted: ($el,e)->
 			if sys is "NeteaseMusic"
 				@.wy = true
-			# @.mount = true
-			
 			@.mount = true
-			@.build()
-			@.getIp()
-			load.progressOn = 95
-
 			@.audio = document.getElementById "bgm"
 			@.recordDom = document.getElementById "record"
 			if IsPC()

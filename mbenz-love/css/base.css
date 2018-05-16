@@ -841,98 +841,6 @@ ul {
   -webkit-animation-name: circleProgressLoad_left;
           animation-name: circleProgressLoad_left; }
 
-@-webkit-keyframes ball {
-  0%, 100% {
-    -webkit-transform: scale(1, 1) translate3d(0, 0, 0);
-            transform: scale(1, 1) translate3d(0, 0, 0);
-    opacity: 0.8; }
-  25% {
-    -webkit-transform: scale(0.95, 0.95) translate3d(5%, -15%, 0);
-            transform: scale(0.95, 0.95) translate3d(5%, -15%, 0); }
-  50% {
-    -webkit-transform: scale(0.8, 0.8) translate3d(0, -30%, 0);
-            transform: scale(0.8, 0.8) translate3d(0, -30%, 0);
-    opacity: 1; }
-  75% {
-    -webkit-transform: scale(0.95, 0.95) translate3d(-5%, -15%, 0);
-            transform: scale(0.95, 0.95) translate3d(-5%, -15%, 0); } }
-
-@keyframes ball {
-  0%, 100% {
-    -webkit-transform: scale(1, 1) translate3d(0, 0, 0);
-            transform: scale(1, 1) translate3d(0, 0, 0);
-    opacity: 0.8; }
-  25% {
-    -webkit-transform: scale(0.95, 0.95) translate3d(5%, -15%, 0);
-            transform: scale(0.95, 0.95) translate3d(5%, -15%, 0); }
-  50% {
-    -webkit-transform: scale(0.8, 0.8) translate3d(0, -30%, 0);
-            transform: scale(0.8, 0.8) translate3d(0, -30%, 0);
-    opacity: 1; }
-  75% {
-    -webkit-transform: scale(0.95, 0.95) translate3d(-5%, -15%, 0);
-            transform: scale(0.95, 0.95) translate3d(-5%, -15%, 0); } }
-
-.ball {
-  -webkit-animation-name: ball;
-          animation-name: ball; }
-
-@-webkit-keyframes moveLeft {
-  0% {
-    -webkit-transform: translate3d(10px, 0, 0);
-            transform: translate3d(10px, 0, 0);
-    opacity: 0; }
-  10%, 90% {
-    opacity: 1; }
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    opacity: 0; } }
-
-@keyframes moveLeft {
-  0% {
-    -webkit-transform: translate3d(10px, 0, 0);
-            transform: translate3d(10px, 0, 0);
-    opacity: 0; }
-  10%, 90% {
-    opacity: 1; }
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    opacity: 0; } }
-
-.moveLeft {
-  -webkit-animation-name: moveLeft;
-          animation-name: moveLeft; }
-
-@-webkit-keyframes moveRight {
-  0% {
-    -webkit-transform: translate3d(-10px, 0, 0);
-            transform: translate3d(-10px, 0, 0);
-    opacity: 0; }
-  10%, 90% {
-    opacity: 1; }
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    opacity: 0; } }
-
-@keyframes moveRight {
-  0% {
-    -webkit-transform: translate3d(-10px, 0, 0);
-            transform: translate3d(-10px, 0, 0);
-    opacity: 0; }
-  10%, 90% {
-    opacity: 1; }
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    opacity: 0; } }
-
-.moveRight {
-  -webkit-animation-name: moveRight;
-          animation-name: moveRight; }
-
 html, body {
   width: 100%;
   height: 100%; }
@@ -1002,22 +910,7 @@ body {
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 109;
-    height: auto;
-    display: inline-block; }
-    .main .nav img {
-      pointer-events: none;
-      -webkit-user-select: none;
-         -moz-user-select: none;
-          -ms-user-select: none;
-              user-select: none; }
-    .main .nav .sj {
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      width: 40%;
-      height: 100%;
-      display: inline-block; }
+    z-index: 109; }
 
 .page-animation-enter-active {
   -webkit-transition: all .4s linear;
@@ -1090,6 +983,11 @@ body {
     background-attachment: fixed;
     z-index: 10; }
     .pages .page .bg {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
       z-index: -1; }
       .pages .page .bg img {
         width: 100%;
@@ -1105,11 +1003,8 @@ body {
   background-size: 100% auto; }
   .page .bg {
     position: absolute;
-    top: auto;
     bottom: 0px;
     left: 0px;
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
     font-size: 0; }
     .page .bg .animations {
       position: absolute;
@@ -1128,14 +1023,7 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: 200; }
-  .loading .full {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: #000; }
+  z-index: 4; }
   .loading .content {
     position: absolute;
     top: 50%;
@@ -1175,8 +1063,6 @@ body {
   @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
     .font {
       font-size: 0.96rem; } }
-  .font.opc {
-    opacity: 0; }
 
 .font-0 {
   background: url("../img/font-0.png") no-repeat center center;
@@ -1233,12 +1119,6 @@ body {
   background-size: cover;
   background-color: transparent; }
 
-.page .texts {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  margin-top: 2%; }
-
 .page .content {
   position: absolute;
   top: 0px;
@@ -1263,7 +1143,7 @@ body {
     position: absolute;
     top: 0px;
     left: 0px;
-    margin-top: 2%; }
+    margin-top: 5%; }
     .page .content .texts .text {
       position: absolute;
       top: 0px;
@@ -1281,24 +1161,19 @@ body {
     right: 1%;
     background: url("../img/right.png") no-repeat center center;
     background-size: cover;
-    background-color: transparent;
-    -webkit-animation: moveRight 2s ease;
-            animation: moveRight 2s ease;
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite; }
+    background-color: transparent; }
   .page .content .left {
     left: 1%;
     background: url("../img/left.png") no-repeat center center;
     background-size: cover;
-    background-color: transparent;
-    -webkit-animation: moveLeft 2s ease;
-            animation: moveLeft 2s ease;
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite; }
+    background-color: transparent; }
+
+.smaller .page .bg {
+  top: 50%;
+  left: 0px;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+  bottom: auto; }
 
 .bgm {
   position: absolute;
@@ -1334,54 +1209,6 @@ body {
 .page-home {
   top: 0px;
   left: 0px; }
-  .page-home .arrow {
-    position: absolute;
-    top: 0px;
-    left: 0px; }
-    .page-home .arrow.arrow-1 {
-      -webkit-transform: translate3d(3%, 0, 0);
-              transform: translate3d(3%, 0, 0);
-      -webkit-animation: fadeOut 1200ms linear;
-              animation: fadeOut 1200ms linear;
-      -webkit-animation-fill-mode: both;
-              animation-fill-mode: both;
-      -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite;
-      -webkit-animation-delay: 300ms;
-              animation-delay: 300ms; }
-    .page-home .arrow.arrow-2 {
-      -webkit-transform: translate3d(6%, 0, 0);
-              transform: translate3d(6%, 0, 0);
-      -webkit-animation: fadeOut 1200ms linear;
-              animation: fadeOut 1200ms linear;
-      -webkit-animation-fill-mode: both;
-              animation-fill-mode: both;
-      -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite;
-      -webkit-animation-delay: 600ms;
-              animation-delay: 600ms; }
-    .page-home .arrow.arrow-3 {
-      -webkit-transform: translate3d(9%, 0, 0);
-              transform: translate3d(9%, 0, 0);
-      -webkit-animation: fadeOut 1200ms linear;
-              animation: fadeOut 1200ms linear;
-      -webkit-animation-fill-mode: both;
-              animation-fill-mode: both;
-      -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite;
-      -webkit-animation-delay: 900ms;
-              animation-delay: 900ms; }
-    .page-home .arrow.arrow-4 {
-      -webkit-transform: translate3d(12%, 0, 0);
-              transform: translate3d(12%, 0, 0);
-      -webkit-animation: fadeOut 1200ms linear;
-              animation: fadeOut 1200ms linear;
-      -webkit-animation-fill-mode: both;
-              animation-fill-mode: both;
-      -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite;
-      -webkit-animation-delay: 1200ms;
-              animation-delay: 1200ms; }
   .page-home .content {
     position: absolute;
     width: 100%;
@@ -1391,27 +1218,6 @@ body {
   position: absolute;
   top: 63.55%;
   left: 0px; }
-
-.page-3 .ball {
-  position: absolute;
-  top: 20%;
-  right: 15%;
-  width: 10.9375%;
-  margin: 0 auto;
-  -webkit-animation: ball 8s linear;
-          animation: ball 8s linear;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite; }
-  .iphone4 .page-3 .ball {
-    width: 8.75%; }
-
-.page-6 .mark {
-  position: absolute;
-  top: 18.2%;
-  left: 0px;
-  width: 100%; }
 
 .page-regisiter {
   background-color: rgba(0, 0, 0, 0.7);
@@ -1496,19 +1302,7 @@ body {
         padding: 0.3rem 0;
         line-height: 1.4em; }
       .page-regisiter .form .form-group .select {
-        position: relative;
-        overflow: hidden; }
-        .page-regisiter .form .form-group .select span {
-          display: inline-block;
-          width: 94%;
-          -webkit-box-sizing: border-box;
-                  box-sizing: border-box;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          text-indent: 0;
-          line-height: 1.4em;
-          vertical-align: middle; }
+        position: relative; }
         .page-regisiter .form .form-group .select select {
           position: absolute;
           top: 0px;
@@ -1570,16 +1364,19 @@ body {
               transform: translate3d(-50%, 50%, 0); }
 
 .page-record {
-  z-index: 99; }
+  z-index: 108;
+  background: url("../img/page-record-bg.jpg") no-repeat center center;
+  background-size: cover;
+  background-color: transparent; }
   .page-record .record {
     position: absolute;
-    bottom: 2%;
+    bottom: 1%;
     left: 50%;
     -webkit-transform: translate3d(-50%, 0, 0);
             transform: translate3d(-50%, 0, 0);
-    width: 2.4rem;
-    height: 2.4rem;
-    padding: 0.24rem;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
     background-color: #fff;
     border-radius: 50%;
     font-size: 0;
@@ -1593,15 +1390,15 @@ body {
               transform: translate3d(-50%, -50%, 0); }
     .page-record .record .progress {
       position: absolute;
-      top: 8%;
-      left: 8%;
-      width: 2.4rem;
-      height: 2.4rem;
+      top: 10%;
+      left: 10%;
+      width: 40px;
+      height: 40px;
       z-index: 99;
       font-size: 0;
       overflow: hidden; }
       .page-record .record .progress .wrapper {
-        width: 1.2rem;
+        width: 20px;
         height: 100%;
         position: absolute;
         top: 0;
@@ -1613,19 +1410,19 @@ body {
       .page-record .record .progress .circleProgress {
         position: absolute;
         top: 0;
-        width: 2.064rem;
-        height: 2.064rem;
-        border: solid 0.168rem transparent;
+        width: 34.4px;
+        height: 34.4px;
+        border: solid 2.8px transparent;
         border-radius: 50%;
         -webkit-transform: rotate(45deg);
                 transform: rotate(45deg); }
         .page-record .record .progress .circleProgress.rightcircle {
-          border-top: 0.168rem solid #b5272d;
-          border-right: 0.168rem solid #b5272d;
+          border-top: 2.8px solid #b5272d;
+          border-right: 2.8px solid #b5272d;
           right: 0; }
         .page-record .record .progress .circleProgress.leftcircle {
-          border-bottom: 0.168rem solid #b5272d;
-          border-left: 0.168rem solid #b5272d;
+          border-bottom: 2.8px solid #b5272d;
+          border-left: 2.8px solid #b5272d;
           left: 0; }
     .page-record .record.off .progress .circleProgress {
       -webkit-transform: rotate(-135deg);
@@ -1638,7 +1435,7 @@ body {
               animation: circleProgressLoad_left 5s linear; }
 
 .page-ugc {
-  z-index: 100; }
+  z-index: 108; }
   .page-ugc .btns {
     position: absolute;
     width: 100%;
@@ -1653,23 +1450,8 @@ body {
       display: inline-block; }
   .page-ugc .mark {
     position: absolute;
-    top: 15%;
+    top: 10%;
     left: 10%;
     width: 80%;
-    height: 70%;
-    overflow: hidden;
+    height: 80%;
     opacity: 0; }
-
-.smaller .page .bg {
-  top: 50%;
-  left: 0px;
-  bottom: auto;
-  -webkit-transform: translate3d(0, -50%, 0);
-          transform: translate3d(0, -50%, 0); }
-
-.page-home .bg, .page-1 .bg, .page-record .bg, .page-ugc .bg {
-  top: auto;
-  bottom: 0px;
-  left: 0px;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0); }

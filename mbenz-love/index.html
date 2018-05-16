@@ -21,26 +21,20 @@
       </div>
     </div>
     <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" :class="{smaller: smaller}" class="main">
-      <div @click="play" class="bgm">
-        <audio id="bgm" :src="musiclink" loop="true"></audio><img :src="'./img/audio-'+playing+'.png'">
-        <transition name="page-fade">
-          <p v-show="noteMsg" class="noteMsg">为保证体验效果<br/>请打开音乐</p>
-        </transition>
-      </div>
       <div id="nav" class="nav">
         <div class="logo"><img src="./img/navbar.jpg"><a href="https://special.mercedes-benz.com.cn/2018-dream-car/mobi/#e-cab" class="sj"></a></div>
       </div>
       <transition name="page-animation">
         <div v-show="pageIndex == 0" :class="{left: pageIndex &gt;= 0}" class="page page-home">
-          <div class="bg"><img src="./img/page-home-bg.jpg">
-            <div class="animations">
-              <div class="arrow arrow-1"><img src="./img/arrow.png"></div>
-              <div class="arrow arrow-2"><img src="./img/arrow.png"></div>
-              <div class="arrow arrow-3"><img src="./img/arrow.png"></div>
-              <div class="arrow arrow-4"><img src="./img/arrow.png"></div>
-            </div>
-          </div>
+          <div class="bg"><img src="./img/page-home-bg.jpg"></div>
           <div class="content">
+            <div :style="{top: navH+'%'}" class="texts">
+              <div class="text text-1 fadeInUp animated duration-6 delay-3"><img src="./img/page-home-text-1.png"></div>
+              <div class="text text-2 fadeInUp animated duration-7 delay-4"><img src="./img/page-home-text-2.png"></div>
+              <div class="text text-3 fadeInUp animated duration-8 delay-5"><img src="./img/page-home-text-3.png"></div>
+              <div class="text text-4 fadeInUp animated duration-9 delay-6"><img src="./img/page-home-text-4.png"></div>
+              <div class="text text-5 fadeInUp animated duration-10 delay-7"><img src="./img/page-home-text-5.png"></div>
+            </div>
           </div>
         </div>
       </transition>
@@ -50,8 +44,13 @@
             <div id="stars" class="animations"></div>
           </div>
           <div class="content">
-            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-1-text.png"></div>
             <div @click="moveNext" class="right"></div>
+            <div :style="{top: navH+'%'}" class="texts">
+              <div class="text text-1 fadeInUp animated duration-6 delay-3"><img src="./img/page-1-text-1.png"></div>
+              <div class="text text-2 fadeInUp animated duration-7 delay-4"><img src="./img/page-1-text-2.png"></div>
+              <div class="text text-3 fadeInUp animated duration-8 delay-5"><img src="./img/page-1-text-3.png"></div>
+              <div class="text text-4 fadeInUp animated duration-9 delay-6"><img src="./img/page-1-text-4.png"></div>
+            </div>
             <div @click="gameStart(1)" class="btn btn-start"></div>
           </div>
         </div>
@@ -66,78 +65,13 @@
           <div class="content">
             <div @click="movePrev" class="left"></div>
             <div @click="moveNext" class="right"></div>
-            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-2-text.png"></div>
+            <div :style="{top: navH+'%'}" class="texts">
+              <div class="text text-1 fadeInUp animated duration-6 delay-3"><img src="./img/page-2-text-1.png"></div>
+              <div class="text text-2 fadeInUp animated duration-7 delay-4"><img src="./img/page-2-text-2.png"></div>
+              <div class="text text-3 fadeInUp animated duration-8 delay-5"><img src="./img/page-2-text-3.png"></div>
+              <div class="text text-4 fadeInUp animated duration-9 delay-6"><img src="./img/page-2-text-4.png"></div>
+            </div>
             <div @click="gameStart(2)" class="btn btn-start"></div>
-          </div>
-        </div>
-      </transition>
-      <transition name="page-animation">
-        <div v-show="pageIndex == 3" :class="{now: pageIndex == 3,right: pageIndex &lt; 3,left: pageIndex &gt; 3}" class="page page-3">
-          <div class="bg"><img src="./img/page-3-bg.jpg">
-            <div class="animations">
-              <div class="ball"><img src="./img/page-3-ball.png"></div>
-            </div>
-          </div>
-          <div class="content">
-            <div @click="movePrev" class="left"></div>
-            <div @click="moveNext" class="right"></div>
-            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-3-text.png"></div>
-            <div @click="gameStart(3)" class="btn btn-start"></div>
-          </div>
-        </div>
-      </transition>
-      <transition name="page-animation">
-        <div v-show="pageIndex == 4" :class="{now: pageIndex == 4,right: pageIndex &lt; 4,left: pageIndex &gt; 4}" class="page page-4">
-          <div class="bg"><img src="./img/page-4-bg.jpg">
-            <div id="rain" class="animations"></div>
-          </div>
-          <div class="content">
-            <div @click="movePrev" class="left"></div>
-            <div @click="moveNext" class="right"></div>
-            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-4-text.png"></div>
-            <div @click="gameStart(4)" class="btn btn-start"></div>
-          </div>
-        </div>
-      </transition>
-      <transition name="page-animation">
-        <div v-show="pageIndex == 5" :class="{now: pageIndex == 5,right: pageIndex &lt; 5,left: pageIndex &gt; 5}" class="page page-5">
-          <div class="bg"><img src="./img/page-5-bg.jpg">
-            <div class="animations">
-              <div class="snow"><img src="./img/page-5-snow.gif"></div>
-            </div>
-          </div>
-          <div class="content">
-            <div @click="movePrev" class="left"></div>
-            <div @click="moveNext" class="right"></div>
-            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-5-text.png"></div>
-            <div @click="gameStart(5)" class="btn btn-start"></div>
-          </div>
-        </div>
-      </transition>
-      <transition name="page-animation">
-        <div v-show="pageIndex == 6" :class="{now: pageIndex == 6,right: pageIndex &lt; 6,left: pageIndex &gt; 6}" class="page page-6">
-          <div class="bg"><img src="./img/page-6-bg.jpg">
-            <div id="cloud" class="animations">
-              <div class="mark"><img src="./img/page-6-mark.png"></div>
-            </div>
-          </div>
-          <div class="content">
-            <div @click="movePrev" class="left"></div>
-            <div @click="moveNext" class="right"></div>
-            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-6-text.png"></div>
-            <div @click="gameStart(6)" class="btn btn-start"></div>
-          </div>
-        </div>
-      </transition>
-      <transition name="page-animation">
-        <div v-show="pageIndex == 7" :class="{now: pageIndex == 7,right: pageIndex &lt; 7,left: pageIndex &gt; 7}" class="page page-7">
-          <div class="bg"><img src="./img/page-7-bg.jpg">
-            <div id="dog" class="animations"></div>
-          </div>
-          <div class="content">
-            <div @click="movePrev" class="left"></div>
-            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-7-text.png"></div>
-            <div @click="gameStart(7)" class="btn btn-start"></div>
           </div>
         </div>
       </transition>
@@ -213,7 +147,6 @@
       </transition>
       <transition name="page-fade">
         <div v-show="recordPageShow" class="page page-record">
-          <div class="bg"><img src="./img/page-record-bg.jpg"></div>
           <div class="content">
             <div id="record" :class="{off: !recording,on: recording}" class="record">
               <div class="mic"><img src="./img/page-record-microphone.png"></div>
@@ -237,7 +170,8 @@
             <div v-if="wy" @click="share" class="mark"></div>
             <div v-if="!wy" class="mark"><img :src="ugc"></div>
             <div class="btns">
-              <div @click="regisiterPageShow = true" class="btn btn-reg"><img src="./img/btn-reg.png"></div><a href="http://music.163.com/playlist?id=2222381288" class="btn btn-music"><img src="./img/btn-music.png"></a>
+              <div @click="regisiterPageShow = true" class="btn btn-reg"><img src="./img/btn-reg.png"></div>
+              <div class="btn btn-music"><img src="./img/btn-music.png"></div>
             </div>
           </div>
         </div>

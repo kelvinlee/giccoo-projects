@@ -6,7 +6,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var IsPC, Sprite, Tn, UGC, _CDN, _imgurl, _animate, _citys, cloud, _dealers, dog, getRandom, global, imageurl, init, j, len, load, loadWechatConfig, loader, main, neteaseShareImage, p, pre, provinces, rain, randomSort, res, stars, startTime, sys;
+var IsPC, Sprite, Tn, UGC, _CDN, _imgurl, _animate, _citys, _dealers, getRandom, global, imageurl, init, j, len, load, loadWechatConfig, loader, main, neteaseShareImage, p, pre, provinces, randomSort, res, stars, sys;
 
 randomSort = function randomSort(obj) {
   var newArr, oldarr, _randomSortFun;
@@ -103,7 +103,7 @@ stars = function () {
       key: "loop",
       value: function loop(detail) {
         var j, len, ref, results, star;
-        if (!this.moving || main.pageIndex !== 1) {
+        if (!this.moving) {
           return false;
         }
         ref = this.stars;
@@ -111,10 +111,10 @@ stars = function () {
         for (j = 0, len = ref.length; j < len; j++) {
           star = ref[j];
           if (star.valpha >= 1) {
-            star.alpha += 0.01 * detail;
+            star.alpha += 0.02 * detail;
           }
           if (star.valpha <= -1) {
-            star.alpha -= 0.01 * detail;
+            star.alpha -= 0.02 * detail;
           }
           if (star.alpha <= 0) {
             star.valpha = 1;
@@ -130,20 +130,13 @@ stars = function () {
     }, {
       key: "build",
       value: function build() {
-        var i, j, random, star;
-        load.progressOn = 100;
-        console.log("bg all loaded");
-        for (i = j = 1; j < 12; i = ++j) {
-          star = new Sprite(res["img/page-1-star-" + (i % 4 + 1) + ".png"].texture);
+        var i, j, star;
+        for (i = j = 1; j < 10; i = ++j) {
+          star = new Sprite(res["img/page-1-star-" + (i % 3 + 1) + ".png"].texture);
           star.x = Math.random() * (640 - star.width);
           star.y = Math.random() * (420 - star.width) + 100;
           star.alpha = Math.random() * 1;
           star.valpha = [1, -1][Math.floor(Math.random() * 2)];
-          if (i % 4 + 1 === 4) {
-            random = Math.random() * 0.5 + 0.2;
-            star.scale.x = random;
-            star.scale.y = random;
-          }
           this.stars.push(star);
           this.app.stage.addChild(star);
         }
@@ -159,7 +152,7 @@ stars = function () {
           preserveDrawingBuffer: true
         });
         document.getElementById('stars').appendChild(this.app.view);
-        return PIXI.loader.add(["img/page-1-star-1.png", "img/page-1-star-2.png", "img/page-1-star-3.png", "img/page-1-star-4.png", "img/page-4-rain-1.png", "img/page-4-rain-2.png", "img/page-4-rain-3.png", "img/page-4-rain-4.png", "img/page-7-dog-1.png", "img/page-7-dog-2.png", "img/page-7-dog-3.png", "img/page-7-dog-4.png", "img/page-7-dog-5.png", "img/page-6-cloud-1.png", "img/page-6-cloud-2.png", "img/page-6-cloud-3.png"]).load(this.build.bind(this));
+        return PIXI.loader.add(["img/page-1-star-1.png", "img/page-1-star-2.png", "img/page-1-star-3.png"]).load(this.build.bind(this));
       }
     }]);
 
@@ -177,239 +170,8 @@ stars = function () {
   return stars;
 }.call(undefined);
 
-rain = function () {
-  // rain
-  var rain = function () {
-    function rain() {
-      _classCallCheck(this, rain);
-    }
-
-    _createClass(rain, [{
-      key: "loop",
-      value: function loop(detail) {
-        var j, len, ref, results;
-        if (!this.moving || main.pageIndex !== 4) {
-          return false;
-        }
-        ref = this.rains;
-        results = [];
-        for (j = 0, len = ref.length; j < len; j++) {
-          rain = ref[j];
-          rain.x += 1 * detail;
-          rain.y += rain.vy * detail;
-          if (rain.y > 1138) {
-            rain.y = -rain.height;
-            results.push(rain.x = rain.vx);
-          } else {
-            results.push(void 0);
-          }
-        }
-        return results;
-      }
-    }, {
-      key: "build",
-      value: function build() {
-        var i, j, random;
-        for (i = j = 1; j < 50; i = ++j) {
-          rain = new Sprite(res["img/page-4-rain-" + (i % 4 + 1) + ".png"].texture);
-          rain.x = 640 - rain.width * 1.5 - Math.random() * 640;
-          rain.vx = rain.x;
-          rain.y = Math.random() * (1138 - rain.width);
-          rain.vy = Math.random() * 8 + 7;
-          if (i % 4 + 1 === 4) {
-            random = Math.random() * 0.5 + 0.2;
-            rain.scale.x = random;
-            rain.scale.y = random;
-          }
-          this.rains.push(rain);
-          this.app.stage.addChild(rain);
-        }
-        return this.app.ticker.add(this.loop.bind(this));
-      }
-    }, {
-      key: "init",
-      value: function init() {
-        this.app = new PIXI.Application({
-          width: 640,
-          height: 1138,
-          transparent: true,
-          preserveDrawingBuffer: true
-        });
-        document.getElementById('rain').appendChild(this.app.view);
-        return PIXI.loader.add([]).load(this.build.bind(this));
-      }
-    }]);
-
-    return rain;
-  }();
-
-  ;
-
-  rain.prototype.app = null;
-
-  rain.prototype.moving = true;
-
-  rain.prototype.rains = [];
-
-  return rain;
-}.call(undefined);
-
-cloud = function () {
-  // cloud
-  var cloud = function () {
-    function cloud() {
-      _classCallCheck(this, cloud);
-    }
-
-    _createClass(cloud, [{
-      key: "loop",
-      value: function loop(detail) {
-        var j, len, ref, results;
-        if (!this.moving || main.pageIndex !== 6) {
-          return false;
-        }
-        ref = this.clouds;
-        results = [];
-        for (j = 0, len = ref.length; j < len; j++) {
-          cloud = ref[j];
-          cloud.x -= cloud.vx * detail;
-          if (cloud.x < -cloud.width) {
-            results.push(cloud.x = 640);
-          } else {
-            results.push(void 0);
-          }
-        }
-        return results;
-      }
-    }, {
-      key: "build",
-      value: function build() {
-        var i, j;
-        for (i = j = 1; j < 4; i = ++j) {
-          cloud = new Sprite(res["img/page-6-cloud-" + (i % 3 + 1) + ".png"].texture);
-          cloud.x = Math.random() * (640 - cloud.width);
-          cloud.vx = 0.2 + 0.2 * i;
-          cloud.alpha = 0.2 + Math.random() * 0.3;
-          cloud.y = Math.random() * 60 + i * 80;
-          this.clouds.push(cloud);
-          this.app.stage.addChild(cloud);
-        }
-        return this.app.ticker.add(this.loop.bind(this));
-      }
-    }, {
-      key: "init",
-      value: function init() {
-        this.app = new PIXI.Application({
-          width: 640,
-          height: 1138,
-          transparent: true,
-          preserveDrawingBuffer: true
-        });
-        document.getElementById('cloud').appendChild(this.app.view);
-        return PIXI.loader.add([]).load(this.build.bind(this));
-      }
-    }]);
-
-    return cloud;
-  }();
-
-  ;
-
-  cloud.prototype.app = null;
-
-  cloud.prototype.moving = true;
-
-  cloud.prototype.clouds = [];
-
-  return cloud;
-}.call(undefined);
-
-dog = function () {
-  // dog
-  var dog = function () {
-    function dog() {
-      _classCallCheck(this, dog);
-    }
-
-    _createClass(dog, [{
-      key: "loop",
-      value: function loop(detail) {
-        var i, j, n, next, ref, results;
-        if (!this.moving || main.pageIndex !== 7) {
-          return false;
-        }
-        results = [];
-        for (n = j = 0, ref = this.dogs.length * 2; 0 <= ref ? j < ref : j > ref; n = 0 <= ref ? ++j : --j) {
-          i = n % this.dogs.length;
-          dog = this.dogs[i];
-          if (dog.alpha === 1) {
-            dog.vf -= detail;
-            if (dog.vf <= 0) {
-              dog.alpha = 0;
-              dog.vf = this.frame;
-              if (n > i) {
-                next = i - 1;
-              } else {
-                next = i + 1;
-              }
-              if (next >= this.dogs.length) {
-                next = 0;
-              }
-              this.dogs[next].alpha = 1;
-            }
-            break;
-          } else {
-            results.push(void 0);
-          }
-        }
-        return results;
-      }
-    }, {
-      key: "build",
-      value: function build() {
-        var i, j;
-        for (i = j = 1; j < 5; i = ++j) {
-          dog = new Sprite(res["img/page-7-dog-" + i + ".png"].texture);
-          dog.alpha = 0;
-          dog.vf = this.frame;
-          this.dogs.push(dog);
-          this.app.stage.addChild(dog);
-        }
-        this.dogs[0].alpha = 1;
-        return this.app.ticker.add(this.loop.bind(this));
-      }
-    }, {
-      key: "init",
-      value: function init() {
-        this.app = new PIXI.Application({
-          width: 640,
-          height: 1138,
-          transparent: true,
-          preserveDrawingBuffer: true
-        });
-        document.getElementById('dog').appendChild(this.app.view);
-        return PIXI.loader.add([]).load(this.build.bind(this));
-      }
-    }]);
-
-    return dog;
-  }();
-
-  ;
-
-  dog.prototype.app = null;
-
-  dog.prototype.moving = true;
-
-  dog.prototype.dogs = [];
-
-  dog.prototype.frame = 5;
-
-  return dog;
-}.call(undefined);
-
 UGC = function () {
-  // ugc
+  // rain
   var UGC = function () {
     _createClass(UGC, [{
       key: "loop",
@@ -428,7 +190,6 @@ UGC = function () {
       this.wy = options.wy;
       this.background = options.background;
       this.ugc = options.ugc;
-      this.small = options.small;
 
       this.init();
     }
@@ -448,7 +209,7 @@ UGC = function () {
     }, {
       key: "build",
       value: function build() {
-        var animate, bg, mark, qr, save, saveText, text, title, title2;
+        var animate, bg, mark, qr, save, saveText;
         console.log(res["img/page-" + this.id + "-bg.jpg"].texture);
         bg = new Sprite(res["img/page-" + this.id + "-bg.jpg"].texture);
         this.app.stage.addChild(bg);
@@ -460,41 +221,23 @@ UGC = function () {
         mark.x = (640 - mark.width) / 2;
         mark.y = (1138 - mark.height) / 2;
         qr = this.qr = new Sprite(res["img/ugc-qr.png"].texture);
-        this.qr.x = 35;
-        this.qr.y = 1138 + 4 - 35 - this.qr.height;
-        title = new Sprite(res["img/ugc-title.png"].texture);
-        this.app.stage.addChild(title);
-        text = new Sprite(res["img/ugc-" + this.id + "-" + this.random + ".png"].texture);
-        this.app.stage.addChild(text);
+        this.qr.x = 20;
+        this.qr.y = 1138 + 4 - 20 - this.qr.height;
         this.app.stage.addChild(qr);
         this.app.renderer.render(this.app.stage);
         this.saveUGC = this.app.view.toDataURL();
         this.ugc();
-        title.alpha = 0;
-        this.app.stage.addChildAt(mark, 3);
-        text.y = 60;
-        title2 = new Sprite(res["img/ugc-title-2.png"].texture);
-        this.app.stage.addChild(title2);
+        qr.x = mark.x + 20;
+        qr.y = mark.y + mark.height - qr.height - 20;
+        this.app.stage.addChildAt(mark, 1);
         saveText = "img/long-save.png";
         if (this.wy != null && this.wy) {
           saveText = "img/save-text.png";
         }
         save = new Sprite(res[saveText].texture);
-        this.app.stage.addChild(save);
-        if (this.small != null && this.small) {
-          mark.x += mark.width * 0.1 / 2;
-          // mark.y += mark.height*0.1/2
-          mark.scale.x = 0.9;
-          mark.scale.y = 0.9;
-          qr.scale.x = 0.9;
-          qr.scale.y = 0.9;
-          save.scale.x = 0.9;
-          save.scale.y = 0.9;
-        }
         save.x = 640 - mark.x - save.width - 20;
         save.y = mark.y + mark.height - save.height - 20;
-        qr.x = mark.x + 20;
-        return qr.y = mark.y + mark.height - qr.height - 20;
+        return this.app.stage.addChild(save);
       }
 
       // @.over()
@@ -509,8 +252,7 @@ UGC = function () {
           preserveDrawingBuffer: true
         });
         document.getElementById('ugc').appendChild(this.app.view);
-        this.random = Math.floor(Math.random() * 4 + 1);
-        return PIXI.loader.add(["img/page-" + this.id + "-bg.jpg", "img/ugc-qr.png", "img/mark.png", "img/long-save.png", "img/save-text.png", "img/ugc-title.png", "img/ugc-title-2.png", "img/ugc-" + this.id + "-" + this.random + ".png"]).load(this.build.bind(this));
+        return PIXI.loader.add(["img/page-" + this.id + "-bg.jpg", "img/ugc-qr.png", "img/mark.png", "img/long-save.png", "img/save-text.png"]).load(this.build.bind(this));
       }
     }]);
 
@@ -529,8 +271,6 @@ UGC = function () {
 
   UGC.prototype.mark = null;
 
-  UGC.prototype.random = 1;
-
   return UGC;
 }.call(undefined);
 
@@ -539,8 +279,6 @@ UGC = function () {
 // @codekit-prepend "../../libs/coffee/loadWechatConfig"
 // @codekit-prepend "../../libs/coffee/ispc"
 // @codekit-prepend "./pixi"
-
-// 法国。荷兰。巴西，英国，韩国，泰国，日本
 _CDN = "";
 
 _imgurl = "";
@@ -562,8 +300,6 @@ provinces = ["江苏", "浙江", "安徽", "上海", "北京", "吉林", "辽宁
 _citys = [];
 
 _dealers = [];
-
-startTime = new Date().getTime();
 
 for (j = 0, len = provinces.length; j < len; j++) {
   p = provinces[j];
@@ -873,49 +609,6 @@ _dealers["湖北"]["武汉市"].push("武汉星威汽车销售服务有限公司
 
 _dealers["陕西"]["西安市"].push("西安利之星汽车有限公司");
 
-load = new Vue({
-  el: "#load",
-  data: {
-    progress: 0,
-    mount: false,
-    kill: false,
-    progressOn: 50 + Math.floor(Math.random() * 30)
-  },
-  computed: {
-    progressText: function progressText() {
-      var html, i, k, ref, text;
-      html = "";
-      text = this.progress.toString();
-      for (i = k = 0, ref = text.length; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
-        html += "<span class='font font-" + text[i] + "'>" + text[i] + "</span>";
-      }
-      return html + '<span class="font font-last">%</span>';
-    }
-  },
-  mounted: function mounted() {
-    var _this2 = this;
-
-    var timein;
-    // @.progress = 10
-    this.mount = true;
-    return timein = setInterval(function () {
-      _this2.progress += 2;
-      if (_this2.progress > _this2.progressOn) {
-        _this2.progress = _this2.progressOn;
-      }
-      if (_this2.progress >= 100) {
-        clearInterval(timein);
-        console.log("loaded:", (new Date().getTime() - startTime) / 1000, "s");
-        _this2.progress = 100;
-        _this2.mount = false;
-        return setTimeout(function () {
-          return _this2.kill = true;
-        }, 700);
-      }
-    }, 1000 / 20);
-  }
-});
-
 getRandom = function getRandom(length) {
   return parseInt(Math.random() * (length + 1) - 1);
 };
@@ -929,10 +622,10 @@ window.onload = function () {
     wx.ready(function () {
       var shareContent;
       shareContent = {
-        title: "爱有千万种风情，我只要一种独行",
-        desc: "大声告诉你，这一种才是我要的爱情！",
-        link: "http://m.giccoo.com/mbenz-love/",
-        imgUrl: "http://m.giccoo.com/mbenz-love/img/ico.jpg",
+        title: "点击测试你的孤独指数",
+        desc: "与兰蔻一起，度过漫漫长夜",
+        link: "http://m.giccoo.com/lancome/",
+        imgUrl: "http://m.giccoo.com/lancome/img/ico.jpg",
         success: function success() {},
         // alert "success"
         cancel: function cancel() {}
@@ -958,8 +651,8 @@ init = function init() {
   var TrueH, TrueW, navH, smaller;
   TrueH = document.documentElement.clientHeight;
   TrueW = document.documentElement.clientWidth;
+  console.log(TrueW / 640 * 94 / TrueH * 100);
   if (TrueW >= 640) {
-    // console.log new Date().getTime() - startTime
     // document.body.style.height = TrueH+"px"
     // document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
     TrueW = 640;
@@ -967,9 +660,43 @@ init = function init() {
   if (TrueH >= 1138) {
     TrueH = 1138;
   }
-  // alert TrueW+","+TrueH
   smaller = TrueW / 640 * 1138 > TrueH;
   navH = Math.ceil(TrueW / 640 * 94 / TrueH * 100);
+  load = new Vue({
+    el: "#load",
+    data: {
+      progress: 0,
+      mount: false,
+      progressOn: 0
+    },
+    computed: {
+      progressText: function progressText() {
+        var html, i, k, ref, text;
+        html = "";
+        text = this.progress.toString();
+        for (i = k = 0, ref = text.length; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
+          html += "<span class='font font-" + text[i] + "'>" + text[i] + "</span>";
+        }
+        return html + '<span class="font font-last">%</span>';
+      }
+    },
+    mounted: function mounted() {
+      var _this2 = this;
+
+      var timein;
+      // @.progress = 10
+      this.mount = true;
+      return timein = setInterval(function () {
+        _this2.progress += 3;
+        if (_this2.progress >= 100) {
+          clearInterval(timein);
+          _this2.progress = 100;
+          main.build();
+          return main.homepageShow = true;
+        }
+      }, 1000 / 20);
+    }
+  });
   return main = new Vue({
     el: "#main",
     data: {
@@ -989,7 +716,7 @@ init = function init() {
       noteMsg: true,
       w: TrueW,
       h: TrueH,
-      maxPage: 7,
+      maxPage: 8,
       pageIndex: 0,
       moving: true,
       musiclink: "mp3/bgm.mp3",
@@ -1010,8 +737,7 @@ init = function init() {
         province: "",
         city: ""
       }, "detail", 1),
-      provinces: provinces,
-      cache: null
+      provinces: provinces
     },
     computed: {
       citys: function citys() {
@@ -1044,7 +770,10 @@ init = function init() {
         _ugc = new UGC({
           id: Id,
           wy: this.wy,
+<<<<<<< HEAD
           small: !this.smaller,
+=======
+>>>>>>> 35e7a41bec2b28c0167e53ef9313c3ec37af2073
           bg: this.pageBG[Id] != null ? this.pageBG[Id].app.view : null,
           background: function background() {
             return _this3.ugcbg = _ugc.saveUGC;
@@ -1067,7 +796,6 @@ init = function init() {
       },
       recordEnd: function recordEnd(evt) {
         evt.preventDefault();
-        clearTimeout(this.cache);
         return this.recording = false;
       },
       play: function play() {
@@ -1106,7 +834,7 @@ init = function init() {
         }
         // "//api.giccoo.com/mbenz-love/insert"
 
-        return axios.post("//api.giccoo.com/mbenz-love/insert/", this.form).then(function (msg) {
+        return axios.post("http://localhost:8881/mbenz-love/insert/", this.form).then(function (msg) {
           if (msg.data.recode === 200) {
             alert("提交成功");
             return _this5.regisiterPageShow = false;
@@ -1117,6 +845,7 @@ init = function init() {
           return alert("提交失败请重试");
         });
       },
+<<<<<<< HEAD
       getIp: function getIp() {
         var _this6 = this;
 
@@ -1180,15 +909,11 @@ init = function init() {
         return neteaseShareImage();
       },
       faild: function faild() {},
+=======
+>>>>>>> 35e7a41bec2b28c0167e53ef9313c3ec37af2073
       build: function build() {
         this.pageBG[1] = new stars();
-        this.pageBG[1].init();
-        this.pageBG[4] = new rain();
-        this.pageBG[4].init();
-        this.pageBG[6] = new cloud();
-        this.pageBG[6].init();
-        this.pageBG[7] = new dog();
-        return this.pageBG[7].init();
+        return this.pageBG[1].init();
       },
       moveNext: function moveNext() {
         // console.log "xiayige",@.pageIndex
@@ -1236,11 +961,7 @@ init = function init() {
       if (sys === "NeteaseMusic") {
         this.wy = true;
       }
-      // @.mount = true
       this.mount = true;
-      this.build();
-      this.getIp();
-      load.progressOn = 95;
       this.audio = document.getElementById("bgm");
       this.recordDom = document.getElementById("record");
       if (IsPC()) {

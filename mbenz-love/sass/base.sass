@@ -32,38 +32,6 @@ $pageMainBGColor: #000000;
 	100%
 		transform: rotate(45deg)
 
-+keyframes(ball)
-	0%,100%
-		+transform(scale(1,1) translate3d(0,0,0))
-		opacity: 0.8
-	25%
-		+transform(scale(0.95,0.95) translate3d(5%,-15%,0))
-	50%
-		+transform(scale(0.8,0.8) translate3d(0,-30%,0))
-		opacity: 1
-	75%
-		+transform(scale(0.95,0.95) translate3d(-5%,-15%,0))
-
-+keyframes(moveLeft)
-	0%
-		+transform(translate3d(10px,0,0))
-		opacity: 0
-	10%,90%
-		opacity: 1
-	100%
-		+transform(translate3d(0,0,0))
-		opacity: 0
-
-+keyframes(moveRight)
-	0%
-		+transform(translate3d(-10px,0,0))
-		opacity: 0
-	10%,90%
-		opacity: 1
-	100%
-		+transform(translate3d(0,0,0))
-		opacity: 0
-
 html,body
 	+w
 	+h
@@ -119,19 +87,6 @@ body
 		+posa			
 		+tl
 		z-index: 109
-		// pointer-events: none
-		// user-select: none
-		img
-			pointer-events: none
-			user-select: none
-		+h(auto)
-		+show-inline
-		.sj
-			+posa
-			+tr
-			+w(40%)
-			+h
-			+show-inline
 
 .page-animation-enter-active
 	transition: all .4s linear
@@ -186,6 +141,10 @@ body
 		background-attachment: fixed
 		z-index: 10
 		.bg
+			+posa
+			+tl
+			+w
+			+h
 			z-index: -1
 			img
 				+w
@@ -200,9 +159,7 @@ body
 	background-size: 100% auto
 	.bg
 		+posa
-		top: auto
 		+bl
-		+transform(translate3d(0,0,0))
 		font-size: 0
 		.animations
 			+posa
@@ -219,13 +176,7 @@ body
 	+posa
 	+tl
 	// +hide
-	z-index: 200
-	.full
-		+posa
-		+tl
-		+w
-		+h
-		+bc(#000)
+	z-index: 4
 	.content
 		+posa
 		+tl(50%,50%)
@@ -250,8 +201,6 @@ body
 	+w(1em)
 	+w(1em)
 	+overhide
-	&.opc
-		opacity: 0
 @for $i from 0 through 9
 	.font-#{$i}
 		+b($cdn+"img/font-#{$i}.png",no-repeat,center,center,cover)
@@ -259,10 +208,6 @@ body
 	+b($cdn+"img/font-last.png",no-repeat,center,center,cover)
 
 .page
-	.texts
-		+posa
-		+tl
-		margin-top: 2%
 	.content
 		+posa
 		+tl
@@ -278,8 +223,8 @@ body
 		.texts
 			+posa
 			+tl
-			margin-top: 2%
 			// +transform(translate3d(0,-50%,0))
+			margin-top: 5%
 			.text
 				+posa
 				+tl
@@ -294,13 +239,17 @@ body
 		.right
 			right: 1%
 			+b($cdn+"img/right.png",no-repeat,center,center,cover)
-			+animation(moveRight,2s,ease,infinite)
 		.left
 			left: 1%
 			+b($cdn+"img/left.png",no-repeat,center,center,cover)
-			+animation(moveLeft,2s,ease,infinite)
 
-
+.smaller
+	.page
+		.bg
+			+tl(50%)
+			+transform(translate3d(0,-50%,0))
+			// +tl
+			bottom: auto
 
 
 .bgm
@@ -318,15 +267,6 @@ body
 
 .page-home
 	+tl
-	.arrow
-		+posa
-		+tl
-		@for $i from 1 through 4
-			&.arrow-#{$i}
-				+transform(translate3d($i*3%,0,0))
-				+animation(fadeOut,300ms*4,linear,infinite)
-				animation-delay: 300ms*$i
-
 	.content
 		+posa
 		+w
@@ -337,17 +277,7 @@ body
 	.hair
 		+posa
 		+tl(63.55%)
-.page-3
-	.ball
-		+posa
-		+tr(20%,15%)
-		+iw(70)
-		+animation(ball,8s,linear,infinite)
-.page-6
-	.mark
-		+posa
-		+tl(18.2%)
-		+w
+
 .page-regisiter
 	+bc(rgba(0,0,0,0.7))
 	z-index: 108
@@ -401,17 +331,6 @@ body
 				line-height: 1.4em
 			.select
 				+posr
-				+overhide
-				span
-					+show-inline
-					+w(94%)
-					+box
-					+overhide
-					text-overflow: ellipsis
-					white-space: nowrap
-					text-indent: 0
-					line-height: 1.4em
-					vertical-align: middle
 				select
 					+posa
 					+tl
@@ -463,13 +382,13 @@ body
 			+transform(translate3d(-50%,50%,0))
 
 .page-record
-	z-index: 99
-	// +b($cdn+"img/page-record-bg.jpg",no-repeat,center,center,cover)
+	z-index: 108
+	+b($cdn+"img/page-record-bg.jpg",no-repeat,center,center,cover)
 	.record
-		$size: 2.4rem
+		$size: 40px
 		$borderSize: $size * .07
 		+posa
-		+bl(2%,50%)
+		+bl(1%,50%)
 		+transform(translate3d(-50%,0,0))
 		+w($size)
 		+h($size)
@@ -486,7 +405,7 @@ body
 			+transform(translate3d(-50%,-50%,0))
 		.progress
 			+posa
-			+tl(8%,8%)
+			+tl(10%,10%)
 			+w($size)
 			+h($size)
 			z-index: 99
@@ -530,8 +449,9 @@ body
 					&.leftcircle
 						animation: circleProgressLoad_left 5s linear
 
+
 .page-ugc
-	z-index: 100
+	z-index: 108
 	.btns
 		+posa
 		+w
@@ -544,28 +464,6 @@ body
 			+show-inline
 	.mark
 		+posa
-		+tl(15%,10%)
-		+wh(80%,70%)
-		+overhide
+		+tl(10%,10%)
+		+wh(80%,80%)
 		opacity: 0
-
-
-.smaller
-	.page
-		.bg
-			+tl(50%)
-			bottom: auto
-			+transform(translate3d(0,-50%,0))
-			// +tl(50%)
-			// +transform(translate3d(0,-50%,0))
-			
-
-
-// iphone x
-.page-home,.page-1,.page-record,.page-ugc
-	.bg
-		top: auto
-		+bl
-		+transform(translate3d(0,0,0))
-		// bottom: auto
-		

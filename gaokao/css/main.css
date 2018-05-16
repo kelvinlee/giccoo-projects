@@ -1,0 +1,170 @@
+*{margin: 0;padding: 0;}
+html,body{width:100%;height: 100%;position: relative;overflow:hidden;}
+img{ width: 100%; }
+.wechat-share {  position: absolute;  top: -1000px;  left: 0px;  z-index: -100;  width: 1px; }
+
+
+/*
+透视效果 不加body上
+			perspective:300;
+	-webkit-perspective: 300;
+			transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+
+
+		-webkit-transform: translate3d(-50%, -50%, 0);
+       		transform: translate3d(-50%, -50%, 0);
+
+
+点击不显黑框
+      	-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;*/
+
+#mainCanvas{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	font-size: 0;
+}
+.alphaBtn{
+	position: absolute;
+	background-color: #764822;
+	opacity: 0;
+	-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;
+	display: none;
+}
+#p1btn{
+	width: 100%;
+	height: 20%;
+	bottom: 0;
+}
+#p2start{
+	width: 100%;
+	height: 15%;
+	bottom: 0;
+}
+
+#userName{
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	/*background-color: #888800;*/
+	display: none;
+
+}
+#UserTextarea{
+	background: transparent;
+	border-style: none;
+	font-size: 2rem;
+	color: #8f8d8e;
+	width: 100%;
+	height: 100%;
+	text-align:center;
+}
+#userUGC{
+	position: absolute;
+	display: none;
+}
+.hint{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.hintBG{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	opacity: .8;
+}
+.bottomPart{
+	position: absolute;
+	width: 100%;
+	font-size: 0;
+	bottom: 0;
+}
+#nextBtn{
+	position: absolute;
+	width: 50%;
+	right: 0;
+}
+#backBtn{
+	position: absolute;
+	width: 50%;
+	left: 0;
+}
+#submitBtn{
+	position: absolute;
+	width: 100%;
+	/*bottom: 0;*/
+}
+#endBtns{
+	display: none;
+}
+#endbtn1{
+	width: 25%;
+	bottom: 0;
+	height: 11%;
+	left: 9%;
+}
+#endbtn2{
+	width: 25%;
+	bottom: 0;
+	height: 11%;
+	left: 37.5%;
+}
+#endbtn3{
+	width: 25%;
+	bottom: 0;
+	height: 11%;
+	right: 9%;
+}
+#rightAnswer{
+	position: absolute;
+	width: 100%;
+	height: 50%;
+	bottom: 0;
+	overflow: scroll;
+	font-size: 0;
+	display: none;
+}
+.p4answer{
+	position: absolute;
+	width: 100%;
+	display: none;
+}
+#closeBtn{
+	position: absolute;
+	display: none;
+}
+#btnshare{
+	position: absolute;
+	width: 9%;
+	top: 0;
+	left: 0;
+	display: none;
+}
+#pngHolder{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: none;
+	opacity: 0;
+}
+#shareHint{
+	display: none;
+}
+/*.musicBtn{
+	position: absolute;
+	width: 12.35%;
+	top: 0;
+	right: 0;
+	-webkit-tap-highlight-color: transparent;
+			tap-highlight-color: transparent;
+}
+#musicOff{
+	opacity: 1;
+}*/
