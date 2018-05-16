@@ -32,7 +32,7 @@ block content
 
 	#main.main(v-show="mount",style="display: none",:style="{width: w+'px',height: h+'px'}",:class="{smaller: smaller}")
 		.bgm(@click="play")
-			audio#bgm(:src="musiclink")
+			audio#bgm(:src="musiclink",loop="true")
 			img(:src="'#{url}/img/audio-'+playing+'.png'")
 			transition(name="page-fade")
 				p.noteMsg(v-show="noteMsg") 为保证体验效果<br/>请打开音乐
@@ -60,10 +60,12 @@ block content
 				.content
 					.right(@click="moveNext")
 					.texts(:style="{top: navH+'%'}")
-						-for (var i=1;i<=4;i++)
+						//- .text
+						img(src="#{url}/img/page-#{pageId}-text.png")
+						// -for (var i=1;i<=4;i++)
 							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
 								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
-						-;
+						// -;
 					.btn.btn-start(@click="gameStart(#{pageId})")
 		transition(name="page-animation")
 			- pageId = 2;
@@ -169,7 +171,7 @@ block content
 
 
 		transition(name="page-fade")
-			.page.page-regisiter(v-show="false && regisiterPageShow")
+			.page.page-regisiter(v-show="regisiterPageShow")
 				.content
 					form.form
 						.form-title
@@ -233,6 +235,8 @@ block content
 
 		transition(name="page-fade")
 			.page.page-record(v-show="recordPageShow")
+				.bg
+					img(src="#{url}/img/page-record-bg.jpg")
 				.content
 					#record.record(:class="{off: !recording,on: recording}")
 						.mic

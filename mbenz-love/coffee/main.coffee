@@ -216,10 +216,10 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "点击测试你的孤独指数"
-				desc: "与兰蔻一起，度过漫漫长夜"
-				link: "http://m.giccoo.com/lancome/"
-				imgUrl: "http://m.giccoo.com/lancome/img/ico.jpg"
+				title: "爱有千万种风情，我只要一种独行"
+				desc: "大声告诉你，这一种才是我要的爱情！"
+				link: "http://m.giccoo.com/mbenz-love/"
+				imgUrl: "http://m.giccoo.com/mbenz-love/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
@@ -243,6 +243,7 @@ init = ->
 	# document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
 	TrueW = 640 if TrueW >= 640
 	TrueH = 1138 if TrueH >= 1138
+	# alert TrueW+","+TrueH
 	smaller = TrueW/640*1138 > TrueH
 	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
 
@@ -305,6 +306,7 @@ init = ->
 				ugc = new UGC 
 					id: Id ,
 					wy: @.wy
+					small: true
 					bg : if @.pageBG[Id]? then @.pageBG[Id].app.view else null , 
 					background: =>
 						@ugcbg = ugc.saveUGC
@@ -342,7 +344,7 @@ init = ->
 
 				# "//api.giccoo.com/mbenz-love/insert"
 				# 
-				axios.post "http://localhost:8881/mbenz-love/insert/",@.form
+				axios.post "//api.giccoo.com/mbenz-love/insert/",@.form
 				.then (msg)=>
 					if msg.data.recode is 200
 						alert "提交成功"
@@ -351,6 +353,48 @@ init = ->
 						alert msg.data.reason
 				.catch (e)=>
 					alert "提交失败请重试"
+			getIp: ->
+				axios.get "//api.giccoo.com/api/ip/",{}
+				.then (msg)=>
+					# console.log msg
+					if msg.data.recode is 200 and msg.data.info.content.address_detail?
+						address = msg.data.info.content.address_detail
+						# console.log address
+						# address = {city:"北京市",province:"北京市"}
+						for item in provinces
+							if address.province.indexOf(item) > -1
+								@.form.province = item
+								for city in @.citys
+									if address.city.indexOf(city) > -1
+										setTimeout =>
+											@.form.city = city
+											setTimeout =>
+												@.form.dealer = @.dealers[0]
+											,10
+										,10
+										break
+								break
+			share: ->
+				image = @.ugc
+				data = {
+					image: image
+					folder: "mbenzlove"
+				}
+				unless image?
+					return main.faild()
+				axios.post imageurl,data
+				.then (msg)->
+					if msg.data.recode is 200
+						main.success(msg.data)
+					else
+						main.faild()
+				.catch (e)->
+					# alert e
+					main.faild()
+			success: (data)->
+				@.shareImageLink = data.info
+				neteaseShareImage()
+			faild: ->
 
 			build: ->
 				@.pageBG[1] = new stars()
@@ -401,7 +445,7 @@ init = ->
 			
 			@.mount = true
 			@.build()
-
+			@.getIp()
 			load.progressOn = 95
 
 			@.audio = document.getElementById "bgm"

@@ -428,6 +428,7 @@ UGC = function () {
       this.wy = options.wy;
       this.background = options.background;
       this.ugc = options.ugc;
+      this.small = options.small;
 
       this.init();
     }
@@ -447,7 +448,7 @@ UGC = function () {
     }, {
       key: "build",
       value: function build() {
-        var animate, bg, mark, qr, save, saveText, text, title;
+        var animate, bg, mark, qr, save, saveText, text, title, title2;
         console.log(res["img/page-" + this.id + "-bg.jpg"].texture);
         bg = new Sprite(res["img/page-" + this.id + "-bg.jpg"].texture);
         this.app.stage.addChild(bg);
@@ -459,8 +460,8 @@ UGC = function () {
         mark.x = (640 - mark.width) / 2;
         mark.y = (1138 - mark.height) / 2;
         qr = this.qr = new Sprite(res["img/ugc-qr.png"].texture);
-        this.qr.x = 20;
-        this.qr.y = 1138 + 4 - 20 - this.qr.height;
+        this.qr.x = 35;
+        this.qr.y = 1138 + 4 - 35 - this.qr.height;
         title = new Sprite(res["img/ugc-title.png"].texture);
         this.app.stage.addChild(title);
         text = new Sprite(res["img/ugc-" + this.id + "-" + this.random + ".png"].texture);
@@ -469,17 +470,31 @@ UGC = function () {
         this.app.renderer.render(this.app.stage);
         this.saveUGC = this.app.view.toDataURL();
         this.ugc();
-        qr.x = mark.x + 20;
-        qr.y = mark.y + mark.height - qr.height - 20;
+        title.alpha = 0;
         this.app.stage.addChildAt(mark, 3);
+        text.y = 60;
+        title2 = new Sprite(res["img/ugc-title-2.png"].texture);
+        this.app.stage.addChild(title2);
         saveText = "img/long-save.png";
         if (this.wy != null && this.wy) {
           saveText = "img/save-text.png";
         }
         save = new Sprite(res[saveText].texture);
+        this.app.stage.addChild(save);
+        if (this.small != null && this.small) {
+          mark.x += mark.width * 0.1 / 2;
+          // mark.y += mark.height*0.1/2
+          mark.scale.x = 0.9;
+          mark.scale.y = 0.9;
+          qr.scale.x = 0.9;
+          qr.scale.y = 0.9;
+          save.scale.x = 0.9;
+          save.scale.y = 0.9;
+        }
         save.x = 640 - mark.x - save.width - 20;
         save.y = mark.y + mark.height - save.height - 20;
-        return this.app.stage.addChild(save);
+        qr.x = mark.x + 20;
+        return qr.y = mark.y + mark.height - qr.height - 20;
       }
 
       // @.over()
@@ -495,7 +510,7 @@ UGC = function () {
         });
         document.getElementById('ugc').appendChild(this.app.view);
         this.random = Math.floor(Math.random() * 4 + 1);
-        return PIXI.loader.add(["img/page-" + this.id + "-bg.jpg", "img/ugc-qr.png", "img/mark.png", "img/long-save.png", "img/save-text.png", "img/ugc-title.png", "img/ugc-" + this.id + "-" + this.random + ".png"]).load(this.build.bind(this));
+        return PIXI.loader.add(["img/page-" + this.id + "-bg.jpg", "img/ugc-qr.png", "img/mark.png", "img/long-save.png", "img/save-text.png", "img/ugc-title.png", "img/ugc-title-2.png", "img/ugc-" + this.id + "-" + this.random + ".png"]).load(this.build.bind(this));
       }
     }]);
 
@@ -914,10 +929,10 @@ window.onload = function () {
     wx.ready(function () {
       var shareContent;
       shareContent = {
-        title: "点击测试你的孤独指数",
-        desc: "与兰蔻一起，度过漫漫长夜",
-        link: "http://m.giccoo.com/lancome/",
-        imgUrl: "http://m.giccoo.com/lancome/img/ico.jpg",
+        title: "爱有千万种风情，我只要一种独行",
+        desc: "大声告诉你，这一种才是我要的爱情！",
+        link: "http://m.giccoo.com/mbenz-love/",
+        imgUrl: "http://m.giccoo.com/mbenz-love/img/ico.jpg",
         success: function success() {},
         // alert "success"
         cancel: function cancel() {}
@@ -952,6 +967,7 @@ init = function init() {
   if (TrueH >= 1138) {
     TrueH = 1138;
   }
+  // alert TrueW+","+TrueH
   smaller = TrueW / 640 * 1138 > TrueH;
   navH = Math.ceil(TrueW / 640 * 94 / TrueH * 100);
   return main = new Vue({
@@ -1028,6 +1044,7 @@ init = function init() {
         _ugc = new UGC({
           id: Id,
           wy: this.wy,
+          small: true,
           bg: this.pageBG[Id] != null ? this.pageBG[Id].app.view : null,
           background: function background() {
             return _this3.ugcbg = _ugc.saveUGC;
@@ -1087,7 +1104,7 @@ init = function init() {
         }
         // "//api.giccoo.com/mbenz-love/insert"
 
-        return axios.post("http://localhost:8881/mbenz-love/insert/", this.form).then(function (msg) {
+        return axios.post("//api.giccoo.com/mbenz-love/insert/", this.form).then(function (msg) {
           if (msg.data.recode === 200) {
             alert("提交成功");
             return _this4.regisiterPageShow = false;
@@ -1098,6 +1115,69 @@ init = function init() {
           return alert("提交失败请重试");
         });
       },
+      getIp: function getIp() {
+        var _this5 = this;
+
+        return axios.get("//api.giccoo.com/api/ip/", {}).then(function (msg) {
+          var address, city, item, k, l, len1, len2, ref, results;
+          // console.log msg
+          if (msg.data.recode === 200 && msg.data.info.content.address_detail != null) {
+            address = msg.data.info.content.address_detail;
+            // console.log address
+            // address = {city:"北京市",province:"北京市"}
+            results = [];
+            for (k = 0, len1 = provinces.length; k < len1; k++) {
+              item = provinces[k];
+              if (address.province.indexOf(item) > -1) {
+                _this5.form.province = item;
+                ref = _this5.citys;
+                for (l = 0, len2 = ref.length; l < len2; l++) {
+                  city = ref[l];
+                  if (address.city.indexOf(city) > -1) {
+                    setTimeout(function () {
+                      _this5.form.city = city;
+                      return setTimeout(function () {
+                        return _this5.form.dealer = _this5.dealers[0];
+                      }, 10);
+                    }, 10);
+                    break;
+                  }
+                }
+                break;
+              } else {
+                results.push(void 0);
+              }
+            }
+            return results;
+          }
+        });
+      },
+      share: function share() {
+        var data, image;
+        image = this.ugc;
+        data = {
+          image: image,
+          folder: "mbenzlove"
+        };
+        if (image == null) {
+          return main.faild();
+        }
+        return axios.post(imageurl, data).then(function (msg) {
+          if (msg.data.recode === 200) {
+            return main.success(msg.data);
+          } else {
+            return main.faild();
+          }
+        }).catch(function (e) {
+          // alert e
+          return main.faild();
+        });
+      },
+      success: function success(data) {
+        this.shareImageLink = data.info;
+        return neteaseShareImage();
+      },
+      faild: function faild() {},
       build: function build() {
         this.pageBG[1] = new stars();
         this.pageBG[1].init();
@@ -1157,6 +1237,7 @@ init = function init() {
       // @.mount = true
       this.mount = true;
       this.build();
+      this.getIp();
       load.progressOn = 95;
       this.audio = document.getElementById("bgm");
       this.recordDom = document.getElementById("record");

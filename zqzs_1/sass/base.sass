@@ -1,0 +1,50 @@
+@import sass/base
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "//image.giccoo.com/projects/zqzs_1/"
+
+// animation, delay, duration
+
+$fontColor: #ffffff;
+$pageMainBGColor: #000000;
+
+html,body
+	+w
+	+h
+body
+	color: $fontColor
+	+bc($pageMainBGColor)
+	max-width: 640px
+	max-height: 1138px
+	+m
+	+posr
+video,canvas
+	+w
+	+h(auto)
+
+.main
+	+w
+	+h
+	+posr
+	max-width: 1280px
+	+m
+	font-size: 0
+.video
+	+posr
+	+w
+	.box
+		+posa
+		+tl(0,12%)
+		+w(76%)
+		+h
+		video
+			+h
+.gif
+	+w
+	+box
+	+bc(#04080f)
+	+p(0 9.1%)
+	img
+		+w

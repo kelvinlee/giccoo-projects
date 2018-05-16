@@ -946,7 +946,15 @@ body {
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 109; }
+    z-index: 109;
+    height: auto;
+    display: inline-block; }
+    .main .nav img {
+      pointer-events: none;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none; }
     .main .nav .sj {
       position: absolute;
       top: 0px;
@@ -1046,7 +1054,7 @@ body {
   background-size: 100% auto; }
   .page .bg {
     position: absolute;
-    bottom: 0px;
+    top: 0px;
     left: 0px;
     font-size: 0; }
     .page .bg .animations {
@@ -1220,11 +1228,6 @@ body {
     background-size: cover;
     background-color: transparent; }
 
-.smaller .page .bg {
-  top: 0px;
-  left: 0px;
-  bottom: auto; }
-
 .bgm {
   position: absolute;
   bottom: 82%;
@@ -1373,7 +1376,19 @@ body {
         padding: 0.3rem 0;
         line-height: 1.4em; }
       .page-regisiter .form .form-group .select {
-        position: relative; }
+        position: relative;
+        overflow: hidden; }
+        .page-regisiter .form .form-group .select span {
+          display: inline-block;
+          width: 94%;
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          text-indent: 0;
+          line-height: 1.4em;
+          vertical-align: middle; }
         .page-regisiter .form .form-group .select select {
           position: absolute;
           top: 0px;
@@ -1435,19 +1450,16 @@ body {
               transform: translate3d(-50%, 50%, 0); }
 
 .page-record {
-  z-index: 99;
-  background: url("../img/page-record-bg.jpg") no-repeat center center;
-  background-size: cover;
-  background-color: transparent; }
+  z-index: 99; }
   .page-record .record {
     position: absolute;
-    bottom: 4%;
+    bottom: 2%;
     left: 50%;
     -webkit-transform: translate3d(-50%, 0, 0);
             transform: translate3d(-50%, 0, 0);
-    width: 3rem;
-    height: 3rem;
-    padding: 0.3rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 0.24rem;
     background-color: #fff;
     border-radius: 50%;
     font-size: 0;
@@ -1461,15 +1473,15 @@ body {
               transform: translate3d(-50%, -50%, 0); }
     .page-record .record .progress {
       position: absolute;
-      top: 10%;
+      top: 8%;
       left: 8%;
-      width: 3rem;
-      height: 3rem;
+      width: 2.4rem;
+      height: 2.4rem;
       z-index: 99;
       font-size: 0;
       overflow: hidden; }
       .page-record .record .progress .wrapper {
-        width: 1.5rem;
+        width: 1.2rem;
         height: 100%;
         position: absolute;
         top: 0;
@@ -1481,19 +1493,19 @@ body {
       .page-record .record .progress .circleProgress {
         position: absolute;
         top: 0;
-        width: 2.58rem;
-        height: 2.58rem;
-        border: solid 0.21rem transparent;
+        width: 2.064rem;
+        height: 2.064rem;
+        border: solid 0.168rem transparent;
         border-radius: 50%;
         -webkit-transform: rotate(45deg);
                 transform: rotate(45deg); }
         .page-record .record .progress .circleProgress.rightcircle {
-          border-top: 0.21rem solid #b5272d;
-          border-right: 0.21rem solid #b5272d;
+          border-top: 0.168rem solid #b5272d;
+          border-right: 0.168rem solid #b5272d;
           right: 0; }
         .page-record .record .progress .circleProgress.leftcircle {
-          border-bottom: 0.21rem solid #b5272d;
-          border-left: 0.21rem solid #b5272d;
+          border-bottom: 0.168rem solid #b5272d;
+          border-left: 0.168rem solid #b5272d;
           left: 0; }
     .page-record .record.off .progress .circleProgress {
       -webkit-transform: rotate(-135deg);
@@ -1527,3 +1539,17 @@ body {
     height: 70%;
     overflow: hidden;
     opacity: 0; }
+
+.smaller .page .bg {
+  top: 50%;
+  left: 0px;
+  bottom: auto;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0); }
+
+.page-home .bg, .page-1 .bg, .page-record .bg, .page-ugc .bg {
+  top: 0px;
+  left: 0px;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  bottom: auto; }

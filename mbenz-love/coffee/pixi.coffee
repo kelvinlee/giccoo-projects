@@ -189,7 +189,7 @@ class UGC
     return false unless @.moving
 
   constructor: (options)->
-    {@id,@bg,@wy,@background,@ugc} = options
+    {@id,@bg,@wy,@background,@ugc,@small} = options
     @.init()
   get: ->
     
@@ -212,9 +212,10 @@ class UGC
     @.mark = mark = new Sprite res["img/mark.png"].texture
     mark.x = (640 - mark.width)/2
     mark.y = (1138 - mark.height)/2
+
     qr = @.qr = new Sprite res["img/ugc-qr.png"].texture
-    @.qr.x = 20
-    @.qr.y = 1138 + 4 - 20 - @.qr.height
+    @.qr.x = 35
+    @.qr.y = 1138 + 4 - 35 - @.qr.height
     
     title = new Sprite res["img/ugc-title.png"].texture
     @.app.stage.addChild title
@@ -227,16 +228,36 @@ class UGC
     @.saveUGC = @.app.view.toDataURL()
     @.ugc()
 
-    qr.x = mark.x + 20
-    qr.y = mark.y + mark.height - qr.height - 20
+    title.alpha = 0
+    
     @.app.stage.addChildAt mark,3
+    text.y = 60
+    title2 = new Sprite res["img/ugc-title-2.png"].texture
+    @.app.stage.addChild title2
+
     saveText = "img/long-save.png"
     if @wy? and @wy
       saveText = "img/save-text.png"
     save = new Sprite res[saveText].texture
+    
+    @.app.stage.addChild save
+
+    if @.small? and @.small
+      mark.x += mark.width*0.1/2
+      # mark.y += mark.height*0.1/2
+      mark.scale.x = 0.9
+      mark.scale.y = 0.9
+      qr.scale.x = 0.9
+      qr.scale.y = 0.9
+      save.scale.x = 0.9
+      save.scale.y = 0.9
+
     save.x = 640 - mark.x - save.width - 20
     save.y = mark.y + mark.height - save.height - 20
-    @.app.stage.addChild save
+
+    qr.x = mark.x + 20
+    qr.y = mark.y + mark.height - qr.height - 20
+
 
     # @.over()
   init: ->
@@ -254,5 +275,6 @@ class UGC
       "img/long-save.png"
       "img/save-text.png"
       "img/ugc-title.png"
+      "img/ugc-title-2.png"
       "img/ugc-#{@.id}-#{@.random}.png"
     ]).load(@.build.bind(@))

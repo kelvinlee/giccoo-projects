@@ -4177,6 +4177,39 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/lancome\/img\/music-close.png": {
+		"ft": 32768,
+		"iS": 2533,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/music-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lancome\/img\/music-touch.png": {
+		"ft": 32768,
+		"iS": 565,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/music-touch.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lancome\/img\/music.png": {
+		"ft": 32768,
+		"iS": 3281,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/music.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/lancome\/img\/right.png": {
 		"ft": 32768,
 		"iS": 1587,
@@ -6445,6 +6478,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/mbenz-love\/img\/ico.jpg": {
+		"ft": 16384,
+		"iS": 34210,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/mbenz-love\/img\/left.png": {
 		"ft": 32768,
 		"iS": 1678,
@@ -6651,6 +6695,17 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-1-text.png": {
+		"ft": 32768,
+		"iS": 77294,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-1-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
@@ -7662,6 +7717,17 @@
 		"iS": 20446,
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/ugc-qr.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-title-2.png": {
+		"ft": 32768,
+		"iS": 17508,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-title-2.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
@@ -10467,6 +10533,158 @@
 		"oA": 1,
 		"oAP": "\/build\/zhishinews",
 		"oF": 0
+		},
+	"\/zqzs_1\/coffee\/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/js\/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/zqzs_1\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/zqzs_1\/css",
+		"oF": 0
+		},
+	"\/zqzs_1\/img\/ico.jpg": {
+		"ft": 16384,
+		"iS": 14748,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/img\/logo.gif": {
+		"ft": 4194304,
+		"iS": 65530,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/logo.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/zqzs_1\/img\/part-1.jpg": {
+		"ft": 16384,
+		"iS": 113742,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/part-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/img\/part-2.jpg": {
+		"ft": 16384,
+		"iS": 94210,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/part-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/img\/part-3.jpg": {
+		"ft": 16384,
+		"iS": 40351,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/part-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/img\/part-4.jpg": {
+		"ft": 16384,
+		"iS": 57832,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/part-4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/img\/part-5.jpg": {
+		"ft": 16384,
+		"iS": 43531,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/part-5.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/img\/poster.jpg": {
+		"ft": 16384,
+		"iS": 31091,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/poster.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/img\/video-bg.jpg": {
+		"ft": 16384,
+		"iS": 9648,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/video-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/index.html",
+		"oF": 0
+		},
+	"\/zqzs_1\/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/zqzs_1\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/js\/main-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/zqzs_1\/sass\/base.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/css\/base.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		}
 	},
 "hooks": [
@@ -12243,8 +12461,8 @@
 		"autoOutputPathStyle": 2,
 		"createSourceMap": 0,
 		"minifyOutput": 1,
-		"outputStyle": 0,
-		"syntaxCheckerStyle": 1,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0,
 		"transpilerStyle": 1
 		},
 	"languageDefaultsCSS": {

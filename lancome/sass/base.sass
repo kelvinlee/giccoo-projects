@@ -141,7 +141,38 @@ body
 		+posa
 		+bl
 		font-size: 0
-
+.player-fix
+	+posa
+	+tr(0px,0px)
+	z-index: 39
+	font-size: 0
+	.cursor
+		+w(12px)
+		+posa
+		+tr(0,50%)
+		z-index: 103
+		transform: rotate(-30deg)
+		transform-origin: top left
+		transition: all 1s ease
+		&.on
+			transform: rotate(0deg)
+	.record
+		+posr
+		+w(40px)
+		+m(10px)
+		font-size: 0
+		+animation(second,2s,linear,infinite)
+		&:after
+			content: " "
+			+posa
+			+tl
+			+w
+			+h
+			+b($cdn+"img/music-close.png",no-repeat,center,center,cover)
+		&.on
+			&:after
+				display: none
+			
 .loading
 	+w
 	+h
@@ -197,7 +228,7 @@ body
 		h1
 			+font-size(1rem)
 		.item
-			+font-size(0.7rem)
+			+font-size(0.8rem)
 			+p(0.3rem 0)
 			+box
 			padding-left: 12%
@@ -220,7 +251,8 @@ body
 					+transform(translate3d(0,-50%,0))
 					+b($cdn+"img/right.png",no-repeat,center,center,cover)
 					+animation(fadeIn,0.6s,ease)
-
+		.note
+			+font-size(0.6rem)
 		.btn
 			margin-top: 6%
 			+w(35%)
@@ -243,7 +275,6 @@ body
 			.btn
 				margin-left: 0
 				+w(30%)
-		
 	.answers
 		&.on-0
 			.answer.answer-0

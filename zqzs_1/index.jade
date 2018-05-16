@@ -1,0 +1,58 @@
+extends ../libs/jade/layout-clean
+block title
+	| 知「擎」者说
+
+block css
+	meta(name="author",content="m.giccoo.com")
+	//- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+	//- link(rel="stylesheet",href="//image.giccoo.com/projects/libs/css/animate.min.css")
+	link(rel="stylesheet",href="css/base.css")
+	//- script.
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
+
+block content
+	- url = "//image.giccoo.com/projects/zqzs_1";
+	- url = ".";
+	.main
+		.part.part-1
+			img(src="#{url}/img/part-1.jpg")
+		.video
+			img(src="#{url}/img/video-bg.jpg")
+			.box
+				video(controls="true" src="//image.giccoo.com/projects/zhishinews/video/1.mp4" id="videoid" poster="#{url}/img/poster.jpg" x5-video-player-type="h5" x5-video-player-fullscreen="true" x-webkit-airplay="allow" webkit-playsinline playsinline)
+		.part.part-2
+			img(src="#{url}/img/part-2.jpg")
+		.gif
+			img(src="#{url}/img/logo.gif")
+		.part.part-3
+			a(href="https://zhuanlan.zhihu.com/p/31822855")
+				img(src="#{url}/img/part-3.jpg")
+		.part.part-4
+			img(src="#{url}/img/part-4.jpg")
+		.part.part-5
+			a(href="https://www.zhihu.com/question/275858771")
+				img(src="#{url}/img/part-5.jpg")
+
+	
+
+block js
+	- url = "/";
+	script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+	//- script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+	//- script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
+	//- script(src="//image.giccoo.com/projects/libs/js/min/Tween.min.js")
+	//- script(src="/libs/js/min/jquery.min.js")
+	//- script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+	script(src="js/main.js?v=1")
+	
+
+
+
+	

@@ -12,7 +12,7 @@
   <body>
     <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" :class="{smaller: smaller}" class="main">
       <div @click="play" class="bgm">
-        <audio id="bgm" :src="musiclink"></audio><img :src="'./img/audio-'+playing+'.png'">
+        <audio id="bgm" :src="musiclink" loop="true"></audio><img :src="'./img/audio-'+playing+'.png'">
         <transition name="page-fade">
           <p v-show="noteMsg" class="noteMsg">为保证体验效果<br/>请打开音乐</p>
         </transition>
@@ -34,11 +34,12 @@
           </div>
           <div class="content">
             <div @click="moveNext" class="right"></div>
-            <div :style="{top: navH+'%'}" class="texts">
-              <div class="text text-1 fadeInUp animated duration-6 delay-3"><img src="./img/page-1-text-1.png"></div>
-              <div class="text text-2 fadeInUp animated duration-7 delay-4"><img src="./img/page-1-text-2.png"></div>
-              <div class="text text-3 fadeInUp animated duration-8 delay-5"><img src="./img/page-1-text-3.png"></div>
-              <div class="text text-4 fadeInUp animated duration-9 delay-6"><img src="./img/page-1-text-4.png"></div>
+            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-1-text.png">
+              <!-- -for (var i=1;i<=4;i++)
+              .text(class="text- fadeInUp animated duration-NaN delay-NaN")
+              	img(src="./img/page-1-text-.png")
+              -->
+              <!-- -;-->
             </div>
             <div @click="gameStart(1)" class="btn btn-start"></div>
           </div>
@@ -159,7 +160,7 @@
         </div>
       </transition>
       <transition name="page-fade">
-        <div v-show="false &amp;&amp; regisiterPageShow" class="page page-regisiter">
+        <div v-show="regisiterPageShow" class="page page-regisiter">
           <div class="content">
             <form class="form">
               <div class="form-title"><img src="./img/form-title.png"></div>
@@ -230,6 +231,7 @@
       </transition>
       <transition name="page-fade">
         <div v-show="recordPageShow" class="page page-record">
+          <div class="bg"><img src="./img/page-record-bg.jpg"></div>
           <div class="content">
             <div id="record" :class="{off: !recording,on: recording}" class="record">
               <div class="mic"><img src="./img/page-record-microphone.png"></div>

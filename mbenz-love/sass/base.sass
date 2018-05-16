@@ -100,6 +100,13 @@ body
 		+posa			
 		+tl
 		z-index: 109
+		// pointer-events: none
+		// user-select: none
+		img
+			pointer-events: none
+			user-select: none
+		+h(auto)
+		+show-inline
 		.sj
 			+posa
 			+tr
@@ -178,7 +185,7 @@ body
 	background-size: 100% auto
 	.bg
 		+posa
-		+bl
+		+tl
 		font-size: 0
 		.animations
 			+posa
@@ -270,13 +277,7 @@ body
 			left: 1%
 			+b($cdn+"img/left.png",no-repeat,center,center,cover)
 
-.smaller
-	.page
-		.bg
-			// +tl(50%)
-			// +transform(translate3d(0,-50%,0))
-			+tl
-			bottom: auto
+
 
 
 .bgm
@@ -294,6 +295,7 @@ body
 
 .page-home
 	+tl
+
 	.content
 		+posa
 		+w
@@ -368,6 +370,17 @@ body
 				line-height: 1.4em
 			.select
 				+posr
+				+overhide
+				span
+					+show-inline
+					+w(94%)
+					+box
+					+overhide
+					text-overflow: ellipsis
+					white-space: nowrap
+					text-indent: 0
+					line-height: 1.4em
+					vertical-align: middle
 				select
 					+posa
 					+tl
@@ -420,12 +433,12 @@ body
 
 .page-record
 	z-index: 99
-	+b($cdn+"img/page-record-bg.jpg",no-repeat,center,center,cover)
+	// +b($cdn+"img/page-record-bg.jpg",no-repeat,center,center,cover)
 	.record
-		$size: 3rem
+		$size: 2.4rem
 		$borderSize: $size * .07
 		+posa
-		+bl(4%,50%)
+		+bl(2%,50%)
 		+transform(translate3d(-50%,0,0))
 		+w($size)
 		+h($size)
@@ -442,7 +455,7 @@ body
 			+transform(translate3d(-50%,-50%,0))
 		.progress
 			+posa
-			+tl(10%,8%)
+			+tl(8%,8%)
 			+w($size)
 			+h($size)
 			z-index: 99
@@ -504,3 +517,22 @@ body
 		+wh(80%,70%)
 		+overhide
 		opacity: 0
+
+
+.smaller
+	.page
+		.bg
+			+tl(50%)
+			bottom: auto
+			+transform(translate3d(0,-50%,0))
+			// +tl(50%)
+			// +transform(translate3d(0,-50%,0))
+			
+
+
+.page-home,.page-1,.page-record,.page-ugc
+	.bg
+		+tl
+		+transform(translate3d(0,0,0))
+		bottom: auto
+		
