@@ -233,7 +233,7 @@ function setPage3(){
 //======计时器
 var timeT1=new createjs.Bitmap("img/timetoend.png")
 var timeT=new createjs.Text("0:03:00","29px Arial", "#ffffff")
-var timeLeft=100
+var timeLeft=180
 var t1000
 function setTimer(){
   stage3.addChild(timeT1)

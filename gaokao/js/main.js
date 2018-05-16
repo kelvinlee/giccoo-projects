@@ -318,7 +318,7 @@ function savePic(){
   //TweenLite.set($("#pngHolder"),{display:"block",opacity:1})
 }
 $("#btnshare").click(function(){
-
+  neteaseShare() 
 })
 
 function neteaseShare() {
