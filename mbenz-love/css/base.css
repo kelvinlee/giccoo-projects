@@ -1554,7 +1554,8 @@ body {
           transform: translate3d(0, -50%, 0); }
 
 .page-home .bg, .page-1 .bg, .page-record .bg, .page-ugc .bg {
-  top: 0px;
+  top: auto;
+  bottom: 0px;
   left: 0px;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);

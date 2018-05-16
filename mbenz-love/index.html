@@ -49,11 +49,11 @@
           <div class="content">
             <div @click="movePrev" class="left"></div>
             <div @click="moveNext" class="right"></div>
-            <div :style="{top: navH+'%'}" class="texts">
-              <div class="text text-1 fadeInUp animated duration-6 delay-3"><img src="./img/page-2-text-1.png"></div>
-              <div class="text text-2 fadeInUp animated duration-7 delay-4"><img src="./img/page-2-text-2.png"></div>
-              <div class="text text-3 fadeInUp animated duration-8 delay-5"><img src="./img/page-2-text-3.png"></div>
-              <div class="text text-4 fadeInUp animated duration-9 delay-6"><img src="./img/page-2-text-4.png"></div>
+            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-2-text.png">
+              <!-- -for (var i=1;i<=4;i++)
+              .text(class="text- fadeInUp animated duration-NaN delay-NaN")
+              	img(src="./img/page-2-text-.png")
+              -->
             </div>
             <div @click="gameStart(2)" class="btn btn-start"></div>
           </div>

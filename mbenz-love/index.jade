@@ -55,7 +55,7 @@ block content
 			- pageId = 1;
 			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
 				.bg
-					img(src="#{url}/img/page-1-bg.jpg")
+					img(src="#{url}/img/page-#{pageId}-bg.jpg")
 					.animations#stars
 						
 				.content
@@ -68,18 +68,19 @@ block content
 			- pageId = 2;
 			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
 				.bg
-					img(src="#{url}/img/page-2-bg.jpg")
+					img(src="#{url}/img/page-#{pageId}-bg.jpg")
 					.animations
 						.hair
-							img(src="#{url}/img/page-2-hair.gif")
+							img(src="#{url}/img/page-#{pageId}-hair.gif")
 				.content
 					.left(@click="movePrev")
 					.right(@click="moveNext")
 					.texts(:style="{top: navH+'%'}")
-						-for (var i=1;i<=4;i++)
+						img(src="#{url}/img/page-#{pageId}-text.png")
+						// -for (var i=1;i<=4;i++)
 							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
 								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
-						-;
+						//- -;
 					.btn.btn-start(@click="gameStart(#{pageId})")
 		transition(name="page-animation")
 			- pageId = 3;
