@@ -877,6 +877,62 @@ ul {
   -webkit-animation-name: ball;
           animation-name: ball; }
 
+@-webkit-keyframes moveLeft {
+  0% {
+    -webkit-transform: translate3d(10px, 0, 0);
+            transform: translate3d(10px, 0, 0);
+    opacity: 0; }
+  10%, 90% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 0; } }
+
+@keyframes moveLeft {
+  0% {
+    -webkit-transform: translate3d(10px, 0, 0);
+            transform: translate3d(10px, 0, 0);
+    opacity: 0; }
+  10%, 90% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 0; } }
+
+.moveLeft {
+  -webkit-animation-name: moveLeft;
+          animation-name: moveLeft; }
+
+@-webkit-keyframes moveRight {
+  0% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+            transform: translate3d(-10px, 0, 0);
+    opacity: 0; }
+  10%, 90% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 0; } }
+
+@keyframes moveRight {
+  0% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+            transform: translate3d(-10px, 0, 0);
+    opacity: 0; }
+  10%, 90% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 0; } }
+
+.moveRight {
+  -webkit-animation-name: moveRight;
+          animation-name: moveRight; }
+
 html, body {
   width: 100%;
   height: 100%; }
@@ -1225,12 +1281,24 @@ body {
     right: 1%;
     background: url("../img/right.png") no-repeat center center;
     background-size: cover;
-    background-color: transparent; }
+    background-color: transparent;
+    -webkit-animation: moveRight 2s ease;
+            animation: moveRight 2s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
   .page .content .left {
     left: 1%;
     background: url("../img/left.png") no-repeat center center;
     background-size: cover;
-    background-color: transparent; }
+    background-color: transparent;
+    -webkit-animation: moveLeft 2s ease;
+            animation: moveLeft 2s ease;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
 
 .bgm {
   position: absolute;

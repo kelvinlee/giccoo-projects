@@ -43,7 +43,26 @@ $pageMainBGColor: #000000;
 		opacity: 1
 	75%
 		+transform(scale(0.95,0.95) translate3d(-5%,-15%,0))
-	
+
++keyframes(moveLeft)
+	0%
+		+transform(translate3d(10px,0,0))
+		opacity: 0
+	10%,90%
+		opacity: 1
+	100%
+		+transform(translate3d(0,0,0))
+		opacity: 0
+
++keyframes(moveRight)
+	0%
+		+transform(translate3d(-10px,0,0))
+		opacity: 0
+	10%,90%
+		opacity: 1
+	100%
+		+transform(translate3d(0,0,0))
+		opacity: 0
 
 html,body
 	+w
@@ -275,9 +294,11 @@ body
 		.right
 			right: 1%
 			+b($cdn+"img/right.png",no-repeat,center,center,cover)
+			+animation(moveRight,2s,ease,infinite)
 		.left
 			left: 1%
 			+b($cdn+"img/left.png",no-repeat,center,center,cover)
+			+animation(moveLeft,2s,ease,infinite)
 
 
 
