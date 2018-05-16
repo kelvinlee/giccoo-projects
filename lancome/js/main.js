@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Tn, _CDN, _imgurl, _animate, ansStar, appStar, buildUGC, canvasImgs, createAnswer, createStar, getRandom, global, imageurl, init, load, loadWechatConfig, main, mark, musicName, myTime, myTimeDetail, myTimeLine, neteaseShareImage, pre, randomSort, scoreBox, scoreInfinity, scoreMusicTime, scoreShareTimes, scoreZore, shareMusicName, stars, sys, textsBox;
+var Tn, _CDN, _imgurl, _animate, ansStar, appStar, buildUGC, canvasImgs, createAnswer, createStar, getRandom, global, imageurl, init, load, loadWechatConfig, main, mark, musicName, myTime, myTimeDetail, myTimeLine, myTimeName, neteaseShareImage, pre, randomSort, scoreBox, scoreInfinity, scoreMusicTime, scoreShareTimes, scoreZore, shareMusicName, stars, sys, textsBox;
 
 randomSort = function randomSort(obj) {
   var newArr, oldarr, _randomSortFun;
@@ -87,7 +87,7 @@ sys = null;
 
 imageurl = "//api.giccoo.com/api/upload/image64/";
 
-textsBox = [[["你是不识孤独滋味的少年", "永远意气风发", "永远活力四射", "抹上眼霜 你就是最亮的星"]], [["你的感知神经似乎不太敏感", "偶尔空虚，经常充实才是生活常态", "寂寞的时候默念咒语", "把大家都变成发光眼霜你就不孤独啦"], ["你有时候也想45度静静仰望天空", "但眼泪似乎不太掉得下来", "孤独的感觉总是像龙卷风一样袭来", "不过还好 发光眼霜是你的防护盾"]], [["好险", "你距离显性孤独人口只差最后一步", "你希望微信能被秒回", "也希望朋友圈都有人点赞", "但大家似乎都不太给面子"], ["或许你有酒", "或许你有远方", "可是有时候", "你还是愿意待在家里", "做一只听着歌默默生长的蘑菇"]], [["你像一只小刺猬", "想露出软软的肚皮", "被温柔抚摸", "可是很多人惧怕你坚硬的刺", "而选择远离"], ["「你怎么会喜欢这个」", "「我觉得那个地方不好玩」", "「一把年纪该结婚了」", "永远有人在喋喋不休", "而你只想让他们闭嘴"]], [["在努力，在奔跑", "一个人的路总是艰苦", "可是一个人", "也更加恣肆，更加自由", "不如把孤独当成甜品 一口吃掉"], ["你是个总觉得差一点点的人", "差一点点就饱了", "差一点点就满足了", "连百分百的孤独感", "都觉得差了一点点"]], [["你幻想自己是一只鱼", "以为7秒就能忘记那种寂寞的感觉 ", "其实你只是个忘用眼霜的人类", "黯淡到连自己都快被遗忘"]]];
+textsBox = [[["你是不识孤独滋味的少年", "永远意气风发", "永远活力四射", "抹上眼霜 你就是最亮的星"]], [["你的感知神经似乎不太敏感", "偶尔空虚，经常充实才是生活常态", "寂寞的时候默念咒语", "把大家都变成“发光”眼霜你就不孤独啦"], ["你有时候也想45度静静仰望天空", "但眼泪似乎不太掉得下来", "孤独的感觉总是像龙卷风一样袭来", "不过还好 “发光”眼霜是你的防护盾"]], [["好险", "你距离显性孤独人口只差最后一步", "你希望微信能被秒回", "也希望朋友圈都有人点赞", "但大家似乎都不太给面子"], ["或许你有酒", "或许你有远方", "可是有时候", "你还是愿意待在家里", "做一只听着歌默默生长的蘑菇"]], [["你像一只小刺猬", "想露出软软的肚皮", "被温柔抚摸", "可是很多人惧怕你坚硬的刺", "而选择远离"], ["「你怎么会喜欢这个」", "「我觉得那个地方不好玩」", "「一把年纪该结婚了」", "永远有人在喋喋不休", "而你只想让他们闭嘴"]], [["在努力，在奔跑", "一个人的路总是艰苦", "可是一个人", "也更加恣肆，更加自由", "不如把孤独当成甜品 一口吃掉"], ["你是个总觉得差一点点的人", "差一点点就饱了", "差一点点就满足了", "连百分百的孤独感", "都觉得差了一点点"]], [["你幻想自己是一只鱼", "以为7秒就能忘记那种寂寞的感觉 ", "其实你只是个忘用眼霜的人类", "黯淡到连自己都快被遗忘"]]];
 
 scoreBox = [[11, 17, 1], [2, 5, 12], [7, 9, 23]];
 
@@ -104,13 +104,19 @@ myTimeLine = [20, 21, 22, 23, 24, 0, 1, 2, 3, 4];
 // shareTimesLine = [20,15,6]
 myTime = 20; // 分享时间
 
+myTimeName = "晚上";
+
+if (myTime <= 5) {
+  myTimeName = "凌晨";
+}
+
 myTimeDetail = "20:25"; // 详细的分享时间
 
 // shareTimes = 30 # 分享次数
 // numberWith = 24249 # 多少人
 musicName = "夜空中最亮的星"; // 一起听的歌
 
-shareMusicName = "cheapest flight"; // 分享过的音乐
+shareMusicName = ""; // 分享过的音乐 cheapest flight
 
 canvasImgs = ["img/star.png", "img/answer-1-bg.jpg", "img/answer-1-mark-bg.jpg", "img/answer-2-bg.jpg", "img/mark-1.png", "img/mark-2.png", "img/item-elephant.png", "img/item-owl.png", "img/item-panda.png", "img/symbol.png"];
 
@@ -211,6 +217,7 @@ init = function init() {
       ugcPageShow: false,
       waitPageShow: false,
       lastPageShow: false,
+      waitPageBox: false,
       mount: false,
       audio: null,
       w: TrueW,
@@ -221,25 +228,52 @@ init = function init() {
       score: 0,
       scorebg: 1,
       musiclink: "",
+      bgmlink: "//image.giccoo.com/projects/lancome/mp3/bgm.mp3",
+      playing: false,
+      bgmplaying: false,
       ugc: null,
       ugcbg: null,
       wy: false,
       shareImageLink: "",
       questionMark: 0,
       answerList: [{
-        question: ["\u6700\u8FD1\u4E00\u6B21\u51CC\u6668" + myTimeDetail + "\u8FD8\u5728\u542C\u6B4C\u7684\u4F60\uFF0C\u89C9\u5F97\u90A3\u65F6\u8C01\u4F1A\u966A\u7740\u4F60\uFF1F"],
-        answers: ["飞累了，借你家阳台歇歇的猫头鹰", "冰箱里那只舔着冰淇淋的蠢大象", "墙角边偷偷涂兰蔻发光眼霜的大熊猫"]
+        question: ["\u6700\u8FD1\u4E00\u6B21" + myTimeName + myTimeDetail + "\u8FD8\u5728\u542C\u6B4C\u7684\u4F60\uFF0C\u89C9\u5F97\u90A3\u65F6\u8C01\u4F1A\u966A\u7740\u4F60\uFF1F"],
+        answers: ["飞累了，借你家阳台歇歇的猫头鹰", "冰箱里那只舔着冰淇淋的蠢大象", "墙角边偷偷涂兰蔻“发光”眼霜的大熊猫"]
       }, {
         question: ["\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u6BD4\u82F1\u56FD\u7684\u6674\u5929\u8FD8\u5C11\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u591A\u5230\u670D\u52A1\u5668\u762B\u75EA\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u548C\u5927\u8FC1\u5F99\u65F6\u7684\u89D2\u9A6C\u4E00\u6837\u591A\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u6BD4\u7406\u5DE5\u5927\u7684\u5973\u751F\u8FD8\u5C11\u3002\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F"],
-        answers: ["敲击键盘的声音", "窃窃私语聊天的声音", "刷手机的声音"]
+        answers: ["敲击键盘", "窃窃私语聊天", "刷手机"]
       }, {
-        question: ["\u4E4B\u524D\u4ECE\u4E91\u97F3\u4E50\u5206\u4EAB\u8FC7\u4E00\u9996\u300A" + shareMusicName + "\u300B\u4F60\u89C9\u5F97\u670B\u53CB\u5708\u7684\u8C01\u70B9\u5F00\u542C\u8FC7\uFF1F"],
+        question: [shareMusicName === "" ? "最近都没分享过歌曲的你，如果分享，觉得谁会点开听？" : "\u4E4B\u524D\u4ECE\u4E91\u97F3\u4E50\u5206\u4EAB\u8FC7\u4E00\u9996\u300A" + shareMusicName + "\u300B\u4F60\u89C9\u5F97\u8C01\u70B9\u5F00\u542C\u8FC7\uFF1F"],
         answers: ["最想让TA听到的那个人", "和我一样喜欢这类曲风的闺蜜", "我才不care有没有人点开听"]
       }],
       answers: [-1, -1, -1]
     },
     // computed:
     methods: {
+      playbgm: function playbgm() {
+        this.playing = !this.playing;
+        this.bgmplaying = !this.bgmplaying;
+        if (this.playing) {
+          return document.getElementById("bgm").play();
+        } else {
+          return document.getElementById("bgm").pause();
+        }
+      },
+      audioplay: function audioplay() {
+        return this.playing = true;
+      },
+      audiopause: function audiopause() {
+        return this.playing = false;
+      },
+      audiomusicplay: function audiomusicplay() {
+        return this.audio.pause();
+      },
+      audiomusicpause: function audiomusicpause() {
+        console.log("music ended:", this.bgmplaying);
+        if (this.bgmplaying) {
+          return this.audio.play();
+        }
+      },
       runScore: function runScore() {
         var i, j, ref, time;
         // 计算得分
@@ -362,17 +396,27 @@ init = function init() {
         return this.lastPageShow = true;
       },
       buildUGC: function buildUGC() {
-        var _this4 = this;
-
         this.runScore();
         this.waitPageShow = true;
-        setTimeout(function () {
-          _this4.waitPageShow = false;
-          return _this4.ugcPageShow = true;
-        }, 3000);
+        // setTimeout =>
+        // 	@.waitPageShow = false
+        // 	@.ugcPageShow = true
+        // ,3000
         return this.createUGC();
       },
+      gotoUGC: function gotoUGC() {
+        var _this4 = this;
+
+        this.waitPageBox = true;
+        return setTimeout(function () {
+          _this4.waitPageShow = false;
+          return _this4.ugcPageShow = true;
+        }, 4000);
+      },
       next: function next() {
+        if (this.bgmplaying) {
+          this.audio.play();
+        }
         if (this.answers[this.now] <= -1) {
           return false;
         }
@@ -390,7 +434,7 @@ init = function init() {
 
         this.musiclink = "./mp3/mp3-" + i + ".mp3";
         return setTimeout(function () {
-          return _this5.audio.play();
+          return _this5.audiomusic.play();
         }, 1000 / 30);
       },
       select: function select(index) {
@@ -414,8 +458,24 @@ init = function init() {
       this.mount = true;
       this.questionMark = Math.floor(Math.random() * this.answerList[1].question.length);
       this.audio = document.getElementById("bgm");
+      this.audiomusic = document.getElementById("music");
       // @.answerPageShow = true
-      return this.answerCanvas = new createAnswer();
+      this.answerCanvas = new createAnswer();
+      if (this.audio) {
+        this.audio.addEventListener("play", this.audioplay.bind(this));
+      }
+      if (this.audio) {
+        this.audio.addEventListener("pause", this.audiopause.bind(this));
+      }
+      if (this.audio) {
+        this.audio.addEventListener("ended", this.audiopause.bind(this));
+      }
+      if (this.audiomusic) {
+        this.audiomusic.addEventListener("play", this.audiomusicplay.bind(this));
+      }
+      if (this.audiomusic) {
+        return this.audiomusic.addEventListener("ended", this.audiomusicpause.bind(this));
+      }
     }
   });
 };

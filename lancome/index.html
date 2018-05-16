@@ -17,15 +17,11 @@
       </div>
     </div>
     <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">
-<<<<<<< HEAD
       <div class="player-fix">
         <div :class="{on: playing}" @click="playbgm" class="record"><img src="./img/music.png"></div>
         <audio id="bgm" :src="bgmlink" loop="true"></audio>
         <audio id="music" :src="musiclink"></audio>
       </div>
-=======
-      <audio id="bgm" :src="musiclink"></audio>
->>>>>>> 35e7a41bec2b28c0167e53ef9313c3ec37af2073
       <div class="page page-home">
         <div id="stars" class="bg"></div>
         <div v-show="homepageShow" @click="gotoAnswer" class="content">
@@ -47,6 +43,7 @@
               <h1 v-html="item.question.length &gt; 1 ? item.question[questionMark] : item.question[0]"></h1>
               <div class="answer-list">
                 <div v-for="value,ind in item.answers" @click="select(ind)" :class="{right: answers[index] == ind}" class="item">{{value}}</div>
+                <div v-if="index == 1" class="note">*选择答案后将自动播放音效</div>
               </div>
               <div @click="next" class="btn"><img v-if="index &lt;= 1" src="./img/btn-next.png"><img v-if="index &gt; 1" src="./img/btn-done.png"></div>
             </div>
@@ -55,7 +52,10 @@
       </transition>
       <transition name="page-fade">
         <div v-show="waitPageShow" class="page page-wait">
-          <div class="content"><a href="https://h5.m.taobao.com/weapp/view_page.htm?page=shop/activity&amp;userId=2360209412&amp;shopId=115862174&amp;pageId=28363464"><img src="./img/wait.jpg"></a></div>
+          <div v-show="!waitPageBox" @click="gotoUGC" class="content"><img src="./img/wait-box.jpg"></div>
+          <transition name="page-fade">
+            <div v-show="waitPageBox" class="content"><a href="https://h5.m.taobao.com/weapp/view_page.htm?page=shop/activity&amp;userId=2360209412&amp;shopId=115862174&amp;pageId=28363464"><img src="./img/wait.gif"></a></div>
+          </transition>
         </div>
       </transition>
       <transition name="page-fade">

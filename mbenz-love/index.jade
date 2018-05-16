@@ -19,7 +19,6 @@ block css
 block content
 	- url = "//image.giccoo.com/projects/mbenz-love";
 	- url = ".";
-<<<<<<< HEAD
 	#load.loading(:class="{hide:kill}")
 		.full.animated.duration-7(:class="{fadeOut: !mount}")
 			.content
@@ -30,17 +29,10 @@ block content
 							span(class="opc font font-#{i}") #{i}
 						-;
 						span(class="opc font font-last") %
-=======
-	//- #load.loading
-		.content
-			.line
-				img(src="#{url}/img/loading-line.png")
-				.texts(v-html="progressText")
->>>>>>> 35e7a41bec2b28c0167e53ef9313c3ec37af2073
 
 	#main.main(v-show="mount",style="display: none",:style="{width: w+'px',height: h+'px'}",:class="{smaller: smaller}")
-		//- .bgm(@click="play")
-			audio#bgm(:src="musiclink")
+		.bgm(@click="play")
+			audio#bgm(:src="musiclink",loop="true")
 			img(:src="'#{url}/img/audio-'+playing+'.png'")
 			transition(name="page-fade")
 				p.noteMsg(v-show="noteMsg") 为保证体验效果<br/>请打开音乐
@@ -53,8 +45,17 @@ block content
 			.page.page-home(v-show="pageIndex == 0",:class="{left: pageIndex >= 0}")
 				.bg
 					img(src="#{url}/img/page-home-bg.jpg")
+					.animations
+						.arrow.arrow-1
+							img(src="#{url}/img/arrow.png")
+						.arrow.arrow-2
+							img(src="#{url}/img/arrow.png")
+						.arrow.arrow-3
+							img(src="#{url}/img/arrow.png")
+						.arrow.arrow-4
+							img(src="#{url}/img/arrow.png")
 				.content
-					.texts(:style="{top: navH+'%'}")
+					//- .texts(:style="{top: navH+'%'}")
 						-for (var i=1;i<=5;i++)
 							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
 								img(src="#{url}/img/page-home-text-#{i}.png")
@@ -63,33 +64,100 @@ block content
 			- pageId = 1;
 			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
 				.bg
-					img(src="#{url}/img/page-1-bg.jpg")
+					img(src="#{url}/img/page-#{pageId}-bg.jpg")
 					.animations#stars
+						
 				.content
-					.right(@click="moveNext")
 					.texts(:style="{top: navH+'%'}")
-						-for (var i=1;i<=4;i++)
-							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
-								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
-						-;
+						img(src="#{url}/img/page-#{pageId}-text.png")
+					.right(@click="moveNext")
 					.btn.btn-start(@click="gameStart(#{pageId})")
+
 		transition(name="page-animation")
 			- pageId = 2;
 			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
 				.bg
-					img(src="#{url}/img/page-2-bg.jpg")
+					img(src="#{url}/img/page-#{pageId}-bg.jpg")
 					.animations
 						.hair
-							img(src="#{url}/img/page-2-hair.gif")
+							img(src="#{url}/img/page-#{pageId}-hair.gif")
 				.content
 					.left(@click="movePrev")
 					.right(@click="moveNext")
 					.texts(:style="{top: navH+'%'}")
-						-for (var i=1;i<=4;i++)
-							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
-								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
-						-;
+						img(src="#{url}/img/page-#{pageId}-text.png")
 					.btn.btn-start(@click="gameStart(#{pageId})")
+		transition(name="page-animation")
+			- pageId = 3;
+			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+				.bg
+					img(src="#{url}/img/page-#{pageId}-bg.jpg")
+					.animations
+						.ball
+							img(src="#{url}/img/page-3-ball.png")
+				.content
+					.left(@click="movePrev")
+					.right(@click="moveNext")
+					.texts(:style="{top: navH+'%'}")
+						img(src="#{url}/img/page-#{pageId}-text.png")
+					.btn.btn-start(@click="gameStart(#{pageId})")
+		transition(name="page-animation")
+			- pageId = 4;
+			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+				.bg
+					img(src="#{url}/img/page-#{pageId}-bg.jpg")
+					.animations#rain
+						
+				.content
+					.left(@click="movePrev")
+					.right(@click="moveNext")
+					.texts(:style="{top: navH+'%'}")
+						img(src="#{url}/img/page-#{pageId}-text.png")
+					.btn.btn-start(@click="gameStart(#{pageId})")
+		transition(name="page-animation")
+			- pageId = 5;
+			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+				.bg
+					img(src="#{url}/img/page-#{pageId}-bg.jpg")
+					.animations
+						.snow
+							img(src="#{url}/img/page-#{pageId}-snow.gif")
+				.content
+					.left(@click="movePrev")
+					.right(@click="moveNext")
+					.texts(:style="{top: navH+'%'}")
+						img(src="#{url}/img/page-#{pageId}-text.png")
+					.btn.btn-start(@click="gameStart(#{pageId})")
+		transition(name="page-animation")
+			- pageId = 6;
+			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+				.bg
+					img(src="#{url}/img/page-#{pageId}-bg.jpg")
+					.animations#cloud
+						.mark
+							img(src="#{url}/img/page-#{pageId}-mark.png")
+
+				.content
+					.left(@click="movePrev")
+					.right(@click="moveNext")
+					.texts(:style="{top: navH+'%'}")
+						img(src="#{url}/img/page-#{pageId}-text.png")
+					.btn.btn-start(@click="gameStart(#{pageId})")
+		transition(name="page-animation")
+			- pageId = 7;
+			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+				.bg
+					img(src="#{url}/img/page-#{pageId}-bg.jpg")
+					.animations#dog
+
+				.content
+					.left(@click="movePrev")
+					//- .right(@click="moveNext")
+					.texts(:style="{top: navH+'%'}")
+						img(src="#{url}/img/page-#{pageId}-text.png")
+					.btn.btn-start(@click="gameStart(#{pageId})")
+
+
 		transition(name="page-fade")
 			.page.page-regisiter(v-show="regisiterPageShow")
 				.content
@@ -155,6 +223,8 @@ block content
 
 		transition(name="page-fade")
 			.page.page-record(v-show="recordPageShow")
+				.bg
+					img(src="#{url}/img/page-record-bg.jpg")
 				.content
 					#record.record(:class="{off: !recording,on: recording}")
 						.mic
@@ -178,7 +248,7 @@ block content
 					.btns
 						.btn.btn-reg(@click="regisiterPageShow = true")
 							img(src="#{url}/img/btn-reg.png")
-						.btn.btn-music
+						a.btn.btn-music(href="http://music.163.com/playlist?id=2222381288")
 							img(src="#{url}/img/btn-music.png")
 
 block js

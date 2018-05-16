@@ -17,15 +17,14 @@ block css
 		})();
 
 block content
-	- url = "//image.giccoo.com/projects/lancome"
-	- url = "."
+	- url = "//image.giccoo.com/projects/lancome";
+	- url = ".";
 	#load.loading
 		.content
 			.record
 				img(src="#{url}/img/item.png")
 			#loadtext.load-text(v-show="mount",style="display: none") Loading...{{progress}}%
 	#main.main(v-show="mount",style="display: none",:style="{width: w+'px',height: h+'px'}")
-<<<<<<< HEAD
 		.player-fix
 			//- .cursor(:class="{on: playing}")
 				img(src="#{url}/img/music-touch.png")
@@ -34,9 +33,6 @@ block content
 			audio#bgm(:src="bgmlink",loop="true")
 			audio#music(:src="musiclink")
 				
-=======
-		audio#bgm(:src="musiclink")
->>>>>>> 35e7a41bec2b28c0167e53ef9313c3ec37af2073
 		.page.page-home
 			.bg#stars
 			.content(v-show="homepageShow",@click="gotoAnswer")
@@ -46,6 +42,7 @@ block content
 					-for (var i=1; i<= 5; i++)
 						.t(class!="title-#{i} fadeInUp animated duration-12 delay-#{i*3}")
 							img(src="#{url}/img/title-#{i}.png")
+					-;
 		transition(name="page-fade")
 			.page.page-answer(v-show="answerPageShow")
 				.answers(:class!="'on-'+now")
@@ -54,14 +51,18 @@ block content
 						h1(v-html="item.question.length > 1 ? item.question[questionMark] : item.question[0]")
 						.answer-list
 							.item(v-for="value,ind in item.answers",@click="select(ind)",:class="{right: answers[index] == ind}") {{value}}
+							.note(v-if="index == 1") *选择答案后将自动播放音效
 						.btn(@click="next")
 							img(v-if="index <= 1",src="#{url}/img/btn-next.png")
 							img(v-if="index > 1",src="#{url}/img/btn-done.png")
 		transition(name="page-fade")
 			.page.page-wait(v-show="waitPageShow")
-				.content
-					a(href="https://h5.m.taobao.com/weapp/view_page.htm?page=shop/activity&userId=2360209412&shopId=115862174&pageId=28363464")
-						img(src="#{url}/img/wait.jpg")
+				.content(v-show="!waitPageBox",@click="gotoUGC")
+					img(src="#{url}/img/wait-box.jpg")
+				transition(name="page-fade")
+					.content(v-show="waitPageBox")
+						a(href="https://h5.m.taobao.com/weapp/view_page.htm?page=shop/activity&userId=2360209412&shopId=115862174&pageId=28363464")
+							img(src="#{url}/img/wait.gif")
 		transition(name="page-fade")
 			.page.page-ugc(v-show="ugcPageShow")
 				.bg#ugcbg(:style="{transform: 'scale('+(1-smaller)+','+(1-smaller)+')'}")
@@ -82,7 +83,7 @@ block content
 
 
 block js
-	- url = "/"
+	- url = "/";
 	script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
 	script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
