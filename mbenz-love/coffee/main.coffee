@@ -306,7 +306,7 @@ init = ->
 				ugc = new UGC 
 					id: Id ,
 					wy: @.wy
-					small: !@.smaller
+					small: @.smaller
 					bg : if @.pageBG[Id]? then @.pageBG[Id].app.view else null , 
 					background: =>
 						@ugcbg = ugc.saveUGC

@@ -1044,7 +1044,7 @@ init = function init() {
         _ugc = new UGC({
           id: Id,
           wy: this.wy,
-          small: !this.smaller,
+          small: this.smaller,
           bg: this.pageBG[Id] != null ? this.pageBG[Id].app.view : null,
           background: function background() {
             return _this3.ugcbg = _ugc.saveUGC;
