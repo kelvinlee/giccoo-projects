@@ -6849,6 +6849,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/mbenz-love\/img\/page-3-text.png": {
+		"ft": 32768,
+		"iS": 42323,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-3-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/mbenz-love\/img\/page-4-bg.jpg": {
 		"ft": 16384,
 		"iS": 135551,
@@ -6948,6 +6959,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/mbenz-love\/img\/page-4-text.png": {
+		"ft": 32768,
+		"iS": 39142,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-4-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/mbenz-love\/img\/page-5-bg.jpg": {
 		"ft": 16384,
 		"iS": 142053,
@@ -7008,6 +7030,17 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-5-text.png": {
+		"ft": 32768,
+		"iS": 47985,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-5-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
@@ -7096,6 +7129,17 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-6-text.png": {
+		"ft": 32768,
+		"iS": 28055,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-6-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
@@ -7225,6 +7269,17 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-7-text.png": {
+		"ft": 32768,
+		"iS": 44587,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-7-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},

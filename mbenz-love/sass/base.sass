@@ -167,10 +167,6 @@ body
 		background-attachment: fixed
 		z-index: 10
 		.bg
-			+posa
-			+tl
-			+w
-			+h
 			z-index: -1
 			img
 				+w
@@ -185,7 +181,9 @@ body
 	background-size: 100% auto
 	.bg
 		+posa
-		+tl
+		top: auto
+		+bl
+		+transform(translate3d(0,0,0))
 		font-size: 0
 		.animations
 			+posa

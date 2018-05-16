@@ -77,10 +77,6 @@ block content
 					.right(@click="moveNext")
 					.texts(:style="{top: navH+'%'}")
 						img(src="#{url}/img/page-#{pageId}-text.png")
-						// -for (var i=1;i<=4;i++)
-							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
-								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
-						//- -;
 					.btn.btn-start(@click="gameStart(#{pageId})")
 		transition(name="page-animation")
 			- pageId = 3;
@@ -94,10 +90,7 @@ block content
 					.left(@click="movePrev")
 					.right(@click="moveNext")
 					.texts(:style="{top: navH+'%'}")
-						-for (var i=1;i<=3;i++)
-							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
-								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
-						-;
+						img(src="#{url}/img/page-#{pageId}-text.png")
 					.btn.btn-start(@click="gameStart(#{pageId})")
 		transition(name="page-animation")
 			- pageId = 4;
@@ -110,10 +103,7 @@ block content
 					.left(@click="movePrev")
 					.right(@click="moveNext")
 					.texts(:style="{top: navH+'%'}")
-						-for (var i=1;i<=4;i++)
-							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
-								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
-						-;
+						img(src="#{url}/img/page-#{pageId}-text.png")
 					.btn.btn-start(@click="gameStart(#{pageId})")
 		transition(name="page-animation")
 			- pageId = 5;
@@ -127,10 +117,7 @@ block content
 					.left(@click="movePrev")
 					.right(@click="moveNext")
 					.texts(:style="{top: navH+'%'}")
-						-for (var i=1;i<=4;i++)
-							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
-								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
-						-;
+						img(src="#{url}/img/page-#{pageId}-text.png")
 					.btn.btn-start(@click="gameStart(#{pageId})")
 		transition(name="page-animation")
 			- pageId = 6;
@@ -145,10 +132,7 @@ block content
 					.left(@click="movePrev")
 					.right(@click="moveNext")
 					.texts(:style="{top: navH+'%'}")
-						-for (var i=1;i<=3;i++)
-							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
-								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
-						-;
+						img(src="#{url}/img/page-#{pageId}-text.png")
 					.btn.btn-start(@click="gameStart(#{pageId})")
 		transition(name="page-animation")
 			- pageId = 7;
@@ -161,10 +145,7 @@ block content
 					.left(@click="movePrev")
 					//- .right(@click="moveNext")
 					.texts(:style="{top: navH+'%'}")
-						-for (var i=1;i<=5;i++)
-							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
-								img(src="#{url}/img/page-#{pageId}-text-#{i}.png")
-						-;
+						img(src="#{url}/img/page-#{pageId}-text.png")
 					.btn.btn-start(@click="gameStart(#{pageId})")
 
 
