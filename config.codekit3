@@ -3943,7 +3943,7 @@
 		"oAP": "\/lancome\/img\/answer-1-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/answer-1-mark-bg.jpg": {
@@ -3965,7 +3965,7 @@
 		"oAP": "\/lancome\/img\/answer-2-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/answer-3-bg.jpg": {
@@ -3976,7 +3976,7 @@
 		"oAP": "\/lancome\/img\/answer-3-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/bg.jpg": {
@@ -3987,7 +3987,7 @@
 		"oAP": "\/lancome\/img\/bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/btn-done.png": {
@@ -4108,7 +4108,7 @@
 		"oAP": "\/lancome\/img\/last-page.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/mark-1.png": {
@@ -4194,8 +4194,8 @@
 		"oA": 0,
 		"oAP": "\/lancome\/img\/music-touch.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4317,7 +4317,7 @@
 		"oAP": "\/lancome\/img\/ugc-bg-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/ugc-bg-3.jpg": {
@@ -4328,7 +4328,7 @@
 		"oAP": "\/lancome\/img\/ugc-bg-3.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/ugc-bg-4.jpg": {
@@ -4339,7 +4339,7 @@
 		"oAP": "\/lancome\/img\/ugc-bg-4.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/ugc-bg-5.jpg": {
@@ -4350,7 +4350,7 @@
 		"oAP": "\/lancome\/img\/ugc-bg-5.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/ugc-bg.jpg": {
@@ -4361,7 +4361,7 @@
 		"oAP": "\/lancome\/img\/ugc-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/ugc-qr.png": {
@@ -4383,7 +4383,7 @@
 		"oAP": "\/lancome\/img\/wait-box.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/wait.gif": {
@@ -4392,7 +4392,7 @@
 		"oA": 0,
 		"oAP": "\/lancome\/img\/wait.gif",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"\/lancome\/img\/wait.jpg": {
 		"ft": 16384,
@@ -6184,8 +6184,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/arrow.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -6516,7 +6516,7 @@
 		"oAP": "\/mbenz-love\/img\/ico.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/mbenz-love\/img\/left.png": {
@@ -6734,8 +6734,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-1-text.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -6874,8 +6874,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-3-text.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -6984,8 +6984,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-4-text.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7058,8 +7058,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-5-text.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7080,8 +7080,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-6-cloud-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7091,8 +7091,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-6-cloud-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7102,8 +7102,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-6-cloud-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7297,8 +7297,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-7-text.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
