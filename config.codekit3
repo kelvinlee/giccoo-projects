@@ -4095,8 +4095,8 @@
 		"oA": 0,
 		"oAP": "\/lancome\/img\/item.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4183,8 +4183,8 @@
 		"oA": 0,
 		"oAP": "\/lancome\/img\/music-close.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4205,8 +4205,8 @@
 		"oA": 0,
 		"oAP": "\/lancome\/img\/music.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4385,6 +4385,14 @@
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
+		},
+	"\/lancome\/img\/wait.gif": {
+		"ft": 4194304,
+		"iS": 131015,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/wait.gif",
+		"oF": 0,
+		"opt": 0
 		},
 	"\/lancome\/img\/wait.jpg": {
 		"ft": 16384,

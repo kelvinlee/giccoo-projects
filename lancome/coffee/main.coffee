@@ -140,6 +140,7 @@ init = ->
 			musiclink: ""
 			bgmlink: "//image.giccoo.com/projects/lancome/mp3/bgm.mp3"
 			playing: false
+			bgmplaying: false
 			ugc: null
 			ugcbg: null
 			wy: false
@@ -182,6 +183,7 @@ init = ->
 		methods:
 			playbgm: ->
 				@playing = !@playing
+				@bgmplaying = !@bgmplaying
 				if @playing
 					document.getElementById("bgm").play()
 				else
@@ -190,6 +192,12 @@ init = ->
 				@.playing = true
 			audiopause: ->
 				@.playing = false
+			audiomusicplay: ->
+				@.audio.pause()
+			audiomusicpause: ->
+				console.log "music ended:", @.bgmplaying
+				@.audio.play() if @.bgmplaying
+
 			runScore: ->
 				# 计算得分
 				for i in [0...@.answers.length]
@@ -297,8 +305,9 @@ init = ->
 				setTimeout =>
 					@.waitPageShow = false
 					@.ugcPageShow = true
-				,3000
+				,4000
 			next: ->
+				@.audio.play() if @.bgmplaying
 				return false if @.answers[@.now] <= -1
 				if @.now >= 2
 					console.log "Done goto ugc"
@@ -336,9 +345,11 @@ init = ->
 			# @.answerPageShow = true
 			@.answerCanvas = new createAnswer()
 
-			@.audio.addEventListener "play", @.audioplay.bind @ if @.audio
-			@.audio.addEventListener "pause", @.audiopause.bind @ if @.audio
-			@.audio.addEventListener "ended", @.audiopause.bind @ if @.audio
+			@.audio.addEventListener "play", @.audioplay.bind(@) if @.audio
+			@.audio.addEventListener "pause", @.audiopause.bind(@) if @.audio
+			@.audio.addEventListener "ended", @.audiopause.bind(@) if @.audio
+			@.audiomusic.addEventListener "play", @.audiomusicplay.bind(@) if @.audiomusic
+			@.audiomusic.addEventListener "ended", @.audiomusicpause.bind(@) if @.audiomusic
 
 class buildUGC
 	app: null

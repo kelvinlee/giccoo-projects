@@ -230,6 +230,7 @@ init = function init() {
       musiclink: "",
       bgmlink: "//image.giccoo.com/projects/lancome/mp3/bgm.mp3",
       playing: false,
+      bgmplaying: false,
       ugc: null,
       ugcbg: null,
       wy: false,
@@ -251,6 +252,7 @@ init = function init() {
     methods: {
       playbgm: function playbgm() {
         this.playing = !this.playing;
+        this.bgmplaying = !this.bgmplaying;
         if (this.playing) {
           return document.getElementById("bgm").play();
         } else {
@@ -262,6 +264,15 @@ init = function init() {
       },
       audiopause: function audiopause() {
         return this.playing = false;
+      },
+      audiomusicplay: function audiomusicplay() {
+        return this.audio.pause();
+      },
+      audiomusicpause: function audiomusicpause() {
+        console.log("music ended:", this.bgmplaying);
+        if (this.bgmplaying) {
+          return this.audio.play();
+        }
       },
       runScore: function runScore() {
         var i, j, ref, time;
@@ -400,9 +411,12 @@ init = function init() {
         return setTimeout(function () {
           _this4.waitPageShow = false;
           return _this4.ugcPageShow = true;
-        }, 3000);
+        }, 4000);
       },
       next: function next() {
+        if (this.bgmplaying) {
+          this.audio.play();
+        }
         if (this.answers[this.now] <= -1) {
           return false;
         }
@@ -454,7 +468,13 @@ init = function init() {
         this.audio.addEventListener("pause", this.audiopause.bind(this));
       }
       if (this.audio) {
-        return this.audio.addEventListener("ended", this.audiopause.bind(this));
+        this.audio.addEventListener("ended", this.audiopause.bind(this));
+      }
+      if (this.audiomusic) {
+        this.audiomusic.addEventListener("play", this.audiomusicplay.bind(this));
+      }
+      if (this.audiomusic) {
+        return this.audiomusic.addEventListener("ended", this.audiomusicpause.bind(this));
       }
     }
   });
