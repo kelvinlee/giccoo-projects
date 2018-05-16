@@ -4380,6 +4380,16 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/gaokao\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/gaokao\/js\/main-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/gaokao\/js\/mfw.js": {
 		"ft": 64,
 		"ma": 0,
@@ -5477,7 +5487,7 @@
 		"oAP": "\/lancome\/img\/answer-1-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/answer-1-mark-bg.jpg": {
@@ -5499,7 +5509,7 @@
 		"oAP": "\/lancome\/img\/answer-2-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/answer-3-bg.jpg": {
@@ -5510,7 +5520,7 @@
 		"oAP": "\/lancome\/img\/answer-3-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/bg.jpg": {
@@ -5521,7 +5531,7 @@
 		"oAP": "\/lancome\/img\/bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/btn-done.png": {
@@ -5629,8 +5639,8 @@
 		"oA": 0,
 		"oAP": "\/lancome\/img\/item.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -5642,7 +5652,7 @@
 		"oAP": "\/lancome\/img\/last-page.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/mark-1.png": {
@@ -5705,6 +5715,39 @@
 		"iS": 4129,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/mobile-timeline.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lancome\/img\/music-close.png": {
+		"ft": 32768,
+		"iS": 2533,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/music-close.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lancome\/img\/music-touch.png": {
+		"ft": 32768,
+		"iS": 565,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/music-touch.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lancome\/img\/music.png": {
+		"ft": 32768,
+		"iS": 3281,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/music.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
@@ -5818,7 +5861,7 @@
 		"oAP": "\/lancome\/img\/ugc-bg-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/ugc-bg-3.jpg": {
@@ -5829,7 +5872,7 @@
 		"oAP": "\/lancome\/img\/ugc-bg-3.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/ugc-bg-4.jpg": {
@@ -5840,7 +5883,7 @@
 		"oAP": "\/lancome\/img\/ugc-bg-4.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/ugc-bg-5.jpg": {
@@ -5851,7 +5894,7 @@
 		"oAP": "\/lancome\/img\/ugc-bg-5.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/ugc-bg.jpg": {
@@ -5862,7 +5905,7 @@
 		"oAP": "\/lancome\/img\/ugc-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/img\/ugc-qr.png": {
@@ -5876,6 +5919,25 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/lancome\/img\/wait-box.jpg": {
+		"ft": 16384,
+		"iS": 24292,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/wait-box.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/lancome\/img\/wait.gif": {
+		"ft": 4194304,
+		"iS": 131015,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/wait.gif",
+		"oF": 0,
+		"opt": 1
+		},
 	"\/lancome\/img\/wait.jpg": {
 		"ft": 16384,
 		"iS": 39521,
@@ -5884,7 +5946,7 @@
 		"oAP": "\/lancome\/img\/wait.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/lancome\/index.html": {
@@ -7618,14 +7680,25 @@
 		"oAP": "\/build\/mbenz-love\/css",
 		"oF": 0
 		},
+	"\/mbenz-love\/img\/arrow.png": {
+		"ft": 32768,
+		"iS": 7597,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/arrow.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/mbenz-love\/img\/audio-play.png": {
 		"ft": 32768,
 		"iS": 2854,
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/audio-play.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7635,8 +7708,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/audio-stop.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7646,8 +7719,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/btn-music.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7657,8 +7730,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/btn-reg.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7668,8 +7741,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/btn-start.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7679,8 +7752,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/btn-submit.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7701,8 +7774,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/font-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7712,8 +7785,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/font-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7723,8 +7796,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/font-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7734,8 +7807,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/font-4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7745,8 +7818,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/font-5.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7756,8 +7829,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/font-6.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7767,8 +7840,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/font-7.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7778,8 +7851,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/font-8.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7789,8 +7862,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/font-9.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7800,8 +7873,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/font-last.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7813,7 +7886,7 @@
 		"oAP": "\/mbenz-love\/img\/form-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/mbenz-love\/img\/form-close.png": {
@@ -7822,8 +7895,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/form-close.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7844,8 +7917,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/form-label-de.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7855,8 +7928,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/form-label-detail.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7866,8 +7939,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/form-label-mobile.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7877,8 +7950,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/form-label-name.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7888,8 +7961,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/form-label-p.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7899,8 +7972,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/form-label-sex.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7910,8 +7983,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/form-man.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7921,8 +7994,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/form-title.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7932,9 +8005,20 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/form-woman.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ico.jpg": {
+		"ft": 16384,
+		"iS": 34210,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/mbenz-love\/img\/left.png": {
@@ -7943,8 +8027,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/left.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7954,8 +8038,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/loading-line.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7965,8 +8049,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/long-save.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7976,8 +8060,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/mark.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -7989,7 +8073,7 @@
 		"oAP": "\/mbenz-love\/img\/navbar.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/mbenz-love\/img\/page-1-bg.jpg": {
@@ -8009,8 +8093,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-1-eiffel-light.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8020,8 +8104,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-1-eiffel.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8031,8 +8115,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-1-f.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8042,8 +8126,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-1-lighter.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8053,8 +8137,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-1-p.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8064,8 +8148,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-1-star-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8075,8 +8159,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-1-star-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8086,8 +8170,19 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-1-star-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-1-star-4.png": {
+		"ft": 32768,
+		"iS": 1987,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-1-star-4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8097,8 +8192,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-1-text-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8108,8 +8203,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-1-text-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8119,8 +8214,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-1-text-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8130,8 +8225,19 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-1-text-4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-1-text.png": {
+		"ft": 32768,
+		"iS": 77461,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-1-text.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8143,7 +8249,7 @@
 		"oAP": "\/mbenz-love\/img\/page-2-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/mbenz-love\/img\/page-2-hair.gif": {
@@ -8152,7 +8258,7 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-2-hair.gif",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"\/mbenz-love\/img\/page-2-text-1.png": {
 		"ft": 32768,
@@ -8160,8 +8266,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-2-text-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8171,8 +8277,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-2-text-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8182,8 +8288,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-2-text-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8193,8 +8299,19 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-2-text-4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-2-text.png": {
+		"ft": 32768,
+		"iS": 37805,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-2-text.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8204,8 +8321,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-3-ball.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8217,7 +8334,7 @@
 		"oAP": "\/mbenz-love\/img\/page-3-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/mbenz-love\/img\/page-3-text-1.png": {
@@ -8226,8 +8343,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-3-text-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8237,8 +8354,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-3-text-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8248,8 +8365,442 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-3-text-3.png",
 		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-3-text.png": {
+		"ft": 32768,
+		"iS": 42323,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-3-text.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-4-bg.jpg": {
+		"ft": 16384,
+		"iS": 135551,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-4-bg.jpg",
+		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-4-rain-1.png": {
+		"ft": 32768,
+		"iS": 3174,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-4-rain-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-4-rain-2.png": {
+		"ft": 32768,
+		"iS": 1544,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-4-rain-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-4-rain-3.png": {
+		"ft": 32768,
+		"iS": 1455,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-4-rain-3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-4-rain-4.png": {
+		"ft": 32768,
+		"iS": 2942,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-4-rain-4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-4-text-1.png": {
+		"ft": 32768,
+		"iS": 25978,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-4-text-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-4-text-2.png": {
+		"ft": 32768,
+		"iS": 3750,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-4-text-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-4-text-3.png": {
+		"ft": 32768,
+		"iS": 7789,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-4-text-3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-4-text-4.png": {
+		"ft": 32768,
+		"iS": 8875,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-4-text-4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-4-text.png": {
+		"ft": 32768,
+		"iS": 39142,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-4-text.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-5-bg.jpg": {
+		"ft": 16384,
+		"iS": 142053,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-5-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-5-snow.gif": {
+		"ft": 4194304,
+		"iS": 24916,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-5-snow.gif",
+		"oF": 0,
+		"opt": 1
+		},
+	"\/mbenz-love\/img\/page-5-text-1.png": {
+		"ft": 32768,
+		"iS": 27313,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-5-text-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-5-text-2.png": {
+		"ft": 32768,
+		"iS": 9202,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-5-text-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-5-text-3.png": {
+		"ft": 32768,
+		"iS": 9119,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-5-text-3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-5-text-4.png": {
+		"ft": 32768,
+		"iS": 10351,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-5-text-4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-5-text.png": {
+		"ft": 32768,
+		"iS": 47985,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-5-text.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-6-bg.jpg": {
+		"ft": 16384,
+		"iS": 164138,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-6-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-6-cloud-1.png": {
+		"ft": 32768,
+		"iS": 47690,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-6-cloud-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-6-cloud-2.png": {
+		"ft": 32768,
+		"iS": 41103,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-6-cloud-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-6-cloud-3.png": {
+		"ft": 32768,
+		"iS": 17696,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-6-cloud-3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-6-mark.png": {
+		"ft": 32768,
+		"iS": 61298,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-6-mark.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-6-text-1.png": {
+		"ft": 32768,
+		"iS": 16781,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-6-text-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-6-text-2.png": {
+		"ft": 32768,
+		"iS": 8684,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-6-text-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-6-text-3.png": {
+		"ft": 32768,
+		"iS": 7147,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-6-text-3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-6-text.png": {
+		"ft": 32768,
+		"iS": 28055,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-6-text.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-7-bg.jpg": {
+		"ft": 16384,
+		"iS": 175670,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-7-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-7-dog-1.png": {
+		"ft": 32768,
+		"iS": 6228,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-7-dog-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-7-dog-2.png": {
+		"ft": 32768,
+		"iS": 5563,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-7-dog-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-7-dog-3.png": {
+		"ft": 32768,
+		"iS": 5563,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-7-dog-3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-7-dog-4.png": {
+		"ft": 32768,
+		"iS": 5563,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-7-dog-4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-7-dog-5.png": {
+		"ft": 32768,
+		"iS": 7040,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-7-dog-5.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-7-dog.gif": {
+		"ft": 4194304,
+		"iS": 23602,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-7-dog.gif",
+		"oF": 0,
+		"opt": 1
+		},
+	"\/mbenz-love\/img\/page-7-text-1.png": {
+		"ft": 32768,
+		"iS": 27261,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-7-text-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-7-text-2.png": {
+		"ft": 32768,
+		"iS": 7260,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-7-text-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-7-text-3.png": {
+		"ft": 32768,
+		"iS": 6944,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-7-text-3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-7-text-4.png": {
+		"ft": 32768,
+		"iS": 5522,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-7-text-4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-7-text-5.png": {
+		"ft": 32768,
+		"iS": 8137,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-7-text-5.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/page-7-text.png": {
+		"ft": 32768,
+		"iS": 44587,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/page-7-text.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8261,7 +8812,7 @@
 		"oAP": "\/mbenz-love\/img\/page-home-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/mbenz-love\/img\/page-home-text-1.png": {
@@ -8270,8 +8821,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-home-text-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8281,8 +8832,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-home-text-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8292,8 +8843,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-home-text-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8303,8 +8854,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-home-text-4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8314,8 +8865,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-home-text-5.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8336,8 +8887,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-record-microphone.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8347,8 +8898,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/page-record-texts.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8358,8 +8909,8 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/right.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8369,8 +8920,393 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/save-text.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-1-1.png": {
+		"ft": 32768,
+		"iS": 16793,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-1-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-1-2.png": {
+		"ft": 32768,
+		"iS": 14130,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-1-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-1-3.png": {
+		"ft": 32768,
+		"iS": 19655,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-1-3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-1-4.png": {
+		"ft": 32768,
+		"iS": 22630,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-1-4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-1-5.png": {
+		"ft": 32768,
+		"iS": 17600,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-1-5.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-2-1.png": {
+		"ft": 32768,
+		"iS": 23575,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-2-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-2-2.png": {
+		"ft": 32768,
+		"iS": 23576,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-2-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-2-3.png": {
+		"ft": 32768,
+		"iS": 18903,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-2-3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-2-4.png": {
+		"ft": 32768,
+		"iS": 16614,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-2-4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-2-5.png": {
+		"ft": 32768,
+		"iS": 20196,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-2-5.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-3-1.png": {
+		"ft": 32768,
+		"iS": 27198,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-3-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-3-2.png": {
+		"ft": 32768,
+		"iS": 21776,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-3-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-3-3.png": {
+		"ft": 32768,
+		"iS": 19372,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-3-3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-3-4.png": {
+		"ft": 32768,
+		"iS": 23133,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-3-4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-3-5.png": {
+		"ft": 32768,
+		"iS": 28743,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-3-5.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-4-1.png": {
+		"ft": 32768,
+		"iS": 32265,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-4-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-4-2.png": {
+		"ft": 32768,
+		"iS": 30284,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-4-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-4-3.png": {
+		"ft": 32768,
+		"iS": 22464,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-4-3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-4-4.png": {
+		"ft": 32768,
+		"iS": 14595,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-4-4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-4-5.png": {
+		"ft": 32768,
+		"iS": 11146,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-4-5.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-5-1.png": {
+		"ft": 32768,
+		"iS": 27756,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-5-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-5-2.png": {
+		"ft": 32768,
+		"iS": 17283,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-5-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-5-3.png": {
+		"ft": 32768,
+		"iS": 19902,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-5-3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-5-4.png": {
+		"ft": 32768,
+		"iS": 27371,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-5-4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-5-5.png": {
+		"ft": 32768,
+		"iS": 26303,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-5-5.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-6-1.png": {
+		"ft": 32768,
+		"iS": 13631,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-6-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-6-2.png": {
+		"ft": 32768,
+		"iS": 16025,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-6-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-6-3.png": {
+		"ft": 32768,
+		"iS": 20789,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-6-3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-6-4.png": {
+		"ft": 32768,
+		"iS": 14929,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-6-4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-6-5.png": {
+		"ft": 32768,
+		"iS": 13025,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-6-5.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-7-1.png": {
+		"ft": 32768,
+		"iS": 20030,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-7-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-7-2.png": {
+		"ft": 32768,
+		"iS": 19620,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-7-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-7-3.png": {
+		"ft": 32768,
+		"iS": 16927,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-7-3.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-7-4.png": {
+		"ft": 32768,
+		"iS": 21459,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-7-4.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-7-5.png": {
+		"ft": 32768,
+		"iS": 23100,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-7-5.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8380,8 +9316,30 @@
 		"oA": 0,
 		"oAP": "\/mbenz-love\/img\/ugc-qr.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-title-2.png": {
+		"ft": 32768,
+		"iS": 17508,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-title-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/ugc-title.png": {
+		"ft": 32768,
+		"iS": 55936,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/ugc-title.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9601,8 +10559,8 @@
 		"oA": 0,
 		"oAP": "\/zbird\/img\/endbar.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
@@ -11110,6 +12068,158 @@
 		"oA": 1,
 		"oAP": "\/build\/zhishinews",
 		"oF": 0
+		},
+	"\/zqzs_1\/coffee\/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/js\/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/zqzs_1\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/zqzs_1\/css",
+		"oF": 0
+		},
+	"\/zqzs_1\/img\/ico.jpg": {
+		"ft": 16384,
+		"iS": 14748,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/img\/logo.gif": {
+		"ft": 4194304,
+		"iS": 65530,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/logo.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/zqzs_1\/img\/part-1.jpg": {
+		"ft": 16384,
+		"iS": 113742,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/part-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/img\/part-2.jpg": {
+		"ft": 16384,
+		"iS": 94210,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/part-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/img\/part-3.jpg": {
+		"ft": 16384,
+		"iS": 40351,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/part-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/img\/part-4.jpg": {
+		"ft": 16384,
+		"iS": 57832,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/part-4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/img\/part-5.jpg": {
+		"ft": 16384,
+		"iS": 43531,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/part-5.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/img\/poster.jpg": {
+		"ft": 16384,
+		"iS": 31091,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/poster.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/img\/video-bg.jpg": {
+		"ft": 16384,
+		"iS": 9648,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/img\/video-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zqzs_1\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/index.html",
+		"oF": 0
+		},
+	"\/zqzs_1\/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/zqzs_1\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/js\/main-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/zqzs_1\/sass\/base.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/zqzs_1\/css\/base.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		}
 	},
 "hooks": [
@@ -12886,8 +13996,8 @@
 		"autoOutputPathStyle": 2,
 		"createSourceMap": 0,
 		"minifyOutput": 1,
-		"outputStyle": 0,
-		"syntaxCheckerStyle": 1,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0,
 		"transpilerStyle": 1
 		},
 	"languageDefaultsCSS": {
