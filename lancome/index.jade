@@ -26,7 +26,7 @@ block content
 			#loadtext.load-text(v-show="mount",style="display: none") Loading...{{progress}}%
 	#main.main(v-show="mount",style="display: none",:style="{width: w+'px',height: h+'px'}")
 		.player-fix
-			.cursor(:class="{on: playing}")
+			//- .cursor(:class="{on: playing}")
 				img(src="#{url}/img/music-touch.png")
 			.record(:class="{on: playing}",@click="playbgm")
 				img(src="#{url}/img/music.png")

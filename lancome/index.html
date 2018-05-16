@@ -18,7 +18,6 @@
     </div>
     <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">
       <div class="player-fix">
-        <div :class="{on: playing}" class="cursor"><img src="./img/music-touch.png"></div>
         <div :class="{on: playing}" @click="playbgm" class="record"><img src="./img/music.png"></div>
         <audio id="bgm" :src="bgmlink" loop="true"></audio>
         <audio id="music" :src="musiclink"></audio>

@@ -1044,7 +1044,7 @@ init = function init() {
         _ugc = new UGC({
           id: Id,
           wy: this.wy,
-          small: true,
+          small: !this.smaller,
           bg: this.pageBG[Id] != null ? this.pageBG[Id].app.view : null,
           background: function background() {
             return _this3.ugcbg = _ugc.saveUGC;
@@ -1056,13 +1056,15 @@ init = function init() {
         return this.recordPageShow = true;
       },
       recordStart: function recordStart(evt) {
+        var _this4 = this;
+
         evt.preventDefault();
-        return this.recording = true;
+        this.recording = true;
+        // ugc page show
+        return this.cache = setTimeout(function () {
+          return _this4.ugcPageShow = true;
+        }, 5000);
       },
-      // ugc page show
-      // @.cache = setTimeout =>
-      // 	@.ugcPageShow = true
-      // ,5000
       recordEnd: function recordEnd(evt) {
         evt.preventDefault();
         clearTimeout(this.cache);
@@ -1082,7 +1084,7 @@ init = function init() {
         return this.playing = "play";
       },
       submit: function submit() {
-        var _this4 = this;
+        var _this5 = this;
 
         if (this.form.username === "") {
           return alert("请输入用户名");
@@ -1107,7 +1109,7 @@ init = function init() {
         return axios.post("//api.giccoo.com/mbenz-love/insert/", this.form).then(function (msg) {
           if (msg.data.recode === 200) {
             alert("提交成功");
-            return _this4.regisiterPageShow = false;
+            return _this5.regisiterPageShow = false;
           } else {
             return alert(msg.data.reason);
           }
@@ -1116,7 +1118,7 @@ init = function init() {
         });
       },
       getIp: function getIp() {
-        var _this5 = this;
+        var _this6 = this;
 
         return axios.get("//api.giccoo.com/api/ip/", {}).then(function (msg) {
           var address, city, item, k, l, len1, len2, ref, results;
@@ -1129,15 +1131,15 @@ init = function init() {
             for (k = 0, len1 = provinces.length; k < len1; k++) {
               item = provinces[k];
               if (address.province.indexOf(item) > -1) {
-                _this5.form.province = item;
-                ref = _this5.citys;
+                _this6.form.province = item;
+                ref = _this6.citys;
                 for (l = 0, len2 = ref.length; l < len2; l++) {
                   city = ref[l];
                   if (address.city.indexOf(city) > -1) {
                     setTimeout(function () {
-                      _this5.form.city = city;
+                      _this6.form.city = city;
                       return setTimeout(function () {
-                        return _this5.form.dealer = _this5.dealers[0];
+                        return _this6.form.dealer = _this6.dealers[0];
                       }, 10);
                     }, 10);
                     break;

@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
+    <div id="load" :class="{hide:kill}" class="loading">
+      <div :class="{fadeOut: !mount}" class="full animated duration-7">
+        <div class="content">
+          <div class="line"><img src="./img/loading-line.png">
+            <div v-html="progressText" class="texts"><span class="opc font font-0">0</span><span class="opc font font-1">1</span><span class="opc font font-2">2</span><span class="opc font font-3">3</span><span class="opc font font-4">4</span><span class="opc font font-5">5</span><span class="opc font font-6">6</span><span class="opc font font-7">7</span><span class="opc font font-8">8</span><span class="opc font font-9">9</span><span class="opc font font-last">%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" :class="{smaller: smaller}" class="main">
       <div @click="play" class="bgm">
         <audio id="bgm" :src="musiclink" loop="true"></audio><img :src="'./img/audio-'+playing+'.png'">
