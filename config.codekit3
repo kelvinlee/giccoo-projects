@@ -6170,6 +6170,17 @@
 		"oAP": "\/build\/mbenz-love\/css",
 		"oF": 0
 		},
+	"\/mbenz-love\/img\/arrow.png": {
+		"ft": 32768,
+		"iS": 7597,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/arrow.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/mbenz-love\/img\/audio-play.png": {
 		"ft": 32768,
 		"iS": 2854,

@@ -45,6 +45,15 @@ block content
 			.page.page-home(v-show="pageIndex == 0",:class="{left: pageIndex >= 0}")
 				.bg
 					img(src="#{url}/img/page-home-bg.jpg")
+					.animations
+						.arrow.arrow-1
+							img(src="#{url}/img/arrow.png")
+						.arrow.arrow-2
+							img(src="#{url}/img/arrow.png")
+						.arrow.arrow-3
+							img(src="#{url}/img/arrow.png")
+						.arrow.arrow-4
+							img(src="#{url}/img/arrow.png")
 				.content
 					//- .texts(:style="{top: navH+'%'}")
 						-for (var i=1;i<=5;i++)

@@ -1334,6 +1334,54 @@ body {
 .page-home {
   top: 0px;
   left: 0px; }
+  .page-home .arrow {
+    position: absolute;
+    top: 0px;
+    left: 0px; }
+    .page-home .arrow.arrow-1 {
+      -webkit-transform: translate3d(3%, 0, 0);
+              transform: translate3d(3%, 0, 0);
+      -webkit-animation: fadeOut 1200ms linear;
+              animation: fadeOut 1200ms linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-delay: 300ms;
+              animation-delay: 300ms; }
+    .page-home .arrow.arrow-2 {
+      -webkit-transform: translate3d(6%, 0, 0);
+              transform: translate3d(6%, 0, 0);
+      -webkit-animation: fadeOut 1200ms linear;
+              animation: fadeOut 1200ms linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-delay: 600ms;
+              animation-delay: 600ms; }
+    .page-home .arrow.arrow-3 {
+      -webkit-transform: translate3d(9%, 0, 0);
+              transform: translate3d(9%, 0, 0);
+      -webkit-animation: fadeOut 1200ms linear;
+              animation: fadeOut 1200ms linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-delay: 900ms;
+              animation-delay: 900ms; }
+    .page-home .arrow.arrow-4 {
+      -webkit-transform: translate3d(12%, 0, 0);
+              transform: translate3d(12%, 0, 0);
+      -webkit-animation: fadeOut 1200ms linear;
+              animation: fadeOut 1200ms linear;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-delay: 1200ms;
+              animation-delay: 1200ms; }
   .page-home .content {
     position: absolute;
     width: 100%;

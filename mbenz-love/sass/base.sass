@@ -318,6 +318,14 @@ body
 
 .page-home
 	+tl
+	.arrow
+		+posa
+		+tl
+		@for $i from 1 through 4
+			&.arrow-#{$i}
+				+transform(translate3d($i*3%,0,0))
+				+animation(fadeOut,300ms*4,linear,infinite)
+				animation-delay: 300ms*$i
 
 	.content
 		+posa
