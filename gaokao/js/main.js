@@ -16,7 +16,7 @@ $(document).ready(function load (){
       title: "高考，你准备好了吗",
       desc: "",
       link: "http://m.giccoo.com/gaokao/",
-      imgUrl: "http://m.giccoo.com/gaokao/img/ico.jpg",
+      imgUrl: "http://m.giccoo.com/gaokao/img/ico.png",
       success: function() {},
       cancel: function() {}
     };
