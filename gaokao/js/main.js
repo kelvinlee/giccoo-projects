@@ -209,8 +209,6 @@ function goP3(){//====================开始考试
   //stage.removeChild(stage2)
   TweenLite.to(boy,1,{alpha:0})
   logo("black")
-  p4bgABCD=new createjs.Bitmap(p4bgABCDA[examType])
-  p4bgtypeA=new createjs.Bitmap(p4bgtypeA[wlType])
 
 }
 
@@ -260,8 +258,8 @@ function goP4(){
   stage4.addChild(p4bg)
   TweenLite.set(p4bg,{regY:1300,y:stageH})
 
-  // p4bgABCD=new createjs.Bitmap(p4bgABCDA[examType])
-  // p4bgtypeA=new createjs.Bitmap(p4bgtypeA[wlType])
+  p4bgABCD=new createjs.Bitmap(p4bgABCDA[examType])
+  p4bgtypeA=new createjs.Bitmap(p4bgtypeA[wlType])
 
   stage4.addChild(p4bgABCD)
   stage4.addChild(p4bgtypeA)
@@ -283,11 +281,7 @@ function goP4(){
     endCopy=new createjs.Bitmap("img/endcopy2.png")
   }else if(finalScore[4]*75>=450&&finalScore[4]*75<600){
     endCopy=new createjs.Bitmap("img/endcopy3.png")
-<<<<<<< HEAD
-  }else if(finalScore[4]*75>=600&&finalScore[4]*75<750){//
-=======
   }else if(finalScore[4]*75>=600&&finalScore[4]*75<750){
->>>>>>> liam
     endCopy=new createjs.Bitmap("img/endcopy4.png")
   }else if(finalScore[4]*75==750){
     endCopy=new createjs.Bitmap("img/endcopy5.png")
