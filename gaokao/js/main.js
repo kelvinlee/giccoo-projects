@@ -283,7 +283,7 @@ function goP4(){
     endCopy=new createjs.Bitmap("img/endcopy2.png")
   }else if(finalScore[4]*75>=450&&finalScore[4]*75<600){
     endCopy=new createjs.Bitmap("img/endcopy3.png")
-  }else if(finalScore[4]*75>=600&&finalScore[4]*75<750){
+  }else if(finalScore[4]*75>=600&&finalScore[4]*75<750){//
     endCopy=new createjs.Bitmap("img/endcopy4.png")
   }else if(finalScore[4]*75==750){
     endCopy=new createjs.Bitmap("img/endcopy5.png")
