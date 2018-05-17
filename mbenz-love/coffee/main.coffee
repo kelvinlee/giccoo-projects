@@ -317,14 +317,16 @@ init = ->
 				evt.preventDefault()
 				@.recording = true
 				# ugc page show
-				@.cache = setTimeout =>
-					@.ugcPageShow = true
-				,5000
+				# @.cache = setTimeout =>
+				# 	@.ugcPageShow = true
+				# ,5000
 
 			recordEnd: (evt)->
+				@.ugcPageShow = true
 				evt.preventDefault()
 				clearTimeout @.cache
-				@.recording = false
+				# @.recording = false
+
 			play: ->
 				if @.playing is "stop"
 					@.audio.pause()
