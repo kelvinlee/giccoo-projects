@@ -276,7 +276,7 @@ class UGC
       transparent: true
       preserveDrawingBuffer: true
     document.getElementById('ugc').appendChild @.app.view
-    @.random = Math.floor Math.random()*4+1
+    @.random = Math.floor Math.random()*5+1
     PIXI.loader.add([
       "img/page-#{@.id}-bg.jpg"
       "img/ugc-qr.png"
