@@ -198,6 +198,7 @@ p2start.click(function(){
 })
 
 $("#hint1").click(function(){
+  t1000=setInterval(setTimeT,1000)
   TweenLite.set($("#hint1"),{display:"none"})
   goP3()
 })
@@ -240,7 +241,7 @@ function setTimer(){
   TweenLite.set(timeT1,{regY:14.5,y:43/1000*stageH})
   stage3.addChild(timeT)
   TweenLite.set(timeT,{x:250,regY:14.5,y:43/1000*stageH})
-  t1000=setInterval(setTimeT,1000)
+  // t1000=setInterval(setTimeT,1000)
 }
 var nowPage=3
 function setTimeT(){
