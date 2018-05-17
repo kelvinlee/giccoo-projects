@@ -47,7 +47,7 @@ var allAnswer=[ [ [2,2,4,1,3,1,1,3,2,2],[4,1,4,3,3,1,3,3,4,4],[4,3,3,4,3,3,4,3,4
                 [ [2,2,4,1,3,1,4,4,2,1],[4,1,4,3,3,1,2,4,2,4],[4,3,3,4,3,3,2,4,1,4],[3,2,3,4,3,4,2,4,2,2] ] ]
 
 var btnType  =[ [ [0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,2,0,1,0,0],[0,3,0,0,0,2,2,1,0,0],[0,0,0,0,0,0,0,1,0,0] ],
-                [ [0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,2,0,0,0,0],[0,3,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0] ] ]
+                [ [0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,2,0,0,0,0],[0,3,0,0,0,2,0,0,0,0],[0,0,0,0,0,0,0,0,0,0] ] ]
 
 var userAnswer=[0,0,0,0,0,0,0,0,0,0]
 
@@ -279,11 +279,11 @@ function goP4(){
 
   if(finalScore[4]*75<=300){
     endCopy=new createjs.Bitmap("img/endcopy1.png")
-  }else if(finalScore[4]*75>300&&finalScore[4]*75<=450){
+  }else if(finalScore[4]*75>300&&finalScore[4]*75<450){
     endCopy=new createjs.Bitmap("img/endcopy2.png")
-  }else if(finalScore[4]*75>450&&finalScore[4]*75<=600){
+  }else if(finalScore[4]*75>=450&&finalScore[4]*75<600){
     endCopy=new createjs.Bitmap("img/endcopy3.png")
-  }else if(finalScore[4]*75>600&&finalScore[4]*75<750){
+  }else if(finalScore[4]*75>=600&&finalScore[4]*75<750){
     endCopy=new createjs.Bitmap("img/endcopy4.png")
   }else if(finalScore[4]*75==750){
     endCopy=new createjs.Bitmap("img/endcopy5.png")
@@ -396,7 +396,7 @@ closeBtn.click(function(){
   TweenLite.set($("#rightAnswer"),{display:"none"})
 })
 $("#endbtn3").click(function(){
-  window.location.href="http://www.hbyangyuan.com/"
+  window.location.href="https://liugehetao.m.tmall.com/?spm=a222m.7628550.1998338745.2"
 })
 
 function convertCanvasToImage(canvas) {
