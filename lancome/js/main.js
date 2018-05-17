@@ -385,6 +385,8 @@ init = function init() {
           return main.faild();
         });
       },
+      ask: function ask() {},
+      // 获取网易云数据
       success: function success(data) {
         var _this3 = this;
 

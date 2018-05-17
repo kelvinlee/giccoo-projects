@@ -285,6 +285,9 @@ init = ->
 				.catch (e)->
 					# alert e
 					main.faild()
+			ask: ->
+				# 获取网易云数据
+				
 			success: (data)->
 				@.shareImageLink = data.info
 				neteaseShareImage()

@@ -132,7 +132,7 @@ stars = function () {
       value: function build() {
         var i, j, random, star;
         load.progressOn = 100;
-        console.log("bg all loaded");
+        // console.log "bg all loaded"
         for (i = j = 1; j < 12; i = ++j) {
           star = new Sprite(res["img/page-1-star-" + (i % 4 + 1) + ".png"].texture);
           star.x = Math.random() * (640 - star.width);
@@ -451,7 +451,7 @@ UGC = function () {
       key: "build",
       value: function build() {
         var animate, bg, mark, qr, qr2, save, saveText, text, title2;
-        console.log(res["img/page-" + this.id + "-bg.jpg"].texture);
+        // console.log res["img/page-#{@.id}-bg.jpg"].texture
         bg = new Sprite(res["img/page-" + this.id + "-bg.jpg"].texture);
         this.app.stage.addChild(bg);
         if (this.bg != null) {
@@ -491,7 +491,7 @@ UGC = function () {
           mark.scale.y = 0.8;
           mark.x += mark.width * 0.1 / 2;
           mark.y += mark.height * (1 - mark.scale.y) / 2;
-          console.log(mark.y);
+          // console.log mark.y
           if (mark.y > 200) {
             title2.y = 50;
             text.y += 50;
@@ -1055,7 +1055,7 @@ init = function init() {
         var _this3 = this;
 
         var _ugc;
-        console.log("id:", Id);
+        // console.log "id:",Id
         _ugc = new UGC({
           id: Id,
           wy: this.wy,
@@ -1070,24 +1070,29 @@ init = function init() {
             return _this3.ugc = _ugc.saveUGC;
           }
         });
-        return this.recordPageShow = true;
+        this.recordPageShow = true;
+        // console.log @.$el
+        this.$el.removeEventListener('touchstart', this.start);
+        this.$el.removeEventListener('touchmove', this.move);
+        return this.$el.removeEventListener('touchend', this.end);
       },
       recordStart: function recordStart(evt) {
-        var _this4 = this;
-
-        evt.preventDefault();
-        this.recording = true;
-        // ugc page show
-        return this.cache = setTimeout(function () {
-          return _this4.ugcPageShow = true;
+        var self;
+        self = main;
+        self.recording = true;
+        self.cache = setTimeout(function () {
+          return self.ugcPageShow = true;
         }, 5000);
+        return event.preventDefault();
       },
       recordEnd: function recordEnd(evt) {
-        this.ugcPageShow = true;
-        evt.preventDefault();
-        return clearTimeout(this.cache);
+        var self;
+        self = main;
+        self.ugcPageShow = true;
+        clearTimeout(self.cache);
+        // self.recording = false
+        return event.preventDefault();
       },
-      // @.recording = false
       play: function play() {
         if (this.playing === "stop") {
           return this.audio.pause();
@@ -1102,7 +1107,7 @@ init = function init() {
         return this.playing = "play";
       },
       submit: function submit() {
-        var _this5 = this;
+        var _this4 = this;
 
         if (this.form.username === "") {
           return alert("请输入用户名");
@@ -1127,7 +1132,7 @@ init = function init() {
         return axios.post("//api.giccoo.com/mbenz-love/insert/", this.form).then(function (msg) {
           if (msg.data.recode === 200) {
             alert("提交成功");
-            return _this5.regisiterPageShow = false;
+            return _this4.regisiterPageShow = false;
           } else {
             return alert(msg.data.reason);
           }
@@ -1136,7 +1141,7 @@ init = function init() {
         });
       },
       getIp: function getIp() {
-        var _this6 = this;
+        var _this5 = this;
 
         return axios.get("//api.giccoo.com/api/ip/", {}).then(function (msg) {
           var address, city, item, k, l, len1, len2, ref, results;
@@ -1149,15 +1154,15 @@ init = function init() {
             for (k = 0, len1 = provinces.length; k < len1; k++) {
               item = provinces[k];
               if (address.province.indexOf(item) > -1) {
-                _this6.form.province = item;
-                ref = _this6.citys;
+                _this5.form.province = item;
+                ref = _this5.citys;
                 for (l = 0, len2 = ref.length; l < len2; l++) {
                   city = ref[l];
                   if (address.city.indexOf(city) > -1) {
                     setTimeout(function () {
-                      _this6.form.city = city;
+                      _this5.form.city = city;
                       return setTimeout(function () {
-                        return _this6.form.dealer = _this6.dealers[0];
+                        return _this5.form.dealer = _this5.dealers[0];
                       }, 10);
                     }, 10);
                     break;
@@ -1223,75 +1228,82 @@ init = function init() {
         }
       },
       start: function start(evt) {
-        var touch;
-        // console.log evt
-        evt.preventDefault();
-        if (this.noteMsg) {
-          this.audio.play();
-        }
-        this.noteMsg = false;
-        touch = evt.touches != null ? evt.touches[0] : evt;
-        return this.default.x = touch[this.XY];
-      },
-      move: function move(evt) {
-        var pageX, touch;
-        evt.preventDefault();
-        if (this.default.animated || this.poping) {
+        var self, touch;
+        console.log("a");
+        self = main;
+        if (self.default.animated) {
+          // evt.preventDefault()
           return false;
         }
+        if (self.noteMsg) {
+          self.audio.play();
+        }
+        self.noteMsg = false;
+        touch = evt.touches != null ? evt.touches[0] : evt;
+        return self.default.x = touch[this.XY];
+      },
+      move: function move(evt) {
+        var pageX, self, touch;
+        self = main;
+        if (self.default.animated || self.poping) {
+          return false;
+        }
+        evt.preventDefault();
         touch = evt.touches != null ? evt.touches[0] : evt;
         pageX = touch[this.XY];
-        if (pageX - this.default.x > 50) {
-          this.default.animated = true;
-          this.movePrev();
+        if (pageX - self.default.x > 50) {
+          self.default.animated = true;
+          self.movePrev();
         }
-        if (pageX - this.default.x < -50) {
-          this.default.animated = true;
-          return this.moveNext();
+        if (pageX - self.default.x < -50) {
+          self.default.animated = true;
+          return self.moveNext();
         }
       },
       end: function end(evt) {
-        evt.preventDefault();
-        return this.default.animated = false;
+        var self;
+        self = main;
+        return self.default.animated = false;
       }
     },
     mounted: function mounted($el, e) {
-      var _this7 = this;
+      var _this6 = this;
 
       if (sys === "NeteaseMusic") {
         this.wy = true;
       }
-      // @.mount = true
       this.mount = true;
       this.build();
       this.getIp();
       load.progressOn = 95;
       this.audio = document.getElementById("bgm");
       this.recordDom = document.getElementById("record");
+      // console.log IsPC()
       if (IsPC()) {
-        this.$el.addEventListener('mousedown', this.start.bind(this));
-        this.$el.addEventListener('mousemove', this.move.bind(this));
-        this.$el.addEventListener('mouseup', this.end.bind(this));
-        this.recordDom.addEventListener('mousedown', this.recordStart.bind(this));
-        this.recordDom.addEventListener('mouseup', this.recordEnd.bind(this));
+        this.$el.addEventListener('mousedown', this.start);
+        this.$el.addEventListener('mousemove', this.move);
+        this.$el.addEventListener('mouseup', this.end);
+        this.recordDom.addEventListener('mousedown', this.recordStart);
+        this.recordDom.addEventListener('mouseup', this.recordEnd);
         this.pc = true;
-      }
-      this.$el.addEventListener('touchstart', this.start.bind(this));
-      this.$el.addEventListener('touchmove', this.move.bind(this));
-      this.$el.addEventListener('touchend', this.end.bind(this));
-      this.recordDom.addEventListener('touchstart', this.recordStart.bind(this));
-      this.recordDom.addEventListener('touchend', this.recordEnd.bind(this));
-      if (this.audio) {
-        this.audio.addEventListener("play", this.audioplay.bind(this));
+      } else {
+        this.$el.addEventListener('touchstart', this.start);
+        this.$el.addEventListener('touchmove', this.move);
+        this.$el.addEventListener('touchend', this.end);
+        this.recordDom.addEventListener('touchstart', this.recordStart);
+        this.recordDom.addEventListener('touchend', this.recordEnd);
       }
       if (this.audio) {
-        this.audio.addEventListener("pause", this.audiopause.bind(this));
+        this.audio.addEventListener("play", this.audioplay);
       }
       if (this.audio) {
-        this.audio.addEventListener("ended", this.audiopause.bind(this));
+        this.audio.addEventListener("pause", this.audiopause);
+      }
+      if (this.audio) {
+        this.audio.addEventListener("ended", this.audiopause);
       }
       return document.addEventListener("WeixinJSBridgeReady", function () {
-        return _this7.audio.play();
+        return _this6.audio.play();
       }, false);
     }
   });

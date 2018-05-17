@@ -20,7 +20,7 @@ class stars
         star.valpha = -1
   build: ->
     load.progressOn = 100
-    console.log "bg all loaded"
+    # console.log "bg all loaded"
     for i in [1...12]
       star = new Sprite res["img/page-1-star-#{i%4+1}.png"].texture
       star.x = Math.random()*(640-star.width)
@@ -201,7 +201,7 @@ class UGC
     ,100
 
   build: ->
-    console.log res["img/page-#{@.id}-bg.jpg"].texture
+    # console.log res["img/page-#{@.id}-bg.jpg"].texture
     bg = new Sprite res["img/page-#{@.id}-bg.jpg"].texture
     @.app.stage.addChild bg
 
@@ -248,7 +248,7 @@ class UGC
       mark.scale.y = 0.8
       mark.x += mark.width*0.1/2
       mark.y += mark.height*(1-mark.scale.y)/2
-      console.log mark.y
+      # console.log mark.y
       if mark.y > 200
         title2.y = 50
         text.y += 50

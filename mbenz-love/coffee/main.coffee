@@ -302,7 +302,7 @@ init = ->
 				@.form.dealer = ""
 		methods:
 			gameStart: (Id)->
-				console.log "id:",Id
+				# console.log "id:",Id
 				ugc = new UGC 
 					id: Id ,
 					wy: @.wy
@@ -315,19 +315,24 @@ init = ->
 					ugc: =>
 						@.ugc = ugc.saveUGC
 				@.recordPageShow = true
+				# console.log @.$el
+				@.$el.removeEventListener 'touchstart', @.start
+				@.$el.removeEventListener 'touchmove', @.move
+				@.$el.removeEventListener 'touchend', @.end
 			recordStart: (evt)->
-				evt.preventDefault()
-				@.recording = true
-				# ugc page show
-				@.cache = setTimeout =>
-					@.ugcPageShow = true
+				self = main
+				self.recording = true
+				self.cache = setTimeout =>
+					self.ugcPageShow = true
 				,5000
+				event.preventDefault()
 
 			recordEnd: (evt)->
-				@.ugcPageShow = true
-				evt.preventDefault()
-				clearTimeout @.cache
-				# @.recording = false
+				self = main
+				self.ugcPageShow = true
+				clearTimeout self.cache
+				# self.recording = false
+				event.preventDefault()
 
 			play: ->
 				if @.playing is "stop"
@@ -424,32 +429,34 @@ init = ->
 				if @.pageIndex <= 0
 					@.pageIndex = 0
 			start: (evt)->
-				# console.log evt
-				evt.preventDefault()
-				@.audio.play() if @.noteMsg
-				@.noteMsg = false
+				console.log "a"
+				self = main
+				# evt.preventDefault()
+				return false if self.default.animated
+				self.audio.play() if self.noteMsg
+				self.noteMsg = false
 				touch = if evt.touches? then evt.touches[0] else evt
-				@.default.x = touch[@XY]
+				self.default.x = touch[@XY]
 			move: (evt)->
+				self = main
+				return false if self.default.animated or self.poping
 				evt.preventDefault()
-				return false if @.default.animated or @.poping
 				touch = if evt.touches? then evt.touches[0] else evt
 				pageX = touch[@XY]
-				if (pageX - @.default.x) > 50
-					@.default.animated = true
-					@.movePrev()
-				if (pageX - @.default.x) < -50
-					@.default.animated = true
-					@.moveNext()
+				if (pageX - self.default.x) > 50
+					self.default.animated = true
+					self.movePrev()
+				if (pageX - self.default.x) < -50
+					self.default.animated = true
+					self.moveNext()
 			end: (evt)->
-				evt.preventDefault()
-				@.default.animated = false
+				self = main
+				self.default.animated = false
 
 		mounted: ($el,e)->
 			if sys is "NeteaseMusic"
 				@.wy = true
-			# @.mount = true
-			
+
 			@.mount = true
 			@.build()
 			@.getIp()
@@ -457,24 +464,26 @@ init = ->
 
 			@.audio = document.getElementById "bgm"
 			@.recordDom = document.getElementById "record"
+			# console.log IsPC()
 			if IsPC()
-				@.$el.addEventListener 'mousedown', @.start.bind @
-				@.$el.addEventListener 'mousemove', @.move.bind @
-				@.$el.addEventListener 'mouseup', @.end.bind @
-				@.recordDom.addEventListener 'mousedown', @.recordStart.bind @
-				@.recordDom.addEventListener 'mouseup', @.recordEnd.bind @
+				@.$el.addEventListener 'mousedown', @.start
+				@.$el.addEventListener 'mousemove', @.move
+				@.$el.addEventListener 'mouseup', @.end
+				@.recordDom.addEventListener 'mousedown', @.recordStart
+				@.recordDom.addEventListener 'mouseup', @.recordEnd
 				@.pc = true
 
-			@.$el.addEventListener 'touchstart', @.start.bind @
-			@.$el.addEventListener 'touchmove', @.move.bind @
-			@.$el.addEventListener 'touchend', @.end.bind @
+			else
+				@.$el.addEventListener 'touchstart', @.start
+				@.$el.addEventListener 'touchmove', @.move
+				@.$el.addEventListener 'touchend', @.end
 
-			@.recordDom.addEventListener 'touchstart', @.recordStart.bind @
-			@.recordDom.addEventListener 'touchend', @.recordEnd.bind @
+				@.recordDom.addEventListener 'touchstart', @.recordStart
+				@.recordDom.addEventListener 'touchend', @.recordEnd
 
-			@.audio.addEventListener "play", @.audioplay.bind @ if @.audio
-			@.audio.addEventListener "pause", @.audiopause.bind @ if @.audio
-			@.audio.addEventListener "ended", @.audiopause.bind @ if @.audio
+			@.audio.addEventListener "play", @.audioplay if @.audio
+			@.audio.addEventListener "pause", @.audiopause if @.audio
+			@.audio.addEventListener "ended", @.audiopause if @.audio
 
 			document.addEventListener "WeixinJSBridgeReady",=>
 				@.audio.play()

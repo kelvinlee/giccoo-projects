@@ -31,7 +31,7 @@ block content
 						span(class="opc font font-last") %
 
 	#main.main(v-show="mount",style="display: none",:style="{width: w+'px',height: h+'px'}",:class="{smaller: smaller,notsmall: !smaller}")
-		.bgm(@click.prevent="play")
+		.bgm(@click.stop.prevent="play")
 			audio#bgm(:src="musiclink",autoplay="true",loop="true")
 			img(:src="'#{url}/img/audio-'+playing+'.png'")
 			transition(name="page-fade")
@@ -48,7 +48,7 @@ block content
 					.animations
 
 				.content
-					.right(@click.prevent="moveNext")
+					.right(@click.stop.prevent="moveNext")
 
 		transition(name="page-animation")
 			- pageId = 1;
@@ -60,8 +60,9 @@ block content
 				.content
 					.texts(:style="{top: navH+'%'}")
 						img(src="#{url}/img/page-#{pageId}-text.png")
-					.right(@click.prevent="moveNext")
-					.btn.btn-start(@click.prevent="gameStart(#{pageId})")
+					.right(@click.stop.prevent="moveNext")
+					.btn.btn-start(@click.stop.prevent="gameStart(#{pageId})")
+						.startcontent.zoomIn.animated.delay-5
 
 		transition(name="page-animation")
 			- pageId = 2;
@@ -72,11 +73,12 @@ block content
 						.hair
 							img(src="#{url}/img/page-#{pageId}-hair.gif")
 				.content
-					.left(@click.prevent="movePrev")
-					.right(@click.prevent="moveNext")
+					.left(@click.stop.prevent="movePrev")
+					.right(@click.stop.prevent="moveNext")
 					.texts(:style="{top: navH+'%'}")
 						img(src="#{url}/img/page-#{pageId}-text.png")
-					.btn.btn-start(@click.prevent="gameStart(#{pageId})")
+					.btn.btn-start(@click.stop.prevent="gameStart(#{pageId})")
+						.startcontent.zoomIn.animated.delay-5
 		transition(name="page-animation")
 			- pageId = 3;
 			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
@@ -86,11 +88,12 @@ block content
 						.ball
 							img(src="#{url}/img/page-3-ball.png")
 				.content
-					.left(@click.prevent="movePrev")
-					.right(@click.prevent="moveNext")
+					.left(@click.stop.prevent="movePrev")
+					.right(@click.stop.prevent="moveNext")
 					.texts(:style="{top: navH+'%'}")
 						img(src="#{url}/img/page-#{pageId}-text.png")
-					.btn.btn-start(@click.prevent="gameStart(#{pageId})")
+					.btn.btn-start(@click.stop.prevent="gameStart(#{pageId})")
+						.startcontent.zoomIn.animated.delay-5
 		transition(name="page-animation")
 			- pageId = 4;
 			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
@@ -99,11 +102,12 @@ block content
 					.animations#rain
 						
 				.content
-					.left(@click.prevent="movePrev")
-					.right(@click.prevent="moveNext")
+					.left(@click.stop.prevent="movePrev")
+					.right(@click.stop.prevent="moveNext")
 					.texts(:style="{top: navH+'%'}")
 						img(src="#{url}/img/page-#{pageId}-text.png")
-					.btn.btn-start(@click.prevent="gameStart(#{pageId})")
+					.btn.btn-start(@click.stop.prevent="gameStart(#{pageId})")
+						.startcontent.zoomIn.animated.delay-5
 		transition(name="page-animation")
 			- pageId = 5;
 			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
@@ -113,11 +117,12 @@ block content
 						.snow
 							img(src="#{url}/img/page-#{pageId}-snow.gif")
 				.content
-					.left(@click.prevent="movePrev")
-					.right(@click.prevent="moveNext")
+					.left(@click.stop.prevent="movePrev")
+					.right(@click.stop.prevent="moveNext")
 					.texts(:style="{top: navH+'%'}")
 						img(src="#{url}/img/page-#{pageId}-text.png")
-					.btn.btn-start(@click.prevent="gameStart(#{pageId})")
+					.btn.btn-start(@click.stop.prevent="gameStart(#{pageId})")
+						.startcontent.zoomIn.animated.delay-5
 		transition(name="page-animation")
 			- pageId = 6;
 			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
@@ -128,11 +133,12 @@ block content
 							img(src="#{url}/img/page-#{pageId}-mark.png")
 
 				.content
-					.left(@click.prevent="movePrev")
-					.right(@click.prevent="moveNext")
+					.left(@click.stop.prevent="movePrev")
+					.right(@click.stop.prevent="moveNext")
 					.texts(:style="{top: navH+'%'}")
 						img(src="#{url}/img/page-#{pageId}-text.png")
-					.btn.btn-start(@click.prevent="gameStart(#{pageId})")
+					.btn.btn-start(@click.stop.prevent="gameStart(#{pageId})")
+						.startcontent.zoomIn.animated.delay-5
 		transition(name="page-animation")
 			- pageId = 7;
 			.page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
@@ -141,11 +147,12 @@ block content
 					.animations#dog
 
 				.content
-					.left(@click.prevent="movePrev")
-					//- .right(@click.prevent="moveNext")
+					.left(@click.stop.prevent="movePrev")
+					//- .right(@click.stop.prevent="moveNext")
 					.texts(:style="{top: navH+'%'}")
 						img(src="#{url}/img/page-#{pageId}-text.png")
-					.btn.btn-start(@click.prevent="gameStart(#{pageId})")
+					.btn.btn-start(@click.stop.prevent="gameStart(#{pageId})")
+						.startcontent.zoomIn.animated.delay-5
 
 
 		transition(name="page-fade")
@@ -206,9 +213,9 @@ block content
 								.item
 									input#detail(type="checkbox",value="1",checked,v-model="form.detail")
 									label(for="detail") 我同意以上信息提交给主办方
-						.form-btn(@click.prevent="submit")
+						.form-btn(@click.stop.prevent="submit")
 							img(src="#{url}/img/btn-submit.png")
-						.close(@click.prevent="regisiterPageShow = false")
+						.close(@click.stop.prevent="regisiterPageShow = false")
 							img(src="#{url}/img/form-close.png")
 
 		transition(name="page-fade")
@@ -232,7 +239,7 @@ block content
 				.bg#ugc
 					//- img(:src="ugcbg")
 				.content
-					.mark(v-if="wy",@click.prevent="share")
+					.mark(v-if="wy",@click.stop.prevent="share")
 					.mark(v-if="!wy")
 						img(:src="ugc")
 					.btns
