@@ -61,6 +61,7 @@ window.onload = ->
 	else
 		loadWechatConfig()
 		wx.ready ->
+			console.log "wx ready"
 			shareContent =
 				title: "点击测试你的孤独指数"
 				desc: "与兰蔻一起，度过漫漫长夜"
@@ -144,6 +145,7 @@ init = ->
 			ugc: null
 			ugcbg: null
 			wy: false
+			wx: false
 			shareImageLink: ""
 			questionMark: 0
 			answerList: [
@@ -350,6 +352,9 @@ init = ->
 			@.audio.addEventListener "ended", @.audiopause.bind(@) if @.audio
 			@.audiomusic.addEventListener "play", @.audiomusicplay.bind(@) if @.audiomusic
 			@.audiomusic.addEventListener "ended", @.audiomusicpause.bind(@) if @.audiomusic
+			document.addEventListener "WeixinJSBridgeReady",=>
+				@.wx = true
+			,false
 
 class buildUGC
 	app: null

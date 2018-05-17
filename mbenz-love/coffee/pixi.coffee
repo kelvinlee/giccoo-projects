@@ -213,13 +213,11 @@ class UGC
     mark.x = (640 - mark.width)/2
     mark.y = (1138 - mark.height)/2
 
-    qr = @.qr = new Sprite res["img/ugc-qr.png"].texture
-    @.qr.x = 35
-    @.qr.y = 1138 + 4 - 35 - @.qr.height
     
-    title = new Sprite res["img/ugc-title.png"].texture
-    @.app.stage.addChild title
-
+    
+    # title = new Sprite res["img/ugc-title.png"].texture
+    # @.app.stage.addChild title
+    qr = @.qr = new Sprite res["img/ugc-qr-1.png"].texture
     text = new Sprite res["img/ugc-#{@.id}-#{@.random}.png"].texture
     @.app.stage.addChild text
 
@@ -228,8 +226,11 @@ class UGC
     @.saveUGC = @.app.view.toDataURL()
     @.ugc()
 
-    title.alpha = 0
-    
+    # title.alpha = 0
+    qr.alpha = 0
+    qr2 = @.qr2 = new Sprite res["img/ugc-qr.png"].texture
+    # @.qr.x = 35
+    # @.qr.y = 1138 + 4 - 35 - @.qr.height
     @.app.stage.addChildAt mark,3
     text.y = 60
     title2 = new Sprite res["img/ugc-title-2.png"].texture
@@ -240,7 +241,7 @@ class UGC
       saveText = "img/save-text.png"
     save = new Sprite res[saveText].texture
     
-    @.app.stage.addChild save
+    @.app.stage.addChild save,qr2
 
     if @.small? and @.small
       mark.scale.x = 0.9
@@ -252,8 +253,8 @@ class UGC
         title2.y = 50
         text.y += 50
       
-      qr.scale.x = 0.9
-      qr.scale.y = 0.9
+      qr2.scale.x = 0.9
+      qr2.scale.y = 0.9
       save.scale.x = 0.9
       save.scale.y = 0.9
     else
@@ -261,11 +262,12 @@ class UGC
       text.y -= 36
       title2.y -= 36
 
+    text.y += 110
     save.x = 640 - mark.x - save.width - 20
     save.y = mark.y + mark.height - save.height - 20
 
-    qr.x = mark.x + 20
-    qr.y = mark.y + mark.height - qr.height - 20
+    qr2.x = mark.x + 20
+    qr2.y = mark.y + mark.height - qr2.height - 20
 
 
     # @.over()
@@ -280,10 +282,10 @@ class UGC
     PIXI.loader.add([
       "img/page-#{@.id}-bg.jpg"
       "img/ugc-qr.png"
+      "img/ugc-qr-1.png"
       "img/mark.png"
       "img/long-save.png"
       "img/save-text.png"
-      "img/ugc-title.png"
       "img/ugc-title-2.png"
       "img/ugc-#{@.id}-#{@.random}.png"
     ]).load(@.build.bind(@))

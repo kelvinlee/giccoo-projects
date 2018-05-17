@@ -450,7 +450,7 @@ UGC = function () {
     }, {
       key: "build",
       value: function build() {
-        var animate, bg, mark, qr, save, saveText, text, title, title2;
+        var animate, bg, mark, qr, qr2, save, saveText, text, title2;
         console.log(res["img/page-" + this.id + "-bg.jpg"].texture);
         bg = new Sprite(res["img/page-" + this.id + "-bg.jpg"].texture);
         this.app.stage.addChild(bg);
@@ -461,18 +461,21 @@ UGC = function () {
         this.mark = mark = new Sprite(res["img/mark.png"].texture);
         mark.x = (640 - mark.width) / 2;
         mark.y = (1138 - mark.height) / 2;
-        qr = this.qr = new Sprite(res["img/ugc-qr.png"].texture);
-        this.qr.x = 35;
-        this.qr.y = 1138 + 4 - 35 - this.qr.height;
-        title = new Sprite(res["img/ugc-title.png"].texture);
-        this.app.stage.addChild(title);
+
+        // title = new Sprite res["img/ugc-title.png"].texture
+        // @.app.stage.addChild title
+        qr = this.qr = new Sprite(res["img/ugc-qr-1.png"].texture);
         text = new Sprite(res["img/ugc-" + this.id + "-" + this.random + ".png"].texture);
         this.app.stage.addChild(text);
         this.app.stage.addChild(qr);
         this.app.renderer.render(this.app.stage);
         this.saveUGC = this.app.view.toDataURL();
         this.ugc();
-        title.alpha = 0;
+        // title.alpha = 0
+        qr.alpha = 0;
+        qr2 = this.qr2 = new Sprite(res["img/ugc-qr.png"].texture);
+        // @.qr.x = 35
+        // @.qr.y = 1138 + 4 - 35 - @.qr.height
         this.app.stage.addChildAt(mark, 3);
         text.y = 60;
         title2 = new Sprite(res["img/ugc-title-2.png"].texture);
@@ -482,7 +485,7 @@ UGC = function () {
           saveText = "img/save-text.png";
         }
         save = new Sprite(res[saveText].texture);
-        this.app.stage.addChild(save);
+        this.app.stage.addChild(save, qr2);
         if (this.small != null && this.small) {
           mark.scale.x = 0.9;
           mark.scale.y = 0.8;
@@ -493,8 +496,8 @@ UGC = function () {
             title2.y = 50;
             text.y += 50;
           }
-          qr.scale.x = 0.9;
-          qr.scale.y = 0.9;
+          qr2.scale.x = 0.9;
+          qr2.scale.y = 0.9;
           save.scale.x = 0.9;
           save.scale.y = 0.9;
         } else {
@@ -502,10 +505,11 @@ UGC = function () {
           text.y -= 36;
           title2.y -= 36;
         }
+        text.y += 110;
         save.x = 640 - mark.x - save.width - 20;
         save.y = mark.y + mark.height - save.height - 20;
-        qr.x = mark.x + 20;
-        return qr.y = mark.y + mark.height - qr.height - 20;
+        qr2.x = mark.x + 20;
+        return qr2.y = mark.y + mark.height - qr2.height - 20;
       }
 
       // @.over()
@@ -521,7 +525,7 @@ UGC = function () {
         });
         document.getElementById('ugc').appendChild(this.app.view);
         this.random = Math.floor(Math.random() * 5 + 1);
-        return PIXI.loader.add(["img/page-" + this.id + "-bg.jpg", "img/ugc-qr.png", "img/mark.png", "img/long-save.png", "img/save-text.png", "img/ugc-title.png", "img/ugc-title-2.png", "img/ugc-" + this.id + "-" + this.random + ".png"]).load(this.build.bind(this));
+        return PIXI.loader.add(["img/page-" + this.id + "-bg.jpg", "img/ugc-qr.png", "img/ugc-qr-1.png", "img/mark.png", "img/long-save.png", "img/save-text.png", "img/ugc-title-2.png", "img/ugc-" + this.id + "-" + this.random + ".png"]).load(this.build.bind(this));
       }
     }]);
 

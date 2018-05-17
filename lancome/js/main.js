@@ -132,6 +132,7 @@ window.onload = function () {
     loadWechatConfig();
     wx.ready(function () {
       var shareContent;
+      console.log("wx ready");
       shareContent = {
         title: "点击测试你的孤独指数",
         desc: "与兰蔻一起，度过漫漫长夜",
@@ -234,6 +235,7 @@ init = function init() {
       ugc: null,
       ugcbg: null,
       wy: false,
+      wx: false,
       shareImageLink: "",
       questionMark: 0,
       answerList: [{
@@ -452,6 +454,8 @@ init = function init() {
       }
     },
     mounted: function mounted($el, e) {
+      var _this6 = this;
+
       if (sys === "NeteaseMusic") {
         this.wy = true;
       }
@@ -474,8 +478,11 @@ init = function init() {
         this.audiomusic.addEventListener("play", this.audiomusicplay.bind(this));
       }
       if (this.audiomusic) {
-        return this.audiomusic.addEventListener("ended", this.audiomusicpause.bind(this));
+        this.audiomusic.addEventListener("ended", this.audiomusicpause.bind(this));
       }
+      return document.addEventListener("WeixinJSBridgeReady", function () {
+        return _this6.wx = true;
+      }, false);
     }
   });
 };
@@ -769,7 +776,7 @@ createAnswer = function () {
     }, {
       key: "answer2Over",
       value: function answer2Over() {
-        var _this6 = this;
+        var _this7 = this;
 
         this.moving2 = false;
         this.ansStar.stage.removeChild(this.dom.bg2, this.dom.music);
@@ -779,7 +786,7 @@ createAnswer = function () {
         }, {
           x: 100
         }, 600, function (res) {
-          return _this6.dom.timeline.alpha = res.x / 100;
+          return _this7.dom.timeline.alpha = res.x / 100;
         });
       }
 
@@ -931,7 +938,7 @@ createAnswer = function () {
     }, {
       key: "select",
       value: function select(i) {
-        var _this7 = this;
+        var _this8 = this;
 
         var target, tempX, tempY, tween;
         this.answers[this.t] = i;
@@ -962,9 +969,9 @@ createAnswer = function () {
               this.scaleP.x = 1;
               this.scaleP.y = 1;
               return this.cache = setTimeout(function () {
-                _this7.dom.mark.visible = false;
-                _this7.dom.mark2.visible = true;
-                return _this7.dom.answer1bg.mask = _this7.dom.mark2;
+                _this8.dom.mark.visible = false;
+                _this8.dom.mark2.visible = true;
+                return _this8.dom.answer1bg.mask = _this8.dom.mark2;
                 // @.ansStar.stage.addChild @.dom.mark2
               }, 400);
             case 2:
@@ -992,27 +999,27 @@ createAnswer = function () {
           tween = this.tween = new TWEEN.Tween(tempX).to({
             x: 100
           }, 2000).easing(TWEEN.Easing.Cubic.Out).onUpdate(function () {
-            _this7.dom.symbol1.x = 99 - tempX.x * 0.3;
+            _this8.dom.symbol1.x = 99 - tempX.x * 0.3;
             if (tempX.x >= 90) {
-              _this7.dom.symbol1.alpha = (100 - tempX.x) / 10;
+              _this8.dom.symbol1.alpha = (100 - tempX.x) / 10;
             } else if (tempX.x <= 30) {
-              _this7.dom.symbol1.alpha = (tempX.x - 20) / 10;
+              _this8.dom.symbol1.alpha = (tempX.x - 20) / 10;
             } else {
-              _this7.dom.symbol1.alpha = 1;
+              _this8.dom.symbol1.alpha = 1;
             }
-            _this7.dom.symbol2.x = 110 - tempX.x * 0.2;
+            _this8.dom.symbol2.x = 110 - tempX.x * 0.2;
             if (tempX.x >= 90 - 10) {
-              _this7.dom.symbol2.alpha = (100 - 10 - tempX.x) / 10;
+              _this8.dom.symbol2.alpha = (100 - 10 - tempX.x) / 10;
             }
             if (tempX.x <= 20) {
-              _this7.dom.symbol2.alpha = (tempX.x - 10) / 10;
+              _this8.dom.symbol2.alpha = (tempX.x - 10) / 10;
             }
-            _this7.dom.symbol3.x = 128 - tempX.x * 0.1;
+            _this8.dom.symbol3.x = 128 - tempX.x * 0.1;
             if (tempX.x >= 90 - 20) {
-              _this7.dom.symbol3.alpha = (100 - 20 - tempX.x) / 10;
+              _this8.dom.symbol3.alpha = (100 - 20 - tempX.x) / 10;
             }
             if (tempX.x <= 10) {
-              return _this7.dom.symbol3.alpha = tempX.x / 10;
+              return _this8.dom.symbol3.alpha = tempX.x / 10;
             }
           }).start();
           tempY = {
@@ -1021,9 +1028,9 @@ createAnswer = function () {
           return tween = new TWEEN.Tween(tempY).to({
             y: -100
           }, 2000).easing(TWEEN.Easing.Cubic.In).onUpdate(function () {
-            _this7.dom.symbol1.y = 690 + tempY.y * 0.5;
-            _this7.dom.symbol2.y = 717 + tempY.y * 0.4;
-            return _this7.dom.symbol3.y = 720 + tempY.y * 0.3;
+            _this8.dom.symbol1.y = 690 + tempY.y * 0.5;
+            _this8.dom.symbol2.y = 717 + tempY.y * 0.4;
+            return _this8.dom.symbol3.y = 720 + tempY.y * 0.3;
           }).start();
         } else if (this.t === 2) {
           this.dom.timeline1.alpha = 0;

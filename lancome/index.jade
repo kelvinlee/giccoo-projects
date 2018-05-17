@@ -44,9 +44,9 @@ block content
 							img(src="#{url}/img/title-#{i}.png")
 							- if (i==4)
 								.box
-									.c.fadeOut.animated(class="delay-#{i*3+20}")
+									.c.fadeOut.duration-3.animated(class="delay-#{i*3+12}")
 										img(src="#{url}/img/title-#{i}-1.png")
-									.o.fadeIn.animated(class="delay-#{i*3+23}")
+									.o.fadeIn.duration-3.animated(class="delay-#{i*3+12+1}")
 										img(src="#{url}/img/title-#{i}-2.png")
 					-;
 		transition(name="page-fade")
@@ -67,7 +67,7 @@ block content
 					img(src="#{url}/img/wait-box.jpg")
 				transition(name="page-fade")
 					.content(v-show="waitPageBox")
-						a(href="https://h5.m.taobao.com/weapp/view_page.htm?page=shop/activity&userId=2360209412&shopId=115862174&pageId=28363464")
+						a(:href="wx?'http://www.lancome.com.cn/landing/genifique-eye.html?&utm_source=163music&utm_medium=DISP&utm_content=wechatH5&utm_campaign=CN_20180509_GENEYE_LPD_LAN_FS_Regular_NVD_DISP_MO':'https://equity-vip.tmall.com/agent/mobile.htm?agentId=91552&_bind=true'")
 							img(src="#{url}/img/wait.gif")
 		transition(name="page-fade")
 			.page.page-ugc(v-show="ugcPageShow")
@@ -84,7 +84,7 @@ block content
 		transition(name="page-fade")
 			.page.page-last(v-show="lastPageShow")
 				.bg(:style="{transform: 'scale('+(1-smaller)+','+(1-smaller)+')'}")
-					a(href="https://h5.m.taobao.com/weapp/view_page.htm?page=shop/activity&userId=2360209412&shopId=115862174&pageId=28363464")
+					a(:href="wx?'http://www.lancome.com.cn/landing/genifique-eye.html?&utm_source=163music&utm_medium=DISP&utm_content=wechatH5&utm_campaign=CN_20180509_GENEYE_LPD_LAN_FS_Regular_NVD_DISP_MO':'https://equity-vip.tmall.com/agent/mobile.htm?agentId=91552&_bind=true'")
 						img(src="#{url}/img/last-page.jpg")
 
 

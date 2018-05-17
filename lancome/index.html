@@ -35,8 +35,8 @@
             </div>
             <div class="t title-4 fadeInUp animated duration-12 delay-12"><img src="./img/title-4.png">
               <div class="box">
-                <div class="c fadeOut animated delay-32"><img src="./img/title-4-1.png"></div>
-                <div class="o fadeIn animated delay-35"><img src="./img/title-4-2.png"></div>
+                <div class="c fadeOut duration-3 animated delay-24"><img src="./img/title-4-1.png"></div>
+                <div class="o fadeIn duration-3 animated delay-25"><img src="./img/title-4-2.png"></div>
               </div>
             </div>
             <div class="t title-5 fadeInUp animated duration-12 delay-15"><img src="./img/title-5.png">
@@ -63,7 +63,7 @@
         <div v-show="waitPageShow" class="page page-wait">
           <div v-show="!waitPageBox" @click="gotoUGC" class="content"><img src="./img/wait-box.jpg"></div>
           <transition name="page-fade">
-            <div v-show="waitPageBox" class="content"><a href="https://h5.m.taobao.com/weapp/view_page.htm?page=shop/activity&amp;userId=2360209412&amp;shopId=115862174&amp;pageId=28363464"><img src="./img/wait.gif"></a></div>
+            <div v-show="waitPageBox" class="content"><a :href="wx?'http://www.lancome.com.cn/landing/genifique-eye.html?&amp;utm_source=163music&amp;utm_medium=DISP&amp;utm_content=wechatH5&amp;utm_campaign=CN_20180509_GENEYE_LPD_LAN_FS_Regular_NVD_DISP_MO':'https://equity-vip.tmall.com/agent/mobile.htm?agentId=91552&amp;_bind=true'"><img src="./img/wait.gif"></a></div>
           </transition>
         </div>
       </transition>
@@ -78,7 +78,7 @@
       </transition>
       <transition name="page-fade">
         <div v-show="lastPageShow" class="page page-last">
-          <div :style="{transform: 'scale('+(1-smaller)+','+(1-smaller)+')'}" class="bg"><a href="https://h5.m.taobao.com/weapp/view_page.htm?page=shop/activity&amp;userId=2360209412&amp;shopId=115862174&amp;pageId=28363464"><img src="./img/last-page.jpg"></a></div>
+          <div :style="{transform: 'scale('+(1-smaller)+','+(1-smaller)+')'}" class="bg"><a :href="wx?'http://www.lancome.com.cn/landing/genifique-eye.html?&amp;utm_source=163music&amp;utm_medium=DISP&amp;utm_content=wechatH5&amp;utm_campaign=CN_20180509_GENEYE_LPD_LAN_FS_Regular_NVD_DISP_MO':'https://equity-vip.tmall.com/agent/mobile.htm?agentId=91552&amp;_bind=true'"><img src="./img/last-page.jpg"></a></div>
         </div>
       </transition>
     </div>
