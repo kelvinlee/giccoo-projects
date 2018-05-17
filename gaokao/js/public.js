@@ -264,8 +264,8 @@ function setTimeT(){
   }
 }
 $("#hint2").click(function(){
-  TweenLite.set($("#hint2"),{display:"none",delay:1})
-  TweenLite.to($("#hint2"),1,{opacity:0})
+  TweenLite.set($("#hint2"),{display:"none",delay:2})
+  TweenLite.to($("#hint2"),1,{opacity:0,delay:1})
   t1000=setInterval(setTimeT,1000)
 })
 
