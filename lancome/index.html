@@ -18,13 +18,13 @@
     </div>
     <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">
       <div class="player-fix">
-        <div :class="{on: playing}" @click="playbgm" class="record"><img src="./img/music.png"></div>
+        <div :class="{on: playing}" @click.stop.prevent="playbgm" class="record"><img src="./img/music.png"></div>
         <audio id="bgm" :src="bgmlink" loop="true"></audio>
         <audio id="music" :src="musiclink"></audio>
       </div>
       <div class="page page-home">
         <div id="stars" class="bg"></div>
-        <div v-show="homepageShow" @click="gotoAnswer" class="content">
+        <div v-show="homepageShow" @click.stop.prevent="gotoAnswer" class="content">
           <div class="building fadeIn animated duration-30 delay-10"><img src="./img/building.png"></div>
           <div class="title">
             <div :class="{notwy: !wy}" class="t title-1 fadeInUp animated duration-12 delay-3"><img :src="!wy &amp;&amp; 1==4?'./img/title-1-notwy.png':'./img/title-1.png'">
@@ -51,17 +51,17 @@
             <div v-for="item,index in answerList" :class="'answer-'+index" class="answer fadeIn animated duration-8 delay-3">
               <h1 v-html="item.question.length &gt; 1 ? item.question[questionMark] : item.question[0]"></h1>
               <div class="answer-list">
-                <div v-for="value,ind in item.answers" @click="select(ind)" :class="{right: answers[index] == ind}" v-html="value" class="item"></div>
-                <div v-if="index == 1" class="note">*选择答案后将自动播放音效</div>
+                <div v-for="value,ind in item.answers" @click.stop.prevent="select(ind)" :class="{right: answers[index] == ind}" v-html="value" class="item"></div>
+                <div v-if="index == 1" @click.stop.prevent="ask" class="note">*选择答案后将自动播放音效</div>
               </div>
-              <div @click="next" class="btn"><img v-if="index &lt;= 1" src="./img/btn-next.png"><img v-if="index &gt; 1" src="./img/btn-done.png"></div>
+              <div @click.stop.prevent="next" class="btn"><img v-if="index &lt;= 1" src="./img/btn-next.png"><img v-if="index &gt; 1" src="./img/btn-done.png"></div>
             </div>
           </div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="waitPageShow" class="page page-wait">
-          <div v-show="!waitPageBox" @click="gotoUGC" class="content"><img src="./img/wait-box.jpg"></div>
+          <div v-show="!waitPageBox" @click.stop.prevent="gotoUGC" class="content"><img src="./img/wait-box.jpg"></div>
           <transition name="page-fade">
             <div v-show="waitPageBox" class="content"><a :href="wx?'http://www.lancome.com.cn/landing/genifique-eye.html?&amp;utm_source=163music&amp;utm_medium=DISP&amp;utm_content=wechatH5&amp;utm_campaign=CN_20180509_GENEYE_LPD_LAN_FS_Regular_NVD_DISP_MO':'https://equity-vip.tmall.com/agent/mobile.htm?agentId=91552&amp;_bind=true'"><img src="./img/wait.gif"></a></div>
           </transition>
@@ -72,7 +72,7 @@
           <div id="ugcbg" :style="{transform: 'scale('+(1-smaller)+','+(1-smaller)+')'}" class="bg"><img :src="ugcbg"><img :src="ugc" class="ugc">
             <!-- canvas#ugc(width="640",height="1138")-->
           </div>
-          <div v-if="wy" @click="upload" class="btn"><img src="./img/btn-save.png"></div>
+          <div v-if="wy" @click.stop.prevent="upload" class="btn"><img src="./img/btn-save.png"></div>
           <div v-if="!wy" class="btn"><img src="./img/btn-long-save.png"><img :src="ugc" class="ugc"></div>
         </div>
       </transition>

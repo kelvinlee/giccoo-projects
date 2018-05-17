@@ -385,8 +385,14 @@ init = function init() {
           return main.faild();
         });
       },
-      ask: function ask() {},
-      // 获取网易云数据
+      ask: function ask() {
+        // 获取网易云数据
+        return axios.get("//music.163.com/api/activity/lancome/userInfo").then(function (msg) {
+          return alert(msg.data);
+        }).catch(function (err) {
+          return alert(err);
+        });
+      },
       success: function success(data) {
         var _this3 = this;
 

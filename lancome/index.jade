@@ -28,14 +28,14 @@ block content
 		.player-fix
 			//- .cursor(:class="{on: playing}")
 				img(src="#{url}/img/music-touch.png")
-			.record(:class="{on: playing}",@click="playbgm")
+			.record(:class="{on: playing}",@click.stop.prevent="playbgm")
 				img(src="#{url}/img/music.png")
 			audio#bgm(:src="bgmlink",loop="true")
 			audio#music(:src="musiclink")
 				
 		.page.page-home
 			.bg#stars
-			.content(v-show="homepageShow",@click="gotoAnswer")
+			.content(v-show="homepageShow",@click.stop.prevent="gotoAnswer")
 				.building.fadeIn.animated.duration-30.delay-10
 					img(src="#{url}/img/building.png")
 				.title
@@ -56,14 +56,14 @@ block content
 					.answer.fadeIn.animated.duration-8.delay-3(v-for="item,index in answerList",:class!="'answer-'+index")
 						h1(v-html="item.question.length > 1 ? item.question[questionMark] : item.question[0]")
 						.answer-list
-							.item(v-for="value,ind in item.answers",@click="select(ind)",:class="{right: answers[index] == ind}",v-html="value")
-							.note(v-if="index == 1") *选择答案后将自动播放音效
-						.btn(@click="next")
+							.item(v-for="value,ind in item.answers",@click.stop.prevent="select(ind)",:class="{right: answers[index] == ind}",v-html="value")
+							.note(v-if="index == 1",@click.stop.prevent="ask") *选择答案后将自动播放音效
+						.btn(@click.stop.prevent="next")
 							img(v-if="index <= 1",src="#{url}/img/btn-next.png")
 							img(v-if="index > 1",src="#{url}/img/btn-done.png")
 		transition(name="page-fade")
 			.page.page-wait(v-show="waitPageShow")
-				.content(v-show="!waitPageBox",@click="gotoUGC")
+				.content(v-show="!waitPageBox",@click.stop.prevent="gotoUGC")
 					img(src="#{url}/img/wait-box.jpg")
 				transition(name="page-fade")
 					.content(v-show="waitPageBox")
@@ -75,7 +75,7 @@ block content
 					img(:src="ugcbg")
 					img.ugc(:src="ugc")
 					// canvas#ugc(width="640",height="1138")
-				.btn(v-if="wy",@click="upload")
+				.btn(v-if="wy",@click.stop.prevent="upload")
 					img(src="#{url}/img/btn-save.png")
 				.btn(v-if="!wy")
 					img(src="#{url}/img/btn-long-save.png")
