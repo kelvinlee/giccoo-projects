@@ -831,15 +831,15 @@ createAnswer = function () {
         timeline.x = 220;
         timeline.y = 565;
         timeline.alpha = 0;
-        timeline1 = this.dom.timeline1 = new PIXI.Sprite(PIXI.loader.resources["img/mobile-answer-1.png"].texture);
+        timeline1 = this.dom.timeline1 = new PIXI.Sprite(PIXI.loader.resources["img/mobile-answer.json"].textures['mobile-answer-1.png']);
         timeline1.x = 272;
         timeline1.y = 685;
         timeline1.alpha = 0;
-        timeline2 = this.dom.timeline2 = new PIXI.Sprite(PIXI.loader.resources["img/mobile-answer-2.png"].texture);
+        timeline2 = this.dom.timeline2 = new PIXI.Sprite(PIXI.loader.resources["img/mobile-answer.json"].textures['mobile-answer-2.png']);
         timeline2.x = 272;
         timeline2.y = 685;
         timeline2.alpha = 0;
-        timeline3 = this.dom.timeline3 = new PIXI.Sprite(PIXI.loader.resources["img/mobile-answer-3.png"].texture);
+        timeline3 = this.dom.timeline3 = new PIXI.Sprite(PIXI.loader.resources["img/mobile-answer.json"].textures['mobile-answer-3.png']);
         timeline3.x = 272;
         timeline3.y = 685;
         timeline3.alpha = 0;
@@ -1098,7 +1098,7 @@ createAnswer = function () {
           transparent: true
         });
         document.getElementById('answer-bg').appendChild(this.ansStar.view);
-        return PIXI.loader.add(["img/mobile-answer.json", "img/answer-3-bg.jpg", "img/mobile-timeline.png", "img/mobile-answer-1.png", "img/mobile-answer-2.png", "img/mobile-answer-3.png"]).load(this.build.bind(this));
+        return PIXI.loader.add(["img/mobile-answer.json", "img/answer-3-bg.jpg", "img/mobile-timeline.png"]).load(this.build.bind(this));
       }
     }]);
 

@@ -5469,7 +5469,7 @@
 		"oA": 0,
 		"oAP": "\/lancome\/img\/last-page.gif",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"\/lancome\/img\/last-page.jpg": {
 		"ft": 16384,
@@ -5991,6 +5991,17 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/libs\/js\/orientation.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/coffee\/pixi-base.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/libs\/js\/pixi-base.js",
 		"oF": 0,
 		"oS": 1,
 		"sC": 0,
@@ -8821,6 +8832,25 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mbenz-love\/img\/pages-small.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/mbenz-love\/img\/pages-small-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/mbenz-love\/img\/pages-small.png": {
+		"ft": 32768,
+		"iS": 87191,
+		"oA": 0,
+		"oAP": "\/mbenz-love\/img\/pages-small.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},

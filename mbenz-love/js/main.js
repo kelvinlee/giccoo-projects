@@ -6,7 +6,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var IsPC, Sprite, Tn, UGC, _CDN, _imgurl, _animate, _citys, cloud, _dealers, dog, e, getRandom, global, imageurl, init, j, len, load, loadWechatConfig, loader, main, neteaseShareImage, options, p, passiveSupported, pre, provinces, rain, randomSort, res, stars, startTime, sys;
+var Container, IsPC, ParticleContainer, Sprite, Texture, TextureCache, Tn, UGC, _CDN, _imgurl, _animate, autoDetectRenderer, _citys, cloud, _dealers, dog, e, getId, getRandom, getTe, global, imageurl, init, j, len, load, loadWechatConfig, loader, main, neteaseShareImage, options, p, passiveSupported, pre, provinces, rain, randomSort, resource, resources, smallJsonText, stars, startTime, sys;
 
 randomSort = function randomSort(obj) {
   var newArr, oldarr, _randomSortFun;
@@ -86,11 +86,34 @@ IsPC = function IsPC() {
   return flag;
 };
 
-Sprite = PIXI.Sprite;
+Container = PIXI.Container;
+
+ParticleContainer = PIXI.ParticleContainer;
+
+autoDetectRenderer = PIXI.autoDetectRenderer;
 
 loader = PIXI.loader;
 
-res = PIXI.loader.resources;
+resources = PIXI.loader.resources;
+
+TextureCache = PIXI.utils.TextureCache;
+
+Texture = PIXI.Texture;
+
+Sprite = PIXI.Sprite;
+
+resource = PIXI.loader.resources;
+
+getTe = function getTe(id) {
+  return resource[id].texture;
+};
+
+getId = function getId(id, link) {
+  return loader.resources[link].textures[id];
+};
+
+// @codekit-prepend "../../libs/coffee/pixi-base"
+smallJsonText = "img/pages-small.json";
 
 stars = function () {
   // star
@@ -134,7 +157,7 @@ stars = function () {
         load.progressOn = 100;
         // console.log "bg all loaded"
         for (i = j = 1; j < 12; i = ++j) {
-          star = new Sprite(res["img/page-1-star-" + (i % 4 + 1) + ".png"].texture);
+          star = new Sprite(getId("page-1-star-" + (i % 4 + 1) + ".png", smallJsonText));
           star.x = Math.random() * (640 - star.width);
           star.y = Math.random() * (420 - star.width) + 100;
           star.alpha = Math.random() * 1;
@@ -159,7 +182,7 @@ stars = function () {
           preserveDrawingBuffer: true
         });
         document.getElementById('stars').appendChild(this.app.view);
-        return PIXI.loader.add(["img/page-1-star-1.png", "img/page-1-star-2.png", "img/page-1-star-3.png", "img/page-1-star-4.png", "img/page-4-rain-1.png", "img/page-4-rain-2.png", "img/page-4-rain-3.png", "img/page-4-rain-4.png", "img/page-7-dog-1.png", "img/page-7-dog-2.png", "img/page-7-dog-3.png", "img/page-7-dog-4.png", "img/page-7-dog-5.png", "img/page-6-cloud-1.png", "img/page-6-cloud-2.png", "img/page-6-cloud-3.png"]).load(this.build.bind(this));
+        return PIXI.loader.add(["img/pages-small.json", "img/page-7-dog-1.png", "img/page-7-dog-2.png", "img/page-7-dog-3.png", "img/page-7-dog-4.png", "img/page-7-dog-5.png"]).load(this.build.bind(this));
       }
     }]);
 
@@ -211,7 +234,7 @@ rain = function () {
       value: function build() {
         var i, j, random;
         for (i = j = 1; j < 50; i = ++j) {
-          rain = new Sprite(res["img/page-4-rain-" + (i % 4 + 1) + ".png"].texture);
+          rain = new Sprite(getId("page-4-rain-" + (i % 4 + 1) + ".png", smallJsonText));
           rain.x = 640 - rain.width * 1.5 - Math.random() * 640;
           rain.vx = rain.x;
           rain.y = Math.random() * (1138 - rain.width);
@@ -286,7 +309,7 @@ cloud = function () {
       value: function build() {
         var i, j;
         for (i = j = 1; j < 4; i = ++j) {
-          cloud = new Sprite(res["img/page-6-cloud-" + (i % 3 + 1) + ".png"].texture);
+          cloud = new Sprite(getId("page-6-cloud-" + (i % 3 + 1) + ".png", smallJsonText));
           cloud.x = Math.random() * (640 - cloud.width);
           cloud.vx = 0.2 + 0.2 * i;
           cloud.alpha = 0.2 + Math.random() * 0.3;
@@ -369,7 +392,7 @@ dog = function () {
       value: function build() {
         var i, j;
         for (i = j = 1; j < 5; i = ++j) {
-          dog = new Sprite(res["img/page-7-dog-" + i + ".png"].texture);
+          dog = new Sprite(resources["img/page-7-dog-" + i + ".png"].texture);
           dog.alpha = 0;
           dog.vf = this.frame;
           this.dogs.push(dog);
@@ -450,22 +473,22 @@ UGC = function () {
     }, {
       key: "build",
       value: function build() {
-        var animate, bg, mark, qr, qr2, save, saveText, text, title2;
-        // console.log res["img/page-#{@.id}-bg.jpg"].texture
-        bg = new Sprite(res["img/page-" + this.id + "-bg.jpg"].texture);
+        var animate, bg, mark, qr, qr2, save, saveText, text;
+        // console.log resources["img/page-#{@.id}-bg.jpg"].texture
+        bg = new Sprite(resources["img/page-" + this.id + "-bg.jpg"].texture);
         this.app.stage.addChild(bg);
         if (this.bg != null) {
           animate = new Sprite(PIXI.Texture.fromCanvas(this.bg));
           this.app.stage.addChild(animate);
         }
-        this.mark = mark = new Sprite(res["img/mark.png"].texture);
+        this.mark = mark = new Sprite(resources["img/mark.png"].texture);
         mark.x = (640 - mark.width) / 2;
         mark.y = (1138 - mark.height) / 2;
 
-        // title = new Sprite res["img/ugc-title.png"].texture
+        // title = new Sprite resources["img/ugc-title.png"].texture
         // @.app.stage.addChild title
-        qr = this.qr = new Sprite(res["img/ugc-qr-1.png"].texture);
-        text = new Sprite(res["img/ugc-" + this.id + "-" + this.random + ".png"].texture);
+        qr = this.qr = new Sprite(resources["img/ugc-qr-1.png"].texture);
+        text = new Sprite(resources["img/ugc-" + this.id + "-" + this.random + ".png"].texture);
         this.app.stage.addChild(qr);
         this.app.stage.addChild(text);
         this.app.renderer.render(this.app.stage);
@@ -473,18 +496,18 @@ UGC = function () {
         this.ugc();
         // title.alpha = 0
         qr.alpha = 0;
-        qr2 = this.qr2 = new Sprite(res["img/ugc-qr.png"].texture);
+        qr2 = this.qr2 = new Sprite(resources["img/ugc-qr.png"].texture);
         // @.qr.x = 35
         // @.qr.y = 1138 + 4 - 35 - @.qr.height
         this.app.stage.addChildAt(mark, 2);
         text.y = 60;
-        title2 = new Sprite(res["img/ugc-title-2.png"].texture);
-        this.app.stage.addChild(title2);
+        // title2 = new Sprite resources["img/ugc-title-2.png"].texture
+        // @.app.stage.addChild title2
         saveText = "img/long-save.png";
         if (this.wy != null && this.wy) {
           saveText = "img/save-text.png";
         }
-        save = new Sprite(res[saveText].texture);
+        save = new Sprite(resources[saveText].texture);
         this.app.stage.addChild(save, qr2);
         if (this.small != null && this.small) {
           mark.scale.x = 0.9;
@@ -493,7 +516,7 @@ UGC = function () {
           mark.y += mark.height * (1 - mark.scale.y) / 2;
           // console.log mark.y
           if (mark.y > 200) {
-            title2.y = 50;
+            // title2.y = 50
             text.y += 50;
           }
           qr2.scale.x = 0.9;
@@ -503,8 +526,8 @@ UGC = function () {
         } else {
           mark.y -= 36;
           text.y -= 36;
-          title2.y -= 36;
         }
+        // title2.y -= 36
         text.y += 110;
         save.x = 640 - mark.x - save.width - 20;
         save.y = mark.y + mark.height - save.height - 20;

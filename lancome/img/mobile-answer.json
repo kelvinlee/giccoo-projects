@@ -30,7 +30,7 @@
 "meta": {
 	"app": "https://www.codeandweb.com/texturepacker",
 	"version": "1.0",
-	"image": "test.png",
+	"image": "mobile-answer.png",
 	"format": "RGBA8888",
 	"size": {"w":450,"h":57},
 	"scale": "1",

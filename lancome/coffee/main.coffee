@@ -597,17 +597,17 @@ class createAnswer
 		timeline.y = 565
 		timeline.alpha = 0
 
-		timeline1 = @.dom.timeline1 = new PIXI.Sprite PIXI.loader.resources["img/mobile-answer-1.png"].texture
+		timeline1 = @.dom.timeline1 = new PIXI.Sprite PIXI.loader.resources["img/mobile-answer.json"].textures['mobile-answer-1.png']
 		timeline1.x = 272
 		timeline1.y = 685
 		timeline1.alpha = 0
 
-		timeline2 = @.dom.timeline2 = new PIXI.Sprite PIXI.loader.resources["img/mobile-answer-2.png"].texture
+		timeline2 = @.dom.timeline2 = new PIXI.Sprite PIXI.loader.resources["img/mobile-answer.json"].textures['mobile-answer-2.png']
 		timeline2.x = 272
 		timeline2.y = 685
 		timeline2.alpha = 0
 
-		timeline3 = @.dom.timeline3 = new PIXI.Sprite PIXI.loader.resources["img/mobile-answer-3.png"].texture
+		timeline3 = @.dom.timeline3 = new PIXI.Sprite PIXI.loader.resources["img/mobile-answer.json"].textures['mobile-answer-3.png']
 		timeline3.x = 272
 		timeline3.y = 685
 		timeline3.alpha = 0
@@ -824,9 +824,6 @@ class createAnswer
 			"img/mobile-answer.json"
 			"img/answer-3-bg.jpg"
 			"img/mobile-timeline.png"
-			"img/mobile-answer-1.png"
-			"img/mobile-answer-2.png"
-			"img/mobile-answer-3.png"
 		]).load(@.build.bind(@))
 
 Tn = (from = {x: 0},to = {x: 100},time = 800,callback)->
