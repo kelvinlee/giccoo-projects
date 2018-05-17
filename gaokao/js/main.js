@@ -181,7 +181,7 @@ function goP2(){//========================准考证页
   p1go.visible=false
   TweenLite.to(p1bg,.5,{scaleY:0,y:stageH})
   for (var i = 1; i <= 10; i++) {
-    TweenLite.set(p1picA[i-1],{alpha:0,delay:i*.05,onComplete:removeTar,onCompleteParams:[p1picA[i-1]]})
+    TweenLite.set(p1picA[i-1],{alpha:0,delay:i*0,onComplete:removeTar,onCompleteParams:[p1picA[i-1]]})
   };
   logo("black")
   TweenLite.set(userName,{display:"block",bottom:(320+30)/stageH*screenH,left:309/640*screenW,height:63/640*screenW,width:272/640*screenW})
@@ -209,8 +209,6 @@ function goP3(){//====================开始考试
   //stage.removeChild(stage2)
   TweenLite.to(boy,1,{alpha:0})
   logo("black")
-  p4bgABCD=new createjs.Bitmap(p4bgABCDA[examType])
-  p4bgtypeA=new createjs.Bitmap(p4bgtypeA[wlType])
 
 }
 
@@ -260,8 +258,8 @@ function goP4(){
   stage4.addChild(p4bg)
   TweenLite.set(p4bg,{regY:1300,y:stageH})
 
-  // p4bgABCD=new createjs.Bitmap(p4bgABCDA[examType])
-  // p4bgtypeA=new createjs.Bitmap(p4bgtypeA[wlType])
+  p4bgABCD=new createjs.Bitmap(p4bgABCDA[examType])
+  p4bgtypeA=new createjs.Bitmap(p4bgtypeA[wlType])
 
   stage4.addChild(p4bgABCD)
   stage4.addChild(p4bgtypeA)
@@ -283,7 +281,7 @@ function goP4(){
     endCopy=new createjs.Bitmap("img/endcopy2.png")
   }else if(finalScore[4]*75>=450&&finalScore[4]*75<600){
     endCopy=new createjs.Bitmap("img/endcopy3.png")
-  }else if(finalScore[4]*75>=600&&finalScore[4]*75<750){//
+  }else if(finalScore[4]*75>=600&&finalScore[4]*75<750){
     endCopy=new createjs.Bitmap("img/endcopy4.png")
   }else if(finalScore[4]*75==750){
     endCopy=new createjs.Bitmap("img/endcopy5.png")
