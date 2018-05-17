@@ -181,7 +181,7 @@ function goP2(){//========================准考证页
   p1go.visible=false
   TweenLite.to(p1bg,.5,{scaleY:0,y:stageH})
   for (var i = 1; i <= 10; i++) {
-    TweenLite.set(p1picA[i-1],{alpha:0,delay:i*.05,onComplete:removeTar,onCompleteParams:[p1picA[i-1]]})
+    TweenLite.set(p1picA[i-1],{alpha:0,delay:i*0,onComplete:removeTar,onCompleteParams:[p1picA[i-1]]})
   };
   logo("black")
   TweenLite.set(userName,{display:"block",bottom:(320+30)/stageH*screenH,left:309/640*screenW,height:63/640*screenW,width:272/640*screenW})
@@ -283,7 +283,11 @@ function goP4(){
     endCopy=new createjs.Bitmap("img/endcopy2.png")
   }else if(finalScore[4]*75>=450&&finalScore[4]*75<600){
     endCopy=new createjs.Bitmap("img/endcopy3.png")
+<<<<<<< HEAD
   }else if(finalScore[4]*75>=600&&finalScore[4]*75<750){//
+=======
+  }else if(finalScore[4]*75>=600&&finalScore[4]*75<750){
+>>>>>>> liam
     endCopy=new createjs.Bitmap("img/endcopy4.png")
   }else if(finalScore[4]*75==750){
     endCopy=new createjs.Bitmap("img/endcopy5.png")
