@@ -520,7 +520,7 @@ UGC = function () {
           preserveDrawingBuffer: true
         });
         document.getElementById('ugc').appendChild(this.app.view);
-        this.random = Math.floor(Math.random() * 4 + 1);
+        this.random = Math.floor(Math.random() * 5 + 1);
         return PIXI.loader.add(["img/page-" + this.id + "-bg.jpg", "img/ugc-qr.png", "img/mark.png", "img/long-save.png", "img/save-text.png", "img/ugc-title.png", "img/ugc-title-2.png", "img/ugc-" + this.id + "-" + this.random + ".png"]).load(this.build.bind(this));
       }
     }]);
