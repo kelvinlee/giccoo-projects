@@ -209,6 +209,8 @@ function goP3(){//====================开始考试
   //stage.removeChild(stage2)
   TweenLite.to(boy,1,{alpha:0})
   logo("black")
+  p4bgABCD=new createjs.Bitmap(p4bgABCDA[examType])
+  p4bgtypeA=new createjs.Bitmap(p4bgtypeA[wlType])
 
 }
 
@@ -258,8 +260,8 @@ function goP4(){
   stage4.addChild(p4bg)
   TweenLite.set(p4bg,{regY:1300,y:stageH})
 
-  p4bgABCD=new createjs.Bitmap(p4bgABCDA[examType])
-  p4bgtypeA=new createjs.Bitmap(p4bgtypeA[wlType])
+  // p4bgABCD=new createjs.Bitmap(p4bgABCDA[examType])
+  // p4bgtypeA=new createjs.Bitmap(p4bgtypeA[wlType])
 
   stage4.addChild(p4bgABCD)
   stage4.addChild(p4bgtypeA)
