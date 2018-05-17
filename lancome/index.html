@@ -27,19 +27,19 @@
         <div v-show="homepageShow" @click="gotoAnswer" class="content">
           <div class="building fadeIn animated duration-30 delay-10"><img src="./img/building.png"></div>
           <div class="title">
-            <div class="t title-1 fadeInUp animated duration-12 delay-3"><img src="./img/title-1.png">
+            <div :class="{notwy: !wy}" class="t title-1 fadeInUp animated duration-12 delay-3"><img :src="!wy &amp;&amp; 1==4?'./img/title-1-notwy.png':'./img/title-1.png'">
             </div>
-            <div class="t title-2 fadeInUp animated duration-12 delay-6"><img src="./img/title-2.png">
+            <div :class="{notwy: !wy}" class="t title-2 fadeInUp animated duration-12 delay-6"><img :src="!wy &amp;&amp; 2==4?'./img/title-2-notwy.png':'./img/title-2.png'">
             </div>
-            <div class="t title-3 fadeInUp animated duration-12 delay-9"><img src="./img/title-3.png">
+            <div :class="{notwy: !wy}" class="t title-3 fadeInUp animated duration-12 delay-9"><img :src="!wy &amp;&amp; 3==4?'./img/title-3-notwy.png':'./img/title-3.png'">
             </div>
-            <div class="t title-4 fadeInUp animated duration-12 delay-12"><img src="./img/title-4.png">
+            <div :class="{notwy: !wy}" class="t title-4 fadeInUp animated duration-12 delay-12"><img :src="!wy &amp;&amp; 4==4?'./img/title-4-notwy.png':'./img/title-4.png'">
               <div class="box">
                 <div class="c fadeOut duration-3 animated delay-24"><img src="./img/title-4-1.png"></div>
                 <div class="o fadeIn duration-3 animated delay-25"><img src="./img/title-4-2.png"></div>
               </div>
             </div>
-            <div class="t title-5 fadeInUp animated duration-12 delay-15"><img src="./img/title-5.png">
+            <div :class="{notwy: !wy}" class="t title-5 fadeInUp animated duration-12 delay-15"><img :src="!wy &amp;&amp; 5==4?'./img/title-5-notwy.png':'./img/title-5.png'">
             </div>
           </div>
         </div>

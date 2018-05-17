@@ -447,7 +447,10 @@ init = function init() {
       },
       gotoAnswer: function gotoAnswer() {
         var stars;
-        // createAnswer()
+        if (!this.wy) {
+          // createAnswer()
+          return false;
+        }
         this.answerCanvas.init();
         this.answerPageShow = true;
         return stars = [];

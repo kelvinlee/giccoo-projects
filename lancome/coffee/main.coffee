@@ -333,6 +333,7 @@ init = ->
 
 			gotoAnswer: ->
 				# createAnswer()
+				return false if not @.wy
 				@.answerCanvas.init()
 				@.answerPageShow = true
 				stars = []

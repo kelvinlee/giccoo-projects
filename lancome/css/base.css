@@ -1073,6 +1073,9 @@ body {
             position: absolute;
             top: 0px;
             left: 0px; }
+        .page-home .content .title .title-4.notwy .box {
+          top: 0;
+          left: 15%; }
 
 .page-answer .bg {
   font-size: 0; }

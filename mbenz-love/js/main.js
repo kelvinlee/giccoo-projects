@@ -1224,8 +1224,9 @@ init = function init() {
       },
       start: function start(evt) {
         var touch;
+        // console.log evt
+        evt.preventDefault();
         if (this.noteMsg) {
-          // console.log evt
           this.audio.play();
         }
         this.noteMsg = false;
@@ -1250,6 +1251,7 @@ init = function init() {
         }
       },
       end: function end(evt) {
+        evt.preventDefault();
         return this.default.animated = false;
       }
     },

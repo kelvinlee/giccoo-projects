@@ -425,6 +425,7 @@ init = ->
 					@.pageIndex = 0
 			start: (evt)->
 				# console.log evt
+				evt.preventDefault()
 				@.audio.play() if @.noteMsg
 				@.noteMsg = false
 				touch = if evt.touches? then evt.touches[0] else evt
@@ -441,6 +442,7 @@ init = ->
 					@.default.animated = true
 					@.moveNext()
 			end: (evt)->
+				evt.preventDefault()
 				@.default.animated = false
 
 		mounted: ($el,e)->

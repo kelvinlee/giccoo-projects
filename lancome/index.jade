@@ -40,8 +40,8 @@ block content
 					img(src="#{url}/img/building.png")
 				.title
 					-for (var i=1; i<= 5; i++)
-						.t(class!="title-#{i} fadeInUp animated duration-12 delay-#{i*3}")
-							img(src="#{url}/img/title-#{i}.png")
+						.t(:class="{notwy: !wy}",class!="title-#{i} fadeInUp animated duration-12 delay-#{i*3}")
+							img(:src="!wy && #{i}==4?'#{url}/img/title-#{i}-notwy.png':'#{url}/img/title-#{i}.png'")
 							- if (i==4)
 								.box
 									.c.fadeOut.duration-3.animated(class="delay-#{i*3+12}")
