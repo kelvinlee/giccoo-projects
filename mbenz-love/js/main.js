@@ -427,6 +427,8 @@ UGC = function () {
       this.bg = options.bg;
       this.wy = options.wy;
       this.background = options.background;
+      this.w = options.w;
+      this.h = options.h;
       this.ugc = options.ugc;
       this.small = options.small;
 
@@ -482,10 +484,15 @@ UGC = function () {
         save = new Sprite(res[saveText].texture);
         this.app.stage.addChild(save);
         if (this.small != null && this.small) {
-          mark.x += mark.width * 0.1 / 2;
-          // mark.y += mark.height*0.1/2
           mark.scale.x = 0.9;
-          mark.scale.y = 0.9;
+          mark.scale.y = 0.8;
+          mark.x += mark.width * 0.1 / 2;
+          mark.y += mark.height * (1 - mark.scale.y) / 2;
+          console.log(mark.y);
+          if (mark.y > 200) {
+            title2.y = 50;
+            text.y += 50;
+          }
           qr.scale.x = 0.9;
           qr.scale.y = 0.9;
           save.scale.x = 0.9;
@@ -1044,6 +1051,8 @@ init = function init() {
         _ugc = new UGC({
           id: Id,
           wy: this.wy,
+          w: this.w,
+          h: this.h,
           small: this.smaller,
           bg: this.pageBG[Id] != null ? this.pageBG[Id].app.view : null,
           background: function background() {
@@ -1066,10 +1075,11 @@ init = function init() {
         }, 5000);
       },
       recordEnd: function recordEnd(evt) {
+        this.ugcPageShow = true;
         evt.preventDefault();
-        clearTimeout(this.cache);
-        return this.recording = false;
+        return clearTimeout(this.cache);
       },
+      // @.recording = false
       play: function play() {
         if (this.playing === "stop") {
           return this.audio.pause();

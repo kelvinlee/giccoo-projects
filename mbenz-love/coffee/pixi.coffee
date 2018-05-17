@@ -189,7 +189,7 @@ class UGC
     return false unless @.moving
 
   constructor: (options)->
-    {@id,@bg,@wy,@background,@ugc,@small} = options
+    {@id,@bg,@wy,@background,@w,@h,@ugc,@small} = options
     @.init()
   get: ->
     
@@ -243,10 +243,15 @@ class UGC
     @.app.stage.addChild save
 
     if @.small? and @.small
-      mark.x += mark.width*0.1/2
-      # mark.y += mark.height*0.1/2
       mark.scale.x = 0.9
-      mark.scale.y = 0.9
+      mark.scale.y = 0.8
+      mark.x += mark.width*0.1/2
+      mark.y += mark.height*(1-mark.scale.y)/2
+      console.log mark.y
+      if mark.y > 200
+        title2.y = 50
+        text.y += 50
+      
       qr.scale.x = 0.9
       qr.scale.y = 0.9
       save.scale.x = 0.9

@@ -306,6 +306,8 @@ init = ->
 				ugc = new UGC 
 					id: Id ,
 					wy: @.wy
+					w: @.w
+					h: @.h
 					small: @.smaller
 					bg : if @.pageBG[Id]? then @.pageBG[Id].app.view else null , 
 					background: =>
@@ -317,9 +319,9 @@ init = ->
 				evt.preventDefault()
 				@.recording = true
 				# ugc page show
-				# @.cache = setTimeout =>
-				# 	@.ugcPageShow = true
-				# ,5000
+				@.cache = setTimeout =>
+					@.ugcPageShow = true
+				,5000
 
 			recordEnd: (evt)->
 				@.ugcPageShow = true
