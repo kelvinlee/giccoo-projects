@@ -560,7 +560,7 @@ ul {
     .ctrl-image .image-input {
       background: url("../img/add-image.png") no-repeat center center;
       background-size: 100%;
-      background-color: transparent; }
+      background-color: transparent;}
     .build .ctrl-image .logo {
       position: absolute;
       width: 35%;

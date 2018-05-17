@@ -205,7 +205,7 @@ $("#hint1").click(function(){
 var userUGC=$("#userUGC")
 function setUserPic(){
   //TweenLite.set(userUGC,{delay:1,display:"block",width:169/640*screenW,height:252/640*screenW,x:61/640*screenW,y:screenH-(196+249-2)/640*screenW})
-  TweenLite.set(userUGC,{delay:1,display:"block",width:169/640*screenW,height:252/640*screenW,x:61/640*screenW,y:screenH-(196+249-2)/640*screenW})
+  TweenLite.set(userUGC,{delay:0.4,display:"block",width:169/640*screenW,height:240/640*screenW,x:60.5/640*screenW,y:screenH-(196+249-2)/640*screenW})
   console.log(screenH-(196+249-2)/640*screenW)
 }
 
