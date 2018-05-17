@@ -21,7 +21,7 @@
       </div>
     </div>
     <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" :class="{smaller: smaller,notsmall: !smaller}" class="main">
-      <div @click="play" class="bgm">
+      <div @click.prevent="play" class="bgm">
         <audio id="bgm" :src="musiclink" autoplay="true" loop="true"></audio><img :src="'./img/audio-'+playing+'.png'">
         <transition name="page-fade">
           <p v-show="noteMsg" class="noteMsg">为保证体验效果<br/>请打开音乐</p>
@@ -37,7 +37,7 @@
             </div>
           </div>
           <div class="content">
-            <div @click="moveNext" class="right"></div>
+            <div @click.prevent="moveNext" class="right"></div>
           </div>
         </div>
       </transition>
@@ -48,8 +48,8 @@
           </div>
           <div class="content">
             <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-1-text.png"></div>
-            <div @click="moveNext" class="right"></div>
-            <div @click="gameStart(1)" class="btn btn-start"></div>
+            <div @click.prevent="moveNext" class="right"></div>
+            <div @click.prevent="gameStart(1)" class="btn btn-start"></div>
           </div>
         </div>
       </transition>
@@ -61,10 +61,10 @@
             </div>
           </div>
           <div class="content">
-            <div @click="movePrev" class="left"></div>
-            <div @click="moveNext" class="right"></div>
+            <div @click.prevent="movePrev" class="left"></div>
+            <div @click.prevent="moveNext" class="right"></div>
             <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-2-text.png"></div>
-            <div @click="gameStart(2)" class="btn btn-start"></div>
+            <div @click.prevent="gameStart(2)" class="btn btn-start"></div>
           </div>
         </div>
       </transition>
@@ -76,10 +76,10 @@
             </div>
           </div>
           <div class="content">
-            <div @click="movePrev" class="left"></div>
-            <div @click="moveNext" class="right"></div>
+            <div @click.prevent="movePrev" class="left"></div>
+            <div @click.prevent="moveNext" class="right"></div>
             <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-3-text.png"></div>
-            <div @click="gameStart(3)" class="btn btn-start"></div>
+            <div @click.prevent="gameStart(3)" class="btn btn-start"></div>
           </div>
         </div>
       </transition>
@@ -89,10 +89,10 @@
             <div id="rain" class="animations"></div>
           </div>
           <div class="content">
-            <div @click="movePrev" class="left"></div>
-            <div @click="moveNext" class="right"></div>
+            <div @click.prevent="movePrev" class="left"></div>
+            <div @click.prevent="moveNext" class="right"></div>
             <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-4-text.png"></div>
-            <div @click="gameStart(4)" class="btn btn-start"></div>
+            <div @click.prevent="gameStart(4)" class="btn btn-start"></div>
           </div>
         </div>
       </transition>
@@ -104,10 +104,10 @@
             </div>
           </div>
           <div class="content">
-            <div @click="movePrev" class="left"></div>
-            <div @click="moveNext" class="right"></div>
+            <div @click.prevent="movePrev" class="left"></div>
+            <div @click.prevent="moveNext" class="right"></div>
             <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-5-text.png"></div>
-            <div @click="gameStart(5)" class="btn btn-start"></div>
+            <div @click.prevent="gameStart(5)" class="btn btn-start"></div>
           </div>
         </div>
       </transition>
@@ -119,10 +119,10 @@
             </div>
           </div>
           <div class="content">
-            <div @click="movePrev" class="left"></div>
-            <div @click="moveNext" class="right"></div>
+            <div @click.prevent="movePrev" class="left"></div>
+            <div @click.prevent="moveNext" class="right"></div>
             <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-6-text.png"></div>
-            <div @click="gameStart(6)" class="btn btn-start"></div>
+            <div @click.prevent="gameStart(6)" class="btn btn-start"></div>
           </div>
         </div>
       </transition>
@@ -132,9 +132,9 @@
             <div id="dog" class="animations"></div>
           </div>
           <div class="content">
-            <div @click="movePrev" class="left"></div>
+            <div @click.prevent="movePrev" class="left"></div>
             <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-7-text.png"></div>
-            <div @click="gameStart(7)" class="btn btn-start"></div>
+            <div @click.prevent="gameStart(7)" class="btn btn-start"></div>
           </div>
         </div>
       </transition>
@@ -202,8 +202,8 @@
                   </div>
                 </div>
               </div>
-              <div @click="submit" class="form-btn"><img src="./img/btn-submit.png"></div>
-              <div @click="regisiterPageShow = false" class="close"><img src="./img/form-close.png"></div>
+              <div @click.prevent="submit" class="form-btn"><img src="./img/btn-submit.png"></div>
+              <div @click.prevent="regisiterPageShow = false" class="close"><img src="./img/form-close.png"></div>
             </form>
           </div>
         </div>
@@ -231,10 +231,10 @@
           <div id="ugc" class="bg">
           </div>
           <div class="content">
-            <div v-if="wy" @click="share" class="mark"></div>
+            <div v-if="wy" @click.prevent="share" class="mark"></div>
             <div v-if="!wy" class="mark"><img :src="ugc"></div>
             <div class="btns">
-              <div @click="regisiterPageShow = true" class="btn btn-reg"><img src="./img/btn-reg.png"></div><a href="http://music.163.com/playlist?id=2222381288" class="btn btn-music"><img src="./img/btn-music.png"></a>
+              <div @click.stop.prevent="regisiterPageShow = true" class="btn btn-reg"><img src="./img/btn-reg.png"></div><a href="http://music.163.com/playlist?id=2222381288" class="btn btn-music"><img src="./img/btn-music.png"></a>
             </div>
           </div>
         </div>
