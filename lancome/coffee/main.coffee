@@ -287,7 +287,7 @@ init = ->
 					main.faild()
 			ask: ->
 				# 获取网易云数据
-				axios.get "//music.163.com/api/activity/lancome/userInfo"
+				axios.get "//qa-ysr.igame.163.com/api/activity/lancome/userInfo"
 				.then (msg)=>
 					alert JSON.stringify msg.data
 				.catch (err)->
@@ -821,6 +821,7 @@ class createAnswer
 			transparent: true
 		document.getElementById('answer-bg').appendChild @.ansStar.view
 		PIXI.loader.add([
+			"img/mobile-answer.json"
 			"img/answer-3-bg.jpg"
 			"img/mobile-timeline.png"
 			"img/mobile-answer-1.png"

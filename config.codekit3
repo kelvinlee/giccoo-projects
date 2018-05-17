@@ -5463,6 +5463,14 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/lancome\/img\/last-page.gif": {
+		"ft": 4194304,
+		"iS": 54036,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/last-page.gif",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/lancome\/img\/last-page.jpg": {
 		"ft": 16384,
 		"iS": 60490,
@@ -5526,6 +5534,25 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lancome\/img\/mobile-answer.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/lancome\/img\/mobile-answer-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/lancome\/img\/mobile-answer.png": {
+		"ft": 32768,
+		"iS": 9898,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/mobile-answer.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},

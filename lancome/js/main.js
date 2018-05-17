@@ -387,7 +387,7 @@ init = function init() {
       },
       ask: function ask() {
         // 获取网易云数据
-        return axios.get("//music.163.com/api/activity/lancome/userInfo").then(function (msg) {
+        return axios.get("//qa-ysr.igame.163.com/api/activity/lancome/userInfo").then(function (msg) {
           return alert(JSON.stringify(msg.data));
         }).catch(function (err) {
           return alert(err);
@@ -1098,7 +1098,7 @@ createAnswer = function () {
           transparent: true
         });
         document.getElementById('answer-bg').appendChild(this.ansStar.view);
-        return PIXI.loader.add(["img/answer-3-bg.jpg", "img/mobile-timeline.png", "img/mobile-answer-1.png", "img/mobile-answer-2.png", "img/mobile-answer-3.png"]).load(this.build.bind(this));
+        return PIXI.loader.add(["img/mobile-answer.json", "img/answer-3-bg.jpg", "img/mobile-timeline.png", "img/mobile-answer-1.png", "img/mobile-answer-2.png", "img/mobile-answer-3.png"]).load(this.build.bind(this));
       }
     }]);
 
