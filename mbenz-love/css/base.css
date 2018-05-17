@@ -1272,8 +1272,8 @@ body {
       position: relative; }
   .page .content .right, .page .content .left {
     position: absolute;
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     top: 50%;
     -webkit-transform: translate3d(0, -50%, 0);
             transform: translate3d(0, -50%, 0); }

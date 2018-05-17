@@ -34,13 +34,10 @@
         <div v-show="pageIndex == 0" :class="{left: pageIndex &gt;= 0}" class="page page-home">
           <div class="bg"><img src="./img/page-home-bg.jpg">
             <div class="animations">
-              <div class="arrow arrow-1"><img src="./img/arrow.png"></div>
-              <div class="arrow arrow-2"><img src="./img/arrow.png"></div>
-              <div class="arrow arrow-3"><img src="./img/arrow.png"></div>
-              <div class="arrow arrow-4"><img src="./img/arrow.png"></div>
             </div>
           </div>
           <div class="content">
+            <div @click="moveNext" class="right"></div>
           </div>
         </div>
       </transition>

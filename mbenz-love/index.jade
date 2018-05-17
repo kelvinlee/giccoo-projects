@@ -46,15 +46,16 @@ block content
 				.bg
 					img(src="#{url}/img/page-home-bg.jpg")
 					.animations
-						.arrow.arrow-1
-							img(src="#{url}/img/arrow.png")
-						.arrow.arrow-2
-							img(src="#{url}/img/arrow.png")
-						.arrow.arrow-3
-							img(src="#{url}/img/arrow.png")
-						.arrow.arrow-4
-							img(src="#{url}/img/arrow.png")
+						//- .arrow.arrow-1
+						//- 	img(src="#{url}/img/arrow.png")
+						//- .arrow.arrow-2
+						//- 	img(src="#{url}/img/arrow.png")
+						//- .arrow.arrow-3
+						//- 	img(src="#{url}/img/arrow.png")
+						//- .arrow.arrow-4
+						//- 	img(src="#{url}/img/arrow.png")
 				.content
+					.right(@click="moveNext")
 					//- .texts(:style="{top: navH+'%'}")
 						-for (var i=1;i<=5;i++)
 							.text(class="text-#{i} fadeInUp animated duration-#{i+5} delay-#{i+2}")
