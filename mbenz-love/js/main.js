@@ -6,7 +6,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var IsPC, Sprite, Tn, UGC, _CDN, _imgurl, _animate, _citys, cloud, _dealers, dog, getRandom, global, imageurl, init, j, len, load, loadWechatConfig, loader, main, neteaseShareImage, p, pre, provinces, rain, randomSort, res, stars, startTime, sys;
+var IsPC, Sprite, Tn, UGC, _CDN, _imgurl, _animate, _citys, cloud, _dealers, dog, e, getRandom, global, imageurl, init, j, len, load, loadWechatConfig, loader, main, neteaseShareImage, options, p, passiveSupported, pre, provinces, rain, randomSort, res, stars, startTime, sys;
 
 randomSort = function randomSort(obj) {
   var newArr, oldarr, _randomSortFun;
@@ -556,6 +556,21 @@ UGC = function () {
 // @codekit-prepend "./pixi"
 
 // 法国。荷兰。巴西，英国，韩国，泰国，日本
+passiveSupported = false;
+
+try {
+  options = Object.defineProperty({}, "passive", {
+    get: function get() {
+      return passiveSupported = true;
+    }
+  });
+  window.addEventListener("test", options, options);
+  window.removeEventListener("test", options, options);
+} catch (error) {
+  e = error;
+  passiveSupported = false;
+}
+
 _CDN = "";
 
 _imgurl = "";
@@ -1248,7 +1263,9 @@ init = function init() {
         if (self.default.animated || self.poping) {
           return false;
         }
-        evt.preventDefault();
+        if (!passiveSupported) {
+          evt.preventDefault();
+        }
         touch = evt.touches != null ? evt.touches[0] : evt;
         pageX = touch[this.XY];
         if (pageX - self.default.x > 50) {
@@ -1280,27 +1297,43 @@ init = function init() {
       this.recordDom = document.getElementById("record");
       // console.log IsPC()
       if (IsPC()) {
-        this.$el.addEventListener('mousedown', this.start);
-        this.$el.addEventListener('mousemove', this.move);
-        this.$el.addEventListener('mouseup', this.end);
-        this.recordDom.addEventListener('mousedown', this.recordStart);
-        this.recordDom.addEventListener('mouseup', this.recordEnd);
+        this.$el.addEventListener('mousedown', this.start, passiveSupported ? {
+          passive: true
+        } : false);
+        this.$el.addEventListener('mousemove', this.move, passiveSupported ? {
+          passive: true
+        } : false);
+        this.$el.addEventListener('mouseup', this.end, passiveSupported ? {
+          passive: true
+        } : false);
+        this.recordDom.addEventListener('mousedown', this.recordStart, passiveSupported ? {
+          passive: true
+        } : false);
+        this.recordDom.addEventListener('mouseup', this.recordEnd, passiveSupported ? {
+          passive: true
+        } : false);
         this.pc = true;
       } else {
-        this.$el.addEventListener('touchstart', this.start);
-        this.$el.addEventListener('touchmove', this.move);
-        this.$el.addEventListener('touchend', this.end);
-        this.recordDom.addEventListener('touchstart', this.recordStart);
-        this.recordDom.addEventListener('touchend', this.recordEnd);
+        this.$el.addEventListener('touchstart', this.start, passiveSupported ? {
+          passive: true
+        } : false);
+        this.$el.addEventListener('touchmove', this.move, passiveSupported ? {
+          passive: true
+        } : false);
+        this.$el.addEventListener('touchend', this.end, passiveSupported ? {
+          passive: true
+        } : false);
+        this.recordDom.addEventListener('touchstart', this.recordStart, false);
+        this.recordDom.addEventListener('touchend', this.recordEnd, false);
       }
       if (this.audio) {
-        this.audio.addEventListener("play", this.audioplay);
+        this.audio.addEventListener("play", this.audioplay, false);
       }
       if (this.audio) {
-        this.audio.addEventListener("pause", this.audiopause);
+        this.audio.addEventListener("pause", this.audiopause, false);
       }
       if (this.audio) {
-        this.audio.addEventListener("ended", this.audiopause);
+        this.audio.addEventListener("ended", this.audiopause, false);
       }
       return document.addEventListener("WeixinJSBridgeReady", function () {
         return _this6.audio.play();

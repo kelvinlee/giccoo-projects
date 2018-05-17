@@ -6,6 +6,18 @@
 
 # 法国。荷兰。巴西，英国，韩国，泰国，日本
 
+passiveSupported = false
+try
+	options = Object.defineProperty {}, "passive", {
+		get: ->
+			passiveSupported = true
+	}
+	window.addEventListener("test", options, options)
+	window.removeEventListener("test", options, options)
+catch e
+	passiveSupported = false
+
+
 _CDN = ""
 _imgurl = ""
 global = {}
@@ -440,7 +452,7 @@ init = ->
 			move: (evt)->
 				self = main
 				return false if self.default.animated or self.poping
-				evt.preventDefault()
+				evt.preventDefault()  if not passiveSupported
 				touch = if evt.touches? then evt.touches[0] else evt
 				pageX = touch[@XY]
 				if (pageX - self.default.x) > 50
@@ -466,24 +478,24 @@ init = ->
 			@.recordDom = document.getElementById "record"
 			# console.log IsPC()
 			if IsPC()
-				@.$el.addEventListener 'mousedown', @.start
-				@.$el.addEventListener 'mousemove', @.move
-				@.$el.addEventListener 'mouseup', @.end
-				@.recordDom.addEventListener 'mousedown', @.recordStart
-				@.recordDom.addEventListener 'mouseup', @.recordEnd
+				@.$el.addEventListener 'mousedown', @.start, if passiveSupported then {passive: true} else false
+				@.$el.addEventListener 'mousemove', @.move, if passiveSupported then {passive: true} else false
+				@.$el.addEventListener 'mouseup', @.end, if passiveSupported then {passive: true} else false
+				@.recordDom.addEventListener 'mousedown', @.recordStart, if passiveSupported then {passive: true} else false
+				@.recordDom.addEventListener 'mouseup', @.recordEnd, if passiveSupported then {passive: true} else false
 				@.pc = true
 
 			else
-				@.$el.addEventListener 'touchstart', @.start
-				@.$el.addEventListener 'touchmove', @.move
-				@.$el.addEventListener 'touchend', @.end
+				@.$el.addEventListener 'touchstart', @.start, if passiveSupported then {passive: true} else false
+				@.$el.addEventListener 'touchmove', @.move, if passiveSupported then {passive: true} else false
+				@.$el.addEventListener 'touchend', @.end, if passiveSupported then {passive: true} else false
 
-				@.recordDom.addEventListener 'touchstart', @.recordStart
-				@.recordDom.addEventListener 'touchend', @.recordEnd
+				@.recordDom.addEventListener 'touchstart', @.recordStart, false
+				@.recordDom.addEventListener 'touchend', @.recordEnd, false
 
-			@.audio.addEventListener "play", @.audioplay if @.audio
-			@.audio.addEventListener "pause", @.audiopause if @.audio
-			@.audio.addEventListener "ended", @.audiopause if @.audio
+			@.audio.addEventListener "play", @.audioplay, false if @.audio
+			@.audio.addEventListener "pause", @.audiopause, false if @.audio
+			@.audio.addEventListener "ended", @.audiopause, false if @.audio
 
 			document.addEventListener "WeixinJSBridgeReady",=>
 				@.audio.play()
