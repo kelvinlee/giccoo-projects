@@ -1062,8 +1062,17 @@ body {
       position: absolute;
       top: 20%;
       left: 0px; }
-      .page-home .content .title .title-4, .page-home .content .title .title-5 {
-        margin-top: 5px; }
+      .page-home .content .title .title-4 {
+        position: relative; }
+        .page-home .content .title .title-4 .box {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%; }
+          .page-home .content .title .title-4 .box .o {
+            position: absolute;
+            top: 0px;
+            left: 0px; }
 
 .page-answer .bg {
   font-size: 0; }

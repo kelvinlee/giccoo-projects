@@ -3206,6 +3206,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/gaokao\/img\/add-image.png": {
+		"ft": 32768,
+		"iS": 6213,
+		"oA": 0,
+		"oAP": "\/gaokao\/img\/add-image.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/gaokao\/img\/bar.png": {
 		"ft": 32768,
 		"iS": 2579,
@@ -3481,6 +3492,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/gaokao\/img\/endcopy3.png": {
+		"ft": 32768,
+		"iS": 5954,
+		"oA": 0,
+		"oAP": "\/gaokao\/img\/endcopy3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/gaokao\/img\/endcopy4.png": {
 		"ft": 32768,
 		"iS": 7333,
@@ -3630,6 +3652,17 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p1btn3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/gaokao\/img\/p2bg.jpg": {
+		"ft": 16384,
+		"iS": 51074,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/gaokao\/img\/p2bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -4119,6 +4152,13 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/gaokao\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/gaokao\/index.html",
+		"oF": 0
+		},
 	"\/gaokao\/js\/easeljs.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -4139,12 +4179,52 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/gaokao\/js\/main-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/gaokao\/js\/main-min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/gaokao\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/gaokao\/js\/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/gaokao\/js\/mfw.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/gaokao\/js\/mfw-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/gaokao\/js\/public-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/gaokao\/js\/public-min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/gaokao\/js\/public.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/gaokao\/js\/public-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
@@ -5556,6 +5636,28 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lancome\/img\/title-4-1.png": {
+		"ft": 32768,
+		"iS": 7446,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/title-4-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/lancome\/img\/title-4-2.png": {
+		"ft": 32768,
+		"iS": 15116,
+		"oA": 0,
+		"oAP": "\/lancome\/img\/title-4-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
