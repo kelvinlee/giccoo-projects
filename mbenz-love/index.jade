@@ -30,7 +30,7 @@ block content
 						-;
 						span(class="opc font font-last") %
 
-	#main.main(v-show="mount",style="display: none",:style="{width: w+'px',height: h+'px'}",:class="{smaller: smaller}")
+	#main.main(v-show="mount",style="display: none",:style="{width: w+'px',height: h+'px'}",:class="{smaller: smaller,notsmall: !smaller}")
 		.bgm(@click="play")
 			audio#bgm(:src="musiclink",loop="true")
 			img(:src="'#{url}/img/audio-'+playing+'.png'")

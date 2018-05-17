@@ -497,6 +497,10 @@ UGC = function () {
           qr.scale.y = 0.9;
           save.scale.x = 0.9;
           save.scale.y = 0.9;
+        } else {
+          mark.y -= 30;
+          text.y -= 30;
+          title2.y -= 30;
         }
         save.x = 640 - mark.x - save.width - 20;
         save.y = mark.y + mark.height - save.height - 20;

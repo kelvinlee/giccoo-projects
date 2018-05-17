@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" :class="{smaller: smaller}" class="main">
+    <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" :class="{smaller: smaller,notsmall: !smaller}" class="main">
       <div @click="play" class="bgm">
         <audio id="bgm" :src="musiclink" loop="true"></audio><img :src="'./img/audio-'+playing+'.png'">
         <transition name="page-fade">

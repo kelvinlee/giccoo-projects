@@ -1673,3 +1673,6 @@ body {
   left: 0px;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0); }
+
+.notsmall .page .content .texts {
+  margin-top: 8%; }
