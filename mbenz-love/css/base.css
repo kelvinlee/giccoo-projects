@@ -1256,6 +1256,12 @@ body {
             transform: translate3d(-50%, 0, 0); }
     .iphone4 .page .content .btn-start {
       width: 37.5%; }
+    .page .content .btn-start img {
+      pointer-events: none;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none; }
     .page .content .btn-start .startcontent {
       width: 100%;
       height: 100%;
@@ -1679,3 +1685,10 @@ body {
 
 .notsmall .page .content .texts {
   margin-top: 8%; }
+
+.record img, .btn img, .texts img, .bgm img {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
