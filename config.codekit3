@@ -858,11 +858,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/df-5008\/js\/main-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/df-5008\/sass\/base.sass": {
 		"aP": 1,
@@ -1735,7 +1735,7 @@
 		"oAP": "\/friso-island\/js\/main-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/friso-island\/mp3\/beard.mp3": {
 		"cB": 0,
@@ -2719,31 +2719,31 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/friso\/js\/friso-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/friso\/js\/main.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/friso\/js\/main-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/friso\/js\/s2.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/friso\/js\/s2-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/friso\/mobile.html": {
 		"cB": 0,
@@ -4465,90 +4465,90 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/gaokao\/js\/easeljs.min-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/jquery-2.2.1.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/gaokao\/js\/jquery-2.2.1.min-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/main-min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/gaokao\/js\/main-min-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/main.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/gaokao\/js\/main-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/mfw.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/gaokao\/js\/mfw-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/public-min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/gaokao\/js\/public-min-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/public.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/gaokao\/js\/public-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/tags.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/gaokao\/js\/tags-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/TweenMax.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/gaokao\/js\/TweenMax.min-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/Gmovie\/css": {
@@ -6090,11 +6090,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/lancome\/js\/main-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/lancome\/mp3\/mp3-0.mp3": {
 		"cB": 0,
@@ -6467,121 +6467,121 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/angular-animate-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/angular-route.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/angular-route-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/angular-touch.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/angular-touch-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/angular.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/angular-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/baidu.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/baidu-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/cityData-build.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/cityData-build-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/cityData.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/cityData-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/cityId.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/cityId-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/exif.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/exif-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/head.built.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/head.built-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/js.cookie.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/js.cookie-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/js\/photo-sphere-viewer.min-build.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/js\/photo-sphere-viewer.min-build-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/megapix-image.js": {
 		"ft": 64,
@@ -6591,17 +6591,17 @@
 		"oAP": "\/libs\/js\/megapix-image-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/angular-animate.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/angular-animate.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/angular-animate.min.js.map": {
 		"cB": 0,
@@ -6614,11 +6614,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/angular-route.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/angular-route.min.js.map": {
 		"cB": 0,
@@ -6631,11 +6631,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/angular-touch.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/angular-touch.min.js.map": {
 		"cB": 0,
@@ -6648,11 +6648,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/angular.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/angular.min.js.map": {
 		"cB": 0,
@@ -6665,151 +6665,151 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/axios.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/cityData-min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/cityData-min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/D.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/D.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/doT.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/doT.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/easeljs-0.8.0.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/easeljs-0.8.0.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/easeljs.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/easeljs.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/fastclick.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/fastclick.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/flashaudioplugin-0.6.0.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/flashaudioplugin-0.6.0.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/inmap.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/inmap.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/jquery.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/jquery.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/layzr.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/layzr.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/localforage.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/localforage.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/movieclip-0.8.0.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/movieclip-0.8.0.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/photo-sphere-viewer.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/photo-sphere-viewer.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/pixi.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/pixi.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/preloadjs-0.4.1.min.js": {
 		"ft": 64,
@@ -6819,97 +6819,97 @@
 		"oAP": "\/libs\/js\/min\/preloadjs-0.4.1.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/preloadjs-0.6.0.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/preloadjs-0.6.0.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/qrcode.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/qrcode.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/react-dom-server.browser.development.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/react-dom-server.browser.development-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/react-dom.development.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/react-dom.development-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/react-dom.production.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/react-dom.production.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/react.development.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/react.development-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/react.production.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/react.production.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/riot.3.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/riot.3.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/riot.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/riot-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/riot.min.js": {
 		"ft": 64,
@@ -6919,57 +6919,57 @@
 		"oAP": "\/libs\/js\/min\/riot.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/soundjs-0.6.0.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/soundjs-0.6.0.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/three.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/three.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/Tone.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/Tone.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/tween.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/tween-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/tween.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/tween.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/Tween.min.js.map": {
 		"cB": 0,
@@ -6982,101 +6982,101 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/tweenjs-0.6.0.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/tweenjs.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/tweenjs.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/TweenMax.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/TweenMax.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/uevent.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/uevent.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/vue.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/vue.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/min\/Zepto.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/min\/Zepto.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/parallax.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/parallax-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/photo-sphere-viewer-build.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/photo-sphere-viewer-build-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/photo-sphere-viewer.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/photo-sphere-viewer-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/pixi.dev.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/pixi.dev-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/pixi.dev.js.map": {
 		"cB": 0,
@@ -7089,121 +7089,121 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/pixi-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/rem.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/rem-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/require.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/require-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/riot-vue.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/riot-vue-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/riot.3.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/riot.3-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/stopWebViewScroll.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/stopWebViewScroll-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/tags\/playsound.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/tags\/playsound-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/Three.DeviceOrientationControls-build.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/Three.DeviceOrientationControls-build-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/Three.DeviceOrientationControls.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/Three.DeviceOrientationControls-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/viewport.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/viewport-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/vue-book-page.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/vue-book-page-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/js\/vue-register.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/vue-register-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/qr\/308s.png": {
 		"ft": 32768,
@@ -7513,11 +7513,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/riot3\/note-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/riot3\/note.tag": {
 		"cB": 0,
@@ -7534,7 +7534,7 @@
 		"oAP": "\/libs\/riot3\/riot-note-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/libs\/riot3\/transition.tag": {
 		"cB": 0,
@@ -9526,11 +9526,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/mbenz-love\/js\/main-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/mbenz-love\/mp3\/bgm.mp3": {
 		"cB": 0,
@@ -9941,11 +9941,11 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/meizu-music\/js\/main-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/meizu-music\/sass\/base.sass": {
 		"aP": 1,
@@ -10153,41 +10153,41 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/test\/js\/app-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/test\/js\/main.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/test\/js\/main-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/test\/js\/player.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/test\/js\/player-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/test\/js\/transition.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/test\/js\/transition-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/test\/sass\/base.sass": {
 		"aP": 1,
@@ -12165,29 +12165,29 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/zbird\/js\/ani-build-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/zbird\/js\/ani-min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/zbird\/js\/ani-min-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/zbird\/js\/ani.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/zbird\/js\/ani-min.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 0
 		},
@@ -12195,61 +12195,61 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/zbird\/js\/easeljs.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/zbird\/js\/jquery-2.2.1.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/zbird\/js\/jquery-2.2.1.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/zbird\/js\/main-build.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/zbird\/js\/main-build-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/zbird\/js\/main-min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/zbird\/js\/main-min-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/zbird\/js\/main.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/zbird\/js\/main-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/zbird\/js\/TweenMax.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/zbird\/js\/TweenMax.min-min.js",
 		"oF": 0,
 		"sC": 0,
-		"tS": 1
+		"tS": 0
 		},
 	"\/zbird\/mp3\/bgm.mp3": {
 		"cB": 0,
@@ -12428,10 +12428,10 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/zqzs_1\/js\/main-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/zqzs_1\/sass\/base.sass": {
@@ -14273,7 +14273,7 @@
 		"quality": 100
 		},
 	"languageDefaultsJS": {
-		"autoOutputAction": 0,
+		"autoOutputAction": 1,
 		"autoOutputPathFilenamePattern": "*-min.js",
 		"autoOutputPathRelativePath": "\/min",
 		"autoOutputPathReplace1": "",
@@ -14281,7 +14281,7 @@
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 0,
 		"minifyOutput": 1,
-		"syntaxCheckerStyle": 3,
+		"syntaxCheckerStyle": 0,
 		"transpilerStyle": 0
 		},
 	"languageDefaultsJSON": {
