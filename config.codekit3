@@ -5608,12 +5608,12 @@
 		},
 	"\/lancome\/img\/title-1.png": {
 		"ft": 32768,
-		"iS": 6668,
+		"iS": 9989,
 		"oA": 0,
 		"oAP": "\/lancome\/img\/title-1.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
