@@ -238,7 +238,7 @@ init = function init() {
       questionMark: 0,
       answerList: [{
         question: ["\u6700\u8FD1\u4E00\u6B21" + myTimeName + myTimeDetail + "\u8FD8\u5728\u542C\u6B4C\u7684\u4F60\uFF0C\u89C9\u5F97\u90A3\u65F6\u8C01\u4F1A\u966A\u7740\u4F60\uFF1F"],
-        answers: ["飞累了，借你家阳台歇歇的猫头鹰", "冰箱里那只舔着冰淇淋的蠢大象", "墙角边偷偷涂兰蔻“发光”眼霜的大熊猫"]
+        answers: ["飞累了，借你家阳台<br/>歇歇的猫头鹰", "冰箱里那只<br/>舔着冰淇淋的蠢大象", "墙角边偷偷涂<br/>兰蔻“发光”眼霜的大熊猫"]
       }, {
         question: ["\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u6BD4\u82F1\u56FD\u7684\u6674\u5929\u8FD8\u5C11\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u591A\u5230\u670D\u52A1\u5668\u762B\u75EA\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u548C\u5927\u8FC1\u5F99\u65F6\u7684\u89D2\u9A6C\u4E00\u6837\u591A\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u6BD4\u7406\u5DE5\u5927\u7684\u5973\u751F\u8FD8\u5C11\u3002\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F"],
         answers: ["敲击键盘", "窃窃私语聊天", "刷手机"]
@@ -411,7 +411,7 @@ init = function init() {
         return setTimeout(function () {
           _this4.waitPageShow = false;
           return _this4.ugcPageShow = true;
-        }, 4000);
+        }, 7000);
       },
       next: function next() {
         if (this.bgmplaying) {

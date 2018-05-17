@@ -150,9 +150,9 @@ init = ->
 				{
 					question: ["最近一次#{myTimeName}#{myTimeDetail}还在听歌的你，觉得那时谁会陪着你？"]
 					answers: [
-						"飞累了，借你家阳台歇歇的猫头鹰",
-						"冰箱里那只舔着冰淇淋的蠢大象",
-						"墙角边偷偷涂兰蔻“发光”眼霜的大熊猫"
+						"飞累了，借你家阳台<br/>歇歇的猫头鹰",
+						"冰箱里那只<br/>舔着冰淇淋的蠢大象",
+						"墙角边偷偷涂<br/>兰蔻“发光”眼霜的大熊猫"
 					]
 				},{
 					question: 
@@ -305,7 +305,7 @@ init = ->
 				setTimeout =>
 					@.waitPageShow = false
 					@.ugcPageShow = true
-				,4000
+				,7000
 			next: ->
 				@.audio.play() if @.bgmplaying
 				return false if @.answers[@.now] <= -1
