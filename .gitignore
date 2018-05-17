@@ -4,6 +4,7 @@ node_modules
 .sass-cache
 config.js
 config.codekit
+config.codekit3
 huxiu_ministation/static/.DS_Store
 .DS_Store
 *.zip
