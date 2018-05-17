@@ -32,7 +32,7 @@ block content
 
 	#main.main(v-show="mount",style="display: none",:style="{width: w+'px',height: h+'px'}",:class="{smaller: smaller,notsmall: !smaller}")
 		.bgm(@click="play")
-			audio#bgm(:src="musiclink",loop="true")
+			audio#bgm(:src="musiclink",autoplay="true",loop="true")
 			img(:src="'#{url}/img/audio-'+playing+'.png'")
 			transition(name="page-fade")
 				p.noteMsg(v-show="noteMsg") 为保证体验效果<br/>请打开音乐

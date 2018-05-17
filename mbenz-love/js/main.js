@@ -1220,7 +1220,10 @@ init = function init() {
       },
       start: function start(evt) {
         var touch;
-        // console.log evt
+        if (this.noteMsg) {
+          // console.log evt
+          this.audio.play();
+        }
         this.noteMsg = false;
         touch = evt.touches != null ? evt.touches[0] : evt;
         return this.default.x = touch[this.XY];
@@ -1247,6 +1250,8 @@ init = function init() {
       }
     },
     mounted: function mounted($el, e) {
+      var _this7 = this;
+
       if (sys === "NeteaseMusic") {
         this.wy = true;
       }
@@ -1277,8 +1282,11 @@ init = function init() {
         this.audio.addEventListener("pause", this.audiopause.bind(this));
       }
       if (this.audio) {
-        return this.audio.addEventListener("ended", this.audiopause.bind(this));
+        this.audio.addEventListener("ended", this.audiopause.bind(this));
       }
+      return document.addEventListener("WeixinJSBridgeReady", function () {
+        return _this7.audio.play();
+      }, false);
     }
   });
 };

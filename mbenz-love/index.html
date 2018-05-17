@@ -22,7 +22,7 @@
     </div>
     <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" :class="{smaller: smaller,notsmall: !smaller}" class="main">
       <div @click="play" class="bgm">
-        <audio id="bgm" :src="musiclink" loop="true"></audio><img :src="'./img/audio-'+playing+'.png'">
+        <audio id="bgm" :src="musiclink" autoplay="true" loop="true"></audio><img :src="'./img/audio-'+playing+'.png'">
         <transition name="page-fade">
           <p v-show="noteMsg" class="noteMsg">为保证体验效果<br/>请打开音乐</p>
         </transition>

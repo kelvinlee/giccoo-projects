@@ -425,6 +425,7 @@ init = ->
 					@.pageIndex = 0
 			start: (evt)->
 				# console.log evt
+				@.audio.play() if @.noteMsg
 				@.noteMsg = false
 				touch = if evt.touches? then evt.touches[0] else evt
 				@.default.x = touch[@XY]
@@ -472,6 +473,10 @@ init = ->
 			@.audio.addEventListener "play", @.audioplay.bind @ if @.audio
 			@.audio.addEventListener "pause", @.audiopause.bind @ if @.audio
 			@.audio.addEventListener "ended", @.audiopause.bind @ if @.audio
+
+			document.addEventListener "WeixinJSBridgeReady",=>
+				@.audio.play()
+			,false
 
 
 
