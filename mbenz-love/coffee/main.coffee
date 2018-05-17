@@ -441,7 +441,7 @@ init = ->
 				if @.pageIndex <= 0
 					@.pageIndex = 0
 			start: (evt)->
-				console.log "a"
+
 				self = main
 				# evt.preventDefault()
 				return false if self.default.animated

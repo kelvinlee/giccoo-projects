@@ -466,8 +466,8 @@ UGC = function () {
         // @.app.stage.addChild title
         qr = this.qr = new Sprite(res["img/ugc-qr-1.png"].texture);
         text = new Sprite(res["img/ugc-" + this.id + "-" + this.random + ".png"].texture);
-        this.app.stage.addChild(text);
         this.app.stage.addChild(qr);
+        this.app.stage.addChild(text);
         this.app.renderer.render(this.app.stage);
         this.saveUGC = this.app.view.toDataURL();
         this.ugc();
@@ -476,7 +476,7 @@ UGC = function () {
         qr2 = this.qr2 = new Sprite(res["img/ugc-qr.png"].texture);
         // @.qr.x = 35
         // @.qr.y = 1138 + 4 - 35 - @.qr.height
-        this.app.stage.addChildAt(mark, 3);
+        this.app.stage.addChildAt(mark, 2);
         text.y = 60;
         title2 = new Sprite(res["img/ugc-title-2.png"].texture);
         this.app.stage.addChild(title2);
@@ -1244,7 +1244,6 @@ init = function init() {
       },
       start: function start(evt) {
         var self, touch;
-        console.log("a");
         self = main;
         if (self.default.animated) {
           // evt.preventDefault()

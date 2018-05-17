@@ -219,9 +219,10 @@ class UGC
     # @.app.stage.addChild title
     qr = @.qr = new Sprite res["img/ugc-qr-1.png"].texture
     text = new Sprite res["img/ugc-#{@.id}-#{@.random}.png"].texture
-    @.app.stage.addChild text
-
+    
     @.app.stage.addChild qr
+    
+    @.app.stage.addChild text
     @.app.renderer.render @.app.stage
     @.saveUGC = @.app.view.toDataURL()
     @.ugc()
@@ -231,7 +232,7 @@ class UGC
     qr2 = @.qr2 = new Sprite res["img/ugc-qr.png"].texture
     # @.qr.x = 35
     # @.qr.y = 1138 + 4 - 35 - @.qr.height
-    @.app.stage.addChildAt mark,3
+    @.app.stage.addChildAt mark,2
     text.y = 60
     title2 = new Sprite res["img/ugc-title-2.png"].texture
     @.app.stage.addChild title2
