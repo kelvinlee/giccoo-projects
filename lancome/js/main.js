@@ -388,7 +388,7 @@ init = function init() {
       ask: function ask() {
         // 获取网易云数据
         return axios.get("//music.163.com/api/activity/lancome/userInfo").then(function (msg) {
-          return alert(msg.data);
+          return alert(JSON.stringify(msg.data));
         }).catch(function (err) {
           return alert(err);
         });

@@ -289,7 +289,7 @@ init = ->
 				# 获取网易云数据
 				axios.get "//music.163.com/api/activity/lancome/userInfo"
 				.then (msg)=>
-					alert msg.data
+					alert JSON.stringify msg.data
 				.catch (err)->
 					alert err
 				
