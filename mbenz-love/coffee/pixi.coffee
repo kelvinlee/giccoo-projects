@@ -235,9 +235,9 @@ class UGC
     @.app.stage.addChild save,qr2
 
     if @.small? and @.small
-      mark.scale.x = 0.9
+      mark.scale.x = 1
       mark.scale.y = 0.8
-      mark.x += mark.width*0.1/2
+      # mark.x += mark.width*0.1/2
       mark.y += mark.height*(1-mark.scale.y)/2
       # console.log mark.y
       if mark.y > 200
@@ -253,7 +253,7 @@ class UGC
       text.y -= 36
       # title2.y -= 36
 
-    text.y += 110
+    text.y += 40
     save.x = 640 - mark.x - save.width - 20
     save.y = mark.y + mark.height - save.height - 20
 
