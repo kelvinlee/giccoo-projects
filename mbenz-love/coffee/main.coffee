@@ -452,7 +452,10 @@ init = ->
 				self = main
 				# evt.preventDefault()
 				return false if self.default.animated
-				self.audio.play() if self.noteMsg
+				try
+					self.audio.play() if self.noteMsg
+				catch e
+					console.log e
 				self.noteMsg = false
 				touch = if evt.touches? then evt.touches[0] else evt
 				self.default.x = touch[@XY]

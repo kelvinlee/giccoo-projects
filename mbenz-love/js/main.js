@@ -1303,8 +1303,13 @@ init = function init() {
           // evt.preventDefault()
           return false;
         }
-        if (self.noteMsg) {
-          self.audio.play();
+        try {
+          if (self.noteMsg) {
+            self.audio.play();
+          }
+        } catch (error) {
+          e = error;
+          console.log(e);
         }
         self.noteMsg = false;
         touch = evt.touches != null ? evt.touches[0] : evt;
