@@ -329,7 +329,7 @@ function neteaseShare() {
   picUrl = "http://m.giccoo.com/gaokao";
   redirectUrl = "http://m.giccoo.com/gaokao";
   title2 = "高考，你准备好了吗";
-  subTitle2 = "年狂烧脑，开窍赢高考";
+  subTitle2 = "十年狂烧脑，开窍赢高考";
   window.location.href = "orpheus://share/" + encodeURIComponent(title1) + "/" + encodeURIComponent(picUrl) + "/" + encodeURIComponent(redirectUrl) + "/" + encodeURIComponent(title2) + "/" + encodeURIComponent(subTitle2);
   // window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
   return console.log("run after?");
