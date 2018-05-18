@@ -234,6 +234,10 @@ class UGC
     
     @.app.stage.addChild save,qr2
 
+    if @.id is 3
+      text.scale.x = 0.9
+      text.scale.y = 0.9
+      text.x += text.width*0.1/2
     if @.small? and @.small
       mark.scale.x = 1
       mark.scale.y = 0.8

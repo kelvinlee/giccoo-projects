@@ -509,6 +509,11 @@ UGC = function () {
         }
         save = new Sprite(resources[saveText].texture);
         this.app.stage.addChild(save, qr2);
+        if (this.id === 3) {
+          text.scale.x = 0.9;
+          text.scale.y = 0.9;
+          text.x += text.width * 0.1 / 2;
+        }
         if (this.small != null && this.small) {
           mark.scale.x = 1;
           mark.scale.y = 0.8;
