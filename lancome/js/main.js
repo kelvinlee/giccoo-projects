@@ -295,7 +295,7 @@ init = function init() {
     methods: {
       ask: function ask() {
         // 获取网易云数据
-        return fetch("//qa-ysr.igame.163.com/api/activity/lancome/userInfo?type=1", {
+        return fetch("//music.163.com/api/activity/lancome/userInfo?type=1", {
           method: "POST"
         }).then(function (msg) {
           return msg.json();

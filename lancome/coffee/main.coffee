@@ -221,7 +221,7 @@ init = ->
 		methods:
 			ask: ->
 				# 获取网易云数据
-				fetch "//qa-ysr.igame.163.com/api/activity/lancome/userInfo?type=1",{method: "POST"}
+				fetch "//music.163.com/api/activity/lancome/userInfo?type=1",{method: "POST"}
 				.then (msg)->
 					return msg.json()
 				.then (msg)->
