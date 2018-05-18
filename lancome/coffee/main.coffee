@@ -221,10 +221,13 @@ init = ->
 		methods:
 			ask: ->
 				# 获取网易云数据
-				axios.get "https://qa-ysr.igame.163.com/api/activity/lancome/userInfo?type=1"
-				.then (msg)=>
-					alert "changetime:1 "+JSON.stringify msg.data
-					d = msg.data
+				fetch "https://qa-ysr.igame.163.com/api/activity/lancome/userInfo?type=1"
+				.then (msg)->
+					return msg.json()
+				.then (msg)->
+					console.log msg
+					alert "changetime:1 "+JSON.stringify msg
+					d = msg
 					# d = {
 					# 	"code": 200,
 					# 	"data": {

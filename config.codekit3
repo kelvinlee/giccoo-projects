@@ -6533,6 +6533,16 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"\/libs\/js\/min\/fetch.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/libs\/js\/min\/fetch.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/libs\/js\/min\/flashaudioplugin-0.6.0.min.js": {
 		"ft": 64,
 		"ma": 0,

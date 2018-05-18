@@ -294,13 +294,14 @@ init = function init() {
     // console.log @.myTime,@.myTimeName
     methods: {
       ask: function ask() {
-        var _this2 = this;
-
         // 获取网易云数据
-        return axios.get("https://qa-ysr.igame.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
+        return fetch("https://qa-ysr.igame.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
+          return msg.json();
+        }).then(function (msg) {
           var d;
-          alert("changetime:1 " + JSON.stringify(msg.data));
-          d = msg.data;
+          console.log(msg);
+          alert("changetime:1 " + JSON.stringify(msg));
+          d = msg;
           // d = {
           // 	"code": 200,
           // 	"data": {
@@ -319,13 +320,13 @@ init = function init() {
           // }
           if (d.code === 200) {
             if (d.data.latestSongName != null) {
-              _this2.musicName = d.data.latestSongName;
+              this.musicName = d.data.latestSongName;
             }
             if (d.data.latestShareSongName != null) {
-              _this2.shareMusicName = d.data.latestShareSongName;
+              this.shareMusicName = d.data.latestShareSongName;
             }
             if (d.data.latestTime != null) {
-              return _this2.myTimestp = d.data.latestTime;
+              return this.myTimestp = d.data.latestTime;
             }
           }
         }).catch(function (err) {
@@ -400,7 +401,7 @@ init = function init() {
         return console.log(this.score);
       },
       createUGC: function createUGC() {
-        var _this3 = this;
+        var _this2 = this;
 
         var box, ugcC;
         ugcC = new buildUGC();
@@ -435,10 +436,10 @@ init = function init() {
           this.scorebg = 1;
         }
         ugcC.init(function () {
-          _this3.ugcbg = ugcC.app.renderer.extract.canvas().toDataURL();
+          _this2.ugcbg = ugcC.app.renderer.extract.canvas().toDataURL();
           return ugcC.qr(function () {
             return setTimeout(function () {
-              return _this3.ugc = ugcC.app.renderer.extract.base64();
+              return _this2.ugc = ugcC.app.renderer.extract.base64();
             }, 100);
           });
         }, this.scorebg);
@@ -467,12 +468,12 @@ init = function init() {
         });
       },
       success: function success(data) {
-        var _this4 = this;
+        var _this3 = this;
 
         this.shareImageLink = data.info;
         neteaseShareImage();
         return setTimeout(function () {
-          return _this4.lastPageShow = true;
+          return _this3.lastPageShow = true;
         }, 3000);
       },
       faild: function faild() {
@@ -488,12 +489,12 @@ init = function init() {
         return this.createUGC();
       },
       gotoUGC: function gotoUGC() {
-        var _this5 = this;
+        var _this4 = this;
 
         this.waitPageBox = true;
         return setTimeout(function () {
-          _this5.waitPageShow = false;
-          return _this5.ugcPageShow = true;
+          _this4.waitPageShow = false;
+          return _this4.ugcPageShow = true;
         }, 7000);
       },
       next: function next() {
@@ -513,11 +514,11 @@ init = function init() {
         }
       },
       playSong: function playSong(i) {
-        var _this6 = this;
+        var _this5 = this;
 
         this.musiclink = "./mp3/mp3-" + i + ".mp3";
         return setTimeout(function () {
-          return _this6.audiomusic.play();
+          return _this5.audiomusic.play();
         }, 1000 / 30);
       },
       select: function select(index) {
@@ -538,7 +539,7 @@ init = function init() {
       }
     },
     mounted: function mounted($el, e) {
-      var _this7 = this;
+      var _this6 = this;
 
       if (sys === "NeteaseMusic") {
         this.wy = true;
@@ -566,7 +567,7 @@ init = function init() {
       }
       this.ask();
       return document.addEventListener("WeixinJSBridgeReady", function () {
-        return _this7.wx = true;
+        return _this6.wx = true;
       }, false);
     }
   });
@@ -861,7 +862,7 @@ createAnswer = function () {
     }, {
       key: "answer2Over",
       value: function answer2Over() {
-        var _this8 = this;
+        var _this7 = this;
 
         this.moving2 = false;
         this.ansStar.stage.removeChild(this.dom.bg2, this.dom.music);
@@ -871,7 +872,7 @@ createAnswer = function () {
         }, {
           x: 100
         }, 600, function (res) {
-          return _this8.dom.timeline.alpha = res.x / 100;
+          return _this7.dom.timeline.alpha = res.x / 100;
         });
       }
 
@@ -1023,7 +1024,7 @@ createAnswer = function () {
     }, {
       key: "select",
       value: function select(i) {
-        var _this9 = this;
+        var _this8 = this;
 
         var target, tempX, tempY, tween;
         this.answers[this.t] = i;
@@ -1054,9 +1055,9 @@ createAnswer = function () {
               this.scaleP.x = 1;
               this.scaleP.y = 1;
               return this.cache = setTimeout(function () {
-                _this9.dom.mark.visible = false;
-                _this9.dom.mark2.visible = true;
-                return _this9.dom.answer1bg.mask = _this9.dom.mark2;
+                _this8.dom.mark.visible = false;
+                _this8.dom.mark2.visible = true;
+                return _this8.dom.answer1bg.mask = _this8.dom.mark2;
                 // @.ansStar.stage.addChild @.dom.mark2
               }, 400);
             case 2:
@@ -1084,27 +1085,27 @@ createAnswer = function () {
           tween = this.tween = new TWEEN.Tween(tempX).to({
             x: 100
           }, 2000).easing(TWEEN.Easing.Cubic.Out).onUpdate(function () {
-            _this9.dom.symbol1.x = 99 - tempX.x * 0.3;
+            _this8.dom.symbol1.x = 99 - tempX.x * 0.3;
             if (tempX.x >= 90) {
-              _this9.dom.symbol1.alpha = (100 - tempX.x) / 10;
+              _this8.dom.symbol1.alpha = (100 - tempX.x) / 10;
             } else if (tempX.x <= 30) {
-              _this9.dom.symbol1.alpha = (tempX.x - 20) / 10;
+              _this8.dom.symbol1.alpha = (tempX.x - 20) / 10;
             } else {
-              _this9.dom.symbol1.alpha = 1;
+              _this8.dom.symbol1.alpha = 1;
             }
-            _this9.dom.symbol2.x = 110 - tempX.x * 0.2;
+            _this8.dom.symbol2.x = 110 - tempX.x * 0.2;
             if (tempX.x >= 90 - 10) {
-              _this9.dom.symbol2.alpha = (100 - 10 - tempX.x) / 10;
+              _this8.dom.symbol2.alpha = (100 - 10 - tempX.x) / 10;
             }
             if (tempX.x <= 20) {
-              _this9.dom.symbol2.alpha = (tempX.x - 10) / 10;
+              _this8.dom.symbol2.alpha = (tempX.x - 10) / 10;
             }
-            _this9.dom.symbol3.x = 128 - tempX.x * 0.1;
+            _this8.dom.symbol3.x = 128 - tempX.x * 0.1;
             if (tempX.x >= 90 - 20) {
-              _this9.dom.symbol3.alpha = (100 - 20 - tempX.x) / 10;
+              _this8.dom.symbol3.alpha = (100 - 20 - tempX.x) / 10;
             }
             if (tempX.x <= 10) {
-              return _this9.dom.symbol3.alpha = tempX.x / 10;
+              return _this8.dom.symbol3.alpha = tempX.x / 10;
             }
           }).start();
           tempY = {
@@ -1113,9 +1114,9 @@ createAnswer = function () {
           return tween = new TWEEN.Tween(tempY).to({
             y: -100
           }, 2000).easing(TWEEN.Easing.Cubic.In).onUpdate(function () {
-            _this9.dom.symbol1.y = 690 + tempY.y * 0.5;
-            _this9.dom.symbol2.y = 717 + tempY.y * 0.4;
-            return _this9.dom.symbol3.y = 720 + tempY.y * 0.3;
+            _this8.dom.symbol1.y = 690 + tempY.y * 0.5;
+            _this8.dom.symbol2.y = 717 + tempY.y * 0.4;
+            return _this8.dom.symbol3.y = 720 + tempY.y * 0.3;
           }).start();
         } else if (this.t === 2) {
           this.dom.timeline1.alpha = 0;
