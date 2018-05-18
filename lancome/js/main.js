@@ -297,7 +297,7 @@ init = function init() {
         var _this2 = this;
 
         // 获取网易云数据
-        return axios.get("//qa-ysr.igame.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
+        return axios.get("https://qa-ysr.igame.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
           var d;
           alert(JSON.stringify(msg.data));
           d = msg.data;
