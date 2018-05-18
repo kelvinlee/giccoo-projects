@@ -18,3 +18,5 @@ window.onload = ->
 		wx.onMenuShareQQ shareContent
 		wx.onMenuShareWeibo shareContent
 
+	document.getElementById("videoid").addEventListener "play", ->
+		_hmt? and _hmt.push(['_trackEvent', "zqzs_1", "video", "play", "-"])
