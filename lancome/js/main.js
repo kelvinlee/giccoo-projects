@@ -299,7 +299,7 @@ init = function init() {
         // 获取网易云数据
         return axios.get("//qa-ysr.igame.163.com/api/activity/lancome/userInfo").then(function (msg) {
           var d;
-          // alert JSON.stringify msg.data
+          alert(JSON.stringify(msg.data));
           d = msg.data;
           // d = {
           // 	"code": 200,
