@@ -170,7 +170,7 @@ var type1btn=$("#type1btn")
 var type2btn=$("#type2btn")
 
 var typeMark=new createjs.Shape()
-var boy=new createjs.Bitmap("img/boy.png")
+var boy=new createjs.Bitmap("img/boy2.png")
 var p2start=$("#p2start")
 function goP2(){//========================准考证页
   TweenLite.set($("#btnshare"),{display:"none"})
@@ -192,7 +192,9 @@ function goP2(){//========================准考证页
   stage2.addChild(typeMark)
 
   TweenLite.set(typeMark,{alpha:0})
-  
+  if(stageH>900){
+    boy=new createjs.Bitmap("img/boy.png")
+  }
   stage2.addChild(boy)
   TweenLite.set(boy,{y:200/1000*stageH,regY:140,regX:126,x:126})
   //TweenLite.from(boy,2,{scale:0,ease:Elastic.easeOut})
@@ -287,7 +289,7 @@ function goP4(){
     endCopy=new createjs.Bitmap("img/endcopy5.png")
   }
   stage4.addChild(endCopy)
-  TweenLite.set(endCopy,{y:200/1000*stageH-9-60*(1-_scale),regY:131-40*(1-_scale),regX:188,x:188,scale:.7+.3*_scale})
+  TweenLite.set(endCopy,{y:(200-15)/1000*stageH-9-60*(1-_scale),regY:131-40*(1-_scale),regX:188,x:188,scale:.7+.3*_scale})
 
   for (var i = 0; i <5 ; i++) {
     stage4.addChild(score12345A[i])
