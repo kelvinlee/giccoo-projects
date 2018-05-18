@@ -225,8 +225,8 @@ init = ->
 				.then (msg)->
 					return msg.json()
 				.then (msg)->
-					console.log msg
-					alert "changetime:2 "+JSON.stringify msg
+					# console.log msg
+					# alert "changetime:2 "+JSON.stringify msg
 					d = msg
 					# d = {
 					# 	"code": 200,

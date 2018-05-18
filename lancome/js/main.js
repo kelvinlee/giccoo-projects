@@ -301,8 +301,8 @@ init = function init() {
           return msg.json();
         }).then(function (msg) {
           var d;
-          console.log(msg);
-          alert("changetime:2 " + JSON.stringify(msg));
+          // console.log msg
+          // alert "changetime:2 "+JSON.stringify msg
           d = msg;
           // d = {
           // 	"code": 200,
