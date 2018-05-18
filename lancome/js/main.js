@@ -295,12 +295,14 @@ init = function init() {
     methods: {
       ask: function ask() {
         // 获取网易云数据
-        return fetch("https://qa-ysr.igame.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
+        return fetch("//qa-ysr.igame.163.com/api/activity/lancome/userInfo?type=1", {
+          method: "POST"
+        }).then(function (msg) {
           return msg.json();
         }).then(function (msg) {
           var d;
           console.log(msg);
-          alert("changetime:1 " + JSON.stringify(msg));
+          alert("changetime:2 " + JSON.stringify(msg));
           d = msg;
           // d = {
           // 	"code": 200,

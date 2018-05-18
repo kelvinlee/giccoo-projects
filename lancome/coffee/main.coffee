@@ -221,12 +221,12 @@ init = ->
 		methods:
 			ask: ->
 				# 获取网易云数据
-				fetch "https://qa-ysr.igame.163.com/api/activity/lancome/userInfo?type=1"
+				fetch "//qa-ysr.igame.163.com/api/activity/lancome/userInfo?type=1",{method: "POST"}
 				.then (msg)->
 					return msg.json()
 				.then (msg)->
 					console.log msg
-					alert "changetime:1 "+JSON.stringify msg
+					alert "changetime:2 "+JSON.stringify msg
 					d = msg
 					# d = {
 					# 	"code": 200,
