@@ -278,6 +278,7 @@ init = ->
 			pageBG: []
 			ugc: null
 			ugcbg: null
+			pauseClick: false
 			default:
 				x: 0
 				animated: false
@@ -326,7 +327,12 @@ init = ->
 				@.$el.removeEventListener 'touchstart', @.start
 				@.$el.removeEventListener 'touchmove', @.move
 				@.$el.removeEventListener 'touchend', @.end
+				@.pauseClick = true
+				setTimeout =>
+					@.pauseClick = false
+				,300
 			recordStart: (evt)->
+				return false if @.pauseClick
 				self = main
 				self.recording = true
 				self.cache = setTimeout =>
@@ -336,6 +342,7 @@ init = ->
 				event.preventDefault()
 
 			recordEnd: (evt)->
+				return false if @.pauseClick
 				self = main
 				self.ugcPageShow = true
 				self.recordPageShow = false

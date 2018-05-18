@@ -1056,6 +1056,7 @@ init = function init() {
       pageBG: [],
       ugc: null,
       ugcbg: null,
+      pauseClick: false,
       default: {
         x: 0,
         animated: false
@@ -1121,10 +1122,17 @@ init = function init() {
         // console.log @.$el
         this.$el.removeEventListener('touchstart', this.start);
         this.$el.removeEventListener('touchmove', this.move);
-        return this.$el.removeEventListener('touchend', this.end);
+        this.$el.removeEventListener('touchend', this.end);
+        this.pauseClick = true;
+        return setTimeout(function () {
+          return _this3.pauseClick = false;
+        }, 300);
       },
       recordStart: function recordStart(evt) {
         var self;
+        if (this.pauseClick) {
+          return false;
+        }
         self = main;
         self.recording = true;
         self.cache = setTimeout(function () {
@@ -1135,6 +1143,9 @@ init = function init() {
       },
       recordEnd: function recordEnd(evt) {
         var self;
+        if (this.pauseClick) {
+          return false;
+        }
         self = main;
         self.ugcPageShow = true;
         self.recordPageShow = false;
