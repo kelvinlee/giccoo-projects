@@ -1,6 +1,7 @@
  # @codekit-prepend "../../libs/coffee/pixi-base"
 
-smallJsonText = "img/pages-small.json"
+cdn = "//image.giccoo.com/projects/mbenz-love/"
+smallJsonText = "#{cdn}img/pages-small.json"
 
 # star
 class stars
@@ -43,12 +44,12 @@ class stars
       preserveDrawingBuffer: true
     document.getElementById('stars').appendChild @.app.view
     PIXI.loader.add([
-      "img/pages-small.json"
-      "img/page-7-dog-1.png"
-      "img/page-7-dog-2.png"
-      "img/page-7-dog-3.png"
-      "img/page-7-dog-4.png"
-      "img/page-7-dog-5.png"
+      "#{cdn}img/pages-small.json"
+      "#{cdn}img/page-7-dog-1.png"
+      "#{cdn}img/page-7-dog-2.png"
+      "#{cdn}img/page-7-dog-3.png"
+      "#{cdn}img/page-7-dog-4.png"
+      "#{cdn}img/page-7-dog-5.png"
     ]).load(@.build.bind(@))
 
 # rain
@@ -149,8 +150,9 @@ class dog
 
 
   build: ->
+    # console.log resources
     for i in [1...5]
-      dog = new Sprite resources["img/page-7-dog-#{i}.png"].texture
+      dog = new Sprite resources["#{cdn}img/page-7-dog-#{i}.png"].texture
       dog.alpha = 0
       dog.vf = @.frame
       @.dogs.push dog
@@ -192,14 +194,14 @@ class UGC
 
   build: ->
     # console.log resources["img/page-#{@.id}-bg.jpg"].texture
-    bg = new Sprite resources["img/page-#{@.id}-bg.jpg"].texture
+    bg = new Sprite resources["#{cdn}img/page-#{@.id}-bg.jpg"].texture
     @.app.stage.addChild bg
 
     if @bg?
       animate = new Sprite PIXI.Texture.fromCanvas @bg
       @.app.stage.addChild animate
 
-    @.mark = mark = new Sprite resources["img/mark.png"].texture
+    @.mark = mark = new Sprite resources["#{cdn}img/mark.png"].texture
     mark.x = (640 - mark.width)/2
     mark.y = (1138 - mark.height)/2
 
@@ -207,8 +209,8 @@ class UGC
     
     # title = new Sprite resources["img/ugc-title.png"].texture
     # @.app.stage.addChild title
-    qr = @.qr = new Sprite resources["img/ugc-qr-1.png"].texture
-    text = new Sprite resources["img/ugc-#{@.id}-#{@.random}.png"].texture
+    qr = @.qr = new Sprite resources["#{cdn}img/ugc-qr-1.png"].texture
+    text = new Sprite resources["#{cdn}img/ugc-#{@.id}-#{@.random}.png"].texture
     
     @.app.stage.addChild qr
     
@@ -219,7 +221,7 @@ class UGC
 
     # title.alpha = 0
     qr.alpha = 0
-    qr2 = @.qr2 = new Sprite resources["img/ugc-qr.png"].texture
+    qr2 = @.qr2 = new Sprite resources["#{cdn}img/ugc-qr.png"].texture
     # @.qr.x = 35
     # @.qr.y = 1138 + 4 - 35 - @.qr.height
     @.app.stage.addChildAt mark,2
@@ -227,9 +229,9 @@ class UGC
     # title2 = new Sprite resources["img/ugc-title-2.png"].texture
     # @.app.stage.addChild title2
 
-    saveText = "img/long-save.png"
+    saveText = "#{cdn}img/long-save.png"
     if @wy? and @wy
-      saveText = "img/save-text.png"
+      saveText = "#{cdn}img/save-text.png"
     save = new Sprite resources[saveText].texture
     
     @.app.stage.addChild save,qr2
@@ -275,12 +277,12 @@ class UGC
     document.getElementById('ugc').appendChild @.app.view
     @.random = Math.floor Math.random()*5+1
     PIXI.loader.add([
-      "img/page-#{@.id}-bg.jpg"
-      "img/ugc-qr.png"
-      "img/ugc-qr-1.png"
-      "img/mark.png"
-      "img/long-save.png"
-      "img/save-text.png"
-      "img/ugc-title-2.png"
-      "img/ugc-#{@.id}-#{@.random}.png"
+      "#{cdn}img/page-#{@.id}-bg.jpg"
+      "#{cdn}img/ugc-qr.png"
+      "#{cdn}img/ugc-qr-1.png"
+      "#{cdn}img/mark.png"
+      "#{cdn}img/long-save.png"
+      "#{cdn}img/save-text.png"
+      "#{cdn}img/ugc-title-2.png"
+      "#{cdn}img/ugc-#{@.id}-#{@.random}.png"
     ]).load(@.build.bind(@))

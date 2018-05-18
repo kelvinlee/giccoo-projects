@@ -1179,57 +1179,57 @@ body {
     opacity: 0; }
 
 .font-0 {
-  background: url("../img/font-0.png") no-repeat center center;
+  background: url("//image.giccoo.com/projects/mbenz-love/img/font-0.png") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
 .font-1 {
-  background: url("../img/font-1.png") no-repeat center center;
+  background: url("//image.giccoo.com/projects/mbenz-love/img/font-1.png") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
 .font-2 {
-  background: url("../img/font-2.png") no-repeat center center;
+  background: url("//image.giccoo.com/projects/mbenz-love/img/font-2.png") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
 .font-3 {
-  background: url("../img/font-3.png") no-repeat center center;
+  background: url("//image.giccoo.com/projects/mbenz-love/img/font-3.png") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
 .font-4 {
-  background: url("../img/font-4.png") no-repeat center center;
+  background: url("//image.giccoo.com/projects/mbenz-love/img/font-4.png") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
 .font-5 {
-  background: url("../img/font-5.png") no-repeat center center;
+  background: url("//image.giccoo.com/projects/mbenz-love/img/font-5.png") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
 .font-6 {
-  background: url("../img/font-6.png") no-repeat center center;
+  background: url("//image.giccoo.com/projects/mbenz-love/img/font-6.png") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
 .font-7 {
-  background: url("../img/font-7.png") no-repeat center center;
+  background: url("//image.giccoo.com/projects/mbenz-love/img/font-7.png") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
 .font-8 {
-  background: url("../img/font-8.png") no-repeat center center;
+  background: url("//image.giccoo.com/projects/mbenz-love/img/font-8.png") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
 .font-9 {
-  background: url("../img/font-9.png") no-repeat center center;
+  background: url("//image.giccoo.com/projects/mbenz-love/img/font-9.png") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
 .font-last {
-  background: url("../img/font-last.png") no-repeat center center;
+  background: url("//image.giccoo.com/projects/mbenz-love/img/font-last.png") no-repeat center center;
   background-size: cover;
   background-color: transparent; }
 
@@ -1265,7 +1265,7 @@ body {
     .page .content .btn-start .startcontent {
       width: 100%;
       height: 100%;
-      background: url("../img/btn-start.png") no-repeat center center;
+      background: url("//image.giccoo.com/projects/mbenz-love/img/btn-start.png") no-repeat center center;
       background-size: contain;
       background-color: transparent; }
   .page .content .texts {
@@ -1288,7 +1288,7 @@ body {
             transform: translate3d(0, -50%, 0); }
   .page .content .right {
     right: 1%;
-    background: url("../img/right.png") no-repeat center center;
+    background: url("//image.giccoo.com/projects/mbenz-love/img/right.png") no-repeat center center;
     background-size: cover;
     background-color: transparent;
     -webkit-animation: moveRight 2s ease;
@@ -1299,7 +1299,7 @@ body {
             animation-iteration-count: infinite; }
   .page .content .left {
     left: 1%;
-    background: url("../img/left.png") no-repeat center center;
+    background: url("//image.giccoo.com/projects/mbenz-love/img/left.png") no-repeat center center;
     background-size: cover;
     background-color: transparent;
     -webkit-animation: moveLeft 2s ease;
@@ -1433,7 +1433,7 @@ body {
             transform: translate3d(0, -50%, 0);
     width: 80%;
     margin: 0 auto;
-    background: url("../img/form-bg.jpg") repeat top center;
+    background: url("//image.giccoo.com/projects/mbenz-love/img/form-bg.jpg") repeat top center;
     background-size: 100% auto;
     background-color: transparent;
     -webkit-box-sizing: border-box;

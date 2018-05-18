@@ -279,6 +279,7 @@ init = ->
 			ugc: null
 			ugcbg: null
 			pauseClick: false
+			pushed: false
 			default:
 				x: 0
 				animated: false
@@ -331,6 +332,7 @@ init = ->
 				setTimeout =>
 					@.pauseClick = false
 				,300
+				_hmt? and _hmt.push(['_trackEvent', "mbenzlove", "nation", Id, "-"])
 			recordStart: (evt)->
 				return false if @.pauseClick
 				self = main
@@ -405,10 +407,11 @@ init = ->
 					image: image
 					folder: "mbenzlove"
 				}
-				unless image?
-					return main.faild()
+				return main.faild() unless image?
+				return false if @.pushed
 				axios.post imageurl,data
 				.then (msg)->
+					main.pushed = true
 					if msg.data.recode is 200
 						main.success(msg.data)
 					else

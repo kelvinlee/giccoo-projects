@@ -8,12 +8,22 @@
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+      	var hm = document.createElement("script");
+      	hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+      	var s = document.getElementsByTagName("script")[0]; 
+      	s.parentNode.insertBefore(hm, s);
+      })();
+      
+    </script>
   </head>
   <body>
     <div id="load" :class="{hide:kill}" class="loading">
       <div :class="{fadeOut: !mount}" class="full animated duration-7">
         <div class="content">
-          <div class="line"><img src="./img/loading-line.png">
+          <div class="line"><img src="//image.giccoo.com/projects/mbenz-love/img/loading-line.png">
             <div v-html="progressText" class="texts"><span class="opc font font-0">0</span><span class="opc font font-1">1</span><span class="opc font font-2">2</span><span class="opc font font-3">3</span><span class="opc font font-4">4</span><span class="opc font font-5">5</span><span class="opc font font-6">6</span><span class="opc font font-7">7</span><span class="opc font font-8">8</span><span class="opc font font-9">9</span><span class="opc font font-last">%</span>
             </div>
           </div>
@@ -22,17 +32,17 @@
     </div>
     <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" :class="{smaller: smaller,notsmall: !smaller}" class="main">
       <div @click.stop.prevent="play" class="bgm">
-        <audio id="bgm" :src="musiclink" autoplay="true" loop="true"></audio><img :src="'./img/audio-'+playing+'.png'">
+        <audio id="bgm" :src="musiclink" autoplay="true" loop="true"></audio><img :src="'//image.giccoo.com/projects/mbenz-love/img/audio-'+playing+'.png'">
         <transition name="page-fade">
           <p v-show="noteMsg" class="noteMsg">为保证体验效果<br/>请打开音乐</p>
         </transition>
       </div>
       <div id="nav" class="nav">
-        <div class="logo"><img src="./img/navbar.jpg"><a href="https://special.mercedes-benz.com.cn/2018-dream-car/mobi/#e-cab" class="sj"></a></div>
+        <div class="logo"><img src="//image.giccoo.com/projects/mbenz-love/img/navbar.jpg"><a href="https://special.mercedes-benz.com.cn/2018-dream-car/mobi/#e-cab" class="sj"></a></div>
       </div>
       <transition name="page-animation">
         <div v-show="pageIndex == 0" :class="{left: pageIndex &gt;= 0}" class="page page-home">
-          <div class="bg"><img src="./img/page-home-bg.jpg">
+          <div class="bg"><img src="//image.giccoo.com/projects/mbenz-love/img/page-home-bg.jpg">
             <div class="animations"></div>
           </div>
           <div class="content">
@@ -42,11 +52,11 @@
       </transition>
       <transition name="page-animation">
         <div v-show="pageIndex == 1" :class="{now: pageIndex == 1,right: pageIndex &lt; 1,left: pageIndex &gt; 1}" class="page page-1">
-          <div class="bg"><img src="./img/page-1-bg.jpg">
+          <div class="bg"><img src="//image.giccoo.com/projects/mbenz-love/img/page-1-bg.jpg">
             <div id="stars" class="animations"></div>
           </div>
           <div class="content">
-            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-1-text.png"></div>
+            <div :style="{top: navH+'%'}" class="texts"><img src="//image.giccoo.com/projects/mbenz-love/img/page-1-text.png"></div>
             <div @click.stop.prevent="moveNext" class="right"></div>
             <div v-show="!ugcPageShow" @click.stop.prevent="gameStart(1)" class="btn btn-start">
               <div class="startcontent zoomIn animated delay-5"></div>
@@ -56,15 +66,15 @@
       </transition>
       <transition name="page-animation">
         <div v-show="pageIndex == 2" :class="{now: pageIndex == 2,right: pageIndex &lt; 2,left: pageIndex &gt; 2}" class="page page-2">
-          <div class="bg"><img src="./img/page-2-bg.jpg">
+          <div class="bg"><img src="//image.giccoo.com/projects/mbenz-love/img/page-2-bg.jpg">
             <div class="animations">
-              <div class="hair"><img src="./img/page-2-hair.gif"></div>
+              <div class="hair"><img src="//image.giccoo.com/projects/mbenz-love/img/page-2-hair.gif"></div>
             </div>
           </div>
           <div class="content">
             <div @click.stop.prevent="movePrev" class="left"></div>
             <div @click.stop.prevent="moveNext" class="right"></div>
-            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-2-text.png"></div>
+            <div :style="{top: navH+'%'}" class="texts"><img src="//image.giccoo.com/projects/mbenz-love/img/page-2-text.png"></div>
             <div v-show="!ugcPageShow" @click.stop.prevent="gameStart(2)" class="btn btn-start">
               <div class="startcontent zoomIn animated delay-5"></div>
             </div>
@@ -73,15 +83,15 @@
       </transition>
       <transition name="page-animation">
         <div v-show="pageIndex == 3" :class="{now: pageIndex == 3,right: pageIndex &lt; 3,left: pageIndex &gt; 3}" class="page page-3">
-          <div class="bg"><img src="./img/page-3-bg.jpg">
+          <div class="bg"><img src="//image.giccoo.com/projects/mbenz-love/img/page-3-bg.jpg">
             <div class="animations">
-              <div class="ball"><img src="./img/page-3-ball.png"></div>
+              <div class="ball"><img src="//image.giccoo.com/projects/mbenz-love/img/page-3-ball.png"></div>
             </div>
           </div>
           <div class="content">
             <div @click.stop.prevent="movePrev" class="left"></div>
             <div @click.stop.prevent="moveNext" class="right"></div>
-            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-3-text.png"></div>
+            <div :style="{top: navH+'%'}" class="texts"><img src="//image.giccoo.com/projects/mbenz-love/img/page-3-text.png"></div>
             <div v-show="!ugcPageShow" @click.stop.prevent="gameStart(3)" class="btn btn-start">
               <div class="startcontent zoomIn animated delay-5"></div>
             </div>
@@ -90,13 +100,13 @@
       </transition>
       <transition name="page-animation">
         <div v-show="pageIndex == 4" :class="{now: pageIndex == 4,right: pageIndex &lt; 4,left: pageIndex &gt; 4}" class="page page-4">
-          <div class="bg"><img src="./img/page-4-bg.jpg">
+          <div class="bg"><img src="//image.giccoo.com/projects/mbenz-love/img/page-4-bg.jpg">
             <div id="rain" class="animations"></div>
           </div>
           <div class="content">
             <div @click.stop.prevent="movePrev" class="left"></div>
             <div @click.stop.prevent="moveNext" class="right"></div>
-            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-4-text.png"></div>
+            <div :style="{top: navH+'%'}" class="texts"><img src="//image.giccoo.com/projects/mbenz-love/img/page-4-text.png"></div>
             <div v-show="!ugcPageShow" @click.stop.prevent="gameStart(4)" class="btn btn-start">
               <div class="startcontent zoomIn animated delay-5"></div>
             </div>
@@ -105,15 +115,15 @@
       </transition>
       <transition name="page-animation">
         <div v-show="pageIndex == 5" :class="{now: pageIndex == 5,right: pageIndex &lt; 5,left: pageIndex &gt; 5}" class="page page-5">
-          <div class="bg"><img src="./img/page-5-bg.jpg">
+          <div class="bg"><img src="//image.giccoo.com/projects/mbenz-love/img/page-5-bg.jpg">
             <div class="animations">
-              <div class="snow"><img src="./img/page-5-snow.gif"></div>
+              <div class="snow"><img src="//image.giccoo.com/projects/mbenz-love/img/page-5-snow.gif"></div>
             </div>
           </div>
           <div class="content">
             <div @click.stop.prevent="movePrev" class="left"></div>
             <div @click.stop.prevent="moveNext" class="right"></div>
-            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-5-text.png"></div>
+            <div :style="{top: navH+'%'}" class="texts"><img src="//image.giccoo.com/projects/mbenz-love/img/page-5-text.png"></div>
             <div v-show="!ugcPageShow" @click.stop.prevent="gameStart(5)" class="btn btn-start">
               <div class="startcontent zoomIn animated delay-5"></div>
             </div>
@@ -122,15 +132,15 @@
       </transition>
       <transition name="page-animation">
         <div v-show="pageIndex == 6" :class="{now: pageIndex == 6,right: pageIndex &lt; 6,left: pageIndex &gt; 6}" class="page page-6">
-          <div class="bg"><img src="./img/page-6-bg.jpg">
+          <div class="bg"><img src="//image.giccoo.com/projects/mbenz-love/img/page-6-bg.jpg">
             <div id="cloud" class="animations">
-              <div class="mark"><img src="./img/page-6-mark.png"></div>
+              <div class="mark"><img src="//image.giccoo.com/projects/mbenz-love/img/page-6-mark.png"></div>
             </div>
           </div>
           <div class="content">
             <div @click.stop.prevent="movePrev" class="left"></div>
             <div @click.stop.prevent="moveNext" class="right"></div>
-            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-6-text.png"></div>
+            <div :style="{top: navH+'%'}" class="texts"><img src="//image.giccoo.com/projects/mbenz-love/img/page-6-text.png"></div>
             <div v-show="!ugcPageShow" @click.stop.prevent="gameStart(6)" class="btn btn-start">
               <div class="startcontent zoomIn animated delay-5"></div>
             </div>
@@ -139,12 +149,12 @@
       </transition>
       <transition name="page-animation">
         <div v-show="pageIndex == 7" :class="{now: pageIndex == 7,right: pageIndex &lt; 7,left: pageIndex &gt; 7}" class="page page-7">
-          <div class="bg"><img src="./img/page-7-bg.jpg">
+          <div class="bg"><img src="//image.giccoo.com/projects/mbenz-love/img/page-7-bg.jpg">
             <div id="dog" class="animations"></div>
           </div>
           <div class="content">
             <div @click.stop.prevent="movePrev" class="left"></div>
-            <div :style="{top: navH+'%'}" class="texts"><img src="./img/page-7-text.png"></div>
+            <div :style="{top: navH+'%'}" class="texts"><img src="//image.giccoo.com/projects/mbenz-love/img/page-7-text.png"></div>
             <div v-show="!ugcPageShow" @click.stop.prevent="gameStart(7)" class="btn btn-start">
               <div class="startcontent zoomIn animated delay-5"></div>
             </div>
@@ -155,30 +165,30 @@
         <div v-show="regisiterPageShow" class="page page-regisiter">
           <div class="content">
             <form class="form">
-              <div class="form-title"><img src="./img/form-title.png"></div>
+              <div class="form-title"><img src="//image.giccoo.com/projects/mbenz-love/img/form-title.png"></div>
               <div class="form-group">
-                <label for="username"><img src="./img/form-label-name.png"></label>
+                <label for="username"><img src="//image.giccoo.com/projects/mbenz-love/img/form-label-name.png"></label>
                 <input id="username" type="text" v-model="form.username">
               </div>
               <div class="form-group">
-                <label><img src="./img/form-label-sex.png"></label>
+                <label><img src="//image.giccoo.com/projects/mbenz-love/img/form-label-sex.png"></label>
                 <div class="form-group-items">
                   <div class="item">
                     <input id="man" type="radio" value="1" v-model="form.sex">
-                    <label for="man" class="text"><img src="./img/form-man.png"></label>
+                    <label for="man" class="text"><img src="//image.giccoo.com/projects/mbenz-love/img/form-man.png"></label>
                   </div>
                   <div class="item">
                     <input id="woman" type="radio" value="0" v-model="form.sex">
-                    <label for="woman" class="text"><img src="./img/form-woman.png"></label>
+                    <label for="woman" class="text"><img src="//image.giccoo.com/projects/mbenz-love/img/form-woman.png"></label>
                   </div>
                 </div>
               </div>
               <div class="form-group">
-                <label for="mobile"><img id="mobile" src="./img/form-label-mobile.png"></label>
+                <label for="mobile"><img id="mobile" src="//image.giccoo.com/projects/mbenz-love/img/form-label-mobile.png"></label>
                 <input type="text" v-model="form.mobile">
               </div>
               <div class="form-group">
-                <label><img src="./img/form-label-p.png"></label>
+                <label><img src="//image.giccoo.com/projects/mbenz-love/img/form-label-p.png"></label>
                 <div class="form-group-items">
                   <div class="item select"><span>{{form.province != "" ? form.province : "请选择"}}</span>
                     <select v-model="form.province">
@@ -187,7 +197,7 @@
                     </select>
                   </div>
                   <div class="item c">
-                    <div class="text big"><img src="./img/form-label-c.png"></div>
+                    <div class="text big"><img src="//image.giccoo.com/projects/mbenz-love/img/form-label-c.png"></div>
                   </div>
                   <div class="item select"><span>{{form.city != "" ? form.city : "请选择"}}</span>
                     <select v-model="form.city">
@@ -198,7 +208,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label><img src="./img/form-label-de.png"></label>
+                <label><img src="//image.giccoo.com/projects/mbenz-love/img/form-label-de.png"></label>
                 <div class="select"><span>{{form.dealer != "" ? form.dealer : "请选择"}}</span>
                   <select v-model="form.dealer">
                     <option value="">请选择</option>
@@ -207,7 +217,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label><img src="./img/form-label-detail.png"></label>
+                <label><img src="//image.giccoo.com/projects/mbenz-love/img/form-label-detail.png"></label>
                 <div class="form-group-items box">
                   <div class="item">
                     <input id="detail" type="checkbox" value="1" checked v-model="form.detail">
@@ -215,18 +225,18 @@
                   </div>
                 </div>
               </div>
-              <div @click.stop.prevent="submit" class="form-btn"><img src="./img/btn-submit.png"></div>
-              <div @click.stop.prevent="regisiterPageShow = false" class="close"><img src="./img/form-close.png"></div>
+              <div @click.stop.prevent="submit" class="form-btn"><img src="//image.giccoo.com/projects/mbenz-love/img/btn-submit.png"></div>
+              <div @click.stop.prevent="regisiterPageShow = false" class="close"><img src="//image.giccoo.com/projects/mbenz-love/img/form-close.png"></div>
             </form>
           </div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="recordPageShow" class="page page-record">
-          <div class="bg"><img src="./img/page-record-bg.jpg"></div>
+          <div class="bg"><img src="//image.giccoo.com/projects/mbenz-love/img/page-record-bg.jpg"></div>
           <div class="content">
             <div id="record" :class="{off: !recording,on: recording}" class="record">
-              <div class="mic"><img src="./img/page-record-microphone.png"></div>
+              <div class="mic"><img src="//image.giccoo.com/projects/mbenz-love/img/page-record-microphone.png"></div>
               <div class="progress">
                 <div class="wrapper r">
                   <div class="circleProgress rightcircle"></div>
@@ -248,13 +258,12 @@
       </transition>
       <transition name="page-fade">
         <div v-show="ugcPageShow" class="page page-ugc">
-          <div id="ugc" class="bg">
-          </div>
+          <div id="ugc" class="bg"></div>
           <div class="content">
             <div v-if="wy" @click.stop.prevent="share" class="mark"></div>
             <div v-if="!wy" class="mark"><img :src="ugc"></div>
             <div class="btns">
-              <div @click.stop.prevent="regisiterPageShow = true" class="btn btn-reg"><img src="./img/btn-reg.png"></div><a href="http://music.163.com/playlist?id=2222381288" class="btn btn-music"><img src="./img/btn-music.png"></a>
+              <div @click.stop.prevent="regisiterPageShow = true" class="btn btn-reg"><img src="//image.giccoo.com/projects/mbenz-love/img/btn-reg.png"></div><a href="http://music.163.com/playlist?id=2222381288" class="btn btn-music"><img src="//image.giccoo.com/projects/mbenz-love/img/btn-music.png"></a>
             </div>
           </div>
         </div>

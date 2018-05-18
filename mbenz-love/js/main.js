@@ -6,7 +6,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Container, IsPC, ParticleContainer, Sprite, Texture, TextureCache, Tn, UGC, _CDN, _imgurl, _animate, autoDetectRenderer, _citys, cloud, _dealers, dog, e, getId, getRandom, getTe, global, imageurl, init, j, len, load, loadWechatConfig, loader, main, neteaseShareImage, options, p, passiveSupported, pre, provinces, rain, randomSort, resource, resources, smallJsonText, stars, startTime, sys;
+var Container, IsPC, ParticleContainer, Sprite, Texture, TextureCache, Tn, UGC, _CDN, _imgurl, _animate, autoDetectRenderer, cdn, _citys, cloud, _dealers, dog, e, getId, getRandom, getTe, global, imageurl, init, j, len, load, loadWechatConfig, loader, main, neteaseShareImage, options, p, passiveSupported, pre, provinces, rain, randomSort, resource, resources, smallJsonText, stars, startTime, sys;
 
 randomSort = function randomSort(obj) {
   var newArr, oldarr, _randomSortFun;
@@ -128,7 +128,9 @@ getId = function getId(id, link) {
 };
 
 // @codekit-prepend "../../libs/coffee/pixi-base"
-smallJsonText = "img/pages-small.json";
+cdn = "//image.giccoo.com/projects/mbenz-love/";
+
+smallJsonText = cdn + "img/pages-small.json";
 
 stars = function () {
   // star
@@ -197,7 +199,7 @@ stars = function () {
           preserveDrawingBuffer: true
         });
         document.getElementById('stars').appendChild(this.app.view);
-        return PIXI.loader.add(["img/pages-small.json", "img/page-7-dog-1.png", "img/page-7-dog-2.png", "img/page-7-dog-3.png", "img/page-7-dog-4.png", "img/page-7-dog-5.png"]).load(this.build.bind(this));
+        return PIXI.loader.add([cdn + "img/pages-small.json", cdn + "img/page-7-dog-1.png", cdn + "img/page-7-dog-2.png", cdn + "img/page-7-dog-3.png", cdn + "img/page-7-dog-4.png", cdn + "img/page-7-dog-5.png"]).load(this.build.bind(this));
       }
     }]);
 
@@ -406,8 +408,9 @@ dog = function () {
       key: "build",
       value: function build() {
         var i, j;
+        // console.log resources
         for (i = j = 1; j < 5; i = ++j) {
-          dog = new Sprite(resources["img/page-7-dog-" + i + ".png"].texture);
+          dog = new Sprite(resources[cdn + "img/page-7-dog-" + i + ".png"].texture);
           dog.alpha = 0;
           dog.vf = this.frame;
           this.dogs.push(dog);
@@ -490,20 +493,20 @@ UGC = function () {
       value: function build() {
         var animate, bg, mark, qr, qr2, save, saveText, text;
         // console.log resources["img/page-#{@.id}-bg.jpg"].texture
-        bg = new Sprite(resources["img/page-" + this.id + "-bg.jpg"].texture);
+        bg = new Sprite(resources[cdn + "img/page-" + this.id + "-bg.jpg"].texture);
         this.app.stage.addChild(bg);
         if (this.bg != null) {
           animate = new Sprite(PIXI.Texture.fromCanvas(this.bg));
           this.app.stage.addChild(animate);
         }
-        this.mark = mark = new Sprite(resources["img/mark.png"].texture);
+        this.mark = mark = new Sprite(resources[cdn + "img/mark.png"].texture);
         mark.x = (640 - mark.width) / 2;
         mark.y = (1138 - mark.height) / 2;
 
         // title = new Sprite resources["img/ugc-title.png"].texture
         // @.app.stage.addChild title
-        qr = this.qr = new Sprite(resources["img/ugc-qr-1.png"].texture);
-        text = new Sprite(resources["img/ugc-" + this.id + "-" + this.random + ".png"].texture);
+        qr = this.qr = new Sprite(resources[cdn + "img/ugc-qr-1.png"].texture);
+        text = new Sprite(resources[cdn + "img/ugc-" + this.id + "-" + this.random + ".png"].texture);
         this.app.stage.addChild(qr);
         this.app.stage.addChild(text);
         this.app.renderer.render(this.app.stage);
@@ -511,16 +514,16 @@ UGC = function () {
         this.ugc();
         // title.alpha = 0
         qr.alpha = 0;
-        qr2 = this.qr2 = new Sprite(resources["img/ugc-qr.png"].texture);
+        qr2 = this.qr2 = new Sprite(resources[cdn + "img/ugc-qr.png"].texture);
         // @.qr.x = 35
         // @.qr.y = 1138 + 4 - 35 - @.qr.height
         this.app.stage.addChildAt(mark, 2);
         text.y = 60;
         // title2 = new Sprite resources["img/ugc-title-2.png"].texture
         // @.app.stage.addChild title2
-        saveText = "img/long-save.png";
+        saveText = cdn + "img/long-save.png";
         if (this.wy != null && this.wy) {
-          saveText = "img/save-text.png";
+          saveText = cdn + "img/save-text.png";
         }
         save = new Sprite(resources[saveText].texture);
         this.app.stage.addChild(save, qr2);
@@ -568,7 +571,7 @@ UGC = function () {
         });
         document.getElementById('ugc').appendChild(this.app.view);
         this.random = Math.floor(Math.random() * 5 + 1);
-        return PIXI.loader.add(["img/page-" + this.id + "-bg.jpg", "img/ugc-qr.png", "img/ugc-qr-1.png", "img/mark.png", "img/long-save.png", "img/save-text.png", "img/ugc-title-2.png", "img/ugc-" + this.id + "-" + this.random + ".png"]).load(this.build.bind(this));
+        return PIXI.loader.add([cdn + "img/page-" + this.id + "-bg.jpg", cdn + "img/ugc-qr.png", cdn + "img/ugc-qr-1.png", cdn + "img/mark.png", cdn + "img/long-save.png", cdn + "img/save-text.png", cdn + "img/ugc-title-2.png", cdn + "img/ugc-" + this.id + "-" + this.random + ".png"]).load(this.build.bind(this));
       }
     }]);
 
@@ -1057,6 +1060,7 @@ init = function init() {
       ugc: null,
       ugcbg: null,
       pauseClick: false,
+      pushed: false,
       default: {
         x: 0,
         animated: false
@@ -1124,9 +1128,10 @@ init = function init() {
         this.$el.removeEventListener('touchmove', this.move);
         this.$el.removeEventListener('touchend', this.end);
         this.pauseClick = true;
-        return setTimeout(function () {
+        setTimeout(function () {
           return _this3.pauseClick = false;
         }, 300);
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "mbenzlove", "nation", Id, "-"]);
       },
       recordStart: function recordStart(evt) {
         var self;
@@ -1247,7 +1252,11 @@ init = function init() {
         if (image == null) {
           return main.faild();
         }
+        if (this.pushed) {
+          return false;
+        }
         return axios.post(imageurl, data).then(function (msg) {
+          main.pushed = true;
           if (msg.data.recode === 200) {
             return main.success(msg.data);
           } else {
