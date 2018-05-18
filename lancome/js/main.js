@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Tn, _CDN, _imgurl, _animate, ansStar, appStar, buildUGC, canvasImgs, createAnswer, createStar, getRandom, global, imageurl, init, load, loadWechatConfig, main, mark, musicName, myTime, myTimeDetail, myTimeLine, myTimeName, neteaseShareImage, pre, randomSort, scoreBox, scoreInfinity, scoreMusicTime, scoreShareTimes, scoreZore, shareMusicName, stars, sys, textsBox;
+var Tn, _CDN, _imgurl, _animate, ansStar, appStar, buildUGC, canvasImgs, createAnswer, createStar, getRandom, global, imageurl, init, load, loadWechatConfig, main, mark, musicName, myTime, myTimeDetail, myTimeLine, myTimeName, neteaseShareImage, pre, randomSort, scoreBox, scoreInfinity, scoreMusicTime, scoreShareTimes, scoreZore, shareMusicName, stars, sys, textsBox, upten;
 
 randomSort = function randomSort(obj) {
   var newArr, oldarr, _randomSortFun;
@@ -120,6 +120,22 @@ shareMusicName = ""; // 分享过的音乐 cheapest flight
 
 canvasImgs = ["img/star.png", "img/answer-1-bg.jpg", "img/answer-1-mark-bg.jpg", "img/answer-2-bg.jpg", "img/mark-1.png", "img/mark-2.png", "img/item-elephant.png", "img/item-owl.png", "img/item-panda.png", "img/symbol.png"];
 
+// {
+//     "code": 200,
+//     "data": {
+//         "hottestArtistSong": [
+//             "달과 6펜스",
+//             "오필리아",
+//             "So Nice (GMF 2012 ver.)"
+//         ],
+//         "hottestSongArtistName": "沈圭善",
+//         "hottestSongCount": 16,
+//         "hottestSongName": "달과 6펜스",
+//         "latestShareSongName": "Something Just Like This",
+//         "latestSongName": "OUTRO. 신곡(神曲) (Divina Commedia)",
+//         "latestTime": 1525014085000
+//     }
+// }
 getRandom = function getRandom(length) {
   return parseInt(Math.random() * (length + 1) - 1);
 };
@@ -238,20 +254,84 @@ init = function init() {
       wx: false,
       shareImageLink: "",
       questionMark: 0,
-      answerList: [{
-        question: ["\u6700\u8FD1\u4E00\u6B21" + myTimeName + myTimeDetail + "\u8FD8\u5728\u542C\u6B4C\u7684\u4F60\uFF0C\u89C9\u5F97\u90A3\u65F6\u8C01\u4F1A\u966A\u7740\u4F60\uFF1F"],
-        answers: ["飞累了，借你家阳台<br/>歇歇的猫头鹰", "冰箱里那只<br/>舔着冰淇淋的蠢大象", "墙角边偷偷涂<br/>兰蔻“发光”眼霜的大熊猫"]
-      }, {
-        question: ["\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u6BD4\u82F1\u56FD\u7684\u6674\u5929\u8FD8\u5C11\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u591A\u5230\u670D\u52A1\u5668\u762B\u75EA\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u548C\u5927\u8FC1\u5F99\u65F6\u7684\u89D2\u9A6C\u4E00\u6837\u591A\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + musicName + "\u300B\u7684\u4EBA\uFF0C\u6BD4\u7406\u5DE5\u5927\u7684\u5973\u751F\u8FD8\u5C11\u3002\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F"],
-        answers: ["敲击键盘", "窃窃私语聊天", "刷手机"]
-      }, {
-        question: [shareMusicName === "" ? "最近都没分享过歌曲的你，如果分享，觉得谁会点开听？" : "\u4E4B\u524D\u4ECE\u4E91\u97F3\u4E50\u5206\u4EAB\u8FC7\u4E00\u9996\u300A" + shareMusicName + "\u300B\u4F60\u89C9\u5F97\u8C01\u70B9\u5F00\u542C\u8FC7\uFF1F"],
-        answers: ["最想让TA听到的那个人", "和我一样喜欢这类曲风的闺蜜", "我才不care有没有人点开听"]
-      }],
-      answers: [-1, -1, -1]
+      answers: [-1, -1, -1],
+      musicName: "",
+      myTimeName: "",
+      myTimeDetail: "",
+      myTime: 15,
+      myTimestp: 0,
+      shareMusicName: ""
     },
-    // computed:
+    computed: {
+      answerList: function answerList() {
+        return [{
+          question: ["\u6700\u8FD1\u4E00\u6B21" + this.myTimeName + this.myTimeDetail + "\u8FD8\u5728\u542C\u6B4C\u7684\u4F60\uFF0C\u89C9\u5F97\u90A3\u65F6\u8C01\u4F1A\u966A\u7740\u4F60\uFF1F"],
+          answers: ["飞累了，借你家阳台<br/>歇歇的猫头鹰", "冰箱里那只<br/>舔着冰淇淋的蠢大象", "墙角边偷偷涂<br/>兰蔻“发光”眼霜的大熊猫"]
+        }, {
+          question: ["\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + this.musicName + "\u300B\u7684\u4EBA\uFF0C\u6BD4\u82F1\u56FD\u7684\u6674\u5929\u8FD8\u5C11\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + this.musicName + "\u300B\u7684\u4EBA\uFF0C\u591A\u5230\u670D\u52A1\u5668\u762B\u75EA\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + this.musicName + "\u300B\u7684\u4EBA\uFF0C\u548C\u5927\u8FC1\u5F99\u65F6\u7684\u89D2\u9A6C\u4E00\u6837\u591A\uFF1B\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F", "\u90A3\u4E00\u5929\uFF0C\u4E91\u6751\u548C\u4F60\u4E00\u8D77\u5728\u542C\u300A" + this.musicName + "\u300B\u7684\u4EBA\uFF0C\u6BD4\u7406\u5DE5\u5927\u7684\u5973\u751F\u8FD8\u5C11\u3002\u4F60\u89C9\u5F97\u4ED6\u4EEC\u90A3\u65F6\u5728\u5E72\u4EC0\u4E48\uFF1F"],
+          answers: ["敲击键盘", "窃窃私语聊天", "刷手机"]
+        }, {
+          question: [this.shareMusicName === "" ? "最近都没分享过歌曲的你，如果分享，觉得谁会点开听？" : "\u4E4B\u524D\u4ECE\u4E91\u97F3\u4E50\u5206\u4EAB\u8FC7\u4E00\u9996\u300A" + this.shareMusicName + "\u300B\u4F60\u89C9\u5F97\u8C01\u70B9\u5F00\u542C\u8FC7\uFF1F"],
+          answers: ["最想让TA听到的那个人", "和我一样喜欢这类曲风的闺蜜", "我才不care有没有人点开听"]
+        }];
+      }
+    },
+    watch: {
+      myTimestp: function myTimestp(nv, ov) {
+        var d;
+        d = new Date(nv);
+        this.myTimeDetail = upten(d.getHours()) + ":" + upten(d.getMinutes());
+        this.myTime = d.getHours();
+        if (this.myTime > 4 && this.myTime <= 19) {
+          return this.myTimeName = "";
+        } else if (this.myTime > 19 && this.myTime <= 24) {
+          return this.myTimeName = "晚上";
+        } else {
+          return this.myTimeName = "凌晨";
+        }
+      }
+    },
+    // console.log @.myTime,@.myTimeName
     methods: {
+      ask: function ask() {
+        var _this2 = this;
+
+        // 获取网易云数据
+        return axios.get("//qa-ysr.igame.163.com/api/activity/lancome/userInfo").then(function (msg) {
+          var d;
+          // alert JSON.stringify msg.data
+          d = msg.data;
+          // d = {
+          // 	"code": 200,
+          // 	"data": {
+          // 		"hottestArtistSong": [
+          // 			"달과 6펜스",
+          // 			"오필리아",
+          // 			"So Nice (GMF 2012 ver.)"
+          // 		],
+          // 		"hottestSongArtistName": "沈圭善",
+          // 		"hottestSongCount": 16,
+          // 		"hottestSongName": "달과 6펜스",
+          // 		"latestShareSongName": "Something Just Like This",
+          // 		"latestSongName": "OUTRO. 신곡(神曲) (Divina Commedia)",
+          // 		"latestTime": 1525032085000
+          // 	}
+          // }
+          if (d.code === 200) {
+            if (d.data.latestSongName != null) {
+              _this2.musicName = d.data.latestSongName;
+            }
+            if (d.data.latestShareSongName != null) {
+              _this2.shareMusicName = d.data.latestShareSongName;
+            }
+            if (d.data.latestTime != null) {
+              return _this2.myTimestp = d.data.latestTime;
+            }
+          }
+        }).catch(function (err) {
+          return alert(err);
+        });
+      },
       playbgm: function playbgm() {
         this.playing = !this.playing;
         this.bgmplaying = !this.bgmplaying;
@@ -282,7 +362,8 @@ init = function init() {
         for (i = j = 0, ref = this.answers.length; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
           this.score += scoreBox[i][this.answers[i]];
         }
-        time = myTimeLine.indexOf(myTime);
+        time = myTimeLine.indexOf(this.myTime);
+        console.log(time);
         switch (time) {
           case 0:
             this.score += scoreMusicTime[0];
@@ -319,7 +400,7 @@ init = function init() {
         return console.log(this.score);
       },
       createUGC: function createUGC() {
-        var _this2 = this;
+        var _this3 = this;
 
         var box, ugcC;
         ugcC = new buildUGC();
@@ -329,7 +410,7 @@ init = function init() {
         // ugcC.texts = textsBox[4][1]
         if (this.score === "∞") {
           ugcC.texts = textsBox[textsBox.length - 1][0];
-          this.scorebg = 6;
+          this.scorebg = 5;
         } else if (this.score <= 0) {
           ugcC.texts = textsBox[0][0];
           this.scorebg = 1;
@@ -354,10 +435,10 @@ init = function init() {
           this.scorebg = 1;
         }
         ugcC.init(function () {
-          _this2.ugcbg = ugcC.app.renderer.extract.canvas().toDataURL();
+          _this3.ugcbg = ugcC.app.renderer.extract.canvas().toDataURL();
           return ugcC.qr(function () {
             return setTimeout(function () {
-              return _this2.ugc = ugcC.app.renderer.extract.base64();
+              return _this3.ugc = ugcC.app.renderer.extract.base64();
             }, 100);
           });
         }, this.scorebg);
@@ -385,21 +466,13 @@ init = function init() {
           return main.faild();
         });
       },
-      ask: function ask() {
-        // 获取网易云数据
-        return axios.get("//qa-ysr.igame.163.com/api/activity/lancome/userInfo").then(function (msg) {
-          return alert(JSON.stringify(msg.data));
-        }).catch(function (err) {
-          return alert(err);
-        });
-      },
       success: function success(data) {
-        var _this3 = this;
+        var _this4 = this;
 
         this.shareImageLink = data.info;
         neteaseShareImage();
         return setTimeout(function () {
-          return _this3.lastPageShow = true;
+          return _this4.lastPageShow = true;
         }, 3000);
       },
       faild: function faild() {
@@ -415,12 +488,12 @@ init = function init() {
         return this.createUGC();
       },
       gotoUGC: function gotoUGC() {
-        var _this4 = this;
+        var _this5 = this;
 
         this.waitPageBox = true;
         return setTimeout(function () {
-          _this4.waitPageShow = false;
-          return _this4.ugcPageShow = true;
+          _this5.waitPageShow = false;
+          return _this5.ugcPageShow = true;
         }, 7000);
       },
       next: function next() {
@@ -440,11 +513,11 @@ init = function init() {
         }
       },
       playSong: function playSong(i) {
-        var _this5 = this;
+        var _this6 = this;
 
         this.musiclink = "./mp3/mp3-" + i + ".mp3";
         return setTimeout(function () {
-          return _this5.audiomusic.play();
+          return _this6.audiomusic.play();
         }, 1000 / 30);
       },
       select: function select(index) {
@@ -465,7 +538,7 @@ init = function init() {
       }
     },
     mounted: function mounted($el, e) {
-      var _this6 = this;
+      var _this7 = this;
 
       if (sys === "NeteaseMusic") {
         this.wy = true;
@@ -491,8 +564,9 @@ init = function init() {
       if (this.audiomusic) {
         this.audiomusic.addEventListener("ended", this.audiomusicpause.bind(this));
       }
+      this.ask();
       return document.addEventListener("WeixinJSBridgeReady", function () {
-        return _this6.wx = true;
+        return _this7.wx = true;
       }, false);
     }
   });
@@ -787,7 +861,7 @@ createAnswer = function () {
     }, {
       key: "answer2Over",
       value: function answer2Over() {
-        var _this7 = this;
+        var _this8 = this;
 
         this.moving2 = false;
         this.ansStar.stage.removeChild(this.dom.bg2, this.dom.music);
@@ -797,7 +871,7 @@ createAnswer = function () {
         }, {
           x: 100
         }, 600, function (res) {
-          return _this7.dom.timeline.alpha = res.x / 100;
+          return _this8.dom.timeline.alpha = res.x / 100;
         });
       }
 
@@ -949,7 +1023,7 @@ createAnswer = function () {
     }, {
       key: "select",
       value: function select(i) {
-        var _this8 = this;
+        var _this9 = this;
 
         var target, tempX, tempY, tween;
         this.answers[this.t] = i;
@@ -980,9 +1054,9 @@ createAnswer = function () {
               this.scaleP.x = 1;
               this.scaleP.y = 1;
               return this.cache = setTimeout(function () {
-                _this8.dom.mark.visible = false;
-                _this8.dom.mark2.visible = true;
-                return _this8.dom.answer1bg.mask = _this8.dom.mark2;
+                _this9.dom.mark.visible = false;
+                _this9.dom.mark2.visible = true;
+                return _this9.dom.answer1bg.mask = _this9.dom.mark2;
                 // @.ansStar.stage.addChild @.dom.mark2
               }, 400);
             case 2:
@@ -1010,27 +1084,27 @@ createAnswer = function () {
           tween = this.tween = new TWEEN.Tween(tempX).to({
             x: 100
           }, 2000).easing(TWEEN.Easing.Cubic.Out).onUpdate(function () {
-            _this8.dom.symbol1.x = 99 - tempX.x * 0.3;
+            _this9.dom.symbol1.x = 99 - tempX.x * 0.3;
             if (tempX.x >= 90) {
-              _this8.dom.symbol1.alpha = (100 - tempX.x) / 10;
+              _this9.dom.symbol1.alpha = (100 - tempX.x) / 10;
             } else if (tempX.x <= 30) {
-              _this8.dom.symbol1.alpha = (tempX.x - 20) / 10;
+              _this9.dom.symbol1.alpha = (tempX.x - 20) / 10;
             } else {
-              _this8.dom.symbol1.alpha = 1;
+              _this9.dom.symbol1.alpha = 1;
             }
-            _this8.dom.symbol2.x = 110 - tempX.x * 0.2;
+            _this9.dom.symbol2.x = 110 - tempX.x * 0.2;
             if (tempX.x >= 90 - 10) {
-              _this8.dom.symbol2.alpha = (100 - 10 - tempX.x) / 10;
+              _this9.dom.symbol2.alpha = (100 - 10 - tempX.x) / 10;
             }
             if (tempX.x <= 20) {
-              _this8.dom.symbol2.alpha = (tempX.x - 10) / 10;
+              _this9.dom.symbol2.alpha = (tempX.x - 10) / 10;
             }
-            _this8.dom.symbol3.x = 128 - tempX.x * 0.1;
+            _this9.dom.symbol3.x = 128 - tempX.x * 0.1;
             if (tempX.x >= 90 - 20) {
-              _this8.dom.symbol3.alpha = (100 - 20 - tempX.x) / 10;
+              _this9.dom.symbol3.alpha = (100 - 20 - tempX.x) / 10;
             }
             if (tempX.x <= 10) {
-              return _this8.dom.symbol3.alpha = tempX.x / 10;
+              return _this9.dom.symbol3.alpha = tempX.x / 10;
             }
           }).start();
           tempY = {
@@ -1039,9 +1113,9 @@ createAnswer = function () {
           return tween = new TWEEN.Tween(tempY).to({
             y: -100
           }, 2000).easing(TWEEN.Easing.Cubic.In).onUpdate(function () {
-            _this8.dom.symbol1.y = 690 + tempY.y * 0.5;
-            _this8.dom.symbol2.y = 717 + tempY.y * 0.4;
-            return _this8.dom.symbol3.y = 720 + tempY.y * 0.3;
+            _this9.dom.symbol1.y = 690 + tempY.y * 0.5;
+            _this9.dom.symbol2.y = 717 + tempY.y * 0.4;
+            return _this9.dom.symbol3.y = 720 + tempY.y * 0.3;
           }).start();
         } else if (this.t === 2) {
           this.dom.timeline1.alpha = 0;
@@ -1157,4 +1231,11 @@ neteaseShareImage = function neteaseShareImage() {
   redirectUrl = "https://m.giccoo.com/lancome/";
   console.log("orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1));
   return window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
+};
+
+upten = function upten(n) {
+  if (n < 10) {
+    return "0" + n;
+  }
+  return n;
 };

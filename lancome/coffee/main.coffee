@@ -52,6 +52,23 @@ canvasImgs = [
 	"img/symbol.png"
 ]
 
+# {
+#     "code": 200,
+#     "data": {
+#         "hottestArtistSong": [
+#             "달과 6펜스",
+#             "오필리아",
+#             "So Nice (GMF 2012 ver.)"
+#         ],
+#         "hottestSongArtistName": "沈圭善",
+#         "hottestSongCount": 16,
+#         "hottestSongName": "달과 6펜스",
+#         "latestShareSongName": "Something Just Like This",
+#         "latestSongName": "OUTRO. 신곡(神曲) (Divina Commedia)",
+#         "latestTime": 1525014085000
+#     }
+# }
+
 getRandom = (length)->
 	return parseInt(Math.random()*(length+1)-1)
 window.onload = ->
@@ -148,41 +165,88 @@ init = ->
 			wx: false
 			shareImageLink: ""
 			questionMark: 0
-			answerList: [
-				{
-					question: ["最近一次#{myTimeName}#{myTimeDetail}还在听歌的你，觉得那时谁会陪着你？"]
-					answers: [
-						"飞累了，借你家阳台<br/>歇歇的猫头鹰",
-						"冰箱里那只<br/>舔着冰淇淋的蠢大象",
-						"墙角边偷偷涂<br/>兰蔻“发光”眼霜的大熊猫"
-					]
-				},{
-					question: 
-						[
-							"那一天，云村和你一起在听《#{musicName}》的人，比英国的晴天还少；你觉得他们那时在干什么？"
-							"那一天，云村和你一起在听《#{musicName}》的人，多到服务器瘫痪；你觉得他们那时在干什么？"
-							"那一天，云村和你一起在听《#{musicName}》的人，和大迁徙时的角马一样多；你觉得他们那时在干什么？"
-							"那一天，云村和你一起在听《#{musicName}》的人，比理工大的女生还少。你觉得他们那时在干什么？"
-						]
-					answers: [
-						"敲击键盘",
-						"窃窃私语聊天",
-						"刷手机"
-					]
-				},{
-					question: [
-						if shareMusicName is "" then "最近都没分享过歌曲的你，如果分享，觉得谁会点开听？" else "之前从云音乐分享过一首《#{shareMusicName}》你觉得谁点开听过？"
-					]
-					answers: [
-						"最想让TA听到的那个人",
-						"和我一样喜欢这类曲风的闺蜜",
-						"我才不care有没有人点开听"
-					]
-				}
-			]
 			answers: [-1,-1,-1]
-		# computed:
+			musicName: ""
+			myTimeName: ""
+			myTimeDetail: ""
+			myTime: 15
+			myTimestp: 0
+			shareMusicName: ""
+		computed:
+			answerList: ->
+				return [
+					{
+						question: ["最近一次#{@.myTimeName}#{@.myTimeDetail}还在听歌的你，觉得那时谁会陪着你？"]
+						answers: [
+							"飞累了，借你家阳台<br/>歇歇的猫头鹰",
+							"冰箱里那只<br/>舔着冰淇淋的蠢大象",
+							"墙角边偷偷涂<br/>兰蔻“发光”眼霜的大熊猫"
+						]
+					},{
+						question: 
+							[
+								"那一天，云村和你一起在听《#{@.musicName}》的人，比英国的晴天还少；你觉得他们那时在干什么？"
+								"那一天，云村和你一起在听《#{@.musicName}》的人，多到服务器瘫痪；你觉得他们那时在干什么？"
+								"那一天，云村和你一起在听《#{@.musicName}》的人，和大迁徙时的角马一样多；你觉得他们那时在干什么？"
+								"那一天，云村和你一起在听《#{@.musicName}》的人，比理工大的女生还少。你觉得他们那时在干什么？"
+							]
+						answers: [
+							"敲击键盘",
+							"窃窃私语聊天",
+							"刷手机"
+						]
+					},{
+						question: [
+							if @.shareMusicName is "" then "最近都没分享过歌曲的你，如果分享，觉得谁会点开听？" else "之前从云音乐分享过一首《#{@.shareMusicName}》你觉得谁点开听过？"
+						]
+						answers: [
+							"最想让TA听到的那个人",
+							"和我一样喜欢这类曲风的闺蜜",
+							"我才不care有没有人点开听"
+						]
+					}
+				]
+		watch:
+			myTimestp: (nv,ov)->
+				d = new Date(nv)
+				@.myTimeDetail = upten(d.getHours())+":"+upten(d.getMinutes())
+				@.myTime = d.getHours()
+				if @.myTime > 4 and @.myTime <= 19
+					@.myTimeName = ""
+				else if @.myTime>19 and @.myTime <= 24
+					@.myTimeName = "晚上"
+				else
+					@.myTimeName = "凌晨"
+				# console.log @.myTime,@.myTimeName
 		methods:
+			ask: ->
+				# 获取网易云数据
+				axios.get "//qa-ysr.igame.163.com/api/activity/lancome/userInfo"
+				.then (msg)=>
+					# alert JSON.stringify msg.data
+					d = msg.data
+					# d = {
+					# 	"code": 200,
+					# 	"data": {
+					# 		"hottestArtistSong": [
+					# 			"달과 6펜스",
+					# 			"오필리아",
+					# 			"So Nice (GMF 2012 ver.)"
+					# 		],
+					# 		"hottestSongArtistName": "沈圭善",
+					# 		"hottestSongCount": 16,
+					# 		"hottestSongName": "달과 6펜스",
+					# 		"latestShareSongName": "Something Just Like This",
+					# 		"latestSongName": "OUTRO. 신곡(神曲) (Divina Commedia)",
+					# 		"latestTime": 1525032085000
+					# 	}
+					# }
+					if d.code is 200
+						@.musicName = d.data.latestSongName if d.data.latestSongName?
+						@.shareMusicName = d.data.latestShareSongName if d.data.latestShareSongName?
+						@.myTimestp = d.data.latestTime if d.data.latestTime?
+				.catch (err)->
+					alert err
 			playbgm: ->
 				@playing = !@playing
 				@bgmplaying = !@bgmplaying
@@ -204,7 +268,8 @@ init = ->
 				# 计算得分
 				for i in [0...@.answers.length]
 					@.score += scoreBox[i][@.answers[i]]
-				time = myTimeLine.indexOf(myTime)
+				time = myTimeLine.indexOf(@.myTime)
+				console.log time
 				switch time
 					when 0
 						@.score += scoreMusicTime[0]
@@ -235,7 +300,7 @@ init = ->
 				# ugcC.texts = textsBox[4][1]
 				if @.score is "∞"
 					ugcC.texts = textsBox[textsBox.length-1][0]
-					@.scorebg = 6
+					@.scorebg = 5
 				else if @.score <= 0
 					ugcC.texts = textsBox[0][0]
 					@.scorebg = 1
@@ -285,13 +350,7 @@ init = ->
 				.catch (e)->
 					# alert e
 					main.faild()
-			ask: ->
-				# 获取网易云数据
-				axios.get "//qa-ysr.igame.163.com/api/activity/lancome/userInfo"
-				.then (msg)=>
-					alert JSON.stringify msg.data
-				.catch (err)->
-					alert err
+			
 				
 			success: (data)->
 				@.shareImageLink = data.info
@@ -361,6 +420,9 @@ init = ->
 			@.audio.addEventListener "ended", @.audiopause.bind(@) if @.audio
 			@.audiomusic.addEventListener "play", @.audiomusicplay.bind(@) if @.audiomusic
 			@.audiomusic.addEventListener "ended", @.audiomusicpause.bind(@) if @.audiomusic
+
+			@.ask()
+			
 			document.addEventListener "WeixinJSBridgeReady",=>
 				@.wx = true
 			,false
@@ -842,3 +904,7 @@ neteaseShareImage = ->
 	redirectUrl = "https://m.giccoo.com/lancome/"
 	console.log "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
+
+upten = (n)->
+	return "0#{n}" if n < 10
+	return n
