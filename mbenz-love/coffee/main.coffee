@@ -2,20 +2,12 @@
  # @codekit-prepend "../../libs/coffee/requestanimation"
  # @codekit-prepend "../../libs/coffee/loadWechatConfig"
  # @codekit-prepend "../../libs/coffee/ispc"
+ # @codekit-prepend "../../libs/coffee/passiveSupport"
  # @codekit-prepend "./pixi"
 
 # 法国。荷兰。巴西，英国，韩国，泰国，日本
 
-passiveSupported = false
-try
-	options = Object.defineProperty {}, "passive", {
-		get: ->
-			passiveSupported = true
-	}
-	window.addEventListener("test", options, options)
-	window.removeEventListener("test", options, options)
-catch e
-	passiveSupported = false
+
 
 
 _CDN = ""
@@ -269,6 +261,7 @@ init = ->
 			homepageShow: false
 			recordPageShow: false
 			ugcPageShow: false
+			ugcLoadPageShow: false
 			regisiterPageShow: false
 			lastPageShow: false
 			recording: false
@@ -315,7 +308,7 @@ init = ->
 		methods:
 			gameStart: (Id)->
 				# console.log "id:",Id
-				ugc = new UGC 
+				ugc = new UGC
 					id: Id ,
 					wy: @.wy
 					w: @.w
@@ -326,7 +319,9 @@ init = ->
 						@ugcbg = ugc.saveUGC
 					ugc: =>
 						@.ugc = ugc.saveUGC
+						@.ugcLoadPageShow = false
 				@.recordPageShow = true
+				# @.ugcLoadPageShow = true
 				# console.log @.$el
 				@.$el.removeEventListener 'touchstart', @.start
 				@.$el.removeEventListener 'touchmove', @.move
@@ -336,12 +331,14 @@ init = ->
 				self.recording = true
 				self.cache = setTimeout =>
 					self.ugcPageShow = true
+					self.recordPageShow = false
 				,5000
 				event.preventDefault()
 
 			recordEnd: (evt)->
 				self = main
 				self.ugcPageShow = true
+				self.recordPageShow = false
 				clearTimeout self.cache
 				# self.recording = false
 				event.preventDefault()

@@ -86,6 +86,21 @@ IsPC = function IsPC() {
   return flag;
 };
 
+passiveSupported = false;
+
+try {
+  options = Object.defineProperty({}, "passive", {
+    get: function get() {
+      return passiveSupported = true;
+    }
+  });
+  window.addEventListener("test", options, options);
+  window.removeEventListener("test", options, options);
+} catch (error) {
+  e = error;
+  passiveSupported = false;
+}
+
 Container = PIXI.Container;
 
 ParticleContainer = PIXI.ParticleContainer;
@@ -581,24 +596,10 @@ UGC = function () {
 // @codekit-prepend "../../libs/coffee/requestanimation"
 // @codekit-prepend "../../libs/coffee/loadWechatConfig"
 // @codekit-prepend "../../libs/coffee/ispc"
+// @codekit-prepend "../../libs/coffee/passiveSupport"
 // @codekit-prepend "./pixi"
 
 // 法国。荷兰。巴西，英国，韩国，泰国，日本
-passiveSupported = false;
-
-try {
-  options = Object.defineProperty({}, "passive", {
-    get: function get() {
-      return passiveSupported = true;
-    }
-  });
-  window.addEventListener("test", options, options);
-  window.removeEventListener("test", options, options);
-} catch (error) {
-  e = error;
-  passiveSupported = false;
-}
-
 _CDN = "";
 
 _imgurl = "";
@@ -1038,6 +1039,7 @@ init = function init() {
       homepageShow: false,
       recordPageShow: false,
       ugcPageShow: false,
+      ugcLoadPageShow: false,
       regisiterPageShow: false,
       lastPageShow: false,
       recording: false,
@@ -1110,10 +1112,12 @@ init = function init() {
             return _this3.ugcbg = _ugc.saveUGC;
           },
           ugc: function ugc() {
-            return _this3.ugc = _ugc.saveUGC;
+            _this3.ugc = _ugc.saveUGC;
+            return _this3.ugcLoadPageShow = false;
           }
         });
         this.recordPageShow = true;
+        // @.ugcLoadPageShow = true
         // console.log @.$el
         this.$el.removeEventListener('touchstart', this.start);
         this.$el.removeEventListener('touchmove', this.move);
@@ -1124,7 +1128,8 @@ init = function init() {
         self = main;
         self.recording = true;
         self.cache = setTimeout(function () {
-          return self.ugcPageShow = true;
+          self.ugcPageShow = true;
+          return self.recordPageShow = false;
         }, 5000);
         return event.preventDefault();
       },
@@ -1132,6 +1137,7 @@ init = function init() {
         var self;
         self = main;
         self.ugcPageShow = true;
+        self.recordPageShow = false;
         clearTimeout(self.cache);
         // self.recording = false
         return event.preventDefault();

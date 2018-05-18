@@ -535,7 +535,14 @@ body
 						animation: circleProgressLoad_right 5s linear
 					&.leftcircle
 						animation: circleProgressLoad_left 5s linear
-
+.page-load
+	+bc(rgba(0,0,0,0.9))
+	color: #fff
+	.content
+		.text
+			+posa
+			+tl(50%,50%)
+			+transform(translate3d(-50%,-50%,0))
 .page-ugc
 	z-index: 100
 	.btns

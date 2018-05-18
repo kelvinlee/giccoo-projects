@@ -5996,6 +5996,17 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"\/libs\/coffee\/passiveSupport.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/libs\/js\/passiveSupport.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
 	"\/libs\/coffee\/pixi-base.coffee": {
 		"ft": 32,
 		"ma": 0,

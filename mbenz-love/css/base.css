@@ -1646,6 +1646,16 @@ body {
       -webkit-animation: circleProgressLoad_left 5s linear;
               animation: circleProgressLoad_left 5s linear; }
 
+.page-load {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff; }
+  .page-load .content .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0); }
+
 .page-ugc {
   z-index: 100; }
   .page-ugc .btns {
