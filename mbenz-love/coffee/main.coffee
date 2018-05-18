@@ -274,7 +274,7 @@ init = ->
 			maxPage: 7
 			pageIndex: 0
 			moving: true
-			musiclink: "mp3/bgm.mp3"
+			musiclink: "//image.giccoo.com/projects/mbenz-love/mp3/bgm.mp3"
 			pageBG: []
 			ugc: null
 			ugcbg: null
