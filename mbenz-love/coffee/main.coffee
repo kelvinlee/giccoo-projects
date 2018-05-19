@@ -514,10 +514,6 @@ init = ->
 				@.audio.play()
 			,false
 
-
-
-
-
 Tn = (from = {x: 0},to = {x: 100},time = 800,callback)->
 	tempX = from
 	tween = new TWEEN.Tween(tempX)
