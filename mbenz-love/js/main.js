@@ -1420,9 +1420,9 @@ Tn = function Tn() {
 
 neteaseShareImage = function neteaseShareImage() {
   var picUrl, redirectUrl, title1;
-  title1 = "点击测试你的孤独指数";
-  picUrl = "http://image.giccoo.com/upload/mbenzlove/" + main.shareImageLink + "@!large";
-  redirectUrl = "http://m.giccoo.com/mbenzlove/";
+  title1 = "爱有千万种风情，我只要一种独行";
+  picUrl = "https://image.giccoo.com/upload/mbenzlove/" + main.shareImageLink + "@!large";
+  redirectUrl = "http://m.giccoo.com/mbenz-love/";
   console.log("orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1));
   return window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
 };
