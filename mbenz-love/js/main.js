@@ -1258,11 +1258,13 @@ init = function init() {
         if (this.pushed) {
           return false;
         }
+        // @.ugcLoadPageShow = true
         return axios.post(imageurl, data).then(function (msg) {
           main.pushed = true;
           if (msg.data.recode === 200) {
             return main.success(msg.data);
           } else {
+            // @.ugcLoadPageShow = false
             return main.faild();
           }
         }).catch(function (e) {
@@ -1275,6 +1277,7 @@ init = function init() {
         return neteaseShareImage();
       },
       faild: function faild() {},
+      // @.ugcLoadPageShow = false
       build: function build() {
         this.pageBG[1] = new stars();
         this.pageBG[1].init();
@@ -1306,14 +1309,10 @@ init = function init() {
           // evt.preventDefault()
           return false;
         }
-        try {
-          if (self.noteMsg) {
-            self.audio.play();
-          }
-        } catch (error) {
-          e = error;
-          console.log(e);
-        }
+        // try
+        // 	self.audio.play() if self.noteMsg
+        // catch e
+        // 	console.log e
         self.noteMsg = false;
         touch = evt.touches != null ? evt.touches[0] : evt;
         return self.default.x = touch[this.XY];
@@ -1426,6 +1425,6 @@ neteaseShareImage = function neteaseShareImage() {
   title1 = "爱有千万种风情，我只要一种独行";
   picUrl = "https://image.giccoo.com/upload/mbenzlove/" + main.shareImageLink + "@!large";
   redirectUrl = "https://m.giccoo.com/mbenz-love/";
-  console.log(picUrl, "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1));
+  // console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
   return window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
 };

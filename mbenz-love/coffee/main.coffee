@@ -412,11 +412,13 @@ init = ->
 				}
 				return main.faild() unless image?
 				return false if @.pushed
+				# @.ugcLoadPageShow = true
 				axios.post imageurl,data
 				.then (msg)->
 					main.pushed = true
 					if msg.data.recode is 200
 						main.success(msg.data)
+						# @.ugcLoadPageShow = false
 					else
 						main.faild()
 				.catch (e)->
@@ -426,7 +428,7 @@ init = ->
 				@.shareImageLink = data.info
 				neteaseShareImage()
 			faild: ->
-
+				# @.ugcLoadPageShow = false
 			build: ->
 				@.pageBG[1] = new stars()
 				@.pageBG[1].init()
@@ -455,10 +457,10 @@ init = ->
 				self = main
 				# evt.preventDefault()
 				return false if self.default.animated
-				try
-					self.audio.play() if self.noteMsg
-				catch e
-					console.log e
+				# try
+				# 	self.audio.play() if self.noteMsg
+				# catch e
+				# 	console.log e
 				self.noteMsg = false
 				touch = if evt.touches? then evt.touches[0] else evt
 				self.default.x = touch[@XY]
@@ -528,6 +530,6 @@ neteaseShareImage = ->
 	title1 = "爱有千万种风情，我只要一种独行"
 	picUrl = "https://image.giccoo.com/upload/mbenzlove/"+main.shareImageLink+"@!large"
 	redirectUrl = "https://m.giccoo.com/mbenz-love/"
-	console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
+	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 
