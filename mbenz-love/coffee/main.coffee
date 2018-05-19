@@ -217,8 +217,8 @@ window.onload = ->
 
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
-		if window.location.protocol is "http:"
-			window.location.href = "https://m.giccoo.com/mbenz-love/"
+		window.location.href = "https://m.giccoo.com/mbenz-love/" if window.location.protocol is "http:"
+
 	else
 		loadWechatConfig()
 		wx.ready ->
