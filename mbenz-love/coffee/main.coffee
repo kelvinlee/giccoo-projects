@@ -214,8 +214,11 @@ getRandom = (length)->
 	return parseInt(Math.random()*(length+1)-1)
 window.onload = ->
 	# runAnimate()
+
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
+		if window.location.protocol is "http:"
+			window.location.href = "https://m.giccoo.com/mbenz-love/"
 	else
 		loadWechatConfig()
 		wx.ready ->

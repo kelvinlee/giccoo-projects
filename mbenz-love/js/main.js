@@ -986,6 +986,9 @@ window.onload = function () {
   // runAnimate()
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
+    if (window.location.protocol === "http:") {
+      window.location.href = "https://m.giccoo.com/mbenz-love/";
+    }
   } else {
     loadWechatConfig();
     wx.ready(function () {
