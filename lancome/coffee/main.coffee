@@ -2,6 +2,8 @@
  # @codekit-prepend "../../libs/coffee/requestanimation"
  # @codekit-prepend "../../libs/coffee/loadWechatConfig"
 
+axios.defaults.withCredentials = true
+
 _CDN = "//image.giccoo.com/projects/lancome/"
 _imgurl = ""
 global = {}
@@ -221,7 +223,7 @@ init = ->
 		methods:
 			ask: ->
 				# 获取网易云数据
-				axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
+				axios.get "http://music.163.com/api/activity/lancome/userInfo?type=1"
 				.then (msg)->
 					# console.log msg
 					# alert "changetime:2 "+JSON.stringify msg
