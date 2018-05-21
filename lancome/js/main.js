@@ -179,8 +179,8 @@ requestAnimationFrame(_animate);
 
 init = function init() {
   var TrueH, TrueW, smaller;
-  TrueH = document.documentElement.clientHeight;
-  TrueW = document.documentElement.clientWidth;
+  TrueH = document.body.clientHeight;
+  TrueW = document.body.clientWidth;
   console.log(TrueW, TrueH);
   if (TrueW >= 640) {
     // document.body.style.height = TrueH+"px"
@@ -217,6 +217,7 @@ init = function init() {
           return setTimeout(function () {
             // main.ugcpageShow = true
             main.homepageShow = true;
+            main.ask();
             // document.getElementById('load').style.display = "none"
             document.getElementById('load').className += " fadeOut animated";
             return setTimeout(function () {
@@ -284,6 +285,7 @@ init = function init() {
         d = new Date(nv);
         this.myTimeDetail = upten(d.getHours()) + ":" + upten(d.getMinutes());
         this.myTime = d.getHours();
+        console.log(this.myTime, this.myTimeDetail);
         if (this.myTime > 4 && this.myTime <= 19) {
           return this.myTimeName = "";
         } else if (this.myTime > 19 && this.myTime <= 24) {
@@ -295,6 +297,9 @@ init = function init() {
     },
     // console.log @.myTime,@.myTimeName
     methods: {
+      updateTime: function updateTime() {
+        return console.log("a");
+      },
       ask: function ask() {
         // 获取网易云数据
         return axios.get("//music.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
@@ -302,22 +307,8 @@ init = function init() {
           // console.log msg
           // alert "get:"+JSON.stringify msg
           d = msg.data;
-          // d = {
-          // 	"code": 200,
-          // 	"data": {
-          // 		"hottestArtistSong": [
-          // 			"달과 6펜스",
-          // 			"오필리아",
-          // 			"So Nice (GMF 2012 ver.)"
-          // 		],
-          // 		"hottestSongArtistName": "沈圭善",
-          // 		"hottestSongCount": 16,
-          // 		"hottestSongName": "달과 6펜스",
-          // 		"latestShareSongName": "Something Just Like This",
-          // 		"latestSongName": "OUTRO. 신곡(神曲) (Divina Commedia)",
-          // 		"latestTime": 1525032085000
-          // 	}
-          // }
+          // d = {"code":200,"msg":null,"data":{"latestSongName":"Strawberries & Cigarettes","latestTime":1522764106000,"latestShareSongName":"生命是场马拉松","hottestSongName":"Strawberries & Cigarettes","hottestSongArtistName":"Various Artists","hottestSongCount":18,"hottestArtistSong":["Cry On My Shoulder","Here We Are Again","Річка"]}}
+          // console.log d
           if (d.code === 200) {
             if (d.data.hottestSongName != null && d.data.hottestSongName !== "") {
               main.musicName = d.data.hottestSongName;
@@ -328,7 +319,7 @@ init = function init() {
             if (d.data.latestShareSongName != null && d.data.latestShareSongName !== "") {
               main.shareMusicName = d.data.latestShareSongName;
             }
-            if (d.data.latestTime != null && d.data.latestTime && d.data.latestTime !== "") {
+            if (d.data.latestTime != null && d.data.latestTime !== "" && d.data.latestTime !== 0) {
               return main.myTimestp = d.data.latestTime;
             }
           }
@@ -505,7 +496,7 @@ init = function init() {
         return setTimeout(function () {
           _this4.waitPageShow = false;
           return _this4.ugcPageShow = true;
-        }, 7000);
+        }, 4000);
       },
       next: function next() {
         if (this.bgmplaying) {
@@ -578,7 +569,9 @@ init = function init() {
       if (this.audiomusic) {
         this.audiomusic.addEventListener("ended", this.audiomusicpause.bind(this));
       }
-      this.ask();
+      // setTimeout =>
+      // 	@.ask()
+      // ,1000
       return document.addEventListener("WeixinJSBridgeReady", function () {
         return _this6.wx = true;
       }, false);

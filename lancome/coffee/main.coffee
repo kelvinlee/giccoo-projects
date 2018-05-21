@@ -102,8 +102,8 @@ animate = (time)->
 requestAnimationFrame animate
 
 init = ->
-	TrueH = document.documentElement.clientHeight
-	TrueW = document.documentElement.clientWidth
+	TrueH = document.body.clientHeight
+	TrueW = document.body.clientWidth
 	console.log TrueW,TrueH
 	# document.body.style.height = TrueH+"px"
 	# document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
@@ -130,6 +130,7 @@ init = ->
 					setTimeout ->
 						# main.ugcpageShow = true
 						main.homepageShow = true
+						main.ask()
 						# document.getElementById('load').style.display = "none"
 						document.getElementById('load').className += " fadeOut animated"
 						setTimeout =>
@@ -213,6 +214,7 @@ init = ->
 				d = new Date(nv)
 				@.myTimeDetail = upten(d.getHours())+":"+upten(d.getMinutes())
 				@.myTime = d.getHours()
+				console.log @.myTime, @.myTimeDetail
 				if @.myTime > 4 and @.myTime <= 19
 					@.myTimeName = ""
 				else if @.myTime>19 and @.myTime <= 24
@@ -221,6 +223,8 @@ init = ->
 					@.myTimeName = "凌晨"
 				# console.log @.myTime,@.myTimeName
 		methods:
+			updateTime: ->
+				console.log "a"
 			ask: ->
 				# 获取网易云数据
 				axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
@@ -228,27 +232,13 @@ init = ->
 					# console.log msg
 					# alert "get:"+JSON.stringify msg
 					d = msg.data
-					# d = {
-					# 	"code": 200,
-					# 	"data": {
-					# 		"hottestArtistSong": [
-					# 			"달과 6펜스",
-					# 			"오필리아",
-					# 			"So Nice (GMF 2012 ver.)"
-					# 		],
-					# 		"hottestSongArtistName": "沈圭善",
-					# 		"hottestSongCount": 16,
-					# 		"hottestSongName": "달과 6펜스",
-					# 		"latestShareSongName": "Something Just Like This",
-					# 		"latestSongName": "OUTRO. 신곡(神曲) (Divina Commedia)",
-					# 		"latestTime": 1525032085000
-					# 	}
-					# }
+					# d = {"code":200,"msg":null,"data":{"latestSongName":"Strawberries & Cigarettes","latestTime":1522764106000,"latestShareSongName":"生命是场马拉松","hottestSongName":"Strawberries & Cigarettes","hottestSongArtistName":"Various Artists","hottestSongCount":18,"hottestArtistSong":["Cry On My Shoulder","Here We Are Again","Річка"]}}
+					# console.log d
 					if d.code is 200
 						main.musicName = d.data.hottestSongName if d.data.hottestSongName? and d.data.hottestSongName isnt ""
 						main.musicName = d.data.latestSongName if d.data.latestSongName? and d.data.latestSongName isnt ""
 						main.shareMusicName = d.data.latestShareSongName if d.data.latestShareSongName? and d.data.latestShareSongName isnt ""
-						main.myTimestp = d.data.latestTime if d.data.latestTime? and d.data.latestTime and d.data.latestTime isnt ""
+						main.myTimestp = d.data.latestTime if d.data.latestTime? and d.data.latestTime isnt "" and d.data.latestTime isnt 0
 				.catch (err)->
 					console.log err
 			asknote: ->
@@ -384,7 +374,7 @@ init = ->
 				setTimeout =>
 					@.waitPageShow = false
 					@.ugcPageShow = true
-				,7000
+				,4000
 			next: ->
 				@.audio.play() if @.bgmplaying
 				return false if @.answers[@.now] <= -1
@@ -432,8 +422,9 @@ init = ->
 			@.audio.addEventListener "ended", @.audiopause.bind(@) if @.audio
 			@.audiomusic.addEventListener "play", @.audiomusicplay.bind(@) if @.audiomusic
 			@.audiomusic.addEventListener "ended", @.audiomusicpause.bind(@) if @.audiomusic
-
-			@.ask()
+			# setTimeout =>
+			# 	@.ask()
+			# ,1000
 			
 			document.addEventListener "WeixinJSBridgeReady",=>
 				@.wx = true
