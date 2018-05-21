@@ -240,6 +240,12 @@ init = ->
 						@.shareMusicName = d.data.latestShareSongName if d.data.latestShareSongName? and d.data.latestShareSongName isnt ""
 						@.myTimestp = d.data.latestTime if d.data.latestTime? and d.data.latestTime isnt "" and d.data.latestTime isnt 0
 						@.questionMark = @.musicName.length%4
+						if @.questionMark is 1
+							random = Math.floor Math.random()*9+1
+							@.questionMark = random%4
+						if @.questionMark is 1
+							random = Math.floor Math.random()*9+1
+							@.questionMark = random%4
 				.catch (err)->
 					# alert "error:"+JSON.stringify err
 			asknote: ->
