@@ -228,17 +228,17 @@ init = ->
 			ask: ->
 				# 获取网易云数据
 				axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
-				.then (msg)->
+				.then (msg)=>
 					# console.log msg
 					alert "get:"+JSON.stringify msg.data
 					d = msg.data
 					# d = {"code":200,"msg":null,"data":{"latestSongName":"Strawberries & Cigarettes","latestTime":1522764106000,"latestShareSongName":"生命是场马拉松","hottestSongName":"Strawberries & Cigarettes","hottestSongArtistName":"Various Artists","hottestSongCount":18,"hottestArtistSong":["Cry On My Shoulder","Here We Are Again","Річка"]}}
 					# console.log d
 					if d.code is 200
-						main.musicName = d.data.hottestSongName if d.data.hottestSongName? and d.data.hottestSongName isnt ""
-						main.musicName = d.data.latestSongName if d.data.latestSongName? and d.data.latestSongName isnt ""
-						main.shareMusicName = d.data.latestShareSongName if d.data.latestShareSongName? and d.data.latestShareSongName isnt ""
-						main.myTimestp = d.data.latestTime if d.data.latestTime? and d.data.latestTime isnt "" and d.data.latestTime isnt 0
+						@.musicName = d.data.hottestSongName if d.data.hottestSongName? and d.data.hottestSongName isnt ""
+						@.musicName = d.data.latestSongName if d.data.latestSongName? and d.data.latestSongName isnt ""
+						@.shareMusicName = d.data.latestShareSongName if d.data.latestShareSongName? and d.data.latestShareSongName isnt ""
+						@.myTimestp = d.data.latestTime if d.data.latestTime? and d.data.latestTime isnt "" and d.data.latestTime isnt 0
 				.catch (err)->
 					console.log err
 			asknote: ->
