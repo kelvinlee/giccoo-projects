@@ -319,16 +319,16 @@ init = function init() {
           // 	}
           // }
           if (d.code === 200) {
-            if (d.data.hottestSongName != null) {
+            if (d.data.hottestSongName != null && d.data.hottestSongName !== "") {
               main.musicName = d.data.hottestSongName;
             }
-            if (d.data.latestSongName != null) {
+            if (d.data.latestSongName != null && d.data.latestSongName !== "") {
               main.musicName = d.data.latestSongName;
             }
-            if (d.data.latestShareSongName != null) {
+            if (d.data.latestShareSongName != null && d.data.latestShareSongName !== "") {
               main.shareMusicName = d.data.latestShareSongName;
             }
-            if (d.data.latestTime != null) {
+            if (d.data.latestTime != null && d.data.latestTime && d.data.latestTime !== "") {
               return main.myTimestp = d.data.latestTime;
             }
           }
