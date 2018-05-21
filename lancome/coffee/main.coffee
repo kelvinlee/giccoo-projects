@@ -230,7 +230,7 @@ init = ->
 				axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
 				.then (msg)->
 					# console.log msg
-					alert "get:"+JSON.stringify msg
+					alert "get:"+JSON.stringify msg.data
 					d = msg.data
 					# d = {"code":200,"msg":null,"data":{"latestSongName":"Strawberries & Cigarettes","latestTime":1522764106000,"latestShareSongName":"生命是场马拉松","hottestSongName":"Strawberries & Cigarettes","hottestSongArtistName":"Various Artists","hottestSongCount":18,"hottestArtistSong":["Cry On My Shoulder","Here We Are Again","Річка"]}}
 					# console.log d
