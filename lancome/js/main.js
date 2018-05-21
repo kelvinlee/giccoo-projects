@@ -322,13 +322,13 @@ init = function init() {
               _this2.shareMusicName = d.data.latestShareSongName;
             }
             if (d.data.latestTime != null && d.data.latestTime !== "" && d.data.latestTime !== 0) {
-              return _this2.myTimestp = d.data.latestTime;
+              _this2.myTimestp = d.data.latestTime;
             }
+            return _this2.questionMark = _this2.musicName.length % 4;
           }
-        }).catch(function (err) {
-          return alert("error:" + JSON.stringify(err));
-        });
+        }).catch(function (err) {});
       },
+      // alert "error:"+JSON.stringify err
       asknote: function asknote() {
         return axios.get("//music.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
           return alert("msg2:" + JSON.stringify(msg.data));
@@ -551,7 +551,7 @@ init = function init() {
         this.wy = true;
       }
       this.mount = true;
-      this.questionMark = Math.floor(Math.random() * this.answerList[1].question.length);
+      this.questionMark = this.musicName.length % 4;
       this.audio = document.getElementById("bgm");
       this.audiomusic = document.getElementById("music");
       // @.answerPageShow = true

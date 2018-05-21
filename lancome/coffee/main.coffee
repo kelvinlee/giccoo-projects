@@ -239,8 +239,9 @@ init = ->
 						@.musicName = d.data.latestSongName if d.data.latestSongName? and d.data.latestSongName isnt ""
 						@.shareMusicName = d.data.latestShareSongName if d.data.latestShareSongName? and d.data.latestShareSongName isnt ""
 						@.myTimestp = d.data.latestTime if d.data.latestTime? and d.data.latestTime isnt "" and d.data.latestTime isnt 0
+						@.questionMark = @.musicName.length%4
 				.catch (err)->
-					alert "error:"+JSON.stringify err
+					# alert "error:"+JSON.stringify err
 			asknote: ->
 				axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
 				.then (msg)->
@@ -411,7 +412,7 @@ init = ->
 			if sys is "NeteaseMusic"
 				@.wy = true
 			@.mount = true
-			@.questionMark = Math.floor(Math.random()*@.answerList[1].question.length)
+			@.questionMark = @.musicName.length%4
 			@.audio = document.getElementById "bgm"
 			@.audiomusic = document.getElementById "music"
 			# @.answerPageShow = true
