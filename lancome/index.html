@@ -52,7 +52,7 @@
               <h1 v-html="item.question.length &gt; 1 ? item.question[questionMark] : item.question[0]"></h1>
               <div class="answer-list">
                 <div v-for="value,ind in item.answers" @click.stop.prevent="select(ind)" :class="{right: answers[index] == ind}" v-html="value" class="item"></div>
-                <div v-if="index == 1" @click.stop.prevent="ask" class="note">*选择答案后将自动播放音效</div>
+                <div v-if="index == 1" @click.stop.prevent="asknote" class="note">*选择答案后将自动播放音效</div>
               </div>
               <div @click.stop.prevent="next" class="btn"><img v-if="index &lt;= 1" src="./img/btn-next.png"><img v-if="index &gt; 1" src="./img/btn-done.png"></div>
             </div>
@@ -87,7 +87,6 @@
     <script src="//image.giccoo.com/projects/libs/js/min/pixi.min.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/Tween.min.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
-    <script src="/libs/js/min/fetch.min.js"></script>
     <script src="js/main.js?v=1"></script>
   </body>
 </html>

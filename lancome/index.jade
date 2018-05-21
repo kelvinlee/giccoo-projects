@@ -57,7 +57,7 @@ block content
 						h1(v-html="item.question.length > 1 ? item.question[questionMark] : item.question[0]")
 						.answer-list
 							.item(v-for="value,ind in item.answers",@click.stop.prevent="select(ind)",:class="{right: answers[index] == ind}",v-html="value")
-							.note(v-if="index == 1",@click.stop.prevent="ask") *选择答案后将自动播放音效
+							.note(v-if="index == 1",@click.stop.prevent="asknote") *选择答案后将自动播放音效
 						.btn(@click.stop.prevent="next")
 							img(v-if="index <= 1",src="#{url}/img/btn-next.png")
 							img(v-if="index > 1",src="#{url}/img/btn-done.png")
@@ -91,13 +91,12 @@ block content
 block js
 	- url = "/";
 	script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
-	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
 	script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
 	script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
 	script(src="//image.giccoo.com/projects/libs/js/min/Tween.min.js")
 	//- script(src="/libs/js/min/jquery.min.js")
 	script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
-	script(src="/libs/js/min/fetch.min.js")
+	//- script(src="/libs/js/min/fetch.min.js")
 	script(src="js/main.js?v=1")
 	
 

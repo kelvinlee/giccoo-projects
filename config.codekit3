@@ -5295,7 +5295,7 @@
 	"\/lancome\/coffee\/main.coffee": {
 		"ft": 32,
 		"ma": 0,
-		"mi": 0,
+		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lancome\/js\/main.js",
 		"oF": 0,

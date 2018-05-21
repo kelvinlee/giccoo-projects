@@ -166,7 +166,7 @@ init = ->
 			shareImageLink: ""
 			questionMark: 0
 			answers: [-1,-1,-1]
-			musicName: ""
+			musicName: "平凡之路"
 			myTimeName: ""
 			myTimeDetail: ""
 			myTime: 15
@@ -221,13 +221,11 @@ init = ->
 		methods:
 			ask: ->
 				# 获取网易云数据
-				fetch "//music.163.com/api/activity/lancome/userInfo?type=1",{method: "POST"}
-				.then (msg)->
-					return msg.json()
+				axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
 				.then (msg)->
 					# console.log msg
 					# alert "changetime:2 "+JSON.stringify msg
-					d = msg
+					d = msg.data
 					# d = {
 					# 	"code": 200,
 					# 	"data": {
@@ -249,7 +247,9 @@ init = ->
 						@.shareMusicName = d.data.latestShareSongName if d.data.latestShareSongName?
 						@.myTimestp = d.data.latestTime if d.data.latestTime?
 				.catch (err)->
-					alert err
+					console.log err
+			asknote: ->
+
 			playbgm: ->
 				@playing = !@playing
 				@bgmplaying = !@bgmplaying
