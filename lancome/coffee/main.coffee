@@ -388,7 +388,7 @@ init = ->
 					@.homepageShow = false
 			
 			playSong: (i)->
-				@.musiclink = "./mp3/mp3-#{i}.mp3"
+				@.musiclink = "//image.giccoo.com/projects/lancome/mp3/mp3-#{i}.mp3"
 				setTimeout =>
 					@.audiomusic.play()
 				,1000/30

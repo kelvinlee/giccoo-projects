@@ -519,7 +519,7 @@ init = function init() {
       playSong: function playSong(i) {
         var _this6 = this;
 
-        this.musiclink = "./mp3/mp3-" + i + ".mp3";
+        this.musiclink = "//image.giccoo.com/projects/lancome/mp3/mp3-" + i + ".mp3";
         return setTimeout(function () {
           return _this6.audiomusic.play();
         }, 1000 / 30);
