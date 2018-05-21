@@ -223,10 +223,10 @@ init = ->
 		methods:
 			ask: ->
 				# 获取网易云数据
-				axios.get "http://music.163.com/api/activity/lancome/userInfo?type=1"
+				axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
 				.then (msg)->
 					# console.log msg
-					# alert "changetime:2 "+JSON.stringify msg
+					# alert "get:"+JSON.stringify msg
 					d = msg.data
 					# d = {
 					# 	"code": 200,
@@ -251,7 +251,7 @@ init = ->
 				.catch (err)->
 					console.log err
 			asknote: ->
-				axios.get "http://music.163.com/api/activity/lancome/userInfo?type=1"
+				axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
 				.then (msg)->
 					alert "msg:"+JSON.stringify msg
 				.catch (err)=>

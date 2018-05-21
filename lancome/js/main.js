@@ -297,10 +297,10 @@ init = function init() {
     methods: {
       ask: function ask() {
         // 获取网易云数据
-        return axios.get("http://music.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
+        return axios.get("//music.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
           var d;
           // console.log msg
-          // alert "changetime:2 "+JSON.stringify msg
+          // alert "get:"+JSON.stringify msg
           d = msg.data;
           // d = {
           // 	"code": 200,
@@ -334,7 +334,7 @@ init = function init() {
         });
       },
       asknote: function asknote() {
-        return axios.get("http://music.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
+        return axios.get("//music.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
           return alert("msg:" + JSON.stringify(msg));
         }).catch(function (err) {
           return alert(JSON.stringify(err));
