@@ -403,6 +403,8 @@ init = ->
 
 			gotoAnswer: ->
 				# createAnswer()
+				if @.wx
+					window.location.href = "https://m.music.163.com/m/applink/?scheme=orpheus%3A%2F%2Fopenurl%3Furl%3Dhttps%3A%2F%2Factivity.music.163.com%2Flancome%2F%26thirdfrom%3Dwx"
 				return false if not @.wy
 				@.answerCanvas.init()
 				@.answerPageShow = true

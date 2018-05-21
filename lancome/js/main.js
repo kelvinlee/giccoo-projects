@@ -531,8 +531,11 @@ init = function init() {
       },
       gotoAnswer: function gotoAnswer() {
         var stars;
+        // createAnswer()
+        if (this.wx) {
+          window.location.href = "https://m.music.163.com/m/applink/?scheme=orpheus%3A%2F%2Fopenurl%3Furl%3Dhttps%3A%2F%2Factivity.music.163.com%2Flancome%2F%26thirdfrom%3Dwx";
+        }
         if (!this.wy) {
-          // createAnswer()
           return false;
         }
         this.answerCanvas.init();
