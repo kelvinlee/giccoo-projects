@@ -5302,7 +5302,7 @@
 	"\/lancome\/coffee\/main.coffee": {
 		"ft": 32,
 		"ma": 0,
-		"mi": 0,
+		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lancome\/js\/main.js",
 		"oF": 0,
@@ -5914,7 +5914,7 @@
 		"oA": 0,
 		"oAP": "\/lancome\/css\/base.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/lancome_form": {
