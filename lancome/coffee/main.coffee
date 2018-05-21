@@ -251,11 +251,11 @@ init = ->
 				.catch (err)->
 					console.log err
 			asknote: ->
-				fetch "http://music.163.com/api/activity/lancome/userInfo?type=1"
-				.then (msg)->
-					return msg.json()
+				axios.get "http://music.163.com/api/activity/lancome/userInfo?type=1"
 				.then (msg)->
 					alert "msg:"+JSON.stringify msg
+				.catch (err)=>
+					alert JSON.stringify err
 			playbgm: ->
 				@playing = !@playing
 				@bgmplaying = !@bgmplaying
