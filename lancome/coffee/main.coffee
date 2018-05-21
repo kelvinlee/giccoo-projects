@@ -249,7 +249,7 @@ init = ->
 				.catch (err)->
 					console.log err
 			asknote: ->
-				fetch "//music.163.com/api/activity/lancome/userInfo?type=1"
+				fetch "http://music.163.com/api/activity/lancome/userInfo?type=1"
 				.then (msg)->
 					return msg.json()
 				.then (msg)->
