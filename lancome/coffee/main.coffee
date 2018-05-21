@@ -244,7 +244,7 @@ init = ->
 			asknote: ->
 				axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
 				.then (msg)->
-					alert "msg:"+JSON.stringify msg.data
+					alert "msg2:"+JSON.stringify msg.data
 				.catch (err)=>
 					alert JSON.stringify err
 			playbgm: ->

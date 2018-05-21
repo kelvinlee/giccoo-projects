@@ -329,7 +329,7 @@ init = function init() {
       },
       asknote: function asknote() {
         return axios.get("//music.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
-          return alert("msg:" + JSON.stringify(msg.data));
+          return alert("msg2:" + JSON.stringify(msg.data));
         }).catch(function (err) {
           return alert(JSON.stringify(err));
         });
