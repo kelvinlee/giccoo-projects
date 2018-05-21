@@ -319,6 +319,9 @@ init = function init() {
           // 	}
           // }
           if (d.code === 200) {
+            if (d.data.hottestSongName != null) {
+              this.musicName = d.data.hottestSongName;
+            }
             if (d.data.latestSongName != null) {
               this.musicName = d.data.latestSongName;
             }
@@ -335,7 +338,7 @@ init = function init() {
       },
       asknote: function asknote() {
         return axios.get("//music.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
-          return alert("msg:" + JSON.stringify(msg));
+          return alert("msg:" + JSON.stringify(msg.data));
         }).catch(function (err) {
           return alert(JSON.stringify(err));
         });

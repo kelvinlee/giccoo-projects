@@ -245,6 +245,7 @@ init = ->
 					# 	}
 					# }
 					if d.code is 200
+						@.musicName = d.data.hottestSongName if d.data.hottestSongName?
 						@.musicName = d.data.latestSongName if d.data.latestSongName?
 						@.shareMusicName = d.data.latestShareSongName if d.data.latestShareSongName?
 						@.myTimestp = d.data.latestTime if d.data.latestTime?
@@ -253,7 +254,7 @@ init = ->
 			asknote: ->
 				axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
 				.then (msg)->
-					alert "msg:"+JSON.stringify msg
+					alert "msg:"+JSON.stringify msg.data
 				.catch (err)=>
 					alert JSON.stringify err
 			playbgm: ->
