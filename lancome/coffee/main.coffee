@@ -2,7 +2,7 @@
  # @codekit-prepend "../../libs/coffee/requestanimation"
  # @codekit-prepend "../../libs/coffee/loadWechatConfig"
 
-_CDN = ""
+_CDN = "//image.giccoo.com/projects/lancome/"
 _imgurl = ""
 global = {}
 main = {}
@@ -40,16 +40,16 @@ myTimeDetail = "20:25" # 详细的分享时间
 musicName = "夜空中最亮的星" # 一起听的歌
 shareMusicName = "" # 分享过的音乐 cheapest flight
 canvasImgs = [
-	"img/star.png"
-	"img/answer-1-bg.jpg"
-	"img/answer-1-mark-bg.jpg"
-	"img/answer-2-bg.jpg"
-	"img/mark-1.png"
-	"img/mark-2.png"
-	"img/item-elephant.png"
-	"img/item-owl.png"
-	"img/item-panda.png"
-	"img/symbol.png"
+	_CDN+"img/star.png"
+	_CDN+"img/answer-1-bg.jpg"
+	_CDN+"img/answer-1-mark-bg.jpg"
+	_CDN+"img/answer-2-bg.jpg"
+	_CDN+"img/mark-1.png"
+	_CDN+"img/mark-2.png"
+	_CDN+"img/item-elephant.png"
+	_CDN+"img/item-owl.png"
+	_CDN+"img/item-panda.png"
+	_CDN+"img/symbol.png"
 ]
 
 # {
@@ -249,7 +249,9 @@ init = ->
 				.catch (err)->
 					console.log err
 			asknote: ->
-
+				axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
+				.then (msg)->
+					alert JSON.stringify msg
 			playbgm: ->
 				@playing = !@playing
 				@bgmplaying = !@bgmplaying
@@ -439,7 +441,7 @@ class buildUGC
 	id: 1
 	texts: ["你是个总觉得差一点点的人","差一点点就饱了","差一点点就满足了","连百分百的孤独感都觉得差了一点点"]
 	build: ->
-		bg = new PIXI.Sprite PIXI.loader.resources["img/ugc-bg-#{@.id}.jpg"].texture
+		bg = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/ugc-bg-#{@.id}.jpg"].texture
 
 		title = new PIXI.Text('你的孤独指数是：',{fontSize: 30, fill : 0x2d799b, align : 'left'});
 		title.x = 105
@@ -464,7 +466,7 @@ class buildUGC
 		last.y = lastY + 24 + 30
 		@.app.stage.addChild last
 
-		qr = new PIXI.Sprite PIXI.loader.resources["img/ugc-qr.png"].texture
+		qr = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/ugc-qr.png"].texture
 		qr.x = 430
 		qr.y = 706
 
@@ -486,8 +488,8 @@ class buildUGC
 		@.app.view.className = "ugcCanvas"
 		document.getElementById('ugcbg').appendChild @.app.view
 		PIXI.loader.add([
-			"img/ugc-bg-#{id}.jpg"
-			"img/ugc-qr.png"
+			_CDN+"img/ugc-bg-#{id}.jpg"
+			_CDN+"img/ugc-qr.png"
 		]).load(@.build.bind(@))
 
 stars = []
@@ -501,7 +503,7 @@ createStar = ->
 	
 	build = =>
 		for i in [0...20]
-			star = new PIXI.Sprite PIXI.loader.resources["img/star.png"].texture
+			star = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/star.png"].texture
 			star.x = Math.random()*640
 			star.y = Math.random()*1138
 			star.anchor.set(0.5,0.5)
@@ -653,28 +655,28 @@ class createAnswer
 		@.t = 2 # need remove
 		@.dom.bg2.valpha = 0 if @.dom.bg2?
 
-		bg = @.dom.bg3 = new PIXI.Sprite PIXI.loader.resources["img/answer-3-bg.jpg"].texture
+		bg = @.dom.bg3 = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/answer-3-bg.jpg"].texture
 		bg.alpha = 0.6
 		bg.x = 100
 		@.ansStar.stage.addChildAt @.dom.bg3,0
 
 		screen = @.dom.screen = new PIXI.Container()
-		timeline = @.dom.timeline = new PIXI.Sprite PIXI.loader.resources["img/mobile-timeline.png"].texture
+		timeline = @.dom.timeline = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/mobile-timeline.png"].texture
 		timeline.x = 220
 		timeline.y = 565
 		timeline.alpha = 0
 
-		timeline1 = @.dom.timeline1 = new PIXI.Sprite PIXI.loader.resources["img/mobile-answer.json"].textures['mobile-answer-1.png']
+		timeline1 = @.dom.timeline1 = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/mobile-answer.json"].textures['mobile-answer-1.png']
 		timeline1.x = 272
 		timeline1.y = 685
 		timeline1.alpha = 0
 
-		timeline2 = @.dom.timeline2 = new PIXI.Sprite PIXI.loader.resources["img/mobile-answer.json"].textures['mobile-answer-2.png']
+		timeline2 = @.dom.timeline2 = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/mobile-answer.json"].textures['mobile-answer-2.png']
 		timeline2.x = 272
 		timeline2.y = 685
 		timeline2.alpha = 0
 
-		timeline3 = @.dom.timeline3 = new PIXI.Sprite PIXI.loader.resources["img/mobile-answer.json"].textures['mobile-answer-3.png']
+		timeline3 = @.dom.timeline3 = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/mobile-answer.json"].textures['mobile-answer-3.png']
 		timeline3.x = 272
 		timeline3.y = 685
 		timeline3.alpha = 0
@@ -689,13 +691,13 @@ class createAnswer
 		@.dom.page1.vy = -1138/5*5.5
 		@.dom.page1.valpha = 0
 
-		@.dom.bg2 = new PIXI.Sprite PIXI.loader.resources["img/answer-2-bg.jpg"].texture
+		@.dom.bg2 = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/answer-2-bg.jpg"].texture
 		@.ansStar.stage.addChildAt @.dom.bg2,0
 		
 		music = @.dom.music = new PIXI.Container()
-		symbol1 = @.dom.symbol1 = new PIXI.Sprite PIXI.loader.resources["img/symbol.png"].texture
-		symbol2 = @.dom.symbol2 = new PIXI.Sprite PIXI.loader.resources["img/symbol.png"].texture
-		symbol3 = @.dom.symbol3 = new PIXI.Sprite PIXI.loader.resources["img/symbol.png"].texture
+		symbol1 = @.dom.symbol1 = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/symbol.png"].texture
+		symbol2 = @.dom.symbol2 = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/symbol.png"].texture
+		symbol3 = @.dom.symbol3 = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/symbol.png"].texture
 		symbol1.x = 99
 		symbol1.y = 690
 		symbol2.x = 110
@@ -717,14 +719,14 @@ class createAnswer
 	# 创建第一题背景
 	build: ->
 		# background image
-		@.dom.bg = new PIXI.Sprite PIXI.loader.resources["img/answer-1-mark-bg.jpg"].texture
+		@.dom.bg = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/answer-1-mark-bg.jpg"].texture
 		bg = @.dom.bg
 		@.dom.page1 = new PIXI.Container()
 		@.dom.page1.alpha = 1
 		@.dom.answer1bg = new PIXI.Container()
 		answer1bg = @.dom.answer1bg
 		answer1bg.alpha = 1
-		markbg = new PIXI.Sprite PIXI.loader.resources["img/answer-1-bg.jpg"].texture
+		markbg = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/answer-1-bg.jpg"].texture
 		@.dom.page1.addChild bg
 		# mark background image
 		markbg.x = 0
@@ -736,8 +738,8 @@ class createAnswer
 		@.scaleP = new PIXI.Point()
 		@.scaleP.x = 1.2
 		@.scaleP.y = 1.2
-		@.dom.mark = new PIXI.Sprite PIXI.loader.resources["img/mark-1.png"].texture
-		@.dom.mark2 = new PIXI.Sprite PIXI.loader.resources["img/mark-2.png"].texture
+		@.dom.mark = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/mark-1.png"].texture
+		@.dom.mark2 = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/mark-2.png"].texture
 		mark2 = @.dom.mark2
 		mark2.anchor.set(0.5)
 		mark2.scale.set(1.4,1)
@@ -755,15 +757,15 @@ class createAnswer
 		answer1bg.addChild markbg
 		answer1bg.mask = mark
 		
-		@.dom.answer11 = new PIXI.Sprite PIXI.loader.resources["img/item-owl.png"].texture
+		@.dom.answer11 = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/item-owl.png"].texture
 		@.dom.answer11.anchor.set(0.5)
 		@.dom.answer11.x = 450
 		@.dom.answer11.y = 310
-		@.dom.answer12 = new PIXI.Sprite PIXI.loader.resources["img/item-elephant.png"].texture
+		@.dom.answer12 = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/item-elephant.png"].texture
 		@.dom.answer12.anchor.set(0.5)
 		@.dom.answer12.x = 320
 		@.dom.answer12.y = 530
-		@.dom.answer13 = new PIXI.Sprite PIXI.loader.resources["img/item-panda.png"].texture
+		@.dom.answer13 = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/item-panda.png"].texture
 		@.dom.answer13.anchor.set(0.5)
 		@.dom.answer13.x = 530
 		@.dom.answer13.y = 588
@@ -786,7 +788,7 @@ class createAnswer
 			switch i
 				when 0
 					@.dom.answer11.valpha = true
-					# @.dom.mark = new PIXI.Sprite PIXI.loader.resources["img/mark-1.png"].texture
+					# @.dom.mark = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/mark-1.png"].texture
 					@.moving = true
 					@.noreset = true
 					@.XY.x = 446
@@ -812,7 +814,7 @@ class createAnswer
 					,400
 				when 2
 					@.dom.answer13.valpha = true
-					# @.dom.mark = new PIXI.Sprite PIXI.loader.resources["img/mark-1.png"].texture
+					# @.dom.mark = new PIXI.Sprite PIXI.loader.resources[_CDN+"img/mark-1.png"].texture
 					@.moving = true
 					@.noreset = true
 					@.XY.x = 540
@@ -888,9 +890,9 @@ class createAnswer
 			transparent: true
 		document.getElementById('answer-bg').appendChild @.ansStar.view
 		PIXI.loader.add([
-			"img/mobile-answer.json"
-			"img/answer-3-bg.jpg"
-			"img/mobile-timeline.png"
+			_CDN+"img/mobile-answer.json"
+			_CDN+"img/answer-3-bg.jpg"
+			_CDN+"img/mobile-timeline.png"
 		]).load(@.build.bind(@))
 
 Tn = (from = {x: 0},to = {x: 100},time = 800,callback)->
@@ -906,7 +908,7 @@ Tn = (from = {x: 0},to = {x: 100},time = 800,callback)->
 neteaseShareImage = ->
 	title1 = "点击测试你的孤独指数"
 	picUrl = "https://image.giccoo.com/upload/lancome/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://m.giccoo.com/lancome/"
+	redirectUrl = "https://activity.music.163.com/lancome/"
 	console.log "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 

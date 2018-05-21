@@ -12,34 +12,34 @@
   <body>
     <div id="load" class="loading">
       <div class="content">
-        <div class="record"><img src="./img/item.png"></div>
+        <div class="record"><img src="//image.giccoo.com/projects/lancome/img/item.png"></div>
         <div id="loadtext" v-show="mount" style="display: none" class="load-text">Loading...{{progress}}%</div>
       </div>
     </div>
     <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">
       <div class="player-fix">
-        <div :class="{on: playing}" @click.stop.prevent="playbgm" class="record"><img src="./img/music.png"></div>
+        <div :class="{on: playing}" @click.stop.prevent="playbgm" class="record"><img src="//image.giccoo.com/projects/lancome/img/music.png"></div>
         <audio id="bgm" :src="bgmlink" loop="true"></audio>
         <audio id="music" :src="musiclink"></audio>
       </div>
       <div class="page page-home">
         <div id="stars" class="bg"></div>
         <div v-show="homepageShow" @click.stop.prevent="gotoAnswer" class="content">
-          <div class="building fadeIn animated duration-30 delay-10"><img src="./img/building.png"></div>
+          <div class="building fadeIn animated duration-30 delay-10"><img src="//image.giccoo.com/projects/lancome/img/building.png"></div>
           <div class="title">
-            <div :class="{notwy: !wy}" class="t title-1 fadeInUp animated duration-12 delay-3"><img :src="!wy &amp;&amp; 1==4?'./img/title-1-notwy.png':'./img/title-1.png'">
+            <div :class="{notwy: !wy}" class="t title-1 fadeInUp animated duration-12 delay-3"><img :src="!wy &amp;&amp; 1==4?'//image.giccoo.com/projects/lancome/img/title-1-notwy.png':'//image.giccoo.com/projects/lancome/img/title-1.png'">
             </div>
-            <div :class="{notwy: !wy}" class="t title-2 fadeInUp animated duration-12 delay-6"><img :src="!wy &amp;&amp; 2==4?'./img/title-2-notwy.png':'./img/title-2.png'">
+            <div :class="{notwy: !wy}" class="t title-2 fadeInUp animated duration-12 delay-6"><img :src="!wy &amp;&amp; 2==4?'//image.giccoo.com/projects/lancome/img/title-2-notwy.png':'//image.giccoo.com/projects/lancome/img/title-2.png'">
             </div>
-            <div :class="{notwy: !wy}" class="t title-3 fadeInUp animated duration-12 delay-9"><img :src="!wy &amp;&amp; 3==4?'./img/title-3-notwy.png':'./img/title-3.png'">
+            <div :class="{notwy: !wy}" class="t title-3 fadeInUp animated duration-12 delay-9"><img :src="!wy &amp;&amp; 3==4?'//image.giccoo.com/projects/lancome/img/title-3-notwy.png':'//image.giccoo.com/projects/lancome/img/title-3.png'">
             </div>
-            <div :class="{notwy: !wy}" class="t title-4 fadeInUp animated duration-12 delay-12"><img :src="!wy &amp;&amp; 4==4?'./img/title-4-notwy.png':'./img/title-4.png'">
+            <div :class="{notwy: !wy}" class="t title-4 fadeInUp animated duration-12 delay-12"><img :src="!wy &amp;&amp; 4==4?'//image.giccoo.com/projects/lancome/img/title-4-notwy.png':'//image.giccoo.com/projects/lancome/img/title-4.png'">
               <div class="box">
-                <div class="c fadeOut duration-3 animated delay-24"><img src="./img/title-4-1.png"></div>
-                <div class="o fadeIn duration-3 animated delay-25"><img src="./img/title-4-2.png"></div>
+                <div class="c fadeOut duration-3 animated delay-24"><img src="//image.giccoo.com/projects/lancome/img/title-4-1.png"></div>
+                <div class="o fadeIn duration-3 animated delay-25"><img src="//image.giccoo.com/projects/lancome/img/title-4-2.png"></div>
               </div>
             </div>
-            <div :class="{notwy: !wy}" class="t title-5 fadeInUp animated duration-12 delay-15"><img :src="!wy &amp;&amp; 5==4?'./img/title-5-notwy.png':'./img/title-5.png'">
+            <div :class="{notwy: !wy}" class="t title-5 fadeInUp animated duration-12 delay-15"><img :src="!wy &amp;&amp; 5==4?'//image.giccoo.com/projects/lancome/img/title-5-notwy.png':'//image.giccoo.com/projects/lancome/img/title-5.png'">
             </div>
           </div>
         </div>
@@ -54,16 +54,16 @@
                 <div v-for="value,ind in item.answers" @click.stop.prevent="select(ind)" :class="{right: answers[index] == ind}" v-html="value" class="item"></div>
                 <div v-if="index == 1" @click.stop.prevent="asknote" class="note">*选择答案后将自动播放音效</div>
               </div>
-              <div @click.stop.prevent="next" class="btn"><img v-if="index &lt;= 1" src="./img/btn-next.png"><img v-if="index &gt; 1" src="./img/btn-done.png"></div>
+              <div @click.stop.prevent="next" class="btn"><img v-if="index &lt;= 1" src="//image.giccoo.com/projects/lancome/img/btn-next.png"><img v-if="index &gt; 1" src="//image.giccoo.com/projects/lancome/img/btn-done.png"></div>
             </div>
           </div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="waitPageShow" class="page page-wait">
-          <div v-show="!waitPageBox" @click.stop.prevent="gotoUGC" class="content"><img src="./img/wait-box.jpg"></div>
+          <div v-show="!waitPageBox" @click.stop.prevent="gotoUGC" class="content"><img src="//image.giccoo.com/projects/lancome/img/wait-box.jpg"></div>
           <transition name="page-fade">
-            <div v-show="waitPageBox" class="content"><a :href="wx?'http://www.lancome.com.cn/landing/genifique-eye.html?&amp;utm_source=163music&amp;utm_medium=DISP&amp;utm_content=wechatH5&amp;utm_campaign=CN_20180509_GENEYE_LPD_LAN_FS_Regular_NVD_DISP_MO':'https://equity-vip.tmall.com/agent/mobile.htm?agentId=91552&amp;_bind=true'"><img src="./img/wait.gif"></a></div>
+            <div v-show="waitPageBox" class="content"><a :href="wx?'http://www.lancome.com.cn/landing/genifique-eye.html?&amp;utm_source=163music&amp;utm_medium=DISP&amp;utm_content=wechatH5&amp;utm_campaign=CN_20180509_GENEYE_LPD_LAN_FS_Regular_NVD_DISP_MO':'https://equity-vip.tmall.com/agent/mobile.htm?agentId=91552&amp;_bind=true'"><img src="//image.giccoo.com/projects/lancome/img/wait.gif"></a></div>
           </transition>
         </div>
       </transition>
@@ -72,13 +72,13 @@
           <div id="ugcbg" :style="{transform: 'scale('+(1-smaller)+','+(1-smaller)+')'}" class="bg"><img :src="ugcbg"><img :src="ugc" class="ugc">
             <!-- canvas#ugc(width="640",height="1138")-->
           </div>
-          <div v-if="wy" @click.stop.prevent="upload" class="btn"><img src="./img/btn-save.png"></div>
-          <div v-if="!wy" class="btn"><img src="./img/btn-long-save.png"><img :src="ugc" class="ugc"></div>
+          <div v-if="wy" @click.stop.prevent="upload" class="btn"><img src="//image.giccoo.com/projects/lancome/img/btn-save.png"></div>
+          <div v-if="!wy" class="btn"><img src="//image.giccoo.com/projects/lancome/img/btn-long-save.png"><img :src="ugc" class="ugc"></div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="lastPageShow" class="page page-last">
-          <div :style="{transform: 'scale('+(1-smaller)+','+(1-smaller)+')'}" class="bg"><a :href="wx?'http://www.lancome.com.cn/landing/genifique-eye.html?&amp;utm_source=163music&amp;utm_medium=DISP&amp;utm_content=wechatH5&amp;utm_campaign=CN_20180509_GENEYE_LPD_LAN_FS_Regular_NVD_DISP_MO':'https://equity-vip.tmall.com/agent/mobile.htm?agentId=91552&amp;_bind=true'"><img src="./img/last-page.gif"></a></div>
+          <div :style="{transform: 'scale('+(1-smaller)+','+(1-smaller)+')'}" class="bg"><a :href="wx?'http://www.lancome.com.cn/landing/genifique-eye.html?&amp;utm_source=163music&amp;utm_medium=DISP&amp;utm_content=wechatH5&amp;utm_campaign=CN_20180509_GENEYE_LPD_LAN_FS_Regular_NVD_DISP_MO':'https://equity-vip.tmall.com/agent/mobile.htm?agentId=91552&amp;_bind=true'"><img src="//image.giccoo.com/projects/lancome/img/last-page.gif"></a></div>
         </div>
       </transition>
     </div>
