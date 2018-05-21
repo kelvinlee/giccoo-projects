@@ -16,7 +16,7 @@
         <div id="loadtext" v-show="mount" style="display: none" class="load-text">Loading...{{progress}}%</div>
       </div>
     </div>
-    <div id="main" v-show="mount" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">
+    <div id="main" v-show="mount" style="display: none" class="main">
       <div class="player-fix">
         <div :class="{on: playing}" @click.stop.prevent="playbgm" class="record"><img src="//image.giccoo.com/projects/lancome/img/music.png"></div>
         <audio id="bgm" :src="bgmlink" loop="true"></audio>
