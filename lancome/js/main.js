@@ -326,7 +326,7 @@ init = function init() {
             }
           }
         }).catch(function (err) {
-          return console.log(err);
+          return alert("error:" + JSON.stringify(err));
         });
       },
       asknote: function asknote() {

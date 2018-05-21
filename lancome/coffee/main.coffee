@@ -240,7 +240,7 @@ init = ->
 						@.shareMusicName = d.data.latestShareSongName if d.data.latestShareSongName? and d.data.latestShareSongName isnt ""
 						@.myTimestp = d.data.latestTime if d.data.latestTime? and d.data.latestTime isnt "" and d.data.latestTime isnt 0
 				.catch (err)->
-					console.log err
+					alert "error:"+JSON.stringify err
 			asknote: ->
 				axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
 				.then (msg)->
