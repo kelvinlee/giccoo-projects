@@ -245,10 +245,10 @@ init = ->
 					# 	}
 					# }
 					if d.code is 200
-						@.musicName = d.data.hottestSongName if d.data.hottestSongName?
-						@.musicName = d.data.latestSongName if d.data.latestSongName?
-						@.shareMusicName = d.data.latestShareSongName if d.data.latestShareSongName?
-						@.myTimestp = d.data.latestTime if d.data.latestTime?
+						main.musicName = d.data.hottestSongName if d.data.hottestSongName?
+						main.musicName = d.data.latestSongName if d.data.latestSongName?
+						main.shareMusicName = d.data.latestShareSongName if d.data.latestShareSongName?
+						main.myTimestp = d.data.latestTime if d.data.latestTime?
 				.catch (err)->
 					console.log err
 			asknote: ->

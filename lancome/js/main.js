@@ -320,16 +320,16 @@ init = function init() {
           // }
           if (d.code === 200) {
             if (d.data.hottestSongName != null) {
-              this.musicName = d.data.hottestSongName;
+              main.musicName = d.data.hottestSongName;
             }
             if (d.data.latestSongName != null) {
-              this.musicName = d.data.latestSongName;
+              main.musicName = d.data.latestSongName;
             }
             if (d.data.latestShareSongName != null) {
-              this.shareMusicName = d.data.latestShareSongName;
+              main.shareMusicName = d.data.latestShareSongName;
             }
             if (d.data.latestTime != null) {
-              return this.myTimestp = d.data.latestTime;
+              return main.myTimestp = d.data.latestTime;
             }
           }
         }).catch(function (err) {
