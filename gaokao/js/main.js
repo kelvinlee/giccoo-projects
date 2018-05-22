@@ -179,7 +179,7 @@ function goP2(){//========================准考证页
   TweenLite.set(p2bg,{y:stageH,regY:1386})
   p1title.visible=false
   p1go.visible=false
-  TweenLite.to(p1bg,.5,{scaleY:0,y:stageH})
+  TweenLite.to(p1bg,.3,{scaleY:0,y:stageH})
   for (var i = 1; i <= 10; i++) {
     TweenLite.set(p1picA[i-1],{alpha:0,delay:i*0,onComplete:removeTar,onCompleteParams:[p1picA[i-1]]})
   };
