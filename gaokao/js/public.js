@@ -1,17 +1,10 @@
 //=======================标题 抖动
 var p1title
-var p1titleA=["img/title1.png","img/title2.png","img/title3.png"]
+var p1titleA=["http://image.giccoo.com/projects/gaokao/img/title1.png","http://image.giccoo.com/projects/gaokao/img/title2.png","http://image.giccoo.com/projects/gaokao/img/title3.png"]
 
 var p1titleSheet
 
 function setP1title(){
-  // var str
-  // for (var i = 1; i <=2 ; i++) {//站起来 0-69--70
-  //   if(i<10){str="//image.giccoo.com/projects/your_own_way/img/standup/man000"+i+".png"}else{str="//image.giccoo.com/projects/your_own_way/img/standup/man00"+i+".png"}
-  //   boyA.push(str)
-  // };
-
-
   p1titleSheet= new createjs.SpriteSheet({
     "images":p1titleA,
     "frames":{"height":301,"width":640},
@@ -27,7 +20,7 @@ function setP1title(){
 }
 //=======================btn 抖动
 var p1go
-var p1goA=["img/p1btn1.jpg","img/p1btn2.jpg","img/p1btn3.jpg"]
+var p1goA=["http://image.giccoo.com/projects/gaokao/img/p1btn1.jpg","http://image.giccoo.com/projects/gaokao/img/p1btn2.jpg","http://image.giccoo.com/projects/gaokao/img/p1btn3.jpg"]
 
 var p1goSheet
 
@@ -47,7 +40,7 @@ function setP1btn(){
 }
 //=======================选择画圈
 var userMark
-var userMarkA=["img/circle/0.png","img/circle/1.png","img/circle/2.png","img/circle/3.png","img/circle/4.png","img/circle/5.png","img/circle/6.png","img/circle/7.png"]
+var userMarkA=["http://image.giccoo.com/projects/gaokao/img/circle/0.png","http://image.giccoo.com/projects/gaokao/img/circle/1.png","http://image.giccoo.com/projects/gaokao/img/circle/2.png","http://image.giccoo.com/projects/gaokao/img/circle/3.png","http://image.giccoo.com/projects/gaokao/img/circle/4.png","http://image.giccoo.com/projects/gaokao/img/circle/5.png","http://image.giccoo.com/projects/gaokao/img/circle/6.png","http://image.giccoo.com/projects/gaokao/img/circle/7.png"]
 
 var userMarkSheet1
 var userMarkSheet2
@@ -106,7 +99,7 @@ function setuserMark(){
 }
 
 //=====================loading条
-var loadingBg=new createjs.Bitmap("img/bar.png")
+var loadingBg=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/bar.png")
 var loadingBar=new createjs.Shape()
 function setLoadingBar(){
   stage1.addChild(loadingBg)
@@ -130,7 +123,7 @@ var p1pic=new createjs.Container()
 function setP1pic(){
   stage1.addChild(p1pic)
   for (var i = 1; i <= 10; i++) {
-    var _p1pic=new createjs.Bitmap("img/start"+i+".png")
+    var _p1pic=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/start"+i+".png")
     p1picA.push(_p1pic)
     p1pic.addChild(_p1pic)
     TweenLite.set(_p1pic,{y:stageH-643,overwrite:0,alpha:0})
@@ -143,8 +136,8 @@ function setP1pic(){
   };
 }
 //==========logo===
-var logoB=new createjs.Bitmap("img/logob.png")
-var logoW=new createjs.Bitmap("img/logow.png")
+var logoB=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/logob.png")
+var logoW=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/logow.png")
 function setLogo(){
   stage.addChild(logoB)
   stage.addChild(logoW)
@@ -213,8 +206,8 @@ function setUserPic(){
 
 //=========考试页
 var stage3=new createjs.Container()
-var p3bg=new createjs.Bitmap("img/p3bg.png")
-var p3btn=new createjs.Bitmap("img/p3btn.png")
+var p3bg=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/p3bg.png")
+var p3btn=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/p3btn.png")
 
 function setPage3(){
   stage.addChild(stage3)
@@ -233,7 +226,7 @@ function setPage3(){
 }
 
 //======计时器
-var timeT1=new createjs.Bitmap("img/timetoend.png")
+var timeT1=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/timetoend.png")
 var timeT=new createjs.Text("0:03:00","29px Arial", "#ffffff")
 var timeLeft=180
 var t1000
@@ -273,18 +266,18 @@ $("#hint2").click(function(){
 
 //======p3标题
 var p3title=new createjs.Container()
-var p3titleT=new createjs.Bitmap("img/p3title.png")
+var p3titleT=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/p3title.png")
 var p3typeT
 var p3QnumA=[]
 function setP3title(){
   stage3.addChild(p3title)
   p3title.addChild(p3titleT)
   TweenLite.set(p3title,{regY:52,y:243/1000*stageH})
-  p3typeT=new createjs.Bitmap("img/type"+wlType+"_"+examType+".png")
+  p3typeT=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/type"+wlType+"_"+examType+".png")
   p3title.addChild(p3typeT)
 
   for (var i = 0; i <10; i++) {
-    var p3Qnum=new createjs.Bitmap("img/count"+i+".png")
+    var p3Qnum=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/count"+i+".png")
     p3title.addChild(p3Qnum)
     p3Qnum.visible=false
     if(nowQ==i){
@@ -306,8 +299,7 @@ function setP3btn(){
   TweenLite.set($("#submitBtn"),{display:"block",height:76/640*screenW,y:screenH-(32+76)/640*screenW})
 
   setuserMark()
-  // TweenLite.set(userMark,{width:"100%",height:31/640*screenW,y:((547.5-93.5-15+60)/1000*stageH),display:"block"})
-  // userMark.gotoAndPlay("goEnd")
+
 
   for (var i = 0; i < 4 ; i++) {//====设置按钮/圈圈位置
     TweenLite.set(btnABCD[i],{width:"100%",height:31/640*screenW,y:((547.5)/1000*stageH-93.5+60*i)/640*screenW,display:"block"}) 
@@ -321,10 +313,6 @@ function setP3btn(){
 }
 
 function changeMark(){//=====画圈圈
-  //TweenLite.set(userMark,{width:"100%",height:31/640*screenW,y:((547.5-93.5-15+60)/1000*stageH),display:"block"})
-  //userMark.gotoAndPlay("goEnd")
-  //userMarkA[userAnswer[nowQ-1]].alpha=1
-  //userMarkA[userAnswer[nowQ-1]].gotoAndPlay("goEnd")
   for(var j=0;j<4;j++){
     TweenLite.set(userMarkA[j],{alpha:0})
     if(userAnswer[nowQ]-1==j&&userAnswer[nowQ]!=0){
@@ -393,8 +381,8 @@ var lastQA=[]
 var nowQMask=new createjs.Shape()
 var lastQMask=new createjs.Shape()
 
-var fys=new createjs.Bitmap("img/fys.png")
-var fy=new createjs.Bitmap("img/fy.png")
+var fys=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/fys.png")
+var fy=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/fy.png")
 var fyMask=new createjs.Shape()
 
 var wl=[[0,1,2,3,4,5,6,7,8,9,10],[0,1,2,3,4,5,10,11,12,13]]
@@ -419,8 +407,8 @@ function setP3Q(){
   TweenLite.set(fy,{scaleY:10/1000*stageH,y:90/1000*stageH,x:-640})
 
   for (var i = 0; i < 10; i++) {
-    var Q1=new createjs.Bitmap("img/"+examType+"/"+wl[wlType][i]+".png")
-    var Q2=new createjs.Bitmap("img/"+examType+"/"+wl[wlType][i]+".png")
+    var Q1=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/"+examType+"/"+wl[wlType][i]+".png")
+    var Q2=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/"+examType+"/"+wl[wlType][i]+".png")
 
     nowQMC.addChild(Q1)
     lastQMC.addChild(Q2)
