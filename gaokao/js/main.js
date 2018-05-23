@@ -131,7 +131,7 @@ function handleTick(){
 }
 
 var stage1=new createjs.Container()
-var p1bg=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/bg.jpg")
+var p1bg=new createjs.Bitmap("img/bg.jpg")
 
 function goLoading(){
   stage.addChild(stage1)
@@ -163,14 +163,14 @@ p1btn.click(function(){
 })
 
 var stage2=new createjs.Container()
-var p2bg=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/p2bg.jpg")
+var p2bg=new createjs.Bitmap("img/p2bg.jpg")
 var userName=$("#userName")
 var UserTextarea=$("#UserTextarea")
 var type1btn=$("#type1btn")
 var type2btn=$("#type2btn")
 
 var typeMark=new createjs.Shape()
-var boy=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/boy2.png")
+var boy=new createjs.Bitmap("img/boy2.png")
 var p2start=$("#p2start")
 function goP2(){//========================准考证页
   TweenLite.set($("#btnshare"),{display:"none"})
@@ -193,7 +193,7 @@ function goP2(){//========================准考证页
 
   TweenLite.set(typeMark,{alpha:0})
   if(stageH>900){
-    boy=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/boy.png")
+    boy=new createjs.Bitmap("img/boy.png")
   }
   stage2.addChild(boy)
   TweenLite.set(boy,{y:200/1000*stageH,regY:140,regX:126,x:126})
@@ -216,9 +216,9 @@ function goP3(){//====================开始考试
 
 //==================结果页
 var stage4=new createjs.Container()
-var p4bg=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/p4bg.png")
-var p4bgABCDA=["http://image.giccoo.com/projects/gaokao/img/p4bga.png","http://image.giccoo.com/projects/gaokao/img/p4bgb.png","http://image.giccoo.com/projects/gaokao/img/p4bgc.png","http://image.giccoo.com/projects/gaokao/img/p4bgd.png"]
-var p4bgtypeA=["http://image.giccoo.com/projects/gaokao/img/p4bgtype0.png","http://image.giccoo.com/projects/gaokao/img/p4bgtype1.png"]
+var p4bg=new createjs.Bitmap("img/p4bg.png")
+var p4bgABCDA=["img/p4bga.png","img/p4bgb.png","img/p4bgc.png","img/p4bgd.png"]
+var p4bgtypeA=["img/p4bgtype0.png","img/p4bgtype1.png"]
 
 var p4bgABCD
 var p4bgtype
@@ -278,15 +278,15 @@ function goP4(){
   TweenLite.set(boy2,{y:200/1000*stageH-60*(1-_scale),regY:140-40*(1-_scale),regX:126,x:126,scale:.7+.3*_scale})
 
   if(finalScore[4]*75<=300){
-    endCopy=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/endcopy1.png")
+    endCopy=new createjs.Bitmap("img/endcopy1.png")
   }else if(finalScore[4]*75>300&&finalScore[4]*75<450){
-    endCopy=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/endcopy2.png")
+    endCopy=new createjs.Bitmap("img/endcopy2.png")
   }else if(finalScore[4]*75>=450&&finalScore[4]*75<600){
-    endCopy=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/endcopy3.png")
+    endCopy=new createjs.Bitmap("img/endcopy3.png")
   }else if(finalScore[4]*75>=600&&finalScore[4]*75<750){
-    endCopy=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/endcopy4.png")
+    endCopy=new createjs.Bitmap("img/endcopy4.png")
   }else if(finalScore[4]*75==750){
-    endCopy=new createjs.Bitmap("http://image.giccoo.com/projects/gaokao/img/endcopy5.png")
+    endCopy=new createjs.Bitmap("img/endcopy5.png")
   }
   stage4.addChild(endCopy)
   TweenLite.set(endCopy,{y:(200-15)/1000*stageH-9-60*(1-_scale),regY:131-40*(1-_scale),regX:188,x:188,scale:.7+.3*_scale})
