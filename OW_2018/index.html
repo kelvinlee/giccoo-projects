@@ -11,10 +11,14 @@
   </head>
   <body>
     <div id="main" class="main">
-      <div class="part part-1"><img src="./img/part-1.jpg"></div>
-      <div class="part part-2"><img src="./img/part-2.jpg"></div>
+      <div class="part part-1"><img src="./img/part-1.jpg"><a href="https://www.zhihu.com/question/278312931" class="outlink"></a></div>
+      <div class="part part-2"><img src="./img/part-2.jpg"><a href="https://zhuanlan.zhihu.com/p/37380299" class="outlink"></a></div>
       <div class="part part-3"><img src="./img/part-3-1.jpg">
-        <slider>
+        <slider class="slider-box">
+          <template slot="outside" slot-scope="slotProps">
+            <div class="left"><img src="./img/arrow.png"></div>
+            <div class="right"><img src="./img/arrow.png"></div>
+          </template>
           <template slot-scope="slotProps">
             <div class="slide"><img src="./img/pic-1.jpg"></div>
             <div class="slide"><img src="./img/pic-2.jpg"></div>
@@ -23,9 +27,9 @@
             <div class="slide"><img src="./img/pic-5.jpg"></div>
             <div class="slide"><img src="./img/pic-6.jpg"></div>
           </template>
-        </slider><img src="./img/part-3-2.jpg">
+        </slider><a href="http://ow.blizzard.cn/home"><img src="./img/part-3-2.jpg"></a>
       </div>
-      <div class="part part-4"><img src="./img/part-4.jpg"></div>
+      <div class="part part-4"><img src="./img/part-4.jpg"><a href="#1" class="outlink out1"></a><a href="#2" class="outlink out2"></a><a href="#3" class="outlink out3"></a></div>
     </div>
     <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>

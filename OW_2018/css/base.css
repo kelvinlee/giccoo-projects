@@ -404,6 +404,74 @@ video, canvas, svg {
   margin: 0 auto;
   font-size: 0; }
 
+.part {
+  font-size: 0;
+  position: relative; }
+
 .part-1, .part-2 {
   padding-bottom: 1.2rem;
   background-color: #add3d0; }
+
+.part-1 .outlink {
+  position: absolute;
+  bottom: 18%;
+  left: 0px;
+  width: 100%;
+  height: 10%; }
+
+.slider-box {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 2%; }
+  .slider-box .left, .slider-box .right {
+    position: absolute;
+    top: 50%;
+    width: 1rem;
+    z-index: 10;
+    transform: translate3d(0, -50%, 0); }
+  .slider-box .left {
+    left: 2%; }
+  .slider-box .right {
+    right: 2%;
+    transform: scale(-1, 1) translate3d(0, -50%, 0); }
+  .slider-box .slider-content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+  .slider-box .slider {
+    position: relative;
+    white-space: nowrap;
+    font-size: 0;
+    transition: all 0s linear; }
+    .slider-box .slider .slide {
+      width: 100%;
+      position: relative;
+      display: inline-block;
+      white-space: normal; }
+
+.part-2 .outlink {
+  position: absolute;
+  bottom: 5%;
+  left: 0px;
+  width: 100%;
+  height: 14%; }
+
+.part-4 .outlink {
+  position: absolute;
+  width: 100%; }
+
+.part-4 .out1 {
+  top: 16%;
+  left: 0px;
+  height: 11%; }
+
+.part-4 .out2 {
+  top: 28%;
+  left: 0px;
+  height: 7%; }
+
+.part-4 .out3 {
+  top: 36%;
+  left: 0px;
+  height: 7%; }

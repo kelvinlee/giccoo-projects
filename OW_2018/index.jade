@@ -23,19 +23,30 @@ block content
   .main#main
     .part.part-1
       img(src="#{url}/img/part-1.jpg")
+      a.outlink(href="https://www.zhihu.com/question/278312931")
     .part.part-2
       img(src="#{url}/img/part-2.jpg")
+      a.outlink(href="https://zhuanlan.zhihu.com/p/37380299")
     .part.part-3
       img(src="#{url}/img/part-3-1.jpg")
-      slider
+      slider.slider-box
+        template(slot="outside",slot-scope="slotProps")
+          .left
+            img(src="#{url}/img/arrow.png")
+          .right
+            img(src="#{url}/img/arrow.png")
         template(slot-scope="slotProps")
           -for (var i=1;i<=6;i++)
             .slide
               img(src="#{url}/img/pic-#{i}.jpg")
           -;
-      img(src="#{url}/img/part-3-2.jpg")
+      a(href="http://ow.blizzard.cn/home")
+        img(src="#{url}/img/part-3-2.jpg")
     .part.part-4
       img(src="#{url}/img/part-4.jpg")
+      a.outlink.out1(href="#1")
+      a.outlink.out2(href="#2")
+      a.outlink.out3(href="#3")
 
 
 

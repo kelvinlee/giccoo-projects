@@ -32,6 +32,68 @@ video,canvas,svg
 	+m
 	font-size: 0
 
+.part
+	font-size: 0
+	+posr
 .part-1,.part-2
 	padding-bottom: 1.2rem
 	+bc(#add3d0)
+
+.part-1
+	.outlink
+		+posa
+		+bl(18%)
+		+w
+		+h(10%)
+
+.slider-box
+	+w(90%)
+	+m
+	+posr
+	padding-bottom: 2%
+	.left,.right
+		+posa
+		top: 50%
+		+w(1rem)
+		z-index: 10
+		+transform(translate3d(0,-50%,0))
+	.left
+		left: 2%
+	.right
+		right: 2%
+		+transform(scale(-1,1) translate3d(0,-50%,0))
+
+	.slider-content
+		+w
+		+h
+		overflow: hidden
+	.slider
+		+posr
+		white-space: nowrap
+		font-size: 0
+		+tran(all,0s,linear)
+		.slide
+			+w
+			+posr
+			+show-inline
+			white-space: normal
+			img
+.part-2
+	.outlink
+		+posa
+		+bl(5%)
+		+w
+		+h(14%)
+.part-4
+	.outlink
+		+posa
+		+w
+	.out1
+		+tl(16%)
+		+h(11%)
+	.out2
+		+tl(28%)
+		+h(7%)
+	.out3
+		+tl(36%)
+		+h(7%)
