@@ -89,7 +89,7 @@
 		"oAP": "\/adidas-originals-i5923\/img\/btn-buy.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/adidas-originals-i5923\/img\/mirror.png": {
@@ -98,8 +98,8 @@
 		"oA": 0,
 		"oAP": "\/adidas-originals-i5923\/img\/mirror.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -111,7 +111,7 @@
 		"oAP": "\/adidas-originals-i5923\/img\/pic-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/adidas-originals-i5923\/img\/pic-2.jpg": {
@@ -122,7 +122,7 @@
 		"oAP": "\/adidas-originals-i5923\/img\/pic-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/adidas-originals-i5923\/img\/pic-3.jpg": {
@@ -144,7 +144,7 @@
 		"oAP": "\/adidas-originals-i5923\/img\/pic-4.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/adidas-originals-i5923\/img\/pic-5.jpg": {
@@ -155,7 +155,7 @@
 		"oAP": "\/adidas-originals-i5923\/img\/pic-5.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/adidas-originals-i5923\/img\/pic-6.jpg": {
@@ -166,7 +166,7 @@
 		"oAP": "\/adidas-originals-i5923\/img\/pic-6.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/adidas-originals-i5923\/img\/poster.jpg": {
@@ -186,8 +186,8 @@
 		"oA": 0,
 		"oAP": "\/adidas-originals-i5923\/img\/sub-title-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -197,8 +197,8 @@
 		"oA": 0,
 		"oAP": "\/adidas-originals-i5923\/img\/title-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -208,8 +208,8 @@
 		"oA": 0,
 		"oAP": "\/adidas-originals-i5923\/img\/title-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4016,6 +4016,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/gaokao\/img\/p4bg.jpg": {
+		"ft": 16384,
+		"iS": 45049,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/gaokao\/img\/p4bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/gaokao\/img\/p4bg.png": {
 		"ft": 32768,
 		"iS": 77910,
@@ -4476,7 +4487,6 @@
 		"sC": 0,
 		"tS": 0
 		},
-		"oAP": "\/gaokao\/img\/0\/1.png",
 	"\/Gmovie\/css": {
 		"ft": 65536,
 		"oA": 1,
@@ -10078,8 +10088,8 @@
 		"oA": 0,
 		"oAP": "\/OW_2018\/img\/arrow.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -10102,7 +10112,7 @@
 		"oAP": "\/OW_2018\/img\/part-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/img\/part-3-1.jpg": {
@@ -10113,7 +10123,7 @@
 		"oAP": "\/OW_2018\/img\/part-3-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/img\/part-3-2.jpg": {
@@ -10124,7 +10134,7 @@
 		"oAP": "\/OW_2018\/img\/part-3-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/img\/part-3.jpg": {
@@ -10135,7 +10145,7 @@
 		"oAP": "\/OW_2018\/img\/part-3.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/img\/part-4.jpg": {
@@ -10146,7 +10156,7 @@
 		"oAP": "\/OW_2018\/img\/part-4.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/img\/pic-1.jpg": {
@@ -10157,7 +10167,7 @@
 		"oAP": "\/OW_2018\/img\/pic-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/img\/pic-10.jpg": {
@@ -10168,7 +10178,7 @@
 		"oAP": "\/OW_2018\/img\/pic-10.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/img\/pic-2.jpg": {
@@ -10179,7 +10189,7 @@
 		"oAP": "\/OW_2018\/img\/pic-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/img\/pic-3.jpg": {
@@ -10190,7 +10200,7 @@
 		"oAP": "\/OW_2018\/img\/pic-3.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/img\/pic-4.jpg": {
@@ -10201,7 +10211,7 @@
 		"oAP": "\/OW_2018\/img\/pic-4.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/img\/pic-5.jpg": {
@@ -10212,7 +10222,7 @@
 		"oAP": "\/OW_2018\/img\/pic-5.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/img\/pic-6.jpg": {
@@ -10223,7 +10233,7 @@
 		"oAP": "\/OW_2018\/img\/pic-6.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/img\/pic-7.jpg": {
@@ -10234,7 +10244,7 @@
 		"oAP": "\/OW_2018\/img\/pic-7.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/img\/pic-8.jpg": {
@@ -10245,7 +10255,7 @@
 		"oAP": "\/OW_2018\/img\/pic-8.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/img\/pic-9.jpg": {
@@ -10256,7 +10266,7 @@
 		"oAP": "\/OW_2018\/img\/pic-9.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/OW_2018\/index.html": {
