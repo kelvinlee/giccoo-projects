@@ -216,7 +216,7 @@ function goP3(){//====================开始考试
 
 //==================结果页
 var stage4=new createjs.Container()
-var p4bg=new createjs.Bitmap("img/p4bg.png")
+var p4bg=new createjs.Bitmap("img/p4bg.jpg")
 var p4bgABCDA=["img/p4bga.png","img/p4bgb.png","img/p4bgc.png","img/p4bgd.png"]
 var p4bgtypeA=["img/p4bgtype0.png","img/p4bgtype1.png"]
 
