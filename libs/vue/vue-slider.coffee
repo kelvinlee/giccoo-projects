@@ -1,6 +1,6 @@
 Vue.component "slider",
   template:'
-    <div @touchstart="start" @touchmove.passive="move" @touchend="end">
+    <div @mousedown="start" @mousemove="move" @mouseup="end" @touchstart="start" @touchmove.passive="move" @touchend="end">
       <div class="slider-content">
         <slot name="outside" :slideNumber="slideNumber"></slot>
         <div :id="\'slider-\'+id" class="slider" :style="{transitionDuration: duration+\'s\',transform:\'translate3d(\'+x+\'px,0,0)\'}">
@@ -47,10 +47,13 @@ Vue.component "slider",
         @slideNumber = Math.max(-(@.count - 1), slideNumber) % @.count
 
     start: (evt)->
-      touch = evt.touches[0]
+      if evt.type is "mousedown"
+        touch = evt
+      else
+        touch = evt.touches[0]
       @startTime = +new Date
       @duration = 0
-      @moved = false
+      @moved = true
       @offset.w = @.slider.clientWidth
       @offset.x = touch.pageX
       @offset.y = touch.pageY
@@ -59,7 +62,12 @@ Vue.component "slider",
       @offset.scrollableArea = @offset.w * @.count
       @setSlideNumber 0
     move: (evt)->
-      touch = evt.touches[0]
+      return false unless @moved
+      if evt.type is "mousemove"
+        touch = evt
+        evt.preventDefault();
+      else
+        touch = evt.touches[0]
       @offset.deltaX = touch.pageX - (@offset.x)
       pageX = touch.pageX
       @x = @offset.deltaX / @offset.resistance + @offset.lastw
@@ -71,6 +79,7 @@ Vue.component "slider",
         @setSlideNumber if +new Date - (@startTime) < 1000 and Math.abs(@offset.deltaX) > 15 then (if @offset.deltaX < 0 then -1 else 1) else 0
         @x = @slideNumber * @offset.w
         @duration = 0.2
+        @moved = false
   mounted: ->
     @.slider = document.getElementById "slider-"+@.id
     @.count = @.slider.childElementCount
