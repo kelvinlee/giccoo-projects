@@ -1,153 +1,289 @@
-'use strict';
+"use strict";
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, SendNote, TRANSITION_END_NAME, TRANSITION_END_NAMES, VENDORS, css3Prefix, i, j, len, mTestElement, riotVUE, riots;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-VENDORS = ["Moz", 'webkit', 'ms', 'O'];
+var Container, Graphics, ParticleContainer, Sprite, Texture, TextureCache, _CDN, animationLine, animationVoice, autoDetectRenderer, getId, getTe, loader, resource, resources, test;
 
-TRANSITION_END_NAMES = {
-  "Moz": "transitionend",
-  "webkit": "webkitTransitionEnd",
-  "ms": "MSTransitionEnd",
-  "O": "oTransitionEnd"
+Container = PIXI.Container;
+
+ParticleContainer = PIXI.ParticleContainer;
+
+autoDetectRenderer = PIXI.autoDetectRenderer;
+
+loader = PIXI.loader;
+
+resources = PIXI.loader.resources;
+
+TextureCache = PIXI.utils.TextureCache;
+
+Texture = PIXI.Texture;
+
+Sprite = PIXI.Sprite;
+
+Graphics = PIXI.Graphics;
+
+resource = PIXI.loader.resources;
+
+getTe = function getTe(id) {
+  return resource[id].texture;
 };
 
-ANIMATION_END_NAMES = {
-  "Moz": "animationend",
-  "webkit": "webkitAnimationEnd",
-  "ms": "MSAnimationEnd",
-  "O": "oAnimationEnd"
+getId = function getId(id, link) {
+  return loader.resources[link].textures[id];
 };
 
-mTestElement = document.createElement("div");
+// @codekit-prepend "../../libs/coffee/pixi-base"
+_CDN = "./";
 
-for (j = 0, len = VENDORS.length; j < len; j++) {
-  i = VENDORS[j];
-  css3Prefix = i;
-  if (css3Prefix + "Transition" in mTestElement.style) {
-    break;
-  }
-  css3Prefix = false;
-}
+test = {};
 
-if (css3Prefix) {
-  TRANSITION_END_NAME = TRANSITION_END_NAMES[css3Prefix];
-  ANIMATION_END_NAME = ANIMATION_END_NAMES[css3Prefix];
-}
+animationLine = function () {
+  var animationLine = function () {
+    function animationLine(arg) {
+      _classCallCheck(this, animationLine);
 
-riotVUE = {
-  arrayMethods: Object.create(Array.prototype),
-  newArrProto: [],
-  init: function init(opts) {
-    var self;
-    self = this;
-    if (typeof riots !== "undefined" && riots !== null) {
-      if (riots[this.root.localName] == null) {
-        riots[this.root.localName] = [];
-      }
-      if (riots[this.root.localName] != null) {
-        riots[this.root.localName].push(this);
-      }
+      this.default.h = document.documentElement.clientHeight;
+      this.default.w = document.documentElement.clientWidth;
+      this.default.ratio = 640 / this.default.w;
+      this.app = new PIXI.Application({
+        width: 640,
+        height: 1138,
+        transparent: true,
+        preserveDrawingBuffer: true
+      });
+      this.app.view.className = "ugcCanvas";
+      this.stage = this.app.stage;
+      document.getElementById('main').appendChild(this.app.view);
+      this.start = this.start.bind(this);
+      this.move = this.move.bind(this);
+      this.end = this.end.bind(this);
+      // @.app.view.addEventListener "touchstart", @.start, false
+      // @.app.view.addEventListener "touchmove", @.move, false
+      // @.app.view.addEventListener "touchend", @.end, false
+      PIXI.loader.add([]).load(this.build.bind(this));
     }
-    // 设置数组变更通知
-    return ["pop", "push", "reverse", "shift", "unshift", "slice", "splice", "sort", "filter", "forEach"].forEach(function (method) {
-      var original;
-      original = self.arrayMethods[method];
-      return self.newArrProto[method] = function () {
-        var run;
-        run = function run(who, args) {
-          original.apply(who, args);
-          self.eachAll(self, who);
-          self.update();
-        };
-        return run(this, arguments);
+
+    _createClass(animationLine, [{
+      key: "build",
+      value: function build() {
+        var line;
+        line = this.line = new Graphics();
+        this.line.speed = 5;
+        this.line.direction = Math.random() * (Math.PI / 2);
+        this.line.moveTo(0, this.default.h / 2);
+        this.default.y = this.default.h / 2;
+        this.stage.addChild(this.line);
+        this.default.MaxX = this.default.changX;
+        this.default.centerY = this.default.h / 2;
+        return this.app.ticker.add(this.loop.bind(this));
+      }
+    }, {
+      key: "loop",
+      value: function loop(detail) {
+        this.default.x += this.line.speed;
+        this.default.y += Math.cos(this.line.direction) * this.line.speed;
+        this.line.lineStyle(4, 0x99CCFF, 1);
+        this.line.lineTo(this.default.x, this.default.y);
+        if (this.default.x >= this.default.MaxX) {
+          this.default.MaxX = this.default.MaxX + this.default.changX;
+          this.line.direction = Math.random() * Math.PI;
+        }
+        if (this.default.y >= this.default.centerY + this.default.MaxH) {
+          this.default.y = this.default.centerY + this.default.MaxH;
+        }
+        if (this.default.y <= this.default.centerY - this.default.MaxH) {
+          this.default.y = this.default.centerY - this.default.MaxH;
+        }
+
+        //   @.line.direction = Math.random()*(Math.PI/2)
+        // console.log @.default.y+@.default.MaxH,@.default.y
+        if (this.default.x >= 320) {
+          return this.line.x = -(this.default.x - 320);
+        }
+      }
+
+      // console.log @.default
+
+    }, {
+      key: "start",
+      value: function start(evt) {
+        var touch;
+        // console.log @,evt
+        touch = evt.touches != null ? evt.touches[0] : evt;
+        this.default.x = touch.pageX * this.default.ratio;
+        this.default.y = touch.pageY * this.default.ratio;
+        this.line.lineStyle(4, 0x99CCFF, 1);
+        return this.line.moveTo(this.default.x, this.default.y);
+      }
+    }, {
+      key: "move",
+      value: function move(evt) {
+        var touch;
+        touch = evt.touches != null ? evt.touches[0] : evt;
+        this.line.lineStyle(4, 0x99CCFF, 1);
+        return this.line.lineTo(touch.pageX * this.default.ratio, touch.pageY * this.default.ratio);
+      }
+    }, {
+      key: "end",
+      value: function end(evt) {}
+    }, {
+      key: "removeTouch",
+      value: function removeTouch() {
+        this.app.view.removeEventListener("touchstart", this.start);
+        this.app.view.removeEventListener("touchmove", this.move);
+        return this.app.view.removeEventListener("touchend", this.end);
+      }
+    }]);
+
+    return animationLine;
+  }();
+
+  ;
+
+  animationLine.prototype.default = {
+    x: 0,
+    y: 0,
+    w: 640,
+    h: 1138,
+    MaxX: 0,
+    centerY: 0,
+    MaxH: 100,
+    changX: 80,
+    preX: 0,
+    ratio: 1
+  };
+
+  return animationLine;
+}.call(undefined);
+
+animationVoice = function () {
+  var animationVoice = function () {
+    function animationVoice(arg) {
+      _classCallCheck(this, animationVoice);
+
+      this.opts = {
+        el: "main",
+        w: 640,
+        h: 1138,
+        count: 40,
+        class: "",
+        fillColor: 0x66CCFF
       };
-    });
-  },
-  // 给 data 内的所有属性绑定监控
-  // @eachAll this,this.data
-  // @eachAll this,this.opts
-  // 设置 $set 和 $delete .
-  BD: function BD() {
-    this.eachAll(this, this.data);
-    return console.log(this.data);
-  },
-  eachAll: function eachAll(self, data) {
-    var key, results;
-    results = [];
-    for (key in data) {
-      this.createProperty(self, data, key, data[key]);
-      if (Array.isArray(data[key])) {
-        data[key].__proto__ = self.newArrProto;
-        this.eachAll(self, data[key]);
+      this.opts = Object.assign(this.opts, arg);
+      this.default.h = document.documentElement.clientHeight;
+      this.default.w = document.documentElement.clientWidth;
+      this.default.ratio = this.opts.w / this.default.w;
+      this.app = new PIXI.Application({
+        width: this.opts.w,
+        height: this.opts.h,
+        transparent: true,
+        preserveDrawingBuffer: true
+      });
+      if (this.opts.class != null && this.opts.class !== "") {
+        this.app.view.className = this.opts.class;
       }
-      if (_typeof(data[key]) === "object") {
-        results.push(this.eachAll(self, data[key]));
-      } else {
-        results.push(void 0);
-      }
+      this.stage = this.app.stage;
+      document.getElementById(this.opts.el).appendChild(this.app.view);
+      PIXI.loader.add([]).load(this.build.bind(this));
     }
-    return results;
-  },
-  createProperty: function createProperty(parent, data, pro, val) {
-    var temp;
-    temp = val;
-    return Object.defineProperty(data, pro, {
-      configurable: true,
-      enumerable: true,
-      get: function get() {
-        return temp;
-      },
-      set: function set(value) {
-        if (value === temp || temp !== temp && value !== value) {
+
+    _createClass(animationVoice, [{
+      key: "build",
+      value: function build() {
+        var grap;
+        grap = this.grap = new Graphics();
+        // @.add()
+        this.stage.addChild(this.grap);
+        // console.log @.app.ticker.FPS
+        return this.app.ticker.add(this.loop.bind(this));
+      }
+    }, {
+      key: "add",
+      value: function add() {
+        var grap, h, w, y;
+        grap = this.grap;
+        grap.beginFill(this.opts.fillColor);
+        h = Math.random() * this.opts.h * 0.95 + this.opts.h * 0.05;
+        w = this.opts.w / (this.opts.count * 2);
+        y = (this.opts.h - h) / 2;
+        grap.drawRect(this.default.x, y, w, h);
+        return this.default.x -= w * 2;
+      }
+
+      // if grap.width > @.opts.w
+      //   grap.x -= w*2
+
+    }, {
+      key: "clear",
+      value: function clear() {
+        this.grap.clear();
+        this.grap.x = 0;
+        return this.default.x = 0;
+      }
+    }, {
+      key: "stop",
+      value: function stop() {
+        this.clear();
+        return this.moved = false;
+      }
+    }, {
+      key: "pause",
+      value: function pause() {
+        return this.moved = false;
+      }
+    }, {
+      key: "play",
+      value: function play() {
+        return this.moved = true;
+      }
+    }, {
+      key: "loop",
+      value: function loop(detail) {
+        if (!this.moved) {
           return false;
         }
-        temp = value;
-        return parent.update();
+        if (this.grap.x <= this.grap.width) {
+          this.grap.x += this.opts.w / (this.opts.count * 3) * detail;
+        }
+        if (new Date().getTime() >= this.default.date + 50) {
+          this.add();
+          return this.default.date = new Date().getTime();
+        }
       }
-    });
-  }
-};
+    }]);
 
-riot.tag2('note', '<div class="note-box"> <div class="note-content {animated:true,fadeInUp:!close,fadeOutUp:close}"> <div class="note-text"> <div class="icon-form"><img src="http://disk.giccoo.com/projects/showman/img/icon-alert-note.png"></div> {title} </div> </div> </div>', 'note,[data-is="note"]{ position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 9999; } note .note-box,[data-is="note"] .note-box{ text-align: center; position: absolute; top: 50%; left: 0px; width: 100%; } note .note-box .note-content,[data-is="note"] .note-box .note-content{ display: inline-block; padding: 10px 11px 10px 10px; background-color: rgba(0, 0, 0, 0.7); color: #fff; border-radius: 5px; max-width: 90%; -webkit-box-sizing: border-box; box-sizing: border-box; } note .note-box .icon-form,[data-is="note"] .note-box .icon-form,note .note-box .note-text,[data-is="note"] .note-box .note-text{ display: inline-block; vertical-align: top; line-height: 25px; } note .note-box .icon-form,[data-is="note"] .note-box .icon-form{ width: 1.1rem; height: 1.1rem; vertical-align: middle; } note .note-box .note-text,[data-is="note"] .note-box .note-text{ font-size: 0.8rem; line-height: 1.4em; letter-spacing: 2px; } @media only screen and (min-width: 321px) and (max-width: 399px) { note .note-box .note-text,[data-is="note"] .note-box .note-text{ font-size: 0.88rem; } } @media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) { note .note-box .note-text,[data-is="note"] .note-box .note-text{ font-size: 0.88rem; } } @media only screen and (min-width: 399px) and (max-width: 767px) { note .note-box .note-text,[data-is="note"] .note-box .note-text{ font-size: 0.96rem; } } @media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) { note .note-box .note-text,[data-is="note"] .note-box .note-text{ font-size: 0.96rem; } }', '', function (opts) {
-  var self;
+    return animationVoice;
+  }();
 
-  self = this;
+  ;
 
-  this.title = opts.title;
+  animationVoice.prototype.default = {
+    x: 0,
+    y: 0,
+    w: 640,
+    h: 1138,
+    preX: 0,
+    ratio: 1,
+    date: new Date().getTime()
+  };
 
-  this.close = false;
+  animationVoice.prototype.voice = {
+    x: 0,
+    y: 0,
+    w: 4,
+    MaxH: 100
+  };
 
-  this.time = opts.time != null ? parseInt(opts.time) : 3000;
+  animationVoice.prototype.moved = false;
 
-  this.on("mount", function () {
-    setTimeout(function () {
-      return self.unmount();
-    }, self.time);
-    return setTimeout(function () {
-      self.close = true;
-      return self.update();
-    }, self.time - 500);
+  return animationVoice;
+}.call(undefined);
+
+window.onload = function () {
+  return test = new animationVoice({
+    el: "main",
+    h: 200
   });
-});
-
-// @codekit-prepend "../coffee/riot-vue"
-// @codekit-prepend "./riot-note.js"
-riot.mixin(riotVUE);
-
-riots = {};
-
-SendNote = function SendNote(msg) {
-  var time = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3000;
-
-  var noteDom;
-  noteDom = document.createElement("note");
-  noteDom.title = msg;
-  noteDom.setAttribute("time", time);
-  document.body.appendChild(noteDom);
-  return riot.mount("note");
 };
-
-// @codekit-prepend "coffee/css3Prefix"
-// @codekit-prepend "../../libs/riot3/base"

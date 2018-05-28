@@ -6,6 +6,7 @@ resources = PIXI.loader.resources
 TextureCache = PIXI.utils.TextureCache
 Texture = PIXI.Texture
 Sprite = PIXI.Sprite
+Graphics = PIXI.Graphics
 resource = PIXI.loader.resources
 
 getTe = (id)->

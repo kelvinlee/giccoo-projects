@@ -1,0 +1,204 @@
+@import sass/base
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "//image.giccoo.com/projects/adidas-originals-i5923/"
+
+// animation, delay, duration
+$fontColor: #000000;
+$pageMainBGColor: #ffffff;
+
+html,body
+	+w
+	+h
+body
+	color: $fontColor
+	+bc($pageMainBGColor)
+	max-width: 640px
+	max-height: 1138px
+	+m
+	+posr
+video,canvas,svg
+	+w
+	+h(auto)
+.hide
+	+hide
+.main
+	+w
+	+h(auto)
+	+posr
+	max-width: 1280px
+	+m
+	font-size: 0
+	+b($cdn+"img/bg.jpg",no-repeat,top,center,cover)
+	padding-bottom: 5rem
+.video
+	+posr
+	+w
+	.box
+		+posa
+		+tl(0,12%)
+		+w(76%)
+		+h
+		video
+			+h
+.icon-play
+	.play
+		opacity: 1
+		+tran
+	.pause
+		opacity: 0
+		+tran
+.video-box
+	+bc(#000)
+	+p(2% 0)
+	+posr
+	.miss
+		+posa
+		+wh(1px,1px)
+		+tl(-20px,-20px)
+		+overhide
+		+show-inline
+		// opacity: 0
+	// 	+w
+	// 	+h
+	// 	+posa
+	// 	+tl
+	// 	z-index: 5
+.music-list
+	+posr
+	+font-size(0.8rem)
+	color: $fontColor
+	+box
+	+w(auto)
+	+p(0 8%)
+	padding-top: 3rem
+	.title
+		+w(30%)
+		+m
+	.sub-title
+		+posa
+		+tr(2rem,5%)
+		+w(12%)
+		z-index: 9
+	.list
+		+box
+		.item
+			margin-bottom: 2rem
+			+box
+			+p(0 6%)
+			.btn
+				+w(15%)
+				+show-inline
+				svg
+					+w
+					+h(auto)
+				&.playing
+					.play
+						opacity: 0
+					.pause
+						opacity: 1
+			.name
+				margin-left: 3%
+				+w(80%)
+				+show-inline
+				vertical-align: top
+				line-height: 1.4em
+			&:last-child
+				margin-bottom: 0
+				.name
+					line-height: 2.8em
+			&.first
+				+p
+				margin-bottom: 3rem
+				.player-box
+					+w(85%)
+					+posr
+					font-size: 0
+					svg
+						+w
+						+h(auto)
+					*
+						+bc(transparent)
+				.btn
+					+w(30%)
+					+posa
+					+tl(50%)
+					+transform(translate3d(0,-45%,0))
+
+				.name
+					+w
+					+font-size(1rem)
+					+m
+					+p
+					.small
+						+show-inline
+						+w
+						+font-size(0.7rem)
+						color: #fff
+
+.slide-list
+	.title
+		+w(60%)
+		+m
+		+p(10% 0)
+	.slider-box
+		+w(60%)
+		+m
+		+posr
+		padding-bottom: 2%
+		.slider-content
+			+w
+			+h
+			overflow: hidden
+		.slider
+			+posr
+			white-space: nowrap
+			font-size: 0
+			+tran(all,0s,linear)
+			.slide
+				+w
+				+posr
+				+show-inline
+				white-space: normal
+				img
+		.points
+			+w
+			+posa
+			+bl(-10%,0)
+			+text-center
+			+p(5% 0)
+			span
+				+show-inline
+				+wh(0.4rem,0.4rem)
+				border: solid 1px #fff
+				border-radius: 50%
+				+overhide
+				+m(0 0.4rem)
+				+tran
+				&.on
+					+bc(#fff)
+
+
+		.mirror
+			+b($cdn+"img/mirror.png",no-repeat,center,top,100% 100%)
+			+posa
+			+tl
+			+w
+			+h
+			z-index: 1
+		
+
+		.btn-buy
+			+posa
+			+bl
+			z-index: 99
+			+w
+			+h(20%)
+			+show-inline
+
+.opc0
+	opacity: 0
+	+posr
+	z-index: 0

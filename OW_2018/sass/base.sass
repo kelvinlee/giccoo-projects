@@ -1,0 +1,37 @@
+@import sass/base
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "//image.giccoo.com/projects/adidas-originals-i5923/"
+
+// animation, delay, duration
+$fontColor: #000000;
+$pageMainBGColor: #ffffff;
+
+html,body
+	+w
+	+h
+body
+	color: $fontColor
+	+bc($pageMainBGColor)
+	max-width: 640px
+	max-height: 1138px
+	+m
+	+posr
+video,canvas,svg
+	+w
+	+h(auto)
+.hide
+	+hide
+.main
+	+w
+	+h(auto)
+	+posr
+	max-width: 1280px
+	+m
+	font-size: 0
+
+.part-1,.part-2
+	padding-bottom: 1.2rem
+	+bc(#add3d0)

@@ -1,0 +1,55 @@
+extends ../libs/jade/layout-clean
+
+block title
+  | 《守望先锋》2018周年庆
+
+block css
+  meta(name="author",content="m.giccoo.com")
+  //- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+  link(rel="stylesheet",href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css")
+  link(rel="stylesheet",href="css/base.css")
+  //- script.
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+block content
+  - url = "//image.giccoo.com/projects/OW_2018";
+  - url = ".";
+  .main#main
+    .part.part-1
+      img(src="#{url}/img/part-1.jpg")
+    .part.part-2
+      img(src="#{url}/img/part-2.jpg")
+    .part.part-3
+      img(src="#{url}/img/part-3-1.jpg")
+      slider
+        template(slot-scope="slotProps")
+          -for (var i=1;i<=6;i++)
+            .slide
+              img(src="#{url}/img/pic-#{i}.jpg")
+          -;
+      img(src="#{url}/img/part-3-2.jpg")
+    .part.part-4
+      img(src="#{url}/img/part-4.jpg")
+
+
+
+block js
+  - url = "/";
+  script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/Tween.min.js")
+  //- script(src="/libs/js/min/jquery.min.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+  script(src="js/main.js?v=2")
+  
+
+
+
+  
