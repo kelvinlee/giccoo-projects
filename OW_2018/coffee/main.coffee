@@ -1,5 +1,7 @@
+# @codekit-prepend "coffee/css3Prefix"
 # @codekit-prepend "../../libs/coffee/loadWechatConfig"
 # @codekit-prepend "../../libs/vue/vue-slider"
+
 main = {}
 
 

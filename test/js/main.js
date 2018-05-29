@@ -6,6 +6,168 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var Container, Graphics, ParticleContainer, Sprite, Texture, TextureCache, _CDN, animationLine, animationVoice, autoDetectRenderer, getId, getTe, loader, resource, resources, test;
 
+animationVoice = function () {
+  var animationVoice = function () {
+    function animationVoice(arg) {
+      _classCallCheck(this, animationVoice);
+
+      this.opts = {
+        el: "main",
+        w: 640,
+        h: 1138,
+        count: 100,
+        defaultShow: true,
+        class: "",
+        fillColor: 0x66CCFF
+      };
+      this.opts = Object.assign(this.opts, arg);
+      this.default.h = document.documentElement.clientHeight;
+      this.default.w = document.documentElement.clientWidth;
+      this.default.ratio = this.opts.w / this.default.w;
+      this.app = new PIXI.Application({
+        width: this.opts.w,
+        height: this.opts.h,
+        transparent: true,
+        preserveDrawingBuffer: true
+      });
+      if (this.opts.class != null && this.opts.class !== "") {
+        this.app.view.className = this.opts.class;
+      }
+      this.stage = this.app.stage;
+      document.getElementById(this.opts.el).appendChild(this.app.view);
+      PIXI.loader.add([]).load(this.build.bind(this));
+    }
+
+    _createClass(animationVoice, [{
+      key: "build",
+      value: function build() {
+        var i, j, ref;
+        for (i = j = 0, ref = this.opts.count + 3; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
+          this.add(i);
+        }
+        return this.app.ticker.add(this.loop.bind(this));
+      }
+    }, {
+      key: "add",
+      value: function add(i) {
+        var grap, h, w, y;
+        grap = new Graphics();
+        grap.beginFill(this.opts.fillColor);
+        h = Math.random() * this.opts.h * 0.95 + this.opts.h * 0.05;
+        w = this.opts.w / (this.opts.count * 2);
+        y = (this.opts.h - h) / 2;
+        grap.drawRect(0, y, w, h);
+        grap.x = -w * 2 * i;
+        if (this.opts.defaultShow) {
+          grap.x = w * 2 * i;
+        }
+        this.voices.push(grap);
+        this.stage.addChild(grap);
+        return grap;
+      }
+    }, {
+      key: "rebuild",
+      value: function rebuild(grap) {
+        var h, w, y;
+        grap.clear();
+        grap.beginFill(this.opts.fillColor);
+        grap.alpha = 1;
+        h = Math.random() * this.opts.h * 0.95 + this.opts.h * 0.05;
+        w = this.opts.w / (this.opts.count * 2);
+        y = (this.opts.h - h) / 2;
+        return grap.drawRect(0, y, w, h);
+      }
+    }, {
+      key: "rebuildAll",
+      value: function rebuildAll() {
+        var grap, i, j, ref, results, w;
+        results = [];
+        for (i = j = 0, ref = this.voices.length; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
+          grap = this.voices[i];
+          this.rebuild(grap);
+          w = this.opts.w / (this.opts.count * 2);
+          results.push(grap.x = -w * 2 * i);
+        }
+        return results;
+      }
+    }, {
+      key: "clear",
+      value: function clear() {
+        this.grap.clear();
+        this.grap.x = 0;
+        return this.default.x = 0;
+      }
+    }, {
+      key: "stop",
+      value: function stop() {
+        this.clear();
+        return this.moved = false;
+      }
+    }, {
+      key: "pause",
+      value: function pause() {
+        return this.moved = false;
+      }
+    }, {
+      key: "play",
+      value: function play() {
+        return this.moved = true;
+      }
+    }, {
+      key: "loop",
+      value: function loop(detail) {
+        var grap, j, len, ref, results;
+        if (!this.moved) {
+          return false;
+        }
+        ref = this.voices;
+        results = [];
+        for (j = 0, len = ref.length; j < len; j++) {
+          grap = ref[j];
+          grap.x += this.opts.w / (this.opts.count * 3) * detail;
+          if ((this.opts.w - grap.x) / this.opts.w * 100 <= 30) {
+            grap.alpha -= 0.01 * detail;
+          }
+          if (grap.x > this.opts.w) {
+            grap.x = 0;
+            results.push(this.rebuild(grap));
+          } else {
+            results.push(void 0);
+          }
+        }
+        return results;
+      }
+    }]);
+
+    return animationVoice;
+  }();
+
+  ;
+
+  animationVoice.prototype.default = {
+    x: 0,
+    y: 0,
+    w: 640,
+    h: 1138,
+    preX: 0,
+    ratio: 1,
+    date: new Date().getTime()
+  };
+
+  animationVoice.prototype.voice = {
+    x: 0,
+    y: 0,
+    w: 4,
+    MaxH: 100
+  };
+
+  animationVoice.prototype.voices = [];
+
+  animationVoice.prototype.moved = false;
+
+  return animationVoice;
+}.call(undefined);
+
 Container = PIXI.Container;
 
 ParticleContainer = PIXI.ParticleContainer;
@@ -34,6 +196,7 @@ getId = function getId(id, link) {
   return loader.resources[link].textures[id];
 };
 
+// @codekit-prepend "../../libs/pixi/voice"
 // @codekit-prepend "../../libs/coffee/pixi-base"
 _CDN = "./";
 
@@ -156,129 +319,6 @@ animationLine = function () {
   };
 
   return animationLine;
-}.call(undefined);
-
-animationVoice = function () {
-  var animationVoice = function () {
-    function animationVoice(arg) {
-      _classCallCheck(this, animationVoice);
-
-      this.opts = {
-        el: "main",
-        w: 640,
-        h: 1138,
-        count: 40,
-        class: "",
-        fillColor: 0x66CCFF
-      };
-      this.opts = Object.assign(this.opts, arg);
-      this.default.h = document.documentElement.clientHeight;
-      this.default.w = document.documentElement.clientWidth;
-      this.default.ratio = this.opts.w / this.default.w;
-      this.app = new PIXI.Application({
-        width: this.opts.w,
-        height: this.opts.h,
-        transparent: true,
-        preserveDrawingBuffer: true
-      });
-      if (this.opts.class != null && this.opts.class !== "") {
-        this.app.view.className = this.opts.class;
-      }
-      this.stage = this.app.stage;
-      document.getElementById(this.opts.el).appendChild(this.app.view);
-      PIXI.loader.add([]).load(this.build.bind(this));
-    }
-
-    _createClass(animationVoice, [{
-      key: "build",
-      value: function build() {
-        var grap;
-        grap = this.grap = new Graphics();
-        // @.add()
-        this.stage.addChild(this.grap);
-        // console.log @.app.ticker.FPS
-        return this.app.ticker.add(this.loop.bind(this));
-      }
-    }, {
-      key: "add",
-      value: function add() {
-        var grap, h, w, y;
-        grap = this.grap;
-        grap.beginFill(this.opts.fillColor);
-        h = Math.random() * this.opts.h * 0.95 + this.opts.h * 0.05;
-        w = this.opts.w / (this.opts.count * 2);
-        y = (this.opts.h - h) / 2;
-        grap.drawRect(this.default.x, y, w, h);
-        return this.default.x -= w * 2;
-      }
-
-      // if grap.width > @.opts.w
-      //   grap.x -= w*2
-
-    }, {
-      key: "clear",
-      value: function clear() {
-        this.grap.clear();
-        this.grap.x = 0;
-        return this.default.x = 0;
-      }
-    }, {
-      key: "stop",
-      value: function stop() {
-        this.clear();
-        return this.moved = false;
-      }
-    }, {
-      key: "pause",
-      value: function pause() {
-        return this.moved = false;
-      }
-    }, {
-      key: "play",
-      value: function play() {
-        return this.moved = true;
-      }
-    }, {
-      key: "loop",
-      value: function loop(detail) {
-        if (!this.moved) {
-          return false;
-        }
-        if (this.grap.x <= this.grap.width) {
-          this.grap.x += this.opts.w / (this.opts.count * 3) * detail;
-        }
-        if (new Date().getTime() >= this.default.date + 50) {
-          this.add();
-          return this.default.date = new Date().getTime();
-        }
-      }
-    }]);
-
-    return animationVoice;
-  }();
-
-  ;
-
-  animationVoice.prototype.default = {
-    x: 0,
-    y: 0,
-    w: 640,
-    h: 1138,
-    preX: 0,
-    ratio: 1,
-    date: new Date().getTime()
-  };
-
-  animationVoice.prototype.voice = {
-    x: 0,
-    y: 0,
-    w: 4,
-    MaxH: 100
-  };
-
-  animationVoice.prototype.moved = false;
-
-  return animationVoice;
 }.call(undefined);
 
 window.onload = function () {

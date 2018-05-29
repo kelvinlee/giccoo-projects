@@ -1,3 +1,6 @@
+# @codekit-prepend "coffee/css3Prefix"
+# @codekit-prepend "../../libs/pixi/voice"
+# @codekit-prepend "../../libs/coffee/pixi-base"
 # @codekit-prepend "../../libs/coffee/loadWechatConfig"
 # @codekit-prepend "../../libs/vue/vue-slider"
 main = {}
@@ -34,11 +37,19 @@ init = ->
 			videolink: "//image.giccoo.com/projects/adidas-originals-i5923/video/2.mp4"
 			index: 0
 			musiclink: ""
+		watch:
+			index: (ov,nv)->
+				if ov isnt nv
+					@.voice.rebuildAll() if @.voice?
+
 		methods:
 			end: (evt)->
 				@.playing = false
+				@.voice.pause()
 			play: (evt)->
 				@.playing = true
+				@.voice.play()
+				# @.voice.play() if @.index is 0
 			playMusic: (id)->
 				if @.index is id and @.playing
 					return @.audio.pause()
@@ -54,19 +65,17 @@ init = ->
 				else
 					@.video.play()
 			videoplay: (evt)->
-				console.log "video play"
 				@.videoplaying = true
 			videoend: (evt)->
-				console.log "video end"
 				@.videoplaying = false
-				# alert "video end"
-				# test
-				# @.videolink = "//image.giccoo.com/projects/adidas-originals-i5923/video/2.mp4?new="+Math.random()
-				# @.video.style = "display: none; position: absolute; top: -1000px; z-index: -1"
+			number: (n)->
+				# console.log "a",n
+				
 
 		mounted: ->
 			@.mounted = true
 			@.audio = document.getElementById "bgm"
 			@.video = document.getElementById "videoid"
-
+			@.voice = new animationVoice({el: "playervoice",h: 180,fillColor: 0xFFFFFF})
+			
 

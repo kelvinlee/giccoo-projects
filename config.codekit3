@@ -116,7 +116,7 @@
 		},
 	"\/adidas-originals-i5923\/img\/pic-2.jpg": {
 		"ft": 16384,
-		"iS": 156943,
+		"iS": 94639,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/adidas-originals-i5923\/img\/pic-2.jpg",
@@ -127,7 +127,7 @@
 		},
 	"\/adidas-originals-i5923\/img\/pic-3.jpg": {
 		"ft": 16384,
-		"iS": 94639,
+		"iS": 156943,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/adidas-originals-i5923\/img\/pic-3.jpg",
@@ -7221,6 +7221,17 @@
 		"oA": 1,
 		"oAP": "\/libs\/js\/viewport-min.js",
 		"oF": 0,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/libs\/pixi\/voice.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/libs\/js\/voice.js",
+		"oF": 0,
+		"oS": 1,
 		"sC": 0,
 		"tS": 1
 		},

@@ -1,3 +1,4 @@
+# @codekit-prepend "../../libs/pixi/voice"
 # @codekit-prepend "../../libs/coffee/pixi-base"
 _CDN = "./"
 
@@ -83,80 +84,6 @@ class animationLine
     @.app.view.removeEventListener "touchmove", @.move
     @.app.view.removeEventListener "touchend", @.end
     
-
-class animationVoice
-  default:
-    x: 0
-    y: 0
-    w: 640
-    h: 1138
-    preX: 0
-    ratio: 1
-    date: new Date().getTime()
-  voice:
-    x: 0
-    y: 0
-    w: 4
-    MaxH: 100
-  moved: false
-  constructor: (arg)->
-    @.opts =
-      el: "main"
-      w: 640
-      h: 1138
-      count: 40
-      class: ""
-      fillColor: 0x66CCFF
-    @.opts = Object.assign @.opts,arg
-    @.default.h = document.documentElement.clientHeight
-    @.default.w = document.documentElement.clientWidth
-    @.default.ratio = @.opts.w / @.default.w
-    @app = new PIXI.Application
-      width: @.opts.w
-      height: @.opts.h
-      transparent: true
-      preserveDrawingBuffer: true
-    @.app.view.className = @.opts.class if @.opts.class? and @.opts.class isnt ""
-    @.stage = @.app.stage
-    document.getElementById(@.opts.el).appendChild @.app.view
-    PIXI.loader.add([
-    ]).load(@.build.bind(@))
-  build: ->
-    grap = @.grap = new Graphics()
-    # @.add()
-    @.stage.addChild @.grap
-    # console.log @.app.ticker.FPS
-    @.app.ticker.add @.loop.bind @
-    
-  add: ->
-    grap = @.grap
-    grap.beginFill(@.opts.fillColor)
-    h = Math.random() * @.opts.h*0.95 + @.opts.h*0.05
-    w = @.opts.w/(@.opts.count*2)
-    y = (@.opts.h - h)/2
-    grap.drawRect(@.default.x, y, w, h)
-    @.default.x -= w*2
-    # if grap.width > @.opts.w
-    #   grap.x -= w*2
-  clear: ->
-    @.grap.clear()
-    @.grap.x = 0
-    @.default.x = 0
-  stop: ->
-    @.clear()
-    @.moved = false
-  pause: ->
-    @.moved = false
-  play: ->
-    @.moved = true
-  loop: (detail)->
-    return false unless @.moved
-    if @.grap.x <= @.grap.width
-      @.grap.x += @.opts.w/(@.opts.count*3) * detail
-    if new Date().getTime() >= @.default.date+50
-      @.add()
-      @.default.date = new Date().getTime()
-
 
 window.onload = ->
   test = new animationVoice({el: "main",h: 200})
