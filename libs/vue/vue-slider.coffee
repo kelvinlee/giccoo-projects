@@ -96,12 +96,13 @@ Vue.component "slider",
         @offset.resistance = if @slideNumber == 0 and @offset.deltaX > 0 then pageX / @offset.w + 1.25 else if @slideNumber == @offset.lastSlide and @offset.deltaX < 0 then (@offset.w - Math.abs(pageX)) / @offset.w + 1.25 else 1
       @moved = true
     end: (evt)->
-      if @moved
+      if @moved and Math.abs(@offset.deltaX) > 5
         oldslideNumber = @slideNumber
         @setSlideNumber if +new Date - (@startTime) < 1000 and Math.abs(@offset.deltaX) > 15 then (if @offset.deltaX < 0 then -1 else 1) else 0
         @x = @slideNumber * @offset.w
         @duration = 0.2
         @moved = false
+        @offset.deltaX = 0
         if @slideNumber == 0 and oldslideNumber == -(@.count - 1)
           @x = (oldslideNumber - 1) * @offset.w
         if oldslideNumber == 0 and @slideNumber == -(@.count - 1)
