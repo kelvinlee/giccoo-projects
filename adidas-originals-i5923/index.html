@@ -16,11 +16,11 @@
   <body>
     <div id="main" v-show="mounted" style="display: none" class="main">
       <div class="video-box">
-        <video controls="true" width="640" height="360" :src="videolink" id="videoid" poster="./img/poster.jpg" @ended="videoend"></video>
+        <video controls="true" width="640" height="360" :src="videolink" id="videoid" poster="//image.giccoo.com/projects/adidas-originals-i5923/img/poster.jpg" @ended="videoend"></video>
       </div>
       <div class="music-list">
-        <div class="title"><img src="./img/title-1.png"></div>
-        <div class="sub-title"><img src="./img/sub-title-1.png"></div>
+        <div class="title"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/title-1.png"></div>
+        <div class="sub-title"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/sub-title-1.png"></div>
         <div class="list">
           <audio id="bgm" @play="play" @pause="end" @ended="end" :src="musiclink"></audio>
           <div class="item first">
@@ -269,7 +269,7 @@
         </div>
       </div>
       <div class="slide-list">
-        <div class="title"><img src="./img/title-2.png"></div>
+        <div class="title"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/title-2.png"></div>
         <slider auto="true" repeat="true" @number="number" class="slider-box">
           <template slot="outside" slot-scope="slotProps">
             <div class="mirror">
@@ -278,12 +278,12 @@
             </div>
           </template>
           <template slot-scope="slotProps">
-            <div class="slide"><img src="./img/pic-1.jpg"><img src="./img/btn-buy.jpg"></div>
-            <div class="slide"><img src="./img/pic-2.jpg"><img src="./img/btn-buy.jpg"></div>
-            <div class="slide"><img src="./img/pic-3.jpg"><img src="./img/btn-buy.jpg"></div>
-            <div class="slide"><img src="./img/pic-4.jpg"><img src="./img/btn-buy.jpg"></div>
-            <div class="slide"><img src="./img/pic-5.jpg"><img src="./img/btn-buy.jpg"></div>
-            <div class="slide"><img src="./img/pic-6.jpg"><img src="./img/btn-buy.jpg"></div>
+            <div class="slide"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/pic-1.jpg"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/btn-buy.jpg"></div>
+            <div class="slide"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/pic-2.jpg"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/btn-buy.jpg"></div>
+            <div class="slide"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/pic-3.jpg"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/btn-buy.jpg"></div>
+            <div class="slide"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/pic-4.jpg"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/btn-buy.jpg"></div>
+            <div class="slide"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/pic-5.jpg"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/btn-buy.jpg"></div>
+            <div class="slide"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/pic-6.jpg"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/btn-buy.jpg"></div>
           </template>
           <template slot="points" slot-scope="slotProps">
             <div class="points"><span :class="{on: -slotProps.slideNumber == 0}"></span><span :class="{on: -slotProps.slideNumber == 1}"></span><span :class="{on: -slotProps.slideNumber == 2}"></span><span :class="{on: -slotProps.slideNumber == 3}"></span><span :class="{on: -slotProps.slideNumber == 4}"></span><span :class="{on: -slotProps.slideNumber == 5}"></span>
