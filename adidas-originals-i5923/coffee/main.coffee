@@ -36,6 +36,7 @@ init = ->
 			videolink: "//image.giccoo.com/projects/adidas-originals-i5923/video/2.mp4"
 			index: 0
 			musiclink: ""
+			musiclist: []
 		watch:
 			index: (ov,nv)->
 				if ov isnt nv
@@ -50,13 +51,17 @@ init = ->
 				@.voice.play()
 				# @.voice.play() if @.index is 0
 			playMusic: (id)->
+				for audio in @.musiclist
+					audio.pause()
 				if @.index is id and @.playing
-					return @.audio.pause()
-				@.musiclink = "//image.giccoo.com/projects/adidas-originals-i5923/mp3/#{id}-test.mp3"
+					return false
+
+				# @.musiclink = "//image.giccoo.com/projects/adidas-originals-i5923/mp3/#{id}-test.mp3"
 				@.index = id
-				setTimeout =>
-					@.audio.play()
-				,50
+				@.musiclist[id].play()
+				# setTimeout =>
+				# 	@.audio.play()
+				# ,50
 				list = ['TIED TOGETHER','Angel','SOS','Bring it Back Round','Educated','FEMME Double Trouble','Fire With Fire']
 				_smq.push(['custom','Homepage','Music',list[id]]) if _smq?
 			playvideo: ()->
@@ -94,5 +99,13 @@ init = ->
 			@.video = document.getElementById "videoid"
 			@.voice = new animationVoice({el: "playervoice",h: 180,fillColor: 0xFFFFFF})
 			window.onscroll = @.scroll
+			for i in [0...7]
+				audio = new Audio()
+				audio.src = "//image.giccoo.com/projects/adidas-originals-i5923/mp3/#{i}-test.mp3"
+				audio.addEventListener "play", @.play.bind @
+				audio.addEventListener "pause", @.end.bind @
+				audio.addEventListener "ended", @.end.bind @
+				@.musiclist.push audio
+
 			
 
