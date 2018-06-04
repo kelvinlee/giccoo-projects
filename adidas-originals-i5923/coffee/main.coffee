@@ -56,7 +56,7 @@ init = ->
 				@.index = id
 				setTimeout =>
 					@.audio.play()
-				,10
+				,50
 				list = ['TIED TOGETHER','Angel','SOS','Bring it Back Round','Educated','FEMME Double Trouble','Fire With Fire']
 				_smq.push(['custom','Homepage','Music',list[id]]) if _smq?
 			playvideo: ()->
