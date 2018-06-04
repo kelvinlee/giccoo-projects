@@ -52,11 +52,11 @@ init = ->
 			playMusic: (id)->
 				if @.index is id and @.playing
 					return @.audio.pause()
-				@.musiclink = "//image.giccoo.com/projects/adidas-originals-i5923/mp3/#{id}.mp3"
+				@.musiclink = "//image.giccoo.com/projects/adidas-originals-i5923/mp3/#{id}-test.mp3"
 				@.index = id
 				setTimeout =>
 					@.audio.play()
-				,100
+				,10
 				list = ['TIED TOGETHER','Angel','SOS','Bring it Back Round','Educated','FEMME Double Trouble','Fire With Fire']
 				_smq.push(['custom','Homepage','Music',list[id]]) if _smq?
 			playvideo: ()->
