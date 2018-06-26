@@ -35,19 +35,30 @@ class musicScore
     PIXI.loader.add([
     ]).load(@.build.bind(@))
   build: ->
+    detail = 1
     grap = @.grap = new Graphics()
     grap.lineStyle(4, 0xFFFFFF, 1)
+    if @.default.up
+      @.default.x += @.opts.speed*detail
+      @.default.y += @.opts.speed*detail
+      @.default.up = false if @.default.x > @.default.max
+    else
+      @.default.x -= @.opts.speed*detail
+      @.default.y -= @.opts.speed*detail
+      @.default.up = true if Math.abs(@.default.x) > @.default.max
+    x = 0 - Math.abs(@.default.x)
+    xend = 640 + Math.abs(@.default.x)
     for i in [0...@.opts.count]
-      y = 100+(i*@.opts.lineHeight)
-      grap.moveTo(0, y)
-      grap.bezierCurveTo(0, y, 160, y-40, 320, y+@.opts.lineHeight*1.5)
+      y = 100+(i*@.opts.lineHeight) + @.default.y * 0.5
+      grap.moveTo(x, y)
+      grap.bezierCurveTo(x, y, 160+@.default.x, y-40+@.default.y, xend/2, y+@.opts.lineHeight*1.5)
       y2 = y+@.opts.lineHeight*1.5
       y3 = y2+@.opts.lineHeight*1.5
-      grap.moveTo(320, y2)
-      grap.bezierCurveTo(320, y2, 480, y3+40, 640, y3)
+      grap.moveTo(xend/2, y2)
+      grap.bezierCurveTo(xend/2, y2, 480+@.default.x, y3+40+@.default.y, xend, y3)
     grap.alpha = @.opts.alpha
     @.stage.addChild grap
-    @.app.ticker.add @.loop.bind @
+    # @.app.ticker.add @.loop.bind @
   loop: (detail)->
     return false if not @.default.running
     grap = @.grap

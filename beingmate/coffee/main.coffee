@@ -10,20 +10,20 @@
 # 抽奖流程, 前几页的音符飘动
 # ugc post, 分享设置, 后台抽奖流程
 
-animate = (time)->
-	requestAnimationFrame animate
-	TWEEN.update(time)
-requestAnimationFrame animate
+# animate = (time)->
+# 	requestAnimationFrame animate
+# 	TWEEN.update(time)
+# requestAnimationFrame animate
 
-Tn = (from = {x: 0},to = {x: 100},time = 800,callback)->
-	tempX = from
-	tween = new TWEEN.Tween(tempX)
-	.to(to, time)
-	.easing(TWEEN.Easing.Cubic.Out)
-	.onUpdate =>
-		callback tempX
-	.start()
-	return tween
+# Tn = (from = {x: 0},to = {x: 100},time = 800,callback)->
+# 	tempX = from
+# 	tween = new TWEEN.Tween(tempX)
+# 	.to(to, time)
+# 	.easing(TWEEN.Easing.Cubic.Out)
+# 	.onUpdate =>
+# 		callback tempX
+# 	.start()
+# 	return tween
 
 String.prototype.gblen = -> 
 	len = 0;	
@@ -172,13 +172,14 @@ init = ->
 					@.pageIndex = 0
 			start: (evt)->
 				return false if this.default.animated
+				# evt.preventDefault()
 				this.noteMsg = false
 				touch = if evt.touches? then evt.touches[0] else evt
 				this.default.x = touch[@XY]
 				_public.note = false
 			move: (evt)->
 				return false if this.default.animated or this.poping
-				evt.preventDefault() if not passiveSupported
+				evt.preventDefault()
 				touch = if evt.touches? then evt.touches[0] else evt
 				pageX = touch[@XY]
 				if (pageX - this.default.x) > 50

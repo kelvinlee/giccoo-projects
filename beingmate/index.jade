@@ -47,7 +47,7 @@ block content
         .bg
           img(src="#{url}/img/loading-text.png")
   
-  .main#main(v-show="mounted",style="display: none",@touchstart="start",@touchmove.passive="move",@touchend="end")
+  .main#main(v-show="mounted",style="display: none",@touchstart="start",@touchmove="move",@touchend="end")
     transition(name="page-fade")
       .loading-page(v-show="loading")
         .ball-spin-fade-loader
@@ -128,7 +128,7 @@ block content
           #ugc
         .content
           .ugc(v-if="!wy")
-            img(:src="ugc")
+            //- img(:src="ugc")
             img.ugcsave(:src="ugcSave")
           .btn(v-if="!wy")
             img.ugcsave(:src="ugcSave")
@@ -190,7 +190,7 @@ block js
   script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
   script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
-  script(src="//image.giccoo.com/projects/libs/js/min/Tween.min.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/Tween.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
   script(src="js/main.js?v=2")
   

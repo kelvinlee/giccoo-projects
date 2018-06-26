@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Texture, TextureCache, Tn, UGC, VENDORS, _CDN, _public, _animate, autoDetectRenderer, css3Prefix, e, getId, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIcon, musicIconCD, musicIconCache, musicLineCache, musicScore, neteaseShareImage, options, passiveSupported, resource, resources, sended, sys, ugcCache;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Texture, TextureCache, UGC, VENDORS, _CDN, _public, autoDetectRenderer, css3Prefix, e, getId, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIcon, musicIconCD, musicIconCache, musicLineCache, musicScore, neteaseShareImage, options, passiveSupported, resource, resources, sended, sys, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -249,22 +249,40 @@ musicScore = function () {
     _createClass(musicScore, [{
       key: 'build',
       value: function build() {
-        var grap, k, ref, y, y2, y3;
+        var detail, grap, k, ref, x, xend, y, y2, y3;
+        detail = 1;
         grap = this.grap = new Graphics();
         grap.lineStyle(4, 0xFFFFFF, 1);
+        if (this.default.up) {
+          this.default.x += this.opts.speed * detail;
+          this.default.y += this.opts.speed * detail;
+          if (this.default.x > this.default.max) {
+            this.default.up = false;
+          }
+        } else {
+          this.default.x -= this.opts.speed * detail;
+          this.default.y -= this.opts.speed * detail;
+          if (Math.abs(this.default.x) > this.default.max) {
+            this.default.up = true;
+          }
+        }
+        x = 0 - Math.abs(this.default.x);
+        xend = 640 + Math.abs(this.default.x);
         for (i = k = 0, ref = this.opts.count; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
-          y = 100 + i * this.opts.lineHeight;
-          grap.moveTo(0, y);
-          grap.bezierCurveTo(0, y, 160, y - 40, 320, y + this.opts.lineHeight * 1.5);
+          y = 100 + i * this.opts.lineHeight + this.default.y * 0.5;
+          grap.moveTo(x, y);
+          grap.bezierCurveTo(x, y, 160 + this.default.x, y - 40 + this.default.y, xend / 2, y + this.opts.lineHeight * 1.5);
           y2 = y + this.opts.lineHeight * 1.5;
           y3 = y2 + this.opts.lineHeight * 1.5;
-          grap.moveTo(320, y2);
-          grap.bezierCurveTo(320, y2, 480, y3 + 40, 640, y3);
+          grap.moveTo(xend / 2, y2);
+          grap.bezierCurveTo(xend / 2, y2, 480 + this.default.x, y3 + 40 + this.default.y, xend, y3);
         }
         grap.alpha = this.opts.alpha;
-        this.stage.addChild(grap);
-        return this.app.ticker.add(this.loop.bind(this));
+        return this.stage.addChild(grap);
       }
+
+      // @.app.ticker.add @.loop.bind @
+
     }, {
       key: 'loop',
       value: function loop(detail) {
@@ -575,31 +593,21 @@ musicIconCD = function () {
 
 // 抽奖流程, 前几页的音符飘动
 // ugc post, 分享设置, 后台抽奖流程
-_animate = function animate(time) {
-  requestAnimationFrame(_animate);
-  return TWEEN.update(time);
-};
 
-requestAnimationFrame(_animate);
+// animate = (time)->
+// 	requestAnimationFrame animate
+// 	TWEEN.update(time)
+// requestAnimationFrame animate
 
-Tn = function Tn() {
-  var from = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    x: 0
-  };
-  var to = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
-    x: 100
-  };
-  var time = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 800;
-  var callback = arguments[3];
-
-  var tempX, tween;
-  tempX = from;
-  tween = new TWEEN.Tween(tempX).to(to, time).easing(TWEEN.Easing.Cubic.Out).onUpdate(function () {
-    return callback(tempX);
-  }).start();
-  return tween;
-};
-
+// Tn = (from = {x: 0},to = {x: 100},time = 800,callback)->
+// 	tempX = from
+// 	tween = new TWEEN.Tween(tempX)
+// 	.to(to, time)
+// 	.easing(TWEEN.Easing.Cubic.Out)
+// 	.onUpdate =>
+// 		callback tempX
+// 	.start()
+// 	return tween
 String.prototype.gblen = function () {
   var k, len, ref;
   len = 0;
@@ -795,6 +803,7 @@ init = function init() {
         if (this.default.animated) {
           return false;
         }
+        // evt.preventDefault()
         this.noteMsg = false;
         touch = evt.touches != null ? evt.touches[0] : evt;
         this.default.x = touch[this.XY];
@@ -805,9 +814,7 @@ init = function init() {
         if (this.default.animated || this.poping) {
           return false;
         }
-        if (!passiveSupported) {
-          evt.preventDefault();
-        }
+        evt.preventDefault();
         touch = evt.touches != null ? evt.touches[0] : evt;
         pageX = touch[this.XY];
         if (pageX - this.default.x > 50) {

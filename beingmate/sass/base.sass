@@ -218,7 +218,9 @@ video,canvas,svg
 		+tl(50%)
 		font-size: 0
 		+transform(translate3d(0,-50%,0))
-
+	.ugc
+		+w
+		+h
 	.content
 		+posa
 		+tl
@@ -326,6 +328,8 @@ video,canvas,svg
 					outline: none
 					box-sizing: border-box
 					padding-right: 1rem
+					vertical-align: top
+					+font-size(0.8rem)
 				&:after
 					content: " "
 					+posa
