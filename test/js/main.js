@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Container, Graphics, ParticleContainer, Sprite, Texture, TextureCache, _CDN, animationLine, animationVoice, autoDetectRenderer, getId, getTe, loader, resource, resources, test;
+var Container, Graphics, ParticleContainer, Sprite, Texture, TextureCache, _CDN, animationLine, animationVoice, autoDetectRenderer, getId, getTe, loader, motionPath, resource, resources, test;
 
 animationVoice = function () {
   var animationVoice = function () {
@@ -168,6 +168,159 @@ animationVoice = function () {
   return animationVoice;
 }.call(undefined);
 
+motionPath = function () {
+  var motionPath = function () {
+    function motionPath(arg) {
+      _classCallCheck(this, motionPath);
+
+      this.opts = {
+        el: "main",
+        path: "img/path.png",
+        w: 640,
+        h: 640,
+        count: 100,
+        class: "",
+        fillColor: 0x66CCFF
+      };
+      this.opts = Object.assign(this.opts, arg);
+      // @image = image = new Image()
+      // image.src = @.opts.path
+      // image.onload = @.readPath.bind @
+      this.app = new PIXI.Application({
+        width: this.opts.w,
+        height: this.opts.h,
+        transparent: true,
+        preserveDrawingBuffer: true
+      });
+      if (this.opts.class != null && this.opts.class !== "") {
+        this.app.view.className = this.opts.class;
+      }
+      this.stage = this.app.stage;
+      document.getElementById(this.opts.el).appendChild(this.app.view);
+      PIXI.loader.add([this.opts.path]).load(this.build.bind(this));
+    }
+
+    _createClass(motionPath, [{
+      key: "build",
+      value: function build() {
+        var canvas, ctx, grap, i, image, imageData, j, k, l, path, ref, ref1, ref2, x, y;
+        canvas = document.createElement("canvas");
+        path = new Sprite(resources[this.opts.path].texture);
+        image = path._texture.baseTexture.source;
+        canvas.width = image.width;
+        canvas.height = image.height;
+        ctx = canvas.getContext("2d");
+        ctx.drawImage(image, 0, 0, image.width, image.height);
+        // imageData = ctx.getImageData(0, 0, @.image.width, @.image.height).data
+        for (x = j = 0, ref = image.width; 0 <= ref ? j <= ref : j >= ref; x = 0 <= ref ? ++j : --j) {
+          for (y = k = 0, ref1 = image.height; 0 <= ref1 ? k <= ref1 : k >= ref1; y = 0 <= ref1 ? ++k : --k) {
+            imageData = ctx.getImageData(x, y, 1, 1).data;
+            if (imageData[0] !== 0) {
+              this.path.push({
+                x: x,
+                y: y
+              });
+            }
+          }
+        }
+
+        // # 冒泡排序
+        // paths = []
+        // paths.push @.path[0]
+        // clonePath = @.path.concat()
+        // for i in [1...@.path.length]
+        //   last = paths[paths.length-1]
+        //   start = paths.length
+        //   for j in [0...clonePath.length-1]
+        //     # console.log Math.abs( (clonePath[j].x+clonePath[j].y) - (last.x+last.y) )
+        //     if Math.abs(clonePath[j].x - last.x) <= 3 and Math.abs(clonePath[j].y - last.y) <= 3
+        //     # if Math.abs( (clonePath[j].x+clonePath[j].y) - (last.x+last.y) ) <= 5
+        //       paths.push clonePath[j]
+        //       clonePath.splice j,1
+        //       break
+        // console.log paths
+        // @.path = paths
+        // # 对比排序
+        // @.path.sort (a,b)->
+        //   return a.y - b.y if Math.abs(a.x-b.x) <= 1 and Math.abs(a.y-b.y) <= 1
+        //   return a.x - b.x
+        grap = new Graphics();
+        grap.beginFill(this.opts.fillColor);
+        grap.lineStyle(2, this.opts.fillColor, 1);
+        grap.moveTo(this.path[0].x, this.path[0].y);
+        for (i = l = 1, ref2 = this.path.length; 1 <= ref2 ? l < ref2 : l > ref2; i = 1 <= ref2 ? ++l : --l) {
+          grap.lineTo(this.path[i].x, this.path[i].y);
+        }
+        this.stage.addChild(grap);
+        this.app.renderer.render(this.app.stage);
+        // path = new Sprite resources[@.opts.path].texture
+        // @.stage.addChild path
+        // @.app.renderer.render @.app.stage
+        // pixels = @.app.renderer.plugins.extract.pixels()
+
+        // for i in [0...(640*640)]
+        //   r = pixels[4*i+0]
+        //   g = pixels[4*i+1]
+        //   b = pixels[4*i+2]
+        //   if r isnt 0
+        //     @.path.push {x: i%640,y: Math.floor(i/640)}
+
+        // console.log start
+        // next = true
+        // while next
+        //   n = @.path.length-1
+        //   prev = @.path[n]
+        //   out = false
+        //   for x in [-1..1]
+        //     for y in [-1..1]
+        //       imageData = ctx.getImageData(prev.x+x, prev.y+y, 1, 1).data
+        //       if imageData[0] isnt 0 and prev.x isnt prev.x+x and prev.y isnt prev.y+y
+        //         @.path.push {x: prev.x+x, y: prev.y+y}
+        //         out = true
+        //         break
+        //     break if out
+        //   if n >= (@.path.length - 1) or @.path.length > 2000
+        //     next = false
+        return console.log("end", this.path);
+      }
+
+      // @.path.sort (a,b)->
+      //   return a.x < b.x
+      //   m = a.x+a.y
+      //   n = b.x+b.y
+      //   return not Math.abs(m-n) > 5
+      //   return Math.abs(a.x+a.y-b.x-b.y) > 5
+      // @.writeLine()
+
+    }, {
+      key: "writeLine",
+      value: function writeLine() {
+        var i, j, m, n, ref, results;
+        this.n = 0;
+        results = [];
+        for (i = j = 0, ref = this.path.length - 1; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
+          m = this.path[i].x + this.path[i].y;
+          n = this.path[i + 1].x + this.path[i + 1].y;
+          if (Math.abs(m - n) > 5) {
+            results.push(console.log(i, this.path[i], this.path[i + 1]));
+          } else {
+            results.push(void 0);
+          }
+        }
+        return results;
+      }
+    }]);
+
+    return motionPath;
+  }();
+
+  ;
+
+  motionPath.prototype.path = [];
+
+  return motionPath;
+}.call(undefined);
+
 Container = PIXI.Container;
 
 ParticleContainer = PIXI.ParticleContainer;
@@ -197,6 +350,7 @@ getId = function getId(id, link) {
 };
 
 // @codekit-prepend "../../libs/pixi/voice"
+// @codekit-prepend "../../libs/pixi/motionpath"
 // @codekit-prepend "../../libs/coffee/pixi-base"
 _CDN = "./";
 
@@ -322,8 +476,7 @@ animationLine = function () {
 }.call(undefined);
 
 window.onload = function () {
-  return test = new animationVoice({
-    el: "main",
-    h: 200
+  return test = new motionPath({
+    el: "main"
   });
 };

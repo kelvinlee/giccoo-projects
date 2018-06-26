@@ -1,4 +1,5 @@
 # @codekit-prepend "../../libs/pixi/voice"
+# @codekit-prepend "../../libs/pixi/motionpath"
 # @codekit-prepend "../../libs/coffee/pixi-base"
 _CDN = "./"
 
@@ -86,4 +87,4 @@ class animationLine
     
 
 window.onload = ->
-  test = new animationVoice({el: "main",h: 200})
+  test = new motionPath({el: "main"})

@@ -16,7 +16,7 @@
   <body>
     <div id="main" v-show="mounted" style="display: none" class="main">
       <div class="video-box">
-        <video controls="true" width="640" height="360" :src="videolink" id="videoid" poster="//image.giccoo.com/projects/adidas-originals-i5923/img/poster.jpg" @ended="videoend"></video>
+        <video controls="true" width="640" height="360" :src="videolink" id="videoid" poster="//image.giccoo.com/projects/adidas-originals-i5923/img/poster.jpg" @play="videoplay" @ended="videoend"></video>
       </div>
       <div class="music-list">
         <div class="title"><img src="//image.giccoo.com/projects/adidas-originals-i5923/img/title-1.png"></div>

@@ -1,0 +1,200 @@
+extends ../libs/jade/layout-clean
+
+block title
+  | 最幸运的你，藏在你爱的音乐里
+
+block css
+  meta(name="author",content="m.giccoo.com")
+  //- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+  link(rel="stylesheet",href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css")
+  link(rel="stylesheet",href="css/base.css")
+  //- script.
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+block content
+  - url = "//image.giccoo.com/projects/beingmate";
+  - url = ".";
+  .qrcode#qrcode
+    .qr
+      img(src="#{url}/img/qrcode.png")
+      .text 请使用手机扫描二维码参与活动
+
+  .public#public
+    player(icon="true",src="#{url}/mp3/bgm.mp3")
+    transition(name="page-fade")
+      .note-text(v-show="note")
+        p 温馨提示：为了体验效果更佳<br/>建议打开音乐播放按钮
+        .arrow
+          .item.arrow-1
+            img(src="#{url}/img/arrow-green.png")
+          .item.arrow-2
+            img(src="#{url}/img/arrow-green.png")
+          .item.arrow-3
+            img(src="#{url}/img/arrow-green.png")
+
+  .load#load
+    .loading.fadeIn.animated#loading(v-show="mounted",style="display: none")
+      .load-icon
+        img(src="#{url}/img/loading-icon.png")
+      .load-text
+        span Loading..{{progress}}%
+        .bg
+          img(src="#{url}/img/loading-text.png")
+  
+  .main#main(v-show="mounted",style="display: none",@touchstart="start",@touchmove.passive="move",@touchend="end")
+    transition(name="page-fade")
+      .loading-page(v-show="loading")
+        .ball-spin-fade-loader
+          div
+          div
+          div
+          div
+          div
+          div
+          div
+          div
+
+    transition(name="page-animation")
+      .page.page-home(v-show="pageIndex == 0",:class="{left: pageIndex >= 0}")
+        .bg
+          img(src="#{url}/img/page-1-bg.jpg")
+          #musicIconCD
+        .content
+          .logo
+            img(src="#{url}/img/logo.png")
+          .title
+            img(src="#{url}/img/page-1-title.png")
+          .next
+    transition(name="page-animation")
+      - pageId = 1;
+      .page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+        .bg
+          transition(name="page-fade")
+            .item.bg-1(v-show="animateIndex == 0")
+              img(src="#{url}/img/page-2-1-bg.jpg")
+          transition(name="page-fade")
+            .item.bg-2(v-show="animateIndex == 1")
+              img(src="#{url}/img/page-2-2-bg.jpg")
+          transition(name="page-fade")
+            .item.bg-3(v-show="animateIndex == 2")
+              img(src="#{url}/img/page-2-3-bg.jpg")
+          #lineGB
+          #musicIcon
+        .content
+          .logo
+            img(src="#{url}/img/logo.png")
+          .title-list
+            transition(name="page-fadeflower")
+              .title.title-1(v-show="animateIndex == 0")
+                img(src="#{url}/img/page-2-1-text.png")
+            transition(name="page-fadeflower")
+              .title.title-2(v-show="animateIndex == 1")
+                img(src="#{url}/img/page-2-2-text.png")
+            transition(name="page-fadeflower")
+              .title.title-3(v-show="animateIndex == 2")
+                img(src="#{url}/img/page-2-3-text.png")
+          
+          .next
+    transition(name="page-animation")
+      - pageId = 2;
+      .page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+        .bg
+          img(src="#{url}/img/page-3-bg.jpg")
+          .flower
+            img(src="#{url}/img/page-3-flower.png")
+          #musicIconCD2
+        .content
+          .logo
+            img(src="#{url}/img/logo.png")
+          .title
+            img(src="#{url}/img/page-3-title.png")
+          .msg-box
+            img(src="#{url}/img/page-3-msgbox.png")
+            label.nickname(for="nickname")
+              input#nickname(@focus="focus",@blur="blur",v-model="nickname")
+          .btn(@click="gotobuild")
+            img(src="#{url}/img/btn-build.png")
+
+    transition(name="page-fade")
+      .page.page-build(v-show="pagebuildShow")
+        .bg
+          img(src="#{url}/img/page-build-bg.jpg")
+          #ugc
+        .content
+          .ugc(v-if="!wy")
+            img(:src="ugc")
+            img.ugcsave(:src="ugcSave")
+          .btn(v-if="!wy")
+            img.ugcsave(:src="ugcSave")
+            img(src="#{url}/img/btn-long-save.png")
+          .btn.wy(v-if="wy",@click="share")
+            img(src="#{url}/img/btn-share.png")
+    transition(name="page-fade")
+      .page.page-last(v-show="pagelastShow")
+        .bg
+          img(src="#{url}/img/page-1-bg.jpg")
+        .content
+          .logo
+            img(src="#{url}/img/logo.png")
+          .title
+            img(src="#{url}/img/page-last-title.png")
+          .box.fadeInUp.animated.delay-10
+            img(src="#{url}/img/page-last-box.png")
+            .box-content
+              .lottery(@click="getLottery")
+                img(:src="'#{url}/img/page-last-'+lottery+'.png'")
+              .btn(@click="popmoreinfoShow = true")
+          transition(name="page-fade")
+            .pop.pop-moreinfo(v-show="popmoreinfoShow")
+              .pop-content
+                img(src="#{url}/img/page-last-info.png")
+                .close(@click="popmoreinfoShow = false")
+                  img(src="#{url}/img/icon-close.png")
+          transition(name="page-fade")
+            .pop.pop-lottery(v-show="poplotteryShow")
+              transition(name="page-fade")
+                .pop-content(v-show="!regisiterSuccessShow")
+                  .title
+                    img(src="#{url}/img/page-last-pop-title.png")
+                  .form
+                    form.form
+                      .form-group
+                        label(for="username") 姓名:
+                        input#username(type="text",v-model="form.username")
+                      .form-group
+                        label(for="mobile") 电话:
+                        input(type="text",v-model="form.mobile")
+                      .form-group
+                        label(for="id") 身份证:
+                        input(type="text",v-model="form.id")
+                      .btn-submit(@click="submit")
+                        img(src="#{url}/img/btn-submit.png")
+                  .close(@click="poplotteryShow = false")
+                    img(src="#{url}/img/icon-close.png")
+              transition(name="page-fade")
+                .pop-content(v-show="regisiterSuccessShow")
+                  .title
+                    img(src="#{url}/img/page-last-pop-success.png")
+                  .close(@click="poplotteryShow = false")
+                    img(src="#{url}/img/icon-close.png")
+
+
+block js
+  - url = "/";
+  script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/Tween.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+  script(src="js/main.js?v=2")
+  
+
+
+
+  
