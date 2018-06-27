@@ -108,9 +108,21 @@ window.onload = ->
 			,500
 
 init = ->
+	TrueH = document.documentElement.clientHeight
+	TrueW = document.documentElement.clientWidth
+	# console.log new Date().getTime() - startTime
+	# document.body.style.height = TrueH+"px"
+	# document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
+	TrueW = 640 if TrueW >= 640
+	TrueH = 1138 if TrueH >= 1138
+	smaller = TrueW/640*1138 > TrueH
+	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
+	console.log TrueW/TrueH < 0.52
+
 	main = new Vue
 		el: "#main"
 		data:
+			biger: TrueW/TrueH < 0.52
 			wy: false
 			mounted: false
 			pagebuildShow: false
@@ -193,7 +205,6 @@ init = ->
 				# this = @
 				this.default.animated = false
 			focus: (evt)->
-				console.log @.nickname
 				@.nickname = "" if @.nickname is "刻下你的名字"
 			blur: (evt)->
 				@.nickname = "刻下你的名字" if @.nickname is ""

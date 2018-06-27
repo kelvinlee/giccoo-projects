@@ -47,7 +47,7 @@ block content
         .bg
           img(src="#{url}/img/loading-text.png")
   
-  .main#main(v-show="mounted",style="display: none",@touchstart="start",@touchmove="move",@touchend="end")
+  .main#main(v-show="mounted",:class="{biger: biger}",style="display: none",@touchstart="start",@touchmove="move",@touchend="end")
     transition(name="page-fade")
       .loading-page(v-show="loading")
         .ball-spin-fade-loader

@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <div id="main" v-show="mounted" style="display: none" @touchstart="start" @touchmove="move" @touchend="end" class="main">
+    <div id="main" v-show="mounted" :class="{biger: biger}" style="display: none" @touchstart="start" @touchmove="move" @touchend="end" class="main">
       <transition name="page-fade">
         <div v-show="loading" class="loading-page">
           <div class="ball-spin-fade-loader">
