@@ -266,7 +266,7 @@ init = ->
 							@.form.random = msg.data.random
 							@.lottery = "award"
 
-				,1000
+				,8000
 				neteaseShareImage()
 				
 			faild: ->

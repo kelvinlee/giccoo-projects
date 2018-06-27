@@ -937,7 +937,7 @@ init = function init() {
               return _this5.lottery = "award";
             }
           });
-        }, 1000);
+        }, 8000);
         return neteaseShareImage();
       },
       faild: function faild() {
