@@ -1163,8 +1163,8 @@ UGC = function () {
       value: function get() {
         var ugc;
         ugc = new Sprite(resources[_CDN + "img/page-build-qrcode.png"].texture);
-        ugc.scale.set(750 / 1080, 750 / 1080);
-        ugc.x = 0;
+        ugc.scale.set(800 / 1080, 800 / 1080);
+        ugc.x = -34;
         ugc.y = 1333 - ugc.height - 100;
         this.stage.addChild(ugc);
         this.app.renderer.render(this.app.stage);

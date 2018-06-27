@@ -438,8 +438,8 @@ class UGC
 		return @.app.view.toDataURL()
 	get: ->
 		ugc = new Sprite resources[_CDN+"img/page-build-qrcode.png"].texture
-		ugc.scale.set(750/1080,750/1080)
-		ugc.x = 0
+		ugc.scale.set(800/1080,800/1080)
+		ugc.x = -34
 		ugc.y = 1333 - ugc.height - 100
 		@.stage.addChild ugc
 		@.app.renderer.render @.app.stage
