@@ -134,6 +134,7 @@ init = ->
 				username: ""
 				mobile: ""
 				id: ""
+				random: null
 			default:
 				x: 0
 				animated: false
@@ -226,8 +227,7 @@ init = ->
 				axios.post "//api.giccoo.com/beingmate/update/",@.form
 				.then (msg)=>
 					if msg.data.recode is 200
-						alert "提交成功"
-						@.regisiterSuccessShow = false
+						main.regisiterSuccessShow = true
 					else
 						alert msg.data.reason
 				.catch (e)=>
@@ -259,6 +259,13 @@ init = ->
 				@.shareImageLink = data.info
 				setTimeout =>
 					@.pagelastShow = true
+					axios.get "//api.giccoo.com/beingmate/getaward"
+					.then (msg)=>
+						console.log(msg.data)
+						if msg.data.Time and msg.data.award
+							@.form.random = msg.data.random
+							@.lottery = "award"
+
 				,1000
 				neteaseShareImage()
 				

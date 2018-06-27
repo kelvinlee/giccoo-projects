@@ -746,7 +746,8 @@ init = function init() {
       form: {
         username: "",
         mobile: "",
-        id: ""
+        id: "",
+        random: null
       },
       default: {
         x: 0,
@@ -870,8 +871,6 @@ init = function init() {
         });
       },
       submit: function submit() {
-        var _this4 = this;
-
         if (this.form.username === "") {
           return alert("请输入用户名");
         }
@@ -885,8 +884,7 @@ init = function init() {
 
         return axios.post("//api.giccoo.com/beingmate/update/", this.form).then(function (msg) {
           if (msg.data.recode === 200) {
-            alert("提交成功");
-            return _this4.regisiterSuccessShow = false;
+            return main.regisiterSuccessShow = true;
           } else {
             return alert(msg.data.reason);
           }
@@ -895,7 +893,7 @@ init = function init() {
         });
       },
       share: function share() {
-        var _this5 = this;
+        var _this4 = this;
 
         var data, image;
         image = ugcCache.get();
@@ -912,7 +910,7 @@ init = function init() {
         // @.ugcLoadPageShow = true
         this.loading = true;
         return axios.post(imageurl, data).then(function (msg) {
-          _this5.pushed = true;
+          _this4.pushed = true;
           if (msg.data.recode === 200) {
             return main.success(msg.data);
           } else {
@@ -925,13 +923,20 @@ init = function init() {
         });
       },
       success: function success(data) {
-        var _this6 = this;
+        var _this5 = this;
 
         console.log("post success");
         this.loading = false;
         this.shareImageLink = data.info;
         setTimeout(function () {
-          return _this6.pagelastShow = true;
+          _this5.pagelastShow = true;
+          return axios.get("//api.giccoo.com/beingmate/getaward").then(function (msg) {
+            console.log(msg.data);
+            if (msg.data.Time && msg.data.award) {
+              _this5.form.random = msg.data.random;
+              return _this5.lottery = "award";
+            }
+          });
         }, 1000);
         return neteaseShareImage();
       },
