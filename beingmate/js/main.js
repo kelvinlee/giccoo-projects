@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Texture, TextureCache, UGC, VENDORS, _CDN, _public, autoDetectRenderer, css3Prefix, e, getId, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIcon, musicIconCD, musicIconCache, musicLineCache, musicScore, neteaseShareImage, options, passiveSupported, resource, resources, sended, sys, ugcCache;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, UGC, VENDORS, _CDN, _public, autoDetectRenderer, css3Prefix, e, getId, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIcon, musicIconCD, musicIconCache, musicLineCache, musicScore, neteaseShareImage, options, passiveSupported, resource, resources, sended, sys, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -202,6 +202,8 @@ Graphics = PIXI.Graphics;
 
 resource = PIXI.loader.resources;
 
+Text = PIXI.Text;
+
 getTe = function getTe(id) {
   return resource[id].texture;
 };
@@ -358,6 +360,8 @@ Sprite = PIXI.Sprite;
 Graphics = PIXI.Graphics;
 
 resource = PIXI.loader.resources;
+
+Text = PIXI.Text;
 
 getTe = function getTe(id) {
   return resource[id].texture;
@@ -739,6 +743,8 @@ init = function init() {
   return main = new Vue({
     el: "#main",
     data: {
+      w: TrueW,
+      h: TrueH,
       biger: TrueW / TrueH < 0.52,
       wy: false,
       mounted: false,
@@ -876,7 +882,7 @@ init = function init() {
           id = 1;
         }
         this.loading = true;
-        return ugcCache = new UGC({
+        ugcCache = new UGC({
           id: id,
           callback: function callback() {
             _this3.ugc = ugcCache.getNormal();
@@ -884,6 +890,11 @@ init = function init() {
             return _this3.loading = false;
           }
         });
+        if (!this.wy) {
+          return setTimeout(function () {
+            return _this3.pagelastShow = true;
+          }, 8000);
+        }
       },
       submit: function submit() {
         if (this.form.username === "") {

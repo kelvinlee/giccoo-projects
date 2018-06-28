@@ -122,6 +122,8 @@ init = ->
 	main = new Vue
 		el: "#main"
 		data:
+			w: TrueW
+			h: TrueH
 			biger: TrueW/TrueH < 0.52
 			wy: false
 			mounted: false
@@ -228,6 +230,10 @@ init = ->
 						@.ugcSave = ugcCache.get()
 						@.loading = false
 				})
+				unless @.wy
+					setTimeout =>
+						@.pagelastShow = true
+					,8000
 
 			submit: ->
 				return alert "请输入用户名" if @.form.username is ""
