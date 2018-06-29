@@ -43,7 +43,7 @@ block content
     img.ugcSave(:src="ugcSave",v-if="!wy && ugcBtn")
     transition(name="page-fade")
       .btns(v-show="ugcBtn")
-        .btn
+        a.btn(href="http://sws.smardata.cn")
           img(src="#{url}/img/btn-reg.png")
         .btn(v-if="!wy")
           img(src="#{url}/img/btn-long-share.png")
