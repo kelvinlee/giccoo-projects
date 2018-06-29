@@ -45,6 +45,7 @@ images = [
   _CDN+"img/ugc-5-1.png"
   _CDN+"img/ugc-5-2.png"
   _CDN+"img/ugc-5-3.png"
+  _CDN+"img/ugc-title-1.png"
 ]
 
 lastDate = "2018年4月23日"
@@ -950,6 +951,9 @@ class sulwhasoo
     runUGC5Light()
     ugc5.alpha = 0
     @.page6.addChild ugc5
+
+    @.title = new Sprite getTe _CDN+"img/ugc-title-1.png"
+    @.page6.addChild @.title
 
     @.qrcode = qrcode = new Sprite getTe _CDN+"img/qrcode.png"
     qrcode.y = 1333-qrcode.height
