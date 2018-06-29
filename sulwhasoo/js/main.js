@@ -1233,7 +1233,7 @@ sulwhasoo = function () {
       value: function page6build() {
         var _this14 = this;
 
-        var icon, k, l, m, qrcode, _runUGC2Item, _runUGC3BG, _runUGC4Star, _runUGC5Light, star, ugc1, ugc1BG, ugc1Icons, ugc2, ugc2BG, ugc2Item, ugc3, ugc3BG, ugc3Icons, ugc3Item, ugc4, ugc4BG, ugc4Stars, ugc5, ugc5BG, ugc5Item1, ugc5Item2, ugc5Item3;
+        var FixSize, icon, k, l, m, qrcode, _runUGC2Item, _runUGC3BG, _runUGC4Star, _runUGC5Light, star, ugc1, ugc1BG, ugc1Icons, ugc2, ugc2BG, ugc2Item, ugc3, ugc3BG, ugc3Icons, ugc3Item, ugc4, ugc4BG, ugc4Stars, ugc5, ugc5BG, ugc5Item1, ugc5Item2, ugc5Item3;
         this.Index = 6;
         this.animation = true;
         this.page6 = new Container();
@@ -1256,9 +1256,10 @@ sulwhasoo = function () {
             }, 1000);
           }
         });
+        FixSize = 70;
         this.ugc1 = ugc1 = new Container();
         ugc1BG = new Sprite(getTe(_CDN + "img/ugc-1.png"));
-        ugc1BG.y = (1333 - ugc1BG.height) / 2;
+        ugc1BG.y = (1333 - ugc1BG.height) / 2 + FixSize;
         ugc1.addChild(ugc1BG);
         ugc1.alpha = 1;
         ugc1Icons = [];
@@ -1266,7 +1267,7 @@ sulwhasoo = function () {
           icon = new Sprite(getTe(_CDN + ('img/icon-symbol-' + (i + 1) + '.png')));
           icon.anchor.set(0.5, 0.5);
           icon.x = icon.dx = 750 / 2 + 150 + i % 2 * 30;
-          icon.y = icon.dy = 1333 / 2 + 100 - Math.random() * 100;
+          icon.y = icon.dy = 1333 / 2 + 100 - Math.random() * 100 + FixSize;
           icon.speed = 1 / 3 + Math.random() * 2;
           icon.direction = true;
           icon.alpha = Math.random() * 0.5;
@@ -1277,12 +1278,12 @@ sulwhasoo = function () {
         this.page6.addChild(ugc1);
         this.ugc2 = ugc2 = new Container();
         ugc2BG = new Sprite(getTe(_CDN + "img/ugc-2.png"));
-        ugc2BG.y = (1333 - ugc1BG.height) / 2 + 150;
+        ugc2BG.y = (1333 - ugc1BG.height) / 2 + 150 + FixSize;
         ugc2.addChild(ugc2BG);
         ugc2Item = new Sprite(getTe(_CDN + "img/ugc-2-1.png"));
         ugc2Item.anchor.set(0.5, 1);
         ugc2Item.x = 750 / 2 - 80;
-        ugc2Item.y = 1333 / 2 + 120 + 150;
+        ugc2Item.y = 1333 / 2 + 120 + 150 + FixSize;
         ugc2Item.direction = true;
         ugc2.addChild(ugc2Item);
         ugc2.alpha = 0;
@@ -1296,7 +1297,7 @@ sulwhasoo = function () {
               return TweenLite.to(ugc2Item, 2, {
                 alpha: 1,
                 rotation: 0,
-                y: 1333 / 2 + 120 + 150,
+                y: 1333 / 2 + 120 + 150 + FixSize,
                 onComplete: function onComplete() {
                   return _runUGC2Item();
                 }
@@ -1310,13 +1311,13 @@ sulwhasoo = function () {
         ugc3BG = new Sprite(getTe(_CDN + "img/cd.png"));
         ugc3BG.anchor.set(0.5, 0.5);
         ugc3BG.x = 750 / 2;
-        ugc3BG.y = 1333 / 2;
+        ugc3BG.y = 1333 / 2 + FixSize * 2;
         ugc3BG.scale.set(0.9, 0.9);
         ugc3.addChild(ugc3BG);
         ugc3Item = new Sprite(getTe(_CDN + "img/ugc-3-1.png"));
         ugc3Item.anchor.set(1, 0.5);
         ugc3Item.x = 800;
-        ugc3Item.y = 1333 / 2 - 80;
+        ugc3Item.y = 1333 / 2 - 80 + FixSize * 2;
         ugc3.addChild(ugc3Item);
         ugc3.alpha = 0;
         _runUGC3BG = function runUGC3BG() {
@@ -1347,7 +1348,7 @@ sulwhasoo = function () {
         ugc4BG = new Sprite(getTe(_CDN + "img/ugc-4.png"));
         ugc4BG.anchor.set(0.5, 0.5);
         ugc4BG.x = 750 / 2;
-        ugc4BG.y = 1333 / 2 - 100;
+        ugc4BG.y = 1333 / 2 - 100 + FixSize * 2;
         ugc4.addChild(ugc4BG);
         ugc4Stars = [];
         for (i = m = 0; m < 5; i = ++m) {

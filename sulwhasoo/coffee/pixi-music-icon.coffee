@@ -817,9 +817,10 @@ class sulwhasoo
           main.ugcBtn = true
         ,1000
 
+    FixSize = 70
     @.ugc1 = ugc1 = new Container()
     ugc1BG = new Sprite getTe _CDN+"img/ugc-1.png"
-    ugc1BG.y = (1333 - ugc1BG.height)/2
+    ugc1BG.y = (1333 - ugc1BG.height)/2 + FixSize
     ugc1.addChild ugc1BG
     ugc1.alpha = 1
     ugc1Icons = []
@@ -827,7 +828,7 @@ class sulwhasoo
       icon = new Sprite getTe _CDN+"img/icon-symbol-#{i+1}.png"
       icon.anchor.set(0.5,0.5)
       icon.x = icon.dx = 750/2 + 150 + (i%2 * 30)
-      icon.y = icon.dy = 1333/2 + 100 - Math.random() * 100
+      icon.y = icon.dy = 1333/2 + 100 - Math.random() * 100 + FixSize
       icon.speed = 1/3 + Math.random() * 2
       icon.direction = true
       icon.alpha = Math.random() * 0.5
@@ -838,12 +839,12 @@ class sulwhasoo
 
     @.ugc2 = ugc2 = new Container()
     ugc2BG = new Sprite getTe _CDN+"img/ugc-2.png"
-    ugc2BG.y = (1333 - ugc1BG.height)/2 + 150
+    ugc2BG.y = (1333 - ugc1BG.height)/2 + 150 + FixSize
     ugc2.addChild ugc2BG
     ugc2Item = new Sprite getTe _CDN+"img/ugc-2-1.png"
     ugc2Item.anchor.set(0.5,1)
     ugc2Item.x = 750/2 - 80
-    ugc2Item.y = 1333/2 + 120 + 150
+    ugc2Item.y = 1333/2 + 120 + 150 + FixSize
     ugc2Item.direction = true
     ugc2.addChild ugc2Item
     ugc2.alpha = 0
@@ -857,7 +858,7 @@ class sulwhasoo
           TweenLite.to ugc2Item,2,
             alpha: 1
             rotation: 0
-            y: 1333/2 + 120 + 150
+            y: 1333/2 + 120 + 150 + FixSize
             onComplete: =>
               runUGC2Item()
     runUGC2Item()
@@ -868,13 +869,13 @@ class sulwhasoo
     ugc3BG = new Sprite getTe _CDN+"img/cd.png"
     ugc3BG.anchor.set(0.5,0.5)
     ugc3BG.x = 750/2
-    ugc3BG.y = 1333/2
+    ugc3BG.y = 1333/2 + FixSize*2
     ugc3BG.scale.set(0.9,0.9)
     ugc3.addChild ugc3BG
     ugc3Item = new Sprite getTe _CDN+"img/ugc-3-1.png"
     ugc3Item.anchor.set(1,0.5)
     ugc3Item.x = 800
-    ugc3Item.y = 1333/2 - 80
+    ugc3Item.y = 1333/2 - 80 + FixSize*2
     ugc3.addChild ugc3Item
     ugc3.alpha = 0
     runUGC3BG = =>
@@ -902,7 +903,7 @@ class sulwhasoo
     ugc4BG = new Sprite getTe _CDN+"img/ugc-4.png"
     ugc4BG.anchor.set(0.5,0.5)
     ugc4BG.x = 750/2
-    ugc4BG.y = 1333/2 - 100
+    ugc4BG.y = 1333/2 - 100 + FixSize*2
     ugc4.addChild ugc4BG
     ugc4Stars = []
     for i in [0...5]
