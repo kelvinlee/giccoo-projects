@@ -23,8 +23,30 @@
         </div>
       </transition>
     </div>
-    <div id="main" v-show="mounted" :class="{biger: biger}" style="display: none" class="main">
-      <div id="canvas"></div>
+    <div id="main" v-show="mounted" :class="{biger: biger}" style="display: none" @touchstart="start" @touchmove="move" @touchend="end" class="main">
+      <div id="canvas"></div><img :src="ugcSave" v-if="!wy &amp;&amp; ugcBtn" class="ugcSave">
+      <transition name="page-fade">
+        <div v-show="ugcBtn" class="btns">
+          <div class="btn"><img src="./img/btn-reg.png"></div>
+          <div v-if="!wy" class="btn"><img src="./img/btn-long-share.png"><img :src="ugcSave" class="ugcSave"></div>
+          <div v-if="wy" @click.stop="share" class="btn"><img src="./img/btn-share.png">
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="loading" class="loading-page">
+          <div class="ball-spin-fade-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </transition>
     </div>
     <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>

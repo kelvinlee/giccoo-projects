@@ -98,16 +98,86 @@ init = ->
 			mounted: false
 			ugc: null
 			ugcSave: null
+			loading: false
 			shareImageLink: null
+			ugcBtn: false
+			pushed: false
 			default:
 				x: 0
 				animated: false
-			XY: "pageY"
-		# watch:
+			XY: "pageX"
+			startX: 0
+			startY: 0
+			touching: true
+			touchmoving: false
+		watch:
+			ugcBtn: (o,n)->
+				console.log o,n
+				if o isnt n
+					@.ugcSave = sulwhasooCache.get() if not @.wy
+
 		methods:
-			nextPage: ->
+			selectUGC: (up)->
+				if sulwhasooCache? and sulwhasooCache.Index is 6
+					sulwhasooCache.selectUGC up, =>
+					setTimeout =>
+						@.ugcSave = sulwhasooCache.get() if not @.wy
+					,600
+			
+			start: (evt)->
+				touches = evt.touches
+				@startX=touches[0].clientX
+				@startY=touches[0].clientY
+				@touching = true
+				@touchmoving = 0
+			move: (evt)->
+				return false unless @touching
+				@touchmoving += 1
+				nowX=evt.touches[0].clientX
+				nowY=evt.touches[0].clientY
+				
+				if (nowX-@startX)*(nowX-@startX)>(nowY-@startY)*(nowY-@startY)*2 
+					if nowX-@startX>80&&@pagenow!=0
+						@.selectUGC(true)
+						@.touching = false
+						console.log "uuuu"
+					else if nowX-@startX< -80
+						@.selectUGC(false)
+						@.touching = false
+						console.log "nnnn"
 
+			end: (evt)->
+				return false if @touchmoving <= 2
+				# console.log @pageUpDown,@touching,@touchmoving
+				@touching = false
+				@touchmoving = 0
 
+			share: ->
+				image = sulwhasooCache.get()
+				data = {
+					image: image
+					folder: "sulwhasoo"
+				}
+				return @.faild() unless image?
+				return false if @.loading
+				# @.ugcLoadPageShow = true
+				@.loading = true
+				axios.post imageurl,data
+				.then (msg)=>
+					if msg.data.recode is 200
+						main.success(msg.data)
+					else
+						main.faild()
+				.catch (e)=>
+					# alert e
+					main.faild()
+			success: (data)->
+				console.log "post success"
+				@.loading = false
+				@.shareImageLink = data.info
+				neteaseShareImage()
+			faild: ->
+				@.loading = false
 		mounted: ->
 			if sys is "NeteaseMusic"
 				@.wy = true

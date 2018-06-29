@@ -38,8 +38,32 @@ block content
           .item.arrow-3
             img(src="#{url}/img/arrow-green.png")
 
-  .main#main(v-show="mounted",:class="{biger: biger}",style="display: none")
+  .main#main(v-show="mounted",:class="{biger: biger}",style="display: none",@touchstart="start",@touchmove="move",@touchend="end")
     #canvas
+    img.ugcSave(:src="ugcSave",v-if="!wy && ugcBtn")
+    transition(name="page-fade")
+      .btns(v-show="ugcBtn")
+        .btn
+          img(src="#{url}/img/btn-reg.png")
+        .btn(v-if="!wy")
+          img(src="#{url}/img/btn-long-share.png")
+          img.ugcSave(:src="ugcSave")
+        .btn(v-if="wy",@click.stop="share")
+          img(src="#{url}/img/btn-share.png")
+          //- img.ugcSave(:src="ugcSave")
+    transition(name="page-fade")
+      .loading-page(v-show="loading")
+        .ball-spin-fade-loader
+          div
+          div
+          div
+          div
+          div
+          div
+          div
+          div
+
+
 
 block js
   - url = "/";

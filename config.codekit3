@@ -11181,7 +11181,7 @@
 		"oF": 0,
 		"oS": 1,
 		"sC": 0,
-		"tS": 0
+		"tS": 1
 		},
 	"\/sulwhasoo\/coffee\/pixi-music-icon.coffee": {
 		"ft": 32,
@@ -11230,6 +11230,17 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/sulwhasoo\/img\/btn-long-share.png": {
+		"ft": 32768,
+		"iS": 25103,
+		"oA": 0,
+		"oAP": "\/sulwhasoo\/img\/btn-long-share.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
@@ -11321,6 +11332,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/sulwhasoo\/img\/cloud-4.png": {
+		"ft": 32768,
+		"iS": 124306,
+		"oA": 0,
+		"oAP": "\/sulwhasoo\/img\/cloud-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/sulwhasoo\/img\/icon-loading.png": {
 		"ft": 32768,
 		"iS": 13024,
@@ -11378,7 +11400,7 @@
 		},
 	"\/sulwhasoo\/img\/icon-symbol-3.png": {
 		"ft": 32768,
-		"iS": 3910,
+		"iS": 6197,
 		"oA": 0,
 		"oAP": "\/sulwhasoo\/img\/icon-symbol-3.png",
 		"oF": 0,
@@ -11604,6 +11626,17 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/sulwhasoo\/img\/qrcode.png": {
+		"ft": 32768,
+		"iS": 39992,
+		"oA": 0,
+		"oAP": "\/sulwhasoo\/img\/qrcode.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},

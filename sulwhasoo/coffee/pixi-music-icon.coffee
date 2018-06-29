@@ -29,7 +29,9 @@ images = [
   _CDN+"img/cd.png"
   _CDN+"img/cd-pointer.png"
   _CDN+"img/ball.png"
-  _CDN+"img/bubble.png"
+  _CDN+"img/qrcode.png"
+  _CDN+"img/star-1.png"
+  _CDN+"img/star-2.png"
   _CDN+"img/light-1.png"
   _CDN+"img/light-2.png"
   _CDN+"img/light-3.png"
@@ -49,10 +51,15 @@ lastDate = "2018年4月23日"
 lastTime = "01:19"
 lastName = "《我好想你》"
 shareName = "《喜帖街》"
+
+# 
+
 class sulwhasoo
   list: []
   loadCount: 0
   animation: false
+  Index: 0
+  ugcIndex: 1
   default:
     w: 750
     h: 1333
@@ -89,12 +96,17 @@ class sulwhasoo
   loaded: (name)->
     @.loadCount++
     progress = Math.ceil @.loadCount/images.length*100
+    @.loadText.text = "Loading...#{progress}"
     if progress >= 100
       setTimeout =>
         @.loadEnd()
       ,1000
   # loading page
   build: ->
+    bg = new Graphics()
+    bg.beginFill 0x1e2c3b
+    bg.drawRect 0,0,750,1333
+    @.stage.addChild bg
     @.loading = new Container()
     @.icon = icon = new Sprite getTe _CDN+"img/icon-loading.png"
     icon.anchor.set(0.5,0.5)
@@ -120,12 +132,17 @@ class sulwhasoo
     @._loopLoading = @.loopLoading.bind @
     @.app.ticker.add @._loopLoading
     # @.app.ticker.add @.tween
+    @.loadText = new Text "Loading...0",{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff, align : 'center'}
+    @.loadText.x = 750/2-@.loadText.width/2
+    @.loadText.y = 1100
+    @.loading.addChild @.loadText
     @.opts.callback() if @.opts.callback?
     # @.app.ticker.remove @._loopLoading
     PIXI.loader.add(images).use(@.loaded.bind(@)).load(@.build.bind(@))
     @.animation = true
   # page 1
   page1: ->
+    @.Index = 1
     @.stage.removeChild @.loading
     @.cloud = new Container()
     @.cloud.alpha = 0
@@ -185,7 +202,35 @@ class sulwhasoo
     title.y = 200
     title.alpha = 0
     @.page.addChild title
+    @.bg = bg = new Container()
+    for i in [0...50]
+      star = new Sprite getTe _CDN+"img/star-#{i%2+1}.png"
+      star.x = Math.random()*(750 - star.width)
+      star.y = Math.random()*(1333 - star.height)
+      star.scale.set(0.2,0.2)
+      star.alpha = 0.5 + Math.random()*0.5
+      @.bg.addChild star
+    for i in [0...20]
+      star = new Sprite getTe _CDN+"img/star-#{i%2+1}.png"
+      star.x = Math.random()*(750 - star.width)
+      star.y = Math.random()*(1333 - star.height)
+      star.scale.set(0.3,0.3)
+      star.alpha = 0.5 + Math.random()*0.5
+      @.bg.addChild star
+    @.largeStars = []
+    for i in [0...10]
+      star = new Sprite getTe _CDN+"img/star-#{i%2+1}.png"
+      star.x = Math.random()*(750 - star.width)
+      star.y = Math.random()*(1333 - star.height)
+      size = Math.random()*0.2
+      star.scale.set(0.4+size,0.4+size)
+      star.direction = true
+      star.speed = 0.2 + Math.random() * 0.8
+      star.wait = 1+Math.random()*1
+      @.bg.addChild star
+      @.largeStars.push star
 
+    @.stage.addChild @.bg
     @.stage.addChild @.page
     @.stage.addChild @.page2
     @.stage.addChild @.cloud
@@ -246,6 +291,7 @@ class sulwhasoo
         TweenLite.to point,1,{alpha: 1,delay: 1}
         @.showCloud()
     })
+    @.app.ticker.add @.loopBgStar.bind(@)
   # 产品发光
   productLight: (item)->
     return false unless @.page.visible
@@ -260,8 +306,8 @@ class sulwhasoo
   page1Out: ->
     @.hideCloud()
     # 跳过中间页
-    # @.page2build()
-    @.page6build()
+    @.page2build()
+    # @.page6build()
     TweenLite.to @.page,.7, 
       alpha: 0,
       x: 20,
@@ -272,6 +318,7 @@ class sulwhasoo
   # page 2
   page2build: ->
     # @.page2
+    @.Index = 2
     @.animation = true
     moon = new Sprite getTe _CDN+"img/moon.png"
     moon.anchor.set(0.5,0.01)
@@ -347,6 +394,7 @@ class sulwhasoo
         @.page2.visible = false
   # page 3
   page3build: ->
+    @.Index = 3
     @.animation = true
     @.page3 = new Container()
     @.page3.alpha = 0
@@ -405,8 +453,8 @@ class sulwhasoo
     runCD = ->
       return false unless self.page3.visible
       cd.rotation = 0
-      TweenLite.to cd,4.7,
-        rotation: 1
+      TweenLite.to cd, 6,
+        rotation: Math.PI * 2
         onComplete: =>
           runCD()
     btnRun = ->
@@ -431,6 +479,7 @@ class sulwhasoo
         @.page3.removeChildren()
         @.page3.visible = false
   page4build: ->
+    @.Index = 4
     @.animation = true
     @.page4 = new Container()
     @.page4.alpha = 0
@@ -530,6 +579,7 @@ class sulwhasoo
         @.page4.removeChildren()
         @.page4.visible = false
   page5build: ->
+    @.Index = 5
     @.animation = true
     @.page5 = new Container()
     @.page5.alpha = 0
@@ -666,6 +716,9 @@ class sulwhasoo
     page5ShowStep3 = =>
       return false if iconTimes < 5
       console.log "run"
+      for icon in icons
+        icon.visible = false
+
       TweenLite.to productBG,1,
         alpha: 1
         delay: 0.2
@@ -729,6 +782,7 @@ class sulwhasoo
         @.page5.removeChildren()
         @.page5.visible = false
   page6build: ->
+    @.Index = 6
     @.animation = true
     @.page6 = new Container()
     @.page6.alpha = 0
@@ -748,15 +802,30 @@ class sulwhasoo
       onComplete: =>
         @.showCloud()
         @.animation = false
+        setTimeout ->
+          main.ugcBtn = true
+        ,1000
 
-    ugc1 = new Container()
+    @.ugc1 = ugc1 = new Container()
     ugc1BG = new Sprite getTe _CDN+"img/ugc-1.png"
     ugc1BG.y = (1333 - ugc1BG.height)/2
     ugc1.addChild ugc1BG
-    ugc1.alpha = 0
+    ugc1.alpha = 1
+    ugc1Icons = []
+    for i in [0...3]
+      icon = new Sprite getTe _CDN+"img/icon-symbol-#{i+1}.png"
+      icon.anchor.set(0.5,0.5)
+      icon.x = icon.dx = 750/2 + 150 + (i%2 * 30)
+      icon.y = icon.dy = 1333/2 + 100 - Math.random() * 100
+      icon.speed = 1/3 + Math.random() * 2
+      icon.direction = true
+      icon.alpha = Math.random() * 0.5
+      ugc1.addChild icon
+      ugc1Icons.push icon
+    @.app.ticker.add @.symbolRun.bind(@,ugc1Icons)
     @.page6.addChild ugc1
 
-    ugc2 = new Container()
+    @.ugc2 = ugc2 = new Container()
     ugc2BG = new Sprite getTe _CDN+"img/ugc-2.png"
     ugc2BG.y = (1333 - ugc1BG.height)/2 + 150
     ugc2.addChild ugc2BG
@@ -764,11 +833,27 @@ class sulwhasoo
     ugc2Item.anchor.set(0.5,1)
     ugc2Item.x = 750/2 - 80
     ugc2Item.y = 1333/2 + 120 + 150
+    ugc2Item.direction = true
     ugc2.addChild ugc2Item
     ugc2.alpha = 0
+    runUGC2Item = =>
+      TweenLite.to ugc2Item,0.5,
+        alpha: 0
+        delay: 2
+        onComplete: =>
+          ugc2Item.y = 1333/2
+          ugc2Item.rotation = 0.4
+          TweenLite.to ugc2Item,2,
+            alpha: 1
+            rotation: 0
+            y: 1333/2 + 120 + 150
+            onComplete: =>
+              runUGC2Item()
+    runUGC2Item()
+
     @.page6.addChild ugc2
 
-    ugc3 = new Container()
+    @.ugc3 = ugc3 = new Container()
     ugc3BG = new Sprite getTe _CDN+"img/cd.png"
     ugc3BG.anchor.set(0.5,0.5)
     ugc3BG.x = 750/2
@@ -781,9 +866,28 @@ class sulwhasoo
     ugc3Item.y = 1333/2 - 80
     ugc3.addChild ugc3Item
     ugc3.alpha = 0
-    @.page6.addChild ugc3    
+    runUGC3BG = =>
+      ugc3BG.rotation = 0
+      TweenLite.to ugc3BG,6,
+        rotation: Math.PI * 2
+        onComplete: =>
+          runUGC3BG()
+    runUGC3BG()
+    ugc3Icons = []
+    for i in [0...3]
+      icon = new Sprite getTe _CDN+"img/icon-symbol-#{i+1}.png"
+      icon.anchor.set(0.5,0.5)
+      icon.x = icon.dx = 750/2 - 250 + (i * icon.width/3)
+      icon.y = icon.dy = 1333/2 + 300 - Math.random() * 100
+      icon.speed = 1/3 + Math.random() * 2
+      icon.direction = true
+      icon.alpha = Math.random() * 0.5
+      ugc3.addChild icon
+      ugc3Icons.push icon
+    @.app.ticker.add @.symbolRun.bind(@,ugc3Icons)
+    @.page6.addChild ugc3  
 
-    ugc4 = new Container()
+    @.ugc4 = ugc4 = new Container()
     ugc4BG = new Sprite getTe _CDN+"img/ugc-4.png"
     ugc4BG.anchor.set(0.5,0.5)
     ugc4BG.x = 750/2
@@ -793,26 +897,92 @@ class sulwhasoo
     for i in [0...5]
       star = new Sprite getTe _CDN+"img/ugc-4-1.png"
       star.anchor.set(0.5,0.5)
-      star.x = 800 + star.width * i
-      star.y = -50 - star.height * i
+      star.x = star.dx = 800 + star.width * i
+      star.y = star.dy = -50 - star.height * i
       star.toX = - star.width
       star.toY = 1333/2
       ugc4Stars.push star
       ugc4.addChild star
+    runUGC4Star = =>
+      for i in [0...5]
+        star = ugc4Stars[i]
+        star.x = star.dx
+        star.y = star.dy
+        size = 0.3 + Math.random()*0.5
+        star.scale.set(size,size)
+        TweenLite.to star,1.4,
+          x: star.toX - Math.random()*100
+          y: star.toY + Math.random()*100
+          delay: i*1
+      setTimeout =>
+        runUGC4Star()
+      ,6500
+    runUGC4Star()
     ugc4.alpha = 0
     @.page6.addChild ugc4
 
-    ugc5 = new Container()
+    @.ugc5 = ugc5 = new Container()
     ugc5BG = new Sprite getTe _CDN+"img/ugc-5.png"
     ugc5Item1 = new Sprite getTe _CDN+"img/ugc-5-1.png"
     ugc5Item2 = new Sprite getTe _CDN+"img/ugc-5-2.png"
     ugc5Item3 = new Sprite getTe _CDN+"img/ugc-5-3.png"
+    ugc5Item1.alpha = ugc5Item2.alpha = ugc5Item3.alpha = 0
     ugc5.addChild ugc5Item1,ugc5Item2,ugc5Item3,ugc5BG
+    runUGC5Light = =>
+      TweenLite.to ugc5Item1,1,
+        alpha: 0.4
+        onComplete: =>
+          TweenLite.to ugc5Item1,2, {alpha: 1}
+      TweenLite.to ugc5Item2,1,
+        alpha: 0.4
+        delay: 1
+        onComplete: =>
+          TweenLite.to ugc5Item2,2, {alpha: 1}
+      TweenLite.to ugc5Item3,1,
+        alpha: 0.4
+        delay: 2
+        onComplete: =>
+          TweenLite.to ugc5Item3,2, {alpha: 1}
+      setTimeout =>
+        runUGC5Light()
+      ,5500
+
+    runUGC5Light()
+    ugc5.alpha = 0
     @.page6.addChild ugc5
 
+    @.qrcode = qrcode = new Sprite getTe _CDN+"img/qrcode.png"
+    qrcode.y = 1333-qrcode.height
+    qrcode.visible = false
+    @.page6.addChild qrcode
+
+  selectUGC: (puls = true,callback)->
+    return false unless @.page6? and @.page6.alpha >= 1
+    if puls
+      @.ugcIndex++
+    else
+      @.ugcIndex--
+    if @.ugcIndex > 5
+      @.ugcIndex = 1
+    if @.ugcIndex < 1
+      @.ugcIndex = 5
+    for i in [1..5]
+      item = @["ugc#{i}"]
+      if i is @.ugcIndex
+        TweenLite.to item,0.5, 
+          alpha: 1
+          delay: 0.1
+          onComplete: =>
+            callback()
+      else
+        TweenLite.to item,0.5, {alpha: 0}
 
 
-
+  get: ->
+    @.qrcode.visible = true
+    @.app.renderer.render @.app.stage
+    @.qrcode.visible = false
+    return @.app.view.toDataURL()
   # next page btn
   nextBtn: ->
     btn = new Container()
@@ -828,6 +998,20 @@ class sulwhasoo
     btn.y = (1333 - @.trueh*2)/2 + @.trueh*2 - arrow1.height*3 - 20
     return btn
 
+  symbolRun: (icons,detail)->
+    # return false unless @.ugc1.alpha >= 1
+    for icon in icons
+      icon.y -= icon.speed
+      if icon.direction
+        icon.alpha += 0.01
+        if icon.alpha >= 1
+          icon.direction = false
+      else
+        icon.alpha -= 0.01
+        if icon.alpha <= -0.1
+          icon.direction = true
+          icon.y = icon.dy
+
   hideCloud: ->
     for cloud in @clouds
       TweenLite.to cloud, 1.5, {x: cloud.dex, alpha: 1}
@@ -839,6 +1023,7 @@ class sulwhasoo
         cloud.dx = to = -200
       TweenLite.to cloud, 1.5, {x: to, alpha: 0.6}
   loadEnd: ->
+    _public.note = false
     _tar = @.loading
     _tar.scaleS = 1
     # console.log @.loading.scale = 1.5
@@ -856,6 +1041,14 @@ class sulwhasoo
       onUpdateParams:[_tar]
     })
   
+  loopBgStar: (detail)->
+    for star in @.largeStars
+      if star.direction
+        star.alpha -= 0.06 * star.speed * detail
+        star.direction = !star.direction if star.alpha <= 0
+      else
+        star.alpha += 0.02 * star.speed * detail
+        star.direction = !star.direction if star.alpha >= star.wait
   loopLoading: (detail)->
     return false if not @.default.running
     @.icon.rotation += 0.02 * detail
