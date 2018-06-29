@@ -48,10 +48,12 @@ images = [
   _CDN+"img/ugc-title-1.png"
 ]
 
-lastDate = "2018年4月23日"
-lastTime = "01:19"
-lastName = "《我好想你》"
-shareName = "《喜帖街》"
+# 分享文案, 接口数据
+
+lastDate = null
+lastTime = null
+lastName = null
+shareName = null
 
 # 
 
@@ -307,8 +309,10 @@ class sulwhasoo
   page1Out: ->
     @.hideCloud()
     # 跳过中间页
-    @.page2build()
-    # @.page6build()
+    if main.wy
+      @.page2build()
+    else
+      @.page5build()
     TweenLite.to @.page,.7, 
       alpha: 0,
       x: 20,
@@ -319,6 +323,8 @@ class sulwhasoo
   # page 2
   page2build: ->
     # @.page2
+    unless lastDate?
+      return @.page3build()
     @.Index = 2
     @.animation = true
     moon = new Sprite getTe _CDN+"img/moon.png"
@@ -395,6 +401,8 @@ class sulwhasoo
         @.page2.visible = false
   # page 3
   page3build: ->
+    unless lastName?
+      return @.page4build()
     @.Index = 3
     @.animation = true
     @.page3 = new Container()
@@ -420,7 +428,7 @@ class sulwhasoo
     title.x = 750/2 - titleText.width/2
     title.y = cd.height + 230
     title.addChild titleText
-    name = new Text lastName,{fontFamily : 'Arial', fontSize: 44, fill : 0x2a985d, align : 'center'}
+    name = new Text "《#{lastName}》",{fontFamily : 'Arial', fontSize: 44, fill : 0x2a985d, align : 'center'}
     # name.width = titleText.width
     name.y = 138
     name.x = titleText.width/2 - name.width/2
@@ -480,6 +488,8 @@ class sulwhasoo
         @.page3.removeChildren()
         @.page3.visible = false
   page4build: ->
+    unless shareName?
+      return @.page5build()
     @.Index = 4
     @.animation = true
     @.page4 = new Container()
@@ -498,7 +508,7 @@ class sulwhasoo
     title.y = 630
     title.alpha = 0
     title.addChild titleText
-    name = new Text shareName,{fontFamily : 'Arial', fontSize: 42, fill : 0x2a985d, align : 'left'}
+    name = new Text "《#{shareName}》",{fontFamily : 'Arial', fontSize: 42, fill : 0x2a985d, align : 'left'}
     # name.width = titleText.width
     name.y = 238
     name.x = 58

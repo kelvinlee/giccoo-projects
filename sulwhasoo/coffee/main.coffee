@@ -6,21 +6,7 @@
 # @codekit-prepend "../../libs/vue/vue-player"
 # @codekit-prepend "./pixi-music-icon"
 
-
-# animate = (time)->
-# 	requestAnimationFrame animate
-# 	TWEEN.update(time)
-# requestAnimationFrame animate
-
-# Tn = (from = {x: 0},to = {x: 100},time = 800,callback)->
-# 	tempX = from
-# 	tween = new TWEEN.Tween(tempX)
-# 	.to(to, time)
-# 	.easing(TWEEN.Easing.Cubic.Out)
-# 	.onUpdate =>
-# 		callback tempX
-# 	.start()
-# 	return tween
+axios.defaults.withCredentials = true
 
 String.prototype.gblen = -> 
 	len = 0;	
@@ -42,9 +28,9 @@ sended = [false,false]
 _CDN = "./"
 
 neteaseShareImage = ->
-	title1 = "最幸运的你，藏在你爱的音乐里"
-	picUrl = "https://image.giccoo.com/upload/beingmate/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://m.giccoo.com/beingmate/"
+	title1 = "雪花秀,治愈音乐瓶"
+	picUrl = "https://image.giccoo.com/upload/sulwhasoo/"+main.shareImageLink+"@!large"
+	redirectUrl = "https://m.giccoo.com/sulwhasoo/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 
@@ -59,10 +45,10 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "最幸运的你，藏在你爱的音乐里"
-				desc: "最幸运的你，藏在你爱的音乐里"
-				link: "http://m.giccoo.com/beingmate/"
-				imgUrl: "http://m.giccoo.com/beingmate/img/ico.jpg"
+				title: "雪花秀,治愈音乐瓶"
+				desc: "雪花秀,治愈音乐瓶"
+				link: "http://m.giccoo.com/sulwhasoo/"
+				imgUrl: "http://m.giccoo.com/sulwhasoo/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
@@ -185,4 +171,18 @@ init = ->
 			sulwhasooCache = new sulwhasoo({el: "canvas"})
 			@.mounted = true
 			console.log "mounted"
+
+	# axios.get "//music.163.com/api/activity/sulwhasoo/userInfo?type=1"
+	axios.get "//qa-chip.igame.163.com/api/activity/sulwhasoo/userInfo?type=0"
+	.then (msg)=>
+		d = msg.data
+		# d = {"code":200,"msg":null,"data":{"latestSongName":"Strawberries & Cigarettes","latestTime":1522764106000,"latestShareSongName":"生命是场马拉松","hottestSongName":"Strawberries & Cigarettes","hottestSongArtistName":"Various Artists","hottestSongCount":18,"hottestArtistSong":["Cry On My Shoulder","Here We Are Again","Річка"]}}
+		# console.log d
+		if d.code is 200
+			lastName = d.data.latestSongName if d.data.latestSongName?
+			shareName = d.data.latestShareSongName if d.data.latestShareSongName?
+			if d.data.latestTime?
+				date = new Date(d.data.latestTime)
+				lastDate = "#{date.getFullYear()}年#{date.getMonth()+1}月#{date.getDate()}日"
+				lastTime = "#{date.getHours()}:#{date.getMinutes()}"
 

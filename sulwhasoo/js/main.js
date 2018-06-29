@@ -217,13 +217,14 @@ _CDN = "./";
 
 images = [_CDN + "img/that-girl.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/icon-symbol-1.png", _CDN + "img/icon-symbol-2.png", _CDN + "img/icon-symbol-3.png", _CDN + "img/icon-symbol-4.png", _CDN + "img/icon-symbol-5.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/product.png", _CDN + "img/product-light-1.png", _CDN + "img/product-light-2.png", _CDN + "img/product-bg.jpg", _CDN + "img/product-bg-end.jpg", _CDN + "img/page-1-title.png", _CDN + "img/page-2-title.png", _CDN + "img/page-3-title.png", _CDN + "img/page-4-title.png", _CDN + "img/page-5-title.png", _CDN + "img/page-6-title.png", _CDN + "img/moon.png", _CDN + "img/arrow.png", _CDN + "img/cd.png", _CDN + "img/cd-pointer.png", _CDN + "img/ball.png", _CDN + "img/qrcode.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png", _CDN + "img/light-1.png", _CDN + "img/light-2.png", _CDN + "img/light-3.png", _CDN + "img/ugc-1.png", _CDN + "img/ugc-2.png", _CDN + "img/ugc-2-1.png", _CDN + "img/ugc-3-1.png", _CDN + "img/ugc-4.png", _CDN + "img/ugc-4-1.png", _CDN + "img/ugc-5.png", _CDN + "img/ugc-5-1.png", _CDN + "img/ugc-5-2.png", _CDN + "img/ugc-5-3.png", _CDN + "img/ugc-title-1.png"];
 
-lastDate = "2018年4月23日";
+// 分享文案, 接口数据
+lastDate = null;
 
-lastTime = "01:19";
+lastTime = null;
 
-lastName = "《我好想你》";
+lastName = null;
 
-shareName = "《喜帖街》";
+shareName = null;
 
 sulwhasoo = function () {
   var sulwhasoo = function () {
@@ -565,8 +566,11 @@ sulwhasoo = function () {
 
         this.hideCloud();
         // 跳过中间页
-        this.page2build();
-        // @.page6build()
+        if (main.wy) {
+          this.page2build();
+        } else {
+          this.page5build();
+        }
         return TweenLite.to(this.page, .7, {
           alpha: 0,
           x: 20,
@@ -588,6 +592,9 @@ sulwhasoo = function () {
 
         var btn, _btnRun, date, moon, self, time, title, titleBG;
         // @.page2
+        if (lastDate == null) {
+          return this.page3build();
+        }
         this.Index = 2;
         this.animation = true;
         moon = new Sprite(getTe(_CDN + "img/moon.png"));
@@ -715,6 +722,9 @@ sulwhasoo = function () {
         var _this8 = this;
 
         var btn, _btnRun2, cd, cdPointer, name, _runCD, self, title, titleText;
+        if (lastName == null) {
+          return this.page4build();
+        }
         this.Index = 3;
         this.animation = true;
         this.page3 = new Container();
@@ -737,7 +747,7 @@ sulwhasoo = function () {
         title.x = 750 / 2 - titleText.width / 2;
         title.y = cd.height + 230;
         title.addChild(titleText);
-        name = new Text(lastName, {
+        name = new Text('\u300A' + lastName + '\u300B', {
           fontFamily: 'Arial',
           fontSize: 44,
           fill: 0x2a985d,
@@ -830,6 +840,9 @@ sulwhasoo = function () {
         var _this10 = this;
 
         var ball, btn, _btnRun3, name, _runBall, self, title, titleText;
+        if (shareName == null) {
+          return this.page5build();
+        }
         this.Index = 4;
         this.animation = true;
         this.page4 = new Container();
@@ -846,7 +859,7 @@ sulwhasoo = function () {
         title.y = 630;
         title.alpha = 0;
         title.addChild(titleText);
-        name = new Text(shareName, {
+        name = new Text('\u300A' + shareName + '\u300B', {
           fontFamily: 'Arial',
           fontSize: 42,
           fill: 0x2a985d,
@@ -1685,21 +1698,8 @@ sulwhasoo = function () {
 // @codekit-prepend "../../libs/coffee/IsPC"
 // @codekit-prepend "../../libs/vue/vue-player"
 // @codekit-prepend "./pixi-music-icon"
+axios.defaults.withCredentials = true;
 
-// animate = (time)->
-// 	requestAnimationFrame animate
-// 	TWEEN.update(time)
-// requestAnimationFrame animate
-
-// Tn = (from = {x: 0},to = {x: 100},time = 800,callback)->
-// 	tempX = from
-// 	tween = new TWEEN.Tween(tempX)
-// 	.to(to, time)
-// 	.easing(TWEEN.Easing.Cubic.Out)
-// 	.onUpdate =>
-// 		callback tempX
-// 	.start()
-// 	return tween
 String.prototype.gblen = function () {
   var k, len, ref;
   len = 0;
@@ -1733,9 +1733,9 @@ _CDN = "./";
 
 neteaseShareImage = function neteaseShareImage() {
   var picUrl, redirectUrl, title1;
-  title1 = "最幸运的你，藏在你爱的音乐里";
-  picUrl = "https://image.giccoo.com/upload/beingmate/" + main.shareImageLink + "@!large";
-  redirectUrl = "https://m.giccoo.com/beingmate/";
+  title1 = "雪花秀,治愈音乐瓶";
+  picUrl = "https://image.giccoo.com/upload/sulwhasoo/" + main.shareImageLink + "@!large";
+  redirectUrl = "https://m.giccoo.com/sulwhasoo/";
   // console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
   return window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
 };
@@ -1752,10 +1752,10 @@ window.onload = function () {
     wx.ready(function () {
       var shareContent;
       shareContent = {
-        title: "最幸运的你，藏在你爱的音乐里",
-        desc: "最幸运的你，藏在你爱的音乐里",
-        link: "http://m.giccoo.com/beingmate/",
-        imgUrl: "http://m.giccoo.com/beingmate/img/ico.jpg",
+        title: "雪花秀,治愈音乐瓶",
+        desc: "雪花秀,治愈音乐瓶",
+        link: "http://m.giccoo.com/sulwhasoo/",
+        imgUrl: "http://m.giccoo.com/sulwhasoo/img/ico.jpg",
         success: function success() {},
         // alert "success"
         cancel: function cancel() {}
@@ -1792,7 +1792,7 @@ init = function init() {
   smaller = TrueW / 640 * 1138 > TrueH;
   navH = Math.ceil(TrueW / 640 * 94 / TrueH * 100);
   console.log(TrueW / TrueH < 0.52);
-  return main = new Vue({
+  main = new Vue({
     el: "#main",
     data: {
       biger: TrueW / TrueH < 0.52,
@@ -1919,6 +1919,26 @@ init = function init() {
       });
       this.mounted = true;
       return console.log("mounted");
+    }
+  });
+  // axios.get "//music.163.com/api/activity/sulwhasoo/userInfo?type=1"
+  return axios.get("//qa-chip.igame.163.com/api/activity/sulwhasoo/userInfo?type=0").then(function (msg) {
+    var d, date;
+    d = msg.data;
+    // d = {"code":200,"msg":null,"data":{"latestSongName":"Strawberries & Cigarettes","latestTime":1522764106000,"latestShareSongName":"生命是场马拉松","hottestSongName":"Strawberries & Cigarettes","hottestSongArtistName":"Various Artists","hottestSongCount":18,"hottestArtistSong":["Cry On My Shoulder","Here We Are Again","Річка"]}}
+    // console.log d
+    if (d.code === 200) {
+      if (d.data.latestSongName != null) {
+        lastName = d.data.latestSongName;
+      }
+      if (d.data.latestShareSongName != null) {
+        shareName = d.data.latestShareSongName;
+      }
+      if (d.data.latestTime != null) {
+        date = new Date(d.data.latestTime);
+        lastDate = date.getFullYear() + '\u5E74' + (date.getMonth() + 1) + '\u6708' + date.getDate() + '\u65E5';
+        return lastTime = date.getHours() + ':' + date.getMinutes();
+      }
     }
   });
 };
