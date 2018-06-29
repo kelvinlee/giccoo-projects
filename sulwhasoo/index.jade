@@ -1,0 +1,56 @@
+extends ../libs/jade/layout-clean
+
+block title
+  | 最幸运的你，藏在你爱的音乐里
+
+block css
+  meta(name="author",content="m.giccoo.com")
+  //- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+  link(rel="stylesheet",href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css")
+  link(rel="stylesheet",href="css/base.css")
+  //- script.
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+block content
+  - url = "//image.giccoo.com/projects/beingmate";
+  - url = ".";
+  .qrcode#qrcode
+    .qr
+      img(src="#{url}/img/qrcode.png")
+      .text 请使用手机扫描二维码参与活动
+
+  .public#public
+    player(icon="true",src="#{url}/mp3/bgm.mp3")
+    transition(name="page-fade")
+      .note-text(v-show="note")
+        p 温馨提示：为了体验效果更佳<br/>建议打开音乐播放按钮
+        //- .arrow
+          .item.arrow-1
+            img(src="#{url}/img/arrow-green.png")
+          .item.arrow-2
+            img(src="#{url}/img/arrow-green.png")
+          .item.arrow-3
+            img(src="#{url}/img/arrow-green.png")
+
+  .main#main(v-show="mounted",:class="{biger: biger}",style="display: none")
+    #canvas
+
+block js
+  - url = "/";
+  script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+  script(src="js/main.js?v=2")
+  
+
+
+
+  

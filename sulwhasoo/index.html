@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>最幸运的你，藏在你爱的音乐里</title>
+    <meta name="author" content="m.giccoo.com">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="css/base.css">
+  </head>
+  <body>
+    <div id="qrcode" class="qrcode">
+      <div class="qr"><img src="./img/qrcode.png">
+        <div class="text">请使用手机扫描二维码参与活动</div>
+      </div>
+    </div>
+    <div id="public" class="public">
+      <player icon="true" src="./mp3/bgm.mp3"></player>
+      <transition name="page-fade">
+        <div v-show="note" class="note-text">
+          <p>温馨提示：为了体验效果更佳<br/>建议打开音乐播放按钮</p>
+        </div>
+      </transition>
+    </div>
+    <div id="main" v-show="mounted" :class="{biger: biger}" style="display: none" class="main">
+      <div id="canvas"></div>
+    </div>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/pixi.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
+    <script src="js/main.js?v=2"></script>
+  </body>
+</html>

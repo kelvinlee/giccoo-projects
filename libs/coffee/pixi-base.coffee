@@ -8,6 +8,7 @@ Texture = PIXI.Texture
 Sprite = PIXI.Sprite
 Graphics = PIXI.Graphics
 resource = PIXI.loader.resources
+Text = PIXI.Text
 
 getTe = (id)->
   return resource[id].texture

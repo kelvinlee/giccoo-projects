@@ -6,7 +6,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Container, Graphics, IsPC, ParticleContainer, Sprite, Texture, TextureCache, Tn, UGC, _CDN, _imgurl, _animate, autoDetectRenderer, cdn, _citys, cloud, _dealers, dog, e, getId, getRandom, getTe, global, imageurl, init, j, len, load, loadWechatConfig, loader, main, neteaseShareImage, options, p, passiveSupported, pre, provinces, rain, randomSort, resource, resources, smallJsonText, stars, startTime, sys;
+var Container, Graphics, IsPC, ParticleContainer, Sprite, Text, Texture, TextureCache, Tn, UGC, _CDN, _imgurl, _animate, autoDetectRenderer, cdn, _citys, cloud, _dealers, dog, e, getId, getRandom, getTe, global, imageurl, init, j, len, load, loadWechatConfig, loader, main, neteaseShareImage, options, p, passiveSupported, pre, provinces, rain, randomSort, resource, resources, smallJsonText, stars, startTime, sys;
 
 randomSort = function randomSort(obj) {
   var newArr, oldarr, _randomSortFun;
@@ -120,6 +120,8 @@ Sprite = PIXI.Sprite;
 Graphics = PIXI.Graphics;
 
 resource = PIXI.loader.resources;
+
+Text = PIXI.Text;
 
 getTe = function getTe(id) {
   return resource[id].texture;
