@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, VENDORS, _CDN, _public, autoDetectRenderer, css3Prefix, e, getId, getTe, i, images, imageurl, init, j, lastDate, lastName, lastTime, len1, loadWechatConfig, loader, loading, mTestElement, main, neteaseShareImage, options, passiveSupported, resource, resources, sended, shareName, sulwhasoo, sulwhasooCache, sys, ugcCache;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, UGCTITLE, VENDORS, _CDN, _public, autoDetectRenderer, css3Prefix, e, getId, getTe, i, images, imageurl, init, j, lastDate, lastName, lastTime, len1, loadWechatConfig, loader, loading, mTestElement, main, neteaseShareImage, options, passiveSupported, resource, resources, sended, shareName, sulwhasoo, sulwhasooCache, sys, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -215,7 +215,9 @@ getId = function getId(id, link) {
 // @codekit-prepend "../../libs/coffee/pixi-base"
 _CDN = "./";
 
-images = [_CDN + "img/that-girl.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/icon-symbol-1.png", _CDN + "img/icon-symbol-2.png", _CDN + "img/icon-symbol-3.png", _CDN + "img/icon-symbol-4.png", _CDN + "img/icon-symbol-5.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/product.png", _CDN + "img/product-light-1.png", _CDN + "img/product-light-2.png", _CDN + "img/product-bg.jpg", _CDN + "img/product-bg-end.jpg", _CDN + "img/page-1-title.png", _CDN + "img/page-2-title.png", _CDN + "img/page-3-title.png", _CDN + "img/page-4-title.png", _CDN + "img/page-5-title.png", _CDN + "img/page-6-title.png", _CDN + "img/moon.png", _CDN + "img/arrow.png", _CDN + "img/cd.png", _CDN + "img/cd-pointer.png", _CDN + "img/ball.png", _CDN + "img/qrcode.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png", _CDN + "img/light-1.png", _CDN + "img/light-2.png", _CDN + "img/light-3.png", _CDN + "img/ugc-1.png", _CDN + "img/ugc-2.png", _CDN + "img/ugc-2-1.png", _CDN + "img/ugc-3-1.png", _CDN + "img/ugc-4.png", _CDN + "img/ugc-4-1.png", _CDN + "img/ugc-5.png", _CDN + "img/ugc-5-1.png", _CDN + "img/ugc-5-2.png", _CDN + "img/ugc-5-3.png", _CDN + "img/ugc-title-1.png"];
+UGCTITLE = parseInt(Math.random() * 5 + 1);
+
+images = [_CDN + "img/that-girl.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/icon-symbol-1.png", _CDN + "img/icon-symbol-2.png", _CDN + "img/icon-symbol-3.png", _CDN + "img/icon-symbol-4.png", _CDN + "img/icon-symbol-5.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/product.png", _CDN + "img/product-light-1.png", _CDN + "img/product-light-2.png", _CDN + "img/product-bg.jpg", _CDN + "img/product-bg-end.jpg", _CDN + "img/page-1-title.png", _CDN + "img/page-1-title-null.png", _CDN + "img/page-2-title-null.png", _CDN + "img/page-2-title.png", _CDN + "img/page-3-title-null.png", _CDN + "img/page-3-title.png", _CDN + "img/page-4-title.png", _CDN + "img/page-4-title-null.png", _CDN + "img/page-5-title.png", _CDN + "img/page-6-title.png", _CDN + "img/moon.png", _CDN + "img/arrow.png", _CDN + "img/cd.png", _CDN + "img/cd-pointer.png", _CDN + "img/ball.png", _CDN + "img/qrcode.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png", _CDN + "img/light-1.png", _CDN + "img/light-2.png", _CDN + "img/light-3.png", _CDN + "img/ugc-1.png", _CDN + "img/ugc-2.png", _CDN + "img/ugc-2-1.png", _CDN + "img/ugc-3-1.png", _CDN + "img/ugc-4.png", _CDN + "img/ugc-4-1.png", _CDN + "img/ugc-4-2.png", _CDN + "img/ugc-5.png", _CDN + "img/ugc-5-1.png", _CDN + "img/ugc-5-2.png", _CDN + "img/ugc-5-3.png", _CDN + ('img/ugc-title-' + UGCTITLE + '.png')];
 
 // 分享文案, 接口数据
 lastDate = null;
@@ -266,17 +268,59 @@ sulwhasoo = function () {
     _createClass(sulwhasoo, [{
       key: 'loaded',
       value: function loaded(name) {
+        this.loadCount++;
+        this.maxProgress = Math.ceil(this.loadCount / images.length * 100);
+        if (!this.starLoad) {
+          this.starLoad = true;
+          return this.loadProgress();
+        }
+      }
+    }, {
+      key: 'loadEnd',
+      value: function loadEnd() {
         var _this = this;
 
-        var progress;
-        this.loadCount++;
-        progress = Math.ceil(this.loadCount / images.length * 100);
-        this.loadText.text = 'Loading...' + progress;
-        if (progress >= 100) {
-          return setTimeout(function () {
-            return _this.loadEnd();
-          }, 1000);
-        }
+        var _tar;
+        _public.note = false;
+        _tar = this.loading;
+        _tar.scaleS = 1;
+        // console.log @.loading.scale = 1.5
+        return TweenLite.to(_tar, 1.5, {
+          scaleS: 2,
+          onUpdate: function onUpdate(res) {
+
+            // console.log res.scaleS
+            res.scale.set(res.scaleS, res.scaleS);
+            _tar.x = -(750 / 2 * (res.scaleS - 1));
+            _tar.y = -(1333 / 2 * (res.scaleS - 1));
+            return _tar.alpha = 2 - res.scaleS;
+          },
+          onComplete: function onComplete() {
+            _this.app.ticker.remove(_this._loopLoading);
+            return _this.page1();
+          },
+          onUpdateParams: [_tar]
+        });
+      }
+    }, {
+      key: 'loadProgress',
+      value: function loadProgress() {
+        var _this2 = this;
+
+        var timein;
+        return timein = setInterval(function () {
+          _this2.progress += 3;
+          if (_this2.progress >= _this2.maxProgress) {
+            _this2.progress = _this2.maxProgress;
+          }
+          _this2.loadText.text = 'Loading...' + _this2.progress;
+          if (_this2.progress >= 100) {
+            clearInterval(timein);
+            return setTimeout(function () {
+              return _this2.loadEnd();
+            }, 1000);
+          }
+        }, 1000 / 10);
       }
 
       // loading page
@@ -335,7 +379,7 @@ sulwhasoo = function () {
     }, {
       key: 'page1',
       value: function page1() {
-        var _this2 = this;
+        var _this3 = this;
 
         var bg, cloud, k, l, m, p, point, product, productBorder, size, star, title, woman, xylist;
         this.Index = 1;
@@ -389,25 +433,33 @@ sulwhasoo = function () {
         productBorder = new Sprite(getTe(_CDN + "img/product-border.png"));
         productBorder.scale.set(0.7, 0.7);
         productBorder.x = 420;
-        productBorder.y = 760;
+        productBorder.y = 760 - 1;
         productBorder.alpha = 0;
         this.page.addChild(productBorder);
         product = new Sprite(getTe(_CDN + "img/product-item.png"));
         product.scale.set(0.7, 0.7);
         product.x = 420;
-        product.y = 760;
+        product.y = 760 - 1;
         product.alpha = 0;
         product.buttonMode = true;
         product.interactive = true;
         product.touchstart = product.click = function () {
-          console.log("click product", _this2.animation);
-          if (_this2.animation) {
+          console.log("click product", _this3.animation);
+          if (_this3.animation) {
             return false;
           }
-          return _this2.page1Out();
+          if (!main.wy) {
+            return window.location.href = "https://m.music.163.com/m/applink/?scheme=orpheus%3A%2F%2Fopenurl%3Furl%3Dhttps%3A%2F%2Factivity.music.163.com%2Flancome%2F%26thirdfrom%3Dwx";
+          }
+          return _this3.page1Out();
         };
         this.page.addChild(product);
-        title = new Sprite(getTe(_CDN + "img/page-1-title.png"));
+        // title = new Sprite getTe _CDN+"img/page-1-title.png"
+        if (!main.wy) {
+          title = new Sprite(getTe(_CDN + "img/page-1-title-null.png"));
+        } else {
+          title = new Sprite(getTe(_CDN + "img/page-1-title.png"));
+        }
         title.y = 200;
         title.alpha = 0;
         this.page.addChild(title);
@@ -448,14 +500,14 @@ sulwhasoo = function () {
         TweenLite.to(this.cloud, .5, {
           alpha: 1,
           onComplete: function onComplete() {
-            TweenLite.to(_this2.page, 2.5, {
+            TweenLite.to(_this3.page, 2.5, {
               x: 0,
               y: 0,
               alpha: 1,
               ease: Cubic.linear,
               onComplete: function onComplete() {
                 var time;
-                _this2.app.ticker.add(_this2.loopCloud.bind(_this2));
+                _this3.app.ticker.add(_this3.loopCloud.bind(_this3));
                 time = 0.5;
                 TweenLite.to(point, time, {
                   x: 475,
@@ -496,23 +548,19 @@ sulwhasoo = function () {
                             });
                             return TweenLite.to(point, time, {
                               y: 800,
+                              alpha: 0,
                               ease: Circ.easeIn,
                               onComplete: function onComplete() {
-                                return TweenLite.to(point, time, {
-                                  alpha: 0,
+                                _this3.animation = false;
+                                TweenLite.to(product, time * 3, {
+                                  alpha: 1,
                                   onComplete: function onComplete() {
-                                    _this2.animation = false;
-                                    TweenLite.to(product, time * 3, {
-                                      alpha: 1,
-                                      onComplete: function onComplete() {
-                                        return _this2.productLight(productBorder);
-                                      }
-                                    });
-                                    return TweenLite.to(title, time * 3, {
-                                      alpha: 1,
-                                      y: 1333 / 2 - title.height / 2 - 120
-                                    });
+                                    return _this3.productLight(productBorder);
                                   }
+                                });
+                                return TweenLite.to(title, time * 3, {
+                                  alpha: 1,
+                                  y: 1333 / 2 - title.height / 2 - 120
                                 });
                               }
                             });
@@ -528,7 +576,7 @@ sulwhasoo = function () {
               alpha: 1,
               delay: 1
             });
-            return _this2.showCloud();
+            return _this3.showCloud();
           }
         });
         return this.app.ticker.add(this.loopBgStar.bind(this));
@@ -539,7 +587,7 @@ sulwhasoo = function () {
     }, {
       key: 'productLight',
       value: function productLight(item) {
-        var _this3 = this;
+        var _this4 = this;
 
         if (!this.page.visible) {
           return false;
@@ -550,7 +598,7 @@ sulwhasoo = function () {
             return TweenLite.to(item, .6, {
               alpha: 1,
               onComplete: function onComplete() {
-                return _this3.productLight(item);
+                return _this4.productLight(item);
               }
             });
           }
@@ -562,15 +610,11 @@ sulwhasoo = function () {
     }, {
       key: 'page1Out',
       value: function page1Out() {
-        var _this4 = this;
+        var _this5 = this;
 
         this.hideCloud();
         // 跳过中间页
-        if (main.wy) {
-          this.page2build();
-        } else {
-          this.page5build();
-        }
+        this.page2build();
         return TweenLite.to(this.page, .7, {
           alpha: 0,
           x: 20,
@@ -578,7 +622,7 @@ sulwhasoo = function () {
           onComplete: function onComplete() {
 
             // @.page.removeChildren()
-            return _this4.page.visible = false;
+            return _this5.page.visible = false;
           }
         });
       }
@@ -588,13 +632,12 @@ sulwhasoo = function () {
     }, {
       key: 'page2build',
       value: function page2build() {
-        var _this5 = this;
+        var _this6 = this;
 
         var btn, _btnRun, date, moon, self, time, title, titleBG;
         // @.page2
-        if (lastDate == null) {
-          return this.page3build();
-        }
+        // unless lastDate?
+        //   return @.page3build()
         this.Index = 2;
         this.animation = true;
         moon = new Sprite(getTe(_CDN + "img/moon.png"));
@@ -604,49 +647,53 @@ sulwhasoo = function () {
         this.page2.addChild(moon);
         title = new Container();
         title.alpha = 0;
-        titleBG = new Sprite(getTe(_CDN + "img/page-2-title.png"));
-        title.addChild(titleBG);
+        if (lastDate == null) {
+          titleBG = new Sprite(getTe(_CDN + "img/page-2-title-null.png"));
+        } else {
+          titleBG = new Sprite(getTe(_CDN + "img/page-2-title.png"));
+          date = new Text(lastDate, {
+            fontFamily: 'Arial',
+            fontSize: 44,
+            fill: 0x2a985d,
+            align: 'left'
+          });
+          date.y = 142;
+          time = new Text(lastTime, {
+            fontFamily: 'Arial',
+            fontSize: 44,
+            fill: 0x2a985d,
+            align: 'left'
+          });
+          time.y = 195;
+          title.addChild(time);
+          title.addChild(date);
+        }
         title.x = 190;
         title.y = 750;
-        date = new Text(lastDate, {
-          fontFamily: 'Arial',
-          fontSize: 44,
-          fill: 0x2a985d,
-          align: 'left'
-        });
-        date.y = 142;
-        time = new Text(lastTime, {
-          fontFamily: 'Arial',
-          fontSize: 44,
-          fill: 0x2a985d,
-          align: 'left'
-        });
-        time.y = 195;
-        title.addChild(time);
-        title.addChild(date);
+        title.addChild(titleBG);
         this.page2.addChild(title);
         btn = this.nextBtn();
         this.page2.addChild(btn);
         this.page2.buttonMode = true;
         this.page2.interactive = true;
         this.page2.touchstart = this.page2.click = function (data) {
-          if (_this5.animation) {
+          if (_this6.animation) {
             return false;
           }
-          return _this5.page2Out();
+          return _this6.page2Out();
         };
-        TweenLite.to(this.page2, 1.2, {
+        TweenLite.to(this.page2, this.cloudTime, {
           x: 0,
           y: 0,
           alpha: 1,
           delay: .7,
           onComplete: function onComplete() {
-            _this5.showCloud();
-            _this5.moonswing(moon);
+            _this6.showCloud();
+            _this6.moonswing(moon);
             TweenLite.to(title, 1.6, {
               alpha: 1
             });
-            _this5.animation = false;
+            _this6.animation = false;
             return _btnRun();
           }
         });
@@ -674,7 +721,7 @@ sulwhasoo = function () {
     }, {
       key: 'moonswing',
       value: function moonswing(moon) {
-        var _this6 = this;
+        var _this7 = this;
 
         if (!this.page2.visible) {
           // moon.rotation
@@ -686,7 +733,7 @@ sulwhasoo = function () {
             return TweenLite.to(moon, 1.5, {
               rotation: -0.005,
               onComplete: function onComplete() {
-                return _this6.moonswing(moon);
+                return _this7.moonswing(moon);
               }
             });
           }
@@ -698,7 +745,7 @@ sulwhasoo = function () {
     }, {
       key: 'page2Out',
       value: function page2Out() {
-        var _this7 = this;
+        var _this8 = this;
 
         this.hideCloud();
         // 跳过中间页
@@ -708,8 +755,8 @@ sulwhasoo = function () {
           x: 20,
           y: 20,
           onComplete: function onComplete() {
-            _this7.page2.removeChildren();
-            return _this7.page2.visible = false;
+            _this8.page2.removeChildren();
+            return _this8.page2.visible = false;
           }
         });
       }
@@ -719,12 +766,11 @@ sulwhasoo = function () {
     }, {
       key: 'page3build',
       value: function page3build() {
-        var _this8 = this;
+        var _this9 = this;
 
         var btn, _btnRun2, cd, cdPointer, name, _runCD, self, title, titleText;
-        if (lastName == null) {
-          return this.page4build();
-        }
+        // unless lastName?
+        //   return @.page4build()
         this.Index = 3;
         this.animation = true;
         this.page3 = new Container();
@@ -743,20 +789,24 @@ sulwhasoo = function () {
         cdPointer.rotation = 0.7;
         this.page3.addChild(cdPointer);
         title = new Container();
-        titleText = new Sprite(getTe(_CDN + "img/page-3-title.png"));
+        if (lastName == null) {
+          titleText = new Sprite(getTe(_CDN + "img/page-3-title-null.png"));
+        } else {
+          titleText = new Sprite(getTe(_CDN + "img/page-3-title.png"));
+          name = new Text('\u300A' + lastName + '\u300B', {
+            fontFamily: 'Arial',
+            fontSize: 44,
+            fill: 0x2a985d,
+            align: 'center'
+          });
+          // name.width = titleText.width
+          name.y = 138;
+          name.x = titleText.width / 2 - name.width / 2;
+          title.addChild(name);
+        }
         title.x = 750 / 2 - titleText.width / 2;
         title.y = cd.height + 230;
         title.addChild(titleText);
-        name = new Text('\u300A' + lastName + '\u300B', {
-          fontFamily: 'Arial',
-          fontSize: 44,
-          fill: 0x2a985d,
-          align: 'center'
-        });
-        // name.width = titleText.width
-        name.y = 138;
-        name.x = titleText.width / 2 - name.width / 2;
-        title.addChild(name);
         this.page3.addChild(title);
         btn = this.nextBtn();
         this.page3.addChild(btn);
@@ -764,20 +814,20 @@ sulwhasoo = function () {
         this.page3.buttonMode = true;
         this.page3.interactive = true;
         this.page3.touchstart = this.page3.click = function (data) {
-          if (_this8.animation) {
+          if (_this9.animation) {
             return false;
           }
-          return _this8.page3Out();
+          return _this9.page3Out();
         };
-        TweenLite.to(this.page3, 1.2, {
+        TweenLite.to(this.page3, this.cloudTime, {
           x: 0,
           y: 0,
           alpha: 1,
           delay: .7,
           onComplete: function onComplete() {
-            _this8.showCloud();
+            _this9.showCloud();
             _btnRun2();
-            _this8.animation = false;
+            _this9.animation = false;
             return TweenLite.to(cdPointer, 1.7, {
               rotation: 0,
               onComplete: function onComplete() {
@@ -819,7 +869,7 @@ sulwhasoo = function () {
     }, {
       key: 'page3Out',
       value: function page3Out() {
-        var _this9 = this;
+        var _this10 = this;
 
         this.hideCloud();
         // 跳过中间页
@@ -829,20 +879,19 @@ sulwhasoo = function () {
           x: 20,
           y: 20,
           onComplete: function onComplete() {
-            _this9.page3.removeChildren();
-            return _this9.page3.visible = false;
+            _this10.page3.removeChildren();
+            return _this10.page3.visible = false;
           }
         });
       }
     }, {
       key: 'page4build',
       value: function page4build() {
-        var _this10 = this;
+        var _this11 = this;
 
         var ball, btn, _btnRun3, name, _runBall, self, title, titleText;
-        if (shareName == null) {
-          return this.page5build();
-        }
+        // unless shareName?
+        //   return @.page5build()
         this.Index = 4;
         this.animation = true;
         this.page4 = new Container();
@@ -854,21 +903,25 @@ sulwhasoo = function () {
         ball.y = 700;
         this.page4.addChild(ball);
         title = new Container();
-        titleText = new Sprite(getTe(_CDN + "img/page-4-title.png"));
+        if (shareName == null) {
+          titleText = new Sprite(getTe(_CDN + "img/page-4-title-null.png"));
+        } else {
+          titleText = new Sprite(getTe(_CDN + "img/page-4-title.png"));
+          name = new Text('\u300A' + shareName + '\u300B', {
+            fontFamily: 'Arial',
+            fontSize: 42,
+            fill: 0x2a985d,
+            align: 'left'
+          });
+          // name.width = titleText.width
+          name.y = 238;
+          name.x = 58;
+          title.addChild(name);
+        }
         title.x = 30;
         title.y = 630;
         title.alpha = 0;
         title.addChild(titleText);
-        name = new Text('\u300A' + shareName + '\u300B', {
-          fontFamily: 'Arial',
-          fontSize: 42,
-          fill: 0x2a985d,
-          align: 'left'
-        });
-        // name.width = titleText.width
-        name.y = 238;
-        name.x = 58;
-        title.addChild(name);
         this.page4.addChild(title);
         btn = this.nextBtn();
         this.page4.addChild(btn);
@@ -877,20 +930,20 @@ sulwhasoo = function () {
         this.page4.interactive = true;
         this.page4.touchstart = this.page4.click = function (data) {
           console.log("page 4");
-          if (_this10.animation) {
+          if (_this11.animation) {
             return false;
           }
-          return _this10.page4Out();
+          return _this11.page4Out();
         };
-        TweenLite.to(this.page4, 1.2, {
+        TweenLite.to(this.page4, this.cloudTime, {
           x: 0,
           y: 0,
           alpha: 1,
           delay: .7,
           onComplete: function onComplete() {
-            _this10.showCloud();
+            _this11.showCloud();
             _btnRun3();
-            _this10.animation = false;
+            _this11.animation = false;
             TweenLite.to(title, 0.7, {
               alpha: 1,
               delay: 2.7
@@ -954,7 +1007,7 @@ sulwhasoo = function () {
     }, {
       key: 'page4Out',
       value: function page4Out() {
-        var _this11 = this;
+        var _this12 = this;
 
         this.hideCloud();
         // 跳过中间页
@@ -964,15 +1017,15 @@ sulwhasoo = function () {
           x: 20,
           y: 20,
           onComplete: function onComplete() {
-            _this11.page4.removeChildren();
-            return _this11.page4.visible = false;
+            _this12.page4.removeChildren();
+            return _this12.page4.visible = false;
           }
         });
       }
     }, {
       key: 'page5build',
       value: function page5build() {
-        var _this12 = this;
+        var _this13 = this;
 
         var icon, iconTimes, icons, k, light1, light2, light3, lightL, lightS, page5ShowStep1, page5ShowStep2, page5ShowStep3, product, productBG, productBGEnd, _runSLlight, scaleX, self, title, titleLarge;
         this.Index = 5;
@@ -989,14 +1042,14 @@ sulwhasoo = function () {
         // @.page5.touchstart = @.page5.click = (data)=>
         //   return false if @.animation
         //   @.page5Out()
-        TweenLite.to(this.page5, 1.2, {
+        TweenLite.to(this.page5, this.cloudTime, {
           x: 0,
           y: 0,
           alpha: 1,
           delay: .7,
           onComplete: function onComplete() {
-            _this12.showCloud();
-            _this12.animation = false;
+            _this13.showCloud();
+            _this13.animation = false;
             return page5ShowStep1();
           }
         });
@@ -1011,8 +1064,8 @@ sulwhasoo = function () {
         for (i = k = 0; k < 5; i = ++k) {
           icon = new Sprite(getTe(_CDN + ('img/icon-symbol-' + (i + 1) + '.png')));
           icon.anchor.set(0.5, 0.5);
-          icon.x = 750 / 2 - 80 + 160 / 5 * i;
-          icon.y = -10 - 50 * i % 3;
+          icon.x = 750 / 2 + 20 + 50 + i % 2 * -100;
+          icon.y = -100 * (i + 1);
           icons.push(icon);
           this.page5.addChild(icon);
         }
@@ -1075,7 +1128,7 @@ sulwhasoo = function () {
             y: 1333 / 2,
             onComplete: function onComplete() {
               var cloud, l, len2, ref;
-              ref = _this12.clouds;
+              ref = _this13.clouds;
               for (l = 0, len2 = ref.length; l < len2; l++) {
                 cloud = ref[l];
                 TweenLite.to(cloud, 0.5, {
@@ -1096,13 +1149,13 @@ sulwhasoo = function () {
         };
         page5ShowStep2 = function page5ShowStep2() {
           _runSLlight();
-          TweenLite.to(lightL, 0.5, {
+          TweenLite.to(lightL, 1.2, {
             alpha: 1,
-            delay: 0.4
+            delay: 1.7
           });
-          TweenLite.to(lightS, 0.5, {
+          TweenLite.to(lightS, 1.2, {
             alpha: 1,
-            delay: 0.4
+            delay: 1.7
           });
           return TweenLite.to(product, 0.7, {
             alpha: 1,
@@ -1111,13 +1164,17 @@ sulwhasoo = function () {
               results = [];
               for (i = l = 0; l < 5; i = ++l) {
                 icon = icons[i];
-                results.push(TweenLite.to(icon, 3 + Math.random() * (0.2 * (i + 1)), {
-                  y: 1333 / 2,
-                  delay: i % 3 * 0.2,
+                icon.y = -(100 * (i + 1));
+                TweenLite.to(icon, 3, {
+                  y: 1333 / 2 - 40,
                   onComplete: function onComplete() {
                     iconTimes++;
                     return page5ShowStep3();
                   }
+                });
+                results.push(TweenLite.to(icon, 0.7, {
+                  alpha: 0,
+                  delay: 2.3
                 }));
               }
               return results;
@@ -1170,7 +1227,7 @@ sulwhasoo = function () {
                 alpha: 1,
                 onComplete: function onComplete() {
                   return setTimeout(function () {
-                    return _this12.page5Out();
+                    return _this13.page5Out();
                   }, 2000);
                 }
               });
@@ -1214,7 +1271,7 @@ sulwhasoo = function () {
     }, {
       key: 'page5Out',
       value: function page5Out() {
-        var _this13 = this;
+        var _this14 = this;
 
         this.hideCloud();
         this.page6build();
@@ -1223,17 +1280,17 @@ sulwhasoo = function () {
           x: 20,
           y: 20,
           onComplete: function onComplete() {
-            _this13.page5.removeChildren();
-            return _this13.page5.visible = false;
+            _this14.page5.removeChildren();
+            return _this14.page5.visible = false;
           }
         });
       }
     }, {
       key: 'page6build',
       value: function page6build() {
-        var _this14 = this;
+        var _this15 = this;
 
-        var FixSize, icon, k, l, m, qrcode, _runUGC2Item, _runUGC3BG, _runUGC4Star, _runUGC5Light, star, ugc1, ugc1BG, ugc1Icons, ugc2, ugc2BG, ugc2Item, ugc3, ugc3BG, ugc3Icons, ugc3Item, ugc4, ugc4BG, ugc4Stars, ugc5, ugc5BG, ugc5Item1, ugc5Item2, ugc5Item3;
+        var FixSize, icon, k, l, m, qrcode, _runUGC1BG, _runUGC2Item, _runUGC3BG, _runUGC4BG, _runUGC4Star, _runUGC5Light, star, ugc1, ugc1BG, ugc1Icons, ugc2, ugc2BG, ugc2Item, ugc3, ugc3BG, ugc3Icons, ugc3Item, ugc4, ugc4BG, ugc4BG2, ugc4Stars, ugc5, ugc5BG, ugc5Item1, ugc5Item2, ugc5Item3;
         this.Index = 6;
         this.animation = true;
         this.page6 = new Container();
@@ -1243,14 +1300,16 @@ sulwhasoo = function () {
         // btn = @.nextBtn()
         // @.page6.addChild btn
         this.stage.addChildAt(this.page6, 2);
-        TweenLite.to(this.page6, 1.2, {
+        setTimeout(function () {
+          return _this15.showCloud();
+        }, 1700);
+        TweenLite.to(this.page6, this.cloudTime, {
           x: 0,
           y: 0,
           alpha: 1,
-          delay: .7,
+          delay: 1.7,
           onComplete: function onComplete() {
-            _this14.showCloud();
-            _this14.animation = false;
+            _this15.animation = false;
             return setTimeout(function () {
               return main.ugcBtn = true;
             }, 1000);
@@ -1259,14 +1318,17 @@ sulwhasoo = function () {
         FixSize = 70;
         this.ugc1 = ugc1 = new Container();
         ugc1BG = new Sprite(getTe(_CDN + "img/ugc-1.png"));
-        ugc1BG.y = (1333 - ugc1BG.height) / 2 + FixSize;
+        ugc1BG.anchor.set(0.5, 0.5);
+        ugc1BG.x = 750 / 2;
+        ugc1BG.y = 1333 / 2 + FixSize;
+        ugc1BG.rotation = 0;
         ugc1.addChild(ugc1BG);
         ugc1.alpha = 1;
         ugc1Icons = [];
         for (i = k = 0; k < 3; i = ++k) {
           icon = new Sprite(getTe(_CDN + ('img/icon-symbol-' + (i + 1) + '.png')));
           icon.anchor.set(0.5, 0.5);
-          icon.x = icon.dx = 750 / 2 + 150 + i % 2 * 30;
+          icon.x = icon.dx = 750 / 2 + 150 + i % 2 * icon.width / (i % 2 + 1);
           icon.y = icon.dy = 1333 / 2 + 100 - Math.random() * 100 + FixSize;
           icon.speed = 1 / 3 + Math.random() * 2;
           icon.direction = true;
@@ -1274,6 +1336,20 @@ sulwhasoo = function () {
           ugc1.addChild(icon);
           ugc1Icons.push(icon);
         }
+        _runUGC1BG = function runUGC1BG() {
+          return TweenLite.to(ugc1BG, 4, {
+            rotation: 0.05,
+            onComplete: function onComplete() {
+              return TweenLite.to(ugc1BG, 4, {
+                rotation: -0.05,
+                onComplete: function onComplete() {
+                  return _runUGC1BG();
+                }
+              });
+            }
+          });
+        };
+        _runUGC1BG();
         this.app.ticker.add(this.symbolRun.bind(this, ugc1Icons));
         this.page6.addChild(ugc1);
         this.ugc2 = ugc2 = new Container();
@@ -1293,13 +1369,22 @@ sulwhasoo = function () {
             delay: 2,
             onComplete: function onComplete() {
               ugc2Item.y = 1333 / 2;
+              ugc2Item.x = 750 / 2 - 80;
               ugc2Item.rotation = 0.4;
-              return TweenLite.to(ugc2Item, 2, {
+              return TweenLite.to(ugc2Item, 1.5, {
                 alpha: 1,
-                rotation: 0,
-                y: 1333 / 2 + 120 + 150 + FixSize,
+                x: 750 / 2,
+                rotation: -0.2,
+                y: 1333 / 2 + 120 + FixSize,
                 onComplete: function onComplete() {
-                  return _runUGC2Item();
+                  return TweenLite.to(ugc2Item, 1.5, {
+                    x: 750 / 2 - 80,
+                    rotation: 0,
+                    y: 1333 / 2 + 120 + 150 + FixSize,
+                    onComplete: function onComplete() {
+                      return _runUGC2Item();
+                    }
+                  });
                 }
               });
             }
@@ -1349,7 +1434,11 @@ sulwhasoo = function () {
         ugc4BG.anchor.set(0.5, 0.5);
         ugc4BG.x = 750 / 2;
         ugc4BG.y = 1333 / 2 - 100 + FixSize * 2;
-        ugc4.addChild(ugc4BG);
+        ugc4BG2 = new Sprite(getTe(_CDN + "img/ugc-4-2.png"));
+        ugc4BG2.anchor.set(0.5, 0.5);
+        ugc4BG2.x = 750 / 2;
+        ugc4BG2.y = 1333 / 2 - 100 + FixSize * 2;
+        ugc4.addChild(ugc4BG, ugc4BG2);
         ugc4Stars = [];
         for (i = m = 0; m < 5; i = ++m) {
           star = new Sprite(getTe(_CDN + "img/ugc-4-1.png"));
@@ -1363,23 +1452,46 @@ sulwhasoo = function () {
         }
         _runUGC4Star = function runUGC4Star() {
           var p, size;
-          for (i = p = 0; p < 5; i = ++p) {
+          for (i = p = 0; p < 3; i = ++p) {
             star = ugc4Stars[i];
             star.x = star.dx;
             star.y = star.dy;
+            star.alpha = 1;
             size = 0.3 + Math.random() * 0.5;
             star.scale.set(size, size);
             TweenLite.to(star, 1.4, {
               x: star.toX - Math.random() * 100,
               y: star.toY + Math.random() * 100,
+              rotation: Math.PI * 4,
+              alpha: 0,
               delay: i * 1
             });
           }
+          // TweenLite.to star,0.4, {alpha: 0, delay: i*1+1-0.2}
           return setTimeout(function () {
             return _runUGC4Star();
           }, 6500);
         };
         _runUGC4Star();
+        _runUGC4BG = function runUGC4BG() {
+          return TweenLite.to(ugc4BG2, 2, {
+            x: 750 / 2 + 10,
+            onComplete: function onComplete() {
+              return TweenLite.to(ugc4BG2, 2, {
+                x: 750 / 2 - 10,
+                onComplete: function onComplete() {
+                  return TweenLite.to(ugc4BG2, 1, {
+                    x: 750 / 2,
+                    onComplete: function onComplete() {
+                      return _runUGC4BG();
+                    }
+                  });
+                }
+              });
+            }
+          });
+        };
+        _runUGC4BG();
         ugc4.alpha = 0;
         this.page6.addChild(ugc4);
         this.ugc5 = ugc5 = new Container();
@@ -1423,7 +1535,7 @@ sulwhasoo = function () {
         _runUGC5Light();
         ugc5.alpha = 0;
         this.page6.addChild(ugc5);
-        this.title = new Sprite(getTe(_CDN + "img/ugc-title-1.png"));
+        this.title = new Sprite(getTe(_CDN + ('img/ugc-title-' + UGCTITLE + '.png')));
         this.page6.addChild(this.title);
         this.qrcode = qrcode = new Sprite(getTe(_CDN + "img/qrcode.png"));
         qrcode.y = 1333 - qrcode.height;
@@ -1529,14 +1641,14 @@ sulwhasoo = function () {
     }, {
       key: 'hideCloud',
       value: function hideCloud() {
-        var cloud, k, len2, ref, results;
-        ref = this.clouds;
+        var cloud, k, ref, results;
         results = [];
-        for (k = 0, len2 = ref.length; k < len2; k++) {
-          cloud = ref[k];
-          results.push(TweenLite.to(cloud, 1.5, {
+        for (i = k = 0, ref = this.clouds.length; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
+          cloud = this.clouds[i];
+          results.push(TweenLite.to(cloud, 2.5, {
             x: cloud.dex,
-            alpha: 1
+            alpha: 1,
+            delay: i * 0.1
           }));
         }
         return results;
@@ -1544,49 +1656,22 @@ sulwhasoo = function () {
     }, {
       key: 'showCloud',
       value: function showCloud() {
-        var cloud, k, len2, ref, results, to;
-        ref = this.clouds;
+        var cloud, k, ref, results, to;
         results = [];
-        for (k = 0, len2 = ref.length; k < len2; k++) {
-          cloud = ref[k];
+        for (i = k = 0, ref = this.clouds.length; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
+          cloud = this.clouds[i];
           if (cloud.x > 750 / 2) {
             cloud.dx = to = 950;
           } else {
             cloud.dx = to = -200;
           }
-          results.push(TweenLite.to(cloud, 1.5, {
+          results.push(TweenLite.to(cloud, 2.5, {
             x: to,
-            alpha: 0.6
+            alpha: 0.6,
+            delay: i * 0.1
           }));
         }
         return results;
-      }
-    }, {
-      key: 'loadEnd',
-      value: function loadEnd() {
-        var _this15 = this;
-
-        var _tar;
-        _public.note = false;
-        _tar = this.loading;
-        _tar.scaleS = 1;
-        // console.log @.loading.scale = 1.5
-        return TweenLite.to(_tar, .5, {
-          scaleS: 2,
-          onUpdate: function onUpdate(res) {
-
-            // console.log res.scaleS
-            res.scale.set(res.scaleS, res.scaleS);
-            _tar.x = -(750 / 2 * (res.scaleS - 1));
-            _tar.y = -(1333 / 2 * (res.scaleS - 1));
-            return _tar.alpha = 2 - res.scaleS;
-          },
-          onComplete: function onComplete() {
-            _this15.app.ticker.remove(_this15._loopLoading);
-            return _this15.page1();
-          },
-          onUpdateParams: [_tar]
-        });
       }
     }, {
       key: 'loopBgStar',
@@ -1682,6 +1767,14 @@ sulwhasoo = function () {
   sulwhasoo.prototype.Index = 0;
 
   sulwhasoo.prototype.ugcIndex = 1;
+
+  sulwhasoo.prototype.progress = 0;
+
+  sulwhasoo.prototype.maxProgress = 0;
+
+  sulwhasoo.prototype.starLoad = false;
+
+  sulwhasoo.prototype.cloudTime = 1.2;
 
   sulwhasoo.prototype.default = {
     w: 750,
@@ -1922,8 +2015,8 @@ init = function init() {
       return console.log("mounted");
     }
   });
-  // axios.get "//music.163.com/api/activity/sulwhasoo/userInfo?type=1"
-  return axios.get("//qa-chip.igame.163.com/api/activity/sulwhasoo/userInfo?type=0").then(function (msg) {
+  // axios.get "//qa-chip.igame.163.com/api/activity/sulwhasoo/userInfo?type=0"
+  return axios.get("//music.163.com/api/activity/sulwhasoo/userInfo?type=1").then(function (msg) {
     var d, date;
     d = msg.data;
     // d = {"code":200,"msg":null,"data":{"latestSongName":"Strawberries & Cigarettes","latestTime":1522764106000,"latestShareSongName":"生命是场马拉松","hottestSongName":"Strawberries & Cigarettes","hottestSongArtistName":"Various Artists","hottestSongCount":18,"hottestArtistSong":["Cry On My Shoulder","Here We Are Again","Річка"]}}

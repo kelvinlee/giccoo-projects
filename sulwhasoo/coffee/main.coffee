@@ -172,8 +172,8 @@ init = ->
 			@.mounted = true
 			console.log "mounted"
 
-	# axios.get "//music.163.com/api/activity/sulwhasoo/userInfo?type=1"
-	axios.get "//qa-chip.igame.163.com/api/activity/sulwhasoo/userInfo?type=0"
+	axios.get "//music.163.com/api/activity/sulwhasoo/userInfo?type=1"
+	# axios.get "//qa-chip.igame.163.com/api/activity/sulwhasoo/userInfo?type=0"
 	.then (msg)=>
 		d = msg.data
 		# d = {"code":200,"msg":null,"data":{"latestSongName":"Strawberries & Cigarettes","latestTime":1522764106000,"latestShareSongName":"生命是场马拉松","hottestSongName":"Strawberries & Cigarettes","hottestSongArtistName":"Various Artists","hottestSongCount":18,"hottestArtistSong":["Cry On My Shoulder","Here We Are Again","Річка"]}}

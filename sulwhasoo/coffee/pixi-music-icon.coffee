@@ -1,5 +1,6 @@
 # @codekit-prepend "../../libs/coffee/pixi-base"
 _CDN = "./"
+UGCTITLE = parseInt Math.random()*5+1
 images = [
   _CDN+"img/that-girl.png"
   _CDN+"img/cloud-1.png"
@@ -19,9 +20,13 @@ images = [
   _CDN+"img/product-bg.jpg"
   _CDN+"img/product-bg-end.jpg"
   _CDN+"img/page-1-title.png"
+  _CDN+"img/page-1-title-null.png"
+  _CDN+"img/page-2-title-null.png"
   _CDN+"img/page-2-title.png"
+  _CDN+"img/page-3-title-null.png"
   _CDN+"img/page-3-title.png"
   _CDN+"img/page-4-title.png"
+  _CDN+"img/page-4-title-null.png"
   _CDN+"img/page-5-title.png"
   _CDN+"img/page-6-title.png"
   _CDN+"img/moon.png"
@@ -41,11 +46,12 @@ images = [
   _CDN+"img/ugc-3-1.png"
   _CDN+"img/ugc-4.png"
   _CDN+"img/ugc-4-1.png"
+  _CDN+"img/ugc-4-2.png"
   _CDN+"img/ugc-5.png"
   _CDN+"img/ugc-5-1.png"
   _CDN+"img/ugc-5-2.png"
   _CDN+"img/ugc-5-3.png"
-  _CDN+"img/ugc-title-1.png"
+  _CDN+"img/ugc-title-#{UGCTITLE}.png"
 ]
 
 # 分享文案, 接口数据
@@ -54,7 +60,6 @@ lastDate = null
 lastTime = null
 lastName = null
 shareName = null
-
 # 
 
 class sulwhasoo
@@ -63,6 +68,10 @@ class sulwhasoo
   animation: false
   Index: 0
   ugcIndex: 1
+  progress: 0
+  maxProgress: 0
+  starLoad: false
+  cloudTime: 1.2
   default:
     w: 750
     h: 1333
@@ -98,12 +107,42 @@ class sulwhasoo
     ]).load(@.build.bind(@))
   loaded: (name)->
     @.loadCount++
-    progress = Math.ceil @.loadCount/images.length*100
-    @.loadText.text = "Loading...#{progress}"
-    if progress >= 100
-      setTimeout =>
-        @.loadEnd()
-      ,1000
+    @.maxProgress = Math.ceil @.loadCount/images.length*100
+    unless @.starLoad
+      @.starLoad = true
+      @.loadProgress()
+  loadEnd: ->
+    _public.note = false
+    _tar = @.loading
+    _tar.scaleS = 1
+    # console.log @.loading.scale = 1.5
+    TweenLite.to(_tar,1.5,{
+      scaleS: 2,
+      onUpdate: (res)=> 
+        # console.log res.scaleS
+        res.scale.set(res.scaleS,res.scaleS)
+        _tar.x = - (750/2 * (res.scaleS-1))
+        _tar.y = - (1333/2 * (res.scaleS-1))
+        _tar.alpha = 2 - res.scaleS
+      onComplete: =>
+        @.app.ticker.remove @._loopLoading
+        @.page1()
+      onUpdateParams:[_tar]
+    })
+  
+  loadProgress: ->
+    timein = setInterval =>
+      @.progress += 3
+      @.progress = @.maxProgress if @.progress >= @.maxProgress
+      @.loadText.text = "Loading...#{@.progress}"
+      if @.progress >= 100
+        clearInterval timein
+        setTimeout =>
+          @.loadEnd()
+        ,1000
+    ,1000/10
+    
+    
   # loading page
   build: ->
     bg = new Graphics()
@@ -186,22 +225,28 @@ class sulwhasoo
     productBorder = new Sprite getTe _CDN+"img/product-border.png"
     productBorder.scale.set(0.7,0.7)
     productBorder.x = 420
-    productBorder.y = 760
+    productBorder.y = 760 - 1
     productBorder.alpha = 0
     @.page.addChild productBorder
     product = new Sprite getTe _CDN+"img/product-item.png"
     product.scale.set(0.7,0.7)
     product.x = 420
-    product.y = 760
+    product.y = 760 - 1
     product.alpha = 0
     product.buttonMode = true
     product.interactive = true
     product.touchstart = product.click = ()=>
       console.log "click product",@.animation
       return false if @.animation
+      unless main.wy
+        return window.location.href = "https://m.music.163.com/m/applink/?scheme=orpheus%3A%2F%2Fopenurl%3Furl%3Dhttps%3A%2F%2Factivity.music.163.com%2Flancome%2F%26thirdfrom%3Dwx"
       @.page1Out()
     @.page.addChild product
-    title = new Sprite getTe _CDN+"img/page-1-title.png"
+    # title = new Sprite getTe _CDN+"img/page-1-title.png"
+    unless main.wy
+      title = new Sprite getTe _CDN+"img/page-1-title-null.png"
+    else
+      title = new Sprite getTe _CDN+"img/page-1-title.png"
     title.y = 200
     title.alpha = 0
     @.page.addChild title
@@ -274,23 +319,21 @@ class sulwhasoo
                   ease: Circ.easeIn, 
                   onComplete: =>
                     TweenLite.to point,time, 
-                      y: 900, 
+                      y: 900,
                       ease: Circ.easeOut, 
                       onComplete: =>
                         TweenLite.to productBorder,time*3, {alpha: 0.8}
                         TweenLite.to point,time, 
                           y: 800, 
+                          alpha: 0,
                           ease: Circ.easeIn,
                           onComplete: =>
-                            TweenLite.to point,time,
-                              alpha: 0,
-                              onComplete: =>
-                                @.animation = false
-                                TweenLite.to product,time*3, 
-                                  alpha: 1, 
-                                  onComplete: => 
-                                    @.productLight(productBorder)
-                                TweenLite.to title,time*3, {alpha: 1,y: 1333/2 - title.height/2 - 120}
+                            @.animation = false
+                            TweenLite.to product,time*3, 
+                              alpha: 1, 
+                              onComplete: => 
+                                @.productLight(productBorder)
+                            TweenLite.to title,time*3, {alpha: 1,y: 1333/2 - title.height/2 - 120}
         TweenLite.to point,1,{alpha: 1,delay: 1}
         @.showCloud()
     })
@@ -309,11 +352,8 @@ class sulwhasoo
   page1Out: ->
     @.hideCloud()
     # 跳过中间页
-    if main.wy
-      @.page2build()
-    else
-      @.page5build()
-    TweenLite.to @.page,.7, 
+    @.page2build()
+    TweenLite.to @.page,.7,
       alpha: 0,
       x: 20,
       y: 20,
@@ -323,8 +363,8 @@ class sulwhasoo
   # page 2
   page2build: ->
     # @.page2
-    unless lastDate?
-      return @.page3build()
+    # unless lastDate?
+    #   return @.page3build()
     @.Index = 2
     @.animation = true
     moon = new Sprite getTe _CDN+"img/moon.png"
@@ -334,16 +374,20 @@ class sulwhasoo
     @.page2.addChild moon
     title = new Container()
     title.alpha = 0
-    titleBG = new Sprite getTe _CDN+"img/page-2-title.png"
-    title.addChild titleBG
+    unless lastDate?
+      titleBG = new Sprite getTe _CDN+"img/page-2-title-null.png"
+    else
+      titleBG = new Sprite getTe _CDN+"img/page-2-title.png"
+      date = new Text lastDate,{fontFamily : 'Arial', fontSize: 44, fill : 0x2a985d, align : 'left'}
+      date.y = 142
+      time = new Text lastTime,{fontFamily : 'Arial', fontSize: 44, fill : 0x2a985d, align : 'left'}
+      time.y = 195
+      title.addChild time
+      title.addChild date
     title.x = 190
     title.y = 750
-    date = new Text lastDate,{fontFamily : 'Arial', fontSize: 44, fill : 0x2a985d, align : 'left'}
-    date.y = 142
-    time = new Text lastTime,{fontFamily : 'Arial', fontSize: 44, fill : 0x2a985d, align : 'left'}
-    time.y = 195
-    title.addChild time
-    title.addChild date
+    title.addChild titleBG
+    
     @.page2.addChild title
     btn = @.nextBtn()
     @.page2.addChild btn
@@ -353,7 +397,8 @@ class sulwhasoo
       return false if @.animation
       @.page2Out()
 
-    TweenLite.to @.page2,1.2,
+
+    TweenLite.to @.page2,@.cloudTime,
       x: 0
       y: 0
       alpha: 1,
@@ -401,8 +446,8 @@ class sulwhasoo
         @.page2.visible = false
   # page 3
   page3build: ->
-    unless lastName?
-      return @.page4build()
+    # unless lastName?
+    #   return @.page4build()
     @.Index = 3
     @.animation = true
     @.page3 = new Container()
@@ -424,15 +469,18 @@ class sulwhasoo
     @.page3.addChild cdPointer
 
     title = new Container()
-    titleText= new Sprite getTe _CDN+"img/page-3-title.png"
+    unless lastName?
+      titleText= new Sprite getTe _CDN+"img/page-3-title-null.png"
+    else
+      titleText= new Sprite getTe _CDN+"img/page-3-title.png"
+      name = new Text "《#{lastName}》",{fontFamily : 'Arial', fontSize: 44, fill : 0x2a985d, align : 'center'}
+      # name.width = titleText.width
+      name.y = 138
+      name.x = titleText.width/2 - name.width/2
+      title.addChild name
     title.x = 750/2 - titleText.width/2
     title.y = cd.height + 230
     title.addChild titleText
-    name = new Text "《#{lastName}》",{fontFamily : 'Arial', fontSize: 44, fill : 0x2a985d, align : 'center'}
-    # name.width = titleText.width
-    name.y = 138
-    name.x = titleText.width/2 - name.width/2
-    title.addChild name
     @.page3.addChild title
 
     btn = @.nextBtn()
@@ -445,7 +493,7 @@ class sulwhasoo
       return false if @.animation
       @.page3Out()
 
-    TweenLite.to @.page3,1.2,
+    TweenLite.to @.page3,@.cloudTime,
       x: 0
       y: 0
       alpha: 1,
@@ -488,8 +536,8 @@ class sulwhasoo
         @.page3.removeChildren()
         @.page3.visible = false
   page4build: ->
-    unless shareName?
-      return @.page5build()
+    # unless shareName?
+    #   return @.page5build()
     @.Index = 4
     @.animation = true
     @.page4 = new Container()
@@ -503,16 +551,19 @@ class sulwhasoo
     @.page4.addChild ball
 
     title = new Container()
-    titleText= new Sprite getTe _CDN+"img/page-4-title.png"
+    unless shareName?
+      titleText= new Sprite getTe _CDN+"img/page-4-title-null.png"
+    else
+      titleText= new Sprite getTe _CDN+"img/page-4-title.png"
+      name = new Text "《#{shareName}》",{fontFamily : 'Arial', fontSize: 42, fill : 0x2a985d, align : 'left'}
+      # name.width = titleText.width
+      name.y = 238
+      name.x = 58
+      title.addChild name
     title.x = 30
     title.y = 630
     title.alpha = 0
     title.addChild titleText
-    name = new Text "《#{shareName}》",{fontFamily : 'Arial', fontSize: 42, fill : 0x2a985d, align : 'left'}
-    # name.width = titleText.width
-    name.y = 238
-    name.x = 58
-    title.addChild name
     @.page4.addChild title
 
     btn = @.nextBtn()
@@ -526,7 +577,7 @@ class sulwhasoo
       return false if @.animation
       @.page4Out()
 
-    TweenLite.to @.page4,1.2,
+    TweenLite.to @.page4,@.cloudTime,
       x: 0
       y: 0
       alpha: 1,
@@ -607,7 +658,7 @@ class sulwhasoo
     #   return false if @.animation
     #   @.page5Out()
 
-    TweenLite.to @.page5,1.2,
+    TweenLite.to @.page5,@.cloudTime,
       x: 0
       y: 0
       alpha: 1,
@@ -629,8 +680,8 @@ class sulwhasoo
     for i in [0...5]
       icon = new Sprite getTe _CDN+"img/icon-symbol-#{i+1}.png"
       icon.anchor.set(0.5,0.5)
-      icon.x = 750/2 - 80 + (160/5)*i
-      icon.y = - 10 - (50*i%3)
+      icon.x = 750/2 + 20 + 50 + (i%2)*-100
+      icon.y = - 100 * (i+1)
       icons.push icon
       @.page5.addChild icon
 
@@ -707,23 +758,26 @@ class sulwhasoo
               page5ShowStep2()
     page5ShowStep2 = =>
       runSLlight()
-      TweenLite.to lightL,0.5,
+      TweenLite.to lightL,1.2,
         alpha: 1
-        delay: 0.4
-      TweenLite.to lightS,0.5,
+        delay: 1.7
+      TweenLite.to lightS,1.2,
         alpha: 1
-        delay: 0.4
+        delay: 1.7
       TweenLite.to product,0.7,
         alpha: 1
         onComplete: =>
           for i in [0...5]
             icon = icons[i]
-            TweenLite.to icon, 3+Math.random()*(0.2*(i+1)),
-              y: 1333/2
-              delay: i%3*0.2
+            icon.y = -(100 * (i+1))
+            TweenLite.to icon, 3,
+              y: 1333/2 - 40
               onComplete: =>
                 iconTimes++
                 page5ShowStep3()
+            TweenLite.to icon, 0.7,
+              alpha: 0
+              delay: 2.3
     page5ShowStep3 = =>
       return false if iconTimes < 5
       console.log "run"
@@ -805,13 +859,16 @@ class sulwhasoo
 
     @.stage.addChildAt @.page6,2
 
-    TweenLite.to @.page6,1.2,
+    setTimeout =>
+      @.showCloud()
+    ,1700
+    TweenLite.to @.page6,@.cloudTime,
       x: 0
       y: 0
       alpha: 1,
-      delay: .7
+      delay: 1.7
       onComplete: =>
-        @.showCloud()
+        
         @.animation = false
         setTimeout ->
           main.ugcBtn = true
@@ -820,20 +877,32 @@ class sulwhasoo
     FixSize = 70
     @.ugc1 = ugc1 = new Container()
     ugc1BG = new Sprite getTe _CDN+"img/ugc-1.png"
-    ugc1BG.y = (1333 - ugc1BG.height)/2 + FixSize
+    ugc1BG.anchor.set(0.5,0.5)
+    ugc1BG.x = 750/2
+    ugc1BG.y = 1333/2 + FixSize
+    ugc1BG.rotation = 0
     ugc1.addChild ugc1BG
     ugc1.alpha = 1
     ugc1Icons = []
     for i in [0...3]
       icon = new Sprite getTe _CDN+"img/icon-symbol-#{i+1}.png"
       icon.anchor.set(0.5,0.5)
-      icon.x = icon.dx = 750/2 + 150 + (i%2 * 30)
+      icon.x = icon.dx = 750/2 + 150 + ( i%2 * icon.width / (i%2+1) )
       icon.y = icon.dy = 1333/2 + 100 - Math.random() * 100 + FixSize
       icon.speed = 1/3 + Math.random() * 2
       icon.direction = true
       icon.alpha = Math.random() * 0.5
       ugc1.addChild icon
       ugc1Icons.push icon
+    runUGC1BG = =>
+      TweenLite.to ugc1BG,4,
+        rotation: 0.05
+        onComplete: =>
+          TweenLite.to ugc1BG,4,
+            rotation: -0.05
+            onComplete: =>
+              runUGC1BG()
+    runUGC1BG()
     @.app.ticker.add @.symbolRun.bind(@,ugc1Icons)
     @.page6.addChild ugc1
 
@@ -854,13 +923,20 @@ class sulwhasoo
         delay: 2
         onComplete: =>
           ugc2Item.y = 1333/2
+          ugc2Item.x = 750/2 - 80
           ugc2Item.rotation = 0.4
-          TweenLite.to ugc2Item,2,
+          TweenLite.to ugc2Item,1.5,
             alpha: 1
-            rotation: 0
-            y: 1333/2 + 120 + 150 + FixSize
+            x: 750/2
+            rotation: -0.2
+            y: 1333/2 + 120 + FixSize
             onComplete: =>
-              runUGC2Item()
+              TweenLite.to ugc2Item,1.5,
+                x: 750/2 - 80
+                rotation: 0
+                y: 1333/2 + 120 + 150 + FixSize
+                onComplete: =>
+                  runUGC2Item()
     runUGC2Item()
 
     @.page6.addChild ugc2
@@ -904,7 +980,13 @@ class sulwhasoo
     ugc4BG.anchor.set(0.5,0.5)
     ugc4BG.x = 750/2
     ugc4BG.y = 1333/2 - 100 + FixSize*2
-    ugc4.addChild ugc4BG
+
+    ugc4BG2 = new Sprite getTe _CDN+"img/ugc-4-2.png"
+    ugc4BG2.anchor.set(0.5,0.5)
+    ugc4BG2.x = 750/2
+    ugc4BG2.y = 1333/2 - 100 + FixSize*2
+
+    ugc4.addChild ugc4BG,ugc4BG2
     ugc4Stars = []
     for i in [0...5]
       star = new Sprite getTe _CDN+"img/ugc-4-1.png"
@@ -916,20 +998,36 @@ class sulwhasoo
       ugc4Stars.push star
       ugc4.addChild star
     runUGC4Star = =>
-      for i in [0...5]
+      for i in [0...3]
         star = ugc4Stars[i]
         star.x = star.dx
         star.y = star.dy
+        star.alpha = 1
         size = 0.3 + Math.random()*0.5
         star.scale.set(size,size)
         TweenLite.to star,1.4,
           x: star.toX - Math.random()*100
           y: star.toY + Math.random()*100
+          rotation: Math.PI * 4
+          alpha: 0
           delay: i*1
+        # TweenLite.to star,0.4, {alpha: 0, delay: i*1+1-0.2}
       setTimeout =>
         runUGC4Star()
       ,6500
     runUGC4Star()
+    runUGC4BG = =>
+      TweenLite.to ugc4BG2,2,
+        x: 750/2 + 10
+        onComplete: =>
+          TweenLite.to ugc4BG2,2,
+            x: 750/2 - 10
+            onComplete: =>
+              TweenLite.to ugc4BG2,1,
+                x: 750/2
+                onComplete: =>
+                  runUGC4BG()
+    runUGC4BG()
     ugc4.alpha = 0
     @.page6.addChild ugc4
 
@@ -963,7 +1061,7 @@ class sulwhasoo
     ugc5.alpha = 0
     @.page6.addChild ugc5
 
-    @.title = new Sprite getTe _CDN+"img/ugc-title-1.png"
+    @.title = new Sprite getTe _CDN+"img/ugc-title-#{UGCTITLE}.png"
     @.page6.addChild @.title
 
     @.qrcode = qrcode = new Sprite getTe _CDN+"img/qrcode.png"
@@ -1028,33 +1126,17 @@ class sulwhasoo
           icon.y = icon.dy
 
   hideCloud: ->
-    for cloud in @clouds
-      TweenLite.to cloud, 1.5, {x: cloud.dex, alpha: 1}
+    for i in [0...@clouds.length]
+      cloud = @.clouds[i]
+      TweenLite.to cloud, 2.5, {x: cloud.dex, alpha: 1, delay: i*0.1}
   showCloud: ->
-    for cloud in @clouds
+    for i in [0...@clouds.length]
+      cloud = @.clouds[i]
       if cloud.x > 750/2
         cloud.dx = to = 950
       else
         cloud.dx = to = -200
-      TweenLite.to cloud, 1.5, {x: to, alpha: 0.6}
-  loadEnd: ->
-    _public.note = false
-    _tar = @.loading
-    _tar.scaleS = 1
-    # console.log @.loading.scale = 1.5
-    TweenLite.to(_tar,.5,{
-      scaleS: 2,
-      onUpdate: (res)=> 
-        # console.log res.scaleS
-        res.scale.set(res.scaleS,res.scaleS)
-        _tar.x = - (750/2 * (res.scaleS-1))
-        _tar.y = - (1333/2 * (res.scaleS-1))
-        _tar.alpha = 2 - res.scaleS
-      onComplete: =>
-        @.app.ticker.remove @._loopLoading
-        @.page1()
-      onUpdateParams:[_tar]
-    })
+      TweenLite.to cloud, 2.5, {x: to, alpha: 0.6, delay: i*0.1}
   
   loopBgStar: (detail)->
     for star in @.largeStars
