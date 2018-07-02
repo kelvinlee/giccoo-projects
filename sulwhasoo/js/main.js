@@ -617,8 +617,8 @@ sulwhasoo = function () {
 
         this.hideCloud();
         // 跳过中间页
-        // @.page2build()
-        this.page5build();
+        this.page2build();
+        // @.page5build()
         return TweenLite.to(this.page, .7, {
           alpha: 0,
           x: 20,
