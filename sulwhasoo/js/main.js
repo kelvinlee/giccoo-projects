@@ -1939,7 +1939,7 @@ window.onload = function () {
       var shareContent;
       shareContent = {
         title: "点击获取你的治愈音乐瓶",
-        desc: "雪花秀,探索治愈音乐瓶，获取专属于你的小惊喜",
+        desc: "探索治愈音乐瓶，获取专属于你的小惊喜",
         link: "https://activity.music.163.com/sulwhasoo/",
         imgUrl: "https://activity.music.163.com/sulwhasoo/img/ico.jpg",
         success: function success() {},
