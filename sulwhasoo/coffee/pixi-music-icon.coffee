@@ -34,6 +34,7 @@ images = [
   _CDN+"img/cd.png"
   _CDN+"img/cd-pointer.png"
   _CDN+"img/ball.png"
+  _CDN+"img/phone.png"
   _CDN+"img/qrcode.png"
   _CDN+"img/star-1.png"
   _CDN+"img/star-2.png"
@@ -54,7 +55,10 @@ images = [
   _CDN+"img/ugc-title-#{UGCTITLE}.png"
 ]
 
-# 分享文案, 接口数据
+# 气球飘出屏幕 Done
+# 点击跳转到 UGC DONE
+# 左右箭头 Done
+# 瓶子跟光没重合 DONE
 
 lastDate = null
 lastTime = null
@@ -129,7 +133,6 @@ class sulwhasoo
         @.page1()
       onUpdateParams:[_tar]
     })
-  
   loadProgress: ->
     timein = setInterval =>
       @.progress += 3
@@ -141,8 +144,6 @@ class sulwhasoo
           @.loadEnd()
         ,1000
     ,1000/10
-    
-    
   # loading page
   build: ->
     bg = new Graphics()
@@ -225,13 +226,13 @@ class sulwhasoo
     productBorder = new Sprite getTe _CDN+"img/product-border.png"
     productBorder.scale.set(0.7,0.7)
     productBorder.x = 420
-    productBorder.y = 760 - 1
+    productBorder.y = 760
     productBorder.alpha = 0
     @.page.addChild productBorder
     product = new Sprite getTe _CDN+"img/product-item.png"
     product.scale.set(0.7,0.7)
     product.x = 420
-    product.y = 760 - 1
+    product.y = 760 - 4
     product.alpha = 0
     product.buttonMode = true
     product.interactive = true
@@ -353,6 +354,7 @@ class sulwhasoo
     @.hideCloud()
     # 跳过中间页
     @.page2build()
+    # @.page4build()
     TweenLite.to @.page,.7,
       alpha: 0,
       x: 20,
@@ -545,9 +547,18 @@ class sulwhasoo
     @.page4.x = 20
     @.page4.y = 20
 
-    ball = new Sprite getTe _CDN+"img/ball.png"
-    ball.x = 200
-    ball.y = 700
+    ball = new Container()
+    item = new Sprite getTe _CDN+"img/ball.png"
+    phone = new Sprite getTe _CDN+"img/phone.png"
+    item.x = phone.x = 0
+    item.y = phone.y = 0
+    ball.x = 270
+    ball.y = 750
+    ball.width = item.width
+    ball.height = item.height
+    ball.addChild phone
+    ball.addChild item
+
     @.page4.addChild ball
 
     title = new Container()
@@ -593,11 +604,13 @@ class sulwhasoo
           x: 300,
           ease: Cubic.easeIn,
           onComplete: =>
-            runBall()
+            # runBall()
         TweenLite.to ball, 3,
-          y: 300,
+          y: 100,
           ease: Cubic.easeOut,
-
+          onComplete: =>
+            TweenLite.to item, 12,
+              y: - item.height - 100
         # TweenLite.to ball,3,
         #   ease: Elastic.easeOut
 
@@ -740,6 +753,13 @@ class sulwhasoo
     if scaleX < 1
       titleLarge.scale.set(scaleX,scaleX)
     @.page5.addChild titleLarge
+    
+    btn = @.nextBtn()
+    @.page5.addChild btn
+    @.page5.touchstart = @.page4.click = (data)=>
+      console.log "page 4"
+      return false if @.animation
+      @.page5Out()
 
     iconTimes = 0
     page5ShowStep1 = =>
@@ -810,10 +830,10 @@ class sulwhasoo
         onComplete: =>
           TweenLite.to titleLarge,0.6,
             alpha: 1
-            onComplete: =>
-              setTimeout =>
-                @.page5Out()
-              ,2000
+            # onComplete: =>
+            #   setTimeout =>
+            #     @.page5Out()
+            #   ,2000
 
     runSLlight = ->
       TweenLite.to lightS,0.7,
@@ -1064,6 +1084,26 @@ class sulwhasoo
     @.title = new Sprite getTe _CDN+"img/ugc-title-#{UGCTITLE}.png"
     @.page6.addChild @.title
 
+    leftBtn = @.leftBtn()
+    rightBtn = @.rightBtn()
+    @.page6.addChild leftBtn,rightBtn
+    runArrow = =>
+      leftBtn.x = leftBtn.dx
+      leftBtn.alpha = 1
+      rightBtn.x = rightBtn.dx
+      rightBtn.alpha = 1
+      TweenLite.to leftBtn,2,
+        alpha: 0
+        x: 0
+        delay: 1
+      TweenLite.to rightBtn,2,
+        alpha: 0
+        x: 750
+        delay: 1
+        onComplete: =>
+          runArrow()
+    runArrow()
+
     @.qrcode = qrcode = new Sprite getTe _CDN+"img/qrcode.png"
     qrcode.y = 1333-qrcode.height
     qrcode.visible = false
@@ -1109,6 +1149,22 @@ class sulwhasoo
     btn.addChild arrow2
     btn.x = 750/2 - arrow1.width/2
     btn.y = (1333 - @.trueh*2)/2 + @.trueh*2 - arrow1.height*3 - 20
+    return btn
+  leftBtn: ->
+    btn = new Container()
+    arrow = new Sprite getTe _CDN+"img/arrow.png"
+    arrow.rotation = Math.PI / 2
+    btn.addChild arrow
+    btn.x = btn.dx = arrow.width
+    btn.y = 1333/2 - arrow.height/2
+    return btn
+  rightBtn: ->
+    btn = new Container()
+    arrow = new Sprite getTe _CDN+"img/arrow.png"
+    arrow.rotation = - Math.PI / 2
+    btn.addChild arrow
+    btn.x = btn.dx = 750 - arrow.width
+    btn.y = 1333/2 + arrow.height
     return btn
 
   symbolRun: (icons,detail)->

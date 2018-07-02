@@ -217,9 +217,12 @@ _CDN = "./";
 
 UGCTITLE = parseInt(Math.random() * 5 + 1);
 
-images = [_CDN + "img/that-girl.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/icon-symbol-1.png", _CDN + "img/icon-symbol-2.png", _CDN + "img/icon-symbol-3.png", _CDN + "img/icon-symbol-4.png", _CDN + "img/icon-symbol-5.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/product.png", _CDN + "img/product-light-1.png", _CDN + "img/product-light-2.png", _CDN + "img/product-bg.jpg", _CDN + "img/product-bg-end.jpg", _CDN + "img/page-1-title.png", _CDN + "img/page-1-title-null.png", _CDN + "img/page-2-title-null.png", _CDN + "img/page-2-title.png", _CDN + "img/page-3-title-null.png", _CDN + "img/page-3-title.png", _CDN + "img/page-4-title.png", _CDN + "img/page-4-title-null.png", _CDN + "img/page-5-title.png", _CDN + "img/page-6-title.png", _CDN + "img/moon.png", _CDN + "img/arrow.png", _CDN + "img/cd.png", _CDN + "img/cd-pointer.png", _CDN + "img/ball.png", _CDN + "img/qrcode.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png", _CDN + "img/light-1.png", _CDN + "img/light-2.png", _CDN + "img/light-3.png", _CDN + "img/ugc-1.png", _CDN + "img/ugc-2.png", _CDN + "img/ugc-2-1.png", _CDN + "img/ugc-3-1.png", _CDN + "img/ugc-4.png", _CDN + "img/ugc-4-1.png", _CDN + "img/ugc-4-2.png", _CDN + "img/ugc-5.png", _CDN + "img/ugc-5-1.png", _CDN + "img/ugc-5-2.png", _CDN + "img/ugc-5-3.png", _CDN + ('img/ugc-title-' + UGCTITLE + '.png')];
+images = [_CDN + "img/that-girl.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/icon-symbol-1.png", _CDN + "img/icon-symbol-2.png", _CDN + "img/icon-symbol-3.png", _CDN + "img/icon-symbol-4.png", _CDN + "img/icon-symbol-5.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/product.png", _CDN + "img/product-light-1.png", _CDN + "img/product-light-2.png", _CDN + "img/product-bg.jpg", _CDN + "img/product-bg-end.jpg", _CDN + "img/page-1-title.png", _CDN + "img/page-1-title-null.png", _CDN + "img/page-2-title-null.png", _CDN + "img/page-2-title.png", _CDN + "img/page-3-title-null.png", _CDN + "img/page-3-title.png", _CDN + "img/page-4-title.png", _CDN + "img/page-4-title-null.png", _CDN + "img/page-5-title.png", _CDN + "img/page-6-title.png", _CDN + "img/moon.png", _CDN + "img/arrow.png", _CDN + "img/cd.png", _CDN + "img/cd-pointer.png", _CDN + "img/ball.png", _CDN + "img/phone.png", _CDN + "img/qrcode.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png", _CDN + "img/light-1.png", _CDN + "img/light-2.png", _CDN + "img/light-3.png", _CDN + "img/ugc-1.png", _CDN + "img/ugc-2.png", _CDN + "img/ugc-2-1.png", _CDN + "img/ugc-3-1.png", _CDN + "img/ugc-4.png", _CDN + "img/ugc-4-1.png", _CDN + "img/ugc-4-2.png", _CDN + "img/ugc-5.png", _CDN + "img/ugc-5-1.png", _CDN + "img/ugc-5-2.png", _CDN + "img/ugc-5-3.png", _CDN + ('img/ugc-title-' + UGCTITLE + '.png')];
 
-// 分享文案, 接口数据
+// 气球飘出屏幕 Done
+// 点击跳转到 UGC DONE
+// 左右箭头 Done
+// 瓶子跟光没重合 DONE
 lastDate = null;
 
 lastTime = null;
@@ -433,13 +436,13 @@ sulwhasoo = function () {
         productBorder = new Sprite(getTe(_CDN + "img/product-border.png"));
         productBorder.scale.set(0.7, 0.7);
         productBorder.x = 420;
-        productBorder.y = 760 - 1;
+        productBorder.y = 760;
         productBorder.alpha = 0;
         this.page.addChild(productBorder);
         product = new Sprite(getTe(_CDN + "img/product-item.png"));
         product.scale.set(0.7, 0.7);
         product.x = 420;
-        product.y = 760 - 1;
+        product.y = 760 - 4;
         product.alpha = 0;
         product.buttonMode = true;
         product.interactive = true;
@@ -615,6 +618,7 @@ sulwhasoo = function () {
         this.hideCloud();
         // 跳过中间页
         this.page2build();
+        // @.page4build()
         return TweenLite.to(this.page, .7, {
           alpha: 0,
           x: 20,
@@ -889,7 +893,7 @@ sulwhasoo = function () {
       value: function page4build() {
         var _this11 = this;
 
-        var ball, btn, _btnRun3, name, _runBall, self, title, titleText;
+        var ball, btn, _btnRun3, item, name, phone, _runBall, self, title, titleText;
         // unless shareName?
         //   return @.page5build()
         this.Index = 4;
@@ -898,9 +902,17 @@ sulwhasoo = function () {
         this.page4.alpha = 0;
         this.page4.x = 20;
         this.page4.y = 20;
-        ball = new Sprite(getTe(_CDN + "img/ball.png"));
-        ball.x = 200;
-        ball.y = 700;
+        ball = new Container();
+        item = new Sprite(getTe(_CDN + "img/ball.png"));
+        phone = new Sprite(getTe(_CDN + "img/phone.png"));
+        item.x = phone.x = 0;
+        item.y = phone.y = 0;
+        ball.x = 270;
+        ball.y = 750;
+        ball.width = item.width;
+        ball.height = item.height;
+        ball.addChild(phone);
+        ball.addChild(item);
         this.page4.addChild(ball);
         title = new Container();
         if (shareName == null) {
@@ -951,13 +963,17 @@ sulwhasoo = function () {
             TweenLite.to(ball, 3, {
               x: 300,
               ease: Cubic.easeIn,
-              onComplete: function onComplete() {
-                return _runBall();
-              }
+              onComplete: function onComplete() {}
             });
+            // runBall()
             return TweenLite.to(ball, 3, {
-              y: 300,
-              ease: Cubic.easeOut
+              y: 100,
+              ease: Cubic.easeOut,
+              onComplete: function onComplete() {
+                return TweenLite.to(item, 12, {
+                  y: -item.height - 100
+                });
+              }
             });
           }
         });
@@ -1027,7 +1043,7 @@ sulwhasoo = function () {
       value: function page5build() {
         var _this13 = this;
 
-        var icon, iconTimes, icons, k, light1, light2, light3, lightL, lightS, page5ShowStep1, page5ShowStep2, page5ShowStep3, product, productBG, productBGEnd, _runSLlight, scaleX, self, title, titleLarge;
+        var btn, icon, iconTimes, icons, k, light1, light2, light3, lightL, lightS, page5ShowStep1, page5ShowStep2, page5ShowStep3, product, productBG, productBGEnd, _runSLlight, scaleX, self, title, titleLarge;
         this.Index = 5;
         this.animation = true;
         this.page5 = new Container();
@@ -1120,6 +1136,15 @@ sulwhasoo = function () {
           titleLarge.scale.set(scaleX, scaleX);
         }
         this.page5.addChild(titleLarge);
+        btn = this.nextBtn();
+        this.page5.addChild(btn);
+        this.page5.touchstart = this.page4.click = function (data) {
+          console.log("page 4");
+          if (_this13.animation) {
+            return false;
+          }
+          return _this13.page5Out();
+        };
         iconTimes = 0;
         page5ShowStep1 = function page5ShowStep1() {
           return TweenLite.to(title, 0.7, {
@@ -1224,16 +1249,15 @@ sulwhasoo = function () {
             delay: 1.2,
             onComplete: function onComplete() {
               return TweenLite.to(titleLarge, 0.6, {
-                alpha: 1,
-                onComplete: function onComplete() {
-                  return setTimeout(function () {
-                    return _this13.page5Out();
-                  }, 2000);
-                }
+                alpha: 1
               });
             }
           });
         };
+        // onComplete: =>
+        //   setTimeout =>
+        //     @.page5Out()
+        //   ,2000
         return _runSLlight = function runSLlight() {
           TweenLite.to(lightS, 0.7, {
             scaleX: 0.8,
@@ -1290,7 +1314,7 @@ sulwhasoo = function () {
       value: function page6build() {
         var _this15 = this;
 
-        var FixSize, icon, k, l, m, qrcode, _runUGC1BG, _runUGC2Item, _runUGC3BG, _runUGC4BG, _runUGC4Star, _runUGC5Light, star, ugc1, ugc1BG, ugc1Icons, ugc2, ugc2BG, ugc2Item, ugc3, ugc3BG, ugc3Icons, ugc3Item, ugc4, ugc4BG, ugc4BG2, ugc4Stars, ugc5, ugc5BG, ugc5Item1, ugc5Item2, ugc5Item3;
+        var FixSize, icon, k, l, leftBtn, m, qrcode, rightBtn, _runArrow, _runUGC1BG, _runUGC2Item, _runUGC3BG, _runUGC4BG, _runUGC4Star, _runUGC5Light, star, ugc1, ugc1BG, ugc1Icons, ugc2, ugc2BG, ugc2Item, ugc3, ugc3BG, ugc3Icons, ugc3Item, ugc4, ugc4BG, ugc4BG2, ugc4Stars, ugc5, ugc5BG, ugc5Item1, ugc5Item2, ugc5Item3;
         this.Index = 6;
         this.animation = true;
         this.page6 = new Container();
@@ -1537,6 +1561,29 @@ sulwhasoo = function () {
         this.page6.addChild(ugc5);
         this.title = new Sprite(getTe(_CDN + ('img/ugc-title-' + UGCTITLE + '.png')));
         this.page6.addChild(this.title);
+        leftBtn = this.leftBtn();
+        rightBtn = this.rightBtn();
+        this.page6.addChild(leftBtn, rightBtn);
+        _runArrow = function runArrow() {
+          leftBtn.x = leftBtn.dx;
+          leftBtn.alpha = 1;
+          rightBtn.x = rightBtn.dx;
+          rightBtn.alpha = 1;
+          TweenLite.to(leftBtn, 2, {
+            alpha: 0,
+            x: 0,
+            delay: 1
+          });
+          return TweenLite.to(rightBtn, 2, {
+            alpha: 0,
+            x: 750,
+            delay: 1,
+            onComplete: function onComplete() {
+              return _runArrow();
+            }
+          });
+        };
+        _runArrow();
         this.qrcode = qrcode = new Sprite(getTe(_CDN + "img/qrcode.png"));
         qrcode.y = 1333 - qrcode.height;
         qrcode.visible = false;
@@ -1608,6 +1655,30 @@ sulwhasoo = function () {
         btn.addChild(arrow2);
         btn.x = 750 / 2 - arrow1.width / 2;
         btn.y = (1333 - this.trueh * 2) / 2 + this.trueh * 2 - arrow1.height * 3 - 20;
+        return btn;
+      }
+    }, {
+      key: 'leftBtn',
+      value: function leftBtn() {
+        var arrow, btn;
+        btn = new Container();
+        arrow = new Sprite(getTe(_CDN + "img/arrow.png"));
+        arrow.rotation = Math.PI / 2;
+        btn.addChild(arrow);
+        btn.x = btn.dx = arrow.width;
+        btn.y = 1333 / 2 - arrow.height / 2;
+        return btn;
+      }
+    }, {
+      key: 'rightBtn',
+      value: function rightBtn() {
+        var arrow, btn;
+        btn = new Container();
+        arrow = new Sprite(getTe(_CDN + "img/arrow.png"));
+        arrow.rotation = -Math.PI / 2;
+        btn.addChild(arrow);
+        btn.x = btn.dx = 750 - arrow.width;
+        btn.y = 1333 / 2 + arrow.height;
         return btn;
       }
     }, {
