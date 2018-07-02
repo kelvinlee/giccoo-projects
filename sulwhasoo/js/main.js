@@ -316,7 +316,7 @@ sulwhasoo = function () {
           if (_this2.progress >= _this2.maxProgress) {
             _this2.progress = _this2.maxProgress;
           }
-          _this2.loadText.text = 'Loading...' + _this2.progress;
+          _this2.loadText.text = 'Loading...' + _this2.progress + '%';
           if (_this2.progress >= 100) {
             clearInterval(timein);
             return setTimeout(function () {
@@ -617,8 +617,8 @@ sulwhasoo = function () {
 
         this.hideCloud();
         // 跳过中间页
-        this.page2build();
-        // @.page4build()
+        // @.page2build()
+        this.page5build();
         return TweenLite.to(this.page, .7, {
           alpha: 0,
           x: 20,
@@ -1053,11 +1053,15 @@ sulwhasoo = function () {
         // btn = @.nextBtn()
         // @.page5.addChild btn
         this.stage.addChildAt(this.page5, 2);
-        // @.page5.buttonMode = true
-        // @.page5.interactive = true
-        // @.page5.touchstart = @.page5.click = (data)=>
-        //   return false if @.animation
-        //   @.page5Out()
+        this.page5.buttonMode = true;
+        this.page5.interactive = true;
+        this.page5.touchstart = this.page5.click = function (data) {
+          console.log("page 5 click");
+          if (_this13.animation) {
+            return false;
+          }
+          return _this13.page5Out();
+        };
         TweenLite.to(this.page5, this.cloudTime, {
           x: 0,
           y: 0,
@@ -1065,7 +1069,6 @@ sulwhasoo = function () {
           delay: .7,
           onComplete: function onComplete() {
             _this13.showCloud();
-            _this13.animation = false;
             return page5ShowStep1();
           }
         });
@@ -1137,14 +1140,12 @@ sulwhasoo = function () {
         }
         this.page5.addChild(titleLarge);
         btn = this.nextBtn();
+        btn.alpha = 0;
         this.page5.addChild(btn);
-        this.page5.touchstart = this.page4.click = function (data) {
-          console.log("page 4");
-          if (_this13.animation) {
-            return false;
-          }
-          return _this13.page5Out();
-        };
+        // @.page5.touchstart = @.page5.click = (data)=>
+        //   console.log "page 5"
+        //   return false if @.animation
+        //   @.page5Out()
         iconTimes = 0;
         page5ShowStep1 = function page5ShowStep1() {
           return TweenLite.to(title, 0.7, {
@@ -1248,13 +1249,18 @@ sulwhasoo = function () {
             alpha: 1,
             delay: 1.2,
             onComplete: function onComplete() {
-              return TweenLite.to(titleLarge, 0.6, {
+              TweenLite.to(btn, 0.6, {
                 alpha: 1
+              });
+              return TweenLite.to(titleLarge, 0.6, {
+                alpha: 1,
+                onComplete: function onComplete() {
+                  return _this13.animation = false;
+                }
               });
             }
           });
         };
-        // onComplete: =>
         //   setTimeout =>
         //     @.page5Out()
         //   ,2000

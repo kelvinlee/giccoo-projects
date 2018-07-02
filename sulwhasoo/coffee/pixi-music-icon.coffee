@@ -137,7 +137,7 @@ class sulwhasoo
     timein = setInterval =>
       @.progress += 3
       @.progress = @.maxProgress if @.progress >= @.maxProgress
-      @.loadText.text = "Loading...#{@.progress}"
+      @.loadText.text = "Loading...#{@.progress}%"
       if @.progress >= 100
         clearInterval timein
         setTimeout =>
@@ -353,8 +353,8 @@ class sulwhasoo
   page1Out: ->
     @.hideCloud()
     # 跳过中间页
-    @.page2build()
-    # @.page4build()
+    # @.page2build()
+    @.page5build()
     TweenLite.to @.page,.7,
       alpha: 0,
       x: 20,
@@ -665,11 +665,12 @@ class sulwhasoo
     # @.page5.addChild btn
 
     @.stage.addChildAt @.page5,2
-    # @.page5.buttonMode = true
-    # @.page5.interactive = true
-    # @.page5.touchstart = @.page5.click = (data)=>
-    #   return false if @.animation
-    #   @.page5Out()
+    @.page5.buttonMode = true
+    @.page5.interactive = true
+    @.page5.touchstart = @.page5.click = (data)=>
+      console.log "page 5 click"
+      return false if @.animation
+      @.page5Out()
 
     TweenLite.to @.page5,@.cloudTime,
       x: 0
@@ -678,7 +679,6 @@ class sulwhasoo
       delay: .7
       onComplete: =>
         @.showCloud()
-        @.animation = false
         page5ShowStep1()
 
     self = @
@@ -755,11 +755,12 @@ class sulwhasoo
     @.page5.addChild titleLarge
     
     btn = @.nextBtn()
+    btn.alpha = 0
     @.page5.addChild btn
-    @.page5.touchstart = @.page4.click = (data)=>
-      console.log "page 4"
-      return false if @.animation
-      @.page5Out()
+    # @.page5.touchstart = @.page5.click = (data)=>
+    #   console.log "page 5"
+    #   return false if @.animation
+    #   @.page5Out()
 
     iconTimes = 0
     page5ShowStep1 = =>
@@ -828,9 +829,12 @@ class sulwhasoo
         alpha: 1,
         delay: 1.2,
         onComplete: =>
+          TweenLite.to btn,0.6,
+            alpha: 1
           TweenLite.to titleLarge,0.6,
             alpha: 1
-            # onComplete: =>
+            onComplete: =>
+              @.animation = false
             #   setTimeout =>
             #     @.page5Out()
             #   ,2000
