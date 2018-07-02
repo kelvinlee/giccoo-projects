@@ -28,7 +28,7 @@ sended = [false,false]
 _CDN = "./"
 
 neteaseShareImage = ->
-	title1 = "雪花秀,治愈音乐瓶"
+	title1 = "点击获取你的治愈音乐瓶"
 	picUrl = "https://image.giccoo.com/upload/sulwhasoo/"+main.shareImageLink+"@!large"
 	redirectUrl = "https://m.giccoo.com/sulwhasoo/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
@@ -45,10 +45,10 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "雪花秀,治愈音乐瓶"
-				desc: "雪花秀,治愈音乐瓶"
-				link: "http://m.giccoo.com/sulwhasoo/"
-				imgUrl: "http://m.giccoo.com/sulwhasoo/img/ico.jpg"
+				title: "点击获取你的治愈音乐瓶"
+				desc: "雪花秀,探索治愈音乐瓶，获取专属于你的小惊喜"
+				link: "https://activity.music.163.com/sulwhasoo/"
+				imgUrl: "https://activity.music.163.com/sulwhasoo/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->

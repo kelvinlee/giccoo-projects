@@ -54,6 +54,18 @@ images = [
   _CDN+"img/ugc-5-3.png"
   _CDN+"img/ugc-title-#{UGCTITLE}.png"
 ]
+page1Images = [
+  _CDN+"img/that-girl.png"
+  _CDN+"img/point.png"
+  _CDN+"img/product-border.png"
+  _CDN+"img/product-item.png"
+  _CDN+"img/page-1-title-null.png"
+  _CDN+"img/cloud-1.png"
+  _CDN+"img/cloud-2.png"
+  _CDN+"img/cloud-3.png"
+  _CDN+"img/star-1.png"
+  _CDN+"img/star-2.png"
+]
 
 # 气球飘出屏幕 Done
 # 点击跳转到 UGC DONE
@@ -111,7 +123,13 @@ class sulwhasoo
     ]).load(@.build.bind(@))
   loaded: (name)->
     @.loadCount++
-    @.maxProgress = Math.ceil @.loadCount/images.length*100
+    count = if main.wy then images.length else page1Images.length
+    @.maxProgress = Math.ceil @.loadCount/count*100
+    unless main.wy
+      @.loadText.text = "Loading...#{@.maxProgress}%"
+      if @.maxProgress >= 100
+        @.loadEnd()
+      return false
     unless @.starLoad
       @.starLoad = true
       @.loadProgress()
@@ -181,7 +199,10 @@ class sulwhasoo
     @.loading.addChild @.loadText
     @.opts.callback() if @.opts.callback?
     # @.app.ticker.remove @._loopLoading
-    PIXI.loader.add(images).use(@.loaded.bind(@)).load(@.build.bind(@))
+    unless main.wy
+      PIXI.loader.add(page1Images).use(@.loaded.bind(@)).load(@.build.bind(@))
+    else
+      PIXI.loader.add(images).use(@.loaded.bind(@)).load(@.build.bind(@))
     @.animation = true
   # page 1
   page1: ->

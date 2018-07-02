@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, UGCTITLE, VENDORS, _CDN, _public, autoDetectRenderer, css3Prefix, e, getId, getTe, i, images, imageurl, init, j, lastDate, lastName, lastTime, len1, loadWechatConfig, loader, loading, mTestElement, main, neteaseShareImage, options, passiveSupported, resource, resources, sended, shareName, sulwhasoo, sulwhasooCache, sys, ugcCache;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, UGCTITLE, VENDORS, _CDN, _public, autoDetectRenderer, css3Prefix, e, getId, getTe, i, images, imageurl, init, j, lastDate, lastName, lastTime, len1, loadWechatConfig, loader, loading, mTestElement, main, neteaseShareImage, options, page1Images, passiveSupported, resource, resources, sended, shareName, sulwhasoo, sulwhasooCache, sys, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -219,6 +219,8 @@ UGCTITLE = parseInt(Math.random() * 5 + 1);
 
 images = [_CDN + "img/that-girl.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/icon-symbol-1.png", _CDN + "img/icon-symbol-2.png", _CDN + "img/icon-symbol-3.png", _CDN + "img/icon-symbol-4.png", _CDN + "img/icon-symbol-5.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/product.png", _CDN + "img/product-light-1.png", _CDN + "img/product-light-2.png", _CDN + "img/product-bg.jpg", _CDN + "img/product-bg-end.jpg", _CDN + "img/page-1-title.png", _CDN + "img/page-1-title-null.png", _CDN + "img/page-2-title-null.png", _CDN + "img/page-2-title.png", _CDN + "img/page-3-title-null.png", _CDN + "img/page-3-title.png", _CDN + "img/page-4-title.png", _CDN + "img/page-4-title-null.png", _CDN + "img/page-5-title.png", _CDN + "img/page-6-title.png", _CDN + "img/moon.png", _CDN + "img/arrow.png", _CDN + "img/cd.png", _CDN + "img/cd-pointer.png", _CDN + "img/ball.png", _CDN + "img/phone.png", _CDN + "img/qrcode.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png", _CDN + "img/light-1.png", _CDN + "img/light-2.png", _CDN + "img/light-3.png", _CDN + "img/ugc-1.png", _CDN + "img/ugc-2.png", _CDN + "img/ugc-2-1.png", _CDN + "img/ugc-3-1.png", _CDN + "img/ugc-4.png", _CDN + "img/ugc-4-1.png", _CDN + "img/ugc-4-2.png", _CDN + "img/ugc-5.png", _CDN + "img/ugc-5-1.png", _CDN + "img/ugc-5-2.png", _CDN + "img/ugc-5-3.png", _CDN + ('img/ugc-title-' + UGCTITLE + '.png')];
 
+page1Images = [_CDN + "img/that-girl.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/page-1-title-null.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png"];
+
 // 气球飘出屏幕 Done
 // 点击跳转到 UGC DONE
 // 左右箭头 Done
@@ -271,8 +273,17 @@ sulwhasoo = function () {
     _createClass(sulwhasoo, [{
       key: 'loaded',
       value: function loaded(name) {
+        var count;
         this.loadCount++;
-        this.maxProgress = Math.ceil(this.loadCount / images.length * 100);
+        count = main.wy ? images.length : page1Images.length;
+        this.maxProgress = Math.ceil(this.loadCount / count * 100);
+        if (!main.wy) {
+          this.loadText.text = 'Loading...' + this.maxProgress + '%';
+          if (this.maxProgress >= 100) {
+            this.loadEnd();
+          }
+          return false;
+        }
         if (!this.starLoad) {
           this.starLoad = true;
           return this.loadProgress();
@@ -373,7 +384,11 @@ sulwhasoo = function () {
           this.opts.callback();
         }
         // @.app.ticker.remove @._loopLoading
-        PIXI.loader.add(images).use(this.loaded.bind(this)).load(this.build.bind(this));
+        if (!main.wy) {
+          PIXI.loader.add(page1Images).use(this.loaded.bind(this)).load(this.build.bind(this));
+        } else {
+          PIXI.loader.add(images).use(this.loaded.bind(this)).load(this.build.bind(this));
+        }
         return this.animation = true;
       }
 
@@ -1904,7 +1919,7 @@ _CDN = "./";
 
 neteaseShareImage = function neteaseShareImage() {
   var picUrl, redirectUrl, title1;
-  title1 = "雪花秀,治愈音乐瓶";
+  title1 = "点击获取你的治愈音乐瓶";
   picUrl = "https://image.giccoo.com/upload/sulwhasoo/" + main.shareImageLink + "@!large";
   redirectUrl = "https://m.giccoo.com/sulwhasoo/";
   // console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
@@ -1923,10 +1938,10 @@ window.onload = function () {
     wx.ready(function () {
       var shareContent;
       shareContent = {
-        title: "雪花秀,治愈音乐瓶",
-        desc: "雪花秀,治愈音乐瓶",
-        link: "http://m.giccoo.com/sulwhasoo/",
-        imgUrl: "http://m.giccoo.com/sulwhasoo/img/ico.jpg",
+        title: "点击获取你的治愈音乐瓶",
+        desc: "雪花秀,探索治愈音乐瓶，获取专属于你的小惊喜",
+        link: "https://activity.music.163.com/sulwhasoo/",
+        imgUrl: "https://activity.music.163.com/sulwhasoo/img/ico.jpg",
         success: function success() {},
         // alert "success"
         cancel: function cancel() {}
