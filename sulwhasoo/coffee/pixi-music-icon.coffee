@@ -261,7 +261,7 @@ class sulwhasoo
       console.log "click product",@.animation
       return false if @.animation
       unless main.wy
-        return window.location.href = "https://m.music.163.com/m/applink/?scheme=orpheus%3A%2F%2Fopenurl%3Furl%3Dhttps%3A%2F%2Factivity.music.163.com%2Flancome%2F%26thirdfrom%3Dwx"
+        return window.location.href = "https://m.music.163.com/m/applink/?scheme=orpheus%3A%2F%2Fopenurl%3Furl%3Dhttps%3A%2F%2Factivity.music.163.com%2Fsulwhasoo%2F%26thirdfrom%3Dwx"
       @.page1Out()
     @.page.addChild product
     # title = new Sprite getTe _CDN+"img/page-1-title.png"
