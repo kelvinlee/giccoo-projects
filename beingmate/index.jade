@@ -131,10 +131,14 @@ block content
             //- img(:src="ugc")
             img.ugcsave(:src="ugcSave")
           .btn(v-if="!wy")
-            img.ugcsave(:src="ugcSave")
             img(src="#{url}/img/btn-long-save.png")
-          .btn.wy(v-if="wy",@click="share")
+            .leftBtn
+              img.ugcsave(:src="ugcSave")
+            a.rightBtn(href="https://beingmate.tmall.com/")
+          .btn.wy(v-if="wy")
             img(src="#{url}/img/btn-share.png")
+            .leftBtn(@click="share")
+            a.rightBtn(href="https://beingmate.tmall.com/")
     transition(name="page-fade")
       .page.page-last(v-show="pagelastShow")
         .bg

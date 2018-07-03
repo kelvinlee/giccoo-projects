@@ -64,7 +64,7 @@ window.onload = ->
 		wx.ready ->
 			shareContent =
 				title: "最幸运的你，藏在你爱的音乐里"
-				desc: "最幸运的你，藏在你爱的音乐里"
+				desc: "立即测试幸运指数，找出藏在奶粉罐里的秘密吧~"
 				link: "http://m.giccoo.com/beingmate/"
 				imgUrl: "http://m.giccoo.com/beingmate/img/ico.jpg"
 				success: ->
@@ -233,7 +233,7 @@ init = ->
 				unless @.wy
 					setTimeout =>
 						@.pagelastShow = true
-					,8000
+					,5000
 
 			submit: ->
 				return alert "请输入用户名" if @.form.username is ""
@@ -358,6 +358,7 @@ class UGC
 			_CDN+"img/page-build-score-bg.png",
 			_CDN+"img/page-build-score.png",
 			_CDN+"img/page-build-qrcode.png"
+			_CDN+"img/page-build-logo.png"
 		]).load(@.build.bind(@))
 	build: ->
 		bg = new Sprite resources[_CDN+"img/page-build-bg.jpg"].texture
@@ -367,6 +368,9 @@ class UGC
 		title.x = 400
 		title.y = 250
 		@.stage.addChild title
+
+		logo = new Sprite resources[_CDN+"img/page-build-logo.png"].texture
+		@.stage.addChild logo
 
 		mtitle = new Sprite resources[_CDN+"img/page-build-title-#{@.opts.id}.png"].texture
 		mtitle.x = @.opts.w/2
@@ -399,8 +403,8 @@ class UGC
 
 		nickname = new PIXI.Text(
 			main.nickname,
-			{fontFamily: "Arial", fontSize: 32, fill: "white"})
-		nickname.x = 200
+			{fontFamily: "Arial", fontSize: 40, fill: "white"})
+		nickname.x = 200 - 6
 		nickname.y = 254
 		nickname.anchor.set(0.5, 0)
 		@.stage.addChild nickname

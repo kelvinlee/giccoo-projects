@@ -1577,8 +1577,8 @@ sulwhasoo = function () {
         this.page6.addChild(ugc5);
         this.title = new Sprite(getTe(_CDN + ('img/ugc-title-' + UGCTITLE + '.png')));
         this.page6.addChild(this.title);
-        leftBtn = this.leftBtn();
-        rightBtn = this.rightBtn();
+        this.ugcleftBtn = leftBtn = this.leftBtn();
+        this.ugcrightBtn = rightBtn = this.rightBtn();
         this.page6.addChild(leftBtn, rightBtn);
         _runArrow = function runArrow() {
           leftBtn.x = leftBtn.dx;
@@ -1649,8 +1649,12 @@ sulwhasoo = function () {
       key: 'get',
       value: function get() {
         this.qrcode.visible = true;
+        this.ugcleftBtn.visible = false;
+        this.ugcrightBtn.visible = false;
         this.app.renderer.render(this.app.stage);
         this.qrcode.visible = false;
+        this.ugcleftBtn.visible = true;
+        this.ugcrightBtn.visible = true;
         return this.app.view.toDataURL();
       }
 

@@ -1111,8 +1111,8 @@ class sulwhasoo
     @.title = new Sprite getTe _CDN+"img/ugc-title-#{UGCTITLE}.png"
     @.page6.addChild @.title
 
-    leftBtn = @.leftBtn()
-    rightBtn = @.rightBtn()
+    @.ugcleftBtn = leftBtn = @.leftBtn()
+    @.ugcrightBtn = rightBtn = @.rightBtn()
     @.page6.addChild leftBtn,rightBtn
     runArrow = =>
       leftBtn.x = leftBtn.dx
@@ -1157,8 +1157,12 @@ class sulwhasoo
         TweenLite.to item,0.5, {alpha: 0}
   get: ->
     @.qrcode.visible = true
+    @.ugcleftBtn.visible = false
+    @.ugcrightBtn.visible = false
     @.app.renderer.render @.app.stage
     @.qrcode.visible = false
+    @.ugcleftBtn.visible = true
+    @.ugcrightBtn.visible = true
     return @.app.view.toDataURL()
   # next page btn
   nextBtn: ->

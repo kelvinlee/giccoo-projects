@@ -377,8 +377,8 @@
 		"oA": 0,
 		"oAP": "\/beingmate\/img\/btn-share.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -448,6 +448,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/beingmate\/img\/icon.png": {
+		"ft": 32768,
+		"iS": 42708,
+		"oA": 0,
+		"oAP": "\/beingmate\/img\/icon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/beingmate\/img\/loading-icon.png": {
 		"ft": 32768,
 		"iS": 10459,
@@ -476,8 +487,8 @@
 		"oA": 0,
 		"oAP": "\/beingmate\/img\/logo.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -511,12 +522,12 @@
 		"oAP": "\/beingmate\/img\/page-1-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/beingmate\/img\/page-1-title.png": {
 		"ft": 32768,
-		"iS": 78514,
+		"iS": 200456,
 		"oA": 0,
 		"oAP": "\/beingmate\/img\/page-1-title.png",
 		"oF": 0,
@@ -644,6 +655,17 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"\/beingmate\/img\/page-build-logo.png": {
+		"ft": 32768,
+		"iS": 15931,
+		"oA": 0,
+		"oAP": "\/beingmate\/img\/page-build-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/beingmate\/img\/page-build-qrcode.png": {
@@ -894,8 +916,8 @@
 		"oA": 0,
 		"oAP": "\/beingmate\/img\/page-last-title.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},

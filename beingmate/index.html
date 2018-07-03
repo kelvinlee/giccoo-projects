@@ -121,8 +121,12 @@
           <div class="content">
             <div v-if="!wy" class="ugc"><img :src="ugcSave" class="ugcsave">
             </div>
-            <div v-if="!wy" class="btn"><img :src="ugcSave" class="ugcsave"><img src="./img/btn-long-save.png"></div>
-            <div v-if="wy" @click="share" class="btn wy"><img src="./img/btn-share.png"></div>
+            <div v-if="!wy" class="btn"><img src="./img/btn-long-save.png">
+              <div class="leftBtn"><img :src="ugcSave" class="ugcsave"></div><a href="https://beingmate.tmall.com/" class="rightBtn"></a>
+            </div>
+            <div v-if="wy" class="btn wy"><img src="./img/btn-share.png">
+              <div @click="share" class="leftBtn"></div><a href="https://beingmate.tmall.com/" class="rightBtn"></a>
+            </div>
           </div>
         </div>
       </transition>

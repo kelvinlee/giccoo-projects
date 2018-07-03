@@ -667,7 +667,7 @@ window.onload = function () {
       var shareContent;
       shareContent = {
         title: "最幸运的你，藏在你爱的音乐里",
-        desc: "最幸运的你，藏在你爱的音乐里",
+        desc: "立即测试幸运指数，找出藏在奶粉罐里的秘密吧~",
         link: "http://m.giccoo.com/beingmate/",
         imgUrl: "http://m.giccoo.com/beingmate/img/ico.jpg",
         success: function success() {},
@@ -893,7 +893,7 @@ init = function init() {
         if (!this.wy) {
           return setTimeout(function () {
             return _this3.pagelastShow = true;
-          }, 8000);
+          }, 5000);
         }
       },
       submit: function submit() {
@@ -1064,19 +1064,21 @@ UGC = function () {
       }
       this.stage = this.app.stage;
       document.getElementById(this.opts.el).appendChild(this.app.view);
-      PIXI.loader.add([_CDN + "img/page-build-bg.jpg", _CDN + "img/page-build-text.png", _CDN + "img/page-build-title.png", _CDN + ('img/page-build-text-' + this.opts.id + '.png'), _CDN + ('img/page-build-title-' + this.opts.id + '.png'), _CDN + "img/page-build-score-bg.png", _CDN + "img/page-build-score.png", _CDN + "img/page-build-qrcode.png"]).load(this.build.bind(this));
+      PIXI.loader.add([_CDN + "img/page-build-bg.jpg", _CDN + "img/page-build-text.png", _CDN + "img/page-build-title.png", _CDN + ('img/page-build-text-' + this.opts.id + '.png'), _CDN + ('img/page-build-title-' + this.opts.id + '.png'), _CDN + "img/page-build-score-bg.png", _CDN + "img/page-build-score.png", _CDN + "img/page-build-qrcode.png", _CDN + "img/page-build-logo.png"]).load(this.build.bind(this));
     }
 
     _createClass(UGC, [{
       key: 'build',
       value: function build() {
-        var bg, flower, icon, k, l, line, mtext, mtitle, nickname, ref, score, text, title;
+        var bg, flower, icon, k, l, line, logo, mtext, mtitle, nickname, ref, score, text, title;
         bg = new Sprite(resources[_CDN + "img/page-build-bg.jpg"].texture);
         this.stage.addChild(bg);
         title = new Sprite(resources[_CDN + "img/page-build-title.png"].texture);
         title.x = 400;
         title.y = 250;
         this.stage.addChild(title);
+        logo = new Sprite(resources[_CDN + "img/page-build-logo.png"].texture);
+        this.stage.addChild(logo);
         mtitle = new Sprite(resources[_CDN + ('img/page-build-title-' + this.opts.id + '.png')].texture);
         mtitle.x = this.opts.w / 2;
         mtitle.y = 330;
@@ -1105,10 +1107,10 @@ UGC = function () {
         this.stage.addChild(mtext);
         nickname = new PIXI.Text(main.nickname, {
           fontFamily: "Arial",
-          fontSize: 32,
+          fontSize: 40,
           fill: "white"
         });
-        nickname.x = 200;
+        nickname.x = 200 - 6;
         nickname.y = 254;
         nickname.anchor.set(0.5, 0);
         this.stage.addChild(nickname);
