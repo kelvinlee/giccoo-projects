@@ -67,10 +67,12 @@ page1Images = [
   _CDN+"img/star-2.png"
 ]
 
-# 气球飘出屏幕 Done
-# 点击跳转到 UGC DONE
-# 左右箭头 Done
-# 瓶子跟光没重合 DONE
+# 给云彩做个随机停留位置, 和大小
+# loading bu bianda
+# loading star more
+# 半圈 瓶子出现
+# 瓶子光效明显一点
+# 文字点击跳转
 
 lastDate = null
 lastTime = null
@@ -139,13 +141,7 @@ class sulwhasoo
     _tar.scaleS = 1
     # console.log @.loading.scale = 1.5
     TweenLite.to(_tar,1.5,{
-      scaleS: 2,
-      onUpdate: (res)=> 
-        # console.log res.scaleS
-        res.scale.set(res.scaleS,res.scaleS)
-        _tar.x = - (750/2 * (res.scaleS-1))
-        _tar.y = - (1333/2 * (res.scaleS-1))
-        _tar.alpha = 2 - res.scaleS
+      alpha: 0
       onComplete: =>
         @.app.ticker.remove @._loopLoading
         @.page1()
@@ -176,10 +172,10 @@ class sulwhasoo
     icon.rotation = 0
     
     @.stars = []
-    for i in [0...8]
+    for i in [0...18]
       star = new Sprite getTe _CDN+"img/star.png"
       star.anchor.set(0.5,0.5)
-      star.x = 750/2 - icon.width/2 + (icon.width / i)
+      star.x = 750/2 - icon.width/2 + Math.random()*icon.width
       star.y = 1333/2 - 100 + Math.random() * 200
       star.alpha = Math.random()*0.5+0.2
       star.speed = Math.random()*2 + 1
@@ -323,14 +319,14 @@ class sulwhasoo
                 TweenLite.to point,time,
                   x: 590, 
                   ease: Circ.easeOut,
-                  onComplete: =>
-                    TweenLite.to point,time,
-                      x: 475, 
-                      ease: Circ.easeIn, 
-                      onComplete: =>
-                        TweenLite.to point,time,
-                          x: 350, 
-                          ease: Circ.easeOut
+                  # onComplete: =>
+                  #   TweenLite.to point,time,
+                  #     x: 475, 
+                  #     ease: Circ.easeIn, 
+                  #     onComplete: =>
+                  #       TweenLite.to point,time,
+                  #         x: 350, 
+                  #         ease: Circ.easeOut
 
             TweenLite.to point,time, 
               y: 680, 
@@ -342,20 +338,21 @@ class sulwhasoo
                   onComplete: =>
                     TweenLite.to point,time, 
                       y: 900,
+                      alpha: 0,
                       ease: Circ.easeOut, 
                       onComplete: =>
                         TweenLite.to productBorder,time*3, {alpha: 0.8}
-                        TweenLite.to point,time, 
-                          y: 800, 
-                          alpha: 0,
-                          ease: Circ.easeIn,
-                          onComplete: =>
-                            @.animation = false
-                            TweenLite.to product,time*3, 
-                              alpha: 1, 
-                              onComplete: => 
-                                @.productLight(productBorder)
-                            TweenLite.to title,time*3, {alpha: 1,y: 1333/2 - title.height/2 - 120}
+                        @.animation = false
+                        # TweenLite.to point,time, 
+                        #   y: 800, 
+                        #   alpha: 0,
+                        #   ease: Circ.easeIn,
+                        #   onComplete: =>
+                        TweenLite.to product,time*3, 
+                          alpha: 1, 
+                          onComplete: => 
+                            @.productLight(productBorder)
+                        TweenLite.to title,time*3, {alpha: 1,y: 1333/2 - title.height/2 - 120}
         TweenLite.to point,1,{alpha: 1,delay: 1}
         @.showCloud()
     })
@@ -363,11 +360,11 @@ class sulwhasoo
   # 产品发光
   productLight: (item)->
     return false unless @.page.visible
-    TweenLite.to item, .6, 
-      alpha: 0.6, 
+    TweenLite.to item, .3, 
+      alpha: 0.2, 
       onComplete: =>
         TweenLite.to item, .6, 
-          alpha: 1, 
+          alpha: 1,
           onComplete: =>
             @.productLight item
   # page 1 移除
@@ -681,7 +678,7 @@ class sulwhasoo
     @.page5.alpha = 0
     @.page5.x = 0
     @.page5.y = 0
-
+    step = 0
     # btn = @.nextBtn()
     # @.page5.addChild btn
 
@@ -690,6 +687,8 @@ class sulwhasoo
     @.page5.interactive = true
     @.page5.touchstart = @.page5.click = (data)=>
       console.log "page 5 click"
+      if step is 1
+        page5ShowStep2()
       return false if @.animation
       @.page5Out()
 
@@ -790,38 +789,41 @@ class sulwhasoo
         delay: 0.7
         y: 1333/2
         onComplete: =>
-          for cloud in @.clouds
-            TweenLite.to cloud, 0.5, {alpha: 0, delay: 2}  
-          TweenLite.to title,0.7, 
-            alpha: 0
-            delay: 2
-            y: 1333/2 - 100
-            onComplete: =>
-              page5ShowStep2()
+          btn.alpha = 1
+          step = 1
     page5ShowStep2 = =>
+      step = 2
       runSLlight()
-      TweenLite.to lightL,1.2,
-        alpha: 1
-        delay: 1.7
-      TweenLite.to lightS,1.2,
-        alpha: 1
-        delay: 1.7
-      TweenLite.to product,0.7,
-        alpha: 1
+      btn.alpha = 0
+      for cloud in @.clouds
+        TweenLite.to cloud, 0.5, {alpha: 0}
+      TweenLite.to title,0.7, 
+        alpha: 0
+        y: 1333/2 - 100
         onComplete: =>
-          for i in [0...5]
-            icon = icons[i]
-            icon.y = -(100 * (i+1))
-            TweenLite.to icon, 3,
-              y: 1333/2 - 40
-              onComplete: =>
-                iconTimes++
-                page5ShowStep3()
-            TweenLite.to icon, 0.7,
-              alpha: 0
-              delay: 2.3
+          TweenLite.to lightL,1.2,
+            alpha: 1
+            delay: 1.7
+          TweenLite.to lightS,1.2,
+            alpha: 1
+            delay: 1.7
+          TweenLite.to product,0.7,
+            alpha: 1
+            onComplete: =>
+              for i in [0...5]
+                icon = icons[i]
+                icon.y = -(100 * (i+1))
+                TweenLite.to icon, 3,
+                  y: 1333/2 - 40
+                  onComplete: =>
+                    iconTimes++
+                    page5ShowStep3()
+                TweenLite.to icon, 0.7,
+                  alpha: 0
+                  delay: 2.3
     page5ShowStep3 = =>
       return false if iconTimes < 5
+      step = 3
       console.log "run"
       for icon in icons
         icon.visible = false
@@ -1133,7 +1135,6 @@ class sulwhasoo
     qrcode.y = 1333-qrcode.height
     qrcode.visible = false
     @.page6.addChild qrcode
-
   selectUGC: (puls = true,callback)->
     return false unless @.page6? and @.page6.alpha >= 1
     if puls
@@ -1154,8 +1155,6 @@ class sulwhasoo
             callback()
       else
         TweenLite.to item,0.5, {alpha: 0}
-
-
   get: ->
     @.qrcode.visible = true
     @.app.renderer.render @.app.stage
@@ -1211,13 +1210,29 @@ class sulwhasoo
       cloud = @.clouds[i]
       TweenLite.to cloud, 2.5, {x: cloud.dex, alpha: 1, delay: i*0.1}
   showCloud: ->
+    # m = cloud.x > 750/2
+    # if Math.random() > 0.5
+    #   m = cloud.x < 750/2
+    m = Math.random() > 0.5
+    size = 100
     for i in [0...@clouds.length]
       cloud = @.clouds[i]
-      if cloud.x > 750/2
-        cloud.dx = to = 950
+      if m 
+        if cloud.dex >= 750/2
+          cloud.dx = to = 900 + Math.random()*(size)
+        else
+          cloud.dx = to = -150 - Math.random()*(size)
       else
-        cloud.dx = to = -200
-      TweenLite.to cloud, 2.5, {x: to, alpha: 0.6, delay: i*0.1}
+        if cloud.dex <= 750/2
+          cloud.dx = to = 900 + Math.random()*(size)
+        else
+          cloud.dx = to = -150 - Math.random()*(size)
+      y = cloud.dey + Math.random()*(size*2) - size
+      TweenLite.to cloud, 2.5, 
+        x: to,
+        y: y,
+        alpha: 0.6, 
+        delay: i*0.1
   
   loopBgStar: (detail)->
     for star in @.largeStars

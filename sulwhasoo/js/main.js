@@ -221,10 +221,12 @@ images = [_CDN + "img/that-girl.png", _CDN + "img/cloud-1.png", _CDN + "img/clou
 
 page1Images = [_CDN + "img/that-girl.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/page-1-title-null.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png"];
 
-// 气球飘出屏幕 Done
-// 点击跳转到 UGC DONE
-// 左右箭头 Done
-// 瓶子跟光没重合 DONE
+// 给云彩做个随机停留位置, 和大小
+// loading bu bianda
+// loading star more
+// 半圈 瓶子出现
+// 瓶子光效明显一点
+// 文字点击跳转
 lastDate = null;
 
 lastTime = null;
@@ -300,15 +302,7 @@ sulwhasoo = function () {
         _tar.scaleS = 1;
         // console.log @.loading.scale = 1.5
         return TweenLite.to(_tar, 1.5, {
-          scaleS: 2,
-          onUpdate: function onUpdate(res) {
-
-            // console.log res.scaleS
-            res.scale.set(res.scaleS, res.scaleS);
-            _tar.x = -(750 / 2 * (res.scaleS - 1));
-            _tar.y = -(1333 / 2 * (res.scaleS - 1));
-            return _tar.alpha = 2 - res.scaleS;
-          },
+          alpha: 0,
           onComplete: function onComplete() {
             _this.app.ticker.remove(_this._loopLoading);
             return _this.page1();
@@ -354,10 +348,10 @@ sulwhasoo = function () {
         icon.y = 1333 / 2 - 100;
         icon.rotation = 0;
         this.stars = [];
-        for (i = k = 0; k < 8; i = ++k) {
+        for (i = k = 0; k < 18; i = ++k) {
           star = new Sprite(getTe(_CDN + "img/star.png"));
           star.anchor.set(0.5, 0.5);
-          star.x = 750 / 2 - icon.width / 2 + icon.width / i;
+          star.x = 750 / 2 - icon.width / 2 + Math.random() * icon.width;
           star.y = 1333 / 2 - 100 + Math.random() * 200;
           star.alpha = Math.random() * 0.5 + 0.2;
           star.speed = Math.random() * 2 + 1;
@@ -399,7 +393,7 @@ sulwhasoo = function () {
       value: function page1() {
         var _this3 = this;
 
-        var bg, cloud, k, l, m, p, point, product, productBorder, size, star, title, woman, xylist;
+        var bg, cloud, k, l, p, point, product, productBorder, q, size, star, title, woman, xylist;
         this.Index = 1;
         this.stage.removeChild(this.loading);
         this.cloud = new Container();
@@ -490,7 +484,7 @@ sulwhasoo = function () {
           star.alpha = 0.5 + Math.random() * 0.5;
           this.bg.addChild(star);
         }
-        for (i = m = 0; m < 20; i = ++m) {
+        for (i = p = 0; p < 20; i = ++p) {
           star = new Sprite(getTe(_CDN + ('img/star-' + (i % 2 + 1) + '.png')));
           star.x = Math.random() * (750 - star.width);
           star.y = Math.random() * (1333 - star.height);
@@ -499,7 +493,7 @@ sulwhasoo = function () {
           this.bg.addChild(star);
         }
         this.largeStars = [];
-        for (i = p = 0; p < 10; i = ++p) {
+        for (i = q = 0; q < 10; i = ++q) {
           star = new Sprite(getTe(_CDN + ('img/star-' + (i % 2 + 1) + '.png')));
           star.x = Math.random() * (750 - star.width);
           star.y = Math.random() * (1333 - star.height);
@@ -533,22 +527,18 @@ sulwhasoo = function () {
                   onComplete: function onComplete() {
                     return TweenLite.to(point, time, {
                       x: 590,
-                      ease: Circ.easeOut,
-                      onComplete: function onComplete() {
-                        return TweenLite.to(point, time, {
-                          x: 475,
-                          ease: Circ.easeIn,
-                          onComplete: function onComplete() {
-                            return TweenLite.to(point, time, {
-                              x: 350,
-                              ease: Circ.easeOut
-                            });
-                          }
-                        });
-                      }
+                      ease: Circ.easeOut
                     });
                   }
                 });
+                // onComplete: =>
+                //   TweenLite.to point,time,
+                //     x: 475, 
+                //     ease: Circ.easeIn, 
+                //     onComplete: =>
+                //       TweenLite.to point,time,
+                //         x: 350, 
+                //         ease: Circ.easeOut
                 return TweenLite.to(point, time, {
                   y: 680,
                   ease: Circ.easeOut,
@@ -559,28 +549,27 @@ sulwhasoo = function () {
                       onComplete: function onComplete() {
                         return TweenLite.to(point, time, {
                           y: 900,
+                          alpha: 0,
                           ease: Circ.easeOut,
                           onComplete: function onComplete() {
                             TweenLite.to(productBorder, time * 3, {
                               alpha: 0.8
                             });
-                            return TweenLite.to(point, time, {
-                              y: 800,
-                              alpha: 0,
-                              ease: Circ.easeIn,
+                            _this3.animation = false;
+                            // TweenLite.to point,time, 
+                            //   y: 800, 
+                            //   alpha: 0,
+                            //   ease: Circ.easeIn,
+                            //   onComplete: =>
+                            TweenLite.to(product, time * 3, {
+                              alpha: 1,
                               onComplete: function onComplete() {
-                                _this3.animation = false;
-                                TweenLite.to(product, time * 3, {
-                                  alpha: 1,
-                                  onComplete: function onComplete() {
-                                    return _this3.productLight(productBorder);
-                                  }
-                                });
-                                return TweenLite.to(title, time * 3, {
-                                  alpha: 1,
-                                  y: 1333 / 2 - title.height / 2 - 120
-                                });
+                                return _this3.productLight(productBorder);
                               }
+                            });
+                            return TweenLite.to(title, time * 3, {
+                              alpha: 1,
+                              y: 1333 / 2 - title.height / 2 - 120
                             });
                           }
                         });
@@ -610,8 +599,8 @@ sulwhasoo = function () {
         if (!this.page.visible) {
           return false;
         }
-        return TweenLite.to(item, .6, {
-          alpha: 0.6,
+        return TweenLite.to(item, .3, {
+          alpha: 0.2,
           onComplete: function onComplete() {
             return TweenLite.to(item, .6, {
               alpha: 1,
@@ -1058,13 +1047,14 @@ sulwhasoo = function () {
       value: function page5build() {
         var _this13 = this;
 
-        var btn, icon, iconTimes, icons, k, light1, light2, light3, lightL, lightS, page5ShowStep1, page5ShowStep2, page5ShowStep3, product, productBG, productBGEnd, _runSLlight, scaleX, self, title, titleLarge;
+        var btn, icon, iconTimes, icons, k, light1, light2, light3, lightL, lightS, page5ShowStep1, page5ShowStep2, page5ShowStep3, product, productBG, productBGEnd, _runSLlight, scaleX, self, step, title, titleLarge;
         this.Index = 5;
         this.animation = true;
         this.page5 = new Container();
         this.page5.alpha = 0;
         this.page5.x = 0;
         this.page5.y = 0;
+        step = 0;
         // btn = @.nextBtn()
         // @.page5.addChild btn
         this.stage.addChildAt(this.page5, 2);
@@ -1072,6 +1062,9 @@ sulwhasoo = function () {
         this.page5.interactive = true;
         this.page5.touchstart = this.page5.click = function (data) {
           console.log("page 5 click");
+          if (step === 1) {
+            page5ShowStep2();
+          }
           if (_this13.animation) {
             return false;
           }
@@ -1168,57 +1161,58 @@ sulwhasoo = function () {
             delay: 0.7,
             y: 1333 / 2,
             onComplete: function onComplete() {
-              var cloud, l, len2, ref;
-              ref = _this13.clouds;
-              for (l = 0, len2 = ref.length; l < len2; l++) {
-                cloud = ref[l];
-                TweenLite.to(cloud, 0.5, {
-                  alpha: 0,
-                  delay: 2
-                });
-              }
-              return TweenLite.to(title, 0.7, {
-                alpha: 0,
-                delay: 2,
-                y: 1333 / 2 - 100,
-                onComplete: function onComplete() {
-                  return page5ShowStep2();
-                }
-              });
+              btn.alpha = 1;
+              return step = 1;
             }
           });
         };
         page5ShowStep2 = function page5ShowStep2() {
+          var cloud, l, len2, ref;
+          step = 2;
           _runSLlight();
-          TweenLite.to(lightL, 1.2, {
-            alpha: 1,
-            delay: 1.7
-          });
-          TweenLite.to(lightS, 1.2, {
-            alpha: 1,
-            delay: 1.7
-          });
-          return TweenLite.to(product, 0.7, {
-            alpha: 1,
+          btn.alpha = 0;
+          ref = _this13.clouds;
+          for (l = 0, len2 = ref.length; l < len2; l++) {
+            cloud = ref[l];
+            TweenLite.to(cloud, 0.5, {
+              alpha: 0
+            });
+          }
+          return TweenLite.to(title, 0.7, {
+            alpha: 0,
+            y: 1333 / 2 - 100,
             onComplete: function onComplete() {
-              var l, results;
-              results = [];
-              for (i = l = 0; l < 5; i = ++l) {
-                icon = icons[i];
-                icon.y = -(100 * (i + 1));
-                TweenLite.to(icon, 3, {
-                  y: 1333 / 2 - 40,
-                  onComplete: function onComplete() {
-                    iconTimes++;
-                    return page5ShowStep3();
+              TweenLite.to(lightL, 1.2, {
+                alpha: 1,
+                delay: 1.7
+              });
+              TweenLite.to(lightS, 1.2, {
+                alpha: 1,
+                delay: 1.7
+              });
+              return TweenLite.to(product, 0.7, {
+                alpha: 1,
+                onComplete: function onComplete() {
+                  var p, results;
+                  results = [];
+                  for (i = p = 0; p < 5; i = ++p) {
+                    icon = icons[i];
+                    icon.y = -(100 * (i + 1));
+                    TweenLite.to(icon, 3, {
+                      y: 1333 / 2 - 40,
+                      onComplete: function onComplete() {
+                        iconTimes++;
+                        return page5ShowStep3();
+                      }
+                    });
+                    results.push(TweenLite.to(icon, 0.7, {
+                      alpha: 0,
+                      delay: 2.3
+                    }));
                   }
-                });
-                results.push(TweenLite.to(icon, 0.7, {
-                  alpha: 0,
-                  delay: 2.3
-                }));
-              }
-              return results;
+                  return results;
+                }
+              });
             }
           });
         };
@@ -1227,6 +1221,7 @@ sulwhasoo = function () {
           if (iconTimes < 5) {
             return false;
           }
+          step = 3;
           console.log("run");
           for (l = 0, len2 = icons.length; l < len2; l++) {
             icon = icons[l];
@@ -1335,7 +1330,7 @@ sulwhasoo = function () {
       value: function page6build() {
         var _this15 = this;
 
-        var FixSize, icon, k, l, leftBtn, m, qrcode, rightBtn, _runArrow, _runUGC1BG, _runUGC2Item, _runUGC3BG, _runUGC4BG, _runUGC4Star, _runUGC5Light, star, ugc1, ugc1BG, ugc1Icons, ugc2, ugc2BG, ugc2Item, ugc3, ugc3BG, ugc3Icons, ugc3Item, ugc4, ugc4BG, ugc4BG2, ugc4Stars, ugc5, ugc5BG, ugc5Item1, ugc5Item2, ugc5Item3;
+        var FixSize, icon, k, l, leftBtn, p, qrcode, rightBtn, _runArrow, _runUGC1BG, _runUGC2Item, _runUGC3BG, _runUGC4BG, _runUGC4Star, _runUGC5Light, star, ugc1, ugc1BG, ugc1Icons, ugc2, ugc2BG, ugc2Item, ugc3, ugc3BG, ugc3Icons, ugc3Item, ugc4, ugc4BG, ugc4BG2, ugc4Stars, ugc5, ugc5BG, ugc5Item1, ugc5Item2, ugc5Item3;
         this.Index = 6;
         this.animation = true;
         this.page6 = new Container();
@@ -1485,7 +1480,7 @@ sulwhasoo = function () {
         ugc4BG2.y = 1333 / 2 - 100 + FixSize * 2;
         ugc4.addChild(ugc4BG, ugc4BG2);
         ugc4Stars = [];
-        for (i = m = 0; m < 5; i = ++m) {
+        for (i = p = 0; p < 5; i = ++p) {
           star = new Sprite(getTe(_CDN + "img/ugc-4-1.png"));
           star.anchor.set(0.5, 0.5);
           star.x = star.dx = 800 + star.width * i;
@@ -1496,8 +1491,8 @@ sulwhasoo = function () {
           ugc4.addChild(star);
         }
         _runUGC4Star = function runUGC4Star() {
-          var p, size;
-          for (i = p = 0; p < 3; i = ++p) {
+          var q, size;
+          for (i = q = 0; q < 3; i = ++q) {
             star = ugc4Stars[i];
             star.x = star.dx;
             star.y = star.dy;
@@ -1748,17 +1743,32 @@ sulwhasoo = function () {
     }, {
       key: 'showCloud',
       value: function showCloud() {
-        var cloud, k, ref, results, to;
+        var cloud, k, m, ref, results, size, to, y;
+        // m = cloud.x > 750/2
+        // if Math.random() > 0.5
+        //   m = cloud.x < 750/2
+        m = Math.random() > 0.5;
+        size = 100;
         results = [];
         for (i = k = 0, ref = this.clouds.length; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
           cloud = this.clouds[i];
-          if (cloud.x > 750 / 2) {
-            cloud.dx = to = 950;
+          if (m) {
+            if (cloud.dex >= 750 / 2) {
+              cloud.dx = to = 900 + Math.random() * size;
+            } else {
+              cloud.dx = to = -150 - Math.random() * size;
+            }
           } else {
-            cloud.dx = to = -200;
+            if (cloud.dex <= 750 / 2) {
+              cloud.dx = to = 900 + Math.random() * size;
+            } else {
+              cloud.dx = to = -150 - Math.random() * size;
+            }
           }
+          y = cloud.dey + Math.random() * (size * 2) - size;
           results.push(TweenLite.to(cloud, 2.5, {
             x: to,
+            y: y,
             alpha: 0.6,
             delay: i * 0.1
           }));
