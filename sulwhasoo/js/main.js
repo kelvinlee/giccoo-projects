@@ -2143,7 +2143,7 @@ init = function init() {
     }
   });
   // axios.get "//qa-chip.igame.163.com/api/activity/sulwhasoo/userInfo?type=0"
-  return axios.get("//music.163.com/api/activity/sulwhasoo/userInfo?type=1").then(function (msg) {
+  return axios.get("//music.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
     var d, date;
     d = msg.data;
     // d = {"code":200,"msg":null,"data":{"latestSongName":"Strawberries & Cigarettes","latestTime":1522764106000,"latestShareSongName":"生命是场马拉松","hottestSongName":"Strawberries & Cigarettes","hottestSongArtistName":"Various Artists","hottestSongCount":18,"hottestArtistSong":["Cry On My Shoulder","Here We Are Again","Річка"]}}

@@ -180,7 +180,7 @@ init = ->
 			# ,200
 			console.log "mounted"
 
-	axios.get "//music.163.com/api/activity/sulwhasoo/userInfo?type=1"
+	axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
 	# axios.get "//qa-chip.igame.163.com/api/activity/sulwhasoo/userInfo?type=0"
 	.then (msg)=>
 		d = msg.data
