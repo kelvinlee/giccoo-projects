@@ -221,12 +221,7 @@ images = [_CDN + "img/that-girl.png", _CDN + "img/cloud-1.png", _CDN + "img/clou
 
 page1Images = [_CDN + "img/that-girl.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/page-1-title-null.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png"];
 
-// 给云彩做个随机停留位置, 和大小
-// loading bu bianda
-// loading star more
-// 半圈 瓶子出现
-// 瓶子光效明显一点
-// 文字点击跳转
+// iphone x 适配
 lastDate = null;
 
 lastTime = null;
@@ -336,7 +331,12 @@ sulwhasoo = function () {
     }, {
       key: 'build',
       value: function build() {
-        var bg, icon, k, size, star;
+        var bg, canvasH, icon, k, size, star;
+        this.default.canvasH = canvasH = document.getElementById(this.opts.el).clientHeight;
+        console.log("created", canvasH, canvasH < this.default.h);
+        if (canvasH < this.default.h) {
+          main.biger = true;
+        }
         bg = new Graphics();
         bg.beginFill(0x1e2c3b);
         bg.drawRect(0, 0, 750, 1333);
@@ -1587,12 +1587,12 @@ sulwhasoo = function () {
           rightBtn.alpha = 1;
           TweenLite.to(leftBtn, 2, {
             alpha: 0,
-            x: 0,
+            x: main.biger ? 750 * 0.1 : 0,
             delay: 1
           });
           return TweenLite.to(rightBtn, 2, {
             alpha: 0,
-            x: 750,
+            x: main.biger ? 750 * 0.9 : 750,
             delay: 1,
             onComplete: function onComplete() {
               return _runArrow();
@@ -1681,7 +1681,12 @@ sulwhasoo = function () {
         arrow = new Sprite(getTe(_CDN + "img/arrow.png"));
         arrow.rotation = Math.PI / 2;
         btn.addChild(arrow);
-        btn.x = btn.dx = arrow.width;
+        btn.x = arrow.width;
+        if (main.biger) {
+          btn.x += 750 * 0.05;
+        }
+        btn.dx = btn.x;
+        console.log("leftBtn", btn.x);
         btn.y = 1333 / 2 - arrow.height / 2;
         return btn;
       }
@@ -1693,7 +1698,12 @@ sulwhasoo = function () {
         arrow = new Sprite(getTe(_CDN + "img/arrow.png"));
         arrow.rotation = -Math.PI / 2;
         btn.addChild(arrow);
-        btn.x = btn.dx = 750 - arrow.width;
+        btn.x = 750 - arrow.width;
+        if (main.biger) {
+          btn.x -= 750 * 0.05;
+        }
+        btn.dx = btn.x;
+        console.log("rightBtn", btn.x);
         btn.y = 1333 / 2 + arrow.height;
         return btn;
       }
@@ -1881,6 +1891,7 @@ sulwhasoo = function () {
   sulwhasoo.prototype.default = {
     w: 750,
     h: 1333,
+    canvasH: 510,
     running: true
   };
 
@@ -1973,7 +1984,7 @@ window.onload = function () {
 };
 
 init = function init() {
-  var TrueH, TrueW, navH, smaller;
+  var TrueH, TrueW, canvasH, navH, smaller;
   TrueH = document.documentElement.clientHeight;
   TrueW = document.documentElement.clientWidth;
   if (TrueW >= 640) {
@@ -1985,13 +1996,17 @@ init = function init() {
   if (TrueH >= 1138) {
     TrueH = 1138;
   }
-  smaller = TrueW / 640 * 1138 > TrueH;
+  // smaller = TrueW/640*1138 > TrueH
   navH = Math.ceil(TrueW / 640 * 94 / TrueH * 100);
-  console.log(TrueW / TrueH < 0.52);
+  canvasH = document.getElementById("canvas").clientHeight;
+  if (canvasH < TrueH) {
+    smaller = true;
+  }
+  console.log(canvasH, TrueH);
   main = new Vue({
     el: "#main",
     data: {
-      biger: TrueW / TrueH < 0.52,
+      biger: false,
       wy: false,
       mounted: false,
       ugc: null,
@@ -2114,6 +2129,12 @@ init = function init() {
         el: "canvas"
       });
       this.mounted = true;
+      canvasH = document.getElementById("canvas").clientHeight;
+      // setTimeout =>
+      // 	canvasH = document.getElementById("canvas").clientHeight
+      // 	@.biger = true if canvasH < TrueH
+      // 	console.log canvasH,TrueH,@.biger
+      // ,200
       return console.log("mounted");
     }
   });

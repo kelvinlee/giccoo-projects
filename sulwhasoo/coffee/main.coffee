@@ -72,14 +72,16 @@ init = ->
 	# document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
 	TrueW = 640 if TrueW >= 640
 	TrueH = 1138 if TrueH >= 1138
-	smaller = TrueW/640*1138 > TrueH
+	# smaller = TrueW/640*1138 > TrueH
 	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
-	console.log TrueW/TrueH < 0.52
+	canvasH = document.getElementById("canvas").clientHeight
+	smaller = true if canvasH < TrueH
+	console.log canvasH, TrueH
 
 	main = new Vue
 		el: "#main"
 		data:
-			biger: TrueW/TrueH < 0.52
+			biger: false
 			wy: false
 			mounted: false
 			ugc: null
@@ -170,6 +172,12 @@ init = ->
 			# if not musicLineCache?
 			sulwhasooCache = new sulwhasoo({el: "canvas"})
 			@.mounted = true
+			canvasH = document.getElementById("canvas").clientHeight
+			# setTimeout =>
+			# 	canvasH = document.getElementById("canvas").clientHeight
+			# 	@.biger = true if canvasH < TrueH
+			# 	console.log canvasH,TrueH,@.biger
+			# ,200
 			console.log "mounted"
 
 	axios.get "//music.163.com/api/activity/sulwhasoo/userInfo?type=1"

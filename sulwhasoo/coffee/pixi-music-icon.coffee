@@ -67,12 +67,7 @@ page1Images = [
   _CDN+"img/star-2.png"
 ]
 
-# 给云彩做个随机停留位置, 和大小
-# loading bu bianda
-# loading star more
-# 半圈 瓶子出现
-# 瓶子光效明显一点
-# 文字点击跳转
+# iphone x 适配
 
 lastDate = null
 lastTime = null
@@ -93,6 +88,7 @@ class sulwhasoo
   default:
     w: 750
     h: 1333
+    canvasH: 510
     running: true
   constructor: (arg)->
     TrueH = document.documentElement.clientHeight
@@ -123,6 +119,7 @@ class sulwhasoo
       _CDN+"img/icon-loading.png"
       _CDN+"img/star.png"
     ]).load(@.build.bind(@))
+    
   loaded: (name)->
     @.loadCount++
     count = if main.wy then images.length else page1Images.length
@@ -160,6 +157,9 @@ class sulwhasoo
     ,1000/10
   # loading page
   build: ->
+    @.default.canvasH = canvasH = document.getElementById(@.opts.el).clientHeight
+    console.log "created",canvasH, canvasH < @.default.h
+    main.biger = true if canvasH < @.default.h
     bg = new Graphics()
     bg.beginFill 0x1e2c3b
     bg.drawRect 0,0,750,1333
@@ -1121,11 +1121,11 @@ class sulwhasoo
       rightBtn.alpha = 1
       TweenLite.to leftBtn,2,
         alpha: 0
-        x: 0
+        x: if main.biger then 750*0.1 else 0
         delay: 1
       TweenLite.to rightBtn,2,
         alpha: 0
-        x: 750
+        x: if main.biger then 750*0.9 else 750
         delay: 1
         onComplete: =>
           runArrow()
@@ -1179,7 +1179,10 @@ class sulwhasoo
     arrow = new Sprite getTe _CDN+"img/arrow.png"
     arrow.rotation = Math.PI / 2
     btn.addChild arrow
-    btn.x = btn.dx = arrow.width
+    btn.x = arrow.width
+    btn.x += 750 * 0.05 if main.biger
+    btn.dx = btn.x
+    console.log "leftBtn",btn.x
     btn.y = 1333/2 - arrow.height/2
     return btn
   rightBtn: ->
@@ -1187,7 +1190,10 @@ class sulwhasoo
     arrow = new Sprite getTe _CDN+"img/arrow.png"
     arrow.rotation = - Math.PI / 2
     btn.addChild arrow
-    btn.x = btn.dx = 750 - arrow.width
+    btn.x = 750 - arrow.width
+    btn.x -= 750 * 0.05 if main.biger
+    btn.dx = btn.x
+    console.log "rightBtn",btn.x
     btn.y = 1333/2 + arrow.height
     return btn
 
