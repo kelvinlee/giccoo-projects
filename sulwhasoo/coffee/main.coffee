@@ -1,8 +1,9 @@
 # @codekit-prepend "coffee/css3Prefix"
- # @codekit-prepend "../../libs/coffee/requestanimation"
+# @codekit-prepend "../../libs/coffee/requestanimation"
 # @codekit-prepend "../../libs/coffee/loadWechatConfig"
 # @codekit-prepend "../../libs/coffee/passiveSupport"
 # @codekit-prepend "../../libs/coffee/IsPC"
+# @codekit-prepend "../../libs/coffee/get"
 # @codekit-prepend "../../libs/vue/vue-player"
 # @codekit-prepend "./pixi-music-icon"
 
@@ -36,6 +37,7 @@ neteaseShareImage = ->
 
 
 window.onload = ->
+	alert "onload" if $_GET["debug"]
 	if IsPC()
 		document.getElementById("qrcode").className += " show"
 		return false
@@ -57,11 +59,13 @@ window.onload = ->
 			wx.onMenuShareAppMessage shareContent
 			wx.onMenuShareQQ shareContent
 			wx.onMenuShareWeibo shareContent
-	
+
+	alert "sys:#{sys}" if $_GET["debug"]
 	_public = new Vue
 		el: "#public"
 		data:
 			note: true
+	alert "vue load" if $_GET["debug"]
 	init()
 
 init = ->
@@ -76,7 +80,6 @@ init = ->
 	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
 	canvasH = document.getElementById("canvas").clientHeight
 	smaller = true if canvasH < TrueH
-	console.log canvasH, TrueH
 
 	main = new Vue
 		el: "#main"
@@ -179,9 +182,9 @@ init = ->
 			# 	console.log canvasH,TrueH,@.biger
 			# ,200
 			console.log "mounted"
-
-	axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
+	alert "main load" if $_GET["debug"]
 	# axios.get "//qa-chip.igame.163.com/api/activity/sulwhasoo/userInfo?type=0"
+	axios.get "//music.163.com/api/activity/lancome/userInfo?type=1"
 	.then (msg)=>
 		d = msg.data
 		# d = {"code":200,"msg":null,"data":{"latestSongName":"Strawberries & Cigarettes","latestTime":1522764106000,"latestShareSongName":"生命是场马拉松","hottestSongName":"Strawberries & Cigarettes","hottestSongArtistName":"Various Artists","hottestSongCount":18,"hottestArtistSong":["Cry On My Shoulder","Here We Are Again","Річка"]}}
@@ -189,8 +192,13 @@ init = ->
 		if d.code is 200
 			lastName = d.data.latestSongName if d.data.latestSongName?
 			shareName = d.data.latestShareSongName if d.data.latestShareSongName?
-			if d.data.latestTime?
+			if d.data.latestTime? and d.data.latestTime > 100
 				date = new Date(d.data.latestTime)
 				lastDate = "#{date.getFullYear()}年#{date.getMonth()+1}月#{date.getDate()}日"
-				lastTime = "#{date.getHours()}:#{date.getMinutes()}"
-
+				lastTime = "#{timeDouble(date.getHours())}:#{timeDouble(date.getMinutes())}"
+	.catch (err)=>
+		alert "ajax load faild" if $_GET["debug"]
+timeDouble = (text)->
+	if text > 10
+		return text
+	return "0"+text

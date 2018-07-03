@@ -67,7 +67,10 @@ page1Images = [
   _CDN+"img/star-2.png"
 ]
 
-# iphone x 适配
+# 左右按钮点击
+# 时间双位
+# ipx 按钮贴底了
+
 
 lastDate = null
 lastTime = null
@@ -1114,6 +1117,19 @@ class sulwhasoo
     @.ugcleftBtn = leftBtn = @.leftBtn()
     @.ugcrightBtn = rightBtn = @.rightBtn()
     @.page6.addChild leftBtn,rightBtn
+    
+    leftBtn.buttonMode = true
+    leftBtn.interactive = true
+    leftBtn.touchstart = leftBtn.click = (data)=>
+      console.log "page 5 click"
+      @.selectUGC(true)
+    rightBtn.buttonMode = true
+    rightBtn.interactive = true
+    rightBtn.touchstart = rightBtn.click = (data)=>
+      console.log "page 5 click"
+      @.selectUGC(false)
+
+
     runArrow = =>
       leftBtn.x = leftBtn.dx
       leftBtn.alpha = 1

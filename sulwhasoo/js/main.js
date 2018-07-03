@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, UGCTITLE, VENDORS, _CDN, _public, autoDetectRenderer, css3Prefix, e, getId, getTe, i, images, imageurl, init, j, lastDate, lastName, lastTime, len1, loadWechatConfig, loader, loading, mTestElement, main, neteaseShareImage, options, page1Images, passiveSupported, resource, resources, sended, shareName, sulwhasoo, sulwhasooCache, sys, ugcCache;
+var $_GET, ANIMATION_END_NAME, ANIMATION_END_NAMES, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, UGCTITLE, VENDORS, _CDN, _public, autoDetectRenderer, css3Prefix, e, getId, getTe, i, images, imageurl, init, k, lastDate, lastName, lastTime, len1, loadWechatConfig, loader, loading, mTestElement, main, neteaseShareImage, options, page1Images, passiveSupported, resource, resources, sended, shareName, sulwhasoo, sulwhasooCache, sys, timeDouble, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -24,8 +24,8 @@ ANIMATION_END_NAMES = {
 
 mTestElement = document.createElement("div");
 
-for (j = 0, len1 = VENDORS.length; j < len1; j++) {
-  i = VENDORS[j];
+for (k = 0, len1 = VENDORS.length; k < len1; k++) {
+  i = VENDORS[k];
   css3Prefix = i;
   if (css3Prefix + "Transition" in mTestElement.style) {
     break;
@@ -108,6 +108,27 @@ IsPC = function IsPC() {
   return flag;
 };
 
+$_GET = function () {
+  var get, j, l, len2, u, url;
+  url = window.document.location.href.toString();
+  u = url.split('?');
+  if (typeof u[1] === 'string') {
+    u = u[1].split('&');
+    get = {};
+    console.log(u);
+    for (l = 0, len2 = u.length; l < len2; l++) {
+      i = u[l];
+      j = i.split('=');
+      get[j[0]] = j[1];
+    }
+    return get;
+  } else {
+    return {};
+  }
+}();
+if ($_GET["debug"]) {
+  alert("test 0");
+}
 Vue.component("player", {
   template: '<div class="player" :class="{play: playing, pause: !playing}" @click="change"> <div class="icon-play" :class="{play: playing, pause: !playing}"> <svg v-if="!icon" v-show="!playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-39"></use><path class="ytp-svg-fill" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"></path></svg> <svg v-if="!icon" v-show="playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-40"></use><path class="ytp-svg-fill" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z"></path></svg> </div> <audio :src="src" :autoplay="autoplay" :preload="preload" :loop="loop"></audio> <img v-if="thumb" :src="thumb" /> </div>',
   data: function data() {
@@ -179,7 +200,9 @@ Vue.component("player", {
     return this.audio.addEventListener("ended", this.ended.bind(this));
   }
 });
-
+if ($_GET["debug"]) {
+  alert("test 1");
+}
 // @audio.play()
 // console.log @audio,@audioOther,@playing
 Container = PIXI.Container;
@@ -221,7 +244,9 @@ images = [_CDN + "img/that-girl.png", _CDN + "img/cloud-1.png", _CDN + "img/clou
 
 page1Images = [_CDN + "img/that-girl.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/page-1-title-null.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png"];
 
-// iphone x 适配
+// 左右按钮点击
+// 时间双位
+// ipx 按钮贴底了
 lastDate = null;
 
 lastTime = null;
@@ -331,7 +356,7 @@ sulwhasoo = function () {
     }, {
       key: 'build',
       value: function build() {
-        var bg, canvasH, icon, k, size, star;
+        var bg, canvasH, icon, l, size, star;
         this.default.canvasH = canvasH = document.getElementById(this.opts.el).clientHeight;
         console.log("created", canvasH, canvasH < this.default.h);
         if (canvasH < this.default.h) {
@@ -348,7 +373,7 @@ sulwhasoo = function () {
         icon.y = 1333 / 2 - 100;
         icon.rotation = 0;
         this.stars = [];
-        for (i = k = 0; k < 18; i = ++k) {
+        for (i = l = 0; l < 18; i = ++l) {
           star = new Sprite(getTe(_CDN + "img/star.png"));
           star.anchor.set(0.5, 0.5);
           star.x = 750 / 2 - icon.width / 2 + Math.random() * icon.width;
@@ -393,7 +418,7 @@ sulwhasoo = function () {
       value: function page1() {
         var _this3 = this;
 
-        var bg, cloud, k, l, p, point, product, productBorder, q, size, star, title, woman, xylist;
+        var bg, cloud, l, p, point, product, productBorder, q, r, size, star, title, woman, xylist;
         this.Index = 1;
         this.stage.removeChild(this.loading);
         this.cloud = new Container();
@@ -420,7 +445,7 @@ sulwhasoo = function () {
           x: 750 / 2 - 100,
           y: 1200
         }];
-        for (i = k = 0; k < 5; i = ++k) {
+        for (i = l = 0; l < 5; i = ++l) {
           cloud = new Sprite(getTe(_CDN + ('img/cloud-' + (i % 3 + 1) + '.png')));
           cloud.anchor.set(0.5, 0.5);
           cloud.x = cloud.dex = xylist[i].x;
@@ -476,7 +501,7 @@ sulwhasoo = function () {
         title.alpha = 0;
         this.page.addChild(title);
         this.bg = bg = new Container();
-        for (i = l = 0; l < 50; i = ++l) {
+        for (i = p = 0; p < 50; i = ++p) {
           star = new Sprite(getTe(_CDN + ('img/star-' + (i % 2 + 1) + '.png')));
           star.x = Math.random() * (750 - star.width);
           star.y = Math.random() * (1333 - star.height);
@@ -484,7 +509,7 @@ sulwhasoo = function () {
           star.alpha = 0.5 + Math.random() * 0.5;
           this.bg.addChild(star);
         }
-        for (i = p = 0; p < 20; i = ++p) {
+        for (i = q = 0; q < 20; i = ++q) {
           star = new Sprite(getTe(_CDN + ('img/star-' + (i % 2 + 1) + '.png')));
           star.x = Math.random() * (750 - star.width);
           star.y = Math.random() * (1333 - star.height);
@@ -493,7 +518,7 @@ sulwhasoo = function () {
           this.bg.addChild(star);
         }
         this.largeStars = [];
-        for (i = q = 0; q < 10; i = ++q) {
+        for (i = r = 0; r < 10; i = ++r) {
           star = new Sprite(getTe(_CDN + ('img/star-' + (i % 2 + 1) + '.png')));
           star.x = Math.random() * (750 - star.width);
           star.y = Math.random() * (1333 - star.height);
@@ -1047,7 +1072,7 @@ sulwhasoo = function () {
       value: function page5build() {
         var _this13 = this;
 
-        var btn, icon, iconTimes, icons, k, light1, light2, light3, lightL, lightS, page5ShowStep1, page5ShowStep2, page5ShowStep3, product, productBG, productBGEnd, _runSLlight, scaleX, self, step, title, titleLarge;
+        var btn, icon, iconTimes, icons, l, light1, light2, light3, lightL, lightS, page5ShowStep1, page5ShowStep2, page5ShowStep3, product, productBG, productBGEnd, _runSLlight, scaleX, self, step, title, titleLarge;
         this.Index = 5;
         this.animation = true;
         this.page5 = new Container();
@@ -1088,7 +1113,7 @@ sulwhasoo = function () {
         title.alpha = 0;
         this.page5.addChild(title);
         icons = [];
-        for (i = k = 0; k < 5; i = ++k) {
+        for (i = l = 0; l < 5; i = ++l) {
           icon = new Sprite(getTe(_CDN + ('img/icon-symbol-' + (i + 1) + '.png')));
           icon.anchor.set(0.5, 0.5);
           icon.x = 750 / 2 + 20 + 50 + i % 2 * -100;
@@ -1167,13 +1192,13 @@ sulwhasoo = function () {
           });
         };
         page5ShowStep2 = function page5ShowStep2() {
-          var cloud, l, len2, ref;
+          var cloud, len2, p, ref;
           step = 2;
           _runSLlight();
           btn.alpha = 0;
           ref = _this13.clouds;
-          for (l = 0, len2 = ref.length; l < len2; l++) {
-            cloud = ref[l];
+          for (p = 0, len2 = ref.length; p < len2; p++) {
+            cloud = ref[p];
             TweenLite.to(cloud, 0.5, {
               alpha: 0
             });
@@ -1193,9 +1218,9 @@ sulwhasoo = function () {
               return TweenLite.to(product, 0.7, {
                 alpha: 1,
                 onComplete: function onComplete() {
-                  var p, results;
+                  var q, results;
                   results = [];
-                  for (i = p = 0; p < 5; i = ++p) {
+                  for (i = q = 0; q < 5; i = ++q) {
                     icon = icons[i];
                     icon.y = -(100 * (i + 1));
                     TweenLite.to(icon, 3, {
@@ -1217,14 +1242,14 @@ sulwhasoo = function () {
           });
         };
         page5ShowStep3 = function page5ShowStep3() {
-          var l, len2;
+          var len2, p;
           if (iconTimes < 5) {
             return false;
           }
           step = 3;
           console.log("run");
-          for (l = 0, len2 = icons.length; l < len2; l++) {
-            icon = icons[l];
+          for (p = 0, len2 = icons.length; p < len2; p++) {
+            icon = icons[p];
             icon.visible = false;
           }
           TweenLite.to(productBG, 1, {
@@ -1330,7 +1355,7 @@ sulwhasoo = function () {
       value: function page6build() {
         var _this15 = this;
 
-        var FixSize, icon, k, l, leftBtn, p, qrcode, rightBtn, _runArrow, _runUGC1BG, _runUGC2Item, _runUGC3BG, _runUGC4BG, _runUGC4Star, _runUGC5Light, star, ugc1, ugc1BG, ugc1Icons, ugc2, ugc2BG, ugc2Item, ugc3, ugc3BG, ugc3Icons, ugc3Item, ugc4, ugc4BG, ugc4BG2, ugc4Stars, ugc5, ugc5BG, ugc5Item1, ugc5Item2, ugc5Item3;
+        var FixSize, icon, l, leftBtn, p, q, qrcode, rightBtn, _runArrow, _runUGC1BG, _runUGC2Item, _runUGC3BG, _runUGC4BG, _runUGC4Star, _runUGC5Light, star, ugc1, ugc1BG, ugc1Icons, ugc2, ugc2BG, ugc2Item, ugc3, ugc3BG, ugc3Icons, ugc3Item, ugc4, ugc4BG, ugc4BG2, ugc4Stars, ugc5, ugc5BG, ugc5Item1, ugc5Item2, ugc5Item3;
         this.Index = 6;
         this.animation = true;
         this.page6 = new Container();
@@ -1365,7 +1390,7 @@ sulwhasoo = function () {
         ugc1.addChild(ugc1BG);
         ugc1.alpha = 1;
         ugc1Icons = [];
-        for (i = k = 0; k < 3; i = ++k) {
+        for (i = l = 0; l < 3; i = ++l) {
           icon = new Sprite(getTe(_CDN + ('img/icon-symbol-' + (i + 1) + '.png')));
           icon.anchor.set(0.5, 0.5);
           icon.x = icon.dx = 750 / 2 + 150 + i % 2 * icon.width / (i % 2 + 1);
@@ -1456,7 +1481,7 @@ sulwhasoo = function () {
         };
         _runUGC3BG();
         ugc3Icons = [];
-        for (i = l = 0; l < 3; i = ++l) {
+        for (i = p = 0; p < 3; i = ++p) {
           icon = new Sprite(getTe(_CDN + ('img/icon-symbol-' + (i + 1) + '.png')));
           icon.anchor.set(0.5, 0.5);
           icon.x = icon.dx = 750 / 2 - 250 + i * icon.width / 3;
@@ -1480,7 +1505,7 @@ sulwhasoo = function () {
         ugc4BG2.y = 1333 / 2 - 100 + FixSize * 2;
         ugc4.addChild(ugc4BG, ugc4BG2);
         ugc4Stars = [];
-        for (i = p = 0; p < 5; i = ++p) {
+        for (i = q = 0; q < 5; i = ++q) {
           star = new Sprite(getTe(_CDN + "img/ugc-4-1.png"));
           star.anchor.set(0.5, 0.5);
           star.x = star.dx = 800 + star.width * i;
@@ -1491,8 +1516,8 @@ sulwhasoo = function () {
           ugc4.addChild(star);
         }
         _runUGC4Star = function runUGC4Star() {
-          var q, size;
-          for (i = q = 0; q < 3; i = ++q) {
+          var r, size;
+          for (i = r = 0; r < 3; i = ++r) {
             star = ugc4Stars[i];
             star.x = star.dx;
             star.y = star.dy;
@@ -1580,6 +1605,18 @@ sulwhasoo = function () {
         this.ugcleftBtn = leftBtn = this.leftBtn();
         this.ugcrightBtn = rightBtn = this.rightBtn();
         this.page6.addChild(leftBtn, rightBtn);
+        leftBtn.buttonMode = true;
+        leftBtn.interactive = true;
+        leftBtn.touchstart = leftBtn.click = function (data) {
+          console.log("page 5 click");
+          return _this15.selectUGC(true);
+        };
+        rightBtn.buttonMode = true;
+        rightBtn.interactive = true;
+        rightBtn.touchstart = rightBtn.click = function (data) {
+          console.log("page 5 click");
+          return _this15.selectUGC(false);
+        };
         _runArrow = function runArrow() {
           leftBtn.x = leftBtn.dx;
           leftBtn.alpha = 1;
@@ -1611,7 +1648,7 @@ sulwhasoo = function () {
         var puls = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
         var callback = arguments[1];
 
-        var item, k, results;
+        var item, l, results;
         if (!(this.page6 != null && this.page6.alpha >= 1)) {
           return false;
         }
@@ -1627,7 +1664,7 @@ sulwhasoo = function () {
           this.ugcIndex = 5;
         }
         results = [];
-        for (i = k = 1; k <= 5; i = ++k) {
+        for (i = l = 1; l <= 5; i = ++l) {
           item = this['ugc' + i];
           if (i === this.ugcIndex) {
             results.push(TweenLite.to(item, 0.5, {
@@ -1714,11 +1751,11 @@ sulwhasoo = function () {
     }, {
       key: 'symbolRun',
       value: function symbolRun(icons, detail) {
-        var icon, k, len2, results;
+        var icon, l, len2, results;
         // return false unless @.ugc1.alpha >= 1
         results = [];
-        for (k = 0, len2 = icons.length; k < len2; k++) {
-          icon = icons[k];
+        for (l = 0, len2 = icons.length; l < len2; l++) {
+          icon = icons[l];
           icon.y -= icon.speed;
           if (icon.direction) {
             icon.alpha += 0.01;
@@ -1742,9 +1779,9 @@ sulwhasoo = function () {
     }, {
       key: 'hideCloud',
       value: function hideCloud() {
-        var cloud, k, ref, results;
+        var cloud, l, ref, results;
         results = [];
-        for (i = k = 0, ref = this.clouds.length; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
+        for (i = l = 0, ref = this.clouds.length; 0 <= ref ? l < ref : l > ref; i = 0 <= ref ? ++l : --l) {
           cloud = this.clouds[i];
           results.push(TweenLite.to(cloud, 2.5, {
             x: cloud.dex,
@@ -1757,14 +1794,14 @@ sulwhasoo = function () {
     }, {
       key: 'showCloud',
       value: function showCloud() {
-        var cloud, k, m, ref, results, size, to, y;
+        var cloud, l, m, ref, results, size, to, y;
         // m = cloud.x > 750/2
         // if Math.random() > 0.5
         //   m = cloud.x < 750/2
         m = Math.random() > 0.5;
         size = 100;
         results = [];
-        for (i = k = 0, ref = this.clouds.length; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
+        for (i = l = 0, ref = this.clouds.length; 0 <= ref ? l < ref : l > ref; i = 0 <= ref ? ++l : --l) {
           cloud = this.clouds[i];
           if (m) {
             if (cloud.dex >= 750 / 2) {
@@ -1792,11 +1829,11 @@ sulwhasoo = function () {
     }, {
       key: 'loopBgStar',
       value: function loopBgStar(detail) {
-        var k, len2, ref, results, star;
+        var l, len2, ref, results, star;
         ref = this.largeStars;
         results = [];
-        for (k = 0, len2 = ref.length; k < len2; k++) {
-          star = ref[k];
+        for (l = 0, len2 = ref.length; l < len2; l++) {
+          star = ref[l];
           if (star.direction) {
             star.alpha -= 0.06 * star.speed * detail;
             if (star.alpha <= 0) {
@@ -1818,15 +1855,15 @@ sulwhasoo = function () {
     }, {
       key: 'loopLoading',
       value: function loopLoading(detail) {
-        var k, len2, ref, results, star;
+        var l, len2, ref, results, star;
         if (!this.default.running) {
           return false;
         }
         this.icon.rotation += 0.02 * detail;
         ref = this.stars;
         results = [];
-        for (k = 0, len2 = ref.length; k < len2; k++) {
-          star = ref[k];
+        for (l = 0, len2 = ref.length; l < len2; l++) {
+          star = ref[l];
           star.y += star.speed * detail;
           star.alpha -= 0.002 * star.speed * detail;
           if (star.alpha <= 0) {
@@ -1841,14 +1878,14 @@ sulwhasoo = function () {
     }, {
       key: 'loopCloud',
       value: function loopCloud(detail) {
-        var cloud, k, len2, ref, results;
+        var cloud, l, len2, ref, results;
         if (!this.default.running) {
           return false;
         }
         ref = this.clouds;
         results = [];
-        for (k = 0, len2 = ref.length; k < len2; k++) {
-          cloud = ref[k];
+        for (l = 0, len2 = ref.length; l < len2; l++) {
+          cloud = ref[l];
           if (cloud.direction) {
             cloud.x += (0.1 + Math.random() * 0.4) * detail;
             if (cloud.x > cloud.dx + 20) {
@@ -1901,20 +1938,23 @@ sulwhasoo = function () {
 
   return sulwhasoo;
 }.call(undefined);
-
+if ($_GET["debug"]) {
+  alert("test 3");
+}
 // @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/coffee/requestanimation"
 // @codekit-prepend "../../libs/coffee/loadWechatConfig"
 // @codekit-prepend "../../libs/coffee/passiveSupport"
 // @codekit-prepend "../../libs/coffee/IsPC"
+// @codekit-prepend "../../libs/coffee/get"
 // @codekit-prepend "../../libs/vue/vue-player"
 // @codekit-prepend "./pixi-music-icon"
 axios.defaults.withCredentials = true;
 
 String.prototype.gblen = function () {
-  var k, len, ref;
+  var l, len, ref;
   len = 0;
-  for (i = k = 0, ref = this.length; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
+  for (i = l = 0, ref = this.length; 0 <= ref ? l < ref : l > ref; i = 0 <= ref ? ++l : --l) {
     if (this.charCodeAt(i) > 127 || this.charCodeAt(i) === 94) {
       len += 2;
     } else {
@@ -1952,6 +1992,9 @@ neteaseShareImage = function neteaseShareImage() {
 };
 
 window.onload = function () {
+  if ($_GET["debug"]) {
+    alert("onload");
+  }
   if (IsPC()) {
     document.getElementById("qrcode").className += " show";
     return false;
@@ -1978,12 +2021,18 @@ window.onload = function () {
       return wx.onMenuShareWeibo(shareContent);
     });
   }
+  if ($_GET["debug"]) {
+    alert('sys:' + sys);
+  }
   _public = new Vue({
     el: "#public",
     data: {
       note: true
     }
   });
+  if ($_GET["debug"]) {
+    alert("vue load");
+  }
   return init();
 };
 
@@ -2006,7 +2055,6 @@ init = function init() {
   if (canvasH < TrueH) {
     smaller = true;
   }
-  console.log(canvasH, TrueH);
   main = new Vue({
     el: "#main",
     data: {
@@ -2142,6 +2190,9 @@ init = function init() {
       return console.log("mounted");
     }
   });
+  if ($_GET["debug"]) {
+    alert("main load");
+  }
   // axios.get "//qa-chip.igame.163.com/api/activity/sulwhasoo/userInfo?type=0"
   return axios.get("//music.163.com/api/activity/lancome/userInfo?type=1").then(function (msg) {
     var d, date;
@@ -2155,11 +2206,22 @@ init = function init() {
       if (d.data.latestShareSongName != null) {
         shareName = d.data.latestShareSongName;
       }
-      if (d.data.latestTime != null) {
+      if (d.data.latestTime != null && d.data.latestTime > 100) {
         date = new Date(d.data.latestTime);
         lastDate = date.getFullYear() + '\u5E74' + (date.getMonth() + 1) + '\u6708' + date.getDate() + '\u65E5';
-        return lastTime = date.getHours() + ':' + date.getMinutes();
+        return lastTime = timeDouble(date.getHours()) + ':' + timeDouble(date.getMinutes());
       }
     }
+  }).catch(function (err) {
+    if ($_GET["debug"]) {
+      return alert("ajax load faild");
+    }
   });
+};
+
+timeDouble = function timeDouble(text) {
+  if (text > 10) {
+    return text;
+  }
+  return "0" + text;
 };
