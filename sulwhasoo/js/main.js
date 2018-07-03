@@ -126,9 +126,7 @@ $_GET = function () {
     return {};
   }
 }();
-if ($_GET["debug"]) {
-  alert("test 0");
-}
+
 Vue.component("player", {
   template: '<div class="player" :class="{play: playing, pause: !playing}" @click="change"> <div class="icon-play" :class="{play: playing, pause: !playing}"> <svg v-if="!icon" v-show="!playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-39"></use><path class="ytp-svg-fill" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"></path></svg> <svg v-if="!icon" v-show="playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-40"></use><path class="ytp-svg-fill" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z"></path></svg> </div> <audio :src="src" :autoplay="autoplay" :preload="preload" :loop="loop"></audio> <img v-if="thumb" :src="thumb" /> </div>',
   data: function data() {
@@ -200,9 +198,7 @@ Vue.component("player", {
     return this.audio.addEventListener("ended", this.ended.bind(this));
   }
 });
-if ($_GET["debug"]) {
-  alert("test 1");
-}
+
 // @audio.play()
 // console.log @audio,@audioOther,@playing
 Container = PIXI.Container;
@@ -244,9 +240,6 @@ images = [_CDN + "img/that-girl.png", _CDN + "img/cloud-1.png", _CDN + "img/clou
 
 page1Images = [_CDN + "img/that-girl.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/page-1-title-null.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png"];
 
-// 左右按钮点击
-// 时间双位
-// ipx 按钮贴底了
 lastDate = null;
 
 lastTime = null;
@@ -256,6 +249,10 @@ lastName = null;
 shareName = null;
 
 sulwhasoo = function () {
+  // lastDate = "1987/1/2"
+  // lastTime = "08:32"
+  // lastName = "你不用才我是谁因为我也不知道"
+  // shareName = "你不用才我是谁因为我也不知道"
   var sulwhasoo = function () {
     function sulwhasoo(arg) {
       _classCallCheck(this, sulwhasoo);
@@ -801,7 +798,7 @@ sulwhasoo = function () {
       value: function page3build() {
         var _this9 = this;
 
-        var btn, _btnRun2, cd, cdPointer, name, _runCD, self, title, titleText;
+        var btn, _btnRun2, cd, cdPointer, name, _runCD, self, small, title, titleText;
         // unless lastName?
         //   return @.page4build()
         this.Index = 3;
@@ -826,14 +823,15 @@ sulwhasoo = function () {
           titleText = new Sprite(getTe(_CDN + "img/page-3-title-null.png"));
         } else {
           titleText = new Sprite(getTe(_CDN + "img/page-3-title.png"));
+          small = 10;
           name = new Text('\u300A' + lastName + '\u300B', {
             fontFamily: 'Arial',
-            fontSize: 44,
+            fontSize: 44 - small,
             fill: 0x2a985d,
             align: 'center'
           });
           // name.width = titleText.width
-          name.y = 138;
+          name.y = 138 + small / 2;
           name.x = titleText.width / 2 - name.width / 2;
           title.addChild(name);
         }
@@ -922,7 +920,7 @@ sulwhasoo = function () {
       value: function page4build() {
         var _this11 = this;
 
-        var ball, btn, _btnRun3, item, name, phone, _runBall, self, title, titleText;
+        var ball, btn, _btnRun3, item, name, phone, _runBall, self, small, title, titleText;
         // unless shareName?
         //   return @.page5build()
         this.Index = 4;
@@ -948,14 +946,15 @@ sulwhasoo = function () {
           titleText = new Sprite(getTe(_CDN + "img/page-4-title-null.png"));
         } else {
           titleText = new Sprite(getTe(_CDN + "img/page-4-title.png"));
+          small = 10;
           name = new Text('\u300A' + shareName + '\u300B', {
             fontFamily: 'Arial',
-            fontSize: 42,
+            fontSize: 42 - small,
             fill: 0x2a985d,
             align: 'left'
           });
           // name.width = titleText.width
-          name.y = 238;
+          name.y = 238 + small / 2;
           name.x = 58;
           title.addChild(name);
         }
@@ -1608,13 +1607,11 @@ sulwhasoo = function () {
         leftBtn.buttonMode = true;
         leftBtn.interactive = true;
         leftBtn.touchstart = leftBtn.click = function (data) {
-          console.log("page 5 click");
           return _this15.selectUGC(true);
         };
         rightBtn.buttonMode = true;
         rightBtn.interactive = true;
         rightBtn.touchstart = rightBtn.click = function (data) {
-          console.log("page 5 click");
           return _this15.selectUGC(false);
         };
         _runArrow = function runArrow() {
@@ -1671,7 +1668,7 @@ sulwhasoo = function () {
               alpha: 1,
               delay: 0.1,
               onComplete: function onComplete() {
-                return callback();
+                return callback && callback();
               }
             }));
           } else {
@@ -1938,9 +1935,7 @@ sulwhasoo = function () {
 
   return sulwhasoo;
 }.call(undefined);
-if ($_GET["debug"]) {
-  alert("test 3");
-}
+
 // @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/coffee/requestanimation"
 // @codekit-prepend "../../libs/coffee/loadWechatConfig"

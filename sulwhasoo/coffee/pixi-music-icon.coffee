@@ -67,16 +67,16 @@ page1Images = [
   _CDN+"img/star-2.png"
 ]
 
-# 左右按钮点击
-# 时间双位
-# ipx 按钮贴底了
-
 
 lastDate = null
 lastTime = null
 lastName = null
 shareName = null
-# 
+
+# lastDate = "1987/1/2"
+# lastTime = "08:32"
+# lastName = "你不用才我是谁因为我也不知道"
+# shareName = "你不用才我是谁因为我也不知道"
 
 class sulwhasoo
   list: []
@@ -496,9 +496,10 @@ class sulwhasoo
       titleText= new Sprite getTe _CDN+"img/page-3-title-null.png"
     else
       titleText= new Sprite getTe _CDN+"img/page-3-title.png"
-      name = new Text "《#{lastName}》",{fontFamily : 'Arial', fontSize: 44, fill : 0x2a985d, align : 'center'}
+      small = 10
+      name = new Text "《#{lastName}》",{fontFamily : 'Arial', fontSize: 44-small, fill : 0x2a985d, align : 'center'}
       # name.width = titleText.width
-      name.y = 138
+      name.y = 138 + small/2
       name.x = titleText.width/2 - name.width/2
       title.addChild name
     title.x = 750/2 - titleText.width/2
@@ -587,9 +588,10 @@ class sulwhasoo
       titleText= new Sprite getTe _CDN+"img/page-4-title-null.png"
     else
       titleText= new Sprite getTe _CDN+"img/page-4-title.png"
-      name = new Text "《#{shareName}》",{fontFamily : 'Arial', fontSize: 42, fill : 0x2a985d, align : 'left'}
+      small = 10
+      name = new Text "《#{shareName}》",{fontFamily : 'Arial', fontSize: 42-small, fill : 0x2a985d, align : 'left'}
       # name.width = titleText.width
-      name.y = 238
+      name.y = 238 + small/2
       name.x = 58
       title.addChild name
     title.x = 30
@@ -1121,12 +1123,10 @@ class sulwhasoo
     leftBtn.buttonMode = true
     leftBtn.interactive = true
     leftBtn.touchstart = leftBtn.click = (data)=>
-      console.log "page 5 click"
       @.selectUGC(true)
     rightBtn.buttonMode = true
     rightBtn.interactive = true
     rightBtn.touchstart = rightBtn.click = (data)=>
-      console.log "page 5 click"
       @.selectUGC(false)
 
 
@@ -1168,7 +1168,7 @@ class sulwhasoo
           alpha: 1
           delay: 0.1
           onComplete: =>
-            callback()
+            callback and callback()
       else
         TweenLite.to item,0.5, {alpha: 0}
   get: ->
