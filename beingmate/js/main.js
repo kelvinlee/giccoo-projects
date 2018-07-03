@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, UGC, VENDORS, _CDN, _public, autoDetectRenderer, css3Prefix, e, getId, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIcon, musicIconCD, musicIconCache, musicLineCache, musicScore, neteaseShareImage, options, passiveSupported, resource, resources, sended, sys, ugcCache;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, UGC, VENDORS, _CDN, _public, autoDetectRenderer, css3Prefix, e, firstCache, getId, getTe, i, imageurl, init, j, len1, loadIcons, loadWechatConfig, loader, loading, mTestElement, main, musicIcon, musicIconCD, musicIconCache, musicLineCache, musicScore, neteaseShareImage, options, passiveSupported, resource, resources, sended, sys, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -371,8 +371,14 @@ getId = function getId(id, link) {
   return loader.resources[link].textures[id];
 };
 
+// @codekit-prepend "../../libs/coffee/pixi-base"
+_CDN = "./";
+
+firstCache = true;
+
+loadIcons = [_CDN + "img/music-icon-1.png", _CDN + "img/music-icon-2.png"];
+
 musicIcon = function () {
-  // @codekit-prepend "../../libs/coffee/pixi-base"
   var musicIcon = function () {
     function musicIcon(arg) {
       _classCallCheck(this, musicIcon);
@@ -403,13 +409,17 @@ musicIcon = function () {
       }
       this.stage = this.app.stage;
       document.getElementById(this.opts.el).appendChild(this.app.view);
-      PIXI.loader.add([_CDN + "img/music-icon-1.png", _CDN + "img/music-icon-2.png"]).load(this.build.bind(this));
+      if (!firstCache) {
+        loadIcons = [];
+      }
+      PIXI.loader.add(loadIcons).load(this.build.bind(this));
     }
 
     _createClass(musicIcon, [{
       key: 'build',
       value: function build() {
         var icon, k, ref, scale;
+        firstCache = false;
         for (i = k = 0, ref = this.opts.count; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
           icon = new Sprite(resources[_CDN + ('img/music-icon-' + (i % 2 + 1) + '.png')].texture);
           icon.x = Math.random() * this.opts.w;
@@ -440,7 +450,7 @@ musicIcon = function () {
         for (k = 0, len2 = ref.length; k < len2; k++) {
           icon = ref[k];
           icon.direction += icon.turnSpeed * 0.005;
-          icon.x += Math.sin(icon.direction) * icon.speed * detail;
+          icon.x += Math.sin(icon.direction) * icon.speed * 0.4 * detail;
           // icon.y += Math.cos(icon.direction) * icon.speed
           if (icon.x > this.opts.w) {
             icon.x = 0;
@@ -757,7 +767,7 @@ init = function init() {
       lottery: "coupons", //award coupons 
       index: 0,
       pageIndex: 0,
-      maxPage: 2,
+      maxPage: 4,
       animateIndex: 1,
       animationCache: null,
       nickname: "刻下你的名字",
@@ -780,7 +790,7 @@ init = function init() {
     watch: {
       pageIndex: function pageIndex(n, o) {
         // console.log n,o
-        if (n !== o && n === 1) {
+        if (n !== o && (n === 1 || n === 2 || n === 3)) {
           return this.animationRun();
         } else {
           clearInterval(this.animationCache);
@@ -976,13 +986,29 @@ init = function init() {
       }
       // if not musicLineCache?
       musicLineCache = new musicScore({
-        el: "lineGB"
+        el: "lineGB1"
+      });
+      new musicScore({
+        el: "lineGB2"
+      });
+      new musicScore({
+        el: "lineGB3"
       });
       musicIconCache = new musicIcon({
-        el: "musicIcon",
+        el: "musicIcon1",
         speed: 0.8,
         callback: function callback() {
           var musicIconCDCache, musicIconCDCache2;
+          new musicIcon({
+            el: "musicIcon2",
+            speed: 0.8,
+            callback: function callback() {
+              return new musicIcon({
+                el: "musicIcon3",
+                speed: 0.8
+              });
+            }
+          });
           musicIconCDCache = new musicIconCD({
             el: "musicIconCD"
           });

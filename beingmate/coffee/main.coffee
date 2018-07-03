@@ -136,7 +136,7 @@ init = ->
 			lottery: "coupons" #award coupons 
 			index: 0
 			pageIndex: 0
-			maxPage: 2
+			maxPage: 4
 			animateIndex: 1
 			animationCache: null
 			nickname: "刻下你的名字"
@@ -156,7 +156,7 @@ init = ->
 		watch:
 			pageIndex: (n,o)->
 				# console.log n,o
-				if n isnt o and n is 1
+				if n isnt o and (n is 1 or n is 2 or n is 3)
 					@.animationRun() 
 				else
 					clearInterval @.animationCache
@@ -293,11 +293,19 @@ init = ->
 			if sys is "NeteaseMusic"
 				@.wy = true
 			# if not musicLineCache?
-			musicLineCache = new musicScore({el: "lineGB"})
+			musicLineCache = new musicScore({el: "lineGB1"})
+			new musicScore({el: "lineGB2"})
+			new musicScore({el: "lineGB3"})
+			
 			musicIconCache = new musicIcon({
-				el: "musicIcon",
+				el: "musicIcon1",
 				speed: 0.8, 
 				callback: => 
+					new musicIcon
+						el: "musicIcon2",
+						speed: 0.8
+						callback: =>
+							new musicIcon({el: "musicIcon3",speed: 0.8})
 					musicIconCDCache = new musicIconCD({el: "musicIconCD"})
 					musicIconCDCache2 = new musicIconCD({
 						el: "musicIconCD2", 

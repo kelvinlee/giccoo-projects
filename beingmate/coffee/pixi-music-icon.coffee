@@ -1,5 +1,10 @@
 # @codekit-prepend "../../libs/coffee/pixi-base"
-
+_CDN = "./"
+firstCache = true
+loadIcons = [
+  _CDN+"img/music-icon-1.png",
+  _CDN+"img/music-icon-2.png"
+]
 class musicIcon
   list: []
   default:
@@ -29,12 +34,13 @@ class musicIcon
     @.app.view.className = @.opts.class if @.opts.class? and @.opts.class isnt ""
     @.stage = @.app.stage
     document.getElementById(@.opts.el).appendChild @.app.view
-    PIXI.loader.add([
-      _CDN+"img/music-icon-1.png",
-      _CDN+"img/music-icon-2.png"
-    ]).load(@.build.bind(@))
+    unless firstCache
+      loadIcons = []
+    PIXI.loader.add(loadIcons).load(@.build.bind(@))
   build: ->
+    firstCache = false
     for i in [0...@.opts.count]
+
       icon = new Sprite resources[_CDN+"img/music-icon-#{i%2+1}.png"].texture
       icon.x = Math.random()*@.opts.w
       icon.y = Math.random()*(@.opts.h - icon.height)
@@ -52,7 +58,7 @@ class musicIcon
     return false if not @.default.running
     for icon in @.list
       icon.direction += icon.turnSpeed * 0.005
-      icon.x += Math.sin(icon.direction) * icon.speed * detail
+      icon.x += Math.sin(icon.direction) * icon.speed * 0.4 * detail
       # icon.y += Math.cos(icon.direction) * icon.speed
       if icon.x > @.opts.w
         icon.x = 0

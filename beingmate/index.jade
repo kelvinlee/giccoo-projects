@@ -75,34 +75,52 @@ block content
       - pageId = 1;
       .page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
         .bg
-          transition(name="page-fade")
-            .item.bg-1(v-show="animateIndex == 0")
-              img(src="#{url}/img/page-2-1-bg.jpg")
-          transition(name="page-fade")
-            .item.bg-2(v-show="animateIndex == 1")
-              img(src="#{url}/img/page-2-2-bg.jpg")
-          transition(name="page-fade")
-            .item.bg-3(v-show="animateIndex == 2")
-              img(src="#{url}/img/page-2-3-bg.jpg")
-          #lineGB
-          #musicIcon
+          img(src="#{url}/img/page-2-1-bg.jpg")
+          #lineGB1.lineGB
+          #musicIcon1.musicIcon
         .content
           .logo
             img(src="#{url}/img/logo.png")
           .title-list
-            transition(name="page-fadeflower")
-              .title.title-1(v-show="animateIndex == 0")
-                img(src="#{url}/img/page-2-1-text.png")
-            transition(name="page-fadeflower")
-              .title.title-2(v-show="animateIndex == 1")
-                img(src="#{url}/img/page-2-2-text.png")
-            transition(name="page-fadeflower")
-              .title.title-3(v-show="animateIndex == 2")
-                img(src="#{url}/img/page-2-3-text.png")
-          
+            .title
+              img(src="#{url}/img/page-2-1-text.png")
+          a.btn.btn-buy(href="https://beingmate.tmall.com/")
+            img(src="#{url}/img/icon.png")
           .next
     transition(name="page-animation")
       - pageId = 2;
+      .page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+        .bg
+          img(src="#{url}/img/page-2-2-bg.jpg")
+          #lineGB2.lineGB
+          #musicIcon2.musicIcon
+        .content
+          .logo
+            img(src="#{url}/img/logo.png")
+          .title-list
+            .title
+              img(src="#{url}/img/page-2-2-text.png")
+          a.btn.btn-buy(href="https://beingmate.tmall.com/")
+            img(src="#{url}/img/icon.png")
+          .next
+    transition(name="page-animation")
+      - pageId = 3;
+      .page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
+        .bg
+          img(src="#{url}/img/page-2-3-bg.jpg")
+          #lineGB3.lineGB
+          #musicIcon3.musicIcon
+        .content
+          .logo
+            img(src="#{url}/img/logo.png")
+          .title-list
+            .title
+              img(src="#{url}/img/page-2-3-text.png")
+          a.btn.btn-buy(href="https://beingmate.tmall.com/")
+            img(src="#{url}/img/icon.png")
+          .next
+    transition(name="page-animation")
+      - pageId = 4;
       .page(class="page-#{pageId}",v-show="pageIndex == #{pageId}",:class="{now: pageIndex == #{pageId},right: pageIndex < #{pageId},left: pageIndex > #{pageId}}")
         .bg
           img(src="#{url}/img/page-3-bg.jpg")

@@ -65,38 +65,51 @@
       </transition>
       <transition name="page-animation">
         <div v-show="pageIndex == 1" :class="{now: pageIndex == 1,right: pageIndex &lt; 1,left: pageIndex &gt; 1}" class="page page-1">
-          <div class="bg">
-            <transition name="page-fade">
-              <div v-show="animateIndex == 0" class="item bg-1"><img src="./img/page-2-1-bg.jpg"></div>
-            </transition>
-            <transition name="page-fade">
-              <div v-show="animateIndex == 1" class="item bg-2"><img src="./img/page-2-2-bg.jpg"></div>
-            </transition>
-            <transition name="page-fade">
-              <div v-show="animateIndex == 2" class="item bg-3"><img src="./img/page-2-3-bg.jpg"></div>
-            </transition>
-            <div id="lineGB"></div>
-            <div id="musicIcon"></div>
+          <div class="bg"><img src="./img/page-2-1-bg.jpg">
+            <div id="lineGB1" class="lineGB"></div>
+            <div id="musicIcon1" class="musicIcon"></div>
           </div>
           <div class="content">
             <div class="logo"><img src="./img/logo.png"></div>
             <div class="title-list">
-              <transition name="page-fadeflower">
-                <div v-show="animateIndex == 0" class="title title-1"><img src="./img/page-2-1-text.png"></div>
-              </transition>
-              <transition name="page-fadeflower">
-                <div v-show="animateIndex == 1" class="title title-2"><img src="./img/page-2-2-text.png"></div>
-              </transition>
-              <transition name="page-fadeflower">
-                <div v-show="animateIndex == 2" class="title title-3"><img src="./img/page-2-3-text.png"></div>
-              </transition>
-            </div>
+              <div class="title"><img src="./img/page-2-1-text.png"></div>
+            </div><a href="https://beingmate.tmall.com/" class="btn btn-buy"><img src="./img/icon.png"></a>
             <div class="next"></div>
           </div>
         </div>
       </transition>
       <transition name="page-animation">
         <div v-show="pageIndex == 2" :class="{now: pageIndex == 2,right: pageIndex &lt; 2,left: pageIndex &gt; 2}" class="page page-2">
+          <div class="bg"><img src="./img/page-2-2-bg.jpg">
+            <div id="lineGB2" class="lineGB"></div>
+            <div id="musicIcon2" class="musicIcon"></div>
+          </div>
+          <div class="content">
+            <div class="logo"><img src="./img/logo.png"></div>
+            <div class="title-list">
+              <div class="title"><img src="./img/page-2-2-text.png"></div>
+            </div><a href="https://beingmate.tmall.com/" class="btn btn-buy"><img src="./img/icon.png"></a>
+            <div class="next"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-animation">
+        <div v-show="pageIndex == 3" :class="{now: pageIndex == 3,right: pageIndex &lt; 3,left: pageIndex &gt; 3}" class="page page-3">
+          <div class="bg"><img src="./img/page-2-3-bg.jpg">
+            <div id="lineGB3" class="lineGB"></div>
+            <div id="musicIcon3" class="musicIcon"></div>
+          </div>
+          <div class="content">
+            <div class="logo"><img src="./img/logo.png"></div>
+            <div class="title-list">
+              <div class="title"><img src="./img/page-2-3-text.png"></div>
+            </div><a href="https://beingmate.tmall.com/" class="btn btn-buy"><img src="./img/icon.png"></a>
+            <div class="next"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-animation">
+        <div v-show="pageIndex == 4" :class="{now: pageIndex == 4,right: pageIndex &lt; 4,left: pageIndex &gt; 4}" class="page page-4">
           <div class="bg"><img src="./img/page-3-bg.jpg">
             <div class="flower"><img src="./img/page-3-flower.png"></div>
             <div id="musicIconCD2"></div>

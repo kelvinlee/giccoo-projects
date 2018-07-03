@@ -260,19 +260,19 @@ video,canvas,svg
 	.content
 		padding-top: 15%
 
-.page-1
+.page-1,.page-2,.page-3
 	.bg
 		+w
 		+h
 		$time: 4000ms
-		.bg-1,.bg-2,.bg-3,#lineGB,#musicIcon
+		.bg-1,.bg-2,.bg-3,.lineGB,.musicIcon
 			+posa
 			+tl
 			.biger &
 				+transform(scale(1.1,1.1))
-		#lineGB
+		.lineGB
 			margin-top: 22%
-		#musicIcon
+		.musicIcon
 			margin-top: 15%
 		
 	.logo
@@ -287,8 +287,13 @@ video,canvas,svg
 		.title
 			+posa
 			+tl
+	.btn-buy
+		+posa
+		+br(2%,2%)
+		+w(16%)
+		+animation(fadeArrow,2s,ease,infinite)
 
-.page-2
+.page-4
 	.logo
 		+posr
 		+w
