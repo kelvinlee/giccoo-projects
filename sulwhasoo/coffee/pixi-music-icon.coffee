@@ -69,6 +69,8 @@ page1Images = [
   _CDN+"img/star-2.png"
 ]
 
+# 云彩全随机
+# 
 
 lastDate = null
 lastTime = null
@@ -240,17 +242,19 @@ class sulwhasoo
 
     woman = new Sprite getTe _CDN+"img/that-girl.png"
     @.page.addChild woman
+    content = new Container()
+    content.y = 80
     point = new Sprite getTe _CDN+"img/point.png"
     point.x = 350
     point.y = 800
     point.alpha = 0
-    @.page.addChild point
+    content.addChild point
     productBorder = new Sprite getTe _CDN+"img/product-border.png"
     productBorder.scale.set(0.7,0.7)
     productBorder.x = 420
     productBorder.y = 760
     productBorder.alpha = 0
-    @.page.addChild productBorder
+    content.addChild productBorder
     product = new Sprite getTe _CDN+"img/product-item.png"
     product.scale.set(0.7,0.7)
     product.x = 420
@@ -264,7 +268,7 @@ class sulwhasoo
       unless main.wy
         return window.location.href = "https://m.music.163.com/m/applink/?scheme=orpheus%3A%2F%2Fopenurl%3Furl%3Dhttps%3A%2F%2Factivity.music.163.com%2Fsulwhasoo%2F%26thirdfrom%3Dwx"
       @.page1Out()
-    @.page.addChild product
+    content.addChild product
     # title = new Sprite getTe _CDN+"img/page-1-title.png"
     unless main.wy
       title = new Sprite getTe _CDN+"img/page-1-title-null.png"
@@ -272,13 +276,14 @@ class sulwhasoo
       title = new Sprite getTe _CDN+"img/page-1-title.png"
     title.y = 320
     title.alpha = 0
-    @.page.addChild title
+    content.addChild title
     hand = new Sprite getTe _CDN+"img/hand.png"
     hand.anchor.set(0.5,0.5)
     hand.x = 420 + product.width/2
     hand.y = 760 + product.height + 100
     hand.alpha = 0
-    @.page.addChild hand
+    content.addChild hand
+    @.page.addChild content
     @.bg = bg = new Container()
     for i in [0...50]
       star = new Sprite getTe _CDN+"img/star-#{i%2+1}.png"
@@ -366,11 +371,11 @@ class sulwhasoo
               ease: Circ.easeOut, 
               onComplete:=> 
                 TweenLite.to point,time, 
-                  y: 800, 
+                  y: 750, 
                   ease: Circ.easeIn, 
                   onComplete: =>
                     TweenLite.to point,time, 
-                      y: 900,
+                      y: 800,
                       alpha: 0,
                       ease: Circ.easeOut, 
                       onComplete: =>
@@ -387,7 +392,7 @@ class sulwhasoo
                             @.productLight(productBorder)
                         TweenLite.to title,time*3,
                           alpha: 1,
-                          y: 1333/2 - title.height/2 - 36
+                          y: 1333/2 - title.height/2 - 80
                           onComplete: =>
                             runHand()
         TweenLite.to point,1,{alpha: 1,delay: 1}
@@ -1300,17 +1305,21 @@ class sulwhasoo
     size = 100
     for i in [0...@clouds.length]
       cloud = @.clouds[i]
-      if m 
-        if cloud.dex >= 750/2
-          cloud.dx = to = 900 + Math.random()*(size)
-        else
-          cloud.dx = to = -150 - Math.random()*(size)
+      if Math.random() > 0.5
+        cloud.dx = to = 900 + Math.random()*(size)
       else
-        if cloud.dex <= 750/2
-          cloud.dx = to = 900 + Math.random()*(size)
-        else
-          cloud.dx = to = -150 - Math.random()*(size)
-      y = cloud.dey + Math.random()*(size*2) - size
+        cloud.dx = to = -150 - Math.random()*(size)
+      # if m 
+      #   if cloud.dex >= 750/2
+      #     cloud.dx = to = 900 + Math.random()*(size)
+      #   else
+      #     cloud.dx = to = -150 - Math.random()*(size)
+      # else
+      #   if cloud.dex <= 750/2
+      #     cloud.dx = to = 900 + Math.random()*(size)
+      #   else
+      #     cloud.dx = to = -150 - Math.random()*(size)
+      y = cloud.dey + Math.random()*(size*2*2) - size*2
       TweenLite.to cloud, 3.5, 
         x: to,
         y: y,
