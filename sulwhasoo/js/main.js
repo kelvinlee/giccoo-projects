@@ -244,10 +244,14 @@ sulwhasoo = function () {
       value: function loadEnd() {
         var _this = this;
 
-        var _tar;
+        var _tar, canvasH;
         _public.note = false;
         _tar = this.loading;
         _tar.scaleS = 1;
+        this.default.canvasH = canvasH = document.getElementById(this.opts.el).clientHeight;
+        if (canvasH < this.default.h) {
+          main.biger = true;
+        }
         // console.log @.loading.scale = 1.5
         return TweenLite.to(_tar, 1.5, {
           alpha: 0,
@@ -286,7 +290,6 @@ sulwhasoo = function () {
       value: function build() {
         var bg, canvasH, i, icon, k, size, star;
         this.default.canvasH = canvasH = document.getElementById(this.opts.el).clientHeight;
-        console.log("created", canvasH, canvasH < this.default.h);
         if (canvasH < this.default.h) {
           main.biger = true;
         }

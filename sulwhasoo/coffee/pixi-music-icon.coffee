@@ -141,6 +141,8 @@ class sulwhasoo
     _public.note = false
     _tar = @.loading
     _tar.scaleS = 1
+    @.default.canvasH = canvasH = document.getElementById(@.opts.el).clientHeight
+    main.biger = true if canvasH < @.default.h
     # console.log @.loading.scale = 1.5
     TweenLite.to(_tar,1.5,{
       alpha: 0
@@ -163,7 +165,6 @@ class sulwhasoo
   # loading page
   build: ->
     @.default.canvasH = canvasH = document.getElementById(@.opts.el).clientHeight
-    console.log "created",canvasH, canvasH < @.default.h
     main.biger = true if canvasH < @.default.h
     bg = new Graphics()
     bg.beginFill 0x1e2c3b
