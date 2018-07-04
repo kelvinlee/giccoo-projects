@@ -419,7 +419,11 @@ sulwhasoo = function () {
             return false;
           }
           if (!main.wy) {
-            return window.location.href = "https://m.music.163.com/m/applink/?scheme=orpheus%3A%2F%2Fopenurl%3Furl%3Dhttps%3A%2F%2Factivity.music.163.com%2Fsulwhasoo%2F%26thirdfrom%3Dwx";
+            if (window.navigator.userAgent.match(/Android/gi) != null) {
+              return alert("活动需要在网易云音乐中进行 建议先在应用商店下载网易云音乐");
+            } else {
+              return window.location.href = "https://m.music.163.com/m/applink/?scheme=orpheus%3A%2F%2Fopenurl%3Furl%3Dhttps%3A%2F%2Factivity.music.163.com%2Fsulwhasoo%2F%26thirdfrom%3Dwx";
+            }
           }
           return _this3.page1Out();
         };
