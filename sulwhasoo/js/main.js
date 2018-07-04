@@ -1573,7 +1573,7 @@ sulwhasoo = function () {
         _runUGC5Light();
         ugc5.alpha = 0;
         this.page6.addChild(ugc5);
-        this.title = new Sprite(getTe(_CDN + ("img/ugc-title-" + UGCTITLE + ".png")));
+        this.title = new Sprite(getTe(_CDN + ("img/ugc-text-" + UGCTITLE + ".png")));
         this.page6.addChild(this.title);
         this.ugcleftBtn = leftBtn = this.leftBtn();
         this.ugcrightBtn = rightBtn = this.rightBtn();

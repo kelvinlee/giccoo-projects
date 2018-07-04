@@ -1151,7 +1151,7 @@ class sulwhasoo
     ugc5.alpha = 0
     @.page6.addChild ugc5
 
-    @.title = new Sprite getTe _CDN+"img/ugc-title-#{UGCTITLE}.png"
+    @.title = new Sprite getTe _CDN+"img/ugc-text-#{UGCTITLE}.png"
     @.page6.addChild @.title
 
     @.ugcleftBtn = leftBtn = @.leftBtn()
