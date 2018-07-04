@@ -162,12 +162,12 @@ if (Number.isInteger == null) {
 }
 
 // @codekit-prepend "../../libs/coffee/pixi-base"
-_CDN = "./";
+_CDN = "//image.giccoo.com/projects/sulwhasoo/";
 
 UGCTITLE = parseInt(Math.random() * 5 + 1);
 
 // UGCTITLE = 4
-images = [_CDN + "img/hand.png", _CDN + "img/that-girl.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/icon-symbol-1.png", _CDN + "img/icon-symbol-2.png", _CDN + "img/icon-symbol-3.png", _CDN + "img/icon-symbol-4.png", _CDN + "img/icon-symbol-5.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/product.png", _CDN + "img/product-light-1.png", _CDN + "img/product-light-2.png", _CDN + "img/product-bg.jpg", _CDN + "img/product-bg-end.jpg", _CDN + "img/page-1-title.png", _CDN + "img/page-1-title-null-new.png", _CDN + "img/page-2-title-null.png", _CDN + "img/page-2-title.png", _CDN + "img/page-3-title-null.png", _CDN + "img/page-3-title.png", _CDN + "img/page-4-title.png", _CDN + "img/page-4-title-null-new.png", _CDN + "img/page-5-title.png", _CDN + "img/page-6-title.png", _CDN + "img/moon.png", _CDN + "img/arrow.png", _CDN + "img/cd.png", _CDN + "img/cd-pointer.png", _CDN + "img/ball.png", _CDN + "img/phone.png", _CDN + "img/qrcode.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png", _CDN + "img/light-1.png", _CDN + "img/light-2.png", _CDN + "img/light-3.png", _CDN + "img/ugc-1.png", _CDN + "img/ugc-2.png", _CDN + "img/ugc-2-1.png", _CDN + "img/ugc-3-1.png", _CDN + "img/ugc-4.png", _CDN + "img/ugc-4-1.png", _CDN + "img/ugc-4-2.png", _CDN + "img/ugc-5.png", _CDN + "img/ugc-5-1.png", _CDN + "img/ugc-5-2.png", _CDN + "img/ugc-5-3.png", _CDN + ("img/ugc-text-" + UGCTITLE + ".png")];
+images = [_CDN + "img/hand.png", _CDN + "img/that-girl.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/icon-symbol-1.png", _CDN + "img/icon-symbol-2.png", _CDN + "img/icon-symbol-3.png", _CDN + "img/icon-symbol-4.png", _CDN + "img/icon-symbol-5.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/product.png", _CDN + "img/product-light-1.png", _CDN + "img/product-light-2.png", _CDN + "img/product-bg.jpg", _CDN + "img/product-bg-end.jpg", _CDN + "img/page-1-title.png", _CDN + "img/page-1-title-null-new.png", _CDN + "img/page-2-title-null.png", _CDN + "img/page-2-title.png", _CDN + "img/page-3-title-null.png", _CDN + "img/page-3-title.png", _CDN + "img/page-4-title.png", _CDN + "img/page-4-title-null-new.png", _CDN + "img/page-5-title.png", _CDN + "img/page-6-title.png", _CDN + "img/moon.png", _CDN + "img/arrow.png", _CDN + "img/cd.png", _CDN + "img/cd-pointer.png", _CDN + "img/ball.png", _CDN + "img/phone.png", _CDN + "img/qrcode.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png", _CDN + "img/light-1.png", _CDN + "img/light-2.png", _CDN + "img/light-3.png", _CDN + "img/ugc-1.png", _CDN + "img/ugc-2.png", _CDN + "img/ugc-2-1.png", _CDN + "img/ugc-3-1.png", _CDN + "img/ugc-4.png", _CDN + "img/ugc-4-1.png", _CDN + "img/ugc-4-2.png", _CDN + "img/ugc-5.png", _CDN + "img/ugc-5-1.png", _CDN + "img/ugc-5-2.png", _CDN + "img/ugc-5-3.png", _CDN + "img/ugc-text-" + UGCTITLE + ".png"];
 
 page1Images = [_CDN + "img/hand.png", _CDN + "img/that-girl.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/page-1-title-null-new.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png"];
 
@@ -377,7 +377,7 @@ sulwhasoo = function () {
           y: 1200
         }];
         for (i = k = 0; k < 5; i = ++k) {
-          cloud = new Sprite(getTe(_CDN + ("img/cloud-" + (i % 3 + 1) + ".png")));
+          cloud = new Sprite(getTe(_CDN + "img/cloud-" + (i % 3 + 1) + ".png"));
           cloud.anchor.set(0.5, 0.5);
           cloud.x = cloud.dex = xylist[i].x;
           cloud.y = cloud.dey = xylist[i].y;
@@ -428,7 +428,7 @@ sulwhasoo = function () {
           return _this3.page1Out();
         };
         content.addChild(product);
-        // title = new Sprite getTe _CDN+"img/page-1-title.png"
+        // title = new Sprite getTe "#{_CDN}img/page-1-title.png"
         if (!main.wy) {
           title = new Sprite(getTe(_CDN + "img/page-1-title-null-new.png"));
         } else {
@@ -446,7 +446,7 @@ sulwhasoo = function () {
         this.page.addChild(content);
         this.bg = bg = new Container();
         for (i = l = 0; l < 50; i = ++l) {
-          star = new Sprite(getTe(_CDN + ("img/star-" + (i % 2 + 1) + ".png")));
+          star = new Sprite(getTe(_CDN + "img/star-" + (i % 2 + 1) + ".png"));
           star.x = Math.random() * (750 - star.width);
           star.y = Math.random() * (1333 - star.height);
           star.scale.set(0.2, 0.2);
@@ -454,7 +454,7 @@ sulwhasoo = function () {
           this.bg.addChild(star);
         }
         for (i = p = 0; p < 20; i = ++p) {
-          star = new Sprite(getTe(_CDN + ("img/star-" + (i % 2 + 1) + ".png")));
+          star = new Sprite(getTe(_CDN + "img/star-" + (i % 2 + 1) + ".png"));
           star.x = Math.random() * (750 - star.width);
           star.y = Math.random() * (1333 - star.height);
           star.scale.set(0.3, 0.3);
@@ -463,7 +463,7 @@ sulwhasoo = function () {
         }
         this.largeStars = [];
         for (i = q = 0; q < 10; i = ++q) {
-          star = new Sprite(getTe(_CDN + ("img/star-" + (i % 2 + 1) + ".png")));
+          star = new Sprite(getTe(_CDN + "img/star-" + (i % 2 + 1) + ".png"));
           star.x = Math.random() * (750 - star.width);
           star.y = Math.random() * (1333 - star.height);
           size = Math.random() * 0.2;
@@ -1091,7 +1091,7 @@ sulwhasoo = function () {
         this.page5.addChild(title);
         icons = [];
         for (i = k = 0; k < 5; i = ++k) {
-          icon = new Sprite(getTe(_CDN + ("img/icon-symbol-" + (i + 1) + ".png")));
+          icon = new Sprite(getTe(_CDN + "img/icon-symbol-" + (i + 1) + ".png"));
           icon.anchor.set(0.5, 0.5);
           icon.x = 750 / 2 + 20 + 50 + i % 2 * -100;
           icon.y = -100 * (i + 1);
@@ -1368,7 +1368,7 @@ sulwhasoo = function () {
         ugc1.alpha = 1;
         ugc1Icons = [];
         for (i = k = 0; k < 3; i = ++k) {
-          icon = new Sprite(getTe(_CDN + ("img/icon-symbol-" + (i + 1) + ".png")));
+          icon = new Sprite(getTe(_CDN + "img/icon-symbol-" + (i + 1) + ".png"));
           icon.anchor.set(0.5, 0.5);
           icon.x = icon.dx = 750 / 2 + 150 + i % 2 * icon.width / (i % 2 + 1);
           icon.y = icon.dy = 1333 / 2 + 100 - Math.random() * 100 + FixSize;
@@ -1459,7 +1459,7 @@ sulwhasoo = function () {
         _runUGC3BG();
         ugc3Icons = [];
         for (i = l = 0; l < 3; i = ++l) {
-          icon = new Sprite(getTe(_CDN + ("img/icon-symbol-" + (i + 1) + ".png")));
+          icon = new Sprite(getTe(_CDN + "img/icon-symbol-" + (i + 1) + ".png"));
           icon.anchor.set(0.5, 0.5);
           icon.x = icon.dx = 750 / 2 - 250 + i * icon.width / 3;
           icon.y = icon.dy = 1333 / 2 + 300 - Math.random() * 100;
@@ -1577,7 +1577,7 @@ sulwhasoo = function () {
         _runUGC5Light();
         ugc5.alpha = 0;
         this.page6.addChild(ugc5);
-        this.title = new Sprite(getTe(_CDN + ("img/ugc-text-" + UGCTITLE + ".png")));
+        this.title = new Sprite(getTe(_CDN + "img/ugc-text-" + UGCTITLE + ".png"));
         this.page6.addChild(this.title);
         this.ugcleftBtn = leftBtn = this.leftBtn();
         this.ugcrightBtn = rightBtn = this.rightBtn();
@@ -1968,8 +1968,6 @@ sys = "";
 ugcCache = null;
 
 sended = [false, false];
-
-_CDN = "./";
 
 neteaseShareImage = function neteaseShareImage() {
   var picUrl, redirectUrl, title1;

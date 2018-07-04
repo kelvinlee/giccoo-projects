@@ -23,7 +23,7 @@ sulwhasooCache = null
 sys = ""
 ugcCache = null
 sended = [false,false]
-_CDN = "./"
+
 
 neteaseShareImage = ->
 	title1 = "点击获取你的治愈音乐瓶"

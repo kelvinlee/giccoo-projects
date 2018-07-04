@@ -1,73 +1,73 @@
 # @codekit-prepend "../../libs/coffee/pixi-base"
-_CDN = "./"
+_CDN = "//image.giccoo.com/projects/sulwhasoo/"
 UGCTITLE = parseInt Math.random()*5+1
 # UGCTITLE = 4
 images = [
-  _CDN+"img/hand.png"
-  _CDN+"img/that-girl.png"
-  _CDN+"img/cloud-1.png"
-  _CDN+"img/cloud-2.png"
-  _CDN+"img/cloud-3.png"
-  _CDN+"img/icon-symbol-1.png"
-  _CDN+"img/icon-symbol-2.png"
-  _CDN+"img/icon-symbol-3.png"
-  _CDN+"img/icon-symbol-4.png"
-  _CDN+"img/icon-symbol-5.png"
-  _CDN+"img/point.png"
-  _CDN+"img/product-border.png"
-  _CDN+"img/product-item.png"
-  _CDN+"img/product.png"
-  _CDN+"img/product-light-1.png"
-  _CDN+"img/product-light-2.png"
-  _CDN+"img/product-bg.jpg"
-  _CDN+"img/product-bg-end.jpg"
-  _CDN+"img/page-1-title.png"
-  _CDN+"img/page-1-title-null-new.png"
-  _CDN+"img/page-2-title-null.png"
-  _CDN+"img/page-2-title.png"
-  _CDN+"img/page-3-title-null.png"
-  _CDN+"img/page-3-title.png"
-  _CDN+"img/page-4-title.png"
-  _CDN+"img/page-4-title-null-new.png"
-  _CDN+"img/page-5-title.png"
-  _CDN+"img/page-6-title.png"
-  _CDN+"img/moon.png"
-  _CDN+"img/arrow.png"
-  _CDN+"img/cd.png"
-  _CDN+"img/cd-pointer.png"
-  _CDN+"img/ball.png"
-  _CDN+"img/phone.png"
-  _CDN+"img/qrcode.png"
-  _CDN+"img/star-1.png"
-  _CDN+"img/star-2.png"
-  _CDN+"img/light-1.png"
-  _CDN+"img/light-2.png"
-  _CDN+"img/light-3.png"
-  _CDN+"img/ugc-1.png"
-  _CDN+"img/ugc-2.png"
-  _CDN+"img/ugc-2-1.png"
-  _CDN+"img/ugc-3-1.png"
-  _CDN+"img/ugc-4.png"
-  _CDN+"img/ugc-4-1.png"
-  _CDN+"img/ugc-4-2.png"
-  _CDN+"img/ugc-5.png"
-  _CDN+"img/ugc-5-1.png"
-  _CDN+"img/ugc-5-2.png"
-  _CDN+"img/ugc-5-3.png"
-  _CDN+"img/ugc-text-#{UGCTITLE}.png"
+  "#{_CDN}img/hand.png"
+  "#{_CDN}img/that-girl.png"
+  "#{_CDN}img/cloud-1.png"
+  "#{_CDN}img/cloud-2.png"
+  "#{_CDN}img/cloud-3.png"
+  "#{_CDN}img/icon-symbol-1.png"
+  "#{_CDN}img/icon-symbol-2.png"
+  "#{_CDN}img/icon-symbol-3.png"
+  "#{_CDN}img/icon-symbol-4.png"
+  "#{_CDN}img/icon-symbol-5.png"
+  "#{_CDN}img/point.png"
+  "#{_CDN}img/product-border.png"
+  "#{_CDN}img/product-item.png"
+  "#{_CDN}img/product.png"
+  "#{_CDN}img/product-light-1.png"
+  "#{_CDN}img/product-light-2.png"
+  "#{_CDN}img/product-bg.jpg"
+  "#{_CDN}img/product-bg-end.jpg"
+  "#{_CDN}img/page-1-title.png"
+  "#{_CDN}img/page-1-title-null-new.png"
+  "#{_CDN}img/page-2-title-null.png"
+  "#{_CDN}img/page-2-title.png"
+  "#{_CDN}img/page-3-title-null.png"
+  "#{_CDN}img/page-3-title.png"
+  "#{_CDN}img/page-4-title.png"
+  "#{_CDN}img/page-4-title-null-new.png"
+  "#{_CDN}img/page-5-title.png"
+  "#{_CDN}img/page-6-title.png"
+  "#{_CDN}img/moon.png"
+  "#{_CDN}img/arrow.png"
+  "#{_CDN}img/cd.png"
+  "#{_CDN}img/cd-pointer.png"
+  "#{_CDN}img/ball.png"
+  "#{_CDN}img/phone.png"
+  "#{_CDN}img/qrcode.png"
+  "#{_CDN}img/star-1.png"
+  "#{_CDN}img/star-2.png"
+  "#{_CDN}img/light-1.png"
+  "#{_CDN}img/light-2.png"
+  "#{_CDN}img/light-3.png"
+  "#{_CDN}img/ugc-1.png"
+  "#{_CDN}img/ugc-2.png"
+  "#{_CDN}img/ugc-2-1.png"
+  "#{_CDN}img/ugc-3-1.png"
+  "#{_CDN}img/ugc-4.png"
+  "#{_CDN}img/ugc-4-1.png"
+  "#{_CDN}img/ugc-4-2.png"
+  "#{_CDN}img/ugc-5.png"
+  "#{_CDN}img/ugc-5-1.png"
+  "#{_CDN}img/ugc-5-2.png"
+  "#{_CDN}img/ugc-5-3.png"
+  "#{_CDN}img/ugc-text-#{UGCTITLE}.png"
 ]
 page1Images = [
-  _CDN+"img/hand.png"
-  _CDN+"img/that-girl.png"
-  _CDN+"img/point.png"
-  _CDN+"img/product-border.png"
-  _CDN+"img/product-item.png"
-  _CDN+"img/page-1-title-null-new.png"
-  _CDN+"img/cloud-1.png"
-  _CDN+"img/cloud-2.png"
-  _CDN+"img/cloud-3.png"
-  _CDN+"img/star-1.png"
-  _CDN+"img/star-2.png"
+  "#{_CDN}img/hand.png"
+  "#{_CDN}img/that-girl.png"
+  "#{_CDN}img/point.png"
+  "#{_CDN}img/product-border.png"
+  "#{_CDN}img/product-item.png"
+  "#{_CDN}img/page-1-title-null-new.png"
+  "#{_CDN}img/cloud-1.png"
+  "#{_CDN}img/cloud-2.png"
+  "#{_CDN}img/cloud-3.png"
+  "#{_CDN}img/star-1.png"
+  "#{_CDN}img/star-2.png"
 ]
 
 lastDate = null
@@ -121,8 +121,8 @@ class sulwhasoo
     @.stage = @.app.stage
     document.getElementById(@.opts.el).appendChild @.app.view
     PIXI.loader.add([
-      _CDN+"img/icon-loading.png"
-      _CDN+"img/star.png"
+      "#{_CDN}img/icon-loading.png"
+      "#{_CDN}img/star.png"
     ]).load(@.build.bind(@))
     
   loaded: (name)->
@@ -171,7 +171,7 @@ class sulwhasoo
     bg.drawRect 0,0,750,1333
     @.stage.addChild bg
     @.loading = new Container()
-    @.icon = icon = new Sprite getTe _CDN+"img/icon-loading.png"
+    @.icon = icon = new Sprite getTe "#{_CDN}img/icon-loading.png"
     icon.anchor.set(0.5,0.5)
     icon.x = 750/2
     icon.y = 1333/2 - 100
@@ -179,7 +179,7 @@ class sulwhasoo
     
     @.stars = []
     for i in [0...18]
-      star = new Sprite getTe _CDN+"img/star.png"
+      star = new Sprite getTe "#{_CDN}img/star.png"
       star.anchor.set(0.5,0.5)
       star.x = 750/2 - icon.width/2 + Math.random()*icon.width
       star.y = 1333/2 - 100 + Math.random() * 200
@@ -227,7 +227,7 @@ class sulwhasoo
       {x: 750/2-100, y: 1200}
     ]
     for i in [0...5]
-      cloud = new Sprite getTe _CDN+"img/cloud-#{i%3+1}.png"
+      cloud = new Sprite getTe "#{_CDN}img/cloud-#{i%3+1}.png"
       cloud.anchor.set(0.5,0.5)
       cloud.x = cloud.dex = xylist[i].x
       cloud.y = cloud.dey = xylist[i].y
@@ -239,22 +239,22 @@ class sulwhasoo
       @.cloud.addChild cloud
       @.clouds.push cloud
 
-    woman = new Sprite getTe _CDN+"img/that-girl.png"
+    woman = new Sprite getTe "#{_CDN}img/that-girl.png"
     @.page.addChild woman
     content = new Container()
     content.y = 80
-    point = new Sprite getTe _CDN+"img/point.png"
+    point = new Sprite getTe "#{_CDN}img/point.png"
     point.x = 350
     point.y = 800
     point.alpha = 0
     content.addChild point
-    productBorder = new Sprite getTe _CDN+"img/product-border.png"
+    productBorder = new Sprite getTe "#{_CDN}img/product-border.png"
     productBorder.scale.set(0.7,0.7)
     productBorder.x = 420
     productBorder.y = 760
     productBorder.alpha = 0
     content.addChild productBorder
-    product = new Sprite getTe _CDN+"img/product-item.png"
+    product = new Sprite getTe "#{_CDN}img/product-item.png"
     product.scale.set(0.7,0.7)
     product.x = 420
     product.y = 760 - 4
@@ -272,15 +272,15 @@ class sulwhasoo
         # return window.location.href = "https://m.music.163.com/m/applink/?scheme=orpheus%3A%2F%2Fopenurl%3Furl%3Dhttps%3A%2F%2Factivity.music.163.com%2Fsulwhasoo%2F%26thirdfrom%3Dwx"
       @.page1Out()
     content.addChild product
-    # title = new Sprite getTe _CDN+"img/page-1-title.png"
+    # title = new Sprite getTe "#{_CDN}img/page-1-title.png"
     unless main.wy
-      title = new Sprite getTe _CDN+"img/page-1-title-null-new.png"
+      title = new Sprite getTe "#{_CDN}img/page-1-title-null-new.png"
     else
-      title = new Sprite getTe _CDN+"img/page-1-title.png"
+      title = new Sprite getTe "#{_CDN}img/page-1-title.png"
     title.y = 320
     title.alpha = 0
     content.addChild title
-    hand = new Sprite getTe _CDN+"img/hand.png"
+    hand = new Sprite getTe "#{_CDN}img/hand.png"
     hand.anchor.set(0.5,0.5)
     hand.x = 420 + product.width/2
     hand.y = 760 + product.height + 100
@@ -289,14 +289,14 @@ class sulwhasoo
     @.page.addChild content
     @.bg = bg = new Container()
     for i in [0...50]
-      star = new Sprite getTe _CDN+"img/star-#{i%2+1}.png"
+      star = new Sprite getTe "#{_CDN}img/star-#{i%2+1}.png"
       star.x = Math.random()*(750 - star.width)
       star.y = Math.random()*(1333 - star.height)
       star.scale.set(0.2,0.2)
       star.alpha = 0.5 + Math.random()*0.5
       @.bg.addChild star
     for i in [0...20]
-      star = new Sprite getTe _CDN+"img/star-#{i%2+1}.png"
+      star = new Sprite getTe "#{_CDN}img/star-#{i%2+1}.png"
       star.x = Math.random()*(750 - star.width)
       star.y = Math.random()*(1333 - star.height)
       star.scale.set(0.3,0.3)
@@ -304,7 +304,7 @@ class sulwhasoo
       @.bg.addChild star
     @.largeStars = []
     for i in [0...10]
-      star = new Sprite getTe _CDN+"img/star-#{i%2+1}.png"
+      star = new Sprite getTe "#{_CDN}img/star-#{i%2+1}.png"
       star.x = Math.random()*(750 - star.width)
       star.y = Math.random()*(1333 - star.height)
       size = Math.random()*0.2
@@ -432,7 +432,7 @@ class sulwhasoo
     #   return @.page3build()
     @.Index = 2
     @.animation = true
-    moon = new Sprite getTe _CDN+"img/moon.png"
+    moon = new Sprite getTe "#{_CDN}img/moon.png"
     moon.anchor.set(0.5,0.01)
     moon.x = 750/2
     moon.scale.set(1.01,1.01)
@@ -440,9 +440,9 @@ class sulwhasoo
     title = new Container()
     title.alpha = 0
     unless lastDate? and lastDate isnt ""
-      titleBG = new Sprite getTe _CDN+"img/page-2-title-null.png"
+      titleBG = new Sprite getTe "#{_CDN}img/page-2-title-null.png"
     else
-      titleBG = new Sprite getTe _CDN+"img/page-2-title.png"
+      titleBG = new Sprite getTe "#{_CDN}img/page-2-title.png"
       date = new Text lastDate,{fontFamily : 'Arial', fontSize: 44, fill : 0x2a985d, align : 'left'}
       date.y = 142
       time = new Text lastTime,{fontFamily : 'Arial', fontSize: 44, fill : 0x2a985d, align : 'left'}
@@ -520,13 +520,13 @@ class sulwhasoo
     @.page3.x = 20
     @.page3.y = 20
 
-    cd = new Sprite getTe _CDN+"img/cd.png"
+    cd = new Sprite getTe "#{_CDN}img/cd.png"
     cd.anchor.set(0.5,0.5)
     cd.x = 750/2
     cd.y = cd.height - 120
     @.page3.addChild cd
 
-    cdPointer = new Sprite getTe _CDN+"img/cd-pointer.png"
+    cdPointer = new Sprite getTe "#{_CDN}img/cd-pointer.png"
     cdPointer.anchor.set(1,0)
     cdPointer.x = 750-100
     cdPointer.y = 0
@@ -535,9 +535,9 @@ class sulwhasoo
 
     title = new Container()
     unless lastName? and lastName isnt ""
-      titleText= new Sprite getTe _CDN+"img/page-3-title-null.png"
+      titleText= new Sprite getTe "#{_CDN}img/page-3-title-null.png"
     else
-      titleText= new Sprite getTe _CDN+"img/page-3-title.png"
+      titleText= new Sprite getTe "#{_CDN}img/page-3-title.png"
       small = 10
       name = new Text "《#{lastName}》",{fontFamily : 'Arial', fontSize: 44-small, fill : 0x2a985d, align : 'center'}
       # name.width = titleText.width
@@ -612,8 +612,8 @@ class sulwhasoo
     @.page4.y = 20
 
     ball = new Container()
-    item = new Sprite getTe _CDN+"img/ball.png"
-    phone = new Sprite getTe _CDN+"img/phone.png"
+    item = new Sprite getTe "#{_CDN}img/ball.png"
+    phone = new Sprite getTe "#{_CDN}img/phone.png"
     item.x = phone.x = 0
     item.y = phone.y = 0
     ball.x = 270
@@ -627,9 +627,9 @@ class sulwhasoo
 
     title = new Container()
     unless shareName? and shareName isnt ""
-      titleText= new Sprite getTe _CDN+"img/page-4-title-null-new.png"
+      titleText= new Sprite getTe "#{_CDN}img/page-4-title-null-new.png"
     else
-      titleText= new Sprite getTe _CDN+"img/page-4-title.png"
+      titleText= new Sprite getTe "#{_CDN}img/page-4-title.png"
       small = 10
       name = new Text "《#{shareName}》",{fontFamily : 'Arial', fontSize: 42-small, fill : 0x2a985d, align : 'left'}
       # name.width = titleText.width
@@ -749,7 +749,7 @@ class sulwhasoo
         page5ShowStep1()
 
     self = @
-    title = new Sprite getTe _CDN+"img/page-5-title.png"
+    title = new Sprite getTe "#{_CDN}img/page-5-title.png"
     title.anchor.set(0.5,0.5)
     title.x = 750/2
     title.y = 1333/2 + 100
@@ -758,16 +758,16 @@ class sulwhasoo
 
     icons = []
     for i in [0...5]
-      icon = new Sprite getTe _CDN+"img/icon-symbol-#{i+1}.png"
+      icon = new Sprite getTe "#{_CDN}img/icon-symbol-#{i+1}.png"
       icon.anchor.set(0.5,0.5)
       icon.x = 750/2 + 20 + 50 + (i%2)*-100
       icon.y = - 100 * (i+1)
       icons.push icon
       @.page5.addChild icon
 
-    lightS = new Sprite getTe _CDN+"img/product-light-1.png"
+    lightS = new Sprite getTe "#{_CDN}img/product-light-1.png"
     lightS.anchor.set(0.5,1)
-    lightL = new Sprite getTe _CDN+"img/product-light-2.png"
+    lightL = new Sprite getTe "#{_CDN}img/product-light-2.png"
     lightL.anchor.set(0.5,1)
     lightL.alpha = lightS.alpha = 0
     lightS.x = lightL.x = 750/2
@@ -777,20 +777,20 @@ class sulwhasoo
     lightL.scale.set(0.8,0.8)
     @.page5.addChild lightS,lightL
 
-    productBG = new Sprite getTe _CDN+"img/product-bg.jpg"
+    productBG = new Sprite getTe "#{_CDN}img/product-bg.jpg"
     productBG.alpha = 0
     @.page5.addChild productBG
 
-    light1 = new Sprite getTe _CDN+"img/light-1.png"
+    light1 = new Sprite getTe "#{_CDN}img/light-1.png"
     light1.anchor.set(0.5,0.5)
     light1.x = 750/2
     light1.y = light1.height/2
     light1.scale.set(0,0)
-    light2 = new Sprite getTe _CDN+"img/light-2.png"
+    light2 = new Sprite getTe "#{_CDN}img/light-2.png"
     light2.anchor.set(0.5,0)
     light2.x = 750/2
     light2.scale.set(1,0)
-    light3 = new Sprite getTe _CDN+"img/light-3.png"
+    light3 = new Sprite getTe "#{_CDN}img/light-3.png"
     light3.anchor.set(0.5,0)
     light3.x = 750/2
     light3.y = 1333/2-170
@@ -799,7 +799,7 @@ class sulwhasoo
     @.page5.addChild light1,light2,light3
     # white bg
 
-    product = new Sprite getTe _CDN+"img/product.png"
+    product = new Sprite getTe "#{_CDN}img/product.png"
     # product.anchor.set(0.5,0)
     # product.x = 750/2
     # product.y = 1333/2 - 80
@@ -807,11 +807,11 @@ class sulwhasoo
     # product.scale.set(0.99,0.99)
     @.page5.addChild product
 
-    productBGEnd = new Sprite getTe _CDN+"img/product-bg-end.jpg"
+    productBGEnd = new Sprite getTe "#{_CDN}img/product-bg-end.jpg"
     productBGEnd.alpha = 0
     @.page5.addChild productBGEnd
 
-    titleLarge = new Sprite getTe _CDN+"img/page-6-title.png"
+    titleLarge = new Sprite getTe "#{_CDN}img/page-6-title.png"
     titleLarge.anchor.set(0.5,1)
     titleLarge.alpha = 0
     titleLarge.y = 100 + titleLarge.height
@@ -970,7 +970,7 @@ class sulwhasoo
 
     FixSize = 70
     @.ugc1 = ugc1 = new Container()
-    ugc1BG = new Sprite getTe _CDN+"img/ugc-1.png"
+    ugc1BG = new Sprite getTe "#{_CDN}img/ugc-1.png"
     ugc1BG.anchor.set(0.5,0.5)
     ugc1BG.x = 750/2
     ugc1BG.y = 1333/2 + FixSize
@@ -979,7 +979,7 @@ class sulwhasoo
     ugc1.alpha = 1
     ugc1Icons = []
     for i in [0...3]
-      icon = new Sprite getTe _CDN+"img/icon-symbol-#{i+1}.png"
+      icon = new Sprite getTe "#{_CDN}img/icon-symbol-#{i+1}.png"
       icon.anchor.set(0.5,0.5)
       icon.x = icon.dx = 750/2 + 150 + ( i%2 * icon.width / (i%2+1) )
       icon.y = icon.dy = 1333/2 + 100 - Math.random() * 100 + FixSize
@@ -1001,10 +1001,10 @@ class sulwhasoo
     @.page6.addChild ugc1
 
     @.ugc2 = ugc2 = new Container()
-    ugc2BG = new Sprite getTe _CDN+"img/ugc-2.png"
+    ugc2BG = new Sprite getTe "#{_CDN}img/ugc-2.png"
     ugc2BG.y = (1333 - ugc1BG.height)/2 + 150 + FixSize
     ugc2.addChild ugc2BG
-    ugc2Item = new Sprite getTe _CDN+"img/ugc-2-1.png"
+    ugc2Item = new Sprite getTe "#{_CDN}img/ugc-2-1.png"
     ugc2Item.anchor.set(0.5,1)
     ugc2Item.x = 750/2 - 80
     ugc2Item.y = 1333/2 + 120 + 150 + FixSize
@@ -1036,13 +1036,13 @@ class sulwhasoo
     @.page6.addChild ugc2
 
     @.ugc3 = ugc3 = new Container()
-    ugc3BG = new Sprite getTe _CDN+"img/cd.png"
+    ugc3BG = new Sprite getTe "#{_CDN}img/cd.png"
     ugc3BG.anchor.set(0.5,0.5)
     ugc3BG.x = 750/2
     ugc3BG.y = 1333/2 + FixSize*2
     ugc3BG.scale.set(0.9,0.9)
     ugc3.addChild ugc3BG
-    ugc3Item = new Sprite getTe _CDN+"img/ugc-3-1.png"
+    ugc3Item = new Sprite getTe "#{_CDN}img/ugc-3-1.png"
     ugc3Item.anchor.set(1,0.5)
     ugc3Item.x = 800
     ugc3Item.y = 1333/2 - 80 + FixSize*2
@@ -1057,7 +1057,7 @@ class sulwhasoo
     runUGC3BG()
     ugc3Icons = []
     for i in [0...3]
-      icon = new Sprite getTe _CDN+"img/icon-symbol-#{i+1}.png"
+      icon = new Sprite getTe "#{_CDN}img/icon-symbol-#{i+1}.png"
       icon.anchor.set(0.5,0.5)
       icon.x = icon.dx = 750/2 - 250 + (i * icon.width/3)
       icon.y = icon.dy = 1333/2 + 300 - Math.random() * 100
@@ -1070,12 +1070,12 @@ class sulwhasoo
     @.page6.addChild ugc3  
 
     @.ugc4 = ugc4 = new Container()
-    ugc4BG = new Sprite getTe _CDN+"img/ugc-4.png"
+    ugc4BG = new Sprite getTe "#{_CDN}img/ugc-4.png"
     ugc4BG.anchor.set(0.5,0.5)
     ugc4BG.x = 750/2
     ugc4BG.y = 1333/2 - 100 + FixSize*2
 
-    ugc4BG2 = new Sprite getTe _CDN+"img/ugc-4-2.png"
+    ugc4BG2 = new Sprite getTe "#{_CDN}img/ugc-4-2.png"
     ugc4BG2.anchor.set(0.5,0.5)
     ugc4BG2.x = 750/2
     ugc4BG2.y = 1333/2 - 100 + FixSize*2
@@ -1083,7 +1083,7 @@ class sulwhasoo
     ugc4.addChild ugc4BG,ugc4BG2
     ugc4Stars = []
     for i in [0...5]
-      star = new Sprite getTe _CDN+"img/ugc-4-1.png"
+      star = new Sprite getTe "#{_CDN}img/ugc-4-1.png"
       star.anchor.set(0.5,0.5)
       star.x = star.dx = 800 + star.width * i
       star.y = star.dy = -50 - star.height * i
@@ -1126,10 +1126,10 @@ class sulwhasoo
     @.page6.addChild ugc4
 
     @.ugc5 = ugc5 = new Container()
-    ugc5BG = new Sprite getTe _CDN+"img/ugc-5.png"
-    ugc5Item1 = new Sprite getTe _CDN+"img/ugc-5-1.png"
-    ugc5Item2 = new Sprite getTe _CDN+"img/ugc-5-2.png"
-    ugc5Item3 = new Sprite getTe _CDN+"img/ugc-5-3.png"
+    ugc5BG = new Sprite getTe "#{_CDN}img/ugc-5.png"
+    ugc5Item1 = new Sprite getTe "#{_CDN}img/ugc-5-1.png"
+    ugc5Item2 = new Sprite getTe "#{_CDN}img/ugc-5-2.png"
+    ugc5Item3 = new Sprite getTe "#{_CDN}img/ugc-5-3.png"
     ugc5Item1.alpha = ugc5Item2.alpha = ugc5Item3.alpha = 0
     ugc5.addChild ugc5Item1,ugc5Item2,ugc5Item3,ugc5BG
     runUGC5Light = =>
@@ -1155,7 +1155,7 @@ class sulwhasoo
     ugc5.alpha = 0
     @.page6.addChild ugc5
 
-    @.title = new Sprite getTe _CDN+"img/ugc-text-#{UGCTITLE}.png"
+    @.title = new Sprite getTe "#{_CDN}img/ugc-text-#{UGCTITLE}.png"
     @.page6.addChild @.title
 
     @.ugcleftBtn = leftBtn = @.leftBtn()
@@ -1207,7 +1207,7 @@ class sulwhasoo
           runArrow()
     runArrow()
 
-    @.qrcode = qrcode = new Sprite getTe _CDN+"img/qrcode.png"
+    @.qrcode = qrcode = new Sprite getTe "#{_CDN}img/qrcode.png"
     qrcode.y = 1333-qrcode.height
     qrcode.visible = false
     @.page6.addChild qrcode
@@ -1243,10 +1243,10 @@ class sulwhasoo
   # next page btn
   nextBtn: ->
     btn = new Container()
-    arrow1 = new Sprite getTe _CDN+"img/arrow.png"
+    arrow1 = new Sprite getTe "#{_CDN}img/arrow.png"
     arrow1.x = 0
     arrow1.y = 0
-    arrow2 = new Sprite getTe _CDN+"img/arrow.png"
+    arrow2 = new Sprite getTe "#{_CDN}img/arrow.png"
     arrow2.x = 0
     arrow2.y = arrow2.height - 20
     btn.addChild arrow1
@@ -1256,7 +1256,7 @@ class sulwhasoo
     return btn
   leftBtn: ->
     btn = new Container()
-    arrow = new Sprite getTe _CDN+"img/arrow.png"
+    arrow = new Sprite getTe "#{_CDN}img/arrow.png"
     arrow.rotation = Math.PI / 2
     btn.addChild arrow
     btn.x = arrow.width
@@ -1267,7 +1267,7 @@ class sulwhasoo
     return btn
   rightBtn: ->
     btn = new Container()
-    arrow = new Sprite getTe _CDN+"img/arrow.png"
+    arrow = new Sprite getTe "#{_CDN}img/arrow.png"
     arrow.rotation = - Math.PI / 2
     btn.addChild arrow
     btn.x = 750 - arrow.width
