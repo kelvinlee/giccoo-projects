@@ -167,9 +167,9 @@ _CDN = "./";
 UGCTITLE = parseInt(Math.random() * 5 + 1);
 
 // UGCTITLE = 4
-images = [_CDN + "img/hand.png", _CDN + "img/that-girl.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/icon-symbol-1.png", _CDN + "img/icon-symbol-2.png", _CDN + "img/icon-symbol-3.png", _CDN + "img/icon-symbol-4.png", _CDN + "img/icon-symbol-5.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/product.png", _CDN + "img/product-light-1.png", _CDN + "img/product-light-2.png", _CDN + "img/product-bg.jpg", _CDN + "img/product-bg-end.jpg", _CDN + "img/page-1-title.png", _CDN + "img/page-1-title-null.png", _CDN + "img/page-2-title-null.png", _CDN + "img/page-2-title.png", _CDN + "img/page-3-title-null.png", _CDN + "img/page-3-title.png", _CDN + "img/page-4-title.png", _CDN + "img/page-4-title-null.png", _CDN + "img/page-5-title.png", _CDN + "img/page-6-title.png", _CDN + "img/moon.png", _CDN + "img/arrow.png", _CDN + "img/cd.png", _CDN + "img/cd-pointer.png", _CDN + "img/ball.png", _CDN + "img/phone.png", _CDN + "img/qrcode.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png", _CDN + "img/light-1.png", _CDN + "img/light-2.png", _CDN + "img/light-3.png", _CDN + "img/ugc-1.png", _CDN + "img/ugc-2.png", _CDN + "img/ugc-2-1.png", _CDN + "img/ugc-3-1.png", _CDN + "img/ugc-4.png", _CDN + "img/ugc-4-1.png", _CDN + "img/ugc-4-2.png", _CDN + "img/ugc-5.png", _CDN + "img/ugc-5-1.png", _CDN + "img/ugc-5-2.png", _CDN + "img/ugc-5-3.png", _CDN + ("img/ugc-title-" + UGCTITLE + ".png")];
+images = [_CDN + "img/hand.png", _CDN + "img/that-girl.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/icon-symbol-1.png", _CDN + "img/icon-symbol-2.png", _CDN + "img/icon-symbol-3.png", _CDN + "img/icon-symbol-4.png", _CDN + "img/icon-symbol-5.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/product.png", _CDN + "img/product-light-1.png", _CDN + "img/product-light-2.png", _CDN + "img/product-bg.jpg", _CDN + "img/product-bg-end.jpg", _CDN + "img/page-1-title.png", _CDN + "img/page-1-title-null-new.png", _CDN + "img/page-2-title-null.png", _CDN + "img/page-2-title.png", _CDN + "img/page-3-title-null.png", _CDN + "img/page-3-title.png", _CDN + "img/page-4-title.png", _CDN + "img/page-4-title-null-new.png", _CDN + "img/page-5-title.png", _CDN + "img/page-6-title.png", _CDN + "img/moon.png", _CDN + "img/arrow.png", _CDN + "img/cd.png", _CDN + "img/cd-pointer.png", _CDN + "img/ball.png", _CDN + "img/phone.png", _CDN + "img/qrcode.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png", _CDN + "img/light-1.png", _CDN + "img/light-2.png", _CDN + "img/light-3.png", _CDN + "img/ugc-1.png", _CDN + "img/ugc-2.png", _CDN + "img/ugc-2-1.png", _CDN + "img/ugc-3-1.png", _CDN + "img/ugc-4.png", _CDN + "img/ugc-4-1.png", _CDN + "img/ugc-4-2.png", _CDN + "img/ugc-5.png", _CDN + "img/ugc-5-1.png", _CDN + "img/ugc-5-2.png", _CDN + "img/ugc-5-3.png", _CDN + ("img/ugc-text-" + UGCTITLE + ".png")];
 
-page1Images = [_CDN + "img/hand.png", _CDN + "img/that-girl.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/page-1-title-null.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png"];
+page1Images = [_CDN + "img/hand.png", _CDN + "img/that-girl.png", _CDN + "img/point.png", _CDN + "img/product-border.png", _CDN + "img/product-item.png", _CDN + "img/page-1-title-null-new.png", _CDN + "img/cloud-1.png", _CDN + "img/cloud-2.png", _CDN + "img/cloud-3.png", _CDN + "img/star-1.png", _CDN + "img/star-2.png"];
 
 lastDate = null;
 
@@ -426,7 +426,7 @@ sulwhasoo = function () {
         content.addChild(product);
         // title = new Sprite getTe _CDN+"img/page-1-title.png"
         if (!main.wy) {
-          title = new Sprite(getTe(_CDN + "img/page-1-title-null.png"));
+          title = new Sprite(getTe(_CDN + "img/page-1-title-null-new.png"));
         } else {
           title = new Sprite(getTe(_CDN + "img/page-1-title.png"));
         }
@@ -917,7 +917,7 @@ sulwhasoo = function () {
         this.page4.addChild(ball);
         title = new Container();
         if (!(shareName != null && shareName !== "")) {
-          titleText = new Sprite(getTe(_CDN + "img/page-4-title-null.png"));
+          titleText = new Sprite(getTe(_CDN + "img/page-4-title-null-new.png"));
         } else {
           titleText = new Sprite(getTe(_CDN + "img/page-4-title.png"));
           small = 10;

@@ -22,13 +22,13 @@ images = [
   _CDN+"img/product-bg.jpg"
   _CDN+"img/product-bg-end.jpg"
   _CDN+"img/page-1-title.png"
-  _CDN+"img/page-1-title-null.png"
+  _CDN+"img/page-1-title-null-new.png"
   _CDN+"img/page-2-title-null.png"
   _CDN+"img/page-2-title.png"
   _CDN+"img/page-3-title-null.png"
   _CDN+"img/page-3-title.png"
   _CDN+"img/page-4-title.png"
-  _CDN+"img/page-4-title-null.png"
+  _CDN+"img/page-4-title-null-new.png"
   _CDN+"img/page-5-title.png"
   _CDN+"img/page-6-title.png"
   _CDN+"img/moon.png"
@@ -54,7 +54,7 @@ images = [
   _CDN+"img/ugc-5-1.png"
   _CDN+"img/ugc-5-2.png"
   _CDN+"img/ugc-5-3.png"
-  _CDN+"img/ugc-title-#{UGCTITLE}.png"
+  _CDN+"img/ugc-text-#{UGCTITLE}.png"
 ]
 page1Images = [
   _CDN+"img/hand.png"
@@ -62,7 +62,7 @@ page1Images = [
   _CDN+"img/point.png"
   _CDN+"img/product-border.png"
   _CDN+"img/product-item.png"
-  _CDN+"img/page-1-title-null.png"
+  _CDN+"img/page-1-title-null-new.png"
   _CDN+"img/cloud-1.png"
   _CDN+"img/cloud-2.png"
   _CDN+"img/cloud-3.png"
@@ -270,7 +270,7 @@ class sulwhasoo
     content.addChild product
     # title = new Sprite getTe _CDN+"img/page-1-title.png"
     unless main.wy
-      title = new Sprite getTe _CDN+"img/page-1-title-null.png"
+      title = new Sprite getTe _CDN+"img/page-1-title-null-new.png"
     else
       title = new Sprite getTe _CDN+"img/page-1-title.png"
     title.y = 320
@@ -623,7 +623,7 @@ class sulwhasoo
 
     title = new Container()
     unless shareName? and shareName isnt ""
-      titleText= new Sprite getTe _CDN+"img/page-4-title-null.png"
+      titleText= new Sprite getTe _CDN+"img/page-4-title-null-new.png"
     else
       titleText= new Sprite getTe _CDN+"img/page-4-title.png"
       small = 10

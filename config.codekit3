@@ -11529,14 +11529,14 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/sulwhasoo\/img\/page-1-title-null.png": {
+	"\/sulwhasoo\/img\/page-1-title-null-new.png": {
 		"ft": 32768,
-		"iS": 67596,
+		"iS": 17020,
 		"oA": 0,
-		"oAP": "\/sulwhasoo\/img\/page-1-title-null.png",
+		"oAP": "\/sulwhasoo\/img\/page-1-title-null-new.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
@@ -11595,11 +11595,11 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/sulwhasoo\/img\/page-4-title-null.png": {
+	"\/sulwhasoo\/img\/page-4-title-null-new.png": {
 		"ft": 32768,
 		"iS": 165061,
 		"oA": 0,
-		"oAP": "\/sulwhasoo\/img\/page-4-title-null.png",
+		"oAP": "\/sulwhasoo\/img\/page-4-title-null-new.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -11914,55 +11914,55 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/sulwhasoo\/img\/ugc-title-1.png": {
+	"\/sulwhasoo\/img\/ugc-text-1.png": {
 		"ft": 32768,
 		"iS": 59099,
 		"oA": 0,
-		"oAP": "\/sulwhasoo\/img\/ugc-title-1.png",
+		"oAP": "\/sulwhasoo\/img\/ugc-text-1.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
-	"\/sulwhasoo\/img\/ugc-title-2.png": {
+	"\/sulwhasoo\/img\/ugc-text-2.png": {
 		"ft": 32768,
 		"iS": 53870,
 		"oA": 0,
-		"oAP": "\/sulwhasoo\/img\/ugc-title-2.png",
+		"oAP": "\/sulwhasoo\/img\/ugc-text-2.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
-	"\/sulwhasoo\/img\/ugc-title-3.png": {
+	"\/sulwhasoo\/img\/ugc-text-3.png": {
 		"ft": 32768,
 		"iS": 57027,
 		"oA": 0,
-		"oAP": "\/sulwhasoo\/img\/ugc-title-3.png",
+		"oAP": "\/sulwhasoo\/img\/ugc-text-3.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
-	"\/sulwhasoo\/img\/ugc-title-4.png": {
+	"\/sulwhasoo\/img\/ugc-text-4.png": {
 		"ft": 32768,
 		"iS": 62847,
 		"oA": 0,
-		"oAP": "\/sulwhasoo\/img\/ugc-title-4.png",
+		"oAP": "\/sulwhasoo\/img\/ugc-text-4.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
-	"\/sulwhasoo\/img\/ugc-title-5.png": {
+	"\/sulwhasoo\/img\/ugc-text-5.png": {
 		"ft": 32768,
 		"iS": 62335,
 		"oA": 0,
-		"oAP": "\/sulwhasoo\/img\/ugc-title-5.png",
+		"oAP": "\/sulwhasoo\/img\/ugc-text-5.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
