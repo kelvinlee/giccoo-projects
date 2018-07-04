@@ -1,0 +1,85 @@
+extends ../libs/jade/layout-clean
+
+block title
+  | 治愈音乐瓶
+
+block css
+  meta(name="author",content="m.giccoo.com")
+  //- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+  link(rel="stylesheet",href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css")
+  link(rel="stylesheet",href="css/base.css")
+  //- script.
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  script(src="/libs/js/min/vconsole.min.js")
+  script.
+    var vConsole = new VConsole();
+    console.log('Test');
+
+block content
+  - url = "//image.giccoo.com/projects/beingmate";
+  - url = ".";
+  .qrcode#qrcode
+    .qr
+      img(src="#{url}/img/qrcode.png")
+      .text 请使用手机扫描二维码参与活动
+
+  .public#public
+    player(icon="true",src="#{url}/mp3/bgm.mp3",loop="loop")
+    transition(name="page-fade")
+      .note-text(v-show="note")
+        p 温馨提示：为了体验效果更佳<br/>建议打开音乐播放按钮
+        //- .arrow
+          .item.arrow-1
+            img(src="#{url}/img/arrow-green.png")
+          .item.arrow-2
+            img(src="#{url}/img/arrow-green.png")
+          .item.arrow-3
+            img(src="#{url}/img/arrow-green.png")
+
+  .main#main(v-show="mounted",:class="{biger: biger}",style="display: none",@touchstart="start",@touchmove="move",@touchend="end")
+    #canvas
+    img.ugcSave(:src="ugcSave",v-if="!wy && ugcBtn")
+    transition(name="page-fade")
+      .btns(v-show="ugcBtn")
+        a.btn(href="http://sws.smardata.cn")
+          img(src="#{url}/img/btn-reg.png")
+        .btn(v-if="!wy")
+          img(src="#{url}/img/btn-long-share.png")
+          img.ugcSave(:src="ugcSave")
+        .btn(v-if="wy",@click.stop="share")
+          img(src="#{url}/img/btn-share.png")
+          //- img.ugcSave(:src="ugcSave")
+    transition(name="page-fade")
+      .loading-page(v-show="loading")
+        .ball-spin-fade-loader
+          div
+          div
+          div
+          div
+          div
+          div
+          div
+          div
+
+
+
+block js
+  - url = "/";
+  script(src="//res.wx.qq.com/open/js/jweixin-1.2.0.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
+  //- script(src="js/pixi.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+  script(src="js/main.js?v=4")
+  
+
+
+
+  
