@@ -320,14 +320,14 @@ video,canvas,svg
 			margin-top: 15%
 		.msg-box
 			+m
-			+w(50%)
+			+w(55%)
 			margin-top: 5%
 			+posr
 			.nickname
 				+posa
 				+tl(50%,50%)
 				+w(70%)
-				+h(1.4rem)
+				+h(1.6rem)
 				+font-size(1rem)
 				+transform(translate3d(-50%,-70%,0))
 				color: #009944
@@ -344,7 +344,7 @@ video,canvas,svg
 					box-sizing: border-box
 					padding-right: 1rem
 					vertical-align: top
-					+font-size(0.8rem)
+					+font-size(1.1rem)
 				&:after
 					content: " "
 					+posa
@@ -470,3 +470,13 @@ video,canvas,svg
 	+h
 	opacity: 0
 	z-index: 99
+
+.page-1
+	.bg
+		+b($cdn+"img/page-2-1-bg.jpg",no-repeat,center,center,cover)
+.page-2
+	.bg
+		+b($cdn+"img/page-2-2-bg.jpg",no-repeat,center,center,cover)
+.page-3
+	.bg
+		+b($cdn+"img/page-2-3-bg.jpg",no-repeat,center,center,cover)

@@ -351,6 +351,13 @@ getId = function getId(id, link) {
   return loader.resources[link].textures[id];
 };
 
+// for fix ios 8 less
+if (Number.isInteger == null) {
+  Number.isInteger = function (int) {
+    return int >= 0;
+  };
+}
+
 // @codekit-prepend "../../libs/pixi/voice"
 // @codekit-prepend "../../libs/pixi/motionpath"
 // @codekit-prepend "../../libs/coffee/pixi-base"

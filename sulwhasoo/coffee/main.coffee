@@ -187,9 +187,9 @@ init = ->
 		# d = {"code":200,"msg":null,"data":{"latestSongName":"Strawberries & Cigarettes","latestTime":1522764106000,"latestShareSongName":"生命是场马拉松","hottestSongName":"Strawberries & Cigarettes","hottestSongArtistName":"Various Artists","hottestSongCount":18,"hottestArtistSong":["Cry On My Shoulder","Here We Are Again","Річка"]}}
 		# console.log d
 		if d.code is 200
-			lastName = d.data.latestSongName if d.data.latestSongName?
-			shareName = d.data.latestShareSongName if d.data.latestShareSongName?
-			if d.data.latestTime? and d.data.latestTime > 100
+			lastName = d.data.latestSongName if d.data.latestSongName? and d.data.latestSongName isnt ""
+			shareName = d.data.latestShareSongName if d.data.latestShareSongName? and d.data.latestShareSongName isnt ""
+			if d.data.latestTime? and d.data.latestTime > 100 and d.data.latestShareSongName isnt ""
 				date = new Date(d.data.latestTime)
 				lastDate = "#{date.getFullYear()}年#{date.getMonth()+1}月#{date.getDate()}日"
 				lastTime = "#{timeDouble(date.getHours())}:#{timeDouble(date.getMinutes())}"

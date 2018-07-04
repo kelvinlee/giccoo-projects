@@ -14,3 +14,8 @@ getTe = (id)->
   return resource[id].texture
 getId = (id,link)->
   return loader.resources[link].textures[id]
+
+# for fix ios 8 less
+unless Number.isInteger?
+	Number.isInteger = (int)->
+		return int >= 0

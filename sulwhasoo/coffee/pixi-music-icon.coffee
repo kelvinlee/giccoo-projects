@@ -69,9 +69,6 @@ page1Images = [
   _CDN+"img/star-2.png"
 ]
 
-# 云彩全随机
-# 
-
 lastDate = null
 lastTime = null
 lastName = null
@@ -263,7 +260,7 @@ class sulwhasoo
     product.buttonMode = true
     product.interactive = true
     product.touchstart = product.click = ()=>
-      console.log "click product",@.animation
+      console.log "click product"
       return false if @.animation
       unless main.wy
         return window.location.href = "https://m.music.163.com/m/applink/?scheme=orpheus%3A%2F%2Fopenurl%3Furl%3Dhttps%3A%2F%2Factivity.music.163.com%2Fsulwhasoo%2F%26thirdfrom%3Dwx"
