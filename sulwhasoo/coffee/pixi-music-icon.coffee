@@ -1154,14 +1154,32 @@ class sulwhasoo
     @.ugcrightBtn = rightBtn = @.rightBtn()
     @.page6.addChild leftBtn,rightBtn
     
-    leftBtn.buttonMode = true
-    leftBtn.interactive = true
-    leftBtn.touchstart = leftBtn.click = (data)=>
+    leftBtnEmpty = @.leftBtn()
+    leftBtnEmpty.scale.set(2,2)
+    leftBtnEmpty.alpha = 0
+    # leftBtnEmpty.width = 200 
+    # leftBtnEmpty.height = 200 
+    # leftBtnEmpty.x = 0
+    # leftBtnEmpty.y = 1333/2 - 100
+
+    rightBtnEmpty = @.rightBtn()
+    rightBtnEmpty.scale.set(2,2)
+    rightBtnEmpty.alpha = 0
+    # rightBtnEmpty.width = 200 
+    # rightBtnEmpty.height = 200 
+    # rightBtnEmpty.x = 750-200
+    # rightBtnEmpty.y = 1333/2 - 100
+
+    leftBtnEmpty.buttonMode = true
+    leftBtnEmpty.interactive = true
+    leftBtnEmpty.touchstart = leftBtnEmpty.click = (data)=>
       @.selectUGC(true)
-    rightBtn.buttonMode = true
-    rightBtn.interactive = true
-    rightBtn.touchstart = rightBtn.click = (data)=>
+    rightBtnEmpty.buttonMode = true
+    rightBtnEmpty.interactive = true
+    rightBtnEmpty.touchstart = rightBtnEmpty.click = (data)=>
       @.selectUGC(false)
+
+    @.page6.addChild leftBtnEmpty, rightBtnEmpty
 
 
     runArrow = =>
