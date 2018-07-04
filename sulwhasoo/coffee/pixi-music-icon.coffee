@@ -1,6 +1,7 @@
 # @codekit-prepend "../../libs/coffee/pixi-base"
 _CDN = "./"
 UGCTITLE = parseInt Math.random()*5+1
+# UGCTITLE = 4
 images = [
   _CDN+"img/hand.png"
   _CDN+"img/that-girl.png"
@@ -411,7 +412,7 @@ class sulwhasoo
     @.hideCloud()
     # 跳过中间页
     @.page2build()
-    # @.page5build()
+    # @.page6build()
     TweenLite.to @.page,.7,
       alpha: 0,
       x: 20,
