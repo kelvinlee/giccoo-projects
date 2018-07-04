@@ -1096,15 +1096,13 @@ UGC = function () {
     _createClass(UGC, [{
       key: 'build',
       value: function build() {
-        var bg, flower, icon, k, l, line, logo, mtext, mtitle, nickname, ref, score, text, title;
+        var bg, flower, icon, k, l, line, mtext, mtitle, nickname, ref, score, text, title;
         bg = new Sprite(resources[_CDN + "img/page-build-bg.jpg"].texture);
         this.stage.addChild(bg);
         title = new Sprite(resources[_CDN + "img/page-build-title.png"].texture);
         title.x = 400;
         title.y = 250;
         this.stage.addChild(title);
-        logo = new Sprite(resources[_CDN + "img/page-build-logo.png"].texture);
-        this.stage.addChild(logo);
         mtitle = new Sprite(resources[_CDN + ('img/page-build-title-' + this.opts.id + '.png')].texture);
         mtitle.x = this.opts.w / 2;
         mtitle.y = 330;
@@ -1200,7 +1198,9 @@ UGC = function () {
     }, {
       key: 'get',
       value: function get() {
-        var ugc;
+        var logo, ugc;
+        logo = new Sprite(resources[_CDN + "img/page-build-logo.png"].texture);
+        this.stage.addChild(logo);
         ugc = new Sprite(resources[_CDN + "img/page-build-qrcode.png"].texture);
         ugc.scale.set(800 / 1080, 800 / 1080);
         ugc.x = -34;
@@ -1208,6 +1208,7 @@ UGC = function () {
         this.stage.addChild(ugc);
         this.app.renderer.render(this.app.stage);
         ugc.alpha = 0;
+        logo.alpha = 0;
         return this.app.view.toDataURL();
       }
     }]);

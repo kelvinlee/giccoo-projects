@@ -23,7 +23,13 @@ $pageMainBGColor: #d1eaed;
 		opacity: 1
 	100%
 		opacity: 0
-
++keyframes(iconFlash)
+	0%,100%
+		opacity: 1
+		+transform(scale(1.2,1.2))
+	50%
+		opacity: 0.2
+		+transform(scale(1,1))
 	
 
 html,body
@@ -291,7 +297,7 @@ video,canvas,svg
 		+posa
 		+br(2%,2%)
 		+w(16%)
-		+animation(fadeArrow,2s,ease,infinite)
+		+animation(iconFlash,2s,ease,infinite)
 
 .page-4
 	.logo

@@ -377,9 +377,6 @@ class UGC
 		title.y = 250
 		@.stage.addChild title
 
-		logo = new Sprite resources[_CDN+"img/page-build-logo.png"].texture
-		@.stage.addChild logo
-
 		mtitle = new Sprite resources[_CDN+"img/page-build-title-#{@.opts.id}.png"].texture
 		mtitle.x = @.opts.w/2
 		mtitle.y = 330
@@ -455,6 +452,8 @@ class UGC
 		@.app.renderer.render @.app.stage
 		return @.app.view.toDataURL()
 	get: ->
+		logo = new Sprite resources[_CDN+"img/page-build-logo.png"].texture
+		@.stage.addChild logo
 		ugc = new Sprite resources[_CDN+"img/page-build-qrcode.png"].texture
 		ugc.scale.set(800/1080,800/1080)
 		ugc.x = -34
@@ -462,6 +461,7 @@ class UGC
 		@.stage.addChild ugc
 		@.app.renderer.render @.app.stage
 		ugc.alpha = 0
+		logo.alpha = 0
 		return @.app.view.toDataURL()
 
 
