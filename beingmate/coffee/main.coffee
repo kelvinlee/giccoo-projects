@@ -369,8 +369,10 @@ class UGC
 			_CDN+"img/page-build-logo.png"
 		]).load(@.build.bind(@))
 	build: ->
-		bg = new Sprite resources[_CDN+"img/page-build-bg.jpg"].texture
-		@.stage.addChild bg
+		background = new Sprite resources[_CDN+"img/page-build-bg.jpg"].texture
+		backgroundC = new Container()
+		backgroundC.addChild background
+		@.stage.addChild backgroundC
 
 		title = new Sprite resources[_CDN+"img/page-build-title.png"].texture
 		title.x = 400

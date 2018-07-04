@@ -1096,9 +1096,11 @@ UGC = function () {
     _createClass(UGC, [{
       key: 'build',
       value: function build() {
-        var bg, flower, icon, k, l, line, mtext, mtitle, nickname, ref, score, text, title;
-        bg = new Sprite(resources[_CDN + "img/page-build-bg.jpg"].texture);
-        this.stage.addChild(bg);
+        var background, backgroundC, flower, icon, k, l, line, mtext, mtitle, nickname, ref, score, text, title;
+        background = new Sprite(resources[_CDN + "img/page-build-bg.jpg"].texture);
+        backgroundC = new Container();
+        backgroundC.addChild(background);
+        this.stage.addChild(backgroundC);
         title = new Sprite(resources[_CDN + "img/page-build-title.png"].texture);
         title.x = 400;
         title.y = 250;
