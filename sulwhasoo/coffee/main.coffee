@@ -1,7 +1,4 @@
-# @codekit-prepend "coffee/css3Prefix"
-# @codekit-prepend "../../libs/coffee/requestanimation"
 # @codekit-prepend "../../libs/coffee/loadWechatConfig"
-# @codekit-prepend "../../libs/coffee/passiveSupport"
 # @codekit-prepend "../../libs/coffee/IsPC"
 # @codekit-prepend "../../libs/coffee/get"
 # @codekit-prepend "../../libs/vue/vue-player"

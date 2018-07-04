@@ -11365,6 +11365,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/sulwhasoo\/img\/hand.png": {
+		"ft": 32768,
+		"iS": 2847,
+		"oA": 0,
+		"oAP": "\/sulwhasoo\/img\/hand.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/sulwhasoo\/img\/ico.jpg": {
 		"ft": 16384,
 		"iS": 14551,
@@ -11378,12 +11389,12 @@
 		},
 	"\/sulwhasoo\/img\/icon-loading.png": {
 		"ft": 32768,
-		"iS": 13024,
+		"iS": 5733,
 		"oA": 0,
 		"oAP": "\/sulwhasoo\/img\/icon-loading.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
@@ -11433,7 +11444,7 @@
 		},
 	"\/sulwhasoo\/img\/icon-symbol-3.png": {
 		"ft": 32768,
-		"iS": 3910,
+		"iS": 6197,
 		"oA": 0,
 		"oAP": "\/sulwhasoo\/img\/icon-symbol-3.png",
 		"oF": 0,
@@ -11514,8 +11525,8 @@
 		"oA": 0,
 		"oAP": "\/sulwhasoo\/img\/page-1-title-null.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},

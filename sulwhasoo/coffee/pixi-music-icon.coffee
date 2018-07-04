@@ -2,6 +2,7 @@
 _CDN = "./"
 UGCTITLE = parseInt Math.random()*5+1
 images = [
+  _CDN+"img/hand.png"
   _CDN+"img/that-girl.png"
   _CDN+"img/cloud-1.png"
   _CDN+"img/cloud-2.png"
@@ -55,6 +56,7 @@ images = [
   _CDN+"img/ugc-title-#{UGCTITLE}.png"
 ]
 page1Images = [
+  _CDN+"img/hand.png"
   _CDN+"img/that-girl.png"
   _CDN+"img/point.png"
   _CDN+"img/product-border.png"
@@ -268,9 +270,15 @@ class sulwhasoo
       title = new Sprite getTe _CDN+"img/page-1-title-null.png"
     else
       title = new Sprite getTe _CDN+"img/page-1-title.png"
-    title.y = 200
+    title.y = 300
     title.alpha = 0
     @.page.addChild title
+    hand = new Sprite getTe _CDN+"img/hand.png"
+    hand.anchor.set(0.5,0.5)
+    hand.x = 420 + product.width/2
+    hand.y = 760 + product.height + 100
+    hand.alpha = 0
+    @.page.addChild hand
     @.bg = bg = new Container()
     for i in [0...50]
       star = new Sprite getTe _CDN+"img/star-#{i%2+1}.png"
@@ -303,6 +311,20 @@ class sulwhasoo
     @.stage.addChild @.page
     @.stage.addChild @.page2
     @.stage.addChild @.cloud
+    runHand = =>
+      hand.y = 760 + product.height + 100
+      hand.scale.set(1,1)
+      TweenLite.to hand, 0.5,
+        alpha: 1
+      TweenLite.to hand,2,
+        y: 760 + product.height*(1/3)
+        onComplete: =>
+          hand.scale.set(0.9,0.9)
+          TweenLite.to hand,1,
+            delay: 1
+            alpha: 0
+            onComplete: =>
+              runHand()
 
     TweenLite.to(@.cloud,.5,{
       alpha: 1,
@@ -355,7 +377,11 @@ class sulwhasoo
                           alpha: 1, 
                           onComplete: => 
                             @.productLight(productBorder)
-                        TweenLite.to title,time*3, {alpha: 1,y: 1333/2 - title.height/2 - 120}
+                        TweenLite.to title,time*3,
+                          alpha: 1,
+                          y: 1333/2 - title.height/2 - 60
+                          onComplete: =>
+                            runHand()
         TweenLite.to point,1,{alpha: 1,delay: 1}
         @.showCloud()
     })
@@ -1234,7 +1260,12 @@ class sulwhasoo
   hideCloud: ->
     for i in [0...@clouds.length]
       cloud = @.clouds[i]
-      TweenLite.to cloud, 2.5, {x: cloud.dex, alpha: 1, delay: i*0.1}
+      y = cloud.y + Math.random()*100 - 50
+      TweenLite.to cloud, 3.5,
+        x: cloud.dex + Math.random()*100 - 50,
+        alpha: 1, 
+        y: y,
+        delay: i*0.1
   showCloud: ->
     # m = cloud.x > 750/2
     # if Math.random() > 0.5
@@ -1254,7 +1285,7 @@ class sulwhasoo
         else
           cloud.dx = to = -150 - Math.random()*(size)
       y = cloud.dey + Math.random()*(size*2) - size
-      TweenLite.to cloud, 2.5, 
+      TweenLite.to cloud, 3.5, 
         x: to,
         y: y,
         alpha: 0.6, 
