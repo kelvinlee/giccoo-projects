@@ -270,7 +270,7 @@ class sulwhasoo
       title = new Sprite getTe _CDN+"img/page-1-title-null.png"
     else
       title = new Sprite getTe _CDN+"img/page-1-title.png"
-    title.y = 300
+    title.y = 320
     title.alpha = 0
     @.page.addChild title
     hand = new Sprite getTe _CDN+"img/hand.png"
@@ -312,20 +312,28 @@ class sulwhasoo
     @.stage.addChild @.page2
     @.stage.addChild @.cloud
     runHand = =>
-      hand.y = 760 + product.height + 100
+      hand.y = 760 + product.height - 15
       hand.scale.set(1,1)
       TweenLite.to hand, 0.5,
         alpha: 1
-      TweenLite.to hand,2,
-        y: 760 + product.height*(1/3)
         onComplete: =>
-          hand.scale.set(0.9,0.9)
-          TweenLite.to hand,1,
-            delay: 1
-            alpha: 0
-            onComplete: =>
-              runHand()
-
+          setTimeout =>
+            hand.scale.set(0.9,0.9)
+            setTimeout =>
+              hand.scale.set(1,1)
+              setTimeout =>
+                hand.scale.set(0.9,0.9)
+                setTimeout =>
+                  hand.scale.set(1,1)
+                  TweenLite.to hand,1,
+                    delay: 1
+                    alpha: 0
+                    onComplete: =>
+                      runHand()
+                ,200
+              ,200
+            ,200
+          ,200
     TweenLite.to(@.cloud,.5,{
       alpha: 1,
       onComplete: =>
@@ -379,7 +387,7 @@ class sulwhasoo
                             @.productLight(productBorder)
                         TweenLite.to title,time*3,
                           alpha: 1,
-                          y: 1333/2 - title.height/2 - 60
+                          y: 1333/2 - title.height/2 - 36
                           onComplete: =>
                             runHand()
         TweenLite.to point,1,{alpha: 1,delay: 1}

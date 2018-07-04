@@ -417,7 +417,7 @@ sulwhasoo = function () {
         } else {
           title = new Sprite(getTe(_CDN + "img/page-1-title.png"));
         }
-        title.y = 300;
+        title.y = 320;
         title.alpha = 0;
         this.page.addChild(title);
         hand = new Sprite(getTe(_CDN + "img/hand.png"));
@@ -461,22 +461,30 @@ sulwhasoo = function () {
         this.stage.addChild(this.page2);
         this.stage.addChild(this.cloud);
         _runHand = function runHand() {
-          hand.y = 760 + product.height + 100;
+          hand.y = 760 + product.height - 15;
           hand.scale.set(1, 1);
-          TweenLite.to(hand, 0.5, {
-            alpha: 1
-          });
-          return TweenLite.to(hand, 2, {
-            y: 760 + product.height * (1 / 3),
+          return TweenLite.to(hand, 0.5, {
+            alpha: 1,
             onComplete: function onComplete() {
-              hand.scale.set(0.9, 0.9);
-              return TweenLite.to(hand, 1, {
-                delay: 1,
-                alpha: 0,
-                onComplete: function onComplete() {
-                  return _runHand();
-                }
-              });
+              return setTimeout(function () {
+                hand.scale.set(0.9, 0.9);
+                return setTimeout(function () {
+                  hand.scale.set(1, 1);
+                  return setTimeout(function () {
+                    hand.scale.set(0.9, 0.9);
+                    return setTimeout(function () {
+                      hand.scale.set(1, 1);
+                      return TweenLite.to(hand, 1, {
+                        delay: 1,
+                        alpha: 0,
+                        onComplete: function onComplete() {
+                          return _runHand();
+                        }
+                      });
+                    }, 200);
+                  }, 200);
+                }, 200);
+              }, 200);
             }
           });
         };
@@ -540,7 +548,7 @@ sulwhasoo = function () {
                             });
                             return TweenLite.to(title, time * 3, {
                               alpha: 1,
-                              y: 1333 / 2 - title.height / 2 - 60,
+                              y: 1333 / 2 - title.height / 2 - 36,
                               onComplete: function onComplete() {
                                 return _runHand();
                               }
