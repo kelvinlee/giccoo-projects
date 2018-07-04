@@ -181,7 +181,7 @@ shareName = null;
 sulwhasoo = function () {
   // lastDate = "1987/1/2"
   // lastTime = "08:32"
-  // lastName = "你不用才我是谁因为我也不知道"
+  // lastName = ""
   // shareName = "你不用才我是谁因为我也不知道"
   var sulwhasoo = function () {
     function sulwhasoo(arg) {
@@ -647,7 +647,7 @@ sulwhasoo = function () {
         this.page2.addChild(moon);
         title = new Container();
         title.alpha = 0;
-        if (lastDate == null) {
+        if (!(lastDate != null && lastDate !== "")) {
           titleBG = new Sprite(getTe(_CDN + "img/page-2-title-null.png"));
         } else {
           titleBG = new Sprite(getTe(_CDN + "img/page-2-title.png"));
@@ -789,7 +789,7 @@ sulwhasoo = function () {
         cdPointer.rotation = 0.7;
         this.page3.addChild(cdPointer);
         title = new Container();
-        if (lastName == null) {
+        if (!(lastName != null && lastName !== "")) {
           titleText = new Sprite(getTe(_CDN + "img/page-3-title-null.png"));
         } else {
           titleText = new Sprite(getTe(_CDN + "img/page-3-title.png"));
@@ -912,7 +912,7 @@ sulwhasoo = function () {
         ball.addChild(item);
         this.page4.addChild(ball);
         title = new Container();
-        if (shareName == null) {
+        if (!(shareName != null && shareName !== "")) {
           titleText = new Sprite(getTe(_CDN + "img/page-4-title-null.png"));
         } else {
           titleText = new Sprite(getTe(_CDN + "img/page-4-title.png"));
@@ -2187,7 +2187,7 @@ init = function init() {
       if (d.data.latestShareSongName != null && d.data.latestShareSongName !== "") {
         shareName = d.data.latestShareSongName;
       }
-      if (d.data.latestTime != null && d.data.latestTime > 100 && d.data.latestShareSongName !== "") {
+      if (d.data.latestTime != null && d.data.latestTime > 100) {
         date = new Date(d.data.latestTime);
         lastDate = date.getFullYear() + "\u5E74" + (date.getMonth() + 1) + "\u6708" + date.getDate() + "\u65E5";
         return lastTime = timeDouble(date.getHours()) + ":" + timeDouble(date.getMinutes());

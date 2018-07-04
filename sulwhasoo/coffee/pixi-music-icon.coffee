@@ -76,7 +76,7 @@ shareName = null
 
 # lastDate = "1987/1/2"
 # lastTime = "08:32"
-# lastName = "你不用才我是谁因为我也不知道"
+# lastName = ""
 # shareName = "你不用才我是谁因为我也不知道"
 
 class sulwhasoo
@@ -433,7 +433,7 @@ class sulwhasoo
     @.page2.addChild moon
     title = new Container()
     title.alpha = 0
-    unless lastDate?
+    unless lastDate? and lastDate isnt ""
       titleBG = new Sprite getTe _CDN+"img/page-2-title-null.png"
     else
       titleBG = new Sprite getTe _CDN+"img/page-2-title.png"
@@ -528,7 +528,7 @@ class sulwhasoo
     @.page3.addChild cdPointer
 
     title = new Container()
-    unless lastName?
+    unless lastName? and lastName isnt ""
       titleText= new Sprite getTe _CDN+"img/page-3-title-null.png"
     else
       titleText= new Sprite getTe _CDN+"img/page-3-title.png"
@@ -620,7 +620,7 @@ class sulwhasoo
     @.page4.addChild ball
 
     title = new Container()
-    unless shareName?
+    unless shareName? and shareName isnt ""
       titleText= new Sprite getTe _CDN+"img/page-4-title-null.png"
     else
       titleText= new Sprite getTe _CDN+"img/page-4-title.png"
