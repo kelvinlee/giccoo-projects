@@ -31,7 +31,7 @@ sended = [false,false]
 _CDN = "./"
 
 neteaseShareImage = ->
-	title1 = "最幸运的你，藏在你爱的音乐里"
+	title1 = "快来玩游戏，赢Bobbi Brown正装粉底液！"
 	picUrl = "https://image.giccoo.com/upload/BobbiBrown/"+main.shareImageLink+"@!large"
 	redirectUrl = "https://m.giccoo.com/BobbiBrown/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
@@ -49,8 +49,8 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "最幸运的你，藏在你爱的音乐里"
-				desc: "立即测试幸运指数，找出藏在奶粉罐里的秘密吧~"
+				title: "快来玩游戏，赢Bobbi Brown正装粉底液！"
+				desc: "测测你的颜值能量，哪首歌代表你的颜值？~"
 				link: "http://m.giccoo.com/BobbiBrown/"
 				imgUrl: "http://m.giccoo.com/BobbiBrown/img/ico.jpg"
 				success: ->
