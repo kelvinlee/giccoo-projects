@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var $_GET, Container, Graphics, IsPC, ParticleContainer, Sprite, Text, Texture, TextureCache, UGCTITLE, _CDN, _public, autoDetectRenderer, getId, getTe, images, imageurl, init, lastDate, lastName, lastTime, loadWechatConfig, loader, loading, main, neteaseShareImage, page1Images, resource, resources, sended, shareName, sulwhasoo, sulwhasooCache, sys, timeDouble, ugcCache;
+var $_GET, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, Text, Texture, TextureCache, UGCTITLE, _CDN, _public, autoDetectRenderer, getId, getTe, images, imageurl, init, lastDate, lastName, lastTime, loadWechatConfig, loader, loading, main, neteaseShareImage, page1Images, resource, resources, sended, shareName, sulwhasoo, sulwhasooCache, sys, timeDouble, ugcCache;
 
 loadWechatConfig = function loadWechatConfig() {
   var hm, s, url;
@@ -145,6 +145,8 @@ Graphics = PIXI.Graphics;
 resource = PIXI.loader.resources;
 
 Text = PIXI.Text;
+
+AnimatedSprite = PIXI.extras.AnimatedSprite;
 
 getTe = function getTe(id) {
   return resource[id].texture;

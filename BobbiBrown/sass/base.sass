@@ -1,0 +1,547 @@
+@import sass/base
+@import ../../libs/sass/loader-ball
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "//image.giccoo.com/projects/BobbiBrown/"
+
+// animation, delay, duration
+$fontColor: #000000;
+$pageMainBGColor: #fff;
++keyframes(fadeArrow)
+	0%,100%
+		opacity: 1
+	50%
+		opacity: 0.5
++keyframes(fadeBG)
+	0%
+		opacity: 0
+	20%
+		opacity: 1
+	80%
+		opacity: 1
+	100%
+		opacity: 0
++keyframes(iconFlash)
+	0%,100%
+		opacity: 1
+		+transform(scale(1.2,1.2))
+	50%
+		opacity: 0.2
+		+transform(scale(1,1))
++keyframes(moveLeft)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(-50%,0,0))
+	
+
+html,body
+	+w
+	+h
+body
+	color: $fontColor
+	+bc($pageMainBGColor)
+	max-width: 640px
+	+m
+	+posr
+video,canvas,svg
+	+w
+	+h(auto)
+.hide
+	+hide
+.main,.load
+	+w
+	+h
+	+posr
+	max-width: 1280px
+	+m
+	font-size: 0
+	+overhide
+	+tran(all,4s,ease)
+#game
+	+h
+	canvas
+		+h
+
+.page-animation-enter-active
+	transition: all .4s linear
+.page-animation-leave-active
+	transition: all .4s linear
+	transform: translate3d(0,0,0)
+.page-animation-enter
+	transform: translate3d(0,-100%,0)
+	& ~ .page-animation-leave
+		transform: translate3d(0,100%,0)
+.page-animation-leave
+	transform: translate3d(0,100%,0)
+	& ~ .page-animation-enter
+		transform: translate3d(0,100%,0)
+.page-animation-enter-to
+	transform: translate3d(0,0,0)
+	& ~ .page-animation-leave-to
+		transform: translate3d(0,100%,0)
+.page-animation-leave-to
+	transform: translate3d(0,-100%,0)
+
+
+.page-fade-enter-active
+	transition: all .6s ease
+	opacity: 1
+.page-fade-leave-active
+	transition: all .3s linear
+	opacity: 1
+.page-fade-enter,.page-fade-leave-to
+	opacity: 0
+
+.page-fadeflower-enter-active
+	transition: all .6s ease
+	opacity: 1
+.page-fadeflower-leave-active
+	transition: all .6s ease-in
+	opacity: 1
+.page-fadeflower-enter,.page-fadeflower-leave-to
+	opacity: 0
+
+.qrcode
+	+bc(#fff)
+	+posa
+	+tl
+	+w
+	+h
+	z-index: 9999
+	+hide
+	&.show
+		+show
+	.qr
+		+w(300px)
+		+m
+		margin-top: 100px
+		+text-center
+		font-size: 16px
+
+.load
+	// +b($cdn+"img/bg-loading.jpg",no-repeat,center,center,cover)
+	+posa
+	+tl(0,50%)
+	+transform(translate3d(-50%,0,0))
+	+bc(#fff)
+	z-index: 99
+	.loading
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+		+w
+		.buildmove
+			+w(300%)
+			max-width: none
+			+animation(moveLeft,15s,linear,infinite)
+		.person
+			+posa
+			+bl(-20%,50%)
+			+iw(72,750,100%)
+		.load-icon
+			+w(4rem)
+			+m
+		.load-text
+			+w(10rem)
+			+posr
+			+bl(-4rem,50%)
+			+transform(translate3d(-50%,0,0))
+			span
+				+posa
+				+bl(0,50%)
+				+font-size(0.8rem)
+				+transform(translate3d(-35%,-60%,0))
+				color: #000
+
+.public
+	+posa
+	+tr(1rem,1rem)
+	+wh(30px,30px)
+	font-size: 0
+	z-index: 199
+	.note-text
+		+posa
+		+tr(50%,250%)
+		+font-size(0.8rem)
+		line-height: 1.4em
+		white-space: nowrap
+		+text-right
+		+m
+		+transform(translate3d(0,-50%,0))
+		color: #3f8f23
+		p
+			+m
+		.arrow
+			+posa
+			+tr(50%,-37.5px)
+			+transform(translate3d(0,-25%,0))
+			font-size: 0
+			+h(30px)
+			.item
+				+w(10px)
+				+h
+				+show-inline
+				font-size: 0
+			// .arrow-1
+			// 	+animation(fadeArrow,1s,ease,infinite)
+			// .arrow-2
+			// 	+animation(fadeArrow,1s,ease,infinite)
+			// 	animation-delay: 1000ms*1/3
+			// .arrow-3
+			// 	+animation(fadeArrow,1s,ease,infinite)
+			// 	animation-delay: 1000ms*2/3
+
+	.player
+		+w
+		+h
+	.icon-play
+		+w
+		+h
+		&.play
+			+b($cdn+"img/icon-play.png",no-repeat,center,center,contain)
+		&.pause
+			+b($cdn+"img/icon-stop.png",no-repeat,center,center,contain)
+
+.pages
+	+w
+	+h
+	+posr
+	+overhide
+	perspective: 500
+	-webkit-perspective: 500
+			transform-style: preserve-3d
+	-webkit-transform-style: preserve-3d
+	.page
+		+posa
+		+tl
+		+w
+		+h
+		+bc(#e3dbd5)
+		+hide
+		background-attachment: fixed
+		z-index: 10
+		.bg
+			+posa
+			+tl
+			+w
+			+h
+			z-index: -1
+			img
+				+w
+				+h
+		
+.page
+	+posa
+	+tl
+	+w
+	+h
+	+overhide
+	background-size: 100% auto
+	.bg,.ugc
+		+posa
+		+tl(50%)
+		font-size: 0
+		+transform(translate3d(0,-50%,0))
+		.biger &
+			+transform(translate3d(0,-50%,0) scale(1.1,1.1))
+	.ugc
+		+w
+		+h
+	.content
+		+posa
+		+tl
+		+w
+		+h
+		box-sizing: border-box
+	.next
+		+posa
+		+bl
+		+w
+		+h(1px)
+		&:before
+			content: " "
+			+posa
+			+bl(10px,50%)
+			+w(30px)
+			+h(10px)
+			+b($cdn+"img/arrow-up.png",no-repeat,top,center,contain)
+			+animation(fadeArrow,0.6s,ease,infinite)
+		&:after
+			content: " "
+			+posa
+			+bl(22px,50%)
+			+w(30px)
+			+h(10px)
+			+b($cdn+"img/arrow-up.png",no-repeat,top,center,contain)
+			+animation(fadeArrow,0.6s,ease,infinite)
+			animation-delay: 300ms
+
+.page-home
+	.bg
+		#musicIconCD
+			+posa
+			+tl
+	.content
+		padding-top: 15%
+
+.page-1,.page-2,.page-3
+	.bg
+		+w
+		+h
+		$time: 4000ms
+		.bg-1,.bg-2,.bg-3,.lineGB,.musicIcon
+			+posa
+			+tl
+			.biger &
+				+transform(scale(1.1,1.1))
+		.lineGB
+			margin-top: 22%
+		.musicIcon
+			margin-top: 15%
+		
+	.logo
+		+posr
+		+w
+		margin-top: 1rem
+		padding-top: 7px
+		margin-left: -20px
+	.title-list
+		+posr
+		margin-top: 20%
+		.title
+			+posa
+			+tl
+	.btn-buy
+		+posa
+		+br(2%,2%)
+		+w(16%)
+		+animation(iconFlash,2s,ease,infinite)
+
+.page-4
+	.logo
+		+posr
+		+w
+		margin-top: 1rem
+		padding-top: 7px
+		margin-left: -20px
+	.bg
+		#musicIconCD2
+			+posa
+			+bl(15%)
+			+w
+		.flower
+			+posa
+			+bl(23%,35%)
+			+w(50%)
+	.content
+		.title
+			margin-top: 15%
+		.msg-box
+			+m
+			+w(55%)
+			margin-top: 5%
+			+posr
+			.nickname
+				+posa
+				+tl(50%,50%)
+				+w(70%)
+				+h(1.6rem)
+				+font-size(1rem)
+				+transform(translate3d(-50%,-70%,0))
+				color: #009944
+				border: none
+				border-bottom: solid 2px #009944
+				
+				input
+					+w
+					+h
+					border: none
+					+m
+					+p
+					outline: none
+					box-sizing: border-box
+					padding-right: 1rem
+					vertical-align: top
+					+font-size(1.1rem)
+				&:after
+					content: " "
+					+posa
+					+br
+					+w(1rem)
+					+h
+					+b($cdn+"img/icon-pencil.png",no-repeat,center,right,contain)
+		.btn
+			+posa
+			+bl(2%,50%)
+			+w(40%)
+			+transform(translate3d(-50%,0,0))
+.loading-page
+	+posa
+	+tl
+	z-index: 9999
+	+w
+	+h
+	+bc(rgba(0,0,0,0.6))
+	.ball-spin-fade-loader
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+.page-build
+	z-index: 89
+	#ugc
+		+posa
+		+tl
+	.content
+		.btn
+			+posa
+			+bl(2%,50%)
+			+w
+			+transform(translate3d(-50%,0,0))
+			.leftBtn
+				+posa
+				+tl
+				+w(50%)
+				+h
+			.rightBtn
+				+posa
+				+tr
+				+w(50%)
+				+h
+
+.page-last
+	z-index: 99
+	.logo
+		margin-top: 15%
+	.pop
+		+posa
+		+tl
+		+w
+		+h
+		+bc(rgba(0,0,0,0.2))
+		z-index: 1000
+		.title
+			+m(0.8rem auto)
+		.pop-content
+			+w(80%)
+			+posa
+			+tl(50%,50%)
+			+p(5%)
+			+transform(translate3d(-50%,-50%,0))
+			+b($cdn+"img/page-last-pop-bg.png",no-repeat,center,center,100% 100%)
+			box-sizing: border-box
+			.close
+				+w(10%)
+				+m(2% auto)
+	.box
+		+posa
+		+bl
+		animation-delay: 1000ms
+		.box-content
+			+posa
+			+tl
+			+w
+			.btn
+				+w
+				+h(2rem)
+
+.form
+	+w(90%)
+	+m
+	color: #83570a
+	+font-size(0.8rem)
+	.form-group
+		display: flex
+		+box
+		+m(5% 0)
+		border-radius: 5px
+		border: solid 1px #555
+		+overhide
+		label
+			flex: 1
+			+box
+			+p(0.1rem 0.2rem)
+			// padding-right: 5%
+			+posr
+			border-right: solid 1px #555
+			line-height: 1.4em
+			justify-content: center
+			align-items: center
+			box-align: center
+			+bc(#dcdcdc)
+			img
+				+show-inline
+				vertical-align: middle
+		input,select,.form-group-items,.form-group-line,.select
+			flex: 7
+		input,.select
+			border: none
+			outline: none
+			+bc(#fff)
+			// color: #fff
+			+box
+			+p(0.2rem 0)
+			line-height: 1.4em
+			text-indent: 0.4rem
+	.btn-submit
+		+m(0.5rem auto)
+
+.ugcsave
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	opacity: 0
+	z-index: 99
+
+.page-1
+	.bg
+		+b($cdn+"img/page-2-1-bg.jpg",no-repeat,center,center,cover)
+.page-2
+	.bg
+		+b($cdn+"img/page-2-2-bg.jpg",no-repeat,center,center,cover)
+.page-3
+	.bg
+		+b($cdn+"img/page-2-3-bg.jpg",no-repeat,center,center,cover)
+
+.page-wait
+	+b($cdn+"img/wait-page.jpg",no-repeat,center,center,90% auto)
+	.title
+		+posa
+		+tl(5%)
+	.btn
+		+posa
+		+bl(5%)
+
+
+.page-info
+	z-index: 109
+	+bc(rgba(0,0,0,0.2))
+	.model
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+		+w(80%)
+		border-radius: 2%
+		box-sizing: border-box
+		padding-bottom: 30%
+		+b($cdn+"img/pop-end.png",no-repeat,bottom,center,100% auto)
+		+bc(#fff)
+		.model-content
+			+w
+			box-sizing: border-box
+			+p(8% 5%)
+			&.bigger
+				+p(15% 5%)
+
+.ugc
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	opacity: 0
+	z-index: 99

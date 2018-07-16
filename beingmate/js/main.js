@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, UGC, VENDORS, _CDN, _public, autoDetectRenderer, css3Prefix, e, firstCache, getId, getTe, i, imageurl, init, j, len1, loadIcons, loadWechatConfig, loader, loading, mTestElement, main, musicIcon, musicIconCD, musicIconCache, musicLineCache, musicScore, neteaseShareImage, options, passiveSupported, resource, resources, sended, sys, ugcCache;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, UGC, VENDORS, _CDN, _public, autoDetectRenderer, css3Prefix, e, firstCache, getId, getTe, i, imageurl, init, j, len1, loadIcons, loadWechatConfig, loader, loading, mTestElement, main, musicIcon, musicIconCD, musicIconCache, musicLineCache, musicScore, neteaseShareImage, options, passiveSupported, resource, resources, sended, sys, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -204,6 +204,8 @@ resource = PIXI.loader.resources;
 
 Text = PIXI.Text;
 
+AnimatedSprite = PIXI.extras.AnimatedSprite;
+
 getTe = function getTe(id) {
   return resource[id].texture;
 };
@@ -369,6 +371,8 @@ Graphics = PIXI.Graphics;
 resource = PIXI.loader.resources;
 
 Text = PIXI.Text;
+
+AnimatedSprite = PIXI.extras.AnimatedSprite;
 
 getTe = function getTe(id) {
   return resource[id].texture;

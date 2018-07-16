@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Container, Graphics, ParticleContainer, Sprite, Text, Texture, TextureCache, _CDN, animationLine, animationVoice, autoDetectRenderer, getId, getTe, loader, motionPath, resource, resources, test;
+var AnimatedSprite, Container, Graphics, ParticleContainer, Sprite, Text, Texture, TextureCache, _CDN, animationLine, animationVoice, autoDetectRenderer, getId, getTe, loader, motionPath, resource, resources, test;
 
 animationVoice = function () {
   var animationVoice = function () {
@@ -342,6 +342,8 @@ Graphics = PIXI.Graphics;
 resource = PIXI.loader.resources;
 
 Text = PIXI.Text;
+
+AnimatedSprite = PIXI.extras.AnimatedSprite;
 
 getTe = function getTe(id) {
   return resource[id].texture;

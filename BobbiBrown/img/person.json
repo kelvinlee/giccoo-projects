@@ -1,0 +1,52 @@
+{"frames": {
+
+"person-1.png":
+{
+	"frame": {"x":1,"y":1,"w":366,"h":554},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":38,"y":29,"w":366,"h":554},
+	"sourceSize": {"w":428,"h":583},
+	"pivot": {"x":0.5,"y":0.5},
+	"duration": 100
+},
+"person-2.png":
+{
+	"frame": {"x":1,"y":557,"w":252,"h":554},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":144,"y":29,"w":252,"h":554},
+	"sourceSize": {"w":428,"h":583},
+	"pivot": {"x":0.5,"y":0.5},
+	"duration": 100
+},
+"person-3.png":
+{
+	"frame": {"x":369,"y":1,"w":335,"h":554},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":72,"y":29,"w":335,"h":554},
+	"sourceSize": {"w":428,"h":583},
+	"pivot": {"x":0.5,"y":0.5},
+	"duration": 100
+},
+"person-4.png":
+{
+	"frame": {"x":706,"y":1,"w":248,"h":554},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":144,"y":29,"w":248,"h":554},
+	"sourceSize": {"w":428,"h":583},
+	"pivot": {"x":0.5,"y":0.5},
+	"duration": 100
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "person.png",
+	"format": "RGBA8888",
+	"size": {"w":955,"h":810},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:5e457113d01072087cdf0d00a262ff94:4e9309ce8f7863b078df8a384f9cb97f:bf9645bc287ef85d0bf835d4803a79ae$"
+}
+}
