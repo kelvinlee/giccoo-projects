@@ -474,7 +474,7 @@ video,canvas,svg
 			img
 				+show-inline
 				vertical-align: middle
-		input,select,.form-group-items,.form-group-line,.select
+		input,.form-group-items,.form-group-line,.select
 			flex: 7
 		input,.select
 			border: none
@@ -485,6 +485,26 @@ video,canvas,svg
 			+p(0.2rem 0)
 			line-height: 1.4em
 			text-indent: 0.4rem
+		.select
+			+overhide
+			+posr
+			span
+				+box
+				+p(0.2rem 0)
+				line-height: 1.8em
+				text-indent: 0.4rem
+				overflow: hidden
+				text-overflow: ellipsis
+				white-space: nowrap
+				vertical-align: middle
+		select
+			+posa
+			+tl
+			+br
+			+wh(100%,100%)
+			+show-inline
+			opacity: 0
+
 	.btn-submit
 		+m(0.5rem auto)
 

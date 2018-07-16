@@ -86,20 +86,25 @@ block content
                 .form-group
                   label(for="username")
                     img(src="#{url}/img/icon-1.png")
-                  input#username(type="text",v-model="form.username")
+                  input#username(placeholder="请输入您的姓名",type="text",v-model="form.username")
                 .form-group
                   label(for="mobile")
                     img(src="#{url}/img/icon-2.png")
-                  input(type="text",v-model="form.mobile")
+                  input(placeholder="请输入您的联系方式",type="text",v-model="form.mobile")
                 .form-group
                   label(for="address")
                     img(src="#{url}/img/icon-3.png")
-                  input(type="text",v-model="form.address")
+                  input(placeholder="请输入您的收货地址",type="text",v-model="form.address")
                 .form-group
                   label(for="color")
                     img(src="#{url}/img/icon-4.png")
-                  select(v-model="form.color")
-                    option(val="1") #FFF
+                  .select
+                    span {{form.color}}
+                    select(v-model="form.color")
+                      option(selected) 0号 PORCELAIN瓷白
+                      option 0.5号 WARM PORCELAIN暖瓷白
+                      option 1号 WARM IVORY暖象牙
+                      option 2号 SAND柔沙
               .btn-submit(@click="submit")
                 img(src="#{url}/img/btn-submit.png")
 

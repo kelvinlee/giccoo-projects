@@ -79,21 +79,26 @@
                 <form class="form">
                   <div class="form-group">
                     <label for="username"><img src="./img/icon-1.png"></label>
-                    <input id="username" type="text" v-model="form.username">
+                    <input id="username" placeholder="请输入您的姓名" type="text" v-model="form.username">
                   </div>
                   <div class="form-group">
                     <label for="mobile"><img src="./img/icon-2.png"></label>
-                    <input type="text" v-model="form.mobile">
+                    <input placeholder="请输入您的联系方式" type="text" v-model="form.mobile">
                   </div>
                   <div class="form-group">
                     <label for="address"><img src="./img/icon-3.png"></label>
-                    <input type="text" v-model="form.address">
+                    <input placeholder="请输入您的收货地址" type="text" v-model="form.address">
                   </div>
                   <div class="form-group">
                     <label for="color"><img src="./img/icon-4.png"></label>
-                    <select v-model="form.color">
-                      <option val="1">#FFF</option>
-                    </select>
+                    <div class="select"><span>{{form.color}}</span>
+                      <select v-model="form.color">
+                        <option selected>0号 PORCELAIN瓷白</option>
+                        <option>0.5号 WARM PORCELAIN暖瓷白</option>
+                        <option>1号 WARM IVORY暖象牙</option>
+                        <option>2号 SAND柔沙</option>
+                      </select>
+                    </div>
                   </div>
                 </form>
                 <div @click="submit" class="btn-submit"><img src="./img/btn-submit.png"></div>

@@ -129,10 +129,11 @@ init = ->
 				username: ""
 				mobile: ""
 				address: ""
-				color: ""
+				color: "0号 PORCELAIN瓷白"
 				random: null
 		methods:
 			submit: ->
+				return alert "您没有中奖" unless @.form.random?
 				return alert "请输入您的姓名" if @.form.username is ""
 				return alert "请输入您的联系方式" if @.form.mobile is ""
 				return alert "请输入您的收货地址" if @.form.address is ""
@@ -142,7 +143,7 @@ init = ->
 				axios.post "//api.giccoo.com/BobbiBrown/update/",@.form
 				.then (msg)=>
 					if msg.data.recode is 200
-						main.regisiterSuccessShow = true
+						main.lotteryFormShow = true
 					else
 						alert msg.data.reason
 				.catch (e)=>
@@ -190,7 +191,6 @@ init = ->
 				# console.log "lottery"
 				axios.get "//api.giccoo.com/BobbiBrown/getaward"
 				.then (msg)=>
-					console.log(msg.data)
 					if msg.data.Time and msg.data.award
 						@.form.random = msg.data.random
 						@.lottery = true
