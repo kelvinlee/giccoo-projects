@@ -19,6 +19,7 @@ class Game
 	enemys: []
 	lights: []
 	_progress: 0
+	startTime: null
 	scoreNumber: 3
 	enemyIndex: [1,7,15,23,33]
 	buildList: [4,9,14,19,24,34,39,44]
@@ -347,6 +348,7 @@ class Game
 								runHand()
 					,200 * 3
 		runHand()
+		@.startTime = new Date().getTime()
 	gameEnd: ->
 		@.app.ticker.remove @._playMove
 		@.player.over()
@@ -430,7 +432,12 @@ class Game
 					alpha: 1
 					onComplete: =>
 						scoreText.tmp = 0
-						score = @.scoreNumber*100 + @.default.blockCount*50 + Math.random()*(@.scoreNumber+@.default.blockCount)
+						n = new Date().getTime() - @.startTime
+						if n > 2*60*1000
+							n = Math.random()*10
+						else
+							n = 10 + Math.random()*(@.scoreNumber+@.default.blockCount)
+						score = @.scoreNumber*100 + @.default.blockCount*50 + n
 						TweenLite.to scoreText,2,
 							tmp: score
 							onUpdate: =>
