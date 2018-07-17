@@ -6,9 +6,9 @@ class Person
 	block: null
 	direction: "left"
 	# oldDirection: "left"
-	speed: 2
+	speed: 3.5
 	default:
-		speed: 2
+		speed: 3.5
 	constructor: (arg)->
 		@.opts =
 			w: 750/4
@@ -18,7 +18,7 @@ class Person
 			stand: ->
 		@.opts = Object.assign @.opts,arg
 		@.init()
-		console.log @.opts.jumpH
+
 	init: ->
 		@.sprite = new Container()
 		# sprite = new Sprite getTe "#{_CDN}img/person.png"
@@ -35,7 +35,12 @@ class Person
 		jump.anchor.set(0.5,1)
 		jump.scale.set(0.3,0.3)
 		jump.visible = false
-		@.sprite.addChild person,jump
+		@.stopSprite = stop = new Sprite getTe "#{_CDN}img/person-stop.png"
+		stop.anchor.set(0.5,1)
+		stop.scale.set(0.3,0.3)
+		stop.visible = false
+
+		@.sprite.addChild person,jump,stop
 		# console.log @.sprite.width,@.sprite.height
 	start: ->
 		@.personSprite.gotoAndPlay(0)
@@ -45,15 +50,17 @@ class Person
 		old = @.sprite.y
 		to = old - @.opts.jumpH
 		@.block = null
-		@.speed = 4.5
+		@.speed = @.default.speed * 1.5
 		@.personSprite.visible = false
 		@.jumpSprite.visible = true
+		PIXI.sound.play('jump')
 		TweenLite.to @.sprite,0.7,
 			y: to
 			onComplete: =>
 				@.isJump = true
 
 	blink: ->
+		PIXI.sound.play('enemy')
 		TweenLite.to @.sprite,0.2,
 			alpha: 0.4
 			onComplete: =>
@@ -95,6 +102,7 @@ class Person
 		if HIT.hit({x: @.sprite.x,y: @.sprite.y},block.sprite)
 			@.block = block
 			@.standBlock @.sprite.x, block.sprite.y
+			return true
 		# person = @.sprite
 		# if (person.x-person.width/2) >= block.sprite.x and (person.x+person.width/2) <= (block.sprite.x+block.sprite.width)
 		# 	if (person.y) >= block.sprite.y and (person.y) <= (block.sprite.y+block.sprite.height)
@@ -102,15 +110,17 @@ class Person
 		# 		@.standBlock @.sprite.x,block.sprite.y
 		return false
 	over: ->
-		if @.sprite.x > 750/2
+		if @.sprite.x > 750/2 - 92
 			@.sprite.scale.set(1,1)
 		else
 			@.sprite.scale.set(-1,1)
 		TweenLite.to @.sprite,1.7,
-			x: 750/2
+			x: 750/2 - 92
 			onComplete: =>
 				# 横幅出现
-				@.personSprite.gotoAndStop(3)
+				@.personSprite.gotoAndStop(1)
+				@.personSprite.visible = false
+				@.stopSprite.visible = true
 
 	move: (detail)->
 		return false if @.pause
@@ -136,7 +146,7 @@ class Person
 			@.sprite.y += (@.speed * 2) * detail
 		else if @.block?
 			@.sprite.y = @.block.sprite.y
-			console.log @.sprite.y, @.block.sprite.y
+			# console.log @.sprite.y, @.block.sprite.y
 		# else if @.sprite.y > @.opts.HM
 		# 	@.sprite.y = @.opts.HM
 

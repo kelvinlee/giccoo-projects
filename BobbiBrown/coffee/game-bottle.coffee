@@ -39,6 +39,7 @@ class Bottle
 		return false
 
 	out: ->
+		# PIXI.sound.play('eat')
 		@.alive = false
 		TweenLite.to @.sprite,0.7,
 			alpha: 0

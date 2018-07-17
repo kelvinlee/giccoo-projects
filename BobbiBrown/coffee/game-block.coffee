@@ -6,6 +6,7 @@ class Block
 			h: 20
 			id: null
 			count: 1
+			direction: false
 		@.opts = Object.assign @.opts,arg
 		@.init()
 	init: ->
@@ -14,7 +15,7 @@ class Block
 			block = new Sprite getTe "#{_CDN}img/block.png"
 			block.x = i * block.width
 			@.sprite.addChild block
-		if @.opts.count < 4 and Math.random() > 0.5
+		if @.opts.count < 4 and @.opts.direction
 			@.sprite.x = 750-@.opts.count*block.width
 
 

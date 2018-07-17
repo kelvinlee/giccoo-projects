@@ -6,7 +6,7 @@ class Game
 		h: 160
 		running: true
 		margin: 200
-		blockCount: 50
+		blockCount: 35
 		bottleCount: 3
 		bottleEat: 0
 		MH: 900
@@ -48,6 +48,10 @@ class Game
 		PIXI.loader.add([
 			"#{_CDN}img/person.json"
 			"#{_CDN}img/person-jump.png"
+			"#{_CDN}img/person-stop.png"
+			"#{_CDN}img/person-small.png"
+			"#{_CDN}img/progress-bg.png"
+			"#{_CDN}img/hand.png"
 			"#{_CDN}img/block.png"
 			"#{_CDN}img/build-first.png"
 			"#{_CDN}img/build-1.png"
@@ -95,9 +99,12 @@ class Game
 			"#{_CDN}img/game-bg-10.png"
 			"#{_CDN}img/game-bg-11.png"
 			"#{_CDN}img/last-text-#{@.lastNumber}.png"
-		]).load(@.build.bind(@))
+		])
+		.add("jump", "#{_CDN}mp3/jump.mp3")
+		.add("enemy", "#{_CDN}mp3/enemy.mp3")
+		.add("win", "#{_CDN}mp3/win.mp3")
+		.load(@.build.bind(@))
 		@.default.MH = @.opts.h * 0.65
-
 	build: ->
 		@.background = background = new Container()
 		@.game = game = new Container()
@@ -147,6 +154,7 @@ class Game
 		btnInfo.buttonMode = true
 		btnInfo.interactive = true
 		btnInfo.touchstart = btnInfo.click = ()=>
+			return false if @.started
 			main.showInfoPage()
 		
 		notePlank.addChild title,btnStart,btnInfo
@@ -169,7 +177,7 @@ class Game
 			count = 2 if last is 1 and count is 1
 			count = 4 if item is @.default.blockCount-1
 			count = 4 if item is 0
-			block = new Block({count: count})
+			block = new Block({count: count, direction: item%2})
 			block.sprite.y = @.default.MH - (item * @.default.margin)
 			block.id = item
 			block.count = count
@@ -228,7 +236,7 @@ class Game
 		moon.y = -240 - moon.height
 		@.finished = finished = new Sprite getTe "#{_CDN}img/finished.png"
 		finished.scale.set(0.8,0.8) if @.opts.h <= 1100
-		finished.x = @.opts.w/2 - finished.width/2
+		finished.x = @.opts.w/2 - finished.width/2 - 92
 		finished.y = lastBuildFront.y - 200 - finished.height
 		finished.alpha = 0
 		lastBuild.addChild moon,lastBuildBG,light1,light2,light3,lastBuildFront,finished
@@ -277,18 +285,30 @@ class Game
 		@.scorePlank = scorePlank = new Container()
 		scorePlank.alpha = 0
 		bottle = new Sprite getTe "#{_CDN}img/bottle.png"
-		bottle.x = 750 - 210
+		bottle.x = @.opts.w - 210
 		bottle.y = 40
 		bottle.scale.set(0.6,0.6)
 
 		@.text = text = new Text "X 03",{fontFamily : 'Arial', fontSize: 50, fill : 0x000000, align : 'right'}
-		text.x = 750 - 190/2 - text.width/2
+		text.x = @.opts.w - 190/2 - text.width/2
 		text.y = 40 + bottle.height/2 - text.height/2
 
 		scorePlank.addChild bottle,text
 
-		@.stage.addChild scorePlank
+		progressBG = new Sprite getTe "#{_CDN}img/progress-bg.png"
+		progressBG.y = @.opts.h - 20 - progressBG.height
+		@.personSmall = personSmall = new Sprite getTe "#{_CDN}img/person-small.png"
+		personSmall.x = 20
+		personSmall.y = @.opts.h - 20 - progressBG.height
 
+		scorePlank.addChild progressBG,personSmall
+		@.stage.addChild scorePlank
+		@.hand = hand = new Sprite getTe "#{_CDN}img/hand.png"
+		hand.anchor.set(0.5,0.5)
+		hand.x = @.opts.w/2
+		hand.y = @opts.h - 200
+		hand.alpha = 0
+		@.stage.addChild hand
 	start: ->
 		return false if @.started
 		@.started = true
@@ -303,12 +323,36 @@ class Game
 			alpha: 0
 			onComplete: =>
 				@.online = true
+		runHand = =>
+			return false unless @.hand.visible
+			hand = @.hand
+			TweenLite.to hand,1,
+				alpha: 1
+				y: @opts.h - 300
+				onComplete: =>
+					hand.scale.set(0.7,0.7)
+					setTimeout =>
+						hand.scale.set(1,1)
+					,200 * 1
+					setTimeout =>
+						hand.scale.set(0.7,0.7)
+					,200 * 2
+					setTimeout =>
+						hand.scale.set(1,1)
+						runHand()
+						TweenLite.to hand,1,
+							alpha: 0
+							onComplete: =>
+								hand.y = @opts.h - 200
+								runHand()
+					,200 * 3
+		runHand()
 	gameEnd: ->
 		@.app.ticker.remove @._playMove
 		@.player.over()
 		@.over = true
 		to = @.game.y + (@.opts.h - @.default.MH) + @.default.margin - @.blocks[0].sprite.height
-		console.log "to:",to,@.game.y
+		# console.log "to:",to,@.game.y
 
 		overPage = new Container()
 		top = 60
@@ -369,6 +413,8 @@ class Game
 		overPage.addChild logo,cd,text,scoreText,cdPointer,lastText,btnShare,qrcode
 		overPage.alpha = 0
 		@.stage.addChild overPage
+
+		PIXI.sound.play('win')
 
 		TweenLite.to @.game, 1.5,
 			y: to
@@ -441,6 +487,12 @@ class Game
 			y: to
 			onComplete: =>
 				@.weatherChange()
+	updateProgress: (block)->
+		progress = @.blocks.indexOf(block)/(@.blocks.length-1)
+		# @.personSmall.x = 20 + 700*progress
+		# console.log progress,@.personSmall.x
+		TweenLite.to @.personSmall,0.3,
+			x: 20 + 700*progress
 
 	running: (detail)->
 		return false unless @.online
@@ -464,10 +516,14 @@ class Game
 		unless @.player.block?
 			for block in @.blocks
 				if @.player.checkBlockOn block
+					@.updateProgress block
 					break
 	hitEnemy: ->
 		@.player.blink()
 	jump: ->
+		# @.hand.visible = false
 		return false unless @.online
 		return false if @.over
+		@.hand.visible = false
 		@.player.jump()
+

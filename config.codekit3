@@ -1525,6 +1525,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/BobbiBrown\/img\/hand.png": {
+		"ft": 32768,
+		"iS": 2847,
+		"oA": 0,
+		"oAP": "\/BobbiBrown\/img\/hand.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/BobbiBrown\/img\/ico.jpg": {
 		"ft": 16384,
 		"iS": 22067,
@@ -1822,6 +1833,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/BobbiBrown\/img\/person-small.png": {
+		"ft": 32768,
+		"iS": 2764,
+		"oA": 0,
+		"oAP": "\/BobbiBrown\/img\/person-small.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/BobbiBrown\/img\/person-stop.png": {
+		"ft": 32768,
+		"iS": 19267,
+		"oA": 0,
+		"oAP": "\/BobbiBrown\/img\/person-stop.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/BobbiBrown\/img\/person.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -1929,6 +1962,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/BobbiBrown\/img\/progress-bg.png": {
+		"ft": 32768,
+		"iS": 4744,
+		"oA": 0,
+		"oAP": "\/BobbiBrown\/img\/progress-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/BobbiBrown\/img\/qrcode.png": {
 		"ft": 32768,
 		"iS": 21279,
@@ -2030,11 +2074,11 @@
 		"oAP": "\/BobbiBrown\/mp3\/jump.mp3",
 		"oF": 0
 		},
-	"\/BobbiBrown\/mp3\/刷一下.mp3": {
+	"\/BobbiBrown\/mp3\/win.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/BobbiBrown\/mp3\/刷一下.mp3",
+		"oAP": "\/BobbiBrown\/mp3\/win.mp3",
 		"oF": 0
 		},
 	"\/BobbiBrown\/sass\/base.sass": {
@@ -8615,6 +8659,16 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 1
+		},
+	"\/libs\/js\/min\/pixi-sound.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/libs\/js\/min\/pixi-sound-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
 		},
 	"\/libs\/js\/min\/pixi.min.js": {
 		"ft": 64,
