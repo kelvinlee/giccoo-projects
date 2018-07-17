@@ -6,7 +6,7 @@ class Game
 		h: 160
 		running: true
 		margin: 200
-		blockCount: 35
+		blockCount: 25
 		bottleCount: 3
 		bottleEat: 0
 		MH: 900
@@ -21,7 +21,7 @@ class Game
 	_progress: 0
 	startTime: null
 	scoreNumber: 3
-	enemyIndex: [1,7,15,23,33]
+	enemyIndex: [1,5,11,16,22]
 	buildList: [4,9,14,19,24,34,39,44]
 	constructor: (arg)->
 		@.opts =

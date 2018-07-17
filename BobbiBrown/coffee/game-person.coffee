@@ -6,9 +6,9 @@ class Person
 	block: null
 	direction: "left"
 	# oldDirection: "left"
-	speed: 3.5
+	speed: 4
 	default:
-		speed: 3.5
+		speed: 4
 	constructor: (arg)->
 		@.opts =
 			w: 750/4
