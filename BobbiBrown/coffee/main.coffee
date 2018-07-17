@@ -159,7 +159,6 @@ init = ->
 				@.loading = true
 				axios.post imageurl,data
 				.then (msg)=>
-					@.pushed = true
 					if msg.data.recode is 200
 						main.success(msg.data)
 						# @.ugcLoadPageShow = false
@@ -169,6 +168,7 @@ init = ->
 					# alert e
 					main.faild(e)
 			success: (data)->
+				@.pushed = false
 				@.loading = false
 				@.shareImageLink = data.info
 				neteaseShareImage()
@@ -178,6 +178,7 @@ init = ->
 			showInfoPage: ->
 				@.pageInfoShow = true
 			faild: (err)->
+				@.pushed = false
 				@.loading = false
 				console.log "err:",err
 			setugc: (link)->
