@@ -1717,77 +1717,11 @@
 		"sC": 0,
 		"tS": 1
 		},
-	"\/friso\/coffee\/s2.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/friso\/js\/s2.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
 	"\/friso\/css": {
 		"ft": 65536,
 		"oA": 1,
 		"oAP": "\/build\/friso\/css",
 		"oF": 0
-		},
-	"\/friso\/img\/avatar-1.png": {
-		"ft": 32768,
-		"iS": 25984,
-		"oA": 0,
-		"oAP": "\/friso\/img\/avatar-1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/avatar-2.png": {
-		"ft": 32768,
-		"iS": 22449,
-		"oA": 0,
-		"oAP": "\/friso\/img\/avatar-2.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/avatar-3.png": {
-		"ft": 32768,
-		"iS": 23341,
-		"oA": 0,
-		"oAP": "\/friso\/img\/avatar-3.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/avatar-4.png": {
-		"ft": 32768,
-		"iS": 22216,
-		"oA": 0,
-		"oAP": "\/friso\/img\/avatar-4.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/avatar-5.png": {
-		"ft": 32768,
-		"iS": 22397,
-		"oA": 0,
-		"oAP": "\/friso\/img\/avatar-5.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
 		},
 	"\/friso\/img\/banner.jpg": {
 		"ft": 16384,
@@ -1809,28 +1743,6 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"q": 100
-		},
-	"\/friso\/img\/btn-done.png": {
-		"ft": 32768,
-		"iS": 2016,
-		"oA": 0,
-		"oAP": "\/friso\/img\/btn-done.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/btn-new-more.png": {
-		"ft": 32768,
-		"iS": 5543,
-		"oA": 0,
-		"oAP": "\/friso\/img\/btn-new-more.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
 		"q": 100
 		},
 	"\/friso\/img\/focus.png": {
@@ -1932,50 +1844,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/friso\/img\/list-icon-1.png": {
-		"ft": 32768,
-		"iS": 4929,
-		"oA": 0,
-		"oAP": "\/friso\/img\/list-icon-1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/list-icon-2.png": {
-		"ft": 32768,
-		"iS": 4774,
-		"oA": 0,
-		"oAP": "\/friso\/img\/list-icon-2.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/list-icon-3.png": {
-		"ft": 32768,
-		"iS": 4649,
-		"oA": 0,
-		"oAP": "\/friso\/img\/list-icon-3.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/list-icon-4.png": {
-		"ft": 32768,
-		"iS": 5682,
-		"oA": 0,
-		"oAP": "\/friso\/img\/list-icon-4.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/friso\/img\/logo.png": {
 		"ft": 32768,
 		"iS": 22338,
@@ -1998,17 +1866,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/friso\/img\/m-banner-2.jpg": {
-		"ft": 16384,
-		"iS": 93853,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/friso\/img\/m-banner-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
 	"\/friso\/img\/m-banner.jpg": {
 		"ft": 16384,
 		"iS": 153614,
@@ -2029,17 +1886,6 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/m-footer-2.jpg": {
-		"ft": 16384,
-		"iS": 143947,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/friso\/img\/m-footer-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
 		"q": 100
 		},
 	"\/friso\/img\/m-footer.jpg": {
@@ -2207,17 +2053,6 @@
 		"opt": 0,
 		"q": 100
 		},
-	"\/friso\/img\/m-q-bg-2.jpg": {
-		"ft": 16384,
-		"iS": 16340,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/friso\/img\/m-q-bg-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
 	"\/friso\/img\/m-q-bg-small.png": {
 		"ft": 32768,
 		"iS": 39059,
@@ -2339,50 +2174,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/friso\/img\/message-bg.png": {
-		"ft": 32768,
-		"iS": 11880,
-		"oA": 0,
-		"oAP": "\/friso\/img\/message-bg.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/message-right-bg.png": {
-		"ft": 32768,
-		"iS": 10186,
-		"oA": 0,
-		"oAP": "\/friso\/img\/message-right-bg.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/new-title.png": {
-		"ft": 32768,
-		"iS": 14672,
-		"oA": 0,
-		"oAP": "\/friso\/img\/new-title.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/news-bg.png": {
-		"ft": 32768,
-		"iS": 88672,
-		"oA": 0,
-		"oAP": "\/friso\/img\/news-bg.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
 	"\/friso\/img\/outlink.old.png": {
 		"ft": 32768,
 		"iS": 6647,
@@ -2405,137 +2196,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/friso\/img\/pop-close.png": {
-		"ft": 32768,
-		"iS": 2984,
-		"oA": 0,
-		"oAP": "\/friso\/img\/pop-close.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/pop-new-1.jpg": {
-		"ft": 16384,
-		"iS": 56326,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/friso\/img\/pop-new-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/friso\/img\/pop-new-2.gif": {
-		"ft": 4194304,
-		"iS": 811995,
-		"oA": 0,
-		"oAP": "\/friso\/img\/pop-new-2.gif",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/friso\/img\/pop-new-2.jpg": {
-		"ft": 16384,
-		"iS": 27078,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/friso\/img\/pop-new-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/friso\/img\/pop-new-3.gif": {
-		"ft": 4194304,
-		"iS": 937207,
-		"oA": 0,
-		"oAP": "\/friso\/img\/pop-new-3.gif",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/friso\/img\/pop-new-3.jpg": {
-		"ft": 16384,
-		"iS": 32470,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/friso\/img\/pop-new-3.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/friso\/img\/pop-new-4.gif": {
-		"ft": 4194304,
-		"iS": 676231,
-		"oA": 0,
-		"oAP": "\/friso\/img\/pop-new-4.gif",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/friso\/img\/pop-new-4.jpg": {
-		"ft": 16384,
-		"iS": 34172,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/friso\/img\/pop-new-4.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/friso\/img\/pop-new-5.gif": {
-		"ft": 4194304,
-		"iS": 1068812,
-		"oA": 0,
-		"oAP": "\/friso\/img\/pop-new-5.gif",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/friso\/img\/pop-new-5.jpg": {
-		"ft": 16384,
-		"iS": 49222,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/friso\/img\/pop-new-5.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/friso\/img\/pop-new-6.jpg": {
-		"ft": 16384,
-		"iS": 72512,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/friso\/img\/pop-new-6.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/friso\/img\/pop-new-btn.jpg": {
-		"ft": 16384,
-		"iS": 18317,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/friso\/img\/pop-new-btn.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/friso\/img\/pop-new-footer.jpg": {
-		"ft": 16384,
-		"iS": 88656,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/friso\/img\/pop-new-footer.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
 	"\/friso\/img\/pop-video.jpg": {
 		"ft": 16384,
 		"iS": 47781,
@@ -2547,28 +2207,6 @@
 		"opt": 0,
 		"q": 100
 		},
-	"\/friso\/img\/poster-new.jpg": {
-		"ft": 16384,
-		"iS": 26018,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/friso\/img\/poster-new.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/friso\/img\/qr.png": {
-		"ft": 32768,
-		"iS": 2795,
-		"oA": 0,
-		"oAP": "\/friso\/img\/qr.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/friso\/img\/share.jpg": {
 		"ft": 16384,
 		"iS": 33061,
@@ -2578,28 +2216,6 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"q": 100
-		},
-	"\/friso\/img\/tab-1.png": {
-		"ft": 32768,
-		"iS": 12946,
-		"oA": 0,
-		"oAP": "\/friso\/img\/tab-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/friso\/img\/tab-2.png": {
-		"ft": 32768,
-		"iS": 12209,
-		"oA": 0,
-		"oAP": "\/friso\/img\/tab-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
 		"q": 100
 		},
 	"\/friso\/index.html": {
@@ -2638,23 +2254,6 @@
 		"sC": 0,
 		"tS": 1
 		},
-	"\/friso\/js\/s2.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/friso\/js\/s2-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/friso\/mobile.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/friso\/mobile.html",
-		"oF": 0
-		},
 	"\/friso\/pc.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -2668,22 +2267,6 @@
 		"ft": 512,
 		"oA": 0,
 		"oAP": "\/friso\/pc.html",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/friso\/S2\/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/friso\/S2\/index.html",
-		"oF": 0
-		},
-	"\/friso\/S2\/index.jade": {
-		"cB": 0,
-		"cOD": 1,
-		"ft": 512,
-		"oA": 0,
-		"oAP": "\/friso\/S2\/index.html",
 		"oF": 0,
 		"oS": 0
 		},
@@ -3399,7 +2982,7 @@
 		},
 	"\/gaokao\/img\/add-image.png": {
 		"ft": 32768,
-		"iS": 4610,
+		"iS": 6213,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/add-image.png",
 		"oF": 0,
@@ -3432,7 +3015,7 @@
 		},
 	"\/gaokao\/img\/boy.png": {
 		"ft": 32768,
-		"iS": 67652,
+		"iS": 18098,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/boy.png",
 		"oF": 0,
@@ -3454,7 +3037,7 @@
 		},
 	"\/gaokao\/img\/circle\/0.png": {
 		"ft": 32768,
-		"iS": 3339,
+		"iS": 354,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/circle\/0.png",
 		"oF": 0,
@@ -3465,7 +3048,7 @@
 		},
 	"\/gaokao\/img\/circle\/1.png": {
 		"ft": 32768,
-		"iS": 3642,
+		"iS": 463,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/circle\/1.png",
 		"oF": 0,
@@ -3476,7 +3059,7 @@
 		},
 	"\/gaokao\/img\/circle\/2.png": {
 		"ft": 32768,
-		"iS": 3882,
+		"iS": 520,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/circle\/2.png",
 		"oF": 0,
@@ -3487,7 +3070,7 @@
 		},
 	"\/gaokao\/img\/circle\/3.png": {
 		"ft": 32768,
-		"iS": 4093,
+		"iS": 617,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/circle\/3.png",
 		"oF": 0,
@@ -3498,7 +3081,7 @@
 		},
 	"\/gaokao\/img\/circle\/4.png": {
 		"ft": 32768,
-		"iS": 4283,
+		"iS": 633,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/circle\/4.png",
 		"oF": 0,
@@ -3509,7 +3092,7 @@
 		},
 	"\/gaokao\/img\/circle\/5.png": {
 		"ft": 32768,
-		"iS": 4485,
+		"iS": 721,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/circle\/5.png",
 		"oF": 0,
@@ -3520,7 +3103,7 @@
 		},
 	"\/gaokao\/img\/circle\/6.png": {
 		"ft": 32768,
-		"iS": 4706,
+		"iS": 781,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/circle\/6.png",
 		"oF": 0,
@@ -3531,7 +3114,7 @@
 		},
 	"\/gaokao\/img\/circle\/7.png": {
 		"ft": 32768,
-		"iS": 4854,
+		"iS": 802,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/circle\/7.png",
 		"oF": 0,
@@ -3542,7 +3125,7 @@
 		},
 	"\/gaokao\/img\/count0.png": {
 		"ft": 32768,
-		"iS": 2265,
+		"iS": 947,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/count0.png",
 		"oF": 0,
@@ -3553,7 +3136,7 @@
 		},
 	"\/gaokao\/img\/count1.png": {
 		"ft": 32768,
-		"iS": 2339,
+		"iS": 980,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/count1.png",
 		"oF": 0,
@@ -3564,7 +3147,7 @@
 		},
 	"\/gaokao\/img\/count2.png": {
 		"ft": 32768,
-		"iS": 2335,
+		"iS": 982,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/count2.png",
 		"oF": 0,
@@ -3575,7 +3158,7 @@
 		},
 	"\/gaokao\/img\/count3.png": {
 		"ft": 32768,
-		"iS": 2299,
+		"iS": 959,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/count3.png",
 		"oF": 0,
@@ -3586,7 +3169,7 @@
 		},
 	"\/gaokao\/img\/count4.png": {
 		"ft": 32768,
-		"iS": 2340,
+		"iS": 977,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/count4.png",
 		"oF": 0,
@@ -3597,7 +3180,7 @@
 		},
 	"\/gaokao\/img\/count5.png": {
 		"ft": 32768,
-		"iS": 2374,
+		"iS": 982,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/count5.png",
 		"oF": 0,
@@ -3608,7 +3191,7 @@
 		},
 	"\/gaokao\/img\/count6.png": {
 		"ft": 32768,
-		"iS": 2301,
+		"iS": 963,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/count6.png",
 		"oF": 0,
@@ -3619,7 +3202,7 @@
 		},
 	"\/gaokao\/img\/count7.png": {
 		"ft": 32768,
-		"iS": 2397,
+		"iS": 991,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/count7.png",
 		"oF": 0,
@@ -3630,7 +3213,7 @@
 		},
 	"\/gaokao\/img\/count8.png": {
 		"ft": 32768,
-		"iS": 2346,
+		"iS": 986,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/count8.png",
 		"oF": 0,
@@ -3641,7 +3224,7 @@
 		},
 	"\/gaokao\/img\/count9.png": {
 		"ft": 32768,
-		"iS": 2429,
+		"iS": 1029,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/count9.png",
 		"oF": 0,
@@ -3663,7 +3246,7 @@
 		},
 	"\/gaokao\/img\/endcopy1.png": {
 		"ft": 32768,
-		"iS": 147197,
+		"iS": 6890,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/endcopy1.png",
 		"oF": 0,
@@ -3674,7 +3257,7 @@
 		},
 	"\/gaokao\/img\/endcopy2.png": {
 		"ft": 32768,
-		"iS": 145420,
+		"iS": 7373,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/endcopy2.png",
 		"oF": 0,
@@ -3685,7 +3268,7 @@
 		},
 	"\/gaokao\/img\/endcopy3.png": {
 		"ft": 32768,
-		"iS": 145633,
+		"iS": 5954,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/endcopy3.png",
 		"oF": 0,
@@ -3696,7 +3279,7 @@
 		},
 	"\/gaokao\/img\/endcopy4.png": {
 		"ft": 32768,
-		"iS": 145490,
+		"iS": 7333,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/endcopy4.png",
 		"oF": 0,
@@ -3707,7 +3290,7 @@
 		},
 	"\/gaokao\/img\/endcopy5.png": {
 		"ft": 32768,
-		"iS": 143264,
+		"iS": 5833,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/endcopy5.png",
 		"oF": 0,
@@ -3751,7 +3334,7 @@
 		},
 	"\/gaokao\/img\/hint1.png": {
 		"ft": 32768,
-		"iS": 188388,
+		"iS": 54145,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/hint1.png",
 		"oF": 0,
@@ -3762,7 +3345,7 @@
 		},
 	"\/gaokao\/img\/hint2.png": {
 		"ft": 32768,
-		"iS": 230954,
+		"iS": 59054,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/hint2.png",
 		"oF": 0,
@@ -3806,7 +3389,7 @@
 		},
 	"\/gaokao\/img\/mask-note.png": {
 		"ft": 32768,
-		"iS": 47018,
+		"iS": 20229,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/mask-note.png",
 		"oF": 0,
@@ -3850,7 +3433,7 @@
 		},
 	"\/gaokao\/img\/p2bg.jpg": {
 		"ft": 16384,
-		"iS": 40391,
+		"iS": 47983,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p2bg.jpg",
@@ -3883,7 +3466,7 @@
 		},
 	"\/gaokao\/img\/p3title.png": {
 		"ft": 32768,
-		"iS": 7702,
+		"iS": 3413,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p3title.png",
 		"oF": 0,
@@ -3894,7 +3477,7 @@
 		},
 	"\/gaokao\/img\/p4answer0_0.png": {
 		"ft": 32768,
-		"iS": 225073,
+		"iS": 94814,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4answer0_0.png",
 		"oF": 0,
@@ -3905,7 +3488,7 @@
 		},
 	"\/gaokao\/img\/p4answer0_1.png": {
 		"ft": 32768,
-		"iS": 259938,
+		"iS": 111279,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4answer0_1.png",
 		"oF": 0,
@@ -3916,7 +3499,7 @@
 		},
 	"\/gaokao\/img\/p4answer0_2.png": {
 		"ft": 32768,
-		"iS": 254244,
+		"iS": 107798,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4answer0_2.png",
 		"oF": 0,
@@ -3927,7 +3510,7 @@
 		},
 	"\/gaokao\/img\/p4answer0_3.png": {
 		"ft": 32768,
-		"iS": 224025,
+		"iS": 93322,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4answer0_3.png",
 		"oF": 0,
@@ -3938,7 +3521,7 @@
 		},
 	"\/gaokao\/img\/p4answer1_0.png": {
 		"ft": 32768,
-		"iS": 205688,
+		"iS": 85802,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4answer1_0.png",
 		"oF": 0,
@@ -3949,7 +3532,7 @@
 		},
 	"\/gaokao\/img\/p4answer1_1.png": {
 		"ft": 32768,
-		"iS": 250808,
+		"iS": 107471,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4answer1_1.png",
 		"oF": 0,
@@ -3960,7 +3543,7 @@
 		},
 	"\/gaokao\/img\/p4answer1_2.png": {
 		"ft": 32768,
-		"iS": 223328,
+		"iS": 93766,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4answer1_2.png",
 		"oF": 0,
@@ -3971,7 +3554,7 @@
 		},
 	"\/gaokao\/img\/p4answer1_3.png": {
 		"ft": 32768,
-		"iS": 205828,
+		"iS": 85529,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4answer1_3.png",
 		"oF": 0,
@@ -3982,7 +3565,7 @@
 		},
 	"\/gaokao\/img\/p4bg.png": {
 		"ft": 32768,
-		"iS": 188090,
+		"iS": 77910,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4bg.png",
 		"oF": 0,
@@ -3993,7 +3576,7 @@
 		},
 	"\/gaokao\/img\/p4bga.png": {
 		"ft": 32768,
-		"iS": 8770,
+		"iS": 1565,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4bga.png",
 		"oF": 0,
@@ -4004,7 +3587,7 @@
 		},
 	"\/gaokao\/img\/p4bgb.png": {
 		"ft": 32768,
-		"iS": 8737,
+		"iS": 1559,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4bgb.png",
 		"oF": 0,
@@ -4015,7 +3598,7 @@
 		},
 	"\/gaokao\/img\/p4bgc.png": {
 		"ft": 32768,
-		"iS": 8768,
+		"iS": 1568,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4bgc.png",
 		"oF": 0,
@@ -4026,7 +3609,7 @@
 		},
 	"\/gaokao\/img\/p4bgd.png": {
 		"ft": 32768,
-		"iS": 8755,
+		"iS": 1558,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4bgd.png",
 		"oF": 0,
@@ -4037,7 +3620,7 @@
 		},
 	"\/gaokao\/img\/p4bgtype0.png": {
 		"ft": 32768,
-		"iS": 8783,
+		"iS": 1491,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4bgtype0.png",
 		"oF": 0,
@@ -4048,7 +3631,7 @@
 		},
 	"\/gaokao\/img\/p4bgtype1.png": {
 		"ft": 32768,
-		"iS": 8772,
+		"iS": 1511,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4bgtype1.png",
 		"oF": 0,
@@ -4059,7 +3642,7 @@
 		},
 	"\/gaokao\/img\/p4btnclose.png": {
 		"ft": 32768,
-		"iS": 3706,
+		"iS": 547,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/p4btnclose.png",
 		"oF": 0,
@@ -4224,7 +3807,7 @@
 		},
 	"\/gaokao\/img\/title1.png": {
 		"ft": 32768,
-		"iS": 87709,
+		"iS": 24574,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/title1.png",
 		"oF": 0,
@@ -4235,7 +3818,7 @@
 		},
 	"\/gaokao\/img\/title2.png": {
 		"ft": 32768,
-		"iS": 80109,
+		"iS": 22674,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/title2.png",
 		"oF": 0,
@@ -4246,7 +3829,7 @@
 		},
 	"\/gaokao\/img\/title3.png": {
 		"ft": 32768,
-		"iS": 88620,
+		"iS": 27522,
 		"oA": 0,
 		"oAP": "\/gaokao\/img\/title3.png",
 		"oF": 0,
@@ -4357,7 +3940,7 @@
 		"oA": 0,
 		"oAP": "\/gaokao\/js\/easeljs.min-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/jquery-2.2.1.min.js": {
@@ -4367,7 +3950,7 @@
 		"oA": 0,
 		"oAP": "\/gaokao\/js\/jquery-2.2.1.min-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/main-min.js": {
@@ -4377,7 +3960,7 @@
 		"oA": 0,
 		"oAP": "\/gaokao\/js\/main-min-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/main.js": {
@@ -4387,7 +3970,7 @@
 		"oA": 0,
 		"oAP": "\/gaokao\/js\/main-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/mfw.js": {
@@ -4397,7 +3980,7 @@
 		"oA": 0,
 		"oAP": "\/gaokao\/js\/mfw-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/public-min.js": {
@@ -4407,7 +3990,7 @@
 		"oA": 0,
 		"oAP": "\/gaokao\/js\/public-min-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/public.js": {
@@ -4417,7 +4000,7 @@
 		"oA": 0,
 		"oAP": "\/gaokao\/js\/public-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/tags.js": {
@@ -4427,7 +4010,7 @@
 		"oA": 0,
 		"oAP": "\/gaokao\/js\/tags-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/gaokao\/js\/TweenMax.min.js": {
@@ -4437,7 +4020,7 @@
 		"oA": 0,
 		"oAP": "\/gaokao\/js\/TweenMax.min-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/Gmovie\/css": {
@@ -5253,13 +4836,6 @@
 		"oAP": "\/HRCmap\/build.html",
 		"oF": 0
 		},
-	"\/HRCmap\/gaode-all.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/HRCmap\/gaode-all.html",
-		"oF": 0
-		},
 	"\/HRCmap\/gaode-test.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -5472,553 +5048,6 @@
 		"oAP": "\/build\/lamer",
 		"oF": 0
 		},
-	"\/lancome\/coffee\/main.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/js\/main.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/lancome\/css": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "\/build\/lancome\/css",
-		"oF": 0
-		},
-	"\/lancome\/img\/answer-1-bg.jpg": {
-		"ft": 16384,
-		"iS": 69202,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/answer-1-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/answer-1-mark-bg.jpg": {
-		"ft": 16384,
-		"iS": 25785,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/answer-1-mark-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/answer-2-bg.jpg": {
-		"ft": 16384,
-		"iS": 53492,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/answer-2-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/answer-3-bg.jpg": {
-		"ft": 16384,
-		"iS": 40823,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/answer-3-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/bg.jpg": {
-		"ft": 16384,
-		"iS": 10074,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/btn-done.png": {
-		"ft": 32768,
-		"iS": 861,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/btn-done.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/btn-long-save.png": {
-		"ft": 32768,
-		"iS": 1823,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/btn-long-save.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/btn-next.png": {
-		"ft": 32768,
-		"iS": 766,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/btn-next.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/btn-save.png": {
-		"ft": 32768,
-		"iS": 1418,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/btn-save.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/building.png": {
-		"ft": 32768,
-		"iS": 100661,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/building.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/ico.jpg": {
-		"ft": 16384,
-		"iS": 33235,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/ico.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/item-elephant.png": {
-		"ft": 32768,
-		"iS": 7506,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/item-elephant.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/item-owl.png": {
-		"ft": 32768,
-		"iS": 3055,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/item-owl.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/item-panda.png": {
-		"ft": 32768,
-		"iS": 8135,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/item-panda.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/item.png": {
-		"ft": 32768,
-		"iS": 57116,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/item.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/last-page.jpg": {
-		"ft": 16384,
-		"iS": 60490,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/last-page.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/mark-1.png": {
-		"ft": 32768,
-		"iS": 22855,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/mark-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/mark-2.png": {
-		"ft": 32768,
-		"iS": 53886,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/mark-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/mobile-answer-1.png": {
-		"ft": 32768,
-		"iS": 2039,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/mobile-answer-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/mobile-answer-2.png": {
-		"ft": 32768,
-		"iS": 2004,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/mobile-answer-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/mobile-answer-3.png": {
-		"ft": 32768,
-		"iS": 2109,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/mobile-answer-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/mobile-timeline.png": {
-		"ft": 32768,
-		"iS": 4129,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/mobile-timeline.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/music-close.png": {
-		"ft": 32768,
-		"iS": 2533,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/music-close.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/music-touch.png": {
-		"ft": 32768,
-		"iS": 565,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/music-touch.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/music.png": {
-		"ft": 32768,
-		"iS": 3281,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/music.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/right.png": {
-		"ft": 32768,
-		"iS": 826,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/right.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/star.png": {
-		"ft": 32768,
-		"iS": 196,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/star.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/symbol.png": {
-		"ft": 32768,
-		"iS": 473,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/symbol.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/title-1.png": {
-		"ft": 32768,
-		"iS": 4524,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/title-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/title-2.png": {
-		"ft": 32768,
-		"iS": 3370,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/title-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/title-3.png": {
-		"ft": 32768,
-		"iS": 2877,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/title-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/title-4.png": {
-		"ft": 32768,
-		"iS": 5100,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/title-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/title-5.png": {
-		"ft": 32768,
-		"iS": 2172,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/title-5.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/ugc-bg-1.jpg": {
-		"ft": 16384,
-		"iS": 57766,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/ugc-bg-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/ugc-bg-2.jpg": {
-		"ft": 16384,
-		"iS": 52395,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/ugc-bg-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/ugc-bg-3.jpg": {
-		"ft": 16384,
-		"iS": 54939,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/ugc-bg-3.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/ugc-bg-4.jpg": {
-		"ft": 16384,
-		"iS": 48487,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/ugc-bg-4.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/ugc-bg-5.jpg": {
-		"ft": 16384,
-		"iS": 44166,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/ugc-bg-5.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/ugc-bg.jpg": {
-		"ft": 16384,
-		"iS": 25585,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/ugc-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/ugc-qr.png": {
-		"ft": 32768,
-		"iS": 5965,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/ugc-qr.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/wait-box.jpg": {
-		"ft": 16384,
-		"iS": 24292,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/wait-box.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/img\/wait.gif": {
-		"ft": 4194304,
-		"iS": 131015,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/wait.gif",
-		"oF": 0,
-		"opt": 1
-		},
-	"\/lancome\/img\/wait.jpg": {
-		"ft": 16384,
-		"iS": 39521,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/img\/wait.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/lancome\/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/lancome\/index.html",
-		"oF": 0
-		},
-	"\/lancome\/index.jade": {
-		"cB": 0,
-		"cOD": 1,
-		"ft": 512,
-		"oA": 0,
-		"oAP": "\/lancome\/index.html",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/lancome\/js\/main.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/js\/main-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/lancome\/mp3\/mp3-0.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/lancome\/mp3\/mp3-0.mp3",
-		"oF": 0
-		},
-	"\/lancome\/mp3\/mp3-1.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/lancome\/mp3\/mp3-1.mp3",
-		"oF": 0
-		},
-	"\/lancome\/mp3\/mp3-2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/lancome\/mp3\/mp3-2.mp3",
-		"oF": 0
-		},
-	"\/lancome\/sass\/base.sass": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 2,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/lancome\/css\/base.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/lancome_form": {
 		"ft": 65536,
 		"oA": 1,
@@ -6072,45 +5101,12 @@
 		"sC": 0,
 		"tS": 1
 		},
-	"\/libs\/coffee\/get.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/libs\/js\/get.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/libs\/coffee\/IsPC.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/libs\/js\/IsPC.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
 	"\/libs\/coffee\/load.coffee": {
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/libs\/js\/load.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/libs\/coffee\/loadWechatConfig.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/libs\/js\/loadWechatConfig.js",
 		"oF": 0,
 		"oS": 1,
 		"sC": 0,
@@ -6133,17 +5129,6 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/libs\/js\/qrcode.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/libs\/coffee\/randomSort.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/libs\/js\/randomSort.js",
 		"oF": 0,
 		"oS": 1,
 		"sC": 0,
@@ -6690,16 +5675,6 @@
 		"sC": 0,
 		"tS": 1
 		},
-	"\/libs\/js\/min\/pixi.min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/libs\/js\/min\/pixi.min-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 1
-		},
 	"\/libs\/js\/min\/preloadjs-0.4.1.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -6860,13 +5835,6 @@
 		"sC": 0,
 		"tS": 1
 		},
-	"\/libs\/js\/min\/Tween.min.js.map": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/libs\/js\/min\/Tween.min.js.map",
-		"oF": 0
-		},
 	"\/libs\/js\/min\/tweenjs-0.6.0.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -7020,16 +5988,6 @@
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/libs\/js\/riot.3-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/libs\/js\/stopWebViewScroll.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/libs\/js\/stopWebViewScroll-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 1
@@ -7662,2151 +6620,6 @@
 		"oAP": "\/build\/maxshow",
 		"oF": 0
 		},
-	"\/mbenz-love\/coffee\/main.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/js\/main.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/mbenz-love\/coffee\/pixi.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/mbenz-love\/js\/pixi.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/mbenz-love\/css": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "\/build\/mbenz-love\/css",
-		"oF": 0
-		},
-	"\/mbenz-love\/img\/arrow.png": {
-		"ft": 32768,
-		"iS": 7597,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/arrow.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/audio-play.png": {
-		"ft": 32768,
-		"iS": 2854,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/audio-play.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/audio-stop.png": {
-		"ft": 32768,
-		"iS": 3410,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/audio-stop.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/btn-music.png": {
-		"ft": 32768,
-		"iS": 22969,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/btn-music.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/btn-reg.png": {
-		"ft": 32768,
-		"iS": 22709,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/btn-reg.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/btn-start.png": {
-		"ft": 32768,
-		"iS": 19518,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/btn-start.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/btn-submit.png": {
-		"ft": 32768,
-		"iS": 7683,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/btn-submit.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/font-0.png": {
-		"ft": 32768,
-		"iS": 744,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/font-0.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/font-1.png": {
-		"ft": 32768,
-		"iS": 1278,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/font-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/font-2.png": {
-		"ft": 32768,
-		"iS": 1435,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/font-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/font-3.png": {
-		"ft": 32768,
-		"iS": 1513,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/font-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/font-4.png": {
-		"ft": 32768,
-		"iS": 1423,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/font-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/font-5.png": {
-		"ft": 32768,
-		"iS": 1470,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/font-5.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/font-6.png": {
-		"ft": 32768,
-		"iS": 1488,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/font-6.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/font-7.png": {
-		"ft": 32768,
-		"iS": 1437,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/font-7.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/font-8.png": {
-		"ft": 32768,
-		"iS": 1533,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/font-8.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/font-9.png": {
-		"ft": 32768,
-		"iS": 1413,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/font-9.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/font-last.png": {
-		"ft": 32768,
-		"iS": 1411,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/font-last.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/form-bg.jpg": {
-		"ft": 16384,
-		"iS": 3022,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/form-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/form-close.png": {
-		"ft": 32768,
-		"iS": 13063,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/form-close.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/form-label-c.png": {
-		"ft": 32768,
-		"iS": 2403,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/form-label-c.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/form-label-de.png": {
-		"ft": 32768,
-		"iS": 4473,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/form-label-de.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/form-label-detail.png": {
-		"ft": 32768,
-		"iS": 4662,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/form-label-detail.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/form-label-mobile.png": {
-		"ft": 32768,
-		"iS": 4372,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/form-label-mobile.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/form-label-name.png": {
-		"ft": 32768,
-		"iS": 2970,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/form-label-name.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/form-label-p.png": {
-		"ft": 32768,
-		"iS": 3019,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/form-label-p.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/form-label-sex.png": {
-		"ft": 32768,
-		"iS": 3311,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/form-label-sex.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/form-man.png": {
-		"ft": 32768,
-		"iS": 2017,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/form-man.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/form-title.png": {
-		"ft": 32768,
-		"iS": 12264,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/form-title.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/form-woman.png": {
-		"ft": 32768,
-		"iS": 1756,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/form-woman.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ico.jpg": {
-		"ft": 16384,
-		"iS": 34210,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ico.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/left.png": {
-		"ft": 32768,
-		"iS": 1678,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/left.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/loading-line.png": {
-		"ft": 32768,
-		"iS": 7086,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/loading-line.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/long-save.png": {
-		"ft": 32768,
-		"iS": 4778,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/long-save.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/mark.png": {
-		"ft": 32768,
-		"iS": 11460,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/mark.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/navbar.jpg": {
-		"ft": 16384,
-		"iS": 6068,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/navbar.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-bg.jpg": {
-		"ft": 16384,
-		"iS": 156558,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-eiffel-light.png": {
-		"ft": 32768,
-		"iS": 94271,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-eiffel-light.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-eiffel.png": {
-		"ft": 32768,
-		"iS": 87552,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-eiffel.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-f.png": {
-		"ft": 32768,
-		"iS": 21176,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-f.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-lighter.png": {
-		"ft": 32768,
-		"iS": 80890,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-lighter.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-p.png": {
-		"ft": 32768,
-		"iS": 69064,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-p.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-star-1.png": {
-		"ft": 32768,
-		"iS": 1351,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-star-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-star-2.png": {
-		"ft": 32768,
-		"iS": 2036,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-star-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-star-3.png": {
-		"ft": 32768,
-		"iS": 1896,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-star-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-star-4.png": {
-		"ft": 32768,
-		"iS": 1987,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-star-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-text-1.png": {
-		"ft": 32768,
-		"iS": 25351,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-text-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-text-2.png": {
-		"ft": 32768,
-		"iS": 10020,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-text-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-text-3.png": {
-		"ft": 32768,
-		"iS": 8424,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-text-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-text-4.png": {
-		"ft": 32768,
-		"iS": 9379,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-text-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-1-text.png": {
-		"ft": 32768,
-		"iS": 77461,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-1-text.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-2-bg.jpg": {
-		"ft": 16384,
-		"iS": 152250,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-2-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-2-hair.gif": {
-		"ft": 4194304,
-		"iS": 15060,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-2-hair.gif",
-		"oF": 0,
-		"opt": 1
-		},
-	"\/mbenz-love\/img\/page-2-text-1.png": {
-		"ft": 32768,
-		"iS": 19006,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-2-text-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-2-text-2.png": {
-		"ft": 32768,
-		"iS": 7945,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-2-text-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-2-text-3.png": {
-		"ft": 32768,
-		"iS": 8348,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-2-text-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-2-text-4.png": {
-		"ft": 32768,
-		"iS": 10147,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-2-text-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-2-text.png": {
-		"ft": 32768,
-		"iS": 37805,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-2-text.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-3-ball.png": {
-		"ft": 32768,
-		"iS": 13211,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-3-ball.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-3-bg.jpg": {
-		"ft": 16384,
-		"iS": 147633,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-3-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-3-text-1.png": {
-		"ft": 32768,
-		"iS": 28536,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-3-text-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-3-text-2.png": {
-		"ft": 32768,
-		"iS": 8394,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-3-text-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-3-text-3.png": {
-		"ft": 32768,
-		"iS": 10294,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-3-text-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-3-text.png": {
-		"ft": 32768,
-		"iS": 42323,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-3-text.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-4-bg.jpg": {
-		"ft": 16384,
-		"iS": 135551,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-4-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-4-rain-1.png": {
-		"ft": 32768,
-		"iS": 3174,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-4-rain-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-4-rain-2.png": {
-		"ft": 32768,
-		"iS": 1544,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-4-rain-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-4-rain-3.png": {
-		"ft": 32768,
-		"iS": 1455,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-4-rain-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-4-rain-4.png": {
-		"ft": 32768,
-		"iS": 2942,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-4-rain-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-4-text-1.png": {
-		"ft": 32768,
-		"iS": 25978,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-4-text-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-4-text-2.png": {
-		"ft": 32768,
-		"iS": 3750,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-4-text-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-4-text-3.png": {
-		"ft": 32768,
-		"iS": 7789,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-4-text-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-4-text-4.png": {
-		"ft": 32768,
-		"iS": 8875,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-4-text-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-4-text.png": {
-		"ft": 32768,
-		"iS": 39142,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-4-text.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-5-bg.jpg": {
-		"ft": 16384,
-		"iS": 142053,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-5-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-5-snow.gif": {
-		"ft": 4194304,
-		"iS": 24916,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-5-snow.gif",
-		"oF": 0,
-		"opt": 1
-		},
-	"\/mbenz-love\/img\/page-5-text-1.png": {
-		"ft": 32768,
-		"iS": 27313,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-5-text-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-5-text-2.png": {
-		"ft": 32768,
-		"iS": 9202,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-5-text-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-5-text-3.png": {
-		"ft": 32768,
-		"iS": 9119,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-5-text-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-5-text-4.png": {
-		"ft": 32768,
-		"iS": 10351,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-5-text-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-5-text.png": {
-		"ft": 32768,
-		"iS": 47985,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-5-text.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-6-bg.jpg": {
-		"ft": 16384,
-		"iS": 164138,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-6-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-6-cloud-1.png": {
-		"ft": 32768,
-		"iS": 47690,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-6-cloud-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-6-cloud-2.png": {
-		"ft": 32768,
-		"iS": 41103,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-6-cloud-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-6-cloud-3.png": {
-		"ft": 32768,
-		"iS": 17696,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-6-cloud-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-6-mark.png": {
-		"ft": 32768,
-		"iS": 61298,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-6-mark.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-6-text-1.png": {
-		"ft": 32768,
-		"iS": 16781,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-6-text-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-6-text-2.png": {
-		"ft": 32768,
-		"iS": 8684,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-6-text-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-6-text-3.png": {
-		"ft": 32768,
-		"iS": 7147,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-6-text-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-6-text.png": {
-		"ft": 32768,
-		"iS": 28055,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-6-text.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-7-bg.jpg": {
-		"ft": 16384,
-		"iS": 175670,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-7-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-7-dog-1.png": {
-		"ft": 32768,
-		"iS": 6228,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-7-dog-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-7-dog-2.png": {
-		"ft": 32768,
-		"iS": 5563,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-7-dog-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-7-dog-3.png": {
-		"ft": 32768,
-		"iS": 5563,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-7-dog-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-7-dog-4.png": {
-		"ft": 32768,
-		"iS": 5563,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-7-dog-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-7-dog-5.png": {
-		"ft": 32768,
-		"iS": 7040,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-7-dog-5.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-7-dog.gif": {
-		"ft": 4194304,
-		"iS": 23602,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-7-dog.gif",
-		"oF": 0,
-		"opt": 1
-		},
-	"\/mbenz-love\/img\/page-7-text-1.png": {
-		"ft": 32768,
-		"iS": 27261,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-7-text-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-7-text-2.png": {
-		"ft": 32768,
-		"iS": 7260,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-7-text-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-7-text-3.png": {
-		"ft": 32768,
-		"iS": 6944,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-7-text-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-7-text-4.png": {
-		"ft": 32768,
-		"iS": 5522,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-7-text-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-7-text-5.png": {
-		"ft": 32768,
-		"iS": 8137,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-7-text-5.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-7-text.png": {
-		"ft": 32768,
-		"iS": 44587,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-7-text.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-home-bg.jpg": {
-		"ft": 16384,
-		"iS": 88303,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-home-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-home-text-1.png": {
-		"ft": 32768,
-		"iS": 35327,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-home-text-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-home-text-2.png": {
-		"ft": 32768,
-		"iS": 32988,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-home-text-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-home-text-3.png": {
-		"ft": 32768,
-		"iS": 28395,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-home-text-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-home-text-4.png": {
-		"ft": 32768,
-		"iS": 32377,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-home-text-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-home-text-5.png": {
-		"ft": 32768,
-		"iS": 9596,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-home-text-5.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-record-bg.jpg": {
-		"ft": 16384,
-		"iS": 102288,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-record-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-record-microphone.png": {
-		"ft": 32768,
-		"iS": 2372,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-record-microphone.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/page-record-texts.png": {
-		"ft": 32768,
-		"iS": 97860,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/page-record-texts.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/right.png": {
-		"ft": 32768,
-		"iS": 1669,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/right.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/save-text.png": {
-		"ft": 32768,
-		"iS": 3667,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/save-text.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-1-1.png": {
-		"ft": 32768,
-		"iS": 16793,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-1-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-1-2.png": {
-		"ft": 32768,
-		"iS": 14130,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-1-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-1-3.png": {
-		"ft": 32768,
-		"iS": 19655,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-1-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-1-4.png": {
-		"ft": 32768,
-		"iS": 22630,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-1-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-1-5.png": {
-		"ft": 32768,
-		"iS": 17600,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-1-5.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-2-1.png": {
-		"ft": 32768,
-		"iS": 23575,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-2-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-2-2.png": {
-		"ft": 32768,
-		"iS": 23576,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-2-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-2-3.png": {
-		"ft": 32768,
-		"iS": 18903,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-2-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-2-4.png": {
-		"ft": 32768,
-		"iS": 16614,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-2-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-2-5.png": {
-		"ft": 32768,
-		"iS": 20196,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-2-5.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-3-1.png": {
-		"ft": 32768,
-		"iS": 27198,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-3-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-3-2.png": {
-		"ft": 32768,
-		"iS": 21776,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-3-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-3-3.png": {
-		"ft": 32768,
-		"iS": 19372,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-3-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-3-4.png": {
-		"ft": 32768,
-		"iS": 23133,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-3-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-3-5.png": {
-		"ft": 32768,
-		"iS": 28743,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-3-5.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-4-1.png": {
-		"ft": 32768,
-		"iS": 32265,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-4-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-4-2.png": {
-		"ft": 32768,
-		"iS": 30284,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-4-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-4-3.png": {
-		"ft": 32768,
-		"iS": 22464,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-4-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-4-4.png": {
-		"ft": 32768,
-		"iS": 14595,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-4-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-4-5.png": {
-		"ft": 32768,
-		"iS": 11146,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-4-5.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-5-1.png": {
-		"ft": 32768,
-		"iS": 27756,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-5-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-5-2.png": {
-		"ft": 32768,
-		"iS": 17283,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-5-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-5-3.png": {
-		"ft": 32768,
-		"iS": 19902,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-5-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-5-4.png": {
-		"ft": 32768,
-		"iS": 27371,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-5-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-5-5.png": {
-		"ft": 32768,
-		"iS": 26303,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-5-5.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-6-1.png": {
-		"ft": 32768,
-		"iS": 13631,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-6-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-6-2.png": {
-		"ft": 32768,
-		"iS": 16025,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-6-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-6-3.png": {
-		"ft": 32768,
-		"iS": 20789,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-6-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-6-4.png": {
-		"ft": 32768,
-		"iS": 14929,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-6-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-6-5.png": {
-		"ft": 32768,
-		"iS": 13025,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-6-5.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-7-1.png": {
-		"ft": 32768,
-		"iS": 20030,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-7-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-7-2.png": {
-		"ft": 32768,
-		"iS": 19620,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-7-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-7-3.png": {
-		"ft": 32768,
-		"iS": 16927,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-7-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-7-4.png": {
-		"ft": 32768,
-		"iS": 21459,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-7-4.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-7-5.png": {
-		"ft": 32768,
-		"iS": 23100,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-7-5.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-qr.png": {
-		"ft": 32768,
-		"iS": 20446,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-qr.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-title-2.png": {
-		"ft": 32768,
-		"iS": 17508,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-title-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/img\/ugc-title.png": {
-		"ft": 32768,
-		"iS": 55936,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/img\/ugc-title.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/mbenz-love\/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/mbenz-love\/index.html",
-		"oF": 0
-		},
-	"\/mbenz-love\/index.jade": {
-		"cB": 0,
-		"cOD": 1,
-		"ft": 512,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/index.html",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/mbenz-love\/js\/main.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/js\/main-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/mbenz-love\/mp3\/bgm.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/mbenz-love\/mp3\/bgm.mp3",
-		"oF": 0
-		},
-	"\/mbenz-love\/sass\/base.sass": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 2,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/mbenz-love\/css\/base.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"\/meizu-music\/coffee\/main.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/meizu-music\/js\/main.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/meizu-music\/css": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "\/build\/meizu-music\/css",
-		"oF": 0
-		},
-	"\/meizu-music\/img\/bg.jpg": {
-		"ft": 16384,
-		"iS": 134331,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/meizu-music\/img\/btn-dna.png": {
-		"ft": 32768,
-		"iS": 6142,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/btn-dna.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/btn-goon.png": {
-		"ft": 32768,
-		"iS": 2324,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/btn-goon.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/btn-regame.png": {
-		"ft": 32768,
-		"iS": 2749,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/btn-regame.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/btn-saveimage.png": {
-		"ft": 32768,
-		"iS": 4064,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/btn-saveimage.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/btn-share.png": {
-		"ft": 32768,
-		"iS": 1508,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/btn-share.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/btn-start.png": {
-		"ft": 32768,
-		"iS": 3859,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/btn-start.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/btn-submit-name.png": {
-		"ft": 32768,
-		"iS": 3624,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/btn-submit-name.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/game-title.png": {
-		"ft": 32768,
-		"iS": 33058,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/game-title.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/home-title.png": {
-		"ft": 32768,
-		"iS": 32954,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/home-title.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/ico.jpg": {
-		"ft": 16384,
-		"iS": 80866,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/ico.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/meizu-music\/img\/icon-check.png": {
-		"ft": 32768,
-		"iS": 1605,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/icon-check.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/icon-del.png": {
-		"ft": 32768,
-		"iS": 1236,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/icon-del.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/load-record-light.png": {
-		"ft": 32768,
-		"iS": 11019,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/load-record-light.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/load-record.png": {
-		"ft": 32768,
-		"iS": 46678,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/load-record.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/logo.png": {
-		"ft": 32768,
-		"iS": 9251,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/logo.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/music-symbol-1.png": {
-		"ft": 32768,
-		"iS": 973,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/music-symbol-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/music-symbol-2.png": {
-		"ft": 32768,
-		"iS": 1284,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/music-symbol-2.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/pop-info.png": {
-		"ft": 32768,
-		"iS": 50301,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/pop-info.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/question-mark.png": {
-		"ft": 32768,
-		"iS": 472,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/question-mark.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/record-light.png": {
-		"ft": 32768,
-		"iS": 61809,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/record-light.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/record-line.png": {
-		"ft": 32768,
-		"iS": 28687,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/record-line.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/record.jpg": {
-		"ft": 16384,
-		"iS": 124290,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/record.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/meizu-music\/img\/share-success.png": {
-		"ft": 32768,
-		"iS": 28186,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/share-success.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/ugc\/0.jpg": {
-		"ft": 16384,
-		"iS": 230269,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/ugc\/0.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/meizu-music\/img\/ugc\/100.jpg": {
-		"ft": 16384,
-		"iS": 231464,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/ugc\/100.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/meizu-music\/img\/ugc\/20.jpg": {
-		"ft": 16384,
-		"iS": 229434,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/ugc\/20.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/meizu-music\/img\/ugc\/40.jpg": {
-		"ft": 16384,
-		"iS": 228483,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/ugc\/40.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/meizu-music\/img\/ugc\/60.jpg": {
-		"ft": 16384,
-		"iS": 230541,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/ugc\/60.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/meizu-music\/img\/ugc\/80.jpg": {
-		"ft": 16384,
-		"iS": 229942,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/ugc\/80.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/meizu-music\/img\/ugc\/qr.png": {
-		"ft": 32768,
-		"iS": 5367,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/ugc\/qr.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/img\/ugc\/scan.png": {
-		"ft": 32768,
-		"iS": 3715,
-		"oA": 0,
-		"oAP": "\/meizu-music\/img\/ugc\/scan.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/meizu-music\/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/meizu-music\/index.html",
-		"oF": 0
-		},
-	"\/meizu-music\/index.jade": {
-		"cB": 0,
-		"cOD": 1,
-		"ft": 512,
-		"oA": 0,
-		"oAP": "\/meizu-music\/index.html",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/meizu-music\/js\/main.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/meizu-music\/js\/main-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/meizu-music\/sass\/base.sass": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 2,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/meizu-music\/css\/base.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/mengniu": {
 		"ft": 65536,
 		"oA": 1,
@@ -9833,6 +6646,330 @@
 		"oA": 2,
 		"oAP": "\/MP_verify_ZodkwCxflTABHhQ0.txt",
 		"oF": 0
+		},
+	"\/mygym\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/mygym\/css",
+		"oF": 0
+		},
+	"\/mygym\/img\/logo.png": {
+		"ft": 32768,
+		"iS": 4886,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1bg1.jpg": {
+		"ft": 16384,
+		"iS": 46872,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1bg1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/mygym\/img\/p1bgc.png": {
+		"ft": 32768,
+		"iS": 3270,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1bgc.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1btn.png": {
+		"ft": 32768,
+		"iS": 4191,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1btn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1btn_t.png": {
+		"ft": 32768,
+		"iS": 32157,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1btn_t.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1btn_t_bg1.png": {
+		"ft": 32768,
+		"iS": 1894,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1btn_t_bg1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1btn_t_bg2.png": {
+		"ft": 32768,
+		"iS": 1973,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1btn_t_bg2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1pic1.png": {
+		"ft": 32768,
+		"iS": 14830,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1pic1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1pic2.png": {
+		"ft": 32768,
+		"iS": 5306,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1pic2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1pic3.png": {
+		"ft": 32768,
+		"iS": 3568,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1pic3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1pic4.png": {
+		"ft": 32768,
+		"iS": 2495,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1pic4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1pic5.png": {
+		"ft": 32768,
+		"iS": 2722,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1pic5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1pic6.png": {
+		"ft": 32768,
+		"iS": 1571,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1pic6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1title.png": {
+		"ft": 32768,
+		"iS": 29653,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1title1.png": {
+		"ft": 32768,
+		"iS": 1570,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1title1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1title2.png": {
+		"ft": 32768,
+		"iS": 707,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1title2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1title3.png": {
+		"ft": 32768,
+		"iS": 635,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1title3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1title4.png": {
+		"ft": 32768,
+		"iS": 1318,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1title4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1title_light.png": {
+		"ft": 32768,
+		"iS": 6217,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1title_light.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1title_light2.png": {
+		"ft": 32768,
+		"iS": 6360,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1title_light2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p1titlemask.png": {
+		"ft": 32768,
+		"iS": 27150,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p1titlemask.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/mygym\/index.html",
+		"oF": 0
+		},
+	"\/mygym\/js\/ani-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/mygym\/js\/ani-min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/mygym\/js\/ani.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/mygym\/js\/ani-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/mygym\/js\/easeljs.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/mygym\/js\/easeljs.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/mygym\/js\/jquery-2.2.1.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/mygym\/js\/jquery-2.2.1.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/mygym\/js\/main-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/mygym\/js\/main-min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/mygym\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/mygym\/js\/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/mygym\/js\/pixi.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/mygym\/js\/pixi.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/mygym\/js\/TweenMax.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/mygym\/js\/TweenMax.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
 		},
 	"\/nightparty": {
 		"ft": 65536,
@@ -11962,7 +9099,7 @@
 		"oA": 0,
 		"oAP": "\/zbird\/js\/ani-min-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/zbird\/js\/ani.js": {
@@ -12012,7 +9149,7 @@
 		"oA": 0,
 		"oAP": "\/zbird\/js\/main-min-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/zbird\/js\/main.js": {
@@ -12022,7 +9159,7 @@
 		"oA": 0,
 		"oAP": "\/zbird\/js\/main-min.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/zbird\/js\/TweenMax.min.js": {
@@ -12042,23 +9179,10 @@
 		"oAP": "\/zbird\/mp3\/bgm.mp3",
 		"oF": 0
 		},
-	"\/zbird\/mp3\/bgm2.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/zbird\/mp3\/bgm2.mp3",
-		"oF": 0
-		},
 	"\/zhihu-huarun": {
 		"ft": 65536,
 		"oA": 1,
 		"oAP": "\/build\/zhihu-huarun",
-		"oF": 0
-		},
-	"\/zhihu-suning418": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "\/build\/zhihu-suning418",
 		"oF": 0
 		},
 	"\/zhihunews": {
@@ -12078,158 +9202,6 @@
 		"oA": 1,
 		"oAP": "\/build\/zhishinews",
 		"oF": 0
-		},
-	"\/zqzs_1\/coffee\/main.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/zqzs_1\/js\/main.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"\/zqzs_1\/css": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "\/build\/zqzs_1\/css",
-		"oF": 0
-		},
-	"\/zqzs_1\/img\/ico.jpg": {
-		"ft": 16384,
-		"iS": 14748,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/zqzs_1\/img\/ico.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/zqzs_1\/img\/logo.gif": {
-		"ft": 4194304,
-		"iS": 65530,
-		"oA": 0,
-		"oAP": "\/zqzs_1\/img\/logo.gif",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/zqzs_1\/img\/part-1.jpg": {
-		"ft": 16384,
-		"iS": 113742,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/zqzs_1\/img\/part-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/zqzs_1\/img\/part-2.jpg": {
-		"ft": 16384,
-		"iS": 94210,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/zqzs_1\/img\/part-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/zqzs_1\/img\/part-3.jpg": {
-		"ft": 16384,
-		"iS": 40351,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/zqzs_1\/img\/part-3.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/zqzs_1\/img\/part-4.jpg": {
-		"ft": 16384,
-		"iS": 57832,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/zqzs_1\/img\/part-4.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/zqzs_1\/img\/part-5.jpg": {
-		"ft": 16384,
-		"iS": 43531,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/zqzs_1\/img\/part-5.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/zqzs_1\/img\/poster.jpg": {
-		"ft": 16384,
-		"iS": 31091,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/zqzs_1\/img\/poster.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/zqzs_1\/img\/video-bg.jpg": {
-		"ft": 16384,
-		"iS": 9648,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/zqzs_1\/img\/video-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/zqzs_1\/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/zqzs_1\/index.html",
-		"oF": 0
-		},
-	"\/zqzs_1\/index.jade": {
-		"cB": 0,
-		"cOD": 1,
-		"ft": 512,
-		"oA": 0,
-		"oAP": "\/zqzs_1\/index.html",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/zqzs_1\/js\/main.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/zqzs_1\/js\/main-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"\/zqzs_1\/sass\/base.sass": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 2,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/zqzs_1\/css\/base.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
 		}
 	},
 "hooks": [
@@ -14065,7 +11037,7 @@
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 0,
 		"minifyOutput": 1,
-		"syntaxCheckerStyle": 3,
+		"syntaxCheckerStyle": 0,
 		"transpilerStyle": 0
 		},
 	"languageDefaultsJSON": {
