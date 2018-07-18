@@ -1,7 +1,7 @@
 extends ../libs/jade/layout-clean
 
 block title
-  | 你的颜值靠谱吗？
+  | 测测你的颜值在线吗？
 
 block css
   meta(name="author",content="m.giccoo.com")
@@ -67,7 +67,7 @@ block content
           .model
             .head(@click="lotteryShow = false")
               img(src="#{url}/img/pop-head.png")
-            .model-content.bigger
+            .model-content.bigger2
               img(src="#{url}/img/pop-faild.png")
               .btn.restart(@click="restart")
                 img(src="#{url}/img/pop-restart.png")
