@@ -71,7 +71,7 @@ block content
               img(src="#{url}/img/pop-faild.png")
               .btn.restart(@click="restart")
                 img(src="#{url}/img/pop-restart.png")
-              a.btn(href="http://www.baidu.com")
+              .btn(@click="buyNow")
                 img(src="#{url}/img/pop-buy.png")
 
     transition(name="page-fade")
@@ -110,7 +110,7 @@ block content
 
             .model-content.bigger(v-show="!lotteryFormShow")
               img(src="#{url}/img/pop-success.png")
-              a.btn(href="http://www.baidu.com")
+              .btn(@click="buyNow")
                 img(src="#{url}/img/pop-buy.png")
 
     transition(name="page-animation")

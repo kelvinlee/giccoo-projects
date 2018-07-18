@@ -167,6 +167,7 @@ init = ->
 				.catch (e)=>
 					# alert e
 					main.faild(e)
+				_hmt? and _hmt.push(['_trackEvent', "BobbiBrown", "share", "ugc", "-"])
 			success: (data)->
 				@.pushed = false
 				@.loading = false
@@ -187,7 +188,10 @@ init = ->
 					@.getLottery()
 				,5000
 			restart: ->
-				window.location.reload()
+				setTimeout =>
+					window.location.reload()
+				,100
+				_hmt? and _hmt.push(['_trackEvent', "BobbiBrown", "game", "restart", "-"])
 			getLottery: ->
 				# console.log "lottery"
 				axios.get "//api.giccoo.com/BobbiBrown/getaward"
@@ -196,6 +200,11 @@ init = ->
 						@.form.random = msg.data.random
 						@.lottery = true
 				@.lotteryShow = true
+			buyNow: ->
+				setTimeout =>
+					window.location.href = "https://equity-vip.tmall.com/agent/mobile.htm?agentId=100780&_bind=true"
+				,100
+				_hmt? and _hmt.push(['_trackEvent', "BobbiBrown", "buy", "now", "-"])
 		mounted: ->
 			if sys is "NeteaseMusic"
 				@.wy = true

@@ -64,7 +64,8 @@
             <div class="model">
               <div @click="lotteryShow = false" class="head"><img src="./img/pop-head.png"></div>
               <div class="model-content bigger"><img src="./img/pop-faild.png">
-                <div @click="restart" class="btn restart"><img src="./img/pop-restart.png"></div><a href="http://www.baidu.com" class="btn"><img src="./img/pop-buy.png"></a>
+                <div @click="restart" class="btn restart"><img src="./img/pop-restart.png"></div>
+                <div @click="buyNow" class="btn"><img src="./img/pop-buy.png"></div>
               </div>
             </div>
           </div>
@@ -103,7 +104,9 @@
                 </form>
                 <div @click="submit" class="btn-submit"><img src="./img/btn-submit.png"></div>
               </div>
-              <div v-show="!lotteryFormShow" class="model-content bigger"><img src="./img/pop-success.png"><a href="http://www.baidu.com" class="btn"><img src="./img/pop-buy.png"></a></div>
+              <div v-show="!lotteryFormShow" class="model-content bigger"><img src="./img/pop-success.png">
+                <div @click="buyNow" class="btn"><img src="./img/pop-buy.png"></div>
+              </div>
             </div>
           </div>
         </div>

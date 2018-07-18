@@ -1525,6 +1525,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/BobbiBrown\/img\/goal.png": {
+		"ft": 32768,
+		"iS": 9210,
+		"oA": 0,
+		"oAP": "\/BobbiBrown\/img\/goal.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/BobbiBrown\/img\/hand.png": {
 		"ft": 32768,
 		"iS": 2847,
@@ -1588,6 +1599,17 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/BobbiBrown\/img\/icon-gold.png": {
+		"ft": 32768,
+		"iS": 3994,
+		"oA": 0,
+		"oAP": "\/BobbiBrown\/img\/icon-gold.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},

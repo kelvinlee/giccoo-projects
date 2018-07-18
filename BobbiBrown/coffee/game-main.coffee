@@ -11,6 +11,7 @@ class Game
 		bottleEat: 0
 		MH: 900
 	lastNumber: 1 + parseInt Math.random()*7
+	blockIndex: 0
 	started: false
 	over: false
 	online: false
@@ -53,6 +54,8 @@ class Game
 			"#{_CDN}img/person-small.png"
 			"#{_CDN}img/progress-bg.png"
 			"#{_CDN}img/hand.png"
+			"#{_CDN}img/goal.png"
+			"#{_CDN}img/icon-gold.png"
 			"#{_CDN}img/block.png"
 			"#{_CDN}img/build-first.png"
 			"#{_CDN}img/build-1.png"
@@ -285,12 +288,12 @@ class Game
 		# scorePlank
 		@.scorePlank = scorePlank = new Container()
 		scorePlank.alpha = 0
-		bottle = new Sprite getTe "#{_CDN}img/bottle.png"
+		bottle = new Sprite getTe "#{_CDN}img/icon-gold.png"
 		bottle.x = @.opts.w - 210
 		bottle.y = 40
-		bottle.scale.set(0.6,0.6)
+		# bottle.scale.set(0.6,0.6)
 
-		@.text = text = new Text "X 03",{fontFamily : 'Arial', fontSize: 50, fill : 0x000000, align : 'right'}
+		@.text = text = new Text "300",{fontFamily : 'Arial', fontSize: 50, fill : 0xf9bd33, align : 'right'}
 		text.x = @.opts.w - 190/2 - text.width/2
 		text.y = 40 + bottle.height/2 - text.height/2
 
@@ -312,6 +315,7 @@ class Game
 		@.stage.addChild hand
 	start: ->
 		return false if @.started
+		
 		@.started = true
 		@.player.start()
 		@._playMove = @.player.move.bind(@.player)
@@ -349,7 +353,9 @@ class Game
 					,200 * 3
 		runHand()
 		@.startTime = new Date().getTime()
+		_hmt? and _hmt.push(['_trackEvent', "BobbiBrown", "game", "start", "-"])
 	gameEnd: ->
+
 		@.app.ticker.remove @._playMove
 		@.player.over()
 		@.over = true
@@ -437,7 +443,8 @@ class Game
 							n = Math.random()*10
 						else
 							n = 10 + Math.random()*(@.scoreNumber+@.default.blockCount)
-						score = @.scoreNumber*100 + @.default.blockCount*50 + n
+						n = 0
+						score = @.scoreNumber*100 + (@.default.blockCount-1)*50 + n
 						TweenLite.to scoreText,2,
 							tmp: score
 							onUpdate: =>
@@ -454,6 +461,8 @@ class Game
 											main.setugc @.app.view.toDataURL()
 											qrcode.visible = false
 											btnShare.visible = true
+
+		_hmt? and _hmt.push(['_trackEvent', "BobbiBrown", "game", "start", "-"])
 
 	myBottleNumber: (n)->
 		@.scoreNumber = n
@@ -472,8 +481,6 @@ class Game
 		main.BGColor = "#a26171" if @.game.y > 6000
 		main.BGColor = "#3f2789" if @.game.y > 7000
 		main.BGColor = "#231b56" if @.game.y > 8000
-
-
 	updateScore: ->
 		n = 0
 		for bottle in @.bottles
@@ -482,7 +489,7 @@ class Game
 		t = 0
 		for enemy in @.enemys
 			t++ unless enemy.alive
-		@.text.text = "X #{@.myBottleNumber(n + @.default.bottleCount - t)}"
+		@.text.text = "#{@.myBottleNumber(n + @.default.bottleCount - t)*100+@.blockIndex*50}"
 	movingCamera: ->
 		return false unless @.online
 		if @.player.block.id is (@.default.blockCount-1)
@@ -495,12 +502,26 @@ class Game
 			onComplete: =>
 				@.weatherChange()
 	updateProgress: (block)->
+		@.blockIndex = @.blocks.indexOf(block)
 		progress = @.blocks.indexOf(block)/(@.blocks.length-1)
 		# @.personSmall.x = 20 + 700*progress
 		# console.log progress,@.personSmall.x
 		TweenLite.to @.personSmall,0.3,
 			x: 20 + 700*progress
-
+		console.log @.blockIndex
+	hitBottle: ->
+		goal = new Sprite getTe "#{_CDN}img/goal.png"
+		goal.x = 700 - goal.width
+		goal.y = 80 + goal.height
+		@.scorePlank.addChild goal
+		time = 1.2
+		TweenLite.to goal,time,
+			y: 20
+			onComplete: =>
+				@.scorePlank.removeChild goal
+		TweenLite.to goal,time/2,
+			alpha: 0
+			delay: time/2
 	running: (detail)->
 		return false unless @.online
 		for light in @.lights
@@ -520,10 +541,12 @@ class Game
 			if bottle.alive
 				if bottle.checkHit @.player.sprite
 					@.updateScore()
+					@.hitBottle()
 		unless @.player.block?
 			for block in @.blocks
 				if @.player.checkBlockOn block
 					@.updateProgress block
+					@.updateScore()
 					break
 	hitEnemy: ->
 		@.player.blink()
