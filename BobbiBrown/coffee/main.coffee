@@ -19,6 +19,8 @@ String.prototype.gblen = ->
 	return len
 
 imageurl = "//api.giccoo.com/api/upload/image64/"
+apiUrl = "//api.giccoo.com/BobbiBrown"
+# apiUrl = "http://localhost:8881/BobbiBrown"
 main = {}
 game = null
 _public = {}
@@ -140,10 +142,10 @@ init = ->
 				return alert "请点击选择色号" if @.form.color is ""
 				# "//api.giccoo.com/mbenz-love/insert"
 				# 
-				axios.post "//api.giccoo.com/BobbiBrown/update/",@.form
+				axios.post "#{apiUrl}/update/",@.form
 				.then (msg)=>
 					if msg.data.recode is 200
-						main.lotteryFormShow = true
+						main.lotteryFormShow = false
 					else
 						alert msg.data.reason
 				.catch (e)=>
@@ -194,12 +196,14 @@ init = ->
 				_hmt? and _hmt.push(['_trackEvent', "BobbiBrown", "game", "restart", "-"])
 			getLottery: ->
 				# console.log "lottery"
-				axios.get "//api.giccoo.com/BobbiBrown/getaward"
+				@.loading = true
+				axios.get "#{apiUrl}/getaward"
 				.then (msg)=>
+					@.loading = false
 					if msg.data.Time and msg.data.award
 						@.form.random = msg.data.random
 						@.lottery = true
-				@.lotteryShow = true
+					@.lotteryShow = true
 			buyNow: ->
 				setTimeout =>
 					window.location.href = "https://equity-vip.tmall.com/agent/mobile.htm?agentId=100780&_bind=true"
