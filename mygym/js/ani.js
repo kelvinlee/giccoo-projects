@@ -91,7 +91,7 @@ function p1aniUp(){
     circle1.lineStyle(c1._line,c1._color,1,1)
     circle1.drawCircle(320,stageH-109,c1._r)
   }})
-  TweenMax.to(c2,1.5,{_r:640,_line:10000,delay:.1,onUpdate:function(){
+  TweenMax.to(c2,1.6,{_r:640,_line:10000,delay:.1,onUpdate:function(){
     circle2.clear()
     circle2.beginFill(0xffffff,0)
     circle2.lineStyle(c2._line,c2._color,1,1)
