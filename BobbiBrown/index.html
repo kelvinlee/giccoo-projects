@@ -90,15 +90,15 @@
                     <label for="address"><img src="./img/icon-3.png"></label>
                     <input placeholder="请输入您的收货地址" type="text" v-model="form.address">
                   </div>
-                  <div class="form-group">
+                  <div class="form-group custom-select">
                     <label for="color"><img src="./img/icon-4.png"></label>
-                    <div class="select"><span>{{form.color}}</span>
-                      <select v-model="form.color">
-                        <option selected>0号 PORCELAIN瓷白</option>
-                        <option>0.5号 WARM PORCELAIN暖瓷白</option>
-                        <option>1号 WARM IVORY暖象牙</option>
-                        <option>2号 SAND柔沙</option>
-                      </select>
+                    <div @click="select = !select" class="select"><span>{{form.color}}</span>
+                      <div v-show="select" class="box-select">
+                        <div @click.stop="select = false ; form.color = '0号 PORCELAIN瓷白'" class="option"><span style="background-color: #f0cfb4"></span> 0号 PORCELAIN瓷白</div>
+                        <div @click.stop="select = false ; form.color = '0.5号 WARM PORCELAIN暖瓷白'" class="option"><span style="background-color: #f2cbb2"></span> 0.5号 WARM PORCELAIN暖瓷白</div>
+                        <div @click.stop="select = false ; form.color = '1号 WARM IVORY暖象牙'" class="option"><span style="background-color: #e5bc90"></span> 1号 WARM IVORY暖象牙</div>
+                        <div @click.stop="select = false ; form.color = '2号 SAND柔沙'" class="option"><span style="background-color: #e8caa7"></span> 2号 SAND柔沙</div>
+                      </div>
                     </div>
                   </div>
                 </form>

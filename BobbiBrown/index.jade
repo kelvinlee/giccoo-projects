@@ -95,16 +95,16 @@ block content
                   label(for="address")
                     img(src="#{url}/img/icon-3.png")
                   input(placeholder="请输入您的收货地址",type="text",v-model="form.address")
-                .form-group
+                .form-group.custom-select
                   label(for="color")
                     img(src="#{url}/img/icon-4.png")
-                  .select
+                  .select(@click = "select = !select")
                     span {{form.color}}
-                    select(v-model="form.color")
-                      option(selected) 0号 PORCELAIN瓷白
-                      option 0.5号 WARM PORCELAIN暖瓷白
-                      option 1号 WARM IVORY暖象牙
-                      option 2号 SAND柔沙
+                    .box-select(v-show="select")
+                      .option(@click.stop="select = false ; form.color = '0号 PORCELAIN瓷白'") <span style="background-color: #f0cfb4"></span> 0号 PORCELAIN瓷白
+                      .option(@click.stop="select = false ; form.color = '0.5号 WARM PORCELAIN暖瓷白'") <span style="background-color: #f2cbb2"></span> 0.5号 WARM PORCELAIN暖瓷白
+                      .option(@click.stop="select = false ; form.color = '1号 WARM IVORY暖象牙'") <span style="background-color: #e5bc90"></span> 1号 WARM IVORY暖象牙
+                      .option(@click.stop="select = false ; form.color = '2号 SAND柔沙'") <span style="background-color: #e8caa7"></span> 2号 SAND柔沙
               .btn-submit(@click="submit")
                 img(src="#{url}/img/btn-submit.png")
 

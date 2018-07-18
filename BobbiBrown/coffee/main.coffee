@@ -127,6 +127,7 @@ init = ->
 			lottery: false
 			lotteryShow: false
 			lotteryFormShow: true
+			select: false
 			form:
 				username: ""
 				mobile: ""
