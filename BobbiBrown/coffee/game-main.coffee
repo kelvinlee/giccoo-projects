@@ -293,7 +293,7 @@ class Game
 		bottle.y = 40
 		# bottle.scale.set(0.6,0.6)
 
-		@.text = text = new Text "300",{fontFamily : 'Arial', fontSize: 50, fill : 0xf9bd33, align : 'right'}
+		@.text = text = new Text "300",{fontFamily : 'Arial', fontSize: 50, fill : 0xf9bd33, align : 'right', dropShadow : true,dropShadowBlur: 2,dropShadowAlpha: 0.3,dropShadowColor : '#000000'}
 		text.x = @.opts.w - 190/2 - text.width/2
 		text.y = 40 + bottle.height/2 - text.height/2
 
