@@ -75,10 +75,9 @@ var pStage= new PIXI.Container()
 
 
 //=========PIXI通用VAR
-//NORMAL ADD MULTIPLY SCREEN OVERLAY DARKEN LIGHTEN COLOR_DODGE COLOR_BURN 
-//HARD_LIGHT SOFT_LIGHT DIFFERENCE EXCLUSION HUE SATURATION COLOR LUMINOSITY
-//var BM=PIXI.BLEND_MODES
 var pSprite=PIXI.Sprite.fromImage
+var pTexture=PIXI.Texture.fromImage
+
 
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -118,7 +117,7 @@ function pageLoop(){
   requestAnimationFrame(pageLoop)
   renderer.render(pStage)
 }
-
+//============================================//============================================p1 第一页
 var logo=pSprite("img/logo.png")
 var title=pSprite("img/p1title.png")
 var titleMask=pSprite("img/p1titlemask.png")
@@ -148,6 +147,7 @@ var circle1=new PIXI.Graphics()
 var circle2=new PIXI.Graphics()
 
 var stage1=new PIXI.Container()
+
 function page1start(){
   pStage.addChild(stage1)
   pStage.addChild(logo)
@@ -212,13 +212,31 @@ function page1start(){
 }
 
 function onButtonDown(){
-  console.log("touchDown")
   p1aniDown()
 }
 function onButtonUp(){
-  console.log("touchUp")
   p1aniUp()
 }
-// function handleTick(){
-//   stage.update();
-// }
+
+//============================================//============================================p2 第二页
+
+var stage2=new PIXI.Container()
+var whitebg=new PIXI.Graphics()
+
+var grid=pTexture("img/grid.png")
+var grids//=new PIXI.extras.TilingSprite(grid,640,1000)
+function page2Start(){
+  pStage.addChildAt(stage2,1)
+  stage2.addChild(whitebg)
+
+
+  whitebg.beginFill(0xffffff,1)
+  whitebg.drawRect(0,0,640,stageH)
+
+  TweenLite.from(stage2,.5,{alpha:0,onComplete:function(){pStage.removeChild(stage1)}})
+
+  grids=new PIXI.extras.TilingSprite(grid,640,stageH-220)
+  grids.y=110
+  stage2.addChild(grids)
+
+}

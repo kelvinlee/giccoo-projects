@@ -57,7 +57,6 @@ function ani1(){
 
 }
 function picJump(){
-  console.log("222")
   for (var j = 1; j < p1picA.length; j++) {
 
     TweenMax.to(p1picA[j],.15,{y:538/1000*stageH-40,delay:3-j*1/8+.8,overwrite:0,ease:Sine.easeOut})//,ease:Elastic.easeOut
@@ -84,8 +83,9 @@ function p1aniDown(){
 function p1aniUp(){
   TweenMax.killTweensOf(c1)
   TweenMax.killTweensOf(c2)
-
-  TweenMax.to(c1,.5,{_r:640,_line:0,onUpdate:function(){
+  stage1.addChild(circle1)
+  stage1.addChild(circle2)
+  TweenMax.to(c1,.5,{_r:640,_line:0,onComplete:page2Start,onUpdate:function(){
     circle1.clear()
     circle1.beginFill(0xffffff,0)
     circle1.lineStyle(c1._line,c1._color,1,1)
