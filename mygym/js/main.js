@@ -353,7 +353,7 @@ function setBoyGirl(){
   girlMove.animationSpeed=.4
   girlMove.play()
 
-  boyMove.y=girlMove.y=p2btn1.y-297-80
+  boyMove.y=girlMove.y=parseInt(p2btn1.y)-297-80
 
 
   ani2()
