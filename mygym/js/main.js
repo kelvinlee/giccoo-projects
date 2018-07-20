@@ -352,7 +352,7 @@ function setBoyGirl(){
   stage2.addChild(girlMove)
   girlMove.animationSpeed=.4
   girlMove.play()
-
+  girlMove.x=320
   boyMove.y=girlMove.y=parseInt(p2btn1.y)-297-80
 
 
