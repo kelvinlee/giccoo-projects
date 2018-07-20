@@ -1,7 +1,7 @@
 var titleA=[title,title1,title2,title3,title4]
 
 
-var c1={_r:0,_line:64,_color:0xfbd152}
+var c1={_r:0,_line:32,_color:0xfbd152}
 var c2={_r:0,_line:64,_color:0xfbd152}//0x90dfe5
 
 function ani1(){
@@ -28,18 +28,18 @@ function ani1(){
   TweenLite.from(p1btnBG1.scale,.5,{x:5,y:5,delay:t1+t2})
   TweenLite.from(p1btnBG2.scale,.5,{x:5,y:5,delay:t1+t2})
 
-  TweenMax.to(c1,1.5,{_r:180,_line:0,repeat:100,repeatDelay:1.5,delay:t1+t2,onUpdate:function(){
+  TweenMax.to(c1,1.5,{_r:190,_line:0,repeat:100,repeatDelay:1.5,delay:t1+t2,onUpdate:function(){
     circle1.clear()
     circle1.beginFill(0xffffff,0)
     circle1.lineStyle(c1._line,c1._color,1,1)
     circle1.drawCircle(320,stageH-109,c1._r)
   }})
 
-  TweenMax.to(c2,1.5,{_r:200,_line:0,repeat:100,repeatDelay:1.5,delay:t1+t2+.3,onStart:picJump,
+  TweenMax.to(c2,1.5,{_r:200,_line:0,repeat:100,repeatDelay:1.5,delay:t1+t2+.1,onStart:picJump,
     onUpdate:function(){
       circle2.clear()
       circle2.beginFill(0xffffff,0)
-      circle2.lineStyle(c2._line,c2._color,1,1)
+      circle2.lineStyle(c2._line,c2._color,1,0)
       circle2.drawCircle(320,stageH-109,c2._r)
     },
     onRepeat:function(){
@@ -85,16 +85,29 @@ function p1aniUp(){
   TweenMax.killTweensOf(c2)
   stage1.addChild(circle1)
   stage1.addChild(circle2)
-  TweenMax.to(c1,.5,{_r:640,_line:0,onComplete:page2Start,onUpdate:function(){
+  TweenMax.to(c1,.5,{_r:stageH,_line:0,onComplete:page2Start,onUpdate:function(){
     circle1.clear()
-    circle1.beginFill(0xffffff,0)
+    circle1.beginFill(c1._color,1)
     circle1.lineStyle(c1._line,c1._color,1,1)
     circle1.drawCircle(320,stageH-109,c1._r)
   }})
-  TweenMax.to(c2,1.6,{_r:640,_line:10000,delay:.1,onUpdate:function(){
+  TweenMax.to(c2,.4,{_r:stageH,_line:0,delay:.15,onUpdate:function(){
     circle2.clear()
-    circle2.beginFill(0xffffff,0)
-    circle2.lineStyle(c2._line,c2._color,1,1)
+    circle2.beginFill(0xffffff,1)
+    circle2.lineStyle(c2._line,c2._color,1,0)
     circle2.drawCircle(320,stageH-109,c2._r)
   }})
+}
+
+var p2titleA=[p2title3,p2title2,p2title1]
+
+function ani2(){
+  TweenMax.from(p2btn1,.5,{x:"-=320",ease:Back.easeNone})
+  TweenMax.from(p2btn2,.5,{x:"+=320",ease:Back.easeNone})
+  TweenMax.from(boyMove,.5,{x:"-=320",ease:Back.easeNone})
+  TweenMax.from(girlMove,.5,{x:"+=320",ease:Back.easeNone})
+
+  for (var i = 0; i < p2titleA.length; i++) {
+    TweenMax.from(p2titleA[i],1.5,{alpha:0,y:"-=50",rotation:-.3*Math.pow(-1,i),ease:Elastic.easeOut,delay:i*.1+.5})
+  };
 }

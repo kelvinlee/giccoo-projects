@@ -222,9 +222,29 @@ function onButtonUp(){
 
 var stage2=new PIXI.Container()
 var whitebg=new PIXI.Graphics()
+var sq1=new PIXI.Graphics()
+var sq2=new PIXI.Graphics()
 
 var grid=pTexture("img/grid.png")
 var grids//=new PIXI.extras.TilingSprite(grid,640,1000)
+
+var p2title1=pSprite("img/p2title1.png")
+var p2title2=pSprite("img/p2title2.png")
+var p2title3=pSprite("img/p2title3.png")
+
+var p2btn1t1=PIXI.Texture.fromImage("img/p2btn1.png")
+var p2btn2t1=PIXI.Texture.fromImage("img/p2btn2.png")
+var p2btn1t2=PIXI.Texture.fromImage("img/p2btn1down.png")
+var p2btn2t2=PIXI.Texture.fromImage("img/p2btn2down.png")
+
+var p2btn1=new PIXI.Sprite(p2btn1t1)
+var p2btn2=new PIXI.Sprite(p2btn2t1)
+
+var p2boy=pSprite("img/p2boy.png")
+var p2girl=pSprite("img/p2girl.png")
+
+
+
 function page2Start(){
   pStage.addChildAt(stage2,1)
   stage2.addChild(whitebg)
@@ -239,4 +259,114 @@ function page2Start(){
   grids.y=110
   stage2.addChild(grids)
 
+  sq1.beginFill(0x000000,0)
+  sq1.lineStyle(2,0x000000,1,1)
+  sq1.drawRect(0,0,640,stageH-220)
+  stage2.addChild(sq1)
+
+  sq2.beginFill(0x000000,0)
+  sq2.lineStyle(1.5,0x000000,.5,1)
+  sq2.drawRect(0,0,640,stageH-220)
+  stage2.addChild(sq2)
+
+  sq1.pivot.set(320,stageH/2-110)
+  sq1.position.set(320,stageH/2)
+  sq2.pivot.set(320,stageH/2-110)
+  sq2.position.set(320,stageH/2)
+  grids.mask=sq1
+  TweenLite.from(sq1.scale,1,{y:0.5,ease:Back.easeOut})
+  TweenLite.from(sq2.scale,1,{y:0.5,ease:Back.easeOut})
+
+  stage2.addChild(p2title3)
+  stage2.addChild(p2title2)
+  stage2.addChild(p2title1)
+
+  p2title1.x=p2title2.x=p2title3.x=320
+  p2title1.y=p2title2.y=p2title3.y=stageH/2-208*stageH/1000
+  p2title1.pivot.x=p2title2.pivot.x=p2title3.pivot.x=320
+  p2title1.pivot.y=p2title2.pivot.y=p2title3.pivot.y=80.5
+
+
+  stage2.interactive=true
+  p2btn1.interactive=true
+  p2btn2.interactive=true
+
+  p2btn1.touchstart=function(){this.texture=p2btn1t2}
+  p2btn2.touchstart=function(){this.texture=p2btn2t2}
+  stage2.touchend=function(){p2btn1.texture=p2btn1t1;p2btn2.texture=p2btn2t1}
+  p2btn1.touchend=onp2btn1Up
+  p2btn2.touchend=onp2btn2Up
+
+
+  stage2.addChild(p2btn1)
+  stage2.addChild(p2btn2)
+
+  p2btn1.pivot.x=p2btn2.pivot.x=147
+  p2btn1.pivot.y=p2btn2.pivot.y=85.5
+
+  p2btn1.position.set(169,stageH-236*stageH/1000)
+  p2btn2.position.set(471,stageH-236*stageH/1000)
+
+  // stage2.addChild(p2boy)
+  // stage2.addChild(p2girl)
+
+  // p2boy.y=p2girl.y=p2btn1.y-297-80
+
+
+
+
+
+  PIXI.loader
+    .add("img/boy.png","img/boy.json")
+    .add("img/girl.png","img/girl.json")
+    .load(setBoyGirl)
+
 }
+var boyMove
+var girlMove
+function setBoyGirl(){
+  var boyTextures=[],i;
+
+  for (i = 1; i <= 50; i++) {
+    var texture=PIXI.Texture.fromFrame("boy00"+i+".png")
+    boyTextures.push(texture)
+  };
+
+  for (i = 0; i < 50; i++) {
+    boyMove=new PIXI.extras.AnimatedSprite(boyTextures)
+  };
+  stage2.addChild(boyMove)
+  boyMove.animationSpeed=.5
+  boyMove.play()
+
+  var girlTextures=[]
+
+  for (i = 1; i <= 50; i++) {
+    var texture=PIXI.Texture.fromFrame("girl00"+i+".png")  
+    girlTextures.push(texture)
+  };
+
+  for (i = 0; i < 50; i++) {
+    girlMove=new PIXI.extras.AnimatedSprite(girlTextures)
+  };
+  stage2.addChild(girlMove)
+  girlMove.animationSpeed=.4
+  girlMove.play()
+
+  boyMove.y=girlMove.y=p2btn1.y-297-80
+
+
+  ani2()
+}
+
+
+
+function onp2btn1Up(){
+    console.log("男")
+    this.texture=p2btn1t1
+}
+function onp2btn2Up(){
+    console.log("女")
+    this.texture=p2btn2t1
+}
+
