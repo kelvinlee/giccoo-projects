@@ -317,7 +317,8 @@ function page2Start(){
 
 
   PIXI.loader
-    .add("img/boy.png","img/boy.json")
+    .add("img/boya.png","img/boya.json")
+    .add("img/boyb.png","img/boyb.json")
     .add("img/girla.png","img/girla.json")
     .add("img/girlb.png","img/girlb.json")
     .load(setBoyGirl)
