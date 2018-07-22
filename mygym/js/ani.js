@@ -215,7 +215,7 @@ function startMove3(_e){
 function Move3(_e){
   //var mouseposition = renderer.plugins.interaction.touchmove.global;
   //console.log(_e.data.global.y)
-  tag3.y=newPosition+_e.data.global.y-startY
+  tag3.y=newPosition+(_e.data.global.y-startY)*4
   if(tag3.y>=70){    tag3.y=70  }
   if(tag3.y<=70-1200+200) {tag3.y=70-1200+200};
   console.log(tag3.y)
