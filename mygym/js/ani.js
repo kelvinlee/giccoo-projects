@@ -111,3 +111,137 @@ function ani2(){
     TweenMax.from(p2titleA[i],1.5,{alpha:0,y:"-=50",rotation:-.3*Math.pow(-1,i),ease:Elastic.easeOut,delay:i*.1+.5})
   };
 }
+
+
+
+var nowTable=0
+
+var table1=PIXI.Texture.fromImage("img/p3table1.png")
+var table2=PIXI.Texture.fromImage("img/p3table2.png")
+var table3=PIXI.Texture.fromImage("img/p3table3.png")
+var table4=PIXI.Texture.fromImage("img/p3table4.png")
+var table5=PIXI.Texture.fromImage("img/p3table5.png")
+var table6=PIXI.Texture.fromImage("img/p3table6.png")
+var tableTextureA=[table1,table2,table3,table4,table5,table6]
+
+var btn0,btn1,btn2,btn3,btn4,btn5
+var btnA=[btn0,btn1,btn2,btn3,btn4,btn5]
+
+var table=new PIXI.Sprite(table1)
+
+var p3btn1=pSprite("img/p3btn1.png")
+var p3btn2=pSprite("img/p3btn2.png")
+var p3btn3=pSprite("img/p3btn3.png")
+
+var tag1=new PIXI.Container()
+var tag2=new PIXI.Container()
+var tag3=new PIXI.Container()
+var tag4=new PIXI.Container()
+var tag5=new PIXI.Container()
+var tag6=new PIXI.Container()
+var tagA=[tag1,tag2,tag3,tag4,tag5,tag6]
+var tagContainer=new PIXI.Container()
+var tagMask=new PIXI.Graphics()
+
+function setP3table(){
+  p3table.y=stageH-265
+  p3table.addChild(table)
+
+  var i
+  var btnXA=[137,195,251,307,362,428]
+  for (i = 0; i < btnA.length; i++) {
+    btnA[i]=new PIXI.Graphics()
+    p3table.addChild(btnA[i])
+    btnA[i].beginFill(0xffffff,0)
+    btnA[i].drawRect(0,0,50,65)
+    btnA[i].x=btnXA[i]
+    btnA[i].interactive=true
+    btnA[i].touchstart=changeTab
+  };
+  p3table.addChild(p3btn1)
+  p3table.addChild(p3btn2)
+  p3table.addChild(p3btn3)
+  p3btn2.x=p3btn3.x=507
+  p3btn3.visible=false
+
+  p3btn1.interactive=true
+  p3btn2.interactive=true
+  p3btn3.interactive=true
+
+  p3btn1.tap=toPage2
+
+  p3table.addChild(tagContainer)
+  p3table.addChild(tagMask)
+  tagMask.beginFill(0xff00ff,1)
+  tagMask.moveTo(9,66)
+  tagMask.lineTo(631,78)
+  tagMask.lineTo(610,265)
+  tagMask.lineTo(18,265)
+  tagMask.lineTo(8,66)
+  tagMask.endFill()
+  tagContainer.mask=tagMask
+  tagContainer.addChild(tag1)
+  tagContainer.addChild(tag2)
+  tagContainer.addChild(tag3)
+  tagContainer.addChild(tag4)
+  tagContainer.addChild(tag5)
+  tagContainer.addChild(tag6)
+
+  tag2.visible=tag3.visible=tag4.visible=tag5.visible=tag6.visible=false
+  tag1.y=tag2.y=tag3.y=tag4.y=tag5.y=tag6.y=70
+
+  setTag3()
+}
+var tag3icon=pSprite("img/tag3icon.png")
+function setTag3(){
+  tag3.addChild(tag3icon)
+  tag3.interactive=true
+  tag3.touchstart=startMove3
+  
+
+}
+var startY
+var newPosition=70
+var ifMove=0
+function startMove3(_e){
+  //this.data=event.data
+  startY=_e.data.global.y
+  console.log(_e.data.global.y)
+  tag3.touchmove=Move3
+  stage3.interactive=true
+  stage3.touchend=endMove3
+  //ifMove=1
+}
+function Move3(_e){
+  //var mouseposition = renderer.plugins.interaction.touchmove.global;
+  //console.log(_e.data.global.y)
+  tag3.y=newPosition+_e.data.global.y-startY
+  if(tag3.y>=70){    tag3.y=70  }
+  if(tag3.y<=70-1200+200) {tag3.y=70-1200+200};
+  console.log(tag3.y)
+
+}
+function endMove3(){
+  newPosition=tag3.y
+  tag3.touchmove=null
+  stage3.interactive=true
+  stage3.touchend=null
+  console.log("endmove")
+}
+function toPage2(){
+  stage3.visible=false
+  stage2.visible=true
+  console.log("<===")
+}
+function changeTab(){
+  for (i = 0; i < btnA.length; i++) {
+    if(this==btnA[i]){
+      console.log(i)
+      nowTable=i
+      tagA[i].visible=true
+    }else{
+      tagA[i].visible=false
+    }
+  };
+  table.texture=tableTextureA[nowTable]
+}

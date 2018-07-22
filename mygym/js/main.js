@@ -247,6 +247,18 @@ var p2girl=pSprite("img/p2girl.png")
 
 function page2Start(){
   pStage.addChildAt(stage2,1)
+
+  PIXI.loader
+    .add("img/boya.png","img/boya.json")
+    .add("img/boyb.png","img/boyb.json")
+    .add("img/girla.png","img/girla.json")
+    .add("img/girlb.png","img/girlb.json")
+    .load(setPage2)
+
+}
+var boyMove
+var girlMove
+function setPage2(){
   stage2.addChild(whitebg)
 
 
@@ -307,26 +319,7 @@ function page2Start(){
   p2btn1.position.set(169,stageH-236*stageH/1000)
   p2btn2.position.set(471,stageH-236*stageH/1000)
 
-  // stage2.addChild(p2boy)
-  // stage2.addChild(p2girl)
 
-  // p2boy.y=p2girl.y=p2btn1.y-297-80
-
-
-
-
-
-  PIXI.loader
-    .add("img/boya.png","img/boya.json")
-    .add("img/boyb.png","img/boyb.json")
-    .add("img/girla.png","img/girla.json")
-    .add("img/girlb.png","img/girlb.json")
-    .load(setBoyGirl)
-
-}
-var boyMove
-var girlMove
-function setBoyGirl(){
   var boyTextures=[],i;
 
   for (i = 1; i <= 50; i++) {
@@ -354,10 +347,10 @@ function setBoyGirl(){
   stage2.addChild(girlMove)
   girlMove.animationSpeed=.4
   girlMove.play()
-  girlMove.x=320
+  girlMove.x=320-25
   boyMove.y=girlMove.y=parseInt(p2btn1.y)-297-80
 
-
+  setPage3()
   ani2()
 }
 
@@ -366,9 +359,35 @@ function setBoyGirl(){
 function onp2btn1Up(){
     console.log("男")
     this.texture=p2btn1t1
+    sex=1
+    goPage3()
+
 }
 function onp2btn2Up(){
     console.log("女")
     this.texture=p2btn2t1
+    sex=0
+    goPage3()
+}
+
+var sex=666
+
+function goPage3(){
+  stage3.visible=true
+  stage2.visible=false
+}
+var stage3=new PIXI.Container()
+var sq3=new PIXI.Graphics()
+var sq4=new PIXI.Graphics()
+var p3title=pSprite("img/p3title.png")
+var p3table=new PIXI.Container()
+function setPage3(){
+  pStage.addChildAt(stage3,0)
+  stage3.visible=false
+  stage3.addChild(p3title)
+  stage3.addChild(p3table)
+  setP3table()
+
+
 }
 
