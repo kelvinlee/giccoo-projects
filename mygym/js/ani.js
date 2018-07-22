@@ -200,34 +200,48 @@ function setTag3(){
   
 
 }
+//=======================tag3滚轴
 var startY
 var newPosition=70
-var ifMove=0
+var mouseYA=[]
+var timeA=[]
+var date
 function startMove3(_e){
-  //this.data=event.data
+  TweenLite.killTweensOf(tag3)
+  newPosition=tag3.y
   startY=_e.data.global.y
   console.log(_e.data.global.y)
   tag3.touchmove=Move3
   stage3.interactive=true
   stage3.touchend=endMove3
-  //ifMove=1
+  mouseYA=[0,0]
+  timeA=[0,0]
 }
 function Move3(_e){
-  //var mouseposition = renderer.plugins.interaction.touchmove.global;
-  //console.log(_e.data.global.y)
   tag3.y=newPosition+(_e.data.global.y-startY)*4
   if(tag3.y>=70){    tag3.y=70  }
   if(tag3.y<=70-1200+200) {tag3.y=70-1200+200};
-  console.log(tag3.y)
-
+  mouseYA.push(_e.data.global.y)
+  date=new Date()
+  timeA.push(date.getTime())
 }
-function endMove3(){
+function endMove3(_e){
   newPosition=tag3.y
   tag3.touchmove=null
   stage3.interactive=true
   stage3.touchend=null
-  console.log("endmove")
+  console.log(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])
+  console.log(timeA[timeA.length-1]-timeA[timeA.length-2])
+  console.log((mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2]))
+
+  var endY=tag3.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2])
+  if(endY>=70){    endY=70  }
+  if(endY<=70-1200+200) {endY=70-1200+200};
+
+  TweenMax.to(tag3,1,{y:endY})
 }
+
+//====================回性别选择
 function toPage2(){
   stage3.visible=false
   stage2.visible=true
