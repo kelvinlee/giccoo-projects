@@ -387,7 +387,7 @@ function setPage3(){
   stage3.addChild(p3title)
   stage3.addChild(p3table)
   setP3table()
-
+  setRoom()
 
 }
 

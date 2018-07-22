@@ -193,13 +193,37 @@ function setP3table(){
   setTag3()
 }
 var tag3icon=pSprite("img/tag3icon.png")
+var btnGroup3A=[]
 function setTag3(){
   tag3.addChild(tag3icon)
   tag3.interactive=true
   tag3.touchstart=startMove3
-  
+  for (var i = 0; i < 24; i++) {
+    var t3btn=new PIXI.Graphics()
+    t3btn.beginFill(0x005599,0)
+    t3btn.drawRect(0,0,135,135)
+    tag3.addChild(t3btn)
+    btnGroup3A.push(t3btn)
+    t3btn.x=30+i%4*145
+    t3btn.y=30+parseInt(i/4)*200
+    t3btn.interactive=true
+    t3btn.tap=selectT3
+  };
 
 }
+//=======================tag3点击
+function selectT3(_e){
+  for (var i = 0; i < btnGroup3A.length; i++) {
+    if(this==btnGroup3A[i]){
+      console.log("i="+i)
+
+      if(i<18){wall.texture=wallTextrueA[i]}
+      if(i>=18){floor.texture=wallTextrueA[i]}
+    }
+  };
+}
+
+
 //=======================tag3滚轴
 var startY
 var newPosition=70
@@ -226,13 +250,12 @@ function Move3(_e){
   timeA.push(date.getTime())
 }
 function endMove3(_e){
-  newPosition=tag3.y
   tag3.touchmove=null
   stage3.interactive=true
   stage3.touchend=null
-  console.log(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])
-  console.log(timeA[timeA.length-1]-timeA[timeA.length-2])
-  console.log((mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2]))
+  // console.log(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])
+  // console.log(timeA[timeA.length-1]-timeA[timeA.length-2])
+  // console.log((mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2]))
 
   var endY=tag3.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2])
   if(endY>=70){    endY=70  }
@@ -258,4 +281,34 @@ function changeTab(){
     }
   };
   table.texture=tableTextureA[nowTable]
+}
+
+//===========================================设置房间
+var room=new PIXI.Container()
+var roomMask=new PIXI.Graphics()
+var roomBg=new PIXI.Container()
+var wall//=
+var floor
+var wallTextrueA=[]
+function setRoom(){
+  stage3.addChildAt(room,0)
+  stage3.addChild(roomMask)
+  roomMask.beginFill(0x887665,1)
+  roomMask.drawRect(0,110,640,stageH-110-265)
+  room.mask=roomMask
+  room.addChild(roomBg)
+
+  for (var i = 1; i <= 24; i++) {
+    var texture=new PIXI.Texture.fromImage("img/wall"+i+".jpg")
+    wallTextrueA.push(texture)
+  };
+  wall=new PIXI.extras.TilingSprite(wallTextrueA[parseInt(Math.random()*18)],640,(stageH-110-265)/3*2)
+  //wall=new PIXI.extras.TilingSprite(wallTextrueA[16],640,(stageH-110-265)/3*2)
+  floor=new PIXI.extras.TilingSprite(wallTextrueA[23],640,(stageH-110-265)/3*1+1)
+  //floor=new PIXI.extras.TilingSprite(wallTextrueA[parseInt(Math.random()*6+18)],640,(stageH-110-265)/3*1+1)
+  wall.y=110
+  floor.y=110+(stageH-110-265)/3*2-1
+  roomBg.addChild(wall)
+  roomBg.addChild(floor)
+
 }
