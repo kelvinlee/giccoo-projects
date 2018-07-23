@@ -78,7 +78,8 @@ var loadWechatConfig = function() {
 //var stage = new createjs.Stage("mainCanvas");
 
 
-var renderer = PIXI.autoDetectRenderer(256,256);//PIXI.CanvasRenderer(256, 256);
+//var renderer = PIXI.autoDetectRenderer(256,256);//PIXI.CanvasRenderer(256, 256);//autoDetectRenderer
+var renderer// =new PIXI.Application()
 var pStage= new PIXI.Container()
 
 
@@ -112,10 +113,17 @@ function initAll(){
   document.getElementById("mainCanvas").width=640//screenW//640
   document.getElementById("mainCanvas").height=stageH
 
-
+  renderer=new PIXI.Application(640,stageH)//=====
   document.body.appendChild(renderer.view);
-  renderer.render(pStage)
-  renderer.resize(640,stageH)
+  //renderer.render(pStage)
+  //renderer.resize(640,stageH)
+
+
+  renderer.width=640//====
+  renderer.height=stageH//====
+
+  renderer.stage.addChild(pStage)//====
+
   renderer.view.style.position="absolute"
   renderer.view.style.width=renderer.view.style.height="100%"
 
