@@ -1,5 +1,5 @@
 var global = {};
-var sys="other"//"NeteaseMusic"//"other"
+var sys="NeteaseMusic"//"NeteaseMusic"//"other"
 $(document).ready(function load (){
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
@@ -13,9 +13,9 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "智·混动 MAX秀",
-      desc: "人人都是隐藏的跨界高手",
-      link: "http://m.giccoo.com/maxshow/",
+      title: "定义我的燃动健身房",
+      desc: "快来定义我的燃动健身房",
+      link: "http://m.giccoo.com/mygym/",
       imgUrl: "http://m.giccoo.com/maxshow/img/ico.jpg",
       success: function() {},
       cancel: function() {}
@@ -626,7 +626,8 @@ $("#pngHolder").click(function(){
 //==========网易云
 function neteaseGo(){
   //document.getElementById("pngHolder").appendChild(convertCanvasToImage(renderer.view)); 
-  upload(convertCanvasToImage(renderer.view))
+ // upload(convertCanvasToImage(renderer.view))
+  upload(renderer.view.toDataURL("image/png"))
 }
 function upload(image) {
         var data;
