@@ -1,5 +1,5 @@
 var global = {};
-var sys="other"//"NeteaseMusic"//"other"
+var sys="NeteaseMusic"//"NeteaseMusic"//"other"
 $(document).ready(function load (){
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
@@ -632,7 +632,7 @@ function upload(image) {
         // console.log "upload:"
         data = {
           image: image,
-          folder:"gaokao"
+          folder:"mygym"
         };
         return axios.post(imageurl, data).then(function (msg) {
           if (msg.data.recode === 200) {
