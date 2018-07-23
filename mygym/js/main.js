@@ -1,5 +1,5 @@
 var global = {};
-var sys="NeteaseMusic"//"NeteaseMusic"//"other"
+var sys="other"//"NeteaseMusic"//"other"
 $(document).ready(function load (){
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
