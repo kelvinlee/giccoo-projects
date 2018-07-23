@@ -132,7 +132,7 @@ function initAll(){
   pageLoop()
   page1start()
 
-  alert("v1")
+  alert("v2")
   
 }
 
