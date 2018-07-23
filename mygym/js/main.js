@@ -1,8 +1,8 @@
 var global = {};
-var sys="NeteaseMusic"//"NeteaseMusic"//"other"
+var sys="other"//"NeteaseMusic"//"other"
 $(document).ready(function load (){
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
-    sys = "other";
+    sys = "NeteaseMusic";
     
     TweenLite.set($("#btnshare"),{display:"block"})
 
@@ -625,7 +625,8 @@ $("#pngHolder").click(function(){
 })
 //==========网易云
 function neteaseGo(){
-  upload(renderer.view.toDataURL("image/png"))
+  //document.getElementById("pngHolder").appendChild(convertCanvasToImage(renderer.view)); 
+  upload(convertCanvasToImage(renderer.view))
 }
 function upload(image) {
         var data;
