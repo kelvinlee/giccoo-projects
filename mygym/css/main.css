@@ -52,14 +52,14 @@ img{ width: 100%; }
 	width: 64%;
 	left: 18%;
 	z-index: 100;
-
+	display: none;
 }
 #userName{
 	position: absolute;
-	width: 64%;
-	left: 18%;
+	width: 30%;
+	left: 35%;
 	z-index: 100;
-
+	display: none;
 }
 #UserTextarea1{
 	background: transparent;

@@ -115,6 +115,8 @@ function ani2(){
 
 //============================   setP3 bubble 起名字！
 
+var ifInputName=0
+
 var p3bubble1=pSprite("img/p3bubble1.png")
 var p3bubble2=pSprite("img/p3bubble2.png")
 
@@ -126,10 +128,51 @@ function setP3bubble(){
   p3bubble2.pivot.set(320,189)
   p3bubble1.position.set(320,340)
   p3bubble2.position.set(320,340)
-  
+  p3bubble1.visible=false
+  p3bubble2.visible=false
   TweenLite.set($("#roomName"),{y:screenW/640*196})
   TweenLite.set($("#userName"),{y:screenW/640*240})
   //console.log(screenW/640*238)
+  p3btn2.tap=showBubble
+  p3btn3.tap=endP3
+}
+function endP3(){
+  if($("#UserTextarea1")[0].value==""||$("#UserTextarea1")[0].value=="给你的健身房起个名字吧"){
+    TweenLite.set($("#roomName"),{left:"10%"})
+    TweenLite.to($("#roomName"),1,{left:"18%",ease:Elastic.easeOut})
+  }else if($("#UserTextarea2")[0].value==""||$("#UserTextarea2")[0].value=="请输入你的昵称"){
+    TweenLite.set($("#userName"),{left:"27%"})
+    TweenLite.to($("#userName"),1,{left:"35%",ease:Elastic.easeOut})
+  }
+}
+function showBubble () {
+  ifInputName=1
+  p3btn2.visible=false
+  p3btn3.visible=true
+  p3bubble1.visible=true
+  p3bubble2.visible=true
+  TweenLite.set($("#roomName"),{display:"block"})
+  TweenLite.set($("#userName"),{display:"block"})
+
+  TweenMax.set(p3bubble1,{rotation:0})
+  TweenMax.set(p3bubble2,{rotation:0})
+  TweenMax.set(p3bubble1.scale,{x:1,y:1})
+  TweenMax.set(p3bubble2.scale,{x:1,y:1})
+
+  TweenMax.from(p3bubble1,1,{rotation:-1,ease:Elastic.easeOut})
+  TweenMax.from(p3bubble2,1,{rotation:1,ease:Elastic.easeOut})
+  TweenMax.from(p3bubble1.scale,1.5,{x:0,y:0,ease:Elastic.easeOut})
+  TweenMax.from(p3bubble2.scale,1.5,{x:0,y:0,ease:Elastic.easeOut})
+}
+
+function hideBubble(){
+  ifInputName=0
+  p3btn2.visible=true
+  p3btn3.visible=false
+  p3bubble1.visible=false
+  p3bubble2.visible=false
+  TweenLite.set($("#roomName"),{display:"none"})
+  TweenLite.set($("#userName"),{display:"none"})
 }
 
 $("#UserTextarea1").click(function () {
@@ -627,10 +670,17 @@ function endMove6(_e){
 
 //====================回性别选择
 function toPage2(){
-  stage3.visible=false
-  stage2.visible=true
-  console.log("<===")
+  if(ifInputName==0){
+    stage3.visible=false
+    stage2.visible=true
+    console.log("回性别选择")
+  }else{
+    
+    hideBubble()
+  }
+
 }
+
 function changeTab(){
   for (i = 0; i < btnA.length; i++) {
     if(this==btnA[i]){
