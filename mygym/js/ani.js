@@ -131,7 +131,7 @@ function setP3bubble(){
   p3bubble1.visible=false
   p3bubble2.visible=false
   TweenLite.set($("#roomName"),{y:screenW/640*196})
-  TweenLite.set($("#userName"),{y:screenW/640*240})
+  TweenLite.set($("#userName"),{y:screenW/640*242})
   //console.log(screenW/640*238)
   p3btn2.tap=showBubble
   p3btn3.tap=endP3
