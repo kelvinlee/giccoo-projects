@@ -114,6 +114,7 @@ function initAll(){
   document.getElementById("mainCanvas").height=stageH
 
   renderer=new PIXI.Application(640,stageH)//=====
+  renderer.forceCanvas=true
   document.body.appendChild(renderer.view);
   //renderer.render(pStage)
   //renderer.resize(640,stageH)
@@ -641,6 +642,7 @@ function neteaseGo(){
  // upload(convertCanvasToImage(renderer.view))
   var ctx=$("#mainCanvas")[0].getContext('2d')
   ctx.drawImage(renderer.view,0,0,640,stageH)
+  TweenLite.set($("#mainCanvas"),{display:"block","z-index":100})
   upload($("#mainCanvas")[0].toDataURL("image/png"))
   //upload(renderer.view.toDataURL("image/png"))
 }
