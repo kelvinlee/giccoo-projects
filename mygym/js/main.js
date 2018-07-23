@@ -131,6 +131,8 @@ function initAll(){
   renderer.backgroundColor=0xffffff
   pageLoop()
   page1start()
+
+  alert("v1")
   
 }
 
