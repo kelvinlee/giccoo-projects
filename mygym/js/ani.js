@@ -113,7 +113,49 @@ function ani2(){
 }
 
 
+//============================   setP3 bubble 起名字！
 
+var p3bubble1=pSprite("img/p3bubble1.png")
+var p3bubble2=pSprite("img/p3bubble2.png")
+
+function setP3bubble(){
+  stage3.addChild(p3bubble1)
+  stage3.addChild(p3bubble2)
+
+  p3bubble1.pivot.set(320,189)
+  p3bubble2.pivot.set(320,189)
+  p3bubble1.position.set(320,340)
+  p3bubble2.position.set(320,340)
+  
+  TweenLite.set($("#roomName"),{y:screenW/640*196})
+  TweenLite.set($("#userName"),{y:screenW/640*240})
+  console.log(screenW/640*238)
+}
+
+$("#UserTextarea1").click(function () {
+  if($("#UserTextarea1")[0].value=="给你的健身房起个名字吧"){
+    $("#UserTextarea1")[0].value=""
+  }
+})
+$("#UserTextarea1").blur(function () {
+  if($("#UserTextarea1")[0].value==""){
+    $("#UserTextarea1")[0].value="给你的健身房起个名字吧"
+  }
+})
+
+$("#UserTextarea2").click(function () {
+  if($("#UserTextarea2")[0].value=="请输入你的昵称"){
+    $("#UserTextarea2")[0].value=""
+  }
+})
+$("#UserTextarea2").blur(function () {
+  if($("#UserTextarea2")[0].value==""){
+    $("#UserTextarea2")[0].value="请输入你的昵称"
+  }
+})
+
+
+//============================   setP3table
 var nowTable=0
 
 var table1=PIXI.Texture.fromImage("img/p3table1.png")
@@ -194,6 +236,8 @@ function setP3table(){
   setTag2()
   setTag3()
   setTag4()
+  setTag5()
+  setTag6()
 }
 //============================改性别
 var sex0=[]
@@ -301,8 +345,8 @@ function Move2(_e){
 }
 function endMove2(_e){
   tag2.touchmove=null
-  stage2.interactive=true
-  stage2.touchend=null
+  stage3.interactive=true
+  stage3.touchend=null
 
   var endY=tag2.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2])
   if(endY>=70){    endY=70  }
@@ -446,9 +490,140 @@ function endMove4(_e){
   TweenMax.to(tag4,1,{y:endY})
 }
 
+//===================================================================tag5
+//===================================================================tag5
+var tag5icon=pSprite("img/tag5icon.png")
+var btnGroup5A=[]
+function setTag5(){
+  tag5.addChild(tag5icon)
+  tag5.interactive=true
+  tag5.touchstart=startMove5
+  for (var i = 0; i < 24; i++) {
+    var t5btn=new PIXI.Graphics()
+    t5btn.beginFill(0x005599,0)
+    t5btn.drawRect(0,0,135,135)
+    tag5.addChild(t5btn)
+    btnGroup5A.push(t5btn)
+    t5btn.x=30+i%4*145
+    t5btn.y=30+parseInt(i/4)*200
+    t5btn.interactive=true
+    t5btn.tap=selectT5
+  };
 
-//===================================================================tag5
-//===================================================================tag5
+}
+//=======================tag5点击
+function selectT5(_e){
+  for (var i = 0; i < btnGroup5A.length; i++) {
+    if(this==btnGroup5A[i]){
+      console.log("i="+i)
+
+    }
+  };
+}
+
+
+//=======================tag5滚轴
+
+function startMove5(_e){
+  TweenLite.killTweensOf(tag5)
+  newPosition=tag5.y
+  startY=_e.data.global.y
+  console.log(_e.data.global.y)
+  tag5.touchmove=Move5
+  stage3.interactive=true
+  stage3.touchend=endMove5
+  mouseYA=[0,0]
+  timeA=[0,0]
+}
+function Move5(_e){
+  tag5.y=newPosition+(_e.data.global.y-startY)*4
+  if(tag5.y>=70){    tag5.y=70  }
+  if(tag5.y<=70-1200+200) {tag5.y=70-1200+200};
+  mouseYA.push(_e.data.global.y)
+  date=new Date()
+  timeA.push(date.getTime())
+}
+function endMove5(_e){
+  tag5.touchmove=null
+  stage3.interactive=true
+  stage3.touchend=null
+
+  var endY=tag5.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2])
+  if(endY>=70){    endY=70  }
+  if(endY<=70-1200+200) {endY=70-1200+200};
+
+  TweenMax.to(tag5,1,{y:endY})
+}
+
+//===================================================================tag6
+//===================================================================tag6
+var tag6icon0=pSprite("img/tag6icon0.png")
+var tag6icon1=pSprite("img/tag6icon1.png")
+var btnGroup6A=[]
+function setTag6(){
+  tag6.addChild(tag6icon0)
+  tag6.addChild(tag6icon1)
+  sex0.push(tag6icon0)
+  sex1.push(tag6icon1)
+  for (var i = 0; i < 20; i++) {
+    var t6btn=new PIXI.Graphics()
+    t6btn.beginFill(0x005599,0)
+    t6btn.drawRect(0,0,135,135)
+    tag6.addChild(t6btn)
+    btnGroup6A.push(t6btn)
+    t6btn.x=30+i%4*145
+    t6btn.y=30+parseInt(i/4)*200
+    t6btn.interactive=true
+    t6btn.tap=selectT6
+  };
+  tag6.interactive=true
+  tag6.touchstart=startMove6
+}
+//=======================tag6点击
+function selectT6(_e){
+  for (var i = 0; i < btnGroup6A.length; i++) {
+    if(this==btnGroup6A[i]){
+      console.log("i="+i)
+
+
+    }
+  };
+}
+//=======================tag6滚轴
+
+
+function startMove6(_e){
+  TweenLite.killTweensOf(tag6)
+  newPosition=tag6.y
+  startY=_e.data.global.y
+  console.log(_e.data.global.y)
+  tag6.touchmove=Move6
+  stage3.interactive=true
+  stage3.touchend=endMove6
+  mouseYA=[0,0]
+  timeA=[0,0]
+}
+function Move6(_e){
+  tag6.y=newPosition+(_e.data.global.y-startY)*4
+  if(tag6.y>=70){    tag6.y=70  }
+  if(tag6.y<=70-1000+200) {tag6.y=70-1000+200};
+  mouseYA.push(_e.data.global.y)
+  date=new Date()
+  timeA.push(date.getTime())
+}
+function endMove6(_e){
+  tag6.touchmove=null
+  stage3.interactive=true
+  stage3.touchend=null
+
+  var endY=tag6.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2])
+  if(endY>=70){    endY=70  }
+  if(endY<=70-1000+200) {endY=70-1000+200};
+
+  TweenMax.to(tag6,1,{y:endY})
+}
+//===================================================================tagEND
+//===================================================================tagEND
 
 //====================回性别选择
 function toPage2(){

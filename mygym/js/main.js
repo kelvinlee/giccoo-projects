@@ -70,6 +70,7 @@ var loadWechatConfig = function() {
 
 //var stage = new createjs.Stage("mainCanvas");
 
+
 var renderer = PIXI.autoDetectRenderer(256,256);//PIXI.CanvasRenderer(256, 256);
 var pStage= new PIXI.Container()
 
@@ -361,8 +362,6 @@ function onp2btn1Up(){
     this.texture=p2btn1t1
     sex=1
     goPage3()
-
-
 }
 function onp2btn2Up(){
     console.log("女")
@@ -390,6 +389,6 @@ function setPage3(){
   stage3.addChild(p3table)
   setP3table()
   setRoom()
-
+  setP3bubble()
 }
 
