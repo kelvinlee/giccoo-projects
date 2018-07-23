@@ -143,6 +143,11 @@ function endP3(){
   }else if($("#UserTextarea2")[0].value==""||$("#UserTextarea2")[0].value=="请输入你的昵称"){
     TweenLite.set($("#userName"),{left:"27%"})
     TweenLite.to($("#userName"),1,{left:"35%",ease:Elastic.easeOut})
+  }else{
+    console.log("page4gogogo")
+    hideBubble()
+    p3table.visible=false
+    goPage4()
   }
 }
 function showBubble () {

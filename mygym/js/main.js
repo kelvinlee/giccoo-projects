@@ -1,8 +1,15 @@
-
+var global = {};
+var sys="other"//"NeteaseMusic"//"other"
 $(document).ready(function load (){
+  if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
+    sys = "NeteaseMusic";
+    
+    TweenLite.set($("#btnshare"),{display:"block"})
+
+  } else {
   //iniListenSound()
 	loadWechatConfig();
-  initAll()
+
   	wx.ready(function() {
     var shareContent;
     shareContent = {
@@ -18,8 +25,8 @@ $(document).ready(function load (){
     wx.onMenuShareQQ(shareContent);
     return wx.onMenuShareWeibo(shareContent);
   });
-
-
+  }
+  initAll()
 
 
 
@@ -390,5 +397,264 @@ function setPage3(){
   setP3table()
   setRoom()
   setP3bubble()
+  setUploading()
 }
 
+function goPage4(){
+  showUploading()
+}
+var uploading=new PIXI.Container()
+var uploading123=new PIXI.Container()
+
+var grids2
+var uploading1=pSprite("img/uploading1.jpg")
+var uploading2=pSprite("img/uploading2.jpg")
+var uploading3=pSprite("img/uploading3.jpg")
+
+var uploadingMask=new PIXI.Graphics()
+var uploadingLine1=new PIXI.Graphics()
+var uploadingLine2=new PIXI.Graphics()
+
+var circleA=[]
+var circleLine={_end:0}//360
+function setUploading(){
+  pStage.addChild(uploading)
+  uploading.visible=false
+  pStage.addChild(logo)
+  grids2=new PIXI.extras.TilingSprite(grid,640,stageH)
+  uploading.addChild(grids2)
+  uploading.addChild(uploading123)
+  uploading.addChild(uploadingMask)
+  uploading123.addChild(uploading3)
+  uploading123.addChild(uploading2)
+  uploading123.addChild(uploading1)
+  uploading3.pivot.x=uploading3.pivot.y=uploading2.pivot.x=uploading2.pivot.y=uploading1.pivot.x=uploading1.pivot.y=227.5
+  uploading3.x=uploading2.x=uploading1.x=320
+  uploading3.y=uploading2.y=uploading1.y=stageH/2
+
+  uploadingMask.beginFill(0x00dd00,1)
+  uploadingMask.drawCircle(0,0,227.5)
+  uploadingMask.position.set(320,stageH/2)
+
+  uploading123.mask=uploadingMask
+  TweenLite.from(uploadingMask.scale,.5,{x:0,y:0})
+
+  uploading.addChild(uploadingLine1)
+  uploading.addChild(uploadingLine2)
+
+  uploadingLine1.beginFill(0x000000,0)
+  uploadingLine1.lineStyle(16,0x808080,1,1)
+  uploadingLine1.drawCircle(320,stageH/2,265)
+
+  circleA=[]
+  var _r=265
+  for (var i = 0; i <= 360; i++) {
+    var _x
+    var _y
+    _x=_r*Math.cos((i-90)/360*2*Math.PI)
+    _y=_r*Math.sin((i-90)/360*2*Math.PI)
+    circleA.push(_x+320)
+    circleA.push(_y+stageH/2)
+    console.log(_x,_y)
+  };
+}
+function showUploading(){
+  uploading.visible=true
+  circleLine._end=0
+  TweenLite.set(uploading1,{alpha:1})
+  TweenLite.set(uploading2,{alpha:1})
+
+  TweenLite.to(uploading1,.5,{alpha:0,delay:1.5})
+  TweenLite.to(uploading2,.5,{alpha:0,delay:3.5})
+
+  //=========画圆环
+  TweenLite.to(circleLine,.5,{_end:360,onComplete:hideUploading,ease:Linear.easeNone,onUpdate:function(){//=========改这里
+    uploadingLine2.clear()
+    uploadingLine2.beginFill(0x000000,0)
+    uploadingLine2.lineStyle(16,0xe9c049,1,1)
+    uploadingLine2.drawPolygon(circleA.slice(0,parseInt(circleLine._end)*2))
+  }})
+}
+function hideUploading(){
+  uploading.visible=false
+  showPage4()
+}
+//===========================page4
+
+var p4titleBG=new PIXI.Graphics()
+var p4t1=new PIXI.Text('111',{fontSize: 30})
+var p4t2=new PIXI.Text('222',{fontSize: 22})
+var stage4=new PIXI.Container()
+var p4title=new PIXI.Container()
+
+var random3
+var footer00=pSprite("img/p4footer00.jpg")
+var footer01=pSprite("img/p4footer01.jpg")
+var footer02=pSprite("img/p4footer02.jpg")
+var footer10=pSprite("img/p4footer10.jpg")
+var footer11=pSprite("img/p4footer11.jpg")
+var footer12=pSprite("img/p4footer12.jpg")
+var footerA=[footer00,footer01,footer02,footer10,footer11,footer12]
+
+var footer=new PIXI.Container()
+var footerBG=new PIXI.Graphics()
+var p4btn1=pSprite("img/p4btn1.png")
+var p4btn2=pSprite("img/p4btn2.png")
+var p4btn3=pSprite("img/p4btn3.png")
+var p4btn4=pSprite("img/p4btn4.png")
+var p4btnA=[p4btn1,p4btn2,p4btn3,p4btn4]
+
+var p4down1=pSprite("img/p4down1.png")
+var p4down2=pSprite("img/p4down2.png")
+var p4down3=pSprite("img/p4down3.png")
+var p4down4=pSprite("img/p4down4.png")
+var p4down5=pSprite("img/p4down5.png")
+
+var p4downt00=new PIXI.Texture.fromImage("img/p4downt00.png")
+var p4downt01=new PIXI.Texture.fromImage("img/p4downt01.png")
+var p4downt02=new PIXI.Texture.fromImage("img/p4downt02.png")
+var p4downt10=new PIXI.Texture.fromImage("img/p4downt10.png")
+var p4downt11=new PIXI.Texture.fromImage("img/p4downt11.png")
+var p4downt12=new PIXI.Texture.fromImage("img/p4downt12.png")
+
+var p4downTA=[[p4downt00,p4downt01,p4downt02],[p4downt10,p4downt11,p4downt12]]
+
+var p4downT=new PIXI.Sprite(p4downt00)
+var p4downA=[p4down1,p4down2,p4down3,p4down4,p4down5,p4downT]
+
+
+
+function showPage4(){
+  pStage.addChild(stage4)
+  pStage.addChild(logo)
+
+  stage4.visible=true
+  stage4.addChild(p4title)
+
+  p4title.addChild(p4titleBG)
+  p4title.addChild(p4t1)
+  p4title.addChild(p4t2)
+
+  p4t1.text=$("#UserTextarea1")[0].value
+  p4t2.text="by："+$("#UserTextarea2")[0].value
+  p4t1.position.set(30,30)
+  p4t2.position.set(30,63)
+  p4titleBG.clear()
+  p4titleBG.beginFill(0xffffff,1)
+  p4titleBG.drawRect(0,0,640,109)
+
+  //======footer
+  random3=parseInt(Math.random()*3)
+  for (var i = 0; i < 6; i++) {
+    stage4.addChild(footerA[i])
+    footerA[i].y=stageH-265
+    if(i==sex*3+random3){
+      footerA[i].visible=true
+    }else{
+      footerA[i].visible=false
+    }
+  };
+  //======footerBtnGroup
+  stage4.addChild(footer)
+  footer.addChild(footerBG)
+  footerBG.beginFill(0xe9c049,1)
+  footerBG.drawRect(0,stageH-264,640,264)
+  var btnX=[18,78,243,412]
+  var i
+  for (i = 0; i < p4btnA.length; i++) {
+    footer.addChild(p4btnA[i])
+    p4btnA[i].y=stageH-97+100
+    p4btnA[i].rotation=0.5
+    p4btnA[i].x=btnX[i]
+    p4btnA[i].interactive=true
+    TweenLite.to(p4btnA[i],1.5,{y:stageH-97,ease:Elastic.easeOut,delay:.3+.1*i,rotation:0})
+  };
+
+  p4btn1.tap=goBackP3
+  p4btn2.tap=onPicBtn
+  //p4btn3.tap=goBackP3
+  p4btn4.tap=goLink
+
+  p4downT.texture=p4downTA[sex][random3]
+
+  for (i = 0; i < p4downA.length; i++) {
+    footer.addChild(p4downA[i])
+    p4downA[i].position.set(320,stageH-212+150)
+    p4downA[i].pivot.set(320,100)
+    p4downA[i].rotation=Math.pow(-1,i)*.5
+    p4downA[i].alpha=0
+    // p4btnA[i].rotation=0.5
+    // p4btnA[i].x=btnX[i]
+    TweenLite.to(p4downA[i],2,{alpha:1,y:stageH-212,ease:Elastic.easeOut,delay:.05*i,rotation:0})
+  };
+}
+
+function goBackP3(){
+  stage4.visible=false
+  p3table.visible=true
+}
+
+function goLink(){
+  window.location.href='http://www.baidu.com'
+}
+function onPicBtn(){
+  if(sys!="other"){
+    TweenLite.to(footer,.1,{alpha:0,onComplete:neteaseGo})
+  }else{
+    TweenLite.to(footer,.5,{alpha:0,onComplete:savePic})
+  }
+  
+}
+function savePic(){
+  document.getElementById("pngHolder").appendChild(convertCanvasToImage(renderer.view)); 
+  TweenLite.set($("#pngHolder"),{display:"block"})
+  TweenLite.set($("#shareHint"),{display:"block"})
+}
+
+function convertCanvasToImage(canvas) {
+  var image = new Image();
+  //image.crossOrigin="Anonymous"
+  image.src = canvas.toDataURL("image/png");
+  return image;
+}
+
+$("#pngHolder").click(function(){
+  TweenLite.set($("#pngHolder"),{display:"none",opacity:1})
+  TweenLite.set($("#shareHint"),{display:"none"})
+  footer.alpha=1
+})
+//==========网易云
+function neteaseGo(){
+  upload(renderer.view.toDataURL("image/png"))
+}
+function upload(image) {
+        var data;
+        // console.log "upload:"
+        data = {
+          image: image,
+          folder:"gaokao"
+        };
+        return axios.post(imageurl, data).then(function (msg) {
+          if (msg.data.recode === 200) {
+            //return main.success(msg.data);
+            console.log(msg.data.info)
+            neteaseShareImage(msg.data.info)
+
+          } else {
+
+          }
+        }).catch(function (e) {
+
+        });
+}
+
+var imageurl = "http://api.giccoo.com/api/upload/image64/";
+
+function neteaseShareImage(_picurl) {
+  var picUrl, redirectUrl, title1;
+  title1 = "定义我的燃动健身房";
+  picUrl = "http://image.giccoo.com/upload/mygym/" + _picurl + "@!large";
+  redirectUrl = "http://m.giccoo.com/mygym/";
+  console.log("orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1));
+  return window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
+};
