@@ -1,8 +1,8 @@
 var global = {};
-var sys="other"//"NeteaseMusic"//"other"
+var sys="NeteaseMusic"//"NeteaseMusic"//"other"
 $(document).ready(function load (){
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
-    sys = "NeteaseMusic";
+    sys = "other";
     
     TweenLite.set($("#btnshare"),{display:"block"})
 
