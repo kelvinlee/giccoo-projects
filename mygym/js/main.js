@@ -132,7 +132,7 @@ function initAll(){
   pageLoop()
   page1start()
 
-  alert("v2")
+  alert("v3")
   
 }
 
@@ -643,7 +643,7 @@ function neteaseGo(){
   //document.getElementById("pngHolder").appendChild(convertCanvasToImage(renderer.view)); 
  // upload(convertCanvasToImage(renderer.view))
   var ctx=$("#mainCanvas")[0].getContext('2d')
-  ctx.drawImage(renderer.view,0,0,640,stageH)
+  ctx.drawImage(renderer.view,0,0,640,stageH/2)
   TweenLite.set($("#mainCanvas"),{display:"block","z-index":100})
   upload($("#mainCanvas")[0].toDataURL("image/png"))
   //upload(renderer.view.toDataURL("image/png"))
@@ -675,7 +675,7 @@ function neteaseShareImage(_picurl) {
   var picUrl, redirectUrl, title1;
   title1 = "定义我的燃动健身房";
   picUrl = "http://image.giccoo.com/upload/mygym/" + _picurl + "@!large";
-  redirectUrl = "http://m.giccoo.com/gaokao/";
+  redirectUrl = "http://m.giccoo.com/mygym/";
   console.log("orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1));
   return window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
 };
