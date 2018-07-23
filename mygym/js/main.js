@@ -675,7 +675,7 @@ function neteaseShareImage(_picurl) {
   var picUrl, redirectUrl, title1;
   title1 = "定义我的燃动健身房";
   picUrl = "http://image.giccoo.com/upload/mygym/" + _picurl + "@!large";
-  redirectUrl = "http://m.giccoo.com/mygym/";
+  redirectUrl = "http://m.giccoo.com/gaokao/";
   console.log("orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1));
   return window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
 };
