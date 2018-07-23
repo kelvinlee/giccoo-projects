@@ -109,6 +109,10 @@ function initAll(){
   stageW=640
   stageH=screenH/screenW*640
   
+  document.getElementById("mainCanvas").width=640//screenW//640
+  document.getElementById("mainCanvas").height=stageH
+
+
   document.body.appendChild(renderer.view);
   renderer.render(pStage)
   renderer.resize(640,stageH)
@@ -627,7 +631,10 @@ $("#pngHolder").click(function(){
 function neteaseGo(){
   //document.getElementById("pngHolder").appendChild(convertCanvasToImage(renderer.view)); 
  // upload(convertCanvasToImage(renderer.view))
-  upload(renderer.view.toDataURL("image/png"))
+  var ctx=$("#mainCanvas")[0].getContext('2d')
+  ctx.drawImage(renderer.view,0,0,640,stageH)
+  upload($("#mainCanvas")[0].toDataURL("image/png"))
+  //upload(renderer.view.toDataURL("image/png"))
 }
 function upload(image) {
         var data;

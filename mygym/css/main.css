@@ -97,3 +97,10 @@ img{ width: 100%; }
 	font-size: 0;
 	bottom: 0;
 }
+#mainCanvas{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	font-size: 0;
+}
