@@ -16,7 +16,7 @@ $(document).ready(function load (){
       title: "定义我的燃动健身房",
       desc: "快来定义我的燃动健身房",
       link: "http://m.giccoo.com/mygym/",
-      imgUrl: "http://m.giccoo.com/maxshow/img/ico.jpg",
+      imgUrl: "http://m.giccoo.com/mygym/img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };
