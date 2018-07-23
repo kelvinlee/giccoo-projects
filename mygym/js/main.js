@@ -115,6 +115,7 @@ function initAll(){
 
   renderer=new PIXI.Application(640,stageH)//=====
   renderer.forceCanvas=true
+  renderer.clearBeforeRender=false
   document.body.appendChild(renderer.view);
   //renderer.render(pStage)
   //renderer.resize(640,stageH)
@@ -132,7 +133,7 @@ function initAll(){
   pageLoop()
   page1start()
 
-  alert("v3")
+  alert("v4")
   
 }
 
