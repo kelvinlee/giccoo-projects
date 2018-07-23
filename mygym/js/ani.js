@@ -129,7 +129,7 @@ function setP3bubble(){
   
   TweenLite.set($("#roomName"),{y:screenW/640*196})
   TweenLite.set($("#userName"),{y:screenW/640*240})
-  console.log(screenW/640*238)
+  //console.log(screenW/640*238)
 }
 
 $("#UserTextarea1").click(function () {
