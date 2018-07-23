@@ -362,6 +362,7 @@ function onp2btn1Up(){
     sex=1
     goPage3()
 
+
 }
 function onp2btn2Up(){
     console.log("女")
@@ -370,11 +371,12 @@ function onp2btn2Up(){
     goPage3()
 }
 
-var sex=666
+var sex=0
 
 function goPage3(){
   stage3.visible=true
   stage2.visible=false
+  changeSex()
 }
 var stage3=new PIXI.Container()
 var sq3=new PIXI.Graphics()

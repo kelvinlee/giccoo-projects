@@ -190,8 +190,128 @@ function setP3table(){
   tag2.visible=tag3.visible=tag4.visible=tag5.visible=tag6.visible=false
   tag1.y=tag2.y=tag3.y=tag4.y=tag5.y=tag6.y=70
 
+  setTag1()
+  setTag2()
   setTag3()
+  setTag4()
 }
+//============================改性别
+var sex0=[]
+var sex1=[]
+function changeSex(){
+  console.log("changeSex")
+  for (var i = 0; i < sex0.length; i++) {
+    if(sex==0){
+      sex0[i].visible=true
+      sex1[i].visible=false
+    }else{
+      sex0[i].visible=false
+      sex1[i].visible=true
+    }
+  };
+  tag1.y=tag2.y=tag3.y=tag4.y=tag5.y=tag6.y=70
+}
+//===================================================================tag1
+//===================================================================tag1
+var tag1icon0=pSprite("img/tag1icon0.png")
+var tag1icon1=pSprite("img/tag1icon1.png")
+var btnGroup1A=[]
+function setTag1(){
+  tag1.addChild(tag1icon0)
+  tag1.addChild(tag1icon1)
+  sex0.push(tag1icon0)
+  sex1.push(tag1icon1)
+  for (var i = 0; i < 4; i++) {
+    var t1btn=new PIXI.Graphics()
+    t1btn.beginFill(0x005599,0)
+    t1btn.drawRect(0,0,135,135)
+    tag1.addChild(t1btn)
+    btnGroup1A.push(t1btn)
+    t1btn.x=30+i%4*145
+    t1btn.y=30+parseInt(i/4)*200
+    t1btn.interactive=true
+    t1btn.tap=selectT1
+  };
+}
+//=======================tag1点击
+function selectT1(_e){
+  for (var i = 0; i < btnGroup1A.length; i++) {
+    if(this==btnGroup1A[i]){
+      console.log("i="+i)
+
+
+    }
+  };
+}
+//===================================================================tag2
+//===================================================================tag2
+var tag2icon0=pSprite("img/tag2icon0.png")
+var tag2icon1=pSprite("img/tag2icon1.png")
+var btnGroup2A=[]
+function setTag2(){
+  tag2.addChild(tag2icon0)
+  tag2.addChild(tag2icon1)
+  sex0.push(tag2icon0)
+  sex1.push(tag2icon1)
+  for (var i = 0; i < 16; i++) {
+    var t2btn=new PIXI.Graphics()
+    t2btn.beginFill(0x005599,0)
+    t2btn.drawRect(0,0,135,135)
+    tag2.addChild(t2btn)
+    btnGroup2A.push(t2btn)
+    t2btn.x=30+i%4*145
+    t2btn.y=30+parseInt(i/4)*200
+    t2btn.interactive=true
+    t2btn.tap=selectT2
+  };
+  tag2.interactive=true
+  tag2.touchstart=startMove2
+}
+//=======================tag2点击
+function selectT2(_e){
+  for (var i = 0; i < btnGroup2A.length; i++) {
+    if(this==btnGroup2A[i]){
+      console.log("i="+i)
+
+
+    }
+  };
+}
+//=======================tag2滚轴
+
+
+function startMove2(_e){
+  TweenLite.killTweensOf(tag2)
+  newPosition=tag2.y
+  startY=_e.data.global.y
+  console.log(_e.data.global.y)
+  tag2.touchmove=Move2
+  stage3.interactive=true
+  stage3.touchend=endMove2
+  mouseYA=[0,0]
+  timeA=[0,0]
+}
+function Move2(_e){
+  tag2.y=newPosition+(_e.data.global.y-startY)*4
+  if(tag2.y>=70){    tag2.y=70  }
+  if(tag2.y<=70-800+200) {tag2.y=70-800+200};
+  mouseYA.push(_e.data.global.y)
+  date=new Date()
+  timeA.push(date.getTime())
+}
+function endMove2(_e){
+  tag2.touchmove=null
+  stage2.interactive=true
+  stage2.touchend=null
+
+  var endY=tag2.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2])
+  if(endY>=70){    endY=70  }
+  if(endY<=70-800+200) {endY=70-800+200};
+
+  TweenMax.to(tag2,1,{y:endY})
+}
+//===================================================================tag3
+//===================================================================tag3
 var tag3icon=pSprite("img/tag3icon.png")
 var btnGroup3A=[]
 function setTag3(){
@@ -253,9 +373,6 @@ function endMove3(_e){
   tag3.touchmove=null
   stage3.interactive=true
   stage3.touchend=null
-  // console.log(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])
-  // console.log(timeA[timeA.length-1]-timeA[timeA.length-2])
-  // console.log((mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2]))
 
   var endY=tag3.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2])
   if(endY>=70){    endY=70  }
@@ -263,6 +380,75 @@ function endMove3(_e){
 
   TweenMax.to(tag3,1,{y:endY})
 }
+
+//===================================================================tag4
+//===================================================================tag4
+var tag4icon=pSprite("img/tag4icon.png")
+var btnGroup4A=[]
+function setTag4(){
+  tag4.addChild(tag4icon)
+  tag4.interactive=true
+  tag4.touchstart=startMove4
+  for (var i = 0; i < 12; i++) {
+    var t4btn=new PIXI.Graphics()
+    t4btn.beginFill(0x005599,0)
+    t4btn.drawRect(0,0,135,135)
+    tag4.addChild(t4btn)
+    btnGroup4A.push(t4btn)
+    t4btn.x=30+i%4*145
+    t4btn.y=30+parseInt(i/4)*200
+    t4btn.interactive=true
+    t4btn.tap=selectT4
+  };
+
+}
+//=======================tag4点击
+function selectT4(_e){
+  for (var i = 0; i < btnGroup4A.length; i++) {
+    if(this==btnGroup4A[i]){
+      console.log("i="+i)
+
+    }
+  };
+}
+
+
+//=======================tag4滚轴
+
+function startMove4(_e){
+  TweenLite.killTweensOf(tag4)
+  newPosition=tag4.y
+  startY=_e.data.global.y
+  console.log(_e.data.global.y)
+  tag4.touchmove=Move4
+  stage3.interactive=true
+  stage3.touchend=endMove4
+  mouseYA=[0,0]
+  timeA=[0,0]
+}
+function Move4(_e){
+  tag4.y=newPosition+(_e.data.global.y-startY)*4
+  if(tag4.y>=70){    tag4.y=70  }
+  if(tag4.y<=70-600+200) {tag4.y=70-600+200};
+  mouseYA.push(_e.data.global.y)
+  date=new Date()
+  timeA.push(date.getTime())
+}
+function endMove4(_e){
+  tag4.touchmove=null
+  stage3.interactive=true
+  stage3.touchend=null
+
+  var endY=tag4.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2])
+  if(endY>=70){    endY=70  }
+  if(endY<=70-600+200) {endY=70-600+200};
+
+  TweenMax.to(tag4,1,{y:endY})
+}
+
+
+//===================================================================tag5
+//===================================================================tag5
 
 //====================回性别选择
 function toPage2(){
