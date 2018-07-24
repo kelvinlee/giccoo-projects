@@ -1,5 +1,5 @@
 var global = {};
-var sys="NeteaseMusic"//"NeteaseMusic"//"other"
+var sys="other"//"NeteaseMusic"//"other"
 $(document).ready(function load (){
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
@@ -110,12 +110,12 @@ function initAll(){
   stageW=640
   stageH=screenH/screenW*640
   
-  document.getElementById("mainCanvas").width=640//screenW//640
-  document.getElementById("mainCanvas").height=stageH
+  // document.getElementById("mainCanvas").width=640//screenW//640
+  // document.getElementById("mainCanvas").height=stageH
 
   renderer=new PIXI.Application(640,stageH)//=====
-  renderer.forceCanvas=true
-  renderer.clearBeforeRender=false
+  //renderer.forceCanvas=true
+  //renderer.clearBeforeRender=false
   document.body.appendChild(renderer.view);
   //renderer.render(pStage)
   //renderer.resize(640,stageH)
@@ -646,6 +646,7 @@ function neteaseGo(){
   //var ctx=$("#mainCanvas")[0].getContext('2d')
   //ctx.drawImage(renderer.view,0,0,640,stageH)
   //upload($("#mainCanvas")[0].toDataURL("image/png"))
+  renderer.render(renderer.stage)
   upload(renderer.view.toDataURL("image/png"))
 
   //TweenLite.set($("#mainCanvas"),{display:"block","z-index":100})
