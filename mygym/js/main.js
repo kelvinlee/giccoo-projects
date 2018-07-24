@@ -503,14 +503,19 @@ var p4t2=new PIXI.Text('222',{fontSize: 22})
 var stage4=new PIXI.Container()
 var p4title=new PIXI.Container()
 
-var random3
+var random5
 var footer00=pSprite("img/p4footer00.jpg")
 var footer01=pSprite("img/p4footer01.jpg")
 var footer02=pSprite("img/p4footer02.jpg")
+var footer03=pSprite("img/p4footer03.jpg")
+var footer04=pSprite("img/p4footer04.jpg")
+
 var footer10=pSprite("img/p4footer10.jpg")
 var footer11=pSprite("img/p4footer11.jpg")
 var footer12=pSprite("img/p4footer12.jpg")
-var footerA=[footer00,footer01,footer02,footer10,footer11,footer12]
+var footer13=pSprite("img/p4footer13.jpg")
+var footer14=pSprite("img/p4footer14.jpg")
+var footerA=[footer00,footer01,footer02,footer03,footer04,footer10,footer11,footer12,footer13,footer14]
 
 var footer=new PIXI.Container()
 var footerBG=new PIXI.Graphics()
@@ -529,11 +534,17 @@ var p4down5=pSprite("img/p4down5.png")
 var p4downt00=new PIXI.Texture.fromImage("img/p4downt00.png")
 var p4downt01=new PIXI.Texture.fromImage("img/p4downt01.png")
 var p4downt02=new PIXI.Texture.fromImage("img/p4downt02.png")
+var p4downt03=new PIXI.Texture.fromImage("img/p4downt03.png")
+var p4downt04=new PIXI.Texture.fromImage("img/p4downt04.png")
+
 var p4downt10=new PIXI.Texture.fromImage("img/p4downt10.png")
 var p4downt11=new PIXI.Texture.fromImage("img/p4downt11.png")
 var p4downt12=new PIXI.Texture.fromImage("img/p4downt12.png")
+var p4downt13=new PIXI.Texture.fromImage("img/p4downt13.png")
+var p4downt14=new PIXI.Texture.fromImage("img/p4downt14.png")
 
-var p4downTA=[[p4downt00,p4downt01,p4downt02],[p4downt10,p4downt11,p4downt12]]
+
+var p4downTA=[[p4downt00,p4downt01,p4downt02,p4downt03,p4downt04],[p4downt10,p4downt11,p4downt12,p4downt13,p4downt14]]
 
 var p4downT=new PIXI.Sprite(p4downt00)
 var p4downA=[p4down1,p4down2,p4down3,p4down4,p4down5,p4downT]
@@ -560,11 +571,11 @@ function showPage4(){
   p4titleBG.drawRect(0,0,640,109)
 
   //======footer
-  random3=parseInt(Math.random()*3)
-  for (var i = 0; i < 6; i++) {
+  random5=parseInt(Math.random()*5)
+  for (var i = 0; i < 10; i++) {
     stage4.addChild(footerA[i])
     footerA[i].y=stageH-265
-    if(i==sex*3+random3){
+    if(i==sex*5+random5){
       footerA[i].visible=true
     }else{
       footerA[i].visible=false
@@ -591,7 +602,7 @@ function showPage4(){
   //p4btn3.tap=goBackP3
   p4btn4.tap=goLink
 
-  p4downT.texture=p4downTA[sex][random3]
+  p4downT.texture=p4downTA[sex][random5]
 
   for (i = 0; i < p4downA.length; i++) {
     footer.addChild(p4downA[i])
