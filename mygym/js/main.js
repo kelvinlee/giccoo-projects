@@ -14,7 +14,7 @@ $(document).ready(function load (){
     var shareContent;
     shareContent = {
       title: "定义我的燃动健身房",
-      desc: "快来定义我的燃动健身房",
+      desc: "全场的燃点，是你没错了！",
       link: "http://m.giccoo.com/mygym/",
       imgUrl: "http://m.giccoo.com/mygym/img/ico.jpg",
       success: function() {},

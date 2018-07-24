@@ -112,3 +112,9 @@ img{ width: 100%; }
 	z-index: 110;
 	display: none;
 }
+.topPart{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
