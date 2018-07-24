@@ -111,7 +111,7 @@ img{ width: 100%; }
 	background-color: #ffffff;
 	z-index: 110;
 	font-size: 0;
-	/*display: none;*/
+	display: none;
 }
 .topPart1{
 	/*position: absolute;*/
@@ -142,8 +142,16 @@ img{ width: 100%; }
 	/*height: 30%;*/
 	background-color: #ffffff;
 }
-
-/*哈哈哈哈哈啊哈*/
+#gobackbtn{
+	width: 45%;
+    margin: 0 auto;
+    padding: 2px 0;
+    background-color: transparent;
+    border: none;
+    /*display: inline;*/
+    float: left;
+}
+/*================*/
 
 .form {
   width: 100%;
@@ -303,8 +311,9 @@ img{ width: 100%; }
     text-align: center;
     margin-top: 0.8rem; }
     .form .form-btn button {
-      width: 40%;
+      width: 45%;
       margin: 0 auto;
       padding: 2px 0;
       background-color: transparent;
+      float: right;
       border: none; }

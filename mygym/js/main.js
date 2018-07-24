@@ -554,6 +554,9 @@ var p4downA=[p4down1,p4down2,p4down3,p4down4,p4down5,p4downT]
 
 function showPage4(){
   hideBorder()
+  for (var i = 0; i < itemA.length; i++) {
+    itemA[i].interactive=false
+  };
   pStage.addChild(stage4)
   pStage.addChild(logo)
 
@@ -601,7 +604,7 @@ function showPage4(){
 
   p4btn1.tap=goBackP3
   p4btn2.tap=onPicBtn
-  //p4btn3.tap=goBackP3
+  p4btn3.tap=showLeads
   p4btn4.tap=goLink
 
   p4downT.texture=p4downTA[sex][random5]
@@ -621,6 +624,13 @@ function showPage4(){
 function goBackP3(){
   stage4.visible=false
   p3table.visible=true
+  for (var i = 0; i < itemA.length; i++) {
+    itemA[i].interactive=true
+  };
+}
+function showLeads(){
+  TweenLite.set($("#leadspage"),{display:"block",opacity:1})
+  TweenLite.from($("#leadspage"),.5,{opacity:0})
 }
 
 function goLink(){
@@ -635,6 +645,7 @@ function onPicBtn(){
   
 }
 function savePic(){
+  document.getElementById("pngHolder").innerHTML=""
   document.getElementById("pngHolder").appendChild(convertCanvasToImage(renderer.view)); 
   TweenLite.set($("#pngHolder"),{display:"block"})
   TweenLite.set($("#shareHint"),{display:"block"})

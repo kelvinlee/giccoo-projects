@@ -208,16 +208,26 @@ riot.tag2('register', '<form onsubmit="{submit}" class="form">  <div class="form
     	}
     	$.post(opts.action,data,function(msg){
 
-    		if (msg.recode == 200) {
+    		if (msg.code == 200) {
     			alert("注册成功")
-
+          hideLayer()
     		}else{
-    			alert(msg.reason)
-    		}
+          alert(msg.reason)
+        }
     	})
     	return false
     }.bind(this)
 }, '{ }');
+
+$("#gobackbtn").click(function(){
+  hideLayer()
+})
+
+
+function hideLayer(){
+  TweenLite.set($("#leadspage"),{display:"none"})
+}
+
 
 riot.tag2('slider', '<yield></yield> <div riot-style="-webkit-transition-duration: {duration}s;transition-duration: {duration}s; -webkit-transform: translate3d({x}px,0,0); transform: translate3d({x}px,0,0);" class="slider"> <div riot-if="{repeat}" each="{bgimg in list}" class="slide"> <div class="bg"><img riot-src="{bgimg}"></div> </div><div riot-if="{repeat}" each="{bgimg in list}" class="slide"> <div class="bg"><img riot-src="{bgimg}"></div> </div><div each="{bgimg in list}" class="slide"> <div class="bg"><img riot-src="{bgimg}"></div> </div> </div>', '', '', function(opts) {
 var list, self, slider;
