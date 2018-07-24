@@ -133,7 +133,7 @@ function initAll(){
   pageLoop()
   page1start()
 
-  alert("v7")
+  //alert("v7")
   
 }
 
@@ -414,6 +414,7 @@ function setPage3(){
   setRoom()
   setP3bubble()
   setUploading()
+  setItem()
 }
 
 function goPage4(){
@@ -471,7 +472,7 @@ function setUploading(){
     _y=_r*Math.sin((i-90)/360*2*Math.PI)
     circleA.push(_x+320)
     circleA.push(_y+stageH/2)
-    console.log(_x,_y)
+    //console.log(_x,_y)
   };
 }
 function showUploading(){
@@ -552,6 +553,7 @@ var p4downA=[p4down1,p4down2,p4down3,p4down4,p4down5,p4downT]
 
 
 function showPage4(){
+  hideBorder()
   pStage.addChild(stage4)
   pStage.addChild(logo)
 
