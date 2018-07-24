@@ -104,3 +104,17 @@ img{ width: 100%; }
 	bottom: 0;
 	font-size: 0;
 }
+#leadspage{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #ffffff;
+	z-index: 110;
+	display: none;
+}
+.topPart{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
