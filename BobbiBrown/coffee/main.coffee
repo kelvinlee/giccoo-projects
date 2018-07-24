@@ -30,7 +30,7 @@ musicIconCache = null
 sys = ""
 ugcCache = null
 sended = [false,false]
-_CDN = "./"
+_CDN = "//image.giccoo.com/projects/BobbiBrown/"
 
 neteaseShareImage = ->
 	title1 = "快来玩游戏，赢Bobbi Brown正装粉底液！"

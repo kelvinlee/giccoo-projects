@@ -20,15 +20,16 @@
     </script>
   </head>
   <body>
+    <!-- - url = ".";-->
     <div id="qrcode" class="qrcode">
-      <div class="qr"><img src="./img/qrcode.png">
+      <div class="qr"><img src="//image.giccoo.com/projects/BobbiBrown/img/qrcode.png">
         <div class="text">请使用手机扫描二维码参与活动</div>
       </div>
     </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="loading fadeIn animated">
-        <div class="build"><img src="./img/loading-bg.png" class="buildmove">
-          <div class="person"><img src="./img/loading-person.gif"></div>
+        <div class="build"><img src="//image.giccoo.com/projects/BobbiBrown/img/loading-bg.png" class="buildmove">
+          <div class="person"><img src="//image.giccoo.com/projects/BobbiBrown/img/loading-person.gif"></div>
         </div>
         <div class="load-text"><span>Loading..{{progress}}%</span></div>
       </div>
@@ -52,8 +53,8 @@
         <div v-show="pageInfoShow" class="page page-info">
           <div class="content">
             <div class="model">
-              <div @click="pageInfoShow = false" class="head"><img src="./img/pop-head.png"></div>
-              <div class="model-content"><img src="./img/pop-rule.png"></div>
+              <div @click="pageInfoShow = false" class="head"><img src="//image.giccoo.com/projects/BobbiBrown/img/pop-head.png"></div>
+              <div class="model-content"><img src="//image.giccoo.com/projects/BobbiBrown/img/pop-rule.png"></div>
             </div>
           </div>
         </div>
@@ -62,10 +63,10 @@
         <div v-show="lotteryShow &amp;&amp; !lottery" class="page page-info">
           <div class="content">
             <div class="model">
-              <div @click="lotteryShow = false" class="head"><img src="./img/pop-head.png"></div>
-              <div class="model-content bigger2"><img src="./img/pop-faild.png">
-                <div @click="restart" class="btn restart"><img src="./img/pop-restart.png"></div>
-                <div @click="buyNow" class="btn"><img src="./img/pop-buy.png"></div>
+              <div @click="lotteryShow = false" class="head"><img src="//image.giccoo.com/projects/BobbiBrown/img/pop-head.png"></div>
+              <div class="model-content bigger2"><img src="//image.giccoo.com/projects/BobbiBrown/img/pop-faild.png">
+                <div @click="restart" class="btn restart"><img src="//image.giccoo.com/projects/BobbiBrown/img/pop-restart.png"></div>
+                <div @click="buyNow" class="btn"><img src="//image.giccoo.com/projects/BobbiBrown/img/pop-buy.png"></div>
               </div>
             </div>
           </div>
@@ -75,23 +76,23 @@
         <div v-show="lotteryShow &amp;&amp; lottery" class="page page-info">
           <div class="content">
             <div class="model">
-              <div @click="lotteryShow = false" class="head"><img src="./img/pop-head.png"></div>
-              <div v-show="lotteryFormShow" class="model-content"><img src="./img/pop-title.png">
+              <div @click="lotteryShow = false" class="head"><img src="//image.giccoo.com/projects/BobbiBrown/img/pop-head.png"></div>
+              <div v-show="lotteryFormShow" class="model-content"><img src="//image.giccoo.com/projects/BobbiBrown/img/pop-title.png">
                 <form class="form">
                   <div class="form-group">
-                    <label for="username"><img src="./img/icon-1.png"></label>
+                    <label for="username"><img src="//image.giccoo.com/projects/BobbiBrown/img/icon-1.png"></label>
                     <input id="username" placeholder="请输入您的姓名" type="text" v-model="form.username">
                   </div>
                   <div class="form-group">
-                    <label for="mobile"><img src="./img/icon-2.png"></label>
+                    <label for="mobile"><img src="//image.giccoo.com/projects/BobbiBrown/img/icon-2.png"></label>
                     <input placeholder="请输入您的联系方式" type="text" v-model="form.mobile">
                   </div>
                   <div class="form-group">
-                    <label for="address"><img src="./img/icon-3.png"></label>
+                    <label for="address"><img src="//image.giccoo.com/projects/BobbiBrown/img/icon-3.png"></label>
                     <input placeholder="请输入您的收货地址" type="text" v-model="form.address">
                   </div>
                   <div class="form-group custom-select">
-                    <label for="color"><img src="./img/icon-4.png"></label>
+                    <label for="color"><img src="//image.giccoo.com/projects/BobbiBrown/img/icon-4.png"></label>
                     <div @click="select = !select" class="select"><span>{{form.color}}</span>
                       <div v-show="select" class="box-select">
                         <div @click.stop="select = false ; form.color = '0号 PORCELAIN瓷白'" class="option"><span style="background-color: #f0cfb4"></span> 0号 PORCELAIN瓷白</div>
@@ -102,10 +103,10 @@
                     </div>
                   </div>
                 </form>
-                <div @click="submit" class="btn-submit"><img src="./img/btn-submit.png"></div>
+                <div @click="submit" class="btn-submit"><img src="//image.giccoo.com/projects/BobbiBrown/img/btn-submit.png"></div>
               </div>
-              <div v-show="!lotteryFormShow" class="model-content bigger"><img src="./img/pop-success.png">
-                <div @click="buyNow" class="btn"><img src="./img/pop-buy.png"></div>
+              <div v-show="!lotteryFormShow" class="model-content bigger"><img src="//image.giccoo.com/projects/BobbiBrown/img/pop-success.png">
+                <div @click="buyNow" class="btn"><img src="//image.giccoo.com/projects/BobbiBrown/img/pop-buy.png"></div>
               </div>
             </div>
           </div>
@@ -113,8 +114,8 @@
       </transition>
       <transition name="page-animation">
         <div v-show="!startgame" class="page page-wait">
-          <div class="title"><img src="./img/wait-title.png"></div>
-          <div @click="startgame = !startgame" class="btn play"><img src="./img/btn-play.png"></div>
+          <div class="title"><img src="//image.giccoo.com/projects/BobbiBrown/img/wait-title.png"></div>
+          <div @click="startgame = !startgame" class="btn play"><img src="//image.giccoo.com/projects/BobbiBrown/img/btn-play.png"></div>
         </div>
       </transition>
       <transition name="page-animation">
