@@ -485,7 +485,7 @@ function showUploading(){
   TweenLite.to(uploading2,.5,{alpha:0,delay:3.5})
 
   //=========画圆环
-  TweenLite.to(circleLine,.5,{_end:360,onComplete:hideUploading,ease:Linear.easeNone,onUpdate:function(){//=========改这里
+  TweenLite.to(circleLine,5.5,{_end:360,onComplete:hideUploading,ease:Linear.easeNone,onUpdate:function(){//=========改这里
     uploadingLine2.clear()
     uploadingLine2.beginFill(0x000000,0)
     uploadingLine2.lineStyle(16,0xe9c049,1,1)
