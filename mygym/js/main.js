@@ -113,7 +113,7 @@ function initAll(){
   // document.getElementById("mainCanvas").width=640//screenW//640
   // document.getElementById("mainCanvas").height=stageH
 
-  renderer=new PIXI.Application(640,stageH)//=====
+  renderer=new PIXI.Application({width:640,height:stageH,transparent: true,preserveDrawingBuffer: true})//=====
   //renderer.forceCanvas=true
   //renderer.clearBeforeRender=false
   document.body.appendChild(renderer.view);
