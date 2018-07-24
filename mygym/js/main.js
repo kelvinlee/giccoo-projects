@@ -133,7 +133,7 @@ function initAll(){
   pageLoop()
   page1start()
 
-  alert("v6")
+  alert("v7")
   
 }
 
@@ -647,7 +647,7 @@ function neteaseGo(){
   //ctx.drawImage(renderer.view,0,0,640,stageH)
   //upload($("#mainCanvas")[0].toDataURL("image/png"))
   renderer.render(renderer.stage)
-  upload(renderer.view.toDataURL("image/png"))
+  upload(renderer.view.toDataURL())
 
   //TweenLite.set($("#mainCanvas"),{display:"block","z-index":100})
 }
