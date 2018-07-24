@@ -624,7 +624,7 @@ function goBackP3(){
 }
 
 function goLink(){
-  window.location.href='http://www.baidu.com'
+  window.location.href='https://music.163.com/#/playlist?id=2313379164'
 }
 function onPicBtn(){
   if(sys!="other"){
