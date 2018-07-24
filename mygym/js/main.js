@@ -133,7 +133,7 @@ function initAll(){
   pageLoop()
   page1start()
 
-  alert("v4")
+  alert("v5")
   
 }
 
@@ -641,13 +641,14 @@ $("#pngHolder").click(function(){
 })
 //==========网易云
 function neteaseGo(){
-  //document.getElementById("pngHolder").appendChild(convertCanvasToImage(renderer.view)); 
- // upload(convertCanvasToImage(renderer.view))
-  var ctx=$("#mainCanvas")[0].getContext('2d')
-  ctx.drawImage(renderer.view,0,0,640,stageH/2)
-  TweenLite.set($("#mainCanvas"),{display:"block","z-index":100})
-  upload($("#mainCanvas")[0].toDataURL("image/png"))
-  //upload(renderer.view.toDataURL("image/png"))
+
+
+  //var ctx=$("#mainCanvas")[0].getContext('2d')
+  //ctx.drawImage(renderer.view,0,0,640,stageH)
+  //upload($("#mainCanvas")[0].toDataURL("image/png"))
+  upload(renderer.view.toDataURL("image/png"))
+
+  //TweenLite.set($("#mainCanvas"),{display:"block","z-index":100})
 }
 function upload(image) {
         var data;
