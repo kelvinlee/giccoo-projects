@@ -330,7 +330,7 @@ function selectT1(_e){
   for (var i = 0; i < btnGroup1A.length; i++) {
     if(this==btnGroup1A[i]){
       console.log("i="+i)
-
+      addItem(1,sex,i)
 
     }
   };
@@ -364,7 +364,7 @@ function selectT2(_e){
   for (var i = 0; i < btnGroup2A.length; i++) {
     if(this==btnGroup2A[i]){
       console.log("i="+i)
-
+      addItem(2,sex,i)
 
     }
   };
@@ -499,7 +499,7 @@ function selectT4(_e){
   for (var i = 0; i < btnGroup4A.length; i++) {
     if(this==btnGroup4A[i]){
       console.log("i="+i)
-
+      addItem(4,null,i)
     }
   };
 }
@@ -564,7 +564,7 @@ function selectT5(_e){
   for (var i = 0; i < btnGroup5A.length; i++) {
     if(this==btnGroup5A[i]){
       console.log("i="+i)
-
+      addItem(5,null,i)
     }
   };
 }
@@ -632,7 +632,11 @@ function selectT6(_e){
   for (var i = 0; i < btnGroup6A.length; i++) {
     if(this==btnGroup6A[i]){
       console.log("i="+i)
-
+      if(i<12){
+        addItem(6,sex,i)
+      }else{
+        addItem(6,null,i)
+      }
 
     }
   };
@@ -673,6 +677,211 @@ function endMove6(_e){
 //===================================================================tagEND
 //===================================================================tagEND
 
+
+//===================================================================setITEM
+//===================================================================setITEM
+var itemContainer=new PIXI.Container()
+var itemA=[]
+
+function setItem(){//======只一次
+  room.addChild(itemContainer)
+  roomBg.interactive=true
+  roomBg.tap=hideBorder
+
+}
+function hideBorder(){
+  btnZoom.visible=false
+  btnClose.visible=false
+  itemBorder.visible=false
+}
+var _picURL
+function addItem(_tag,_sex,_i){
+
+  if(_sex==0||_sex==1){
+    _picURL="img/pic/tag"+_tag+"_"+_sex+"_"+_i+".png"
+  }else{
+    _picURL="img/pic/tag"+_tag+"_"+_i+".png"
+  }
+
+
+
+  if(PIXI.loader.resources[_picURL]){
+    console.log("有了")
+    ItemLoaded()
+  }else{
+    console.log("没有")
+    PIXI.loader
+      .add(_picURL)
+      .load(ItemLoaded)
+  }
+    
+
+  
+
+}
+var itemBorder=new PIXI.Graphics()
+var btnClose=pSprite("img/btnclose.png")
+var btnZoom=pSprite("img/btnzoom.png")
+function ItemLoaded(){
+  btnZoom.visible=true
+  btnClose.visible=true
+  itemBorder.visible=true
+  var item =new PIXI.Sprite(PIXI.loader.resources[_picURL].texture)
+  itemContainer.addChild(item)
+  item.pivot.set(item.width/2,item.height/2)
+  item.position.set(320+Math.random()*50-25,stageH/2+Math.random()*50-25)
+  item.scale.x=item.scale.y=.66
+  itemA.push(item)
+  item.interactive=true
+  item.touchstart=selectItem
+
+  itemContainer.addChild(itemBorder)
+
+
+  itemBorder.clear()
+  itemBorder.beginFill(0x000000,0)
+  itemBorder.lineStyle(2,0x888888,1,1)
+  itemBorder.drawRect(0,0,item.width,item.height)
+  itemBorder.pivot.set(item.width/2,item.height/2)
+  itemBorder.x=item.x
+  itemBorder.y=item.y
+
+  btnClose.interactive=true
+  btnZoom.interactive=true
+  btnClose.tap=deleteItem
+  btnZoom.touchstart=zoomItem
+
+  itemContainer.addChild(btnClose)
+  itemContainer.addChild(btnZoom)
+  btnZoom.pivot.set(12,12)
+  btnClose.pivot.set(12,12)
+  btnZoom.x=item.x+item.width/2
+  btnZoom.y=item.y-item.height/2
+  btnClose.x=item.x-item.width/2
+  btnClose.y=item.y+item.height/2
+
+  _tar=[]
+  _tar.push(item)
+}
+
+var _tempX,_tempY,_mouseX,_mouseY
+var _tar=[]
+function selectItem(_e){
+  btnZoom.visible=true
+  btnClose.visible=true
+  itemBorder.visible=true
+  _tar=[]
+  _tar.push(_e.currentTarget)
+  console.log(_e)
+  itemContainer.addChild(_e.currentTarget)
+  _e.currentTarget.touchmove=moveItem
+  _tempX=_e.currentTarget.x
+  _tempY=_e.currentTarget.y
+  _mouseX=_e.data.global.x
+  _mouseY=_e.data.global.y
+
+  itemContainer.addChild(itemBorder)
+  itemBorder.clear()
+  itemBorder.beginFill(0x000000,0)
+  itemBorder.lineStyle(2,0x888888,1,1)
+  itemBorder.drawRect(0,0,_e.currentTarget.width,_e.currentTarget.height)
+  itemBorder.pivot.set(_e.currentTarget.width/2,_e.currentTarget.height/2)
+  itemBorder.x=_e.currentTarget.x
+  itemBorder.y=_e.currentTarget.y
+
+  itemContainer.addChild(btnClose)
+  itemContainer.addChild(btnZoom)
+  btnZoom.pivot.set(12,12)
+  btnClose.pivot.set(12,12)
+  btnZoom.x=_e.currentTarget.x+_e.currentTarget.width/2
+  btnZoom.y=_e.currentTarget.y-_e.currentTarget.height/2
+  btnClose.x=_e.currentTarget.x-_e.currentTarget.width/2
+  btnClose.y=_e.currentTarget.y+_e.currentTarget.height/2
+}
+function moveItem(_e){//=========拖拽 移动
+  _e.currentTarget.x=_tempX+_e.data.global.x-_mouseX
+  _e.currentTarget.y=_tempY+_e.data.global.y-_mouseY
+  _e.currentTarget.touchend=stopMove
+
+  itemContainer.addChild(itemBorder)
+  itemBorder.clear()
+  itemBorder.beginFill(0x000000,0)
+  itemBorder.lineStyle(2,0x888888,1,1)
+  itemBorder.drawRect(0,0,this.width,this.height)
+  itemBorder.pivot.set(this.width/2,this.height/2)
+  itemBorder.x=_e.currentTarget.x
+  itemBorder.y=_e.currentTarget.y
+  //console.log(_e.currentTarget)
+
+  itemContainer.addChild(btnClose)
+  itemContainer.addChild(btnZoom)
+  btnZoom.pivot.set(12,12)
+  btnClose.pivot.set(12,12)
+  btnZoom.x=_e.currentTarget.x+_e.currentTarget.width/2
+  btnZoom.y=_e.currentTarget.y-_e.currentTarget.height/2
+  btnClose.x=_e.currentTarget.x-_e.currentTarget.width/2
+  btnClose.y=_e.currentTarget.y+_e.currentTarget.height/2
+}
+function stopMove(_e){
+  _e.currentTarget.touchmove=null
+}
+
+function deleteItem(_e){
+  itemContainer.removeChild(_tar[0])
+  btnZoom.visible=false
+  btnClose.visible=false
+  itemBorder.visible=false
+  _tar=[]
+}
+
+function zoomItem(_e){
+  _tempX=_e.currentTarget.x
+  _tempY=_e.currentTarget.y
+  _mouseX=_e.data.global.x
+  _mouseY=_e.data.global.y
+  btnZoom.touchmove=zoomMove
+  _tar[0].interactive=false
+}
+function zoomMove(_e){
+  btnZoom.x=_tempX+_e.data.global.x-_mouseX
+  btnZoom.y=_tempY+_e.data.global.y-_mouseY
+  btnZoom.touchend=zoomStop
+  
+  // //_tar[0].height=-(btnZoom.y-_tar[0].y)*2
+  if (btnZoom.x>=_tar[0].x) {
+    _tar[0].scale.x=1
+    _tar[0].width=(btnZoom.x-_tar[0].x)*2
+  }else{
+    _tar[0].scale.x=-1
+    _tar[0].width=-(btnZoom.x-_tar[0].x)*2
+  }
+
+  if (btnZoom.y>=_tar[0].y) {
+    _tar[0].scale.y=1
+    _tar[0].height=-(btnZoom.y-_tar[0].y)*2
+  }else{
+    _tar[0].scale.y=-1
+    _tar[0].height=(btnZoom.y-_tar[0].y)*2
+  }
+
+  itemBorder.clear()
+  itemBorder.beginFill(0x000000,0)
+  itemBorder.lineStyle(2,0x888888,1,1)
+  itemBorder.drawRect(0,0,_tar[0].width,_tar[0].height)
+  itemBorder.pivot.set(_tar[0].width/2,_tar[0].height/2)
+  itemBorder.x=_tar[0].x
+  itemBorder.y=_tar[0].y
+
+  btnClose.x=_tar[0].x-_tar[0].width/2
+  btnClose.y=_tar[0].y+_tar[0].height/2
+
+  //_tar[0].pivot.set(_tar[0].width/2,_tar[0].height/2)
+}
+function zoomStop(_e){
+  btnZoom.touchmove=null
+   _tar[0].interactive=true
+
+}
 //====================回性别选择
 function toPage2(){
   if(ifInputName==0){
