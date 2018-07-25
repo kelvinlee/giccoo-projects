@@ -141,6 +141,17 @@ function pageLoop(){
   requestAnimationFrame(pageLoop)
   renderer.render(pStage)
 }
+
+
+//=====临时
+
+// $("#leadspage").click(function(){//gobackbtn
+//   console.log(111)
+//   hideLayer()
+// })
+console.log($("#gobackbtn").opacity)
+
+
 //============================================//============================================p1 第一页
 var logo=pSprite("img/logo.png")
 var title=pSprite("img/p1title.png")
@@ -619,6 +630,11 @@ function showPage4(){
     // p4btnA[i].x=btnX[i]
     TweenLite.to(p4downA[i],2,{alpha:1,y:stageH-212,ease:Elastic.easeOut,delay:.05*i,rotation:0})
   };
+  footer.addChild(finalhint)
+  finalhint.pivot.set(103,182)
+  finalhint.x=151
+  finalhint.y=stageH-98
+  finalhint.visible=false
 }
 
 function goBackP3(){
@@ -627,16 +643,30 @@ function goBackP3(){
   for (var i = 0; i < itemA.length; i++) {
     itemA[i].interactive=true
   };
+  ifnotSave=1
 }
 function showLeads(){
   TweenLite.set($("#leadspage"),{display:"block",opacity:1})
   TweenLite.from($("#leadspage"),.5,{opacity:0})
 }
-
+var ifnotSave=1
+var finalhint=pSprite("img/finalhint.png")
 function goLink(){
-  window.location.href='https://music.163.com/#/playlist?id=2313379164'
+  if(ifnotSave==1){
+    ifnotSave=0
+    //alert("记得保存哟")
+    finalhint.visible=true
+    TweenLite.from(finalhint.scale,1.2,{x:0,y:0,ease:Elastic.easeOut})
+    TweenLite.from(finalhint,1.5,{y:"-=15",rotation:-0.8,ease:Elastic.easeOut})
+  }else{
+    window.location.href='https://music.163.com/#/playlist?id=2313379164'
+  }
+
+  
 }
 function onPicBtn(){
+  ifnotSave=0
+  finalhint.visible=false
   if(sys!="other"){
     TweenLite.to(footer,.1,{alpha:0,onComplete:neteaseGo})
   }else{
@@ -645,6 +675,7 @@ function onPicBtn(){
   
 }
 function savePic(){
+
   document.getElementById("pngHolder").innerHTML=""
   document.getElementById("pngHolder").appendChild(convertCanvasToImage(renderer.view)); 
   TweenLite.set($("#pngHolder"),{display:"block"})

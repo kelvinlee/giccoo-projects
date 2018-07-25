@@ -148,7 +148,7 @@ this.root.addEventListener("touchmove", this.move.bind(this));
 this.root.addEventListener("touchend", this.end.bind(this));
 });
 
-riot.tag2('register', '<form onsubmit="{submit}" class="form">  <div class="form-grounp">     <label for="username">姓 名</label>     <input id="username" type="text" name="username">   </div>  <div class="form-grounp">     <label for="mobile">手 机</label>     <input id="mobile" type="text" name="mobile">   </div>  <div class="form-grounp"> <label for="province">省/市</label> <div class="comb"> <div class="select"><span>{provinceName}</span> <select id="province" name="province" onchange="{changeProvince}"> <option each="{name in province}" value="{name}">{name}</option> </select> </div> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeCity}"> <option each="{name in city}" value="{name}">{name}</option> </select></div> </div>  </div>  <div class="form-grounp"> <label for="dealer">经销商</label> <div class="select"><span>{dealerName}</span> <select id="dealer" name="dealer" onchange="{changeDealer}"> <option each="{dealer}" value="{code}">{name}</option> </select> </div></div><div class="form-btn"><div id="gobackbtn" class="submit"><img src="img/gobackbtn.png"></div> <button type="submit" class="submit"><img src="img/submit.png"></button></div></form>', '', '', function(opts) {
+riot.tag2('register', '<form onsubmit="{submit}" class="form">  <div class="form-grounp">     <label for="username">姓 名</label>     <input id="username" type="text" name="username">   </div>  <div class="form-grounp">     <label for="mobile">手 机</label>     <input id="mobile" type="text" name="mobile">   </div>  <div class="form-grounp"> <label for="province">省/市</label> <div class="comb"> <div class="select"><span>{provinceName}</span> <select id="province" name="province" onchange="{changeProvince}"> <option each="{name in province}" value="{name}">{name}</option> </select> </div> <div class="select"><span>{cityName}</span> <select id="city" name="city" onchange="{changeCity}"> <option each="{name in city}" value="{name}">{name}</option> </select></div> </div>  </div>  <div class="form-grounp"> <label for="dealer">经销商</label> <div class="select"><span>{dealerName}</span> <select id="dealer" name="dealer" onchange="{changeDealer}"> <option each="{dealer}" value="{code}">{name}</option> </select> </div></div><div class="form-btn"><div onclick="hideLayer()" id="gobackbtn" class="submit"><img id="gobackbtn2" src="img/gobackbtn.png"></div> <button type="submit" class="submit"><img src="img/submit.png"></button></div></form>', '', '', function(opts) {
     var self = this
     this.cityData = _citys
     var province = []
@@ -220,6 +220,7 @@ riot.tag2('register', '<form onsubmit="{submit}" class="form">  <div class="form
 }, '{ }');
 
 $("#gobackbtn").click(function(){
+  console.log(1112)
   hideLayer()
 })
 
