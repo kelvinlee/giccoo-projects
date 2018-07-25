@@ -384,7 +384,7 @@ function startMove2(_e){
   timeA=[0,0]
 }
 function Move2(_e){
-  tag2.y=newPosition+(_e.data.global.y-startY)*4
+  tag2.y=newPosition+(_e.data.global.y-startY)*2
   if(tag2.y>=70){    tag2.y=70  }
   if(tag2.y<=70-800+200) {tag2.y=70-800+200};
   mouseYA.push(_e.data.global.y)
@@ -454,7 +454,7 @@ function startMove3(_e){
   timeA=[0,0]
 }
 function Move3(_e){
-  tag3.y=newPosition+(_e.data.global.y-startY)*4
+  tag3.y=newPosition+(_e.data.global.y-startY)*2
   if(tag3.y>=70){    tag3.y=70  }
   if(tag3.y<=70-1200+200) {tag3.y=70-1200+200};
   mouseYA.push(_e.data.global.y)
@@ -519,7 +519,7 @@ function startMove4(_e){
   timeA=[0,0]
 }
 function Move4(_e){
-  tag4.y=newPosition+(_e.data.global.y-startY)*4
+  tag4.y=newPosition+(_e.data.global.y-startY)*2
   if(tag4.y>=70){    tag4.y=70  }
   if(tag4.y<=70-600+200) {tag4.y=70-600+200};
   mouseYA.push(_e.data.global.y)
@@ -584,7 +584,7 @@ function startMove5(_e){
   timeA=[0,0]
 }
 function Move5(_e){
-  tag5.y=newPosition+(_e.data.global.y-startY)*4
+  tag5.y=newPosition+(_e.data.global.y-startY)*2
   if(tag5.y>=70){    tag5.y=70  }
   if(tag5.y<=70-1200+200) {tag5.y=70-1200+200};
   mouseYA.push(_e.data.global.y)
@@ -656,7 +656,7 @@ function startMove6(_e){
   timeA=[0,0]
 }
 function Move6(_e){
-  tag6.y=newPosition+(_e.data.global.y-startY)*4
+  tag6.y=newPosition+(_e.data.global.y-startY)*2
   if(tag6.y>=70){    tag6.y=70  }
   if(tag6.y<=70-1000+200) {tag6.y=70-1000+200};
   mouseYA.push(_e.data.global.y)
@@ -894,19 +894,29 @@ function toPage2(){
   }
 
 }
-
+var firstRoll=[1,1,1,1,1,1]
 function changeTab(){
   for (i = 0; i < btnA.length; i++) {
     if(this==btnA[i]){
       console.log(i)
+      if(nowTable!=i&&i!=0&&firstRoll[i]==1){TweenLite.from(tagA[i],1,{y:-400,overwrite:0});firstRoll[i]=0}//&&firstRoll==1
       nowTable=i
       tagA[i].visible=true
+
     }else{
       tagA[i].visible=false
     }
   };
   table.texture=tableTextureA[nowTable]
 }
+
+function autoScroll(){
+  console.log("nowTable",nowTable);
+  console.log("tagA[nowTable].y",tagA[nowTable].y);
+  //tagA[nowTable].y=-100
+  //TweenLite.from(tagA[nowTable],1,{y:-150,overwrite:0})
+}
+
 
 //===========================================设置房间
 var room=new PIXI.Container()
