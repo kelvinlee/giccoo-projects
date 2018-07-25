@@ -16,7 +16,7 @@ $(document).ready(function load (){
       title: "定义我的燃动健身房",
       desc: "新高尔夫，点“燃”你的理想健身房！",
       link: "http://m.giccoo.com/mygym/",
-      imgUrl: "http://m.giccoo.com/mygym/img/ico1.jpg",
+      imgUrl: "http://m.giccoo.com/mygym/img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };
