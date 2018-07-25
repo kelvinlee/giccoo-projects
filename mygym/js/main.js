@@ -648,7 +648,23 @@ function goBackP3(){
 function showLeads(){
   TweenLite.set($("#leadspage"),{display:"block",opacity:1})
   TweenLite.from($("#leadspage"),.5,{opacity:0})
+
+  carLoop()
 }
+var opacityA=[1,0,0]
+function carLoop(){
+  TweenLite.to($("#car1"),1,{opacity:opacityA[0],delay:2,onComplete:carLoop})
+  TweenLite.to($("#car2"),1,{opacity:opacityA[1],delay:2})
+  TweenLite.to($("#car3"),1,{opacity:opacityA[2],delay:2})
+  if(opacityA[0]==1){
+    opacityA=[0,1,0]
+  }else if(opacityA[1]==1){
+    opacityA=[0,0,1]
+  }else{
+    opacityA=[1,0,0]
+  }
+}
+
 var ifnotSave=1
 var finalhint=pSprite("img/finalhint.png")
 function goLink(){
