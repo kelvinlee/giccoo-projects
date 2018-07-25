@@ -645,11 +645,16 @@ function goBackP3(){
   };
   ifnotSave=1
 }
+var firstLoop=1
 function showLeads(){
   TweenLite.set($("#leadspage"),{display:"block",opacity:1})
   TweenLite.from($("#leadspage"),.5,{opacity:0})
 
-  carLoop()
+  if(firstLoop==1){
+    carLoop()
+    firstLoop=0
+  }
+  
 }
 var opacityA=[1,0,0]
 function carLoop(){
