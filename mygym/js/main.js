@@ -651,7 +651,7 @@ function showLeads(){
   TweenLite.from($("#leadspage"),.5,{opacity:0})
 
   if(firstLoop==1){
-    carLoop()
+    //carLoop()
     firstLoop=0
   }
   
