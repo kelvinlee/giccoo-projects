@@ -724,7 +724,7 @@ function neteaseGo(){
   //upload($("#mainCanvas")[0].toDataURL("image/png"))
   renderer.render(renderer.stage)
   upload(renderer.view.toDataURL())
-
+  TweenLite.to(footer,1,{alpha:1})
   //TweenLite.set($("#mainCanvas"),{display:"block","z-index":100})
 }
 function upload(image) {
