@@ -20,7 +20,17 @@ $(document).ready(function load (){
       success: function() {},
       cancel: function() {}
     };
-    wx.onMenuShareTimeline(shareContent);
+
+    var shareContent2;
+    shareContent2 = {
+      title: "【定义我的燃动健身房】新高尔夫，点“燃”你的理想健身房！",
+      desc: "",
+      link: "http://m.giccoo.com/mygym/",
+      imgUrl: "http://m.giccoo.com/mygym/img/ico.jpg",
+      success: function() {},
+      cancel: function() {}
+    };
+    wx.onMenuShareTimeline(shareContent2);
     wx.onMenuShareAppMessage(shareContent);
     wx.onMenuShareQQ(shareContent);
     return wx.onMenuShareWeibo(shareContent);
