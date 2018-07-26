@@ -7997,17 +7997,6 @@
 		"sC": 0,
 		"tS": 1
 		},
-	"\/Levi\/coffee\/UGC.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/Levi\/js\/UGC.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
 	"\/Levi\/css": {
 		"ft": 65536,
 		"oA": 1,
