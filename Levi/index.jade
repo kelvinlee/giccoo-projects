@@ -1,0 +1,222 @@
+extends ../libs/jade/layout-clean
+
+block title
+  | 测测你的颜值在线吗？
+
+block css
+  meta(name="author",content="m.giccoo.com")
+  //- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+  link(rel="stylesheet",href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css")
+  link(rel="stylesheet",href="css/base.css")
+  script.
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+block content
+  - url = "//image.giccoo.com/projects/BobbiBrown";
+  - url = ".";
+  .qrcode#qrcode
+    .qr
+      img(src="#{url}/img/qrcode.png")
+      .text 请使用手机扫描二维码参与活动
+
+  //- .public#public
+    player(icon="true",src="#{url}/mp3/bgm.mp3")
+    transition(name="page-fade")
+      .note-text(v-show="note")
+        p 温馨提示：为了体验效果更佳<br/>建议打开音乐播放按钮
+
+  .load#load
+    .loading.fadeIn.animated#loading(v-show="mounted",style="display: none")
+      .music-box(style="height: 2rem")
+      .music-box(style="height: 3rem")
+      .music-box(style="height: 4rem")
+      .music-box(style="height: 6rem")
+      .music-box(style="height: 9rem")
+      .music-box(style="height: 15rem")
+      .music-box(style="height: 13rem")
+      .music-box(style="height: 17rem")
+      .music-box(style="height: 14rem")
+      .music-box(style="height: 10rem")
+      .music-box(style="height: 16rem")
+      .music-box(style="height: 9rem")
+      .music-box(style="height: 6rem")
+      .music-box(style="height: 4rem")
+      .music-box(style="height: 2rem")
+      .text.fadeIn.animated
+        img(src="#{url}/img/loading-text.png")
+  
+  .main#main(v-show="mounted",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
+    transition(name="page-fade")
+      .loading-page(v-show="loading")
+        .ball-spin-fade-loader
+          div
+          div
+          div
+          div
+          div
+          div
+          div
+          div
+    transition(name="page-fade")
+      .page.page-1(v-show="pageIndex == 1")
+        .content
+          .text-box.text-1
+            .box
+              .music-box(style="height: 1rem")
+              .music-box(style="height: 2rem")
+              .music-box(style="height: 3rem")
+              .music-box(style="height: 5rem")
+              .music-box(style="height: 7rem")
+              .music-box(style="height: 12rem")
+              .music-box(style="height: 10rem")
+              .music-box(style="height: 13rem")
+              .music-box(style="height: 11rem")
+              .music-box(style="height: 8rem")
+              .music-box(style="height: 12rem")
+              .music-box(style="height: 9rem")
+              .music-box(style="height: 5rem")
+              .music-box(style="height: 3rem")
+              .music-box(style="height: 1rem")
+            .text
+              img(src="#{url}/img/page-1-1.png")
+          .text-box.text-2
+            .box
+              .music-box(style="height: 1rem")
+              .music-box(style="height: 2rem")
+              .music-box(style="height: 3rem")
+              .music-box(style="height: 5rem")
+              .music-box(style="height: 7rem")
+              .music-box(style="height: 12rem")
+              .music-box(style="height: 10rem")
+              .music-box(style="height: 13rem")
+              .music-box(style="height: 11rem")
+              .music-box(style="height: 8rem")
+              .music-box(style="height: 12rem")
+              .music-box(style="height: 9rem")
+              .music-box(style="height: 5rem")
+              .music-box(style="height: 3rem")
+              .music-box(style="height: 1rem")
+            .text
+              img(src="#{url}/img/page-1-2.png")
+          .text-box.text-3
+            .box
+              .music-box(style="height: 1rem")
+              .music-box(style="height: 2rem")
+              .music-box(style="height: 3rem")
+              .music-box(style="height: 5rem")
+              .music-box(style="height: 7rem")
+              .music-box(style="height: 12rem")
+              .music-box(style="height: 10rem")
+              .music-box(style="height: 13rem")
+              .music-box(style="height: 11rem")
+              .music-box(style="height: 8rem")
+              .music-box(style="height: 12rem")
+              .music-box(style="height: 9rem")
+              .music-box(style="height: 5rem")
+              .music-box(style="height: 3rem")
+              .music-box(style="height: 1rem")
+            .text
+              img(src="#{url}/img/page-1-3.png")
+    transition(name="page-fade")
+      .page.page-2(v-show="pageIndex == 2")
+        .content
+          .head
+            img(src="#{url}/img/homepage-bg.jpg")
+            .watch-ad
+              img(src="#{url}/img/homepage-watch-ad.png")
+          .after(:style="{height: afterH+'px'}")
+            .btn(@click="startbuild")
+              img(src="#{url}/img/homepage-next.png")
+            .logo
+              img(src="#{url}/img/homepage-logo.png")
+    transition(name="page-fade")
+      .page.page-3(v-show="pageIndex == 3")
+        .content
+          #ugc
+          transition(name="page-fade")
+            .user-ctrl-box(v-show="step == 1")
+              .upload
+                input#imageInput(type="file",name="file",@change="changeImage")
+              .user-ctrl
+                .title
+                  img(src="#{url}/img/name-ctrl-title.png")
+                .textarea
+                  textarea(v-model="nickname",placeholder="输入你的名字（字数限制10字）")
+                .btn(@click="gotoAudio")
+                  img(src="#{url}/img/btn-name.png")
+          transition(name="page-fade")
+            .audio-ctrl(v-show="step == 2")
+              .title
+                img(src="#{url}/img/page-3-audio-title.png")
+              .btns
+                .btn.btn-audition(v-show="audioId != null",@click="playAudio")
+                  img(src="#{url}/img/icon-audio-play.png")
+                  span 试 听
+                .btn.btn-start
+                  .start(v-show="!recordStarting",@click="recordStart")
+                    img(src="#{url}/img/icon-audio-start.png")
+                  .stop(v-show="recordStarting",@click="recordStop")
+                    img(src="#{url}/img/icon-audio-restart.png")
+                  span 录 音
+                .btn.btn-upload(v-show="audioId != null",@click="uploadAudio")
+                  img(src="#{url}/img/icon-audio-right.png")
+                  span 上 传
+          transition(name="page-fade")
+            .message-ctrl(v-show="step == 3")
+              .title
+                img(src="#{url}/img/message-ctrl-title.png")
+              .textarea
+                textarea(v-model="text",placeholder="你发声了什么？（字数限制32字）")
+              .btn(@click="selectSingerStart")
+                img(src="#{url}/img/btn-create.png")
+          transition(name="page-fade")
+            .singer-ctrl(v-show="step == 4")
+              .title
+                img(src="#{url}/img/singer-title.png")
+              .singers
+                -for (var i=1;i<=5;i++)
+                  .singer(:class="{p3: (singerIndex-3) >= #{i},p2: (singerIndex-2) == #{i},p1: (singerIndex-1) == #{i},on: singerIndex == #{i},n1: (singerIndex+1) == #{i},n2: (singerIndex+2) == #{i},n3: (singerIndex+3) <= #{i}}")
+                    img(src="#{url}/img/singer-#{i}.jpg")
+                -;
+                .left(@click="singerPrev")
+                  img(src="#{url}/img/icon-left.png")
+                .right(@click="singerNext")
+                  img(src="#{url}/img/icon-left.png")
+              .btn(@click="review")
+                img(src="#{url}/img/btn-build.png")
+          transition(name="page-fade")
+            .review-ctrl(v-show="step == 5")
+              .btns
+                .btn.btn-share(@click="over")
+                  img(src="#{url}/img/btn-share.png")
+                .btn.btn-more
+                  img(src="#{url}/img/btn-more.png")
+          
+    transition(name="page-fade")
+      .pop(v-show="pageInfoShow")
+        .content
+          img(:src="ugc")
+          .p 长按保存图片
+block js
+  - url = "/";
+  script(src="//res.wx.qq.com/open/js/jweixin-1.3.2.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+  script(src="//s3.music.126.net/static/mob/ntes.id.js")
+  script(src="//s5.music.126.net/static_public/5a1b70ea0180f6ca7295a59d/js/music-jssdk-1.0.3.js")
+  //- script(src="/libs/js/min/bump-min.js")
+  script(src="js/main.js?v=2")
+  
+
+
+
+  

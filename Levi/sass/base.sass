@@ -1,0 +1,642 @@
+@import sass/base
+@import ../../libs/sass/loader-ball
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "//image.giccoo.com/projects/BobbiBrown/"
+
+// animation, delay, duration
+$fontColor: #000000;
+$pageMainBGColor: #000;
++keyframes(fadeArrow)
+	0%,100%
+		opacity: 1
+	50%
+		opacity: 0.5
++keyframes(fadeBG)
+	0%
+		opacity: 0
+	20%
+		opacity: 1
+	80%
+		opacity: 1
+	100%
+		opacity: 0
++keyframes(iconFlash)
+	0%,100%
+		opacity: 1
+		+transform(scale(1.2,1.2))
+	50%
+		opacity: 0.2
+		+transform(scale(1,1))
++keyframes(moveLeft)
+	0%
+		+transform(translate3d(-50%,0,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(musicIcon)
+	0%
+		height: 20%
+		opacity: 0.8
+	50%
+		height: 100%
+		opacity: 1
+	100%
+		height: 20%
+		opacity: 0.8
++keyframes(textShow)
+	0%
+		opacity: 0
+	10%
+		opacity: 1
+	90%
+		opacity: 1
+	100%
+		opacity: 0
+html,body
+	+w
+	+h
+body
+	color: $fontColor
+	+bc($pageMainBGColor)
+	max-width: 640px
+	+m
+	+posr
+video,canvas,svg
+	+w
+	+h(auto)
+.hide
+	+hide
+.main,.load
+	+w
+	+h
+	+posr
+	max-width: 1280px
+	+m
+	font-size: 0
+	+overhide
+	+tran(all,4s,ease)
+#game
+	+h
+	canvas
+		+h
+
+.page-animation-enter-active
+	transition: all .4s linear
+.page-animation-leave-active
+	transition: all .4s linear
+	transform: translate3d(0,0,0)
+.page-animation-enter
+	transform: translate3d(0,-100%,0)
+	& ~ .page-animation-leave
+		transform: translate3d(0,100%,0)
+.page-animation-leave
+	transform: translate3d(0,100%,0)
+	& ~ .page-animation-enter
+		transform: translate3d(0,100%,0)
+.page-animation-enter-to
+	transform: translate3d(0,0,0)
+	& ~ .page-animation-leave-to
+		transform: translate3d(0,100%,0)
+.page-animation-leave-to
+	transform: translate3d(0,-100%,0)
+
+
+.page-fade-enter-active
+	transition: all .6s ease
+	opacity: 1
+.page-fade-leave-active
+	transition: all .3s linear
+	opacity: 1
+.page-fade-enter,.page-fade-leave-to
+	opacity: 0
+
+.page-fadeflower-enter-active
+	transition: all .6s ease
+	opacity: 1
+.page-fadeflower-leave-active
+	transition: all .6s ease-in
+	opacity: 1
+.page-fadeflower-enter,.page-fadeflower-leave-to
+	opacity: 0
+
+.qrcode
+	+bc(#fff)
+	+posa
+	+tl
+	+w
+	+h
+	z-index: 9999
+	+hide
+	&.show
+		+show
+	.qr
+		+w(300px)
+		+m
+		margin-top: 100px
+		+text-center
+		font-size: 16px
+
+.load
+	// +b($cdn+"img/bg-loading.jpg",no-repeat,center,center,cover)
+	+posa
+	+tl(0,50%)
+	+transform(translate3d(-50%,0,0))
+	+bc(#000)
+	z-index: 99
+	// 3c080f
+	.loading
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,0,0))
+		display: flex
+		+w(70%)
+		+text-center
+	.text
+		+posa
+		+tl
+		+transform(translate3d(0,-50%,0))
+		animation-delay: 300ms
+.music-box
+	+w(5%)
+	+posr
+	+tl(50%)
+	+transform(translate3d(0,-50%,0))
+	+show-inline
+	+m
+	&:after
+		content: " "
+		+posa
+		+tl(50%,0)
+		+w
+		+h
+		+transform(translate3d(0,-50%,0))
+		+bc(#3c080f)
+	@for $i from 1 through 15
+		&:nth-child(#{$i})
+			&:after
+				+animation(musicIcon,1000ms+random(2000),ease,infinite)
+				animation-delay: 100ms*$i
+			
+
+
+.public
+	+posa
+	+tr(1rem,1rem)
+	+wh(30px,30px)
+	font-size: 0
+	z-index: 199
+	.note-text
+		+posa
+		+tr(50%,250%)
+		+font-size(0.8rem)
+		line-height: 1.4em
+		white-space: nowrap
+		+text-right
+		+m
+		+transform(translate3d(0,-50%,0))
+		color: #3f8f23
+		p
+			+m
+		.arrow
+			+posa
+			+tr(50%,-37.5px)
+			+transform(translate3d(0,-25%,0))
+			font-size: 0
+			+h(30px)
+			.item
+				+w(10px)
+				+h
+				+show-inline
+				font-size: 0
+			// .arrow-1
+			// 	+animation(fadeArrow,1s,ease,infinite)
+			// .arrow-2
+			// 	+animation(fadeArrow,1s,ease,infinite)
+			// 	animation-delay: 1000ms*1/3
+			// .arrow-3
+			// 	+animation(fadeArrow,1s,ease,infinite)
+			// 	animation-delay: 1000ms*2/3
+
+	.player
+		+w
+		+h
+	.icon-play
+		+w
+		+h
+		&.play
+			+b($cdn+"img/icon-play.png",no-repeat,center,center,contain)
+		&.pause
+			+b($cdn+"img/icon-stop.png",no-repeat,center,center,contain)
+
+.pages
+	+w
+	+h
+	+posr
+	+overhide
+	perspective: 500
+	-webkit-perspective: 500
+			transform-style: preserve-3d
+	-webkit-transform-style: preserve-3d
+	.page
+		+posa
+		+tl
+		+w
+		+h
+		+bc(#e3dbd5)
+		+hide
+		background-attachment: fixed
+		z-index: 10
+		.bg
+			+posa
+			+tl
+			+w
+			+h
+			z-index: -1
+			img
+				+w
+				+h
+		
+.page
+	+posa
+	+tl
+	+w
+	+h
+	+overhide
+	background-size: 100% auto
+	.bg,.ugc
+		+posa
+		+tl(50%)
+		font-size: 0
+		+transform(translate3d(0,-50%,0))
+		.biger &
+			+transform(translate3d(0,-50%,0) scale(1.1,1.1))
+	.ugc
+		+w
+		+h
+	.content
+		+posa
+		+tl
+		+w
+		+h
+		box-sizing: border-box
+	.next
+		+posa
+		+bl
+		+w
+		+h(1px)
+		&:before
+			content: " "
+			+posa
+			+bl(10px,50%)
+			+w(30px)
+			+h(10px)
+			+b($cdn+"img/arrow-up.png",no-repeat,top,center,contain)
+			+animation(fadeArrow,0.6s,ease,infinite)
+		&:after
+			content: " "
+			+posa
+			+bl(22px,50%)
+			+w(30px)
+			+h(10px)
+			+b($cdn+"img/arrow-up.png",no-repeat,top,center,contain)
+			+animation(fadeArrow,0.6s,ease,infinite)
+			animation-delay: 300ms
+
+.loading-page
+	+posa
+	+tl
+	z-index: 9999
+	+w
+	+h
+	+bc(rgba(0,0,0,0.6))
+	.ball-spin-fade-loader
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+
+.form
+	+w(90%)
+	+m
+	color: #83570a
+	+font-size(0.8rem)
+	.form-group
+		display: flex
+		+box
+		+m(5% 0)
+		border-radius: 5px
+		border: solid 1px #555
+		+overhide
+		label
+			flex: 1
+			+box
+			+p(0.1rem 0.2rem)
+			// padding-right: 5%
+			+posr
+			border-right: solid 1px #555
+			line-height: 1.4em
+			justify-content: center
+			align-items: center
+			box-align: center
+			+bc(#dcdcdc)
+			img
+				+show-inline
+				vertical-align: middle
+		input,.form-group-items,.form-group-line,.select
+			flex: 7
+		input,.select
+			border: none
+			outline: none
+			+bc(#fff)
+			// color: #fff
+			+box
+			+p(0.2rem 0)
+			line-height: 1.4em
+			text-indent: 0.4rem
+		.select
+			+overhide
+			+posr
+			span
+				+box
+				+p(0.2rem 0)
+				line-height: 1.8em
+				text-indent: 0.4rem
+				overflow: hidden
+				text-overflow: ellipsis
+				white-space: nowrap
+				vertical-align: middle
+		select
+			+posa
+			+tl
+			+br
+			+wh(100%,100%)
+			+show-inline
+			opacity: 0
+	.custom-select
+		overflow: unset
+		.select
+			overflow: unset
+		.box-select
+			+posa
+			+tl(105%)
+			+bc(#fff)
+			.option
+				line-height: 2em
+				+font-size(0.7rem)
+				vertical-align: middle
+				span
+					line-height: 2em
+					+wh(1rem,1rem)
+					+show-inline
+					vertical-align: middle
+					border-radius: 50%
+
+	.btn-submit
+		+m(0.5rem auto)
+
+.ugcsave
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	opacity: 0
+	z-index: 99
+
+.ugc
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	opacity: 0
+	z-index: 99
+
+
+.page-1
+	.text-box
+		+posa
+		+w
+		.box
+			display: flex
+			+w(50%)
+			+posr
+			margin-left: 5%
+		.text
+			+posa
+			+tl
+			+transform(translate3d(0,-50%,0))
+	$time: 4000ms
+	.text-1
+		+tl(25%)
+		+animation(textShow,$time,linear)
+		animation-delay: 500ms
+	.text-2
+		+tl(50%)
+		+animation(textShow,$time,linear)
+		animation-delay: 500ms + $time
+		.box
+			margin-left: 10%
+	.text-3
+		+animation(textShow,$time,linear)
+		animation-delay: 500ms + $time*2
+		+tl(75%)
+
+.page-2
+	+b($cdn+"img/bg.jpg",repeat,top,center,100% auto)
+	.head
+		+posr
+		.smaller &
+			margin-top: -20%
+		.watch-ad
+			+posa
+			+bl(3%,3%)
+			+iw(220,750,100%)
+	.after
+		+posa
+		+bl
+		+w
+		.logo
+			+posa
+			+bl(5%)
+		.btn
+			+posa
+			+tl(15%)
+
+.page-3
+	+b($cdn+"img/bg.jpg",repeat,top,center,100% auto)
+	#ugc
+		+posa
+		+tl
+		+w
+		+h(80%)
+		+overhide
+	.user-ctrl-box
+		+posa
+		+tl
+		+w
+		+h
+		.upload
+			+w
+			+h(60%)
+			+posr
+			input
+				+posa
+				+tl
+				+br
+				+w
+				+h
+				opacity: 0
+	.audio-ctrl
+		+w
+		+h(40%)
+		+posa
+		+bl
+		z-index: 100
+		.btns
+			+w
+			+text-center
+			margin-top: 5%
+			.btn
+				+w(25%)
+				+m(0 3%)
+				+show-inline
+				vertical-align: top
+				span
+					+font-size(0.6rem)
+					+show-inline
+					+w
+					+text-center
+					color: #fff
+			.btn-start
+				span
+					margin-top: 1em
+				// .start
+				// 	+show
+				// .stop
+				// 	+hide
+				// &.on
+				// 	.start
+				// 		+hide
+				// 	.stop
+				// 		+show
+	.message-ctrl,.user-ctrl
+		+w
+		+h(40%)
+		+posa
+		+bl
+		z-index: 100
+		.title,.btn
+			+p(2% 0)
+		.textarea
+			+w
+			+b($cdn+"img/textarea-bg.png",no-repeat,center,center,contain)
+			textarea
+				+font-size(0.8rem)
+				color: #fff
+				+bc(transparent)
+				border: none
+				outline: none
+				+w(70%)
+				+h(7em)
+				+m(0 15%)
+				+box
+				+p(0.6em 0)
+	.review-ctrl
+		+w
+		+h(20%)
+		+posa
+		+bl
+		.btns
+			+w
+			+posa
+			+tl(50%)
+			+transform(translate3d(0,-50%,0))
+			.btn
+				+w(50%)
+				+show-inline
+				+overhide
+
+	.singer-ctrl
+		+w
+		+h(40%)
+		+posa
+		+bl
+		.btn
+			margin-top: 3%
+		.singers
+			+w
+			+posr
+			margin-top: 3%
+			.left
+				+posa
+				+tl(0,12%)
+				+w(10%)
+				margin-top: 3%
+			.right
+				+posa
+				+tr(0,12%)
+				+w(10%)
+				margin-top: 3%
+				+transform(scale(-1,1))
+			.singer
+				+posa
+				+tl(0,50%)
+				+show-inline
+				+w(25%)
+				+m
+				+tran
+				+transform(translate3d(-50%,0,0))
+				opacity: 1
+			.p3
+				+posa
+				+tl(0,-10%)
+				+transform(translate3d(-50%,0,0) scale(0.2,0.2))
+				opacity: 0.2
+			.p2
+				+posa
+				+tl(0,10%)
+				+transform(translate3d(-50%,0,0) scale(0.5,0.5))
+				opacity: 0.6
+			.p1
+				+posa
+				+tl(0,26%)
+				+transform(translate3d(-50%,0,0) scale(0.8,0.8))
+				opacity: 0.8
+			.on
+				+posr
+				+transform(translate3d(-50%,0,0) scale(1.1,1.1))
+			.n1
+				+posa
+				+tl(0,74%)
+				+transform(translate3d(-50%,0,0) scale(0.8,0.8))
+				opacity: 0.8
+			.n2
+				+posa
+				+tl(0,90%)
+				+transform(translate3d(-50%,0,0) scale(0.5,0.5))
+				opacity: 0.6
+			.n3
+				+posa
+				+tl(0,110%)
+				+transform(translate3d(-50%,0,0) scale(0.2,0.2))
+				opacity: 0.2
+
+.pop
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	+bc(rgba(0,0,0,0.8))
+	.content
+		+posa
+		+tl(50%,50%)
+		+w(80%)
+		+transform(translate3d(-50%,-50%,0))
+		.p
+			+font-size(0.8rem)
+			color: #fff
+			+text-center
+			+m(0.2em auto)

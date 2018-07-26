@@ -8047,6 +8047,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi\/img\/album-upload-over-text.png": {
+		"ft": 32768,
+		"iS": 6604,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/album-upload-over-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/album-upload-text.png": {
+		"ft": 32768,
+		"iS": 6353,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/album-upload-text.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Levi\/img\/avatar.jpg": {
 		"ft": 16384,
 		"iS": 24661,
@@ -8102,11 +8124,44 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi\/img\/btn-name.png": {
+		"ft": 32768,
+		"iS": 3963,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/btn-name.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/btn-no.png": {
+		"ft": 32768,
+		"iS": 3089,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/btn-no.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Levi\/img\/btn-share.png": {
 		"ft": 32768,
 		"iS": 2909,
 		"oA": 0,
 		"oAP": "\/Levi\/img\/btn-share.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/btn-yes.png": {
+		"ft": 32768,
+		"iS": 2986,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/btn-yes.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -8223,11 +8278,33 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi\/img\/mask.png": {
+		"ft": 32768,
+		"iS": 1943,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/mask.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Levi\/img\/message-ctrl-title.png": {
 		"ft": 32768,
 		"iS": 4450,
 		"oA": 0,
 		"oAP": "\/Levi\/img\/message-ctrl-title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/name-ctrl-title.png": {
+		"ft": 32768,
+		"iS": 2962,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/name-ctrl-title.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -8272,6 +8349,17 @@
 		"iS": 6942,
 		"oA": 0,
 		"oAP": "\/Levi\/img\/page-3-audio-title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/pop-reg.png": {
+		"ft": 32768,
+		"iS": 41214,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/pop-reg.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -12675,6 +12763,50 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/mygym\/img\/btnclose.png": {
+		"ft": 32768,
+		"iS": 392,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/btnclose.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/btnflip.png": {
+		"ft": 32768,
+		"iS": 483,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/btnflip.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/btnzoom.png": {
+		"ft": 32768,
+		"iS": 473,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/btnzoom.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/finalhint.png": {
+		"ft": 32768,
+		"iS": 24691,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/finalhint.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/mygym\/img\/girla.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -12713,6 +12845,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/mygym\/img\/gobackbtn.png": {
+		"ft": 32768,
+		"iS": 479,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/gobackbtn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/mygym\/img\/grid.png": {
 		"ft": 32768,
 		"iS": 122,
@@ -12733,6 +12876,50 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"\/mygym\/img\/leads_down1.jpg": {
+		"ft": 16384,
+		"iS": 41344,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/leads_down1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/mygym\/img\/leads_down2.jpg": {
+		"ft": 16384,
+		"iS": 41038,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/leads_down2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/mygym\/img\/leads_down3.jpg": {
+		"ft": 16384,
+		"iS": 36416,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/leads_down3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/mygym\/img\/leads_top.png": {
+		"ft": 32768,
+		"iS": 13128,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/leads_top.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/mygym\/img\/logo.png": {
@@ -13351,6 +13538,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/mygym\/img\/p4downt03.png": {
+		"ft": 32768,
+		"iS": 18439,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p4downt03.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p4downt04.png": {
+		"ft": 32768,
+		"iS": 16897,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p4downt04.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/mygym\/img\/p4downt10.png": {
 		"ft": 32768,
 		"iS": 19857,
@@ -13378,6 +13587,28 @@
 		"iS": 6565,
 		"oA": 0,
 		"oAP": "\/mygym\/img\/p4downt12.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p4downt13.png": {
+		"ft": 32768,
+		"iS": 16921,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p4downt13.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/mygym\/img\/p4downt14.png": {
+		"ft": 32768,
+		"iS": 14189,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p4downt14.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -13417,6 +13648,28 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/mygym\/img\/p4footer03.jpg": {
+		"ft": 16384,
+		"iS": 32021,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p4footer03.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/mygym\/img\/p4footer04.jpg": {
+		"ft": 16384,
+		"iS": 31411,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p4footer04.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/mygym\/img\/p4footer10.jpg": {
 		"ft": 16384,
 		"iS": 24112,
@@ -13445,6 +13698,28 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/mygym\/img\/p4footer12.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/mygym\/img\/p4footer13.jpg": {
+		"ft": 16384,
+		"iS": 31556,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p4footer13.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/mygym\/img\/p4footer14.jpg": {
+		"ft": 16384,
+		"iS": 30760,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/p4footer14.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -14649,6 +14924,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/mygym\/img\/submit.png": {
+		"ft": 32768,
+		"iS": 908,
+		"oA": 0,
+		"oAP": "\/mygym\/img\/submit.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/mygym\/img\/tag1icon0.png": {
 		"ft": 32768,
 		"iS": 10400,
@@ -15112,6 +15398,16 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/mygym\/js\/main1.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/mygym\/js\/main1-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/mygym\/js\/pixi.min-min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -15132,6 +15428,26 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/mygym\/js\/tag.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/mygym\/js\/tag-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/mygym\/js\/tags111.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/mygym\/js\/tags111-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/mygym\/js\/TweenMax.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -15141,6 +15457,20 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"\/mygym\/js\/untitled": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/mygym\/js\/untitled",
+		"oF": 0
+		},
+	"\/mygym\/js\/untitled.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/mygym\/js\/untitled.html",
+		"oF": 0
 		},
 	"\/nightparty": {
 		"ft": 65536,
