@@ -126,11 +126,12 @@ class UGC
 			@.avatar.y = 172
 			@.album.addChildAt @.avatar,3
 
-			mask = new Sprite getTe "#{_CDN}img/mask.png"
+			mask1 = new Sprite getTe "#{_CDN}img/mask.png"
 			# mask.x = avatar.width/2
 			# mask.y = 205
-			avatar.mask = mask
-			@.album.addChild mask
+			@.album.addChild mask1
+			avatar.mask = mask1
+			
 			
 			if orientation is 6
 				avatar.rotation = Math.PI * 0.5
