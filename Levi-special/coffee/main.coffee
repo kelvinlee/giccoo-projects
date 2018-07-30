@@ -72,7 +72,7 @@ window.onload = ->
 		mounted: ->
 			@.mounted = true
 			timein = setInterval =>
-				@.progress += 3
+				@.progress += 1 + Math.round Math.random()
 				@.progress = @.progressOn if @.progress >= @.progressOn
 				if @.progress >= 100
 					@.progress = 100
