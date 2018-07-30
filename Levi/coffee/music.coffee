@@ -38,8 +38,8 @@ init = ->
 	TrueH = 1138 if TrueH >= 1138
 	smaller = TrueH*2 < 1200
 	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
-	console.log TrueW/TrueH
 	smaller = TrueW/TrueH > 0.65
+	console.log TrueW/TrueH
 
 	main = new Vue
 		el: "#music"
@@ -64,26 +64,42 @@ init = ->
 				music: ""
 				message: ""
 				singer: 1
+		watch:
+			playing: (n,o)->
+				unless n
+					_cd.stop()
+				else
+					_cd.play()
 		methods:
+			loadedmetadata: ->
+				if @.bgm.duration != Infinity
+					m = Math.floor @.bgm.duration/60
+					s = ten Math.floor @.bgm.duration%60
+					@.timeend = m+":"+s
 			canplay: ->
-				console.log @.bgm.duration
+				if @.bgm.duration != Infinity
+					m = Math.floor @.bgm.duration/60
+					s = ten Math.floor @.bgm.duration%60
+					@.timeend = m+":"+s
+				
 			playRun: ->
-				@.playProgress = @.bgm.currentTime/@.bgm.duration*100
-				m = Math.floor @.bgm.duration/60
-				s = ten Math.floor @.bgm.duration%60
-				@.timeend = m+":"+s
-				m = Math.floor @.bgm.currentTime/60
-				s = ten Math.floor @.bgm.currentTime%60
-				@.timeing = m+":"+s
-				n = 100/@.msgList.length
-				@.line = Math.ceil @.playProgress/n
+				if @.bgm.duration != Infinity
+					@.playProgress = @.bgm.currentTime/@.bgm.duration*100
+					m = Math.floor @.bgm.duration/60
+					s = ten Math.floor @.bgm.duration%60
+					m = 99 if m > 99
+					@.timeend = m+":"+s
+					m = Math.floor @.bgm.currentTime/60
+					s = ten Math.floor @.bgm.currentTime%60
+					m = 99 if m > 99
+					@.timeing = m+":"+s
+					n = 100/@.msgList.length
+					@.line = Math.ceil @.playProgress/n
 			play: ->
 				if @.playing
 					@.bgm.pause()
-					_cd.stop()
 				else
 					@.bgm.play()
-					_cd.play()
 			playtype: ->
 				console.log "play"
 				@.playing = true

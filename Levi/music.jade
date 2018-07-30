@@ -42,7 +42,7 @@ block content
               .line(:style="{width: playProgress+'%'}")
                 .pointer
             .time.time-end {{timeend}}
-            audio#bgm(:src="info.music" @canplay="canplay" @timeupdate="playRun" @playing="playing = true" @pause="playing = false" @ended="playing = false")
+            audio#bgm(:src="info.music" @loadedmetadata="loadedmetadata" @canplay="canplay" @timeupdate="playRun" @playing="playing = true" @pause="playing = false" @ended="playing = false")
               //- source(:src="info.music" type="audio/mpeg")
               //- source(src="//image.giccoo.com/projects/mbenz-love/mp3/bgm.mp3" type="audio/mpeg")
           .nickname

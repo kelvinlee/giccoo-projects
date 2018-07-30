@@ -42,7 +42,7 @@
                 </div>
               </div>
               <div class="time time-end">{{timeend}}</div>
-              <audio id="bgm" :src="info.music" @canplay="canplay" @timeupdate="playRun" @playing="playing = true" @pause="playing = false" @ended="playing = false">
+              <audio id="bgm" :src="info.music" @loadedmetadata="loadedmetadata" @canplay="canplay" @timeupdate="playRun" @playing="playing = true" @pause="playing = false" @ended="playing = false">
               </audio>
             </div>
             <div class="nickname">
