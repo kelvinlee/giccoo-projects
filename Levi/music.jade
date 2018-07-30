@@ -1,0 +1,66 @@
+extends ../libs/jade/layout-clean
+
+block title
+  | 测测你的颜值在线吗？
+
+block css
+  meta(name="author",content="m.giccoo.com")
+  //- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+  link(rel="stylesheet",href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css")
+  link(rel="stylesheet",href="css/base.css")
+  script.
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+block content
+  - url = "//image.giccoo.com/projects/BobbiBrown";
+  - url = ".";
+  .main#music.fadeIn.animated(v-show="mounted",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
+    .page.page-music
+      .bg(:style="'background-image:url(#{url}/img/music-bg-'+info.singer+'.jpg)'")
+      .content
+        //- img(:src="'http://image.giccoo.com/upload/'+info.avatar")
+        .bg-box
+          img(src="#{url}/img/music-border.png")
+        .up
+          #cd
+          .message
+            p(:class="{on: (index+1) == line}",v-for="(text,index) in msgList") {{text}}
+          .player
+            .btn.btn-play(@click="play")
+              .play(v-show="!playing")
+                img(src="#{url}/img/music-icon-play.png")
+              .stop(v-show="playing")
+                img(src="#{url}/img/music-icon-pause.png")
+            .time.time-begin {{timeing}}
+            .progress
+              .line(:style="{width: playProgress+'%'}")
+                .pointer
+            .time.time-end {{timeend}}
+            audio#bgm(@canplay="canplay" @timeupdate="playRun" @playing="playing = true" @pause="playing = false" @ended="playing = false")
+              source(:src="info.music" type="audio/mpeg")
+              //- source(src="//image.giccoo.com/projects/mbenz-love/mp3/bgm.mp3" type="audio/mpeg")
+          .nickname
+            .my {{info.nickname}}
+            .singer
+              img(:src="'#{url}/img/music-singer-name-'+info.singer+'.png'")
+        a.btn-next(href="http://levi.arkrdigital.com/music/")
+          img(src="#{url}/img/music-btn-next.png")
+
+
+block js
+  - url = "/";
+  script(src="//res.wx.qq.com/open/js/jweixin-1.3.2.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+  script(src="//s3.music.126.net/static/mob/ntes.id.js")
+  script(src="//s5.music.126.net/static_public/5a1b70ea0180f6ca7295a59d/js/music-jssdk-1.0.3.js")
+  script(src="js/music.js?v=2")

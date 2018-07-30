@@ -7986,12 +7986,299 @@
 		"oAP": "\/build\/ldl-ix25",
 		"oF": 0
 		},
+	"\/Levi-special\/coffee\/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/Levi-special\/js\/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/Levi-special\/coffee\/UGC.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/Levi-special\/js\/UGC.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/Levi-special\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/Levi-special\/css",
+		"oF": 0
+		},
+	"\/Levi-special\/img\/audio-note.png": {
+		"ft": 32768,
+		"iS": 164800,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/audio-note.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/audio-run.png": {
+		"ft": 32768,
+		"iS": 43059,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/audio-run.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/bg.jpg": {
+		"ft": 16384,
+		"iS": 3622571,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/btn-build.jpg": {
+		"ft": 16384,
+		"iS": 8694,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/btn-build.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/Levi-special\/img\/btn-empty.jpg": {
+		"ft": 16384,
+		"iS": 4598,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/btn-empty.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/Levi-special\/img\/cd-note.png": {
+		"ft": 32768,
+		"iS": 166734,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/cd-note.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/focus-note.png": {
+		"ft": 32768,
+		"iS": 100825,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/focus-note.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/icon-close.png": {
+		"ft": 32768,
+		"iS": 3647,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/icon-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/loading-bg.jpg": {
+		"ft": 16384,
+		"iS": 162777,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/loading-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/Levi-special\/img\/loading-text.png": {
+		"ft": 32768,
+		"iS": 46751,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/loading-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/music-cd.png": {
+		"ft": 32768,
+		"iS": 185834,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/music-cd.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/music-pointer.png": {
+		"ft": 32768,
+		"iS": 31063,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/music-pointer.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/note.png": {
+		"ft": 32768,
+		"iS": 11923,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/note.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/text-1.png": {
+		"ft": 32768,
+		"iS": 260109,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/tv-bg.png": {
+		"ft": 32768,
+		"iS": 116895,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/tv-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/tv-front.png": {
+		"ft": 32768,
+		"iS": 312154,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/tv-front.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/tv-note.png": {
+		"ft": 32768,
+		"iS": 171314,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/tv-note.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/Levi-special\/index.html",
+		"oF": 0
+		},
+	"\/Levi-special\/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/Levi-special\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/Levi-special\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/Levi-special\/js\/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/Levi-special\/sass\/base.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/Levi-special\/css\/base.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/Levi\/coffee\/CD.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/Levi\/js\/CD.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
 	"\/Levi\/coffee\/main.coffee": {
 		"ft": 32,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/Levi\/js\/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/Levi\/coffee\/music.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/Levi\/js\/music.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/Levi\/coffee\/UGC.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/Levi\/js\/UGC.js",
 		"oF": 0,
 		"oS": 1,
 		"sC": 0,
@@ -8157,6 +8444,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi\/img\/cd-mask.png": {
+		"ft": 32768,
+		"iS": 6592,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/cd-mask.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Levi\/img\/homepage-bg.jpg": {
 		"ft": 16384,
 		"iS": 77886,
@@ -8289,6 +8587,215 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi\/img\/music-bg-1.jpg": {
+		"ft": 16384,
+		"iS": 100539,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-bg-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/Levi\/img\/music-bg-2.jpg": {
+		"ft": 16384,
+		"iS": 38031,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-bg-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/Levi\/img\/music-bg-3.jpg": {
+		"ft": 16384,
+		"iS": 115385,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-bg-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/Levi\/img\/music-bg-4.jpg": {
+		"ft": 16384,
+		"iS": 70914,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-bg-4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/Levi\/img\/music-bg-5.jpg": {
+		"ft": 16384,
+		"iS": 91691,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-bg-5.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/Levi\/img\/music-border.png": {
+		"ft": 32768,
+		"iS": 38578,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-border.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/music-btn-next.png": {
+		"ft": 32768,
+		"iS": 5423,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-btn-next.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/music-cd.png": {
+		"ft": 32768,
+		"iS": 185834,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-cd.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/music-icon-pause.png": {
+		"ft": 32768,
+		"iS": 1133,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-icon-pause.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/music-icon-play.png": {
+		"ft": 32768,
+		"iS": 1732,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-icon-play.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/music-player-progress-bg.png": {
+		"ft": 32768,
+		"iS": 968,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-player-progress-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/music-player-progress-line.png": {
+		"ft": 32768,
+		"iS": 987,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-player-progress-line.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/music-player-progress.png": {
+		"ft": 32768,
+		"iS": 1943,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-player-progress.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/music-pointer.png": {
+		"ft": 32768,
+		"iS": 31063,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-pointer.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/music-singer-name-1.png": {
+		"ft": 32768,
+		"iS": 4677,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-singer-name-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/music-singer-name-2.png": {
+		"ft": 32768,
+		"iS": 5653,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-singer-name-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/music-singer-name-3.png": {
+		"ft": 32768,
+		"iS": 6890,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-singer-name-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/music-singer-name-4.png": {
+		"ft": 32768,
+		"iS": 6357,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-singer-name-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/music-singer-name-5.png": {
+		"ft": 32768,
+		"iS": 5068,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-singer-name-5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Levi\/img\/name-ctrl-title.png": {
 		"ft": 32768,
 		"iS": 2962,
@@ -8361,8 +8868,8 @@
 		"oA": 0,
 		"oAP": "\/Levi\/img\/qrcode.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8721,6 +9228,32 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"\/Levi\/js\/music.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/Levi\/js\/music-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/Levi\/music.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/Levi\/music.html",
+		"oF": 0
+		},
+	"\/Levi\/music.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/Levi\/music.html",
+		"oF": 0,
+		"oS": 0
 		},
 	"\/Levi\/sass\/base.sass": {
 		"aP": 1,
@@ -19688,6 +20221,33 @@
 		"oA": 1,
 		"oAP": "\/build\/zhihu-suning418",
 		"oF": 0
+		},
+	"\/zhihu-wow8\/img\/test.jpg": {
+		"ft": 16384,
+		"iS": 38410,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/zhihu-wow8\/img\/test.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/zhihu-wow8\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/zhihu-wow8\/index.html",
+		"oF": 0
+		},
+	"\/zhihu-wow8\/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/zhihu-wow8\/index.html",
+		"oF": 0,
+		"oS": 0
 		},
 	"\/zhihunews": {
 		"ft": 65536,

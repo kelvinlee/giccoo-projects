@@ -142,7 +142,7 @@
       <transition name="page-fade">
         <div v-show="pageIndex == 3" class="page page-3">
           <div class="content">
-            <div id="ugc"></div>
+            <div id="ugc"><img :src="ugcold"></div>
             <transition name="page-fade">
               <div v-show="step == 1" class="user-ctrl-box">
                 <div class="upload">
@@ -151,7 +151,7 @@
                 <div class="user-ctrl">
                   <div class="title"><img src="./img/name-ctrl-title.png"></div>
                   <div class="textarea">
-                    <textarea v-model="nickname" placeholder="输入你的名字（字数限制10字）"></textarea>
+                    <textarea v-model="nickname" maxlength="20" placeholder="输入你的名字（字数限制10字）"></textarea>
                   </div>
                   <div @click="gotoAudio" class="btn"><img src="./img/btn-name.png"></div>
                 </div>
@@ -161,12 +161,12 @@
               <div v-show="step == 2" class="audio-ctrl">
                 <div class="title"><img src="./img/page-3-audio-title.png"></div>
                 <div class="btns">
-                  <div v-show="audioId != null" @click="playAudio" class="btn btn-audition"><img src="./img/icon-audio-play.png"><span>试 听</span></div>
+                  <div v-show="audioId != null" @click="playAudio" class="btn btn-audition fadeIn animated"><img src="./img/icon-audio-play.png"><span>试 听</span></div>
                   <div class="btn btn-start">
                     <div v-show="!recordStarting" @click="recordStart" class="start"><img src="./img/icon-audio-start.png"></div>
-                    <div v-show="recordStarting" @click="recordStop" class="stop"><img src="./img/icon-audio-restart.png"></div><span>录 音</span>
+                    <div v-show="recordStarting" @click="recordStop" class="stop"><img src="./img/icon-audio-restart.png"></div><span>{{!recordStarting?'录 音':'停 止'}}</span>
                   </div>
-                  <div v-show="audioId != null" @click="uploadAudio" class="btn btn-upload"><img src="./img/icon-audio-right.png"><span>上 传</span></div>
+                  <div v-show="audioId != null" @click="uploadAudio" class="btn btn-upload fadeIn animated"><img src="./img/icon-audio-right.png"><span>完 成</span></div>
                 </div>
               </div>
             </transition>
@@ -174,7 +174,7 @@
               <div v-show="step == 3" class="message-ctrl">
                 <div class="title"><img src="./img/message-ctrl-title.png"></div>
                 <div class="textarea">
-                  <textarea v-model="text" placeholder="你发声了什么？（字数限制32字）"></textarea>
+                  <textarea v-model="text" maxlength="64" placeholder="你发声了什么？（字数限制32字）"></textarea>
                 </div>
                 <div @click="selectSingerStart" class="btn"><img src="./img/btn-create.png"></div>
               </div>
@@ -218,6 +218,7 @@
     <script src="//image.giccoo.com/projects/libs/js/min/pixi.min.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js"></script>
     <script src="//s3.music.126.net/static/mob/ntes.id.js"></script>
     <script src="//s5.music.126.net/static_public/5a1b70ea0180f6ca7295a59d/js/music-jssdk-1.0.3.js"></script>
     <script src="js/main.js?v=2"></script>

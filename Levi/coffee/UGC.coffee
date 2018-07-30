@@ -100,14 +100,15 @@ class UGC
 		
 		album.scale.set(0.8,0.8)
 		album.x = (@.opts.w-album.width)/2
-		@.qrcode = qrcode = new Sprite getTe "#{_CDN}img/qrcode.png"
-		qrcode.x = 40
-		qrcode.y = content.height - qrcode.height - 40
-		qrcode.visible = false
-		content.addChild qrcode
+		
+
 		@.stage.addChild content, album
 		# @.albumInfo album,1
 		# @.lyricUpdate "abc"
+
+		
+
+
 	passImage: (src,orientation)->
 		@.album.removeChild(@.avatar) if @.avatar?
 		@.avatar = new Container()
@@ -148,6 +149,8 @@ class UGC
 		@.userName.x = 124
 		@.userName.y = 172 + 410 + 20
 	addCover: ->
+		@.uploadOverText.visible = false
+		@.uploadText.visible = false
 		albumCover = new Sprite getTe "#{_CDN}img/album-cover.png"
 		albumCover.y = (@.albumBG.height-albumCover.height)/2
 		albumCover.alpha = 0
@@ -172,19 +175,23 @@ class UGC
 		# @.bg.y = @.content.y
 		@.content.addChildAt @.bg,0
 	lyricUpdate: (text)->
-		return false if text.length > 32
+		return false if text.gblen() > 64
 		@.album.removeChild @.lyric if @.lyric?
 		@.lyric = new Container()
 		# text = "每次送他去机场，真的都很累。因为"
 		texts = text.split("")
-		list = []
-		n = -1
+		list = [""]
+		n = 0
 		lineH = 32
-		for i in [0...texts.length]
-			if i%8 is 0
+		console.log texts
+		for index in [0...texts.length]
+			console.log list[n].gblen(),index
+			if list[n].gblen() >= 16
 				n++ 
 				list[n] = ""
-			list[n] += texts[i]+" "
+				console.log n,index
+			list[n] += texts[index]+""
+		console.log list
 		for i in [0...list.length]
 			continue if i >= 4
 			t = (i%4)*0.2
@@ -202,19 +209,51 @@ class UGC
 		note.y = logo.y - note.height - 20
 		console.log note.y,logo.y
 		@.content.addChild logo,note
-	overUGC: ->
-		@.album.scale.set(1,1)
-		@.album.x = 0
-		@.album.y = 110
-		@.content.y = 0
-		@.qrcode.visible = true
-		@.logo.y -= @.qrcode.height+40
-		@.note.y -= @.qrcode.height+40
-		@.app.renderer.render @.app.stage
-		if main.wy
-			main.share @.app.view.toDataURL()
+	buildQR: (url,callback)->
+		qrcodeMake = new QRCode "qrcode",
+			text: url
+			width: 130,
+			height: 130,
+			colorDark : "#000000",
+			colorDark : "#000000"
+		console.log qrcodeMake._el.lastChild
+		qrcodeMake._el.lastChild.onload = =>
+			border = 5
+			@.qrcode = qrcode = new Container()
+			text = new Sprite getTe "#{_CDN}img/qrcode.png"
+			text.x = 20
+			qrcodeBg = new Graphics()
+			qrcodeBg.beginFill(0xffffff)
+			qrcodeBg.drawRect(0,0,130+border*2,130+border*2)
+			qrcodeQR = Sprite.fromImage qrcodeMake._el.lastChild.src
+			qrcodeQR.texture.baseTexture.on 'loaded', =>
+				qrcodeQR.x = border
+				qrcodeQR.y = border
+				qrcode.x = 40
+				qrcode.y = @.content.height - 130+border*2 - 40
+				callback()
+			qrcode.addChild qrcodeBg,qrcodeQR,text
+			qrcode.visible = false
+			@.content.addChild qrcode
+			
+	overUGC: (id = null)->
+		if id?
+			url = "http://m.giccoo.com/Levi/music.html?id=#{id}" 
 		else
-			main.setugc @.app.view.toDataURL()
-
-
+			url = "http://levi.arkrdigital.com/music/"
+		@.buildQR url, =>
+			@.app.renderer.render @.app.stage
+			main.ugcold = @.app.view.toDataURL()
+			@.album.scale.set(1,1)
+			@.album.x = 0
+			@.album.y = 110
+			@.content.y = 0
+			@.qrcode.visible = true
+			@.logo.y -= @.qrcode.height+40
+			@.note.y -= @.qrcode.height+40
+			@.app.renderer.render @.app.stage
+			if main.wy
+				main.share @.app.view.toDataURL()
+			else
+				main.setugc @.app.view.toDataURL()
 

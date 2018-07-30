@@ -139,6 +139,7 @@ block content
       .page.page-3(v-show="pageIndex == 3")
         .content
           #ugc
+            img(:src="ugcold")
           transition(name="page-fade")
             .user-ctrl-box(v-show="step == 1")
               .upload
@@ -147,7 +148,7 @@ block content
                 .title
                   img(src="#{url}/img/name-ctrl-title.png")
                 .textarea
-                  textarea(v-model="nickname",placeholder="输入你的名字（字数限制10字）")
+                  textarea(v-model="nickname",maxlength="20",placeholder="输入你的名字（字数限制10字）")
                 .btn(@click="gotoAudio")
                   img(src="#{url}/img/btn-name.png")
           transition(name="page-fade")
@@ -155,7 +156,7 @@ block content
               .title
                 img(src="#{url}/img/page-3-audio-title.png")
               .btns
-                .btn.btn-audition(v-show="audioId != null",@click="playAudio")
+                .btn.btn-audition.fadeIn.animated(v-show="audioId != null",@click="playAudio")
                   img(src="#{url}/img/icon-audio-play.png")
                   span 试 听
                 .btn.btn-start
@@ -163,16 +164,16 @@ block content
                     img(src="#{url}/img/icon-audio-start.png")
                   .stop(v-show="recordStarting",@click="recordStop")
                     img(src="#{url}/img/icon-audio-restart.png")
-                  span 录 音
-                .btn.btn-upload(v-show="audioId != null",@click="uploadAudio")
+                  span {{!recordStarting?'录 音':'停 止'}}
+                .btn.btn-upload.fadeIn.animated(v-show="audioId != null",@click="uploadAudio")
                   img(src="#{url}/img/icon-audio-right.png")
-                  span 上 传
+                  span 完 成
           transition(name="page-fade")
             .message-ctrl(v-show="step == 3")
               .title
                 img(src="#{url}/img/message-ctrl-title.png")
               .textarea
-                textarea(v-model="text",placeholder="你发声了什么？（字数限制32字）")
+                textarea(v-model="text",maxlength="64",placeholder="你发声了什么？（字数限制32字）")
               .btn(@click="selectSingerStart")
                 img(src="#{url}/img/btn-create.png")
           transition(name="page-fade")
@@ -211,6 +212,7 @@ block js
   //- script(src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js")
   script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js")
   script(src="//s3.music.126.net/static/mob/ntes.id.js")
   script(src="//s5.music.126.net/static_public/5a1b70ea0180f6ca7295a59d/js/music-jssdk-1.0.3.js")
   //- script(src="/libs/js/min/bump-min.js")

@@ -19,6 +19,8 @@ TrueW = 640
 TrueH = 1138
 imageurl = "//api.giccoo.com/api/upload/image64/"
 apiUrl = "//api.giccoo.com/Levi"
+# apiLink = "//g.giccoo.com/"
+apiLink = "http://192.168.3.45:3000/"
 # apiUrl = "http://localhost:8881/Levi"
 main = {}
 ugc = null
@@ -29,12 +31,13 @@ musicIconCache = null
 sys = ""
 ugcCache = null
 sended = [false,false]
+_cache = null
 _CDN = "./"
 
 
 neteaseShareImage = ->
 	title1 = "快来玩游戏，赢Bobbi Brown正装粉底液！"
-	picUrl = "https://image.giccoo.com/upload/Levi/"+main.shareImageLink+"@!large"
+	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
 	redirectUrl = "https://m.giccoo.com/Levi/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
@@ -140,9 +143,9 @@ init = ->
 	# document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
 	TrueW = 640 if TrueW >= 640
 	TrueH = 1138 if TrueH >= 1138
-	smaller = TrueH*2 < 1100
+	smaller = TrueH*2 < 1200
 	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
-	console.log TrueW/TrueH < 0.52
+	console.log TrueW,TrueH
 
 	main = new Vue
 		el: "#main"
@@ -160,54 +163,68 @@ init = ->
 			pageIndex: 2
 			step: 1
 			startgame: false
+			folder: ""
 			BGColor: "#ffffff"
 			XY: "pageY"
 			ugc: null
+			ugcold: null
 			pushed: false
 			shareImageLink: null
-			
 			singerIndex: 3
 			cache: null
 			audioId: null
 			v: null
 			recordStarting: false
+			authorization: false
+			uploaded: false
+			imageUpdate: false
 			form:
 				link: null
+			mask: 1
 			text: ""
 			nickname: ""
-				
+			musicLink: ""
+			logId: ""
 		methods:
 			startbuild: ->
-				# if @.v < 541
-				# 	return alert "请先升级到最新版本的网易云音乐"
+				if @.v < 541
+					return alert "请先升级到最新版本的网易云音乐"
 				@.pageIndex = 3
-
 			recordStart: ->
-				@.audioId = "123"
-				return false 
-				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=30')
+				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10')
 				@.audioId = null
 				@.recordStarting = true
-				setTimeout =>
+				_cache = setTimeout =>
 					@.recordStop()
-				,30*1000-100
+				,10*1000-100
 			recordStop: ->
 				CloudMusic.orpheus('orpheus://recordvoice/record/end')
 				@.recordStarting = false
+				@.authorization = true
+				clearTimeout _cache
+				_cache = setTimeout =>
+					@.authorization = false
+					@.uploadAudio()
+				,800
 			playAudio: ->
+				# alert @.audioId
 				CloudMusic.orpheus("orpheus://recordvoice/play/start?id=#{@.audioId}")
 			uploadAudio: ->
 				@.step = 3
 				ugc.addCover()
-				return false 
-				CloudMusic.orpheus("orpheus://recordvoice/upload/start?id=#{@.audioId}")
+				return false
 			gotoAudio: ->
+				# return alert "请输入你的名字" if @.nickname is ""
+				# return alert "名字限制10个中文字符20个英文字符" if @.nickname.gblen() > 20
+				# return alert "请上传一张专辑封面" unless @.imageUpdate
 				@.step = 2
 				ugc.uploadOverText.visible = false
 			review: ->
 				@.step = 5
 				ugc.review()
 			selectSingerStart: ->
+				# return alert "请输入你发声了什么?" if @.text is ""
+				# return alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
 				@.step = 4
 				ugc.albumInfo @.singerIndex
 			singerPrev: ->
@@ -215,49 +232,63 @@ init = ->
 				if @.singerIndex < 1
 					return @.singerIndex = 1
 				ugc.albumInfo @.singerIndex
-
 			singerNext: ->
 				@.singerIndex++
 				if @.singerIndex > 5
 					return @.singerIndex = 5
 				ugc.albumInfo @.singerIndex
-
-			submit: ->
-				return alert "您没有中奖" unless @.form.random?
-				return alert "请输入您的姓名" if @.form.username is ""
-				return alert "请输入您的联系方式" if @.form.mobile is ""
-				return alert "请输入您的收货地址" if @.form.address is ""
-				return alert "请点击选择色号" if @.form.color is ""
-				# "//api.giccoo.com/mbenz-love/insert"
-				# 
-				axios.post "#{apiUrl}/update/",@.form
-				.then (msg)=>
-					if msg.data.recode is 200
-						main.lotteryFormShow = false
-					else
-						alert msg.data.reason
-				.catch (e)=>
-					alert "提交失败请重试"
 			over: ->
 				if @.wy
 					@.step = 5
 				else
 					@.pageInfoShow = true
-				ugc.overUGC()
+				return false if @.loading
+				if @.uploaded
+					neteaseShareImage()
+					return false 
+				@.loading = true
+				CloudMusic.orpheus("orpheus://recordvoice/upload/start?id=#{@.audioId}")
+				# @.createLog()
+			createLog: ->
+				# @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
+				unless @.authorization
+					ugc.overUGC()
+					return false
+				data = {
+					nickname: @.nickname
+					music: @.musicLink
+					singer: @.singerIndex
+					message: @.text
+					allow: @.authorization
+					mask: @.mask
+				}
+				axios.post "#{apiLink}active/levi/insert",data
+				.then (msg)=>
+					# alert JSON.stringify msg
+					if msg.data.info.insertId?
+						@.logId = msg.data.info.insertId
+						ugc.overUGC(msg.data.info.insertId)
+					else
+						ugc.overUGC()
+				.catch (e)=>
+					@.loading = false
+				
 			share: (image)->
+				folder = "Levi"
+				if @.authorization
+					folder = "Levis"
 				data = {
 					image: image
-					folder: "Levi"
+					folder: folder
 				}
+				@.folder = folder
 				return @.faild() unless image?
 				return false if @.pushed
-				# @.ugcLoadPageShow = true
-				@.loading = true
+				
 				axios.post imageurl,data
 				.then (msg)=>
 					if msg.data.recode is 200
 						main.success(msg.data)
-						# @.ugcLoadPageShow = false
 					else
 						main.faild(msg)
 				.catch (e)=>
@@ -265,11 +296,28 @@ init = ->
 					main.faild(e)
 				_hmt? and _hmt.push(['_trackEvent', "Levi", "share", "ugc", "-"])
 			success: (data)->
-				@.pushed = false
-				@.loading = false
 				@.shareImageLink = data.info
-				neteaseShareImage()
-				
+				# post and update ugc info
+				# @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
+
+				data = {
+					id: @.logId
+					avatar: @.folder+"/"+@.shareImageLink
+				}
+				@.uploaded = true
+				if @.logId?
+					axios.post "#{apiLink}active/levi/update",data
+					.then (msg)=>
+						# alert JSON.stringify msg
+						@.pushed = false
+						@.loading = false
+						neteaseShareImage()
+					.catch (e)=>
+						@.pushed = false
+						@.loading = false
+						neteaseShareImage()
+				else
+					neteaseShareImage()
 			showInfoPage: ->
 				@.pageInfoShow = true
 			faild: (err)->
@@ -279,10 +327,11 @@ init = ->
 			setugc: (link)->
 				@.ugc = link
 			changeImage: (evt)->
+				@.imageUpdate = true
 				img = document.getElementById "imageInput"
-				console.log img.files.length
-				self.max = img.files.length
-				self.now = 0
+				# console.log img.files.length
+				# self.max = img.files.length
+				# self.now = 0
 				# for item in [0...img.files.length]
 				getOrientation img.files[0],(orientation)->
 					blob = createObjectURLfun(img.files[0])
@@ -305,11 +354,24 @@ init = ->
 			# game = new Game({el: "game",h: h})
 			ugc = new UGC({el: "ugc",trueH: TrueH})
 			@.v = parseInt CloudMusic.getClientVersion().replace(/\./g,"")
-			if window.api.recordEndCb?
-				window.api.recordEndCb (data)=>
-					console.log data
-					@.audioId = data.localId
-					@.recordStarting = false
-			if window.api.uploadEndCb?
-				window.api.uploadEndCb (data)=>
-					console.log data
+			# alert window.api.recordEndCb?
+			# alert window.api.uploadEndCb?
+			# if window.api.recordEndCb?
+			window.api.recordEndCb = (data)=>
+				console.log data
+				# alert JSON.stringify data
+				@.audioId = data.localId
+				@.recordStarting = false
+				clearTimeout _cache
+				# alert @.audioId
+			window.api.uploadEndCb = (data)=>
+				console.log data
+				# alert JSON.stringify data
+				if data.code is 200
+					@.musicLink = data.playUrl
+					@.createLog()
+				else
+					@.authorization = false
+					@.createLog()
+			window.api.recordvoicePlayCb = (data)=>
+				console.log data.action
