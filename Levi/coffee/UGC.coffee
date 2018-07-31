@@ -1,4 +1,6 @@
 random = 1+parseInt Math.random()*5
+_CDN = "./"
+
 class UGC
 	default:
 		w: 320

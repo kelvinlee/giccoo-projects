@@ -32,7 +32,6 @@ sys = ""
 ugcCache = null
 sended = [false,false]
 _cache = null
-_CDN = "./"
 _runTime = null
 
 neteaseShareImage = ->

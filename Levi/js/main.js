@@ -180,6 +180,8 @@ if (Number.isInteger == null) {
 
 random = 1 + parseInt(Math.random() * 5);
 
+_CDN = "./";
+
 UGC = function () {
   var UGC = function () {
     function UGC(arg) {
