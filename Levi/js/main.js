@@ -1023,8 +1023,9 @@ init = function init() {
       var _this10 = this;
 
       var h;
-      // if sys is "NeteaseMusic"
-      // 	@.wy = true
+      if (sys === "NeteaseMusic") {
+        this.wy = true;
+      }
       h = TrueH * 2 * (2 - TrueW * 2 / 750 + 0.01);
       // game = new Game({el: "game",h: h})
       ugc = new UGC({
@@ -1055,11 +1056,8 @@ init = function init() {
           return _this10.createLog();
         }
       };
-      window.api.recordvoicePlayCb = function (data) {
+      return window.api.recordvoicePlayCb = function (data) {
         return console.log(data.action);
-      };
-      return window.api.passsharetext = function (data) {
-        return console.log("share:", data);
       };
     }
   });
