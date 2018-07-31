@@ -196,8 +196,8 @@ init = ->
 			logId: ""
 		methods:
 			startbuild: ->
-				if @.v < 541
-					return alert "请先升级到最新版本的网易云音乐"
+				# if @.v < 541
+				# 	return alert "请先升级到最新版本的网易云音乐"
 				@.pageIndex = 3
 			recordStart: ->
 				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10')

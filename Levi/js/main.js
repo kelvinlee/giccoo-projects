@@ -756,9 +756,8 @@ init = function init() {
     },
     methods: {
       startbuild: function startbuild() {
-        if (this.v < 541) {
-          return alert("请先升级到最新版本的网易云音乐");
-        }
+        // if @.v < 541
+        // 	return alert "请先升级到最新版本的网易云音乐"
         return this.pageIndex = 3;
       },
       recordStart: function recordStart() {
