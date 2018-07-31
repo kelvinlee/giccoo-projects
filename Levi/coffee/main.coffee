@@ -389,8 +389,8 @@ init = ->
 			nickname: (n,o)->
 				ugc.updateName @.nickname
 		mounted: ->
-			if sys is "NeteaseMusic"
-				@.wy = true
+			# if sys is "NeteaseMusic"
+			# 	@.wy = true
 			h = TrueH*2*(2-TrueW*2/750+0.01)
 			# game = new Game({el: "game",h: h})
 			ugc = new UGC({el: "ugc",trueH: TrueH})

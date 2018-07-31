@@ -1024,9 +1024,8 @@ init = function init() {
       var _this10 = this;
 
       var h;
-      if (sys === "NeteaseMusic") {
-        this.wy = true;
-      }
+      // if sys is "NeteaseMusic"
+      // 	@.wy = true
       h = TrueH * 2 * (2 - TrueW * 2 / 750 + 0.01);
       // game = new Game({el: "game",h: h})
       ugc = new UGC({
