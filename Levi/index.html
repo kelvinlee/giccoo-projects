@@ -206,6 +206,18 @@
         </div>
       </transition>
       <transition name="page-fade">
+        <div v-show="allowPopShow" class="pop pop-allow">
+          <div class="content">
+            <div class="allow-box"><img src="./img/pop-reg.png">
+              <div class="btns">
+                <div @click="allowTRUE" class="btn btn-yes"><img src="./img/btn-yes.png"></div>
+                <div @click="allowFALSE" class="btn btn-no"><img src="./img/btn-no.png"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
         <div v-show="pageInfoShow" class="pop">
           <div class="content"><img :src="ugc">
             <div class="p">长按保存图片</div>

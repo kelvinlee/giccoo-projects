@@ -198,7 +198,17 @@ block content
                   img(src="#{url}/img/btn-share.png")
                 .btn.btn-more
                   img(src="#{url}/img/btn-more.png")
-          
+    
+    transition(name="page-fade")
+      .pop.pop-allow(v-show="allowPopShow")
+        .content
+          .allow-box
+            img(src="#{url}/img/pop-reg.png")
+            .btns
+              .btn.btn-yes(@click="allowTRUE")
+                img(src="#{url}/img/btn-yes.png")
+              .btn.btn-no(@click="allowFALSE")
+                img(src="#{url}/img/btn-no.png")
     transition(name="page-fade")
       .pop(v-show="pageInfoShow")
         .content

@@ -160,7 +160,7 @@ init = ->
 			loading: false
 			pagebuildShow: false
 			pageInfoShow: false
-			pageIndex: 2
+			pageIndex: 1
 			step: 1
 			startgame: false
 			folder: ""
@@ -178,6 +178,7 @@ init = ->
 			authorization: false
 			uploaded: false
 			imageUpdate: false
+			allowPopShow: false
 			form:
 				link: null
 			mask: 1
@@ -245,7 +246,17 @@ init = ->
 				return false if @.loading
 				if @.uploaded
 					neteaseShareImage()
-					return false 
+					return false
+				@.allowShow()
+			allowShow: ->
+				@.allowPopShow = true
+			allowFALSE: ->
+				return false if @.loading
+				@.loading = true
+				@.authorization = false
+				@.createLog()
+			allowTRUE: ->
+				return false if @.loading
 				@.loading = true
 				CloudMusic.orpheus("orpheus://recordvoice/upload/start?id=#{@.audioId}")
 				# @.createLog()
