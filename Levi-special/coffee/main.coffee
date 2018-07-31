@@ -46,10 +46,10 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "快来玩游戏，赢Bobbi Brown正装粉底液！"
-				desc: "测测你的颜值能量，哪首歌代表你的颜值？~"
-				link: "http://m.giccoo.com/Levi/"
-				imgUrl: "http://m.giccoo.com/Levi/img/ico.jpg"
+				title: "有故事的声活单曲"
+				desc: "有故事的声活单曲~"
+				link: "http://m.giccoo.com/Levi-special/"
+				imgUrl: "http://m.giccoo.com/Levi-special/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->

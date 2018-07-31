@@ -17,7 +17,7 @@ String.prototype.gblen = ->
 
 TrueW = 640
 TrueH = 1138
-# imageurl = "//api.giccoo.com/api/upload/image64/"
+imageurl = "//api.giccoo.com/api/upload/image64/"
 apiUrl = "//api.giccoo.com/Levi"
 apiLink = "//g.giccoo.com/"
 # apiLink = "http://192.168.3.45:3000/"
@@ -36,7 +36,7 @@ _CDN = "./"
 
 
 neteaseShareImage = ->
-	title1 = "快来玩游戏，赢Bobbi Brown正装粉底液！"
+	title1 = "有故事的声活单曲"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
 	redirectUrl = "https://m.giccoo.com/Levi/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
@@ -91,8 +91,8 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "快来玩游戏，赢Bobbi Brown正装粉底液！"
-				desc: "测测你的颜值能量，哪首歌代表你的颜值？~"
+				title: "有故事的声活单曲"
+				desc: "有故事的声活单曲~"
 				link: "http://m.giccoo.com/Levi/"
 				imgUrl: "http://m.giccoo.com/Levi/img/ico.jpg"
 				success: ->
@@ -196,8 +196,8 @@ init = ->
 			logId: ""
 		methods:
 			startbuild: ->
-				# if @.v < 541
-				# 	return alert "请先升级到最新版本的网易云音乐"
+				if @.v < 541
+					return alert "请先升级到最新版本的网易云音乐"
 				@.pageIndex = 3
 			recordStart: ->
 				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10')
@@ -228,9 +228,7 @@ init = ->
 				return alert "请上传一张专辑封面" unless @.imageUpdate
 				@.step = 2
 				ugc.uploadOverText.visible = false
-			review: ->
-				@.step = 5
-				ugc.review()
+			
 			selectSingerStart: ->
 				return alert "请输入你发声了什么?" if @.text is ""
 				return alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
@@ -255,18 +253,32 @@ init = ->
 				if @.uploaded
 					neteaseShareImage()
 					return false
+				@.loading = true
+				console.log "authorization:",@.authorization
+				if @.authorization
+					CloudMusic.orpheus("orpheus://recordvoice/upload/start?id=#{@.audioId}")
+				else
+					@.createLog()
+			review: ->
+				# @.step = 5
+				# ugc.review()
 				@.allowShow()
 			allowShow: ->
 				@.allowPopShow = true
 			allowFALSE: ->
 				return false if @.loading
-				@.loading = true
+				# @.loading = true
 				@.authorization = false
-				@.createLog()
+				@.allowPopShow = false
+				ugc.review()
+				@.step = 5
+				# @.createLog()
 			allowTRUE: ->
 				return false if @.loading
-				@.loading = true
-				CloudMusic.orpheus("orpheus://recordvoice/upload/start?id=#{@.audioId}")
+				@.authorization = true
+				@.allowPopShow = false
+				ugc.review()
+				@.step = 5
 				# @.createLog()
 			createLog: ->
 				# @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
@@ -301,6 +313,7 @@ init = ->
 					folder: folder
 				}
 				@.folder = folder
+				console.log "folder:",folder
 				return @.faild() unless image?
 				return false if @.pushed
 				
@@ -318,7 +331,10 @@ init = ->
 				@.shareImageLink = data.info
 				# post and update ugc info
 				# @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
-
+				unless @.authorization
+					@.loading = false
+					neteaseShareImage()
+					return true
 				data = {
 					id: @.logId
 					avatar: @.folder+"/"+@.shareImageLink
