@@ -19,8 +19,8 @@ TrueW = 640
 TrueH = 1138
 imageurl = "//api.giccoo.com/api/upload/image64/"
 apiUrl = "//api.giccoo.com/Levi"
-# apiLink = "//g.giccoo.com/"
-apiLink = "http://192.168.3.45:3000/"
+apiLink = "//g.giccoo.com/"
+# apiLink = "http://192.168.3.45:3000/"
 # apiUrl = "http://localhost:8881/Levi"
 main = {}
 music = {}
@@ -234,7 +234,7 @@ init = ->
 					list[n] += texts[i]+" "
 				@.msgList = list
 			ask: (id)->
-				axios.get "#{apiLink}active/levi/info/id/#{id}"
+				axios.get "#{apiLink}active/Levi/info/id/#{id}"
 				.then (msg)=>
 					console.log msg.data
 					@.info = msg.data.info

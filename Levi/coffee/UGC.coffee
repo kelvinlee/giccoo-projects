@@ -1,3 +1,4 @@
+random = 1+parseInt Math.random()*5
 class UGC
 	default:
 		w: 320
@@ -61,7 +62,7 @@ class UGC
 			"#{_CDN}img/ugc-border.png"
 			"#{_CDN}img/ugc-logo.png"
 			"#{_CDN}img/album-bg.png"
-			"#{_CDN}img/album-cover.png"
+			"#{_CDN}img/album-cover-#{random}.png"
 			"#{_CDN}img/album-poster.png"
 			"#{_CDN}img/album-upload-text.png"
 			"#{_CDN}img/album-upload-over-text.png"
@@ -151,7 +152,7 @@ class UGC
 	addCover: ->
 		@.uploadOverText.visible = false
 		@.uploadText.visible = false
-		albumCover = new Sprite getTe "#{_CDN}img/album-cover.png"
+		@.albumCover = albumCover = new Sprite getTe "#{_CDN}img/album-cover-#{random}.png"
 		albumCover.y = (@.albumBG.height-albumCover.height)/2
 		albumCover.alpha = 0
 		@.album.addChild albumCover

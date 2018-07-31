@@ -8301,6 +8301,61 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi\/img\/album-cover-1.png": {
+		"ft": 32768,
+		"iS": 19363,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/album-cover-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/album-cover-2.png": {
+		"ft": 32768,
+		"iS": 19386,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/album-cover-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/album-cover-3.png": {
+		"ft": 32768,
+		"iS": 19372,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/album-cover-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/album-cover-4.png": {
+		"ft": 32768,
+		"iS": 19432,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/album-cover-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/album-cover-5.png": {
+		"ft": 32768,
+		"iS": 19368,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/album-cover-5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Levi\/img\/album-cover.png": {
 		"ft": 32768,
 		"iS": 343906,
@@ -9239,11 +9294,11 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"\/Levi\/mp3\/output.mp3": {
+	"\/Levi\/mp3\/bgm.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/Levi\/mp3\/output.mp3",
+		"oAP": "\/Levi\/mp3\/bgm.mp3",
 		"oF": 0
 		},
 	"\/Levi\/music.html": {

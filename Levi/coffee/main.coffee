@@ -19,8 +19,8 @@ TrueW = 640
 TrueH = 1138
 # imageurl = "//api.giccoo.com/api/upload/image64/"
 apiUrl = "//api.giccoo.com/Levi"
-# apiLink = "//g.giccoo.com/"
-apiLink = "http://192.168.3.45:3000/"
+apiLink = "//g.giccoo.com/"
+# apiLink = "http://192.168.3.45:3000/"
 # apiUrl = "http://localhost:8881/Levi"
 main = {}
 ugc = null
@@ -168,7 +168,7 @@ init = ->
 			loading: false
 			pagebuildShow: false
 			pageInfoShow: false
-			pageIndex: 1
+			pageIndex: 3
 			step: 1
 			startgame: false
 			folder: ""
@@ -196,8 +196,8 @@ init = ->
 			logId: ""
 		methods:
 			startbuild: ->
-				if @.v < 541
-					return alert "请先升级到最新版本的网易云音乐"
+				# if @.v < 541
+				# 	return alert "请先升级到最新版本的网易云音乐"
 				@.pageIndex = 3
 			recordStart: ->
 				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10')
@@ -281,7 +281,7 @@ init = ->
 					allow: @.authorization
 					mask: @.mask
 				}
-				axios.post "#{apiLink}active/levi/insert",data
+				axios.post "#{apiLink}active/Levi/insert",data
 				.then (msg)=>
 					# alert JSON.stringify msg
 					if msg.data.info.insertId?
@@ -325,7 +325,7 @@ init = ->
 				}
 				@.uploaded = true
 				if @.logId?
-					axios.post "#{apiLink}active/levi/update",data
+					axios.post "#{apiLink}active/Levi/update",data
 					.then (msg)=>
 						# alert JSON.stringify msg
 						@.pushed = false

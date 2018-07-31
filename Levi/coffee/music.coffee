@@ -18,8 +18,8 @@ String.prototype.gblen = ->
 
 main = null
 _cd = null
-# apiLink = "//g.giccoo.com/"
-apiLink = "http://192.168.3.45:3000/"
+apiLink = "//g.giccoo.com/"
+# apiLink = "http://192.168.3.45:3000/"
 _CDN = "./"
 
 window.onload = ->
@@ -117,7 +117,7 @@ init = ->
 					list[n] += texts[i]+" "
 				@.msgList = list
 			ask: (id)->
-				axios.get "#{apiLink}active/levi/info/id/#{id}"
+				axios.get "#{apiLink}active/Levi/info/id/#{id}"
 				.then (msg)=>
 					console.log msg.data
 					@.info = msg.data.info
