@@ -395,6 +395,7 @@ init = ->
 			# game = new Game({el: "game",h: h})
 			ugc = new UGC({el: "ugc",trueH: TrueH})
 			@.v = parseInt CloudMusic.getClientVersion().replace(/\./g,"")
+			console.log "version:",CloudMusic.getClientVersion(),@.v
 			# alert window.api.recordEndCb?
 			# alert window.api.uploadEndCb?
 			# if window.api.recordEndCb?
