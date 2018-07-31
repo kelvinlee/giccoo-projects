@@ -17,7 +17,7 @@ String.prototype.gblen = ->
 
 TrueW = 640
 TrueH = 1138
-imageurl = "//api.giccoo.com/api/upload/image64/"
+# imageurl = "//api.giccoo.com/api/upload/image64/"
 apiUrl = "//api.giccoo.com/Levi"
 # apiLink = "//g.giccoo.com/"
 apiLink = "http://192.168.3.45:3000/"
@@ -223,17 +223,17 @@ init = ->
 				ugc.addCover()
 				return false
 			gotoAudio: ->
-				# return alert "请输入你的名字" if @.nickname is ""
-				# return alert "名字限制10个中文字符20个英文字符" if @.nickname.gblen() > 20
-				# return alert "请上传一张专辑封面" unless @.imageUpdate
+				return alert "请输入你的名字" if @.nickname is ""
+				return alert "名字限制10个中文字符20个英文字符" if @.nickname.gblen() > 20
+				return alert "请上传一张专辑封面" unless @.imageUpdate
 				@.step = 2
 				ugc.uploadOverText.visible = false
 			review: ->
 				@.step = 5
 				ugc.review()
 			selectSingerStart: ->
-				# return alert "请输入你发声了什么?" if @.text is ""
-				# return alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
+				return alert "请输入你发声了什么?" if @.text is ""
+				return alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
 				@.step = 4
 				ugc.albumInfo @.singerIndex
 			singerPrev: ->
