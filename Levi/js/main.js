@@ -551,8 +551,6 @@ sended = [false, false];
 
 _cache = null;
 
-_CDN = "./";
-
 _runTime = null;
 
 neteaseShareImage = function neteaseShareImage() {
@@ -1058,8 +1056,11 @@ init = function init() {
           return _this10.createLog();
         }
       };
-      return window.api.recordvoicePlayCb = function (data) {
+      window.api.recordvoicePlayCb = function (data) {
         return console.log(data.action);
+      };
+      return window.api.passsharetext = function (data) {
+        return console.log("share:", data);
       };
     }
   });

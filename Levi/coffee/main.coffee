@@ -416,3 +416,5 @@ init = ->
 					@.createLog()
 			window.api.recordvoicePlayCb = (data)=>
 				console.log data.action
+			window.api.passsharetext = (data)=>
+				console.log "share:",data
