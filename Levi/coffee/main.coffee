@@ -114,22 +114,30 @@ window.onload = ->
 			progress: 0
 			mounted: false
 			progressOn: 100
+		methods:
+			openMusic: ->
+				bgm = document.getElementById "bgm"
+				bgm.play()
+				clearTimeout _cache
+				@.next()
+			next: ->
+				document.getElementById('load').className += " fadeOut animated"
+				_public.note = false
+				setTimeout ->
+					document.getElementById('load').style.display = "none"
+				,520
 		mounted: ->
 			@.mounted = true
 			timein = setInterval =>
-				@.progress += 3
+				@.progress += 2
 				@.progress = @.progressOn if @.progress >= @.progressOn
 				if @.progress >= 100
 					@.progress = 100
 					clearInterval timein
 					main.mounted = true
-					setTimeout ->
-						document.getElementById('load').className += " fadeOut animated"
-						_public.note = false
-						setTimeout ->
-							document.getElementById('load').style.display = "none"
-						,520
-					,100
+					_cache = setTimeout =>
+						@.next()
+					,2000
 			,1000/20
 			setTimeout =>
 				init()
@@ -348,12 +356,11 @@ init = ->
 					blob = createObjectURLfun(img.files[0])
 					ugc.passImage blob,orientation
 			# passImage: (blob)->
-
 		watch:
 			mounted: (n,o)->
 				setTimeout =>
 					@.pageIndex = 2 if @.pageIndex < 2
-				,4000*3+500
+				,22*1000+500
 			text: (n,o)->
 				ugc.lyricUpdate @.text
 			nickname: (n,o)->

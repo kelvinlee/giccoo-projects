@@ -157,6 +157,29 @@ video,canvas,svg
 	+bc(#000)
 	z-index: 99
 	// 3c080f
+	.open
+		+posa
+		+bl
+		+w
+		+text-center
+		+font-size(0.8rem)
+		color: #fff
+		&:after,&:before
+			content: " "
+			+posa
+			+tl(-70%,50%)
+			+w(3rem)
+			+h(3rem)
+			margin-left: -1.5rem
+			border: solid 2px #fff
+			border-radius: 50%
+			+overhide
+			+box
+			transform-origin: center center
+			+animation(fadeOutCircle,2s,ease,infinite)
+		&:before
+			animation-delay: 400ms
+
 	.loading
 		+posa
 		+tl(50%,50%)
@@ -167,7 +190,7 @@ video,canvas,svg
 	.text
 		+posa
 		+tl
-		+transform(translate3d(0,-50%,0))
+		+transform(translate3d(-3%,-50%,0))
 		animation-delay: 300ms
 .music-box
 	+w(5%)
@@ -438,10 +461,10 @@ video,canvas,svg
 			+posa
 			+tl
 			+transform(translate3d(0,-50%,0))
-	$time: 4000ms
+	$time: 7000ms
 	.text-1
 		+tl(25%)
-		+animation(textShow,$time,linear)
+		+animation(textShow,$time+1000,linear)
 		animation-delay: 500ms
 	.text-2
 		+tl(50%)
@@ -450,7 +473,7 @@ video,canvas,svg
 		.box
 			margin-left: 10%
 	.text-3
-		+animation(textShow,$time,linear)
+		+animation(textShow,$time+1000,linear)
 		animation-delay: 500ms + $time*2
 		+tl(75%)
 

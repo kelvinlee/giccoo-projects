@@ -8433,6 +8433,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi\/img\/btn-yes.png": {
+		"ft": 32768,
+		"iS": 3873,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/btn-yes.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Levi\/img\/cd-mask.png": {
 		"ft": 32768,
 		"iS": 6592,
@@ -9227,6 +9238,13 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"\/Levi\/mp3\/output.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/Levi\/mp3\/output.mp3",
+		"oF": 0
 		},
 	"\/Levi\/music.html": {
 		"cB": 0,
@@ -16647,7 +16665,7 @@
 		},
 	"\/sulwhasoo\/img\/icon-symbol-3.png": {
 		"ft": 32768,
-		"iS": 3910,
+		"iS": 6197,
 		"oA": 0,
 		"oAP": "\/sulwhasoo\/img\/icon-symbol-3.png",
 		"oF": 0,

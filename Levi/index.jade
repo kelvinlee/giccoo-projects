@@ -50,6 +50,8 @@ block content
       .music-box(style="height: 2rem")
       .text.fadeIn.animated
         img(src="#{url}/img/loading-text.png")
+      .open(v-show="progress > 80",@click="openMusic") 打开声音
+      audio#bgm(src="#{url}/mp3/bgm.mp3")
   
   .main#main(v-show="mounted",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
     transition(name="page-fade")
