@@ -166,7 +166,7 @@ block content
                     img(src="#{url}/img/icon-audio-start.png")
                   .stop(v-show="recordStarting",@click="recordStop")
                     img(src="#{url}/img/icon-audio-restart.png")
-                  span {{!recordStarting?'录 音':'停 止'}}
+                  span {{!recordStarting?'录 音':'停止 '+count+'s'}}
                 .btn.btn-upload.fadeIn.animated(v-show="audioId != null",@click="uploadAudio")
                   img(src="#{url}/img/icon-audio-right.png")
                   span 完 成
@@ -198,7 +198,7 @@ block content
               .btns
                 .btn.btn-share(@click="over")
                   img(src="#{url}/img/btn-share.png")
-                a.btn.btn-more(href="http://levi.arkrdigital.com/music/")
+                .btn.btn-more(href="http://levi.arkrdigital.com/music/")
                   img(src="#{url}/img/btn-more.png")
     
     transition(name="page-fade")

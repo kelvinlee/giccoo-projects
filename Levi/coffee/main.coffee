@@ -33,7 +33,7 @@ ugcCache = null
 sended = [false,false]
 _cache = null
 _CDN = "./"
-
+_runTime = null
 
 neteaseShareImage = ->
 	title1 = "有故事的声活单曲"
@@ -187,6 +187,7 @@ init = ->
 			uploaded: false
 			imageUpdate: false
 			allowPopShow: false
+			count: 0
 			form:
 				link: null
 			mask: 1
@@ -202,15 +203,22 @@ init = ->
 			recordStart: ->
 				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10')
 				@.audioId = null
+				@.count = 10
 				@.recordStarting = true
 				_cache = setTimeout =>
 					@.recordStop()
 				,10*1000-100
+				_time = new Date().getTime()
+				_runTime = setInterval =>
+					@.count = 10 - parseInt (new Date().getTime() - _time)/1000
+				,1000/10
+
 			recordStop: ->
 				CloudMusic.orpheus('orpheus://recordvoice/record/end')
 				@.recordStarting = false
 				@.authorization = true
 				clearTimeout _cache
+				clearInterval _runTime
 				_cache = setTimeout =>
 					@.authorization = false
 					@.uploadAudio()

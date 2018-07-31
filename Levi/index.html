@@ -166,7 +166,7 @@
                   <div v-show="audioId != null" @click="playAudio" class="btn btn-audition fadeIn animated"><img src="./img/icon-audio-play.png"><span>试 听</span></div>
                   <div class="btn btn-start">
                     <div v-show="!recordStarting" @click="recordStart" class="start"><img src="./img/icon-audio-start.png"></div>
-                    <div v-show="recordStarting" @click="recordStop" class="stop"><img src="./img/icon-audio-restart.png"></div><span>{{!recordStarting?'录 音':'停 止'}}</span>
+                    <div v-show="recordStarting" @click="recordStop" class="stop"><img src="./img/icon-audio-restart.png"></div><span>{{!recordStarting?'录 音':'停止 '+count+'s'}}</span>
                   </div>
                   <div v-show="audioId != null" @click="uploadAudio" class="btn btn-upload fadeIn animated"><img src="./img/icon-audio-right.png"><span>完 成</span></div>
                 </div>
@@ -199,7 +199,8 @@
             <transition name="page-fade">
               <div v-show="step == 5" class="review-ctrl">
                 <div class="btns">
-                  <div @click="over" class="btn btn-share"><img src="./img/btn-share.png"></div><a href="http://levi.arkrdigital.com/music/" class="btn btn-more"><img src="./img/btn-more.png"></a>
+                  <div @click="over" class="btn btn-share"><img src="./img/btn-share.png"></div>
+                  <div href="http://levi.arkrdigital.com/music/" class="btn btn-more"><img src="./img/btn-more.png"></div>
                 </div>
               </div>
             </transition>
