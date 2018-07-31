@@ -196,8 +196,8 @@ init = ->
 			logId: ""
 		methods:
 			startbuild: ->
-				# if @.v < 541
-				# 	return alert "请先升级到最新版本的网易云音乐"
+				unless @.v
+					return alert "请先升级到最新版本的网易云音乐"
 				@.pageIndex = 3
 			recordStart: ->
 				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10')
@@ -394,7 +394,12 @@ init = ->
 			h = TrueH*2*(2-TrueW*2/750+0.01)
 			# game = new Game({el: "game",h: h})
 			ugc = new UGC({el: "ugc",trueH: TrueH})
-			@.v = parseInt CloudMusic.getClientVersion().replace(/\./g,"")
+			version = CloudMusic.getClientVersion().split(".")
+			if version.length >= 3
+				@.v = version[0] >= 5 and version[1] >= 4 and version[2] >= 1
+			else
+				@.v = false
+			# @.v = parseInt CloudMusic.getClientVersion().replace(/\./g,"")
 			console.log "version:",CloudMusic.getClientVersion(),@.v
 			# alert window.api.recordEndCb?
 			# alert window.api.uploadEndCb?

@@ -756,8 +756,9 @@ init = function init() {
     },
     methods: {
       startbuild: function startbuild() {
-        // if @.v < 541
-        // 	return alert "请先升级到最新版本的网易云音乐"
+        if (!this.v) {
+          return alert("请先升级到最新版本的网易云音乐");
+        }
         return this.pageIndex = 3;
       },
       recordStart: function recordStart() {
@@ -1022,7 +1023,7 @@ init = function init() {
     mounted: function mounted() {
       var _this10 = this;
 
-      var h;
+      var h, version;
       if (sys === "NeteaseMusic") {
         this.wy = true;
       }
@@ -1032,7 +1033,13 @@ init = function init() {
         el: "ugc",
         trueH: TrueH
       });
-      this.v = parseInt(CloudMusic.getClientVersion().replace(/\./g, ""));
+      version = CloudMusic.getClientVersion().split(".");
+      if (version.length >= 3) {
+        this.v = version[0] >= 5 && version[1] >= 4 && version[2] >= 1;
+      } else {
+        this.v = false;
+      }
+      // @.v = parseInt CloudMusic.getClientVersion().replace(/\./g,"")
       console.log("version:", CloudMusic.getClientVersion(), this.v);
       // alert window.api.recordEndCb?
       // alert window.api.uploadEndCb?
