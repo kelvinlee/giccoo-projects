@@ -1,1 +1,1064 @@
-"use strict";function _defineProperty(e,t,i){return t in e?Object.defineProperty(e,t,{value:i,enumerable:!0,configurable:!0,writable:!0}):e[t]=i,e}function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var _createClass=function(){function e(e,t){for(var i=0;i<t.length;i++){var n=t[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,i,n){return i&&e(t.prototype,i),n&&e(t,n),t}}(),ANIMATION_END_NAME,ANIMATION_END_NAMES,AnimatedSprite,Container,Graphics,IsPC,ParticleContainer,Sprite,TRANSITION_END_NAME,TRANSITION_END_NAMES,Text,Texture,TextureCache,TrueH,TrueW,UGC,VENDORS,_CDN,_cache,_public,_runTime,apiLink,apiUrl,autoDetectRenderer,createObjectURLfun,css3Prefix,getId,getOrientation,getTe,i,imageurl,init,j,len1,loadWechatConfig,loader,loading,mTestElement,main,musicIconCache,musicLineCache,neteaseShareImage,random,resource,resources,sended,sys,ugc,ugcCache;for(VENDORS=["Moz","webkit","ms","O"],TRANSITION_END_NAMES={Moz:"transitionend",webkit:"webkitTransitionEnd",ms:"MSTransitionEnd",O:"oTransitionEnd"},ANIMATION_END_NAMES={Moz:"animationend",webkit:"webkitAnimationEnd",ms:"MSAnimationEnd",O:"oAnimationEnd"},mTestElement=document.createElement("div"),j=0,len1=VENDORS.length;j<len1&&(i=VENDORS[j],!((css3Prefix=i)+"Transition"in mTestElement.style));j++)css3Prefix=!1;css3Prefix&&(TRANSITION_END_NAME=TRANSITION_END_NAMES[css3Prefix],ANIMATION_END_NAME=ANIMATION_END_NAMES[css3Prefix]),loadWechatConfig=function e(){var t,i,n;n=encodeURIComponent(window.location.href.split("#")[0]),t=document.createElement("script"),t.src="//api.giccoo.com/api/config?url="+n,i=document.getElementsByTagName("script")[0],i.parentNode.insertBefore(t,i)},IsPC=function e(){var t,i,n,r;for(n=navigator.userAgent,t=new Array("Android","iPhone","SymbianOS","Windows Phone","iPad","iPod"),i=!0,r=0;r<t.length;){if(n.indexOf(t[r])>0){i=!1;break}r++}return i},Vue.component("player",{template:'<div class="player" :class="{play: playing, pause: !playing}" @click="change"> <div class="icon-play" :class="{play: playing, pause: !playing}"> <svg v-if="!icon" v-show="!playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-39"></use><path class="ytp-svg-fill" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"></path></svg> <svg v-if="!icon" v-show="playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-40"></use><path class="ytp-svg-fill" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z"></path></svg> </div> <audio :src="src" :autoplay="autoplay" :preload="preload" :loop="loop"></audio> <img v-if="thumb" :src="thumb" /> </div>',data:function e(){return{playing:!1,stoped:!1}},props:{name:{default:!1},src:{default:"./mp3/bgm.mp3"},thumb:{default:!1},autoplay:{default:!1},preload:{default:!1},loop:{default:!1},callback:{default:!1},icon:{default:!1}},methods:{play:function e(){var t;return t=this.$emit("play",this),this.playing=!0},pause:function e(){var t;return t=this.$emit("pause",this),this.audio.pause(),this.playing=!1},ended:function e(){return this.playing=!1},change:function e(){return this.playing?(this.audio.pause(),this.stoped=!0):(this.audio.play(),this.stoped=!1,"undefined"!=typeof _hmt&&null!==_hmt&&_hmt.push(["_trackEvent","adidas-originals-eqt",this.name,"play","-"]))}},mounted:function e(t){return console.log(this.name),this.audio=this.$el.children[1],this.audio.addEventListener("pause",this.pause.bind(this)),this.audio.addEventListener("play",this.play.bind(this)),this.audio.addEventListener("ended",this.ended.bind(this))}}),Container=PIXI.Container,ParticleContainer=PIXI.ParticleContainer,autoDetectRenderer=PIXI.autoDetectRenderer,loader=PIXI.loader,resources=PIXI.loader.resources,TextureCache=PIXI.utils.TextureCache,Texture=PIXI.Texture,Sprite=PIXI.Sprite,Graphics=PIXI.Graphics,resource=PIXI.loader.resources,Text=PIXI.Text,AnimatedSprite=PIXI.extras.AnimatedSprite,getTe=function e(t){return resource[t].texture},getId=function e(t,i){return loader.resources[i].textures[t]},null==Number.isInteger&&(Number.isInteger=function(e){return e>=0}),random=1+parseInt(5*Math.random()),UGC=function(){var e=function(){function e(t){_classCallCheck(this,e),this.opts={el:"main",w:750,h:1314,trueH:1314,count:6,speed:1,alpha:.8,defaultShow:!0,class:"",fillColor:6737151},this.opts=Object.assign(this.opts,t),this.default.h=document.documentElement.clientHeight,this.default.w=document.documentElement.clientWidth,this.default.ratio=this.opts.w/this.default.w,this.app=new PIXI.Application({width:this.opts.w,height:this.opts.h,transparent:!0,preserveDrawingBuffer:!0}),null!=this.opts.class&&""!==this.opts.class&&(this.app.view.className=this.opts.class),this.stage=this.app.stage,document.getElementById(this.opts.el).appendChild(this.app.view),PIXI.loader.add([_CDN+"img/ugc-bg-1.jpg",_CDN+"img/ugc-bg-2.jpg",_CDN+"img/ugc-bg-3.jpg",_CDN+"img/ugc-bg-4.jpg",_CDN+"img/ugc-bg-5.jpg",_CDN+"img/ugc-name-1.png",_CDN+"img/ugc-name-2.png",_CDN+"img/ugc-name-3.png",_CDN+"img/ugc-name-4.png",_CDN+"img/ugc-name-5.png",_CDN+"img/ugc-note-1.png",_CDN+"img/ugc-note-2.png",_CDN+"img/ugc-note-3.png",_CDN+"img/ugc-note-4.png",_CDN+"img/ugc-note-5.png",_CDN+"img/ugc-singer-1.png",_CDN+"img/ugc-singer-2.png",_CDN+"img/ugc-singer-3.png",_CDN+"img/ugc-singer-4.png",_CDN+"img/ugc-singer-5.png",_CDN+"img/ugc-text-2.png",_CDN+"img/ugc-border.png",_CDN+"img/ugc-logo.png",_CDN+"img/album-bg.png",_CDN+"img/album-cover-"+random+".png",_CDN+"img/album-poster.png",_CDN+"img/album-upload-text.png",_CDN+"img/album-upload-over-text.png",_CDN+"img/mask.png",_CDN+"img/qrcode.png",_CDN+"img/avatar.jpg"]).load(this.build.bind(this)),this.default.MH=.65*this.opts.h}return _createClass(e,[{key:"build",value:function e(){var t,i,n,r,a,o,s,u;return this.trueH=750/TrueW*TrueH,this.content=a=new Container,r=new Sprite(getTe(_CDN+"img/ugc-border.png")),a.addChild(r),a.y=-(this.opts.h-this.trueH)-TrueH*(750/TrueW)*.4-20,this.album=t=new Container,this.albumBG=i=new Sprite(getTe(_CDN+"img/album-bg.png")),n=new Sprite(getTe(_CDN+"img/album-poster.png")),n.y=(i.height-n.height)/2,this.uploadText=s=new Sprite(getTe(_CDN+"img/album-upload-text.png")),s.y=n.y,this.uploadOverText=o=new Sprite(getTe(_CDN+"img/album-upload-over-text.png")),o.y=n.y,o.visible=!1,this.userName=u=new Text("",{fontFamily:"Arial",fontSize:38,fill:16777215,align:"left"}),t.addChild(i,n,s,o,u),t.scale.set(.8,.8),t.x=(this.opts.w-t.width)/2,this.stage.addChild(a,t)}},{key:"passImage",value:function e(t,i){var n=this,r;return null!=this.avatar&&this.album.removeChild(this.avatar),this.avatar=new Container,r=Sprite.fromImage(t),r.texture.baseTexture.on("loaded",function(){var e;return console.log("avatar:",r.width,r.height),r.anchor.set(.5,.5),r.scale.set(410/r.width,410/r.width),r.x=r.width/2,r.y=205,n.avatar.addChild(r),n.avatar.x=130,n.avatar.y=172,n.album.addChildAt(n.avatar,3),e=new Graphics,e.beginFill(16777215),e.drawRect(0,0,410,410),e.x=130,e.y=172,n.album.addChild(e),r.mask=e,6===i&&(r.rotation=.5*Math.PI),3===i&&(r.rotation=Math.PI),n.uploadOverText.visible=!0,n.uploadText.visible=!1})}},{key:"updateName",value:function e(t){return this.userName.text=t,this.userName.x=124,this.userName.y=602}},{key:"addCover",value:function e(){var t;return this.uploadOverText.visible=!1,this.uploadText.visible=!1,this.albumCover=t=new Sprite(getTe(_CDN+"img/album-cover-"+random+".png")),t.y=(this.albumBG.height-t.height)/2,t.alpha=0,this.album.addChild(t),TweenLite.to(t,1,{alpha:1})}},{key:"albumInfo",value:function e(t){var i,n,r,a;return null!=this.albumInfoCont&&this.album.removeChild(this.albumInfoCont),null!=this.bg&&this.content.removeChild(this.bg),this.index=t,this.albumInfoCont=new Container,a=new Sprite(getTe(_CDN+"img/ugc-singer-"+t+".png")),a.y=782-a.height-50,r=new Sprite(getTe(_CDN+"img/ugc-name-"+t+".png")),i=new Sprite(getTe(_CDN+"img/ugc-text-2.png")),i.y=782-i.height-64,r.y=i.y-r.height-10,this.albumInfoCont.addChild(a,r,i),this.album.addChild(this.albumInfoCont),this.bg=n=new Sprite(getTe(_CDN+"img/ugc-bg-"+t+".jpg")),this.content.addChildAt(this.bg,0)}},{key:"lyricUpdate",value:function e(t){var n,r,a,o,s,u,l,c,h,g;if(t.gblen()>64)return!1;for(null!=this.lyric&&this.album.removeChild(this.lyric),this.lyric=new Container,g=t.split(""),s=[""],u=0,o=32,console.log(g),n=r=0,l=g.length;0<=l?r<l:r>l;n=0<=l?++r:--r)console.log(s[u].gblen(),n),s[u].gblen()>=16&&(u++,s[u]="",console.log(u,n)),s[u]+=g[n]+"";for(console.log(s),i=a=0,c=s.length;0<=c?a<c:a>c;i=0<=c?++a:--a)i>=4||(h=i%4*.2,t=new Text(s[i],{fontFamily:"Arial",fontSize:24,fill:16777215,align:"left"}),t.alpha=1-h,t.y=4*o-(4-(i%4+1))*o+(4-s.length)*o,t.x=(this.opts.w-t.width)/2,this.lyric.addChild(t));return this.album.addChild(this.lyric)}},{key:"review",value:function e(){var t,i;return this.content.y+=200,this.logo=t=new Sprite(getTe(_CDN+"img/ugc-logo.png")),t.y=this.content.height-t.height-40,this.note=i=new Sprite(getTe(_CDN+"img/ugc-note-"+this.index+".png")),i.y=t.y-i.height-20,console.log(i.y,t.y),this.content.addChild(t,i)}},{key:"buildQR",value:function e(t,i){var n=this,r;return r=new QRCode("qrcode",_defineProperty({text:t,width:130,height:130,colorDark:"#000000"},"colorDark","#000000")),console.log(r._el.lastChild),r._el.lastChild.onload=function(){var e,t,a,o,s;return e=5,n.qrcode=t=new Container,s=new Sprite(getTe(_CDN+"img/qrcode.png")),s.x=20,a=new Graphics,a.beginFill(16777215),a.drawRect(0,0,130+2*e,130+2*e),o=Sprite.fromImage(r._el.lastChild.src),o.texture.baseTexture.on("loaded",function(){return o.x=e,o.y=e,t.x=40,t.y=n.content.height-130+2*e-40,i()}),t.addChild(a,o,s),t.visible=!1,n.content.addChild(t)}}},{key:"overUGC",value:function e(){var t=this,i=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null,n;return n=null!=i?"http://m.giccoo.com/Levi/music.html?id="+i:"http://levi.arkrdigital.com/music/",this.buildQR(n,function(){return t.app.renderer.render(t.app.stage),main.ugcold=t.app.view.toDataURL(),t.album.scale.set(1,1),t.album.x=0,t.album.y=110,t.content.y=0,t.qrcode.visible=!0,t.logo.y-=t.qrcode.height+40,t.note.y-=t.qrcode.height+40,t.app.renderer.render(t.app.stage),main.wy?main.share(t.app.view.toDataURL()):main.setugc(t.app.view.toDataURL())})}}]),e}();return e.prototype.default={w:320,h:160,running:!0},e.prototype.started=!1,e.prototype.over=!1,e.prototype.online=!1,e.prototype.blocks=[],e.prototype.bottles=[],e.prototype.enemys=[],e.prototype.lights=[],e.prototype._progress=0,e.prototype.startTime=null,e}.call(void 0),String.prototype.gblen=function(){var e,t,n;for(t=0,i=e=0,n=this.length;0<=n?e<n:e>n;i=0<=n?++e:--e)this.charCodeAt(i)>127||94===this.charCodeAt(i)?t+=2:t++;return t},TrueW=640,TrueH=1138,imageurl="//api.giccoo.com/api/upload/image64/",apiUrl="//api.giccoo.com/Levi",apiLink="//g.giccoo.com/",main={},ugc=null,_public={},loading={},musicLineCache=null,musicIconCache=null,sys="",ugcCache=null,sended=[!1,!1],_cache=null,_CDN="./",_runTime=null,neteaseShareImage=function e(){var t,i,n;return n="有故事的声活单曲",t="https://image.giccoo.com/upload/"+main.folder+"/"+main.shareImageLink+"@!large",i="https://m.giccoo.com/Levi/",window.location.href="orpheus://sharepic?picUrl="+encodeURIComponent(t)+"&shareUrl="+encodeURIComponent(i)+"&wbDesc="+encodeURIComponent(n)+"&qqDesc="+encodeURIComponent(n),console.log("share href")},createObjectURLfun=function e(t){return null!=window.webkitURL||window.navigator.userAgent.indexOf("Chrome")>=1||window.navigator.userAgent.indexOf("Safari")>=1?window.webkitURL.createObjectURL(t):window.URL.createObjectURL(t)},getOrientation=function e(t,n){var r;r=new FileReader,r.onload=function(e){var t,r,a,o,s,u;if(u=new DataView(e.target.result),65496!==u.getUint16(0,!1))return n(-2);for(t=u.byteLength,o=2;o<t;){if(u.getUint16(o+2,!1)<=8)return n(-1);if(a=u.getUint16(o,!1),o+=2,65505===a){if(1165519206!==u.getUint32(o+=2,!1))return n(-1);for(r=18761===u.getUint16(o+=6,!1),o+=u.getUint32(o+4,r),s=u.getUint16(o,r),o+=2,i=0;i<s;){if(274===u.getUint16(o+12*i,r))return n(u.getUint16(o+12*i+8,r));i++}}else{if(65280!=(65280&a))break;o+=u.getUint16(o,!1)}}return n(-1)},r.readAsArrayBuffer(t)},window.onload=function(){return IsPC()?(document.getElementById("qrcode").className+=" show",!1):(window.navigator.userAgent.indexOf("NeteaseMusic")>-1?sys="NeteaseMusic":(loadWechatConfig(),wx.ready(function(){var e;return e={title:"有故事的声活单曲",desc:"有故事的声活单曲~",link:"http://m.giccoo.com/Levi/",imgUrl:"http://m.giccoo.com/Levi/img/ico.jpg",success:function e(){},cancel:function e(){}},wx.onMenuShareTimeline(e),wx.onMenuShareAppMessage(e),wx.onMenuShareQQ(e),wx.onMenuShareWeibo(e)})),_public=new Vue({el:"#public",data:{note:!0}}),loading=new Vue({el:"#loading",data:{progress:0,mounted:!1,progressOn:100},methods:{openMusic:function e(){var t;return t=document.getElementById("bgm"),t.play(),clearTimeout(_cache),this.next()},next:function e(){return document.getElementById("load").className+=" fadeOut animated",_public.note=!1,setTimeout(function(){return document.getElementById("load").style.display="none"},520)}},mounted:function e(){var t=this,i;return this.mounted=!0,i=setInterval(function(){if(t.progress+=2,t.progress>=t.progressOn&&(t.progress=t.progressOn),t.progress>=100)return t.progress=100,clearInterval(i),main.mounted=!0,_cache=setTimeout(function(){return t.next()},2e3)},50),setTimeout(function(){return init()},500)}}))},init=function e(){var t,i;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,TrueW>=640&&(TrueW=640),TrueH>=1138&&(TrueH=1138),i=2*TrueH<1200,t=Math.ceil(TrueW/640*94/TrueH*100),console.log(TrueW,TrueH),main=new Vue({el:"#main",data:{w:TrueW,h:TrueH,biger:TrueW/TrueH<.52,smaller:i,afterH:i?1.15*TrueH-TrueW/750*1029:TrueH-TrueW/750*1029,wy:!1,mounted:!1,loading:!1,pagebuildShow:!1,pageInfoShow:!1,pageIndex:1,step:1,startgame:!1,folder:"",BGColor:"#ffffff",XY:"pageY",ugc:null,ugcold:null,pushed:!1,shareImageLink:null,singerIndex:3,cache:null,audioId:null,v:null,recordStarting:!1,authorization:!1,uploaded:!1,imageUpdate:!1,allowPopShow:!1,count:0,form:{link:null},mask:1,text:"",nickname:"",musicLink:"",logId:""},methods:{startbuild:function e(){return this.v<541?alert("请先升级到最新版本的网易云音乐"):this.pageIndex=3},recordStart:function e(){var t=this,i;return CloudMusic.orpheus("orpheus://recordvoice/record/start?limit=10"),this.audioId=null,this.count=10,this.recordStarting=!0,_cache=setTimeout(function(){return t.recordStop()},9900),i=(new Date).getTime(),_runTime=setInterval(function(){return t.count=10-parseInt(((new Date).getTime()-i)/1e3)},100)},recordStop:function e(){var t=this;return CloudMusic.orpheus("orpheus://recordvoice/record/end"),this.recordStarting=!1,this.authorization=!0,clearTimeout(_cache),clearInterval(_runTime),_cache=setTimeout(function(){return t.authorization=!1,t.uploadAudio()},800)},playAudio:function e(){return CloudMusic.orpheus("orpheus://recordvoice/play/start?id="+this.audioId)},uploadAudio:function e(){return this.step=3,ugc.addCover(),!1},gotoAudio:function e(){return""===this.nickname?alert("请输入你的名字"):this.nickname.gblen()>20?alert("名字限制10个中文字符20个英文字符"):this.imageUpdate?(this.step=2,ugc.uploadOverText.visible=!1):alert("请上传一张专辑封面")},selectSingerStart:function e(){return""===this.text?alert("请输入你发声了什么?"):this.text.gblen()>64?alert("字数限制32个中文字符64个英文字符"):(this.step=4,ugc.albumInfo(this.singerIndex))},singerPrev:function e(){return this.singerIndex--,this.singerIndex<1?this.singerIndex=1:ugc.albumInfo(this.singerIndex)},singerNext:function e(){return this.singerIndex++,this.singerIndex>5?this.singerIndex=5:ugc.albumInfo(this.singerIndex)},over:function e(){return this.wy?this.step=5:this.pageInfoShow=!0,!this.loading&&(this.uploaded?(neteaseShareImage(),!1):(this.loading=!0,console.log("authorization:",this.authorization),this.authorization?CloudMusic.orpheus("orpheus://recordvoice/upload/start?id="+this.audioId):this.createLog()))},review:function e(){return this.allowShow()},allowShow:function e(){return this.allowPopShow=!0},allowFALSE:function e(){return!this.loading&&(this.authorization=!1,this.allowPopShow=!1,ugc.review(),this.step=5)},allowTRUE:function e(){return!this.loading&&(this.authorization=!0,this.allowPopShow=!1,ugc.review(),this.step=5)},createLog:function e(){var t=this,i;return this.authorization?(i={nickname:this.nickname,music:this.musicLink,singer:this.singerIndex,message:this.text,allow:this.authorization,mask:this.mask},axios.post(apiLink+"active/Levi/insert",i).then(function(e){return null!=e.data.info.insertId?(t.logId=e.data.info.insertId,ugc.overUGC(e.data.info.insertId)):ugc.overUGC()}).catch(function(e){return t.loading=!1})):(ugc.overUGC(),!1)},share:function e(t){var i,n;return n="Levi",this.authorization&&(n="Levis"),i={image:t,folder:n},this.folder=n,console.log("folder:",n),null==t?this.faild():!this.pushed&&(axios.post(imageurl,i).then(function(e){return 200===e.data.recode?main.success(e.data):main.faild(e)}).catch(function(e){return main.faild(e)}),"undefined"!=typeof _hmt&&null!==_hmt&&_hmt.push(["_trackEvent","Levi","share","ugc","-"]))},success:function e(t){var i=this;return this.shareImageLink=t.info,this.authorization?(t={id:this.logId,avatar:this.folder+"/"+this.shareImageLink},this.uploaded=!0,null!=this.logId?axios.post(apiLink+"active/Levi/update",t).then(function(e){return i.pushed=!1,i.loading=!1,neteaseShareImage()}).catch(function(e){return i.pushed=!1,i.loading=!1,neteaseShareImage()}):neteaseShareImage()):(this.loading=!1,neteaseShareImage(),!0)},showInfoPage:function e(){return this.pageInfoShow=!0},faild:function e(t){return this.pushed=!1,this.loading=!1,console.log("err:",t)},setugc:function e(t){return this.ugc=t},changeImage:function e(t){var i;return this.imageUpdate=!0,i=document.getElementById("imageInput"),getOrientation(i.files[0],function(e){var t;return t=createObjectURLfun(i.files[0]),ugc.passImage(t,e)})}},watch:{mounted:function e(t,i){var n=this;return setTimeout(function(){if(n.pageIndex<2)return n.pageIndex=2},22500)},text:function e(t,i){return ugc.lyricUpdate(this.text)},nickname:function e(t,i){return ugc.updateName(this.nickname)}},mounted:function e(){var t=this,i;return"NeteaseMusic"===sys&&(this.wy=!0),i=2*TrueH*(2-2*TrueW/750+.01),ugc=new UGC({el:"ugc",trueH:TrueH}),this.v=parseInt(CloudMusic.getClientVersion().replace(/\./g,"")),window.api.recordEndCb=function(e){return console.log(e),t.audioId=e.localId,t.recordStarting=!1,clearTimeout(_cache)},window.api.uploadEndCb=function(e){return console.log(e),200===e.code?(t.musicLink=e.playUrl,t.createLog()):(t.authorization=!1,t.createLog())},window.api.recordvoicePlayCb=function(e){return console.log(e.action)}}})};
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _CDN, _cache, _public, _runTime, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, neteaseShareImage, random, resource, resources, sended, sys, ugc, ugcCache;
+
+VENDORS = ["Moz", 'webkit', 'ms', 'O'];
+
+TRANSITION_END_NAMES = {
+  "Moz": "transitionend",
+  "webkit": "webkitTransitionEnd",
+  "ms": "MSTransitionEnd",
+  "O": "oTransitionEnd"
+};
+
+ANIMATION_END_NAMES = {
+  "Moz": "animationend",
+  "webkit": "webkitAnimationEnd",
+  "ms": "MSAnimationEnd",
+  "O": "oAnimationEnd"
+};
+
+mTestElement = document.createElement("div");
+
+for (j = 0, len1 = VENDORS.length; j < len1; j++) {
+  i = VENDORS[j];
+  css3Prefix = i;
+  if (css3Prefix + "Transition" in mTestElement.style) {
+    break;
+  }
+  css3Prefix = false;
+}
+
+if (css3Prefix) {
+  TRANSITION_END_NAME = TRANSITION_END_NAMES[css3Prefix];
+  ANIMATION_END_NAME = ANIMATION_END_NAMES[css3Prefix];
+}
+
+loadWechatConfig = function loadWechatConfig() {
+  var hm, s, url;
+  url = encodeURIComponent(window.location.href.split("#")[0]);
+  hm = document.createElement('script');
+  hm.src = "//api.giccoo.com/api/config?url=" + url;
+  s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(hm, s);
+};
+
+IsPC = function IsPC() {
+  var Agents, flag, userAgentInfo, v;
+  userAgentInfo = navigator.userAgent;
+  Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod');
+  flag = true;
+  v = 0;
+  while (v < Agents.length) {
+    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+      flag = false;
+      break;
+    }
+    v++;
+  }
+  return flag;
+};
+
+Vue.component("player", {
+  template: '<div class="player" :class="{play: playing, pause: !playing}" @click="change"> <div class="icon-play" :class="{play: playing, pause: !playing}"> <svg v-if="!icon" v-show="!playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-39"></use><path class="ytp-svg-fill" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"></path></svg> <svg v-if="!icon" v-show="playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-40"></use><path class="ytp-svg-fill" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z"></path></svg> </div> <audio :src="src" :autoplay="autoplay" :preload="preload" :loop="loop"></audio> <img v-if="thumb" :src="thumb" /> </div>',
+  data: function data() {
+    return {
+      playing: false,
+      stoped: false
+    };
+  },
+  props: {
+    name: {
+      default: false
+    },
+    src: {
+      default: "./mp3/bgm.mp3"
+    },
+    thumb: {
+      default: false
+    },
+    autoplay: {
+      default: false
+    },
+    preload: {
+      default: false
+    },
+    loop: {
+      default: false
+    },
+    callback: {
+      default: false
+    },
+    icon: {
+      default: false
+    }
+  },
+  methods: {
+    play: function play() {
+      var temp;
+      temp = this.$emit('play', this);
+      return this.playing = true;
+    },
+    pause: function pause() {
+      var temp;
+      temp = this.$emit('pause', this);
+      this.audio.pause();
+      return this.playing = false;
+    },
+    ended: function ended() {
+      return this.playing = false;
+    },
+    change: function change() {
+      if (this.playing) {
+        this.audio.pause();
+        return this.stoped = true;
+      } else {
+        this.audio.play();
+        this.stoped = false;
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "adidas-originals-eqt", this.name, "play", "-"]);
+      }
+    }
+  },
+  // computed:
+  mounted: function mounted(el) {
+    console.log(this.name);
+    this.audio = this.$el.children[1];
+    // console.log @audio
+    // @audioOther = @$el.children[2]
+    this.audio.addEventListener("pause", this.pause.bind(this));
+    this.audio.addEventListener("play", this.play.bind(this));
+    return this.audio.addEventListener("ended", this.ended.bind(this));
+  }
+});
+
+// @audio.play()
+// console.log @audio,@audioOther,@playing
+Container = PIXI.Container;
+
+ParticleContainer = PIXI.ParticleContainer;
+
+autoDetectRenderer = PIXI.autoDetectRenderer;
+
+loader = PIXI.loader;
+
+resources = PIXI.loader.resources;
+
+TextureCache = PIXI.utils.TextureCache;
+
+Texture = PIXI.Texture;
+
+Sprite = PIXI.Sprite;
+
+Graphics = PIXI.Graphics;
+
+resource = PIXI.loader.resources;
+
+Text = PIXI.Text;
+
+AnimatedSprite = PIXI.extras.AnimatedSprite;
+
+getTe = function getTe(id) {
+  return resource[id].texture;
+};
+
+getId = function getId(id, link) {
+  return loader.resources[link].textures[id];
+};
+
+// for fix ios 8 less
+if (Number.isInteger == null) {
+  Number.isInteger = function (int) {
+    return int >= 0;
+  };
+}
+
+random = 1 + parseInt(Math.random() * 5);
+
+UGC = function () {
+  var UGC = function () {
+    function UGC(arg) {
+      _classCallCheck(this, UGC);
+
+      this.opts = {
+        el: "main",
+        w: 750,
+        h: 1314,
+        trueH: 1314,
+        count: 6,
+        speed: 1,
+        alpha: 0.8,
+        defaultShow: true,
+        class: "",
+        fillColor: 0x66CCFF
+      };
+      this.opts = Object.assign(this.opts, arg);
+      this.default.h = document.documentElement.clientHeight;
+      this.default.w = document.documentElement.clientWidth;
+      this.default.ratio = this.opts.w / this.default.w;
+      this.app = new PIXI.Application({
+        width: this.opts.w,
+        height: this.opts.h,
+        transparent: true,
+        preserveDrawingBuffer: true
+      });
+      if (this.opts.class != null && this.opts.class !== "") {
+        this.app.view.className = this.opts.class;
+      }
+      this.stage = this.app.stage;
+      document.getElementById(this.opts.el).appendChild(this.app.view);
+      PIXI.loader.add([_CDN + 'img/ugc-bg-1.jpg', _CDN + 'img/ugc-bg-2.jpg', _CDN + 'img/ugc-bg-3.jpg', _CDN + 'img/ugc-bg-4.jpg', _CDN + 'img/ugc-bg-5.jpg', _CDN + 'img/ugc-name-1.png', _CDN + 'img/ugc-name-2.png', _CDN + 'img/ugc-name-3.png', _CDN + 'img/ugc-name-4.png', _CDN + 'img/ugc-name-5.png', _CDN + 'img/ugc-note-1.png', _CDN + 'img/ugc-note-2.png', _CDN + 'img/ugc-note-3.png', _CDN + 'img/ugc-note-4.png', _CDN + 'img/ugc-note-5.png', _CDN + 'img/ugc-singer-1.png', _CDN + 'img/ugc-singer-2.png', _CDN + 'img/ugc-singer-3.png', _CDN + 'img/ugc-singer-4.png', _CDN + 'img/ugc-singer-5.png', _CDN + 'img/ugc-text-2.png', _CDN + 'img/ugc-border.png', _CDN + 'img/ugc-logo.png', _CDN + 'img/album-bg.png', _CDN + 'img/album-cover-' + random + '.png', _CDN + 'img/album-poster.png', _CDN + 'img/album-upload-text.png', _CDN + 'img/album-upload-over-text.png', _CDN + 'img/mask.png', _CDN + 'img/qrcode.png', _CDN + 'img/avatar.jpg']).load(this.build.bind(this));
+      this.default.MH = this.opts.h * 0.65;
+    }
+
+    _createClass(UGC, [{
+      key: 'build',
+      value: function build() {
+        var album, albumBG, albumPoster, border, content, uploadOverText, uploadText, userName;
+        this.trueH = 750 / TrueW * TrueH;
+        this.content = content = new Container();
+        border = new Sprite(getTe(_CDN + 'img/ugc-border.png'));
+        // border.anchor.set(0,1)
+        content.addChild(border);
+        content.y = -(this.opts.h - this.trueH) - TrueH * (750 / TrueW) * 0.4 - 20;
+        // console.log @.opts.h,@.trueH
+        this.album = album = new Container();
+        this.albumBG = albumBG = new Sprite(getTe(_CDN + 'img/album-bg.png'));
+        albumPoster = new Sprite(getTe(_CDN + 'img/album-poster.png'));
+        albumPoster.y = (albumBG.height - albumPoster.height) / 2;
+        this.uploadText = uploadText = new Sprite(getTe(_CDN + 'img/album-upload-text.png'));
+        uploadText.y = albumPoster.y;
+        this.uploadOverText = uploadOverText = new Sprite(getTe(_CDN + 'img/album-upload-over-text.png'));
+        uploadOverText.y = albumPoster.y;
+        uploadOverText.visible = false;
+
+        // dropShadow : true ,dropShadowBlur: 2,dropShadowAlpha: 0.3,dropShadowColor : '#000000'
+        this.userName = userName = new Text("", {
+          fontFamily: 'Arial',
+          fontSize: 38,
+          fill: 0xffffff,
+          align: 'left'
+        });
+        album.addChild(albumBG, albumPoster, uploadText, uploadOverText, userName);
+        album.scale.set(0.8, 0.8);
+        album.x = (this.opts.w - album.width) / 2;
+        return this.stage.addChild(content, album);
+      }
+
+      // @.albumInfo album,1
+      // @.lyricUpdate "abc"
+
+    }, {
+      key: 'passImage',
+      value: function passImage(src, orientation) {
+        var _this = this;
+
+        var avatar;
+        if (this.avatar != null) {
+          this.album.removeChild(this.avatar);
+        }
+        this.avatar = new Container();
+        avatar = Sprite.fromImage(src);
+        // alert orientation
+        return avatar.texture.baseTexture.on('loaded', function () {
+          var mask1;
+          console.log("avatar:", avatar.width, avatar.height);
+          avatar.anchor.set(0.5, 0.5);
+          // avatar.mask = mask
+          avatar.scale.set(410 / avatar.width, 410 / avatar.width);
+          avatar.x = avatar.width / 2;
+          avatar.y = 205;
+          _this.avatar.addChild(avatar);
+          _this.avatar.x = 130;
+          _this.avatar.y = 172;
+          _this.album.addChildAt(_this.avatar, 3);
+          // mask1 = new Sprite getTe "#{_CDN}img/mask.png"
+          mask1 = new Graphics();
+          mask1.beginFill(0xffffff);
+          mask1.drawRect(0, 0, 410, 410);
+          mask1.x = 130;
+          mask1.y = 172;
+          _this.album.addChild(mask1);
+          avatar.mask = mask1;
+          if (orientation === 6) {
+            avatar.rotation = Math.PI * 0.5;
+          }
+          if (orientation === 3) {
+            avatar.rotation = Math.PI;
+          }
+          // avatar.x += 410
+          _this.uploadOverText.visible = true;
+          return _this.uploadText.visible = false;
+        });
+      }
+    }, {
+      key: 'updateName',
+      value: function updateName(text) {
+        this.userName.text = text;
+        this.userName.x = 124;
+        return this.userName.y = 172 + 410 + 20;
+      }
+    }, {
+      key: 'addCover',
+      value: function addCover() {
+        var albumCover;
+        this.uploadOverText.visible = false;
+        this.uploadText.visible = false;
+        this.albumCover = albumCover = new Sprite(getTe(_CDN + 'img/album-cover-' + random + '.png'));
+        albumCover.y = (this.albumBG.height - albumCover.height) / 2;
+        albumCover.alpha = 0;
+        this.album.addChild(albumCover);
+        return TweenLite.to(albumCover, 1, {
+          alpha: 1
+        });
+      }
+    }, {
+      key: 'albumInfo',
+      value: function albumInfo(i) {
+        var Texts, bg, musicName, singerName;
+        if (this.albumInfoCont != null) {
+          this.album.removeChild(this.albumInfoCont);
+        }
+        if (this.bg != null) {
+          this.content.removeChild(this.bg);
+        }
+        this.index = i;
+        this.albumInfoCont = new Container();
+        singerName = new Sprite(getTe(_CDN + 'img/ugc-singer-' + i + '.png'));
+        singerName.y = 782 - singerName.height - 50;
+        musicName = new Sprite(getTe(_CDN + 'img/ugc-name-' + i + '.png'));
+        Texts = new Sprite(getTe(_CDN + 'img/ugc-text-2.png'));
+        Texts.y = 782 - Texts.height - 64;
+        musicName.y = Texts.y - musicName.height - 10;
+        this.albumInfoCont.addChild(singerName, musicName, Texts);
+        this.album.addChild(this.albumInfoCont);
+        this.bg = bg = new Sprite(getTe(_CDN + 'img/ugc-bg-' + i + '.jpg'));
+        // @.bg.y = @.content.y
+        return this.content.addChildAt(this.bg, 0);
+      }
+    }, {
+      key: 'lyricUpdate',
+      value: function lyricUpdate(text) {
+        var index, k, l, lineH, list, n, ref, ref1, t, texts;
+        if (text.gblen() > 64) {
+          return false;
+        }
+        if (this.lyric != null) {
+          this.album.removeChild(this.lyric);
+        }
+        this.lyric = new Container();
+        // text = "每次送他去机场，真的都很累。因为"
+        texts = text.split("");
+        list = [""];
+        n = 0;
+        lineH = 32;
+        console.log(texts);
+        for (index = k = 0, ref = texts.length; 0 <= ref ? k < ref : k > ref; index = 0 <= ref ? ++k : --k) {
+          console.log(list[n].gblen(), index);
+          if (list[n].gblen() >= 16) {
+            n++;
+            list[n] = "";
+            console.log(n, index);
+          }
+          list[n] += texts[index] + "";
+        }
+        console.log(list);
+        for (i = l = 0, ref1 = list.length; 0 <= ref1 ? l < ref1 : l > ref1; i = 0 <= ref1 ? ++l : --l) {
+          if (i >= 4) {
+            continue;
+          }
+          t = i % 4 * 0.2;
+          text = new Text(list[i], {
+            fontFamily: 'Arial',
+            fontSize: 24,
+            fill: 0xffffff,
+            align: 'left'
+          });
+          text.alpha = 1 - t;
+          text.y = lineH * 4 - (4 - (i % 4 + 1)) * lineH + (4 - list.length) * lineH;
+          text.x = (this.opts.w - text.width) / 2;
+          this.lyric.addChild(text);
+        }
+        return this.album.addChild(this.lyric);
+      }
+    }, {
+      key: 'review',
+      value: function review() {
+        var logo, note;
+        this.content.y += 200;
+        this.logo = logo = new Sprite(getTe(_CDN + 'img/ugc-logo.png'));
+        logo.y = this.content.height - logo.height - 40;
+        this.note = note = new Sprite(getTe(_CDN + 'img/ugc-note-' + this.index + '.png'));
+        note.y = logo.y - note.height - 20;
+        console.log(note.y, logo.y);
+        return this.content.addChild(logo, note);
+      }
+    }, {
+      key: 'buildQR',
+      value: function buildQR(url, callback) {
+        var _this2 = this;
+
+        var qrcodeMake;
+        qrcodeMake = new QRCode("qrcode", _defineProperty({
+          text: url,
+          width: 130,
+          height: 130,
+          colorDark: "#000000"
+        }, 'colorDark', "#000000"));
+        console.log(qrcodeMake._el.lastChild);
+        return qrcodeMake._el.lastChild.onload = function () {
+          var border, qrcode, qrcodeBg, qrcodeQR, text;
+          border = 5;
+          _this2.qrcode = qrcode = new Container();
+          text = new Sprite(getTe(_CDN + 'img/qrcode.png'));
+          text.x = 20;
+          qrcodeBg = new Graphics();
+          qrcodeBg.beginFill(0xffffff);
+          qrcodeBg.drawRect(0, 0, 130 + border * 2, 130 + border * 2);
+          qrcodeQR = Sprite.fromImage(qrcodeMake._el.lastChild.src);
+          qrcodeQR.texture.baseTexture.on('loaded', function () {
+            qrcodeQR.x = border;
+            qrcodeQR.y = border;
+            qrcode.x = 40;
+            qrcode.y = _this2.content.height - 130 + border * 2 - 40;
+            return callback();
+          });
+          qrcode.addChild(qrcodeBg, qrcodeQR, text);
+          qrcode.visible = false;
+          return _this2.content.addChild(qrcode);
+        };
+      }
+    }, {
+      key: 'overUGC',
+      value: function overUGC() {
+        var _this3 = this;
+
+        var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+        var url;
+        if (id != null) {
+          url = 'http://m.giccoo.com/Levi/music.html?id=' + id;
+        } else {
+          url = "http://levi.arkrdigital.com/music/";
+        }
+        return this.buildQR(url, function () {
+          _this3.app.renderer.render(_this3.app.stage);
+          main.ugcold = _this3.app.view.toDataURL();
+          _this3.album.scale.set(1, 1);
+          _this3.album.x = 0;
+          _this3.album.y = 110;
+          _this3.content.y = 0;
+          _this3.qrcode.visible = true;
+          _this3.logo.y -= _this3.qrcode.height + 40;
+          _this3.note.y -= _this3.qrcode.height + 40;
+          _this3.app.renderer.render(_this3.app.stage);
+          if (main.wy) {
+            return main.share(_this3.app.view.toDataURL());
+          } else {
+            return main.setugc(_this3.app.view.toDataURL());
+          }
+        });
+      }
+    }]);
+
+    return UGC;
+  }();
+
+  ;
+
+  UGC.prototype.default = {
+    w: 320,
+    h: 160,
+    running: true
+  };
+
+  UGC.prototype.started = false;
+
+  UGC.prototype.over = false;
+
+  UGC.prototype.online = false;
+
+  UGC.prototype.blocks = [];
+
+  UGC.prototype.bottles = [];
+
+  UGC.prototype.enemys = [];
+
+  UGC.prototype.lights = [];
+
+  UGC.prototype._progress = 0;
+
+  UGC.prototype.startTime = null;
+
+  return UGC;
+}.call(undefined);
+
+// @codekit-prepend "coffee/css3Prefix"
+// @codekit-prepend "../../libs/coffee/loadWechatConfig"
+// @codekit-prepend "../../libs/coffee/IsPC"
+// @codekit-prepend "../../libs/vue/vue-player"
+// @codekit-prepend "../../libs/coffee/pixi-base"
+// @codekit-prepend "./UGC"
+String.prototype.gblen = function () {
+  var k, len, ref;
+  len = 0;
+  for (i = k = 0, ref = this.length; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
+    if (this.charCodeAt(i) > 127 || this.charCodeAt(i) === 94) {
+      len += 2;
+    } else {
+      len++;
+    }
+  }
+  return len;
+};
+
+TrueW = 640;
+
+TrueH = 1138;
+
+imageurl = "//api.giccoo.com/api/upload/image64/";
+
+apiUrl = "//api.giccoo.com/Levi";
+
+apiLink = "//g.giccoo.com/";
+
+// apiLink = "http://192.168.3.45:3000/"
+// apiUrl = "http://localhost:8881/Levi"
+main = {};
+
+ugc = null;
+
+_public = {};
+
+loading = {};
+
+musicLineCache = null;
+
+musicIconCache = null;
+
+sys = "";
+
+ugcCache = null;
+
+sended = [false, false];
+
+_cache = null;
+
+_CDN = "./";
+
+_runTime = null;
+
+neteaseShareImage = function neteaseShareImage() {
+  var picUrl, redirectUrl, title1;
+  title1 = "有故事的声活单曲";
+  picUrl = 'https://image.giccoo.com/upload/' + main.folder + '/' + main.shareImageLink + "@!large";
+  redirectUrl = "https://m.giccoo.com/Levi/";
+  // console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
+  window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
+  return console.log("share href");
+};
+
+createObjectURLfun = function createObjectURLfun(file) {
+  if (window.webkitURL != null || window.navigator.userAgent.indexOf("Chrome") >= 1 || window.navigator.userAgent.indexOf("Safari") >= 1) {
+    return window.webkitURL.createObjectURL(file);
+  } else {
+    return window.URL.createObjectURL(file);
+  }
+};
+
+getOrientation = function getOrientation(file, callback) {
+  var reader;
+  reader = new FileReader();
+  reader.onload = function (e) {
+    var length, little, marker, offset, tags, view;
+    view = new DataView(e.target.result);
+    if (view.getUint16(0, false) !== 0xFFD8) {
+      return callback(-2);
+    }
+    length = view.byteLength;
+    offset = 2;
+    while (offset < length) {
+      if (view.getUint16(offset + 2, false) <= 8) {
+        return callback(-1);
+      }
+      marker = view.getUint16(offset, false);
+      offset += 2;
+      if (marker === 0xFFE1) {
+        if (view.getUint32(offset += 2, false) !== 0x45786966) {
+          return callback(-1);
+        }
+        little = view.getUint16(offset += 6, false) === 0x4949;
+        offset += view.getUint32(offset + 4, little);
+        tags = view.getUint16(offset, little);
+        offset += 2;
+        i = 0;
+        while (i < tags) {
+          if (view.getUint16(offset + i * 12, little) === 0x0112) {
+            return callback(view.getUint16(offset + i * 12 + 8, little));
+          }
+          i++;
+        }
+      } else if ((marker & 0xFF00) !== 0xFF00) {
+        break;
+      } else {
+        offset += view.getUint16(offset, false);
+      }
+    }
+    return callback(-1);
+  };
+  reader.readAsArrayBuffer(file);
+};
+
+window.onload = function () {
+  if (IsPC()) {
+    document.getElementById("qrcode").className += " show";
+    return false;
+  }
+  if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
+    sys = "NeteaseMusic";
+  } else {
+    loadWechatConfig();
+    wx.ready(function () {
+      var shareContent;
+      shareContent = {
+        title: "有故事的声活单曲",
+        desc: "有故事的声活单曲~",
+        link: "http://m.giccoo.com/Levi/",
+        imgUrl: "http://m.giccoo.com/Levi/img/ico.jpg",
+        success: function success() {},
+        // alert "success"
+        cancel: function cancel() {}
+      };
+      // alert "cancel"
+      wx.onMenuShareTimeline(shareContent);
+      wx.onMenuShareAppMessage(shareContent);
+      wx.onMenuShareQQ(shareContent);
+      return wx.onMenuShareWeibo(shareContent);
+    });
+  }
+  _public = new Vue({
+    el: "#public",
+    data: {
+      note: true
+    }
+  });
+  return loading = new Vue({
+    el: "#loading",
+    data: {
+      progress: 0,
+      mounted: false,
+      progressOn: 100
+    },
+    methods: {
+      openMusic: function openMusic() {
+        var bgm;
+        bgm = document.getElementById("bgm");
+        bgm.play();
+        clearTimeout(_cache);
+        return this.next();
+      },
+      next: function next() {
+        document.getElementById('load').className += " fadeOut animated";
+        _public.note = false;
+        return setTimeout(function () {
+          return document.getElementById('load').style.display = "none";
+        }, 520);
+      }
+    },
+    mounted: function mounted() {
+      var _this4 = this;
+
+      var timein;
+      this.mounted = true;
+      timein = setInterval(function () {
+        _this4.progress += 2;
+        if (_this4.progress >= _this4.progressOn) {
+          _this4.progress = _this4.progressOn;
+        }
+        if (_this4.progress >= 100) {
+          _this4.progress = 100;
+          clearInterval(timein);
+          main.mounted = true;
+          return _cache = setTimeout(function () {
+            return _this4.next();
+          }, 2000);
+        }
+      }, 1000 / 20);
+      return setTimeout(function () {
+        return init();
+      }, 500);
+    }
+  });
+};
+
+init = function init() {
+  var navH, smaller;
+  TrueH = document.documentElement.clientHeight;
+  TrueW = document.documentElement.clientWidth;
+  if (TrueW >= 640) {
+    // console.log new Date().getTime() - startTime
+    // document.body.style.height = TrueH+"px"
+    // document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
+    TrueW = 640;
+  }
+  if (TrueH >= 1138) {
+    TrueH = 1138;
+  }
+  smaller = TrueH * 2 < 1200;
+  navH = Math.ceil(TrueW / 640 * 94 / TrueH * 100);
+  console.log(TrueW, TrueH);
+  return main = new Vue({
+    el: "#main",
+    data: {
+      w: TrueW,
+      h: TrueH,
+      biger: TrueW / TrueH < 0.52,
+      smaller: smaller,
+      afterH: smaller ? TrueH * 1.15 - 1029 * (TrueW / 750) : TrueH - 1029 * (TrueW / 750),
+      wy: false,
+      mounted: false,
+      loading: false,
+      pagebuildShow: false,
+      pageInfoShow: false,
+      pageIndex: 1,
+      step: 1,
+      startgame: false,
+      folder: "",
+      BGColor: "#ffffff",
+      XY: "pageY",
+      ugc: null,
+      ugcold: null,
+      pushed: false,
+      shareImageLink: null,
+      singerIndex: 3,
+      cache: null,
+      audioId: null,
+      v: null,
+      recordStarting: false,
+      authorization: false,
+      uploaded: false,
+      imageUpdate: false,
+      allowPopShow: false,
+      count: 0,
+      form: {
+        link: null
+      },
+      mask: 1,
+      text: "",
+      nickname: "",
+      musicLink: "",
+      logId: ""
+    },
+    methods: {
+      startbuild: function startbuild() {
+        if (this.v < 541) {
+          return alert("请先升级到最新版本的网易云音乐");
+        }
+        return this.pageIndex = 3;
+      },
+      recordStart: function recordStart() {
+        var _this5 = this;
+
+        var _time;
+        CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10');
+        this.audioId = null;
+        this.count = 10;
+        this.recordStarting = true;
+        _cache = setTimeout(function () {
+          return _this5.recordStop();
+        }, 10 * 1000 - 100);
+        _time = new Date().getTime();
+        return _runTime = setInterval(function () {
+          return _this5.count = 10 - parseInt((new Date().getTime() - _time) / 1000);
+        }, 1000 / 10);
+      },
+      recordStop: function recordStop() {
+        var _this6 = this;
+
+        CloudMusic.orpheus('orpheus://recordvoice/record/end');
+        this.recordStarting = false;
+        this.authorization = true;
+        clearTimeout(_cache);
+        clearInterval(_runTime);
+        return _cache = setTimeout(function () {
+          _this6.authorization = false;
+          return _this6.uploadAudio();
+        }, 800);
+      },
+      playAudio: function playAudio() {
+        // alert @.audioId
+        return CloudMusic.orpheus('orpheus://recordvoice/play/start?id=' + this.audioId);
+      },
+      uploadAudio: function uploadAudio() {
+        this.step = 3;
+        ugc.addCover();
+        return false;
+      },
+      gotoAudio: function gotoAudio() {
+        if (this.nickname === "") {
+          return alert("请输入你的名字");
+        }
+        if (this.nickname.gblen() > 20) {
+          return alert("名字限制10个中文字符20个英文字符");
+        }
+        if (!this.imageUpdate) {
+          return alert("请上传一张专辑封面");
+        }
+        this.step = 2;
+        return ugc.uploadOverText.visible = false;
+      },
+      selectSingerStart: function selectSingerStart() {
+        if (this.text === "") {
+          return alert("请输入你发声了什么?");
+        }
+        if (this.text.gblen() > 64) {
+          return alert("字数限制32个中文字符64个英文字符");
+        }
+        this.step = 4;
+        return ugc.albumInfo(this.singerIndex);
+      },
+      singerPrev: function singerPrev() {
+        this.singerIndex--;
+        if (this.singerIndex < 1) {
+          return this.singerIndex = 1;
+        }
+        return ugc.albumInfo(this.singerIndex);
+      },
+      singerNext: function singerNext() {
+        this.singerIndex++;
+        if (this.singerIndex > 5) {
+          return this.singerIndex = 5;
+        }
+        return ugc.albumInfo(this.singerIndex);
+      },
+      over: function over() {
+        if (this.wy) {
+          this.step = 5;
+        } else {
+          this.pageInfoShow = true;
+        }
+        if (this.loading) {
+          return false;
+        }
+        if (this.uploaded) {
+          neteaseShareImage();
+          return false;
+        }
+        this.loading = true;
+        console.log("authorization:", this.authorization);
+        if (this.authorization) {
+          return CloudMusic.orpheus('orpheus://recordvoice/upload/start?id=' + this.audioId);
+        } else {
+          return this.createLog();
+        }
+      },
+      review: function review() {
+        // @.step = 5
+        // ugc.review()
+        return this.allowShow();
+      },
+      allowShow: function allowShow() {
+        return this.allowPopShow = true;
+      },
+      allowFALSE: function allowFALSE() {
+        if (this.loading) {
+          return false;
+        }
+        // @.loading = true
+        this.authorization = false;
+        this.allowPopShow = false;
+        ugc.review();
+        return this.step = 5;
+      },
+      // @.createLog()
+      allowTRUE: function allowTRUE() {
+        if (this.loading) {
+          return false;
+        }
+        this.authorization = true;
+        this.allowPopShow = false;
+        ugc.review();
+        return this.step = 5;
+      },
+      // @.createLog()
+      createLog: function createLog() {
+        var _this7 = this;
+
+        var data;
+        // @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
+        if (!this.authorization) {
+          ugc.overUGC();
+          return false;
+        }
+        data = {
+          nickname: this.nickname,
+          music: this.musicLink,
+          singer: this.singerIndex,
+          message: this.text,
+          allow: this.authorization,
+          mask: this.mask
+        };
+        return axios.post(apiLink + 'active/Levi/insert', data).then(function (msg) {
+          // alert JSON.stringify msg
+          if (msg.data.info.insertId != null) {
+            _this7.logId = msg.data.info.insertId;
+            return ugc.overUGC(msg.data.info.insertId);
+          } else {
+            return ugc.overUGC();
+          }
+        }).catch(function (e) {
+          return _this7.loading = false;
+        });
+      },
+      share: function share(image) {
+        var data, folder;
+        folder = "Levi";
+        if (this.authorization) {
+          folder = "Levis";
+        }
+        data = {
+          image: image,
+          folder: folder
+        };
+        this.folder = folder;
+        console.log("folder:", folder);
+        if (image == null) {
+          return this.faild();
+        }
+        if (this.pushed) {
+          return false;
+        }
+        axios.post(imageurl, data).then(function (msg) {
+          if (msg.data.recode === 200) {
+            return main.success(msg.data);
+          } else {
+            return main.faild(msg);
+          }
+        }).catch(function (e) {
+          // alert e
+          return main.faild(e);
+        });
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "share", "ugc", "-"]);
+      },
+      success: function success(data) {
+        var _this8 = this;
+
+        this.shareImageLink = data.info;
+        // post and update ugc info
+        // @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
+        if (!this.authorization) {
+          this.loading = false;
+          neteaseShareImage();
+          return true;
+        }
+        data = {
+          id: this.logId,
+          avatar: this.folder + "/" + this.shareImageLink
+        };
+        this.uploaded = true;
+        if (this.logId != null) {
+          return axios.post(apiLink + 'active/Levi/update', data).then(function (msg) {
+            // alert JSON.stringify msg
+            _this8.pushed = false;
+            _this8.loading = false;
+            return neteaseShareImage();
+          }).catch(function (e) {
+            _this8.pushed = false;
+            _this8.loading = false;
+            return neteaseShareImage();
+          });
+        } else {
+          return neteaseShareImage();
+        }
+      },
+      showInfoPage: function showInfoPage() {
+        return this.pageInfoShow = true;
+      },
+      faild: function faild(err) {
+        this.pushed = false;
+        this.loading = false;
+        return console.log("err:", err);
+      },
+      setugc: function setugc(link) {
+        return this.ugc = link;
+      },
+      changeImage: function changeImage(evt) {
+        var img;
+        this.imageUpdate = true;
+        img = document.getElementById("imageInput");
+        // console.log img.files.length
+        // self.max = img.files.length
+        // self.now = 0
+        // for item in [0...img.files.length]
+        return getOrientation(img.files[0], function (orientation) {
+          var blob;
+          blob = createObjectURLfun(img.files[0]);
+          return ugc.passImage(blob, orientation);
+        });
+      }
+    },
+    // passImage: (blob)->
+    watch: {
+      mounted: function mounted(n, o) {
+        var _this9 = this;
+
+        return setTimeout(function () {
+          if (_this9.pageIndex < 2) {
+            return _this9.pageIndex = 2;
+          }
+        }, 22 * 1000 + 500);
+      },
+      text: function text(n, o) {
+        return ugc.lyricUpdate(this.text);
+      },
+      nickname: function nickname(n, o) {
+        return ugc.updateName(this.nickname);
+      }
+    },
+    mounted: function mounted() {
+      var _this10 = this;
+
+      var h;
+      if (sys === "NeteaseMusic") {
+        this.wy = true;
+      }
+      h = TrueH * 2 * (2 - TrueW * 2 / 750 + 0.01);
+      // game = new Game({el: "game",h: h})
+      ugc = new UGC({
+        el: "ugc",
+        trueH: TrueH
+      });
+      this.v = parseInt(CloudMusic.getClientVersion().replace(/\./g, ""));
+      // alert window.api.recordEndCb?
+      // alert window.api.uploadEndCb?
+      // if window.api.recordEndCb?
+      window.api.recordEndCb = function (data) {
+        console.log(data);
+        // alert JSON.stringify data
+        _this10.audioId = data.localId;
+        _this10.recordStarting = false;
+        return clearTimeout(_cache);
+      };
+      // alert @.audioId
+      window.api.uploadEndCb = function (data) {
+        console.log(data);
+        // alert JSON.stringify data
+        if (data.code === 200) {
+          _this10.musicLink = data.playUrl;
+          return _this10.createLog();
+        } else {
+          _this10.authorization = false;
+          return _this10.createLog();
+        }
+      };
+      return window.api.recordvoicePlayCb = function (data) {
+        return console.log(data.action);
+      };
+    }
+  });
+};
