@@ -905,8 +905,8 @@ init = function init() {
           return false;
         }
         this.loading = true;
-        console.log("authorization:", this.authorization);
-        alert('\u6388\u6743:' + this.authorization + ',\u662F\u5426\u63A5\u53D7\u5230\u5F55\u97F3\u56DE\u8C03' + this.norecord);
+        // console.log "authorization:",@.authorization
+        console.log('\u6388\u6743:' + this.authorization + ',\u662F\u5426\u63A5\u53D7\u5230\u5F55\u97F3\u56DE\u8C03' + this.norecord);
         if (this.authorization && !this.norecord) {
           return CloudMusic.orpheus('orpheus://recordvoice/upload/start?id=' + this.audioId);
         } else {
@@ -1102,7 +1102,7 @@ init = function init() {
       // alert window.api.uploadEndCb?
       // if window.api.recordEndCb?
       // ?x-oss-process=image/format,jpg,quality,q_60/crop,x_130,y_282,w_410,h_410
-      console.log("update: v1 recordStartCb");
+      console.log("update: v2 recordStartCb");
       window.api.recordStartCb = function (data) {
         var _time;
         console.log("record start:", data);
@@ -1139,7 +1139,7 @@ init = function init() {
       };
       window.api.uploadEndCb = function (data) {
         console.log("record upload:", data);
-        alert('\u4E0A\u4F20\u97F3\u9891:' + JSON.stringify(data));
+        // console.log "上传音频:#{JSON.stringify(data)}"
         if (data.code === 200) {
           _this10.musicLink = data.playUrl;
           return _this10.createLog();

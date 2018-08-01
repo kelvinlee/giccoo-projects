@@ -266,8 +266,8 @@ init = ->
 					neteaseShareImage()
 					return false
 				@.loading = true
-				console.log "authorization:",@.authorization
-				alert "授权:#{@.authorization},是否接受到录音回调#{@.norecord}"
+				# console.log "authorization:",@.authorization
+				console.log "授权:#{@.authorization},是否接受到录音回调#{@.norecord}"
 				if @.authorization and not @.norecord
 					CloudMusic.orpheus("orpheus://recordvoice/upload/start?id=#{@.audioId}")
 				else
@@ -413,7 +413,7 @@ init = ->
 			# alert window.api.uploadEndCb?
 			# if window.api.recordEndCb?
 			# ?x-oss-process=image/format,jpg,quality,q_60/crop,x_130,y_282,w_410,h_410
-			console.log "update: v1 recordStartCb"
+			console.log "update: v2 recordStartCb"
 			window.api.recordStartCb = (data)=>
 				console.log "record start:",data
 				@.norecord = false
@@ -443,7 +443,7 @@ init = ->
 				clearTimeout _cache
 			window.api.uploadEndCb = (data)=>
 				console.log "record upload:",data
-				alert "上传音频:#{JSON.stringify(data)}"
+				# console.log "上传音频:#{JSON.stringify(data)}"
 				if data.code is 200
 					@.musicLink = data.playUrl
 					@.createLog()
