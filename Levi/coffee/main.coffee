@@ -183,6 +183,7 @@ init = ->
 			v: null
 			recordStarting: false
 			authorization: false
+			norecord: true
 			uploaded: false
 			imageUpdate: false
 			allowPopShow: false
@@ -202,9 +203,18 @@ init = ->
 			recordStart: ->
 				# recordStartCb
 				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10')
+				@.audioId = null
+				@.count = 10
+				@.recordStarting = true
+				clearInterval _runTime
+				_time = new Date().getTime()
+				_runTime = setInterval =>
+					@.count = 10 - parseInt (new Date().getTime() - _time)/1000
+					@.count = 10 if @.count < 0
+				,1000/10
 				_cache = setTimeout =>
 					@.recordStop()
-				,15*1000+100
+				,10*1000+100
 			recordStop: ->
 				CloudMusic.orpheus('orpheus://recordvoice/record/end')
 				@.recordStarting = false
@@ -255,9 +265,10 @@ init = ->
 					return false
 				@.loading = true
 				console.log "authorization:",@.authorization
-				if @.authorization
+				if @.authorization and not @.norecord
 					CloudMusic.orpheus("orpheus://recordvoice/upload/start?id=#{@.audioId}")
 				else
+					@.authorization = false
 					@.createLog()
 			review: ->
 				# @.step = 5
@@ -400,10 +411,12 @@ init = ->
 			# ?x-oss-process=image/format,jpg,quality,q_60/crop,x_130,y_282,w_410,h_410
 			window.api.recordStartCb = (data)=>
 				console.log "record start:",data
+				@.norecord = false
 				if data.code is 200
 					@.audioId = null
 					@.count = 10
 					@.recordStarting = true
+					clearInterval _runTime
 					_time = new Date().getTime()
 					_runTime = setInterval =>
 						@.count = 10 - parseInt (new Date().getTime() - _time)/1000
@@ -415,6 +428,7 @@ init = ->
 					clearTimeout _cache
 			window.api.recordEndCb = (data)=>
 				console.log "record end:",data
+				@.norecord = false
 				if data.code is 200 and data.localId isnt "(null)"
 					@.audioId = data.localId
 					@.recordStarting = false

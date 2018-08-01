@@ -741,6 +741,7 @@ init = function init() {
       v: null,
       recordStarting: false,
       authorization: false,
+      norecord: true,
       uploaded: false,
       imageUpdate: false,
       allowPopShow: false,
@@ -764,11 +765,23 @@ init = function init() {
       recordStart: function recordStart() {
         var _this5 = this;
 
+        var _time;
         // recordStartCb
         CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10');
+        this.audioId = null;
+        this.count = 10;
+        this.recordStarting = true;
+        clearInterval(_runTime);
+        _time = new Date().getTime();
+        _runTime = setInterval(function () {
+          _this5.count = 10 - parseInt((new Date().getTime() - _time) / 1000);
+          if (_this5.count < 0) {
+            return _this5.count = 10;
+          }
+        }, 1000 / 10);
         return _cache = setTimeout(function () {
           return _this5.recordStop();
-        }, 15 * 1000 + 100);
+        }, 10 * 1000 + 100);
       },
       recordStop: function recordStop() {
         var _this6 = this;
@@ -844,9 +857,10 @@ init = function init() {
         }
         this.loading = true;
         console.log("authorization:", this.authorization);
-        if (this.authorization) {
+        if (this.authorization && !this.norecord) {
           return CloudMusic.orpheus('orpheus://recordvoice/upload/start?id=' + this.audioId);
         } else {
+          this.authorization = false;
           return this.createLog();
         }
       },
@@ -1041,10 +1055,12 @@ init = function init() {
       window.api.recordStartCb = function (data) {
         var _time;
         console.log("record start:", data);
+        _this10.norecord = false;
         if (data.code === 200) {
           _this10.audioId = null;
           _this10.count = 10;
           _this10.recordStarting = true;
+          clearInterval(_runTime);
           _time = new Date().getTime();
           return _runTime = setInterval(function () {
             _this10.count = 10 - parseInt((new Date().getTime() - _time) / 1000);
@@ -1060,6 +1076,7 @@ init = function init() {
       };
       window.api.recordEndCb = function (data) {
         console.log("record end:", data);
+        _this10.norecord = false;
         if (data.code === 200 && data.localId !== "(null)") {
           _this10.audioId = data.localId;
           _this10.recordStarting = false;
