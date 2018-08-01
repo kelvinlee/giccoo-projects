@@ -200,18 +200,11 @@ init = ->
 					return alert "请先升级到最新版本的网易云音乐"
 				@.pageIndex = 3
 			recordStart: ->
+				# recordStartCb
 				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10')
-				@.audioId = null
-				@.count = 10
-				@.recordStarting = true
 				_cache = setTimeout =>
 					@.recordStop()
-				,10*1000-100
-				_time = new Date().getTime()
-				_runTime = setInterval =>
-					@.count = 10 - parseInt (new Date().getTime() - _time)/1000
-				,1000/10
-
+				,15*1000+100
 			recordStop: ->
 				CloudMusic.orpheus('orpheus://recordvoice/record/end')
 				@.recordStarting = false
@@ -404,16 +397,33 @@ init = ->
 			# alert window.api.recordEndCb?
 			# alert window.api.uploadEndCb?
 			# if window.api.recordEndCb?
+			# ?x-oss-process=image/format,jpg,quality,q_60/crop,x_130,y_282,w_410,h_410
+			window.api.recordStartCb = (data)=>
+				console.log "record start:",data
+				if data.code is 200
+					@.audioId = null
+					@.count = 10
+					@.recordStarting = true
+					_time = new Date().getTime()
+					_runTime = setInterval =>
+						@.count = 10 - parseInt (new Date().getTime() - _time)/1000
+						@.count = 10 if @.count < 0
+					,1000/10
+				else
+					@.authorization = false
+					@.uploadAudio()
+					clearTimeout _cache
 			window.api.recordEndCb = (data)=>
-				console.log data
-				# alert JSON.stringify data
-				@.audioId = data.localId
-				@.recordStarting = false
+				console.log "record end:",data
+				if data.code is 200 and data.localId isnt "(null)"
+					@.audioId = data.localId
+					@.recordStarting = false
+				else
+					@.authorization = false
+					@.uploadAudio()
 				clearTimeout _cache
-				# alert @.audioId
 			window.api.uploadEndCb = (data)=>
-				console.log data
-				# alert JSON.stringify data
+				console.log "record upload:",data
 				if data.code is 200
 					@.musicLink = data.playUrl
 					@.createLog()

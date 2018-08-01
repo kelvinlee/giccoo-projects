@@ -764,18 +764,11 @@ init = function init() {
       recordStart: function recordStart() {
         var _this5 = this;
 
-        var _time;
+        // recordStartCb
         CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10');
-        this.audioId = null;
-        this.count = 10;
-        this.recordStarting = true;
-        _cache = setTimeout(function () {
+        return _cache = setTimeout(function () {
           return _this5.recordStop();
-        }, 10 * 1000 - 100);
-        _time = new Date().getTime();
-        return _runTime = setInterval(function () {
-          return _this5.count = 10 - parseInt((new Date().getTime() - _time) / 1000);
-        }, 1000 / 10);
+        }, 15 * 1000 + 100);
       },
       recordStop: function recordStop() {
         var _this6 = this;
@@ -1044,17 +1037,40 @@ init = function init() {
       // alert window.api.recordEndCb?
       // alert window.api.uploadEndCb?
       // if window.api.recordEndCb?
+      // ?x-oss-process=image/format,jpg,quality,q_60/crop,x_130,y_282,w_410,h_410
+      window.api.recordStartCb = function (data) {
+        var _time;
+        console.log("record start:", data);
+        if (data.code === 200) {
+          _this10.audioId = null;
+          _this10.count = 10;
+          _this10.recordStarting = true;
+          _time = new Date().getTime();
+          return _runTime = setInterval(function () {
+            _this10.count = 10 - parseInt((new Date().getTime() - _time) / 1000);
+            if (_this10.count < 0) {
+              return _this10.count = 10;
+            }
+          }, 1000 / 10);
+        } else {
+          _this10.authorization = false;
+          _this10.uploadAudio();
+          return clearTimeout(_cache);
+        }
+      };
       window.api.recordEndCb = function (data) {
-        console.log(data);
-        // alert JSON.stringify data
-        _this10.audioId = data.localId;
-        _this10.recordStarting = false;
+        console.log("record end:", data);
+        if (data.code === 200 && data.localId !== "(null)") {
+          _this10.audioId = data.localId;
+          _this10.recordStarting = false;
+        } else {
+          _this10.authorization = false;
+          _this10.uploadAudio();
+        }
         return clearTimeout(_cache);
       };
-      // alert @.audioId
       window.api.uploadEndCb = function (data) {
-        console.log(data);
-        // alert JSON.stringify data
+        console.log("record upload:", data);
         if (data.code === 200) {
           _this10.musicLink = data.playUrl;
           return _this10.createLog();
