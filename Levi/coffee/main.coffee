@@ -167,7 +167,7 @@ init = ->
 			loading: false
 			pagebuildShow: false
 			pageInfoShow: false
-			pageIndex: 1
+			pageIndex: 3
 			step: 1
 			startgame: false
 			folder: ""
@@ -177,7 +177,7 @@ init = ->
 			ugcold: null
 			pushed: false
 			shareImageLink: null
-			singerIndex: 3
+			singerIndex: 1
 			cache: null
 			audioId: null
 			v: null
@@ -267,6 +267,7 @@ init = ->
 					return false
 				@.loading = true
 				console.log "authorization:",@.authorization
+				alert "授权:#{@.authorization},是否接受到录音回调#{@.norecord}"
 				if @.authorization and not @.norecord
 					CloudMusic.orpheus("orpheus://recordvoice/upload/start?id=#{@.audioId}")
 				else
@@ -442,6 +443,7 @@ init = ->
 				clearTimeout _cache
 			window.api.uploadEndCb = (data)=>
 				console.log "record upload:",data
+				alert "上传音频:#{JSON.stringify(data)}"
 				if data.code is 200
 					@.musicLink = data.playUrl
 					@.createLog()

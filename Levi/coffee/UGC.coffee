@@ -70,6 +70,7 @@ class UGC
 			"#{_CDN}img/album-upload-over-text.png"
 			"#{_CDN}img/mask.png"
 			"#{_CDN}img/qrcode.png"
+			"#{_CDN}img/bo.png"
 			"#{_CDN}img/avatar.jpg"
 		])
 		.load(@.build.bind(@))
@@ -109,9 +110,40 @@ class UGC
 		# @.albumInfo album,1
 		# @.lyricUpdate "abc"
 
-		
+		# for test remenber remove all
+		# @.newCover()
+		# @.app.ticker.add @.updateLine
 
+	newCover: ->
+		cover = new Container()
+		box = new Container()
+		cover.x = 130
+		cover.y = 172
+		border = new Graphics()
+		border.beginFill(0xffffff)
+		border.drawRect(0,0,10,410)
+		border.drawRect(400,0,10,410)
+		box.addChild border
+		@.lineList = list = []
+		for i in [0...15]
+			line = new Sprite getTe "#{_CDN}img/bo.png"
+			line.anchor.set(0,0.5)
+			list.push line
+			line.x = 10+line.width*i
+			line.y = 210
+			line.scale.y = 1 + Math.random() * 3
+			box.addChild line
+		mask = new Graphics()
+		mask.beginFill(0xffffff)
+		mask.drawRect(0,0,410,410)
 
+		cover.addChild box
+		box.mask = mask
+		cover.addChild mask
+		@.album.addChild cover
+	updateLine: ->
+		for item in @.lineList
+			item.scale.y = 1 + Math.random() * 3
 	passImage: (src,orientation)->
 		@.album.removeChild(@.avatar) if @.avatar?
 		@.avatar = new Container()

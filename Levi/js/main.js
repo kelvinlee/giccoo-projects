@@ -214,7 +214,7 @@ UGC = function () {
       }
       this.stage = this.app.stage;
       document.getElementById(this.opts.el).appendChild(this.app.view);
-      PIXI.loader.add([_CDN + 'img/ugc-bg-1.jpg', _CDN + 'img/ugc-bg-2.jpg', _CDN + 'img/ugc-bg-3.jpg', _CDN + 'img/ugc-bg-4.jpg', _CDN + 'img/ugc-bg-5.jpg', _CDN + 'img/ugc-name-1.png', _CDN + 'img/ugc-name-2.png', _CDN + 'img/ugc-name-3.png', _CDN + 'img/ugc-name-4.png', _CDN + 'img/ugc-name-5.png', _CDN + 'img/ugc-note-1.png', _CDN + 'img/ugc-note-2.png', _CDN + 'img/ugc-note-3.png', _CDN + 'img/ugc-note-4.png', _CDN + 'img/ugc-note-5.png', _CDN + 'img/ugc-singer-1.png', _CDN + 'img/ugc-singer-2.png', _CDN + 'img/ugc-singer-3.png', _CDN + 'img/ugc-singer-4.png', _CDN + 'img/ugc-singer-5.png', _CDN + 'img/ugc-text-2.png', _CDN + 'img/ugc-border.png', _CDN + 'img/ugc-logo.png', _CDN + 'img/album-bg.png', _CDN + 'img/album-cover-' + random + '.png', _CDN + 'img/album-poster.png', _CDN + 'img/album-upload-text.png', _CDN + 'img/album-upload-over-text.png', _CDN + 'img/mask.png', _CDN + 'img/qrcode.png', _CDN + 'img/avatar.jpg']).load(this.build.bind(this));
+      PIXI.loader.add([_CDN + 'img/ugc-bg-1.jpg', _CDN + 'img/ugc-bg-2.jpg', _CDN + 'img/ugc-bg-3.jpg', _CDN + 'img/ugc-bg-4.jpg', _CDN + 'img/ugc-bg-5.jpg', _CDN + 'img/ugc-name-1.png', _CDN + 'img/ugc-name-2.png', _CDN + 'img/ugc-name-3.png', _CDN + 'img/ugc-name-4.png', _CDN + 'img/ugc-name-5.png', _CDN + 'img/ugc-note-1.png', _CDN + 'img/ugc-note-2.png', _CDN + 'img/ugc-note-3.png', _CDN + 'img/ugc-note-4.png', _CDN + 'img/ugc-note-5.png', _CDN + 'img/ugc-singer-1.png', _CDN + 'img/ugc-singer-2.png', _CDN + 'img/ugc-singer-3.png', _CDN + 'img/ugc-singer-4.png', _CDN + 'img/ugc-singer-5.png', _CDN + 'img/ugc-text-2.png', _CDN + 'img/ugc-border.png', _CDN + 'img/ugc-logo.png', _CDN + 'img/album-bg.png', _CDN + 'img/album-cover-' + random + '.png', _CDN + 'img/album-poster.png', _CDN + 'img/album-upload-text.png', _CDN + 'img/album-upload-over-text.png', _CDN + 'img/mask.png', _CDN + 'img/qrcode.png', _CDN + 'img/bo.png', _CDN + 'img/avatar.jpg']).load(this.build.bind(this));
       this.default.MH = this.opts.h * 0.65;
     }
 
@@ -255,6 +255,53 @@ UGC = function () {
       // @.albumInfo album,1
       // @.lyricUpdate "abc"
 
+      // for test remenber remove all
+      // @.newCover()
+      // @.app.ticker.add @.updateLine
+
+    }, {
+      key: 'newCover',
+      value: function newCover() {
+        var border, box, cover, k, line, list, mask;
+        cover = new Container();
+        box = new Container();
+        cover.x = 130;
+        cover.y = 172;
+        border = new Graphics();
+        border.beginFill(0xffffff);
+        border.drawRect(0, 0, 10, 410);
+        border.drawRect(400, 0, 10, 410);
+        box.addChild(border);
+        this.lineList = list = [];
+        for (i = k = 0; k < 15; i = ++k) {
+          line = new Sprite(getTe(_CDN + 'img/bo.png'));
+          line.anchor.set(0, 0.5);
+          list.push(line);
+          line.x = 10 + line.width * i;
+          line.y = 210;
+          line.scale.y = 1 + Math.random() * 3;
+          box.addChild(line);
+        }
+        mask = new Graphics();
+        mask.beginFill(0xffffff);
+        mask.drawRect(0, 0, 410, 410);
+        cover.addChild(box);
+        box.mask = mask;
+        cover.addChild(mask);
+        return this.album.addChild(cover);
+      }
+    }, {
+      key: 'updateLine',
+      value: function updateLine() {
+        var item, k, len2, ref, results;
+        ref = this.lineList;
+        results = [];
+        for (k = 0, len2 = ref.length; k < len2; k++) {
+          item = ref[k];
+          results.push(item.scale.y = 1 + Math.random() * 3);
+        }
+        return results;
+      }
     }, {
       key: 'passImage',
       value: function passImage(src, orientation) {
@@ -725,7 +772,7 @@ init = function init() {
       loading: false,
       pagebuildShow: false,
       pageInfoShow: false,
-      pageIndex: 1,
+      pageIndex: 3,
       step: 1,
       startgame: false,
       folder: "",
@@ -735,7 +782,7 @@ init = function init() {
       ugcold: null,
       pushed: false,
       shareImageLink: null,
-      singerIndex: 3,
+      singerIndex: 1,
       cache: null,
       audioId: null,
       v: null,
@@ -859,6 +906,7 @@ init = function init() {
         }
         this.loading = true;
         console.log("authorization:", this.authorization);
+        alert('\u6388\u6743:' + this.authorization + ',\u662F\u5426\u63A5\u53D7\u5230\u5F55\u97F3\u56DE\u8C03' + this.norecord);
         if (this.authorization && !this.norecord) {
           return CloudMusic.orpheus('orpheus://recordvoice/upload/start?id=' + this.audioId);
         } else {
@@ -1091,6 +1139,7 @@ init = function init() {
       };
       window.api.uploadEndCb = function (data) {
         console.log("record upload:", data);
+        alert('\u4E0A\u4F20\u97F3\u9891:' + JSON.stringify(data));
         if (data.code === 200) {
           _this10.musicLink = data.playUrl;
           return _this10.createLog();
