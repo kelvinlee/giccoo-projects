@@ -1053,6 +1053,7 @@ init = function init() {
       // alert window.api.uploadEndCb?
       // if window.api.recordEndCb?
       // ?x-oss-process=image/format,jpg,quality,q_60/crop,x_130,y_282,w_410,h_410
+      console.log("update: v1 recordStartCb");
       window.api.recordStartCb = function (data) {
         var _time;
         console.log("record start:", data);
