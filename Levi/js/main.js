@@ -898,6 +898,7 @@ init = function init() {
 
         var data;
         // @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
+        console.log("createLog:", this.authorization, this.norecord);
         if (!this.authorization) {
           ugc.overUGC();
           return false;

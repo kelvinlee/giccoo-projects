@@ -293,6 +293,7 @@ init = ->
 				# @.createLog()
 			createLog: ->
 				# @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
+				console.log "createLog:",@.authorization,@.norecord
 				unless @.authorization
 					ugc.overUGC()
 					return false
