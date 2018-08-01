@@ -167,7 +167,7 @@ init = ->
 			loading: false
 			pagebuildShow: false
 			pageInfoShow: false
-			pageIndex: 3
+			pageIndex: 1
 			step: 1
 			startgame: false
 			folder: ""
