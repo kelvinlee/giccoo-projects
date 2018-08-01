@@ -852,6 +852,7 @@ init = function init() {
         if (this.loading) {
           return false;
         }
+        typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "share", "ugc", "-"]);
         if (this.uploaded) {
           neteaseShareImage();
           return false;
@@ -942,7 +943,7 @@ init = function init() {
         if (this.pushed) {
           return false;
         }
-        axios.post(imageurl, data).then(function (msg) {
+        return axios.post(imageurl, data).then(function (msg) {
           if (msg.data.recode === 200) {
             return main.success(msg.data);
           } else {
@@ -952,7 +953,6 @@ init = function init() {
           // alert e
           return main.faild(e);
         });
-        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "share", "ugc", "-"]);
       },
       success: function success(data) {
         var _this8 = this;

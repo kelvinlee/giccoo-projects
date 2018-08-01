@@ -261,6 +261,7 @@ init = ->
 				else
 					@.pageInfoShow = true
 				return false if @.loading
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "share", "ugc", "-"])
 				if @.uploaded
 					neteaseShareImage()
 					return false
@@ -339,7 +340,7 @@ init = ->
 				.catch (e)=>
 					# alert e
 					main.faild(e)
-				_hmt? and _hmt.push(['_trackEvent', "Levi", "share", "ugc", "-"])
+				
 			success: (data)->
 				@.shareImageLink = data.info
 				# post and update ugc info
