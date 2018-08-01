@@ -231,6 +231,7 @@ init = ->
 			uploadAudio: ->
 				@.step = 3
 				ugc.addCover()
+				CloudMusic.orpheus("orpheus://recordvoice/play/end?id=#{@.audioId}")
 				return false
 			gotoAudio: ->
 				return alert "请输入你的名字" if @.nickname is ""
@@ -343,6 +344,7 @@ init = ->
 				@.shareImageLink = data.info
 				# post and update ugc info
 				# @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
+				@.uploaded = true
 				unless @.authorization
 					@.loading = false
 					neteaseShareImage()
@@ -351,7 +353,6 @@ init = ->
 					id: @.logId
 					avatar: @.folder+"/"+@.shareImageLink
 				}
-				@.uploaded = true
 				if @.logId?
 					axios.post "#{apiLink}active/Levi/update",data
 					.then (msg)=>

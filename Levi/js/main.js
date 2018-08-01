@@ -803,6 +803,7 @@ init = function init() {
       uploadAudio: function uploadAudio() {
         this.step = 3;
         ugc.addCover();
+        CloudMusic.orpheus('orpheus://recordvoice/play/end?id=' + this.audioId);
         return false;
       },
       gotoAudio: function gotoAudio() {
@@ -959,6 +960,7 @@ init = function init() {
         this.shareImageLink = data.info;
         // post and update ugc info
         // @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
+        this.uploaded = true;
         if (!this.authorization) {
           this.loading = false;
           neteaseShareImage();
@@ -968,7 +970,6 @@ init = function init() {
           id: this.logId,
           avatar: this.folder + "/" + this.shareImageLink
         };
-        this.uploaded = true;
         if (this.logId != null) {
           return axios.post(apiLink + 'active/Levi/update', data).then(function (msg) {
             // alert JSON.stringify msg
