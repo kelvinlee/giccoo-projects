@@ -34,6 +34,7 @@ sended = [false,false]
 _cache = null
 _startCache = null
 _runTime = null
+_second = 0
 
 neteaseShareImage = ->
 	title1 = "有故事的声活单曲"
@@ -115,11 +116,6 @@ window.onload = ->
 			mounted: false
 			progressOn: 100
 		methods:
-			openMusic: ->
-				bgm = document.getElementById "bgm"
-				bgm.play()
-				clearTimeout _cache
-				@.next()
 			next: ->
 				document.getElementById('load').className += " fadeOut animated"
 				_public.note = false
@@ -175,6 +171,7 @@ init = ->
 			BGColor: "#ffffff"
 			XY: "pageY"
 			ugc: null
+			ugcsave: null
 			ugcold: null
 			pushed: false
 			shareImageLink: null
@@ -197,6 +194,10 @@ init = ->
 			musicLink: ""
 			logId: ""
 		methods:
+			openMusic: ->
+				bgm = document.getElementById "bgm"
+				bgm.currentTime = _second
+				bgm.play()
 			skip: ->
 				bgm = document.getElementById "bgm"
 				bgm.pause()
@@ -390,19 +391,25 @@ init = ->
 			changeImage: (evt)->
 				@.imageUpdate = true
 				img = document.getElementById "imageInput"
-				# console.log img.files.length
-				# self.max = img.files.length
-				# self.now = 0
-				# for item in [0...img.files.length]
-				getOrientation img.files[0],(orientation)->
+				console.log img.files.length,img.files[0]
+				getOrientation img.files[0],(orientation)=>
 					blob = createObjectURLfun(img.files[0])
 					ugc.passImage blob,orientation
+
 			# passImage: (blob)->
 		watch:
 			mounted: (n,o)->
+				time = new Date().getTime()
 				setTimeout =>
 					@.pageIndex = 2 if @.pageIndex < 2
+					clearInterval _cache
+					# console.log _second
+					bgm = document.getElementById "bgm"
+					bgm.pause()
 				,22*1000+500
+				_cache = setInterval =>
+					_second = (new Date().getTime() - time)/1000
+				,1000/20
 			text: (n,o)->
 				ugc.lyricUpdate @.text
 			nickname: (n,o)->

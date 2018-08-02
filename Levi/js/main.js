@@ -6,7 +6,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _CDN, _cache, _public, _runTime, _startCache, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, neteaseShareImage, random, resource, resources, sended, sys, ugc, ugcCache;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _CDN, _cache, _public, _runTime, _second, _startCache, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, neteaseShareImage, random, resource, resources, sended, sys, ugc, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -207,7 +207,8 @@ UGC = function () {
         width: this.opts.w,
         height: this.opts.h,
         transparent: true,
-        preserveDrawingBuffer: true
+        preserveDrawingBuffer: true,
+        forceCanvas: true
       });
       if (this.opts.class != null && this.opts.class !== "") {
         this.app.view.className = this.opts.class;
@@ -290,7 +291,8 @@ UGC = function () {
         cover.addChild(mask);
         this.album.addChild(cover);
         this.app.ticker.add(this.updateLine.bind(this));
-        return cover.visible = false;
+        cover.visible = false;
+        return cover.alpha = 0.9;
       }
     }, {
       key: 'startLine',
@@ -640,6 +642,8 @@ _startCache = null;
 
 _runTime = null;
 
+_second = 0;
+
 neteaseShareImage = function neteaseShareImage() {
   var picUrl, redirectUrl, title1;
   title1 = "有故事的声活单曲";
@@ -742,13 +746,6 @@ window.onload = function () {
       progressOn: 100
     },
     methods: {
-      openMusic: function openMusic() {
-        var bgm;
-        bgm = document.getElementById("bgm");
-        bgm.play();
-        clearTimeout(_cache);
-        return this.next();
-      },
       next: function next() {
         document.getElementById('load').className += " fadeOut animated";
         _public.note = false;
@@ -819,6 +816,7 @@ init = function init() {
       BGColor: "#ffffff",
       XY: "pageY",
       ugc: null,
+      ugcsave: null,
       ugcold: null,
       pushed: false,
       shareImageLink: null,
@@ -843,6 +841,12 @@ init = function init() {
       logId: ""
     },
     methods: {
+      openMusic: function openMusic() {
+        var bgm;
+        bgm = document.getElementById("bgm");
+        bgm.currentTime = _second;
+        return bgm.play();
+      },
       skip: function skip() {
         var bgm;
         bgm = document.getElementById("bgm");
@@ -1099,10 +1103,7 @@ init = function init() {
         var img;
         this.imageUpdate = true;
         img = document.getElementById("imageInput");
-        // console.log img.files.length
-        // self.max = img.files.length
-        // self.now = 0
-        // for item in [0...img.files.length]
+        console.log(img.files.length, img.files[0]);
         return getOrientation(img.files[0], function (orientation) {
           var blob;
           blob = createObjectURLfun(img.files[0]);
@@ -1115,11 +1116,21 @@ init = function init() {
       mounted: function mounted(n, o) {
         var _this9 = this;
 
-        return setTimeout(function () {
+        var time;
+        time = new Date().getTime();
+        setTimeout(function () {
+          var bgm;
           if (_this9.pageIndex < 2) {
-            return _this9.pageIndex = 2;
+            _this9.pageIndex = 2;
           }
+          clearInterval(_cache);
+          // console.log _second
+          bgm = document.getElementById("bgm");
+          return bgm.pause();
         }, 22 * 1000 + 500);
+        return _cache = setInterval(function () {
+          return _second = (new Date().getTime() - time) / 1000;
+        }, 1000 / 20);
       },
       text: function text(n, o) {
         return ugc.lyricUpdate(this.text);

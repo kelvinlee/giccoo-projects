@@ -37,6 +37,7 @@ class UGC
 			height: @.opts.h
 			transparent: true
 			preserveDrawingBuffer: true
+			forceCanvas: true
 		@.app.view.className = @.opts.class if @.opts.class? and @.opts.class isnt ""
 		@.stage = @.app.stage
 		document.getElementById(@.opts.el).appendChild @.app.view
@@ -147,6 +148,7 @@ class UGC
 		@.album.addChild cover
 		@.app.ticker.add @.updateLine.bind @
 		cover.visible = false
+		cover.alpha = 0.9
 	startLine: ->
 		for item in @.lineList
 			item.scale.y = item.sy

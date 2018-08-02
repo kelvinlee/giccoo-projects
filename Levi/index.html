@@ -39,8 +39,6 @@
         <div style="height: 4rem" class="music-box"></div>
         <div style="height: 2rem" class="music-box"></div>
         <div class="text fadeIn animated"><img src="./img/loading-text.png"></div>
-        <div v-show="progress &gt; 80" @click="openMusic" class="open">打开声音</div>
-        <audio id="bgm" src="./mp3/bgm.mp3"></audio>
       </div>
     </div>
     <div id="main" v-show="mounted" :class="{biger: biger,smaller:smaller}" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">
@@ -122,6 +120,8 @@
               </div>
               <div class="text"><img src="./img/page-1-3.png"></div>
             </div>
+            <div @click="openMusic" class="open">打开声音</div>
+            <audio id="bgm" src="./mp3/bgm.mp3"></audio>
           </div>
         </div>
       </transition>
@@ -141,11 +141,12 @@
       <transition name="page-fade">
         <div v-show="pageIndex == 3" class="page page-3">
           <div class="content">
-            <div id="ugc"><img :src="ugcold"></div>
+            <div id="ugc">
+            </div>
             <transition name="page-fade">
               <div v-show="step == 1" class="user-ctrl-box">
                 <div class="upload">
-                  <input id="imageInput" type="file" name="file" @change="changeImage">
+                  <input id="imageInput" type="file" name="file" accept="image/*" @change="changeImage">
                 </div>
                 <div class="user-ctrl">
                   <div class="title"><img src="./img/name-ctrl-title.png"></div>
@@ -163,7 +164,7 @@
                   <div v-show="audioId != null" @click="playAudio" class="btn btn-audition fadeIn animated"><img src="./img/icon-audio-play.png"><span>试 听</span></div>
                   <div class="btn btn-start">
                     <div v-show="!recordStarting" @click="recordStart" class="start"><img src="./img/icon-audio-start.png"></div>
-                    <div v-show="recordStarting" @click="recordStop" class="stop"><img src="./img/icon-audio-restart.png"></div><span>{{!recordStarting?'录 音':'停止 '+count+'s'}}</span>
+                    <div v-show="recordStarting" @click="recordStop" class="stop"><img src="./img/icon-audio-restart.png"></div><span>{{!recordStarting?audioId != null?'重 录':'录 音':'停止 '+count+'s'}}</span>
                   </div>
                   <div v-show="audioId != null" @click="uploadAudio" class="btn btn-upload fadeIn animated"><img src="./img/icon-audio-right.png"><span>完 成</span></div>
                 </div>

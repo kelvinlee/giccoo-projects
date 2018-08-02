@@ -54,8 +54,7 @@ block content
       .music-box(style="height: 2rem")
       .text.fadeIn.animated
         img(src="#{url}/img/loading-text.png")
-      .open(v-show="progress > 80",@click="openMusic") 打开声音
-      audio#bgm(src="#{url}/mp3/bgm.mp3")
+      
   
   .main#main(v-show="mounted",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
     transition(name="page-fade")
@@ -130,6 +129,8 @@ block content
               .music-box(style="height: 1rem")
             .text
               img(src="#{url}/img/page-1-3.png")
+          .open(@click="openMusic") 打开声音
+          audio#bgm(src="#{url}/mp3/bgm.mp3")
     transition(name="page-fade")
       .page.page-2(v-show="pageIndex == 2")
         .content
@@ -146,11 +147,11 @@ block content
       .page.page-3(v-show="pageIndex == 3")
         .content
           #ugc
-            img(:src="ugcold")
+            //- img(:src="ugcold")
           transition(name="page-fade")
             .user-ctrl-box(v-show="step == 1")
               .upload
-                input#imageInput(type="file",name="file",@change="changeImage")
+                input#imageInput(type="file",name="file",accept="image/*",@change="changeImage")
               .user-ctrl
                 .title
                   img(src="#{url}/img/name-ctrl-title.png")
@@ -171,7 +172,7 @@ block content
                     img(src="#{url}/img/icon-audio-start.png")
                   .stop(v-show="recordStarting",@click="recordStop")
                     img(src="#{url}/img/icon-audio-restart.png")
-                  span {{!recordStarting?'录 音':'停止 '+count+'s'}}
+                  span {{!recordStarting?audioId != null?'重 录':'录 音':'停止 '+count+'s'}}
                 .btn.btn-upload.fadeIn.animated(v-show="audioId != null",@click="uploadAudio")
                   img(src="#{url}/img/icon-audio-right.png")
                   span 完 成
