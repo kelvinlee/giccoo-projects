@@ -493,8 +493,8 @@ UGC = function () {
         var qrcodeMake;
         qrcodeMake = new QRCode("qrcode", _defineProperty({
           text: url,
-          width: 130,
-          height: 130,
+          width: 140,
+          height: 140,
           colorDark: "#000000"
         }, 'colorDark', "#000000"));
         console.log(qrcodeMake._el.lastChild);
@@ -503,16 +503,16 @@ UGC = function () {
           border = 5;
           _this2.qrcode = qrcode = new Container();
           text = new Sprite(getTe(_CDN + 'img/qrcode.png'));
-          text.x = 20;
+          text.x = 40;
           qrcodeBg = new Graphics();
           qrcodeBg.beginFill(0xffffff);
-          qrcodeBg.drawRect(0, 0, 130 + border * 2, 130 + border * 2);
+          qrcodeBg.drawRect(0, 0, 140 + border * 2, 140 + border * 2);
           qrcodeQR = Sprite.fromImage(qrcodeMake._el.lastChild.src);
           qrcodeQR.texture.baseTexture.on('loaded', function () {
             qrcodeQR.x = border;
             qrcodeQR.y = border;
             qrcode.x = 40;
-            qrcode.y = _this2.content.height - 130 + border * 2 - 40;
+            qrcode.y = _this2.content.height - 140 + border * 2 - 60;
             return callback();
           });
           qrcode.addChild(qrcodeBg, qrcodeQR, text);

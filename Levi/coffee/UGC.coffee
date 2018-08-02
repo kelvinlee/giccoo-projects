@@ -271,8 +271,8 @@ class UGC
 	buildQR: (url,callback)->
 		qrcodeMake = new QRCode "qrcode",
 			text: url
-			width: 130,
-			height: 130,
+			width: 140,
+			height: 140,
 			colorDark : "#000000",
 			colorDark : "#000000"
 		console.log qrcodeMake._el.lastChild
@@ -280,16 +280,16 @@ class UGC
 			border = 5
 			@.qrcode = qrcode = new Container()
 			text = new Sprite getTe "#{_CDN}img/qrcode.png"
-			text.x = 20
+			text.x = 40
 			qrcodeBg = new Graphics()
 			qrcodeBg.beginFill(0xffffff)
-			qrcodeBg.drawRect(0,0,130+border*2,130+border*2)
+			qrcodeBg.drawRect(0,0,140+border*2,140+border*2)
 			qrcodeQR = Sprite.fromImage qrcodeMake._el.lastChild.src
 			qrcodeQR.texture.baseTexture.on 'loaded', =>
 				qrcodeQR.x = border
 				qrcodeQR.y = border
 				qrcode.x = 40
-				qrcode.y = @.content.height - 130+border*2 - 40
+				qrcode.y = @.content.height - 140+border*2 - 60
 				callback()
 			qrcode.addChild qrcodeBg,qrcodeQR,text
 			qrcode.visible = false
