@@ -391,7 +391,8 @@ init = ->
 			changeImage: (evt)->
 				@.imageUpdate = true
 				img = document.getElementById "imageInput"
-				console.log img.files.length,img.files[0]
+				console.log "file:",img.files.length,img.files[0]
+				return false if img.files.length < 1
 				getOrientation img.files[0],(orientation)=>
 					blob = createObjectURLfun(img.files[0])
 					ugc.passImage blob,orientation
