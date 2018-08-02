@@ -32,6 +32,7 @@ sys = ""
 ugcCache = null
 sended = [false,false]
 _cache = null
+_startCache = null
 _runTime = null
 
 neteaseShareImage = ->
@@ -207,19 +208,22 @@ init = ->
 			recordStart: ->
 				# recordStartCb
 				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10')
-				ugc.startLine()
-				@.audioId = null
-				@.count = 10
-				@.recordStarting = true
-				clearInterval _runTime
-				_time = new Date().getTime()
-				_runTime = setInterval =>
-					@.count = 10 - parseInt (new Date().getTime() - _time)/1000
-					@.count = 10 if @.count < 0
-				,1000/10
-				_cache = setTimeout =>
-					@.recordStop()
-				,10*1000+100
+				_startCache = setTimeout =>
+					ugc.startLine()
+					@.audioId = null
+					@.count = 10
+					@.recordStarting = true
+					clearInterval _runTime
+					_time = new Date().getTime()
+					_runTime = setInterval =>
+						@.count = 10 - parseInt (new Date().getTime() - _time)/1000
+						@.count = 10 if @.count < 0
+					,1000/10
+					_cache = setTimeout =>
+						@.recordStop()
+					,10*1000+100
+				,500
+				
 			recordStop: ->
 				CloudMusic.orpheus('orpheus://recordvoice/record/end')
 				@.recordStarting = false
@@ -425,6 +429,7 @@ init = ->
 				console.log "record start:",data
 				@.norecord = false
 				if data.code is 200
+					clearTimeout _startCache
 					ugc.startLine()
 					@.audioId = null
 					@.count = 10

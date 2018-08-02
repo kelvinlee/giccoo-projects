@@ -6,7 +6,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _CDN, _cache, _public, _runTime, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, neteaseShareImage, random, resource, resources, sended, sys, ugc, ugcCache;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _CDN, _cache, _public, _runTime, _startCache, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, neteaseShareImage, random, resource, resources, sended, sys, ugc, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -636,6 +636,8 @@ sended = [false, false];
 
 _cache = null;
 
+_startCache = null;
+
 _runTime = null;
 
 neteaseShareImage = function neteaseShareImage() {
@@ -856,24 +858,26 @@ init = function init() {
       recordStart: function recordStart() {
         var _this5 = this;
 
-        var _time;
         // recordStartCb
         CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10');
-        ugc.startLine();
-        this.audioId = null;
-        this.count = 10;
-        this.recordStarting = true;
-        clearInterval(_runTime);
-        _time = new Date().getTime();
-        _runTime = setInterval(function () {
-          _this5.count = 10 - parseInt((new Date().getTime() - _time) / 1000);
-          if (_this5.count < 0) {
-            return _this5.count = 10;
-          }
-        }, 1000 / 10);
-        return _cache = setTimeout(function () {
-          return _this5.recordStop();
-        }, 10 * 1000 + 100);
+        return _startCache = setTimeout(function () {
+          var _time;
+          ugc.startLine();
+          _this5.audioId = null;
+          _this5.count = 10;
+          _this5.recordStarting = true;
+          clearInterval(_runTime);
+          _time = new Date().getTime();
+          _runTime = setInterval(function () {
+            _this5.count = 10 - parseInt((new Date().getTime() - _time) / 1000);
+            if (_this5.count < 0) {
+              return _this5.count = 10;
+            }
+          }, 1000 / 10);
+          return _cache = setTimeout(function () {
+            return _this5.recordStop();
+          }, 10 * 1000 + 100);
+        }, 500);
       },
       recordStop: function recordStop() {
         var _this6 = this;
@@ -1155,6 +1159,7 @@ init = function init() {
         console.log("record start:", data);
         _this10.norecord = false;
         if (data.code === 200) {
+          clearTimeout(_startCache);
           ugc.startLine();
           _this10.audioId = null;
           _this10.count = 10;
