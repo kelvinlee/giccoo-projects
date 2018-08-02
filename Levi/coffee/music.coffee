@@ -107,14 +107,14 @@ init = ->
 			cdUpdate: ->
 				_cd.avatar "http://image.giccoo.com/upload/"+@.info.avatar+"@!large"
 				texts = @.info.message.split("")
-				list = []
-				n = -1
+				list = [""]
+				n = 0
 				lineH = 32
-				for i in [0...texts.length]
-					if i%8 is 0
+				for index in [0...texts.length]
+					if list[n].gblen() >= 16
 						n++ 
 						list[n] = ""
-					list[n] += texts[i]+" "
+					list[n] += texts[index]+""
 				@.msgList = list
 			ask: (id)->
 				axios.get "#{apiLink}active/Levi/info/id/#{id}"

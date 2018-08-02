@@ -14,6 +14,7 @@ class UGC
 	enemys: []
 	lights: []
 	_progress: 0
+	lineMoving: false
 	startTime: null
 	constructor: (arg)->
 		@.opts =
@@ -111,11 +112,11 @@ class UGC
 		# @.lyricUpdate "abc"
 
 		# for test remenber remove all
-		# @.newCover()
-		# @.app.ticker.add @.updateLine
+		@.newCover()
+		
 
 	newCover: ->
-		cover = new Container()
+		@.cover = cover = new Container()
 		box = new Container()
 		cover.x = 130
 		cover.y = 172
@@ -123,16 +124,19 @@ class UGC
 		border.beginFill(0xffffff)
 		border.drawRect(0,0,10,410)
 		border.drawRect(400,0,10,410)
+		border.drawRect(0,0,410,20)
+		border.drawRect(0,390,410,20)
 		box.addChild border
 		@.lineList = list = []
 		for i in [0...15]
 			line = new Sprite getTe "#{_CDN}img/bo.png"
 			line.anchor.set(0,0.5)
-			list.push line
 			line.x = 10+line.width*i
 			line.y = 210
-			line.scale.y = 1 + Math.random() * 3
+			line.sy = line.scale.y = 1 + Math.random()*2
+			line.de = Math.random() > 0.5
 			box.addChild line
+			list.push line
 		mask = new Graphics()
 		mask.beginFill(0xffffff)
 		mask.drawRect(0,0,410,410)
@@ -141,9 +145,30 @@ class UGC
 		box.mask = mask
 		cover.addChild mask
 		@.album.addChild cover
-	updateLine: ->
+		@.app.ticker.add @.updateLine.bind @
+		# cover.visible = false
+	startLine: ->
 		for item in @.lineList
-			item.scale.y = 1 + Math.random() * 3
+			item.scale.y = item.sy
+		@._time = new Date().getTime()
+		@.lineMoving = true
+	stopLine: ->
+		@._time = new Date().getTime()
+		@.lineMoving = false
+	updateLine: (detail)->
+		return false unless @.lineMoving
+		m = parseInt (new Date().getTime() - @._time)/1000
+		m = 5 if m > 5
+		for index in [0...@.lineList.length]
+			item = @.lineList[index]
+			if item.de
+				item.scale.y += (1+Math.random()*(2+index%2)) * (0.005)*(1+m/2) * detail
+			else
+				# index%(1+parseInt(Math.random()*3))
+				item.scale.y -= (1+Math.random()*(6)) * (0.01)*(1+m/3+index%(1+parseInt(Math.random()*3))) * detail
+			item.de = Math.random() > 0.2
+			item.scale.y = 6 if item.scale.y > 6
+			item.scale.y = 1 if item.scale.y <= 1
 	passImage: (src,orientation)->
 		@.album.removeChild(@.avatar) if @.avatar?
 		@.avatar = new Container()
@@ -186,12 +211,13 @@ class UGC
 	addCover: ->
 		@.uploadOverText.visible = false
 		@.uploadText.visible = false
-		@.albumCover = albumCover = new Sprite getTe "#{_CDN}img/album-cover-#{random}.png"
-		albumCover.y = (@.albumBG.height-albumCover.height)/2
-		albumCover.alpha = 0
-		@.album.addChild albumCover
-		TweenLite.to albumCover,1,
-			alpha: 1
+
+		# @.albumCover = albumCover = new Sprite getTe "#{_CDN}img/album-cover-#{random}.png"
+		# albumCover.y = (@.albumBG.height-albumCover.height)/2
+		# albumCover.alpha = 0
+		# @.album.addChild albumCover
+		# TweenLite.to albumCover,1,
+		# 	alpha: 1
 
 	albumInfo: (i)->
 		@.album.removeChild(@.albumInfoCont) if @.albumInfoCont?
@@ -218,15 +244,11 @@ class UGC
 		list = [""]
 		n = 0
 		lineH = 32
-		console.log texts
 		for index in [0...texts.length]
-			console.log list[n].gblen(),index
 			if list[n].gblen() >= 16
 				n++ 
 				list[n] = ""
-				console.log n,index
 			list[n] += texts[index]+""
-		console.log list
 		for i in [0...list.length]
 			continue if i >= 4
 			t = (i%4)*0.2

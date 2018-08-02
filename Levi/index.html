@@ -61,6 +61,7 @@
       <transition name="page-fade">
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
+            <div @click="skip" class="skip">跳过</div>
             <div class="text-box text-1">
               <div class="box">
                 <div style="height: 1rem" class="music-box"></div>

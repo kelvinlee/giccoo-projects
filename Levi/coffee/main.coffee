@@ -177,7 +177,7 @@ init = ->
 			ugcold: null
 			pushed: false
 			shareImageLink: null
-			singerIndex: 1
+			singerIndex: 3
 			cache: null
 			audioId: null
 			v: null
@@ -196,6 +196,10 @@ init = ->
 			musicLink: ""
 			logId: ""
 		methods:
+			skip: ->
+				bgm = document.getElementById "bgm"
+				bgm.pause()
+				@.pageIndex = 2
 			startbuild: ->
 				unless @.v
 					return alert "请先升级到最新版本的网易云音乐"
@@ -203,6 +207,7 @@ init = ->
 			recordStart: ->
 				# recordStartCb
 				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10')
+				ugc.startLine()
 				@.audioId = null
 				@.count = 10
 				@.recordStarting = true
@@ -221,6 +226,7 @@ init = ->
 				@.authorization = true
 				clearTimeout _cache
 				clearInterval _runTime
+				ugc.stopLine()
 				_cache = setTimeout =>
 					@.authorization = false
 					@.uploadAudio()
@@ -239,6 +245,7 @@ init = ->
 				return alert "请上传一张专辑封面" unless @.imageUpdate
 				@.step = 2
 				ugc.uploadOverText.visible = false
+				ugc.cover.visible = true
 			
 			selectSingerStart: ->
 				return alert "请输入你发声了什么?" if @.text is ""
@@ -418,6 +425,7 @@ init = ->
 				console.log "record start:",data
 				@.norecord = false
 				if data.code is 200
+					ugc.startLine()
 					@.audioId = null
 					@.count = 10
 					@.recordStarting = true

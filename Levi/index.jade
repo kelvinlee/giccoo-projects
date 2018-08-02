@@ -72,6 +72,7 @@ block content
     transition(name="page-fade")
       .page.page-1(v-show="pageIndex == 1")
         .content
+          .skip(@click="skip") 跳过
           .text-box.text-1
             .box
               .music-box(style="height: 1rem")

@@ -249,21 +249,18 @@ UGC = function () {
         album.addChild(albumBG, albumPoster, uploadText, uploadOverText, userName);
         album.scale.set(0.8, 0.8);
         album.x = (this.opts.w - album.width) / 2;
-        return this.stage.addChild(content, album);
+        this.stage.addChild(content, album);
+        // @.albumInfo album,1
+        // @.lyricUpdate "abc"
+
+        // for test remenber remove all
+        return this.newCover();
       }
-
-      // @.albumInfo album,1
-      // @.lyricUpdate "abc"
-
-      // for test remenber remove all
-      // @.newCover()
-      // @.app.ticker.add @.updateLine
-
     }, {
       key: 'newCover',
       value: function newCover() {
         var border, box, cover, k, line, list, mask;
-        cover = new Container();
+        this.cover = cover = new Container();
         box = new Container();
         cover.x = 130;
         cover.y = 172;
@@ -271,16 +268,19 @@ UGC = function () {
         border.beginFill(0xffffff);
         border.drawRect(0, 0, 10, 410);
         border.drawRect(400, 0, 10, 410);
+        border.drawRect(0, 0, 410, 20);
+        border.drawRect(0, 390, 410, 20);
         box.addChild(border);
         this.lineList = list = [];
         for (i = k = 0; k < 15; i = ++k) {
           line = new Sprite(getTe(_CDN + 'img/bo.png'));
           line.anchor.set(0, 0.5);
-          list.push(line);
           line.x = 10 + line.width * i;
           line.y = 210;
-          line.scale.y = 1 + Math.random() * 3;
+          line.sy = line.scale.y = 1 + Math.random() * 2;
+          line.de = Math.random() > 0.5;
           box.addChild(line);
+          list.push(line);
         }
         mask = new Graphics();
         mask.beginFill(0xffffff);
@@ -288,17 +288,59 @@ UGC = function () {
         cover.addChild(box);
         box.mask = mask;
         cover.addChild(mask);
-        return this.album.addChild(cover);
+        this.album.addChild(cover);
+        return this.app.ticker.add(this.updateLine.bind(this));
+      }
+
+      // cover.visible = false
+
+    }, {
+      key: 'startLine',
+      value: function startLine() {
+        var item, k, len2, ref;
+        ref = this.lineList;
+        for (k = 0, len2 = ref.length; k < len2; k++) {
+          item = ref[k];
+          item.scale.y = item.sy;
+        }
+        this._time = new Date().getTime();
+        return this.lineMoving = true;
+      }
+    }, {
+      key: 'stopLine',
+      value: function stopLine() {
+        this._time = new Date().getTime();
+        return this.lineMoving = false;
       }
     }, {
       key: 'updateLine',
-      value: function updateLine() {
-        var item, k, len2, ref, results;
-        ref = this.lineList;
+      value: function updateLine(detail) {
+        var index, item, k, m, ref, results;
+        if (!this.lineMoving) {
+          return false;
+        }
+        m = parseInt((new Date().getTime() - this._time) / 1000);
+        if (m > 5) {
+          m = 5;
+        }
         results = [];
-        for (k = 0, len2 = ref.length; k < len2; k++) {
-          item = ref[k];
-          results.push(item.scale.y = 1 + Math.random() * 3);
+        for (index = k = 0, ref = this.lineList.length; 0 <= ref ? k < ref : k > ref; index = 0 <= ref ? ++k : --k) {
+          item = this.lineList[index];
+          if (item.de) {
+            item.scale.y += (1 + Math.random() * (2 + index % 2)) * 0.005 * (1 + m / 2) * detail;
+          } else {
+            // index%(1+parseInt(Math.random()*3))
+            item.scale.y -= (1 + Math.random() * 6) * 0.01 * (1 + m / 3 + index % (1 + parseInt(Math.random() * 3))) * detail;
+          }
+          item.de = Math.random() > 0.2;
+          if (item.scale.y > 6) {
+            item.scale.y = 6;
+          }
+          if (item.scale.y <= 1) {
+            results.push(item.scale.y = 1);
+          } else {
+            results.push(void 0);
+          }
         }
         return results;
       }
@@ -355,17 +397,17 @@ UGC = function () {
     }, {
       key: 'addCover',
       value: function addCover() {
-        var albumCover;
         this.uploadOverText.visible = false;
-        this.uploadText.visible = false;
-        this.albumCover = albumCover = new Sprite(getTe(_CDN + 'img/album-cover-' + random + '.png'));
-        albumCover.y = (this.albumBG.height - albumCover.height) / 2;
-        albumCover.alpha = 0;
-        this.album.addChild(albumCover);
-        return TweenLite.to(albumCover, 1, {
-          alpha: 1
-        });
+        return this.uploadText.visible = false;
       }
+
+      // @.albumCover = albumCover = new Sprite getTe "#{_CDN}img/album-cover-#{random}.png"
+      // albumCover.y = (@.albumBG.height-albumCover.height)/2
+      // albumCover.alpha = 0
+      // @.album.addChild albumCover
+      // TweenLite.to albumCover,1,
+      // 	alpha: 1
+
     }, {
       key: 'albumInfo',
       value: function albumInfo(i) {
@@ -406,17 +448,13 @@ UGC = function () {
         list = [""];
         n = 0;
         lineH = 32;
-        console.log(texts);
         for (index = k = 0, ref = texts.length; 0 <= ref ? k < ref : k > ref; index = 0 <= ref ? ++k : --k) {
-          console.log(list[n].gblen(), index);
           if (list[n].gblen() >= 16) {
             n++;
             list[n] = "";
-            console.log(n, index);
           }
           list[n] += texts[index] + "";
         }
-        console.log(list);
         for (i = l = 0, ref1 = list.length; 0 <= ref1 ? l < ref1 : l > ref1; i = 0 <= ref1 ? ++l : --l) {
           if (i >= 4) {
             continue;
@@ -541,6 +579,8 @@ UGC = function () {
   UGC.prototype.lights = [];
 
   UGC.prototype._progress = 0;
+
+  UGC.prototype.lineMoving = false;
 
   UGC.prototype.startTime = null;
 
@@ -782,7 +822,7 @@ init = function init() {
       ugcold: null,
       pushed: false,
       shareImageLink: null,
-      singerIndex: 1,
+      singerIndex: 3,
       cache: null,
       audioId: null,
       v: null,
@@ -803,6 +843,12 @@ init = function init() {
       logId: ""
     },
     methods: {
+      skip: function skip() {
+        var bgm;
+        bgm = document.getElementById("bgm");
+        bgm.pause();
+        return this.pageIndex = 2;
+      },
       startbuild: function startbuild() {
         if (!this.v) {
           return alert("请先升级到最新版本的网易云音乐");
@@ -815,6 +861,7 @@ init = function init() {
         var _time;
         // recordStartCb
         CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10');
+        ugc.startLine();
         this.audioId = null;
         this.count = 10;
         this.recordStarting = true;
@@ -838,6 +885,7 @@ init = function init() {
         this.authorization = true;
         clearTimeout(_cache);
         clearInterval(_runTime);
+        ugc.stopLine();
         return _cache = setTimeout(function () {
           _this6.authorization = false;
           return _this6.uploadAudio();
@@ -864,7 +912,8 @@ init = function init() {
           return alert("请上传一张专辑封面");
         }
         this.step = 2;
-        return ugc.uploadOverText.visible = false;
+        ugc.uploadOverText.visible = false;
+        return ugc.cover.visible = true;
       },
       selectSingerStart: function selectSingerStart() {
         if (this.text === "") {
@@ -1108,6 +1157,7 @@ init = function init() {
         console.log("record start:", data);
         _this10.norecord = false;
         if (data.code === 200) {
+          ugc.startLine();
           _this10.audioId = null;
           _this10.count = 10;
           _this10.recordStarting = true;
