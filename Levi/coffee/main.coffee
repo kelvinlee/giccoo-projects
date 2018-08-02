@@ -116,6 +116,12 @@ window.onload = ->
 			mounted: false
 			progressOn: 100
 		methods:
+			openMusic: ->
+				bgm = document.getElementById "bgm"
+				# bgm.currentTime = _second
+				bgm.play()
+				main.openBtnShow = false
+				@.next()
 			next: ->
 				document.getElementById('load').className += " fadeOut animated"
 				_public.note = false
@@ -133,7 +139,7 @@ window.onload = ->
 					main.mounted = true
 					_cache = setTimeout =>
 						@.next()
-					,200
+					,2000
 			,1000/20
 			setTimeout =>
 				init()

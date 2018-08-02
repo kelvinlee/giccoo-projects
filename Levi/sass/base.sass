@@ -157,7 +157,32 @@ video,canvas,svg
 	+bc(#000)
 	z-index: 99
 	// 3c080f
-	
+	.content
+		+w
+		+h
+		+posr
+	.open
+		+posa
+		+bl(4rem)
+		+w
+		+text-center
+		+font-size(0.8rem)
+		color: #fff
+		&:after,&:before
+			content: " "
+			+posa
+			+tl(-70%,50%)
+			+w(3rem)
+			+h(3rem)
+			margin-left: -1.5rem
+			border: solid 2px #fff
+			border-radius: 50%
+			+overhide
+			+box
+			transform-origin: center center
+			+animation(fadeOutCircle,2s,ease,infinite)
+		&:before
+			animation-delay: 400ms
 
 	.loading
 		+posa

@@ -36,26 +36,28 @@ block content
         p 温馨提示：为了体验效果更佳<br/>建议打开音乐播放按钮
 
   .load#load
-    .loading.fadeIn.animated#loading(v-show="mounted",style="display: none")
-      .music-box(style="height: 2rem")
-      .music-box(style="height: 3rem")
-      .music-box(style="height: 4rem")
-      .music-box(style="height: 6rem")
-      .music-box(style="height: 9rem")
-      .music-box(style="height: 15rem")
-      .music-box(style="height: 13rem")
-      .music-box(style="height: 17rem")
-      .music-box(style="height: 14rem")
-      .music-box(style="height: 10rem")
-      .music-box(style="height: 16rem")
-      .music-box(style="height: 9rem")
-      .music-box(style="height: 6rem")
-      .music-box(style="height: 4rem")
-      .music-box(style="height: 2rem")
-      .text.fadeIn.animated
-        img(src="#{url}/img/loading-text.png")
-        .progress {{progress}}%
-      
+    .content#loading(v-show="mounted",style="display: none")
+      .loading.fadeIn.animated
+        .music-box(style="height: 2rem")
+        .music-box(style="height: 3rem")
+        .music-box(style="height: 4rem")
+        .music-box(style="height: 6rem")
+        .music-box(style="height: 9rem")
+        .music-box(style="height: 15rem")
+        .music-box(style="height: 13rem")
+        .music-box(style="height: 17rem")
+        .music-box(style="height: 14rem")
+        .music-box(style="height: 10rem")
+        .music-box(style="height: 16rem")
+        .music-box(style="height: 9rem")
+        .music-box(style="height: 6rem")
+        .music-box(style="height: 4rem")
+        .music-box(style="height: 2rem")
+        .text.fadeIn.animated
+          img(src="#{url}/img/loading-text.png")
+          .progress {{progress}}%
+      transition(name="page-fade")
+        .open(v-show="progress >= 90",@click="openMusic") 打开声音
   
   .main#main(v-show="mounted",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
     transition(name="page-fade")

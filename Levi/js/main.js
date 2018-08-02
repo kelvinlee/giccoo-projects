@@ -772,6 +772,14 @@ window.onload = function () {
       progressOn: 100
     },
     methods: {
+      openMusic: function openMusic() {
+        var bgm;
+        bgm = document.getElementById("bgm");
+        // bgm.currentTime = _second
+        bgm.play();
+        main.openBtnShow = false;
+        return this.next();
+      },
       next: function next() {
         document.getElementById('load').className += " fadeOut animated";
         _public.note = false;
@@ -796,7 +804,7 @@ window.onload = function () {
           main.mounted = true;
           return _cache = setTimeout(function () {
             return _this4.next();
-          }, 200);
+          }, 2000);
         }
       }, 1000 / 20);
       return setTimeout(function () {

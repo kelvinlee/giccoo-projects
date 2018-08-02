@@ -22,25 +22,30 @@
       </div>
     </div>
     <div id="load" class="load">
-      <div id="loading" v-show="mounted" style="display: none" class="loading fadeIn animated">
-        <div style="height: 2rem" class="music-box"></div>
-        <div style="height: 3rem" class="music-box"></div>
-        <div style="height: 4rem" class="music-box"></div>
-        <div style="height: 6rem" class="music-box"></div>
-        <div style="height: 9rem" class="music-box"></div>
-        <div style="height: 15rem" class="music-box"></div>
-        <div style="height: 13rem" class="music-box"></div>
-        <div style="height: 17rem" class="music-box"></div>
-        <div style="height: 14rem" class="music-box"></div>
-        <div style="height: 10rem" class="music-box"></div>
-        <div style="height: 16rem" class="music-box"></div>
-        <div style="height: 9rem" class="music-box"></div>
-        <div style="height: 6rem" class="music-box"></div>
-        <div style="height: 4rem" class="music-box"></div>
-        <div style="height: 2rem" class="music-box"></div>
-        <div class="text fadeIn animated"><img src="./img/loading-text.png">
-          <div class="progress">{{progress}}%</div>
+      <div id="loading" v-show="mounted" style="display: none" class="content">
+        <div class="loading fadeIn animated">
+          <div style="height: 2rem" class="music-box"></div>
+          <div style="height: 3rem" class="music-box"></div>
+          <div style="height: 4rem" class="music-box"></div>
+          <div style="height: 6rem" class="music-box"></div>
+          <div style="height: 9rem" class="music-box"></div>
+          <div style="height: 15rem" class="music-box"></div>
+          <div style="height: 13rem" class="music-box"></div>
+          <div style="height: 17rem" class="music-box"></div>
+          <div style="height: 14rem" class="music-box"></div>
+          <div style="height: 10rem" class="music-box"></div>
+          <div style="height: 16rem" class="music-box"></div>
+          <div style="height: 9rem" class="music-box"></div>
+          <div style="height: 6rem" class="music-box"></div>
+          <div style="height: 4rem" class="music-box"></div>
+          <div style="height: 2rem" class="music-box"></div>
+          <div class="text fadeIn animated"><img src="./img/loading-text.png">
+            <div class="progress">{{progress}}%</div>
+          </div>
         </div>
+        <transition name="page-fade">
+          <div v-show="progress &gt;= 90" @click="openMusic" class="open">打开声音</div>
+        </transition>
       </div>
     </div>
     <div id="main" v-show="mounted" :class="{biger: biger,smaller:smaller}" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">
