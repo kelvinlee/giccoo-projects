@@ -432,7 +432,7 @@ init = ->
 			# alert window.api.uploadEndCb?
 			# if window.api.recordEndCb?
 			# ?x-oss-process=image/format,jpg,quality,q_60/crop,x_130,y_282,w_410,h_410
-			console.log "update: v3 recordStartCb"
+			console.log "update: v4 Andriod fixed"
 			window.api.recordStartCb = (data)=>
 				console.log "record start:",data
 				@.norecord = false

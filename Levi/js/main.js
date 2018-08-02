@@ -536,6 +536,7 @@ UGC = function () {
         return this.buildQR(url, function () {
           _this3.app.renderer.render(_this3.app.stage);
           main.ugcold = _this3.app.view.toDataURL();
+          _this3.app.view.style.visibility = "hidden";
           _this3.album.scale.set(1, 1);
           _this3.album.x = 0;
           _this3.album.y = 110;
@@ -1167,7 +1168,7 @@ init = function init() {
       // alert window.api.uploadEndCb?
       // if window.api.recordEndCb?
       // ?x-oss-process=image/format,jpg,quality,q_60/crop,x_130,y_282,w_410,h_410
-      console.log("update: v3 recordStartCb");
+      console.log("update: v4 Andriod fixed");
       window.api.recordStartCb = function (data) {
         var _time;
         console.log("record start:", data);

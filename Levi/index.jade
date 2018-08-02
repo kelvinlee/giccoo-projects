@@ -147,7 +147,7 @@ block content
       .page.page-3(v-show="pageIndex == 3")
         .content
           #ugc
-            //- img(:src="ugcold")
+            img.ugcold(:src="ugcold",v-show="ugcold != null")
           transition(name="page-fade")
             .user-ctrl-box(v-show="step == 1")
               .upload

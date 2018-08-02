@@ -141,8 +141,7 @@
       <transition name="page-fade">
         <div v-show="pageIndex == 3" class="page page-3">
           <div class="content">
-            <div id="ugc">
-            </div>
+            <div id="ugc"><img :src="ugcold" v-show="ugcold != null" class="ugcold"></div>
             <transition name="page-fade">
               <div v-show="step == 1" class="user-ctrl-box">
                 <div class="upload">

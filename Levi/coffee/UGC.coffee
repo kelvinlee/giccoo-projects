@@ -303,6 +303,7 @@ class UGC
 		@.buildQR url, =>
 			@.app.renderer.render @.app.stage
 			main.ugcold = @.app.view.toDataURL()
+			@.app.view.style.visibility = "hidden"
 			@.album.scale.set(1,1)
 			@.album.x = 0
 			@.album.y = 110
