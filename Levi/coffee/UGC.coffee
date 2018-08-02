@@ -104,8 +104,14 @@ class UGC
 
 		album.addChild albumBG,albumPoster,uploadText,uploadOverText,userName
 		
-		album.scale.set(0.8,0.8)
+		album.scale.set(0.92,0.92)
 		album.x = (@.opts.w-album.width)/2
+		if main.smaller
+			album.scale.set(0.8,0.8)
+			album.x = (@.opts.w-album.width)/2
+		if main.biger
+			album.scale.set(1,1)
+			album.x = (@.opts.w-album.width)/2
 		
 
 		@.stage.addChild content, album
@@ -119,28 +125,28 @@ class UGC
 	newCover: ->
 		@.cover = cover = new Container()
 		box = new Container()
-		cover.x = 130
-		cover.y = 172
+		cover.x = 129
+		cover.y = 169
 		border = new Graphics()
 		border.beginFill(0xffffff)
-		border.drawRect(0,0,10,410)
-		border.drawRect(400,0,10,410)
-		border.drawRect(0,0,410,20)
-		border.drawRect(0,390,410,20)
+		# border.drawRect(0,0,12,416)
+		# border.drawRect(402,0,14,416)
+		# border.drawRect(0,0,416,10)
+		# border.drawRect(0,406,416,10)
 		box.addChild border
 		@.lineList = list = []
-		for i in [0...15]
+		for i in [0...16]
 			line = new Sprite getTe "#{_CDN}img/bo.png"
 			line.anchor.set(0,0.5)
-			line.x = 10+line.width*i
-			line.y = 210
-			line.sy = line.scale.y = 1 + Math.random()*2
+			line.x = line.width*i
+			line.y = line.height/2
+			line.sy = line.scale.y = 1.5 + Math.random()*1
 			line.de = Math.random() > 0.5
 			box.addChild line
 			list.push line
 		mask = new Graphics()
 		mask.beginFill(0xffffff)
-		mask.drawRect(0,0,410,410)
+		mask.drawRect(0,0,416,416)
 
 		cover.addChild box
 		box.mask = mask
@@ -148,7 +154,7 @@ class UGC
 		@.album.addChild cover
 		@.app.ticker.add @.updateLine.bind @
 		cover.visible = false
-		cover.alpha = 0.9
+		cover.alpha = 0.7
 	startLine: ->
 		for item in @.lineList
 			item.scale.y = item.sy
@@ -167,10 +173,14 @@ class UGC
 				item.scale.y += (1+Math.random()*(2+index%2)) * (0.005)*(1+m/2) * detail
 			else
 				# index%(1+parseInt(Math.random()*3))
-				item.scale.y -= (1+Math.random()*(6)) * (0.01)*(1+m/3+index%(1+parseInt(Math.random()*3))) * detail
+				speed = (1+Math.random()*(6)) * (0.01)*(1+m/3+index%(1+parseInt(Math.random()*3))) * detail
+				if (item.scale.y - speed) < 1.5
+					item.scale.y = 1.2
+				else	
+					item.scale.y -= speed
 			item.de = Math.random() > 0.2
 			item.scale.y = 6 if item.scale.y > 6
-			item.scale.y = 1 if item.scale.y <= 1
+			item.scale.y = 1.2 if item.scale.y <= 1.2
 	passImage: (src,orientation)->
 		@.album.removeChild(@.avatar) if @.avatar?
 		@.avatar = new Container()
@@ -181,33 +191,41 @@ class UGC
 			console.log "avatar:",avatar.width,avatar.height
 			avatar.anchor.set(0.5,0.5)
 			# avatar.mask = mask
-			avatar.scale.set(410/avatar.width,410/avatar.width)
+			avatar.scale.set(416/avatar.width,416/avatar.width)
 			avatar.x = avatar.width/2
 			avatar.y = 205
 			@.avatar.addChild avatar
-			@.avatar.x = 130
-			@.avatar.y = 172
+			@.avatar.x = 129
+			@.avatar.y = 169
 			@.album.addChildAt @.avatar,3
 
 			# mask1 = new Sprite getTe "#{_CDN}img/mask.png"
 			mask1 = new Graphics()
 			mask1.beginFill(0xffffff)
-			mask1.drawRect(0,0,410,410)
-			mask1.x = 130
-			mask1.y = 172
+			mask1.drawRect(0,0,416,416)
+			mask1.x = 129
+			mask1.y = 169
 			@.album.addChild mask1
 			avatar.mask = mask1
 			
 			if orientation is 6
 				avatar.rotation = Math.PI * 0.5
+				avatar.scale.set(1.1,1.1)
 			if orientation is 3
 				avatar.rotation = Math.PI
+				avatar.scale.set(1.1,1.1)
 				# avatar.x += 410
 			@.uploadOverText.visible = true
 			@.uploadText.visible = false
 		
 	updateName: (text)->
-		@.userName.text = text
+		t = text.split("")
+		tx = ""
+		for i in t
+			tx += i
+			break if tx.gblen() >= 20
+
+		@.userName.text = tx
 		@.userName.x = 124
 		@.userName.y = 172 + 410 + 20
 	addCover: ->

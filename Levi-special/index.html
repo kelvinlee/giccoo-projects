@@ -55,8 +55,10 @@
                     <div @click="openCD(7)" class="cd item"><img src="./img/btn-empty.jpg"></div>
                     <div @click="openCD(8)" class="cd item"><img src="./img/btn-empty.jpg"></div>
                     <div class="cd item"><img src="./img/btn-empty.jpg"></div>
+                    <div class="cd item"><img src="./img/btn-empty.jpg"></div>
                   </div>
                   <div class="line line-2">
+                    <div class="cd item"><img src="./img/btn-empty.jpg"></div>
                     <div class="cd item"><img src="./img/btn-empty.jpg"></div>
                     <div class="cd item"><img src="./img/btn-empty.jpg"></div>
                     <div class="cd item"><img src="./img/btn-empty.jpg">
@@ -67,9 +69,6 @@
                   <div class="item item-1"><img src="./img/audio-run.png"></div>
                   <div class="item item-2"><img src="./img/audio-run.png"></div></a>
                 <div class="focus-join"><a href="https://music.163.com/#/user/home?id=1529461944" class="focus"></a>
-                  <div class="join"></div>
-                </div>
-                <div class="focus-join-light"><a href="https://music.163.com/#/user/home?id=1529461944" class="focus"></a>
                   <div class="join"></div>
                 </div>
               </div>
@@ -86,7 +85,7 @@
         <div v-show="show" class="page page-music">
           <div :style="'background-image:url(../../Levi/img/music-bg-'+info.singer+'.jpg)'" class="bg"></div>
           <div class="content">
-            <div class="bg-box"><img src="../../Levi/img/music-border.png"></div>
+            <div class="bg-box"><img src="./img/music-border.png"></div>
             <div class="up">
               <div id="cd"></div>
               <div class="message">
@@ -108,11 +107,11 @@
                   <source :src="info.music" type="audio/mpeg">
                 </audio>
               </div>
-              <div class="nickname">
-                <div class="my">{{info.nickname}}</div>
-                <div class="singer"><img :src="'../../Levi/img/music-singer-name-'+info.singer+'.png'"></div>
+              <div class="select">
+                <div class="btn btn-prev-music"><img src="./img/btn-next.png"></div>
+                <div class="btn btn-next-music"><img src="./img/btn-prev.png"></div>
               </div>
-            </div><a href="http://levi.arkrdigital.com/music/" class="btn-next"><img src="../../Levi/img/music-btn-next.png"></a>
+            </div>
           </div>
         </div>
       </transition>

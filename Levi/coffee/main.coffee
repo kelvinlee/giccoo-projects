@@ -133,7 +133,7 @@ window.onload = ->
 					main.mounted = true
 					_cache = setTimeout =>
 						@.next()
-					,2000
+					,200
 			,1000/20
 			setTimeout =>
 				init()
@@ -193,11 +193,15 @@ init = ->
 			nickname: ""
 			musicLink: ""
 			logId: ""
+			openBtnShow: true
 		methods:
+			maxlengthnickname: ->
+				console.log @.nickname.gblen()
 			openMusic: ->
 				bgm = document.getElementById "bgm"
 				bgm.currentTime = _second
 				bgm.play()
+				@.openBtnShow = false
 			skip: ->
 				bgm = document.getElementById "bgm"
 				bgm.pause()
@@ -210,6 +214,7 @@ init = ->
 				# recordStartCb
 				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10')
 				_startCache = setTimeout =>
+					ugc.cover.visible = true
 					ugc.startLine()
 					@.audioId = null
 					@.count = 10
@@ -218,7 +223,7 @@ init = ->
 					_time = new Date().getTime()
 					_runTime = setInterval =>
 						@.count = 10 - parseInt (new Date().getTime() - _time)/1000
-						@.count = 10 if @.count < 0
+						@.count = 0 if @.count < 0
 					,1000/10
 					_cache = setTimeout =>
 						@.recordStop()
@@ -250,7 +255,7 @@ init = ->
 				return alert "请上传一张专辑封面" unless @.imageUpdate
 				@.step = 2
 				ugc.uploadOverText.visible = false
-				ugc.cover.visible = true
+				
 			
 			selectSingerStart: ->
 				return alert "请输入你发声了什么?" if @.text is ""
@@ -399,6 +404,11 @@ init = ->
 
 			# passImage: (blob)->
 		watch:
+			# nickname: (n,o)->
+			# 	console.log n,o
+			# text: (n,o)->
+			# 	# alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
+			# 	console.log n
 			mounted: (n,o)->
 				time = new Date().getTime()
 				setTimeout =>
@@ -412,8 +422,24 @@ init = ->
 					_second = (new Date().getTime() - time)/1000
 				,1000/20
 			text: (n,o)->
+				if @.text.gblen() > 64
+					t = @.text.split("")
+					tx = ""
+					for i in t
+						tx += i
+						break if tx.gblen() >= 64
+					@.text = tx
+					return alert "字数限制32个中文字符64个英文字符" 
 				ugc.lyricUpdate @.text
 			nickname: (n,o)->
+				if @.nickname.gblen() > 20
+					t = @.nickname.split("")
+					tx = ""
+					for i in t
+						tx += i
+						break if tx.gblen() >= 20
+					@.nickname = tx
+					return alert "字数限制10个中文字符20个英文字符" 
 				ugc.updateName @.nickname
 		mounted: ->
 			if sys is "NeteaseMusic"
@@ -432,12 +458,13 @@ init = ->
 			# alert window.api.uploadEndCb?
 			# if window.api.recordEndCb?
 			# ?x-oss-process=image/format,jpg,quality,q_60/crop,x_130,y_282,w_410,h_410
-			console.log "update: v4 Andriod fixed"
+			console.log "update: v5 Feedback"
 			window.api.recordStartCb = (data)=>
 				console.log "record start:",data
 				@.norecord = false
 				if data.code is 200
 					clearTimeout _startCache
+					ugc.cover.visible = true
 					ugc.startLine()
 					@.audioId = null
 					@.count = 10
@@ -446,7 +473,7 @@ init = ->
 					_time = new Date().getTime()
 					_runTime = setInterval =>
 						@.count = 10 - parseInt (new Date().getTime() - _time)/1000
-						@.count = 10 if @.count < 0
+						@.count = 0 if @.count < 0
 					,1000/10
 				else
 					@.authorization = false

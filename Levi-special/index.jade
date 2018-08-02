@@ -61,7 +61,11 @@ block content
                     img(src="#{url}/img/btn-empty.jpg")
                   .cd.item
                     img(src="#{url}/img/btn-empty.jpg")
+                  .cd.item
+                    img(src="#{url}/img/btn-empty.jpg")
                 .line.line-2
+                  .cd.item
+                    img(src="#{url}/img/btn-empty.jpg")
                   .cd.item
                     img(src="#{url}/img/btn-empty.jpg")
                   .cd.item
@@ -79,7 +83,7 @@ block content
               .focus-join
                 a.focus(href="https://music.163.com/#/user/home?id=1529461944")
                 .join
-              .focus-join-light
+              //- .focus-join-light
                 a.focus(href="https://music.163.com/#/user/home?id=1529461944")
                 .join
   .main#music(v-show="show",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
@@ -92,7 +96,7 @@ block content
         .content
           //- img(:src="'http://image.giccoo.com/upload/'+info.avatar")
           .bg-box
-            img(src="#{url2}/img/music-border.png")
+            img(src="#{url}/img/music-border.png")
           .up
             #cd
             .message
@@ -111,11 +115,16 @@ block content
               audio#bgm(@canplay="canplay" @timeupdate="playRun" @playing="playing = true" @pause="playing = false" @ended="playing = false")
                 source(:src="info.music" type="audio/mpeg")
                 //- source(src="//image.giccoo.com/projects/mbenz-love/mp3/bgm.mp3" type="audio/mpeg")
-            .nickname
+            .select
+              .btn.btn-prev-music
+                img(src="#{url}/img/btn-next.png")
+              .btn.btn-next-music
+                img(src="#{url}/img/btn-prev.png")   
+            //- .nickname
               .my {{info.nickname}}
               .singer
                 img(:src="'#{url2}/img/music-singer-name-'+info.singer+'.png'")
-          a.btn-next(href="http://levi.arkrdigital.com/music/")
+          //- a.btn-next(href="http://levi.arkrdigital.com/music/")
             img(src="#{url2}/img/music-btn-next.png")
 block js
   - url = "/";

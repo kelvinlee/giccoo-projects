@@ -171,6 +171,18 @@ video,canvas,svg
 		+tl
 		+transform(translate3d(-3%,-50%,0))
 		animation-delay: 300ms
+		.progress
+			+posa
+			+bl(-100%)
+			+w
+			+h
+			+font-size(0.8rem)
+			+text-center
+			color: #fff
+			padding-left: 1em
+			padding-top: 1em
+			+box
+
 .music-box
 	+w(5%)
 	+posr
@@ -561,7 +573,7 @@ video,canvas,svg
 		.btns
 			+w
 			+text-center
-			margin-top: 5%
+			margin-top: 3%
 			.btn
 				+w(25%)
 				+m(0 3%)
@@ -737,6 +749,7 @@ video,canvas,svg
 		#cd
 			+w
 			+m
+			margin-top: -10%
 			.biger &
 				margin-top: 5%
 		.player

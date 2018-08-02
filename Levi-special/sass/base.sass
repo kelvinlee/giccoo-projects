@@ -187,6 +187,7 @@ video,canvas,svg
 		+text-center
 		+font-size(0.8rem)
 		color: #fff
+
 .music-box
 	+w(5%)
 	+posr
@@ -456,7 +457,7 @@ video,canvas,svg
 			+posa
 			+tl
 			+w
-			+h(95%)
+			+h
 			z-index: 0
 			img
 				+w
@@ -533,6 +534,14 @@ video,canvas,svg
 				+text-center
 				+font-size(0.8rem)
 				color: #fff
+		.select
+			+w(90%)
+			+m
+			margin-top: 15%
+			+text-center
+			.btn
+				+w(49%)
+				+show-inline
 
 .page-home
 	.plant
@@ -559,7 +568,7 @@ video,canvas,svg
 				+tl
 		.audio-run
 			+posa
-			+tl(26.4%,80.7%)
+			+tl(26.6%,80.8%)
 			+w(6%)
 			+h(33%)
 			.item
@@ -570,13 +579,15 @@ video,canvas,svg
 				animation-direction: reverse
 		.cd-list
 			+posa
-			+tl(12%,36.7%)
-			+w(14%)
+			+tl(15%,36.3%)
+			+w(15%)
+			opacity: 0
 			.line
 				.cd
 					+show-inline
-					+w(28%)
-					+m(0 2%)
+					+w(21%)
+					+m(0)
+					margin-left: 2%
 					box-shadow: 1px -1px 3px rgba(0,0,0,0.7)
 					+posr
 					.cover
@@ -586,14 +597,16 @@ video,canvas,svg
 						+w
 						+h
 						z-index: 100
+			.line-1
+				margin-left: -2%
 			.line-2
 				margin-left: -5%
-				padding-right: 5%
-				margin-top: -5%
+				padding-right: 2%
+				margin-top: 2%
 		.focus-join,.focus-join-light
 			+posa
-			+tl(27%,92.6%)
-			+w(6%)
+			+tl(17%,89.6%)
+			+w(9.3%)
 			+h(12%)
 			.focus,.join
 				+w(50%)
