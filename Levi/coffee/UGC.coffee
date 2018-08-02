@@ -146,7 +146,7 @@ class UGC
 		cover.addChild mask
 		@.album.addChild cover
 		@.app.ticker.add @.updateLine.bind @
-		# cover.visible = false
+		cover.visible = false
 	startLine: ->
 		for item in @.lineList
 			item.scale.y = item.sy

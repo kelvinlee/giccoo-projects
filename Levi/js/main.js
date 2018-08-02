@@ -289,11 +289,9 @@ UGC = function () {
         box.mask = mask;
         cover.addChild(mask);
         this.album.addChild(cover);
-        return this.app.ticker.add(this.updateLine.bind(this));
+        this.app.ticker.add(this.updateLine.bind(this));
+        return cover.visible = false;
       }
-
-      // cover.visible = false
-
     }, {
       key: 'startLine',
       value: function startLine() {
@@ -1151,7 +1149,7 @@ init = function init() {
       // alert window.api.uploadEndCb?
       // if window.api.recordEndCb?
       // ?x-oss-process=image/format,jpg,quality,q_60/crop,x_130,y_282,w_410,h_410
-      console.log("update: v2 recordStartCb");
+      console.log("update: v3 recordStartCb");
       window.api.recordStartCb = function (data) {
         var _time;
         console.log("record start:", data);
