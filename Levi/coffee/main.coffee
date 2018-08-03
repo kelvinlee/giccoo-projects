@@ -353,14 +353,12 @@ init = ->
 					# alert JSON.stringify msg
 					if msg.data.info.insertId?
 						@.logId = msg.data.info.insertId
-						alert "logId:#{@.logId}"
 						ugc.overUGC(msg.data.info.insertId)
 					else
 						ugc.overUGC()
 				.catch (e)=>
 					@.loading = false	
 			share: (image)->
-				alert "upload image:#{@.logId}"
 				folder = "Levi"
 				if @.authorization
 					folder = "Levis"
@@ -372,7 +370,7 @@ init = ->
 				console.log "folder:",folder
 				return @.faild() unless image?
 				return false if @.pushed
-				alert "start upload image:#{@.logId}"
+				
 				axios.post imageurl,data
 				.then (msg)=>
 					if msg.data.recode is 200
@@ -380,7 +378,7 @@ init = ->
 					else
 						main.faild(msg)
 				.catch (e)=>
-					alert "upload faild:#{e}"
+					# alert e
 					main.faild(e)		
 			success: (data)->
 				@.shareImageLink = data.info
@@ -529,6 +527,4 @@ init = ->
 					@.createLog()
 			window.api.recordvoicePlayCb = (data)=>
 				console.log data.action
-
-			console.log "update: v8 Andriod doesnt share"
-			
+			console.log "update: v9 remove"

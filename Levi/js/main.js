@@ -1086,7 +1086,6 @@ init = function init() {
           // alert JSON.stringify msg
           if (msg.data.info.insertId != null) {
             _this6.logId = msg.data.info.insertId;
-            alert('logId:' + _this6.logId);
             return ugc.overUGC(msg.data.info.insertId);
           } else {
             return ugc.overUGC();
@@ -1097,7 +1096,6 @@ init = function init() {
       },
       share: function share(image) {
         var data, folder;
-        alert('upload image:' + this.logId);
         folder = "Levi";
         if (this.authorization) {
           folder = "Levis";
@@ -1114,7 +1112,6 @@ init = function init() {
         if (this.pushed) {
           return false;
         }
-        alert('start upload image:' + this.logId);
         return axios.post(imageurl, data).then(function (msg) {
           if (msg.data.recode === 200) {
             return main.success(msg.data);
@@ -1122,7 +1119,7 @@ init = function init() {
             return main.faild(msg);
           }
         }).catch(function (e) {
-          alert('upload faild:' + e);
+          // alert e
           return main.faild(e);
         });
       },
@@ -1328,7 +1325,7 @@ init = function init() {
       window.api.recordvoicePlayCb = function (data) {
         return console.log(data.action);
       };
-      return console.log("update: v8 Andriod doesnt share");
+      return console.log("update: v9 remove");
     }
   });
 };
