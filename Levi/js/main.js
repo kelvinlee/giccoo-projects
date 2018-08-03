@@ -389,13 +389,16 @@ UGC = function () {
           mask1.y = 169;
           _this.album.addChild(mask1);
           avatar.mask = mask1;
+          console.log("orientation:", orientation);
           if (orientation === 6) {
             avatar.rotation = Math.PI * 0.5;
-            avatar.scale.set(1.1, 1.1);
+            avatar.scale.x += avatar.scale.x * 0.4;
+            avatar.scale.y += avatar.scale.y * 0.4;
           }
           if (orientation === 3) {
             avatar.rotation = Math.PI;
-            avatar.scale.set(1.1, 1.1);
+            avatar.scale.x += avatar.scale.x * 0.4;
+            avatar.scale.y += avatar.scale.y * 0.4;
           }
           // avatar.x += 410
           _this.uploadOverText.visible = true;

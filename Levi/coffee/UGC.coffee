@@ -207,13 +207,15 @@ class UGC
 			mask1.y = 169
 			@.album.addChild mask1
 			avatar.mask = mask1
-			
+			console.log "orientation:",orientation
 			if orientation is 6
 				avatar.rotation = Math.PI * 0.5
-				avatar.scale.set(1.1,1.1)
+				avatar.scale.x += avatar.scale.x * 0.4
+				avatar.scale.y += avatar.scale.y * 0.4
 			if orientation is 3
 				avatar.rotation = Math.PI
-				avatar.scale.set(1.1,1.1)
+				avatar.scale.x += avatar.scale.x * 0.4
+				avatar.scale.y += avatar.scale.y * 0.4
 				# avatar.x += 410
 			@.uploadOverText.visible = true
 			@.uploadText.visible = false
