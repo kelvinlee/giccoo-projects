@@ -923,7 +923,10 @@ init = function init() {
         return this.pageIndex = 3;
       },
       recordStart: function recordStart() {
-        // recordStartCb
+        if (this.recordStarting) {
+          // recordStartCb
+          return false;
+        }
         return CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10');
       },
       // _startCache = setTimeout =>

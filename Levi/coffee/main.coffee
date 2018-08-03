@@ -235,6 +235,7 @@ init = ->
 				@.pageIndex = 3
 			recordStart: ->
 				# recordStartCb
+				return false if @.recordStarting
 				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10')
 				# _startCache = setTimeout =>
 				# 	ugc.cover.visible = true

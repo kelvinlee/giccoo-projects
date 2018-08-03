@@ -16,6 +16,7 @@ String.prototype.gblen = ->
 			len++
 	return len
 
+sys = null
 main = null
 _cd = null
 apiLink = "//g.giccoo.com/"
@@ -26,7 +27,12 @@ window.onload = ->
 	if IsPC()
 		document.getElementById("qrcode").className += " show"
 		return false
+	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
+		sys = "NeteaseMusic"
 	init()
+
+isNumber = (obj)->
+	return typeof(obj) is 'number' and isFinite(obj)    
 
 init = ->
 	TrueH = document.documentElement.clientHeight
@@ -75,23 +81,28 @@ init = ->
 				if @.bgm.duration != Infinity
 					m = Math.floor @.bgm.duration/60
 					s = ten Math.floor @.bgm.duration%60
+					m = 0
+					s = "00" unless isNumber(s)
 					@.timeend = m+":"+s
 			canplay: ->
 				if @.bgm.duration != Infinity
 					m = Math.floor @.bgm.duration/60
 					s = ten Math.floor @.bgm.duration%60
+					m = 0
+					s = "00" unless isNumber(s)
 					@.timeend = m+":"+s
 				
-			playRun: ->
+			playRun: (evt)->
 				if @.bgm.duration != Infinity
 					@.playProgress = @.bgm.currentTime/@.bgm.duration*100
 					m = Math.floor @.bgm.duration/60
 					s = ten Math.floor @.bgm.duration%60
-					m = 99 if m > 99
+					m = 0
+					s = "00" unless isNumber(s)
 					@.timeend = m+":"+s
 					m = Math.floor @.bgm.currentTime/60
 					s = ten Math.floor @.bgm.currentTime%60
-					m = 99 if m > 99
+					m = 99 if parseInt(m) > 99
 					@.timeing = m+":"+s
 					n = 100/@.msgList.length
 					@.line = Math.ceil @.playProgress/n
@@ -124,6 +135,8 @@ init = ->
 					@.mounted = true
 					@.cdUpdate()
 		mounted: ->
+			if sys is "NeteaseMusic"
+				@.wy = true
 			id = $_GET["id"]
 			_cd = new CD 
 				el: "cd"
@@ -133,6 +146,8 @@ init = ->
 			
 
 ten = (i)->
+	if i is NaN
+		return "0"
 	if i < 10
 		return "0"+i
 	return i
