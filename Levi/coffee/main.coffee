@@ -35,6 +35,7 @@ _cache = null
 _startCache = null
 _runTime = null
 _second = 0
+_testTime = 0
 
 neteaseShareImage = ->
 	title1 = "有故事的声活单曲"
@@ -483,7 +484,8 @@ init = ->
 			# ?x-oss-process=image/format,jpg,quality,q_60/crop,x_130,y_282,w_410,h_410
 			console.log "update: v5 Feedback"
 			window.api.recordStartCb = (data)=>
-				console.log "record start:",data
+				_testTime = new Date().getTime()
+				console.log "record start:",data,_testTime
 				@.norecord = false
 				clearTimeout _startCache
 				if data.code is 200
@@ -503,7 +505,7 @@ init = ->
 					@.uploadAudio()
 					clearTimeout _cache
 			window.api.recordEndCb = (data)=>
-				console.log "record end:",data
+				console.log "record end:",data,(new Date().getTime()-_testTime)/1000
 				if data.code is 200 and data.localId isnt "(null)"
 					@.audioId = data.localId
 				else

@@ -6,7 +6,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _CDN, _cache, _public, _runTime, _second, _startCache, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, neteaseShareImage, random, resource, resources, sended, sys, ugc, ugcCache;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _CDN, _cache, _public, _runTime, _second, _startCache, _testTime, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, neteaseShareImage, random, resource, resources, sended, sys, ugc, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -670,6 +670,8 @@ _runTime = null;
 
 _second = 0;
 
+_testTime = 0;
+
 neteaseShareImage = function neteaseShareImage() {
   var picUrl, redirectUrl, title1;
   title1 = "有故事的声活单曲";
@@ -1269,7 +1271,8 @@ init = function init() {
       console.log("update: v5 Feedback");
       window.api.recordStartCb = function (data) {
         var _time;
-        console.log("record start:", data);
+        _testTime = new Date().getTime();
+        console.log("record start:", data, _testTime);
         _this9.norecord = false;
         clearTimeout(_startCache);
         if (data.code === 200) {
@@ -1293,7 +1296,7 @@ init = function init() {
         }
       };
       window.api.recordEndCb = function (data) {
-        console.log("record end:", data);
+        console.log("record end:", data, (new Date().getTime() - _testTime) / 1000);
         if (data.code === 200 && data.localId !== "(null)") {
           _this9.audioId = data.localId;
         } else {
