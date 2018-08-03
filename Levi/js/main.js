@@ -1,3 +1,11 @@
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _CDN, _cache, _public, _runTime, _second, _startCache, _testTime, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, neteaseShareImage, random, resource, resources, sended, sys, ugc, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
@@ -21,7 +29,7 @@ mTestElement = document.createElement("div");
 for (j = 0, len1 = VENDORS.length; j < len1; j++) {
   i = VENDORS[j];
   css3Prefix = i;
-  if ((css3Prefix + "Transition") in mTestElement.style) {
+  if (css3Prefix + "Transition" in mTestElement.style) {
     break;
   }
   css3Prefix = false;
@@ -32,7 +40,7 @@ if (css3Prefix) {
   ANIMATION_END_NAME = ANIMATION_END_NAMES[css3Prefix];
 }
 
-loadWechatConfig = function() {
+loadWechatConfig = function loadWechatConfig() {
   var hm, s, url;
   url = encodeURIComponent(window.location.href.split("#")[0]);
   hm = document.createElement('script');
@@ -41,7 +49,7 @@ loadWechatConfig = function() {
   s.parentNode.insertBefore(hm, s);
 };
 
-IsPC = function() {
+IsPC = function IsPC() {
   var Agents, flag, userAgentInfo, v;
   userAgentInfo = navigator.userAgent;
   Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod');
@@ -59,7 +67,7 @@ IsPC = function() {
 
 Vue.component("player", {
   template: '<div class="player" :class="{play: playing, pause: !playing}" @click="change"> <div class="icon-play" :class="{play: playing, pause: !playing}"> <svg v-if="!icon" v-show="!playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-39"></use><path class="ytp-svg-fill" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"></path></svg> <svg v-if="!icon" v-show="playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-40"></use><path class="ytp-svg-fill" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z"></path></svg> </div> <audio :src="src" :autoplay="autoplay" :preload="preload" :loop="loop"></audio> <img v-if="thumb" :src="thumb" /> </div>',
-  data: function() {
+  data: function data() {
     return {
       playing: false,
       stoped: false
@@ -92,33 +100,33 @@ Vue.component("player", {
     }
   },
   methods: {
-    play: function() {
+    play: function play() {
       var temp;
       temp = this.$emit('play', this);
       return this.playing = true;
     },
-    pause: function() {
+    pause: function pause() {
       var temp;
       temp = this.$emit('pause', this);
       this.audio.pause();
       return this.playing = false;
     },
-    ended: function() {
+    ended: function ended() {
       return this.playing = false;
     },
-    change: function() {
+    change: function change() {
       if (this.playing) {
         this.audio.pause();
         return this.stoped = true;
       } else {
         this.audio.play();
         this.stoped = false;
-        return (typeof _hmt !== "undefined" && _hmt !== null) && _hmt.push(['_trackEvent', "adidas-originals-eqt", this.name, "play", "-"]);
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "adidas-originals-eqt", this.name, "play", "-"]);
       }
     }
   },
   // computed:
-  mounted: function(el) {
+  mounted: function mounted(el) {
     console.log(this.name);
     this.audio = this.$el.children[1];
     // console.log @audio
@@ -155,17 +163,17 @@ Text = PIXI.Text;
 
 AnimatedSprite = PIXI.extras.AnimatedSprite;
 
-getTe = function(id) {
+getTe = function getTe(id) {
   return resource[id].texture;
 };
 
-getId = function(id, link) {
+getId = function getId(id, link) {
   return loader.resources[link].textures[id];
 };
 
 // for fix ios 8 less
 if (Number.isInteger == null) {
-  Number.isInteger = function(int) {
+  Number.isInteger = function (int) {
     return int >= 0;
   };
 }
@@ -174,9 +182,11 @@ random = 1 + parseInt(Math.random() * 5);
 
 _CDN = "./";
 
-UGC = (function() {
-  class UGC {
-    constructor(arg) {
+UGC = function () {
+  var UGC = function () {
+    function UGC(arg) {
+      _classCallCheck(this, UGC);
+
       this.opts = {
         el: "main",
         w: 750,
@@ -200,355 +210,382 @@ UGC = (function() {
         preserveDrawingBuffer: true,
         forceCanvas: true
       });
-      if ((this.opts.class != null) && this.opts.class !== "") {
+      if (this.opts.class != null && this.opts.class !== "") {
         this.app.view.className = this.opts.class;
       }
       this.stage = this.app.stage;
       document.getElementById(this.opts.el).appendChild(this.app.view);
-      PIXI.loader.add([`${_CDN}img/ugc-bg-1.jpg`, `${_CDN}img/ugc-bg-2.jpg`, `${_CDN}img/ugc-bg-3.jpg`, `${_CDN}img/ugc-bg-4.jpg`, `${_CDN}img/ugc-bg-5.jpg`, `${_CDN}img/ugc-name-1.png`, `${_CDN}img/ugc-name-2.png`, `${_CDN}img/ugc-name-3.png`, `${_CDN}img/ugc-name-4.png`, `${_CDN}img/ugc-name-5.png`, `${_CDN}img/ugc-note-1.png`, `${_CDN}img/ugc-note-2.png`, `${_CDN}img/ugc-note-3.png`, `${_CDN}img/ugc-note-4.png`, `${_CDN}img/ugc-note-5.png`, `${_CDN}img/ugc-singer-1.png`, `${_CDN}img/ugc-singer-2.png`, `${_CDN}img/ugc-singer-3.png`, `${_CDN}img/ugc-singer-4.png`, `${_CDN}img/ugc-singer-5.png`, `${_CDN}img/ugc-text-2.png`, `${_CDN}img/ugc-border.png`, `${_CDN}img/ugc-logo.png`, `${_CDN}img/album-bg.png`, `${_CDN}img/album-cover-${random}.png`, `${_CDN}img/album-poster.png`, `${_CDN}img/album-upload-text.png`, `${_CDN}img/album-upload-over-text.png`, `${_CDN}img/mask.png`, `${_CDN}img/qrcode.png`, `${_CDN}img/bo.png`, `${_CDN}img/avatar.jpg`]).load(this.build.bind(this));
+      PIXI.loader.add([_CDN + 'img/ugc-bg-1.jpg', _CDN + 'img/ugc-bg-2.jpg', _CDN + 'img/ugc-bg-3.jpg', _CDN + 'img/ugc-bg-4.jpg', _CDN + 'img/ugc-bg-5.jpg', _CDN + 'img/ugc-name-1.png', _CDN + 'img/ugc-name-2.png', _CDN + 'img/ugc-name-3.png', _CDN + 'img/ugc-name-4.png', _CDN + 'img/ugc-name-5.png', _CDN + 'img/ugc-note-1.png', _CDN + 'img/ugc-note-2.png', _CDN + 'img/ugc-note-3.png', _CDN + 'img/ugc-note-4.png', _CDN + 'img/ugc-note-5.png', _CDN + 'img/ugc-singer-1.png', _CDN + 'img/ugc-singer-2.png', _CDN + 'img/ugc-singer-3.png', _CDN + 'img/ugc-singer-4.png', _CDN + 'img/ugc-singer-5.png', _CDN + 'img/ugc-text-2.png', _CDN + 'img/ugc-border.png', _CDN + 'img/ugc-logo.png', _CDN + 'img/album-bg.png', _CDN + 'img/album-cover-' + random + '.png', _CDN + 'img/album-poster.png', _CDN + 'img/album-upload-text.png', _CDN + 'img/album-upload-over-text.png', _CDN + 'img/mask.png', _CDN + 'img/qrcode.png', _CDN + 'img/bo.png', _CDN + 'img/avatar.jpg']).load(this.build.bind(this));
       this.default.MH = this.opts.h * 0.65;
     }
 
-    build() {
-      var album, albumBG, albumPoster, border, content, uploadOverText, uploadText, userName;
-      this.trueH = (750 / TrueW) * TrueH;
-      this.content = content = new Container();
-      border = new Sprite(getTe(`${_CDN}img/ugc-border.png`));
-      // border.anchor.set(0,1)
-      content.addChild(border);
-      content.y = -(this.opts.h - this.trueH) - TrueH * (750 / TrueW) * 0.4 - 20;
-      // console.log @.opts.h,@.trueH
-      this.album = album = new Container();
-      this.albumBG = albumBG = new Sprite(getTe(`${_CDN}img/album-bg.png`));
-      albumPoster = new Sprite(getTe(`${_CDN}img/album-poster.png`));
-      albumPoster.y = (albumBG.height - albumPoster.height) / 2;
-      this.uploadText = uploadText = new Sprite(getTe(`${_CDN}img/album-upload-text.png`));
-      uploadText.y = albumPoster.y;
-      this.uploadOverText = uploadOverText = new Sprite(getTe(`${_CDN}img/album-upload-over-text.png`));
-      uploadOverText.y = albumPoster.y;
-      uploadOverText.visible = false;
-      
-      // dropShadow : true ,dropShadowBlur: 2,dropShadowAlpha: 0.3,dropShadowColor : '#000000'
-      this.userName = userName = new Text("", {
-        fontFamily: 'Arial',
-        fontSize: 38,
-        fill: 0xffffff,
-        align: 'left'
-      });
-      album.addChild(albumBG, albumPoster, uploadText, uploadOverText, userName);
-      album.scale.set(0.92, 0.92);
-      album.x = (this.opts.w - album.width) / 2;
-      if (main.smaller) {
-        album.scale.set(0.8, 0.8);
-        album.x = (this.opts.w - album.width) / 2;
-      }
-      if (main.biger) {
-        album.scale.set(1, 1);
-        album.x = (this.opts.w - album.width) / 2;
-      }
-      this.stage.addChild(content, album);
-      // @.albumInfo album,1
-      // @.lyricUpdate "abc"
+    _createClass(UGC, [{
+      key: 'build',
+      value: function build() {
+        var album, albumBG, albumPoster, border, content, uploadOverText, uploadText, userName;
+        this.trueH = 750 / TrueW * TrueH;
+        this.content = content = new Container();
+        border = new Sprite(getTe(_CDN + 'img/ugc-border.png'));
+        // border.anchor.set(0,1)
+        content.addChild(border);
+        content.y = -(this.opts.h - this.trueH) - TrueH * (750 / TrueW) * 0.4 - 20;
+        // console.log @.opts.h,@.trueH
+        this.album = album = new Container();
+        this.albumBG = albumBG = new Sprite(getTe(_CDN + 'img/album-bg.png'));
+        albumPoster = new Sprite(getTe(_CDN + 'img/album-poster.png'));
+        albumPoster.y = (albumBG.height - albumPoster.height) / 2;
+        this.uploadText = uploadText = new Sprite(getTe(_CDN + 'img/album-upload-text.png'));
+        uploadText.y = albumPoster.y;
+        this.uploadOverText = uploadOverText = new Sprite(getTe(_CDN + 'img/album-upload-over-text.png'));
+        uploadOverText.y = albumPoster.y;
+        uploadOverText.visible = false;
 
-      // for test remenber remove all
-      return this.newCover();
-    }
-
-    newCover() {
-      var border, box, cover, k, line, list, mask;
-      this.cover = cover = new Container();
-      box = new Container();
-      cover.x = 129;
-      cover.y = 169;
-      border = new Graphics();
-      border.beginFill(0xffffff);
-      // border.drawRect(0,0,12,416)
-      // border.drawRect(402,0,14,416)
-      // border.drawRect(0,0,416,10)
-      // border.drawRect(0,406,416,10)
-      box.addChild(border);
-      this.lineList = list = [];
-      for (i = k = 0; k < 16; i = ++k) {
-        line = new Sprite(getTe(`${_CDN}img/bo.png`));
-        line.anchor.set(0, 0.5);
-        line.x = line.width * i;
-        line.y = line.height / 2;
-        line.sy = line.scale.y = 1.5 + Math.random() * 1;
-        line.de = Math.random() > 0.5;
-        box.addChild(line);
-        list.push(line);
-      }
-      mask = new Graphics();
-      mask.beginFill(0xffffff);
-      mask.drawRect(0, 0, 416, 416);
-      cover.addChild(box);
-      box.mask = mask;
-      cover.addChild(mask);
-      this.album.addChild(cover);
-      this.app.ticker.add(this.updateLine.bind(this));
-      cover.visible = false;
-      return cover.alpha = 0.7;
-    }
-
-    startLine() {
-      var item, k, len2, ref;
-      ref = this.lineList;
-      for (k = 0, len2 = ref.length; k < len2; k++) {
-        item = ref[k];
-        item.scale.y = item.sy;
-      }
-      this._time = new Date().getTime();
-      return this.lineMoving = true;
-    }
-
-    stopLine() {
-      this._time = new Date().getTime();
-      return this.lineMoving = false;
-    }
-
-    updateLine(detail) {
-      var index, item, k, m, ref, results, speed;
-      if (!this.lineMoving) {
-        return false;
-      }
-      m = parseInt((new Date().getTime() - this._time) / 1000);
-      if (m > 5) {
-        m = 5;
-      }
-      results = [];
-      for (index = k = 0, ref = this.lineList.length; (0 <= ref ? k < ref : k > ref); index = 0 <= ref ? ++k : --k) {
-        item = this.lineList[index];
-        if (item.de) {
-          item.scale.y += (1 + Math.random() * (2 + index % 2)) * 0.005 * (1 + m / 2) * detail;
-        } else {
-          // index%(1+parseInt(Math.random()*3))
-          speed = (1 + Math.random() * 6) * 0.01 * (1 + m / 3 + index % (1 + parseInt(Math.random() * 3))) * detail;
-          if ((item.scale.y - speed) < 1.5) {
-            item.scale.y = 1.2;
-          } else {
-            item.scale.y -= speed;
-          }
-        }
-        item.de = Math.random() > 0.2;
-        if (item.scale.y > 6) {
-          item.scale.y = 6;
-        }
-        if (item.scale.y <= 1.2) {
-          results.push(item.scale.y = 1.2);
-        } else {
-          results.push(void 0);
-        }
-      }
-      return results;
-    }
-
-    passImage(src, orientation) {
-      var avatar;
-      if (this.avatar != null) {
-        this.album.removeChild(this.avatar);
-      }
-      this.avatar = new Container();
-      avatar = Sprite.fromImage(src);
-      // alert orientation
-      return avatar.texture.baseTexture.on('loaded', () => {
-        var mask1;
-        console.log("avatar:", avatar.width, avatar.height);
-        avatar.anchor.set(0.5, 0.5);
-        // avatar.mask = mask
-        avatar.scale.set(416 / avatar.width, 416 / avatar.width);
-        avatar.x = avatar.width / 2;
-        avatar.y = 205;
-        this.avatar.addChild(avatar);
-        this.avatar.x = 129;
-        this.avatar.y = 169;
-        this.album.addChildAt(this.avatar, 3);
-        // mask1 = new Sprite getTe "#{_CDN}img/mask.png"
-        mask1 = new Graphics();
-        mask1.beginFill(0xffffff);
-        mask1.drawRect(0, 0, 416, 416);
-        mask1.x = 129;
-        mask1.y = 169;
-        this.album.addChild(mask1);
-        avatar.mask = mask1;
-        console.log("orientation:", orientation);
-        if (orientation === 6) {
-          avatar.rotation = Math.PI * 0.5;
-          avatar.scale.x += avatar.scale.x * 0.4;
-          avatar.scale.y += avatar.scale.y * 0.4;
-        }
-        if (orientation === 3) {
-          avatar.rotation = Math.PI;
-          avatar.scale.x += avatar.scale.x * 0.4;
-          avatar.scale.y += avatar.scale.y * 0.4;
-        }
-        // avatar.x += 410
-        this.uploadOverText.visible = true;
-        return this.uploadText.visible = false;
-      });
-    }
-
-    updateName(text) {
-      var k, len2, t, tx;
-      t = text.split("");
-      tx = "";
-      for (k = 0, len2 = t.length; k < len2; k++) {
-        i = t[k];
-        tx += i;
-        if (tx.gblen() >= 20) {
-          break;
-        }
-      }
-      this.userName.text = tx;
-      this.userName.x = 124;
-      return this.userName.y = 172 + 410 + 20;
-    }
-
-    addCover() {
-      this.uploadOverText.visible = false;
-      return this.uploadText.visible = false;
-    }
-
-    // @.albumCover = albumCover = new Sprite getTe "#{_CDN}img/album-cover-#{random}.png"
-    // albumCover.y = (@.albumBG.height-albumCover.height)/2
-    // albumCover.alpha = 0
-    // @.album.addChild albumCover
-    // TweenLite.to albumCover,1,
-    // 	alpha: 1
-    albumInfo(i) {
-      var Texts, bg, musicName, singerName;
-      if (this.albumInfoCont != null) {
-        this.album.removeChild(this.albumInfoCont);
-      }
-      if (this.bg != null) {
-        this.content.removeChild(this.bg);
-      }
-      this.index = i;
-      this.albumInfoCont = new Container();
-      singerName = new Sprite(getTe(`${_CDN}img/ugc-singer-${i}.png`));
-      singerName.y = 782 - singerName.height - 50;
-      musicName = new Sprite(getTe(`${_CDN}img/ugc-name-${i}.png`));
-      Texts = new Sprite(getTe(`${_CDN}img/ugc-text-2.png`));
-      Texts.y = 782 - Texts.height - 64;
-      musicName.y = Texts.y - musicName.height - 10;
-      this.albumInfoCont.addChild(singerName, musicName, Texts);
-      this.album.addChild(this.albumInfoCont);
-      this.bg = bg = new Sprite(getTe(`${_CDN}img/ugc-bg-${i}.jpg`));
-      // @.bg.y = @.content.y
-      return this.content.addChildAt(this.bg, 0);
-    }
-
-    lyricUpdate(text) {
-      var index, k, l, lineH, list, n, ref, ref1, t, texts;
-      if (text.gblen() > 64) {
-        return false;
-      }
-      if (this.lyric != null) {
-        this.album.removeChild(this.lyric);
-      }
-      this.lyric = new Container();
-      // text = "每次送他去机场，真的都很累。因为"
-      texts = text.split("");
-      list = [""];
-      n = 0;
-      lineH = 32;
-      for (index = k = 0, ref = texts.length; (0 <= ref ? k < ref : k > ref); index = 0 <= ref ? ++k : --k) {
-        if (list[n].gblen() >= 16) {
-          n++;
-          list[n] = "";
-        }
-        list[n] += texts[index] + "";
-      }
-      for (i = l = 0, ref1 = list.length; (0 <= ref1 ? l < ref1 : l > ref1); i = 0 <= ref1 ? ++l : --l) {
-        if (i >= 4) {
-          continue;
-        }
-        t = (i % 4) * 0.2;
-        text = new Text(list[i], {
+        // dropShadow : true ,dropShadowBlur: 2,dropShadowAlpha: 0.3,dropShadowColor : '#000000'
+        this.userName = userName = new Text("", {
           fontFamily: 'Arial',
-          fontSize: 24,
+          fontSize: 38,
           fill: 0xffffff,
           align: 'left'
         });
-        text.alpha = 1 - t;
-        text.y = lineH * 4 - (4 - (i % 4 + 1)) * lineH + (4 - list.length) * lineH;
-        text.x = (this.opts.w - text.width) / 2;
-        this.lyric.addChild(text);
-      }
-      return this.album.addChild(this.lyric);
-    }
-
-    review() {
-      var logo, note;
-      this.content.y += 200;
-      this.logo = logo = new Sprite(getTe(`${_CDN}img/ugc-logo.png`));
-      logo.y = this.content.height - logo.height - 40;
-      this.note = note = new Sprite(getTe(`${_CDN}img/ugc-note-${this.index}.png`));
-      note.y = logo.y - note.height - 20;
-      console.log(note.y, logo.y);
-      return this.content.addChild(logo, note);
-    }
-
-    buildQR(url, callback) {
-      var qrcodeMake;
-      qrcodeMake = new QRCode("qrcode", {
-        text: url,
-        width: 140,
-        height: 140,
-        colorDark: "#000000",
-        colorDark: "#000000"
-      });
-      console.log(qrcodeMake._el.lastChild);
-      return qrcodeMake._el.lastChild.onload = () => {
-        var border, qrcode, qrcodeBg, qrcodeQR, text;
-        border = 5;
-        this.qrcode = qrcode = new Container();
-        text = new Sprite(getTe(`${_CDN}img/qrcode.png`));
-        text.x = 40;
-        qrcodeBg = new Graphics();
-        qrcodeBg.beginFill(0xffffff);
-        qrcodeBg.drawRect(0, 0, 140 + border * 2, 140 + border * 2);
-        qrcodeQR = Sprite.fromImage(qrcodeMake._el.lastChild.src);
-        qrcodeQR.texture.baseTexture.on('loaded', () => {
-          qrcodeQR.x = border;
-          qrcodeQR.y = border;
-          qrcode.x = 40;
-          qrcode.y = this.content.height - 140 + border * 2 - 60;
-          return callback();
-        });
-        qrcode.addChild(qrcodeBg, qrcodeQR, text);
-        qrcode.visible = false;
-        return this.content.addChild(qrcode);
-      };
-    }
-
-    overUGC(id = null) {
-      var url;
-      if (id != null) {
-        url = `http://m.giccoo.com/Levi/music.html?id=${id}`;
-      } else {
-        url = "http://levi.arkrdigital.com/music/";
-      }
-      return this.buildQR(url, () => {
-        this.app.renderer.render(this.app.stage);
-        main.ugcold = this.app.view.toDataURL();
-        this.app.view.style.visibility = "hidden";
-        this.album.scale.set(1, 1);
-        this.album.x = 0;
-        this.album.y = 110;
-        this.content.y = 0;
-        this.qrcode.visible = true;
-        this.logo.y -= this.qrcode.height + 40;
-        this.note.y -= this.qrcode.height + 40;
-        this.app.renderer.render(this.app.stage);
-        if (main.wy) {
-          return main.share(this.app.view.toDataURL());
-        } else {
-          return main.setugc(this.app.view.toDataURL());
+        album.addChild(albumBG, albumPoster, uploadText, uploadOverText, userName);
+        album.scale.set(0.92, 0.92);
+        album.x = (this.opts.w - album.width) / 2;
+        if (main.smaller) {
+          album.scale.set(0.8, 0.8);
+          album.x = (this.opts.w - album.width) / 2;
         }
-      });
-    }
+        if (main.biger) {
+          album.scale.set(1, 1);
+          album.x = (this.opts.w - album.width) / 2;
+        }
+        this.stage.addChild(content, album);
+        // @.albumInfo album,1
+        // @.lyricUpdate "abc"
 
-  };
+        // for test remenber remove all
+        return this.newCover();
+      }
+    }, {
+      key: 'newCover',
+      value: function newCover() {
+        var border, box, cover, k, line, list, mask;
+        this.cover = cover = new Container();
+        box = new Container();
+        cover.x = 129;
+        cover.y = 169;
+        border = new Graphics();
+        border.beginFill(0xffffff);
+        // border.drawRect(0,0,12,416)
+        // border.drawRect(402,0,14,416)
+        // border.drawRect(0,0,416,10)
+        // border.drawRect(0,406,416,10)
+        box.addChild(border);
+        this.lineList = list = [];
+        for (i = k = 0; k < 16; i = ++k) {
+          line = new Sprite(getTe(_CDN + 'img/bo.png'));
+          line.anchor.set(0, 0.5);
+          line.x = line.width * i;
+          line.y = line.height / 2;
+          line.sy = line.scale.y = 1.5 + Math.random() * 1;
+          line.de = Math.random() > 0.5;
+          box.addChild(line);
+          list.push(line);
+        }
+        mask = new Graphics();
+        mask.beginFill(0xffffff);
+        mask.drawRect(0, 0, 416, 416);
+        cover.addChild(box);
+        box.mask = mask;
+        cover.addChild(mask);
+        this.album.addChild(cover);
+        this.app.ticker.add(this.updateLine.bind(this));
+        cover.visible = false;
+        return cover.alpha = 0.7;
+      }
+    }, {
+      key: 'startLine',
+      value: function startLine() {
+        var item, k, len2, ref;
+        ref = this.lineList;
+        for (k = 0, len2 = ref.length; k < len2; k++) {
+          item = ref[k];
+          item.scale.y = item.sy;
+        }
+        this._time = new Date().getTime();
+        return this.lineMoving = true;
+      }
+    }, {
+      key: 'stopLine',
+      value: function stopLine() {
+        this._time = new Date().getTime();
+        return this.lineMoving = false;
+      }
+    }, {
+      key: 'updateLine',
+      value: function updateLine(detail) {
+        var index, item, k, m, ref, results, speed;
+        if (!this.lineMoving) {
+          return false;
+        }
+        m = parseInt((new Date().getTime() - this._time) / 1000);
+        if (m > 5) {
+          m = 5;
+        }
+        results = [];
+        for (index = k = 0, ref = this.lineList.length; 0 <= ref ? k < ref : k > ref; index = 0 <= ref ? ++k : --k) {
+          item = this.lineList[index];
+          if (item.de) {
+            item.scale.y += (1 + Math.random() * (2 + index % 2)) * 0.005 * (1 + m / 2) * detail;
+          } else {
+            // index%(1+parseInt(Math.random()*3))
+            speed = (1 + Math.random() * 6) * 0.01 * (1 + m / 3 + index % (1 + parseInt(Math.random() * 3))) * detail;
+            if (item.scale.y - speed < 1.5) {
+              item.scale.y = 1.2;
+            } else {
+              item.scale.y -= speed;
+            }
+          }
+          item.de = Math.random() > 0.2;
+          if (item.scale.y > 6) {
+            item.scale.y = 6;
+          }
+          if (item.scale.y <= 1.2) {
+            results.push(item.scale.y = 1.2);
+          } else {
+            results.push(void 0);
+          }
+        }
+        return results;
+      }
+    }, {
+      key: 'passImage',
+      value: function passImage(src, orientation) {
+        var _this = this;
+
+        var avatar;
+        if (this.avatar != null) {
+          this.album.removeChild(this.avatar);
+        }
+        this.avatar = new Container();
+        avatar = Sprite.fromImage(src);
+        // alert orientation
+        return avatar.texture.baseTexture.on('loaded', function () {
+          var mask1;
+          console.log("avatar:", avatar.width, avatar.height);
+          avatar.anchor.set(0.5, 0.5);
+          // avatar.mask = mask
+          avatar.scale.set(416 / avatar.width, 416 / avatar.width);
+          avatar.x = avatar.width / 2;
+          avatar.y = 205;
+          _this.avatar.addChild(avatar);
+          _this.avatar.x = 129;
+          _this.avatar.y = 169;
+          _this.album.addChildAt(_this.avatar, 3);
+          // mask1 = new Sprite getTe "#{_CDN}img/mask.png"
+          mask1 = new Graphics();
+          mask1.beginFill(0xffffff);
+          mask1.drawRect(0, 0, 416, 416);
+          mask1.x = 129;
+          mask1.y = 169;
+          _this.album.addChild(mask1);
+          avatar.mask = mask1;
+          console.log("orientation:", orientation);
+          if (orientation === 6) {
+            avatar.rotation = Math.PI * 0.5;
+            avatar.scale.x += avatar.scale.x * 0.4;
+            avatar.scale.y += avatar.scale.y * 0.4;
+          }
+          if (orientation === 3) {
+            avatar.rotation = Math.PI;
+            avatar.scale.x += avatar.scale.x * 0.4;
+            avatar.scale.y += avatar.scale.y * 0.4;
+          }
+          // avatar.x += 410
+          _this.uploadOverText.visible = true;
+          return _this.uploadText.visible = false;
+        });
+      }
+    }, {
+      key: 'updateName',
+      value: function updateName(text) {
+        var k, len2, t, tx;
+        t = text.split("");
+        tx = "";
+        for (k = 0, len2 = t.length; k < len2; k++) {
+          i = t[k];
+          tx += i;
+          if (tx.gblen() >= 20) {
+            break;
+          }
+        }
+        this.userName.text = tx;
+        this.userName.x = 124;
+        return this.userName.y = 172 + 410 + 20;
+      }
+    }, {
+      key: 'addCover',
+      value: function addCover() {
+        this.uploadOverText.visible = false;
+        return this.uploadText.visible = false;
+      }
+
+      // @.albumCover = albumCover = new Sprite getTe "#{_CDN}img/album-cover-#{random}.png"
+      // albumCover.y = (@.albumBG.height-albumCover.height)/2
+      // albumCover.alpha = 0
+      // @.album.addChild albumCover
+      // TweenLite.to albumCover,1,
+      // 	alpha: 1
+
+    }, {
+      key: 'albumInfo',
+      value: function albumInfo(i) {
+        var Texts, bg, musicName, singerName;
+        if (this.albumInfoCont != null) {
+          this.album.removeChild(this.albumInfoCont);
+        }
+        if (this.bg != null) {
+          this.content.removeChild(this.bg);
+        }
+        this.index = i;
+        this.albumInfoCont = new Container();
+        singerName = new Sprite(getTe(_CDN + 'img/ugc-singer-' + i + '.png'));
+        singerName.y = 782 - singerName.height - 50;
+        musicName = new Sprite(getTe(_CDN + 'img/ugc-name-' + i + '.png'));
+        Texts = new Sprite(getTe(_CDN + 'img/ugc-text-2.png'));
+        Texts.y = 782 - Texts.height - 64;
+        musicName.y = Texts.y - musicName.height - 10;
+        this.albumInfoCont.addChild(singerName, musicName, Texts);
+        this.album.addChild(this.albumInfoCont);
+        this.bg = bg = new Sprite(getTe(_CDN + 'img/ugc-bg-' + i + '.jpg'));
+        // @.bg.y = @.content.y
+        return this.content.addChildAt(this.bg, 0);
+      }
+    }, {
+      key: 'lyricUpdate',
+      value: function lyricUpdate(text) {
+        var index, k, l, lineH, list, n, ref, ref1, t, texts;
+        if (text.gblen() > 64) {
+          return false;
+        }
+        if (this.lyric != null) {
+          this.album.removeChild(this.lyric);
+        }
+        this.lyric = new Container();
+        // text = "每次送他去机场，真的都很累。因为"
+        texts = text.split("");
+        list = [""];
+        n = 0;
+        lineH = 32;
+        for (index = k = 0, ref = texts.length; 0 <= ref ? k < ref : k > ref; index = 0 <= ref ? ++k : --k) {
+          if (list[n].gblen() >= 16) {
+            n++;
+            list[n] = "";
+          }
+          list[n] += texts[index] + "";
+        }
+        for (i = l = 0, ref1 = list.length; 0 <= ref1 ? l < ref1 : l > ref1; i = 0 <= ref1 ? ++l : --l) {
+          if (i >= 4) {
+            continue;
+          }
+          t = i % 4 * 0.2;
+          text = new Text(list[i], {
+            fontFamily: 'Arial',
+            fontSize: 24,
+            fill: 0xffffff,
+            align: 'left'
+          });
+          text.alpha = 1 - t;
+          text.y = lineH * 4 - (4 - (i % 4 + 1)) * lineH + (4 - list.length) * lineH;
+          text.x = (this.opts.w - text.width) / 2;
+          this.lyric.addChild(text);
+        }
+        return this.album.addChild(this.lyric);
+      }
+    }, {
+      key: 'review',
+      value: function review() {
+        var logo, note;
+        this.content.y += 200;
+        this.logo = logo = new Sprite(getTe(_CDN + 'img/ugc-logo.png'));
+        logo.y = this.content.height - logo.height - 40;
+        this.note = note = new Sprite(getTe(_CDN + 'img/ugc-note-' + this.index + '.png'));
+        note.y = logo.y - note.height - 20;
+        console.log(note.y, logo.y);
+        return this.content.addChild(logo, note);
+      }
+    }, {
+      key: 'buildQR',
+      value: function buildQR(url, callback) {
+        var _this2 = this;
+
+        var qrcodeMake;
+        qrcodeMake = new QRCode("qrcode", _defineProperty({
+          text: url,
+          width: 140,
+          height: 140,
+          colorDark: "#000000"
+        }, 'colorDark', "#000000"));
+        console.log(qrcodeMake._el.lastChild);
+        return qrcodeMake._el.lastChild.onload = function () {
+          var border, qrcode, qrcodeBg, qrcodeQR, text;
+          border = 5;
+          _this2.qrcode = qrcode = new Container();
+          text = new Sprite(getTe(_CDN + 'img/qrcode.png'));
+          text.x = 40;
+          qrcodeBg = new Graphics();
+          qrcodeBg.beginFill(0xffffff);
+          qrcodeBg.drawRect(0, 0, 140 + border * 2, 140 + border * 2);
+          qrcodeQR = Sprite.fromImage(qrcodeMake._el.lastChild.src);
+          qrcodeQR.texture.baseTexture.on('loaded', function () {
+            qrcodeQR.x = border;
+            qrcodeQR.y = border;
+            qrcode.x = 40;
+            qrcode.y = _this2.content.height - 140 + border * 2 - 60;
+            return callback();
+          });
+          qrcode.addChild(qrcodeBg, qrcodeQR, text);
+          qrcode.visible = false;
+          return _this2.content.addChild(qrcode);
+        };
+      }
+    }, {
+      key: 'overUGC',
+      value: function overUGC() {
+        var _this3 = this;
+
+        var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+        var url;
+        if (id != null) {
+          url = 'http://m.giccoo.com/Levi/music.html?id=' + id;
+        } else {
+          url = "http://levi.arkrdigital.com/music/";
+        }
+        return this.buildQR(url, function () {
+          _this3.app.renderer.render(_this3.app.stage);
+          main.ugcold = _this3.app.view.toDataURL();
+          _this3.app.view.style.visibility = "hidden";
+          _this3.album.scale.set(1, 1);
+          _this3.album.x = 0;
+          _this3.album.y = 110;
+          _this3.content.y = 0;
+          _this3.qrcode.visible = true;
+          _this3.logo.y -= _this3.qrcode.height + 40;
+          _this3.note.y -= _this3.qrcode.height + 40;
+          _this3.app.renderer.render(_this3.app.stage);
+          if (main.wy) {
+            return main.share(_this3.app.view.toDataURL());
+          } else {
+            return main.setugc(_this3.app.view.toDataURL());
+          }
+        });
+      }
+    }]);
+
+    return UGC;
+  }();
+
+  ;
 
   UGC.prototype.default = {
     w: 320,
@@ -577,8 +614,7 @@ UGC = (function() {
   UGC.prototype.startTime = null;
 
   return UGC;
-
-}).call(this);
+}.call(undefined);
 
 // @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/coffee/loadWechatConfig"
@@ -586,10 +622,10 @@ UGC = (function() {
 // @codekit-prepend "../../libs/vue/vue-player"
 // @codekit-prepend "../../libs/coffee/pixi-base"
 // @codekit-prepend "./UGC"
-String.prototype.gblen = function() {
+String.prototype.gblen = function () {
   var k, len, ref;
   len = 0;
-  for (i = k = 0, ref = this.length; (0 <= ref ? k < ref : k > ref); i = 0 <= ref ? ++k : --k) {
+  for (i = k = 0, ref = this.length; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
     if (this.charCodeAt(i) > 127 || this.charCodeAt(i) === 94) {
       len += 2;
     } else {
@@ -639,28 +675,28 @@ _second = 0;
 
 _testTime = 0;
 
-neteaseShareImage = function() {
+neteaseShareImage = function neteaseShareImage() {
   var picUrl, redirectUrl, title1;
   title1 = "有故事的声活单曲";
-  picUrl = `https://image.giccoo.com/upload/${main.folder}/` + main.shareImageLink + "@!large";
+  picUrl = 'https://image.giccoo.com/upload/' + main.folder + '/' + main.shareImageLink + "@!large";
   redirectUrl = "https://m.giccoo.com/Levi/";
   // console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
   window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
   return console.log("share href");
 };
 
-createObjectURLfun = function(file) {
-  if ((window.webkitURL != null) || window.navigator.userAgent.indexOf("Chrome") >= 1 || window.navigator.userAgent.indexOf("Safari") >= 1) {
+createObjectURLfun = function createObjectURLfun(file) {
+  if (window.webkitURL != null || window.navigator.userAgent.indexOf("Chrome") >= 1 || window.navigator.userAgent.indexOf("Safari") >= 1) {
     return window.webkitURL.createObjectURL(file);
   } else {
     return window.URL.createObjectURL(file);
   }
 };
 
-getOrientation = function(file, callback) {
+getOrientation = function getOrientation(file, callback) {
   var reader;
-  reader = new FileReader;
-  reader.onload = function(e) {
+  reader = new FileReader();
+  reader.onload = function (e) {
     var length, little, marker, offset, tags, view;
     view = new DataView(e.target.result);
     if (view.getUint16(0, false) !== 0xFFD8) {
@@ -700,7 +736,7 @@ getOrientation = function(file, callback) {
   reader.readAsArrayBuffer(file);
 };
 
-window.onload = function() {
+window.onload = function () {
   if (IsPC()) {
     document.getElementById("qrcode").className += " show";
     return false;
@@ -709,16 +745,16 @@ window.onload = function() {
     sys = "NeteaseMusic";
   } else {
     loadWechatConfig();
-    wx.ready(function() {
+    wx.ready(function () {
       var shareContent;
       shareContent = {
         title: "有故事的声活单曲",
         desc: "有故事的声活单曲~",
         link: "http://m.giccoo.com/Levi/",
         imgUrl: "http://m.giccoo.com/Levi/img/ico.jpg",
-        success: function() {},
+        success: function success() {},
         // alert "success"
-        cancel: function() {}
+        cancel: function cancel() {}
       };
       // alert "cancel"
       wx.onMenuShareTimeline(shareContent);
@@ -741,7 +777,7 @@ window.onload = function() {
       progressOn: 100
     },
     methods: {
-      openMusic: function() {
+      openMusic: function openMusic() {
         var bgm;
         bgm = document.getElementById("bgm");
         // bgm.currentTime = _second
@@ -749,39 +785,41 @@ window.onload = function() {
         main.openBtnShow = false;
         return this.next();
       },
-      next: function() {
+      next: function next() {
         document.getElementById('load').className += " fadeOut animated";
         _public.note = false;
-        return setTimeout(function() {
+        return setTimeout(function () {
           return document.getElementById('load').style.display = "none";
         }, 520);
       }
     },
-    mounted: function() {
+    mounted: function mounted() {
+      var _this4 = this;
+
       var timein;
       this.mounted = true;
-      timein = setInterval(() => {
-        this.progress += 2;
-        if (this.progress >= this.progressOn) {
-          this.progress = this.progressOn;
+      timein = setInterval(function () {
+        _this4.progress += 2;
+        if (_this4.progress >= _this4.progressOn) {
+          _this4.progress = _this4.progressOn;
         }
-        if (this.progress >= 100) {
-          this.progress = 100;
+        if (_this4.progress >= 100) {
+          _this4.progress = 100;
           clearInterval(timein);
           main.mounted = true;
-          return _cache = setTimeout(() => {
-            return this.next();
+          return _cache = setTimeout(function () {
+            return _this4.next();
           }, 2000);
         }
       }, 1000 / 20);
-      return setTimeout(() => {
+      return setTimeout(function () {
         return init();
       }, 500);
     }
   });
 };
 
-init = function() {
+init = function init() {
   var navH, smaller;
   TrueH = document.documentElement.clientHeight;
   TrueW = document.documentElement.clientWidth;
@@ -846,13 +884,13 @@ init = function() {
       }
     },
     methods: {
-      start: function(evt) {
+      start: function start(evt) {
         var touch;
         touch = evt.touches[0];
         // console.log touch
         return this.default.x = touch.clientX;
       },
-      move: function(evt) {
+      move: function move(evt) {
         var moveX, n, numb, touch;
         touch = evt.touches[0];
         moveX = touch.clientX - this.default.x;
@@ -866,30 +904,30 @@ init = function() {
           return this.default.x = touch.clientX;
         }
       },
-      end: function(evt) {},
-      maxlengthnickname: function() {
+      end: function end(evt) {},
+      maxlengthnickname: function maxlengthnickname() {
         return console.log(this.nickname.gblen());
       },
-      openMusic: function() {
+      openMusic: function openMusic() {
         var bgm;
         bgm = document.getElementById("bgm");
         bgm.currentTime = _second;
         bgm.play();
         return this.openBtnShow = false;
       },
-      skip: function() {
+      skip: function skip() {
         var bgm;
         bgm = document.getElementById("bgm");
         bgm.pause();
         return this.pageIndex = 2;
       },
-      startbuild: function() {
+      startbuild: function startbuild() {
         if (!this.v) {
           return alert("请先升级到最新版本的网易云音乐");
         }
         return this.pageIndex = 3;
       },
-      recordStart: function() {
+      recordStart: function recordStart() {
         if (this.recordStarting) {
           // recordStartCb
           return false;
@@ -912,29 +950,31 @@ init = function() {
       // 		@.recordStop()
       // 	,10*1000+100
       // ,1000
-      recordStop: function() {
+      recordStop: function recordStop() {
+        var _this5 = this;
+
         CloudMusic.orpheus('orpheus://recordvoice/record/end');
         this.recordStarting = false;
         this.authorization = true;
         clearTimeout(_cache);
         clearInterval(_runTime);
         ugc.stopLine();
-        return _cache = setTimeout(() => {
-          this.authorization = false;
-          return this.uploadAudio();
+        return _cache = setTimeout(function () {
+          _this5.authorization = false;
+          return _this5.uploadAudio();
         }, 800);
       },
-      playAudio: function() {
+      playAudio: function playAudio() {
         // alert @.audioId
-        return CloudMusic.orpheus(`orpheus://recordvoice/play/start?id=${this.audioId}`);
+        return CloudMusic.orpheus('orpheus://recordvoice/play/start?id=' + this.audioId);
       },
-      uploadAudio: function() {
+      uploadAudio: function uploadAudio() {
         this.step = 3;
         ugc.addCover();
-        CloudMusic.orpheus(`orpheus://recordvoice/play/end?id=${this.audioId}`);
+        CloudMusic.orpheus('orpheus://recordvoice/play/end?id=' + this.audioId);
         return false;
       },
-      gotoAudio: function() {
+      gotoAudio: function gotoAudio() {
         if (this.nickname === "") {
           return alert("请输入你的名字");
         }
@@ -947,7 +987,7 @@ init = function() {
         this.step = 2;
         return ugc.uploadOverText.visible = false;
       },
-      selectSingerStart: function() {
+      selectSingerStart: function selectSingerStart() {
         if (this.text === "") {
           return alert("请输入你发声了什么?");
         }
@@ -957,21 +997,21 @@ init = function() {
         this.step = 4;
         return ugc.albumInfo(this.singerIndex);
       },
-      singerPrev: function() {
+      singerPrev: function singerPrev() {
         this.singerIndex--;
         if (this.singerIndex < 1) {
           return this.singerIndex = 1;
         }
         return ugc.albumInfo(this.singerIndex);
       },
-      singerNext: function() {
+      singerNext: function singerNext() {
         this.singerIndex++;
         if (this.singerIndex > 5) {
           return this.singerIndex = 5;
         }
         return ugc.albumInfo(this.singerIndex);
       },
-      over: function() {
+      over: function over() {
         if (this.wy) {
           this.step = 5;
         } else {
@@ -980,30 +1020,30 @@ init = function() {
         if (this.loading) {
           return false;
         }
-        (typeof _hmt !== "undefined" && _hmt !== null) && _hmt.push(['_trackEvent', "Levi", "share", "ugc", "-"]);
+        typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "share", "ugc", "-"]);
         if (this.uploaded) {
           neteaseShareImage();
           return false;
         }
         this.loading = true;
         // console.log "authorization:",@.authorization
-        console.log(`授权:${this.authorization},是否接受到录音回调${this.norecord}`);
+        console.log('\u6388\u6743:' + this.authorization + ',\u662F\u5426\u63A5\u53D7\u5230\u5F55\u97F3\u56DE\u8C03' + this.norecord);
         if (this.authorization && !this.norecord) {
-          return CloudMusic.orpheus(`orpheus://recordvoice/upload/start?id=${this.audioId}`);
+          return CloudMusic.orpheus('orpheus://recordvoice/upload/start?id=' + this.audioId);
         } else {
           this.authorization = false;
           return this.createLog();
         }
       },
-      review: function() {
+      review: function review() {
         // @.step = 5
         // ugc.review()
         return this.allowShow();
       },
-      allowShow: function() {
+      allowShow: function allowShow() {
         return this.allowPopShow = true;
       },
-      allowFALSE: function() {
+      allowFALSE: function allowFALSE() {
         if (this.loading) {
           return false;
         }
@@ -1014,7 +1054,7 @@ init = function() {
         return this.step = 5;
       },
       // @.createLog()
-      allowTRUE: function() {
+      allowTRUE: function allowTRUE() {
         if (this.loading) {
           return false;
         }
@@ -1024,7 +1064,9 @@ init = function() {
         return this.step = 5;
       },
       // @.createLog()
-      createLog: function() {
+      createLog: function createLog() {
+        var _this6 = this;
+
         var data;
         // @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
         console.log("createLog:", this.authorization, this.norecord);
@@ -1040,20 +1082,22 @@ init = function() {
           allow: this.authorization,
           mask: this.mask
         };
-        return axios.post(`${apiLink}active/Levi/insert`, data).then((msg) => {
+        return axios.post(apiLink + 'active/Levi/insert', data).then(function (msg) {
           // alert JSON.stringify msg
           if (msg.data.info.insertId != null) {
-            this.logId = msg.data.info.insertId;
+            _this6.logId = msg.data.info.insertId;
+            alert('logId:' + _this6.logId);
             return ugc.overUGC(msg.data.info.insertId);
           } else {
             return ugc.overUGC();
           }
-        }).catch((e) => {
-          return this.loading = false;
+        }).catch(function (e) {
+          return _this6.loading = false;
         });
       },
-      share: function(image) {
+      share: function share(image) {
         var data, folder;
+        alert('upload image:' + this.logId);
         folder = "Levi";
         if (this.authorization) {
           folder = "Levis";
@@ -1070,18 +1114,21 @@ init = function() {
         if (this.pushed) {
           return false;
         }
-        return axios.post(imageurl, data).then((msg) => {
+        alert('start upload image:' + this.logId);
+        return axios.post(imageurl, data).then(function (msg) {
           if (msg.data.recode === 200) {
             return main.success(msg.data);
           } else {
             return main.faild(msg);
           }
-        }).catch((e) => {
-          // alert e
+        }).catch(function (e) {
+          alert('upload faild:' + e);
           return main.faild(e);
         });
       },
-      success: function(data) {
+      success: function success(data) {
+        var _this7 = this;
+
         this.shareImageLink = data.info;
         // post and update ugc info
         // @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
@@ -1096,32 +1143,32 @@ init = function() {
           avatar: this.folder + "/" + this.shareImageLink
         };
         if (this.logId != null) {
-          return axios.post(`${apiLink}active/Levi/update`, data).then((msg) => {
+          return axios.post(apiLink + 'active/Levi/update', data).then(function (msg) {
             // alert JSON.stringify msg
-            this.pushed = false;
-            this.loading = false;
+            _this7.pushed = false;
+            _this7.loading = false;
             return neteaseShareImage();
-          }).catch((e) => {
-            this.pushed = false;
-            this.loading = false;
+          }).catch(function (e) {
+            _this7.pushed = false;
+            _this7.loading = false;
             return neteaseShareImage();
           });
         } else {
           return neteaseShareImage();
         }
       },
-      showInfoPage: function() {
+      showInfoPage: function showInfoPage() {
         return this.pageInfoShow = true;
       },
-      faild: function(err) {
+      faild: function faild(err) {
         this.pushed = false;
         this.loading = false;
         return console.log("err:", err);
       },
-      setugc: function(link) {
+      setugc: function setugc(link) {
         return this.ugc = link;
       },
-      changeImage: function(evt) {
+      changeImage: function changeImage(evt) {
         var img;
         this.imageUpdate = true;
         img = document.getElementById("imageInput");
@@ -1129,7 +1176,7 @@ init = function() {
         if (img.files.length < 1) {
           return false;
         }
-        return getOrientation(img.files[0], (orientation) => {
+        return getOrientation(img.files[0], function (orientation) {
           var blob;
           blob = createObjectURLfun(img.files[0]);
           return ugc.passImage(blob, orientation);
@@ -1138,7 +1185,7 @@ init = function() {
     },
     // passImage: (blob)->
     watch: {
-      singerIndex: function(n, o) {
+      singerIndex: function singerIndex(n, o) {
         if (n >= 5) {
           return this.singerIndex = 5;
         } else if (n <= 1) {
@@ -1148,24 +1195,26 @@ init = function() {
       // text: (n,o)->
       // 	# alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
       // 	console.log n
-      mounted: function(n, o) {
+      mounted: function mounted(n, o) {
+        var _this8 = this;
+
         var time;
         time = new Date().getTime();
-        setTimeout(() => {
+        setTimeout(function () {
           var bgm;
-          if (this.pageIndex < 2) {
-            this.pageIndex = 2;
+          if (_this8.pageIndex < 2) {
+            _this8.pageIndex = 2;
           }
           clearInterval(_cache);
           // console.log _second
           bgm = document.getElementById("bgm");
           return bgm.pause();
         }, 22 * 1000 + 500);
-        return _cache = setInterval(() => {
+        return _cache = setInterval(function () {
           return _second = (new Date().getTime() - time) / 1000;
         }, 1000 / 20);
       },
-      text: function(n, o) {
+      text: function text(n, o) {
         var k, len2, t, tx;
         if (this.text.gblen() > 64) {
           t = this.text.split("");
@@ -1182,7 +1231,7 @@ init = function() {
         }
         return ugc.lyricUpdate(this.text);
       },
-      nickname: function(n, o) {
+      nickname: function nickname(n, o) {
         var k, len2, t, tx;
         if (this.nickname.gblen() > 20) {
           t = this.nickname.split("");
@@ -1200,7 +1249,9 @@ init = function() {
         return ugc.updateName(this.nickname);
       }
     },
-    mounted: function() {
+    mounted: function mounted() {
+      var _this9 = this;
+
       var h, version;
       if (sys === "NeteaseMusic") {
         this.wy = true;
@@ -1223,61 +1274,61 @@ init = function() {
       // alert window.api.uploadEndCb?
       // if window.api.recordEndCb?
       // ?x-oss-process=image/format,jpg,quality,q_60/crop,x_130,y_282,w_410,h_410
-      console.log("update: v7 Andriod doesnt share");
-      window.api.recordStartCb = (data) => {
+      window.api.recordStartCb = function (data) {
         var _time;
         _testTime = new Date().getTime();
         console.log("record start:", data, _testTime);
-        this.norecord = false;
+        _this9.norecord = false;
         clearTimeout(_startCache);
         if (data.code === 200) {
           ugc.cover.visible = true;
           ugc.startLine();
-          this.audioId = null;
-          this.count = 10;
-          this.recordStarting = true;
+          _this9.audioId = null;
+          _this9.count = 10;
+          _this9.recordStarting = true;
           clearInterval(_runTime);
           _time = new Date().getTime();
-          return _runTime = setInterval(() => {
-            this.count = 10 - parseInt((new Date().getTime() - _time) / 1000);
-            if (this.count < 0) {
-              return this.count = 0;
+          return _runTime = setInterval(function () {
+            _this9.count = 10 - parseInt((new Date().getTime() - _time) / 1000);
+            if (_this9.count < 0) {
+              return _this9.count = 0;
             }
           }, 1000 / 10);
         } else {
-          this.authorization = false;
-          this.uploadAudio();
+          _this9.authorization = false;
+          _this9.uploadAudio();
           return clearTimeout(_cache);
         }
       };
-      window.api.recordEndCb = (data) => {
+      window.api.recordEndCb = function (data) {
         console.log("record end:", data, (new Date().getTime() - _testTime) / 1000);
         if (data.code === 200 && data.localId !== "(null)") {
-          this.audioId = data.localId;
+          _this9.audioId = data.localId;
         } else {
-          this.authorization = false;
-          this.uploadAudio();
+          _this9.authorization = false;
+          _this9.uploadAudio();
         }
-        this.norecord = false;
-        this.recordStarting = false;
+        _this9.norecord = false;
+        _this9.recordStarting = false;
         clearTimeout(_cache);
         clearInterval(_runTime);
         return ugc.stopLine();
       };
-      window.api.uploadEndCb = (data) => {
+      window.api.uploadEndCb = function (data) {
         console.log("record upload:", data);
         // console.log "上传音频:#{JSON.stringify(data)}"
         if (data.code === 200) {
-          this.musicLink = data.playUrl;
-          return this.createLog();
+          _this9.musicLink = data.playUrl;
+          return _this9.createLog();
         } else {
-          this.authorization = false;
-          return this.createLog();
+          _this9.authorization = false;
+          return _this9.createLog();
         }
       };
-      return window.api.recordvoicePlayCb = (data) => {
+      window.api.recordvoicePlayCb = function (data) {
         return console.log(data.action);
       };
+      return console.log("update: v8 Andriod doesnt share");
     }
   });
 };
