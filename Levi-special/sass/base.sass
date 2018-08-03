@@ -544,6 +544,12 @@ video,canvas,svg
 				+show-inline
 
 .page-home
+	.note
+		+w(15%)
+		+posa
+		+tr(50%,5%)
+		+transform(translate3d(0,-50%,0))
+		z-index: 999
 	.plant
 		+w
 		+h
@@ -607,7 +613,7 @@ video,canvas,svg
 			+posa
 			+tl(17%,89.6%)
 			+w(9.3%)
-			+h(12%)
+			+h(32%)
 			.focus,.join
 				+w(50%)
 				+h
@@ -633,3 +639,71 @@ video,canvas,svg
 		+wh(2rem,2rem)
 		// +bc(#fff)
 		+transform(translate3d(50%,-50%,0))
+
+
+.page-gather
+	.content
+		+touch
+		.bg-top
+			+posa
+			+tl
+			z-index: -1
+		.empty
+			+h(30rem)
+		.list
+			.item
+				+box
+				+m
+				+w(80%)
+				margin-bottom: 10%
+				+posr
+				&:nth-child(even)
+					.msg
+						+tl(0,0)
+					.cd
+						margin-left: 69.5%
+						.btn-play
+							&:after
+								+tl(0,-30%)
+				.cd
+					+posr
+					+w(30%)
+					+show-inline
+					.btn-play
+						+posa
+						+tl
+						+w
+						+h
+						+bc(rgba(0,0,0,0.5))
+						&:after
+							content: " "
+							+posa
+							+tl(0,30%)
+							+w
+							+h
+							+b($cdn+"img/cd-bg.png",no-repeat,center,center,contain)
+							z-index: -1
+						&:before
+							content: " "
+							+posa
+							+tl(25%,25%)
+							+wh(50%,50%)
+							+b($cdn+"img/icon-play.png",no-repeat,center,center,contain)
+				.msg
+					+show-inline
+					+w(60%)
+					+h
+					+posa
+					+tl(0,39.5%)
+					.nickname
+						+w
+						+h(25%)
+					.message
+						+w
+						+h(75%)
+						+b($cdn+"img/gather-box.png",no-repeat,center,center,100% 100%)
+						+box
+						+p(2% 5% 5% 5%)
+						+font-size(0.6rem)
+						line-height: 1.4em
+						color: #fff

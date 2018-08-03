@@ -58,13 +58,13 @@ class CD
 		@.stage.removeChild @.cdCenter if @.cdCenter?
 		@.cdCenter = new Container()
 		avatar = Sprite.fromImage url
-		avatar.width = 750
-		avatar.height = 1314
+		avatar.width = 416
+		avatar.height = 416
 		mask1 = new Graphics()
 		mask1.beginFill(0xffffff)
 		mask1.drawCircle(205,205,205)
-		avatar.x = -130
-		avatar.y = -282
+		# avatar.x = -130
+		# avatar.y = -282
 		@.cdCenter.addChild mask1
 		avatar.mask = mask1
 

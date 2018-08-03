@@ -44,7 +44,7 @@
       <transition name="page-fade">
         <div class="page page-home">
           <div class="content">
-            <div class="plant">
+            <div @touchmove=" note = false " class="plant">
               <div class="bg-box"><img src="./img/bg.jpg">
                 <div class="tv">
                   <div class="tv-bg"><img src="./img/tv-bg.png"></div>
@@ -52,18 +52,14 @@
                 </div>
                 <div class="cd-list">
                   <div class="line line-1">
-                    <div @click="openCD(7)" class="cd item"><img src="./img/btn-empty.jpg"></div>
-                    <div @click="openCD(8)" class="cd item"><img src="./img/btn-empty.jpg"></div>
-                    <div class="cd item"><img src="./img/btn-empty.jpg"></div>
-                    <div class="cd item"><img src="./img/btn-empty.jpg"></div>
+                    <div @click="openCD(1)" class="cd item"><img src="./img/btn-empty.jpg"></div>
+                    <div @click="openCD(2)" class="cd item"><img src="./img/btn-empty.jpg"></div>
+                    <div @click="openCD(3)" class="cd item"><img src="./img/btn-empty.jpg"></div>
+                    <div @click="openCD(4)" class="cd item"><img src="./img/btn-empty.jpg"></div>
                   </div>
                   <div class="line line-2">
-                    <div class="cd item"><img src="./img/btn-empty.jpg"></div>
-                    <div class="cd item"><img src="./img/btn-empty.jpg"></div>
-                    <div class="cd item"><img src="./img/btn-empty.jpg"></div>
-                    <div class="cd item"><img src="./img/btn-empty.jpg">
-                      <transition name="page-fade"><a v-show="btnMore" href="http://levi.arkrdigital.com/music/" class="cover"><img src="./img/btn-build.jpg"></a></transition>
-                    </div>
+                    <div @click="openCD(5)" class="cd item"><img src="./img/btn-empty.jpg"></div>
+                    <div @click="openCD(6)" class="cd item"><img src="./img/btn-empty.jpg"></div><a href="/Levi-special/gather.html" class="cd item"><img src="./img/btn-empty.jpg"></a><a href="/Levi/" class="cd item"><img src="./img/btn-empty.jpg"></a>
                   </div>
                 </div><a href="https://music.163.com/#/playlist?id=2328252403&amp;userid=38753829" class="audio-run">
                   <div class="item item-1"><img src="./img/audio-run.png"></div>
@@ -72,6 +68,9 @@
                   <div class="join"></div>
                 </div>
               </div>
+              <transition name="page-fade">
+                <div v-show="note" class="note"><img src="./img/note.png"></div>
+              </transition>
             </div>
           </div>
         </div>
@@ -103,13 +102,11 @@
                   </div>
                 </div>
                 <div class="time time-end">{{timeend}}</div>
-                <audio id="bgm" @canplay="canplay" @timeupdate="playRun" @playing="playing = true" @pause="playing = false" @ended="playing = false">
-                  <source :src="info.music" type="audio/mpeg">
-                </audio>
+                <audio id="bgm" :src="info.music" @canplay="canplay" @timeupdate="playRun" @playing="playing = true" @pause="playing = false" @ended="playing = false"></audio>
               </div>
               <div class="select">
-                <div class="btn btn-prev-music"><img src="./img/btn-next.png"></div>
-                <div class="btn btn-next-music"><img src="./img/btn-prev.png"></div>
+                <div @click="prev" class="btn btn-prev-music"><img src="./img/btn-next.png"></div>
+                <div @click="next" class="btn btn-next-music"><img src="./img/btn-prev.png"></div>
               </div>
             </div>
           </div>

@@ -105,7 +105,7 @@ init = ->
 				@.playing = true
 
 			cdUpdate: ->
-				_cd.avatar "http://image.giccoo.com/upload/"+@.info.avatar+"@!large"
+				_cd.avatar "http://image.giccoo.com/upload/"+@.info.avatar+"?x-oss-process=image/format,jpg,quality,q_60/crop,x_129,y_279,w_416,h_416"
 				texts = @.info.message.split("")
 				list = [""]
 				n = 0

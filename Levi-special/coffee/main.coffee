@@ -5,6 +5,14 @@
 # @codekit-prepend "../../libs/coffee/pixi-base"
 # @codekit-prepend "../../Levi/coffee/CD"
 
+message = [
+	{id: 1,nickname:"",message:"结婚后就失去了独处空间,我已经穿着裤子在马桶上坐了1小时了"}
+	{id: 2,nickname:"",message:"他们说以后还会常常喝醉。但像毕业这么开心的醉,大概不会有了"}
+	{id: 3,nickname:"",message:"因为怕吵到妈妈,我爸总是静音看球,却管不住自己发出的音量"}
+	{id: 4,nickname:"",message:"为什么有这么多解压的玩具？生活不易啊！"}
+	{id: 5,nickname:"",message:"坚持早起运动的第三天,发现原来总有人比你起得更早"}
+	{id: 6,nickname:"",message:"当年车后座的女孩,今天给我发来了请帖"}
+]
 
 String.prototype.gblen = -> 
 	len = 0;	
@@ -143,6 +151,7 @@ init = ->
 			default:
 				x: 0
 				moving: false
+			note: true
 		methods:
 			startbuild: ->
 			start: (evt)->
@@ -163,9 +172,10 @@ init = ->
 			end: (evt)->
 				@.default.moving = false
 			openCD: (id)->
-				@.btnMore = true
+				# @.btnMore = true
 				music.ask id
 				music.show = true
+				music.now = id
 
 		mounted: ->
 			h = TrueH*2*(2-TrueW*2/750+0.01)
@@ -176,6 +186,7 @@ init = ->
 	music = new Vue
 		el: "#music"
 		data:
+			now: 1
 			w: TrueW
 			h: TrueH
 			biger: TrueW/TrueH < 0.54
@@ -197,19 +208,38 @@ init = ->
 				music: ""
 				message: ""
 				singer: 1
+		watch:
+			now: (n,o)->
+				if @.now > 6
+					@.now = 6
+				else if @.now < 1
+					@.now = 1
+				else
+					@.ask @.now
 		methods:
+			prev: ->
+				@.now--
+			next: ->
+				@.now++
 			canplay: ->
-				console.log @.bgm.duration
+				if @.bgm.duration != Infinity
+					m = Math.floor @.bgm.duration/60
+					s = ten Math.floor @.bgm.duration%60
+					@.timeend = m+":"+s
+				
 			playRun: ->
-				@.playProgress = @.bgm.currentTime/@.bgm.duration*100
-				m = Math.floor @.bgm.duration/60
-				s = ten Math.floor @.bgm.duration%60
-				@.timeend = m+":"+s
-				m = Math.floor @.bgm.currentTime/60
-				s = ten Math.floor @.bgm.currentTime%60
-				@.timeing = m+":"+s
-				n = 100/@.msgList.length
-				@.line = Math.ceil @.playProgress/n
+				if @.bgm.duration != Infinity
+					@.playProgress = @.bgm.currentTime/@.bgm.duration*100
+					m = ten Math.floor @.bgm.duration/60
+					s = ten Math.floor @.bgm.duration%60
+					m = 99 if m > 99
+					@.timeend = m+":"+s
+					m = ten Math.floor @.bgm.currentTime/60
+					s = ten Math.floor @.bgm.currentTime%60
+					m = 99 if m > 99
+					@.timeing = m+":"+s
+					n = 100/@.msgList.length
+					@.line = Math.ceil @.playProgress/n
 			play: ->
 				if @.playing
 					@.bgm.pause()
@@ -222,7 +252,8 @@ init = ->
 				@.playing = true
 
 			cdUpdate: ->
-				_cd.avatar "http://image.giccoo.com/upload/"+@.info.avatar+"@!large"
+				# _cd.avatar "http://image.giccoo.com/upload/"+@.info.avatar+"@!large"
+				_cd.avatar "/Levi-special/img/cd-#{@.info.avatar}.jpg"
 				texts = @.info.message.split("")
 				list = []
 				n = -1
@@ -234,13 +265,31 @@ init = ->
 					list[n] += texts[i]+" "
 				@.msgList = list
 			ask: (id)->
-				axios.get "#{apiLink}active/Levi/info/id/#{id}"
-				.then (msg)=>
-					console.log msg.data
-					@.info = msg.data.info
-					@.mounted = true
-					@.cdUpdate()
+				# axios.get "#{apiLink}active/Levi/info/id/#{id}"
+				# .then (msg)=>
+				# 	console.log msg.data
+				# 	@.info = msg.data.info
+				# 	@.mounted = true
+				# 	@.cdUpdate()
+				@.info = {
+					nickname: ""
+					avatar: id
+					music: "//image.giccoo.com/projects/Levi-special/mp3/cd-#{id}.mp3"
+					message: message[id-1].message
+					singer: 3
+				}
+				@.mounted = true
+				@.cdUpdate()
+				@.bgm.currentTime = 0
+				@.playProgress = 0
 		mounted: ->
 			_cd = new CD 
 				el: "cd"
 			@.bgm = document.getElementById "bgm"
+
+ten = (i)->
+	if i is NaN
+		return "0"
+	if i < 10
+		return "0"+i
+	return i

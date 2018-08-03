@@ -45,7 +45,7 @@ block content
         .content
           //-(@touchstart="start",@touchmove="move",@touchend="end")
           //- #game
-          .plant
+          .plant(@touchmove=" note = false ")
             .bg-box
               img(src="#{url}/img/bg.jpg")
               .tv
@@ -55,26 +55,26 @@ block content
                   img(src="#{url}/img/tv-front.png")
               .cd-list
                 .line.line-1
-                  .cd.item(@click="openCD(7)")
+                  .cd.item(@click="openCD(1)")
                     img(src="#{url}/img/btn-empty.jpg")
-                  .cd.item(@click="openCD(8)")
+                  .cd.item(@click="openCD(2)")
                     img(src="#{url}/img/btn-empty.jpg")
-                  .cd.item
+                  .cd.item(@click="openCD(3)")
                     img(src="#{url}/img/btn-empty.jpg")
-                  .cd.item
+                  .cd.item(@click="openCD(4)")
                     img(src="#{url}/img/btn-empty.jpg")
                 .line.line-2
-                  .cd.item
+                  .cd.item(@click="openCD(5)")
                     img(src="#{url}/img/btn-empty.jpg")
-                  .cd.item
+                  .cd.item(@click="openCD(6)")
                     img(src="#{url}/img/btn-empty.jpg")
-                  .cd.item
+                  a.cd.item(href="/Levi-special/gather.html")
                     img(src="#{url}/img/btn-empty.jpg")
-                  .cd.item
+                  a.cd.item(href="/Levi/")
                     img(src="#{url}/img/btn-empty.jpg")
-                    transition(name="page-fade")
-                      a.cover(v-show="btnMore",href="http://levi.arkrdigital.com/music/")
-                        img(src="#{url}/img/btn-build.jpg")
+                    //- transition(name="page-fade")
+                    //-   a.cover(v-show="btnMore",href="/Levi/")
+                    //-     img(src="#{url}/img/btn-build.jpg")
               a.audio-run(href="https://music.163.com/#/playlist?id=2328252403&userid=38753829")
                 .item.item-1
                   img(src="#{url}/img/audio-run.png")
@@ -86,6 +86,9 @@ block content
               //- .focus-join-light
                 a.focus(href="https://music.163.com/#/user/home?id=1529461944")
                 .join
+            transition(name="page-fade")
+              .note(v-show="note")
+                img(src="#{url}/img/note.png")
   .main#music(v-show="show",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
     transition(name="page-fade")
       .close(@click="show = false")
@@ -112,18 +115,17 @@ block content
                 .line(:style="{width: playProgress+'%'}")
                   .pointer
               .time.time-end {{timeend}}
-              audio#bgm(@canplay="canplay" @timeupdate="playRun" @playing="playing = true" @pause="playing = false" @ended="playing = false")
-                source(:src="info.music" type="audio/mpeg")
-                //- source(src="//image.giccoo.com/projects/mbenz-love/mp3/bgm.mp3" type="audio/mpeg")
+              audio#bgm(:src="info.music" @canplay="canplay" @timeupdate="playRun" @playing="playing = true" @pause="playing = false" @ended="playing = false")
             .select
-              .btn.btn-prev-music
+              .btn.btn-prev-music(@click="prev")
                 img(src="#{url}/img/btn-next.png")
-              .btn.btn-next-music
+              .btn.btn-next-music(@click="next")
                 img(src="#{url}/img/btn-prev.png")   
             //- .nickname
               .my {{info.nickname}}
               .singer
                 img(:src="'#{url2}/img/music-singer-name-'+info.singer+'.png'")
+
           //- a.btn-next(href="http://levi.arkrdigital.com/music/")
             img(src="#{url2}/img/music-btn-next.png")
 block js
