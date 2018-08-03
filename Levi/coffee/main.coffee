@@ -236,22 +236,22 @@ init = ->
 			recordStart: ->
 				# recordStartCb
 				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10')
-				_startCache = setTimeout =>
-					ugc.cover.visible = true
-					ugc.startLine()
-					@.audioId = null
-					@.count = 10
-					@.recordStarting = true
-					clearInterval _runTime
-					_time = new Date().getTime()
-					_runTime = setInterval =>
-						@.count = 10 - parseInt (new Date().getTime() - _time)/1000
-						@.count = 0 if @.count < 0
-					,1000/10
-					_cache = setTimeout =>
-						@.recordStop()
-					,10*1000+100
-				,500
+				# _startCache = setTimeout =>
+				# 	ugc.cover.visible = true
+				# 	ugc.startLine()
+				# 	@.audioId = null
+				# 	@.count = 10
+				# 	@.recordStarting = true
+				# 	clearInterval _runTime
+				# 	_time = new Date().getTime()
+				# 	_runTime = setInterval =>
+				# 		@.count = 10 - parseInt (new Date().getTime() - _time)/1000
+				# 		@.count = 0 if @.count < 0
+				# 	,1000/10
+				# 	_cache = setTimeout =>
+				# 		@.recordStop()
+				# 	,10*1000+100
+				# ,1000
 				
 			recordStop: ->
 				CloudMusic.orpheus('orpheus://recordvoice/record/end')
@@ -278,8 +278,6 @@ init = ->
 				return alert "请上传一张专辑封面" unless @.imageUpdate
 				@.step = 2
 				ugc.uploadOverText.visible = false
-				
-			
 			selectSingerStart: ->
 				return alert "请输入你发声了什么?" if @.text is ""
 				return alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
@@ -357,8 +355,7 @@ init = ->
 					else
 						ugc.overUGC()
 				.catch (e)=>
-					@.loading = false
-				
+					@.loading = false	
 			share: (image)->
 				folder = "Levi"
 				if @.authorization
@@ -380,8 +377,7 @@ init = ->
 						main.faild(msg)
 				.catch (e)=>
 					# alert e
-					main.faild(e)
-				
+					main.faild(e)		
 			success: (data)->
 				@.shareImageLink = data.info
 				# post and update ugc info
@@ -488,8 +484,8 @@ init = ->
 			window.api.recordStartCb = (data)=>
 				console.log "record start:",data
 				@.norecord = false
+				clearTimeout _startCache
 				if data.code is 200
-					clearTimeout _startCache
 					ugc.cover.visible = true
 					ugc.startLine()
 					@.audioId = null
@@ -507,14 +503,16 @@ init = ->
 					clearTimeout _cache
 			window.api.recordEndCb = (data)=>
 				console.log "record end:",data
-				@.norecord = false
 				if data.code is 200 and data.localId isnt "(null)"
 					@.audioId = data.localId
-					@.recordStarting = false
 				else
 					@.authorization = false
 					@.uploadAudio()
+				@.norecord = false
+				@.recordStarting = false
 				clearTimeout _cache
+				clearInterval _runTime
+				ugc.stopLine()
 			window.api.uploadEndCb = (data)=>
 				console.log "record upload:",data
 				# console.log "上传音频:#{JSON.stringify(data)}"

@@ -923,32 +923,27 @@ init = function init() {
         return this.pageIndex = 3;
       },
       recordStart: function recordStart() {
-        var _this5 = this;
-
         // recordStartCb
-        CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10');
-        return _startCache = setTimeout(function () {
-          var _time;
-          ugc.cover.visible = true;
-          ugc.startLine();
-          _this5.audioId = null;
-          _this5.count = 10;
-          _this5.recordStarting = true;
-          clearInterval(_runTime);
-          _time = new Date().getTime();
-          _runTime = setInterval(function () {
-            _this5.count = 10 - parseInt((new Date().getTime() - _time) / 1000);
-            if (_this5.count < 0) {
-              return _this5.count = 0;
-            }
-          }, 1000 / 10);
-          return _cache = setTimeout(function () {
-            return _this5.recordStop();
-          }, 10 * 1000 + 100);
-        }, 500);
+        return CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10');
       },
+      // _startCache = setTimeout =>
+      // 	ugc.cover.visible = true
+      // 	ugc.startLine()
+      // 	@.audioId = null
+      // 	@.count = 10
+      // 	@.recordStarting = true
+      // 	clearInterval _runTime
+      // 	_time = new Date().getTime()
+      // 	_runTime = setInterval =>
+      // 		@.count = 10 - parseInt (new Date().getTime() - _time)/1000
+      // 		@.count = 0 if @.count < 0
+      // 	,1000/10
+      // 	_cache = setTimeout =>
+      // 		@.recordStop()
+      // 	,10*1000+100
+      // ,1000
       recordStop: function recordStop() {
-        var _this6 = this;
+        var _this5 = this;
 
         CloudMusic.orpheus('orpheus://recordvoice/record/end');
         this.recordStarting = false;
@@ -957,8 +952,8 @@ init = function init() {
         clearInterval(_runTime);
         ugc.stopLine();
         return _cache = setTimeout(function () {
-          _this6.authorization = false;
-          return _this6.uploadAudio();
+          _this5.authorization = false;
+          return _this5.uploadAudio();
         }, 800);
       },
       playAudio: function playAudio() {
@@ -1062,7 +1057,7 @@ init = function init() {
       },
       // @.createLog()
       createLog: function createLog() {
-        var _this7 = this;
+        var _this6 = this;
 
         var data;
         // @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
@@ -1082,13 +1077,13 @@ init = function init() {
         return axios.post(apiLink + 'active/Levi/insert', data).then(function (msg) {
           // alert JSON.stringify msg
           if (msg.data.info.insertId != null) {
-            _this7.logId = msg.data.info.insertId;
+            _this6.logId = msg.data.info.insertId;
             return ugc.overUGC(msg.data.info.insertId);
           } else {
             return ugc.overUGC();
           }
         }).catch(function (e) {
-          return _this7.loading = false;
+          return _this6.loading = false;
         });
       },
       share: function share(image) {
@@ -1121,7 +1116,7 @@ init = function init() {
         });
       },
       success: function success(data) {
-        var _this8 = this;
+        var _this7 = this;
 
         this.shareImageLink = data.info;
         // post and update ugc info
@@ -1139,12 +1134,12 @@ init = function init() {
         if (this.logId != null) {
           return axios.post(apiLink + 'active/Levi/update', data).then(function (msg) {
             // alert JSON.stringify msg
-            _this8.pushed = false;
-            _this8.loading = false;
+            _this7.pushed = false;
+            _this7.loading = false;
             return neteaseShareImage();
           }).catch(function (e) {
-            _this8.pushed = false;
-            _this8.loading = false;
+            _this7.pushed = false;
+            _this7.loading = false;
             return neteaseShareImage();
           });
         } else {
@@ -1190,14 +1185,14 @@ init = function init() {
       // 	# alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
       // 	console.log n
       mounted: function mounted(n, o) {
-        var _this9 = this;
+        var _this8 = this;
 
         var time;
         time = new Date().getTime();
         setTimeout(function () {
           var bgm;
-          if (_this9.pageIndex < 2) {
-            _this9.pageIndex = 2;
+          if (_this8.pageIndex < 2) {
+            _this8.pageIndex = 2;
           }
           clearInterval(_cache);
           // console.log _second
@@ -1244,7 +1239,7 @@ init = function init() {
       }
     },
     mounted: function mounted() {
-      var _this10 = this;
+      var _this9 = this;
 
       var h, version;
       if (sys === "NeteaseMusic") {
@@ -1272,49 +1267,51 @@ init = function init() {
       window.api.recordStartCb = function (data) {
         var _time;
         console.log("record start:", data);
-        _this10.norecord = false;
+        _this9.norecord = false;
+        clearTimeout(_startCache);
         if (data.code === 200) {
-          clearTimeout(_startCache);
           ugc.cover.visible = true;
           ugc.startLine();
-          _this10.audioId = null;
-          _this10.count = 10;
-          _this10.recordStarting = true;
+          _this9.audioId = null;
+          _this9.count = 10;
+          _this9.recordStarting = true;
           clearInterval(_runTime);
           _time = new Date().getTime();
           return _runTime = setInterval(function () {
-            _this10.count = 10 - parseInt((new Date().getTime() - _time) / 1000);
-            if (_this10.count < 0) {
-              return _this10.count = 0;
+            _this9.count = 10 - parseInt((new Date().getTime() - _time) / 1000);
+            if (_this9.count < 0) {
+              return _this9.count = 0;
             }
           }, 1000 / 10);
         } else {
-          _this10.authorization = false;
-          _this10.uploadAudio();
+          _this9.authorization = false;
+          _this9.uploadAudio();
           return clearTimeout(_cache);
         }
       };
       window.api.recordEndCb = function (data) {
         console.log("record end:", data);
-        _this10.norecord = false;
         if (data.code === 200 && data.localId !== "(null)") {
-          _this10.audioId = data.localId;
-          _this10.recordStarting = false;
+          _this9.audioId = data.localId;
         } else {
-          _this10.authorization = false;
-          _this10.uploadAudio();
+          _this9.authorization = false;
+          _this9.uploadAudio();
         }
-        return clearTimeout(_cache);
+        _this9.norecord = false;
+        _this9.recordStarting = false;
+        clearTimeout(_cache);
+        clearInterval(_runTime);
+        return ugc.stopLine();
       };
       window.api.uploadEndCb = function (data) {
         console.log("record upload:", data);
         // console.log "上传音频:#{JSON.stringify(data)}"
         if (data.code === 200) {
-          _this10.musicLink = data.playUrl;
-          return _this10.createLog();
+          _this9.musicLink = data.playUrl;
+          return _this9.createLog();
         } else {
-          _this10.authorization = false;
-          return _this10.createLog();
+          _this9.authorization = false;
+          return _this9.createLog();
         }
       };
       return window.api.recordvoicePlayCb = function (data) {
