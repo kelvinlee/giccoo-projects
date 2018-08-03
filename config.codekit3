@@ -8470,6 +8470,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi-special\/img\/neon-off.png": {
+		"ft": 32768,
+		"iS": 94706,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/neon-off.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/neon-on.png": {
+		"ft": 32768,
+		"iS": 203251,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/neon-on.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Levi-special\/img\/note.png": {
 		"ft": 32768,
 		"iS": 11923,
@@ -8491,6 +8513,14 @@
 		"opt": 0,
 		"oT": 1,
 		"q": 100
+		},
+	"\/Levi-special\/img\/timg.gif": {
+		"ft": 4194304,
+		"iS": 61983,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/timg.gif",
+		"oF": 0,
+		"opt": 0
 		},
 	"\/Levi-special\/img\/tv-bg.png": {
 		"ft": 32768,

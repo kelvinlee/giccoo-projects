@@ -74,7 +74,20 @@ $pageMainBGColor: #000;
 	100%
 		+transform(translate3d(-30%,-30%,0) scale(2,2))
 		opacity: 0
-
++keyframes(neon)
+	0%,50%,56%,65%,80%,100%
+		opacity: 1
+		+transform(translate3d(0,0,0) scale(1,1))
+	53%
+		opacity: 0.4
+		// +transform(translate3d(1px,-1px,0))
+		+transform(scale(1.01,1.01))
+	59%
+		opacity: 0
+		// +transform(translate3d(-1px,1px,0))
+		+transform(scale(1.01,1.01))
+	75%
+		opacity: 0.6
 html,body
 	+w
 	+h
@@ -564,11 +577,31 @@ video,canvas,svg
 				max-width: none
 				+w(auto)
 				+h
+		.neon
+			+posa
+			+tl
+			+iw(589,6961,100%)
+			+h
+			&:before
+				content: " "
+				+posa
+				+tl
+				+w
+				+h
+				+b($cdn+"img/neon-on.png",no-repeat,top,left,contain)
+				z-index: 999
+				+animation(neon,5s,ease,infinite)
 		.tv
 			+posa
 			+tl(35.5%,26%)
 			+show-inline
 			+w(6%)
+			.tv-bg
+				+posr
+				.timg
+					+posa
+					+tl(5%,5%)
+					+w(77%)
 			.front
 				+posa
 				+tl
