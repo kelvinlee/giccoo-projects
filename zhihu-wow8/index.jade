@@ -1,11 +1,11 @@
 extends ../libs/jade/layout-clean
 block title
-	| WOW
+	| 来自艾泽拉斯的召唤
 
 block css
 	meta(name="author",content="m.giccoo.com")
-	//- link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
-	//- link(rel="stylesheet",href="css/base.css")
+	link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
+	link(rel="stylesheet",href="css/base.css")
 	//- script.
 		var _hmt = _hmt || [];
 		(function() {
@@ -16,15 +16,75 @@ block css
 		})();
 
 block content
-	- url = "http://image.giccoo.com/projects/adidas-originals-eqt";
+	- url = "http://image.giccoo.com/projects/zhihu-wow8";
 	- url = ".";
-	img(src="#{url}/img/test.jpg",style="width: 100%")
+	.main#main(v-show="mounted",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
+		transition(name="page-fade")
+			.page.page-home(v-show="pageIndex == 1")
+				.content
+					.logo.fadeIn.animated
+						img(src="#{url}/img/logo.png")
+					.texts.fadeInUp.animated
+						img(src="#{url}/img/texts.png")
+					.btn.fadeIn.animated(@click="pageIndex = 2")
+						img(src="#{url}/img/btn-start.png")
+					.orc.fadeInLeft.animated
+						img(src="#{url}/img/orc.png")
+					.human.fadeInRight.animated
+						img(src="#{url}/img/human.png")
+		transition(name="page-fade")
+			.page.page-question(v-show="pageIndex == 2")
+				.content
+					.box
+						.title Q{{questionID}}
+						.question {{question.question}}
+						.answers
+							.answer(:class="{on: selectIndex == index}",v-for="item,index in question.answers",@click="selectItem(index)") {{item}}
+		transition(name="page-fade")
+			.page.page-answer(v-show="pageIndex == 3")
+				.bg#ugc.fadeIn.animated
+				.content
+					.logo
+						img(src="#{url}/img/small-logo.png")
+					.btns.fadeIn.animated
+						.btn(@click="getUGC")
+							img(src="#{url}/img/btn-build.png")
+						.btn(@click="getBadge")
+							img(src="#{url}/img/btn-get.png")
+		transition(name="page-fade")
+			.pop(v-show="pop")
+				.content
+					.close(@click="pop = false")
+						img(src="#{url}/img/icon-close.png")
+					.zy
+						.lm(:class="{on: lmbl}",@click="lmbl = true")
+							img(src="#{url}/img/icon-lm.png")
+						.bl(:class="{on: !lmbl}",@click="lmbl = false")
+							img(src="#{url}/img/icon-bl.png")
+					.text
+						img(src="#{url}/img/text-select.png")
+					.btn(@click="go")
+						img(src="#{url}/img/btn-select.png")
+		transition(name="page-fade")
+			.pop(v-show="ugcPage")
+				.box
+					.close(@click="ugcPage = false")
+						img(src="#{url}/img/icon-close.png")
+					img.bg(:src="ugc")
+					img.ugcsave(:src="ugcsave")
+					p 长按图片保存
+
+
+
+
+
 block js
 	- url = "/";
-	//- script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
+	script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
-	//- script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
+	script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
-	//- script(src="js/main.js")
+	script(src="js/main.js")
 
 	

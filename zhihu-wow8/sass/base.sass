@@ -1,0 +1,355 @@
+@import sass/base
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "//image.giccoo.com/projects/zhihu-wow8/"
+
+// animation, delay, duration
+@for $i from 1 through 51
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+$fontColor: #ffffff;
+$pageMainBGColor: #ffffff;
+
+
++keyframes(second)
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)
+
+
+html,body
+	+w
+	+h
+
+body
+	color: $fontColor
+	+bc($pageMainBGColor)
+video,canvas
+	+w
+	+h(auto)
+body
+	+overhide
+
+.wechat-share-hide,.load-before
+	+posa
+	+tl(-1000px)
+	+hide
+	+w(1px)
+	+h(1px)
+
+.playsound
+	+posa
+	+tr(0.5rem,2%)
+	+iw(58)
+	z-index: 99
+	font-size: 0
+	.play
+		+animation(second,4s,ease,infinite)
+
+.hide
+	display: none
+
+.main
+	+w
+	+h
+	+posr
+	+overhide
+	+bc(#fff)
+	max-width: 1280px
+	+m
+	cursor: move
+	&.pc
+		max-width: 1280px
+		max-height: 800px
+	&.rotate90
+		+transform(rotate(90deg) translate3d(0,-100%,0))
+		transform-origin: top left
+				
+				
+.page-animation-enter-active
+	transition: all .6s linear
+.page-animation-leave-active
+	transition: all .6s linear
+	transform: translate3d(0,0,0)
+.page-animation-enter
+	transform: translate3d(-100%,0,0)
+	& ~ .page-animation-leave
+		transform: translate3d(100%,0,0)
+.page-animation-leave
+	transform: translate3d(100%,0,0)
+	& ~ .page-animation-enter
+		transform: translate3d(100%,0,0)
+.page-animation-enter-to
+	transform: translate3d(0,0,0)
+	& ~ .page-animation-leave-to
+		transform: translate3d(100%,0,0)
+.page-animation-leave-to
+	transform: translate3d(-100%,0,0)
+
+
+.page-fade-enter-active
+	transition: all .8s ease
+	opacity: 1
+.page-fade-leave-active
+	transition: all .8s linear
+	opacity: 1
+.page-fade-enter,.page-fade-leave-to
+	opacity: 0
+	// transform: translate3d(0,-100%,0)
+
+
+.f0
+	font-size: 0
+
+.pages
+	+w
+	+h
+	+posr
+	+overhide
+	perspective: 500
+	-webkit-perspective: 500
+			transform-style: preserve-3d
+	-webkit-transform-style: preserve-3d
+	.page
+		+posa
+		+tl
+		+w
+		+h
+		+bc(#e3dbd5)
+		+hide
+		background-attachment: fixed
+		z-index: 10
+		.arrow
+			+posf
+			+bl(2%,50%)
+			+transform(translateX(-50%))
+			+w(20px)
+			+h(20px)
+			margin-left: -10px
+			font-size: 0
+			+b($cdn+"img/arrow-black.png",no-repeat,center,center, contain)
+			+animation(arrow,2.5s,ease,infinite)
+			z-index: 109
+			&.right
+				+bl(auto,auto)
+				+tr(50%,2%)
+				+animation(arrow-right,2.5s,ease,infinite)
+			&.top
+				+bl(auto,auto)
+				+tr(2%,50%)
+				margin-right: -20px
+				+animation(arrow-top,2.5s,ease,infinite)
+				// animation: none
+			// +bc(#000)
+		.bg
+			+posa
+			+tl
+			+w
+			+h
+			z-index: -1
+			img
+				+w
+				+h
+		&.on
+			z-index: 20
+			+show
+			& + .page
+				+show
+				& + .page
+					+show
+		&.overhide
+			+overhide
+		&.touch
+			overflow: scroll
+		@for $i from 1 through 30
+			&.page-#{$i}
+				z-index: 20-$i
+.page
+	+posa
+	+tl
+	+w
+	+h
+	+overhide
+	background-size: 100% auto
+	.bg,.ugc
+		+posa
+		+tl(50%)
+		font-size: 0
+		+transform(translate3d(0,-50%,0))
+		.biger &
+			+transform(translate3d(0,-50%,0) scale(1.1,1.1))
+	.ugc
+		+w
+		+h
+	.content
+		+posa
+		+tl
+		+w
+		+h
+		box-sizing: border-box
+	.next
+		+posa
+		+bl
+		+w
+		+h(1px)
+		&:before
+			content: " "
+			+posa
+			+bl(10px,50%)
+			+w(30px)
+			+h(10px)
+			+b($cdn+"img/arrow-up.png",no-repeat,top,center,contain)
+			+animation(fadeArrow,0.6s,ease,infinite)
+		&:after
+			content: " "
+			+posa
+			+bl(22px,50%)
+			+w(30px)
+			+h(10px)
+			+b($cdn+"img/arrow-up.png",no-repeat,top,center,contain)
+			+animation(fadeArrow,0.6s,ease,infinite)
+			animation-delay: 300ms
+
+
+.page-home
+	+b($cdn+"img/bg.jpg",no-repeat,top,center,cover)
+	.content
+		.orc
+			+posa
+			+bl
+			+w(25%)
+			animation-duration: 1000ms
+			animation-delay: 500ms
+		.human
+			+posa
+			+br
+			+w(22.6%)
+			animation-duration: 1000ms
+			animation-delay: 500ms
+		.logo
+			margin-top: 10%
+			animation-duration: 4000ms
+			animation-delay: 2000ms
+		.texts
+			margin-top: 5%
+			animation-duration: 2000ms
+			animation-delay: 1000ms
+		.btn
+			margin-top: 5%
+			animation-duration: 1000ms
+			animation-delay: 3000ms
+
+.page-question
+	+b($cdn+"img/answer-bg.jpg",no-repeat,top,center,cover)
+	.box
+		+posa
+		+tl(50%)
+		+box
+		+p(0 10%)
+		+transform(translate3d(0,-50%,0))
+		.title
+			+font-size(2rem)
+		.question
+			+font-size(1.4rem)
+			margin-top: 5%
+			+w
+		.answers
+			margin-top: 5%
+			.answer
+				+text-center
+				+w
+				+h(3rem)
+				line-height: 3rem
+				+b($cdn+"img/select-item.png",no-repeat,center,center,100% 100%)
+				margin-top: 5%
+				+tran
+				&.on
+					+b($cdn+"img/select-item-on.png",no-repeat,center,center,100% 100%)
+
+.page-answer
+	.bg
+		animation-duration: 1000ms
+	.btns
+		+w
+		+text-center
+		+posa
+		+bl(8%)
+		animation-duration: 1000ms
+		animation-delay: 800ms
+		.btn
+			font-size: 0
+			+w(49%)
+			+show-inline
+			+m
+
+.pop
+	+bc(rgba(0,0,0,0.8))
+	+posa
+	+tl
+	+w
+	+h
+	z-index: 999
+	.box
+		+w(80%)
+		+text-center
+		+posa
+		+tl(50%,10%)
+		+transform(translate3d(0,-50%,0))
+		p
+			+m(5px auto)
+			+font-size(0.8rem)
+			+posa
+			+bl(5%)
+			+w
+
+		.close
+			+posa
+			+tr(10px,10px)
+			+w(2rem)
+			z-index: 999
+		.ugcsave
+			+posa
+			+tl
+			+br
+			+w
+			+h
+			z-index: 998
+			opacity: 0
+	.content
+		+b($cdn+"img/pop-bg.png",no-repeat,center,center,100% 100%)
+		+box
+		+w(80%)
+		+m
+		padding-top: 5%
+		+posa
+		+tl(50%,10%)
+		+transform(translate3d(0,-50%,0))
+		.close
+			+posa
+			+tr(10px,10px)
+			+w(2rem)
+			z-index: 999
+		.zy
+			+w
+			+text-center
+			.lm,.bl
+				+w(40%)
+				+show-inline
+				+m(0 4%)
+				opacity: 0.4
+				+tran
+				&.on
+					opacity: 1
+		.text
+			+w(70%)
+			+m(10% auto)
+		.btn
+			+w(60%)
+			+m
+			padding-bottom: 5%
+
