@@ -172,6 +172,7 @@ init = ->
 			pageInfoShow: false
 			pageIndex: 1
 			step: 1
+			singerIndex: 3
 			startgame: false
 			folder: ""
 			BGColor: "#ffffff"
@@ -181,7 +182,6 @@ init = ->
 			ugcold: null
 			pushed: false
 			shareImageLink: null
-			singerIndex: 3
 			cache: null
 			audioId: null
 			v: null
@@ -200,7 +200,24 @@ init = ->
 			musicLink: ""
 			logId: ""
 			openBtnShow: true
+			default:
+				x: 0
 		methods:
+			start: (evt)->
+				touch = evt.touches[0]
+				# console.log touch
+				@.default.x = touch.clientX
+			move: (evt)->
+				touch = evt.touches[0]
+				moveX = touch.clientX - @.default.x
+				n = -1
+				n = 1 if moveX < 0
+				numb = parseInt Math.abs(moveX)/50
+				if numb >= 1
+					@.singerIndex += n
+					@.default.x = touch.clientX
+
+			end: (evt)->
 			maxlengthnickname: ->
 				console.log @.nickname.gblen()
 			openMusic: ->
@@ -410,8 +427,11 @@ init = ->
 
 			# passImage: (blob)->
 		watch:
-			# nickname: (n,o)->
-			# 	console.log n,o
+			singerIndex: (n,o)->
+				if n >= 5
+					@.singerIndex = 5
+				else if n <= 1
+					@.singerIndex = 1
 			# text: (n,o)->
 			# 	# alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
 			# 	console.log n

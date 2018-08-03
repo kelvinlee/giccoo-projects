@@ -845,6 +845,7 @@ init = function init() {
       pageInfoShow: false,
       pageIndex: 1,
       step: 1,
+      singerIndex: 3,
       startgame: false,
       folder: "",
       BGColor: "#ffffff",
@@ -854,7 +855,6 @@ init = function init() {
       ugcold: null,
       pushed: false,
       shareImageLink: null,
-      singerIndex: 3,
       cache: null,
       audioId: null,
       v: null,
@@ -873,9 +873,33 @@ init = function init() {
       nickname: "",
       musicLink: "",
       logId: "",
-      openBtnShow: true
+      openBtnShow: true,
+      default: {
+        x: 0
+      }
     },
     methods: {
+      start: function start(evt) {
+        var touch;
+        touch = evt.touches[0];
+        // console.log touch
+        return this.default.x = touch.clientX;
+      },
+      move: function move(evt) {
+        var moveX, n, numb, touch;
+        touch = evt.touches[0];
+        moveX = touch.clientX - this.default.x;
+        n = -1;
+        if (moveX < 0) {
+          n = 1;
+        }
+        numb = parseInt(Math.abs(moveX) / 50);
+        if (numb >= 1) {
+          this.singerIndex += n;
+          return this.default.x = touch.clientX;
+        }
+      },
+      end: function end(evt) {},
       maxlengthnickname: function maxlengthnickname() {
         return console.log(this.nickname.gblen());
       },
@@ -1155,8 +1179,13 @@ init = function init() {
     },
     // passImage: (blob)->
     watch: {
-      // nickname: (n,o)->
-      // 	console.log n,o
+      singerIndex: function singerIndex(n, o) {
+        if (n >= 5) {
+          return this.singerIndex = 5;
+        } else if (n <= 1) {
+          return this.singerIndex = 1;
+        }
+      },
       // text: (n,o)->
       // 	# alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
       // 	console.log n
