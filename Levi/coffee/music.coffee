@@ -82,14 +82,14 @@ init = ->
 					m = Math.floor @.bgm.duration/60
 					s = ten Math.floor @.bgm.duration%60
 					m = 0
-					s = "00" unless isNumber(s)
+					s = "00" unless isNumber(@.bgm.duration)
 					@.timeend = m+":"+s
 			canplay: ->
 				if @.bgm.duration != Infinity
 					m = Math.floor @.bgm.duration/60
 					s = ten Math.floor @.bgm.duration%60
 					m = 0
-					s = "00" unless isNumber(s)
+					s = "00" unless isNumber(@.bgm.duration)
 					@.timeend = m+":"+s
 				
 			playRun: (evt)->
@@ -98,7 +98,7 @@ init = ->
 					m = Math.floor @.bgm.duration/60
 					s = ten Math.floor @.bgm.duration%60
 					m = 0
-					s = "00" unless isNumber(s)
+					s = "00" unless isNumber(@.bgm.duration)
 					@.timeend = m+":"+s
 					m = Math.floor @.bgm.currentTime/60
 					s = ten Math.floor @.bgm.currentTime%60
