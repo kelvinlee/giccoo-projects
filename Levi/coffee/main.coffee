@@ -482,7 +482,7 @@ init = ->
 			# alert window.api.uploadEndCb?
 			# if window.api.recordEndCb?
 			# ?x-oss-process=image/format,jpg,quality,q_60/crop,x_130,y_282,w_410,h_410
-			console.log "update: v5 Feedback"
+			console.log "update: v6 iOS record time"
 			window.api.recordStartCb = (data)=>
 				_testTime = new Date().getTime()
 				console.log "record start:",data,_testTime
