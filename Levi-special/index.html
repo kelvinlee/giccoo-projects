@@ -27,7 +27,7 @@
       </div>
       <audio id="fl" src="//image.giccoo.com/projects/Levi-special/mp3/fl.mp3"></audio>
       <transition name="page-fade">
-        <div v-show="progress &gt;= 90" @click="openMusic" class="open">打开声音</div>
+        <div v-show="progress &gt;= 80" @click="openMusic" class="open">打开声音</div>
       </transition>
     </div>
     <div id="main" v-show="mounted" :class="{biger: biger,smaller:smaller}" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">
@@ -79,10 +79,15 @@
                   <div class="item item-2"><img src="./img/audio-run.png"></div>
                 </div>
                 <div @click="openMZ" class="focus-join">
+                  <div class="light"><img src="./img/light.gif"></div>
                 </div>
               </div>
               <transition name="page-fade">
-                <div v-show="note" class="note"><img src="./img/note.png"></div>
+                <div v-show="noteArrow" class="note"><img src="./img/note.png">
+                  <transition name="page-fade">
+                    <div v-show="note" class="text"><img src="./img/note-text.png"></div>
+                  </transition>
+                </div>
               </transition>
             </div>
           </div>
@@ -91,7 +96,7 @@
     </div>
     <div id="music" v-show="show" :class="{biger: biger,smaller:smaller}" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">
       <transition name="page-fade">
-        <div @click="show = false" class="close"><img src="./img/icon-close.png"></div>
+        <div @click="show = false; main.noteArrow = true" class="close"><img src="./img/icon-close.png"></div>
       </transition>
       <transition name="page-fade">
         <div v-show="show" class="page page-music">
@@ -118,10 +123,8 @@
                 <audio id="bgm" :src="info.music" @canplay="canplay" @timeupdate="playRun" @playing="playing = true" @pause="playing = false" @ended="playing = false"></audio>
               </div>
               <div class="select">
-                <div @click="prev" class="btn btn-prev-music"><img src="./img/btn-next.png">
-                </div>
-                <div @click="next" class="btn btn-next-music"><img src="./img/btn-prev.png">
-                </div>
+                <div v-show="now &gt; 1" @click="prev" class="btn btn-prev-music"><img src="./img/btn-next.png"></div><a v-show="now &lt;= 1" href="/Levi-special/gather.html" class="btn btn-prev-music"><img src="./img/btn-more.png"></a>
+                <div v-show="now &lt; 6" @click="next" class="btn btn-next-music"><img src="./img/btn-prev.png"></div><a v-show="now &gt;= 6" href="/Levi-special/gather.html" class="btn btn-next-music"><img src="./img/btn-more.png"></a>
               </div>
             </div>
           </div>

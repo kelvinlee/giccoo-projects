@@ -14,6 +14,9 @@ message = [
 	{id: 6,nickname:"",message:"当年车后座的女孩,今天给我发来了请帖"}
 ]
 
+isNumber = (obj)->
+	return typeof(obj) is 'number' and isFinite(obj)    
+
 String.prototype.gblen = -> 
 	len = 0;	
 	for i in [0...this.length]
@@ -83,10 +86,12 @@ window.onload = ->
 				fl = document.getElementById "fl"
 				fl.play()
 				clearTimeout _cache
-				@.out = true
-				setTimeout ->
-					document.getElementById('loading').style.display = "none"
-				,1020
+				setTimeout =>
+					@.out = true
+					setTimeout ->
+						document.getElementById('loading').style.display = "none"
+					,1020
+				,700
 		mounted: ->
 			@.mounted = true
 			timein = setInterval =>
@@ -161,6 +166,7 @@ init = ->
 				x: 0
 				moving: false
 			note: true
+			noteArrow: true
 		methods:
 			openTV: ->
 				tv = document.getElementById "audiotv"
@@ -200,6 +206,7 @@ init = ->
 				music.ask id
 				music.show = true
 				music.now = id
+				@.noteArrow = false
 				
 
 		mounted: ->

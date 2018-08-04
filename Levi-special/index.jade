@@ -30,7 +30,7 @@ block content
       p Loading...{{progress}}%
     audio#fl(src="//image.giccoo.com/projects/Levi-special/mp3/fl.mp3")
     transition(name="page-fade")
-      .open(v-show="progress >= 90",@click="openMusic") 打开声音
+      .open(v-show="progress >= 80",@click="openMusic") 打开声音
 
   .main#main(v-show="mounted",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
     transition(name="page-fade")
@@ -94,17 +94,22 @@ block content
                 .item.item-2
                   img(src="#{url}/img/audio-run.png")
               .focus-join(@click="openMZ")
+                .light
+                  img(src="#{url}/img/light.gif")
                 //- a.focus(href="https://music.163.com/#/user/home?id=1529461944")
                 //- .join
               //- .focus-join-light
                 a.focus(href="https://music.163.com/#/user/home?id=1529461944")
                 .join
             transition(name="page-fade")
-              .note(v-show="note")
+              .note(v-show="noteArrow")
                 img(src="#{url}/img/note.png")
+                transition(name="page-fade")
+                  .text(v-show="note")
+                    img(src="#{url}/img/note-text.png")
   .main#music(v-show="show",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
     transition(name="page-fade")
-      .close(@click="show = false")
+      .close(@click="show = false; main.noteArrow = true")
         img(src="#{url}/img/icon-close.png")
     transition(name="page-fade")
       .page.page-music(v-show="show")
@@ -130,11 +135,15 @@ block content
               .time.time-end {{timeend}}
               audio#bgm(:src="info.music" @canplay="canplay" @timeupdate="playRun" @playing="playing = true" @pause="playing = false" @ended="playing = false")
             .select
-              .btn.btn-prev-music(@click="prev")
+              .btn.btn-prev-music(v-show="now > 1",@click="prev")
                 img(src="#{url}/img/btn-next.png")
+              a.btn.btn-prev-music(v-show="now <= 1",href="/Levi-special/gather.html")
+                img(src="#{url}/img/btn-more.png")
                 //- img(:src="'#{url}/img/btn-next'+(now==1?'-stop':'')+'.png'")
-              .btn.btn-next-music(@click="next")
+              .btn.btn-next-music(v-show="now < 6",@click="next")
                 img(src="#{url}/img/btn-prev.png")
+              a.btn.btn-next-music(v-show="now >= 6",href="/Levi-special/gather.html")
+                img(src="#{url}/img/btn-more.png")
                 //- img(:src="'#{url}/img/btn-prev'+(now==6?'-stop':'')+'.png'")   
             //- .nickname
               .my {{info.nickname}}

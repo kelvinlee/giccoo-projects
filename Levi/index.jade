@@ -175,10 +175,11 @@ block content
                   span 试 听
                 .btn.btn-start
                   .start(v-show="!recordStarting",@click="recordStart")
-                    img(src="#{url}/img/icon-audio-start.png")
-                  .stop(v-show="recordStarting",@click="recordStop")
                     img(src="#{url}/img/icon-audio-restart.png")
-                  span {{!recordStarting?audioId != null?'重 录':'录 音':'停止 '+count+'s'}}
+                  .stop(v-show="recordStarting",@click="recordStop")
+                    img(src="#{url}/img/icon-audio-start.png")
+                    .count(v-show="recordStarting") {{count}}
+                  span {{!recordStarting?audioId != null?'重 录':'录 音':'停 止'}}
                 .btn.btn-upload.fadeIn.animated(v-show="audioId != null",@click="uploadAudio")
                   img(src="#{url}/img/icon-audio-right.png")
                   span 完 成
@@ -212,7 +213,7 @@ block content
               .btns
                 .btn.btn-share(@click="over")
                   img(src="#{url}/img/btn-share.png")
-                .btn.btn-more(href="http://levi.arkrdigital.com/music/")
+                a.btn.btn-more(href="/Levi-special/")
                   img(src="#{url}/img/btn-more.png")
     
     transition(name="page-fade")

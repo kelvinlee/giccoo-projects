@@ -43,7 +43,7 @@ neteaseShareImage = ->
 	redirectUrl = "https://m.giccoo.com/Levi/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
-	console.log "share href"
+	console.log "share href:",picUrl
 
 createObjectURLfun = (file)->
 	if (window.webkitURL? || window.navigator.userAgent.indexOf("Chrome") >= 1 || window.navigator.userAgent.indexOf("Safari") >= 1) 
@@ -305,6 +305,7 @@ init = ->
 				if @.uploaded
 					neteaseShareImage()
 					return false
+			uploadAll: ->
 				@.loading = true
 				# console.log "authorization:",@.authorization
 				console.log "授权:#{@.authorization},是否接受到录音回调#{@.norecord}"
@@ -326,14 +327,14 @@ init = ->
 				@.allowPopShow = false
 				ugc.review()
 				@.step = 5
-				# @.createLog()
+				@.uploadAll()
 			allowTRUE: ->
 				return false if @.loading
 				@.authorization = true
 				@.allowPopShow = false
 				ugc.review()
 				@.step = 5
-				# @.createLog()
+				@.uploadAll()
 			createLog: ->
 				# @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
 				console.log "createLog:",@.authorization,@.norecord
@@ -387,7 +388,7 @@ init = ->
 				@.uploaded = true
 				unless @.authorization
 					@.loading = false
-					neteaseShareImage()
+					# neteaseShareImage()
 					return true
 				data = {
 					id: @.logId
@@ -399,13 +400,13 @@ init = ->
 						# alert JSON.stringify msg
 						@.pushed = false
 						@.loading = false
-						neteaseShareImage()
+						# neteaseShareImage()
 					.catch (e)=>
 						@.pushed = false
 						@.loading = false
-						neteaseShareImage()
-				else
-					neteaseShareImage()
+						# neteaseShareImage()
+				# else
+					# neteaseShareImage()
 			showInfoPage: ->
 				@.pageInfoShow = true
 			faild: (err)->

@@ -8096,6 +8096,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/Levi-special\/img\/btn-more.png": {
+		"ft": 32768,
+		"iS": 3145,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/btn-more.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Levi-special\/img\/btn-next-stop.png": {
 		"ft": 32768,
 		"iS": 1579,
@@ -8448,6 +8459,14 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi-special\/img\/light.gif": {
+		"ft": 4194304,
+		"iS": 241394,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/light.gif",
+		"oF": 0,
+		"opt": 1
+		},
 	"\/Levi-special\/img\/loading-bg.jpg": {
 		"ft": 16384,
 		"iS": 162777,
@@ -8525,14 +8544,25 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi-special\/img\/note-text.png": {
+		"ft": 32768,
+		"iS": 10931,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/note-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Levi-special\/img\/note.png": {
 		"ft": 32768,
 		"iS": 11923,
 		"oA": 0,
 		"oAP": "\/Levi-special\/img\/note.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},

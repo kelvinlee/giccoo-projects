@@ -682,7 +682,7 @@ neteaseShareImage = function neteaseShareImage() {
   redirectUrl = "https://m.giccoo.com/Levi/";
   // console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
   window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
-  return console.log("share href");
+  return console.log("share href:", picUrl);
 };
 
 createObjectURLfun = function createObjectURLfun(file) {
@@ -1025,6 +1025,8 @@ init = function init() {
           neteaseShareImage();
           return false;
         }
+      },
+      uploadAll: function uploadAll() {
         this.loading = true;
         // console.log "authorization:",@.authorization
         console.log('\u6388\u6743:' + this.authorization + ',\u662F\u5426\u63A5\u53D7\u5230\u5F55\u97F3\u56DE\u8C03' + this.norecord);
@@ -1051,9 +1053,9 @@ init = function init() {
         this.authorization = false;
         this.allowPopShow = false;
         ugc.review();
-        return this.step = 5;
+        this.step = 5;
+        return this.uploadAll();
       },
-      // @.createLog()
       allowTRUE: function allowTRUE() {
         if (this.loading) {
           return false;
@@ -1061,9 +1063,9 @@ init = function init() {
         this.authorization = true;
         this.allowPopShow = false;
         ugc.review();
-        return this.step = 5;
+        this.step = 5;
+        return this.uploadAll();
       },
-      // @.createLog()
       createLog: function createLog() {
         var _this6 = this;
 
@@ -1132,7 +1134,7 @@ init = function init() {
         this.uploaded = true;
         if (!this.authorization) {
           this.loading = false;
-          neteaseShareImage();
+          // neteaseShareImage()
           return true;
         }
         data = {
@@ -1143,17 +1145,17 @@ init = function init() {
           return axios.post(apiLink + 'active/Levi/update', data).then(function (msg) {
             // alert JSON.stringify msg
             _this7.pushed = false;
-            _this7.loading = false;
-            return neteaseShareImage();
+            return _this7.loading = false;
+            // neteaseShareImage()
           }).catch(function (e) {
             _this7.pushed = false;
-            _this7.loading = false;
-            return neteaseShareImage();
+            return _this7.loading = false;
           });
-        } else {
-          return neteaseShareImage();
         }
       },
+      // neteaseShareImage()
+      // else
+      // neteaseShareImage()
       showInfoPage: function showInfoPage() {
         return this.pageInfoShow = true;
       },

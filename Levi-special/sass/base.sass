@@ -584,6 +584,22 @@ video,canvas,svg
 		+tr(50%,5%)
 		+transform(translate3d(0,-50%,0))
 		z-index: 999
+		.text
+			+posa
+			+tl
+			+w
+			+h
+			&:before,&:after
+				content: " "
+				+posa
+				+tl
+				+w
+				+h
+				+b($cdn+"img/note-text.png",no-repeat,center,center,cover)
+				transform-origin: center center
+				+animation(fadeOutCircle,4s,ease,infinite)
+			&:before
+				animation-delay: 400ms
 		&:before,&:after
 			content: " "
 			+posa
@@ -688,8 +704,8 @@ video,canvas,svg
 				margin-top: 2%
 		.focus-join,.focus-join-light
 			+posa
-			+tl(17%,89.6%)
-			+w(9.3%)
+			+tl(15.5%,89.6%)
+			+w(9.1%)
 			+h(32%)
 			.focus,.join
 				+w(50%)
