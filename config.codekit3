@@ -8624,34 +8624,6 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"\/Levi-special\/mp3\/cd.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/Levi-special\/mp3\/cd.mp3",
-		"oF": 0
-		},
-	"\/Levi-special\/mp3\/fl.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/Levi-special\/mp3\/fl.mp3",
-		"oF": 0
-		},
-	"\/Levi-special\/mp3\/mz.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/Levi-special\/mp3\/mz.mp3",
-		"oF": 0
-		},
-	"\/Levi-special\/mp3\/tv.mp3": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/Levi-special\/mp3\/tv.mp3",
-		"oF": 0
-		},
 	"\/Levi-special\/sass\/base.sass": {
 		"aP": 1,
 		"bl": 0,
@@ -8967,13 +8939,6 @@
 		"opt": 0,
 		"oT": 1,
 		"q": 100
-		},
-	"\/Levi\/img\/homepage-bg_tmp982541929": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/Levi\/img\/homepage-bg_tmp982541929",
-		"oF": 0
 		},
 	"\/Levi\/img\/homepage-logo.png": {
 		"ft": 32768,
@@ -17185,7 +17150,7 @@
 		},
 	"\/sulwhasoo\/img\/icon-symbol-3.png": {
 		"ft": 32768,
-		"iS": 6197,
+		"iS": 3910,
 		"oA": 0,
 		"oAP": "\/sulwhasoo\/img\/icon-symbol-3.png",
 		"oF": 0,
