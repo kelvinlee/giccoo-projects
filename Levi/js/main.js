@@ -932,18 +932,18 @@ init = function init() {
           // recordStartCb
           return false;
         }
-        return CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10');
+        return CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=15');
       },
       // _startCache = setTimeout =>
       // 	ugc.cover.visible = true
       // 	ugc.startLine()
       // 	@.audioId = null
-      // 	@.count = 10
+      // 	@.count = 15
       // 	@.recordStarting = true
       // 	clearInterval _runTime
       // 	_time = new Date().getTime()
       // 	_runTime = setInterval =>
-      // 		@.count = 10 - parseInt (new Date().getTime() - _time)/1000
+      // 		@.count = 15 - parseInt (new Date().getTime() - _time)/1000
       // 		@.count = 0 if @.count < 0
       // 	,1000/10
       // 	_cache = setTimeout =>
@@ -1183,10 +1183,12 @@ init = function init() {
     // passImage: (blob)->
     watch: {
       singerIndex: function singerIndex(n, o) {
-        if (n >= 5) {
+        if (n > 5) {
           return this.singerIndex = 5;
-        } else if (n <= 1) {
+        } else if (n < 1) {
           return this.singerIndex = 1;
+        } else {
+          return ugc.albumInfo(this.singerIndex);
         }
       },
       // text: (n,o)->
@@ -1281,16 +1283,16 @@ init = function init() {
           ugc.cover.visible = true;
           ugc.startLine();
           _this9.audioId = null;
-          _this9.count = 10;
+          _this9.count = 15;
           _this9.recordStarting = true;
           clearInterval(_runTime);
           _time = new Date().getTime();
           return _runTime = setInterval(function () {
-            _this9.count = 10 - parseInt((new Date().getTime() - _time) / 1000);
+            _this9.count = 15 - parseInt((new Date().getTime() - _time) / 1000);
             if (_this9.count < 0) {
               return _this9.count = 0;
             }
-          }, 1000 / 10);
+          }, 1500 / 10);
         } else {
           _this9.authorization = false;
           _this9.uploadAudio();

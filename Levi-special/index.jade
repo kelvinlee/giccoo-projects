@@ -23,11 +23,15 @@ block content
   - url2 = "//image.giccoo.com/projects/Levi";
   - url2 = "../../Levi";
 
-  .load#load
+  .load#loading(:class="{fadeOut: out,animated: out}",v-show="mounted",style="display: none")
     .loading.fadeOut.animated.delay-20
       img(src="#{url}/img/loading-text.png")
-    .loading-text#loading(:class="{fadeOut: progress > 95,animated: progress > 95}",v-show="mounted",style="display: none")
+    .loading-text
       p Loading...{{progress}}%
+    audio#fl(src="#{url}/mp3/fl.mp3")
+    transition(name="page-fade")
+      .open(v-show="progress >= 90",@click="openMusic") 打开声音
+
   .main#main(v-show="mounted",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
     transition(name="page-fade")
       .loading-page(v-show="loading")
@@ -45,11 +49,15 @@ block content
         .content
           //-(@touchstart="start",@touchmove="move",@touchend="end")
           //- #game
+          audio#audiotv(src="//image.giccoo.com/projects/Levi-special/mp3/tv.mp3")
+          audio#audiocd(src="//image.giccoo.com/projects/Levi-special/mp3/cd.mp3")
+          audio#audiomz(src="//image.giccoo.com/projects/Levi-special/mp3/mz.mp3")
           .plant(@touchmove=" note = false ")
             .bg-box
               img(src="#{url}/img/bg.jpg")
               .neon
                 img(src="#{url}/img/neon-off.png")
+              .btn-tv(@click="openTV")
               .tv
                 .tv-bg
                   img(src="#{url}/img/tv-bg.png")
@@ -79,14 +87,15 @@ block content
                     //- transition(name="page-fade")
                     //-   a.cover(v-show="btnMore",href="/Levi/")
                     //-     img(src="#{url}/img/btn-build.jpg")
-              a.audio-run(href="https://music.163.com/#/playlist?id=2328252403&userid=38753829")
+              .btn-audio-run(@click="openCDM")
+              .audio-run
                 .item.item-1
                   img(src="#{url}/img/audio-run.png")
                 .item.item-2
                   img(src="#{url}/img/audio-run.png")
-              .focus-join
-                a.focus(href="https://music.163.com/#/user/home?id=1529461944")
-                .join
+              .focus-join(@click="openMZ")
+                //- a.focus(href="https://music.163.com/#/user/home?id=1529461944")
+                //- .join
               //- .focus-join-light
                 a.focus(href="https://music.163.com/#/user/home?id=1529461944")
                 .join
@@ -123,8 +132,10 @@ block content
             .select
               .btn.btn-prev-music(@click="prev")
                 img(src="#{url}/img/btn-next.png")
+                //- img(:src="'#{url}/img/btn-next'+(now==1?'-stop':'')+'.png'")
               .btn.btn-next-music(@click="next")
-                img(src="#{url}/img/btn-prev.png")   
+                img(src="#{url}/img/btn-prev.png")
+                //- img(:src="'#{url}/img/btn-prev'+(now==6?'-stop':'')+'.png'")   
             //- .nickname
               .my {{info.nickname}}
               .singer

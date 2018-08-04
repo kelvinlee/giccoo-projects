@@ -139,10 +139,12 @@ block content
       .page.page-2(v-show="pageIndex == 2")
         .content
           .head
-            img(src="#{url}/img/homepage-bg.jpg")
+            img(src="#{url}/img/homepage-bg.png")
             .watch-ad
               img(src="#{url}/img/homepage-watch-ad.png")
-          .after(:style="{height: afterH+'px'}")
+          .after-box
+            .text
+              img(src="#{url}/img/homepage-text.png")
             .btn(@click="startbuild")
               img(src="#{url}/img/homepage-next.png")
             .logo

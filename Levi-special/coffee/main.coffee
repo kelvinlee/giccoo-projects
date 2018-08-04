@@ -77,6 +77,16 @@ window.onload = ->
 			progress: 0
 			mounted: false
 			progressOn: 100
+			out: false
+		methods:
+			openMusic: ->
+				fl = document.getElementById "fl"
+				fl.play()
+				clearTimeout _cache
+				@.out = true
+				setTimeout ->
+					document.getElementById('loading').style.display = "none"
+				,1020
 		mounted: ->
 			@.mounted = true
 			timein = setInterval =>
@@ -86,13 +96,12 @@ window.onload = ->
 					@.progress = 100
 					clearInterval timein
 					main.mounted = true
-					setTimeout ->
-						document.getElementById('load').className += " fadeZoomOut animated"
-						_public.note = false
+					_cache = setTimeout =>
+						@.out = true
 						setTimeout ->
-							document.getElementById('load').style.display = "none"
+							document.getElementById('loading').style.display = "none"
 						,1020
-					,300
+					,2000
 			,1000/20
 			setTimeout =>
 				init()
@@ -153,6 +162,21 @@ init = ->
 				moving: false
 			note: true
 		methods:
+			openTV: ->
+				tv = document.getElementById "audiotv"
+				tv.play()
+			openMZ: ->
+				mz = document.getElementById "audiomz"
+				mz.play()
+				setTimeout =>
+					window.location.href = "https://music.163.com/#/user/home?id=1529461944"
+				,1000
+			openCDM: ->
+				cd = document.getElementById "audiocd"
+				cd.play()
+				setTimeout =>
+					window.location.href = "https://music.163.com/#/playlist?id=2328252403&userid=38753829"
+				,1000
 			startbuild: ->
 			start: (evt)->
 				touch = evt.touches[0]
@@ -176,6 +200,7 @@ init = ->
 				music.ask id
 				music.show = true
 				music.now = id
+				
 
 		mounted: ->
 			h = TrueH*2*(2-TrueW*2/750+0.01)
@@ -210,12 +235,14 @@ init = ->
 				singer: 1
 		watch:
 			now: (n,o)->
+				@.bgm.pause()
 				if @.now > 6
 					@.now = 6
 				else if @.now < 1
 					@.now = 1
 				else
 					@.ask @.now
+
 		methods:
 			prev: ->
 				@.now--
@@ -225,6 +252,8 @@ init = ->
 				if @.bgm.duration != Infinity
 					m = Math.floor @.bgm.duration/60
 					s = ten Math.floor @.bgm.duration%60
+					m = 0
+					s = "00" unless isNumber(@.bgm.duration)
 					@.timeend = m+":"+s
 				
 			playRun: ->
@@ -233,6 +262,8 @@ init = ->
 					m = ten Math.floor @.bgm.duration/60
 					s = ten Math.floor @.bgm.duration%60
 					m = 99 if m > 99
+					m = 0
+					s = "00" unless isNumber(@.bgm.duration)
 					@.timeend = m+":"+s
 					m = ten Math.floor @.bgm.currentTime/60
 					s = ten Math.floor @.bgm.currentTime%60
@@ -274,7 +305,7 @@ init = ->
 				@.info = {
 					nickname: ""
 					avatar: id
-					music: "//image.giccoo.com/projects/Levi-special/mp3/cd-#{id}.mp3"
+					music: "//image.giccoo.com/projects/Levi-special/mp3/cd-new-#{id}.mp3"
 					message: message[id-1].message
 					singer: 3
 				}
@@ -282,6 +313,7 @@ init = ->
 				@.cdUpdate()
 				@.bgm.currentTime = 0
 				@.playProgress = 0
+				@.playing = false
 		mounted: ->
 			_cd = new CD 
 				el: "cd"

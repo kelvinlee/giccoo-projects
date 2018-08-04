@@ -31,11 +31,11 @@ block content
             img(src="#{url}/img/gather-bg.jpg")
           .empty
           .list
-            .item(v-for="item in list")
+            .item(v-for="item,index in list")
               .cd
                 img(:src="'#{url}/img/cd-'+item.id+'.jpg'")
-                .btn-play(@click="play")
-                  audio.audio(:src="'//image.giccoo.com/projects/Levi-special/mp3/cd-'+item.id+'.mp3'")
+                .btn-play(:class="{pause: item.playing}",@click="play")
+                  audio.audio(@play="playing(index,event)",@pause="playing(index,event)",@ended="playing(index,event)",:src="'//image.giccoo.com/projects/Levi-special/mp3/cd-'+item.id+'.mp3'")
               .msg
                 .nickname {{item.nickname}}
                 .message {{item.message}}

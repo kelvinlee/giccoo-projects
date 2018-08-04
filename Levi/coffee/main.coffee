@@ -237,17 +237,17 @@ init = ->
 			recordStart: ->
 				# recordStartCb
 				return false if @.recordStarting
-				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=10')
+				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=15')
 				# _startCache = setTimeout =>
 				# 	ugc.cover.visible = true
 				# 	ugc.startLine()
 				# 	@.audioId = null
-				# 	@.count = 10
+				# 	@.count = 15
 				# 	@.recordStarting = true
 				# 	clearInterval _runTime
 				# 	_time = new Date().getTime()
 				# 	_runTime = setInterval =>
-				# 		@.count = 10 - parseInt (new Date().getTime() - _time)/1000
+				# 		@.count = 15 - parseInt (new Date().getTime() - _time)/1000
 				# 		@.count = 0 if @.count < 0
 				# 	,1000/10
 				# 	_cache = setTimeout =>
@@ -426,10 +426,12 @@ init = ->
 			# passImage: (blob)->
 		watch:
 			singerIndex: (n,o)->
-				if n >= 5
+				if n > 5
 					@.singerIndex = 5
-				else if n <= 1
+				else if n < 1
 					@.singerIndex = 1
+				else
+					ugc.albumInfo @.singerIndex
 			# text: (n,o)->
 			# 	# alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
 			# 	console.log n
@@ -492,14 +494,14 @@ init = ->
 					ugc.cover.visible = true
 					ugc.startLine()
 					@.audioId = null
-					@.count = 10
+					@.count = 15
 					@.recordStarting = true
 					clearInterval _runTime
 					_time = new Date().getTime()
 					_runTime = setInterval =>
-						@.count = 10 - parseInt (new Date().getTime() - _time)/1000
+						@.count = 15 - parseInt (new Date().getTime() - _time)/1000
 						@.count = 0 if @.count < 0
-					,1000/10
+					,1500/10
 				else
 					@.authorization = false
 					@.uploadAudio()

@@ -63,7 +63,7 @@ $pageMainBGColor: #000;
 		+transform(scale(1,1))
 		opacity: 0.7
 	100%
-		+transform(scale(2,2))
+		+transform(scale(1.5,1.5))
 		opacity: 0
 +keyframes(fadeZoomOut)
 	0%
@@ -180,7 +180,28 @@ video,canvas,svg
 	// 3c080f
 	animation-duration: 1s
 	animation-timing-function: linear
-
+	.open
+		+posa
+		+bl(4rem)
+		+w
+		+text-center
+		+font-size(0.8rem)
+		color: #fff
+		&:after,&:before
+			content: " "
+			+posa
+			+tl(-70%,50%)
+			+w(3rem)
+			+h(3rem)
+			margin-left: -1.5rem
+			border: solid 2px #fff
+			border-radius: 50%
+			+overhide
+			+box
+			transform-origin: center center
+			+animation(fadeOutCircle,2s,ease,infinite)
+		&:before
+			animation-delay: 400ms
 	.loading
 		+posa
 		+tl(50%)
@@ -195,7 +216,7 @@ video,canvas,svg
 		animation-delay: 300ms
 	.loading-text
 		+posa
-		+bl(5%)
+		+bl(15%)
 		+w
 		+text-center
 		+font-size(0.8rem)
@@ -563,6 +584,17 @@ video,canvas,svg
 		+tr(50%,5%)
 		+transform(translate3d(0,-50%,0))
 		z-index: 999
+		&:before,&:after
+			content: " "
+			+posa
+			+tl
+			+w
+			+h
+			+b($cdn+"img/note.png",no-repeat,center,center,cover)
+			transform-origin: center center
+			+animation(fadeOutCircle,4s,ease,infinite)
+		&:before
+			animation-delay: 400ms
 	.plant
 		+w
 		+h
@@ -591,6 +623,12 @@ video,canvas,svg
 				+b($cdn+"img/neon-on.png",no-repeat,top,left,contain)
 				z-index: 998
 				+animation(neon,5s,ease,infinite)
+		.btn-tv
+			+posa
+			+tl(15.5%,25%)
+			+w(7%)
+			+h(40%)
+			z-index: 10
 		.tv
 			+posa
 			+tl(35.5%,26%)
@@ -605,6 +643,12 @@ video,canvas,svg
 			.front
 				+posa
 				+tl
+		.btn-audio-run
+			+posa
+			+tl(8.6%,79.8%)
+			+w(7%)
+			+h(49%)
+			z-index: 10
 		.audio-run
 			+posa
 			+tl(26.6%,80.8%)
@@ -722,6 +766,9 @@ video,canvas,svg
 							+tl(25%,25%)
 							+wh(50%,50%)
 							+b($cdn+"img/icon-play.png",no-repeat,center,center,contain)
+						&.pause
+							&:before
+								+b($cdn+"img/icon-pause.png",no-repeat,center,center,contain)
 				.msg
 					+show-inline
 					+w(60%)

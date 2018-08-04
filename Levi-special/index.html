@@ -20,11 +20,15 @@
     </script>
   </head>
   <body>
-    <div id="load" class="load">
+    <div id="loading" :class="{fadeOut: out,animated: out}" v-show="mounted" style="display: none" class="load">
       <div class="loading fadeOut animated delay-20"><img src="./img/loading-text.png"></div>
-      <div id="loading" :class="{fadeOut: progress &gt; 95,animated: progress &gt; 95}" v-show="mounted" style="display: none" class="loading-text">
+      <div class="loading-text">
         <p>Loading...{{progress}}%</p>
       </div>
+      <audio id="fl" src="./mp3/fl.mp3"></audio>
+      <transition name="page-fade">
+        <div v-show="progress &gt;= 90" @click="openMusic" class="open">打开声音</div>
+      </transition>
     </div>
     <div id="main" v-show="mounted" :class="{biger: biger,smaller:smaller}" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">
       <transition name="page-fade">
@@ -44,9 +48,13 @@
       <transition name="page-fade">
         <div class="page page-home">
           <div class="content">
+            <audio id="audiotv" src="//image.giccoo.com/projects/Levi-special/mp3/tv.mp3"></audio>
+            <audio id="audiocd" src="//image.giccoo.com/projects/Levi-special/mp3/cd.mp3"></audio>
+            <audio id="audiomz" src="//image.giccoo.com/projects/Levi-special/mp3/mz.mp3"></audio>
             <div @touchmove=" note = false " class="plant">
               <div class="bg-box"><img src="./img/bg.jpg">
                 <div class="neon"><img src="./img/neon-off.png"></div>
+                <div @click="openTV" class="btn-tv"></div>
                 <div class="tv">
                   <div class="tv-bg"><img src="./img/tv-bg.png">
                     <div class="timg"><img src="./img/timg.gif"></div>
@@ -64,11 +72,13 @@
                     <div @click="openCD(5)" class="cd item"><img src="./img/btn-empty.jpg"></div>
                     <div @click="openCD(6)" class="cd item"><img src="./img/btn-empty.jpg"></div><a href="/Levi-special/gather.html" class="cd item"><img src="./img/btn-empty.jpg"></a><a href="/Levi/" class="cd item"><img src="./img/btn-empty.jpg"></a>
                   </div>
-                </div><a href="https://music.163.com/#/playlist?id=2328252403&amp;userid=38753829" class="audio-run">
+                </div>
+                <div @click="openCDM" class="btn-audio-run"></div>
+                <div class="audio-run">
                   <div class="item item-1"><img src="./img/audio-run.png"></div>
-                  <div class="item item-2"><img src="./img/audio-run.png"></div></a>
-                <div class="focus-join"><a href="https://music.163.com/#/user/home?id=1529461944" class="focus"></a>
-                  <div class="join"></div>
+                  <div class="item item-2"><img src="./img/audio-run.png"></div>
+                </div>
+                <div @click="openMZ" class="focus-join">
                 </div>
               </div>
               <transition name="page-fade">
@@ -108,8 +118,10 @@
                 <audio id="bgm" :src="info.music" @canplay="canplay" @timeupdate="playRun" @playing="playing = true" @pause="playing = false" @ended="playing = false"></audio>
               </div>
               <div class="select">
-                <div @click="prev" class="btn btn-prev-music"><img src="./img/btn-next.png"></div>
-                <div @click="next" class="btn btn-next-music"><img src="./img/btn-prev.png"></div>
+                <div @click="prev" class="btn btn-prev-music"><img src="./img/btn-next.png">
+                </div>
+                <div @click="next" class="btn btn-next-music"><img src="./img/btn-prev.png">
+                </div>
               </div>
             </div>
           </div>

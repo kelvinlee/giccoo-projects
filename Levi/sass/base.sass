@@ -528,17 +528,18 @@ video,canvas,svg
 	.head
 		+posr
 		.smaller &
-			margin-top: -20%
+			margin-top: -18%
 		.watch-ad
 			+posa
-			+bl(3%,3%)
-			+iw(220,750,100%)
+			+bl(-8%)
+			// +iw(220,750,100%)
+			+w
 			&:after,&:before
 				content: " "
 				+posa
-				+tl
-				+w(46%)
-				+h(100%)
+				+tl(14%,2.5%)
+				+w(16%)
+				+h(60%)
 				border: solid 2px #fff
 				border-radius: 50%
 				+overhide
@@ -547,6 +548,12 @@ video,canvas,svg
 				+animation(fadeOutCircle,2s,ease,infinite)
 			&:before
 				animation-delay: 400ms
+	.after-box
+		padding-top: 5%
+		.biger &
+			padding-top: 10%
+		.btn
+			+m(3% auto)
 	.after
 		+posa
 		+bl
@@ -632,7 +639,6 @@ video,canvas,svg
 			+p(2% 0)
 		.textarea
 			+w
-			+b($cdn+"img/textarea-bg.png",no-repeat,center,center,contain)
 			textarea
 				+font-size(0.8rem)
 				color: #fff
@@ -643,7 +649,8 @@ video,canvas,svg
 				+h(7em)
 				+m(0 15%)
 				+box
-				+p(0.6em 0)
+				+p(0.6em 1em)
+				+b($cdn+"img/textarea-bg.png",no-repeat,center,center,100% 100%)
 	.review-ctrl
 		+w
 		+h(20%)

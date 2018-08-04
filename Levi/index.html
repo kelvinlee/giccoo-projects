@@ -137,10 +137,11 @@
       <transition name="page-fade">
         <div v-show="pageIndex == 2" class="page page-2">
           <div class="content">
-            <div class="head"><img src="./img/homepage-bg.jpg">
+            <div class="head"><img src="./img/homepage-bg.png">
               <div class="watch-ad"><img src="./img/homepage-watch-ad.png"></div>
             </div>
-            <div :style="{height: afterH+'px'}" class="after">
+            <div class="after-box">
+              <div class="text"><img src="./img/homepage-text.png"></div>
               <div @click="startbuild" class="btn"><img src="./img/homepage-next.png"></div>
               <div class="logo"><img src="./img/homepage-logo.png"></div>
             </div>

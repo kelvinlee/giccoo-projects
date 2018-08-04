@@ -8096,11 +8096,33 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/Levi-special\/img\/btn-next-stop.png": {
+		"ft": 32768,
+		"iS": 1579,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/btn-next-stop.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Levi-special\/img\/btn-next.png": {
 		"ft": 32768,
 		"iS": 2291,
 		"oA": 0,
 		"oAP": "\/Levi-special\/img\/btn-next.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/btn-prev-stop.png": {
+		"ft": 32768,
+		"iS": 1649,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/btn-prev-stop.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -8404,6 +8426,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi-special\/img\/icon-pause.png": {
+		"ft": 32768,
+		"iS": 4039,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/icon-pause.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Levi-special\/img\/icon-play.png": {
 		"ft": 32768,
 		"iS": 4549,
@@ -8590,6 +8623,34 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"\/Levi-special\/mp3\/cd.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/Levi-special\/mp3\/cd.mp3",
+		"oF": 0
+		},
+	"\/Levi-special\/mp3\/fl.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/Levi-special\/mp3\/fl.mp3",
+		"oF": 0
+		},
+	"\/Levi-special\/mp3\/mz.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/Levi-special\/mp3\/mz.mp3",
+		"oF": 0
+		},
+	"\/Levi-special\/mp3\/tv.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/Levi-special\/mp3\/tv.mp3",
+		"oF": 0
 		},
 	"\/Levi-special\/sass\/base.sass": {
 		"aP": 1,
@@ -8896,14 +8957,32 @@
 		"opt": 1,
 		"q": 100
 		},
+	"\/Levi\/img\/homepage-bg.png": {
+		"ft": 32768,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/homepage-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/homepage-bg_tmp982541929": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/homepage-bg_tmp982541929",
+		"oF": 0
+		},
 	"\/Levi\/img\/homepage-logo.png": {
 		"ft": 32768,
 		"iS": 12129,
 		"oA": 0,
 		"oAP": "\/Levi\/img\/homepage-logo.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -8912,6 +8991,17 @@
 		"iS": 3980,
 		"oA": 0,
 		"oAP": "\/Levi\/img\/homepage-next.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/homepage-text.png": {
+		"ft": 32768,
+		"iS": 9759,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/homepage-text.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -8924,8 +9014,8 @@
 		"oA": 0,
 		"oAP": "\/Levi\/img\/homepage-watch-ad.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9012,8 +9102,8 @@
 		"oA": 0,
 		"oAP": "\/Levi\/img\/message-ctrl-title.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9452,8 +9542,8 @@
 		"oA": 0,
 		"oAP": "\/Levi\/img\/ugc-logo.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9551,8 +9641,8 @@
 		"oA": 0,
 		"oAP": "\/Levi\/img\/ugc-note-4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9562,8 +9652,8 @@
 		"oA": 0,
 		"oAP": "\/Levi\/img\/ugc-note-5.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9606,8 +9696,8 @@
 		"oA": 0,
 		"oAP": "\/Levi\/img\/ugc-singer-4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9617,8 +9707,8 @@
 		"oA": 0,
 		"oAP": "\/Levi\/img\/ugc-singer-5.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
