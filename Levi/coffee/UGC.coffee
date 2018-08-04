@@ -263,25 +263,25 @@ class UGC
 		@.lyric = new Container()
 		# text = "每次送他去机场，真的都很累。因为"
 		texts = text.split("")
-		list = [""]
+		list = [[]]
 		n = 0
 		lineH = 32
 		for index in [0...texts.length]
-			if list[n].gblen() >= 16
+			if list[n].join("").gblen() >= 16
 				n++ 
-				list[n] = ""
-			list[n] += texts[index]+""
+				list[n] = []
+			list[n].push texts[index]
 		for i in [0...list.length]
 			continue if i >= 4
 			t = (i%4)*0.2
-			text = new Text list[i],{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff, align : 'left'}
+			text = new Text list[i].join(" "),{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff, align : 'left'}
 			text.alpha = 1-t
 			text.y = lineH*4 - (4-(i%4+1))*lineH + (4-list.length)*lineH
 			text.x = (@.opts.w-text.width)/2
 			@.lyric.addChild text
 		@.album.addChild @.lyric
 	review: ->
-		@.content.y += 200
+		@.content.y += 250
 		@.logo = logo = new Sprite getTe "#{_CDN}img/ugc-logo.png"
 		logo.y = @.content.height - logo.height - 40
 		@.note = note = new Sprite getTe "#{_CDN}img/ugc-note-#{@.index}.png"

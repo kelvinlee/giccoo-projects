@@ -473,22 +473,22 @@ UGC = function () {
         this.lyric = new Container();
         // text = "每次送他去机场，真的都很累。因为"
         texts = text.split("");
-        list = [""];
+        list = [[]];
         n = 0;
         lineH = 32;
         for (index = k = 0, ref = texts.length; 0 <= ref ? k < ref : k > ref; index = 0 <= ref ? ++k : --k) {
-          if (list[n].gblen() >= 16) {
+          if (list[n].join("").gblen() >= 16) {
             n++;
-            list[n] = "";
+            list[n] = [];
           }
-          list[n] += texts[index] + "";
+          list[n].push(texts[index]);
         }
         for (i = l = 0, ref1 = list.length; 0 <= ref1 ? l < ref1 : l > ref1; i = 0 <= ref1 ? ++l : --l) {
           if (i >= 4) {
             continue;
           }
           t = i % 4 * 0.2;
-          text = new Text(list[i], {
+          text = new Text(list[i].join(" "), {
             fontFamily: 'Arial',
             fontSize: 24,
             fill: 0xffffff,
@@ -505,7 +505,7 @@ UGC = function () {
       key: 'review',
       value: function review() {
         var logo, note;
-        this.content.y += 200;
+        this.content.y += 250;
         this.logo = logo = new Sprite(getTe(_CDN + 'img/ugc-logo.png'));
         logo.y = this.content.height - logo.height - 40;
         this.note = note = new Sprite(getTe(_CDN + 'img/ugc-note-' + this.index + '.png'));
