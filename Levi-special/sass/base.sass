@@ -781,10 +781,12 @@ video,canvas,svg
 							+posa
 							+tl(25%,25%)
 							+wh(50%,50%)
-							+b($cdn+"img/icon-play.png",no-repeat,center,center,contain)
+							+b($cdn+"img/icon-play-pause.png",no-repeat,center,center,200% 100%)
+							background-position: left top
 						&.pause
 							&:before
-								+b($cdn+"img/icon-pause.png",no-repeat,center,center,contain)
+								// +b($cdn+"img/icon-play-pause.png",no-repeat,center,center,200% 100%)
+								background-position: right top
 				.msg
 					+show-inline
 					+w(60%)
