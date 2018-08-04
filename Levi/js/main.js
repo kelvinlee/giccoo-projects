@@ -495,7 +495,7 @@ UGC = function () {
             align: 'left'
           });
           text.alpha = 1 - t;
-          text.y = lineH * 4 - (4 - (i % 4 + 1)) * lineH + (4 - list.length) * lineH;
+          text.y = lineH * 4 - (4 - (i % 4 + 1)) * lineH; //+ (4-list.length)*lineH
           text.x = (this.opts.w - text.width) / 2;
           this.lyric.addChild(text);
         }

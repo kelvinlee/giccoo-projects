@@ -276,7 +276,7 @@ class UGC
 			t = (i%4)*0.2
 			text = new Text list[i].join(" "),{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff, align : 'left'}
 			text.alpha = 1-t
-			text.y = lineH*4 - (4-(i%4+1))*lineH + (4-list.length)*lineH
+			text.y = lineH*4 - (4-(i%4+1))*lineH #+ (4-list.length)*lineH
 			text.x = (@.opts.w-text.width)/2
 			@.lyric.addChild text
 		@.album.addChild @.lyric
