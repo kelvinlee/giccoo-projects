@@ -9328,8 +9328,8 @@
 		"oA": 0,
 		"oAP": "\/Levi\/img\/music-singer-name-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9339,8 +9339,8 @@
 		"oA": 0,
 		"oAP": "\/Levi\/img\/music-singer-name-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9350,8 +9350,8 @@
 		"oA": 0,
 		"oAP": "\/Levi\/img\/music-singer-name-4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9361,8 +9361,8 @@
 		"oA": 0,
 		"oAP": "\/Levi\/img\/music-singer-name-5.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},

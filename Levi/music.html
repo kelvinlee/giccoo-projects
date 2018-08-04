@@ -45,8 +45,8 @@
               <audio id="bgm" :src="info.music" @loadedmetadata="loadedmetadata" @canplay="canplay" @timeupdate="playRun" @playing="playing = true" @pause="playing = false" @ended="playing = false">
               </audio>
             </div>
+            <div class="my">{{info.nickname}}</div>
             <div class="nickname">
-              <div class="my">{{info.nickname}}</div>
               <div class="singer"><img :src="'./img/music-singer-name-'+info.singer+'.png'"></div>
             </div>
           </div><a :href="wy?'https://activity.music.163.com/Levi/':'http://levi.arkrdigital.com/music/'" class="btn-next"><img src="./img/music-btn-next.png"></a>

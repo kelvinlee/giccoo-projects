@@ -785,7 +785,7 @@ video,canvas,svg
 			+posr
 			z-index: 5
 			.smaller &
-				+w(80%)
+				+w(90%)
 				+m
 		.btn-next
 			+posa
@@ -847,11 +847,19 @@ video,canvas,svg
 				&.on
 					opacity: 1
 		.nickname
-			+m(0.5rem auto)
-			.my
-				+text-center
-				+font-size(0.8rem)
-				color: #fff
+			+m(1rem auto)
+		.my
+			+posa
+			+tr(15%,5%)
+			+w(0.8rem)
+			+text-center
+			+font-size(0.8rem)
+			color: #fff
+			&:after
+				content: "的声活"
+				+posa
+				+w(0.8rem)
+				+tl(0,-0.8rem*1.6)
 
 .pop-allow
 	.content
