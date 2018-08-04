@@ -816,10 +816,19 @@ video,canvas,svg
 .pop
 	.close
 		+posa
-		+tr(1rem,1rem)
+		+bl(10%,50%)
 		+w(2rem)
+		margin-left: -1rem
 	.video
 		+posa
-		+tl(50%)
-		+w
+		+tl(50%,5%)
+		+w(90%)
+		+h(90%)
 		+transform(translate3d(0,-50%,0))
+		+b($cdn+"img/video-bg.jpg",no-repeat,center,center,100% 100%)
+		+box
+		+p(5%)
+		.logo
+			+w(30%)
+			+m(10% auto)
+			margin-top: 20%

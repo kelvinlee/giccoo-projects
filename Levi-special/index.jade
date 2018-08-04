@@ -110,10 +110,12 @@ block content
 
     transition(name="page-fade")
       .pop(v-show="videoPop")
-        .close(@click="videoPop = false; document.getElementById('video').pause()")
-          img(src="#{url}/img/icon-close.png")
         .video
+          .logo
+            img(src="#{url}/img/video-logo.png")
           video#video(width="640",height="360",src="//image.giccoo.com/projects/Levi-special/mp4/v1.mp4",controls="true",preload="none",webkit-playsinline,playsinline)
+          .close(@click="videoPop = false; document.getElementById('video').pause()")
+            img(src="#{url}/img/video-close.png")
 
 
   .main#music(v-show="show",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")

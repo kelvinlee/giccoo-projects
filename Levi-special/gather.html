@@ -16,6 +16,11 @@
         var s = document.getElementsByTagName("script")[0]; 
         s.parentNode.insertBefore(hm, s);
       })();
+    </script>
+    <script src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js"></script>
+    <script>
+      var vConsole = new VConsole();
+      console.log('VConsole open');
       
     </script>
   </head>
@@ -30,7 +35,8 @@
             <div class="list">
               <div v-for="item,index in list" class="item">
                 <div class="cd"><img :src="'./img/cd-'+item.id+'.jpg'">
-                  <div :class="{pause: index==(now-1) &amp;&amp; playing}" @click="play(index)" class="btn-play"></div>
+                  <div v-show="now != (index+1) || !playing" @click="play(index)" class="btn-play"></div>
+                  <div v-show="now == (index+1) &amp;&amp; playing" @click="play(index)" class="btn-play pause"></div>
                 </div>
                 <div class="msg">
                   <div class="nickname">{{item.nickname}}</div>

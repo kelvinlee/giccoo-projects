@@ -16,6 +16,10 @@ block css
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
+  script(src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js")
+  script.
+    var vConsole = new VConsole();
+    console.log('VConsole open');
 
 block content
   - url = "//image.giccoo.com/projects/Levi-special";
@@ -35,7 +39,8 @@ block content
             .item(v-for="item,index in list")
               .cd
                 img(:src="'#{url}/img/cd-'+item.id+'.jpg'")
-                .btn-play(:class="{pause: index==(now-1) && playing}",@click="play(index)")
+                .btn-play(v-show="now != (index+1) || !playing",@click="play(index)")
+                .btn-play.pause(v-show="now == (index+1) && playing",@click="play(index)")
               .msg
                 .nickname {{item.nickname}}
                 .message {{item.message}}

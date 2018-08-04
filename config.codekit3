@@ -8629,6 +8629,39 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi-special\/img\/video-bg.jpg": {
+		"ft": 16384,
+		"iS": 99022,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/video-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/Levi-special\/img\/video-close.png": {
+		"ft": 32768,
+		"iS": 5689,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/video-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/video-logo.png": {
+		"ft": 32768,
+		"iS": 10719,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/video-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Levi-special\/index.html": {
 		"cB": 0,
 		"ft": 8192,
