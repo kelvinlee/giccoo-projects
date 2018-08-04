@@ -7,6 +7,8 @@ init = ->
 	main = new Vue
 		el: "#main"
 		data:
+			now: 1
+			playing: false
 			list: [
 				{id: 1,nickname:"",message:"结婚后就失去了独处空间,我已经穿着裤子在马桶上坐了1小时了",playing: false}
 				{id: 2,nickname:"",message:"他们说以后还会常常喝醉。但像毕业这么开心的醉,大概不会有了",playing: false}
@@ -29,13 +31,32 @@ init = ->
 				{id: 19,nickname:"",message:"出门前把电视吊灯都打开。晚上回家,就会感觉像是有人在等我",playing: false}
 				{id: 20,nickname:"",message:"每次都被外婆家座机铃声吓到,听力差的她,很怕错过我们的电话吧",playing: false}
 			]
+		watch:
+			now: (n,o)->
+				console.log "2"
+				if n isnt o
+					audio = document.getElementById "bgm"
+					setTimeout ->
+						audio.currentTime = 0
+						audio.play()
+					,50
 		methods:
-			play: (evt)->
-				audio = evt.target.getElementsByTagName("audio")[0]
-				if audio.paused
-					audio.play()
+			load: ->
+				console.log "load"
+			play: (index)->
+				audio = document.getElementById "bgm"
+				console.log @.now , (index+1) , audio.paused
+				if @.now is (index+1)
+					if audio.paused
+						audio.play()
+					else
+						audio.pause()
+					console.log "true"
 				else
-					audio.pause()
+					@.now = index+1
+					console.log "false"
+					# audio.currentTime = 0
+				
 				
 			playing: (index,evt)->
 				audio = evt.target

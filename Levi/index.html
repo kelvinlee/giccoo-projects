@@ -235,6 +235,14 @@
           </div>
         </div>
       </transition>
+      <transition name="page-fade">
+        <div v-show="videoPop" class="pop">
+          <div @click="videoPop" class="close"><img src="./img/icon-close.png"></div>
+          <div class="video">
+            <video width="640" height="360" src="./mp4/v1.mp4" controls="true" preload="none" webkit-playsinline playsinline></video>
+          </div>
+        </div>
+      </transition>
     </div>
     <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>

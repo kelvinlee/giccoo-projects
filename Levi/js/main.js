@@ -881,7 +881,8 @@ init = function init() {
       openBtnShow: true,
       default: {
         x: 0
-      }
+      },
+      videoPop: true
     },
     methods: {
       start: function start(evt) {

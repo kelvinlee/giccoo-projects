@@ -90,7 +90,7 @@ window.onload = ->
 					@.out = true
 					setTimeout ->
 						document.getElementById('loading').style.display = "none"
-					,1020
+					,2020
 				,700
 		mounted: ->
 			@.mounted = true
@@ -105,7 +105,7 @@ window.onload = ->
 						@.out = true
 						setTimeout ->
 							document.getElementById('loading').style.display = "none"
-						,1020
+						,2020
 					,2000
 			,1000/20
 			setTimeout =>
@@ -243,6 +243,7 @@ init = ->
 		watch:
 			now: (n,o)->
 				@.bgm.pause()
+				@.line = 0
 				if @.now > 6
 					@.now = 6
 				else if @.now < 1

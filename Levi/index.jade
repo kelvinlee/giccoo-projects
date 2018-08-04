@@ -231,6 +231,13 @@ block content
         .content
           img(:src="ugc")
           .p 长按保存图片
+    transition(name="page-fade")
+      .pop(v-show="videoPop")
+        .close(@click="videoPop")
+          img(src="#{url}/img/icon-close.png")
+        .video
+          video(width="640",height="360",src="./mp4/v1.mp4",controls="true",preload="none",webkit-playsinline,playsinline)
+
 block js
   - url = "/";
   script(src="//res.wx.qq.com/open/js/jweixin-1.3.2.js")

@@ -24,14 +24,13 @@
       <transition name="page-fade">
         <div class="page page-gather">
           <div class="content">
+            <audio id="bgm" @loadstart="load" @play="playing = true" @pause="playing = false" @ended="playing = false" :src="'//image.giccoo.com/projects/Levi-special/mp3/cd-'+now+'.mp3'"></audio>
             <div class="bg-top"><img src="./img/gather-bg.jpg"></div>
             <div class="empty"></div>
             <div class="list">
               <div v-for="item,index in list" class="item">
                 <div class="cd"><img :src="'./img/cd-'+item.id+'.jpg'">
-                  <div :class="{pause: item.playing}" @click="play" class="btn-play">
-                    <audio @play="playing(index,event)" @pause="playing(index,event)" @ended="playing(index,event)" :src="'//image.giccoo.com/projects/Levi-special/mp3/cd-'+item.id+'.mp3'" class="audio"></audio>
-                  </div>
+                  <div :class="{pause: index==(now-1) &amp;&amp; playing}" @click="play(index)" class="btn-play"></div>
                 </div>
                 <div class="msg">
                   <div class="nickname">{{item.nickname}}</div>

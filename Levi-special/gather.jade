@@ -27,6 +27,7 @@ block content
     transition(name="page-fade")
       .page.page-gather
         .content
+          audio#bgm(@loadstart="load",@play="playing = true",@pause="playing = false",@ended="playing = false",:src="'//image.giccoo.com/projects/Levi-special/mp3/cd-'+now+'.mp3'")
           .bg-top
             img(src="#{url}/img/gather-bg.jpg")
           .empty
@@ -34,8 +35,7 @@ block content
             .item(v-for="item,index in list")
               .cd
                 img(:src="'#{url}/img/cd-'+item.id+'.jpg'")
-                .btn-play(:class="{pause: item.playing}",@click="play")
-                  audio.audio(@play="playing(index,event)",@pause="playing(index,event)",@ended="playing(index,event)",:src="'//image.giccoo.com/projects/Levi-special/mp3/cd-'+item.id+'.mp3'")
+                .btn-play(:class="{pause: index==(now-1) && playing}",@click="play(index)")
               .msg
                 .nickname {{item.nickname}}
                 .message {{item.message}}
