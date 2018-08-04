@@ -805,3 +805,21 @@ video,canvas,svg
 						+font-size(0.6rem)
 						line-height: 1.4em
 						color: #fff
+.pop
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	+bc(rgba(0,0,0,0.8))
+	z-index: 1009
+.pop
+	.close
+		+posa
+		+tr(1rem,1rem)
+		+w(2rem)
+	.video
+		+posa
+		+tl(50%)
+		+w
+		+transform(translate3d(0,-50%,0))

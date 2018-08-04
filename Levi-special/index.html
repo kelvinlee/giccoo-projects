@@ -49,7 +49,7 @@
         <div class="page page-home">
           <div class="content">
             <audio id="audiotv" src="//image.giccoo.com/projects/Levi-special/mp3/tv.mp3"></audio>
-            <audio id="audiocd" src="//image.giccoo.com/projects/Levi-special/mp3/cd.mp3"></audio>
+            <audio id="audiocd" src="//image.giccoo.com/projects/Levi-special/mp3/cd2.mp3"></audio>
             <audio id="audiomz" src="//image.giccoo.com/projects/Levi-special/mp3/mz.mp3"></audio>
             <div @touchmove=" note = false " class="plant">
               <div class="bg-box"><img src="./img/bg.jpg">
@@ -83,13 +83,21 @@
                 </div>
               </div>
               <transition name="page-fade">
-                <div v-show="noteArrow" class="note"><img src="./img/note.png">
+                <div v-show="note" class="note"><img src="./img/note.png">
                   <transition name="page-fade">
                     <div v-show="note" class="text"><img src="./img/note-text.png"></div>
                   </transition>
                 </div>
               </transition>
             </div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="videoPop" class="pop">
+          <div @click="videoPop = false; document.getElementById('video').pause()" class="close"><img src="./img/icon-close.png"></div>
+          <div class="video">
+            <video id="video" width="640" height="360" src="//image.giccoo.com/projects/Levi-special/mp4/v1.mp4" controls="true" preload="none" webkit-playsinline playsinline></video>
           </div>
         </div>
       </transition>

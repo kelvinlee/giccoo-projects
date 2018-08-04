@@ -167,10 +167,12 @@ init = ->
 				moving: false
 			note: true
 			noteArrow: true
+			videoPop: false
 		methods:
 			openTV: ->
 				tv = document.getElementById "audiotv"
 				tv.play()
+				@.videoPop = true
 			openMZ: ->
 				mz = document.getElementById "audiomz"
 				mz.play()

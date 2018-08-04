@@ -50,7 +50,7 @@ block content
           //-(@touchstart="start",@touchmove="move",@touchend="end")
           //- #game
           audio#audiotv(src="//image.giccoo.com/projects/Levi-special/mp3/tv.mp3")
-          audio#audiocd(src="//image.giccoo.com/projects/Levi-special/mp3/cd.mp3")
+          audio#audiocd(src="//image.giccoo.com/projects/Levi-special/mp3/cd2.mp3")
           audio#audiomz(src="//image.giccoo.com/projects/Levi-special/mp3/mz.mp3")
           .plant(@touchmove=" note = false ")
             .bg-box
@@ -102,11 +102,20 @@ block content
                 a.focus(href="https://music.163.com/#/user/home?id=1529461944")
                 .join
             transition(name="page-fade")
-              .note(v-show="noteArrow")
+              .note(v-show="note")
                 img(src="#{url}/img/note.png")
                 transition(name="page-fade")
                   .text(v-show="note")
                     img(src="#{url}/img/note-text.png")
+
+    transition(name="page-fade")
+      .pop(v-show="videoPop")
+        .close(@click="videoPop = false; document.getElementById('video').pause()")
+          img(src="#{url}/img/icon-close.png")
+        .video
+          video#video(width="640",height="360",src="//image.giccoo.com/projects/Levi-special/mp4/v1.mp4",controls="true",preload="none",webkit-playsinline,playsinline)
+
+
   .main#music(v-show="show",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
     transition(name="page-fade")
       .close(@click="show = false; main.noteArrow = true")

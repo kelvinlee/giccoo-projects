@@ -140,7 +140,7 @@ block content
         .content
           .head
             img(src="#{url}/img/homepage-bg.png")
-            .watch-ad
+            .watch-ad(@click="videoPop = true")
               img(src="#{url}/img/homepage-watch-ad.png")
           .after-box
             .text
@@ -233,10 +233,10 @@ block content
           .p 长按保存图片
     transition(name="page-fade")
       .pop(v-show="videoPop")
-        .close(@click="videoPop")
+        .close(@click="videoPop = false; document.getElementById('video').pause()")
           img(src="#{url}/img/icon-close.png")
         .video
-          video(width="640",height="360",src="./mp4/v1.mp4",controls="true",preload="none",webkit-playsinline,playsinline)
+          video#video(width="640",height="360",src="//image.giccoo.com/projects/Levi-special/mp4/v1.mp4",controls="true",preload="none",webkit-playsinline,playsinline)
 
 block js
   - url = "/";

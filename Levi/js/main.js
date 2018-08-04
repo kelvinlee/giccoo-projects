@@ -882,7 +882,7 @@ init = function init() {
       default: {
         x: 0
       },
-      videoPop: true
+      videoPop: false
     },
     methods: {
       start: function start(evt) {

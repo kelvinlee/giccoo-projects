@@ -203,7 +203,7 @@ init = ->
 			openBtnShow: true
 			default:
 				x: 0
-			videoPop: true
+			videoPop: false
 		methods:
 			start: (evt)->
 				touch = evt.touches[0]
