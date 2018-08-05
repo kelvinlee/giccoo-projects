@@ -192,7 +192,7 @@
             </transition>
             <transition name="page-fade">
               <div v-show="step == 4" class="singer-ctrl">
-                <div class="title"><img src="./img/singer-title.png"></div>
+                <div class="title"><img src="./img/singer-title-text.png"></div>
                 <div @touchstart="start" @touchmove="move" @touchend="end" class="singers">
                   <div :class="{p3: (singerIndex-3) &gt;= 1,p2: (singerIndex-2) == 1,p1: (singerIndex-1) == 1,on: singerIndex == 1,n1: (singerIndex+1) == 1,n2: (singerIndex+2) == 1,n3: (singerIndex+3) &lt;= 1}" class="singer"><img src="./img/singer-1.jpg"></div>
                   <div :class="{p3: (singerIndex-3) &gt;= 2,p2: (singerIndex-2) == 2,p1: (singerIndex-1) == 2,on: singerIndex == 2,n1: (singerIndex+1) == 2,n2: (singerIndex+2) == 2,n3: (singerIndex+3) &lt;= 2}" class="singer"><img src="./img/singer-2.jpg"></div>

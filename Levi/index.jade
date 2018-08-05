@@ -194,7 +194,7 @@ block content
           transition(name="page-fade")
             .singer-ctrl(v-show="step == 4")
               .title
-                img(src="#{url}/img/singer-title.png")
+                img(src="#{url}/img/singer-title-text.png")
               .singers(@touchstart="start",@touchmove="move",@touchend="end")
                 -for (var i=1;i<=5;i++)
                   .singer(:class="{p3: (singerIndex-3) >= #{i},p2: (singerIndex-2) == #{i},p1: (singerIndex-1) == #{i},on: singerIndex == #{i},n1: (singerIndex+1) == #{i},n2: (singerIndex+2) == #{i},n3: (singerIndex+3) <= #{i}}")
