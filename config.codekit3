@@ -9223,6 +9223,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi\/img\/music-btn-next-old.png": {
+		"ft": 32768,
+		"iS": 5668,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/music-btn-next-old.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Levi\/img\/music-btn-next.png": {
 		"ft": 32768,
 		"iS": 5423,
@@ -9658,8 +9669,8 @@
 		"oA": 0,
 		"oAP": "\/Levi\/img\/ugc-note-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -9687,12 +9698,12 @@
 		},
 	"\/Levi\/img\/ugc-note-4.png": {
 		"ft": 32768,
-		"iS": 7678,
+		"iS": 3127,
 		"oA": 0,
 		"oAP": "\/Levi\/img\/ugc-note-4.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},

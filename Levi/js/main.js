@@ -439,7 +439,7 @@ UGC = function () {
     }, {
       key: 'albumInfo',
       value: function albumInfo(i) {
-        var Texts, bg, musicName, singerName;
+        var Texts, bg, bgMask, musicName, singerName;
         if (this.albumInfoCont != null) {
           this.album.removeChild(this.albumInfoCont);
         }
@@ -457,8 +457,14 @@ UGC = function () {
         this.albumInfoCont.addChild(singerName, musicName, Texts);
         this.album.addChild(this.albumInfoCont);
         this.bg = bg = new Sprite(getTe(_CDN + 'img/ugc-bg-' + i + '.jpg'));
-        // @.bg.y = @.content.y
-        return this.content.addChildAt(this.bg, 0);
+        // console.log @.content.y,@.bg.y = -@.content.y
+        this.bg.y = -this.content.y / 2;
+        this.bgMask = bgMask = new Graphics();
+        bgMask.beginFill(0xffffff);
+        bgMask.drawRect(0, 0, this.content.width, this.content.height);
+        this.content.addChildAt(this.bg, 0);
+        this.content.addChild(bgMask);
+        return this.bg.mask = bgMask;
       }
     }, {
       key: 'lyricUpdate',
@@ -510,8 +516,11 @@ UGC = function () {
         logo.y = this.content.height - logo.height - 40;
         this.note = note = new Sprite(getTe(_CDN + 'img/ugc-note-' + this.index + '.png'));
         note.y = logo.y - note.height - 20;
-        console.log(note.y, logo.y);
-        return this.content.addChild(logo, note);
+        // console.log note.y,logo.y
+        this.content.addChild(logo, note);
+        this.content.removeChild(this.bgMask);
+        this.bg.y = 0;
+        return this.bg.mask = null;
       }
     }, {
       key: 'buildQR',
@@ -531,7 +540,8 @@ UGC = function () {
           border = 5;
           _this2.qrcode = qrcode = new Container();
           text = new Sprite(getTe(_CDN + 'img/qrcode.png'));
-          text.x = 40;
+          text.x = 20;
+          text.y = 20;
           qrcodeBg = new Graphics();
           qrcodeBg.beginFill(0xffffff);
           qrcodeBg.drawRect(0, 0, 140 + border * 2, 140 + border * 2);

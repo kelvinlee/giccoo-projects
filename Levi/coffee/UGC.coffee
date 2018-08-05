@@ -255,8 +255,16 @@ class UGC
 		@.albumInfoCont.addChild singerName,musicName,Texts
 		@.album.addChild @.albumInfoCont
 		@.bg = bg = new Sprite getTe "#{_CDN}img/ugc-bg-#{i}.jpg"
-		# @.bg.y = @.content.y
+		# console.log @.content.y,@.bg.y = -@.content.y
+		@.bg.y = -@.content.y/2
+		@.bgMask = bgMask = new Graphics()
+		bgMask.beginFill(0xffffff)
+		bgMask.drawRect(0,0,@.content.width,@.content.height)
+
 		@.content.addChildAt @.bg,0
+		@.content.addChild bgMask
+		@.bg.mask = bgMask
+
 	lyricUpdate: (text)->
 		return false if text.gblen() > 64
 		@.album.removeChild @.lyric if @.lyric?
@@ -286,8 +294,11 @@ class UGC
 		logo.y = @.content.height - logo.height - 40
 		@.note = note = new Sprite getTe "#{_CDN}img/ugc-note-#{@.index}.png"
 		note.y = logo.y - note.height - 20
-		console.log note.y,logo.y
+		# console.log note.y,logo.y
 		@.content.addChild logo,note
+		@.content.removeChild @.bgMask
+		@.bg.y = 0
+		@.bg.mask = null
 	buildQR: (url,callback)->
 		qrcodeMake = new QRCode "qrcode",
 			text: url
@@ -300,7 +311,8 @@ class UGC
 			border = 5
 			@.qrcode = qrcode = new Container()
 			text = new Sprite getTe "#{_CDN}img/qrcode.png"
-			text.x = 40
+			text.x = 20
+			text.y = 20
 			qrcodeBg = new Graphics()
 			qrcodeBg.beginFill(0xffffff)
 			qrcodeBg.drawRect(0,0,140+border*2,140+border*2)
