@@ -9663,51 +9663,51 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/Levi\/img\/ugc-note-1.png": {
+	"\/Levi\/img\/ugc-note-text-1.png": {
 		"ft": 32768,
-		"iS": 7676,
+		"iS": 3252,
 		"oA": 0,
-		"oAP": "\/Levi\/img\/ugc-note-1.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/Levi\/img\/ugc-note-2.png": {
-		"ft": 32768,
-		"iS": 9341,
-		"oA": 0,
-		"oAP": "\/Levi\/img\/ugc-note-2.png",
+		"oAP": "\/Levi\/img\/ugc-note-text-1.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/Levi\/img\/ugc-note-3.png": {
+	"\/Levi\/img\/ugc-note-text-2.png": {
 		"ft": 32768,
 		"iS": 9341,
 		"oA": 0,
-		"oAP": "\/Levi\/img\/ugc-note-3.png",
+		"oAP": "\/Levi\/img\/ugc-note-text-2.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/Levi\/img\/ugc-note-4.png": {
+	"\/Levi\/img\/ugc-note-text-3.png": {
+		"ft": 32768,
+		"iS": 9341,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/ugc-note-text-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/ugc-note-text-4.png": {
 		"ft": 32768,
 		"iS": 3127,
 		"oA": 0,
-		"oAP": "\/Levi\/img\/ugc-note-4.png",
+		"oAP": "\/Levi\/img\/ugc-note-text-4.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/Levi\/img\/ugc-note-5.png": {
+	"\/Levi\/img\/ugc-note-text-5.png": {
 		"ft": 32768,
 		"iS": 7678,
 		"oA": 0,

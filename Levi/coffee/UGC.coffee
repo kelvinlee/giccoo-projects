@@ -52,11 +52,11 @@ class UGC
 			"#{_CDN}img/ugc-name-3.png"
 			"#{_CDN}img/ugc-name-4.png"
 			"#{_CDN}img/ugc-name-5.png"
-			"#{_CDN}img/ugc-note-1.png"
-			"#{_CDN}img/ugc-note-2.png"
-			"#{_CDN}img/ugc-note-3.png"
-			"#{_CDN}img/ugc-note-4.png"
-			"#{_CDN}img/ugc-note-5.png"
+			"#{_CDN}img/ugc-note-text-1.png"
+			"#{_CDN}img/ugc-note-text-2.png"
+			"#{_CDN}img/ugc-note-text-3.png"
+			"#{_CDN}img/ugc-note-text-4.png"
+			"#{_CDN}img/ugc-note-text-5.png"
 			"#{_CDN}img/ugc-singer-1.png"
 			"#{_CDN}img/ugc-singer-2.png"
 			"#{_CDN}img/ugc-singer-3.png"
@@ -75,6 +75,7 @@ class UGC
 			"#{_CDN}img/bo.png"
 			"#{_CDN}img/avatar.jpg"
 		])
+		# .add("bgm", "#{_CDN}mp3/bgm.mp3")
 		.load(@.build.bind(@))
 		@.default.MH = @.opts.h * 0.65
 	build: ->
@@ -292,7 +293,7 @@ class UGC
 		@.content.y += 250
 		@.logo = logo = new Sprite getTe "#{_CDN}img/ugc-logo.png"
 		logo.y = @.content.height - logo.height - 40
-		@.note = note = new Sprite getTe "#{_CDN}img/ugc-note-#{@.index}.png"
+		@.note = note = new Sprite getTe "#{_CDN}img/ugc-note-text-#{@.index}.png"
 		note.y = logo.y - note.height - 20
 		# console.log note.y,logo.y
 		@.content.addChild logo,note
