@@ -215,7 +215,7 @@ UGC = function () {
       }
       this.stage = this.app.stage;
       document.getElementById(this.opts.el).appendChild(this.app.view);
-      PIXI.loader.add([_CDN + 'img/ugc-bg-1.jpg', _CDN + 'img/ugc-bg-2.jpg', _CDN + 'img/ugc-bg-3.jpg', _CDN + 'img/ugc-bg-4.jpg', _CDN + 'img/ugc-bg-5.jpg', _CDN + 'img/ugc-name-1.png', _CDN + 'img/ugc-name-2.png', _CDN + 'img/ugc-name-3.png', _CDN + 'img/ugc-name-4.png', _CDN + 'img/ugc-name-5.png', _CDN + 'img/ugc-note-1.png', _CDN + 'img/ugc-note-2.png', _CDN + 'img/ugc-note-3.png', _CDN + 'img/ugc-note-4.png', _CDN + 'img/ugc-note-5.png', _CDN + 'img/ugc-singer-1.png', _CDN + 'img/ugc-singer-2.png', _CDN + 'img/ugc-singer-3.png', _CDN + 'img/ugc-singer-4.png', _CDN + 'img/ugc-singer-5.png', _CDN + 'img/ugc-text-2.png', _CDN + 'img/ugc-border.png', _CDN + 'img/ugc-logo.png', _CDN + 'img/album-bg.png', _CDN + 'img/album-cover-' + random + '.png', _CDN + 'img/album-poster.png', _CDN + 'img/album-upload-text.png', _CDN + 'img/album-upload-over-text.png', _CDN + 'img/mask.png', _CDN + 'img/qrcode.png', _CDN + 'img/bo.png', // .add("bgm", "#{_CDN}mp3/bgm.mp3")
+      PIXI.loader.add([_CDN + 'img/ugc-bg-1.jpg', _CDN + 'img/ugc-bg-2.jpg', _CDN + 'img/ugc-bg-3.jpg', _CDN + 'img/ugc-bg-4.jpg', _CDN + 'img/ugc-bg-5.jpg', _CDN + 'img/ugc-name-1.png', _CDN + 'img/ugc-name-2.png', _CDN + 'img/ugc-name-3.png', _CDN + 'img/ugc-name-4.png', _CDN + 'img/ugc-name-5.png', _CDN + 'img/ugc-note-text-1.png', _CDN + 'img/ugc-note-text-2.png', _CDN + 'img/ugc-note-text-3.png', _CDN + 'img/ugc-note-text-4.png', _CDN + 'img/ugc-note-text-5.png', _CDN + 'img/ugc-singer-1.png', _CDN + 'img/ugc-singer-2.png', _CDN + 'img/ugc-singer-3.png', _CDN + 'img/ugc-singer-4.png', _CDN + 'img/ugc-singer-5.png', _CDN + 'img/ugc-text-2.png', _CDN + 'img/ugc-border.png', _CDN + 'img/ugc-logo.png', _CDN + 'img/album-bg.png', _CDN + 'img/album-cover-' + random + '.png', _CDN + 'img/album-poster.png', _CDN + 'img/album-upload-text.png', _CDN + 'img/album-upload-over-text.png', _CDN + 'img/mask.png', _CDN + 'img/qrcode.png', _CDN + 'img/bo.png', // .add("bgm", "#{_CDN}mp3/bgm.mp3")
       _CDN + 'img/avatar.jpg']).load(this.build.bind(this));
       this.default.MH = this.opts.h * 0.65;
     }
@@ -515,7 +515,7 @@ UGC = function () {
         this.content.y += 250;
         this.logo = logo = new Sprite(getTe(_CDN + 'img/ugc-logo.png'));
         logo.y = this.content.height - logo.height - 40;
-        this.note = note = new Sprite(getTe(_CDN + 'img/ugc-note-' + this.index + '.png'));
+        this.note = note = new Sprite(getTe(_CDN + 'img/ugc-note-text-' + this.index + '.png'));
         note.y = logo.y - note.height - 20;
         // console.log note.y,logo.y
         this.content.addChild(logo, note);
