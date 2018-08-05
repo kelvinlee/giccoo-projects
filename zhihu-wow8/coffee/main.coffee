@@ -7,6 +7,7 @@ main = {}
 pre = {}
 load = {}
 ugc = {}
+sys = ""
 
 answers = {
 	list:[
@@ -554,21 +555,25 @@ getRandom = (length)->
 	return parseInt(Math.random()*(length+1)-1)
 window.onload = ->
 	# runAnimate()
-	loadWechatConfig()
-	wx.ready ->
-		shareContent =
-			title: "来自艾泽拉斯的召唤"
-			desc: "灵魂深处，你的专属职业究竟谁？艾泽拉斯正在召唤你。"
-			link: "http://m.giccoo.com/zhihu-huarun/"
-			imgUrl: "http://m.giccoo.com/zhihu-huarun/img/ico.jpg"
-			success: ->
-				# alert "success"
-			cancel: ->
-				# alert "cancel"
-		wx.onMenuShareTimeline shareContent
-		wx.onMenuShareAppMessage shareContent
-		wx.onMenuShareQQ shareContent
-		wx.onMenuShareWeibo shareContent
+	# /Zhihu|osee2unifiedRelease|Futureve/
+	if window.navigator.userAgent.indexOf("Zhihu") > -1 or window.navigator.userAgent.indexOf("osee2unifiedRelease") > -1 or window.navigator.userAgent.indexOf("Futureve") > -1
+		sys = "zhihu"
+	else
+		loadWechatConfig()
+		wx.ready ->
+			shareContent =
+				title: "来自艾泽拉斯的召唤"
+				desc: "灵魂深处，你的专属职业究竟谁？艾泽拉斯正在召唤你。"
+				link: "http://m.giccoo.com/zhihu-huarun/"
+				imgUrl: "http://m.giccoo.com/zhihu-huarun/img/ico.jpg"
+				success: ->
+					# alert "success"
+				cancel: ->
+					# alert "cancel"
+			wx.onMenuShareTimeline shareContent
+			wx.onMenuShareAppMessage shareContent
+			wx.onMenuShareQQ shareContent
+			wx.onMenuShareWeibo shareContent
 	init()
 
 init = ->
@@ -626,6 +631,8 @@ init = ->
 		methods:
 			go: ->
 				@.pop = false
+				if sys isnt "zhihu"
+					return alert "请在知乎 App 内打开,参与活动."
 				if @.lmbl
 					window.location.href = "http://activity.zhihu.com/campaign/wow/badges/1"
 				else
