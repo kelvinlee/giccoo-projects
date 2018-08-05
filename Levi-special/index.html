@@ -20,7 +20,7 @@
     </script>
   </head>
   <body>
-    <div id="loading" :class="{fadeOut: out,animated: out}" v-show="mounted" style="display: none" class="load">
+    <div id="loading" :class="{fadeZoomOut: out,animated: out}" v-show="mounted" style="display: none" class="load">
       <div class="loading fadeOut animated delay-20"><img src="./img/loading-text.png"></div>
       <div class="loading-text">
         <p>Loading...{{progress}}%</p>

@@ -23,7 +23,7 @@ block content
   - url2 = "//image.giccoo.com/projects/Levi";
   - url2 = "../../Levi";
 
-  .load#loading(:class="{fadeOut: out,animated: out}",v-show="mounted",style="display: none")
+  .load#loading(:class="{fadeZoomOut: out,animated: out}",v-show="mounted",style="display: none")
     .loading.fadeOut.animated.delay-20
       img(src="#{url}/img/loading-text.png")
     .loading-text

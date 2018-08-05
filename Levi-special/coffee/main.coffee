@@ -172,7 +172,9 @@ init = ->
 			openTV: ->
 				tv = document.getElementById "audiotv"
 				tv.play()
-				@.videoPop = true
+				setTimeout =>
+					@.videoPop = true
+				,800
 			openMZ: ->
 				mz = document.getElementById "audiomz"
 				mz.play()
