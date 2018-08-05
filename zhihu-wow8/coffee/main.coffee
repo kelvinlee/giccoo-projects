@@ -623,6 +623,7 @@ init = ->
 				x: 0
 				animated: false
 			question: questions[0]
+			btnShow: true
 		computed:
 			room: ->
 				return 'room'
@@ -632,7 +633,7 @@ init = ->
 			go: ->
 				@.pop = false
 				if sys isnt "zhihu"
-					return alert "请在知乎 App 内打开,参与活动."
+					return alert "请在知乎 App 内打开."
 				if @.lmbl
 					window.location.href = "http://activity.zhihu.com/campaign/wow/badges/1"
 				else
@@ -640,8 +641,13 @@ init = ->
 			getBadge: ->
 				@.pop = true
 			getUGC: ->
-				ugc.save()
 				@.ugcPage = true
+				# @.btnShow = false
+				ugc.save()
+			closeUGC: ->
+				@.ugcPage = false
+				# @.btnShow = true
+				ugc.hide()
 			over: (name)->
 				ugc = new UGC({el: "ugc",name: name})
 				@.pageIndex = 3

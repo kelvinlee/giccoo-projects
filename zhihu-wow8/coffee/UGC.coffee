@@ -52,15 +52,23 @@ class UGC
 		@.qrcode = qrcode = new Sprite getTe "#{_CDN}img/qrcode.png"
 		qrcode.y = bg.height - qrcode.height - 200
 		@.stage.addChild bg,logo,qrcode
-		qrcode.visible = false
-		logo.visible = false
+		qrcode.alpha = 0
+		logo.alpha = 0
 	save: ->
-		@.logo.visible = true
+		@.qrcode.alpha = 0
+		@.logo.alpha = 1
 		@.app.renderer.render @.app.stage
 		main.ugc = @.app.view.toDataURL()
-		@.qrcode.visible = true
-		@.app.renderer.render @.app.stage
-		main.ugcsave = @.app.view.toDataURL()
-		@.qrcode.visible = false
-		@.logo.visible = false
+		TweenMax.to @.qrcode,0.2,
+			alpha: 1
+			delay: 1
+			onComplete: =>
+				@.app.renderer.render @.app.stage
+				main.ugcsave = @.app.view.toDataURL()
+				@.hide()
+		# @.qrcode.visible = false
+		# @.logo.visible = false
+	hide: ->
+		@.qrcode.alpha = 0
+		@.logo.alpha = 0
 

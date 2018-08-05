@@ -233,16 +233,16 @@ body
 			animation-delay: 500ms
 		.logo
 			margin-top: 10%
-			animation-duration: 4000ms
-			animation-delay: 2000ms
+			animation-duration: 1000ms
+			// animation-delay: 2000ms
 		.texts
 			margin-top: 5%
-			animation-duration: 2000ms
-			animation-delay: 1000ms
+			animation-duration: 1000ms
+			// animation-delay: 1000ms
 		.btn
 			margin-top: 5%
 			animation-duration: 1000ms
-			animation-delay: 3000ms
+			// animation-delay: 3000ms
 
 .page-question
 	+b($cdn+"img/answer-bg.jpg",no-repeat,top,center,cover)
@@ -263,8 +263,10 @@ body
 			.answer
 				+text-center
 				+w
-				+h(3rem)
-				line-height: 3rem
+				min-height: 3rem
+				+p(1rem 1em)
+				+box
+				line-height: 1.4em
 				+b($cdn+"img/select-item.png",no-repeat,center,center,100% 100%)
 				margin-top: 5%
 				+tran
@@ -288,7 +290,7 @@ body
 			+m
 
 .pop
-	+bc(rgba(0,0,0,0.8))
+	+bc(rgba(0,0,0,0.9))
 	+posa
 	+tl
 	+w
@@ -309,7 +311,7 @@ body
 
 		.close
 			+posa
-			+tr(10px,10px)
+			+tr(-1rem,-1rem)
 			+w(2rem)
 			z-index: 999
 		.ugcsave

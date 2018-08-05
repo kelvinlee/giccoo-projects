@@ -28,7 +28,7 @@ block content
 				.content
 					.logo.fadeIn.animated
 						img(src="#{url}/img/logo.png")
-					.texts.fadeInUp.animated
+					.texts.fadeIn.animated
 						img(src="#{url}/img/texts.png")
 					.btn.fadeIn.animated(@click="pageIndex = 2")
 						img(src="#{url}/img/btn-start.png")
@@ -40,7 +40,7 @@ block content
 			.page.page-question(v-show="pageIndex == 2")
 				.content
 					.box
-						.title Q{{questionID}}
+						.title Q{{questionID+1}}
 						.question {{question.question}}
 						.answers
 							.answer(:class="{on: selectIndex == index}",v-for="item,index in question.answers",@click="selectItem(index)") {{item}}
@@ -50,7 +50,7 @@ block content
 				.content
 					.logo
 						img(src="#{url}/img/small-logo.png")
-					.btns.fadeIn.animated
+					.btns.fadeIn.animated(v-show="btnShow")
 						.btn(@click="getUGC")
 							img(src="#{url}/img/btn-build.png")
 						.btn(@click="getBadge")
@@ -72,8 +72,8 @@ block content
 		transition(name="page-fade")
 			.pop(v-show="ugcPage")
 				.box
-					.close(@click="ugcPage = false")
-						img(src="#{url}/img/icon-close.png")
+					.close(@click="closeUGC")
+						img(src="#{url}/img/icon-close-white.png")
 					img.bg(:src="ugc")
 					img.ugcsave(:src="ugcsave")
 					p 长按图片保存
@@ -88,7 +88,7 @@ block js
 	//- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
 	script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
 	script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
-	//- script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+	script(src="http://image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
 	script(src="js/main.js")
 
 	
