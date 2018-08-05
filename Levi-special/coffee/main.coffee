@@ -174,7 +174,7 @@ init = ->
 				tv.play()
 				setTimeout =>
 					@.videoPop = true
-				,800
+				,1200
 			openMZ: ->
 				mz = document.getElementById "audiomz"
 				mz.play()
