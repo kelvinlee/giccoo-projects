@@ -662,12 +662,12 @@ init = ->
 						id = cacheAnswer.list[index].id
 						@.question = questions[id-1]
 						cacheAnswer = cacheAnswer.list[index]
+						@.questionID++
 					else
 						name = cacheAnswer.list[index].name
 						console.log cacheAnswer.list[index]
 						@.over(name)
 					@.selectIndex = -1
-					@.questionID++
 					@.selecting = false
 				,500
 				
