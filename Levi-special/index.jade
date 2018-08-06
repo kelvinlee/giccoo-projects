@@ -30,7 +30,7 @@ block content
       p Loading...{{progress}}%
     audio#fl(src="//image.giccoo.com/projects/Levi-special/mp3/fl2.mp3")
     transition(name="page-fade")
-      .open(v-show="progress >= 80",@click="openMusic") 打开声音
+      .open(v-show="progress >= 80 && openShow",@click="openMusic") 打开声音
 
   .main#main(v-show="mounted",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
     transition(name="page-fade")

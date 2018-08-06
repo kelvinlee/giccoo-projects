@@ -1,7 +1,41 @@
 random = 1+parseInt Math.random()*5
 _CDN = "./"
-
+list = [
+	"#{_CDN}img/ugc-bg-1.jpg"
+	"#{_CDN}img/ugc-bg-2.jpg"
+	"#{_CDN}img/ugc-bg-3.jpg"
+	"#{_CDN}img/ugc-bg-4.jpg"
+	"#{_CDN}img/ugc-bg-5.jpg"
+	"#{_CDN}img/ugc-name-1.png"
+	"#{_CDN}img/ugc-name-2.png"
+	"#{_CDN}img/ugc-name-3.png"
+	"#{_CDN}img/ugc-name-4.png"
+	"#{_CDN}img/ugc-name-5.png"
+	"#{_CDN}img/ugc-note-text-1.png"
+	"#{_CDN}img/ugc-note-text-2.png"
+	"#{_CDN}img/ugc-note-text-3.png"
+	"#{_CDN}img/ugc-note-text-4.png"
+	"#{_CDN}img/ugc-note-text-5.png"
+	"#{_CDN}img/ugc-singer-1.png"
+	"#{_CDN}img/ugc-singer-2.png"
+	"#{_CDN}img/ugc-singer-3.png"
+	"#{_CDN}img/ugc-singer-4.png"
+	"#{_CDN}img/ugc-singer-5.png"
+	"#{_CDN}img/ugc-text-2.png"
+	"#{_CDN}img/ugc-border.png"
+	"#{_CDN}img/ugc-logo.png"
+	"#{_CDN}img/album-bg.png"
+	"#{_CDN}img/album-cover-#{random}.png"
+	"#{_CDN}img/album-poster.png"
+	"#{_CDN}img/album-upload-text.png"
+	"#{_CDN}img/album-upload-over-text.png"
+	"#{_CDN}img/mask.png"
+	"#{_CDN}img/qrcode.png"
+	"#{_CDN}img/bo.png"
+	"#{_CDN}img/avatar.jpg"
+]
 class UGC
+	builded: false
 	default:
 		w: 320
 		h: 160
@@ -16,6 +50,7 @@ class UGC
 	_progress: 0
 	lineMoving: false
 	startTime: null
+	loadNumber: 0
 	constructor: (arg)->
 		@.opts =
 			el: "main"
@@ -41,45 +76,19 @@ class UGC
 		@.app.view.className = @.opts.class if @.opts.class? and @.opts.class isnt ""
 		@.stage = @.app.stage
 		document.getElementById(@.opts.el).appendChild @.app.view
-		PIXI.loader.add([
-			"#{_CDN}img/ugc-bg-1.jpg"
-			"#{_CDN}img/ugc-bg-2.jpg"
-			"#{_CDN}img/ugc-bg-3.jpg"
-			"#{_CDN}img/ugc-bg-4.jpg"
-			"#{_CDN}img/ugc-bg-5.jpg"
-			"#{_CDN}img/ugc-name-1.png"
-			"#{_CDN}img/ugc-name-2.png"
-			"#{_CDN}img/ugc-name-3.png"
-			"#{_CDN}img/ugc-name-4.png"
-			"#{_CDN}img/ugc-name-5.png"
-			"#{_CDN}img/ugc-note-text-1.png"
-			"#{_CDN}img/ugc-note-text-2.png"
-			"#{_CDN}img/ugc-note-text-3.png"
-			"#{_CDN}img/ugc-note-text-4.png"
-			"#{_CDN}img/ugc-note-text-5.png"
-			"#{_CDN}img/ugc-singer-1.png"
-			"#{_CDN}img/ugc-singer-2.png"
-			"#{_CDN}img/ugc-singer-3.png"
-			"#{_CDN}img/ugc-singer-4.png"
-			"#{_CDN}img/ugc-singer-5.png"
-			"#{_CDN}img/ugc-text-2.png"
-			"#{_CDN}img/ugc-border.png"
-			"#{_CDN}img/ugc-logo.png"
-			"#{_CDN}img/album-bg.png"
-			"#{_CDN}img/album-cover-#{random}.png"
-			"#{_CDN}img/album-poster.png"
-			"#{_CDN}img/album-upload-text.png"
-			"#{_CDN}img/album-upload-over-text.png"
-			"#{_CDN}img/mask.png"
-			"#{_CDN}img/qrcode.png"
-			"#{_CDN}img/bo.png"
-			"#{_CDN}img/avatar.jpg"
-		])
+		PIXI.loader.add(list)
 		.add("bgm", "#{_CDN}mp3/bgm.mp3")
+		.use(@.loaditem.bind(@))
 		.load(@.build.bind(@))
 		@.default.MH = @.opts.h * 0.65
+	loaditem: ->
+		@.loadNumber++
+		loading.progressOn = parseInt @.loadNumber/(list.length+1)*100
+		if @.loadNumber is list.length+1
+			@.build()
 	build: ->
-		console.log "build",loading.progressOn = 100
+		return false if @builded
+		@builded = true
 		@.trueH = (750/TrueW)*TrueH
 		@.content = content = new Container()
 		
@@ -144,6 +153,7 @@ class UGC
 			line.y = line.height/2
 			line.sy = line.scale.y = 1.5 + Math.random()*1
 			line.de = Math.random() > 0.5
+			line.speed = 1+Math.random()*6
 			box.addChild line
 			list.push line
 		mask = new Graphics()
@@ -172,17 +182,18 @@ class UGC
 		for index in [0...@.lineList.length]
 			item = @.lineList[index]
 			if item.de
-				item.scale.y += (1+Math.random()*(2+index%2)) * (0.005)*(1+m/2) * detail
+				item.scale.y += item.speed * detail * 0.02
 			else
-				# index%(1+parseInt(Math.random()*3))
-				speed = (1+Math.random()*(6)) * (0.01)*(1+m/3+index%(1+parseInt(Math.random()*3))) * detail
-				if (item.scale.y - speed) < 1.5
-					item.scale.y = 1.2
-				else	
-					item.scale.y -= speed
-			item.de = Math.random() > 0.2
-			item.scale.y = 6 if item.scale.y > 6
-			item.scale.y = 1.2 if item.scale.y <= 1.2
+				item.scale.y -= item.speed * detail * 0.03
+
+			if item.scale.y > 6
+				item.scale.y = 6
+				item.de = !item.de
+				item.speed = 3+Math.random()*7
+			if item.scale.y <= item.sy
+				item.scale.y = item.sy
+				item.de = !item.de
+				item.speed = 5+Math.random()*5
 	passImage: (src,orientation)->
 		@.album.removeChild(@.avatar) if @.avatar?
 		@.avatar = new Container()

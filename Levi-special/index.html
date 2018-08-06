@@ -27,7 +27,7 @@
       </div>
       <audio id="fl" src="//image.giccoo.com/projects/Levi-special/mp3/fl2.mp3"></audio>
       <transition name="page-fade">
-        <div v-show="progress &gt;= 80" @click="openMusic" class="open">打开声音</div>
+        <div v-show="progress &gt;= 80 &amp;&amp; openShow" @click="openMusic" class="open">打开声音</div>
       </transition>
     </div>
     <div id="main" v-show="mounted" :class="{biger: biger,smaller:smaller}" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">

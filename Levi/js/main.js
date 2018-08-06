@@ -6,7 +6,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _CDN, _cache, _public, _runTime, _second, _startCache, _testTime, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, neteaseShareImage, random, resource, resources, sended, sys, ugc, ugcCache;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _CDN, _cache, _public, _runTime, _second, _startCache, _testTime, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, list, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, neteaseShareImage, random, resource, resources, sended, sys, ugc, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -182,6 +182,8 @@ random = 1 + parseInt(Math.random() * 5);
 
 _CDN = "./";
 
+list = [_CDN + 'img/ugc-bg-1.jpg', _CDN + 'img/ugc-bg-2.jpg', _CDN + 'img/ugc-bg-3.jpg', _CDN + 'img/ugc-bg-4.jpg', _CDN + 'img/ugc-bg-5.jpg', _CDN + 'img/ugc-name-1.png', _CDN + 'img/ugc-name-2.png', _CDN + 'img/ugc-name-3.png', _CDN + 'img/ugc-name-4.png', _CDN + 'img/ugc-name-5.png', _CDN + 'img/ugc-note-text-1.png', _CDN + 'img/ugc-note-text-2.png', _CDN + 'img/ugc-note-text-3.png', _CDN + 'img/ugc-note-text-4.png', _CDN + 'img/ugc-note-text-5.png', _CDN + 'img/ugc-singer-1.png', _CDN + 'img/ugc-singer-2.png', _CDN + 'img/ugc-singer-3.png', _CDN + 'img/ugc-singer-4.png', _CDN + 'img/ugc-singer-5.png', _CDN + 'img/ugc-text-2.png', _CDN + 'img/ugc-border.png', _CDN + 'img/ugc-logo.png', _CDN + 'img/album-bg.png', _CDN + 'img/album-cover-' + random + '.png', _CDN + 'img/album-poster.png', _CDN + 'img/album-upload-text.png', _CDN + 'img/album-upload-over-text.png', _CDN + 'img/mask.png', _CDN + 'img/qrcode.png', _CDN + 'img/bo.png', _CDN + 'img/avatar.jpg'];
+
 UGC = function () {
   var UGC = function () {
     function UGC(arg) {
@@ -215,15 +217,27 @@ UGC = function () {
       }
       this.stage = this.app.stage;
       document.getElementById(this.opts.el).appendChild(this.app.view);
-      PIXI.loader.add([_CDN + 'img/ugc-bg-1.jpg', _CDN + 'img/ugc-bg-2.jpg', _CDN + 'img/ugc-bg-3.jpg', _CDN + 'img/ugc-bg-4.jpg', _CDN + 'img/ugc-bg-5.jpg', _CDN + 'img/ugc-name-1.png', _CDN + 'img/ugc-name-2.png', _CDN + 'img/ugc-name-3.png', _CDN + 'img/ugc-name-4.png', _CDN + 'img/ugc-name-5.png', _CDN + 'img/ugc-note-text-1.png', _CDN + 'img/ugc-note-text-2.png', _CDN + 'img/ugc-note-text-3.png', _CDN + 'img/ugc-note-text-4.png', _CDN + 'img/ugc-note-text-5.png', _CDN + 'img/ugc-singer-1.png', _CDN + 'img/ugc-singer-2.png', _CDN + 'img/ugc-singer-3.png', _CDN + 'img/ugc-singer-4.png', _CDN + 'img/ugc-singer-5.png', _CDN + 'img/ugc-text-2.png', _CDN + 'img/ugc-border.png', _CDN + 'img/ugc-logo.png', _CDN + 'img/album-bg.png', _CDN + 'img/album-cover-' + random + '.png', _CDN + 'img/album-poster.png', _CDN + 'img/album-upload-text.png', _CDN + 'img/album-upload-over-text.png', _CDN + 'img/mask.png', _CDN + 'img/qrcode.png', _CDN + 'img/bo.png', _CDN + 'img/avatar.jpg']).add("bgm", _CDN + 'mp3/bgm.mp3').load(this.build.bind(this));
+      PIXI.loader.add(list).add("bgm", _CDN + 'mp3/bgm.mp3').use(this.loaditem.bind(this)).load(this.build.bind(this));
       this.default.MH = this.opts.h * 0.65;
     }
 
     _createClass(UGC, [{
+      key: 'loaditem',
+      value: function loaditem() {
+        this.loadNumber++;
+        loading.progressOn = parseInt(this.loadNumber / (list.length + 1) * 100);
+        if (this.loadNumber === list.length + 1) {
+          return this.build();
+        }
+      }
+    }, {
       key: 'build',
       value: function build() {
         var album, albumBG, albumPoster, border, content, uploadOverText, uploadText, userName;
-        console.log("build", loading.progressOn = 100);
+        if (this.builded) {
+          return false;
+        }
+        this.builded = true;
         this.trueH = 750 / TrueW * TrueH;
         this.content = content = new Container();
         border = new Sprite(getTe(_CDN + 'img/ugc-border.png'));
@@ -269,7 +283,7 @@ UGC = function () {
     }, {
       key: 'newCover',
       value: function newCover() {
-        var border, box, cover, k, line, list, mask;
+        var border, box, cover, k, line, mask;
         this.cover = cover = new Container();
         box = new Container();
         cover.x = 128;
@@ -289,6 +303,7 @@ UGC = function () {
           line.y = line.height / 2;
           line.sy = line.scale.y = 1.5 + Math.random() * 1;
           line.de = Math.random() > 0.5;
+          line.speed = 1 + Math.random() * 6;
           box.addChild(line);
           list.push(line);
         }
@@ -324,7 +339,7 @@ UGC = function () {
     }, {
       key: 'updateLine',
       value: function updateLine(detail) {
-        var index, item, k, m, ref, results, speed;
+        var index, item, k, m, ref, results;
         if (!this.lineMoving) {
           return false;
         }
@@ -336,22 +351,19 @@ UGC = function () {
         for (index = k = 0, ref = this.lineList.length; 0 <= ref ? k < ref : k > ref; index = 0 <= ref ? ++k : --k) {
           item = this.lineList[index];
           if (item.de) {
-            item.scale.y += (1 + Math.random() * (2 + index % 2)) * 0.005 * (1 + m / 2) * detail;
+            item.scale.y += item.speed * detail * 0.02;
           } else {
-            // index%(1+parseInt(Math.random()*3))
-            speed = (1 + Math.random() * 6) * 0.01 * (1 + m / 3 + index % (1 + parseInt(Math.random() * 3))) * detail;
-            if (item.scale.y - speed < 1.5) {
-              item.scale.y = 1.2;
-            } else {
-              item.scale.y -= speed;
-            }
+            item.scale.y -= item.speed * detail * 0.03;
           }
-          item.de = Math.random() > 0.2;
           if (item.scale.y > 6) {
             item.scale.y = 6;
+            item.de = !item.de;
+            item.speed = 3 + Math.random() * 7;
           }
-          if (item.scale.y <= 1.2) {
-            results.push(item.scale.y = 1.2);
+          if (item.scale.y <= item.sy) {
+            item.scale.y = item.sy;
+            item.de = !item.de;
+            results.push(item.speed = 5 + Math.random() * 5);
           } else {
             results.push(void 0);
           }
@@ -470,7 +482,7 @@ UGC = function () {
     }, {
       key: 'lyricUpdate',
       value: function lyricUpdate(text) {
-        var index, k, l, lineH, list, n, ref, ref1, t, texts;
+        var index, k, l, lineH, n, ref, ref1, t, texts;
         if (text.gblen() > 64) {
           return false;
         }
@@ -598,6 +610,8 @@ UGC = function () {
 
   ;
 
+  UGC.prototype.builded = false;
+
   UGC.prototype.default = {
     w: 320,
     h: 160,
@@ -623,6 +637,8 @@ UGC = function () {
   UGC.prototype.lineMoving = false;
 
   UGC.prototype.startTime = null;
+
+  UGC.prototype.loadNumber = 0;
 
   return UGC;
 }.call(undefined);

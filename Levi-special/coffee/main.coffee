@@ -81,11 +81,13 @@ window.onload = ->
 			mounted: false
 			progressOn: 100
 			out: false
+			openShow: true
 		methods:
 			openMusic: ->
 				fl = document.getElementById "fl"
 				fl.play()
 				clearTimeout _cache
+				@.openShow = false
 				setTimeout =>
 					@.out = true
 					setTimeout ->
