@@ -63,7 +63,7 @@ init = ->
 			timeing: "0:00"
 			timeend: "0:00"
 			playProgress: 0
-			line: 0
+			line: 1
 			info:
 				nickname: ""
 				avatar: ""

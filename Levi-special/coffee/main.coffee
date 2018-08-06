@@ -236,7 +236,7 @@ init = ->
 			timeing: "0:00"
 			timeend: "0:00"
 			playProgress: 0
-			line: 0
+			line: 1
 			show: false
 			info:
 				nickname: ""
@@ -247,7 +247,7 @@ init = ->
 		watch:
 			now: (n,o)->
 				@.bgm.pause()
-				@.line = 0
+				@.line = 1
 				if @.now > 6
 					@.now = 6
 				else if @.now < 1
