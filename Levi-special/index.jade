@@ -8,7 +8,7 @@ block css
   //- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
   link(rel="stylesheet",href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css")
   link(rel="stylesheet",href="css/base.css")
-  script.
+  //- script.
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -16,6 +16,10 @@ block css
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
+  script(src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js")
+  script.
+    var vConsole = new VConsole();
+    console.log('VConsole open');
 
 block content
   - url = "//image.giccoo.com/projects/Levi-special";

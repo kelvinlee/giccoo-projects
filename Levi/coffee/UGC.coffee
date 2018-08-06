@@ -175,6 +175,11 @@ class UGC
 	stopLine: ->
 		@._time = new Date().getTime()
 		@.lineMoving = false
+		for item in [0...@.lineList.length]
+			item.scale.y = item.ry if item.ry?
+	saveLine: ->
+		for item in [0...@.lineList.length]
+			item.ry = item.scale.y
 	updateLine: (detail)->
 		return false unless @.lineMoving
 		m = parseInt (new Date().getTime() - @._time)/1000

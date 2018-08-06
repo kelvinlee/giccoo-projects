@@ -333,8 +333,28 @@ UGC = function () {
     }, {
       key: 'stopLine',
       value: function stopLine() {
+        var item, k, ref, results;
         this._time = new Date().getTime();
-        return this.lineMoving = false;
+        this.lineMoving = false;
+        results = [];
+        for (item = k = 0, ref = this.lineList.length; 0 <= ref ? k < ref : k > ref; item = 0 <= ref ? ++k : --k) {
+          if (item.ry != null) {
+            results.push(item.scale.y = item.ry);
+          } else {
+            results.push(void 0);
+          }
+        }
+        return results;
+      }
+    }, {
+      key: 'saveLine',
+      value: function saveLine() {
+        var item, k, ref, results;
+        results = [];
+        for (item = k = 0, ref = this.lineList.length; 0 <= ref ? k < ref : k > ref; item = 0 <= ref ? ++k : --k) {
+          results.push(item.ry = item.scale.y);
+        }
+        return results;
       }
     }, {
       key: 'updateLine',
