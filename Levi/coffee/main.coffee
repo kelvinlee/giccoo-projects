@@ -535,11 +535,11 @@ init = ->
 					@.authorization = false
 					@.createLog()
 			window.api.recordvoicePlayCb = (data)=>
-				console.log data.action
 				if data.action is "start"
-					@.canUpload = false
+					main.canUpload = false
 					ugc.startLine()
 				else
-					@.canUpload = true
+					main.canUpload = true
 					ugc.stopLine()
+				console.log data.action,@.canUpload
 			console.log "update: v9 remove"

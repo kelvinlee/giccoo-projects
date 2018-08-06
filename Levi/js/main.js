@@ -1378,14 +1378,14 @@ init = function init() {
         }
       };
       window.api.recordvoicePlayCb = function (data) {
-        console.log(data.action);
         if (data.action === "start") {
-          _this9.canUpload = false;
-          return ugc.startLine();
+          main.canUpload = false;
+          ugc.startLine();
         } else {
-          _this9.canUpload = true;
-          return ugc.stopLine();
+          main.canUpload = true;
+          ugc.stopLine();
         }
+        return console.log(data.action, _this9.canUpload);
       };
       return console.log("update: v9 remove");
     }

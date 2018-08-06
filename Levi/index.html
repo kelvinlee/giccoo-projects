@@ -178,7 +178,7 @@
                       <div v-show="recordStarting" class="count">{{count}}</div>
                     </div><span>{{!recordStarting?audioId != null?'重 录':'录 音':'停 止'}}</span>
                   </div>
-                  <div v-show="audioId != null &amp;&amp; canUpload" @click="uploadAudio" class="btn btn-upload fadeIn animated"><img src="./img/icon-audio-right.png"><span>完 成</span></div>
+                  <div v-show="audioId != null" @click="uploadAudio" :style="{visibility: canUpload?'unset':'hidden'}" class="btn btn-upload fadeIn animated"><img src="./img/icon-audio-right.png"><span>完 成</span></div>
                 </div>
               </div>
             </transition>
