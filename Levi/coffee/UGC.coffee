@@ -136,7 +136,7 @@ class UGC
 	newCover: ->
 		@.cover = cover = new Container()
 		box = new Container()
-		cover.x = 128
+		cover.x = 127
 		cover.y = 169
 		border = new Graphics()
 		border.beginFill(0xffffff)
