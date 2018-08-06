@@ -115,12 +115,13 @@ window.onload = ->
 		data:
 			progress: 0
 			mounted: false
-			progressOn: 100
+			progressOn: 0
 		methods:
 			openMusic: ->
-				bgm = document.getElementById "bgm"
+				# bgm = document.getElementById "bgm"
 				# bgm.currentTime = _second
-				bgm.play()
+				# bgm.play()
+				PIXI.sound.play("bgm")
 				main.openBtnShow = false
 				@.next()
 			next: ->
@@ -142,9 +143,7 @@ window.onload = ->
 						@.next()
 					,2000
 			,1000/20
-			setTimeout =>
-				init()
-			,500
+	init()
 
 init = ->
 	TrueH = document.documentElement.clientHeight
@@ -223,13 +222,15 @@ init = ->
 			maxlengthnickname: ->
 				console.log @.nickname.gblen()
 			openMusic: ->
-				bgm = document.getElementById "bgm"
-				bgm.currentTime = _second
-				bgm.play()
+				# bgm = document.getElementById "bgm"
+				# bgm.currentTime = _second
+				# bgm.play()
+				PIXI.sound.play("bgm",{start: _second})
 				@.openBtnShow = false
 			skip: ->
-				bgm = document.getElementById "bgm"
-				bgm.pause()
+				# bgm = document.getElementById "bgm"
+				# bgm.pause()
+				PIXI.sound.stop("bgm")
 				@.pageIndex = 2
 			startbuild: ->
 				unless @.v

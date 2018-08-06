@@ -75,10 +75,11 @@ class UGC
 			"#{_CDN}img/bo.png"
 			"#{_CDN}img/avatar.jpg"
 		])
-		# .add("bgm", "#{_CDN}mp3/bgm.mp3")
+		.add("bgm", "#{_CDN}mp3/bgm.mp3")
 		.load(@.build.bind(@))
 		@.default.MH = @.opts.h * 0.65
 	build: ->
+		console.log "build",loading.progressOn = 100
 		@.trueH = (750/TrueW)*TrueH
 		@.content = content = new Container()
 		
@@ -126,7 +127,7 @@ class UGC
 	newCover: ->
 		@.cover = cover = new Container()
 		box = new Container()
-		cover.x = 129
+		cover.x = 128
 		cover.y = 169
 		border = new Graphics()
 		border.beginFill(0xffffff)
@@ -196,7 +197,7 @@ class UGC
 			avatar.x = avatar.width/2
 			avatar.y = 205
 			@.avatar.addChild avatar
-			@.avatar.x = 129
+			@.avatar.x = 128
 			@.avatar.y = 169
 			@.album.addChildAt @.avatar,3
 
@@ -204,7 +205,7 @@ class UGC
 			mask1 = new Graphics()
 			mask1.beginFill(0xffffff)
 			mask1.drawRect(0,0,416,416)
-			mask1.x = 129
+			mask1.x = 128
 			mask1.y = 169
 			@.album.addChild mask1
 			avatar.mask = mask1

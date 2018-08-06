@@ -215,8 +215,7 @@ UGC = function () {
       }
       this.stage = this.app.stage;
       document.getElementById(this.opts.el).appendChild(this.app.view);
-      PIXI.loader.add([_CDN + 'img/ugc-bg-1.jpg', _CDN + 'img/ugc-bg-2.jpg', _CDN + 'img/ugc-bg-3.jpg', _CDN + 'img/ugc-bg-4.jpg', _CDN + 'img/ugc-bg-5.jpg', _CDN + 'img/ugc-name-1.png', _CDN + 'img/ugc-name-2.png', _CDN + 'img/ugc-name-3.png', _CDN + 'img/ugc-name-4.png', _CDN + 'img/ugc-name-5.png', _CDN + 'img/ugc-note-text-1.png', _CDN + 'img/ugc-note-text-2.png', _CDN + 'img/ugc-note-text-3.png', _CDN + 'img/ugc-note-text-4.png', _CDN + 'img/ugc-note-text-5.png', _CDN + 'img/ugc-singer-1.png', _CDN + 'img/ugc-singer-2.png', _CDN + 'img/ugc-singer-3.png', _CDN + 'img/ugc-singer-4.png', _CDN + 'img/ugc-singer-5.png', _CDN + 'img/ugc-text-2.png', _CDN + 'img/ugc-border.png', _CDN + 'img/ugc-logo.png', _CDN + 'img/album-bg.png', _CDN + 'img/album-cover-' + random + '.png', _CDN + 'img/album-poster.png', _CDN + 'img/album-upload-text.png', _CDN + 'img/album-upload-over-text.png', _CDN + 'img/mask.png', _CDN + 'img/qrcode.png', _CDN + 'img/bo.png', // .add("bgm", "#{_CDN}mp3/bgm.mp3")
-      _CDN + 'img/avatar.jpg']).load(this.build.bind(this));
+      PIXI.loader.add([_CDN + 'img/ugc-bg-1.jpg', _CDN + 'img/ugc-bg-2.jpg', _CDN + 'img/ugc-bg-3.jpg', _CDN + 'img/ugc-bg-4.jpg', _CDN + 'img/ugc-bg-5.jpg', _CDN + 'img/ugc-name-1.png', _CDN + 'img/ugc-name-2.png', _CDN + 'img/ugc-name-3.png', _CDN + 'img/ugc-name-4.png', _CDN + 'img/ugc-name-5.png', _CDN + 'img/ugc-note-text-1.png', _CDN + 'img/ugc-note-text-2.png', _CDN + 'img/ugc-note-text-3.png', _CDN + 'img/ugc-note-text-4.png', _CDN + 'img/ugc-note-text-5.png', _CDN + 'img/ugc-singer-1.png', _CDN + 'img/ugc-singer-2.png', _CDN + 'img/ugc-singer-3.png', _CDN + 'img/ugc-singer-4.png', _CDN + 'img/ugc-singer-5.png', _CDN + 'img/ugc-text-2.png', _CDN + 'img/ugc-border.png', _CDN + 'img/ugc-logo.png', _CDN + 'img/album-bg.png', _CDN + 'img/album-cover-' + random + '.png', _CDN + 'img/album-poster.png', _CDN + 'img/album-upload-text.png', _CDN + 'img/album-upload-over-text.png', _CDN + 'img/mask.png', _CDN + 'img/qrcode.png', _CDN + 'img/bo.png', _CDN + 'img/avatar.jpg']).add("bgm", _CDN + 'mp3/bgm.mp3').load(this.build.bind(this));
       this.default.MH = this.opts.h * 0.65;
     }
 
@@ -224,6 +223,7 @@ UGC = function () {
       key: 'build',
       value: function build() {
         var album, albumBG, albumPoster, border, content, uploadOverText, uploadText, userName;
+        console.log("build", loading.progressOn = 100);
         this.trueH = 750 / TrueW * TrueH;
         this.content = content = new Container();
         border = new Sprite(getTe(_CDN + 'img/ugc-border.png'));
@@ -272,7 +272,7 @@ UGC = function () {
         var border, box, cover, k, line, list, mask;
         this.cover = cover = new Container();
         box = new Container();
-        cover.x = 129;
+        cover.x = 128;
         cover.y = 169;
         border = new Graphics();
         border.beginFill(0xffffff);
@@ -379,14 +379,14 @@ UGC = function () {
           avatar.x = avatar.width / 2;
           avatar.y = 205;
           _this.avatar.addChild(avatar);
-          _this.avatar.x = 129;
+          _this.avatar.x = 128;
           _this.avatar.y = 169;
           _this.album.addChildAt(_this.avatar, 3);
           // mask1 = new Sprite getTe "#{_CDN}img/mask.png"
           mask1 = new Graphics();
           mask1.beginFill(0xffffff);
           mask1.drawRect(0, 0, 416, 416);
-          mask1.x = 129;
+          mask1.x = 128;
           mask1.y = 169;
           _this.album.addChild(mask1);
           avatar.mask = mask1;
@@ -780,19 +780,19 @@ window.onload = function () {
       note: true
     }
   });
-  return loading = new Vue({
+  loading = new Vue({
     el: "#loading",
     data: {
       progress: 0,
       mounted: false,
-      progressOn: 100
+      progressOn: 0
     },
     methods: {
       openMusic: function openMusic() {
-        var bgm;
-        bgm = document.getElementById("bgm");
+        // bgm = document.getElementById "bgm"
         // bgm.currentTime = _second
-        bgm.play();
+        // bgm.play()
+        PIXI.sound.play("bgm");
         main.openBtnShow = false;
         return this.next();
       },
@@ -809,7 +809,7 @@ window.onload = function () {
 
       var timein;
       this.mounted = true;
-      timein = setInterval(function () {
+      return timein = setInterval(function () {
         _this4.progress += 2;
         if (_this4.progress >= _this4.progressOn) {
           _this4.progress = _this4.progressOn;
@@ -823,11 +823,9 @@ window.onload = function () {
           }, 2000);
         }
       }, 1000 / 20);
-      return setTimeout(function () {
-        return init();
-      }, 500);
     }
   });
+  return init();
 };
 
 init = function init() {
@@ -921,16 +919,18 @@ init = function init() {
         return console.log(this.nickname.gblen());
       },
       openMusic: function openMusic() {
-        var bgm;
-        bgm = document.getElementById("bgm");
-        bgm.currentTime = _second;
-        bgm.play();
+        // bgm = document.getElementById "bgm"
+        // bgm.currentTime = _second
+        // bgm.play()
+        PIXI.sound.play("bgm", {
+          start: _second
+        });
         return this.openBtnShow = false;
       },
       skip: function skip() {
-        var bgm;
-        bgm = document.getElementById("bgm");
-        bgm.pause();
+        // bgm = document.getElementById "bgm"
+        // bgm.pause()
+        PIXI.sound.stop("bgm");
         return this.pageIndex = 2;
       },
       startbuild: function startbuild() {
