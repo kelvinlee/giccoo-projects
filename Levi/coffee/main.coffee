@@ -203,6 +203,7 @@ init = ->
 			default:
 				x: 0
 			videoPop: false
+			canUpload: true
 		methods:
 			start: (evt)->
 				touch = evt.touches[0]
@@ -271,6 +272,7 @@ init = ->
 			playAudio: ->
 				# alert @.audioId
 				CloudMusic.orpheus("orpheus://recordvoice/play/start?id=#{@.audioId}")
+
 			uploadAudio: ->
 				@.step = 3
 				ugc.addCover()
@@ -516,11 +518,13 @@ init = ->
 				else
 					@.authorization = false
 					@.uploadAudio()
+				@.canUpload = true
 				@.norecord = false
 				@.recordStarting = false
 				clearTimeout _cache
 				clearInterval _runTime
 				ugc.stopLine()
+				ugc.saveLine()
 			window.api.uploadEndCb = (data)=>
 				console.log "record upload:",data
 				# console.log "上传音频:#{JSON.stringify(data)}"
@@ -532,4 +536,10 @@ init = ->
 					@.createLog()
 			window.api.recordvoicePlayCb = (data)=>
 				console.log data.action
+				if data.action is "start"
+					@.canUpload = false
+					ugc.startLine()
+				else
+					@.canUpload = true
+					ugc.stopLine()
 			console.log "update: v9 remove"

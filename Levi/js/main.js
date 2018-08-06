@@ -927,7 +927,8 @@ init = function init() {
       default: {
         x: 0
       },
-      videoPop: false
+      videoPop: false,
+      canUpload: true
     },
     methods: {
       start: function start(evt) {
@@ -1357,11 +1358,13 @@ init = function init() {
           _this9.authorization = false;
           _this9.uploadAudio();
         }
+        _this9.canUpload = true;
         _this9.norecord = false;
         _this9.recordStarting = false;
         clearTimeout(_cache);
         clearInterval(_runTime);
-        return ugc.stopLine();
+        ugc.stopLine();
+        return ugc.saveLine();
       };
       window.api.uploadEndCb = function (data) {
         console.log("record upload:", data);
@@ -1375,7 +1378,14 @@ init = function init() {
         }
       };
       window.api.recordvoicePlayCb = function (data) {
-        return console.log(data.action);
+        console.log(data.action);
+        if (data.action === "start") {
+          _this9.canUpload = false;
+          return ugc.startLine();
+        } else {
+          _this9.canUpload = true;
+          return ugc.stopLine();
+        }
       };
       return console.log("update: v9 remove");
     }

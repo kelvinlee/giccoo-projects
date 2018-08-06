@@ -181,7 +181,7 @@ block content
                     img(src="#{url}/img/icon-audio-start.png")
                     .count(v-show="recordStarting") {{count}}
                   span {{!recordStarting?audioId != null?'重 录':'录 音':'停 止'}}
-                .btn.btn-upload.fadeIn.animated(v-show="audioId != null",@click="uploadAudio")
+                .btn.btn-upload.fadeIn.animated(v-show="audioId != null && canUpload",@click="uploadAudio")
                   img(src="#{url}/img/icon-audio-right.png")
                   span 完 成
           transition(name="page-fade")
