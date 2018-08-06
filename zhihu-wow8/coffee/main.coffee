@@ -563,9 +563,9 @@ window.onload = ->
 		wx.ready ->
 			shareContent =
 				title: "来自艾泽拉斯的召唤"
-				desc: "灵魂深处，你的专属职业究竟谁？艾泽拉斯正在召唤你。"
-				link: "http://m.giccoo.com/zhihu-huarun/"
-				imgUrl: "http://m.giccoo.com/zhihu-huarun/img/ico.jpg"
+				desc: "灵魂深处，你的专属职业究竟“是”谁？艾泽拉斯正在召唤你。"
+				link: "http://m.giccoo.com/zhihu-wow8/"
+				imgUrl: "http://m.giccoo.com/zhihu-wow8/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->

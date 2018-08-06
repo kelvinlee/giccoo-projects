@@ -102,6 +102,14 @@ body
 	opacity: 0
 	// transform: translate3d(0,-100%,0)
 
+.page-fade-fast-enter-active
+	transition: all .4s ease
+	opacity: 1
+.page-fade-fast-leave-active
+	transition: all .4s linear
+	opacity: 1
+.page-fade-fast-enter,.page-fade-fast-leave-to
+	opacity: 0
 
 .f0
 	font-size: 0
@@ -308,11 +316,11 @@ body
 			+posa
 			+bl(5%)
 			+w
-
 		.close
+			$size: 2rem
 			+posa
-			+tr(-1rem,-1rem)
-			+w(2rem)
+			+tr(-$size/2,-$size/2)
+			+w($size)
 			z-index: 999
 		.ugcsave
 			+posa
@@ -332,9 +340,10 @@ body
 		+tl(50%,10%)
 		+transform(translate3d(0,-50%,0))
 		.close
+			$size: 1.4rem
 			+posa
 			+tr(10px,10px)
-			+w(2rem)
+			+w($size)
 			z-index: 999
 		.zy
 			+w
