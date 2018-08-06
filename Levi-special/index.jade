@@ -56,7 +56,8 @@ block content
           audio#audiotv(src="//image.giccoo.com/projects/Levi-special/mp3/tv.mp3")
           audio#audiocd(src="//image.giccoo.com/projects/Levi-special/mp3/cd2.mp3")
           audio#audiomz(src="//image.giccoo.com/projects/Levi-special/mp3/mz.mp3")
-          .plant(@touchmove=" note = false ")
+          //- @touchmove=" note = false ",
+          .plant(@touchmove=" note = false ",@scroll=" note = false ")
             .bg-box
               img(src="#{url}/img/bg.jpg")
               .neon
