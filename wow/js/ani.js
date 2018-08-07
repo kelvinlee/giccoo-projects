@@ -12,7 +12,7 @@ function setPage1(){
 
 dotA=[]
 function setFireDot(){
-  for (var i = 0; i < 300; i++) {
+  for (var i = 0; i < 100; i++) {
     var dot=pSprite("img/dot2.png")
     var dotC=new PIXI.Container()
     fireDots.addChild(dotC)
@@ -56,7 +56,7 @@ layer.useRenderTexture=true;
 layer.useDoubleBuffer=true;
 
 var trailSprite = new PIXI.Sprite(layer.getRenderTexture());
-trailSprite.alpha = 0.92;
+trailSprite.alpha = 0.96;
 
 var showLayer=new PIXI.Sprite(layer.getRenderTexture())
 
@@ -70,7 +70,7 @@ function setTrail(){
   app.stage.addChild(showLayer);
   //layer.rotation=.01
 
-  blurF.blur=24
+  blurF.blur=16
   trailSprite.filters=[blurF]
    //showLayer.blendMode=_ADD
    //trailSprite.blendMode=_ADD
