@@ -88,11 +88,11 @@ class CD
 		TweenMax.to @.pointer,1,
 			rotation: -0.4
 
-		TweenMax.to @.cdCenter,4,
-			rotation: Math.PI*2
+		TweenMax.to @.cdCenter,15,
+			rotation: Math.PI*2*3
 			repeat: 10
-		TweenMax.to @.cd,4,
-			rotation: Math.PI*2
+		TweenMax.to @.cd,15,
+			rotation: Math.PI*2*3
 			repeat: 10
 	stop: ->
 		@.stopAll()
