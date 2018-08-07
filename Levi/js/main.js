@@ -290,6 +290,7 @@ UGC = function () {
         cover.y = 169;
         border = new Graphics();
         border.beginFill(0xffffff);
+        border.drawRect(0, -50, 10, 516);
         box.addChild(border);
         this.lineList = list = [];
         for (i = k = 0; k < 16; i = ++k) {
