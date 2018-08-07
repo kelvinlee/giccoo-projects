@@ -30,11 +30,12 @@ block content
   .load#loading(:class="{fadeZoomOut: out,animated: out}",v-show="mounted",style="display: none")
     .loading.fadeOut.animated.delay-20
       img(src="#{url}/img/loading-text.png")
-    .loading-text
-      p Loading...{{progress}}%
+    transition(name="page-fade")
+      .loading-text(v-show="progress < 100")
+        p Loading...{{progress}}%
     audio#fl(src="//image.giccoo.com/projects/Levi-special/mp3/fl2.mp3")
     transition(name="page-fade")
-      .open(v-show="progress >= 80 && openShow",@click="openMusic") 打开声音
+      .open(v-show="progress >= 99 && openShow",@click="openMusic") 打开声音
 
   .main#main(v-show="mounted",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
     transition(name="page-fade")
@@ -56,10 +57,13 @@ block content
           audio#audiotv(src="//image.giccoo.com/projects/Levi-special/mp3/tv.mp3")
           audio#audiocd(src="//image.giccoo.com/projects/Levi-special/mp3/cd2.mp3")
           audio#audiomz(src="//image.giccoo.com/projects/Levi-special/mp3/mz.mp3")
-          //- @touchmove=" note = false ",
-          .plant(@touchmove=" note = false ",@scroll=" note = false ")
+          //- @touchmove=" note = false ", @touchmove=" note = false ",
+          .plant#plant(@scroll=" scroll ")
             .bg-box
               img(src="#{url}/img/bg.jpg")
+              .hand.hand-tv
+              .hand.hand-cd
+              .hand.hand-audio
               .neon
                 img(src="#{url}/img/neon-off.png")
               .btn-tv(@click="openTV")
@@ -107,7 +111,7 @@ block content
                 a.focus(href="https://music.163.com/#/user/home?id=1529461944")
                 .join
             transition(name="page-fade")
-              .note(v-show="note")
+              .note(:class="{down: !note}")
                 img(src="#{url}/img/note.png")
                 transition(name="page-fade")
                   .text(v-show="note")
