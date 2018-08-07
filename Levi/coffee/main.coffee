@@ -379,6 +379,7 @@ init = ->
 				.catch (e)=>
 					@.loading = false	
 			share: (image)->
+				console.log image
 				folder = "Levi"
 				if @.authorization
 					folder = "Levis"
@@ -391,6 +392,7 @@ init = ->
 				return @.faild() unless image?
 				return false if @.pushed
 				
+				# axios.post "http://localhost:8881/api/upload/image64/",data
 				axios.post imageurl,data
 				.then (msg)=>
 					if msg.data.recode is 200

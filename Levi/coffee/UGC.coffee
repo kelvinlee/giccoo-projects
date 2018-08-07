@@ -382,7 +382,7 @@ class UGC
 			@.note.y -= @.qrcode.height+40
 			@.app.renderer.render @.app.stage
 			if main.wy
-				main.share @.app.view.toDataURL()
+				main.share @.app.view.toDataURL("image/jpeg",0.6)
 			else
 				main.setugc @.app.view.toDataURL()
 

@@ -642,7 +642,7 @@ UGC = function () {
           _this3.note.y -= _this3.qrcode.height + 40;
           _this3.app.renderer.render(_this3.app.stage);
           if (main.wy) {
-            return main.share(_this3.app.view.toDataURL());
+            return main.share(_this3.app.view.toDataURL("image/jpeg", 0.6));
           } else {
             return main.setugc(_this3.app.view.toDataURL());
           }
@@ -1190,6 +1190,7 @@ init = function init() {
       },
       share: function share(image) {
         var data, folder;
+        console.log(image);
         folder = "Levi";
         if (this.authorization) {
           folder = "Levis";
@@ -1206,6 +1207,8 @@ init = function init() {
         if (this.pushed) {
           return false;
         }
+
+        // axios.post "http://localhost:8881/api/upload/image64/",data
         return axios.post(imageurl, data).then(function (msg) {
           if (msg.data.recode === 200) {
             return main.success(msg.data);
