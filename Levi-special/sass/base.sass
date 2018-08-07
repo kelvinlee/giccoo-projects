@@ -24,13 +24,36 @@ $pageMainBGColor: #000;
 		opacity: 1
 	100%
 		opacity: 0
-+keyframes(iconFlash)
-	0%,100%
++keyframes(handMove)
+	0%
+		+transform(translate3d(0,0,0) scale(0.7,0.7))
+		opacity: 0
+	30%
 		opacity: 1
-		+transform(scale(1.2,1.2))
-	50%
-		opacity: 0.2
-		+transform(scale(1,1))
+	70%,80%
+		+transform(translate3d(0,-100%,0) scale(1,1))
+	75%,85%
+		+transform(translate3d(0,-100%,0) scale(0.9,0.9))
+		opacity: 1
+	95%
+		+transform(translate3d(0,-100%,0) scale(1,1))
+		opacity: 1
+	100%
+		opacity: 0
+		+transform(translate3d(0,-100%,0) scale(1,1))
+		
++keyframes(handLight)
+	0%
+		opacity: 0
+	70%,80%
+		opacity: 0
+	75%,85%
+		opacity: 1
+	95%
+		opacity: 1
+	100%
+		opacity: 0
+
 +keyframes(moveLeft)
 	0%
 		+transform(translate3d(-50%,0,0))
@@ -182,26 +205,31 @@ video,canvas,svg
 	animation-timing-function: linear
 	.open
 		+posa
-		+tr(2rem)
+		+bl(6%,50%)
 		+w(20%)
 		+text-center
 		+font-size(0.8rem)
+		+transform(translate3d(-50%,0,0))
 		color: #fff
+		// border: solid 1px #fff
+		padding: 5px 0px
+		// border-radius: 5px
+		text-shadow: 1px 1px 3px rgba(0,0,0,0.7),-1px -1px 3px rgba(0,0,0,0.7)
 		&:after,&:before
 			content: " "
 			+posa
-			+tl(-70%,50%)
-			+w(3rem)
-			+h(3rem)
-			margin-left: -1.5rem
-			border: solid 2px #fff
+			+tl(-50%,50%)
+			+w(4rem)
+			+h(4rem)
+			margin-left: -2rem
+			border: solid 3px #fff
 			border-radius: 50%
 			+overhide
 			+box
 			transform-origin: center center
-			+animation(fadeOutCircle,2s,ease,infinite)
+			+animation(fadeOutCircle,1s,ease,infinite)
 		&:before
-			animation-delay: 400ms
+			animation-delay: 300ms
 	.loading
 		+posa
 		+tl(50%)
@@ -221,6 +249,7 @@ video,canvas,svg
 		+text-center
 		+font-size(0.8rem)
 		color: #fff
+		text-shadow: 1px 1px 3px rgba(0,0,0,0.7)
 
 .music-box
 	+w(5%)
@@ -584,6 +613,9 @@ video,canvas,svg
 		+tr(50%,5%)
 		+transform(translate3d(0,-50%,0))
 		z-index: 999
+		+tran
+		&.down
+			top: 80%
 		.text
 			+posa
 			+tl
@@ -616,6 +648,39 @@ video,canvas,svg
 		+h
 		overflow-x: scroll
 		+touch
+		img
+			touch-callout: none
+		.hand
+			+posa
+			+tl
+			+wh(2rem,4rem)
+			// +b($cdn+"img/hand.png",no-repeat,right,top,200% auto)
+			z-index: 4
+			+animation(handMove,2s,ease,infinite)
+			&:before
+				content: " "
+				+posa
+				+tl
+				+w
+				+h
+				+b($cdn+"img/hand.png",no-repeat,left,top,200% auto)
+				display: block
+			&:after
+				content: " "
+				+posa
+				+tl
+				+w
+				+h
+				+b($cdn+"img/hand.png",no-repeat,right,top,200% auto)
+				display: block
+				+animation(handLight,2s,ease,infinite)
+			&.hand-tv
+				+tl(56%,29%)
+			&.hand-cd
+				+tl(53%,48%)
+			&.hand-audio
+				+tl(53%,85%)
+
 		.bg-box
 			+h
 			+show-inline

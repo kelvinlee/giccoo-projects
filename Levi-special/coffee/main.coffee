@@ -108,7 +108,7 @@ window.onload = ->
 						setTimeout ->
 							document.getElementById('loading').style.display = "none"
 						,2020
-					,2000
+					,3000
 			,1000/20
 			setTimeout =>
 				init()
@@ -171,6 +171,15 @@ init = ->
 			noteArrow: true
 			videoPop: false
 		methods:
+			scroll: (evt)->
+				
+				# console.log evt.target,evt.target.scrollLeft,evt.target.scrollWidth,TrueW
+				if evt.target.scrollLeft >= 10
+					@.note = false
+				else
+					@.note = true
+				if evt.target.scrollLeft >= (evt.target.scrollWidth - TrueW)
+					console.log "over left"
 			openTV: ->
 				tv = document.getElementById "audiotv"
 				tv.play()

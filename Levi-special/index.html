@@ -18,12 +18,14 @@
   <body>
     <div id="loading" :class="{fadeZoomOut: out,animated: out}" v-show="mounted" style="display: none" class="load">
       <div class="loading fadeOut animated delay-20"><img src="./img/loading-text.png"></div>
-      <div class="loading-text">
-        <p>Loading...{{progress}}%</p>
-      </div>
+      <transition name="page-fade">
+        <div v-show="progress &lt; 100" class="loading-text">
+          <p>Loading...{{progress}}%</p>
+        </div>
+      </transition>
       <audio id="fl" src="//image.giccoo.com/projects/Levi-special/mp3/fl2.mp3"></audio>
       <transition name="page-fade">
-        <div v-show="progress &gt;= 80 &amp;&amp; openShow" @click="openMusic" class="open">打开声音</div>
+        <div v-show="progress &gt;= 99 &amp;&amp; openShow" @click="openMusic" class="open">打开声音</div>
       </transition>
     </div>
     <div id="main" v-show="mounted" :class="{biger: biger,smaller:smaller}" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">
@@ -47,8 +49,11 @@
             <audio id="audiotv" src="//image.giccoo.com/projects/Levi-special/mp3/tv.mp3"></audio>
             <audio id="audiocd" src="//image.giccoo.com/projects/Levi-special/mp3/cd2.mp3"></audio>
             <audio id="audiomz" src="//image.giccoo.com/projects/Levi-special/mp3/mz.mp3"></audio>
-            <div @touchmove=" note = false " @scroll=" note = false " class="plant">
+            <div id="plant" @scroll=" scroll " class="plant">
               <div class="bg-box"><img src="./img/bg.jpg">
+                <div class="hand hand-tv"></div>
+                <div class="hand hand-cd"></div>
+                <div class="hand hand-audio"></div>
                 <div class="neon"><img src="./img/neon-off.png"></div>
                 <div @click="openTV" class="btn-tv"></div>
                 <div class="tv">
@@ -79,7 +84,7 @@
                 </div>
               </div>
               <transition name="page-fade">
-                <div v-show="note" class="note"><img src="./img/note.png">
+                <div :class="{down: !note}" class="note"><img src="./img/note.png">
                   <transition name="page-fade">
                     <div v-show="note" class="text"><img src="./img/note-text.png"></div>
                   </transition>
