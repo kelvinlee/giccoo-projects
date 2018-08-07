@@ -1,13 +1,47 @@
 var stage1=new PIXI.Container()
 var fireDots=new PIXI.Container()
 var dotSpeed=[1,1]
+var p1bg=pSprite("img/p1bg.jpg")
+var p1bg2=pSprite("img/p1bg.jpg")
+var p1mask1=pSprite("img/firemask3.png")
+var dismap=pSprite("img/dismap.jpg")
 function setPage1(){
   pStage.addChild(stage1)
+
+
+  
+
+  //setMask()
+  setDisplaceMent()
+  
+  
   stage1.addChild(fireDots)
   setFireDot()
-  //moveFireDot()
-  //app.ticker.add(moveFireDot);
+
   setTrail()
+}
+function setDisplaceMent(){
+  stage1.addChild(p1bg)
+  stage1.addChild(p1mask1)
+  var disF=new PIXI.filters.DisplacementFilter(p1mask1)
+  stage1.filters=[disF]
+  disF.scale.x=15
+  disF.scale.y=0
+  p1mask1.height=stageH*2
+  TweenMax.to(p1mask1,2,{y:-stageH/8*2,repeat:1000,ease:Linear.easeNone})
+}
+
+function setMask(){
+  stage1.addChild(p1bg2)
+  stage1.addChild(p1bg)
+  stage1.addChild(p1mask1)
+  p1bg.mask = p1mask1
+  p1bg.y=stageH/200
+  p1bg.x=3
+  p1mask1.height=stageH*2
+  TweenMax.to(p1mask1,2,{y:-stageH/8*2,repeat:1000,ease:Linear.easeNone})
+  TweenMax.to(p1bg,1,{x:-3,repeat:1000,ease:Linear.easeNone,yoyo:true,overwrite:0})
+  //TweenMax.to(p1bg,1.5,{y:-stageH/200,repeat:1000,yoyo:true,overwrite:0})
 }
 
 dotA=[]
@@ -56,14 +90,14 @@ layer.useRenderTexture=true;
 layer.useDoubleBuffer=true;
 
 var trailSprite = new PIXI.Sprite(layer.getRenderTexture());
-trailSprite.alpha = 0.96;
+trailSprite.alpha =.6// 0.96;
 
 var showLayer=new PIXI.Sprite(layer.getRenderTexture())
 
 var blurF=new PIXI.filters.BlurFilter()
 
 function setTrail(){
-  layer.addChild(pStage)
+  layer.addChild(fireDots)
   layer.addChild(trailSprite);
   
   app.stage.addChild(layer);
@@ -71,12 +105,9 @@ function setTrail(){
   //layer.rotation=.01
 
   blurF.blur=16
-  trailSprite.filters=[blurF]
+  //trailSprite.filters=[blurF]
    //showLayer.blendMode=_ADD
    //trailSprite.blendMode=_ADD
-   TweenMax.to(this,3,{onComplete:setTest})
+
 }
-function setTest(){
-  alert("test")
-  __url="http://baidu.com"
-}
+
