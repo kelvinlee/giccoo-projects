@@ -30,7 +30,7 @@ block content
         .up
           #cd
           .message
-            p(:class="{on: (index+1) == line}",v-for="(text,index) in msgList") {{text}}
+            p(:class="{on: (index+1) == line}",v-for="(text,index) in msgList",v-html="text")
           .player
             .btn.btn-play(@click="play")
               .play(v-show="!playing")
@@ -50,7 +50,7 @@ block content
             .singer
               img(:src="'#{url}/img/music-singer-name-'+info.singer+'.png'")
         a.btn-next(:href="wy?'https://activity.music.163.com/Levi/':'http://levi.arkrdigital.com/music/'")
-          img(src="#{url}/img/music-btn-next-old.png")
+          img(src="#{url}/img/music-btn-next.png")
 
 
 block js

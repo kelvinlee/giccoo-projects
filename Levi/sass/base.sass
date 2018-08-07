@@ -74,6 +74,8 @@ body
 	max-width: 640px
 	+m
 	+posr
+
+
 video,canvas,svg
 	+w
 	+h(auto)
@@ -690,7 +692,10 @@ video,canvas,svg
 			+w
 			+posr
 			margin-top: 3%
-			
+			.left,.right
+				+tran
+				&.half
+					opacity: 0.3
 			.left
 				+posa
 				+tl(0,12%)

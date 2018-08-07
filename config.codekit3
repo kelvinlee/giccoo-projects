@@ -8895,10 +8895,10 @@
 		},
 	"\/Levi\/img\/bo.png": {
 		"ft": 32768,
-		"iS": 1107,
-		"oA": 0,
+		"iS": 1110,
+		"oA": 1,
 		"oAP": "\/Levi\/img\/bo.png",
-		"oF": 0,
+		"oF": 1,
 		"oIPL": 1,
 		"opt": 1,
 		"oT": 1,
@@ -9691,8 +9691,8 @@
 		"oA": 0,
 		"oAP": "\/Levi\/img\/ugc-note-text-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -10031,6 +10031,57 @@
 		"ft": 65536,
 		"oA": 1,
 		"oAP": "\/build\/libs\/css",
+		"oF": 0
+		},
+	"\/libs\/font\/Interstate Regular-embed.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/libs\/font\/Interstate Regular-embed-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/libs\/font\/Interstate Regular.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/libs\/font\/Interstate Regular-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/libs\/font\/Interstate Regular.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/libs\/font\/Interstate Regular.eot",
+		"oF": 0
+		},
+	"\/libs\/font\/Interstate Regular.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/libs\/font\/Interstate Regular.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/libs\/font\/Interstate Regular.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/libs\/font\/Interstate Regular.ttf",
+		"oF": 0
+		},
+	"\/libs\/font\/Interstate Regular.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/libs\/font\/Interstate Regular.woff",
 		"oF": 0
 		},
 	"\/libs\/img\/audio-play.png": {

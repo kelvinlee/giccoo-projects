@@ -136,29 +136,47 @@ class UGC
 	newCover: ->
 		@.cover = cover = new Container()
 		box = new Container()
-		cover.x = 127
+		cover.x = 126
 		cover.y = 169
 		border = new Graphics()
 		border.beginFill(0xffffff)
-		# border.drawRect(0,0,12,416)
-		# border.drawRect(402,0,14,416)
-		# border.drawRect(0,0,416,10)
-		# border.drawRect(0,406,416,10)
+		border.drawRect(0,-50,10,516)
 		box.addChild border
 		@.lineList = list = []
 		for i in [0...16]
 			line = new Sprite getTe "#{_CDN}img/bo.png"
 			line.anchor.set(0,0.5)
-			line.x = line.width*i
+			line.width = 25
+			line.x = 10 + line.width*i
 			line.y = line.height/2
 			line.sy = line.scale.y = 1.5 + Math.random()*1
 			line.de = Math.random() > 0.5
 			line.speed = 1+Math.random()*6
+			# line.alpha = 0.7
 			box.addChild line
 			list.push line
+		border = new Graphics()
+		border.beginFill(0xffffff)
+		border.drawRect(list[list.length-1].x+25-0.22,-50,10.22,516)
+		box.addChild border
+			# console.log line.x,line.width,line.scale.x
+		# @.lineList = list = []
+		# for i in [0...16]
+		# 	line = new Graphics()
+		# 	line.beginFill(0xffffff)
+		# 	line.drawRect(0,0,26,((416-50)/2))
+		# 	line.drawRect(0,((416-50)/2)+50,26,((416-50)/2))
+		# 	line.drawRect(0,((416-50)/2),6,50)
+		# 	line.drawRect(20,((416-50)/2),6,50)
+		# 	line.closePath()
+		# 	line.width = 30
+		# 	line.x = if i isnt 0 then line.width + list[list.length-1].x - 0.21 else -1
+		# 	box.addChild line
+		# 	list.push line
+		# box.scale.set(1.01,1.01)
 		mask = new Graphics()
 		mask.beginFill(0xffffff)
-		mask.drawRect(0,0,416,416)
+		mask.drawRect(0,0,418,416)
 
 		cover.addChild box
 		box.mask = mask
@@ -175,10 +193,10 @@ class UGC
 	stopLine: ->
 		@._time = new Date().getTime()
 		@.lineMoving = false
-		for item in [0...@.lineList.length]
+		for item in @.lineList
 			item.scale.y = item.ry if item.ry?
 	saveLine: ->
-		for item in [0...@.lineList.length]
+		for item in @.lineList
 			item.ry = item.scale.y
 	updateLine: (detail)->
 		return false unless @.lineMoving
@@ -284,7 +302,7 @@ class UGC
 		@.bg.mask = bgMask
 
 	lyricUpdate: (text)->
-		return false if text.gblen() > 64
+		return false if text.length > 32#gblen() > 64
 		@.album.removeChild @.lyric if @.lyric?
 		@.lyric = new Container()
 		# text = "每次送他去机场，真的都很累。因为"
@@ -293,17 +311,18 @@ class UGC
 		n = 0
 		lineH = 32
 		for index in [0...texts.length]
-			if list[n].join("").gblen() >= 16
+			if list[n].join("").length >= 8#.gblen() >= 16
 				n++ 
 				list[n] = []
 			list[n].push texts[index]
 		for i in [0...list.length]
 			continue if i >= 4
 			t = (i%4)*0.2
-			text = new Text list[i].join(" "),{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff, align : 'left'}
+			text = new Text list[i].join("   "),{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff, align : 'left'}
 			text.alpha = 1-t
 			text.y = lineH*4 - (4-(i%4+1))*lineH #+ (4-list.length)*lineH
-			text.x = (@.opts.w-text.width)/2
+			text.x = (@.opts.w-333)/2
+			console.log text.width
 			@.lyric.addChild text
 		@.album.addChild @.lyric
 	review: ->

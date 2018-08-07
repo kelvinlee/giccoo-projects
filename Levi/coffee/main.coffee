@@ -87,6 +87,20 @@ window.onload = ->
 	if IsPC()
 		document.getElementById("qrcode").className += " show"
 		return false
+	lastY = 0
+
+	# 停止上下滚动 / 注意有竖向滚动条会被禁止 (理论可以加到只不能上下滚动上.)
+	document.body.addEventListener "touchstart", (evt)->
+		lastY = evt.touches[0].clientY
+	document.body.addEventListener "touchmove", (evt)->
+		y = evt.touches[0].clientY
+		st = this.scrollTop
+		if y isnt lastY
+			evt.preventDefault()
+		lastY = y
+	,{passive: false}
+
+
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
 	else
@@ -286,7 +300,8 @@ init = ->
 				ugc.uploadOverText.visible = false
 			selectSingerStart: ->
 				return alert "请输入你发声了什么?" if @.text is ""
-				return alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
+				# return alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
+				return alert "字数限制32个字符" if @.text.length > 32
 				@.step = 4
 				ugc.albumInfo @.singerIndex
 			singerPrev: ->
@@ -453,14 +468,14 @@ init = ->
 					_second = (new Date().getTime() - time)/1000
 				,1000/20
 			text: (n,o)->
-				if @.text.gblen() > 64
+				if @.text.length > 32#gblen() > 64
 					t = @.text.split("")
 					tx = ""
 					for i in t
 						tx += i
-						break if tx.gblen() >= 64
+						break if tx.length >= 32#gblen() >= 64
 					@.text = tx
-					return alert "字数限制32个中文字符64个英文字符" 
+					return false #alert "字数限制32个中文字符64个英文字符" 
 				ugc.lyricUpdate @.text
 			nickname: (n,o)->
 				if @.nickname.gblen() > 20

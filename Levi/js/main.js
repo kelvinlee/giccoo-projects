@@ -286,30 +286,47 @@ UGC = function () {
         var border, box, cover, k, line, mask;
         this.cover = cover = new Container();
         box = new Container();
-        cover.x = 127;
+        cover.x = 126;
         cover.y = 169;
         border = new Graphics();
         border.beginFill(0xffffff);
-        // border.drawRect(0,0,12,416)
-        // border.drawRect(402,0,14,416)
-        // border.drawRect(0,0,416,10)
-        // border.drawRect(0,406,416,10)
         box.addChild(border);
         this.lineList = list = [];
         for (i = k = 0; k < 16; i = ++k) {
           line = new Sprite(getTe(_CDN + 'img/bo.png'));
           line.anchor.set(0, 0.5);
-          line.x = line.width * i;
+          line.width = 25;
+          line.x = 10 + line.width * i;
           line.y = line.height / 2;
           line.sy = line.scale.y = 1.5 + Math.random() * 1;
           line.de = Math.random() > 0.5;
           line.speed = 1 + Math.random() * 6;
+          // line.alpha = 0.7
           box.addChild(line);
           list.push(line);
         }
+        border = new Graphics();
+        border.beginFill(0xffffff);
+        border.drawRect(list[list.length - 1].x + 25 - 0.22, -50, 10.22, 516);
+        box.addChild(border);
+        // console.log line.x,line.width,line.scale.x
+        // @.lineList = list = []
+        // for i in [0...16]
+        // 	line = new Graphics()
+        // 	line.beginFill(0xffffff)
+        // 	line.drawRect(0,0,26,((416-50)/2))
+        // 	line.drawRect(0,((416-50)/2)+50,26,((416-50)/2))
+        // 	line.drawRect(0,((416-50)/2),6,50)
+        // 	line.drawRect(20,((416-50)/2),6,50)
+        // 	line.closePath()
+        // 	line.width = 30
+        // 	line.x = if i isnt 0 then line.width + list[list.length-1].x - 0.21 else -1
+        // 	box.addChild line
+        // 	list.push line
+        // box.scale.set(1.01,1.01)
         mask = new Graphics();
         mask.beginFill(0xffffff);
-        mask.drawRect(0, 0, 416, 416);
+        mask.drawRect(0, 0, 418, 416);
         cover.addChild(box);
         box.mask = mask;
         cover.addChild(mask);
@@ -333,11 +350,13 @@ UGC = function () {
     }, {
       key: 'stopLine',
       value: function stopLine() {
-        var item, k, ref, results;
+        var item, k, len2, ref, results;
         this._time = new Date().getTime();
         this.lineMoving = false;
+        ref = this.lineList;
         results = [];
-        for (item = k = 0, ref = this.lineList.length; 0 <= ref ? k < ref : k > ref; item = 0 <= ref ? ++k : --k) {
+        for (k = 0, len2 = ref.length; k < len2; k++) {
+          item = ref[k];
           if (item.ry != null) {
             results.push(item.scale.y = item.ry);
           } else {
@@ -349,9 +368,11 @@ UGC = function () {
     }, {
       key: 'saveLine',
       value: function saveLine() {
-        var item, k, ref, results;
+        var item, k, len2, ref, results;
+        ref = this.lineList;
         results = [];
-        for (item = k = 0, ref = this.lineList.length; 0 <= ref ? k < ref : k > ref; item = 0 <= ref ? ++k : --k) {
+        for (k = 0, len2 = ref.length; k < len2; k++) {
+          item = ref[k];
           results.push(item.ry = item.scale.y);
         }
         return results;
@@ -503,7 +524,8 @@ UGC = function () {
       key: 'lyricUpdate',
       value: function lyricUpdate(text) {
         var index, k, l, lineH, n, ref, ref1, t, texts;
-        if (text.gblen() > 64) {
+        if (text.length > 32) {
+          //gblen() > 64
           return false;
         }
         if (this.lyric != null) {
@@ -516,7 +538,8 @@ UGC = function () {
         n = 0;
         lineH = 32;
         for (index = k = 0, ref = texts.length; 0 <= ref ? k < ref : k > ref; index = 0 <= ref ? ++k : --k) {
-          if (list[n].join("").gblen() >= 16) {
+          if (list[n].join("").length >= 8) {
+            //.gblen() >= 16
             n++;
             list[n] = [];
           }
@@ -527,7 +550,7 @@ UGC = function () {
             continue;
           }
           t = i % 4 * 0.2;
-          text = new Text(list[i].join(" "), {
+          text = new Text(list[i].join("   "), {
             fontFamily: 'Arial',
             fontSize: 24,
             fill: 0xffffff,
@@ -535,7 +558,8 @@ UGC = function () {
           });
           text.alpha = 1 - t;
           text.y = lineH * 4 - (4 - (i % 4 + 1)) * lineH; //+ (4-list.length)*lineH
-          text.x = (this.opts.w - text.width) / 2;
+          text.x = (this.opts.w - 333) / 2;
+          console.log(text.width);
           this.lyric.addChild(text);
         }
         return this.album.addChild(this.lyric);
@@ -784,10 +808,27 @@ getOrientation = function getOrientation(file, callback) {
 };
 
 window.onload = function () {
+  var lastY;
   if (IsPC()) {
     document.getElementById("qrcode").className += " show";
     return false;
   }
+  lastY = 0;
+  // 停止上下滚动 / 注意有竖向滚动条会被禁止 (理论可以加到只不能上下滚动上.)
+  document.body.addEventListener("touchstart", function (evt) {
+    return lastY = evt.touches[0].clientY;
+  });
+  document.body.addEventListener("touchmove", function (evt) {
+    var st, y;
+    y = evt.touches[0].clientY;
+    st = this.scrollTop;
+    if (y !== lastY) {
+      evt.preventDefault();
+    }
+    return lastY = y;
+  }, {
+    passive: false
+  });
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
   } else {
@@ -1040,8 +1081,9 @@ init = function init() {
         if (this.text === "") {
           return alert("请输入你发声了什么?");
         }
-        if (this.text.gblen() > 64) {
-          return alert("字数限制32个中文字符64个英文字符");
+        if (this.text.length > 32) {
+          // return alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
+          return alert("字数限制32个字符");
         }
         this.step = 4;
         return ugc.albumInfo(this.singerIndex);
@@ -1266,18 +1308,20 @@ init = function init() {
       },
       text: function text(n, o) {
         var k, len2, t, tx;
-        if (this.text.gblen() > 64) {
+        if (this.text.length > 32) {
+          //gblen() > 64
           t = this.text.split("");
           tx = "";
           for (k = 0, len2 = t.length; k < len2; k++) {
             i = t[k];
             tx += i;
-            if (tx.gblen() >= 64) {
+            if (tx.length >= 32) {
+              //gblen() >= 64
               break;
             }
           }
           this.text = tx;
-          return alert("字数限制32个中文字符64个英文字符");
+          return false; //alert "字数限制32个中文字符64个英文字符" 
         }
         return ugc.lyricUpdate(this.text);
       },

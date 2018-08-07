@@ -201,9 +201,9 @@ block content
                   .singer(:class="{p3: (singerIndex-3) >= #{i},p2: (singerIndex-2) == #{i},p1: (singerIndex-1) == #{i},on: singerIndex == #{i},n1: (singerIndex+1) == #{i},n2: (singerIndex+2) == #{i},n3: (singerIndex+3) <= #{i}}")
                     img(src="#{url}/img/singer-#{i}.jpg")
                 -;
-                .left(@click="singerPrev")
+                .left(@click="singerPrev",:class="{half: singerIndex == 1}")
                   img(src="#{url}/img/icon-left.png")
-                .right(@click="singerNext")
+                .right(@click="singerNext",:class="{half: singerIndex == 5}")
                   img(src="#{url}/img/icon-left.png")
                 .box.on
                   img(src="#{url}/img/singer-3.jpg")

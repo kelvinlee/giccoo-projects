@@ -118,15 +118,18 @@ init = ->
 			cdUpdate: ->
 				_cd.avatar "http://image.giccoo.com/upload/"+@.info.avatar+"?x-oss-process=image/format,jpg,quality,q_60/crop,x_129,y_279,w_416,h_416"
 				texts = @.info.message.split("")
-				list = [""]
+				list = [[]]
 				n = 0
 				lineH = 32
 				for index in [0...texts.length]
-					if list[n].gblen() >= 16
+					if list[n].length >= 8#.gblen() >= 16
 						n++ 
-						list[n] = ""
-					list[n] += texts[index]+""
-				@.msgList = list
+						list[n] = []
+					list[n].push texts[index]
+				newlist = []
+				for texts in list
+					newlist.push texts.join("&nbsp;&nbsp;&nbsp;")
+				@.msgList = newlist
 			ask: (id)->
 				axios.get "#{apiLink}active/Levi/info/id/#{id}"
 				.then (msg)=>
