@@ -74,16 +74,9 @@ function setTrail(){
   trailSprite.filters=[blurF]
    //showLayer.blendMode=_ADD
    //trailSprite.blendMode=_ADD
+   TweenMax.to(this,3,{onComplete:setTest})
 }
-
-// function moveFireDot(){
-//   for (var i = 0; i < dotA.length; i++) {
-//     dotA[i].x+=dotSpeed[0]
-//     dotA[i].y+=dotSpeed[1]
-
-//     if(dotA[i].x>640+50){      dotA[i].x=-50    }
-//     if(dotA[i].x<-50){         dotA[i].x=640+50    }
-//     if(dotA[i].y>stageH+50){      dotA[i].y=-50    }
-//     if(dotA[i].y<-50){         dotA[i].y=stageH+50    }
-//   };
-// }
+function setTest(){
+  alert("test")
+  __url="http://baidu.com"
+}
