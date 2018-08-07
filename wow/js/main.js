@@ -1,5 +1,6 @@
 var global = {};
 var sys="other"//"NeteaseMusic"//"other"
+var __url="http://m.giccoo.com/mygym/"
 $(document).ready(function load (){
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
@@ -15,7 +16,7 @@ $(document).ready(function load (){
     shareContent = {
       title: "定义我的燃动健身房",
       desc: "新高尔夫，点“燃”你的理想健身房！",
-      link: "http://m.giccoo.com/mygym/",
+      link: __url,
       imgUrl: "http://m.giccoo.com/mygym/img/ico.jpg",
       success: function() {},
       cancel: function() {}
@@ -25,7 +26,7 @@ $(document).ready(function load (){
     shareContent2 = {
       title: "【定义我的燃动健身房】新高尔夫，点“燃”你的理想健身房！",
       desc: "",
-      link: "http://m.giccoo.com/mygym/",
+      link: __url,
       imgUrl: "http://m.giccoo.com/mygym/img/ico.jpg",
       success: function() {},
       cancel: function() {}

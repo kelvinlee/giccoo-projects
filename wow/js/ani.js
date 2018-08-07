@@ -22,7 +22,7 @@ function setFireDot(){
     dotC.position.set(Math.random()*640,Math.random()*stageH+stageH/2*.7)
     dot.pivot.set(25,25)
     dotC.scale.x=dotC.scale.y=(Math.random()*Math.random()*.8+.2)*2
-    dotC.blendMode=_ADD
+    //================dotC.blendMode=_ADD
     var _t=Math.random()*2+1
     //var _delay=Math.random()*2+1
     dot.alpha=0
@@ -74,16 +74,9 @@ function setTrail(){
   trailSprite.filters=[blurF]
    //showLayer.blendMode=_ADD
    //trailSprite.blendMode=_ADD
+   TweenMax.to(this,3,{onComplete:setTest})
 }
-
-// function moveFireDot(){
-//   for (var i = 0; i < dotA.length; i++) {
-//     dotA[i].x+=dotSpeed[0]
-//     dotA[i].y+=dotSpeed[1]
-
-//     if(dotA[i].x>640+50){      dotA[i].x=-50    }
-//     if(dotA[i].x<-50){         dotA[i].x=640+50    }
-//     if(dotA[i].y>stageH+50){      dotA[i].y=-50    }
-//     if(dotA[i].y<-50){         dotA[i].y=stageH+50    }
-//   };
-// }
+function setTest(){
+  alert("test")
+  __url="http://baidu.com"
+}
