@@ -4,16 +4,16 @@ var dotSpeed=[1,1]
 var p1bg=pSprite("img/p1bg.jpg")
 var p1bg2=pSprite("img/p1bg.jpg")
 var p1mask1=pSprite("img/firemask3.png")
-var dismap=pSprite("img/dismap.jpg")
+//var dismap=pSprite("img/dismap.jpg")
 function setPage1(){
   pStage.addChild(stage1)
 
 
   
 
-  //setMask()
-  setDisplaceMent()
-  
+  setMask()
+  //setDisplaceMent()
+  setScorll()
   
   stage1.addChild(fireDots)
   setFireDot()
@@ -35,11 +35,12 @@ function setMask(){
   stage1.addChild(p1bg2)
   stage1.addChild(p1bg)
   stage1.addChild(p1mask1)
+  p1bg.height=p1bg2.height=stageH
   p1bg.mask = p1mask1
   p1bg.y=stageH/200
   p1bg.x=3
   p1mask1.height=stageH*2
-  TweenMax.to(p1mask1,2,{y:-stageH/8*2,repeat:1000,ease:Linear.easeNone})
+  TweenMax.to(p1mask1,1,{y:-stageH/8*2,repeat:1000,ease:Linear.easeNone})
   TweenMax.to(p1bg,1,{x:-3,repeat:1000,ease:Linear.easeNone,yoyo:true,overwrite:0})
   //TweenMax.to(p1bg,1.5,{y:-stageH/200,repeat:1000,yoyo:true,overwrite:0})
 }
@@ -47,7 +48,7 @@ function setMask(){
 dotA=[]
 function setFireDot(){
   for (var i = 0; i < 100; i++) {
-    var dot=pSprite("img/dot2.png")
+    var dot=pSprite("img/dot3.png")
     var dotC=new PIXI.Container()
     fireDots.addChild(dotC)
     dotC.addChild(dot)
@@ -56,8 +57,8 @@ function setFireDot(){
     dotC.position.set(Math.random()*640,Math.random()*stageH+stageH/2*.7)
     dot.pivot.set(25,25)
     dotC.scale.x=dotC.scale.y=(Math.random()*Math.random()*.8+.2)*2
-    //================dotC.blendMode=_ADD
-    var _t=Math.random()*2+1
+    dotC.blendMode=_ADD//================
+    var _t=Math.random()
     //var _delay=Math.random()*2+1
     dot.alpha=0
     TweenMax.to(dotC,_t,{alpha:1,onComplete:moveSingleDot,onCompleteParams:[dotC,dot]})
@@ -81,7 +82,7 @@ function moveSingleDot(_dotC,_dot){
   TweenMax.to(_dot,_t,{alpha:1,delay:_delay,overwrite:0})
   TweenMax.to(_dot,_t,{alpha:0,delay:_t+_delay,onComplete:moveSingleDot,onCompleteParams:[_dotC,_dot],overwrite:0})
   
-  TweenMax.to(_dotC,_t*2-.05,{x:_dotC.x+Math.random()*640-320,y:_dotC.y-Math.random()*stageH,rotation:Math.random()*16-8,delay:_delay,overwrite:0})
+  TweenMax.to(_dotC,_t*2-.05,{x:_dotC.x+Math.random()*640-320,y:_dotC.y-Math.random()*stageH*.8,rotation:Math.random()*16-8,delay:_delay,overwrite:0})
   TweenMax.to(_dot.scale,_t*2-.05,{x:_scale2,y:_scale2,delay:_delay,overwrite:0})
 }
 
@@ -90,7 +91,7 @@ layer.useRenderTexture=true;
 layer.useDoubleBuffer=true;
 
 var trailSprite = new PIXI.Sprite(layer.getRenderTexture());
-trailSprite.alpha =.6// 0.96;
+trailSprite.alpha =.86// 0.96;
 
 var showLayer=new PIXI.Sprite(layer.getRenderTexture())
 
@@ -111,3 +112,7 @@ function setTrail(){
 
 }
 
+
+function setScorll(){
+
+}
