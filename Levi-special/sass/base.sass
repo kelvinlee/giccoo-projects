@@ -614,6 +614,10 @@ video,canvas,svg
 		+transform(translate3d(0,-50%,0))
 		z-index: 999
 		+tran
+		&.left
+			right: auto
+			left: 5%
+			+transform(translate3d(0,-50%,0) scale(-1,1))
 		&.down
 			top: 80%
 		.text

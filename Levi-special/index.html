@@ -90,13 +90,16 @@
                   </transition>
                 </div>
               </transition>
+              <transition name="page-fade">
+                <div v-show="!note" class="note left down"><img src="./img/note.png"></div>
+              </transition>
             </div>
           </div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="videoPop" class="pop">
-          <div @click="videoPop = false; document.getElementById('video').pause()" class="close"><img src="./img/icon-close.png"></div>
+          <div @touchstart="videoPop = false; document.getElementById('video').pause()" class="close"><img src="./img/icon-close.png"></div>
           <div class="video">
             <video id="video" width="640" height="360" src="//image.giccoo.com/projects/Levi-special/mp4/v1.mp4" controls="true" preload="none" webkit-playsinline playsinline></video>
           </div>
