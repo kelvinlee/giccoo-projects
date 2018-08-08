@@ -82,7 +82,7 @@ function moveSingleDot(_dotC,_dot){
   TweenMax.to(_dot,_t,{alpha:1,delay:_delay,overwrite:0})
   TweenMax.to(_dot,_t,{alpha:0,delay:_t+_delay,onComplete:moveSingleDot,onCompleteParams:[_dotC,_dot],overwrite:0})
   
-  TweenMax.to(_dotC,_t*2-.05,{x:_dotC.x+Math.random()*640-320,y:_dotC.y-Math.random()*stageH*.8,rotation:Math.random()*16-8,delay:_delay,overwrite:0})
+  TweenMax.to(_dotC,_t*2-.05,{x:_dotC.x+Math.random()*640-320,y:_dotC.y-Math.random()*stageH*.8,rotation:Math.random()*10-5,delay:_delay,overwrite:0})
   TweenMax.to(_dot.scale,_t*2-.05,{x:_scale2,y:_scale2,delay:_delay,overwrite:0})
 }
 
@@ -91,7 +91,7 @@ layer.useRenderTexture=true;
 layer.useDoubleBuffer=true;
 
 var trailSprite = new PIXI.Sprite(layer.getRenderTexture());
-trailSprite.alpha =.86// 0.96;
+trailSprite.alpha =.66// 0.96;
 
 var showLayer=new PIXI.Sprite(layer.getRenderTexture())
 
