@@ -116,6 +116,9 @@ block content
                 transition(name="page-fade")
                   .text(v-show="note")
                     img(src="#{url}/img/note-text.png")
+            transition(name="page-fade")
+              .note.left.down(v-show="!note")
+                img(src="#{url}/img/note.png")
 
     transition(name="page-fade")
       .pop(v-show="videoPop")
