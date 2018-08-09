@@ -812,7 +812,7 @@ window.onload = function () {
   var lastY;
   TrueH = document.documentElement.clientHeight;
   TrueW = document.documentElement.clientWidth;
-  console.log("body:", document.body.clientWidth, document.body.clientHeight);
+  // console.log "body:",document.body.clientWidth,document.body.clientHeight
   if (IsPC()) {
     document.getElementById("qrcode").className += " show";
     return false;
@@ -1446,7 +1446,7 @@ init = function init() {
         }
         return console.log(data.action, _this9.canUpload);
       };
-      return console.log("update: v9 remove");
+      return console.log("update: v10 min-height");
     }
   });
 };

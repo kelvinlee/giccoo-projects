@@ -86,7 +86,7 @@ getOrientation = (file, callback) ->
 window.onload = ->
 	TrueH = document.documentElement.clientHeight
 	TrueW = document.documentElement.clientWidth
-	console.log "body:",document.body.clientWidth,document.body.clientHeight
+	# console.log "body:",document.body.clientWidth,document.body.clientHeight
 	if IsPC()
 		document.getElementById("qrcode").className += " show"
 		return false
@@ -567,4 +567,4 @@ init = ->
 					main.canUpload = true
 					ugc.stopLine()
 				console.log data.action,@.canUpload
-			console.log "update: v9 remove"
+			console.log "update: v10 min-height"
