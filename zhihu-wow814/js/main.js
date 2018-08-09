@@ -52,7 +52,7 @@ var loadWechatConfig = function() {
   s.parentNode.insertBefore(hm, s);
 };
 
-$('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件...
+$('body')[0].addEventListener('touchmove', function (event) {event.preventDefault();}, false);//阻止了浏览器默认的下拉事件....
 
 var screenW,screenH
 
@@ -171,9 +171,11 @@ $("#musicOff").click(function(){
   if(ifbgm==0){
     bgm.play();
     TweenLite.set($("#musicOff"),{opacity:1})
+    showCopy2()
   }else{
     bgm.pause();
     TweenLite.set($("#musicOff"),{opacity:0})
+    showCopy2()
   }
   ifbgm++
   if(ifbgm==2){ifbgm=0}
