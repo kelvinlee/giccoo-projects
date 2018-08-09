@@ -890,6 +890,9 @@ window.onload = function () {
 
       var timein;
       this.mounted = true;
+      TrueH = document.documentElement.clientHeight;
+      TrueW = document.documentElement.clientWidth;
+      console.log("after load:", TrueW, TrueW);
       return timein = setInterval(function () {
         _this4.progress += 2;
         if (_this4.progress >= _this4.progressOn) {
@@ -1446,7 +1449,7 @@ init = function init() {
         }
         return console.log(data.action, _this9.canUpload);
       };
-      return console.log("update: v10 min-height");
+      return console.log("update: v11 min-height");
     }
   });
 };

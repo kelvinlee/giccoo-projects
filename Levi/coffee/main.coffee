@@ -149,6 +149,9 @@ window.onload = ->
 				,520
 		mounted: ->
 			@.mounted = true
+			TrueH = document.documentElement.clientHeight
+			TrueW = document.documentElement.clientWidth
+			console.log "after load:",TrueW,TrueW
 			timein = setInterval =>
 				@.progress += 2
 				@.progress = @.progressOn if @.progress >= @.progressOn
@@ -567,4 +570,4 @@ init = ->
 					main.canUpload = true
 					ugc.stopLine()
 				console.log data.action,@.canUpload
-			console.log "update: v10 min-height"
+			console.log "update: v11 min-height"
