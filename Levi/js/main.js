@@ -812,6 +812,7 @@ window.onload = function () {
   var lastY;
   TrueH = document.documentElement.clientHeight;
   TrueW = document.documentElement.clientWidth;
+  console.log("body:", document.body.clientWidth, document.body.clientHeight);
   if (IsPC()) {
     document.getElementById("qrcode").className += " show";
     return false;
