@@ -1,6 +1,6 @@
 var global = {};
 var sys="other"//"NeteaseMusic"//"other"
-var __url="http://m.giccoo.com/mygym/"
+var __url="http://m.giccoo.com/zhihu-wow814/"
 $(document).ready(function load (){
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
