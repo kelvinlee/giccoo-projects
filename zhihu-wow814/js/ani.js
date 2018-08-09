@@ -179,7 +179,7 @@ function setScorll(){
     _copy.y=stageH/2
     _copy.pivot.y=316
     _copy.alpha=0
-    //TweenMax.to(copyA[i],1,{alpha:1,delay:i*.1})//t1A[i-1]
+    //TweenMax.to(copyA[i],1,{alpha:1,delay:i*.1})//t1A[i-1]/////
   };
 }
 var logo=pSprite("img/logo.png")
