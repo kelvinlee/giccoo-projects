@@ -892,7 +892,7 @@ window.onload = function () {
       this.mounted = true;
       TrueH = document.documentElement.clientHeight;
       TrueW = document.documentElement.clientWidth;
-      console.log("after load:", TrueW, TrueW);
+      console.log("after load:", TrueW, TrueH);
       return timein = setInterval(function () {
         _this4.progress += 2;
         if (_this4.progress >= _this4.progressOn) {
@@ -1365,6 +1365,9 @@ init = function init() {
       var _this9 = this;
 
       var h, version;
+      TrueH = document.documentElement.clientHeight;
+      TrueW = document.documentElement.clientWidth;
+      console.log("after main:", TrueW, TrueH);
       if (sys === "NeteaseMusic") {
         this.wy = true;
       }

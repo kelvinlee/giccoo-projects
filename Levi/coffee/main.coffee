@@ -151,7 +151,7 @@ window.onload = ->
 			@.mounted = true
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
-			console.log "after load:",TrueW,TrueW
+			console.log "after load:",TrueW,TrueH
 			timein = setInterval =>
 				@.progress += 2
 				@.progress = @.progressOn if @.progress >= @.progressOn
@@ -501,6 +501,9 @@ init = ->
 					return alert "字数限制10个中文字符20个英文字符" 
 				ugc.updateName @.nickname
 		mounted: ->
+			TrueH = document.documentElement.clientHeight
+			TrueW = document.documentElement.clientWidth
+			console.log "after main:",TrueW,TrueH
 			if sys is "NeteaseMusic"
 				@.wy = true
 			h = TrueH*2*(2-TrueW*2/750+0.01)
