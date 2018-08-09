@@ -171,9 +171,11 @@ $("#musicOff").click(function(){
   if(ifbgm==0){
     bgm.play();
     TweenLite.set($("#musicOff"),{opacity:1})
+    showCopy2()
   }else{
     bgm.pause();
     TweenLite.set($("#musicOff"),{opacity:0})
+    showCopy2()
   }
   ifbgm++
   if(ifbgm==2){ifbgm=0}

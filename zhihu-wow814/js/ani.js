@@ -172,6 +172,15 @@ function setScorll(){
 
   //p2bg.y=stageH-1300
   p2bg.alpha=0
+  for (var i = 1; i <= 11; i++) {
+    var _copy=pSprite("img/c"+i+".png")
+    copyA.push(_copy)
+    scorll.addChild(_copy)
+    _copy.y=stageH/2
+    _copy.pivot.y=316
+    _copy.alpha=0
+    //TweenMax.to(copyA[i],1,{alpha:1,delay:i*.1})//t1A[i-1]
+  };
 }
 var logo=pSprite("img/logo.png")
 var btn=pSprite("img/btn.png")
@@ -204,17 +213,24 @@ function openScorll(){
 }
 var copyA=[]
 var t1A=[1,1,1,1,1,1,1,1,1,1,1]
-var t2A=[0,2,4,6,8,10,12,14,16,18,20]
+var t2A=[0,0.2,1.8,6.6,10,15,18,22,26,27.5,30.8]
 function showCopy(){
   for (var i = 1; i <= 11; i++) {
-    var _copy=pSprite("img/c"+i+".png")
-    copyA.push=_copy
-    scorll.addChild(_copy)
-    _copy.y=stageH/2
-    _copy.pivot.y=316
-    _copy.alpha=0
-    TweenMax.to(_copy,1,{alpha:1,delay:i*.1})//t1A[i-1]
+
+    //_copy.alpha=0
+    TweenMax.to(copyA[i-1],3,{alpha:1,delay:t2A[i-1]})//t1A[i-1]
   };
+
+}
+var ifFirstTime=1
+function showCopy2(){
+  console.log("ddd")
+  if(ifFirstTime==1){
+    for (var i = 1; i <= 11; i++) {
+      TweenMax.to(copyA[i-1],1,{alpha:1,delay:(i-1)*.1})//t1A[i-1]
+    };
+    ifFirstTime=0
+  }
 
 }
 function goURL(){
