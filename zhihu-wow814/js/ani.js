@@ -120,14 +120,17 @@ var scorll2=pSprite("img/score.png")
 var stamp1=pSprite("img/stamp1.png")
 var stamp2=pSprite("img/stamp2.png")
 var p2bg=pSprite("img/p2bg.jpg")
-var p2copy=pSprite("img/copy.png")
+//var p2copy=pSprite("img/copy.png")
 var scorll=new PIXI.Container()
 var papperMask=new PIXI.Graphics()
+
+
 function setScorll(){
 
   app.stage.addChild(scorll)
+  scorll.addChild(p2bg)
   scorll.addChild(papper)
-  scorll.addChild(p2copy)
+  //scorll.addChild(p2copy)
   scorll.addChild(scorll1)
   scorll.addChild(scorll2)
   scorll.addChild(stamp2)
@@ -145,8 +148,8 @@ function setScorll(){
   papper.position.set(320,stageH/2)
   scorll1.y=stageH/2-32//stageH/2-316+42
   scorll2.y=stageH/2+32//stageH/2+316-42
-  p2copy.y=stageH/2
-  p2copy.pivot.y=316
+  // p2copy.y=stageH/2
+  // p2copy.pivot.y=316
   stamp1.pivot.y=stamp2.pivot.y=53
   stamp1.pivot.x=stamp2.pivot.x=320
   stamp1.y=stamp2.y=stageH/2
@@ -154,7 +157,7 @@ function setScorll(){
   TweenMax.to(stamp1,1,{alpha:0,yoyo:true,repeat:1000})
 
   scorll.addChild(papperMask)
-  p2copy.alpha=0
+  //p2copy.alpha=0
   papper.mask=papperMask
   papperMask.beginFill(0xffffff,0)
   papperMask.drawRect(0,0,640,64)
@@ -166,9 +169,15 @@ function setScorll(){
 
   scorll.interactive=true
   scorll.touchstart=openScorll
+
+  //p2bg.y=stageH-1300
+  p2bg.alpha=0
 }
+var logo=pSprite("img/logo.png")
+var btn=pSprite("img/btn.png")
 
 function openScorll(){
+  scorll.interactive=false
   console.log("open")
   TweenMax.to(scorll,2,{y:0})
   TweenMax.to(stamp1,.2,{alpha:0})
@@ -179,6 +188,35 @@ function openScorll(){
 
   TweenMax.to(papperMask,1.5,{height:632})
   TweenMax.to(scorll1,1.5,{y:stageH/2-316+42})
-  TweenMax.to(scorll2,1.5,{y:stageH/2+316-42})
+  TweenMax.to(scorll2,1.5,{y:stageH/2+316-42,onComplete:showCopy})
 
+  TweenMax.to(p2bg,2.5,{alpha:1,delay:.5,y:stageH-1300})
+  scorll.addChild(logo)
+  scorll.addChild(btn)
+  logo.y=stageH/2-316+42-204
+  btn.y=stageH/2+316-42+60
+  TweenMax.from(logo,1,{alpha:0})
+  TweenMax.from(btn,1,{alpha:0})
+  btn.interactive=true
+  btn.touchstart=goURL
+  TweenMax.set($(".musicBtn"),{display:"block"})
+  bgm.play();
+}
+var copyA=[]
+var t1A=[1,1,1,1,1,1,1,1,1,1,1]
+var t2A=[0,2,4,6,8,10,12,14,16,18,20]
+function showCopy(){
+  for (var i = 1; i <= 11; i++) {
+    var _copy=pSprite("img/c"+i+".png")
+    copyA.push=_copy
+    scorll.addChild(_copy)
+    _copy.y=stageH/2
+    _copy.pivot.y=316
+    _copy.alpha=0
+    TweenMax.to(_copy,1,{alpha:1,delay:i*.1})//t1A[i-1]
+  };
+
+}
+function goURL(){
+  window.location.href='http://www.baidu.com';
 }

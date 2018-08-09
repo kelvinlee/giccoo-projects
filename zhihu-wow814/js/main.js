@@ -14,20 +14,20 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "定义我的燃动健身房",
-      desc: "新高尔夫，点“燃”你的理想健身房！",
+      title: "来自艾泽拉斯的邀请信",
+      desc: "箭已在弦，战火重燃，勇士们，你们身在何处？艾泽拉斯正在集结号召，等待你们的归来与响应！",
       link: __url,
-      imgUrl: "http://m.giccoo.com/mygym/img/ico.jpg",
+      imgUrl: "http://m.giccoo.com/zhihu-wow814/img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };
 
     var shareContent2;
     shareContent2 = {
-      title: "【定义我的燃动健身房】新高尔夫，点“燃”你的理想健身房！",
+      title: "【来自艾泽拉斯的邀请信】箭已在弦，战火重燃，勇士们，你们身在何处？艾泽拉斯正在集结号召，等待你们的归来与响应！",
       desc: "",
       link: __url,
-      imgUrl: "http://m.giccoo.com/mygym/img/ico.jpg",
+      imgUrl: "http://m.giccoo.com/zhihu-wow814/img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };
@@ -157,9 +157,9 @@ function startPage1(){
 // };
 //=============BGM=========
 
-// var ifbgm=0
-// var bgm=$("#bgm")[0]
-// //微信端背景音乐播放...
+var ifbgm=1
+var bgm=$("#bgm")[0]
+//微信端背景音乐播放...
 // function iniListenSound(){
 //          document.addEventListener("WeixinJSBridgeReady", function(){
 //              bgm.play();
@@ -167,15 +167,15 @@ function startPage1(){
 //              TweenLite.set($("#musicOff"),{opacity:0})
 //         }, false);
 // }
-// $("#musicOff").click(function(){
-//   if(ifbgm==0){
-//     bgm.play();
-//     TweenLite.set($("#musicOff"),{opacity:0})
-//   }else{
-//     bgm.pause();
-//     TweenLite.set($("#musicOff"),{opacity:1})
-//   }
-//   ifbgm++
-//   if(ifbgm==2){ifbgm=0}
+$("#musicOff").click(function(){
+  if(ifbgm==0){
+    bgm.play();
+    TweenLite.set($("#musicOff"),{opacity:1})
+  }else{
+    bgm.pause();
+    TweenLite.set($("#musicOff"),{opacity:0})
+  }
+  ifbgm++
+  if(ifbgm==2){ifbgm=0}
 
-// })
+})
