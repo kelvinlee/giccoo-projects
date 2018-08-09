@@ -8393,6 +8393,14 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi-special\/img\/cd.gif": {
+		"ft": 4194304,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/cd.gif",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/Levi-special\/img\/focus-note.png": {
 		"ft": 32768,
 		"iS": 100825,
@@ -8420,6 +8428,17 @@
 		"iS": 2323,
 		"oA": 0,
 		"oAP": "\/Levi-special\/img\/gather-box.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi-special\/img\/hand.png": {
+		"ft": 32768,
+		"iS": 10832,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/hand.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -19231,6 +19250,39 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"\/wow\/img\/firemask1.png": {
+		"ft": 32768,
+		"iS": 8045,
+		"oA": 0,
+		"oAP": "\/wow\/img\/firemask1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/wow\/img\/firemask2.png": {
+		"ft": 32768,
+		"iS": 7969,
+		"oA": 0,
+		"oAP": "\/wow\/img\/firemask2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/wow\/img\/p1bg.jpg": {
+		"ft": 16384,
+		"iS": 82173,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/wow\/img\/p1bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"\/wow\/index.html": {
