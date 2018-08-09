@@ -183,6 +183,8 @@ init = ->
 			openTV: ->
 				tv = document.getElementById "audiotv"
 				tv.play()
+				video = document.getElementById "video"
+				video.play()
 				setTimeout =>
 					@.videoPop = true
 				,1200
@@ -196,7 +198,13 @@ init = ->
 				cd = document.getElementById "audiocd"
 				cd.play()
 				setTimeout =>
-					window.location.href = "https://music.163.com/#/playlist?id=2328252403&userid=38753829"
+					# window.location.href = "https://music.163.com/#/playlist?id=2328252403&userid=38753829"
+					# console.log CloudMusic.isInApp(),""
+					# CloudMusic.playlist(2328252403)
+					if CloudMusic.isInApp()
+						CloudMusic.playlist(2328252403)
+					else
+						window.location.href = "https://music.163.com/#/playlist?id=2328252403"
 				,1000
 			startbuild: ->
 			start: (evt)->

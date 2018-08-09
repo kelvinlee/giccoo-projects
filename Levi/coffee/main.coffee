@@ -219,6 +219,10 @@ init = ->
 			videoPop: false
 			canUpload: true
 		methods:
+			watchAD: ->
+				video = document.getElementById "video"
+				video.play()
+				@.videoPop = true
 			start: (evt)->
 				touch = evt.touches[0]
 				# console.log touch
@@ -248,6 +252,8 @@ init = ->
 				PIXI.sound.stop("bgm")
 				@.pageIndex = 2
 			startbuild: ->
+				unless CloudMusic.isInApp()
+					return CloudMusic.open("https://activity.music.163.com/Levi/")
 				unless @.v
 					return alert "请先升级到最新版本的网易云音乐"
 				@.pageIndex = 3

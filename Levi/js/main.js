@@ -973,6 +973,12 @@ init = function init() {
       canUpload: true
     },
     methods: {
+      watchAD: function watchAD() {
+        var video;
+        video = document.getElementById("video");
+        video.play();
+        return this.videoPop = true;
+      },
       start: function start(evt) {
         var touch;
         touch = evt.touches[0];
@@ -1013,6 +1019,9 @@ init = function init() {
         return this.pageIndex = 2;
       },
       startbuild: function startbuild() {
+        if (!CloudMusic.isInApp()) {
+          return CloudMusic.open("https://activity.music.163.com/Levi/");
+        }
         if (!this.v) {
           return alert("请先升级到最新版本的网易云音乐");
         }
