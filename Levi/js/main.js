@@ -810,6 +810,8 @@ getOrientation = function getOrientation(file, callback) {
 
 window.onload = function () {
   var lastY;
+  TrueH = document.documentElement.clientHeight;
+  TrueW = document.documentElement.clientWidth;
   if (IsPC()) {
     document.getElementById("qrcode").className += " show";
     return false;
@@ -908,9 +910,8 @@ window.onload = function () {
 
 init = function init() {
   var navH, smaller;
-  TrueH = document.documentElement.clientHeight;
-  TrueW = document.documentElement.clientWidth;
   if (TrueW >= 640) {
+
     // console.log new Date().getTime() - startTime
     // document.body.style.height = TrueH+"px"
     // document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64

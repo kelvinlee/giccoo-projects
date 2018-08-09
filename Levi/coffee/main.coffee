@@ -84,6 +84,8 @@ getOrientation = (file, callback) ->
   return
 
 window.onload = ->
+	TrueH = document.documentElement.clientHeight
+	TrueW = document.documentElement.clientWidth
 	if IsPC()
 		document.getElementById("qrcode").className += " show"
 		return false
@@ -160,8 +162,7 @@ window.onload = ->
 	init()
 
 init = ->
-	TrueH = document.documentElement.clientHeight
-	TrueW = document.documentElement.clientWidth
+	
 	# console.log new Date().getTime() - startTime
 	# document.body.style.height = TrueH+"px"
 	# document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
