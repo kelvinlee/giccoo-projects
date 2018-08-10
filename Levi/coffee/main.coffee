@@ -510,12 +510,19 @@ init = ->
 			# game = new Game({el: "game",h: h})
 			ugc = new UGC({el: "ugc",trueH: TrueH})
 			version = CloudMusic.getClientVersion().split(".")
+			# version = "5.4.".split(".")
+			@.v = false
 			if version.length >= 3
-				@.v = version[0] >= 5 and version[1] >= 4 and version[2] >= 1
-			else
-				@.v = false
+				if parseInt(version[0]) > 5
+					@.v = true
+				else if parseInt(version[0]) is 5
+					if parseInt(version[1]) > 4
+						@.v = true
+					else if parseInt(version[1]) is 4
+						if parseInt(version[2]) >= 1
+							@.v = true
 			# @.v = parseInt CloudMusic.getClientVersion().replace(/\./g,"")
-			console.log "version:",CloudMusic.getClientVersion(),@.v
+			console.log "version:",CloudMusic.getClientVersion(),version,@.v
 			# alert window.api.recordEndCb?
 			# alert window.api.uploadEndCb?
 			# if window.api.recordEndCb?

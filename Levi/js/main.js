@@ -1378,13 +1378,23 @@ init = function init() {
         trueH: TrueH
       });
       version = CloudMusic.getClientVersion().split(".");
+      // version = "5.4.".split(".")
+      this.v = false;
       if (version.length >= 3) {
-        this.v = version[0] >= 5 && version[1] >= 4 && version[2] >= 1;
-      } else {
-        this.v = false;
+        if (parseInt(version[0]) > 5) {
+          this.v = true;
+        } else if (parseInt(version[0]) === 5) {
+          if (parseInt(version[1]) > 4) {
+            this.v = true;
+          } else if (parseInt(version[1]) === 4) {
+            if (parseInt(version[2]) >= 1) {
+              this.v = true;
+            }
+          }
+        }
       }
       // @.v = parseInt CloudMusic.getClientVersion().replace(/\./g,"")
-      console.log("version:", CloudMusic.getClientVersion(), this.v);
+      console.log("version:", CloudMusic.getClientVersion(), version, this.v);
       // alert window.api.recordEndCb?
       // alert window.api.uploadEndCb?
       // if window.api.recordEndCb?

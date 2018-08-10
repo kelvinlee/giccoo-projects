@@ -48,9 +48,12 @@
         <div v-show="pageIndex == 3" class="page page-answer">
           <div id="ugc" class="bg fadeIn animated"></div>
           <div class="content">
+            <div class="ugc"><img :src="ugc"></div>
             <div class="logo"><img src="./img/small-logo.png"></div>
             <div v-show="btnShow" class="btns fadeIn animated">
-              <div @click="getUGC" class="btn"><img src="./img/btn-build.png"></div>
+              <div class="btn"><img src="./img/btn-build.png">
+                <div class="ugc"><img :src="ugc"></div>
+              </div>
               <div @click="getBadge" class="btn"><img src="./img/btn-get.png"></div>
             </div>
           </div>

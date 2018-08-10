@@ -48,11 +48,15 @@ block content
 			.page.page-answer(v-show="pageIndex == 3")
 				.bg#ugc.fadeIn.animated
 				.content
+					.ugc
+						img(:src="ugc")
 					.logo
 						img(src="#{url}/img/small-logo.png")
 					.btns.fadeIn.animated(v-show="btnShow")
-						.btn(@click="getUGC")
+						.btn
 							img(src="#{url}/img/btn-build.png")
+							.ugc
+								img(:src="ugc")
 						.btn(@click="getBadge")
 							img(src="#{url}/img/btn-get.png")
 		transition(name="page-fade-fast")

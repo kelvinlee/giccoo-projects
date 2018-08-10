@@ -184,7 +184,7 @@ body
 	+h
 	+overhide
 	background-size: 100% auto
-	.bg,.ugc
+	.bg
 		+posa
 		+tl(50%)
 		font-size: 0
@@ -289,14 +289,35 @@ body
 .page-answer
 	.bg
 		animation-duration: 1000ms
+	.logo
+		+posa
+		+tl
+		+w
+		z-index: 10
+		.smaller &
+			margin-top: -5%
+	.ugc
+		+posa
+		+tl
+		+w
+		+h
+		z-index: 20
+		opacity: 0
+		img
+			+w
+			+h
 	.btns
 		+w
 		+text-center
 		+posa
 		+bl(8%)
+		z-index: 80
 		animation-duration: 1000ms
 		animation-delay: 800ms
+		.smaller &
+			+bl(4%)
 		.btn
+			+posr
 			font-size: 0
 			+w(49%)
 			+show-inline

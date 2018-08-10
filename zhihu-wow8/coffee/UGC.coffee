@@ -39,8 +39,23 @@ class UGC
 		@.app.view.className = @.opts.class if @.opts.class? and @.opts.class isnt ""
 		@.stage = @.app.stage
 		document.getElementById(@.opts.el).appendChild @.app.view
+		copyNumber =
+			"death": 4
+			"demon": 1
+			"dryad": 2
+			"huntsman": 2
+			"mage": 2
+			"monk": 3
+			"paladin": 3
+			"pastor": 3
+			"shaman": 2
+			"stalker": 3
+			"warlock": 2
+			"warrior": 2
+		random = Math.floor(Math.random()*copyNumber[@.opts.name]+1)
 		PIXI.loader.add([
 			"#{_CDN}img/r-#{@.opts.name}.jpg"
+			"#{_CDN}img/r-#{@.opts.name}-copy-1.png"
 			"#{_CDN}img/small-logo.png"
 			"#{_CDN}img/qrcode.png"
 		])
@@ -48,17 +63,21 @@ class UGC
 		@.default.MH = @.opts.h * 0.65
 	build: ->
 		bg = new Sprite getTe "#{_CDN}img/r-#{@.opts.name}.jpg"
+		text = new Sprite getTe "#{_CDN}img/r-#{@.opts.name}-copy-1.png"
 		@.logo = logo = new Sprite getTe "#{_CDN}img/small-logo.png"
 		@.qrcode = qrcode = new Sprite getTe "#{_CDN}img/qrcode.png"
-		qrcode.y = bg.height - qrcode.height - 200
-		@.stage.addChild bg,logo,qrcode
+		# qrcode.y = bg.height - qrcode.height - 200
+		@.stage.addChild bg,text,logo,qrcode
+		
+		@.app.renderer.render @.app.stage
+		main.ugc = @.app.view.toDataURL()
+
 		qrcode.alpha = 0
 		logo.alpha = 0
 	save: ->
 		@.qrcode.alpha = 0
 		@.logo.alpha = 1
-		@.app.renderer.render @.app.stage
-		main.ugc = @.app.view.toDataURL()
+		
 		TweenMax.to @.qrcode,0.2,
 			alpha: 1
 			delay: 1
