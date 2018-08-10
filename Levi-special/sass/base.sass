@@ -26,21 +26,15 @@ $pageMainBGColor: #000;
 		opacity: 0
 +keyframes(handMove)
 	0%
-		+transform(translate3d(0,0,0) scale(0.7,0.7))
-		opacity: 0
-	30%
-		opacity: 1
+		+transform(translate3d(0,0,0) scale(1,1))
 	70%,80%
-		+transform(translate3d(0,-100%,0) scale(1,1))
+		+transform(translate3d(0,0,0) scale(1,1))
 	75%,85%
-		+transform(translate3d(0,-100%,0) scale(0.9,0.9))
-		opacity: 1
+		+transform(translate3d(0,0,0) scale(0.9,0.9))
 	95%
-		+transform(translate3d(0,-100%,0) scale(1,1))
-		opacity: 1
+		+transform(translate3d(0,0,0) scale(1,1))
 	100%
-		opacity: 0
-		+transform(translate3d(0,-100%,0) scale(1,1))
+		+transform(translate3d(0,0,0) scale(1,1))
 		
 +keyframes(handLight)
 	0%
@@ -610,7 +604,7 @@ video,canvas,svg
 	.note
 		+w(15%)
 		+posa
-		+tr(50%,5%)
+		+tr(60%,5%)
 		+transform(translate3d(0,-50%,0))
 		z-index: 999
 		+tran
@@ -661,6 +655,24 @@ video,canvas,svg
 			// +b($cdn+"img/hand.png",no-repeat,right,top,200% auto)
 			z-index: 4
 			+animation(handMove,2s,ease,infinite)
+			.bo
+				+posa
+				+tl(-10%,34%)
+				&:after,&:before
+					content: " "
+					+posa
+					+tl(-50%,50%)
+					+w(2rem)
+					+h(2rem)
+					margin-left: -1rem
+					border: solid 2px #fff
+					border-radius: 50%
+					+overhide
+					+box
+					transform-origin: center center
+					+animation(fadeOutCircle,2s,ease,infinite)
+				&:before
+					animation-delay: 500ms
 			&:before
 				content: " "
 				+posa
@@ -679,11 +691,11 @@ video,canvas,svg
 				display: block
 				+animation(handLight,2s,ease,infinite)
 			&.hand-tv
-				+tl(56%,29%)
+				+tl(50%,29%)
 			&.hand-cd
-				+tl(53%,48%)
+				+tl(45%,48%)
 			&.hand-audio
-				+tl(53%,85%)
+				+tl(48%,85%)
 
 		.bg-box
 			+h

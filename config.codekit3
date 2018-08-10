@@ -8740,7 +8740,7 @@
 		},
 	"\/Levi-special\/img\/timg.gif": {
 		"ft": 4194304,
-		"iS": 61983,
+		"iS": 760463,
 		"oA": 0,
 		"oAP": "\/Levi-special\/img\/timg.gif",
 		"oF": 0,
@@ -21823,7 +21823,7 @@
 		},
 	"\/zhihu-wow814\/img\/c11.png": {
 		"ft": 32768,
-		"iS": 3808,
+		"iS": 2977,
 		"oA": 0,
 		"oAP": "\/zhihu-wow814\/img\/c11.png",
 		"oF": 0,
@@ -22103,6 +22103,16 @@
 		"oAP": "\/zhihu-wow814\/index.html",
 		"oF": 0
 		},
+	"\/zhihu-wow814\/js\/ani.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/zhihu-wow814\/js\/ani-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/zhihu-wow814\/js\/easeljs.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -22119,6 +22129,16 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/zhihu-wow814\/js\/jquery-2.2.1.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/zhihu-wow814\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/zhihu-wow814\/js\/main-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
@@ -22153,11 +22173,11 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"\/zhihu-wow814\/mp3\/bgm.mp3": {
+	"\/zhihu-wow814\/mp3\/bgm1.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/zhihu-wow814\/mp3\/bgm.mp3",
+		"oAP": "\/zhihu-wow814\/mp3\/bgm1.mp3",
 		"oF": 0
 		},
 	"\/zhihunews": {
