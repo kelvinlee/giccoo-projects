@@ -632,8 +632,8 @@ init = ->
 		methods:
 			go: ->
 				@.pop = false
-				if sys isnt "zhihu"
-					return alert "请在知乎 App 内打开."
+				# if sys isnt "zhihu"
+				# 	return alert "请在知乎 App 内打开."
 				if @.lmbl
 					window.location.href = "https://activity.zhihu.com/campaign/wow/badges/1&zh_app_id=300100"
 				else
