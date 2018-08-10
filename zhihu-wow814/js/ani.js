@@ -241,5 +241,5 @@ function showCopy2(){
 
 }
 function goURL(){
-  window.location.href='http://www.baidu.com';
+  window.location.href='https://mtk.bnet.163.com/c?p=co1050&s=a25b5d00b76793f5a6932fa280bac019';
 }
