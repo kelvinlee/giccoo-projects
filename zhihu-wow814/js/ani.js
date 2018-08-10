@@ -158,6 +158,7 @@ function setScorll(){
 
   scorll.addChild(papperMask)
   //p2copy.alpha=0
+  papper.alpha=0
   papper.mask=papperMask
   papperMask.beginFill(0xffffff,0)
   papperMask.drawRect(0,0,640,64)
@@ -165,6 +166,11 @@ function setScorll(){
   papperMask.y=stageH/2
 
   //TweenMax.to(papperMask,1,{height:632,yoyo:true,repeat:1000})
+  
+  //scorll.pivot.set=(320,stageH/2)
+  //scorll.position.set=(320,stageH/2)
+  //scorll.scale.x=scorll.scale.y=0
+  TweenMax.from(scorll,2,{alpha:0,overwrite:0,delay:1})
   TweenMax.to(scorll,2,{y:-stageH*.03,yoyo:true,repeat:1000,ease:Sine.easeInOut})
 
   scorll.interactive=true
@@ -186,6 +192,7 @@ var logo=pSprite("img/logo.png")
 var btn=pSprite("img/btn.png")
 
 function openScorll(){
+  papper.alpha=1
   scorll.interactive=false
   console.log("open")
   TweenMax.to(scorll,2,{y:0})
@@ -234,5 +241,5 @@ function showCopy2(){
 
 }
 function goURL(){
-  window.location.href='http://www.baidu.com';
+  window.location.href='https://mtk.bnet.163.com/c?p=co1050&s=a25b5d00b76793f5a6932fa280bac019';
 }

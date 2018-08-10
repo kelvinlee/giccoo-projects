@@ -170,11 +170,11 @@ var bgm=$("#bgm")[0]
 $("#musicOff").click(function(){
   if(ifbgm==0){
     bgm.play();
-    TweenLite.set($("#musicOff"),{opacity:1})
+    TweenLite.set($("#musicOff"),{opacity:0})
     showCopy2()
   }else{
     bgm.pause();
-    TweenLite.set($("#musicOff"),{opacity:0})
+    TweenLite.set($("#musicOff"),{opacity:1})
     showCopy2()
   }
   ifbgm++
