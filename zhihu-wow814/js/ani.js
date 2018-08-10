@@ -170,7 +170,7 @@ function setScorll(){
   //scorll.pivot.set=(320,stageH/2)
   //scorll.position.set=(320,stageH/2)
   //scorll.scale.x=scorll.scale.y=0
-  TweenMax.from(scorll,1,{alpha:0,overwrite:0})
+  TweenMax.from(scorll,2,{alpha:0,overwrite:0,delay:1})
   TweenMax.to(scorll,2,{y:-stageH*.03,yoyo:true,repeat:1000,ease:Sine.easeInOut})
 
   scorll.interactive=true
