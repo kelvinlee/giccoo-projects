@@ -222,7 +222,10 @@ UGC = function () {
       value: function loaditem() {
         this.loadNumber++;
         loading.progressOn = parseInt(this.loadNumber / imageList.length * 100);
-        return console.log(this.loadNumber, loading.progressOn, this.loadNumber === imageList.length);
+        console.log(this.loadNumber, loading.progressOn, this.loadNumber === imageList.length);
+        if (this.loadNumber === imageList.length) {
+          return buildUGC.bind(this).call();
+        }
       }
     }]);
 
@@ -263,9 +266,6 @@ UGC = function () {
 
   return UGC;
 }.call(undefined);
-
-// if @.loadNumber is imageList.length
-// 	buildUGC.bind(@).call()
 
 // @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/coffee/loadWechatConfig"

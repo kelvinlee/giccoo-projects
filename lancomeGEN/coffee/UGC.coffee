@@ -52,6 +52,6 @@ class UGC
 		loading.progressOn = parseInt @.loadNumber/(imageList.length)*100
 		console.log @.loadNumber,loading.progressOn,@.loadNumber is imageList.length
 
-		# if @.loadNumber is imageList.length
-		# 	buildUGC.bind(@).call()
+		if @.loadNumber is imageList.length
+			buildUGC.bind(@).call()
 		
