@@ -111,7 +111,7 @@ window.onload = ->
 		wx.ready ->
 			shareContent =
 				title: "有故事的声活单曲"
-				desc: "有故事的声活单曲~"
+				desc: "有故事的声活单曲"
 				link: "http://m.giccoo.com/Levi/"
 				imgUrl: "http://m.giccoo.com/Levi/img/ico.jpg"
 				success: ->
@@ -296,7 +296,10 @@ init = ->
 				,800
 			playAudio: ->
 				# alert @.audioId
-				CloudMusic.orpheus("orpheus://recordvoice/play/start?id=#{@.audioId}")
+				if @.canUpload
+					CloudMusic.orpheus("orpheus://recordvoice/play/start?id=#{@.audioId}")
+				else
+					CloudMusic.orpheus("orpheus://recordvoice/play/end?id=#{@.audioId}")
 
 			uploadAudio: ->
 				@.step = 3
@@ -305,7 +308,7 @@ init = ->
 				return false
 			gotoAudio: ->
 				return alert "请输入你的名字" if @.nickname is ""
-				return alert "名字限制10个中文字符20个英文字符" if @.nickname.gblen() > 20
+				return alert "名字限制10个字符" if @.nickname.length > 10
 				return alert "请上传一张专辑封面" unless @.imageUpdate
 				@.step = 2
 				ugc.uploadOverText.visible = false
@@ -491,14 +494,14 @@ init = ->
 					return false #alert "字数限制32个中文字符64个英文字符" 
 				ugc.lyricUpdate @.text
 			nickname: (n,o)->
-				if @.nickname.gblen() > 20
+				if @.nickname.length > 10
 					t = @.nickname.split("")
 					tx = ""
 					for i in t
 						tx += i
-						break if tx.gblen() >= 20
+						break if tx.length >= 10
 					@.nickname = tx
-					return alert "字数限制10个中文字符20个英文字符" 
+					return false #alert "字数限制10个中文字符20个英文字符" 
 				ugc.updateName @.nickname
 		mounted: ->
 			TrueH = document.documentElement.clientHeight

@@ -841,7 +841,7 @@ window.onload = function () {
       var shareContent;
       shareContent = {
         title: "有故事的声活单曲",
-        desc: "有故事的声活单曲~",
+        desc: "有故事的声活单曲",
         link: "http://m.giccoo.com/Levi/",
         imgUrl: "http://m.giccoo.com/Levi/img/ico.jpg",
         success: function success() {},
@@ -1071,7 +1071,11 @@ init = function init() {
       },
       playAudio: function playAudio() {
         // alert @.audioId
-        return CloudMusic.orpheus('orpheus://recordvoice/play/start?id=' + this.audioId);
+        if (this.canUpload) {
+          return CloudMusic.orpheus('orpheus://recordvoice/play/start?id=' + this.audioId);
+        } else {
+          return CloudMusic.orpheus('orpheus://recordvoice/play/end?id=' + this.audioId);
+        }
       },
       uploadAudio: function uploadAudio() {
         this.step = 3;
@@ -1083,8 +1087,8 @@ init = function init() {
         if (this.nickname === "") {
           return alert("请输入你的名字");
         }
-        if (this.nickname.gblen() > 20) {
-          return alert("名字限制10个中文字符20个英文字符");
+        if (this.nickname.length > 10) {
+          return alert("名字限制10个字符");
         }
         if (!this.imageUpdate) {
           return alert("请上传一张专辑封面");
@@ -1345,18 +1349,18 @@ init = function init() {
       },
       nickname: function nickname(n, o) {
         var k, len2, t, tx;
-        if (this.nickname.gblen() > 20) {
+        if (this.nickname.length > 10) {
           t = this.nickname.split("");
           tx = "";
           for (k = 0, len2 = t.length; k < len2; k++) {
             i = t[k];
             tx += i;
-            if (tx.gblen() >= 20) {
+            if (tx.length >= 10) {
               break;
             }
           }
           this.nickname = tx;
-          return alert("字数限制10个中文字符20个英文字符");
+          return false; //alert "字数限制10个中文字符20个英文字符" 
         }
         return ugc.updateName(this.nickname);
       }

@@ -29,6 +29,22 @@ window.onload = ->
 		return false
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
+	else
+		loadWechatConfig()
+		wx.ready ->
+			shareContent =
+				title: "这好像是我第一次把声音交给别人"
+				desc: "糟糕，是惊喜的感觉"
+				link: window.location.href
+				imgUrl: "http://m.giccoo.com/Levi/img/ico.jpg"
+				success: ->
+					# alert "success"
+				cancel: ->
+					# alert "cancel"
+			wx.onMenuShareTimeline shareContent
+			wx.onMenuShareAppMessage shareContent
+			wx.onMenuShareQQ shareContent
+			wx.onMenuShareWeibo shareContent
 	init()
 
 isNumber = (obj)->

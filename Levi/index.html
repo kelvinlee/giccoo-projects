@@ -171,7 +171,10 @@
               <div v-show="step == 2" class="audio-ctrl">
                 <div class="title"><img src="./img/page-3-audio-title.png"></div>
                 <div class="btns">
-                  <div v-show="audioId != null" @click="playAudio" class="btn btn-audition fadeIn animated"><img src="./img/icon-audio-play.png"><span>试 听</span></div>
+                  <div v-show="audioId != null" @click="playAudio" class="btn btn-audition fadeIn animated">
+                    <div v-show="canUpload" class="icon"><img src="./img/icon-audio-play.png"></div>
+                    <div v-show="!canUpload" class="icon"><img src="./img/icon-audio-pause.png"></div><span>{{canUpload?'试 听':'暂 停'}}</span>
+                  </div>
                   <div class="btn btn-start">
                     <div v-show="!recordStarting" @click="recordStart" class="start"><img src="./img/icon-audio-restart.png"></div>
                     <div v-show="recordStarting" @click="recordStop" class="stop"><img src="./img/icon-audio-start.png">
@@ -222,8 +225,8 @@
           <div class="content">
             <div class="allow-box"><img src="./img/pop-reg.png">
               <div class="btns">
-                <div @click="allowTRUE" class="btn btn-yes"><img src="./img/btn-yes.png"></div>
                 <div @click="allowFALSE" class="btn btn-no"><img src="./img/btn-no.png"></div>
+                <div @click="allowTRUE" class="btn btn-yes"><img src="./img/btn-yes.png"></div>
               </div>
             </div>
           </div>

@@ -172,8 +172,11 @@ block content
                 img(src="#{url}/img/page-3-audio-title.png")
               .btns
                 .btn.btn-audition.fadeIn.animated(v-show="audioId != null",@click="playAudio")
-                  img(src="#{url}/img/icon-audio-play.png")
-                  span 试 听
+                  .icon(v-show="canUpload")
+                    img(src="#{url}/img/icon-audio-play.png")
+                  .icon(v-show="!canUpload")
+                    img(src="#{url}/img/icon-audio-pause.png")
+                  span {{canUpload?'试 听':'暂 停'}}
                 .btn.btn-start
                   .start(v-show="!recordStarting",@click="recordStart")
                     img(src="#{url}/img/icon-audio-restart.png")
@@ -223,10 +226,11 @@ block content
           .allow-box
             img(src="#{url}/img/pop-reg.png")
             .btns
-              .btn.btn-yes(@click="allowTRUE")
-                img(src="#{url}/img/btn-yes.png")
               .btn.btn-no(@click="allowFALSE")
                 img(src="#{url}/img/btn-no.png")
+              .btn.btn-yes(@click="allowTRUE")
+                img(src="#{url}/img/btn-yes.png")
+              
     transition(name="page-fade")
       .pop(v-show="pageInfoShow")
         .content

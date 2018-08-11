@@ -530,8 +530,11 @@ video,canvas,svg
 	+b($cdn+"img/bg.jpg",repeat,top,center,100% auto)
 	.head
 		+posr
+		margin-top: -15%
 		.smaller &
 			margin-top: -18%
+		.biger &
+			margin-top: 0
 		.watch-ad
 			+posa
 			+bl(-8%)
@@ -552,11 +555,15 @@ video,canvas,svg
 			&:before
 				animation-delay: 400ms
 	.after-box
-		padding-top: 5%
+		padding-top: 10%
 		.biger &
-			padding-top: 10%
+			padding-top: 15%
+		.smaller &
+			padding-top: 5%
 		.btn
-			+m(3% auto)
+			+m(6% auto)
+			.smaller &
+				+m(3% auto)
 	.after
 		+posa
 		+bl
