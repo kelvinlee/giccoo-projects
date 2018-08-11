@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/font/Interstate Regular.css">
     <link rel="stylesheet" href="css/base.css">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
     <script src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js"></script>
     <script>
       var vConsole = new VConsole();
@@ -213,7 +222,8 @@
             <transition name="page-fade">
               <div v-show="step == 5" class="review-ctrl">
                 <div class="btns">
-                  <div @click="over" class="btn btn-share"><img src="./img/btn-share.png"></div><a href="/Levi-special/" class="btn btn-more"><img src="./img/btn-more.png"></a>
+                  <div @click="over" class="btn btn-share"><img src="./img/btn-share.png"></div>
+                  <div @click="gotoMore" class="btn btn-more"><img src="./img/btn-more.png"></div>
                 </div>
               </div>
             </transition>

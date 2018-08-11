@@ -49,7 +49,8 @@
             <div class="nickname">
               <div class="singer"><img :src="'./img/music-singer-name-'+info.singer+'.png'"></div>
             </div>
-          </div><a :href="wy?'https://activity.music.163.com/Levi/':'http://levi.arkrdigital.com/music/'" class="btn-next"><img src="./img/music-btn-next.png"></a>
+          </div>
+          <div @click="next" class="btn-next"><img src="./img/music-btn-next.png"></div>
         </div>
       </div>
     </div>

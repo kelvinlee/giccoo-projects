@@ -141,6 +141,7 @@ window.onload = ->
 				PIXI.sound.play("bgm")
 				main.openBtnShow = false
 				@.next()
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "open music", "-"])
 			next: ->
 				document.getElementById('load').className += " fadeOut animated"
 				_public.note = false
@@ -228,6 +229,7 @@ init = ->
 				video = document.getElementById "video"
 				video.play()
 				@.videoPop = true
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Watch Video", "-"])
 			start: (evt)->
 				touch = evt.touches[0]
 				# console.log touch
@@ -251,21 +253,28 @@ init = ->
 				# bgm.play()
 				PIXI.sound.play("bgm",{start: _second})
 				@.openBtnShow = false
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "open music", "-"])
 			skip: ->
 				# bgm = document.getElementById "bgm"
 				# bgm.pause()
 				PIXI.sound.stop("bgm")
 				@.pageIndex = 2
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Skip", "-"])
 			startbuild: ->
 				unless CloudMusic.isInApp()
 					return CloudMusic.open("https://activity.music.163.com/Levi/")
 				unless @.v
 					return alert "请先升级到最新版本的网易云音乐"
 				@.pageIndex = 3
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Start to produce", "-"])
 			recordStart: ->
 				# recordStartCb
 				return false if @.recordStarting
 				CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=15')
+				if @.audioId?
+					_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Rerecord", "-"])
+				else
+					_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Record", "-"])
 				# _startCache = setTimeout =>
 				# 	ugc.cover.visible = true
 				# 	ugc.startLine()
@@ -285,6 +294,7 @@ init = ->
 				
 			recordStop: ->
 				CloudMusic.orpheus('orpheus://recordvoice/record/end')
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Stop Recording", "-"])
 				@.recordStarting = false
 				@.authorization = true
 				clearTimeout _cache
@@ -298,6 +308,7 @@ init = ->
 				# alert @.audioId
 				if @.canUpload
 					CloudMusic.orpheus("orpheus://recordvoice/play/start?id=#{@.audioId}")
+					_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Listen", "-"])
 				else
 					CloudMusic.orpheus("orpheus://recordvoice/play/end?id=#{@.audioId}")
 
@@ -305,6 +316,7 @@ init = ->
 				@.step = 3
 				ugc.addCover()
 				CloudMusic.orpheus("orpheus://recordvoice/play/end?id=#{@.audioId}")
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Upload sound", "-"])
 				return false
 			gotoAudio: ->
 				return alert "请输入你的名字" if @.nickname is ""
@@ -312,12 +324,14 @@ init = ->
 				return alert "请上传一张专辑封面" unless @.imageUpdate
 				@.step = 2
 				ugc.uploadOverText.visible = false
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Upload icon+name", "-"])
 			selectSingerStart: ->
 				return alert "请输入你发声了什么?" if @.text is ""
 				# return alert "字数限制32个中文字符64个英文字符" if @.text.gblen() > 64
 				return alert "字数限制32个字符" if @.text.length > 32
 				@.step = 4
 				ugc.albumInfo @.singerIndex
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Upload story", "-"])
 			singerPrev: ->
 				@.singerIndex--
 				if @.singerIndex < 1
@@ -334,7 +348,7 @@ init = ->
 				else
 					@.pageInfoShow = true
 				return false if @.loading
-				_hmt? and _hmt.push(['_trackEvent', "Levi", "share", "ugc", "-"])
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Share to social", "-"])
 				if @.uploaded
 					neteaseShareImage()
 					return false
@@ -347,10 +361,16 @@ init = ->
 				else
 					@.authorization = false
 					@.createLog()
+			gotoMore: ->
+				setTimeout =>
+					window.location.href = "/Levi-special/"
+				,200
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Link to Netease Music Hub", "-"])
 			review: ->
 				# @.step = 5
 				# ugc.review()
 				@.allowShow()
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Chose Musician-#{@.singerIndex}", "-"])
 			allowShow: ->
 				@.allowPopShow = true
 			allowFALSE: ->
@@ -361,6 +381,7 @@ init = ->
 				ugc.review()
 				@.step = 5
 				@.uploadAll()
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Authorization - norecord", "-"])
 			allowTRUE: ->
 				return false if @.loading
 				@.authorization = true
@@ -368,6 +389,7 @@ init = ->
 				ugc.review()
 				@.step = 5
 				@.uploadAll()
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "Authorization - Yes", "-"])
 			createLog: ->
 				# @.nickname,@.shareImageLink,@.musicLink,@.singerIndex,@.text,@.authorization
 				console.log "createLog:",@.authorization,@.norecord

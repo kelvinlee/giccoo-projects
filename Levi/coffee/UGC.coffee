@@ -300,7 +300,7 @@ class UGC
 		@.content.addChildAt @.bg,0
 		@.content.addChild bgMask
 		@.bg.mask = bgMask
-
+		
 	lyricUpdate: (text)->
 		return false if text.length > 32#gblen() > 64
 		@.album.removeChild @.lyric if @.lyric?

@@ -875,7 +875,8 @@ window.onload = function () {
         // bgm.play()
         PIXI.sound.play("bgm");
         main.openBtnShow = false;
-        return this.next();
+        this.next();
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "open music", "-"]);
       },
       next: function next() {
         document.getElementById('load').className += " fadeOut animated";
@@ -982,7 +983,8 @@ init = function init() {
         var video;
         video = document.getElementById("video");
         video.play();
-        return this.videoPop = true;
+        this.videoPop = true;
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "Watch Video", "-"]);
       },
       start: function start(evt) {
         var touch;
@@ -1015,13 +1017,15 @@ init = function init() {
         PIXI.sound.play("bgm", {
           start: _second
         });
-        return this.openBtnShow = false;
+        this.openBtnShow = false;
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "open music", "-"]);
       },
       skip: function skip() {
         // bgm = document.getElementById "bgm"
         // bgm.pause()
         PIXI.sound.stop("bgm");
-        return this.pageIndex = 2;
+        this.pageIndex = 2;
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "Skip", "-"]);
       },
       startbuild: function startbuild() {
         if (!CloudMusic.isInApp()) {
@@ -1030,14 +1034,20 @@ init = function init() {
         if (!this.v) {
           return alert("请先升级到最新版本的网易云音乐");
         }
-        return this.pageIndex = 3;
+        this.pageIndex = 3;
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "Start to produce", "-"]);
       },
       recordStart: function recordStart() {
         if (this.recordStarting) {
           // recordStartCb
           return false;
         }
-        return CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=15');
+        CloudMusic.orpheus('orpheus://recordvoice/record/start?limit=15');
+        if (this.audioId != null) {
+          return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "Rerecord", "-"]);
+        } else {
+          return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "Record", "-"]);
+        }
       },
       // _startCache = setTimeout =>
       // 	ugc.cover.visible = true
@@ -1059,6 +1069,7 @@ init = function init() {
         var _this5 = this;
 
         CloudMusic.orpheus('orpheus://recordvoice/record/end');
+        typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "Stop Recording", "-"]);
         this.recordStarting = false;
         this.authorization = true;
         clearTimeout(_cache);
@@ -1072,7 +1083,8 @@ init = function init() {
       playAudio: function playAudio() {
         // alert @.audioId
         if (this.canUpload) {
-          return CloudMusic.orpheus('orpheus://recordvoice/play/start?id=' + this.audioId);
+          CloudMusic.orpheus('orpheus://recordvoice/play/start?id=' + this.audioId);
+          return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "Listen", "-"]);
         } else {
           return CloudMusic.orpheus('orpheus://recordvoice/play/end?id=' + this.audioId);
         }
@@ -1081,6 +1093,7 @@ init = function init() {
         this.step = 3;
         ugc.addCover();
         CloudMusic.orpheus('orpheus://recordvoice/play/end?id=' + this.audioId);
+        typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "Upload sound", "-"]);
         return false;
       },
       gotoAudio: function gotoAudio() {
@@ -1094,7 +1107,8 @@ init = function init() {
           return alert("请上传一张专辑封面");
         }
         this.step = 2;
-        return ugc.uploadOverText.visible = false;
+        ugc.uploadOverText.visible = false;
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "Upload icon+name", "-"]);
       },
       selectSingerStart: function selectSingerStart() {
         if (this.text === "") {
@@ -1105,7 +1119,8 @@ init = function init() {
           return alert("字数限制32个字符");
         }
         this.step = 4;
-        return ugc.albumInfo(this.singerIndex);
+        ugc.albumInfo(this.singerIndex);
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "Upload story", "-"]);
       },
       singerPrev: function singerPrev() {
         this.singerIndex--;
@@ -1130,7 +1145,7 @@ init = function init() {
         if (this.loading) {
           return false;
         }
-        typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "share", "ugc", "-"]);
+        typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "Share to social", "-"]);
         if (this.uploaded) {
           neteaseShareImage();
           return false;
@@ -1147,10 +1162,17 @@ init = function init() {
           return this.createLog();
         }
       },
+      gotoMore: function gotoMore() {
+        setTimeout(function () {
+          return window.location.href = "/Levi-special/";
+        }, 200);
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "Link to Netease Music Hub", "-"]);
+      },
       review: function review() {
         // @.step = 5
         // ugc.review()
-        return this.allowShow();
+        this.allowShow();
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", 'Chose Musician-' + this.singerIndex, "-"]);
       },
       allowShow: function allowShow() {
         return this.allowPopShow = true;
@@ -1164,7 +1186,8 @@ init = function init() {
         this.allowPopShow = false;
         ugc.review();
         this.step = 5;
-        return this.uploadAll();
+        this.uploadAll();
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "Authorization - norecord", "-"]);
       },
       allowTRUE: function allowTRUE() {
         if (this.loading) {
@@ -1174,7 +1197,8 @@ init = function init() {
         this.allowPopShow = false;
         ugc.review();
         this.step = 5;
-        return this.uploadAll();
+        this.uploadAll();
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "Authorization - Yes", "-"]);
       },
       createLog: function createLog() {
         var _this6 = this;

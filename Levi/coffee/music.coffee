@@ -127,6 +127,7 @@ init = ->
 					@.bgm.pause()
 				else
 					@.bgm.play()
+					_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "User B Journey Page-Stop Playing", "-"])
 			playtype: ->
 				console.log "play"
 				@.playing = true
@@ -153,6 +154,15 @@ init = ->
 					@.info = msg.data.info
 					@.mounted = true
 					@.cdUpdate()
+			next: ->
+				if @.wy
+					url = "https://activity.music.163.com/Levi/"
+				else
+					url = "http://levi.arkrdigital.com/music/"
+				setTimeout =>
+					window.location.href = url
+				,300
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "User B Journey Page-Make Yours", "-"])
 		mounted: ->
 			if sys is "NeteaseMusic"
 				@.wy = true
