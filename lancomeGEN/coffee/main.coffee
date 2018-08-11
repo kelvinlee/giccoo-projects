@@ -122,7 +122,12 @@ window.onload = ->
 			wx.onMenuShareAppMessage shareContent
 			wx.onMenuShareQQ shareContent
 			wx.onMenuShareWeibo shareContent
-	
+
+	_public = new Vue
+		el: "#public"
+		data:
+			note: true
+
 	loading = new Vue
 		el: "#loading"
 		data:
@@ -147,9 +152,10 @@ window.onload = ->
 					@.progress = 100
 					clearInterval timein
 					main.mounted = true
+
 					_cache = setTimeout =>
 						@.next()
-					,2000
+					,200
 			,1000/20
 	init()
 
@@ -179,7 +185,7 @@ init = ->
 			pageInfoShow: false
 			pageIndex: 2
 			step: 1
-			singerIndex: 3
+			singerIndex: 1
 			startgame: false
 			folder: ""
 			BGColor: "#ffffff"
@@ -211,6 +217,13 @@ init = ->
 				x: 0
 			videoPop: false
 			canUpload: true
+			handCover: false
+			last_update: 0
+			lastX: 0
+			lastY: 0
+			lastZ: 0
+			speed: 4000
+			swing: false
 		methods:
 			
 			share: (image)->
@@ -241,6 +254,33 @@ init = ->
 				console.log "err:",err
 			setugc: (link)->
 				@.ugc = link
+			pageHand: ->
+				@.pageIndex = 3
+				setTimeout =>
+					@.swing = true
+				,300
+			deviceMotionHandler: (evt)->
+				return false unless @.swing
+				acceleration = evt.accelerationIncludingGravity
+				curTime = new Date().getTime()
+				# console.log curTime-@.last_update
+				if (curTime-@.last_update)> 10
+					diffTime = curTime - @.last_update
+					@.last_update = curTime
+					x = acceleration.x
+					y = acceleration.y
+					z = acceleration.z
+					speed = Math.sqrt( ( x - @.lastX ) * ( x - @.lastX ) + ( y - @.lastY ) * ( y - @.lastY ) + ( z - @.lastZ ) * ( z - @.lastZ ) ) / diffTime * 10000
+					# console.log x,y,z,@.speed,speed
+					if speed > @.speed
+						@.swing = false
+						@.nextPage()
+					@.lastX = x
+					@.lastY = y
+					@.lastZ = z
+			nextPage: ->
+				console.log "next page run"
+				@.pageIndex = 1
 		# watch:
 		mounted: ->
 			TrueH = document.documentElement.clientHeight
@@ -251,5 +291,12 @@ init = ->
 			# game = new Game({el: "game",h: h})
 			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH})
 			version = CloudMusic.getClientVersion().split(".")
+
+			if window.DeviceMotionEvent
+				window.addEventListener('devicemotion',@.deviceMotionHandler.bind(@),false)
+				@.handCover = false
+				console.log "devicemotion"
+			else
+				@.handCover = true
 			
 			

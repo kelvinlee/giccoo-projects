@@ -8,7 +8,7 @@ $cdn : "../"
 
 // animation, delay, duration
 $fontColor: #000000;
-$pageMainBGColor: #000;
+$pageMainBGColor: #f7e0d7;
 +keyframes(fadeArrow)
 	0%,100%
 		opacity: 1
@@ -64,6 +64,15 @@ $pageMainBGColor: #000;
 	100%
 		+transform(scale(2,2))
 		opacity: 0
++keyframes(swing)
+	0%
+		+transform(rotate(0))
+	25%
+		+transform(rotate(3deg))
+	75%
+		+transform(rotate(-3deg))
+	100%
+		+transform(rotate(0))
 
 html,body
 	+w
@@ -156,7 +165,7 @@ video,canvas,svg
 	+posa
 	+tl(0,50%)
 	+transform(translate3d(-50%,0,0))
-	+bc(#000)
+	+bc($pageMainBGColor)
 	z-index: 99
 	// 3c080f
 	+hide
@@ -194,23 +203,18 @@ video,canvas,svg
 		display: flex
 		+w(70%)
 		+text-center
-	.text
+	.battle
 		+posa
-		+tl
-		+transform(translate3d(-3%,-50%,0))
-		animation-delay: 300ms
-		.progress
+		+tl(50%,50%)
+		+w(10%)
+		+transform(translate3d(-50%,-50%,0))
+		.text
 			+posa
-			+bl(-100%)
+			+bl(-30%,-70%)
 			+w
-			+h
 			+font-size(0.8rem)
-			+text-center
-			color: #fff
-			padding-left: 1em
-			padding-top: 1em
-			+box
-			font-family: "Interstate Regular"
+			color: #000
+	
 
 .music-box
 	+w(5%)
@@ -238,19 +242,19 @@ video,canvas,svg
 .public
 	+posa
 	+tr(1rem,1rem)
-	+wh(30px,30px)
+	+wh(2rem,2rem)
 	font-size: 0
 	z-index: 199
 	.note-text
 		+posa
-		+tr(50%,250%)
-		+font-size(0.8rem)
-		line-height: 1.4em
+		+tr(50%,120%)
+		+font-size(0.6rem)
+		line-height: 1rem
 		white-space: nowrap
 		+text-right
 		+m
 		+transform(translate3d(0,-50%,0))
-		color: #3f8f23
+		color: #766b67
 		p
 			+m
 		.arrow
@@ -467,4 +471,44 @@ video,canvas,svg
 	opacity: 0
 	z-index: 99
 
+
+.page-1
+	// +b($cdn+"img/homepage-bg.jpg",no-repeat,bottom,center,contain)
+	.bg-part
+		+posa
+		+bl(10%)
+		z-index: -1
+	.logo
+		margin-top: 5%
+		animation-delay: 200ms
+	.title
+		+m(5% auto)
+		animation-delay: 400ms
+	.btn
+		animation-delay: 600ms
+
+.page-3
+	.hand-cover
+		+posa
+		+tl
+		+w
+		+h
+		z-index: 10
+	.note
+		+posa
+		+bl(5%)
+	.hand
+		font-size: 0
+		+posa
+		+bl(-5%)
+		transform-origin: bottom center
+		+animation(swing,3s,linear,infinite)
+		// animation-direction: alternate
+		.biger &
+			+bl(-5%)
+		.smaller &
+			+bl(-5%)
+			.hand-image
+				+transform(scale(0.9,0.9))
+				transform-origin: bottom center
 

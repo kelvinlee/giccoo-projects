@@ -222,10 +222,7 @@ UGC = function () {
       value: function loaditem() {
         this.loadNumber++;
         loading.progressOn = parseInt(this.loadNumber / imageList.length * 100);
-        console.log(this.loadNumber, loading.progressOn, this.loadNumber === imageList.length);
-        if (this.loadNumber === imageList.length) {
-          return buildUGC.bind(this).call();
-        }
+        return console.log(this.loadNumber, loading.progressOn, this.loadNumber === imageList.length);
       }
     }]);
 
@@ -267,7 +264,8 @@ UGC = function () {
   return UGC;
 }.call(undefined);
 
-// console.log buildUGC.bind(@)
+// if @.loadNumber is imageList.length
+// 	buildUGC.bind(@).call()
 
 // @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/coffee/loadWechatConfig"
@@ -431,6 +429,12 @@ window.onload = function () {
       return wx.onMenuShareWeibo(shareContent);
     });
   }
+  _public = new Vue({
+    el: "#public",
+    data: {
+      note: true
+    }
+  });
   loading = new Vue({
     el: "#loading",
     data: {
@@ -465,7 +469,7 @@ window.onload = function () {
           main.mounted = true;
           return _cache = setTimeout(function () {
             return _this.next();
-          }, 2000);
+          }, 200);
         }
       }, 1000 / 20);
     }
@@ -503,7 +507,7 @@ init = function init() {
       pageInfoShow: false,
       pageIndex: 2,
       step: 1,
-      singerIndex: 3,
+      singerIndex: 1,
       startgame: false,
       folder: "",
       BGColor: "#ffffff",
@@ -536,7 +540,14 @@ init = function init() {
         x: 0
       },
       videoPop: false,
-      canUpload: true
+      canUpload: true,
+      handCover: false,
+      last_update: 0,
+      lastX: 0,
+      lastY: 0,
+      lastZ: 0,
+      speed: 4000,
+      swing: false
     },
     methods: {
       share: function share(image) {
@@ -576,6 +587,43 @@ init = function init() {
       },
       setugc: function setugc(link) {
         return this.ugc = link;
+      },
+      pageHand: function pageHand() {
+        var _this2 = this;
+
+        this.pageIndex = 3;
+        return setTimeout(function () {
+          return _this2.swing = true;
+        }, 300);
+      },
+      deviceMotionHandler: function deviceMotionHandler(evt) {
+        var acceleration, curTime, diffTime, speed, x, y, z;
+        if (!this.swing) {
+          return false;
+        }
+        acceleration = evt.accelerationIncludingGravity;
+        curTime = new Date().getTime();
+        // console.log curTime-@.last_update
+        if (curTime - this.last_update > 10) {
+          diffTime = curTime - this.last_update;
+          this.last_update = curTime;
+          x = acceleration.x;
+          y = acceleration.y;
+          z = acceleration.z;
+          speed = Math.sqrt((x - this.lastX) * (x - this.lastX) + (y - this.lastY) * (y - this.lastY) + (z - this.lastZ) * (z - this.lastZ)) / diffTime * 10000;
+          // console.log x,y,z,@.speed,speed
+          if (speed > this.speed) {
+            this.swing = false;
+            this.nextPage();
+          }
+          this.lastX = x;
+          this.lastY = y;
+          return this.lastZ = z;
+        }
+      },
+      nextPage: function nextPage() {
+        console.log("next page run");
+        return this.pageIndex = 1;
       }
     },
     // watch:
@@ -593,7 +641,14 @@ init = function init() {
         w: 640,
         h: 640 / TrueW * TrueH
       });
-      return version = CloudMusic.getClientVersion().split(".");
+      version = CloudMusic.getClientVersion().split(".");
+      if (window.DeviceMotionEvent) {
+        window.addEventListener('devicemotion', this.deviceMotionHandler.bind(this), false);
+        this.handCover = false;
+        return console.log("devicemotion");
+      } else {
+        return this.handCover = true;
+      }
     }
   });
 };

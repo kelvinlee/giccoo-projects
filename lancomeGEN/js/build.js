@@ -18,7 +18,7 @@ var buildUGC = function () {
 	pStage=this.stage
 	setup()
 }
-var bg=new Graphics()
+var bg;//=new Graphics()
 function setup(){
 	//console.log("======================",pStage,"======================")
 

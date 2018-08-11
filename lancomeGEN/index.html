@@ -19,8 +19,20 @@
     </script>
   </head>
   <body>
+    <div id="public" class="public">
+      <player icon="true" src="./mp3/bgm.mp3"></player>
+      <transition name="page-fade">
+        <div v-show="note" class="note-text">
+          <p>建议打开音乐按钮<br/>获得更好体验效果</p>
+        </div>
+      </transition>
+    </div>
     <div id="load" class="load">
-      <div id="loading" v-show="mounted" style="display: none" class="content"></div>
+      <div id="loading" v-show="mounted" style="display: none" class="content">
+        <div class="battle"><img src="./img/loading-battle.png">
+          <div class="text">loading...{{progress}}%</div>
+        </div>
+      </div>
     </div>
     <div id="main" v-show="mounted" :class="{biger: biger,smaller:smaller}" style="display: none" :style="{width: w+'px',minHeight: h+'px'}" class="main">
       <transition name="page-fade">
@@ -39,13 +51,29 @@
       </transition>
       <transition name="page-fade">
         <div v-show="pageIndex == 1" class="page page-1">
-          <div class="content"></div>
+          <div class="content">
+            <div class="logo fadeIn animated"><img src="./img/homepage-logo.png"></div>
+            <div class="title fadeIn animated"><img src="./img/homepage-title.png"></div>
+            <div @click="pageIndex = 2" class="btn fadeIn animated"><img src="./img/homepage-btn.png"></div>
+            <div class="bg-part"><img src="./img/homepage-bg.jpg"></div>
+          </div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="pageIndex == 2" class="page page-2">
           <div class="content">
             <div id="ugc"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="pageIndex == 3" class="page page-3">
+          <div class="content">
+            <div class="hand">
+              <div class="hand-image"><img src="./img/spage-hand.jpg"></div>
+            </div>
+            <div v-show="handCover" @click="nextPage" class="hand-cover"></div>
+            <div class="note"><img src="./img/spage-note.png"></div>
           </div>
         </div>
       </transition>
