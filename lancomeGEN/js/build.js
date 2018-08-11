@@ -7,7 +7,8 @@ var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _MULTIPLY=PIXI.BLEND_MODES.MULTIPLY,
     _SCREEN=PIXI.BLEND_MODES.SCREEN;
 
-var pStage
+var pStage,bg
+var stageH
 var buildUGC = function () {
 	console.log("app",this,this.opts.w,this.opts.h)
 	// var test = new Sprite(getTe(_CDN+"img/test.png"));
@@ -16,13 +17,14 @@ var buildUGC = function () {
 	// var ani = new AnimatedSprite();
 	//this.stage.addChild(test,gra,con);
 	pStage=this.stage
+	stageH=this.opts.h
 	setup()
 }
-var bg;//=new Graphics()
+
 function setup(){
 	//console.log("======================",pStage,"======================")
-
-	pStage.stage.addChild(bg)
+	bg=new Graphics()
+	pStage.addChild(bg)
 	//whitebg.beginFill(0xf7e0d7,1)
   	//whitebg.drawRect(0,0,640,stageH)
 }
