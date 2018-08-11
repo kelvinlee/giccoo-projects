@@ -20,6 +20,13 @@ var imageList = [
 	_CDN+"img/sound1.png",
 	_CDN+"img/sound2.png",
 	_CDN+"img/sound3.png",
+	_CDN+"img/a1pic1.png",
+	_CDN+"img/a1a.png",
+	_CDN+"img/a1b.png",
+	_CDN+"img/a2a.png",
+	_CDN+"img/a2b.png",
+	_CDN+"img/a3a.jpg",
+	_CDN+"img/a3b.jpg",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -38,8 +45,8 @@ var buildUGC = function () {
 
 	pStage=this.stage
 	stageH=this.opts.h
-	setAnswerPic()
-	//setup()
+	
+	setup()
 }
 
 function setup(){
@@ -72,7 +79,9 @@ function setup(){
   btn1.touchend=btn1Up
   btn2.touchstart=btn2Down
   btn2.touchend=btn2Up
+  setAnswerPic()
   setAnswer()
+
   showQ(Qnum)
 }
 var nowAnswer

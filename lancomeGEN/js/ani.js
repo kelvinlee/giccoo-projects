@@ -116,7 +116,7 @@ function setAnswer(){
 
 	pStage.addChild(soundBtn,answerT1,answerT2,answerT3,answerT4,answerBtnT,answerNextT)
 	setSoundIcon()
-	answerA=[answerT1,answerT2,answerT3,answerT4,answerBtnT,answerNextT,soundBtn,soundIcon]
+	answerA=[answerT1,answerT2,answerT3,answerT4,answerBtnT,answerNextT,soundBtn,soundIcon,answerPicC]
 	for (var i = 0; i < answerA.length; i++) {
 		answerA[i].visible=false
 	};
@@ -134,6 +134,9 @@ function showAnswer(){
 	answerNextT.position.set(442,stageH/2-152)
 	soundBtn.position.set(238,stageH/2-138)
 	soundIcon.position.set(324,stageH/2-152)
+	answerPicC.y=0
+	var picA=[[a1a,a1b],[a2a,a2b],[a3a,a3b]]
+	picA[Qnum][nowAnswer].alpha=1
 	for (var i = 0; i < answerA.length; i++) {
 		answerA[i].visible=true
 		TweenMax.set(answerA[i],{alpha:1})
@@ -144,12 +147,32 @@ function showAnswer(){
 	answerT3.text=answerT3A[nowAnswer][Qnum]
 	answerT4.text=answerT4A[nowAnswer][Qnum]
 
+	if(Qnum==2){
+		tStyle4=new PIXI.TextStyle({fontFamily:'yrd-Medium',fontSize: 28,fill:["#6a4c00"]})
+		answerBtnT.style=tStyle4
+		answerBtnT.text="听听你内心的声音"
+		answerBtnT.x-=15
+		soundIcon.x+=12
+		answerNextT.text="全部提交>>"
+	}
+
 	answerNextT.interactive=true
 	answerNextT.tap=hideAnswer//showQ(Qnum)
+
+	answerBtnT.interactive=true
+	answerBtnT.tap=playSound
 	//NextQuestion()
 }
-
+var musicA=[["a-1","a-2"],["b-1","b-2"],["c-1","c-2"]]
+function playSound(){
+	PIXI.sound.stopAll()
+	PIXI.sound.play(musicA[Qnum][nowAnswer])
+	soundIconPlay()
+}
 function hideAnswer(){
+	soundIconStop()
+	PIXI.sound.stopAll()
+	answerBtnT.interactive=false
 	for (var i = 0; i < answerA.length; i++) {
 		TweenMax.to(answerA[i],.5,{alpha:0,y:"+=100",delay:.05*(answerA.length-i)})
 	};
@@ -187,13 +210,35 @@ function soundIconStop(){
 	TweenMax.set(sound3,{alpha:1})
 }
 //=======================================答案下部出现动画
-var answerPicC,floor
+var answerPicC,floor,table,a1a,a1b,a2a,a2b,a3a,a3b
 function setAnswerPic(){
 	answerPicC=new Container()
 	floor=new Graphics()
-	pStage.addChild(answerPicC,floor)
+	table=new Sprite(getTe(_CDN+"img/a1pic1.png"))
+
+	a1a=new Sprite(getTe(_CDN+"img/a1a.png"))
+	a1b=new Sprite(getTe(_CDN+"img/a1b.png"))
+	a2a=new Sprite(getTe(_CDN+"img/a2a.png"))
+	a2b=new Sprite(getTe(_CDN+"img/a2b.png"))
+	a3a=new Sprite(getTe(_CDN+"img/a3a.jpg"))
+	a3b=new Sprite(getTe(_CDN+"img/a3b.jpg"))
+
+	pStage.addChild(answerPicC)
+	answerPicC.addChild(floor,a3a,a3b,table,a1a,a1b,a2a,a2b)
 	floor.beginFill(0xaeb6c0,1)
-  floor.drawRect(0,stageH-387,640,stageH)
+  floor.drawRect(0,stageH/2+182,640,stageH)
+  table.position.set(100,stageH/2+220-150)
+
+  a1a.alpha=a1b.alpha=a2a.alpha=a2b.alpha=a3a.alpha=a3b.alpha=0
+
+  a1a.y=a1b.y=stageH/2-32
+  a1b.x=-100
+  a2a.y=a2b.y=stageH/2+157
+
+	a3a.x=a3b.x=640-218
+  a3a.y=a3b.y=stageH/2-427
+  answerPicC.alpha=0
+  answerPicC.y=100
 }
 
 
