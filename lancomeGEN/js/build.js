@@ -14,13 +14,19 @@ var imageList = [
 	_CDN+"img/q2pic5.png",
 	_CDN+"img/q2pic6.png",
 	_CDN+"img/q2pic7.png",
+	_CDN+"img/q3pic1.png",
+	_CDN+"img/q3pic2.png",
+	_CDN+"img/sound0.png",
+	_CDN+"img/sound1.png",
+	_CDN+"img/sound2.png",
+	_CDN+"img/sound3.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
     _MULTIPLY=PIXI.BLEND_MODES.MULTIPLY,
     _SCREEN=PIXI.BLEND_MODES.SCREEN;
 
-var pStage,bg,question1,question2,answer1,answer2,tStyle,btn1,btn2,btnSound,Qnum=0
+var pStage,bg,question1,question2,answer1,answer2,tStyle,btn1,btn2,Qnum=0
 var stageH
 var buildUGC = function () {
 	console.log("app",this,this.opts.w,this.opts.h)
@@ -32,7 +38,8 @@ var buildUGC = function () {
 
 	pStage=this.stage
 	stageH=this.opts.h
-	setup()
+	setAnswerPic()
+	//setup()
 }
 
 function setup(){
@@ -53,18 +60,6 @@ function setup(){
 	btn1=new Sprite(getTe(_CDN+"img/btn_up.png"))
 	btn2=new Sprite(getTe(_CDN+"img/btn_up.png"))
   pStage.addChild(btn1,btn2,question1,question2,answer1,answer2)
-  // question1.x=56
-  // question1.y=stageH/2-387
-  // question1.text="Q：你内心所孕育的情感世界，"
-  // question2.x=110
-  // question2.y=stageH/2-329
-  // question2.text="是一片怎样的光景？"
-  // answer1.x=169
-  // answer1.y=stageH/2-186
-  // answer1.text="一个人的浩瀚星空>> "
-  // answer2.x=169
-  // answer2.y=stageH/2-26
-  // answer2.text="两个人的温柔宇宙>> "
 
   btn1.interactive=true
   btn2.interactive=true
@@ -77,7 +72,7 @@ function setup(){
   btn1.touchend=btn1Up
   btn2.touchstart=btn2Down
   btn2.touchend=btn2Up
-
+  setAnswer()
   showQ(Qnum)
 }
 var nowAnswer

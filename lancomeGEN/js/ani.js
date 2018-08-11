@@ -34,12 +34,14 @@ function showQ (_Qnum) {
   if(_Qnum==0){aniQ1()}
   if(_Qnum==1){aniQ2()}
   if(_Qnum==2){aniQ3()}
-
- 
+  btn1.interactive=true
+ 	btn2.interactive=true
 	
 }
 
 function hideQ(){
+	btn1.interactive=false
+ 	btn2.interactive=false
 	var _Qnum=Qnum
 	question1.x=56
   question1.y=stageH/2-387
@@ -78,11 +80,124 @@ function NextQuestion(){
 	}
 }
 var resultA=[9,9,9]
-function showAnswer(){
-	resultA[Qnum]=nowAnswer
-	NextQuestion()
+var answerT1,answerT2,answerT3,answerT4,answerBtnT,answerNextT,tStyle2,tStyle3,tStyle4,soundBtn,answerA//,answer1C,answer2C,answer3C
+function setAnswer(){
+	answerT1A=[["经常一个人独处","不在乎朋友的多少","凡事都想做的更好"],["果汁分你一半","聚会从不缺席","与世无争的佛系"]]
+	answerT2A=[["享受自由的孤独","却会把知音当作宝","竞争也从来不愿失败"],["恩爱从不间断","朋友圈里永远有你","浸润出你对万物的宽逸"]]
+	answerT3A=[["就连听的音乐","时常也会哼起一首歌","耳机里的音乐"],["就连听的音乐","时常也会哼起一首歌","耳机里的音乐"]]
+	answerT4A=[["也释放着独身主义的温度","诉说你和秘友间的小打小闹","循环出你永不止步的宏愿"],["也透露着对你侬我侬的期盼","与万千朋友分享生活心语","伴随你在夏夜听见的蝉鸣"]]
+
+
+	tStyle2=new PIXI.TextStyle({fontFamily:'yrd-Medium',fontSize: 31})
+	tStyle3=new PIXI.TextStyle({fontFamily:'yrd-Medium',fontSize: 41})
+	tStyle4=new PIXI.TextStyle({fontFamily:'yrd-Medium',fontSize: 32,fill:["#6a4c00"]})
+	tStyle5=new PIXI.TextStyle({fontFamily:'yrd-Medium',fontSize: 28,fill:["#6a4c00"]})
+	answerT1=new PIXI.Text("经常一个人独处",tStyle2)
+	answerT2=new PIXI.Text("经常一个人独处",tStyle2)
+	answerT3=new PIXI.Text("经常一个人独处",tStyle2)
+	answerT4=new PIXI.Text("也释放着独身主义的温度",tStyle3)
+	answerBtnT=new PIXI.Text("音乐为我发声",tStyle4)
+	answerNextT=new PIXI.Text("下一题>>",tStyle5)
+
+	answerT1.x=answerT2.x=answerT3.x=answerT4.x=86
+
+	answerT1.y=stageH/2-400
+	answerT2.y=stageH/2-345
+	answerT3.y=stageH/2-291
+	answerT4.y=stageH/2-238
+
+	answerBtnT.position.set(123,stageH/2-152)
+	answerNextT.position.set(442,stageH/2-152)
+
+	soundBtn=new Sprite(getTe(_CDN+"img/btn_up.png"))
+	soundBtn.pivot.set(320,58)
+	soundBtn.position.set(238,stageH/2-138)
+	soundBtn.scale.x=soundBtn.scale.y=.66
+
+	pStage.addChild(soundBtn,answerT1,answerT2,answerT3,answerT4,answerBtnT,answerNextT)
+	setSoundIcon()
+	answerA=[answerT1,answerT2,answerT3,answerT4,answerBtnT,answerNextT,soundBtn,soundIcon]
+	for (var i = 0; i < answerA.length; i++) {
+		answerA[i].visible=false
+	};
 }
 
+function showAnswer(){
+	console.log("showAnswer")
+	resultA[Qnum]=nowAnswer
+	answerT1.y=stageH/2-400
+	answerT2.y=stageH/2-345
+	answerT3.y=stageH/2-291
+	answerT4.y=stageH/2-238
+
+	answerBtnT.position.set(123,stageH/2-152)
+	answerNextT.position.set(442,stageH/2-152)
+	soundBtn.position.set(238,stageH/2-138)
+	soundIcon.position.set(324,stageH/2-152)
+	for (var i = 0; i < answerA.length; i++) {
+		answerA[i].visible=true
+		TweenMax.set(answerA[i],{alpha:1})
+		TweenMax.from(answerA[i],.5,{alpha:0,y:"+=100",delay:.05*i})
+	};
+	answerT1.text=answerT1A[nowAnswer][Qnum]
+	answerT2.text=answerT2A[nowAnswer][Qnum]
+	answerT3.text=answerT3A[nowAnswer][Qnum]
+	answerT4.text=answerT4A[nowAnswer][Qnum]
+
+	answerNextT.interactive=true
+	answerNextT.tap=hideAnswer//showQ(Qnum)
+	//NextQuestion()
+}
+
+function hideAnswer(){
+	for (var i = 0; i < answerA.length; i++) {
+		TweenMax.to(answerA[i],.5,{alpha:0,y:"+=100",delay:.05*(answerA.length-i)})
+	};
+	TweenMax.set(this,{onComplete:NextQuestion,delay:0.6})
+	//NextQuestion()
+	answerNextT.interactive=false
+}
+
+//==========================================喇叭按钮动画
+var soundIcon,sound0,sound1,sound2,sound3
+function setSoundIcon(){
+	soundIcon=new Container()
+	sound0=new Sprite(getTe(_CDN+"img/sound0.png"))
+	sound1=new Sprite(getTe(_CDN+"img/sound1.png"))
+	sound2=new Sprite(getTe(_CDN+"img/sound2.png"))
+	sound3=new Sprite(getTe(_CDN+"img/sound3.png"))
+	pStage.addChild(soundIcon)
+	soundIcon.addChild(sound0,sound1,sound2,sound3)
+	soundIcon.position.set(324,stageH/2-152)
+	//===
+	soundIconPlay()
+	soundIconStop()
+}
+function soundIconPlay(){
+	TweenMax.to(sound1,.5,{alpha:0,repeat:1000,yoyo:true,delay:0})
+	TweenMax.to(sound2,.5,{alpha:0,repeat:1000,yoyo:true,delay:.15})
+	TweenMax.to(sound3,.5,{alpha:0,repeat:1000,yoyo:true,delay:.3})
+}
+function soundIconStop(){
+	TweenMax.killTweensOf(sound1)
+	TweenMax.killTweensOf(sound2)
+	TweenMax.killTweensOf(sound3)
+	TweenMax.set(sound1,{alpha:1})
+	TweenMax.set(sound2,{alpha:1})
+	TweenMax.set(sound3,{alpha:1})
+}
+//=======================================答案下部出现动画
+var answerPicC,floor
+function setAnswerPic(){
+	answerPicC=new Container()
+	floor=new Graphics()
+	pStage.addChild(answerPicC,floor)
+	floor.beginFill(0xaeb6c0,1)
+  floor.drawRect(0,stageH-387,640,stageH)
+}
+
+
+//=======================================问题下部出现动画
 var aniQ1C,aniQ2C,aniQ3C,q1pic1,q1pic2,q1pic3,q1pic4
 function aniQ1(){
 	console.log("-----------------------")
@@ -115,7 +230,8 @@ var q2picA
 function aniQ2(){
 	pStage.addChild(aniQ2C)
 	q2picA=[q2pic1,q2pic2,q2pic3,q2pic4,q2pic5,q2pic6,q2pic7]
-	for (var i = 2; i <= 7; i++) {
+	var i
+	for (i = 2; i <= 7; i++) {
 		q2picA[i-1]=new Sprite(getTe(_CDN+"img/q2pic"+i+".png"))
 		aniQ2C.addChild(q2picA[i-1])
 		q2picA[i-1].pivot.set(320,190)
@@ -124,10 +240,44 @@ function aniQ2(){
 
 	q2pic1=new Sprite(getTe(_CDN+"img/q2pic1.png"))
 	aniQ2C.addChild(q2pic1)
-	q2pic1.pivot.set(320,190)
-	q2pic1.position.set(320,stageH/2+306)
+	q2pic1.pivot.set(45.5,97)
+	q2pic1.position.set(222,stageH/2+399)
+
+	_q2pic1=new Sprite(getTe(_CDN+"img/q2pic1.png"))
+	aniQ2C.addChild(_q2pic1)
+	_q2pic1.pivot.set(45.5,97)
+	_q2pic1.position.set(427,stageH/2+399)
+
+	q2picA[0]=q2pic1
+	q2picA.unshift(_q2pic1)
+	console.log(5,q2picA[5])
+	for (i = 0; i < q2picA.length; i++) {
+		if(i<3){
+			TweenMax.from(q2picA[i],.8,{y:"-=150",ease:Back.easeNone,delay:i*.1,alpha:0})
+		}else{
+			TweenMax.from(q2picA[i],1.5,{y:"-=150",ease:Bounce.easeOut,delay:i*.05+.2,alpha:0})
+		}
+		
+	};
 
 }
+var q3pic1,_q3pic2
 function aniQ3(){
-	
+
+	q3pic1=new Sprite(getTe(_CDN+"img/q3pic1.png"))
+	q3pic2=new Sprite(getTe(_CDN+"img/q3pic2.png"))
+
+	pStage.addChild(aniQ3C)
+	aniQ3C.addChild(q3pic2,q3pic1)
+
+	q3pic1.pivot.set(320,203)
+	q3pic2.pivot.set(320,203)
+	q3pic1.position.set(320,stageH/2+285)
+	q3pic2.position.set(320,stageH/2+285)
+	TweenMax.from(q3pic1,2.5,{x:"+=70",ease:Elastic.easeOut})
+	TweenMax.from(q3pic2,2.5,{x:"-=70",ease:Elastic.easeOut,delay:.1})
+
+	TweenMax.from(q3pic1,.5,{alpha:0})
+	TweenMax.from(q3pic2,.5,{alpha:0,delay:.1})
+
 }
