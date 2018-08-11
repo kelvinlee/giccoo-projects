@@ -110,10 +110,10 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "有故事的声活单曲"
-				desc: "有故事的声活单曲~"
-				link: "http://m.giccoo.com/Levi/"
-				imgUrl: "http://m.giccoo.com/Levi/img/ico.jpg"
+				title: "渴望拥有外在的光芒"
+				desc: "就更应聆听自己内心的声音"
+				link: "http://m.giccoo.com/lancomeGEN/"
+				imgUrl: "http://m.giccoo.com/lancomeGEN/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
@@ -181,7 +181,7 @@ init = ->
 			wy: false
 			mounted: true
 			loading: false
-			pagebuildShow: false
+			lotteryShow: false
 			pageInfoShow: false
 			pageIndex: 2
 			step: 1
@@ -225,7 +225,10 @@ init = ->
 			speed: 4000
 			swing: false
 		methods:
-			
+			openWeb: ->
+				console.log "open web"
+			sharePost: ->
+				console.log "share"
 			share: (image)->
 				folder = "Levi"
 				data = {

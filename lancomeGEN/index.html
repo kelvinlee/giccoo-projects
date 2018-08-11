@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>有故事的声活单曲</title>
+    <title>渴望拥有外在的光芒</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/font/Interstate Regular.css">
@@ -74,6 +74,18 @@
             </div>
             <div v-show="handCover" @click="nextPage" class="hand-cover"></div>
             <div class="note"><img src="./img/spage-note.png"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="lotteryShow" class="pop">
+          <div class="book">
+            <div class="bg"><img src="./img/book-bg.png"></div>
+            <div class="text"><img src="./img/text-faild.png"></div>
+            <div class="btns"><img src="./img/btn-share.png">
+              <div @click="sharePost" class="share"></div>
+              <div @click="openWeb" class="web"></div>
+            </div>
           </div>
         </div>
       </transition>

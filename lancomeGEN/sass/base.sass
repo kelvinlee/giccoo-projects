@@ -246,6 +246,7 @@ video,canvas,svg
 	font-size: 0
 	z-index: 199
 	font-family: "yrd-Bold"
+	+hide
 	.note-text
 		+posa
 		+tr(50%,120%)
@@ -488,7 +489,10 @@ video,canvas,svg
 		animation-delay: 400ms
 	.btn
 		animation-delay: 600ms
-
+.page-2
+	font-family: "yrd-Bold"
+	.content
+		font-family: "yrd-Medium"
 .page-3
 	.hand-cover
 		+posa
@@ -514,3 +518,31 @@ video,canvas,svg
 				+transform(scale(0.9,0.9))
 				transform-origin: bottom center
 
+.pop
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	+bc(rgba(255,255,255,0.7))
+	.book
+		+iw(578,750,100%)
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+	.text
+		+posa
+		+tl
+	.btns
+		+posa
+		+bl(30%)
+		.share
+			+posa
+			+tl
+			+w(50%)
+			+h
+		.web
+			+posa
+			+tr
+			+w(50%)
+			+h

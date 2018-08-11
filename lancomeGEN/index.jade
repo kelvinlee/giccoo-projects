@@ -1,7 +1,7 @@
 extends ../libs/jade/layout-clean
 
 block title
-  | 有故事的声活单曲
+  | 渴望拥有外在的光芒
 
 block css
   meta(name="author",content="m.giccoo.com")
@@ -82,6 +82,18 @@ block content
           .hand-cover(v-show="handCover",@click="nextPage")
           .note
             img(src="#{url}/img/spage-note.png")
+    
+    transition(name="page-fade")
+      .pop(v-show="lotteryShow")
+        .book
+          .bg
+            img(src="#{url}/img/book-bg.png")
+          .text
+            img(src="#{url}/img/text-faild.png")
+          .btns
+            img(src="#{url}/img/btn-share.png")
+            .share(@click="sharePost")
+            .web(@click="openWeb")
           
     
 

@@ -213,7 +213,7 @@ UGC = function () {
       this.stage = this.app.stage;
       document.getElementById(this.opts.el).appendChild(this.app.view);
       console.log("imageList:", imageList.length);
-      PIXI.loader.add(imageList).use(this.loaditem.bind(this)).load(buildUGC.bind(this));
+      PIXI.loader.add(imageList).add('a-1', _CDN + 'mp3/a-1.mp3').add('a-2', _CDN + 'mp3/a-2.mp3').add('b-1', _CDN + 'mp3/b-1.mp3').add('b-2', _CDN + 'mp3/b-2.mp3').add('c-1', _CDN + 'mp3/c-1.mp3').add('c-2', _CDN + 'mp3/c-2.mp3').use(this.loaditem.bind(this)).load(buildUGC.bind(this));
       this.default.MH = this.opts.h * 0.65;
     }
 
@@ -222,10 +222,27 @@ UGC = function () {
       value: function loaditem() {
         this.loadNumber++;
         loading.progressOn = parseInt(this.loadNumber / imageList.length * 100);
-        console.log(this.loadNumber, loading.progressOn, this.loadNumber === imageList.length);
+        // console.log @.loadNumber,loading.progressOn,@.loadNumber is imageList.length
         if (this.loadNumber === imageList.length) {
           return buildUGC.bind(this).call();
         }
+      }
+
+      // @.build()
+
+    }, {
+      key: 'build',
+      value: function build() {
+        return setTimeout(function () {
+          PIXI.sound.filtersAll = [];
+          // new PIXI.sound.filters.ReverbFilter()
+          // new PIXI.sound.filters.TelephoneFilter()
+          // new PIXI.sound.filters.DistortionFilter(1)
+          // new PIXI.sound.filters.MonoFilter()
+          // new PIXI.sound.filters.EqualizerFilter(2,5)
+          // new PIXI.sound.filters.StereoFilter(-1)
+          return PIXI.sound.play("a-1");
+        }, 1000);
       }
     }]);
 
@@ -414,10 +431,10 @@ window.onload = function () {
     wx.ready(function () {
       var shareContent;
       shareContent = {
-        title: "有故事的声活单曲",
-        desc: "有故事的声活单曲~",
-        link: "http://m.giccoo.com/Levi/",
-        imgUrl: "http://m.giccoo.com/Levi/img/ico.jpg",
+        title: "渴望拥有外在的光芒",
+        desc: "就更应聆听自己内心的声音",
+        link: "http://m.giccoo.com/lancomeGEN/",
+        imgUrl: "http://m.giccoo.com/lancomeGEN/img/ico.jpg",
         success: function success() {},
         // alert "success"
         cancel: function cancel() {}
@@ -503,7 +520,7 @@ init = function init() {
       wy: false,
       mounted: true,
       loading: false,
-      pagebuildShow: false,
+      lotteryShow: false,
       pageInfoShow: false,
       pageIndex: 2,
       step: 1,
@@ -550,6 +567,12 @@ init = function init() {
       swing: false
     },
     methods: {
+      openWeb: function openWeb() {
+        return console.log("open web");
+      },
+      sharePost: function sharePost() {
+        return console.log("share");
+      },
       share: function share(image) {
         var data, folder;
         folder = "Levi";
