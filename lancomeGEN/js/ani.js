@@ -223,10 +223,15 @@ function finishAll(){
 
 	main.sharePost()
 }
+var btnlottery
 function setLottery() {
 	// 抽奖 btn
 	qr.visible = false
-
+	btnlottery=new Sprite(getTe(_CDN+"img/btnlottery.png"))
+	pStage.addChild(btnlottery)
+	btnlottery.y=stageH/2-131
+	btnlottery.interactive=true
+	btnlottery.tap=main.openPop
 	// click to main.openPop()
 }
 

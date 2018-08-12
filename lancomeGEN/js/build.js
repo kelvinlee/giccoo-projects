@@ -29,6 +29,7 @@ var imageList = [
 	_CDN+"img/a3b.jpg",
 	_CDN+"img/qr.png",
 	_CDN+"img/homepage-logo.png",
+	_CDN+"img/btnlottery.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
