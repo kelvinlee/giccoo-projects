@@ -2,7 +2,7 @@ var question1A=["Q：你内心所孕育的情感世界，","Q：你内心所培�
 var question2A=["是一片怎样的光景？","是一片多大的乐园？","会停留在列车的哪个站台?"]
 var answer1A=["一个人的浩瀚星空>>","秘友间的小小花园>> ","追梦者的奋进都市>>"]
 var answer2A=["两个人的温柔宇宙>>","交际花的玫瑰花海>> ","造梦者的轻活家园>>"]
-
+var audioPlaying = false
 
 var aniQA//=[aniQ1C,aniQ2C,aniQ3C]
 
@@ -165,9 +165,19 @@ function showAnswer(){
 }
 var musicA=[["a-1","a-2"],["b-1","b-2"],["c-1","c-2"]]
 function playSound(){
-	PIXI.sound.stopAll()
-	PIXI.sound.play(musicA[Qnum][nowAnswer])
+	if (audioPlaying) {
+		audioPlaying = false
+		PIXI.sound.pause(musicA[Qnum][nowAnswer])
+		soundIconStop()
+		return false
+	}
+	PIXI.sound.play(musicA[Qnum][nowAnswer],{complete: function(){
+		soundIconStop()
+		hideAnswer()
+		audioPlaying = false
+	}})
 	soundIconPlay()
+	audioPlaying = true
 }
 function hideAnswer(){
 	soundIconStop()
