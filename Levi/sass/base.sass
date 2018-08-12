@@ -513,17 +513,17 @@ video,canvas,svg
 	$time: 4200ms
 	.text-1
 		+tl(20%)
-		+animation(textShow,$time,linear)
+		+animation(textShow,$time + 100ms,linear)
 		animation-delay: 500ms
 	.text-2
 		+tl(45%)
-		+animation(textShow,$time + 400ms,linear)
-		animation-delay: 500ms + $time
+		+animation(textShow,$time + 300ms,linear)
+		animation-delay: 600ms + $time
 		.box
 			margin-left: 10%
 	.text-3
-		+animation(textShow,$time + 500ms,linear)
-		animation-delay: 500ms + $time*2
+		+animation(textShow,$time + 1000ms,linear)
+		animation-delay: 700ms + $time*2
 		+tl(65%)
 
 .page-2
