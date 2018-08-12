@@ -44,7 +44,7 @@ sys = ""
 ugcCache = null
 sended = [false,false]
 _cache = null
-_CDN = "./"
+_CDN = "//image.giccoo.com/projects/Levi-special/"
 _cd = null
 
 window.onload = ->

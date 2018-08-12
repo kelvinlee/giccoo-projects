@@ -1,5 +1,5 @@
 random = 1+parseInt Math.random()*5
-_CDN = "./"
+_CDN = "//image.giccoo.com/projects/Levi/"
 list = [
 	"#{_CDN}img/ugc-bg-1.jpg"
 	"#{_CDN}img/ugc-bg-2.jpg"

@@ -26,11 +26,11 @@
         <div class="page page-gather">
           <div class="content">
             <audio id="bgm" @loadstart="load" @play="playing = true" @pause="playing = false" @ended="playing = false" :src="'//image.giccoo.com/projects/Levi-special/mp3/cd-'+now+'.mp3'"></audio>
-            <div class="bg-top"><img src="./img/gather-bg.jpg"></div>
+            <div class="bg-top"><img src="//image.giccoo.com/projects/Levi-special/img/gather-bg.jpg"></div>
             <div class="empty"></div>
             <div class="list">
               <div v-for="item,index in list" class="item">
-                <div class="cd"><img :src="'./img/cd-'+item.id+'.jpg'">
+                <div class="cd"><img :src="'//image.giccoo.com/projects/Levi-special/img/cd-'+item.id+'.jpg'">
                   <div v-show="now != (index+1) || !playing" @click="play(index)" class="btn-play"></div>
                   <div v-show="now == (index+1) &amp;&amp; playing" @click="play(index)" class="btn-play pause"></div>
                 </div>

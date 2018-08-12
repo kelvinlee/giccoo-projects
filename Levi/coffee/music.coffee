@@ -21,7 +21,7 @@ main = null
 _cd = null
 apiLink = "//g.giccoo.com/"
 # apiLink = "http://192.168.3.45:3000/"
-_CDN = "./"
+_CDN = "//image.giccoo.com/projects/Levi/"
 
 window.onload = ->
 	if IsPC()

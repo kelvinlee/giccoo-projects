@@ -21,9 +21,9 @@
   <body>
     <div id="music" v-show="mounted" :class="{biger: biger,smaller:smaller}" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main fadeIn animated">
       <div class="page page-music">
-        <div :style="'background-image:url(./img/music-bg-'+info.singer+'.jpg)'" class="bg"></div>
+        <div :style="'background-image:url(//image.giccoo.com/projects/Levi/img/music-bg-'+info.singer+'.jpg)'" class="bg"></div>
         <div class="content">
-          <div class="bg-box"><img src="./img/music-border.png"></div>
+          <div class="bg-box"><img src="//image.giccoo.com/projects/Levi/img/music-border.png"></div>
           <div class="up">
             <div id="cd"></div>
             <div class="message">
@@ -31,8 +31,8 @@
             </div>
             <div class="player">
               <div @click="play" class="btn btn-play">
-                <div v-show="!playing" class="play"><img src="./img/music-icon-play.png"></div>
-                <div v-show="playing" class="stop"><img src="./img/music-icon-pause.png"></div>
+                <div v-show="!playing" class="play"><img src="//image.giccoo.com/projects/Levi/img/music-icon-play.png"></div>
+                <div v-show="playing" class="stop"><img src="//image.giccoo.com/projects/Levi/img/music-icon-pause.png"></div>
               </div>
               <div class="time time-begin">{{timeing}}</div>
               <div class="progress">
@@ -46,10 +46,10 @@
             </div>
             <div class="my">{{info.nickname}}</div>
             <div class="nickname">
-              <div class="singer"><img :src="'./img/music-singer-name-'+info.singer+'.png'"></div>
+              <div class="singer"><img :src="'//image.giccoo.com/projects/Levi/img/music-singer-name-'+info.singer+'.png'"></div>
             </div>
           </div>
-          <div @click="next" class="btn-next"><img src="./img/music-btn-next.png"></div>
+          <div @click="next" class="btn-next"><img src="//image.giccoo.com/projects/Levi/img/music-btn-next.png"></div>
         </div>
       </div>
     </div>

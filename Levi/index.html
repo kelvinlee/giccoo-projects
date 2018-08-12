@@ -8,7 +8,7 @@
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/font/Interstate Regular.css">
-    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/base.css?v=116">
     <script>
       var _hmt = _hmt || [];
       (function() {
@@ -21,7 +21,7 @@
   </head>
   <body>
     <div id="qrcode" class="qrcode">
-      <div class="qr"><img src="./img/qrcode-pc.png">
+      <div class="qr"><img src="//image.giccoo.com/projects/Levi/img/qrcode-pc.png">
         <div class="text">使用网易云音乐扫一扫<br/>制作你的声活单曲</div>
       </div>
     </div>
@@ -43,7 +43,7 @@
           <div style="height: 6rem" class="music-box"></div>
           <div style="height: 4rem" class="music-box"></div>
           <div style="height: 2rem" class="music-box"></div>
-          <div class="text fadeIn animated"><img src="./img/loading-text.png">
+          <div class="text fadeIn animated"><img src="//image.giccoo.com/projects/Levi/img/loading-text.png">
             <div class="progress">{{progress}}%</div>
           </div>
         </div>
@@ -89,7 +89,7 @@
                 <div style="height: 3rem" class="music-box"></div>
                 <div style="height: 1rem" class="music-box"></div>
               </div>
-              <div class="text"><img src="./img/page-1-1.png"></div>
+              <div class="text"><img src="//image.giccoo.com/projects/Levi/img/page-1-1.png"></div>
             </div>
             <div class="text-box text-2">
               <div class="box">
@@ -109,7 +109,7 @@
                 <div style="height: 3rem" class="music-box"></div>
                 <div style="height: 1rem" class="music-box"></div>
               </div>
-              <div class="text"><img src="./img/page-1-2.png"></div>
+              <div class="text"><img src="//image.giccoo.com/projects/Levi/img/page-1-2.png"></div>
             </div>
             <div class="text-box text-3">
               <div class="box">
@@ -129,25 +129,25 @@
                 <div style="height: 3rem" class="music-box"></div>
                 <div style="height: 1rem" class="music-box"></div>
               </div>
-              <div class="text"><img src="./img/page-1-3.png"></div>
+              <div class="text"><img src="//image.giccoo.com/projects/Levi/img/page-1-3.png"></div>
             </div>
             <transition name="page-fade">
               <div v-show="openBtnShow" @click="openMusic" class="open">打开声音</div>
             </transition>
-            <audio id="bgm" src="./mp3/bgm.mp3"></audio>
+            <audio id="bgm" src="//image.giccoo.com/projects/Levi/mp3/bgm.mp3"></audio>
           </div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="pageIndex == 2" class="page page-2">
           <div class="content">
-            <div class="head"><img src="./img/homepage-bg.png">
-              <div @click="watchAD" class="watch-ad"><img src="./img/homepage-watch-ad.png"></div>
+            <div class="head"><img src="//image.giccoo.com/projects/Levi/img/homepage-bg.png">
+              <div @click="watchAD" class="watch-ad"><img src="//image.giccoo.com/projects/Levi/img/homepage-watch-ad.png"></div>
             </div>
             <div class="after-box">
-              <div class="text"><img src="./img/homepage-text.png"></div>
-              <div @click="startbuild" class="btn"><img src="./img/homepage-next.png"></div>
-              <div class="logo"><img src="./img/homepage-logo.png"></div>
+              <div class="text"><img src="//image.giccoo.com/projects/Levi/img/homepage-text.png"></div>
+              <div @click="startbuild" class="btn"><img src="//image.giccoo.com/projects/Levi/img/homepage-next.png"></div>
+              <div class="logo"><img src="//image.giccoo.com/projects/Levi/img/homepage-logo.png"></div>
             </div>
           </div>
         </div>
@@ -162,62 +162,62 @@
                   <input id="imageInput" type="file" name="file" accept="image/*" @change="changeImage">
                 </div>
                 <div class="user-ctrl">
-                  <div class="title"><img src="./img/name-ctrl-title.png"></div>
+                  <div class="title"><img src="//image.giccoo.com/projects/Levi/img/name-ctrl-title.png"></div>
                   <div class="textarea">
                     <textarea v-model="nickname" maxlength="20" @propertychange="maxlengthnickname" placeholder="输入你的名字（字数限制10字）"></textarea>
                   </div>
-                  <div @click="gotoAudio" class="btn"><img src="./img/btn-name.png"></div>
+                  <div @click="gotoAudio" class="btn"><img src="//image.giccoo.com/projects/Levi/img/btn-name.png"></div>
                 </div>
               </div>
             </transition>
             <transition name="page-fade">
               <div v-show="step == 2" class="audio-ctrl">
-                <div class="title"><img src="./img/page-3-audio-title.png"></div>
+                <div class="title"><img src="//image.giccoo.com/projects/Levi/img/page-3-audio-title.png"></div>
                 <div class="btns">
                   <div v-show="audioId != null" @click="playAudio" class="btn btn-audition fadeIn animated">
-                    <div v-show="canUpload" class="icon"><img src="./img/icon-audio-play.png"></div>
-                    <div v-show="!canUpload" class="icon"><img src="./img/icon-audio-pause.png"></div><span>{{canUpload?'试 听':'暂 停'}}</span>
+                    <div v-show="canUpload" class="icon"><img src="//image.giccoo.com/projects/Levi/img/icon-audio-play.png"></div>
+                    <div v-show="!canUpload" class="icon"><img src="//image.giccoo.com/projects/Levi/img/icon-audio-pause.png"></div><span>{{canUpload?'试 听':'暂 停'}}</span>
                   </div>
                   <div class="btn btn-start">
-                    <div v-show="!recordStarting" @click="recordStart" class="start"><img src="./img/icon-audio-restart.png"></div>
-                    <div v-show="recordStarting" @click="recordStop" class="stop"><img src="./img/icon-audio-start.png">
+                    <div v-show="!recordStarting" @click="recordStart" class="start"><img src="//image.giccoo.com/projects/Levi/img/icon-audio-restart.png"></div>
+                    <div v-show="recordStarting" @click="recordStop" class="stop"><img src="//image.giccoo.com/projects/Levi/img/icon-audio-start.png">
                       <div v-show="recordStarting" class="count">{{count}}</div>
                     </div><span>{{!recordStarting?audioId != null?'重 录':'录 音':'停 止'}}</span>
                   </div>
-                  <div v-show="audioId != null" @click="uploadAudio" class="btn btn-upload fadeIn animated"><img src="./img/icon-audio-right.png"><span>完 成</span></div>
+                  <div v-show="audioId != null" @click="uploadAudio" class="btn btn-upload fadeIn animated"><img src="//image.giccoo.com/projects/Levi/img/icon-audio-right.png"><span>完 成</span></div>
                 </div>
               </div>
             </transition>
             <transition name="page-fade">
               <div v-show="step == 3" class="message-ctrl">
-                <div class="title"><img src="./img/message-ctrl-title.png"></div>
+                <div class="title"><img src="//image.giccoo.com/projects/Levi/img/message-ctrl-title.png"></div>
                 <div class="textarea">
                   <textarea v-model="text" maxlength="64" placeholder="你发声了什么？（字数限制32字）"></textarea>
                 </div>
-                <div @click="selectSingerStart" class="btn"><img src="./img/btn-create.png"></div>
+                <div @click="selectSingerStart" class="btn"><img src="//image.giccoo.com/projects/Levi/img/btn-create.png"></div>
               </div>
             </transition>
             <transition name="page-fade">
               <div v-show="step == 4" class="singer-ctrl">
-                <div class="title"><img src="./img/singer-title-text.png"></div>
+                <div class="title"><img src="//image.giccoo.com/projects/Levi/img/singer-title-text.png"></div>
                 <div @touchstart="start" @touchmove="move" @touchend="end" class="singers">
-                  <div :class="{p3: (singerIndex-3) &gt;= 1,p2: (singerIndex-2) == 1,p1: (singerIndex-1) == 1,on: singerIndex == 1,n1: (singerIndex+1) == 1,n2: (singerIndex+2) == 1,n3: (singerIndex+3) &lt;= 1}" class="singer"><img src="./img/singer-1.jpg"></div>
-                  <div :class="{p3: (singerIndex-3) &gt;= 2,p2: (singerIndex-2) == 2,p1: (singerIndex-1) == 2,on: singerIndex == 2,n1: (singerIndex+1) == 2,n2: (singerIndex+2) == 2,n3: (singerIndex+3) &lt;= 2}" class="singer"><img src="./img/singer-2.jpg"></div>
-                  <div :class="{p3: (singerIndex-3) &gt;= 3,p2: (singerIndex-2) == 3,p1: (singerIndex-1) == 3,on: singerIndex == 3,n1: (singerIndex+1) == 3,n2: (singerIndex+2) == 3,n3: (singerIndex+3) &lt;= 3}" class="singer"><img src="./img/singer-3.jpg"></div>
-                  <div :class="{p3: (singerIndex-3) &gt;= 4,p2: (singerIndex-2) == 4,p1: (singerIndex-1) == 4,on: singerIndex == 4,n1: (singerIndex+1) == 4,n2: (singerIndex+2) == 4,n3: (singerIndex+3) &lt;= 4}" class="singer"><img src="./img/singer-4.jpg"></div>
-                  <div :class="{p3: (singerIndex-3) &gt;= 5,p2: (singerIndex-2) == 5,p1: (singerIndex-1) == 5,on: singerIndex == 5,n1: (singerIndex+1) == 5,n2: (singerIndex+2) == 5,n3: (singerIndex+3) &lt;= 5}" class="singer"><img src="./img/singer-5.jpg"></div>
-                  <div @click="singerPrev" :class="{half: singerIndex == 1}" class="left"><img src="./img/icon-left.png"></div>
-                  <div @click="singerNext" :class="{half: singerIndex == 5}" class="right"><img src="./img/icon-left.png"></div>
-                  <div class="box on"><img src="./img/singer-3.jpg"></div>
+                  <div :class="{p3: (singerIndex-3) &gt;= 1,p2: (singerIndex-2) == 1,p1: (singerIndex-1) == 1,on: singerIndex == 1,n1: (singerIndex+1) == 1,n2: (singerIndex+2) == 1,n3: (singerIndex+3) &lt;= 1}" class="singer"><img src="//image.giccoo.com/projects/Levi/img/singer-1.jpg"></div>
+                  <div :class="{p3: (singerIndex-3) &gt;= 2,p2: (singerIndex-2) == 2,p1: (singerIndex-1) == 2,on: singerIndex == 2,n1: (singerIndex+1) == 2,n2: (singerIndex+2) == 2,n3: (singerIndex+3) &lt;= 2}" class="singer"><img src="//image.giccoo.com/projects/Levi/img/singer-2.jpg"></div>
+                  <div :class="{p3: (singerIndex-3) &gt;= 3,p2: (singerIndex-2) == 3,p1: (singerIndex-1) == 3,on: singerIndex == 3,n1: (singerIndex+1) == 3,n2: (singerIndex+2) == 3,n3: (singerIndex+3) &lt;= 3}" class="singer"><img src="//image.giccoo.com/projects/Levi/img/singer-3.jpg"></div>
+                  <div :class="{p3: (singerIndex-3) &gt;= 4,p2: (singerIndex-2) == 4,p1: (singerIndex-1) == 4,on: singerIndex == 4,n1: (singerIndex+1) == 4,n2: (singerIndex+2) == 4,n3: (singerIndex+3) &lt;= 4}" class="singer"><img src="//image.giccoo.com/projects/Levi/img/singer-4.jpg"></div>
+                  <div :class="{p3: (singerIndex-3) &gt;= 5,p2: (singerIndex-2) == 5,p1: (singerIndex-1) == 5,on: singerIndex == 5,n1: (singerIndex+1) == 5,n2: (singerIndex+2) == 5,n3: (singerIndex+3) &lt;= 5}" class="singer"><img src="//image.giccoo.com/projects/Levi/img/singer-5.jpg"></div>
+                  <div @click="singerPrev" :class="{half: singerIndex == 1}" class="left"><img src="//image.giccoo.com/projects/Levi/img/icon-left.png"></div>
+                  <div @click="singerNext" :class="{half: singerIndex == 5}" class="right"><img src="//image.giccoo.com/projects/Levi/img/icon-left.png"></div>
+                  <div class="box on"><img src="//image.giccoo.com/projects/Levi/img/singer-3.jpg"></div>
                 </div>
-                <div @click="review" class="btn"><img src="./img/btn-build.png"></div>
+                <div @click="review" class="btn"><img src="//image.giccoo.com/projects/Levi/img/btn-build.png"></div>
               </div>
             </transition>
             <transition name="page-fade">
               <div v-show="step == 5" class="review-ctrl">
                 <div class="btns">
-                  <div @click="over" class="btn btn-share"><img src="./img/btn-share.png"></div>
-                  <div @click="gotoMore" class="btn btn-more"><img src="./img/btn-more.png"></div>
+                  <div @click="over" class="btn btn-share"><img src="//image.giccoo.com/projects/Levi/img/btn-share.png"></div>
+                  <div @click="gotoMore" class="btn btn-more"><img src="//image.giccoo.com/projects/Levi/img/btn-more.png"></div>
                 </div>
               </div>
             </transition>
@@ -227,10 +227,10 @@
       <transition name="page-fade">
         <div v-show="allowPopShow" class="pop pop-allow">
           <div class="content">
-            <div class="allow-box"><img src="./img/pop-reg.png">
+            <div class="allow-box"><img src="//image.giccoo.com/projects/Levi/img/pop-reg.png">
               <div class="btns">
-                <div @click="allowFALSE" class="btn btn-no"><img src="./img/btn-no.png"></div>
-                <div @click="allowTRUE" class="btn btn-yes"><img src="./img/btn-yes.png"></div>
+                <div @click="allowFALSE" class="btn btn-no"><img src="//image.giccoo.com/projects/Levi/img/btn-no.png"></div>
+                <div @click="allowTRUE" class="btn btn-yes"><img src="//image.giccoo.com/projects/Levi/img/btn-yes.png"></div>
               </div>
             </div>
           </div>
@@ -245,7 +245,7 @@
       </transition>
       <transition name="page-fade">
         <div v-show="videoPop" class="pop">
-          <div @click="videoPop = false; document.getElementById('video').pause()" class="close"><img src="./img/icon-close.png"></div>
+          <div @click="videoPop = false; document.getElementById('video').pause()" class="close"><img src="//image.giccoo.com/projects/Levi/img/icon-close.png"></div>
           <div class="video">
             <video id="video" width="640" height="360" src="//image.giccoo.com/projects/Levi-special/mp4/v1.mp4" controls="true" preload="none" webkit-playsinline playsinline></video>
           </div>
@@ -261,6 +261,6 @@
     <script src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js"></script>
     <script src="//s3.music.126.net/static/mob/ntes.id.js"></script>
     <script src="//s5.music.126.net/static_public/5a1b70ea0180f6ca7295a59d/js/music-jssdk-1.0.3.js"></script>
-    <script src="js/main.js?v=2"></script>
+    <script src="js/main.js?v=116"></script>
   </body>
 </html>
