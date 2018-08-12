@@ -186,7 +186,8 @@ function hideAnswer(){
 	answerNextT.interactive=false
 
 	if(Qnum==2){
-		finishAll()
+		// finishAll()
+		main.pageHand()
 	}else{
 		for (var i = 0; i < answerA.length; i++) {
 			TweenMax.to(answerA[i],.5,{alpha:0,y:"+=100",delay:.05*(answerA.length-i)})
@@ -220,7 +221,13 @@ function finishAll(){
 	logo.y=stageH/2-423
 	logo.scale.x=logo.scale.y=.68
 
-	console.log("全部完成")
+	main.sharePost()
+}
+function setLottery() {
+	// 抽奖 btn
+	qr.visible = false
+
+	// click to main.openPop()
 }
 
 //==========================================喇叭按钮动画

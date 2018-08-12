@@ -227,23 +227,6 @@ UGC = function () {
           return buildUGC.bind(this).call();
         }
       }
-
-      // @.build()
-
-    }, {
-      key: 'build',
-      value: function build() {
-        return setTimeout(function () {
-          PIXI.sound.filtersAll = [];
-          // new PIXI.sound.filters.ReverbFilter()
-          // new PIXI.sound.filters.TelephoneFilter()
-          // new PIXI.sound.filters.DistortionFilter(1)
-          // new PIXI.sound.filters.MonoFilter()
-          // new PIXI.sound.filters.EqualizerFilter(2,5)
-          // new PIXI.sound.filters.StereoFilter(-1)
-          return PIXI.sound.play("a-1");
-        }, 1000);
-      }
     }]);
 
     return UGC;
@@ -567,14 +550,20 @@ init = function init() {
       swing: false
     },
     methods: {
+      openPop: function openPop() {
+        return this.lotteryShow = true;
+      },
       openWeb: function openWeb() {
         return console.log("open web");
       },
       sharePost: function sharePost() {
-        return console.log("share");
+        ugc.app.renderer.render(ugc.app.stage);
+        this.ugc = ugc.app.view.toDataURL();
+        return setLottery();
       },
-      share: function share(image) {
-        var data, folder;
+      share: function share() {
+        var data, folder, image;
+        image = this.ugc;
         folder = "Levi";
         data = {
           image: image,
@@ -615,9 +604,12 @@ init = function init() {
         var _this2 = this;
 
         this.pageIndex = 3;
-        return setTimeout(function () {
+        setTimeout(function () {
           return _this2.swing = true;
         }, 300);
+        return setTimeout(function () {
+          return finishAll();
+        }, 700);
       },
       deviceMotionHandler: function deviceMotionHandler(evt) {
         var acceleration, curTime, diffTime, speed, x, y, z;
@@ -646,7 +638,7 @@ init = function init() {
       },
       nextPage: function nextPage() {
         console.log("next page run");
-        return this.pageIndex = 1;
+        return this.pageIndex = 2;
       }
     },
     // watch:

@@ -225,11 +225,16 @@ init = ->
 			speed: 4000
 			swing: false
 		methods:
+			openPop: ->
+				@.lotteryShow = true
 			openWeb: ->
 				console.log "open web"
 			sharePost: ->
-				console.log "share"
-			share: (image)->
+				ugc.app.renderer.render ugc.app.stage
+				@.ugc = ugc.app.view.toDataURL()
+				setLottery()
+			share: ->
+				image = @.ugc
 				folder = "Levi"
 				data = {
 					image: image
@@ -262,6 +267,9 @@ init = ->
 				setTimeout =>
 					@.swing = true
 				,300
+				setTimeout =>
+					finishAll()
+				,700
 			deviceMotionHandler: (evt)->
 				return false unless @.swing
 				acceleration = evt.accelerationIncludingGravity
@@ -283,7 +291,7 @@ init = ->
 					@.lastZ = z
 			nextPage: ->
 				console.log "next page run"
-				@.pageIndex = 1
+				@.pageIndex = 2
 		# watch:
 		mounted: ->
 			TrueH = document.documentElement.clientHeight

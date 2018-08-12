@@ -60,16 +60,4 @@ class UGC
 
 		if @.loadNumber is imageList.length
 			buildUGC.bind(@).call()
-			# @.build()
-	build: ->
-		setTimeout =>
-			PIXI.sound.filtersAll = [
-				# new PIXI.sound.filters.ReverbFilter()
-				# new PIXI.sound.filters.TelephoneFilter()
-				# new PIXI.sound.filters.DistortionFilter(1)
-				# new PIXI.sound.filters.MonoFilter()
-				# new PIXI.sound.filters.EqualizerFilter(2,5)
-				# new PIXI.sound.filters.StereoFilter(-1)
-			]
-			PIXI.sound.play("a-1")
-		,1000
+
