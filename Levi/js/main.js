@@ -575,6 +575,9 @@ UGC = function () {
         this.note = note = new Sprite(getTe(_CDN + 'img/ugc-note-text-' + this.index + '.png'));
         note.y = logo.y - note.height - 20;
         // console.log note.y,logo.y
+        if (main.biger) {
+          this.album.y = 70;
+        }
         this.content.addChild(logo, note);
         this.content.removeChild(this.bgMask);
         this.bg.y = 0;
@@ -1339,15 +1342,12 @@ init = function init() {
         var time;
         time = new Date().getTime();
         setTimeout(function () {
-          var bgm;
           if (_this8.pageIndex < 2) {
             _this8.pageIndex = 2;
           }
           clearInterval(_cache);
-          // console.log _second
-          bgm = document.getElementById("bgm");
-          return bgm.pause();
-        }, 22 * 1000 + 500);
+          return PIXI.sound.stop('bgm');
+        }, 14 * 1000 + 500);
         return _cache = setInterval(function () {
           return _second = (new Date().getTime() - time) / 1000;
         }, 1000 / 20);

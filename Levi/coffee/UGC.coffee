@@ -332,6 +332,8 @@ class UGC
 		@.note = note = new Sprite getTe "#{_CDN}img/ugc-note-text-#{@.index}.png"
 		note.y = logo.y - note.height - 20
 		# console.log note.y,logo.y
+		if main.biger
+			@.album.y = 70
 		@.content.addChild logo,note
 		@.content.removeChild @.bgMask
 		@.bg.y = 0

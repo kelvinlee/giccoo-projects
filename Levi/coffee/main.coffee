@@ -498,10 +498,8 @@ init = ->
 				setTimeout =>
 					@.pageIndex = 2 if @.pageIndex < 2
 					clearInterval _cache
-					# console.log _second
-					bgm = document.getElementById "bgm"
-					bgm.pause()
-				,22*1000+500
+					PIXI.sound.stop('bgm')
+				,14*1000+500
 				_cache = setInterval =>
 					_second = (new Date().getTime() - time)/1000
 				,1000/20

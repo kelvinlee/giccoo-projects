@@ -510,19 +510,19 @@ video,canvas,svg
 			+posa
 			+tl
 			+transform(translate3d(0,-50%,0))
-	$time: 7000ms
+	$time: 4500ms
 	.text-1
 		+tl(20%)
-		+animation(textShow,$time+1000,linear)
+		+animation(textShow,$time,linear)
 		animation-delay: 500ms
 	.text-2
 		+tl(45%)
-		+animation(textShow,$time,linear)
+		+animation(textShow,$time+500ms,linear)
 		animation-delay: 500ms + $time
 		.box
 			margin-left: 10%
 	.text-3
-		+animation(textShow,$time+1000,linear)
+		+animation(textShow,$time+700ms,linear)
 		animation-delay: 500ms + $time*2
 		+tl(65%)
 
