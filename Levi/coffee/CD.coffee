@@ -79,6 +79,25 @@ class CD
 		# @.cdCenter.rotation = 0.5
 		TweenMax.to @.cdCenter,1,
 			alpha: 1
+	lyricUpdate: (texts)->
+		temp = new Text "啊啊啊啊啊啊啊啊".split("").join("   "),{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff, align : 'left'}
+		# console.log temp.width
+		tmp = new Text "",{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff, align : 'left'}
+		list = [[]]
+		n = 0
+		lineH = 32
+		for index in [0...texts.length]
+			tmp.text = list[n].join("   ")
+			if tmp.width >= temp.width-10
+				n++ 
+				list[n] = []
+			list[n].push texts[index]
+		newlist = []
+		for i in [0...list.length]
+			newlist.push list[i].join("&nbsp;&nbsp;&nbsp;")
+		# console.log list,temp.width,texts
+		return newlist
+
 	stopAll: ->
 		TweenMax.killTweensOf @.pointer
 		TweenMax.killTweensOf @.cdCenter

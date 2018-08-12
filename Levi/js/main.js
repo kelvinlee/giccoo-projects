@@ -524,7 +524,7 @@ UGC = function () {
     }, {
       key: 'lyricUpdate',
       value: function lyricUpdate(text) {
-        var index, k, l, lineH, n, ref, ref1, t, texts;
+        var index, k, l, lineH, n, ref, ref1, t, temp, texts, tmp;
         if (text.length > 32) {
           //gblen() > 64
           return false;
@@ -538,14 +538,29 @@ UGC = function () {
         list = [[]];
         n = 0;
         lineH = 32;
+        temp = new Text("啊啊啊啊啊啊啊啊".split("").join("   "), {
+          fontFamily: 'Arial',
+          fontSize: 24,
+          fill: 0xffffff,
+          align: 'left'
+        });
+        // console.log temp.width
+        tmp = new Text("", {
+          fontFamily: 'Arial',
+          fontSize: 24,
+          fill: 0xffffff,
+          align: 'left'
+        });
         for (index = k = 0, ref = texts.length; 0 <= ref ? k < ref : k > ref; index = 0 <= ref ? ++k : --k) {
-          if (list[n].join("").length >= 8) {
-            //.gblen() >= 16
+          tmp.text = list[n].join("   ");
+          // if list[n].join("").length >= 8#.gblen() >= 16
+          if (tmp.width >= temp.width - 10) {
             n++;
             list[n] = [];
           }
           list[n].push(texts[index]);
         }
+        console.log(list);
         for (i = l = 0, ref1 = list.length; 0 <= ref1 ? l < ref1 : l > ref1; i = 0 <= ref1 ? ++l : --l) {
           if (i >= 4) {
             continue;
@@ -555,11 +570,11 @@ UGC = function () {
             fontFamily: 'Arial',
             fontSize: 24,
             fill: 0xffffff,
-            align: 'left'
+            align: 'center'
           });
           text.alpha = 1 - t;
           text.y = lineH * 4 - (4 - (i % 4 + 1)) * lineH; //+ (4-list.length)*lineH
-          text.x = (this.opts.w - 333) / 2;
+          text.x = (this.opts.w - temp.width) / 2; //@.opts.w/2 - text.width/2
           console.log(text.width);
           this.lyric.addChild(text);
         }
