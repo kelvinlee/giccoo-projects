@@ -45,6 +45,7 @@ window.onload = ->
 			wx.onMenuShareAppMessage shareContent
 			wx.onMenuShareQQ shareContent
 			wx.onMenuShareWeibo shareContent
+
 	init()
 
 isNumber = (obj)->
@@ -136,18 +137,9 @@ init = ->
 				_cd.avatar "http://image.giccoo.com/upload/"+@.info.avatar+"?x-oss-process=image/format,jpg,quality,q_60/crop,x_129,y_279,w_416,h_416"
 				texts = @.info.message.split("")
 				newlist = _cd.lyricUpdate @.info.message.split("")
-				# list = [[]]
-				# n = 0
-				# lineH = 32
-				# for index in [0...texts.length]
-				# 	if list[n].length >= 8#.gblen() >= 16
-				# 		n++ 
-				# 		list[n] = []
-				# 	list[n].push texts[index]
-				# newlist = []
-				# for texts in list
-					# newlist.push texts.join("&nbsp;&nbsp;&nbsp;")
 				@.msgList = newlist
+
+
 			ask: (id)->
 				axios.get "#{apiLink}active/Levi/info/id/#{id}"
 				.then (msg)=>
@@ -155,6 +147,11 @@ init = ->
 					@.info = msg.data.info
 					@.mounted = true
 					@.cdUpdate()
+				document.addEventListener "WeixinJSBridgeReady", =>
+					console.log "bgm play by bridge2"
+					setTimeout =>
+						@.bgm.play()
+					,400
 			next: ->
 				if @.wy
 					url = "https://activity.music.163.com/Levi/"
@@ -172,7 +169,10 @@ init = ->
 				el: "cd"
 				callback: =>
 					@.ask id
+
 			@.bgm = document.getElementById "bgm"
+			
+
 			
 
 ten = (i)->

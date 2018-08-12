@@ -510,19 +510,19 @@ video,canvas,svg
 			+posa
 			+tl
 			+transform(translate3d(0,-50%,0))
-	$time: 4500ms
+	$time: 4200ms
 	.text-1
 		+tl(20%)
 		+animation(textShow,$time,linear)
 		animation-delay: 500ms
 	.text-2
 		+tl(45%)
-		+animation(textShow,$time+500ms,linear)
+		+animation(textShow,$time - 100ms,linear)
 		animation-delay: 500ms + $time
 		.box
 			margin-left: 10%
 	.text-3
-		+animation(textShow,$time+700ms,linear)
+		+animation(textShow,$time + 600ms,linear)
 		animation-delay: 500ms + $time*2
 		+tl(65%)
 
@@ -853,11 +853,12 @@ video,canvas,svg
 					+tr
 		.message
 			+text-center
-			+m(0.5rem auto)
+			+m(5% auto)
 			+font-size(0.8rem)
 			color: #fff
 			margin-top: -5%
 			.biger &
+				+m(8% auto)
 				margin-top: 0
 			p
 				+m
@@ -866,7 +867,9 @@ video,canvas,svg
 				&.on
 					opacity: 1
 		.nickname
-			+m(0.8rem auto)
+			+m(5% auto)
+			.biger &
+				+m(8% auto)
 		.my
 			+posa
 			+tr(15%,6.5%)
