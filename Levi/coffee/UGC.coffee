@@ -320,15 +320,15 @@ class UGC
 				n++ 
 				list[n] = []
 			list[n].push texts[index]
-		console.log list
+		# console.log list
 		for i in [0...list.length]
 			continue if i >= 4
 			t = (i%4)*0.2
-			text = new Text list[i].join("   "),{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff, align : 'center'}
+			text = new Text list[i].join("   "),{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff, align : 'left'}
 			text.alpha = 1-t
 			text.y = lineH*4 - (4-(i%4+1))*lineH #+ (4-list.length)*lineH
 			text.x = (@.opts.w-temp.width)/2 #@.opts.w/2 - text.width/2
-			console.log text.width
+			# console.log text.width
 			@.lyric.addChild text
 		@.album.addChild @.lyric
 	review: ->

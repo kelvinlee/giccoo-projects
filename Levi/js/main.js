@@ -560,7 +560,7 @@ UGC = function () {
           }
           list[n].push(texts[index]);
         }
-        console.log(list);
+        // console.log list
         for (i = l = 0, ref1 = list.length; 0 <= ref1 ? l < ref1 : l > ref1; i = 0 <= ref1 ? ++l : --l) {
           if (i >= 4) {
             continue;
@@ -570,12 +570,12 @@ UGC = function () {
             fontFamily: 'Arial',
             fontSize: 24,
             fill: 0xffffff,
-            align: 'center'
+            align: 'left'
           });
           text.alpha = 1 - t;
           text.y = lineH * 4 - (4 - (i % 4 + 1)) * lineH; //+ (4-list.length)*lineH
           text.x = (this.opts.w - temp.width) / 2; //@.opts.w/2 - text.width/2
-          console.log(text.width);
+          // console.log text.width
           this.lyric.addChild(text);
         }
         return this.album.addChild(this.lyric);
@@ -1369,6 +1369,7 @@ init = function init() {
       },
       text: function text(n, o) {
         var k, len2, t, tx;
+        this.text = this.text.replace(/[\r\n]/g, "");
         if (this.text.length > 32) {
           //gblen() > 64
           t = this.text.split("");
@@ -1388,6 +1389,7 @@ init = function init() {
       },
       nickname: function nickname(n, o) {
         var k, len2, t, tx;
+        this.nickname = this.nickname.replace(/[\r\n]/g, "");
         if (this.nickname.length > 10) {
           t = this.nickname.split("");
           tx = "";

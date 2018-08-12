@@ -504,6 +504,7 @@ init = ->
 					_second = (new Date().getTime() - time)/1000
 				,1000/20
 			text: (n,o)->
+				@.text = @.text.replace(/[\r\n]/g, "")
 				if @.text.length > 32#gblen() > 64
 					t = @.text.split("")
 					tx = ""
@@ -514,6 +515,7 @@ init = ->
 					return false #alert "字数限制32个中文字符64个英文字符" 
 				ugc.lyricUpdate @.text
 			nickname: (n,o)->
+				@.nickname = @.nickname.replace(/[\r\n]/g, "")
 				if @.nickname.length > 10
 					t = @.nickname.split("")
 					tx = ""
