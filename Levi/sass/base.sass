@@ -517,12 +517,12 @@ video,canvas,svg
 		animation-delay: 500ms
 	.text-2
 		+tl(45%)
-		+animation(textShow,$time - 100ms,linear)
+		+animation(textShow,$time + 400ms,linear)
 		animation-delay: 500ms + $time
 		.box
 			margin-left: 10%
 	.text-3
-		+animation(textShow,$time + 600ms,linear)
+		+animation(textShow,$time + 500ms,linear)
 		animation-delay: 500ms + $time*2
 		+tl(65%)
 
@@ -816,7 +816,7 @@ video,canvas,svg
 			.smaller &
 				margin-top: -10%
 			.biger &
-				margin-top: 5%
+				margin-top: 7%
 		.player
 			+w(80%)
 			+m
@@ -857,19 +857,22 @@ video,canvas,svg
 			+font-size(0.8rem)
 			color: #fff
 			margin-top: -5%
+			line-height: 1.4em
+			+h(1.4em*4)
 			.biger &
-				+m(8% auto)
-				margin-top: 0
+				+m(5% auto)
+				margin-top: 5%
 			p
 				+m
 				opacity: 0.4
 				+tran
+				line-height: 1.4em
 				&.on
 					opacity: 1
 		.nickname
 			+m(3% auto)
 			.biger &
-				+m(8% auto)
+				+m(5% auto)
 		.my
 			+posa
 			+tr(15%,6.5%)
