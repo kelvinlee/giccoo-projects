@@ -8,11 +8,14 @@
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
-    <script src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js"></script>
     <script>
-      var vConsole = new VConsole();
-      console.log('VConsole open');
-      
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
     </script>
   </head>
   <body>
@@ -76,7 +79,9 @@
                   </div>
                   <div class="line line-2">
                     <div @click="openCD(5)" class="cd item"><img src="./img/btn-empty.jpg"></div>
-                    <div @click="openCD(6)" class="cd item"><img src="./img/btn-empty.jpg"></div><a href="/Levi-special/gather.html" class="cd item"><img src="./img/btn-empty.jpg"></a><a href="/Levi/" class="cd item"><img src="./img/btn-empty.jpg"></a>
+                    <div @click="openCD(6)" class="cd item"><img src="./img/btn-empty.jpg"></div><a href="/Levi-special/gather.html" class="cd item"><img src="./img/btn-empty.jpg"></a>
+                    <div @click="startbuild" class="cd item"><img src="./img/btn-empty.jpg">
+                    </div>
                   </div>
                 </div>
                 <div @click="openCDM" class="btn-audio-run"></div>

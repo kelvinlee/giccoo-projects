@@ -8138,6 +8138,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/lancomeGEN\/img\/btnlottery.png": {
+		"ft": 32768,
+		"iS": 4789,
+		"oA": 0,
+		"oAP": "\/lancomeGEN\/img\/btnlottery.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/lancomeGEN\/img\/homepage-bg.jpg": {
 		"ft": 16384,
 		"iS": 31631,
@@ -9433,6 +9444,17 @@
 		"oA": 1,
 		"oAP": "\/build\/Levi\/css",
 		"oF": 0
+		},
+	"\/Levi\/img\/1534081389.png": {
+		"ft": 32768,
+		"iS": 1833,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/1534081389.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/Levi\/img\/album-bg.png": {
 		"ft": 32768,

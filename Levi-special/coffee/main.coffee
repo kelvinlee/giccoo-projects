@@ -49,7 +49,7 @@ _cd = null
 
 window.onload = ->
 	if IsPC()
-		document.getElementById("qrcode").className += " show"
+		# document.getElementById("qrcode").className += " show"
 		return false
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
@@ -57,7 +57,7 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "Levi‘s声活唱片店"
+				title: "Levi’s声活唱片店"
 				desc: "听见生活"
 				link: "http://m.giccoo.com/Levi-special/"
 				imgUrl: "http://m.giccoo.com/Levi-special/img/ico-s.jpg"
@@ -188,6 +188,7 @@ init = ->
 				setTimeout =>
 					@.videoPop = true
 				,1200
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "special", "open tv", "-"])
 			openMZ: ->
 				mz = document.getElementById "audiomz"
 				mz.play()
@@ -206,7 +207,12 @@ init = ->
 					else
 						window.location.href = "https://music.163.com/#/playlist?id=2328252403"
 				,1000
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "special", "music list", "-"])
 			startbuild: ->
+				setTimeout =>
+					window.location.href = "/Levi/"
+				,300
+				_hmt? and _hmt.push(['_trackEvent', "Levi", "special", "record", "-"])
 			start: (evt)->
 				touch = evt.touches[0]
 				@.default.x = touch.clientX

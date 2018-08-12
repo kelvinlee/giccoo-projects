@@ -17,8 +17,8 @@ block css
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
-  script(src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js")
-  script.
+  //- script(src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js")
+  //- script.
     var vConsole = new VConsole();
     console.log('VConsole open');
 
@@ -27,8 +27,8 @@ block content
   - url = ".";
   .qrcode#qrcode
     .qr
-      img(src="#{url}/img/qrcode.png")
-      .text 请使用手机扫描二维码参与活动
+      img(src="#{url}/img/qrcode-pc.png")
+      .text 使用网易云音乐扫一扫<br/>制作你的声活单曲
 
   //- .public#public
     player(icon="true",src="#{url}/mp3/bgm.mp3")
