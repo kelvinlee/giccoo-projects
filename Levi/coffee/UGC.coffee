@@ -78,6 +78,9 @@ class UGC
 		document.getElementById(@.opts.el).appendChild @.app.view
 		PIXI.loader.add(list)
 		.add("bgm", "#{_CDN}mp3/bgm.mp3")
+		# .add("a-1", "#{_CDN}mp3/1.mp3")
+		# .add("a-2", "#{_CDN}mp3/2.mp3")
+		# .add("a-3", "#{_CDN}mp3/3.mp3")
 		.use(@.loaditem.bind(@))
 		.load(@.build.bind(@))
 		@.default.MH = @.opts.h * 0.65

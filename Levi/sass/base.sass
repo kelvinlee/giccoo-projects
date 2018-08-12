@@ -48,9 +48,9 @@ $pageMainBGColor: #000;
 +keyframes(textShow)
 	0%
 		opacity: 0
-	10%
+	5%
 		opacity: 1
-	90%
+	95%
 		opacity: 1
 	100%
 		opacity: 0
@@ -510,20 +510,20 @@ video,canvas,svg
 			+posa
 			+tl
 			+transform(translate3d(0,-50%,0))
-	$time: 4200ms
+	$time: 4500ms
 	.text-1
 		+tl(20%)
-		+animation(textShow,$time + 100ms,linear)
-		animation-delay: 500ms
+		+animation(textShow, 4139ms ,linear)
+		animation-delay: 600ms
 	.text-2
 		+tl(45%)
-		+animation(textShow,$time + 300ms,linear)
-		animation-delay: 600ms + $time
+		+animation(textShow, 4806ms,linear)
+		animation-delay: 600ms + 4139ms
 		.box
 			margin-left: 10%
 	.text-3
-		+animation(textShow,$time + 1000ms,linear)
-		animation-delay: 700ms + $time*2
+		+animation(textShow,4675ms,linear)
+		animation-delay: 600ms + 4139ms + 4806ms
 		+tl(65%)
 
 .page-2

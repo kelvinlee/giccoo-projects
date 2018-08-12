@@ -9445,17 +9445,6 @@
 		"oAP": "\/build\/Levi\/css",
 		"oF": 0
 		},
-	"\/Levi\/img\/1534081389.png": {
-		"ft": 32768,
-		"iS": 1833,
-		"oA": 0,
-		"oAP": "\/Levi\/img\/1534081389.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"\/Levi\/img\/album-bg.png": {
 		"ft": 32768,
 		"iS": 7583,
@@ -10157,6 +10146,17 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Levi\/img\/qrcode-pc.png": {
+		"ft": 32768,
+		"iS": 1833,
+		"oA": 0,
+		"oAP": "\/Levi\/img\/qrcode-pc.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},

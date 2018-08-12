@@ -138,7 +138,9 @@ window.onload = ->
 				# bgm = document.getElementById "bgm"
 				# bgm.currentTime = _second
 				# bgm.play()
-				PIXI.sound.play("bgm")
+				PIXI.sound.play "bgm",
+					loaded: ->
+						console.log "loaded"
 				main.openBtnShow = false
 				@.next()
 				_hmt? and _hmt.push(['_trackEvent', "Levi", "record", "open music", "-"])
@@ -502,7 +504,7 @@ init = ->
 				,14*1000+500
 				_cache = setInterval =>
 					_second = (new Date().getTime() - time)/1000
-				,1000/20
+				,1000/30
 			text: (n,o)->
 				@.text = @.text.replace(/[\r\n]/g, "")
 				if @.text.length > 32#gblen() > 64

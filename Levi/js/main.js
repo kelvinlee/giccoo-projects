@@ -217,7 +217,10 @@ UGC = function () {
       }
       this.stage = this.app.stage;
       document.getElementById(this.opts.el).appendChild(this.app.view);
-      PIXI.loader.add(list).add("bgm", _CDN + 'mp3/bgm.mp3').use(this.loaditem.bind(this)).load(this.build.bind(this));
+      PIXI.loader.add(list).add("bgm", // .add("a-1", "#{_CDN}mp3/1.mp3")
+      // .add("a-2", "#{_CDN}mp3/2.mp3")
+      // .add("a-3", "#{_CDN}mp3/3.mp3")
+      _CDN + 'mp3/bgm.mp3').use(this.loaditem.bind(this)).load(this.build.bind(this));
       this.default.MH = this.opts.h * 0.65;
     }
 
@@ -891,7 +894,11 @@ window.onload = function () {
         // bgm = document.getElementById "bgm"
         // bgm.currentTime = _second
         // bgm.play()
-        PIXI.sound.play("bgm");
+        PIXI.sound.play("bgm", {
+          loaded: function loaded() {
+            return console.log("loaded");
+          }
+        });
         main.openBtnShow = false;
         this.next();
         return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "Levi", "record", "open music", "-"]);
@@ -1365,7 +1372,7 @@ init = function init() {
         }, 14 * 1000 + 500);
         return _cache = setInterval(function () {
           return _second = (new Date().getTime() - time) / 1000;
-        }, 1000 / 20);
+        }, 1000 / 30);
       },
       text: function text(n, o) {
         var k, len2, t, tx;
