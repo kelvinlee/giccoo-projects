@@ -159,8 +159,8 @@ function showAnswer(){
 	answerNextT.interactive=true
 	answerNextT.tap=hideAnswer//showQ(Qnum)
 
-	answerBtnT.interactive=true
-	answerBtnT.tap=playSound
+	soundBtn.interactive=true
+	soundBtn.tap=playSound
 	//NextQuestion()
 }
 var musicA=[["a-1","a-2"],["b-1","b-2"],["c-1","c-2"]]
@@ -182,13 +182,45 @@ function playSound(){
 function hideAnswer(){
 	soundIconStop()
 	PIXI.sound.stopAll()
-	answerBtnT.interactive=false
-	for (var i = 0; i < answerA.length; i++) {
-		TweenMax.to(answerA[i],.5,{alpha:0,y:"+=100",delay:.05*(answerA.length-i)})
-	};
-	TweenMax.set(this,{onComplete:NextQuestion,delay:0.6})
-	//NextQuestion()
+	soundBtn.interactive=false
 	answerNextT.interactive=false
+
+	if(Qnum==2){
+		finishAll()
+	}else{
+		for (var i = 0; i < answerA.length; i++) {
+			TweenMax.to(answerA[i],.5,{alpha:0,y:"+=100",delay:.05*(answerA.length-i)})
+		};
+		TweenMax.set(this,{onComplete:NextQuestion,delay:0.6})
+	}
+	
+	//NextQuestion()
+	
+}
+var tStyle5,qr,logo
+function finishAll(){
+	
+	answerNextT.visible=soundBtn.visible=answerBtnT.visible=soundIcon.visible=false
+	tStyle5=new PIXI.TextStyle({fontFamily:'yrd-Medium',fontSize: 31,fill:["#000000"]})
+	answerT1.style=answerT2.style=answerT3.style=answerT4.style=tStyle5
+	answerT1.text="人生的每一帧"
+	answerT2.text="都来自内在心声的力量"
+	answerT3.text="兰蔻小黑瓶从肌底开始"
+	answerT4.text="让你由内而外闪耀出自信光芒"
+	answerT1.y=stageH/2-334
+	answerT2.y=stageH/2-284
+	answerT3.y=stageH/2-234
+	answerT4.y=stageH/2-184
+
+	logo=new Sprite(getTe(_CDN+"img/homepage-logo.png"))
+	qr=new Sprite(getTe(_CDN+"img/qr.png"))
+	pStage.addChild(qr,logo)
+	qr.y=stageH/2-124
+	logo.x=-80
+	logo.y=stageH/2-423
+	logo.scale.x=logo.scale.y=.68
+
+	console.log("全部完成")
 }
 
 //==========================================喇叭按钮动画

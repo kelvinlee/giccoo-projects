@@ -27,6 +27,8 @@ var imageList = [
 	_CDN+"img/a2b.png",
 	_CDN+"img/a3a.jpg",
 	_CDN+"img/a3b.jpg",
+	_CDN+"img/qr.png",
+	_CDN+"img/homepage-logo.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
