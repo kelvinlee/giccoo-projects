@@ -9066,6 +9066,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Levi-special\/img\/ico-s.jpg": {
+		"ft": 16384,
+		"iS": 22061,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/Levi-special\/img\/ico-s.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/Levi-special\/img\/ico.jpg": {
 		"ft": 16384,
 		"iS": 35422,
@@ -10492,6 +10503,13 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"\/Levi\/mp3\/bgm.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/Levi\/mp3\/bgm.mp3",
+		"oF": 0
 		},
 	"\/Levi\/music.html": {
 		"cB": 0,

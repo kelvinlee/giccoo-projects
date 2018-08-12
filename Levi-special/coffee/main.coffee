@@ -57,10 +57,10 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "有故事的声活单曲"
-				desc: "有故事的声活单曲~"
+				title: "Levi‘s声活唱片店"
+				desc: "听见生活"
 				link: "http://m.giccoo.com/Levi-special/"
-				imgUrl: "http://m.giccoo.com/Levi-special/img/ico.jpg"
+				imgUrl: "http://m.giccoo.com/Levi-special/img/ico-s.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
