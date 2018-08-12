@@ -330,7 +330,7 @@ neteaseShareImage = function neteaseShareImage() {
   var picUrl, redirectUrl, title1;
   title1 = "有故事的声活单曲";
   picUrl = 'https://image.giccoo.com/upload/' + main.folder + '/' + main.shareImageLink + "@!large";
-  redirectUrl = "https://m.giccoo.com/Levi/";
+  redirectUrl = "https://m.giccoo.com/lancomeGEN/";
   // console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
   window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
   return console.log("share href:", picUrl);
@@ -429,12 +429,10 @@ window.onload = function () {
       return wx.onMenuShareWeibo(shareContent);
     });
   }
-  _public = new Vue({
-    el: "#public",
-    data: {
-      note: true
-    }
-  });
+  // _public = new Vue
+  // 	el: "#public"
+  // 	data:
+  // 		note: true
   loading = new Vue({
     el: "#loading",
     data: {
@@ -505,7 +503,7 @@ init = function init() {
       loading: false,
       lotteryShow: false,
       pageInfoShow: false,
-      pageIndex: 2,
+      pageIndex: 1,
       step: 1,
       singerIndex: 1,
       startgame: false,
@@ -564,7 +562,7 @@ init = function init() {
       share: function share() {
         var data, folder, image;
         image = this.ugc;
-        folder = "Levi";
+        folder = "lancomeGEN";
         data = {
           image: image,
           folder: folder
@@ -590,7 +588,8 @@ init = function init() {
       success: function success(data) {
         this.shareImageLink = data.info;
         this.pushed = false;
-        return this.loading = false;
+        this.loading = false;
+        return neteaseShareImage();
       },
       faild: function faild(err) {
         this.pushed = false;

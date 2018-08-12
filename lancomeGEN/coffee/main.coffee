@@ -40,7 +40,7 @@ _testTime = 0
 neteaseShareImage = ->
 	title1 = "有故事的声活单曲"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://m.giccoo.com/Levi/"
+	redirectUrl = "https://m.giccoo.com/lancomeGEN/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "share href:",picUrl
@@ -123,10 +123,10 @@ window.onload = ->
 			wx.onMenuShareQQ shareContent
 			wx.onMenuShareWeibo shareContent
 
-	_public = new Vue
-		el: "#public"
-		data:
-			note: true
+	# _public = new Vue
+	# 	el: "#public"
+	# 	data:
+	# 		note: true
 
 	loading = new Vue
 		el: "#loading"
@@ -183,7 +183,7 @@ init = ->
 			loading: false
 			lotteryShow: false
 			pageInfoShow: false
-			pageIndex: 2
+			pageIndex: 1
 			step: 1
 			singerIndex: 1
 			startgame: false
@@ -235,7 +235,7 @@ init = ->
 				setLottery()
 			share: ->
 				image = @.ugc
-				folder = "Levi"
+				folder = "lancomeGEN"
 				data = {
 					image: image
 					folder: folder
@@ -256,6 +256,7 @@ init = ->
 				@.shareImageLink = data.info
 				@.pushed = false
 				@.loading = false
+				neteaseShareImage()
 			faild: (err)->
 				@.pushed = false
 				@.loading = false
