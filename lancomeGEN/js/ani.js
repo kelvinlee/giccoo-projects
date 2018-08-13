@@ -168,6 +168,7 @@ function showAnswer(){
 	soundBtn.interactive=true
 	soundBtn.tap=playSound
 	//NextQuestion()
+	playSound()
 }
 var musicA=[["a-1","a-2"],["b-2","b-1"],["c-1","c-2"]]
 function playSound(){
