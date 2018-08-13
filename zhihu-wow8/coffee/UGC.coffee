@@ -1,4 +1,4 @@
-_CDN = "./"
+_CDN = "//image.giccoo.com/projects/zhihu-wow8/"
 
 class UGC
 	default:

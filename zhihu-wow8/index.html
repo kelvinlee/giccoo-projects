@@ -20,15 +20,15 @@
   </head>
   <body>
     <div id="main" v-show="mounted" :class="{biger: biger,smaller:smaller}" style="display: none" :style="{width: w+'px',height: h+'px'}" class="main">
-      <player icon="true" src="./mp3/bgm.mp3"></player>
+      <player icon="true" src="http://image.giccoo.com/projects/zhihu-wow8/mp3/bgm.mp3"></player>
       <transition name="page-fade">
         <div v-show="pageIndex == 1" class="page page-home">
           <div class="content">
-            <div class="logo fadeIn animated"><img src="./img/logo.png"></div>
-            <div class="texts fadeIn animated"><img src="./img/texts.png"></div>
-            <div @click="pageIndex = 2" class="btn fadeIn animated"><img src="./img/btn-start.png"></div>
-            <div class="orc fadeInLeft animated"><img src="./img/orc.png"></div>
-            <div class="human fadeInRight animated"><img src="./img/human.png"></div>
+            <div class="logo fadeIn animated"><img src="http://image.giccoo.com/projects/zhihu-wow8/img/logo.png"></div>
+            <div class="texts fadeIn animated"><img src="http://image.giccoo.com/projects/zhihu-wow8/img/texts.png"></div>
+            <div @click="pageIndex = 2" class="btn fadeIn animated"><img src="http://image.giccoo.com/projects/zhihu-wow8/img/btn-start.png"></div>
+            <div class="orc fadeInLeft animated"><img src="http://image.giccoo.com/projects/zhihu-wow8/img/orc.png"></div>
+            <div class="human fadeInRight animated"><img src="http://image.giccoo.com/projects/zhihu-wow8/img/human.png"></div>
           </div>
         </div>
       </transition>
@@ -50,12 +50,12 @@
           <div id="ugc" class="bg fadeIn animated"></div>
           <div class="content">
             <div class="ugc"><img :src="ugc"></div>
-            <div class="logo"><img src="./img/small-logo.png"></div>
+            <div class="logo"><img src="http://image.giccoo.com/projects/zhihu-wow8/img/small-logo.png"></div>
             <div v-show="btnShow" class="btns fadeIn animated">
-              <div class="btn"><img src="./img/btn-build.png">
+              <div class="btn"><img src="http://image.giccoo.com/projects/zhihu-wow8/img/btn-build.png">
                 <div class="ugc"><img :src="ugc"></div>
               </div>
-              <div @click="getBadge" class="btn"><img src="./img/btn-get.png"></div>
+              <div @click="getBadge" class="btn"><img src="http://image.giccoo.com/projects/zhihu-wow8/img/btn-get.png"></div>
             </div>
           </div>
         </div>
@@ -63,20 +63,20 @@
       <transition name="page-fade-fast">
         <div v-show="pop" class="pop">
           <div class="content">
-            <div @click="pop = false" class="close"><img src="./img/icon-close.png"></div>
+            <div @click="pop = false" class="close"><img src="http://image.giccoo.com/projects/zhihu-wow8/img/icon-close.png"></div>
             <div class="zy">
-              <div :class="{on: lmbl}" @click="lmbl = true" class="lm"><img src="./img/icon-lm.png"></div>
-              <div :class="{on: !lmbl}" @click="lmbl = false" class="bl"><img src="./img/icon-bl.png"></div>
+              <div :class="{on: lmbl}" @click="lmbl = true" class="lm"><img src="http://image.giccoo.com/projects/zhihu-wow8/img/icon-lm.png"></div>
+              <div :class="{on: !lmbl}" @click="lmbl = false" class="bl"><img src="http://image.giccoo.com/projects/zhihu-wow8/img/icon-bl.png"></div>
             </div>
-            <div class="text"><img src="./img/text-select.png"></div>
-            <div @click="go" class="btn"><img src="./img/btn-select.png"></div>
+            <div class="text"><img src="http://image.giccoo.com/projects/zhihu-wow8/img/text-select.png"></div>
+            <div @click="go" class="btn"><img src="http://image.giccoo.com/projects/zhihu-wow8/img/btn-select.png"></div>
           </div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="ugcPage" class="pop">
           <div class="box">
-            <div @click="closeUGC" class="close"><img src="./img/icon-close-white.png"></div><img :src="ugc" class="bg"><img :src="ugcsave" class="ugcsave">
+            <div @click="closeUGC" class="close"><img src="http://image.giccoo.com/projects/zhihu-wow8/img/icon-close-white.png"></div><img :src="ugc" class="bg"><img :src="ugcsave" class="ugcsave">
             <p>长按图片保存</p>
           </div>
         </div>
