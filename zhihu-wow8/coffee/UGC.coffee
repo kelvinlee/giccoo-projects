@@ -65,9 +65,24 @@ class UGC
 		bg = new Sprite getTe "#{_CDN}img/r-#{@.opts.name}.jpg"
 		text = new Sprite getTe "#{_CDN}img/r-#{@.opts.name}-copy-1.png"
 		@.logo = logo = new Sprite getTe "#{_CDN}img/small-logo.png"
+		logo.y = 50
 		@.qrcode = qrcode = new Sprite getTe "#{_CDN}img/qrcode.png"
 		# qrcode.y = bg.height - qrcode.height - 200
-		@.stage.addChild bg,text,logo,qrcode
+		alpha = if @.opts.name is "monk" then 0.6 else 0.3
+		@.nickname = nickname = new Text main.nickname,{
+			fontFamily : 'Arial', 
+			fontSize: 49, 
+			fill : 0xeaa406, 
+			align : 'left',
+			dropShadow: true,
+			dropShadowAlpha: alpha,
+			dropShadowBlur: 5,
+			dropShadowColor: 'black',
+			dropShadowDistance: 5
+		}
+		nickname.x = (@.opts.w-nickname.width)/2
+		nickname.y = 420 - 49 - 10
+		@.stage.addChild bg,text,logo,qrcode,nickname
 		
 		@.app.renderer.render @.app.stage
 		main.ugc = @.app.view.toDataURL()

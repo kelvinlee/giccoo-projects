@@ -213,7 +213,13 @@ UGC = function () {
       this.stage = this.app.stage;
       document.getElementById(this.opts.el).appendChild(this.app.view);
       console.log("imageList:", imageList.length);
-      PIXI.loader.add(imageList).add('a-1', _CDN + 'mp3/a-1.mp3').add('a-2', _CDN + 'mp3/a-2.mp3').add('b-1', _CDN + 'mp3/b-1.mp3').add('b-2', _CDN + 'mp3/b-2.mp3').add('c-1', _CDN + 'mp3/c-1.mp3').add('c-2', _CDN + 'mp3/c-2.mp3').use(this.loaditem.bind(this)).load(buildUGC.bind(this));
+      // .add('a-1',"#{_CDN}mp3/a-1.mp3")
+      // .add('a-2',"#{_CDN}mp3/a-2.mp3")
+      // .add('b-1',"#{_CDN}mp3/b-1.mp3")
+      // .add('b-2',"#{_CDN}mp3/b-2.mp3")
+      // .add('c-1',"#{_CDN}mp3/c-1.mp3")
+      // .add('c-2',"#{_CDN}mp3/c-2.mp3")
+      PIXI.loader.add(imageList).use(this.loaditem.bind(this)).load(buildUGC.bind(this));
       this.default.MH = this.opts.h * 0.65;
     }
 

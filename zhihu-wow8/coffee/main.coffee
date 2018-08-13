@@ -554,6 +554,16 @@ questions = [
 cacheAnswer = answers
 getRandom = (length)->
 	return parseInt(Math.random()*(length+1)-1)
+
+String.prototype.gblen = -> 
+	len = 0;	
+	for i in [0...this.length]
+		if this.charCodeAt(i)>127 or this.charCodeAt(i)==94
+			len += 2
+		else
+			len++
+	return len
+
 window.onload = ->
 	# runAnimate()
 	# /Zhihu|osee2unifiedRelease|Futureve/
@@ -625,12 +635,22 @@ init = ->
 				animated: false
 			question: questions[0]
 			btnShow: true
+			nickname: ""
+			cdname: true
 		computed:
 			room: ->
 				return 'room'
 		watch:
 			questionID: (n,o)->
 		methods:
+			checkname: ->
+				# @.cdname
+				if @.nickname is ""
+					return alert "请输入你的名字"
+				if @.nickname.gblen() > 16 or @.nickname.gblen() < 2
+					return alert "请输入16个英文字符,8个中文字符以内的名字"
+				@.cdname = false
+				# @.over("death")
 			start: ->
 				@.pageIndex = 2
 				unless @.$children[0].playing

@@ -1,6 +1,6 @@
 @import sass/base
 
-$debug : false
+$debug : true
 $cdn : "../"
 @if not $debug
 	$cdn : "//image.giccoo.com/projects/zhihu-wow8/"
@@ -310,7 +310,7 @@ body
 		+w
 		+text-center
 		+posa
-		+bl(8%)
+		+bl(6%)
 		z-index: 80
 		animation-duration: 1000ms
 		animation-delay: 800ms
@@ -324,12 +324,40 @@ body
 			+m
 
 .pop
-	+bc(rgba(0,0,0,0.9))
+	+bc(rgba(0,0,0,0.7))
 	+posa
 	+tl
 	+w
 	+h
 	z-index: 999
+	.juanzhou
+		+posa
+		+tl(50%)
+		+transform(translate3d(0,-50%,0))
+		+w
+		+b($cdn+"img/pop-bg-new.png",no-repeat,center,center,cover)
+		+p(24% 0)
+		.logo
+			+w(70%)
+			+m(0.8rem auto)
+		.text
+			+m(0.8rem auto)
+		.btn
+			+w(40%)
+			+m(0.8rem auto)
+		.input
+			+w(50%)
+			+b($cdn+"img/input.png",no-repeat,center,center,100% 100%)
+			+m(0.8rem auto)
+			input
+				+w
+				+h(2rem)
+				+font-size(0.8rem)
+				+bc(transparent)
+				+text-center
+				border: none
+				color: #000
+				outline: none
 	.box
 		+w(80%)
 		+text-center
@@ -357,18 +385,17 @@ body
 			z-index: 998
 			opacity: 0
 	.content
-		+b($cdn+"img/pop-bg.png",no-repeat,center,center,100% 100%)
-		+box
-		+w(80%)
-		+m
-		padding-top: 5%
 		+posa
-		+tl(50%,10%)
+		+tl(50%)
 		+transform(translate3d(0,-50%,0))
+		+w
+		+b($cdn+"img/pop-bg-new.png",no-repeat,center,center,100% 100%)
+		+p(18% 12%)
+		+box
 		.close
 			$size: 1.4rem
 			+posa
-			+tr(10px,10px)
+			+tr(-$size,$size)
 			+w($size)
 			z-index: 999
 		.zy
@@ -403,3 +430,12 @@ body
 			+b("//image.giccoo.com/projects/beingmate/img/icon-play.png",no-repeat,center,center,contain)
 		&.pause
 			+b("//image.giccoo.com/projects/beingmate/img/icon-stop.png",no-repeat,center,center,contain)
+
+
+#ugc
+	+tl(52%)
+	.smaller &
+		+tl(50%)
+	.biger &
+		+tl(50%)
+	

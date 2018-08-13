@@ -2185,6 +2185,93 @@
 		"oAP": "\/build\/dazhong",
 		"oF": 0
 		},
+	"\/df-308\/coffee\/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/df-308\/js\/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/df-308\/coffee\/UGC.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/df-308\/js\/UGC.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/df-308\/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/df-308\/css",
+		"oF": 0
+		},
+	"\/df-308\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/df-308\/index.html",
+		"oF": 0
+		},
+	"\/df-308\/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/df-308\/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/df-308\/js\/ani.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/df-308\/js\/ani-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/df-308\/js\/build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/df-308\/js\/build-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/df-308\/js\/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/df-308\/js\/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/df-308\/sass\/base.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/df-308\/css\/base.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
 	"\/df-5008\/coffee\/main.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -21705,6 +21792,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/zhihu-wow8\/img\/btn-yes.png": {
+		"ft": 32768,
+		"iS": 125119,
+		"oA": 0,
+		"oAP": "\/zhihu-wow8\/img\/btn-yes.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/zhihu-wow8\/img\/human.png": {
 		"ft": 32768,
 		"iS": 356620,
@@ -21771,6 +21869,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/zhihu-wow8\/img\/input.png": {
+		"ft": 32768,
+		"iS": 25730,
+		"oA": 0,
+		"oAP": "\/zhihu-wow8\/img\/input.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/zhihu-wow8\/img\/logo.png": {
 		"ft": 32768,
 		"iS": 408918,
@@ -21793,11 +21902,33 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/zhihu-wow8\/img\/pop-bg-new.png": {
+		"ft": 32768,
+		"iS": 740384,
+		"oA": 0,
+		"oAP": "\/zhihu-wow8\/img\/pop-bg-new.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/zhihu-wow8\/img\/pop-bg.png": {
 		"ft": 32768,
 		"iS": 60612,
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/pop-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/zhihu-wow8\/img\/pop-nickname.png": {
+		"ft": 32768,
+		"iS": 14663,
+		"oA": 0,
+		"oAP": "\/zhihu-wow8\/img\/pop-nickname.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -21821,8 +21952,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-death-copy-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -21832,8 +21963,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-death-copy-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -21843,8 +21974,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-death-copy-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -21854,8 +21985,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-death-copy-4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -21876,8 +22007,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-demon-copy-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -21898,8 +22029,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-dryad-copy-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -21909,8 +22040,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-dryad-copy-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -21931,8 +22062,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-huntsman-copy-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -21942,8 +22073,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-huntsman-copy-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -21964,8 +22095,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-mage-copy-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -21975,8 +22106,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-mage-copy-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -21997,8 +22128,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-monk-copy-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22008,8 +22139,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-monk-copy-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22019,8 +22150,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-monk-copy-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22041,8 +22172,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-paladin-copy-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22052,8 +22183,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-paladin-copy-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22063,8 +22194,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-paladin-copy-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22085,8 +22216,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-pastor-copy-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22096,8 +22227,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-pastor-copy-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22107,8 +22238,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-pastor-copy-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22129,8 +22260,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-shaman-copy-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22140,8 +22271,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-shaman-copy-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22162,8 +22293,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-stalker-copy-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22173,8 +22304,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-stalker-copy-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22184,8 +22315,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-stalker-copy-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22206,8 +22337,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-warlock-copy-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22217,8 +22348,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-warlock-copy-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22239,8 +22370,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-warrior-copy-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -22250,8 +22381,8 @@
 		"oA": 0,
 		"oAP": "\/zhihu-wow8\/img\/r-warrior-copy-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},

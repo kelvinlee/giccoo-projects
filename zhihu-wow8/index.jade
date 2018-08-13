@@ -21,9 +21,9 @@ block css
 
 block content
 	- url = "http://image.giccoo.com/projects/zhihu-wow8";
-	//- - url = ".";
+	- url = ".";
 	.main#main(v-show="mounted",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',height: h+'px'}")
-		player(icon="true",src="#{url}/mp3/bgm.mp3")
+		//- player(icon="true",src="#{url}/mp3/bgm.mp3")
 		transition(name="page-fade")
 			.page.page-home(v-show="pageIndex == 1")
 				.content
@@ -38,6 +38,17 @@ block content
 					.human.fadeInRight.animated
 						img(src="#{url}/img/human.png")
 		transition(name="page-fade")
+			.pop.pop-nickname(v-show="pageIndex == 2 && cdname")
+				.juanzhou
+					.logo
+						img(src="#{url}/img/logo.png")
+					.text
+						img(src="#{url}/img/pop-nickname.png")
+					.input
+						input(v-model="nickname",placeholder="请输入你的名字")
+					.btn(@click="checkname")
+						img(src="#{url}/img/btn-yes.png")
+		transition(name="page-fade")
 			.page.page-question(v-show="pageIndex == 2")
 				.content
 					.box
@@ -51,7 +62,7 @@ block content
 				.content
 					.ugc
 						img(:src="ugc")
-					.logo
+					.logo(v-show="!smaller")
 						img(src="#{url}/img/small-logo.png")
 					.btns.fadeIn.animated(v-show="btnShow")
 						.btn
@@ -64,7 +75,7 @@ block content
 			.pop(v-show="pop")
 				.content
 					.close(@click="pop = false")
-						img(src="#{url}/img/icon-close.png")
+						img(src="#{url}/img/icon-close-white.png")
 					.zy
 						.lm(:class="{on: lmbl}",@click="lmbl = true")
 							img(src="#{url}/img/icon-lm.png")
