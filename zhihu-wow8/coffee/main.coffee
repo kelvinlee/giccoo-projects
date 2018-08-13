@@ -597,15 +597,14 @@ init = ->
 	TrueH = 1138 if TrueH >= 1138
 	smaller = TrueW/TrueH > 0.65
 	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
-	console.log TrueW,TrueH
+	console.log TrueW,TrueH,TrueW/TrueH
 		
-
 	main = new Vue
 		el: "#main"
 		data:
 			w: TrueW
 			h: TrueH
-			biger: TrueW/TrueH < 0.53
+			biger: TrueW/TrueH < 0.56
 			smaller: smaller
 			afterH: if smaller then TrueH*1.15-1029*(TrueW/750) else TrueH-1029*(TrueW/750)
 			homepageShow: true

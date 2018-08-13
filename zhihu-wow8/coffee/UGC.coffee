@@ -74,6 +74,7 @@ class UGC
 			fontSize: 49, 
 			fill : 0xeaa406, 
 			align : 'left',
+			fontWeight: "bold",
 			dropShadow: true,
 			dropShadowAlpha: alpha,
 			dropShadowBlur: 5,
