@@ -220,12 +220,12 @@ function openScorll(){
 }
 var copyA=[]
 var t1A=[1,1,1,1,1,1,1,1,1,1,1]
-var t2A=[0,0.2,1.8,6.6,10,15,18,22,26,27.5,30.8]
+var t2A=[-2.5,-2.2,1.8,6.6,10,15,18,22,26,27.5,30.8]
 function showCopy(){
   for (var i = 1; i <= 11; i++) {
 
     //_copy.alpha=0
-    TweenMax.to(copyA[i-1],3,{alpha:1,delay:t2A[i-1]})//t1A[i-1]
+    TweenMax.to(copyA[i-1],3,{alpha:1,delay:t2A[i-1]+2.5})//t1A[i-1]
   };
 
 }
