@@ -127,6 +127,7 @@ window.onload = ->
 		el: "#public"
 		data:
 			note: true
+			playing: false
 
 	loading = new Vue
 		el: "#loading"
@@ -318,5 +319,19 @@ init = ->
 				console.log "devicemotion"
 			else
 				@.handCover = true
-			
-			
+
+playAudio = (id)->
+	audio = document.getElementById(id)
+	console.log "play #{id}",audio,audio.play()
+	audio.play()
+	audio.addEventListener "ended", ->
+		stopAllAudio()
+		hideAnswer()
+	,false
+
+stopAllAudio = ->
+	for item in musicA
+		audio = document.getElementById item[0]
+		audio.pause()
+		audio = document.getElementById item[1]
+		audio.pause()

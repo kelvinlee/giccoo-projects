@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _cache, _public, _runTime, _second, _startCache, _testTime, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, neteaseShareImage, random, resource, resources, sended, sys, ugc, ugcCache;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _cache, _public, _runTime, _second, _startCache, _testTime, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, neteaseShareImage, playAudio, random, resource, resources, sended, stopAllAudio, sys, ugc, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -432,7 +432,8 @@ window.onload = function () {
   _public = new Vue({
     el: "#public",
     data: {
-      note: true
+      note: true,
+      playing: false
     }
   });
   loading = new Vue({
@@ -677,4 +678,28 @@ init = function init() {
       }
     }
   });
+};
+
+playAudio = function playAudio(id) {
+  var audio;
+  audio = document.getElementById(id);
+  console.log('play ' + id, audio, audio.play());
+  audio.play();
+  return audio.addEventListener("ended", function () {
+    stopAllAudio();
+    return hideAnswer();
+  }, false);
+};
+
+stopAllAudio = function stopAllAudio() {
+  var audio, item, k, len2, results;
+  results = [];
+  for (k = 0, len2 = musicA.length; k < len2; k++) {
+    item = musicA[k];
+    audio = document.getElementById(item[0]);
+    audio.pause();
+    audio = document.getElementById(item[1]);
+    results.push(audio.pause());
+  }
+  return results;
 };

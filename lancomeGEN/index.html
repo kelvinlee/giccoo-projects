@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>渴望拥有外在的光芒</title>
+    <title>自信心声 因我而生</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/font/Interstate Regular.css">
@@ -18,12 +18,16 @@
     </script>
   </head>
   <body>
+    <audio id="a-1" src="./mp3/a-1.mp3"></audio>
+    <audio id="a-2" src="./mp3/a-2.mp3"></audio>
+    <audio id="b-1" src="./mp3/b-1.mp3"></audio>
+    <audio id="b-2" src="./mp3/b-2.mp3"></audio>
+    <audio id="c-1" src="./mp3/c-1.mp3"></audio>
+    <audio id="c-2" src="./mp3/c-2.mp3"></audio>
     <div id="public" class="public">
-      <transition name="page-fade">
-        <div v-show="note" class="note-text">
-          <p>建议打开音乐按钮<br/>获得更好体验效果</p>
-        </div>
-      </transition>
+      <div :class="{play: playing, pause: !playing}" @click="playing = !playing" class="player">
+        <div :class="{play: playing, pause: !playing}" class="icon-play"></div>
+      </div>
     </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">

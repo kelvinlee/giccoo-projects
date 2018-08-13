@@ -113,8 +113,8 @@ function setAnswer(){
 	soundBtn.pivot.set(320,58)
 	soundBtn.position.set(238,stageH/2-138)
 	soundBtn.scale.x=soundBtn.scale.y=.66
-
-	pStage.addChild(soundBtn,answerT1,answerT2,answerT3,answerT4,answerBtnT,answerNextT)
+	// soundBtn, answerBtnT
+	pStage.addChild(answerT1,answerT2,answerT3,answerT4,answerNextT)
 	setSoundIcon()
 	answerA=[answerT1,answerT2,answerT3,answerT4,answerBtnT,answerNextT,soundBtn,soundIcon,answerPicC]
 	for (var i = 0; i < answerA.length; i++) {
@@ -168,10 +168,14 @@ function showAnswer(){
 	soundBtn.interactive=true
 	soundBtn.tap=playSound
 	//NextQuestion()
-	// playSound()
+	playSound()
 }
 var musicA=[["a-1","a-2"],["b-2","b-1"],["c-1","c-2"]]
 function playSound(){
+	if (_public.playing) {
+		playAudio(musicA[Qnum][nowAnswer])	
+	}
+	return false
 	if (audioPlaying) {
 		audioPlaying = false
 		PIXI.sound.pause(musicA[Qnum][nowAnswer])
@@ -189,8 +193,10 @@ function playSound(){
 	audioPlaying = true
 }
 function hideAnswer(){
+	stopAllAudio()
 	soundIconStop()
 	PIXI.sound.stopAll()
+	audioPlaying = false
 	soundBtn.interactive=false
 	answerNextT.interactive=false
 
@@ -252,7 +258,7 @@ function setSoundIcon(){
 	sound1=new Sprite(getTe(_CDN+"img/sound1.png"))
 	sound2=new Sprite(getTe(_CDN+"img/sound2.png"))
 	sound3=new Sprite(getTe(_CDN+"img/sound3.png"))
-	pStage.addChild(soundIcon)
+	// pStage.addChild(soundIcon)
 	soundIcon.addChild(sound0,sound1,sound2,sound3)
 	soundIcon.position.set(324,stageH/2-152)
 	//===

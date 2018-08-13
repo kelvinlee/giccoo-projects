@@ -94,6 +94,10 @@ function btn1Down(){
 	answer1.y-=10
 	pStage.interactive=true
 	pStage.touchend=allBtnUp
+	nowAnswer=0
+	console.log(musicA[Qnum][nowAnswer])
+	audio = document.getElementById(musicA[Qnum][nowAnswer])
+	audio.load()
 }
 
 function btn1Up(){
@@ -110,6 +114,10 @@ function btn2Down(){
 	answer2.y-=10
 	pStage.interactive=true
 	pStage.touchend=allBtnUp
+	nowAnswer=1
+	console.log(musicA[Qnum][nowAnswer])
+	audio = document.getElementById(musicA[Qnum][nowAnswer])
+	audio.load()
 }
 
 function btn2Up(){

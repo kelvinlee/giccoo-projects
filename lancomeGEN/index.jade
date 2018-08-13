@@ -1,7 +1,7 @@
 extends ../libs/jade/layout-clean
 
 block title
-  | 渴望拥有外在的光芒
+  | 自信心声 因我而生
 
 block css
   meta(name="author",content="m.giccoo.com")
@@ -32,10 +32,18 @@ block content
     .qr
       img(src="#{url}/img/qrcode.png")
       .text 请使用手机扫描二维码参与活动
-
+  audio#a-1(src="#{url}/mp3/a-1.mp3")
+  audio#a-2(src="#{url}/mp3/a-2.mp3")
+  audio#b-1(src="#{url}/mp3/b-1.mp3")
+  audio#b-2(src="#{url}/mp3/b-2.mp3")
+  audio#c-1(src="#{url}/mp3/c-1.mp3")
+  audio#c-2(src="#{url}/mp3/c-2.mp3")
   .public#public
     //- player(icon="true",src="#{url}/mp3/bgm.mp3")
-    transition(name="page-fade")
+    .player(:class="{play: playing, pause: !playing}",@click="playing = !playing")
+      .icon-play(:class="{play: playing, pause: !playing}")
+
+    //- transition(name="page-fade")
       .note-text(v-show="note")
         p 建议打开音乐按钮<br/>获得更好体验效果
 
