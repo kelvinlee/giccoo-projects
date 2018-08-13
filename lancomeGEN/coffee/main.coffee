@@ -236,6 +236,7 @@ init = ->
 
 			openWeb: ->
 				console.log "open web"
+				window.location.href = "https://www.lancome.com.cn/landingpage/advanced-genifique?utm_source=NeteaseMusic&utm_medium=DISP&utm_content=06-02NeteaseMusic_H5&utm_campaign=CN_20180803_GEN1+1_LPD_LAN_FS_Regular_NVD_DISP_MO"
 			sharePost: ->
 				ugc.app.renderer.render ugc.app.stage
 				@.ugc = ugc.app.view.toDataURL()

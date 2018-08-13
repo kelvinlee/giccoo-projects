@@ -28,6 +28,11 @@
       <div :class="{play: playing, pause: !playing}" @click="playing = !playing" class="player">
         <div :class="{play: playing, pause: !playing}" class="icon-play"></div>
       </div>
+      <transition name="page-fade">
+        <div v-show="note" class="note-text">
+          <p>点我点我<br/>就能听到你更深处的心声</p>
+        </div>
+      </transition>
     </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
@@ -84,9 +89,13 @@
         <div v-show="lotteryShow" class="pop">
           <div class="book">
             <div class="bg"><img src="./img/book-bg.png"></div>
-            <div class="text"><img src="./img/text-faild.png"></div>
-            <div class="btns"><img src="./img/btn-share.png">
+            <div class="text"><img src="./img/text-faild.png"><img :src="ugc" class="ugc"></div>
+            <div v-show="wy" class="btns"><img src="./img/btn-share.png">
               <div @click="share" class="share"></div>
+              <div @click="openWeb" class="web"></div>
+            </div>
+            <div v-show="!wy" class="btns"><img src="./img/btn-long.png">
+              <div class="share"><img :src="ugc" class="ugc"></div>
               <div @click="openWeb" class="web"></div>
             </div>
           </div>

@@ -562,7 +562,8 @@ init = function init() {
         return this.lotteryShow = true;
       },
       openWeb: function openWeb() {
-        return console.log("open web");
+        console.log("open web");
+        return window.location.href = "https://www.lancome.com.cn/landingpage/advanced-genifique?utm_source=NeteaseMusic&utm_medium=DISP&utm_content=06-02NeteaseMusic_H5&utm_campaign=CN_20180803_GEN1+1_LPD_LAN_FS_Regular_NVD_DISP_MO";
       },
       sharePost: function sharePost() {
         ugc.app.renderer.render(ugc.app.stage);
