@@ -638,7 +638,7 @@ init = ->
 				if @.lmbl
 					window.location.href = "https://activity.zhihu.com/campaign/wow/badges/1&zh_app_id=300100"
 				else
-					window.location.href = " https://activity.zhihu.com/campaign/wow/badges/2&zh_app_id=300100"
+					window.location.href = "https://activity.zhihu.com/campaign/wow/badges/2&zh_app_id=300100"
 			getBadge: ->
 				@.pop = true
 			getUGC: ->
