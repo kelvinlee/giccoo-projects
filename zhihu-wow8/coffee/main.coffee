@@ -595,7 +595,7 @@ init = ->
 	# document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
 	TrueW = 640 if TrueW >= 640
 	TrueH = 1138 if TrueH >= 1138
-	smaller = TrueH*2 < 1200
+	smaller = TrueW/TrueH > 0.65
 	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
 	console.log TrueW,TrueH
 		
@@ -605,7 +605,7 @@ init = ->
 		data:
 			w: TrueW
 			h: TrueH
-			biger: TrueW/TrueH < 0.52
+			biger: TrueW/TrueH < 0.53
 			smaller: smaller
 			afterH: if smaller then TrueH*1.15-1029*(TrueW/750) else TrueH-1029*(TrueW/750)
 			homepageShow: true
