@@ -42,7 +42,7 @@ block content
     //- player(icon="true",src="#{url}/mp3/bgm.mp3")
     .player(:class="{play: playing, pause: !playing}",@click="playing = !playing")
       .icon-play(:class="{play: playing, pause: !playing}")
-    transition(name="page-fade")
+    //- transition(name="page-fade")
       .note-text(v-show="note")
         p 点我点我<br/>就能听到你更深处的心声
 

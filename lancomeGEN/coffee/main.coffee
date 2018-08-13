@@ -228,6 +228,8 @@ init = ->
 		methods:
 			showAnswerPage: ->
 				@.pageIndex = 2
+				unless _public.playing
+					_public.playing = true
 				setTimeout =>
 					setup()
 				,300

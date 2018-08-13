@@ -28,11 +28,6 @@
       <div :class="{play: playing, pause: !playing}" @click="playing = !playing" class="player">
         <div :class="{play: playing, pause: !playing}" class="icon-play"></div>
       </div>
-      <transition name="page-fade">
-        <div v-show="note" class="note-text">
-          <p>点我点我<br/>就能听到你更深处的心声</p>
-        </div>
-      </transition>
     </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">

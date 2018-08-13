@@ -554,6 +554,9 @@ init = function init() {
     methods: {
       showAnswerPage: function showAnswerPage() {
         this.pageIndex = 2;
+        if (!_public.playing) {
+          _public.playing = true;
+        }
         return setTimeout(function () {
           return setup();
         }, 300);
