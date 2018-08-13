@@ -631,6 +631,10 @@ init = ->
 		watch:
 			questionID: (n,o)->
 		methods:
+			start: ->
+				@.pageIndex = 2
+				unless @.$children[0].playing
+					@.$children[0].change()
 			go: ->
 				@.pop = false
 				# if sys isnt "zhihu"
