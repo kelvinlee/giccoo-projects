@@ -547,6 +547,7 @@ init = function init() {
       lastY: 0,
       lastZ: 0,
       speed: 4000,
+      maxSpeed: 0,
       swing: false
     },
     methods: {
@@ -635,8 +636,11 @@ init = function init() {
           speed = Math.sqrt((x - this.lastX) * (x - this.lastX) + (y - this.lastY) * (y - this.lastY) + (z - this.lastZ) * (z - this.lastZ)) / diffTime * 10000;
           // console.log x,y,z,@.speed,speed
           if (speed > this.speed) {
-            this.swing = false;
-            this.nextPage();
+            this.maxSpeed += 1;
+            if (this.maxSpeed >= 10) {
+              this.swing = false;
+              this.nextPage();
+            }
           }
           this.lastX = x;
           this.lastY = y;

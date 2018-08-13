@@ -222,6 +222,7 @@ init = ->
 			lastY: 0
 			lastZ: 0
 			speed: 4000
+			maxSpeed: 0
 			swing: false
 		methods:
 			showAnswerPage: ->
@@ -290,8 +291,10 @@ init = ->
 					speed = Math.sqrt( ( x - @.lastX ) * ( x - @.lastX ) + ( y - @.lastY ) * ( y - @.lastY ) + ( z - @.lastZ ) * ( z - @.lastZ ) ) / diffTime * 10000
 					# console.log x,y,z,@.speed,speed
 					if speed > @.speed
-						@.swing = false
-						@.nextPage()
+						@.maxSpeed += 1
+						if @.maxSpeed >= 10
+							@.swing = false
+							@.nextPage()
 					@.lastX = x
 					@.lastY = y
 					@.lastZ = z

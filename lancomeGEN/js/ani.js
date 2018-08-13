@@ -169,7 +169,7 @@ function showAnswer(){
 	soundBtn.tap=playSound
 	//NextQuestion()
 }
-var musicA=[["a-1","a-2"],["b-1","b-2"],["c-1","c-2"]]
+var musicA=[["a-1","a-2"],["b-2","b-1"],["c-1","c-2"]]
 function playSound(){
 	if (audioPlaying) {
 		audioPlaying = false
@@ -181,6 +181,8 @@ function playSound(){
 		soundIconStop()
 		hideAnswer()
 		audioPlaying = false
+	},loaded: function(){
+		console.log("loaded")
 	}})
 	soundIconPlay()
 	audioPlaying = true
