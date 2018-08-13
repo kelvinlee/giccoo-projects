@@ -298,7 +298,7 @@ TrueH = 1138;
 
 imageurl = "//api.giccoo.com/api/upload/image64/";
 
-apiUrl = "//api.giccoo.com/Levi";
+apiUrl = "//api.giccoo.com/lancomeGEN";
 
 apiLink = "//g.giccoo.com/";
 

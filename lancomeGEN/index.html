@@ -6,24 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>自信心声 因我而生</title>
     <meta name="author" content="m.giccoo.com">
-    <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
+    <link rel="stylesheet" href="//image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/font/Interstate Regular.css">
-    <link rel="stylesheet" href="css/yrd-Medium.css">
+    <link rel="stylesheet" href="//image.giccoo.com/projects/lancomeGEN/css/yrd-Medium.css">
     <link rel="stylesheet" href="css/base.css">
-    <script src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js"></script>
     <script>
-      var vConsole = new VConsole();
-      console.log('VConsole open');
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
       
     </script>
   </head>
   <body>
-    <audio id="a-1" src="./mp3/a-1.mp3"></audio>
-    <audio id="a-2" src="./mp3/a-2.mp3"></audio>
-    <audio id="b-1" src="./mp3/b-1.mp3"></audio>
-    <audio id="b-2" src="./mp3/b-2.mp3"></audio>
-    <audio id="c-1" src="./mp3/c-1.mp3"></audio>
-    <audio id="c-2" src="./mp3/c-2.mp3"></audio>
+    <audio id="a-1" src="//image.giccoo.com/projects/lancomeGEN/mp3/a-1.mp3"></audio>
+    <audio id="a-2" src="//image.giccoo.com/projects/lancomeGEN/mp3/a-2.mp3"></audio>
+    <audio id="b-1" src="//image.giccoo.com/projects/lancomeGEN/mp3/b-1.mp3"></audio>
+    <audio id="b-2" src="//image.giccoo.com/projects/lancomeGEN/mp3/b-2.mp3"></audio>
+    <audio id="c-1" src="//image.giccoo.com/projects/lancomeGEN/mp3/c-1.mp3"></audio>
+    <audio id="c-2" src="//image.giccoo.com/projects/lancomeGEN/mp3/c-2.mp3"></audio>
     <div id="public" class="public">
       <div :class="{play: playing, pause: !playing}" @click="playing = !playing" class="player">
         <div :class="{play: playing, pause: !playing}" class="icon-play"></div>
@@ -31,8 +35,8 @@
     </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
-        <div class="battle"><img src="./img/bottle-box.png">
-          <div :style="{top: 40*(100-progress)/100+'%'}" class="bottle-box"><img src="./img/bottle-bg.png"></div>
+        <div class="battle"><img src="//image.giccoo.com/projects/lancomeGEN/img/bottle-box.png">
+          <div :style="{top: 40*(100-progress)/100+'%'}" class="bottle-box"><img src="//image.giccoo.com/projects/lancomeGEN/img/bottle-bg.png"></div>
         </div>
         <div class="text">loading...{{progress}}%</div>
       </div>
@@ -55,10 +59,10 @@
       <transition name="page-fade">
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
-            <div class="logo fadeIn animated"><img src="./img/homepage-logo.png"></div>
-            <div class="title fadeIn animated"><img src="./img/homepage-title.png"></div>
-            <div @click="showAnswerPage" class="btn fadeIn animated"><img src="./img/homepage-btn.png"></div>
-            <div class="bg-part"><img src="./img/homepage-bg.jpg"></div>
+            <div class="logo fadeIn animated"><img src="//image.giccoo.com/projects/lancomeGEN/img/homepage-logo.png"></div>
+            <div class="title fadeIn animated"><img src="//image.giccoo.com/projects/lancomeGEN/img/homepage-title.png"></div>
+            <div @click="showAnswerPage" class="btn fadeIn animated"><img src="//image.giccoo.com/projects/lancomeGEN/img/homepage-btn.png"></div>
+            <div class="bg-part"><img src="//image.giccoo.com/projects/lancomeGEN/img/homepage-bg.jpg"></div>
           </div>
         </div>
       </transition>
@@ -73,23 +77,23 @@
         <div v-show="pageIndex == 3" class="page page-3">
           <div class="content">
             <div class="hand">
-              <div class="hand-image"><img src="./img/spage-hand.jpg"></div>
+              <div class="hand-image"><img src="//image.giccoo.com/projects/lancomeGEN/img/spage-hand.jpg"></div>
             </div>
             <div v-show="handCover" @click="nextPage" class="hand-cover"></div>
-            <div class="note"><img src="./img/spage-note.png"></div>
+            <div class="note"><img src="//image.giccoo.com/projects/lancomeGEN/img/spage-note.png"></div>
           </div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="lotteryShow" class="pop">
           <div class="book">
-            <div class="bg"><img src="./img/book-bg.png"></div>
-            <div class="text"><img src="./img/text-faild.png"><img :src="ugc" class="ugc"></div>
-            <div v-show="wy" class="btns"><img src="./img/btn-share.png">
+            <div class="bg"><img src="//image.giccoo.com/projects/lancomeGEN/img/book-bg.png"></div>
+            <div class="text"><img src="//image.giccoo.com/projects/lancomeGEN/img/text-faild.png"><img :src="ugc" class="ugc"></div>
+            <div v-show="wy" class="btns"><img src="//image.giccoo.com/projects/lancomeGEN/img/btn-share.png">
               <div @click="share" class="share"></div>
               <div @click="openWeb" class="web"></div>
             </div>
-            <div v-show="!wy" class="btns"><img src="./img/btn-long.png">
+            <div v-show="!wy" class="btns"><img src="//image.giccoo.com/projects/lancomeGEN/img/btn-long.png">
               <div class="share"><img :src="ugc" class="ugc"></div>
               <div @click="openWeb" class="web"></div>
             </div>
