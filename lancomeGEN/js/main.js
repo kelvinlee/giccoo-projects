@@ -429,10 +429,12 @@ window.onload = function () {
       return wx.onMenuShareWeibo(shareContent);
     });
   }
-  // _public = new Vue
-  // 	el: "#public"
-  // 	data:
-  // 		note: true
+  _public = new Vue({
+    el: "#public",
+    data: {
+      note: true
+    }
+  });
   loading = new Vue({
     el: "#loading",
     data: {
@@ -495,7 +497,7 @@ init = function init() {
     data: {
       w: TrueW,
       h: TrueH,
-      biger: TrueW / TrueH < 0.52,
+      biger: TrueW / TrueH < 0.55,
       smaller: smaller,
       afterH: smaller ? TrueH * 1.15 - 1029 * (TrueW / 750) : TrueH - 1029 * (TrueW / 750),
       wy: false,
@@ -548,6 +550,12 @@ init = function init() {
       swing: false
     },
     methods: {
+      showAnswerPage: function showAnswerPage() {
+        this.pageIndex = 2;
+        return setTimeout(function () {
+          return setup();
+        }, 300);
+      },
       openPop: function openPop() {
         return this.lotteryShow = true;
       },

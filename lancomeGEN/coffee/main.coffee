@@ -123,10 +123,10 @@ window.onload = ->
 			wx.onMenuShareQQ shareContent
 			wx.onMenuShareWeibo shareContent
 
-	# _public = new Vue
-	# 	el: "#public"
-	# 	data:
-	# 		note: true
+	_public = new Vue
+		el: "#public"
+		data:
+			note: true
 
 	loading = new Vue
 		el: "#loading"
@@ -152,7 +152,6 @@ window.onload = ->
 					@.progress = 100
 					clearInterval timein
 					main.mounted = true
-
 					_cache = setTimeout =>
 						@.next()
 					,200
@@ -175,7 +174,7 @@ init = ->
 		data:
 			w: TrueW
 			h: TrueH
-			biger: TrueW/TrueH < 0.52
+			biger: TrueW/TrueH < 0.55
 			smaller: smaller
 			afterH: if smaller then TrueH*1.15-1029*(TrueW/750) else TrueH-1029*(TrueW/750)
 			wy: false
@@ -225,8 +224,14 @@ init = ->
 			speed: 4000
 			swing: false
 		methods:
+			showAnswerPage: ->
+				@.pageIndex = 2
+				setTimeout =>
+					setup()
+				,300
 			openPop: ->
 				@.lotteryShow = true
+
 			openWeb: ->
 				console.log "open web"
 			sharePost: ->

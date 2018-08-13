@@ -83,6 +83,7 @@ body
 	max-width: 640px
 	+m
 	+posr
+	font-family: "yrd-Medium"
 
 
 video,canvas,svg
@@ -169,6 +170,7 @@ video,canvas,svg
 	z-index: 99
 	// 3c080f
 	// +hide
+	font-family: "Arial"
 	.content
 		+w
 		+h
@@ -206,14 +208,35 @@ video,canvas,svg
 	.battle
 		+posa
 		+tl(50%,50%)
-		+w(10%)
-		+transform(translate3d(-50%,-50%,0))
-		.text
+		+w(16%)
+		+transform(translate3d(-50%,-70%,0))
+		+overhide
+		// +bc(#fff)
+		font-size: 0
+		&:after
+			content: " "
 			+posa
-			+bl(-30%,-70%)
+			+tl(5%,10%)
+			+w(80%)
+			+h(90%)
+			+bc(#fff)
+			z-index: -2
+		.bottle-box
+			+posa
+			+tl(40%)
 			+w
-			+font-size(0.8rem)
-			color: #000
+			+h
+			z-index: -1
+			+tran(all,0.2s,linear)
+
+	.text
+		+posa
+		+bl(40%,50%)
+		+w
+		+font-size(0.8rem)
+		+transform(translate3d(-49%,0,0))
+		+text-center
+		color: #000
 	
 
 .music-box
@@ -245,11 +268,11 @@ video,canvas,svg
 	+wh(2rem,2rem)
 	font-size: 0
 	z-index: 199
-	font-family: "yrd-Bold"
-	+hide
+	font-family: "yrd-Medium"
+	// +hide
 	.note-text
 		+posa
-		+tr(50%,120%)
+		+tr(50%,0%)
 		+font-size(0.6rem)
 		line-height: 1rem
 		white-space: nowrap
@@ -479,18 +502,36 @@ video,canvas,svg
 	// +b($cdn+"img/homepage-bg.jpg",no-repeat,bottom,center,contain)
 	.bg-part
 		+posa
-		+bl(10%)
+		+bl(5%)
 		z-index: -1
+		.biger &
+			+bl(10%)
+		.smaller &
+			+bl(5%,10%)
+			+w(80%)
 	.logo
+		+m
 		margin-top: 5%
 		animation-delay: 200ms
+		+w(85%)
+		.biger &
+			+w
+			margin-top: 10%
 	.title
 		+m(5% auto)
 		animation-delay: 400ms
+		+w(85%)
+		.biger &
+			+w
 	.btn
+		+m
 		animation-delay: 600ms
+		+w(85%)
+		.biger &
+			+w
+
 .page-2
-	font-family: "yrd-Bold"
+	// font-family: "yrd-Bold"
 	.content
 		font-family: "yrd-Medium"
 .page-3
@@ -508,7 +549,7 @@ video,canvas,svg
 		+posa
 		+bl(-5%)
 		transform-origin: bottom center
-		+animation(swing,3s,linear,infinite)
+		+animation(swing,6s,linear,infinite)
 		// animation-direction: alternate
 		.biger &
 			+bl(-5%)

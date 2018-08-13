@@ -8,7 +8,6 @@
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/font/Interstate Regular.css">
-    <link rel="stylesheet" href="css/yrd-Bold.css">
     <link rel="stylesheet" href="css/yrd-Medium.css">
     <link rel="stylesheet" href="css/base.css">
     <script src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js"></script>
@@ -19,11 +18,19 @@
     </script>
   </head>
   <body>
+    <div id="public" class="public">
+      <transition name="page-fade">
+        <div v-show="note" class="note-text">
+          <p>建议打开音乐按钮<br/>获得更好体验效果</p>
+        </div>
+      </transition>
+    </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
-        <div class="battle"><img src="./img/loading-battle.png">
-          <div class="text">loading...{{progress}}%</div>
+        <div class="battle"><img src="./img/bottle-box.png">
+          <div :style="{top: 40*(100-progress)/100+'%'}" class="bottle-box"><img src="./img/bottle-bg.png"></div>
         </div>
+        <div class="text">loading...{{progress}}%</div>
       </div>
     </div>
     <div id="main" v-show="mounted" :class="{biger: biger,smaller:smaller}" style="display: none" :style="{width: w+'px',minHeight: h+'px'}" class="main">
@@ -46,7 +53,7 @@
           <div class="content">
             <div class="logo fadeIn animated"><img src="./img/homepage-logo.png"></div>
             <div class="title fadeIn animated"><img src="./img/homepage-title.png"></div>
-            <div @click="pageIndex = 2" class="btn fadeIn animated"><img src="./img/homepage-btn.png"></div>
+            <div @click="showAnswerPage" class="btn fadeIn animated"><img src="./img/homepage-btn.png"></div>
             <div class="bg-part"><img src="./img/homepage-bg.jpg"></div>
           </div>
         </div>

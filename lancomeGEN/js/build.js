@@ -49,7 +49,7 @@ var buildUGC = function () {
 	pStage=this.stage
 	stageH=this.opts.h
 	
-	setup()
+	
 }
 
 function setup(){

@@ -136,7 +136,13 @@ function showAnswer(){
 	soundIcon.position.set(324,stageH/2-152)
 	answerPicC.y=0
 	var picA=[[a1a,a1b],[a2a,a2b],[a3a,a3b]]
-	picA[Qnum][nowAnswer].alpha=1
+	// picA[Qnum][nowAnswer].alpha=1
+	TweenMax.set(picA[Qnum][nowAnswer],{alpha:1})
+	if (Qnum != 2) {
+		TweenMax.from(picA[Qnum][nowAnswer],.7,{alpha:0,x:"-=100",delay:1})
+	}else{
+		TweenMax.from(picA[Qnum][nowAnswer],.7,{alpha:0,delay:1})
+	}
 	for (var i = 0; i < answerA.length; i++) {
 		answerA[i].visible=true
 		TweenMax.set(answerA[i],{alpha:1})
