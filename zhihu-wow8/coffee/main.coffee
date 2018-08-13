@@ -1,7 +1,7 @@
 # @codekit-prepend "../../libs/coffee/pixi-base"
 # @codekit-prepend "../../libs/vue/vue-player"
 # @codekit-prepend "./UGC"
-_CDN = ""
+# _CDN = ""
 _imgurl = ""
 global = {}
 main = {}
