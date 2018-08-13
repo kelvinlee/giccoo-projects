@@ -414,8 +414,8 @@ window.onload = function () {
     wx.ready(function () {
       var shareContent;
       shareContent = {
-        title: "渴望拥有外在的光芒",
-        desc: "就更应聆听自己内心的声音",
+        title: "自信心声，因我而生",
+        desc: "渴望拥有外在的光芒，就更应该聆听自己内心的身音",
         link: "http://m.giccoo.com/lancomeGEN/",
         imgUrl: "http://m.giccoo.com/lancomeGEN/img/ico.jpg",
         success: function success() {},
