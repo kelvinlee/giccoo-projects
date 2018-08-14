@@ -16,6 +16,11 @@
         var s = document.getElementsByTagName("script")[0]; 
         s.parentNode.insertBefore(hm, s);
       })();
+    </script>
+    <script src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js"></script>
+    <script>
+      var vConsole = new VConsole();
+      console.log('VConsole open');
       
       
     </script>
@@ -24,15 +29,15 @@
     <div id="main" class="main">
       <transition name="page-fade">
         <div class="page page-gather">
-          <div class="content">
-            <audio id="bgm" @loadstart="load" @play="playing = true" @pause="playing = false" @ended="playing = false" :src="'//image.giccoo.com/projects/Levi-special/mp3/cd-'+now+'.mp3'"></audio>
+          <div @scroll="scroll" class="content">
+            <audio id="bgm" @loadstart="load" @play="playing = true" @pause="playing = false" @ended="playing = false" :src="src"></audio>
             <div class="bg-top"><img src="//image.giccoo.com/projects/Levi-special/img/gather-bg.jpg"></div>
             <div class="empty"></div>
             <div class="list">
-              <div v-for="item,index in list" class="item">
-                <div class="cd"><img :src="'//image.giccoo.com/projects/Levi-special/img/cd-'+item.id+'.jpg'">
-                  <div v-show="now != (index+1) || !playing" @click="play(index)" class="btn-play"></div>
-                  <div v-show="now == (index+1) &amp;&amp; playing" @click="play(index)" class="btn-play pause"></div>
+              <div v-for="item,index in askList" class="item">
+                <div class="cd"><img :src="'//image.giccoo.com/upload/'+item.avatar+'?x-oss-process=image/crop,x_130,y_282,w_410,h_410,format,jpg'">
+                  <div v-show="now != item.music || !playing" @click="play(item.music)" class="btn-play"></div>
+                  <div v-show="now == item.music &amp;&amp; playing" @click="play(item.music)" class="btn-play pause"></div>
                 </div>
                 <div class="msg">
                   <div class="nickname">{{item.nickname}}</div>

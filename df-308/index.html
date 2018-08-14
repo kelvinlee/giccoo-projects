@@ -18,9 +18,11 @@
   </head>
   <body>
     <div id="public" class="public">
-      <div :class="{play: playing, pause: !playing}" @click="playing = !playing" class="player">
-        <div :class="{play: playing, pause: !playing}" class="icon-play"></div>
-      </div>
+      <transition name="page-fade">
+        <div v-show="note" class="note-text">
+          <p>建议打开音乐按钮<br/>获得更好体验效果</p>
+        </div>
+      </transition>
     </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
@@ -59,6 +61,13 @@
         <div v-show="pageIndex == 2" class="page page-2">
           <div class="content">
             <div id="ugc"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div class="page page-3">
+          <div class="content">
+            <form-grounp v-bind:form="form" class="form"></form-grounp>
           </div>
         </div>
       </transition>

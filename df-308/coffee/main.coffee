@@ -2,8 +2,11 @@
 # @codekit-prepend "../../libs/coffee/loadWechatConfig"
 # @codekit-prepend "../../libs/coffee/IsPC"
 # @codekit-prepend "../../libs/vue/vue-player"
+# @codekit-prepend "../../libs/vue/vue-register"
 # @codekit-prepend "../../libs/coffee/pixi-base"
+# @codekit-prepend "./dealer"
 # @codekit-prepend "./UGC"
+
 
 
 String.prototype.gblen = -> 
@@ -44,7 +47,6 @@ neteaseShareImage = ->
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "share href:",picUrl
-
 createObjectURLfun = (file)->
 	if (window.webkitURL? || window.navigator.userAgent.indexOf("Chrome") >= 1 || window.navigator.userAgent.indexOf("Safari") >= 1) 
 		return window.webkitURL.createObjectURL(file)
@@ -82,7 +84,6 @@ getOrientation = (file, callback) ->
     callback -1
   reader.readAsArrayBuffer file
   return
-
 window.onload = ->
 	TrueH = document.documentElement.clientHeight
 	TrueW = document.documentElement.clientWidth
@@ -168,7 +169,7 @@ init = ->
 	TrueH = 1138 if TrueH >= 1138
 	smaller = TrueH*2 < 1200
 	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
-	console.log TrueW,TrueH
+	console.log TrueW,TrueH,_citys
 
 	main = new Vue
 		el: "#main"
@@ -206,7 +207,12 @@ init = ->
 			allowPopShow: false
 			count: 0
 			form:
-				link: null
+				nickname: {id:"nickname", type: "input", label: "昵称", placeholder: "请填写姓名",value: ""}
+				mobile: {id:"mobile", type: "input", label: "电话", placeholder: "请填写电话",value: ""}
+				province: {id:"province", type: "select", label: "省份", link: "city", value: "", options: _citys }
+				city: {id:"city", type: "select", label: "城市", link: "dealer",value: "", options: _citys["北京"] }
+				dealer: {id:"city", type: "select", label: "经销商", array: true, value: "", options: _citys["北京"]["北京"] }
+
 			mask: 1
 			text: ""
 			nickname: ""

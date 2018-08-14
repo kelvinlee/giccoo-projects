@@ -2185,10 +2185,21 @@
 		"oAP": "\/build\/dazhong",
 		"oF": 0
 		},
-	"\/df-308\/coffee\/main.coffee": {
+	"\/df-308\/coffee\/dealer.coffee": {
 		"ft": 32,
 		"ma": 0,
 		"mi": 1,
+		"oA": 1,
+		"oAP": "\/df-308\/js\/dealer.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"\/df-308\/coffee\/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/df-308\/js\/main.js",
 		"oF": 0,
@@ -11872,6 +11883,16 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/libs\/js\/vue-register.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/libs\/js\/vue-register-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/libs\/pixi\/motionpath.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -12456,7 +12477,7 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/libs\/js\/vue-register.js",
 		"oF": 0,
 		"oS": 1,

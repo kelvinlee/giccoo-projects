@@ -16,6 +16,10 @@ block css
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
+  script(src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js")
+  script.
+    var vConsole = new VConsole();
+    console.log('VConsole open');
   
 
 block content
@@ -27,12 +31,21 @@ block content
   .main#main
     transition(name="page-fade")
       .page.page-gather
-        .content
-          audio#bgm(@loadstart="load",@play="playing = true",@pause="playing = false",@ended="playing = false",:src="'//image.giccoo.com/projects/Levi-special/mp3/cd-'+now+'.mp3'")
+        .content(@scroll="scroll")
+          audio#bgm(@loadstart="load",@play="playing = true",@pause="playing = false",@ended="playing = false",:src="src")
           .bg-top
             img(src="#{url}/img/gather-bg.jpg")
           .empty
           .list
+            .item(v-for="item,index in askList")
+              .cd
+                img(:src="'//image.giccoo.com/upload/'+item.avatar+'?x-oss-process=image/crop,x_130,y_282,w_410,h_410,format,jpg'")
+                .btn-play(v-show="now != item.music || !playing",@click="play(item.music)")
+                .btn-play.pause(v-show="now == item.music && playing",@click="play(item.music)")
+              .msg
+                .nickname {{item.nickname}}
+                .message {{item.message}}
+          //- .list
             .item(v-for="item,index in list")
               .cd
                 img(:src="'#{url}/img/cd-'+item.id+'.jpg'")

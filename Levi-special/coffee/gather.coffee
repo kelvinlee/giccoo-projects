@@ -1,4 +1,6 @@
-
+apiLink = "//g.giccoo.com/"
+# apiLink = "//localhost:3000/"
+main = {}
 
 window.onload = ->
 	init()
@@ -31,35 +33,61 @@ init = ->
 				{id: 19,nickname:"",message:"出门前把电视吊灯都打开。晚上回家,就会感觉像是有人在等我"}
 				{id: 20,nickname:"",message:"每次都被外婆家座机铃声吓到,听力差的她,很怕错过我们的电话吧"}
 			]
+			askList: []
+			asking: false
+			page: 0
+			src: ""
 		watch:
 			now: (n,o)->
-				console.log "2"
 				if n isnt o
-					audio = document.getElementById "bgm"
 					setTimeout ->
+						audio = document.getElementById "bgm"
 						audio.currentTime = 0
 						audio.play()
 						@.playing = true
 					,50
 		methods:
+			scroll: (evt)->
+				# mainBody = document.getElementById "main"
+				@.ask() if (evt.target.scrollTop + evt.target.clientHeight) >= (evt.target.scrollHeight - 100)
 			load: ->
 				console.log "load"
+				if @.src isnt ""
+					audio = document.getElementById "bgm"
+					audio.play()
 			play: (index)->
 				audio = document.getElementById "bgm"
-				if @.now is (index+1)
-					if audio.paused
-						audio.play()
-						@.playing = true
+				@.src = index
+				# console.log "index",index,audio.paused,@.playing,audio.src
+				setTimeout =>
+					if @.now is index
+						if audio.paused
+							audio.load()
+							audio.play()
+							@.playing = true
+						else
+							audio.pause()
 					else
-						audio.pause()
-				else
-					@.now = index+1
-					# audio.currentTime = 0
-				console.log @.now , (index+1) , @.playing
+						@.now = index
+				,100
+				# console.log @.now , @.playing
 				
 				
 			playing: (index,evt)->
 				audio = evt.target
 				@.list[index].playing = !audio.paused
+			ask: ->
+				return false if @.asking
+				@.asking = true
+				@.page += 1
+				axios.get "#{apiLink}active/Levi/list/page/#{@.page}"
+				.then (msg)=>
+					console.log msg.data.info
+					@.askList = @.askList.concat msg.data.info
+					@.asking = false
+					if msg.data.info.length <= 0
+						@.asking = false
+
 
 		mounted: ->
+			@.ask()

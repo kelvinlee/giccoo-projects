@@ -34,11 +34,11 @@ block content
       .text 请使用手机扫描二维码参与活动
   .public#public
     //- player(icon="true",src="#{url}/mp3/bgm.mp3")
-    .player(:class="{play: playing, pause: !playing}",@click="playing = !playing")
+    //- .player(:class="{play: playing, pause: !playing}",@click="playing = !playing")
       .icon-play(:class="{play: playing, pause: !playing}")
-    //- transition(name="page-fade")
+    transition(name="page-fade")
       .note-text(v-show="note")
-        p 点我点我<br/>就能听到你更深处的心声
+        p 建议打开音乐按钮<br/>获得更好体验效果
 
   .load#load
     .content#loading(v-show="mounted",style="display: none")
@@ -76,6 +76,10 @@ block content
       .page.page-2(v-show="pageIndex == 2")
         .content
           #ugc
+    transition(name="page-fade")
+      .page.page-3
+        .content
+          form-grounp.form(v-bind:form="form")
     
           
     
