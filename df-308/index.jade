@@ -77,7 +77,7 @@ block content
         .content
           #ugc
     transition(name="page-fade")
-      .page.page-3
+      .page.page-3(v-show="pageIndex == 3")
         .content
           form-grounp.form(v-bind:form="form")
     

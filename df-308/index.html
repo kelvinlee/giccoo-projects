@@ -65,7 +65,7 @@
         </div>
       </transition>
       <transition name="page-fade">
-        <div class="page page-3">
+        <div v-show="pageIndex == 3" class="page page-3">
           <div class="content">
             <form-grounp v-bind:form="form" class="form"></form-grounp>
           </div>
