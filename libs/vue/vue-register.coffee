@@ -1,5 +1,3 @@
-
-
 Vue.component "form-grounp",
   template:'
     <div class="form">
@@ -43,9 +41,14 @@ Vue.component "form-grounp",
           if it.val is item.value
             return it.name
         return item.options[0].name
-      return "k"
     submit: (evt)->
-      console.log "submit"
+      data = {}
+      console.log "first Time.."
+      for k,v of @.form
+        data[k] = v.value
+      # console.log "submit:",data
+      @.$emit "submit", data
+
 
   mounted: (el)->
     console.log "el:",this,this.form
@@ -54,9 +57,6 @@ Vue.component "form-grounp",
       if v.link? and v.type is "select"
         @.$watch "form.#{k}", (n,o)->
           return false unless self.form[n.link]?
-          # for it in n.options
-          #   if it.val is n.value
-          
           self.form[n.link].options = n.options[n.value]
           if self.form[n.link].array
             console.log n.link,self.form[n.link].value,n.options[n.value][0].val

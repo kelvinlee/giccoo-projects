@@ -6,6 +6,12 @@ $cdn : "../"
 @if not $debug
 	$cdn : "//image.giccoo.com/projects/df-308/"
 
+
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
 // animation, delay, duration
 $fontColor: #000000;
 $pageMainBGColor: #0c101a;
@@ -73,7 +79,28 @@ $pageMainBGColor: #0c101a;
 		+transform(rotate(-3deg))
 	100%
 		+transform(rotate(0))
-
++keyframes(fadeInUpSmall)
+	0%
+		opacity: 0
+		transform: translate3d(0,20px,0)
+	100%
+		opacity: 1
+		transform: translate3d(0,0,0)
++keyframes(second)
+	0%
+		transform: rotate(0)
+	100%
+		transform: rotate(360deg)
++keyframes(beforeWheel)
+	0%
+		opacity: 1
+		transform: scale(0.9,0.9)
+	70%
+		opacity: 0.8
+		transform: scale(1,1)
+	100%
+		opacity: 1
+		transform: scale(0.9,0.9)
 html,body
 	+w
 	+h
@@ -171,72 +198,36 @@ video,canvas,svg
 	// 3c080f
 	+hide
 	font-family: "Arial"
+	+b($cdn+"img/loading-bg.jpg",no-repeat,center,center,cover)
 	.content
 		+w
 		+h
 		+posr
-	.open
+	.texts
 		+posa
-		+bl(4rem)
+		+tl(15%)
 		+w
-		+text-center
-		+font-size(0.8rem)
-		color: #fff
-		&:after,&:before
-			content: " "
+		.item
 			+posa
-			+tl(-70%,50%)
-			+w(3rem)
-			+h(3rem)
-			margin-left: -1.5rem
-			border: solid 2px #fff
-			border-radius: 50%
-			+overhide
-			+box
-			transform-origin: center center
-			+animation(fadeOutCircle,2s,ease,infinite)
-		&:before
-			animation-delay: 400ms
-
-	.loading
-		+posa
-		+tl(50%,50%)
-		+transform(translate3d(-50%,0,0))
-		display: flex
-		+w(70%)
-		+text-center
-	.battle
-		+posa
-		+tl(50%,50%)
-		+w(16%)
-		+transform(translate3d(-50%,-70%,0))
-		+overhide
-		// +bc(#fff)
-		font-size: 0
-		&:after
-			content: " "
-			+posa
-			+tl(5%,10%)
-			+w(80%)
-			+h(90%)
-			+bc(#fff)
-			z-index: -2
-		.bottle-box
-			+posa
-			+tl(40%)
+			+tl
 			+w
-			+h
-			z-index: -1
-			+tran(all,0.2s,linear)
-
-	.text
+	.loading-text
 		+posa
-		+bl(40%,50%)
+		+bl(10%)
 		+w
-		+font-size(0.8rem)
-		+transform(translate3d(-49%,0,0))
+		color: #fff
 		+text-center
-		color: #000
+		+font-size(0.8rem)
+		.cd
+			+posa
+			+tl(-100%,50%)
+			+w(4rem)
+			+transform(translate3d(-50%,-20%,0))
+			.cd-item
+				font-size: 0
+				+animation(second,3s,linear,infinite)
+
+	
 	
 
 .music-box
@@ -403,7 +394,7 @@ video,canvas,svg
 .form
 	+w(90%)
 	+m
-	color: #83570a
+	color: #000
 	+font-size(0.8rem)
 	.form-group
 		display: flex
@@ -413,17 +404,19 @@ video,canvas,svg
 		border: solid 1px #555
 		+overhide
 		label
-			flex: 1
+			flex: 2
 			+box
-			+p(0.1rem 0.2rem)
+			+p(0.2rem 0.2rem)
 			// padding-right: 5%
 			+posr
 			border-right: solid 1px #555
-			line-height: 1.4em
+			line-height: 1.8em
 			justify-content: center
 			align-items: center
 			box-align: center
-			+bc(#dcdcdc)
+			+bc(#6687b3)
+			+text-center
+			color: #fff
 			img
 				+show-inline
 				vertical-align: middle
@@ -500,64 +493,33 @@ video,canvas,svg
 
 .page-1
 	// +b($cdn+"img/homepage-bg.jpg",no-repeat,bottom,center,contain)
-	.bg-part
-		+posa
-		+bl(5%)
-		z-index: -1
-		.biger &
-			+bl(10%)
-		.smaller &
-			+bl(5%,10%)
-			+w(80%)
-	.logo
-		+m
-		margin-top: 5%
-		animation-delay: 200ms
-		+w(85%)
-		.biger &
-			+w
-			margin-top: 10%
-	.title
-		+m(5% auto)
-		animation-delay: 400ms
-		+w(85%)
-		.biger &
-			+w
-	.btn
-		+m
-		animation-delay: 600ms
-		+w(85%)
-		.biger &
-			+w
-
+	.bg
+		.before
+			+posa
+			+tl(75%,49%)
+			+iw(316,750,100%)
+			+animation(beforeWheel,1.5s,ease,infinite)
+			transform-origin: 15% 90%
+		.after
+			+posa
+			+tl(53%,66%)
+			+iw(392,750,100%)
+			+animation(beforeWheel,1.5s,ease,infinite)
+			transform-origin: 15% 90%
+			// animation-delay: 500ms
+	.content
+		.texts
+			+posr
+			margin-top: 15%
+			.item-2,.item-3
+				+posa
+				+tl
+		.btn
+			margin-top: 2%
 .page-2
 	// font-family: "yrd-Bold"
 	.content
-		font-family: "yrd-Medium"
-.page-3
-	.hand-cover
-		+posa
-		+tl
-		+w
-		+h
-		z-index: 10
-	.note
-		+posa
-		+bl(5%)
-	.hand
-		font-size: 0
-		+posa
-		+bl(-5%)
-		transform-origin: bottom center
-		+animation(swing,6s,linear,infinite)
-		// animation-direction: alternate
-		.biger &
-			+bl(-5%)
-		.smaller &
-			+bl(-5%)
-			.hand-image
-				+transform(scale(0.9,0.9))
-				transform-origin: bottom center
+
 
 .pop
 	+posa
@@ -565,7 +527,22 @@ video,canvas,svg
 	+br
 	+w
 	+h
-	+bc(rgba(255,255,255,0.7))
+	+bc(rgba(0,0,0,0.7))
+	.register
+		+w(90%)
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+		+bc(#1e2436)
+		border: 4px solid #757575
+		border-radius: 20px
+		+p(10% 0)
+		.title
+			+w(70%)
+			+m
+		.btn-submit
+			+w(50%)
+			+m
 	.book
 		+iw(578,750,100%)
 		+posa

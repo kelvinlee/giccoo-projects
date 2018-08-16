@@ -2224,6 +2224,248 @@
 		"oAP": "\/build\/df-308\/css",
 		"oF": 0
 		},
+	"\/df-308\/img\/after-wheel.png": {
+		"ft": 32768,
+		"iS": 63761,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/after-wheel.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/before-wheel.png": {
+		"ft": 32768,
+		"iS": 74457,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/before-wheel.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/btn-start.png": {
+		"ft": 32768,
+		"iS": 11199,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/btn-start.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/btn-submit.png": {
+		"ft": 32768,
+		"iS": 10728,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/btn-submit.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/form-title-lottery.png": {
+		"ft": 32768,
+		"iS": 9544,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/form-title-lottery.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/form-title-reg.png": {
+		"ft": 32768,
+		"iS": 12467,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/form-title-reg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/homepage-bg.jpg": {
+		"ft": 16384,
+		"iS": 99396,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/homepage-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/df-308\/img\/homepage-text-1.png": {
+		"ft": 32768,
+		"iS": 8236,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/homepage-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/homepage-text-2.png": {
+		"ft": 32768,
+		"iS": 11632,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/homepage-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/homepage-text-3.png": {
+		"ft": 32768,
+		"iS": 7745,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/homepage-text-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/loading-bg.jpg": {
+		"ft": 16384,
+		"iS": 9752,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/loading-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/df-308\/img\/loading-text-1.png": {
+		"ft": 32768,
+		"iS": 5810,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/loading-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/loading-text-10.png": {
+		"ft": 32768,
+		"iS": 9057,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/loading-text-10.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/loading-text-2.png": {
+		"ft": 32768,
+		"iS": 5486,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/loading-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/loading-text-3.png": {
+		"ft": 32768,
+		"iS": 5934,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/loading-text-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/loading-text-4.png": {
+		"ft": 32768,
+		"iS": 5832,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/loading-text-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/loading-text-5.png": {
+		"ft": 32768,
+		"iS": 4625,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/loading-text-5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/loading-text-6.png": {
+		"ft": 32768,
+		"iS": 4700,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/loading-text-6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/loading-text-7.png": {
+		"ft": 32768,
+		"iS": 7820,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/loading-text-7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/loading-text-8.png": {
+		"ft": 32768,
+		"iS": 4971,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/loading-text-8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/loading-text-9.png": {
+		"ft": 32768,
+		"iS": 6124,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/loading-text-9.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/small-cd.png": {
+		"ft": 32768,
+		"iS": 14665,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/small-cd.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/df-308\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -2269,6 +2511,69 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"\/df-308\/mp3\/1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/df-308\/mp3\/1.mp3",
+		"oF": 0
+		},
+	"\/df-308\/mp3\/2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/df-308\/mp3\/2.mp3",
+		"oF": 0
+		},
+	"\/df-308\/mp3\/3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/df-308\/mp3\/3.mp3",
+		"oF": 0
+		},
+	"\/df-308\/mp3\/4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/df-308\/mp3\/4.mp3",
+		"oF": 0
+		},
+	"\/df-308\/mp3\/answer-1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/df-308\/mp3\/answer-1.mp3",
+		"oF": 0
+		},
+	"\/df-308\/mp3\/answer-2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/df-308\/mp3\/answer-2.mp3",
+		"oF": 0
+		},
+	"\/df-308\/mp3\/answer-3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/df-308\/mp3\/answer-3.mp3",
+		"oF": 0
+		},
+	"\/df-308\/mp3\/answer-4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/df-308\/mp3\/answer-4.mp3",
+		"oF": 0
+		},
+	"\/df-308\/mp3\/归档.zip": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/df-308\/mp3\/归档.zip",
+		"oF": 0
 		},
 	"\/df-308\/sass\/base.sass": {
 		"aP": 1,
@@ -11883,16 +12188,6 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"\/libs\/js\/vue-register.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/libs\/js\/vue-register-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
 	"\/libs\/pixi\/motionpath.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -18155,7 +18450,7 @@
 		},
 	"\/sulwhasoo\/img\/icon-symbol-3.png": {
 		"ft": 32768,
-		"iS": 3910,
+		"iS": 6197,
 		"oA": 0,
 		"oAP": "\/sulwhasoo\/img\/icon-symbol-3.png",
 		"oF": 0,
@@ -22921,11 +23216,11 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"\/zhihu-wow814\/mp3\/bgm0.mp3": {
+	"\/zhihu-wow814\/mp3\/bgm2.mp3": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/zhihu-wow814\/mp3\/bgm0.mp3",
+		"oAP": "\/zhihu-wow814\/mp3\/bgm2.mp3",
 		"oF": 0
 		},
 	"\/zhihunews": {

@@ -21,9 +21,9 @@ String.prototype.gblen = ->
 TrueW = 640
 TrueH = 1138
 imageurl = "//api.giccoo.com/api/upload/image64/"
-apiUrl = "//api.giccoo.com/Levi"
-apiLink = "//g.giccoo.com/"
-# apiLink = "http://192.168.3.45:3000/"
+apiUrl = "//api.giccoo.com/df-308"
+# apiLink = "//g.giccoo.com/"
+apiLink = "http://192.168.3.53:3000/"
 # apiUrl = "http://localhost:8881/Levi"
 main = {}
 ugc = null
@@ -156,7 +156,7 @@ window.onload = ->
 					main.mounted = true
 					_cache = setTimeout =>
 						@.next()
-					,200
+					,1000
 			,1000/20
 	init()
 
@@ -209,9 +209,9 @@ init = ->
 			form:
 				nickname: {id:"nickname", type: "input", label: "昵称", placeholder: "请填写姓名",value: ""}
 				mobile: {id:"mobile", type: "input", label: "电话", placeholder: "请填写电话",value: ""}
-				province: {id:"province", type: "select", label: "省份", link: "city", value: "", options: _citys }
-				city: {id:"city", type: "select", label: "城市", link: "dealer",value: "", options: _citys["北京"] }
-				dealer: {id:"city", type: "select", label: "经销商", array: true, value: "", options: _citys["北京"]["北京"] }
+				province: {id:"province", type: "select", label: "省份", link: "city", value: Object.keys(_citys)[0], options: _citys }
+				city: {id:"city", type: "select", label: "城市", link: "dealer",value: Object.keys(_citys["请选择省份"])[0], options: _citys["请选择省份"] }
+				dealer: {id:"city", type: "select", label: "经销商",array: true, value: _citys["请选择省份"]["请选择城市"][0].val, options: _citys["请选择省份"]["请选择城市"] }
 
 			mask: 1
 			text: ""
@@ -231,7 +231,29 @@ init = ->
 			speed: 4000
 			maxSpeed: 0
 			swing: false
+			registerShow: false
 		methods:
+			gameStart: ->
+				@.pageIndex = 2
+
+			submit: (data)->
+				console.log "data:",data
+				if data.nickname is "" or data.nickname.length > 8 or data.nickname.length < 2
+					return alert "请输入2-8个字的姓名"
+				if data.mobile is ""
+					return alert "请输入联系电话"
+				if data.province is "" or data.province is "请选择省份"
+					return alert "请选择省份"
+				if data.city is "" or data.city is "请选择城市"
+					return alert "请选择城市"
+				if data.dealer is "" or data.dealer is "请选择经销商"
+					return alert "请选择经销商"
+
+				axios.post "#{apiLink}active/df308/register/",data
+				.then (msg)=>
+					
+				.catch (err)=>
+
 			showAnswerPage: ->
 				@.pageIndex = 2
 				unless _public.playing
