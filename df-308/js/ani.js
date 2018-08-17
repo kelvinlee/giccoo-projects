@@ -22,6 +22,7 @@ function setMusicPage(){
 }
 //=======================黑胶碟
 var disc1,disc2,disc3,disc4,discC,rotatDisc
+var btnPause,btnPlay
 function setDisc(){
 	disc1fadeOut=new Sprite(getTe(_CDN+"img/disc1.png"))
 	disc1=new Sprite(getTe(_CDN+"img/disc1.png"))
@@ -29,15 +30,23 @@ function setDisc(){
 	disc2b=new Sprite(getTe(_CDN+"img/disc2.png"))
 	disc3=new Sprite(getTe(_CDN+"img/disc3.png"))
 	disc4=new Sprite(getTe(_CDN+"img/disc4.png"))
+	btnPause=new Sprite(getTe(_CDN+"img/pause.png"))
+	btnPlay=new Sprite(getTe(_CDN+"img/play.png"))
+
+	btnPlay.interactive=true
+	btnPause.interactive=true
+	btnPlay.touchstart=startPlay
+	btnPause.touchstart=stopPlay
+
 	discC=new Container()
 	rotatDisc=new Container()
 	pStage.addChild(discC)
-	rotatDisc.addChild(disc1,disc2,disc2b,disc3,)
-	discC.addChild(rotatDisc,disc1fadeOut,disc4)
-	disc1fadeOut.pivot.x=disc1.pivot.x=disc2.pivot.x=disc2b.pivot.x=disc3.pivot.x=200.5
-	disc1fadeOut.pivot.y=disc1.pivot.y=disc2.pivot.y=disc2b.pivot.y=disc3.pivot.y=200.5
-	disc1fadeOut.x=disc1.x=disc2.x=disc2b.x=disc3.x=320
-	disc1fadeOut.y=disc1.y=disc2.y=disc2b.y=disc3.y=stageH/2-260*stageH/1138
+	rotatDisc.addChild(disc1,disc2,disc2b,disc3)
+	discC.addChild(rotatDisc,disc1fadeOut,disc4,btnPause,btnPlay)
+	btnPlay.pivot.x=btnPause.pivot.x=disc1fadeOut.pivot.x=disc1.pivot.x=disc2.pivot.x=disc2b.pivot.x=disc3.pivot.x=200.5
+	btnPlay.pivot.y=btnPause.pivot.y=disc1fadeOut.pivot.y=disc1.pivot.y=disc2.pivot.y=disc2b.pivot.y=disc3.pivot.y=200.5
+	btnPlay.x=btnPause.x=disc1fadeOut.x=disc1.x=disc2.x=disc2b.x=disc3.x=320
+	btnPlay.y=btnPause.y=disc1fadeOut.y=disc1.y=disc2.y=disc2b.y=disc3.y=stageH/2-260*stageH/1138
 
 	disc4.pivot.set(41,19)
 	disc4.position.set(112,stageH/2-408*stageH/1138)
@@ -45,13 +54,20 @@ function setDisc(){
 	// discPlay()
 
 }
-
+function startPlay(){
+	console.log("播放！！！！！")
+}
+function stopPlay(){
+	console.log("不播放！！！！！")
+}
 function discPlay(){
 	TweenMax.to(disc4,.5,{rotation:0})
 	TweenMax.to(disc3,3.5,{rotation:Math.PI*2,repeat:1000,ease:Linear.easeNone})
 	disc2.alpha=.2
 	TweenMax.to(disc2,3.5,{alpha:.2,rotation:Math.PI*2,repeat:1000,ease:Linear.easeNone})
 	TweenMax.to(disc2b.scale,1,{x:.9,y:.9,repeat:1000,yoyo:true,ease:Linear.easeNone})
+	btnPause.visible=true
+	btnPlay.visible=false
 }
 
 function discStop(){
@@ -60,6 +76,8 @@ function discStop(){
 	disc2.alpha=.2
 	TweenMax.to(disc2,1,{alpha:0})
 	TweenMax.to(disc2b.scale,1,{x:.9,y:.9})
+	btnPause.visible=false
+	btnPlay.visible=true
 }
 
 //===================选项
