@@ -22,8 +22,8 @@ TrueW = 640
 TrueH = 1138
 imageurl = "//api.giccoo.com/api/upload/image64/"
 apiUrl = "//api.giccoo.com/df-308"
-# apiLink = "//g.giccoo.com/"
-apiLink = "http://192.168.3.53:3000/"
+apiLink = "//g.giccoo.com/"
+# apiLink = "http://192.168.3.53:3000/"
 # apiUrl = "http://localhost:8881/Levi"
 main = {}
 ugc = null
@@ -240,6 +240,10 @@ init = ->
 				id: null
 				random: null
 		methods:
+			endPage: ->
+				# main.registerShow = true
+				showResult()
+				stopAllAudio()
 			gameStart: ->
 				@.pageIndex = 2
 				_public.note = false
@@ -325,7 +329,8 @@ init = ->
 				ugc.app.renderer.render ugc.app.stage
 				@.ugc = ugc.app.view.toDataURL()
 				# setLottery()
-				@.share()
+				# if main.wy
+				# @.share()
 			share: ->
 				image = @.ugc
 				folder = "df308"

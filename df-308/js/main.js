@@ -3001,9 +3001,9 @@ imageurl = "//api.giccoo.com/api/upload/image64/";
 
 apiUrl = "//api.giccoo.com/df-308";
 
-// apiLink = "//g.giccoo.com/"
-apiLink = "http://192.168.3.53:3000/";
+apiLink = "//g.giccoo.com/";
 
+// apiLink = "http://192.168.3.53:3000/"
 // apiUrl = "http://localhost:8881/Levi"
 main = {};
 
@@ -3324,6 +3324,11 @@ init = function init() {
       random: null
     }), _data),
     methods: {
+      endPage: function endPage() {
+        // main.registerShow = true
+        showResult();
+        return stopAllAudio();
+      },
       gameStart: function gameStart() {
         this.pageIndex = 2;
         _public.note = false;
@@ -3426,10 +3431,11 @@ init = function init() {
       },
       sharePost: function sharePost() {
         ugc.app.renderer.render(ugc.app.stage);
-        this.ugc = ugc.app.view.toDataURL();
-        // setLottery()
-        return this.share();
+        return this.ugc = ugc.app.view.toDataURL();
       },
+      // setLottery()
+      // if main.wy
+      // @.share()
       share: function share() {
         var data, folder, image;
         image = this.ugc;

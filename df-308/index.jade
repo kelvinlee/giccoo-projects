@@ -81,8 +81,6 @@ block content
             -;
           .btn.fadeInUpSmall.animated.delay-8(@click="gameStart")
             img(src="#{url}/img/btn-start.png")
-            
-
           
     transition(name="page-fade")
       .page.page-2(v-show="pageIndex == 2")
@@ -92,6 +90,9 @@ block content
           audio#answer-3(src="#{url}/mp3/answer-3.mp3")
           audio#answer-4(src="#{url}/mp3/answer-4.mp3")
           #ugc
+    //- transition(name="page-fade")
+      .pop(v-show="ugc")
+        img(:src="ugc")
     transition(name="page-fade")
       .pop(v-show="registerShow")
         .content

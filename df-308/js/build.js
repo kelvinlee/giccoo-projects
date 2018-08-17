@@ -141,8 +141,11 @@ function setResultPage(){
 	qr.pivot.y=569+20
 	qr.y=stageH/2
 	qr.visible=false
-
-	endbtn1=new Sprite(getTe(_CDN+"img/endbtn1.png"))
+	if (main.wy){
+		endbtn1=new Sprite(getTe(_CDN+"img/endbtn1.png"))
+	}else {
+		endbtn1=new Sprite(getTe(_CDN+"img/endbtn1.png"))
+	}
 	endbtn2=new Sprite(getTe(_CDN+"img/endbtn2.png"))
 	endbtn1.position.set(84,stageH/2+372)
 	endbtn2.position.set(339,stageH/2+372)
@@ -160,12 +163,7 @@ function setResultPage(){
 
 
 function goShare(){
-	endbtn1.visible=endbtn2.visible=false
-	qr.visible=true
-	console.log("分享海报")
-	main.sharePost()
-	endbtn1.visible=endbtn2.visible=true
-	qr.visible=false
+	main.share()
 }
 
 function goMore(){
