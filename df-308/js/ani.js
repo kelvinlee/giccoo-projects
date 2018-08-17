@@ -56,9 +56,11 @@ function setDisc(){
 }
 function startPlay(){
 	console.log("播放！！！！！")
+	playAudio("answer-"+(nowMusic+1))
 }
 function stopPlay(){
 	console.log("不播放！！！！！")
+	stopAllAudio()
 }
 function discPlay(){
 	TweenMax.to(disc4,.5,{rotation:0})

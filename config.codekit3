@@ -2785,6 +2785,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/df-308\/img\/pause.png": {
+		"ft": 32768,
+		"iS": 4629,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/pause.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/df-308\/img\/play.png": {
+		"ft": 32768,
+		"iS": 5440,
+		"oA": 0,
+		"oAP": "\/df-308\/img\/play.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/df-308\/img\/please.png": {
 		"ft": 32768,
 		"iS": 5217,
