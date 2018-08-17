@@ -263,7 +263,7 @@ video,canvas,svg
 	// +hide
 	.note-text
 		+posa
-		+tr(50%,120%)
+		+tr(50%,0%)
 		+font-size(0.8rem)
 		line-height: 1rem
 		white-space: nowrap
@@ -434,6 +434,16 @@ video,canvas,svg
 		.select
 			+overhide
 			+posr
+			&:after
+				content: " "
+				+posa
+				+tr(50%,0.5rem)
+				+wh(0,0)
+				// +bc(#6687b3)
+				+transform(translate3d(0,-30%,0))
+				border-width: 0.5rem;
+				border-style: solid;
+				border-color: #6687b3 transparent transparent transparent;
 			span
 				+box
 				+p(0.2rem 0)

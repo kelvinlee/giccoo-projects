@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title> </title>
+    <title>不可T代之车如其人</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/font/Interstate Regular.css">
@@ -20,7 +20,7 @@
     <div id="public" class="public">
       <transition name="page-fade">
         <div v-show="note" class="note-text">
-          <p>建议打开音乐按钮<br/>获得更好体验效果</p>
+          <p>建议打开手机声音<br/>获得更好体验效果</p>
         </div>
       </transition>
     </div>
@@ -80,6 +80,10 @@
       <transition name="page-fade">
         <div v-show="pageIndex == 2" class="page page-2">
           <div class="content">
+            <audio id="answer-1" src="./mp3/answer-1.mp3"></audio>
+            <audio id="answer-2" src="./mp3/answer-2.mp3"></audio>
+            <audio id="answer-3" src="./mp3/answer-3.mp3"></audio>
+            <audio id="answer-4" src="./mp3/answer-4.mp3"></audio>
             <div id="ugc"></div>
           </div>
         </div>
@@ -90,6 +94,16 @@
             <div class="register">
               <div class="title"><img src="./img/form-title-reg.png"></div>
               <form-grounp v-bind:form="form" v-on:submit="submit" class="form"></form-grounp>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="lotteryShow" class="pop">
+          <div class="content">
+            <div class="register">
+              <div class="title"><img src="./img/form-title-lottery.png"></div>
+              <form-grounp v-bind:form="lotform" v-on:submit="lotsubmit" class="form"></form-grounp>
             </div>
           </div>
         </div>

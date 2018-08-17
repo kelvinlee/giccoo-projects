@@ -1,7 +1,7 @@
 extends ../libs/jade/layout-clean
 
 block title
-  | 
+  | 不可T代之车如其人
 
 block css
   meta(name="author",content="m.giccoo.com")
@@ -38,7 +38,7 @@ block content
       .icon-play(:class="{play: playing, pause: !playing}")
     transition(name="page-fade")
       .note-text(v-show="note")
-        p 建议打开音乐按钮<br/>获得更好体验效果
+        p 建议打开手机声音<br/>获得更好体验效果
 
   .load#load
     .content#loading(v-show="mounted",style="display: none")
@@ -87,6 +87,10 @@ block content
     transition(name="page-fade")
       .page.page-2(v-show="pageIndex == 2")
         .content
+          audio#answer-1(src="#{url}/mp3/answer-1.mp3")
+          audio#answer-2(src="#{url}/mp3/answer-2.mp3")
+          audio#answer-3(src="#{url}/mp3/answer-3.mp3")
+          audio#answer-4(src="#{url}/mp3/answer-4.mp3")
           #ugc
     transition(name="page-fade")
       .pop(v-show="registerShow")
@@ -95,6 +99,13 @@ block content
             .title
               img(src="#{url}/img/form-title-reg.png")
             form-grounp.form(v-bind:form="form",v-on:submit="submit")
+    transition(name="page-fade")
+      .pop(v-show="lotteryShow")
+        .content
+          .register
+            .title
+              img(src="#{url}/img/form-title-lottery.png")
+            form-grounp.form(v-bind:form="lotform",v-on:submit="lotsubmit")
     
           
     

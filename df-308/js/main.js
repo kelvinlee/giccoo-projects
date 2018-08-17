@@ -2,9 +2,11 @@
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _cache, _citys, _public, _runTime, _second, _startCache, _testTime, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, neteaseShareImage, playAudio, random, resource, resources, sended, stopAllAudio, sys, ugc, ugcCache;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _cache, _citys, _public, _runTime, _second, _startCache, _testTime, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, musicList, neteaseShareImage, playAudio, random, resource, resources, sended, stopAllAudio, sys, ugc, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -3035,7 +3037,7 @@ neteaseShareImage = function neteaseShareImage() {
   var picUrl, redirectUrl, title1;
   title1 = "有故事的声活单曲";
   picUrl = 'https://image.giccoo.com/upload/' + main.folder + '/' + main.shareImageLink + "@!large";
-  redirectUrl = "https://m.giccoo.com/lancomeGEN/";
+  redirectUrl = "https://m.giccoo.com/df308/";
   // console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
   window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
   return console.log("share href:", picUrl);
@@ -3119,10 +3121,10 @@ window.onload = function () {
     wx.ready(function () {
       var shareContent;
       shareContent = {
-        title: "自信心声，因我而生",
-        desc: "渴望拥有外在的光芒，就更应该聆听自己内心的身音",
-        link: "http://m.giccoo.com/lancomeGEN/",
-        imgUrl: "http://m.giccoo.com/lancomeGEN/img/ico.jpg",
+        title: "测测你不可T代的性格",
+        desc: "听音乐测性格，赢取东标308免费使用权。",
+        link: "http://m.giccoo.com/df308/",
+        imgUrl: "http://m.giccoo.com/df308/img/ico.jpg",
         success: function success() {},
         // alert "success"
         cancel: function cancel() {}
@@ -3151,7 +3153,7 @@ window.onload = function () {
     methods: {
       next: function next() {
         document.getElementById('load').className += " fadeOut animated";
-        _public.note = false;
+        // _public.note = false
         return setTimeout(function () {
           return document.getElementById('load').style.display = "none";
         }, 520);
@@ -3184,6 +3186,8 @@ window.onload = function () {
 };
 
 init = function init() {
+  var _data;
+
   var navH, smaller;
   if (TrueW >= 640) {
 
@@ -3200,7 +3204,7 @@ init = function init() {
   console.log(TrueW, TrueH, _citys);
   return main = new Vue({
     el: "#main",
-    data: {
+    data: (_data = {
       w: TrueW,
       h: TrueH,
       biger: TrueW / TrueH < 0.55,
@@ -3211,7 +3215,7 @@ init = function init() {
       loading: false,
       lotteryShow: false,
       pageInfoShow: false,
-      pageIndex: 2,
+      pageIndex: 1,
       step: 1,
       singerIndex: 1,
       startgame: false,
@@ -3234,10 +3238,10 @@ init = function init() {
       allowPopShow: false,
       count: 0,
       form: {
-        nickname: {
-          id: "nickname",
+        username: {
+          id: "username",
           type: "input",
-          label: "昵称",
+          label: "姓名",
           placeholder: "请填写姓名",
           value: ""
         },
@@ -3267,10 +3271,32 @@ init = function init() {
         dealer: {
           id: "city",
           type: "select",
-          label: "经销商",
           array: true,
           value: _citys["请选择省份"]["请选择城市"][0].val,
           options: _citys["请选择省份"]["请选择城市"]
+        }
+      },
+      lotform: {
+        username: {
+          id: "username",
+          type: "input",
+          label: "姓名",
+          placeholder: "请填写姓名",
+          value: ""
+        },
+        mobile: {
+          id: "mobile",
+          type: "input",
+          label: "电话",
+          placeholder: "请填写电话",
+          value: ""
+        },
+        address: {
+          id: " address",
+          type: "input",
+          label: "地址",
+          placeholder: "请填写地址",
+          value: ""
         }
       },
       mask: 1,
@@ -3293,14 +3319,66 @@ init = function init() {
       maxSpeed: 0,
       swing: false,
       registerShow: false
-    },
+    }, _defineProperty(_data, 'lotteryShow', false), _defineProperty(_data, 'lotteryInfo', {
+      id: null,
+      random: null
+    }), _data),
     methods: {
       gameStart: function gameStart() {
-        return this.pageIndex = 2;
+        this.pageIndex = 2;
+        _public.note = false;
+        setup();
+        return playAudio("answer-1");
+      },
+      goUGC: function goUGC() {
+        return this.lotteryShow = false;
+      },
+      getLottery: function getLottery() {
+        var _this2 = this;
+
+        return axios.post(apiLink + 'active/df308/lottery/', {}).then(function (msg) {
+          if (msg.data.code === 200 && msg.data.id != null) {
+            _this2.lotteryInfo.id = msg.data.id;
+            _this2.lotteryInfo.random = msg.data.random;
+            return _this2.lotteryShow = true;
+          } else {
+            return _this2.goUGC();
+          }
+        }).catch(function (err) {
+          return _this2.goUGC();
+        });
+      },
+      lotsubmit: function lotsubmit(data) {
+        var _this3 = this;
+
+        console.log("data:", data);
+        if (data.username === "" || data.username.length > 8 || data.username.length < 2) {
+          return alert("请输入2-8个字的姓名");
+        }
+        if (data.mobile === "") {
+          return alert("请输入联系电话");
+        }
+        if (data.address === "") {
+          return alert("请选择省份");
+        }
+        data['id'] = this.lotteryInfo.id;
+        data['random'] = this.lotteryInfo.random;
+        return axios.post(apiLink + 'active/df308/update/', data).then(function (msg) {
+          if (msg.data.code === 200) {
+            alert("填写成功");
+            return _this3.goUGC();
+          } else {
+            return alert(msg.data.reason);
+          }
+        }).catch(function (err) {
+          return alert("服务器连接失败,请重试");
+        });
       },
       submit: function submit(data) {
+        var _this4 = this;
+
         console.log("data:", data);
-        if (data.nickname === "" || data.nickname.length > 8 || data.nickname.length < 2) {
+        if (data.username === "" || data.username.length > 8 || data.username.length < 2) {
           return alert("请输入2-8个字的姓名");
         }
         if (data.mobile === "") {
@@ -3315,7 +3393,19 @@ init = function init() {
         if (data.dealer === "" || data.dealer === "请选择经销商") {
           return alert("请选择经销商");
         }
-        return axios.post(apiLink + 'active/df308/register/', data).then(function (msg) {}).catch(function (err) {});
+        return axios.post(apiLink + 'active/df308/register/', data).then(function (msg) {
+          if (msg.data.code === 200) {
+            alert("填写成功");
+            _this4.registerShow = false;
+            return setTimeout(function () {
+              return showResult();
+            }, 300);
+          } else {
+            return alert(msg.data.reason);
+          }
+        }).catch(function (err) {
+          return alert("服务器连接失败,请重试.");
+        });
       },
       showAnswerPage: function showAnswerPage() {
         this.pageIndex = 2;
@@ -3331,7 +3421,7 @@ init = function init() {
       },
       openWeb: function openWeb() {
         console.log("open web");
-        return window.location.href = "https://www.lancome.com.cn/landingpage/advanced-genifique?utm_source=NeteaseMusic&utm_medium=DISP&utm_content=06-02NeteaseMusic_H5&utm_campaign=CN_20180803_GEN1+1_LPD_LAN_FS_Regular_NVD_DISP_MO";
+        return window.location.href = "http://www.peugeot.com.cn/308musicfestival/";
       },
       sharePost: function sharePost() {
         ugc.app.renderer.render(ugc.app.stage);
@@ -3341,7 +3431,7 @@ init = function init() {
       share: function share() {
         var data, folder, image;
         image = this.ugc;
-        folder = "lancomeGEN";
+        folder = "df308";
         data = {
           image: image,
           folder: folder
@@ -3379,11 +3469,11 @@ init = function init() {
         return this.ugc = link;
       },
       pageHand: function pageHand() {
-        var _this2 = this;
+        var _this5 = this;
 
         this.pageIndex = 3;
         setTimeout(function () {
-          return _this2.swing = true;
+          return _this5.swing = true;
         }, 300);
         return setTimeout(function () {
           return finishAll();
@@ -3449,25 +3539,30 @@ init = function init() {
   });
 };
 
+musicList = ['answer-1', 'answer-2', 'answer-3', 'answer-4'];
+
 playAudio = function playAudio(id) {
   var audio;
   audio = document.getElementById(id);
-  console.log('play ' + id, audio, audio.play());
-  audio.play();
+  console.log('play ' + id);
+  setTimeout(function () {
+    audio.play();
+    return discPlay();
+  }, 300);
+  audio.addEventListener("pause", function () {
+    return discStop();
+  }, false);
   return audio.addEventListener("ended", function () {
-    stopAllAudio();
-    return hideAnswer();
+    return discStop();
   }, false);
 };
 
 stopAllAudio = function stopAllAudio() {
   var audio, item, l, len2, results;
   results = [];
-  for (l = 0, len2 = musicA.length; l < len2; l++) {
-    item = musicA[l];
-    audio = document.getElementById(item[0]);
-    audio.pause();
-    audio = document.getElementById(item[1]);
+  for (l = 0, len2 = musicList.length; l < len2; l++) {
+    item = musicList[l];
+    audio = document.getElementById(item);
     results.push(audio.pause());
   }
   return results;

@@ -42,7 +42,7 @@ function setDisc(){
 	disc4.pivot.set(41,19)
 	disc4.position.set(112,stageH/2-408*stageH/1138)
 	disc1fadeOut.alpha=0
-	discPlay()
+	// discPlay()
 
 }
 
@@ -142,12 +142,14 @@ function goNext(){
 		nowSelected=999
 		btnBG.visible=false
 		showSelector()
-
+		stopAllAudio()
+		playAudio("answer-"+(nowMusic+1))
 	}else{
 		console.log("去结束页")
 		userAnswer[nowSelected]++
 		console.log(userAnswer)
-		showResult()
+		main.registerShow = true
+		
 	}
 }
 

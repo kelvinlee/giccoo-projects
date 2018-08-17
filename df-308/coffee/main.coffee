@@ -43,7 +43,7 @@ _testTime = 0
 neteaseShareImage = ->
 	title1 = "有故事的声活单曲"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://m.giccoo.com/lancomeGEN/"
+	redirectUrl = "https://m.giccoo.com/df308/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "share href:",picUrl
@@ -111,10 +111,10 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "自信心声，因我而生"
-				desc: "渴望拥有外在的光芒，就更应该聆听自己内心的身音"
-				link: "http://m.giccoo.com/lancomeGEN/"
-				imgUrl: "http://m.giccoo.com/lancomeGEN/img/ico.jpg"
+				title: "测测你不可T代的性格"
+				desc: "听音乐测性格，赢取东标308免费使用权。"
+				link: "http://m.giccoo.com/df308/"
+				imgUrl: "http://m.giccoo.com/df308/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
@@ -139,7 +139,7 @@ window.onload = ->
 		methods:
 			next: ->
 				document.getElementById('load').className += " fadeOut animated"
-				_public.note = false
+				# _public.note = false
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
 				,520
@@ -184,7 +184,7 @@ init = ->
 			loading: false
 			lotteryShow: false
 			pageInfoShow: false
-			pageIndex: 2
+			pageIndex: 1
 			step: 1
 			singerIndex: 1
 			startgame: false
@@ -207,12 +207,15 @@ init = ->
 			allowPopShow: false
 			count: 0
 			form:
-				nickname: {id:"nickname", type: "input", label: "昵称", placeholder: "请填写姓名",value: ""}
+				username: {id:"username", type: "input", label: "姓名", placeholder: "请填写姓名",value: ""}
 				mobile: {id:"mobile", type: "input", label: "电话", placeholder: "请填写电话",value: ""}
 				province: {id:"province", type: "select", label: "省份", link: "city", value: Object.keys(_citys)[0], options: _citys }
 				city: {id:"city", type: "select", label: "城市", link: "dealer",value: Object.keys(_citys["请选择省份"])[0], options: _citys["请选择省份"] }
-				dealer: {id:"city", type: "select", label: "经销商",array: true, value: _citys["请选择省份"]["请选择城市"][0].val, options: _citys["请选择省份"]["请选择城市"] }
-
+				dealer: {id:"city", type: "select", array: true, value: _citys["请选择省份"]["请选择城市"][0].val, options: _citys["请选择省份"]["请选择城市"] }
+			lotform:
+				username: {id:"username", type: "input", label: "姓名", placeholder: "请填写姓名",value: ""}
+				mobile: {id:"mobile", type: "input", label: "电话", placeholder: "请填写电话",value: ""}
+				address: {id:" address", type: "input", label: "地址", placeholder: "请填写地址",value: ""}
 			mask: 1
 			text: ""
 			nickname: ""
@@ -232,13 +235,54 @@ init = ->
 			maxSpeed: 0
 			swing: false
 			registerShow: false
+			lotteryShow: false
+			lotteryInfo: 
+				id: null
+				random: null
 		methods:
 			gameStart: ->
 				@.pageIndex = 2
+				_public.note = false
+				setup()
+				playAudio "answer-1"
+
+			goUGC: ->
+				@.lotteryShow = false
+			getLottery: ->
+				axios.post "#{apiLink}active/df308/lottery/",{}
+				.then (msg)=>
+					if msg.data.code is 200 and msg.data.id?
+						@.lotteryInfo.id = msg.data.id
+						@.lotteryInfo.random = msg.data.random
+						@.lotteryShow = true
+					else
+						@.goUGC()
+				.catch (err)=>
+					@.goUGC()
+
+			lotsubmit: (data)->
+				console.log "data:",data
+				if data.username is "" or data.username.length > 8 or data.username.length < 2
+					return alert "请输入2-8个字的姓名"
+				if data.mobile is ""
+					return alert "请输入联系电话"
+				if data.address is ""
+					return alert "请选择省份"
+				data['id'] = @.lotteryInfo.id
+				data['random'] = @.lotteryInfo.random
+				axios.post "#{apiLink}active/df308/update/",data
+				.then (msg)=>
+					if msg.data.code is 200
+						alert "填写成功"
+						@.goUGC()
+					else
+						alert msg.data.reason
+				.catch (err)=>
+					alert "服务器连接失败,请重试"
 
 			submit: (data)->
 				console.log "data:",data
-				if data.nickname is "" or data.nickname.length > 8 or data.nickname.length < 2
+				if data.username is "" or data.username.length > 8 or data.username.length < 2
 					return alert "请输入2-8个字的姓名"
 				if data.mobile is ""
 					return alert "请输入联系电话"
@@ -251,8 +295,16 @@ init = ->
 
 				axios.post "#{apiLink}active/df308/register/",data
 				.then (msg)=>
-					
+					if msg.data.code is 200
+						alert "填写成功"
+						@.registerShow = false
+						setTimeout =>
+							showResult()
+						,300
+					else
+						alert msg.data.reason
 				.catch (err)=>
+					alert "服务器连接失败,请重试."
 
 			showAnswerPage: ->
 				@.pageIndex = 2
@@ -261,19 +313,20 @@ init = ->
 				setTimeout =>
 					setup()
 				,300
+
 			openPop: ->
 				@.lotteryShow = true
 
 			openWeb: ->
 				console.log "open web"
-				window.location.href = "https://www.lancome.com.cn/landingpage/advanced-genifique?utm_source=NeteaseMusic&utm_medium=DISP&utm_content=06-02NeteaseMusic_H5&utm_campaign=CN_20180803_GEN1+1_LPD_LAN_FS_Regular_NVD_DISP_MO"
+				window.location.href = "http://www.peugeot.com.cn/308musicfestival/"
 			sharePost: ->
 				ugc.app.renderer.render ugc.app.stage
 				@.ugc = ugc.app.view.toDataURL()
 				setLottery()
 			share: ->
 				image = @.ugc
-				folder = "lancomeGEN"
+				folder = "df308"
 				data = {
 					image: image
 					folder: folder
@@ -351,18 +404,22 @@ init = ->
 			else
 				@.handCover = true
 
+musicList = ['answer-1','answer-2','answer-3','answer-4']
 playAudio = (id)->
 	audio = document.getElementById(id)
-	console.log "play #{id}",audio,audio.play()
-	audio.play()
+	console.log "play #{id}"
+	setTimeout =>
+		audio.play()
+		discPlay()
+	,300
+	audio.addEventListener "pause", ->
+		discStop()
+	,false
 	audio.addEventListener "ended", ->
-		stopAllAudio()
-		hideAnswer()
+		discStop()
 	,false
 
 stopAllAudio = ->
-	for item in musicA
-		audio = document.getElementById item[0]
-		audio.pause()
-		audio = document.getElementById item[1]
+	for item in musicList
+		audio = document.getElementById item
 		audio.pause()
