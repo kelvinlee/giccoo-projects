@@ -64,8 +64,10 @@ function stopPlay(){
 }
 function discPlay(){
 	TweenMax.to(disc4,.5,{rotation:0})
+	TweenMax.set(disc3,{rotation:0})
 	TweenMax.to(disc3,3.5,{rotation:Math.PI*2,repeat:1000,ease:Linear.easeNone})
 	disc2.alpha=.2
+	TweenMax.set(disc2,{alpha:.2,rotation:0})
 	TweenMax.to(disc2,3.5,{alpha:.2,rotation:Math.PI*2,repeat:1000,ease:Linear.easeNone})
 	TweenMax.to(disc2b.scale,1,{x:.9,y:.9,repeat:1000,yoyo:true,ease:Linear.easeNone})
 	btnPause.visible=true
