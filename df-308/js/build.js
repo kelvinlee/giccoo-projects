@@ -44,6 +44,7 @@ var imageList = [
 	_CDN+"img/r44.png",
 	_CDN+"img/qr.png",
 	_CDN+"img/endbtn1.png",
+	_CDN+"img/endbtn1b.png",
 	_CDN+"img/endbtn2.png",
 	_CDN+"img/pause.png",
 	_CDN+"img/play.png",
@@ -144,7 +145,7 @@ function setResultPage(){
 	if (main.wy){
 		endbtn1=new Sprite(getTe(_CDN+"img/endbtn1.png"))
 	}else {
-		endbtn1=new Sprite(getTe(_CDN+"img/endbtn1.png"))
+		endbtn1=new Sprite(getTe(_CDN+"img/endbtn1b.png"))
 	}
 	endbtn2=new Sprite(getTe(_CDN+"img/endbtn2.png"))
 	endbtn1.position.set(84,stageH/2+372)
