@@ -161,10 +161,14 @@ function goShare(){
 	endbtn1.visible=endbtn2.visible=false
 	qr.visible=true
 	console.log("分享海报")
+	main.sharePost()
+	endbtn1.visible=endbtn2.visible=true
+	qr.visible=false
 }
 
 function goMore(){
 	console.log("了解更多")
+	main.openWeb()
 }
 
 

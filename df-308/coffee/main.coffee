@@ -248,7 +248,11 @@ init = ->
 
 			goUGC: ->
 				@.lotteryShow = false
+				setTimeout =>
+					showResult()
+				,300
 			getLottery: ->
+				@.registerShow = false
 				axios.post "#{apiLink}active/df308/lottery/",{}
 				.then (msg)=>
 					if msg.data.code is 200 and msg.data.id?
@@ -297,10 +301,7 @@ init = ->
 				.then (msg)=>
 					if msg.data.code is 200
 						alert "填写成功"
-						@.registerShow = false
-						setTimeout =>
-							showResult()
-						,300
+						@.getLottery()
 					else
 						alert msg.data.reason
 				.catch (err)=>
@@ -323,7 +324,8 @@ init = ->
 			sharePost: ->
 				ugc.app.renderer.render ugc.app.stage
 				@.ugc = ugc.app.view.toDataURL()
-				setLottery()
+				# setLottery()
+				@.share()
 			share: ->
 				image = @.ugc
 				folder = "df308"

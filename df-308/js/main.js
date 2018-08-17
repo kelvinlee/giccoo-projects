@@ -3331,11 +3331,15 @@ init = function init() {
         return playAudio("answer-1");
       },
       goUGC: function goUGC() {
-        return this.lotteryShow = false;
+        this.lotteryShow = false;
+        return setTimeout(function () {
+          return showResult();
+        }, 300);
       },
       getLottery: function getLottery() {
         var _this2 = this;
 
+        this.registerShow = false;
         return axios.post(apiLink + 'active/df308/lottery/', {}).then(function (msg) {
           if (msg.data.code === 200 && msg.data.id != null) {
             _this2.lotteryInfo.id = msg.data.id;
@@ -3396,10 +3400,7 @@ init = function init() {
         return axios.post(apiLink + 'active/df308/register/', data).then(function (msg) {
           if (msg.data.code === 200) {
             alert("填写成功");
-            _this4.registerShow = false;
-            return setTimeout(function () {
-              return showResult();
-            }, 300);
+            return _this4.getLottery();
           } else {
             return alert(msg.data.reason);
           }
@@ -3426,7 +3427,8 @@ init = function init() {
       sharePost: function sharePost() {
         ugc.app.renderer.render(ugc.app.stage);
         this.ugc = ugc.app.view.toDataURL();
-        return setLottery();
+        // setLottery()
+        return this.share();
       },
       share: function share() {
         var data, folder, image;
