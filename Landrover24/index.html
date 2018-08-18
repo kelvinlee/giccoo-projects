@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>不可T代之车如其人</title>
     <meta name="author" content="m.giccoo.com">
-    <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
     <script src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js"></script>
     <script>
@@ -16,39 +15,6 @@
     </script>
   </head>
   <body>
-    <audio id="answer-1" src="./mp3/answer-new-1.mp3"></audio>
-    <audio id="answer-2" src="./mp3/answer-new-2.mp3"></audio>
-    <audio id="answer-3" src="./mp3/answer-new-3.mp3"></audio>
-    <audio id="answer-4" src="./mp3/answer-new-4.mp3"></audio>
-    <div id="public" class="public">
-      <transition name="page-fade">
-        <div v-show="note" class="note-text">
-          <p>建议打开手机声音<br/>获得更好体验效果</p>
-        </div>
-      </transition>
-    </div>
-    <div id="load" class="load">
-      <div id="loading" v-show="mounted" style="display: none" class="content">
-        <div class="texts">
-          <div class="item fadeInUpSmall animated delay-2"><img src="./img/loading-text-1.png"></div>
-          <div class="item fadeInUpSmall animated delay-4"><img src="./img/loading-text-2.png"></div>
-          <div class="item fadeInUpSmall animated delay-6"><img src="./img/loading-text-3.png"></div>
-          <div class="item fadeInUpSmall animated delay-8"><img src="./img/loading-text-4.png"></div>
-          <div class="item fadeInUpSmall animated delay-10"><img src="./img/loading-text-5.png"></div>
-          <div class="item fadeInUpSmall animated delay-12"><img src="./img/loading-text-6.png"></div>
-          <div class="item fadeInUpSmall animated delay-14"><img src="./img/loading-text-7.png"></div>
-          <div class="item fadeInUpSmall animated delay-16"><img src="./img/loading-text-8.png"></div>
-          <div class="item fadeInUpSmall animated delay-18"><img src="./img/loading-text-9.png"></div>
-          <div class="item fadeInUpSmall animated delay-20"><img src="./img/loading-text-10.png"></div>
-        </div>
-        <div class="loading-text"> 
-          <div class="cd">
-            <div class="cd-item"><img src="./img/small-cd.png"></div>
-          </div>
-          <p>loading...{{progress}}%</p>
-        </div>
-      </div>
-    </div>
     <div id="main" v-show="mounted" :class="{biger: biger,smaller:smaller}" style="display: none" :style="{width: w+'px',minHeight: h+'px'}" class="main">
       <transition name="page-fade">
         <div v-show="loading" class="loading-page">
@@ -65,27 +31,9 @@
         </div>
       </transition>
       <transition name="page-fade">
-        <div v-show="pageIndex == 1" class="page page-1">
-          <div class="bg"><img src="./img/homepage-bg.jpg">
-            <div class="before"><img src="./img/before-wheel.png"></div>
-            <div class="after"><img src="./img/after-wheel.png"></div>
-          </div>
-          <div class="content">
-            <div class="texts">
-              <div class="item fadeInUpSmall animated item-1 delay-2"><img src="./img/homepage-text-1.png"></div>
-              <div class="item fadeInUpSmall animated item-2 delay-4"><img src="./img/homepage-text-2.png"></div>
-              <div class="item fadeInUpSmall animated item-3 delay-6"><img src="./img/homepage-text-3.png"></div>
-            </div>
-            <div @click="gameStart" class="btn fadeInUpSmall animated delay-8"><img src="./img/btn-start.png"></div>
-          </div>
-        </div>
-      </transition>
-      <transition name="page-fade">
-        <div v-show="pageIndex == 2" class="page page-2">
-          <div class="content">
+        <div v-show="pageIndex == 1" class="page page-2">
+          <div class="content">         
             <div id="ugc"></div>
-            <div v-show="ugc &amp;&amp; !wy" class="ugc"><img :src="ugc"></div>
-            <div v-show="ugc &amp;&amp; !wy" @click="openWeb" class="more"></div>
           </div>
         </div>
       </transition>
@@ -93,19 +41,23 @@
         <div v-show="registerShow" class="pop">
           <div class="content">
             <div class="register">
-              <div class="title"><img src="./img/form-title-reg.png"></div>
+              <div @click="registerShow = false" class="close"><img src="./img/icon-close.png"></div>
+              <div class="title"><img src="./img/form-title.png"></div>
               <form-grounp v-bind:form="form" v-on:submit="submit" class="form"></form-grounp>
+              <div v-show="!gameEnd" @click="registerShow = false" class="btn-item goon"><img src="./img/btn-goon.png"></div>
+              <div v-show="gameEnd" @click="giveupAward" class="btn-item goon"><img src="./img/btn-giveup.png"></div>
+              <div class="footer"><img src="./img/form-footer.png"></div>
             </div>
           </div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="lotteryShow" class="pop">
-          <div class="content">
-            <div class="register">
-              <div class="title"><img src="./img/form-title-lottery.png"></div>
-              <form-grounp v-bind:form="lotform" v-on:submit="lotsubmit" class="form"></form-grounp>
-            </div>
+          <div v-show="lotteryInfo.info" class="content">
+            <div class="lottery success">{{lotteryInfo.info}}</div>
+          </div>
+          <div v-show="lotteryInfo.info" class="content">
+            <div class="lottery faild">没中奖</div>
           </div>
         </div>
       </transition>
@@ -113,9 +65,9 @@
     <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/pixi.min.js"></script>
-    <script src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js"></script>
     <script src="//s3.music.126.net/static/mob/ntes.id.js"></script>
     <script src="//s5.music.126.net/static_public/5a1b70ea0180f6ca7295a59d/js/music-jssdk-1.0.3.js"></script>
     <script src="js/build.js?v=1"></script>

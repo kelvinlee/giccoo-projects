@@ -4,7 +4,7 @@
 $debug : true
 $cdn : "../"
 @if not $debug
-	$cdn : "//image.giccoo.com/projects/df-308/"
+	$cdn : "//image.giccoo.com/projects/Landrover24/"
 
 
 @for $i from 1 through 30
@@ -399,8 +399,9 @@ video,canvas,svg
 	.form-group
 		display: flex
 		+box
-		+m(5% 0)
-		border-radius: 5px
+		+w(90%)
+		+m(5% auto)
+		border-radius: 0px
 		border: solid 1px #555
 		+overhide
 		label
@@ -409,14 +410,14 @@ video,canvas,svg
 			+p(0.2rem 0.2rem)
 			// padding-right: 5%
 			+posr
-			border-right: solid 1px #555
+			// border-right: solid 1px #555
 			line-height: 1.8em
 			justify-content: center
 			align-items: center
 			box-align: center
-			+bc(#6687b3)
+			+bc(#fff)
 			+text-center
-			color: #fff
+			color: #252525
 			img
 				+show-inline
 				vertical-align: middle
@@ -546,20 +547,27 @@ video,canvas,svg
 	+h
 	+bc(rgba(0,0,0,0.7))
 	.register
-		+w(90%)
+		+w(80%)
 		+posa
 		+tl(50%,50%)
 		+transform(translate3d(-50%,-50%,0))
-		+bc(#1e2436)
-		border: 4px solid #757575
-		border-radius: 20px
-		+p(10% 0)
+		+bc(#fff)
+		// border: 4px solid #757575
+		border-radius: 5px
+		+p(5% 0)
+		.close
+			+posa
+			+tr(2%,2%)
+			+iw(50,610,100%)
 		.title
-			+w(70%)
+			+w(100%)
 			+m
 		.btn-submit
-			+w(50%)
+			+w(90%)
 			+m
+		.btn-item
+			+w(90%)
+			+m(0.4rem auto)
 	.book
 		+iw(578,750,100%)
 		+posa

@@ -6,7 +6,7 @@ block title
 block css
   meta(name="author",content="m.giccoo.com")
   //- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
-  link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
+  //- link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
   //- link(rel="stylesheet",href="//image.giccoo.com/projects/libs/font/Interstate Regular.css")
   //- link(rel="stylesheet",href="css/yrd-Bold.css")
   //- link(rel="stylesheet",href="css/yrd-Medium.css")
@@ -26,17 +26,13 @@ block css
     console.log('VConsole open');
 
 block content
-  - url = "//image.giccoo.com/projects/lancomeGEN";
+  - url = "//image.giccoo.com/projects/Landrover24";
   - url = ".";
   //- .qrcode#qrcode
     .qr
       img(src="#{url}/img/qrcode.png")
       .text 请使用手机扫描二维码参与活动
-  audio#answer-1(src="#{url}/mp3/answer-new-1.mp3")
-  audio#answer-2(src="#{url}/mp3/answer-new-2.mp3")
-  audio#answer-3(src="#{url}/mp3/answer-new-3.mp3")
-  audio#answer-4(src="#{url}/mp3/answer-new-4.mp3")
-  .public#public
+  //- .public#public
     //- player(icon="true",src="#{url}/mp3/bgm.mp3")
     //- .player(:class="{play: playing, pause: !playing}",@click="playing = !playing")
       .icon-play(:class="{play: playing, pause: !playing}")
@@ -44,7 +40,7 @@ block content
       .note-text(v-show="note")
         p 建议打开手机声音<br/>获得更好体验效果
 
-  .load#load
+  //- .load#load
     .content#loading(v-show="mounted",style="display: none")
       .texts
         - for (var i = 1; i <= 10; i++)
@@ -70,47 +66,34 @@ block content
           div
           div
     transition(name="page-fade")
-      .page.page-1(v-show="pageIndex == 1")
-        .bg
-          img(src="#{url}/img/homepage-bg.jpg")
-          .before
-            img(src="#{url}/img/before-wheel.png")
-          .after
-            img(src="#{url}/img/after-wheel.png")
-        .content
-          .texts
-            - for (var i = 1; i <= 3; i++)
-              .item.fadeInUpSmall.animated(class="item-#{i} delay-#{i*2}")
-                img(src="#{url}/img/homepage-text-#{i}.png")
-            -;
-          .btn.fadeInUpSmall.animated.delay-8(@click="gameStart")
-            img(src="#{url}/img/btn-start.png")
-          
-    transition(name="page-fade")
-      .page.page-2(v-show="pageIndex == 2")
-        .content
-          
+      .page.page-2(v-show="pageIndex == 1")
+        .content          
           #ugc
-          .ugc(v-show="ugc && !wy")
-            img(:src="ugc")
-          .more(v-show="ugc && !wy" @click="openWeb")
-    //- transition(name="page-fade")
-      .pop(v-show="ugc")
-        img(:src="ugc")
+
     transition(name="page-fade")
       .pop(v-show="registerShow")
         .content
           .register
+            .close(@click="registerShow = false")
+              img(src="#{url}/img/icon-close.png")
             .title
-              img(src="#{url}/img/form-title-reg.png")
+              img(src="#{url}/img/form-title.png")
             form-grounp.form(v-bind:form="form",v-on:submit="submit")
+            .btn-item.goon(v-show="!gameEnd" @click="registerShow = false")
+              img(src="#{url}/img/btn-goon.png")
+            .btn-item.goon(v-show="gameEnd" @click="giveupAward")
+              img(src="#{url}/img/btn-giveup.png")
+            .footer
+              img(src="#{url}/img/form-footer.png")
+
     transition(name="page-fade")
       .pop(v-show="lotteryShow")
-        .content
-          .register
-            .title
-              img(src="#{url}/img/form-title-lottery.png")
-            form-grounp.form(v-bind:form="lotform",v-on:submit="lotsubmit")
+        .content(v-show="lotteryInfo.info")
+          .lottery.success {{lotteryInfo.info}}
+
+        .content(v-show="lotteryInfo.info")
+          .lottery.faild 没中奖
+
     
           
     
@@ -121,10 +104,10 @@ block js
   //- script(src="//image.giccoo.com/projects/libs/js/min/fastclick.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
-  script(src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js")
   script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
-  //- script(src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js")
   script(src="//s3.music.126.net/static/mob/ntes.id.js")
   script(src="//s5.music.126.net/static_public/5a1b70ea0180f6ca7295a59d/js/music-jssdk-1.0.3.js")
   //- script(src="/libs/js/min/bump-min.js")
