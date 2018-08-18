@@ -196,7 +196,7 @@ video,canvas,svg
 	+bc($pageMainBGColor)
 	z-index: 99
 	// 3c080f
-	+hide
+	// +hide
 	font-family: "Arial"
 	+b($cdn+"img/loading-bg.jpg",no-repeat,center,center,cover)
 	.content
@@ -501,6 +501,7 @@ video,canvas,svg
 	z-index: 99
 
 
+
 .page-1
 	// +b($cdn+"img/homepage-bg.jpg",no-repeat,bottom,center,contain)
 	.bg
@@ -529,6 +530,12 @@ video,canvas,svg
 .page-2
 	// font-family: "yrd-Bold"
 	.content
+	.more
+		+posa
+		+br(0,0)
+		+w(50%)
+		+h(20%)
+		z-index: 109
 
 
 .pop

@@ -90,6 +90,9 @@ block content
           audio#answer-3(src="#{url}/mp3/answer-3.mp3")
           audio#answer-4(src="#{url}/mp3/answer-4.mp3")
           #ugc
+          .ugc(v-show="ugc && !wy")
+            img(:src="ugc")
+          .more(v-show="ugc && !wy" @click="openWeb")
     //- transition(name="page-fade")
       .pop(v-show="ugc")
         img(:src="ugc")

@@ -85,6 +85,8 @@
             <audio id="answer-3" src="./mp3/answer-3.mp3"></audio>
             <audio id="answer-4" src="./mp3/answer-4.mp3"></audio>
             <div id="ugc"></div>
+            <div v-show="ugc &amp;&amp; !wy" class="ugc"><img :src="ugc"></div>
+            <div v-show="ugc &amp;&amp; !wy" @click="openWeb" class="more"></div>
           </div>
         </div>
       </transition>

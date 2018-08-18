@@ -3154,6 +3154,7 @@ window.onload = function () {
       next: function next() {
         document.getElementById('load').className += " fadeOut animated";
         // _public.note = false
+        main.mounted = true;
         return setTimeout(function () {
           return document.getElementById('load').style.display = "none";
         }, 520);
@@ -3174,7 +3175,6 @@ window.onload = function () {
         if (_this.progress >= 100) {
           _this.progress = 100;
           clearInterval(timein);
-          main.mounted = true;
           return _cache = setTimeout(function () {
             return _this.next();
           }, 1000);
@@ -3211,7 +3211,7 @@ init = function init() {
       smaller: smaller,
       afterH: smaller ? TrueH * 1.15 - 1029 * (TrueW / 750) : TrueH - 1029 * (TrueW / 750),
       wy: false,
-      mounted: true,
+      mounted: false,
       loading: false,
       lotteryShow: false,
       pageInfoShow: false,
@@ -3325,8 +3325,8 @@ init = function init() {
     }), _data),
     methods: {
       endPage: function endPage() {
-        // main.registerShow = true
-        showResult();
+        main.registerShow = true;
+        // showResult()
         return stopAllAudio();
       },
       gameStart: function gameStart() {
@@ -3345,7 +3345,9 @@ init = function init() {
         var _this2 = this;
 
         this.registerShow = false;
-        return axios.post(apiLink + 'active/df308/lottery/', {}).then(function (msg) {
+        return axios.post(apiLink + 'active/df308/lottery/', {
+          lottery: true
+        }).then(function (msg) {
           if (msg.data.code === 200 && msg.data.id != null) {
             _this2.lotteryInfo.id = msg.data.id;
             _this2.lotteryInfo.random = msg.data.random;

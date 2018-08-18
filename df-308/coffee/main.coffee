@@ -140,6 +140,7 @@ window.onload = ->
 			next: ->
 				document.getElementById('load').className += " fadeOut animated"
 				# _public.note = false
+				main.mounted = true
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
 				,520
@@ -153,7 +154,6 @@ window.onload = ->
 				if @.progress >= 100
 					@.progress = 100
 					clearInterval timein
-					main.mounted = true
 					_cache = setTimeout =>
 						@.next()
 					,1000
@@ -180,7 +180,7 @@ init = ->
 			smaller: smaller
 			afterH: if smaller then TrueH*1.15-1029*(TrueW/750) else TrueH-1029*(TrueW/750)
 			wy: false
-			mounted: true
+			mounted: false
 			loading: false
 			lotteryShow: false
 			pageInfoShow: false
@@ -241,8 +241,8 @@ init = ->
 				random: null
 		methods:
 			endPage: ->
-				# main.registerShow = true
-				showResult()
+				main.registerShow = true
+				# showResult()
 				stopAllAudio()
 			gameStart: ->
 				@.pageIndex = 2
@@ -257,7 +257,7 @@ init = ->
 				,300
 			getLottery: ->
 				@.registerShow = false
-				axios.post "#{apiLink}active/df308/lottery/",{}
+				axios.post "#{apiLink}active/df308/lottery/",{lottery: true}
 				.then (msg)=>
 					if msg.data.code is 200 and msg.data.id?
 						@.lotteryInfo.id = msg.data.id

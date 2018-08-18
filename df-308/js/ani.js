@@ -194,24 +194,20 @@ function showResult(){
 	r2A[result].visible=true
 	r3A[result].visible=true
 	r4A[result].visible=true
+	endbtn1.visible=endbtn2.visible=false
+	qr.visible=true
+	console.log("保存海报")
+	main.sharePost()
+	qr.visible=false
 	endbtn1.visible=true
 	endbtn2.visible=true
 	var AAA=[r11,r4,r3,r2,endbtn1,endbtn2]
-	for (var j = 0; j < 3; j++) {
+	for (var j = 0; j < 4; j++) {
 		
 		TweenMax.from(AAA[j],2.5,{y:"+=150",ease:Elastic.easeOut,delay:.05*j,overwrite:0})
 		TweenMax.from(AAA[j],1.5,{alpha:0,delay:.05*j,overwrite:0})
 	};
-	TweenMax.from(AAA[3],2.5,{y:"+=150",ease:Elastic.easeOut,delay:.05*j,overwrite:0})
-	TweenMax.from(AAA[3],1.5,{alpha:0,delay:.05*j,overwrite:0,onComplete: function(){
-		endbtn1.visible=endbtn2.visible=false
-		qr.visible=true
-		console.log("保存海报")
-		main.sharePost()
-		endbtn1.visible=endbtn2.visible=true
-		qr.visible=false
-		// endbtn1.visible=true
-		// endbtn2.visible=true
-	}})
+	// TweenMax.from(AAA[3],2.5,{y:"+=150",ease:Elastic.easeOut,delay:.05*j,overwrite:0})
+	// TweenMax.from(AAA[3],1.5,{alpha:0,delay:.05*j,overwrite:0})
 
 }
