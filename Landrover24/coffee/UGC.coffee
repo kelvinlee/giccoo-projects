@@ -50,7 +50,7 @@ class UGC
 		# .add('b-2',"#{_CDN}mp3/b-2.mp3")
 		# .add('c-1',"#{_CDN}mp3/c-1.mp3")
 		# .add('c-2',"#{_CDN}mp3/c-2.mp3")
-		.use(@.loaditem.bind(@))
+		# .use(@.loaditem.bind(@))
 		.load(buildUGC.bind(@))
 		@.default.MH = @.opts.h * 0.65
 	loaditem: ->

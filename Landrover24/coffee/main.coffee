@@ -159,7 +159,7 @@ window.onload = ->
 	# 					@.next()
 	# 				,1000
 	# 		,1000/20
-	ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH})
+	
 	init()
 
 init = ->
@@ -347,5 +347,6 @@ init = ->
 			# game = new Game({el: "game",h: h})
 			@.wy = CloudMusic.isInApp()
 			version = CloudMusic.getClientVersion().split(".")
+			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH})
 
 
