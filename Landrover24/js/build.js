@@ -21,7 +21,21 @@ var buildUGC = function () {
 	stageH=this.opts.h
 	
 }
+var __url="http://baidu.com"
 
 function setup(){
-	
+	buildQR(__url,QRDone)
+}
+
+var myQR
+function buildQR(_url,_callback){
+	myQR= new QRCode("myDiv",{width:320,height:320,colorDark:"#000000"})
+	myQR._el.lastChild.onload=_callback
+}
+
+var qrSprite
+function QRDone(){
+	console.log("QRDone!!!")
+	qrSprite=new Sprite.fromImage(myQR._el.lastChild.src)
+	pStage.addChild(qrSprite)
 }
