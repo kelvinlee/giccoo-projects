@@ -1,0 +1,584 @@
+@import sass/base
+@import ../../libs/sass/loader-ball
+
+$debug : true
+$cdn : "../"
+@if not $debug
+	$cdn : "//image.giccoo.com/projects/df-308/"
+
+
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+// animation, delay, duration
+$fontColor: #000000;
+$pageMainBGColor: #0c101a;
++keyframes(fadeArrow)
+	0%,100%
+		opacity: 1
+	50%
+		opacity: 0.5
++keyframes(fadeBG)
+	0%
+		opacity: 0
+	20%
+		opacity: 1
+	80%
+		opacity: 1
+	100%
+		opacity: 0
++keyframes(iconFlash)
+	0%,100%
+		opacity: 1
+		+transform(scale(1.2,1.2))
+	50%
+		opacity: 0.2
+		+transform(scale(1,1))
++keyframes(moveLeft)
+	0%
+		+transform(translate3d(-50%,0,0))
+	100%
+		+transform(translate3d(0,0,0))
++keyframes(musicIcon)
+	0%
+		height: 20%
+		opacity: 0.8
+	50%
+		height: 100%
+		opacity: 1
+	100%
+		height: 20%
+		opacity: 0.8
++keyframes(textShow)
+	0%
+		opacity: 0
+	10%
+		opacity: 1
+	90%
+		opacity: 1
+	100%
+		opacity: 0
++keyframes(fadeOutCircle)
+	0%
+		+transform(scale(0.8,0.8))
+		opacity: 0
+	20%
+		+transform(scale(1,1))
+		opacity: 0.7
+	100%
+		+transform(scale(2,2))
+		opacity: 0
++keyframes(swing)
+	0%
+		+transform(rotate(0))
+	25%
+		+transform(rotate(3deg))
+	75%
+		+transform(rotate(-3deg))
+	100%
+		+transform(rotate(0))
++keyframes(fadeInUpSmall)
+	0%
+		opacity: 0
+		transform: translate3d(0,20px,0)
+	100%
+		opacity: 1
+		transform: translate3d(0,0,0)
++keyframes(second)
+	0%
+		transform: rotate(0)
+	100%
+		transform: rotate(360deg)
++keyframes(beforeWheel)
+	0%
+		opacity: 1
+		transform: scale(0.9,0.9)
+	70%
+		opacity: 0.8
+		transform: scale(1,1)
+	100%
+		opacity: 1
+		transform: scale(0.9,0.9)
+html,body
+	+w
+	+h
+body
+	color: $fontColor
+	+bc($pageMainBGColor)
+	max-width: 640px
+	+m
+	+posr
+	font-family: "yrd-Medium"
+
+
+video,canvas,svg
+	+w
+	+h(auto)
+.hide
+	+hide
+.main,.load
+	+w
+	+h
+	+posr
+	max-width: 1280px
+	+m
+	font-size: 0
+	+overhide
+	+tran(all,4s,ease)
+#game
+	+h
+	canvas
+		+h
+
+.page-animation-enter-active
+	transition: all .4s linear
+.page-animation-leave-active
+	transition: all .4s linear
+	transform: translate3d(0,0,0)
+.page-animation-enter
+	transform: translate3d(0,-100%,0)
+	& ~ .page-animation-leave
+		transform: translate3d(0,100%,0)
+.page-animation-leave
+	transform: translate3d(0,100%,0)
+	& ~ .page-animation-enter
+		transform: translate3d(0,100%,0)
+.page-animation-enter-to
+	transform: translate3d(0,0,0)
+	& ~ .page-animation-leave-to
+		transform: translate3d(0,100%,0)
+.page-animation-leave-to
+	transform: translate3d(0,-100%,0)
+
+
+.page-fade-enter-active
+	transition: all .6s ease
+	opacity: 1
+.page-fade-leave-active
+	transition: all .3s linear
+	opacity: 1
+.page-fade-enter,.page-fade-leave-to
+	opacity: 0
+
+.page-fadeflower-enter-active
+	transition: all .6s ease
+	opacity: 1
+.page-fadeflower-leave-active
+	transition: all .6s ease-in
+	opacity: 1
+.page-fadeflower-enter,.page-fadeflower-leave-to
+	opacity: 0
+
+.qrcode
+	+bc(#fff)
+	+posa
+	+tl
+	+w
+	+h
+	z-index: 9999
+	+hide
+	&.show
+		+show
+	.qr
+		+w(300px)
+		+m
+		margin-top: 100px
+		+text-center
+		font-size: 16px
+
+.load
+	// +b($cdn+"img/bg-loading.jpg",no-repeat,center,center,cover)
+	+posa
+	+tl(0,50%)
+	+transform(translate3d(-50%,0,0))
+	+bc($pageMainBGColor)
+	z-index: 99
+	// 3c080f
+	// +hide
+	font-family: "Arial"
+	+b($cdn+"img/loading-bg.jpg",no-repeat,center,center,cover)
+	.content
+		+w
+		+h
+		+posr
+	.texts
+		+posa
+		+tl(15%)
+		+w
+		.item
+			+posa
+			+tl
+			+w
+	.loading-text
+		+posa
+		+bl(10%)
+		+w
+		color: #fff
+		+text-center
+		+font-size(0.8rem)
+		.cd
+			+posa
+			+tl(-100%,50%)
+			+w(4rem)
+			+transform(translate3d(-50%,-20%,0))
+			.cd-item
+				font-size: 0
+				+animation(second,3s,linear,infinite)
+
+	
+	
+
+.music-box
+	+w(5%)
+	+posr
+	+tl(50%)
+	+transform(translate3d(0,-50%,0))
+	+show-inline
+	+m
+	&:after
+		content: " "
+		+posa
+		+tl(50%,0)
+		+w
+		+h
+		+transform(translate3d(0,-50%,0))
+		+bc(#3c080f)
+	@for $i from 1 through 15
+		&:nth-child(#{$i})
+			&:after
+				+animation(musicIcon,1000ms+random(2000),ease,infinite)
+				animation-delay: 100ms*$i
+			
+
+
+.public
+	+posa
+	+tr(1rem,1rem)
+	+wh(2rem,2rem)
+	font-size: 0
+	z-index: 199
+	font-family: "yrd-Medium"
+	// +hide
+	.note-text
+		+posa
+		+tr(50%,0%)
+		+font-size(0.8rem)
+		line-height: 1rem
+		white-space: nowrap
+		+text-right
+		+m
+		+transform(translate3d(0,-50%,0))
+		color: #766b67
+		font-family: "yrd-Medium"
+		p
+			+m
+		.arrow
+			+posa
+			+tr(50%,-37.5px)
+			+transform(translate3d(0,-25%,0))
+			font-size: 0
+			+h(30px)
+			.item
+				+w(10px)
+				+h
+				+show-inline
+				font-size: 0
+			// .arrow-1
+			// 	+animation(fadeArrow,1s,ease,infinite)
+			// .arrow-2
+			// 	+animation(fadeArrow,1s,ease,infinite)
+			// 	animation-delay: 1000ms*1/3
+			// .arrow-3
+			// 	+animation(fadeArrow,1s,ease,infinite)
+			// 	animation-delay: 1000ms*2/3
+
+	.player
+		+w
+		+h
+	.icon-play
+		+w
+		+h
+		&.play
+			+b($cdn+"img/icon-play.png",no-repeat,center,center,contain)
+		&.pause
+			+b($cdn+"img/icon-stop.png",no-repeat,center,center,contain)
+
+.pages
+	+w
+	+h
+	+posr
+	+overhide
+	perspective: 500
+	-webkit-perspective: 500
+			transform-style: preserve-3d
+	-webkit-transform-style: preserve-3d
+	.page
+		+posa
+		+tl
+		+w
+		+h
+		+bc(#e3dbd5)
+		+hide
+		background-attachment: fixed
+		z-index: 10
+		.bg
+			+posa
+			+tl
+			+w
+			+h
+			z-index: -1
+			img
+				+w
+				+h
+		
+.page
+	+posa
+	+tl
+	+w
+	+h
+	+overhide
+	background-size: 100% auto
+	.bg,.ugc
+		+posa
+		+tl(50%)
+		font-size: 0
+		+transform(translate3d(0,-50%,0))
+		.biger &
+			+transform(translate3d(0,-50%,0) scale(1.1,1.1))
+	.ugc
+		+w
+		+h
+	.content
+		+posa
+		+tl
+		+w
+		+h
+		box-sizing: border-box
+	.next
+		+posa
+		+bl
+		+w
+		+h(1px)
+		&:before
+			content: " "
+			+posa
+			+bl(10px,50%)
+			+w(30px)
+			+h(10px)
+			+b($cdn+"img/arrow-up.png",no-repeat,top,center,contain)
+			+animation(fadeArrow,0.6s,ease,infinite)
+		&:after
+			content: " "
+			+posa
+			+bl(22px,50%)
+			+w(30px)
+			+h(10px)
+			+b($cdn+"img/arrow-up.png",no-repeat,top,center,contain)
+			+animation(fadeArrow,0.6s,ease,infinite)
+			animation-delay: 300ms
+
+.loading-page
+	+posa
+	+tl
+	z-index: 9999
+	+w
+	+h
+	+bc(rgba(0,0,0,0.6))
+	.ball-spin-fade-loader
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+
+.form
+	+w(90%)
+	+m
+	color: #000
+	+font-size(0.8rem)
+	.form-group
+		display: flex
+		+box
+		+m(5% 0)
+		border-radius: 5px
+		border: solid 1px #555
+		+overhide
+		label
+			flex: 2
+			+box
+			+p(0.2rem 0.2rem)
+			// padding-right: 5%
+			+posr
+			border-right: solid 1px #555
+			line-height: 1.8em
+			justify-content: center
+			align-items: center
+			box-align: center
+			+bc(#6687b3)
+			+text-center
+			color: #fff
+			img
+				+show-inline
+				vertical-align: middle
+		input,.form-group-items,.form-group-line,.select
+			flex: 7
+		input,.select
+			border: none
+			outline: none
+			+bc(#fff)
+			// color: #fff
+			+box
+			+p(0.2rem 0)
+			line-height: 1.4em
+			text-indent: 0.4rem
+		.select
+			+overhide
+			+posr
+			&:after
+				content: " "
+				+posa
+				+tr(50%,0.5rem)
+				+wh(0,0)
+				// +bc(#6687b3)
+				+transform(translate3d(0,-30%,0))
+				border-width: 0.5rem;
+				border-style: solid;
+				border-color: #6687b3 transparent transparent transparent;
+			span
+				+box
+				+p(0.2rem 0)
+				line-height: 1.8em
+				text-indent: 0.4rem
+				overflow: hidden
+				text-overflow: ellipsis
+				white-space: nowrap
+				vertical-align: middle
+		select
+			+posa
+			+tl
+			+br
+			+wh(100%,100%)
+			+show-inline
+			opacity: 0
+	.custom-select
+		overflow: unset
+		.select
+			overflow: unset
+		.box-select
+			+posa
+			+tl(105%)
+			+bc(#fff)
+			.option
+				line-height: 2em
+				+font-size(0.7rem)
+				vertical-align: middle
+				span
+					line-height: 2em
+					+wh(1rem,1rem)
+					+show-inline
+					vertical-align: middle
+					border-radius: 50%
+
+	.btn-submit
+		+m(0.5rem auto)
+
+.ugcsave
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	opacity: 0
+	z-index: 99
+
+.ugc
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	opacity: 0
+	z-index: 99
+
+
+
+.page-1
+	// +b($cdn+"img/homepage-bg.jpg",no-repeat,bottom,center,contain)
+	.bg
+		.before
+			+posa
+			+tl(75%,49%)
+			+iw(316,750,100%)
+			+animation(beforeWheel,1.5s,ease,infinite)
+			transform-origin: 15% 90%
+		.after
+			+posa
+			+tl(53%,66%)
+			+iw(392,750,100%)
+			+animation(beforeWheel,1.5s,ease,infinite)
+			transform-origin: 15% 90%
+			// animation-delay: 500ms
+	.content
+		.texts
+			+posr
+			margin-top: 15%
+			.item-2,.item-3
+				+posa
+				+tl
+		.btn
+			margin-top: 2%
+.page-2
+	// font-family: "yrd-Bold"
+	.content
+	.more
+		+posa
+		+br(0,0)
+		+w(50%)
+		+h(20%)
+		z-index: 109
+
+
+.pop
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	+bc(rgba(0,0,0,0.7))
+	.register
+		+w(90%)
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+		+bc(#1e2436)
+		border: 4px solid #757575
+		border-radius: 20px
+		+p(10% 0)
+		.title
+			+w(70%)
+			+m
+		.btn-submit
+			+w(50%)
+			+m
+	.book
+		+iw(578,750,100%)
+		+posa
+		+tl(50%,50%)
+		+transform(translate3d(-50%,-50%,0))
+	.text
+		+posa
+		+tl
+	.btns
+		+posa
+		+bl(30%)
+		z-index: 101
+		.share
+			+posa
+			+tl
+			+w(50%)
+			+h
+		.web
+			+posa
+			+tr
+			+w(50%)
+			+h
