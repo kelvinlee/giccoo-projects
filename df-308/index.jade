@@ -32,6 +32,10 @@ block content
     .qr
       img(src="#{url}/img/qrcode.png")
       .text 请使用手机扫描二维码参与活动
+  audio#answer-1(src="#{url}/mp3/answer-new-1.mp3")
+  audio#answer-2(src="#{url}/mp3/answer-new-2.mp3")
+  audio#answer-3(src="#{url}/mp3/answer-new-3.mp3")
+  audio#answer-4(src="#{url}/mp3/answer-new-4.mp3")
   .public#public
     //- player(icon="true",src="#{url}/mp3/bgm.mp3")
     //- .player(:class="{play: playing, pause: !playing}",@click="playing = !playing")
@@ -85,10 +89,7 @@ block content
     transition(name="page-fade")
       .page.page-2(v-show="pageIndex == 2")
         .content
-          audio#answer-1(src="#{url}/mp3/answer-1.mp3")
-          audio#answer-2(src="#{url}/mp3/answer-2.mp3")
-          audio#answer-3(src="#{url}/mp3/answer-3.mp3")
-          audio#answer-4(src="#{url}/mp3/answer-4.mp3")
+          
           #ugc
           .ugc(v-show="ugc && !wy")
             img(:src="ugc")
@@ -117,6 +118,7 @@ block content
 block js
   - url = "/";
   script(src="//res.wx.qq.com/open/js/jweixin-1.3.2.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/fastclick.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js")

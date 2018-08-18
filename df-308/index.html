@@ -17,6 +17,10 @@
     </script>
   </head>
   <body>
+    <audio id="answer-1" src="./mp3/answer-new-1.mp3"></audio>
+    <audio id="answer-2" src="./mp3/answer-new-2.mp3"></audio>
+    <audio id="answer-3" src="./mp3/answer-new-3.mp3"></audio>
+    <audio id="answer-4" src="./mp3/answer-new-4.mp3"></audio>
     <div id="public" class="public">
       <transition name="page-fade">
         <div v-show="note" class="note-text">
@@ -80,10 +84,6 @@
       <transition name="page-fade">
         <div v-show="pageIndex == 2" class="page page-2">
           <div class="content">
-            <audio id="answer-1" src="./mp3/answer-1.mp3"></audio>
-            <audio id="answer-2" src="./mp3/answer-2.mp3"></audio>
-            <audio id="answer-3" src="./mp3/answer-3.mp3"></audio>
-            <audio id="answer-4" src="./mp3/answer-4.mp3"></audio>
             <div id="ugc"></div>
             <div v-show="ugc &amp;&amp; !wy" class="ugc"><img :src="ugc"></div>
             <div v-show="ugc &amp;&amp; !wy" @click="openWeb" class="more"></div>

@@ -404,27 +404,34 @@ init = ->
 			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH})
 			version = CloudMusic.getClientVersion().split(".")
 
-			if window.DeviceMotionEvent
-				window.addEventListener('devicemotion',@.deviceMotionHandler.bind(@),false)
-				@.handCover = false
-				console.log "devicemotion"
-			else
-				@.handCover = true
+			listenAudio()
 
 musicList = ['answer-1','answer-2','answer-3','answer-4']
 playAudio = (id)->
 	audio = document.getElementById(id)
 	console.log "play #{id}"
+	audio.load()
 	setTimeout =>
 		audio.play()
-		discPlay()
-	,300
-	audio.addEventListener "pause", ->
-		discStop()
-	,false
-	audio.addEventListener "ended", ->
-		discStop()
-	,false
+	,250
+	# setTimeout =>
+	# 	discPlay()
+	# ,300
+listenAudio = ->
+	for item in musicList
+		audio = document.getElementById item
+		audio.addEventListener "play", ->
+			console.log "play"
+			discPlay()
+		,false
+		audio.addEventListener "pause", ->
+			console.log "pause"
+			discStop()
+		,false
+		audio.addEventListener "ended", ->
+			console.log "ended"
+			discStop()
+		,false
 
 stopAllAudio = ->
 	for item in musicList

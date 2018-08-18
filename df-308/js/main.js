@@ -6,7 +6,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _cache, _citys, _public, _runTime, _second, _startCache, _testTime, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, musicList, neteaseShareImage, playAudio, random, resource, resources, sended, stopAllAudio, sys, ugc, ugcCache;
+var ANIMATION_END_NAME, ANIMATION_END_NAMES, AnimatedSprite, Container, Graphics, IsPC, ParticleContainer, Sprite, TRANSITION_END_NAME, TRANSITION_END_NAMES, Text, Texture, TextureCache, TrueH, TrueW, UGC, VENDORS, _cache, _citys, _public, _runTime, _second, _startCache, _testTime, apiLink, apiUrl, autoDetectRenderer, createObjectURLfun, css3Prefix, getId, getOrientation, getTe, i, imageurl, init, j, len1, listenAudio, loadWechatConfig, loader, loading, mTestElement, main, musicIconCache, musicLineCache, musicList, neteaseShareImage, playAudio, random, resource, resources, sended, stopAllAudio, sys, ugc, ugcCache;
 
 VENDORS = ["Moz", 'webkit', 'ms', 'O'];
 
@@ -3538,13 +3538,7 @@ init = function init() {
         h: 640 / TrueW * TrueH
       });
       version = CloudMusic.getClientVersion().split(".");
-      if (window.DeviceMotionEvent) {
-        window.addEventListener('devicemotion', this.deviceMotionHandler.bind(this), false);
-        this.handCover = false;
-        return console.log("devicemotion");
-      } else {
-        return this.handCover = true;
-      }
+      return listenAudio();
     }
   });
 };
@@ -3555,16 +3549,35 @@ playAudio = function playAudio(id) {
   var audio;
   audio = document.getElementById(id);
   console.log('play ' + id);
-  setTimeout(function () {
-    audio.play();
-    return discPlay();
-  }, 300);
-  audio.addEventListener("pause", function () {
-    return discStop();
-  }, false);
-  return audio.addEventListener("ended", function () {
-    return discStop();
-  }, false);
+  audio.load();
+  return setTimeout(function () {
+    return audio.play();
+  }, 250);
+};
+
+// setTimeout =>
+// 	discPlay()
+// ,300
+listenAudio = function listenAudio() {
+  var audio, item, l, len2, results;
+  results = [];
+  for (l = 0, len2 = musicList.length; l < len2; l++) {
+    item = musicList[l];
+    audio = document.getElementById(item);
+    audio.addEventListener("play", function () {
+      console.log("play");
+      return discPlay();
+    }, false);
+    audio.addEventListener("pause", function () {
+      console.log("pause");
+      return discStop();
+    }, false);
+    results.push(audio.addEventListener("ended", function () {
+      console.log("ended");
+      return discStop();
+    }, false));
+  }
+  return results;
 };
 
 stopAllAudio = function stopAllAudio() {
