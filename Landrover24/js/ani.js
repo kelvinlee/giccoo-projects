@@ -116,9 +116,9 @@ function setPage2(){
 		var video = document.createElement('video');
 		video.setAttribute('playsinline','');
 		video.setAttribute('webkit-playsinline','');
-
+		video.crossOrigin = 'anonymous';
 		var src = document.createElement('source');
-		src.setAttribute('src', "http://image.giccoo.com/projects/Landrover24/video/build-"+i+".mp4");
+		src.setAttribute('src', "//image.giccoo.com/projects/Landrover24/video/build-"+i+".mp4");
 		src.setAttribute('type', 'video/mp4');
 
 		video.appendChild(src);

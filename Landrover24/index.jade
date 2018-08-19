@@ -83,7 +83,9 @@ block content
       .pop(v-show="registerShow")
         .content
           .register
-            .close(@click="registerShow = false")
+            .close(v-show="!gameEnd" @click="registerShow = false")
+              img(src="#{url}/img/icon-close.png")
+            .close(v-show="gameEnd" @click="giveupAward")
               img(src="#{url}/img/icon-close.png")
             .title
               img(src="#{url}/img/form-title.png")

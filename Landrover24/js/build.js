@@ -80,7 +80,7 @@ var buildUGC = function () {
 	pApp = this.app
 	stageH=this.opts.h
 	setup()
-	renderer=new PIXI.Application({width:640,height:stageH,transparent: false,preserveDrawingBuffer: true})//=====
+	renderer=new PIXI.Application({width:640,height:stageH,transparent: true,preserveDrawingBuffer: true,forceCanvas: true})//=====
   document.body.appendChild(renderer.view);
   renderer.view.style="z-index:1000;position:absolute;display:none"
 }
