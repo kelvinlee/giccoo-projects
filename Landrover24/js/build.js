@@ -128,6 +128,7 @@ function QRDone(){
 		pApp.renderer.render(pStage)
 		console.log("QRDone!!!")
 		main.openForm()
+		main.sharePost()
 	})
 	
 	
