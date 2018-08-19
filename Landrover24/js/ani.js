@@ -104,7 +104,7 @@ function setPage2(){
 		video.setAttribute('webkit-playsinline','');
 
 		var src = document.createElement('source');
-		src.setAttribute('src', "http://image.giccoo.com/projects/Landover24/video/"+i+".mp4");
+		src.setAttribute('src', "http://image.giccoo.com/projects/Landrover24/video/build-"+i+".mp4");
 		src.setAttribute('type', 'video/mp4');
 
 		video.appendChild(src);
