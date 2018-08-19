@@ -9639,6 +9639,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Landrover24\/img\/pop-bg.jpg": {
+		"ft": 16384,
+		"iS": 25610,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/Landrover24\/img\/pop-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/Landrover24\/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -10367,7 +10378,7 @@
 		},
 	"\/Levi-special\/img\/timg.gif": {
 		"ft": 4194304,
-		"iS": 717629,
+		"iS": 760463,
 		"oA": 0,
 		"oAP": "\/Levi-special\/img\/levis.gif",
 		"oF": 0,
