@@ -74,10 +74,10 @@ var startY=0
 function willGoPage2(_e){
 
 	console.log("视频该播放了")
-	main.videoIndex = 4
-	main.lr = true
-	// videoA[0].play()
-	// videoSpriteA[0].visible=true
+	// main.videoIndex = 4
+	// main.lr = true
+	videoA[0].play()
+	videoSpriteA[0].visible=true
 	startY=_e.data.global.y
 	p1bg.touchend=ifGoPage2
 }
@@ -100,32 +100,32 @@ function setPage2(){
 	page2=new Container()
 	pStage.addChild(page2,page1)
 
-// 	for (var i = 1; i <= 6; i++) {
-// 		var video = document.createElement('video');
-// 		video.setAttribute('playsinline','');
-// 		video.setAttribute('webkit-playsinline','');
+	for (var i = 1; i <= 6; i++) {
+		var video = document.createElement('video');
+		video.setAttribute('playsinline','');
+		video.setAttribute('webkit-playsinline','');
 
-// 		var src = document.createElement('source');
-// 		src.setAttribute('src', "http://image.giccoo.com/projects/Landrover24/video/build-"+i+".mp4");
-// 		src.setAttribute('type', 'video/mp4');
+		var src = document.createElement('source');
+		src.setAttribute('src', "http://image.giccoo.com/projects/Landrover24/video/build-"+i+".mp4");
+		src.setAttribute('type', 'video/mp4');
 
-// 		video.appendChild(src);
-// 		video.loop=true
-// 		video.muted=true
-// 		videoA.push(video)
-// // create a video texture from a path
-// 		var texture = PIXI.Texture.fromVideo(video);
-// 		texture.baseTexture.autoPlay = false;
-// 		enableInlineVideo(texture.baseTexture.source, false);
+		video.appendChild(src);
+		video.loop=true
+		video.muted=true
+		videoA.push(video)
+// create a video texture from a path
+		var texture = PIXI.Texture.fromVideo(video);
+		texture.baseTexture.autoPlay = false;
+		enableInlineVideo(texture.baseTexture.source, false);
 
-// 		var videoSprite = new PIXI.Sprite(texture);
-// 		videoSpriteA.push(videoSprite)
-// 		videoSprite.width=640
-// 		videoSprite.height=stageH
-// 		videoSprite.visible=false
-// 		page2.addChild(videoSprite);
+		var videoSprite = new PIXI.Sprite(texture);
+		videoSpriteA.push(videoSprite)
+		videoSprite.width=640
+		videoSprite.height=stageH
+		videoSprite.visible=false
+		page2.addChild(videoSprite);
 
-// 	};
+	};
 	dark=new Sprite(getTe(_CDN+"img/dark.png"))
 	dark.width=640
 	//dark.height=stageH
@@ -144,9 +144,9 @@ function setPage2(){
 
 	btnLeft=new Sprite(getTe(_CDN+"img/arrow2.png"))
 	btnRight=new Sprite(getTe(_CDN+"img/arrow.png"))
-	btnRight.y=btnLeft.y=stageH/2
-	btnRight.x=640-32-10
-	btnLeft.x=10
+	btnRight.y=btnLeft.y=stageH/2-49
+	btnRight.x=640-72
+	btnLeft.x=0
 	btnLeft.alpha=btnRight.alpha=.6
 
 	page2.addChild(p2top,p2btn1,p2btn2,p2btn3,btnLeft,btnRight)
@@ -174,9 +174,9 @@ function leftVideo(){
 		nowVideo=6
 	}
 	videoX=640
-	main.lr = false
-	main.videoIndex = nowVideo
-	//changeVideo()
+	//main.lr = false
+	//main.videoIndex = nowVideo
+	changeVideo()
 }
 
 function rightVideo(){
@@ -185,9 +185,9 @@ function rightVideo(){
 		nowVideo=1
 	}
 	videoX=-640
-	main.lr = true
-	main.videoIndex = nowVideo
-	//changeVideo()
+	//main.lr = true
+	//main.videoIndex = nowVideo
+	changeVideo()
 }
 function changeVideo(){
 	videoA[nowVideo-1].play()
