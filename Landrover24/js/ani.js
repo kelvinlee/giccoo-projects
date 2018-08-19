@@ -74,8 +74,8 @@ var startY=0
 function willGoPage2(_e){
 
 	console.log("视频该播放了")
-	videoA[3].play()
-	videoSpriteA[3].visible=true
+	videoA[0].play()
+	videoSpriteA[0].visible=true
 	startY=_e.data.global.y
 	p1bg.touchend=ifGoPage2
 }
@@ -87,36 +87,18 @@ function ifGoPage2(_e){
 function goPage2(){
 	p1bg.interactive=false
 	TweenMax.to(page1,.5,{y:page1.y-stageH,alpha:0})
+	showPage2()
 }
 
 var page2
 var videoA=[]
 var videoSpriteA=[]
+var p2top,p2btn1,p2btn2,p2btn3,dark,btnLeft,btnRight
 function setPage2(){
 	page2=new Container()
-	pStage.addChild(page2)
+	pStage.addChild(page2,page1)
 
 	for (var i = 1; i <= 6; i++) {
-		// var _video = document.createElement("video");
-		// _video.preload = "auto";
-		// _video.loop = true;              // enable looping
-		// _video.autoplay=false
-		// _video.setAttribute('playsinline','');
-		// _video.setAttribute('webkit-playsinline','');//makeVideoPlayableInline(texture.baseTexture.source, false);
-		// _video.src = "http://image.giccoo.com/projects/Landover24/video/"+i+".mp4";
-		// videoA.push(_video)
-		
-		// var _v=PIXI.Texture.fromVideo(_video)
-		// var _videoSprite=new PIXI.Sprite(_v)
-		// _v.baseTexture.autoPlay = false;
-		
-		// videoSpriteA.push(_videoSprite)
-		// page2.addChild(_videoSprite)
-		// _videoSprite.x=100*i
-
-
-
-
 		var video = document.createElement('video');
 		video.setAttribute('playsinline','');
 		video.setAttribute('webkit-playsinline','');
@@ -128,41 +110,106 @@ function setPage2(){
 		video.appendChild(src);
 		video.loop=true
 		video.muted=true
-
-
-		console.log(video);
-
 		videoA.push(video)
-
-
 // create a video texture from a path
 		var texture = PIXI.Texture.fromVideo(video);
 		texture.baseTexture.autoPlay = false;
 		enableInlineVideo(texture.baseTexture.source, false);
-
-		// window.document.addEventListener( 'mousedown', function() {
-  //   	texture.baseTexture.source.play();
-		// });
-
-		// window.document.addEventListener( 'touchstart', function() {
-  //   	texture.baseTexture.source.play();
-		// });
 
 		var videoSprite = new PIXI.Sprite(texture);
 		videoSpriteA.push(videoSprite)
 		videoSprite.width=640
 		videoSprite.height=stageH
 		videoSprite.visible=false
-		// videoSprite.width = renderer.width;
-		// videoSprite.height = renderer.height;
 		page2.addChild(videoSprite);
 
 	};
+	dark=new Sprite(getTe(_CDN+"img/dark.png"))
+	dark.width=640
+	dark.height=stageH
+	page2.addChild(dark)
+	dark.blendMode=_MULTIPLY
+
+	p2top=new Sprite(getTe(_CDN+"img/p2top.png"))
+	p2btn1=new Sprite(getTe(_CDN+"img/p2btn1.png"))
+	p2btn2=new Sprite(getTe(_CDN+"img/p2btn2.png"))
+	p2btn3=new Sprite(getTe(_CDN+"img/p2btn3.png"))
+
+	p2btn1.y=stageH/2+256
+	p2btn2.y=p2btn3.y=stageH/2+357
+	p2btn2.x=94
+	p2btn3.x=366
+
+	btnLeft=new Sprite(getTe(_CDN+"img/arrow2.png"))
+	btnRight=new Sprite(getTe(_CDN+"img/arrow.png"))
+	btnRight.y=btnLeft.y=stageH/2
+	btnRight.x=640-32-10
+	btnLeft.x=10
+	btnLeft.alpha=btnRight.alpha=.6
+
+	page2.addChild(p2top,p2btn1,p2btn2,p2btn3,btnLeft,btnRight)
+
+
+
+}
+var p2A
+function showPage2(){
+	p2A=[p2top,btnLeft,btnRight,p2btn1,p2btn2,p2btn3]
+	for (var i = 0; i < p2A.length; i++) {
+		TweenMax.from(p2A[i],.6,{alpha:0,y:"+=100",delay:i*.05+.5})
+	};
+	p2btn1.interactive=p2btn2.interactive=p2btn3.interactive=btnLeft.interactive=btnRight.interactive=true
+	btnLeft.touchstart=leftVideo
+	btnRight.touchstart=rightVideo
+	p2btn3.touchstart=goForm
+
+}
+var nowVideo=1
+var videoX=-640
+function leftVideo(){
+	nowVideo--
+	if(nowVideo==0){
+		nowVideo=6
+	}
+	videoX=640
+	changeVideo()
 }
 
-
-
-/////////=======
+function rightVideo(){
+	nowVideo++
+	if(nowVideo==7){
+		nowVideo=1
+	}
+	videoX=-640
+	changeVideo()
+}
+function changeVideo(){
+	videoA[nowVideo-1].play()
+	videoSpriteA[nowVideo-1].visible=true
+	for (var i = 0; i < 6; i++) {
+		if(i==nowVideo-1){
+			videoA[i].play()
+			videoSpriteA[i].visible=true
+			TweenMax.from(videoSpriteA[i],.5,{x:videoX})
+			page2.addChildAt(videoSpriteA[i],5)
+		}else{
+			videoA[i].pause()
+			//videoSpriteA[i].visible=false
+		}
+	};
+}
+function goForm(){
+	main.openForm()
+}
+/////////=======================================================================================================================
+/////////=======================================================================================================================
+/////////=======================================================================================================================
+/////////=======================================================================================================================
+/////////=======================================================================================================================
+/////////=======================================================================================================================
+/////////=======================================================================================================================
+/////////=======================================================================================================================
+/////////=======================================================================================================================
 
 
 /*! npm.im/iphone-inline-video 2.2.2 */
