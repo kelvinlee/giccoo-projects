@@ -143,7 +143,7 @@ function setPage2(){
 	dark.width=640
 	//dark.height=stageH
 	page2.addChild(dark)
-	dark.blendMode=_MULTIPLY
+	//dark.blendMode=_MULTIPLY
 
 	p2top=new Sprite(getTe(_CDN+"img/p2top.png"))
 	p2btn1=new Sprite(getTe(_CDN+"img/p2btn1.png"))
@@ -403,7 +403,7 @@ function goPage4(){
 
 	p4btn1=new Sprite(getTe(_CDN+"img/p4btn1.png"))
 	p4btn1.y=stageH/2+256
-	TweenMax.from(p4btn1,.5,{y:"+=50",alpha:0})
+	TweenMax.from(p4btn1,.5,{y:"+=50",alpha:0,delay:5})
 	page4.addChild(p4btn1)
 	p4btn1.interactive=true
 	p4btn1.touchstart=goPage5
@@ -414,6 +414,8 @@ function goPage4(){
 }
 
 function goPage5(){
+	pStage.removeChild(page2)
+
 	stopAllAudio()
 	p4btn1.interactive=false
 	p4btn1.visible=false
@@ -423,6 +425,8 @@ function goPage5(){
 	p4down.visible=true
 	__url="http://m.giccoo.com/Landrover24/?video="+nowVideo+"&music="+nowMusic
 	buildQR(__url,QRDone)
+
+	
 }
 
 function removeP3(){

@@ -65,6 +65,9 @@ var _NORMAL=PIXI.BLEND_MODES.NORMAL,
 var pStage,pApp,bg
 var stageH
 var theThis
+
+
+var renderer
 var buildUGC = function () {
 	console.log("app",this,this.opts.w,this.opts.h)
 	// var test = new Sprite(getTe(_CDN+"img/test.png"));
@@ -77,6 +80,10 @@ var buildUGC = function () {
 	pApp = this.app
 	stageH=this.opts.h
 	setup()
+	renderer=new PIXI.Application({width:640,height:stageH,transparent: true,preserveDrawingBuffer: true})//=====
+  //renderer.forceCanvas=true
+  //renderer.clearBeforeRender=false
+  //document.body.appendChild(renderer.view);
 }
 
 
@@ -93,6 +100,8 @@ function setup(){
 	if(main.wy==false){
 		//main.openInApp()
 	}
+
+
 
 	console.log(pStage.parent)
 	//setPage0()
@@ -127,8 +136,10 @@ function QRDone(){
 		qrSprite.y = stageH-110
 		pApp.renderer.render(pStage)
 		console.log("QRDone!!!")
+		renderer.stage.addChild(bgA[nowVideo-1],topbA[nowMusic-1],downA[nowMusic-1],p4down,qrSprite)
+		
+		main.sharePost(renderer.view.toDataURL())
 		main.openForm()
-		main.sharePost()
 	})
 	
 	
