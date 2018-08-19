@@ -280,22 +280,26 @@ function setPage4(){
 	page4=new Container()
 	pStage.addChild(page4)
 	page4.visible=false
-	for (var i = 1; i <= 6; i++) {
-		var _top=new Sprite(getTe(_CDN+"img/top"+i+".png"))
-		var _topb=new Sprite(getTe(_CDN+"img/top"+i+"b.png"))
-		var _down=new Sprite(getTe(_CDN+"img/down"+i+".png"))
+	var i
+	for (i = 1; i <= 6; i++) {
 		var _bg=new Sprite(getTe(_CDN+"img/bg"+i+".jpg"))
-		page4.addChild(_bg,_top,_topb,_down)
-		_down.y=stageH-364
-		topA.push(_top)
-		topbA.push(_topb)
-		downA.push(_down)
+		page4.addChild(_bg)
 		bgA.push(_bg)
 
 		_bg.pivot.y=619
 		_bg.y=stageH/2
 
 		_bg.visible=_top.visible=_topb.visible=_down.visible=false
+	};
+	for (i = 1; i <= 6; i++) {
+		var _top=new Sprite(getTe(_CDN+"img/top"+i+".png"))
+		var _topb=new Sprite(getTe(_CDN+"img/top"+i+"b.png"))
+		var _down=new Sprite(getTe(_CDN+"img/down"+i+".png"))
+		page4.addChild(_top,_topb,_down)
+		_down.y=stageH-364
+		topA.push(_top)
+		topbA.push(_topb)
+		downA.push(_down)
 	};
 	p4down=new Sprite(getTe(_CDN+"img/down.png"))
 	p4down.y=stageH-373
