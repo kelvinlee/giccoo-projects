@@ -71,7 +71,9 @@ function hideRule(){
 }
 var startY=0
 function willGoPage2(_e){
+
 	console.log("视频该播放了")
+	video.play()
 	startY=_e.data.global.y
 	p1bg.touchend=ifGoPage2
 }
@@ -82,17 +84,18 @@ function ifGoPage2(_e){
 }
 function goPage2(){
 	p1bg.interactive=false
-	TweenMax.to(page1,1,{y:page1.y-stageH,alpha:0})
+	TweenMax.to(page1,.5,{y:page1.y-stageH,alpha:0})
 }
 
 var page2
 var videoA=[]
+var video
 function setPage2(){
 	page2=new Container()
 	pStage.addChild(page2)
 
 	for (var i = 0; i < 1; i++) {
-		var video = document.createElement("video");
+		video = document.createElement("video");
 		video.preload = "auto";
 		video.loop = true;              // enable looping
 		video.src = "http://image.giccoo.com/projects/Landover24/video/1.mp4";
