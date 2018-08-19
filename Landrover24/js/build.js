@@ -1,7 +1,18 @@
 var _CDN = "./"
 var imageList = [
 	_CDN+"img/btn-submit.png",
-	_CDN+"img/btn-giveup.png"
+	_CDN+"img/btn-giveup.png",
+	_CDN+"img/bg.jpg",
+	_CDN+"img/p1t1.png",
+	_CDN+"img/p1t2.png",
+	_CDN+"img/p1t3.png",
+	_CDN+"img/p1t4.png",
+	_CDN+"img/p1t5.png",
+	_CDN+"img/p1t6.png",
+	_CDN+"img/p1t7.png",
+	_CDN+"img/p1t8.png",
+	_CDN+"img/p1t9.png",
+	_CDN+"img/rule.jpg",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -23,12 +34,26 @@ var buildUGC = function () {
 	stageH=this.opts.h
 	setup()
 }
-var __url="http://baidu.com"
+
 
 function setup(){
-	buildQR(__url,QRDone)
+	//buildQR(__url,QRDone)
+	if($_GET["video"]){
+		console.log("有参数")
+	}else{
+		console.log("没有参数")
+	}
+	console.log("是否网易云音乐",main.wy)
+	if(main.wy==false){
+		main.openInApp()
+	}
+	
+	setPage1()
 }
 
+
+//============二维码
+var __url="http://m.giccoo.com/Landrover24/"
 var myQR
 function buildQR(_url,_callback){
 	myQR= new QRCode("myDiv",{text:_url,width:320,height:320,colorDark:"#f23456"})
