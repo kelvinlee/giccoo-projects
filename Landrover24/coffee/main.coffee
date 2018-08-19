@@ -206,8 +206,8 @@ init = ->
 			imageUpdate: false
 			allowPopShow: false
 			count: 0
-			videoIndex: 1
-			videoIndexOld: 1
+			videoIndex: 0
+			videoIndexOld: 0
 			lr: true
 			form:
 				username: {id:"username", type: "input", label: "姓名", placeholder: "请填写姓名",value: ""}
