@@ -6,7 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>发现中国24节气 秋分之旅</title>
     <meta name="author" content="m.giccoo.com">
+    <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
+    <script src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js"></script>
+    <script>
+      var vConsole = new VConsole();
+      console.log('VConsole open');
+      
+    </script>
   </head>
   <body>
     <div id="myDiv"></div>
@@ -27,7 +34,27 @@
       </transition>
       <transition name="page-fade">
         <div v-show="pageIndex == 1" class="page page-2">
-          <div class="content">         
+          <div class="content">
+            <div class="videos">
+              <div :class="{old: videoIndexOld == 1,on: videoIndex == 1,fadeInLeft: videoIndex == 1 &amp;&amp; lr,fadeInRight: videoIndex == 1 &amp;&amp; !lr}" class="video animated item-1">
+                <video id="video-1" loop="true" x5-video-player-type="h5" x-webkit-airplay="true" airplay="allow" playsinline="" webkit-playsinline="" src="//image.giccoo.com/projects/Landrover24/video/build-1.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
+              </div>
+              <div :class="{old: videoIndexOld == 2,on: videoIndex == 2,fadeInLeft: videoIndex == 2 &amp;&amp; lr,fadeInRight: videoIndex == 2 &amp;&amp; !lr}" class="video animated item-2">
+                <video id="video-2" loop="true" x5-video-player-type="h5" x-webkit-airplay="true" airplay="allow" playsinline="" webkit-playsinline="" src="//image.giccoo.com/projects/Landrover24/video/build-2.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
+              </div>
+              <div :class="{old: videoIndexOld == 3,on: videoIndex == 3,fadeInLeft: videoIndex == 3 &amp;&amp; lr,fadeInRight: videoIndex == 3 &amp;&amp; !lr}" class="video animated item-3">
+                <video id="video-3" loop="true" x5-video-player-type="h5" x-webkit-airplay="true" airplay="allow" playsinline="" webkit-playsinline="" src="//image.giccoo.com/projects/Landrover24/video/build-3.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
+              </div>
+              <div :class="{old: videoIndexOld == 4,on: videoIndex == 4,fadeInLeft: videoIndex == 4 &amp;&amp; lr,fadeInRight: videoIndex == 4 &amp;&amp; !lr}" class="video animated item-4">
+                <video id="video-4" loop="true" x5-video-player-type="h5" x-webkit-airplay="true" airplay="allow" playsinline="" webkit-playsinline="" src="//image.giccoo.com/projects/Landrover24/video/build-4.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
+              </div>
+              <div :class="{old: videoIndexOld == 5,on: videoIndex == 5,fadeInLeft: videoIndex == 5 &amp;&amp; lr,fadeInRight: videoIndex == 5 &amp;&amp; !lr}" class="video animated item-5">
+                <video id="video-5" loop="true" x5-video-player-type="h5" x-webkit-airplay="true" airplay="allow" playsinline="" webkit-playsinline="" src="//image.giccoo.com/projects/Landrover24/video/build-5.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
+              </div>
+              <div :class="{old: videoIndexOld == 6,on: videoIndex == 6,fadeInLeft: videoIndex == 6 &amp;&amp; lr,fadeInRight: videoIndex == 6 &amp;&amp; !lr}" class="video animated item-6">
+                <video id="video-6" loop="true" x5-video-player-type="h5" x-webkit-airplay="true" airplay="allow" playsinline="" webkit-playsinline="" src="//image.giccoo.com/projects/Landrover24/video/build-6.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
+              </div>
+            </div>
             <div id="ugc"></div>
           </div>
         </div>

@@ -5,7 +5,6 @@
 # @codekit-prepend "../../libs/vue/vue-player"
 # @codekit-prepend "../../libs/vue/vue-register"
 # @codekit-prepend "../../libs/coffee/pixi-base"
-# @codekit-prepend "./dealer"
 # @codekit-prepend "./UGC"
 
 
@@ -171,7 +170,7 @@ init = ->
 	TrueH = 1138 if TrueH >= 1138
 	smaller = TrueH*2 < 1200
 	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
-	console.log TrueW,TrueH,_citys
+	console.log TrueW,TrueH
 
 	main = new Vue
 		el: "#main"
@@ -207,6 +206,9 @@ init = ->
 			imageUpdate: false
 			allowPopShow: false
 			count: 0
+			videoIndex: 1
+			videoIndexOld: 1
+			lr: true
 			form:
 				username: {id:"username", type: "input", label: "姓名", placeholder: "请填写姓名",value: ""}
 				mobile: {id:"mobile", type: "input", label: "电话", placeholder: "请填写电话",value: ""}
@@ -237,6 +239,12 @@ init = ->
 			regSubmited: false
 			giveUp: false
 			gameEnd: false
+		watch:
+			videoIndex: (n,o)->
+				@.videoIndexOld = o
+				stopAllVideo()
+				document.getElementById("video-#{n}").play()
+
 		methods:
 			endPage: ->
 				main.registerShow = true
@@ -351,3 +359,6 @@ init = ->
 			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH})
 
 
+stopAllVideo = ->
+	for i in [1..6]
+		document.getElementById("video-#{i}").pause()
