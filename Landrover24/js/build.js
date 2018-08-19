@@ -80,10 +80,9 @@ var buildUGC = function () {
 	pApp = this.app
 	stageH=this.opts.h
 	setup()
-	renderer=new PIXI.Application({width:640,height:stageH,transparent: true,preserveDrawingBuffer: true})//=====
-  //renderer.forceCanvas=true
-  //renderer.clearBeforeRender=false
-  //document.body.appendChild(renderer.view);
+	renderer=new PIXI.Application({width:640,height:stageH,transparent: false,preserveDrawingBuffer: true})//=====
+  document.body.appendChild(renderer.view);
+  renderer.view.style="z-index:1000;position:absolute;"
 }
 
 
@@ -127,6 +126,7 @@ function buildQR(_url,_callback){
 }
 
 var qrSprite
+var base64pic
 function QRDone(){
 	qrSprite=new PIXI.Sprite.fromImage(myQR._el.lastChild.src)
 	qrSprite.texture.baseTexture.on('loaded',function(){
@@ -139,6 +139,7 @@ function QRDone(){
 		renderer.stage.addChild(bgA[nowVideo-1],topbA[nowMusic-1],downA[nowMusic-1],p4down,qrSprite)
 		
 		main.sharePost(renderer.view.toDataURL())
+		//base64pic=new Sprite
 		main.openForm()
 	})
 	
