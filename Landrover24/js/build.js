@@ -50,6 +50,12 @@ var imageList = [
 	_CDN+"img/down5.png",
 	_CDN+"img/down6.png",
 	_CDN+"img/down.png",
+	_CDN+"img/bg1.jpg",
+	_CDN+"img/bg2.jpg",
+	_CDN+"img/bg3.jpg",
+	_CDN+"img/bg4.jpg",
+	_CDN+"img/bg5.jpg",
+	_CDN+"img/bg6.jpg",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -120,6 +126,7 @@ function QRDone(){
 		qrSprite.y = stageH-110
 		pApp.renderer.render(pStage)
 		console.log("QRDone!!!")
+		main.openForm()
 	})
 	
 	

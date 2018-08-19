@@ -274,6 +274,7 @@ var p4btn1,page4
 var topA=[]
 var topbA=[]
 var downA=[]
+var bgA=[]
 var p4down
 function setPage4(){
 	page4=new Container()
@@ -283,12 +284,18 @@ function setPage4(){
 		var _top=new Sprite(getTe(_CDN+"img/top"+i+".png"))
 		var _topb=new Sprite(getTe(_CDN+"img/top"+i+"b.png"))
 		var _down=new Sprite(getTe(_CDN+"img/down"+i+".png"))
-		page4.addChild(_top,_topb,_down)
+		var _bg=new Sprite(getTe(_CDN+"img/bg"+i+".jpg"))
+		page4.addChild(_bg,_top,_topb,_down)
 		_down.y=stageH-364
 		topA.push(_top)
 		topbA.push(_topb)
 		downA.push(_down)
-		_top.visible=_topb.visible=_down.visible=false
+		bgA.push(_bg)
+
+		_bg.pivot.y=619
+		_bg.y=stageH/2
+
+		_bg.visible=_top.visible=_topb.visible=_down.visible=false
 	};
 	p4down=new Sprite(getTe(_CDN+"img/down.png"))
 	p4down.y=stageH-373
@@ -323,6 +330,7 @@ function goPage5(){
 	p4btn1.visible=false
 	topbA[nowMusic-1].visible=true
 	downA[nowMusic-1].visible=true
+	bgA[nowVideo-1].visible=true
 	p4down.visible=true
 	__url="http://m.giccoo.com/Landrover24/?video="+nowVideo+"&music="+nowMusic
 	buildQR(__url,QRDone)
