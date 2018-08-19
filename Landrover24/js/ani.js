@@ -128,7 +128,7 @@ function setPage2(){
 // 	};
 	dark=new Sprite(getTe(_CDN+"img/dark.png"))
 	dark.width=640
-	dark.height=stageH
+	//dark.height=stageH
 	page2.addChild(dark)
 	dark.blendMode=_MULTIPLY
 
