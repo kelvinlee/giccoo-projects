@@ -75,6 +75,7 @@ function willGoPage2(_e){
 
 	console.log("视频该播放了")
 	videoA[3].play()
+	videoSpriteA[3].visible=true
 	startY=_e.data.global.y
 	p1bg.touchend=ifGoPage2
 }
@@ -126,7 +127,7 @@ function setPage2(){
 
 		video.appendChild(src);
 		video.loop=true
-
+		video.muted=true
 
 
 		console.log(video);
@@ -148,7 +149,10 @@ function setPage2(){
 		// });
 
 		var videoSprite = new PIXI.Sprite(texture);
-		videoSprite.x=(i-1)*100
+		videoSpriteA.push(videoSprite)
+		videoSprite.width=640
+		videoSprite.height=stageH
+		videoSprite.visible=false
 		// videoSprite.width = renderer.width;
 		// videoSprite.height = renderer.height;
 		page2.addChild(videoSprite);
