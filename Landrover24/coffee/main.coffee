@@ -304,7 +304,7 @@ init = ->
 					@.registerShow = true
 			giveupAward: ->
 				@.registerShow = false
-				@.giveup = true
+				@.giveUp = true
 				@.share()
 			sharePost: (base64)->
 				@.gameEnd = true
