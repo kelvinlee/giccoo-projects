@@ -37,6 +37,7 @@ var buildUGC = function () {
 }
 
 
+
 function setup(){
 	//buildQR(__url,QRDone)
 	if($_GET["video"]){
