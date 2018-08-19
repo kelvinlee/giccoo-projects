@@ -242,10 +242,16 @@ init = ->
 		watch:
 			videoIndex: (n,o)->
 				@.videoIndexOld = o
-				stopAllVideo()
+				# stopAllVideo()
+				document.getElementById("video-#{n}").load()
 				document.getElementById("video-#{n}").play()
 
 		methods:
+			playVideo: ->
+				@.videoIndex = 1
+				document.getElementById("video-1").load()
+				document.getElementById("video-1").play()
+				console.log document.getElementById("video-1")
 			endPage: ->
 				main.registerShow = true
 				# showResult()

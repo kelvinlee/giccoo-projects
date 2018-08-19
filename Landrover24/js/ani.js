@@ -113,10 +113,13 @@ function setPage2(){
 		video.loop=true
 		video.muted=true
 		videoA.push(video)
+		video.addEventListener("playing",function(){
+			console.log("playing")
+		})
 // create a video texture from a path
 		var texture = PIXI.Texture.fromVideo(video);
 		texture.baseTexture.autoPlay = false;
-		enableInlineVideo(texture.baseTexture.source, false);
+		// enableInlineVideo(texture.baseTexture.source, false);
 
 		var videoSprite = new PIXI.Sprite(texture);
 		videoSpriteA.push(videoSprite)
