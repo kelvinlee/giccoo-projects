@@ -73,7 +73,7 @@ var startY=0
 function willGoPage2(_e){
 
 	console.log("视频该播放了")
-	video.play()
+	videoA[1].play()
 	startY=_e.data.global.y
 	p1bg.touchend=ifGoPage2
 }
@@ -89,24 +89,30 @@ function goPage2(){
 
 var page2
 var videoA=[]
-var video
+var videoSpriteA=[]
 function setPage2(){
 	page2=new Container()
 	pStage.addChild(page2)
 
-	for (var i = 0; i < 1; i++) {
-		video = document.createElement("video");
-		video.preload = "auto";
-		video.loop = true;              // enable looping
-		video.autoplay=false
-		video.setAttribute('playsinline','');
-		video.setAttribute('webkit-playsinline','');
-		video.src = "http://image.giccoo.com/projects/Landover24/video/1.mp4";
-		var _v=PIXI.Texture.fromVideo(video)
+	for (var i = 1; i <= 6; i++) {
+		//var str="video"+i
+		//console.log(str)
+		var _video = document.createElement("video");
+		_video.preload = "auto";
+		_video.loop = true;              // enable looping
+		_video.autoplay=false
+		_video.setAttribute('playsinline','');
+		_video.setAttribute('webkit-playsinline','');//makeVideoPlayableInline(texture.baseTexture.source, false);
+		_video.src = "http://image.giccoo.com/projects/Landover24/video/"+i+".mp4";
+		videoA.push(_video)
+		
+		var _v=PIXI.Texture.fromVideo(_video)
 		var _videoSprite=new PIXI.Sprite(_v)
 		_v.baseTexture.autoPlay = false;
-		//makeVideoPlayableInline(texture.baseTexture.source, false);
+		
+		videoSpriteA.push(_videoSprite)
 		page2.addChild(_videoSprite)
+		_videoSprite.x=100*i
 		//_v.baseTexture.loop = "loop";
 		//_v.baseTexture.source.load();
 		//_v.baseTexture.source.play()

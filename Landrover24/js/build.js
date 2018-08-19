@@ -54,10 +54,11 @@ function setup(){
 	setPage1()
 	setPage2()
 	//pageLoop()
+	//pApp.ticker.add(pageLoop)
 }
 function pageLoop(){
   requestAnimationFrame(pageLoop)
-  this.app.render(pStage)
+  //this.app.render(pStage)
 }
 
 //============二维码
