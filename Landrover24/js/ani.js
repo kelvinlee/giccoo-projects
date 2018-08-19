@@ -98,9 +98,14 @@ function setPage2(){
 		video = document.createElement("video");
 		video.preload = "auto";
 		video.loop = true;              // enable looping
+		video.autoplay=false
+		video.setAttribute('playsinline','');
+		video.setAttribute('webkit-playsinline','');
 		video.src = "http://image.giccoo.com/projects/Landover24/video/1.mp4";
 		var _v=PIXI.Texture.fromVideo(video)
 		var _videoSprite=new PIXI.Sprite(_v)
+		_v.baseTexture.autoPlay = false;
+		//makeVideoPlayableInline(texture.baseTexture.source, false);
 		page2.addChild(_videoSprite)
 		//_v.baseTexture.loop = "loop";
 		//_v.baseTexture.source.load();
