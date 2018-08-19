@@ -363,8 +363,40 @@ init = ->
 			@.wy = CloudMusic.isInApp()
 			version = CloudMusic.getClientVersion().split(".")
 			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH})
-
+			listenAudio()
 
 stopAllVideo = ->
 	for i in [1..6]
 		document.getElementById("video-#{i}").pause()
+
+musicList = ['music-1','music-2','music-3','music-4','music-5','music-6']
+playAudio = (id)->
+	stopAllAudio()
+	audio = document.getElementById(id)
+	audio.load()
+	setTimeout =>
+		audio.play()
+	,250
+	# setTimeout =>
+	# 	discPlay()
+	# ,300
+listenAudio = ->
+	for item in musicList
+		audio = document.getElementById item
+		audio.addEventListener "play", ->
+			console.log "play"
+			discPlay()
+		,false
+		audio.addEventListener "pause", ->
+			console.log "pause"
+			discStop()
+		,false
+		audio.addEventListener "ended", ->
+			console.log "ended"
+			discStop()
+		,false
+
+stopAllAudio = ->
+	for item in musicList
+		audio = document.getElementById item
+		audio.pause()

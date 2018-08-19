@@ -6,6 +6,7 @@ var p1tXA=[320,320,320,320,320,320,320,320,113]
 var p1tYA=[-402,-363,-345,-328,-247,-121,328,370,440]
 var blackLayer,ruleLayer,rule
 var firstLoad = true
+var secondLoad = true
 
 function setPage1(){
 	page1=new Container()
@@ -183,6 +184,13 @@ function leftVideo(){
 		for(var i = 2;i<4;i++) {
 			videoA[i].load()
 		}
+	}else{
+		if (secondLoad) {
+			secondLoad = false
+			for(var i = 4;i<6;i++) {
+				videoA[i].load()
+			}
+		}
 	}
 	nowVideo--
 	if(nowVideo==0){
@@ -206,6 +214,13 @@ function rightVideo(){
 		firstLoad = false
 		for(var i = 2;i<4;i++) {
 			videoA[i].load()
+		}
+	}else{
+		if (secondLoad) {
+			secondLoad = false
+			for(var i = 4;i<6;i++) {
+				videoA[i].load()
+			}
 		}
 	}
 	nowVideo++
