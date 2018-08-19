@@ -306,9 +306,11 @@ init = ->
 				@.registerShow = false
 				@.giveup = true
 				@.share()
-			sharePost: ->
+			sharePost: (base64)->
+				@.gameEnd = true
 				ugc.app.renderer.render ugc.app.stage
-				@.ugc = ugc.app.view.toDataURL()
+				# @.ugc = ugc.app.view.toDataURL()
+				@.ugc = base64
 				
 			share: ->
 				console.log "run share"
