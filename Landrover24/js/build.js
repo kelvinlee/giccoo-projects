@@ -82,7 +82,7 @@ var buildUGC = function () {
 	setup()
 	renderer=new PIXI.Application({width:640,height:stageH,transparent: false,preserveDrawingBuffer: true})//=====
   document.body.appendChild(renderer.view);
-  renderer.view.style="z-index:1000;position:absolute;"
+  renderer.view.style="z-index:1000;position:absolute;display:none"
 }
 
 
@@ -137,7 +137,7 @@ function QRDone(){
 		pApp.renderer.render(pStage)
 		console.log("QRDone!!!")
 		renderer.stage.addChild(bgA[nowVideo-1],topbA[nowMusic-1],downA[nowMusic-1],p4down,qrSprite)
-		
+		renderer.renderer.render(renderer.stage)
 		main.sharePost(renderer.view.toDataURL())
 		//base64pic=new Sprite
 		main.openForm()
