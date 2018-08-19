@@ -54,7 +54,7 @@ function setPage1(){
 	p1tA[8].tap=showRule
 
 	p1bg.interactive=true
-	p1bg.touchstart=goPage2
+	p1bg.touchstart=willGoPage2
 }
 
 function showRule(){
@@ -70,6 +70,37 @@ function hideRule(){
 	TweenMax.set(blackLayer,{alpha:0})
 }
 var startY=0
-function goPage2(){
+function willGoPage2(_e){
 	console.log("视频该播放了")
+	startY=_e.data.global.y
+	p1bg.touchend=ifGoPage2
+}
+function ifGoPage2(_e){
+	if(startY-_e.data.global.y>90){
+		goPage2()
+	}
+}
+function goPage2(){
+	p1bg.interactive=false
+	TweenMax.to(page1,1,{y:page1.y-stageH,alpha:0})
+}
+
+var page2
+var videoA=[]
+function setPage2(){
+	page2=new Container()
+	pStage.addChild(page2)
+
+	for (var i = 0; i < 1; i++) {
+		var video = document.createElement("video");
+		video.preload = "auto";
+		video.loop = true;              // enable looping
+		video.src = "http://image.giccoo.com/projects/Landover24/video/1.mp4";
+		var _v=PIXI.Texture.fromVideo(video)
+		var _videoSprite=new PIXI.Sprite(_v)
+		page2.addChild(_videoSprite)
+		//_v.baseTexture.loop = "loop";
+		//_v.baseTexture.source.load();
+		//_v.baseTexture.source.play()
+	};
 }

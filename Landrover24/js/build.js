@@ -21,6 +21,7 @@ var _NORMAL=PIXI.BLEND_MODES.NORMAL,
 
 var pStage,pApp,bg
 var stageH
+var theThis
 var buildUGC = function () {
 	console.log("app",this,this.opts.w,this.opts.h)
 	// var test = new Sprite(getTe(_CDN+"img/test.png"));
@@ -28,7 +29,7 @@ var buildUGC = function () {
 	// var con = new Container();
 	// var ani = new AnimatedSprite();
 	//this.stage.addChild(test,gra,con);
-
+	theThis=this
 	pStage=this.stage
 	pApp = this.app
 	stageH=this.opts.h
@@ -45,12 +46,19 @@ function setup(){
 	}
 	console.log("是否网易云音乐",main.wy)
 	if(main.wy==false){
-		main.openInApp()
+		//main.openInApp()
 	}
+
+	console.log(pStage.parent)
 	
 	setPage1()
+	setPage2()
+	//pageLoop()
 }
-
+function pageLoop(){
+  requestAnimationFrame(pageLoop)
+  this.app.render(pStage)
+}
 
 //============二维码
 var __url="http://m.giccoo.com/Landrover24/"
