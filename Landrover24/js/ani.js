@@ -73,7 +73,7 @@ var startY=0
 function willGoPage2(_e){
 
 	console.log("视频该播放了")
-	videoA[1].play()
+	videoA[2].play()
 	startY=_e.data.global.y
 	p1bg.touchend=ifGoPage2
 }
