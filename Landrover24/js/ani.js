@@ -289,7 +289,7 @@ function setPage4(){
 		_bg.pivot.y=619
 		_bg.y=stageH/2
 
-		_bg.visible=_top.visible=_topb.visible=_down.visible=false
+		_bg.visible=false
 	};
 	for (i = 1; i <= 6; i++) {
 		var _top=new Sprite(getTe(_CDN+"img/top"+i+".png"))
@@ -300,6 +300,7 @@ function setPage4(){
 		topA.push(_top)
 		topbA.push(_topb)
 		downA.push(_down)
+		_top.visible=_topb.visible=_down.visible=false
 	};
 	p4down=new Sprite(getTe(_CDN+"img/down.png"))
 	p4down.y=stageH-373
