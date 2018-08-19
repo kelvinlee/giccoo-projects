@@ -57,7 +57,10 @@ function setPage1(){
 	p1tA[8].interactive=true
 	p1tA[8].tap=showRule
 
-	p1bg.interactive=true
+	setTimeout(function(){
+		p1bg.interactive=true
+	},1500)
+	
 	p1bg.touchstart=willGoPage2
 }
 
@@ -326,6 +329,7 @@ function goPage3(){
 	};
 	p3btn1.interactive=true
 	p3btn1.touchstart=goPage4
+	playAudio("music-1")
 }
 var nowMusic=1
 function changeSong(_e){
@@ -410,6 +414,7 @@ function goPage4(){
 }
 
 function goPage5(){
+	stopAllAudio()
 	p4btn1.interactive=false
 	p4btn1.visible=false
 	topbA[nowMusic-1].visible=true
