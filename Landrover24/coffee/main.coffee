@@ -297,6 +297,7 @@ init = ->
 				@.ugc = ugc.app.view.toDataURL()
 				
 			share: ->
+				console.log "run share"
 				image = @.ugc
 				folder = "Landrover24"
 				data = {

@@ -546,6 +546,10 @@ video,canvas,svg
 	+w
 	+h
 	+bc(rgba(0,0,0,0.7))
+	.close
+		+posa
+		+tr(2%,2%)
+		+iw(50,610,100%)
 	.register
 		+w(80%)
 		+posa
@@ -555,10 +559,8 @@ video,canvas,svg
 		// border: 4px solid #757575
 		border-radius: 5px
 		+p(5% 0)
-		.close
-			+posa
-			+tr(2%,2%)
-			+iw(50,610,100%)
+		+b($cdn+"img/pop-bg.jpg",no-repeat,top,center,cover)
+		
 		.title
 			+w(100%)
 			+m
@@ -568,28 +570,33 @@ video,canvas,svg
 		.btn-item
 			+w(90%)
 			+m(0.4rem auto)
-	.book
-		+iw(578,750,100%)
+	.lottery
+		+w(80%)
 		+posa
 		+tl(50%,50%)
 		+transform(translate3d(-50%,-50%,0))
-	.text
-		+posa
-		+tl
-	.btns
-		+posa
-		+bl(30%)
-		z-index: 101
-		.share
-			+posa
-			+tl
-			+w(50%)
-			+h
-		.web
-			+posa
-			+tr
-			+w(50%)
-			+h
+		+bc(#fff)
+		// border: 4px solid #757575
+		border-radius: 5px
+		+p(15% 0)
+		+b($cdn+"img/pop-bg-lottery.jpg",no-repeat,center,center,cover)
+		&.faild
+			.title,.btn
+				margin: 10% auto
+		&.success
+			.title
+				margin: 5% auto
+			.code
+				+font-size(1.4rem)
+				color: #696969
+				+text-center
+				letter-spacing: 0.2em
+			.btn
+				margin: 2% auto
+
+
+
+
 #myDiv
 	+hide
 	// opacity: 0.3

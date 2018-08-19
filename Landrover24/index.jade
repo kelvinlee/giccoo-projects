@@ -89,13 +89,26 @@ block content
     transition(name="page-fade")
       .pop(v-show="lotteryShow")
         .content(v-show="lotteryInfo.info")
-          .lottery.success {{lotteryInfo.info}}
+          .lottery.success
+            .close(@click="lotteryShow = false")
+              img(src="#{url}/img/icon-close.png")
+            .title
+              img(src="#{url}/img/pop-lottery-success.png")
+            p.code {{lotteryInfo.info}}
+            .btn
+              img(src="#{url}/img/btn-music-dark.png")
+            .btn
+              img(src="#{url}/img/btn-shot.png")
 
-        .content(v-show="lotteryInfo.info")
-          .lottery.faild 没中奖
+        .content(v-show="!lotteryInfo.info")
+          .lottery.faild
+            .close(@click="lotteryShow = false")
+              img(src="#{url}/img/icon-close.png")
+            .title
+              img(src="#{url}/img/pop-lottery-faild.png")
+            .btn
+              img(src="#{url}/img/btn-music.png")
 
-    
-          
     
 
 block js
