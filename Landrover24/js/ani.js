@@ -148,10 +148,8 @@ function setPage2(){
 	btnLeft.alpha=btnRight.alpha=.6
 
 	page2.addChild(p2top,p2btn1,p2btn2,p2btn3,btnLeft,btnRight)
-
-
-
 }
+
 var p2A
 function showPage2(){
 	p2A=[p2top,btnLeft,btnRight,p2btn1,p2btn2,p2btn3]
@@ -162,6 +160,8 @@ function showPage2(){
 	btnLeft.touchstart=leftVideo
 	btnRight.touchstart=rightVideo
 	p2btn3.touchstart=goForm
+	p2btn2.touchstart=goList
+	p2btn1.touchstart=goPage3
 
 }
 var nowVideo=1
@@ -200,6 +200,137 @@ function changeVideo(){
 }
 function goForm(){
 	main.openForm()
+}
+function goList(){
+	console.log("去歌单")
+}
+//==========================================P3
+var p3top,p3btn1,page3,p3target,p3playing
+var p3songA=[]
+function setPage3(){
+	page3=new Container()
+	pStage.addChild(page3)
+	p3top=new Sprite(getTe(_CDN+"img/p3top.png"))
+	p3btn1=new Sprite(getTe(_CDN+"img/p3btn1.png"))
+
+
+	p3btn1.y=stageH/2+256
+	page3.addChild(p3top,p3btn1)
+	page3.visible=false
+
+	p3target=new Sprite(getTe(_CDN+"img/p3target.png"))
+	p3playing=new Sprite(getTe(_CDN+"img/p3playing.png"))
+
+	p3target.pivot.set(320,27.5)
+	p3target.y=stageH/2-324
+
+	p3playing.pivot.set(320,27.5)
+	p3playing.y=stageH/2-324
+
+	p3target.x=p3playing.x=320
+
+	page3.addChild(p3target,p3playing)
+
+	for (var i = 0; i < 6; i++) {
+		var p3song=new Sprite(getTe(_CDN+"img/p3s"+i+".png"))
+		p3songA.push(p3song)
+		page3.addChild(p3song)
+		p3song.pivot.set(320,12.5)
+		p3song.position.set(320,stageH/2-324+i*60)
+	};
+}
+
+function goPage3(){
+	console.log("下一步")
+	page3.visible=true
+	TweenMax.to(p2top,.5,{alpha:0,y:"-=50"})
+	TweenMax.to(p2btn1,.5,{alpha:0,y:"-=50"})
+	p2btn1.interactive=false
+	TweenMax.from(p3top,.5,{alpha:0,y:"+=50"})
+	TweenMax.from(p3btn1,.5,{alpha:0,y:"+=50"})
+	for (var i = 0; i < 6; i++) {
+		TweenMax.from(p3songA[i],1,{alpha:0,y:"+=100",delay:.1*i,ease:Back.easeOut})
+		p3songA[i].interactive=true
+		p3songA[i].touchstart=changeSong
+	};
+	p3btn1.interactive=true
+	p3btn1.touchstart=goPage4
+}
+var nowMusic=1
+function changeSong(_e){
+	for (var i = 0; i < 6; i++) {
+		if(_e.target==p3songA[i]){
+			nowMusic=i+1
+			console.log("播放第",i+1,"首")
+			TweenMax.to(p3target,.2,{y:_e.target.y,delay:.02})
+			TweenMax.to(p3playing,.2,{y:_e.target.y})
+		}
+	};
+}
+
+
+//==================P4
+var p4btn1,page4
+var topA=[]
+var topbA=[]
+var downA=[]
+var p4down
+function setPage4(){
+	page4=new Container()
+	pStage.addChild(page4)
+	page4.visible=false
+	for (var i = 1; i <= 6; i++) {
+		var _top=new Sprite(getTe(_CDN+"img/top"+i+".png"))
+		var _topb=new Sprite(getTe(_CDN+"img/top"+i+"b.png"))
+		var _down=new Sprite(getTe(_CDN+"img/down"+i+".png"))
+		page4.addChild(_top,_topb,_down)
+		_down.y=stageH-364
+		topA.push(_top)
+		topbA.push(_topb)
+		downA.push(_down)
+		_top.visible=_topb.visible=_down.visible=false
+	};
+	p4down=new Sprite(getTe(_CDN+"img/down.png"))
+	p4down.y=stageH-373
+	p4down.visible=false
+	page4.addChild(p4down)
+}
+
+function goPage4(){
+	console.log("page4",main.regSubmited)
+	page4.visible=true
+	p3btn1.interactive=false
+	TweenMax.to(page3,.5,{y:"-=50",alpha:0,onComplete:removeP3})
+	TweenMax.to(btnRight,.5,{x:"+=200"})
+	TweenMax.to(btnLeft,.5,{x:"-=200"})
+	TweenMax.to(p2btn2,.5,{y:"+=1000"})
+	TweenMax.to(p2btn3,.5,{y:"+=1000"})
+
+	p4btn1=new Sprite(getTe(_CDN+"img/p4btn1.png"))
+	p4btn1.y=stageH/2+256
+	TweenMax.from(p4btn1,.5,{y:"+=50",alpha:0})
+	page4.addChild(p4btn1)
+	p4btn1.interactive=true
+	p4btn1.touchstart=goPage5
+
+	topA[nowMusic-1].visible=true
+	//topbA[nowMusic-1].visible=true
+	//downA[nowMusic-1].visible=true
+}
+
+function goPage5(){
+	p4btn1.interactive=false
+	p4btn1.visible=false
+	topbA[nowMusic-1].visible=true
+	downA[nowMusic-1].visible=true
+	p4down.visible=true
+	__url="http://m.giccoo.com/Landrover24/?video="+nowVideo+"&music="+nowMusic
+	buildQR(__url,QRDone)
+}
+
+function removeP3(){
+	pStage.removeChild(page3)
+	page2.removeChild(btnRight,btnLeft,p2btn2,p2btn3)
 }
 /////////=======================================================================================================================
 /////////=======================================================================================================================

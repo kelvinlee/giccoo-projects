@@ -16,11 +16,40 @@ var imageList = [
 	_CDN+"img/p2top.png",
 	_CDN+"img/p3top.png",
 	_CDN+"img/p2btn1.png",
+	_CDN+"img/p3btn1.png",
+	_CDN+"img/p4btn1.png",
 	_CDN+"img/p2btn2.png",
 	_CDN+"img/p2btn3.png",
 	_CDN+"img/dark.png",
 	_CDN+"img/arrow.png",
 	_CDN+"img/arrow2.png",
+	_CDN+"img/p3s0.png",
+	_CDN+"img/p3s1.png",
+	_CDN+"img/p3s2.png",
+	_CDN+"img/p3s3.png",
+	_CDN+"img/p3s4.png",
+	_CDN+"img/p3s5.png",
+	_CDN+"img/p3target.png",
+	_CDN+"img/p3playing.png",
+	_CDN+"img/top1.png",
+	_CDN+"img/top2.png",
+	_CDN+"img/top3.png",
+	_CDN+"img/top4.png",
+	_CDN+"img/top5.png",
+	_CDN+"img/top6.png",
+	_CDN+"img/top1b.png",
+	_CDN+"img/top2b.png",
+	_CDN+"img/top3b.png",
+	_CDN+"img/top4b.png",
+	_CDN+"img/top5b.png",
+	_CDN+"img/top6b.png",
+	_CDN+"img/down1.png",
+	_CDN+"img/down2.png",
+	_CDN+"img/down3.png",
+	_CDN+"img/down4.png",
+	_CDN+"img/down5.png",
+	_CDN+"img/down6.png",
+	_CDN+"img/down.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -62,6 +91,8 @@ function setup(){
 	
 	setPage1()
 	setPage2()
+	setPage3()
+	setPage4()
 	pageLoop()
 	//pApp.ticker.add(pageLoop)
 }
@@ -74,7 +105,7 @@ function pageLoop(){
 var __url="http://m.giccoo.com/Landrover24/"
 var myQR
 function buildQR(_url,_callback){
-	myQR= new QRCode("myDiv",{text:_url,width:320,height:320,colorDark:"#f23456"})
+	myQR= new QRCode("myDiv",{text:_url,width:80,height:80,colorDark:"#000000"})
 	myQR._el.lastChild.onload=_callback
 	console.log("lastChild:",myQR._el.lastChild)
 }
@@ -85,8 +116,8 @@ function QRDone(){
 	qrSprite.texture.baseTexture.on('loaded',function(){
 		pStage.addChild(qrSprite)
 		qrSprite.visible = true
-		qrSprite.x = 40
-		qrSprite.y = 40
+		qrSprite.x = 50
+		qrSprite.y = stageH-110
 		pApp.renderer.render(pStage)
 		console.log("QRDone!!!")
 	})
