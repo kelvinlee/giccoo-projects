@@ -332,13 +332,21 @@ function changeSong(_e){
 	for (var i = 0; i < 6; i++) {
 		if(_e.target==p3songA[i]){
 			nowMusic=i+1
-			console.log("播放第",i+1,"首")
+			var j=i+1
+			var str="music-"+j
+			console.log("播放第",i+1,"首",str)
+			playAudio(str)
 			TweenMax.to(p3target,.2,{y:_e.target.y,delay:.02})
 			TweenMax.to(p3playing,.2,{y:_e.target.y})
 		}
 	};
 }
+function discPlay(){
 
+}
+function discStop(){
+	
+}
 
 //==================P4
 var p4btn1,page4
