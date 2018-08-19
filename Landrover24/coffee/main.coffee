@@ -210,7 +210,7 @@ init = ->
 			form:
 				username: {id:"username", type: "input", label: "姓名", placeholder: "请填写姓名",value: ""}
 				mobile: {id:"mobile", type: "input", label: "电话", placeholder: "请填写电话",value: ""}
-				address: {id:" address", type: "input", label: "地址", placeholder: "请填写地址",value: ""}
+				address: {id:" address", type: "input", label: "城市", placeholder: "请填写城市",value: ""}
 			mask: 1
 			text: ""
 			nickname: ""
