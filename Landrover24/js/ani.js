@@ -76,7 +76,11 @@ function willGoPage2(_e){
 	console.log("视频该播放了")
 	// main.videoIndex = 4
 	// main.lr = true
-	videoA[0].play()
+	videoA[0].load()
+	// console.log(videoA[0].load())
+	setTimeout(function(){
+		videoA[0].play()
+	},400)
 	videoSpriteA[0].visible=true
 	startY=_e.data.global.y
 	p1bg.touchend=ifGoPage2
@@ -113,9 +117,9 @@ function setPage2(){
 		video.loop=true
 		video.muted=true
 		videoA.push(video)
-		video.addEventListener("playing",function(){
-			console.log("playing")
-		})
+		// video.addEventListener("playing",function(){
+		// 	console.log("playing")
+		// })
 // create a video texture from a path
 		var texture = PIXI.Texture.fromVideo(video);
 		texture.baseTexture.autoPlay = false;
@@ -179,7 +183,10 @@ function leftVideo(){
 	videoX=640
 	//main.lr = false
 	//main.videoIndex = nowVideo
-	changeVideo()
+	videoA[nowVideo-1].load()
+	setTimeout(function(){
+		changeVideo()
+	},400)
 }
 
 function rightVideo(){
@@ -190,12 +197,17 @@ function rightVideo(){
 	videoX=-640
 	//main.lr = true
 	//main.videoIndex = nowVideo
-	changeVideo()
+	videoA[nowVideo-1].load()
+	setTimeout(function(){
+		changeVideo()
+	},400)
 }
 function changeVideo(){
-	videoA[nowVideo-1].play()
-	videoSpriteA[nowVideo-1].visible=true
+	console.log("play:",nowVideo)
+	// videoA[nowVideo-1].play()
+	// videoSpriteA[nowVideo-1].visible=true
 	for (var i = 0; i < 6; i++) {
+		console.log(i)
 		if(i==nowVideo-1){
 			videoA[i].play()
 			videoSpriteA[i].visible=true
