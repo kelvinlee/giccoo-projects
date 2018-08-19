@@ -117,10 +117,8 @@ function setPage2(){
 		video.loop=true
 		video.muted=true
 		videoA.push(video)
-		// video.addEventListener("playing",function(){
-		// 	console.log("playing")
-		// })
-// create a video texture from a path
+		video.addEventListener("canplay",canplayEvt)
+		// create a video texture from a path
 		var texture = PIXI.Texture.fromVideo(video);
 		texture.baseTexture.autoPlay = false;
 		// enableInlineVideo(texture.baseTexture.source, false);
@@ -186,7 +184,7 @@ function leftVideo(){
 	videoA[nowVideo-1].load()
 	setTimeout(function(){
 		changeVideo()
-	},400)
+	},300)
 }
 
 function rightVideo(){
@@ -200,14 +198,25 @@ function rightVideo(){
 	videoA[nowVideo-1].load()
 	setTimeout(function(){
 		changeVideo()
-	},400)
+	},300)
+}
+function canplayEvt(evt) {
+	var index = videoA.indexOf(evt.target)+1
+	if (index== nowVideo) {
+		console.log("play",evt.target)
+		evt.target.play()
+		// setTimeout(function(){
+		// 	evt.target.play()
+		// },400)
+	}
+	// console.log(evt.target,)
+
 }
 function changeVideo(){
 	console.log("play:",nowVideo)
-	// videoA[nowVideo-1].play()
-	// videoSpriteA[nowVideo-1].visible=true
+	videoA[nowVideo-1].play()
+	videoSpriteA[nowVideo-1].visible=true
 	for (var i = 0; i < 6; i++) {
-		console.log(i)
 		if(i==nowVideo-1){
 			videoA[i].play()
 			videoSpriteA[i].visible=true
