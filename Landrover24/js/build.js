@@ -85,6 +85,7 @@ function setup(){
 	//buildQR(__url,QRDone)
 	if($_GET["video"]){
 		console.log("有参数")
+		setPage0()
 	}else{
 		console.log("没有参数")
 	}
@@ -94,7 +95,7 @@ function setup(){
 	}
 
 	console.log(pStage.parent)
-	
+	//setPage0()
 	setPage1()
 	setPage2()
 	setPage3()
@@ -130,4 +131,9 @@ function QRDone(){
 	})
 	
 	
+}
+
+
+function setPage0(){
+
 }
