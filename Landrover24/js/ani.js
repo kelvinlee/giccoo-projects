@@ -5,6 +5,8 @@ var p1tPivotYA=[17,1,8,1,58,28,10,11,32]
 var p1tXA=[320,320,320,320,320,320,320,320,113]
 var p1tYA=[-402,-363,-345,-328,-247,-121,328,370,440]
 var blackLayer,ruleLayer,rule
+var firstLoad = true
+
 function setPage1(){
 	page1=new Container()
 	pStage.addChild(page1)
@@ -76,7 +78,9 @@ function willGoPage2(_e){
 	console.log("视频该播放了")
 	// main.videoIndex = 4
 	// main.lr = true
-	videoA[0].load()
+	for (var i=0;i<2;i++){
+		videoA[i].load()
+	}
 	// console.log(videoA[0].load())
 	setTimeout(function(){
 		videoA[0].play()
@@ -174,6 +178,12 @@ function showPage2(){
 var nowVideo=1
 var videoX=-640
 function leftVideo(){
+	if (firstLoad) {
+		firstLoad = false
+		for(var i = 2;i<4;i++) {
+			videoA[i].load()
+		}
+	}
 	nowVideo--
 	if(nowVideo==0){
 		nowVideo=6
@@ -181,13 +191,23 @@ function leftVideo(){
 	videoX=640
 	//main.lr = false
 	//main.videoIndex = nowVideo
-	videoA[nowVideo-1].load()
-	setTimeout(function(){
+	if (!videoA[nowVideo-1].canplayEvt) {
+		videoA[nowVideo-1].load()
+		setTimeout(function(){
+			changeVideo()
+		},300)
+	}else{
 		changeVideo()
-	},300)
+	}
 }
 
 function rightVideo(){
+	if (firstLoad) {
+		firstLoad = false
+		for(var i = 2;i<4;i++) {
+			videoA[i].load()
+		}
+	}
 	nowVideo++
 	if(nowVideo==7){
 		nowVideo=1
@@ -195,21 +215,27 @@ function rightVideo(){
 	videoX=-640
 	//main.lr = true
 	//main.videoIndex = nowVideo
-	videoA[nowVideo-1].load()
-	setTimeout(function(){
+	if (!videoA[nowVideo-1].canplayEvt) {
+		videoA[nowVideo-1].load()
+		setTimeout(function(){
+			changeVideo()
+		},300)
+	}else{
 		changeVideo()
-	},300)
+	}
+	
 }
 function canplayEvt(evt) {
 	var index = videoA.indexOf(evt.target)+1
-	if (index== nowVideo) {
+	evt.target.canplayEvt = true
+	if (index == nowVideo) {
 		console.log("play",evt.target)
 		evt.target.play()
 		// setTimeout(function(){
 		// 	evt.target.play()
 		// },400)
 	}
-	// console.log(evt.target,)
+	// console.log(evt.target)
 
 }
 function changeVideo(){
