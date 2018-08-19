@@ -136,10 +136,11 @@ function QRDone(){
 		qrSprite.y = stageH-110
 		pApp.renderer.render(pStage)
 		console.log("QRDone!!!")
-		renderer.stage.addChild(bgA[nowVideo-1],topbA[nowMusic-1],downA[nowMusic-1],p4down,qrSprite)
+		renderer.stage.addChild(bgA[nowVideo-1],topA[nowMusic-1],topbA[nowMusic-1],downA[nowMusic-1],p4down,qrSprite)
 		renderer.renderer.render(renderer.stage)
 		main.sharePost(renderer.view.toDataURL())
-		//base64pic=new Sprite
+		var u = new Sprite.fromImage(renderer.view.toDataURL())
+  	pStage.addChild(u)
 		main.openForm()
 	})
 	
