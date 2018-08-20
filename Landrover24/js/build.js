@@ -56,6 +56,14 @@ var imageList = [
 	_CDN+"img/bg4.jpg",
 	_CDN+"img/bg5.jpg",
 	_CDN+"img/bg6.jpg",
+	_CDN+"img/blur1.jpg",
+	_CDN+"img/blur2.jpg",
+	_CDN+"img/blur3.jpg",
+	_CDN+"img/blur4.jpg",
+	_CDN+"img/blur5.jpg",
+	_CDN+"img/blur6.jpg",
+	_CDN+"img/p0btn.png",
+	_CDN+"img/playbtn.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -89,12 +97,7 @@ var buildUGC = function () {
 
 function setup(){
 	//buildQR(__url,QRDone)
-	if($_GET["video"]){
-		console.log("有参数")
-		setPage0()
-	}else{
-		console.log("没有参数")
-	}
+	
 	console.log("是否网易云音乐",main.wy)
 	if(main.wy==false){
 		//main.openInApp()
@@ -109,6 +112,13 @@ function setup(){
 	setPage3()
 	setPage4()
 	pageLoop()
+
+	if($_GET["video"]){
+		console.log("有参数")
+		setPage0()
+	}else{
+		console.log("没有参数")
+	}
 	//pApp.ticker.add(pageLoop)
 }
 function pageLoop(){
@@ -147,7 +157,78 @@ function QRDone(){
 	
 }
 
-
+var blurBG,page0,p0btn,playbtn,userVideo,userT
 function setPage0(){
+	page0=new Container()
+	pStage.addChild(page0)
 
+	blurBG=new Sprite(getTe(_CDN+"img/blur"+$_GET["video"]+".jpg"))
+	blurBG.width=640
+	blurBG.height=stageH
+	page0.addChild(blurBG)
+
+	p0btn=new Sprite(getTe(_CDN+"img/p0btn.png"))
+	p0btn.y=stageH/2+367
+	page0.addChild(p0btn)
+	p0btn.interactive=true
+	p0btn.touchstart=hidePage0
+
+	
+
+
+		userVideo = document.createElement('video');
+		userVideo.setAttribute('playsinline','');
+		userVideo.setAttribute('webkit-playsinline','');
+		userVideo.crossOrigin = 'anonymous';
+		var src = document.createElement('source');
+		src.setAttribute('src', "//image.giccoo.com/projects/Landrover24/video/build-"+$_GET["video"]+".mp4");
+		src.setAttribute('type', 'video/mp4');
+
+		userVideo.appendChild(src);
+		userVideo.loop=true
+		userVideo.muted=true
+
+		//=====userVideo.addEventListener("canplay",canplayEvt)
+		// create a video texture from a path
+		var texture = PIXI.Texture.fromVideo(userVideo);
+		texture.baseTexture.autoPlay = false;
+		// enableInlineVideo(texture.baseTexture.source, false);
+
+		var videoSprite = new PIXI.Sprite(texture);
+		
+		videoSprite.width=473
+		videoSprite.height=763
+		videoSprite.x=320-473/2
+		videoSprite.y=stageH/2-447
+		//videoSprite.visible=false
+		page0.addChild(videoSprite);
+
+	playbtn=new Sprite(getTe(_CDN+"img/playbtn.png"))
+	playbtn.pivot.set(49,56)
+	playbtn.position.set(320,stageH/2-68)
+	playbtn.interactive=true
+	playbtn.touchstart=playp0video
+	page0.addChild(playbtn)
+
+	userT=new Sprite(getTe(_CDN+"img/top"+$_GET["music"]+".png"))
+	userT.scale.x=userT.scale.y=473/640
+	userT.x=83
+	userT.y=stageH/2-447
+	page0.addChild(userT)
+
+}
+
+function playp0video(){
+	playbtn.visible=false
+	userVideo.play()
+	playAudio("music-"+$_GET["music"])
+}
+function hidePage0(){
+	stopAllAudio()
+	userVideo.pause()
+	TweenMax.to(page0,1,{alpha:0,onComplete:distroyP0})
+}
+function distroyP0(){
+	page0.visible=false
+	page0.x=10000
 }
