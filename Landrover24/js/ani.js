@@ -411,6 +411,7 @@ function discStop(){
 //==================P4
 var p4btn1,page4
 var topA=[]
+var vtopA=[]
 var topbA=[]
 var downA=[]
 var bgA=[]
@@ -430,23 +431,29 @@ function setPage4(){
 
 		_bg.visible=false
 	};
+
+
 	for (i = 1; i <= 6; i++) {
 		var _top=new Sprite(getTe(_CDN+"img/top"+i+".png"))
 		var _topb=new Sprite(getTe(_CDN+"img/top"+i+"b.png"))
 		var _down=new Sprite(getTe(_CDN+"img/down"+i+".png"))
-		page4.addChild(_top,_topb,_down)
+
+		var _vtop=new Sprite(getTe(_CDN+"img/vtop"+i+".png"))
+
+		page4.addChild(_top,_topb,_down,_vtop)
 		_down.y=stageH-364
 		topA.push(_top)
 		topbA.push(_topb)
 		downA.push(_down)
-		_top.visible=_topb.visible=_down.visible=false
+		vtopA.push(_vtop)
+		_vtop.visible=_top.visible=_topb.visible=_down.visible=false
 	};
 	p4down=new Sprite(getTe(_CDN+"img/down.png"))
 	p4down.y=stageH-373
 	p4down.visible=false
 	page4.addChild(p4down)
 }
-
+var vdown
 function goPage4(){
 	console.log("page4",main.regSubmited)
 	page4.visible=true
@@ -464,7 +471,11 @@ function goPage4(){
 	p4btn1.interactive=true
 	p4btn1.touchstart=goPage5
 
-	topA[nowMusic-1].visible=true
+	vtopA[nowMusic-1].visible=true
+	vdown=new Sprite(getTe(_CDN+"img/vdown.png"))
+	vdown.y=stageH-117
+	page4.addChild(vdown)
+	//topA[nowMusic-1].visible=true
 	//topbA[nowMusic-1].visible=true
 	//downA[nowMusic-1].visible=true
 }
@@ -473,8 +484,11 @@ function goPage5(){
 	pStage.removeChild(page2)
 
 	stopAllAudio()
+	vdown.visible=false
 	p4btn1.interactive=false
 	p4btn1.visible=false
+	vtopA[nowMusic-1].visible=false
+	topA[nowMusic-1].visible=true
 	topbA[nowMusic-1].visible=true
 	downA[nowMusic-1].visible=true
 	bgA[nowVideo-1].visible=true

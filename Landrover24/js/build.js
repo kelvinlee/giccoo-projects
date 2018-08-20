@@ -71,6 +71,13 @@ var imageList = [
 	_CDN+"img/poster5.jpg",
 	_CDN+"img/poster6.jpg",
 	_CDN+"img/jumpbtn.png",
+	_CDN+"img/vdown.png",
+	_CDN+"img/vtop1.png",
+	_CDN+"img/vtop2.png",
+	_CDN+"img/vtop3.png",
+	_CDN+"img/vtop4.png",
+	_CDN+"img/vtop5.png",
+	_CDN+"img/vtop6.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -170,7 +177,7 @@ function QRDone(){
 	
 }
 
-var blurBG,page0,p0btn,playbtn,userVideo,userT,vtexture,poster
+var blurBG,page0,p0btn,playbtn,userVideo,userT,userT2,vtexture,poster
 function setPage0(){
 	page0=new Container()
 	pStage.addChild(page0)
@@ -228,11 +235,16 @@ function setPage0(){
 	playbtn.touchstart=playp0video
 	page0.addChild(playbtn)
 
-	userT=new Sprite(getTe(_CDN+"img/top"+$_GET["music"]+".png"))
+	userT=new Sprite(getTe(_CDN+"img/vtop"+$_GET["music"]+".png"))
 	userT.scale.x=userT.scale.y=473/640
 	userT.x=83
 	userT.y=stageH/2-447
-	page0.addChild(userT)
+
+	userT2=new Sprite(getTe(_CDN+"img/vdown.png"))
+	userT2.scale.x=userT2.scale.y=473/640
+	userT2.x=83
+	userT2.y=stageH/2-447+763-117*473/640
+	page0.addChild(userT,userT2)
 
 	
 
@@ -247,7 +259,7 @@ function playp0video(){
 		videoSprite.height=763
 		videoSprite.x=320-473/2
 		videoSprite.y=stageH/2-447
-		page0.addChild(videoSprite,playbtn,userT);
+		page0.addChild(videoSprite,playbtn,userT,userT2);
 
 	playbtn.visible=false
 	// userVideo.play()
