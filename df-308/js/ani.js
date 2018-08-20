@@ -95,7 +95,7 @@ function setSelector(){
 	selectorC=new Container()
 	btnBG=new Sprite(getTe(_CDN+"img/btnbg.png"))
 	btnBG.pivot.set(320,34)
-	btnBG.position.set(320,0)
+	btnBG.position.set(320,stageH/4*3)
 	btnBG.visible=false
 	pStage.addChild(selectorC)
 	selectorC.addChild(btnBG)
@@ -133,10 +133,12 @@ function selectOne(_e){
 				console.log(j-1)
 				nowSelected=j-1
 				btnBG.visible=true
-				btnBG.y=_e.target.y
+				//btnBG.y=_e.target.y
 				TweenMax.set(btnBG,{rotation:0})
-				TweenMax.from(btnBG,1.5,{rotation:Math.PI*2/16,overwrite:0,ease:Elastic.easeOut})
-				TweenMax.from(btnBG.scale,1.2,{x:0.5,y:2,ease:Elastic.easeOut})
+				//TweenMax.from(btnBG,1.5,{rotation:Math.PI*2/16,overwrite:0,ease:Elastic.easeOut})
+				//TweenMax.from(btnBG.scale,1.2,{x:0,y:0,ease:Bounce.easeOut})
+
+				TweenMax.to(btnBG,.6,{y:_e.target.y,ease:Bounce.easeOut})
 				TweenMax.to(_e.target.scale,.2,{x:1.2,y:1.2})
 				//userAnswer[nowMusic]=j-1
 				//userAnswer[j-1]+=1
