@@ -11,7 +11,7 @@ block css
   //- link(rel="stylesheet",href="css/yrd-Bold.css")
   //- link(rel="stylesheet",href="css/yrd-Medium.css")
   link(rel="stylesheet",href="css/base.css")
-  //- script.
+  script.
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -87,8 +87,10 @@ block content
               img(src="#{url}/img/icon-close.png")
             .close(v-show="gameEnd" @click="giveupAward")
               img(src="#{url}/img/icon-close.png")
-            .title
-              img(src="#{url}/img/form-title.png")
+            .title(v-show="!gameEnd")
+              img(src="#{url}/img/form-title1.png")
+            .title(v-show="gameEnd")
+              img(src="#{url}/img/form-title2.png")
             form-grounp.form(v-bind:form="form",v-on:submit="submit")
             .btn-item.goon(v-show="!gameEnd" @click="registerShow = false")
               img(src="#{url}/img/btn-goon.png")
