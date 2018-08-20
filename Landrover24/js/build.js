@@ -287,12 +287,13 @@ function setPageJump(){
 	jumpbtn=new Sprite(getTe(_CDN+"img/jumpbtn.png"))
 	jumpbtn.y=stageH-266
 	jumpbtn.interactive=true
+	console.log("$_GET[video]",$_GET["video"])
 	jumpbtn.touchstart=goJump
 	pStage.addChild(jumpbtn)
 }
 
 function goJump(){
-	console.log("$_GET[video]",$_GET["video"])
+
 	if($_GET["video"]){
 		if($_GET["type"]==2){
 			main.openInApp(2,$_GET["video"],$_GET["music"])
