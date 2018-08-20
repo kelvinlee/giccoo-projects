@@ -157,7 +157,7 @@ function QRDone(){
 	
 }
 
-var blurBG,page0,p0btn,playbtn,userVideo,userT
+var blurBG,page0,p0btn,playbtn,userVideo,userT,vtexture
 function setPage0(){
 	page0=new Container()
 	pStage.addChild(page0)
@@ -190,18 +190,17 @@ function setPage0(){
 
 		//=====userVideo.addEventListener("canplay",canplayEvt)
 		// create a video texture from a path
-		var texture = PIXI.Texture.fromVideo(userVideo);
-		texture.baseTexture.autoPlay = false;
+		vtexture = PIXI.Texture.fromVideo(userVideo);
+		vtexture.baseTexture.autoPlay = false;
 		// enableInlineVideo(texture.baseTexture.source, false);
 
-		var videoSprite = new PIXI.Sprite(texture);
+		// var videoSprite = new PIXI.Sprite(texture);
 		
-		videoSprite.width=473
-		videoSprite.height=763
-		videoSprite.x=320-473/2
-		videoSprite.y=stageH/2-447
-		//videoSprite.visible=false
-		page0.addChild(videoSprite);
+		// videoSprite.width=473
+		// videoSprite.height=763
+		// videoSprite.x=320-473/2
+		// videoSprite.y=stageH/2-447
+		// page0.addChild(videoSprite);
 
 	playbtn=new Sprite(getTe(_CDN+"img/playbtn.png"))
 	playbtn.pivot.set(49,56)
@@ -219,6 +218,14 @@ function setPage0(){
 }
 
 function playp0video(){
+		var videoSprite = new PIXI.Sprite(vtexture);
+		
+		videoSprite.width=473
+		videoSprite.height=763
+		videoSprite.x=320-473/2
+		videoSprite.y=stageH/2-447
+		page0.addChild(videoSprite,playbtn,userT);
+
 	playbtn.visible=false
 	userVideo.play()
 	playAudio("music-"+$_GET["music"])
