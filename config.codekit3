@@ -9859,6 +9859,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Landrover24\/img\/p0btn.png": {
+		"ft": 32768,
+		"iS": 2768,
+		"oA": 0,
+		"oAP": "\/Landrover24\/img\/p0btn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/Landrover24\/img\/p1t1.png": {
+		"ft": 32768,
+		"iS": 3997,
+		"oA": 0,
+		"oAP": "\/Landrover24\/img\/p1t1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Landrover24\/img\/p1t2.png": {
 		"ft": 32768,
 		"iS": 125,
@@ -10112,6 +10134,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/Landrover24\/img\/playbtn.png": {
+		"ft": 32768,
+		"iS": 1108,
+		"oA": 0,
+		"oAP": "\/Landrover24\/img\/playbtn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/Landrover24\/img\/pop-bg-lottery.jpg": {
 		"ft": 16384,
 		"iS": 23932,
@@ -10314,6 +10347,36 @@
 		"oAP": "\/Landrover24\/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/Landrover24\/js\/ani.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/Landrover24\/js\/ani-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/Landrover24\/js\/ani.old.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/Landrover24\/js\/ani.old-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/Landrover24\/js\/build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/Landrover24\/js\/build-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
 		},
 	"\/Landrover24\/js\/iphone-inline-video.js": {
 		"ft": 64,

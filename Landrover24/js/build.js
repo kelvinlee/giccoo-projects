@@ -123,7 +123,7 @@ function setup(){
 }
 function pageLoop(){
   requestAnimationFrame(pageLoop)
-  pApp.render(pStage)
+  pApp.renderer.render(pStage)
 }
 
 //============二维码
