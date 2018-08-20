@@ -111,10 +111,10 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "测测你不可T代的性格"
-				desc: "听音乐测性格，赢取东标308免费使用权。"
-				link: "http://m.giccoo.com/df308/"
-				imgUrl: "http://m.giccoo.com/df308/img/ico.jpg"
+				title: "旅途中的发现之声"
+				desc: ""
+				link: "http://m.giccoo.com/Landrover24/"
+				imgUrl: "http://m.giccoo.com/Landrover24/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
