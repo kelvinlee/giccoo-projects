@@ -137,7 +137,7 @@ function selectOne(_e){
 				TweenMax.set(btnBG,{rotation:0})
 				//TweenMax.from(btnBG,1.5,{rotation:Math.PI*2/16,overwrite:0,ease:Elastic.easeOut})
 				//TweenMax.from(btnBG.scale,1.2,{x:0,y:0,ease:Bounce.easeOut})
-
+				TweenMax.set(btnBG.skew,{x:0})
 				TweenMax.from(btnBG,1.6,{x:"+=100",ease:Elastic.easeOut})
 				TweenMax.from(btnBG.skew,1.6,{x:"+=1",ease:Back.easeOut})
 				TweenMax.to(_e.target.scale,.2,{x:1.2,y:1.2})
