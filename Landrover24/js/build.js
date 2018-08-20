@@ -206,7 +206,7 @@ function setPage0(){
 	playbtn.pivot.set(49,56)
 	playbtn.position.set(320,stageH/2-68)
 	playbtn.interactive=true
-	playbtn.tap=playp0video
+	playbtn.touchstart=playp0video
 	page0.addChild(playbtn)
 
 	userT=new Sprite(getTe(_CDN+"img/top"+$_GET["music"]+".png"))
@@ -218,7 +218,9 @@ function setPage0(){
 }
 
 function playp0video(){
-		var videoSprite = new PIXI.Sprite(vtexture);
+		var vvtexture=PIXI.Texture.fromVideo("//image.giccoo.com/projects/Landrover24/video/build-"+$_GET["video"]+".mp4");
+
+		var videoSprite = new PIXI.Sprite(vvtexture);
 		
 		videoSprite.width=473
 		videoSprite.height=763
