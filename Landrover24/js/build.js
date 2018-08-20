@@ -219,7 +219,7 @@ function setPage0(){
 
 function playp0video(){
 		var vvtexture=PIXI.Texture.fromVideo("//image.giccoo.com/projects/Landrover24/video/build-"+$_GET["video"]+".mp4");
-
+		vvtexture.baseTexture.source.loop = true
 		var videoSprite = new PIXI.Sprite(vvtexture);
 		
 		videoSprite.width=473
@@ -229,7 +229,7 @@ function playp0video(){
 		page0.addChild(videoSprite,playbtn,userT);
 
 	playbtn.visible=false
-	userVideo.play()
+	// userVideo.play()
 	playAudio("music-"+$_GET["music"])
 }
 function hidePage0(){

@@ -59,9 +59,10 @@ function setPage1(){
 
 	setTimeout(function(){
 		p1bg.interactive=true
+		p1bg.touchstart=willGoPage2
 	},1500)
 	
-	p1bg.touchstart=willGoPage2
+	
 }
 
 function showRule(){
