@@ -3021,16 +3021,6 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/df-308\/js\/ani.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/df-308\/js\/ani-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
 	"\/df-308\/js\/build.js": {
 		"ft": 64,
 		"ma": 0,
@@ -9606,17 +9596,7 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/Landrover24\/img\/bg.jpg": {
-		"ft": 16384,
-		"iS": 136820,
-		"jF": 0,
 		"oA": 0,
-		"oAP": "\/Landrover24\/img\/bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
 	"\/Landrover24\/img\/bg1.jpg": {
 		"ft": 16384,
 		"iS": 131290,
@@ -10501,16 +10481,6 @@
 		"oAP": "\/Landrover24\/index.html",
 		"oF": 0,
 		"oS": 0
-		},
-	"\/Landrover24\/js\/ani.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/Landrover24\/js\/ani-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
 		},
 	"\/Landrover24\/js\/ani.old.js": {
 		"ft": 64,

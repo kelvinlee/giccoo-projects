@@ -348,7 +348,11 @@ init = ->
 				@.pushed = false
 				@.loading = false
 			openMusic: ->
-				goList()
+				# goList()
+				if CloudMusic.isInApp()
+					CloudMusic.playlist(2369232527)
+				else
+					window.location.href = "https://music.163.com/#/playlist?id=2369232527"
 			nextPage: ->
 				console.log "next page run"
 				@.pageIndex = 2
