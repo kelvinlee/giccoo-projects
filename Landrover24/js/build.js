@@ -124,7 +124,7 @@ function setup(){
 		setPageJump()
 
 	}else{
-		if($_GET["video"]<7&&$_GET["video">0]){
+		if($_GET["video"]<7&&$_GET["video"]>0){
 			console.log("有参数")
 			setPage0()
 		}else{
