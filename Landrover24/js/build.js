@@ -292,15 +292,14 @@ function setPageJump(){
 }
 
 function goJump(){
+	console.log("$_GET[video]",$_GET["video"])
 	if($_GET["video"]){
 		if($_GET["type"]==2){
 			main.openInApp(2,$_GET["video"],$_GET["music"])
 		}else if($_GET["type"]!=2){
 			main.openInApp(1,$_GET["video"],$_GET["music"])
 		}
-	}
-
-	else{
+	}else{
 		if($_GET["type"]==2){
 			main.openInApp(2,9,9)
 		}else if($_GET["type"]!=2){
