@@ -194,7 +194,7 @@ function setPage0(){
 		userVideo.setAttribute('webkit-playsinline','');
 		userVideo.crossOrigin = 'anonymous';
 		var src = document.createElement('source');
-		src.setAttribute('src', "//image.giccoo.com/projects/Landrover24/video/build-"+$_GET["video"]+".mp4");
+		src.setAttribute('src', "//image.giccoo.com/projects/Landrover24/video/build-"+$_GET["video"]+"b.mp4");
 		src.setAttribute('type', 'video/mp4');
 
 		userVideo.appendChild(src);
@@ -239,7 +239,7 @@ function setPage0(){
 }
 
 function playp0video(){
-		var vvtexture=PIXI.Texture.fromVideo("//image.giccoo.com/projects/Landrover24/video/build-"+$_GET["video"]+".mp4");
+		var vvtexture=PIXI.Texture.fromVideo("//image.giccoo.com/projects/Landrover24/video/build-"+$_GET["video"]+"b.mp4");
 		vvtexture.baseTexture.source.loop = true
 		var videoSprite = new PIXI.Sprite(vvtexture);
 		

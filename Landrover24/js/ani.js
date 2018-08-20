@@ -102,14 +102,14 @@ function willGoPage2(_e){
 			video.setAttribute('webkit-playsinline','');
 			video.crossOrigin = 'anonymous';
 			var src = document.createElement('source');
-			src.setAttribute('src', "//image.giccoo.com/projects/Landrover24/video/build-"+i+".mp4");
+			src.setAttribute('src', "//image.giccoo.com/projects/Landrover24/video/build-"+i+"b.mp4");
 			src.setAttribute('type', 'video/mp4');
 
 			video.appendChild(src);
 			video.loop=true
 			video.muted=true
 		}else{
-			var video = "http://image.giccoo.com/projects/Landrover24/video/build-"+i+".mp4"
+			var video = "http://image.giccoo.com/projects/Landrover24/video/build-"+i+"b.mp4"
 		}
 		
 		// videoA.push(video)
