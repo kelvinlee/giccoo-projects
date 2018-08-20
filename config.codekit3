@@ -9596,7 +9596,6 @@
 		"oT": 1,
 		"q": 100
 		},
-		"oA": 0,
 	"\/Landrover24\/img\/bg1.jpg": {
 		"ft": 16384,
 		"iS": 131290,
@@ -9900,8 +9899,8 @@
 		"oA": 0,
 		"oAP": "\/Landrover24\/img\/form-title.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
