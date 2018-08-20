@@ -294,7 +294,7 @@ function setPageJump(){
 
 function goJump(){
 
-	if($_GET["video"]){
+	if($_GET["video"]<7&&$_GET["video"]>0){
 		if($_GET["type"]==2){
 			main.openInApp(2,$_GET["video"],$_GET["music"])
 		}else if($_GET["type"]!=2){
