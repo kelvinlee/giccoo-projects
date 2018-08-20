@@ -8,6 +8,22 @@
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      
+    </script>
+    <script src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js"></script>
+    <script>
+      var vConsole = new VConsole();
+      console.log('VConsole open');
+      
+    </script>
   </head>
   <body>
     <audio id="music-1" loop="true" src="./mp3/m0.mp3"></audio>
@@ -45,7 +61,8 @@
             <div class="register">
               <div v-show="!gameEnd" @click="registerShow = false" class="close"><img src="./img/icon-close.png"></div>
               <div v-show="gameEnd" @click="giveupAward" class="close"><img src="./img/icon-close.png"></div>
-              <div class="title"><img src="./img/form-title.png"></div>
+              <div v-show="!gameEnd" class="title"><img src="./img/form-title1.png"></div>
+              <div v-show="gameEnd" class="title"><img src="./img/form-title2.png"></div>
               <form-grounp v-bind:form="form" v-on:submit="submit" class="form"></form-grounp>
               <div v-show="!gameEnd" @click="registerShow = false" class="btn-item goon"><img src="./img/btn-goon.png"></div>
               <div v-show="gameEnd" @click="giveupAward" class="btn-item goon"><img src="./img/btn-giveup.png"></div>

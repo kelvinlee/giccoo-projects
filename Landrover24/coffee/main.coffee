@@ -112,7 +112,7 @@ window.onload = ->
 		wx.ready ->
 			shareContent =
 				title: "旅途中的发现之声"
-				desc: "2018路虎发现无止境"
+				desc: "2018路虎发现无止境 发现中国24节气 秋分之旅"
 				link: "http://m.giccoo.com/Landrover24/"
 				imgUrl: "http://m.giccoo.com/Landrover24/img/ico.jpg"
 				success: ->
