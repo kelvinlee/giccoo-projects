@@ -234,7 +234,7 @@ function playp0video(){
 }
 function hidePage0(){
 	stopAllAudio()
-	userVideo.pause()
+	//userVideo.pause()
 	TweenMax.to(page0,1,{alpha:0,onComplete:distroyP0})
 }
 function distroyP0(){

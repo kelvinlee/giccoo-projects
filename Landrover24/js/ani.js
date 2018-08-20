@@ -83,16 +83,47 @@ function willGoPage2(_e){
 	console.log("视频该播放了")
 	// main.videoIndex = 4
 	// main.lr = true
-	for (var i=0;i<2;i++){
-		videoA[i].load()
-	}
-	// console.log(videoA[0].load())
-	setTimeout(function(){
-		videoA[0].play()
-	},450)
-	videoSpriteA[0].visible=true
+	// for (var i=0;i<2;i++){
+	// 	videoA[i].load()
+	// }
+	// // console.log(videoA[0].load())
+	// setTimeout(function(){
+	// 	videoA[0].play()
+	// },450)
+	//=====videoSpriteA[0].visible=true
 	startY=_e.data.global.y
 	p1bg.touchend=ifGoPage2
+
+	for (var i = 1; i <= 6; i++) {
+		// var video = document.createElement('video');
+		// video.setAttribute('playsinline','');
+		// video.setAttribute('webkit-playsinline','');
+		// video.crossOrigin = 'anonymous';
+		// var src = document.createElement('source');
+		// src.setAttribute('src', "//image.giccoo.com/projects/Landrover24/video/build-"+i+".mp4");
+		// src.setAttribute('type', 'video/mp4');
+
+		// video.appendChild(src);
+		// video.loop=true
+		// video.muted=true
+		// videoA.push(video)
+		// video.addEventListener("canplay",canplayEvt)
+		// // create a video texture from a path
+		// var texture = PIXI.Texture.fromVideo(video);
+		// texture.baseTexture.autoPlay = false;
+
+		var vvtexture=PIXI.Texture.fromVideo("http://image.giccoo.com/projects/Landrover24/video/build-"+i+".mp4");
+		vvtexture.baseTexture.source.loop = true
+		var videoSprite = new PIXI.Sprite(vvtexture);
+
+
+		videoSpriteA.push(videoSprite)
+		videoSprite.width=640
+		videoSprite.height=stageH
+		videoSprite.visible=true
+		page2.addChildAt(videoSprite,0);
+
+	};
 }
 function ifGoPage2(_e){
 	if(startY-_e.data.global.y>90){
@@ -113,33 +144,36 @@ function setPage2(){
 	page2=new Container()
 	pStage.addChild(page2,page1)
 
-	for (var i = 1; i <= 6; i++) {
-		var video = document.createElement('video');
-		video.setAttribute('playsinline','');
-		video.setAttribute('webkit-playsinline','');
-		video.crossOrigin = 'anonymous';
-		var src = document.createElement('source');
-		src.setAttribute('src', "//image.giccoo.com/projects/Landrover24/video/build-"+i+".mp4");
-		src.setAttribute('type', 'video/mp4');
+	// for (var i = 1; i <= 6; i++) {
+	// 	// var video = document.createElement('video');
+	// 	// video.setAttribute('playsinline','');
+	// 	// video.setAttribute('webkit-playsinline','');
+	// 	// video.crossOrigin = 'anonymous';
+	// 	// var src = document.createElement('source');
+	// 	// src.setAttribute('src', "//image.giccoo.com/projects/Landrover24/video/build-"+i+".mp4");
+	// 	// src.setAttribute('type', 'video/mp4');
 
-		video.appendChild(src);
-		video.loop=true
-		video.muted=true
-		videoA.push(video)
-		video.addEventListener("canplay",canplayEvt)
-		// create a video texture from a path
-		var texture = PIXI.Texture.fromVideo(video);
-		texture.baseTexture.autoPlay = false;
-		// enableInlineVideo(texture.baseTexture.source, false);
+	// 	// video.appendChild(src);
+	// 	// video.loop=true
+	// 	// video.muted=true
+	// 	// videoA.push(video)
+	// 	// video.addEventListener("canplay",canplayEvt)
+	// 	// // create a video texture from a path
+	// 	// var texture = PIXI.Texture.fromVideo(video);
+	// 	// texture.baseTexture.autoPlay = false;
 
-		var videoSprite = new PIXI.Sprite(texture);
-		videoSpriteA.push(videoSprite)
-		videoSprite.width=640
-		videoSprite.height=stageH
-		videoSprite.visible=false
-		page2.addChild(videoSprite);
+	// 	var vvtexture=PIXI.Texture.fromVideo("//image.giccoo.com/projects/Landrover24/video/build-"+i+".mp4");
+	// 	vvtexture.baseTexture.source.loop = true
+	// 	var videoSprite = new PIXI.Sprite(vvtexture);
 
-	};
+
+	// 	videoSpriteA.push(videoSprite)
+	// 	videoSprite.width=640
+	// 	videoSprite.height=stageH
+	// 	videoSprite.visible=false
+	// 	page2.addChild(videoSprite);
+
+	// };
 	dark=new Sprite(getTe(_CDN+"img/dark.png"))
 	dark.width=640
 	//dark.height=stageH
@@ -183,19 +217,19 @@ function showPage2(){
 var nowVideo=1
 var videoX=-640
 function leftVideo(){
-	if (firstLoad) {
-		firstLoad = false
-		for(var i = 2;i<4;i++) {
-			videoA[i].load()
-		}
-	}else{
-		if (secondLoad) {
-			secondLoad = false
-			for(var i = 4;i<6;i++) {
-				videoA[i].load()
-			}
-		}
-	}
+	// if (firstLoad) {
+	// 	firstLoad = false
+	// 	for(var i = 2;i<4;i++) {
+	// 		videoA[i].load()
+	// 	}
+	// }else{
+	// 	if (secondLoad) {
+	// 		secondLoad = false
+	// 		for(var i = 4;i<6;i++) {
+	// 			videoA[i].load()
+	// 		}
+	// 	}
+	// }
 	nowVideo--
 	if(nowVideo==0){
 		nowVideo=6
@@ -203,30 +237,31 @@ function leftVideo(){
 	videoX=640
 	//main.lr = false
 	//main.videoIndex = nowVideo
-	if (!videoA[nowVideo-1].canplayEvt) {
-		videoA[nowVideo-1].load()
-		setTimeout(function(){
-			changeVideo()
-		},300)
-	}else{
-		changeVideo()
-	}
+	// if (!videoA[nowVideo-1].canplayEvt) {
+	// 	videoA[nowVideo-1].load()
+	// 	setTimeout(function(){
+	// 		changeVideo()
+	// 	},300)
+	// }else{
+	// 	changeVideo()
+	// }
+	changeVideo()
 }
 
 function rightVideo(){
-	if (firstLoad) {
-		firstLoad = false
-		for(var i = 2;i<4;i++) {
-			videoA[i].load()
-		}
-	}else{
-		if (secondLoad) {
-			secondLoad = false
-			for(var i = 4;i<6;i++) {
-				videoA[i].load()
-			}
-		}
-	}
+	// if (firstLoad) {
+	// 	firstLoad = false
+	// 	for(var i = 2;i<4;i++) {
+	// 		videoA[i].load()
+	// 	}
+	// }else{
+	// 	if (secondLoad) {
+	// 		secondLoad = false
+	// 		for(var i = 4;i<6;i++) {
+	// 			videoA[i].load()
+	// 		}
+	// 	}
+	// }
 	nowVideo++
 	if(nowVideo==7){
 		nowVideo=1
@@ -234,14 +269,15 @@ function rightVideo(){
 	videoX=-640
 	//main.lr = true
 	//main.videoIndex = nowVideo
-	if (!videoA[nowVideo-1].canplayEvt) {
-		videoA[nowVideo-1].load()
-		setTimeout(function(){
-			changeVideo()
-		},300)
-	}else{
-		changeVideo()
-	}
+	// if (!videoA[nowVideo-1].canplayEvt) {
+	// 	videoA[nowVideo-1].load()
+	// 	setTimeout(function(){
+	// 		changeVideo()
+	// 	},300)
+	// }else{
+	// 	changeVideo()
+	// }
+	changeVideo()
 	
 }
 function canplayEvt(evt) {
@@ -259,16 +295,16 @@ function canplayEvt(evt) {
 }
 function changeVideo(){
 	console.log("play:",nowVideo)
-	videoA[nowVideo-1].play()
+	//videoA[nowVideo-1].play()
 	videoSpriteA[nowVideo-1].visible=true
 	for (var i = 0; i < 6; i++) {
 		if(i==nowVideo-1){
-			videoA[i].play()
+			//videoA[i].play()
 			videoSpriteA[i].visible=true
 			TweenMax.from(videoSpriteA[i],.5,{x:videoX})
 			page2.addChildAt(videoSpriteA[i],5)
 		}else{
-			videoA[i].pause()
+			//videoA[i].pause()
 			//videoSpriteA[i].visible=false
 		}
 	};
