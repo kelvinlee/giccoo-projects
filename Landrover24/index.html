@@ -67,7 +67,7 @@
               <div @click="lotteryShow = false" class="close"><img src="./img/icon-close.png"></div>
               <div class="title"><img src="./img/pop-lottery-success.png"></div>
               <p class="code">{{lotteryInfo.info}}</p>
-              <div class="btn"><img src="./img/btn-music-dark.png"></div>
+              <div @click="openMusic" class="btn"><img src="./img/btn-music-dark.png"></div>
               <div class="btn"><img src="./img/btn-shot.png"></div>
             </div>
           </div>
@@ -75,7 +75,7 @@
             <div class="lottery faild">
               <div @click="lotteryShow = false" class="close"><img src="./img/icon-close.png"></div>
               <div class="title"><img src="./img/pop-lottery-faild.png"></div>
-              <div class="btn"><img src="./img/btn-music.png"></div>
+              <div @click="openMusic" class="btn"><img src="./img/btn-music.png"></div>
             </div>
           </div>
         </div>

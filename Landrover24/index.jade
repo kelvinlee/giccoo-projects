@@ -106,7 +106,7 @@ block content
             .title
               img(src="#{url}/img/pop-lottery-success.png")
             p.code {{lotteryInfo.info}}
-            .btn
+            .btn(@click="openMusic")
               img(src="#{url}/img/btn-music-dark.png")
             .btn
               img(src="#{url}/img/btn-shot.png")
@@ -117,7 +117,7 @@ block content
               img(src="#{url}/img/icon-close.png")
             .title
               img(src="#{url}/img/pop-lottery-faild.png")
-            .btn
+            .btn(@click="openMusic")
               img(src="#{url}/img/btn-music.png")
 
     

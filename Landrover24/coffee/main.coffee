@@ -239,6 +239,7 @@ init = ->
 			regSubmited: false
 			giveUp: false
 			gameEnd: false
+			noreg: false
 		watch:
 			videoIndex: (n,o)->
 				@.videoIndexOld = o
@@ -298,6 +299,7 @@ init = ->
 					alert "服务器连接失败,请重试"
 
 			openForm: ->
+				# return false if @.noreg
 				if @.regSubmited
 					@.share()
 				else
@@ -345,15 +347,16 @@ init = ->
 			faild: (err)->
 				@.pushed = false
 				@.loading = false
-			
+			openMusic: ->
+				goList()
 			nextPage: ->
 				console.log "next page run"
 				@.pageIndex = 2
 			openInApp: (type = 0,video = 0,music = 0)->
 				if type is 0
-					CloudMusic.open("https://m.giccoo.com/Landrover/")
+					CloudMusic.open("https://m.giccoo.com/Landrover24/")
 				else
-					CloudMusic.open("https://m.giccoo.com/Landrover/?type=#{type}&video=#{video}&music=#{music}")
+					CloudMusic.open("https://m.giccoo.com/Landrover24/?type=#{type}&video=#{video}&music=#{music}")
 		# watch:
 		mounted: ->
 			TrueH = document.documentElement.clientHeight
@@ -366,6 +369,8 @@ init = ->
 			version = CloudMusic.getClientVersion().split(".")
 			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH})
 			listenAudio()
+			if parseInt($_GET["type"]) is 2
+				@.regSubmited = true
 
 stopAllVideo = ->
 	for i in [1..6]
