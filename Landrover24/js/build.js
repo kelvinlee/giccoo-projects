@@ -186,7 +186,7 @@ function setPage0(){
 
 		userVideo.appendChild(src);
 		userVideo.loop=true
-		userVideo.muted=true
+		//userVideo.muted=true
 
 		//=====userVideo.addEventListener("canplay",canplayEvt)
 		// create a video texture from a path
@@ -206,7 +206,7 @@ function setPage0(){
 	playbtn.pivot.set(49,56)
 	playbtn.position.set(320,stageH/2-68)
 	playbtn.interactive=true
-	playbtn.touchstart=playp0video
+	playbtn.tap=playp0video
 	page0.addChild(playbtn)
 
 	userT=new Sprite(getTe(_CDN+"img/top"+$_GET["music"]+".png"))
