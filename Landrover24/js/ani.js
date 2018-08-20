@@ -88,7 +88,7 @@ function willGoPage2(_e){
 	// console.log(videoA[0].load())
 	setTimeout(function(){
 		videoA[0].play()
-	},400)
+	},1400)
 	videoSpriteA[0].visible=true
 	startY=_e.data.global.y
 	p1bg.touchend=ifGoPage2
