@@ -165,6 +165,7 @@ function goNext(){
 		nowMusic++
 		nowSelected=999
 		btnBG.visible=false
+		btnBG.position.set(320,stageH/4*3)
 		showSelector()
 		stopAllAudio()
 		playAudio("answer-"+(nowMusic+1))
