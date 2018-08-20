@@ -331,6 +331,7 @@ function goForm(){
 }
 function goList(){
 	console.log("去歌单")
+	window.location.href='https://music.163.com/#/playlist?id=2369232527';
 }
 //==========================================P3
 var p3top,p3btn1,page3,p3target,p3playing
