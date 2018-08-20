@@ -64,6 +64,13 @@ var imageList = [
 	_CDN+"img/blur6.jpg",
 	_CDN+"img/p0btn.png",
 	_CDN+"img/playbtn.png",
+	_CDN+"img/poster1.jpg",
+	_CDN+"img/poster2.jpg",
+	_CDN+"img/poster3.jpg",
+	_CDN+"img/poster4.jpg",
+	_CDN+"img/poster5.jpg",
+	_CDN+"img/poster6.jpg",
+	_CDN+"img/jumpbtn.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -98,10 +105,7 @@ var buildUGC = function () {
 function setup(){
 	//buildQR(__url,QRDone)
 	
-	console.log("是否网易云音乐",main.wy)
-	if(main.wy==false){
-		//main.openInApp()
-	}
+	
 
 
 
@@ -113,12 +117,21 @@ function setup(){
 	setPage4()
 	pageLoop()
 
-	if($_GET["video"]){
-		console.log("有参数")
-		setPage0()
+	console.log("是否网易云音乐",main.wy)
+	if(main.wy==false){
+		//main.openInApp()
+		console.log("不是")
+		setPageJump()
+
 	}else{
-		console.log("没有参数")
+		if($_GET["video"]<7&&$_GET["video">0]){
+			console.log("有参数")
+			setPage0()
+		}else{
+			console.log("没有参数")
+		}
 	}
+	
 	//pApp.ticker.add(pageLoop)
 }
 function pageLoop(){
@@ -157,7 +170,7 @@ function QRDone(){
 	
 }
 
-var blurBG,page0,p0btn,playbtn,userVideo,userT,vtexture
+var blurBG,page0,p0btn,playbtn,userVideo,userT,vtexture,poster
 function setPage0(){
 	page0=new Container()
 	pStage.addChild(page0)
@@ -201,6 +214,12 @@ function setPage0(){
 		// videoSprite.x=320-473/2
 		// videoSprite.y=stageH/2-447
 		// page0.addChild(videoSprite);
+	poster=new Sprite(getTe(_CDN+"img/poster"+$_GET["music"]+".jpg"))
+	poster.width=471
+	poster.height=763
+	poster.x=320-472/2
+	poster.y=stageH/2-447
+	page0.addChild(poster);
 
 	playbtn=new Sprite(getTe(_CDN+"img/playbtn.png"))
 	playbtn.pivot.set(49,56)
@@ -214,6 +233,8 @@ function setPage0(){
 	userT.x=83
 	userT.y=stageH/2-447
 	page0.addChild(userT)
+
+	
 
 }
 
@@ -240,4 +261,39 @@ function hidePage0(){
 function distroyP0(){
 	page0.visible=false
 	page0.x=10000
+}
+
+var jumpbtn
+function setPageJump(){
+	setTimeout(function(){
+		p1bg.interactive=false
+		//p1bg.touchstart=willGoPage2
+	},1600)
+	p1tA[6].visible=false
+	p1tA[7].visible=false
+	p1tA[8].visible=false
+	jumpbtn=new Sprite(getTe(_CDN+"img/jumpbtn.png"))
+	jumpbtn.y=stageH-266
+	jumpbtn.interactive=true
+	jumpbtn.touchstart=goJump
+	pStage.addChild(jumpbtn)
+}
+
+function goJump(){
+	if($_GET["video"]){
+		if($_GET["type"]==2){
+			main.openInApp(2,$_GET["video"],$_GET["music"])
+		}else if($_GET["type"]!=2){
+			main.openInApp(1,$_GET["video"],$_GET["music"])
+		}
+	}
+
+	else{
+		if($_GET["type"]==2){
+			main.openInApp(2,9,9)
+		}else if($_GET["type"]!=2){
+			main.openInApp(1,9,9)
+		}
+	}
+	
 }
