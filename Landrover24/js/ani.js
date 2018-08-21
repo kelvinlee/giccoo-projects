@@ -449,7 +449,8 @@ function setPage4(){
 	for (i = 1; i <= 6; i++) {
 		var _top=new Sprite(getTe(_CDN+"img/top"+i+".png"))
 		var _topb=new Sprite(getTe(_CDN+"img/top"+i+"b.png"))
-		var _down=new Sprite(getTe(_CDN+"img/down"+i+".png"))
+		//var _down=new Sprite(getTe(_CDN+"img/down"+i+".png"))
+		var _down=new Sprite(getTe(_CDN+"img/down111.png"))
 
 		var _vtop=new Sprite(getTe(_CDN+"img/vtop"+i+".png"))
 
