@@ -285,7 +285,7 @@ init = ->
 				if data.mobile is ""
 					return alert "请输入联系电话"
 				if data.address is ""
-					return alert "请输入联系地址"
+					return alert "请输入所在城市"
 				
 				axios.post "#{apiLink}active/landrover24/insert/",data
 				.then (msg)=>
