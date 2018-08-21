@@ -44,12 +44,12 @@ class UGC
 		document.getElementById(@.opts.el).appendChild @.app.view
 		console.log "imageList:",imageList.length
 		PIXI.loader.add(imageList)
-		.add('music-1',"#{_CDN}mp3/m0.mp3")
-		.add('music-2',"#{_CDN}mp3/m1.mp3")
-		.add('music-3',"#{_CDN}mp3/m2.mp3")
-		.add('music-4',"#{_CDN}mp3/m3.mp3")
-		.add('music-5',"#{_CDN}mp3/m4.mp3")
-		.add('music-6',"#{_CDN}mp3/m5.mp3")
+		.add('music-1',"#{_CDN}mp3/mm0.mp3")
+		.add('music-2',"#{_CDN}mp3/mm1.mp3")
+		.add('music-3',"#{_CDN}mp3/mm2.mp3")
+		.add('music-4',"#{_CDN}mp3/mm3.mp3")
+		.add('music-5',"#{_CDN}mp3/mm4.mp3")
+		.add('music-6',"#{_CDN}mp3/mm5.mp3")
 		# .use(@.loaditem.bind(@))
 		.load(buildUGC.bind(@))
 		@.default.MH = @.opts.h * 0.65
