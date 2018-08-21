@@ -1,4 +1,4 @@
-var _CDN = "./"
+var _CDN = "//image.giccoo.com/projects/df-308/"
 var imageList = [
 	_CDN+"img/bg.jpg",
 	_CDN+"img/disc1.png",
