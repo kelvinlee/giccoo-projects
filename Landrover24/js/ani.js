@@ -7,6 +7,8 @@ var p1tYA=[-402,-363,-345,-328,-247,-121,328,370,440]
 var blackLayer,ruleLayer,rule
 var firstLoad = true
 var secondLoad = true
+var u = navigator.userAgent
+var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1
 
 function setPage1(){
 	page1=new Container()
@@ -93,8 +95,7 @@ function willGoPage2(_e){
 	//=====videoSpriteA[0].visible=true
 	startY=_e.data.global.y
 	p1bg.touchend=ifGoPage2
-	var u = navigator.userAgent
-	var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1
+	
 	for (var i = 1; i <= 6; i++) {
 		if (isAndroid) {
 			var video = document.createElement('video');
@@ -385,7 +386,13 @@ function goPage3(){
 	};
 	p3btn1.interactive=true
 	p3btn1.touchstart=goPage4
-	playAudio("music-1")
+	if (isAndroid){
+		stopAllAudio("music-1")
+		PIXI.sound.play("music-1")
+	}else{
+		playAudio("music-1")
+	}
+	
 }
 var nowMusic=1
 function changeSong(_e){
@@ -395,7 +402,13 @@ function changeSong(_e){
 			var j=i+1
 			var str="music-"+j
 			console.log("播放第",i+1,"首",str)
-			playAudio(str)
+			// playAudio(str)
+			if (isAndroid){
+				stopAllAudio(str)
+				PIXI.sound.play(str)
+			}else{
+				playAudio(str)
+			}
 			TweenMax.to(p3target,.2,{y:_e.target.y,delay:.02})
 			TweenMax.to(p3playing,.2,{y:_e.target.y})
 		}

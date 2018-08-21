@@ -83,7 +83,7 @@ block content
       .pop(v-show="registerShow")
         .content
           .register
-            .close(v-show="!gameEnd" @click="registerShow = false")
+            .close(v-show="!gameEnd" @click="closeReg")
               img(src="#{url}/img/icon-close.png")
             .close(v-show="gameEnd" @click="giveupAward")
               img(src="#{url}/img/icon-close.png")
@@ -131,7 +131,7 @@ block js
   //- script(src="//image.giccoo.com/projects/libs/js/min/fastclick.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
-  //- script(src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js")
   script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js")

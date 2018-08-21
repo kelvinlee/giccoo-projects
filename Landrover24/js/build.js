@@ -87,7 +87,8 @@ var _NORMAL=PIXI.BLEND_MODES.NORMAL,
 var pStage,pApp,bg
 var stageH
 var theThis
-
+var u = navigator.userAgent
+var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1
 
 var renderer
 var buildUGC = function () {
@@ -263,7 +264,11 @@ function playp0video(){
 
 	playbtn.visible=false
 	// userVideo.play()
-	playAudio("music-"+$_GET["music"])
+	if (isAndroid) {
+		PIXI.sound.play("music-"+$_GET["music"])
+	}else{
+		playAudio("music-"+$_GET["music"])
+	}
 }
 function hidePage0(){
 	stopAllAudio()

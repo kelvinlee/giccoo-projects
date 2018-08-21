@@ -248,6 +248,8 @@ init = ->
 				document.getElementById("video-#{n}").play()
 
 		methods:
+			closeReg: ->
+				@.registerShow = false
 			playVideo: ->
 				@.videoIndex = 1
 				document.getElementById("video-1").load()
@@ -384,10 +386,12 @@ musicList = ['music-1','music-2','music-3','music-4','music-5','music-6']
 playAudio = (id)->
 	stopAllAudio()
 	audio = document.getElementById(id)
-	audio.load()
-	setTimeout =>
-		audio.play()
-	,250
+	audio.play()
+	console.log("play music")
+	# audio.load()
+	# setTimeout =>
+	# 	audio.play()
+	# ,250
 	# setTimeout =>
 	# 	discPlay()
 	# ,300
@@ -407,7 +411,8 @@ listenAudio = ->
 			discStop()
 		,false
 
-stopAllAudio = ->
+stopAllAudio = (name)->
 	for item in musicList
 		audio = document.getElementById item
 		audio.pause()
+		PIXI.sound.pause(item) if item isnt name
