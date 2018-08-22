@@ -3037,7 +3037,7 @@ neteaseShareImage = function neteaseShareImage() {
   var picUrl, redirectUrl, title1;
   title1 = "有故事的声活单曲";
   picUrl = 'https://image.giccoo.com/upload/' + main.folder + '/' + main.shareImageLink + "@!large";
-  redirectUrl = "https://m.giccoo.com/df308/";
+  redirectUrl = "https://m.giccoo.com/df-308/";
   // console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
   window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
   return console.log("share href:", picUrl);
@@ -3123,8 +3123,8 @@ window.onload = function () {
       shareContent = {
         title: "测测你不可T代的性格",
         desc: "听音乐测性格，赢取东标308免费使用权。",
-        link: "http://m.giccoo.com/df308/",
-        imgUrl: "http://m.giccoo.com/df308/img/ico.jpg",
+        link: "http://m.giccoo.com/df-308/",
+        imgUrl: "http://m.giccoo.com/df-308/img/ico.jpg",
         success: function success() {},
         // alert "success"
         cancel: function cancel() {}
