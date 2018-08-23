@@ -386,11 +386,16 @@ function goPage3(){
 	};
 	p3btn1.interactive=true
 	p3btn1.touchstart=goPage4
+	console.log("not err 1")
 	try{
+		console.log("not err 2")
 		if (isAndroid){
+			console.log("not err 3")
 			stopAllAudio("music-1")
+			console.log("not err 4")
 			PIXI.sound.play("music-1")
 		}else{
+			console.log("not err 5")
 			playAudio("music-1")
 		}
 	}catch(err) {

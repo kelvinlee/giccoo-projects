@@ -384,8 +384,11 @@ stopAllVideo = ->
 
 musicList = ['music-1','music-2','music-3','music-4','music-5','music-6']
 playAudio = (id)->
+	console.log("not err 6")
 	stopAllAudio()
+	console.log("not err 7")
 	audio = document.getElementById(id)
+	console.log("not err 8")
 	audio.play()
 	console.log("play music")
 	# audio.load()
@@ -412,7 +415,11 @@ listenAudio = ->
 		,false
 
 stopAllAudio = (name)->
+	console.log("not err 9")
 	for item in musicList
 		audio = document.getElementById item
+		console.log("not err 10")
 		audio.pause()
+		console.log("not err 11")
 		PIXI.sound.pause(item) if item isnt name and isAndroid
+		console.log("not err 12")
