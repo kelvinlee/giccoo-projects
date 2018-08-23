@@ -386,11 +386,15 @@ function goPage3(){
 	};
 	p3btn1.interactive=true
 	p3btn1.touchstart=goPage4
-	if (isAndroid){
-		stopAllAudio("music-1")
-		PIXI.sound.play("music-1")
-	}else{
-		playAudio("music-1")
+	try{
+		if (isAndroid){
+			stopAllAudio("music-1")
+			PIXI.sound.play("music-1")
+		}else{
+			playAudio("music-1")
+		}
+	}catch(err) {
+		console.log("err:",err)
 	}
 	
 }
@@ -403,11 +407,15 @@ function changeSong(_e){
 			var str="music-"+j
 			console.log("播放第",i+1,"首",str)
 			// playAudio(str)
-			if (isAndroid){
-				stopAllAudio(str)
-				PIXI.sound.play(str)
-			}else{
-				playAudio(str)
+			try {
+				if (isAndroid){
+					stopAllAudio(str)
+					PIXI.sound.play(str)
+				}else{
+					playAudio(str)
+				}
+			}catch(err) {
+				console.log("err:",err)
 			}
 			TweenMax.to(p3target,.2,{y:_e.target.y,delay:.02})
 			TweenMax.to(p3playing,.2,{y:_e.target.y})

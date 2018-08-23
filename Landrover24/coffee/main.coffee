@@ -415,4 +415,4 @@ stopAllAudio = (name)->
 	for item in musicList
 		audio = document.getElementById item
 		audio.pause()
-		PIXI.sound.pause(item) if item isnt name
+		PIXI.sound.pause(item) if item isnt name and isAndroid
