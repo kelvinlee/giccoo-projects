@@ -140,9 +140,9 @@ var logo=new pSprite("img/logo.png")
 
 function setPage1(){
   pStage.addChild(bg)
-  bg.pivot.set(325,650)
-  bg.position.set(320+2.5,stageH/2+2)
-  bg.width=645
+  bg.pivot.set(320,650)
+  bg.position.set(320+1,stageH/2+2)
+  bg.width=642
 
   pStage.addChild(bg2)
   bg2.pivot.set(320,650)
@@ -154,8 +154,8 @@ function setPage1(){
 
   p1mask.pivot.set(320,650)
   p1mask.position.set(320+5,stageH/2+5)
-  TweenMax.to(p1mask,.6,{y:"+=50",yoyo:false,repeat:1000,ease:Linear.easeNone})
-  TweenMax.to(bg,5.3,{x:"+=2.5",y:"-=5",yoyo:true,repeat:1000,ease:Linear.easeNone})
+  TweenMax.to(p1mask,.6,{y:"+=50",yoyo:true,repeat:1000,ease:Linear.easeNone})
+  //TweenMax.to(bg,5.3,{x:"+=0",y:"-=2",yoyo:true,repeat:1000,ease:Linear.easeNone})
 
   pStage.addChild(page1)
 
@@ -169,7 +169,10 @@ function setPage1(){
     page1.addChild(p1tA[i])
     p1tA[i].pivot.set(320,500)
     p1tA[i].position.set(320,stageH/2)
-    TweenMax.from(p1tA[i],1.5,{alpha:0,y:"+=50",delay:.15*i})
+    TweenMax.from(p1tA[i],1.5,{alpha:0,y:"+=50",delay:.15*i,overwirte:0})
+    if(i<4){
+      TweenMax.to(p1tA[i],2,{y:"-=20",delay:2.5+.5*i,repeat:1000,yoyo:true,ease:Sine.easeInOut})
+    }
   };
 
 
