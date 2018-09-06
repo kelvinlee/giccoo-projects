@@ -19,7 +19,13 @@ img{ width: 100%; }
 点击不显黑框
       	-webkit-tap-highlight-color: transparent;
 			tap-highlight-color: transparent;*/
-
+#p4down{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	z-index: 100;
+	display: none;
+}
 #mainCanvas{
 	position: absolute;
 	width: 100%;
