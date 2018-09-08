@@ -139,9 +139,9 @@ img{ width: 100%; }
 }
 
 .form .form-group label {
-    -webkit-box-flex: 2;
-    -ms-flex: 2;
-    flex: 2;
+    -webkit-box-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0.2rem 0.2rem;
