@@ -268,7 +268,8 @@ function goPage3(){
   console.log("333")
   page3.visible=true
   TweenMax.to(page2,.5,{alpha:0,y:-stageH/8,onComplete:function(){page2.visible=false}})
-  TweenMax.from(page3,.5,{alpha:0,y:"+=20",onComplete:setPage4})//============================改这里
+  //TweenMax.from(page3,.5,{alpha:0,y:"+=20",onComplete:setPage4})//============================改这里
+  TweenMax.from(page3,.5,{alpha:0,y:"+=20",onComplete:function(){reg.show = true}})//============================改这里
 }
 var page4=new PIXI.Container()
 var border=new PIXI.Container()
@@ -300,6 +301,7 @@ function setPage4(){
   b_mid.y=200
   b_mid.height=stageH-300-200
 
+  userTime111=userTime111.substr(0,6)
   textA[0]="亲爱的"+userName111
   textA[2]="时间 | "+userDate111+userTime111+"\n地点 | 北京坊 东广场"
 
@@ -340,7 +342,8 @@ function setPage4(){
 
   page4.addChild(t0,t1,t2,t3)
 
-  goPage4()
+  
+  
 }
 function goPage4(){
   page4.visible=true
@@ -356,6 +359,14 @@ function goPage5() {
   var name = reg.form.username.value
   var date = reg.form.province.value
   var time = reg.form.city.value
+
+  userName111=name
+  userDate111=date
+  userTime111=time
+
+  setPage4()
+  goPage4()
+  console.log(userName111,userDate111,userTime111)
 }
 //=============BGM=========
 

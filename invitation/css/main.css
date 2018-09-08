@@ -292,9 +292,10 @@ img{ width: 100%; }
 
 .reg {
 	position: absolute;
-	top: 50%;
+	top: 60%;
 	z-index: 199;
-	width: 100%;
+	width: 80%;
+	left: 10%;
 	/*height: 100%;*/
     -webkit-transform: translate3d(0, -50%, 0);
     transform: translate3d(0, -50%, 0);
