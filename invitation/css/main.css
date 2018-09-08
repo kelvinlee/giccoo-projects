@@ -93,3 +93,215 @@ img{ width: 100%; }
 	opacity: 0;
 	z-index: 100;
 }
+
+
+.form {
+    width: 90%;
+    margin: 0 auto;
+    color: #000;
+    font-size: .8rem
+}
+
+@media only screen and (min-width: 321px) and (max-width: 399px) {
+    .form {
+        font-size:.88rem
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+    .form {
+        font-size:.88rem
+    }
+}
+
+@media only screen and (min-width: 399px) and (max-width: 767px) {
+    .form {
+        font-size:.96rem
+    }
+}
+
+@media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+    .form {
+        font-size:.96rem
+    }
+}
+
+.form .form-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 5% 0;
+    /*border-radius: 5px;*/
+    /*border: solid 1px #555;*/
+    overflow: hidden
+}
+
+.form .form-group label {
+    -webkit-box-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.2rem 0.2rem;
+    position: relative;
+    /*border-right: solid 1px #555;*/
+    line-height: 1.8em;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    box-align: center;
+    /*background-color: #6687b3;*/
+    text-align: center;
+    color: #fff
+}
+
+.form .form-group label img {
+    display: inline-block;
+    vertical-align: middle
+}
+
+.form .form-group input,.form .form-group .form-group-items,.form .form-group .form-group-line,.form .form-group .select {
+    -webkit-box-flex: 7;
+    -ms-flex: 7;
+    flex: 7
+}
+
+.form .form-group input,.form .form-group .select {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.2rem 0;
+    line-height: 1.4em;
+    text-indent: 0.4rem;
+    border-radius: 0px;
+    border: solid 1px #fff;
+    color: #fff;
+}
+.form .form-group input::placeholder {
+	color: #fff;
+}
+
+.form .form-group .select {
+    overflow: hidden;
+    position: relative
+}
+
+.form .form-group .select:after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: .5rem;
+    width: 0;
+    height: 0;
+    -webkit-transform: translate3d(0, -30%, 0);
+    transform: translate3d(0, -30%, 0);
+    border-width: 0.5rem;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent
+}
+
+.form .form-group .select span {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.2rem 0;
+    line-height: 1.8em;
+    text-indent: 0.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle
+}
+
+.form .form-group select {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    opacity: 0
+}
+
+.form .custom-select {
+    overflow: unset
+}
+
+.form .custom-select .select {
+    overflow: unset
+}
+
+.form .custom-select .box-select {
+    position: absolute;
+    top: 105%;
+    left: 0px;
+    background-color: #fff
+}
+
+.form .custom-select .box-select .option {
+    line-height: 2em;
+    font-size: .7rem;
+    vertical-align: middle
+}
+
+@media only screen and (min-width: 321px) and (max-width: 399px) {
+    .form .custom-select .box-select .option {
+        font-size:.77rem
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-device-width: 375px) and (max-width: 399px) {
+    .form .custom-select .box-select .option {
+        font-size:.77rem
+    }
+}
+
+@media only screen and (min-width: 399px) and (max-width: 767px) {
+    .form .custom-select .box-select .option {
+        font-size:.84rem
+    }
+}
+
+@media only screen and (min-width: 399px) and (max-width: 768px) and (max-device-width: 768px) {
+    .form .custom-select .box-select .option {
+        font-size:.84rem
+    }
+}
+
+.form .custom-select .box-select .option span {
+    line-height: 2em;
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%
+}
+
+.form .btn-submit {
+    margin: 0.5rem auto
+}
+
+
+.reg {
+	position: absolute;
+	top: 50%;
+	z-index: 199;
+	width: 100%;
+	/*height: 100%;*/
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+}
+.reg.down {
+    top: auto;
+    bottom: 0;
+    -webkit-transform: translate3d(0, 5%, 0);
+    transform: translate3d(0, 5%, 0);
+}

@@ -7,7 +7,7 @@ Vue.component "form-grounp",
         <div v-if="type[item.type] == \'select\'" class="select">
           <span>{{getOptionsName(item)}}</span>
           <select :id="item.id" v-model="item.value" v-if="!item.array">
-            <option v-for="(item, key) in item.options" :disabled="item" :value="key">{{key}}</option>
+            <option v-for="(item, key) in item.options" :disabled="!item" :value="key">{{key}}</option>
           </select>
           <select :id="item.id" v-model="item.value" v-if="item.array">
             <option v-for="(item, index) in item.options" :value="item.val">{{item.name}}</option>
@@ -62,6 +62,9 @@ Vue.component "form-grounp",
             console.log n.link,self.form[n.link].value,n.options[n.value][0].val
             self.form[n.link].value = n.options[n.value][0].val
           else
-            self.form[n.link].value = Object.keys(n.options[n.value])[0]
+            for i in [0...Object.keys(n.options[n.value]).length]
+              if n.options[n.value][Object.keys(n.options[n.value])[i]]
+                self.form[n.link].value = Object.keys(n.options[n.value])[i]
+                break
         ,{deep: true}
 

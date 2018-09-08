@@ -349,6 +349,13 @@ function goPage4(){
   TweenMax.from($("#p4down"),1,{opacity:0,bottom:-10,onComplete:function(){savePic()}})
   
 }
+function goPage5() {
+  reg.show = false // true 会显示
+  // 如果reg 需要俱下对其 （默认剧中） 就把html上的reg 加一个down （没有top）
+  var name = reg.form.username.value
+  var date = reg.form.province.value
+  var time = reg.form.city.value
+}
 //=============BGM=========
 
 // var ifbgm=0
