@@ -350,6 +350,7 @@ function goPage4(){
   
 }
 function goPage5() {
+  // 注册成功会调用 goPage5()
   reg.show = false // true 会显示
   // 如果reg 需要俱下对其 （默认剧中） 就把html上的reg 加一个down （没有top）
   var name = reg.form.username.value
