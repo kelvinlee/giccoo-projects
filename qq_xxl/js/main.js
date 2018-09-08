@@ -94,10 +94,25 @@ function pageLoop(){
   requestAnimationFrame(pageLoop)
   renderer.render(pStage)
 }
+var upLayer=new PIXI.Container()
+var midLayer=new PIXI.Container()
+var downLayer=new PIXI.Container()
 function setup(){
   setBG()
+  pStage.addChild(downLayer,midLayer,upLayer)
+  setArrow()
+  setLogo()
+  setTouch()
+  setAllPage()
+
+  setWave234()
+  setTag()
+  setHeader()
+  setHeader12_16()
+
+  setPage0()
   setPage1()
-  bgUp()
+
 }
 
 
