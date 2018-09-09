@@ -193,25 +193,25 @@ function setup(){
 // };
 //=============BGM=========
 
-// var ifbgm=0
-// var bgm=$("#bgm")[0]
-// //微信端背景音乐播放...
-// function iniListenSound(){
-//          document.addEventListener("WeixinJSBridgeReady", function(){
-//              bgm.play();
-//              ifbgm=1
-//              TweenLite.set($("#musicOff"),{opacity:0})
-//         }, false);
-// }
-// $("#musicOff").click(function(){
-//   if(ifbgm==0){
-//     bgm.play();
-//     TweenLite.set($("#musicOff"),{opacity:0})
-//   }else{
-//     bgm.pause();
-//     TweenLite.set($("#musicOff"),{opacity:1})
-//   }
-//   ifbgm++
-//   if(ifbgm==2){ifbgm=0}
+var ifbgm=0
+var bgm=$("#bgm")[0]
+//微信端背景音乐播放...
+function iniListenSound(){
+         document.addEventListener("WeixinJSBridgeReady", function(){
+             bgm.play();
+             ifbgm=1
+             //TweenLite.set($("#musicOff"),{opacity:0})
+        }, false);
+}
+$("#musicOff").click(function(){
+  if(ifbgm==0){
+    bgm.play();
+    //TweenLite.set($("#musicOff"),{opacity:0})
+  }else{
+    bgm.pause();
+    //TweenLite.set($("#musicOff"),{opacity:1})
+  }
+  ifbgm++
+  if(ifbgm==2){ifbgm=0}
 
-// })
+})

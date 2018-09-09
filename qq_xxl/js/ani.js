@@ -983,10 +983,10 @@ function goFirst(){
 ///////////////////////////////////////////////////////////////////////////////========== checkPage QR 视频
 
 function checkPage(){
-	TweenMax.set($("#video1div"),{y:screenH/2-49*screenW/640})
-	TweenMax.set($("#video2div"),{y:screenH/2-152*screenW/640})
-	TweenMax.set($("#video3div"),{y:screenH/2-152*screenW/640})
-	TweenMax.set($("#video4div"),{y:screenH/2-152*screenW/640})
+	TweenMax.set($("#video1div"),{y:screenH/2-49*screenW/640,display:"block"})
+	TweenMax.set($("#video2div"),{y:screenH/2-152*screenW/640,display:"block"})
+	TweenMax.set($("#video3div"),{y:screenH/2-152*screenW/640,display:"block"})
+	TweenMax.set($("#video4div"),{y:screenH/2-152*screenW/640,display:"block"})
 	if(nowPage==17){
 		TweenMax.set($("#qr"),{display:"block"})
 	}else{
