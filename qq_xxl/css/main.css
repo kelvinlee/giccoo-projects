@@ -49,11 +49,15 @@ img{ width: 100%; }
 /*	background-color: #987654;*/
 	z-index: 100;
 	font-size: 0;
-	display: "none"
+	display: none;
 }
 #video1div{
 	width: 37.5%;
 	left: 31.25%;
+}
+.video234{
+	width: 38.4375%;
+	left: 30.78125%;
 }
 /*.musicBtn{
 	position: absolute;

@@ -115,6 +115,7 @@ function touchStart(_e){
   startY=_e.data.global.y
   bg.touchend=touchEnd
   $("#video1")[0].play()
+  $("#video2")[0].play()
 }
 var ifTouchBG=1
 function touchEnd(_e){
@@ -980,6 +981,7 @@ function goFirst(){
 
 function checkPage(){
 	TweenMax.set($("#video1div"),{y:screenH/2-49*screenW/640})
+	TweenMax.set($("#video2div"),{y:screenH/2-152*screenW/640})
 	if(nowPage==17){
 		TweenMax.set($("#qr"),{display:"block"})
 	}else{
@@ -992,12 +994,24 @@ function checkPage(){
 		
 		setTimeout(function(){
 			if(nowPage==12){
-				TweenMax.set($("#video1"),{display:"block"})
+				TweenMax.set($("#video1div"),{display:"block"})
 				
 			}
 		},1000)
 	}else{
 		//$("#video1")[0].pause()
-		TweenMax.set($("#video1"),{display:"none"})
+		TweenMax.set($("#video1div"),{display:"none"})
+	}
+
+	if(nowPage==13){
+		setTimeout(function(){
+			if(nowPage==13){
+				TweenMax.set($("#video2div"),{display:"block"})
+				
+			}
+		},1000)
+	}else{
+		//$("#video1")[0].pause()
+		TweenMax.set($("#video2div"),{display:"none"})
 	}
 }
