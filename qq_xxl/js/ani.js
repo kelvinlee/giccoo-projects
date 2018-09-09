@@ -993,9 +993,8 @@ function checkPage(){
 	}
 
 	if(nowPage==12){
-		//$("#video1")[0].play()
-		//$("#video1")[0].play()
-		
+
+		$("#video1")[0].play()
 		setTimeout(function(){
 			if(nowPage==12){
 				TweenMax.set($("#video1div"),{display:"block"})
@@ -1003,37 +1002,43 @@ function checkPage(){
 			}
 		},1000)
 	}else{
-		//$("#video1")[0].pause()
+		$("#video1")[0].pause()
 		TweenMax.set($("#video1div"),{display:"none"})
 	}
 
 	if(nowPage==13){
 		setTimeout(function(){
+			$("#video2")[0].play()
 			if(nowPage==13){
 				TweenMax.set($("#video2div"),{display:"block"})
 			}
 		},1000)
 	}else{
+		$("#video2")[0].pause()
 		TweenMax.set($("#video2div"),{display:"none"})
 	}
 
 	if(nowPage==14){
 		setTimeout(function(){
+			$("#video3")[0].play()
 			if(nowPage==14){
 				TweenMax.set($("#video3div"),{display:"block"})
 			}
 		},1000)
 	}else{
+		$("#video3")[0].pause()
 		TweenMax.set($("#video3div"),{display:"none"})
 	}
 
 	if(nowPage==16){
 		setTimeout(function(){
+			$("#video4")[0].play()
 			if(nowPage==16){
 				TweenMax.set($("#video4div"),{display:"block"})
 			}
 		},1000)
 	}else{
+		$("#video4")[0].pause()
 		TweenMax.set($("#video4div"),{display:"none"})
 	}
 }
