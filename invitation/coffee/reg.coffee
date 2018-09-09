@@ -1,7 +1,9 @@
 # @codekit-prepend "../../libs/vue/vue-register"
 
 _citys = {}
+_citys["请选择日期"] = {}
 _citys["9月22日"] = {}
+_citys["9月22日"]["请选择时间"] = false
 _citys["9月22日"]["11-12点 裳花教室（已报满）"] = false
 _citys["9月22日"]["12-13点"] = true
 _citys["9月22日"]["13-14点"] = true
@@ -13,6 +15,7 @@ _citys["9月22日"]["18-19点"] = true
 _citys["9月22日"]["19-20点"] = true
 _citys["9月22日"]["20-21点 DIY鸡尾酒（已报满）"] = false
 _citys["9月23日"] = {}
+_citys["9月23日"]["请选择时间"] = false
 _citys["9月23日"]["11-12点 森林瑜伽会"] = true
 _citys["9月23日"]["12-13点"] = true
 _citys["9月23日"]["13-14点"] = true
@@ -24,7 +27,7 @@ _citys["9月23日"]["18-19点"] = true
 _citys["9月23日"]["19-20点"] = true
 _citys["9月23日"]["20-21点 红酒品鉴沙龙"] = true
 
-persons = [{name:"1人",val:1},{name:"2人",val:2},{name:"3人",val:3},{name:"4人",val:4}]
+persons = [{name: "请选择人数",val: "请选择人数"},{name:"1人",val:1},{name:"2人",val:2},{name:"3人",val:3},{name:"4人",val:4}]
 
 reg = {}
 apiLink = "//api.giccoo.com/"
