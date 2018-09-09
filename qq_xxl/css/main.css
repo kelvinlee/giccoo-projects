@@ -35,7 +35,25 @@ img{ width: 100%; }
 			tap-highlight-color: transparent;
 	display: none;
 }
+#qr{
+	position: absolute;
+	width: 25.9375%;
+	z-index: 100;
+	left: 37.03125%;
+	top: 51%;
+	display: none;
+}
 
+.videoDiv{
+	position: absolute;
+/*	background-color: #987654;*/
+	z-index: 100;
+	font-size: 0;
+}
+#video1div{
+	width: 37.5%;
+	left: 31.25%;
+}
 /*.musicBtn{
 	position: absolute;
 	width: 12.35%;

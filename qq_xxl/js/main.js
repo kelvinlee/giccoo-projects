@@ -109,9 +109,29 @@ function setup(){
   setTag()
   setHeader()
   setHeader12_16()
+  setP12bg()
+  setWhiteBG()
 
   setPage0()
   setPage1()
+  setPage2()
+
+  setPage3()
+  setPage4()
+  setPage5()
+  setPage6()
+
+  setPage7()
+  setPage8()
+  setPage9()
+  setPage10()
+  setPage11()
+  setPage12()
+  setPage13()
+  setPage14()
+  setPage15()
+  setPage16()
+  setPage17()
 
 }
 
