@@ -114,6 +114,7 @@ function setTouch(){
 function touchStart(_e){
   startY=_e.data.global.y
   bg.touchend=touchEnd
+  $("#video1")[0].play()
 }
 var ifTouchBG=1
 function touchEnd(_e){
@@ -987,15 +988,16 @@ function checkPage(){
 
 	if(nowPage==12){
 		//$("#video1")[0].play()
+		//$("#video1")[0].play()
 		
 		setTimeout(function(){
 			if(nowPage==12){
 				TweenMax.set($("#video1"),{display:"block"})
-				$("#video1")[0].play()
+				
 			}
-		},1)
+		},1000)
 	}else{
-		$("#video1")[0].pause()
+		//$("#video1")[0].pause()
 		TweenMax.set($("#video1"),{display:"none"})
 	}
 }
