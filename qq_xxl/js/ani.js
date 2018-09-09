@@ -114,10 +114,11 @@ function setTouch(){
 function touchStart(_e){
   startY=_e.data.global.y
   bg.touchend=touchEnd
-  $("#video1")[0].play()
-  $("#video2")[0].play()
-  $("#video3")[0].play()
-  $("#video4")[0].play()
+  if(nowPage==8){$("#video1")[0].play()}
+  if(nowPage==9){$("#video2")[0].play()}
+  if(nowPage==10){$("#video3")[0].play()}
+  if(nowPage==11){$("#video4")[0].play()}
+
 }
 var ifTouchBG=1
 function touchEnd(_e){
