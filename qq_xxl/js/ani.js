@@ -986,13 +986,14 @@ function checkPage(){
 	}
 
 	if(nowPage==12){
-		$("#video1")[0].play()
+		//$("#video1")[0].play()
 		
 		setTimeout(function(){
 			if(nowPage==12){
 				TweenMax.set($("#video1"),{display:"block"})
+				$("#video1")[0].play()
 			}
-		},1000)
+		},1)
 	}else{
 		$("#video1")[0].pause()
 		TweenMax.set($("#video1"),{display:"none"})
