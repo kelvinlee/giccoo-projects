@@ -999,14 +999,17 @@ function checkPage(){
 		setTimeout(function(){
 			if(nowPage==12){
 				//TweenMax.set($("#video1div"),{display:"block"})
-				TweenMax.set($("#video1div"),{"z-index":100})
+				//TweenMax.set($("#video1div"),{"z-index":100})
+				TweenMax.set($("#video1div"),{left:"31.25%"})
 				
 			}
 		},1000)
 	}else{
 		$("#video1")[0].pause()
 		//TweenMax.set($("#video1div"),{display:"none"})
-		TweenMax.set($("#video1div"),{"z-index":-100})
+		//TweenMax.set($("#video1div"),{"z-index":-100})
+		TweenMax.set($("#video1div"),{left:"131.25%"})
+				
 	}
 
 	if(nowPage==13){
@@ -1014,13 +1017,15 @@ function checkPage(){
 			$("#video2")[0].play()
 			if(nowPage==13){
 				//TweenMax.set($("#video2div"),{display:"block"})
-				TweenMax.set($("#video2div"),{"z-index":100})
+				//TweenMax.set($("#video2div"),{"z-index":100})
+				TweenMax.set($("#video2div"),{left:"30.78125%"})
 			}
 		},1000)
 	}else{
 		$("#video2")[0].pause()
 		//TweenMax.set($("#video2div"),{display:"none"})
-		TweenMax.set($("#video2div"),{"z-index":-100})
+		//TweenMax.set($("#video2div"),{"z-index":-100})
+		TweenMax.set($("#video2div"),{left:"130.78125%"})
 	}
 
 	if(nowPage==14){
@@ -1028,13 +1033,15 @@ function checkPage(){
 			$("#video3")[0].play()
 			if(nowPage==14){
 				//TweenMax.set($("#video3div"),{display:"block"})
-				TweenMax.set($("#video3div"),{"z-index":100})
+				//TweenMax.set($("#video3div"),{"z-index":100})
+				TweenMax.set($("#video3div"),{left:"30.78125%"})
 			}
 		},1000)
 	}else{
 		$("#video3")[0].pause()
 		//TweenMax.set($("#video3div"),{display:"none"})
-		TweenMax.set($("#video3div"),{"z-index":-100})
+		//TweenMax.set($("#video3div"),{"z-index":-100})
+		TweenMax.set($("#video3div"),{left:"130.78125%"})
 	}
 
 	if(nowPage==16){
@@ -1042,12 +1049,14 @@ function checkPage(){
 			$("#video4")[0].play()
 			if(nowPage==16){
 				//TweenMax.set($("#video4div"),{display:"block"})
-				TweenMax.set($("#video4div"),{"z-index":100})
+				//TweenMax.set($("#video4div"),{"z-index":100})
+				TweenMax.set($("#video4div"),{left:"30.78125%"})
 			}
 		},1000)
 	}else{
 		$("#video4")[0].pause()
 		//TweenMax.set($("#video4div"),{display:"none"})
-		TweenMax.set($("#video4div"),{"z-index":-100})
+		//TweenMax.set($("#video4div"),{"z-index":-100})
+		TweenMax.set($("#video4div"),{left:"130.78125%"})
 	}
 }

@@ -47,7 +47,7 @@ img{ width: 100%; }
 .videoDiv{
 	position: absolute;
 /*	background-color: #987654;*/
-	z-index: -100;
+	z-index: 100;
 	font-size: 0;
 	display: none;
 }
