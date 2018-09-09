@@ -984,4 +984,17 @@ function checkPage(){
 	}else{
 		TweenMax.set($("#qr"),{display:"none"})
 	}
+
+	if(nowPage==12){
+		$("#video1")[0].play()
+		
+		setTimeout(function(){
+			if(nowPage==12){
+				TweenMax.set($("#video1"),{display:"block"})
+			}
+		},1000)
+	}else{
+		$("#video1")[0].pause()
+		TweenMax.set($("#video1"),{display:"none"})
+	}
 }

@@ -49,6 +49,7 @@ img{ width: 100%; }
 /*	background-color: #987654;*/
 	z-index: 100;
 	font-size: 0;
+	display: "none"
 }
 #video1div{
 	width: 37.5%;
