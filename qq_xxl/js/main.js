@@ -74,6 +74,7 @@ var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _SCREEN=PIXI.BLEND_MODES.SCREEN
 
 function initAll(){
+  iniListenSound()
   stageW=640
   stageH=screenH/screenW*640
 
