@@ -258,8 +258,8 @@ function setPage3(){
   p3t.pivot.set(320,500)
   p3t.position.set(320,stageH/2)
 
-  p3bg.pivot.set(320,500)
-  p3bg.position.set(320,stageH/2)
+  p3bg.pivot.set(320,260)
+  p3bg.position.set(320,stageH*.65-253/2+15)
   page3.visible=false
 
 
