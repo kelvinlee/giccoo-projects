@@ -90,6 +90,8 @@ function initAll(){
   setPage1()
   setPage2()
   setPage3()
+  TweenMax.set($("#logo"),{y:screenH/2-416*screenW/640})
+  console.log(screenH/2-416*screenW/640)
 }
 
 function pageLoop(){
@@ -165,6 +167,7 @@ function setPage1(){
 
   pStage.addChild(logo)
   logo.position.set(0,stageH/2-416)
+  logo.alpha=0
 
   p1tA=[p1title1,p1title2,p1title3,p1title4,p1t1,p1t2,p1t3,p1t4,p1t5]
 
@@ -346,6 +349,7 @@ function setPage4(){
   
 }
 function goPage4(){
+  logo.alpha=1
   page4.visible=true
   TweenMax.to(page3,.5,{alpha:0,y:-stageH/8,onComplete:function(){page3.visible=false}})
   TweenMax.set($("#p4down"),{display:"block"})

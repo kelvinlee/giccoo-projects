@@ -19,6 +19,13 @@ img{ width: 100%; }
 点击不显黑框
       	-webkit-tap-highlight-color: transparent;
 			tap-highlight-color: transparent;*/
+
+#logo{
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    
+}
 #p4down{
 	position: absolute;
 	width: 100%;
