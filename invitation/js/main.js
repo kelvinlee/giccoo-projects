@@ -267,6 +267,8 @@ var p3t=new pSprite("img/p3t.png")
 var p3bg=new pSprite("img/p3bg.png")
 var btnBack=new pSprite("img/btn-back.png")
 function setPage3(){
+  // pStage.interactive=false
+  //pStage.touchstart=null
   pStage.addChild(page3)
   page3.addChild(p3bg)
   page3.addChild(p3t,btnBack)
@@ -282,6 +284,8 @@ function setPage3(){
 
 }
 function goBackPage2(){
+  nowPage=2
+  pStage.interactive=true
   page3.visible=false
   reg.show = false
   page2.visible=true
@@ -290,6 +294,7 @@ function goBackPage2(){
 }
 
 function goPage3(){
+  nowPage=3
   console.log("333")
   page3.visible=true
   TweenMax.to(page2,.5,{alpha:0,y:-stageH/8,onComplete:function(){page2.visible=false}})
