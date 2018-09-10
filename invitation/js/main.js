@@ -197,20 +197,32 @@ function setPage1(){
 }
 
 var startY
+var nowPage=1
 function touchStart(_e){
   startY=_e.data.global.y
   pStage.touchend=touchEnd
 }
 function touchEnd(_e){
-  if(startY-_e.data.global.y>90){
+  if(startY-_e.data.global.y>90&&nowPage==1){
     goPage2()
+    nowPage=2
+  }else if(startY-_e.data.global.y<-90&&nowPage==2){
+    goBackPage1()
+    nowPage=1
   }
+}
+
+function goBackPage1(){
+  title.visible=false
+  page2.visible=false
+  page1.visible=true
+  TweenMax.to(page1,.5,{alpha:1,y:0})
 }
 
 
 function goPage2(){
-  pStage.interactive=false
-  pStage.touchstart=null
+  // pStage.interactive=false
+  // pStage.touchstart=null
   console.log("dddd")
   TweenMax.to(page1,.5,{alpha:0,y:-stageH/4,onComplete:function(){page1.visible=false}})
   page2.visible=true
@@ -253,10 +265,11 @@ function setPage2(){
 var page3=new PIXI.Container()
 var p3t=new pSprite("img/p3t.png")
 var p3bg=new pSprite("img/p3bg.png")
+var btnBack=new pSprite("img/btn-back.png")
 function setPage3(){
   pStage.addChild(page3)
   page3.addChild(p3bg)
-  page3.addChild(p3t)
+  page3.addChild(p3t,btnBack)
 
   p3t.pivot.set(320,500)
   p3t.position.set(320,stageH/2)
@@ -264,9 +277,18 @@ function setPage3(){
   p3bg.pivot.set(320,260)
   p3bg.position.set(320,stageH*.65-253/2+15)
   page3.visible=false
-
+  btnBack.interactive=true
+  btnBack.touchstart=goBackPage2
 
 }
+function goBackPage2(){
+  page3.visible=false
+  reg.show = false
+  page2.visible=true
+  TweenMax.to(page2,.5,{alpha:1,y:0})
+  goPage2()
+}
+
 function goPage3(){
   console.log("333")
   page3.visible=true
