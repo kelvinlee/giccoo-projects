@@ -7,7 +7,7 @@ $(document).ready(function load (){
     TweenLite.set($("#btnshare"),{display:"block"})
 
   } else {
-  //iniListenSound()
+  iniListenSound()
 	loadWechatConfig();
 
   	wx.ready(function() {

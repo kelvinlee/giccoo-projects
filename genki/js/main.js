@@ -13,20 +13,20 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "定义我的燃动健身房",
-      desc: "新高尔夫，点“燃”你的理想健身房！",
-      link: "http://m.giccoo.com/mygym/",
-      imgUrl: "http://m.giccoo.com/mygym/img/ico.jpg",
+      title: "元气音乐节",
+      desc: "唤醒元气初心",
+      link: "http://m.giccoo.com/genki/",
+      imgUrl: "http://m.giccoo.com/genki/img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };
 
     var shareContent2;
     shareContent2 = {
-      title: "【定义我的燃动健身房】新高尔夫，点“燃”你的理想健身房！",
+      title: "【元气音乐节】唤醒元气初心",
       desc: "",
-      link: "http://m.giccoo.com/mygym/",
-      imgUrl: "http://m.giccoo.com/mygym/img/ico.jpg",
+      link: "http://m.giccoo.com/genki/",
+      imgUrl: "http://m.giccoo.com/genki/img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };
@@ -88,8 +88,56 @@ function initAll(){
   renderer.backgroundColor=0xffffff
   pageLoop()
 
+  setPage()
+  setPart1()
+  setPart2()
+  setPart3()
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////===============滚屏
+var main=new PIXI.Container()
+var bg=new pSprite("img/bgloop.jpg")
+
+function setPage(){
+  pStage.addChild(bg,main)
+  pStage.interactive=true
+  pStage.touchstart=touchStart
+}
+
+var startY,endY,mouseYA,timeA,newPosition
+
+function touchStart(_e){
+  TweenLite.killTweensOf(main)
+  newPosition=main.y
+  startY=_e.data.global.y
+  console.log(_e.data.global.y)
+  pStage.touchmove=touchMove
+  pStage.interactive=true
+  pStage.touchend=touchEnd
+  mouseYA=[0,0]
+  timeA=[0,0]
+}
+function touchMove(_e){
+  main.y=newPosition+(_e.data.global.y-startY)//*2
+  if(main.y>=0){    main.y=0  }
+  if(main.y<=-11500) {main.y=-11500};//=======================高度限制
+  mouseYA.push(_e.data.global.y)
+  date=new Date()
+  timeA.push(date.getTime())
+}
+function touchEnd(_e){
+  pStage.touchmove=null
+  pStage.interactive=true
+  pStage.touchend=null
+
+  var endY=main.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2])
+  if(endY>=0){    endY=0  }
+  if(endY<=-11500) {endY=-11500};//=======================高度限制
+
+  TweenMax.to(main,1,{y:endY})
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////===============
 function pageLoop(){
   requestAnimationFrame(pageLoop)
   renderer.render(pStage)
