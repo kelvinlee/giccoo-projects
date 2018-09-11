@@ -74,6 +74,7 @@ var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _SCREEN=PIXI.BLEND_MODES.SCREEN
 
 function initAll(){
+  //iniListenSound()
   stageW=640
   stageH=screenH/screenW*640
 
@@ -400,7 +401,16 @@ function goPage5() {
   console.log(userName111,userDate111,userTime111)
 }
 //=============BGM=========
-
+var ifbgm=0
+var bgm=$("#bgm")[0]
+//微信端背景音乐播放...
+function iniListenSound(){
+         document.addEventListener("WeixinJSBridgeReady", function(){
+             bgm.play();
+             ifbgm=1
+             //TweenLite.set($("#musicOff"),{opacity:0})
+        }, false);
+}
 // var ifbgm=0
 // var bgm=$("#bgm")[0]
 // //微信端背景音乐播放...
