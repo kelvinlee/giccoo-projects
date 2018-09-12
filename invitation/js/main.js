@@ -377,6 +377,7 @@ function setPage4(){
   
 }
 function goPage4(){
+  TweenMax.set($("#logo"),{display:"none"})
   logo.alpha=1
   page4.visible=true
   TweenMax.to(page3,.5,{alpha:0,y:-stageH/8,onComplete:function(){page3.visible=false}})

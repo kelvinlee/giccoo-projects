@@ -13,22 +13,26 @@ var userSongstyle={
 		// wordWrap:true,
 		// wordWrapWidth:100
 	}
-
-function message(_text,_song,_like){
+var messageA=[]
+var nowHeight=1000
+function message(_text,_song,_like,_liked,_id){
 	var a_message=new PIXI.Container()
 	var messageBG=new PIXI.Graphics()
 	var messageIco=new pSprite("img/message1.png")
-	var messageLike=new pSprite("img/message2.png")
+	var messageArrow=new pSprite("img/message-arrow.png")
+
+	var btnLike=new pSprite("img/btn-like.png")
 
 
 	var userT=new PIXI.Text(_text,userTstyle)
 	var userSong=new PIXI.Text(_song,userSongstyle)
 
-	a_message.addChild(messageBG,userT,userSong,messageIco,messageLike)
+	a_message.addChild(messageBG,messageArrow,userT,userSong,messageIco,btnLike)
+	messageArrow.x=3
 	part4.addChild(a_message)
 
 
-	a_message.y=1000//============改位置
+	
 
 
 	userT.text=addReturn(_text)
@@ -39,10 +43,37 @@ function message(_text,_song,_like){
 	messageBG.beginFill(0xffffff)
 	messageBG.drawRoundedRect(0,0,mWidth+46*2,userT.height+16+50,20)
 
-	messageLike.y=messageIco.y=userT.y+userT.height
+	messageIco.y=userT.y+userT.height
 	userSong.y=userT.y+userT.height+15
 	userSong.x=225
+	btnLike.x=504
+	btnLike.y=userT.y+userT.height+63
+	
+	a_message.y=nowHeight//============改位置
+	nowHeight+=userT.height+130
+
+	//btnLike.visible=_liked  如果liked了 visible=false 
+	btnLike.interactive=true
+	btnLike.tap=goLike
+
+	var aMessage=[a_message,btnLike,_id]
+	messageA.push(aMessage)
+
 }
+////////////////////////////////////////////////////////////////////////////////==like
+
+function goLike(_e){
+	console.log(_e.target)
+	for (var i = 0; i < messageA.length; i++) {
+		if(_e.target==messageA[i][1]){
+			console.log(messageA[i][2])
+		}
+	};
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////==换行
 
 var testLengthT=new PIXI.Text()
 function addReturn(_text){
