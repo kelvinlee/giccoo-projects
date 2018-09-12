@@ -13,8 +13,15 @@ var userSongstyle={
 		// wordWrap:true,
 		// wordWrapWidth:100
 	}
+var userLikeStyle={
+		fill:'#ffffff',
+		fontSize: 19,
+		align: 'right',
+		// wordWrap:true,
+		// wordWrapWidth:100
+	}
 var messageA=[]
-var nowHeight=1000
+var nowHeight=1100
 function message(_text,_song,_like,_liked,_id){
 	var a_message=new PIXI.Container()
 	var messageBG=new PIXI.Graphics()
@@ -27,7 +34,12 @@ function message(_text,_song,_like,_liked,_id){
 	var userT=new PIXI.Text(_text,userTstyle)
 	var userSong=new PIXI.Text(_song,userSongstyle)
 
-	a_message.addChild(messageBG,messageArrow,userT,userSong,messageIco,btnLike)
+	var userIco=new pSprite("img/ico"+_id%10+".png")
+	userIco.position.set(30,0)
+
+	var userLikeT=new PIXI.Text(_like,userLikeStyle)
+
+	a_message.addChild(messageBG,messageArrow,userT,userSong,messageIco,btnLike,userIco,userLikeT)
 	messageArrow.x=3
 	part4.addChild(a_message)
 
@@ -48,6 +60,9 @@ function message(_text,_song,_like,_liked,_id){
 	userSong.x=225
 	btnLike.x=504
 	btnLike.y=userT.y+userT.height+63
+
+	userLikeT.y=userT.y+userT.height+69
+	userLikeT.x=570-userLikeT.width/2
 	
 	a_message.y=nowHeight//============改位置
 	nowHeight+=userT.height+130
@@ -56,7 +71,7 @@ function message(_text,_song,_like,_liked,_id){
 	btnLike.interactive=true
 	btnLike.tap=goLike
 
-	var aMessage=[a_message,btnLike,_id]
+	var aMessage=[a_message,btnLike,userLikeT,_id]
 	messageA.push(aMessage)
 
 }
@@ -66,9 +81,14 @@ function goLike(_e){
 	console.log(_e.target)
 	for (var i = 0; i < messageA.length; i++) {
 		if(_e.target==messageA[i][1]){
-			console.log(messageA[i][2])
+			console.log(messageA[i][3])
+			messageA[i][2].text=parseInt(messageA[i][2].text)+1
+			console.log("该提交点赞了！")
 		}
 	};
+	_e.target.visible=false
+	_e.target.interactive=false
+	
 }
 
 
@@ -97,4 +117,64 @@ function addReturn(_text){
 	var returnT=_tA.join("\n")
 	console.log(returnT)
 	return(returnT)
+}
+
+////////////////////////////////////////////////////////////////////////////////==用户表单
+function setUserForm(){
+	var a_message=new PIXI.Container()
+	var messageBG=new PIXI.Graphics()
+	var messageBG2=new PIXI.Graphics()
+	var messageIco=new pSprite("img/message1_.png")
+	var messageArrow=new pSprite("img/message-arrow.png")
+
+	var btnLike=new pSprite("img/btn-like.png")
+
+
+	var userT=new PIXI.Text("我来说几句",userTstyle)
+	var userSong=new PIXI.Text("在这里写下你最爱的歌曲",userSongstyle)
+
+	var userIco=new pSprite("img/ico"+parseInt(Math.random()*10)+".png")
+	userIco.position.set(30,0)
+
+	var userLikeT=new PIXI.Text("提交",userLikeStyle)
+
+	a_message.addChild(messageBG,messageBG2,messageArrow,userT,userSong,messageIco,btnLike,userIco,userLikeT)
+	messageArrow.x=3
+	part4.addChild(a_message)
+
+
+	
+
+
+	userT.text=addReturn("\n\n\n")
+	userT.position.set(175,20)
+
+	messageBG.position.set(129,6)
+	messageBG.lineStyle(4, 0x006838,1,0);
+	messageBG.beginFill(0xffffff)
+	messageBG.drawRoundedRect(0,0,mWidth+46*2,userT.height+16+50,20)
+
+	messageBG2.position.set(129,109+userT.height-24)
+	//messageBG2.lineStyle(4, 0x006838,1,0);
+	messageBG2.beginFill(0xffffff)
+	messageBG2.drawRoundedRect(0,0,mWidth+46*2-115,35,20)
+
+	messageIco.y=userT.y+userT.height
+	userSong.y=userT.y+userT.height+15+57
+	userSong.x=225
+	btnLike.x=504
+	btnLike.y=userT.y+userT.height+63
+
+	userLikeT.y=userT.y+userT.height+69
+	userLikeT.x=570-userLikeT.width/2-15
+	
+	a_message.y=nowHeight//============改位置
+	nowHeight+=userT.height+130
+
+	//btnLike.visible=_liked  如果liked了 visible=false 
+	// btnLike.interactive=true
+	// btnLike.tap=goLike//=====================这里改成提交
+
+
+
 }

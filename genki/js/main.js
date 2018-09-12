@@ -110,6 +110,9 @@ var startY,endY,mouseYA,timeA,newPosition
 
 function touchStart(_e){
   TweenLite.killTweensOf(main)
+  TweenLite.killTweensOf($("#userText"))
+  $("#UserTextarea1").blur();
+  
   newPosition=main.y
   startY=_e.data.global.y
   console.log(_e.data.global.y)
@@ -118,6 +121,7 @@ function touchStart(_e){
   pStage.touchend=touchEnd
   mouseYA=[0,0]
   timeA=[0,0]
+
 }
 function touchMove(_e){
   main.y=newPosition+(_e.data.global.y-startY)//*2
@@ -126,6 +130,10 @@ function touchMove(_e){
   mouseYA.push(_e.data.global.y)
   date=new Date()
   timeA.push(date.getTime())
+
+  console.log("theNewNowHeight+part4.y-217",theNewNowHeight+part4.y-217,"main.y",main.y)
+
+  TweenMax.set($("#userText"),{y:(theNewNowHeight+part4.y-217+main.y)/640*screenW})
 }
 function touchEnd(_e){
   pStage.touchmove=null
@@ -137,6 +145,8 @@ function touchEnd(_e){
   if(endY<=-11500) {endY=-11500};//=======================高度限制
 
   TweenMax.to(main,1,{y:endY})
+
+  TweenMax.to($("#userText"),1,{y:(theNewNowHeight+part4.y-217+endY)/640*screenW})
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////===============
 function pageLoop(){
