@@ -17,6 +17,9 @@ getMessages = (page = 1,callback = ->)->
 	.catch (err)=>
 		alert "列表获取失败"
 
+# 发布留言
+# sendMessage("content","musicname",function(){ console.log("success") })
+# message 留言内容, nickname 音乐名称, 成功回调函数
 sendMessage = (message,nickname,callback = ->)->
 	data = {
 		message: message
@@ -33,6 +36,9 @@ sendMessage = (message,nickname,callback = ->)->
 	.catch (err)=>
 		alert "留言失败，请重试"
 
+# 留言点赞
+# likeMessage(1)
+# id 留言的id。
 likeMessage = (id)->
 	saveID = localStorage.getItem("id-#{id}")
 	if saveID?

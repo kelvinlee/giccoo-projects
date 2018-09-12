@@ -31,6 +31,9 @@ getMessages = function getMessages() {
   });
 };
 
+// 发布留言
+// sendMessage("content","musicname",function(){ console.log("success") })
+// message 留言内容, nickname 音乐名称, 成功回调函数
 sendMessage = function sendMessage(message, nickname) {
   var callback = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {};
 
@@ -52,6 +55,9 @@ sendMessage = function sendMessage(message, nickname) {
   });
 };
 
+// 留言点赞
+// likeMessage(1)
+// id 留言的id。
 likeMessage = function likeMessage(id) {
   var data, saveID;
   saveID = localStorage.getItem("id-" + id);
