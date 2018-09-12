@@ -21,6 +21,12 @@ function goBGM(){
 		btnStop.alpha=0
 		bgm.pause()
 	}
+
+	for (var i = 0; i < 4; i++) {
+		TweenMax.to(p3btnA[i],.5,{y:271+i*132})
+		musicA[i].pause()
+	};
+	nowSong=0
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part2 基因按钮
@@ -79,7 +85,7 @@ function goH5(){
 	window.location.href='http://m.giccoo.com/soupdaren/'
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////===============part2 歌单部分
+////////////////////////////////////////////////////////////////////////////////////////////////////////===============part3 歌单部分
 var part3=new PIXI.Container()
 var p3title=new pSprite("img/part3title.png")
 var p3bottom=new pSprite("img/part3bottom.png")
@@ -87,7 +93,89 @@ var p3btn1=new PIXI.Container()
 var p3btn2=new PIXI.Container()
 var p3btn3=new PIXI.Container()
 var p3btn4=new PIXI.Container()
+var p3dic1=new pSprite("img/part3disc.png")
+var p3dic2=new pSprite("img/part3disc.png")
+var p3dic3=new pSprite("img/part3disc.png")
+var p3dic4=new pSprite("img/part3disc.png")
+var p3song1=new pSprite("img/song1.png")
+var p3song2=new pSprite("img/song2.png")
+var p3song3=new pSprite("img/song3.png")
+var p3song4=new pSprite("img/song4.png")
+var p3dicA=[p3dic1,p3dic2,p3dic3,p3dic4]
+var p3songA=[p3song1,p3song2,p3song3,p3song4]
+var p3btnA=[p3btn1,p3btn2,p3btn3,p3btn4]
+var p3t=new pSprite("img/part3t.png")
+var p3arrow=new pSprite("img/part3arrow.png")
 function setPart3(){
 	main.addChild(part3)
 	part3.y=1688
+	part3.addChild(p3title)
+	part3.scale.x=part3.scale.y=1.2
+	part3.x=-64
+
+	for (var i = 0; i < 4; i++) {
+		p3btnA[i].addChild(p3dicA[i],p3songA[i])
+		p3songA[i].x=320-256/2+10
+		p3btnA[i].y=271+i*132
+		p3dicA[i].x=126
+		part3.addChild(p3btnA[i])
+		p3songA[i].interactive=true
+		p3songA[i].tap=playSong
+	};
+
+	part3.addChild(p3bottom,p3t,p3arrow)
+	p3t.position.set(261,926)
+	p3arrow.x=-10
+	TweenMax.to(p3arrow,1,{x:5,repeat:10000,yoyo:true})
+	p3t.interactive=true
+	p3t.touchstart=goList
+}
+function goList(){
+	console.log("去歌单")
+}
+var nowSong=0
+var musicA=[$("#music1")[0],$("#music2")[0],$("#music3")[0],$("#music4")[0]]
+function playSong(_e){
+	bgm.pause()
+	btnStop.alpha=0
+	for (var i = 0; i < 4; i++) {
+		TweenMax.to(p3btnA[i],.5,{y:271+i*132})
+		musicA[i].pause()
+		if(_e.target==p3songA[i]&&nowSong!=i+1){
+			console.log("song---",i)
+			TweenMax.to(p3btnA[i],.5,{y:271+i*132-20,ease:Back.easeOut})
+			nowSong=i+1
+			musicA[i].play()
+		}else if(_e.target==p3songA[i]&&nowSong==i+1){
+			musicA[i].pause()
+			nowSong=999
+		}
+	};
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////===============part4 留言板部分
+var part4=new PIXI.Container()
+var p4title=new pSprite("img/part4title.png")
+
+function setPart4(){
+	main.addChild(part4)
+	part4.y=2980
+	part4.addChild(p4title)
+	message("尊敬的所有乘客您好：您所乘坐的列车已抵达终点站。下车前，请记得回头再看一眼，将每个人的脸庞铭记于心。未来的人生中，我们将是彼此的红日，勇往直前，生生不息","歌名-哈哈哈",199)
+}
+
+function message(_text,_song,_like){
+	var a_message=new PIXI.Container()
+	var messageBG=new PIXI.Graphics()
+	var userT=new PIXI.Text(_text,{
+		fill:'#006837',
+		fontSize: 22,
+		align: 'left',
+		wordWrap:"true",
+		wordWrapWidth:320
+	})
+	a_message.addChild(messageBG,userT)
+	part4.addChild(a_message)
+	a_message.y=300
+
 }
