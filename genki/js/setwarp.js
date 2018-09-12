@@ -120,8 +120,9 @@ function addReturn(_text){
 }
 
 ////////////////////////////////////////////////////////////////////////////////==用户表单
+var userMessage=new PIXI.Container()
 function setUserForm(){
-	var a_message=new PIXI.Container()
+	//var userMessage=new PIXI.Container()
 	var messageBG=new PIXI.Graphics()
 	var messageBG2=new PIXI.Graphics()
 	var messageIco=new pSprite("img/message1_.png")
@@ -131,18 +132,18 @@ function setUserForm(){
 
 
 	var userT=new PIXI.Text("我来说几句",userTstyle)
-	var userSong=new PIXI.Text("在这里写下你最爱的歌曲",userSongstyle)
+	var userSong=new PIXI.Text("",userSongstyle)//在这里写下你最爱的歌曲
 
 	var userIco=new pSprite("img/ico"+parseInt(Math.random()*10)+".png")
 	userIco.position.set(30,0)
 
 	var userLikeT=new PIXI.Text("提交",userLikeStyle)
 
-	a_message.addChild(messageBG,messageBG2,messageArrow,userT,userSong,messageIco,btnLike,userIco,userLikeT)
+	userMessage.addChild(messageBG,messageBG2,messageArrow,userT,userSong,messageIco,btnLike,userIco,userLikeT)
 	messageArrow.x=3
-	part4.addChild(a_message)
+	//part4.addChild(a_message)
 
-
+	pStage.addChild(userMessage)
 	
 
 
@@ -167,14 +168,20 @@ function setUserForm(){
 
 	userLikeT.y=userT.y+userT.height+69
 	userLikeT.x=570-userLikeT.width/2-15
-	
-	a_message.y=nowHeight//============改位置
-	nowHeight+=userT.height+130
+	console.log("stageH",stageH)
+
+	TweenMax.set($("#userText"),{y:(stageH-237+20)/640*screenW})
+	TweenMax.set($("#songText"),{y:(stageH-56)/640*screenW})
+	userMessage.y=stageH-237//nowHeight//============改位置
+	//nowHeight+=userT.height+130
 
 	//btnLike.visible=_liked  如果liked了 visible=false 
-	// btnLike.interactive=true
-	// btnLike.tap=goLike//=====================这里改成提交
+	btnLike.alpha=0
+	btnLike.interactive=true
+	btnLike.tap=goSubmit//=====================这里改成提交
 
+}
 
-
+function goSubmit(){
+	console.log("提交表单")
 }

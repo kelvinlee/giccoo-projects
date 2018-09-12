@@ -99,11 +99,15 @@ function initAll(){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////===============滚屏
 var main=new PIXI.Container()
 var bg=new pSprite("img/bgloop.jpg")
+var mainMask=new pSprite("img/main-mask.png")
 
 function setPage(){
-  pStage.addChild(bg,main)
+  pStage.addChild(bg,main,mainMask)
   pStage.interactive=true
   pStage.touchstart=touchStart
+  main.mask=mainMask
+  mainMask.height=stageH*14/13
+  
 }
 
 var startY,endY,mouseYA,timeA,newPosition
@@ -112,7 +116,7 @@ function touchStart(_e){
   TweenLite.killTweensOf(main)
   TweenLite.killTweensOf($("#userText"))
   $("#UserTextarea1").blur();
-  
+
   newPosition=main.y
   startY=_e.data.global.y
   console.log(_e.data.global.y)
@@ -133,7 +137,7 @@ function touchMove(_e){
 
   console.log("theNewNowHeight+part4.y-217",theNewNowHeight+part4.y-217,"main.y",main.y)
 
-  TweenMax.set($("#userText"),{y:(theNewNowHeight+part4.y-217+main.y)/640*screenW})
+  //TweenMax.set($("#userText"),{y:(theNewNowHeight+part4.y-217+main.y)/640*screenW})
 }
 function touchEnd(_e){
   pStage.touchmove=null
@@ -146,12 +150,25 @@ function touchEnd(_e){
 
   TweenMax.to(main,1,{y:endY})
 
-  TweenMax.to($("#userText"),1,{y:(theNewNowHeight+part4.y-217+endY)/640*screenW})
+  //TweenMax.to($("#userText"),1,{y:(theNewNowHeight+part4.y-217+endY)/640*screenW})
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////===============
 function pageLoop(){
   requestAnimationFrame(pageLoop)
   renderer.render(pStage)
+  if(main.y<=-(theNewNowHeight+part4.y-stageH+237+100)){
+    //mainMask.height=stageH-237
+    TweenMax.to(mainMask,.5,{height:stageH-237})
+    TweenMax.to(userMessage,.5,{y:stageH-237})
+    TweenMax.set($("#userText"),{display:"block"})
+    TweenMax.set($("#songText"),{display:"block"})
+  }else{
+    //mainMask.height=stageH*14/13
+    TweenMax.to(mainMask,.5,{height:stageH*14/13})
+    TweenMax.to(userMessage,.5,{y:stageH})
+    TweenMax.set($("#userText"),{display:"none"})
+    TweenMax.set($("#songText"),{display:"none"})
+  }
 }
 
 

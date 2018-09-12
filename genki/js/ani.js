@@ -176,7 +176,7 @@ function setPart4(){
 
 	p4t2.y=nowHeight+20
 
-	nowHeight+=64
+	nowHeight+=84
 	
 
 	setUserForm()
