@@ -167,11 +167,15 @@ function setPart4(){
 function message(_text,_song,_like){
 	var a_message=new PIXI.Container()
 	var messageBG=new PIXI.Graphics()
-	var userT=new PIXI.text(_text,{
+	var userT=new PIXI.Text(_text,{
 		fill:'#006837',
 		fontSize: 22,
-		align: 'left'
+		align: 'left',
+		wordWrap:"true",
+		wordWrapWidth:320
 	})
-	a_message.addChild(messageBG)
+	a_message.addChild(messageBG,userT)
+	part4.addChild(a_message)
+	a_message.y=300
 
 }
