@@ -6,33 +6,42 @@ var userTstyle={
 		// wordWrap:true,
 		// wordWrapWidth:100
 	}
+var userSongstyle={
+		fill:'#000000',
+		fontSize: 18,
+		align: 'left',
+		// wordWrap:true,
+		// wordWrapWidth:100
+	}
 
 function message(_text,_song,_like){
 	var a_message=new PIXI.Container()
 	var messageBG=new PIXI.Graphics()
+	var messageIco=new pSprite("img/message1.png")
+	var messageLike=new pSprite("img/message2.png")
 
 
 	var userT=new PIXI.Text(_text,userTstyle)
+	var userSong=new PIXI.Text(_song,userSongstyle)
 
-	a_message.addChild(messageBG,userT)
+	a_message.addChild(messageBG,userT,userSong,messageIco,messageLike)
 	part4.addChild(a_message)
-	a_message.y=300
-	//console.log(_text[24])
 
-	//====找\n
-	var returnNum=0
-	for (var i = 0; i < _text.length; i++) {
-		if(_text[i]=="\n"){
-			returnNum=i
-			break;
-		}
-	};
-	var tempString=""
-	if(returnNum!=0){
-		tempString=_text.slice(0,returnNum+1)
-		//console.log(tempString)
-	}
 
+	a_message.y=1000//============改位置
+
+
+	userT.text=addReturn(_text)
+	userT.position.set(175,20)
+
+	messageBG.position.set(129,6)
+	messageBG.lineStyle(4, 0x006838,1,0);
+	messageBG.beginFill(0xffffff)
+	messageBG.drawRoundedRect(0,0,mWidth+46*2,userT.height+16+50,20)
+
+	messageLike.y=messageIco.y=userT.y+userT.height
+	userSong.y=userT.y+userT.height+15
+	userSong.x=225
 }
 
 var testLengthT=new PIXI.Text()
@@ -56,4 +65,5 @@ function addReturn(_text){
 	
 	var returnT=_tA.join("\n")
 	console.log(returnT)
+	return(returnT)
 }

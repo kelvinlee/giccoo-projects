@@ -91,8 +91,8 @@ function initAll(){
   setPage1()
   setPage2()
   setPage3()
-  TweenMax.set($("#logo"),{y:screenH/2-416*screenW/640})
-  console.log(screenH/2-416*screenW/640)
+  TweenMax.set($("#logo"),{y:screenH/2-446*screenW/640})
+  console.log(screenH/2-436*screenW/640)
 }
 
 function pageLoop(){
@@ -167,7 +167,7 @@ function setPage1(){
   pStage.addChild(page1)
 
   pStage.addChild(logo)
-  logo.position.set(0,stageH/2-416)
+  logo.position.set(0,stageH/2-446)
   logo.alpha=0
 
   p1tA=[p1title1,p1title2,p1title3,p1title4,p1t1,p1t2,p1t3,p1t4,p1t5]
