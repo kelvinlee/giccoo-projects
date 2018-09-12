@@ -13,8 +13,8 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "呼吸绿洲",
-      desc: "",
+      title: "在城市的心脏，发现一片森林",
+      desc: "点击报名，与我们一起悦享自然",
       link: "http://m.giccoo.com/invitation/",
       imgUrl: "http://m.giccoo.com/invitation/img/ico.jpg",
       success: function() {},
@@ -23,8 +23,8 @@ $(document).ready(function load (){
 
     var shareContent2;
     shareContent2 = {
-      title: "",
-      desc: "",
+      title: "在城市的心脏，发现一片森林",
+      desc: "点击报名，与我们一起悦享自然",
       link: "http://m.giccoo.com/invitation/",
       imgUrl: "http://m.giccoo.com/invitation/img/ico.jpg",
       success: function() {},
