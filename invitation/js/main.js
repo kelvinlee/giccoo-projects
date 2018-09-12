@@ -13,8 +13,8 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "在城市的心脏，发现一片森林",
-      desc: "点击报名，与北京望京凯悦酒店一起悦享自然",
+      title: "点击报名| 首片快闪森林“呼吸绿洲”，来北京坊悦享自然",
+      desc: "北京望京凯悦酒店邀您在城市的心脏，发现一片森林",
       link: "http://m.giccoo.com/invitation/",
       imgUrl: "http://m.giccoo.com/invitation/img/ico.jpg",
       success: function() {},
@@ -23,8 +23,8 @@ $(document).ready(function load (){
 
     var shareContent2;
     shareContent2 = {
-      title: "在城市的心脏，发现一片森林",
-      desc: "点击报名，与北京望京凯悦酒店一起悦享自然",
+      title: "点击报名| 首片快闪森林“呼吸绿洲”，来北京坊悦享自然",
+      desc: "北京望京凯悦酒店邀您在城市的心脏，发现一片森林",
       link: "http://m.giccoo.com/invitation/",
       imgUrl: "http://m.giccoo.com/invitation/img/ico.jpg",
       success: function() {},
