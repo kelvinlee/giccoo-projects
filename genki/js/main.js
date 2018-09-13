@@ -129,7 +129,7 @@ function touchStart(_e){
   resetUserForm()
 }
 function touchMove(_e){
-  main.y=newPosition+(_e.data.global.y-startY)//*2
+  main.y=newPosition+(_e.data.global.y-startY)*1.5
   if(main.y>=0){    main.y=0  }
   if(main.y<=-11500) {main.y=-11500};//=======================高度限制
   mouseYA.push(_e.data.global.y)
@@ -145,7 +145,7 @@ function touchEnd(_e){
   pStage.interactive=true
   pStage.touchend=null
 
-  var endY=main.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2])/4
+  var endY=main.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2])/6
   if(endY>=0){    endY=0  }
   if(endY<=-11500) {endY=-11500};//=======================高度限制
 
