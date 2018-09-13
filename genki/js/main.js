@@ -129,7 +129,7 @@ function touchStart(_e){
   resetUserForm()
 }
 function touchMove(_e){
-  main.y=newPosition+(_e.data.global.y-startY)*1.5
+  main.y=newPosition+(_e.data.global.y-startY)*2
   if(main.y>=0){    main.y=0  }
   if(main.y<=-11500) {main.y=-11500};//=======================高度限制
   mouseYA.push(_e.data.global.y)

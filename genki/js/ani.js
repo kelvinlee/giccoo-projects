@@ -51,7 +51,7 @@ function setPart2(){
   gene.x=320
   gene.pivot.x=151
   gene.interactive=true
-  gene.touchstart=goH5
+  gene.tap=goH5
 }
 var pointA=[]
 var pointXA=[0,57,68,79,90,101,122,133,144,155,496,507,518,529,540,551,562,573,584,640]
