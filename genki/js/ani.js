@@ -215,6 +215,8 @@ function setPart4(){
 	message("尊敬的所，将每个人的脸日，勇往直前，生生不息","歌名-哈哈哈",0,0,19283753)
 	message("生生不息","歌名-哈哈哈",199,0,19283754)
 
+	
+
 	//message("addsfasdf asdfasdfas fasdfasdfasdfasdfa sdfsadfasdfasd fasdfasdf sadf","歌名-哈哈哈",199)
 	//addReturn("尊敬的所有乘客您好：\n您所乘坐的列车已抵达终点站。下车前，请记得回头再看一眼，将每个人的脸庞铭记于心。未来的人生中，我们将是彼此的红日，勇往直前，生生不息")
 }

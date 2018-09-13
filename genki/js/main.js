@@ -132,7 +132,7 @@ function touchStart(_e){
 function touchMove(_e){
   main.y=newPosition+(_e.data.global.y-startY)*2
   if(main.y>=0){    main.y=0  }
-  if(main.y<=-11500) {main.y=-11500};//=======================高度限制
+  if(main.y<=-nowHeight-part4.y+stageH-260) {main.y=-nowHeight-part4.y+stageH-260};//=======================高度限制
   mouseYA.push(_e.data.global.y)
   date=new Date()
   timeA.push(date.getTime())
@@ -148,7 +148,7 @@ function touchEnd(_e){
 
   var endY=main.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-3])/(timeA[timeA.length-1]-timeA[timeA.length-3])/4
   if(endY>=0){    endY=0  }
-  if(endY<=-11500) {endY=-11500};//=======================高度限制
+  if(endY<=-nowHeight-part4.y+stageH-260) {endY=-nowHeight-part4.y+stageH-260};//=======================高度限制
 
   TweenMax.to(main,.5,{y:endY})
 
