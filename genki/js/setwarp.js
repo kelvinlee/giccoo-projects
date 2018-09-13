@@ -222,6 +222,13 @@ function resetUserForm(){//====pStage.touchstart
 function goSubmit(){
 	//$("#UserTextarea1")[0].innerHTML=""
 	console.log("提交表单",$("#UserTextarea1").val())
-	sendMessage($("#UserTextarea1").val(),"")//$("#UserTextarea2")[0].value
+	if($("#UserTextarea1").val()==""||$("#UserTextarea1").val()==null||$("#UserTextarea1").val()=="我来说几句"){
+		alert("请先填写你的元气宣言")
+	}else{
+		sendMessage($("#UserTextarea1").val(),"")//$("#UserTextarea2")[0].value
+		ifSubmit=1
+	}
+
+	
 
 }

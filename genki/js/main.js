@@ -158,12 +158,13 @@ function touchEnd(_e){
   //TweenMax.to($("#userText"),1,{y:(theNewNowHeight+part4.y-217+endY)/640*screenW})
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////===============
+var ifSubmit=0
 function pageLoop(){
   heightLimit=-nowHeight-part4.y+stageH-260-50
 
   requestAnimationFrame(pageLoop)
   renderer.render(pStage)
-  if(main.y<=-(theNewNowHeight+part4.y-stageH+237+100)&&main.y>=-(nowHeight+part4.y-stageH+200)){
+  if(main.y<=-(theNewNowHeight+part4.y-stageH+237+100)&&main.y>=-(nowHeight+part4.y-stageH+200)&&ifSubmit==0){
     //mainMask.height=stageH-237
     TweenMax.to(mainMask,.5,{height:stageH-237-ifInputing*100})
     TweenMax.to(userMessage,.5,{y:stageH-237-ifInputing*100})

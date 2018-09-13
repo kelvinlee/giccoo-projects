@@ -155,7 +155,11 @@ function playSong(_e){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part4 留言板部分
 var part4=new PIXI.Container()
-var p4title=new pSprite("img/part4title.png")
+var p4title1=new pSprite("img/part4title1.png")
+var p4title2=new pSprite("img/part4title2.png")
+var p4light1=new pSprite("img/part4light1.png")
+var p4light2=new pSprite("img/part4light2.png")
+
 var p4t1=new pSprite("img/p4t1.png")
 var p4t2=new pSprite("img/p4t2.png")
 var theNewNowHeight=1100
@@ -165,8 +169,17 @@ var endBtn=new pSprite("img/endbtn.png")
 function setPart4(_list){
 	main.addChild(part4)
 	part4.y=2980-300
-	part4.addChild(p4title,p4t1,p4t2,endBtn)
+	part4.addChild(p4title1,p4light1,p4light2,p4title2,p4t1,p4t2,endBtn)
 	p4t1.y=1040
+
+	p4light1.pivot.set(313/2,297/2)
+	p4light2.pivot.set(313/2,297/2)
+	p4light1.position.set(320,297/2)
+	p4light2.position.set(320,297/2)
+
+	p4light1.scale.x=p4light1.scale.y=p4light2.scale.x=p4light2.scale.y=.8
+	TweenMax.to(p4light1.scale,.5,{x:1.3,y:1.3,repeat:10000,yoyo:true,ease:Linear.easeNone})
+	TweenMax.to(p4light2.scale,.5,{x:1.3,y:1.3,repeat:10000,yoyo:true,ease:Linear.easeNone,delay:.5})
 
 	var i,j
 	for ( i = 0; i < 10; i++) {
