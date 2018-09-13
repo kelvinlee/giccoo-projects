@@ -205,7 +205,7 @@ $("#UserTextarea2").blur(function(){
 	}
 })
 function resetUserForm(){//====pStage.touchstart
-	console.log("-----------------------------")
+	//console.log("-----------------------------")
 	if($("#UserTextarea1")[0].innerHTML==""||$("#UserTextarea1")[0].innerHTML==null){
 		$("#UserTextarea1")[0].innerHTML="我来说几句"
 	}
