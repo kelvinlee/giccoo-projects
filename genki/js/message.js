@@ -21,6 +21,8 @@ getDefaultMessages = function getDefaultMessages() {
       item = ref[i];
       if (localStorage.getItem("id-" + item.id)) {
         item.liked = true;
+      } else {
+        item.liked = false;
       }
     }
     messageList = vals.data.list;
@@ -47,6 +49,8 @@ getMessages = function getMessages() {
       item = ref[i];
       if (localStorage.getItem("id-" + item.id)) {
         item.liked = true;
+      } else {
+        item.liked = false;
       }
     }
     messageList = vals.data.list;

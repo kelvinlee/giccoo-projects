@@ -11,6 +11,8 @@ getDefaultMessages = (page = 1,callback = ->)->
 		for item in vals.data.list
 			if localStorage.getItem("id-#{item.id}")
 				item.liked = true
+			else
+				item.liked = false
 		messageList = vals.data.list
 		callback messageList
 	.catch (err)=>
@@ -27,6 +29,8 @@ getMessages = (page = 1,callback = ->)->
 		for item in vals.data.list
 			if localStorage.getItem("id-#{item.id}")
 				item.liked = true
+			else
+				item.liked = false
 		messageList = vals.data.list
 		callback messageList
 	.catch (err)=>
