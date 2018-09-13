@@ -244,9 +244,9 @@ function setPagebtn(){
 	prePageBtn.x=80+40
 
 	nextPageBtn.interactive=true
-	nextPageBtn.tap=goNextPage
+	nextPageBtn.touchstart=goNextPage
 	prePageBtn.interactive=true
-	prePageBtn.tap=goPrePage
+	prePageBtn.touchstart=goPrePage
 }
 var nowPage=0
 function changePage(_e){
