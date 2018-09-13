@@ -145,11 +145,11 @@ function touchEnd(_e){
   pStage.interactive=true
   pStage.touchend=null
 
-  var endY=main.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2])
+  var endY=main.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2])/4
   if(endY>=0){    endY=0  }
   if(endY<=-11500) {endY=-11500};//=======================高度限制
 
-  TweenMax.to(main,1,{y:endY})
+  TweenMax.to(main,.5,{y:endY})
 
   //TweenMax.to($("#userText"),1,{y:(theNewNowHeight+part4.y-217+endY)/640*screenW})
 }
