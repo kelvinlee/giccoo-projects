@@ -189,7 +189,7 @@ $("#UserTextarea1").click(function(){
 	ifInputing=1
 })
 $("#UserTextarea1").blur(function(){
-	if($("#UserTextarea1")[0].innerHTML==""){
+	if($("#UserTextarea1")[0].innerHTML==""||$("#UserTextarea1")[0].innerHTML==null){
 		$("#UserTextarea1")[0].innerHTML="我来说几句"
 	}
 })
@@ -206,7 +206,7 @@ $("#UserTextarea2").blur(function(){
 })
 function resetUserForm(){//====pStage.touchstart
 	console.log("-----------------------------")
-	if($("#UserTextarea1")[0].innerHTML==""){
+	if($("#UserTextarea1")[0].innerHTML==""||$("#UserTextarea1")[0].innerHTML==null){
 		$("#UserTextarea1")[0].innerHTML="我来说几句"
 	}
 	if($("#UserTextarea2")[0].value==""){
