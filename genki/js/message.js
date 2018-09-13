@@ -4,10 +4,8 @@ var apiLink, getDefaultMessages, getMessages, likeMessage, messageList, openInAP
 
 apiLink = "//g.giccoo.com/active/message";
 
-// apiLink = "//localhost:3000/active/message"
-
 // 获取留言列表
-// getMessages(1,function(list){ console.log(list) })
+// getDefaultMessages(1,function(list){ console.log(list) })
 // page 是第几页(每页20条) callback 为回调函数
 getDefaultMessages = function getDefaultMessages() {
   var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
