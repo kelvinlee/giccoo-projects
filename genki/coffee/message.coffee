@@ -1,12 +1,27 @@
-# apiLink = "//g.giccoo.com/active/message"
-apiLink = "//localhost:3000/active/message"
+apiLink = "//g.giccoo.com/active/message"
+# apiLink = "//localhost:3000/active/message"
+
+# 获取留言列表
+# getMessages(1,function(list){ console.log(list) })
+# page 是第几页(每页20条) callback 为回调函数
+getDefaultMessages = (page = 1,callback = ->)->
+	axios.get "#{apiLink}/list/type/genkidefault/page/#{page}", {}
+	.then (vals)=>
+		# callback
+		for item in vals.data.list
+			if localStorage.getItem("id-#{item.id}")
+				item.liked = true
+		messageList = vals.data.list
+		callback messageList
+	.catch (err)=>
+		alert "列表获取失败"
 
 messageList = []
 # 获取留言列表
 # getMessages(1,function(list){ console.log(list) })
 # page 是第几页(每页20条) callback 为回调函数
 getMessages = (page = 1,callback = ->)->
-	axios.get "#{apiLink}/list/type/genki/page/#{page}", {}
+	axios.get "#{apiLink}/list/type/genki/page/#{page}/size/50", {}
 	.then (vals)=>
 		# callback
 		for item in vals.data.list
@@ -52,4 +67,15 @@ likeMessage = (id)->
 		console.log vals.data
 	.catch (err)=>
 		console.log "err:",err
+
+openInAPP = (url)->
+	CloudMusic.open(url)
+
+openMusic = (id)->
+	if CloudMusic.isInApp()
+		CloudMusic.playlist(id)
+	else
+		window.location.href = "https://music.163.com/#/playlist?id=#{id}"
+
+
 

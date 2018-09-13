@@ -1,9 +1,34 @@
 "use strict";
 
-// apiLink = "//g.giccoo.com/active/message"
-var apiLink, getMessages, likeMessage, messageList, sendMessage;
+var apiLink, getDefaultMessages, getMessages, likeMessage, messageList, openInAPP, openMusic, sendMessage;
 
-apiLink = "//localhost:3000/active/message";
+apiLink = "//g.giccoo.com/active/message";
+
+// apiLink = "//localhost:3000/active/message"
+
+// 获取留言列表
+// getMessages(1,function(list){ console.log(list) })
+// page 是第几页(每页20条) callback 为回调函数
+getDefaultMessages = function getDefaultMessages() {
+  var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+  var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
+
+  return axios.get(apiLink + "/list/type/genkidefault/page/" + page, {}).then(function (vals) {
+    var i, item, len, messageList, ref;
+    ref = vals.data.list;
+    // callback
+    for (i = 0, len = ref.length; i < len; i++) {
+      item = ref[i];
+      if (localStorage.getItem("id-" + item.id)) {
+        item.liked = true;
+      }
+    }
+    messageList = vals.data.list;
+    return callback(messageList);
+  }).catch(function (err) {
+    return alert("列表获取失败");
+  });
+};
 
 messageList = [];
 
@@ -14,7 +39,7 @@ getMessages = function getMessages() {
   var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
   var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
 
-  return axios.get(apiLink + "/list/type/genki/page/" + page, {}).then(function (vals) {
+  return axios.get(apiLink + "/list/type/genki/page/" + page + "/size/50", {}).then(function (vals) {
     var i, item, len, ref;
     ref = vals.data.list;
     // callback
@@ -73,4 +98,16 @@ likeMessage = function likeMessage(id) {
   }).catch(function (err) {
     return console.log("err:", err);
   });
+};
+
+openInAPP = function openInAPP(url) {
+  return CloudMusic.open(url);
+};
+
+openMusic = function openMusic(id) {
+  if (CloudMusic.isInApp()) {
+    return CloudMusic.playlist(id);
+  } else {
+    return window.location.href = "https://music.163.com/#/playlist?id=" + id;
+  }
 };
