@@ -300,6 +300,22 @@ function goBackPage2(){
   goPage2()
 }
 
+var rule=new PIXI.Text("领取活动邀请函即视为同意",{
+    fill:'#000000',
+    fontSize: 22,
+    align: 'left',
+    // wordWrap:true,
+    // wordWrapWidth:100
+
+})
+var rule2=new PIXI.Text("《活动规则及隐私政策》",{
+    fill:'#000033',
+    fontSize: 22,
+    align: 'left',
+    // wordWrap:true,
+    // wordWrapWidth:100
+    fontStyle:"oblique"
+})
 function goPage3(){
   nowPage=3
   console.log("333")
@@ -307,7 +323,24 @@ function goPage3(){
   TweenMax.to(page2,.5,{alpha:0,y:-stageH/8,onComplete:function(){page2.visible=false}})
   //TweenMax.from(page3,.5,{alpha:0,y:"+=20",onComplete:setPage4})//============================改这里
   TweenMax.from(page3,.5,{alpha:0,y:"+=20",onComplete:function(){reg.show = true}})//============================改这里
+  page3.addChild(rule,rule2)
+  rule.x=320-(rule.width+rule2.width)/2
+  rule2.x=rule.x+rule.width
+  rule.y=stageH-50//($("#reg").height/2+screenH*.63)*screenW/640
+  rule2.y=stageH-50//($("#reg").height/2+screenH*.63)*screenW/640
+  console.log($("#reg")[0].clientHeight,screenH)
+  rule2.interactive=true
+  rule2.tap=showRule
 }
+
+function showRule(){
+  TweenMax.set($("#rule"),{display:"block"})
+}
+
+$("#closeRule").click(function(){
+  TweenMax.set($("#rule"),{display:"none"})
+})
+
 var page4=new PIXI.Container()
 var border=new PIXI.Container()
 var b_up=new pSprite("img/b_up.png")

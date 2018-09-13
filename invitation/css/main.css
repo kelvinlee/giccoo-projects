@@ -49,6 +49,21 @@ img{ width: 100%; }
 	display: none;
 }
 
+#rule{
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    background-color: #000000;
+    opacity: .8;
+    display: none;
+}
+#closeRule{
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
 /*.musicBtn{
 	position: absolute;
 	width: 12.35%;
@@ -299,7 +314,7 @@ img{ width: 100%; }
 
 .reg {
 	position: absolute;
-	top: 65%;
+	top: 63%;
 	z-index: 199;
 	width: 80%;
 	left: 10%;
