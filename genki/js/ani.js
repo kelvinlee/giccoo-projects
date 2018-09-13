@@ -11,7 +11,7 @@ function setPart1 () {
 	btnPlay.y=btnStop.y=413
 	btnStop.alpha=0
 	btnStop.interactive=true
-	btnStop.touchstart=goBGM
+	btnStop.tap=goBGM
 }
 function goBGM(){
 	if(btnStop.alpha==0){
@@ -128,7 +128,7 @@ function setPart3(){
 	p3arrow.x=-10
 	TweenMax.to(p3arrow,1,{x:5,repeat:10000,yoyo:true})
 	p3t.interactive=true
-	p3t.touchstart=goList
+	p3t.tap=goList
 }
 function goList(){
 	console.log("去歌单")
