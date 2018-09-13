@@ -181,7 +181,37 @@ function setUserForm(){
 	btnLike.tap=goSubmit//=====================这里改成提交
 
 }
-
+$("#UserTextarea1").click(function(){
+	if($("#UserTextarea1")[0].innerHTML=="我来说几句"){
+		$("#UserTextarea1")[0].innerHTML=""
+	}
+})
+$("#UserTextarea1").blur(function(){
+	if($("#UserTextarea1")[0].innerHTML==""){
+		$("#UserTextarea1")[0].innerHTML="我来说几句"
+	}
+})
+$("#UserTextarea2").click(function(){
+	if($("#UserTextarea2")[0].value=="在这里写下你最爱的歌曲"){
+		$("#UserTextarea2")[0].value=""
+	}
+})
+$("#UserTextarea2").blur(function(){
+	if($("#UserTextarea2")[0].value==""){
+		$("#UserTextarea2")[0].value="在这里写下你最爱的歌曲"
+	}
+})
+function resetUserForm(){//====pStage.touchstart
+	console.log("-----------------------------")
+	if($("#UserTextarea1")[0].innerHTML==""){
+		$("#UserTextarea1")[0].innerHTML="我来说几句"
+	}
+	if($("#UserTextarea2")[0].value==""){
+		$("#UserTextarea2")[0].value="在这里写下你最爱的歌曲"
+	}
+}
 function goSubmit(){
-	console.log("提交表单")
+	//$("#UserTextarea1")[0].innerHTML=""
+	console.log("提交表单",$("#UserTextarea1").val())
+
 }

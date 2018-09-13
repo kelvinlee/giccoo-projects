@@ -93,6 +93,7 @@ function initAll(){
   setPart2()
   setPart3()
   setPart4()
+
 }
 
 
@@ -125,7 +126,7 @@ function touchStart(_e){
   pStage.touchend=touchEnd
   mouseYA=[0,0]
   timeA=[0,0]
-
+  resetUserForm()
 }
 function touchMove(_e){
   main.y=newPosition+(_e.data.global.y-startY)//*2
@@ -135,7 +136,7 @@ function touchMove(_e){
   date=new Date()
   timeA.push(date.getTime())
 
-  console.log("theNewNowHeight+part4.y-217",theNewNowHeight+part4.y-217,"main.y",main.y)
+  //console.log("theNewNowHeight+part4.y-217",theNewNowHeight+part4.y-217,"main.y",main.y)
 
   //TweenMax.set($("#userText"),{y:(theNewNowHeight+part4.y-217+main.y)/640*screenW})
 }
