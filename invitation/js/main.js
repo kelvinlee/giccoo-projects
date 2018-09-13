@@ -170,14 +170,20 @@ function setPage1(){
   logo.position.set(0,stageH/2-446)
   logo.alpha=0
 
-  p1tA=[p1title1,p1title2,p1title3,p1title4,p1t1,p1t2,p1t3,p1t4,p1t5]
+  p1tA=[p1title1,p1title2,p1title3,p1title4,p1t1,p1t2,p1t4,p1t5]//p1t3
 
   var i
   for (i = 0; i < p1tA.length; i++) {
     page1.addChild(p1tA[i])
     p1tA[i].pivot.set(320,500)
     p1tA[i].position.set(320,stageH/2)
-    TweenMax.from(p1tA[i],1.5,{alpha:0,y:"+=50",delay:.15*i,overwirte:0})
+    
+    if(i==5){
+      p1tA[i].y+=20
+      TweenMax.from(p1tA[i],1.5,{alpha:0,y:"+=50",delay:.15*i,overwirte:0})
+    }else{
+      TweenMax.from(p1tA[i],1.5,{alpha:0,y:"+=50",delay:.15*i,overwirte:0})
+    }
     if(i<4){
       TweenMax.to(p1tA[i],2,{y:"-=20",delay:2.5+.5*i,repeat:1000,yoyo:true,ease:Sine.easeInOut})
     }
