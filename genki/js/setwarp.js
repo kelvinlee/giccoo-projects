@@ -1,4 +1,4 @@
-var mWidth=380//=====字符串宽
+var mWidth=420//=====字符串宽
 var userTstyle={
 		fill:'#006837',
 		fontSize: 22,
@@ -23,6 +23,7 @@ var userLikeStyle={
 var messageA=[]
 var nowHeight=1100
 function message(_text,_song,_like,_liked,_id){
+	_song=""
 	var a_message=new PIXI.Container()
 	var messageBG=new PIXI.Graphics()
 	var messageIco=new pSprite("img/message1.png")
@@ -48,24 +49,24 @@ function message(_text,_song,_like,_liked,_id){
 
 
 	userT.text=addReturn(_text)
-	userT.position.set(175,20)
+	userT.position.set(175-20,20)
 
 	messageBG.position.set(129,6)
-	messageBG.lineStyle(4, 0x006838,1,0);
+	messageBG.lineStyle(3, 0x006838,1,0);
 	messageBG.beginFill(0xffffff)
-	messageBG.drawRoundedRect(0,0,mWidth+46*2,userT.height+16+50,20)
+	messageBG.drawRoundedRect(0,0,mWidth+26*2,userT.height+16+50+7,20)
 
 	messageIco.y=userT.y+userT.height
 	userSong.y=userT.y+userT.height+15
 	userSong.x=225
-	btnLike.x=504
-	btnLike.y=userT.y+userT.height+63
+	btnLike.x=504-20
+	btnLike.y=userT.y+userT.height+63-50
 
-	userLikeT.y=userT.y+userT.height+69
-	userLikeT.x=570-userLikeT.width/2
+	userLikeT.y=userT.y+userT.height+69-50
+	userLikeT.x=570-userLikeT.width/2-20
 	
 	a_message.y=nowHeight//============改位置
-	nowHeight+=userT.height+130
+	nowHeight+=userT.height+130-20
 
 	if(_liked==true){
 		btnLike.visible=false//如果liked了 visible=false 
@@ -143,7 +144,7 @@ function setUserForm(){
 
 	var userLikeT=new PIXI.Text("提交",userLikeStyle)
 
-	userMessage.addChild(messageBG,messageBG2,messageArrow,userT,userSong,messageIco,btnLike,userIco,userLikeT)
+	userMessage.addChild(messageBG,messageArrow,userT,userSong,messageIco,btnLike,userIco,userLikeT)//messageBG2,
 	messageArrow.x=3
 	//part4.addChild(a_message)
 
@@ -155,9 +156,9 @@ function setUserForm(){
 	userT.position.set(175,20)
 
 	messageBG.position.set(129,6)
-	messageBG.lineStyle(4, 0x006838,1,0);
+	messageBG.lineStyle(3, 0x006838,1,0);
 	messageBG.beginFill(0xffffff)
-	messageBG.drawRoundedRect(0,0,mWidth+46*2,userT.height+16+50,20)
+	messageBG.drawRoundedRect(0,0,mWidth+26*2,userT.height+16+50+7,20)
 
 	messageBG2.position.set(129,109+userT.height-24)
 	//messageBG2.lineStyle(4, 0x006838,1,0);
@@ -167,15 +168,15 @@ function setUserForm(){
 	messageIco.y=userT.y+userT.height
 	userSong.y=userT.y+userT.height+15+57
 	userSong.x=225
-	btnLike.x=504
-	btnLike.y=userT.y+userT.height+63
+	btnLike.x=504-20
+	btnLike.y=userT.y+userT.height+63-50
 
-	userLikeT.y=userT.y+userT.height+69
-	userLikeT.x=570-userLikeT.width/2-15
+	userLikeT.y=userT.y+userT.height+69-50
+	userLikeT.x=570-userLikeT.width/2-15-20
 	console.log("stageH",stageH)
 
 	TweenMax.set($("#userText"),{y:(stageH-237+20)/640*screenW})
-	TweenMax.set($("#songText"),{y:(stageH-56)/640*screenW})
+	//TweenMax.set($("#songText"),{y:(stageH-56)/640*screenW})
 	userMessage.y=stageH-237//nowHeight//============改位置
 	//nowHeight+=userT.height+130
 
@@ -213,14 +214,14 @@ function resetUserForm(){//====pStage.touchstart
 	if($("#UserTextarea1")[0].innerHTML==""||$("#UserTextarea1")[0].innerHTML==null){
 		$("#UserTextarea1")[0].innerHTML="我来说几句"
 	}
-	if($("#UserTextarea2")[0].value==""){
-		$("#UserTextarea2")[0].value="在这里写下你最爱的歌曲"
-	}
+	// if($("#UserTextarea2")[0].value==""){
+	// 	$("#UserTextarea2")[0].value="在这里写下你最爱的歌曲"
+	// }
 	ifInputing=0
 }
 function goSubmit(){
 	//$("#UserTextarea1")[0].innerHTML=""
 	console.log("提交表单",$("#UserTextarea1").val())
-	sendMessage($("#UserTextarea1").val(),$("#UserTextarea2")[0].value)
+	sendMessage($("#UserTextarea1").val(),"")//$("#UserTextarea2")[0].value
 
 }

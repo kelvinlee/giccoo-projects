@@ -108,7 +108,7 @@ var p3t=new pSprite("img/part3t.png")
 var p3arrow=new pSprite("img/part3arrow.png")
 function setPart3(){
 	main.addChild(part3)
-	part3.y=1688
+	part3.y=1688-300
 	part3.addChild(p3title)
 	part3.scale.x=part3.scale.y=1.2
 	part3.x=-64
@@ -164,7 +164,7 @@ var endBtn=new pSprite("img/endbtn.png")
 
 function setPart4(_list){
 	main.addChild(part4)
-	part4.y=2980
+	part4.y=2980-300
 	part4.addChild(p4title,p4t1,p4t2,endBtn)
 	p4t1.y=1040
 
@@ -186,12 +186,9 @@ function setPart4(_list){
 
 	getMessages(1,setPart4b)
 	
-	//=====messageA.push(   aMessage=[a_message,btnLike,userLikeT,_id]   )
 
-	//message("addsfasdf asdfasdfas fasdfasdfasdfasdfa sdfsadfasdfasd fasdfasdf sadf","歌名-哈哈哈",199)
-	//addReturn("尊敬的所有乘客您好：\n您所乘坐的列车已抵达终点站。下车前，请记得回头再看一眼，将每个人的脸庞铭记于心。未来的人生中，我们将是彼此的红日，勇往直前，生生不息")
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////===============part4 留言板部分BBBB
 function setPart4b(_list){
 	console.log("_listBBBBBBB",_list)
 	var i,j
@@ -213,7 +210,104 @@ function setPart4b(_list){
 	endBtn.y=nowHeight+50
 	endBtn.interactive=true
 	endBtn.tap=goEnd
+	setPagebtn()
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////===============part4 留言板翻页
+var pageBtnStyle1={
+		fill:'#006837',
+		fontSize: 22,
+		align: 'left'
+	}
+var pageBtnStyle2={
+		fill:'#ffffff',
+		fontSize: 22,
+		align: 'left'
+	}
+var pageBtnA=[]
+var nextPageBtn=new PIXI.Text("下一页 >>",pageBtnStyle1)
+var prePageBtn=new PIXI.Text("<< 上一页",pageBtnStyle1)
+function setPagebtn(){
+	for (var i = 0; i < 10; i++) {
+		var _pageBtn=new PIXI.Text(i+1,pageBtnStyle1)
+		if(i==0){_pageBtn.style=pageBtnStyle2}
+		pageBtnA.push(_pageBtn)
+		part4.addChild(_pageBtn)
+		_pageBtn.x=320+((i-5)*20)+40
+		_pageBtn.y=nowHeight
+		_pageBtn.interactive=true
+		_pageBtn.tap=changePage
+	};
+	part4.addChild(nextPageBtn,prePageBtn)
+	nextPageBtn.y=prePageBtn.y=nowHeight
+	nextPageBtn.x=640-80-nextPageBtn.width+40
+	prePageBtn.x=80+40
+
+	nextPageBtn.interactive=true
+	nextPageBtn.tap=goNextPage
+	prePageBtn.interactive=true
+	prePageBtn.tap=goPrePage
+}
+var nowPage=0
+function changePage(_e){
+	var i
+	for (i = 0; i < 10; i++) {
+		pageBtnA[i].style=pageBtnStyle1
+		if(_e.target==pageBtnA[i]){
+			showPage(i)
+			nowHeight=nowHeightA[i]
+			pageBtnA[i].style=pageBtnStyle2
+			nowPage=i
+		}
+	};
+
+	for (i = 0; i < 10; i++) {//====重设高度
+		pageBtnA[i].y=nowHeight
+	};
+	endBtn.y=nowHeight+50
+	nextPageBtn.y=prePageBtn.y=nowHeight
+}
+
+function goNextPage(_e){
+	var i
+	nowPage++
+	if(nowPage==10){nowPage=0}
+	for (i = 0; i < 10; i++) {
+		pageBtnA[i].style=pageBtnStyle1
+		if(i==nowPage){
+			showPage(i)
+			nowHeight=nowHeightA[i]
+			pageBtnA[i].style=pageBtnStyle2
+		}
+	};
+
+	for (i = 0; i < 10; i++) {//====重设高度
+		pageBtnA[i].y=nowHeight
+	};
+	endBtn.y=nowHeight+50
+	nextPageBtn.y=prePageBtn.y=nowHeight
+}
+
+function goPrePage(_e){
+	var i
+	nowPage--
+	if(nowPage==-1){nowPage=9}
+	for (i = 0; i < 10; i++) {
+		pageBtnA[i].style=pageBtnStyle1
+		if(i==nowPage){
+			showPage(i)
+			nowHeight=nowHeightA[i]
+			pageBtnA[i].style=pageBtnStyle2
+		}
+	};
+
+	for (i = 0; i < 10; i++) {//====重设高度
+		pageBtnA[i].y=nowHeight
+	};
+	endBtn.y=nowHeight+50
+	nextPageBtn.y=prePageBtn.y=nowHeight
+}
+
 function goEnd(){
 	console.log("最后跳转按钮")
 }

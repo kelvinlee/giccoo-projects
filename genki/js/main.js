@@ -90,7 +90,7 @@ function initAll(){
 
   setPage()
   setPart1()
-  setPart2()
+  //setPart2()
   setPart3()
   //setPart4()
   getDefaultMessages(1,setPart4)
@@ -163,21 +163,21 @@ function pageLoop(){
 
   requestAnimationFrame(pageLoop)
   renderer.render(pStage)
-  if(main.y<=-(theNewNowHeight+part4.y-stageH+237+100)&&main.y>=-(nowHeight+part4.y-stageH)){
+  if(main.y<=-(theNewNowHeight+part4.y-stageH+237+100)&&main.y>=-(nowHeight+part4.y-stageH+200)){
     //mainMask.height=stageH-237
     TweenMax.to(mainMask,.5,{height:stageH-237-ifInputing*100})
     TweenMax.to(userMessage,.5,{y:stageH-237-ifInputing*100})
     TweenMax.set($("#userText"),{display:"block"})
-    TweenMax.set($("#songText"),{display:"block"})
+    //TweenMax.set($("#songText"),{display:"block"})
   }else{
     //mainMask.height=stageH*14/13
     TweenMax.to(mainMask,.5,{height:stageH*14/13})
     TweenMax.to(userMessage,.5,{y:stageH})
     TweenMax.set($("#userText"),{display:"none"})
-    TweenMax.set($("#songText"),{display:"none"})
+    //TweenMax.set($("#songText"),{display:"none"})
   }
   TweenMax.set($("#userText"),{y:(stageH-237+20-ifInputing*100)/640*screenW})
-  TweenMax.set($("#songText"),{y:(stageH-56-ifInputing*100)/640*screenW})
+  //TweenMax.set($("#songText"),{y:(stageH-56-ifInputing*100)/640*screenW})
 }
 
 
