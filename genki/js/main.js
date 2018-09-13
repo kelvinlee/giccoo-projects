@@ -159,8 +159,8 @@ function pageLoop(){
   renderer.render(pStage)
   if(main.y<=-(theNewNowHeight+part4.y-stageH+237+100)){
     //mainMask.height=stageH-237
-    TweenMax.to(mainMask,.5,{height:stageH-237})
-    TweenMax.to(userMessage,.5,{y:stageH-237})
+    TweenMax.to(mainMask,.5,{height:stageH-237-ifInputing*100})
+    TweenMax.to(userMessage,.5,{y:stageH-237-ifInputing*100})
     TweenMax.set($("#userText"),{display:"block"})
     TweenMax.set($("#songText"),{display:"block"})
   }else{
@@ -170,6 +170,8 @@ function pageLoop(){
     TweenMax.set($("#userText"),{display:"none"})
     TweenMax.set($("#songText"),{display:"none"})
   }
+  TweenMax.set($("#userText"),{y:(stageH-237+20-ifInputing*100)/640*screenW})
+  TweenMax.set($("#songText"),{y:(stageH-56-ifInputing*100)/640*screenW})
 }
 
 

@@ -181,10 +181,12 @@ function setUserForm(){
 	btnLike.tap=goSubmit//=====================这里改成提交
 
 }
+var ifInputing=0
 $("#UserTextarea1").click(function(){
 	if($("#UserTextarea1")[0].innerHTML=="我来说几句"){
 		$("#UserTextarea1")[0].innerHTML=""
 	}
+	ifInputing=1
 })
 $("#UserTextarea1").blur(function(){
 	if($("#UserTextarea1")[0].innerHTML==""){
@@ -195,6 +197,7 @@ $("#UserTextarea2").click(function(){
 	if($("#UserTextarea2")[0].value=="在这里写下你最爱的歌曲"){
 		$("#UserTextarea2")[0].value=""
 	}
+	ifInputing=1
 })
 $("#UserTextarea2").blur(function(){
 	if($("#UserTextarea2")[0].value==""){
@@ -209,6 +212,7 @@ function resetUserForm(){//====pStage.touchstart
 	if($("#UserTextarea2")[0].value==""){
 		$("#UserTextarea2")[0].value="在这里写下你最爱的歌曲"
 	}
+	ifInputing=0
 }
 function goSubmit(){
 	//$("#UserTextarea1")[0].innerHTML=""
