@@ -67,7 +67,10 @@ function message(_text,_song,_like,_liked,_id){
 	a_message.y=nowHeight//============改位置
 	nowHeight+=userT.height+130
 
-	//btnLike.visible=_liked  如果liked了 visible=false 
+	if(_liked==true){
+		btnLike.visible=false//如果liked了 visible=false 
+	}
+	  
 	btnLike.interactive=true
 	btnLike.tap=goLike
 
@@ -84,6 +87,7 @@ function goLike(_e){
 			console.log(messageA[i][3])
 			messageA[i][2].text=parseInt(messageA[i][2].text)+1
 			console.log("该提交点赞了！")
+			likeMessage(messageA[i][3])
 		}
 	};
 	_e.target.visible=false
@@ -217,5 +221,6 @@ function resetUserForm(){//====pStage.touchstart
 function goSubmit(){
 	//$("#UserTextarea1")[0].innerHTML=""
 	console.log("提交表单",$("#UserTextarea1").val())
+	sendMessage($("#UserTextarea1").val(),$("#UserTextarea2")[0].value)
 
 }

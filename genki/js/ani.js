@@ -162,21 +162,17 @@ var theNewNowHeight=1100
 var nowHeightA=[]
 var endBtn=new pSprite("img/endbtn.png")
 
-function setPart4(){
+function setPart4(_list){
 	main.addChild(part4)
 	part4.y=2980
 	part4.addChild(p4title,p4t1,p4t2,endBtn)
 	p4t1.y=1040
-	message("尊敬的所有乘客您好：您所乘坐的列车已抵达终点站。下车前，请记得回头再看一眼，将每个人的脸庞铭记于心。未来的人生中，我们将是彼此的红日，勇往直前，生生不息","歌名-哈哈哈",99999,0,19283751)
-	message("尊敬的所终点站。下车前，请们将是彼此的红日，勇往直前，生生不息","歌名-哈哈哈",199,0,19283752)
-	message("尊敬的所有乘客您好：您所乘坐的列车已脸日，勇往直前，生生不息","歌名-哈哈哈",0,0,19283753)
-	message("尊敬的所有乘客您好：您所乘坐的列车已记于心。未来的人生中，我们将是彼此的红日，勇往直前，生生不息","歌名-哈哈哈",199,0,19283754)
-	message("尊敬客您好：您所。下车前，请记得回头再看一眼，将每个人的脸庞铭记于心。未来的人生中，我们将是彼此的红日，勇往直前，生生不息","歌名-哈哈哈",99999,0,19283751)
-	message("尊敬的所有乘客您彼此的红日，勇往直前，生生不息","歌名-哈哈哈",199,0,19283752)
-	message("下车前，请记得回头再看一眼，将每个人的脸日，勇往直前，生生不息","歌名-哈哈哈",0,0,19283753)
-	message("生生不息","歌名-哈哈哈",199,0,19283754)
-	message("下车前，请记得回头再看一眼，将每个人的脸日，勇往直前，生生不息","歌名-哈哈哈",0,0,19283753)
-	message("生生不息","歌名-哈哈哈",199,0,19283754)
+
+	var i,j
+	for ( i = 0; i < 10; i++) {
+			message(_list[i].message,_list[i].nickname,_list[i].like,_list[i].liked,_list[i].id)
+	};
+	console.log("_list",_list[1])
 
 	p4t2.y=nowHeight+20
 
@@ -187,27 +183,36 @@ function setPart4(){
 	theNewNowHeight=nowHeight
 
 	var testT=["尊敬的所有乘日，勇往直前，生生不息","尊敬的所有乘客您好：您所乘坐的列车已抵达终点站。下车前，请记得回头再看一眼，将每个人的脸庞铭记于心。未来的人生中，我们将是彼此的红日，勇往直前，生生不息","","","下车前，请记得回头再看一眼，将每个人的脸日，勇往直前，生生不息"]
-	var i,j
-	for (var j = 0; j < 10; j++) {
 
-
-		nowHeight=theNewNowHeight
-		for ( i = 0; i < 5; i++) {
-			message(j*5+i+"尊敬的所有乘日，勇往直前，生生不息"+testT[j%5],"歌名-哈哈哈",99999,0,19283751)
-		};
-		nowHeightA.push(nowHeight)
-
-	};
-
-	console.log(messageA.length)
-	showPage(0)
-	endBtn.y=nowHeight+50
-	endBtn.interactive=true
-	endBtn.tap=goEnd
+	getMessages(1,setPart4b)
+	
 	//=====messageA.push(   aMessage=[a_message,btnLike,userLikeT,_id]   )
 
 	//message("addsfasdf asdfasdfas fasdfasdfasdfasdfa sdfsadfasdfasd fasdfasdf sadf","歌名-哈哈哈",199)
 	//addReturn("尊敬的所有乘客您好：\n您所乘坐的列车已抵达终点站。下车前，请记得回头再看一眼，将每个人的脸庞铭记于心。未来的人生中，我们将是彼此的红日，勇往直前，生生不息")
+}
+
+function setPart4b(_list){
+	console.log("_listBBBBBBB",_list)
+	var i,j
+	for (var j = 0; j < 10; j++) {
+		nowHeight=theNewNowHeight
+		for ( i = 0; i < 5; i++) {
+			if(_list[j*5+i]){
+				message(_list[j*5+i].message,_list[j*5+i].nickname,_list[j*5+i].like,_list[j*5+i].liked,_list[j*5+i].id)
+			}else{
+				message("这里还没人填写","歌名-未填写",199,true,00000000)
+			}
+			
+		};
+		nowHeightA.push(nowHeight)
+	};
+
+	//console.log(messageA.length)
+	showPage(0)
+	endBtn.y=nowHeight+50
+	endBtn.interactive=true
+	endBtn.tap=goEnd
 }
 function goEnd(){
 	console.log("最后跳转按钮")

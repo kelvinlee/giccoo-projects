@@ -92,7 +92,8 @@ function initAll(){
   setPart1()
   setPart2()
   setPart3()
-  setPart4()
+  //setPart4()
+  getDefaultMessages(1,setPart4)
 
   pageLoop()
 }
