@@ -158,7 +158,7 @@ var part4=new PIXI.Container()
 var p4title=new pSprite("img/part4title.png")
 var p4t1=new pSprite("img/p4t1.png")
 var p4t2=new pSprite("img/p4t2.png")
-var theNewNowHeight
+var theNewNowHeight=1100
 
 function setPart4(){
 	main.addChild(part4)
