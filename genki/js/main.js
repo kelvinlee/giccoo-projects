@@ -13,8 +13,8 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "元气音乐节",
-      desc: "唤醒元气初心",
+      title: "汤达人元气音乐节",
+      desc: "点击H5唤醒你的元气初心，更有机会获得元气音乐节门票",
       link: "http://m.giccoo.com/genki/",
       imgUrl: "http://m.giccoo.com/genki/img/ico.jpg",
       success: function() {},
@@ -23,7 +23,7 @@ $(document).ready(function load (){
 
     var shareContent2;
     shareContent2 = {
-      title: "【元气音乐节】唤醒元气初心",
+      title: "【汤达人元气音乐节】点击H5唤醒你的元气初心，更有机会获得元气音乐节门票",
       desc: "",
       link: "http://m.giccoo.com/genki/",
       imgUrl: "http://m.giccoo.com/genki/img/ico.jpg",
@@ -102,6 +102,9 @@ function initAll(){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////===============滚屏
 var main=new PIXI.Container()
 var bg=new pSprite("img/bgloop.jpg")
+var bg2=new pSprite("img/bgloop.jpg")
+var bg3=new pSprite("img/bgloop.jpg")
+var bg4=new pSprite("img/bgloop.jpg")
 var mainMask=new pSprite("img/main-mask.png")
 
 function setPage(){
@@ -110,7 +113,9 @@ function setPage(){
   pStage.touchstart=touchStart
   main.mask=mainMask
   mainMask.height=stageH*14/13
-  
+  main.addChild(bg2,bg3,bg4)
+  bg3.y=3090
+  bg4.y=3090*2
 }
 
 var startY,endY,mouseYA,timeA,newPosition
@@ -179,6 +184,8 @@ function pageLoop(){
   }
   TweenMax.set($("#userText"),{y:(stageH-237+20-ifInputing*100)/640*screenW})
   //TweenMax.set($("#songText"),{y:(stageH-56-ifInputing*100)/640*screenW})
+
+  //bg.y=main.y/4
 }
 
 

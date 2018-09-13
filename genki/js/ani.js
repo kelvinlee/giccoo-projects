@@ -1,25 +1,35 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part1 开头音乐
 var part1=new PIXI.Container()
 var p1pic=new pSprite("img/part1pic.png")
+var p1pic2=new pSprite("img/part1pic2.png")
+var p1pic3=new pSprite("img/part1pic3.png")
 var btnPlay=new pSprite("img/btn-play.png")
 var btnStop=new pSprite("img/btn-pause.png")
 var bgm=$("#bgm")[0]
 
 function setPart1 () {
 	main.addChild(part1)
-	part1.addChild(p1pic,btnPlay,btnStop)
+	part1.addChild(p1pic,p1pic3,p1pic2,btnPlay,btnStop)
 	btnPlay.y=btnStop.y=413
 	btnStop.alpha=0
 	btnStop.interactive=true
 	btnStop.tap=goBGM
+
+	p1pic3.pivot.set(258,258)
+	p1pic3.position.set(320,494)
+	TweenMax.to(p1pic3,.7,{rotation:Math.PI*2,repeat:10000,ease:Linear.easeNone})
+	p1pic3.alpha=.5
+	p1pic3.visible=false
 }
 function goBGM(){
 	if(btnStop.alpha==0){
 		btnStop.alpha=1
 		bgm.play()
+		p1pic3.visible=true
 	}else{
 		btnStop.alpha=0
 		bgm.pause()
+		p1pic3.visible=false
 	}
 
 	for (var i = 0; i < 4; i++) {
@@ -136,6 +146,7 @@ function goList(){
 var nowSong=0
 var musicA=[$("#music1")[0],$("#music2")[0],$("#music3")[0],$("#music4")[0]]
 function playSong(_e){
+	p1pic3.visible=false
 	bgm.pause()
 	btnStop.alpha=0
 	for (var i = 0; i < 4; i++) {
