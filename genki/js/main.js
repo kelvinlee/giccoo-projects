@@ -145,7 +145,7 @@ function touchEnd(_e){
   pStage.interactive=true
   pStage.touchend=null
 
-  var endY=main.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-2])/(timeA[timeA.length-1]-timeA[timeA.length-2])/6
+  var endY=main.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-3])/(timeA[timeA.length-1]-timeA[timeA.length-3])/4
   if(endY>=0){    endY=0  }
   if(endY<=-11500) {endY=-11500};//=======================高度限制
 
