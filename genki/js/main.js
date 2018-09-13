@@ -86,7 +86,7 @@ function initAll(){
   renderer.view.style.width=renderer.view.style.height="100%"
 
   renderer.backgroundColor=0xffffff
-  pageLoop()
+  
 
   setPage()
   setPart1()
@@ -94,6 +94,7 @@ function initAll(){
   setPart3()
   setPart4()
 
+  pageLoop()
 }
 
 
