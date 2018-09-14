@@ -209,7 +209,7 @@ function setPart4(_list){
 	part4.y=2980-300+690
 	part4.addChild(p4title1,p4light1,p4light2,p4title2,p4t1,p4t2,endBtn)
 	p4t1.y=1040+155
-	
+
 
 	p4light1.pivot.set(313/2,297/2)
 	p4light2.pivot.set(313/2,297/2)
@@ -231,7 +231,7 @@ function setPart4(_list){
 	nowHeight+=84
 	
 
-	setUserForm()
+	setUserForm2()
 	theNewNowHeight=nowHeight
 
 	

@@ -36,6 +36,8 @@ img{ width: 100%; }
 	display: none;
 }
 
+
+
 /*.musicBtn{
 	position: absolute;
 	width: 12.35%;
@@ -61,17 +63,45 @@ img{ width: 100%; }
 	z-index: 100;
 	display: none;
 }
-#userText{
+.icon{
 	position: absolute;
-	width: 60.625%;
-	left:27.34375%;
+	width: 11.09375%;
+	top: 26.571428%;
+	left: 4.6875%;
+	z-index: 999;
+	display: none;
+}
+#btnSubmit{
+	position: absolute;
+	width: 16.5625%;
+	left: 75.3125%;
+	top: 62.42857%;
+}
+
+#userForm{
+	position: absolute;
+	width: 100%;
+	font-size: 0;
+	bottom: 0;
 	z-index: 999;
 }
-#songText{
+#userText1{
+	position: absolute;
+	width: 60.625%;
+
+	left:27.34375%;
+	z-index: 9999;
+
+	top: 31%;
+}
+#songText1{
 	position: absolute;
 	z-index: 999;
 	width: 46.125%;
 	left:25.34375%;
+	z-index: 9999;
+
+	top: 65.7%;
 	/*display: none;*/
 }
 #UserTextarea1{

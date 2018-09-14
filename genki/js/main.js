@@ -106,7 +106,7 @@ var bg2=new pSprite("img/bgloop.jpg")
 var bg3=new pSprite("img/bgloop.jpg")
 var bg4=new pSprite("img/bgloop.jpg")
 var mainMask=new pSprite("img/main-mask.png")
-
+var icoA=[$("#ico1"),$("#ico2"),$("#ico3"),$("#ico4"),$("#ico5"),$("#ico6"),$("#ico7"),$("#ico8"),$("#ico9"),$("#ico10")]
 function setPage(){
   pStage.addChild(bg,main,mainMask)
   pStage.interactive=true
@@ -116,6 +116,7 @@ function setPage(){
   main.addChild(bg2,bg3,bg4)
   bg3.y=3090
   bg4.y=3090*2
+  TweenMax.set(icoA[parseInt(Math.random()*10)],{display:"block"})
 }
 
 var startY,endY,mouseYA,timeA,newPosition
@@ -164,30 +165,54 @@ function touchEnd(_e){
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////===============
 var ifSubmit=0
+// function pageLoop(){
+//   heightLimit=-nowHeight-part4.y+stageH-260-50-260-40
+
+//   requestAnimationFrame(pageLoop)
+//   renderer.render(pStage)
+//   if(main.y<=-(theNewNowHeight+part4.y-stageH+237+100)&&ifSubmit==0){//&&main.y>=-(nowHeight+part4.y-stageH+200)
+//     //mainMask.height=stageH-237
+//     TweenMax.to(mainMask,.5,{height:stageH-237-20-ifInputing*100})
+//     TweenMax.to(userMessage,.5,{y:stageH-237-20-ifInputing*100})
+//     TweenMax.set($("#userText"),{display:"block"})
+//     TweenMax.set($("#songText"),{display:"block"})
+//   }else{
+//     //mainMask.height=stageH*14/13
+//     TweenMax.to(mainMask,.5,{height:stageH*14/13})
+//     TweenMax.to(userMessage,.5,{y:stageH})
+//     TweenMax.set($("#userText"),{display:"none"})
+//     TweenMax.set($("#songText"),{display:"none"})
+//   }
+//   TweenMax.set($("#userText"),{y:(stageH-237+20-20-ifInputing*100)/640*screenW})
+//   TweenMax.set($("#songText"),{y:(stageH-56-50-20-ifInputing*100)/640*screenW})
+
+//   //bg.y=main.y/4
+// }
+
 function pageLoop(){
   heightLimit=-nowHeight-part4.y+stageH-260-50-260-40
 
   requestAnimationFrame(pageLoop)
   renderer.render(pStage)
   if(main.y<=-(theNewNowHeight+part4.y-stageH+237+100)&&ifSubmit==0){//&&main.y>=-(nowHeight+part4.y-stageH+200)
-    //mainMask.height=stageH-237
     TweenMax.to(mainMask,.5,{height:stageH-237-20-ifInputing*100})
-    TweenMax.to(userMessage,.5,{y:stageH-237-20-ifInputing*100})
-    TweenMax.set($("#userText"),{display:"block"})
-    TweenMax.set($("#songText"),{display:"block"})
+    //TweenMax.to(userMessage,.5,{y:stageH-237-20-ifInputing*100})
+    // TweenMax.set($("#userText"),{display:"block"})
+    // TweenMax.set($("#songText"),{display:"block"})
+    TweenMax.set($("#userForm"),{display:"block"})
   }else{
-    //mainMask.height=stageH*14/13
     TweenMax.to(mainMask,.5,{height:stageH*14/13})
-    TweenMax.to(userMessage,.5,{y:stageH})
-    TweenMax.set($("#userText"),{display:"none"})
-    TweenMax.set($("#songText"),{display:"none"})
+    //TweenMax.to(userMessage,.5,{y:stageH})
+    // TweenMax.set($("#userText"),{display:"none"})
+    // TweenMax.set($("#songText"),{display:"none"})
+    TweenMax.set($("#userForm"),{display:"none"})
+
   }
-  TweenMax.set($("#userText"),{y:(stageH-237+20-20-ifInputing*100)/640*screenW})
-  TweenMax.set($("#songText"),{y:(stageH-56-50-20-ifInputing*100)/640*screenW})
+  // TweenMax.set($("#userText"),{y:(stageH-237+20-20-ifInputing*100)/640*screenW})
+  // TweenMax.set($("#songText"),{y:(stageH-56-50-20-ifInputing*100)/640*screenW})
 
-  //bg.y=main.y/4
+
 }
-
 
 
 function savePic(){

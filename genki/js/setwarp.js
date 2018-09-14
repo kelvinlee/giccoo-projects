@@ -187,12 +187,23 @@ function setUserForm(){
 	btnLike.tap=goSubmit//=====================这里改成提交
 
 }
+function setUserForm2(){
+
+
+
+
+	TweenMax.set($("#userText"),{y:(stageH-237+20)/640*screenW})
+	TweenMax.set($("#songText"),{y:(stageH-56)/640*screenW})
+	userMessage.y=stageH-237-40//nowHeight//============改位置
+
+
+}
 var ifInputing=0
 $("#UserTextarea1").click(function(){
 	if($("#UserTextarea1")[0].innerHTML=="说出你的元气宣言"){
 		$("#UserTextarea1")[0].innerHTML=""
 	}
-	ifInputing=1
+	//ifInputing=1
 })
 $("#UserTextarea1").blur(function(){
 	if($("#UserTextarea1")[0].innerHTML==""||$("#UserTextarea1")[0].innerHTML==null){
@@ -203,7 +214,7 @@ $("#UserTextarea2").click(function(){
 	if($("#UserTextarea2")[0].value=="在这里留下手机号和场次"){
 		$("#UserTextarea2")[0].value=""
 	}
-	ifInputing=1
+	//ifInputing=1
 })
 $("#UserTextarea2").blur(function(){
 	if($("#UserTextarea2")[0].value==""){
@@ -215,11 +226,14 @@ function resetUserForm(){//====pStage.touchstart
 	if($("#UserTextarea1")[0].innerHTML==""||$("#UserTextarea1")[0].innerHTML==null){
 		$("#UserTextarea1")[0].innerHTML="说出你的元气宣言"
 	}
-	// if($("#UserTextarea2")[0].value==""){
-	// 	$("#UserTextarea2")[0].value="在这里写下你最爱的歌曲"
-	// }
+	if($("#UserTextarea2")[0].value==""){
+		$("#UserTextarea2")[0].value="在这里留下手机号和场次"
+	}
 	ifInputing=0
 }
+$("#btnSubmit").click(function(){
+	goSubmit()
+})
 function goSubmit(){
 	//$("#UserTextarea1")[0].innerHTML=""
 	console.log("提交表单",$("#UserTextarea1").val())
