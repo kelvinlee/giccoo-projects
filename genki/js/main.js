@@ -106,7 +106,9 @@ var bg2=new pSprite("img/bgloop.jpg")
 var bg3=new pSprite("img/bgloop.jpg")
 var bg4=new pSprite("img/bgloop.jpg")
 var mainMask=new pSprite("img/main-mask.png")
-var icoA=[$("#ico1"),$("#ico2"),$("#ico3"),$("#ico4"),$("#ico5"),$("#ico6"),$("#ico7"),$("#ico8"),$("#ico9"),$("#ico10")]
+var icoA=[$("#ico1"),$("#ico2"),$("#ico3"),$("#ico4"),$("#ico5"),$("#ico6"),$("#ico7"),$("#ico8"),$("#ico9"),$("#ico10"),
+$("#ico11"),$("#ico12"),$("#ico13"),$("#ico14"),$("#ico15"),$("#ico16"),$("#ico17"),$("#ico18"),$("#ico19"),$("#ico20"),
+$("#ico21"),$("#ico22"),$("#ico23"),$("#ico24"),$("#ico25"),$("#ico26"),$("#ico27"),$("#ico28"),$("#ico29"),$("#ico30")]
 function setPage(){
   pStage.addChild(bg,main,mainMask)
   pStage.interactive=true
@@ -116,7 +118,7 @@ function setPage(){
   main.addChild(bg2,bg3,bg4)
   bg3.y=3090
   bg4.y=3090*2
-  TweenMax.set(icoA[parseInt(Math.random()*10)],{display:"block"})
+  TweenMax.set(icoA[parseInt(Math.random()*30)],{display:"block"})
 }
 
 var startY,endY,mouseYA,timeA,newPosition
