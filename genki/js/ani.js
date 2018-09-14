@@ -3,13 +3,14 @@ var part1=new PIXI.Container()
 var p1pic=new pSprite("img/part1pic.png")
 var p1pic2=new pSprite("img/part1pic2.png")
 var p1pic3=new pSprite("img/part1pic3.png")
+var p1pic4=new pSprite("img/part1pic4.png")
 var btnPlay=new pSprite("img/btn-play.png")
 var btnStop=new pSprite("img/btn-pause.png")
 var bgm=$("#bgm")[0]
 
 function setPart1 () {
 	main.addChild(part1)
-	part1.addChild(p1pic,p1pic3,p1pic2,btnPlay,btnStop)
+	part1.addChild(p1pic,p1pic3,p1pic2,btnPlay,p1pic4,btnStop)
 	btnPlay.y=btnStop.y=413
 	btnStop.alpha=0
 	btnStop.interactive=true
@@ -20,6 +21,9 @@ function setPart1 () {
 	TweenMax.to(p1pic3,.7,{rotation:Math.PI*2,repeat:10000,ease:Linear.easeNone})
 	p1pic3.alpha=.5
 	p1pic3.visible=false
+
+	p1pic4.blendMode=_ADD
+	TweenMax.to(p1pic4,2,{alpha:0,repeat:10000,yoyo:true})
 }
 function goBGM(){
 	if(btnStop.alpha==0){
@@ -206,7 +210,7 @@ function setPart4(_list){
 	setUserForm()
 	theNewNowHeight=nowHeight
 
-	var testT=["尊敬的所有乘日，勇往直前，生生不息","尊敬的所有乘客您好：您所乘坐的列车已抵达终点站。下车前，请记得回头再看一眼，将每个人的脸庞铭记于心。未来的人生中，我们将是彼此的红日，勇往直前，生生不息","","","下车前，请记得回头再看一眼，将每个人的脸日，勇往直前，生生不息"]
+	
 
 	getMessages(1,setPart4b)
 	
@@ -215,14 +219,15 @@ function setPart4(_list){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part4 留言板部分BBBB
 function setPart4b(_list){
 	console.log("_listBBBBBBB",_list)
-	var i,j
+	var i,j,temp=0
 	for (var j = 0; j < 10; j++) {
 		nowHeight=theNewNowHeight
 		for ( i = 0; i < 5; i++) {
 			if(_list[j*5+i]){
 				message(_list[j*5+i].message,_list[j*5+i].nickname,_list[j*5+i].like,_list[j*5+i].liked,_list[j*5+i].id)
 			}else{
-				message("这里还没人填写","歌名-未填写",199,true,00000000)
+				message(commitA[temp%17],"歌名-未填写",parseInt(Math.random()*20),true,parseInt(Math.random()*10000000))
+				temp++
 			}
 			
 		};
