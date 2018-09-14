@@ -15,7 +15,7 @@ var userLikeStyle={
 		align: 'right',
 	}
 var messageA=[]
-var nowHeight=1100
+var nowHeight=1100+155
 function message(_text,_song,_like,_liked,_id){
 	_song=""
 	var a_message=new PIXI.Container()
@@ -120,6 +120,11 @@ function addReturn(_text){
 
 ////////////////////////////////////////////////////////////////////////////////==用户表单
 var userMessage=new PIXI.Container()
+var userHint=new PIXI.Text("留下手机号和场次，就有机会获得惊喜\n(手机号不会被显示与泄露)",{
+		fill:'#006837',
+		fontSize: 22,
+		align: 'center',
+	})
 function setUserForm(){
 	//var userMessage=new PIXI.Container()
 	var messageBG=new PIXI.Graphics()
@@ -138,8 +143,10 @@ function setUserForm(){
 
 	var userLikeT=new PIXI.Text("提交",userLikeStyle)
 
-	userMessage.addChild(messageBG,messageArrow,userT,userSong,messageIco,btnLike,userIco,userLikeT)//messageBG2,
+	userMessage.addChild(messageBG,messageArrow,userT,userSong,messageIco,btnLike,userIco,userLikeT,userHint)//messageBG2,
 	messageArrow.x=3
+	userHint.y=190
+	userHint.x=320-userHint.width/2+50
 	//part4.addChild(a_message)
 
 	pStage.addChild(userMessage)
@@ -171,7 +178,7 @@ function setUserForm(){
 
 	TweenMax.set($("#userText"),{y:(stageH-237+20)/640*screenW})
 	TweenMax.set($("#songText"),{y:(stageH-56)/640*screenW})
-	userMessage.y=stageH-237//nowHeight//============改位置
+	userMessage.y=stageH-237-40//nowHeight//============改位置
 	//nowHeight+=userT.height+130
 
 	//btnLike.visible=_liked  如果liked了 visible=false 
@@ -193,14 +200,14 @@ $("#UserTextarea1").blur(function(){
 	}
 })
 $("#UserTextarea2").click(function(){
-	if($("#UserTextarea2")[0].value=="留下手机号，就有机会获得惊喜哦"){
+	if($("#UserTextarea2")[0].value=="在这里留下手机号和场次"){
 		$("#UserTextarea2")[0].value=""
 	}
 	ifInputing=1
 })
 $("#UserTextarea2").blur(function(){
 	if($("#UserTextarea2")[0].value==""){
-		$("#UserTextarea2")[0].value="留下手机号，就有机会获得惊喜哦"
+		$("#UserTextarea2")[0].value="在这里留下手机号和场次"
 	}
 })
 function resetUserForm(){//====pStage.touchstart

@@ -208,7 +208,8 @@ function setPart4(_list){
 	main.addChild(part4)
 	part4.y=2980-300+690
 	part4.addChild(p4title1,p4light1,p4light2,p4title2,p4t1,p4t2,endBtn)
-	p4t1.y=1040
+	p4t1.y=1040+155
+	
 
 	p4light1.pivot.set(313/2,297/2)
 	p4light2.pivot.set(313/2,297/2)
@@ -243,11 +244,11 @@ function setPart4(_list){
 function setPart4b(_list){
 	console.log("_listBBBBBBB",_list)
 	var i,j,temp=0
-	for (var j = 0; j < 10; j++) {
+	for (var j = 0; j < 5; j++) {
 		nowHeight=theNewNowHeight
-		for ( i = 0; i < 5; i++) {
-			if(_list[j*5+i]){
-				message(_list[j*5+i].message,_list[j*5+i].nickname,_list[j*5+i].like,_list[j*5+i].liked,_list[j*5+i].id)
+		for ( i = 0; i < 10; i++) {
+			if(_list[j*10+i]){
+				message(_list[j*10+i].message,_list[j*10+i].nickname,_list[j*10+i].like,_list[j*10+i].liked,_list[j*10+i].id)
 			}else{
 				message(commitA[temp%17],"歌名-未填写",parseInt(Math.random()*20),true,parseInt(Math.random()*10000000))
 				temp++
@@ -256,7 +257,33 @@ function setPart4b(_list){
 		};
 		nowHeightA.push(nowHeight)
 	};
+	getMessages(2,setPart4c)
+	//console.log(messageA.length)
+	// showPage(0)
+	// endBtn.y=nowHeight+50
+	// endBtn.interactive=true
+	// endBtn.tap=goEnd
+	// setPagebtn()
+}
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////===============part4 留言板部分CCC
+function setPart4c(_list){
+	console.log("_listBBBBBBB",_list)
+	var i,j,temp=0
+	for (var j = 0; j < 5; j++) {
+		nowHeight=theNewNowHeight
+		for ( i = 0; i < 10; i++) {
+			if(_list[j*10+i]){
+				message(_list[j*10+i].message,_list[j*10+i].nickname,_list[j*10+i].like,_list[j*10+i].liked,_list[j*10+i].id)
+			}else{
+				message(commitA[temp%17],"歌名-未填写",parseInt(Math.random()*20),true,parseInt(Math.random()*10000000))
+				temp++
+			}
+			
+		};
+		nowHeightA.push(nowHeight)
+	};
+	//getMessages(2,setPart4c)
 	//console.log(messageA.length)
 	showPage(0)
 	endBtn.y=nowHeight+50
@@ -368,7 +395,7 @@ function goEnd(){
 function showPage(_page){
 	nowHeight=nowHeightA[_page]
 	for (var i = 10; i < messageA.length; i++) {
-		if(i>=10+_page*5&&i<10+_page*5+5){
+		if(i>=10+_page*10&&i<10+_page*10+10){
 			messageA[i][0].visible=true
 		}else{
 			messageA[i][0].visible=false
