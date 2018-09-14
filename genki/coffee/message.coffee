@@ -4,7 +4,7 @@ apiLink = "//g.giccoo.com/active/message"
 # getDefaultMessages(1,function(list){ console.log(list) })
 # page 是第几页(每页20条) callback 为回调函数
 getDefaultMessages = (page = 1,callback = ->)->
-	axios.get "#{apiLink}/list/type/genkidefault/page/#{page}", {}
+	axios.get "#{apiLink}/list/type/genkidefault/page/#{page}/size/10/sort/like/", {}
 	.then (vals)=>
 		# callback
 		for item in vals.data.list

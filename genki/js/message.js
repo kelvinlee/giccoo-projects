@@ -11,7 +11,7 @@ getDefaultMessages = function getDefaultMessages() {
   var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
   var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
 
-  return axios.get(apiLink + "/list/type/genkidefault/page/" + page, {}).then(function (vals) {
+  return axios.get(apiLink + "/list/type/genkidefault/page/" + page + "/size/10/sort/like/", {}).then(function (vals) {
     var i, item, len, messageList, ref;
     ref = vals.data.list;
     // callback
