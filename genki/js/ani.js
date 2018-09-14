@@ -1,11 +1,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part1 开头音乐
 var part1=new PIXI.Container()
-var p1pic=new pSprite("img/part1pic.png")
-var p1pic2=new pSprite("img/part1pic2.png")
-var p1pic3=new pSprite("img/part1pic3.png")
-var p1pic4=new pSprite("img/part1pic4.png")
-var btnPlay=new pSprite("img/btn-play.png")
-var btnStop=new pSprite("img/btn-pause.png")
+var p1pic=new pSprite("//image.giccoo.com/projects/genki/img/part1pic.png")
+var p1pic2=new pSprite("//image.giccoo.com/projects/genki/img/part1pic2.png")
+var p1pic3=new pSprite("//image.giccoo.com/projects/genki/img/part1pic3.png")
+var p1pic4=new pSprite("//image.giccoo.com/projects/genki/img/part1pic4.png")
+var btnPlay=new pSprite("//image.giccoo.com/projects/genki/img/btn-play.png")
+var btnStop=new pSprite("//image.giccoo.com/projects/genki/img/btn-pause.png")
 var bgm=$("#bgm")[0]
 
 function setPart1 () {
@@ -48,10 +48,10 @@ function goBGM(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part2 基因按钮
 var part2=new PIXI.Container()
-var gene=new pSprite("img/btn-gene.png")
-var geneFP=new pSprite("img/gene-fp.png")
-var geneFP2=new pSprite("img/gene-fp2.png")
-var geneMask=new pSprite("img/gene-mask.png")
+var gene=new pSprite("//image.giccoo.com/projects/genki/img/btn-gene.png")
+var geneFP=new pSprite("//image.giccoo.com/projects/genki/img/gene-fp.png")
+var geneFP2=new pSprite("//image.giccoo.com/projects/genki/img/gene-fp2.png")
+var geneMask=new pSprite("//image.giccoo.com/projects/genki/img/gene-mask.png")
 var geneLine=new PIXI.Graphics()
 var muiscA=[]
 function setPart2(){
@@ -104,39 +104,39 @@ function goH5(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part3 歌单部分
 var part3=new PIXI.Container()
-var p3title=new pSprite("img/part3title.png")
-var p3bottom=new pSprite("img/part3bottom.png")
+var p3title=new pSprite("//image.giccoo.com/projects/genki/img/part3title.png")
+var p3bottom=new pSprite("//image.giccoo.com/projects/genki/img/part3bottom.png")
 var p3btn1=new PIXI.Container()
 var p3btn2=new PIXI.Container()
 var p3btn3=new PIXI.Container()
 var p3btn4=new PIXI.Container()
-var p3dic1=new pSprite("img/part3disc.png")
-var p3dic2=new pSprite("img/part3disc.png")
-var p3dic3=new pSprite("img/part3disc.png")
-var p3dic4=new pSprite("img/part3disc.png")
+var p3dic1=new pSprite("//image.giccoo.com/projects/genki/img/part3disc.png")
+var p3dic2=new pSprite("//image.giccoo.com/projects/genki/img/part3disc.png")
+var p3dic3=new pSprite("//image.giccoo.com/projects/genki/img/part3disc.png")
+var p3dic4=new pSprite("//image.giccoo.com/projects/genki/img/part3disc.png")
 
-var p3dic11=new pSprite("img/part3disc1.png")
-var p3dic22=new pSprite("img/part3disc1.png")
-var p3dic33=new pSprite("img/part3disc1.png")
-var p3dic44=new pSprite("img/part3disc1.png")
+var p3dic11=new pSprite("//image.giccoo.com/projects/genki/img/part3disc1.png")
+var p3dic22=new pSprite("//image.giccoo.com/projects/genki/img/part3disc1.png")
+var p3dic33=new pSprite("//image.giccoo.com/projects/genki/img/part3disc1.png")
+var p3dic44=new pSprite("//image.giccoo.com/projects/genki/img/part3disc1.png")
 
 var p3dic111=new PIXI.Container()
 var p3dic222=new PIXI.Container()
 var p3dic333=new PIXI.Container()
 var p3dic444=new PIXI.Container()
 
-var p3song1=new pSprite("img/song1.png")
-var p3song2=new pSprite("img/song2.png")
-var p3song3=new pSprite("img/song3.png")
-var p3song4=new pSprite("img/song4.png")
+var p3song1=new pSprite("//image.giccoo.com/projects/genki/img/song1.png")
+var p3song2=new pSprite("//image.giccoo.com/projects/genki/img/song2.png")
+var p3song3=new pSprite("//image.giccoo.com/projects/genki/img/song3.png")
+var p3song4=new pSprite("//image.giccoo.com/projects/genki/img/song4.png")
 var p3dicA=[p3dic1,p3dic2,p3dic3,p3dic4]
 var p3dicAA=[p3dic11,p3dic22,p3dic33,p3dic44]
 var p3dicAAA=[p3dic111,p3dic222,p3dic333,p3dic444]
 
 var p3songA=[p3song1,p3song2,p3song3,p3song4]
 var p3btnA=[p3btn1,p3btn2,p3btn3,p3btn4]
-var p3t=new pSprite("img/part3t.png")
-var p3arrow=new pSprite("img/part3arrow.png")
+var p3t=new pSprite("//image.giccoo.com/projects/genki/img/part3t.png")
+var p3arrow=new pSprite("//image.giccoo.com/projects/genki/img/part3arrow.png")
 function setPart3(){
 	main.addChild(part3)
 	part3.y=1688-300+690
@@ -193,16 +193,16 @@ function playSong(_e){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part4 留言板部分
 var part4=new PIXI.Container()
-var p4title1=new pSprite("img/part4title1.png")
-var p4title2=new pSprite("img/part4title2.png")
-var p4light1=new pSprite("img/part4light1.png")
-var p4light2=new pSprite("img/part4light2.png")
+var p4title1=new pSprite("//image.giccoo.com/projects/genki/img/part4title1.png")
+var p4title2=new pSprite("//image.giccoo.com/projects/genki/img/part4title2.png")
+var p4light1=new pSprite("//image.giccoo.com/projects/genki/img/part4light1.png")
+var p4light2=new pSprite("//image.giccoo.com/projects/genki/img/part4light2.png")
 
-var p4t1=new pSprite("img/p4t1.png")
-var p4t2=new pSprite("img/p4t2.png")
+var p4t1=new pSprite("//image.giccoo.com/projects/genki/img/p4t1.png")
+var p4t2=new pSprite("//image.giccoo.com/projects/genki/img/p4t2.png")
 var theNewNowHeight=1100
 var nowHeightA=[]
-var endBtn=new pSprite("img/endbtn.png")
+var endBtn=new pSprite("//image.giccoo.com/projects/genki/img/endbtn.png")
 
 function setPart4(_list){
 	main.addChild(part4)
@@ -241,8 +241,8 @@ function setPart4(_list){
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part4 留言板部分BBBB
-function setPart4b(_list){
-	console.log("_listBBBBBBB",_list)
+function setPart4b(_list,_counts){
+	console.log("_listBBBBBBB",_list,_counts)
 	var i,j,temp=0
 	for (var j = 0; j < 5; j++) {
 		nowHeight=theNewNowHeight
@@ -250,7 +250,7 @@ function setPart4b(_list){
 			if(_list[j*10+i]){
 				message(_list[j*10+i].message,_list[j*10+i].nickname,_list[j*10+i].like,_list[j*10+i].liked,_list[j*10+i].id)
 			}else{
-				message(commitA[temp%17],"歌名-未填写",parseInt(Math.random()*20),true,parseInt(Math.random()*10000000))
+				message(commitA[temp%17],"歌名-未填写",parseInt(Math.random()*12),true,parseInt(Math.random()*10000000))
 				temp++
 			}
 			

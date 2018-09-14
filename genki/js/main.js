@@ -101,10 +101,10 @@ function initAll(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////===============滚屏
 var main=new PIXI.Container()
-var bg=new pSprite("img/bgloop.jpg")
-var bg2=new pSprite("img/bgloop.jpg")
-var bg3=new pSprite("img/bgloop.jpg")
-var bg4=new pSprite("img/bgloop.jpg")
+var bg=new pSprite("//image.giccoo.com/projects/genki/img/bgloop.jpg")
+var bg2=new pSprite("//image.giccoo.com/projects/genki/img/bgloop.jpg")
+var bg3=new pSprite("//image.giccoo.com/projects/genki/img/bgloop.jpg")
+var bg4=new pSprite("//image.giccoo.com/projects/genki/img/bgloop.jpg")
 var mainMask=new pSprite("img/main-mask.png")
 var icoA=[$("#ico1"),$("#ico2"),$("#ico3"),$("#ico4"),$("#ico5"),$("#ico6"),$("#ico7"),$("#ico8"),$("#ico9"),$("#ico10"),
 $("#ico11"),$("#ico12"),$("#ico13"),$("#ico14"),$("#ico15"),$("#ico16"),$("#ico17"),$("#ico18"),$("#ico19"),$("#ico20"),
