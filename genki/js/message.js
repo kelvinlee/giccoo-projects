@@ -5,7 +5,7 @@ var apiLink, getDefaultMessages, getMessages, likeMessage, messageList, openInAP
 apiLink = "//g.giccoo.com/active/message";
 
 // 获取留言列表
-// getDefaultMessages(1,function(list){ console.log(list) })
+// getDefaultMessages(1,function(list,counts){ console.log(list) })
 // page 是第几页(每页20条) callback 为回调函数
 getDefaultMessages = function getDefaultMessages() {
   var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
@@ -24,7 +24,7 @@ getDefaultMessages = function getDefaultMessages() {
       }
     }
     messageList = vals.data.list;
-    return callback(messageList);
+    return callback(messageList, vals.data.counts);
   }).catch(function (err) {
     return alert("列表获取失败");
   });
@@ -33,7 +33,7 @@ getDefaultMessages = function getDefaultMessages() {
 messageList = [];
 
 // 获取留言列表
-// getMessages(1,function(list){ console.log(list) })
+// getMessages(1,function(list,counts){ console.log(list) })
 // page 是第几页(每页20条) callback 为回调函数
 getMessages = function getMessages() {
   var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
@@ -52,7 +52,7 @@ getMessages = function getMessages() {
       }
     }
     messageList = vals.data.list;
-    return callback(messageList);
+    return callback(messageList, vals.data.counts);
   }).catch(function (err) {
     return alert("列表获取失败");
   });

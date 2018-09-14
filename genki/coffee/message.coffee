@@ -1,7 +1,7 @@
 apiLink = "//g.giccoo.com/active/message"
 
 # 获取留言列表
-# getDefaultMessages(1,function(list){ console.log(list) })
+# getDefaultMessages(1,function(list,counts){ console.log(list) })
 # page 是第几页(每页20条) callback 为回调函数
 getDefaultMessages = (page = 1,callback = ->)->
 	axios.get "#{apiLink}/list/type/genkidefault/page/#{page}/size/10/sort/like/", {}
@@ -13,13 +13,13 @@ getDefaultMessages = (page = 1,callback = ->)->
 			else
 				item.liked = false
 		messageList = vals.data.list
-		callback messageList
+		callback messageList,vals.data.counts
 	.catch (err)=>
 		alert "列表获取失败"
 
 messageList = []
 # 获取留言列表
-# getMessages(1,function(list){ console.log(list) })
+# getMessages(1,function(list,counts){ console.log(list) })
 # page 是第几页(每页20条) callback 为回调函数
 getMessages = (page = 1,callback = ->)->
 	axios.get "#{apiLink}/list/type/genki/page/#{page}/size/50", {}
@@ -31,7 +31,7 @@ getMessages = (page = 1,callback = ->)->
 			else
 				item.liked = false
 		messageList = vals.data.list
-		callback messageList
+		callback messageList,vals.data.counts
 	.catch (err)=>
 		alert "列表获取失败"
 
