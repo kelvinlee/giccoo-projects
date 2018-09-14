@@ -29,7 +29,7 @@ function message(_text,_song,_like,_liked,_id){
 	var userT=new PIXI.Text(_text,userTstyle)
 	var userSong=new PIXI.Text(_song,userSongstyle)
 
-	var userIco=new pSprite("img/ico"+_id%38+".png")
+	var userIco=new pSprite("//image.giccoo.com/projects/genki/img/ico"+_id%38+".png")
 	userIco.position.set(30,0)
 
 	var userLikeT=new PIXI.Text(_like,userLikeStyle)
