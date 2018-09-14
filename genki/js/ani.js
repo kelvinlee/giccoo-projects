@@ -198,7 +198,7 @@ function setPart4(_list){
 
 	var i,j
 	for ( i = 0; i < 10; i++) {
-			message(_list[i].message,_list[i].nickname,_list[i].like,_list[i].liked,_list[i].id)
+			message(_list[i].message,_list[i].nickname,_list[i].like+100-i*10,_list[i].liked,_list[i].id)
 	};
 	console.log("_list",_list[1])
 
