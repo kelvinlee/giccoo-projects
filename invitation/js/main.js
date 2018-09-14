@@ -302,7 +302,7 @@ function goBackPage2(){
 
 var rule=new PIXI.Text("领取活动邀请函即视为同意",{
     fill:'#000000',
-    fontSize: 22,
+    fontSize: 16,
     align: 'left',
     // wordWrap:true,
     // wordWrapWidth:100
@@ -310,7 +310,7 @@ var rule=new PIXI.Text("领取活动邀请函即视为同意",{
 })
 var rule2=new PIXI.Text("《活动规则及隐私政策》",{
     fill:'#000033',
-    fontSize: 22,
+    fontSize: 16,
     align: 'left',
     // wordWrap:true,
     // wordWrapWidth:100
