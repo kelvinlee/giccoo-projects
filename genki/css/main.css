@@ -70,8 +70,8 @@ img{ width: 100%; }
 #songText{
 	position: absolute;
 	z-index: 999;
-	width: 40%;
-	left:34.15625%;
+	width: 43.125%;
+	left:27.34375%;
 	/*display: none;*/
 }
 #UserTextarea1{

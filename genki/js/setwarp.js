@@ -3,22 +3,16 @@ var userTstyle={
 		fill:'#006837',
 		fontSize: 22,
 		align: 'left',
-		// wordWrap:true,
-		// wordWrapWidth:100
 	}
 var userSongstyle={
 		fill:'#000000',
 		fontSize: 18,
 		align: 'left',
-		// wordWrap:true,
-		// wordWrapWidth:100
 	}
 var userLikeStyle={
 		fill:'#ffffff',
 		fontSize: 19,
 		align: 'right',
-		// wordWrap:true,
-		// wordWrapWidth:100
 	}
 var messageA=[]
 var nowHeight=1100
@@ -66,7 +60,7 @@ function message(_text,_song,_like,_liked,_id){
 	userLikeT.x=570-userLikeT.width/2-20
 	
 	a_message.y=nowHeight//============改位置
-	nowHeight+=userT.height+130-20
+	nowHeight+=userT.height+130-40
 
 	if(_liked==true){
 		btnLike.visible=false//如果liked了 visible=false 
@@ -105,7 +99,7 @@ function addReturn(_text){
 	var _tA=[]
 	testLengthT.text=_text
 	testLengthT.style=userTstyle
-	console.log(testLengthT.width)
+	//console.log(testLengthT.width)
 	var tempT=""
 	while(testLengthT.width>mWidth){
 		tempT=_text
@@ -120,7 +114,7 @@ function addReturn(_text){
 	_tA.push(_text)
 	
 	var returnT=_tA.join("\n")
-	console.log(returnT)
+	//console.log(returnT)
 	return(returnT)
 }
 
@@ -176,7 +170,7 @@ function setUserForm(){
 	console.log("stageH",stageH)
 
 	TweenMax.set($("#userText"),{y:(stageH-237+20)/640*screenW})
-	//TweenMax.set($("#songText"),{y:(stageH-56)/640*screenW})
+	TweenMax.set($("#songText"),{y:(stageH-56)/640*screenW})
 	userMessage.y=stageH-237//nowHeight//============改位置
 	//nowHeight+=userT.height+130
 
@@ -199,14 +193,14 @@ $("#UserTextarea1").blur(function(){
 	}
 })
 $("#UserTextarea2").click(function(){
-	if($("#UserTextarea2")[0].value=="在这里写下你最爱的歌曲"){
+	if($("#UserTextarea2")[0].value=="留下手机号，就有机会获得惊喜哦"){
 		$("#UserTextarea2")[0].value=""
 	}
 	ifInputing=1
 })
 $("#UserTextarea2").blur(function(){
 	if($("#UserTextarea2")[0].value==""){
-		$("#UserTextarea2")[0].value="在这里写下你最爱的歌曲"
+		$("#UserTextarea2")[0].value="留下手机号，就有机会获得惊喜哦"
 	}
 })
 function resetUserForm(){//====pStage.touchstart
@@ -225,7 +219,7 @@ function goSubmit(){
 	if($("#UserTextarea1").val()==""||$("#UserTextarea1").val()==null||$("#UserTextarea1").val()=="说出你的元气宣言"){
 		alert("请先填写你的元气宣言")
 	}else{
-		sendMessage($("#UserTextarea1").val(),"")//$("#UserTextarea2")[0].value
+		sendMessage($("#UserTextarea1").val(),$("#UserTextarea2")[0].value)//$("#UserTextarea2")[0].value
 		ifSubmit=1
 	}
 

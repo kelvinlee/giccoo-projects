@@ -174,16 +174,16 @@ function pageLoop(){
     TweenMax.to(mainMask,.5,{height:stageH-237-ifInputing*100})
     TweenMax.to(userMessage,.5,{y:stageH-237-ifInputing*100})
     TweenMax.set($("#userText"),{display:"block"})
-    //TweenMax.set($("#songText"),{display:"block"})
+    TweenMax.set($("#songText"),{display:"block"})
   }else{
     //mainMask.height=stageH*14/13
     TweenMax.to(mainMask,.5,{height:stageH*14/13})
     TweenMax.to(userMessage,.5,{y:stageH})
     TweenMax.set($("#userText"),{display:"none"})
-    //TweenMax.set($("#songText"),{display:"none"})
+    TweenMax.set($("#songText"),{display:"none"})
   }
   TweenMax.set($("#userText"),{y:(stageH-237+20-ifInputing*100)/640*screenW})
-  //TweenMax.set($("#songText"),{y:(stageH-56-ifInputing*100)/640*screenW})
+  TweenMax.set($("#songText"),{y:(stageH-56-50-ifInputing*100)/640*screenW})
 
   //bg.y=main.y/4
 }

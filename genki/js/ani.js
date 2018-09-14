@@ -11,19 +11,22 @@ var bgm=$("#bgm")[0]
 function setPart1 () {
 	main.addChild(part1)
 	part1.addChild(p1pic,p1pic3,p1pic2,btnPlay,p1pic4,btnStop)
-	btnPlay.y=btnStop.y=413
+	btnPlay.y=btnStop.y=438
+	btnPlay.x=btnStop.x=2
 	btnStop.alpha=0
 	btnStop.interactive=true
 	btnStop.tap=goBGM
 
 	p1pic3.pivot.set(258,258)
-	p1pic3.position.set(320,494)
+	p1pic3.position.set(320,494+26)
 	TweenMax.to(p1pic3,.7,{rotation:Math.PI*2,repeat:10000,ease:Linear.easeNone})
 	p1pic3.alpha=.5
 	p1pic3.visible=false
+	p1pic3.scale.x=p1pic3.scale.y=1.05
 
 	p1pic4.blendMode=_ADD
-	TweenMax.to(p1pic4,2,{alpha:0,repeat:10000,yoyo:true})
+	p1pic4.alpha=.8
+	TweenMax.to(p1pic4,1,{alpha:0,repeat:10000,yoyo:true})
 }
 function goBGM(){
 	if(btnStop.alpha==0){
@@ -53,7 +56,7 @@ var geneLine=new PIXI.Graphics()
 var muiscA=[]
 function setPart2(){
 	main.addChild(part2)
-	part2.y=1372
+	part2.y=1372+690
 	part2.addChild(geneLine,gene,geneFP2,geneFP,geneMask)
 	geneLine.y=78
 	geneFP.mask=geneMask
@@ -111,27 +114,46 @@ var p3dic1=new pSprite("img/part3disc.png")
 var p3dic2=new pSprite("img/part3disc.png")
 var p3dic3=new pSprite("img/part3disc.png")
 var p3dic4=new pSprite("img/part3disc.png")
+
+var p3dic11=new pSprite("img/part3disc1.png")
+var p3dic22=new pSprite("img/part3disc1.png")
+var p3dic33=new pSprite("img/part3disc1.png")
+var p3dic44=new pSprite("img/part3disc1.png")
+
+var p3dic111=new PIXI.Container()
+var p3dic222=new PIXI.Container()
+var p3dic333=new PIXI.Container()
+var p3dic444=new PIXI.Container()
+
 var p3song1=new pSprite("img/song1.png")
 var p3song2=new pSprite("img/song2.png")
 var p3song3=new pSprite("img/song3.png")
 var p3song4=new pSprite("img/song4.png")
 var p3dicA=[p3dic1,p3dic2,p3dic3,p3dic4]
+var p3dicAA=[p3dic11,p3dic22,p3dic33,p3dic44]
+var p3dicAAA=[p3dic111,p3dic222,p3dic333,p3dic444]
+
 var p3songA=[p3song1,p3song2,p3song3,p3song4]
 var p3btnA=[p3btn1,p3btn2,p3btn3,p3btn4]
 var p3t=new pSprite("img/part3t.png")
 var p3arrow=new pSprite("img/part3arrow.png")
 function setPart3(){
 	main.addChild(part3)
-	part3.y=1688-300
+	part3.y=1688-300+690
 	part3.addChild(p3title)
 	part3.scale.x=part3.scale.y=1.2
 	part3.x=-64
 
 	for (var i = 0; i < 4; i++) {
-		p3btnA[i].addChild(p3dicA[i],p3songA[i])
+
+		p3btnA[i].addChild(p3dicAAA[i],p3songA[i])
+		p3dicAAA[i].addChild(p3dicA[i],p3dicAA[i])
 		p3songA[i].x=320-256/2+10
 		p3btnA[i].y=271+i*132
-		p3dicA[i].x=126
+		p3dicAAA[i].x=126
+		p3dicAA[i].alpha=.25
+		p3dicAA[i].blendMode=_ADD
+		TweenMax.to(p3dicAA[i],1.5,{alpha:0,repeat:1000,yoyo:true,delay:.25*i})
 		part3.addChild(p3btnA[i])
 		p3songA[i].interactive=true
 		p3songA[i].tap=playSong
@@ -146,6 +168,7 @@ function setPart3(){
 }
 function goList(){
 	console.log("去歌单")
+	openMusic(2419204335)
 }
 var nowSong=0
 var musicA=[$("#music1")[0],$("#music2")[0],$("#music3")[0],$("#music4")[0]]
@@ -183,7 +206,7 @@ var endBtn=new pSprite("img/endbtn.png")
 
 function setPart4(_list){
 	main.addChild(part4)
-	part4.y=2980-300
+	part4.y=2980-300+690
 	part4.addChild(p4title1,p4light1,p4light2,p4title2,p4t1,p4t2,endBtn)
 	p4t1.y=1040
 
@@ -339,6 +362,7 @@ function goPrePage(_e){
 
 function goEnd(){
 	console.log("最后跳转按钮")
+	window.location.href="https://detail.tmall.com/item.htm?spm=a220z.1000880.0.0.EHgiZX&id=540411098196"
 }
 
 function showPage(_page){
