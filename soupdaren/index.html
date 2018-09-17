@@ -1,34 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-	<title>定义我的燃动健身房</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script>
-      // var _hmt = _hmt || [];
-      // (function() {
-      // 	var hm = document.createElement("script");
-      // 	hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
-      // 	var s = document.getElementsByTagName("script")[0]; 
-      // 	s.parentNode.insertBefore(hm, s);
-      // })();
-  </script>
-</head>
-<body>
-
-
-
-
-<div id="pngHolder"></div>
-
-<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
-<script type="text/javascript" src="js/pixi.min.js"></script>
-<script type="text/javascript" src="js/TweenMax.min.js"></script>
-<script type="text/javascript" src="http://image.giccoo.com/projects/libs/js/min/easeljs.min.js"></script>
-
-<script type="text/javascript" src="js/main.js?v=2233"></script>
-<script type="text/javascript" src="js/ani.js"></script>
-</body>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>旅途中的发现之声</title>
+    <meta name="author" content="m.giccoo.com">
+    <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      
+    </script>
+  </head>
+  <body>
+    <div id="main" v-show="mounted" :class="{biger: biger,smaller:smaller}" style="display: none" :style="{width: w+'px',minHeight: h+'px'}" class="main">
+      <transition name="page-fade">
+        <div v-show="loading" class="loading-page">
+          <div class="ball-spin-fade-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="pageIndex == 1" class="page page-2">
+          <div class="content">
+            <div id="ugc"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="registerShow" class="pop">
+          <div class="content">
+            <div class="register">
+              <div v-show="!gameEnd" @click="closeReg" class="close"><img src="//image.giccoo.com/projects/Landrover24/img/icon-close.png"></div>
+              <div v-show="gameEnd" @click="giveupAward" class="close"><img src="//image.giccoo.com/projects/Landrover24/img/icon-close.png"></div>
+              <div v-show="!gameEnd" class="title"><img src="//image.giccoo.com/projects/Landrover24/img/form-title1.png"></div>
+              <div v-show="gameEnd" class="title"><img src="//image.giccoo.com/projects/Landrover24/img/form-title2.png"></div>
+              <form-grounp v-bind:form="form" v-on:submit="submit" class="form"></form-grounp>
+              <div v-show="!gameEnd" @click="registerShow = false" class="btn-item goon"><img src="//image.giccoo.com/projects/Landrover24/img/btn-goon.png"></div>
+              <div v-show="gameEnd" @click="giveupAward" class="btn-item goon"><img src="//image.giccoo.com/projects/Landrover24/img/btn-giveup.png"></div>
+              <div class="footer"><img src="//image.giccoo.com/projects/Landrover24/img/form-footer.png"><a href="https://www.landrover.com.cn/experiences/2018nsd.html" class="website"></a></div>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="lotteryShow" class="pop">
+          <div v-show="lotteryInfo.info" class="content">
+            <div class="lottery success">
+              <div @click="lotteryShow = false" class="close"><img src="//image.giccoo.com/projects/Landrover24/img/icon-close.png"></div>
+              <div class="title"><img src="//image.giccoo.com/projects/Landrover24/img/pop-lottery-success.png"></div>
+              <p class="code">{{lotteryInfo.info}}</p>
+              <div @click="openMusic" class="btn"><img src="//image.giccoo.com/projects/Landrover24/img/btn-music-dark.png"></div>
+              <div class="btn"><img src="//image.giccoo.com/projects/Landrover24/img/btn-shot.png"></div>
+            </div>
+          </div>
+          <div v-show="!lotteryInfo.info" class="content">
+            <div class="lottery faild">
+              <div @click="lotteryShow = false" class="close"><img src="//image.giccoo.com/projects/Landrover24/img/icon-close.png"></div>
+              <div class="title"><img src="//image.giccoo.com/projects/Landrover24/img/pop-lottery-faild.png"></div>
+              <div @click="openMusic" class="btn"><img src="//image.giccoo.com/projects/Landrover24/img/btn-music.png"></div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/pixi.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js"></script>
+    <script src="//s3.music.126.net/static/mob/ntes.id.js"></script>
+    <script src="//s5.music.126.net/static_public/5a1b70ea0180f6ca7295a59d/js/music-jssdk-1.0.3.js"></script>
+    <script src="js/build.js?v=1"></script>
+    <script src="js/main.js?v=1"></script>
+    <script src="js/ani.js?v=1"></script>
+  </body>
 </html>
