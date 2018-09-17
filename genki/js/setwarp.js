@@ -211,14 +211,14 @@ $("#UserTextarea1").blur(function(){
 	}
 })
 $("#UserTextarea2").click(function(){
-	if($("#UserTextarea2")[0].value=="在这里留下手机号和场次"){
+	if($("#UserTextarea2")[0].value=="在这里留下手机号"){
 		$("#UserTextarea2")[0].value=""
 	}
 	//ifInputing=1
 })
 $("#UserTextarea2").blur(function(){
 	if($("#UserTextarea2")[0].value==""){
-		$("#UserTextarea2")[0].value="在这里留下手机号和场次"
+		$("#UserTextarea2")[0].value="在这里留下手机号"
 	}
 })
 function resetUserForm(){//====pStage.touchstart
@@ -227,7 +227,7 @@ function resetUserForm(){//====pStage.touchstart
 		$("#UserTextarea1")[0].innerHTML="说出你的元气宣言"
 	}
 	if($("#UserTextarea2")[0].value==""){
-		$("#UserTextarea2")[0].value="在这里留下手机号和场次"
+		$("#UserTextarea2")[0].value="在这里留下手机号"
 	}
 	ifInputing=0
 }
@@ -240,7 +240,8 @@ function goSubmit(){
 	if($("#UserTextarea1").val()==""||$("#UserTextarea1").val()==null||$("#UserTextarea1").val()=="说出你的元气宣言"){
 		alert("请先填写你的元气宣言")
 	}else{
-		sendMessage($("#UserTextarea1").val(),$("#UserTextarea2")[0].value)//$("#UserTextarea2")[0].value
+		sendMessage($("#UserTextarea1").val(),$("#UserTextarea2")[0].value,$("#userSelector")[0].value)//$("#UserTextarea2")[0].value
+		//$("#userSelector")[0].value
 		ifSubmit=1
 	}
 

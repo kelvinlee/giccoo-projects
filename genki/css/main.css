@@ -73,9 +73,9 @@ img{ width: 100%; }
 }
 #btnSubmit{
 	position: absolute;
-	width: 16.5625%;
-	left: 75.3125%;
-	top: 62.42857%;
+	width: 68.75%;
+	left: 22.65625%;
+	top: 81.42857%;
 }
 
 #userForm{
@@ -97,12 +97,21 @@ img{ width: 100%; }
 #songText1{
 	position: absolute;
 	z-index: 999;
-	width: 46.125%;
+	width: 30%;
 	left:25.34375%;
 	z-index: 9999;
 
 	top: 65.7%;
 	/*display: none;*/
+}
+#userSelectorDiv{
+	position: absolute;
+	z-index: 999;
+	width: 25%;
+	left:60.78125%;
+	z-index: 9999;
+
+	top: 65.7%;
 }
 #UserTextarea1{
 	background: transparent;
@@ -114,6 +123,15 @@ img{ width: 100%; }
 	text-align:left;
 }
 #UserTextarea2{
+	background: transparent;
+	border-style: none;
+	font-size: .7rem;
+	color: #000000;
+	width: 100%;
+	/*height: 100%;*/
+	text-align:left;
+}
+#userSelector{
 	background: transparent;
 	border-style: none;
 	font-size: .7rem;

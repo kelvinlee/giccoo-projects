@@ -38,10 +38,11 @@ getMessages = (page = 1,callback = ->)->
 # 发布留言
 # sendMessage("content","musicname",function(){ console.log("success") })
 # message 留言内容, nickname 音乐名称, 成功回调函数
-sendMessage = (message,nickname,callback = ->)->
+sendMessage = (message,nickname,note1 = "",callback = ->)->
 	data = {
 		message: message
 		nickname: nickname
+		note1: note1
 		type: "genki"
 	}
 	axios.post "#{apiLink}/insert", data

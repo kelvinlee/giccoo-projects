@@ -1,16 +1,17 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part1 开头音乐
 var part1=new PIXI.Container()
-var p1pic=new pSprite("//image.giccoo.com/projects/genki/img/part1pic.png")
+var p1pic=new pSprite("img/part1pic.png")
 var p1pic2=new pSprite("//image.giccoo.com/projects/genki/img/part1pic2.png")
 var p1pic3=new pSprite("//image.giccoo.com/projects/genki/img/part1pic3.png")
 var p1pic4=new pSprite("//image.giccoo.com/projects/genki/img/part1pic4.png")
 var btnPlay=new pSprite("//image.giccoo.com/projects/genki/img/btn-play.png")
 var btnStop=new pSprite("//image.giccoo.com/projects/genki/img/btn-pause.png")
 var bgm=$("#bgm")[0]
-
+var btnSong=new pSprite("img/btn-song.png")
+var btnSongBG=new pSprite("img/btn-songbg.png")
 function setPart1 () {
 	main.addChild(part1)
-	part1.addChild(p1pic,p1pic3,p1pic2,btnPlay,p1pic4,btnStop)
+	part1.addChild(p1pic,p1pic3,p1pic2,btnPlay,p1pic4,btnStop,btnSongBG,btnSong)
 	btnPlay.y=btnStop.y=438
 	btnPlay.x=btnStop.x=2
 	btnStop.alpha=0
@@ -27,7 +28,18 @@ function setPart1 () {
 	p1pic4.blendMode=_ADD
 	p1pic4.alpha=.8
 	TweenMax.to(p1pic4,1,{alpha:0,repeat:10000,yoyo:true})
+
+
+	btnSong.y=1182
+	btnSongBG.y=1182
+	btnSong.x=201
+	btnSong.interactive=true
+	btnSong.tap=goSong
 }
+function goSong(){
+	window.location.href='https://music.163.com/m/song?id=1309901384'
+}
+
 function goBGM(){
 	if(btnStop.alpha==0){
 		btnStop.alpha=1
@@ -45,6 +57,7 @@ function goBGM(){
 	};
 	nowSong=0
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part2 基因按钮
 var part2=new PIXI.Container()
@@ -139,7 +152,7 @@ var p3t=new pSprite("//image.giccoo.com/projects/genki/img/part3t.png")
 var p3arrow=new pSprite("//image.giccoo.com/projects/genki/img/part3arrow.png")
 function setPart3(){
 	main.addChild(part3)
-	part3.y=1688-300+690
+	part3.y=1688-300+690+260
 	part3.addChild(p3title)
 	part3.scale.x=part3.scale.y=1.2
 	part3.x=-64
@@ -206,7 +219,7 @@ var endBtn=new pSprite("//image.giccoo.com/projects/genki/img/endbtn.png")
 
 function setPart4(_list){
 	main.addChild(part4)
-	part4.y=2980-300+690
+	part4.y=2980-300+690+260
 	part4.addChild(p4title1,p4light1,p4light2,p4title2,p4t1,p4t2,endBtn)
 	p4t1.y=1040+155
 
@@ -241,8 +254,10 @@ function setPart4(_list){
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part4 留言板部分BBBB
+var ifAll=0
 function setPart4b(_list,_counts){
 	console.log("_listBBBBBBB",_list,_counts)
+	allWeHave=_counts
 	var i,j,temp=0
 	for (var j = 0; j < 5; j++) {
 		nowHeight=theNewNowHeight
@@ -304,23 +319,28 @@ var pageBtnStyle2={
 		align: 'left'
 	}
 var pageBtnA=[]
+
+var nowPageBtn=new PIXI.Text("第1页",pageBtnStyle1)
 var nextPageBtn=new PIXI.Text("下一页 >>",pageBtnStyle1)
 var prePageBtn=new PIXI.Text("<< 上一页",pageBtnStyle1)
 function setPagebtn(){
-	for (var i = 0; i < 10; i++) {
-		var _pageBtn=new PIXI.Text(i+1,pageBtnStyle1)
-		if(i==0){_pageBtn.style=pageBtnStyle2}
-		pageBtnA.push(_pageBtn)
-		part4.addChild(_pageBtn)
-		_pageBtn.x=320+((i-5)*20)+40
-		_pageBtn.y=nowHeight
-		_pageBtn.interactive=true
-		_pageBtn.tap=changePage
-	};
-	part4.addChild(nextPageBtn,prePageBtn)
-	nextPageBtn.y=prePageBtn.y=nowHeight
+	// for (var i = 0; i < 10; i++) {
+	// 	var _pageBtn=new PIXI.Text(i+1,pageBtnStyle1)
+	// 	if(i==0){_pageBtn.style=pageBtnStyle2}
+	// 	pageBtnA.push(_pageBtn)
+	// 	part4.addChild(_pageBtn)
+	// 	_pageBtn.x=320+((i-5)*20)+40
+	// 	_pageBtn.y=nowHeight
+	// 	_pageBtn.interactive=true
+	// 	_pageBtn.tap=changePage
+	// };
+	part4.addChild(nextPageBtn,prePageBtn,nowPageBtn)
+	nextPageBtn.y=prePageBtn.y=nowPageBtn.y=nowHeight
 	nextPageBtn.x=640-80-nextPageBtn.width+40
 	prePageBtn.x=80+40
+	nowPageBtn.x=320-nowPageBtn.width/2+40
+
+	prePageBtn.visible=false
 
 	nextPageBtn.interactive=true
 	nextPageBtn.touchstart=goNextPage
@@ -329,62 +349,64 @@ function setPagebtn(){
 }
 var nowPage=0
 function changePage(_e){
-	var i
-	for (i = 0; i < 10; i++) {
-		pageBtnA[i].style=pageBtnStyle1
-		if(_e.target==pageBtnA[i]){
-			showPage(i)
-			nowHeight=nowHeightA[i]
-			pageBtnA[i].style=pageBtnStyle2
-			nowPage=i
-		}
-	};
+	if(nowPage==parseInt(allWeHave/10+.01)){			nextPageBtn.visible=false		}else{			nextPageBtn.visible=true		}
+	if(nowPage==0){			prePageBtn.visible=false		}else{			prePageBtn.visible=true		}
 
-	for (i = 0; i < 10; i++) {//====重设高度
-		pageBtnA[i].y=nowHeight
-	};
-	endBtn.y=nowHeight+50
-	nextPageBtn.y=prePageBtn.y=nowHeight
+
+	if(nowPage<(messageA.length-10)/10){
+		showPage(nowPage)
+		nowHeight=nowHeightA[nowPage]
+		endBtn.y=nowHeight+50
+		nextPageBtn.y=prePageBtn.y=nowPageBtn.y=nowHeight
+		var pageNum=nowPage+1
+		nowPageBtn.text="第 "+pageNum+" 页"
+		nowPageBtn.x=320+40-nowPageBtn.width/2
+		console.log("没超")
+	}else{
+		console.log("超了")
+		//addMessageA()
+		getMessages((messageA.length-10)/50+1,addMessageA)
+	}
+
+	
 }
+
+var allWeHave
+////////////////////////////////////////////////////////////////////////////////////////////////////////===============part4 无限增加页数
+function addMessageA(_list,_counts){
+	console.log("_listBBBBBBB",_list,_counts)
+	allWeHave=_counts
+	var i,j,temp=0
+	for (var j = 0; j < 5; j++) {
+		nowHeight=theNewNowHeight
+		for ( i = 0; i < 10; i++) {
+			if(_list[j*10+i]){
+				message(_list[j*10+i].message,_list[j*10+i].nickname,_list[j*10+i].like,_list[j*10+i].liked,_list[j*10+i].id)
+			}else{
+				message(commitA[temp%17],"歌名-未填写",parseInt(Math.random()*20),true,parseInt(Math.random()*10000000))
+				temp++
+			}
+			
+		};
+		nowHeightA.push(nowHeight)
+	};
+	//getMessages(2,setPart4c)
+	//console.log(messageA.length)
+	changePage(nowPage)
+
+}
+
 
 function goNextPage(_e){
 	var i
 	nowPage++
-	if(nowPage==10){nowPage=0}
-	for (i = 0; i < 10; i++) {
-		pageBtnA[i].style=pageBtnStyle1
-		if(i==nowPage){
-			showPage(i)
-			nowHeight=nowHeightA[i]
-			pageBtnA[i].style=pageBtnStyle2
-		}
-	};
-
-	for (i = 0; i < 10; i++) {//====重设高度
-		pageBtnA[i].y=nowHeight
-	};
-	endBtn.y=nowHeight+50
-	nextPageBtn.y=prePageBtn.y=nowHeight
+	changePage(nowPage)
 }
 
 function goPrePage(_e){
 	var i
 	nowPage--
-	if(nowPage==-1){nowPage=9}
-	for (i = 0; i < 10; i++) {
-		pageBtnA[i].style=pageBtnStyle1
-		if(i==nowPage){
-			showPage(i)
-			nowHeight=nowHeightA[i]
-			pageBtnA[i].style=pageBtnStyle2
-		}
-	};
-
-	for (i = 0; i < 10; i++) {//====重设高度
-		pageBtnA[i].y=nowHeight
-	};
-	endBtn.y=nowHeight+50
-	nextPageBtn.y=prePageBtn.y=nowHeight
+	changePage(nowPage)
 }
 
 function goEnd(){
@@ -393,6 +415,9 @@ function goEnd(){
 }
 
 function showPage(_page){
+	console.log(messageA.length)
+
+
 	nowHeight=nowHeightA[_page]
 	for (var i = 10; i < messageA.length; i++) {
 		if(i>=10+_page*10&&i<10+_page*10+10){
@@ -402,6 +427,8 @@ function showPage(_page){
 		}
 		
 	};
+
+
 
 
 }

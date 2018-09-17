@@ -96,6 +96,8 @@ function initAll(){
   getDefaultMessages(1,setPart4)
 
   pageLoop()
+
+  console.log($("#userSelector")[0].value)
 }
 
 
