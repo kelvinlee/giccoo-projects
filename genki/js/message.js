@@ -62,14 +62,12 @@ getMessages = function getMessages() {
 // sendMessage("content","musicname",function(){ console.log("success") })
 // message 留言内容, nickname 音乐名称, 成功回调函数
 sendMessage = function sendMessage(message, nickname) {
-  var note1 = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
-  var callback = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : function () {};
+  var callback = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {};
 
   var data;
   data = {
     message: message,
     nickname: nickname,
-    note1: note1,
     type: "genki"
   };
   return axios.post(apiLink + "/insert", data).then(function (vals) {
