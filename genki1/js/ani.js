@@ -241,8 +241,10 @@ function setPart4(_list){
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part4 留言板部分BBBB
+var ifAll=0
 function setPart4b(_list,_counts){
 	console.log("_listBBBBBBB",_list,_counts)
+	allWeHave=_counts
 	var i,j,temp=0
 	for (var j = 0; j < 5; j++) {
 		nowHeight=theNewNowHeight
@@ -304,23 +306,28 @@ var pageBtnStyle2={
 		align: 'left'
 	}
 var pageBtnA=[]
+
+var nowPageBtn=new PIXI.Text("第1页",pageBtnStyle1)
 var nextPageBtn=new PIXI.Text("下一页 >>",pageBtnStyle1)
 var prePageBtn=new PIXI.Text("<< 上一页",pageBtnStyle1)
 function setPagebtn(){
-	for (var i = 0; i < 10; i++) {
-		var _pageBtn=new PIXI.Text(i+1,pageBtnStyle1)
-		if(i==0){_pageBtn.style=pageBtnStyle2}
-		pageBtnA.push(_pageBtn)
-		part4.addChild(_pageBtn)
-		_pageBtn.x=320+((i-5)*20)+40
-		_pageBtn.y=nowHeight
-		_pageBtn.interactive=true
-		_pageBtn.tap=changePage
-	};
-	part4.addChild(nextPageBtn,prePageBtn)
-	nextPageBtn.y=prePageBtn.y=nowHeight
+	// for (var i = 0; i < 10; i++) {
+	// 	var _pageBtn=new PIXI.Text(i+1,pageBtnStyle1)
+	// 	if(i==0){_pageBtn.style=pageBtnStyle2}
+	// 	pageBtnA.push(_pageBtn)
+	// 	part4.addChild(_pageBtn)
+	// 	_pageBtn.x=320+((i-5)*20)+40
+	// 	_pageBtn.y=nowHeight
+	// 	_pageBtn.interactive=true
+	// 	_pageBtn.tap=changePage
+	// };
+	part4.addChild(nextPageBtn,prePageBtn,nowPageBtn)
+	nextPageBtn.y=prePageBtn.y=nowPageBtn.y=nowHeight
 	nextPageBtn.x=640-80-nextPageBtn.width+40
 	prePageBtn.x=80+40
+	nowPageBtn.x=320-nowPageBtn.width/2+40
+
+	prePageBtn.visible=false
 
 	nextPageBtn.interactive=true
 	nextPageBtn.touchstart=goNextPage
@@ -329,62 +336,64 @@ function setPagebtn(){
 }
 var nowPage=0
 function changePage(_e){
-	var i
-	for (i = 0; i < 10; i++) {
-		pageBtnA[i].style=pageBtnStyle1
-		if(_e.target==pageBtnA[i]){
-			showPage(i)
-			nowHeight=nowHeightA[i]
-			pageBtnA[i].style=pageBtnStyle2
-			nowPage=i
-		}
-	};
+	if(nowPage==parseInt(allWeHave/10+.01)){			nextPageBtn.visible=false		}else{			nextPageBtn.visible=true		}
+	if(nowPage==0){			prePageBtn.visible=false		}else{			prePageBtn.visible=true		}
 
-	for (i = 0; i < 10; i++) {//====重设高度
-		pageBtnA[i].y=nowHeight
-	};
-	endBtn.y=nowHeight+50
-	nextPageBtn.y=prePageBtn.y=nowHeight
+
+	if(nowPage<(messageA.length-10)/10){
+		showPage(nowPage)
+		nowHeight=nowHeightA[nowPage]
+		endBtn.y=nowHeight+50
+		nextPageBtn.y=prePageBtn.y=nowPageBtn.y=nowHeight
+		var pageNum=nowPage+1
+		nowPageBtn.text="第 "+pageNum+" 页"
+		nowPageBtn.x=320+40-nowPageBtn.width/2
+		console.log("没超")
+	}else{
+		console.log("超了")
+		//addMessageA()
+		getMessages((messageA.length-10)/50+1,addMessageA)
+	}
+
+	
 }
+
+var allWeHave
+////////////////////////////////////////////////////////////////////////////////////////////////////////===============part4 无限增加页数
+function addMessageA(_list,_counts){
+	console.log("_listBBBBBBB",_list,_counts)
+	allWeHave=_counts
+	var i,j,temp=0
+	for (var j = 0; j < 5; j++) {
+		nowHeight=theNewNowHeight
+		for ( i = 0; i < 10; i++) {
+			if(_list[j*10+i]){
+				message(_list[j*10+i].message,_list[j*10+i].nickname,_list[j*10+i].like,_list[j*10+i].liked,_list[j*10+i].id)
+			}else{
+				message(commitA[temp%17],"歌名-未填写",parseInt(Math.random()*20),true,parseInt(Math.random()*10000000))
+				temp++
+			}
+			
+		};
+		nowHeightA.push(nowHeight)
+	};
+	//getMessages(2,setPart4c)
+	//console.log(messageA.length)
+	changePage(nowPage)
+
+}
+
 
 function goNextPage(_e){
 	var i
 	nowPage++
-	if(nowPage==10){nowPage=0}
-	for (i = 0; i < 10; i++) {
-		pageBtnA[i].style=pageBtnStyle1
-		if(i==nowPage){
-			showPage(i)
-			nowHeight=nowHeightA[i]
-			pageBtnA[i].style=pageBtnStyle2
-		}
-	};
-
-	for (i = 0; i < 10; i++) {//====重设高度
-		pageBtnA[i].y=nowHeight
-	};
-	endBtn.y=nowHeight+50
-	nextPageBtn.y=prePageBtn.y=nowHeight
+	changePage(nowPage)
 }
 
 function goPrePage(_e){
 	var i
 	nowPage--
-	if(nowPage==-1){nowPage=9}
-	for (i = 0; i < 10; i++) {
-		pageBtnA[i].style=pageBtnStyle1
-		if(i==nowPage){
-			showPage(i)
-			nowHeight=nowHeightA[i]
-			pageBtnA[i].style=pageBtnStyle2
-		}
-	};
-
-	for (i = 0; i < 10; i++) {//====重设高度
-		pageBtnA[i].y=nowHeight
-	};
-	endBtn.y=nowHeight+50
-	nextPageBtn.y=prePageBtn.y=nowHeight
+	changePage(nowPage)
 }
 
 function goEnd(){
@@ -393,6 +402,9 @@ function goEnd(){
 }
 
 function showPage(_page){
+	console.log(messageA.length)
+
+
 	nowHeight=nowHeightA[_page]
 	for (var i = 10; i < messageA.length; i++) {
 		if(i>=10+_page*10&&i<10+_page*10+10){
@@ -402,6 +414,8 @@ function showPage(_page){
 		}
 		
 	};
+
+
 
 
 }

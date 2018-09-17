@@ -240,7 +240,7 @@ function goSubmit(){
 	if($("#UserTextarea1").val()==""||$("#UserTextarea1").val()==null||$("#UserTextarea1").val()=="说出你的元气宣言"){
 		alert("请先填写你的元气宣言")
 	}else{
-		sendMessage($("#UserTextarea1").val(),$("#UserTextarea2")[0].value)//$("#UserTextarea2")[0].value
+		sendMessage($("#UserTextarea1").val(),$("#UserTextarea2")[0].value,$("#userSelector")[0].value)//$("#UserTextarea2")[0].value
 		//$("#userSelector")[0].value
 		ifSubmit=1
 	}
