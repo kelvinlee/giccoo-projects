@@ -289,6 +289,7 @@ init = ->
 						for item in @.form.type.options
 							if list[item.val]
 								item.disabled = true
+						main.$children[0].form.type.options[0].name = main.$children[0].form.type.options[0].name+" "
 						# console.log _citys
 						# @.form.type.options = _citys
 
