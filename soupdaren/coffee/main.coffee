@@ -281,8 +281,18 @@ init = ->
 			goUGC: ->
 				@.lotteryShow = true
 
+			getLotteryList: ->
+				axios.post "#{apiLink}active/soupdaren/list/",{lottery: true}
+				.then (msg)=>
+					if msg.data.code is 200
+						list = msg.data.list
+						for item in @.form.type.options
+							if list[item.val]
+								item.disabled = true
+						# console.log _citys
+						# @.form.type.options = _citys
+
 			getLottery: ->
-				
 				axios.post "#{apiLink}active/soupdaren/lottery/",{lottery: true}
 				.then (msg)=>
 					if msg.data.code is 200 and msg.data.info?
@@ -400,6 +410,8 @@ init = ->
 			@.wy = CloudMusic.isInApp()
 			version = CloudMusic.getClientVersion().split(".")
 			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH})
+
+			@.getLotteryList()
 			# listenAudio()
 			# if parseInt($_GET["type"]) is 2
 			# 	@.regSubmited = true

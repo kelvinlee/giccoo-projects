@@ -10,7 +10,7 @@ Vue.component "form-grounp",
             <option v-for="(item, key) in item.options" :disabled="!item" :value="key">{{key}}</option>
           </select>
           <select :id="item.id" v-model="item.value" v-if="item.array">
-            <option v-for="(item, index) in item.options" :value="item.val">{{item.name}}</option>
+            <option v-for="(item, index) in item.options" :disabled="item.disabled" :value="item.val">{{item.name}}</option>
           </select>
         </div>
       </div>
@@ -29,7 +29,13 @@ Vue.component "form-grounp",
     form:
       default: {}
     
-
+  watch:
+    form: {
+      handler: (v)->
+        console.log "form:",v
+      , 
+      deep: true
+    }
   methods:
     getOptionsName: (item)->
       if !item.array
@@ -51,9 +57,14 @@ Vue.component "form-grounp",
 
 
   mounted: (el)->
-    console.log "el:",this,this.form
+    # console.log "el:",this,this.form
     self = this
     for k,v of @.form
+      if v.type is "select"
+        console.log "form.#{k}.options"
+        @.$watch "form.#{k}.options", (val)->
+          console.log "changed:",val
+        ,{deep: true}
       if v.link? and v.type is "select"
         @.$watch "form.#{k}", (n,o)->
           return false unless self.form[n.link]?
