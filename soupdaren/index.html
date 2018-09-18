@@ -46,34 +46,24 @@
         <div v-show="registerShow" class="pop">
           <div class="content">
             <div class="register">
-              <div v-show="!gameEnd" @click="closeReg" class="close"><img src="//image.giccoo.com/projects/Landrover24/img/icon-close.png"></div>
-              <div v-show="gameEnd" @click="giveupAward" class="close"><img src="//image.giccoo.com/projects/Landrover24/img/icon-close.png"></div>
-              <div v-show="!gameEnd" class="title"><img src="//image.giccoo.com/projects/Landrover24/img/form-title1.png"></div>
-              <div v-show="gameEnd" class="title"><img src="//image.giccoo.com/projects/Landrover24/img/form-title2.png"></div>
+              <div class="title">
+                <h2>恭喜你中奖了</h2>
+                <p>获得元气音乐节门票一张</p>
+              </div>
               <form-grounp v-bind:form="form" v-on:submit="submit" class="form"></form-grounp>
-              <div v-show="!gameEnd" @click="registerShow = false" class="btn-item goon"><img src="//image.giccoo.com/projects/Landrover24/img/btn-goon.png"></div>
-              <div v-show="gameEnd" @click="giveupAward" class="btn-item goon"><img src="//image.giccoo.com/projects/Landrover24/img/btn-giveup.png"></div>
-              <div class="footer"><img src="//image.giccoo.com/projects/Landrover24/img/form-footer.png"><a href="https://www.landrover.com.cn/experiences/2018nsd.html" class="website"></a></div>
             </div>
           </div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="lotteryShow" class="pop">
-          <div v-show="lotteryInfo.info" class="content">
-            <div class="lottery success">
-              <div @click="lotteryShow = false" class="close"><img src="//image.giccoo.com/projects/Landrover24/img/icon-close.png"></div>
-              <div class="title"><img src="//image.giccoo.com/projects/Landrover24/img/pop-lottery-success.png"></div>
-              <p class="code">{{lotteryInfo.info}}</p>
-              <div @click="openMusic" class="btn"><img src="//image.giccoo.com/projects/Landrover24/img/btn-music-dark.png"></div>
-              <div class="btn"><img src="//image.giccoo.com/projects/Landrover24/img/btn-shot.png"></div>
-            </div>
-          </div>
-          <div v-show="!lotteryInfo.info" class="content">
+          <div class="content">
             <div class="lottery faild">
-              <div @click="lotteryShow = false" class="close"><img src="//image.giccoo.com/projects/Landrover24/img/icon-close.png"></div>
-              <div class="title"><img src="//image.giccoo.com/projects/Landrover24/img/pop-lottery-faild.png"></div>
-              <div @click="openMusic" class="btn"><img src="//image.giccoo.com/projects/Landrover24/img/btn-music.png"></div>
+              <div class="title">
+                <h2>很遗憾未中奖</h2>
+                <p>多尝试可以增加中奖几率哦</p>
+              </div>
+              <div @click="restart" class="btn"><img src="./img/btn-restart.png"></div>
             </div>
           </div>
         </div>

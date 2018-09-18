@@ -22,7 +22,8 @@ TrueW = 640
 TrueH = 1138
 imageurl = "//api.giccoo.com/api/upload/image64/"
 apiUrl = "//api.giccoo.com/df-308"
-apiLink = "//g.giccoo.com/"
+apiLink = "//localhost:3000/"
+# apiLink = "//g.giccoo.com/"
 # apiLink = "http://192.168.3.53:3000/"
 # apiUrl = "http://localhost:8881/Levi"
 main = {}
@@ -39,6 +40,15 @@ _startCache = null
 _runTime = null
 _second = 0
 _testTime = 0
+_citys = [
+	{name:"2018.10.01 武汉", val:"武汉"}
+	{name:"2018.10.11 西安", val:"西安"}
+	{name:"2018.10.20 杭州", val:"杭州"}
+	{name:"2018.10.20 沈阳", val:"沈阳"}
+	{name:"2018.10.27 北京", val:"北京"}
+	{name:"2018.10.27 成都", val:"成都"}
+	{name:"2018.11.03 广州", val:"广州"}
+]
 
 neteaseShareImage = ->
 	title1 = "有故事的声活单曲"
@@ -213,7 +223,8 @@ init = ->
 			form:
 				username: {id:"username", type: "input", label: "姓名", placeholder: "请填写姓名",value: ""}
 				mobile: {id:"mobile", type: "input", label: "电话", placeholder: "请填写电话",value: ""}
-				address: {id:" address", type: "input", label: "城市", placeholder: "请填写城市",value: ""}
+				address: {id:"address", type: "input", label: "收货地址", placeholder: "请填写收货地址",value: ""}
+				type: {id:"type", type: "select", label: "举办地", array: true, placeholder: "请填写举办地",value: _citys[0].val , options: _citys}
 			mask: 1
 			text: ""
 			nickname: ""
@@ -236,7 +247,8 @@ init = ->
 			lotteryShow: false
 			lotteryEndShow: false
 			lotteryInfo: 
-				info: null
+				id: null
+				random: null
 			regSubmited: false
 			giveUp: false
 			gameEnd: false
@@ -270,14 +282,17 @@ init = ->
 				@.lotteryShow = true
 
 			getLottery: ->
-				@.registerShow = false
-				axios.post "#{apiLink}active/landrover24/lottery/",{lottery: true}
+				
+				axios.post "#{apiLink}active/soupdaren/lottery/",{lottery: true}
 				.then (msg)=>
 					if msg.data.code is 200 and msg.data.info?
-						@.lotteryInfo.info = msg.data.info
-					@.goUGC()
+						@.lotteryInfo.id = msg.data.info.id
+						@.lotteryInfo.random = msg.data.info.random
+						@.registerShow = true
+					else
+						@.lotteryShow = true
 				.catch (err)=>
-					@.goUGC()
+					@.lotteryShow = true
 
 			submit: (data)->
 				console.log "data:",data
@@ -286,16 +301,24 @@ init = ->
 				if data.mobile is ""
 					return alert "请输入联系电话"
 				if data.address is ""
-					return alert "请输入所在城市"
-				
-				axios.post "#{apiLink}active/landrover24/insert/",data
+					return alert "请输入收货地址"
+				if @.lotteryInfo.id?
+					data.id = @.lotteryInfo.id
+				else
+					return alert "很抱歉没有中奖,可再次参与提高中奖几率"
+				if @.lotteryInfo.random?
+					data.random = @.lotteryInfo.random
+				else
+					return alert "很抱歉没有中奖,可再次参与提高中奖几率"
+
+				axios.post "#{apiLink}active/soupdaren/update/",data
 				.then (msg)=>
 					if msg.data.code is 200
 						alert "填写成功"
 						@.registerShow = false
 						@.regSubmited = true
-						if @.gameEnd
-							@.share()
+						# if @.gameEnd
+						# 	@.share()
 					else
 						alert msg.data.reason
 				.catch (err)=>
@@ -316,11 +339,13 @@ init = ->
 				ugc.app.renderer.render ugc.app.stage
 				# @.ugc = ugc.app.view.toDataURL()
 				@.ugc = base64
-				
+			restart: ->
+				window.location.reload()
 			share: ->
 				console.log "run share"
+				@.ugc = ugc.app.view.toDataURL()
 				image = @.ugc
-				folder = "Landrover24"
+				folder = "soupdaren"
 				data = {
 					image: image
 					folder: folder
@@ -343,10 +368,10 @@ init = ->
 				@.loading = false
 				neteaseShareImage()
 				# 抽奖
-				unless @.giveUp
-					setTimeout =>
-						@.getLottery()
-					,5000
+				# unless @.giveUp
+				# 	setTimeout =>
+				# 		@.getLottery()
+				# 	,5000
 			faild: (err)->
 				@.pushed = false
 				@.loading = false

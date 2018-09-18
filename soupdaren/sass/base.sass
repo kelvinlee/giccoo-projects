@@ -402,10 +402,10 @@ video,canvas,svg
 		+w(90%)
 		+m(5% auto)
 		border-radius: 0px
-		border: solid 1px #555
+		border: solid 1px #8db637
 		+overhide
 		label
-			flex: 2
+			flex: 3
 			+box
 			+p(0.2rem 0.2rem)
 			// padding-right: 5%
@@ -415,9 +415,9 @@ video,canvas,svg
 			justify-content: center
 			align-items: center
 			box-align: center
-			+bc(#fff)
+			+bc(#8db637)
 			+text-center
-			color: #252525
+			color: #fff
 			img
 				+show-inline
 				vertical-align: middle
@@ -551,6 +551,19 @@ video,canvas,svg
 		+posa
 		+tr(2%,2%)
 		+iw(50,610,100%)
+	.title
+		+w(100%)
+		+m(10% auto)
+		h2
+			+font-size(1.6rem)
+			line-height: 1.6em
+			letter-spacing: 0.1em
+		p
+			+font-size(0.7rem)
+		h2,p
+			color: #8cb637
+			+m
+			+text-center
 	.register
 		+w(80%)
 		+posa
@@ -558,16 +571,15 @@ video,canvas,svg
 		+transform(translate3d(-50%,-50%,0))
 		+bc(#fff)
 		// border: 4px solid #757575
-		border-radius: 5px
+		// border-radius: 5px
+		border: solid 0.4rem #ffb04a
 		+p(5% 0)
-		+b($cdn+"img/pop-bg.jpg",no-repeat,top,center,cover)
+		// +b($cdn+"img/pop-bg.jpg",no-repeat,top,center,cover)
 		
-		.title
-			+w(100%)
-			+m
+		
 		.btn-submit
-			+w(90%)
-			+m
+			+w(40%)
+			+m(10% auto)
 		.btn-item
 			+w(90%)
 			+m(0.4rem auto)
@@ -580,13 +592,15 @@ video,canvas,svg
 		+tl(50%,50%)
 		+transform(translate3d(-50%,-50%,0))
 		+bc(#fff)
-		// border: 4px solid #757575
-		border-radius: 5px
+		border: solid 0.4rem #ffb04a
+		// border-radius: 5px
 		+p(15% 0)
-		+b($cdn+"img/pop-bg-lottery.jpg",no-repeat,center,center,cover)
+		// +b($cdn+"img/pop-bg-lottery.jpg",no-repeat,center,center,cover)
 		&.faild
 			.title,.btn
 				margin: 10% auto
+			.btn
+				+w(40%)
 		&.success
 			.title
 				margin: 5% auto

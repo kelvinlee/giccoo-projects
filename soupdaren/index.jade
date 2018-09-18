@@ -31,7 +31,7 @@ block css
 
 block content
   - url = "//image.giccoo.com/projects/Landrover24";
-  //- - url = ".";
+  - url = ".";
   //- .qrcode#qrcode
     .qr
       img(src="#{url}/img/qrcode.png")
@@ -79,45 +79,20 @@ block content
       .pop(v-show="registerShow")
         .content
           .register
-            .close(v-show="!gameEnd" @click="closeReg")
-              img(src="#{url}/img/icon-close.png")
-            .close(v-show="gameEnd" @click="giveupAward")
-              img(src="#{url}/img/icon-close.png")
-            .title(v-show="!gameEnd")
-              img(src="#{url}/img/form-title1.png")
-            .title(v-show="gameEnd")
-              img(src="#{url}/img/form-title2.png")
+            .title
+              h2 恭喜你中奖了
+              p 获得元气音乐节门票一张
             form-grounp.form(v-bind:form="form",v-on:submit="submit")
-            .btn-item.goon(v-show="!gameEnd" @click="registerShow = false")
-              img(src="#{url}/img/btn-goon.png")
-            .btn-item.goon(v-show="gameEnd" @click="giveupAward")
-              img(src="#{url}/img/btn-giveup.png")
-            .footer
-              img(src="#{url}/img/form-footer.png")
-              a.website(href="https://www.landrover.com.cn/experiences/2018nsd.html")
 
     transition(name="page-fade")
       .pop(v-show="lotteryShow")
-        .content(v-show="lotteryInfo.info")
-          .lottery.success
-            .close(@click="lotteryShow = false")
-              img(src="#{url}/img/icon-close.png")
-            .title
-              img(src="#{url}/img/pop-lottery-success.png")
-            p.code {{lotteryInfo.info}}
-            .btn(@click="openMusic")
-              img(src="#{url}/img/btn-music-dark.png")
-            .btn
-              img(src="#{url}/img/btn-shot.png")
-
-        .content(v-show="!lotteryInfo.info")
+        .content
           .lottery.faild
-            .close(@click="lotteryShow = false")
-              img(src="#{url}/img/icon-close.png")
             .title
-              img(src="#{url}/img/pop-lottery-faild.png")
-            .btn(@click="openMusic")
-              img(src="#{url}/img/btn-music.png")
+              h2 很遗憾未中奖
+              p 多尝试可以增加中奖几率哦
+            .btn(@click="restart")
+              img(src="#{url}/img/btn-restart.png")
 
     
 
