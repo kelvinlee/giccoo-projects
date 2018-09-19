@@ -745,6 +745,7 @@ function goWX(){
 	btnWX.visible=false
 	btnWYY.visible=false
 	btnList.visible=false
+	main.share()
 }
 function goWYY(){
 	qr.visible=true
@@ -753,6 +754,15 @@ function goWYY(){
 	btnList.visible=false
 	main.share()
 	setTimeout(main.getLottery,5000)
+}
+function shareDone(){
+	if(main.wy==true){
+		btnWYY.visible=true
+		btnList.visible=true
+	}else{
+		btnWX.visible=true
+		btnList.visible=true
+	}
 }
 function goList(){
 	main.openMusic()
