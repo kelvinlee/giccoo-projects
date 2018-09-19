@@ -1,7 +1,7 @@
 extends ../libs/jade/layout-clean
 
 block title
-  | 旅途中的发现之声
+  | 元气初心音乐馆
 
 block css
   meta(name="author",content="m.giccoo.com")
@@ -11,6 +11,8 @@ block css
   //- link(rel="stylesheet",href="css/yrd-Bold.css")
   //- link(rel="stylesheet",href="css/yrd-Medium.css")
   link(rel="stylesheet",href="css/base.css")
+  link(rel='stylesheet', href='css/main.css')
+
   script.
     var _hmt = _hmt || [];
     (function() {
@@ -57,6 +59,8 @@ block content
             img(src="#{url}/img/small-cd.png")
         p loading...{{progress}}%
   //- <video controls x5-playsinline playsinline="" webkit-playsinline="" src="//image.giccoo.com/projects/Landrover24/video/build-1.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
+  #userNickName
+    input#UserTextarea1(type='text', maxlength='8', placeholder='点击输入你的名字', value='')
   audio(id="bgm",src="//image.giccoo.com/projects/genki/mp3/bgm.mp3",loop="true")
   .main#main(v-show="mounted",:class="{biger: biger,smaller:smaller}",style="display: none",:style="{width: w+'px',minHeight: h+'px'}")
     transition(name="page-fade")
@@ -74,7 +78,14 @@ block content
       .page.page-2(v-show="pageIndex == 1")
         .content
           #ugc
-
+    transition(name="page-fade")
+      .pop(v-show="ugcShow")
+        .content
+          .small-size
+            .close(@click="ugcShow = false")
+              img(src="#{url}/img/icon-close.png")
+            img(:src="ugc")
+            .note 长按保存图片
     transition(name="page-fade")
       .pop(v-show="registerShow")
         .content
@@ -109,9 +120,11 @@ block js
   script(src="//s3.music.126.net/static/mob/ntes.id.js")
   script(src="//s5.music.126.net/static_public/5a1b70ea0180f6ca7295a59d/js/music-jssdk-1.0.3.js")
   //- script(src="/libs/js/min/bump-min.js")
+  script(src="js/public_funciton.js")
   script(src="js/build.js?v=1")
   script(src="js/main.js?v=1")
   script(src="js/ani.js?v=1")
+
   
 
 

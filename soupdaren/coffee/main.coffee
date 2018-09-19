@@ -253,6 +253,7 @@ init = ->
 			giveUp: false
 			gameEnd: false
 			noreg: false
+			ugcShow: false
 		watch:
 			videoIndex: (n,o)->
 				@.videoIndexOld = o
@@ -356,28 +357,33 @@ init = ->
 				console.log "run share"
 				@.ugc = ugc.app.view.toDataURL()
 				image = @.ugc
-				folder = "soupdaren"
-				data = {
-					image: image
-					folder: folder
-				}
-				@.folder = folder
-				return @.faild() unless image?
-				return false if @.pushed
-				axios.post imageurl,data
-				.then (msg)=>
-					if msg.data.recode is 200
-						main.success(msg.data)
-					else
-						main.faild(msg)
-				.catch (e)=>
-					# alert e
-					main.faild(e)		
+				if @.wy
+					folder = "soupdaren"
+					data = {
+						image: image
+						folder: folder
+					}
+					@.folder = folder
+					return @.faild() unless image?
+					return false if @.pushed
+					axios.post imageurl,data
+					.then (msg)=>
+						if msg.data.recode is 200
+							main.success(msg.data)
+						else
+							main.faild(msg)
+					.catch (e)=>
+						# alert e
+						main.faild(e)		
+				else
+					@.ugcShow = true
+					shareDone()
 			success: (data)->
 				@.shareImageLink = data.info
 				@.pushed = false
 				@.loading = false
 				neteaseShareImage()
+				shareDone()
 				# 抽奖
 				# unless @.giveUp
 				# 	setTimeout =>
@@ -389,9 +395,9 @@ init = ->
 			openMusic: ->
 				# goList()
 				if CloudMusic.isInApp()
-					CloudMusic.playlist(2369232527)
+					CloudMusic.playlist(2419204335)
 				else
-					window.location.href = "https://music.163.com/#/playlist?id=2369232527"
+					window.location.href = "https://music.163.com/#/playlist?id=2419204335"
 			nextPage: ->
 				console.log "next page run"
 				@.pageIndex = 2
