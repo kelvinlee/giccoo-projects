@@ -1,19 +1,32 @@
+var loadingT
+
 function setLoading(){
+	loadingT=new Sprite(getTe(_CDN+"img/p0t.png"))
 	var loadingStyle={
     fontSize: 28,
     fill: '#ffffff'
  	}
-	loadingT=showT(loadingText,loadingStyle,55,"left",2,.2,100)
+	//loadingT=showT(loadingText,loadingStyle,55,"left",2,.2,100)
+
 	pStage.addChild(loadingT)
 	setCenter([loadingT])
-	hideT(loadingT,4)
+	//hideT(loadingT,4)
 	//setTimeout(setHint,4000)
-	setTimeout(setNamePage,4000)
+	//===setTimeout(setNamePage,4000)
+	TweenMax.from(loadingT,2,{alpha:0,y:"+=50"})
+	TweenMax.to(fps,1,{alpha:1,delay:1})
+	bgMove.play()
+	fps.x=160
+	fpPlay()
+	pStage.interactive=true
+	pStage.tap=setNamePage
 }
 ///////////////////////////////////////////////////////////////////////////////////////////========提示打开音乐页
 var nameBG,nameBtn
 var namePage=new PIXI.Container()
 function setNamePage(){
+	pStage.interactive=false
+	TweenMax.to(loadingT,1,{alpha:0,y:"-=50"})
 	nameBG=new Sprite(getTe(_CDN+"img/namebg.png"))
 	nameBtn=new Sprite(getTe(_CDN+"img/namebtn.png"))
 	pStage.addChild(namePage)
@@ -24,6 +37,7 @@ function setNamePage(){
 	nameBtn.interactive=true
 	nameBtn.tap=checkName
 	showNamePage()
+	
 }
 var userNickName
 function checkName(){
@@ -37,6 +51,7 @@ function checkName(){
 		userNickName=document.getElementById("UserTextarea1").value
 		document.getElementById("UserTextarea1").blur()
 	}
+	
 }
 var alphaBtn
 var userNickNameDiv
@@ -49,9 +64,14 @@ function showNamePage(){
 	alphaBtn.position.set(0,3/4*stageH)
 	alphaBtn.alpha=0
 	userNickNameDiv=document.getElementById("userNickName")
-	TweenMax.from(namePage,1,{alpha:0,y:"+=100",delay:1,onComplete:function(){
-		TweenMax.set(userNickNameDiv,{display:"block"})
+	
+	TweenMax.from(namePage,1,{alpha:0,y:"+=100",delay:.5,onComplete:function(){
+		//TweenMax.set(userNickNameDiv,{display:"block"})
+		var screenH=document.body.offsetHeight
+		var screenW=document.body.offsetWidth
+		TweenMax.set(userNickNameDiv,{top:screenH/2+33*screenW/640,display:"block"})
 	}})
+	
 	
 
 	

@@ -66,6 +66,7 @@ var imageList = [
 	_CDN+"img/btn-wyy.png",
 	_CDN+"img/btn-list.png",
 	_CDN+"img/qr.png",
+	_CDN+"img/p0t.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -112,8 +113,9 @@ function setup(){
 	//TweenMax.to(bgNear,4,{x:-640*2,repeat:10000,ease:Linear.easeNone})
 	bgMove.pause()
 	
-	setLoading()
 	setFootprint()
+	setLoading()
+
 	setPage0()
 	setPage12345()
 	setLayer()
