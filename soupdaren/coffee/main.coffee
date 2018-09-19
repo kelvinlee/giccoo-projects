@@ -22,8 +22,8 @@ TrueW = 640
 TrueH = 1138
 imageurl = "//api.giccoo.com/api/upload/image64/"
 apiUrl = "//api.giccoo.com/df-308"
-apiLink = "//localhost:3000/"
-# apiLink = "//g.giccoo.com/"
+# apiLink = "//localhost:3000/"
+apiLink = "//g.giccoo.com/"
 # apiLink = "http://192.168.3.53:3000/"
 # apiUrl = "http://localhost:8881/Levi"
 main = {}
@@ -51,7 +51,7 @@ _citys = [
 ]
 
 neteaseShareImage = ->
-	title1 = "有故事的声活单曲"
+	title1 = "元气初心音乐馆"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
 	redirectUrl = "https://m.giccoo.com/Landrover24/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
@@ -122,10 +122,10 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "旅途中的发现之声"
-				desc: "2018路虎发现无止境 发现中国24节气 秋分之旅"
-				link: "http://m.giccoo.com/Landrover24/"
-				imgUrl: "http://m.giccoo.com/Landrover24/img/ico.jpg"
+				title: "元气初心音乐馆"
+				desc: "测测隐藏在音乐世界中的‘你’"
+				link: "http://m.giccoo.com/soupdaren/"
+				imgUrl: "http://m.giccoo.com/soupdaren/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
