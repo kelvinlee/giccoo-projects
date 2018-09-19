@@ -11,10 +11,11 @@ function setLoading(){
 	hint2=new Sprite(getTe(_CDN+"img/hint2.png"))
 	pStage.addChild(loadingT)
 	pStage.addChild(hint1,hint2)
-	hint1.y=hint2.y=stageH-48
+	hint1.y=stageH-48-20
+	hint2.y=stageH/2+252-48
 	hint2.visible=false
 	hint1.alpha=0
-	TweenMax.to(hint1,1,{alpha:1,delay:1,repeat:1,yoyo:true,repeatDelay:2})
+	TweenMax.to(hint1,1,{alpha:1,delay:1,repeat:1,yoyo:true,repeatDelay:4})
 	setCenter([loadingT])
 	//hideT(loadingT,4)
 	//setTimeout(setHint,4000)
@@ -421,7 +422,7 @@ var lampsA=[]
 function goPage1(){
 	hint2.visible=true
 	hint2.alpha=0
-	TweenMax.to(hint2,1,{alpha:1,delay:1,repeat:1,yoyo:true,repeatDelay:2})
+	TweenMax.to(hint2,1,{alpha:1,delay:1,repeat:1,yoyo:true,repeatDelay:4})
 	console.log("dddddddd")
 
 	alphaBtn.interactive=false
