@@ -35,6 +35,7 @@ function checkName(){
 		goPage0()
 		TweenMax.set(userNickNameDiv,{display:"none"})
 		userNickName=document.getElementById("UserTextarea1").value
+		document.getElementById("UserTextarea1").blur()
 	}
 }
 var alphaBtn
