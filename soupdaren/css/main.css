@@ -28,7 +28,7 @@
 	opacity: 0;
 	z-index: 100;
 }
-input::-webkit-input-placeholder {
+#userNickName input::-webkit-input-placeholder {
 /* placeholder颜色  */
 color: #a9925f;
 /* placeholder字体大小  */

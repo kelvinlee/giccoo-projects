@@ -61,6 +61,7 @@
         <div v-show="registerShow" class="pop">
           <div class="content">
             <div class="register">
+              <div @click="registerShow = false" class="close"><img src="./img/icon-close.png"></div>
               <div class="title">
                 <h2>恭喜你中奖了</h2>
                 <p>获得元气音乐节门票一张</p>
@@ -74,6 +75,7 @@
         <div v-show="lotteryShow" class="pop">
           <div class="content">
             <div class="lottery faild">
+              <div @click="lotteryShow = false" class="close"><img src="./img/icon-close.png"></div>
               <div class="title">
                 <h2>很遗憾未中奖</h2>
                 <p>多尝试可以增加中奖几率哦</p>

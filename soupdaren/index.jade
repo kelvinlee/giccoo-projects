@@ -90,6 +90,8 @@ block content
       .pop(v-show="registerShow")
         .content
           .register
+            .close(@click="registerShow = false")
+              img(src="#{url}/img/icon-close.png")
             .title
               h2 恭喜你中奖了
               p 获得元气音乐节门票一张
@@ -99,6 +101,8 @@ block content
       .pop(v-show="lotteryShow")
         .content
           .lottery.faild
+            .close(@click="lotteryShow = false")
+              img(src="#{url}/img/icon-close.png")
             .title
               h2 很遗憾未中奖
               p 多尝试可以增加中奖几率哦
