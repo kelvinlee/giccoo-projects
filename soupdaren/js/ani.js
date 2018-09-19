@@ -841,7 +841,7 @@ function setResult(){
 	}else{
 		btnWYY.visible=false
 		btnWYY.interactive=false
-		setTimeout(main.getLottery,5000)
+		
 	}
 }
 function goWX(){
@@ -850,6 +850,7 @@ function goWX(){
 	btnWYY.visible=false
 	btnList.visible=false
 	main.share()
+	setTimeout(main.getLottery,4000)
 }
 function goWYY(){
 	qr.visible=true
