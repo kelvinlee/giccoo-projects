@@ -489,6 +489,7 @@ function setPage2(){
 }
 
 function goPage2(){
+	hint2.visible=false
 	var rA=[1,3,4]
 	if245=rA[parseInt(Math.random()*3)]
 	nowPic=if245
