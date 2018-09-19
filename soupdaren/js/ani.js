@@ -745,6 +745,7 @@ function goWX(){
 	btnWX.visible=false
 	btnWYY.visible=false
 	btnList.visible=false
+	main.share()
 }
 function goWYY(){
 	qr.visible=true
