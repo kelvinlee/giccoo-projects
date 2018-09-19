@@ -771,7 +771,7 @@ function setResult(){
 	endttt=new Sprite(getTe(_CDN+"img/endttt.png"))
 	endtttt=new Sprite(getTe(_CDN+"img/endtttt.png"))
 
-	btnWX=new Sprite(getTe(_CDN+"img/btn-wx.png"))
+	btnWX=new Sprite(getTe(_CDN+"img/btn-wyy.png"))
 	btnWYY=new Sprite(getTe(_CDN+"img/btn-wyy.png"))
 	btnList=new Sprite(getTe(_CDN+"img/btn-list.png"))
 	qr=new Sprite(getTe(_CDN+"img/qr.png"))
@@ -840,7 +840,7 @@ function setResult(){
 	}else{
 		btnWYY.visible=false
 		btnWYY.interactive=false
-		setTimeout(main.getLottery,3000)
+		setTimeout(main.getLottery,5000)
 	}
 }
 function goWX(){
