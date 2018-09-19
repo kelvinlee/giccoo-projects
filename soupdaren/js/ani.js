@@ -763,6 +763,7 @@ function shareDone(){
 		btnWX.visible=true
 		btnList.visible=true
 	}
+	qr.visible=false
 }
 function goList(){
 	main.openMusic()
