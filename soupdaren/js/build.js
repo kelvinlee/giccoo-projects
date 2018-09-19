@@ -23,6 +23,26 @@ var imageList = [
 	_CDN+"img/pic3.jpg",
 	_CDN+"img/pic4.jpg",
 	_CDN+"img/pic5.jpg",
+	_CDN+"img/pic6.jpg",
+	_CDN+"img/layerbg.jpg",
+	_CDN+"img/layertitle.png",
+	_CDN+"img/layert1a.png",
+	_CDN+"img/layert2a.png",
+	_CDN+"img/layert3a.png",
+	_CDN+"img/layert4a.png",
+	_CDN+"img/layert5a.png",
+	_CDN+"img/layert6a.png",
+	_CDN+"img/layert1b.png",
+	_CDN+"img/layert2b.png",
+	_CDN+"img/layert3b.png",
+	_CDN+"img/layert4b.png",
+	_CDN+"img/layert5b.png",
+	_CDN+"img/layert6b.png",
+	_CDN+"img/layerbtn.jpg",
+	_CDN+"img/turn1.png",
+	_CDN+"img/turn2.png",
+	_CDN+"img/turn3.png",
+	_CDN+"img/turn4.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -53,14 +73,19 @@ var texture2=PIXI.Texture.fromImage('img/bg-near.png');
 var bgMove
 var loadingText="音乐，就像是每个人生活中隐形的伙伴，\n我们用音乐消化所有心情的同时，\n也从中汲取着不断前行的动力。\n欢迎来到初心音乐放映馆，\n在这里，\n我们将通过你最不经意的方式走进你，\n用音乐解读你的内在，\n给予你不断前行的动力，愿你不虚此行……\n也许你会发现神秘惊喜！"
 var loadingT
+var bgFar
+var bgNear,bgNear2
+var speed=.4
 function setup(){
-	var bgFar=new PIXI.extras.TilingSprite(texture1,640*2,1300)
-	var bgNear=new PIXI.extras.TilingSprite(texture2,640*2,1300)
-	pStage.addChild(bgFar,bgNear)
-	bgFar.pivot.y=bgNear.pivot.y=650
-	bgFar.y=bgNear.y=stageH/2
+	bgFar=new PIXI.extras.TilingSprite(texture1,640*2,1300)
+	bgNear=new PIXI.extras.TilingSprite(texture2,640,1300)
+	bgNear2=new PIXI.extras.TilingSprite(texture2,640*3,1300)
+	pStage.addChild(bgFar,bgNear,bgNear2)
+	bgFar.pivot.y=bgNear.pivot.y=bgNear2.pivot.y=650
+	bgFar.y=bgNear.y=bgNear2.y=stageH/2
 	bgNear.x=640
-	bgMove=TweenMax.to(bgFar,.4,{x:-64,repeat:100000,ease:Linear.easeNone})
+	bgNear2.x=640
+	bgMove=TweenMax.to(bgFar,.4*speed,{x:-64,repeat:100000,ease:Linear.easeNone})
 	//TweenMax.to(bgNear,4,{x:-640*2,repeat:10000,ease:Linear.easeNone})
 	bgMove.pause()
 	
@@ -68,6 +93,8 @@ function setup(){
 	setFootprint()
 	setPage0()
 	setPage12345()
+	setLayer()
+	setPage2()
 }
 
 function setCenter(_array){
