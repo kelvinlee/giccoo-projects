@@ -751,6 +751,7 @@ function goWYY(){
 	btnWYY.visible=false
 	btnList.visible=false
 	main.share()
+	setTimeout(main.getLottery,5000)
 }
 function goList(){
 	main.openMusic()
