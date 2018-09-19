@@ -355,6 +355,7 @@ init = ->
 				window.location.reload()
 			share: ->
 				console.log "run share"
+				ugc.app.renderer.render ugc.app.stage
 				@.ugc = ugc.app.view.toDataURL()
 				image = @.ugc
 				if @.wy
