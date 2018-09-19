@@ -744,7 +744,7 @@ function goResult(){
 	setResult()
 	
 	TweenMax.from(enddisc,6*speed,{x:"-=150"})
-	TweenMax.from(resultPage,2*speed,{x:640,ease:Linear.easeNone})
+	TweenMax.from(resultPage,2*speed,{x:640,ease:Linear.easeNone,delay:2})
 }
 var endLight,endTitle,enddisc,endttt,endtttt
 var endpic1,endpic2,endpic3,endpic4,endpic5,endpic6,endt1,endt2,endt3,endt4,endt5,endt6
