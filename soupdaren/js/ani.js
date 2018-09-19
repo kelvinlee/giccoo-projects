@@ -69,7 +69,7 @@ function showNamePage(){
 		//TweenMax.set(userNickNameDiv,{display:"block"})
 		var screenH=document.body.offsetHeight
 		var screenW=document.body.offsetWidth
-		TweenMax.set(userNickNameDiv,{top:screenH/2+33*screenW/640,display:"block"})
+		TweenMax.set(userNickNameDiv,{top:screenH/2+36*screenW/640,display:"block"})
 	}})
 	
 	
@@ -786,6 +786,7 @@ function shareDone(){
 	qr.visible=false
 }
 function goList(){
+	document.getElementById("bgm").pause()
 	main.openMusic()
 }
 
