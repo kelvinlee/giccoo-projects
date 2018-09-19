@@ -15,7 +15,7 @@ function setLoading(){
 	//===setTimeout(setNamePage,4000)
 	TweenMax.from(loadingT,2,{alpha:0,y:"+=50"})
 	TweenMax.to(fps,1,{alpha:1,delay:1})
-	bgMove.play()
+	//bgMove.play()
 	fps.x=160
 	fpPlay()
 	pStage.interactive=true
@@ -56,7 +56,7 @@ function checkName(){
 var alphaBtn
 var userNickNameDiv
 function showNamePage(){
-	bgMove.play()
+	//bgMove.play()
 	fps.alpha=1
 	fps.x=160
 	alphaBtn.width=640
