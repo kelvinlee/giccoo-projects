@@ -7,66 +7,116 @@ function setLoading(){
 	pStage.addChild(loadingT)
 	setCenter([loadingT])
 	hideT(loadingT,4)
-	setTimeout(setHint,4000)
+	//setTimeout(setHint,4000)
+	setTimeout(setNamePage,4000)
 }
-
 ///////////////////////////////////////////////////////////////////////////////////////////========提示打开音乐页
-var hintT1,hintT2,hintArrow,player,playerDic,playerNeedle,flyer
-var hint=new PIXI.Container()
-var playerC=new PIXI.Container()
-var alphaBtn
-function setHint(){
-	hintT1=new Sprite(getTe(_CDN+"img/hint-t1.png"))
-	hintT2=new Sprite(getTe(_CDN+"img/hint-t2.png"))
-	hintArrow=new Sprite(getTe(_CDN+"img/hint-arrow.png"))
-	player=new Sprite(getTe(_CDN+"img/player.png"))
-	playerNeedle=new Sprite(getTe(_CDN+"img/player-needle.png"))
-	playerDic=new Sprite(getTe(_CDN+"img/player-dic.png"))
-	flyer=new Sprite(getTe(_CDN+"img/flyer.png"))
-
-	pStage.addChild(hint)
-	hint.addChild(hintT1,hintT2,hintArrow,playerC,flyer)
-	playerC.addChild(player,playerDic,playerNeedle)
-	setCenter(hintT1,hintT2,hintArrow)
-
-	alphaBtn=new Sprite(getTe(_CDN+"img/alpha.png"))
-	pStage.addChild(alphaBtn)
-	goHint()
+var nameBG,nameBtn
+var namePage=new PIXI.Container()
+function setNamePage(){
+	nameBG=new Sprite(getTe(_CDN+"img/namebg.png"))
+	nameBtn=new Sprite(getTe(_CDN+"img/namebtn.png"))
+	pStage.addChild(namePage)
+	namePage.addChild(nameBG,nameBtn)
+	setCenter([nameBG])
+	nameBtn.pivot.set(81.5,23)
+	nameBtn.position.set(320,stageH/2+212)
+	nameBtn.interactive=true
+	nameBtn.tap=checkName
+	showNamePage()
 }
-
-function goHint(){
-	hint.x=0
-	player.position.set(230,stageH/2-185)
-	playerNeedle.pivot.set(132,177)
-	playerNeedle.position.set(230+132,stageH/2-185+177)
-	playerDic.pivot.set(89,87)
-	playerDic.position.set(230+89,stageH/2-185+87)
-	TweenMax.to(playerDic,.5,{rotation:Math.PI*2,repeat:10000,ease:Linear.easeNone})
-	flyer.pivot.set(32.5,48.5)
-	flyer.position.set(320,stageH/2+175)
-	TweenMax.set(playerNeedle,{rotation:-30*Math.PI/180})
-
-	TweenMax.to(fps,2,{alpha:1})
-	fps.x=160
+var userNickName
+function checkName(){
+	console.log(document.getElementById("UserTextarea1").value)
+	if(document.getElementById("UserTextarea1").value==""){
+		alert("请输入你的昵称")
+	}else{
+		playBgm()
+		goPage0()
+		TweenMax.set(userNickNameDiv,{display:"none"})
+		userNickName=document.getElementById("UserTextarea1").value
+	}
+}
+var alphaBtn
+var userNickNameDiv
+function showNamePage(){
 	bgMove.play()
-
-	showGroup([hintT1,playerC,hintT2,hintArrow,flyer])
-	player.interactive=true
-	player.touchstart=playBgm
-	playerDic.visible=false
-
+	fps.alpha=1
+	fps.x=160
 	alphaBtn.width=640
 	alphaBtn.height=stageH/4
 	alphaBtn.position.set(0,3/4*stageH)
 	alphaBtn.alpha=0
-	alphaBtn.interactive=true
-	alphaBtn.touchstart=goPage0
+	userNickNameDiv=document.getElementById("userNickName")
+	TweenMax.from(namePage,1,{alpha:0,y:"+=100",delay:1,onComplete:function(){
+		TweenMax.set(userNickNameDiv,{display:"block"})
+	}})
+	
+
+	
+	//alphaBtn.interactive=true
+	//alphaBtn.touchstart=goPage0
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////========提示打开音乐页
+// var hintT1,hintT2,hintArrow,player,playerDic,playerNeedle,flyer
+// var hint=new PIXI.Container()
+// var playerC=new PIXI.Container()
+
+// function setHint(){
+// 	hintT1=new Sprite(getTe(_CDN+"img/hint-t1.png"))
+// 	hintT2=new Sprite(getTe(_CDN+"img/hint-t2.png"))
+// 	hintArrow=new Sprite(getTe(_CDN+"img/hint-arrow.png"))
+// 	player=new Sprite(getTe(_CDN+"img/player.png"))
+// 	playerNeedle=new Sprite(getTe(_CDN+"img/player-needle.png"))
+// 	playerDic=new Sprite(getTe(_CDN+"img/player-dic.png"))
+// 	flyer=new Sprite(getTe(_CDN+"img/flyer.png"))
+
+// 	pStage.addChild(hint)
+// 	hint.addChild(hintT1,hintT2,hintArrow,playerC,flyer)
+// 	playerC.addChild(player,playerDic,playerNeedle)
+// 	setCenter(hintT1,hintT2,hintArrow)
+
+// 	alphaBtn=new Sprite(getTe(_CDN+"img/alpha.png"))
+// 	pStage.addChild(alphaBtn)
+// 	goHint()
+// }
+
+// function goHint(){
+// 	hint.x=0
+// 	player.position.set(230,stageH/2-185)
+// 	playerNeedle.pivot.set(132,177)
+// 	playerNeedle.position.set(230+132,stageH/2-185+177)
+// 	playerDic.pivot.set(89,87)
+// 	playerDic.position.set(230+89,stageH/2-185+87)
+// 	TweenMax.to(playerDic,.5,{rotation:Math.PI*2,repeat:10000,ease:Linear.easeNone})
+// 	flyer.pivot.set(32.5,48.5)
+// 	flyer.position.set(320,stageH/2+175)
+// 	TweenMax.set(playerNeedle,{rotation:-30*Math.PI/180})
+
+// 	TweenMax.to(fps,2,{alpha:1})
+// 	fps.x=160
+// 	bgMove.play()
+
+// 	showGroup([hintT1,playerC,hintT2,hintArrow,flyer])
+// 	player.interactive=true
+// 	player.touchstart=playBgm
+// 	playerDic.visible=false
+
+// 	alphaBtn.width=640
+// 	alphaBtn.height=stageH/4
+// 	alphaBtn.position.set(0,3/4*stageH)
+// 	alphaBtn.alpha=0
+// 	alphaBtn.interactive=true
+// 	alphaBtn.touchstart=goPage0
+// }
 
 function playBgm(){
 	console.log("playBGM")
-	TweenMax.to(playerNeedle,1,{rotation:-0*Math.PI/180})
-	setTimeout(function(){playerDic.visible=true},800)
+	//TweenMax.to(playerNeedle,1,{rotation:-0*Math.PI/180})
+	//setTimeout(function(){playerDic.visible=true},800)
+	document.getElementById("bgm").play()
+
 }
 
 
@@ -75,6 +125,10 @@ var lampC=new PIXI.Container()
 var page0=new PIXI.Container()
 var lamp,lampLight,p0pic1,p0pic2
 function setPage0(){
+	alphaBtn=new Sprite(getTe(_CDN+"img/alpha.png"))
+	pStage.addChild(alphaBtn)
+
+
 	lamp=new Sprite(getTe(_CDN+"img/lamp.png"))
 	lampLight=new Sprite(getTe(_CDN+"img/lamp-light.png"))
 	lampLight.blendMode=_ADD
@@ -95,9 +149,13 @@ function setPage0(){
 
 
 function goPage0(){
-	alphaBtn.interactive=false
+	TweenMax.to(fps,2,{alpha:1})
+	fps.x=160
+	bgMove.play()
+	alphaBtn.interactive=true
 	alphaBtn.touchstart=hidePage0
-	TweenMax.to(hint,2*speed,{x:-640,ease:Linear.easeNone})
+	//TweenMax.to(hint,2*speed,{x:-640,ease:Linear.easeNone})//namePage
+	TweenMax.to(namePage,2*speed,{x:-640,ease:Linear.easeNone})//namePage
 	page0.visible=true
 	page0.x=640
 	TweenMax.from(lampC,2*speed,{x:"+=200",ease:Linear.easeNone})
@@ -346,9 +404,7 @@ function setPage2(){
 	turn2.x=640
 	turn3.x=640
 	turn4.x=960
-
 }
-
 
 function goPage2(){
 	var rA=[1,3,4]
@@ -356,7 +412,6 @@ function goPage2(){
 	picCA[if245].visible=true
 	picCA[if245].x=640+207
 	TweenMax.to(picCA[if245],4*speed,{x:0,ease:Linear.easeNone})
-
 }
 function hidePage1(){
 	TweenMax.to(picCA[if13],4*speed,{x:-640,ease:Linear.easeNone})
@@ -388,9 +443,6 @@ function hidePage1(){
 }
 
 //======================================================第三页
-
-
-
 function goPage3(){
 	if(if13==0){
 		if13=2
@@ -547,8 +599,8 @@ function goPage6(){
 	if245=if245temp
 
 	picCA[if245].visible=true
-	picCA[if245].x=640+640
-	TweenMax.to(picCA[if245],4*speed,{x:0,ease:Linear.easeNone})
+	picCA[if245].x=640
+	TweenMax.to(picCA[if245],2*speed,{x:0,ease:Linear.easeNone})
 
 }
 function hidePage5(){
@@ -560,11 +612,11 @@ function hidePage5(){
 	var aLamp=addNewLamp()
 	lampsA.push(aLamp)
 	pStage.addChild(aLamp)
-	aLamp.x=320+640+200+640
+	aLamp.x=320+640+200
 	aLamp.scale.x=aLamp.scale.y=1.2
 
 	
-	TweenMax.to(aLamp,4*speed,{x:320,ease:Linear.easeNone,onComplete:function(){
+	TweenMax.to(aLamp,2*speed,{x:320,ease:Linear.easeNone,onComplete:function(){
 		bgMove.pause()
 		aLamp.getChildAt(1).alpha=.8
 
@@ -576,28 +628,140 @@ function hidePage5(){
 
 
 	bgNear2.x=0
-	TweenMax.to(bgNear2,4*speed,{x:0-640-640,ease:Linear.easeNone})
+	TweenMax.to(bgNear2,2*speed,{x:0-640,ease:Linear.easeNone})
 }
 
 //======================================================结果页
 var userResult
+var userResultTime
 function goResult(){
-
 	for (var i = 0; i < time1A.length; i++) {
-		
 		if(time1A[i]==Math.min.apply(null,time1A)){
 				console.log("结果",i)
 				userResult=i
+				userResultTime=parseInt(-time1A[i]/1000)+1
+				console.log(userResultTime,"秒")
 		}
 	};
-
+	setResult()
+	
+	TweenMax.from(enddisc,6*speed,{x:"-=150"})
+	TweenMax.from(resultPage,2*speed,{x:640,ease:Linear.easeNone})
 }
+var endLight,endTitle,enddisc,endttt,endtttt
+var endpic1,endpic2,endpic3,endpic4,endpic5,endpic6,endt1,endt2,endt3,endt4,endt5,endt6
+var endPicA=[],endTA=[]
+var resultPage=new PIXI.Container()
+var endPic=new PIXI.Container()
+var endT=new PIXI.Container()
+var endT1=new PIXI.Text("特立独行的你",{
+	fill:'#4d6800',
+	fontSize: 28,
+	align: 'left',
+})
+var endT2=new PIXI.Text("驻足长达1秒时",{
+	fill:'#4d6800',
+	fontSize: 36,
+	align: 'left',
+})
+
+var btnWX,btnWYY,btnList,qr
+
+function setResult(){
+	endLight=new Sprite(getTe(_CDN+"img/endlight.png"))
+	endTitle=new Sprite(getTe(_CDN+"img/endtitle.png"))
+	enddisc=new Sprite(getTe(_CDN+"img/enddisc.png"))
+
+	endttt=new Sprite(getTe(_CDN+"img/endttt.png"))
+	endtttt=new Sprite(getTe(_CDN+"img/endtttt.png"))
+
+	btnWX=new Sprite(getTe(_CDN+"img/btn-wx.png"))
+	btnWYY=new Sprite(getTe(_CDN+"img/btn-wyy.png"))
+	btnList=new Sprite(getTe(_CDN+"img/btn-list.png"))
+	qr=new Sprite(getTe(_CDN+"img/qr.png"))
+
+	endpic1=new Sprite(getTe(_CDN+"img/endpic1.png"))
+	endpic2=new Sprite(getTe(_CDN+"img/endpic2.png"))
+	endpic3=new Sprite(getTe(_CDN+"img/endpic3.png"))
+	endpic4=new Sprite(getTe(_CDN+"img/endpic4.png"))
+	endpic5=new Sprite(getTe(_CDN+"img/endpic5.png"))
+	endpic6=new Sprite(getTe(_CDN+"img/endpic6.png"))
+
+	endt1=new Sprite(getTe(_CDN+"img/endt1.png"))
+	endt2=new Sprite(getTe(_CDN+"img/endt2.png"))
+	endt3=new Sprite(getTe(_CDN+"img/endt3.png"))
+	endt4=new Sprite(getTe(_CDN+"img/endt4.png"))
+	endt5=new Sprite(getTe(_CDN+"img/endt5.png"))
+	endt6=new Sprite(getTe(_CDN+"img/endt6.png"))
+	endPicA=[endpic1,endpic2,endpic3,endpic4,endpic5,endpic6]
+	endTA=[endt1,endt2,endt3,endt4,endt5,endt6]
+
+	resultPage.addChild(endLight,endTitle,enddisc,endPic,endT,endT1,endT2,endttt,endtttt,btnWX,btnWYY,btnList,qr)
+
+	endPic.addChild(endpic1,endpic2,endpic3,endpic4,endpic5,endpic6)
+	endT.addChild(endt1,endt2,endt3,endt4,endt5,endt6)
+	setCenter([endTitle,enddisc,endPic,endT,endtttt,endttt,qr])
+	endLight.width=640
+	endLight.height=stageH
+
+	pStage.addChild(resultPage)
+	for (var i = 0; i < 6; i++) {
+		if(userResult==i){
+			endPicA[i].visible=true
+			endTA[i].visible=true
+		}else{
+			endPicA[i].visible=false
+			endTA[i].visible=false
+		}
+	};
+	endT1.x=268
+	endT2.x=460
+	endT1.y=stageH/2+2
+	endT2.y=stageH/2+49
+	endT1.text=userNickName
+	endT2.text=userResultTime
+	endtttt.x+=endT2.width+3
+
+	btnWX.position.set(123,stageH/2+419)
+	btnWYY.position.set(123,stageH/2+419)
+	btnList.position.set(355,stageH/2+419)
+
+	btnWX.interactive=btnWYY.interactive=btnList.interactive=true
+	btnWX.tap=goWX
+	btnWYY.tap=goWYY
+	btnList.tap=goList
+	qr.visible=false
+	if(main.wy==true){
+		btnWX.visible=false
+		btnWX.interactive=false
+	}else{
+		btnWYY.visible=false
+		btnWYY.interactive=false
+	}
+}
+function goWX(){
+	qr.visible=true
+	btnWX.visible=false
+	btnWYY.visible=false
+	btnList.visible=false
+}
+function goWYY(){
+	qr.visible=true
+	btnWX.visible=false
+	btnWYY.visible=false
+	btnList.visible=false
+	main.share()
+}
+function goList(){
+	main.openMusic()
+}
+
 function hidePage6(){
 	fpPlay()
 	TweenMax.set(fps,{alpha:1})
 
-	TweenMax.to(picCA[if245],4*speed,{x:-640-320-320,ease:Linear.easeNone})
-	TweenMax.to(lampsA[lampsA.length-1],4*speed,{x:-320-200-320-320,ease:Linear.easeNone,onComplete:function(){
+	TweenMax.to(picCA[if245],2*speed,{x:-320-320,ease:Linear.easeNone})
+	TweenMax.to(lampsA[lampsA.length-1],2*speed,{x:-320-200,ease:Linear.easeNone,onComplete:function(){
 		bgMove.pause()
 		fpPause()
 		TweenMax.set(fps,{alpha:0})
@@ -605,5 +769,5 @@ function hidePage6(){
 	}})
 	
 	bgNear2.x=0
-	TweenMax.to(bgNear2,4*speed,{x:0-640-640,ease:Linear.easeNone})
+	TweenMax.to(bgNear2,2*speed,{x:0-640,ease:Linear.easeNone})
 }
