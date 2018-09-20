@@ -773,9 +773,9 @@ function setResult(){
 	endttt=new Sprite(getTe(_CDN+"img/endttt.png"))
 	endtttt=new Sprite(getTe(_CDN+"img/endtttt.png"))
 
-	btnWX=new Sprite(getTe(_CDN+"img/btn-wyy.png"))
-	btnWYY=new Sprite(getTe(_CDN+"img/btn-wyy.png"))
-	btnList=new Sprite(getTe(_CDN+"img/btn-list.png"))
+	btnWX=new Sprite(getTe(_CDN+"img/btn-wyy1.png"))
+	btnWYY=new Sprite(getTe(_CDN+"img/btn-wyy1.png"))
+	btnList=new Sprite(getTe(_CDN+"img/btn-list1.png"))
 	qr=new Sprite(getTe(_CDN+"img/qr.png"))
 
 	endpic1=new Sprite(getTe(_CDN+"img/endpic1.png"))
@@ -827,9 +827,9 @@ function setResult(){
 
 	endtttt.x+=endT2.width+3
 
-	btnWX.position.set(123,stageH/2+419)
-	btnWYY.position.set(123,stageH/2+419)
-	btnList.position.set(355,stageH/2+419)
+	btnWX.position.set(27,stageH/2+419)
+	btnWYY.position.set(27,stageH/2+419)
+	btnList.position.set(329,stageH/2+419)
 
 	btnWX.interactive=btnWYY.interactive=btnList.interactive=true
 	btnWX.tap=goWX
@@ -851,7 +851,7 @@ function goWX(){
 	btnWYY.visible=false
 	btnList.visible=false
 	main.share()
-	setTimeout(main.getLottery,4000)
+	setTimeout(main.getLottery,7000)
 }
 function goWYY(){
 	qr.visible=true
@@ -859,7 +859,7 @@ function goWYY(){
 	btnWYY.visible=false
 	btnList.visible=false
 	main.share()
-	setTimeout(main.getLottery,5000)
+	setTimeout(main.getLottery,8000)
 }
 function shareDone(){
 	if(main.wy==true){
