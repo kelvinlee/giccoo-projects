@@ -21,6 +21,7 @@
     </script>
   </head>
   <body>
+    <!-- - url = ".";-->
     <div id="userNickName">
       <input id="UserTextarea1" type="text" maxlength="8" placeholder="点击输入昵称" value="">
     </div>
@@ -51,7 +52,7 @@
         <div v-show="ugcShow" class="pop">
           <div class="content">
             <div class="small-size">
-              <div @click="ugcShow = false" class="close"><img src="./img/icon-close.png"></div><img :src="ugc">
+              <div @click="ugcShow = false" class="close"><img src="//image.giccoo.com/projects/soupdaren/img/icon-close.png"></div><img :src="ugc">
               <div class="note">长按保存图片</div>
             </div>
           </div>
@@ -61,7 +62,7 @@
         <div v-show="registerShow" class="pop">
           <div class="content">
             <div class="register">
-              <div @click="registerShow = false" class="close"><img src="./img/icon-close.png"></div>
+              <div @click="registerShow = false" class="close"><img src="//image.giccoo.com/projects/soupdaren/img/icon-close.png"></div>
               <div class="title">
                 <h2>恭喜你中奖了</h2>
                 <p>获得元气音乐节门票一张</p>
@@ -75,12 +76,12 @@
         <div v-show="lotteryShow" class="pop">
           <div class="content">
             <div class="lottery faild">
-              <div @click="lotteryShow = false" class="close"><img src="./img/icon-close.png"></div>
+              <div @click="lotteryShow = false" class="close"><img src="//image.giccoo.com/projects/soupdaren/img/icon-close.png"></div>
               <div class="title">
                 <h2>很遗憾未中奖</h2>
                 <p>多尝试可以增加中奖几率哦</p>
               </div>
-              <div @click="restart" class="btn"><img src="./img/btn-restart.png"></div>
+              <div @click="restart" class="btn"><img src="//image.giccoo.com/projects/soupdaren/img/btn-restart.png"></div>
             </div>
           </div>
         </div>
