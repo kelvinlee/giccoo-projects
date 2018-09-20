@@ -773,8 +773,8 @@ function setResult(){
 	endttt=new Sprite(getTe(_CDN+"img/endttt.png"))
 	endtttt=new Sprite(getTe(_CDN+"img/endtttt.png"))
 
-	btnWX=new Sprite(getTe(_CDN+"img/btn-wyy1.png"))
-	btnWYY=new Sprite(getTe(_CDN+"img/btn-wyy1.png"))
+	btnWX=new Sprite(getTe(_CDN+"img/btn-wyy2.png"))
+	btnWYY=new Sprite(getTe(_CDN+"img/btn-wyy2.png"))
 	btnList=new Sprite(getTe(_CDN+"img/btn-list1.png"))
 	qr=new Sprite(getTe(_CDN+"img/qr.png"))
 

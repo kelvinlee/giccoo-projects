@@ -64,7 +64,7 @@ var imageList = [
 	_CDN+"img/endttt.png",
 	_CDN+"img/endtttt.png",
 	// _CDN+"img/btn-wx.png",
-	_CDN+"img/btn-wyy1.png",
+	_CDN+"img/btn-wyy2.png",
 	_CDN+"img/btn-list1.png",
 	_CDN+"img/qr.png",
 	_CDN+"img/p0t.png",
