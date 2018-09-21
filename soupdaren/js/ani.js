@@ -785,12 +785,30 @@ function setResult(){
 	endpic5=new Sprite(getTe(_CDN+"img/endpic5.png"))
 	endpic6=new Sprite(getTe(_CDN+"img/endpic6.png"))
 
-	endt1=new Sprite(getTe(_CDN+"img/endt1.png"))
-	endt2=new Sprite(getTe(_CDN+"img/endt2.png"))
-	endt3=new Sprite(getTe(_CDN+"img/endt3.png"))
-	endt4=new Sprite(getTe(_CDN+"img/endt4.png"))
-	endt5=new Sprite(getTe(_CDN+"img/endt5.png"))
-	endt6=new Sprite(getTe(_CDN+"img/endt6.png"))
+	if(Math.random()<.33){
+		endt1=new Sprite(getTe(_CDN+"img/endt1.png"))
+		endt2=new Sprite(getTe(_CDN+"img/endt2.png"))
+		endt3=new Sprite(getTe(_CDN+"img/endt3.png"))
+		endt4=new Sprite(getTe(_CDN+"img/endt4.png"))
+		endt5=new Sprite(getTe(_CDN+"img/endt5.png"))
+		endt6=new Sprite(getTe(_CDN+"img/endt6.png"))
+	}else if(Math.random()>.5){
+		endt1=new Sprite(getTe(_CDN+"img/endt1b.png"))
+		endt2=new Sprite(getTe(_CDN+"img/endt2b.png"))
+		endt3=new Sprite(getTe(_CDN+"img/endt3b.png"))
+		endt4=new Sprite(getTe(_CDN+"img/endt4b.png"))
+		endt5=new Sprite(getTe(_CDN+"img/endt5b.png"))
+		endt6=new Sprite(getTe(_CDN+"img/endt6b.png"))
+	}else{
+		endt1=new Sprite(getTe(_CDN+"img/endt1c.png"))
+		endt2=new Sprite(getTe(_CDN+"img/endt2c.png"))
+		endt3=new Sprite(getTe(_CDN+"img/endt3c.png"))
+		endt4=new Sprite(getTe(_CDN+"img/endt4c.png"))
+		endt5=new Sprite(getTe(_CDN+"img/endt5c.png"))
+		endt6=new Sprite(getTe(_CDN+"img/endt6c.png"))
+	}
+
+	
 	endPicA=[endpic1,endpic2,endpic3,endpic4,endpic5,endpic6]
 	endTA=[endt1,endt2,endt3,endt4,endt5,endt6]
 
