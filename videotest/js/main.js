@@ -37,7 +37,14 @@ $(document).ready(function load (){
   });
   }
   initAll()
-
+  CloudMusic.setShareData({
+    name: 'activityName',
+    title: '分享主标题',
+    subTitle: '分享副标题',
+    text: '微博标题',
+    picUrl: 'https://abc.jpg',
+    link: 'https://music.163.com/m'
+  }) 
 
 
 });
@@ -87,6 +94,8 @@ function initAll(){
 
   renderer.backgroundColor=0xffffff
   pageLoop()
+
+
 
 }
 
