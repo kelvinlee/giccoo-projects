@@ -38,7 +38,7 @@ $(document).ready(function load (){
   }
 
   CloudMusic.setShareData({
-    name: '汤达人元气音乐节',
+    name: 'activityName',
     title: '汤达人元气音乐节',
     subTitle: '点击H5唤醒你的元气初心，更有机会获得元气音乐节门票',
     text: '汤达人元气音乐节',
