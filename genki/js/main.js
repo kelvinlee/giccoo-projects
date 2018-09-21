@@ -37,6 +37,9 @@ $(document).ready(function load (){
   });
   }
 
+
+
+  initAll()
   CloudMusic.setShareData({
     name: 'activityName',
     title: '汤达人元气音乐节',
@@ -45,9 +48,6 @@ $(document).ready(function load (){
     picUrl: 'https://m.giccoo.com/genki/img/ico.jpg',
     link: 'https://m.giccoo.com/genki/'
   }) 
-
-  initAll()
-
 
 
 });
