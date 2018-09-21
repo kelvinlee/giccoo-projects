@@ -49,7 +49,7 @@ $(document).ready(function load (){
     link: 'https://m.giccoo.com/genki/'
   }) 
 
-  alert("")
+  
 });
 
 
