@@ -103,6 +103,7 @@ function initAll(){
   setPage()
   setPart1()
   //setPart2()
+  setPart2_5()
   setPart3()
   //setPart4()
   getDefaultMessages(1,setPart4)

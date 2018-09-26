@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part1 开头音乐
 var part1=new PIXI.Container()
-var p1pic=new pSprite("img/part1pic.png")
-var p1pic2=new pSprite("//image.giccoo.com/projects/genki/img/part1pic2.png")
+var p1pic=new pSprite("//image.giccoo.com/projects/genki/img/part1picb.png")
+var p1pic2=new pSprite("//image.giccoo.com/projects/genki/img/part1pic2b.png")
 var p1pic3=new pSprite("//image.giccoo.com/projects/genki/img/part1pic3.png")
 var p1pic4=new pSprite("//image.giccoo.com/projects/genki/img/part1pic4.png")
 var btnPlay=new pSprite("//image.giccoo.com/projects/genki/img/btn-play.png")
@@ -12,14 +12,14 @@ var btnSongBG=new pSprite("img/btn-songbg.png")
 function setPart1 () {
 	main.addChild(part1)
 	part1.addChild(p1pic,p1pic3,p1pic2,btnPlay,p1pic4,btnStop,btnSongBG,btnSong)
-	btnPlay.y=btnStop.y=438
+	btnPlay.y=btnStop.y=438+434
 	btnPlay.x=btnStop.x=2
 	btnStop.alpha=0
 	btnStop.interactive=true
 	btnStop.tap=goBGM
 
 	p1pic3.pivot.set(258,258)
-	p1pic3.position.set(320,494+26)
+	p1pic3.position.set(320,494+26+434)
 	TweenMax.to(p1pic3,.7,{rotation:Math.PI*2,repeat:10000,ease:Linear.easeNone})
 	p1pic3.alpha=.5
 	p1pic3.visible=false
@@ -27,11 +27,12 @@ function setPart1 () {
 
 	p1pic4.blendMode=_ADD
 	p1pic4.alpha=.8
+	p1pic4.y=434
 	TweenMax.to(p1pic4,1,{alpha:0,repeat:10000,yoyo:true})
 
 
-	btnSong.y=1182
-	btnSongBG.y=1182
+	btnSong.y=1182+434
+	btnSongBG.y=1182+434
 	btnSong.x=201
 	btnSong.interactive=true
 	btnSong.tap=goSong
@@ -69,7 +70,7 @@ var geneLine=new PIXI.Graphics()
 var muiscA=[]
 function setPart2(){
 	main.addChild(part2)
-	part2.y=1372+690
+	part2.y=1372+690+434
 	part2.addChild(geneLine,gene,geneFP2,geneFP,geneMask)
 	geneLine.y=78
 	geneFP.mask=geneMask
@@ -114,6 +115,19 @@ function goH5(){
 	console.log("跳转h5")
 	window.location.href='http://m.giccoo.com/soupdaren/'
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////===============part2.5 跳转部分
+var part2_5=new PIXI.Container()
+var part2_5Pic=new pSprite("//image.giccoo.com/projects/genki/img/part2_5.png")
+function setPart2_5(){
+	main.addChild(part2_5)
+	part2_5.addChild(part2_5Pic)
+	part2_5.y=1688-300+690+260+434-50
+	part2_5.interactive=true
+	part2_5.tap=goH5
+	
+}
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part3 歌单部分
 var part3=new PIXI.Container()
@@ -152,7 +166,7 @@ var p3t=new pSprite("//image.giccoo.com/projects/genki/img/part3t.png")
 var p3arrow=new pSprite("//image.giccoo.com/projects/genki/img/part3arrow.png")
 function setPart3(){
 	main.addChild(part3)
-	part3.y=1688-300+690+260
+	part3.y=1688-300+690+260+434+400
 	part3.addChild(p3title)
 	part3.scale.x=part3.scale.y=1.2
 	part3.x=-64
@@ -219,7 +233,7 @@ var endBtn=new pSprite("//image.giccoo.com/projects/genki/img/endbtn.png")
 
 function setPart4(_list){
 	main.addChild(part4)
-	part4.y=2980-300+690+260
+	part4.y=2980-300+690+260+434+400
 	part4.addChild(p4title1,p4light1,p4light2,p4title2,p4t1,p4t2,endBtn)
 	p4t1.y=1040+155
 
