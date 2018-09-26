@@ -18,9 +18,9 @@ block css
 block content
   //- url = "http://image.giccoo.com/projects/adidas-originals-eqt";
   - url = ".";
-  
+  iframe(src='http://shangzhibo.tv/watch/568113?player', style='width: 100%; height: 360px; overflow:hidden;', scrolling='no', allowfullscreen='')
   //- #main
-  video#video(controls)
+  //- video#video(controls)
 
 block js
   - url = "/";
@@ -30,7 +30,7 @@ block js
   script(src="https://cdn.jsdelivr.net/npm/hls.js@latest")
   //- script(src="http://image.giccoo.com/projects/libs/js/min/tweenjs.min.js")
   //- script(src="js/main.js")
-  script.
+  //- script.
     var video = document.getElementById('video');
     if(Hls.isSupported()) {
         var hls = new Hls();
