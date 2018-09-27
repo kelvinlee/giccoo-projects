@@ -91,5 +91,13 @@ Example msg:
 {"recode":200,"reason":"success","info":[{"id":"test1","count":2,"create_at":"2016-08-23T07:00:00.000Z"}]}
 ```
 
+<!-- 
 
+ffmpeg -i rtmp://play.liveu.top/live/maor2018 -c:a copy -c:v libx264 -f flv rtmp://video-center.alivecdn.com/active/soupdaren?vhost=live.giccoo.com
+
+ffmpeg -i rtmp://play.liveu.top/live/maor2018 -c:a copy -c:v libx264 -b 512k -f flv rtmp://video-center.alivecdn.com/active/soupdaren?vhost=live.giccoo.com
+
+ffmpeg -re -i rtmp://play.liveu.top/live/maor2018 -acodec copy -c:v x264lib -s 640×360 -b 128k -vpre medium -vpre baseline rtmp://video-center.alivecdn.com/active/soupdaren?vhost=live.giccoo.com
+
+ -->
 
