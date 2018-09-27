@@ -45,17 +45,14 @@ block content
       .note-text(v-show="note")
         p 建议打开手机声音<br/>获得更好体验效果
 
-  //- .load#load
+  .load#load
     .content#loading(v-show="mounted",style="display: none")
       .texts
-        - for (var i = 1; i <= 10; i++)
-          .item.fadeInUpSmall.animated(class="delay-#{i*2}")
+        - for (var i = 1; i <= 4; i++)
+          .item.fadeInUpSmall.animated(class="duration-#{10+i} delay-#{i*2+5}")
             img(src="#{url}/img/loading-text-#{i}.png")
         -;
-      .loading-text 
-        .cd
-          .cd-item
-            img(src="#{url}/img/small-cd.png")
+      .loading-text
         p loading...{{progress}}%
   //- <video controls x5-playsinline playsinline="" webkit-playsinline="" src="//image.giccoo.com/projects/Landrover24/video/build-1.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
   
@@ -74,6 +71,15 @@ block content
     transition(name="page-fade")
       .page.page-1(v-show="pageIndex == 1")
         .content
+          .logo.fadeInUpSmall.animated.duration-10.delay-3
+            img(src="#{url}/img/homepage-logo.png")
+          .title.fadeInUpSmall.animated.duration-10.delay-5
+            img(src="#{url}/img/homepage-title.png")
+          .input.fadeInUpSmall.animated.duration-10.delay-7
+            input#nickname(type="text",v-model="nickname",placeholder="请输入你的名字")
+          .btn.fadeInUpSmall.animated.duration-12.delay-9(@click="nextPage")
+            img(src="#{url}/img/btn-start.png")
+
     transition(name="page-fade")
       .page.page-2(v-show="pageIndex == 2")
         .content

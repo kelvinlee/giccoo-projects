@@ -141,34 +141,34 @@ window.onload = ->
 	# 		note: true
 	# 		playing: false
 
-	# loading = new Vue
-	# 	el: "#loading"
-	# 	data:
-	# 		progress: 0
-	# 		mounted: false
-	# 		progressOn: 0
-	# 	methods:
-	# 		next: ->
-	# 			document.getElementById('load').className += " fadeOut animated"
-	# 			# _public.note = false
-	# 			main.mounted = true
-	# 			setTimeout ->
-	# 				document.getElementById('load').style.display = "none"
-	# 			,520
-	# 	mounted: ->
-	# 		@.mounted = true
-	# 		TrueH = document.documentElement.clientHeight
-	# 		TrueW = document.documentElement.clientWidth
-	# 		timein = setInterval =>
-	# 			@.progress += 2
-	# 			@.progress = @.progressOn if @.progress >= @.progressOn
-	# 			if @.progress >= 100
-	# 				@.progress = 100
-	# 				clearInterval timein
-	# 				_cache = setTimeout =>
-	# 					@.next()
-	# 				,1000
-	# 		,1000/20
+	loading = new Vue
+		el: "#loading"
+		data:
+			progress: 0
+			mounted: false
+			progressOn: 0
+		methods:
+			next: ->
+				document.getElementById('load').className += " fadeOut animated"
+				# _public.note = false
+				main.mounted = true
+				setTimeout ->
+					document.getElementById('load').style.display = "none"
+				,520
+		mounted: ->
+			@.mounted = true
+			TrueH = document.documentElement.clientHeight
+			TrueW = document.documentElement.clientWidth
+			timein = setInterval =>
+				@.progress += 2
+				@.progress = @.progressOn if @.progress >= @.progressOn
+				if @.progress >= 100
+					@.progress = 100
+					clearInterval timein
+					_cache = setTimeout =>
+						@.next()
+					,1000
+			,1000/20
 	
 	init()
 
@@ -192,10 +192,10 @@ init = ->
 			smaller: smaller
 			afterH: if smaller then TrueH*1.15-1029*(TrueW/750) else TrueH-1029*(TrueW/750)
 			wy: false
-			mounted: true
+			mounted: false
 			loading: false
 			pageInfoShow: false
-			pageIndex: 2
+			pageIndex: 1
 			step: 1
 			singerIndex: 1
 			startgame: false
@@ -264,11 +264,6 @@ init = ->
 		methods:
 			closeReg: ->
 				@.registerShow = false
-			playVideo: ->
-				@.videoIndex = 1
-				document.getElementById("video-1").load()
-				document.getElementById("video-1").play()
-				console.log document.getElementById("video-1")
 			endPage: ->
 				main.registerShow = true
 				# showResult()
@@ -359,7 +354,7 @@ init = ->
 				@.ugc = ugc.app.view.toDataURL()
 				image = @.ugc
 				if @.wy
-					folder = "soupdaren"
+					folder = "jeep"
 					data = {
 						image: image
 						folder: folder
@@ -401,12 +396,12 @@ init = ->
 					window.location.href = "https://music.163.com/#/playlist?id=2419204335"
 			nextPage: ->
 				console.log "next page run"
+				if @.nickname is ""
+					return alert "请输入你的名字"
+				letsRock(@.nickname)
 				@.pageIndex = 2
-			openInApp: (type = 0,video = 0,music = 0)->
-				if type is 0
-					CloudMusic.open("https://m.giccoo.com/Landrover24/")
-				else
-					CloudMusic.open("https://m.giccoo.com/Landrover24/?type=#{type}&video=#{video}&music=#{music}")
+			openInApp: ->
+				CloudMusic.open("https://m.giccoo.com/jeep/")
 		# watch:
 		mounted: ->
 			TrueH = document.documentElement.clientHeight

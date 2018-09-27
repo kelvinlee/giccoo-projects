@@ -198,7 +198,7 @@ video,canvas,svg
 	// 3c080f
 	// +hide
 	font-family: "Arial"
-	+b($cdn+"img/loading-bg.jpg",no-repeat,center,center,cover)
+	+b($cdn+"img/loading-bg.jpg",no-repeat,center,center,100% 100%)
 	.content
 		+w
 		+h
@@ -368,7 +368,7 @@ video,canvas,svg
 			+bl(10px,50%)
 			+w(30px)
 			+h(10px)
-			+b($cdn+"img/arrow-up.png",no-repeat,top,center,contain)
+			// +b($cdn+"img/arrow-up.png",no-repeat,top,center,contain)
 			+animation(fadeArrow,0.6s,ease,infinite)
 		&:after
 			content: " "
@@ -376,7 +376,7 @@ video,canvas,svg
 			+bl(22px,50%)
 			+w(30px)
 			+h(10px)
-			+b($cdn+"img/arrow-up.png",no-repeat,top,center,contain)
+			// +b($cdn+"img/arrow-up.png",no-repeat,top,center,contain)
 			+animation(fadeArrow,0.6s,ease,infinite)
 			animation-delay: 300ms
 
@@ -505,30 +505,36 @@ video,canvas,svg
 
 
 .page-1
-	// +b($cdn+"img/homepage-bg.jpg",no-repeat,bottom,center,contain)
-	.bg
-		.before
-			+posa
-			+tl(75%,49%)
-			+iw(316,750,100%)
-			+animation(beforeWheel,1.5s,ease,infinite)
-			transform-origin: 15% 90%
-		.after
-			+posa
-			+tl(53%,66%)
-			+iw(392,750,100%)
-			+animation(beforeWheel,1.5s,ease,infinite)
-			transform-origin: 15% 90%
-			// animation-delay: 500ms
+	+b($cdn+"img/loading-bg.jpg",no-repeat,bottom,center,100% 100%)
 	.content
-		.texts
-			+posr
-			margin-top: 15%
-			.item-2,.item-3
-				+posa
-				+tl
-		.btn
-			margin-top: 2%
+		+h(auto)
+		+transform(translate3d(0,-50%,0))
+		top: 50%
+	.logo
+		+iw(401,750,100%)
+	.title
+		+m(1rem auto)
+	.input
+		+iw(401,750,100%)
+		+m(1rem auto)
+		input
+			+w
+			+font-size(0.8rem)
+			+text-center
+			+m
+			display: inline-block
+			+bc(transparent)
+			border: none
+			outline: none
+			color: #fff
+			border-bottom: dotted 1px #fff
+			line-height: 1.6em
+			+p(0.4em 0)
+			&::placeholder
+				color: #fff
+	.btn
+		margin-top: 8%
+	
 .page-2
 	// font-family: "yrd-Bold"
 	.content

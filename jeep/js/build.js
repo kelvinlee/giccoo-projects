@@ -1,7 +1,8 @@
 var _CDN = "./";
 // var _CDN = "//image.giccoo.com/projects/jeep/";
 var imageList = [
-	_CDN+"img/btn-submit.png",
+	_CDN+"img/btn-start.png",
+	_CDN+"img/loading-text-1.png"
 	
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,

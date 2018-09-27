@@ -44,14 +44,17 @@ class UGC
 		document.getElementById(@.opts.el).appendChild @.app.view
 		console.log "imageList:",imageList.length
 		PIXI.loader.add(imageList)
-		# .use(@.loaditem.bind(@))
-		.load(buildUGC.bind(@))
+		.use(@.loaditem.bind(@))
+		.load(@.build.bind(@))
 		@.default.MH = @.opts.h * 0.65
 	loaditem: ->
 		@.loadNumber++
 		loading.progressOn = parseInt @.loadNumber/(imageList.length)*100
-		# console.log @.loadNumber,loading.progressOn,@.loadNumber is imageList.length
+		console.log "load:",@.loadNumber,loading.progressOn,@.loadNumber is imageList.length
 
 		if @.loadNumber is imageList.length
 			buildUGC.bind(@).call()
+	build: ->
+		console.log "builded"
+		buildUGC.bind(@).call()
 
