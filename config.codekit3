@@ -982,7 +982,7 @@
 		},
 	"/jeep/img/banner.png": {
 		"ft": 32768,
-		"iS": 12729,
+		"iS": 5269,
 		"oA": 0,
 		"oAP": "/jeep/img/banner.png",
 		"oF": 0,
@@ -993,7 +993,7 @@
 		},
 	"/jeep/img/banner_t1.png": {
 		"ft": 32768,
-		"iS": 5398,
+		"iS": 1993,
 		"oA": 0,
 		"oAP": "/jeep/img/banner_t1.png",
 		"oF": 0,
@@ -1004,7 +1004,7 @@
 		},
 	"/jeep/img/banner_t2.png": {
 		"ft": 32768,
-		"iS": 5553,
+		"iS": 2051,
 		"oA": 0,
 		"oAP": "/jeep/img/banner_t2.png",
 		"oF": 0,
@@ -1015,7 +1015,7 @@
 		},
 	"/jeep/img/banner_t3.png": {
 		"ft": 32768,
-		"iS": 5725,
+		"iS": 2119,
 		"oA": 0,
 		"oAP": "/jeep/img/banner_t3.png",
 		"oF": 0,
@@ -1026,7 +1026,7 @@
 		},
 	"/jeep/img/banner_t4.png": {
 		"ft": 32768,
-		"iS": 2285,
+		"iS": 6027,
 		"oA": 0,
 		"oAP": "/jeep/img/banner_t4.png",
 		"oF": 0,
@@ -1037,7 +1037,7 @@
 		},
 	"/jeep/img/banner_t5.png": {
 		"ft": 32768,
-		"iS": 2363,
+		"iS": 2362,
 		"oA": 0,
 		"oAP": "/jeep/img/banner_t5.png",
 		"oF": 0,
@@ -1048,7 +1048,7 @@
 		},
 	"/jeep/img/banner_t6.png": {
 		"ft": 32768,
-		"iS": 2265,
+		"iS": 6018,
 		"oA": 0,
 		"oAP": "/jeep/img/banner_t6.png",
 		"oF": 0,
@@ -1202,7 +1202,7 @@
 		},
 	"/jeep/img/btn_next5.png": {
 		"ft": 32768,
-		"iS": 727,
+		"iS": 4200,
 		"oA": 0,
 		"oAP": "/jeep/img/btn_next5.png",
 		"oF": 0,
@@ -1213,7 +1213,7 @@
 		},
 	"/jeep/img/btn_next6.png": {
 		"ft": 32768,
-		"iS": 727,
+		"iS": 4200,
 		"oA": 0,
 		"oAP": "/jeep/img/btn_next6.png",
 		"oF": 0,
@@ -1246,7 +1246,7 @@
 		},
 	"/jeep/img/homepage-logo.png": {
 		"ft": 32768,
-		"iS": 112077,
+		"iS": 33268,
 		"oA": 0,
 		"oAP": "/jeep/img/homepage-logo.png",
 		"oF": 0,
@@ -1264,6 +1264,17 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"/jeep/img/ico.jpg": {
+		"ft": 16384,
+		"iS": 10094,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/jeep/img/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"/jeep/img/icon-close.png": {
@@ -1312,7 +1323,7 @@
 		},
 	"/jeep/img/loading-text-3.png": {
 		"ft": 32768,
-		"iS": 6497,
+		"iS": 2761,
 		"oA": 0,
 		"oAP": "/jeep/img/loading-text-3.png",
 		"oF": 0,
@@ -1378,7 +1389,7 @@
 		},
 	"/jeep/img/q1bg1.png": {
 		"ft": 32768,
-		"iS": 125534,
+		"iS": 159256,
 		"oA": 0,
 		"oAP": "/jeep/img/q1bg1.png",
 		"oF": 0,
@@ -1389,7 +1400,7 @@
 		},
 	"/jeep/img/q1bg2.jpg": {
 		"ft": 16384,
-		"iS": 28815,
+		"iS": 25658,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/jeep/img/q1bg2.jpg",
@@ -1455,7 +1466,7 @@
 		},
 	"/jeep/img/q2a4.png": {
 		"ft": 32768,
-		"iS": 6231,
+		"iS": 1249,
 		"oA": 0,
 		"oAP": "/jeep/img/q2a4.png",
 		"oF": 0,
@@ -1477,7 +1488,7 @@
 		},
 	"/jeep/img/q2bg2.jpg": {
 		"ft": 16384,
-		"iS": 21714,
+		"iS": 27807,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/jeep/img/q2bg2.jpg",
@@ -1620,7 +1631,7 @@
 		},
 	"/jeep/img/q4bg1.jpg": {
 		"ft": 16384,
-		"iS": 62842,
+		"iS": 51921,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/jeep/img/q4bg1.jpg",
@@ -1642,7 +1653,7 @@
 		},
 	"/jeep/img/q5a1.png": {
 		"ft": 32768,
-		"iS": 2158,
+		"iS": 1310,
 		"oA": 0,
 		"oAP": "/jeep/img/q5a1.png",
 		"oF": 0,
@@ -1664,7 +1675,7 @@
 		},
 	"/jeep/img/q5a3.png": {
 		"ft": 32768,
-		"iS": 1943,
+		"iS": 1134,
 		"oA": 0,
 		"oAP": "/jeep/img/q5a3.png",
 		"oF": 0,
@@ -1675,7 +1686,7 @@
 		},
 	"/jeep/img/q5a4.png": {
 		"ft": 32768,
-		"iS": 1304,
+		"iS": 1286,
 		"oA": 0,
 		"oAP": "/jeep/img/q5a4.png",
 		"oF": 0,
@@ -1684,12 +1695,23 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/jeep/img/q5bg1.jpg": {
+	"/jeep/img/q5bg1.png": {
+		"ft": 32768,
+		"iS": 449122,
+		"oA": 0,
+		"oAP": "/jeep/img/q5bg1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/jeep/img/q5bg2.jpg": {
 		"ft": 16384,
-		"iS": 62842,
+		"iS": 24417,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/jeep/img/q5bg1.jpg",
+		"oAP": "/jeep/img/q5bg2.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -1697,7 +1719,7 @@
 		},
 	"/jeep/img/q5t1.png": {
 		"ft": 32768,
-		"iS": 10197,
+		"iS": 11413,
 		"oA": 0,
 		"oAP": "/jeep/img/q5t1.png",
 		"oF": 0,
@@ -1708,7 +1730,7 @@
 		},
 	"/jeep/img/q6a1.png": {
 		"ft": 32768,
-		"iS": 8563,
+		"iS": 1172,
 		"oA": 0,
 		"oAP": "/jeep/img/q6a1.png",
 		"oF": 0,
@@ -1719,7 +1741,7 @@
 		},
 	"/jeep/img/q6a2.png": {
 		"ft": 32768,
-		"iS": 1069,
+		"iS": 1631,
 		"oA": 0,
 		"oAP": "/jeep/img/q6a2.png",
 		"oF": 0,
@@ -1730,7 +1752,7 @@
 		},
 	"/jeep/img/q6a3.png": {
 		"ft": 32768,
-		"iS": 9912,
+		"iS": 1408,
 		"oA": 0,
 		"oAP": "/jeep/img/q6a3.png",
 		"oF": 0,
@@ -1741,7 +1763,7 @@
 		},
 	"/jeep/img/q6a4.png": {
 		"ft": 32768,
-		"iS": 7170,
+		"iS": 1004,
 		"oA": 0,
 		"oAP": "/jeep/img/q6a4.png",
 		"oF": 0,
@@ -1752,7 +1774,7 @@
 		},
 	"/jeep/img/q6bg1.jpg": {
 		"ft": 16384,
-		"iS": 62842,
+		"iS": 53599,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/jeep/img/q6bg1.jpg",
@@ -1763,7 +1785,7 @@
 		},
 	"/jeep/img/q6t1.png": {
 		"ft": 32768,
-		"iS": 12924,
+		"iS": 14210,
 		"oA": 0,
 		"oAP": "/jeep/img/q6t1.png",
 		"oF": 0,
@@ -1796,7 +1818,7 @@
 		},
 	"/jeep/img/ugc1b.png": {
 		"ft": 32768,
-		"iS": 37873,
+		"iS": 13846,
 		"oA": 0,
 		"oAP": "/jeep/img/ugc1b.png",
 		"oF": 0,
@@ -1807,7 +1829,7 @@
 		},
 	"/jeep/img/ugc1c.png": {
 		"ft": 32768,
-		"iS": 35358,
+		"iS": 15352,
 		"oA": 0,
 		"oAP": "/jeep/img/ugc1c.png",
 		"oF": 0,
@@ -1840,7 +1862,7 @@
 		},
 	"/jeep/img/ugc2c.png": {
 		"ft": 32768,
-		"iS": 38771,
+		"iS": 17467,
 		"oA": 0,
 		"oAP": "/jeep/img/ugc2c.png",
 		"oF": 0,
@@ -1906,7 +1928,7 @@
 		},
 	"/jeep/img/ugc4c.png": {
 		"ft": 32768,
-		"iS": 41180,
+		"iS": 18777,
 		"oA": 0,
 		"oAP": "/jeep/img/ugc4c.png",
 		"oF": 0,
@@ -1961,7 +1983,7 @@
 		},
 	"/jeep/img/ugctitle.png": {
 		"ft": 32768,
-		"iS": 14620,
+		"iS": 11321,
 		"oA": 0,
 		"oAP": "/jeep/img/ugctitle.png",
 		"oF": 0,
