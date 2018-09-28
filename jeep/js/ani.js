@@ -212,7 +212,7 @@ function showResult(){
 }
 
 function goShare(){
-	//=======弹出leads
+	//=======弹出分享
 	QR.visible=true
 	btnShare.visible=false
 	btnLeads.visible=false
@@ -226,7 +226,7 @@ function shareDone(){
 	btnList.visible=true
 }
 function goLeads(){
-	main.openReg(leadsTop)//=======弹出分享
+	main.openReg(leadsTop)//=======弹出leads
 }
 function goList(){
 	//=======弹出歌单
@@ -272,7 +272,7 @@ var t2=new PIXI.Text("选择一首歌hold住此刻凝固的空气",{
         align: 'left'
 })
 
-var t2A=["选择一首歌hold住此刻凝固的空气","选择一首歌hold住此刻抓狂的心情","选择一首歌hold住此刻尴尬的场面","选择一首歌hold住此刻标准的从容","选择一首歌hold住此刻拘谨的场面","",]
+var t2A=["选择一首歌hold住此刻凝固的空气","选择一首歌hold住此刻抓狂的心情","选择一首歌hold住此刻尴尬的场面","选择一首歌hold住此刻标准的从容","选择一首歌hold住此刻拘谨的场面","选择一首歌hold住此刻突然的安静"]
 function setQuestion(){
 	part1.addChild(questionC)
 	for (var i = 1; i <= 6; i++) {
@@ -467,11 +467,17 @@ function setBG4(){
 	setBottom([bg4a])
 }
 //==========================================================================bg5
-var bg5a
+var bg5a,bg5b
 function setBG5(){
-	bg5a=new Sprite(getTe(_CDN+"img/q5bg1.jpg"));
-	bg5.addChild(bg5a)
+	bg5a=new Sprite(getTe(_CDN+"img/q5bg1.png"));
+	bg5b=new Sprite(getTe(_CDN+"img/q5bg2.jpg"));
+	bg5.addChild(bg5b,bg5a)
+
 	setBottom([bg5a])
+	setFullScreen([bg5b],0)
+	//bg1b.x-=50
+	//TweenMax.to(bg1b,2.5,{x:"+=100",repeat:1000,yoyo:true,ease:Linear.easeNone})
+	//==TweenMax.to(bg2a,.1,{y:"+=2",repeat:10000,yoyo:true,ease:Linear.easeNone})
 }
 //==========================================================================bg6
 var bg6a
