@@ -299,8 +299,12 @@ init = ->
 					return alert "请输入2-8个字的姓名"
 				if data.mobile is ""
 					return alert "请输入联系电话"
+				if data.province is "" or data.province is "请选择省份"
+					return alert "请选择省份"
+				if data.city is "" or data.city is "请选择城市"
+					return alert "请选择城市"
 
-				axios.post "#{apiLink}active/jeep/insert/",data
+				axios.post "#{apiLink}active/autoSave/insert/dataBase/jeep/",data
 				.then (msg)=>
 					if msg.data.code is 200
 						@.registerShow = false
@@ -331,6 +335,8 @@ init = ->
 			restart: ->
 				window.location.reload()
 			share: ->
+				@.registerShow = false
+				@.lotteryShow = false
 				console.log "run share"
 				ugc.app.renderer.render ugc.app.stage
 				@.ugc = ugc.app.view.toDataURL()
@@ -370,12 +376,12 @@ init = ->
 			faild: (err)->
 				@.pushed = false
 				@.loading = false
-			openMusic: ->
+			openMusic: (id)->
 				# goList()
 				if CloudMusic.isInApp()
-					CloudMusic.playlist(2419204335)
+					CloudMusic.playlist(id)
 				else
-					window.location.href = "https://music.163.com/#/playlist?id=2419204335"
+					window.location.href = "https://music.163.com/#/playlist?id=#{id}"
 			nextPage: ->
 				console.log "next page run"
 				if @.nickname is ""

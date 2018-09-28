@@ -1305,7 +1305,15 @@ init = function init() {
           return alert("请输入联系电话");
         }
 
-        return axios.post("".concat(apiLink, "active/jeep/insert/"), data).then(function (msg) {
+        if (data.province === "" || data.province === "请选择省份") {
+          return alert("请选择省份");
+        }
+
+        if (data.city === "" || data.city === "请选择城市") {
+          return alert("请选择城市");
+        }
+
+        return axios.post("".concat(apiLink, "active/autoSave/insert/dataBase/jeep/"), data).then(function (msg) {
           if (msg.data.code === 200) {
             _this4.registerShow = false;
             _this4.regSubmited = true;
@@ -1343,6 +1351,8 @@ init = function init() {
       },
       share: function share() {
         var data, folder, image;
+        this.registerShow = false;
+        this.lotteryShow = false;
         console.log("run share");
         ugc.app.renderer.render(ugc.app.stage);
         this.ugc = ugc.app.view.toDataURL();
@@ -1395,12 +1405,12 @@ init = function init() {
         this.pushed = false;
         return this.loading = false;
       },
-      openMusic: function openMusic() {
+      openMusic: function openMusic(id) {
         // goList()
         if (CloudMusic.isInApp()) {
-          return CloudMusic.playlist(2419204335);
+          return CloudMusic.playlist(id);
         } else {
-          return window.location.href = "https://music.163.com/#/playlist?id=2419204335";
+          return window.location.href = "https://music.163.com/#/playlist?id=".concat(id);
         }
       },
       nextPage: function nextPage() {
