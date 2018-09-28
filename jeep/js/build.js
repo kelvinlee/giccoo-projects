@@ -123,7 +123,7 @@ var userName="你"
 function letsRock(_userName){
 	userName=_userName
 	console.log(userName)
-	setup()
+	//setup()
 }
 
 var part1=new PIXI.Container()

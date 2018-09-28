@@ -212,7 +212,7 @@ function showResult(){
 }
 
 function goShare(){
-	//=======弹出leads
+	//=======弹出分享
 	QR.visible=true
 	btnShare.visible=false
 	btnLeads.visible=false
@@ -226,7 +226,7 @@ function shareDone(){
 	btnList.visible=true
 }
 function goLeads(){
-	main.openReg(leadsTop)//=======弹出分享
+	main.openReg(leadsTop)//=======弹出leads
 }
 function goList(){
 	//=======弹出歌单
