@@ -43,7 +43,7 @@ _second = 0
 _testTime = 0
 
 neteaseShareImage = ->
-	title1 = "元气初心音乐馆"
+	title1 = "一首歌HOLD住人生大场面"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
 	redirectUrl = "https://m.giccoo.com/Landrover24/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
@@ -114,8 +114,8 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "元气初心音乐馆"
-				desc: "测测隐藏在音乐世界中的‘你’"
+				title: "一首歌HOLD住人生大场面"
+				desc: "一首歌HOLD住人生大场面"
 				link: "http://m.giccoo.com/jeep/"
 				imgUrl: "http://m.giccoo.com/jeep/img/ico.jpg"
 				success: ->
