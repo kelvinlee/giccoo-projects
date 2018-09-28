@@ -334,6 +334,8 @@ init = ->
 				@.ugc = base64
 			restart: ->
 				window.location.reload()
+			goshare: ->
+				goShare()
 			share: ->
 				@.registerShow = false
 				@.lotteryShow = false
