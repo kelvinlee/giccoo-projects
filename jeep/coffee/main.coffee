@@ -223,7 +223,7 @@ init = ->
 			lr: true
 			form:
 				username: {id:"username", type: "input", label: "姓名", placeholder: "请填写姓名",value: ""}
-				mobile: {id:"mobile", type: "input", label: "电话", placeholder: "请填写电话",value: ""}
+				mobile: {id:"mobile", type: "number", label: "电话", placeholder: "请填写电话",value: ""}
 				province: {id:"province", type: "select", label: "省份", link: "city", value: Object.keys(_citys)[0], options: _citys }
 				city: {id:"city", type: "select", label: "城市", link: "dealer",value: Object.keys(_citys["请选择省份"])[0], options: _citys["请选择省份"] }
 			mask: 1

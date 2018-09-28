@@ -4,6 +4,7 @@ Vue.component "form-grounp",
       <div v-for="item,index in form" class="form-group" :class="\'type-\'+type[item.type]+(item.class?\' \'+item.class:\'\')">
         <label :for="item.id" v-if="item.label">{{item.label}}</label>
         <input :id="item.id" :placeholder="item.placeholder" v-if="type[item.type] == \'input\'" v-model="item.value" type="text">
+        <input :id="item.id" :placeholder="item.placeholder" v-if="type[item.type] == \'number\'" v-model="item.value" type="number">
         <div v-if="type[item.type] == \'select\'" class="select">
           <span>{{getOptionsName(item)}}</span>
           <select :id="item.id" v-model="item.value" v-if="!item.array">
@@ -22,6 +23,7 @@ Vue.component "form-grounp",
       submiting: false
       type:
         input: 'input'
+        number: 'number'
         select: 'select'
         checkbox: 'checkbox'
 
