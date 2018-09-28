@@ -403,22 +403,23 @@ video,canvas,svg
 		+w(90%)
 		+m(5% auto)
 		border-radius: 0px
-		border: solid 1px #8db637
+		border: solid 1px #000
 		+overhide
 		label
 			flex: 3
 			+box
-			+p(0.2rem 0.2rem)
+			+m(0.4em 0.2em)
 			// padding-right: 5%
 			+posr
 			// border-right: solid 1px #555
-			line-height: 1.8em
+			line-height: 1.6em
 			justify-content: center
 			align-items: center
 			box-align: center
-			+bc(#8db637)
+			// +bc(#8db637)
 			+text-center
-			color: #fff
+			color: #000
+			border-right: solid 2px #000
 			img
 				+show-inline
 				vertical-align: middle
@@ -445,7 +446,7 @@ video,canvas,svg
 				+transform(translate3d(0,-30%,0))
 				border-width: 0.5rem;
 				border-style: solid;
-				border-color: #6687b3 transparent transparent transparent;
+				border-color: #f9bb00 transparent transparent transparent;
 			span
 				+box
 				+p(0.2rem 0)
@@ -556,8 +557,9 @@ video,canvas,svg
 	z-index: 109
 	.close
 		+posa
-		+tr(2%,2%)
-		+iw(50,610,100%)
+		+bl(5%,50%)
+		+iw(80,600,100%)
+		+transform(translate3d(-50%,0,0))
 	.small-size
 		+w(80%)
 		margin-top: 10%
@@ -577,26 +579,28 @@ video,canvas,svg
 			+font-size(1.6rem)
 			line-height: 1.6em
 			letter-spacing: 0.1em
+			font-weight: bold
 		p
 			+font-size(0.7rem)
 		h2,p
-			color: #8cb637
+			color: #000
 			+m
 			+text-center
 	.register
 		+w(80%)
 		+posa
-		+tl(50%,50%)
-		+transform(translate3d(-50%,-50%,0))
+		+bl(0%,50%)
+		+box
+		+transform(translate3d(-50%,0,0))
 		+bc(#fff)
 		// border: 4px solid #757575
 		// border-radius: 5px
-		border: solid 0.4rem #ffb04a
+		// border: solid 0.4rem #ffb04a
 		+p(5% 0)
 		// +b($cdn+"img/pop-bg.jpg",no-repeat,top,center,cover)
 		
 		.btn-submit
-			+w(100%)
+			+w(40%)
 			+m(0 auto)
 			margin-top: 2%
 		.btn-item
@@ -608,10 +612,11 @@ video,canvas,svg
 	.lottery
 		+w(80%)
 		+posa
-		+tl(50%,50%)
-		+transform(translate3d(-50%,-50%,0))
+		+bl(0%,50%)
+		+box
+		+transform(translate3d(-50%,0,0))
 		+bc(#fff)
-		border: solid 0.4rem #ffb04a
+		// border: solid 0.4rem #ffb04a
 		// border-radius: 5px
 		+p(15% 0)
 		// +b($cdn+"img/pop-bg-lottery.jpg",no-repeat,center,center,cover)

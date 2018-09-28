@@ -2,8 +2,7 @@ var _CDN = "./";
 // var _CDN = "//image.giccoo.com/projects/jeep/";
 var imageList = [
 	_CDN+"img/btn-start.png",
-	_CDN+"img/loading-text-1.png",
-		_CDN+"img/q1bg1.png",
+	_CDN+"img/q1bg1.png",
 	_CDN+"img/q1bg2.jpg",
 	_CDN+"img/banner.png",
 	_CDN+"img/banner_t1.png",

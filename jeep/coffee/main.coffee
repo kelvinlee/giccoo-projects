@@ -5,6 +5,7 @@
 # @codekit-prepend "../../libs/vue/vue-player"
 # @codekit-prepend "../../libs/vue/vue-register"
 # @codekit-prepend "../../libs/coffee/pixi-base"
+# @codekit-prepend "./dealer"
 # @codekit-prepend "./UGC"
 
 
@@ -40,15 +41,6 @@ _startCache = null
 _runTime = null
 _second = 0
 _testTime = 0
-_citys = [
-	{name:"2018.10.01 武汉", val:"武汉"}
-	{name:"2018.10.11 西安", val:"西安"}
-	{name:"2018.10.20 杭州", val:"杭州"}
-	{name:"2018.10.20 沈阳", val:"沈阳"}
-	{name:"2018.10.27 北京", val:"北京"}
-	{name:"2018.10.27 成都", val:"成都"}
-	{name:"2018.11.03 广州", val:"广州"}
-]
 
 neteaseShareImage = ->
 	title1 = "元气初心音乐馆"
@@ -223,8 +215,8 @@ init = ->
 			form:
 				username: {id:"username", type: "input", label: "姓名", placeholder: "请填写姓名",value: ""}
 				mobile: {id:"mobile", type: "input", label: "电话", placeholder: "请填写电话",value: ""}
-				address: {id:"address", type: "input", label: "收货地址", placeholder: "请填写收货地址",value: ""}
-				type: {id:"type", type: "select", label: "举办地", array: true, placeholder: "请填写举办地",value: _citys[0].val , options: _citys}
+				province: {id:"province", type: "select", label: "省份", link: "city", value: Object.keys(_citys)[0], options: _citys }
+				city: {id:"city", type: "select", label: "城市", link: "dealer",value: Object.keys(_citys["请选择省份"])[0], options: _citys["请选择省份"] }
 			mask: 1
 			text: ""
 			nickname: ""
@@ -254,6 +246,7 @@ init = ->
 			gameEnd: false
 			noreg: false
 			ugcShow: false
+			regH: 100
 		watch:
 			videoIndex: (n,o)->
 				@.videoIndexOld = o
@@ -264,10 +257,9 @@ init = ->
 		methods:
 			closeReg: ->
 				@.registerShow = false
-			endPage: ->
-				main.registerShow = true
-				# showResult()
-				stopAllAudio()
+			openReg: (size)->
+				@.regH = 100 - size
+				@.registerShow = true
 			gameStart: ->
 				@.pageIndex = 2
 				_public.note = false
@@ -307,23 +299,13 @@ init = ->
 					return alert "请输入2-8个字的姓名"
 				if data.mobile is ""
 					return alert "请输入联系电话"
-				if data.address is ""
-					return alert "请输入收货地址"
-				if @.lotteryInfo.id?
-					data.id = @.lotteryInfo.id
-				else
-					return alert "很抱歉没有中奖,可再次参与提高中奖几率"
-				if @.lotteryInfo.random?
-					data.random = @.lotteryInfo.random
-				else
-					return alert "很抱歉没有中奖,可再次参与提高中奖几率"
 
-				axios.post "#{apiLink}active/soupdaren/update/",data
+				axios.post "#{apiLink}active/jeep/insert/",data
 				.then (msg)=>
 					if msg.data.code is 200
-						alert "填写成功"
 						@.registerShow = false
 						@.regSubmited = true
+						@.lotteryShow = true
 						# if @.gameEnd
 						# 	@.share()
 					else
@@ -414,7 +396,7 @@ init = ->
 			version = CloudMusic.getClientVersion().split(".")
 			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH})
 
-			@.getLotteryList()
+			# @.getLotteryList()
 			# listenAudio()
 			# if parseInt($_GET["type"]) is 2
 			# 	@.regSubmited = true

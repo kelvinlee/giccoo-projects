@@ -70,11 +70,11 @@
       <transition name="page-fade">
         <div v-show="registerShow" class="pop">
           <div class="content">
-            <div class="register">
+            <div :style="{height: regH+'%'}" class="register">
               <div @click="registerShow = false" class="close"><img src="./img/icon-close.png"></div>
               <div class="title">
-                <h2>恭喜你中奖了</h2>
-                <p>获得元气音乐节门票一张</p>
+                <h2>留下您的足迹</h2>
+                <p>有机会赢取Jeep专属VIP好礼</p>
               </div>
               <form-grounp v-bind:form="form" v-on:submit="submit" class="form"></form-grounp>
             </div>
@@ -84,13 +84,14 @@
       <transition name="page-fade">
         <div v-show="lotteryShow" class="pop">
           <div class="content">
-            <div class="lottery faild">
+            <div :style="{height: regH+'%'}" class="lottery faild">
               <div @click="lotteryShow = false" class="close"><img src="./img/icon-close.png"></div>
               <div class="title">
-                <h2>很遗憾未中奖</h2>
-                <p>多尝试可以增加中奖几率哦</p>
+                <h2>感谢您的参与！</h2>
+                <p>我们将在活动结束后</p>
+                <p>10个工作日内短信通知获奖结果</p>
               </div>
-              <div @click="restart" class="btn"><img src="./img/btn-restart.png"></div>
+              <div @click="share" style="width: 60%" class="btn"><img src="./img/btn-share.png"></div>
             </div>
           </div>
         </div>
