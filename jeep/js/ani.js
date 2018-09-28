@@ -217,12 +217,20 @@ function goShare(){
 	btnShare.visible=false
 	btnLeads.visible=false
 	btnList.visible=false
+	main.share()
+}
+function shareDone(){
+	QR.visible=false
+	btnShare.visible=true
+	btnLeads.visible=true
+	btnList.visible=true
 }
 function goLeads(){
 	main.openReg(leadsTop)//=======弹出分享
 }
 function goList(){
 	//=======弹出歌单
+	main.openMusic(1111111)
 }
 //========================================================================== 生成中。。。
 var waitingC=new PIXI.Container()
