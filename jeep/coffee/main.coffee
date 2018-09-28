@@ -110,12 +110,21 @@ window.onload = ->
 
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
+
+		CloudMusic.setShareData
+			name: 'jeep',
+			title: '一首歌HOLD住人生大场面',
+			subTitle: '测测你的音乐情商属性',
+			text: '一首歌HOLD住人生大场面',
+			picUrl: 'http://m.giccoo.com/jeep/img/ico.jpg',
+			link: 'http://m.giccoo.com/jeep/'
+
 	else
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
 				title: "一首歌HOLD住人生大场面"
-				desc: "一首歌HOLD住人生大场面"
+				desc: "测测你的音乐情商属性"
 				link: "http://m.giccoo.com/jeep/"
 				imgUrl: "http://m.giccoo.com/jeep/img/ico.jpg"
 				success: ->
@@ -127,11 +136,11 @@ window.onload = ->
 			wx.onMenuShareQQ shareContent
 			wx.onMenuShareWeibo shareContent
 
-	# _public = new Vue
-	# 	el: "#public"
-	# 	data:
-	# 		note: true
-	# 		playing: false
+	_public = new Vue
+		el: "#public"
+		data:
+			note: true
+			playing: false
 
 	loading = new Vue
 		el: "#loading"
@@ -142,7 +151,7 @@ window.onload = ->
 		methods:
 			next: ->
 				document.getElementById('load').className += " fadeOut animated"
-				# _public.note = false
+				_public.note = false
 				main.mounted = true
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
@@ -214,7 +223,7 @@ init = ->
 			lr: true
 			form:
 				username: {id:"username", type: "input", label: "姓名", placeholder: "请填写姓名",value: ""}
-				mobile: {id:"mobile", type: "input", label: "电话", placeholder: "请填写电话",value: ""}
+				mobile: {id:"mobile", type: "number", label: "电话", placeholder: "请填写电话",value: ""}
 				province: {id:"province", type: "select", label: "省份", link: "city", value: Object.keys(_citys)[0], options: _citys }
 				city: {id:"city", type: "select", label: "城市", link: "dealer",value: Object.keys(_citys["请选择省份"])[0], options: _citys["请选择省份"] }
 			mask: 1
@@ -380,6 +389,7 @@ init = ->
 				@.loading = false
 			openMusic: (id)->
 				# goList()
+				_public.$children[0].pause()
 				if CloudMusic.isInApp()
 					CloudMusic.playlist(id)
 				else

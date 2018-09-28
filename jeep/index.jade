@@ -37,8 +37,8 @@ block content
     .qr
       img(src="#{url}/img/qrcode.png")
       .text 请使用手机扫描二维码参与活动
-  //- .public#public
-    //- player(icon="true",src="#{url}/mp3/bgm.mp3")
+  .public#public
+    player(icon="true",src="#{url}/mp3/bgm.mp3")
     //- .player(:class="{play: playing, pause: !playing}",@click="playing = !playing")
       .icon-play(:class="{play: playing, pause: !playing}")
     transition(name="page-fade")
@@ -128,8 +128,8 @@ block js
   script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js")
-  script(src="//s3.music.126.net/static/mob/ntes.id.js")
-  script(src="//s5.music.126.net/static_public/5a1b70ea0180f6ca7295a59d/js/music-jssdk-1.0.3.js")
+  script(src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js")
+  script(src="//image.giccoo.com/projects/genki/js/ntes.id.js")
   //- script(src="/libs/js/min/bump-min.js")
   script(src="js/public_funciton.js")
   script(src="js/build.js?v=1")
