@@ -1288,6 +1288,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/jeep/img/icon-play.png": {
+		"ft": 32768,
+		"iS": 3407,
+		"oA": 0,
+		"oAP": "/jeep/img/icon-play.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/jeep/img/icon-stop.png": {
+		"ft": 32768,
+		"iS": 3243,
+		"oA": 0,
+		"oAP": "/jeep/img/icon-stop.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/jeep/img/loading-bg.jpg": {
 		"ft": 16384,
 		"iS": 83002,
@@ -2101,6 +2123,13 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"/jeep/mp3/bgm.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/jeep/mp3/bgm.mp3",
+		"oF": 0
 		},
 	"/jeep/sass/base.sass": {
 		"aP": 1,

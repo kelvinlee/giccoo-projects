@@ -926,56 +926,6 @@ $_GET = function () {
   }
 }();
 
-Container = PIXI.Container;
-ParticleContainer = PIXI.ParticleContainer;
-autoDetectRenderer = PIXI.autoDetectRenderer;
-loader = PIXI.loader;
-resources = PIXI.loader.resources;
-TextureCache = PIXI.utils.TextureCache;
-Texture = PIXI.Texture;
-Sprite = PIXI.Sprite;
-Graphics = PIXI.Graphics;
-resource = PIXI.loader.resources;
-Text = PIXI.Text;
-AnimatedSprite = PIXI.extras.AnimatedSprite;
-
-getTe = function getTe(id) {
-  return resource[id].texture;
-};
-
-getId = function getId(id, link) {
-  return loader.resources[link].textures[id];
-}; // for fix ios 8 less
-
-
-if (Number.isInteger == null) {
-  Number.isInteger = function (int) {
-    return int >= 0;
-  };
-}
-
-$_GET = function () {
-  var get, j, len2, m, u, url;
-  url = window.document.location.href.toString();
-  u = url.split('?');
-
-  if (typeof u[1] === 'string') {
-    u = u[1].split('&');
-    get = {};
-    console.log(u);
-
-    for (m = 0, len2 = u.length; m < len2; m++) {
-      i = u[m];
-      j = i.split('=');
-      get[j[0]] = j[1];
-    }
-
-    return get;
-  } else {
-    return {};
-  }
-}();
-
 Vue.component("player", {
   template: '<div class="player" :class="{play: playing, pause: !playing}" @click="change"> <div class="icon-play" :class="{play: playing, pause: !playing}"> <svg v-if="!icon" v-show="!playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-39"></use><path class="ytp-svg-fill" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"></path></svg> <svg v-if="!icon" v-show="playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-40"></use><path class="ytp-svg-fill" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z"></path></svg> </div> <audio :src="src" :autoplay="autoplay" :preload="preload" :loop="loop"></audio> <img v-if="thumb" :src="thumb" /> </div>',
   data: function data() {
@@ -1215,7 +1165,308 @@ IsPC = function IsPC() {
   }
 
   return flag;
-}; // @codekit-prepend "coffee/css3Prefix"
+};
+
+$_GET = function () {
+  var get, j, len2, m, u, url;
+  url = window.document.location.href.toString();
+  u = url.split('?');
+
+  if (typeof u[1] === 'string') {
+    u = u[1].split('&');
+    get = {};
+    console.log(u);
+
+    for (m = 0, len2 = u.length; m < len2; m++) {
+      i = u[m];
+      j = i.split('=');
+      get[j[0]] = j[1];
+    }
+
+    return get;
+  } else {
+    return {};
+  }
+}();
+
+Vue.component("player", {
+  template: '<div class="player" :class="{play: playing, pause: !playing}" @click="change"> <div class="icon-play" :class="{play: playing, pause: !playing}"> <svg v-if="!icon" v-show="!playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-39"></use><path class="ytp-svg-fill" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"></path></svg> <svg v-if="!icon" v-show="playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-40"></use><path class="ytp-svg-fill" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z"></path></svg> </div> <audio :src="src" :autoplay="autoplay" :preload="preload" :loop="loop"></audio> <img v-if="thumb" :src="thumb" /> </div>',
+  data: function data() {
+    return {
+      playing: false,
+      stoped: false
+    };
+  },
+  props: {
+    name: {
+      default: false
+    },
+    src: {
+      default: "./mp3/bgm.mp3"
+    },
+    thumb: {
+      default: false
+    },
+    autoplay: {
+      default: false
+    },
+    preload: {
+      default: false
+    },
+    loop: {
+      default: false
+    },
+    callback: {
+      default: false
+    },
+    icon: {
+      default: false
+    }
+  },
+  methods: {
+    play: function play() {
+      var temp;
+      temp = this.$emit('play', this);
+      return this.playing = true;
+    },
+    pause: function pause() {
+      var temp;
+      temp = this.$emit('pause', this);
+      this.audio.pause();
+      return this.playing = false;
+    },
+    ended: function ended() {
+      return this.playing = false;
+    },
+    change: function change() {
+      if (this.playing) {
+        this.audio.pause();
+        return this.stoped = true;
+      } else {
+        this.audio.play();
+        this.stoped = false;
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "adidas-originals-eqt", this.name, "play", "-"]);
+      }
+    }
+  },
+  // computed:
+  mounted: function mounted(el) {
+    console.log(this.name);
+    this.audio = this.$el.children[1]; // console.log @audio
+    // @audioOther = @$el.children[2]
+
+    this.audio.addEventListener("pause", this.pause.bind(this));
+    this.audio.addEventListener("play", this.play.bind(this));
+    return this.audio.addEventListener("ended", this.ended.bind(this));
+  }
+}); // @audio.play()
+// console.log @audio,@audioOther,@playing
+
+Container = PIXI.Container;
+ParticleContainer = PIXI.ParticleContainer;
+autoDetectRenderer = PIXI.autoDetectRenderer;
+loader = PIXI.loader;
+resources = PIXI.loader.resources;
+TextureCache = PIXI.utils.TextureCache;
+Texture = PIXI.Texture;
+Sprite = PIXI.Sprite;
+Graphics = PIXI.Graphics;
+resource = PIXI.loader.resources;
+Text = PIXI.Text;
+AnimatedSprite = PIXI.extras.AnimatedSprite;
+
+getTe = function getTe(id) {
+  return resource[id].texture;
+};
+
+getId = function getId(id, link) {
+  return loader.resources[link].textures[id];
+}; // for fix ios 8 less
+
+
+if (Number.isInteger == null) {
+  Number.isInteger = function (int) {
+    return int >= 0;
+  };
+}
+
+loadWechatConfig = function loadWechatConfig() {
+  var hm, s, url;
+  url = encodeURIComponent(window.location.href.split("#")[0]);
+  hm = document.createElement('script');
+  hm.src = "//api.giccoo.com/api/config?url=" + url;
+  s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(hm, s);
+};
+
+Vue.component("form-grounp", {
+  template: '<div class="form"> <div v-for="item,index in form" class="form-group" :class="\'type-\'+type[item.type]+(item.class?\' \'+item.class:\'\')"> <label :for="item.id" v-if="item.label">{{item.label}}</label> <input :id="item.id" :placeholder="item.placeholder" v-if="type[item.type] == \'input\'" v-model="item.value" type="text"> <div v-if="type[item.type] == \'select\'" class="select"> <span>{{getOptionsName(item)}}</span> <select :id="item.id" v-model="item.value" v-if="!item.array"> <option v-for="(item, key) in item.options" :disabled="!item" :value="key">{{key}}</option> </select> <select :id="item.id" v-model="item.value" v-if="item.array"> <option v-for="(item, index) in item.options" :disabled="item.disabled" :value="item.val">{{item.name}}</option> </select> </div> </div> <div @click="submit" class="btn-submit"><img src="./img/btn-submit.png" /></div> </div>',
+  data: function data() {
+    return {
+      submiting: false,
+      type: {
+        input: 'input',
+        select: 'select',
+        checkbox: 'checkbox'
+      }
+    };
+  },
+  props: {
+    form: {
+      default: {}
+    }
+  },
+  watch: {
+    form: {
+      handler: function handler(v) {
+        return console.log("form:", v);
+      },
+      deep: true
+    }
+  },
+  methods: {
+    getOptionsName: function getOptionsName(item) {
+      var it, len2, m, ref;
+
+      if (!item.array) {
+        if (item.value === "") {
+          return Object.keys(item.options)[0];
+        }
+
+        return item.value;
+      } else {
+        ref = item.options;
+
+        for (m = 0, len2 = ref.length; m < len2; m++) {
+          it = ref[m];
+
+          if (it.val === item.value) {
+            return it.name;
+          }
+        }
+
+        return item.options[0].name;
+      }
+    },
+    submit: function submit(evt) {
+      var data, k, ref, v;
+      data = {};
+      console.log("first Time..");
+      ref = this.form;
+
+      for (k in ref) {
+        v = ref[k];
+        data[k] = v.value;
+      } // console.log "submit:",data
+
+
+      return this.$emit("submit", data);
+    }
+  },
+  mounted: function mounted(el) {
+    var k, ref, results, self, v; // console.log "el:",this,this.form
+
+    self = this;
+    ref = this.form;
+    results = [];
+
+    for (k in ref) {
+      v = ref[k];
+
+      if (v.type === "select") {
+        console.log("form.".concat(k, ".options"));
+        this.$watch("form.".concat(k, ".options"), function (val) {
+          return console.log("changed:", val);
+        }, {
+          deep: true
+        });
+      }
+
+      if (v.link != null && v.type === "select") {
+        results.push(this.$watch("form.".concat(k), function (n, o) {
+          var m, ref1, results1;
+
+          if (self.form[n.link] == null) {
+            return false;
+          }
+
+          self.form[n.link].options = n.options[n.value];
+
+          if (self.form[n.link].array) {
+            console.log(n.link, self.form[n.link].value, n.options[n.value][0].val);
+            return self.form[n.link].value = n.options[n.value][0].val;
+          } else {
+            results1 = [];
+
+            for (i = m = 0, ref1 = Object.keys(n.options[n.value]).length; 0 <= ref1 ? m < ref1 : m > ref1; i = 0 <= ref1 ? ++m : --m) {
+              if (n.options[n.value][Object.keys(n.options[n.value])[i]]) {
+                self.form[n.link].value = Object.keys(n.options[n.value])[i];
+                break;
+              } else {
+                results1.push(void 0);
+              }
+            }
+
+            return results1;
+          }
+        }, {
+          deep: true
+        }));
+      } else {
+        results.push(void 0);
+      }
+    }
+
+    return results;
+  }
+});
+
+IsPC = function IsPC() {
+  var Agents, flag, userAgentInfo, v;
+  userAgentInfo = navigator.userAgent;
+  Agents = new Array('Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod');
+  flag = true;
+  v = 0;
+
+  while (v < Agents.length) {
+    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+      flag = false;
+      break;
+    }
+
+    v++;
+  }
+
+  return flag;
+};
+
+Container = PIXI.Container;
+ParticleContainer = PIXI.ParticleContainer;
+autoDetectRenderer = PIXI.autoDetectRenderer;
+loader = PIXI.loader;
+resources = PIXI.loader.resources;
+TextureCache = PIXI.utils.TextureCache;
+Texture = PIXI.Texture;
+Sprite = PIXI.Sprite;
+Graphics = PIXI.Graphics;
+resource = PIXI.loader.resources;
+Text = PIXI.Text;
+AnimatedSprite = PIXI.extras.AnimatedSprite;
+
+getTe = function getTe(id) {
+  return resource[id].texture;
+};
+
+getId = function getId(id, link) {
+  return loader.resources[link].textures[id];
+}; // for fix ios 8 less
+
+
+if (Number.isInteger == null) {
+  Number.isInteger = function (int) {
+    return int >= 0;
+  };
+} // @codekit-prepend "coffee/css3Prefix"
 // @codekit-prepend "../../libs/coffee/loadWechatConfig"
 // @codekit-prepend "../../libs/coffee/IsPC"
 // @codekit-prepend "../../libs/coffee/get"
@@ -1357,13 +1608,21 @@ window.onload = function () {
 
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
+    CloudMusic.setShareData({
+      name: 'jeep',
+      title: '一首歌HOLD住人生大场面',
+      subTitle: '测测你的音乐情商属性',
+      text: '一首歌HOLD住人生大场面',
+      picUrl: 'http://m.giccoo.com/jeep/img/ico.jpg',
+      link: 'http://m.giccoo.com/jeep/'
+    });
   } else {
     loadWechatConfig();
     wx.ready(function () {
       var shareContent;
       shareContent = {
         title: "一首歌HOLD住人生大场面",
-        desc: "一首歌HOLD住人生大场面",
+        desc: "测测你的音乐情商属性",
         link: "http://m.giccoo.com/jeep/",
         imgUrl: "http://m.giccoo.com/jeep/img/ico.jpg",
         success: function success() {},
@@ -1376,13 +1635,15 @@ window.onload = function () {
       wx.onMenuShareQQ(shareContent);
       return wx.onMenuShareWeibo(shareContent);
     });
-  } // _public = new Vue
-  // 	el: "#public"
-  // 	data:
-  // 		note: true
-  // 		playing: false
+  }
 
-
+  _public = new Vue({
+    el: "#public",
+    data: {
+      note: true,
+      playing: false
+    }
+  });
   loading = new Vue({
     el: "#loading",
     data: {
@@ -1392,8 +1653,8 @@ window.onload = function () {
     },
     methods: {
       next: function next() {
-        document.getElementById('load').className += " fadeOut animated"; // _public.note = false
-
+        document.getElementById('load').className += " fadeOut animated";
+        _public.note = false;
         main.mounted = true;
         return setTimeout(function () {
           return document.getElementById('load').style.display = "none";
@@ -1732,6 +1993,8 @@ init = function init() {
       },
       openMusic: function openMusic(id) {
         // goList()
+        _public.$children[0].pause();
+
         if (CloudMusic.isInApp()) {
           return CloudMusic.playlist(id);
         } else {

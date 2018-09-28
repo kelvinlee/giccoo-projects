@@ -110,12 +110,21 @@ window.onload = ->
 
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
+
+		CloudMusic.setShareData
+			name: 'jeep',
+			title: '一首歌HOLD住人生大场面',
+			subTitle: '测测你的音乐情商属性',
+			text: '一首歌HOLD住人生大场面',
+			picUrl: 'http://m.giccoo.com/jeep/img/ico.jpg',
+			link: 'http://m.giccoo.com/jeep/'
+
 	else
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
 				title: "一首歌HOLD住人生大场面"
-				desc: "一首歌HOLD住人生大场面"
+				desc: "测测你的音乐情商属性"
 				link: "http://m.giccoo.com/jeep/"
 				imgUrl: "http://m.giccoo.com/jeep/img/ico.jpg"
 				success: ->
@@ -127,11 +136,11 @@ window.onload = ->
 			wx.onMenuShareQQ shareContent
 			wx.onMenuShareWeibo shareContent
 
-	# _public = new Vue
-	# 	el: "#public"
-	# 	data:
-	# 		note: true
-	# 		playing: false
+	_public = new Vue
+		el: "#public"
+		data:
+			note: true
+			playing: false
 
 	loading = new Vue
 		el: "#loading"
@@ -142,7 +151,7 @@ window.onload = ->
 		methods:
 			next: ->
 				document.getElementById('load').className += " fadeOut animated"
-				# _public.note = false
+				_public.note = false
 				main.mounted = true
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
@@ -380,6 +389,7 @@ init = ->
 				@.loading = false
 			openMusic: (id)->
 				# goList()
+				_public.$children[0].pause()
 				if CloudMusic.isInApp()
 					CloudMusic.playlist(id)
 				else
