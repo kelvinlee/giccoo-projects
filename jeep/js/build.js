@@ -7,7 +7,8 @@ var imageList = [
 	_CDN+"img/q2bg2.jpg",
 	_CDN+"img/q3bg1.jpg",
 	_CDN+"img/q4bg1.jpg",
-	_CDN+"img/q5bg1.jpg",
+	_CDN+"img/q5bg1.png",
+	_CDN+"img/q5bg2.jpg",
 	_CDN+"img/q6bg1.jpg",
 	_CDN+"img/banner.png",
 	_CDN+"img/banner_t1.png",
@@ -123,7 +124,7 @@ var userName="你"
 function letsRock(_userName){
 	userName=_userName
 	console.log(userName)
-	//setup()
+	setup()
 }
 
 var part1=new PIXI.Container()
