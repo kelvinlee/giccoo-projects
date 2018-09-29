@@ -434,10 +434,10 @@ function setBG1(){
 	bg1.addChild(bg1b,bg1a)
 
 	setBottom([bg1a])
-	setFullScreen([bg1b],0)
-	//bg1b.x-=50
-	//TweenMax.to(bg1b,2.5,{x:"+=100",repeat:1000,yoyo:true,ease:Linear.easeNone})
-	//==TweenMax.to(bg1a,.1,{y:"+=2",repeat:10000,yoyo:true,ease:Linear.easeNone})
+	setFullScreen([bg1b],50)
+	bg1b.x-=50
+	TweenMax.to(bg1b,5.5,{x:"+=100",repeat:1000,yoyo:true,ease:Linear.easeNone})
+	TweenMax.to(bg1a,.1,{y:"+=2",repeat:10000,yoyo:true,ease:Linear.easeNone})
 }
 
 //==========================================================================bg2
@@ -448,25 +448,60 @@ function setBG2(){
 	bg2.addChild(bg2b,bg2a)
 
 	setBottom([bg2a])
-	setFullScreen([bg2b],0)
-	//bg1b.x-=50
-	//TweenMax.to(bg1b,2.5,{x:"+=100",repeat:1000,yoyo:true,ease:Linear.easeNone})
-	//==TweenMax.to(bg2a,.1,{y:"+=2",repeat:10000,yoyo:true,ease:Linear.easeNone})
+	setFullScreen([bg2b],50)
+	bg2b.x-=50
+	//bg2b.y-=20
+	TweenMax.to(bg2b,5.5,{x:"+=100",repeat:1000,yoyo:true,ease:Linear.easeNone})
+	//TweenMax.to(bg2b,9.5,{y:"+=40",repeat:1000,yoyo:true,ease:Linear.easeNone})
+	TweenMax.to(bg2a,.1,{y:"+=2",repeat:10000,yoyo:true,ease:Linear.easeNone})
 }
 
 //==========================================================================bg3
-var bg3a
+var bg3a,bg3b,bg3c
 function setBG3(){
-	bg3a=new Sprite(getTe(_CDN+"img/q3bg1.jpg"));
-	bg3.addChild(bg3a)
-	setBottom([bg3a])
+	bg3a=new Sprite(getTe(_CDN+"img/q3bg1a.jpg"));
+	bg3b=new Sprite(getTe(_CDN+"img/q3bg1b.jpg"));
+	bg3c=new Sprite(getTe(_CDN+"img/q3bg1c.jpg"));
+	bg3.addChild(bg3a,bg3b,bg3c)
+	setBottom([bg3a,bg3b,bg3c])
+	//TweenMax.to(bg3b,1,{alpha:0,repeat:10000,yoyo:false,repeatDelay:1})
+	TweenMax.to(bg3c,.1,{alpha:0,repeat:10000,yoyo:true,repeatDelay:1,delay:1})
 }
 //==========================================================================bg4
-var bg4a
+var bg4a,rain1,rain2,rain3,FL
 function setBG4(){
 	bg4a=new Sprite(getTe(_CDN+"img/q4bg1.jpg"));
-	bg4.addChild(bg4a)
-	setBottom([bg4a])
+	rain1=new Sprite(getTe(_CDN+"img/q4rain1.png"));
+	rain2=new Sprite(getTe(_CDN+"img/q4rain2.png"));
+	rain3=new Sprite(getTe(_CDN+"img/q4rain3.png"));
+
+	FL=new PIXI.Graphics()
+	FL.beginFill(0xffffff)
+	FL.drawRect(0,0,640,stageH)
+
+	bg4.addChild(bg4a,rain1,rain2,rain3,FL)
+	setBottom([bg4a,rain1,rain2,rain3])
+	rain2.x-=20
+	rain3.x+=20
+	rain1.alpha=rain2.alpha=rain3.alpha=0
+	TweenMax.to(rain1,.6,{y:"+=150",repeat:10000,yoyo:false,repeatDelay:.0,delay:0,ease:Sine.easeIn})
+	TweenMax.to(rain2,.6,{y:"+=150",repeat:10000,yoyo:false,repeatDelay:.0,delay:.2,ease:Sine.easeIn})
+	TweenMax.to(rain3,.6,{y:"+=150",repeat:10000,yoyo:false,repeatDelay:.0,delay:.4,ease:Sine.easeIn})
+
+	TweenMax.to(rain1,.3,{alpha:1,repeat:10000,yoyo:true,repeatDelay:.0,delay:0,ease:Sine.easeIn})
+	TweenMax.to(rain2,.3,{alpha:1,repeat:10000,yoyo:true,repeatDelay:.0,delay:.2,ease:Sine.easeIn})
+	TweenMax.to(rain3,.3,{alpha:1,repeat:10000,yoyo:true,repeatDelay:.0,delay:.4,ease:Sine.easeIn})
+
+	FL.alpha=0
+	TweenMax.to(bg4a,1000000,{x:0,onUpdate:function(){
+		if(Math.random()<1/200){
+			//FL.alpha=Math.random()*.5+.5
+			TweenMax.set(FL,{alpha:Math.random()*.5+.3})
+			TweenMax.to(FL,Math.random()*.7+.3,{alpha:0})
+		}else{
+			//FL.alpha=0
+		}
+	}})
 }
 //==========================================================================bg5
 var bg5a,bg5b
@@ -476,15 +511,27 @@ function setBG5(){
 	bg5.addChild(bg5b,bg5a)
 
 	setBottom([bg5a])
-	setFullScreen([bg5b],0)
-	//bg1b.x-=50
-	//TweenMax.to(bg1b,2.5,{x:"+=100",repeat:1000,yoyo:true,ease:Linear.easeNone})
-	//==TweenMax.to(bg2a,.1,{y:"+=2",repeat:10000,yoyo:true,ease:Linear.easeNone})
+	setFullScreen([bg5b],50)
+	bg5b.x-=50
+	TweenMax.to(bg5b,5.5,{x:"+=100",repeat:1000,yoyo:true,ease:Linear.easeNone})
+	TweenMax.to(bg5a,.1,{y:"+=2",repeat:10000,yoyo:true,ease:Linear.easeNone})
 }
 //==========================================================================bg6
-var bg6a
+var bg6a,bg6b,q6c1,q6c2
 function setBG6(){
-	bg6a=new Sprite(getTe(_CDN+"img/q6bg1.jpg"));
-	bg6.addChild(bg6a)
-	setBottom([bg6a])
+	bg6a=new Sprite(getTe(_CDN+"img/q6bg1.png"));
+	bg6b=new Sprite(getTe(_CDN+"img/q6bg2.jpg"));
+	q6c1=new Sprite(getTe(_CDN+"img/q6cloud1.png"));
+	q6c2=new Sprite(getTe(_CDN+"img/q6cloud2.png"));
+	bg6.addChild(bg6b,q6c1,q6c2,bg6a)
+
+	setBottom([bg6a,q6c1,q6c2])
+	setFullScreen([bg6b],0)
+	q6c1.x=-320
+	q6c2.x=-220
+	TweenMax.to(q6c1,14,{x:960,repeat:100000,ease:Linear.easeNone})
+	TweenMax.to(q6c2,30,{x:860,repeat:100000,ease:Linear.easeNone,delay:3})
+
+	
+	TweenMax.to(q6c2,2.5,{y:"-=10",repeat:100000,yoyo:true})
 }
