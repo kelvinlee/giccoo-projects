@@ -122,6 +122,9 @@ window.onload = ->
 	else
 		loadWechatConfig()
 		wx.ready ->
+			# console.log "ready:",_public?, _public.$children[0]
+			# _public.$children[0].change()
+
 			shareContent =
 				title: "一首歌HOLD住人生大场面"
 				desc: "测测你的音乐情商属性"
@@ -141,6 +144,9 @@ window.onload = ->
 		data:
 			note: true
 			playing: false
+		mounted: ->
+			document.addEventListener "WeixinJSBridgeReady", ->
+				_public.$children[0].change()
 
 	loading = new Vue
 		el: "#loading"
