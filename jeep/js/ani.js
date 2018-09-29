@@ -172,9 +172,9 @@ function setResult(){
 
 	btnShare.position.set(107-14-12,stageH/2+346+stageH/2-500-14)
 	btnLeads.position.set(333-14+12,stageH/2+346+stageH/2-500-14)
-	btnList.position.set(170 ,stageH/2+381+stageH/2-500)
+	btnList.position.set(170 ,stageH/2+381+stageH/2-500+2)
 
-	resultC.addChild(btnShare,btnLeads,btnList)
+	resultC.addChild(btnList,btnShare,btnLeads)
 	resultC.visible=false
 
 	//showResult()
