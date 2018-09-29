@@ -363,13 +363,15 @@ function selectAnswer(_e){
 	for (var i = 0; i < 4; i++) {
 		if(_e.target==btnA[i]){
 			console.log("选"+i)
-			TweenMax.to(btnA[i],.2,{alpha:1})
+			TweenMax.set(btnA[i],{alpha:1})
+			//TweenMax.to(btnA[i],.2,{alpha:1})
 			nowAnswer=i
 		}else{
 			TweenMax.to(btnA[i],.5,{alpha:0})
 		}
 	};
-	nextC.visible=true
+	//nextC.visible=true
+	goNext()	
 }
 
 
