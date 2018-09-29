@@ -905,151 +905,6 @@ loadWechatConfig = function loadWechatConfig() {
   s.parentNode.insertBefore(hm, s);
 };
 
-$_GET = function () {
-  var get, j, len2, m, u, url;
-  url = window.document.location.href.toString();
-  u = url.split('?');
-
-  if (typeof u[1] === 'string') {
-    u = u[1].split('&');
-    get = {};
-    console.log(u);
-
-    for (m = 0, len2 = u.length; m < len2; m++) {
-      i = u[m];
-      j = i.split('=');
-      get[j[0]] = j[1];
-    }
-
-    return get;
-  } else {
-    return {};
-  }
-}();
-
-Container = PIXI.Container;
-ParticleContainer = PIXI.ParticleContainer;
-autoDetectRenderer = PIXI.autoDetectRenderer;
-loader = PIXI.loader;
-resources = PIXI.loader.resources;
-TextureCache = PIXI.utils.TextureCache;
-Texture = PIXI.Texture;
-Sprite = PIXI.Sprite;
-Graphics = PIXI.Graphics;
-resource = PIXI.loader.resources;
-Text = PIXI.Text;
-AnimatedSprite = PIXI.extras.AnimatedSprite;
-
-getTe = function getTe(id) {
-  return resource[id].texture;
-};
-
-getId = function getId(id, link) {
-  return loader.resources[link].textures[id];
-}; // for fix ios 8 less
-
-
-if (Number.isInteger == null) {
-  Number.isInteger = function (int) {
-    return int >= 0;
-  };
-}
-
-$_GET = function () {
-  var get, j, len2, m, u, url;
-  url = window.document.location.href.toString();
-  u = url.split('?');
-
-  if (typeof u[1] === 'string') {
-    u = u[1].split('&');
-    get = {};
-    console.log(u);
-
-    for (m = 0, len2 = u.length; m < len2; m++) {
-      i = u[m];
-      j = i.split('=');
-      get[j[0]] = j[1];
-    }
-
-    return get;
-  } else {
-    return {};
-  }
-}();
-
-Vue.component("player", {
-  template: '<div class="player" :class="{play: playing, pause: !playing}" @click="change"> <div class="icon-play" :class="{play: playing, pause: !playing}"> <svg v-if="!icon" v-show="!playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-39"></use><path class="ytp-svg-fill" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"></path></svg> <svg v-if="!icon" v-show="playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-40"></use><path class="ytp-svg-fill" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z"></path></svg> </div> <audio :src="src" :autoplay="autoplay" :preload="preload" :loop="loop"></audio> <img v-if="thumb" :src="thumb" /> </div>',
-  data: function data() {
-    return {
-      playing: false,
-      stoped: false
-    };
-  },
-  props: {
-    name: {
-      default: false
-    },
-    src: {
-      default: "./mp3/bgm.mp3"
-    },
-    thumb: {
-      default: false
-    },
-    autoplay: {
-      default: false
-    },
-    preload: {
-      default: false
-    },
-    loop: {
-      default: false
-    },
-    callback: {
-      default: false
-    },
-    icon: {
-      default: false
-    }
-  },
-  methods: {
-    play: function play() {
-      var temp;
-      temp = this.$emit('play', this);
-      return this.playing = true;
-    },
-    pause: function pause() {
-      var temp;
-      temp = this.$emit('pause', this);
-      this.audio.pause();
-      return this.playing = false;
-    },
-    ended: function ended() {
-      return this.playing = false;
-    },
-    change: function change() {
-      if (this.playing) {
-        this.audio.pause();
-        return this.stoped = true;
-      } else {
-        this.audio.play();
-        this.stoped = false;
-        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "adidas-originals-eqt", this.name, "play", "-"]);
-      }
-    }
-  },
-  // computed:
-  mounted: function mounted(el) {
-    console.log(this.name);
-    this.audio = this.$el.children[1]; // console.log @audio
-    // @audioOther = @$el.children[2]
-
-    this.audio.addEventListener("pause", this.pause.bind(this));
-    this.audio.addEventListener("play", this.play.bind(this));
-    return this.audio.addEventListener("ended", this.ended.bind(this));
-  }
-}); // @audio.play()
-// console.log @audio,@audioOther,@playing
-
 IsPC = function IsPC() {
   var Agents, flag, userAgentInfo, v;
   userAgentInfo = navigator.userAgent;
@@ -1068,6 +923,28 @@ IsPC = function IsPC() {
 
   return flag;
 };
+
+$_GET = function () {
+  var get, j, len2, m, u, url;
+  url = window.document.location.href.toString();
+  u = url.split('?');
+
+  if (typeof u[1] === 'string') {
+    u = u[1].split('&');
+    get = {};
+    console.log(u);
+
+    for (m = 0, len2 = u.length; m < len2; m++) {
+      i = u[m];
+      j = i.split('=');
+      get[j[0]] = j[1];
+    }
+
+    return get;
+  } else {
+    return {};
+  }
+}();
 
 Vue.component("player", {
   template: '<div class="player" :class="{play: playing, pause: !playing}" @click="change"> <div class="icon-play" :class="{play: playing, pause: !playing}"> <svg v-if="!icon" v-show="!playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-39"></use><path class="ytp-svg-fill" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"></path></svg> <svg v-if="!icon" v-show="playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-40"></use><path class="ytp-svg-fill" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z"></path></svg> </div> <audio :src="src" :autoplay="autoplay" :preload="preload" :loop="loop"></audio> <img v-if="thumb" :src="thumb" /> </div>',
@@ -1264,6 +1141,129 @@ Vue.component("form-grounp", {
     return results;
   }
 });
+Container = PIXI.Container;
+ParticleContainer = PIXI.ParticleContainer;
+autoDetectRenderer = PIXI.autoDetectRenderer;
+loader = PIXI.loader;
+resources = PIXI.loader.resources;
+TextureCache = PIXI.utils.TextureCache;
+Texture = PIXI.Texture;
+Sprite = PIXI.Sprite;
+Graphics = PIXI.Graphics;
+resource = PIXI.loader.resources;
+Text = PIXI.Text;
+AnimatedSprite = PIXI.extras.AnimatedSprite;
+
+getTe = function getTe(id) {
+  return resource[id].texture;
+};
+
+getId = function getId(id, link) {
+  return loader.resources[link].textures[id];
+}; // for fix ios 8 less
+
+
+if (Number.isInteger == null) {
+  Number.isInteger = function (int) {
+    return int >= 0;
+  };
+}
+
+$_GET = function () {
+  var get, j, len2, m, u, url;
+  url = window.document.location.href.toString();
+  u = url.split('?');
+
+  if (typeof u[1] === 'string') {
+    u = u[1].split('&');
+    get = {};
+    console.log(u);
+
+    for (m = 0, len2 = u.length; m < len2; m++) {
+      i = u[m];
+      j = i.split('=');
+      get[j[0]] = j[1];
+    }
+
+    return get;
+  } else {
+    return {};
+  }
+}();
+
+Vue.component("player", {
+  template: '<div class="player" :class="{play: playing, pause: !playing}" @click="change"> <div class="icon-play" :class="{play: playing, pause: !playing}"> <svg v-if="!icon" v-show="!playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-39"></use><path class="ytp-svg-fill" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"></path></svg> <svg v-if="!icon" v-show="playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-40"></use><path class="ytp-svg-fill" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z"></path></svg> </div> <audio :src="src" :autoplay="autoplay" :preload="preload" :loop="loop"></audio> <img v-if="thumb" :src="thumb" /> </div>',
+  data: function data() {
+    return {
+      playing: false,
+      stoped: false
+    };
+  },
+  props: {
+    name: {
+      default: false
+    },
+    src: {
+      default: "./mp3/bgm.mp3"
+    },
+    thumb: {
+      default: false
+    },
+    autoplay: {
+      default: false
+    },
+    preload: {
+      default: false
+    },
+    loop: {
+      default: false
+    },
+    callback: {
+      default: false
+    },
+    icon: {
+      default: false
+    }
+  },
+  methods: {
+    play: function play() {
+      var temp;
+      temp = this.$emit('play', this);
+      return this.playing = true;
+    },
+    pause: function pause() {
+      var temp;
+      temp = this.$emit('pause', this);
+      this.audio.pause();
+      return this.playing = false;
+    },
+    ended: function ended() {
+      return this.playing = false;
+    },
+    change: function change() {
+      if (this.playing) {
+        this.audio.pause();
+        return this.stoped = true;
+      } else {
+        this.audio.play();
+        this.stoped = false;
+        return typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "adidas-originals-eqt", this.name, "play", "-"]);
+      }
+    }
+  },
+  // computed:
+  mounted: function mounted(el) {
+    console.log(this.name);
+    this.audio = this.$el.children[1]; // console.log @audio
+    // @audioOther = @$el.children[2]
+
+    this.audio.addEventListener("pause", this.pause.bind(this));
+    this.audio.addEventListener("play", this.play.bind(this));
+    return this.audio.addEventListener("ended", this.ended.bind(this));
+  }
+}); // @audio.play()
+// console.log @audio,@audioOther,@playing
+
 Container = PIXI.Container;
 ParticleContainer = PIXI.ParticleContainer;
 autoDetectRenderer = PIXI.autoDetectRenderer;
@@ -1649,7 +1649,9 @@ window.onload = function () {
   } else {
     loadWechatConfig();
     wx.ready(function () {
-      var shareContent;
+      var shareContent; // console.log "ready:",_public?, _public.$children[0]
+      // _public.$children[0].change()
+
       shareContent = {
         title: "一首歌HOLD住人生大场面",
         desc: "测测你的音乐情商属性",
@@ -1672,6 +1674,11 @@ window.onload = function () {
     data: {
       note: true,
       playing: false
+    },
+    mounted: function mounted() {
+      return document.addEventListener("WeixinJSBridgeReady", function () {
+        return _public.$children[0].change();
+      });
     }
   });
   loading = new Vue({
