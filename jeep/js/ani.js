@@ -170,11 +170,11 @@ function setResult(){
 	btnList=new Sprite(getTe(_CDN+"img/btn_list.png"))
 	btnShare=new Sprite(getTe(_CDN+"img/btn_share.png"))
 
-	btnShare.position.set(107,stageH/2+346+stageH/2-500)
-	btnLeads.position.set(333,stageH/2+346+stageH/2-500)
-	btnList.position.set(195,stageH/2+381+stageH/2-500)
+	btnShare.position.set(107-14-12,stageH/2+346+stageH/2-500-14)
+	btnLeads.position.set(333-14+12,stageH/2+346+stageH/2-500-14)
+	btnList.position.set(170 ,stageH/2+381+stageH/2-500+2)
 
-	resultC.addChild(btnShare,btnLeads,btnList)
+	resultC.addChild(btnList,btnShare,btnLeads)
 	resultC.visible=false
 
 	//showResult()
