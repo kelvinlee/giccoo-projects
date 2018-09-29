@@ -11,7 +11,7 @@
   </head>
   <body>
     <div id="public" class="public">
-      <player icon="true" src="./mp3/bgm.mp3"></player>
+      <player icon="true" src="//image.giccoo.com/projects/jeep/mp3/bgm.mp3"></player>
       <transition name="page-fade">
         <div v-show="note" class="note-text">
           <p>建议打开手机声音<br/>获得更好体验效果</p>
@@ -21,10 +21,10 @@
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
         <div class="texts">
-          <div class="item fadeInUpSmall animated duration-11 delay-7"><img src="./img/loading-text-1.png"></div>
-          <div class="item fadeInUpSmall animated duration-12 delay-9"><img src="./img/loading-text-2.png"></div>
-          <div class="item fadeInUpSmall animated duration-13 delay-11"><img src="./img/loading-text-3.png"></div>
-          <div class="item fadeInUpSmall animated duration-14 delay-13"><img src="./img/loading-text-4.png"></div>
+          <div class="item fadeInUpSmall animated duration-11 delay-7"><img src="//image.giccoo.com/projects/jeep/img/loading-text-1.png"></div>
+          <div class="item fadeInUpSmall animated duration-12 delay-9"><img src="//image.giccoo.com/projects/jeep/img/loading-text-2.png"></div>
+          <div class="item fadeInUpSmall animated duration-13 delay-11"><img src="//image.giccoo.com/projects/jeep/img/loading-text-3.png"></div>
+          <div class="item fadeInUpSmall animated duration-14 delay-13"><img src="//image.giccoo.com/projects/jeep/img/loading-text-4.png"></div>
         </div>
         <div class="loading-text">
           <p>loading...{{progress}}%</p>
@@ -49,12 +49,12 @@
       <transition name="page-fade">
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
-            <div class="logo fadeInUpSmall animated duration-10 delay-3"><img src="./img/homepage-logo.png"></div>
-            <div class="title fadeInUpSmall animated duration-10 delay-5"><img src="./img/homepage-title.png"></div>
+            <div class="logo fadeInUpSmall animated duration-10 delay-3"><img src="//image.giccoo.com/projects/jeep/img/homepage-logo.png"></div>
+            <div class="title fadeInUpSmall animated duration-10 delay-5"><img src="//image.giccoo.com/projects/jeep/img/homepage-title.png"></div>
             <div class="input fadeInUpSmall animated duration-10 delay-7">
               <input id="nickname" type="text" v-model="nickname" placeholder="请输入你的名字">
             </div>
-            <div @click="nextPage" class="btn fadeInUpSmall animated duration-12 delay-9"><img src="./img/btn-start.png"></div>
+            <div @click="nextPage" class="btn fadeInUpSmall animated duration-12 delay-9"><img src="//image.giccoo.com/projects/jeep/img/btn-start.png"></div>
           </div>
         </div>
       </transition>
@@ -69,7 +69,7 @@
         <div v-show="ugcShow" class="pop">
           <div class="content">
             <div class="small-size">
-              <div @click="ugcShow = false" class="close"><img src="./img/icon-close.png"></div><img :src="ugc">
+              <div @click="ugcShow = false" class="close"><img src="//image.giccoo.com/projects/jeep/img/icon-close.png"></div><img :src="ugc">
               <div class="note">长按保存图片</div>
             </div>
           </div>
@@ -79,7 +79,7 @@
         <div v-show="registerShow" class="pop">
           <div class="content">
             <div :style="{height: regH+'%'}" class="register">
-              <div @click="registerShow = false" class="close"><img src="./img/icon-close.png"></div>
+              <div @click="registerShow = false" class="close"><img src="//image.giccoo.com/projects/jeep/img/icon-close.png"></div>
               <div class="title">
                 <h2>留下您的足迹</h2>
                 <p>有机会赢取Jeep臻选黑胶会员</p>
@@ -93,13 +93,13 @@
         <div v-show="lotteryShow" class="pop">
           <div class="content">
             <div :style="{height: regH+'%'}" class="lottery faild">
-              <div @click="lotteryShow = false" class="close"><img src="./img/icon-close.png"></div>
+              <div @click="lotteryShow = false" class="close"><img src="//image.giccoo.com/projects/jeep/img/icon-close.png"></div>
               <div class="title">
                 <h2 class="centeralign">感谢您的参与！</h2>
                 <p>我们将在活动结束后</p>
                 <p>10个工作日内短信通知获奖结果</p>
               </div>
-              <div @click="goshare" style="width: 65%" class="btn"><img src="./img/btn-share.png"></div>
+              <div @click="goshare" style="width: 65%" class="btn"><img src="//image.giccoo.com/projects/jeep/img/btn-share.png"></div>
             </div>
           </div>
         </div>
