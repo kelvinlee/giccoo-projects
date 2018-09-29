@@ -230,7 +230,7 @@ function goLeads(){
 }
 function goList(){
 	//=======弹出歌单
-	main.openMusic(1111111)
+	main.openMusic(2441625607)
 }
 //========================================================================== 生成中。。。
 var waitingC=new PIXI.Container()
