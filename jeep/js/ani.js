@@ -477,8 +477,8 @@ function setBG4(){
 
 	FL=new PIXI.Graphics()
 	FL.beginFill(0xffffff)
-	FL.drawRect(0,0,640,stageH)
-
+	FL.drawRect(0,0,640,stageH+500)
+	FL.y=-300
 	bg4.addChild(bg4a,rain1,rain2,rain3,FL)
 	setBottom([bg4a,rain1,rain2,rain3])
 	rain2.x-=20
