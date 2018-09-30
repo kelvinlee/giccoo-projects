@@ -104,13 +104,26 @@ function changePoster(){
 function showVideo1(){
 	console.log("video1")
 	openLive()
+	stopAllSound()
 }
 function showVideo2(){
 	console.log("video2")
 	//
-	openVideo("//image.giccoo.com/projects/genki/mp4/v2.mp4","./img/layer_poster1.jpg")
+	stopAllSound()
+	openVideo("//image.giccoo.com/projects/genki/mp4/v2.mp4","//image.giccoo.com/projects/genki/img/layer_poster1.jpg")
 }
 
+function stopAllSound(){
+	p1pic3.visible=false
+	bgm.pause()
+	btnStop.alpha=0
+	for (var i = 0; i < 4; i++) {
+		TweenMax.to(p3btnA[i],.5,{y:271+i*132})
+		musicA[i].pause()
+		nowSong=999
+
+	};
+}
 
 
 function goSong(){
