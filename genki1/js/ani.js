@@ -108,7 +108,7 @@ function showVideo1(){
 function showVideo2(){
 	console.log("video2")
 	//
-	openVideo("//image.giccoo.com/projects/genki/mp4/v1.mp4")
+	openVideo("//image.giccoo.com/projects/genki/mp4/v2.mp4","/img/layer_poster1.jpg")
 }
 
 
