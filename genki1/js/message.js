@@ -13,7 +13,8 @@ $(document).ready(function () {
 });
 
 closelive = function closelive() {
-  return $("#livesteam").hide();
+  $("#livesteam").hide();
+  return $("#livesteam iframe").attr("src", "");
 };
 
 openLive = function openLive() {
@@ -22,11 +23,14 @@ openLive = function openLive() {
 };
 
 closeVideo = function closeVideo() {
-  return $("#popvideo").hide();
+  $("#popvideo").hide();
+  return $("#popvideo video")[0].pause();
 };
 
-openVideo = function openVideo(url) {
+openVideo = function openVideo(url, poster) {
   $("#popvideo video").attr("src", url);
+  $("#popvideo video").attr("poster", poster); // $("#popvideo video")[0].play()
+
   return $("#popvideo").show();
 }; // 获取留言列表
 // getDefaultMessages(1,function(list,counts){ console.log(list) })

@@ -9,13 +9,17 @@ $(document).ready ->
 
 closelive = ->
 	$("#livesteam").hide()
+	$("#livesteam iframe").attr "src", ""
 openLive = ->
 	$("#livesteam iframe").attr "src", "http://shangzhibo.tv/watch/568113?player"
 	$("#livesteam").show()
 closeVideo = ->
 	$("#popvideo").hide()
-openVideo = (url)->
+	$("#popvideo video")[0].pause()
+openVideo = (url,poster)->
 	$("#popvideo video").attr("src",url)
+	$("#popvideo video").attr("poster",poster)
+	# $("#popvideo video")[0].play()
 	$("#popvideo").show()
 
 # 获取留言列表
