@@ -103,9 +103,12 @@ function changePoster(){
 }
 function showVideo1(){
 	console.log("video1")
+	openLive()
 }
 function showVideo2(){
 	console.log("video2")
+	//
+	openVideo("//image.giccoo.com/projects/genki/mp4/v1.mp4")
 }
 
 
