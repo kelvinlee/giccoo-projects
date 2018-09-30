@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part1 开头音乐
 var part1=new PIXI.Container()
-var p1pic1a=new pSprite("img/part1pic1a.png")//===
-var p1title1=new pSprite("img/part1title1.png")//===
-var p1title2=new pSprite("img/part1title2.png")//===
+var p1pic1a=new pSprite("//image.giccoo.com/projects/genki/img/part1pic1a.png")//===
+var p1title1=new pSprite("//image.giccoo.com/projects/genki/img/part1title1.png")//===
+var p1title2=new pSprite("//image.giccoo.com/projects/genki/img/part1title2.png")//===
 var p1pic2=new pSprite("//image.giccoo.com/projects/genki/img/part1pic2b.png")
 var p1pic3=new pSprite("//image.giccoo.com/projects/genki/img/part1pic3.png")
 var p1pic4=new pSprite("//image.giccoo.com/projects/genki/img/part1pic4.png")
@@ -52,12 +52,12 @@ function setPart1 () {
 //////////////////////////////////////////////////////////////////////////===============  视频直播！！！！！！！！！！=============
 //////////////////////////////////////////////////////////////////////////======================================================
 
-var videoPartBG=new pSprite("img/video_part_bg.png")
-var videoPartText=new pSprite("img/vp_text.png")
-var videoBtnL=new pSprite("img/video_btn_l.png")
-var videoBtnR=new pSprite("img/video_btn_r.png")
-var poster1=new pSprite("img/video_poster1.jpg")
-var poster2=new pSprite("img/video_poster2.jpg")
+var videoPartBG=new pSprite("//image.giccoo.com/projects/genki/img/video_part_bg.png")
+var videoPartText=new pSprite("//image.giccoo.com/projects/genki/img/vp_text.png")
+var videoBtnL=new pSprite("//image.giccoo.com/projects/genki/img/video_btn_l.png")
+var videoBtnR=new pSprite("//image.giccoo.com/projects/genki/img/video_btn_r.png")
+var poster1=new pSprite("//image.giccoo.com/projects/genki/img/video_poster1.jpg")
+var poster2=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2.jpg")
 //var poster3=new pSprite("img/video_poster3.jpg")//===================改这里
 var posterA=[poster1,poster2]//===================改这里
 var nowPoster=0
