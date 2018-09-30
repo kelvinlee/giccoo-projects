@@ -813,6 +813,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/genki1/img/layer_poster1.jpg": {
+		"ft": 16384,
+		"iS": 44505,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki1/img/layer_poster1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/genki1/img/layerbg.png": {
 		"ft": 32768,
 		"iS": 107132,
@@ -1204,16 +1215,6 @@
 		"oA": 0,
 		"oAP": "/genki1/index.html",
 		"oF": 0
-		},
-	"/genki1/js/ani.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "/genki1/js/ani-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
 		},
 	"/genki1/js/commit.js": {
 		"ft": 64,
