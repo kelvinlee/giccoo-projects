@@ -1,5 +1,27 @@
 apiLink = "//g.giccoo.com/active/message"
 
+$(document).ready ->
+	console.log "loaded"
+	$("#livesteam .close").click ->
+		closelive()
+	$("#popvideo .close").click ->
+		closeVideo()
+
+closelive = ->
+	$("#livesteam").hide()
+	$("#livesteam iframe").attr "src", ""
+openLive = ->
+	$("#livesteam iframe").attr "src", "http://shangzhibo.tv/watch/568113?player"
+	$("#livesteam").show()
+closeVideo = ->
+	$("#popvideo").hide()
+	$("#popvideo video")[0].pause()
+openVideo = (url,poster)->
+	$("#popvideo video").attr("src",url)
+	$("#popvideo video").attr("poster",poster)
+	# $("#popvideo video")[0].play()
+	$("#popvideo").show()
+
 # 获取留言列表
 # getDefaultMessages(1,function(list,counts){ console.log(list) })
 # page 是第几页(每页20条) callback 为回调函数

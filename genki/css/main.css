@@ -148,3 +148,16 @@ img{ width: 100%; }
 	opacity: 0;
 	z-index: 100;
 }
+
+
+.pop{display: none ; position:absolute;top:0px;left:0px;bottom:0px;right:0px;width:100%;height:100%;background-color:rgba(0,0,0,0.7);z-index:109}
+.pop .close{position:absolute;top:5%;right:5%;width:13.3333333333%;margin:0 auto;}
+
+.pop iframe {
+	border: none;
+}
+.pop video {
+	width: 100%;
+	height: auto;
+}
+.pop .content{width:100%;box-sizing:border-box;position:absolute;top:50%;left:50%;-webkit-transform:translate3d(-50%, -50%, 0);transform:translate3d(-50%, -50%, 0);}

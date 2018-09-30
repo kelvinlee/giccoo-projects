@@ -116,10 +116,10 @@ function initAll(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////===============滚屏
 var main=new PIXI.Container()
-var bg=new pSprite("//image.giccoo.com/projects/genki/img/bgloop.jpg")
-var bg2=new pSprite("//image.giccoo.com/projects/genki/img/bgloop.jpg")
-var bg3=new pSprite("//image.giccoo.com/projects/genki/img/bgloop.jpg")
-var bg4=new pSprite("//image.giccoo.com/projects/genki/img/bgloop.jpg")
+var bg=new pSprite("//image.giccoo.com/projects/genki/img/bgloop1.jpg")
+var bg2=new pSprite("//image.giccoo.com/projects/genki/img/bgloop1.jpg")
+var bg3=new pSprite("//image.giccoo.com/projects/genki/img/bgloop1.jpg")
+var bg4=new pSprite("//image.giccoo.com/projects/genki/img/bgloop1.jpg")
 var mainMask=new pSprite("img/main-mask.png")
 var icoA=[$("#ico1"),$("#ico2"),$("#ico3"),$("#ico4"),$("#ico5"),$("#ico6"),$("#ico7"),$("#ico8"),$("#ico9"),$("#ico10"),
 $("#ico11"),$("#ico12"),$("#ico13"),$("#ico14"),$("#ico15"),$("#ico16"),$("#ico17"),$("#ico18"),$("#ico19"),$("#ico20"),
@@ -182,29 +182,7 @@ function touchEnd(_e){
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////===============
 var ifSubmit=0
-// function pageLoop(){
-//   heightLimit=-nowHeight-part4.y+stageH-260-50-260-40
 
-//   requestAnimationFrame(pageLoop)
-//   renderer.render(pStage)
-//   if(main.y<=-(theNewNowHeight+part4.y-stageH+237+100)&&ifSubmit==0){//&&main.y>=-(nowHeight+part4.y-stageH+200)
-//     //mainMask.height=stageH-237
-//     TweenMax.to(mainMask,.5,{height:stageH-237-20-ifInputing*100})
-//     TweenMax.to(userMessage,.5,{y:stageH-237-20-ifInputing*100})
-//     TweenMax.set($("#userText"),{display:"block"})
-//     TweenMax.set($("#songText"),{display:"block"})
-//   }else{
-//     //mainMask.height=stageH*14/13
-//     TweenMax.to(mainMask,.5,{height:stageH*14/13})
-//     TweenMax.to(userMessage,.5,{y:stageH})
-//     TweenMax.set($("#userText"),{display:"none"})
-//     TweenMax.set($("#songText"),{display:"none"})
-//   }
-//   TweenMax.set($("#userText"),{y:(stageH-237+20-20-ifInputing*100)/640*screenW})
-//   TweenMax.set($("#songText"),{y:(stageH-56-50-20-ifInputing*100)/640*screenW})
-
-//   //bg.y=main.y/4
-// }
 
 function pageLoop(){
   heightLimit=-nowHeight-part4.y+stageH-260-50-260-40
@@ -252,41 +230,7 @@ $("#pngHolder").click(function(){
   TweenLite.set($("#shareHint"),{display:"none"})
   footer.alpha=1
 })
-//==========网易云
-// function neteaseGo(){
-//   renderer.render(renderer.stage)
-//   upload(renderer.view.toDataURL())
-// }
-// function upload(image) {
-//         var data;
-//         // console.log "upload:"
-//         data = {
-//           image: image,
-//           folder:"mygym"
-//         };
-//         return axios.post(imageurl, data).then(function (msg) {
-//           if (msg.data.recode === 200) {
-//             //return main.success(msg.data);
-//             console.log(msg.data.info)
-//             neteaseShareImage(msg.data.info)
-//           } else {
 
-//           }
-//         }).catch(function (e) {
-
-//         });
-// }
-
-// var imageurl = "http://api.giccoo.com/api/upload/image64/";
-
-// function neteaseShareImage(_picurl) {
-//   var picUrl, redirectUrl, title1;
-//   title1 = "定义我的燃动健身房";
-//   picUrl = "http://image.giccoo.com/upload/mygym/" + _picurl + "@!large";
-//   redirectUrl = "http://m.giccoo.com/mygym/";
-//   console.log("orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1));
-//   return window.location.href = "orpheus://sharepic?picUrl=" + encodeURIComponent(picUrl) + "&shareUrl=" + encodeURIComponent(redirectUrl) + "&wbDesc=" + encodeURIComponent(title1) + "&qqDesc=" + encodeURIComponent(title1);
-// };
 //=============BGM=========
 
 // var ifbgm=0
