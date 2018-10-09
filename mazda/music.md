@@ -33,3 +33,5 @@ latinkMusic 拉丁
 rnbMusic R&B
 classicalMusic 古典
 gufengMusic 古风
+
+域名访问是：http://qa-etcz.igame.163.com，需要测试环境
