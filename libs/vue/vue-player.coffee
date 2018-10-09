@@ -52,7 +52,7 @@ Vue.component "player",
 
 	# computed:
 	mounted: (el)->
-		console.log @name
+		# console.log @name
 		@audio = @$el.children[1]
 		# console.log @audio
 		# @audioOther = @$el.children[2]

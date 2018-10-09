@@ -2503,6 +2503,155 @@
 		"oAP": "/build/maxshow",
 		"oF": 0
 		},
+	"/mazda/coffee/dealer.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/mazda/js/dealer.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/mazda/coffee/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/mazda/js/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/mazda/coffee/UGC.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/mazda/js/UGC.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/mazda/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/mazda/css",
+		"oF": 0
+		},
+	"/mazda/img/bg.jpg": {
+		"ft": 16384,
+		"iS": 86177,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/mazda/img/bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/mazda/img/icon-play.png": {
+		"ft": 32768,
+		"iS": 3248,
+		"oA": 0,
+		"oAP": "/mazda/img/icon-play.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/img/icon-stop.png": {
+		"ft": 32768,
+		"iS": 3591,
+		"oA": 0,
+		"oAP": "/mazda/img/icon-stop.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/img/logo.png": {
+		"ft": 32768,
+		"iS": 30468,
+		"oA": 0,
+		"oAP": "/mazda/img/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/mazda/index.html",
+		"oF": 0
+		},
+	"/mazda/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "/mazda/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"/mazda/js/ani.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/mazda/js/ani-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/mazda/js/build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/mazda/js/build-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/mazda/js/dealer.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/mazda/js/dealer-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/mazda/js/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/mazda/js/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/mazda/js/public_funciton.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/mazda/js/public_funciton-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/mazda/music.md": {
 		"cB": 0,
 		"cS": 0,
@@ -2520,6 +2669,19 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"/mazda/sass/base.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/mazda/css/base.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
 		},
 	"/mbenz-love": {
 		"ft": 65536,

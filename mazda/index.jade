@@ -1,0 +1,95 @@
+extends ../libs/jade/layout-clean
+
+block title
+  | 一首歌HOLD住人生大场面
+
+block css
+  meta(name="author",content="m.giccoo.com")
+  //- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+  link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
+  //- link(rel="stylesheet",href="//image.giccoo.com/projects/libs/font/Interstate Regular.css")
+  //- link(rel="stylesheet",href="css/yrd-Bold.css")
+  //- link(rel="stylesheet",href="css/yrd-Medium.css")
+  link(rel="stylesheet",href="css/base.css")
+
+  //- script.
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+  //- script(src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js")
+  //- script.
+  //-   var vConsole = new VConsole();
+  //-   console.log('VConsole open');
+  //- style.
+  //-   .vc-switch {
+  //-     opacity: 0.1;
+  //-   }
+
+block content
+  - url = "//image.giccoo.com/projects/jeep";
+  //- - url = ".";
+  //- .qrcode#qrcode
+    .qr
+      img(src="#{url}/img/qrcode.png")
+      .text 请使用手机扫描二维码参与活动
+  .public#public
+    player(icon="true",src="#{url}/mp3/bgm.mp3")
+    //- .player(:class="{play: playing, pause: !playing}",@click="playing = !playing")
+      .icon-play(:class="{play: playing, pause: !playing}")
+    transition(name="page-fade")
+      .note-text(v-show="note")
+        p 建议打开手机声音<br/>获得更好体验效果
+
+  .load#load
+    .content#loading(v-show="mounted",style="display: none")
+      .loading-text
+        p.centeralign Loading..{{progress}}%
+  //- <video controls x5-playsinline playsinline="" webkit-playsinline="" src="//image.giccoo.com/projects/Landrover24/video/build-1.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
+  
+  .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",style="display: none",:style="{width: w+'px',minHeight: h+'px'}")
+    transition(name="page-fade")
+      .loading-page(v-show="loading")
+        .ball-spin-fade-loader
+          div
+          div
+          div
+          div
+          div
+          div
+          div
+          div
+
+    transition(name="page-fade")
+      .page.page-1(v-show="pageIndex == 1")
+        .content
+          #ugc
+    
+
+block js
+  - url = "/";
+  script(src="//res.wx.qq.com/open/js/jweixin-1.3.2.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js")
+  script(src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js")
+  script(src="//image.giccoo.com/projects/genki/js/ntes.id.js")
+  //- script(src="/libs/js/min/bump-min.js")
+  script(src="js/public_funciton.js")
+  script(src="js/build.js?v=1")
+  script(src="js/main.js?v=1")
+  script(src="js/ani.js?v=1")
+
+  
+
+
+
+  
