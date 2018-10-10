@@ -102,6 +102,9 @@ window.onload = ->
 			@.mounted = true
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
+
+			@.next() # for test
+
 			timein = setInterval =>
 				@.progress += 3
 				@.progress = @.progressOn if @.progress >= @.progressOn

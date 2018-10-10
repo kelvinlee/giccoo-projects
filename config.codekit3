@@ -7,7 +7,7 @@
 		"uuidString": "DE83B16E-0B46-434B-8780-3294DEF21C1E"
 		}
 	],
-"creatorBuild": "28901",
+"creatorBuild": "28905",
 "files": {
 	"/.babelrc": {
 		"cB": 0,
@@ -27,12 +27,6 @@
 		"ft": 65536,
 		"oA": 1,
 		"oAP": "/build/2017-new-year",
-		"oF": 0
-		},
-	"/ad": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "/build/ad",
 		"oF": 0
 		},
 	"/adidas": {
