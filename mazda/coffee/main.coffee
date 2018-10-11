@@ -220,14 +220,16 @@ init = ->
 
 		methods:
 			getUserInfo: ->
-				axios.get "http://activity.music.163.com/api/activity/mazda/userinfo"
+				axios.get "//music.163.com/api/activity/mazda/userinfo"
 				.then (msg)=>
+					console.log msg.data
 					if msg.data.code is 200
 						@.userInfo = msg.data.data
 						@.showBuild(@.userInfo)
 					else
 						@.showBuild()	
 				.catch (err)=>
+					console.log "err",err
 					@.showBuild()
 			showBuild: (info = false)->
 				if info
