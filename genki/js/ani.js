@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////===============part1 开头音乐
 var part1=new PIXI.Container()
-var p1pic1a=new pSprite("//image.giccoo.com/projects/genki/img/part1pic1a.png")//===
+var p1pic1a=new pSprite("//image.giccoo.com/projects/genki/img/part1pic1aa.png")//===
 var p1title1=new pSprite("//image.giccoo.com/projects/genki/img/part1title1.png")//===
 var p1title2=new pSprite("//image.giccoo.com/projects/genki/img/part1title2b.png")//===
 var p1pic2=new pSprite("//image.giccoo.com/projects/genki/img/part1pic2b.png")
