@@ -5,7 +5,7 @@
 # @codekit-prepend "../../libs/coffee/pixi-base"
 # @codekit-prepend "./UGC"
 
-
+axios.defaults.withCredentials = true
 
 TrueW = 640
 TrueH = 1138
@@ -236,6 +236,10 @@ init = ->
 					getStart(true,info)
 				else
 					getStart(false,{})
+			reg: ->
+				console.log "reg"
+			more: ->
+				console.log "more"
 			closeReg: ->
 				@.registerShow = false
 			openReg: (size)->
