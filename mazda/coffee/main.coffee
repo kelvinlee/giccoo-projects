@@ -219,6 +219,34 @@ init = ->
 				document.getElementById("video-#{n}").play()
 
 		methods:
+			dateText: (date)->
+				console.log date.replace(/-/g,"/")
+				d = new Date date.replace(/-/g,"/")
+				return d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日"
+			muiscType: (name)->
+				list =
+					"rapMusic": 1
+					"rnbMusic": 1
+					"lightMusic": 2
+					"childMusic": 2
+					"jazzMusic": 3
+					"postRockMusic": 3
+					"classicalMusic": 3
+					"gufengMusic": 4
+					"danceMusic": 4
+					"latinkMusic": 4
+					"metalMusic": 7
+					"punkMusic": 7
+					"yueyuMusic": 6
+					"acgMusic": 6
+					"folkMusic": 5
+					"electronicMusic": 5
+
+				if list[name]?
+					return list[name]
+				else
+					return 1
+			
 			getUserInfo: ->
 				axios.get "//music.163.com/api/activity/mazda/userinfo"
 				.then (msg)=>

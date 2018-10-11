@@ -991,6 +991,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/mazda/img/qrcode.png": {
+		"ft": 32768,
+		"iS": 17789,
+		"oA": 0,
+		"oAP": "/mazda/img/qrcode.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/mazda/img/texture.jpg": {
 		"ft": 16384,
 		"iS": 29994,
