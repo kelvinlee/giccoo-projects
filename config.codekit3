@@ -2536,6 +2536,127 @@
 		"oAP": "/build/mazda/css",
 		"oF": 0
 		},
+	"/mazda/img/a-text-1.png": {
+		"ft": 32768,
+		"iS": 27227,
+		"oA": 0,
+		"oAP": "/mazda/img/a-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/img/a-text-10.png": {
+		"ft": 32768,
+		"iS": 11317,
+		"oA": 0,
+		"oAP": "/mazda/img/a-text-10.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/img/a-text-11.png": {
+		"ft": 32768,
+		"iS": 31113,
+		"oA": 0,
+		"oAP": "/mazda/img/a-text-11.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/img/a-text-2.png": {
+		"ft": 32768,
+		"iS": 24252,
+		"oA": 0,
+		"oAP": "/mazda/img/a-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/img/a-text-3.png": {
+		"ft": 32768,
+		"iS": 12378,
+		"oA": 0,
+		"oAP": "/mazda/img/a-text-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/img/a-text-4.png": {
+		"ft": 32768,
+		"iS": 23931,
+		"oA": 0,
+		"oAP": "/mazda/img/a-text-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/img/a-text-5.png": {
+		"ft": 32768,
+		"iS": 14851,
+		"oA": 0,
+		"oAP": "/mazda/img/a-text-5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/img/a-text-6.png": {
+		"ft": 32768,
+		"iS": 24363,
+		"oA": 0,
+		"oAP": "/mazda/img/a-text-6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/img/a-text-7.png": {
+		"ft": 32768,
+		"iS": 21442,
+		"oA": 0,
+		"oAP": "/mazda/img/a-text-7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/img/a-text-8.png": {
+		"ft": 32768,
+		"iS": 16208,
+		"oA": 0,
+		"oAP": "/mazda/img/a-text-8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/img/a-text-9.png": {
+		"ft": 32768,
+		"iS": 31141,
+		"oA": 0,
+		"oAP": "/mazda/img/a-text-9.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/mazda/img/bg.jpg": {
 		"ft": 16384,
 		"iS": 86177,
@@ -2545,6 +2666,28 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"/mazda/img/btn-start-2.png": {
+		"ft": 32768,
+		"iS": 9748,
+		"oA": 0,
+		"oAP": "/mazda/img/btn-start-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/img/btn-start.png": {
+		"ft": 32768,
+		"iS": 11653,
+		"oA": 0,
+		"oAP": "/mazda/img/btn-start.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
 		"q": 100
 		},
 	"/mazda/img/icon-play.png": {
@@ -2575,8 +2718,8 @@
 		"oA": 0,
 		"oAP": "/mazda/img/logo.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
