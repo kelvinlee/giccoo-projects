@@ -139,7 +139,7 @@ init = ->
 			smaller: smaller
 			afterH: if smaller then TrueH*1.15-1029*(TrueW/750) else TrueH-1029*(TrueW/750)
 			wy: false
-			mounted: false
+			mounted: true
 			loading: false
 			pageInfoShow: false
 			pageIndex: 1
