@@ -11,6 +11,8 @@ resource = PIXI.loader.resources
 Text = PIXI.Text
 AnimatedSprite = PIXI.extras.AnimatedSprite
 
+Spr = (id)->
+	return new Sprite getTe id
 getTe = (id)->
   return resource[id].texture
 getId = (id,link)->
