@@ -2,6 +2,8 @@ var _CDN = "./";
 // var _CDN = "//image.giccoo.com/projects/jeep/";
 var imageList = [
 	_CDN+"img/bg.jpg",
+	_CDN+"img/texture.jpg",
+
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -21,12 +23,15 @@ var buildUGC = function () {
 	// var gra = new Graphics();
 	// var con = new Container();
 	// var ani = new AnimatedSprite();
-	// stageH=this.opts.h
-	// pStage=this.stage
-	getStart()
+	stageH=this.opts.h
+	pStage=this.stage
+	//getStart()
 	
 }
 
+var texture
 function getStart() {
 	console.log("开始")
+	texture=new Sprite(getTe(_CDN+"img/texture.jpg"));
+	pStage.addChild(texture)
 }
