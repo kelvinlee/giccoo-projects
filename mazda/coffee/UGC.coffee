@@ -56,6 +56,8 @@ class UGC
 		if @.loadNumber is imageList.length
 			buildUGC.bind(@).call()
 			@.opts.callback()
+			# console.log "aa"
+			# @.stage.addChild Spr(_CDN+"img/texture.jpg")
 	build: ->
 		console.log "builded"
 		buildUGC.bind(@).call()
