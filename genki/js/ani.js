@@ -56,11 +56,11 @@ var videoPartBG=new pSprite("//image.giccoo.com/projects/genki/img/video_part_bg
 var videoPartText=new pSprite("//image.giccoo.com/projects/genki/img/vp_text.png")
 var videoBtnL=new pSprite("//image.giccoo.com/projects/genki/img/video_btn_l.png")
 var videoBtnR=new pSprite("//image.giccoo.com/projects/genki/img/video_btn_r.png")
-var poster1=new pSprite("//image.giccoo.com/projects/genki/img/video_poster1b.jpg")
+var poster1=new pSprite("//image.giccoo.com/projects/genki/img/video_poster1c.jpg")
 var poster2=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2.jpg")
 //var poster3=new pSprite("img/video_poster3.jpg")//===================改这里
 var posterA=[poster1,poster2]//===================改这里
-var nowPoster=1
+var nowPoster=0
 function setVideoPart(){
 	videoPart.y=528+107
 	videoPart.addChild(videoPartBG,videoPartText,videoBtnL,videoBtnR,poster1,poster2)
@@ -68,8 +68,8 @@ function setVideoPart(){
 	videoBtnR.position.set(576,737)
 	poster1.position.set(109,670)
 	poster2.position.set(109,670)
-	poster1.visible=false
-	poster2.visible=true
+	poster1.visible=true
+	poster2.visible=false
 
 	videoBtnL.interactive=videoBtnR.interactive=true
 	videoBtnL.tap=changeL
@@ -104,7 +104,7 @@ function changePoster(){
 }
 function showVideo1(){
 	console.log("video1")
-	// openLive()
+	openLive()
 	// stopAllSound()
 }
 function showVideo2(){
