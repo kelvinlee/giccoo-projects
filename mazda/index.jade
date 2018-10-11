@@ -31,14 +31,14 @@ block css
   //-   }
 
 block content
-  - url = "//image.giccoo.com/projects/jeep";
-  //- - url = ".";
+  //- url = "//image.giccoo.com/projects/mazda";
+  - url = ".";
   //- .qrcode#qrcode
     .qr
       img(src="#{url}/img/qrcode.png")
       .text 请使用手机扫描二维码参与活动
   .public#public
-    player(icon="true",src="#{url}/mp3/bgm.mp3")
+    player(icon="true",src="#{url}/mp3/bgm1-test.mp3")
     //- .player(:class="{play: playing, pause: !playing}",@click="playing = !playing")
       .icon-play(:class="{play: playing, pause: !playing}")
     transition(name="page-fade")
@@ -78,7 +78,7 @@ block js
   script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
   //- script(src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js")
   script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
-  //- script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js")
   script(src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js")
   script(src="//image.giccoo.com/projects/genki/js/ntes.id.js")

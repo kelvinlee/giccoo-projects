@@ -29,6 +29,7 @@ class UGC
 			defaultShow: true
 			class: ""
 			fillColor: 0x66CCFF
+			callback: ->
 		@.opts = Object.assign @.opts,arg
 		@.default.h = document.documentElement.clientHeight
 		@.default.w = document.documentElement.clientWidth
@@ -54,7 +55,9 @@ class UGC
 
 		if @.loadNumber is imageList.length
 			buildUGC.bind(@).call()
+			@.opts.callback()
 	build: ->
 		console.log "builded"
 		buildUGC.bind(@).call()
+		@.opts.callback()
 

@@ -2497,21 +2497,6 @@
 		"oAP": "/build/maxshow",
 		"oF": 0
 		},
-	"/mazda/0.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/mazda/0-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"/mazda/1.pdf": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/mazda/1.pdf",
-		"oF": 0
-		},
 	"/mazda/coffee/dealer.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -2660,6 +2645,34 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"/mazda/mp3/bgm1-test.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/mazda/mp3/bgm1-test.mp3",
+		"oF": 0
+		},
+	"/mazda/mp3/bgm1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/mazda/mp3/bgm1.mp3",
+		"oF": 0
+		},
+	"/mazda/mp3/bgm2-test.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/mazda/mp3/bgm2-test.mp3",
+		"oF": 0
+		},
+	"/mazda/mp3/bgm2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/mazda/mp3/bgm2.mp3",
+		"oF": 0
 		},
 	"/mazda/music.md": {
 		"cB": 0,

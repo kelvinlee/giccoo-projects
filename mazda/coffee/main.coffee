@@ -30,6 +30,7 @@ _runTime = null
 _second = 0
 _testTime = 0
 
+
 neteaseShareImage = ->
 	title1 = "一首歌HOLD住人生大场面"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
@@ -201,6 +202,15 @@ init = ->
 			noreg: false
 			ugcShow: false
 			regH: 100
+			userInfo:
+				"userId": 238547308,
+				"songId": 29593763,
+				"songName": "キミはどう?",
+				"playCnt": 111,
+				"styleTop": "126377",
+				"mostActiveDay": "2018-08-29 00:00:45.0",
+				"periodIndex": 1,
+				"playDuration": 144
 		watch:
 			videoIndex: (n,o)->
 				@.videoIndexOld = o
@@ -209,6 +219,21 @@ init = ->
 				document.getElementById("video-#{n}").play()
 
 		methods:
+			getUserInfo: ->
+				axios.get "http://activity.music.163.com/api/activity/mazda/userinfo"
+				.then (msg)=>
+					if msg.data.code is 200
+						@.userInfo = msg.data.data
+						@.showBuild(@.userInfo)
+					else
+						@.showBuild()	
+				.catch (err)=>
+					@.showBuild()
+			showBuild: (info = false)->
+				if info
+					getStart(true,info)
+				else
+					getStart(false,{})
 			closeReg: ->
 				@.registerShow = false
 			openReg: (size)->
@@ -351,5 +376,6 @@ init = ->
 			# game = new Game({el: "game",h: h})
 			@.wy = CloudMusic.isInApp()
 			version = CloudMusic.getClientVersion().split(".")
-			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH})
+			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => @.getUserInfo()})
+			
 
