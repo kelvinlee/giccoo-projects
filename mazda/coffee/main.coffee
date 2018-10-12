@@ -202,6 +202,7 @@ init = ->
 			noreg: false
 			ugcShow: false
 			regH: 100
+			ugcType: 1
 			userInfo:
 				"userId": 238547308,
 				"songId": 29593763,
@@ -245,29 +246,32 @@ init = ->
 				if list[name]?
 					return list[name]
 				else
-					return 1
+					return parseInt 1+Math.random()*7
 			
-			getUserInfo: ->
+			getUserInfo: (callback)->
 				axios.get "//music.163.com/api/activity/mazda/userinfo"
 				.then (msg)=>
 					console.log msg.data
 					if msg.data.code is 200
 						@.userInfo = msg.data.data
-						@.showBuild(@.userInfo)
+						callback @.showBuild
 					else
-						@.showBuild()	
+						callback @.showBuild
 				.catch (err)=>
 					console.log "err",err
-					@.showBuild()
-			showBuild: (info = false)->
-				if info
-					getStart(true,info)
-				else
-					getStart(false,{})
+					callback @.showBuild
+			showBuild: ->
+				console.log "userInfo:",main.userInfo
+				# if info
+				# 	getStart(true,info)
+				# else
+				# 	getStart(false,{})
 			reg: ->
 				console.log "reg"
+				window.location.href = "http://fans.faw-mazda.com/events/testdrive/index/id/4.html?utm_source=4300921&utm_content=qidongye&utm_medium=qidonghuamian3sjingtaikedianji4lunbo&utm_campaign=21814748"
 			more: ->
 				console.log "more"
+				window.location.href = "http://fans.faw-mazda.com/quan/activity/index/id/27.html"
 			closeReg: ->
 				@.registerShow = false
 			openReg: (size)->
@@ -376,13 +380,14 @@ init = ->
 						main.faild(e)		
 				else
 					@.ugcShow = true
-					shareDone()
+					ugc.back()
 			success: (data)->
 				@.shareImageLink = data.info
 				@.pushed = false
 				@.loading = false
+				ugc.back()
 				neteaseShareImage()
-				shareDone()
+				# shareDone()
 				# 抽奖
 				# unless @.giveUp
 				# 	setTimeout =>
@@ -410,6 +415,25 @@ init = ->
 			# game = new Game({el: "game",h: h})
 			@.wy = CloudMusic.isInApp()
 			version = CloudMusic.getClientVersion().split(".")
-			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => @.getUserInfo()})
+			@.getUserInfo (callback)=>
+				# console.log imageList,@.muiscType @.userInfo.styleTop
+				@.ugcType = @.muiscType @.userInfo.styleTop
+				imageList2 = [
+					_CDN+"img/ugc-p-#{@.ugcType}.png"
+					_CDN+"img/bg#{@.ugcType}.png"
+					_CDN+"img/ugc-t-#{@.ugcType}.png"
+					_CDN+"img/ugc-light.png"
+					_CDN+"img/ugc-title.png"
+					_CDN+"img/icon-ugc-1.png"
+					_CDN+"img/icon-ugc-2.png"
+					_CDN+"img/qrcode.png"
+					_CDN+"img/btn-share.png"
+					_CDN+"img/btn-reg.png"
+					_CDN+"img/btn-more.png"
+					_CDN+"img/ugc-last-text.png"
+				]
+				window.imageList = window.imageList.concat(imageList2)
+
+				ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => callback()})
 			
 
