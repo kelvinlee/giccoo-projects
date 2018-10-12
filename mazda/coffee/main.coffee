@@ -203,6 +203,7 @@ init = ->
 			ugcShow: false
 			regH: 100
 			ugcType: 1
+			userLogin: false
 			userInfo:
 				"userId": 238547308,
 				"songId": 29593763,
@@ -254,6 +255,7 @@ init = ->
 					console.log msg.data
 					if msg.data.code is 200
 						@.userInfo = msg.data.data
+						@.userLogin = true
 						callback @.showBuild
 					else
 						callback @.showBuild
@@ -262,6 +264,7 @@ init = ->
 					callback @.showBuild
 			showBuild: ->
 				console.log "userInfo:",main.userInfo
+				getStart()
 				# if info
 				# 	getStart(true,info)
 				# else
