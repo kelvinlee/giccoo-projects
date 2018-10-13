@@ -32,7 +32,7 @@ _testTime = 0
 
 
 neteaseShareImage = ->
-	title1 = "一首歌HOLD住人生大场面"
+	title1 = "用音乐解密你的动物型人格"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
 	redirectUrl = "https://m.giccoo.com/mazda/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
@@ -50,9 +50,9 @@ window.onload = ->
 
 		CloudMusic.setShareData
 			name: 'mazda',
-			title: '一首歌HOLD住人生大场面',
-			subTitle: '测测你的音乐情商属性',
-			text: '一首歌HOLD住人生大场面',
+			title: '用音乐解密你的动物型人格',
+			subTitle: '音乐中藏着最真实的你，点击开启',
+			text: '用音乐解密你的动物型人格',
 			picUrl: 'http://m.giccoo.com/mazda/img/ico.jpg',
 			link: 'http://m.giccoo.com/mazda/'
 
