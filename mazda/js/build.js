@@ -14,6 +14,9 @@ var imageList = [
 	_CDN+"img/a-text-4.png",
 	_CDN+"img/a-text-5.png",
 	_CDN+"img/a-text-6.png",
+	_CDN+"img/a-text-7.png",
+	_CDN+"img/a-text-8.png",
+	_CDN+"img/a-text-9.png",
 	_CDN+"img/elevator-light.png",
 	
 	_CDN+"img/p2girl.png",
@@ -24,7 +27,9 @@ var imageList = [
 	_CDN+"img/p2flash2.png",
 
 	_CDN+"img/p3table.png",
-	_CDN+"img/p3bird.png",
+	_CDN+"img/p3bird1.png",
+	_CDN+"img/p3bird2.png",
+	_CDN+"img/p3bird3.png",
 	_CDN+"img/p3girl1.png",
 	_CDN+"img/p3girl2.png",
 	_CDN+"img/p3head1.png",
@@ -33,6 +38,46 @@ var imageList = [
 	_CDN+"img/p3manb.png",
 	_CDN+"img/p3bg.png",
 	_CDN+"img/p3hand.png",
+
+	_CDN+"img/p4boy1.png",
+	_CDN+"img/p4boy2.png",
+	_CDN+"img/p4boy.png",
+	_CDN+"img/p4boyb.png",
+	_CDN+"img/p4boyhand.png",
+	_CDN+"img/p4bird.png",
+	_CDN+"img/p4light.png",
+	_CDN+"img/p4table.png",
+
+	_CDN+"img/p5t1.png",
+	_CDN+"img/p5t2.png",
+	_CDN+"img/p5pic.png",
+	_CDN+"img/p5btn.png",
+
+	_CDN+"img/end1m1.png",
+	_CDN+"img/end1m2.png",
+	_CDN+"img/end1m3.png",
+
+	_CDN+"img/end1t1.png",
+	_CDN+"img/end1t2.png",
+	_CDN+"img/end1t3.png",
+	_CDN+"img/end1t4.png",
+	_CDN+"img/end1t5.png",
+
+	_CDN+"img/end1bg.png",
+	_CDN+"img/end1btn.png",
+	_CDN+"img/end1car.png",
+	_CDN+"img/end1hand.png",
+	_CDN+"img/end1head.png",
+	_CDN+"img/end1man.png",
+	_CDN+"img/wheel1.png",
+
+	_CDN+"img/end2a-bg.png",
+	_CDN+"img/end2b-bg.png",
+
+	_CDN+"img/endingbg.png",
+	_CDN+"img/building.png",
+
+	_CDN+"img/endingcar.png",
 
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
@@ -66,5 +111,6 @@ function getStart() {
 	texture=new Sprite(getTe(_CDN+"img/texture.jpg"));
 	pStage.addChild(texture)
 	texture.blendMode=_MULTIPLY
+	texture.height=stageH
 	setPage1()
 }
