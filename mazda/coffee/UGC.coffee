@@ -58,14 +58,14 @@ class UGC
 		if @.loadNumber is imageList.length
 			buildUGC.bind(@).call()
 			@.opts.callback()
-			# @.init()
+			@.init()
 			# console.log "aa"
 			# @.stage.addChild Spr(_CDN+"img/texture.jpg")
 	build: ->
 		console.log "builded"
 		buildUGC.bind(@).call()
 		@.opts.callback()
-		# @.init()
+		@.init()
 	init: ->
 		nameList = ["","狼","猫","考拉","孔雀","鹿","狗","老虎"]
 		colorList = [0xffffff,0x4c7b6d,0x924650,0x487795,0x5b4792,0x916846,0x495779,0x827a5d]
@@ -95,24 +95,25 @@ class UGC
 		people.y = @.opts.h/2 + 97
 		people.x = 320
 		text.y = people.y + 60
-		icon1.y = text.y + text.height + 10
+		icon1.y = text.y + text.height + 20
 		icon1.x = 60
-		icon2.y = text.y + text.height * 2 + 10 * 2
 		icon2.x = 60
 
 		musicName = new Container()
 
 		musicName1 = new Text "《#{main.userInfo.songName}》",{fontFamily : 'Arial', fontSize: 26, fontWeight: "bold", fill : 0xffffff, letterSpacing: 4, lineHeight: 34}
-		musicName2 = new Text "是你2018年最偏爱的一首歌",{fontFamily : 'Arial', fontSize: 22, fill : 0xffffff, letterSpacing: 4, lineHeight: 34}
-		musicName3 = new Text "一共聆听了#{main.userInfo.playCnt}次，在你心中留下了不一样的印记。",{fontFamily : 'Arial', fontSize: 22, fill : 0xffffff, letterSpacing: 4, lineHeight: 34}
-		musicName2.y = 4
-		musicName2.x = musicName1.width + 5
-		musicName3.y = 34
+		musicName2 = new Text "是你2018年最偏爱的一首歌",{fontFamily : 'Arial', fontSize: 22, fill : 0xffffff, letterSpacing: 3, lineHeight: 34}
+		musicName3 = new Text "一共聆听了#{main.userInfo.playCnt}次，在你心中留下了不一样的印记。",{fontFamily : 'Arial', fontSize: 22, fill : 0xffffff, letterSpacing: 3, lineHeight: 34}
+		musicName2.y = 34
+		# musicName2.x = musicName1.width + 5
+		musicName3.y = 34*2
 
 		musicName.addChild musicName1,musicName2,musicName3
 
+		icon2.y = text.y + text.height + 10 * 2 + musicName.height
+
 		musicName.x = 60 + icon1.width + 20
-		musicName.y = icon1.y + 10
+		musicName.y = icon1.y + 10 - 34/2
 		musicName.scale.x = 0.8
 
 		dateName = new Container()
@@ -159,7 +160,16 @@ class UGC
 
 		max = dateName.y + dateName.height
 		if qrcode.y < max
-			ugcCont.y = -20
+			ugcCont.y = -60
+			title.scale.set(0.8,0.8)
+			title.x = (640-title.width)/2
+			title.y += 20
+			anName.scale.set(0.6,0.8)
+			anName.x = (640-anName.width)/2
+			anName.y += 20
+			people.scale.set(0.8,0.8)
+			# people.x = (640-people.width)/2
+
 		qrcode.y = dateName.y + dateName.height + 20
 		# 	console.log "smaller"
 		# 	text.scale.set(0.8)

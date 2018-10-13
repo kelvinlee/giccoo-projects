@@ -34,10 +34,15 @@ _testTime = 0
 neteaseShareImage = ->
 	title1 = "用音乐解密你的动物型人格"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://m.giccoo.com/mazda/"
+	redirectUrl = "https://activity.music.163.com/mazda/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
-	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
+	# window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "share href:",picUrl
+	CloudMusic.sharePic({
+		picUrl: picUrl,
+		text: title1,
+		link: redirectUrl
+	})
 
 window.onload = ->
 	TrueH = document.documentElement.clientHeight
@@ -53,8 +58,8 @@ window.onload = ->
 			title: '用音乐解密你的动物型人格',
 			subTitle: '音乐中藏着最真实的你，点击开启',
 			text: '用音乐解密你的动物型人格',
-			picUrl: 'http://m.giccoo.com/mazda/img/ico.jpg',
-			link: 'http://m.giccoo.com/mazda/'
+			picUrl: 'https://activity.music.163.com/mazda/img/ico.jpg',
+			link: 'https://activity.music.163.com/mazda/'
 
 	else
 		loadWechatConfig()
@@ -65,8 +70,8 @@ window.onload = ->
 			shareContent =
 				title: "一首歌HOLD住人生大场面"
 				desc: "测测你的音乐情商属性"
-				link: "http://m.giccoo.com/mazda/"
-				imgUrl: "http://m.giccoo.com/mazda/img/ico.jpg"
+				link: "https://activity.music.163.com/mazda/"
+				imgUrl: "https://activity.music.163.com/mazda/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
@@ -104,7 +109,7 @@ window.onload = ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 
-			# @.next() # for test
+			@.next() # for test
 
 			timein = setInterval =>
 				@.progress += 3
@@ -264,7 +269,7 @@ init = ->
 					callback @.showBuild
 			showBuild: ->
 				console.log "userInfo:",main.userInfo
-				getStart()
+				# getStart()
 				# if info
 				# 	getStart(true,info)
 				# else
@@ -298,7 +303,7 @@ init = ->
 				@.lotteryShow = false
 				console.log "run share"
 				ugc.app.renderer.render ugc.app.stage
-				@.ugc = ugc.app.view.toDataURL()
+				@.ugc = ugc.app.view.toDataURL("image/jpeg",0.7)
 				image = @.ugc
 				if @.wy
 					folder = "mazda"
@@ -308,7 +313,10 @@ init = ->
 					}
 					@.folder = folder
 					return @.faild() unless image?
-					return false if @.pushed
+					if @.pushed
+						ugc.back()
+						neteaseShareImage()
+						return false
 					axios.post imageurl,data
 					.then (msg)=>
 						if msg.data.recode is 200
@@ -323,7 +331,7 @@ init = ->
 					ugc.back()
 			success: (data)->
 				@.shareImageLink = data.info
-				@.pushed = false
+				@.pushed = true
 				@.loading = false
 				ugc.back()
 				neteaseShareImage()
