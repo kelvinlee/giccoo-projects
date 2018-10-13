@@ -104,7 +104,7 @@ window.onload = ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 
-			@.next() # for test
+			# @.next() # for test
 
 			timein = setInterval =>
 				@.progress += 3
@@ -344,7 +344,7 @@ init = ->
 				else
 					window.location.href = "https://music.163.com/#/playlist?id=#{id}"
 			openInApp: ->
-				CloudMusic.open("https://m.giccoo.com/mazda/")
+				CloudMusic.open("https://activity.music.163.com/mazda/")
 		# watch:
 		mounted: ->
 			TrueH = document.documentElement.clientHeight

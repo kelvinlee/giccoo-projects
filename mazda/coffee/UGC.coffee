@@ -205,16 +205,16 @@ class UGC
 		@.dom.banner = banner
 
 
-		# TweenMax.from(title,.5,{alpha:0,y:"-=50",delay: .5})
-		# TweenMax.from(anName,.5,{alpha:0,y:"-=50",delay: .7})
+		# TweenMax.from(title,.5,{alpha:0,y:"-=50",delay: 1})
+		# TweenMax.from(anName,.5,{alpha:0,y:"-=50",delay: 1.2})
 
-		# TweenMax.from(text,.5,{alpha:0,y:"+=50",delay: .5})
-		# TweenMax.from(icon1,.6,{alpha:0,y:"+=50",delay: .7})
-		# TweenMax.from(musicName,.6,{alpha:0,y:"+=50",delay: .7})
-		# TweenMax.from(icon2,.7,{alpha:0,y:"+=50",delay: .9})
-		# TweenMax.from(dateName,.7,{alpha:0,y:"+=50",delay: .9})
+		# TweenMax.from(text,.5,{alpha:0,y:"+=50",delay: 1})
+		# TweenMax.from(icon1,.6,{alpha:0,y:"+=50",delay: 1.2})
+		# TweenMax.from(musicName,.6,{alpha:0,y:"+=50",delay: 1.2})
+		# TweenMax.from(icon2,.7,{alpha:0,y:"+=50",delay: 1.4})
+		# TweenMax.from(dateName,.7,{alpha:0,y:"+=50",delay: 1.4})
 
-		# TweenMax.from(banner,.7,{alpha:0,y:"+=50",delay: 1.1})
+		# TweenMax.from(banner,.7,{alpha:0,y:"+=50",delay: 1.5})
 
 	back: ->
 		@.dom.qrcode.visible = false

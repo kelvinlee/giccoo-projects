@@ -35,14 +35,14 @@ n=Spr(_CDN+"img/bg".concat(main.ugcType,".png"))).scale.y=1.07,n.pivot.y=650,n.y
 // people.y -= moveUp
 // title.y -= moveUp
 // anName.y -= moveUp
-N.addChild(a,n,P,C,f,S,h,g,I,l,t,b,i),this.stage.addChildAt(N,0),s.interactive=!0,s.tap=function(){if(i.visible)return console.log("tap"),b.visible=!0,i.visible=!1,main.share()},o.interactive=!0,o.tap=function(){if(i.visible)return main.reg()},r.interactive=!0,r.tap=function(){if(i.visible)return main.more()},this.dom.qrcode=b,this.dom.banner=i}// TweenMax.from(title,.5,{alpha:0,y:"-=50",delay: .5})
-// TweenMax.from(anName,.5,{alpha:0,y:"-=50",delay: .7})
-// TweenMax.from(text,.5,{alpha:0,y:"+=50",delay: .5})
-// TweenMax.from(icon1,.6,{alpha:0,y:"+=50",delay: .7})
-// TweenMax.from(musicName,.6,{alpha:0,y:"+=50",delay: .7})
-// TweenMax.from(icon2,.7,{alpha:0,y:"+=50",delay: .9})
-// TweenMax.from(dateName,.7,{alpha:0,y:"+=50",delay: .9})
-// TweenMax.from(banner,.7,{alpha:0,y:"+=50",delay: 1.1})
+N.addChild(a,n,P,C,f,S,h,g,I,l,t,b,i),this.stage.addChildAt(N,0),s.interactive=!0,s.tap=function(){if(i.visible)return console.log("tap"),b.visible=!0,i.visible=!1,main.share()},o.interactive=!0,o.tap=function(){if(i.visible)return main.reg()},r.interactive=!0,r.tap=function(){if(i.visible)return main.more()},this.dom.qrcode=b,this.dom.banner=i}// TweenMax.from(title,.5,{alpha:0,y:"-=50",delay: 1})
+// TweenMax.from(anName,.5,{alpha:0,y:"-=50",delay: 1.2})
+// TweenMax.from(text,.5,{alpha:0,y:"+=50",delay: 1})
+// TweenMax.from(icon1,.6,{alpha:0,y:"+=50",delay: 1.2})
+// TweenMax.from(musicName,.6,{alpha:0,y:"+=50",delay: 1.2})
+// TweenMax.from(icon2,.7,{alpha:0,y:"+=50",delay: 1.4})
+// TweenMax.from(dateName,.7,{alpha:0,y:"+=50",delay: 1.4})
+// TweenMax.from(banner,.7,{alpha:0,y:"+=50",delay: 1.5})
 },{key:"back",value:function e(){return this.dom.qrcode.visible=!1,this.dom.banner.visible=!0}}]),t}();return e.prototype.builded=!1,e.prototype.default={w:320,h:160,running:!0},e.prototype.started=!1,e.prototype.over=!1,e.prototype.online=!1,e.prototype.blocks=[],e.prototype.bottles=[],e.prototype.enemys=[],e.prototype.lights=[],e.prototype.dom={},e.prototype._progress=0,e.prototype.lineMoving=!1,e.prototype.startTime=null,e.prototype.loadNumber=0,e}.call(void 0),loadWechatConfig=function e(){var t,i,n;n=encodeURIComponent(window.location.href.split("#")[0]),(t=document.createElement("script")).src="//api.giccoo.com/api/config?url="+n,(i=document.getElementsByTagName("script")[0]).parentNode.insertBefore(t,i)},IsPC=function e(){var t,i,n,a;for(n=navigator.userAgent,t=new Array("Android","iPhone","SymbianOS","Windows Phone","iPad","iPod"),i=!0,a=0;a<t.length;){if(0<n.indexOf(t[a])){i=!1;break}a++}return i},Vue.component("player",{template:'<div class="player" :class="{play: playing, pause: !playing}" @click="change"> <div class="icon-play" :class="{play: playing, pause: !playing}"> <svg v-if="!icon" v-show="!playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-39"></use><path class="ytp-svg-fill" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"></path></svg> <svg v-if="!icon" v-show="playing" height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-40"></use><path class="ytp-svg-fill" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z"></path></svg> </div> <audio :src="src" :autoplay="autoplay" :preload="preload" :loop="loop"></audio> <img v-if="thumb" :src="thumb" /> </div>',data:function e(){return{playing:!1,stoped:!1}},props:{name:{default:!1},src:{default:"./mp3/bgm.mp3"},thumb:{default:!1},autoplay:{default:!1},preload:{default:!1},loop:{default:!1},callback:{default:!1},icon:{default:!1}},methods:{play:function e(){var t;return t=this.$emit("play",this),this.playing=!0},pause:function e(){var t;return t=this.$emit("pause",this),this.audio.pause(),this.playing=!1},ended:function e(){return this.playing=!1},change:function e(){return this.playing?(this.audio.pause(),this.stoped=!0):(this.audio.play(),this.stoped=!1,"undefined"!=typeof _hmt&&null!==_hmt&&_hmt.push(["_trackEvent","adidas-originals-eqt",this.name,"play","-"]))}},
 // computed:
 mounted:function e(t){
@@ -87,8 +87,8 @@ window.location.href="orpheus://sharepic?picUrl="+encodeURIComponent(t)+"&shareU
 return e={title:"一首歌HOLD住人生大场面",desc:"测测你的音乐情商属性",link:"http://m.giccoo.com/mazda/",imgUrl:"http://m.giccoo.com/mazda/img/ico.jpg",success:function e(){},
 // alert "success"
 cancel:function e(){}},// alert "cancel"
-wx.onMenuShareTimeline(e),wx.onMenuShareAppMessage(e),wx.onMenuShareQQ(e),wx.onMenuShareWeibo(e)})),_public=new Vue({el:"#public",data:{note:!0,playing:!1},mounted:function e(){return document.addEventListener("WeixinJSBridgeReady",function(){return _public.$children[0].change()})}}),loading=new Vue({el:"#loading",data:{progress:0,mounted:!1,progressOn:0},methods:{next:function e(){return document.getElementById("load").className+=" fadeOut animated",_public.note=!1,main.mounted=!0,setTimeout(function(){return document.getElementById("load").style.display="none"},520)}},mounted:function e(){var t=this,i;// for test
-return this.mounted=!0,TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,this.next(),i=setInterval(function(){if(t.progress+=3,t.progress>=t.progressOn&&(t.progress=t.progressOn),100<=t.progress)return t.progress=100,clearInterval(i),_cache=setTimeout(function(){return t.next()},1e3)},50)}}),init()},init=function e(){var t,i;// console.log TrueW,TrueH
+wx.onMenuShareTimeline(e),wx.onMenuShareAppMessage(e),wx.onMenuShareQQ(e),wx.onMenuShareWeibo(e)})),_public=new Vue({el:"#public",data:{note:!0,playing:!1},mounted:function e(){return document.addEventListener("WeixinJSBridgeReady",function(){return _public.$children[0].change()})}}),loading=new Vue({el:"#loading",data:{progress:0,mounted:!1,progressOn:0},methods:{next:function e(){return document.getElementById("load").className+=" fadeOut animated",_public.note=!1,main.mounted=!0,setTimeout(function(){return document.getElementById("load").style.display="none"},520)}},mounted:function e(){var t=this,i;// @.next() # for test
+return this.mounted=!0,TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,i=setInterval(function(){if(t.progress+=3,t.progress>=t.progressOn&&(t.progress=t.progressOn),100<=t.progress)return t.progress=100,clearInterval(i),_cache=setTimeout(function(){return t.next()},1e3)},50)}}),init()},init=function e(){var t,i;// console.log TrueW,TrueH
 return 640<=TrueW&&(
 // console.log new Date().getTime() - startTime
 // document.body.style.height = TrueH+"px"
@@ -117,7 +117,7 @@ return main.faild(e)})):(this.ugcShow=!0,ugc.back())},success:function e(t){retu
 // 	,5000
 faild:function e(t){return this.pushed=!1,this.loading=!1},openMusic:function e(t){
 // goList()
-return _public.$children[0].pause(),CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/mazda/")}},
+return _public.$children[0].pause(),CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://activity.music.163.com/mazda/")}},
 // watch:
 mounted:function e(){var i=this,t,n;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,"NeteaseMusic"===sys&&(this.wy=!0),t=2*TrueH*(2-2*TrueW/750+.01),// game = new Game({el: "game",h: h})
 this.wy=CloudMusic.isInApp(),n=CloudMusic.getClientVersion().split("."),this.getUserInfo(function(t){var e;// console.log imageList,@.muiscType @.userInfo.styleTop
