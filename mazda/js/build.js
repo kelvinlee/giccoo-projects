@@ -78,6 +78,7 @@ var imageList = [
 	_CDN+"img/building.png",
 
 	_CDN+"img/endingcar.png",
+	_CDN+"img/btn_next.png",
 
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
@@ -113,4 +114,41 @@ function getStart() {
 	texture.blendMode=_MULTIPLY
 	texture.height=stageH
 	setPage1()
+}
+var nowPage=0
+function goNext(){
+	btnNext.y=11111111
+	if(nowPage==0){
+		var _t2=0
+		
+		TweenMax.to(gg.p1t,1,{alpha:0,y:"+=350",delay:_t2,ease:Sine.easeIn})		
+
+		TweenMax.to(elevatorC,1,{y:stageH,delay:_t2,ease:Sine.easeIn})	
+		TweenMax.to(p1G2,1,{y:stageH,delay:_t2,ease:Sine.easeIn})	
+		TweenMax.to(p1G1,1.5,{alpha:0,delay:_t2+1})	
+		TweenMax.to(gg.p1t2,1.5,{alpha:1,delay:_t2+1})
+		TweenMax.to(gg.p1t2,1.5,{alpha:0,delay:_t2+1+2,onComplete:setPage2})//====停留时间2
+		//TweenMax.to(gg.p1t2,1.5,{alpha:0,delay:_t2+1+2})//====停留时间2
+	}
+
+	if(nowPage==1){
+		TweenMax.to(gg.p2tiger,1,{alpha:0,y:"+=50",delay:0})
+		TweenMax.to(gg.p2girl,1,{alpha:0,y:"+=60",delay:0})
+		TweenMax.to(gg.p2t2,1,{alpha:0,y:"+=70",delay:0,onComplete:setPage3})
+	}
+
+	if(nowPage==2){
+		TweenMax.to(gg.p3t2,.5,{alpha:0,y:"+=50",delay:0})
+		TweenMax.to(p3picC,.5,{alpha:0,y:"+=50",delay:0,onComplete:setPage4})
+	}
+
+	if(nowPage==3){
+		TweenMax.to(p4picC,1,{y:"+=150",alpha:0,delay:0})
+		TweenMax.to(p4.t2,1,{y:"+=150",alpha:0,delay:0.1})
+		TweenMax.to(p4.t3,1,{y:"+=150",alpha:1,delay:0.3})
+
+		TweenMax.to(p4.t3,1,{alpha:0,delay:0.3,onComplete:setPage5})
+	}
+
+	nowPage++
 }

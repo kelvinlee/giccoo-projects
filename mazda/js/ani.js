@@ -7,6 +7,8 @@ var p1G2=new PIXI.Graphics()
 var p1door1=new PIXI.Graphics()
 var p1door2=new PIXI.Graphics()
 
+var btnNext
+
 ////////////////////==================================第一页
 function setPage1() {
 	pStage.addChildAt(page1,0)
@@ -61,7 +63,16 @@ function setPage1() {
 
 
 	page1ani()
+
+	btnNext=new Sprite(getTe(_CDN+"img/btn_next.png"));
+	pStage.addChild(btnNext)
+	btnNext.interactive=true
+	btnNext.tap=goNext
+	btnNext.y=stageH/2+461
+	btnNext.visible=false
 }
+
+
 
 function page1ani(){
 	//TweenMax.to(page1,.5,{alpha:1})
@@ -83,15 +94,17 @@ function page1ani(){
 	//TweenMax.to(gg.eArrow,.5,{alpha:1,delay:_t+1+1.5,repeat:3})
 	TweenMax.to(gg.eArrow,.5,{alpha:0,delay:_t+1+1.5,repeat:3})
 	TweenMax.set(gg.eArrow,{alpha:1,delay:_t+1+1.5+1.5,onComplete:function(){
-		var _t2=2
+		btnNext.visible=true
+		// var _t2=2
 		
-		TweenMax.to(gg.p1t,1,{alpha:0,y:"+=350",delay:_t2,ease:Sine.easeIn})		
+		// TweenMax.to(gg.p1t,1,{alpha:0,y:"+=350",delay:_t2,ease:Sine.easeIn})		
 
-		TweenMax.to(elevatorC,1,{y:stageH,delay:_t2,ease:Sine.easeIn})	
-		TweenMax.to(p1G2,1,{y:stageH,delay:_t2,ease:Sine.easeIn})	
-		TweenMax.to(p1G1,1.5,{alpha:0,delay:_t2+1})	
-		TweenMax.to(gg.p1t2,1.5,{alpha:1,delay:_t2+1})
-		TweenMax.to(gg.p1t2,1.5,{alpha:0,delay:_t2+1+2,onComplete:setPage2})//====停留时间2
+		// TweenMax.to(elevatorC,1,{y:stageH,delay:_t2,ease:Sine.easeIn})	
+		// TweenMax.to(p1G2,1,{y:stageH,delay:_t2,ease:Sine.easeIn})	
+		// TweenMax.to(p1G1,1.5,{alpha:0,delay:_t2+1})	
+		// TweenMax.to(gg.p1t2,1.5,{alpha:1,delay:_t2+1})
+		// TweenMax.to(gg.p1t2,1.5,{alpha:0,delay:_t2+1+2,onComplete:setPage2})//====停留时间2
+		// //TweenMax.to(gg.p1t2,1.5,{alpha:0,delay:_t2+1+2})//====停留时间2
 
 	}})
 
@@ -155,10 +168,10 @@ function page2ani(){
 	TweenMax.to(gg.p2tiger,1,{alpha:1,x:100,delay:1.3+1+.75})
 	TweenMax.set(gg.p2girlb,{alpha:0,x:0,delay:1.3+1+.75})
 
-
-	TweenMax.to(gg.p2tiger,1,{alpha:0,y:"+=50",delay:1.3+1+.75+2})
-	TweenMax.to(gg.p2girl,1,{alpha:0,y:"+=60",delay:1.3+1+.75+2})
-	TweenMax.to(gg.p2t2,1,{alpha:0,y:"+=70",delay:1.3+1+.75+2,onComplete:setPage3})
+	TweenMax.set(btnNext,{y:stageH/2+461,delay:1.3+1+.75})
+	// TweenMax.to(gg.p2tiger,1,{alpha:0,y:"+=50",delay:1.3+1+.75+2})
+	// TweenMax.to(gg.p2girl,1,{alpha:0,y:"+=60",delay:1.3+1+.75+2})
+	// TweenMax.to(gg.p2t2,1,{alpha:0,y:"+=70",delay:1.3+1+.75+2,onComplete:setPage3})
 }
 var page3=new PIXI.Container()
 var p3girl1C=new PIXI.Container()
@@ -247,8 +260,9 @@ function page3ani(){
 	TweenMax.to(p3birdC,1,{y:0,alpha:1,delay:1+2+.5})
 	TweenMax.to(gg.p3manb,1,{alpha:0,delay:1+2+.5})
 
-	TweenMax.to(gg.p3t2,.5,{alpha:0,y:"+=50",delay:1+2+.5+2})
-	TweenMax.to(p3picC,.5,{alpha:0,y:"+=50",delay:1+2+.5+2,onComplete:setPage4})
+	TweenMax.set(btnNext,{y:stageH/2+461,delay:1+2+.5})
+	// TweenMax.to(gg.p3t2,.5,{alpha:0,y:"+=50",delay:1+2+.5+2})
+	// TweenMax.to(p3picC,.5,{alpha:0,y:"+=50",delay:1+2+.5+2,onComplete:setPage4})
 
 }
 var p4={}
@@ -310,11 +324,13 @@ function page4ani(){
 	TweenMax.to(p4.light,1,{x:"+=150",alpha:1,delay:3.3})
 	TweenMax.to(p4.boyb,.1,{alpha:0,delay:3.4})
 
-	TweenMax.to(p4picC,1,{y:"+=150",alpha:0,delay:3.4+2})
-	TweenMax.to(p4.t2,1,{y:"+=150",alpha:0,delay:3.4+2+.1})
-	TweenMax.to(p4.t3,1,{y:"+=150",alpha:1,delay:3.4+2+.3})
+	TweenMax.set(btnNext,{y:stageH/2+461,delay:3.4})
 
-	TweenMax.to(p4.t3,1,{alpha:0,delay:3.4+2+.3+1+2,onComplete:setPage5})
+	// TweenMax.to(p4picC,1,{y:"+=150",alpha:0,delay:3.4+2})
+	// TweenMax.to(p4.t2,1,{y:"+=150",alpha:0,delay:3.4+2+.1})
+	// TweenMax.to(p4.t3,1,{y:"+=150",alpha:1,delay:3.4+2+.3})
+
+	// TweenMax.to(p4.t3,1,{alpha:0,delay:3.4+2+.3+1+2,onComplete:setPage5})
 }
 
 var page5=new PIXI.Container()
