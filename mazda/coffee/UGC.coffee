@@ -58,14 +58,14 @@ class UGC
 		if @.loadNumber is imageList.length
 			buildUGC.bind(@).call()
 			@.opts.callback()
-			@.init()
+			# @.init()
 			# console.log "aa"
 			# @.stage.addChild Spr(_CDN+"img/texture.jpg")
 	build: ->
 		console.log "builded"
 		buildUGC.bind(@).call()
 		@.opts.callback()
-		@.init()
+		# @.init()
 	init: ->
 		nameList = ["","狼","猫","考拉","孔雀","鹿","狗","老虎"]
 		colorList = [0xffffff,0x4c7b6d,0x924650,0x487795,0x5b4792,0x916846,0x495779,0x827a5d]
