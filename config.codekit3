@@ -1046,6 +1046,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/mazda/img/btn_next.png": {
+		"ft": 32768,
+		"iS": 4145,
+		"oA": 0,
+		"oAP": "/mazda/img/btn_next.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/mazda/img/building.png": {
 		"ft": 32768,
 		"iS": 84785,

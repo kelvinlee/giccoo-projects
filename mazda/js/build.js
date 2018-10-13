@@ -191,16 +191,16 @@ function goNext(){
 
 		TweenMax.set(btnNext,{y:stageH/2+441,delay:3.4-3})
 
-
 	}
 
 	if(nowPage==7){
 		TweenMax.to(p4picC,1,{y:"+=150",alpha:0,delay:0})
 		TweenMax.to(p4.t2,1,{y:"+=150",alpha:0,delay:0.1})
-		TweenMax.to(p4.t3,1,{y:"+=150",alpha:1,delay:0.3})
+		TweenMax.to(p4.t3,1,{y:"+=150",alpha:1,delay:0.3,onComplete:function(){TweenMax.set(btnNext,{y:stageH/2+441,delay:.1})}})
 
+	}
+	if(nowPage==8){
 		TweenMax.to(p4.t3,1,{alpha:0,delay:0.3,onComplete:setPage5})
 	}
-
 	nowPage++
 }
