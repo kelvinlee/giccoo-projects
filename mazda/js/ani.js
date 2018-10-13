@@ -68,7 +68,7 @@ function setPage1() {
 	pStage.addChild(btnNext)
 	btnNext.interactive=true
 	btnNext.tap=goNext
-	btnNext.y=stageH/2+461
+	btnNext.y=stageH/2+441
 	btnNext.visible=false
 }
 
@@ -168,7 +168,7 @@ function page2ani(){
 	TweenMax.to(gg.p2tiger,1,{alpha:1,x:100,delay:1.3+1+.75})
 	TweenMax.set(gg.p2girlb,{alpha:0,x:0,delay:1.3+1+.75})
 
-	TweenMax.set(btnNext,{y:stageH/2+461,delay:1.3+1+.75})
+	TweenMax.set(btnNext,{y:stageH/2+441,delay:1.3+1+.75})
 	// TweenMax.to(gg.p2tiger,1,{alpha:0,y:"+=50",delay:1.3+1+.75+2})
 	// TweenMax.to(gg.p2girl,1,{alpha:0,y:"+=60",delay:1.3+1+.75+2})
 	// TweenMax.to(gg.p2t2,1,{alpha:0,y:"+=70",delay:1.3+1+.75+2,onComplete:setPage3})
@@ -260,7 +260,7 @@ function page3ani(){
 	TweenMax.to(p3birdC,1,{y:0,alpha:1,delay:1+2+.5})
 	TweenMax.to(gg.p3manb,1,{alpha:0,delay:1+2+.5})
 
-	TweenMax.set(btnNext,{y:stageH/2+461,delay:1+2+.5})
+	TweenMax.set(btnNext,{y:stageH/2+441,delay:1+2+.5})
 	// TweenMax.to(gg.p3t2,.5,{alpha:0,y:"+=50",delay:1+2+.5+2})
 	// TweenMax.to(p3picC,.5,{alpha:0,y:"+=50",delay:1+2+.5+2,onComplete:setPage4})
 
@@ -324,7 +324,7 @@ function page4ani(){
 	TweenMax.to(p4.light,1,{x:"+=150",alpha:1,delay:3.3})
 	TweenMax.to(p4.boyb,.1,{alpha:0,delay:3.4})
 
-	TweenMax.set(btnNext,{y:stageH/2+461,delay:3.4})
+	TweenMax.set(btnNext,{y:stageH/2+441,delay:3.4})
 
 	// TweenMax.to(p4picC,1,{y:"+=150",alpha:0,delay:3.4+2})
 	// TweenMax.to(p4.t2,1,{y:"+=150",alpha:0,delay:3.4+2+.1})
