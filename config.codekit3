@@ -2956,6 +2956,124 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/starbucks/coffee/dealer.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/starbucks/js/dealer.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/starbucks/coffee/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/starbucks/js/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/starbucks/coffee/UGC.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/starbucks/js/UGC.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/starbucks/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/starbucks/css",
+		"oF": 0
+		},
+	"/starbucks/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/index.html",
+		"oF": 0
+		},
+	"/starbucks/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "/starbucks/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"/starbucks/js/ani.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/starbucks/js/ani-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/starbucks/js/build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/starbucks/js/build-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/starbucks/js/dealer.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/starbucks/js/dealer-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/starbucks/js/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/starbucks/js/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/starbucks/js/public_funciton.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/starbucks/js/public_funciton-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/starbucks/sass/base.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/starbucks/css/base.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
 	"/starwars": {
 		"ft": 65536,
 		"oA": 1,

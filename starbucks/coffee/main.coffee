@@ -10,7 +10,7 @@ axios.defaults.withCredentials = true
 TrueW = 640
 TrueH = 1138
 imageurl = "//api.giccoo.com/api/upload/image64/"
-apiUrl = "//api.giccoo.com/mazda"
+apiUrl = "//api.giccoo.com/starbucks"
 # apiLink = "//localhost:3000/"
 apiLink = "//g.giccoo.com/"
 # apiLink = "http://192.168.3.53:3000/"
@@ -34,7 +34,7 @@ _testTime = 0
 neteaseShareImage = ->
 	title1 = "一首歌HOLD住人生大场面"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://m.giccoo.com/mazda/"
+	redirectUrl = "https://m.giccoo.com/starbucks/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "share href:",picUrl
@@ -49,7 +49,7 @@ window.onload = ->
 		sys = "NeteaseMusic"
 
 		CloudMusic.setShareData
-			name: 'mazda',
+			name: 'starbucks',
 			title: '一首歌HOLD住人生大场面',
 			subTitle: '测测你的音乐情商属性',
 			text: '一首歌HOLD住人生大场面',
@@ -203,16 +203,6 @@ init = ->
 			ugcShow: false
 			regH: 100
 			ugcType: 1
-			userLogin: false
-			userInfo:
-				"userId": 238547308,
-				"songId": 29593763,
-				"songName": "キミはどう?",
-				"playCnt": 111,
-				"styleTop": "126377",
-				"mostActiveDay": "2018-08-29 00:00:45.0",
-				"periodIndex": 1,
-				"playDuration": 144
 		watch:
 			videoIndex: (n,o)->
 				@.videoIndexOld = o
@@ -225,62 +215,7 @@ init = ->
 				console.log date.replace(/-/g,"/")
 				d = new Date date.replace(/-/g,"/")
 				return d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日"
-			muiscType: (name)->
-				list =
-					"rapMusic": 1
-					"rnbMusic": 1
-					"lightMusic": 2
-					"childMusic": 2
-					"jazzMusic": 3
-					"postRockMusic": 3
-					"classicalMusic": 3
-					"gufengMusic": 4
-					"danceMusic": 4
-					"latinkMusic": 4
-					"metalMusic": 7
-					"punkMusic": 7
-					"yueyuMusic": 6
-					"acgMusic": 6
-					"folkMusic": 5
-					"electronicMusic": 5
-
-				if list[name]?
-					return list[name]
-				else
-					return parseInt 1+Math.random()*7
 			
-			getUserInfo: (callback)->
-				axios.get "//music.163.com/api/activity/mazda/userinfo"
-				.then (msg)=>
-					console.log msg.data
-					if msg.data.code is 200
-						@.userInfo = msg.data.data
-						@.userLogin = true
-						callback @.showBuild
-					else
-						callback @.showBuild
-				.catch (err)=>
-					console.log "err",err
-					callback @.showBuild
-			showBuild: ->
-				console.log "userInfo:",main.userInfo
-				getStart()
-				# if info
-				# 	getStart(true,info)
-				# else
-				# 	getStart(false,{})
-			reg: ->
-				console.log "reg"
-				window.location.href = "http://fans.faw-mazda.com/events/testdrive/index/id/4.html?utm_source=4300921&utm_content=qidongye&utm_medium=qidonghuamian3sjingtaikedianji4lunbo&utm_campaign=21814748"
-			more: ->
-				console.log "more"
-				window.location.href = "http://fans.faw-mazda.com/quan/activity/index/id/27.html"
-			closeReg: ->
-				@.registerShow = false
-			openReg: (size)->
-				@.regH = 100 - size
-				@.registerShow = true
-
 			goUGC: ->
 				@.lotteryShow = true
 
@@ -301,7 +236,7 @@ init = ->
 				@.ugc = ugc.app.view.toDataURL()
 				image = @.ugc
 				if @.wy
-					folder = "mazda"
+					folder = "starbucks"
 					data = {
 						image: image
 						folder: folder
@@ -344,7 +279,7 @@ init = ->
 				else
 					window.location.href = "https://music.163.com/#/playlist?id=#{id}"
 			openInApp: ->
-				CloudMusic.open("https://m.giccoo.com/mazda/")
+				CloudMusic.open("https://m.giccoo.com/starbucks/")
 		# watch:
 		mounted: ->
 			TrueH = document.documentElement.clientHeight
@@ -355,25 +290,15 @@ init = ->
 			# game = new Game({el: "game",h: h})
 			@.wy = CloudMusic.isInApp()
 			version = CloudMusic.getClientVersion().split(".")
-			@.getUserInfo (callback)=>
+			# @.getUserInfo (callback)=>
 				# console.log imageList,@.muiscType @.userInfo.styleTop
-				@.ugcType = @.muiscType @.userInfo.styleTop
-				imageList2 = [
-					_CDN+"img/ugc-p-#{@.ugcType}.png"
-					_CDN+"img/bg#{@.ugcType}.png"
-					_CDN+"img/ugc-t-#{@.ugcType}.png"
-					_CDN+"img/ugc-light.png"
-					_CDN+"img/ugc-title.png"
-					_CDN+"img/icon-ugc-1.png"
-					_CDN+"img/icon-ugc-2.png"
-					_CDN+"img/qrcode.png"
-					_CDN+"img/btn-share.png"
-					_CDN+"img/btn-reg.png"
-					_CDN+"img/btn-more.png"
-					_CDN+"img/ugc-last-text.png"
-				]
-				window.imageList = window.imageList.concat(imageList2)
+			# @.ugcType = @.muiscType @.userInfo.styleTop
+			imageList2 = [
+				_CDN+"img/btn-share.png"
+			]
+			window.imageList = window.imageList.concat(imageList2)
+			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => console.log("callback") })
 
-				ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => callback()})
+				
 			
 
