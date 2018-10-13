@@ -158,17 +158,19 @@ function page2ani(){
 	TweenMax.set(gg.p2flash2,{alpha:.8,delay:1.25})
 
 	TweenMax.to(gg.p2flash1,1-.5,{alpha:0,delay:1.3,repeat:1,repeatDelay:.25+.5-.2})
-	TweenMax.to(gg.p2flash2,1.5-.5,{alpha:0,delay:1.3,repeat:1,repeatDelay:.25-.2})
+	TweenMax.to(gg.p2flash2,1.5-.5,{alpha:0,delay:1.3,repeat:1,repeatDelay:.25-.2,onComplete:function(){
+		TweenMax.set(btnNext,{y:stageH/2+441,delay:0})
+	}})
 
-	TweenMax.to(gg.p2others,1,{x:"-=300",alpha:0,delay:1.3+1+.75})
+	// TweenMax.to(gg.p2others,1,{x:"-=300",alpha:0,delay:1.3+1+.75})
 
-	TweenMax.to(gg.p2t1,1,{alpha:0,delay:1.3+1+.75})
-	TweenMax.to(gg.p2t2,1,{alpha:1,delay:1.3+1+.75})
+	// TweenMax.to(gg.p2t1,1,{alpha:0,delay:1.3+1+.75})
+	// TweenMax.to(gg.p2t2,1,{alpha:1,delay:1.3+1+.75})
 
-	TweenMax.to(gg.p2tiger,1,{alpha:1,x:100,delay:1.3+1+.75})
-	TweenMax.set(gg.p2girlb,{alpha:0,x:0,delay:1.3+1+.75})
+	// TweenMax.to(gg.p2tiger,1,{alpha:1,x:100,delay:1.3+1+.75})
+	// TweenMax.set(gg.p2girlb,{alpha:0,x:0,delay:1.3+1+.75})
 
-	TweenMax.set(btnNext,{y:stageH/2+441,delay:1.3+1+.75})
+	
 	// TweenMax.to(gg.p2tiger,1,{alpha:0,y:"+=50",delay:1.3+1+.75+2})
 	// TweenMax.to(gg.p2girl,1,{alpha:0,y:"+=60",delay:1.3+1+.75+2})
 	// TweenMax.to(gg.p2t2,1,{alpha:0,y:"+=70",delay:1.3+1+.75+2,onComplete:setPage3})
@@ -237,7 +239,9 @@ function setPage3(){
 }
 
 function page3ani(){
-	TweenMax.to(gg.p3t1,2,{alpha:1})
+	TweenMax.to(gg.p3t1,2,{alpha:1,onComplete:function(){
+
+	}})
 
 	TweenMax.to(gg.p3head1,.5,{rotation:(Math.PI/180*7),repeat:10000,yoyo:true,ease:Linear.easeNone,repeatDelay:.4})
 	TweenMax.to(gg.p3head2,.7,{rotation:(Math.PI/180*7),repeat:10000,yoyo:true,ease:Linear.easeNone,repeatDelay:.2*Math.random()})
@@ -251,16 +255,9 @@ function page3ani(){
 	TweenMax.to(gg.p3bird2,.001,{alpha:1,repeat:100000,yoyo:true,repeatDelay:.5,delay:0.5})
 	TweenMax.to(gg.p3bird3,.001,{alpha:1,repeat:100000,yoyo:true,repeatDelay:.5,delay:0})
 
+	TweenMax.set(btnNext,{y:stageH/2+441,delay:1})
 	//TweenMax.to(p3birdC,.5,{y:"+=50",delay:1+3})
-	TweenMax.to(gg.p3t1,.5,{alpha:0,y:"+=50",delay:1+2})
-	TweenMax.to(gg.p3t2,.5,{alpha:1,y:"+=50",delay:1+2+.5})
-
-	TweenMax.to(p3girl1C,1,{x:"-=90",alpha:0,delay:1+2+.5})
-	TweenMax.to(p3girl2C,1,{x:"+=90",alpha:0,delay:1+2+.5})
-	TweenMax.to(p3birdC,1,{y:0,alpha:1,delay:1+2+.5})
-	TweenMax.to(gg.p3manb,1,{alpha:0,delay:1+2+.5})
-
-	TweenMax.set(btnNext,{y:stageH/2+441,delay:1+2+.5})
+	
 	// TweenMax.to(gg.p3t2,.5,{alpha:0,y:"+=50",delay:1+2+.5+2})
 	// TweenMax.to(p3picC,.5,{alpha:0,y:"+=50",delay:1+2+.5+2,onComplete:setPage4})
 
@@ -311,20 +308,12 @@ function page4ani(){
 
 	TweenMax.to(p4.boyhand,_tempT1,{rotation:0,repeat:10000,yoyo:true,ease:Sine.easeIn})
 
-	TweenMax.to(p4.t1,2,{y:"+=50",alpha:1})
+	TweenMax.to(p4.t1,2,{y:"+=50",alpha:1,onComplete:function(){
 
+	}})
 
-	TweenMax.to(p4.t1,1,{y:"+=50",alpha:0,delay:3})
-	TweenMax.to(p4.t2,1,{y:"+=50",alpha:1,delay:3})
-
-	TweenMax.to(p4.boy1,1,{x:"+=150",alpha:0,delay:3})
-	TweenMax.to(p4.boy2,1,{x:"+=150",alpha:0,delay:3.1})
-
-	TweenMax.to(p4.bird,1,{x:"+=150",alpha:1,delay:3.2})
-	TweenMax.to(p4.light,1,{x:"+=150",alpha:1,delay:3.3})
-	TweenMax.to(p4.boyb,.1,{alpha:0,delay:3.4})
-
-	TweenMax.set(btnNext,{y:stageH/2+441,delay:3.4})
+	TweenMax.set(btnNext,{y:stageH/2+441,delay:1})
+	
 
 	// TweenMax.to(p4picC,1,{y:"+=150",alpha:0,delay:3.4+2})
 	// TweenMax.to(p4.t2,1,{y:"+=150",alpha:0,delay:3.4+2+.1})
