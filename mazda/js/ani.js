@@ -635,7 +635,7 @@ function setEnding(){
 	
 
 	TweenMax.to(endingC,1,{alpha:0,delay:3+5-3})
-	setTimeout(goUGC,8000)
+	setTimeout(goUGC,5000)
 
 }
 function goUGC(){
