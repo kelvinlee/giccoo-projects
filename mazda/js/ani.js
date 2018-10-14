@@ -66,14 +66,23 @@ function setPage1() {
 	page1ani()
 
 	btnNext2=new Sprite(getTe(_CDN+"img/btn_next.png"));
+	btnSkip=new Sprite(getTe(_CDN+"img/btn_skip.png"));
 	pStage.addChild(btnNext)
 	btnNext2.interactive=true
 	btnNext2.tap=goNext
-	btnNext.addChild(btnNext2)
+
+	btnSkip.interactive=true
+	btnSkip.tap=goSkip
+
+
+	btnNext.addChild(btnNext2,btnSkip)
+	btnNext2.x-=85
+	btnSkip.x=325
 	btnNext.y=stageH/2+441
 	btnNext.visible=false
 	if(stageH<1000){
 		btnNext2.y=-30
+		btnSkip.y=-30
 	}
 	
 }
@@ -359,7 +368,8 @@ function showAll(_arry,_y){
 
 		TweenMax.set(_arry[i],{y:_arry[i].y+_y,alpha:0})
 
-		TweenMax.to(_arry[i],1,{y:_arry[i].y-_y,alpha:1,delay:.1*i,ease:Back.easeOut})
+		//TweenMax.to(_arry[i],1,{y:_arry[i].y-_y,alpha:1,delay:.1*i,ease:Back.easeOut})
+		TweenMax.to(_arry[i],1,{y:_arry[i].y-_y,alpha:1,delay:.1*i})
 	}
 }
 
@@ -367,7 +377,7 @@ function showAll(_arry,_y){
 function clickBtn1(){
 	TweenMax.to(page5,.5,{alpha:0})
 	p5.btn.interactive=false
-
+	p5.btn.visible=false
 	if(main.wy==false){
 		main.openInApp()
 	}else{
@@ -513,8 +523,16 @@ function setPage6(){
 
 	showAll([p6t1,p6t2_1,p6t2_2,p6t2_3,p6t3_1,p6t3_2,p6t3_3,p6t4],50)
 
-	TweenMax.to(end2.bg1,1,{alpha:0,delay:2.5})	
-	TweenMax.to(page6TC,1,{alpha:0,y:"-=50",delay:2.5,onComplete:setPage7})	
+	console.log("p6")
+	nowPage=1000
+	pStage.addChild(btnNext)
+	btnNext.visible=true
+	btnSkip.visible=false
+	btnSkip.interactive=false
+	btnNext2.x+=85
+	TweenMax.set(btnNext,{y:stageH/2+441,delay:1})
+
+		
 }
 
 var page7TC=new PIXI.Container()
@@ -543,7 +561,7 @@ function setPage7(){
 
 	showAll([p7t1,p7t2,p7t3,p7t4],50)
 
-	setEnding()
+	
 
 }
 var endingC=new PIXI.Container()
@@ -573,7 +591,7 @@ function setEnding(){
 
 
 	endingC.alpha=0
-	TweenMax.to(endingC,1,{alpha:1,delay:3,onComplete:function(){
+	TweenMax.to(endingC,1,{alpha:1,delay:3-3,onComplete:function(){
 		showAll([p8t1,p8t2,p8t3,p8t4,p8t5,p8t6,endingCarC,p8t7],50)
 		page6.visible=false
 	}})
@@ -616,7 +634,7 @@ function setEnding(){
 
 	
 
-	TweenMax.to(endingC,1,{alpha:0,delay:3+5})
+	TweenMax.to(endingC,1,{alpha:0,delay:3+5-3})
 	setTimeout(goUGC,8000)
 
 }

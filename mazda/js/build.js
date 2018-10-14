@@ -79,6 +79,7 @@ var imageList = [
 
 	_CDN+"img/endingcar.png",
 	_CDN+"img/btn_next.png",
+	_CDN+"img/btn_skip.png",
 
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
@@ -202,5 +203,30 @@ function goNext(){
 	if(nowPage==8){
 		TweenMax.to(p4.t3,1,{alpha:0,delay:0.3,onComplete:setPage5})
 	}
+
+	if(nowPage==1000){
+		TweenMax.to(end2.bg1,1,{alpha:0,delay:2.5-2.5})	
+		//TweenMax.to(page6TC,1,{alpha:0,y:"-=50",delay:2.5-2.5})
+		page6TC.visible=false
+		TweenMax.set(btnNext,{y:stageH/2+441,delay:1})
+		setPage7()
+	}
+	if(nowPage==1001){
+		setEnding()
+	}
+
 	nowPage++
+}
+
+function goSkip(){
+	console.log("跳过动画")
+	btnNext.y=11111111
+	
+	for (var i = 0; i < pStage.children.length; i++) {
+		
+		pStage.children[i].visible=false
+
+	};
+	texture.visible=true
+	setPage5()
 }
