@@ -71,8 +71,8 @@ var imageList = [
 	_CDN+"img/end1man.png",
 	_CDN+"img/wheel1.png",
 
-	_CDN+"img/end2a-bg.png",
-	_CDN+"img/end2b-bg.png",
+	_CDN+"img/end2aa-bg.png",
+	_CDN+"img/end2bb-bg.png",
 
 	_CDN+"img/endingbg.png",
 	_CDN+"img/building.png",
