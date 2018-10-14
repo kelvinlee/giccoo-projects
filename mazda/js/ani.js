@@ -519,7 +519,7 @@ function setPage6(){
 	end2.bg2=new Sprite(getTe(_CDN+"img/end2b-bg.png"))
 	page6.addChild(end2.bg2,end2.bg1,page6TC)
 
-	end2.bg1.y=end2.bg2.y=stageH/2-650
+	end2.bg1.y=end2.bg2.y=stageH/2-750
 
 	showAll([p6t1,p6t2_1,p6t2_2,p6t2_3,p6t3_1,p6t3_2,p6t3_3,p6t4],50)
 
