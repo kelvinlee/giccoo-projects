@@ -1,5 +1,5 @@
-var _CDN = "./";
-// var _CDN = "//image.giccoo.com/projects/jeep/";
+// var _CDN = "./";
+var _CDN = "//image.giccoo.com/projects/mazda/";
 var imageList = [
 	_CDN+"img/bg.jpg",
 	_CDN+"img/texture.jpg",
