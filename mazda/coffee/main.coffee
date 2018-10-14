@@ -32,7 +32,7 @@ _testTime = 0
 
 
 neteaseShareImage = ->
-	title1 = "用音乐解密你的动物型人格"
+	title1 = "听歌听到狐狸尾巴露出来！？"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
 	redirectUrl = "https://activity.music.163.com/mazda/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
@@ -52,9 +52,9 @@ window.onload = ->
 
 	CloudMusic.setShareData
 		name: 'mazda',
-		title: '用音乐解密你的动物型人格',
-		subTitle: '音乐中藏着最真实的你，点击开启',
-		text: '用音乐解密你的动物型人格',
+		title: '听歌听到狐狸尾巴露出来！？',
+		subTitle: 'OMG，活久见系列！',
+		text: '听歌听到狐狸尾巴露出来！？',
 		picUrl: 'https://activity.music.163.com/mazda/img/ico.jpg',
 		link: 'https://activity.music.163.com/mazda/'
 
