@@ -50,36 +50,36 @@ window.onload = ->
 
 	lastY = 0
 
+	CloudMusic.setShareData
+		name: 'mazda',
+		title: '用音乐解密你的动物型人格',
+		subTitle: '音乐中藏着最真实的你，点击开启',
+		text: '用音乐解密你的动物型人格',
+		picUrl: 'https://activity.music.163.com/mazda/img/ico.jpg',
+		link: 'https://activity.music.163.com/mazda/'
+
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
+		
+	# else
+	# 	loadWechatConfig()
+	# 	wx.ready ->
+	# 		# console.log "ready:",_public?, _public.$children[0]
+	# 		# _public.$children[0].change()
 
-		CloudMusic.setShareData
-			name: 'mazda',
-			title: '用音乐解密你的动物型人格',
-			subTitle: '音乐中藏着最真实的你，点击开启',
-			text: '用音乐解密你的动物型人格',
-			picUrl: 'https://activity.music.163.com/mazda/img/ico.jpg',
-			link: 'https://activity.music.163.com/mazda/'
-
-	else
-		loadWechatConfig()
-		wx.ready ->
-			# console.log "ready:",_public?, _public.$children[0]
-			# _public.$children[0].change()
-
-			shareContent =
-				title: "一首歌HOLD住人生大场面"
-				desc: "测测你的音乐情商属性"
-				link: "https://activity.music.163.com/mazda/"
-				imgUrl: "https://activity.music.163.com/mazda/img/ico.jpg"
-				success: ->
-					# alert "success"
-				cancel: ->
-					# alert "cancel"
-			wx.onMenuShareTimeline shareContent
-			wx.onMenuShareAppMessage shareContent
-			wx.onMenuShareQQ shareContent
-			wx.onMenuShareWeibo shareContent
+	# 		shareContent =
+	# 			title: "一首歌HOLD住人生大场面"
+	# 			desc: "测测你的音乐情商属性"
+	# 			link: "https://activity.music.163.com/mazda/"
+	# 			imgUrl: "https://activity.music.163.com/mazda/img/ico.jpg"
+	# 			success: ->
+	# 				# alert "success"
+	# 			cancel: ->
+	# 				# alert "cancel"
+	# 		wx.onMenuShareTimeline shareContent
+	# 		wx.onMenuShareAppMessage shareContent
+	# 		wx.onMenuShareQQ shareContent
+	# 		wx.onMenuShareWeibo shareContent
 
 	_public = new Vue
 		el: "#public"
