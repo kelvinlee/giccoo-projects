@@ -515,8 +515,8 @@ function setPage6(){
 	page6TC.scale.x=.8
 	page6TC.x=64
 
-	end2.bg1=new Sprite(getTe(_CDN+"img/end2a-bg.png"))
-	end2.bg2=new Sprite(getTe(_CDN+"img/end2b-bg.png"))
+	end2.bg1=new Sprite(getTe(_CDN+"img/end2aa-bg.png"))
+	end2.bg2=new Sprite(getTe(_CDN+"img/end2bb-bg.png"))
 	page6.addChild(end2.bg2,end2.bg1,page6TC)
 
 	end2.bg1.y=end2.bg2.y=stageH/2-750
