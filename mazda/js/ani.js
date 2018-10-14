@@ -7,7 +7,8 @@ var p1G2=new PIXI.Graphics()
 var p1door1=new PIXI.Graphics()
 var p1door2=new PIXI.Graphics()
 
-var btnNext
+var btnNext=new PIXI.Container()
+var btnNext2
 
 ////////////////////==================================第一页
 function setPage1() {
@@ -64,12 +65,17 @@ function setPage1() {
 
 	page1ani()
 
-	btnNext=new Sprite(getTe(_CDN+"img/btn_next.png"));
+	btnNext2=new Sprite(getTe(_CDN+"img/btn_next.png"));
 	pStage.addChild(btnNext)
-	btnNext.interactive=true
-	btnNext.tap=goNext
+	btnNext2.interactive=true
+	btnNext2.tap=goNext
+	btnNext.addChild(btnNext2)
 	btnNext.y=stageH/2+441
 	btnNext.visible=false
+	if(stageH<1000){
+		btnNext2.y=-30
+	}
+	
 }
 
 
