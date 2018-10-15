@@ -2,7 +2,7 @@
 var part1=new PIXI.Container()
 var p1pic1a=new pSprite("//image.giccoo.com/projects/genki/img/part1pic1aa.png")//===
 var p1title1=new pSprite("//image.giccoo.com/projects/genki/img/part1title1.png")//===
-var p1title2=new pSprite("//image.giccoo.com/projects/genki/img/part1title2b.png")//===
+var p1title2=new pSprite("//image.giccoo.com/projects/genki/img/part1title2c.png")//===
 var p1pic2=new pSprite("//image.giccoo.com/projects/genki/img/part1pic2b.png")
 var p1pic3=new pSprite("//image.giccoo.com/projects/genki/img/part1pic3.png")
 var p1pic4=new pSprite("//image.giccoo.com/projects/genki/img/part1pic4.png")
@@ -26,6 +26,7 @@ function setPart1 () {
 	p1pic1a.y=653+1107
 	p1pic2.y=1107
 
+	p1title2.y=-35
 
 	p1pic3.pivot.set(258,258)
 	p1pic3.position.set(320,494+26+434+1107)
@@ -56,20 +57,42 @@ var videoPartBG=new pSprite("//image.giccoo.com/projects/genki/img/video_part_bg
 var videoPartText=new pSprite("//image.giccoo.com/projects/genki/img/vp_text.png")
 var videoBtnL=new pSprite("//image.giccoo.com/projects/genki/img/video_btn_l.png")
 var videoBtnR=new pSprite("//image.giccoo.com/projects/genki/img/video_btn_r.png")
-var poster1=new pSprite("//image.giccoo.com/projects/genki/img/video_poster1c.jpg")
+var poster1=new pSprite("//image.giccoo.com/projects/genki/img/video_poster1d.jpg")
 var poster2=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2.jpg")
+var poster15=new pSprite("//image.giccoo.com/projects/genki/img/video_poster15d.jpg")
 //var poster3=new pSprite("img/video_poster3.jpg")//===================改这里
-var posterA=[poster1,poster2]//===================改这里
-var nowPoster=0
-function setVideoPart(){
+var posterA=[poster1,poster15,poster2]//===================改这里
+var nowPoster=2
+// function setVideoPart(){//====双图
+// 	videoPart.y=528+107
+// 	videoPart.addChild(videoPartBG,videoPartText,videoBtnL,videoBtnR,poster1,poster2)
+// 	videoBtnL.position.set(22,737)
+// 	videoBtnR.position.set(576,737)
+// 	poster1.position.set(109,670)
+// 	poster2.position.set(109,670)
+// 	poster1.visible=true
+// 	poster2.visible=false
+
+// 	videoBtnL.interactive=videoBtnR.interactive=true
+// 	videoBtnL.tap=changeL
+// 	videoBtnR.tap=changeR
+
+// 	poster1.interactive=poster2.interactive=true
+// 	poster1.tap=showVideo1
+// 	poster2.tap=showVideo2
+// }
+
+function setVideoPart(){//====三图
 	videoPart.y=528+107
-	videoPart.addChild(videoPartBG,videoPartText,videoBtnL,videoBtnR,poster1,poster2)
+	videoPart.addChild(videoPartBG,videoPartText,videoBtnL,videoBtnR,poster1,poster2,poster15)
 	videoBtnL.position.set(22,737)
 	videoBtnR.position.set(576,737)
 	poster1.position.set(109,670)
 	poster2.position.set(109,670)
-	poster1.visible=true
-	poster2.visible=false
+	poster15.position.set(109,670)
+	poster1.visible=false
+	poster2.visible=true
+	poster15.visible=false
 
 	videoBtnL.interactive=videoBtnR.interactive=true
 	videoBtnL.tap=changeL
@@ -78,6 +101,7 @@ function setVideoPart(){
 	poster1.interactive=poster2.interactive=true
 	poster1.tap=showVideo1
 	poster2.tap=showVideo2
+	poster15.tap=showVideo15
 }
 
 function changeL(){
@@ -86,6 +110,7 @@ function changeL(){
 		nowPoster=posterA.length-1
 	}
 	changePoster()
+	console.log(nowPoster)
 }
 function changeR(){
 	nowPoster++
@@ -93,6 +118,7 @@ function changeR(){
 		nowPoster=0
 	}
 	changePoster()
+	console.log(nowPoster)
 }
 function changePoster(){
 	for (var i = 0; i < posterA.length; i++) {
@@ -104,7 +130,12 @@ function changePoster(){
 }
 function showVideo1(){
 	console.log("video1")
-	openLive()
+	//openLive()
+	// stopAllSound()
+}
+function showVideo15(){
+	console.log("video15")
+	//openLive()
 	// stopAllSound()
 }
 function showVideo2(){
