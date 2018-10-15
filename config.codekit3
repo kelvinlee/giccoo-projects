@@ -1057,6 +1057,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/mazda/img/btn_skip.png": {
+		"ft": 32768,
+		"iS": 3413,
+		"oA": 0,
+		"oAP": "/mazda/img/btn_skip.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/mazda/img/building.png": {
 		"ft": 32768,
 		"iS": 84785,
@@ -1246,7 +1257,7 @@
 		},
 	"/mazda/img/end2a-bg.png": {
 		"ft": 32768,
-		"iS": 22598,
+		"iS": 23322,
 		"oA": 0,
 		"oAP": "/mazda/img/end2a-bg.png",
 		"oF": 0,
@@ -1255,22 +1266,33 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/mazda/img/end2b-bg.jpg": {
-		"ft": 16384,
-		"iS": 48133,
-		"jF": 0,
+	"/mazda/img/end2aa-bg.png": {
+		"ft": 32768,
+		"iS": 23322,
 		"oA": 0,
-		"oAP": "/mazda/img/end2b-bg.jpg",
+		"oAP": "/mazda/img/end2aa-bg.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"/mazda/img/end2b-bg.png": {
 		"ft": 32768,
-		"iS": 70032,
+		"iS": 70267,
 		"oA": 0,
 		"oAP": "/mazda/img/end2b-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/mazda/img/end2bb-bg.png": {
+		"ft": 32768,
+		"iS": 70267,
+		"oA": 0,
+		"oAP": "/mazda/img/end2bb-bg.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

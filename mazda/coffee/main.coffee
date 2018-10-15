@@ -50,17 +50,9 @@ window.onload = ->
 
 	lastY = 0
 
-	CloudMusic.setShareData
-		name: 'mazda',
-		title: '听歌听到狐狸尾巴露出来！？',
-		subTitle: 'OMG，活久见系列！',
-		text: '听歌听到狐狸尾巴露出来！？',
-		picUrl: 'https://activity.music.163.com/mazda/img/ico.jpg',
-		link: 'https://activity.music.163.com/mazda/'
-
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
-		
+
 	# else
 	# 	loadWechatConfig()
 	# 	wx.ready ->
@@ -123,6 +115,14 @@ window.onload = ->
 			,1000/20
 	
 	init()
+
+	CloudMusic.setShareData
+		name: 'mazda',
+		title: '听歌听到狐狸尾巴露出来！？',
+		subTitle: 'OMG，活久见系列！',
+		text: '听歌听到狐狸尾巴露出来！？',
+		picUrl: 'https://activity.music.163.com/mazda/img/ico.jpg',
+		link: 'https://activity.music.163.com/mazda/'
 
 init = ->
 	
