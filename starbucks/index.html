@@ -36,6 +36,63 @@
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
             <div id="ugc"></div>
+            <transition name="page-fade">
+              <div v-show="questionShow" class="post-card">
+                <div class="question-list">
+                  <transition name="page-fade">
+                    <div v-show="questionIndex == 0" class="question">
+                      <div class="title">圣诞来袭</div>
+                      <div class="answer">
+                        <div :class="{on: answer1==1}" @click="answer1 = 1" class="item row">a</div>
+                        <div :class="{on: answer1==2}" @click="answer1 = 2" class="item row">b</div>
+                        <div :class="{on: answer1==3}" @click="answer1 = 3" class="item row">c</div>
+                        <div :class="{on: answer1==4}" @click="answer1 = 4" class="item row">d</div>
+                      </div>
+                    </div>
+                  </transition>
+                  <transition name="page-fade">
+                    <div v-show="questionIndex == 1" class="question">
+                      <div class="title">选一位圣诞DJ</div>
+                      <div class="answer">
+                        <div :class="{on: answer2==1}" @click="answer2 = 1" class="item">a</div>
+                        <div :class="{on: answer2==2}" @click="answer2 = 2" class="item">b</div>
+                        <div :class="{on: answer2==3}" @click="answer2 = 3" class="item">c</div>
+                        <div :class="{on: answer2==4}" @click="answer2 = 4" class="item">d</div>
+                      </div>
+                    </div>
+                  </transition>
+                  <transition name="page-fade">
+                    <div v-show="questionIndex == 2" class="question">
+                      <div class="title">不要怂</div>
+                      <div class="answer">
+                        <div :class="{on: answer3.c1}" @click="answer3.c1 = !answer3.c1" class="item check">a</div>
+                        <div :class="{on: answer3.c2}" @click="answer3.c2 = !answer3.c2" class="item check">b</div>
+                        <div :class="{on: answer3.c3}" @click="answer3.c3 = !answer3.c3" class="item check">c</div>
+                        <div :class="{on: answer3.c4}" @click="answer3.c4 = !answer3.c4" class="item check">d</div>
+                      </div>
+                    </div>
+                  </transition>
+                  <transition name="page-fade">
+                    <div v-show="questionIndex == 3" class="question">
+                      <div class="title">今年圣诞</div>
+                      <div class="answer input">
+                        <input type="input" v-model="nickname">
+                      </div>
+                    </div>
+                  </transition>
+                  <transition name="page-fade">
+                    <div v-show="questionIndex == 4" class="question">
+                      <div class="title">写这里</div>
+                      <div class="msg-card"></div>
+                      <div class="answer input textarea">
+                        <textarea v-model="message"></textarea>
+                      </div>
+                    </div>
+                  </transition>
+                </div>
+                <div @click="nextQuestion" class="btn-next"></div>
+              </div>
+            </transition>
           </div>
         </div>
       </transition>

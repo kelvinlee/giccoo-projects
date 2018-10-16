@@ -66,6 +66,48 @@ block content
           //- .logo
             img(src="#{url}/img/logo.png")
           #ugc
+          transition(name="page-fade")
+            .post-card(v-show="questionShow")
+              .question-list
+                transition(name="page-fade")
+                  .question(v-show="questionIndex == 0")
+                    .title 圣诞来袭
+                    .answer
+                      .item.row(:class="{on: answer1==1}", @click="answer1 = 1") a
+                      .item.row(:class="{on: answer1==2}", @click="answer1 = 2") b
+                      .item.row(:class="{on: answer1==3}", @click="answer1 = 3") c
+                      .item.row(:class="{on: answer1==4}", @click="answer1 = 4") d
+                transition(name="page-fade")
+                  .question(v-show="questionIndex == 1")
+                    .title 选一位圣诞DJ
+                    .answer
+                      .item(:class="{on: answer2==1}", @click="answer2 = 1") a
+                      .item(:class="{on: answer2==2}", @click="answer2 = 2") b
+                      .item(:class="{on: answer2==3}", @click="answer2 = 3") c
+                      .item(:class="{on: answer2==4}", @click="answer2 = 4") d
+                transition(name="page-fade")
+                  .question(v-show="questionIndex == 2")
+                    .title 不要怂
+                    .answer
+                      .item.check(:class="{on: answer3.c1}", @click="answer3.c1 = !answer3.c1") a
+                      .item.check(:class="{on: answer3.c2}", @click="answer3.c2 = !answer3.c2") b
+                      .item.check(:class="{on: answer3.c3}", @click="answer3.c3 = !answer3.c3") c
+                      .item.check(:class="{on: answer3.c4}", @click="answer3.c4 = !answer3.c4") d
+                transition(name="page-fade")
+                  .question(v-show="questionIndex == 3")
+                    .title 今年圣诞
+                    .answer.input
+                      input(type="input",v-model="nickname")
+                transition(name="page-fade")
+                  .question(v-show="questionIndex == 4")
+                    .title 写这里
+                    .msg-card
+                    .answer.input.textarea
+                      textarea(v-model="message")
+                      
+
+              .btn-next(@click="nextQuestion")
+
     
 
 block js

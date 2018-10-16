@@ -32,12 +32,17 @@ _testTime = 0
 
 
 neteaseShareImage = ->
-	title1 = "一首歌HOLD住人生大场面"
+	title1 = "听歌听到狐狸尾巴露出来！？"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://m.giccoo.com/starbucks/"
+	redirectUrl = "https://activity.music.163.com/mazda/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
-	window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
+	# window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "share href:",picUrl
+	CloudMusic.sharePic({
+		picUrl: picUrl,
+		text: title1,
+		link: redirectUrl
+	})
 
 window.onload = ->
 	TrueH = document.documentElement.clientHeight
@@ -47,34 +52,6 @@ window.onload = ->
 
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
-
-		CloudMusic.setShareData
-			name: 'starbucks',
-			title: '一首歌HOLD住人生大场面',
-			subTitle: '测测你的音乐情商属性',
-			text: '一首歌HOLD住人生大场面',
-			picUrl: 'http://m.giccoo.com/mazda/img/ico.jpg',
-			link: 'http://m.giccoo.com/mazda/'
-
-	else
-		loadWechatConfig()
-		wx.ready ->
-			# console.log "ready:",_public?, _public.$children[0]
-			# _public.$children[0].change()
-
-			shareContent =
-				title: "一首歌HOLD住人生大场面"
-				desc: "测测你的音乐情商属性"
-				link: "http://m.giccoo.com/mazda/"
-				imgUrl: "http://m.giccoo.com/mazda/img/ico.jpg"
-				success: ->
-					# alert "success"
-				cancel: ->
-					# alert "cancel"
-			wx.onMenuShareTimeline shareContent
-			wx.onMenuShareAppMessage shareContent
-			wx.onMenuShareQQ shareContent
-			wx.onMenuShareWeibo shareContent
 
 	_public = new Vue
 		el: "#public"
@@ -118,6 +95,14 @@ window.onload = ->
 			,1000/20
 	
 	init()
+
+	CloudMusic.setShareData
+			name: 'starbucks',
+			title: '一首歌HOLD住人生大场面',
+			subTitle: '测测你的音乐情商属性',
+			text: '一首歌HOLD住人生大场面',
+			picUrl: 'http://m.giccoo.com/mazda/img/ico.jpg',
+			link: 'http://m.giccoo.com/mazda/'
 
 init = ->
 	
@@ -203,14 +188,29 @@ init = ->
 			ugcShow: false
 			regH: 100
 			ugcType: 1
+			questionShow: true
+			questionIndex: 0
+			answer1: 1
+			answer2: 0
+			answer3: 
+				c1: false
+				c2: false
+				c3: false
+				c4: false
+			nickname: ""
+			message: ""
+			musicName: ""
 		watch:
-			videoIndex: (n,o)->
-				@.videoIndexOld = o
-				# stopAllVideo()
-				document.getElementById("video-#{n}").load()
-				document.getElementById("video-#{n}").play()
+			answer1: (n,o)->
+				console.log "answer1 changed:",n
+			answer2: (n,o)->
+				console.log "answer2 changed:",n
+			answer3: (n,o)->
+				console.log "answer3 changed:",n
 
 		methods:
+			nextQuestion: ->
+
 			dateText: (date)->
 				console.log date.replace(/-/g,"/")
 				d = new Date date.replace(/-/g,"/")
