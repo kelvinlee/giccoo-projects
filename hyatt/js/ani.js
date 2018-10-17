@@ -94,25 +94,118 @@ var ringA=[ring1,ring2,ring3,ring4]
 
 var p2arrow=new pSprite("img/p1arrow.png")
 
+var nowDot=0
+var nowPic=0
 
+// function setPage2(){
+// 	page2.y=stageH
+// 	//borderAll.visible=true
+// 	mainPart.addChild(page2)
+// 	page2.addChild(p2picC,p2tC)
+// 	p2picC.addChild(p21c,p22c,p23c,p24c)
+// 	// p22c.visible=false
+// 	// p23c.visible=false
+// 	// p24c.visible=false
+// 	for (var i = 0; i < 4; i++) {
+// 		p2A[i].addChild(p2picA[i][1],p2picA[i][0])//====图
+// 		p2picA[i][0].alpha=0
+// 		p2picA[i][1].alpha=0
+// 		p2picA[i][0].height=stageH
+// 		p2picA[i][0].width=stageH/1000*1500
+// 		p2picA[i][1].height=stageH
+// 		p2picA[i][1].width=stageH/1000*1500
+
+// 		//=== 字
+// 		p2tC.addChild(p2tA[i])
+// 		p2tA[i].y=stageH-548
+// 		if(i!=0){p2tA[i].alpha=0}
+
+// 		//===点
+// 		page2.addChild(dotA[i])
+// 		dotA[i].addChild(dotsA[i][0],dotsA[i][1],ringA[i])
+// 		dotA[i].pivot.set(36,36)
+// 		dotA[i].position.set(198+i*(640-198-198)/3,stageH-100)
+
+// 		TweenMax.to(dotsA[i][1],1,{alpha:0,repeat:10000,yoyo:true,delay:.5*i,repeatDelay:1})
+
+// 		if(i!=0){ringA[i].alpha=.5}
+
+// 		dotA[i].interactive=true
+// 		dotA[i].tap=changeP2bg
+// 	};
+// 	page2.addChild(p2arrow)
+// 	p2arrow.position.set(320-21,stageH-50)
+
+// 	TweenMax.to(p2arrow,.5,{y:"+=10",repeat:100000,yoyo:true})	
+
+// 	//setP2Loop()
+// }
+
+// function changeP2bg(_e){
+// 	for (var i = 0; i <4 ; i++) {
+// 		TweenMax.to(ringA[i],.5,{alpha:.5})
+// 		TweenMax.to(p2tA[i],1,{alpha:0})
+// 		if(_e.target==dotA[i]){
+// 			console.log("第"+i+"图")
+// 			TweenMax.to(ringA[i],.5,{alpha:1})
+
+// 			//TweenMax.set(p2tA[i],{alpha:0,y:stageH-548+50})
+// 			TweenMax.to(p2tA[i],1,{alpha:1})
+// 			nowDot=i*2
+// 			setP2Loop()
+// 		}
+// 	};
+// }
+
+// function setP2Loop(){
+// 	console.log(nowDot)
+// 	for (var i = 0; i < 4; i++) {
+// 		TweenMax.set(p2picA[i][0],{alpha:0,x:640-stageH*1.5})
+// 		TweenMax.set(p2picA[i][1],{alpha:0,x:640-stageH*1.5})
+// 	};
+// 	TweenMax.set(p2picA[parseInt(nowDot/2)][nowDot%2],{alpha:1,x:640-stageH*1.5})
+// 	TweenMax.to(p2picA[parseInt(nowDot/2)][nowDot%2],5,{x:0,ease:Linear.easeNone,onComplete:function(){
+// 			nowDot++
+// 			if(nowDot==8){nowDot=0}
+// 			setDot()
+// 			setP2Loop()
+// 	}})//
+// }
+
+// function setDot(){
+// 	for (var i = 0; i <4 ; i++) {
+// 		TweenMax.to(ringA[i],.5,{alpha:.5})
+// 		TweenMax.to(p2tA[i],1,{alpha:0})
+// 		if(parseInt(nowDot/2)==i){
+// 			console.log("第"+i+"图")
+// 			TweenMax.to(ringA[i],.5,{alpha:1})
+
+// 			//TweenMax.set(p2tA[i],{alpha:0})
+// 			TweenMax.to(p2tA[i],1,{alpha:1})
+// 		}
+// 	};
+// }
+
+var picC=new PIXI.Container()
 
 function setPage2(){
 	page2.y=stageH
-	//borderAll.visible=true
+
 	mainPart.addChild(page2)
-	page2.addChild(p2picC,p2tC)
-	p2picC.addChild(p21c,p22c,p23c,p24c)
-	// p22c.visible=false
-	// p23c.visible=false
-	// p24c.visible=false
+	page2.addChild(picC,p2tC)
+	//p2picC.addChild(p21c,p22c,p23c,p24c)
+
 	for (var i = 0; i < 4; i++) {
 		p2A[i].addChild(p2picA[i][1],p2picA[i][0])//====图
-		p2picA[i][0].alpha=0
-		p2picA[i][1].alpha=0
+		
+		picC.addChild(p2picA[i][1],p2picA[i][0])
+
 		p2picA[i][0].height=stageH
 		p2picA[i][0].width=stageH/1000*1500
 		p2picA[i][1].height=stageH
 		p2picA[i][1].width=stageH/1000*1500
+		p2picA[i][0].x=p2picA[i][1].width*i*2
+		p2picA[i][1].x=p2picA[i][1].width*(i*2+1)
 
 		//=== 字
 		p2tC.addChild(p2tA[i])
@@ -138,55 +231,73 @@ function setPage2(){
 	TweenMax.to(p2arrow,.5,{y:"+=10",repeat:100000,yoyo:true})	
 
 	//setP2Loop()
+	
 }
 
-var nowDot=0
-var nowPic=0
+var _tempNowDot
+
+function moveBG(){
+	picC.x-=3
+	if(picC.x<=640-picC.width){
+		picC.x=0
+	}
+	_tempNowDot=nowDot
+	nowDot=parseInt(-picC.x/(picC.width/4))
+	nowPic=parseInt(-picC.x/(picC.width/8))
+	console.log(nowDot)
+	if(_tempNowDot!=nowDot){
+		setDot()
+		console.log("变图")
+	}
+}
 
 function changeP2bg(_e){
 	for (var i = 0; i <4 ; i++) {
 		TweenMax.to(ringA[i],.5,{alpha:.5})
-		TweenMax.to(p2tA[i],1,{alpha:0,y:stageH-548-50})
+		TweenMax.to(p2tA[i],1,{alpha:0})
 		if(_e.target==dotA[i]){
 			console.log("第"+i+"图")
 			TweenMax.to(ringA[i],.5,{alpha:1})
 
-			TweenMax.set(p2tA[i],{alpha:0,y:stageH-548+50})
-			TweenMax.to(p2tA[i],1,{alpha:1,y:stageH-548})
-			nowDot=i*2
-			setP2Loop()
+			//TweenMax.set(p2tA[i],{alpha:0,y:stageH-548+50})
+			TweenMax.to(p2tA[i],1,{alpha:1})
+			//nowDot=i*2
+			//setP2Loop()
+			picC.x=-picC.width/4*i
 		}
 	};
 }
 
 function setP2Loop(){
-	console.log(nowDot)
-	for (var i = 0; i < 4; i++) {
-		TweenMax.set(p2picA[i][0],{alpha:0,x:640-stageH*1.5})
-		TweenMax.set(p2picA[i][1],{alpha:0,x:640-stageH*1.5})
-	};
-	TweenMax.set(p2picA[parseInt(nowDot/2)][nowDot%2],{alpha:1,x:640-stageH*1.5})
-	TweenMax.to(p2picA[parseInt(nowDot/2)][nowDot%2],5,{x:0,ease:Linear.easeNone,onComplete:function(){
-			nowDot++
-			if(nowDot==8){nowDot=0}
-			setDot()
-			setP2Loop()
-	}})//
+	// console.log(nowDot)
+	// for (var i = 0; i < 4; i++) {
+	// 	TweenMax.set(p2picA[i][0],{alpha:0,x:640-stageH*1.5})
+	// 	TweenMax.set(p2picA[i][1],{alpha:0,x:640-stageH*1.5})
+	// };
+	// TweenMax.set(p2picA[parseInt(nowDot/2)][nowDot%2],{alpha:1,x:640-stageH*1.5})
+	// TweenMax.to(p2picA[parseInt(nowDot/2)][nowDot%2],5,{x:0,ease:Linear.easeNone,onComplete:function(){
+	// 		nowDot++
+	// 		if(nowDot==8){nowDot=0}
+	// 		setDot()
+	// 		setP2Loop()
+	// }})
 }
 
 function setDot(){
 	for (var i = 0; i <4 ; i++) {
 		TweenMax.to(ringA[i],.5,{alpha:.5})
-		TweenMax.to(p2tA[i],1,{alpha:0,y:stageH-548-50})
-		if(parseInt(nowDot/2)==i){
+		TweenMax.to(p2tA[i],1,{alpha:0})
+		if(parseInt(nowDot)==i){
 			console.log("第"+i+"图")
 			TweenMax.to(ringA[i],.5,{alpha:1})
 
-			TweenMax.set(p2tA[i],{alpha:0,y:stageH-548+50})
-			TweenMax.to(p2tA[i],1,{alpha:1,y:stageH-548})
+			//TweenMax.set(p2tA[i],{alpha:0})
+			TweenMax.to(p2tA[i],1,{alpha:1})
 		}
 	};
 }
+
+
 
 //===============================================第三页
 
@@ -526,6 +637,7 @@ function goEndBtn2(){
 	TweenMax.to(endTitle,1,{alpha:0})
 	endLayerBtn.interactive=true
 	TweenMax.set($("#bgQR"),{display:"block"})
+	TweenLite.set($("#pngHolder"),{display:"none"})
 }
 function closeLayer(){
 	endLayerBtn.interactive=false
@@ -533,6 +645,7 @@ function closeLayer(){
 	TweenMax.to(endLayerBtn,1,{alpha:0})
 	TweenMax.to(endTitle,1,{alpha:1})
 	TweenMax.set($("#bgQR"),{display:"none"})
+	TweenLite.set($("#pngHolder"),{display:"block"})
 }
 
 
