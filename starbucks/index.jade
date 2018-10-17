@@ -1,14 +1,14 @@
 extends ../libs/jade/layout-clean
 
 block title
-  | 星巴克
+  | 点播圣诞星声
 
 block css
   meta(name="author",content="m.giccoo.com")
   //- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
   link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
   //- link(rel="stylesheet",href="//image.giccoo.com/projects/libs/font/Interstate Regular.css")
-  //- link(rel="stylesheet",href="css/yrd-Bold.css")
+  link(rel="stylesheet",href="/libs/font/YRDZST-Heavy.css")
   //- link(rel="stylesheet",href="css/yrd-Medium.css")
   link(rel="stylesheet",href="css/base.css")
 
@@ -44,7 +44,21 @@ block content
 
   .load#load
     .content#loading(v-show="mounted",style="display: none")
+      .loading-logo.fadeIn.animated
+        img(src="#{url}/img/logo-white.png")
       .loading-text
+        .animal
+          img(src="#{url}/img/loading-animal.png")
+          .snowman-hand
+            img(src="#{url}/img/snowman-hand.png")
+          .icon-symbol.music-1
+            img(src="#{url}/img/icon-symbol-1.png")
+          .icon-symbol.music-2
+            img(src="#{url}/img/icon-symbol-2.png")
+          .icon-symbol.music-3
+            img(src="#{url}/img/icon-symbol-2.png")
+          .icon-symbol.music-4
+            img(src="#{url}/img/icon-symbol-3.png")
         p.centeralign Loading..{{progress}}%
   
   .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",style="display: none",:style="{width: w+'px',minHeight: h+'px'}")
@@ -60,53 +74,82 @@ block content
           div
           div
 
-    transition(name="page-fade")
+    transition(name="page-zoom")
       .page.page-1(v-show="pageIndex == 1")
+        .content
+          .btn-start(@click = "pageIndex = 2")
+            img(src="#{url}/img/btn-start.png")
+          .symbol
+            .icon-symbol.music-1
+              img(src="#{url}/img/icon-symbol-1.png")
+            .icon-symbol.music-2
+              img(src="#{url}/img/icon-symbol-2.png")
+            .icon-symbol.music-3
+              img(src="#{url}/img/icon-symbol-2.png")
+            .icon-symbol.music-4
+              img(src="#{url}/img/icon-symbol-3.png")
+    transition(name="page-fade")
+      .page.page-2(v-show="pageIndex == 2")
         .content
           //- .logo
             img(src="#{url}/img/logo.png")
           #ugc
-          transition(name="page-fade")
+          transition(name="page-up")
             .post-card(v-show="questionShow")
               .question-list
+                .bg-img
+                  img(src="#{url}/img/envelope.png")
                 transition(name="page-fade")
                   .question(v-show="questionIndex == 0")
-                    .title 圣诞来袭
+                    .title 圣诞来袭，今年你要<span class="line"></span>
                     .answer
-                      .item.row(:class="{on: answer1==1}", @click="answer1 = 1") a
-                      .item.row(:class="{on: answer1==2}", @click="answer1 = 2") b
-                      .item.row(:class="{on: answer1==3}", @click="answer1 = 3") c
-                      .item.row(:class="{on: answer1==4}", @click="answer1 = 4") d
+                      .item.radio.row(:class="{on: answer1==1}", @click="answer1 = 1") 躺在沙发上做有知觉的植物
+                      .item.radio.row(:class="{on: answer1==2}", @click="answer1 = 2") 就放肆吃放肆喝放肆去闯
+                      .item.radio.row(:class="{on: answer1==3}", @click="answer1 = 3") 就让这雪花 今夜一直重复
+                      .item.radio.row(:class="{on: answer1==4}", @click="answer1 = 4") 都怪我没能耐 加班才实在
                 transition(name="page-fade")
                   .question(v-show="questionIndex == 1")
-                    .title 选一位圣诞DJ
+                    .title 选一位圣诞DJ，<br/>专治你的秋裤太厚蹦不动
                     .answer
-                      .item(:class="{on: answer2==1}", @click="answer2 = 1") a
-                      .item(:class="{on: answer2==2}", @click="answer2 = 2") b
-                      .item(:class="{on: answer2==3}", @click="answer2 = 3") c
-                      .item(:class="{on: answer2==4}", @click="answer2 = 4") d
+                      .item.music-icon(:class="{on: answer2==1}", @click="answer2 = 1")
+                        | 乡村短腿鹅
+                      .item.music-icon(:class="{on: answer2==2}", @click="answer2 = 2")
+                        | POP红鼻鹿
+                      .item.music-icon(:class="{on: answer2==3}", @click="answer2 = 3")
+                        | 古典绅士熊
+                      .item.music-icon(:class="{on: answer2==4}", @click="answer2 = 4")
+                        | 摇滚大雪人
                 transition(name="page-fade")
                   .question(v-show="questionIndex == 2")
-                    .title 不要怂
+                    .title 圣诞不要怂，<br/>喜提 <span class="line"></span> 让节日焕然一星。
                     .answer
-                      .item.check(:class="{on: answer3.c1}", @click="answer3.c1 = !answer3.c1") a
-                      .item.check(:class="{on: answer3.c2}", @click="answer3.c2 = !answer3.c2") b
-                      .item.check(:class="{on: answer3.c3}", @click="answer3.c3 = !answer3.c3") c
-                      .item.check(:class="{on: answer3.c4}", @click="answer3.c4 = !answer3.c4") d
+                      .item.check(:class="{on: answer3.c1}", @click="answer3.c1 = !answer3.c1") 雪花
+                      .item.check(:class="{on: answer3.c2}", @click="answer3.c2 = !answer3.c2") 火鸡
+                      .item.check(:class="{on: answer3.c3}", @click="answer3.c3 = !answer3.c3") 礼物
+                      .item.check(:class="{on: answer3.c4}", @click="answer3.c4 = !answer3.c4") 圣诞树
                 transition(name="page-fade")
                   .question(v-show="questionIndex == 3")
-                    .title 今年圣诞
+                    .title.center 今年圣诞节，只想和 <span class="line"></span> 一起
                     .answer.input
-                      input(type="input",v-model="nickname")
+                      input(type="input",placeholder="点击填写（Honey/母亲大人/给自己）",v-model="nickname")
                 transition(name="page-fade")
                   .question(v-show="questionIndex == 4")
-                    .title 写这里
-                    .msg-card
-                    .answer.input.textarea
-                      textarea(v-model="message")
+                    .title 最后，有句心底话不知当讲不当讲，还是写在这里吧
+                    .msg-card(v-show="!messageInput")
+                      .slider(@click="messageShow")
+                        .box(:class="'on-'+messageIndex")
+                          .item(v-for="item in messageList", v-html="item")
+                      .left(@click="messageSelectLeft")
+                        img(src="#{url}/img/left.png")
+                      .right(@click="messageSelectRight")
+                        img(src="#{url}/img/left.png")
+                    .answer.input.textarea(:class="{hidebody: !messageInput}")
+                      textarea#message(v-model="message",@blur="messageBlur",@focus="messageFoucs")
+                    .note *点击左右可以切换，也可点击输入框撰写自己的蜜语
                       
 
               .btn-next(@click="nextQuestion")
+                img(src="#{url}/img/btn-next.png")
 
     
 

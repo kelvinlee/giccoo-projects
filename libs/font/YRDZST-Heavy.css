@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "YRDZST-Heavy";
+    src: url("YRDZST-Heavy.eot"); /* IE9 */
+    src: url("YRDZST-Heavy.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    
+    url("YRDZST-Heavy.woff") format("woff"), /* chrome、firefox */
+    url("YRDZST-Heavy.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    
+    url("YRDZST-Heavy.svg#YRDZST-Heavy") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+
