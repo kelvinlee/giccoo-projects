@@ -342,7 +342,7 @@ function setTag(){
 
 	p4tagC.addChild(tagBtnNext)
 	tagBtnNext.position.set(501,275)
-	tagBtnNext.interactive=false
+	tagBtnNext.interactive=true
 	tagBtnNext.tap=goNext
 
 	setTag1()
@@ -476,6 +476,7 @@ function goNext(){
 
 	resultC.visible=true
 	TweenMax.to(qr,1,{alpha:1})
+	TweenMax.to(p4t,1,{alpha:0})
 	TweenMax.to(resultC,1,{alpha:1,onComplete:function(){
 		
 		goSavePic()
