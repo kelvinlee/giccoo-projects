@@ -389,9 +389,13 @@ var resultC=new PIXI.Container()
 var resultA=[result1,result2,result3,result4,result5,result6]
 var resultNum=0
 
+var endBtnBack=new pSprite("img/btn-back.png")
+
+var qr=new pSprite("img/qr.png")
+
 function setEnd(){
 	mainPart.addChild(endPage,borderAll)
-	endPage.addChild(endMaskC,endTitle,endBar,resultC)
+	endPage.addChild(endMaskC,endTitle,endBar,resultC,endBtnBack,qr)
 	endMaskC.addChild(endMask1,endMask2,endMask3)
 	endMask1.width=endMask2.width=endMask3.width=640
 	endMask1.height=endMask2.height=endMask3.height=stageH
@@ -419,7 +423,80 @@ function setEnd(){
 	endTitle.alpha=0
 
 	setLayer()
+	endBtnBack.visible=false
+	endBtnBack.interactive=true
+	endBtnBack.tap=goBack
+
+	qr.y=stageH-91
+	qr.alpha=0
 }
+
+//==================================返回编辑页
+
+function goBack(){
+	console.log("goBack")
+	endBtnBack.visible=false
+	TweenMax.to(endMaskC,1,{alpha:0})
+	TweenMax.to(endBar,1,{y:stageH})
+	TweenMax.to(p4AllMask,1,{height:stageH-333})
+	TweenMax.to(p4tagC,1,{y:stageH-333})
+	TweenMax.to(endTitle,1,{alpha:0})
+	TweenMax.to(resultC,1,{alpha:0})
+	for (var i = 0; i < itemA.length; i++) {
+    itemA[i].interactive=true
+  };
+  TweenLite.set($("#pngHolder"),{display:"none"})
+}
+
+
+//==================================完成作品
+
+var theTime=0
+function goNext(){
+	console.log("111")
+	hideBorder()
+	for (var i = 0; i < itemA.length; i++) {
+    itemA[i].interactive=false
+  };
+	
+	TweenMax.to(p4tagC,1,{y:stageH})
+	TweenMax.to(p4AllMask,1,{height:stageH})
+	TweenMax.to(endMaskC,1,{alpha:.7})//========需要goback
+	var i
+	for (i = 0; i < 3; i++) {
+		endMaskA[i].visible=false
+		if(i==theTime){
+			endMaskA[i].visible=true
+		}
+	};
+
+	TweenMax.set(endTitle,{y:-50,alpha:0})
+	TweenMax.to(endTitle,1,{y:0,alpha:1})
+	TweenMax.to(endBar,1,{y:stageH-70,delay:1})//========需要goback
+
+	resultC.visible=true
+	TweenMax.to(qr,1,{alpha:1})
+	TweenMax.to(resultC,1,{alpha:1,onComplete:function(){
+		
+		goSavePic()
+	}})
+	for (i = 0; i < 6; i++) {
+		resultA[i].visible=false
+		if(i==resultNum){
+			resultA[i].visible=true
+		}
+	};
+	
+}
+//=========================================存图
+
+function goSavePic(){
+	savePic()
+	endBtnBack.visible=true
+	qr.alpha=0
+}
+
+//=========================================长按保存
 
 function goEndBtn1(){
 	console.log("长按保存")
@@ -456,35 +533,6 @@ function closeLayer(){
 }
 
 
-//==================================
-
-var theTime=0
-function goNext(){
-	console.log("111")
-	TweenMax.to(p4tagC,1,{y:stageH})
-	TweenMax.to(p4AllMask,1,{height:stageH})
-	TweenMax.to(endMaskC,1,{alpha:.7})//========需要goback
-	var i
-	for (i = 0; i < 3; i++) {
-		endMaskA[i].visible=false
-		if(i==theTime){
-			endMaskA[i].visible=true
-		}
-	};
-
-	TweenMax.set(endTitle,{y:-50,alpha:0})
-	TweenMax.to(endTitle,1,{y:0,alpha:1})
-	TweenMax.to(endBar,1,{y:stageH-70})//========需要goback
-
-	resultC.visible=true
-	for (i = 0; i < 6; i++) {
-		resultA[i].visible=false
-		if(i==resultNum){
-			resultA[i].visible=true
-		}
-	};
-	
-}
 
 
 

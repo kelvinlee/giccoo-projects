@@ -138,7 +138,7 @@ function savePic(){
   document.getElementById("pngHolder").innerHTML=""
   document.getElementById("pngHolder").appendChild(convertCanvasToImage(renderer.view)); 
   TweenLite.set($("#pngHolder"),{display:"block"})
-  TweenLite.set($("#shareHint"),{display:"block"})
+  //TweenLite.set($("#shareHint"),{display:"block"})
 }
 
 function convertCanvasToImage(canvas) {
@@ -148,11 +148,11 @@ function convertCanvasToImage(canvas) {
   return image;
 }
 
-$("#pngHolder").click(function(){
-  TweenLite.set($("#pngHolder"),{display:"none",opacity:1})
-  TweenLite.set($("#shareHint"),{display:"none"})
-  footer.alpha=1
-})
+// $("#pngHolder").click(function(){
+//   TweenLite.set($("#pngHolder"),{display:"none",opacity:1})
+//   TweenLite.set($("#shareHint"),{display:"none"})
+//   //footer.alpha=1
+// })
 
 //===============================滚屏幕
 
