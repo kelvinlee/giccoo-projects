@@ -92,8 +92,39 @@ function initAll(){
 
 }
 
+var logo=new pSprite("img/logo.png")
+var mainPart=new PIXI.Container()
+
 function setup(){
+  pStage.addChild(mainPart,logo)
+  setBorder()
   setPage1()
+  setPage2()
+  //setPage3()
+  setScorll()
+}
+
+var borderAll=new PIXI.Container()
+
+function setBorder(){
+  var borderL=new PIXI.Graphics()
+  var borderR=new PIXI.Graphics()
+  var borderT=new PIXI.Graphics()
+  var borderD=new PIXI.Graphics()
+
+
+  borderL.beginFill(0xffffff)
+  borderL.drawRect(0,0,640,10)
+  borderR.beginFill(0xffffff)
+  borderR.drawRect(630,0,640,stageH)
+  borderT.beginFill(0xffffff)
+  borderT.drawRect(0,0,10,stageH)
+  borderD.beginFill(0xffffff)
+  borderD.drawRect(0,stageH-10,640,stageH)
+  borderAll.addChild(borderL,borderR,borderT,borderD)
+
+  pStage.addChild(borderAll)
+  borderAll.visible=false
 }
 
 function pageLoop(){
@@ -104,7 +135,6 @@ function pageLoop(){
 
 
 function savePic(){
-
   document.getElementById("pngHolder").innerHTML=""
   document.getElementById("pngHolder").appendChild(convertCanvasToImage(renderer.view)); 
   TweenLite.set($("#pngHolder"),{display:"block"})
@@ -123,6 +153,60 @@ $("#pngHolder").click(function(){
   TweenLite.set($("#shareHint"),{display:"none"})
   footer.alpha=1
 })
+
+//===============================滚屏幕
+
+function setScorll(){
+  pStage.interactive=true
+  pStage.touchstart=touchStart
+}
+
+var startY
+var nowPage=1
+var pageUpDown
+function touchStart(_e){
+  startY=_e.data.global.y
+  pStage.touchend=touchEnd
+}
+function touchEnd(_e){
+  if(startY-_e.data.global.y>90&&nowPage==1){
+    nowPage++
+    pageUpDown=1
+    goPage2()
+    console.log("第二页")
+  }else if(startY-_e.data.global.y<-90&&nowPage==2){
+    nowPage--
+    pageUpDown=-1
+    goPage1()
+    console.log("回第一页")
+  }else if(startY-_e.data.global.y>90&&nowPage==2){
+    nowPage++
+    pageUpDown=1
+    goPage3()
+    console.log("第三页")
+  }
+  
+}
+function goPage1(){
+  
+  TweenLite.to(page2,.5,{y:stageH,onComplete:function(){
+    borderAll.visible=false
+  }})
+}
+function goPage2(){
+  borderAll.visible=true
+  setP2Loop()
+  TweenLite.to(page2,.5,{y:0})
+  
+}
+function goPage3(){
+  setPage3()
+  TweenLite.to(page3,.5,{y:0,onComplete:function(){
+    page1.visible=false
+    page2.visible=false
+  }})
+}
+
 
 //=============BGM=========
 
