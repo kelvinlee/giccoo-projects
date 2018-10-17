@@ -201,8 +201,8 @@ function setPage3(){
 	p3t=new pSprite("img/p3t.png")
 	page3.addChild(p3pic1,p3pic2,p3t)
 	p3pic1.height=p3pic2.height=stageH
-	p3pic1.width=p3pic2.width=stageH/1000*1333
-	p3pic1.x=p3pic2.x=640-stageH/1000*1333
+	p3pic1.width=p3pic2.width=stageH/1000*1341
+	p3pic1.x=p3pic2.x=640-stageH/1000*1341
 	p3pic2.alpha=0
 	p3t.pivot.y=75
 	p3t.y=stageH/4
@@ -216,7 +216,7 @@ function page3ani(){
 		setPage4()
 	}})
 	TweenMax.to(page3,1,{alpha:0,delay:4})
-	//TweenMax.to(p3pic2,2,{x:-stageH/1000*1333/6,alpha:0,delay:5,ease:Sine.easeInOut})
+	//TweenMax.to(p3pic2,2,{x:-stageH/1000*1341/6,alpha:0,delay:5,ease:Sine.easeInOut})
 }
 
 //===============================================第四页
@@ -242,7 +242,7 @@ function setPage4(){
 	p4All.addChild(p4DownLayer,p4MidLayer,p4TopLayer)
 
 	p4AllMask.beginFill(0xffffff)
-	p4AllMask.drawRect(0,0,640,stageH-333)
+	p4AllMask.drawRect(0,0,640,stageH-341)
 	p4All.mask=p4AllMask
 
 	var p4grass=new pSprite("img/p4grass1.jpg")
@@ -293,7 +293,7 @@ function setPage4(){
 
 	p4t=new pSprite("img/p4t.png") 
 	page4.addChild(p4t)
-	p4t.y=(hrz+stageH-333)/2-35
+	p4t.y=(hrz+stageH-341)/2-35
 	TweenMax.from(p4t,1,{alpha:0,y:"+=50",delay:.5})
 
 	setTag()
@@ -312,7 +312,7 @@ function setTag(){
 		var _tag=new PIXI.Container()
 		p4tagC.addChildAt(_tag,0)
 		if(i!=0){_tag.visible=false}
-		p4tagC.y=stageH-333
+		p4tagC.y=stageH-341
 		tagA.push(_tag)
 		var j=i+1
 		var _tagbg=new pSprite("img/tagbg"+j+".png")
@@ -438,8 +438,8 @@ function goBack(){
 	endBtnBack.visible=false
 	TweenMax.to(endMaskC,1,{alpha:0})
 	TweenMax.to(endBar,1,{y:stageH})
-	TweenMax.to(p4AllMask,1,{height:stageH-333})
-	TweenMax.to(p4tagC,1,{y:stageH-333})
+	TweenMax.to(p4AllMask,1,{height:stageH-341})
+	TweenMax.to(p4tagC,1,{y:stageH-341})
 	TweenMax.to(endTitle,1,{alpha:0})
 	TweenMax.to(resultC,1,{alpha:0})
 	for (var i = 0; i < itemA.length; i++) {
@@ -461,7 +461,7 @@ function goNext(){
 	
 	TweenMax.to(p4tagC,1,{y:stageH})
 	TweenMax.to(p4AllMask,1,{height:stageH})
-	TweenMax.to(endMaskC,1,{alpha:.7})//========需要goback
+	TweenMax.to(endMaskC,1,{alpha:.8})//========需要goback
 	var i
 	for (i = 0; i < 3; i++) {
 		endMaskA[i].visible=false
@@ -472,7 +472,7 @@ function goNext(){
 
 	TweenMax.set(endTitle,{y:-50,alpha:0})
 	TweenMax.to(endTitle,1,{y:0,alpha:1})
-	TweenMax.to(endBar,1,{y:stageH-70,delay:1})//========需要goback
+	TweenMax.to(endBar,1,{y:stageH-78,delay:1})//========需要goback
 
 	resultC.visible=true
 	TweenMax.to(qr,1,{alpha:1})
