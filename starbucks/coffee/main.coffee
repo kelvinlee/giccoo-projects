@@ -32,9 +32,9 @@ _testTime = 0
 
 
 neteaseShareImage = ->
-	title1 = "听歌听到狐狸尾巴露出来！？"
+	title1 = "点播圣诞星声"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://activity.music.163.com/mazda/"
+	redirectUrl = "https://activity.music.163.com/starbucks/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	# window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "share href:",picUrl
@@ -97,12 +97,12 @@ window.onload = ->
 	init()
 
 	CloudMusic.setShareData
-			name: 'starbucks',
-			title: '一首歌HOLD住人生大场面',
-			subTitle: '测测你的音乐情商属性',
-			text: '一首歌HOLD住人生大场面',
-			picUrl: 'http://m.giccoo.com/mazda/img/ico.jpg',
-			link: 'http://m.giccoo.com/mazda/'
+		name: 'starbucks',
+		title: '点播圣诞星声',
+		subTitle: '点播圣诞星声',
+		text: '',
+		picUrl: 'http://m.giccoo.com/starbucks/img/ico.jpg',
+		link: 'http://m.giccoo.com/starbucks/'
 
 init = ->
 	
@@ -127,7 +127,7 @@ init = ->
 			mounted: true
 			loading: false
 			pageInfoShow: false
-			pageIndex: 1
+			pageIndex: 2
 			step: 1
 			singerIndex: 1
 			startgame: false
@@ -199,7 +199,15 @@ init = ->
 				c4: false
 			nickname: ""
 			message: ""
+			messageIndex: 1
+			messageInput: false
 			musicName: ""
+			messageList: [
+				"我知道你不是真的想加班<br/>难道就这样抱着遗憾<br/>一直到深夜"
+				"When I'm with you <br/>I know I'm standing with an army"
+				"There is only one thing I need the most<br/>Please make my wish come true<br/>Because all I want for Christmas is you"
+				"年轻人为这季节都很兴奋<br/>用简讯互传圣诞祝福<br/>可我只想花点心思<br/>让你们感到幸福"
+			]
 		watch:
 			answer1: (n,o)->
 				console.log "answer1 changed:",n
@@ -209,8 +217,39 @@ init = ->
 				console.log "answer3 changed:",n
 
 		methods:
-			nextQuestion: ->
+			messageShow: ->
+				@.messageInput = true
+				document.getElementById("message").focus()
+				document.getElementById("message").select()
+			messageFoucs: ->
+				if @.message is ""
+					@.messageInput = true
+				console.log "focus"
+			messageBlur: ->
+				if @.message is ""
+					@.messageInput = false
 
+			messageSelectLeft: ->
+				@.messageIndex--
+				if @.messageIndex <= 1
+					return @.messageIndex = 1
+			messageSelectRight: ->
+				@.messageIndex++
+				if @.messageIndex >= @.messageList.length
+					return @.messageIndex = @.messageList.length
+			nextQuestion: ->
+				if @.questionIndex is 1 and @.answer2 is 0
+					return alert "请选择一个答案"
+				if @.questionIndex is 3 and @.nickname is ""
+					return alert "请填写名称（Honey/母亲大人/给自己）"
+				# if @.questionIndex is 3 and @.message is ""
+				# 	return alert ""
+				if @.questionIndex is 4
+					return @.over()
+
+				@.questionIndex++
+			over: ->
+				@.questionShow = false
 			dateText: (date)->
 				console.log date.replace(/-/g,"/")
 				d = new Date date.replace(/-/g,"/")

@@ -43,14 +43,15 @@ $pageMainBGColor: #0c101a;
 		+transform(translate3d(0,0,0))
 +keyframes(musicIcon)
 	0%
-		height: 20%
-		opacity: 0.8
-	50%
-		height: 100%
+		+transform(translate3d(-50%,20%,0))
+		opacity: 0
+	20%
+		opacity: 1
+	80%
 		opacity: 1
 	100%
-		height: 20%
-		opacity: 0.8
+		+transform(translate3d(0,0,0))
+		opacity: 0
 +keyframes(textShow)
 	0%
 		opacity: 0
@@ -73,10 +74,8 @@ $pageMainBGColor: #0c101a;
 +keyframes(swing)
 	0%
 		+transform(rotate(0))
-	25%
-		+transform(rotate(3deg))
-	75%
-		+transform(rotate(-3deg))
+	50%
+		+transform(rotate(-6deg))
 	100%
 		+transform(rotate(0))
 +keyframes(fadeInUpSmall)
@@ -163,6 +162,26 @@ video,canvas,svg
 .page-fade-enter,.page-fade-leave-to
 	opacity: 0
 
+.page-zoom-enter-active
+	transition: all .6s ease
+	opacity: 1
+.page-zoom-leave-active
+	transition: all .3s linear
+	opacity: 1
+.page-zoom-enter,.page-zoom-leave-to
+	opacity: 0
+	+transform(scale(2,2))
+
+.page-up-enter-active
+	transition: all .6s ease
+	opacity: 1
+.page-up-leave-active
+	transition: all .3s linear
+	opacity: 1
+.page-up-enter,.page-up-leave-to
+	opacity: 0
+	+transform(translate3d(0,-140%,0))
+
 .page-fadeflower-enter-active
 	transition: all .6s ease
 	opacity: 1
@@ -190,7 +209,7 @@ video,canvas,svg
 		font-size: 16px
 
 .load
-	// +b($cdn+"img/bg-loading.jpg",no-repeat,center,center,cover)
+	+b($cdn+"img/loading-bg.jpg",no-repeat,center,center,cover)
 	+posa
 	+tl(0,50%)
 	+transform(translate3d(-50%,0,0))
@@ -198,8 +217,9 @@ video,canvas,svg
 	z-index: 99
 	// 3c080f
 	// +hide
-	font-family: "Arial"
+	// font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
 	// +b($cdn+"img/loading-bg.jpg",no-repeat,center,center,100% 100%)
+	color: #fff
 	.content
 		+w
 		+h
@@ -212,21 +232,27 @@ video,canvas,svg
 			+posa
 			+tl
 			+w
+	.loading-logo
+		+posa
+		+tl(5%,25%)
+		+w(50%)
 	.loading-text
 		+posa
-		+tl(50%)
-		+w
-		color: #000
+		+tl(50%,50%)
+		+iw(420,750,100%)
+		color: #fff
 		+text-center
-		+font-size(1.2rem)
+		+font-size(0.8rem)
 		line-height: 1.4em
 		margin-top: -0.7em
-		letter-spacing: 0.3em
-		font-weight: lighter
-		+transform(scale(0.8,1))
+		// letter-spacing: 0.3em
+		font-weight: normal
+		// +transform(scale(0.8,1))
+		+transform(translate3d(-50%,0,0))
 		p
 			+m
-			font-weight: lighter
+			// font-weight: lighter
+			margin-top: 0.5em
 		.cd
 			+posa
 			+tl(-100%,50%)
@@ -236,7 +262,38 @@ video,canvas,svg
 				font-size: 0
 				+animation(second,3s,linear,infinite)
 
-	
+	.animal
+		+posr
+		.snowman-hand
+			+posa
+			+tr(15.6%,16.1%)
+			+iw(27,420,100%)
+			transform-origin: bottom right
+			+animation(swing,2s,ease,infinite)
+		.icon-symbol
+			+posa
+			+animation(musicIcon,1.2s,ease-out,infinite)
+			&.music-1
+				+tl(-11%,20%)
+				+w(4%)
+				animation-delay: 300ms
+				animation-duration: 1.2s
+			&.music-2
+				+tl(-5%,24%)
+				+w(1.6%)
+				animation-delay: 700ms
+				animation-duration: 1.4s
+			&.music-3
+				+tl(-14%,28%)
+				+w(1.6%)
+				animation-delay: 900ms
+				animation-duration: 1s
+			&.music-4
+				+tl(-22%,32%)
+				+w(3%)
+				animation-delay: 1200ms
+				animation-duration: 1.3s
+
 	
 
 .music-box
@@ -426,7 +483,7 @@ video,canvas,svg
 			// +bc(#8db637)
 			+text-center
 			color: #000
-			border-right: solid 2px #000
+			border-right: solid 1px #000
 			img
 				+show-inline
 				vertical-align: middle
@@ -513,49 +570,257 @@ video,canvas,svg
 
 
 .page-1
-	// +b($cdn+"img/loading-bg.jpg",no-repeat,bottom,center,100% 100%)
+	+b($cdn+"img/homepage-bg.jpg",no-repeat,center,center,cover)
 	.content
 		// +h(auto)
 		// +transform(translate3d(0,-50%,0))
 		// top: 50%
-	.logo
-		+w(50%)
-		+posa
-		+tl
-		z-index: 100
-	.title
-		+m(1rem auto)
-	.input
-		+iw(401,750,100%)
-		+m(1rem auto)
-		input
-			+w
-			+font-size(0.8rem)
-			+text-center
-			+m
-			display: inline-block
-			+bc(transparent)
-			border: none
-			outline: none
-			color: #fff
-			border-bottom: dotted 1px #fff
-			line-height: 1.6em
-			+p(0.4em 0)
-			&::placeholder
-				color: #fff
-	.btn
-		margin-top: 8%
+	.btn-start
+		+abcentermiddle
+		+w(30%)
+		padding-top: 3rem
+		z-index: 2
+	.symbol
+		+abcentermiddle
+		+wh(50%,23%)
+		margin-left: -6%
+		z-index: 1
+		.icon-symbol
+			+posa
+			+animation(musicIcon,1.2s,ease-out,infinite)
+			// +box
+			&.music-1
+				+tl(-14%,22%)
+				+w(4%*3)
+				animation-delay: 300ms
+				animation-duration: 1.2s
+			&.music-2
+				+tl(3%,28%)
+				+w(1.6%*3)
+				+p(0.2rem)
+				animation-delay: 700ms
+				animation-duration: 1.2s*1.1
+			&.music-3
+				+tl(-18%,33%)
+				+w(1.4%*3)
+				+p(0.3rem)
+				animation-delay: 900ms
+				animation-duration: 1.2s*1.2
+				img
+					+transform(rotate(-45deg))
+			&.music-4
+				+tl(-24%,38%)
+				+w(3%*3)
+				animation-delay: 1200ms
+				animation-duration: 1.2s*1.3
+
 	
 .page-2
 	// font-family: "yrd-Bold"
 	.content
-	.more
+	.post-card
 		+posa
-		+br(0,0)
-		+w(50%)
-		+h(20%)
+		+tl(10%,5%)
+		+iw(671,750,100%)
 		z-index: 109
+		.btn-next
+			+posa
+			+bl(-25%,33.75%)
+			+iw(217,671,100%)
+		.question-list
+			+w
+			+h
+			+posr
+			font-family: "YRDZST-Heavy"
+			.question
+				+w
+				+h
+				+posa
+				+tl
+				+box
+				+p(7% 15% 7% 9%)
+				&:nth-child(3)
+					+p(12% 15% 7% 9%)
+				&:nth-child(4)
+					+p(12% 15% 7% 9%)
+				&:nth-child(5)
+					+p(18% 15% 7% 7%)
+				&:nth-child(6)
+					+p(7% 13% 7% 7%)
+				.line
+					+show-inline
+					+w(2.5em)
+					border-bottom: solid 2px #000
+					margin-left: 0.2em
+					+h(1.4em)
+				.title
+					color: #000
+					+font-size(1rem)
+					font-family: "YRDZST-Heavy"
+					line-height: 1.4em
+					margin-bottom: 1rem
+					&.center
+						+text-center
+				.note
+					+posa
+					+w(96%)
+					+bl(12%,0)
+					+font-size(0.5rem)
+					+text-center
+					margin-top: 1em
+					font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
+				.msg-card
+					+w(90%)
+					+h(1.6em*4)
+					line-height: 1.6em
+					+font-size(0.7rem)
+					+show
+					+m
+					+posr
+					&:after
+						+font-size(0.7rem)
+						content: " "
+						+posa
+						+bl(-0.4rem)
+						+w(100%)
+						+h(0.4rem)
+						+b($cdn+"img/input-line.png",no-repeat,center,center,99%)
+					.slider
+						+overhide
+						+w
+						+h
+					.box
+						+tran(transform,0.2s)
+						+w
+						+h
+						+posr
+						white-space: nowrap
+						
+						&.on-1
+							+transform(translate3d(0,0,0))
+						&.on-2
+							+transform(translate3d(-100%,0,0))
+						&.on-3
+							+transform(translate3d(-200%,0,0))
+						&.on-4
+							+transform(translate3d(-300%,0,0))
+						&.on-5
+							+transform(translate3d(-400%,0,0))
+					.item
+						+posr
+						+w
+						+h
+						+show-inline
+						+text-center
+						font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
+						color: #b1b1b1
+						vertical-align: top
+					.left
+						+w(2rem)
+						+abmiddle
+						margin-left: -1rem
+						z-index: 109
+					.right
+						+w(2rem)
+						+abmiddle
+						margin-right: -1rem
+						left: auto
+						right: 0
+						z-index: 109
+						img
+							+transform(scale(-1,1))
 
+				.answer
+					
+					.item
+						+show-inline
+						+w(49.5%)
+						+box
+						+font-size(0.9rem)
+						color: #bb0000
+						line-height: 1.6em
+						padding-left: 1.6em
+						+posr
+						// margin-bottom: 1rem
+						&.check
+							&:before
+								content: " "
+								+posa
+								+tl(.2em,.1em)
+								+wh(1.2em,1.2em)
+								+b($cdn+"img/check.png",no-repeat,center,center,99%)
+								+tran(all,0.2s)
+							&.on
+								&:before
+									+b($cdn+"img/check-selected.png",no-repeat,center,center,99%)
+
+						&.music-icon
+							&:before
+								content: " "
+								+posa
+								+tl(.3em,0)
+								+wh(1em,1em)
+								+b($cdn+"img/icon-m.png",no-repeat,center,center,99%)
+								+tran(all,0.2s)
+							&.on
+								&:before
+									+b($cdn+"img/icon-m.gif",no-repeat,center,center,99%)
+
+						&.radio
+							&:before
+								content: " "
+								+posa
+								+tl(.3em,0)
+								+wh(1em,1em)
+								+b($cdn+"img/radio.png",no-repeat,center,center,cover)
+								+tran(all,0.2s)
+							&.on
+								&:before
+									+b($cdn+"img/radio-selected.png",no-repeat,center,center,cover)
+						&.row
+							+w
+					&.input
+						+posr
+						+w(90%)
+						+m
+						textarea
+							+p
+							+w
+							+font-size(0.7rem)
+							+text-center
+							+bc(transparent)
+							border: none
+							box-shadow: none
+							font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
+							outline: none
+							+h(1.6em*4)
+							line-height: 1.6em
+						input
+							+p
+							+w
+							+font-size(0.7rem)
+							+text-center
+							+bc(transparent)
+							border: none
+							box-shadow: none
+							font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
+							outline: none
+							line-height: 1.6em
+						&:after
+							+font-size(0.7rem)
+							content: " "
+							+posa
+							+bl(-0.4rem)
+							+w(100%)
+							+h(0.4rem)
+							+b($cdn+"img/input-line.png",no-repeat,center,center,99%)
+					&.hidebody
+						+font-size(0.7rem)
+						+w(80%)
+						opacity: 0
+						margin-top: -1.6em*4
+						+posr
+						z-index: 9
 
 .pop
 	+posa
