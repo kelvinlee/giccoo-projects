@@ -304,6 +304,7 @@ var _tag2Pic1,_tag2Pic2,_tag2Pic3
 var _tag2picA=[]
 var tagA=[]
 var tagBtnA=[]
+var tagBtnNext=new pSprite("img/tag-done.png")
 
 function setTag(){
 	var tagbtnX=[47,47+63*1+5,47+63*2+5,47+63*3-2,47+63*4-7,47+63*5-12,47+63*6-7]
@@ -339,6 +340,11 @@ function setTag(){
 		tagbtn.tap=changeTag
 	};
 
+	p4tagC.addChild(tagBtnNext)
+	tagBtnNext.position.set(501,275)
+	tagBtnNext.interactive=false
+	tagBtnNext.tap=goNext
+
 	setTag1()
 	setTag2()
 	setTag3()
@@ -347,6 +353,7 @@ function setTag(){
 	setTag6()
 	setTag7()
 	setItem()
+	setEnd()
 }
 
 function changeTag(_e){
@@ -358,6 +365,129 @@ function changeTag(_e){
 		}
 	};
 }
+//=========================================================================================================完成
+
+var endPage=new PIXI.Container()
+var endMask1=new pSprite("img/endmask1.png")
+var endMask2=new pSprite("img/endmask2.png")
+var endMask3=new pSprite("img/endmask3.png")
+var endMaskC=new PIXI.Container()
+var endMaskA=[endMask1,endMask2,endMask3]
+var endTitle=new pSprite("img/endtitle.png")
+var endBar=new PIXI.Container()
+var endBarBG=new pSprite("img/endbtns.png")
+var endBtn1=new PIXI.Graphics()
+var endBtn2=new PIXI.Graphics()
+
+var result1=new pSprite("img/result1.png")
+var result2=new pSprite("img/result2.png")
+var result3=new pSprite("img/result3.png")
+var result4=new pSprite("img/result4.png")
+var result5=new pSprite("img/result5.png")
+var result6=new pSprite("img/result6.png")
+var resultC=new PIXI.Container()
+var resultA=[result1,result2,result3,result4,result5,result6]
+var resultNum=0
+
+function setEnd(){
+	mainPart.addChild(endPage,borderAll)
+	endPage.addChild(endMaskC,endTitle,endBar,resultC)
+	endMaskC.addChild(endMask1,endMask2,endMask3)
+	endMask1.width=endMask2.width=endMask3.width=640
+	endMask1.height=endMask2.height=endMask3.height=stageH
+	endMaskC.blendMode=_MULTIPLY
+	endMaskC.alpha=0
+	endBar.y=stageH
+
+	endBar.addChild(endBarBG,endBtn1,endBtn2)
+	endBtn1.beginFill(0x000000)
+	endBtn1.drawRect(0,0,320,70)
+	endBtn1.alpha=0
+	endBtn1.interactive=true
+	endBtn1.tap=goEndBtn1
+
+	endBtn2.beginFill(0x000000)
+	endBtn2.drawRect(320,0,320,70)
+	endBtn2.alpha=0
+	endBtn2.interactive=true
+	endBtn2.tap=goEndBtn2
+
+	resultC.addChild(result1,result2,result3,result4,result5,result6)	
+	resultC.y=stageH-264
+	resultC.visible=false
+
+	endTitle.alpha=0
+
+	setLayer()
+}
+
+function goEndBtn1(){
+	console.log("长按保存")
+}
+//=========================================公众号浮层
+var endLayer
+var endLayerBtn
+function setLayer(){
+	endLayer=new pSprite("img/wxlayer.png")
+	endLayerBtn=new pSprite("img/wxlayer-close.png")
+	mainPart.addChild(endLayer,endLayerBtn)
+	endLayer.y=stageH/2-750
+	endLayerBtn.y=stageH/2-306
+	endLayer.alpha=0
+	endLayerBtn.alpha=0
+	endLayerBtn.interactive=false
+	endLayerBtn.tap=closeLayer
+}
+
+function goEndBtn2(){
+	console.log("关注公众号")
+	TweenMax.to(endLayer,1,{alpha:1})
+	TweenMax.to(endLayerBtn,1,{alpha:1})
+	TweenMax.to(endTitle,1,{alpha:0})
+	endLayerBtn.interactive=true
+	TweenMax.set($("#bgQR"),{display:"block"})
+}
+function closeLayer(){
+	endLayerBtn.interactive=false
+	TweenMax.to(endLayer,1,{alpha:0})
+	TweenMax.to(endLayerBtn,1,{alpha:0})
+	TweenMax.to(endTitle,1,{alpha:1})
+	TweenMax.set($("#bgQR"),{display:"none"})
+}
+
+
+//==================================
+
+var theTime=0
+function goNext(){
+	console.log("111")
+	TweenMax.to(p4tagC,1,{y:stageH})
+	TweenMax.to(p4AllMask,1,{height:stageH})
+	TweenMax.to(endMaskC,1,{alpha:.7})//========需要goback
+	var i
+	for (i = 0; i < 3; i++) {
+		endMaskA[i].visible=false
+		if(i==theTime){
+			endMaskA[i].visible=true
+		}
+	};
+
+	TweenMax.set(endTitle,{y:-50,alpha:0})
+	TweenMax.to(endTitle,1,{y:0,alpha:1})
+	TweenMax.to(endBar,1,{y:stageH-70})//========需要goback
+
+	resultC.visible=true
+	for (i = 0; i < 6; i++) {
+		resultA[i].visible=false
+		if(i==resultNum){
+			resultA[i].visible=true
+		}
+	};
+	
+}
+
+
+
 
 //==========================================================================================================Tag1
 var tag1BtnA=[]
@@ -416,7 +546,9 @@ function tagChange2(_e){
 			TweenMax.to(p4buildingA[2][i],1,{alpha:1})
 
 			TweenMax.to(p4skyA[i],1,{alpha:1})
+			theTime=i
 			console.log("白天夜晚",i)
+			resultNum=1
 		}
 	};
 }
@@ -445,6 +577,7 @@ function tagChange3(_e){
 		if(tag3BtnA[i]==_e.target){
 			console.log("点3",i)
 			addItem(3,p4MidLayer,i,_NORMAL)
+			resultNum=0
 		}
 	};
 }
@@ -470,6 +603,7 @@ function setTag4(){
 }
 
 function tagChange4(_e){
+	resultNum=2
 	for (var i = 0; i < 5 ; i++) {
 		if(tag4BtnA[i]==_e.target){
 			console.log("点4",i)
@@ -505,6 +639,7 @@ function setTag5(){
 }
 
 function tagChange5(_e){
+	resultNum=3
 	for (var i = 0; i < 10 ; i++) {
 		if(tag5BtnA[i]==_e.target){
 			console.log("点5",i)
@@ -532,6 +667,7 @@ function setTag6(){
 }
 
 function tagChange6(_e){
+	resultNum=4
 	for (var i = 0; i < 3 ; i++) {
 		if(tag6BtnA[i]==_e.target){
 			console.log("点6",i)
@@ -543,6 +679,7 @@ function tagChange6(_e){
 var tag7BtnA=[]
 
 function setTag7(){
+	resultNum=5
 	var btnX=[35,145,265,405,525]
 	for (var i = 0; i < 5; i++) {
 		var _btn=new PIXI.Graphics()
@@ -623,8 +760,15 @@ function addItem(_tag,_layer,_i,_blend){
 var itemBorder=new PIXI.Graphics()
 var btnClose=pSprite("img/btnclose.png")
 var btnZoom=pSprite("img/btnzoom.png")
+var ifFirst=1
 function ItemLoaded(){
-	TweenMax.to(p4t,1,{alpha:0})
+	
+	if (ifFirst==1) {
+		ifFirst=0
+		TweenMax.to(p4t,1,{alpha:0})
+		tagBtnNext.interactive=true
+
+	};
   btnZoom.visible=true
   btnClose.visible=true
   itemBorder.visible=true

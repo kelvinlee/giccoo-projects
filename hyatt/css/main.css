@@ -35,7 +35,15 @@ img{ width: 100%; }
 			tap-highlight-color: transparent;
 	display: none;
 }
+#bgQR{
+	position: absolute;
+	z-index: 1000;
+	width: 100%;
+	top: 40%;
+	opacity: 0;
+	display: none;
 
+}
 /*.musicBtn{
 	position: absolute;
 	width: 12.35%;
