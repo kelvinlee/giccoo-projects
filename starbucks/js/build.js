@@ -28,6 +28,18 @@ var imageList = [
 	_CDN+"img/coffee.png",
 	_CDN+"img/player.png",
 
+	_CDN+"img/char1.png",
+	_CDN+"img/char2.png",
+	_CDN+"img/char3.png",
+	_CDN+"img/char4.png",
+	_CDN+"img/char_shandow.png",
+
+	_CDN+"img/chicken.png",
+	_CDN+"img/box.png",
+	_CDN+"img/tree.png",
+
+	
+
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -72,12 +84,14 @@ var othersC=new PIXI.Container()
 var bgBC=new PIXI.Container()
 var snowC=new PIXI.Container()
 var bgCC=new PIXI.Container()
+var treeC=new PIXI.Container()
 
 var bgA=[[],[],[],[]]//[_bgA,_bgB,_bgC]
 var coffee
 
 function setBG(){
-	mainPart.addChild(bgCC,snowC,bgBC,bgAC,othersC)
+	mainPart.addChild(bgCC,snowC,bgBC,treeC,bgAC,othersC)
+	snowC.alpha=0
 
 	for (var i = 0; i < 4; i++) {
 		var j=i+1
@@ -97,10 +111,16 @@ function setBG(){
 	coffee=	new Sprite(getTe(_CDN+"img/coffee.png"))
 	othersC.addChild(coffee)
 
-	changeBG(0)
+	
 	setSnow()
 	setMusic1()
+	setMusic11()
+	setMusic22()
+	setMusic33()
 	setPlayer()
+	setChar()
+	setItem()
+	changeBG(0)
 }
 
 function changeBG(_num){//=================p1换背景
@@ -109,15 +129,70 @@ function changeBG(_num){//=================p1换背景
 			bgA[i][0].visible=true
 			bgA[i][1].visible=true
 			bgA[i][2].visible=true
+			treeA[i].visible=true
 			//console.log("-------",bgA[i][0])
 		}else{
 			bgA[i][0].visible=false
 			bgA[i][1].visible=false
 			bgA[i][2].visible=false
+			treeA[i].visible=false
 		}
 	};
 }
 
+var bgNum=0
+function q1(_num){
+	if(_num==3){
+		_num=4
+	}else if(_num==4){
+		_num=3
+	}
+	changeBG(_num-1)
+	bgNum=_num-1
+
+}
+function q2(_num){
+	TweenMax.to(music1C,1,{alpha:1})
+	changeChar(_num-1)
+}
+
+var itemState=[false,false,false,false]
+
+function q3(_array){
+	console.log(_array)
+ 	if(_array[0]==false){
+ 		TweenMax.to(snowC,1,{alpha:0})
+ 	}else{
+ 		TweenMax.to(snowC,1,{alpha:1})
+ 	}
+
+ 	if(_array[1]==false){
+ 		TweenMax.to(item2,1,{alpha:0})
+ 		itemState[1]=false
+ 	}else if(itemState[1]==false){
+ 		TweenMax.set(item2,{alpha:1,y:-50})
+ 		TweenMax.to(item2,1,{y:0,ease:Bounce.easeOut})
+ 		itemState[1]=true
+ 	}
+
+ 	if(_array[2]==false){
+ 		TweenMax.to(item3,1,{alpha:0})
+ 		itemState[2]=false
+ 	}else if(itemState[2]==false){
+ 		TweenMax.set(item3,{alpha:1,y:-50})
+ 		TweenMax.to(item3,1,{y:0,ease:Bounce.easeOut})
+ 		itemState[2]=true
+ 	}
+
+ 	if(_array[3]==false){
+ 		TweenMax.to(treeA[bgNum],1,{alpha:0})
+ 		itemState[3]=false
+ 	}else if(itemState[3]==false){
+ 		TweenMax.set(treeA[bgNum],{alpha:1,y:669-100})
+ 		TweenMax.to(treeA[bgNum],1,{y:669,ease:Bounce.easeOut})
+ 		itemState[3]=true
+ 	}
+}
 
 
 function nextPage(){
