@@ -6062,11 +6062,88 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/starbucks/img/btn-buy-black.png": {
+		"ft": 32768,
+		"iS": 2577,
+		"oA": 0,
+		"oAP": "/starbucks/img/btn-buy-black.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/btn-buy-white.png": {
+		"ft": 32768,
+		"iS": 5996,
+		"oA": 0,
+		"oAP": "/starbucks/img/btn-buy-white.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/btn-more.png": {
+		"ft": 32768,
+		"iS": 8806,
+		"oA": 0,
+		"oAP": "/starbucks/img/btn-more.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/starbucks/img/btn-next.png": {
 		"ft": 32768,
 		"iS": 6112,
 		"oA": 0,
 		"oAP": "/starbucks/img/btn-next.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/btn-restart-black.png": {
+		"ft": 32768,
+		"iS": 2815,
+		"oA": 0,
+		"oAP": "/starbucks/img/btn-restart-black.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/btn-restart-white.png": {
+		"ft": 32768,
+		"iS": 6293,
+		"oA": 0,
+		"oAP": "/starbucks/img/btn-restart-white.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/btn-share-black.png": {
+		"ft": 32768,
+		"iS": 2874,
+		"oA": 0,
+		"oAP": "/starbucks/img/btn-share-black.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/btn-share-white.png": {
+		"ft": 32768,
+		"iS": 6671,
+		"oA": 0,
+		"oAP": "/starbucks/img/btn-share-white.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6224,11 +6301,44 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/starbucks/img/logo-black.png": {
+		"ft": 32768,
+		"iS": 27160,
+		"oA": 0,
+		"oAP": "/starbucks/img/logo-black.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/starbucks/img/logo-white.png": {
 		"ft": 32768,
 		"iS": 24736,
 		"oA": 0,
 		"oAP": "/starbucks/img/logo-white.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/m-1.png": {
+		"ft": 32768,
+		"iS": 10024,
+		"oA": 0,
+		"oAP": "/starbucks/img/m-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/post-card-mark.png": {
+		"ft": 32768,
+		"iS": 22055,
+		"oA": 0,
+		"oAP": "/starbucks/img/post-card-mark.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

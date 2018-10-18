@@ -121,7 +121,7 @@ block content
                         | 摇滚大雪人
                 transition(name="page-fade")
                   .question(v-show="questionIndex == 2")
-                    .title 圣诞不要怂，<br/>喜提 <span class="line"></span> 让节日焕然一星。
+                    .title 圣诞不要怂，<br/>喜提<span class="line"></span>让节日焕然一星。
                     .answer
                       .item.check(:class="{on: answer3.c1}", @click="answer3.c1 = !answer3.c1") 雪花
                       .item.check(:class="{on: answer3.c2}", @click="answer3.c2 = !answer3.c2") 火鸡
@@ -129,7 +129,7 @@ block content
                       .item.check(:class="{on: answer3.c4}", @click="answer3.c4 = !answer3.c4") 圣诞树
                 transition(name="page-fade")
                   .question(v-show="questionIndex == 3")
-                    .title.center 今年圣诞节，只想和 <span class="line"></span> 一起
+                    .title.center 今年圣诞节，只想和<span class="line"></span>一起
                     .answer.input
                       input(type="input",placeholder="点击填写（Honey/母亲大人/给自己）",v-model="nickname")
                 transition(name="page-fade")
@@ -151,7 +151,25 @@ block content
               .btn-next(@click="nextQuestion")
                 img(src="#{url}/img/btn-next.png")
 
-    
+          transition(name="page-zoom")
+            .ctrl-box(v-show="gameEnd")
+              .btn-more(@click="openMusic(1)")
+                img(src="#{url}/img/btn-more.png")
+              .btn-list
+                .btn(@click="regame")
+                  img(:src="'#{url}/img/btn-restart-'+(white?'white':'black')+'.png'")
+                .btn(@click="goshare")
+                  img(:src="'#{url}/img/btn-share-'+(white?'white':'black')+'.png'")
+                .btn(@click="gobuy")
+                  img(:src="'#{url}/img/btn-buy-'+(white?'white':'black')+'.png'")
+    transition(name="page-fade")
+      .pop(v-show="ugcShow")
+        .content
+          .small-size
+            .close(@click="ugcShow = false")
+              img(src="//image.giccoo.com/projects/jeep/img/icon-close.png")
+            img(:src="ugc")
+            .note 长按保存图片
 
 block js
   - url = "/";

@@ -67,6 +67,39 @@ class UGC
 		@.opts.callback()
 		# @.init()
 	
+	init: ->
+		postCard = new Container()
+		logo = Spr _CDN+"img/logo-black.png"
+		bg = Spr _CDN+"img/envelope.png"
+		bg.scale.set(640/750,640/750)
+		bg.x = (@.opts.w-bg.width)/2
+		mark = Spr _CDN+"img/post-card-mark.png"
+		mark.scale.set(640/750,640/750)
+		mark.x = (@.opts.w-mark.width)/2
+		mn = Spr _CDN+"img/m-1.png"
+		mn.scale.set(640/750,640/750)
+		mn.x = (@.opts.w-mark.width)/2
+
+		nickname = new Text "#{main.nickname}",{fontFamily : 'Arial', fontSize: 32, fontWeight: "bold", fill : 0x000000, letterSpacing: 2, lineHeight: 34}
+		nickname.x = 160
+		nickname.y = 42
+
+		text = ""
+		if main.message is ""
+			text = main.messageList[main.messageIndex-1]
+		else
+			text = main.message
+		text = text.replace(/<br\/>/g,"\n")
+		message = new Text "#{text}",{fontFamily : 'Arial', fontSize: 18, fill : 0x000000, fontStyle: "italic",fontWeight: "normal", letterSpacing: 0, lineHeight: 34}
+		message.x = 160
+		message.y = 42 + 34 + 34/2
+
+		postCard.y = logo.height
+		postCard.addChild bg, mark, nickname, message, mn
+		@.stage.addChild logo, postCard
+		@.postCard = postCard
+
+		TweenMax.from(postCard,1.2,{alpha:0,y:"-=#{postCard.height+logo.height}",yoyo:true,delay: .7})
 		
 
 

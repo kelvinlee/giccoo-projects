@@ -619,9 +619,12 @@ video,canvas,svg
 	// font-family: "yrd-Bold"
 	.content
 	.post-card
+		$titleSize: 0.9rem
+		$itemSize: 0.85rem
 		+posa
-		+tl(10%,5%)
-		+iw(671,750,100%)
+		+tl(10%,(100%-78.9%)/2)
+		// +iw(671,750,100%)
+		+w(78.9%)
 		z-index: 109
 		.btn-next
 			+posa
@@ -646,7 +649,7 @@ video,canvas,svg
 				&:nth-child(5)
 					+p(18% 15% 7% 7%)
 				&:nth-child(6)
-					+p(7% 13% 7% 7%)
+					+p(4% 13% 7% 7%)
 				.line
 					+show-inline
 					+w(2.5em)
@@ -655,16 +658,16 @@ video,canvas,svg
 					+h(1.4em)
 				.title
 					color: #000
-					+font-size(1rem)
+					+font-size($titleSize)
 					font-family: "YRDZST-Heavy"
 					line-height: 1.4em
-					margin-bottom: 1rem
+					margin-bottom: 0.9em
 					&.center
 						+text-center
 				.note
 					+posa
 					+w(96%)
-					+bl(12%,0)
+					+bl(10%,0)
 					+font-size(0.5rem)
 					+text-center
 					margin-top: 1em
@@ -736,7 +739,7 @@ video,canvas,svg
 						+show-inline
 						+w(49.5%)
 						+box
-						+font-size(0.9rem)
+						+font-size($itemSize)
 						color: #bb0000
 						line-height: 1.6em
 						padding-left: 1.6em
@@ -821,6 +824,23 @@ video,canvas,svg
 						margin-top: -1.6em*4
 						+posr
 						z-index: 9
+	.ctrl-box
+		+posa
+		+bl(2%, 5%)
+		+w(50%)
+		z-index: 109
+		.btn-more
+			+w(80%)
+		.btn-list
+			margin-top: 5%
+			+w(80%)
+			+text-center
+			white-space: nowrap
+			.btn
+				+w(30%)
+				+show-inline
+				+m(0 2%)
+
 
 .pop
 	+posa

@@ -208,15 +208,39 @@ init = ->
 				"There is only one thing I need the most<br/>Please make my wish come true<br/>Because all I want for Christmas is you"
 				"年轻人为这季节都很兴奋<br/>用简讯互传圣诞祝福<br/>可我只想花点心思<br/>让你们感到幸福"
 			]
+			white: false
+			gameEnd: false
 		watch:
 			answer1: (n,o)->
 				console.log "answer1 changed:",n
+				q1(n) if q1?
+				@.white = if n is 3 then false else true
 			answer2: (n,o)->
 				console.log "answer2 changed:",n
-			answer3: (n,o)->
-				console.log "answer3 changed:",n
+				q2(n) if q2?
+			"answer3.c1": (n,o)->
+				@.answer3Change n,o
+			"answer3.c2": (n,o)->
+				@.answer3Change n,o
+			"answer3.c3": (n,o)->
+				@.answer3Change n,o
+			"answer3.c4": (n,o)->
+				@.answer3Change n,o
+			nickname: (n,o)->
+				@.nickname = @.nickname.replace(/[\r\n]/g, "")
+				if @.nickname.length > 10
+					t = @.nickname.split("")
+					tx = ""
+					for i in t
+						tx += i
+						break if tx.length >= 10
+					@.nickname = tx
+					return false #alert "字数限制10个中文字符20个英文字符" 
 
 		methods:
+			answer3Change: (n,o)->
+				console.log "answer3 changed."
+				q3([@.answer3.c1,@.answer3.c2,@.answer3.c3,@.answer3.c4]) if q3?
 			messageShow: ->
 				@.messageInput = true
 				document.getElementById("message").focus()
@@ -242,14 +266,22 @@ init = ->
 					return alert "请选择一个答案"
 				if @.questionIndex is 3 and @.nickname is ""
 					return alert "请填写名称（Honey/母亲大人/给自己）"
-				# if @.questionIndex is 3 and @.message is ""
-				# 	return alert ""
+				
+
 				if @.questionIndex is 4
 					return @.over()
 
 				@.questionIndex++
 			over: ->
 				@.questionShow = false
+				ugc.init()
+				setTimeout =>
+					@.gameEnd = true
+				,2000
+			regame: ->
+				window.location.reload()
+			gobuy: ->
+				window.location.href = "http://www.baidu.com"
 			dateText: (date)->
 				console.log date.replace(/-/g,"/")
 				d = new Date date.replace(/-/g,"/")
@@ -266,7 +298,9 @@ init = ->
 			restart: ->
 				window.location.reload()
 			goshare: ->
-				goShare()
+				# goShare()
+				@.share()
+
 			share: ->
 				@.registerShow = false
 				@.lotteryShow = false
@@ -294,14 +328,14 @@ init = ->
 						main.faild(e)		
 				else
 					@.ugcShow = true
-					ugc.back()
+					# ugc.back()
 			success: (data)->
 				@.shareImageLink = data.info
 				@.pushed = false
 				@.loading = false
-				ugc.back()
+				# ugc.back()
 				neteaseShareImage()
-				# shareDone()
+				shareDone()
 				# 抽奖
 				# unless @.giveUp
 				# 	setTimeout =>
@@ -312,7 +346,7 @@ init = ->
 				@.loading = false
 			openMusic: (id)->
 				# goList()
-				_public.$children[0].pause()
+				# _public.$children[0].pause()
 				if CloudMusic.isInApp()
 					CloudMusic.playlist(id)
 				else
@@ -333,7 +367,10 @@ init = ->
 				# console.log imageList,@.muiscType @.userInfo.styleTop
 			# @.ugcType = @.muiscType @.userInfo.styleTop
 			imageList2 = [
-				_CDN+"img/btn-share.png"
+				_CDN+"img/envelope.png"
+				_CDN+"img/post-card-mark.png"
+				_CDN+"img/logo-black.png"
+				_CDN+"img/m-1.png"
 			]
 			window.imageList = window.imageList.concat(imageList2)
 			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => console.log("callback") })

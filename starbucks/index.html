@@ -86,7 +86,7 @@
                   </transition>
                   <transition name="page-fade">
                     <div v-show="questionIndex == 2" class="question">
-                      <div class="title">圣诞不要怂，<br/>喜提 <span class="line"></span> 让节日焕然一星。</div>
+                      <div class="title">圣诞不要怂，<br/>喜提<span class="line"></span>让节日焕然一星。</div>
                       <div class="answer">
                         <div :class="{on: answer3.c1}" @click="answer3.c1 = !answer3.c1" class="item check">雪花</div>
                         <div :class="{on: answer3.c2}" @click="answer3.c2 = !answer3.c2" class="item check">火鸡</div>
@@ -97,7 +97,7 @@
                   </transition>
                   <transition name="page-fade">
                     <div v-show="questionIndex == 3" class="question">
-                      <div class="title center">今年圣诞节，只想和 <span class="line"></span> 一起</div>
+                      <div class="title center">今年圣诞节，只想和<span class="line"></span>一起</div>
                       <div class="answer input">
                         <input type="input" placeholder="点击填写（Honey/母亲大人/给自己）" v-model="nickname">
                       </div>
@@ -125,6 +125,26 @@
                 <div @click="nextQuestion" class="btn-next"><img src="./img/btn-next.png"></div>
               </div>
             </transition>
+            <transition name="page-zoom">
+              <div v-show="gameEnd" class="ctrl-box">
+                <div @click="openMusic(1)" class="btn-more"><img src="./img/btn-more.png"></div>
+                <div class="btn-list">
+                  <div @click="regame" class="btn"><img :src="'./img/btn-restart-'+(white?'white':'black')+'.png'"></div>
+                  <div @click="goshare" class="btn"><img :src="'./img/btn-share-'+(white?'white':'black')+'.png'"></div>
+                  <div @click="gobuy" class="btn"><img :src="'./img/btn-buy-'+(white?'white':'black')+'.png'"></div>
+                </div>
+              </div>
+            </transition>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="ugcShow" class="pop">
+          <div class="content">
+            <div class="small-size">
+              <div @click="ugcShow = false" class="close"><img src="//image.giccoo.com/projects/jeep/img/icon-close.png"></div><img :src="ugc">
+              <div class="note">长按保存图片</div>
+            </div>
           </div>
         </div>
       </transition>
