@@ -22,6 +22,12 @@ var imageList = [
 
 	_CDN+"img/asnow.png",
 
+	_CDN+"img/m1.png",
+	_CDN+"img/m2.png",
+
+	_CDN+"img/coffee.png",
+	_CDN+"img/player.png",
+
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -62,14 +68,16 @@ function getStart() {
 	setBG()
 }
 var bgAC=new PIXI.Container()
+var othersC=new PIXI.Container()
 var bgBC=new PIXI.Container()
 var snowC=new PIXI.Container()
 var bgCC=new PIXI.Container()
 
 var bgA=[[],[],[],[]]//[_bgA,_bgB,_bgC]
+var coffee
 
 function setBG(){
-	mainPart.addChild(bgCC,snowC,bgBC,bgAC)
+	mainPart.addChild(bgCC,snowC,bgBC,bgAC,othersC)
 
 	for (var i = 0; i < 4; i++) {
 		var j=i+1
@@ -86,8 +94,13 @@ function setBG(){
 	};
 	bgA[3][0].y=750-stageH/2//===月亮
 
+	coffee=	new Sprite(getTe(_CDN+"img/coffee.png"))
+	othersC.addChild(coffee)
+
 	changeBG(0)
 	setSnow()
+	setMusic1()
+	setPlayer()
 }
 
 function changeBG(_num){//=================p1换背景
