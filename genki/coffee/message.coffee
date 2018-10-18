@@ -2,7 +2,7 @@ apiLink = "//g.giccoo.com/active/message"
 
 $(document).ready ->
 	console.log "loaded"
-	$("#livesteam .close").click ->
+	$(".pop .close").click ->
 		closelive()
 	$("#popvideo .close").click ->
 		closeVideo()
@@ -10,9 +10,14 @@ $(document).ready ->
 closelive = ->
 	$("#livesteam").hide()
 	$("#livesteam iframe").attr "src", ""
+	$("#livesteam1").hide()
+	$("#livesteam1 iframe").attr "src", ""
 openLive = ->
 	$("#livesteam iframe").attr "src", "http://shangzhibo.tv/watch/568113?player"
 	$("#livesteam").show()
+openLive1 = ->
+	$("#livesteam1 iframe").attr "src", "http://shangzhibo.tv/watch/4342920?player"
+	$("#livesteam1").show()
 closeVideo = ->
 	$("#popvideo").hide()
 	$("#popvideo video")[0].pause()
