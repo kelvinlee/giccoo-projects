@@ -130,13 +130,13 @@ function changePoster(){
 }
 function showVideo1(){
 	console.log("video1")
-	//openLive()
-	// stopAllSound()
+	openLive()
+	stopAllSound()
 }
 function showVideo15(){
 	console.log("video15")
-	//openLive()
-	// stopAllSound()
+	openLive1()
+	stopAllSound()
 }
 function showVideo2(){
 	console.log("video2")
