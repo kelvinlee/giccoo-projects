@@ -76,8 +76,8 @@ var videoPartText=new pSprite("//image.giccoo.com/projects/genki/img/vp_text2.pn
 var videoBtnL=new pSprite("//image.giccoo.com/projects/genki/img/video_btn_l.png")
 var videoBtnR=new pSprite("//image.giccoo.com/projects/genki/img/video_btn_r.png")
 
-var poster1live=new pSprite("//image.giccoo.com/projects/genki/img/video_poster1d.jpg")
-var poster2live=new pSprite("//image.giccoo.com/projects/genki/img/video_poster15d.jpg")
+var poster1live=new pSprite("//image.giccoo.com/projects/genki/img/live_poster1.jpg")
+var poster2live=new pSprite("//image.giccoo.com/projects/genki/img/live_poster2.jpg")
 
 var poster1=new pSprite("//image.giccoo.com/projects/genki/img/video_poster1e.jpg")
 var poster2=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2.jpg")
