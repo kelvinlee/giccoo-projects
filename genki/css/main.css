@@ -154,7 +154,7 @@ img{ width: 100%; }
 .pop .close{position:absolute;top:5%;right:5%;width:13.3333333333%;margin:0 auto;}
 
 .pop iframe {
-	border: none;
+	/*border: none;*/
 }
 .pop video {
 	width: 100%;
