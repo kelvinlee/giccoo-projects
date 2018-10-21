@@ -226,15 +226,15 @@ function iniListenSound(){
              //TweenLite.set($("#musicOff"),{opacity:0})
         }, false);
 }
-// $("#musicOff").click(function(){
-//   if(ifbgm==0){
-//     bgm.play();
-//     TweenLite.set($("#musicOff"),{opacity:0})
-//   }else{
-//     bgm.pause();
-//     TweenLite.set($("#musicOff"),{opacity:1})
-//   }
-//   ifbgm++
-//   if(ifbgm==2){ifbgm=0}
+$("#musicOff").click(function(){
+  if(ifbgm==0){
+    bgm.play();
+    TweenLite.set($("#musicOff"),{opacity:0})
+  }else{
+    bgm.pause();
+    TweenLite.set($("#musicOff"),{opacity:1})
+  }
+  ifbgm++
+  if(ifbgm==2){ifbgm=0}
 
-// })
+})

@@ -44,17 +44,18 @@ img{ width: 100%; }
 	display: none;
 
 }
-/*.musicBtn{
+.musicBtn{
 	position: absolute;
 	width: 12.35%;
 	top: 0;
-	right: 0;
+	left: 5%;
 	-webkit-tap-highlight-color: transparent;
 			tap-highlight-color: transparent;
+	z-index: 1000
 }
 #musicOff{
 	opacity: 1;
-}*/
+}
 #roomName{
 	position: absolute;
 	width: 64%;
