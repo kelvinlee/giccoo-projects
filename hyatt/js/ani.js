@@ -201,9 +201,9 @@ function setPage2(){
 		picC.addChild(p2picA[i][1],p2picA[i][0])
 
 		p2picA[i][0].height=stageH
-		p2picA[i][0].width=stageH/1000*1500
+		p2picA[i][0].width=stageH/1000*1500*.8
 		p2picA[i][1].height=stageH
-		p2picA[i][1].width=stageH/1000*1500
+		p2picA[i][1].width=stageH/1000*1500*.8
 		p2picA[i][0].x=p2picA[i][1].width*i*2
 		p2picA[i][1].x=p2picA[i][1].width*(i*2+1)
 
