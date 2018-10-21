@@ -475,6 +475,33 @@ function changeTag(_e){
 		if(tagBtnA[i]==_e.target){
 			console.log("标签"+i)
 			tagA[i].visible=true
+
+			$("#tag3")[0].pause()
+			$("#tag4")[0].pause()
+			$("#tag5")[0].pause()
+			$("#tag6")[0].pause()
+			$("#tag7")[0].pause()
+
+			if(i==2){
+				$("#tag3")[0].currentTime=0
+				$("#tag3")[0].play()
+			}
+			if(i==3){
+				$("#tag4")[0].currentTime=0
+				$("#tag4")[0].play()
+			}
+			if(i==4){
+				$("#tag5")[0].currentTime=0
+				$("#tag5")[0].play()
+			}
+			if(i==5){
+				$("#tag6")[0].currentTime=0
+				$("#tag6")[0].play()
+			}
+			if(i==6){
+				$("#tag7")[0].currentTime=0
+				$("#tag7")[0].play()
+			}
 		}
 	};
 }
@@ -700,19 +727,20 @@ function setTag2(){
 
 function tagChange2(_e){
 	for (var i = 0; i < 3 ; i++) {
-		TweenMax.to(p4buildingA[0][i],1,{alpha:0})
-		TweenMax.to(p4buildingA[1][i],1,{alpha:0})
-		TweenMax.to(p4buildingA[2][i],1,{alpha:0})
+		TweenMax.to(p4buildingA[0][i],2,{alpha:0})
+		TweenMax.to(p4buildingA[1][i],2,{alpha:0})
+		TweenMax.to(p4buildingA[2][i],2,{alpha:0})
 		TweenMax.to(p4skyA[i],1,{alpha:0})
 		if(tag2BtnA[i]==_e.target){
-			TweenMax.to(p4buildingA[0][i],1,{alpha:1})
-			TweenMax.to(p4buildingA[1][i],1,{alpha:1})
-			TweenMax.to(p4buildingA[2][i],1,{alpha:1})
+			TweenMax.to(p4buildingA[0][i],2,{alpha:1})
+			TweenMax.to(p4buildingA[1][i],2,{alpha:1})
+			TweenMax.to(p4buildingA[2][i],2,{alpha:1})
 
-			TweenMax.to(p4skyA[i],1,{alpha:1})
+			TweenMax.to(p4skyA[i],2,{alpha:1})
 			theTime=i
 			console.log("白天夜晚",i)
 			resultNum=1
+			$("#clock")[0].play()
 		}
 	};
 }
@@ -742,6 +770,7 @@ function tagChange3(_e){
 			console.log("点3",i)
 			addItem(3,p4MidLayer,i,_NORMAL)
 			resultNum=0
+			$("#tree2")[0].play()
 		}
 	};
 }
