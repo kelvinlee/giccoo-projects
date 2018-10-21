@@ -47,14 +47,14 @@ function p1ani(){
 //===============================================第二页
 
 var page2=new PIXI.Container()
-var p2pic1a=new pSprite("img/p1pic1aa.png")
-var p2pic1b=new pSprite("img/p1pic1bb.png")
-var p2pic2a=new pSprite("img/p1pic2aa.png")
-var p2pic2b=new pSprite("img/p1pic2bb.png")
-var p2pic3a=new pSprite("img/p1pic3aa.png")
-var p2pic3b=new pSprite("img/p1pic3bb.png")
-var p2pic4a=new pSprite("img/p1pic4aa.png")
-var p2pic4b=new pSprite("img/p1pic4bb.png")
+var p2pic1a=new pSprite("img/p1pic1aaa.png")
+var p2pic1b=new pSprite("img/p1pic1bbb.png")
+var p2pic2a=new pSprite("img/p1pic2aaa.png")
+var p2pic2b=new pSprite("img/p1pic2bbb.png")
+var p2pic3a=new pSprite("img/p1pic3aaa.png")
+var p2pic3b=new pSprite("img/p1pic3bbb.png")
+var p2pic4a=new pSprite("img/p1pic4aaa.png")
+var p2pic4b=new pSprite("img/p1pic4bbb.png")
 var p2picA=[[p2pic1a,p2pic1b],[p2pic2a,p2pic2b],[p2pic3a,p2pic3b],[p2pic4a,p2pic4b]]
 var p2picC=new PIXI.Container()
 
