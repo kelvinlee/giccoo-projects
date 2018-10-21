@@ -223,7 +223,7 @@ function iniListenSound(){
          document.addEventListener("WeixinJSBridgeReady", function(){
              bgm.play();
              ifbgm=1
-             //TweenLite.set($("#musicOff"),{opacity:0})
+             TweenLite.set($("#musicOff"),{opacity:0})
         }, false);
 }
 $("#musicOff").click(function(){
