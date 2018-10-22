@@ -940,16 +940,42 @@ function tagChange4(_e){
 
 //==========================================================================================================Tag5
 var tag5BtnA=[]
+// function setTag5(){
+// 	for (var i = 0; i < 10; i++) {
+// 		var _btn=new PIXI.Graphics()
+// 		_btn.beginFill(0x334455)
+// 		_btn.drawRect(0,0,110,85)
+// 		_btn.y=35
+// 		if(i>4){
+// 			_btn.y=45+100
+// 		}
+// 		_btn.x=35+120*(i%5)
+// 		_btn.alpha=0
+// 		tagA[4].addChild(_btn)
+// 		tag5BtnA.push(_btn)
+// 		_btn.interactive=true
+// 		_btn.tap=tagChange5
+// 	};
+// }
+
+// function tagChange5(_e){
+// 	resultNum=3
+// 	for (var i = 0; i < 10 ; i++) {
+// 		if(tag5BtnA[i]==_e.target){
+// 			console.log("点5",i)
+// 			addItem(5,p4MidLayer,i,_NORMAL)
+// 		}
+// 	};
+// }
+
 function setTag5(){
-	for (var i = 0; i < 10; i++) {
+	for (var i = 0; i < 6; i++) {
 		var _btn=new PIXI.Graphics()
 		_btn.beginFill(0x334455)
-		_btn.drawRect(0,0,110,85)
-		_btn.y=35
-		if(i>4){
-			_btn.y=45+100
-		}
-		_btn.x=35+120*(i%5)
+		_btn.drawRect(0,0,90,155)
+		_btn.y=55
+
+		_btn.x=25+100*i
 		_btn.alpha=0
 		tagA[4].addChild(_btn)
 		tag5BtnA.push(_btn)
@@ -960,13 +986,14 @@ function setTag5(){
 
 function tagChange5(_e){
 	resultNum=3
-	for (var i = 0; i < 10 ; i++) {
+	for (var i = 0; i < 6 ; i++) {
 		if(tag5BtnA[i]==_e.target){
 			console.log("点5",i)
 			addItem(5,p4MidLayer,i,_NORMAL)
 		}
 	};
 }
+
 
 
 //==========================================================================================================Tag6
