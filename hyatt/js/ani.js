@@ -302,32 +302,121 @@ function setDot(){
 //===============================================第三页
 
 var page3=new PIXI.Container()
-var p3pic1,p3pic2
+//var p3pic1,p3pic2
+
+// function setPage3(){
+// 	mainPart.addChild(page3)
+// 	page3.y=stageH
+// 	p3pic1=new pSprite("img/p3pic1.jpg")
+// 	p3pic2=new pSprite("img/p3pic2.jpg")
+// 	p3t=new pSprite("img/p3t.png")
+// 	page3.addChild(p3pic1,p3pic2,p3t)
+// 	p3pic1.height=p3pic2.height=stageH
+// 	p3pic1.width=p3pic2.width=stageH/1000*1341
+// 	p3pic1.x=p3pic2.x=640-stageH/1000*1341
+// 	p3pic2.alpha=0
+// 	p3t.pivot.y=75
+// 	p3t.y=stageH/4
+// 	page3ani()
+// }
+// function page3ani(){
+// 	TweenMax.to(p3pic1,5,{x:0})
+// 	TweenMax.to(p3pic2,5,{x:0})//,ease:Linear.easeNone
+// 	TweenMax.to(p3pic2,4,{alpha:1,onComplete:function(){
+// 		p3pic1.visible=false
+// 		setPage4()
+		
+// 	}})
+// 	TweenMax.to(page3,1,{alpha:0,delay:4})
+// 	//TweenMax.to(p3pic2,2,{x:-stageH/1000*1341/6,alpha:0,delay:5,ease:Sine.easeInOut})
+// }
+
+var p3pic11a=new pSprite("img/p3pic11.jpg")
+var p3pic11b=new pSprite("img/p3pic11.jpg")
+var p3pic22a=new pSprite("img/p3pic22.jpg")
+var p3pic22b=new pSprite("img/p3pic22.jpg")
+
+var p3aC=new PIXI.Container()
+var p3bC=new PIXI.Container()
+
+var p3mask1=new pSprite("img/p3mask1.png")
+var p3mask2=new pSprite("img/p3mask2.png")
+var p3s1=new pSprite("img/p3s1.png")
+var p3s2=new pSprite("img/p3s2.png")
+var wbg=new PIXI.Graphics()
+var p3tt=new pSprite("img/p3tt.png")
 
 function setPage3(){
+	wbg.beginFill(0xffffff)
+	wbg.drawRect(0,0,640,stageH)
 	mainPart.addChild(page3)
-	page3.y=stageH
-	p3pic1=new pSprite("img/p3pic1.jpg")
-	p3pic2=new pSprite("img/p3pic2.jpg")
-	p3t=new pSprite("img/p3t.png")
-	page3.addChild(p3pic1,p3pic2,p3t)
-	p3pic1.height=p3pic2.height=stageH
-	p3pic1.width=p3pic2.width=stageH/1000*1341
-	p3pic1.x=p3pic2.x=640-stageH/1000*1341
-	p3pic2.alpha=0
-	p3t.pivot.y=75
-	p3t.y=stageH/4
+
+
+
+	page3.addChild(wbg,p3tt,p3aC,p3bC,p3mask1,p3mask2,p3s1,p3s2)
+	p3aC.addChild(p3pic11a,p3pic22a)
+	p3bC.addChild(p3pic11b,p3pic22b)
+	p3s1.y=p3s2.y=p3mask1.y=p3mask2.y=p3tt.y=stageH/2-500
+
+	p3aC.mask=p3mask1
+	p3bC.mask=p3mask2
+
+	p3aC.y=stageH/2-301
+	p3bC.y=stageH/2-301
+
+	p3aC.x=40-295
+	p3bC.x=40-295
+
+	p3pic22a.alpha=0
+	p3pic22b.alpha=0
+
+	page3.pivot.set(196,stageH/2)
+	page3.position.set(196,stageH/2)
+
 	page3ani()
+
+
+
 }
+
 function page3ani(){
-	TweenMax.to(p3pic1,5,{x:0})
-	TweenMax.to(p3pic2,5,{x:0})//,ease:Linear.easeNone
-	TweenMax.to(p3pic2,4,{alpha:1,onComplete:function(){
-		p3pic1.visible=false
-		setPage4()
-	}})
-	TweenMax.to(page3,1,{alpha:0,delay:4})
-	//TweenMax.to(p3pic2,2,{x:-stageH/1000*1341/6,alpha:0,delay:5,ease:Sine.easeInOut})
+	console.log("page3.y",page3.y)
+
+	TweenMax.to(p3pic22a,3,{alpha:1,delay:2.5})
+	TweenMax.to(p3pic22b,3,{alpha:1,delay:2.5})
+
+	TweenMax.to(p3aC,7.5,{x:40-50,delay:1.5,ease:Sine.easeInOut})
+	TweenMax.to(p3bC,7.5,{x:40-50,delay:1.5,ease:Sine.easeInOut})
+
+	TweenMax.from(p3mask1,1.5,{y:"+=30",alpha:0})
+	TweenMax.from(p3mask2,1.5,{y:"-=30",alpha:0})
+
+	TweenMax.from(p3aC,1.5,{y:"+=30"})
+	TweenMax.from(p3bC,1.5,{y:"-=30"})
+
+	TweenMax.from(p3s1,1.5,{y:"+=30",alpha:0})
+	TweenMax.from(p3s2,1.5,{y:"-=30",alpha:0})
+
+	TweenMax.to(p3s1,7.5,{alpha:0.9,delay:1.5})
+	TweenMax.to(p3s2,7.5,{alpha:0.9,delay:1.5})
+
+
+	TweenMax.from(p3tt,1.5,{x:"+=130",alpha:0})
+
+	TweenMax.to(page3,1.5,{alpha:0,delay:8+.5,onComplete:page3end})
+	// TweenMax.to(page3,1,{x:320,y:stageH/4,delay:7.5,ease:Sine.easeIn})
+	// TweenMax.to(page3.scale,1,{x:8,y:8,delay:7.5,ease:Sine.easeIn})
+
+	TweenMax.set($("#musicOn"),{display:"none"})
+	TweenMax.set($("#musicOff"),{display:"none"})
+
+	setPage4()
+}
+
+function page3end(){
+	console.log("第三页消失")
+	$("#bgm")[0].pause()
+	
 }
 
 //===============================================第四页
@@ -407,7 +496,7 @@ function setPage4(){
 	p4t.y=(hrz+stageH-341)/2-35
 	TweenMax.from(p4t,1,{alpha:0,y:"+=50",delay:.5})
 
-	TweenMax.to(p4t,2,{alpha:0,delay:3.5})////=====
+	TweenMax.to(p4t,2,{alpha:0,delay:3.5+9})////============================================字消失时间
 
 	setTag()
 }

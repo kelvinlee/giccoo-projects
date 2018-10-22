@@ -207,9 +207,10 @@ function goPage2(){
 }
 function goPage3(){
   setPage3()
-  TweenLite.to(page3,.5,{y:0,onComplete:function(){
+  TweenLite.to(page3,.5,{y:stageH/2,onComplete:function(){
     page1.visible=false
     page2.visible=false
+    //console.log("3??")
   }})
 }
 

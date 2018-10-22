@@ -76,8 +76,8 @@ var videoPartText=new pSprite("//image.giccoo.com/projects/genki/img/vp_text2.pn
 var videoBtnL=new pSprite("//image.giccoo.com/projects/genki/img/video_btn_l.png")
 var videoBtnR=new pSprite("//image.giccoo.com/projects/genki/img/video_btn_r.png")
 
-var poster1live=new pSprite("//image.giccoo.com/projects/genki/img/live_poster1.jpg")
-var poster2live=new pSprite("//image.giccoo.com/projects/genki/img/live_poster2.jpg")
+var poster1live=new pSprite("//image.giccoo.com/projects/genki/img/live_poster1a.jpg")
+var poster2live=new pSprite("//image.giccoo.com/projects/genki/img/live_poster2a.jpg")
 
 var poster1=new pSprite("//image.giccoo.com/projects/genki/img/video_poster1e.jpg")
 var poster2=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2.jpg")
@@ -163,13 +163,13 @@ function changePoster(){
 
 function showLive1(){
 	console.log("live1")
-	openLive()
-	stopAllSound()
+	// openLive()
+	// stopAllSound()
 }
 function showLive2(){
 	console.log("live2")
-	openLive1()
-	stopAllSound()
+	// openLive1()
+	// stopAllSound()
 }
 
 function showVideo1(){
