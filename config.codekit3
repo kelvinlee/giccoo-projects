@@ -812,6 +812,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/genki/img/layer_poster2.jpg": {
+		"ft": 16384,
+		"iS": 15427,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/layer_poster2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/genki/img/layerbg.png": {
 		"ft": 32768,
 		"iS": 18841,
@@ -1208,6 +1219,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/genki/img/video_part_bg2.png": {
+		"ft": 32768,
+		"iS": 39360,
+		"oA": 0,
+		"oAP": "/genki/img/video_part_bg2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/genki/img/video_poster1.jpg": {
 		"ft": 16384,
 		"iS": 26619,
@@ -1263,6 +1285,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/genki/img/video_poster1e.jpg": {
+		"ft": 16384,
+		"iS": 10680,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/video_poster1e.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/genki/img/video_poster2.jpg": {
 		"ft": 16384,
 		"iS": 26241,
@@ -1279,6 +1312,17 @@
 		"iS": 2474,
 		"oA": 0,
 		"oAP": "/genki/img/vp_text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/genki/img/vp_text2.png": {
+		"ft": 32768,
+		"iS": 2966,
+		"oA": 0,
+		"oAP": "/genki/img/vp_text2.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -3105,6 +3149,17 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/libs/js/pixi-base.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/libs/coffee/String.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/libs/js/String.js",
 		"oF": 0,
 		"oS": 1,
 		"sC": 0,
@@ -5941,6 +5996,17 @@
 		"oAP": "/build/starbucks/css",
 		"oF": 0
 		},
+	"/starbucks/img/asnow.png": {
+		"ft": 32768,
+		"iS": 2851,
+		"oA": 0,
+		"oAP": "/starbucks/img/asnow.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/starbucks/img/bg1a.png": {
 		"ft": 32768,
 		"iS": 127542,
@@ -6007,6 +6073,28 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/starbucks/img/bg3a.png": {
+		"ft": 32768,
+		"iS": 71586,
+		"oA": 0,
+		"oAP": "/starbucks/img/bg3a.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/bg3b.png": {
+		"ft": 32768,
+		"iS": 19639,
+		"oA": 0,
+		"oAP": "/starbucks/img/bg3b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/starbucks/img/bg3c.jpg": {
 		"ft": 16384,
 		"iS": 78203,
@@ -6016,17 +6104,6 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"q": 100
-		},
-	"/starbucks/img/bg3moon.png": {
-		"ft": 32768,
-		"iS": 15030,
-		"oA": 0,
-		"oAP": "/starbucks/img/bg3moon.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
 		"q": 100
 		},
 	"/starbucks/img/bg4a.png": {
@@ -6060,6 +6137,17 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"/starbucks/img/box.png": {
+		"ft": 32768,
+		"iS": 23268,
+		"oA": 0,
+		"oAP": "/starbucks/img/box.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"/starbucks/img/btn-buy-black.png": {
@@ -6161,6 +6249,61 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/starbucks/img/char1.png": {
+		"ft": 32768,
+		"iS": 69611,
+		"oA": 0,
+		"oAP": "/starbucks/img/char1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/char2.png": {
+		"ft": 32768,
+		"iS": 53407,
+		"oA": 0,
+		"oAP": "/starbucks/img/char2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/char3.png": {
+		"ft": 32768,
+		"iS": 80263,
+		"oA": 0,
+		"oAP": "/starbucks/img/char3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/char4.png": {
+		"ft": 32768,
+		"iS": 56598,
+		"oA": 0,
+		"oAP": "/starbucks/img/char4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/char_shandow.png": {
+		"ft": 32768,
+		"iS": 932,
+		"oA": 0,
+		"oAP": "/starbucks/img/char_shandow.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/starbucks/img/check-selected.png": {
 		"ft": 32768,
 		"iS": 2363,
@@ -6177,6 +6320,28 @@
 		"iS": 1858,
 		"oA": 0,
 		"oAP": "/starbucks/img/check.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/chicken.png": {
+		"ft": 32768,
+		"iS": 17442,
+		"oA": 0,
+		"oAP": "/starbucks/img/chicken.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/coffee.png": {
+		"ft": 32768,
+		"iS": 27847,
+		"oA": 0,
+		"oAP": "/starbucks/img/coffee.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6203,6 +6368,17 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"/starbucks/img/icon-close.png": {
+		"ft": 32768,
+		"iS": 7831,
+		"oA": 0,
+		"oAP": "/starbucks/img/icon-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"/starbucks/img/icon-m.gif": {
@@ -6334,6 +6510,72 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/starbucks/img/m-2.png": {
+		"ft": 32768,
+		"iS": 9273,
+		"oA": 0,
+		"oAP": "/starbucks/img/m-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/m-3.png": {
+		"ft": 32768,
+		"iS": 11474,
+		"oA": 0,
+		"oAP": "/starbucks/img/m-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/m-4.png": {
+		"ft": 32768,
+		"iS": 10717,
+		"oA": 0,
+		"oAP": "/starbucks/img/m-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/m1.png": {
+		"ft": 32768,
+		"iS": 3311,
+		"oA": 0,
+		"oAP": "/starbucks/img/m1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/m2.png": {
+		"ft": 32768,
+		"iS": 3236,
+		"oA": 0,
+		"oAP": "/starbucks/img/m2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/player.png": {
+		"ft": 32768,
+		"iS": 10740,
+		"oA": 0,
+		"oAP": "/starbucks/img/player.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/starbucks/img/post-card-mark.png": {
 		"ft": 32768,
 		"iS": 22055,
@@ -6372,6 +6614,28 @@
 		"iS": 4241,
 		"oA": 0,
 		"oAP": "/starbucks/img/snowman-hand.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/texture.png": {
+		"ft": 32768,
+		"iS": 60237,
+		"oA": 0,
+		"oAP": "/starbucks/img/texture.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/tree.png": {
+		"ft": 32768,
+		"iS": 82350,
+		"oA": 0,
+		"oAP": "/starbucks/img/tree.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

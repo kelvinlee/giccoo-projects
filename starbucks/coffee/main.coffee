@@ -3,6 +3,7 @@
 # @codekit-prepend "../../libs/coffee/IsPC"
 # @codekit-prepend "../../libs/vue/vue-player"
 # @codekit-prepend "../../libs/coffee/pixi-base"
+# @codekit-prepend "../../libs/coffee/String"
 # @codekit-prepend "./UGC"
 
 axios.defaults.withCredentials = true
@@ -81,10 +82,10 @@ window.onload = ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 
-			@.next() # for test
+			# @.next() # for test
 
 			timein = setInterval =>
-				@.progress += 3
+				@.progress += 2
 				@.progress = @.progressOn if @.progress >= @.progressOn
 				if @.progress >= 100
 					@.progress = 100
@@ -126,8 +127,11 @@ init = ->
 			wy: false
 			mounted: true
 			loading: false
+			noteText: ""
+			noteTime: null
+			noteShow: false
 			pageInfoShow: false
-			pageIndex: 2
+			pageIndex: 1
 			step: 1
 			singerIndex: 1
 			startgame: false
@@ -188,7 +192,7 @@ init = ->
 			ugcShow: false
 			regH: 100
 			ugcType: 1
-			questionShow: true
+			questionShow: false
 			questionIndex: 0
 			answer1: 1
 			answer2: 0
@@ -236,8 +240,25 @@ init = ->
 						break if tx.length >= 10
 					@.nickname = tx
 					return false #alert "字数限制10个中文字符20个英文字符" 
+			message: (n,o)->
+				t = n.split('\n')
+				if t.length > 4
+					@.message = @.message.replace(/^\s+|\s+$/g,'')
+				for line in t
+					if line.gblen() > 32
+						return @.message = o
+
+
 
 		methods:
+			send: (text)->
+				@.noteShow = true
+				@.noteText = text
+				clearTimeout @.noteTime
+				@.noteTime = setTimeout =>
+					@.noteShow = false
+				,2000
+
 			answer3Change: (n,o)->
 				console.log "answer3 changed."
 				q3([@.answer3.c1,@.answer3.c2,@.answer3.c3,@.answer3.c4]) if q3?
@@ -263,9 +284,11 @@ init = ->
 					return @.messageIndex = @.messageList.length
 			nextQuestion: ->
 				if @.questionIndex is 1 and @.answer2 is 0
-					return alert "请选择一个答案"
+					return @.send "请选择一位你的专属 DJ 吧"
+				if @.questionIndex is 2 and !@.answer3.c1 and !@.answer3.c2 and !@.answer3.c3 and !@.answer3.c4
+					return @.send "请选择几种礼物装点一下吧"
 				if @.questionIndex is 3 and @.nickname is ""
-					return alert "请填写名称（Honey/母亲大人/给自己）"
+					return @.send "请填写名称（Honey/母亲大人/给自己）"
 				
 
 				if @.questionIndex is 4
@@ -371,6 +394,9 @@ init = ->
 				_CDN+"img/post-card-mark.png"
 				_CDN+"img/logo-black.png"
 				_CDN+"img/m-1.png"
+				_CDN+"img/m-2.png"
+				_CDN+"img/m-3.png"
+				_CDN+"img/m-4.png"
 			]
 			window.imageList = window.imageList.concat(imageList2)
 			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => console.log("callback") })
