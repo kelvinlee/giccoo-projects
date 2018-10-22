@@ -834,6 +834,50 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/genki/img/live_poster1.jpg": {
+		"ft": 16384,
+		"iS": 27700,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/live_poster1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/img/live_poster1a.jpg": {
+		"ft": 16384,
+		"iS": 31971,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/live_poster1a.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/img/live_poster2.jpg": {
+		"ft": 16384,
+		"iS": 27614,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/live_poster2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/img/live_poster2a.jpg": {
+		"ft": 16384,
+		"iS": 31833,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/live_poster2a.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/genki/img/main-mask.png": {
 		"ft": 32768,
 		"iS": 10038,
@@ -1015,6 +1059,17 @@
 		"iS": 39349,
 		"oA": 0,
 		"oAP": "/genki/img/part1title2dd.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/genki/img/part1title2e.png": {
+		"ft": 32768,
+		"iS": 40838,
+		"oA": 0,
+		"oAP": "/genki/img/part1title2e.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -1940,6 +1995,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/hyatt/img/music_off1.png": {
+		"ft": 32768,
+		"iS": 586,
+		"oA": 0,
+		"oAP": "/hyatt/img/music_off1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/music_on1.png": {
+		"ft": 32768,
+		"iS": 1548,
+		"oA": 0,
+		"oAP": "/hyatt/img/music_on1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/hyatt/img/p1arrow.png": {
 		"ft": 32768,
 		"iS": 1144,
@@ -1962,6 +2039,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/hyatt/img/p1bga.jpg": {
+		"ft": 16384,
+		"iS": 159816,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1bga.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/hyatt/img/p1pic1a.jpg": {
 		"ft": 16384,
 		"iS": 78349,
@@ -1971,6 +2059,39 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"/hyatt/img/p1pic1aa.jpg": {
+		"ft": 16384,
+		"iS": 614716,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic1aa.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/hyatt/img/p1pic1aa.png": {
+		"ft": 32768,
+		"iS": 957375,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic1aa.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1pic1aaaa.png": {
+		"ft": 32768,
+		"iS": 783692,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic1aaaa.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"/hyatt/img/p1pic1b.jpg": {
@@ -1984,6 +2105,39 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/hyatt/img/p1pic1bb.jpg": {
+		"ft": 16384,
+		"iS": 730480,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic1bb.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/hyatt/img/p1pic1bb.png": {
+		"ft": 32768,
+		"iS": 1388240,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic1bb.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1pic1bbbb.png": {
+		"ft": 32768,
+		"iS": 1139980,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic1bbbb.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/hyatt/img/p1pic2a.jpg": {
 		"ft": 16384,
 		"iS": 196499,
@@ -1993,6 +2147,39 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"/hyatt/img/p1pic2aa.jpg": {
+		"ft": 16384,
+		"iS": 866807,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic2aa.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/hyatt/img/p1pic2aa.png": {
+		"ft": 32768,
+		"iS": 5666607,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic2aa.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1pic2aaaa.png": {
+		"ft": 32768,
+		"iS": 1385544,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic2aaaa.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"/hyatt/img/p1pic2b.jpg": {
@@ -2006,6 +2193,39 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/hyatt/img/p1pic2bb.jpg": {
+		"ft": 16384,
+		"iS": 852744,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic2bb.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/hyatt/img/p1pic2bb.png": {
+		"ft": 32768,
+		"iS": 1429764,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic2bb.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1pic2bbbb.png": {
+		"ft": 32768,
+		"iS": 994319,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic2bbbb.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/hyatt/img/p1pic3a.jpg": {
 		"ft": 16384,
 		"iS": 96496,
@@ -2015,6 +2235,39 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"/hyatt/img/p1pic3aa.jpg": {
+		"ft": 16384,
+		"iS": 438575,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic3aa.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/hyatt/img/p1pic3aa.png": {
+		"ft": 32768,
+		"iS": 1084793,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic3aa.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1pic3aaaa.png": {
+		"ft": 32768,
+		"iS": 866009,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic3aaaa.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"/hyatt/img/p1pic3b.jpg": {
@@ -2028,6 +2281,39 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/hyatt/img/p1pic3bb.jpg": {
+		"ft": 16384,
+		"iS": 364985,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic3bb.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/hyatt/img/p1pic3bb.png": {
+		"ft": 32768,
+		"iS": 1209303,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic3bb.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1pic3bbbb.png": {
+		"ft": 32768,
+		"iS": 924230,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic3bbbb.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/hyatt/img/p1pic4a.jpg": {
 		"ft": 16384,
 		"iS": 118397,
@@ -2037,6 +2323,39 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"/hyatt/img/p1pic4aa.jpg": {
+		"ft": 16384,
+		"iS": 536941,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic4aa.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/hyatt/img/p1pic4aa.png": {
+		"ft": 32768,
+		"iS": 5073587,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic4aa.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1pic4aaaa.png": {
+		"ft": 32768,
+		"iS": 1031525,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic4aaaa.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"/hyatt/img/p1pic4b.jpg": {
@@ -2050,11 +2369,132 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/hyatt/img/p1pic4bb.jpg": {
+		"ft": 16384,
+		"iS": 584869,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic4bb.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/hyatt/img/p1pic4bb.png": {
+		"ft": 32768,
+		"iS": 1511050,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic4bb.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1pic4bbbb.png": {
+		"ft": 32768,
+		"iS": 1234824,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1pic4bbbb.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/hyatt/img/p1t.png": {
 		"ft": 32768,
 		"iS": 3120,
 		"oA": 0,
 		"oAP": "/hyatt/img/p1t.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1t1.png": {
+		"ft": 32768,
+		"iS": 13448,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1t1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1t2.png": {
+		"ft": 32768,
+		"iS": 13024,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1t2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1t3.png": {
+		"ft": 32768,
+		"iS": 13488,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1t3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1tt1.png": {
+		"ft": 32768,
+		"iS": 11991,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1tt1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1tt2.png": {
+		"ft": 32768,
+		"iS": 15512,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1tt2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1tt3.png": {
+		"ft": 32768,
+		"iS": 15455,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1tt3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1tt4.png": {
+		"ft": 32768,
+		"iS": 2015,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1tt4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p1tt5.png": {
+		"ft": 32768,
+		"iS": 13407,
+		"oA": 0,
+		"oAP": "/hyatt/img/p1tt5.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -2105,12 +2545,45 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/hyatt/img/p3mask1.png": {
+		"ft": 32768,
+		"iS": 615,
+		"oA": 0,
+		"oAP": "/hyatt/img/p3mask1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p3mask2.png": {
+		"ft": 32768,
+		"iS": 615,
+		"oA": 0,
+		"oAP": "/hyatt/img/p3mask2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/hyatt/img/p3pic1.jpg": {
 		"ft": 16384,
 		"iS": 108784,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/hyatt/img/p3pic1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/hyatt/img/p3pic11.jpg": {
+		"ft": 16384,
+		"iS": 103067,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/hyatt/img/p3pic11.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -2127,11 +2600,55 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/hyatt/img/p3pic22.jpg": {
+		"ft": 16384,
+		"iS": 122565,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/hyatt/img/p3pic22.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/hyatt/img/p3s1.png": {
+		"ft": 32768,
+		"iS": 21692,
+		"oA": 0,
+		"oAP": "/hyatt/img/p3s1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p3s2.png": {
+		"ft": 32768,
+		"iS": 21327,
+		"oA": 0,
+		"oAP": "/hyatt/img/p3s2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/hyatt/img/p3t.png": {
 		"ft": 32768,
 		"iS": 39324,
 		"oA": 0,
 		"oAP": "/hyatt/img/p3t.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/hyatt/img/p3tt.png": {
+		"ft": 32768,
+		"iS": 16167,
+		"oA": 0,
+		"oAP": "/hyatt/img/p3tt.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -2936,6 +3453,62 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/hyatt/mp3/bgm.mp3",
+		"oF": 0
+		},
+	"/hyatt/mp3/clock.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/hyatt/mp3/clock.mp3",
+		"oF": 0
+		},
+	"/hyatt/mp3/clock2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/hyatt/mp3/clock2.mp3",
+		"oF": 0
+		},
+	"/hyatt/mp3/tag3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/hyatt/mp3/tag3.mp3",
+		"oF": 0
+		},
+	"/hyatt/mp3/tag4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/hyatt/mp3/tag4.mp3",
+		"oF": 0
+		},
+	"/hyatt/mp3/tag5.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/hyatt/mp3/tag5.mp3",
+		"oF": 0
+		},
+	"/hyatt/mp3/tag6.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/hyatt/mp3/tag6.mp3",
+		"oF": 0
+		},
+	"/hyatt/mp3/tag7.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/hyatt/mp3/tag7.mp3",
+		"oF": 0
+		},
+	"/hyatt/mp3/tree2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/hyatt/mp3/tree2.mp3",
 		"oF": 0
 		},
 	"/index.html": {
@@ -6584,6 +7157,28 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/qrcode-black.png": {
+		"ft": 32768,
+		"iS": 12418,
+		"oA": 0,
+		"oAP": "/starbucks/img/qrcode-black.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/qrcode-white.png": {
+		"ft": 32768,
+		"iS": 12418,
+		"oA": 0,
+		"oAP": "/starbucks/img/qrcode-white.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},

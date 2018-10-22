@@ -68,6 +68,12 @@ class UGC
 		# @.init()
 	
 	init: ->
+		@.qrcode = qrcode = new Spr _CDN+"img/qrcode-"+(if main.white then 'white' else 'black')+".png"
+		qrcode.scale.set(640/750,640/750)
+		qrcode.x = 68
+		qrcode.y = @.opts.h - qrcode.height - 68/2
+		qrcode.visible = false
+
 		postCard = new Container()
 		logo = Spr _CDN+"img/logo-black.png"
 		logo.y = 10
@@ -97,7 +103,7 @@ class UGC
 
 		postCard.y = logo.height + logo.y + 5
 		postCard.addChild bg, mark, nickname, message, mn
-		@.stage.addChild logo, postCard
+		@.stage.addChild logo, postCard, qrcode
 		@.postCard = postCard
 
 		TweenMax.from(postCard,1.2,{alpha:0,y:"-=#{postCard.height+logo.height}",yoyo:true,delay: .7})

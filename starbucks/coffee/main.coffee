@@ -328,9 +328,11 @@ init = ->
 				@.registerShow = false
 				@.lotteryShow = false
 				console.log "run share"
+				ugc.qrcode.visible = true
 				ugc.app.renderer.render ugc.app.stage
 				@.ugc = ugc.app.view.toDataURL()
 				image = @.ugc
+
 				if @.wy
 					folder = "starbucks"
 					data = {
@@ -352,6 +354,7 @@ init = ->
 				else
 					@.ugcShow = true
 					# ugc.back()
+				ugc.qrcode.visible = false
 			success: (data)->
 				@.shareImageLink = data.info
 				@.pushed = false
@@ -397,6 +400,8 @@ init = ->
 				_CDN+"img/m-2.png"
 				_CDN+"img/m-3.png"
 				_CDN+"img/m-4.png"
+				_CDN+"img/qrcode-black.png"
+				_CDN+"img/qrcode-white.png"
 			]
 			window.imageList = window.imageList.concat(imageList2)
 			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => console.log("callback") })
