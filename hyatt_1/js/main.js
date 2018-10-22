@@ -15,8 +15,8 @@ $(document).ready(function load (){
     shareContent = {
       title: "“让建筑消失”，和隈研吾一起创作属于自己的都市绿洲",
       desc: "30秒指尖趣味拼贴，把北京望京凯悦酒店打造成你的森林理想家",
-      link: "http://m.giccoo.com/hyatt/",
-      imgUrl: "http://m.giccoo.com/hyatt/img/ico.jpg",
+      link: "http://m.giccoo.com/hyatt_1/",
+      imgUrl: "http://m.giccoo.com/hyatt_1/img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };
@@ -25,8 +25,8 @@ $(document).ready(function load (){
     shareContent2 = {
       title: "“让建筑消失”，和隈研吾一起创作属于自己的都市绿洲",
       desc: "",
-      link: "http://m.giccoo.com/hyatt/",
-      imgUrl: "http://m.giccoo.com/hyatt/img/ico.jpg",
+      link: "http://m.giccoo.com/hyatt_1/",
+      imgUrl: "http://m.giccoo.com/hyatt_1/img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };
