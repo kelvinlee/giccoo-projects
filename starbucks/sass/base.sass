@@ -15,6 +15,23 @@ $cdn : "../"
 // animation, delay, duration
 $fontColor: #000000;
 $pageMainBGColor: #0c101a;
++keyframes(flashcamera)
+	0%
+		background-color: rgba(255,255,255,1)
+	80%
+		background-color: rgba(255,255,255,0.2)
+	100%
+		background-color: rgba(0,0,0,0.7)
++keyframes(zoomBigIn)
+	0%
+		+transform(scale(1,1))
+		opacity: 0
+	10%
+		+transform(scale(1,1))
+		opacity: 1
+	100%
+		+transform(scale(0.8,0.8))
+		opacity: 1
 +keyframes(fadeArrow)
 	0%,100%
 		opacity: 1
@@ -850,15 +867,22 @@ video,canvas,svg
 	+h
 	+bc(rgba(0,0,0,0.7))
 	z-index: 109
+	&.flashcamera
+		+animation(flashcamera,1s,ease)
+		// animation-delay: 1s
+		.content
+			+animation(zoomBigIn,0.6s,ease)
+			animation-delay: 0.5s
+
 	.close
 		+posa
 		+bl(5%,50%)
 		+iw(80,600,100%)
 		+transform(translate3d(-50%,0,0))
 	.small-size
-		+w(80%)
-		margin-top: 10%
-		margin-left: 10%
+		// +w(80%)
+		// margin-top: 10%
+		// margin-left: 10%
 		+posr
 		.close
 			+bl(auto,auto)

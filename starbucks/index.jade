@@ -169,14 +169,14 @@ block content
                   img(:src="'#{url}/img/btn-share-'+(white?'white':'black')+'.png'")
                 .btn(@click="gobuy")
                   img(:src="'#{url}/img/btn-buy-'+(white?'white':'black')+'.png'")
-    transition(name="page-fade")
-      .pop(v-show="ugcShow")
-        .content
-          .small-size
-            .close(@click="ugcShow = false")
-              img(src="#{url}/img/icon-close.png")
-            img(:src="ugc")
-            .note 长按保存图片
+    //- transition(name="page-fade")
+    .pop.flashcamera(v-show="ugcShow")
+      .content
+        .small-size
+          .close(@click="ugcShow = false")
+            img(src="#{url}/img/icon-close.png")
+          img(:src="ugc")
+          .note 长按保存图片
 
 block js
   - url = "/";

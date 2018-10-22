@@ -151,16 +151,14 @@
           </div>
         </div>
       </transition>
-      <transition name="page-fade">
-        <div v-show="ugcShow" class="pop">
-          <div class="content">
-            <div class="small-size">
-              <div @click="ugcShow = false" class="close"><img src="./img/icon-close.png"></div><img :src="ugc">
-              <div class="note">长按保存图片</div>
-            </div>
+      <div v-show="ugcShow" class="pop flashcamera">
+        <div class="content">
+          <div class="small-size">
+            <div @click="ugcShow = false" class="close"><img src="./img/icon-close.png"></div><img :src="ugc">
+            <div class="note">长按保存图片</div>
           </div>
         </div>
-      </transition>
+      </div>
     </div>
     <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
