@@ -1,21 +1,39 @@
 var page1=new PIXI.Container()
-var p1bg=new pSprite("img/p1bg.jpg")
+var p1bg=new pSprite("img/p1bga.jpg")
 var border=new PIXI.Container()
 var p1title=new PIXI.Container()
 
-var p1t=new pSprite("img/p1t.png")
-var p1bar=new PIXI.Graphics()
+//var p1t=new pSprite("img/p1t.png")
+//var p1bar=new PIXI.Graphics()
 var p1arrow=new pSprite("img/p1arrow.png")
+
+var p1tt1=new pSprite("img/p1tt1.png")
+var p1tt2=new pSprite("img/p1tt2.png")
+var p1tt3=new pSprite("img/p1tt3.png")
+var p1tt4=new pSprite("img/p1tt4.png")
+var p1tt5=new pSprite("img/p1tt5.png")
+
+var p1t1=new pSprite("img/p1t1.png")
+var p1t2=new pSprite("img/p1t2.png")
+var p1t3=new pSprite("img/p1t3.png")
+
+var p1ttA=[p1tt1,p1tt2,p1tt3,p1tt4,p1tt5]
+
+
 
 function setPage1(){
 	mainPart.addChild(page1)
-	page1.addChild(p1bg,border,p1title)
+	page1.addChild(p1bg,border,p1title,p1t1,p1t2,p1t3,p1tt1,p1tt2,p1tt3,p1tt4,p1tt5)
 	p1bg.y=stageH/2-750
 
-	p1title.addChild(p1bar,p1arrow,p1t)
-	p1bar.beginFill(0x264762)
-	p1bar.drawRect(0,0,41,stageH*(1-0.19))
-	p1arrow.y=p1bar.height-22
+	//p1title.addChild(p1bar,p1arrow,p1t)
+	p1title.addChild(p1arrow)
+	//p1title.addChild(p1arrow,p1t)
+	p1title.addChild(p1arrow)
+	// p1bar.beginFill(0x264762)
+	// p1bar.drawRect(0,0,41,stageH*(1-0.19))
+	//p1arrow.y=p1bar.height-22
+	p1arrow.y=stageH*(1-0.19)-50
 	p1title.position.set(320-20.5,stageH*.19)
 	p1arrow.x--
 	
@@ -35,14 +53,30 @@ function setPage1(){
   borderD.drawRect(0,stageH-10,640,stageH)
   border.addChild(borderL,borderR,borderT,borderD)
 
-	TweenMax.to(p1arrow,.5,{y:"-=10",repeat:100000,yoyo:true})	
+	TweenMax.to(p1arrow,.5,{y:"+=10",repeat:100000,yoyo:true})	
+
+	var tempA=[p1t1,p1t2,p1t3,p1tt1,p1tt2,p1tt3,p1tt4,p1tt5]
+	for (var i = 0; i < tempA.length; i++) {
+		tempA[i].y=stageH/2-500
+	};
+	TweenMax.to(p1t1,2+Math.random()*1,{alpha:0,repeat:100000,yoyo:true})
+	TweenMax.to(p1t2,2+Math.random()*1,{alpha:0.5,repeat:100000,yoyo:true,delay:1.5})
+	TweenMax.to(p1t3,2+Math.random()*1,{alpha:0.5,repeat:100000,yoyo:true,delay:.5})
+	TweenMax.to(p1t1,5+Math.random()*1,{y:"+=25",repeat:100000,yoyo:true})
+	TweenMax.to(p1t2,5+Math.random()*1,{y:"-=25",repeat:100000,yoyo:true,delay:2.5})
+	TweenMax.to(p1t3,5+Math.random()*1,{y:"-=25",repeat:100000,yoyo:true})
+
 	p1ani()
 
 }
 
 function p1ani(){
 	TweenMax.from(p1title,2.5,{y:"+=400",alpha:0})	
-	TweenMax.from(p1t,3.5,{y:"+=200"})	
+	//TweenMax.from(p1t,3.5,{y:"+=200"})	
+
+	for (var i = 0; i < p1ttA.length; i++) {
+		TweenMax.from(p1ttA[i],4,{x:p1ttA[i].x+Math.random()*150-75,y:p1ttA[i].y+Math.random()*150-75,alpha:0,delay:.2*i+1,ease:Back.easeOut})
+	};
 }
 //===============================================第二页
 

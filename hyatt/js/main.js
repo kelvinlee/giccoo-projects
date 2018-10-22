@@ -13,7 +13,7 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "让建筑消失，快来创作属于你的都市绿洲",
+      title: "“让建筑消失”，和隈研吾一起创作属于自己的都市绿洲",
       desc: "30秒指尖趣味拼贴，把北京望京凯悦酒店打造成你的森林理想家",
       link: "http://m.giccoo.com/hyatt/",
       imgUrl: "http://m.giccoo.com/hyatt/img/ico.jpg",
@@ -23,7 +23,7 @@ $(document).ready(function load (){
 
     var shareContent2;
     shareContent2 = {
-      title: "【让建筑消失，快来创作属于你的都市绿洲】",
+      title: "“让建筑消失”，和隈研吾一起创作属于自己的都市绿洲",
       desc: "",
       link: "http://m.giccoo.com/hyatt/",
       imgUrl: "http://m.giccoo.com/hyatt/img/ico.jpg",
