@@ -94,9 +94,12 @@ function initAll(){
 
 var logo=new pSprite("img/logo.png")
 var mainPart=new PIXI.Container()
+var whitebg=new PIXI.Graphics()
 
 function setup(){
-  pStage.addChild(mainPart,logo)
+  whitebg.beginFill(0xffffff)
+  whitebg.drawRect(0,0,640,stageH)
+  pStage.addChild(whitebg,mainPart,logo)
   setBorder()
   setPage1()
   setPage2()
@@ -125,6 +128,7 @@ function setBorder(){
 
   pStage.addChild(borderAll)
   borderAll.visible=false
+  borderAll.alpha=0
 }
 
 function pageLoop(){
