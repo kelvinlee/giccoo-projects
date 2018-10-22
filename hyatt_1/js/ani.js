@@ -398,8 +398,8 @@ function setPage3(){
 	p3aC.mask=p3mask1
 	p3bC.mask=p3mask2
 
-	p3aC.y=stageH/2-301
-	p3bC.y=stageH/2-301
+	p3aC.y=stageH/2-299
+	p3bC.y=stageH/2-299
 
 	p3aC.x=40-295
 	p3bC.x=40-295
@@ -474,13 +474,29 @@ var p4skyA,p4buildingA,p4t
 var buildingA=[]
 
 function setPage4(){
+
 	mainPart.addChildAt(page4,0)
 	page4.addChild(p4All,p4tagC)
 	p4All.addChild(p4DownLayer,p4MidLayer,p4TopLayer)
 
+	//console.log("dddddd",mainPart.children)
+
+	// page1.visible=false
+	// page2.visible=false
+	// page3.visible=false
+
+	// page4.y=-100
+
+	// p4tagC.visible=false
+	// p4All.visible=false
+	// p4AllMask.visible=false
+
 	p4AllMask.beginFill(0xffffff)
 	p4AllMask.drawRect(0,0,640,stageH-341)
 	p4All.mask=p4AllMask
+
+	
+
 
 	var p4grass=new pSprite("img/p4grass1.jpg")
 	p4MidLayer.addChild(p4grass)
@@ -495,6 +511,8 @@ function setPage4(){
 	p4DownLayer.addChild(p4sky1,p4sky2,p4sky3)
 	p4sky2.alpha=p4sky3.alpha=0
 	p4sky1.y=p4sky2.y=p4sky3.y=hrz-822
+
+
 
 	p4skyA=[p4sky1,p4sky2,p4sky3]
 
@@ -1064,11 +1082,12 @@ var itemA=[]
 var p4bg=new PIXI.Graphics()
 function setItem(){//======只一次
   //room.addChild(itemContainer)
-  p4bg.beginFill(0x000000)
-  p4bg.drawRect(0,0,640,stageH)
+  p4bg.beginFill(0xffffff)
+  p4bg.drawRect(0,1,640,stageH)
   page4.addChildAt(p4bg,0)
   p4bg.interactive=true
   p4bg.tap=hideBorder
+  p4bg.alpha=0
 
 
 }
