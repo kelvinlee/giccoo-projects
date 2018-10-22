@@ -863,6 +863,7 @@ function tagChange2(_e){
 			theTime=i
 			console.log("白天夜晚",i)
 			resultNum=1
+			$("#clock")[0].currentTime=0
 			$("#clock")[0].play()
 		}
 	};
