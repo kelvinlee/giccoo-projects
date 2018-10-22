@@ -52,12 +52,15 @@ function setPage1(){
   borderD.beginFill(0xffffff)
   borderD.drawRect(0,stageH-10,640,stageH)
   border.addChild(borderL,borderR,borderT,borderD)
+  border.alpha=0
 
 	TweenMax.to(p1arrow,.5,{y:"+=10",repeat:100000,yoyo:true})	
 
 	var tempA=[p1t1,p1t2,p1t3,p1tt1,p1tt2,p1tt3,p1tt4,p1tt5]
 	for (var i = 0; i < tempA.length; i++) {
 		tempA[i].y=stageH/2-500
+		tempA[i].scale.x=.9//=========90%
+		tempA[i].x=32//=========90%
 	};
 	TweenMax.to(p1t1,2+Math.random()*1,{alpha:0,repeat:100000,yoyo:true})
 	TweenMax.to(p1t2,2+Math.random()*1,{alpha:0.5,repeat:100000,yoyo:true,delay:1.5})
@@ -98,10 +101,10 @@ var p23c=new PIXI.Container()
 var p24c=new PIXI.Container()
 var p2A=[p21c,p22c,p23c,p24c]
 
-var p2t1=new pSprite("img/p2t1.png")
-var p2t2=new pSprite("img/p2t2.png")
-var p2t3=new pSprite("img/p2t3.png")
-var p2t4=new pSprite("img/p2t4.png")
+var p2t1=new pSprite("img/p2t11.png")
+var p2t2=new pSprite("img/p2t22.png")
+var p2t3=new pSprite("img/p2t33.png")
+var p2t4=new pSprite("img/p2t44.png")
 var p2tA=[p2t1,p2t2,p2t3,p2t4]
 var p2tC=new PIXI.Container()
 
@@ -378,7 +381,7 @@ var p3mask2=new pSprite("img/p3mask2.png")
 var p3s1=new pSprite("img/p3s1.png")
 var p3s2=new pSprite("img/p3s2.png")
 var wbg=new PIXI.Graphics()
-var p3tt=new pSprite("img/p3tt.png")
+var p3tt=new pSprite("img/p3ttt.png")
 
 function setPage3(){
 	wbg.beginFill(0xffffff)
@@ -419,8 +422,8 @@ function page3ani(){
 	TweenMax.to(p3pic22a,3,{alpha:1,delay:2.5})
 	TweenMax.to(p3pic22b,3,{alpha:1,delay:2.5})
 
-	TweenMax.to(p3aC,7.5,{x:40-50,delay:1.5,ease:Sine.easeInOut})
-	TweenMax.to(p3bC,7.5,{x:40-50,delay:1.5,ease:Sine.easeInOut})
+	TweenMax.to(p3aC,4.5,{x:40-50,delay:1.5,ease:Sine.easeInOut})
+	TweenMax.to(p3bC,4.5,{x:40-50,delay:1.5,ease:Sine.easeInOut})
 
 	TweenMax.from(p3mask1,1.5,{y:"+=30",alpha:0})
 	TweenMax.from(p3mask2,1.5,{y:"-=30",alpha:0})
@@ -431,13 +434,13 @@ function page3ani(){
 	TweenMax.from(p3s1,1.5,{y:"+=30",alpha:0})
 	TweenMax.from(p3s2,1.5,{y:"-=30",alpha:0})
 
-	TweenMax.to(p3s1,7.5,{alpha:0.9,delay:1.5})
-	TweenMax.to(p3s2,7.5,{alpha:0.9,delay:1.5})
+	TweenMax.to(p3s1,4.5,{alpha:0.9,delay:1.5})
+	TweenMax.to(p3s2,4.5,{alpha:0.9,delay:1.5})
 
 
 	TweenMax.from(p3tt,1.5,{x:"+=130",alpha:0})
 
-	TweenMax.to(page3,1.5,{alpha:0,delay:8+.5,onComplete:page3end})
+	TweenMax.to(page3,1.5,{alpha:0,delay:5+.5,onComplete:page3end})
 	// TweenMax.to(page3,1,{x:320,y:stageH/4,delay:7.5,ease:Sine.easeIn})
 	// TweenMax.to(page3.scale,1,{x:8,y:8,delay:7.5,ease:Sine.easeIn})
 
@@ -525,7 +528,7 @@ function setPage4(){
 		};
 	};
 
-	p4t=new pSprite("img/p4t.png") 
+	p4t=new pSprite("img/p4tt.png") 
 	page4.addChild(p4t)
 	p4t.y=(hrz+stageH-341)/2-35
 	TweenMax.from(p4t,1,{alpha:0,y:"+=50",delay:.5})
@@ -642,12 +645,12 @@ var endBarBG=new pSprite("img/endbtns.png")
 var endBtn1=new PIXI.Graphics()
 var endBtn2=new PIXI.Graphics()
 
-var result1=new pSprite("img/result1.png")
-var result2=new pSprite("img/result2.png")
-var result3=new pSprite("img/result3.png")
-var result4=new pSprite("img/result4.png")
-var result5=new pSprite("img/result5.png")
-var result6=new pSprite("img/result6.png")
+var result1=new pSprite("img/result11.png")
+var result2=new pSprite("img/result22.png")
+var result3=new pSprite("img/result33.png")
+var result4=new pSprite("img/result44.png")
+var result5=new pSprite("img/result55.png")
+var result6=new pSprite("img/result66.png")
 var resultC=new PIXI.Container()
 var resultA=[result1,result2,result3,result4,result5,result6]
 var resultNum=0
