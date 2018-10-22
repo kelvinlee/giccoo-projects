@@ -84,7 +84,7 @@ var poster2=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2.jpg
 // var poster15=new pSprite("//image.giccoo.com/projects/genki/img/video_poster15d.jpg")
 //var poster3=new pSprite("img/video_poster3.jpg")//===================改这里
 var posterA=[poster1,poster2]//===================改这里
-var nowPoster=1
+var nowPoster=0
 // function setVideoPart(){//====双图
 // 	videoPart.y=528+107
 // 	videoPart.addChild(videoPartBG,videoPartText,videoBtnL,videoBtnR,poster1,poster2)
@@ -122,8 +122,8 @@ function setVideoPart(){//====三图
 	poster1.position.set(109,670+605)
 	poster2.position.set(109,670+605)
 	//poster15.position.set(109,670+605)
-	poster1.visible=false
-	poster2.visible=true
+	poster1.visible=true
+	poster2.visible=false
 	//poster15.visible=false
 
 	videoBtnL.interactive=videoBtnR.interactive=true
