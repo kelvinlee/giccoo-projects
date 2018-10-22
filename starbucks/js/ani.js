@@ -175,6 +175,11 @@ function changeChar(_num){
 	TweenMax.set(charA[_num],{y:-100})
 	//TweenMax.set(charA[_num].scale,{x:0,y:0})
 	TweenMax.to(charA[_num],1,{y:0,ease:Bounce.easeOut})
+
+	TweenMax.set(charShandow.scale,{x:.3,y:.6})
+
+	TweenMax.to(charShandow.scale,1,{x:1,y:1,ease:Bounce.easeOut})
+
 	//TweenMax.to(charA[_num].scale,1,{x:1,y:1})
 }
 

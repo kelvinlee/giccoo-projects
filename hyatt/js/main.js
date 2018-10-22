@@ -13,7 +13,7 @@ $(document).ready(function load (){
   	wx.ready(function() {
     var shareContent;
     shareContent = {
-      title: "让建筑消失，快来创作属于你的都市绿洲",
+      title: "“让建筑消失”，和隈研吾一起创作属于自己的都市绿洲",
       desc: "30秒指尖趣味拼贴，把北京望京凯悦酒店打造成你的森林理想家",
       link: "http://m.giccoo.com/hyatt/",
       imgUrl: "http://m.giccoo.com/hyatt/img/ico.jpg",
@@ -23,7 +23,7 @@ $(document).ready(function load (){
 
     var shareContent2;
     shareContent2 = {
-      title: "【让建筑消失，快来创作属于你的都市绿洲】",
+      title: "“让建筑消失”，和隈研吾一起创作属于自己的都市绿洲",
       desc: "",
       link: "http://m.giccoo.com/hyatt/",
       imgUrl: "http://m.giccoo.com/hyatt/img/ico.jpg",
@@ -207,9 +207,10 @@ function goPage2(){
 }
 function goPage3(){
   setPage3()
-  TweenLite.to(page3,.5,{y:0,onComplete:function(){
+  TweenLite.to(page3,.5,{y:stageH/2,onComplete:function(){
     page1.visible=false
     page2.visible=false
+    //console.log("3??")
   }})
 }
 
@@ -223,18 +224,18 @@ function iniListenSound(){
          document.addEventListener("WeixinJSBridgeReady", function(){
              bgm.play();
              ifbgm=1
-             //TweenLite.set($("#musicOff"),{opacity:0})
+             TweenLite.set($("#musicOff"),{opacity:0})
         }, false);
 }
-// $("#musicOff").click(function(){
-//   if(ifbgm==0){
-//     bgm.play();
-//     TweenLite.set($("#musicOff"),{opacity:0})
-//   }else{
-//     bgm.pause();
-//     TweenLite.set($("#musicOff"),{opacity:1})
-//   }
-//   ifbgm++
-//   if(ifbgm==2){ifbgm=0}
+$("#musicOff").click(function(){
+  if(ifbgm==0){
+    bgm.play();
+    TweenLite.set($("#musicOff"),{opacity:0})
+  }else{
+    bgm.pause();
+    TweenLite.set($("#musicOff"),{opacity:1})
+  }
+  ifbgm++
+  if(ifbgm==2){ifbgm=0}
 
-// })
+})

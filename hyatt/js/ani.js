@@ -1,21 +1,39 @@
 var page1=new PIXI.Container()
-var p1bg=new pSprite("img/p1bg.jpg")
+var p1bg=new pSprite("img/p1bga.jpg")
 var border=new PIXI.Container()
 var p1title=new PIXI.Container()
 
-var p1t=new pSprite("img/p1t.png")
-var p1bar=new PIXI.Graphics()
+//var p1t=new pSprite("img/p1t.png")
+//var p1bar=new PIXI.Graphics()
 var p1arrow=new pSprite("img/p1arrow.png")
+
+var p1tt1=new pSprite("img/p1tt1.png")
+var p1tt2=new pSprite("img/p1tt2.png")
+var p1tt3=new pSprite("img/p1tt3.png")
+var p1tt4=new pSprite("img/p1tt4.png")
+var p1tt5=new pSprite("img/p1tt5.png")
+
+var p1t1=new pSprite("img/p1t1.png")
+var p1t2=new pSprite("img/p1t2.png")
+var p1t3=new pSprite("img/p1t3.png")
+
+var p1ttA=[p1tt1,p1tt2,p1tt3,p1tt4,p1tt5]
+
+
 
 function setPage1(){
 	mainPart.addChild(page1)
-	page1.addChild(p1bg,border,p1title)
+	page1.addChild(p1bg,border,p1title,p1t1,p1t2,p1t3,p1tt1,p1tt2,p1tt3,p1tt4,p1tt5)
 	p1bg.y=stageH/2-750
 
-	p1title.addChild(p1bar,p1arrow,p1t)
-	p1bar.beginFill(0x264762)
-	p1bar.drawRect(0,0,41,stageH*(1-0.19))
-	p1arrow.y=p1bar.height-22
+	//p1title.addChild(p1bar,p1arrow,p1t)
+	p1title.addChild(p1arrow)
+	//p1title.addChild(p1arrow,p1t)
+	p1title.addChild(p1arrow)
+	// p1bar.beginFill(0x264762)
+	// p1bar.drawRect(0,0,41,stageH*(1-0.19))
+	//p1arrow.y=p1bar.height-22
+	p1arrow.y=stageH*(1-0.19)-50
 	p1title.position.set(320-20.5,stageH*.19)
 	p1arrow.x--
 	
@@ -35,26 +53,42 @@ function setPage1(){
   borderD.drawRect(0,stageH-10,640,stageH)
   border.addChild(borderL,borderR,borderT,borderD)
 
-	TweenMax.to(p1arrow,.5,{y:"-=10",repeat:100000,yoyo:true})	
+	TweenMax.to(p1arrow,.5,{y:"+=10",repeat:100000,yoyo:true})	
+
+	var tempA=[p1t1,p1t2,p1t3,p1tt1,p1tt2,p1tt3,p1tt4,p1tt5]
+	for (var i = 0; i < tempA.length; i++) {
+		tempA[i].y=stageH/2-500
+	};
+	TweenMax.to(p1t1,2+Math.random()*1,{alpha:0,repeat:100000,yoyo:true})
+	TweenMax.to(p1t2,2+Math.random()*1,{alpha:0.5,repeat:100000,yoyo:true,delay:1.5})
+	TweenMax.to(p1t3,2+Math.random()*1,{alpha:0.5,repeat:100000,yoyo:true,delay:.5})
+	TweenMax.to(p1t1,5+Math.random()*1,{y:"+=25",repeat:100000,yoyo:true})
+	TweenMax.to(p1t2,5+Math.random()*1,{y:"-=25",repeat:100000,yoyo:true,delay:2.5})
+	TweenMax.to(p1t3,5+Math.random()*1,{y:"-=25",repeat:100000,yoyo:true})
+
 	p1ani()
 
 }
 
 function p1ani(){
 	TweenMax.from(p1title,2.5,{y:"+=400",alpha:0})	
-	TweenMax.from(p1t,3.5,{y:"+=200"})	
+	//TweenMax.from(p1t,3.5,{y:"+=200"})	
+
+	for (var i = 0; i < p1ttA.length; i++) {
+		TweenMax.from(p1ttA[i],4,{x:p1ttA[i].x+Math.random()*150-75,y:p1ttA[i].y+Math.random()*150-75,alpha:0,delay:.2*i+1,ease:Back.easeOut})
+	};
 }
 //===============================================第二页
 
 var page2=new PIXI.Container()
-var p2pic1a=new pSprite("img/p1pic1a.jpg")
-var p2pic1b=new pSprite("img/p1pic1b.jpg")
-var p2pic2a=new pSprite("img/p1pic2a.jpg")
-var p2pic2b=new pSprite("img/p1pic2b.jpg")
-var p2pic3a=new pSprite("img/p1pic3a.jpg")
-var p2pic3b=new pSprite("img/p1pic3b.jpg")
-var p2pic4a=new pSprite("img/p1pic4a.jpg")
-var p2pic4b=new pSprite("img/p1pic4b.jpg")
+var p2pic1a=new pSprite("img/p1pic1aaaa.png")
+var p2pic1b=new pSprite("img/p1pic1bbbb.png")
+var p2pic2a=new pSprite("img/p1pic2aaaa.png")
+var p2pic2b=new pSprite("img/p1pic2bbbb.png")
+var p2pic3a=new pSprite("img/p1pic3aaaa.png")
+var p2pic3b=new pSprite("img/p1pic3bbbb.png")
+var p2pic4a=new pSprite("img/p1pic4aaaa.png")
+var p2pic4b=new pSprite("img/p1pic4bbbb.png")
 var p2picA=[[p2pic1a,p2pic1b],[p2pic2a,p2pic2b],[p2pic3a,p2pic3b],[p2pic4a,p2pic4b]]
 var p2picC=new PIXI.Container()
 
@@ -201,9 +235,9 @@ function setPage2(){
 		picC.addChild(p2picA[i][1],p2picA[i][0])
 
 		p2picA[i][0].height=stageH
-		p2picA[i][0].width=stageH/1000*1500
+		p2picA[i][0].width=stageH/1000*1500*.8
 		p2picA[i][1].height=stageH
-		p2picA[i][1].width=stageH/1000*1500
+		p2picA[i][1].width=stageH/1000*1500*.8
 		p2picA[i][0].x=p2picA[i][1].width*i*2
 		p2picA[i][1].x=p2picA[i][1].width*(i*2+1)
 
@@ -302,32 +336,121 @@ function setDot(){
 //===============================================第三页
 
 var page3=new PIXI.Container()
-var p3pic1,p3pic2
+//var p3pic1,p3pic2
+
+// function setPage3(){
+// 	mainPart.addChild(page3)
+// 	page3.y=stageH
+// 	p3pic1=new pSprite("img/p3pic1.jpg")
+// 	p3pic2=new pSprite("img/p3pic2.jpg")
+// 	p3t=new pSprite("img/p3t.png")
+// 	page3.addChild(p3pic1,p3pic2,p3t)
+// 	p3pic1.height=p3pic2.height=stageH
+// 	p3pic1.width=p3pic2.width=stageH/1000*1341
+// 	p3pic1.x=p3pic2.x=640-stageH/1000*1341
+// 	p3pic2.alpha=0
+// 	p3t.pivot.y=75
+// 	p3t.y=stageH/4
+// 	page3ani()
+// }
+// function page3ani(){
+// 	TweenMax.to(p3pic1,5,{x:0})
+// 	TweenMax.to(p3pic2,5,{x:0})//,ease:Linear.easeNone
+// 	TweenMax.to(p3pic2,4,{alpha:1,onComplete:function(){
+// 		p3pic1.visible=false
+// 		setPage4()
+		
+// 	}})
+// 	TweenMax.to(page3,1,{alpha:0,delay:4})
+// 	//TweenMax.to(p3pic2,2,{x:-stageH/1000*1341/6,alpha:0,delay:5,ease:Sine.easeInOut})
+// }
+
+var p3pic11a=new pSprite("img/p3pic11.jpg")
+var p3pic11b=new pSprite("img/p3pic11.jpg")
+var p3pic22a=new pSprite("img/p3pic22.jpg")
+var p3pic22b=new pSprite("img/p3pic22.jpg")
+
+var p3aC=new PIXI.Container()
+var p3bC=new PIXI.Container()
+
+var p3mask1=new pSprite("img/p3mask1.png")
+var p3mask2=new pSprite("img/p3mask2.png")
+var p3s1=new pSprite("img/p3s1.png")
+var p3s2=new pSprite("img/p3s2.png")
+var wbg=new PIXI.Graphics()
+var p3tt=new pSprite("img/p3tt.png")
 
 function setPage3(){
+	wbg.beginFill(0xffffff)
+	wbg.drawRect(0,0,640,stageH)
 	mainPart.addChild(page3)
-	page3.y=stageH
-	p3pic1=new pSprite("img/p3pic1.jpg")
-	p3pic2=new pSprite("img/p3pic2.jpg")
-	p3t=new pSprite("img/p3t.png")
-	page3.addChild(p3pic1,p3pic2,p3t)
-	p3pic1.height=p3pic2.height=stageH
-	p3pic1.width=p3pic2.width=stageH/1000*1341
-	p3pic1.x=p3pic2.x=640-stageH/1000*1341
-	p3pic2.alpha=0
-	p3t.pivot.y=75
-	p3t.y=stageH/4
+
+
+
+	page3.addChild(wbg,p3tt,p3aC,p3bC,p3mask1,p3mask2,p3s1,p3s2)
+	p3aC.addChild(p3pic11a,p3pic22a)
+	p3bC.addChild(p3pic11b,p3pic22b)
+	p3s1.y=p3s2.y=p3mask1.y=p3mask2.y=p3tt.y=stageH/2-500
+
+	p3aC.mask=p3mask1
+	p3bC.mask=p3mask2
+
+	p3aC.y=stageH/2-301
+	p3bC.y=stageH/2-301
+
+	p3aC.x=40-295
+	p3bC.x=40-295
+
+	p3pic22a.alpha=0
+	p3pic22b.alpha=0
+
+	page3.pivot.set(196,stageH/2)
+	page3.position.set(196,stageH/2)
+
 	page3ani()
+
+
+
 }
+
 function page3ani(){
-	TweenMax.to(p3pic1,5,{x:0})
-	TweenMax.to(p3pic2,5,{x:0})//,ease:Linear.easeNone
-	TweenMax.to(p3pic2,4,{alpha:1,onComplete:function(){
-		p3pic1.visible=false
-		setPage4()
-	}})
-	TweenMax.to(page3,1,{alpha:0,delay:4})
-	//TweenMax.to(p3pic2,2,{x:-stageH/1000*1341/6,alpha:0,delay:5,ease:Sine.easeInOut})
+	console.log("page3.y",page3.y)
+
+	TweenMax.to(p3pic22a,3,{alpha:1,delay:2.5})
+	TweenMax.to(p3pic22b,3,{alpha:1,delay:2.5})
+
+	TweenMax.to(p3aC,7.5,{x:40-50,delay:1.5,ease:Sine.easeInOut})
+	TweenMax.to(p3bC,7.5,{x:40-50,delay:1.5,ease:Sine.easeInOut})
+
+	TweenMax.from(p3mask1,1.5,{y:"+=30",alpha:0})
+	TweenMax.from(p3mask2,1.5,{y:"-=30",alpha:0})
+
+	TweenMax.from(p3aC,1.5,{y:"+=30"})
+	TweenMax.from(p3bC,1.5,{y:"-=30"})
+
+	TweenMax.from(p3s1,1.5,{y:"+=30",alpha:0})
+	TweenMax.from(p3s2,1.5,{y:"-=30",alpha:0})
+
+	TweenMax.to(p3s1,7.5,{alpha:0.9,delay:1.5})
+	TweenMax.to(p3s2,7.5,{alpha:0.9,delay:1.5})
+
+
+	TweenMax.from(p3tt,1.5,{x:"+=130",alpha:0})
+
+	TweenMax.to(page3,1.5,{alpha:0,delay:8+.5,onComplete:page3end})
+	// TweenMax.to(page3,1,{x:320,y:stageH/4,delay:7.5,ease:Sine.easeIn})
+	// TweenMax.to(page3.scale,1,{x:8,y:8,delay:7.5,ease:Sine.easeIn})
+
+	TweenMax.set($("#musicOn"),{display:"none"})
+	TweenMax.set($("#musicOff"),{display:"none"})
+
+	setPage4()
+}
+
+function page3end(){
+	console.log("第三页消失")
+	$("#bgm")[0].pause()
+	
 }
 
 //===============================================第四页
@@ -407,7 +530,7 @@ function setPage4(){
 	p4t.y=(hrz+stageH-341)/2-35
 	TweenMax.from(p4t,1,{alpha:0,y:"+=50",delay:.5})
 
-	TweenMax.to(p4t,2,{alpha:0,delay:3.5})////=====
+	TweenMax.to(p4t,2,{alpha:0,delay:3.5+9})////============================================字消失时间
 
 	setTag()
 }
@@ -475,6 +598,33 @@ function changeTag(_e){
 		if(tagBtnA[i]==_e.target){
 			console.log("标签"+i)
 			tagA[i].visible=true
+
+			$("#tag3")[0].pause()
+			$("#tag4")[0].pause()
+			$("#tag5")[0].pause()
+			$("#tag6")[0].pause()
+			$("#tag7")[0].pause()
+
+			if(i==2){
+				$("#tag3")[0].currentTime=0
+				$("#tag3")[0].play()
+			}
+			if(i==3){
+				$("#tag4")[0].currentTime=0
+				$("#tag4")[0].play()
+			}
+			if(i==4){
+				$("#tag5")[0].currentTime=0
+				$("#tag5")[0].play()
+			}
+			if(i==5){
+				$("#tag6")[0].currentTime=0
+				$("#tag6")[0].play()
+			}
+			if(i==6){
+				$("#tag7")[0].currentTime=0
+				$("#tag7")[0].play()
+			}
 		}
 	};
 }
@@ -700,19 +850,21 @@ function setTag2(){
 
 function tagChange2(_e){
 	for (var i = 0; i < 3 ; i++) {
-		TweenMax.to(p4buildingA[0][i],1,{alpha:0})
-		TweenMax.to(p4buildingA[1][i],1,{alpha:0})
-		TweenMax.to(p4buildingA[2][i],1,{alpha:0})
+		TweenMax.to(p4buildingA[0][i],2,{alpha:0})
+		TweenMax.to(p4buildingA[1][i],2,{alpha:0})
+		TweenMax.to(p4buildingA[2][i],2,{alpha:0})
 		TweenMax.to(p4skyA[i],1,{alpha:0})
 		if(tag2BtnA[i]==_e.target){
-			TweenMax.to(p4buildingA[0][i],1,{alpha:1})
-			TweenMax.to(p4buildingA[1][i],1,{alpha:1})
-			TweenMax.to(p4buildingA[2][i],1,{alpha:1})
+			TweenMax.to(p4buildingA[0][i],2,{alpha:1})
+			TweenMax.to(p4buildingA[1][i],2,{alpha:1})
+			TweenMax.to(p4buildingA[2][i],2,{alpha:1})
 
-			TweenMax.to(p4skyA[i],1,{alpha:1})
+			TweenMax.to(p4skyA[i],2,{alpha:1})
 			theTime=i
 			console.log("白天夜晚",i)
 			resultNum=1
+			$("#clock")[0].currentTime=0
+			$("#clock")[0].play()
 		}
 	};
 }
@@ -742,6 +894,7 @@ function tagChange3(_e){
 			console.log("点3",i)
 			addItem(3,p4MidLayer,i,_NORMAL)
 			resultNum=0
+			$("#tree2")[0].play()
 		}
 	};
 }
