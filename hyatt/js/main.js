@@ -105,6 +105,7 @@ function setup(){
   setPage2()
   //setPage3()
   setScorll()
+  //$.post("http://git.giccoo.com/my/giccoo")
 }
 
 var borderAll=new PIXI.Container()
