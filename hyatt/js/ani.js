@@ -271,7 +271,7 @@ function setPage2(){
 var _tempNowDot
 
 function moveBG(){
-	picC.x-=2
+	picC.x-=3
 	if(picC.x<=640-picC.width){
 		picC.x=0
 	}
