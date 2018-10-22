@@ -253,13 +253,14 @@ video,canvas,svg
 			+tl
 			+w
 	.loading-logo
+		$w: 40%
 		+posa
-		+tl(5%,25%)
-		+w(50%)
+		+tl(5%, (100%-$w)/2)
+		+w($w)
 	.loading-text
 		+posa
 		+tl(50%,50%)
-		+iw(420,750,100%)
+		+iw(580,750,100%)
 		color: #fff
 		+text-center
 		+font-size(0.8rem)

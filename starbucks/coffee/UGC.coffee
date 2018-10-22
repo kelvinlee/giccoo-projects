@@ -70,7 +70,7 @@ class UGC
 	init: ->
 		postCard = new Container()
 		logo = Spr _CDN+"img/logo-black.png"
-		logo.y = 30
+		logo.y = 10
 		bg = Spr _CDN+"img/envelope.png"
 		bg.scale.set(640/750,640/750)
 		bg.x = (@.opts.w-bg.width)/2
@@ -95,7 +95,7 @@ class UGC
 		message.x = 160
 		message.y = 42 + 34 + 34/2
 
-		postCard.y = logo.height + logo.y + 10
+		postCard.y = logo.height + logo.y + 5
 		postCard.addChild bg, mark, nickname, message, mn
 		@.stage.addChild logo, postCard
 		@.postCard = postCard
