@@ -551,7 +551,7 @@ function setPage4(){
 	p4t.y=(hrz+stageH-341)/2-35
 	TweenMax.from(p4t,1,{alpha:0,y:"+=50",delay:.5})
 
-	TweenMax.to(p4t,2,{alpha:0,delay:3.5+9})////============================================字消失时间
+	TweenMax.to(p4t,2,{alpha:0,delay:3.5+5})////============================================字消失时间
 
 	setTag()
 }
