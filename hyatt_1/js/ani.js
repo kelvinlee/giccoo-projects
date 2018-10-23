@@ -1154,7 +1154,7 @@ function addItem(_tag,_layer,_i,_blend){
 
 	itemContainer=_layer
 
-  _picURL="img/pic/tag"+_tag+"_"+_i+".png"
+  _picURL="img/pic1/tag"+_tag+"_"+_i+".png"
   _blendMode=_blend
 
 
