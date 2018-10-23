@@ -582,6 +582,8 @@ function setTag(){
 			_tag2Pic3=new pSprite("img/tag"+j+"pic3.png")
 			_tag2picA=[_tag2Pic1,_tag2Pic2,_tag2Pic3]
 			_tag.addChild(_tagbg,_tag2Pic1,_tag2Pic2,_tag2Pic3)
+			_tag2Pic2.visible=_tag2Pic3.visible=false
+
 		}
 		
 		var tagbtn=new PIXI.Graphics()
