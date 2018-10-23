@@ -274,7 +274,7 @@ function setPage2(){
 var _tempNowDot
 
 function moveBG(){
-	picC.x-=3
+	picC.x-=5
 	if(picC.x<=640-picC.width){
 		picC.x=0
 	}
@@ -564,7 +564,7 @@ var tagBtnA=[]
 var tagBtnNext=new pSprite("img/tag-done.png")
 
 function setTag(){
-	var tagbtnX=[47,47+63*1+5,47+63*2+5,47+63*3-2,47+63*4-7,47+63*5-12,47+63*6-7]
+	var tagbtnX=[47,47+63*1+5,47+63*2+5,47+63*3-2,99999,47+63*4-7,47+63*5-12+20,47+63*6-7]
 	for (var i = 0; i < 7; i++) {
 		var _tag=new PIXI.Container()
 		p4tagC.addChildAt(_tag,0)
@@ -1045,13 +1045,17 @@ var tag7BtnA=[]
 
 function setTag7(){
 	resultNum=5
-	var btnX=[35,145,265,405,525]
-	for (var i = 0; i < 5; i++) {
+	var btnX=[35,235,435,35,235,435]
+	for (var i = 0; i < 6; i++) {
 		var _btn=new PIXI.Graphics()
 		_btn.beginFill(0x334455)
-		_btn.drawRect(0,0,95,188)
+		_btn.drawRect(0,0,180,80)
 		_btn.y=45
+		if(i>2){
+			_btn.y+=100
+		}
 		_btn.x=btnX[i]//35+110*i
+
 		_btn.alpha=0
 		tagA[6].addChild(_btn)
 		tag7BtnA.push(_btn)
@@ -1061,7 +1065,7 @@ function setTag7(){
 }
 
 function tagChange7(_e){
-	for (var i = 0; i < 5 ; i++) {
+	for (var i = 0; i < 6 ; i++) {
 		if(tag7BtnA[i]==_e.target){
 			console.log("点7",i)
 			addItem(7,p4MidLayer,i,_NORMAL)
