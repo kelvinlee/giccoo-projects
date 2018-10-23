@@ -453,7 +453,46 @@ function page3ani(){
 function page3end(){
 	console.log("第三页消失")
 	$("#bgm")[0].pause()
-	
+	setHintPage()
+}
+//===============================================第四页前 提示页
+
+var hintPage=new PIXI.Container()
+var hint1=new pSprite("img/hint1.png")
+var hint2=new pSprite("img/hint2.png")
+var hint3=new pSprite("img/hint3.png")
+var blackBG=new PIXI.Graphics()
+
+
+function setHintPage(){
+	page4.addChild(hintPage)
+	hintPage.addChild(blackBG,hint1,hint2,hint3)
+	blackBG.beginFill(0x000000)
+	blackBG.drawRect(0,0,640,stageH)
+	blackBG.alpha=0//.8
+	blackBG.interactive=true
+	blackBG.tap=nextHint
+	hint1.y=hint2.y=hint3.y=stageH-1000-50
+	hint1.alpha=hint2.alpha=hint3.alpha=0
+
+}
+var nowHint=0
+function nextHint(){
+	if(nowHint==0){
+		TweenMax.to(blackBG,1,{alpha:.3})
+		TweenMax.to(hint1,1,{alpha:1,y:"+=50",ease:Back.easeOut})
+		nowHint++
+	}else if(nowHint==1){
+		TweenMax.to(hint1,1,{alpha:0})
+		TweenMax.to(hint2,1,{alpha:1,y:"+=50",ease:Back.easeOut})
+		nowHint++
+	}else if(nowHint==2){
+		TweenMax.to(hint2,1,{alpha:0})
+		TweenMax.to(hint3,1,{alpha:1,y:"+=50",ease:Back.easeOut})
+		nowHint++
+	}else{
+		hintPage.visible=false
+	}
 }
 
 //===============================================第四页
