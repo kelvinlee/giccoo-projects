@@ -473,6 +473,7 @@ function setHintPage(){
 	blackBG.interactive=true
 	blackBG.tap=nextHint
 	hint1.y=hint2.y=hint3.y=stageH-1000-50
+	hint1.x-=25
 	hint1.alpha=hint2.alpha=hint3.alpha=0
 
 }
@@ -639,7 +640,7 @@ function setTag(){
 	};
 
 	p4tagC.addChild(tagBtnNext)
-	tagBtnNext.position.set(501,275)
+	tagBtnNext.position.set(501-1,275-10)
 	tagBtnNext.interactive=true
 	tagBtnNext.tap=goNext
 
@@ -934,15 +935,15 @@ function tagChange2(_e){
 //==========================================================================================================Tag3
 var tag3BtnA=[]
 function setTag3(){
-	for (var i = 0; i < 10; i++) {
+	for (var i = 0; i < 8; i++) {
 		var _btn=new PIXI.Graphics()
 		_btn.beginFill(0x334455)
 		_btn.drawRect(0,0,110,85)
 		_btn.y=40
-		if(i>4){
+		if(i>3){
 			_btn.y=50+100
 		}
-		_btn.x=35+120*(i%5)
+		_btn.x=35+50+120*(i%4)
 		_btn.alpha=0
 		tagA[2].addChild(_btn)
 		tag3BtnA.push(_btn)
@@ -952,7 +953,7 @@ function setTag3(){
 }
 
 function tagChange3(_e){
-	for (var i = 0; i < 10 ; i++) {
+	for (var i = 0; i < 8 ; i++) {
 		if(tag3BtnA[i]==_e.target){
 			console.log("点3",i)
 			addItem(3,p4MidLayer,i,_NORMAL)
@@ -990,7 +991,7 @@ function tagChange4(_e){
 			if(i!=1){
 				addItem(4,p4MidLayer,i,_ADD)
 			}else{
-				addItem(4,p4MidLayer,i,_NORMAL)
+				addItem(4,p4MidLayer,i,_ADD)
 			}
 			
 		}
