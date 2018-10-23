@@ -810,6 +810,7 @@ function goNext(){
 		resultA[i].visible=false
 		if(i==resultNum){
 			resultA[i].visible=true
+			console.log(resultNum)
 		}
 	};
 	
@@ -1085,7 +1086,7 @@ function tagChange6(_e){
 var tag7BtnA=[]
 
 function setTag7(){
-	resultNum=5
+	
 	var btnX=[35,235,435,35,235,435]
 	for (var i = 0; i < 6; i++) {
 		var _btn=new PIXI.Graphics()
@@ -1106,8 +1107,10 @@ function setTag7(){
 }
 
 function tagChange7(_e){
+	resultNum=5
 	for (var i = 0; i < 6 ; i++) {
 		if(tag7BtnA[i]==_e.target){
+
 			console.log("点7",i)
 			addItem(7,p4MidLayer,i,_NORMAL)
 		}
