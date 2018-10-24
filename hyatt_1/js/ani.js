@@ -552,7 +552,7 @@ function setPage4(){
 	
 
 
-	var p4grass=new pSprite("img/p4grass3.jpg")
+	var p4grass=new pSprite("img/p4grass1.jpg")
 	p4MidLayer.addChild(p4grass)
 	p4grass.height=678/1000*stageH
 	p4grass.y=stageH-p4grass.height
