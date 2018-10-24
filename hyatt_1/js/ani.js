@@ -340,8 +340,13 @@ function setDot(){
 
 var page3=new PIXI.Container()
 var p3pic1,p3pic2
+var p3wbg=new PIXI.Graphics()
 
 function setPage3(){
+	p3wbg.beginFill(0xffffff)
+	p3wbg.drawRect(0,stageH,stageH/1000*1341,stageH/480*1500-stageH)
+	//p3wbg.visible=false
+	page3.addChild(p3wbg)
 	mainPart.addChild(page3)
 	page3.y=stageH
 	p3pic1=new pSprite("img/p3pic1.jpg")
@@ -349,7 +354,7 @@ function setPage3(){
 	p3t=new pSprite("img/p3t.png")
 	page3.addChild(p3pic1,p3pic2,p3t)
 	p3pic1.height=p3pic2.height=stageH
-	p3pic2.height=stageH/480*1500
+	p3pic2.height=stageH///480*1500
 	p3pic1.width=p3pic2.width=stageH/1000*1341
 	p3pic1.x=p3pic2.x=640-stageH/1000*1341
 	p3pic2.alpha=0
@@ -358,15 +363,19 @@ function setPage3(){
 	page3ani()
 }
 function page3ani(){
+
+	
+
 	TweenMax.to(p3pic1,5,{x:0})
 	TweenMax.to(p3pic2,5,{x:0})//,ease:Linear.easeNone
 	TweenMax.to(p3pic2,4,{alpha:1,onComplete:function(){
 		p3pic1.visible=false
 		setPage4()
-		
+		//p3wbg.visible=true
 	}})
-	TweenMax.to(page3,1,{x:0,width:640,height:640/1.333/480*1500,delay:4})
+	TweenMax.to(page3,1,{x:0,width:640,height:640/1.333/480*1500,delay:4})///480*1500
 	TweenMax.to(page3,1,{alpha:0,delay:4.5,onComplete:page3end})
+	//TweenMax.to(p3wbg,1,{alpha:0,delay:4.5})
 	TweenMax.set(p3t,{alpha:0,delay:4})
 	//TweenMax.to(p3pic2,2,{x:-stageH/1000*1341/6,alpha:0,delay:5,ease:Sine.easeInOut})
 }
@@ -596,7 +605,7 @@ function setPage4(){
 	p4t.y=(hrz+stageH-341)/2-35
 	TweenMax.from(p4t,1,{alpha:0,y:"+=50",delay:.5})
 
-	TweenMax.to(p4t,2,{alpha:0,delay:3.5+5})////============================================字消失时间
+	TweenMax.to(p4t,2,{alpha:0,delay:3.5})////============================================字消失时间
 
 	setTag()
 }
