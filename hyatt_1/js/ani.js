@@ -545,7 +545,7 @@ function setPage4(){
 
 	var p4grass=new pSprite("img/p4grass1.jpg")
 	p4MidLayer.addChild(p4grass)
-	p4grass.height=618/1000*stageH
+	p4grass.height=678/1000*stageH
 	p4grass.y=stageH-p4grass.height
 	hrz=p4grass.y
 
@@ -619,7 +619,7 @@ function setTag(){
 		var j=i+1
 		var _tagbg=new pSprite("img/tagbg"+j+".png")
 		if(i!=1){
-			var _tagPic=new pSprite("img/tag"+j+"pic__.png")
+			var _tagPic=new pSprite("img/tag"+j+"pic___.png")
 			_tag.addChild(_tagbg,_tagPic)
 		}else{
 			_tag2Pic1=new pSprite("img/tag"+j+"pic1.png")
@@ -940,15 +940,15 @@ function tagChange2(_e){
 //==========================================================================================================Tag3
 var tag3BtnA=[]
 function setTag3(){
-	for (var i = 0; i < 10; i++) {
+	for (var i = 0; i < 12; i++) {
 		var _btn=new PIXI.Graphics()
 		_btn.beginFill(0x334455)
-		_btn.drawRect(0,0,110,85)
+		_btn.drawRect(0,0,80,85)
 		_btn.y=40
-		if(i>4){
+		if(i>5){
 			_btn.y=50+100
 		}
-		_btn.x=35+120*(i%5)
+		_btn.x=35+95*(i%6)
 		_btn.alpha=0
 		tagA[2].addChild(_btn)
 		tag3BtnA.push(_btn)
@@ -958,7 +958,7 @@ function setTag3(){
 }
 
 function tagChange3(_e){
-	for (var i = 0; i < 10 ; i++) {
+	for (var i = 0; i < 12 ; i++) {
 		if(tag3BtnA[i]==_e.target){
 			console.log("点3",i)
 			addItem(3,p4MidLayer,i,_NORMAL)
@@ -1159,7 +1159,7 @@ function addItem(_tag,_layer,_i,_blend){
 
 	itemContainer=_layer
 
-  _picURL="img/pic1/tag"+_tag+"_"+_i+".png"
+  _picURL="img/pic2/tag"+_tag+"_"+_i+".png"
   _blendMode=_blend
 
 

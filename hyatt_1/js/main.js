@@ -215,6 +215,7 @@ function goPage3(){
   if(Math.random()>.5){
     random3=1
   }
+  random3=0
   if(random3==1){
     setPage33()
     TweenLite.to(page3,.5,{y:stageH/2,onComplete:function(){
