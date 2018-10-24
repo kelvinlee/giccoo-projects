@@ -350,7 +350,7 @@ function setPage3(){
 	mainPart.addChild(page3)
 	page3.y=stageH
 	p3pic1=new pSprite("img/p3pic1.jpg")
-	p3pic2=new pSprite("img/p3pic2.jpg")
+	p3pic2=new pSprite("img/p3pic2_.jpg")
 	p3t=new pSprite("img/p3t.png")
 	page3.addChild(p3pic1,p3pic2,p3t)
 	p3pic1.height=p3pic2.height=stageH
