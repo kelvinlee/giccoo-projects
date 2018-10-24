@@ -210,13 +210,28 @@ function goPage2(){
   }})
   
 }
+var random3=0
 function goPage3(){
-  setPage3()
-  TweenLite.to(page3,.5,{y:stageH/2,onComplete:function(){
-    page1.visible=false
-    page2.visible=false
-    //console.log("3??")
-  }})
+  if(Math.random()>.5){
+    random3=1
+  }
+  if(random3==1){
+    setPage33()
+    TweenLite.to(page3,.5,{y:stageH/2,onComplete:function(){
+      page1.visible=false
+      page2.visible=false
+      //console.log("3??")
+    }})
+  }else{
+    setPage3()
+    TweenLite.to(page3,.5,{y:0,onComplete:function(){
+      page1.visible=false
+      page2.visible=false
+      //console.log("3??")
+    }})
+  }
+  
+  
 }
 
 

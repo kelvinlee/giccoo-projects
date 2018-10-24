@@ -339,34 +339,37 @@ function setDot(){
 //===============================================第三页
 
 var page3=new PIXI.Container()
-//var p3pic1,p3pic2
+var p3pic1,p3pic2
 
-// function setPage3(){
-// 	mainPart.addChild(page3)
-// 	page3.y=stageH
-// 	p3pic1=new pSprite("img/p3pic1.jpg")
-// 	p3pic2=new pSprite("img/p3pic2.jpg")
-// 	p3t=new pSprite("img/p3t.png")
-// 	page3.addChild(p3pic1,p3pic2,p3t)
-// 	p3pic1.height=p3pic2.height=stageH
-// 	p3pic1.width=p3pic2.width=stageH/1000*1341
-// 	p3pic1.x=p3pic2.x=640-stageH/1000*1341
-// 	p3pic2.alpha=0
-// 	p3t.pivot.y=75
-// 	p3t.y=stageH/4
-// 	page3ani()
-// }
-// function page3ani(){
-// 	TweenMax.to(p3pic1,5,{x:0})
-// 	TweenMax.to(p3pic2,5,{x:0})//,ease:Linear.easeNone
-// 	TweenMax.to(p3pic2,4,{alpha:1,onComplete:function(){
-// 		p3pic1.visible=false
-// 		setPage4()
+function setPage3(){
+	mainPart.addChild(page3)
+	page3.y=stageH
+	p3pic1=new pSprite("img/p3pic1.jpg")
+	p3pic2=new pSprite("img/p3pic2.jpg")
+	p3t=new pSprite("img/p3t.png")
+	page3.addChild(p3pic1,p3pic2,p3t)
+	p3pic1.height=p3pic2.height=stageH
+	p3pic2.height=stageH/480*1500
+	p3pic1.width=p3pic2.width=stageH/1000*1341
+	p3pic1.x=p3pic2.x=640-stageH/1000*1341
+	p3pic2.alpha=0
+	p3t.pivot.y=75
+	p3t.y=stageH/4
+	page3ani()
+}
+function page3ani(){
+	TweenMax.to(p3pic1,5,{x:0})
+	TweenMax.to(p3pic2,5,{x:0})//,ease:Linear.easeNone
+	TweenMax.to(p3pic2,4,{alpha:1,onComplete:function(){
+		p3pic1.visible=false
+		setPage4()
 		
-// 	}})
-// 	TweenMax.to(page3,1,{alpha:0,delay:4})
-// 	//TweenMax.to(p3pic2,2,{x:-stageH/1000*1341/6,alpha:0,delay:5,ease:Sine.easeInOut})
-// }
+	}})
+	TweenMax.to(page3,1,{x:0,width:640,height:640/1.333/480*1500,delay:4})
+	TweenMax.to(page3,1,{alpha:0,delay:4.5,onComplete:page3end})
+	TweenMax.set(p3t,{alpha:0,delay:4})
+	//TweenMax.to(p3pic2,2,{x:-stageH/1000*1341/6,alpha:0,delay:5,ease:Sine.easeInOut})
+}
 
 var p3pic11a=new pSprite("img/p3pic11.jpg")
 var p3pic11b=new pSprite("img/p3pic11.jpg")
@@ -383,7 +386,7 @@ var p3s2=new pSprite("img/p3s2.png")
 var wbg=new PIXI.Graphics()
 var p3tt=new pSprite("img/p3ttt.png")
 
-function setPage3(){
+function setPage33(){
 	wbg.beginFill(0xffffff)
 	wbg.drawRect(0,0,640,stageH)
 	mainPart.addChild(page3)
@@ -410,13 +413,13 @@ function setPage3(){
 	page3.pivot.set(196,stageH/2)
 	page3.position.set(196,stageH/2)
 
-	page3ani()
+	page33ani()
 
 
 
 }
 
-function page3ani(){
+function page33ani(){
 	console.log("page3.y",page3.y)
 
 	TweenMax.to(p3pic22a,3,{alpha:1,delay:2.5})
@@ -441,8 +444,8 @@ function page3ani(){
 	TweenMax.from(p3tt,1.5,{x:"+=130",alpha:0})
 
 	TweenMax.to(page3,1.5,{alpha:0,delay:5+.5,onComplete:page3end})
-	// TweenMax.to(page3,1,{x:320,y:stageH/4,delay:7.5,ease:Sine.easeIn})
-	// TweenMax.to(page3.scale,1,{x:8,y:8,delay:7.5,ease:Sine.easeIn})
+	TweenMax.to(page3,1,{x:320,y:stageH/4,delay:5,ease:Sine.easeIn})
+	TweenMax.to(page3.scale,1,{x:4,y:4,delay:5,ease:Sine.easeIn})
 
 	TweenMax.set($("#musicOn"),{display:"none"})
 	TweenMax.set($("#musicOff"),{display:"none"})
@@ -454,6 +457,8 @@ function page3end(){
 	console.log("第三页消失")
 	$("#bgm")[0].pause()
 	setHintPage()
+	TweenMax.set($("#musicOn"),{display:"none"})
+	TweenMax.set($("#musicOff"),{display:"none"})
 }
 //===============================================第四页前 提示页
 
@@ -473,7 +478,7 @@ function setHintPage(){
 	blackBG.interactive=true
 	blackBG.tap=nextHint
 	hint1.y=hint2.y=hint3.y=stageH-1000-50
-	hint1.x-=25
+	//hint1.x-=25
 	hint1.alpha=hint2.alpha=hint3.alpha=0
 
 }
@@ -540,7 +545,7 @@ function setPage4(){
 
 	var p4grass=new pSprite("img/p4grass1.jpg")
 	p4MidLayer.addChild(p4grass)
-	p4grass.height=518/1000*stageH
+	p4grass.height=618/1000*stageH
 	p4grass.y=stageH-p4grass.height
 	hrz=p4grass.y
 
@@ -604,7 +609,7 @@ var tagBtnA=[]
 var tagBtnNext=new pSprite("img/tag-done.png")
 
 function setTag(){
-	var tagbtnX=[47,47+63*1+5,47+63*2+5,47+63*3-2,99999,47+63*4-7,47+63*5-12+20,47+63*6-7]
+	var tagbtnX=[47,47+63*1+5,47+63*2+5,47+63*3-2,47+63*4-7,47+63*5-12,47+63*6-7]
 	for (var i = 0; i < 7; i++) {
 		var _tag=new PIXI.Container()
 		p4tagC.addChildAt(_tag,0)
@@ -935,15 +940,15 @@ function tagChange2(_e){
 //==========================================================================================================Tag3
 var tag3BtnA=[]
 function setTag3(){
-	for (var i = 0; i < 8; i++) {
+	for (var i = 0; i < 10; i++) {
 		var _btn=new PIXI.Graphics()
 		_btn.beginFill(0x334455)
 		_btn.drawRect(0,0,110,85)
 		_btn.y=40
-		if(i>3){
+		if(i>4){
 			_btn.y=50+100
 		}
-		_btn.x=35+50+120*(i%4)
+		_btn.x=35+120*(i%5)
 		_btn.alpha=0
 		tagA[2].addChild(_btn)
 		tag3BtnA.push(_btn)
@@ -953,7 +958,7 @@ function setTag3(){
 }
 
 function tagChange3(_e){
-	for (var i = 0; i < 8 ; i++) {
+	for (var i = 0; i < 10 ; i++) {
 		if(tag3BtnA[i]==_e.target){
 			console.log("点3",i)
 			addItem(3,p4MidLayer,i,_NORMAL)
