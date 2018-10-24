@@ -619,7 +619,7 @@ function setTag(){
 		var j=i+1
 		var _tagbg=new pSprite("img/tagbg"+j+".png")
 		if(i!=1){
-			var _tagPic=new pSprite("img/tag"+j+"pic_.png")
+			var _tagPic=new pSprite("img/tag"+j+"pic__.png")
 			_tag.addChild(_tagbg,_tagPic)
 		}else{
 			_tag2Pic1=new pSprite("img/tag"+j+"pic1.png")
