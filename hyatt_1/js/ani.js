@@ -543,7 +543,7 @@ function setPage4(){
 	
 
 
-	var p4grass=new pSprite("img/p4grass1.jpg")
+	var p4grass=new pSprite("img/p4grass2.jpg")
 	p4MidLayer.addChild(p4grass)
 	p4grass.height=678/1000*stageH
 	p4grass.y=stageH-p4grass.height
@@ -619,7 +619,7 @@ function setTag(){
 		var j=i+1
 		var _tagbg=new pSprite("img/tagbg"+j+".png")
 		if(i!=1){
-			var _tagPic=new pSprite("img/tag"+j+"pic___.png")
+			var _tagPic=new pSprite("img/tag"+j+"picb.png")
 			_tag.addChild(_tagbg,_tagPic)
 		}else{
 			_tag2Pic1=new pSprite("img/tag"+j+"pic1.png")
@@ -1159,7 +1159,7 @@ function addItem(_tag,_layer,_i,_blend){
 
 	itemContainer=_layer
 
-  _picURL="img/pic2/tag"+_tag+"_"+_i+".png"
+  _picURL="img/pic3/tag"+_tag+"_"+_i+".png"
   _blendMode=_blend
 
 
