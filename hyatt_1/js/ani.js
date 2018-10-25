@@ -731,7 +731,7 @@ var resultNum=0
 
 var endBtnBack=new pSprite("img/btn-back.png")
 
-var qr=new pSprite("img/qr1.png")
+var qr=new pSprite("img/qr3.png")
 
 function setEnd(){
 	mainPart.addChild(endPage,borderAll)
