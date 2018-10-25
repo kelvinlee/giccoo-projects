@@ -628,7 +628,7 @@ function setTag(){
 		var j=i+1
 		var _tagbg=new pSprite("img/tagbg"+j+".png")
 		if(i!=1){
-			var _tagPic=new pSprite("img/tag"+j+"picb.png")
+			var _tagPic=new pSprite("img/tag"+j+"pic_b.png")
 			_tag.addChild(_tagbg,_tagPic)
 		}else{
 			_tag2Pic1=new pSprite("img/tag"+j+"pic1.png")
@@ -1102,13 +1102,13 @@ var tag7BtnA=[]
 
 function setTag7(){
 	
-	var btnX=[35,235,435,35,235,435]
-	for (var i = 0; i < 6; i++) {
+	var btnX=[35,215-20,395-20-20,575-20-20-20-20,35,215-20,395-20-20,575-20-20-20-20]
+	for (var i = 0; i < 8; i++) {
 		var _btn=new PIXI.Graphics()
 		_btn.beginFill(0x334455)
-		_btn.drawRect(0,0,180,80)
+		_btn.drawRect(0,0,110,80)
 		_btn.y=45
-		if(i>2){
+		if(i>3){
 			_btn.y+=100
 		}
 		_btn.x=btnX[i]//35+110*i
@@ -1123,7 +1123,7 @@ function setTag7(){
 
 function tagChange7(_e){
 	resultNum=5
-	for (var i = 0; i < 6 ; i++) {
+	for (var i = 0; i < 8 ; i++) {
 		if(tag7BtnA[i]==_e.target){
 
 			console.log("点7",i)
@@ -1168,7 +1168,7 @@ function addItem(_tag,_layer,_i,_blend){
 
 	itemContainer=_layer
 
-  _picURL="img/pic3/tag"+_tag+"_"+_i+".png"
+  _picURL="img/pic4/tag"+_tag+"_"+_i+".png"
   _blendMode=_blend
 
 
