@@ -626,7 +626,7 @@ function setTag(){
 		p4tagC.y=stageH-341
 		tagA.push(_tag)
 		var j=i+1
-		var _tagbg=new pSprite("img/tagbg"+j+".png")
+		var _tagbg=new pSprite("img/tagbg"+j+"_.png")
 		if(i!=1){
 			var _tagPic=new pSprite("img/tag"+j+"pic__b.png")
 			_tag.addChild(_tagbg,_tagPic)
