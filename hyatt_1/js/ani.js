@@ -618,7 +618,7 @@ var tagBtnA=[]
 var tagBtnNext=new pSprite("img/tag-done.png")
 
 function setTag(){
-	var tagbtnX=[47,47+63*1+5,47+63*2+5,47+63*3-2,47+63*4-7,47+63*5-12,47+63*6-7]
+	var tagbtnX=[47,47+63*1+5,47+63*2+5,47+63*3-2,99999,47+63*4-7,47+63*5-12,47+63*6-7]
 	for (var i = 0; i < 7; i++) {
 		var _tag=new PIXI.Container()
 		p4tagC.addChildAt(_tag,0)
@@ -628,7 +628,7 @@ function setTag(){
 		var j=i+1
 		var _tagbg=new pSprite("img/tagbg"+j+".png")
 		if(i!=1){
-			var _tagPic=new pSprite("img/tag"+j+"pic_b.png")
+			var _tagPic=new pSprite("img/tag"+j+"pic__b.png")
 			_tag.addChild(_tagbg,_tagPic)
 		}else{
 			_tag2Pic1=new pSprite("img/tag"+j+"pic1.png")
@@ -949,15 +949,15 @@ function tagChange2(_e){
 //==========================================================================================================Tag3
 var tag3BtnA=[]
 function setTag3(){
-	for (var i = 0; i < 12; i++) {
+	for (var i = 0; i < 14; i++) {
 		var _btn=new PIXI.Graphics()
 		_btn.beginFill(0x334455)
-		_btn.drawRect(0,0,80,85)
+		_btn.drawRect(0,0,60,85)
 		_btn.y=40
-		if(i>5){
+		if(i>6){
 			_btn.y=50+100
 		}
-		_btn.x=35+95*(i%6)
+		_btn.x=35+100*(i%7)*6/7-15
 		_btn.alpha=0
 		tagA[2].addChild(_btn)
 		tag3BtnA.push(_btn)
@@ -967,7 +967,7 @@ function setTag3(){
 }
 
 function tagChange3(_e){
-	for (var i = 0; i < 12 ; i++) {
+	for (var i = 0; i < 14 ; i++) {
 		if(tag3BtnA[i]==_e.target){
 			console.log("点3",i)
 			addItem(3,p4MidLayer,i,_NORMAL)
@@ -1168,7 +1168,7 @@ function addItem(_tag,_layer,_i,_blend){
 
 	itemContainer=_layer
 
-  _picURL="img/pic4/tag"+_tag+"_"+_i+".png"
+  _picURL="img/pic5/tag"+_tag+"_"+_i+".png"
   _blendMode=_blend
 
 
