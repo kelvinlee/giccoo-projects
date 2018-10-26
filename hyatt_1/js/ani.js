@@ -554,7 +554,7 @@ function setPage4(){
 
 	var p4grass=new pSprite("img/p4grass4.jpg")
 	p4MidLayer.addChild(p4grass)
-	p4grass.height=678/1000*stageH
+	p4grass.height=638/1000*stageH
 	p4grass.y=stageH-p4grass.height
 	hrz=p4grass.y
 
@@ -761,6 +761,7 @@ function setEnd(){
 	resultC.visible=false
 
 	endTitle.alpha=0
+	endTitle.y=-30
 
 	setLayer()
 	endBtnBack.visible=false
@@ -810,8 +811,8 @@ function goNext(){
 		}
 	};
 
-	TweenMax.set(endTitle,{y:-50,alpha:0})
-	TweenMax.to(endTitle,1,{y:0,alpha:1})
+	TweenMax.set(endTitle,{y:-50-40,alpha:0})
+	TweenMax.to(endTitle,1,{y:-40,alpha:1})
 	TweenMax.to(endBar,1,{y:stageH-78,delay:1})//========需要goback
 
 	resultC.visible=true
