@@ -715,7 +715,7 @@ var endMaskC=new PIXI.Container()
 var endMaskA=[endMask1,endMask2,endMask3]
 var endTitle=new pSprite("img/endtitle.png")
 var endBar=new PIXI.Container()
-var endBarBG=new pSprite("img/endbtns.png")
+var endBarBG=new pSprite("img/endbtns_.png")
 var endBtn1=new PIXI.Graphics()
 var endBtn2=new PIXI.Graphics()
 
@@ -845,18 +845,39 @@ function goEndBtn1(){
 	console.log("长按保存")
 }
 //=========================================公众号浮层
-var endLayer
-var endLayerBtn
+var endLayer,endLayer2
+var endLayerBtn,endLayerBtn2
 function setLayer(){
-	endLayer=new pSprite("img/wxlayer.png")
+	endLayer=new pSprite("img/wxlayer_.png")
+	endLayer2=new pSprite("img/wxlayer2.png")
 	endLayerBtn=new pSprite("img/wxlayer-close.png")
-	mainPart.addChild(endLayer,endLayerBtn)
+	
 	endLayer.y=stageH/2-750
+	endLayer2.y=stageH/2-750
 	endLayerBtn.y=stageH/2-306
 	endLayer.alpha=0
 	endLayerBtn.alpha=0
 	endLayerBtn.interactive=false
 	endLayerBtn.tap=closeLayer
+
+	endLayer2.visible=false
+	endLayer2.alpha=0
+
+	endLayerBtn2=new PIXI.Graphics()
+	endLayerBtn2.beginFill(0x000000)
+	endLayerBtn2.drawRect(0,0,640,30)
+	endLayerBtn2.alpha=0
+	endLayerBtn2.y=stageH/2-750+604
+	endLayerBtn2.interactive=false
+	endLayerBtn2.tap=openLayer222
+	endLayerBtn2.visible=false
+
+
+	endLayer2.interactive=false
+	endLayer2.tap=close222
+
+	mainPart.addChild(endLayer,endLayerBtn2,endLayerBtn,endLayer2)
+
 }
 
 function goEndBtn2(){
@@ -867,6 +888,10 @@ function goEndBtn2(){
 	endLayerBtn.interactive=true
 	TweenMax.set($("#bgQR"),{display:"block"})
 	TweenLite.set($("#pngHolder"),{display:"none"})
+
+	endLayerBtn2.interactive=true
+	endLayerBtn2.tap=openLayer222
+	endLayerBtn2.visible=true
 }
 function closeLayer(){
 	endLayerBtn.interactive=false
@@ -876,7 +901,18 @@ function closeLayer(){
 	TweenMax.set($("#bgQR"),{display:"none"})
 	TweenLite.set($("#pngHolder"),{display:"block"})
 }
+function openLayer222(){
+	console.log("layer222")
+	endLayer2.visible=true
+	endLayer2.alpha=1
+	endLayer2.interactive=true
+}
 
+function close222(){
+	endLayer2.alpha=0
+	endLayer2.interactive=false
+	endLayer2.visible=false
+}
 
 
 
