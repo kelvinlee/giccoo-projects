@@ -849,7 +849,7 @@ var endLayer,endLayer2
 var endLayerBtn,endLayerBtn2
 function setLayer(){
 	endLayer=new pSprite("img/wxlayer_.png")
-	endLayer2=new pSprite("img/wxlayer_2.png")
+	endLayer2=new pSprite("img/wxlayer__2.png")
 	endLayerBtn=new pSprite("img/wxlayer-close.png")
 	
 	endLayer.y=stageH/2-750
