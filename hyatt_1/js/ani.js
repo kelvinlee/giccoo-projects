@@ -849,7 +849,7 @@ var endLayer,endLayer2
 var endLayerBtn,endLayerBtn2
 function setLayer(){
 	endLayer=new pSprite("img/wxlayer_.png")
-	endLayer2=new pSprite("img/wxlayer2.png")
+	endLayer2=new pSprite("img/wxlayer_2.png")
 	endLayerBtn=new pSprite("img/wxlayer-close.png")
 	
 	endLayer.y=stageH/2-750
@@ -903,12 +903,14 @@ function closeLayer(){
 }
 function openLayer222(){
 	console.log("layer222")
+	endLayer.alpha=0
 	endLayer2.visible=true
 	endLayer2.alpha=1
 	endLayer2.interactive=true
 }
 
 function close222(){
+	endLayer.alpha=1
 	endLayer2.alpha=0
 	endLayer2.interactive=false
 	endLayer2.visible=false
