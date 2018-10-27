@@ -163,12 +163,12 @@ function changePoster(){
 
 function showLive1(){
 	console.log("live1")
-	// openLive()
+	 openLive()
 	// stopAllSound()
 }
 function showLive2(){
 	console.log("live2")
-	// openLive1()
+	 openLive1()
 	// stopAllSound()
 }
 
