@@ -247,9 +247,6 @@ init = ->
 				for line in t
 					if line.gblen() > 32
 						return @.message = o
-
-
-
 		methods:
 			send: (text)->
 				@.noteShow = true
