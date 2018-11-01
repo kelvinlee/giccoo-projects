@@ -856,6 +856,39 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/genki/img/live_poster1b.jpg": {
+		"ft": 16384,
+		"iS": 27266,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/live_poster1b.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/img/live_poster1c.jpg": {
+		"ft": 16384,
+		"iS": 27871,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/live_poster1c.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/img/live_poster1d.jpg": {
+		"ft": 16384,
+		"iS": 14060,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/live_poster1d.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/genki/img/live_poster2.jpg": {
 		"ft": 16384,
 		"iS": 27614,
@@ -873,6 +906,28 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/genki/img/live_poster2a.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/img/live_poster2b.jpg": {
+		"ft": 16384,
+		"iS": 27153,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/live_poster2b.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/img/live_poster2c.jpg": {
+		"ft": 16384,
+		"iS": 27823,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/live_poster2c.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -1070,6 +1125,17 @@
 		"iS": 40838,
 		"oA": 0,
 		"oAP": "/genki/img/part1title2e.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/genki/img/part1title2f.png": {
+		"ft": 32768,
+		"iS": 30321,
+		"oA": 0,
+		"oAP": "/genki/img/part1title2f.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -1279,6 +1345,17 @@
 		"iS": 39360,
 		"oA": 0,
 		"oAP": "/genki/img/video_part_bg2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/genki/img/video_part_bg3.png": {
+		"ft": 32768,
+		"iS": 37104,
+		"oA": 0,
+		"oAP": "/genki/img/video_part_bg3.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -5500,6 +5577,13 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"/starbucks/mp3/bgm.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/mp3/bgm.mp3",
+		"oF": 0
 		},
 	"/starbucks/sass/base.sass": {
 		"aP": 1,
