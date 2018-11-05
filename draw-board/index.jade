@@ -65,8 +65,25 @@ block content
     transition(name="page-zoom")
       .page.page-1(v-show="pageIndex == 1")
         .content
-          .btn-start(@click = "pageIndex = 2")
-            img(src="#{url}/img/btn-start.png")
+          .text-1
+            img(src="#{url}/img/logo.png")
+          .text-2
+            img(src="#{url}/img/homepage-text.png")
+          .text-4
+            img(src="#{url}/img/homepage-text-1.png")
+          .text-5
+            img(src="#{url}/img/homepage-text-2.png")
+          .text-6(@click="pageIndex = 2")
+            img(src="#{url}/img/homepage-text-3.png")
+          .box
+            img(src="#{url}/img/homepage-car.png")
+            .text-3
+              img(src="#{url}/img/homepage-cd.png")
+            .slider
+          .logo-down
+            img(src="#{url}/img/logo-down.png")
+
+
           
     transition(name="page-fade")
       .page.page-2(v-show="pageIndex == 2")

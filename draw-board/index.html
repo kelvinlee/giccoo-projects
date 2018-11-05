@@ -38,7 +38,16 @@
       <transition name="page-zoom">
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
-            <div @click="pageIndex = 2" class="btn-start"><img src="./img/btn-start.png"></div>
+            <div class="text-1"><img src="./img/logo.png"></div>
+            <div class="text-2"><img src="./img/homepage-text.png"></div>
+            <div class="text-4"><img src="./img/homepage-text-1.png"></div>
+            <div class="text-5"><img src="./img/homepage-text-2.png"></div>
+            <div @click="pageIndex = 2" class="text-6"><img src="./img/homepage-text-3.png"></div>
+            <div class="box"><img src="./img/homepage-car.png">
+              <div class="text-3"><img src="./img/homepage-cd.png"></div>
+              <div class="slider"></div>
+            </div>
+            <div class="logo-down"><img src="./img/logo-down.png"></div>
           </div>
         </div>
       </transition>

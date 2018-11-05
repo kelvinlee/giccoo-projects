@@ -225,6 +225,116 @@
 		"oAP": "/build/draw-board/css",
 		"oF": 0
 		},
+	"/draw-board/img/bg.jpg": {
+		"ft": 16384,
+		"iS": 108477,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/draw-board/img/bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/draw-board/img/homepage-car.png": {
+		"ft": 32768,
+		"iS": 32988,
+		"oA": 0,
+		"oAP": "/draw-board/img/homepage-car.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/homepage-cd.png": {
+		"ft": 32768,
+		"iS": 63482,
+		"oA": 0,
+		"oAP": "/draw-board/img/homepage-cd.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/homepage-text-1.png": {
+		"ft": 32768,
+		"iS": 5627,
+		"oA": 0,
+		"oAP": "/draw-board/img/homepage-text-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/homepage-text-2.png": {
+		"ft": 32768,
+		"iS": 10170,
+		"oA": 0,
+		"oAP": "/draw-board/img/homepage-text-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/homepage-text-3.png": {
+		"ft": 32768,
+		"iS": 7499,
+		"oA": 0,
+		"oAP": "/draw-board/img/homepage-text-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/homepage-text.png": {
+		"ft": 32768,
+		"iS": 11432,
+		"oA": 0,
+		"oAP": "/draw-board/img/homepage-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/icon-music.png": {
+		"ft": 32768,
+		"iS": 3474,
+		"oA": 0,
+		"oAP": "/draw-board/img/icon-music.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/logo-down.png": {
+		"ft": 32768,
+		"iS": 20100,
+		"oA": 0,
+		"oAP": "/draw-board/img/logo-down.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/logo.png": {
+		"ft": 32768,
+		"iS": 3158,
+		"oA": 0,
+		"oAP": "/draw-board/img/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/draw-board/index.html": {
 		"cB": 0,
 		"ft": 8192,

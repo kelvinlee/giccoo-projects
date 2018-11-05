@@ -152,7 +152,7 @@ video,canvas,svg
 	font-size: 0
 	+overhide
 	+tran(all,4s,ease)
-	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
 #game
 	+h
 	canvas
@@ -587,49 +587,35 @@ video,canvas,svg
 .page-1
 	+b($cdn+"img/homepage-bg.jpg",no-repeat,center,center,cover)
 	.content
-		// +h(auto)
-		// +transform(translate3d(0,-50%,0))
-		// top: 50%
-	.btn-start
-		+abcentermiddle
-		+w(30%)
-		padding-top: 3rem
-		z-index: 2
-	.symbol
-		+abcentermiddle
-		+wh(50%,23%)
-		margin-left: -6%
-		z-index: 1
-		.icon-symbol-img
-			+animation(swingIcon,1.6s,ease-out,infinite)
-		.icon-symbol
+		.text-1
 			+posa
-			+animation(musicIcon,.8s,linear,infinite)
-			// +box
-			&.music-1
-				+tl(-14%,22%)
-				+w(4%*3)
-				animation-delay: 300ms
-				animation-duration: 1.2s
-			&.music-2
-				+tl(3%,28%)
-				+w(1.6%*3)
-				+p(0.2rem)
-				animation-delay: 700ms
-				animation-duration: 1.2s*1.1
-			&.music-3
-				+tl(-18%,33%)
-				+w(1.4%*3)
-				+p(0.3rem)
-				animation-delay: 900ms
-				animation-duration: 1.2s*1.2
-				img
-					+transform(rotate(-45deg))
-			&.music-4
-				+tl(-24%,38%)
-				+w(3%*3)
-				animation-delay: 1200ms
-				animation-duration: 1.2s*1.3
+			+tl
+			+iw(155,640,100%)
+		.text-2
+			+posa
+			+tl(14%,10%)
+			+iw(216,640,100%)
+		.text-3
+			+posa
+			+tl(-38%,1%)
+			+iw(234,576,100%)
+		.text-4,.text-5,.text-6
+			+posa
+			+tr(25%,3%)
+			+w(50%)
+		.text-5
+			margin-top: 5%
+		.text-6
+			margin-top: 16%
+		.box
+			+posa
+			+tl(43%,6%)
+			+w(88%)
+		.logo-down
+			+posa
+			+bl(3%)
+
+	
 
 	
 .page-2

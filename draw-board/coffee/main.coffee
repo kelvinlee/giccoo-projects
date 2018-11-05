@@ -131,7 +131,7 @@ init = ->
 			noteTime: null
 			noteShow: false
 			pageInfoShow: false
-			pageIndex: 1
+			pageIndex: 2
 			step: 1
 			singerIndex: 1
 			startgame: false
