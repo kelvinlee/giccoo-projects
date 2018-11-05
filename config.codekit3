@@ -186,6 +186,124 @@
 		"oAP": "/build/dicos",
 		"oF": 0
 		},
+	"/draw-board/coffee/dealer.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/draw-board/js/dealer.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/draw-board/coffee/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/draw-board/js/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/draw-board/coffee/UGC.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/draw-board/js/UGC.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/draw-board/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/draw-board/css",
+		"oF": 0
+		},
+	"/draw-board/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/draw-board/index.html",
+		"oF": 0
+		},
+	"/draw-board/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "/draw-board/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"/draw-board/js/ani.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/draw-board/js/ani-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/draw-board/js/build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/draw-board/js/build-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/draw-board/js/dealer.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/draw-board/js/dealer-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/draw-board/js/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/draw-board/js/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/draw-board/js/public_funciton.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/draw-board/js/public_funciton-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/draw-board/sass/base.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/draw-board/css/base.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
 	"/elr4": {
 		"ft": 65536,
 		"oA": 1,
@@ -884,6 +1002,17 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/genki/img/live_poster1d.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/img/live_poster1e.jpg": {
+		"ft": 16384,
+		"iS": 26388,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/live_poster1e.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -1801,6 +1930,101 @@
 		"oAP": "/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"/inktest/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/inktest/css",
+		"oF": 0
+		},
+	"/inktest/img/pen.png": {
+		"ft": 32768,
+		"iS": 6493,
+		"oA": 0,
+		"oAP": "/inktest/img/pen.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/inktest/img/pen2.png": {
+		"ft": 32768,
+		"iS": 14626,
+		"oA": 0,
+		"oAP": "/inktest/img/pen2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/inktest/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/inktest/index.html",
+		"oF": 0
+		},
+	"/inktest/js/ani.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/inktest/js/ani-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/inktest/js/easeljs.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/inktest/js/easeljs.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/inktest/js/jquery-2.2.1.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/inktest/js/jquery-2.2.1.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/inktest/js/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/inktest/js/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/inktest/js/pixi.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/inktest/js/pixi.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/inktest/js/TweenMax.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/inktest/js/TweenMax.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
 		},
 	"/intel_form": {
 		"ft": 65536,
@@ -3609,6 +3833,365 @@
 		"ft": 65536,
 		"oA": 1,
 		"oAP": "/build/mygym",
+		"oF": 0
+		},
+	"/news_letter/linkedin/connectin2019/images/arrow.png": {
+		"ft": 32768,
+		"iS": 1261,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/arrow.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/btn_learn_more.png": {
+		"ft": 32768,
+		"iS": 2429,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/btn_learn_more.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/btn_watch_video.png": {
+		"ft": 32768,
+		"iS": 2586,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/btn_watch_video.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/ceo-head-img.png": {
+		"ft": 32768,
+		"iS": 22493,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/ceo-head-img.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/event_p2.png": {
+		"ft": 32768,
+		"iS": 77515,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/event_p2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/event_photo.png": {
+		"ft": 32768,
+		"iS": 109664,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/event_photo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/footer.png": {
+		"ft": 32768,
+		"iS": 4711,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/footer.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/header.png": {
+		"ft": 32768,
+		"iS": 53301,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/header.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/left_top_1_1.png": {
+		"ft": 32768,
+		"iS": 58034,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/left_top_1_1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/left_top_1_2.png": {
+		"ft": 32768,
+		"iS": 562,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/left_top_1_2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/left_top_1_3.png": {
+		"ft": 32768,
+		"iS": 15566,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/left_top_1_3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/left_top_2_1.png": {
+		"ft": 32768,
+		"iS": 190061,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/left_top_2_1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/left_top_2_2.png": {
+		"ft": 32768,
+		"iS": 3328,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/left_top_2_2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/left_top_2_3.png": {
+		"ft": 32768,
+		"iS": 17190,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/left_top_2_3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/left_top_3_1.png": {
+		"ft": 32768,
+		"iS": 186973,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/left_top_3_1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/left_top_3_2.png": {
+		"ft": 32768,
+		"iS": 3482,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/left_top_3_2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/left_top_3_3.png": {
+		"ft": 32768,
+		"iS": 2078,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/left_top_3_3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/left_top_4_1.png": {
+		"ft": 32768,
+		"iS": 68904,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/left_top_4_1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/left_top_4_2.png": {
+		"ft": 32768,
+		"iS": 3408,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/left_top_4_2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/left_top_4_3.png": {
+		"ft": 32768,
+		"iS": 2439,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/left_top_4_3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/news_icon.png": {
+		"ft": 32768,
+		"iS": 546,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/news_icon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/photo.png": {
+		"ft": 32768,
+		"iS": 5429,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/photo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/photo2.png": {
+		"ft": 32768,
+		"iS": 43608,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/photo2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/photo3.png": {
+		"ft": 32768,
+		"iS": 191762,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/photo3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/photo4.png": {
+		"ft": 32768,
+		"iS": 172595,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/photo4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/qr.png": {
+		"ft": 32768,
+		"iS": 2919,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/qr.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/right-line.png": {
+		"ft": 32768,
+		"iS": 106,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/right-line.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/right_top_1.png": {
+		"ft": 32768,
+		"iS": 1671,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/right_top_1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/right_top_2.png": {
+		"ft": 32768,
+		"iS": 1411,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/right_top_2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/right_top_3.png": {
+		"ft": 32768,
+		"iS": 1439,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/right_top_3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/right_top_4.png": {
+		"ft": 32768,
+		"iS": 2248,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/right_top_4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/images/sign.png": {
+		"ft": 32768,
+		"iS": 600,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/images/sign.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/news_letter/linkedin/connectin2019/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/news_letter/linkedin/connectin2019/index.html",
 		"oF": 0
 		},
 	"/nightparty": {
