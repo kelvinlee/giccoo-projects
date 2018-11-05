@@ -82,7 +82,7 @@ window.onload = ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 
-			# @.next() # for test
+			@.next() # for test
 
 			timein = setInterval =>
 				@.progress += 2
@@ -131,7 +131,7 @@ init = ->
 			noteTime: null
 			noteShow: false
 			pageInfoShow: false
-			pageIndex: 2
+			pageIndex: 1
 			step: 1
 			singerIndex: 1
 			startgame: false
@@ -214,7 +214,12 @@ init = ->
 			]
 			white: false
 			gameEnd: false
+			carIndex: 1
 		watch:
+			carIndex: (n,o)->
+				@.carIndex = 1 if @.carIndex >= 3
+				console.log "@.carIndex:",@.carIndex
+					
 			answer1: (n,o)->
 				console.log "answer1 changed:",n
 				q1(n) if q1?
@@ -376,8 +381,17 @@ init = ->
 					window.location.href = "https://music.163.com/#/playlist?id=#{id}"
 			openInApp: ->
 				CloudMusic.open("https://m.giccoo.com/starbucks/")
+			goNext: ->
+				@.pageIndex = 2
+				clearInterval _startCache
+			goShow: ->
+				@.pageIndex = 2
+
 		# watch:
 		mounted: ->
+			_startCache = setInterval =>
+				@.carIndex++
+			,2500
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 			if sys is "NeteaseMusic"

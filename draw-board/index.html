@@ -15,7 +15,7 @@
         <p class="centeralign">Loading..{{progress}}%</p>
       </div>
     </div>
-    <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" style="display: none" :style="{width: w+'px',minHeight: h+'px'}" class="main">
+    <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" style="display: none" class="main">
       <transition name="page-down">
         <div v-show="noteShow" @click="noteShow = false" class="note-message">
           <div class="note-text">{{noteText}}</div>
@@ -38,23 +38,43 @@
       <transition name="page-zoom">
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
-            <div class="text-1"><img src="./img/logo.png"></div>
-            <div class="text-2"><img src="./img/homepage-text.png"></div>
-            <div class="text-4"><img src="./img/homepage-text-1.png"></div>
-            <div class="text-5"><img src="./img/homepage-text-2.png"></div>
-            <div @click="pageIndex = 2" class="text-6"><img src="./img/homepage-text-3.png"></div>
-            <div class="box"><img src="./img/homepage-car.png">
+            <div class="text-1 fadeInDown animated delay-6"><img src="./img/logo.png"></div>
+            <div class="text-2 fadeInDown animated delay-7"><img src="./img/homepage-text.png"></div>
+            <div class="text-4 fadeInDown animated delay-8"><img src="./img/homepage-text-1.png"></div>
+            <div class="text-5 fadeInDown animated delay-9"><img src="./img/homepage-text-2.png"></div>
+            <div @click="goNext" class="text-6 fadeInDown animated delay-10"><img src="./img/homepage-text-3.png"></div>
+            <div class="box fadeInDown animated delay-11"><img src="./img/homepage-car.png">
               <div class="text-3"><img src="./img/homepage-cd.png"></div>
-              <div class="slider"></div>
+              <div class="slider">
+                <div class="slide">
+                  <transition name="page-zoom">
+                    <div v-show="carIndex == 1" class="item"><img src="./img/car-1.jpg"></div>
+                  </transition>
+                  <transition name="page-zoom">
+                    <div v-show="carIndex == 2" class="item"><img src="./img/car-2.jpg"></div>
+                  </transition>
+                </div>
+              </div>
             </div>
-            <div class="logo-down"><img src="./img/logo-down.png"></div>
+            <div class="logo-down fadeInDown animated delay-13"><img src="./img/logo-down.png"></div>
           </div>
         </div>
       </transition>
       <transition name="page-fade">
-        <div v-show="pageIndex == 2" class="page page-2">
+        <div v-show="pageIndex == 2" :style="{width: w+'px',minHeight: h+'px'}" class="page page-2">
           <div class="content">
             <div id="ugc"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="pageIndex == 3" class="page page-3">
+          <div :class="'index-'+carIndex" class="content">
+            <div class="title fadeInDown animated delay-5"><img src="./img/waitpage-title.png"></div>
+            <div class="nickname fadeInDown animated delay-7">
+              <input type="text" v-model="nickname" placeholder="请输入您的昵称_">
+              <div @click="goShow" class="btn-start"><img src="./img/btn-start.png"></div>
+            </div>
           </div>
         </div>
       </transition>
