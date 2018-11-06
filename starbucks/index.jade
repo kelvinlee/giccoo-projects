@@ -154,9 +154,12 @@ block content
                       textarea#message(v-model="message",@blur="messageBlur",@focus="messageFoucs")
                     .note *点击左右可以切换，也可点击输入框撰写自己的蜜语
                       
-
-              .btn-next(@click="nextQuestion")
-                img(src="#{url}/img/btn-next.png")
+          transition(name="page-fade")
+            .btn-next(v-show="questionShow",@click="nextQuestion")
+              img(src="#{url}/img/btn-next.png")
+          transition(name="page-fade")
+            .btn-back(v-show="questionShow && questionIndex > 0",@click="backQuestion")
+              img(src="#{url}/img/btn-back.png")
 
           transition(name="page-zoom")
             .ctrl-box(v-show="gameEnd")
@@ -167,7 +170,7 @@ block content
                   img(:src="'#{url}/img/btn-restart-'+(white?'white':'black')+'.png'")
                 .btn(@click="goshare")
                   img(:src="'#{url}/img/btn-share-'+(white?'white':'black')+'.png'")
-                .btn(@click="gobuy")
+                .btn.animated(@click="gobuy",:class="{tada: buyAn}")
                   img(:src="'#{url}/img/btn-buy-'+(white?'white':'black')+'.png'")
     //- transition(name="page-fade")
     .pop.flashcamera(v-show="ugcShow")

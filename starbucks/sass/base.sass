@@ -635,6 +635,16 @@ video,canvas,svg
 .page-2
 	// font-family: "yrd-Bold"
 	.content
+	.btn-next
+		+posa
+		+tl(45%,33.75%)
+		+iw(217,750,100%)
+		z-index: 199
+	.btn-back
+		+posa
+		+bl(2%,2%)
+		+iw(280,750,100%)
+		z-index: 199
 	.post-card
 		$titleSize: 0.9rem
 		$itemSize: 0.85rem
@@ -642,14 +652,12 @@ video,canvas,svg
 		+tl(7.5%,(100%-78.9%)/2)
 		// +iw(671,750,100%)
 		+w(78.9%)
+		+h(92.5%)
 		z-index: 109
-		.btn-next
-			+posa
-			+bl(-25%,33.75%)
-			+iw(217,671,100%)
+		
 		.question-list
 			+w
-			+h
+			+h(auto)
 			+posr
 			font-family: "YRDZST-Heavy"
 			.question

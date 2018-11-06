@@ -5834,6 +5834,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/starbucks/img/btn-back.png": {
+		"ft": 32768,
+		"iS": 7314,
+		"oA": 0,
+		"oAP": "/starbucks/img/btn-back.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/starbucks/img/btn-buy-black.png": {
 		"ft": 32768,
 		"iS": 2577,
@@ -6021,14 +6032,36 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/starbucks/img/coffee-1.png": {
+		"ft": 32768,
+		"iS": 17315,
+		"oA": 0,
+		"oAP": "/starbucks/img/coffee-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/coffee-2.png": {
+		"ft": 32768,
+		"iS": 17480,
+		"oA": 0,
+		"oAP": "/starbucks/img/coffee-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"/starbucks/img/coffee.png": {
 		"ft": 32768,
 		"iS": 27847,
 		"oA": 0,
 		"oAP": "/starbucks/img/coffee.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -6167,8 +6200,8 @@
 		"oA": 0,
 		"oAP": "/starbucks/img/logo-black.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -6178,8 +6211,8 @@
 		"oA": 0,
 		"oAP": "/starbucks/img/logo-white.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -6189,8 +6222,8 @@
 		"oA": 0,
 		"oAP": "/starbucks/img/m-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -6200,8 +6233,8 @@
 		"oA": 0,
 		"oAP": "/starbucks/img/m-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -6211,8 +6244,8 @@
 		"oA": 0,
 		"oAP": "/starbucks/img/m-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -6222,8 +6255,8 @@
 		"oA": 0,
 		"oAP": "/starbucks/img/m-4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -6266,8 +6299,8 @@
 		"oA": 0,
 		"oAP": "/starbucks/img/post-card-mark.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},

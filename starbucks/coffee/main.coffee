@@ -212,6 +212,7 @@ init = ->
 				"There is only one thing I need the most<br/>Please make my wish come true<br/>Because all I want for Christmas is you"
 				"年轻人为这季节都很兴奋<br/>用简讯互传圣诞祝福<br/>可我只想花点心思<br/>让你们感到幸福"
 			]
+			buyAn: false
 			white: false
 			gameEnd: false
 		watch:
@@ -292,6 +293,15 @@ init = ->
 					return @.over()
 
 				@.questionIndex++
+			backQuestion: ->
+				@.questionIndex--
+				
+				if @.questionIndex is 1
+					@.answer3.c1 = false
+					@.answer3.c2 = false
+					@.answer3.c3 = false
+					@.answer3.c4 = false
+				
 			over: ->
 				@.questionShow = false
 				ugc.init()
@@ -301,7 +311,7 @@ init = ->
 			regame: ->
 				window.location.reload()
 			gobuy: ->
-				window.location.href = "http://www.baidu.com"
+				window.location.href = "https://pro.m.jd.com/mall/active/FhZb3W2CXuZKnkZ2Wy57f8NefsH/index.html"
 			dateText: (date)->
 				console.log date.replace(/-/g,"/")
 				d = new Date date.replace(/-/g,"/")
@@ -380,8 +390,10 @@ init = ->
 		mounted: ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
-			if sys is "NeteaseMusic"
-				@.wy = true
+			setInterval =>
+				@.buyAn = !@.buyAn
+			, 1200
+			@.wy = true if sys is "NeteaseMusic"
 			h = TrueH*2*(2-TrueW*2/750+0.01)
 			# game = new Game({el: "game",h: h})
 			@.wy = CloudMusic.isInApp()

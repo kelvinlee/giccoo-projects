@@ -138,8 +138,13 @@
                     </div>
                   </transition>
                 </div>
-                <div @click="nextQuestion" class="btn-next"><img src="./img/btn-next.png"></div>
               </div>
+            </transition>
+            <transition name="page-fade">
+              <div v-show="questionShow" @click="nextQuestion" class="btn-next"><img src="./img/btn-next.png"></div>
+            </transition>
+            <transition name="page-fade">
+              <div v-show="questionShow &amp;&amp; questionIndex &gt; 0" @click="backQuestion" class="btn-back"><img src="./img/btn-back.png"></div>
             </transition>
             <transition name="page-zoom">
               <div v-show="gameEnd" class="ctrl-box">
@@ -147,7 +152,7 @@
                 <div class="btn-list">
                   <div @click="regame" class="btn"><img :src="'./img/btn-restart-'+(white?'white':'black')+'.png'"></div>
                   <div @click="goshare" class="btn"><img :src="'./img/btn-share-'+(white?'white':'black')+'.png'"></div>
-                  <div @click="gobuy" class="btn"><img :src="'./img/btn-buy-'+(white?'white':'black')+'.png'"></div>
+                  <div @click="gobuy" :class="{tada: buyAn}" class="btn animated"><img :src="'./img/btn-buy-'+(white?'white':'black')+'.png'"></div>
                 </div>
               </div>
             </transition>
