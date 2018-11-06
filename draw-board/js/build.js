@@ -2,6 +2,19 @@ var _CDN = "./";
 // var _CDN = "//image.giccoo.com/projects/painting_mountain/";
 var imageList = [
 	_CDN+"img/p1_bg.jpg",
+	_CDN+"img/p1_btns.png",
+	_CDN+"img/p1_wb.png",
+	_CDN+"img/p1_t.png",
+	_CDN+"img/p1_dot.png",
+	_CDN+"img/p1_dot_on.png",
+	_CDN+"img/step1t.png",
+	_CDN+"img/step2t.png",
+	_CDN+"img/step3t.png",
+	_CDN+"img/tag1.png",
+	_CDN+"img/tag2.png",
+	_CDN+"img/tag3.png",
+	_CDN+"img/pen2.png",
+	_CDN+"img/step2line.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -27,11 +40,52 @@ var buildUGC = function () {
 	
 }
 
-var p1bg
-var page1=new PIXI.Container()
-function getStart(){
-	pStage.addChild(page1)
-	p1bg=new Sprite(getTe(_CDN+"img/p1_bg.jpg"));
-	page1.addChild(p1bg)
 
+function getStart(){
+	
+	setPage1()
+}
+
+var nowStep=1
+function goBack(){
+	if(nowStep==3){
+		goStep2()
+	}
+	if(nowStep==2){
+		goStep1()
+	}
+
+	if(nowStep==1){
+		console.log("回首页")
+		nowStep++
+	}
+	nowStep--
+	setBar()
+}
+
+function goNext(){
+	if(nowStep==1){
+		console.log("第二页")
+		goStep2()
+	}
+	if(nowStep==2){
+		console.log("第三页")
+		goStep3()
+	}
+
+	nowStep++
+	setBar()
+}
+
+function setBar(){
+	var tagA=[stepBar1,stepBar2,stepBar3]
+	for (var i = 0; i < 3; i++) {
+		if(i+1<=nowStep){
+			TweenMax.to(tagA[i],1,{alpha:1})
+		}else{
+			TweenMax.to(tagA[i],1,{alpha:0})
+		}
+		
+		
+	};
 }

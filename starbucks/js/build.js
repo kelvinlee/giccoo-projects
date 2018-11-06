@@ -111,7 +111,12 @@ function setBG(){
 	bgA[3][0].y=750-stageH/2//===月亮
 
 	coffee=	new Sprite(getTe(_CDN+"img/coffee.png"))
-	othersC.addChild(coffee)
+	coffee1=	new Sprite(getTe(_CDN+"img/coffee-1.png"))
+	coffee2=	new Sprite(getTe(_CDN+"img/coffee-2.png"))
+	othersC.addChild(coffee,coffee1,coffee2)
+	coffee.visible=false
+	coffee1.visible=true
+	coffee2.visible=false
 
 	
 	setSnow()
@@ -151,6 +156,22 @@ function q1(_num){
 	}
 	changeBG(_num-1)
 	bgNum=_num-1
+
+	if(_num==1){
+		coffee.visible=false
+		coffee1.visible=true
+		coffee2.visible=false
+	}
+	if(_num==2){
+		coffee.visible=false
+		coffee1.visible=false
+		coffee2.visible=true
+	}
+	if(_num>2){
+		coffee.visible=true
+		coffee1.visible=false
+		coffee2.visible=false
+	}
 
 }
 function q2(_num){
