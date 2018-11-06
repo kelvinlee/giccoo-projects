@@ -10,12 +10,30 @@ var stepBar1,stepBar2,stepBar3
 var btnBack=new PIXI.Graphics()
 var btnNext=new PIXI.Graphics()
 
+var seasonbg1,seasonbg2,seasonbg3,seasonbg4
+var seasonbgC=new PIXI.Container()
+var seasonbgA=[]
+
 function setPage1 () {//======================================第一页
 
 	pStage.addChild(page1)
 	p1bg=new Sprite(getTe(_CDN+"img/p1_bg.jpg"));//===背景
 	p1bg.height=stageH
-	page1.addChild(p1bg,bottomBtnsC,midCanvasC)
+	page1.addChild(p1bg,seasonbgC,bottomBtnsC,midCanvasC)
+
+	seasonbg1=new Sprite(getTe(_CDN+"img/bg1.jpg"));
+	seasonbg2=new Sprite(getTe(_CDN+"img/bg2.jpg"));
+	seasonbg3=new Sprite(getTe(_CDN+"img/bg3.jpg"));
+	seasonbg4=new Sprite(getTe(_CDN+"img/bg4.jpg"));
+
+	seasonbgA=[seasonbg1,seasonbg2,seasonbg3,seasonbg4]
+	for (var i = 0; i < 4; i++) {
+		seasonbgC.addChild(seasonbgA[i])
+		seasonbgA[i].alpha=0
+		seasonbgA[i].height=stageH
+	};
+	seasonbgA[0].alpha=1
+	seasonbgC.alpha=0
 	
 	bottomBtnsPic=new Sprite(getTe(_CDN+"img/p1_btns.png"));
 	
@@ -65,7 +83,7 @@ var p1DotC=new PIXI.Container()
 var step1t,step2t,step3t
 function setStep1(){//========================================================================================第一步
 	pStage.addChild(step1)
-	step1.y=(stageH-133-50-255)/2+133+50-150+50//300高的画布 居中
+	step1.y=(stageH-133-50-255)/2+133+50-150+50-25//300高的画布 居中
 	step1.addChild(p1lineC,p1DotC)
 
 	step1t=new Sprite(getTe(_CDN+"img/step1t.png"));
@@ -81,6 +99,7 @@ function goStep1(){
 	step1.visible=true
 	step2.visible=false
 	step3.visible=false
+	TweenMax.to(seasonbgC,1,{alpha:0})
 }
 var dotA=[]
 var moveDotPic
@@ -95,7 +114,7 @@ function p1setDot(){
 		p1DotC.addChild(_dot)
 		dotA.push(_dot)
 		_dot.x=120+i*400/6
-		_dot.y=50+200*Math.random()
+		_dot.y=50+250*Math.random()
 		if(i==0||i==6){_dot.y=300}
 		_dot.interactive=true
 		_dot.touchstart=selectDot
@@ -185,31 +204,58 @@ function stopMovingDot(){
 
 var step2=new PIXI.Container()
 var step2canvasC=new PIXI.Container()
+var step2bar,step2mover
+var step2barC=new PIXI.Container()
 function setStep2(){//========================================================================================第二步
 	pStage.addChild(step2)
 	step2.y=step1.y
 
 	step2t=new Sprite(getTe(_CDN+"img/step2t.png"));
 	step2t.y=-100
-	step2.addChild(step2t,step2canvasC)
+	step2.addChild(step2t,step2canvasC,step2barC)
 
 	step2.visible=false
 
+	step2bar=new Sprite(getTe(_CDN+"img/step2bar.png"));
+	
+	step2barC.y=300+9+20+12
+
+	step2mover=new Sprite(getTe(_CDN+"img/step2mover.png"));
+	step2mover.pivot.set(23.5,23.5)
+	step2mover.x=456-10//178
+	step2mover.y=9
+	step2barC.addChild(step2bar,step2mover)
+
+	step2mover.interactive=true
+	step2mover.touchstart=startMovingStep2Bar
+}
+function startMovingStep2Bar(_e){
+	pStage.interactive=true
+	pStage.touchmove=movingStep2Bar
+}
+function movingStep2Bar(_e){
+	step2mover.x=_e.data.global.x
+	step2mover.x=clamp(178+10,step2mover.x,456-10)
+	smooth=.75-(step2mover.x-178-10)/(456-10-178-10)*.75
+	setP2Line()
 }
 
 function goStep2(){
 	step1.visible=false
 	step2.visible=true
 	step3.visible=false
-
+	TweenMax.to(seasonbgC,1,{alpha:0})
 	setP2Line()
 	// TweenMax.to(this,2,{smooth:0,repeat:1000,yoyo:true,onUpdate:function(){
 	// 	setP2Line()
 	// }})
 }
-var smooth=.75
+var smooth=0
+
+var finalDotA=[]
 
 function setP2Line(){
+	finalDotA=[]
 	if(step2canvasC.children.length>0){
 		step2canvasC.removeChildren(0,step2canvasC.children.length-1)
 	}
@@ -270,6 +316,8 @@ function setP2Line(){
 			_apic.x=drawBezier(i*1/50,	{x:p0x,y:p0y}	,	{x:p1x,y:p1y}	,	{x:p2x,y:p2y}	,	{x:p3x,y:p3y}).x
 			_apic.y=drawBezier(i*1/50,	{x:p0x,y:p0y}	,	{x:p1x,y:p1y}	,	{x:p2x,y:p3y}	,	{x:p3x,y:p3y}).y
 
+			finalDotA.push(_apic)
+
 			step2canvasC.addChild(_apic)
 			_apic.alpha=Math.random()*.25+.5
 			//_apic.blendMode=_MULTIPLY
@@ -286,19 +334,117 @@ function setP2Line(){
 
 var step3=new PIXI.Container()
 var step3canvasC=new PIXI.Container()
-function setStep3(){//========================================================================================第二步
+var step3bgC=new PIXI.Container()
+var step3color1,step3color2,step3color3,step3color4,step3colorA
+
+var step3colorBarC=new PIXI.Container()
+var colorbtnPicA=[]
+var colorbtnA=[]
+
+var step3btn_t
+
+function setStep3(){//========================================================================================第三步
 	pStage.addChild(step3)
 	step3.y=step1.y
 
 	step3t=new Sprite(getTe(_CDN+"img/step3t.png"));
 	step3t.y=-100-3
-	step3.addChild(step3t,step3canvasC)
+
+	step3btn_t=new Sprite(getTe(_CDN+"img/step3btn_t.png"));
+
+	step3.addChild(step3t,step3canvasC,step3colorBarC,step3btn_t)
+
+	step3btn_t.y=stageH-step3.y-255
 
 	step3.visible=false
+
+	step3canvasC.addChild(step3bgC)
+
+	//step3canvasC.y=-100
+
+	step3color1=new Sprite(getTe(_CDN+"img/color1.png"));
+	step3color2=new Sprite(getTe(_CDN+"img/color2.png"));
+	step3color3=new Sprite(getTe(_CDN+"img/color3.png"));
+	step3color4=new Sprite(getTe(_CDN+"img/color4.png"));
+	step3bgC.addChild(step3color1,step3color2,step3color3,step3color4)
+	step3colorA=[step3color1,step3color2,step3color3,step3color4]
+	step3bgC.x=110
+	step3bgC.y=0
+	step3bgC.width=420
+	step3bgC.height=400
+	console.log("111")
+	
+
+	var colorbtn1=new Sprite(getTe(_CDN+"img/colorbtn1.png"));
+	var colorbtn2=new Sprite(getTe(_CDN+"img/colorbtn2.png"));
+	var colorbtn3=new Sprite(getTe(_CDN+"img/colorbtn3.png"));
+	var colorbtn4=new Sprite(getTe(_CDN+"img/colorbtn4.png"));
+	step3colorBarC.addChild(colorbtn1,colorbtn2,colorbtn3,colorbtn4)
+	colorbtn2.visible=colorbtn3.visible=colorbtn4.visible=false
+
+	colorbtnPicA=[colorbtn1,colorbtn2,colorbtn3,colorbtn4]
+
+	step3colorBarC.y=300
+	for (var i = 0; i < 4; i++) {
+		var _btn=new PIXI.Graphics()
+		_btn.beginFill(0x338866)
+		_btn.drawRect(0,0,56,56)
+		_btn.alpha=0
+		colorbtnA.push(_btn)
+		step3colorBarC.addChild(_btn)
+		_btn.x=165+85*i
+		_btn.interactive=true
+		_btn.tap=changeColor
+	};
+}
+var colorNum=0
+function changeColor(_e){
+	for (var i = 0; i < 4; i++) {
+		if(_e.target==colorbtnA[i]){
+			TweenMax.to(step3colorA[i],1,{alpha:1})
+			TweenMax.to(seasonbgA[i],1,{alpha:1})
+
+			
+			colorbtnPicA[i].visible=true
+			colorNum=i
+		}else{
+			TweenMax.to(step3colorA[i],1,{alpha:0})
+			TweenMax.to(seasonbgA[i],1,{alpha:0})
+			colorbtnPicA[i].visible=false
+		}
+	};
 }
 
 function goStep3(){
 	step1.visible=false
 	step2.visible=false
 	step3.visible=true
+	TweenMax.to(seasonbgC,1,{alpha:1})
+	setShape()
+}
+
+function setShape(){
+	if(step3canvasC.children.length>1){
+		step3canvasC.removeChildAt(1)
+	}
+	
+	var theMask=new PIXI.Graphics()
+	theMask.beginFill(0x889933)
+	var pathA=[110,400]
+
+	for (var i = 0; i < finalDotA.length; i++) {
+		pathA.push(finalDotA[i].x)
+		pathA.push(finalDotA[i].y)
+	};
+
+	pathA.push(530)
+	pathA.push(400)
+
+	theMask.drawPolygon(pathA)
+
+
+	step3canvasC.addChild(theMask)
+	step3bgC.mask=theMask
+	step3bgC.height=theMask.height
+	step3bgC.y=400-theMask.height
 }

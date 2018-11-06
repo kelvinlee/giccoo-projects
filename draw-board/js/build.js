@@ -15,6 +15,23 @@ var imageList = [
 	_CDN+"img/tag3.png",
 	_CDN+"img/pen2.png",
 	_CDN+"img/step2line.png",
+	_CDN+"img/step2bar.png",
+	_CDN+"img/step2mover.png",
+	_CDN+"img/color1.png",
+	_CDN+"img/color2.png",
+	_CDN+"img/color3.png",
+	_CDN+"img/color4.png",
+	_CDN+"img/colorbtn1.png",
+	_CDN+"img/colorbtn2.png",
+	_CDN+"img/colorbtn3.png",
+	_CDN+"img/colorbtn4.png",
+
+	_CDN+"img/step3btn_t.png",
+
+	_CDN+"img/bg1.jpg",
+	_CDN+"img/bg2.jpg",
+	_CDN+"img/bg3.jpg",
+	_CDN+"img/bg4.jpg",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -71,6 +88,10 @@ function goNext(){
 	if(nowStep==2){
 		console.log("第三页")
 		goStep3()
+	}
+	if(nowStep==3){
+		console.log("第三页")
+		main.goNickname()
 	}
 
 	nowStep++
