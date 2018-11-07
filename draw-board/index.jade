@@ -91,7 +91,7 @@ block content
             img(src="#{url}/img/logo-down.png")
 
     transition(name="page-fade")
-      .page.page-2(v-show="pageIndex == 2",:style="{width: w+'px',minHeight: h+'px'}")
+      .page.page-2(v-show="pageIndex == 2",:style="{width: w+'px',minHeight: h+'px'}",:class="{blur: formBoxShow}")
         .content
           //- .logo
             img(src="#{url}/img/logo.png")
@@ -105,6 +105,21 @@ block content
             input(type="text",v-model="nickname",placeholder="请输入您的昵称_")
             .btn-start(@click="goShow")
               img(src="#{url}/img/btn-start.png")
+    transition(name="page-fade")
+      .page.page-cover(v-show="formShow")
+        .content
+          .form-box(:class="{on: formBoxShow}")
+            .btns
+              .btn.btn-form(@click="formBoxShow = !formBoxShow")
+                img(src="#{url}/img/btn-form.png")
+              .btn.btn-share
+                img(src="#{url}/img/btn-share.png")
+            .form-content
+              .mobile
+                input#mobile(type="text",v-model="mobile",placeholder="请输入您的电话，预约试驾_",@focus="focusEvt",@blur="blurEvt")
+                .btn-start(@click="goSubmit")
+                  img(src="#{url}/img/btn-start.png")
+
 
     //- transition(name="page-fade")
     .pop.flashcamera(v-show="ugcShow")
@@ -114,6 +129,7 @@ block content
             img(src="#{url}/img/icon-close.png")
           img(:src="ugc")
           .note 长按保存图片
+
 
 block js
   - url = "/";

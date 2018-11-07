@@ -131,7 +131,7 @@ init = ->
 			noteTime: null
 			noteShow: false
 			pageInfoShow: false
-			pageIndex: 1
+			pageIndex: 2
 			step: 1
 			singerIndex: 1
 			startgame: false
@@ -164,6 +164,7 @@ init = ->
 			mask: 1
 			text: ""
 			nickname: ""
+			mobile: ""
 			musicLink: ""
 			logId: ""
 			openBtnShow: true
@@ -206,20 +207,14 @@ init = ->
 			messageIndex: 1
 			messageInput: false
 			musicName: ""
-			messageList: [
-				"我知道你不是真的想加班<br/>难道就这样抱着遗憾<br/>一直到深夜"
-				"When I'm with you <br/>I know I'm standing with an army"
-				"There is only one thing I need the most<br/>Please make my wish come true<br/>Because all I want for Christmas is you"
-				"年轻人为这季节都很兴奋<br/>用简讯互传圣诞祝福<br/>可我只想花点心思<br/>让你们感到幸福"
-			]
 			white: false
 			gameEnd: false
+			formShow: false
+			formBoxShow: false
 			carIndex: 1
 		watch:
 			carIndex: (n,o)->
 				@.carIndex = 1 if @.carIndex >= 3
-				console.log "@.carIndex:",@.carIndex
-					
 			answer1: (n,o)->
 				console.log "answer1 changed:",n
 				q1(n) if q1?
@@ -260,7 +255,6 @@ init = ->
 				@.noteTime = setTimeout =>
 					@.noteShow = false
 				,2000
-
 			answer3Change: (n,o)->
 				console.log "answer3 changed."
 				q3([@.answer3.c1,@.answer3.c2,@.answer3.c3,@.answer3.c4]) if q3?
@@ -275,7 +269,6 @@ init = ->
 			messageBlur: ->
 				if @.message is ""
 					@.messageInput = false
-
 			messageSelectLeft: ->
 				@.messageIndex--
 				if @.messageIndex <= 1
@@ -384,14 +377,29 @@ init = ->
 			goNext: ->
 				@.pageIndex = 2
 				clearInterval _startCache
+				goFinal1()
 			goShow: ->
 				@.pageIndex = 2
+			goNickname: ->
+				@.pageIndex = 3
+				clearInterval _startCache
+			goSubmit: ->
+			focusEvt: (evt)->
+				# document.getElementById("mobile").scrollIntoViewIfNeeded()
+				console.log "height:",document.body.scrollHeight,evt
+				_startCache = setInterval =>
+					document.body.scrollTop = document.body.scrollHeight
+				,100
+			blurEvt: (evt)->
+				clearInterval _startCache
+
 
 		# watch:
 		mounted: ->
 			_startCache = setInterval =>
 				@.carIndex++
 			,2500
+
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 			if sys is "NeteaseMusic"
@@ -407,6 +415,8 @@ init = ->
 			]
 			window.imageList = window.imageList.concat(imageList2)
 			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => console.log("callback") })
+			# window.onresize = ->
+			# 	console.log "resize:",document.documentElement.clientHeight
 
 				
 			

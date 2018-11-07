@@ -61,7 +61,7 @@
         </div>
       </transition>
       <transition name="page-fade">
-        <div v-show="pageIndex == 2" :style="{width: w+'px',minHeight: h+'px'}" class="page page-2">
+        <div v-show="pageIndex == 2" :style="{width: w+'px',minHeight: h+'px'}" :class="{blur: formBoxShow}" class="page page-2">
           <div class="content">
             <div id="ugc"></div>
           </div>
@@ -74,6 +74,24 @@
             <div class="nickname fadeInDown animated delay-7">
               <input type="text" v-model="nickname" placeholder="请输入您的昵称_">
               <div @click="goShow" class="btn-start"><img src="./img/btn-start.png"></div>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="formShow" class="page page-cover">
+          <div class="content">
+            <div :class="{on: formBoxShow}" class="form-box">
+              <div class="btns">
+                <div @click="formBoxShow = !formBoxShow" class="btn btn-form"><img src="./img/btn-form.png"></div>
+                <div class="btn btn-share"><img src="./img/btn-share.png"></div>
+              </div>
+              <div class="form-content">
+                <div class="mobile">
+                  <input id="mobile" type="text" v-model="mobile" placeholder="请输入您的电话，预约试驾_" @focus="focusEvt" @blur="blurEvt">
+                  <div @click="goSubmit" class="btn-start"><img src="./img/btn-start.png"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

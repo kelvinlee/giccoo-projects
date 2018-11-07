@@ -236,6 +236,28 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/draw-board/img/btn-form.png": {
+		"ft": 32768,
+		"iS": 2314,
+		"oA": 0,
+		"oAP": "/draw-board/img/btn-form.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/btn-share.png": {
+		"ft": 32768,
+		"iS": 2809,
+		"oA": 0,
+		"oAP": "/draw-board/img/btn-share.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/draw-board/img/btn-start.png": {
 		"ft": 32768,
 		"iS": 2169,
@@ -439,6 +461,94 @@
 		"iS": 98977,
 		"oA": 0,
 		"oAP": "/draw-board/img/p1_wb.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/pen2.png": {
+		"ft": 32768,
+		"iS": 867,
+		"oA": 0,
+		"oAP": "/draw-board/img/pen2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/step1t.png": {
+		"ft": 32768,
+		"iS": 11645,
+		"oA": 0,
+		"oAP": "/draw-board/img/step1t.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/step2line.png": {
+		"ft": 32768,
+		"iS": 6866,
+		"oA": 0,
+		"oAP": "/draw-board/img/step2line.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/step2t.png": {
+		"ft": 32768,
+		"iS": 13979,
+		"oA": 0,
+		"oAP": "/draw-board/img/step2t.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/step3t.png": {
+		"ft": 32768,
+		"iS": 15297,
+		"oA": 0,
+		"oAP": "/draw-board/img/step3t.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/tag1.png": {
+		"ft": 32768,
+		"iS": 2234,
+		"oA": 0,
+		"oAP": "/draw-board/img/tag1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/tag2.png": {
+		"ft": 32768,
+		"iS": 4450,
+		"oA": 0,
+		"oAP": "/draw-board/img/tag2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/tag3.png": {
+		"ft": 32768,
+		"iS": 4038,
+		"oA": 0,
+		"oAP": "/draw-board/img/tag3.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

@@ -650,6 +650,10 @@ video,canvas,svg
 	
 .page-2
 	// font-family: "yrd-Bold"
+	+tran
+	&.blur
+		filter: blur(5px)
+	+overhide
 	.content
 	.post-card
 		$titleSize: 0.9rem
@@ -885,32 +889,69 @@ video,canvas,svg
 			background-position: top center
 		.title
 			margin-top: 15%
-		.nickname
-			+bc(#404040)
-			+w(80%)
-			+m
-			+posr
-			margin-top: 2%
-			.btn-start
-				+w(30%)
-				+show-inline
-				margin-left: 70%
-			input
-				+posa
-				+tl
-				+show-inline
-				+w(70%)
-				+h
-				+box
-				+p(0.3em 0.6em)
-				+font-size(0.8rem)
-				+bc(transparent)
-				line-height: 1.4em
-				color: #fff
-				vertical-align: top
-				border: none
-				outline: none
 
+
+.nickname,.mobile
+	+bc(#404040)
+	+w(80%)
+	+m
+	+posr
+	margin-top: 2%
+	+overhide
+	.btn-start
+		+w(30%)
+		+show-inline
+		margin-left: 70%
+	input
+		+posa
+		+tl
+		+show-inline
+		+w(70%)
+		+h
+		+box
+		+p(0.3em 0.6em)
+		+font-size(0.8rem)
+		+bc(transparent)
+		line-height: 1.4em
+		color: #fff
+		vertical-align: top
+		border: none
+		outline: none
+
+
+
+
+.page-cover
+	z-index: 1009
+	.form-box
+		+posa
+		+bl
+		+w
+		margin-bottom: 5%
+		.form-content
+			+hide
+		&.on
+			margin-bottom: 0
+			.form-content
+				+show
+	.btns
+		white-space: nowrap
+		+text-center
+	.btn
+		+w(30%)
+		+show-inline
+		// +box
+		+bc(#fff)
+		+m(0 3%)
+	.btn-form
+		+p(0 10%)
+	.btn-share
+		+bc(#4b738a)
+	.form-content
+		+bc(#fff)
+		+p(1rem 0)
+		.mobile
+			margin-top: 0
 
 .pop
 	+posa
