@@ -486,6 +486,7 @@ function goFinal1(){//=======================================================最
 
 	page2.addChild(p2bg,step3canvasC,p2musicIco,p2carC)
 
+	setResult()
 	setEnd1t()
 
 
@@ -493,17 +494,115 @@ function goFinal1(){//=======================================================最
 
 	//goback()
 }
+//===================================================================================================================End1 随机结果
+var resultNum=0
+var resultTA=[
+[["十里春风，雨水清酒"],["都不如远方山上的你"],[""],["春风十里"]],
+[["踽踽独行，不知疲倦"],["山丘背后，是否还有人等候"],[""],["山丘"]],
+[["群山之间，春风拂面"],["你我一起"],["享受自由，拥抱阳光"],["彩云之巅"]],
+[["高山湖泊森林沙漠"],["我们路过喜怒哀乐"],["坚定走下去，这茫茫旅途"],["旅途"]],
+[["青山白云，蝴蝶清涧"],["漫长的路上我们相聚分离"],[""],["旅行」"]],
+[["穿山越岭并不远"],["每一次思念都是一次试炼"],[""],["思念是一种病」"]],
+[["走一走这天南地北"],["抛下所有的烦恼和疲惫"],[""],["远走高飞"]],
+[["只为矗立在最高的山顶"],["冷艳嘲笑都不重要"],["向前跑"],["追梦赤子心"]],
+[["越过高山踏过江海"],["遥远的地方，总会有一个你"],[""],["我一定会爱上你"]],
+[["走过江河山川，人山人海"],["平凡才是唯一的答案"],["就这样向前走，就这么走"],["平凡之路"]],
+[["深情一片青山白云等你来收"],["这美丽的世界，我已经拥有"],[""],["心升明月"]],
+[["时光流水般带我飘向远方"],["最美还是故乡的山川"],[""],["故乡山川"]],
+]
+function setResult(){
+	resultNum=parseInt(Math.random()*12)
+}
+
+
+//===================================================================================================================End1 文案
 var style1_1=new PIXI.TextStyle({
-	fontSize:21,
-	fill:0x3f4f5c
+	fontSize:25,
+	fill:0x3f4f5c,
+	stroke:"0x3f4f5c",
+	strokeThickness:1
 })
 var style1_2=new PIXI.TextStyle({
-	fontSize:21,
-	fill:0x517990
+	fontSize:25,
+	fill:0x517990,
+	stroke:"0x517990",
+	strokeThickness:1
 })
+
+var style2_1=new PIXI.TextStyle({
+	fontSize:33,
+	fill:0x3f4f5c,
+	stroke:"0x3f4f5c",
+	strokeThickness:1
+})
+var style2_2=new PIXI.TextStyle({
+	fontSize:33,
+	fill:0x517990,
+	stroke:"0x517990",
+	strokeThickness:1
+})
+
+var style3_1=new PIXI.TextStyle({
+	fontSize:38,
+	fill:0x3f4f5c,
+	stroke:"0x3f4f5c",
+	strokeThickness:1
+})
+
+var style4=new PIXI.TextStyle({
+	fontSize:21,
+	fill:0x517990,
+	stroke:"0x517990",
+	strokeThickness:1
+})
+
 var t1_1=new PIXI.Text("属于",style1_1)
 var t1_2=new PIXI.Text("name",style1_2)
+var t1_3=new PIXI.Text("画的山岳",style1_1)
+
+var t2_1=new PIXI.Text("与",style2_1)
+var t2_2=new PIXI.Text("万重山-100KM",style2_2)
+var t2_3=new PIXI.Text("匹配",style2_1)
+
+var t3_1=new PIXI.Text("画山成岳，居然如此动听！",style3_1)
+
+var t4_1=new PIXI.Text("",style4)
+var t4_2=new PIXI.Text("",style4)
+var t4_3=new PIXI.Text("",style4)
+var t4_4=new PIXI.Text("",style4)
+
+var end1t1C=new PIXI.Container()
+var tBar=new PIXI.Graphics()
+
 function setEnd1t(){
+	page2.addChild(end1t1C)
+
+	tBar.beginFill(0x517990)
+	tBar.drawRect(0,0,8,102)
+	tBar.position.set(50,stageH/2-11)
+
+	end1t1C.addChild(t1_1,t1_2,t1_3,t2_1,t2_2,t2_3,t3_1,t4_1,t4_2,t4_3,t4_4,tBar)
+	t1_2.text=main.nickname
+	t2_2.text="「"+resultTA[resultNum][3]+"」"
+	t1_1.position.set(50,stageH/2-405)
+	t1_2.position.set(t1_1.x+t1_1.width+10,stageH/2-405)
+	t1_3.position.set(t1_2.x+t1_2.width+10,stageH/2-405)
+
+	t2_1.position.set(50,stageH/2-367)
+	t2_2.position.set(t2_1.x+t2_1.width,stageH/2-367)
+	t2_3.position.set(t2_2.x+t2_2.width,stageH/2-367)
+
+	t3_1.position.set(50,stageH/2-324)
+
+	t4_1.text=resultTA[resultNum][0]
+	t4_2.text=resultTA[resultNum][1]
+	t4_3.text=resultTA[resultNum][2]
+	t4_4.text="- "+resultTA[resultNum][3]
+
+	t4_1.position.set(64,stageH/2-11)
+	t4_2.position.set(64,stageH/2-11+27*1)
+	t4_3.position.set(64,stageH/2-11+27*2)
+	t4_4.position.set(64,stageH/2-11+27*3)
 
 }
 
