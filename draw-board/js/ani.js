@@ -493,14 +493,14 @@ function goFinal1(){//=======================================================最
 
 	//goback()
 }
-var style1_1=new PIXI.TextStyle{
+var style1_1=new PIXI.TextStyle({
 	fontSize:21,
-	fill:0x3f4f5c,
-}
-var style1_2=new PIXI.TextStyle{
+	fill:0x3f4f5c
+})
+var style1_2=new PIXI.TextStyle({
 	fontSize:21,
-	fill:0x517990,
-}
+	fill:0x517990
+})
 var t1_1=new PIXI.Text("属于",style1_1)
 var t1_2=new PIXI.Text("name",style1_2)
 function setEnd1t(){
