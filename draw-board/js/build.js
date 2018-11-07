@@ -32,6 +32,11 @@ var imageList = [
 	_CDN+"img/bg2.jpg",
 	_CDN+"img/bg3.jpg",
 	_CDN+"img/bg4.jpg",
+
+	_CDN+"img/end1bg.jpg",
+	_CDN+"img/end1music.jpg",
+	_CDN+"img/end1car1.png",
+	_CDN+"img/end1car2.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -61,6 +66,27 @@ var buildUGC = function () {
 function getStart(){
 	
 	setPage1()
+	testMe()
+}
+
+function testMe(){
+	var critical=0//暴击次数
+	var _b=.056//递增几率
+	var _a=_b//初始几率
+	var _n=1
+	for (var i = 0; i < 1000000; i++) {
+		if(Math.random()<_a){
+			_a=_b
+			_n=1
+			critical++
+		}else{
+			//_a+=_b
+			
+			_a=_a*_n
+			_n=_n*2
+		}
+	};
+	console.log("thethe",critical)
 }
 
 var nowStep=1
@@ -78,7 +104,13 @@ function goBack(){
 	}
 	nowStep--
 	setBar()
+	
+	
+
 }
+
+
+
 
 function goNext(){
 	if(nowStep==1){
@@ -92,6 +124,7 @@ function goNext(){
 	if(nowStep==3){
 		console.log("第三页")
 		main.goNickname()
+		//goFinal1()
 	}
 
 	nowStep++

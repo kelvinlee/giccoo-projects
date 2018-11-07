@@ -448,3 +448,71 @@ function setShape(){
 	step3bgC.height=theMask.height
 	step3bgC.y=400-theMask.height
 }
+
+var page2=new PIXI.Container()
+var p2bg,p2musicIco,p2car1,p2car2
+var p2carC=new PIXI.Container()
+
+function goFinal1(){//=======================================================最终第一步
+	page1.visible=false
+	step1.visible=false
+	step2.visible=false
+	step3.visible=false
+
+	pStage.addChild(page2)
+
+	p2bg=new Sprite(getTe(_CDN+"img/end1bg.jpg"));
+	p2bg.height=stageH/971*(971+85)
+	p2bg.y=-85*stageH/971
+
+	p2musicIco=new Sprite(getTe(_CDN+"img/end1music.jpg"));
+	p2musicIco.blendMode=_MULTIPLY
+	p2musicIco.y=stageH/2+99
+
+	p2car1=new Sprite(getTe(_CDN+"img/end1car1.png"));
+	p2car2=new Sprite(getTe(_CDN+"img/end1car2.png"));
+	p2carC.addChild(p2car1,p2car2)
+	if(Math.random()>.5){
+		p2car1.visible=false
+		p2car2.visible=true
+	}else{
+		p2car1.visible=true
+		p2car2.visible=false
+	}
+	p2carC.y=stageH/2+20
+
+	step3canvasC.y=stageH/2+20-275-(400-step3canvasC.height)/2
+	console.log("step3canvasC.height",step3canvasC.height)
+
+	page2.addChild(p2bg,step3canvasC,p2musicIco,p2carC)
+
+	setEnd1t()
+
+
+
+
+	//goback()
+}
+var style1_1=new PIXI.TextStyle{
+	fontSize:21,
+	fill:0x3f4f5c,
+}
+var style1_2=new PIXI.TextStyle{
+	fontSize:21,
+	fill:0x517990,
+}
+var t1_1=new PIXI.Text("属于",style1_1)
+var t1_2=new PIXI.Text("name",style1_2)
+function setEnd1t(){
+
+}
+
+function goback(){
+	step3.visible=true
+	page1.visible=true
+	nowStep=3
+
+	step3.addChild(step3t,step3canvasC,step3colorBarC,step3btn_t)
+	step3canvasC.position.set(0,0)
+
+}

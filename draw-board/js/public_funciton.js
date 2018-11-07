@@ -59,6 +59,8 @@ function drawdash(x0,y0,x1,y1,linewidth){
 }
 
 
+
+
 // var linewidth=5;
 // var tilingSprite = drawdash(100,100,100,400,linewidth);
 // app.stage.addChild(tilingSprite);
