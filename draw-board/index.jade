@@ -117,7 +117,7 @@ block content
                 img(src="#{url}/img/btn-form.png")
               .btn.btn-share(@click="share")
                 img(src="#{url}/img/btn-share.png")
-            .form-content
+            .form-content.fadeIn.animated
               .mobile
                 input#mobile(type="number",v-model="mobile",placeholder="请输入您的电话，预约试驾_",@focus="focusEvt",@blur="blurEvt")
                 .btn-start(@click="goSubmit")
