@@ -46,10 +46,11 @@ block content
     .content#loading(v-show="mounted",style="display: none")
       p.centeralign Loading..{{progress}}%
   
-  .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",style="display: none")
+  .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",:style="{width: w+'px',height: h+'px'}",style="display: none")
     transition(name="page-down")
       .note-message(v-show="noteShow",@click="noteShow = false")
         .note-text {{noteText}}
+
     transition(name="page-fade")
       .loading-page(v-show="loading")
         .ball-spin-fade-loader
@@ -91,11 +92,12 @@ block content
             img(src="#{url}/img/logo-down.png")
 
     transition(name="page-fade")
-      .page.page-2(v-show="pageIndex == 2",:style="{width: w+'px',minHeight: h+'px'}",:class="{blur: formBoxShow}")
+      .page.page-2(v-show="pageIndex == 2",:class="{blur: formBoxShow}")
         .content
           //- .logo
             img(src="#{url}/img/logo.png")
           #ugc
+
     transition(name="page-fade")
       .page.page-3(v-show="pageIndex == 3")
         .content(:class="'index-'+carIndex")
@@ -105,6 +107,7 @@ block content
             input(type="text",v-model="nickname",placeholder="请输入您的昵称_")
             .btn-start(@click="goShow")
               img(src="#{url}/img/btn-start.png")
+
     transition(name="page-fade")
       .page.page-cover(v-show="formShow")
         .content
@@ -112,14 +115,16 @@ block content
             .btns
               .btn.btn-form(@click="formBoxShow = !formBoxShow")
                 img(src="#{url}/img/btn-form.png")
-              .btn.btn-share
+              .btn.btn-share(@click="share")
                 img(src="#{url}/img/btn-share.png")
             .form-content
               .mobile
-                input#mobile(type="text",v-model="mobile",placeholder="请输入您的电话，预约试驾_",@focus="focusEvt",@blur="blurEvt")
+                input#mobile(type="number",v-model="mobile",placeholder="请输入您的电话，预约试驾_",@focus="focusEvt",@blur="blurEvt")
                 .btn-start(@click="goSubmit")
                   img(src="#{url}/img/btn-start.png")
-
+          .btn-web(@click="goWeb")
+            img(src="#{url}/img/btn-web.png")
+          .goNormal(@click="formBoxShow = false")
 
     //- transition(name="page-fade")
     .pop.flashcamera(v-show="ugcShow")

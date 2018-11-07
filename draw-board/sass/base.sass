@@ -923,15 +923,31 @@ video,canvas,svg
 
 .page-cover
 	z-index: 1009
+	// border: solid 1px red
+	// +h(100%)
+	// +w(100%)
+	+box
+	.goNormal
+		+posa
+		+tl
+		+w
+		+h
+		z-index: 2
+	.btn-web
+		+posa
+		+tr(30%,0%)
+		+iw(100,750,100%)
+		z-index: 99
 	.form-box
 		+posa
-		+bl
+		+bl(5%)
 		+w
-		margin-bottom: 5%
+		z-index: 99
+		// margin-bottom: 5%
 		.form-content
 			+hide
 		&.on
-			margin-bottom: 0
+			bottom: 0%
 			.form-content
 				+show
 	.btns
@@ -960,7 +976,7 @@ video,canvas,svg
 	+w
 	+h
 	+bc(rgba(0,0,0,0.7))
-	z-index: 109
+	z-index: 1109
 	&.flashcamera
 		+animation(flashcamera,1s,ease)
 		// animation-delay: 1s

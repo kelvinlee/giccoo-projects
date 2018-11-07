@@ -114,7 +114,9 @@ init = ->
 	TrueH = 1138 if TrueH >= 1138
 	smaller = TrueH*2 < 1200
 	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
-	# console.log TrueW,TrueH
+	TrueH = document.documentElement.clientHeight
+	TrueW = document.documentElement.clientWidth
+	console.log TrueW,TrueH
 
 	main = new Vue
 		el: "#main"
@@ -320,10 +322,11 @@ init = ->
 				@.share()
 
 			share: ->
+				@.formBoxShow = false
 				@.registerShow = false
 				@.lotteryShow = false
 				console.log "run share"
-				ugc.qrcode.visible = true
+				# ugc.qrcode.visible = true
 				ugc.app.renderer.render ugc.app.stage
 				@.ugc = ugc.app.view.toDataURL()
 				image = @.ugc
@@ -349,7 +352,7 @@ init = ->
 				else
 					@.ugcShow = true
 					# ugc.back()
-				ugc.qrcode.visible = false
+				# ugc.qrcode.visible = false
 			success: (data)->
 				@.shareImageLink = data.info
 				@.pushed = false
@@ -379,23 +382,39 @@ init = ->
 				clearInterval _startCache
 
 			goShow: ->
+				return @.send "请输入您的昵称" if @.nickname is ""
 				@.pageIndex = 2
+				@.formShow = true
 				goFinal1()
 			goNickname: ->
-				@.pageIndex = 3
 				clearInterval _startCache
+				@.pageIndex = 3
+				@.carIndex = 1 + parseInt Math.random()*2
 			goSubmit: ->
+				data = {
+					username: @.nickname
+					mobile:   @.mobile
+				}
+				axios.post "#{apiLink}active/autoSave/insert/database/draw/",data
+				.then (msg)=>
+					if msg.data.code is 200
+						@.share()
+					else
+						@.send msg.data.reason
+				.catch (err)=>
+					console.log "err:",err
+					@.send "请求错误,请重试"
 
+			goWeb: ->
+				window.location.href = "http://www.baidu.com/"
 			focusEvt: (evt)->
 				# document.getElementById("mobile").scrollIntoViewIfNeeded()
 				console.log "height:",document.body.scrollHeight,evt
-				_startCache = setInterval =>
-					document.body.scrollTop = document.body.scrollHeight
-				,100
+				# _startCache = setInterval =>
+				# 	document.body.scrollTop = document.body.scrollHeight
+				# ,100
 			blurEvt: (evt)->
 				clearInterval _startCache
-
-
 		# watch:
 		mounted: ->
 			_startCache = setInterval =>
@@ -417,6 +436,7 @@ init = ->
 			]
 			window.imageList = window.imageList.concat(imageList2)
 			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => console.log("callback") })
+			console.log "h:",h
 			# window.onresize = ->
 			# 	console.log "resize:",document.documentElement.clientHeight
 

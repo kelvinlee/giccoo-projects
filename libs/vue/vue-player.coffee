@@ -35,6 +35,7 @@ Vue.component "player",
 		play: ->
 			temp = @$emit 'play', @
 			@playing = true
+			@audio.play()
 		pause: ->
 			temp = @$emit 'pause', @
 			@audio.pause()

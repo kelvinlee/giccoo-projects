@@ -15,7 +15,7 @@
         <p class="centeralign">Loading..{{progress}}%</p>
       </div>
     </div>
-    <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" style="display: none" class="main">
+    <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" style="display: none" class="main">
       <transition name="page-down">
         <div v-show="noteShow" @click="noteShow = false" class="note-message">
           <div class="note-text">{{noteText}}</div>
@@ -61,7 +61,7 @@
         </div>
       </transition>
       <transition name="page-fade">
-        <div v-show="pageIndex == 2" :style="{width: w+'px',minHeight: h+'px'}" :class="{blur: formBoxShow}" class="page page-2">
+        <div v-show="pageIndex == 2" :class="{blur: formBoxShow}" class="page page-2">
           <div class="content">
             <div id="ugc"></div>
           </div>
@@ -84,15 +84,17 @@
             <div :class="{on: formBoxShow}" class="form-box">
               <div class="btns">
                 <div @click="formBoxShow = !formBoxShow" class="btn btn-form"><img src="./img/btn-form.png"></div>
-                <div class="btn btn-share"><img src="./img/btn-share.png"></div>
+                <div @click="share" class="btn btn-share"><img src="./img/btn-share.png"></div>
               </div>
               <div class="form-content">
                 <div class="mobile">
-                  <input id="mobile" type="text" v-model="mobile" placeholder="请输入您的电话，预约试驾_" @focus="focusEvt" @blur="blurEvt">
+                  <input id="mobile" type="number" v-model="mobile" placeholder="请输入您的电话，预约试驾_" @focus="focusEvt" @blur="blurEvt">
                   <div @click="goSubmit" class="btn-start"><img src="./img/btn-start.png"></div>
                 </div>
               </div>
             </div>
+            <div @click="goWeb" class="btn-web"><img src="./img/btn-web.png"></div>
+            <div @click="formBoxShow = false" class="goNormal"></div>
           </div>
         </div>
       </transition>

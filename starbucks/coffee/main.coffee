@@ -222,6 +222,10 @@ init = ->
 				@.white = if n is 3 then false else true
 			answer2: (n,o)->
 				console.log "answer2 changed:",n
+				_public.$children[0].src = "./mp3/m-#{n}.mp3"
+				setTimeout =>
+					_public.$children[0].play()
+				,10
 				q2(n) if q2?
 			"answer3.c1": (n,o)->
 				@.answer3Change n,o

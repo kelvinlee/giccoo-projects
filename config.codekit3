@@ -236,6 +236,50 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/draw-board/img/bg1.jpg": {
+		"ft": 16384,
+		"iS": 149714,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/draw-board/img/bg1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/draw-board/img/bg2.jpg": {
+		"ft": 16384,
+		"iS": 163230,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/draw-board/img/bg2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/draw-board/img/bg3.jpg": {
+		"ft": 16384,
+		"iS": 176811,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/draw-board/img/bg3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/draw-board/img/bg4.jpg": {
+		"ft": 16384,
+		"iS": 164880,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/draw-board/img/bg4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/draw-board/img/btn-form.png": {
 		"ft": 32768,
 		"iS": 2314,
@@ -269,6 +313,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/draw-board/img/btn-web.png": {
+		"ft": 32768,
+		"iS": 4705,
+		"oA": 0,
+		"oAP": "/draw-board/img/btn-web.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/draw-board/img/car-1.jpg": {
 		"ft": 16384,
 		"iS": 51721,
@@ -291,12 +346,144 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/draw-board/img/color1.png": {
+		"ft": 32768,
+		"iS": 222447,
+		"oA": 0,
+		"oAP": "/draw-board/img/color1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/color2.png": {
+		"ft": 32768,
+		"iS": 223428,
+		"oA": 0,
+		"oAP": "/draw-board/img/color2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/color3.png": {
+		"ft": 32768,
+		"iS": 194882,
+		"oA": 0,
+		"oAP": "/draw-board/img/color3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/color4.png": {
+		"ft": 32768,
+		"iS": 185191,
+		"oA": 0,
+		"oAP": "/draw-board/img/color4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/colorbtn1.png": {
+		"ft": 32768,
+		"iS": 7191,
+		"oA": 0,
+		"oAP": "/draw-board/img/colorbtn1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/colorbtn2.png": {
+		"ft": 32768,
+		"iS": 7419,
+		"oA": 0,
+		"oAP": "/draw-board/img/colorbtn2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/colorbtn3.png": {
+		"ft": 32768,
+		"iS": 7396,
+		"oA": 0,
+		"oAP": "/draw-board/img/colorbtn3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/colorbtn4.png": {
+		"ft": 32768,
+		"iS": 7365,
+		"oA": 0,
+		"oAP": "/draw-board/img/colorbtn4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/draw-board/img/cover.jpg": {
 		"ft": 16384,
 		"iS": 73864,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/draw-board/img/cover.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/draw-board/img/end1bg.jpg": {
+		"ft": 16384,
+		"iS": 82007,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/draw-board/img/end1bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/draw-board/img/end1car1.png": {
+		"ft": 32768,
+		"iS": 136526,
+		"oA": 0,
+		"oAP": "/draw-board/img/end1car1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/end1car2.png": {
+		"ft": 32768,
+		"iS": 143872,
+		"oA": 0,
+		"oAP": "/draw-board/img/end1car2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/end1music.jpg": {
+		"ft": 16384,
+		"iS": 6250,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/draw-board/img/end1music.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -365,6 +552,17 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/icon-close.png": {
+		"ft": 32768,
+		"iS": 7831,
+		"oA": 0,
+		"oAP": "/draw-board/img/icon-close.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -489,6 +687,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/draw-board/img/step2bar.png": {
+		"ft": 32768,
+		"iS": 2080,
+		"oA": 0,
+		"oAP": "/draw-board/img/step2bar.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/draw-board/img/step2line.png": {
 		"ft": 32768,
 		"iS": 6866,
@@ -500,11 +709,33 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/draw-board/img/step2mover.png": {
+		"ft": 32768,
+		"iS": 2469,
+		"oA": 0,
+		"oAP": "/draw-board/img/step2mover.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/draw-board/img/step2t.png": {
 		"ft": 32768,
 		"iS": 13979,
 		"oA": 0,
 		"oAP": "/draw-board/img/step2t.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/step3btn_t.png": {
+		"ft": 32768,
+		"iS": 4226,
+		"oA": 0,
+		"oAP": "/draw-board/img/step3btn_t.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6227,6 +6458,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/starbucks/img/icon-play.png": {
+		"ft": 32768,
+		"iS": 3407,
+		"oA": 0,
+		"oAP": "/starbucks/img/icon-play.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/icon-stop.png": {
+		"ft": 32768,
+		"iS": 3243,
+		"oA": 0,
+		"oAP": "/starbucks/img/icon-stop.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/starbucks/img/icon-symbol-1.png": {
 		"ft": 32768,
 		"iS": 17552,
@@ -6562,6 +6815,34 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/starbucks/mp3/bgm.mp3",
+		"oF": 0
+		},
+	"/starbucks/mp3/m-1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/mp3/m-1.mp3",
+		"oF": 0
+		},
+	"/starbucks/mp3/m-2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/mp3/m-2.mp3",
+		"oF": 0
+		},
+	"/starbucks/mp3/m-3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/mp3/m-3.mp3",
+		"oF": 0
+		},
+	"/starbucks/mp3/m-4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/mp3/m-4.mp3",
 		"oF": 0
 		},
 	"/starbucks/sass/base.sass": {
