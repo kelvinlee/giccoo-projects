@@ -377,13 +377,15 @@ init = ->
 			goNext: ->
 				@.pageIndex = 2
 				clearInterval _startCache
-				goFinal1()
+
 			goShow: ->
 				@.pageIndex = 2
+				goFinal1()
 			goNickname: ->
 				@.pageIndex = 3
 				clearInterval _startCache
 			goSubmit: ->
+
 			focusEvt: (evt)->
 				# document.getElementById("mobile").scrollIntoViewIfNeeded()
 				console.log "height:",document.body.scrollHeight,evt

@@ -93,7 +93,7 @@ neteaseShareImage(),shareDone()},
 faild:function e(t){return this.pushed=!1,this.loading=!1},openMusic:function e(t){
 // goList()
 // _public.$children[0].pause()
-return CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/starbucks/")},goNext:function e(){return this.pageIndex=2,clearInterval(_startCache),goFinal1()},goShow:function e(){return this.pageIndex=2},goNickname:function e(){return this.pageIndex=3,clearInterval(_startCache)},goSubmit:function e(){},focusEvt:function e(t){
+return CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/starbucks/")},goNext:function e(){return this.pageIndex=2,clearInterval(_startCache)},goShow:function e(){return this.pageIndex=2,goFinal1()},goNickname:function e(){return this.pageIndex=3,clearInterval(_startCache)},goSubmit:function e(){},focusEvt:function e(t){
 // document.getElementById("mobile").scrollIntoViewIfNeeded()
 return console.log("height:",document.body.scrollHeight,t),_startCache=setInterval(function(){return document.body.scrollTop=document.body.scrollHeight},100)},blurEvt:function e(t){return clearInterval(_startCache)}},
 // watch:
