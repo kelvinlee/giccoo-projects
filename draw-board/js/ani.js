@@ -368,6 +368,7 @@ function setStep3(){//==========================================================
 	step3color4=new Sprite(getTe(_CDN+"img/color4.png"));
 	step3bgC.addChild(step3color1,step3color2,step3color3,step3color4)
 	step3colorA=[step3color1,step3color2,step3color3,step3color4]
+	step3color2.alpha=step3color3.alpha=step3color4.alpha=0
 	step3bgC.x=110
 	step3bgC.y=0
 	step3bgC.width=420
@@ -460,6 +461,7 @@ function goFinal1(){//=======================================================最
 	step3.visible=false
 
 	pStage.addChild(page2)
+	setFinal2()
 
 	p2bg=new Sprite(getTe(_CDN+"img/end1bg.jpg"));
 	p2bg.height=stageH/971*(971+85)
@@ -556,6 +558,8 @@ var style4=new PIXI.TextStyle({
 	strokeThickness:1
 })
 
+
+
 var t1_1=new PIXI.Text("属于",style1_1)
 var t1_2=new PIXI.Text("name",style1_2)
 var t1_3=new PIXI.Text("画的山岳",style1_1)
@@ -604,8 +608,129 @@ function setEnd1t(){
 	t4_3.position.set(64,stageH/2-11+27*2)
 	t4_4.position.set(64,stageH/2-11+27*3)
 
+	//goFinal2()//=====
 }
 
+//=================================================================
+var page3=new PIXI.Container()
+var logo,logo_down,QR
+var end2shanC=new PIXI.Container()
+var end2shanA=[]
+
+var style1_1b=new PIXI.TextStyle({
+	fontSize:25,
+	fill:0x3f4f5c,
+	stroke:"0x3f4f5c",
+	strokeThickness:1
+})
+var style1_2b=new PIXI.TextStyle({
+	fontSize:25,
+	fill:0x517990,
+	stroke:"0x517990",
+	strokeThickness:1
+})
+
+var t1_1b=new PIXI.Text("属于",style1_1b)
+var t1_2b=new PIXI.Text("name",style1_2b)
+var t1_3b=new PIXI.Text("画的山岳",style1_1b)
+
+var t2_1b=new PIXI.Text("与",style1_1b)
+var t2_2b=new PIXI.Text("万重山-100KM",style1_2b)
+var t2_3b=new PIXI.Text("匹配",style1_1b)
+
+var end2t1C=new PIXI.Container()
+
+var endTextC=new PIXI.Container()
+var endTA=[]
+
+
+function setFinal2(){
+	pStage.addChild(page3)
+	page3.visible=false
+	logo=new Sprite(getTe(_CDN+"img/logo.png"));
+	logo_down=new Sprite(getTe(_CDN+"img/logo-down.png"));
+	QR=new Sprite(getTe(_CDN+"img/qr.png"));
+
+	logo_down.y=stageH-136
+	logo_down.x=10
+
+	QR.y=stageH-361
+
+	var shan1=new Sprite(getTe(_CDN+"img/end2shan1.jpg"));
+	var shan2=new Sprite(getTe(_CDN+"img/end2shan2.jpg"));
+	var shan3=new Sprite(getTe(_CDN+"img/end2shan3.jpg"));
+	var shan4=new Sprite(getTe(_CDN+"img/end2shan4.jpg"));
+
+	end2shanA=[shan1,shan2,shan3,shan4]
+	end2shanC.addChild(shan1,shan2,shan3,shan4)
+	end2shanC.y=stageH/2-200
+
+	shan1.blendMode=_MULTIPLY
+	shan2.blendMode=_MULTIPLY
+	shan3.blendMode=_MULTIPLY
+	shan4.blendMode=_MULTIPLY
+
+	
+	//end2shanC.blendMode=_MULTIPLY
+
+	for (var i = 0; i <12; i++) {
+		var j=i+1
+		var _endt=new Sprite(getTe(_CDN+"img/text"+j+".png"));
+		endTA.push(_endt)
+		endTextC.addChild(_endt)
+	};
+
+	t1_2b.text=main.nickname
+	t2_2b.text="「"+resultTA[resultNum][3]+"」"
+	t1_1b.position.set(45,stageH/2*0+971/2-349)
+	t1_2b.position.set(t1_1b.x+t1_1b.width+10,stageH/2*0+971/2-349)
+	t1_3b.position.set(t1_2b.x+t1_2b.width+10,stageH/2*0+971/2-349)
+
+	t2_1b.position.set(45,stageH/2*0+971/2-317)
+	t2_2b.position.set(t2_1b.x+t2_1b.width,stageH/2*0+971/2-317)
+	t2_3b.position.set(t2_2b.x+t2_2b.width,stageH/2*0+971/2-317)
+
+
+	end2t1C.addChild(t1_1b,t1_2b,t1_3b,t2_1b,t2_2b,t2_3b)
+	page3.addChild(logo,logo_down,QR,end2shanC,end2t1C,endTextC)
+
+}
+function goFinal2(){
+	var i
+	for (i = 0; i < 4; i++) {
+		end2shanA[i].blendMode=_MULTIPLY
+		if(i==colorNum){
+			end2shanA[i].visible=true
+		}else{
+			end2shanA[i].visible=false
+		}
+	};
+
+	for (i = 0; i <12; i++) {
+		if(i==resultNum){
+			endTA[i].visible=true
+		}else{
+			endTA[i].visible=false
+		}
+	};
+
+	end1t1C.visible=false
+	page3.visible=true
+	p2bg.y=0
+	step3canvasC.y+=47-50
+	step3canvasC.x-=108+40
+	p2carC.x-=10
+	p2carC.y+=60
+}
+function shareDone(){
+	end1t1C.visible=true
+	page3.visible=false
+	p2bg.y=-85*stageH/971
+	step3canvasC.y-=47-50
+	step3canvasC.x+=108+40
+	p2carC.x+=10
+	p2carC.y-=60
+}
 function goback(){
 	step3.visible=true
 	page1.visible=true
