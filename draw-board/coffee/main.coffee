@@ -322,6 +322,7 @@ init = ->
 				@.share()
 
 			share: ->
+				goFinal2()
 				@.formBoxShow = false
 				@.registerShow = false
 				@.lotteryShow = false
@@ -365,6 +366,9 @@ init = ->
 				# 	setTimeout =>
 				# 		@.getLottery()
 				# 	,5000
+			closeUGC: ->
+				@.ugcShow = false
+				shareDone()
 			faild: (err)->
 				@.pushed = false
 				@.loading = false

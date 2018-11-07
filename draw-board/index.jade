@@ -130,7 +130,7 @@ block content
     .pop.flashcamera(v-show="ugcShow")
       .content
         .small-size
-          .close(@click="ugcShow = false")
+          .close(@click="closeUGC")
             img(src="#{url}/img/icon-close.png")
           img(:src="ugc")
           .note 长按保存图片
