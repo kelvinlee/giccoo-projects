@@ -470,6 +470,6 @@ init = ->
 			]
 			window.imageList = window.imageList.concat(imageList2)
 			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => console.log("callback") })
-			# console.log "h:",h
-			# window.onresize = ->
-			# 	console.log "resize:",document.documentElement.clientHeight
+			# setTimeout =>
+			# 	@.shop 1
+			# ,2000

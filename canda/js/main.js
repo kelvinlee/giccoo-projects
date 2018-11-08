@@ -121,7 +121,7 @@ return TrueH=document.documentElement.clientHeight,TrueW=document.documentElemen
 this.wy=CloudMusic.isInApp(),n=CloudMusic.getClientVersion().split("."),// @.getUserInfo (callback)=>
 // console.log imageList,@.muiscType @.userInfo.styleTop
 // @.ugcType = @.muiscType @.userInfo.styleTop
-i=[],window.imageList=window.imageList.concat(i),ugc=new UGC({el:"ugc",w:640,h:640/TrueW*TrueH,callback:function e(){return console.log("callback")}})}})};// console.log "h:",h
-// window.onresize = ->
-// 	console.log "resize:",document.documentElement.clientHeight
+i=[],window.imageList=window.imageList.concat(i),ugc=new UGC({el:"ugc",w:640,h:640/TrueW*TrueH,callback:function e(){return console.log("callback")}})}})};// setTimeout =>
+// 	@.shop 1
+// ,2000
 //# sourceMappingURL=main.js.map
