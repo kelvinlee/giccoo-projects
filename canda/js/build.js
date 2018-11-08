@@ -128,6 +128,12 @@ function goMain(){
 var item1,item2,item3,item4
 var itemA=[]
 function setItem(_step,_picUrl){
+	if(itemA[_step-1]!=null){
+		itemC.removeChild(itemA[_step-1])
+		itemA.splice(_step-1,1)
+	}
+
+
 	var _item=new Sprite(getTe(_CDN+"img/"+_picUrl));
 	itemC.addChild(_item)
 
@@ -137,7 +143,7 @@ function setItem(_step,_picUrl){
 
 	TweenMax.from(_item.scale,2,{x:0,y:0,ease:Elastic.easeOut})
 
-	itemA.push(_item)
+	itemA[_step-1]=_item
 }
 
 

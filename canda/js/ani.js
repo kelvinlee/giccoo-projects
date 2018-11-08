@@ -81,7 +81,7 @@ function go1(){
 
 function go2(_step,_picUrl){
 	console.log("_step",_step)
-	setItem(_step,_picUrl)
+	//setItem(_step,_picUrl)
 	if(_step==1){
 		TweenMax.to(bigbgC.pivot,3,{x:1851,ease:Sine.easeInOut,onComplete:function(){
 			main.shop(2)
