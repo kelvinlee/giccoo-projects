@@ -227,11 +227,12 @@ init = ->
 					if arrTemp.length <= index
 						arrTemp.push []
 					arrTemp[index].push list[i]
+				console.log "arrTemp:",arrTemp
 				return arrTemp
 
 		watch:
-			carIndex: (n,o)->
-				@.carIndex = 1 if @.carIndex >= 3
+			# carIndex: (n,o)->
+			# 	@.carIndex = 1 if @.carIndex >= 3
 			answer1: (n,o)->
 				console.log "answer1 changed:",n
 				q1(n) if q1?
@@ -443,11 +444,14 @@ init = ->
 				@.shopShow = false
 				go2(@.carIndex,item) if go2?
 			selectItem: (item)->
-				return false if item.on
+				# return false if item.on
 				console.log "item:",item
 				for it in @.items
-					it.on = false
-				item.on = true
+					if item.name == it.name
+						it.on = true
+					else
+						it.on = false
+				# item.on = true
 
 		# watch:
 		mounted: ->
