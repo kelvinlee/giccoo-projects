@@ -35,6 +35,7 @@ var imageList = [
 
 	_CDN+"img/end1bg.jpg",
 	_CDN+"img/end1music.jpg",
+	_CDN+"img/end2music.png",
 	_CDN+"img/end1car1.png",
 	_CDN+"img/end1car2.png",
 
