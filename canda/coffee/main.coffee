@@ -383,10 +383,12 @@ init = ->
 			goNext: ->
 				@.pageIndex = 1
 				@.formBoxShow = false
-
-			goShow: ->
+				@.cache()
+				@.cache = null
+			goShow: (callback)->
 				@.pageIndex = 1
 				@.formBoxShow = true
+				@.cache = callback
 
 			goNickname: ->
 				clearInterval _startCache
