@@ -135,7 +135,13 @@ $pageMainBGColor: #0c101a;
 		opacity: 1
 	100%
 		opacity: 1
-
++keyframes(rotateBG)
+	0%
+		background-size: 100% 100%
+		transform: rotate(0deg) scale(1,1)
+	100%
+		background-size: 110% 110%
+		transform: rotate(10deg) scale(1.4,1.4)
 html,body
 	+w
 	+h
@@ -260,17 +266,37 @@ video,canvas,svg
 	+tl(0,50%)
 	+transform(translate3d(-50%,0,0))
 	// +bc($pageMainBGColor)
-	z-index: 99
+	z-index: 199
 	// 3c080f
 	// +hide
 	// font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
 	// +b($cdn+"img/loading-bg.jpg",no-repeat,center,center,100% 100%)
-	color: #000
+	// +animation(rotateBG,3s,ease,infinite)
+	color: #fff
+	&:after
+		content: " "
+		+b($cdn+"img/loading-bg.jpg",no-repeat,center,center,100% 100%)
+		+animation(rotateBG,8s,ease,infinite)
+		+posa
+		+tl
+		+w
+		+h
+		z-index: 1
+	.box
+		+w
+		+text-center
+
+		.logo
+			+w(30%)
+			+m
+			+show-inline
+			
 	.content
 		+w
 		+text-center
 		+abcentermiddle
 		+font-size(0.8rem)
+		z-index: 10
 	.texts
 		+posa
 		+tl(36%)
@@ -596,301 +622,12 @@ video,canvas,svg
 
 .page-1
 	// +b($cdn+"img/homepage-bg.jpg",no-repeat,center,center,cover)
-	.content
-		.text-1
-			+posa
-			+tl
-			+iw(155,640,100%)
-		.text-2
-			+posa
-			+tl(14%,10%)
-			+iw(216,640,100%)
-		.text-3
-			+posa
-			+tl(-38%,1%)
-			+iw(234,576,100%)
-		.text-4,.text-5,.text-6
-			+posa
-			+tr(25%,3%)
-			+w(50%)
-		.text-5
-			margin-top: 5%
-		.text-6
-			margin-top: 16%
-		.box
-			+posa
-			+tl(43%,6%)
-			+w(88%)
-			.slider
-				+posa
-				+tl(10%,5%)
-				// +transform(translate3d(0,-50%,0))
-				+w(90%)
-				+h(90%)
-				.slide
-					+posr
-					+w
-					+h
-					white-space: nowrap
-					font-size: 0
-					+overhide
-					.item
-						+posa
-						+show-inline
-						&.posa
-							+posa
-							+tl
-
-		.logo-down
-			+posa
-			+bl(3%)
-
-	
-
-	
-.page-2
-	// font-family: "yrd-Bold"
-	z-index: 110
 	+tran
+	z-index: 99
 	&.blur
 		filter: blur(5px)
-	+overhide
-	.content
-	// .post-card
-	// 	$titleSize: 0.9rem
-	// 	$itemSize: 0.85rem
-	// 	+posa
-	// 	+tl(7.5%,(100%-78.9%)/2)
-	// 	// +iw(671,750,100%)
-	// 	+w(78.9%)
-	// 	z-index: 109
-	// 	.btn-next
-	// 		+posa
-	// 		+bl(-25%,33.75%)
-	// 		+iw(217,671,100%)
-	// 	.question-list
-	// 		+w
-	// 		+h
-	// 		+posr
-	// 		font-family: "YRDZST-Heavy"
-	// 		.question
-	// 			+w
-	// 			+h
-	// 			+posa
-	// 			+tl
-	// 			+box
-	// 			+p(7% 15% 7% 9%)
-	// 			&:nth-child(3)
-	// 				+p(12% 15% 7% 9%)
-	// 			&:nth-child(4)
-	// 				+p(12% 15% 7% 9%)
-	// 			&:nth-child(5)
-	// 				+p(18% 15% 7% 7%)
-	// 			&:nth-child(6)
-	// 				+p(4% 13% 7% 7%)
-	// 			.line
-	// 				+show-inline
-	// 				+w(2.5em)
-	// 				border-bottom: solid 2px #000
-	// 				margin-left: 0.2em
-	// 				+h(1.4em)
-	// 			.title
-	// 				color: #000
-	// 				+font-size($titleSize)
-	// 				font-family: "YRDZST-Heavy"
-	// 				line-height: 1.4em
-	// 				margin-bottom: 0.9em
-	// 				&.center
-	// 					+text-center
-	// 			.note
-	// 				+posa
-	// 				+w(96%)
-	// 				+bl(10%,0)
-	// 				+font-size(0.5rem)
-	// 				+text-center
-	// 				margin-top: 1em
-	// 				font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
-	// 			.msg-card
-	// 				+w(90%)
-	// 				+h(1.6em*4)
-	// 				line-height: 1.6em
-	// 				+font-size(0.7rem)
-	// 				+show
-	// 				+m
-	// 				+posr
-	// 				&:after
-	// 					+font-size(0.7rem)
-	// 					content: " "
-	// 					+posa
-	// 					+bl(-0.4rem)
-	// 					+w(100%)
-	// 					+h(0.4rem)
-	// 					+b($cdn+"img/input-line.png",no-repeat,center,center,99%)
-	// 				.slider
-	// 					+overhide
-	// 					+w
-	// 					+h
-	// 				.box
-	// 					+tran(transform,0.2s)
-	// 					+w
-	// 					+h
-	// 					+posr
-	// 					white-space: nowrap
-						
-	// 					&.on-1
-	// 						+transform(translate3d(0,0,0))
-	// 					&.on-2
-	// 						+transform(translate3d(-100%,0,0))
-	// 					&.on-3
-	// 						+transform(translate3d(-200%,0,0))
-	// 					&.on-4
-	// 						+transform(translate3d(-300%,0,0))
-	// 					&.on-5
-	// 						+transform(translate3d(-400%,0,0))
-	// 				.item
-	// 					+posr
-	// 					+w
-	// 					+h
-	// 					+show-inline
-	// 					+text-center
-	// 					font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
-	// 					color: #b1b1b1
-	// 					vertical-align: top
-	// 				.left
-	// 					+w(2rem)
-	// 					+abmiddle
-	// 					margin-left: -1rem
-	// 					z-index: 109
-	// 				.right
-	// 					+w(2rem)
-	// 					+abmiddle
-	// 					margin-right: -1rem
-	// 					left: auto
-	// 					right: 0
-	// 					z-index: 109
-	// 					img
-	// 						+transform(scale(-1,1))
+	
 
-	// 			.answer
-					
-	// 				.item
-	// 					+show-inline
-	// 					+w(49.5%)
-	// 					+box
-	// 					+font-size($itemSize)
-	// 					color: #bb0000
-	// 					line-height: 1.6em
-	// 					padding-left: 1.6em
-	// 					+posr
-	// 					// margin-bottom: 1rem
-	// 					&.check
-	// 						&:before
-	// 							content: " "
-	// 							+posa
-	// 							+tl(.2em,.1em)
-	// 							+wh(1.2em,1.2em)
-	// 							+b($cdn+"img/check.png",no-repeat,center,center,99%)
-	// 							+tran(all,0.2s)
-	// 						&.on
-	// 							&:before
-	// 								+b($cdn+"img/check-selected.png",no-repeat,center,center,99%)
-
-	// 					&.music-icon
-	// 						&:before
-	// 							content: " "
-	// 							+posa
-	// 							+tl(.3em,0)
-	// 							+wh(1em,1em)
-	// 							+b($cdn+"img/icon-m.png",no-repeat,center,center,99%)
-	// 							+tran(all,0.2s)
-	// 						&.on
-	// 							&:before
-	// 								+b($cdn+"img/icon-m.gif",no-repeat,center,center,99%)
-
-	// 					&.radio
-	// 						&:before
-	// 							content: " "
-	// 							+posa
-	// 							+tl(.3em,0)
-	// 							+wh(1em,1em)
-	// 							+b($cdn+"img/radio.png",no-repeat,center,center,cover)
-	// 							+tran(all,0.2s)
-	// 						&.on
-	// 							&:before
-	// 								+b($cdn+"img/radio-selected.png",no-repeat,center,center,cover)
-	// 					&.row
-	// 						+w
-	// 				&.input
-	// 					+posr
-	// 					+w(90%)
-	// 					+m
-	// 					textarea
-	// 						+p
-	// 						+w
-	// 						+font-size(0.7rem)
-	// 						+text-center
-	// 						+bc(transparent)
-	// 						border: none
-	// 						box-shadow: none
-	// 						font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
-	// 						outline: none
-	// 						+h(1.6em*4)
-	// 						line-height: 1.6em
-	// 					input
-	// 						+p
-	// 						+w
-	// 						+font-size(0.7rem)
-	// 						+text-center
-	// 						+bc(transparent)
-	// 						border: none
-	// 						box-shadow: none
-	// 						font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
-	// 						outline: none
-	// 						line-height: 1.6em
-	// 					&:after
-	// 						+font-size(0.7rem)
-	// 						content: " "
-	// 						+posa
-	// 						+bl(-0.4rem)
-	// 						+w(100%)
-	// 						+h(0.4rem)
-	// 						+b($cdn+"img/input-line.png",no-repeat,center,center,99%)
-	// 				&.hidebody
-	// 					+font-size(0.7rem)
-	// 					+w(80%)
-	// 					opacity: 0
-	// 					margin-top: -1.6em*4
-	// 					+posr
-	// 					z-index: 9
-	// .ctrl-box
-	// 	+posa
-	// 	+bl(2%, 5%)
-	// 	+w(50%)
-	// 	z-index: 109
-	// 	.btn-more
-	// 		+w(80%)
-	// 	.btn-list
-	// 		margin-top: 5%
-	// 		+w(80%)
-	// 		+text-center
-	// 		white-space: nowrap
-	// 		.btn
-	// 			+w(30%)
-	// 			+show-inline
-	// 			+m(0 2%)
-
-.page-3
-	+b($cdn+"img/cover.jpg",no-repeat,center,center,cover)
-	z-index: 111
-	.content
-		&.index-1
-			+b($cdn+"img/waitpage-1.jpg",no-repeat,bottom,center,contain)
-		&.index-2
-			+b($cdn+"img/waitpage-2.jpg",no-repeat,bottom,center,contain)
-		.smaller &
-			background-position: top center
-		.title
-			margin-top: 15%
 
 .nickname,.mobile
 	+bc(#404040)
@@ -1069,7 +806,12 @@ video,canvas,svg
 			.btn
 				margin: 2% auto
 
-
+.pop-cover
+	+bc(transparent)
+	z-index: 109
+	.content
+		+abcentermiddle
+		+w(90%)
 
 
 #myDiv

@@ -31,7 +31,6 @@ _runTime = null
 _second = 0
 _testTime = 0
 
-
 neteaseShareImage = ->
 	title1 = "点播圣诞星声"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
@@ -82,10 +81,10 @@ window.onload = ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 
-			@.next() # for test
+			# @.next() # for test
 
 			timein = setInterval =>
-				@.progress += 2
+				@.progress += 3
 				@.progress = @.progressOn if @.progress >= @.progressOn
 				if @.progress >= 100
 					@.progress = 100
@@ -212,7 +211,7 @@ init = ->
 			white: false
 			gameEnd: false
 			formShow: false
-			formBoxShow: false
+			formBoxShow: true
 			carIndex: 1
 		watch:
 			carIndex: (n,o)->
@@ -382,8 +381,8 @@ init = ->
 			openInApp: ->
 				CloudMusic.open("https://m.giccoo.com/canda/")
 			goNext: ->
-				@.pageIndex = 2
-				clearInterval _startCache
+				@.pageIndex = 1
+				@.formBoxShow = false
 
 			goShow: ->
 				return @.send "请输入您的昵称" if @.nickname is ""
@@ -443,7 +442,3 @@ init = ->
 			# console.log "h:",h
 			# window.onresize = ->
 			# 	console.log "resize:",document.documentElement.clientHeight
-
-				
-			
-

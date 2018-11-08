@@ -153,6 +153,39 @@
 		"oAP": "/build/canda/css",
 		"oF": 0
 		},
+	"/canda/img/loading-bg.jpg": {
+		"ft": 16384,
+		"iS": 124585,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/canda/img/loading-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/canda/img/loading-logo.png": {
+		"ft": 32768,
+		"iS": 8722,
+		"oA": 0,
+		"oAP": "/canda/img/loading-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/pop-1.png": {
+		"ft": 32768,
+		"iS": 72749,
+		"oA": 0,
+		"oAP": "/canda/img/pop-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/canda/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -607,6 +640,50 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/draw-board/img/end2shan1.jpg": {
+		"ft": 16384,
+		"iS": 16893,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/draw-board/img/end2shan1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/draw-board/img/end2shan2.jpg": {
+		"ft": 16384,
+		"iS": 14334,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/draw-board/img/end2shan2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/draw-board/img/end2shan3.jpg": {
+		"ft": 16384,
+		"iS": 16869,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/draw-board/img/end2shan3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/draw-board/img/end2shan4.jpg": {
+		"ft": 16384,
+		"iS": 16832,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/draw-board/img/end2shan4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/draw-board/img/homepage-car.png": {
 		"ft": 32768,
 		"iS": 32988,
@@ -794,6 +871,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/draw-board/img/qr.png": {
+		"ft": 32768,
+		"iS": 10570,
+		"oA": 0,
+		"oAP": "/draw-board/img/qr.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/draw-board/img/step1t.png": {
 		"ft": 32768,
 		"iS": 11645,
@@ -898,6 +986,138 @@
 		"iS": 4038,
 		"oA": 0,
 		"oAP": "/draw-board/img/tag3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text1.png": {
+		"ft": 32768,
+		"iS": 50321,
+		"oA": 0,
+		"oAP": "/draw-board/img/text1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text10.png": {
+		"ft": 32768,
+		"iS": 86576,
+		"oA": 0,
+		"oAP": "/draw-board/img/text10.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text11.png": {
+		"ft": 32768,
+		"iS": 86675,
+		"oA": 0,
+		"oAP": "/draw-board/img/text11.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text12.png": {
+		"ft": 32768,
+		"iS": 64609,
+		"oA": 0,
+		"oAP": "/draw-board/img/text12.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text2.png": {
+		"ft": 32768,
+		"iS": 76494,
+		"oA": 0,
+		"oAP": "/draw-board/img/text2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text3.png": {
+		"ft": 32768,
+		"iS": 77428,
+		"oA": 0,
+		"oAP": "/draw-board/img/text3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text4.png": {
+		"ft": 32768,
+		"iS": 101464,
+		"oA": 0,
+		"oAP": "/draw-board/img/text4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text5.png": {
+		"ft": 32768,
+		"iS": 57831,
+		"oA": 0,
+		"oAP": "/draw-board/img/text5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text6.png": {
+		"ft": 32768,
+		"iS": 62797,
+		"oA": 0,
+		"oAP": "/draw-board/img/text6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text7.png": {
+		"ft": 32768,
+		"iS": 60817,
+		"oA": 0,
+		"oAP": "/draw-board/img/text7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text8.png": {
+		"ft": 32768,
+		"iS": 80971,
+		"oA": 0,
+		"oAP": "/draw-board/img/text8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text9.png": {
+		"ft": 32768,
+		"iS": 75148,
+		"oA": 0,
+		"oAP": "/draw-board/img/text9.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6933,6 +7153,34 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/starbucks/mp3/bgm.mp3",
+		"oF": 0
+		},
+	"/starbucks/mp3/m-1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/mp3/m-1.mp3",
+		"oF": 0
+		},
+	"/starbucks/mp3/m-2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/mp3/m-2.mp3",
+		"oF": 0
+		},
+	"/starbucks/mp3/m-3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/mp3/m-3.mp3",
+		"oF": 0
+		},
+	"/starbucks/mp3/m-4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/mp3/m-4.mp3",
 		"oF": 0
 		},
 	"/starbucks/sass/base.sass": {
