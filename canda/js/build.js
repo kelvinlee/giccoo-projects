@@ -1,42 +1,8 @@
 var _CDN = "./";
 // var _CDN = "//image.giccoo.com/projects/painting_mountain/";
 var imageList = [
-	_CDN+"img/p1_bg.jpg",
-	_CDN+"img/p1_btns.png",
-	_CDN+"img/p1_wb.png",
-	_CDN+"img/p1_t.png",
-	_CDN+"img/p1_dot.png",
-	_CDN+"img/p1_dot_on.png",
-	_CDN+"img/step1t.png",
-	_CDN+"img/step2t.png",
-	_CDN+"img/step3t.png",
-	_CDN+"img/tag1.png",
-	_CDN+"img/tag2.png",
-	_CDN+"img/tag3.png",
-	_CDN+"img/pen2.png",
-	_CDN+"img/step2line.png",
-	_CDN+"img/step2bar.png",
-	_CDN+"img/step2mover.png",
-	_CDN+"img/color1.png",
-	_CDN+"img/color2.png",
-	_CDN+"img/color3.png",
-	_CDN+"img/color4.png",
-	_CDN+"img/colorbtn1.png",
-	_CDN+"img/colorbtn2.png",
-	_CDN+"img/colorbtn3.png",
-	_CDN+"img/colorbtn4.png",
+	_CDN+"img/p1bg.jpg",
 
-	_CDN+"img/step3btn_t.png",
-
-	_CDN+"img/bg1.jpg",
-	_CDN+"img/bg2.jpg",
-	_CDN+"img/bg3.jpg",
-	_CDN+"img/bg4.jpg",
-
-	_CDN+"img/end1bg.jpg",
-	_CDN+"img/end1music.jpg",
-	_CDN+"img/end1car1.png",
-	_CDN+"img/end1car2.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -66,80 +32,14 @@ var buildUGC = function () {
 function getStart(){
 	
 	setPage1()
-	testMe()
+
 }
 
-function testMe(){
-	var critical=0//暴击次数
-	var _b=.056//递增几率
-	var _a=_b//初始几率
-	var _n=1
-	for (var i = 0; i < 1000000; i++) {
-		if(Math.random()<_a){
-			_a=_b
-			_n=1
-			critical++
-		}else{
-			//_a+=_b
-			
-			_a=_a*_n
-			_n=_n*2
-		}
-	};
-	console.log("thethe",critical)
-}
-
-var nowStep=1
-function goBack(){
-	if(nowStep==3){
-		goStep2()
-	}
-	if(nowStep==2){
-		goStep1()
-	}
-
-	if(nowStep==1){
-		console.log("回首页")
-		nowStep++
-	}
-	nowStep--
-	setBar()
+var page1=new PIXI.Container()
+var p1bg
+function setPage1(){
+	pStage.addChild(page1)
+	p1bg=new Sprite(getTe(_CDN+"img/p1bg.png"));
 	
-	
-
-}
-
-
-
-
-function goNext(){
-	if(nowStep==1){
-		console.log("第二页")
-		goStep2()
-	}
-	if(nowStep==2){
-		console.log("第三页")
-		goStep3()
-	}
-	if(nowStep==3){
-		console.log("第三页")
-		main.goNickname()
-		//goFinal1()
-	}
-
-	nowStep++
-	setBar()
-}
-
-function setBar(){
-	var tagA=[stepBar1,stepBar2,stepBar3]
-	for (var i = 0; i < 3; i++) {
-		if(i+1<=nowStep){
-			TweenMax.to(tagA[i],1,{alpha:1})
-		}else{
-			TweenMax.to(tagA[i],1,{alpha:0})
-		}
-		
-		
-	};
+	page1.addChild(p1bg)	
 }

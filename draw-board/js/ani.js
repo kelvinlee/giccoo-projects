@@ -643,6 +643,7 @@ var end2t1C=new PIXI.Container()
 var endTextC=new PIXI.Container()
 var endTA=[]
 
+var p2musicIco2
 
 function setFinal2(){
 	pStage.addChild(page3)
@@ -690,9 +691,11 @@ function setFinal2(){
 	t2_2b.position.set(t2_1b.x+t2_1b.width,stageH/2*0+971/2-317)
 	t2_3b.position.set(t2_2b.x+t2_2b.width,stageH/2*0+971/2-317)
 
+	p2musicIco2=new Sprite(getTe(_CDN+"img/end2music.png"));
+	p2musicIco2.y=stageH/2+77
 
 	end2t1C.addChild(t1_1b,t1_2b,t1_3b,t2_1b,t2_2b,t2_3b)
-	page3.addChild(logo,logo_down,QR,end2shanC,end2t1C,endTextC)
+	page3.addChild(logo,logo_down,QR,end2shanC,end2t1C,endTextC,p2musicIco2)
 
 }
 function goFinal2(){
@@ -721,6 +724,7 @@ function goFinal2(){
 	step3canvasC.x-=108+40
 	p2carC.x-=10
 	p2carC.y+=60
+	p2musicIco.visible=false
 }
 function shareDone(){
 	end1t1C.visible=true
@@ -730,6 +734,7 @@ function shareDone(){
 	step3canvasC.x+=108+40
 	p2carC.x+=10
 	p2carC.y-=60
+	p2musicIco.visible=true
 }
 function goback(){
 	step3.visible=true
