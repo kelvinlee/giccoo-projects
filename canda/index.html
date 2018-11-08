@@ -63,7 +63,7 @@
             <slider>
               <template slot-scope="slotProps">
                 <div v-for="(items, i) in listTemp" class="slide">
-                  <div v-for="(item, j) in items" @click="selectItem(item)" :class="{on: item.on}" class="item">
+                  <div v-for="(item, j) in items" @click="selectItem(item,item.type+'-'+(i*4+j+1)+'.png')" :class="{on: item.on}" class="item">
                     <p>{{item.name}}</p><img :src="'./img/'+item.type+'-'+(i*4+j+1)+'.png'">
                     <div class="text"><img :src="'./img/'+item.type+'-text-'+(i*4+j+1)+'.png'"></div>
                     <div class="cover">

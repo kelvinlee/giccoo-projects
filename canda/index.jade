@@ -80,7 +80,7 @@ block content
           slider
             template(slot-scope="slotProps")
               .slide(v-for="(items, i) in listTemp")
-                .item(v-for="(item, j) in items",@click="selectItem(item)",:class="{on: item.on}")
+                .item(v-for="(item, j) in items",@click="selectItem(item,item.type+'-'+(i*4+j+1)+'.png')",:class="{on: item.on}")
                   p {{item.name}}
                   img(:src="'#{url}/img/'+item.type+'-'+(i*4+j+1)+'.png'")
                   .text

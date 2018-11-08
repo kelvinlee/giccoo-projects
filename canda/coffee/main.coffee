@@ -396,8 +396,10 @@ init = ->
 			blurEvt: (evt)->
 				clearInterval _startCache
 			shop: (id)->
+				# console.log @.$children[0].x
 				@.carIndex = id
 				@.shopShow = true
+				@.$children[0].x = 0
 				shopItemsList = [
 					[
 						{type:"clothes",name:"女式撞色工装棉服"}
@@ -439,11 +441,13 @@ init = ->
 					]
 				]
 				@.items = shopItemsList[id-1]
+			musicList: ->
+
 			pickItem: (item)->
 				console.log "pick:",item
 				@.shopShow = false
 				go2(@.carIndex,item) if go2?
-			selectItem: (item)->
+			selectItem: (item,link)->
 				# return false if item.on
 				console.log "item:",item
 				for it in @.items
@@ -451,6 +455,8 @@ init = ->
 						it.on = true
 					else
 						it.on = false
+				@.$forceUpdate()
+				setItem(@.carIndex,link)
 				# item.on = true
 
 		# watch:
