@@ -12,6 +12,50 @@ var imageList = [
 
 	_CDN+"img/p1logo.png",
 
+	_CDN+"img/p1t.png",
+	_CDN+"img/p1hand.png",
+
+	_CDN+"img/bigbg.jpg",
+
+	_CDN+"img/down_bag.png",
+	_CDN+"img/down_bubble.png",
+	_CDN+"img/down_cube.png",
+
+	_CDN+"img/clothes-1.png",
+	_CDN+"img/clothes-2.png",
+	_CDN+"img/clothes-3.png",
+	_CDN+"img/clothes-4.png",
+	_CDN+"img/clothes-5.png",
+	_CDN+"img/clothes-6.png",
+	_CDN+"img/clothes-7.png",
+	_CDN+"img/clothes-8.png",
+	_CDN+"img/clothes-9.png",
+	_CDN+"img/clothes-10.png",
+	_CDN+"img/clothes-11.png",
+	_CDN+"img/clothes-12.png",
+
+	_CDN+"img/pants-1.png",
+	_CDN+"img/pants-2.png",
+	_CDN+"img/pants-3.png",
+	_CDN+"img/pants-4.png",
+	_CDN+"img/pants-5.png",
+	_CDN+"img/pants-6.png",
+
+	_CDN+"img/hats-1.png",
+	_CDN+"img/hats-2.png",
+	_CDN+"img/hats-3.png",
+	_CDN+"img/hats-4.png",
+	_CDN+"img/hats-5.png",
+	_CDN+"img/hats-6.png",
+
+	_CDN+"img/others-1.png",
+	_CDN+"img/others-2.png",
+	_CDN+"img/others-3.png",
+	_CDN+"img/others-4.png",
+	_CDN+"img/others-5.png",
+	_CDN+"img/others-6.png",
+
+
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -49,6 +93,7 @@ var p1bg
 var p1catC=new PIXI.Container()
 var p1boardC=new PIXI.Container()
 var p1logoC=new PIXI.Container()
+var p1hintC=new PIXI.Container()
 function setPage1(){
 	pStage.addChild(page1)
 	p1bg=new Sprite(getTe(_CDN+"img/p1bg.jpg"));
@@ -58,5 +103,41 @@ function setPage1(){
 	setP1cat()
 	setP1board()
 	setLogo()
-	page1.addChild(p1bg,p1catC,p1boardC,p1logoC)	
+	setP1hint()
+	page1.addChild(p1bg,p1catC,p1boardC,p1logoC,p1hintC)	
+
+	page1.interactive=true
+	page1.tap=goMain
+
+	setMain()
 }
+
+function goMain(){
+	page1.interactive=false
+	page1.pivot.set(100,750)
+	page1.position.set(100,750)
+	p1hintC.visible=false
+	TweenMax.to(page1,1,{alpha:0})
+	TweenMax.to(page1.scale,1,{x:6,y:6,onComplete:function(){
+		main.goShow(go1)
+	}})
+	bigbgC.pivot.x=960
+	TweenMax.from(bigbgC.scale,1,{x:.5,y:.5})
+	TweenMax.to(bigbgC.pivot,1,{x:0})
+}
+var item1,item2,item3,item4
+var itemA=[]
+function setItem(_step,_picUrl){
+	var _item=new Sprite(getTe(_CDN+"img/"+_picUrl));
+	itemC.addChild(_item)
+
+	_item.pivot.set(_item.width/2,_item.height/2)
+	_item.position.set(cubeA[_step-1].x,cubeA[_step-1].y)
+	_item.scale.x=_item.scale.y=.33
+
+	TweenMax.from(_item.scale,2,{x:0,y:0,ease:Elastic.easeOut})
+
+	itemA.push(_item)
+}
+
+
