@@ -399,22 +399,49 @@ init = ->
 				@.shopShow = true
 				shopItemsList = [
 					[
-						{type:"clothes",name:"sdfasdfasfd"}
-						{type:"clothes",name:"sdfasdfasfd"}
-						{type:"clothes",name:"sdfasdfasfd"}
-						{type:"clothes",name:"sdfasdfasfd"}
-						{type:"clothes",name:"sdfasdfasfd"}
-						{type:"clothes",name:"sdfasdfasfd"}
+						{type:"clothes",name:"女式撞色工装棉服"}
+						{type:"clothes",name:"男式印花羽绒服"}
+						{type:"clothes",name:"女式撞色羽绒服"}
+						{type:"clothes",name:"男式印花毛衣"}
+						{type:"clothes",name:"女式两穿羽绒服"}
+						{type:"clothes",name:"男式连帽派克大衣"}
+						{type:"clothes",name:"男式印花羽绒服"}
+						{type:"clothes",name:"女式冲锋夹棉外套"}
+						{type:"clothes",name:"女式印花针织衫"}
+						{type:"clothes",name:"男童羽绒服"}
+						{type:"clothes",name:"女婴舒适厚棉"}
+						{type:"clothes",name:"女童连帽斗篷"}
 					]
-					[]
-					[]
-					[]
+					[
+						{type:"pants",name:"男式格子休闲裤"}
+						{type:"pants",name:"女式条纹针织裙"}
+						{type:"pants",name:"男式苏格兰方格裙"}
+						{type:"pants",name:"女式卷边牛仔裤+腰包"}
+						{type:"pants",name:"女式家常碎花秋裤"}
+						{type:"pants",name:"男式拼接牛仔"}
+					]
+					[
+						{type:"hats",name:"女式仿皮草围巾"}
+						{type:"hats",name:"男式保暖毛线帽"}
+						{type:"hats",name:"男式大披肩"}
+						{type:"hats",name:"女式加绒雪地靴"}
+						{type:"hats",name:"开光佛珠手串"}
+						{type:"hats",name:"冬季PM2.5防霾口罩"}
+					]
+					[
+						{type:"others",name:"橘猫"}
+						{type:"others",name:"热咖啡"}
+						{type:"others",name:"暖宝宝"}
+						{type:"others",name:"火锅"}
+						{type:"others",name:"电热毯"}
+						{type:"others",name:"保温杯"}
+					]
 				]
 				@.items = shopItemsList[id-1]
 			pickItem: (item)->
 				console.log "pick:",item
 				@.shopShow = false
-				go2(@.carIndex,item)
+				go2(@.carIndex,item) if go2?
 			selectItem: (item)->
 				return false if item.on
 				console.log "item:",item
@@ -424,9 +451,9 @@ init = ->
 
 		# watch:
 		mounted: ->
-			_startCache = setInterval =>
-				@.carIndex++
-			,2500
+			# _startCache = setInterval =>
+			# 	@.carIndex++
+			# ,2500
 
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
