@@ -132,7 +132,7 @@ init = ->
 			noteTime: null
 			noteShow: false
 			pageInfoShow: false
-			pageIndex: 2
+			pageIndex: 1
 			step: 1
 			singerIndex: 1
 			startgame: false
@@ -211,7 +211,7 @@ init = ->
 			white: false
 			gameEnd: false
 			formShow: false
-			formBoxShow: true
+			formBoxShow: false
 			carIndex: 1
 		watch:
 			carIndex: (n,o)->
@@ -385,10 +385,9 @@ init = ->
 				@.formBoxShow = false
 
 			goShow: ->
-				return @.send "请输入您的昵称" if @.nickname is ""
-				@.pageIndex = 2
-				@.formShow = true
-				goFinal1()
+				@.pageIndex = 1
+				@.formBoxShow = true
+
 			goNickname: ->
 				clearInterval _startCache
 				@.pageIndex = 3
