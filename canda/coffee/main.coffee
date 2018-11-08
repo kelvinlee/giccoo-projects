@@ -2,6 +2,7 @@
 # @codekit-prepend "../../libs/coffee/loadWechatConfig"
 # @codekit-prepend "../../libs/coffee/IsPC"
 # @codekit-prepend "../../libs/vue/vue-player"
+# @codekit-prepend "../../libs/vue/vue-slider"
 # @codekit-prepend "../../libs/coffee/pixi-base"
 # @codekit-prepend "../../libs/coffee/String"
 # @codekit-prepend "./UGC"
@@ -212,7 +213,22 @@ init = ->
 			gameEnd: false
 			formShow: false
 			formBoxShow: false
+			shopShow: false
+			items: []
 			carIndex: 1
+		computed:
+			listTemp: ->
+				list = @.items
+				arrTemp = []
+				index = 0
+				sectionCount = 4
+				for i in [0...list.length]
+					index = parseInt i/sectionCount
+					if arrTemp.length <= index
+						arrTemp.push []
+					arrTemp[index].push list[i]
+				return arrTemp
+
 		watch:
 			carIndex: (n,o)->
 				@.carIndex = 1 if @.carIndex >= 3
@@ -255,47 +271,6 @@ init = ->
 				clearTimeout @.noteTime
 				@.noteTime = setTimeout =>
 					@.noteShow = false
-				,2000
-			answer3Change: (n,o)->
-				console.log "answer3 changed."
-				q3([@.answer3.c1,@.answer3.c2,@.answer3.c3,@.answer3.c4]) if q3?
-			messageShow: ->
-				@.messageInput = true
-				document.getElementById("message").focus()
-				document.getElementById("message").select()
-			messageFoucs: ->
-				if @.message is ""
-					@.messageInput = true
-				console.log "focus"
-			messageBlur: ->
-				if @.message is ""
-					@.messageInput = false
-			messageSelectLeft: ->
-				@.messageIndex--
-				if @.messageIndex <= 1
-					return @.messageIndex = 1
-			messageSelectRight: ->
-				@.messageIndex++
-				if @.messageIndex >= @.messageList.length
-					return @.messageIndex = @.messageList.length
-			nextQuestion: ->
-				if @.questionIndex is 1 and @.answer2 is 0
-					return @.send "请选择一位你的专属 DJ 吧"
-				if @.questionIndex is 2 and !@.answer3.c1 and !@.answer3.c2 and !@.answer3.c3 and !@.answer3.c4
-					return @.send "请选择几种礼物装点一下吧"
-				if @.questionIndex is 3 and @.nickname is ""
-					return @.send "请填写名称（Honey/母亲大人/给自己）"
-				
-
-				if @.questionIndex is 4
-					return @.over()
-
-				@.questionIndex++
-			over: ->
-				@.questionShow = false
-				ugc.init()
-				setTimeout =>
-					@.gameEnd = true
 				,2000
 			regame: ->
 				window.location.reload()
@@ -419,6 +394,34 @@ init = ->
 				# ,100
 			blurEvt: (evt)->
 				clearInterval _startCache
+			shop: (id)->
+				@.carIndex = id
+				@.shopShow = true
+				shopItemsList = [
+					[
+						{type:"clothes",name:"sdfasdfasfd"}
+						{type:"clothes",name:"sdfasdfasfd"}
+						{type:"clothes",name:"sdfasdfasfd"}
+						{type:"clothes",name:"sdfasdfasfd"}
+						{type:"clothes",name:"sdfasdfasfd"}
+						{type:"clothes",name:"sdfasdfasfd"}
+					]
+					[]
+					[]
+					[]
+				]
+				@.items = shopItemsList[id-1]
+			pickItem: (item)->
+				console.log "pick:",item
+				@.shopShow = false
+				go2(@.carIndex,item)
+			selectItem: (item)->
+				return false if item.on
+				console.log "item:",item
+				for it in @.items
+					it.on = false
+				item.on = true
+
 		# watch:
 		mounted: ->
 			_startCache = setInterval =>

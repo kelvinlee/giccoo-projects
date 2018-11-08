@@ -65,7 +65,7 @@ Vue.component "slider",
         touch = evt
       else
         touch = evt.touches[0]
-      
+      @.count = @.slider.childElementCount
       @startTime = +new Date
       @duration = 0
       @moved = true
@@ -80,6 +80,7 @@ Vue.component "slider",
       if @repeat
         @offset.scrollableArea = @offset.w * @.count * 3
       @setSlideNumber 0
+      console.log @slideNumber
     move: (evt)->
       return false unless @moved
       if evt.type is "mousemove"
@@ -95,6 +96,7 @@ Vue.component "slider",
         @x = @offset.deltaX / @offset.resistance + @offset.lastw
         @offset.resistance = if @slideNumber == 0 and @offset.deltaX > 0 then pageX / @offset.w + 1.25 else if @slideNumber == @offset.lastSlide and @offset.deltaX < 0 then (@offset.w - Math.abs(pageX)) / @offset.w + 1.25 else 1
       @moved = true
+
     end: (evt)->
       if @moved and Math.abs(@offset.deltaX) > 5
         oldslideNumber = @slideNumber
@@ -109,6 +111,11 @@ Vue.component "slider",
           @x = 1 * @offset.w
         if @repeat
           @x -= @.count * @offset.w
+        else if @slideNumber == 0
+          @x = 0
+        else
+          console.log @x,@slideNumber
+          @x = - Math.abs @x
         @.autoRun() if @.auto
     autoRun: ->
       @.cache = setTimeout =>
@@ -136,7 +143,7 @@ Vue.component "slider",
   mounted: ->
     @.slider = document.getElementById "slider-"+@.id
     @.count = @.slider.childElementCount
-    # console.log @.$el
+    # console.log "count:",@.count,@.slider,@.slider.childElement,@.slider.childElementCount
     # @setSlideNumber 0
     if @repeat
       @.count = @.count/3

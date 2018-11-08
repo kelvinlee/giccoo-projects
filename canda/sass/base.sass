@@ -626,8 +626,6 @@ video,canvas,svg
 	z-index: 99
 	&.blur
 		filter: blur(5px)
-	
-
 
 .nickname,.mobile
 	+bc(#404040)
@@ -812,6 +810,66 @@ video,canvas,svg
 	.content
 		+abcentermiddle
 		+w(90%)
+
+.pop-items
+	+bc(transparent)
+	z-index: 109
+	.content
+		+posa
+		+tl(5%,5%)
+		+b($cdn+"img/pop-bg.png",no-repeat,center,center,100% 100%)
+		+p(20% 5% 5% 5%)
+		+box
+		+w(90%)
+		min-height: 70%
+		.slider-content
+			+w
+			+overhide
+			.slider
+				// +overhide
+				white-space: nowrap
+			.slide
+				+show-inline
+				+w
+				white-space: normal
+				vertical-align: top
+			+text-center
+			.item
+				vertical-align: top
+				+posr
+				+show-inline
+				+w(40%)
+				+m(0 4%)
+				+p(5%)
+				+box
+				+b($cdn+"img/item-bg.png",no-repeat,center,center,100% 100%)
+				margin-bottom: 15%
+				&.on
+					.cover
+						+show
+				p
+					+text-center
+					+font-size(0.8rem)
+					color: #000
+					+m
+				.text
+					+posa
+					+w(90%)
+					+bl(-25%,5%)
+				.cover
+					+posa
+					+overhide
+					+tl
+					+w
+					+h
+					+hide
+					+b($cdn+"img/item-cover-bg.png",no-repeat,center,center,100% 100%)
+					+animation(fadeIn,0.7s,ease)
+					.text-2,.text-3
+						+posa
+						+tl
+
+
 
 
 #myDiv

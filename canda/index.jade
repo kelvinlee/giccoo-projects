@@ -74,6 +74,35 @@ block content
       .pop.pop-cover(v-show="formBoxShow")
         .content(@click="goNext")
           img(src="#{url}/img/pop-1.png")
+    transition(name="page-zoom")
+      .pop.pop-items(v-show="shopShow")
+        .content
+          slider
+            template(slot-scope="slotProps")
+              .slide(v-for="(items, i) in listTemp")
+                .item(v-for="(item, j) in items",@click="selectItem(item)",:class="{on: item.on}")
+                  p {{item.name}}
+                  img(:src="'#{url}/img/'+item.type+'-'+(i*4+j+1)+'.png'")
+                  .text
+                    img(:src="'#{url}/img/'+item.type+'-text-'+(i*4+j+1)+'.png'")
+                  .cover
+                    .texts
+                      .text-1.fadeInUp.animated.delay-1
+                        img(src="#{url}/img/item-text-1.png")
+                      .text-2.fadeInUp.animated.delay-2
+                        img(src="#{url}/img/item-text-2.png")
+                      .text-3.fadeInUp.animated.delay-3(@click="pickItem(item.type+'-text-'+(i*4+j+1)+'.png')")
+                        img(src="#{url}/img/item-text-3.png")
+
+          //- .sliders(@mousedown="start" @mousemove="move" @mouseup="end" @touchstart="start" @touchmove.passive="move" @touchend="end")
+          //-   .slider
+          //-     .slide(v-for="(items, index) in listTemp")
+          //-       .item(v-for="(item, index) in items")
+          //-         p {{item.name}}
+          //-         img(:src="'#{url}/img/'+item.type+'-'+(index+1)+'.png'")
+          //-         .text
+          //-           img(:src="'#{url}/img/'+item.type+'-text-'+(index+1)+'.png'")
+
 
     //- transition(name="page-fade")
     .pop.flashcamera(v-show="ugcShow")

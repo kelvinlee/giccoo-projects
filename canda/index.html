@@ -50,6 +50,30 @@
           <div @click="goNext" class="content"><img src="./img/pop-1.png"></div>
         </div>
       </transition>
+      <transition name="page-zoom">
+        <div v-show="shopShow" class="pop pop-items">
+          <div class="content">
+            <slider>
+              <template slot-scope="slotProps">
+                <div v-for="(items, i) in listTemp" class="slide">
+                  <div v-for="(item, j) in items" @click="selectItem(item)" :class="{on: item.on}" class="item">
+                    <p>{{item.name}}</p><img :src="'./img/'+item.type+'-'+(i*4+j+1)+'.png'">
+                    <div class="text"><img :src="'./img/'+item.type+'-text-'+(i*4+j+1)+'.png'"></div>
+                    <div class="cover">
+                      <div class="texts">
+                        <div class="text-1 fadeInUp animated delay-1"><img src="./img/item-text-1.png"></div>
+                        <div class="text-2 fadeInUp animated delay-2"><img src="./img/item-text-2.png"></div>
+                        <div @click="pickItem(item.type+'-text-'+(i*4+j+1)+'.png')" class="text-3 fadeInUp animated delay-3"><img src="./img/item-text-3.png"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </slider>
+            
+          </div>
+        </div>
+      </transition>
       <div v-show="ugcShow" class="pop flashcamera">
         <div class="content">
           <div class="small-size">
