@@ -229,9 +229,11 @@ $("#closeBtn").click(function(){
 
 $("#bparrowL").click(function(){
 	picChangeL()
+	showBigPic()
 })
 $("#bparrowR").click(function(){
 	picChangeR()
+	showBigPic()
 })
 //===============
 
