@@ -227,7 +227,12 @@ $("#closeBtn").click(function(){
 	TweenMax.set($("#bigpic"),{display:"none"})
 })
 
-
+$("#bparrowL").click(function(){
+	picChangeL()
+})
+$("#bparrowR").click(function(){
+	picChangeR()
+})
 //===============
 
 function changeL(){
