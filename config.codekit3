@@ -164,6 +164,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/canda/img/bigbg.jpg": {
+		"ft": 16384,
+		"iS": 863567,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/canda/img/bigbg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/canda/img/cat1.png": {
 		"ft": 32768,
 		"iS": 24953,
@@ -447,6 +458,39 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/down_bag.png": {
+		"ft": 32768,
+		"iS": 9148,
+		"oA": 0,
+		"oAP": "/canda/img/down_bag.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/down_bubble.png": {
+		"ft": 32768,
+		"iS": 7597,
+		"oA": 0,
+		"oAP": "/canda/img/down_bubble.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/down_cube.png": {
+		"ft": 32768,
+		"iS": 4443,
+		"oA": 0,
+		"oAP": "/canda/img/down_cube.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
@@ -846,6 +890,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/canda/img/p1hand.png": {
+		"ft": 32768,
+		"iS": 2103,
+		"oA": 0,
+		"oAP": "/canda/img/p1hand.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/canda/img/p1logo.png": {
 		"ft": 32768,
 		"iS": 22720,
@@ -854,6 +909,17 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/p1t.png": {
+		"ft": 32768,
+		"iS": 2823,
+		"oA": 0,
+		"oAP": "/canda/img/p1t.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
@@ -2709,6 +2775,39 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/genki/img/layer_poster2_2.jpg": {
+		"ft": 16384,
+		"iS": 27337,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/layer_poster2_2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/img/layer_poster2_3.jpg": {
+		"ft": 16384,
+		"iS": 19620,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/layer_poster2_3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/img/layer_poster2_4.jpg": {
+		"ft": 16384,
+		"iS": 23083,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/layer_poster2_4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/genki/img/layerbg.png": {
 		"ft": 32768,
 		"iS": 18841,
@@ -2918,6 +3017,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/genki/img/part1pic1aa_end.png": {
+		"ft": 32768,
+		"iS": 52210,
+		"oA": 0,
+		"oAP": "/genki/img/part1pic1aa_end.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/genki/img/part1pic2b.png": {
 		"ft": 32768,
 		"iS": 9446,
@@ -2962,88 +3072,11 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/genki/img/part1title2.png": {
+	"/genki/img/part1title1_end.png": {
 		"ft": 32768,
-		"iS": 18593,
+		"iS": 13207,
 		"oA": 0,
-		"oAP": "/genki/img/part1title2.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/genki/img/part1title2b.png": {
-		"ft": 32768,
-		"iS": 33040,
-		"oA": 0,
-		"oAP": "/genki/img/part1title2b.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/genki/img/part1title2c.png": {
-		"ft": 32768,
-		"iS": 39311,
-		"oA": 0,
-		"oAP": "/genki/img/part1title2c.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/genki/img/part1title2d.png": {
-		"ft": 32768,
-		"iS": 39342,
-		"oA": 0,
-		"oAP": "/genki/img/part1title2d.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/genki/img/part1title2dd.png": {
-		"ft": 32768,
-		"iS": 39349,
-		"oA": 0,
-		"oAP": "/genki/img/part1title2dd.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/genki/img/part1title2e.png": {
-		"ft": 32768,
-		"iS": 40838,
-		"oA": 0,
-		"oAP": "/genki/img/part1title2e.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/genki/img/part1title2f.png": {
-		"ft": 32768,
-		"iS": 30321,
-		"oA": 0,
-		"oAP": "/genki/img/part1title2f.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/genki/img/part2_5.png": {
-		"ft": 32768,
-		"iS": 30702,
-		"oA": 0,
-		"oAP": "/genki/img/part2_5.png",
+		"oAP": "/genki/img/part1title1_end.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -3143,6 +3176,17 @@
 		"iS": 44251,
 		"oA": 0,
 		"oAP": "/genki/img/part4title1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/genki/img/part4title1_end.png": {
+		"ft": 32768,
+		"iS": 38991,
+		"oA": 0,
+		"oAP": "/genki/img/part4title1_end.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -3259,6 +3303,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/genki/img/video_part_bg3_end.png": {
+		"ft": 32768,
+		"iS": 47273,
+		"oA": 0,
+		"oAP": "/genki/img/video_part_bg3_end.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/genki/img/video_poster1.jpg": {
 		"ft": 16384,
 		"iS": 26619,
@@ -3331,6 +3386,39 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/genki/img/video_poster2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/img/video_poster2_2.jpg": {
+		"ft": 16384,
+		"iS": 18128,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/video_poster2_2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/img/video_poster2_3.jpg": {
+		"ft": 16384,
+		"iS": 13846,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/video_poster2_3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/img/video_poster2_4.jpg": {
+		"ft": 16384,
+		"iS": 16112,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/img/video_poster2_4.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -3482,33 +3570,1060 @@
 		"oAP": "/genki/mp3/bgm.mp3",
 		"oF": 0
 		},
-	"/genki/mp3/m1.mp3": {
+	"/genki/mp4/2.mp4": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/genki/mp3/m1.mp3",
+		"oAP": "/genki/mp4/2.mp4",
 		"oF": 0
 		},
-	"/genki/mp3/m2.mp3": {
+	"/genki/mp4/3.mp4": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/genki/mp3/m2.mp3",
+		"oAP": "/genki/mp4/3.mp4",
 		"oF": 0
 		},
-	"/genki/mp3/m3.mp3": {
+	"/genki/mp4/4.mp4": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/genki/mp3/m3.mp3",
+		"oAP": "/genki/mp4/4.mp4",
 		"oF": 0
 		},
-	"/genki/mp3/m4.mp3": {
-		"cB": 0,
-		"ft": 8192,
+	"/genki/pics/1/1.jpg": {
+		"ft": 16384,
+		"iS": 41076,
+		"jF": 0,
 		"oA": 0,
-		"oAP": "/genki/mp3/m4.mp3",
-		"oF": 0
+		"oAP": "/genki/pics/1/1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/10.jpg": {
+		"ft": 16384,
+		"iS": 34777,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/10.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/11.jpg": {
+		"ft": 16384,
+		"iS": 22007,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/11.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/12.jpg": {
+		"ft": 16384,
+		"iS": 33485,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/12.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/13.jpg": {
+		"ft": 16384,
+		"iS": 21918,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/13.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/14.jpg": {
+		"ft": 16384,
+		"iS": 13592,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/14.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/15.jpg": {
+		"ft": 16384,
+		"iS": 20606,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/15.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/16.jpg": {
+		"ft": 16384,
+		"iS": 19208,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/16.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/17.jpg": {
+		"ft": 16384,
+		"iS": 20347,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/17.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/18.jpg": {
+		"ft": 16384,
+		"iS": 15825,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/18.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/19.jpg": {
+		"ft": 16384,
+		"iS": 20592,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/19.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/2.jpg": {
+		"ft": 16384,
+		"iS": 26624,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/20.jpg": {
+		"ft": 16384,
+		"iS": 17326,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/20.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/21.jpg": {
+		"ft": 16384,
+		"iS": 19064,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/21.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/22.jpg": {
+		"ft": 16384,
+		"iS": 25684,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/22.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/23.jpg": {
+		"ft": 16384,
+		"iS": 19079,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/23.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/24.jpg": {
+		"ft": 16384,
+		"iS": 23716,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/24.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/25.jpg": {
+		"ft": 16384,
+		"iS": 15367,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/25.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/26.jpg": {
+		"ft": 16384,
+		"iS": 15274,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/26.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/27.jpg": {
+		"ft": 16384,
+		"iS": 21680,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/27.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/28.jpg": {
+		"ft": 16384,
+		"iS": 32881,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/28.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/29.jpg": {
+		"ft": 16384,
+		"iS": 38280,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/29.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/3.jpg": {
+		"ft": 16384,
+		"iS": 18076,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/30.jpg": {
+		"ft": 16384,
+		"iS": 19981,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/30.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/31.jpg": {
+		"ft": 16384,
+		"iS": 24243,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/31.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/32.jpg": {
+		"ft": 16384,
+		"iS": 23255,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/32.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/33.jpg": {
+		"ft": 16384,
+		"iS": 24823,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/33.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/34.jpg": {
+		"ft": 16384,
+		"iS": 26157,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/34.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/35.jpg": {
+		"ft": 16384,
+		"iS": 22236,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/35.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/36.jpg": {
+		"ft": 16384,
+		"iS": 35849,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/36.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/37.jpg": {
+		"ft": 16384,
+		"iS": 19741,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/37.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/38.jpg": {
+		"ft": 16384,
+		"iS": 30690,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/38.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/39.jpg": {
+		"ft": 16384,
+		"iS": 27124,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/39.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/4.jpg": {
+		"ft": 16384,
+		"iS": 13291,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/40.jpg": {
+		"ft": 16384,
+		"iS": 24152,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/40.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/41.jpg": {
+		"ft": 16384,
+		"iS": 33078,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/41.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/42.jpg": {
+		"ft": 16384,
+		"iS": 20366,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/42.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/43.jpg": {
+		"ft": 16384,
+		"iS": 24802,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/43.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/44.jpg": {
+		"ft": 16384,
+		"iS": 17220,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/44.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/45.jpg": {
+		"ft": 16384,
+		"iS": 28277,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/45.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/46.jpg": {
+		"ft": 16384,
+		"iS": 26776,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/46.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/47.jpg": {
+		"ft": 16384,
+		"iS": 33327,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/47.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/5.jpg": {
+		"ft": 16384,
+		"iS": 14762,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/5.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/6.jpg": {
+		"ft": 16384,
+		"iS": 25933,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/6.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/7.jpg": {
+		"ft": 16384,
+		"iS": 27526,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/7.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/8.jpg": {
+		"ft": 16384,
+		"iS": 37053,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/8.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/9.jpg": {
+		"ft": 16384,
+		"iS": 38786,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/9.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/1.jpg": {
+		"ft": 16384,
+		"iS": 90229,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/10.jpg": {
+		"ft": 16384,
+		"iS": 70477,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/10.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/11.jpg": {
+		"ft": 16384,
+		"iS": 42450,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/11.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/12.jpg": {
+		"ft": 16384,
+		"iS": 66990,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/12.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/13.jpg": {
+		"ft": 16384,
+		"iS": 46246,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/13.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/14.jpg": {
+		"ft": 16384,
+		"iS": 24211,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/14.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/15.jpg": {
+		"ft": 16384,
+		"iS": 42704,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/15.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/16.jpg": {
+		"ft": 16384,
+		"iS": 34474,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/16.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/17.jpg": {
+		"ft": 16384,
+		"iS": 37661,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/17.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/18.jpg": {
+		"ft": 16384,
+		"iS": 28273,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/18.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/19.jpg": {
+		"ft": 16384,
+		"iS": 38945,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/19.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/2.jpg": {
+		"ft": 16384,
+		"iS": 51844,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/20.jpg": {
+		"ft": 16384,
+		"iS": 30967,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/20.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/21.jpg": {
+		"ft": 16384,
+		"iS": 35490,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/21.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/22.jpg": {
+		"ft": 16384,
+		"iS": 51265,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/22.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/23.jpg": {
+		"ft": 16384,
+		"iS": 36997,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/23.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/24.jpg": {
+		"ft": 16384,
+		"iS": 48132,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/24.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/25.jpg": {
+		"ft": 16384,
+		"iS": 28677,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/25.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/26.jpg": {
+		"ft": 16384,
+		"iS": 28280,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/26.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/27.jpg": {
+		"ft": 16384,
+		"iS": 39394,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/27.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/28.jpg": {
+		"ft": 16384,
+		"iS": 67693,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/28.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/29.jpg": {
+		"ft": 16384,
+		"iS": 78281,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/29.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/3.jpg": {
+		"ft": 16384,
+		"iS": 35108,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/30.jpg": {
+		"ft": 16384,
+		"iS": 38765,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/30.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/31.jpg": {
+		"ft": 16384,
+		"iS": 47902,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/31.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/32.jpg": {
+		"ft": 16384,
+		"iS": 42456,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/32.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/33.jpg": {
+		"ft": 16384,
+		"iS": 46582,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/33.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/34.jpg": {
+		"ft": 16384,
+		"iS": 50962,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/34.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/35.jpg": {
+		"ft": 16384,
+		"iS": 39064,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/35.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/36.jpg": {
+		"ft": 16384,
+		"iS": 81896,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/36.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/37.jpg": {
+		"ft": 16384,
+		"iS": 39658,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/37.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/38.jpg": {
+		"ft": 16384,
+		"iS": 62220,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/38.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/39.jpg": {
+		"ft": 16384,
+		"iS": 57304,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/39.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/4.jpg": {
+		"ft": 16384,
+		"iS": 26740,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/40.jpg": {
+		"ft": 16384,
+		"iS": 45181,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/40.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/41.jpg": {
+		"ft": 16384,
+		"iS": 66861,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/41.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/42.jpg": {
+		"ft": 16384,
+		"iS": 37596,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/42.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/43.jpg": {
+		"ft": 16384,
+		"iS": 48111,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/43.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/44.jpg": {
+		"ft": 16384,
+		"iS": 33858,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/44.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/45.jpg": {
+		"ft": 16384,
+		"iS": 55859,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/45.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/46.jpg": {
+		"ft": 16384,
+		"iS": 52352,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/46.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/47.jpg": {
+		"ft": 16384,
+		"iS": 67380,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/47.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/5.jpg": {
+		"ft": 16384,
+		"iS": 29171,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/5.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/6.jpg": {
+		"ft": 16384,
+		"iS": 52789,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/6.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/7.jpg": {
+		"ft": 16384,
+		"iS": 51766,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/7.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/8.jpg": {
+		"ft": 16384,
+		"iS": 69226,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/8.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/genki/pics/1/b/9.jpg": {
+		"ft": 16384,
+		"iS": 78893,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/genki/pics/1/b/9.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"/Gmovie": {
 		"ft": 65536,
@@ -3664,6 +4779,12 @@
 		"ft": 65536,
 		"oA": 1,
 		"oAP": "/build/huxiu_ministation",
+		"oF": 0
+		},
+	"/hyatt/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/hyatt/css",
 		"oF": 0
 		},
 	"/hyatt/img/tag7picb.png": {
@@ -4507,7 +5628,7 @@
 		},
 	"/mazda/img/end1bg.png": {
 		"ft": 32768,
-		"iS": 12126,
+		"iS": 47828,
 		"oA": 0,
 		"oAP": "/mazda/img/end1bg.png",
 		"oF": 0,
@@ -4529,7 +5650,7 @@
 		},
 	"/mazda/img/end1btn.png": {
 		"ft": 32768,
-		"iS": 4810,
+		"iS": 11278,
 		"oA": 0,
 		"oAP": "/mazda/img/end1btn.png",
 		"oF": 0,
@@ -4540,7 +5661,7 @@
 		},
 	"/mazda/img/end1car.png": {
 		"ft": 32768,
-		"iS": 40182,
+		"iS": 170097,
 		"oA": 0,
 		"oAP": "/mazda/img/end1car.png",
 		"oF": 0,
@@ -4551,7 +5672,7 @@
 		},
 	"/mazda/img/end1hand.png": {
 		"ft": 32768,
-		"iS": 1586,
+		"iS": 10230,
 		"oA": 0,
 		"oAP": "/mazda/img/end1hand.png",
 		"oF": 0,
@@ -4562,7 +5683,7 @@
 		},
 	"/mazda/img/end1head.png": {
 		"ft": 32768,
-		"iS": 2910,
+		"iS": 10230,
 		"oA": 0,
 		"oAP": "/mazda/img/end1head.png",
 		"oF": 0,
@@ -4573,7 +5694,7 @@
 		},
 	"/mazda/img/end1m1.png": {
 		"ft": 32768,
-		"iS": 1809,
+		"iS": 10752,
 		"oA": 0,
 		"oAP": "/mazda/img/end1m1.png",
 		"oF": 0,
@@ -4584,7 +5705,7 @@
 		},
 	"/mazda/img/end1m2.png": {
 		"ft": 32768,
-		"iS": 2112,
+		"iS": 11296,
 		"oA": 0,
 		"oAP": "/mazda/img/end1m2.png",
 		"oF": 0,
@@ -4595,7 +5716,7 @@
 		},
 	"/mazda/img/end1m3.png": {
 		"ft": 32768,
-		"iS": 1934,
+		"iS": 10896,
 		"oA": 0,
 		"oAP": "/mazda/img/end1m3.png",
 		"oF": 0,
@@ -4606,7 +5727,7 @@
 		},
 	"/mazda/img/end1man.png": {
 		"ft": 32768,
-		"iS": 8646,
+		"iS": 35086,
 		"oA": 0,
 		"oAP": "/mazda/img/end1man.png",
 		"oF": 0,
@@ -4617,7 +5738,7 @@
 		},
 	"/mazda/img/end1t1.png": {
 		"ft": 32768,
-		"iS": 2427,
+		"iS": 13808,
 		"oA": 0,
 		"oAP": "/mazda/img/end1t1.png",
 		"oF": 0,
@@ -4628,7 +5749,7 @@
 		},
 	"/mazda/img/end1t2.png": {
 		"ft": 32768,
-		"iS": 3106,
+		"iS": 15341,
 		"oA": 0,
 		"oAP": "/mazda/img/end1t2.png",
 		"oF": 0,
@@ -4639,7 +5760,7 @@
 		},
 	"/mazda/img/end1t3.png": {
 		"ft": 32768,
-		"iS": 2687,
+		"iS": 14222,
 		"oA": 0,
 		"oAP": "/mazda/img/end1t3.png",
 		"oF": 0,
@@ -4650,7 +5771,7 @@
 		},
 	"/mazda/img/end1t4.png": {
 		"ft": 32768,
-		"iS": 1592,
+		"iS": 11885,
 		"oA": 0,
 		"oAP": "/mazda/img/end1t4.png",
 		"oF": 0,
@@ -4661,7 +5782,7 @@
 		},
 	"/mazda/img/end1t5.png": {
 		"ft": 32768,
-		"iS": 3038,
+		"iS": 15100,
 		"oA": 0,
 		"oAP": "/mazda/img/end1t5.png",
 		"oF": 0,
@@ -4672,7 +5793,7 @@
 		},
 	"/mazda/img/end2a-bg.png": {
 		"ft": 32768,
-		"iS": 23322,
+		"iS": 88159,
 		"oA": 0,
 		"oAP": "/mazda/img/end2a-bg.png",
 		"oF": 0,
@@ -4694,7 +5815,7 @@
 		},
 	"/mazda/img/end2b-bg.png": {
 		"ft": 32768,
-		"iS": 70267,
+		"iS": 169870,
 		"oA": 0,
 		"oAP": "/mazda/img/end2b-bg.png",
 		"oF": 0,
@@ -4727,7 +5848,7 @@
 		},
 	"/mazda/img/endingcar.png": {
 		"ft": 32768,
-		"iS": 10868,
+		"iS": 37552,
 		"oA": 0,
 		"oAP": "/mazda/img/endingcar.png",
 		"oF": 0,
@@ -4804,7 +5925,7 @@
 		},
 	"/mazda/img/p1a.png": {
 		"ft": 32768,
-		"iS": 24162,
+		"iS": 87259,
 		"oA": 0,
 		"oAP": "/mazda/img/p1a.png",
 		"oF": 0,
@@ -4914,7 +6035,7 @@
 		},
 	"/mazda/img/p3bird1.png": {
 		"ft": 32768,
-		"iS": 3160,
+		"iS": 12339,
 		"oA": 0,
 		"oAP": "/mazda/img/p3bird1.png",
 		"oF": 0,
@@ -4925,7 +6046,7 @@
 		},
 	"/mazda/img/p3bird2.png": {
 		"ft": 32768,
-		"iS": 3273,
+		"iS": 12471,
 		"oA": 0,
 		"oAP": "/mazda/img/p3bird2.png",
 		"oF": 0,
@@ -4936,7 +6057,7 @@
 		},
 	"/mazda/img/p3bird3.png": {
 		"ft": 32768,
-		"iS": 3185,
+		"iS": 12389,
 		"oA": 0,
 		"oAP": "/mazda/img/p3bird3.png",
 		"oF": 0,
@@ -5035,7 +6156,7 @@
 		},
 	"/mazda/img/p4bird.png": {
 		"ft": 32768,
-		"iS": 8195,
+		"iS": 33463,
 		"oA": 0,
 		"oAP": "/mazda/img/p4bird.png",
 		"oF": 0,
@@ -5046,7 +6167,7 @@
 		},
 	"/mazda/img/p4boy.png": {
 		"ft": 32768,
-		"iS": 6959,
+		"iS": 25332,
 		"oA": 0,
 		"oAP": "/mazda/img/p4boy.png",
 		"oF": 0,
@@ -5057,7 +6178,7 @@
 		},
 	"/mazda/img/p4boy1.png": {
 		"ft": 32768,
-		"iS": 6701,
+		"iS": 24012,
 		"oA": 0,
 		"oAP": "/mazda/img/p4boy1.png",
 		"oF": 0,
@@ -5068,7 +6189,7 @@
 		},
 	"/mazda/img/p4boy2.png": {
 		"ft": 32768,
-		"iS": 6807,
+		"iS": 21833,
 		"oA": 0,
 		"oAP": "/mazda/img/p4boy2.png",
 		"oF": 0,
@@ -5079,7 +6200,7 @@
 		},
 	"/mazda/img/p4boyb.png": {
 		"ft": 32768,
-		"iS": 701,
+		"iS": 6260,
 		"oA": 0,
 		"oAP": "/mazda/img/p4boyb.png",
 		"oF": 0,
@@ -5090,7 +6211,7 @@
 		},
 	"/mazda/img/p4boyhand.png": {
 		"ft": 32768,
-		"iS": 1150,
+		"iS": 6933,
 		"oA": 0,
 		"oAP": "/mazda/img/p4boyhand.png",
 		"oF": 0,
@@ -5101,7 +6222,7 @@
 		},
 	"/mazda/img/p4light.png": {
 		"ft": 32768,
-		"iS": 2168,
+		"iS": 8347,
 		"oA": 0,
 		"oAP": "/mazda/img/p4light.png",
 		"oF": 0,
@@ -5112,7 +6233,7 @@
 		},
 	"/mazda/img/p4table.png": {
 		"ft": 32768,
-		"iS": 3603,
+		"iS": 11423,
 		"oA": 0,
 		"oAP": "/mazda/img/p4table.png",
 		"oF": 0,
@@ -5123,7 +6244,7 @@
 		},
 	"/mazda/img/p5btn.png": {
 		"ft": 32768,
-		"iS": 4333,
+		"iS": 11860,
 		"oA": 0,
 		"oAP": "/mazda/img/p5btn.png",
 		"oF": 0,
@@ -5134,7 +6255,7 @@
 		},
 	"/mazda/img/p5pic.png": {
 		"ft": 32768,
-		"iS": 20662,
+		"iS": 76051,
 		"oA": 0,
 		"oAP": "/mazda/img/p5pic.png",
 		"oF": 0,
@@ -5145,7 +6266,7 @@
 		},
 	"/mazda/img/p5t1.png": {
 		"ft": 32768,
-		"iS": 2070,
+		"iS": 13264,
 		"oA": 0,
 		"oAP": "/mazda/img/p5t1.png",
 		"oF": 0,
@@ -5156,7 +6277,7 @@
 		},
 	"/mazda/img/p5t2.png": {
 		"ft": 32768,
-		"iS": 2376,
+		"iS": 13701,
 		"oA": 0,
 		"oAP": "/mazda/img/p5t2.png",
 		"oF": 0,
@@ -5376,7 +6497,7 @@
 		},
 	"/mazda/img/wheel1.png": {
 		"ft": 32768,
-		"iS": 3985,
+		"iS": 14433,
 		"oA": 0,
 		"oAP": "/mazda/img/wheel1.png",
 		"oF": 0,
