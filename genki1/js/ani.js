@@ -114,7 +114,7 @@ var nowPoster=0
 
 function setVideoPart(){//====三图
 	videoPart.y=528+107-300
-	videoPart.addChild(videoPartBG,videoBtnL,videoBtnR,poster1live,poster2live,poster1,poster2)
+	videoPart.addChild(videoPartBG,videoBtnL,videoBtnR,poster1live,poster2live,poster1,poster2,poster3,poster4)
 	videoBtnL.position.set(22,737)//737+607-300+50
 	videoBtnR.position.set(576,737)
 
