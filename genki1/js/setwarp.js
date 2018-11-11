@@ -15,8 +15,10 @@ var userLikeStyle={
 		align: 'right',
 	}
 var messageA=[]
-var nowHeight=1100+155
-function message(_text,_song,_like,_liked,_id){
+var nowHeight=1100//+155
+function message(_text,_song,_like,_liked,_id,_ifhide){
+
+
 	_song=""
 	var a_message=new PIXI.Container()
 	var messageBG=new PIXI.Graphics()
@@ -38,7 +40,10 @@ function message(_text,_song,_like,_liked,_id){
 	messageArrow.x=3
 	part4.addChild(a_message)
 
+	if(_ifhide==false){////////////////////////删除用
+		a_message.visible=false
 
+	}
 	
 
 
@@ -60,7 +65,12 @@ function message(_text,_song,_like,_liked,_id){
 	userLikeT.x=570-userLikeT.width/2-20
 	
 	a_message.y=nowHeight//============改位置
-	nowHeight+=userT.height+130-40
+	if(_ifhide==false){
+
+	}else{
+		nowHeight+=userT.height+130-40
+	}
+	
 
 	if(_liked==true){
 		btnLike.visible=false//如果liked了 visible=false 
