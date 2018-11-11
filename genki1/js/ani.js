@@ -217,6 +217,10 @@ function changePic(){
 
 function showBigPic(){
 	console.log("showBig")
+	TweenMax.set($("#bigpic"),{display:"block"})
+	var j=nowPic+1
+	var str1="<img src='//image.giccoo.com/projects/genki/pics/1/b/"+j+".jpg' width='100%'>"
+	document.getElementById("bigpicC").innerHTML=str1
 }
 
 $("#closeBtn").click(function(){
