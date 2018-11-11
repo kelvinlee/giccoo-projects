@@ -202,7 +202,7 @@ function showVideo2(){
 	console.log("video2")
 	//
 	stopAllSound()
-	openVideo("//image.giccoo.com/projects/genki/mp4/2.mp4","//image.giccoo.com/projects/genki/img/layer_poster2_1.jpg")
+	openVideo("//image.giccoo.com/projects/genki/mp4/2.mp4","//image.giccoo.com/projects/genki/img/layer_poster2_2.jpg")
 }
 
 function showVideo3(){
