@@ -195,7 +195,7 @@ function picChangeR(){
 }
 function changePic(){
 	console.log("nowPic",nowPic)
-	for (var i = 0; i < picCA; i++) {
+	for (var i = 0; i < picCA.length; i++) {
 		if(i==nowPic){
 			picCA[i].visible=true
 			if(picCA[i].children.length==0){
