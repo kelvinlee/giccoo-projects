@@ -171,7 +171,7 @@ function setPicShow(){
 
 	picBtnL.position.set(22,737+607-300+50)//737+607-300+50
 	picBtnR.position.set(576,737+607-300+50)
-	
+
 	picBtnL.interactive=picBtnR.interactive=true
 	picBtnL.tap=picChangeL
 	picBtnR.tap=picChangeR
@@ -194,6 +194,7 @@ function picChangeR(){
 	changePic()
 }
 function changePic(){
+	console.log("nowPic",nowPic)
 	for (var i = 0; i < picCA; i++) {
 		if(i==nowPic){
 			picCA[i].visible=true
