@@ -162,9 +162,15 @@ function setPicShow(){
 		var picC=new PIXI.Container()
 		picCA.push(picC)
 		picC.position.set(109,670+605-300+50)
+		picC.interactive=true
+		picC.tap=showBigPic
 		videoPart.addChild(picC)
 		if (i!=0) {
 			picC.visible=false
+		}else{
+			var j=i+1
+			var _pic=new pSprite("//image.giccoo.com/projects/genki/pics/1/"+j+".jpg")
+			picCA[i].addChild(_pic)
 		}
 	}
 	videoPart.addChild(picBtnL,picBtnR)
@@ -208,6 +214,17 @@ function changePic(){
 		}
 	}
 }
+
+function showBigPic(){
+	console.log("showBig")
+}
+
+$("#closeBtn").click(function(){
+	TweenMax.set($("#bigpic"),{display:"none"})
+})
+
+
+//===============
 
 function changeL(){
 	nowPoster--
