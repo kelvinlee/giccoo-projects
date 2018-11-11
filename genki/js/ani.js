@@ -560,8 +560,8 @@ function setPart4b(_list,_counts){
 			if(_list[j*10+i]){
 				message(_list[j*10+i].message,_list[j*10+i].nickname,_list[j*10+i].like,_list[j*10+i].liked,_list[j*10+i].id)
 			}else{
-				//message(commitA[temp%17],"歌名-未填写",parseInt(Math.random()*12),true,parseInt(Math.random()*10000000))
-				//temp++
+				message(commitA[temp%17],"歌名-未填写",parseInt(Math.random()*12),true,parseInt(Math.random()*10000000))
+				temp++
 			}
 			
 		};
@@ -586,8 +586,8 @@ function setPart4c(_list){
 			if(_list[j*10+i]){
 				message(_list[j*10+i].message,_list[j*10+i].nickname,_list[j*10+i].like,_list[j*10+i].liked,_list[j*10+i].id)
 			}else{
-				//message(commitA[temp%17],"歌名-未填写",parseInt(Math.random()*20),true,parseInt(Math.random()*10000000))
-				//temp++
+				message(commitA[temp%17],"歌名-未填写",parseInt(Math.random()*20),true,parseInt(Math.random()*10000000))
+				temp++
 			}
 			
 		};
