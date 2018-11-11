@@ -144,7 +144,8 @@ img{ width: 100%; }
 	z-index: 9999;
 
 	top: 65.7%;
-	/*display: none;*/
+
+	display: none;
 }
 #userSelectorDiv{
 	position: absolute;
@@ -154,6 +155,7 @@ img{ width: 100%; }
 	z-index: 9999;
 
 	top: 65.7%;
+	display: none;
 }
 #UserTextarea1{
 	background: transparent;
