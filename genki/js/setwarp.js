@@ -145,7 +145,7 @@ function setUserForm(){
 	var btnLike=new pSprite("img/btn-like.png")
 
 
-	var userT=new PIXI.Text("说出你的元气宣言",userTstyle)
+	var userT=new PIXI.Text("许下你的元气愿望",userTstyle)
 	var userSong=new PIXI.Text("",userSongstyle)//在这里写下你最爱的歌曲
 
 	var userIco=new pSprite("img/ico"+parseInt(Math.random()*10)+".png")
@@ -210,14 +210,14 @@ function setUserForm2(){
 }
 var ifInputing=0
 $("#UserTextarea1").click(function(){
-	if($("#UserTextarea1")[0].innerHTML=="说出你的元气宣言"){
+	if($("#UserTextarea1")[0].innerHTML=="许下你的元气愿望"){
 		$("#UserTextarea1")[0].innerHTML=""
 	}
 	//ifInputing=1
 })
 $("#UserTextarea1").blur(function(){
 	if($("#UserTextarea1")[0].innerHTML==""||$("#UserTextarea1")[0].innerHTML==null){
-		$("#UserTextarea1")[0].innerHTML="说出你的元气宣言"
+		$("#UserTextarea1")[0].innerHTML="许下你的元气愿望"
 	}
 })
 $("#UserTextarea2").click(function(){
@@ -234,7 +234,7 @@ $("#UserTextarea2").blur(function(){
 function resetUserForm(){//====pStage.touchstart
 	//console.log("-----------------------------")
 	if($("#UserTextarea1")[0].innerHTML==""||$("#UserTextarea1")[0].innerHTML==null){
-		$("#UserTextarea1")[0].innerHTML="说出你的元气宣言"
+		$("#UserTextarea1")[0].innerHTML="许下你的元气愿望"
 	}
 	if($("#UserTextarea2")[0].value==""){
 		$("#UserTextarea2")[0].value="在这里留下手机号"
@@ -247,7 +247,7 @@ $("#btnSubmit").click(function(){
 function goSubmit(){
 	//$("#UserTextarea1")[0].innerHTML=""
 	console.log("提交表单",$("#UserTextarea1").val())
-	if($("#UserTextarea1").val()==""||$("#UserTextarea1").val()==null||$("#UserTextarea1").val()=="说出你的元气宣言"){
+	if($("#UserTextarea1").val()==""||$("#UserTextarea1").val()==null||$("#UserTextarea1").val()=="许下你的元气愿望"){
 		alert("请先填写你的元气宣言")
 	}else{
 		sendMessage($("#UserTextarea1").val(),$("#UserTextarea2")[0].value,$("#userSelector")[0].value)//$("#UserTextarea2")[0].value

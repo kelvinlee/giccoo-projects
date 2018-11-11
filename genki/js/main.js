@@ -43,7 +43,7 @@ $(document).ready(function load (){
   CloudMusic.setShareData({
     name: '汤达人元气音乐节',
     title: '汤达人元气音乐节',
-    subTitle: '点击H5唤醒你的元气初心，更有机会获得元气音乐节门票',
+    subTitle: '点击H5，许下你的2019元气愿望',
     text: '汤达人元气音乐节',
     picUrl: 'https://m.giccoo.com/genki/img/ico.jpg',
     link: 'https://m.giccoo.com/genki/'
