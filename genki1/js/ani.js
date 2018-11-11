@@ -122,6 +122,7 @@ function setVideoPart(){//====三图
 
 	poster1live.position.set(109,670+605-300+50)//(109,670)
 	//poster2live.position.set(109,670+300-300)
+	poster1live.visible=false
 	poster2live.visible=false
 
 	poster1live.interactive=poster2live.interactive=true
@@ -149,6 +150,62 @@ function setVideoPart(){//====三图
 	poster3.tap=showVideo3
 	poster4.tap=showVideo4
 	//poster15.tap=showVideo15
+
+	setPicShow()
+}
+
+var picCA=[]
+var picBtnL=new pSprite("//image.giccoo.com/projects/genki/img/video_btn_l.png")
+var picBtnR=new pSprite("//image.giccoo.com/projects/genki/img/video_btn_r.png")
+function setPicShow(){
+	for (var i = 0; i < 47; i++) {
+		var picC=new PIXI.Container()
+		picCA.push(picC)
+		picC.position.set(109,670+605-300+50)
+		videoPart.addChild(picC)
+		if (i!=0) {
+			picC.visible=false
+		}
+	}
+	videoPart.addChild(picBtnL,picBtnR)
+
+	picBtnL.position.set(22,737+607-300+50)//737+607-300+50
+	picBtnR.position.set(576,737+607-300+50)
+	
+	picBtnL.interactive=picBtnR.interactive=true
+	picBtnL.tap=picChangeL
+	picBtnR.tap=picChangeR
+
+}
+var nowPic=0
+function picChangeL(){
+	nowPic--
+	if(nowPic==-1){
+		nowPic=picCA.length-1
+	}
+	changePic()
+}
+
+function picChangeR(){
+	nowPic++
+	if(nowPic==picCA.length){
+		nowPic=0
+	}
+	changePic()
+}
+function changePic(){
+	for (var i = 0; i < picCA; i++) {
+		if(i==nowPic){
+			picCA[i].visible=true
+			if(picCA[i].children.length==0){
+				var j=i+1
+				var _pic=new pSprite("//image.giccoo.com/projects/genki/pics/1/"+j+".jpg")
+				picCA[i].addChild(_pic)
+			}
+		}else{
+			picCA[i].visible=false
+		}
+	}
 }
 
 function changeL(){
