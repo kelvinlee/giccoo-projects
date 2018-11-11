@@ -84,10 +84,12 @@ var poster1live=new pSprite("//image.giccoo.com/projects/genki/img/live_poster1e
 var poster2live=new pSprite("//image.giccoo.com/projects/genki/img/live_poster2c.jpg")
 
 var poster1=new pSprite("//image.giccoo.com/projects/genki/img/video_poster1e.jpg")
-var poster2=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2.jpg")
+var poster2=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2_2.jpg")
+var poster3=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2_3.jpg")
+var poster4=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2_4.jpg")
 // var poster15=new pSprite("//image.giccoo.com/projects/genki/img/video_poster15d.jpg")
 //var poster3=new pSprite("img/video_poster3.jpg")//===================改这里
-var posterA=[poster1,poster2]//===================改这里
+var posterA=[poster1,poster2,poster3,poster4]//===================改这里
 var nowPoster=0
 // function setVideoPart(){//====双图
 // 	videoPart.y=528+107
@@ -113,12 +115,12 @@ var nowPoster=0
 function setVideoPart(){//====三图
 	videoPart.y=528+107-300
 	videoPart.addChild(videoPartBG,videoBtnL,videoBtnR,poster1live,poster2live,poster1,poster2)
-	videoBtnL.position.set(22,737+607-300+50)
-	videoBtnR.position.set(576,737+607-300+50)
+	videoBtnL.position.set(22,737)//737+607-300+50
+	videoBtnR.position.set(576,737)
 
 	//videoPartText.y-=300
 
-	poster1live.position.set(109,670)
+	poster1live.position.set(109,670+605-300+50)//(109,670)
 	//poster2live.position.set(109,670+300-300)
 	poster2live.visible=false
 
@@ -126,20 +128,26 @@ function setVideoPart(){//====三图
 	poster1live.tap=showLive1
 	//poster2live.tap=showLive2
 
-	poster1.position.set(109,670+605-300+50)
-	poster2.position.set(109,670+605-300+50)
+	poster1.position.set(109,670)//670+605-300+50
+	poster2.position.set(109,670)
+	poster3.position.set(109,670)//670+605-300+50
+	poster4.position.set(109,670)
 	//poster15.position.set(109,670+605)
 	poster1.visible=true
 	poster2.visible=false
+	poster3.visible=false
+	poster4.visible=false
 	//poster15.visible=false
 
 	videoBtnL.interactive=videoBtnR.interactive=true
 	videoBtnL.tap=changeL
 	videoBtnR.tap=changeR
 
-	poster1.interactive=poster2.interactive=true
+	poster1.interactive=poster2.interactive=poster3.interactive=poster4.interactive=true
 	poster1.tap=showVideo1
 	poster2.tap=showVideo2
+	poster3.tap=showVideo3
+	poster4.tap=showVideo4
 	//poster15.tap=showVideo15
 }
 
@@ -180,7 +188,7 @@ function showLive2(){
 }
 
 function showVideo1(){
-	console.log("video2")
+	console.log("video1")
 	//
 	stopAllSound()
 	openVideo("//image.giccoo.com/projects/genki/mp4/v02.mp4","//image.giccoo.com/projects/genki/img/layer_poster2.jpg")
@@ -194,7 +202,21 @@ function showVideo2(){
 	console.log("video2")
 	//
 	stopAllSound()
-	openVideo("//image.giccoo.com/projects/genki/mp4/v01.mp4","//image.giccoo.com/projects/genki/img/layer_poster1.jpg")
+	openVideo("//image.giccoo.com/projects/genki/mp4/2.mp4","//image.giccoo.com/projects/genki/img/layer_poster2_1.jpg")
+}
+
+function showVideo3(){
+	console.log("video3")
+	//
+	stopAllSound()
+	openVideo("//image.giccoo.com/projects/genki/mp4/3.mp4","//image.giccoo.com/projects/genki/img/layer_poster2_3.jpg")
+}
+
+function showVideo4(){
+	console.log("video4")
+	//
+	stopAllSound()
+	openVideo("//image.giccoo.com/projects/genki/mp4/4.mp4","//image.giccoo.com/projects/genki/img/layer_poster2_4.jpg")
 }
 
 function stopAllSound(){
