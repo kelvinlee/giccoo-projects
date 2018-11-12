@@ -86,10 +86,11 @@ var poster2live=new pSprite("//image.giccoo.com/projects/genki/img/live_poster2c
 var poster1=new pSprite("//image.giccoo.com/projects/genki/img/video_poster1e.jpg")
 var poster2=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2_2.jpg")
 var poster3=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2_3.jpg")
-var poster4=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2_4.jpg")
+var poster4=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2_3b.jpg")
+var poster5=new pSprite("//image.giccoo.com/projects/genki/img/video_poster2_4.jpg")
 // var poster15=new pSprite("//image.giccoo.com/projects/genki/img/video_poster15d.jpg")
 //var poster3=new pSprite("img/video_poster3.jpg")//===================改这里
-var posterA=[poster1,poster2,poster3,poster4]//===================改这里
+var posterA=[poster1,poster2,poster3,poster4,poster5]//===================改这里
 var nowPoster=0
 // function setVideoPart(){//====双图
 // 	videoPart.y=528+107
@@ -114,7 +115,7 @@ var nowPoster=0
 
 function setVideoPart(){//====三图
 	videoPart.y=528+107-300
-	videoPart.addChild(videoPartBG,videoBtnL,videoBtnR,poster1live,poster2live,poster1,poster2,poster3,poster4)
+	videoPart.addChild(videoPartBG,videoBtnL,videoBtnR,poster1live,poster2live,poster1,poster2,poster3,poster4,poster5)
 	videoBtnL.position.set(22,737)//737+607-300+50
 	videoBtnR.position.set(576,737)
 
@@ -133,22 +134,25 @@ function setVideoPart(){//====三图
 	poster2.position.set(109,670)
 	poster3.position.set(109,670)//670+605-300+50
 	poster4.position.set(109,670)
+	poster5.position.set(109,670)
 	//poster15.position.set(109,670+605)
 	poster1.visible=true
 	poster2.visible=false
 	poster3.visible=false
 	poster4.visible=false
+	poster5.visible=false
 	//poster15.visible=false
 
 	videoBtnL.interactive=videoBtnR.interactive=true
 	videoBtnL.tap=changeL
 	videoBtnR.tap=changeR
 
-	poster1.interactive=poster2.interactive=poster3.interactive=poster4.interactive=true
+	poster1.interactive=poster2.interactive=poster3.interactive=poster4.interactive=poster5.interactive=true
 	poster1.tap=showVideo1
 	poster2.tap=showVideo2
 	poster3.tap=showVideo3
 	poster4.tap=showVideo4
+	poster5.tap=showVideo5
 	//poster15.tap=showVideo15
 
 	setPicShow()
@@ -299,6 +303,12 @@ function showVideo3(){
 }
 
 function showVideo4(){
+	console.log("video4")
+	//
+	stopAllSound()
+	openVideo("//image.giccoo.com/projects/genki/mp4/3b.mp4","//image.giccoo.com/projects/genki/img/layer_poster2_3b.jpg")
+}
+function showVideo5(){
 	console.log("video4")
 	//
 	stopAllSound()
