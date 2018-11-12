@@ -9130,6 +9130,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/starbucks/img/logo.png": {
+		"ft": 32768,
+		"iS": 44689,
+		"oA": 0,
+		"oAP": "/starbucks/img/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/starbucks/img/m-1.png": {
 		"ft": 32768,
 		"iS": 10024,
