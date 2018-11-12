@@ -164,6 +164,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/canda/img/bigbg.jpg": {
+		"ft": 16384,
+		"iS": 863567,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/canda/img/bigbg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/canda/img/btn-share.png": {
+		"ft": 32768,
+		"iS": 16341,
+		"oA": 0,
+		"oAP": "/canda/img/btn-share.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/canda/img/cat1.png": {
 		"ft": 32768,
 		"iS": 24953,
@@ -450,6 +472,39 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/canda/img/down_bag.png": {
+		"ft": 32768,
+		"iS": 9148,
+		"oA": 0,
+		"oAP": "/canda/img/down_bag.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/down_bubble.png": {
+		"ft": 32768,
+		"iS": 7597,
+		"oA": 0,
+		"oAP": "/canda/img/down_bubble.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/down_cube.png": {
+		"ft": 32768,
+		"iS": 4443,
+		"oA": 0,
+		"oAP": "/canda/img/down_cube.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/canda/img/hats-1.png": {
 		"ft": 32768,
 		"iS": 37492,
@@ -582,6 +637,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/canda/img/icon-close.png": {
+		"ft": 32768,
+		"iS": 7831,
+		"oA": 0,
+		"oAP": "/canda/img/icon-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/canda/img/item-bg.png": {
 		"ft": 32768,
 		"iS": 3475,
@@ -653,6 +719,116 @@
 		"iS": 8722,
 		"oA": 0,
 		"oAP": "/canda/img/loading-logo.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/logo-white.png": {
+		"ft": 32768,
+		"iS": 27002,
+		"oA": 0,
+		"oAP": "/canda/img/logo-white.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/lottery-bg.jpg": {
+		"ft": 16384,
+		"iS": 44002,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/canda/img/lottery-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/canda/img/lottery-code.png": {
+		"ft": 32768,
+		"iS": 21313,
+		"oA": 0,
+		"oAP": "/canda/img/lottery-code.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/lottery-pop.png": {
+		"ft": 32768,
+		"iS": 125445,
+		"oA": 0,
+		"oAP": "/canda/img/lottery-pop.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/lottery-title.png": {
+		"ft": 32768,
+		"iS": 17342,
+		"oA": 0,
+		"oAP": "/canda/img/lottery-title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/music-1.png": {
+		"ft": 32768,
+		"iS": 6075,
+		"oA": 0,
+		"oAP": "/canda/img/music-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/music-2.png": {
+		"ft": 32768,
+		"iS": 9053,
+		"oA": 0,
+		"oAP": "/canda/img/music-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/music-3.png": {
+		"ft": 32768,
+		"iS": 6252,
+		"oA": 0,
+		"oAP": "/canda/img/music-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/music-4.png": {
+		"ft": 32768,
+		"iS": 7743,
+		"oA": 0,
+		"oAP": "/canda/img/music-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/music-title.png": {
+		"ft": 32768,
+		"iS": 23400,
+		"oA": 0,
+		"oAP": "/canda/img/music-title.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
@@ -846,6 +1022,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/canda/img/p1hand.png": {
+		"ft": 32768,
+		"iS": 2103,
+		"oA": 0,
+		"oAP": "/canda/img/p1hand.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/canda/img/p1logo.png": {
 		"ft": 32768,
 		"iS": 22720,
@@ -854,6 +1041,17 @@
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/p1t.png": {
+		"ft": 32768,
+		"iS": 2823,
+		"oA": 0,
+		"oAP": "/canda/img/p1t.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
@@ -7560,20 +7758,42 @@
 		},
 	"/starbucks/img/coffee-1.png": {
 		"ft": 32768,
-		"iS": 17315,
+		"iS": 6695,
 		"oA": 0,
 		"oAP": "/starbucks/img/coffee-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/coffee-2.png": {
+		"ft": 32768,
+		"iS": 6695,
+		"oA": 0,
+		"oAP": "/starbucks/img/coffee-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/starbucks/img/coffee-4.png": {
+		"ft": 32768,
+		"iS": 17480,
+		"oA": 0,
+		"oAP": "/starbucks/img/coffee-4.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
-	"/starbucks/img/coffee-2.png": {
+	"/starbucks/img/coffee-5.png": {
 		"ft": 32768,
-		"iS": 17480,
+		"iS": 17315,
 		"oA": 0,
-		"oAP": "/starbucks/img/coffee-2.png",
+		"oAP": "/starbucks/img/coffee-5.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
@@ -7582,12 +7802,12 @@
 		},
 	"/starbucks/img/coffee.png": {
 		"ft": 32768,
-		"iS": 27847,
+		"iS": 6695,
 		"oA": 0,
 		"oAP": "/starbucks/img/coffee.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
