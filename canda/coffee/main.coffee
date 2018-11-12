@@ -286,6 +286,7 @@ init = ->
 			gotoUGC: (id)->
 				# @.lotteryShow = true
 				@.musicShow = false
+				goEnd(id) if goEnd?
 				
 
 			sharePost: (base64)->
@@ -450,7 +451,7 @@ init = ->
 				@.items = shopItemsList[id-1]
 			musicList: ->
 				@.musicShow = true
-				
+
 			showlotteryCode: ->
 				@.lotteryShow = false
 				@.lotteryEndShow = true
