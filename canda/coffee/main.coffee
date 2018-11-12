@@ -291,7 +291,6 @@ init = ->
 					@.shareShow = true
 				,500
 				
-
 			sharePost: (base64)->
 				@.gameEnd = true
 				ugc.app.renderer.render ugc.app.stage
@@ -338,8 +337,9 @@ init = ->
 					# ugc.back()
 				# ugc.qrcode.visible = false
 			lotteryBox: ->
-				setTimeout =>
+				_cache = setTimeout =>
 					@.lotteryShow = true
+					@.ugcShow = false
 				,5000
 			success: (data)->
 				@.shareImageLink = data.info
@@ -353,6 +353,8 @@ init = ->
 				@.lotteryBox()
 				
 			closeUGC: ->
+				clearTimeout _cache
+				@.lotteryShow = true
 				@.ugcShow = false
 				shareDone() if shareDone?
 			faild: (err)->
