@@ -100,6 +100,7 @@ function go2(_step,_picUrl){
 	if(_step==4){
 		TweenMax.to(bigbgC.pivot,3,{x:3993,ease:Sine.easeInOut,onComplete:function(){
 			main.musicList()
+			console.log("musicList")
 		}})
 	}
 }

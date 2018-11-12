@@ -10,7 +10,7 @@ function setItem(){
 	tree3=new Sprite(getTe(_CDN+"img/tree.png"))
 	tree4=new Sprite(getTe(_CDN+"img/tree.png"))
 	treeA=[tree1,tree2,tree3,tree4]
-	othersC.addChildAt(item2,1)
+	othersC.addChildAt(item2,3)
 	othersC.addChildAt(item3,1)
 	item2.alpha=item3.alpha=0
 
