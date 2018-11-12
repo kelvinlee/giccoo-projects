@@ -213,7 +213,7 @@ init = ->
 				"年轻人为这季节都很兴奋<br/>用简讯互传圣诞祝福<br/>可我只想花点心思<br/>让你们感到幸福"
 			]
 			buyAn: false
-			white: false
+			white: true
 			gameEnd: false
 		watch:
 			answer1: (n,o)->
@@ -409,6 +409,7 @@ init = ->
 				_CDN+"img/envelope.png"
 				_CDN+"img/post-card-mark.png"
 				_CDN+"img/logo-black.png"
+				_CDN+"img/logo-white.png"
 				_CDN+"img/m-1.png"
 				_CDN+"img/m-2.png"
 				_CDN+"img/m-3.png"

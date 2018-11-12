@@ -4,17 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>canda</title>
+    <title>暖心杂货铺</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
-    <script src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js"></script>
-    <script>
-      var vConsole = new VConsole();
-      console.log('VConsole open');
-      
-      
-    </script>
   </head>
   <body>
     <div id="load" class="load">
@@ -77,7 +70,192 @@
                 </div>
               </template>
             </slider>
-            
+          </div>
+        </div>
+      </transition>
+      <transition name="page-zoom">
+        <div v-show="musicShow" class="pop pop-items music">
+          <div class="content">
+            <div class="title"><img src="./img/music-title.png"></div>
+            <div class="items">
+              <div @click="gotoUGC(1)" class="item"><img src="./img/music-1.png"></div>
+              <div @click="gotoUGC(2)" class="item"><img src="./img/music-2.png"></div>
+              <div @click="gotoUGC(3)" class="item"><img src="./img/music-3.png"></div>
+              <div @click="gotoUGC(4)" class="item"><img src="./img/music-4.png"></div>
+            </div>
+            <div class="cd"><img src="./img/cd.gif"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="shareShow" @click="share" class="btn btn-share"><img src="./img/btn-share.png"></div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="lotteryShow" class="pop pop-lottery">
+          <div @click="showlotteryCode" class="content"><img src="./img/lottery-pop.png"></div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="lotteryEndShow" class="pop pop-lottery-code">
+          <div class="content">
+            <div class="title"><img src="./img/lottery-title.png"></div>
+            <div class="code"><img src="./img/lottery-code.png"></div>
+            <div class="texts">
+              <h3>购物券使用细则:</h3>
+              <ul>
+                <li>购物券使用有效期：2018年11月21日 - 11月30日</li>
+                <li>购物券有效期内，前往C&A官网以及全国任意实体门店,买单时将此条形码出示收银台店员，即可享受优惠</li>
+                <li>全场购买任意两件及以上正价商品即可享受85折优惠</li>
+                <li>单张收银条仅限使用一张此购物券</li>
+                <li>此券不可与其他店铺优惠活动同时使用</li>
+                <li>使用此购物券的交易若发生退货，仅退还实际支付金额，优惠金额及购物券不予退回</li>
+                <li>使用此购物券的交易所购买的商品无质量问题的只换不退</li>
+                <li>如因商品质量问题导致退换货，则按照国家相关规定进行办理</li>
+                <li>购物券不设找零，不予兑换现金，对应的优惠金额不予开具发票 </li>
+                <li>C&A客服热线：4000180960 （客服时间：10:00～18:00）</li>
+              </ul>
+              <h3>活动参与门店列表<br/>活动时间:11月21日-11月30日</h3>
+              <h3>【北京】</h3>
+              <ul>
+                <li>朝阳区东三环中路65号双井桥西侧富力广场店128-220</li>
+                <li>朝阳区七圣中街12号院爱琴海购物中心一层</li>
+                <li>海淀区丹棱街甲1号欧美汇商厦二层三层</li>
+                <li>海淀区西直门北大街32号枫蓝国际购物中心一层二层</li>
+                <li>海淀区巴沟路2号北京华联万柳购物中心北门一层二层</li>
+                <li>东城区崇文门外大街国瑞购物中心LG层</li>
+                <li>丰台区万丰路68号银座和谐广场一层二层</li>
+                <li>通州区翠景北里21号楼罗斯福广场北门一层二层</li>
+                <li>顺义区新顺南大街8号华联金街购物中心一层</li>
+                <li>大兴区西红门欣宁大街15号荟聚购物中心</li>
+              </ul>
+              <h3>【上海】</h3>
+              <ul>
+                <li>静安区共和新路1868号大宁国际商业广场1（S2）栋一层二层</li>
+                <li>独立童装店 | 普陀区大渡河路196号长风大悦城3F</li>
+                <li>浦东新区张杨路3611弄金桥国际商业广场 3号 </li>
+                <li>浦东新区周浦镇年家浜路518号</li>
+                <li>奉贤区南桥镇航南公路5639号奉贤宝龙广场一层二层</li>
+                <li>青浦区淀山湖大道152弄69号吾悦广场一层二层</li>
+                <li>青浦区汇金路590号青浦宝龙广场一楼</li>
+                <li>闵行区都市路2700号颛桥万达1F-A </li>
+                <li>闵行区七莘路1507号怡丰城一层</li>
+              </ul>
+              <h3>【武汉】</h3>
+              <ul>
+                <li>洪山区珞瑜路889号光谷国际广场A1005</li>
+                <li>武昌区东沙湖万达汉街49号J3-3-27号商铺</li>
+                <li>汉阳区龙阳大道特6号武汉摩尔城B栋一层B106</li>
+                <li>汉阳大道139号汉商银座购物中心地上一层二层</li>
+                <li>硚口区解放大道宗关387号南国西汇城市广场</li>
+                <li>武昌区徐东大街120号武汉群星城</li>
+              </ul>
+              <h3>【成都】</h3>
+              <ul>
+                <li>青羊区顺城大街289号富力天汇购物中心二层</li>
+                <li>金牛区一环路北三段1号成都金牛万达广场一层</li>
+                <li>青羊区西御街6号天府广场B1</li>
+                <li>高新区剑南大道998号世豪购物中心一楼</li>
+                <li>温江区光华大道三段1588号1栋珠江广场1楼</li>
+                <li>独立童装店 | 高新区盛和一路99号凯德广场· 新南3F</li>
+              </ul>
+              <h3>【重庆】</h3>
+              <ul>
+                <li>渝中区民权路88号日月光中心广场LG层</li>
+                <li>南岸区江南大道10号万达广场</li>
+                <li>江北区步行街8号大融城一层</li>
+                <li>江北区大石坝东原新新PARK 购物中心UG层LG层</li>
+              </ul>
+              <h3>【大连】</h3>
+              <ul>
+                <li>沙河口区西安路天兴罗斯福购物中心一层二层</li>
+                <li>中山区天津街277号佳兆业广场一层二层</li>
+                <li>经济技术开发区金马路208号万和购物广场一层</li>
+                <li>甘井子区山东路235号亿合城购物中心一层</li>
+                <li>中山区长江东路80号凯丹广场一层</li>
+              </ul>
+              <h3>【昆明】</h3>
+              <ul>
+                <li>昆明市五华区青年路金鹰A座一楼</li>
+              </ul>
+              <h3>【宁波】</h3>
+              <ul>
+                <li>江东区中山东路1095号宁波世纪东方广场一层</li>
+                <li>江北区大庆南路99号来福士广场一层二层</li>
+              </ul>
+              <h3>【南京】</h3>
+              <ul>
+                <li>江宁区东山街道金箔路577号江宁万达广场一层</li>
+                <li>建邺区江东中路98号万达广场一层</li>
+                <li>大桥北路48号南京弘阳广场购物中心一层</li>
+              </ul>
+              <h3>【西安】</h3>
+              <ul>
+                <li>莲湖区劳动南路118号西市城购物中心一层</li>
+                <li>雁塔区长安中路65号小寨金莎购物中心一层</li>
+                <li>碑林区南稍门中贸广场一层</li>
+                <li>莲湖区西大街14号</li>
+              </ul>
+              <h3>【苏州】</h3>
+              <ul>
+                <li>相城区人民路4555号繁花商业中心的购物中心</li>
+              </ul>
+              <h3>【无锡】</h3>
+              <ul>
+                <li>南长区清扬路128号茂业新天地一层</li>
+                <li>崇安区广南路388号京东广场一层</li>
+              </ul>
+              <h3>【长沙】</h3>
+              <ul>
+                <li>芙蓉区黄兴中路188号乐和城地上一层二层</li>
+              </ul>
+              <h3>【湘潭】</h3>
+              <ul>
+                <li>岳塘区建设南路102号一层二层</li>
+              </ul>
+              <h3>【青岛】</h3>
+              <ul>
+                <li>李沧区夏庄路1号伟东.乐客城一层</li>
+              </ul>
+              <h3>【石家庄】</h3>
+              <ul>
+                <li>市裕华区建华南大街136号石家庄裕华万达广场超市楼1030号</li>
+                <li>石家庄市桥东区中山东路11号乐汇城106-207号商铺</li>
+              </ul>
+              <h3>【济南】</h3>
+              <ul>
+                <li>槐荫区经十路22799号银座和谐广场一层</li>
+                <li>历下区泉城路26号世茂国际广场E156</li>
+                <li>市中区二环南路2688号领秀城贵和购物中心一层</li>
+              </ul>
+              <h3>【唐山】</h3>
+              <ul>
+                <li>路南区新华东道100号唐山万达广场1020/2023</li>
+              </ul>
+              <h3>【沈阳】</h3>
+              <ul>
+                <li>和平区太原南街2号万达商业广场 110-111</li>
+                <li>大东区滂江街22号龙之梦购物中心一层</li>
+              </ul>
+              <h3>【哈尔滨】</h3>
+              <ul>
+                <li>南岗区学府路1-1号“凯德广场•学府”商场地上一层二层</li>
+                <li>南岗区红旗大街301号（商铺号：公园大道下区4号）</li>
+              </ul>
+              <h3>【长春】</h3>
+              <ul>
+                <li>宽城区凯旋路418号万达广场娱乐楼C-1F-B</li>
+              </ul>
+              <h3>【郑州】</h3>
+              <ul>
+                <li>二七区大学南路8号二七万达广场综合楼部分地上一层</li>
+                <li>中原区棉纺西路40号锦艺城C区一层</li>
+                <li>花园路39号新田360广场郑州国贸店1号楼D1011商铺</li>
+              </ul>
+              <h3>【泰兴】</h3>
+              <ul>
+                <li>泰兴市鼓楼北路199号泰兴吾悦广场1-1-01（11月23日即将盛大开业）</li>
+              </ul>
+            </div>
           </div>
         </div>
       </transition>

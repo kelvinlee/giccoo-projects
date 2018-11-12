@@ -729,7 +729,7 @@ video,canvas,svg
 		+posr
 		.close
 			+bl(auto,auto)
-			+tr(0%,0%)
+			+tr(-5%,-5%)
 			+transform(translate3d(0,0,0))
 	.note
 		+posa
@@ -872,6 +872,20 @@ video,canvas,svg
 						+posa
 						+tl
 
+	&.music
+		.content
+			padding-top: 15%
+	.title
+		+m
+	.items
+		+p(2% 10%)
+		+box
+		.item
+			margin-bottom: 5%
+	.cd
+		+text-center
+		+w(70%)
+		+m
 
 
 
@@ -927,3 +941,34 @@ video,canvas,svg
 	+bc(rgba(0,0,0,0.7))
 	color: #ff9595
 	z-index: 10009
+.btn-share
+	+posa
+	+bl(10%)
+	+w
+	z-index: 109
+
+.pop-lottery
+	.content
+		+abcentermiddle
+		+w
+.pop-lottery-code
+	+b($cdn+"img/lottery-bg.jpg",no-repeat,top,center,cover)
+	.content
+		+w
+		+h(90%)
+		+touch
+		margin-top: 5%
+		.title
+			+m
+			padding-top: 10%
+		.texts
+			+m
+			+w(80%)
+			+font-size(0.6rem)
+			h3
+				+font-size(0.6rem)
+				+m(0.4em 0)
+			ul
+				padding-left: 1.4em
+			li 
+				list-style-type: disc

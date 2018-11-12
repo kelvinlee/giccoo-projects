@@ -106,7 +106,6 @@ window.onload = ->
 		link: 'http://m.giccoo.com/canda/'
 
 init = ->
-	
 	# console.log new Date().getTime() - startTime
 	# document.body.style.height = TrueH+"px"
 	# document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
@@ -214,6 +213,8 @@ init = ->
 			formShow: false
 			formBoxShow: false
 			shopShow: false
+			musicShow: false
+			shareShow: false
 			items: []
 			carIndex: 1
 		computed:
@@ -282,8 +283,10 @@ init = ->
 				d = new Date date.replace(/-/g,"/")
 				return d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日"
 			
-			goUGC: ->
-				@.lotteryShow = true
+			gotoUGC: (id)->
+				# @.lotteryShow = true
+				@.musicShow = false
+				
 
 			sharePost: (base64)->
 				@.gameEnd = true
@@ -297,7 +300,7 @@ init = ->
 				@.share()
 
 			share: ->
-				goFinal2()
+				goFinal2() if goFinal2?
 				@.formBoxShow = false
 				@.registerShow = false
 				@.lotteryShow = false
@@ -327,23 +330,27 @@ init = ->
 						main.faild(e)		
 				else
 					@.ugcShow = true
+					@.lotteryBox()
 					# ugc.back()
 				# ugc.qrcode.visible = false
+			lotteryBox: ->
+				setTimeout =>
+					@.lotteryShow = true
+				,5000
 			success: (data)->
 				@.shareImageLink = data.info
 				@.pushed = false
 				@.loading = false
 				# ugc.back()
 				neteaseShareImage()
-				shareDone()
+				shareDone() if shareDone?
 				# 抽奖
 				# unless @.giveUp
-				# 	setTimeout =>
-				# 		@.getLottery()
-				# 	,5000
+				@.lotteryBox()
+				
 			closeUGC: ->
 				@.ugcShow = false
-				shareDone()
+				shareDone() if shareDone?
 			faild: (err)->
 				@.pushed = false
 				@.loading = false
@@ -442,7 +449,9 @@ init = ->
 				]
 				@.items = shopItemsList[id-1]
 			musicList: ->
-
+			showlotteryCode: ->
+				@.lotteryShow = false
+				@.lotteryEndShow = true
 			pickItem: (item)->
 				console.log "pick:",item
 				@.shopShow = false

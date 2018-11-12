@@ -75,7 +75,7 @@ class UGC
 		qrcode.visible = false
 
 		postCard = new Container()
-		logo = Spr _CDN+"img/logo-black.png"
+		logo = Spr _CDN+"img/logo-#{if not main.white then 'white' else 'black'}.png"
 		logo.y = 10
 		bg = Spr _CDN+"img/envelope.png"
 		bg.scale.set(640/750,640/750)

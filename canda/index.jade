@@ -1,7 +1,7 @@
 extends ../libs/jade/layout-clean
 
 block title
-  | canda
+  | 暖心杂货铺
 
 block css
   meta(name="author",content="m.giccoo.com")
@@ -21,8 +21,8 @@ block css
       s.parentNode.insertBefore(hm, s);
     })();
 
-  script(src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js")
-  script.
+  //- script(src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js")
+  //- script.
     var vConsole = new VConsole();
     console.log('VConsole open');
   
@@ -93,16 +93,170 @@ block content
                         img(src="#{url}/img/item-text-2.png")
                       .text-3.fadeInUp.animated.delay-3(@click="pickItem(item.type+'-'+(i*4+j+1)+'.png')")
                         img(src="#{url}/img/item-text-3.png")
+    
+    transition(name="page-zoom")
+      .pop.pop-items.music(v-show="musicShow")
+        .content
+          .title
+            img(src="#{url}/img/music-title.png")
+          .items
+            .item(@click="gotoUGC(1)")
+              img(src="#{url}/img/music-1.png")
+            .item(@click="gotoUGC(2)")
+              img(src="#{url}/img/music-2.png")
+            .item(@click="gotoUGC(3)")
+              img(src="#{url}/img/music-3.png")
+            .item(@click="gotoUGC(4)")
+              img(src="#{url}/img/music-4.png")
+          .cd
+            img(src="#{url}/img/cd.gif")
 
-          //- .sliders(@mousedown="start" @mousemove="move" @mouseup="end" @touchstart="start" @touchmove.passive="move" @touchend="end")
-          //-   .slider
-          //-     .slide(v-for="(items, index) in listTemp")
-          //-       .item(v-for="(item, index) in items")
-          //-         p {{item.name}}
-          //-         img(:src="'#{url}/img/'+item.type+'-'+(index+1)+'.png'")
-          //-         .text
-          //-           img(:src="'#{url}/img/'+item.type+'-text-'+(index+1)+'.png'")
+    transition(name="page-fade")
+      .btn.btn-share(v-show="shareShow",@click="share")
+        img(src="#{url}/img/btn-share.png")
+    transition(name="page-fade")
+      .pop.pop-lottery(v-show="lotteryShow")
+        .content(@click="showlotteryCode")
+          img(src="#{url}/img/lottery-pop.png")
+    transition(name="page-fade")
+      .pop.pop-lottery-code(v-show="lotteryEndShow")
+        .content
+          .title
+            img(src="#{url}/img/lottery-title.png")
+          .code
+            img(src="#{url}/img/lottery-code.png")
+          .texts
+            h3 购物券使用细则:
+            ul
+              li 购物券使用有效期：2018年11月21日 - 11月30日
+              li 购物券有效期内，前往C&A官网以及全国任意实体门店,买单时将此条形码出示收银台店员，即可享受优惠
+              li 全场购买任意两件及以上正价商品即可享受85折优惠
+              li 单张收银条仅限使用一张此购物券
+              li 此券不可与其他店铺优惠活动同时使用
+              li 使用此购物券的交易若发生退货，仅退还实际支付金额，优惠金额及购物券不予退回
+              li 使用此购物券的交易所购买的商品无质量问题的只换不退
+              li 如因商品质量问题导致退换货，则按照国家相关规定进行办理
+              li 购物券不设找零，不予兑换现金，对应的优惠金额不予开具发票 
+              li C&A客服热线：4000180960 （客服时间：10:00～18:00）
+            h3 活动参与门店列表<br/>活动时间:11月21日-11月30日
+            h3 【北京】
+            ul
+              li 朝阳区东三环中路65号双井桥西侧富力广场店128-220
+              li 朝阳区七圣中街12号院爱琴海购物中心一层
+              li 海淀区丹棱街甲1号欧美汇商厦二层三层
+              li 海淀区西直门北大街32号枫蓝国际购物中心一层二层
+              li 海淀区巴沟路2号北京华联万柳购物中心北门一层二层
+              li 东城区崇文门外大街国瑞购物中心LG层
+              li 丰台区万丰路68号银座和谐广场一层二层
+              li 通州区翠景北里21号楼罗斯福广场北门一层二层
+              li 顺义区新顺南大街8号华联金街购物中心一层
+              li 大兴区西红门欣宁大街15号荟聚购物中心
+            h3 【上海】
+            ul
+              li 静安区共和新路1868号大宁国际商业广场1（S2）栋一层二层
+              li 独立童装店 | 普陀区大渡河路196号长风大悦城3F
+              li 浦东新区张杨路3611弄金桥国际商业广场 3号 
+              li 浦东新区周浦镇年家浜路518号
+              li 奉贤区南桥镇航南公路5639号奉贤宝龙广场一层二层
+              li 青浦区淀山湖大道152弄69号吾悦广场一层二层
+              li 青浦区汇金路590号青浦宝龙广场一楼
+              li 闵行区都市路2700号颛桥万达1F-A 
+              li 闵行区七莘路1507号怡丰城一层
+            h3 【武汉】
+            ul
+              li 洪山区珞瑜路889号光谷国际广场A1005
+              li 武昌区东沙湖万达汉街49号J3-3-27号商铺
+              li 汉阳区龙阳大道特6号武汉摩尔城B栋一层B106
+              li 汉阳大道139号汉商银座购物中心地上一层二层
+              li 硚口区解放大道宗关387号南国西汇城市广场
+              li 武昌区徐东大街120号武汉群星城
+            h3 【成都】
+            ul
+              li 青羊区顺城大街289号富力天汇购物中心二层
+              li 金牛区一环路北三段1号成都金牛万达广场一层
+              li 青羊区西御街6号天府广场B1
+              li 高新区剑南大道998号世豪购物中心一楼
+              li 温江区光华大道三段1588号1栋珠江广场1楼
+              li 独立童装店 | 高新区盛和一路99号凯德广场· 新南3F
+            h3 【重庆】
+            ul
+              li 渝中区民权路88号日月光中心广场LG层
+              li 南岸区江南大道10号万达广场
+              li 江北区步行街8号大融城一层
+              li 江北区大石坝东原新新PARK 购物中心UG层LG层
+            h3 【大连】
+            ul
+              li 沙河口区西安路天兴罗斯福购物中心一层二层
+              li 中山区天津街277号佳兆业广场一层二层
+              li 经济技术开发区金马路208号万和购物广场一层
+              li 甘井子区山东路235号亿合城购物中心一层
+              li 中山区长江东路80号凯丹广场一层
+            h3 【昆明】
+            ul
+              li 昆明市五华区青年路金鹰A座一楼
+            h3 【宁波】
+            ul
+              li 江东区中山东路1095号宁波世纪东方广场一层
+              li 江北区大庆南路99号来福士广场一层二层
+            h3 【南京】
+            ul
+              li 江宁区东山街道金箔路577号江宁万达广场一层
+              li 建邺区江东中路98号万达广场一层
+              li 大桥北路48号南京弘阳广场购物中心一层
+            h3 【西安】
+            ul
+              li 莲湖区劳动南路118号西市城购物中心一层
+              li 雁塔区长安中路65号小寨金莎购物中心一层
+              li 碑林区南稍门中贸广场一层
+              li 莲湖区西大街14号
+            h3 【苏州】
+            ul
+              li 相城区人民路4555号繁花商业中心的购物中心
+            h3 【无锡】
+            ul
+              li 南长区清扬路128号茂业新天地一层
+              li 崇安区广南路388号京东广场一层
+            h3 【长沙】
+            ul
+              li 芙蓉区黄兴中路188号乐和城地上一层二层
+            h3 【湘潭】
+            ul
+              li 岳塘区建设南路102号一层二层
+            h3 【青岛】
+            ul
+              li 李沧区夏庄路1号伟东.乐客城一层
+            h3 【石家庄】
+            ul
+              li 市裕华区建华南大街136号石家庄裕华万达广场超市楼1030号
+              li 石家庄市桥东区中山东路11号乐汇城106-207号商铺
+            h3 【济南】
+            ul
+              li 槐荫区经十路22799号银座和谐广场一层
+              li 历下区泉城路26号世茂国际广场E156
+              li 市中区二环南路2688号领秀城贵和购物中心一层
+            h3 【唐山】
+            ul
+              li 路南区新华东道100号唐山万达广场1020/2023
+            h3 【沈阳】
+            ul
+              li 和平区太原南街2号万达商业广场 110-111
+              li 大东区滂江街22号龙之梦购物中心一层
+            h3 【哈尔滨】
+            ul
+              li 南岗区学府路1-1号“凯德广场•学府”商场地上一层二层
+              li 南岗区红旗大街301号（商铺号：公园大道下区4号）
+            h3 【长春】
+            ul
+              li 宽城区凯旋路418号万达广场娱乐楼C-1F-B
 
+            h3 【郑州】
+            ul
+              li 二七区大学南路8号二七万达广场综合楼部分地上一层
+              li 中原区棉纺西路40号锦艺城C区一层
+              li 花园路39号新田360广场郑州国贸店1号楼D1011商铺
+            h3 【泰兴】
+            ul
+              li 泰兴市鼓楼北路199号泰兴吾悦广场1-1-01（11月23日即将盛大开业）
 
     //- transition(name="page-fade")
     .pop.flashcamera(v-show="ugcShow")
