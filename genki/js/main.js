@@ -14,7 +14,7 @@ $(document).ready(function load (){
     var shareContent;
     shareContent = {
       title: "汤达人元气音乐节",
-      desc: "点击H5唤醒你的元气初心，更有机会获得元气音乐节门票",
+      desc: "点击H5，许下你的2019元气愿望",
       link: "http://m.giccoo.com/genki/",
       imgUrl: "http://m.giccoo.com/genki/img/ico.jpg",
       success: function() {},
@@ -23,7 +23,7 @@ $(document).ready(function load (){
 
     var shareContent2;
     shareContent2 = {
-      title: "【汤达人元气音乐节】点击H5唤醒你的元气初心，更有机会获得元气音乐节门票",
+      title: "【汤达人元气音乐节】点击H5，许下你的2019元气愿望",
       desc: "",
       link: "http://m.giccoo.com/genki/",
       imgUrl: "http://m.giccoo.com/genki/img/ico.jpg",
@@ -43,7 +43,7 @@ $(document).ready(function load (){
   CloudMusic.setShareData({
     name: '汤达人元气音乐节',
     title: '汤达人元气音乐节',
-    subTitle: '点击H5唤醒你的元气初心，更有机会获得元气音乐节门票',
+    subTitle: '点击H5，许下你的2019元气愿望',
     text: '汤达人元气音乐节',
     picUrl: 'https://m.giccoo.com/genki/img/ico.jpg',
     link: 'https://m.giccoo.com/genki/'
@@ -102,10 +102,10 @@ function initAll(){
 
   setPage()
   setPart1()
-  //setPart2()
-  setPart2_5()
-  setPart3()
-  //setPart4()
+  
+  //setPart2_5()
+  //setPart3()
+  
   getDefaultMessages(1,setPart4)
 
   pageLoop()
@@ -163,6 +163,7 @@ function touchMove(_e){
   date=new Date()
   timeA.push(date.getTime())
 
+
   //console.log("theNewNowHeight+part4.y-217",theNewNowHeight+part4.y-217,"main.y",main.y)
 
   //TweenMax.set($("#userText"),{y:(theNewNowHeight+part4.y-217+main.y)/640*screenW})
@@ -185,7 +186,7 @@ var ifSubmit=0
 
 
 function pageLoop(){
-  heightLimit=-nowHeight-part4.y+stageH-260-50-260-40
+  heightLimit=-nowHeight-part4.y+stageH-260-50-260-40-680
 
   requestAnimationFrame(pageLoop)
   renderer.render(pStage)
