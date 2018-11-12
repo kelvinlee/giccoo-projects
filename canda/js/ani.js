@@ -104,7 +104,95 @@ function go2(_step,_picUrl){
 		}})
 	}
 }
+////////////////////////////////////////////////////////////////////////   UGC
+var pageEnd=new PIXI.Container()
+var endBG
+var endTC=new PIXI.Container()
+var endTA=[]
+var endLogoC=new PIXI.Container()
+var endLogo1,endLogo2
+var qr
 
+
+function goEnd(_result){
+	console.log("goEnd")
+	pStage.addChild(pageEnd)
+	endBG=new Sprite(getTe(_CDN+"img/endbg.jpg"))
+	endBG.y=stageH/2-750
+
+
+
+
+	p1boardC.y+=20
+
+	var endt1=new Sprite(getTe(_CDN+"img/t1.png"))
+	var endt2=new Sprite(getTe(_CDN+"img/t2.png"))
+	var endt3=new Sprite(getTe(_CDN+"img/t3.png"))
+	var endt4=new Sprite(getTe(_CDN+"img/t4.png"))
+
+	endTA=[endt1,endt2,endt3,endt4]
+
+	for (var i = 0; i < 4; i++) {
+		endTC.addChild(endTA[i])
+		if(_result-1==i){
+			endTA[i].visible=true
+		}else{
+			endTA[i].visible=false
+		}
+	};
+
+	endTC.y=stageH/2-191
+
+	endLogo1=new Sprite(getTe(_CDN+"img/endlogo.png"))
+	endLogo2=new Sprite(getTe(_CDN+"img/endlogo.png"))
+
+	endLogo2.blendMode=_ADD
+	endLogoC.addChild(endLogo1,endLogo2)
+	endLogo2.alpha=.1
+	TweenMax.to(endLogo2,.1,{alpha:0,repeat:100000})
+
+	endLogoC.y=stageH/2-246
+
+
+	qr=new Sprite(getTe(_CDN+"img/qr.png"))
+	qr.y=stageH-186
+	for (i = 0; i < 4; i++) {
+		itemA[i].scale.x=itemA[i].scale.y=.6
+		itemA[i].pivot.set(0,0)
+	};
+
+	itemA[2].scale.x=itemA[2].scale.y=itemA[3].scale.x=itemA[3].scale.y=.5
+
+	itemA[0].position.set(292,stageH/2-14)
+	itemA[1].position.set(422,stageH/2-14)
+	itemA[2].position.set(292,stageH/2+118)
+	itemA[3].position.set(422,stageH/2+118)
+
+	// itemA[0].position.set(292,750-14)
+	// itemA[1].position.set(422,750-14)
+	// itemA[2].position.set(292,750+114)
+	// itemA[3].position.set(422,750+114)
+
+	pageEnd.addChild(endBG,p1boardC,endTC,endLogoC,qr,itemA[0],itemA[1],itemA[2],itemA[3])
+
+	pageEnd.pivot.set(320,stageH/2)
+	pageEnd.position.set(320,stageH/2)
+
+	TweenMax.from(pageEnd,.5,{alpha:0})
+	TweenMax.from(pageEnd.scale,.5,{x:4,y:4})
+
+	TweenMax.to(bigbgC.scale,.5,{x:.5,y:.5})
+	qr.visible=false
+
+}
+
+function goFinal2(){
+	qr.visible=true
+}
+
+function shareDone(){
+	qr.visible=false
+}
 
 ////////////////////////////////////////////////////////////////////////   底条
 

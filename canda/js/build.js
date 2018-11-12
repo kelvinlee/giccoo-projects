@@ -55,6 +55,16 @@ var imageList = [
 	_CDN+"img/others-5.png",
 	_CDN+"img/others-6.png",
 
+	_CDN+"img/endbg.jpg",
+
+	_CDN+"img/t1.png",
+	_CDN+"img/t2.png",
+	_CDN+"img/t3.png",
+	_CDN+"img/t4.png",
+
+	_CDN+"img/endlogo.png",
+	_CDN+"img/qr.png",
+
 
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
@@ -135,11 +145,17 @@ function setItem(_step,_picUrl){
 
 
 	var _item=new Sprite(getTe(_CDN+"img/"+_picUrl));
-	itemC.addChild(_item)
+	var _wbg=new PIXI.Graphics()
+	_wbg.beginFill(0xffffff)
+	_wbg.drawRect(0,0,60,60)
+	_wbg.pivot.set(30,30)
+	itemC.addChild(_wbg,_item)
 
 	_item.pivot.set(_item.width/2,_item.height/2)
 	_item.position.set(cubeA[_step-1].x,cubeA[_step-1].y)
 	_item.scale.x=_item.scale.y=.33
+
+	_wbg.position.set(cubeA[_step-1].x,cubeA[_step-1].y)
 
 	TweenMax.from(_item.scale,2,{x:0,y:0,ease:Elastic.easeOut})
 
