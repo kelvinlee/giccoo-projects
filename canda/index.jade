@@ -70,10 +70,12 @@ block content
       .page.page-1(v-show="pageIndex == 1",:class="{blur: formBoxShow}")
         .content
           #ugc
+
     transition(name="page-fade")
       .pop.pop-cover(v-show="formBoxShow")
         .content(@click="goNext")
           img(src="#{url}/img/pop-1.png")
+
     transition(name="page-zoom")
       .pop.pop-items(v-show="shopShow")
         .content
@@ -93,7 +95,12 @@ block content
                         img(src="#{url}/img/item-text-2.png")
                       .text-3.fadeInUp.animated.delay-3(@click="pickItem(item.type+'-'+(i*4+j+1)+'.png')")
                         img(src="#{url}/img/item-text-3.png")
-    
+            template(slot="outside",slot-scope="slotProps")
+              .left
+                img(src="#{url}/img/arrow-left.png")
+              .right
+                img(src="#{url}/img/arrow-left.png")
+
     transition(name="page-zoom")
       .pop.pop-items.music(v-show="musicShow")
         .content
@@ -114,10 +121,12 @@ block content
     transition(name="page-fade")
       .btn.btn-share(v-show="shareShow",@click="share")
         img(src="#{url}/img/btn-share.png")
+
     transition(name="page-fade")
       .pop.pop-lottery(v-show="lotteryShow")
         .content(@click="showlotteryCode")
           img(src="#{url}/img/lottery-pop.png")
+
     transition(name="page-fade")
       .pop.pop-lottery-code(v-show="lotteryEndShow")
         .content

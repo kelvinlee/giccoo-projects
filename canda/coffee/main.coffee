@@ -449,6 +449,8 @@ init = ->
 				]
 				@.items = shopItemsList[id-1]
 			musicList: ->
+				@.musicShow = true
+				
 			showlotteryCode: ->
 				@.lotteryShow = false
 				@.lotteryEndShow = true
