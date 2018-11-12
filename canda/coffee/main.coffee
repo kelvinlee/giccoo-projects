@@ -287,6 +287,9 @@ init = ->
 				# @.lotteryShow = true
 				@.musicShow = false
 				goEnd(id) if goEnd?
+				setTimeout =>
+					@.shareShow = true
+				,500
 				
 
 			sharePost: (base64)->
