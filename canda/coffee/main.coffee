@@ -347,6 +347,7 @@ init = ->
 					@.lotteryShow = true
 					@.ugcShow = false
 				,5000
+				shareDone() if shareDone?
 			success: (data)->
 				@.shareImageLink = data.info
 				@.pushed = false
