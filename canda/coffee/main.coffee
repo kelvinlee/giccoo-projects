@@ -59,9 +59,9 @@ window.onload = ->
 		data:
 			note: true
 			playing: false
-		mounted: ->
-			document.addEventListener "WeixinJSBridgeReady", ->
-				_public.$children[0].change()
+		# mounted: ->
+		# 	document.addEventListener "WeixinJSBridgeReady", ->
+		# 		_public.$children[0].change()
 
 	loading = new Vue
 		el: "#loading"
