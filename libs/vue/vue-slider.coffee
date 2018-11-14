@@ -80,7 +80,7 @@ Vue.component "slider",
       if @repeat
         @offset.scrollableArea = @offset.w * @.count * 3
       @setSlideNumber 0
-      console.log @slideNumber
+      # console.log @slideNumber
     move: (evt)->
       return false unless @moved
       if evt.type is "mousemove"
@@ -114,7 +114,7 @@ Vue.component "slider",
         else if @slideNumber == 0
           @x = 0
         else
-          console.log @x,@slideNumber
+          # console.log @x,@slideNumber
           @x = - Math.abs @x
         @.autoRun() if @.auto
     autoRun: ->
