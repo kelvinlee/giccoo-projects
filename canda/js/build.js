@@ -129,7 +129,10 @@ function goMain(){
 	p1hintC.visible=false
 	TweenMax.to(page1,1,{alpha:0})
 	TweenMax.to(page1.scale,1,{x:6,y:6,onComplete:function(){
-		main.goShow(go1)
+		setTimeout(function(){
+			main.goShow(go1)
+		},666)
+		
 	}})
 	bigbgC.pivot.x=960
 	TweenMax.from(bigbgC.scale,1,{x:.5,y:.5})

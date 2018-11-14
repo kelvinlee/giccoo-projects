@@ -29,7 +29,7 @@ function setLogo(){
 	p1logo2=new Sprite(getTe(_CDN+"img/p1logo.png"));
 	p1logo2.blendMode=_ADD
 	p1logoC.addChild(p1logo,p1logo2)
-	p1logo2.alpha=.1
+	p1logo2.alpha=0//.1
 	TweenMax.to(p1logo2,.1,{alpha:0,repeat:100000})
 	p1logoC.y=stageH/2-287
 }
@@ -74,8 +74,10 @@ function setMain(){
 
 function go1(){
 	setDownBar()
-	TweenMax.to(bigbgC.pivot,2,{x:630,ease:Sine.easeInOut,onComplete:function(){
-		main.shop(1)
+	TweenMax.to(bigbgC.pivot,2,{x:630,ease:Sine.easeInOut,delay:1.5,onComplete:function(){
+		
+			main.shop(1)
+		
 	}})
 }
 
@@ -83,24 +85,34 @@ function go2(_step,_picUrl){
 	console.log("_step",_step)
 	//setItem(_step,_picUrl)
 	if(_step==1){
-		TweenMax.to(bigbgC.pivot,3,{x:1851,ease:Sine.easeInOut,onComplete:function(){
-			main.shop(2)
+		TweenMax.to(bigbgC.pivot,4,{x:1851,ease:Sine.easeInOut,onComplete:function(){
+			
+			setTimeout(function(){
+				main.shop(2)
+			},666)
 		}})
 	}
 	if(_step==2){
-		TweenMax.to(bigbgC.pivot,2,{x:2435,ease:Sine.easeInOut,onComplete:function(){
-			main.shop(3)
+		TweenMax.to(bigbgC.pivot,3,{x:2435,ease:Sine.easeInOut,onComplete:function(){
+			setTimeout(function(){
+				main.shop(3)
+			},666)
 		}})
 	}
 	if(_step==3){
-		TweenMax.to(bigbgC.pivot,3,{x:3181,ease:Sine.easeInOut,onComplete:function(){
-			main.shop(4)
+		TweenMax.to(bigbgC.pivot,4,{x:3181,ease:Sine.easeInOut,onComplete:function(){
+			setTimeout(function(){
+				main.shop(4)
+			},666)
 		}})
 	}
 	if(_step==4){
-		TweenMax.to(bigbgC.pivot,3,{x:3993,ease:Sine.easeInOut,onComplete:function(){
-			main.musicList()
+		TweenMax.to(bigbgC.pivot,4,{x:3993,ease:Sine.easeInOut,onComplete:function(){
+			
 			console.log("musicList")
+			setTimeout(function(){
+				main.musicList()
+			},666)
 		}})
 	}
 }
@@ -148,7 +160,7 @@ function goEnd(_result){
 
 	endLogo2.blendMode=_ADD
 	endLogoC.addChild(endLogo1,endLogo2)
-	endLogo2.alpha=.1
+	endLogo2.alpha=0//.1
 	TweenMax.to(endLogo2,.1,{alpha:0,repeat:100000})
 
 	endLogoC.y=stageH/2-246
