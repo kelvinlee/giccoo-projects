@@ -74,10 +74,10 @@ function setMain(){
 
 function go1(){
 	setDownBar()
-	TweenMax.to(bigbgC.pivot,2,{x:630,ease:Sine.easeInOut,delay:1.5,onComplete:function(){
-		
+	TweenMax.to(bigbgC.pivot,3,{x:630,ease:Sine.easeInOut,delay:1.5,onComplete:function(){
+		setTimeout(function(){
 			main.shop(1)
-		
+		},666)
 	}})
 }
 
