@@ -97,9 +97,13 @@ class UGC
 		else
 			text = main.message
 		text = text.replace(/<br\/>/g,"\n")
-		message = new Text "#{text}",{fontFamily : 'Arial', fontSize: 18, fill : 0x000000, fontStyle: "italic",fontWeight: "normal", letterSpacing: 0, lineHeight: 34}
+		message = new Text "#{text}",{fontFamily : 'Arial', fontSize: 22, fill : 0x000000, fontStyle: "italic",fontWeight: "normal", letterSpacing: 0, lineHeight: 34}
 		message.x = 160
 		message.y = 42 + 34 + 34/2
+		if message.height <= 34*2
+			message.y += 34
+		else if message.height <= 34
+			message.y += 34 * 3
 
 		postCard.y = logo.height + logo.y + 5
 		postCard.addChild bg, mark, nickname, message, mn
