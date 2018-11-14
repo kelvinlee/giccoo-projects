@@ -75,6 +75,15 @@ block content
       .pop.pop-cover(v-show="formBoxShow")
         .content(@click="goNext")
           img(src="#{url}/img/pop-1.png")
+          .items
+            .item.fadeInUp.animated.delay-3
+              img(src="#{url}/img/pop-1-1.png")
+            .item.fadeInUp.animated.delay-4
+              img(src="#{url}/img/pop-1-2.png")
+            .item.fadeInUp.animated.delay-5
+              img(src="#{url}/img/pop-1-3.png")
+            .item.fadeInUp.animated.delay-6
+              img(src="#{url}/img/pop-1-4.png")
 
     transition(name="page-zoom")
       .pop.pop-items(v-show="shopShow")
@@ -96,9 +105,9 @@ block content
                       .text-3.fadeInUp.animated.delay-3(@click="pickItem(item.type+'-'+(i*4+j+1)+'.png')")
                         img(src="#{url}/img/item-text-3.png")
             template(slot="outside",slot-scope="slotProps")
-              .left
+              .left(@click="moveLeft")
                 img(src="#{url}/img/arrow-left.png")
-              .right
+              .right(@click="moveRight")
                 img(src="#{url}/img/arrow-left.png")
 
     transition(name="page-zoom")

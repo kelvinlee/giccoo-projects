@@ -267,6 +267,12 @@ init = ->
 					if line.gblen() > 32
 						return @.message = o
 		methods:
+			moveLeft: ->
+				slider = @.$children[0]
+				slider.prev()
+			moveRight: ->
+				slider = @.$children[0]
+				slider.next()
 			send: (text)->
 				@.noteShow = true
 				@.noteText = text

@@ -139,6 +139,37 @@ Vue.component "slider",
         @x = -(@.count * 2 - 1) * @offset.w
         @duration = 0
         @slideNumber = -(@.count - 1)
+    next: ->
+      @.count = @.slider.childElementCount
+      @.offset.w = @.slider.clientWidth
+      @slideNumber--
+      if @slideNumber > 0
+        @slideNumber = 0
+        return false 
+      if @slideNumber < -(@.count-1)
+        @slideNumber = -(@.count-1)
+        return false 
+      @duration = 0.2
+      @x = @slideNumber * @offset.w
+      @x = 0 if @x >= 0
+      @x = - (@.count * @offset.w) if @x <= - (@.count * @offset.w)
+
+    prev: ->
+      @.count = @.slider.childElementCount
+      @.offset.w = @.slider.clientWidth
+      @slideNumber++
+      if @slideNumber > 0
+        @slideNumber = 0
+        return false 
+      if @slideNumber < -(@.count-1)
+        @slideNumber = -(@.count-1)
+        return false 
+      @duration = 0.2
+      @x = @slideNumber * @offset.w
+      @x = 0 if @x >= 0
+      @x = - (@.count * @offset.w) if @x <= - (@.count * @offset.w)
+
+
         
   mounted: ->
     @.slider = document.getElementById "slider-"+@.id
@@ -153,7 +184,6 @@ Vue.component "slider",
         @offset.scrollableArea = @.count * @offset.w
         @duration = 0
         @x = -(@.count * @offset.w)
-        console.log 
       ,1000
     # console.log @x
     @.autoRun() if @.auto
