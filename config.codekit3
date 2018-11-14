@@ -678,6 +678,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/canda/img/icon-play.png": {
+		"ft": 32768,
+		"iS": 3407,
+		"oA": 0,
+		"oAP": "/canda/img/icon-play.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/canda/img/icon-stop.png": {
+		"ft": 32768,
+		"iS": 3243,
+		"oA": 0,
+		"oAP": "/canda/img/icon-stop.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"/canda/img/item-bg.png": {
 		"ft": 32768,
 		"iS": 3475,
@@ -1403,6 +1425,13 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"/canda/mp3/bgm.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/canda/mp3/bgm.mp3",
+		"oF": 0
 		},
 	"/canda/sass/base.sass": {
 		"aP": 1,

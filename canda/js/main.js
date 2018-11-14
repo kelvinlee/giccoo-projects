@@ -67,15 +67,7 @@ apiLink="//g.giccoo.com/",// apiLink = "http://192.168.3.53:3000/"
 // apiUrl = "http://localhost:8881/Levi"
 main={},sys="",sended=[!(loading={}),!(_public={})],_runTime=_startCache=_cache=ugcCache=musicIconCache=musicLineCache=ugc=null,_testTime=_second=0,neteaseShareImage=function e(){var t,i,n;return n="点播圣诞星声",t="https://image.giccoo.com/upload/".concat(main.folder,"/")+main.shareImageLink+"@!large",i="https://activity.music.163.com/canda/",// console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 // window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
-console.log("share href:",t),CloudMusic.sharePic({picUrl:t,text:n,link:i})},window.onload=function(){var e;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,-1<window.navigator.userAgent.indexOf("NeteaseMusic")&&(sys="NeteaseMusic"),// _public = new Vue
-// 	el: "#public"
-// 	data:
-// 		note: true
-// 		playing: false
-// 	mounted: ->
-// 		document.addEventListener "WeixinJSBridgeReady", ->
-// 			_public.$children[0].change()
-loading=new Vue({el:"#loading",data:{progress:0,mounted:!1,progressOn:0},methods:{next:function e(){return document.getElementById("load").className+=" fadeOut animated",_public.note=!1,main.mounted=!0,setTimeout(function(){return document.getElementById("load").style.display="none"},520)}},mounted:function e(){var t=this,i;// @.next() # for test
+console.log("share href:",t),CloudMusic.sharePic({picUrl:t,text:n,link:i})},window.onload=function(){var e;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,-1<window.navigator.userAgent.indexOf("NeteaseMusic")&&(sys="NeteaseMusic"),_public=new Vue({el:"#public",data:{note:!0,playing:!1},mounted:function e(){return document.addEventListener("WeixinJSBridgeReady",function(){return _public.$children[0].change()})}}),loading=new Vue({el:"#loading",data:{progress:0,mounted:!1,progressOn:0},methods:{next:function e(){return document.getElementById("load").className+=" fadeOut animated",_public.note=!1,main.mounted=!0,setTimeout(function(){return document.getElementById("load").style.display="none"},520)}},mounted:function e(){var t=this,i;// @.next() # for test
 return this.mounted=!0,TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,i=setInterval(function(){if(t.progress+=3,t.progress>=t.progressOn&&(t.progress=t.progressOn),100<=t.progress)return t.progress=100,clearInterval(i),_cache=setTimeout(function(){return t.next()},1e3)},50)}}),init(),CloudMusic.setShareData({name:"canda",title:"点播圣诞星声",subTitle:"点播圣诞星声",text:"",picUrl:"http://m.giccoo.com/canda/img/ico.jpg",link:"http://m.giccoo.com/canda/"})},init=function e(){var t,n,s;return 640<=TrueW&&(
 // console.log new Date().getTime() - startTime
 // document.body.style.height = TrueH+"px"
