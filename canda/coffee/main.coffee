@@ -346,7 +346,7 @@ init = ->
 				_cache = setTimeout =>
 					@.lotteryShow = true
 					@.ugcShow = false
-				,5000
+				,7000
 				shareDone() if shareDone?
 			success: (data)->
 				@.shareImageLink = data.info
