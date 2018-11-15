@@ -127,16 +127,16 @@ function goMain(){
 	page1.pivot.set(100,750)
 	page1.position.set(100,750)
 	p1hintC.visible=false
-	TweenMax.to(page1,1,{alpha:0})
-	TweenMax.to(page1.scale,1,{x:6,y:6,onComplete:function(){
+	TweenMax.to(page1,2,{alpha:0})
+	TweenMax.to(page1.scale,2,{x:6,y:6,onComplete:function(){
 		setTimeout(function(){
 			main.goShow(go1)
 		},666)
 		
 	}})
 	bigbgC.pivot.x=960
-	TweenMax.from(bigbgC.scale,1,{x:.5,y:.5})
-	TweenMax.to(bigbgC.pivot,1,{x:0})
+	TweenMax.from(bigbgC.scale,1.5,{delay:.5,x:.5,y:.5})
+	TweenMax.to(bigbgC.pivot,1.5,{delay:.5,x:0})
 }
 var item1,item2,item3,item4
 var itemA=[]
