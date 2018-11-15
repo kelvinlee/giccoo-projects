@@ -667,6 +667,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/canda/img/ico.jpg": {
+		"ft": 16384,
+		"iS": 42448,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/canda/img/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/canda/img/icon-close.png": {
 		"ft": 32768,
 		"iS": 7831,

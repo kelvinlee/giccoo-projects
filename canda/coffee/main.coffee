@@ -33,9 +33,9 @@ _second = 0
 _testTime = 0
 
 neteaseShareImage = ->
-	title1 = "C&A 暖心杂货铺"
+	title1 = "C&A暖心杂货铺"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://activity.music.163.com/canda/"
+	redirectUrl = "http://m.giccoo.com/canda/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	# window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "share href:",picUrl
@@ -99,8 +99,8 @@ window.onload = ->
 
 	CloudMusic.setShareData
 		name: 'canda',
-		title: 'C&A 暖心杂货铺',
-		subTitle: 'C&A 暖心杂货铺',
+		title: 'C&A暖心杂货铺',
+		subTitle: '快来挑选暖心礼物，领取温馨福利~',
 		text: '',
 		picUrl: 'http://m.giccoo.com/canda/img/ico.jpg',
 		link: 'http://m.giccoo.com/canda/'
