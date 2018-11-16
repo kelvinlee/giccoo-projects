@@ -104,6 +104,23 @@ window.onload = ->
 		text: '',
 		picUrl: 'http://m.giccoo.com/canda/img/ico.jpg',
 		link: 'http://m.giccoo.com/canda/'
+	if sys isnt "NeteaseMusic"
+		loadWechatConfig()
+		wx.ready ->
+			shareContent =
+				title: "C&A暖心杂货铺"
+				desc: "快来挑选暖心礼物，领取温馨福利~"
+				link: "http://m.giccoo.com/canda/"
+				imgUrl: "http://m.giccoo.com/canda/img/ico.jpg"
+				success: ->
+					# alert "success"
+				cancel: ->
+					# alert "cancel"
+			wx.onMenuShareTimeline shareContent
+			wx.onMenuShareAppMessage shareContent
+			wx.onMenuShareQQ shareContent
+			wx.onMenuShareWeibo shareContent
+
 	console.log "load end"
 
 init = ->
