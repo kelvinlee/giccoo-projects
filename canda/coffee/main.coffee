@@ -104,6 +104,7 @@ window.onload = ->
 		text: '',
 		picUrl: 'http://m.giccoo.com/canda/img/ico.jpg',
 		link: 'http://m.giccoo.com/canda/'
+	console.log "load end"
 
 init = ->
 	# console.log new Date().getTime() - startTime
