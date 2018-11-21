@@ -2,7 +2,7 @@
 // @import sass/row
 @import ../../libs/sass/loader-ball
 
-$debug : true
+$debug : false
 $cdn : "../"
 @if not $debug
 	$cdn : "//image.giccoo.com/projects/canda/"
@@ -168,7 +168,7 @@ video,canvas,svg
 	font-size: 0
 	+overhide
 	+tran(all,4s,ease)
-	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
 #game
 	+h
 	canvas

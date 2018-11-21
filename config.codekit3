@@ -29,6 +29,12 @@
 		"oAP": "/build/2017-new-year",
 		"oF": 0
 		},
+	"/ad": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/ad",
+		"oF": 0
+		},
 	"/adidas": {
 		"ft": 65536,
 		"oA": 1,
@@ -691,23 +697,23 @@
 		},
 	"/canda/img/icon-play.png": {
 		"ft": 32768,
-		"iS": 3407,
+		"iS": 2404,
 		"oA": 0,
 		"oAP": "/canda/img/icon-play.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
 	"/canda/img/icon-stop.png": {
 		"ft": 32768,
-		"iS": 3243,
+		"iS": 2550,
 		"oA": 0,
 		"oAP": "/canda/img/icon-stop.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
@@ -1252,18 +1258,18 @@
 		},
 	"/canda/img/pop-1-1.png": {
 		"ft": 32768,
-		"iS": 13155,
+		"iS": 5342,
 		"oA": 0,
 		"oAP": "/canda/img/pop-1-1.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
 	"/canda/img/pop-1-2.png": {
 		"ft": 32768,
-		"iS": 25031,
+		"iS": 28221,
 		"oA": 0,
 		"oAP": "/canda/img/pop-1-2.png",
 		"oF": 0,
@@ -1274,18 +1280,18 @@
 		},
 	"/canda/img/pop-1-3.png": {
 		"ft": 32768,
-		"iS": 15491,
+		"iS": 6082,
 		"oA": 0,
 		"oAP": "/canda/img/pop-1-3.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
 	"/canda/img/pop-1-4.png": {
 		"ft": 32768,
-		"iS": 19662,
+		"iS": 20291,
 		"oA": 0,
 		"oAP": "/canda/img/pop-1-4.png",
 		"oF": 0,
@@ -1296,12 +1302,12 @@
 		},
 	"/canda/img/pop-1.png": {
 		"ft": 32768,
-		"iS": 72749,
+		"iS": 12669,
 		"oA": 0,
 		"oAP": "/canda/img/pop-1.png",
 		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
+		"oIPL": 0,
+		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
