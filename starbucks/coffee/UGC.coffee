@@ -83,7 +83,7 @@ class UGC
 		mark = Spr _CDN+"img/post-card-mark.png"
 		mark.scale.set(640/750,640/750)
 		mark.x = (@.opts.w-mark.width)/2
-		rL = [5,3,4,5]
+		rL = [5,6,3,5]
 		id = Math.floor(Math.random()*rL[main.answer2-1])+1
 		mn = PIXI.Sprite.fromImage _CDN+"img/m-"+main.answer2+"-"+id+".png"
 		mn.scale.set(640/750,640/750)
