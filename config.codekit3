@@ -29,12 +29,6 @@
 		"oAP": "/build/2017-new-year",
 		"oF": 0
 		},
-	"/ad": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "/build/ad",
-		"oF": 0
-		},
 	"/adidas": {
 		"ft": 65536,
 		"oA": 1,
@@ -697,7 +691,7 @@
 		},
 	"/canda/img/icon-play.png": {
 		"ft": 32768,
-		"iS": 2404,
+		"iS": 3407,
 		"oA": 0,
 		"oAP": "/canda/img/icon-play.png",
 		"oF": 0,
@@ -708,7 +702,7 @@
 		},
 	"/canda/img/icon-stop.png": {
 		"ft": 32768,
-		"iS": 2550,
+		"iS": 3243,
 		"oA": 0,
 		"oAP": "/canda/img/icon-stop.png",
 		"oF": 0,
@@ -1258,7 +1252,7 @@
 		},
 	"/canda/img/pop-1-1.png": {
 		"ft": 32768,
-		"iS": 5342,
+		"iS": 13155,
 		"oA": 0,
 		"oAP": "/canda/img/pop-1-1.png",
 		"oF": 0,
@@ -1269,7 +1263,7 @@
 		},
 	"/canda/img/pop-1-2.png": {
 		"ft": 32768,
-		"iS": 28221,
+		"iS": 25031,
 		"oA": 0,
 		"oAP": "/canda/img/pop-1-2.png",
 		"oF": 0,
@@ -1280,7 +1274,7 @@
 		},
 	"/canda/img/pop-1-3.png": {
 		"ft": 32768,
-		"iS": 6082,
+		"iS": 15491,
 		"oA": 0,
 		"oAP": "/canda/img/pop-1-3.png",
 		"oF": 0,
@@ -1291,7 +1285,7 @@
 		},
 	"/canda/img/pop-1-4.png": {
 		"ft": 32768,
-		"iS": 20291,
+		"iS": 19662,
 		"oA": 0,
 		"oAP": "/canda/img/pop-1-4.png",
 		"oF": 0,
@@ -1302,7 +1296,7 @@
 		},
 	"/canda/img/pop-1.png": {
 		"ft": 32768,
-		"iS": 12669,
+		"iS": 72749,
 		"oA": 0,
 		"oAP": "/canda/img/pop-1.png",
 		"oF": 0,

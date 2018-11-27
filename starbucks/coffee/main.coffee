@@ -315,7 +315,10 @@ init = ->
 			regame: ->
 				window.location.reload()
 			gobuy: ->
-				window.location.href = "https://pro.m.jd.com/mall/active/FhZb3W2CXuZKnkZ2Wy57f8NefsH/index.html"
+				_jcq.push(['_track', "ljgm"]) if _jcq?
+				setTimeout =>
+					window.location.href = "https://pro.m.jd.com/mall/active/FhZb3W2CXuZKnkZ2Wy57f8NefsH/index.html"
+				,100
 			dateText: (date)->
 				console.log date.replace(/-/g,"/")
 				d = new Date date.replace(/-/g,"/")
