@@ -65,7 +65,7 @@ window.onload = ->
 			title: '点播圣诞星声',
 			subTitle: _shareText[randomId-1],
 			text: '',
-			picUrl: 'http://m.giccoo.com/starbucks/img/ico'+randomId+'.jpg',
+			picUrl: 'http://m.giccoo.com/starbucks/img/ico1.jpg',
 			link: 'http://m.giccoo.com/starbucks/'
 		CloudMusic.setShareData shareData
 	else
@@ -75,7 +75,7 @@ window.onload = ->
 				title: "点播圣诞星声"
 				desc: _shareText[randomId-1]
 				link: "http://m.giccoo.com/starbucks/"
-				imgUrl: "http://m.giccoo.com/starbucks/img/ico#{randomId}.jpg"
+				imgUrl: "http://m.giccoo.com/starbucks/img/ico1.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
