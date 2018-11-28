@@ -53,7 +53,7 @@ window.onload = ->
 
 	# 我的满满心意，都藏在这张卡片里
 	# 雪花、麋鹿、圣诞树 ……只缺一个最可爱的你
-	randomId = Math.floor(Math.random()*2+1)
+	randomId = 2 # Math.floor(Math.random()*2+1)
 	_shareText = []
 	_shareText[0] = "我的满满心意，都藏在这张卡片里"
 	_shareText[1] = "雪花、麋鹿、圣诞树 ……只缺一个最可爱的你"
