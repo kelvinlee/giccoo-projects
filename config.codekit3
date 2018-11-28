@@ -9356,6 +9356,28 @@
 		"opt": 1,
 		"q": 100
 		},
+	"/starbucks/img/ico1.jpg": {
+		"ft": 16384,
+		"iS": 65222,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/starbucks/img/ico1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/starbucks/img/ico2.jpg": {
+		"ft": 16384,
+		"iS": 43821,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/starbucks/img/ico2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/starbucks/img/icon-close.png": {
 		"ft": 32768,
 		"iS": 7831,

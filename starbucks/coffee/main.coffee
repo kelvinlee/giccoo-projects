@@ -97,13 +97,22 @@ window.onload = ->
 	
 	init()
 
-	CloudMusic.setShareData
+	# 我的满满心意，都藏在这张卡片里
+	# 雪花、麋鹿、圣诞树 ……只缺一个最可爱的你
+	randomId = Math.floor(Math.random()*2+1)
+	_shareText = []
+	_shareText[0] = "我的满满心意，都藏在这张卡片里"
+	_shareText[1] = "雪花、麋鹿、圣诞树 ……只缺一个最可爱的你"
+
+	shareData = 
 		name: 'starbucks',
 		title: '点播圣诞星声',
-		subTitle: '点播圣诞星声',
+		subTitle: _shareText[randomId-1],
 		text: '',
-		picUrl: 'http://m.giccoo.com/starbucks/img/ico.jpg',
+		picUrl: 'http://m.giccoo.com/starbucks/img/ico'+randomId+'.jpg',
 		link: 'http://m.giccoo.com/starbucks/'
+	console.log "shareData:",shareData
+	CloudMusic.setShareData shareData
 
 init = ->
 	
