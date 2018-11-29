@@ -117,7 +117,7 @@ function touchStart(_e){
   if(nowPage==8){$("#video1")[0].play()}
   if(nowPage==9){$("#video2")[0].play()}
   if(nowPage==10){$("#video3")[0].play()}
-  if(nowPage==11){$("#video4")[0].play()}
+  if(nowPage==12){$("#video4")[0].play()}
 
 }
 var ifTouchBG=1
