@@ -249,10 +249,6 @@ init = ->
 				@.white = if n is 3 then false else true
 			answer2: (n,o)->
 				console.log "answer2 changed:",n
-				_public.$children[0].src = "./mp3/m-#{n}.mp3"
-				setTimeout =>
-					_public.$children[0].play()
-				,5
 				q2(n) if q2?
 			"answer3.c1": (n,o)->
 				@.answer3Change n,o
@@ -332,7 +328,14 @@ init = ->
 					@.answer3.c2 = false
 					@.answer3.c3 = false
 					@.answer3.c4 = false
-				
+			selectMusic: (index)->
+				@.answer2 = index
+				console.log "public:",_public.$children[0]
+				_public.$children[0].src = "./mp3/m-#{index}.mp3"
+				# _public.$children[0].play()
+				setTimeout =>
+					_public.$children[0].play()
+				,10
 			over: ->
 				@.questionShow = false
 				ugc.init()

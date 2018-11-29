@@ -130,13 +130,13 @@ block content
                   .question(v-show="questionIndex == 1")
                     .title 选一位圣诞DJ，<br/>专治你的秋裤太厚蹦不动
                     .answer
-                      .item.music-icon(:class="{on: answer2==1}", @click="answer2 = 1")
+                      .item.music-icon(:class="{on: answer2==1}", @click="selectMusic(1)")
                         | 乡村短腿鹅
-                      .item.music-icon(:class="{on: answer2==2}", @click="answer2 = 2")
+                      .item.music-icon(:class="{on: answer2==2}", @click="selectMusic(2)")
                         | POP红鼻鹿
-                      .item.music-icon(:class="{on: answer2==3}", @click="answer2 = 3")
+                      .item.music-icon(:class="{on: answer2==3}", @click="selectMusic(3)")
                         | 古典绅士熊
-                      .item.music-icon(:class="{on: answer2==4}", @click="answer2 = 4")
+                      .item.music-icon(:class="{on: answer2==4}", @click="selectMusic(4)")
                         | 摇滚大雪人
                 transition(name="page-fade")
                   .question(v-show="questionIndex == 2")

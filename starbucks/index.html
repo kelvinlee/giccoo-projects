@@ -106,10 +106,10 @@
                     <div v-show="questionIndex == 1" class="question">
                       <div class="title">选一位圣诞DJ，<br/>专治你的秋裤太厚蹦不动</div>
                       <div class="answer">
-                        <div :class="{on: answer2==1}" @click="answer2 = 1" class="item music-icon">乡村短腿鹅</div>
-                        <div :class="{on: answer2==2}" @click="answer2 = 2" class="item music-icon">POP红鼻鹿</div>
-                        <div :class="{on: answer2==3}" @click="answer2 = 3" class="item music-icon">古典绅士熊</div>
-                        <div :class="{on: answer2==4}" @click="answer2 = 4" class="item music-icon">摇滚大雪人</div>
+                        <div :class="{on: answer2==1}" @click="selectMusic(1)" class="item music-icon">乡村短腿鹅</div>
+                        <div :class="{on: answer2==2}" @click="selectMusic(2)" class="item music-icon">POP红鼻鹿</div>
+                        <div :class="{on: answer2==3}" @click="selectMusic(3)" class="item music-icon">古典绅士熊</div>
+                        <div :class="{on: answer2==4}" @click="selectMusic(4)" class="item music-icon">摇滚大雪人</div>
                       </div>
                     </div>
                   </transition>
