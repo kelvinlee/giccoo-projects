@@ -333,6 +333,7 @@ init = ->
 				console.log "public:",_public.$children[0]
 				_public.$children[0].src = "./mp3/m-#{index}.mp3"
 				# _public.$children[0].play()
+				# _public.$children[0].play()
 				setTimeout =>
 					_public.$children[0].play()
 				,10
