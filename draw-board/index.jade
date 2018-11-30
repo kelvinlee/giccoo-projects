@@ -76,19 +76,20 @@ block content
             img(src="#{url}/img/homepage-text-2.png")
           .text-6.fadeInDown.animated.delay-10(@click="goNext")
             img(src="#{url}/img/homepage-text-3.png")
-          .box.fadeInDown.animated.delay-11
+          .box.fadeInDown.animated.delay-13
             img(src="#{url}/img/homepage-car.png")
             .text-3
               img(src="#{url}/img/homepage-cd.png")
             .slider
               .slide
-                transition(name="page-zoom")
-                  .item(v-show="carIndex == 1")
-                    img(src="#{url}/img/car-1.jpg")
-                transition(name="page-zoom")
-                  .item(v-show="carIndex == 2")
-                    img(src="#{url}/img/car-2.jpg")
-          .logo-down.fadeInDown.animated.delay-13
+                mp4(src="./video/video-build.mp4",poster="#{url}/img/poster.jpg")
+                //- transition(name="page-zoom")
+                //-   .item(v-show="carIndex == 1")
+                //-     img(src="#{url}/img/car-1.jpg")
+                //- transition(name="page-zoom")
+                //-   .item(v-show="carIndex == 2")
+                //-     img(src="#{url}/img/car-2.jpg")
+          .logo-down.fadeInDown.animated.delay-16
             img(src="#{url}/img/logo-down.png")
 
     transition(name="page-fade")

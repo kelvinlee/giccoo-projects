@@ -2,6 +2,7 @@
 # @codekit-prepend "../../libs/coffee/loadWechatConfig"
 # @codekit-prepend "../../libs/coffee/IsPC"
 # @codekit-prepend "../../libs/vue/vue-player"
+# @codekit-prepend "../../libs/vue/vue-video"
 # @codekit-prepend "../../libs/coffee/pixi-base"
 # @codekit-prepend "../../libs/coffee/String"
 # @codekit-prepend "./UGC"
@@ -53,6 +54,30 @@ window.onload = ->
 
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
+		shareData = 
+			name: 'draw-board'
+			title: '点播圣诞星声'
+			subTitle: ""
+			text: ''
+			picUrl: 'http://m.giccoo.com/draw-board/img/ico.jpg'
+			link: 'http://m.giccoo.com/draw-board/'
+		CloudMusic.setShareData shareData
+	else
+		loadWechatConfig()
+		wx.ready ->
+			shareContent =
+				title: "点播圣诞星声"
+				desc: ""
+				link: "http://m.giccoo.com/draw-board/"
+				imgUrl: "http://m.giccoo.com/draw-board/img/ico.jpg"
+				success: ->
+					# alert "success"
+				cancel: ->
+					# alert "cancel"
+			wx.onMenuShareTimeline shareContent
+			wx.onMenuShareAppMessage shareContent
+			wx.onMenuShareQQ shareContent
+			wx.onMenuShareWeibo shareContent
 
 	# _public = new Vue
 	# 	el: "#public"
@@ -97,13 +122,6 @@ window.onload = ->
 	
 	init()
 
-	CloudMusic.setShareData
-		name: 'starbucks',
-		title: '点播圣诞星声',
-		subTitle: '点播圣诞星声',
-		text: '',
-		picUrl: 'http://m.giccoo.com/starbucks/img/ico.jpg',
-		link: 'http://m.giccoo.com/starbucks/'
 
 init = ->
 	
@@ -133,7 +151,7 @@ init = ->
 			noteTime: null
 			noteShow: false
 			pageInfoShow: false
-			pageIndex: 2
+			pageIndex: 1
 			step: 1
 			singerIndex: 1
 			startgame: false

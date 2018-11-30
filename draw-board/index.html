@@ -43,20 +43,15 @@
             <div class="text-4 fadeInDown animated delay-8"><img src="./img/homepage-text-1.png"></div>
             <div class="text-5 fadeInDown animated delay-9"><img src="./img/homepage-text-2.png"></div>
             <div @click="goNext" class="text-6 fadeInDown animated delay-10"><img src="./img/homepage-text-3.png"></div>
-            <div class="box fadeInDown animated delay-11"><img src="./img/homepage-car.png">
+            <div class="box fadeInDown animated delay-13"><img src="./img/homepage-car.png">
               <div class="text-3"><img src="./img/homepage-cd.png"></div>
               <div class="slider">
                 <div class="slide">
-                  <transition name="page-zoom">
-                    <div v-show="carIndex == 1" class="item"><img src="./img/car-1.jpg"></div>
-                  </transition>
-                  <transition name="page-zoom">
-                    <div v-show="carIndex == 2" class="item"><img src="./img/car-2.jpg"></div>
-                  </transition>
+                  <mp4 src="./video/video-build.mp4" poster="./img/poster.jpg"></mp4>
                 </div>
               </div>
             </div>
-            <div class="logo-down fadeInDown animated delay-13"><img src="./img/logo-down.png"></div>
+            <div class="logo-down fadeInDown animated delay-16"><img src="./img/logo-down.png"></div>
           </div>
         </div>
       </transition>

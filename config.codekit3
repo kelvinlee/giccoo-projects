@@ -1904,8 +1904,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/homepage-cd.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1915,8 +1915,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/homepage-text-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1926,8 +1926,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/homepage-text-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1937,8 +1937,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/homepage-text-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1948,8 +1948,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/homepage-text.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -2072,6 +2072,17 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/poster.jpg": {
+		"ft": 16384,
+		"iS": 60486,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/draw-board/img/poster.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"/draw-board/img/qr.png": {
@@ -2438,6 +2449,20 @@
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
+		},
+	"/draw-board/video/1.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/draw-board/video/1.mp4",
+		"oF": 0
+		},
+	"/draw-board/video/video-build.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/draw-board/video/video-build.mp4",
+		"oF": 0
 		},
 	"/elr4": {
 		"ft": 65536,
@@ -5518,6 +5543,17 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/libs/js/vue-slider.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/libs/vue/vue-video.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/libs/js/vue-video.js",
 		"oF": 0,
 		"oS": 1,
 		"sC": 0,
@@ -10012,6 +10048,41 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"/starbucks/mp3/bgm.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/mp3/bgm.mp3",
+		"oF": 0
+		},
+	"/starbucks/mp3/m-1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/mp3/m-1.mp3",
+		"oF": 0
+		},
+	"/starbucks/mp3/m-2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/mp3/m-2.mp3",
+		"oF": 0
+		},
+	"/starbucks/mp3/m-3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/mp3/m-3.mp3",
+		"oF": 0
+		},
+	"/starbucks/mp3/m-4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/starbucks/mp3/m-4.mp3",
+		"oF": 0
 		},
 	"/starbucks/sass/base.sass": {
 		"aP": 1,
