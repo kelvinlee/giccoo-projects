@@ -519,33 +519,33 @@ function setResult(){
 
 //===================================================================================================================End1 文案
 var style1_1=new PIXI.TextStyle({
-	fontSize:25,
+	fontSize:33*.85,//25
 	fill:0x3f4f5c,
 	stroke:"0x3f4f5c",
 	strokeThickness:1
 })
 var style1_2=new PIXI.TextStyle({
-	fontSize:25,
+	fontSize:33*.85,
 	fill:0x517990,
 	stroke:"0x517990",
 	strokeThickness:1
 })
 
 var style2_1=new PIXI.TextStyle({
-	fontSize:33,
+	fontSize:33*.85,
 	fill:0x3f4f5c,
 	stroke:"0x3f4f5c",
 	strokeThickness:1
 })
 var style2_2=new PIXI.TextStyle({
-	fontSize:33,
+	fontSize:33*.85,
 	fill:0x517990,
 	stroke:"0x517990",
 	strokeThickness:1
 })
 
 var style3_1=new PIXI.TextStyle({
-	fontSize:38,
+	fontSize:38*.8,
 	fill:0x3f4f5c,
 	stroke:"0x3f4f5c",
 	strokeThickness:1
@@ -588,15 +588,15 @@ function setEnd1t(){
 	end1t1C.addChild(t1_1,t1_2,t1_3,t2_1,t2_2,t2_3,t3_1,t4_1,t4_2,t4_3,t4_4,tBar)
 	t1_2.text=main.nickname
 	t2_2.text="「"+resultTA[resultNum][3]+"」"
-	t1_1.position.set(50,stageH/2-405)
-	t1_2.position.set(t1_1.x+t1_1.width,stageH/2-405)
-	t1_3.position.set(t1_2.x+t1_2.width+10,stageH/2-405)
+	t1_1.position.set(50,stageH/2-405+3)
+	t1_2.position.set(t1_1.x+t1_1.width,stageH/2-405+3)
+	t1_3.position.set(t1_2.x+t1_2.width+10,stageH/2-405+3)
 
 	t2_1.position.set(50,stageH/2-367)
 	t2_2.position.set(t2_1.x+t2_1.width,stageH/2-367)
 	t2_3.position.set(t2_2.x+t2_2.width,stageH/2-367)
 
-	t3_1.position.set(50,stageH/2-324)
+	t3_1.position.set(50,stageH/2-324-10)
 
 	t4_1.text=resultTA[resultNum][0]
 	t4_2.text=resultTA[resultNum][1]
