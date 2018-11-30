@@ -588,7 +588,7 @@ function setEnd1t(){
 	end1t1C.addChild(t1_1,t1_2,t1_3,t2_1,t2_2,t2_3,t3_1,t4_1,t4_2,t4_3,t4_4,tBar)
 	t1_2.text=main.nickname
 	t2_2.text="「"+resultTA[resultNum][3]+"」"
-	t1_1.position.set(50,stageH/2-405+3)
+	t1_1.position.set(50-10,stageH/2-405+3)
 	t1_2.position.set(t1_1.x+t1_1.width,stageH/2-405+3)
 	t1_3.position.set(t1_2.x+t1_2.width+10,stageH/2-405+3)
 
