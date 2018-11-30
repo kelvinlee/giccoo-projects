@@ -560,15 +560,15 @@ var style4=new PIXI.TextStyle({
 
 
 
-var t1_1=new PIXI.Text("属于",style1_1)
+var t1_1=new PIXI.Text("",style1_1)
 var t1_2=new PIXI.Text("name",style1_2)
-var t1_3=new PIXI.Text("画的山岳",style1_1)
+var t1_3=new PIXI.Text("解锁的山岳",style1_1)
 
-var t2_1=new PIXI.Text("与",style2_1)
+var t2_1=new PIXI.Text("居然与",style2_1)
 var t2_2=new PIXI.Text("万重山-100KM",style2_2)
-var t2_3=new PIXI.Text("匹配",style2_1)
+var t2_3=new PIXI.Text("完美匹配",style2_1)
 
-var t3_1=new PIXI.Text("画山成岳，居然如此动听！",style3_1)
+var t3_1=new PIXI.Text("画山成岳，一曲道不尽\n飞雪连天射白鹿，笑书神侠倚碧鸳",style3_1)
 
 var t4_1=new PIXI.Text("",style4)
 var t4_2=new PIXI.Text("",style4)
@@ -589,7 +589,7 @@ function setEnd1t(){
 	t1_2.text=main.nickname
 	t2_2.text="「"+resultTA[resultNum][3]+"」"
 	t1_1.position.set(50,stageH/2-405)
-	t1_2.position.set(t1_1.x+t1_1.width+10,stageH/2-405)
+	t1_2.position.set(t1_1.x+t1_1.width,stageH/2-405)
 	t1_3.position.set(t1_2.x+t1_2.width+10,stageH/2-405)
 
 	t2_1.position.set(50,stageH/2-367)
