@@ -60,6 +60,8 @@ var imageList = [
 	_CDN+"img/text10.png",
 	_CDN+"img/text11.png",
 	_CDN+"img/text12.png",
+
+	_CDN+"img/musicico.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,

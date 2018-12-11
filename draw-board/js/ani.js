@@ -603,6 +603,8 @@ var t4_4=new PIXI.Text("",style4)
 var end1t1C=new PIXI.Container()
 var tBar=new PIXI.Graphics()
 
+var playIcon
+
 function setEnd1t(){
 	page2.addChild(end1t1C)
 
@@ -610,7 +612,8 @@ function setEnd1t(){
 	tBar.drawRect(0,0,8,102)
 	tBar.position.set(50,stageH/2-11)
 
-	end1t1C.addChild(t1_1,t1_2,t1_3,t2_1,t2_2,t2_3,t3_1,t4_1,t4_2,t4_3,t4_4,tBar)
+	playIcon=new Sprite(getTe(_CDN+"img/musicico.png"));
+	end1t1C.addChild(t1_1,t1_2,t1_3,t2_1,t2_2,t2_3,t3_1,t4_1,t4_2,t4_3,t4_4,tBar,playIcon)
 	t1_2.text=main.nickname
 	t2_2.text="「"+resultTA[resultNum][3]+"」"
 
@@ -631,10 +634,15 @@ function setEnd1t(){
 	t4_3.text=resultTA[resultNum][2]
 	t4_4.text="- "+resultTA[resultNum][3]
 
+
+
 	t4_1.position.set(64,stageH/2-11)
 	t4_2.position.set(64,stageH/2-11+27*1)
 	t4_3.position.set(64,stageH/2-11+27*2)
 	t4_4.position.set(64,stageH/2-11+27*3)
+
+	playIcon.x=t4_4.x+t4_4.width+10
+	playIcon.y=t4_4.y
 
 	//goFinal2()//=====
 }
