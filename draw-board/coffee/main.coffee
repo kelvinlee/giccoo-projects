@@ -390,6 +390,10 @@ init = ->
 			faild: (err)->
 				@.pushed = false
 				@.loading = false
+			openSong: ->
+				id = [38576323,167740,139381,474567580,355992,28815250,109968,110083,163639,28785688,5271858,28838557,169794,27591641,5271855]
+				# CloudMusic.song(id[resultNum])
+				window.location.href = "https://music.163.com/#/song?id=#{id[resultNum]}"
 			openMusic: (id)->
 				# goList()
 				# _public.$children[0].pause()
