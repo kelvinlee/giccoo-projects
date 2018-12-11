@@ -1,7 +1,6 @@
-var _CDN = "./";
-// var _CDN = "//image.giccoo.com/projects/jeep/";
+// var _CDN = "./";
+var _CDN = "//image.giccoo.com/projects/starbucks/";
 var imageList = [
-	_CDN+"img/bg.jpg",
 	_CDN+"img/texture.png",
 
 	_CDN+"img/bg1a.png",

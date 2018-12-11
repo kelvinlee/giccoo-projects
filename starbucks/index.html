@@ -7,7 +7,7 @@
     <title>点播圣诞星声</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
-    <link rel="stylesheet" href="/libs/font/YRDZST-Heavy.css">
+    <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/font/YRDZST-Heavy.css">
     <link rel="stylesheet" href="css/base.css">
     <script>
       var _jcq = _jcq || [];
@@ -24,19 +24,20 @@
     </script>
   </head>
   <body>
+    <!-- - url = ".";-->
     <div id="public" class="public">
-      <player icon="true" src="./mp3/bgm.mp3"></player>
+      <player icon="true" src="//image.giccoo.com/projects/starbucks/mp3/bgm.mp3"></player>
     </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
-        <div class="loading-logo fadeIn animated"><img src="./img/logo.png"></div>
+        <div class="loading-logo fadeIn animated"><img src="//image.giccoo.com/projects/starbucks/img/logo.png"></div>
         <div class="loading-text">
-          <div class="animal"><img src="./img/loading-animal.png">
-            <div class="snowman-hand"><img src="./img/snowman-hand.png"></div>
-            <div class="icon-symbol music-1"><img src="./img/icon-symbol-1.png"></div>
-            <div class="icon-symbol music-2"><img src="./img/icon-symbol-2.png"></div>
-            <div class="icon-symbol music-3"><img src="./img/icon-symbol-2.png"></div>
-            <div class="icon-symbol music-4"><img src="./img/icon-symbol-3.png"></div>
+          <div class="animal"><img src="//image.giccoo.com/projects/starbucks/img/loading-animal.png">
+            <div class="snowman-hand"><img src="//image.giccoo.com/projects/starbucks/img/snowman-hand.png"></div>
+            <div class="icon-symbol music-1"><img src="//image.giccoo.com/projects/starbucks/img/icon-symbol-1.png"></div>
+            <div class="icon-symbol music-2"><img src="//image.giccoo.com/projects/starbucks/img/icon-symbol-2.png"></div>
+            <div class="icon-symbol music-3"><img src="//image.giccoo.com/projects/starbucks/img/icon-symbol-2.png"></div>
+            <div class="icon-symbol music-4"><img src="//image.giccoo.com/projects/starbucks/img/icon-symbol-3.png"></div>
           </div>
           <p class="centeralign">Loading..{{progress}}%</p>
         </div>
@@ -65,19 +66,19 @@
       <transition name="page-zoom">
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
-            <div @click="pageIndex = 2 ; questionShow = true" class="btn-start"><img src="./img/btn-start.png"></div>
+            <div @click="pageIndex = 2 ; questionShow = true" class="btn-start"><img src="//image.giccoo.com/projects/starbucks/img/btn-start.png"></div>
             <div class="symbol">
               <div class="icon-symbol music-1">
-                <div class="icon-symbol-img"><img src="./img/icon-symbol-1.png"></div>
+                <div class="icon-symbol-img"><img src="//image.giccoo.com/projects/starbucks/img/icon-symbol-1.png"></div>
               </div>
               <div class="icon-symbol music-2">
-                <div class="icon-symbol-img"><img src="./img/icon-symbol-2.png"></div>
+                <div class="icon-symbol-img"><img src="//image.giccoo.com/projects/starbucks/img/icon-symbol-2.png"></div>
               </div>
               <div class="icon-symbol music-3">
-                <div class="icon-symbol-img"><img src="./img/icon-symbol-2.png"></div>
+                <div class="icon-symbol-img"><img src="//image.giccoo.com/projects/starbucks/img/icon-symbol-2.png"></div>
               </div>
               <div class="icon-symbol music-4">
-                <div class="icon-symbol-img"><img src="./img/icon-symbol-3.png"></div>
+                <div class="icon-symbol-img"><img src="//image.giccoo.com/projects/starbucks/img/icon-symbol-3.png"></div>
               </div>
             </div>
           </div>
@@ -90,7 +91,7 @@
             <transition name="page-up">
               <div v-show="questionShow" class="post-card">
                 <div class="question-list">
-                  <div class="bg-img"><img src="./img/envelope.png"></div>
+                  <div class="bg-img"><img src="//image.giccoo.com/projects/starbucks/img/envelope.png"></div>
                   <transition name="page-fade">
                     <div v-show="questionIndex == 0" class="question">
                       <div class="title">圣诞来袭，今年你要<span class="line"></span></div>
@@ -141,8 +142,8 @@
                             <div v-for="item in messageList" v-html="item" class="item"></div>
                           </div>
                         </div>
-                        <div @click="messageSelectLeft" class="left"><img src="./img/left.png"></div>
-                        <div @click="messageSelectRight" class="right"><img src="./img/left.png"></div>
+                        <div @click="messageSelectLeft" class="left"><img src="//image.giccoo.com/projects/starbucks/img/left.png"></div>
+                        <div @click="messageSelectRight" class="right"><img src="//image.giccoo.com/projects/starbucks/img/left.png"></div>
                       </div>
                       <div :class="{hidebody: !messageInput}" class="answer input textarea">
                         <textarea id="message" v-model="message" @blur="messageBlur" @focus="messageFoucs"></textarea>
@@ -154,18 +155,18 @@
               </div>
             </transition>
             <transition name="page-fade">
-              <div v-show="questionShow" @click="nextQuestion" class="btn-next"><img src="./img/btn-next.png"></div>
+              <div v-show="questionShow" @click="nextQuestion" class="btn-next"><img src="//image.giccoo.com/projects/starbucks/img/btn-next.png"></div>
             </transition>
             <transition name="page-fade">
-              <div v-show="questionShow &amp;&amp; questionIndex &gt; 0" @click="backQuestion" class="btn-back"><img src="./img/btn-back.png"></div>
+              <div v-show="questionShow &amp;&amp; questionIndex &gt; 0" @click="backQuestion" class="btn-back"><img src="//image.giccoo.com/projects/starbucks/img/btn-back.png"></div>
             </transition>
             <transition name="page-zoom">
               <div v-show="gameEnd" class="ctrl-box">
-                <div @click="openMusic(2515752400)" class="btn-more"><img src="./img/btn-more.png"></div>
+                <div @click="openMusic(2515752400)" class="btn-more"><img src="//image.giccoo.com/projects/starbucks/img/btn-more.png"></div>
                 <div class="btn-list">
-                  <div @click="regame" class="btn"><img :src="'./img/btn-restart-'+(white?'white':'black')+'.png'"></div>
-                  <div @click="goshare" class="btn"><img :src="'./img/btn-share-'+(white?'white':'black')+'.png'"></div>
-                  <div @click="gobuy" :class="{tada: buyAn}" class="btn animated"><img :src="'./img/btn-buy-'+(white?'white':'black')+'.png'"></div>
+                  <div @click="regame" class="btn"><img :src="'//image.giccoo.com/projects/starbucks/img/btn-restart-'+(white?'white':'black')+'.png'"></div>
+                  <div @click="goshare" class="btn"><img :src="'//image.giccoo.com/projects/starbucks/img/btn-share-'+(white?'white':'black')+'.png'"></div>
+                  <div @click="gobuy" :class="{tada: buyAn}" class="btn animated"><img :src="'//image.giccoo.com/projects/starbucks/img/btn-buy-'+(white?'white':'black')+'.png'"></div>
                 </div>
               </div>
             </transition>
@@ -175,7 +176,7 @@
       <div v-show="ugcShow" class="pop flashcamera">
         <div class="content">
           <div class="small-size">
-            <div @click="ugcShow = false" class="close"><img src="./img/icon-close.png"></div><img :src="ugc">
+            <div @click="ugcShow = false" class="close"><img src="//image.giccoo.com/projects/starbucks/img/icon-close.png"></div><img :src="ugc">
             <div class="note">长按保存图片</div>
           </div>
         </div>
