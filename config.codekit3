@@ -2250,6 +2250,39 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/draw-board/img/text13.png": {
+		"ft": 32768,
+		"iS": 10263,
+		"oA": 0,
+		"oAP": "/draw-board/img/text13.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text14.png": {
+		"ft": 32768,
+		"iS": 9636,
+		"oA": 0,
+		"oAP": "/draw-board/img/text14.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text15.png": {
+		"ft": 32768,
+		"iS": 9705,
+		"oA": 0,
+		"oAP": "/draw-board/img/text15.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/draw-board/img/text2.png": {
 		"ft": 32768,
 		"iS": 76494,
