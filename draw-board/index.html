@@ -17,7 +17,7 @@
     </div>
     <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" style="display: none" class="main">
       <transition name="page-down">
-        <div v-show="noteShow" @click="noteShow = false" class="note-message">
+        <div v-show="noteShow" @click="noteShow = false" :class="{error: noteType}" class="note-message">
           <div class="note-text">{{noteText}}</div>
         </div>
       </transition>

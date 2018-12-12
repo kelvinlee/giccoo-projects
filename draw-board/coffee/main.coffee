@@ -150,6 +150,7 @@ init = ->
 			noteText: ""
 			noteTime: null
 			noteShow: false
+			noteType: true
 			pageInfoShow: false
 			pageIndex: 1
 			step: 1
@@ -268,9 +269,10 @@ init = ->
 					if line.gblen() > 32
 						return @.message = o
 		methods:
-			send: (text)->
+			send: (text,type = true)->
 				@.noteShow = true
 				@.noteText = text
+				@.noteType = type
 				clearTimeout @.noteTime
 				@.noteTime = setTimeout =>
 					@.noteShow = false
@@ -424,7 +426,10 @@ init = ->
 				axios.post "#{apiLink}active/autoSave/insert/database/draw/",data
 				.then (msg)=>
 					if msg.data.code is 200
-						@.share()
+						@.send "恭喜您预约成功"
+						setTimeout =>
+							@.share()
+						,2000
 					else
 						@.send msg.data.reason
 				.catch (err)=>

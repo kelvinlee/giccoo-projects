@@ -48,7 +48,7 @@ block content
   
   .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",:style="{width: w+'px',height: h+'px'}",style="display: none")
     transition(name="page-down")
-      .note-message(v-show="noteShow",@click="noteShow = false")
+      .note-message(v-show="noteShow",@click="noteShow = false",:class="{error: noteType}")
         .note-text {{noteText}}
 
     transition(name="page-fade")
