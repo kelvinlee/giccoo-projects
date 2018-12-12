@@ -12,7 +12,7 @@ axios.defaults.withCredentials = true
 TrueW = 640
 TrueH = 1138
 imageurl = "//api.giccoo.com/api/upload/image64/"
-apiUrl = "//api.giccoo.com/starbucks"
+apiUrl = "//api.giccoo.com/emoji"
 # apiLink = "//localhost:3000/"
 apiLink = "//g.giccoo.com/"
 # apiLink = "http://192.168.3.53:3000/"
@@ -36,7 +36,7 @@ _testTime = 0
 neteaseShareImage = ->
 	title1 = "点播圣诞星声"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://activity.music.163.com/starbucks/"
+	redirectUrl = "https://activity.music.163.com/emoji/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	# window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "share href:",picUrl
@@ -107,10 +107,10 @@ window.onload = ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 
-			# @.next() # for test
+			@.next() # for test
 
 			timein = setInterval =>
-				@.progress += 3
+				@.progress += 2
 				@.progress = @.progressOn if @.progress >= @.progressOn
 				if @.progress >= 100
 					@.progress = 100
@@ -232,41 +232,7 @@ init = ->
 			formShow: false
 			formBoxShow: false
 			carIndex: 1
-		watch:
-			carIndex: (n,o)->
-				@.carIndex = 1 if @.carIndex >= 3
-			answer1: (n,o)->
-				console.log "answer1 changed:",n
-				q1(n) if q1?
-				@.white = if n is 3 then false else true
-			answer2: (n,o)->
-				console.log "answer2 changed:",n
-				q2(n) if q2?
-			"answer3.c1": (n,o)->
-				@.answer3Change n,o
-			"answer3.c2": (n,o)->
-				@.answer3Change n,o
-			"answer3.c3": (n,o)->
-				@.answer3Change n,o
-			"answer3.c4": (n,o)->
-				@.answer3Change n,o
-			nickname: (n,o)->
-				@.nickname = @.nickname.replace(/[\r\n]/g, "")
-				if @.nickname.length > 10
-					t = @.nickname.split("")
-					tx = ""
-					for i in t
-						tx += i
-						break if tx.length >= 10
-					@.nickname = tx
-					return false #alert "字数限制10个中文字符20个英文字符" 
-			message: (n,o)->
-				t = n.split('\n')
-				if t.length > 4
-					@.message = @.message.replace(/^\s+|\s+$/g,'')
-				for line in t
-					if line.gblen() > 32
-						return @.message = o
+		# watch:
 		methods:
 			send: (text)->
 				@.noteShow = true
@@ -275,41 +241,6 @@ init = ->
 				@.noteTime = setTimeout =>
 					@.noteShow = false
 				,2000
-			answer3Change: (n,o)->
-				console.log "answer3 changed."
-				q3([@.answer3.c1,@.answer3.c2,@.answer3.c3,@.answer3.c4]) if q3?
-			messageShow: ->
-				@.messageInput = true
-				document.getElementById("message").focus()
-				document.getElementById("message").select()
-			messageFoucs: ->
-				if @.message is ""
-					@.messageInput = true
-				console.log "focus"
-			messageBlur: ->
-				if @.message is ""
-					@.messageInput = false
-			messageSelectLeft: ->
-				@.messageIndex--
-				if @.messageIndex <= 1
-					return @.messageIndex = 1
-			messageSelectRight: ->
-				@.messageIndex++
-				if @.messageIndex >= @.messageList.length
-					return @.messageIndex = @.messageList.length
-			nextQuestion: ->
-				if @.questionIndex is 1 and @.answer2 is 0
-					return @.send "请选择一位你的专属 DJ 吧"
-				if @.questionIndex is 2 and !@.answer3.c1 and !@.answer3.c2 and !@.answer3.c3 and !@.answer3.c4
-					return @.send "请选择几种礼物装点一下吧"
-				if @.questionIndex is 3 and @.nickname is ""
-					return @.send "请填写名称（Honey/母亲大人/给自己）"
-				
-
-				if @.questionIndex is 4
-					return @.over()
-
-				@.questionIndex++
 			over: ->
 				@.questionShow = false
 				ugc.init()
@@ -351,7 +282,7 @@ init = ->
 				image = @.ugc
 
 				if @.wy
-					folder = "starbucks"
+					folder = "emoji"
 					data = {
 						image: image
 						folder: folder
@@ -390,10 +321,10 @@ init = ->
 			faild: (err)->
 				@.pushed = false
 				@.loading = false
-			openSong: ->
-				id = [38576323,167740,139381,474567580,355992,28815250,109968,110083,163639,28785688,5271858,28838557,169794,27591641,5271855]
+			openSong: (id)->
+				# id = [38576323,167740,139381,474567580,355992,28815250,109968,110083,163639,28785688,5271858,28838557,169794,27591641,5271855]
 				# CloudMusic.song(id[resultNum])
-				window.location.href = "https://music.163.com/#/song?id=#{id[resultNum]}"
+				window.location.href = "https://music.163.com/#/song?id=#{id}"
 			openMusic: (id)->
 				# goList()
 				# _public.$children[0].pause()
@@ -402,20 +333,8 @@ init = ->
 				else
 					window.location.href = "https://music.163.com/#/playlist?id=#{id}"
 			openInApp: ->
-				CloudMusic.open("https://m.giccoo.com/starbucks/")
-			goNext: ->
-				@.pageIndex = 2
-				clearInterval _startCache
+				CloudMusic.open("https://m.giccoo.com/emoji/")
 
-			goShow: ->
-				return @.send "请输入您的昵称" if @.nickname is ""
-				@.pageIndex = 2
-				@.formShow = true
-				goFinal1()
-			goNickname: ->
-				clearInterval _startCache
-				@.pageIndex = 3
-				@.carIndex = 1 + parseInt Math.random()*2
 			goSubmit: ->
 				data = {
 					username: @.nickname
@@ -433,19 +352,8 @@ init = ->
 
 			goWeb: ->
 				window.location.href = "http://www.baidu.com/"
-			focusEvt: (evt)->
-				# document.getElementById("mobile").scrollIntoViewIfNeeded()
-				console.log "height:",document.body.scrollHeight,evt
-				# _startCache = setInterval =>
-				# 	document.body.scrollTop = document.body.scrollHeight
-				# ,100
-			blurEvt: (evt)->
-				clearInterval _startCache
 		# watch:
 		mounted: ->
-			_startCache = setInterval =>
-				@.carIndex++
-			,2500
 
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
