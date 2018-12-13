@@ -616,6 +616,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/draw-board/img/icon-close.png": {
+		"ft": 32768,
+		"iS": 7831,
+		"oA": 0,
+		"oAP": "/draw-board/img/icon-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/draw-board/img/icon-music.png": {
 		"ft": 32768,
 		"iS": 3474,
