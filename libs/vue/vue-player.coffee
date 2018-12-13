@@ -7,6 +7,7 @@ Vue.component "player",
 			</div>
 			<audio :src="src" :autoplay="autoplay" :preload="preload" :loop="loop"></audio>
 			<img v-if="thumb" :src="thumb" />
+			<slot></slot>
 		</div>
 		'
 	data: ->
@@ -50,7 +51,6 @@ Vue.component "player",
 			else
 				@audio.play()
 				@stoped = false
-				_hmt? and _hmt.push(['_trackEvent', "adidas-originals-eqt", @name, "play", "-"])
 
 	# computed:
 	mounted: (el)->
