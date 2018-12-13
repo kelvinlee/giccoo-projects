@@ -25,6 +25,24 @@ var imageList = [
 	_CDN+"img/p1line6.png",
 	_CDN+"img/p1line7.png",
 
+	_CDN+"img/p1snow.png",
+
+	_CDN+"img/e1.png",
+	_CDN+"img/e2.png",
+	_CDN+"img/e3.png",
+	_CDN+"img/e4.png",
+	_CDN+"img/e5.png",
+	_CDN+"img/e6.png",
+	_CDN+"img/e7.png",
+	_CDN+"img/e8.png",
+	_CDN+"img/e9.png",
+	_CDN+"img/e10.png",
+	_CDN+"img/e11.png",
+	_CDN+"img/e12.png",
+	_CDN+"img/e13.png",
+	_CDN+"img/e14.png",
+
+
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
