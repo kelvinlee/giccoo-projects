@@ -1,7 +1,30 @@
 var _CDN = "./";
 // var _CDN = "//image.giccoo.com/projects/emoji/";
 var imageList = [
-	_CDN+"img/p1_bg.jpg",
+	_CDN+"img/p1bg.jpg",
+	_CDN+"img/bg_top.png",
+	_CDN+"img/bg_down.png",
+	_CDN+"img/p1logo.png",
+
+	_CDN+"img/p1t1.png",
+	_CDN+"img/p1t2.png",
+	_CDN+"img/p1t3.png",
+	_CDN+"img/p1t5a.png",
+	_CDN+"img/p1t5b.png",
+
+	_CDN+"img/p1t4a.png",
+	_CDN+"img/p1t4b.png",
+	_CDN+"img/p1t4c.png",
+	_CDN+"img/p1t4d.png",
+
+	_CDN+"img/p1line1.png",
+	_CDN+"img/p1line2.png",
+	_CDN+"img/p1line3.png",
+	_CDN+"img/p1line4.png",
+	_CDN+"img/p1line5.png",
+	_CDN+"img/p1line6.png",
+	_CDN+"img/p1line7.png",
+
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -23,13 +46,13 @@ var buildUGC = function () {
 	// var ani = new AnimatedSprite();
 	stageH=this.opts.h
 	pStage=this.stage
-	// getStart()
+	getStart()
 	
 }
 
 
 function getStart(){
-	
-	
+	setPage1()
+	console.log("?111")
 }
 

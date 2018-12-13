@@ -474,13 +474,14 @@ function goFinal1(){//=======================================================最
 	p2car1=new Sprite(getTe(_CDN+"img/end1car1.png"));
 	p2car2=new Sprite(getTe(_CDN+"img/end1car2.png"));
 	p2carC.addChild(p2car1,p2car2)
-	if(Math.random()>.5){
+	if(main.carIndex==1){
 		p2car1.visible=false
 		p2car2.visible=true
 	}else{
 		p2car1.visible=true
 		p2car2.visible=false
 	}
+
 	p2carC.y=stageH/2+20
 
 	step3canvasC.y=stageH/2+20-275-(400-step3canvasC.height)/2
