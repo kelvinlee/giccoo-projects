@@ -474,7 +474,7 @@ function goFinal1(){//=======================================================最
 	p2car1=new Sprite(getTe(_CDN+"img/end1car1.png"));
 	p2car2=new Sprite(getTe(_CDN+"img/end1car2.png"));
 	p2carC.addChild(p2car1,p2car2)
-	if(main.carIndex==1){
+	if(main.carIndex==2){
 		p2car1.visible=false
 		p2car2.visible=true
 	}else{
