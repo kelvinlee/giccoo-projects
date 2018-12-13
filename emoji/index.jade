@@ -34,8 +34,11 @@ block content
     .qr
       img(src="#{url}/img/qrcode.png")
       .text 请使用手机扫描二维码参与活动
-  //- .public#public
+  .public#public
     player(icon="true",src="#{url}/mp3/bgm.mp3")
+      .bell.bell-1
+      .bell.bell-2
+      .bell.bell-3
     //- .player(:class="{play: playing, pause: !playing}",@click="playing = !playing")
       .icon-play(:class="{play: playing, pause: !playing}")
     //- transition(name="page-fade")
@@ -47,6 +50,8 @@ block content
       p.centeralign Loading..{{progress}}%
   
   .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",:style="{width: w+'px',height: h+'px'}",style="display: none")
+    .logo
+      img(src="#{url}/img/logo.png")
     transition(name="page-down")
       .note-message(v-show="noteShow",@click="noteShow = false")
         .note-text {{noteText}}
@@ -67,15 +72,29 @@ block content
       .page.page-1(v-show="pageIndex == 1")
         .content
           #ugc
-
-    //- transition(name="page-fade")
-    //-   .page.page-2(v-show="pageIndex == 2",:class="{blur: formBoxShow}")
-    //-     .content
-    //-       //- .logo
-    //-         img(src="#{url}/img/logo.png")
-    //-       #ugc
-
     
+    transition(name="page-fade")
+      .pop.pop-note(v-show="pageNote")
+        .bg.zoomShake.animated.delay-7
+        .content
+          .title.zoomIn.animated.delay-10
+            img(src="#{url}/img/pop-title.png")
+          .card.flipInY.animated.delay-3
+            img(:src="'#{url}/img/card-'+singerIndex+'.png'")
+            .stamp.zoomBigIn.animated.delay-7
+              img(src="#{url}/img/stamp.png")
+          .text.zoomIn.animated.delay-11
+            img(:src="'#{url}/img/text-'+singerIndex+'.png'")
+          .text-note.zoomIn.animated.delay-12
+            .tree
+              img(src="#{url}/img/tree.png")
+            .texts
+              img(src="#{url}/img/text-note.png")
+              .text-emoji
+                img(:src="'#{url}/img/text-note-'+singerIndex+'.png'")
+        .btn-close.zoomIn.animated.delay-13(@click="pageNote = false")
+          img(src="#{url}/img/btn-close.png")
+
 
     //- transition(name="page-fade")
     .pop.flashcamera(v-show="ugcShow")

@@ -34,7 +34,7 @@ _testTime = 0
 
 
 neteaseShareImage = ->
-	title1 = "点播圣诞星声"
+	title1 = "画山成岳"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
 	redirectUrl = "https://activity.music.163.com/starbucks/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
@@ -56,7 +56,7 @@ window.onload = ->
 		sys = "NeteaseMusic"
 		shareData = 
 			name: 'draw-board'
-			title: '点播圣诞星声'
+			title: '画山成岳'
 			subTitle: ""
 			text: ''
 			picUrl: 'http://m.giccoo.com/draw-board/img/ico.jpg'
@@ -66,7 +66,7 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "点播圣诞星声"
+				title: "画山成岳"
 				desc: ""
 				link: "http://m.giccoo.com/draw-board/"
 				imgUrl: "http://m.giccoo.com/draw-board/img/ico.jpg"
@@ -320,8 +320,6 @@ init = ->
 				,2000
 			regame: ->
 				window.location.reload()
-			gobuy: ->
-				window.location.href = "http://www.baidu.com"
 			dateText: (date)->
 				console.log date.replace(/-/g,"/")
 				d = new Date date.replace(/-/g,"/")
@@ -353,7 +351,7 @@ init = ->
 				image = @.ugc
 
 				if @.wy
-					folder = "starbucks"
+					folder = "drawboard"
 					data = {
 						image: image
 						folder: folder
@@ -417,7 +415,7 @@ init = ->
 			goNickname: ->
 				clearInterval _startCache
 				@.pageIndex = 3
-				@.carIndex = 1 + parseInt Math.random()*2
+				# @.carIndex = Math.floor(Math.random()*2+1)
 			goSubmit: ->
 				data = {
 					username: @.nickname
@@ -427,6 +425,7 @@ init = ->
 				.then (msg)=>
 					if msg.data.code is 200
 						@.send "恭喜您预约成功"
+						@.formBoxShow = false
 						setTimeout =>
 							@.share()
 						,2000
@@ -437,7 +436,7 @@ init = ->
 					@.send "请求错误,请重试"
 
 			goWeb: ->
-				window.location.href = "http://www.baidu.com/"
+				window.location.href = "https://tharu.svw-volkswagen.com/"
 			focusEvt: (evt)->
 				# document.getElementById("mobile").scrollIntoViewIfNeeded()
 				console.log "height:",document.body.scrollHeight,evt
@@ -448,10 +447,11 @@ init = ->
 				clearInterval _startCache
 		# watch:
 		mounted: ->
-			_startCache = setInterval =>
-				@.carIndex++
-			,2500
-
+			# _startCache = setInterval =>
+			# 	@.carIndex++
+			# ,2500
+			@.carIndex = Math.floor(Math.random()*2+1)
+			console.log @.carIndex
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 			if sys is "NeteaseMusic"

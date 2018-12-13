@@ -22,15 +22,26 @@ $pageMainBGColor: #0c101a;
 		background-color: rgba(255,255,255,0.2)
 	100%
 		background-color: rgba(0,0,0,0.7)
-+keyframes(zoomBigIn)
++keyframes(zoomShake)
 	0%
 		+transform(scale(1,1))
+	10%
+		+transform(scale(1.5,1.5))
+	40%
+		+transform(scale(1,1))
+	60%
+		+transform(scale(1.06,1.06))
+	100%
+		+transform(scale(1,1))
++keyframes(zoomBigIn)
+	0%
+		+transform(scale(3,3))
 		opacity: 0
 	10%
 		+transform(scale(1,1))
 		opacity: 1
 	100%
-		+transform(scale(0.8,0.8))
+		+transform(scale(1,1))
 		opacity: 1
 +keyframes(fadeArrow)
 	0%,100%
@@ -71,11 +82,11 @@ $pageMainBGColor: #0c101a;
 		opacity: 0
 +keyframes(swingIcon)
 	0%,100%
-		+transform(translate3d(0%,0,0) rotate(0deg))
+		+transform(rotate(0deg))
 	25%
-		+transform(translate3d(-20%,0,0) rotate(10deg))
+		+transform(rotate(5deg))
 	75%
-		+transform(translate3d(20%,0,0) rotate(-10deg))
+		+transform(rotate(-5deg))
 
 
 +keyframes(textShow)
@@ -345,10 +356,10 @@ video,canvas,svg
 
 .public
 	+posa
-	+tr(1em,1em)
+	+tl(0.8em,0.8em)
 	+wh(1.6rem,1.6rem)
 	+font-size(1rem)
-	z-index: 199
+	z-index: 2199
 	font-family: "yrd-Medium"
 	// +hide
 	.note-text
@@ -387,13 +398,37 @@ video,canvas,svg
 	.player
 		+w
 		+h
+		+posr
+	.play
+		.bell
+			+show
+	.bell
+		+posa
+		+tl
+		+w
+		+h
+		+hide
+	.bell-1
+		+b($cdn+"img/bell-1.png",no-repeat,center,center,contain)
+		+animation(fadeOutUp,2s,ease,infinite)
+		animation-delay: .5s
+	.bell-2
+		+b($cdn+"img/bell-2.png",no-repeat,center,center,contain)
+		+animation(fadeOutUp,2s,ease,infinite)
+		animation-delay: 1s
+	.bell-3
+		+b($cdn+"img/bell-3.png",no-repeat,center,center,contain)
+		+animation(fadeOutUp,2s,ease,infinite)
+		animation-delay: 1.5s
 	.icon-play
 		+w
 		+h
+		transform-origin: top center
 		&.play
-			+b($cdn+"img/icon-play.png",no-repeat,center,center,contain)
+			+b($cdn+"img/bell-box.png",no-repeat,center,center,contain)
+			+animation(swingIcon,2s,linear,infinite)
 		&.pause
-			+b($cdn+"img/icon-stop.png",no-repeat,center,center,contain)
+			+b($cdn+"img/bell-box.png",no-repeat,center,center,contain)
 
 .pages
 	+w
@@ -594,385 +629,55 @@ video,canvas,svg
 	z-index: 99
 
 
+.main
+	.logo
+		+posa
+		+tl
+		+w
+		z-index: 2009
+		pointer-events: none
 
 .page-1
 	// +b($cdn+"img/homepage-bg.jpg",no-repeat,center,center,cover)
 	.content
-		.text-1
+
+.pop-note
+	.bg
+		+w
+		+h
+		+b($cdn+"img/pop-bg.jpg",no-repeat,center,center,cover)
+	.content
+		+abcentermiddle
+		+w
+		margin-top: -7%
+	.title
+		+m
+	.card
+		margin-top: -5%
+		+posr
+		.stamp
+			+iw(110,640,100%)
 			+posa
-			+tl
-			+iw(155,640,100%)
-		.text-2
+			+br(2%,20%)
+			animation-duration: 1s
+	.text
+		margin-top: -5%
+	.text-note
+		+posr
+		margin-top: -3%
+		.tree
 			+posa
-			+tl(14%,10%)
-			+iw(216,640,100%)
-		.text-3
-			+posa
-			+tl(-38%,1%)
-			+iw(234,576,100%)
-		.text-4,.text-5,.text-6
-			+posa
-			+tr(26.5%,7%)
-			+w(50%)
-		.text-5
-			margin-top: 5%
-		.text-6
-			margin-top: 16%
-		.box
-			+posa
-			+tl(43%,6%)
-			+w(88%)
-			.slider
+			+bl
+			z-index: -1
+		.texts
+			+posr
+			.text-emoji
 				+posa
-				+tl(10%,5%)
-				// +transform(translate3d(0,-50%,0))
-				+w(90%)
-				+h(82%)
-				.slide
-					+posr
-					+w
-					+h
-					white-space: nowrap
-					font-size: 0
-					+overhide
-					.item
-						+posa
-						+show-inline
-						&.posa
-							+posa
-							+tl
-
-		.logo-down
-			+posa
-			+bl(3%)
-
-	
-
-	
-.page-2
-	// font-family: "yrd-Bold"
-	z-index: 110
-	+tran
-	&.blur
-		filter: blur(5px)
-	+overhide
-	.content
-	// .post-card
-	// 	$titleSize: 0.9rem
-	// 	$itemSize: 0.85rem
-	// 	+posa
-	// 	+tl(7.5%,(100%-78.9%)/2)
-	// 	// +iw(671,750,100%)
-	// 	+w(78.9%)
-	// 	z-index: 109
-	// 	.btn-next
-	// 		+posa
-	// 		+bl(-25%,33.75%)
-	// 		+iw(217,671,100%)
-	// 	.question-list
-	// 		+w
-	// 		+h
-	// 		+posr
-	// 		font-family: "YRDZST-Heavy"
-	// 		.question
-	// 			+w
-	// 			+h
-	// 			+posa
-	// 			+tl
-	// 			+box
-	// 			+p(7% 15% 7% 9%)
-	// 			&:nth-child(3)
-	// 				+p(12% 15% 7% 9%)
-	// 			&:nth-child(4)
-	// 				+p(12% 15% 7% 9%)
-	// 			&:nth-child(5)
-	// 				+p(18% 15% 7% 7%)
-	// 			&:nth-child(6)
-	// 				+p(4% 13% 7% 7%)
-	// 			.line
-	// 				+show-inline
-	// 				+w(2.5em)
-	// 				border-bottom: solid 2px #000
-	// 				margin-left: 0.2em
-	// 				+h(1.4em)
-	// 			.title
-	// 				color: #000
-	// 				+font-size($titleSize)
-	// 				font-family: "YRDZST-Heavy"
-	// 				line-height: 1.4em
-	// 				margin-bottom: 0.9em
-	// 				&.center
-	// 					+text-center
-	// 			.note
-	// 				+posa
-	// 				+w(96%)
-	// 				+bl(10%,0)
-	// 				+font-size(0.5rem)
-	// 				+text-center
-	// 				margin-top: 1em
-	// 				font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
-	// 			.msg-card
-	// 				+w(90%)
-	// 				+h(1.6em*4)
-	// 				line-height: 1.6em
-	// 				+font-size(0.7rem)
-	// 				+show
-	// 				+m
-	// 				+posr
-	// 				&:after
-	// 					+font-size(0.7rem)
-	// 					content: " "
-	// 					+posa
-	// 					+bl(-0.4rem)
-	// 					+w(100%)
-	// 					+h(0.4rem)
-	// 					+b($cdn+"img/input-line.png",no-repeat,center,center,99%)
-	// 				.slider
-	// 					+overhide
-	// 					+w
-	// 					+h
-	// 				.box
-	// 					+tran(transform,0.2s)
-	// 					+w
-	// 					+h
-	// 					+posr
-	// 					white-space: nowrap
-						
-	// 					&.on-1
-	// 						+transform(translate3d(0,0,0))
-	// 					&.on-2
-	// 						+transform(translate3d(-100%,0,0))
-	// 					&.on-3
-	// 						+transform(translate3d(-200%,0,0))
-	// 					&.on-4
-	// 						+transform(translate3d(-300%,0,0))
-	// 					&.on-5
-	// 						+transform(translate3d(-400%,0,0))
-	// 				.item
-	// 					+posr
-	// 					+w
-	// 					+h
-	// 					+show-inline
-	// 					+text-center
-	// 					font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
-	// 					color: #b1b1b1
-	// 					vertical-align: top
-	// 				.left
-	// 					+w(2rem)
-	// 					+abmiddle
-	// 					margin-left: -1rem
-	// 					z-index: 109
-	// 				.right
-	// 					+w(2rem)
-	// 					+abmiddle
-	// 					margin-right: -1rem
-	// 					left: auto
-	// 					right: 0
-	// 					z-index: 109
-	// 					img
-	// 						+transform(scale(-1,1))
-
-	// 			.answer
-					
-	// 				.item
-	// 					+show-inline
-	// 					+w(49.5%)
-	// 					+box
-	// 					+font-size($itemSize)
-	// 					color: #bb0000
-	// 					line-height: 1.6em
-	// 					padding-left: 1.6em
-	// 					+posr
-	// 					// margin-bottom: 1rem
-	// 					&.check
-	// 						&:before
-	// 							content: " "
-	// 							+posa
-	// 							+tl(.2em,.1em)
-	// 							+wh(1.2em,1.2em)
-	// 							+b($cdn+"img/check.png",no-repeat,center,center,99%)
-	// 							+tran(all,0.2s)
-	// 						&.on
-	// 							&:before
-	// 								+b($cdn+"img/check-selected.png",no-repeat,center,center,99%)
-
-	// 					&.music-icon
-	// 						&:before
-	// 							content: " "
-	// 							+posa
-	// 							+tl(.3em,0)
-	// 							+wh(1em,1em)
-	// 							+b($cdn+"img/icon-m.png",no-repeat,center,center,99%)
-	// 							+tran(all,0.2s)
-	// 						&.on
-	// 							&:before
-	// 								+b($cdn+"img/icon-m.gif",no-repeat,center,center,99%)
-
-	// 					&.radio
-	// 						&:before
-	// 							content: " "
-	// 							+posa
-	// 							+tl(.3em,0)
-	// 							+wh(1em,1em)
-	// 							+b($cdn+"img/radio.png",no-repeat,center,center,cover)
-	// 							+tran(all,0.2s)
-	// 						&.on
-	// 							&:before
-	// 								+b($cdn+"img/radio-selected.png",no-repeat,center,center,cover)
-	// 					&.row
-	// 						+w
-	// 				&.input
-	// 					+posr
-	// 					+w(90%)
-	// 					+m
-	// 					textarea
-	// 						+p
-	// 						+w
-	// 						+font-size(0.7rem)
-	// 						+text-center
-	// 						+bc(transparent)
-	// 						border: none
-	// 						box-shadow: none
-	// 						font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
-	// 						outline: none
-	// 						+h(1.6em*4)
-	// 						line-height: 1.6em
-	// 					input
-	// 						+p
-	// 						+w
-	// 						+font-size(0.7rem)
-	// 						+text-center
-	// 						+bc(transparent)
-	// 						border: none
-	// 						box-shadow: none
-	// 						font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
-	// 						outline: none
-	// 						line-height: 1.6em
-	// 					&:after
-	// 						+font-size(0.7rem)
-	// 						content: " "
-	// 						+posa
-	// 						+bl(-0.4rem)
-	// 						+w(100%)
-	// 						+h(0.4rem)
-	// 						+b($cdn+"img/input-line.png",no-repeat,center,center,99%)
-	// 				&.hidebody
-	// 					+font-size(0.7rem)
-	// 					+w(80%)
-	// 					opacity: 0
-	// 					margin-top: -1.6em*4
-	// 					+posr
-	// 					z-index: 9
-	// .ctrl-box
-	// 	+posa
-	// 	+bl(2%, 5%)
-	// 	+w(50%)
-	// 	z-index: 109
-	// 	.btn-more
-	// 		+w(80%)
-	// 	.btn-list
-	// 		margin-top: 5%
-	// 		+w(80%)
-	// 		+text-center
-	// 		white-space: nowrap
-	// 		.btn
-	// 			+w(30%)
-	// 			+show-inline
-	// 			+m(0 2%)
-
-.page-3
-	+b($cdn+"img/cover.jpg",no-repeat,center,center,cover)
-	z-index: 111
-	.content
-		&.index-1
-			+b($cdn+"img/waitpage-1.jpg",no-repeat,bottom,center,contain)
-		&.index-2
-			+b($cdn+"img/waitpage-2.jpg",no-repeat,bottom,center,contain)
-		.smaller &
-			background-position: top center
-		.title
-			margin-top: 15%
-
-.nickname,.mobile
-	+bc(#404040)
-	+w(80%)
-	+m
-	+posr
-	margin-top: 2%
-	+overhide
-	.btn-start
-		+w(30%)
-		+show-inline
-		margin-left: 70%
-	input
+				+tl
+	.btn-close
 		+posa
-		+tl
-		+show-inline
-		+w(70%)
-		+h
-		+box
-		+p(0.3em 0.6em)
-		+font-size(0.8rem)
-		+bc(transparent)
-		line-height: 1.4em
-		color: #fff
-		vertical-align: top
-		border: none
-		outline: none
-
-.page-cover
-	z-index: 1009
-	// border: solid 1px red
-	// +h(100%)
-	// +w(100%)
-	+box
-	.goNormal
-		+posa
-		+tl
-		+w
-		+h
-		z-index: 2
-	.btn-web
-		+posa
-		+tr(30%,0%)
-		+iw(100,750,100%)
-		z-index: 99
-	.btn-music
-		+posa
-		+tl(42%,5%)
-		+w(50%)
-		+h(20%)
-		z-index: 99
-	.form-box
-		+posa
-		+bl(5%)
-		+w
-		z-index: 99
-		// margin-bottom: 5%
-		.form-content
-			+hide
-		&.on
-			bottom: 0%
-			.form-content
-				+show
-	.btns
-		white-space: nowrap
-		+text-center
-	.btn
-		+w(30%)
-		+show-inline
-		// +box
-		+bc(#fff)
-		+m(0 3%)
-	.btn-form
-		+p(0 10%)
-	.btn-share
-		+bc(#4b738a)
-	.form-content
-		+bc(#fff)
-		+p(1rem 0)
-		.mobile
-			margin-top: 0
+		+bl
+		z-index: 10
 
 .pop
 	+posa
@@ -1010,20 +715,20 @@ video,canvas,svg
 		+font-size(0.8rem)
 		+w
 		color: #fff
-	.title
-		+w(100%)
-		+m(10% auto)
-		h2
-			+font-size(1.6rem)
-			line-height: 1.6em
-			letter-spacing: 0.1em
-			font-weight: bold
-		p
-			+font-size(0.9rem)
-		h2,p
-			color: #000
-			+m
-			+text-center
+	// .title
+	// 	+w(100%)
+	// 	+m(10% auto)
+	// 	h2
+	// 		+font-size(1.6rem)
+	// 		line-height: 1.6em
+	// 		letter-spacing: 0.1em
+	// 		font-weight: bold
+	// 	p
+	// 		+font-size(0.9rem)
+	// 	h2,p
+	// 		color: #000
+	// 		+m
+	// 		+text-center
 	.register
 		+w(80%)
 		+box

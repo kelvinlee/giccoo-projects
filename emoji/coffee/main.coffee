@@ -79,14 +79,14 @@ window.onload = ->
 			wx.onMenuShareQQ shareContent
 			wx.onMenuShareWeibo shareContent
 
-	# _public = new Vue
-	# 	el: "#public"
-	# 	data:
-	# 		note: true
-	# 		playing: false
-	# 	mounted: ->
-	# 		document.addEventListener "WeixinJSBridgeReady", ->
-	# 			_public.$children[0].change()
+	_public = new Vue
+		el: "#public"
+		data:
+			note: true
+			playing: false
+		mounted: ->
+			document.addEventListener "WeixinJSBridgeReady", ->
+				_public.$children[0].change()
 
 	loading = new Vue
 		el: "#loading"
@@ -153,7 +153,7 @@ init = ->
 			pageInfoShow: false
 			pageIndex: 1
 			step: 1
-			singerIndex: 1
+			singerIndex: 2
 			startgame: false
 			folder: ""
 			BGColor: "#ffffff"
@@ -166,6 +166,7 @@ init = ->
 			cache: null
 			audioId: null
 			v: null
+			pageNote: false
 			recordStarting: false
 			authorization: false
 			norecord: true
