@@ -37,16 +37,13 @@
       </transition>
       <transition name="page-zoom">
         <div v-show="pageIndex == 1" class="page page-1">
-          <div class="content"></div>
-        </div>
-      </transition>
-      <transition name="page-fade">
-        <div v-show="pageIndex == 2" :class="{blur: formBoxShow}" class="page page-2">
           <div class="content">
             <div id="ugc"></div>
           </div>
         </div>
       </transition>
+      
+      
       <div v-show="ugcShow" class="pop flashcamera">
         <div class="content">
           <div class="small-size">

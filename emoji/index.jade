@@ -66,14 +66,14 @@ block content
     transition(name="page-zoom")
       .page.page-1(v-show="pageIndex == 1")
         .content
-          
-
-    transition(name="page-fade")
-      .page.page-2(v-show="pageIndex == 2",:class="{blur: formBoxShow}")
-        .content
-          //- .logo
-            img(src="#{url}/img/logo.png")
           #ugc
+
+    //- transition(name="page-fade")
+    //-   .page.page-2(v-show="pageIndex == 2",:class="{blur: formBoxShow}")
+    //-     .content
+    //-       //- .logo
+    //-         img(src="#{url}/img/logo.png")
+    //-       #ugc
 
     
 
