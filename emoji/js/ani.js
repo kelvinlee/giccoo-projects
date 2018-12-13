@@ -1,18 +1,22 @@
 var bgC=new PIXI.Container()
 var bgAll,bgUp,bgDown,p1logo
+var xman
 var p1C=new PIXI.Container()
 function setPage1 () {
 	// body...
-	pStage.addChild(bgC)
+	pStage.addChild(bgC,p1C)
 
 
 	bgAll=new Sprite(getTe(_CDN+"img/p1bg.jpg"));
 	bgUp=new Sprite(getTe(_CDN+"img/bg_top.png"));
 	bgDown=new Sprite(getTe(_CDN+"img/bg_down.png"));
 
+	xman=new Sprite(getTe(_CDN+"img/xman.png"));
+	xman.position.set(-320,stageH-234)
+
 	p1logo=new Sprite(getTe(_CDN+"img/p1logo.png"));
 
-	bgC.addChild(bgAll,bgUp,bgDown,p1C)
+	bgC.addChild(bgAll,xman,bgUp,bgDown)
 	p1C.addChild(p1logo)
 	bgAll.y=stageH-1500
 	bgUp.pivot.set(320,500)
@@ -98,6 +102,7 @@ function showPage1(){
 		TweenMax.from(p1tA[i],1.5,{y:"+=150",ease:Elastic.easeOut,delay:.1*i})
 		TweenMax.from(p1tA[i],1,{alpha:0,delay:.1*i})
 	};
+	TweenMax.to(xman,3,{x:0})
 }
 function p1Loop(){
 	TweenMax.set(p1t1a,{alpha:Math.random()*.4+.2,delay:Math.random()*Math.random()*Math.random()*1.5,onComplete:p1Loop})
@@ -137,10 +142,19 @@ function setP1line(){
 }
 
 var p2eC=new PIXI.Container()
+var pageQ=new PIXI.Container()
 function goPage2(){
+	p1t4.interactive=false
 	TweenMax.to(p1C,1.5,{alpha:0})
-	pStage.addChild(p2eC)
+
+	TweenMax.to(bgAll,.5,{y:"+=50"})
+	TweenMax.to(xman,.5,{y:"+=50",x:640,onComplete:function(){
+		xman.x=-320
+	}})
+
+	pStage.addChild(pageQ,p2eC)
 	showEmoji()
+	setTimeout(setPageQ,2500)
 }
 function showEmoji(){
 	for (var i = 0; i < 200; i++) {
@@ -157,13 +171,275 @@ function showEmoji(){
 		var _x=_r*Math.cos(_ang)+320
 		var _y=_r*Math.sin(_ang)+stageH/2
 		var _delay=Math.random()*2
-		TweenMax.to(_e,1+_delay,{x:_x,y:_y,rotation:Math.random()*3-1.5,repeat:0,alpha:1,delay:_delay/2,ease:Sine.easeOut})
+		TweenMax.to(_e,1+_delay,{x:_x,y:_y,rotation:Math.random()*5-2.5,repeat:0,alpha:1,delay:_delay/2,ease:Sine.easeOut})
 		TweenMax.to(_e.scale,1+_delay+.5,{x:2+_delay,y:2+_delay,repeat:0,delay:_delay/2,ease:Sine.easeOut})
 	};
 }
+var pageQ1=new PIXI.Container()
+var pageQ2=new PIXI.Container()
+var pageQ3=new PIXI.Container()
+var pageQ4=new PIXI.Container()
+var nowQ=0
+var btnNext
+function setPageQ(){
+	console.log("问题页")
+	btnNext=new Sprite(getTe(_CDN+"img/btn_next.png"));
+	btnNext.y=stageH-213
+	pageQ.addChild(pageQ1,pageQ2,pageQ3,pageQ4,btnNext)
+	TweenMax.to(btnNext,.7,{alpha:.5,repeat:100000,yoyo:true,ease:Sine.easeIn})
+	btnNext.visible=false
+
+	setQ1()
+
+}
 
 
+//===========================问题1
+var q1bg,q1title,q11,q12,q13,q14,mark00,mark01,mark02,mark03
+var markA=[[],[],[],[]]
+var qA=[[],[],[],[]]
+var qwh=[
+[[155,186],[168,164],[161,193],[186,170]],
+[[640,52],[640,52],[640,54 ],[640,52]],
+[[260,213],[240,274],[199,231],[280,223]],
+[[217,240],[261,261],[229,234],[152,221]]
+]
+
+var qxy=[
+[[155.5,430],[511,457],[171.5,682.5],[440,696]],
+[[320,377],[320,450],[320,515],[320,585]],
+[[198,472.5],[468,423],[143.5,696.5],[402,690.5]],
+[[158,423.5],[469.5,386.5],[187.5,651],[432,659.5]]
+]
+
+function setQ1(){
+	q1bg=new Sprite(getTe(_CDN+"img/q1bg.png"));
+	q1bg.y=stageH/2-500
+
+	q1title=new Sprite(getTe(_CDN+"img/q1title.png"));
+	q1title.y=stageH/2-500
+
+	pageQ1.addChild(q1bg,q1title)
+
+	for (var i = 0; i < 4; i++) {
+		var _num=(nowQ+1)*10+i+1
+		var _q=new Sprite(getTe(_CDN+"img/q"+_num+".png"));
+		//console.log("img/q"+nowQ+1+""+i+1+".png")
+		_q.pivot.set(qwh[nowQ][i][0]/2,qwh[nowQ][i][1]/2)
+		_q.position.set(qxy[nowQ][i][0],qxy[nowQ][i][1]+stageH/2-500)
+		qA[nowQ].push(_q)
+		_q.interactive=true
+		_q.tap=selectQ
 
 
+		var _mark=new Sprite(getTe(_CDN+"img/mark"+_num+".png"));
+		_mark.y=stageH/2-500
+		_mark.visible=false
+		_mark.blendMode=_ADD
+		markA[nowQ].push(_mark)
+		pageQ1.addChild(_q,_mark)
+	};
 
+	pageQ1.visible=false
+	showQ1()
+}
+
+
+var q2bg,q2title
+function setQ2(){
+	q2bg=new Sprite(getTe(_CDN+"img/q2bg.png"));
+	q2bg.y=stageH/2-500
+
+	q2title=new Sprite(getTe(_CDN+"img/q2title.png"));
+	q2title.y=stageH/2-500
+
+	pageQ2.addChild(q2bg,q2title)
+
+	for (var i = 0; i < 4; i++) {
+		var _num=(nowQ+1)*10+i+1
+		var _q=new Sprite(getTe(_CDN+"img/q"+_num+".png"));
+		//console.log("img/q"+nowQ+1+""+i+1+".png")
+		_q.pivot.set(qwh[nowQ][i][0]/2,qwh[nowQ][i][1]/2)
+		_q.position.set(qxy[nowQ][i][0],qxy[nowQ][i][1]+stageH/2-500)
+		qA[nowQ].push(_q)
+		_q.interactive=true
+		_q.tap=selectQ
+
+
+		var _mark=new Sprite(getTe(_CDN+"img/mark"+_num+".png"));
+		_mark.y=stageH/2-500
+		_mark.visible=false
+		_mark.blendMode=_ADD
+		markA[nowQ].push(_mark)
+		pageQ2.addChild(_q,_mark)
+	};
+
+	pageQ2.visible=false
+	showQ2()
+}
+
+var q3bg,q3title
+function setQ3(){
+
+
+	q3title=new Sprite(getTe(_CDN+"img/q3title.png"));
+	q3title.y=stageH/2-500
+
+	pageQ3.addChild(q3title)
+
+	for (var i = 0; i < 4; i++) {
+		var _num=(nowQ+1)*10+i+1
+		var _q=new Sprite(getTe(_CDN+"img/q"+_num+".png"));
+		//console.log("img/q"+nowQ+1+""+i+1+".png")
+		_q.pivot.set(qwh[nowQ][i][0]/2,qwh[nowQ][i][1]/2)
+		_q.position.set(qxy[nowQ][i][0],qxy[nowQ][i][1]+stageH/2-500)
+		qA[nowQ].push(_q)
+		_q.interactive=true
+		_q.tap=selectQ
+
+
+		var _mark=new Sprite(getTe(_CDN+"img/mark"+_num+".png"));
+		_mark.y=stageH/2-500
+		_mark.visible=false
+		_mark.blendMode=_ADD
+		markA[nowQ].push(_mark)
+		pageQ3.addChild(_q,_mark)
+	};
+
+	pageQ3.visible=false
+	showQ3()
+}
+
+var q4bg,q4title
+function setQ4(){
+
+
+	q4title=new Sprite(getTe(_CDN+"img/q4title.png"));
+	q4title.y=stageH/2-500
+
+	pageQ4.addChild(q4title)
+
+	for (var i = 0; i < 4; i++) {
+		var _num=(nowQ+1)*10+i+1
+		var _q=new Sprite(getTe(_CDN+"img/q"+_num+".png"));
+		//console.log("img/q"+nowQ+1+""+i+1+".png")
+		_q.pivot.set(qwh[nowQ][i][0]/2,qwh[nowQ][i][1]/2)
+		_q.position.set(qxy[nowQ][i][0],qxy[nowQ][i][1]+stageH/2-500)
+		qA[nowQ].push(_q)
+		_q.interactive=true
+		_q.tap=selectQ
+
+
+		var _mark=new Sprite(getTe(_CDN+"img/mark"+_num+".png"));
+		_mark.y=stageH/2-500
+		_mark.visible=false
+		_mark.blendMode=_ADD
+		markA[nowQ].push(_mark)
+		pageQ4.addChild(_q,_mark)
+	};
+
+	pageQ4.visible=false
+	showQ4()
+}
+
+
+function showQ1(){
+	pageQ1.visible=true
+
+	TweenMax.from(q1bg,1,{alpha:0})
+	TweenMax.from(q1title,.5,{y:"+=100"})
+	TweenMax.from(q1title,.5,{alpha:0})
+	for (var i = 0; i < 4; i++) {
+		TweenMax.from(qA[nowQ][i],.5,{y:"+=100",delay:i*.05})
+		TweenMax.from(qA[nowQ][i].scale,1.5,{x:0,y:0,ease:Elastic.easeOut,delay:i*.05})
+		TweenMax.from(qA[nowQ][i],.5,{alpha:0,delay:i*.05})
+	};
+}
+function showQ2(){
+	pageQ2.visible=true
+
+	TweenMax.from(q2bg,1,{alpha:0})
+	TweenMax.from(q2title,.5,{y:"+=100"})
+	TweenMax.from(q2title,.5,{alpha:0})
+	for (var i = 0; i < 4; i++) {
+		TweenMax.from(qA[nowQ][i],.5,{y:"+=100",delay:i*.05})
+		TweenMax.from(qA[nowQ][i].scale,1.5,{x:0,y:0,ease:Elastic.easeOut,delay:i*.05})
+		TweenMax.from(qA[nowQ][i],.5,{alpha:0,delay:i*.05})
+	};
+}
+function showQ3(){
+	pageQ3.visible=true
+
+	TweenMax.from(q3title,.5,{y:"+=100"})
+	TweenMax.from(q3title,.5,{alpha:0})
+	for (var i = 0; i < 4; i++) {
+		TweenMax.from(qA[nowQ][i],.5,{y:"+=100",delay:i*.05})
+		TweenMax.from(qA[nowQ][i].scale,1.5,{x:0,y:0,ease:Elastic.easeOut,delay:i*.05})
+		TweenMax.from(qA[nowQ][i],.5,{alpha:0,delay:i*.05})
+	};
+}
+function showQ4(){
+	pageQ4.visible=true
+
+	TweenMax.from(q4title,.5,{y:"+=100"})
+	TweenMax.from(q4title,.5,{alpha:0})
+	for (var i = 0; i < 4; i++) {
+		TweenMax.from(qA[nowQ][i],.5,{y:"+=100",delay:i*.05})
+		TweenMax.from(qA[nowQ][i].scale,1.5,{x:0,y:0,ease:Elastic.easeOut,delay:i*.05})
+		TweenMax.from(qA[nowQ][i],.5,{alpha:0,delay:i*.05})
+	};
+}
+
+var resultA=[9,9,9,9]
+function selectQ(_e){
+	if(resultA[nowQ]==9){
+		showNextBtn()
+	}
+	for (var i = 0; i < 4; i++) {
+		if(_e.target==qA[nowQ][i]){
+			console.log("选了"+i)
+			resultA[nowQ]=i
+			markA[nowQ][0].visible=false
+			markA[nowQ][1].visible=false
+			markA[nowQ][2].visible=false
+			markA[nowQ][3].visible=false
+			markA[nowQ][i].visible=true
+		}
+	};
+}
+
+function showNextBtn(){
+	TweenMax.set(xman,{x:-320})
+	TweenMax.to(xman,1,{x:0})
+	btnNext.visible=true
+	btnNext.interactive=true
+	btnNext.tap=goNextQ
+}
+
+var qPageA=[]
+function goNextQ(){
+	TweenMax.to(xman,.5,{x:640})
+	btnNext.visible=false
+	btnNext.interactive=false
+	markA[nowQ][0].visible=false
+	markA[nowQ][1].visible=false
+	markA[nowQ][2].visible=false
+	markA[nowQ][3].visible=false
+	qPageA=[pageQ1,pageQ2,pageQ3,pageQ4]
+	qPageA[nowQ].visible=false
+
+	if(nowQ==0){
+		nowQ++
+		setQ2()
+	}else if(nowQ==1){
+		nowQ++
+		setQ3()
+	}else if(nowQ==2){
+		nowQ++
+		setQ4()
+	}else if(nowQ==3){
+		console.log("答完题了")
+	}
+
+}
 

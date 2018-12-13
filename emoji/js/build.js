@@ -6,6 +6,8 @@ var imageList = [
 	_CDN+"img/bg_down.png",
 	_CDN+"img/p1logo.png",
 
+	_CDN+"img/xman.png",
+
 	_CDN+"img/p1t1.png",
 	_CDN+"img/p1t2.png",
 	_CDN+"img/p1t3.png",
@@ -41,6 +43,56 @@ var imageList = [
 	_CDN+"img/e12.png",
 	_CDN+"img/e13.png",
 	_CDN+"img/e14.png",
+
+	_CDN+"img/btn_next.png",
+
+	_CDN+"img/q1bg.png",
+	_CDN+"img/q2bg.png",
+
+	_CDN+"img/q11.png",
+	_CDN+"img/q12.png",
+	_CDN+"img/q13.png",
+	_CDN+"img/q14.png",
+
+	_CDN+"img/q21.png",
+	_CDN+"img/q22.png",
+	_CDN+"img/q23.png",
+	_CDN+"img/q24.png",
+
+	_CDN+"img/q31.png",
+	_CDN+"img/q32.png",
+	_CDN+"img/q33.png",
+	_CDN+"img/q34.png",
+
+	_CDN+"img/q41.png",
+	_CDN+"img/q42.png",
+	_CDN+"img/q43.png",
+	_CDN+"img/q44.png",
+
+	_CDN+"img/mark11.png",
+	_CDN+"img/mark12.png",
+	_CDN+"img/mark13.png",
+	_CDN+"img/mark14.png",
+
+	_CDN+"img/mark21.png",
+	_CDN+"img/mark22.png",
+	_CDN+"img/mark23.png",
+	_CDN+"img/mark24.png",
+
+	_CDN+"img/mark31.png",
+	_CDN+"img/mark32.png",
+	_CDN+"img/mark33.png",
+	_CDN+"img/mark34.png",
+
+	_CDN+"img/mark41.png",
+	_CDN+"img/mark42.png",
+	_CDN+"img/mark43.png",
+	_CDN+"img/mark44.png",
+
+	_CDN+"img/q1title.png",
+	_CDN+"img/q2title.png",
+	_CDN+"img/q3title.png",
+	_CDN+"img/q4title.png",
 
 
 ];
