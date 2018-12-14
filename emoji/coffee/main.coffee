@@ -362,6 +362,9 @@ init = ->
 				@.pageNote = true
 			init: ->
 				getStart()
+			closeNote: ->
+				@.pageNote = false
+				goEnd()
 		# watch:
 		mounted: ->
 
