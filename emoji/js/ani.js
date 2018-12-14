@@ -484,7 +484,8 @@ function goNextQ(){
 		setQ4()
 	}else if(nowQ==3){
 		console.log("答完题了")
-		goEnd()
+		main.goNote()
+		//goEnd()
 	}
 
 }
@@ -616,7 +617,8 @@ function shareDone(){
 }
 
 function goLayer(){
-	main.goNote()
+	//main.goNote()
+	window.location.href="https://mobile.abchina.com/MBRCard/netBank/webank/applyCard.aspx?id=88"
 }
 
 
