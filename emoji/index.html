@@ -18,12 +18,13 @@
       </player>
       <transition name="page-fade">
         <div v-show="note" class="note-text">
-          <p>建议打开手机声音<br/>获得更好体验效果</p>
+          <p>点击铃铛打开声音<br/>获得更好体验效果</p>
         </div>
       </transition>
     </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
+        <div :style="{transform: 'translate3d('+progress/2+'%,0,0)'}" class="xman"><img src="./img/xman.png"></div>
         <p class="centeralign">Loading..{{progress}}%</p>
       </div>
     </div>

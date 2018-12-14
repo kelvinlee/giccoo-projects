@@ -43,10 +43,12 @@ block content
       .icon-play(:class="{play: playing, pause: !playing}")
     transition(name="page-fade")
       .note-text(v-show="note")
-        p 建议打开手机声音<br/>获得更好体验效果
+        p 点击铃铛打开声音<br/>获得更好体验效果
 
   .load#load
     .content#loading(v-show="mounted",style="display: none")
+      .xman(:style="{transform: 'translate3d('+progress/2+'%,0,0)'}")
+        img(src="#{url}/img/xman.png")
       p.centeralign Loading..{{progress}}%
   
   .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",:style="{width: w+'px',height: h+'px'}",style="display: none",@touchstart="startGame")

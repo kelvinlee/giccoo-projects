@@ -1094,6 +1094,16 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"/draw-board/js/ajap.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/draw-board/js/ajap.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/draw-board/js/ani.js": {
 		"ft": 64,
 		"ma": 0,
@@ -1282,11 +1292,66 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/emoji/img/btn-close.png": {
+		"ft": 32768,
+		"iS": 17998,
+		"oA": 0,
+		"oAP": "/emoji/img/btn-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/emoji/img/btn_next.png": {
 		"ft": 32768,
 		"iS": 12183,
 		"oA": 0,
 		"oAP": "/emoji/img/btn_next.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/card-1.png": {
+		"ft": 32768,
+		"iS": 33027,
+		"oA": 0,
+		"oAP": "/emoji/img/card-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/card-2.png": {
+		"ft": 32768,
+		"iS": 29784,
+		"oA": 0,
+		"oAP": "/emoji/img/card-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/card-3.png": {
+		"ft": 32768,
+		"iS": 31641,
+		"oA": 0,
+		"oAP": "/emoji/img/card-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/card-4.png": {
+		"ft": 32768,
+		"iS": 27680,
+		"oA": 0,
+		"oAP": "/emoji/img/card-4.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -1447,6 +1512,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/emoji/img/end_bg1.png": {
+		"ft": 32768,
+		"iS": 19126,
+		"oA": 0,
+		"oAP": "/emoji/img/end_bg1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/emoji/img/end_bg1b.png": {
 		"ft": 32768,
 		"iS": 4065,
@@ -1480,11 +1556,33 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/emoji/img/end_bg3.png": {
+		"ft": 32768,
+		"iS": 34902,
+		"oA": 0,
+		"oAP": "/emoji/img/end_bg3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/emoji/img/end_bg3b.png": {
 		"ft": 32768,
 		"iS": 4064,
 		"oA": 0,
 		"oAP": "/emoji/img/end_bg3b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/end_bg4.png": {
+		"ft": 32768,
+		"iS": 21076,
+		"oA": 0,
+		"oAP": "/emoji/img/end_bg4.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -1634,6 +1732,61 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/emoji/img/end_tbg.png": {
+		"ft": 32768,
+		"iS": 30323,
+		"oA": 0,
+		"oAP": "/emoji/img/end_tbg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/end_title1.png": {
+		"ft": 32768,
+		"iS": 54501,
+		"oA": 0,
+		"oAP": "/emoji/img/end_title1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/end_title2.png": {
+		"ft": 32768,
+		"iS": 48563,
+		"oA": 0,
+		"oAP": "/emoji/img/end_title2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/end_title3.png": {
+		"ft": 32768,
+		"iS": 55419,
+		"oA": 0,
+		"oAP": "/emoji/img/end_title3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/end_title4.png": {
+		"ft": 32768,
+		"iS": 45835,
+		"oA": 0,
+		"oAP": "/emoji/img/end_title4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/emoji/img/endbtn1.png": {
 		"ft": 32768,
 		"iS": 33774,
@@ -1665,6 +1818,17 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/ico.jpg": {
+		"ft": 16384,
+		"iS": 29045,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/emoji/img/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"/emoji/img/icon-close.png": {
@@ -1964,6 +2128,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/emoji/img/p1snow.png": {
+		"ft": 32768,
+		"iS": 26261,
+		"oA": 0,
+		"oAP": "/emoji/img/p1snow.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/emoji/img/p1t1.png": {
 		"ft": 32768,
 		"iS": 50015,
@@ -2118,6 +2293,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/emoji/img/pop-bg.jpg": {
+		"ft": 16384,
+		"iS": 54135,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/emoji/img/pop-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/emoji/img/pop-title.png": {
 		"ft": 32768,
 		"iS": 26806,
@@ -2184,6 +2370,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/emoji/img/q1title.png": {
+		"ft": 32768,
+		"iS": 22079,
+		"oA": 0,
+		"oAP": "/emoji/img/q1title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/emoji/img/q21.png": {
 		"ft": 32768,
 		"iS": 6053,
@@ -2195,11 +2392,55 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/emoji/img/q22.png": {
+		"ft": 32768,
+		"iS": 5426,
+		"oA": 0,
+		"oAP": "/emoji/img/q22.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/q23.png": {
+		"ft": 32768,
+		"iS": 5127,
+		"oA": 0,
+		"oAP": "/emoji/img/q23.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/emoji/img/q24.png": {
 		"ft": 32768,
 		"iS": 4840,
 		"oA": 0,
 		"oAP": "/emoji/img/q24.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/q2bg.png": {
+		"ft": 32768,
+		"iS": 20444,
+		"oA": 0,
+		"oAP": "/emoji/img/q2bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/q2title.png": {
+		"ft": 32768,
+		"iS": 20406,
+		"oA": 0,
+		"oAP": "/emoji/img/q2title.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -2250,6 +2491,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/emoji/img/q3title.png": {
+		"ft": 32768,
+		"iS": 23418,
+		"oA": 0,
+		"oAP": "/emoji/img/q3title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/emoji/img/q41.png": {
 		"ft": 32768,
 		"iS": 29139,
@@ -2288,6 +2540,17 @@
 		"iS": 26863,
 		"oA": 0,
 		"oAP": "/emoji/img/q44.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/q4title.png": {
+		"ft": 32768,
+		"iS": 23241,
+		"oA": 0,
+		"oAP": "/emoji/img/q4title.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -2398,6 +2661,28 @@
 		"iS": 13481,
 		"oA": 0,
 		"oAP": "/emoji/img/text-note-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/text-note.png": {
+		"ft": 32768,
+		"iS": 21879,
+		"oA": 0,
+		"oAP": "/emoji/img/text-note.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/tree.png": {
+		"ft": 32768,
+		"iS": 19235,
+		"oA": 0,
+		"oAP": "/emoji/img/tree.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

@@ -428,11 +428,28 @@ init = ->
 					Vcampaign: "VW20181025010"
 				}
 
-				axios.get "https://campaign.svw-volkswagen.com/lamando2017tvc/api/submitBook.jsonp",data
-				.then (msg)=>
-					console.log msg.data
-				.catch (err)=>
-					console.log "error:",err
+				# Ajap({
+				# 	url: 'https://campaign.svw-volkswagen.com/lamando2017tvc/api/submitBook.jsonp',
+				# 	data: data,
+				# 	success: (msg)=>
+				# 		console.log msg
+				# 	callback: '',
+				# 	callbackName: ''
+				# })
+
+				$.ajax
+					url: "https://campaign.svw-volkswagen.com/lamando2017tvc/api/submitBook.jsonp"
+					type: "GET"
+					dataType: "jsonp"
+					data: data
+					success: (msg)=>
+						console.log "msg:",msg
+
+				# axios.jsonp "https://campaign.svw-volkswagen.com/lamando2017tvc/api/submitBook.jsonp",data
+				# .then (msg)=>
+				# 	console.log msg.data
+				# .catch (err)=>
+				# 	console.log "error:",err
 
 
 				# axios.post "#{apiLink}active/autoSave/insert/database/draw/",data
@@ -487,4 +504,5 @@ init = ->
 
 				
 			
-
+tryThis = (msg)->
+	console.log "msg:",msg
