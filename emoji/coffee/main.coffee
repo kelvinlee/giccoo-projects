@@ -82,6 +82,7 @@ window.onload = ->
 	_public = new Vue
 		el: "#public"
 		data:
+			wy: if sys is "NeteaseMusic" then true else false
 			note: false
 			playing: false
 		mounted: ->
@@ -103,9 +104,9 @@ window.onload = ->
 				,400
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
-					_public.note = true
+					_public.note = true if _public.wy
 					setTimeout ->
-						_public.note = false
+						_public.note = false if _public.wy
 					,3000
 				,520
 		mounted: ->
