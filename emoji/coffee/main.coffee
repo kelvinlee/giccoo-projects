@@ -83,13 +83,16 @@ window.onload = ->
 		el: "#public"
 		data:
 			wy: if sys is "NeteaseMusic" then true else false
-			note: false
+			wx: false
+			note: true
 			playing: false
 		methods:
 			startGame: ->
 				@.note = false
 		mounted: ->
 			document.addEventListener "WeixinJSBridgeReady", ->
+				_public.wx = true
+				_public.note = false
 				_public.$children[0].change()
 
 	loading = new Vue
@@ -105,7 +108,7 @@ window.onload = ->
 				main.init()
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
-					_public.note = true if _public.wy
+					_public.note = false if _public.wx
 					# setTimeout ->
 					# 	_public.note = false if _public.wy
 					# ,3000
