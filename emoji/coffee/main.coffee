@@ -82,7 +82,7 @@ window.onload = ->
 	_public = new Vue
 		el: "#public"
 		data:
-			note: true
+			note: false
 			playing: false
 		mounted: ->
 			document.addEventListener "WeixinJSBridgeReady", ->
@@ -97,13 +97,16 @@ window.onload = ->
 		methods:
 			next: ->
 				document.getElementById('load').className += " fadeOut animated"
-				_public.note = false
 				main.mounted = true
 				setTimeout ->
 					main.init()
 				,400
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
+					_public.note = true
+					setTimeout ->
+						_public.note = false
+					,3000
 				,520
 		mounted: ->
 			@.mounted = true
