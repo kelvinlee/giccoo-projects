@@ -67,7 +67,10 @@ main={},sys="",sended=[!(loading={}),!(_public={})],_runTime=_startCache=_cache=
 console.log("share href:",t),CloudMusic.sharePic({picUrl:t,text:n,link:i})},window.onload=function(){var e,t;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,-1<window.navigator.userAgent.indexOf("NeteaseMusic")?(sys="NeteaseMusic",t={name:"emoji",title:"emoji星人的圣诞KTV",subTitle:"大批emoji星人齐聚圣诞KTV，快来测一测你是哪一个？",text:"",picUrl:"http://m.giccoo.com/emoji/img/ico.jpg",link:"http://m.giccoo.com/emoji/"},CloudMusic.setShareData(t)):(loadWechatConfig(),wx.ready(function(){var e;return e={title:"emoji星人的圣诞KTV",desc:"大批emoji星人齐聚圣诞KTV，快来测一测你是哪一个？",link:"http://m.giccoo.com/emoji/",imgUrl:"http://m.giccoo.com/emoji/img/ico.jpg",success:function e(){},
 // alert "success"
 cancel:function e(){}},// alert "cancel"
-wx.onMenuShareTimeline(e),wx.onMenuShareAppMessage(e),wx.onMenuShareQQ(e),wx.onMenuShareWeibo(e)})),_public=new Vue({el:"#public",data:{wy:"NeteaseMusic"===sys,note:!1,playing:!1},mounted:function e(){return document.addEventListener("WeixinJSBridgeReady",function(){return _public.$children[0].change()})}}),loading=new Vue({el:"#loading",data:{progress:0,mounted:!1,progressOn:0},methods:{next:function e(){return document.getElementById("load").className+=" fadeOut animated",main.mounted=!0,setTimeout(function(){return main.init()},400),setTimeout(function(){return document.getElementById("load").style.display="none",_public.wy&&(_public.note=!0),setTimeout(function(){if(_public.wy)return _public.note=!1},3e3)},520)}},mounted:function e(){var t=this,i;// @.next() # for test
+wx.onMenuShareTimeline(e),wx.onMenuShareAppMessage(e),wx.onMenuShareQQ(e),wx.onMenuShareWeibo(e)})),_public=new Vue({el:"#public",data:{wy:"NeteaseMusic"===sys,note:!1,playing:!1},methods:{startGame:function e(){return this.note=!1}},mounted:function e(){return document.addEventListener("WeixinJSBridgeReady",function(){return _public.$children[0].change()})}}),loading=new Vue({el:"#loading",data:{progress:0,mounted:!1,progressOn:0},methods:{next:function e(){return document.getElementById("load").className+=" fadeOut animated",main.mounted=!0,setTimeout(function(){return main.init()},400),setTimeout(function(){if(document.getElementById("load").style.display="none",_public.wy)return _public.note=!0;// setTimeout ->
+// 	_public.note = false if _public.wy
+// ,3000
+},520)}},mounted:function e(){var t=this,i;// @.next() # for test
 return this.mounted=!0,TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,i=setInterval(function(){if(t.progress+=3,t.progress>=t.progressOn&&(t.progress=t.progressOn),100<=t.progress)return t.progress=100,clearInterval(i),_cache=setTimeout(function(){return t.next()},1e3)},50)}}),_init()},_init=function e(){var t,i,n;return 640<=TrueW&&(
 // console.log new Date().getTime() - startTime
 // document.body.style.height = TrueH+"px"
@@ -102,7 +105,9 @@ closeUGC:function e(){return this.ugcShow=!1,shareDone()},faild:function e(t){re
 return window.location.href="https://music.163.com/#/song?id=".concat(t)},openMusic:function e(t){
 // goList()
 // _public.$children[0].pause()
-return CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/emoji/")},goSubmit:function e(){var t=this,i;return i={username:this.nickname,mobile:this.mobile},axios.post("".concat(apiLink,"active/autoSave/insert/database/draw/"),i).then(function(e){return 200===e.data.code?t.share():t.send(e.data.reason)}).catch(function(e){return console.log("err:",e),t.send("请求错误,请重试")})},goWeb:function e(){return window.location.href="http://www.baidu.com/"},goNote:function e(){return this.singerIndex=resultA[1]+1,2===this.singerIndex?this.singerIndex=3:3===this.singerIndex&&(this.singerIndex=2),this.pageNote=!0},init:function e(){return getStart()},closeNote:function e(){return this.pageNote=!1,goEnd()}},
+return CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/emoji/")},goSubmit:function e(){var t=this,i;return i={username:this.nickname,mobile:this.mobile},axios.post("".concat(apiLink,"active/autoSave/insert/database/draw/"),i).then(function(e){return 200===e.data.code?t.share():t.send(e.data.reason)}).catch(function(e){return console.log("err:",e),t.send("请求错误,请重试")})},goWeb:function e(){return window.location.href="http://www.baidu.com/"},goNote:function e(){return this.singerIndex=resultA[1]+1,2===this.singerIndex?this.singerIndex=3:3===this.singerIndex&&(this.singerIndex=2),this.pageNote=!0},init:function e(){return getStart()},closeNote:function e(){return this.pageNote=!1,goEnd()},startGame:function e(){
+// console.log "start game"
+return _public.note=!1}},
 // watch:
 mounted:function e(){var t,i,n;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,"NeteaseMusic"===sys&&(this.wy=!0),t=2*TrueH*(2-2*TrueW/750+.01),// game = new Game({el: "game",h: h})
 this.wy=CloudMusic.isInApp(),n=CloudMusic.getClientVersion().split("."),// @.getUserInfo (callback)=>
@@ -110,4 +115,6 @@ this.wy=CloudMusic.isInApp(),n=CloudMusic.getClientVersion().split("."),// @.get
 // @.ugcType = @.muiscType @.userInfo.styleTop
 i=[],window.imageList=window.imageList.concat(i),ugc=new UGC({el:"ugc",w:640,h:640/TrueW*TrueH,callback:function e(){return console.log("callback")}}),console.log("h:",t)}})};// window.onresize = ->
 // 	console.log "resize:",document.documentElement.clientHeight
+// main.$root.$el.addEventListener "touchstart", (evt)->
+// 	_public.note = false
 //# sourceMappingURL=main.js.map

@@ -85,6 +85,9 @@ window.onload = ->
 			wy: if sys is "NeteaseMusic" then true else false
 			note: false
 			playing: false
+		methods:
+			startGame: ->
+				@.note = false
 		mounted: ->
 			document.addEventListener "WeixinJSBridgeReady", ->
 				_public.$children[0].change()
@@ -105,9 +108,9 @@ window.onload = ->
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
 					_public.note = true if _public.wy
-					setTimeout ->
-						_public.note = false if _public.wy
-					,3000
+					# setTimeout ->
+					# 	_public.note = false if _public.wy
+					# ,3000
 				,520
 		mounted: ->
 			@.mounted = true
@@ -373,6 +376,9 @@ init = ->
 			closeNote: ->
 				@.pageNote = false
 				goEnd()
+			startGame: ->
+				# console.log "start game"
+				_public.note = false
 		# watch:
 		mounted: ->
 
@@ -394,6 +400,9 @@ init = ->
 			console.log "h:",h
 			# window.onresize = ->
 			# 	console.log "resize:",document.documentElement.clientHeight
+			# main.$root.$el.addEventListener "touchstart", (evt)->
+			# 	_public.note = false
+
 
 				
 			
