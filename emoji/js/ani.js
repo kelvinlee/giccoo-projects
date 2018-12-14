@@ -597,7 +597,12 @@ function goEnd(){
 function savePic(){
 	endBtn.visible=false
 	qr.visible=true
+	main.share()
 }
+function goFinal2(){
+
+}
+
 function shareDone(){
 	endBtn.visible=true
 	qr.visible=false
