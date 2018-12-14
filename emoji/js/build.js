@@ -158,7 +158,6 @@ var buildUGC = function () {
 	// var ani = new AnimatedSprite();
 	stageH=this.opts.h
 	pStage=this.stage
-	getStart()
 	
 }
 

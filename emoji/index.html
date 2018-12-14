@@ -23,7 +23,7 @@
       </div>
     </div>
     <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" style="display: none" class="main">
-      <div class="logo"><img src="./img/logo.png"></div>
+      <div v-show="logo" class="logo"><img src="./img/logo.png"></div>
       <transition name="page-down">
         <div v-show="noteShow" @click="noteShow = false" class="note-message">
           <div class="note-text">{{noteText}}</div>

@@ -100,6 +100,9 @@ window.onload = ->
 				_public.note = false
 				main.mounted = true
 				setTimeout ->
+					main.init()
+				,400
+				setTimeout ->
 					document.getElementById('load').style.display = "none"
 				,520
 		mounted: ->
@@ -107,10 +110,10 @@ window.onload = ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 
-			@.next() # for test
+			# @.next() # for test
 
 			timein = setInterval =>
-				@.progress += 2
+				@.progress += 50
 				@.progress = @.progressOn if @.progress >= @.progressOn
 				if @.progress >= 100
 					@.progress = 100
@@ -154,6 +157,7 @@ init = ->
 			pageIndex: 1
 			step: 1
 			singerIndex: 2
+			logo: false
 			startgame: false
 			folder: ""
 			BGColor: "#ffffff"
@@ -356,6 +360,8 @@ init = ->
 			goNote: ->
 				@.singerIndex = resultA[1] + 1
 				@.pageNote = true
+			init: ->
+				getStart()
 		# watch:
 		mounted: ->
 
