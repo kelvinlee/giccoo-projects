@@ -418,22 +418,36 @@ init = ->
 				# @.carIndex = Math.floor(Math.random()*2+1)
 			goSubmit: ->
 				data = {
-					username: @.nickname
+					name: @.nickname
 					mobile:   @.mobile
+					sex: 0
+					carType: "43 Tharu"
+					vsource: "V031514 VW-其他媒体"
+					UCVPDataOrigin: "C002"
+					Vchannel: "V03"
+					Vcampaign: "VW20181025010"
 				}
-				axios.post "#{apiLink}active/autoSave/insert/database/draw/",data
+
+				axios.get "https://campaign.svw-volkswagen.com/lamando2017tvc/api/submitBook.jsonp",data
 				.then (msg)=>
-					if msg.data.code is 200
-						@.send "恭喜您预约成功"
-						@.formBoxShow = false
-						setTimeout =>
-							@.share()
-						,2000
-					else
-						@.send msg.data.reason
+					console.log msg.data
 				.catch (err)=>
-					console.log "err:",err
-					@.send "请求错误,请重试"
+					console.log "error:",err
+
+
+				# axios.post "#{apiLink}active/autoSave/insert/database/draw/",data
+				# .then (msg)=>
+				# 	if msg.data.code is 200
+				# 		@.send "恭喜您预约成功"
+				# 		@.formBoxShow = false
+				# 		setTimeout =>
+				# 			@.share()
+				# 		,2000
+				# 	else
+				# 		@.send msg.data.reason
+				# .catch (err)=>
+				# 	console.log "err:",err
+				# 	@.send "请求错误,请重试"
 
 			goWeb: ->
 				window.location.href = "https://tharu.svw-volkswagen.com/"
