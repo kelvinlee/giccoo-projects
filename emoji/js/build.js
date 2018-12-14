@@ -94,6 +94,38 @@ var imageList = [
 	_CDN+"img/q3title.png",
 	_CDN+"img/q4title.png",
 
+	_CDN+"img/end_bg1.png",
+	_CDN+"img/end_bg2.png",
+	_CDN+"img/end_bg3.png",
+	_CDN+"img/end_bg4.png",
+
+	_CDN+"img/end_bg1b.png",
+	_CDN+"img/end_bg2b.png",
+	_CDN+"img/end_bg3b.png",
+	_CDN+"img/end_bg4b.png",
+
+	_CDN+"img/end_title1.png",
+	_CDN+"img/end_title2.png",
+	_CDN+"img/end_title3.png",
+	_CDN+"img/end_title4.png",
+
+	_CDN+"img/end_t11.png",
+	_CDN+"img/end_t12.png",
+	_CDN+"img/end_t13.png",
+	_CDN+"img/end_t14.png",
+
+	_CDN+"img/end_t21.png",
+	_CDN+"img/end_t22.png",
+	_CDN+"img/end_t23.png",
+	_CDN+"img/end_t24.png",
+
+	_CDN+"img/end_t31.png",
+	_CDN+"img/end_t32.png",
+	_CDN+"img/end_t33.png",
+	_CDN+"img/end_t34.png",
+
+	_CDN+"img/end_tbg.png",
+
 
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,

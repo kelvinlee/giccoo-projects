@@ -2,6 +2,9 @@ var bgC=new PIXI.Container()
 var bgAll,bgUp,bgDown,p1logo
 var xman
 var p1C=new PIXI.Container()
+var bg1,bg2,bg3,bg4
+var bgEndA=[]
+var bgEnd=new PIXI.Container()
 function setPage1 () {
 	// body...
 	pStage.addChild(bgC,p1C)
@@ -16,7 +19,19 @@ function setPage1 () {
 
 	p1logo=new Sprite(getTe(_CDN+"img/p1logo.png"));
 
-	bgC.addChild(bgAll,xman,bgUp,bgDown)
+	bgC.addChild(bgAll,xman,bgEnd,bgUp,bgDown)
+	bgEnd.y=stageH
+	bg1=new Sprite(getTe(_CDN+"img/end_bg1b.png"));
+	bg2=new Sprite(getTe(_CDN+"img/end_bg2b.png"));
+	bg3=new Sprite(getTe(_CDN+"img/end_bg3b.png"));
+	bg4=new Sprite(getTe(_CDN+"img/end_bg4b.png"));
+	bgEnd.addChild(bg1,bg2,bg3,bg4)
+	bgEndA=[bg1,bg2,bg3,bg4]
+	for (var i = 0; i < 4; i++) {
+		bgEndA[i].visible=false
+		bgEndA[i].height=stageH
+	};
+
 	p1C.addChild(p1logo)
 	bgAll.y=stageH-1500
 	bgUp.pivot.set(320,500)
@@ -248,7 +263,7 @@ function setQ1(){
 var q2bg,q2title
 function setQ2(){
 	q2bg=new Sprite(getTe(_CDN+"img/q2bg.png"));
-	q2bg.y=stageH/2-500
+	q2bg.y=stageH-1000
 
 	q2title=new Sprite(getTe(_CDN+"img/q2title.png"));
 	q2title.y=stageH/2-500
@@ -439,7 +454,89 @@ function goNextQ(){
 		setQ4()
 	}else if(nowQ==3){
 		console.log("答完题了")
+		goEnd()
 	}
 
 }
+
+var endTitle=new PIXI.Container()
+var endTitleA=[]
+
+var endPic=new PIXI.Container()
+var endPicA=[]
+
+var endT=new PIXI.Container()
+var endT1A=[]
+var endT2A=[]
+var endT3A=[]
+var endTbg
+
+function goEnd(){
+	pStage.addChild(endT,endPic,endTitle)
+	bgEndA[resultA[2]].visible=true
+	TweenMax.to(bgEnd,1,{y:0})
+
+	endTbg=new Sprite(getTe(_CDN+"img/end_tbg.png"));
+	endT.addChild(endTbg)
+
+	for (var i = 0; i < 4; i++) {//=====生成
+		var j=i+1
+		var _endTitle=new Sprite(getTe(_CDN+"img/end_title"+j+".png"));
+		_endTitle.visible=false
+		endTitle.addChild(_endTitle)
+		endTitleA.push(_endTitle)
+
+		var _endPic=new Sprite(getTe(_CDN+"img/end_bg"+j+".png"));
+		_endPic.visible=false
+		endPic.addChild(_endPic)
+		endPicA.push(_endPic)
+
+		var _endT1=new Sprite(getTe(_CDN+"img/end_t1"+j+".png"));
+		_endT1.visible=false
+		endT.addChild(_endT1)
+		endT1A.push(_endT1)
+
+		var _endT2=new Sprite(getTe(_CDN+"img/end_t2"+j+".png"));
+		_endT2.visible=false
+		endT.addChild(_endT2)
+		endT2A.push(_endT2)
+
+		var _endT3=new Sprite(getTe(_CDN+"img/end_t3"+j+".png"));
+		_endT3.visible=false
+		endT.addChild(_endT3)
+		endT3A.push(_endT3)
+
+	};
+	endTitle.pivot.set(320,270)
+	endTitle.position.set(320,270+stageH/2-500)
+
+	endPic.y=stageH-1000
+
+	endT.pivot.set(320,597)
+	endT.position.set(320,597+stageH/2-500)
+
+	endTitleA[resultA[1]].visible=true
+	TweenMax.from(endTitle,2,{y:-539+270,ease:Elastic.easeOut,delay:.5})
+	TweenMax.from(endTitle,1,{rotation:.5,delay:.5})
+
+	endPicA[resultA[2]].visible=true
+	TweenMax.from(endPic,1,{y:stageH-1000+300,delay:.5})
+
+	endT1A[resultA[0]].visible=true
+	endT2A[resultA[3]].visible=true
+	endT3A[resultA[1]].visible=true
+
+	TweenMax.from(endT.scale,2,{x:0,y:0,ease:Elastic.easeOut,delay:.5})
+
+
+	// for (i = 0; i < 4; i++) {
+		
+	// };
+
+
+
+}
+
+
+
 
