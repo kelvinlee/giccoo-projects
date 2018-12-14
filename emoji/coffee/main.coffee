@@ -102,9 +102,7 @@ window.onload = ->
 			next: ->
 				document.getElementById('load').className += " fadeOut animated"
 				main.mounted = true
-				setTimeout ->
-					main.init()
-				,400
+				main.init()
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
 					_public.note = true if _public.wy
