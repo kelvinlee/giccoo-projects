@@ -503,7 +503,7 @@ var endTbg
 var endBtn=new PIXI.Container()
 var endbtnbg,endbtn1,endbtn2
 
-var qr
+var qr,logo
 
 function goEnd(){
 	pStage.addChild(endT,endPic,endTitle,endBtn)
@@ -591,12 +591,17 @@ function goEnd(){
 	qr.y=stageH-211
 	qr.visible=false
 
+	logo=new Sprite(getTe(_CDN+"img/logo.png"));
+	pStage.addChild(logo)
+	logo.visible=false
+
 }
 
 
 function savePic(){
 	endBtn.visible=false
 	qr.visible=true
+	logo.visible=true
 	main.share()
 }
 function goFinal2(){
@@ -606,10 +611,11 @@ function goFinal2(){
 function shareDone(){
 	endBtn.visible=true
 	qr.visible=false
+	logo.visible=false
 }
 
 function goLayer(){
-	
+	main.goNote()
 }
 
 
