@@ -43,6 +43,16 @@ $pageMainBGColor: #0c101a;
 	100%
 		+transform(scale(1,1))
 		opacity: 1
++keyframes(zoomBigInShow)
+	0%
+		+transform(scale(1,1))
+		opacity: 0
+	10%
+		+transform(scale(1,1))
+		opacity: 1
+	100%
+		+transform(scale(0.8,0.8))
+		opacity: 1
 +keyframes(fadeArrow)
 	0%,100%
 		opacity: 1
@@ -688,10 +698,11 @@ video,canvas,svg
 	+bc(rgba(0,0,0,0.7))
 	z-index: 1109
 	&.flashcamera
+		z-index: 3109
 		+animation(flashcamera,1s,ease)
 		// animation-delay: 1s
 		.content
-			+animation(zoomBigIn,0.6s,ease)
+			+animation(zoomBigInShow,0.6s,ease)
 			animation-delay: 0.5s
 
 	.close
@@ -706,7 +717,8 @@ video,canvas,svg
 		+posr
 		.close
 			+bl(auto,auto)
-			+tr(0%,0%)
+			+tr(-2rem,-2rem)
+			+wh(2rem,2rem)
 			+transform(translate3d(0,0,0))
 	.note
 		+posa

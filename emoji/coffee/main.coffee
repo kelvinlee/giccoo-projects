@@ -55,21 +55,21 @@ window.onload = ->
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
 		shareData = 
-			name: 'draw-board'
-			title: '点播圣诞星声'
+			name: 'emoji'
+			title: 'Emoji Title'
 			subTitle: ""
 			text: ''
-			picUrl: 'http://m.giccoo.com/draw-board/img/ico.jpg'
-			link: 'http://m.giccoo.com/draw-board/'
+			picUrl: 'http://m.giccoo.com/emoji/img/ico.jpg'
+			link: 'http://m.giccoo.com/emoji/'
 		CloudMusic.setShareData shareData
 	else
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "点播圣诞星声"
+				title: "Emoji Title"
 				desc: ""
-				link: "http://m.giccoo.com/draw-board/"
-				imgUrl: "http://m.giccoo.com/draw-board/img/ico.jpg"
+				link: "http://m.giccoo.com/emoji/"
+				imgUrl: "http://m.giccoo.com/emoji/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
@@ -353,6 +353,9 @@ init = ->
 
 			goWeb: ->
 				window.location.href = "http://www.baidu.com/"
+			goNote: ->
+				@.singerIndex = resultA[1] + 1
+				@.pageNote = true
 		# watch:
 		mounted: ->
 
