@@ -199,7 +199,7 @@ function goPage2(){
 	setTimeout(setPageQ,2500)
 }
 function showEmoji(){
-	for (var i = 0; i < 200; i++) {
+	for (var i = 0; i < 160; i++) {
 		var _e=new Sprite(getTe(_CDN+"img/e"+(i%14+1)+".png"));
 		console.log(i%14+1)
 		p2eC.addChild(_e)
@@ -208,13 +208,13 @@ function showEmoji(){
 		_e.scale.set(0,0)
 		//_e.alpha=0
 
-		var _r=stageH+320
+		var _r=stageH+320+50
 		var _ang=(Math.random()*360)*0.017453293
 		var _x=_r*Math.cos(_ang)+320
 		var _y=_r*Math.sin(_ang)+stageH/2
 		var _delay=Math.random()*2
-		TweenMax.to(_e,1+_delay,{x:_x,y:_y,rotation:Math.random()*5-2.5,repeat:0,alpha:1,delay:_delay/2,ease:Sine.easeOut})
-		TweenMax.to(_e.scale,1+_delay+.5,{x:2+_delay,y:2+_delay,repeat:0,delay:_delay/2,ease:Sine.easeOut})
+		TweenMax.to(_e,1+2+_delay,{x:_x,y:_y,rotation:Math.random()*5-2.5,repeat:0,alpha:1,delay:_delay/2,ease:Sine.easeOut})
+		TweenMax.to(_e.scale,1+2+_delay+.5,{x:2+_delay,y:2+_delay,repeat:0,delay:_delay/2,ease:Sine.easeOut})
 	};
 }
 var pageQ1=new PIXI.Container()
