@@ -185,6 +185,7 @@ function setP2line(){
 var p2eC=new PIXI.Container()
 var pageQ=new PIXI.Container()
 function goPage2(){
+	main.logo=true
 	p1t4.interactive=false
 	TweenMax.to(p1C,1.5,{alpha:0})
 
