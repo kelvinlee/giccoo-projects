@@ -141,7 +141,7 @@ function setP1line(){
 	p1C.addChild(p1lineC)
 
 	var p1lineA=[p1l1,p1l2,p1l3,p1l4,p1l5,p1l6,p1l7]
-	var xA=[52,101,163,454,510,553,606]
+	var xA=[50+10,101+5,163+10,454-10,510,553-5,606+10]
 	for (var i = 0; i < 7; i++) {
 		var _p1line=new PIXI.Container()
 		_p1line.addChild(p1lineA[i])
@@ -153,6 +153,32 @@ function setP1line(){
 		_p1line.position.set(xA[i],0)
 
 		TweenMax.to(_p1line.scale,2+Math.random(),{x:-1,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:.5*i})
+	};
+}
+var p2l1,p2l2,p2l3,p2l4
+var p2lineC=new PIXI.Container()
+function setP2line(){
+	p2l1=new Sprite(getTe(_CDN+"img/p2line1.png"));
+	p2l2=new Sprite(getTe(_CDN+"img/p2line2.png"));
+	p2l3=new Sprite(getTe(_CDN+"img/p2line3.png"));
+	p2l4=new Sprite(getTe(_CDN+"img/p2line4.png"));
+
+	pStage.addChild(p2lineC)
+	p2lineC.addChild(p2l1,p2l2,p2l3,p2l4)
+
+	var p2lineA=[p2l1,p2l2,p2l3]
+	var xxA=[122+10,345-10,612-10]
+	for (var i = 0; i < 3; i++) {
+		var _p2line=new PIXI.Container()
+		_p2line.addChild(p2lineA[i])
+		p2lineC.addChild(_p2line)
+		//p2lineA[i].y=-519
+		//TweenMax.to(p2lineA[i],2,{y:-100,ease:Elastic.easeOut,delay:.05*i})
+
+		_p2line.pivot.set(xxA[i],0)
+		_p2line.position.set(xxA[i],0)
+
+		TweenMax.to(_p2line.scale,2+Math.random(),{x:-1,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:.5*i})
 	};
 }
 
@@ -204,9 +230,12 @@ function setPageQ(){
 	TweenMax.to(btnNext,.7,{alpha:.5,repeat:100000,yoyo:true,ease:Sine.easeIn})
 	btnNext.visible=false
 
+	setP2line()
 	setQ1()
 
 }
+
+
 
 
 //===========================问题1
@@ -471,8 +500,13 @@ var endT2A=[]
 var endT3A=[]
 var endTbg
 
+var endBtn=new PIXI.Container()
+var endbtnbg,endbtn1,endbtn2
+
+var qr
+
 function goEnd(){
-	pStage.addChild(endT,endPic,endTitle)
+	pStage.addChild(endT,endPic,endTitle,endBtn)
 	bgEndA[resultA[2]].visible=true
 	TweenMax.to(bgEnd,1,{y:0})
 
@@ -528,15 +562,50 @@ function goEnd(){
 
 	TweenMax.from(endT.scale,2,{x:0,y:0,ease:Elastic.easeOut,delay:.5})
 
+	endbtnbg=new Sprite(getTe(_CDN+"img/endbtnbg.png"));
+	endbtn1=new Sprite(getTe(_CDN+"img/endbtn1.png"));
+	endbtn2=new Sprite(getTe(_CDN+"img/endbtn2.png"));
+
+	endBtn.addChild(endbtnbg,endbtn1,endbtn2)
+
+	endbtn2.x=640-373
+	endBtn.y=stageH-211
+	TweenMax.from(endBtn,1,{alpha:0})
+	endbtn1.blendMode=_ADD
+	endbtn2.blendMode=_ADD
+
+	endbtn1.interactive=true
+	endbtn1.tap=savePic
+
+	endbtn2.interactive=true
+	endbtn2.tap=goLayer
+
+	TweenMax.from(endbtn1,1.5,{alpha:.7,repeat:100000,delay:.0})
+	TweenMax.from(endbtn2,1.5,{alpha:.7,repeat:100000,delay:.75})
 
 	// for (i = 0; i < 4; i++) {
 		
 	// };
-
-
+	qr=new Sprite(getTe(_CDN+"img/qr.png"));
+	pStage.addChild(qr)
+	qr.y=stageH-211
+	qr.visible=false
 
 }
 
+
+function savePic(){
+	endBtn.visible=false
+	qr.visible=true
+}
+function shareDone(){
+	endBtn.visible=true
+	qr.visible=false
+}
+
+function goLayer(){
+	
+}
 
 
 
