@@ -2195,28 +2195,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/emoji/img/q22.png": {
-		"ft": 32768,
-		"iS": 4615,
-		"oA": 0,
-		"oAP": "/emoji/img/q22.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/q23.png": {
-		"ft": 32768,
-		"iS": 5314,
-		"oA": 0,
-		"oAP": "/emoji/img/q23.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"/emoji/img/q24.png": {
 		"ft": 32768,
 		"iS": 4840,

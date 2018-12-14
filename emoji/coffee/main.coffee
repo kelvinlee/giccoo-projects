@@ -363,6 +363,10 @@ init = ->
 				window.location.href = "http://www.baidu.com/"
 			goNote: ->
 				@.singerIndex = resultA[1] + 1
+				if @.singerIndex is 2
+					@.singerIndex = 3
+				else if @.singerIndex is 3
+					@.singerIndex = 2
 				@.pageNote = true
 			init: ->
 				getStart()
