@@ -1282,66 +1282,11 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/emoji/img/btn-close.png": {
-		"ft": 32768,
-		"iS": 70131,
-		"oA": 0,
-		"oAP": "/emoji/img/btn-close.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"/emoji/img/btn_next.png": {
 		"ft": 32768,
 		"iS": 12183,
 		"oA": 0,
 		"oAP": "/emoji/img/btn_next.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/card-1.png": {
-		"ft": 32768,
-		"iS": 119219,
-		"oA": 0,
-		"oAP": "/emoji/img/card-1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/card-2.png": {
-		"ft": 32768,
-		"iS": 105611,
-		"oA": 0,
-		"oAP": "/emoji/img/card-2.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/card-3.png": {
-		"ft": 32768,
-		"iS": 108198,
-		"oA": 0,
-		"oAP": "/emoji/img/card-3.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/card-4.png": {
-		"ft": 32768,
-		"iS": 97127,
-		"oA": 0,
-		"oAP": "/emoji/img/card-4.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -1502,17 +1447,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/emoji/img/end_bg1.png": {
-		"ft": 32768,
-		"iS": 69284,
-		"oA": 0,
-		"oAP": "/emoji/img/end_bg1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"/emoji/img/end_bg1b.png": {
 		"ft": 32768,
 		"iS": 4065,
@@ -1546,33 +1480,11 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/emoji/img/end_bg3.png": {
-		"ft": 32768,
-		"iS": 110518,
-		"oA": 0,
-		"oAP": "/emoji/img/end_bg3.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"/emoji/img/end_bg3b.png": {
 		"ft": 32768,
 		"iS": 4064,
 		"oA": 0,
 		"oAP": "/emoji/img/end_bg3b.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/end_bg4.png": {
-		"ft": 32768,
-		"iS": 71335,
-		"oA": 0,
-		"oAP": "/emoji/img/end_bg4.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -1716,61 +1628,6 @@
 		"iS": 12641,
 		"oA": 0,
 		"oAP": "/emoji/img/end_t34.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/end_tbg.png": {
-		"ft": 32768,
-		"iS": 79858,
-		"oA": 0,
-		"oAP": "/emoji/img/end_tbg.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/end_title1.png": {
-		"ft": 32768,
-		"iS": 299835,
-		"oA": 0,
-		"oAP": "/emoji/img/end_title1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/end_title2.png": {
-		"ft": 32768,
-		"iS": 271002,
-		"oA": 0,
-		"oAP": "/emoji/img/end_title2.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/end_title3.png": {
-		"ft": 32768,
-		"iS": 265099,
-		"oA": 0,
-		"oAP": "/emoji/img/end_title3.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/end_title4.png": {
-		"ft": 32768,
-		"iS": 269898,
-		"oA": 0,
-		"oAP": "/emoji/img/end_title4.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -2107,17 +1964,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/emoji/img/p1snow.png": {
-		"ft": 32768,
-		"iS": 77015,
-		"oA": 0,
-		"oAP": "/emoji/img/p1snow.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"/emoji/img/p1t1.png": {
 		"ft": 32768,
 		"iS": 50015,
@@ -2272,17 +2118,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/emoji/img/pop-bg.jpg": {
-		"ft": 16384,
-		"iS": 73024,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/emoji/img/pop-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
 	"/emoji/img/pop-title.png": {
 		"ft": 32768,
 		"iS": 26806,
@@ -2349,17 +2184,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/emoji/img/q1title.png": {
-		"ft": 32768,
-		"iS": 69457,
-		"oA": 0,
-		"oAP": "/emoji/img/q1title.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"/emoji/img/q21.png": {
 		"ft": 32768,
 		"iS": 6053,
@@ -2398,28 +2222,6 @@
 		"iS": 4840,
 		"oA": 0,
 		"oAP": "/emoji/img/q24.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/q2bg.png": {
-		"ft": 32768,
-		"iS": 70491,
-		"oA": 0,
-		"oAP": "/emoji/img/q2bg.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/q2title.png": {
-		"ft": 32768,
-		"iS": 75367,
-		"oA": 0,
-		"oAP": "/emoji/img/q2title.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -2470,17 +2272,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/emoji/img/q3title.png": {
-		"ft": 32768,
-		"iS": 99636,
-		"oA": 0,
-		"oAP": "/emoji/img/q3title.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"/emoji/img/q41.png": {
 		"ft": 32768,
 		"iS": 29139,
@@ -2519,17 +2310,6 @@
 		"iS": 26863,
 		"oA": 0,
 		"oAP": "/emoji/img/q44.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/q4title.png": {
-		"ft": 32768,
-		"iS": 86970,
-		"oA": 0,
-		"oAP": "/emoji/img/q4title.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -2640,28 +2420,6 @@
 		"iS": 13481,
 		"oA": 0,
 		"oAP": "/emoji/img/text-note-4.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/text-note.png": {
-		"ft": 32768,
-		"iS": 87586,
-		"oA": 0,
-		"oAP": "/emoji/img/text-note.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/emoji/img/tree.png": {
-		"ft": 32768,
-		"iS": 119056,
-		"oA": 0,
-		"oAP": "/emoji/img/tree.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
