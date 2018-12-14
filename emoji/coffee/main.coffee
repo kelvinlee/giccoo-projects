@@ -113,7 +113,7 @@ window.onload = ->
 			# @.next() # for test
 
 			timein = setInterval =>
-				@.progress += 50
+				@.progress += 3
 				@.progress = @.progressOn if @.progress >= @.progressOn
 				if @.progress >= 100
 					@.progress = 100
