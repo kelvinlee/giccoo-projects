@@ -590,7 +590,7 @@ function goEnd(){
 	// };
 	qr=new Sprite(getTe(_CDN+"img/qr.png"));
 	pStage.addChild(qr)
-	qr.y=stageH/2-211
+	qr.y=stageH-211
 	qr.visible=false
 
 	logo=new Sprite(getTe(_CDN+"img/logo.png"));
