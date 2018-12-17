@@ -588,7 +588,11 @@ function goEnd(){
 	// for (i = 0; i < 4; i++) {
 		
 	// };
-	qr=new Sprite(getTe(_CDN+"img/qr.png"));
+	if (_public.wx || _public.wy) {
+		qr=new Sprite(getTe(_CDN+"img/qr2.png"));
+	}else{
+		qr=new Sprite(getTe(_CDN+"img/qr.png"));
+	}
 	pStage.addChild(qr)
 	qr.y=stageH-232//-211
 	qr.visible=false
