@@ -322,7 +322,7 @@ init = ->
 				image = @.ugc
 
 				if @.wy
-					folder = "emoji"
+					folder = "lenovo"
 					data = {
 						image: image
 						folder: folder
@@ -411,9 +411,11 @@ init = ->
 				@.loading = true
 				@.logo = true
 				setTimeout =>
-					@.loading = false
 					@.pageIndex = 2
 					@.step = 2
+				,500
+				setTimeout =>
+					@.loading = false
 				,2500
 			build: ->
 				@.pageIndex = 4

@@ -105,7 +105,12 @@ class UGC
 		btnMore.y = btnShare.y + btnShare.height + 10
 		btnMore.x = btnReload.x + btnReload.width + 20
 		btnShare.interactive = true
+		btnReload.interactive = true
 		btnShare.tap = @.share.bind @
+		btnReload.tap = ->
+			window.location.reload()
+		btnMore.tap = ->
+			window.location.href = "http://www.baidu.com/"
 
 		qr = new Spr _CDN+"img/qr.png"
 		qr.y = btnShare.y - btnShare.height - 22
