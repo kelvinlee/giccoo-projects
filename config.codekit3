@@ -2304,14 +2304,25 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/emoji/img/pop-bg.png": {
+		"ft": 32768,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "/emoji/img/pop-bg.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"/emoji/img/pop-title.png": {
 		"ft": 32768,
 		"iS": 26806,
 		"oA": 0,
 		"oAP": "/emoji/img/pop-title.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -2596,8 +2607,8 @@
 		"oA": 0,
 		"oAP": "/emoji/img/text-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -2640,8 +2651,8 @@
 		"oA": 0,
 		"oAP": "/emoji/img/text-note-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},

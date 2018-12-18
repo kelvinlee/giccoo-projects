@@ -80,17 +80,17 @@ block content
       .pop.pop-note(v-show="pageNote")
         .bg.zoomShake.animated.delay-7
         .content
-          .title.zoomIn.animated.delay-10
-            img(src="#{url}/img/pop-title.png")
+          .text.zoomIn.animated.delay-10
+            img(:src="'#{url}/img/text-'+singerIndex+'.png'")
           .card.flipInY.animated.delay-3
             img(:src="'#{url}/img/card-'+singerIndex+'.png'")
             .stamp.zoomBigIn.animated.delay-7
               img(src="#{url}/img/stamp.png")
-          .text.zoomIn.animated.delay-11
-            img(:src="'#{url}/img/text-'+singerIndex+'.png'")
+          .title.zoomIn.animated.delay-11
+            img(src="#{url}/img/pop-title.png")
           .text-note.zoomIn.animated.delay-12
-            .tree
-              img(src="#{url}/img/tree.png")
+            //- .tree
+            //-   img(src="#{url}/img/tree.png")
             .texts
               img(src="#{url}/img/text-note.png")
               .text-emoji

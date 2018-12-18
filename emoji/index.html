@@ -62,13 +62,12 @@
         <div v-show="pageNote" class="pop pop-note">
           <div class="bg zoomShake animated delay-7"></div>
           <div class="content">
-            <div class="title zoomIn animated delay-10"><img src="./img/pop-title.png"></div>
+            <div class="text zoomIn animated delay-10"><img :src="'./img/text-'+singerIndex+'.png'"></div>
             <div class="card flipInY animated delay-3"><img :src="'./img/card-'+singerIndex+'.png'">
               <div class="stamp zoomBigIn animated delay-7"><img src="./img/stamp.png"></div>
             </div>
-            <div class="text zoomIn animated delay-11"><img :src="'./img/text-'+singerIndex+'.png'"></div>
+            <div class="title zoomIn animated delay-11"><img src="./img/pop-title.png"></div>
             <div class="text-note zoomIn animated delay-12">
-              <div class="tree"><img src="./img/tree.png"></div>
               <div class="texts"><img src="./img/text-note.png">
                 <div class="text-emoji"><img :src="'./img/text-note-'+singerIndex+'.png'"></div>
               </div>

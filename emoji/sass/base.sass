@@ -659,22 +659,25 @@ video,canvas,svg
 	.content
 
 .pop-note
-	+transform(scale(0.9,0.9))
+	// +transform(scale(0.9,0.9))
 	.bg
 		+w
 		+h
-		+b($cdn+"img/pop-bg.jpg",no-repeat,center,center,cover)
+		+b($cdn+"img/pop-bg.png",no-repeat,center,center,contain)
+		+bc(rgba(0,0,0,0.3))
 		// +transform(scale(0.9,0.9))
 	.content
 		+abcentermiddle
 		+w
-		margin-top: -7%
+		margin-top: 4%
 		// +transform(scale(0.9,0.9))
 	.title
 		+m
 	.card
+		+m
 		margin-top: -5%
 		+posr
+		+w(80%)
 		.stamp
 			+iw(110,640,100%)
 			+posa
@@ -684,7 +687,7 @@ video,canvas,svg
 		margin-top: -5%
 	.text-note
 		+posr
-		margin-top: -3%
+		margin-top: 2%
 		.tree
 			+posa
 			+bl
