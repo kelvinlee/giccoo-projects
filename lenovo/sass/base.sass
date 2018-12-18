@@ -5,7 +5,7 @@
 $debug : true
 $cdn : "../"
 @if not $debug
-	$cdn : "//image.giccoo.com/projects/emoji/"
+	$cdn : "//image.giccoo.com/projects/lenovo/"
 
 @for $i from 1 through 30
 	.delay-#{$i}
@@ -134,9 +134,16 @@ $pageMainBGColor: #0c101a;
 		transform: translate3d(0,0,0)
 +keyframes(second)
 	0%
-		transform: rotate(0)
+		transform: scale(0.8,0.8) rotate(0)
+		opacity: 0
+	20%
+		opacity: 1
+	80%
+		opacity: 1
 	100%
-		transform: rotate(360deg)
+		transform: scale(1.2,1.2) rotate(360deg)
+		opacity: 0
+
 +keyframes(beforeWheel)
 	0%
 		opacity: 1
@@ -154,6 +161,17 @@ $pageMainBGColor: #0c101a;
 		opacity: 0
 	50%
 		opacity: 1
+	100%
+		opacity: 1
++keyframes(lightFeel)
+	0%
+		opacity: 1
+	40%
+		opacity: 0.6
+	70%
+		opacity: 1
+	90%
+		opacity: 0.8
 	100%
 		opacity: 1
 
@@ -184,7 +202,7 @@ video,canvas,svg
 	font-size: 0
 	+overhide
 	+tran(all,4s,ease)
-	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
 #game
 	+h
 	canvas
@@ -282,18 +300,37 @@ video,canvas,svg
 	+tl(0,50%)
 	+transform(translate3d(-50%,0,0))
 	// +bc($pageMainBGColor)
-	+bc(#05c4b6)
+	// +bc(#05c4b6)
 	z-index: 4199
 	// 3c080f
 	// +hide
 	// font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
 	// +b($cdn+"img/loading-bg.jpg",no-repeat,center,center,100% 100%)
-	color: #fff
+	color: #da464f
 	.content
 		+w
 		+text-center
 		+abcentermiddle
 		+font-size(0.8rem)
+	.text-content
+		+abcentermiddle
+		+iw(230,750,100%)
+		p
+			+m(0.2em auto)
+			+font-size(1rem)
+			font-weight: bold
+	.box
+		+w
+		+b($cdn+"img/bg-icon.png",no-repeat,center,center,contain)
+		padding-top: 100%
+		+animation(second,6s,ease,infinite)
+		.content
+			+iw(230,750,100%)
+			p
+				+m(0.2em auto)
+				+font-size(1rem)
+				font-weight: bold
+
 	.xman
 		+w(50%)
 		+posa
@@ -461,7 +498,7 @@ video,canvas,svg
 		+tl
 		+w
 		+h
-		+bc(#e3dbd5)
+		// +bc(#e3dbd5)
 		+hide
 		background-attachment: fixed
 		z-index: 10
@@ -528,7 +565,11 @@ video,canvas,svg
 	z-index: 9999
 	+w
 	+h
-	+bc(rgba(0,0,0,0.6))
+	// +bc(rgba(0,0,0,0.6))
+	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	.content
+		+abcentermiddle
+		+w
 	.ball-spin-fade-loader
 		+posa
 		+tl(50%,50%)
@@ -649,27 +690,195 @@ video,canvas,svg
 .main
 	.logo
 		+posa
-		+tl
+		+bl(1.5%)
 		+w
 		z-index: 2009
 		pointer-events: none
-
+.page
+	.mark
+		+b($cdn+"img/light.png",no-repeat,top,center,cover)
+		+posa
+		+tl
+		+br
+		+animation(lightFeel,4s,ease,infinite)
+		pointer-events: none
+		z-index: 99
 .page-1
-	// +b($cdn+"img/homepage-bg.jpg",no-repeat,center,center,cover)
+	+b($cdn+"img/bg2.jpg",no-repeat,top,center,cover)
 	.content
+		.book
+			+abcentermiddle
+			+w
+			margin-top: -2%
+		.btn-start
+			+posa
+			+bl(8%)
+.page-2
+	+b($cdn+"img/bg2.jpg",no-repeat,top,center,cover)
+	.content
+		.book
+			+abcentermiddle
+			+w
+			margin-top: -4%
+			.selectSection,.inputSection
+				+w
+				+h(70%)
+				+abcentermiddle
+				.btn
+					+w(63%)
+					+m
+				.note-text
+					+w(64%)
+					+m
+					margin-top: 2.5%
+			.inputSection
+				+w(63%)
+				+m
+				.btn
+					+w
+				.nickname
+					+b($cdn+"img/bg-input.png",no-repeat,center,center,100% 100%)
+					margin-top: 2%
+					input
+						+box
+						+w
+						+h(1.8em)
+						+p(0.2em)
+						+font-size(1.2rem)
+						+bc(transparent)
+						+text-center
+						color: #6d4222
+						line-height: 1.6em
+						border: none
+						outline: none
+					input::placeholder
+						color: #6d4222
+				.message
+					+posr
+					+b($cdn+"img/bg-textarea.png",no-repeat,center,center,100% 100%)
+					margin-top: 2%
+					+h(62%)
+					+w
+					textarea
+						+box
+						+w
+						+h(1.4em*6)
+						+p(0.6em 0.4em)
+						+font-size(0.8rem)
+						+bc(transparent)
+						+text-center
+						color: #6d4222
+						line-height: 1.4em
+						border: none
+						outline: none
+						&::placeholder
+							color: #6d4222
+					.length
+						+posa
+						+br(5%,5%)
+						+font-size(0.6rem)
+						color: #6d4222
+				.btn
+					margin-top: 5%
+					margin-bottom: 5%
+				.note-text
+					+w
+
+		.btns
+			+abcentermiddle
+			+w
+			margin-top: -10%
+			.btn
+				+m(4% auto)
+.page-3
+	.content
+		+touch
+		.arrow
+			+posf
+			+bl(4%,50%)
+			+m
+			margin-left: -5%
+			z-index: 15
+			+w(10%)
+			+animation(fadeInDown,1s,ease,infinite)
+		.box
+			+posr
+			.overOn
+				+posa
+				+tl
+				+w
+				z-index: 2
+				+animation(fadeIn,2s,linear,1)
+				animation-delay: 700ms
+		.btn
+			+posa
+			+bl(5%)
+			z-index: 4
+
+
+.slider-box
+	+w(65%)
+	+m
+	+posr
+	padding-bottom: 2%
+	margin-top: 2.5%
+	.slider-content
+		+w
+		+h
+		overflow: hidden
+	.left
+		+posa
+		+tl(50%)
+		+w(10%)
+		z-index: 99
+	.right
+		+posa
+		+tr(50%)
+		+w(10%)
+		z-index: 99
+		+transform(scale(-1,1))
+	.slider
+		+posr
+		white-space: nowrap
+		font-size: 0
+		+tran(all,0s,linear)
+		.slide
+			+w
+			+posr
+			+show-inline
+			white-space: normal
+			img
+	.points
+		+w
+		+posr
+		// +posa
+		// +bl(-10%,0)
+		+text-center
+		+p(3% 0)
+		margin-top: -5%
+		span
+			+show-inline
+			+wh(0.8rem,0.8rem)
+			+b($cdn+"img/point-e.png",no-repeat,center,center,contain)
+			// border: solid 1px #fff
+			// border-radius: 50%
+			+overhide
+			+m(0 0.2rem)
+			+tran
+			&.on
+				// +bc(#fff)
+				+b($cdn+"img/point-f.png",no-repeat,center,center,contain)
+
 
 .pop-note
-	+transform(scale(0.9,0.9))
 	.bg
 		+w
 		+h
 		+b($cdn+"img/pop-bg.jpg",no-repeat,center,center,cover)
-		// +transform(scale(0.9,0.9))
 	.content
 		+abcentermiddle
 		+w
 		margin-top: -7%
-		// +transform(scale(0.9,0.9))
 	.title
 		+m
 	.card

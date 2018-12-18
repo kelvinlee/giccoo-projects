@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Lenovo</title>
+    <meta name="author" content="m.giccoo.com">
+    <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
+    <link rel="stylesheet" href="css/base.css">
+  </head>
+  <body>
+    <div id="load" class="load">
+      <div id="loading" v-show="mounted" style="display: none" class="content">
+        <div :style="{transform: 'translate3d('+progress/2+'%,0,0)'}" class="xman"><img src="./img/xman.png"></div>
+        <p class="centeralign">Loading..{{progress}}%</p>
+      </div>
+    </div>
+    <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" style="display: none" @touchstart="startGame" class="main">
+      <transition name="page-fade">   
+        <div v-show="logo" class="logo"><img src="./img/logo.png"></div>
+      </transition>
+      <transition name="page-down">
+        <div v-show="noteShow" @click="noteShow = false" class="note-message">
+          <div class="note-text">{{noteText}}</div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="loading" class="loading-page">
+          <div class="ball-spin-fade-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-zoom">
+        <div v-show="pageIndex == 1" class="page page-1">
+          <div class="content">
+            <div id="ugc"></div>
+          </div>
+        </div>
+      </transition>
+      <div v-show="ugcShow" class="pop flashcamera">
+        <div class="content">
+          <div class="small-size">
+            <div @click="closeUGC" class="close"><img src="./img/icon-close.png"></div><img :src="ugc">
+            <div class="note">长按保存图片</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/pixi.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
+    <script src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js"></script>
+    <script src="//image.giccoo.com/projects/genki/js/ntes.id.js"></script>
+    <script src="js/public_funciton.js"></script>
+    <script src="js/build.js?v=1"></script>
+    <script src="js/main.js?v=1"></script>
+    <script src="js/ani.js?v=1"></script>
+  </body>
+</html>

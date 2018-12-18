@@ -1,0 +1,194 @@
+extends ../libs/jade/layout-clean
+
+block title
+  | Lenovo
+
+block css
+  meta(name="author",content="m.giccoo.com")
+  //- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
+  link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
+  //- link(rel="stylesheet",href="//image.giccoo.com/projects/libs/font/Interstate Regular.css")
+  //- link(rel="stylesheet",href="/libs/font/YRDZST-Heavy.css")
+  //- link(rel="stylesheet",href="css/yrd-Medium.css")
+  link(rel="stylesheet",href="css/base.css")
+
+  //- script.
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+  //- script(src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js")
+  //- script.
+    var vConsole = new VConsole();
+    console.log('VConsole open');
+  
+
+block content
+  //- url = "//image.giccoo.com/projects/starbucks";
+  - url = ".";
+  //- .qrcode#qrcode
+    .qr
+      img(src="#{url}/img/qrcode.png")
+      .text 请使用手机扫描二维码参与活动
+  //- .public#public(@touchstart="startGame")
+    player(icon="true",src="#{url}/mp3/bgm.mp3")
+      .bell.bell-1
+      .bell.bell-2
+      .bell.bell-3
+    //- .player(:class="{play: playing, pause: !playing}",@click="playing = !playing")
+      .icon-play(:class="{play: playing, pause: !playing}")
+    transition(name="page-fade")
+      .note-text(v-show="note")
+        p 点击铃铛打开声音<br/>获得更好体验效果
+
+  .load#load
+    .content#loading(v-show="mounted",style="display: none")
+      .box
+      .text-content
+        p.centeralign {{progress}}%
+        img(src="#{url}/img/load-text.png")
+  
+  .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",:style="{width: w+'px',height: h+'px'}",style="display: none",@touchstart="startGame")
+    transition(name="page-fade")    
+      .logo(v-show="logo")
+        img(src="#{url}/img/logo.png")
+    transition(name="page-down")
+      .note-message(v-show="noteShow",@click="noteShow = false")
+        .note-text {{noteText}}
+
+    transition(name="page-fade")
+      .loading-page(v-show="loading")
+        .content
+          .loading-icon
+            img(src="#{url}/img/loading-icon.png")
+          .text
+            img(src="#{url}/img/loading-text.png")
+        //- .ball-spin-fade-loader
+          div
+          div
+          div
+          div
+          div
+          div
+          div
+          div
+
+    transition(name="page-zoom")
+      .page.page-1(v-show="pageIndex == 1")
+        .content
+          .mark
+          .book
+            img(src="#{url}/img/bookc.png")
+          .btn-start(@click="pageIndex = 2")
+            img(src="#{url}/img/btn-start.png")
+
+    transition(name="page-zoom")
+      .page.page-2(v-show="pageIndex == 2")
+        .content
+          .mark
+          .book
+            img(src="#{url}/img/book.png")
+            transition(name="page-fade")
+              .selectSection(v-show="step == 2")
+                .title
+                  img(src="#{url}/img/select-title.png")
+                slider.slider-box(@number="number")
+                  template(slot="outside",slot-scope="slotProps")
+                    .left(@click="prev")
+                      img(src="#{url}/img/arrow.png")
+                    .right(@click="next")
+                      img(src="#{url}/img/arrow.png")
+                  template(slot-scope="slotProps")
+                    -for (var i=1;i<=5;i++)
+                      .slide
+                        img(src="#{url}/img/pic-#{i}.png")
+                    -;
+                  template(slot="points",slot-scope="slotProps")
+                    .points
+                      -for (var i=1;i<=5;i++)
+                        span(:class="{on: -slotProps.slideNumber == #{i-1}}")
+                      -;
+                .btn(@click="select")
+                  img(src="#{url}/img/btn-select.png")
+                .note-text
+                  img(src="#{url}/img/note-text.png")
+            transition(name="page-fade")
+              .inputSection(v-show="step == 3")
+                .title
+                  img(:src="'#{url}/img/input-title-'+(carIndex+1)+'.png'")
+                img(src="#{url}/img/line.png")
+                .nickname
+                  input(type="text",v-model="nickname",placeholder="点击输入姓名")
+                .message
+                  textarea(v-model="message",placeholder="我想对那时的TA说\n（留言限制在100个字符内）")
+                  .length {{message.length}}/100
+                .btn(@click="build")
+                  img(src="#{url}/img/btn-build.png") 
+                .note-text
+                  img(src="#{url}/img/note-text.png") 
+          transition(name="page-fade")
+            .btns(v-show="step == 1")
+              .btn.btn-1(@click="openYear('80')")
+                img(src="#{url}/img/btn-year-80.png")
+              .btn.btn-2(@click="openYear('90')")
+                img(src="#{url}/img/btn-year-90.png")
+              .btn.btn-3(@click="openYear('00')")
+                img(src="#{url}/img/btn-year-00.png")
+
+    transition(name="page-zoom")
+      .page.page-3(v-show="pageIndex == 3")
+        .content
+          .arrow
+            img(:src="'#{url}/img/arrow-'+yearName+'.png'")
+          .box
+            img(:src="'#{url}/img/long-'+yearName+'-bg.jpg'")
+            .overOn
+              img(:src="'#{url}/img/long-'+yearName+'.jpg'")
+            .btn(@click="goStep2")
+              img(src="#{url}/img/btn-find.png")
+          
+
+    transition(name="page-zoom")
+      .page.page-4(v-show="pageIndex == 4")
+        .content
+
+          #ugc
+    
+
+    //- transition(name="page-fade")
+    .pop.flashcamera(v-show="ugcShow")
+      .content
+        .small-size
+          .close(@click="closeUGC")
+            img(src="#{url}/img/icon-close.png")
+          img(:src="ugc")
+          .note 长按保存图片
+
+
+block js
+  - url = "/";
+  script(src="//res.wx.qq.com/open/js/jweixin-1.3.2.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/fastclick.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js")
+  script(src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js")
+  script(src="//image.giccoo.com/projects/genki/js/ntes.id.js")
+  //- script(src="/libs/js/min/bump-min.js")
+  script(src="js/public_funciton.js")
+  script(src="js/build.js?v=1")
+  script(src="js/main.js?v=1")
+  script(src="js/ani.js?v=1")
+
+  
+
+
+
+  

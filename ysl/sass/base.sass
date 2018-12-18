@@ -5,7 +5,7 @@
 $debug : true
 $cdn : "../"
 @if not $debug
-	$cdn : "//image.giccoo.com/projects/emoji/"
+	$cdn : "//image.giccoo.com/projects/lenovo/"
 
 @for $i from 1 through 30
 	.delay-#{$i}
@@ -659,17 +659,14 @@ video,canvas,svg
 	.content
 
 .pop-note
-	+transform(scale(0.9,0.9))
 	.bg
 		+w
 		+h
 		+b($cdn+"img/pop-bg.jpg",no-repeat,center,center,cover)
-		// +transform(scale(0.9,0.9))
 	.content
 		+abcentermiddle
 		+w
 		margin-top: -7%
-		// +transform(scale(0.9,0.9))
 	.title
 		+m
 	.card
