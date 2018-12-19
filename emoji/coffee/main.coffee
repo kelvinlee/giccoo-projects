@@ -285,6 +285,7 @@ init = ->
 
 			share: ->
 				goFinal2()
+				@.logo = false
 				@.formBoxShow = false
 				@.registerShow = false
 				@.lotteryShow = false
@@ -320,6 +321,7 @@ init = ->
 				@.shareImageLink = data.info
 				@.pushed = false
 				@.loading = false
+				@.logo = true
 				# ugc.back()
 				neteaseShareImage()
 				shareDone()
@@ -330,6 +332,7 @@ init = ->
 				# 	,5000
 			closeUGC: ->
 				@.ugcShow = false
+				@.logo = true
 				shareDone()
 			faild: (err)->
 				@.pushed = false

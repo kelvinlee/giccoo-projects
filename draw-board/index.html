@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>画山成岳</title>
+    <title>画山成岳，致敬心中的江湖</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
@@ -12,7 +12,7 @@
   <body>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
-        <p class="centeralign">Loading..{{progress}}%</p>
+        <p class="centeralign">LOADING {{progress}}%</p>
       </div>
     </div>
     <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" style="display: none" class="main">
@@ -39,15 +39,17 @@
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
             <div class="text-1 fadeInDown animated delay-6"><img src="./img/logo.png"></div>
-            <div class="text-2 fadeInDown animated delay-7"><img src="./img/homepage-text.png"></div>
-            <div class="text-4 fadeInDown animated delay-8"><img src="./img/homepage-text-1.png"></div>
-            <div class="text-5 fadeInDown animated delay-9"><img src="./img/homepage-text-2.png"></div>
-            <div @click="goNext" class="text-6 fadeInDown animated delay-10"><img src="./img/homepage-text-3.png"></div>
-            <div class="box fadeInDown animated delay-13"><img src="./img/homepage-car.png">
-              <div class="text-3"><img src="./img/homepage-cd.png"></div>
-              <div class="slider">
-                <div class="slide">
-                  <mp4 src="http://image.giccoo.com/projects/test/video-build.mp4" poster="./img/poster.jpg"></mp4>
+            <div class="middle-box">
+              <div class="text-2 fadeInDown animated delay-7"><img src="./img/homepage-text.png"></div>
+              <div class="text-4 fadeInDown animated delay-8"><img src="./img/homepage-text-1.png"></div>
+              <div class="text-5 fadeInDown animated delay-9"><img src="./img/homepage-text-2.png"></div>
+              <div @click="goNext" class="text-6 fadeInDown animated delay-10"><img src="./img/homepage-text-3.png"></div>
+              <div class="box fadeInDown animated delay-13"><img src="./img/homepage-car.png">
+                <div class="text-3"><img src="./img/homepage-cd.png"></div>
+                <div class="slider">
+                  <div class="slide">
+                    <mp4 src="http://image.giccoo.com/projects/test/video-build.mp4" poster="./img/poster.jpg"></mp4>
+                  </div>
                 </div>
               </div>
             </div>

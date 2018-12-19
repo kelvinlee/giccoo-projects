@@ -616,6 +616,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/draw-board/img/ico.jpg": {
+		"ft": 16384,
+		"iS": 83199,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/draw-board/img/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/draw-board/img/icon-close.png": {
 		"ft": 32768,
 		"iS": 7831,
@@ -636,6 +647,17 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/loading-bg.jpg": {
+		"ft": 16384,
+		"iS": 59347,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/draw-board/img/loading-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/logo-down.png": {

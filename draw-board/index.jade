@@ -1,7 +1,7 @@
 extends ../libs/jade/layout-clean
 
 block title
-  | 画山成岳
+  | 画山成岳，致敬心中的江湖
 
 block css
   meta(name="author",content="m.giccoo.com")
@@ -44,7 +44,7 @@ block content
 
   .load#load
     .content#loading(v-show="mounted",style="display: none")
-      p.centeralign Loading..{{progress}}%
+      p.centeralign LOADING {{progress}}%
   
   .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",:style="{width: w+'px',height: h+'px'}",style="display: none")
     transition(name="page-down")
@@ -68,27 +68,28 @@ block content
         .content
           .text-1.fadeInDown.animated.delay-6
             img(src="#{url}/img/logo.png")
-          .text-2.fadeInDown.animated.delay-7
-            img(src="#{url}/img/homepage-text.png")
-          .text-4.fadeInDown.animated.delay-8
-            img(src="#{url}/img/homepage-text-1.png")
-          .text-5.fadeInDown.animated.delay-9
-            img(src="#{url}/img/homepage-text-2.png")
-          .text-6.fadeInDown.animated.delay-10(@click="goNext")
-            img(src="#{url}/img/homepage-text-3.png")
-          .box.fadeInDown.animated.delay-13
-            img(src="#{url}/img/homepage-car.png")
-            .text-3
-              img(src="#{url}/img/homepage-cd.png")
-            .slider
-              .slide
-                mp4(src="http://image.giccoo.com/projects/test/video-build.mp4",poster="#{url}/img/poster.jpg")
-                //- transition(name="page-zoom")
-                //-   .item(v-show="carIndex == 1")
-                //-     img(src="#{url}/img/car-1.jpg")
-                //- transition(name="page-zoom")
-                //-   .item(v-show="carIndex == 2")
-                //-     img(src="#{url}/img/car-2.jpg")
+          .middle-box
+            .text-2.fadeInDown.animated.delay-7
+              img(src="#{url}/img/homepage-text.png")
+            .text-4.fadeInDown.animated.delay-8
+              img(src="#{url}/img/homepage-text-1.png")
+            .text-5.fadeInDown.animated.delay-9
+              img(src="#{url}/img/homepage-text-2.png")
+            .text-6.fadeInDown.animated.delay-10(@click="goNext")
+              img(src="#{url}/img/homepage-text-3.png")
+            .box.fadeInDown.animated.delay-13
+              img(src="#{url}/img/homepage-car.png")
+              .text-3
+                img(src="#{url}/img/homepage-cd.png")
+              .slider
+                .slide
+                  mp4(src="http://image.giccoo.com/projects/test/video-build.mp4",poster="#{url}/img/poster.jpg")
+                  //- transition(name="page-zoom")
+                  //-   .item(v-show="carIndex == 1")
+                  //-     img(src="#{url}/img/car-1.jpg")
+                  //- transition(name="page-zoom")
+                  //-   .item(v-show="carIndex == 2")
+                  //-     img(src="#{url}/img/car-2.jpg")
           .logo-down.fadeInDown.animated.delay-16
             img(src="#{url}/img/logo-down.png")
 

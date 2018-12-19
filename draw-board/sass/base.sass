@@ -265,13 +265,17 @@ video,canvas,svg
 	// 3c080f
 	// +hide
 	// font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
-	// +b($cdn+"img/loading-bg.jpg",no-repeat,center,center,100% 100%)
+	+b($cdn+"img/loading-bg.jpg",no-repeat,center,center,cover)
 	color: #000
 	.content
 		+w
 		+text-center
 		+abcentermiddle
-		+font-size(0.8rem)
+		+font-size(0.5rem)
+		margin-top: 10%
+		color: #16323e
+		letter-spacing: 0.1em
+		font-weight: bold
 	.texts
 		+posa
 		+tl(36%)
@@ -602,32 +606,46 @@ video,canvas,svg
 			+posa
 			+tl
 			+iw(155,640,100%)
+		.middle-box
+			+abcentermiddle
+			+w
+			// +h(50%)
 		.text-2
-			+posa
-			+tl(14%,10%)
+			// +posa
+			// +tl(14%,10%)
 			+iw(216,540,100%)
+			margin-left: 10%
 		.text-3
 			+posa
 			+tl(-38%,1%)
 			+iw(234,576,100%)
 		.text-4,.text-5,.text-6
-			+posa
-			+tr(26.5%,7%)
+			// +posa
+			// +tr(26.5%,7%)
 			+w(50%)
-		.text-5
+			margin-right: 7%
+			margin-left: auto
+		.text-4
 			margin-top: 5%
+		.text-5
+			margin-top: 1%
 		.text-6
-			margin-top: 16%
+			margin-top: 1%
 		.box
-			+posa
-			+tl(43%,6%)
+			// +posa
+			// +tl(43%,6%)
+			+posr
+			margin-left: 6%
+			margin-top: 2%
 			+w(88%)
+			.biger &
+				margin-top: 8%
 			.slider
 				+posa
 				+tl(10%,5%)
 				// +transform(translate3d(0,-50%,0))
 				+w(90%)
-				+h(82%)
+				+h(78%)
 				.slide
 					+posr
 					+w
@@ -641,7 +659,10 @@ video,canvas,svg
 						&.posa
 							+posa
 							+tl
-
+					.video
+						+h
+						video
+							+h
 		.logo-down
 			+posa
 			+bl(3%)

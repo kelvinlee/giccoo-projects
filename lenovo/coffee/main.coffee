@@ -389,7 +389,7 @@ init = ->
 				else
 					window.location.href = "https://music.163.com/#/playlist?id=#{id}"
 			openInApp: ->
-				CloudMusic.open("https://m.giccoo.com/emoji/")
+				CloudMusic.open("https://m.giccoo.com/lenovo/")
 
 			goSubmit: ->
 				data = {
@@ -443,6 +443,7 @@ init = ->
 				@.pageIndex = 4
 				@.logo = false
 				ugc.init()
+				
 		# watch:
 		mounted: ->
 

@@ -12,7 +12,7 @@ axios.defaults.withCredentials = true
 TrueW = 640
 TrueH = 1138
 imageurl = "//api.giccoo.com/api/upload/image64/"
-apiUrl = "//api.giccoo.com/starbucks"
+apiUrl = "//api.giccoo.com/draw-board画山成岳，致敬心中的江湖"
 # apiLink = "//localhost:3000/"
 apiLink = "//g.giccoo.com/"
 # apiLink = "http://192.168.3.53:3000/"
@@ -36,7 +36,7 @@ _testTime = 0
 neteaseShareImage = ->
 	title1 = "画山成岳"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://activity.music.163.com/starbucks/"
+	redirectUrl = "https://activity.music.163.com/draw-board画山成岳，致敬心中的江湖/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	# window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "share href:",picUrl
@@ -56,8 +56,8 @@ window.onload = ->
 		sys = "NeteaseMusic"
 		shareData = 
 			name: 'draw-board'
-			title: '画山成岳'
-			subTitle: ""
+			title: '画山成岳，致敬心中的江湖'
+			subTitle: "手绘千峰万壑，探悠悠江湖情怀解锁聆听金庸武侠名曲"
 			text: ''
 			picUrl: 'http://m.giccoo.com/draw-board/img/ico.jpg'
 			link: 'http://m.giccoo.com/draw-board/'
@@ -66,8 +66,8 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "画山成岳"
-				desc: ""
+				title: "画山成岳，致敬心中的江湖"
+				desc: "手绘千峰万壑，探悠悠江湖情怀解锁聆听金庸武侠名曲"
 				link: "http://m.giccoo.com/draw-board/"
 				imgUrl: "http://m.giccoo.com/draw-board/img/ico.jpg"
 				success: ->
@@ -402,7 +402,7 @@ init = ->
 				else
 					window.location.href = "https://music.163.com/#/playlist?id=#{id}"
 			openInApp: ->
-				CloudMusic.open("https://m.giccoo.com/starbucks/")
+				CloudMusic.open("https://m.giccoo.com/draw-board画山成岳，致敬心中的江湖/")
 			goNext: ->
 				@.pageIndex = 2
 				clearInterval _startCache
