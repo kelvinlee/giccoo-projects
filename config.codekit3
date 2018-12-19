@@ -6064,6 +6064,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/lenovo/img/ico.jpg": {
+		"ft": 16384,
+		"iS": 119531,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/lenovo/img/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/lenovo/img/icon-close.png": {
 		"ft": 32768,
 		"iS": 7831,

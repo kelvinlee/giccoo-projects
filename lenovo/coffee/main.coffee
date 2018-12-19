@@ -56,20 +56,20 @@ window.onload = ->
 		sys = "NeteaseMusic"
 		shareData = 
 			name: 'lenovo'
-			title: 'lenovo'
-			subTitle: "lenovo"
+			title: '我的时代金曲'
+			subTitle: "这首歌让我想起了青葱的岁月，还有许久未见的你"
 			text: ''
-			picUrl: 'http://m.giccoo.com/lenovo/img/ico.jpg'
-			link: 'http://m.giccoo.com/lenovo/'
+			picUrl: 'https://activity.music.163.com/lenovo/img/ico.jpg'
+			link: 'https://activity.music.163.com/lenovo/'
 		CloudMusic.setShareData shareData
 	else
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "lenovo"
-				desc: "lenovo"
-				link: "http://m.giccoo.com/lenovo/"
-				imgUrl: "http://m.giccoo.com/lenovo/img/ico.jpg"
+				title: "我的时代金曲"
+				desc: "这首歌让我想起了青葱的岁月，还有许久未见的你"
+				link: "https://activity.music.163.com/lenovo/"
+				imgUrl: "https://activity.music.163.com/lenovo/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
