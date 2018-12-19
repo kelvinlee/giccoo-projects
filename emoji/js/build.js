@@ -138,6 +138,7 @@ var imageList = [
 	_CDN+"img/qr.png",
 	_CDN+"img/qr2.png",
 	_CDN+"img/logo.png",
+	_CDN+"img/logo-fc.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
