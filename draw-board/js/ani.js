@@ -233,10 +233,14 @@ function startMovingStep2Bar(_e){
 	pStage.interactive=true
 	pStage.touchmove=movingStep2Bar
 }
+
+var smoothNum=0
 function movingStep2Bar(_e){
 	step2mover.x=_e.data.global.x
 	step2mover.x=clamp(178+10,step2mover.x,456-10)
 	smooth=.75-(step2mover.x-178-10)/(456-10-178-10)*.75
+	smoothNum=parseInt((step2mover.x-178-10)/(456-10-178-10+1)*5)
+	console.log("smoothNum==",smoothNum)
 	setP2Line()
 }
 
@@ -408,6 +412,7 @@ function changeColor(_e){
 			
 			colorbtnPicA[i].visible=true
 			colorNum=i
+			console.log("colorNum==",colorNum)
 		}else{
 			TweenMax.to(step3colorA[i],1,{alpha:0})
 			TweenMax.to(seasonbgA[i],1,{alpha:0})
@@ -545,33 +550,33 @@ function setResult(){
 
 //===================================================================================================================End1 文案
 var style1_1=new PIXI.TextStyle({
-	fontSize:33*.85,//25
+	fontSize:33*.75,//25
 	fill:0x3f4f5c,
 	stroke:"0x3f4f5c",
 	strokeThickness:1
 })
 var style1_2=new PIXI.TextStyle({
-	fontSize:33*.85,
+	fontSize:33*.75,
 	fill:0x517990,
 	stroke:"0x517990",
 	strokeThickness:1
 })
 
 var style2_1=new PIXI.TextStyle({
-	fontSize:33*.85,
+	fontSize:33*.75,
 	fill:0x3f4f5c,
 	stroke:"0x3f4f5c",
 	strokeThickness:1
 })
 var style2_2=new PIXI.TextStyle({
-	fontSize:33*.85,
+	fontSize:33*.75,
 	fill:0x517990,
 	stroke:"0x517990",
 	strokeThickness:1
 })
 
 var style3_1=new PIXI.TextStyle({
-	fontSize:38*.8,
+	fontSize:33*.75,
 	fill:0x3f4f5c,
 	stroke:"0x3f4f5c",
 	strokeThickness:1
@@ -586,15 +591,15 @@ var style4=new PIXI.TextStyle({
 
 
 
-var t1_1=new PIXI.Text("",style1_1)
-var t1_2=new PIXI.Text("name",style1_2)
-var t1_3=new PIXI.Text("解锁的山岳",style1_1)
+var t1_1=new PIXI.Text("金庸武侠名曲",style1_1)
+var t1_2=new PIXI.Text("sn",style1_2)
+var t1_3=new PIXI.Text("",style1_1)
 
 var t2_1=new PIXI.Text("居然与",style2_1)
-var t2_2=new PIXI.Text("万重山-100KM",style2_2)
-var t2_3=new PIXI.Text("完美匹配",style2_1)
+var t2_2=new PIXI.Text("n",style2_2)
+var t2_3=new PIXI.Text("手绘的山岳，完美匹配",style2_1)
 
-var t3_1=new PIXI.Text("画山成岳，一曲道不尽\n飞雪连天射白鹿，笑书神侠倚碧鸳",style3_1)
+var t3_1=new PIXI.Text("画山成岳 探悠悠江湖",style3_1)
 
 var t4_1=new PIXI.Text("",style4)
 var t4_2=new PIXI.Text("",style4)
@@ -615,20 +620,30 @@ function setEnd1t(){
 
 	playIcon=new Sprite(getTe(_CDN+"img/musicico.png"));
 	end1t1C.addChild(t1_1,t1_2,t1_3,t2_1,t2_2,t2_3,t3_1,t4_1,t4_2,t4_3,t4_4,tBar,playIcon)
-	t1_2.text=main.nickname
-	t2_2.text="「"+resultTA[resultNum][3]+"」"
+	t1_2.text=resultTA[resultNum][3]//main.nickname
+	t2_2.text=main.nickname
 
 	
+	t1_1.position.set(590-t1_2.width-10-t1_1.width,stageH/2-284)
+	t1_2.position.set(590-t1_2.width,stageH/2-284)
 
-	t1_1.position.set(50-10,stageH/2-405+3)
-	t1_2.position.set(t1_1.x+t1_1.width,stageH/2-405+3)
-	t1_3.position.set(t1_2.x+t1_2.width+10,stageH/2-405+3)
 
-	t2_1.position.set(50,stageH/2-367)
-	t2_2.position.set(t2_1.x+t2_1.width,stageH/2-367)
-	t2_3.position.set(t2_2.x+t2_2.width,stageH/2-367)
+	t2_1.position.set(590-t2_3.width-10-t2_2.width-10-t2_1.width,stageH/2-254)
+	t2_2.position.set(590-t2_3.width-10-t2_2.width,stageH/2-254)
+	t2_3.position.set(590-t2_3.width,stageH/2-254)
 
-	t3_1.position.set(50,stageH/2-324-10)
+	t3_1.position.set(590-t3_1.width,stageH/2-224)
+
+
+	// t1_1.position.set(50,stageH/2-405+3)
+	// t1_2.position.set(t1_1.x+t1_1.width,stageH/2-405+3)
+	// t1_3.position.set(t1_2.x+t1_2.width+10,stageH/2-405+3)
+
+	// t2_1.position.set(50,stageH/2-367)
+	// t2_2.position.set(t2_1.x+t2_1.width,stageH/2-367)
+	// t2_3.position.set(t2_2.x+t2_2.width,stageH/2-367)
+
+	// t3_1.position.set(50,stageH/2-324-10)
 
 	t4_1.text=resultTA[resultNum][0]
 	t4_2.text=resultTA[resultNum][1]
@@ -645,6 +660,8 @@ function setEnd1t(){
 	playIcon.x=t4_4.x+t4_4.width+10
 	playIcon.y=t4_4.y
 
+	step3canvasC.y+=47-50
+	step3canvasC.x-=108+40
 	//goFinal2()//=====
 }
 
@@ -760,8 +777,8 @@ function goFinal2(){
 	end1t1C.visible=false
 	page3.visible=true
 	p2bg.y=0
-	step3canvasC.y+=47-50
-	step3canvasC.x-=108+40
+	step3canvasC.y//+=47-50
+	step3canvasC.x//-=108+40
 	p2carC.x-=10
 	p2carC.y+=60
 	p2musicIco.visible=false
@@ -770,8 +787,8 @@ function shareDone(){
 	end1t1C.visible=true
 	page3.visible=false
 	p2bg.y=-85*stageH/971
-	step3canvasC.y-=47-50
-	step3canvasC.x+=108+40
+	//step3canvasC.y-=47-50
+	//step3canvasC.x+=108+40
 	p2carC.x+=10
 	p2carC.y-=60
 	p2musicIco.visible=true

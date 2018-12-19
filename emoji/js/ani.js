@@ -597,10 +597,13 @@ function goEnd(){
 	qr.y=stageH-232//-211
 	qr.visible=false
 
-	logo=new Sprite(getTe(_CDN+"img/logo.png"));
+	logo=new Sprite(getTe(_CDN+"img/logo-fc.png"));
 	pStage.addChild(logo)
 	logo.visible=false
 
+	if(stageH>=1200){
+		logo.y=50
+	}
 }
 
 
