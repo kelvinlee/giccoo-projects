@@ -408,7 +408,7 @@ video,canvas,svg
 
 .public
 	+posa
-	+tl(0.8em,0.8em)
+	+tr(0.8em,0.8em)
 	+wh(2rem,2rem)
 	+font-size(1rem)
 	z-index: 2199
@@ -416,73 +416,25 @@ video,canvas,svg
 	// +hide
 	.note-text
 		+posa
-		+tl(50%,120%)
-		+font-size(0.7rem)
-		line-height: 1rem
-		white-space: nowrap
-		+text-right
-		+m
-		+transform(translate3d(0,-50%,0))
-		color: #fff
-		text-shadow: 1px 1px 2px #000
-		// font-family: "yrd-Medium"
-		+animation(fadeArrow,2s,ease,infinite)
-		p
-			+m
-		.arrow
-			+posa
-			+tr(50%,-37.5px)
-			+transform(translate3d(0,-25%,0))
-			font-size: 0
-			+h(30px)
-			.item
-				+w(10px)
-				+h
-				+show-inline
-				font-size: 0
-			// .arrow-1
-			// 	+animation(fadeArrow,1s,ease,infinite)
-			// .arrow-2
-			// 	+animation(fadeArrow,1s,ease,infinite)
-			// 	animation-delay: 1000ms*1/3
-			// .arrow-3
-			// 	+animation(fadeArrow,1s,ease,infinite)
-			// 	animation-delay: 1000ms*2/3
+		+tr(0,120%)
+		+w(4rem)
+	.play .note-text
+		+animation(fadeOut)
 
 	.player
 		+w
 		+h
 		+posr
-	.play
-		.bell
-			+show
-	.bell
-		+posa
-		+tl
-		+w
-		+h
-		+hide
-	.bell-1
-		+b($cdn+"img/bell-1.png",no-repeat,center,center,contain)
-		+animation(fadeOutUp,2s,ease,infinite)
-		animation-delay: .5s
-	.bell-2
-		+b($cdn+"img/bell-2.png",no-repeat,center,center,contain)
-		+animation(fadeOutUp,2s,ease,infinite)
-		animation-delay: 1s
-	.bell-3
-		+b($cdn+"img/bell-3.png",no-repeat,center,center,contain)
-		+animation(fadeOutUp,2s,ease,infinite)
-		animation-delay: 1.5s
+	
 	.icon-play
 		+w
 		+h
 		transform-origin: top center
 		&.play
-			+b($cdn+"img/bell-box.png",no-repeat,center,center,contain)
-			+animation(swingIcon,2s,linear,infinite)
+			+b($cdn+"img/icon-play.png",no-repeat,center,center,contain)
+			// +animation(swingIcon,2s,linear,infinite)
 		&.pause
-			+b($cdn+"img/bell-box.png",no-repeat,center,center,contain)
+			+b($cdn+"img/icon-stop.png",no-repeat,center,center,contain)
 
 .pages
 	+w
@@ -762,7 +714,7 @@ video,canvas,svg
 					textarea
 						+box
 						+w
-						+h(1.4em*6)
+						+h(100%)
 						+p(0.6em 0.4em)
 						+font-size(0.8rem)
 						+bc(transparent)
@@ -790,6 +742,20 @@ video,canvas,svg
 			margin-top: -10%
 			.btn
 				+m(4% auto)
+	.mark-year
+		+posa
+		+tl
+		+w
+		+h
+		pointer-events: none
+		z-index: 1099
+		&.year-00
+			+b($cdn+"img/mark-00.png",no-repeat,bottom,center,cover)
+		&.year-90
+			+b($cdn+"img/mark-90.png",no-repeat,bottom,center,cover)
+		&.year-80
+			+b($cdn+"img/mark-80.png",no-repeat,bottom,center,contain)
+
 .page-3
 	.content
 		+touch
