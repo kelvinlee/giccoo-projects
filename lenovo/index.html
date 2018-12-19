@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
+    <div id="public" class="public">
+      <player icon="true" src="./mp3/bgm.mp3">
+        <div class="note-text"><img src="./img/bgm-text.png"></div>
+      </player>
+    </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
         <div class="box"></div>
@@ -48,6 +53,7 @@
         <div v-show="pageIndex == 2" class="page page-2">
           <div class="content">
             <div class="mark"></div>
+            <div v-show="yearName != 'none'" :class="'year-'+yearName" class="mark-year"></div>
             <div class="book"><img src="./img/book.png">
               <transition name="page-fade">
                 <div v-show="step == 2" class="selectSection">

@@ -235,8 +235,8 @@ init = ->
 				c2: false
 				c3: false
 				c4: false
-			nickname: "好久不见"
-			message: "好久没听beyond的歌了，"
+			nickname: ""
+			message: ""
 			messageIndex: 1
 			messageInput: false
 			musicName: ""
@@ -245,8 +245,24 @@ init = ->
 			formShow: false
 			formBoxShow: false
 			carIndex: 1
-			yearName: "00"
+			yearName: "none"
 		watch:
+			nickname: (n,o)->
+				@.nickname = @.nickname.replace(/[\r\n]/g, "")
+				# console.log "n,o:",n,o
+				nickNameText = new Text "#{n} ",{fontFamily : 'Arial', fontSize: 44, fontWeight: "normal", fill : 0x6d4222, letterSpacing: 2, lineHeight: 48}
+				console.log "width:",nickNameText.width
+				if nickNameText.width > 226
+					# @.nickname = o
+					t = @.nickname.split("")
+					tx = ""
+					for i in [0...(t.length-1)]
+						tx += t[i]
+					@.nickname = tx
+					console.log tx
+					return false
+				
+
 			message: (n,o)->
 				@.message = @.message.replace(/[\r\n]/g, "")
 				if @.message.length > 100#gblen() > 64
@@ -418,6 +434,12 @@ init = ->
 					@.loading = false
 				,2500
 			build: ->
+				if @.nickname is ""
+					@.send "请输入姓名"
+					return false
+				if @.message is ""
+					@.send "请输入留言"
+					return false
 				@.pageIndex = 4
 				@.logo = false
 				ugc.init()
@@ -439,9 +461,19 @@ init = ->
 				_CDN+"img/bg2.jpg"
 				_CDN+"img/filecover.png"
 				_CDN+"img/ugc-title.png"
+				_CDN+"img/ugc-content-1.png"
+				_CDN+"img/ugc-content-2.png"
 				_CDN+"img/ugc-content-3.png"
 				_CDN+"img/ugc-content-4.png"
 				_CDN+"img/ugc-content-5.png"
+				_CDN+"img/ugc-content-over-1.png"
+				_CDN+"img/ugc-content-over-2.png"
+				_CDN+"img/ugc-content-over-3.png"
+				_CDN+"img/ugc-content-over-4.png"
+				_CDN+"img/ugc-content-over-5.png"
+				_CDN+"img/mark-00.png"
+				_CDN+"img/mark-90.png"
+				_CDN+"img/mark-80.png"
 				_CDN+"img/btn-reload.png"
 				_CDN+"img/btn-more.png"
 				_CDN+"img/share-title.png"

@@ -79,21 +79,24 @@ class UGC
 		filecover = new Spr _CDN+"img/filecover.png"
 		titlebg = new Spr _CDN+"img/ugc-title.png"
 		titlebg.y = 40
-		contentimg = new Spr _CDN+"img/ugc-content-4.png"
+		contentimg = new Spr _CDN+"img/ugc-content-#{main.carIndex+1}.png"
+		overimg = new Spr _CDN+"img/ugc-content-over-#{main.carIndex+1}.png"
 
 
 		nickname = new Text "#{main.nickname} ",{fontFamily : 'Arial', fontSize: 44, fontWeight: "normal", fill : 0x6d4222, letterSpacing: 2, lineHeight: 48}
-		nickname.x = 122
+		nickname.x = 117 + (226 - nickname.width)/2
 		nickname.y = titlebg.y + (titlebg.height - nickname.height)/2
 
 		contentimg.y = titlebg.y + titlebg.height 
+		overimg.y = contentimg.y
+		overimg.visible = false
 
 		text = main.message
 		text = text.replace(/<br\/>/g,"\n")
 		message = new Text "#{text} ",{fontFamily : 'Arial', breakWords: true, wordWrapWidth: 505, wordWrap: true, fontSize: 20, fill : 0x6d4222, fontStyle: "normal",fontWeight: "normal", letterSpacing: 0, lineHeight: 28}
 		# message.width = 500
 		message.x = 125
-		message.y = contentimg.y + contentimg.height - 30
+		message.y = contentimg.y + contentimg.height - 40
 
 		btnShare = new Spr _CDN+"img/share-title.png"
 		btnReload = new Spr _CDN+"img/btn-reload.png"
@@ -106,17 +109,24 @@ class UGC
 		btnMore.x = btnReload.x + btnReload.width + 20
 		btnShare.interactive = true
 		btnReload.interactive = true
+		btnMore.interactive = true
 		btnShare.tap = @.share.bind @
 		btnReload.tap = ->
 			window.location.reload()
 		btnMore.tap = ->
-			window.location.href = "http://www.baidu.com/"
+			window.location.href = "https://mactivity.lenovo.com.cn/activity/marketing/xyxs/wyy/index.html?pmf_source=P0000000982M0066"
 
 		qr = new Spr _CDN+"img/qr.png"
-		qr.y = btnShare.y - btnShare.height - 22
+		qr.y = btnShare.y - btnShare.height + 63
 		qr.visible = false
 
-		file.addChild filecover, titlebg, contentimg, nickname, message, btnShare, btnReload, btnMore, qr
+		mark = new Spr _CDN+"img/mark-#{main.yearName}.png"
+		if main.yearName is "80"
+			mark.y = @.opts.h - mark.height
+		else
+			mark.y = (@.opts.h - mark.height)/2
+
+		file.addChild filecover, titlebg, overimg, contentimg, nickname, message, btnShare, btnReload, btnMore, qr
 		# file.scale.set(0.8,0.8)
 		file.y = (@.opts.h - file.height)/2
 		if (file.y + file.height) > (huati.y + huati.height*0.3)
@@ -125,10 +135,12 @@ class UGC
 			file.y -= @.opts.h * 0.05
 		if file.y <= 10
 			file.y = 10
-		@.stage.addChild bg, huati, logo, file
+		@.stage.addChild bg, huati, logo, file, mark
 		@.btnShare = btnShare
 		@.btnReload = btnReload
 		@.btnMore = btnMore
+		@.contentimg = contentimg
+		@.overimg = overimg
 		@.huati = huati
 		@.qr = qr
 
@@ -137,7 +149,9 @@ class UGC
 		@.btnReload.visible = false
 		@.btnMore.visible = false
 		@.huati.visible = false
+		@.contentimg.visible = false
 		@.qr.visible = true
+		@.overimg.visible = true
 
 		main.share()
 	shareDone: ->
@@ -145,7 +159,9 @@ class UGC
 		@.btnReload.visible = true
 		@.btnMore.visible = true
 		@.huati.visible = true
+		@.contentimg.visible = true
 		@.qr.visible = false
+		@.overimg.visible = false
 
 
 	

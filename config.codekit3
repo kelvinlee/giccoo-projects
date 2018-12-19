@@ -5855,6 +5855,17 @@
 		"opt": 1,
 		"q": 100
 		},
+	"/lenovo/img/bgm-text.png": {
+		"ft": 32768,
+		"iS": 2548,
+		"oA": 0,
+		"oAP": "/lenovo/img/bgm-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/lenovo/img/book.png": {
 		"ft": 32768,
 		"iS": 0,
@@ -6025,6 +6036,28 @@
 		"iS": 7831,
 		"oA": 0,
 		"oAP": "/lenovo/img/icon-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/lenovo/img/icon-play.png": {
+		"ft": 32768,
+		"iS": 2000,
+		"oA": 0,
+		"oAP": "/lenovo/img/icon-play.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/lenovo/img/icon-stop.png": {
+		"ft": 32768,
+		"iS": 2219,
+		"oA": 0,
+		"oAP": "/lenovo/img/icon-stop.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6372,6 +6405,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/lenovo/img/ugc-content-1.png": {
+		"ft": 32768,
+		"iS": 209412,
+		"oA": 0,
+		"oAP": "/lenovo/img/ugc-content-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/lenovo/img/ugc-content-2.png": {
+		"ft": 32768,
+		"iS": 234160,
+		"oA": 0,
+		"oAP": "/lenovo/img/ugc-content-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/lenovo/img/ugc-content-3.png": {
 		"ft": 32768,
 		"iS": 214629,
@@ -6385,7 +6440,7 @@
 		},
 	"/lenovo/img/ugc-content-4.png": {
 		"ft": 32768,
-		"iS": 214167,
+		"iS": 239478,
 		"oA": 0,
 		"oAP": "/lenovo/img/ugc-content-4.png",
 		"oF": 0,
@@ -6396,9 +6451,64 @@
 		},
 	"/lenovo/img/ugc-content-5.png": {
 		"ft": 32768,
-		"iS": 239478,
+		"iS": 206381,
 		"oA": 0,
 		"oAP": "/lenovo/img/ugc-content-5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/lenovo/img/ugc-content-over-1.png": {
+		"ft": 32768,
+		"iS": 103555,
+		"oA": 0,
+		"oAP": "/lenovo/img/ugc-content-over-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/lenovo/img/ugc-content-over-2.png": {
+		"ft": 32768,
+		"iS": 108749,
+		"oA": 0,
+		"oAP": "/lenovo/img/ugc-content-over-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/lenovo/img/ugc-content-over-3.png": {
+		"ft": 32768,
+		"iS": 214629,
+		"oA": 0,
+		"oAP": "/lenovo/img/ugc-content-over-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/lenovo/img/ugc-content-over-4.png": {
+		"ft": 32768,
+		"iS": 214167,
+		"oA": 0,
+		"oAP": "/lenovo/img/ugc-content-over-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/lenovo/img/ugc-content-over-5.png": {
+		"ft": 32768,
+		"iS": 239478,
+		"oA": 0,
+		"oAP": "/lenovo/img/ugc-content-over-5.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6481,6 +6591,13 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"/lenovo/mp3/bgm.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/lenovo/mp3/bgm.mp3",
+		"oF": 0
 		},
 	"/lenovo/sass/base.sass": {
 		"aP": 1,
