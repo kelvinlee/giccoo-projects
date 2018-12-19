@@ -602,7 +602,7 @@ function goEnd(){
 	logo.visible=false
 
 	if(stageH>=1200){
-		logo.y=50
+		logo.y=45
 	}
 }
 
