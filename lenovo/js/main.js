@@ -76,10 +76,23 @@ apiLink="//g.giccoo.com/",// apiLink = "http://192.168.3.53:3000/"
 // apiUrl = "http://localhost:8881/Levi"
 main={},sys="",sended=[!(loading={}),!(_public={})],_runTime=_startCache=_cache=ugcCache=musicIconCache=musicLineCache=ugc=null,_testTime=_second=0,neteaseShareImage=function e(){var t,i,n;return n="点播圣诞星声",t="https://image.giccoo.com/upload/".concat(main.folder,"/")+main.shareImageLink+"@!large",i="https://activity.music.163.com/lenovo/",// console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 // window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
-console.log("share href:",t),CloudMusic.sharePic({picUrl:t,text:n,link:i})},window.onload=function(){var e,t;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,-1<window.navigator.userAgent.indexOf("NeteaseMusic")?(sys="NeteaseMusic",t={name:"lenovo",title:"我的时代金曲",subTitle:"这首歌让我想起了青葱的岁月，还有许久未见的你",text:"",picUrl:"https://activity.music.163.com/lenovo/img/ico.jpg",link:"https://activity.music.163.com/lenovo/"},CloudMusic.setShareData(t)):(loadWechatConfig(),wx.ready(function(){var e;return e={title:"我的时代金曲",desc:"这首歌让我想起了青葱的岁月，还有许久未见的你",link:"https://activity.music.163.com/lenovo/",imgUrl:"https://activity.music.163.com/lenovo/img/ico.jpg",success:function e(){},
-// alert "success"
-cancel:function e(){}},// alert "cancel"
-wx.onMenuShareTimeline(e),wx.onMenuShareAppMessage(e),wx.onMenuShareQQ(e),wx.onMenuShareWeibo(e)})),_public=new Vue({el:"#public",data:{wy:"NeteaseMusic"===sys,wx:!1,note:!0,playing:!1},methods:{startGame:function e(){return this.note=!1}},mounted:function e(){return document.addEventListener("WeixinJSBridgeReady",function(){return _public.wx=!0,_public.note=!1,_public.$children[0].change()})}}),loading=new Vue({el:"#loading",data:{progress:0,mounted:!1,progressOn:0},methods:{next:function e(){return document.getElementById("load").className+=" fadeOut animated",main.mounted=!0,main.init(),setTimeout(function(){if(document.getElementById("load").style.display="none",_public.wx)return _public.note=!1;// setTimeout ->
+console.log("share href:",t),CloudMusic.sharePic({picUrl:t,text:n,link:i})},window.onload=function(){var e,t;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,-1<window.navigator.userAgent.indexOf("NeteaseMusic")&&(sys="NeteaseMusic"),t={name:"lenovo",title:"我的时代金曲",subTitle:"这首歌让我想起了青葱的岁月，还有许久未见的你",text:"",picUrl:"https://activity.music.163.com/lenovo/img/ico.jpg",link:"https://activity.music.163.com/lenovo/"},CloudMusic.setShareData(t),// else
+// 	loadWechatConfig()
+// 	wx.ready ->
+// 		shareContent =
+// 			title: "我的时代金曲"
+// 			desc: "这首歌让我想起了青葱的岁月，还有许久未见的你"
+// 			link: "https://activity.music.163.com/lenovo/"
+// 			imgUrl: "https://activity.music.163.com/lenovo/img/ico.jpg"
+// 			success: ->
+// 				# alert "success"
+// 			cancel: ->
+// 				# alert "cancel"
+// 		wx.onMenuShareTimeline shareContent
+// 		wx.onMenuShareAppMessage shareContent
+// 		wx.onMenuShareQQ shareContent
+// 		wx.onMenuShareWeibo shareContent
+_public=new Vue({el:"#public",data:{wy:"NeteaseMusic"===sys,wx:!1,note:!0,playing:!1},methods:{startGame:function e(){return this.note=!1}},mounted:function e(){return document.addEventListener("WeixinJSBridgeReady",function(){return _public.wx=!0,_public.note=!1,_public.$children[0].change()})}}),loading=new Vue({el:"#loading",data:{progress:0,mounted:!1,progressOn:0},methods:{next:function e(){return document.getElementById("load").className+=" fadeOut animated",main.mounted=!0,main.init(),setTimeout(function(){if(document.getElementById("load").style.display="none",_public.wx)return _public.note=!1;// setTimeout ->
 // 	_public.note = false if _public.wy
 // ,3000
 },520)}},mounted:function e(){var t=this,i;// @.next() # for test

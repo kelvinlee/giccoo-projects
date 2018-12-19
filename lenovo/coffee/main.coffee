@@ -54,30 +54,30 @@ window.onload = ->
 
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
-		shareData = 
-			name: 'lenovo'
-			title: '我的时代金曲'
-			subTitle: "这首歌让我想起了青葱的岁月，还有许久未见的你"
-			text: ''
-			picUrl: 'https://activity.music.163.com/lenovo/img/ico.jpg'
-			link: 'https://activity.music.163.com/lenovo/'
-		CloudMusic.setShareData shareData
-	else
-		loadWechatConfig()
-		wx.ready ->
-			shareContent =
-				title: "我的时代金曲"
-				desc: "这首歌让我想起了青葱的岁月，还有许久未见的你"
-				link: "https://activity.music.163.com/lenovo/"
-				imgUrl: "https://activity.music.163.com/lenovo/img/ico.jpg"
-				success: ->
-					# alert "success"
-				cancel: ->
-					# alert "cancel"
-			wx.onMenuShareTimeline shareContent
-			wx.onMenuShareAppMessage shareContent
-			wx.onMenuShareQQ shareContent
-			wx.onMenuShareWeibo shareContent
+	shareData = 
+		name: 'lenovo'
+		title: '我的时代金曲'
+		subTitle: "这首歌让我想起了青葱的岁月，还有许久未见的你"
+		text: ''
+		picUrl: 'https://activity.music.163.com/lenovo/img/ico.jpg'
+		link: 'https://activity.music.163.com/lenovo/'
+	CloudMusic.setShareData shareData
+	# else
+	# 	loadWechatConfig()
+	# 	wx.ready ->
+	# 		shareContent =
+	# 			title: "我的时代金曲"
+	# 			desc: "这首歌让我想起了青葱的岁月，还有许久未见的你"
+	# 			link: "https://activity.music.163.com/lenovo/"
+	# 			imgUrl: "https://activity.music.163.com/lenovo/img/ico.jpg"
+	# 			success: ->
+	# 				# alert "success"
+	# 			cancel: ->
+	# 				# alert "cancel"
+	# 		wx.onMenuShareTimeline shareContent
+	# 		wx.onMenuShareAppMessage shareContent
+	# 		wx.onMenuShareQQ shareContent
+	# 		wx.onMenuShareWeibo shareContent
 
 	_public = new Vue
 		el: "#public"
