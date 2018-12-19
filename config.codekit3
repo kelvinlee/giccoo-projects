@@ -1086,7 +1086,7 @@
 		"oAP": "/draw-board/img/waitpage-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/waitpage-title.png": {
@@ -1858,6 +1858,17 @@
 		"iS": 7831,
 		"oA": 0,
 		"oAP": "/emoji/img/icon-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/logo-fc.png": {
+		"ft": 32768,
+		"iS": 11150,
+		"oA": 0,
+		"oAP": "/emoji/img/logo-fc.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
