@@ -228,6 +228,11 @@ function setStep2(){//==========================================================
 
 	step2mover.interactive=true
 	step2mover.touchstart=startMovingStep2Bar
+
+	smooth=.75-(step2mover.x-178-10)/(456-10-178-10)*.55+.2
+	smoothNum=parseInt((step2mover.x-178-10)/(456-10-178-10+1)*5)
+	console.log("smoothNum==",smoothNum)
+	setP2Line()
 }
 function startMovingStep2Bar(_e){
 	pStage.interactive=true
@@ -238,7 +243,7 @@ var smoothNum=0
 function movingStep2Bar(_e){
 	step2mover.x=_e.data.global.x
 	step2mover.x=clamp(178+10,step2mover.x,456-10)
-	smooth=.75-(step2mover.x-178-10)/(456-10-178-10)*.75
+	smooth=.75-(step2mover.x-178-10)/(456-10-178-10)*.55+.2
 	smoothNum=parseInt((step2mover.x-178-10)/(456-10-178-10+1)*5)
 	console.log("smoothNum==",smoothNum)
 	setP2Line()
@@ -472,9 +477,9 @@ function goFinal1(){//=======================================================最
 	p2bg.height=stageH/971*(971+85)
 	p2bg.y=-85*stageH/971
 
-	p2musicIco=new Sprite(getTe(_CDN+"img/end1music.jpg"));
-	p2musicIco.blendMode=_MULTIPLY
-	p2musicIco.y=stageH/2+99
+	p2musicIco=new Sprite(getTe(_CDN+"img/end1music.png"));
+	//p2musicIco.blendMode=_MULTIPLY
+	p2musicIco.y=stageH/2+84
 
 	p2car1=new Sprite(getTe(_CDN+"img/end1car1.png"));
 	p2car2=new Sprite(getTe(_CDN+"img/end1car2.png"));
@@ -487,17 +492,62 @@ function goFinal1(){//=======================================================最
 		p2car2.visible=false
 	}
 
-	p2carC.y=stageH/2+20
+	p2carC.y=stageH/2-42
 
 	step3canvasC.y=stageH/2+20-275-(400-step3canvasC.height)/2
 	console.log("step3canvasC.height",step3canvasC.height)
 
-	page2.addChild(p2bg,step3canvasC,p2musicIco,p2carC)
+	var shan1=new Sprite(getTe(_CDN+"img/end2shan1.jpg"));
+	var shan2=new Sprite(getTe(_CDN+"img/end2shan2.jpg"));
+	var shan3=new Sprite(getTe(_CDN+"img/end2shan3.jpg"));
+	var shan4=new Sprite(getTe(_CDN+"img/end2shan4.jpg"));
+
+	end2shanA=[shan1,shan2,shan3,shan4]
+	end2shanC.addChild(shan1,shan2,shan3,shan4)
+	end2shanC.y=stageH/2-241
+	end2shanC.scale.x=end2shanC.scale.y=640/750
+
+	shan1.blendMode=_MULTIPLY
+	shan2.blendMode=_MULTIPLY
+	shan3.blendMode=_MULTIPLY
+	shan4.blendMode=_MULTIPLY
+
+	page2.addChild(p2bg,end2shanC,step3canvasC,p2musicIco,p2carC)
 
 	
 	setEnd1t()
 
+	var i
+	for (i = 0; i < 4; i++) {
+		end2shanA[i].blendMode=_MULTIPLY
+		if(i==colorNum){
+			end2shanA[i].visible=true
+		}else{
+			end2shanA[i].visible=false
+		}
+	};
 
+	for (i = 0; i <20; i++) {
+		var j=i+1
+		var _endt=new Sprite(getTe(_CDN+"img/text"+j+".png"));
+		
+		_endt.y=stageH/2-296
+		_endt.x=593
+		_endt.pivot.set(563,114)
+		_endt.scale.x=_endt.scale.y=64/75
+		endTA.push(_endt)
+		endTextC.addChild(_endt)
+	};
+	
+
+	for (i = 0; i <20; i++) {
+		if(i==resultNum){
+			endTA[i].visible=true
+		}else{
+			endTA[i].visible=false
+		}
+	};
+	page2.addChild(endTextC)
 
 
 	//goback()
@@ -505,29 +555,57 @@ function goFinal1(){//=======================================================最
 //===================================================================================================================End1 随机结果
 var resultNum=0
 var resultTA=[
-[["十里春风，雨水清酒"],["都不如远方山上的你"],[""],["春风十里"]],
-
-[["群山之间，春风拂面"],["你我一起"],["享受自由，拥抱阳光"],["彩云之巅"]],
-[["高山湖泊森林沙漠"],["我们路过喜怒哀乐"],["坚定走下去，这茫茫旅途"],["旅途"]],
-
-
-[["走一走这天南地北"],["抛下所有的烦恼和疲惫"],[""],["远走高飞"]],
-[["只为矗立在最高的山顶"],["冷艳嘲笑都不重要"],["向前跑"],["追梦赤子心"]],
-
-[["走过江河山川，人山人海"],["平凡才是唯一的答案"],["就这样向前走，就这么走"],["平凡之路"]],
-[["深情一片青山白云等你来收"],["这美丽的世界，我已经拥有"],[""],["心升明月"]],
-[["时光流水般带我飘向远方"],["最美还是故乡的山川"],[""],["故乡山川"]],
+[["遍野青山无尽荒凉"],["有你的梦却伴着花香"],[""],["天下无双"]],
+[["我笑无情人懵懂"],["我愿在她手掌中"],[""],["心爱"]],
+[["塞外风沙野茫茫"],["无惧雪霜逐草四方"],[""],["铁血丹心"]],
+[["英雄有志无惧天高"],["万般世态任逍遥"],[""],["任逍遥"]],
+[["快意江湖痛快爱恨"],["只要够胆试"],[""],["叱咤红人"]],
 
 [["海阔天高，踏遍千山"],["静看这世界的风起云涌"],[""],["风起云涌"]],
-[["长路漫漫，与你同行"],["携手把梦追寻"],[""],["雪中情"]],
+[["仰望天空笑问苍穹"],["究竟这世上什么最劲"],[""],["绝世绝招"]],
+[["肆意追赶心中美梦"],["从来无愧这一生"],[""],["活得潇洒"]],
 [["不畏风雨落日"],["也无惧山海路长"],[""],["难念的经"]],
+[["只要有你情浓"],["江湖恩怨轻似风"],[""],["刀剑若梦"]],
+
 [["大浪滔淘，江湖纷扰"],["这一世豪情又剩多少"],[""],["沧海一声笑"]],
-[["遍野青山无尽荒凉"],["有你的梦却伴着花香"],[""],["天下无双"]],
+[["放开江湖纷扰自由自在"],["淡漠繁华不再开怀"],[""],["归去来"]],
 [["人外有人山外有山"],["得失看淡只求随遇而安"],[""],["随遇而安"]],
-[["英雄有志无惧天高"],["万般世态任逍遥"],[""],["任逍遥"]],
+[["男儿侠气世间走一遭"],["纵马江湖任逍遥"],[""],["纵横江湖"]],
+[["望断天涯"],["赢了天下输了她"],[""],["天涯"]],
+
+[["春去秋来宿命安排"],["冰雪寒夜藏不了你的光彩"],[""],["追梦人"]],
+[["长路漫漫，与你同行"],["携手把梦追寻"],[""],["雪中情"]],
+[["滔滔江水留不住"],["一身豪情壮志铁骨"],[""],["江湖笑"]],
+[["风冷不逃花美不要"],["天地纵横任我飘摇"],[""],["笑红尘"]],
+[["爱，"],["何以对这世界雪中送火"],[""],["神话情话"]],
+
+
 
 ]
 
+// [
+// [["十里春风，雨水清酒"],["都不如远方山上的你"],[""],["春风十里"]],
+
+// [["群山之间，春风拂面"],["你我一起"],["享受自由，拥抱阳光"],["彩云之巅"]],
+// [["高山湖泊森林沙漠"],["我们路过喜怒哀乐"],["坚定走下去，这茫茫旅途"],["旅途"]],
+
+
+// [["走一走这天南地北"],["抛下所有的烦恼和疲惫"],[""],["远走高飞"]],
+// [["只为矗立在最高的山顶"],["冷艳嘲笑都不重要"],["向前跑"],["追梦赤子心"]],
+
+// [["走过江河山川，人山人海"],["平凡才是唯一的答案"],["就这样向前走，就这么走"],["平凡之路"]],
+// [["深情一片青山白云等你来收"],["这美丽的世界，我已经拥有"],[""],["心升明月"]],
+// [["时光流水般带我飘向远方"],["最美还是故乡的山川"],[""],["故乡山川"]],
+
+// [["海阔天高，踏遍千山"],["静看这世界的风起云涌"],[""],["风起云涌"]],
+// [["长路漫漫，与你同行"],["携手把梦追寻"],[""],["雪中情"]],
+// [["不畏风雨落日"],["也无惧山海路长"],[""],["难念的经"]],
+// [["大浪滔淘，江湖纷扰"],["这一世豪情又剩多少"],[""],["沧海一声笑"]],
+// [["遍野青山无尽荒凉"],["有你的梦却伴着花香"],[""],["天下无双"]],
+// [["人外有人山外有山"],["得失看淡只求随遇而安"],[""],["随遇而安"]],
+// [["英雄有志无惧天高"],["万般世态任逍遥"],[""],["任逍遥"]],
+
+// ]
 
 // [
 // [["十里春风，雨水清酒"],["都不如远方山上的你"],[""],["春风十里"]],
@@ -544,7 +622,8 @@ var resultTA=[
 // [["时光流水般带我飘向远方"],["最美还是故乡的山川"],[""],["故乡山川"]],
 // ]
 function setResult(){
-	resultNum=parseInt(Math.random()*15)
+	//resultNum=parseInt(Math.random()*15)
+	resultNum=colorNum*5+smoothNum
 }
 
 
@@ -607,19 +686,22 @@ var t4_3=new PIXI.Text("",style4)
 var t4_4=new PIXI.Text("",style4)
 
 var end1t1C=new PIXI.Container()
-var tBar=new PIXI.Graphics()
+var tBar//=new PIXI.Graphics()
 
 var playIcon
 
 function setEnd1t(){
 	page2.addChild(end1t1C)
 
-	tBar.beginFill(0x517990)
-	tBar.drawRect(0,0,8,102)
-	tBar.position.set(50,stageH/2-11)
+	// tBar.beginFill(0x517990)
+	// tBar.drawRect(0,0,8,102)
+	// tBar.position.set(50,stageH/2-11)
 
-	playIcon=new Sprite(getTe(_CDN+"img/musicico.png"));
-	end1t1C.addChild(t1_1,t1_2,t1_3,t2_1,t2_2,t2_3,t3_1,t4_1,t4_2,t4_3,t4_4,tBar,playIcon)
+	tBar=new Sprite(getTe(_CDN+"img/tbar.png"));
+	tBar.y=stageH/2-104
+
+	//playIcon=new Sprite(getTe(_CDN+"img/musicico.png"));
+	end1t1C.addChild(t1_1,t1_2,t1_3,t2_1,t2_2,t2_3,t3_1,tBar)//,t4_1,t4_2,t4_3,t4_4,playIcon
 	t1_2.text=resultTA[resultNum][3]//main.nickname
 	t2_2.text=main.nickname
 
@@ -645,20 +727,20 @@ function setEnd1t(){
 
 	// t3_1.position.set(50,stageH/2-324-10)
 
-	t4_1.text=resultTA[resultNum][0]
-	t4_2.text=resultTA[resultNum][1]
-	t4_3.text=resultTA[resultNum][2]
-	t4_4.text="- "+resultTA[resultNum][3]
+	// t4_1.text=resultTA[resultNum][0]
+	// t4_2.text=resultTA[resultNum][1]
+	// t4_3.text=resultTA[resultNum][2]
+	// t4_4.text="- "+resultTA[resultNum][3]
 
 
 
-	t4_1.position.set(64,stageH/2-11)
-	t4_2.position.set(64,stageH/2-11+27*1)
-	t4_3.position.set(64,stageH/2-11+27*2)
-	t4_4.position.set(64,stageH/2-11+27*3)
+	// t4_1.position.set(64,stageH/2-11)
+	// t4_2.position.set(64,stageH/2-11+27*1)
+	// t4_3.position.set(64,stageH/2-11+27*2)
+	// t4_4.position.set(64,stageH/2-11+27*3)
 
-	playIcon.x=t4_4.x+t4_4.width+10
-	playIcon.y=t4_4.y
+	// playIcon.x=t4_4.x+t4_4.width+10
+	// playIcon.y=t4_4.y
 
 	step3canvasC.y+=47-50
 	step3canvasC.x-=108+40
@@ -709,31 +791,14 @@ function setFinal2(){
 	logo_down.y=stageH-136
 	logo_down.x=10
 
-	QR.y=stageH-361
+	QR.y=stageH/2-104
 
-	var shan1=new Sprite(getTe(_CDN+"img/end2shan1.jpg"));
-	var shan2=new Sprite(getTe(_CDN+"img/end2shan2.jpg"));
-	var shan3=new Sprite(getTe(_CDN+"img/end2shan3.jpg"));
-	var shan4=new Sprite(getTe(_CDN+"img/end2shan4.jpg"));
-
-	end2shanA=[shan1,shan2,shan3,shan4]
-	end2shanC.addChild(shan1,shan2,shan3,shan4)
-	end2shanC.y=stageH/2-200
-
-	shan1.blendMode=_MULTIPLY
-	shan2.blendMode=_MULTIPLY
-	shan3.blendMode=_MULTIPLY
-	shan4.blendMode=_MULTIPLY
+	
 
 	
 	//end2shanC.blendMode=_MULTIPLY
 
-	for (var i = 0; i <12; i++) {
-		var j=i+1
-		var _endt=new Sprite(getTe(_CDN+"img/text"+j+".png"));
-		endTA.push(_endt)
-		endTextC.addChild(_endt)
-	};
+	
 
 	t1_2b.text=main.nickname
 	t2_2b.text="「"+resultTA[resultNum][3]+"」"
@@ -748,50 +813,49 @@ function setFinal2(){
 	t2_2b.position.set(t2_1b.x+t2_1b.width,stageH/2*0+971/2-317)
 	t2_3b.position.set(t2_2b.x+t2_2b.width,stageH/2*0+971/2-317)
 
-	p2musicIco2=new Sprite(getTe(_CDN+"img/end2music.png"));
-	p2musicIco2.y=stageH/2+77
+	// p2musicIco2=new Sprite(getTe(_CDN+"img/end2music.png"));
+	// p2musicIco2.y=stageH/2+77
 
-	end2t1C.addChild(t1_1b,t1_2b,t1_3b,t2_1b,t2_2b,t2_3b)
-	page3.addChild(logo,logo_down,QR,end2shanC,end2t1C,endTextC,p2musicIco2)
+	//end2t1C.addChild(t1_1b,t1_2b,t1_3b,t2_1b,t2_2b,t2_3b)
+	page3.addChild(logo,logo_down,QR,end2t1C)//p2musicIco2
+	//page2.addChild(endTextC)
 
 }
 function goFinal2(){
 	var i
-	for (i = 0; i < 4; i++) {
-		end2shanA[i].blendMode=_MULTIPLY
-		if(i==colorNum){
-			end2shanA[i].visible=true
-		}else{
-			end2shanA[i].visible=false
-		}
-	};
+	// for (i = 0; i < 4; i++) {
+	// 	end2shanA[i].blendMode=_MULTIPLY
+	// 	if(i==colorNum){
+	// 		end2shanA[i].visible=true
+	// 	}else{
+	// 		end2shanA[i].visible=false
+	// 	}
+	// };
+	tBar.visible=false
+	end2shanC.y+=10
 
-	for (i = 0; i <12; i++) {
-		if(i==resultNum){
-			endTA[i].visible=true
-		}else{
-			endTA[i].visible=false
-		}
-	};
+	
 
-	end1t1C.visible=false
+	//end1t1C.visible=false
 	page3.visible=true
 	p2bg.y=0
-	step3canvasC.y//+=47-50
-	step3canvasC.x//-=108+40
-	p2carC.x-=10
-	p2carC.y+=60
-	p2musicIco.visible=false
+	step3canvasC.y+=10//+=47-50
+	//step3canvasC.x//-=108+40
+	//p2carC.x-=10
+	p2carC.y+=50
+	p2musicIco.y+=50
 }
 function shareDone(){
-	end1t1C.visible=true
+	//end1t1C.visible=true
+	tBar.visible=true
 	page3.visible=false
 	p2bg.y=-85*stageH/971
-	//step3canvasC.y-=47-50
+	step3canvasC.y-=10
 	//step3canvasC.x+=108+40
-	p2carC.x+=10
-	p2carC.y-=60
-	p2musicIco.visible=true
+	//p2carC.x+=10
+	end2shanC.y-=10
+	p2carC.y-=50
+	p2musicIco.y-=50
 }
 function goback(){
 	step3.visible=true
