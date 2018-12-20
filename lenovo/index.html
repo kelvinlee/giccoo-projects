@@ -11,7 +11,7 @@
   </head>
   <body>
     <div id="public" class="public">
-      <player icon="true" src="./mp3/bgm.mp3">
+      <player icon="true" src="./mp3/bgm.mp3" loop="true">
         <div class="note-text"><img src="./img/bgm-text.png"></div>
       </player>
     </div>
@@ -108,8 +108,8 @@
       <transition name="page-zoom">
         <div v-show="pageIndex == 3" class="page page-3">
           <div class="content">
-            <div class="arrow"><img :src="'./img/arrow-'+yearName+'.png'"></div>
-            <div class="box"><img :src="'./img/long-'+yearName+'.jpg'">
+            <div class="arrow"><img v-if="yearName != 'none'" :src="'./img/arrow-'+yearName+'.png'"></div>
+            <div class="box"><img v-if="yearName != 'none'" :src="'./img/long-'+yearName+'.jpg'">
               <div @click="goStep2" class="btn"><img src="./img/btn-find.png"></div>
             </div>
           </div>
