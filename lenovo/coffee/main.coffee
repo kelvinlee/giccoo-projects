@@ -250,9 +250,9 @@ init = ->
 			nickname: (n,o)->
 				@.nickname = @.nickname.replace(/[\r\n]/g, "")
 				# console.log "n,o:",n,o
-				nickNameText = new Text "#{n} ",{fontFamily : 'Arial', fontSize: 44, fontWeight: "normal", fill : 0x6d4222, letterSpacing: 2, lineHeight: 48}
+				nickNameText = new Text "#{n} ",{fontFamily : 'Arial', fontSize: 32, fontWeight: "normal", fill : 0x6d4222, letterSpacing: 2, lineHeight: 40}
 				console.log "width:",nickNameText.width
-				if nickNameText.width > 226
+				if nickNameText.width > 296
 					# @.nickname = o
 					t = @.nickname.split("")
 					tx = ""

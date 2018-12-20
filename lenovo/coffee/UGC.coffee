@@ -83,9 +83,9 @@ class UGC
 		overimg = new Spr _CDN+"img/ugc-content-over-#{main.carIndex+1}.png"
 
 
-		nickname = new Text "#{main.nickname} ",{fontFamily : 'Arial', fontSize: 44, fontWeight: "normal", fill : 0x6d4222, letterSpacing: 2, lineHeight: 48}
-		nickname.x = 117 + (226 - nickname.width)/2
-		nickname.y = titlebg.y + (titlebg.height - nickname.height)/2
+		nickname = new Text "#{main.nickname} ",{fontFamily : 'Arial', fontSize: 32, fontWeight: "normal", fill : 0x6d4222, letterSpacing: 2, lineHeight: 40}
+		nickname.x = 122 + (296 - nickname.width)/2
+		nickname.y = titlebg.y + (titlebg.height - nickname.height)/2 + 6
 
 		contentimg.y = titlebg.y + titlebg.height 
 		overimg.y = contentimg.y
@@ -129,10 +129,11 @@ class UGC
 		file.addChild filecover, titlebg, overimg, contentimg, nickname, message, btnShare, btnReload, btnMore, qr
 		# file.scale.set(0.8,0.8)
 		file.y = (@.opts.h - file.height)/2
-		if (file.y + file.height) > (huati.y + huati.height*0.3)
-			file.y -= huati.height
+		if (file.y + file.height) > (huati.y - huati.height*0.5)
+			file.y -= huati.height * 0.23
 		else
 			file.y -= @.opts.h * 0.05
+		console.log "Y:",file.y,file.y + file.height,(huati.y + huati.height*0.5)
 		if file.y <= 10
 			file.y = 10
 		@.stage.addChild bg, huati, logo, file, mark
@@ -143,6 +144,8 @@ class UGC
 		@.overimg = overimg
 		@.huati = huati
 		@.qr = qr
+		@.file = file
+		@.oldFileY = file.y
 
 	share: ->
 		@.btnShare.visible = false
@@ -152,7 +155,7 @@ class UGC
 		@.contentimg.visible = false
 		@.qr.visible = true
 		@.overimg.visible = true
-
+		@.file.y = (@.opts.h - @.file.height)/2
 		main.share()
 	shareDone: ->
 		@.btnShare.visible = true
@@ -162,6 +165,7 @@ class UGC
 		@.contentimg.visible = true
 		@.qr.visible = false
 		@.overimg.visible = false
+		@.file.y = @.oldFileY
 
 
 	
