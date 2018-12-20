@@ -34,7 +34,7 @@ var imageList = [
 	_CDN+"img/bg4.jpg",
 
 	_CDN+"img/end1bg.jpg",
-	_CDN+"img/end1music.jpg",
+	_CDN+"img/end1music.png",
 	_CDN+"img/end2music.png",
 	_CDN+"img/end1car1.png",
 	_CDN+"img/end1car2.png",
@@ -60,8 +60,17 @@ var imageList = [
 	_CDN+"img/text10.png",
 	_CDN+"img/text11.png",
 	_CDN+"img/text12.png",
+	_CDN+"img/text13.png",
+	_CDN+"img/text14.png",
+	_CDN+"img/text15.png",
+	_CDN+"img/text16.png",
+	_CDN+"img/text17.png",
+	_CDN+"img/text18.png",
+	_CDN+"img/text19.png",
+	_CDN+"img/text20.png",
 
 	_CDN+"img/musicico.png",
+	_CDN+"img/tbar.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
