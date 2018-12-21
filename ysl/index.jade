@@ -47,9 +47,14 @@ block content
   
   .load#load
     .content#loading(v-show="mounted",style="display: none")
-      .xman(:style="{transform: 'translate3d('+progress/2+'%,0,0)'}")
-        img(src="#{url}/img/xman.png")
-      p.centeralign Loading..{{progress}}%
+      //- transition(name="page-fade")
+      p(v-show="progress < 100").centeralign Loading..{{progress}}%
+      transition(name="page-fade")
+        .box.fadeIn.animated.duration-20.delay-4(v-show="progress >= 100")
+          img(src="#{url}/img/loading-texts.png")
+          .peopleNumber.centeralign {{number}} 人
+
+
   
   .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",:style="{width: w+'px',height: h+'px'}",style="display: none",@touchstart="startGame")
     transition(name="page-fade")    
@@ -96,8 +101,8 @@ block js
   script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
   //- script(src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js")
-  script(src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js")
-  script(src="//image.giccoo.com/projects/genki/js/ntes.id.js")
+  script(src="//s3.music.126.net/static/mob/ntes.id.js")
+  script(src="//s5.music.126.net/static_public/5a1b70ea0180f6ca7295a59d/js/music-jssdk-1.0.3.js")
   //- script(src="/libs/js/min/bump-min.js")
   script(src="js/public_funciton.js")
   script(src="js/build.js?v=1")

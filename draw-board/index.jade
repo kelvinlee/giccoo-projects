@@ -103,6 +103,13 @@ block content
     transition(name="page-fade")
       .page.page-3(v-show="pageIndex == 3")
         .content(:class="'index-'+carIndex")
+          .icon-music
+            .icon.icon-1
+              .inside
+                img(src="#{url}/img/icon-music-1.png")
+            .icon.icon-2
+              .inside
+                img(src="#{url}/img/icon-music-2.png")
           .title.fadeInDown.animated.delay-5
             img(src="#{url}/img/waitpage-title.png")
           .nickname.fadeInDown.animated.delay-7
