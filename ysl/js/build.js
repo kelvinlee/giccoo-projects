@@ -1,142 +1,14 @@
 var _CDN = "./";
 // var _CDN = "//image.giccoo.com/projects/emoji/";
 var imageList = [
-	_CDN+"img/p1bg.jpg",
-	_CDN+"img/bg_top.png",
-	_CDN+"img/bg_down.png",
-	_CDN+"img/p1logo.png",
+	_CDN+"img/title.png",
 
-	_CDN+"img/xman.png",
-
-	_CDN+"img/p1t1.png",
-	_CDN+"img/p1t2.png",
-	_CDN+"img/p1t3.png",
-	_CDN+"img/p1t5a.png",
-	_CDN+"img/p1t5b.png",
-
-	_CDN+"img/p1t4a.png",
-	_CDN+"img/p1t4b.png",
-	_CDN+"img/p1t4c.png",
-	_CDN+"img/p1t4d.png",
-
-	_CDN+"img/p1line1.png",
-	_CDN+"img/p1line2.png",
-	_CDN+"img/p1line3.png",
-	_CDN+"img/p1line4.png",
-	_CDN+"img/p1line5.png",
-	_CDN+"img/p1line6.png",
-	_CDN+"img/p1line7.png",
-
-	_CDN+"img/p2line1.png",
-	_CDN+"img/p2line2.png",
-	_CDN+"img/p2line3.png",
-	_CDN+"img/p2line4.png",
-
-	_CDN+"img/p1snow.png",
-
-	_CDN+"img/e1.png",
-	_CDN+"img/e2.png",
-	_CDN+"img/e3.png",
-	_CDN+"img/e4.png",
-	_CDN+"img/e5.png",
-	_CDN+"img/e6.png",
-	_CDN+"img/e7.png",
-	_CDN+"img/e8.png",
-	_CDN+"img/e9.png",
-	_CDN+"img/e10.png",
-	_CDN+"img/e11.png",
-	_CDN+"img/e12.png",
-	_CDN+"img/e13.png",
-	_CDN+"img/e14.png",
-
-	_CDN+"img/btn_next.png",
-
-	_CDN+"img/q1bg.png",
-	_CDN+"img/q2bg.png",
-
-	_CDN+"img/q11.png",
-	_CDN+"img/q12.png",
-	_CDN+"img/q13.png",
-	_CDN+"img/q14.png",
-
-	_CDN+"img/q21.png",
-	_CDN+"img/q22.png",
-	_CDN+"img/q23.png",
-	_CDN+"img/q24.png",
-
-	_CDN+"img/q31.png",
-	_CDN+"img/q32.png",
-	_CDN+"img/q33.png",
-	_CDN+"img/q34.png",
-
-	_CDN+"img/q41.png",
-	_CDN+"img/q42.png",
-	_CDN+"img/q43.png",
-	_CDN+"img/q44.png",
-
-	_CDN+"img/mark11.png",
-	_CDN+"img/mark12.png",
-	_CDN+"img/mark13.png",
-	_CDN+"img/mark14.png",
-
-	_CDN+"img/mark21.png",
-	_CDN+"img/mark22.png",
-	_CDN+"img/mark23.png",
-	_CDN+"img/mark24.png",
-
-	_CDN+"img/mark31.png",
-	_CDN+"img/mark32.png",
-	_CDN+"img/mark33.png",
-	_CDN+"img/mark34.png",
-
-	_CDN+"img/mark41.png",
-	_CDN+"img/mark42.png",
-	_CDN+"img/mark43.png",
-	_CDN+"img/mark44.png",
-
-	_CDN+"img/q1title.png",
-	_CDN+"img/q2title.png",
-	_CDN+"img/q3title.png",
-	_CDN+"img/q4title.png",
-
-	_CDN+"img/end_bg1.png",
-	_CDN+"img/end_bg2.png",
-	_CDN+"img/end_bg3.png",
-	_CDN+"img/end_bg4.png",
-
-	_CDN+"img/end_bg1b.png",
-	_CDN+"img/end_bg2b.png",
-	_CDN+"img/end_bg3b.png",
-	_CDN+"img/end_bg4b.png",
-
-	_CDN+"img/end_title1.png",
-	_CDN+"img/end_title2.png",
-	_CDN+"img/end_title3.png",
-	_CDN+"img/end_title4.png",
-
-	_CDN+"img/end_t11.png",
-	_CDN+"img/end_t12.png",
-	_CDN+"img/end_t13.png",
-	_CDN+"img/end_t14.png",
-
-	_CDN+"img/end_t21.png",
-	_CDN+"img/end_t22.png",
-	_CDN+"img/end_t23.png",
-	_CDN+"img/end_t24.png",
-
-	_CDN+"img/end_t31.png",
-	_CDN+"img/end_t32.png",
-	_CDN+"img/end_t33.png",
-	_CDN+"img/end_t34.png",
-
-	_CDN+"img/end_tbg.png",
-
-	_CDN+"img/endbtnbg.png",
-	_CDN+"img/endbtn1.png",
-	_CDN+"img/endbtn2.png",
-
-	_CDN+"img/qr.png",
-	_CDN+"img/logo.png",
+	_CDN+"img/title0.png",
+	_CDN+"img/title1.png",
+	_CDN+"img/title2.png",
+	_CDN+"img/title3.png",
+	_CDN+"img/title4.png",
+	
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -161,9 +33,74 @@ var buildUGC = function () {
 	
 }
 
+var ifHaveData=1
+var Type=1
 
 function getStart(){
-	setPage1()
+	if(ifHaveData==0){
+		Type=0
+	}else{
+		Type=parseInt(Math.random()*4+1)
+	}
+	initAll()
+	setPart1()
 	console.log("?111")
 }
 
+var mainC=new PIXI.Container()
+var allBG=new PIXI.Graphics()
+
+function initAll(){
+	allBG.beginFill(0x999999)
+	allBG.drawRect(0,0,640,11000)
+	pStage.addChild(mainC)
+	mainC.addChild(allBG)
+
+	pStage.interactive=true
+  pStage.touchstart=touchStart
+
+}
+
+
+var startY,endY,mouseYA,timeA,newPosition
+
+function touchStart(_e){
+  TweenLite.killTweensOf(mainC)
+
+  newPosition=mainC.y
+  startY=_e.data.global.y
+  //console.log(_e.data.global.y)
+  pStage.touchmove=touchMove
+  pStage.interactive=true
+  pStage.touchend=touchEnd
+  mouseYA=[0,0]
+  timeA=[0,0]
+}
+var heightLimit=11000
+function touchMove(_e){
+
+  mainC.y=newPosition+(_e.data.global.y-startY)*2
+  if(main.y>=0){    main.y=0  }
+  if(main.y<=heightLimit) {mainC.y=heightLimit};//=======================高度限制
+  mouseYA.push(_e.data.global.y)
+  date=new Date()
+  timeA.push(date.getTime())
+
+
+  //console.log("theNewNowHeight+part4.y-217",theNewNowHeight+part4.y-217,"main.y",main.y)
+
+  //TweenMax.set($("#userText"),{y:(theNewNowHeight+part4.y-217+main.y)/640*screenW})
+}
+function touchEnd(_e){
+  pStage.touchmove=null
+  pStage.interactive=true
+  pStage.touchend=null
+
+  var endY=main.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-3])/(timeA[timeA.length-1]-timeA[timeA.length-3])/4
+  if(endY>=0){    endY=0  }
+  if(endY<=heightLimit) {endY=heightLimit};//=======================高度限制
+
+  TweenMax.to(mainC,.5,{y:endY})
+
+  //TweenMax.to($("#userText"),1,{y:(theNewNowHeight+part4.y-217+endY)/640*screenW})
+}
