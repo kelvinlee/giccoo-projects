@@ -51,14 +51,14 @@ var mainC=new PIXI.Container()
 var allBG=new PIXI.Graphics()
 
 function initAll(){
-	allBG.beginFill(0x999999)
+	allBG.beginFill(0xffffff)
 	allBG.drawRect(0,0,640,11000)
 	pStage.addChild(mainC)
 	mainC.addChild(allBG)
 
 	pStage.interactive=true
   pStage.touchstart=touchStart
-  pageLoop()
+  //pageLoop()
 }
 
 
@@ -76,7 +76,7 @@ function touchStart(_e){
   mouseYA=[0,0]
   timeA=[0,0]
 }
-var heightLimit=11000
+var heightLimit=-11000
 function touchMove(_e){
 
   mainC.y=newPosition+(_e.data.global.y-startY)*2
@@ -103,30 +103,4 @@ function touchEnd(_e){
   TweenMax.to(mainC,.5,{y:endY})
 
   //TweenMax.to($("#userText"),1,{y:(theNewNowHeight+part4.y-217+endY)/640*screenW})
-}
-
-
-function pageLoop(){
-  //heightLimit=-nowHeight-part4.y+stageH-260-50-260-40-680
-
-  //requestAnimationFrame(pageLoop)
-  //renderer.render(pStage)
-  // if(main.y<=-(theNewNowHeight+part4.y-stageH+237+100)){//&&main.y>=-(nowHeight+part4.y-stageH+200)
-  //   //TweenMax.to(mainMask,.5,{height:stageH-237-20-ifInputing*100})
-  //   //TweenMax.to(userMessage,.5,{y:stageH-237-20-ifInputing*100})
-  //   // TweenMax.set($("#userText"),{display:"block"})
-  //   // TweenMax.set($("#songText"),{display:"block"})
-  //  // TweenMax.set($("#userForm"),{display:"block"})
-  // }else{
-  //   //TweenMax.to(mainMask,.5,{height:stageH*14/13})
-  //   //TweenMax.to(userMessage,.5,{y:stageH})
-  //   // TweenMax.set($("#userText"),{display:"none"})
-  //   // TweenMax.set($("#songText"),{display:"none"})
-  //  // TweenMax.set($("#userForm"),{display:"none"})
-
-  // }
-  // TweenMax.set($("#userText"),{y:(stageH-237+20-20-ifInputing*100)/640*screenW})
-  // TweenMax.set($("#songText"),{y:(stageH-56-50-20-ifInputing*100)/640*screenW})
-
-
 }
