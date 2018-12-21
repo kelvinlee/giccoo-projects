@@ -58,7 +58,7 @@ function initAll(){
 
 	pStage.interactive=true
   pStage.touchstart=touchStart
-
+  pageLoop()
 }
 
 
@@ -80,8 +80,8 @@ var heightLimit=11000
 function touchMove(_e){
 
   mainC.y=newPosition+(_e.data.global.y-startY)*2
-  if(main.y>=0){    main.y=0  }
-  if(main.y<=heightLimit) {mainC.y=heightLimit};//=======================高度限制
+  if(mainC.y>=0){    mainC.y=0  }
+  if(mainC.y<=heightLimit) {mainC.y=heightLimit};//=======================高度限制
   mouseYA.push(_e.data.global.y)
   date=new Date()
   timeA.push(date.getTime())
@@ -96,11 +96,37 @@ function touchEnd(_e){
   pStage.interactive=true
   pStage.touchend=null
 
-  var endY=main.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-3])/(timeA[timeA.length-1]-timeA[timeA.length-3])/4
+  var endY=mainC.y+1000*(mouseYA[mouseYA.length-1]-mouseYA[mouseYA.length-3])/(timeA[timeA.length-1]-timeA[timeA.length-3])/4
   if(endY>=0){    endY=0  }
   if(endY<=heightLimit) {endY=heightLimit};//=======================高度限制
 
   TweenMax.to(mainC,.5,{y:endY})
 
   //TweenMax.to($("#userText"),1,{y:(theNewNowHeight+part4.y-217+endY)/640*screenW})
+}
+
+
+function pageLoop(){
+  //heightLimit=-nowHeight-part4.y+stageH-260-50-260-40-680
+
+  //requestAnimationFrame(pageLoop)
+  //renderer.render(pStage)
+  // if(main.y<=-(theNewNowHeight+part4.y-stageH+237+100)){//&&main.y>=-(nowHeight+part4.y-stageH+200)
+  //   //TweenMax.to(mainMask,.5,{height:stageH-237-20-ifInputing*100})
+  //   //TweenMax.to(userMessage,.5,{y:stageH-237-20-ifInputing*100})
+  //   // TweenMax.set($("#userText"),{display:"block"})
+  //   // TweenMax.set($("#songText"),{display:"block"})
+  //  // TweenMax.set($("#userForm"),{display:"block"})
+  // }else{
+  //   //TweenMax.to(mainMask,.5,{height:stageH*14/13})
+  //   //TweenMax.to(userMessage,.5,{y:stageH})
+  //   // TweenMax.set($("#userText"),{display:"none"})
+  //   // TweenMax.set($("#songText"),{display:"none"})
+  //  // TweenMax.set($("#userForm"),{display:"none"})
+
+  // }
+  // TweenMax.set($("#userText"),{y:(stageH-237+20-20-ifInputing*100)/640*screenW})
+  // TweenMax.set($("#songText"),{y:(stageH-56-50-20-ifInputing*100)/640*screenW})
+
+
 }

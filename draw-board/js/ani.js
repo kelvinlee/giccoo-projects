@@ -494,7 +494,7 @@ function goFinal1(){//=======================================================最
 
 	p2carC.y=stageH/2-42
 
-	step3canvasC.y=stageH/2+20-275-(400-step3canvasC.height)/2
+	step3canvasC.y=stageH/2+20-275-(400-step3canvasC.height)/2+20
 	console.log("step3canvasC.height",step3canvasC.height)
 
 	var shan1=new Sprite(getTe(_CDN+"img/end2shan1.jpg"));
@@ -504,7 +504,7 @@ function goFinal1(){//=======================================================最
 
 	end2shanA=[shan1,shan2,shan3,shan4]
 	end2shanC.addChild(shan1,shan2,shan3,shan4)
-	end2shanC.y=stageH/2-241
+	end2shanC.y=stageH/2-241+20
 	end2shanC.scale.x=end2shanC.scale.y=640/750
 
 	shan1.blendMode=_MULTIPLY
@@ -531,7 +531,7 @@ function goFinal1(){//=======================================================最
 		var j=i+1
 		var _endt=new Sprite(getTe(_CDN+"img/text"+j+".png"));
 		
-		_endt.y=stageH/2-296
+		_endt.y=stageH/2-296-10
 		_endt.x=593
 		_endt.pivot.set(563,114)
 		_endt.scale.x=_endt.scale.y=64/75
@@ -706,15 +706,15 @@ function setEnd1t(){
 	t2_2.text=main.nickname
 
 	
-	t1_1.position.set(590-t1_2.width-10-t1_1.width,stageH/2-284)
-	t1_2.position.set(590-t1_2.width,stageH/2-284)
+	t1_1.position.set(590-t1_2.width-10-t1_1.width,stageH/2-284-10)
+	t1_2.position.set(590-t1_2.width,stageH/2-284-10)
 
 
-	t2_1.position.set(590-t2_3.width-10-t2_2.width-10-t2_1.width,stageH/2-254)
-	t2_2.position.set(590-t2_3.width-10-t2_2.width,stageH/2-254)
-	t2_3.position.set(590-t2_3.width,stageH/2-254)
+	t2_1.position.set(590-t2_3.width-10-t2_2.width-10-t2_1.width,stageH/2-254-10)
+	t2_2.position.set(590-t2_3.width-10-t2_2.width,stageH/2-254-10)
+	t2_3.position.set(590-t2_3.width,stageH/2-254-10)
 
-	t3_1.position.set(590-t3_1.width,stageH/2-224)
+	t3_1.position.set(590-t3_1.width,stageH/2-224-10)
 
 
 	// t1_1.position.set(50,stageH/2-405+3)
