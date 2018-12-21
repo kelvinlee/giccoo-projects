@@ -135,6 +135,14 @@ $pageMainBGColor: #0c101a;
 		opacity: 1
 	100%
 		opacity: 1
++keyframes(moveUp)
+	0%
+		+transform(translate3d(0,0,0))
+	60%
+		+transform(translate3d(0,-40%,0))
+	100%
+		+transform(translate3d(0,0,0))
+
 
 html,body
 	+w
@@ -913,6 +921,27 @@ video,canvas,svg
 			background-position: top center
 		.title
 			margin-top: 15%
+		.icon-music
+			+abcentermiddle
+			+w
+			+h(50%)
+			.icon
+				.inside
+					+animation(swingIcon,2.7s,linear,infinite)
+					transform-origin: bottom center
+			.icon-2
+				+iw(83,750,100%)
+				+posa
+				+br(10%,4%)
+				+animation(moveUp,3s,ease,infinite)
+			.icon-1
+				+iw(47,750,100%)
+				+posa
+				+bl(50%,4%)
+				+animation(moveUp,4s,ease,infinite)
+				.inside
+					animation-delay: 300ms
+					animation-duration: 2.2s
 
 .nickname,.mobile
 	+bc(#404040)

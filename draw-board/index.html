@@ -67,6 +67,14 @@
       <transition name="page-fade">
         <div v-show="pageIndex == 3" class="page page-3">
           <div :class="'index-'+carIndex" class="content">
+            <div class="icon-music">
+              <div class="icon icon-1">
+                <div class="inside"><img src="./img/icon-music-1.png"></div>
+              </div>
+              <div class="icon icon-2">
+                <div class="inside"><img src="./img/icon-music-2.png"></div>
+              </div>
+            </div>
             <div class="title fadeInDown animated delay-5"><img src="./img/waitpage-title.png"></div>
             <div class="nickname fadeInDown animated delay-7">
               <input type="text" v-model="nickname" placeholder="请输入您的昵称_">

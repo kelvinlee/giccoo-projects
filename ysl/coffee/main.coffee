@@ -17,6 +17,7 @@ apiUrl = "//api.giccoo.com/lenovo"
 apiLink = "//g.giccoo.com/"
 # apiLink = "http://192.168.3.53:3000/"
 # apiUrl = "http://localhost:8881/Levi"
+# /api/activity/lorealysl/userinfo
 main = {}
 ugc = null
 _public = {}
@@ -101,34 +102,55 @@ window.onload = ->
 			progress: 0
 			mounted: false
 			progressOn: 0
+			number: 32743
 		methods:
 			next: ->
 				document.getElementById('load').className += " fadeOut animated"
 				main.mounted = true
 				main.init()
 				setTimeout ->
+					clearInterval _startCache
 					document.getElementById('load').style.display = "none"
 					_public.note = false if _public.wx
 					# setTimeout ->
 					# 	_public.note = false if _public.wy
 					# ,3000
 				,520
+			get: ->
+				axios.get "http://api.giccoo.com/count/get/yslnumber"
+				.then (msg)=>
+					# console.log msg.data.info[0]
+					@.number = msg.data.info[0].count
+				.catch (err)->
+					console.log "err:",err
+				axios.get "//music.163.com/api/activity/lorealysl/userinfo"
+				.then (msg)=>
+					d = msg.data
+					if d.code is 200
+						main.userInfoGet = true
+						main.userInfo = d.data
 		mounted: ->
 			@.mounted = true
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
-
+			@.get()
 			# @.next() # for test
+			setTimeout =>
+				@.next()
+			,200
 
 			timein = setInterval =>
 				@.progress += 3
 				@.progress = @.progressOn if @.progress >= @.progressOn
-				if @.progress >= 20
+				if @.progress >= 100
 					@.progress = 100
 					clearInterval timein
 					_cache = setTimeout =>
-						@.next()
-					,1000
+						# @.next()
+					,3000
+					_startCache = setInterval =>
+						@.number += 1+Math.floor Math.random()*2
+					, 150
 			,1000/20
 	
 	init()
@@ -228,13 +250,15 @@ init = ->
 			ugcType: 1
 			questionShow: false
 			questionIndex: 0
-			answer1: 1
-			answer2: 0
-			answer3: 
-				c1: false
-				c2: false
-				c3: false
-				c4: false
+			userInfoGet: false
+			userInfo: 
+				userId: 0
+				nickName: ""
+				playCount: 0
+				songId: 0
+				songName: ""
+				longestPlayDayPeriod: 0
+				playTotalTime: 0
 			nickname: ""
 			message: ""
 			messageIndex: 1
