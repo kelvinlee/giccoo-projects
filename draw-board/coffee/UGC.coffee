@@ -67,46 +67,34 @@ class UGC
 		@.opts.callback()
 		# @.init()
 	
-	init: ->
-		@.qrcode = qrcode = new Spr _CDN+"img/qrcode-"+(if main.white then 'white' else 'black')+".png"
-		qrcode.scale.set(640/750,640/750)
-		qrcode.x = 68
-		qrcode.y = @.opts.h - qrcode.height - 68/2
-		qrcode.visible = false
+	buildUGC: (data)->
+		if @.opts.h <= 900
+			console.log "??"
+			page3.addChild logo, logo_down
+			@.app.renderer.render @.app.stage
+			return main.callShare(@.app.view.toDataURL())
+		if @.U?
+			@.U.renderer.render @.U.stage
+			main.callShare @.U.view.toDataURL()
+			return false
+		@.U = new PIXI.Application
+			width: 640
+			height: 900
+			transparent: true
+			preserveDrawingBuffer: true
+			forceCanvas: true
+		# document.getElementById("testUGC").appendChild @.U.view
+		# console.log @.U
+		# page3.visible = true
+		old = new PIXI.Sprite.fromImage(data)
+		logo_down.y = 900 - logo_down.height - 30
+		@.U.stage.addChild old, logo, logo_down
+		old.texture.baseTexture.on 'loaded', =>
+			console.log "loaded"
+			old.y = -(old.height - 900)/2 if old.height > 900
+			@.U.renderer.render @.U.stage
+			main.callShare @.U.view.toDataURL()
 
-		postCard = new Container()
-		logo = Spr _CDN+"img/logo-black.png"
-		logo.y = 10
-		bg = Spr _CDN+"img/envelope.png"
-		bg.scale.set(640/750,640/750)
-		bg.x = (@.opts.w-bg.width)/2
-		mark = Spr _CDN+"img/post-card-mark.png"
-		mark.scale.set(640/750,640/750)
-		mark.x = (@.opts.w-mark.width)/2
-		mn = Spr _CDN+"img/m-"+main.answer1+".png"
-		mn.scale.set(640/750,640/750)
-		mn.x = (@.opts.w-mark.width)/2 - 10
-
-		nickname = new Text "#{main.nickname}",{fontFamily : 'Arial', fontSize: 32, fontWeight: "bold", fill : 0x000000, letterSpacing: 2, lineHeight: 34}
-		nickname.x = 160
-		nickname.y = 42
-
-		text = ""
-		if main.message is ""
-			text = main.messageList[main.messageIndex-1]
-		else
-			text = main.message
-		text = text.replace(/<br\/>/g,"\n")
-		message = new Text "#{text}",{fontFamily : 'Arial', fontSize: 18, fill : 0x000000, fontStyle: "italic",fontWeight: "normal", letterSpacing: 0, lineHeight: 34}
-		message.x = 160
-		message.y = 42 + 34 + 34/2
-
-		postCard.y = logo.height + logo.y + 5
-		postCard.addChild bg, mark, nickname, message, mn
-		@.stage.addChild logo, postCard, qrcode
-		@.postCard = postCard
-
-		TweenMax.from(postCard,1.2,{alpha:0,y:"-=#{postCard.height+logo.height}",yoyo:true,delay: .7})
 		
 
 

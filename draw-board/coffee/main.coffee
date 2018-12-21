@@ -348,6 +348,9 @@ init = ->
 				# ugc.qrcode.visible = true
 				ugc.app.renderer.render ugc.app.stage
 				@.ugc = ugc.app.view.toDataURL()
+				ugc.buildUGC(ugc.app.view.toDataURL())
+			callShare: (img)->
+				@.ugc = img if img?
 				image = @.ugc
 
 				if @.wy
@@ -419,52 +422,22 @@ init = ->
 			goSubmit: ->
 				data = {
 					name: @.nickname
-					mobile:   @.mobile
-					sex: 0
-					carType: "43 Tharu"
-					vsource: "V031514 VW-其他媒体"
-					UCVPDataOrigin: "C002"
-					Vchannel: "V03"
-					Vcampaign: "VW20181025010"
+					mobile: @.mobile
 				}
 
-				# Ajap({
-				# 	url: 'https://campaign.svw-volkswagen.com/lamando2017tvc/api/submitBook.jsonp',
-				# 	data: data,
-				# 	success: (msg)=>
-				# 		console.log msg
-				# 	callback: '',
-				# 	callbackName: ''
-				# })
-
-				$.ajax
-					url: "https://campaign.svw-volkswagen.com/lamando2017tvc/api/submitBook.jsonp"
-					type: "GET"
-					dataType: "jsonp"
-					data: data
-					success: (msg)=>
-						console.log "msg:",msg
-
-				# axios.jsonp "https://campaign.svw-volkswagen.com/lamando2017tvc/api/submitBook.jsonp",data
-				# .then (msg)=>
-				# 	console.log msg.data
-				# .catch (err)=>
-				# 	console.log "error:",err
-
-
-				# axios.post "#{apiLink}active/autoSave/insert/database/draw/",data
-				# .then (msg)=>
-				# 	if msg.data.code is 200
-				# 		@.send "恭喜您预约成功"
-				# 		@.formBoxShow = false
-				# 		setTimeout =>
-				# 			@.share()
-				# 		,2000
-				# 	else
-				# 		@.send msg.data.reason
-				# .catch (err)=>
-				# 	console.log "err:",err
-				# 	@.send "请求错误,请重试"
+				axios.post "#{apiLink}active/autoSave/insert/database/draw/",data
+				.then (msg)=>
+					if msg.data.code is 200
+						@.send "恭喜您预约成功"
+						@.formBoxShow = false
+						setTimeout =>
+							@.share()
+						,2000
+					else
+						@.send msg.data.reason
+				.catch (err)=>
+					console.log "err:",err
+					@.send "请求错误,请重试"
 
 			goWeb: ->
 				window.location.href = "https://tharu.svw-volkswagen.com/"

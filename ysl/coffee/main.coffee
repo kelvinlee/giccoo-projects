@@ -118,7 +118,7 @@ window.onload = ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 
-			# @.next() # for test
+			@.next() # for test
 
 			timein = setInterval =>
 				@.progress += 3

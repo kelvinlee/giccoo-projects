@@ -817,7 +817,7 @@ function setFinal2(){
 	// p2musicIco2.y=stageH/2+77
 
 	//end2t1C.addChild(t1_1b,t1_2b,t1_3b,t2_1b,t2_2b,t2_3b)
-	page3.addChild(logo,logo_down,QR,end2t1C)//p2musicIco2
+	page3.addChild(QR,end2t1C)//p2musicIco2
 	//page2.addChild(endTextC)
 
 }
