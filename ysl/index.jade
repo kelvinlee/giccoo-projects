@@ -44,7 +44,7 @@ block content
     transition(name="page-fade")
       .note-text(v-show="note")
         p 点击铃铛打开声音<br/>获得更好体验效果
-
+  
   .load#load
     .content#loading(v-show="mounted",style="display: none")
       .xman(:style="{transform: 'translate3d('+progress/2+'%,0,0)'}")
@@ -73,6 +73,10 @@ block content
 
     transition(name="page-zoom")
       .page.page-1(v-show="pageIndex == 1")
+        .content
+          img(src="#{url}/img/long.jpg")
+    transition(name="page-zoom")
+      .page.page-2(v-show="pageIndex == 2")
         .content
           #ugc
     

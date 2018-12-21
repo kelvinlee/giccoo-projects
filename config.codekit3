@@ -484,15 +484,15 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/draw-board/img/end1music.jpg": {
-		"ft": 16384,
-		"iS": 6250,
-		"jF": 0,
+	"/draw-board/img/end1music.png": {
+		"ft": 32768,
+		"iS": 6530,
 		"oA": 0,
-		"oAP": "/draw-board/img/end1music.jpg",
+		"oAP": "/draw-board/img/end1music.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"/draw-board/img/end2music.png": {
@@ -902,6 +902,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/draw-board/img/tbar.png": {
+		"ft": 32768,
+		"iS": 7202,
+		"oA": 0,
+		"oAP": "/draw-board/img/tbar.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/draw-board/img/text1.png": {
 		"ft": 32768,
 		"iS": 50321,
@@ -979,11 +990,66 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/draw-board/img/text16.png": {
+		"ft": 32768,
+		"iS": 34464,
+		"oA": 0,
+		"oAP": "/draw-board/img/text16.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text17.png": {
+		"ft": 32768,
+		"iS": 29983,
+		"oA": 0,
+		"oAP": "/draw-board/img/text17.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text18.png": {
+		"ft": 32768,
+		"iS": 29848,
+		"oA": 0,
+		"oAP": "/draw-board/img/text18.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text19.png": {
+		"ft": 32768,
+		"iS": 33200,
+		"oA": 0,
+		"oAP": "/draw-board/img/text19.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/draw-board/img/text2.png": {
 		"ft": 32768,
 		"iS": 76494,
 		"oA": 0,
 		"oAP": "/draw-board/img/text2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/draw-board/img/text20.png": {
+		"ft": 32768,
+		"iS": 24543,
+		"oA": 0,
+		"oAP": "/draw-board/img/text20.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -1528,6 +1594,17 @@
 		"iS": 36945,
 		"oA": 0,
 		"oAP": "/emoji/img/e9.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/end1music.png": {
+		"ft": 32768,
+		"iS": 33526,
+		"oA": 0,
+		"oAP": "/emoji/img/end1music.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -2628,6 +2705,17 @@
 		"iS": 6519,
 		"oA": 0,
 		"oAP": "/emoji/img/stamp.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/emoji/img/tbar.png": {
+		"ft": 32768,
+		"iS": 14930,
+		"oA": 0,
+		"oAP": "/emoji/img/tbar.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6053,6 +6141,17 @@
 		"opt": 1,
 		"q": 100
 		},
+	"/lenovo/img/huati.png": {
+		"ft": 32768,
+		"iS": 194309,
+		"oA": 0,
+		"oAP": "/lenovo/img/huati.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/lenovo/img/ico.jpg": {
 		"ft": 16384,
 		"iS": 119531,
@@ -9380,6 +9479,17 @@
 		"oA": 1,
 		"oAP": "/build/ysl/css",
 		"oF": 0
+		},
+	"/ysl/img/long.jpg": {
+		"ft": 16384,
+		"iS": 1274081,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/ysl/img/long.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"/ysl/index.html": {
 		"cB": 0,
