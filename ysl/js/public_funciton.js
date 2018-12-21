@@ -60,15 +60,6 @@ function drawdash(x0,y0,x1,y1,linewidth){
 
 
 
-
-// var linewidth=5;
-// var tilingSprite = drawdash(100,100,100,400,linewidth);
-// app.stage.addChild(tilingSprite);
-// app.ticker.add(function(delta) {
-//     tilingSprite.tilePosition.x += 0.5*delta;
-// });
-
-
 function clamp(min,_number,max){
     if(_number<min){
         return min
@@ -87,3 +78,69 @@ function drawBezier( t, p0, p1, p2, p3) {
         point.y = p0.y * temp * temp * temp + 3 * p1.y * t * temp * temp + 3 * p2.y * t * t * temp + p3.y * t * t * t;
         return point;
 }
+
+
+
+//================开始
+
+var songNum,songHour,songTime,songName,songPlayTime
+
+//var t1_0,t1_1,t1_2,t1_3,t1_4
+//var t1,t2,t3,t4
+
+// var t1_0=[
+// //蒙面星唱将
+// "无人知晓，无迹可寻",
+// "你就这样出现在镜头上",
+// "自信地放声歌唱",
+
+// "音乐池里有千万首",
+// "你爱的歌曲",
+// "舞台上有专属于你的",
+// "聚焦灯光",
+
+// "未来的日子",
+// "就劳请你",
+// "无畏披荆斩棘",
+// "不羁C位出道",
+
+// "“有人说爱上小溪是因",
+// "为没见过大海，但其实",
+// "我见过银河却只爱你这",
+// "一颗新星”"
+
+// ]
+
+
+// var t1_1=[
+
+// [
+// "不是做百年老字号的",
+// "回头客不够好，",
+// "只是你更爱，",
+// "去新晋网红店拔草。"
+// ],
+
+// [
+// "在音乐世界",
+// "你打探所有新奇创意",
+// "671首",
+// "不同歌曲",
+// "足以让你一整年都C位出道"
+// ],
+
+// [
+// "全年，你一共听了",
+// "671首",
+// "歌曲",
+// "“你已用歌声填平山",
+// "海，却还想继续塞满云",
+// "端”"
+// ],
+
+// ]
+
+
+// var t1_A=[t1_0,t1_1]
+
+

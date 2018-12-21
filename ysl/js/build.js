@@ -8,6 +8,48 @@ var imageList = [
 	_CDN+"img/title2.png",
 	_CDN+"img/title3.png",
 	_CDN+"img/title4.png",
+
+	_CDN+"img/ani1_1.png",
+	_CDN+"img/ani1_2.png",
+	_CDN+"img/ani1_3.png",
+	_CDN+"img/ani1_4.png",
+	_CDN+"img/ani1_5.png",
+	_CDN+"img/ani1_6.png",
+	_CDN+"img/ani1_7.png",
+	_CDN+"img/ani1_8.png",
+
+	_CDN+"img/ani2_1.png",
+	_CDN+"img/ani2_2.png",
+	_CDN+"img/ani2_3.png",
+	_CDN+"img/ani2_4.png",
+	_CDN+"img/ani2_5.png",
+	_CDN+"img/ani2_6.png",
+	_CDN+"img/ani2_7.png",
+
+	_CDN+"img/ani3_1.png",
+	_CDN+"img/ani3_2.png",
+	_CDN+"img/ani3_3.png",
+	_CDN+"img/ani3_4.png",
+	_CDN+"img/ani3_5.png",
+	_CDN+"img/ani3_6.png",
+	_CDN+"img/ani3_7.png",
+	_CDN+"img/ani3_8.png",
+	_CDN+"img/ani3_9.png",
+	_CDN+"img/ani3_10.png",
+	_CDN+"img/ani3_11.png",
+	_CDN+"img/ani3_12.png",
+	_CDN+"img/ani3_13.png",
+	_CDN+"img/ani3_14.png",
+	_CDN+"img/ani3_15.png",
+
+	_CDN+"img/ani4_1.png",
+	_CDN+"img/ani4_2.png",
+	_CDN+"img/ani4_3.png",
+	_CDN+"img/ani4_4.png",
+	_CDN+"img/ani4_5.png",
+
+	_CDN+"img/t1_0.png",
+
 	
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
@@ -77,6 +119,7 @@ function touchStart(_e){
   timeA=[0,0]
 }
 var heightLimit=-11000
+var nowHeight=200
 function touchMove(_e){
 
   mainC.y=newPosition+(_e.data.global.y-startY)*2
