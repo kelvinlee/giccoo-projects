@@ -91,7 +91,7 @@ class UGC
 		@.U.stage.addChild old, logo, logo_down
 		old.texture.baseTexture.on 'loaded', =>
 			console.log "loaded"
-			old.y = -(old.height - 900)/2 if old.height > 900
+			old.y = (-(old.height - 900)/2)/5*3  if old.height > 900
 			@.U.renderer.render @.U.stage
 			main.callShare @.U.view.toDataURL()
 

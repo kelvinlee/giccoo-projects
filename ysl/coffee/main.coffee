@@ -105,7 +105,7 @@ window.onload = ->
 			next: ->
 				document.getElementById('load').className += " fadeOut animated"
 				main.mounted = true
-				# main.init()
+				main.init()
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
 					_public.note = false if _public.wx
@@ -118,12 +118,12 @@ window.onload = ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 
-			@.next() # for test
+			# @.next() # for test
 
 			timein = setInterval =>
 				@.progress += 3
 				@.progress = @.progressOn if @.progress >= @.progressOn
-				if @.progress >= 100
+				if @.progress >= 20
 					@.progress = 100
 					clearInterval timein
 					_cache = setTimeout =>
