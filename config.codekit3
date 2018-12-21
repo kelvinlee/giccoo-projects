@@ -639,6 +639,7 @@
 		"q": 100
 		},
 	"/draw-board/img/icon-music-1.png": {
+		"ft": 32768,
 		"iS": 8786,
 		"oA": 0,
 		"oAP": "/draw-board/img/icon-music-1.png",
