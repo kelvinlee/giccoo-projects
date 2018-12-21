@@ -421,10 +421,9 @@ init = ->
 				# @.carIndex = Math.floor(Math.random()*2+1)
 			goSubmit: ->
 				data = {
-					name: @.nickname
+					username: @.nickname
 					mobile: @.mobile
 				}
-
 				axios.post "#{apiLink}active/autoSave/insert/database/draw/",data
 				.then (msg)=>
 					if msg.data.code is 200

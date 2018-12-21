@@ -112,7 +112,7 @@ return t=[169794,166317,112678,144143,64497,163639,28853351,153476,5271858,18698
 // _public.$children[0].pause()
 return CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/draw-board画山成岳，致敬心中的江湖/")},goNext:function e(){return this.pageIndex=2,clearInterval(_startCache)},goShow:function e(){return""===this.nickname?this.send("请输入您的昵称"):(this.pageIndex=2,this.formShow=!0,goFinal1())},goNickname:function e(){return clearInterval(_startCache),this.pageIndex=3},
 // @.carIndex = Math.floor(Math.random()*2+1)
-goSubmit:function e(){var t=this,i;return i={name:this.nickname,mobile:this.mobile},axios.post("".concat(apiLink,"active/autoSave/insert/database/draw/"),i).then(function(e){return 200===e.data.code?(t.send("恭喜您预约成功"),t.formBoxShow=!1,setTimeout(function(){return t.share()},2e3)):t.send(e.data.reason)}).catch(function(e){return console.log("err:",e),t.send("请求错误,请重试")})},goWeb:function e(){return window.location.href="https://tharu.svw-volkswagen.com/"},focusEvt:function e(t){
+goSubmit:function e(){var t=this,i;return i={username:this.nickname,mobile:this.mobile},axios.post("".concat(apiLink,"active/autoSave/insert/database/draw/"),i).then(function(e){return 200===e.data.code?(t.send("恭喜您预约成功"),t.formBoxShow=!1,setTimeout(function(){return t.share()},2e3)):t.send(e.data.reason)}).catch(function(e){return console.log("err:",e),t.send("请求错误,请重试")})},goWeb:function e(){return window.location.href="https://tharu.svw-volkswagen.com/"},focusEvt:function e(t){
 // document.getElementById("mobile").scrollIntoViewIfNeeded()
 return console.log("height:",document.body.scrollHeight,t)},
 // _startCache = setInterval =>
