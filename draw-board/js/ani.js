@@ -524,14 +524,14 @@ function goFinal1(){//=======================================================最
 
 	page2.addChild(p2bg,end2shanC,step3canvasC,p2musicIco,p2carC)
 
-	var blurFilter1 = new PIXI.filters.BlurFilter()
-	//step3canvasC.cacheAsBitmap=true
-	blurFilter1.blur=20
-	shan1.filters = [blurFilter1]
-	shan2.filters = [blurFilter1]
-	shan3.filters = [blurFilter1]
-	shan4.filters = [blurFilter1]
-	console.log(blurFilter1)
+	 var blurFilter1 = new PIXI.filters.BlurFilter()
+	// //step3canvasC.cacheAsBitmap=true
+	blurFilter1.blur=2
+	step3canvasC.filters = [blurFilter1]
+	// shan2.filters = [blurFilter1]
+	// shan3.filters = [blurFilter1]
+	// shan4.filters = [blurFilter1]
+	// console.log(blurFilter1)
 
 	
 	setEnd1t()
