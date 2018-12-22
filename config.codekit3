@@ -1779,6 +1779,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/draw-board/img/cd.png": {
+		"ft": 32768,
+		"iS": 20811,
+		"oA": 0,
+		"oAP": "/draw-board/img/cd.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/draw-board/img/color1.png": {
 		"ft": 32768,
 		"iS": 222447,
