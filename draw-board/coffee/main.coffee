@@ -1,6 +1,7 @@
 # @codekit-prepend "coffee/css3Prefix"
 # @codekit-prepend "../../libs/coffee/loadWechatConfig"
 # @codekit-prepend "../../libs/coffee/IsPC"
+# @codekit-prepend "../../libs/vue/vue-resetinput"
 # @codekit-prepend "../../libs/vue/vue-player"
 # @codekit-prepend "../../libs/vue/vue-video"
 # @codekit-prepend "../../libs/coffee/pixi-base"
@@ -8,6 +9,7 @@
 # @codekit-prepend "./UGC"
 
 axios.defaults.withCredentials = true
+
 
 TrueW = 640
 TrueH = 1138

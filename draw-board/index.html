@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>画山成岳，致敬心中的江湖</title>
     <meta name="author" content="m.giccoo.com">
-    <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
+    <link rel="stylesheet" href="//image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
@@ -43,12 +43,18 @@
               <div class="text-2 fadeInDown animated delay-7"><img src="./img/homepage-text.png"></div>
               <div class="text-4 fadeInDown animated delay-8"><img src="./img/homepage-text-1.png"></div>
               <div class="text-5 fadeInDown animated delay-9"><img src="./img/homepage-text-2.png"></div>
-              <div @click="goNext" class="text-6 fadeInDown animated delay-10"><img src="./img/homepage-text-3.png"></div>
+              <div @click="goNext" class="text-6 fadeInDown animated delay-10"><img src="./img/homepage-text-3.png">
+                <div class="arrow"><img src="./img/homepage-text-3-arrow.png"></div>
+              </div>
               <div class="box fadeInDown animated delay-13"><img src="./img/homepage-car.png">
-                <div class="text-3"><img src="./img/homepage-cd.png"></div>
+                <div class="text-3"><img src="./img/homepage-cd.png">
+                  <div class="icon">
+                    <div class="inside"><img src="./img/homepage-cd-icon.png"></div>
+                  </div>
+                </div>
                 <div class="slider">
                   <div class="slide">
-                    <mp4 src="http://image.giccoo.com/projects/test/video-build.mp4" poster="./img/poster.jpg"></mp4>
+                    <mp4 src="http://image.giccoo.com/projects/test/video-build.mp4" poster="./img/poster.jpg" controls="true" playsinline="true"></mp4>
                   </div>
                 </div>
               </div>
@@ -77,7 +83,7 @@
             </div>
             <div class="title fadeInDown animated delay-5"><img src="./img/waitpage-title.png"></div>
             <div class="nickname fadeInDown animated delay-7">
-              <input type="text" v-model="nickname" placeholder="请输入您的昵称_">
+              <input type="text" v-reset-input v-model="nickname" placeholder="请输入您的昵称_">
               <div @click="goShow" class="btn-start"><img src="./img/btn-start.png"></div>
             </div>
           </div>
@@ -93,7 +99,7 @@
               </div>
               <div class="form-content fadeIn animated">
                 <div class="mobile">
-                  <input id="mobile" type="number" v-model="mobile" placeholder="请输入您的电话，预约试驾_" @focus="focusEvt" @blur="blurEvt">
+                  <input id="mobile" type="number" v-reset-input v-model="mobile" placeholder="请输入您的电话，预约试驾_" @focus="focusEvt" @blur="blurEvt">
                   <div @click="goSubmit" class="btn-start"><img src="./img/btn-start.png"></div>
                 </div>
               </div>

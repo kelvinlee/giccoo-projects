@@ -142,7 +142,11 @@ $pageMainBGColor: #0c101a;
 		+transform(translate3d(0,-40%,0))
 	100%
 		+transform(translate3d(0,0,0))
-
++keyframes(moveSmall)
+	0%,100%
+		+transform(translate3d(0,0,0))
+	50%
+		+transform(translate3d(3%,0,0))
 
 html,body
 	+w
@@ -627,6 +631,14 @@ video,canvas,svg
 			+posa
 			+tl(-38%,1%)
 			+iw(234,576,100%)
+			.icon
+				+iw(23,234,100%)
+				+posa
+				+tr
+				+animation(moveUp,3s,ease,infinite)
+				.inside
+					+animation(swingIcon,2.7s,linear,infinite)
+					transform-origin: bottom center
 		.text-4,.text-5,.text-6
 			// +posa
 			// +tr(26.5%,7%)
@@ -639,6 +651,12 @@ video,canvas,svg
 			margin-top: 1%
 		.text-6
 			margin-top: 1%
+			+posr
+			.arrow
+				+posa
+				+tl
+				+w
+				+animation(moveSmall,2s,linear,infinite)
 		.box
 			// +posa
 			// +tl(43%,6%)
@@ -668,6 +686,7 @@ video,canvas,svg
 							+posa
 							+tl
 					.video
+						+posr
 						+h
 						video
 							+h
@@ -920,11 +939,19 @@ video,canvas,svg
 		.smaller &
 			background-position: top center
 		.title
-			margin-top: 15%
+			margin-top: 22%
+			.smaller &
+				margin-top: 15%
+			.biger &
+				margin-top: 26%
+		.nickname
+			margin-top: 6%
 		.icon-music
 			+abcentermiddle
 			+w
 			+h(50%)
+			.biger &
+				margin-top: 12%
 			.icon
 				.inside
 					+animation(swingIcon,2.7s,linear,infinite)
@@ -984,9 +1011,11 @@ video,canvas,svg
 		z-index: 2
 	.btn-web
 		+posa
-		+tl(50%,0%)
+		+tl(50%,1%)
 		+iw(100,750,100%)
 		z-index: 99
+		+animation(swing,2s,ease,infinite)
+		transform-origin: top center
 	.btn-music
 		+posa
 		+tr(32%,5%)
@@ -1013,9 +1042,10 @@ video,canvas,svg
 		+show-inline
 		// +box
 		+bc(#fff)
-		+m(0 3%)
+		+m(0 1%)
+		+p(1% 0)
 	.btn-form
-		+p(0 10%)
+		+p(1% 10%)
 	.btn-share
 		+bc(#4b738a)
 	.form-content
@@ -1191,3 +1221,27 @@ video,canvas,svg
 	z-index: 10009
 	&.error
 		color: #ff9595
+
+
+.video
+	+posr
+	.icon-play
+		+posa
+		+tl
+		+w
+		+h
+		z-index: 109
+		// +bc(rgba(#000, 0.2))
+		.icon
+			+posa
+			+tl(50%,50%)
+			+w(20%)
+			+transform(translate3d(-50%,-50%,0))
+			+bc(rgba(255,255,255,0.7))
+			border-radius: 50%
+			+overhide
+		&.hide
+			+animation(fadeOut,1s)
+			+show
+		&.pause
+			+animation(fadeIn,1s)

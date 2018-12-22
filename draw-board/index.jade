@@ -6,7 +6,7 @@ block title
 block css
   meta(name="author",content="m.giccoo.com")
   //- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
-  link(rel="stylesheet",href="http://image.giccoo.com/projects/libs/css/animate.min.css")
+  link(rel="stylesheet",href="//image.giccoo.com/projects/libs/css/animate.min.css")
   //- link(rel="stylesheet",href="//image.giccoo.com/projects/libs/font/Interstate Regular.css")
   //- link(rel="stylesheet",href="/libs/font/YRDZST-Heavy.css")
   //- link(rel="stylesheet",href="css/yrd-Medium.css")
@@ -77,13 +77,18 @@ block content
               img(src="#{url}/img/homepage-text-2.png")
             .text-6.fadeInDown.animated.delay-10(@click="goNext")
               img(src="#{url}/img/homepage-text-3.png")
+              .arrow
+                img(src="#{url}/img/homepage-text-3-arrow.png")
             .box.fadeInDown.animated.delay-13
               img(src="#{url}/img/homepage-car.png")
               .text-3
                 img(src="#{url}/img/homepage-cd.png")
+                .icon
+                  .inside
+                    img(src="#{url}/img/homepage-cd-icon.png")
               .slider
                 .slide
-                  mp4(src="http://image.giccoo.com/projects/test/video-build.mp4",poster="#{url}/img/poster.jpg")
+                  mp4(src="http://image.giccoo.com/projects/test/video-build.mp4",poster="#{url}/img/poster.jpg",controls="true",playsinline="true")
                   //- transition(name="page-zoom")
                   //-   .item(v-show="carIndex == 1")
                   //-     img(src="#{url}/img/car-1.jpg")
@@ -113,7 +118,7 @@ block content
           .title.fadeInDown.animated.delay-5
             img(src="#{url}/img/waitpage-title.png")
           .nickname.fadeInDown.animated.delay-7
-            input(type="text",v-model="nickname",placeholder="请输入您的昵称_")
+            input(type="text",v-reset-input,v-model="nickname",placeholder="请输入您的昵称_")
             .btn-start(@click="goShow")
               img(src="#{url}/img/btn-start.png")
 
@@ -128,7 +133,7 @@ block content
                 img(src="#{url}/img/btn-share.png")
             .form-content.fadeIn.animated
               .mobile
-                input#mobile(type="number",v-model="mobile",placeholder="请输入您的电话，预约试驾_",@focus="focusEvt",@blur="blurEvt")
+                input#mobile(type="number",v-reset-input,v-model="mobile",placeholder="请输入您的电话，预约试驾_",@focus="focusEvt",@blur="blurEvt")
                 .btn-start(@click="goSubmit")
                   img(src="#{url}/img/btn-start.png")
           .btn-web(@click="goWeb")
