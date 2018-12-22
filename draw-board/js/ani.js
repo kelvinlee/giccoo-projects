@@ -458,6 +458,8 @@ function setShape(){
 	step3bgC.mask=theMask
 	step3bgC.height=theMask.height
 	step3bgC.y=400-theMask.height
+
+
 }
 
 var page2=new PIXI.Container()
@@ -483,6 +485,8 @@ function goFinal1(){//=======================================================最
 
 	p2car1=new Sprite(getTe(_CDN+"img/end1car1.png"));
 	p2car2=new Sprite(getTe(_CDN+"img/end1car2.png"));
+
+	
 	p2carC.addChild(p2car1,p2car2)
 	if(main.carIndex==2){
 		p2car1.visible=false
@@ -496,6 +500,12 @@ function goFinal1(){//=======================================================最
 
 	step3canvasC.y=stageH/2+20-275-(400-step3canvasC.height)/2+20
 	console.log("step3canvasC.height",step3canvasC.height)
+
+
+	
+	
+
+
 
 	var shan1=new Sprite(getTe(_CDN+"img/end2shan1.jpg"));
 	var shan2=new Sprite(getTe(_CDN+"img/end2shan2.jpg"));
@@ -514,12 +524,21 @@ function goFinal1(){//=======================================================最
 
 	page2.addChild(p2bg,end2shanC,step3canvasC,p2musicIco,p2carC)
 
+	var blurFilter1 = new PIXI.filters.BlurFilter()
+	//step3canvasC.cacheAsBitmap=true
+	blurFilter1.blur=20
+	shan1.filters = [blurFilter1]
+	shan2.filters = [blurFilter1]
+	shan3.filters = [blurFilter1]
+	shan4.filters = [blurFilter1]
+	console.log(blurFilter1)
+
 	
 	setEnd1t()
 
 	var i
 	for (i = 0; i < 4; i++) {
-		end2shanA[i].blendMode=_MULTIPLY
+		//end2shanA[i].blendMode=_MULTIPLY
 		if(i==colorNum){
 			end2shanA[i].visible=true
 		}else{
@@ -629,33 +648,33 @@ function setResult(){
 
 //===================================================================================================================End1 文案
 var style1_1=new PIXI.TextStyle({
-	fontSize:33*.75,//25
+	fontSize:33*.65,//25
 	fill:0x3f4f5c,
 	stroke:"0x3f4f5c",
 	strokeThickness:1
 })
 var style1_2=new PIXI.TextStyle({
-	fontSize:33*.75,
+	fontSize:33*.65,
 	fill:0x517990,
 	stroke:"0x517990",
 	strokeThickness:1
 })
 
 var style2_1=new PIXI.TextStyle({
-	fontSize:33*.75,
+	fontSize:33*.65,
 	fill:0x3f4f5c,
 	stroke:"0x3f4f5c",
 	strokeThickness:1
 })
 var style2_2=new PIXI.TextStyle({
-	fontSize:33*.75,
+	fontSize:33*.65,
 	fill:0x517990,
 	stroke:"0x517990",
 	strokeThickness:1
 })
 
 var style3_1=new PIXI.TextStyle({
-	fontSize:33*.75,
+	fontSize:33*.65,
 	fill:0x3f4f5c,
 	stroke:"0x3f4f5c",
 	strokeThickness:1
@@ -864,5 +883,6 @@ function goback(){
 
 	step3.addChild(step3t,step3canvasC,step3colorBarC,step3btn_t)
 	step3canvasC.position.set(0,0)
+
 
 }
