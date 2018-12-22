@@ -45,7 +45,6 @@ class UGC
 		@.app.view.className = @.opts.class if @.opts.class? and @.opts.class isnt ""
 		@.stage = @.app.stage
 		document.getElementById(@.opts.el).appendChild @.app.view
-		console.log "imageList:",imageList.length
 		PIXI.loader.add(imageList)
 		.use(@.loaditem.bind(@))
 		.load(@.build.bind(@))
