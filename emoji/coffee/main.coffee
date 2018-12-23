@@ -56,8 +56,8 @@ window.onload = ->
 		sys = "NeteaseMusic"
 		shareData = 
 			name: 'emoji'
-			title: 'emoji星人的圣诞KTV'
-			subTitle: "大批emoji星人齐聚圣诞KTV，快来测一测你是哪一个？"
+			title: 'emoji星人的KTV'
+			subTitle: "大批量emoji星人齐聚KTV，测一测你是其中哪一个？"
 			text: ''
 			picUrl: 'http://m.giccoo.com/emoji/img/ico.jpg'
 			link: 'http://m.giccoo.com/emoji/'
@@ -66,8 +66,8 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "emoji星人的圣诞KTV"
-				desc: "大批emoji星人齐聚圣诞KTV，快来测一测你是哪一个？"
+				title: "emoji星人的KTV"
+				desc: "大批量emoji星人齐聚KTV，测一测你是其中哪一个？"
 				link: "http://m.giccoo.com/emoji/"
 				imgUrl: "http://m.giccoo.com/emoji/img/ico.jpg"
 				success: ->
