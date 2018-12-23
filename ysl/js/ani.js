@@ -147,8 +147,7 @@ var aniA=[ani1C,ani2C,ani3C,ani4C]
 var typeA=[[3,2,1,0],[3,1,2,0],[2,1,3,0],[0,1,2,3],[1,0,2,3]]
 function setAllani(){
 	part1C.addChild(ani1C,ani2C,ani3C,ani4C)
-	Type=0
-	ani2C.pivot.y=-100
+	// ani2C.pivot.y=-100
 	aniA[typeA[Type][0]].y=200
 	aniA[typeA[Type][1]].y=300+600+10000
 	aniA[typeA[Type][2]].y=300+600+600+10000
@@ -165,15 +164,35 @@ function setPart1_1(){
 	}
 }
 
-var t1_0
+var t1_0,t1_1,t1_2,t1_3,t1_4
 function setT0(){
+	nowHeight=700
 	t1_0=new Sprite(getTe(_CDN+"img/t1_0.png"));
 	mainC.addChild(t1_0)
 	t1_0.y=nowHeight
 	nowHeight+=t1_0.height
+	aniA[typeA[Type][0]].y=180
+	aniA[typeA[Type][1]].y=900
+	aniA[typeA[Type][1]].x=90//==
+
+	aniA[typeA[Type][2]].y=1600
+	aniA[typeA[Type][3]].y=2400
 
 }
-
+var t1C=new PIXI.Container()
+var aniYA=[[180,900,1600,2400],[180,900,1600,2400],[180,900,1600,2400],[180,900,1600,2400]]
 function setT1234(){
+	mainC.addChild(t1C)
+	var t1A=[t1_1,t1_2,t1_3,t1_4]
+	nowHeight=656
+	for (var i = 0; i < 4; i++) {
+		t1A[i]=new Sprite(getTe(_CDN+"img/t1_"+i+".png"));
+		t1C.addChild(t1A[i])
+		if(i!=Type-1){
+			t1A[i].visible=false
+		}
 
+		aniA[typeA[Type][i]].y=aniYA[Type][i]
+	}
+	t1C.y=nowHeight
 }

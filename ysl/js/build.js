@@ -49,6 +49,10 @@ var imageList = [
 	_CDN+"img/ani4_5.png",
 
 	_CDN+"img/t1_0.png",
+	_CDN+"img/t1_1.png",
+	_CDN+"img/t1_2.png",
+	_CDN+"img/t1_3.png",
+	_CDN+"img/t1_4.png",
 
 	
 ];
@@ -105,7 +109,8 @@ function initAll(){
 
 
 var startY,endY,mouseYA,timeA,newPosition
-
+var nowHeight=656
+var heightLimit=-11000
 function touchStart(_e){
   TweenLite.killTweensOf(mainC)
 
@@ -118,8 +123,6 @@ function touchStart(_e){
   mouseYA=[0,0]
   timeA=[0,0]
 }
-var heightLimit=-11000
-var nowHeight=200
 function touchMove(_e){
 
   mainC.y=newPosition+(_e.data.global.y-startY)*2
