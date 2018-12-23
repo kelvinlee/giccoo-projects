@@ -162,6 +162,8 @@ function setPart1_1(){
 	}else{
 		setT0()
 	}
+
+	setPart1_2()
 }
 
 var t1_0,t1_1,t1_2,t1_3,t1_4
@@ -180,7 +182,7 @@ function setT0(){
 
 }
 var t1C=new PIXI.Container()
-var aniYA=[[180,1850,2600,3350],[180,1850,2600,3350],[180,1850,2600,3350],[180,1850,2600,3350]]
+var aniYA=[[180,1850,2600,3350],[180,1850,2600,3350],[180,1850,2600,3350],[250,1760,2600,3380]]
 function setT1234(){
 	mainC.addChild(t1C)
 	var t1A=[t1_1,t1_2,t1_3,t1_4]
@@ -196,4 +198,117 @@ function setT1234(){
 		aniA[typeA[Type][i]].y=aniYA[Type-1][i]
 	}
 	t1C.y=nowHeight
+	nowHeight+=t1C.height
 }
+
+var t2C=new PIXI.Container()
+var t2_0,t2_1
+function setPart1_2(){
+	mainC.addChild(t2C)
+	if(Type==0){
+		t2_0=new Sprite(getTe(_CDN+"img/t2_0.png"));
+		t2C.addChild(t2_0)
+	}else{
+		t2_1=new Sprite(getTe(_CDN+"img/t2_1.png"));
+		t2C.addChild(t2_1)
+	}
+	t2C.y=nowHeight+120
+
+	setAni5()
+	nowHeight+=t2C.height+120
+	setPart1_3()
+
+}
+
+var ani5C=new PIXI.Container()
+var ani5A=[]
+function setAni5(){
+	t2C.addChild(ani5C)
+	for (var i =0; i < 6; i++) {
+		var j=i+1
+		var _ani5=new Sprite(getTe(_CDN+"img/ani5_"+j+".png"));
+		ani5C.addChild(_ani5)
+		ani5A.push(_ani5)
+		_ani5.alpha=0
+	};
+	var _ani5=new Sprite(getTe(_CDN+"img/ani5_2.png"));
+		ani5C.addChild(_ani5)
+		ani5A.push(_ani5)
+		_ani5.alpha=0
+}
+function ani5Play(){
+	console.log("黑胶碟动画开始")
+	
+	TweenMax.to(ani5A[0],2,{alpha:1,delay:1})
+	ani5A[1].alpha=1
+	ani5A[6].alpha=1
+	ani5A[1].pivot.set(439,775)
+	ani5A[1].position.set(439,775)
+	ani5A[6].pivot.set(439,775)
+	ani5A[6].position.set(209.5,651)
+	ani5A[1].x-=30
+	ani5A[1].y-=15
+	TweenMax.from(ani5A[1],.5,{x:"+=300",y:"+=150",ease:Linear.easeNone,onComplete:function(){
+		TweenMax.to(ani5A[1],.5,{x:"+=30",y:"+=15"})
+	}})
+
+	TweenMax.from(ani5A[6],.5,{x:"-=300",y:"-=150",onComplete:function(){
+		ani5A[6].alpha=0
+		ani5A[2].alpha=1
+		ani5A[3].alpha=1
+		ani5A[4].alpha=1
+		ani5A[5].alpha=1
+
+		ani5A[2].pivot.set(209.5,651)
+		ani5A[2].position.set(209.5,651)
+
+		ani5A[3].pivot.set(209.5,651)
+		ani5A[3].position.set(209.5,651)
+		ani5A[4].pivot.set(209.5,651)
+		ani5A[4].position.set(209.5,651)
+		//ani5A[2].scale.set(.9,.9)
+		TweenMax.from(ani5A[2].scale,.5,{x:.9,y:.9})
+
+		TweenMax.from(ani5A[3].scale,.5,{x:.6,y:.6,delay:.05})
+		TweenMax.from(ani5A[4].scale,.5,{x:.6,y:.6,delay:.1})
+	}})
+
+}
+
+var t3C=new PIXI.Container()
+
+var t3,hint
+var t3A=[]
+var ani6_1,ani6_2
+
+function setPart1_3(){
+	mainC.addChild(t3C)
+	t3C.y=nowHeight+20
+	t3=new Sprite(getTe(_CDN+"img/t3.png"));
+	
+
+	hint=new Sprite(getTe(_CDN+"img/hint.png"));
+	t3C.addChild(t3,hint)
+	hint.y=t3C.height-hint.height
+	TweenMax.to(hint,.6,{alpha:.2,repeat:100000,yoyo:true})
+	nowHeight+=t3C.height+20+50
+
+	for (var i = 0; i < 4; i++) {
+		var j=i+1
+		var _t3=new Sprite(getTe(_CDN+"img/t3_"+j+".png"));
+		t3C.addChild(_t3)
+		if(i!=Type-1){
+			_t3.alpha=0
+		}
+	}
+	ani6_1=new Sprite(getTe(_CDN+"img/ani6_1.png"));
+	ani6_2=new Sprite(getTe(_CDN+"img/ani6_2.png"));
+
+	t3C.addChild(ani6_1,ani6_2)
+	ani6_1.y+=30
+	ani6_2.y+=30
+	TweenMax.to(ani6_1,2,{y:"-=40",repeat:10000,yoyo:true,ease:Sine.easeInOut})
+	TweenMax.to(ani6_2,2,{y:"-=40",repeat:10000,yoyo:true,ease:Sine.easeInOut,delay:.5})
+
+}
+

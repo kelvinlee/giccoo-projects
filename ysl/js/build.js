@@ -48,11 +48,32 @@ var imageList = [
 	_CDN+"img/ani4_4.png",
 	_CDN+"img/ani4_5.png",
 
+	_CDN+"img/ani5_1.png",
+	_CDN+"img/ani5_2.png",
+	_CDN+"img/ani5_3.png",
+	_CDN+"img/ani5_4.png",
+	_CDN+"img/ani5_5.png",
+	_CDN+"img/ani5_6.png",
+
+	_CDN+"img/ani6_1.png",
+	_CDN+"img/ani6_2.png",
+
 	_CDN+"img/t1_0.png",
 	_CDN+"img/t1_1.png",
 	_CDN+"img/t1_2.png",
 	_CDN+"img/t1_3.png",
 	_CDN+"img/t1_4.png",
+
+	_CDN+"img/t2_0.png",
+	_CDN+"img/t2_1.png",
+
+	_CDN+"img/t3.png",
+	_CDN+"img/t3_1.png",
+	_CDN+"img/t3_2.png",
+	_CDN+"img/t3_3.png",
+	_CDN+"img/t3_4.png",
+
+	_CDN+"img/hint.png",
 
 	
 ];
@@ -87,7 +108,7 @@ function getStart(){
 		Type=0
 	}else{
 		Type=parseInt(Math.random()*4+1)
-		Type=2
+		Type=4
 	}
 	initAll()
 	setPart1()
@@ -96,7 +117,7 @@ function getStart(){
 
 var mainC=new PIXI.Container()
 var allBG=new PIXI.Graphics()
-
+var ticker=new PIXI.ticker.Ticker()
 function initAll(){
 	allBG.beginFill(0xffffff)
 	allBG.drawRect(0,0,640,11000)
@@ -105,7 +126,9 @@ function initAll(){
 
 	pStage.interactive=true
   pStage.touchstart=touchStart
-  //pageLoop()
+  ticker.add(pageLoop)
+  ticker.start()
+  pStage.tap=canClick
 }
 
 
@@ -150,4 +173,33 @@ function touchEnd(_e){
   TweenMax.to(mainC,.5,{y:endY})
 
   //TweenMax.to($("#userText"),1,{y:(theNewNowHeight+part4.y-217+endY)/640*screenW})
+}
+var ifAni5Go=0
+var ifFinalGo=0
+var ifCanClick=0
+function pageLoop(){
+	if(-mainC.y>=t2C.y&&ifAni5Go==0){
+		ifAni5Go=1
+		console.log("ani5播放！")
+		ani5Play()
+	}
+	heightLimit=-(nowHeight-stageH)
+
+	if(ifFinalGo==0&&mainC.y<heightLimit+stageH/8){
+		//console.log("到底咯")
+		ifCanClick=1
+	}else{
+		ifCanClick=0
+	}
+}
+
+function canClick(){
+	if(ifCanClick==1){
+		console.log("点！")
+		ifFinalGo=1
+		ifCanClick=0
+		
+	}else{
+
+	}
 }
