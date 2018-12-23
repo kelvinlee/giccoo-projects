@@ -589,7 +589,7 @@ function goEnd(){
 		
 	// };
 	if (_public.wx || _public.wy) {
-		qr=new Sprite(getTe(_CDN+"img/qr2.png"));
+		qr=new Sprite(getTe(_CDN+"img/qr3.png"));
 	}else{
 		qr=new Sprite(getTe(_CDN+"img/qr.png"));
 	}

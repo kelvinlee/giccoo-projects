@@ -136,7 +136,7 @@ var imageList = [
 	_CDN+"img/endbtn2.png",
 
 	_CDN+"img/qr.png",
-	_CDN+"img/qr2.png",
+	_CDN+"img/qr3.png",
 	_CDN+"img/logo.png",
 	_CDN+"img/logo-fc.png",
 ];
