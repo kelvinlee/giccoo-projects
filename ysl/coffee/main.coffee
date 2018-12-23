@@ -135,9 +135,9 @@ window.onload = ->
 			TrueW = document.documentElement.clientWidth
 			@.get()
 			# @.next() # for test
-			setTimeout =>
-				@.next()
-			,200
+			# setTimeout =>
+			# 	@.next()
+			# ,200
 
 			timein = setInterval =>
 				@.progress += 3
@@ -146,7 +146,7 @@ window.onload = ->
 					@.progress = 100
 					clearInterval timein
 					_cache = setTimeout =>
-						# @.next()
+						@.next()
 					,3000
 					_startCache = setInterval =>
 						@.number += 1+Math.floor Math.random()*2
