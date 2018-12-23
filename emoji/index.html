@@ -21,7 +21,7 @@
   </head>
   <body>
     <div id="public" @touchstart="startGame" class="public">
-      <player icon="true" src="mp3/bgm.mp3"> <!-- //image.giccoo.com/projects/emoji -->
+      <player icon="true" src="//image.giccoo.com/projects/emoji1/mp3/bgm.mp3" loop="true"> <!-- //image.giccoo.com/projects/emoji -->
 
         <div class="bell bell-1"></div>
         <div class="bell bell-2"></div>
@@ -35,7 +35,7 @@
     </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
-        <div :style="{transform: 'translate3d('+progress/2+'%,0,0)'}" class="xman"><img src="img/xman.png"></div><!-- //image.giccoo.com/projects/emoji -->
+        <div :style="{transform: 'translate3d('+progress/2+'%,0,0)'}" class="xman"><img src="//image.giccoo.com/projects/emoji1/img/xman.png"></div><!-- //image.giccoo.com/projects/emoji -->
         <p class="centeralign">Loading..{{progress}}%</p>
       </div>
     </div>
@@ -73,8 +73,8 @@
         <div v-show="pageNote" class="pop pop-note">
           <div class="bg zoomShake animated delay-7"></div>
           <div class="content">
-            <div class="text zoomIn animated delay-10"><img :src="'img/text-'+singerIndex+'.png'"></div>
-            <div class="card flipInY animated delay-3"><img :src="'img/card-'+singerIndex+'.png'">
+            <div class="text zoomIn animated delay-10"><img :src="'//image.giccoo.com/projects/emoji1/img/text-'+singerIndex+'.png'"></div>
+            <div class="card flipInY animated delay-3"><img :src="'//image.giccoo.com/projects/emoji1/img/card-'+singerIndex+'.png'">
               <div class="stamp zoomBigIn animated delay-7"><img src="//image.giccoo.com/projects/emoji/img/stamp.png"></div>
             </div>
             <div class="title zoomIn animated delay-11"><img src="//image.giccoo.com/projects/emoji/img/pop-title.png"></div>
@@ -84,7 +84,7 @@
               </div>
             </div>
           </div>
-          <div @click="closeNote" class="btn-close zoomIn animated delay-13"><img src="img/btn-close.png"></div>
+          <div @click="closeNote" class="btn-close zoomIn animated delay-13"><img src="//image.giccoo.com/projects/emoji1/img/btn-close.png"></div>
         </div>
       </transition>
       <div v-show="ugcShow" class="pop flashcamera">
