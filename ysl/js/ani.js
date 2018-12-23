@@ -180,19 +180,20 @@ function setT0(){
 
 }
 var t1C=new PIXI.Container()
-var aniYA=[[180,900,1600,2400],[180,900,1600,2400],[180,900,1600,2400],[180,900,1600,2400]]
+var aniYA=[[180,1850,2600,3350],[180,1850,2600,3350],[180,1850,2600,3350],[180,1850,2600,3350]]
 function setT1234(){
 	mainC.addChild(t1C)
 	var t1A=[t1_1,t1_2,t1_3,t1_4]
 	nowHeight=656
 	for (var i = 0; i < 4; i++) {
-		t1A[i]=new Sprite(getTe(_CDN+"img/t1_"+i+".png"));
+		var j=i+1
+		t1A[i]=new Sprite(getTe(_CDN+"img/t1_"+j+".png"));
 		t1C.addChild(t1A[i])
 		if(i!=Type-1){
 			t1A[i].visible=false
 		}
 
-		aniA[typeA[Type][i]].y=aniYA[Type][i]
+		aniA[typeA[Type][i]].y=aniYA[Type-1][i]
 	}
 	t1C.y=nowHeight
 }

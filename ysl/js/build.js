@@ -87,6 +87,7 @@ function getStart(){
 		Type=0
 	}else{
 		Type=parseInt(Math.random()*4+1)
+		Type=2
 	}
 	initAll()
 	setPart1()
