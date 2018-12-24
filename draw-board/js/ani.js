@@ -515,7 +515,7 @@ function goFinal1(){//=======================================================最
 	end2shanA=[shan1,shan2,shan3,shan4]
 	end2shanC.addChild(shan1,shan2,shan3,shan4)
 	end2shanC.y=stageH/2-241+20
-	end2shanC.scale.x=end2shanC.scale.y=640/750
+	end2shanC.scale.x=end2shanC.scale.y=750/750
 
 	shan1.blendMode=_MULTIPLY
 	shan2.blendMode=_MULTIPLY

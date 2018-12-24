@@ -81,14 +81,14 @@ window.onload = ->
 			wx.onMenuShareQQ shareContent
 			wx.onMenuShareWeibo shareContent
 
-	# _public = new Vue
-	# 	el: "#public"
-	# 	data:
-	# 		note: true
-	# 		playing: false
-	# 	mounted: ->
-	# 		document.addEventListener "WeixinJSBridgeReady", ->
-	# 			_public.$children[0].change()
+	_public = new Vue
+		el: "#public"
+		data:
+			note: true
+			playing: false
+		mounted: ->
+			document.addEventListener "WeixinJSBridgeReady", ->
+				_public.$children[0].change()
 
 	loading = new Vue
 		el: "#loading"

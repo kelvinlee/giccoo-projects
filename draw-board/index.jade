@@ -12,7 +12,7 @@ block css
   //- link(rel="stylesheet",href="css/yrd-Medium.css")
   link(rel="stylesheet",href="css/base.css")
 
-  //- script.
+  script.
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -34,7 +34,7 @@ block content
     .qr
       img(src="#{url}/img/qrcode.png")
       .text 请使用手机扫描二维码参与活动
-  //- .public#public
+  .public#public
     player(icon="true",src="#{url}/mp3/bgm.mp3")
     //- .player(:class="{play: playing, pause: !playing}",@click="playing = !playing")
       .icon-play(:class="{play: playing, pause: !playing}")
