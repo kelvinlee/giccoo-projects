@@ -157,6 +157,7 @@ init = ->
 			pageIndex: 1
 			step: 1
 			singerIndex: 1
+			bgmPlay: false
 			startgame: false
 			folder: ""
 			BGColor: "#ffffff"
@@ -409,6 +410,7 @@ init = ->
 			openInApp: ->
 				CloudMusic.open("https://m.giccoo.com/draw-board画山成岳，致敬心中的江湖/")
 			goNext: ->
+				@.videoStop()
 				@.pageIndex = 2
 				clearInterval _startCache
 
@@ -450,6 +452,16 @@ init = ->
 				# ,100
 			blurEvt: (evt)->
 				clearInterval _startCache
+			videoplay: (data)->
+				console.log "videoPlay",data
+				@.bgmPlay = _public.$children[0].playing
+				_public.$children[0].pause() if data.playing
+			videoStop: ->
+				@.$children[0].stop()
+			videoPause: ->
+				_public.$children[0].play() if @.bgmPlay
+					
+
 		# watch:
 		mounted: ->
 			# _startCache = setInterval =>
@@ -475,6 +487,8 @@ init = ->
 			console.log "h:",h
 			# window.onresize = ->
 			# 	console.log "resize:",document.documentElement.clientHeight
+
+				
 
 				
 			

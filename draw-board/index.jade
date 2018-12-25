@@ -12,15 +12,6 @@ block css
   //- link(rel="stylesheet",href="css/yrd-Medium.css")
   link(rel="stylesheet",href="css/base.css")
 
-  script.
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-
   //- script(src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js")
   //- script.
     var vConsole = new VConsole();
@@ -90,7 +81,7 @@ block content
                     img(src="#{url}/img/homepage-cd-icon.png")
               .slider
                 .slide
-                  mp4(src="http://image.giccoo.com/projects/test/video-build-2.mp4",poster="#{url}/img/poster.jpg",controls="true",playsinline="true")
+                  mp4(@play="videoplay",@pause="videoPause",@stop="videoPause",src="http://image.giccoo.com/projects/test/video-build-3.mp4",poster="#{url}/img/poster.jpg",controls="true",playsinline="true")
                   //- transition(name="page-zoom")
                   //-   .item(v-show="carIndex == 1")
                   //-     img(src="#{url}/img/car-1.jpg")
@@ -171,6 +162,15 @@ block js
   script(src="js/build.js?v=1")
   script(src="js/main.js?v=1")
   script(src="js/ani.js?v=1")
+
+  script.
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
 
   
 
