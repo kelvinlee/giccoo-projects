@@ -17,6 +17,19 @@ var imageList = [
 	_CDN+"img/wave2.png",
 	_CDN+"img/wave3.png",
 	_CDN+"img/wave4.png",
+
+	_CDN+"img/pic1.png",
+	_CDN+"img/pic2.png",
+	_CDN+"img/pic3.png",
+	_CDN+"img/pic4.png",
+	_CDN+"img/pic5.png",
+	_CDN+"img/pic6.png",
+	_CDN+"img/pic7.png",
+
+	_CDN+"img/cloud1.png",
+	_CDN+"img/cloud2.png",
+	_CDN+"img/cloud3.png",
+
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
