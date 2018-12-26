@@ -21,7 +21,7 @@ function initAll () {
 
 	scene.add(cube)
 	camera.position.z=1000
-	cube.position.set(0,-300,0)
+	cube.position.set(0,-200,0)
 	cube.receiveShadow=true
 
 
@@ -30,7 +30,7 @@ function initAll () {
 	plight.position.set(-500,-500,200)
 
 	var dlight=new THREE.DirectionalLight(0xffffff,1)
-	dlight.position.set(0,1,0)
+	dlight.position.set(1,1,1)
 
 
 	renderer.shadowMapEnabled=true;
