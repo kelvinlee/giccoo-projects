@@ -517,7 +517,7 @@ video,canvas,svg
 .loading-page
 	+posa
 	+tl
-	z-index: 9999
+	z-index: 2008
 	+w
 	+h
 	// +bc(rgba(0,0,0,0.6))
@@ -525,6 +525,17 @@ video,canvas,svg
 	.content
 		+abcentermiddle
 		+w
+		.btns
+			margin-top: 5%
+			+posr
+			.btn
+				+w(50%)
+				+h
+				+posa
+				+tl
+			.btn-more
+				left: auto
+				+tr
 	.ball-spin-fade-loader
 		+posa
 		+tl(50%,50%)

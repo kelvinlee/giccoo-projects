@@ -49,10 +49,13 @@ Vue.component "mp4",
 		play: ->
 			@video.play() if @video
 			@playing = true
+			@.$emit "play", {playing: true}
 		pause: ->
 			@playing = false
+			@.$emit "pause", {playing: false}
 		stop: ->
 			@video.pause() if @video 
+			@.$emit "stop", {playing: false}
 		ended: ->
 			@playing = false
 		change: ->
@@ -62,7 +65,6 @@ Vue.component "mp4",
 			else
 				@video.play()
 				@stoped = false
-				_hmt? and _hmt.push(['_trackEvent', "adidas-originals-eqt", "video", "play", "-"])
 				@animate()
 
 		initCanvas: ->

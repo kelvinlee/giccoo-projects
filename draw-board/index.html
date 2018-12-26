@@ -8,20 +8,18 @@
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66865226-1"></script>
     <script>
-      var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?54c76cfc457022758fa6779bf3fa02a4";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-      })();
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
       
+      gtag('config', 'UA-66865226-1');
     </script>
   </head>
   <body>
     <div id="public" class="public">
-      <player icon="true" loop="true" src="./mp3/bgm.mp3"></player>
+      <player icon="true" loop="true" src="//image.giccoo.com/projects/draw-board/mp3/bgm.mp3"></player>
     </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
@@ -51,29 +49,29 @@
       <transition name="page-zoom">
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
-            <div class="text-1 fadeInDown animated delay-6"><img src="./img/logo.png"></div>
+            <div class="text-1 fadeInDown animated delay-6"><img src="//image.giccoo.com/projects/draw-board/img/logo.png"></div>
             <div class="middle-box">
-              <div class="text-2 fadeInDown animated delay-7"><img src="./img/homepage-text.png"></div>
-              <div class="text-4 fadeInDown animated delay-8"><img src="./img/homepage-text-1.png"></div>
-              <div class="text-5 fadeInDown animated delay-9"><img src="./img/homepage-text-2.png"></div>
-              <div @click="goNext" class="text-6 fadeInDown animated delay-10"><img src="./img/homepage-text-3.png">
-                <div class="arrow"><img src="./img/homepage-text-3-arrow.png"></div>
+              <div class="text-2 fadeInDown animated delay-7"><img src="//image.giccoo.com/projects/draw-board/img/homepage-text.png"></div>
+              <div class="text-4 fadeInDown animated delay-8"><img src="//image.giccoo.com/projects/draw-board/img/homepage-text-1.png"></div>
+              <div class="text-5 fadeInDown animated delay-9"><img src="//image.giccoo.com/projects/draw-board/img/homepage-text-2.png"></div>
+              <div @click="goNext" class="text-6 fadeInDown animated delay-10"><img src="//image.giccoo.com/projects/draw-board/img/homepage-text-3.png">
+                <div class="arrow"><img src="//image.giccoo.com/projects/draw-board/img/homepage-text-3-arrow.png"></div>
               </div>
-              <div class="box fadeInDown animated delay-13"><img src="./img/homepage-car.png">
-                <div class="text-3"><img src="./img/homepage-cd.png">
-                  <div class="cd"><img src="./img/cd.png"></div>
-                  <div class="icon">
-                    <div class="inside"><img src="./img/homepage-cd-icon.png"></div>
-                  </div>
+              <div class="text-3"><img src="//image.giccoo.com/projects/draw-board/img/homepage-cd.png">
+                <div class="cd"><img src="//image.giccoo.com/projects/draw-board/img/cd.png"></div>
+                <div class="icon">
+                  <div class="inside"><img src="//image.giccoo.com/projects/draw-board/img/homepage-cd-icon.png"></div>
                 </div>
+              </div>
+              <div class="box fadeInDown animated delay-13"><img src="//image.giccoo.com/projects/draw-board/img/homepage-car.png">
                 <div class="slider">
                   <div class="slide">
-                    <mp4 src="http://image.giccoo.com/projects/test/video-build-2.mp4" poster="./img/poster.jpg" controls="true" playsinline="true"></mp4>
+                    <mp4 @play="videoplay" @pause="videoPause" @stop="videoPause" src="http://image.giccoo.com/projects/test/video-build-3.mp4" poster="//image.giccoo.com/projects/draw-board/img/poster.jpg" controls="true" playsinline="true"></mp4>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="logo-down fadeInDown animated delay-16"><img src="./img/logo-down.png"></div>
+            <div class="logo-down fadeInDown animated delay-16"><img src="//image.giccoo.com/projects/draw-board/img/logo-down.png"></div>
           </div>
         </div>
       </transition>
@@ -89,16 +87,16 @@
           <div :class="'index-'+carIndex" class="content">
             <div class="icon-music">
               <div class="icon icon-1">
-                <div class="inside"><img src="./img/icon-music-1.png"></div>
+                <div class="inside"><img src="//image.giccoo.com/projects/draw-board/img/icon-music-1.png"></div>
               </div>
               <div class="icon icon-2">
-                <div class="inside"><img src="./img/icon-music-2.png"></div>
+                <div class="inside"><img src="//image.giccoo.com/projects/draw-board/img/icon-music-2.png"></div>
               </div>
             </div>
-            <div class="title fadeInDown animated delay-5"><img src="./img/waitpage-title.png"></div>
+            <div class="title fadeInDown animated delay-5"><img src="//image.giccoo.com/projects/draw-board/img/waitpage-title.png"></div>
             <div class="nickname fadeInDown animated delay-7">
               <input type="text" v-reset-input v-model="nickname" placeholder="请输入您的昵称_">
-              <div @click="goShow" class="btn-start"><img src="./img/btn-start.png"></div>
+              <div @click="goShow" class="btn-start"><img src="//image.giccoo.com/projects/draw-board/img/btn-start.png"></div>
             </div>
           </div>
         </div>
@@ -108,17 +106,17 @@
           <div class="content">
             <div :class="{on: formBoxShow}" class="form-box">
               <div class="btns">
-                <div @click="formBoxShow = !formBoxShow" class="btn btn-form"><img src="./img/btn-form.png"></div>
-                <div @click="share" class="btn btn-share"><img src="./img/btn-share.png"></div>
+                <div @click="formBoxShow = !formBoxShow" class="btn btn-form"><img src="//image.giccoo.com/projects/draw-board/img/btn-form.png"></div>
+                <div @click="share" class="btn btn-share"><img src="//image.giccoo.com/projects/draw-board/img/btn-share.png"></div>
               </div>
               <div class="form-content fadeIn animated">
                 <div class="mobile">
                   <input id="mobile" type="number" v-reset-input v-model="mobile" placeholder="请输入您的电话，预约试驾_" @focus="focusEvt" @blur="blurEvt">
-                  <div @click="goSubmit" class="btn-start"><img src="./img/btn-start.png"></div>
+                  <div @click="goSubmit" class="btn-start"><img src="//image.giccoo.com/projects/draw-board/img/btn-start.png"></div>
                 </div>
               </div>
             </div>
-            <div @click="goWeb" class="btn-web"><img src="./img/btn-web.png"></div>
+            <div @click="goWeb" class="btn-web"><img src="//image.giccoo.com/projects/draw-board/img/btn-web.png"></div>
             <div @click="openSong()" class="btn-music"></div>
             <div @click="formBoxShow = false" class="goNormal"></div>
           </div>
@@ -127,7 +125,7 @@
       <div v-show="ugcShow" class="pop flashcamera">
         <div class="content">
           <div class="small-size">
-            <div @click="closeUGC" class="close"><img src="./img/icon-close.png"></div><img :src="ugc">
+            <div @click="closeUGC" class="close"><img src="//image.giccoo.com/projects/draw-board/img/icon-close.png"></div><img :src="ugc">
             <div class="note">长按保存图片</div>
           </div>
         </div>

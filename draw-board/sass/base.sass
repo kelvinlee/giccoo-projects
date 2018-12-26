@@ -2,10 +2,10 @@
 // @import sass/row
 @import ../../libs/sass/loader-ball
 
-$debug : true
+$debug : false
 $cdn : "../"
 @if not $debug
-	$cdn : "//image.giccoo.com/projects/starbucks/"
+	$cdn : "//image.giccoo.com/projects/draw-board/"
 
 @for $i from 1 through 30
 	.delay-#{$i}
@@ -629,8 +629,10 @@ video,canvas,svg
 			margin-left: 10%
 		.text-3
 			+posa
-			+tl(-38%,1%)
+			+tl(20%,5%)
 			+iw(234,576,100%)
+			.biger &
+				+tl(24%,5%)
 			.cd
 				+posa
 				+tr(16%,12%)

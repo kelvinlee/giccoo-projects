@@ -36,7 +36,10 @@
         <div v-show="loading" class="loading-page">
           <div class="content">
             <div class="loading-icon"><img src="./img/loading-icon.png"></div>
-            <div class="text"><img src="./img/loading-text.png"></div>
+            <div class="btns"><img src="./img/loading-btn.png">
+              <div @click="goBack" class="btn btn-back"></div>
+              <div @click="goMore" class="btn btn-more"></div>
+            </div>
           </div>
         </div>
       </transition>
@@ -107,7 +110,7 @@
       </transition>
       <transition name="page-zoom">
         <div v-show="pageIndex == 3" class="page page-3">
-          <div class="content">
+          <div id="manhua" class="content">
             <div class="arrow"><img v-if="yearName != 'none'" :src="'./img/arrow-'+yearName+'.png'"></div>
             <div class="box"><img v-if="yearName != 'none'" :src="'./img/long-'+yearName+'.jpg'">
               <div @click="goStep2" class="btn"><img src="./img/btn-find.png"></div>

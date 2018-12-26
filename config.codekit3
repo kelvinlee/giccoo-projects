@@ -323,7 +323,7 @@
 		"oAP": "/draw-board/img/bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/bg1.jpg": {
@@ -334,7 +334,7 @@
 		"oAP": "/draw-board/img/bg1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/bg2.jpg": {
@@ -345,7 +345,7 @@
 		"oAP": "/draw-board/img/bg2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/bg3.jpg": {
@@ -356,7 +356,7 @@
 		"oAP": "/draw-board/img/bg3.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/bg4.jpg": {
@@ -367,7 +367,7 @@
 		"oAP": "/draw-board/img/bg4.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/btn-form.png": {
@@ -376,8 +376,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/btn-form.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -387,8 +387,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/btn-share.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -398,8 +398,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/btn-start.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -409,8 +409,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/btn-web.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -422,7 +422,7 @@
 		"oAP": "/draw-board/img/car-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/car-2.jpg": {
@@ -433,7 +433,7 @@
 		"oAP": "/draw-board/img/car-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/cd.png": {
@@ -442,8 +442,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/cd.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -453,8 +453,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/color1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -464,8 +464,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/color2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -475,8 +475,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/color3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -486,8 +486,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/color4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -497,8 +497,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/colorbtn1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -508,8 +508,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/colorbtn2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -519,8 +519,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/colorbtn3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -530,8 +530,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/colorbtn4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -543,7 +543,7 @@
 		"oAP": "/draw-board/img/cover.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/end1bg.jpg": {
@@ -554,7 +554,7 @@
 		"oAP": "/draw-board/img/end1bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/end1car1.png": {
@@ -563,8 +563,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/end1car1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -574,8 +574,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/end1car2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -585,8 +585,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/end1music.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -596,8 +596,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/end2music.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -609,7 +609,7 @@
 		"oAP": "/draw-board/img/end2shan1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/end2shan2.jpg": {
@@ -620,7 +620,7 @@
 		"oAP": "/draw-board/img/end2shan2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/end2shan3.jpg": {
@@ -631,7 +631,7 @@
 		"oAP": "/draw-board/img/end2shan3.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/end2shan4.jpg": {
@@ -642,7 +642,7 @@
 		"oAP": "/draw-board/img/end2shan4.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/homepage-car.png": {
@@ -651,8 +651,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/homepage-car.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -662,8 +662,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/homepage-cd-icon.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -673,8 +673,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/homepage-cd.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -706,8 +706,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/homepage-text-3-arrow.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -717,8 +717,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/homepage-text-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -741,7 +741,7 @@
 		"oAP": "/draw-board/img/ico.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/icon-close.png": {
@@ -750,8 +750,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/icon-close.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -761,8 +761,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/icon-music-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -772,8 +772,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/icon-music-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -783,8 +783,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/icon-music.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -794,8 +794,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/icon-play.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -805,8 +805,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/icon-stop.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -827,8 +827,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/logo-down.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -838,8 +838,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/logo.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -849,8 +849,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/musicico.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -862,7 +862,7 @@
 		"oAP": "/draw-board/img/p1_bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/p1_btns.png": {
@@ -871,8 +871,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/p1_btns.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -882,8 +882,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/p1_dot.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -893,8 +893,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/p1_dot_on.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -904,8 +904,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/p1_t.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -915,8 +915,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/p1_wb.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -926,8 +926,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/pen2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -939,7 +939,7 @@
 		"oAP": "/draw-board/img/poster.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/qr.png": {
@@ -948,8 +948,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/qr.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -959,8 +959,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/step1t.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -970,8 +970,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/step2bar.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -981,8 +981,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/step2line.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -992,8 +992,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/step2mover.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1003,8 +1003,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/step2t.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1014,8 +1014,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/step3btn_t.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1025,8 +1025,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/step3t.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1036,8 +1036,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/tag1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1047,8 +1047,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/tag2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1058,8 +1058,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/tag3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1069,8 +1069,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/tbar.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1080,8 +1080,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1091,8 +1091,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text10.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1102,8 +1102,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text11.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1113,8 +1113,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text12.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1124,8 +1124,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text13.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1135,8 +1135,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text14.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1146,8 +1146,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text15.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1157,8 +1157,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text16.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1168,8 +1168,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text17.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1179,8 +1179,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text18.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1190,8 +1190,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text19.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1201,8 +1201,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1212,8 +1212,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text20.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1223,8 +1223,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1234,8 +1234,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1245,8 +1245,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text5.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1256,8 +1256,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text6.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1267,8 +1267,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text7.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1278,8 +1278,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text8.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1289,8 +1289,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/text9.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1302,7 +1302,7 @@
 		"oAP": "/draw-board/img/waitpage-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/draw-board/img/waitpage-2.jpg": {
@@ -1322,8 +1322,8 @@
 		"oA": 0,
 		"oAP": "/draw-board/img/waitpage-title.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1444,11 +1444,25 @@
 		"oAP": "/draw-board/video/3.mp4",
 		"oF": 0
 		},
+	"/draw-board/video/4.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/draw-board/video/4.mp4",
+		"oF": 0
+		},
 	"/draw-board/video/video-build-2.mp4": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/draw-board/video/video-build-2.mp4",
+		"oF": 0
+		},
+	"/draw-board/video/video-build-3.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/draw-board/video/video-build-3.mp4",
 		"oF": 0
 		},
 	"/elr4": {
@@ -6520,6 +6534,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/lenovo/img/loading-btn.png": {
+		"ft": 32768,
+		"iS": 142678,
+		"oA": 0,
+		"oAP": "/lenovo/img/loading-btn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/lenovo/img/loading-icon.png": {
 		"ft": 32768,
 		"iS": 187812,
@@ -9450,6 +9475,20 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"/three-test/js/test.c4d": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/three-test/js/test.c4d",
+		"oF": 0
+		},
+	"/three-test/js/test.mtl": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/three-test/js/test.mtl",
+		"oF": 0
 		},
 	"/three-test/js/test.obj": {
 		"cB": 0,

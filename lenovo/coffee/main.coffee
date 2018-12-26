@@ -278,6 +278,9 @@ init = ->
 				@.yearName = year
 				@.pageIndex = 3
 				@.logo = false
+				setTimeout =>
+					document.getElementById("manhua").scrollTop = 0
+				,20
 
 			prev: ->
 				@.$children[0].prev()
@@ -394,14 +397,14 @@ init = ->
 			goSubmit: ->
 				data = {
 					username: @.nickname
-					mobile:   @.mobile
+					message: @.message
+					year: @.yearName
+					yearImage: @.singerIndex
+					mobile: "18888888888"
 				}
-				axios.post "#{apiLink}active/autoSave/insert/database/draw/",data
+				axios.post "#{apiLink}active/autoSave/insert/database/lenovo/",data
 				.then (msg)=>
-					if msg.data.code is 200
-						@.share()
-					else
-						@.send msg.data.reason
+					console.log "msg:",msg
 				.catch (err)=>
 					console.log "err:",err
 					@.send "请求错误,请重试"
@@ -426,13 +429,21 @@ init = ->
 			goStep2: ->
 				@.loading = true
 				@.logo = true
-				setTimeout =>
-					@.pageIndex = 2
-					@.step = 2
-				,500
-				setTimeout =>
-					@.loading = false
-				,2500
+				@.pageIndex = 2
+				# setTimeout =>
+				# 	@.pageIndex = 2
+				# 	@.step = 2
+				# ,500
+				# setTimeout =>
+				# 	@.loading = false
+				# ,2500
+			goBack: ->
+				@.loading = false
+				document.getElementById("manhua").scrollTop = 0
+			goMore: ->
+				@.step = 2
+				@.loading = false
+				document.getElementById("manhua").scrollTop = 0
 			build: ->
 				if @.nickname is ""
 					@.send "请输入姓名"
@@ -443,6 +454,7 @@ init = ->
 				@.pageIndex = 4
 				@.logo = false
 				ugc.init()
+				@.goSubmit()
 				
 		# watch:
 		mounted: ->
