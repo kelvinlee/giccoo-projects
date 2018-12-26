@@ -93,9 +93,14 @@ class UGC
 
 		text = main.message
 		text = text.replace(/<br\/>/g,"\n")
-		message = new Text "#{text} ",{fontFamily : 'Arial', breakWords: true, wordWrapWidth: 505, wordWrap: true, fontSize: 20, fill : 0x6d4222, fontStyle: "normal",fontWeight: "normal", letterSpacing: 0, lineHeight: 28}
+		messageSize = 20
+		if text.length <= 15
+			messageSize = 26
+		message = new Text "#{text} ",{fontFamily : 'Arial', breakWords: true, wordWrapWidth: 505, wordWrap: true, fontSize: messageSize, fill : 0x6d4222, fontStyle: "normal",fontWeight: "normal", letterSpacing: 0, lineHeight: 28}
 		# message.width = 500
 		message.x = 125
+		if text.length <= 15
+			message.x = (@.opts.w - message.width)/2
 		message.y = contentimg.y + contentimg.height - 40
 
 		btnShare = new Spr _CDN+"img/share-title.png"
