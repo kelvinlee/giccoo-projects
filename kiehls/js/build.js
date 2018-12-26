@@ -1,7 +1,22 @@
 var _CDN = "./";
 // var _CDN = "//image.giccoo.com/projects/emoji/";
 var imageList = [
-	_CDN+"img/logo.png",
+	_CDN+"img/startboy.png",
+	_CDN+"img/startgirl.png",
+
+	_CDN+"img/hint1.png",
+	_CDN+"img/hint2.png",
+	_CDN+"img/hint3.png",
+	_CDN+"img/hint4.png",
+
+	_CDN+"img/startbtn.png",
+
+	_CDN+"img/bgc.png",
+
+	_CDN+"img/wave1.png",
+	_CDN+"img/wave2.png",
+	_CDN+"img/wave3.png",
+	_CDN+"img/wave4.png",
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -23,12 +38,14 @@ var buildUGC = function () {
 	// var ani = new AnimatedSprite();
 	stageH=this.opts.h
 	pStage=this.stage
-	
+	gameBegin(1)
 }
 
+var sex=0
 
-function getStart(){
-	setPage1()
+function gameBegin(_sex){//1男 2女
+	sex=_sex
 	console.log("?111")
+	setHintPage()
 }
 
