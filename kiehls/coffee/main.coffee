@@ -106,7 +106,7 @@ window.onload = ->
 			next: ->
 				document.getElementById('load').className += " fadeOut animated"
 				main.mounted = true
-				main.init()
+				# main.init()
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
 					_public.note = false if _public.wx
@@ -119,7 +119,7 @@ window.onload = ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 
-			# @.next() # for test
+			@.next() # for test
 
 			timein = setInterval =>
 				@.progress += 3
@@ -128,7 +128,7 @@ window.onload = ->
 					@.progress = 100
 					clearInterval timein
 					_cache = setTimeout =>
-						@.next()
+						# @.next()
 					,1000
 			,1000/20
 	
@@ -472,30 +472,6 @@ init = ->
 				# console.log imageList,@.muiscType @.userInfo.styleTop
 			# @.ugcType = @.muiscType @.userInfo.styleTop
 			imageList2 = [
-				_CDN+"img/bg2.jpg"
-				_CDN+"img/filecover.png"
-				_CDN+"img/ugc-title.png"
-				_CDN+"img/ugc-content-1.png"
-				_CDN+"img/ugc-content-2.png"
-				_CDN+"img/ugc-content-3.png"
-				_CDN+"img/ugc-content-4.png"
-				_CDN+"img/ugc-content-5.png"
-				_CDN+"img/ugc-content-over-1.png"
-				_CDN+"img/ugc-content-over-2.png"
-				_CDN+"img/ugc-content-over-3.png"
-				_CDN+"img/ugc-content-over-4.png"
-				_CDN+"img/ugc-content-over-5.png"
-				_CDN+"img/mark-00.png"
-				_CDN+"img/mark-90.png"
-				_CDN+"img/mark-80.png"
-				_CDN+"img/long-00.jpg"
-				_CDN+"img/long-90.jpg"
-				_CDN+"img/long-80.jpg"
-				_CDN+"img/btn-reload.png"
-				_CDN+"img/btn-more.png"
-				_CDN+"img/share-title.png"
-				_CDN+"img/qr.png"
-				_CDN+"img/huati.png"
 			]
 			window.imageList = window.imageList.concat(imageList2)
 			ugc = new UGC({el: "ugc", w: 750, h: 750/TrueW*TrueH,callback: => console.log("callback") })

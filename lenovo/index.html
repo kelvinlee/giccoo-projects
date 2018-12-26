@@ -8,6 +8,14 @@
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66865226-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-66865226-1');
+      
+    </script>
   </head>
   <body>
     <div id="public" class="public">
@@ -86,10 +94,10 @@
                 <div v-show="step == 3" class="inputSection">
                   <div class="title"><img :src="'./img/input-title-'+(carIndex+1)+'.png'"></div><img src="./img/line.png">
                   <div class="nickname">
-                    <input type="text" v-model="nickname" placeholder="点击输入姓名">
+                    <input type="text" v-reset-input v-model="nickname" placeholder="点击输入姓名">
                   </div>
                   <div class="message">
-                    <textarea v-model="message" placeholder="我想对那时的TA说
+                    <textarea v-model="message" v-reset-input placeholder="我想对那时的TA说
 （留言限制在100个字符内）"></textarea>
                     <div class="length">{{message.length}}/100</div>
                   </div>
