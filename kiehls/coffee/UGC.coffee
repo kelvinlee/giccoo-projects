@@ -22,7 +22,7 @@ class UGC
 	constructor: (arg)->
 		@.opts =
 			el: "main"
-			w: 750
+			w: 640
 			h: 1314
 			trueH: 1314
 			count: 6

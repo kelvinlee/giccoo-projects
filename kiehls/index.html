@@ -16,10 +16,17 @@
     </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
-        <p class="centeralign">{{progress}}%</p>
+        <div class="bottle"><img src="./img/loading-frame.png">
+          <div class="bg"><img src="./img/loading-bg.png"></div>
+          <div :style="{transform: 'translate3d(0,-'+(progress/3*1.6)+'%,0)'}" class="wave">
+            <div class="img"><img src="./img/loading-wave.png"></div>
+            <div class="img"><img src="./img/loading-wave.png"></div>
+          </div>
+        </div>
+        <p class="centeralign">Loading {{progress}}%</p>
       </div>
     </div>
-    <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" style="display: none" @touchstart="startGame" class="main">
+    <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" style="display: none" class="main">
       <transition name="page-down">
         <div v-show="noteShow" @click="noteShow = false" class="note-message">
           <div class="note-text">{{noteText}}</div>
@@ -39,10 +46,74 @@
           </div>
         </div>
       </transition>
-      <transition name="page-zoom">
+      <transition name="page-fade">
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
+            <div class="clouds">
+              <div class="cloud cloud-1">
+                <div class="cl"><img src="./img/cloud1.png"></div>
+              </div>
+              <div class="cloud cloud-2">
+                <div class="cl"><img src="./img/cloud2.png"></div>
+              </div>
+              <div class="cloud cloud-3">
+                <div class="cl"><img src="./img/cloud3.png"></div>
+              </div>
+            </div>
+            <div class="homepage-icon">
+              <div class="icon bounceIn animated delay-7"><img src="./img/homepage-icon.png"></div>
+              <div class="tree fadeIn animated delay-5"><img src="./img/homepage-tree.png"></div>
+              <div @click="start" class="btn bounceIn animated delay-9"><img src="./img/btn-start.png"></div>
+              <div @click="rankingShow = true" class="btn-info bounceIn animated delay-11">查看排行榜</div>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="pageIndex == 2" class="page page-2">
+          <div class="content">
             <div id="ugc"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="registerShow" class="pop pop-register">
+          <div class="content">
+            <div class="bg"><img src="./img/pop-bg.png"></div>
+            <div class="box">
+              <div class="title"><img src="./img/pop-title.png"></div>
+              <div class="form">
+                <div class="form-group">
+                  <input type="text" placeholder="点击输入姓名" v-model="nickname">
+                </div>
+              </div>
+              <div class="title-sex"><img src="./img/pop-title-sex.png"></div>
+              <div class="sexs">
+                <div :class="{on: (sex == 1)}" @click="sex = 1" class="item male"><img src="./img/pop-male.png"></div>
+                <div :class="{on: (sex == 2)}" @click="sex = 2" class="item female"><img src="./img/pop-female.png"></div>
+              </div>
+              <div @click="startGame" class="btn"><img src="./img/btn-select.png"></div>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="rankingShow" :class="{end: gameEnd}" class="pop pop-ranking">
+          <div class="content">
+            <div class="title"><img src="./img/ranking-title.png">
+              <p>共获得了<span>1280</span>分</p>
+              <p>成功战胜了<span>全国80%</span>的玩家！</p>
+            </div>
+            <div class="ranking-title"><img src="./img/ranking-title-sub.png"></div>
+            <ul class="ranking-list">
+              <li><span class="numb">No.1</span><span class="name">暄暄</span><span class="score">2000分</span></li>
+              <li><span class="numb">No.2</span><span class="name">库库</span><span class="score">1800分</span></li>
+            </ul>
+            <div class="btns">
+              <div class="btn btn-reload"><img src="./img/btn-regame.png"></div>
+              <div class="btn btn-share"><img src="./img/btn-share.png"></div>
+            </div>
+            <div @click="rankingShow = false" class="btn-close"><img src="./img/icon-close.png"></div>
           </div>
         </div>
       </transition>

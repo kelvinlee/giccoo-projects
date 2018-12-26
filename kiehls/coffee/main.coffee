@@ -163,7 +163,7 @@ init = ->
 			noteTime: null
 			noteShow: false
 			pageInfoShow: false
-			pageIndex: 1
+			pageIndex: 2
 			step: 1
 			singerIndex: 2
 			logo: true
@@ -199,6 +199,7 @@ init = ->
 			text: ""
 			nickname: ""
 			mobile: ""
+			sex: 0
 			musicLink: ""
 			logId: ""
 			openBtnShow: true
@@ -214,6 +215,7 @@ init = ->
 			speed: 4000
 			maxSpeed: 0
 			swing: false
+			rankingShow: false
 			registerShow: false
 			lotteryShow: false
 			lotteryEndShow: false
@@ -424,9 +426,23 @@ init = ->
 			closeNote: ->
 				@.pageNote = false
 				goEnd()
+			start: ->
+				@.registerShow = true
 			startGame: ->
 				# console.log "start game"
-				_public.note = false
+				# _public.note = false
+				if @.nickname is ""
+					return @.send "请输入姓名"
+				if @.sex is 0
+					return @.send "点击选择你的性别"
+				@.pageIndex = 2
+				@.registerShow = false
+				gameBegin(@.sex) if gameBegin?
+
+				# test
+				# @.rankingShow = true
+				# @.gameEnd = true
+
 			goStep2: ->
 				@.loading = true
 				@.logo = true

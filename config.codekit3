@@ -6067,6 +6067,50 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/kiehls/img/btn-regame.png": {
+		"ft": 32768,
+		"iS": 9888,
+		"oA": 0,
+		"oAP": "/kiehls/img/btn-regame.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/btn-select.png": {
+		"ft": 32768,
+		"iS": 11851,
+		"oA": 0,
+		"oAP": "/kiehls/img/btn-select.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/btn-share.png": {
+		"ft": 32768,
+		"iS": 10237,
+		"oA": 0,
+		"oAP": "/kiehls/img/btn-share.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/btn-start.png": {
+		"ft": 32768,
+		"iS": 11713,
+		"oA": 0,
+		"oAP": "/kiehls/img/btn-start.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/kiehls/img/btn_jump.png": {
 		"ft": 32768,
 		"iS": 12130,
@@ -6111,6 +6155,39 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/kiehls/img/homepage-icon.png": {
+		"ft": 32768,
+		"iS": 205456,
+		"oA": 0,
+		"oAP": "/kiehls/img/homepage-icon.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/homepage-tree.png": {
+		"ft": 32768,
+		"iS": 31183,
+		"oA": 0,
+		"oAP": "/kiehls/img/homepage-tree.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/icon-close.png": {
+		"ft": 32768,
+		"iS": 4712,
+		"oA": 0,
+		"oAP": "/kiehls/img/icon-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/kiehls/img/item.png": {
 		"ft": 32768,
 		"iS": 6082,
@@ -6138,6 +6215,50 @@
 		"iS": 14079,
 		"oA": 0,
 		"oAP": "/kiehls/img/l2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/loading-bg.jpg": {
+		"ft": 16384,
+		"iS": 28597,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/kiehls/img/loading-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/kiehls/img/loading-bg.png": {
+		"ft": 32768,
+		"iS": 2827,
+		"oA": 0,
+		"oAP": "/kiehls/img/loading-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/loading-frame.png": {
+		"ft": 32768,
+		"iS": 4670,
+		"oA": 0,
+		"oAP": "/kiehls/img/loading-frame.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/loading-wave.png": {
+		"ft": 32768,
+		"iS": 1549,
+		"oA": 0,
+		"oAP": "/kiehls/img/loading-wave.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6237,6 +6358,116 @@
 		"iS": 7851,
 		"oA": 0,
 		"oAP": "/kiehls/img/player2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/pop-bg.png": {
+		"ft": 32768,
+		"iS": 13755,
+		"oA": 0,
+		"oAP": "/kiehls/img/pop-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/pop-female.png": {
+		"ft": 32768,
+		"iS": 3312,
+		"oA": 0,
+		"oAP": "/kiehls/img/pop-female.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/pop-male.png": {
+		"ft": 32768,
+		"iS": 3960,
+		"oA": 0,
+		"oAP": "/kiehls/img/pop-male.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/pop-selected.png": {
+		"ft": 32768,
+		"iS": 6436,
+		"oA": 0,
+		"oAP": "/kiehls/img/pop-selected.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/pop-text.png": {
+		"ft": 32768,
+		"iS": 15088,
+		"oA": 0,
+		"oAP": "/kiehls/img/pop-text.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/pop-title-sex.png": {
+		"ft": 32768,
+		"iS": 5090,
+		"oA": 0,
+		"oAP": "/kiehls/img/pop-title-sex.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/pop-title.png": {
+		"ft": 32768,
+		"iS": 9852,
+		"oA": 0,
+		"oAP": "/kiehls/img/pop-title.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/ranking-list-bg.png": {
+		"ft": 32768,
+		"iS": 2004,
+		"oA": 0,
+		"oAP": "/kiehls/img/ranking-list-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/ranking-title-sub.png": {
+		"ft": 32768,
+		"iS": 18723,
+		"oA": 0,
+		"oAP": "/kiehls/img/ranking-title-sub.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/ranking-title.png": {
+		"ft": 32768,
+		"iS": 8033,
+		"oA": 0,
+		"oAP": "/kiehls/img/ranking-title.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -11039,15 +11270,6 @@
 		}
 	},
 "hooks": [
-	{
-		"enabled": 0,
-		"name": "Riot",
-		"predicateDataBase64Encoded": "YnBsaXN0MDDUAQIDBAUGYmNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QFgcIDxQcJicqMTU6Oz5CRktMT1VZXV9VJG51bGzTCQoLDA0OXxAXTlNDb21wb3VuZFByZWRpY2F0ZVR5cGVfEA9OU1N1YnByZWRpY2F0ZXNWJGNsYXNzEAKAAoAV0hALERNaTlMub2JqZWN0c6ESgAOAFNQLFRYXGBkaG18QEU5TUmlnaHRFeHByZXNzaW9uXxAQTlNMZWZ0RXhwcmVzc2lvbl8QE05TUHJlZGljYXRlT3BlcmF0b3KAE4AOgASAEdUdHh8gCyEiIyQlWU5TT3BlcmFuZF5OU1NlbGVjdG9yTmFtZV8QEE5TRXhwcmVzc2lvblR5cGVbTlNBcmd1bWVudHOABoAFEAOACIANXHZhbHVlRm9yS2V5OtIfCygpEAGAB9IrLC0uWiRjbGFzc25hbWVYJGNsYXNzZXNfEBBOU1NlbGZFeHByZXNzaW9uoy0vMFxOU0V4cHJlc3Npb25YTlNPYmplY3TSEAsyNKEzgAmADNMLHzY3ODlZTlNLZXlQYXRogAsQCoAKXWlucHV0RmlsZW5hbWXSKyw8PV8QHE5TS2V5UGF0aFNwZWNpZmllckV4cHJlc3Npb26jPC8w0issP0BeTlNNdXRhYmxlQXJyYXmjP0EwV05TQXJyYXnSKyxDRF8QE05TS2V5UGF0aEV4cHJlc3Npb26kQ0UvMF8QFE5TRnVuY3Rpb25FeHByZXNzaW9u00cfC0hJSl8QD05TQ29uc3RhbnRWYWx1ZYAPEACAEFQudGFn0issTU5fEBlOU0NvbnN0YW50VmFsdWVFeHByZXNzaW9uo00vMNQLUFFSU0kjVFpOU01vZGlmaWVyV05TRmxhZ3NeTlNPcGVyYXRvclR5cGWAEhBj0issVldfEBVOU0luUHJlZGljYXRlT3BlcmF0b3KjVlgwXxATTlNQcmVkaWNhdGVPcGVyYXRvctIrLFpbXxAVTlNDb21wYXJpc29uUHJlZGljYXRlo1pcMFtOU1ByZWRpY2F0ZdIrLEFeokEw0issYGFfEBNOU0NvbXBvdW5kUHJlZGljYXRlo2BcMF8QD05TS2V5ZWRBcmNoaXZlctFkZVRyb290gAEACAARABoAIwAtADIANwBQAFYAXQB3AIkAkACSAJQAlgCbAKYAqACqAKwAtQDJANwA8gD0APYA+AD6AQUBDwEeATEBPQE/AUEBQwFFAUcBVAFZAVsBXQFiAW0BdgGJAY0BmgGjAagBqgGsAa4BtQG/AcEBwwHFAdMB2AH3AfsCAAIPAhMCGwIgAjYCOwJSAlkCawJtAm8CcQJ2AnsClwKbAqQCrwK3AsYCyALKAs8C5wLrAwEDBgMeAyIDLgMzAzYDOwNRA1UDZwNqA28AAAAAAAACAQAAAAAAAABmAAAAAAAAAAAAAAAAAAADcQ==",
-		"runOrder": 0,
-		"scriptSourceString": "riot $CK_INPUT_PATH --template pug --type coffee $CK_OUTPUT_PATH",
-		"scriptType": 1,
-		"uuidString": "33428578-B7DD-45D5-9B91-A6D30337465F"
-		}
 	],
 "manualImportLinks": {
 	},

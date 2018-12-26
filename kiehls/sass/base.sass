@@ -74,11 +74,6 @@ $pageMainBGColor: #0c101a;
 	50%
 		opacity: 0.2
 		+transform(scale(1,1))
-+keyframes(moveLeft)
-	0%
-		+transform(translate3d(-50%,0,0))
-	100%
-		+transform(translate3d(0,0,0))
 +keyframes(musicIcon)
 	0%
 		+transform(translate3d(0,40%,0))
@@ -174,7 +169,21 @@ $pageMainBGColor: #0c101a;
 		opacity: 0.8
 	100%
 		opacity: 1
-
++keyframes(moveLeft)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(-100%,0,0))
++keyframes(moveRight)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(135%,0,0))
++keyframes(showCloud)
+	0%
+		margin-left: -50%
+	100%
+		margin-left: 0
 html,body
 	+w
 	+h
@@ -305,13 +314,44 @@ video,canvas,svg
 	// 3c080f
 	// +hide
 	// font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
-	// +b($cdn+"img/loading-bg.jpg",no-repeat,center,center,100% 100%)
-	color: #da464f
+	+b($cdn+"img/loading-bg.jpg",no-repeat,center,center,cover)
+	color: #fff
 	.content
 		+w
 		+text-center
 		+abcentermiddle
 		+font-size(0.8rem)
+	.bottle
+		+w(20%)
+		+m
+		+posr
+		font-size: 0
+		+overhide
+		.bg
+			+posa
+			+tl
+			z-index: -2
+		.wave
+			+posa
+			+tl(70%)
+			// margin-top: -90%
+			+w(200%)
+			+h(100%)
+			z-index: -1
+			white-space: nowrap
+			.img
+				+animation(moveLeft,2s,linear,infinite)
+				+show-inline
+				margin-left: -0.1rem
+
+			&:after
+				content: " "
+				+posa
+				+bl
+				+w
+				+h(70%)
+				+bc(#a0e9f6)
+
 	.text-content
 		+abcentermiddle
 		+iw(230,750,100%)
@@ -404,7 +444,7 @@ video,canvas,svg
 				+w(3%)
 				animation-delay: 2s/4*4
 
-	
+
 
 .public
 	+posa
@@ -670,132 +710,71 @@ video,canvas,svg
 		pointer-events: none
 		z-index: 99
 .page-1
-	+b($cdn+"img/bg2.jpg",no-repeat,top,center,cover)
+	+b($cdn+"img/loading-bg.jpg",no-repeat,top,center,cover)
 	.content
-		.book
-			+abcentermiddle
-			+w
-			margin-top: -2%
-		.btn-start
-			+posa
-			+bl(8%)
-.page-2
-	+b($cdn+"img/bg2.jpg",no-repeat,top,center,cover)
-	.content
-		.book
-			+abcentermiddle
-			+w
-			margin-top: -4%
-			.selectSection,.inputSection
-				+w
-				+h(70%)
-				+abcentermiddle
-				.btn
-					+w(63%)
-					+m
-				.note-text
-					+w(64%)
-					+m
-					margin-top: 2.5%
-			.inputSection
-				+w(63%)
-				+m
-				.btn
-					+w
-				.nickname
-					+b($cdn+"img/bg-input.png",no-repeat,center,center,100% 100%)
-					margin-top: 2%
-					input
-						+box
-						+w
-						+h(1.8em)
-						+p(0.2em)
-						+font-size(1.2rem)
-						+bc(transparent)
-						+text-center
-						color: #6d4222
-						line-height: 1.6em
-						border: none
-						outline: none
-					input::placeholder
-						color: #6d4222
-				.message
-					+posr
-					+b($cdn+"img/bg-textarea.png",no-repeat,center,center,100% 100%)
-					margin-top: 2%
-					+h(62%)
-					+w
-					textarea
-						+box
-						+w
-						+h(100%)
-						+p(0.6em 0.4em)
-						+font-size(0.8rem)
-						+bc(transparent)
-						+text-center
-						color: #6d4222
-						line-height: 1.4em
-						border: none
-						outline: none
-						&::placeholder
-							color: #6d4222
-					.length
-						+posa
-						+br(5%,5%)
-						+font-size(0.6rem)
-						color: #6d4222
-				.btn
-					margin-top: 5%
-					margin-bottom: 5%
-				.note-text
-					+w
-
-		.btns
-			+abcentermiddle
-			+w
-			margin-top: -10%
-			.btn
-				+m(4% auto)
-	.mark-year
-		+posa
-		+tl
-		+w
-		+h
-		pointer-events: none
-		z-index: 1099
-		&.year-00
-			+b($cdn+"img/mark-00.png",no-repeat,bottom,center,cover)
-		&.year-90
-			+b($cdn+"img/mark-90.png",no-repeat,bottom,center,cover)
-		&.year-80
-			+b($cdn+"img/mark-80.png",no-repeat,bottom,center,contain)
-
-.page-3
-	+bc(#fff)
-	.content
-		+touch
-		.arrow
-			+posf
-			+bl(4%,50%)
-			+m
-			margin-left: -5%
-			z-index: 15
-			+w(10%)
-			+animation(fadeInDown,1s,ease,infinite)
-		.box
+		$cloudTime: 10s
+		font-size: 0
+		.clouds
+			margin-left: 50%
 			+posr
-			.overOn
+			+w
+			+animation(showCloud,2s,ease)
+			margin-top: 5%
+		.cloud
+			+posa
+			+tl(5%)
+			+w
+			+animation(moveRight,$cloudTime,linear,infinite)
+		.cloud-1
+			// animation-delay: $cloudTime * 1/3
+			animation-duration: $cloudTime * 1
+			.cl
+				+w(28%)
+				+transform(translate3d(-100%,-0%,0))
+		.cloud-2
+			// animation-delay: $cloudTime * 1/2
+			animation-duration: $cloudTime * 1.1
+			.cl
+				+w(34%)
+				+transform(translate3d(-100%,130%,0))
+				margin-left: -30%
+		.cloud-3
+			// animation-delay: 0
+			animation-duration: $cloudTime * 1.2
+			.cl
+				+w(32%)
+				+transform(translate3d(-100%,80%,0))
+				margin-left: 20%
+		.homepage-icon
+			+abcentermiddle
+			+w
+			.icon
+				+w
 				+posa
 				+tl
-				+w
+				margin-top: -50%
 				z-index: 2
-				+animation(fadeIn,2s,linear,1)
-				animation-delay: 700ms
-		.btn
-			+posa
-			+bl(5%)
-			z-index: 4
+			.tree
+				+w
+				+posa
+				+tl
+			.btn
+				+posa
+				+tl
+				margin-top: 25%
+			.btn-info
+				+posa
+				+tl
+				margin-top: 42%
+				+font-size(0.7rem)
+				color: #fff
+				+text-center
+				+w
+				text-decoration: underline
 
+.page-2
+	.content
+		
 
 .slider-box
 	+w(65%)
@@ -993,6 +972,130 @@ video,canvas,svg
 			.btn
 				margin: 2% auto
 
+.pop-register
+	.content
+		+abcentermiddle
+		+w
+		.box
+			+posa
+			+tl(0,10%)
+			+w(80%)
+			+h
+			.title
+				+iw(487,750*0.8,100%)
+				margin-top: 14%
+				margin-bottom: 5%
+			.title-sex
+				+iw(408,750*0.8,100%)
+				margin-top: 5%
+			.form
+				+w(70%)
+				+m(10% auto)
+				+font-size(1rem)
+				input
+					+text-center
+					+bc(#bfbfbf)
+					color: #fff
+					+w
+					&::placeholder
+						color: #fff
+				.form-group
+					border: none
+					+bc(#bfbfbf)
+					+overhide
+					border-radius: 0.3em
+
+
+			.sexs
+				+w
+				+text-center
+				margin-top: 5%
+				.item
+					+show-inline
+					+w(35%)
+					+posr
+					img
+						+posr
+						z-index: 2
+					&.on
+						&:before
+							content: " "
+							+posa
+							+tl
+							+w
+							+h
+							+b($cdn+"img/pop-selected.png",no-repeat,center,center,cover)
+							+animation(bounceIn)
+							// z-index: -1
+			.btn
+				+w
+				margin-top: 5%
+
+.pop-ranking
+	&.end
+		+bc(transparent)
+		.content
+			.title
+				+show
+			.btns
+				+show
+			.btn-close
+				+hide
+	.content
+		+w(80%)
+		+abcentermiddle
+
+		.title
+			+font-size(1rem)
+			+text-center
+			+hide
+			color: #fff
+			p
+				+m(0.4em auto)
+				line-height: 1.6em
+			span
+				+font-size(1.2rem)
+				font-weight: bold
+		.ranking-title
+			margin-top: 7%
+		.ranking-list
+			+m
+			+p
+			li
+				+w(95%)
+				+m(0.4em auto)
+				+font-size(0.8rem)
+				color: #1d92b6
+				line-height: 1.8em
+				+b($cdn+"img/ranking-list-bg.png",no-repeat,center,center,cover)
+				+p(0.4em 0.6em)
+				+box
+				+text-center
+				span
+					+w(35%)
+					+m
+					+show-inline
+					+text-left
+				.numb
+					+w(20%)
+				.score
+					+text-right
+		.btns
+			+w
+			+text-center
+			+hide
+			margin-top: 7%
+			.btn
+				+w(46%)
+				+show-inline
+			.btn-reload
+				margin-right: 3%
+			.btn-share
+				margin-left: 3%
+		.btn-close
+			+m
+			+w(15%)
+			margin-top: 20%
 
 
 

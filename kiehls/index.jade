@@ -55,9 +55,19 @@ block content
     .content#loading(v-show="mounted",style="display: none")
       //- .box
       //- .text-content
-      p.centeralign {{progress}}%
+      .bottle
+        img(src="#{url}/img/loading-frame.png")
+        .bg
+          img(src="#{url}/img/loading-bg.png")
+        .wave(:style="{transform: 'translate3d(0,-'+(progress/3*1.6)+'%,0)'}")
+          .img
+            img(src="#{url}/img/loading-wave.png")
+          .img
+            img(src="#{url}/img/loading-wave.png")
+
+      p.centeralign Loading {{progress}}%
   
-  .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",:style="{width: w+'px',height: h+'px'}",style="display: none",@touchstart="startGame")
+  .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",:style="{width: w+'px',height: h+'px'}",style="display: none")
     //- transition(name="page-fade")    
       .logo(v-show="logo")
         img(src="#{url}/img/logo.png")
@@ -77,10 +87,81 @@ block content
           div
           div
 
-    transition(name="page-zoom")
+    transition(name="page-fade")
       .page.page-1(v-show="pageIndex == 1")
         .content
+          .clouds
+            .cloud.cloud-1
+              .cl
+                img(src="#{url}/img/cloud1.png")
+            .cloud.cloud-2
+              .cl
+                img(src="#{url}/img/cloud2.png")
+            .cloud.cloud-3
+              .cl
+                img(src="#{url}/img/cloud3.png")
+          .homepage-icon
+            .icon.bounceIn.animated.delay-7
+              img(src="#{url}/img/homepage-icon.png")
+            .tree.fadeIn.animated.delay-5
+              img(src="#{url}/img/homepage-tree.png")
+            .btn.bounceIn.animated.delay-9(@click="start")
+              img(src="#{url}/img/btn-start.png")
+            .btn-info.bounceIn.animated.delay-11(@click="rankingShow = true") 查看排行榜
+
+    transition(name="page-fade")
+      .page.page-2(v-show="pageIndex == 2")
+        .content
           #ugc
+
+    transition(name="page-fade")
+      .pop.pop-register(v-show="registerShow")
+        .content
+          .bg
+            img(src="#{url}/img/pop-bg.png")
+          .box
+            .title
+              img(src="#{url}/img/pop-title.png")
+            .form
+              .form-group
+                input(type="text",placeholder="点击输入姓名",v-model="nickname")
+            .title-sex
+              img(src="#{url}/img/pop-title-sex.png")
+            .sexs
+              .item.male(:class="{on: (sex == 1)}",@click="sex = 1")
+                img(src="#{url}/img/pop-male.png")
+              .item.female(:class="{on: (sex == 2)}",@click="sex = 2")
+                img(src="#{url}/img/pop-female.png")
+            .btn(@click="startGame")
+              img(src="#{url}/img/btn-select.png")
+
+    transition(name="page-fade")
+      .pop.pop-ranking(v-show="rankingShow",:class="{end: gameEnd}")
+        .content
+          .title
+            img(src="#{url}/img/ranking-title.png")
+            p 共获得了<span>1280</span>分
+            p 成功战胜了<span>全国80%</span>的玩家！
+          .ranking-title
+            img(src="#{url}/img/ranking-title-sub.png")
+          ul.ranking-list
+            li
+              span.numb No.1
+              span.name 暄暄
+              span.score 2000分
+            li
+              span.numb No.2
+              span.name 库库
+              span.score 1800分
+          .btns
+            .btn.btn-reload
+              img(src="#{url}/img/btn-regame.png")
+            .btn.btn-share
+              img(src="#{url}/img/btn-share.png")
+          .btn-close(@click="rankingShow = false")
+            img(src="#{url}/img/icon-close.png")
+
+
 
 
     //- transition(name="page-fade")
