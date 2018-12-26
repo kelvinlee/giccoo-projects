@@ -64,8 +64,12 @@ block content
         .content
           .loading-icon
             img(src="#{url}/img/loading-icon.png")
-          .text
+          //- .text
             img(src="#{url}/img/loading-text.png")
+          .btns
+            img(src="#{url}/img/loading-btn.png")
+            .btn.btn-back(@click="goBack")
+            .btn.btn-more(@click="goMore")
         //- .ball-spin-fade-loader
           div
           div
@@ -141,7 +145,7 @@ block content
 
     transition(name="page-zoom")
       .page.page-3(v-show="pageIndex == 3")
-        .content
+        .content#manhua
           .arrow
             img(v-if="yearName != 'none'",:src="'#{url}/img/arrow-'+yearName+'.png'")
           .box

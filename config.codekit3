@@ -6534,6 +6534,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/lenovo/img/loading-btn.png": {
+		"ft": 32768,
+		"iS": 142678,
+		"oA": 0,
+		"oAP": "/lenovo/img/loading-btn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/lenovo/img/loading-icon.png": {
 		"ft": 32768,
 		"iS": 187812,
