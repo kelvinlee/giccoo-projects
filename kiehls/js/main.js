@@ -163,7 +163,7 @@ mounted:function e(){var t,i,n;return TrueH=document.documentElement.clientHeigh
 this.wy=CloudMusic.isInApp(),n=CloudMusic.getClientVersion().split("."),// @.getUserInfo (callback)=>
 // console.log imageList,@.muiscType @.userInfo.styleTop
 // @.ugcType = @.muiscType @.userInfo.styleTop
-i=[],window.imageList=window.imageList.concat(i),ugc=new UGC({el:"ugc",w:750,h:750/TrueW*TrueH,callback:function e(){return console.log("callback")}}),console.log("h:",t)}})};// window.onresize = ->
+i=[],window.imageList=window.imageList.concat(i),ugc=new UGC({el:"ugc",w:640,h:640/TrueW*TrueH,callback:function e(){return console.log("callback")}}),console.log("h:",t)}})};// window.onresize = ->
 // 	console.log "resize:",document.documentElement.clientHeight
 // main.$root.$el.addEventListener "touchstart", (evt)->
 // 	_public.note = false

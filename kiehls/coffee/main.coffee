@@ -490,7 +490,7 @@ init = ->
 			imageList2 = [
 			]
 			window.imageList = window.imageList.concat(imageList2)
-			ugc = new UGC({el: "ugc", w: 750, h: 750/TrueW*TrueH,callback: => console.log("callback") })
+			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => console.log("callback") })
 			console.log "h:",h
 			# window.onresize = ->
 			# 	console.log "resize:",document.documentElement.clientHeight
