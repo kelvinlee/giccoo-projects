@@ -6544,16 +6544,6 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"/kiehls/js/build.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "/kiehls/js/build-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
 	"/kiehls/js/dealer.js": {
 		"ft": 64,
 		"ma": 0,
