@@ -151,7 +151,7 @@ return _public.note=!1},goStep2:function e(){return this.loading=!0,this.logo=!0
 // setTimeout =>
 // 	@.loading = false
 // ,2500
-goBack:function e(){return this.loading=!1,document.getElementById("manhua").scrollTop=0},goMore:function e(){return this.step=2,this.loading=!1,document.getElementById("manhua").scrollTop=0},build:function e(){return""===this.nickname?(this.send("请输入姓名"),!1):""===this.message?(this.send("请输入留言"),!1):(this.pageIndex=4,this.logo=!1,ugc.init(),this.goSubmit())}},
+goBack:function e(){return this.loading=!1,document.getElementById("manhua").scrollTop=0},goMore:function e(){return this.step=2,this.loading=!1,document.getElementById("manhua").scrollTop=0},build:function e(){return""===this.nickname?(this.send("请输入姓名"),!1):""===this.message?(this.send("请输入留言"),!1):(this.pageIndex=4,this.logo=!1,this.goSubmit(),ugc.init())}},
 // watch:
 mounted:function e(){var t,i,n;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,"NeteaseMusic"===sys&&(this.wy=!0),t=2*TrueH*(2-2*TrueW/750+.01),// game = new Game({el: "game",h: h})
 this.wy=CloudMusic.isInApp(),n=CloudMusic.getClientVersion().split("."),// @.getUserInfo (callback)=>

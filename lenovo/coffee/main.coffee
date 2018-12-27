@@ -461,8 +461,9 @@ init = ->
 					return false
 				@.pageIndex = 4
 				@.logo = false
-				ugc.init()
 				@.goSubmit()
+				ugc.init()
+				
 				
 		# watch:
 		mounted: ->
