@@ -18,22 +18,23 @@
     </script>
   </head>
   <body>
+    <!-- - url = ".";-->
     <div id="public" class="public">
-      <player icon="true" src="./mp3/bgm.mp3" loop="true">
-        <div class="note-text"><img src="./img/bgm-text.png"></div>
+      <player icon="true" src="//image.giccoo.com/projects/lenovo/mp3/bgm.mp3" loop="true">
+        <div class="note-text"><img src="//image.giccoo.com/projects/lenovo/img/bgm-text.png"></div>
       </player>
     </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
         <div class="box"></div>
         <div class="text-content">
-          <p class="centeralign">{{progress}}%</p><img src="./img/load-text.png">
+          <p class="centeralign">{{progress}}%</p><img src="//image.giccoo.com/projects/lenovo/img/load-text.png">
         </div>
       </div>
     </div>
     <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" style="display: none" @touchstart="startGame" class="main">
       <transition name="page-fade">   
-        <div v-show="logo" class="logo"><img src="./img/logo.png"></div>
+        <div v-show="logo" class="logo"><img src="//image.giccoo.com/projects/lenovo/img/logo.png"></div>
       </transition>
       <transition name="page-down">
         <div v-show="noteShow" @click="noteShow = false" class="note-message">
@@ -43,8 +44,8 @@
       <transition name="page-fade">
         <div v-show="loading" class="loading-page">
           <div class="content">
-            <div class="loading-icon"><img src="./img/loading-icon.png"></div>
-            <div class="btns"><img src="./img/loading-btn.png">
+            <div class="loading-icon"><img src="//image.giccoo.com/projects/lenovo/img/loading-icon.png"></div>
+            <div class="btns"><img src="//image.giccoo.com/projects/lenovo/img/loading-btn.png">
               <div @click="goBack" class="btn btn-back"></div>
               <div @click="goMore" class="btn btn-more"></div>
             </div>
@@ -55,8 +56,8 @@
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
             <div class="mark"></div>
-            <div class="book"><img src="./img/bookc.png"></div>
-            <div @click="pageIndex = 2" class="btn-start"><img src="./img/btn-start.png"></div>
+            <div class="book"><img src="//image.giccoo.com/projects/lenovo/img/bookc.png"></div>
+            <div @click="pageIndex = 2" class="btn-start"><img src="//image.giccoo.com/projects/lenovo/img/btn-start.png"></div>
           </div>
         </div>
       </transition>
@@ -65,34 +66,34 @@
           <div class="content">
             <div class="mark"></div>
             <div v-show="yearName != 'none'" :class="'year-'+yearName" class="mark-year"></div>
-            <div class="book"><img src="./img/book.png">
+            <div class="book"><img src="//image.giccoo.com/projects/lenovo/img/book.png">
               <transition name="page-fade">
                 <div v-show="step == 2" class="selectSection">
-                  <div class="title"><img src="./img/select-title.png"></div>
+                  <div class="title"><img src="//image.giccoo.com/projects/lenovo/img/select-title.png"></div>
                   <slider @number="number" class="slider-box">
                     <template slot="outside" slot-scope="slotProps">
-                      <div @click="prev" class="left"><img src="./img/arrow.png"></div>
-                      <div @click="next" class="right"><img src="./img/arrow.png"></div>
+                      <div @click="prev" class="left"><img src="//image.giccoo.com/projects/lenovo/img/arrow.png"></div>
+                      <div @click="next" class="right"><img src="//image.giccoo.com/projects/lenovo/img/arrow.png"></div>
                     </template>
                     <template slot-scope="slotProps">
-                      <div class="slide"><img src="./img/pic-1.png"></div>
-                      <div class="slide"><img src="./img/pic-2.png"></div>
-                      <div class="slide"><img src="./img/pic-3.png"></div>
-                      <div class="slide"><img src="./img/pic-4.png"></div>
-                      <div class="slide"><img src="./img/pic-5.png"></div>
+                      <div class="slide"><img src="//image.giccoo.com/projects/lenovo/img/pic-1.png"></div>
+                      <div class="slide"><img src="//image.giccoo.com/projects/lenovo/img/pic-2.png"></div>
+                      <div class="slide"><img src="//image.giccoo.com/projects/lenovo/img/pic-3.png"></div>
+                      <div class="slide"><img src="//image.giccoo.com/projects/lenovo/img/pic-4.png"></div>
+                      <div class="slide"><img src="//image.giccoo.com/projects/lenovo/img/pic-5.png"></div>
                     </template>
                     <template slot="points" slot-scope="slotProps">
                       <div class="points"><span :class="{on: -slotProps.slideNumber == 0}"></span><span :class="{on: -slotProps.slideNumber == 1}"></span><span :class="{on: -slotProps.slideNumber == 2}"></span><span :class="{on: -slotProps.slideNumber == 3}"></span><span :class="{on: -slotProps.slideNumber == 4}"></span>
                       </div>
                     </template>
                   </slider>
-                  <div @click="select" class="btn"><img src="./img/btn-select.png"></div>
-                  <div class="note-text"><img src="./img/note-text.png"></div>
+                  <div @click="select" class="btn"><img src="//image.giccoo.com/projects/lenovo/img/btn-select.png"></div>
+                  <div class="note-text"><img src="//image.giccoo.com/projects/lenovo/img/note-text.png"></div>
                 </div>
               </transition>
               <transition name="page-fade">
                 <div v-show="step == 3" class="inputSection">
-                  <div class="title"><img :src="'./img/input-title-'+(carIndex+1)+'.png'"></div><img src="./img/line.png">
+                  <div class="title"><img :src="'//image.giccoo.com/projects/lenovo/img/input-title-'+(carIndex+1)+'.png'"></div><img src="//image.giccoo.com/projects/lenovo/img/line.png">
                   <div class="nickname">
                     <input type="text" v-reset-input v-model="nickname" placeholder="点击输入姓名">
                   </div>
@@ -101,16 +102,16 @@
 （留言限制在100个字符内）"></textarea>
                     <div class="length">{{message.length}}/100</div>
                   </div>
-                  <div @click="build" class="btn"><img src="./img/btn-build.png"></div>
-                  <div class="note-text"><img src="./img/note-text.png"></div>
+                  <div @click="build" class="btn"><img src="//image.giccoo.com/projects/lenovo/img/btn-build.png"></div>
+                  <div class="note-text"><img src="//image.giccoo.com/projects/lenovo/img/note-text.png"></div>
                 </div>
               </transition>
             </div>
             <transition name="page-fade">
               <div v-show="step == 1" class="btns">
-                <div @click="openYear('80')" class="btn fadeInLeft animated delay-3 btn-1"><img src="./img/btn-year-80.png"></div>
-                <div @click="openYear('90')" class="btn fadeInLeft animated delay-5 btn-2"><img src="./img/btn-year-90.png"></div>
-                <div @click="openYear('00')" class="btn fadeInLeft animated delay-7 btn-3"><img src="./img/btn-year-00.png"></div>
+                <div @click="openYear('80')" class="btn fadeInLeft animated delay-3 btn-1"><img src="//image.giccoo.com/projects/lenovo/img/btn-year-80.png"></div>
+                <div @click="openYear('90')" class="btn fadeInLeft animated delay-5 btn-2"><img src="//image.giccoo.com/projects/lenovo/img/btn-year-90.png"></div>
+                <div @click="openYear('00')" class="btn fadeInLeft animated delay-7 btn-3"><img src="//image.giccoo.com/projects/lenovo/img/btn-year-00.png"></div>
               </div>
             </transition>
           </div>
@@ -119,9 +120,9 @@
       <transition name="page-zoom">
         <div v-show="pageIndex == 3" class="page page-3">
           <div id="manhua" class="content">
-            <div class="arrow"><img v-if="yearName != 'none'" :src="'./img/arrow-'+yearName+'.png'"></div>
-            <div class="box"><img v-if="yearName != 'none'" :src="'./img/long-'+yearName+'.jpg'">
-              <div @click="goStep2" class="btn"><img src="./img/btn-find.png"></div>
+            <div class="arrow"><img v-if="yearName != 'none'" :src="'//image.giccoo.com/projects/lenovo/img/arrow-'+yearName+'.png'"></div>
+            <div class="box"><img v-if="yearName != 'none'" :src="'//image.giccoo.com/projects/lenovo/img/long-'+yearName+'.jpg'">
+              <div @click="goStep2" class="btn"><img src="//image.giccoo.com/projects/lenovo/img/btn-find.png"></div>
             </div>
           </div>
         </div>
@@ -136,7 +137,7 @@
       <div v-show="ugcShow" class="pop flashcamera">
         <div class="content">
           <div class="small-size">
-            <div @click="closeUGC" class="close"><img src="./img/icon-close.png"></div><img :src="ugc">
+            <div @click="closeUGC" class="close"><img src="//image.giccoo.com/projects/lenovo/img/icon-close.png"></div><img :src="ugc">
             <div class="note">长按保存图片</div>
           </div>
         </div>
