@@ -76,7 +76,7 @@ null==Number.isInteger&&(Number.isInteger=function(e){return 0<=e}),// @codekit-
 axios.defaults.withCredentials=!0,TrueW=640,TrueH=1138,imageurl="//api.giccoo.com/api/upload/image64/",apiUrl="//api.giccoo.com/lenovo",// apiLink = "//localhost:3000/"
 apiLink="//g.giccoo.com/",// apiLink = "http://192.168.3.53:3000/"
 // apiUrl = "http://localhost:8881/Levi"
-main={},sys="",sended=[!(loading={}),!(_public={})],_runTime=_startCache=_cache=ugcCache=musicIconCache=musicLineCache=ugc=null,_testTime=_second=0,neteaseShareImage=function e(){var t,i,n;return n="点播圣诞星声",t="https://image.giccoo.com/upload/".concat(main.folder,"/")+main.shareImageLink+"@!large",i="https://activity.music.163.com/lenovo/",// console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
+main={},sys="",sended=[!(loading={}),!(_public={})],_runTime=_startCache=_cache=ugcCache=musicIconCache=musicLineCache=ugc=null,_testTime=_second=0,neteaseShareImage=function e(){var t,i,n;return n="我的时代金曲",t="https://image.giccoo.com/upload/".concat(main.folder,"/")+main.shareImageLink+"@!large",i="https://activity.music.163.com/lenovo/",// console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 // window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 console.log("share href:",t),CloudMusic.sharePic({picUrl:t,text:n,link:i})},window.onload=function(){var e,t;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,-1<window.navigator.userAgent.indexOf("NeteaseMusic")&&(sys="NeteaseMusic"),t={name:"lenovo",title:"我的时代金曲",subTitle:"这首歌让我想起了青葱的岁月，还有许久未见的你",text:"",picUrl:"https://activity.music.163.com/lenovo/img/ico.jpg",link:"https://activity.music.163.com/lenovo/"},CloudMusic.setShareData(t),// else
 // 	loadWechatConfig()
@@ -120,9 +120,10 @@ return this.gameEnd=!0,ugc.app.renderer.render(ugc.app.stage),this.ugc=t},restar
 // goShare()
 return this.share()},share:function e(){var t,i,n;// goFinal2()
 return this.formBoxShow=!1,this.registerShow=!1,this.lotteryShow=!1,console.log("run share"),// ugc.qrcode.visible = true
-ugc.app.renderer.render(ugc.app.stage),this.ugc=ugc.app.view.toDataURL("image/jpeg",.6),n=this.ugc,this.wy?(t={image:n,folder:i="lenovo"},this.folder=i,null==n?this.faild():!this.pushed&&axios.post(imageurl,t).then(function(e){return 200===e.data.recode?main.success(e.data):main.faild(e)}).catch(function(e){
+ugc.app.renderer.render(ugc.app.stage),this.ugc=ugc.app.view.toDataURL("image/jpeg",.6),n=this.ugc,this.wy?(t={image:n,folder:i="lenovo"},this.folder=i,null==n?this.faild():!this.pushed&&(null!=this.shareImageLink?(this.pushed=!1,this.loading=!1,// ugc.back()
+neteaseShareImage(),ugc.shareDone(),!0):axios.post(imageurl,t).then(function(e){return 200===e.data.recode?main.success(e.data):main.faild(e)}).catch(function(e){
 // alert e
-return main.faild(e)})):this.ugcShow=!0},
+return main.faild(e)}))):this.ugcShow=!0},
 // ugc.back()
 // ugc.qrcode.visible = false
 success:function e(t){return this.shareImageLink=t.info,this.pushed=!1,this.loading=!1,// ugc.back()

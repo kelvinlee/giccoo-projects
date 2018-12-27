@@ -35,7 +35,7 @@ _testTime = 0
 
 
 neteaseShareImage = ->
-	title1 = "点播圣诞星声"
+	title1 = "我的时代金曲"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
 	redirectUrl = "https://activity.music.163.com/lenovo/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
@@ -350,6 +350,13 @@ init = ->
 					@.folder = folder
 					return @.faild() unless image?
 					return false if @.pushed
+					if @.shareImageLink?
+						@.pushed = false
+						@.loading = false
+						# ugc.back()
+						neteaseShareImage()
+						ugc.shareDone()
+						return true
 					axios.post imageurl,data
 					.then (msg)=>
 						if msg.data.recode is 200
