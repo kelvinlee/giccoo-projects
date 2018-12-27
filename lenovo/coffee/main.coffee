@@ -407,7 +407,7 @@ init = ->
 					username: @.nickname
 					message: @.message
 					year: @.yearName
-					yearImage: @.singerIndex
+					yearImage: @.carIndex + 1
 					mobile: "18888888888"
 				}
 				axios.post "#{apiLink}active/autoSave/insert/database/lenovo/",data
@@ -420,12 +420,7 @@ init = ->
 			goWeb: ->
 				window.location.href = "http://www.baidu.com/"
 			goNote: ->
-				@.singerIndex = resultA[1] + 1
-				if @.singerIndex is 2
-					@.singerIndex = 3
-				else if @.singerIndex is 3
-					@.singerIndex = 2
-				@.pageNote = true
+				
 			init: ->
 				# getStart()
 			closeNote: ->
