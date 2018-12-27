@@ -73,19 +73,19 @@ null==Number.isInteger&&(Number.isInteger=function(e){return 0<=e}),// @codekit-
 // @codekit-prepend "../../libs/coffee/pixi-base"
 // @codekit-prepend "../../libs/coffee/String"
 // @codekit-prepend "./UGC"
-axios.defaults.withCredentials=!0,TrueW=640,TrueH=1138,imageurl="//api.giccoo.com/api/upload/image64/",apiUrl="//api.giccoo.com/lenovo",// apiLink = "//localhost:3000/"
+axios.defaults.withCredentials=!0,TrueW=640,TrueH=1138,imageurl="//api.giccoo.com/api/upload/image64/",apiUrl="//api.giccoo.com/kiehls",// apiLink = "//localhost:3000/"
 apiLink="//g.giccoo.com/",// apiLink = "http://192.168.3.53:3000/"
 // apiUrl = "http://localhost:8881/Levi"
-main={},sys="",sended=[!(loading={}),!(_public={})],_runTime=_startCache=_cache=ugcCache=musicIconCache=musicLineCache=ugc=null,_testTime=_second=0,neteaseShareImage=function e(){var t,i,n;return n="点播圣诞星声",t="https://image.giccoo.com/upload/".concat(main.folder,"/")+main.shareImageLink+"@!large",i="https://activity.music.163.com/lenovo/",// console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
+main={},sys="",sended=[!(loading={}),!(_public={})],_runTime=_startCache=_cache=ugcCache=musicIconCache=musicLineCache=ugc=null,_testTime=_second=0,neteaseShareImage=function e(){var t,i,n;return n="点播圣诞星声",t="https://image.giccoo.com/upload/".concat(main.folder,"/")+main.shareImageLink+"@!large",i="https://activity.music.163.com/kiehls/",// console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 // window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
-console.log("share href:",t),CloudMusic.sharePic({picUrl:t,text:n,link:i})},window.onload=function(){var e,t;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,-1<window.navigator.userAgent.indexOf("NeteaseMusic")&&(sys="NeteaseMusic"),t={name:"lenovo",title:"我的时代金曲",subTitle:"这首歌让我想起了青葱的岁月，还有许久未见的你",text:"",picUrl:"https://activity.music.163.com/lenovo/img/ico.jpg",link:"https://activity.music.163.com/lenovo/"},CloudMusic.setShareData(t),// else
+console.log("share href:",t),CloudMusic.sharePic({picUrl:t,text:n,link:i})},window.onload=function(){var e,t;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,-1<window.navigator.userAgent.indexOf("NeteaseMusic")&&(sys="NeteaseMusic"),t={name:"kiehls",title:"我的时代金曲",subTitle:"这首歌让我想起了青葱的岁月，还有许久未见的你",text:"",picUrl:"https://activity.music.163.com/kiehls/img/ico.jpg",link:"https://activity.music.163.com/kiehls/"},CloudMusic.setShareData(t),// else
 // 	loadWechatConfig()
 // 	wx.ready ->
 // 		shareContent =
 // 			title: "我的时代金曲"
 // 			desc: "这首歌让我想起了青葱的岁月，还有许久未见的你"
-// 			link: "https://activity.music.163.com/lenovo/"
-// 			imgUrl: "https://activity.music.163.com/lenovo/img/ico.jpg"
+// 			link: "https://activity.music.163.com/kiehls/"
+// 			imgUrl: "https://activity.music.163.com/kiehls/img/ico.jpg"
 // 			success: ->
 // 				# alert "success"
 // 			cancel: ->
@@ -122,7 +122,7 @@ return this.gameEnd=!0,ugc.app.renderer.render(ugc.app.stage),this.ugc=t},restar
 // goShare()
 return this.share()},share:function e(){var t,i,n;// goFinal2()
 return this.formBoxShow=!1,this.registerShow=!1,this.lotteryShow=!1,console.log("run share"),// ugc.qrcode.visible = true
-ugc.app.renderer.render(ugc.app.stage),this.ugc=ugc.app.view.toDataURL("image/jpeg",.6),n=this.ugc,this.wy?(t={image:n,folder:i="lenovo"},this.folder=i,null==n?this.faild():!this.pushed&&axios.post(imageurl,t).then(function(e){return 200===e.data.recode?main.success(e.data):main.faild(e)}).catch(function(e){
+ugc.app.renderer.render(ugc.app.stage),this.ugc=ugc.app.view.toDataURL("image/jpeg",.6),n=this.ugc,this.wy?(t={image:n,folder:i="kiehls"},this.folder=i,null==n?this.faild():!this.pushed&&axios.post(imageurl,t).then(function(e){return 200===e.data.recode?main.success(e.data):main.faild(e)}).catch(function(e){
 // alert e
 return main.faild(e)})):this.ugcShow=!0},
 // ugc.back()
@@ -140,9 +140,9 @@ closeUGC:function e(){return this.ugcShow=!1,ugc.shareDone()},faild:function e(t
 return window.location.href="https://music.163.com/#/song?id=".concat(t)},openMusic:function e(t){
 // goList()
 // _public.$children[0].pause()
-return CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/lenovo/")},goSubmit:function e(){var t=this,i;return i={username:this.nickname,message:this.message,year:this.yearName,yearImage:this.singerIndex,mobile:"18888888888"},axios.post("".concat(apiLink,"active/autoSave/insert/database/lenovo/"),i).then(function(e){return console.log("msg:",e)}).catch(function(e){return console.log("err:",e),t.send("请求错误,请重试")})},goWeb:function e(){return window.location.href="http://www.baidu.com/"},goNote:function e(){return this.singerIndex=resultA[1]+1,2===this.singerIndex?this.singerIndex=3:3===this.singerIndex&&(this.singerIndex=2),this.pageNote=!0},init:function e(){},
+return CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/kiehls/")},goSubmit:function e(){var t=this,i;return i={username:this.nickname,message:this.message,year:this.yearName,yearImage:this.singerIndex,mobile:"18888888888"},axios.post("".concat(apiLink,"active/autoSave/insert/database/kiehls/"),i).then(function(e){return console.log("msg:",e)}).catch(function(e){return console.log("err:",e),t.send("请求错误,请重试")})},goWeb:function e(){return window.location.href="http://www.baidu.com/"},goNote:function e(){return this.singerIndex=resultA[1]+1,2===this.singerIndex?this.singerIndex=3:3===this.singerIndex&&(this.singerIndex=2),this.pageNote=!0},init:function e(){},
 // getStart()
-closeNote:function e(){return this.pageNote=!1,goEnd()},start:function e(){return this.registerShow=!0},startGame:function e(){
+closeNote:function e(){return this.pageNote=!1,goEnd()},start:function e(){return this.registerShow=!0},endGame:function e(t,i){return this.rankingShow=!0},startGame:function e(){
 // console.log "start game"
 // _public.note = false
 return""===this.nickname?this.send("请输入姓名"):0===this.sex?this.send("点击选择你的性别"):(this.pageIndex=2,this.registerShow=!1,"undefined"!=typeof gameBegin&&null!==gameBegin?gameBegin(this.sex):void 0)},

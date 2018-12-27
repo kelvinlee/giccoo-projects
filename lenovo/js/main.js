@@ -120,7 +120,7 @@ return this.gameEnd=!0,ugc.app.renderer.render(ugc.app.stage),this.ugc=t},restar
 // goShare()
 return this.share()},share:function e(){var t,i,n;// goFinal2()
 return this.formBoxShow=!1,this.registerShow=!1,this.lotteryShow=!1,console.log("run share"),// ugc.qrcode.visible = true
-ugc.app.renderer.render(ugc.app.stage),this.ugc=ugc.app.view.toDataURL("image/jpeg",.6),n=this.ugc,this.wy?(t={image:n,folder:i="lenovo"},this.folder=i,null==n?this.faild():!this.pushed&&(null!=this.shareImageLink?(this.pushed=!1,this.loading=!1,// ugc.back()
+ugc.app.renderer.render(ugc.app.stage),this.ugc=ugc.app.view.toDataURL("image/jpeg",.6),n=this.ugc,gtag("event","click",{event_category:"share",event_label:"ugc",value:1}),this.wy?(t={image:n,folder:i="lenovo"},this.folder=i,null==n?this.faild():!this.pushed&&(null!=this.shareImageLink?(this.pushed=!1,this.loading=!1,// ugc.back()
 neteaseShareImage(),ugc.shareDone(),!0):axios.post(imageurl,t).then(function(e){return 200===e.data.recode?main.success(e.data):main.faild(e)}).catch(function(e){
 // alert e
 return main.faild(e)}))):this.ugcShow=!0},

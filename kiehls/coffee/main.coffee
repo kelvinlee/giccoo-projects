@@ -13,7 +13,7 @@ axios.defaults.withCredentials = true
 TrueW = 640
 TrueH = 1138
 imageurl = "//api.giccoo.com/api/upload/image64/"
-apiUrl = "//api.giccoo.com/lenovo"
+apiUrl = "//api.giccoo.com/kiehls"
 # apiLink = "//localhost:3000/"
 apiLink = "//g.giccoo.com/"
 # apiLink = "http://192.168.3.53:3000/"
@@ -37,7 +37,7 @@ _testTime = 0
 neteaseShareImage = ->
 	title1 = "点播圣诞星声"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://activity.music.163.com/lenovo/"
+	redirectUrl = "https://activity.music.163.com/kiehls/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	# window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "share href:",picUrl
@@ -56,12 +56,12 @@ window.onload = ->
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
 	shareData = 
-		name: 'lenovo'
+		name: 'kiehls'
 		title: '我的时代金曲'
 		subTitle: "这首歌让我想起了青葱的岁月，还有许久未见的你"
 		text: ''
-		picUrl: 'https://activity.music.163.com/lenovo/img/ico.jpg'
-		link: 'https://activity.music.163.com/lenovo/'
+		picUrl: 'https://activity.music.163.com/kiehls/img/ico.jpg'
+		link: 'https://activity.music.163.com/kiehls/'
 	CloudMusic.setShareData shareData
 	# else
 	# 	loadWechatConfig()
@@ -69,8 +69,8 @@ window.onload = ->
 	# 		shareContent =
 	# 			title: "我的时代金曲"
 	# 			desc: "这首歌让我想起了青葱的岁月，还有许久未见的你"
-	# 			link: "https://activity.music.163.com/lenovo/"
-	# 			imgUrl: "https://activity.music.163.com/lenovo/img/ico.jpg"
+	# 			link: "https://activity.music.163.com/kiehls/"
+	# 			imgUrl: "https://activity.music.163.com/kiehls/img/ico.jpg"
 	# 			success: ->
 	# 				# alert "success"
 	# 			cancel: ->
@@ -344,7 +344,7 @@ init = ->
 				image = @.ugc
 
 				if @.wy
-					folder = "lenovo"
+					folder = "kiehls"
 					data = {
 						image: image
 						folder: folder
@@ -395,7 +395,7 @@ init = ->
 				else
 					window.location.href = "https://music.163.com/#/playlist?id=#{id}"
 			openInApp: ->
-				CloudMusic.open("https://m.giccoo.com/lenovo/")
+				CloudMusic.open("https://m.giccoo.com/kiehls/")
 
 			goSubmit: ->
 				data = {
@@ -405,7 +405,7 @@ init = ->
 					yearImage: @.singerIndex
 					mobile: "18888888888"
 				}
-				axios.post "#{apiLink}active/autoSave/insert/database/lenovo/",data
+				axios.post "#{apiLink}active/autoSave/insert/database/kiehls/",data
 				.then (msg)=>
 					console.log "msg:",msg
 				.catch (err)=>
@@ -428,6 +428,10 @@ init = ->
 				goEnd()
 			start: ->
 				@.registerShow = true
+			endGame: (score,time)->
+				
+				@.rankingShow = true
+
 			startGame: ->
 				# console.log "start game"
 				# _public.note = false
