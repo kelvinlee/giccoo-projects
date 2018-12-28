@@ -308,6 +308,7 @@ function gameRestart(){
 	jumpCount=0
 	addWave(5,nowRound,"big")
 	timeScore=0
+	scoreNum=0
 	score=0
 	date=new Date()
 	ticker.start()
