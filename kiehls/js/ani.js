@@ -37,23 +37,32 @@ function setHintPage () {
 	startBtn.tap=gameStart
 }
 
-
+var date=null//new Date()
 function gameStart(){
 	startBtn.interactive=false
 	TweenMax.to(hintPage,.5,{alpha:0,onComplete:function(){
 		hintPage.visible=false
 	}})
+	date=new Date()
 	initAll()
+	
 }
 
 var gameBG=new PIXI.Container()
 var gameStage=new PIXI.Container()
 var gameSea=new PIXI.Container()
+var gamePlayer=new PIXI.Container()
 
 function initAll(){
-	pStage.addChild(gameBG,gameStage,gameSea)
+	pStage.addChild(gameBG,gameStage,gamePlayer,gameSea)
 	setBG()
 	setSea()
+	setWave()
+	setPlayer()
+	setJump()
+	setItem()
+	setScore()
+	setTicker()
 }
 
 var bg
@@ -76,6 +85,7 @@ function setBG(){
 	goIsland()
 	goCloud()
 	goCloud()
+	goCloud()
 	//goCloud()
 
 }
@@ -96,26 +106,28 @@ function goIsland(){
 
 
 var cloudA=[]
+var nowCloud=1
 function goCloud(){
-	var j=parseInt(Math.random()*3)+1
-	var _cloud=new Sprite(getTe(_CDN+"img/cloud"+j+".png"));
+	//var j=parseInt(Math.random()*3)+1
+	var _cloud=new Sprite(getTe(_CDN+"img/cloud"+nowCloud+".png"));
 	gameBG.addChild(_cloud)
 	cloudA.push(_cloud)
 
-	_cloud.scale.x=_cloud.scale.y=Math.random()*Math.random()*.5+.3
-	
 	_cloud.pivot.set(177.5,73)
-	_cloud.position.set(640+_cloud.width,stageH/2-350-_cloud.scale.y*200)
+	_cloud.scale.x=_cloud.scale.y=Math.random()*.3+.25*nowCloud
+	
+	
+	_cloud.position.set(640+_cloud.width,stageH/2-300-_cloud.scale.y*250)
 
 	if(Math.random()>.5){
 		_cloud.scale.x*=-1
 	}
-	TweenMax.to(_cloud,6-_cloud.scale.y*2,{x:-_cloud.width,ease:Linear.easeNone,delay:Math.random()*2.5,onComplete:function(){
-		_cloud.visible=false
-		goCloud()
-	}})
+	TweenMax.to(_cloud,6-_cloud.scale.y*2,{x:-_cloud.width,ease:Linear.easeNone,repeatDelay:Math.random()*2.5,delay:Math.random()*2.5,repeat:10000})
 	//TweenMax.to(_cloud,2,{y:"+=50",repeat:10,yoyo:true,ease:Sine.easeInOut})
-
+	nowCloud++
+	if(nowCloud==4){
+		nowCloud=1
+	}
 }
 
 
@@ -130,3 +142,124 @@ function setSea(){
 		TweenMax.to(_wave,2,{y:stageH/2-750,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:.5*i})
 	};
 }
+
+
+
+function setWave(){
+	//setInterval(ifaddWave,1000)
+	addWave(6)
+}
+var level=0
+var levelA=[.1,.15,.25,.35,1]
+function ifaddWave(){
+	if(Math.random()<levelA[level]){
+		//addWave()
+	}
+	//addWave(6)
+}
+var waveA=[]
+function addWave(_t){
+	var _wave=new PIXI.Container()
+	var _wavePic1=new Sprite(getTe(_CDN+"img/l1.png"));
+	var _wavePic1b=new Sprite(getTe(_CDN+"img/l1b.png"));
+	var _wavePic2=new Sprite(getTe(_CDN+"img/l2.png"));
+	gameStage.addChild(_wave)
+	_wave.addChild(_wavePic2,_wavePic1,_wavePic1b)
+	var nextT=6-Math.random()*3
+	_wave.x=640
+	_wave.y=stageH/2+180+308*(6-nextT)/6
+
+	_wave.pivot.y=308
+
+	TweenMax.to(_wave,6,{x:-_wave.width,ease:Linear.easeNone})
+	TweenMax.to(_wave,1,{y:"+=50",repeat:10000,yoyo:true,ease:Sine.easeInOut})
+	TweenMax.to(_wave.scale,1.5,{y:1.02,repeat:10000,yoyo:true,ease:Sine.easeInOut})
+	TweenMax.to(_wave.skew,1.5,{x:.3,repeat:10000,yoyo:true,ease:Sine.easeInOut})
+	setTimeout(function(){addWave(nextT)},nextT*1000)
+	waveA.push(_wave)
+
+	TweenMax.to(_wavePic1b,.5,{alpha:0,repeat:100000,yoyo:true,repeatDelay:.2})
+
+
+}
+
+var playerC=new PIXI.Container()
+var playerPic
+var firstWave
+var nowWave=[]
+function setPlayer(){
+	gamePlayer.addChild(playerC)
+	if(sex==1){
+		playerPic=new Sprite(getTe(_CDN+"img/player2.png"));
+	}else{
+		playerPic=new Sprite(getTe(_CDN+"img/player1.png"));
+	}
+	playerC.addChild(playerPic)
+	playerC.pivot.set(70.5,80.5)
+	playerC.position.set(168,stageH/2-131)
+
+	firstWave=new PIXI.Container()
+	var _wavePic1=new Sprite(getTe(_CDN+"img/l1.png"));
+	var _wavePic2=new Sprite(getTe(_CDN+"img/l2.png"));
+	firstWave.addChild(_wavePic2,_wavePic1)
+	gameStage.addChild(firstWave)
+	firstWave.pivot.y=308
+	firstWave.position.set(0,stageH/2+180)
+	TweenMax.to(firstWave.scale,1.5,{y:1.02,repeat:10000,yoyo:true,ease:Sine.easeInOut})
+	TweenMax.to(firstWave.skew,1.5,{x:.3,repeat:10000,yoyo:true,ease:Sine.easeInOut})
+	nowWave=[firstWave]
+	TweenMax.to(nowWave[0],6,{y:stageH/2+180+308,ease:Linear.easeNone})
+	playerPic.pivot.set(71,116)
+	playerPic.position.set(71,116)
+	TweenMax.to(playerPic,.6,{y:"+=20",repeat:1000000,yoyo:true,ease:Sine.easeInOut})
+}
+
+function setJump(){
+	pStage.interactive=true
+	pStage.touchstart=goJump
+}
+var jumpCount=0
+function goJump(){
+	if(jumpCount<2){
+		playerV=16
+		playerPic.rotation=-30*Math.PI/180
+		TweenMax.to(playerPic,1.5,{rotation:0,ease:Back.easeOut})
+		jumpCount++
+		//ifJump=1
+	}else{
+		console.log("不跳")
+	}
+	console.log("jumpCount",jumpCount)
+	
+}
+
+var item=new PIXI.Container()
+var itemPic
+function setItem(){
+	itemPic=new Sprite(getTe(_CDN+"img/item.png"));
+	gamePlayer.addChild(item)
+	item.addChild(itemPic)
+	item.pivot.set(28,24)
+	item.position.set(640+50,stageH/2-300+Math.random()*50-25)
+	TweenMax.to(item,6,{x:-50,ease:Linear.easeNone,onComplete:resetItem})
+}
+function resetItem(){
+	TweenMax.set(item.scale,{x:1,y:1})
+	TweenMax.set(item,{alpha:1,rotation:0})
+	item.position.set(640+50,stageH/2-300+Math.random()*50-25)
+	TweenMax.to(item,6,{x:-50,ease:Linear.easeNone,onComplete:resetItem,delay:Math.random()*5})
+}
+var score=0
+var scoreNum=0
+var scoreT=new PIXI.Text("score : 000000",{
+	fontSize:35,
+	fill: '#ffffff',
+	stroke: '#333333',
+  strokeThickness: 6
+})
+function setScore(){
+	gamePlayer.addChild(scoreT)
+	scoreT.y=40
+}
+
+

@@ -30,6 +30,15 @@ var imageList = [
 	_CDN+"img/cloud2.png",
 	_CDN+"img/cloud3.png",
 
+	_CDN+"img/l1.png",
+	_CDN+"img/l1b.png",
+	_CDN+"img/l2.png",
+
+	_CDN+"img/player1.png",
+	_CDN+"img/player2.png",
+
+	_CDN+"img/item.png",
+
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -61,4 +70,61 @@ function gameBegin(_sex){//1男 2女
 	console.log("?111")
 	setHintPage()
 }
+const ticker=new PIXI.ticker.Ticker()
+function setTicker(){
+	ticker.add(pageLoop)
+	ticker.start()
+}
+var ifJump=0
+var playerV=0
+var _G=.5//9.8/60
 
+function pageLoop(){
+	playerC.y-=playerV
+	playerV-=_G
+
+	for (var i = 0; i < waveA.length; i++) {
+		if(playerC.x>=waveA[i].x+80+20	&&	playerC.x<=waveA[i].x+364-20	&&	playerC.y<=waveA[i].y-308+20	&&	playerC.y>=waveA[i].y-308-40 && playerV<=0){
+			console.log("跳上了")
+			//scoreNum+=50
+			TweenMax.to(nowWave[0],1,{x:-nowWave[0].width,y:stageH/2+180+308,ease:Linear.easeNone})
+			nowWave[0]=waveA[i]
+			TweenMax.killTweensOf(nowWave[0])
+			var nextT=6*(stageH/2+180+308-nowWave[0].y)/308
+			var _x="-="+100*(stageH/2+180+308-nowWave[0].y)/308
+			TweenMax.to(nowWave[0],nextT,{x:_x,y:stageH/2+180+308,ease:Linear.easeNone})
+			jumpCount=0
+			//ifJump=0
+		}else{
+
+		}
+	};
+
+	if(playerC.y>=nowWave[0].y-308){
+		playerC.y=nowWave[0].y-308
+	}
+
+	if(playerC.x-item.x<=80&&playerC.x-item.x>=-80&&playerC.y-item.y<=70&&playerC.y-item.y>=-70&&item.alpha==1){
+		console.log("加分")
+		scoreNum+=200
+		TweenMax.to(item.scale,.5,{x:.5,y:.5})
+		TweenMax.to(item,.5,{y:"-=50",alpha:0,rotation:Math.PI/180*135})
+	}
+
+	//console.log(playerC.y,stageH/2+180+308-50)
+	
+
+
+	scoreNum+=0.1
+	score=parseInt(scoreNum)
+	scoreT.x=640-50-scoreT.width
+	scoreT.text="score : "+score
+
+	if(playerC.y>stageH/2+180-50){
+		playerC.visible=false
+		console.log("输了")
+		// alert("输了")
+		ticker.stop()
+		main.endGame(score,new Date().getTime()-date.getTime())
+	}
+}
