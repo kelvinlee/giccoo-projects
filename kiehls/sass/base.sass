@@ -211,7 +211,7 @@ video,canvas,svg
 	font-size: 0
 	+overhide
 	+tran(all,4s,ease)
-	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
 #game
 	+h
 	canvas
@@ -561,7 +561,7 @@ video,canvas,svg
 	+w
 	+h
 	// +bc(rgba(0,0,0,0.6))
-	+b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
 	.content
 		+abcentermiddle
 		+w
@@ -773,6 +773,7 @@ video,canvas,svg
 				text-decoration: underline
 
 .page-2
+	+tran(all,1s)
 	.content
 		
 
@@ -829,44 +830,6 @@ video,canvas,svg
 				// +bc(#fff)
 				+b($cdn+"img/point-f.png",no-repeat,center,center,contain)
 
-
-.pop-note
-	.bg
-		+w
-		+h
-		+b($cdn+"img/pop-bg.jpg",no-repeat,center,center,cover)
-	.content
-		+abcentermiddle
-		+w
-		margin-top: -7%
-	.title
-		+m
-	.card
-		margin-top: -5%
-		+posr
-		.stamp
-			+iw(110,640,100%)
-			+posa
-			+br(2%,20%)
-			animation-duration: 1s
-	.text
-		margin-top: -5%
-	.text-note
-		+posr
-		margin-top: -3%
-		.tree
-			+posa
-			+bl
-			z-index: -1
-		.texts
-			+posr
-			.text-emoji
-				+posa
-				+tl
-	.btn-close
-		+posa
-		+bl
-		z-index: 10
 
 .pop
 	+posa
@@ -1151,3 +1114,10 @@ video,canvas,svg
 	+bc(rgba(0,0,0,0.7))
 	color: #ff9595
 	z-index: 10009
+
+.pop-note
+	z-index: 2019
+
+.blur
+	+transform(scale(1.05,1.05))
+	filter: blur(16px)

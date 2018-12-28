@@ -41,7 +41,7 @@ block content
     .qr
       img(src="#{url}/img/qrcode.png")
       .text 请使用手机扫描二维码参与活动
-  .public#public
+  //- .public#public
     player(icon="true",src="#{url}/mp3/bgm.mp3",loop="true")
       //- .note-text
         img(src="#{url}/img/bgm-text.png")
@@ -110,7 +110,7 @@ block content
             .btn-info.bounceIn.animated.delay-11(@click="rankingShow = true") 查看排行榜
 
     transition(name="page-fade")
-      .page.page-2(v-show="pageIndex == 2")
+      .page.page-2(v-show="pageIndex == 2",:class="{blur: gameEnd}")
         .content
           #ugc
 
@@ -136,12 +136,17 @@ block content
               img(src="#{url}/img/btn-select.png")
 
     transition(name="page-fade")
+      .pop.pop-note(v-show="shareNotePage",@click="shareNotePage = false")
+        .content
+          img(src="#{url}/img/sharenote.png")
+
+    transition(name="page-fade")
       .pop.pop-ranking(v-show="rankingShow",:class="{end: gameEnd}")
         .content
           .title
             img(src="#{url}/img/ranking-title.png")
-            p 共获得了<span>1280</span>分
-            p 成功战胜了<span>全国80%</span>的玩家！
+            p 共获得了<span>{{score}}</span>分
+            p 成功战胜了<span>全国{{hit}}%</span>的玩家！
           .ranking-title
             img(src="#{url}/img/ranking-title-sub.png")
           ul.ranking-list
@@ -154,9 +159,9 @@ block content
               span.name 库库
               span.score 1800分
           .btns
-            .btn.btn-reload
+            .btn.btn-reload(@click="regame")
               img(src="#{url}/img/btn-regame.png")
-            .btn.btn-share
+            .btn.btn-share(@click="shareWeb")
               img(src="#{url}/img/btn-share.png")
           .btn-close(@click="rankingShow = false")
             img(src="#{url}/img/icon-close.png")
