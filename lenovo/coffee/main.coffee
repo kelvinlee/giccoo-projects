@@ -341,10 +341,11 @@ init = ->
 				@.ugc = ugc.app.view.toDataURL("image/jpeg",0.6)
 				image = @.ugc
 
-				gtag 'event', "click",
+				gtag('event', "click", {
 					'event_category': "share",
 					'event_label': "ugc",
 					'value': 1
+				})
 
 				if @.wy
 					folder = "lenovo"

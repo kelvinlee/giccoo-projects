@@ -288,7 +288,10 @@ init = ->
 					@.gameEnd = true
 				,2000
 			regame: ->
-				window.location.reload()
+				# window.location.reload()
+				# @.gameEnd = false
+				@.rankingShow = false
+				gameRestart()
 			gobuy: ->
 				window.location.href = "http://www.baidu.com"
 			dateText: (date)->
@@ -416,8 +419,16 @@ init = ->
 				@.rankingShow = true
 				# 6s 200,
 				@.score = score
-
-				setShareWeb("你的好友获得了#{score}分,要来挑战一下吗?","欢迎参加游戏","http://m.giccoo.com/kiehls/")
+				data = 
+					score: score
+					time: time
+				axios.post "#{apiLink}active/kiehls/score/",data
+				.then (msg)=>
+					console.log "msg:",msg.data.info.id
+					setShareWeb("你的好友获得了#{score}分,要来挑战一下吗?","欢迎参加游戏","http://m.giccoo.com/kiehls/?id=#{msg.data.info.id}")
+				.catch (err)=>
+					console.log "err:",err
+					@.send "请求错误,请重试"
 
 			startGame: ->
 				# console.log "start game"

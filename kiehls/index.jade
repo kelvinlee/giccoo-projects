@@ -110,7 +110,7 @@ block content
             .btn-info.bounceIn.animated.delay-11(@click="rankingShow = true") 查看排行榜
 
     transition(name="page-fade")
-      .page.page-2(v-show="pageIndex == 2",:class="{blur: gameEnd}")
+      .page.page-2(v-show="pageIndex == 2",:class="{blur: rankingShow}")
         .content
           #ugc
 
