@@ -161,7 +161,7 @@ function ifaddWave(){
 	//addWave(6)
 }
 var waveA=[]
-function addWave(_t,_nowRound){
+function addWave(_t,_nowRound,_ifBig){
 	if(_nowRound==nowRound){
 
 		var _wave=new PIXI.Container()
@@ -171,6 +171,9 @@ function addWave(_t,_nowRound){
 		gameStage.addChild(_wave)
 		_wave.addChild(_wavePic2,_wavePic1,_wavePic1b)
 		var nextT=6-Math.random()*2
+		if(_ifBig=="big"){
+			nextT=6
+		}
 		_wave.x=640
 		_wave.y=stageH/2+180+308*(6-nextT)/6
 
@@ -301,6 +304,8 @@ function gameRestart(){
 	};
 	waveA=[firstWave]
 	jumpCount=0
-	addWave(6,nowRound)
+	addWave(6,nowRound,"big")
+	timeScore=0
+	score=0
 }
 
