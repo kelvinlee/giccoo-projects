@@ -299,7 +299,7 @@ function gameRestart(){
 	// playerPic.pivot.set(71,116)
 	// playerPic.position.set(71,116)
 	// TweenMax.to(playerPic,.6,{y:"+=20",repeat:1000000,yoyo:true,ease:Sine.easeInOut})
-	ticker.start()
+	
 	for (var i = 0; i < waveA.length ; i++) {
 		gameStage.removeChild(waveA[i])
 		TweenMax.killTweensOf(waveA[i])
@@ -310,5 +310,6 @@ function gameRestart(){
 	timeScore=0
 	score=0
 	date=new Date()
+	ticker.start()
 }
 
