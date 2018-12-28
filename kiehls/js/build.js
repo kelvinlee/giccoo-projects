@@ -78,7 +78,7 @@ function setTicker(){
 }
 var ifJump=0
 var playerV=0
-var _G=.45//9.8/60
+var _G=.4//9.8/60
 var timeScore=0
 
 function pageLoop(){
@@ -86,14 +86,14 @@ function pageLoop(){
 	playerV-=_G
 
 	for (var i = 0; i < waveA.length; i++) {
-		if(playerC.x>=waveA[i].x+80-40	&&	playerC.x<=waveA[i].x+364-20	&&	playerC.y<=waveA[i].y-308+20	&&	playerC.y>=waveA[i].y-308-40 && playerV<=0){
+		if(playerC.x>=waveA[i].x+80-50	&&	playerC.x<=waveA[i].x+364-40	&&	playerC.y<=waveA[i].y-308+20	&&	playerC.y>=waveA[i].y-308-40 && playerV<=0){
 			console.log("跳上了")
 			//scoreNum+=50
 			TweenMax.to(nowWave[0],1,{x:-nowWave[0].width,y:stageH/2+180+308,ease:Linear.easeNone})
 			nowWave[0]=waveA[i]
 			TweenMax.killTweensOf(nowWave[0])
 			var nextT=6*(stageH/2+180+308-nowWave[0].y)/308
-			var _x="-="+100*(stageH/2+180+308-nowWave[0].y)/308
+			var _x=0//"-="+100*(stageH/2+180+308-nowWave[0].y)/308
 			TweenMax.to(nowWave[0],nextT,{x:_x,y:stageH/2+180+308,ease:Linear.easeNone})
 			jumpCount=0
 			//ifJump=0

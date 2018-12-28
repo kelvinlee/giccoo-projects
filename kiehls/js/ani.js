@@ -150,7 +150,7 @@ function setSea(){
 var nowRound=0
 function setWave(){
 	//setInterval(ifaddWave,1000)
-	addWave(6,nowRound)
+	addWave(5,nowRound)
 }
 var level=0
 var levelA=[.1,.15,.25,.35,1]
@@ -170,16 +170,16 @@ function addWave(_t,_nowRound,_ifBig){
 		var _wavePic2=new Sprite(getTe(_CDN+"img/l2.png"));
 		gameStage.addChild(_wave)
 		_wave.addChild(_wavePic2,_wavePic1,_wavePic1b)
-		var nextT=6-Math.random()*2
+		var nextT=5-Math.random()*2
 		if(_ifBig=="big"){
-			nextT=6
+			nextT=5
 		}
 		_wave.x=640
-		_wave.y=stageH/2+180+308*(6-nextT)/6
+		_wave.y=stageH/2+180+308*(5-nextT)/5
 
 		_wave.pivot.y=308
 
-		TweenMax.to(_wave,6,{x:-_wave.width,ease:Linear.easeNone})
+		TweenMax.to(_wave,5,{x:-_wave.width,ease:Linear.easeNone})
 		TweenMax.to(_wave,1,{y:"+=50",repeat:10000,yoyo:true,ease:Sine.easeInOut})
 		TweenMax.to(_wave.scale,1.5,{y:1.02,repeat:10000,yoyo:true,ease:Sine.easeInOut})
 		TweenMax.to(_wave.skew,1.5,{x:.3,repeat:10000,yoyo:true,ease:Sine.easeInOut})
@@ -230,6 +230,8 @@ var jumpCount=0
 function goJump(){
 	if(jumpCount<2){
 		playerV=16
+
+		
 		playerPic.rotation=-30*Math.PI/180
 		TweenMax.to(playerPic,1.5,{rotation:0,ease:Back.easeOut})
 		jumpCount++
@@ -304,8 +306,9 @@ function gameRestart(){
 	};
 	waveA=[firstWave]
 	jumpCount=0
-	addWave(6,nowRound,"big")
+	addWave(5,nowRound,"big")
 	timeScore=0
 	score=0
+	date=new Date()
 }
 
