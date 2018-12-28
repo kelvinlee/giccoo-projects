@@ -124,7 +124,7 @@
             </div>
             <div class="ranking-title"><img src="./img/ranking-title-sub.png"></div>
             <ul class="ranking-list">
-              <li v-for="v,index in list"><span class="numb">No.{{index}}</span><span class="name">{{v.nickname}}</span><span class="score">{{v.score}}分</span></li>
+              <li v-for="v,index in list" :class="{on: v.id == insertId}"><span class="numb">No.{{index+1}}</span><span class="name">{{v.nickname}}</span><span class="score">{{v.score}}分</span></li>
             </ul>
             <div class="btns">
               <div @click="regame" class="btn btn-reload"><img src="./img/btn-regame.png"></div>

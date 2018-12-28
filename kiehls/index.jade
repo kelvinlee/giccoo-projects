@@ -164,8 +164,8 @@ block content
           .ranking-title
             img(src="#{url}/img/ranking-title-sub.png")
           ul.ranking-list
-            li(v-for="v,index in list")
-              span.numb No.{{index}}
+            li(v-for="v,index in list",:class="{on: v.id == insertId}")
+              span.numb No.{{index+1}}
               span.name {{v.nickname}}
               span.score {{v.score}}分
           .btns

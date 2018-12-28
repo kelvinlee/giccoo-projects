@@ -227,8 +227,9 @@ init = ->
 			carIndex: 1
 			yearName: "none"
 			list: []
+			insertId: 0
 			score: 0
-			hit: 45
+			hit: 1
 		watch:
 			nickname: (n,o)->
 				@.nickname = @.nickname.replace(/[\r\n]/g, "")
@@ -415,12 +416,24 @@ init = ->
 				goEnd()
 			start: ->
 				@.registerShow = true
+			checkHit: ->
+				max = 1501
+				# max = @list[@list.length-1].score
+				hit = Math.floor ((@.score+1)/(max+1))*100
+				if hit >= 100
+					hit = 90 + Math.floor Math.random()*6
+				if @.score >= @list[@list.length-1].score
+					hit = 99
+				if @.score >= @list[0].score
+					hit = 100
+				@.hit = hit
 			endGame: (score,time)->
 				console.log "score:",score,time
 				@.gameEnd = true
 				@.rankingShow = true
 				# 6s 200,
 				@.score = score
+				@.checkHit()
 				data = 
 					nickname: @.nickname
 					sex: @.sex
@@ -431,6 +444,7 @@ init = ->
 					console.log "msg:",msg.data
 					setShareWeb("你的好友获得了#{score}分,要来挑战一下吗?","欢迎参加游戏","http://m.giccoo.com/kiehls/?id=#{msg.data.info.insertId}")
 					@.getList() if @.score > @.list[@.list.length-1].score
+					@.insertId = msg.data.info.insertId
 					
 				.catch (err)=>
 					console.log "err:",err
@@ -489,6 +503,7 @@ init = ->
 					console.log "msg:",msg.data.list
 					@.score = msg.data.list.score
 					@.pageIndex = 3
+					@.checkHit()
 				.catch (err)=>
 					console.log "err:",err
 			getList: ->
@@ -496,6 +511,7 @@ init = ->
 				.then (msg)=>
 					console.log "msg:",msg.data.list
 					@.list = msg.data.list
+					@.checkHit()
 				.catch (err)=>
 					console.log "err:",err
 		# watch:

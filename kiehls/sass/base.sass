@@ -184,6 +184,13 @@ $pageMainBGColor: #0c101a;
 		margin-left: -50%
 	100%
 		margin-left: 0
++keyframes(fadeColor)
+	0%, 100%
+		color: #1d92b6
+		+transform(scale(1,1))
+	50%
+		color: #b6211d
+		+transform(scale(1.05,1.05))
 html,body
 	+w
 	+h
@@ -804,7 +811,7 @@ video,canvas,svg
 			+bl(10%)
 			.smaller &
 				+bl(4%)
-			
+
 
 .slider-box
 	+w(65%)
@@ -1063,6 +1070,9 @@ video,canvas,svg
 				+p(0.4em 0.6em)
 				+box
 				+text-center
+				&.on
+					color: #b6211d
+					+animation(fadeColor,1.5s,ease,infinite)
 				span
 					+w(35%)
 					+m
