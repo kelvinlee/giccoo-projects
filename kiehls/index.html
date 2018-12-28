@@ -10,10 +10,6 @@
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
-    <div id="public" class="public">
-      <player icon="true" src="./mp3/bgm.mp3" loop="true">
-      </player>
-    </div>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
         <div class="bottle"><img src="./img/loading-frame.png">
@@ -70,7 +66,7 @@
         </div>
       </transition>
       <transition name="page-fade">
-        <div v-show="pageIndex == 2" class="page page-2">
+        <div v-show="pageIndex == 2" :class="{blur: gameEnd}" class="page page-2">
           <div class="content">
             <div id="ugc"></div>
           </div>
@@ -98,11 +94,16 @@
         </div>
       </transition>
       <transition name="page-fade">
+        <div v-show="shareNotePage" @click="shareNotePage = false" class="pop pop-note">
+          <div class="content"><img src="./img/sharenote.png"></div>
+        </div>
+      </transition>
+      <transition name="page-fade">
         <div v-show="rankingShow" :class="{end: gameEnd}" class="pop pop-ranking">
           <div class="content">
             <div class="title"><img src="./img/ranking-title.png">
-              <p>共获得了<span>1280</span>分</p>
-              <p>成功战胜了<span>全国80%</span>的玩家！</p>
+              <p>共获得了<span>{{score}}</span>分</p>
+              <p>成功战胜了<span>全国{{hit}}%</span>的玩家！</p>
             </div>
             <div class="ranking-title"><img src="./img/ranking-title-sub.png"></div>
             <ul class="ranking-list">
@@ -110,8 +111,8 @@
               <li><span class="numb">No.2</span><span class="name">库库</span><span class="score">1800分</span></li>
             </ul>
             <div class="btns">
-              <div class="btn btn-reload"><img src="./img/btn-regame.png"></div>
-              <div class="btn btn-share"><img src="./img/btn-share.png"></div>
+              <div @click="regame" class="btn btn-reload"><img src="./img/btn-regame.png"></div>
+              <div @click="shareWeb" class="btn btn-share"><img src="./img/btn-share.png"></div>
             </div>
             <div @click="rankingShow = false" class="btn-close"><img src="./img/icon-close.png"></div>
           </div>

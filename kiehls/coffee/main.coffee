@@ -53,32 +53,7 @@ window.onload = ->
 
 	lastY = 0
 
-	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
-		sys = "NeteaseMusic"
-	shareData = 
-		name: 'kiehls'
-		title: '我的时代金曲'
-		subTitle: "这首歌让我想起了青葱的岁月，还有许久未见的你"
-		text: ''
-		picUrl: 'https://activity.music.163.com/kiehls/img/ico.jpg'
-		link: 'https://activity.music.163.com/kiehls/'
-	CloudMusic.setShareData shareData
-	# else
-	# 	loadWechatConfig()
-	# 	wx.ready ->
-	# 		shareContent =
-	# 			title: "我的时代金曲"
-	# 			desc: "这首歌让我想起了青葱的岁月，还有许久未见的你"
-	# 			link: "https://activity.music.163.com/kiehls/"
-	# 			imgUrl: "https://activity.music.163.com/kiehls/img/ico.jpg"
-	# 			success: ->
-	# 				# alert "success"
-	# 			cancel: ->
-	# 				# alert "cancel"
-	# 		wx.onMenuShareTimeline shareContent
-	# 		wx.onMenuShareAppMessage shareContent
-	# 		wx.onMenuShareQQ shareContent
-	# 		wx.onMenuShareWeibo shareContent
+	setShareWeb("科颜氏","欢迎参加游戏","http://m.giccoo.com/kiehls/")
 
 	_public = new Vue
 		el: "#public"
@@ -217,6 +192,7 @@ init = ->
 			swing: false
 			rankingShow: false
 			registerShow: false
+			shareNotePage: false
 			lotteryShow: false
 			lotteryEndShow: false
 			lotteryInfo: 
@@ -249,6 +225,8 @@ init = ->
 			formBoxShow: false
 			carIndex: 1
 			yearName: "none"
+			score: 0
+			hit: 45
 		watch:
 			nickname: (n,o)->
 				@.nickname = @.nickname.replace(/[\r\n]/g, "")
@@ -331,7 +309,11 @@ init = ->
 			goshare: ->
 				# goShare()
 				@.share()
-
+			shareWeb:->
+				if sys is "NeteaseMusic"
+					CloudMusic.shareInApp()
+				else
+					@.shareNotePage = true
 			share: ->
 				# goFinal2()
 				@.formBoxShow = false
@@ -429,8 +411,13 @@ init = ->
 			start: ->
 				@.registerShow = true
 			endGame: (score,time)->
-				
+				console.log "score:",score,time
+				@.gameEnd = true
 				@.rankingShow = true
+				# 6s 200,
+				@.score = score
+
+				setShareWeb("你的好友获得了#{score}分,要来挑战一下吗?","欢迎参加游戏","http://m.giccoo.com/kiehls/")
 
 			startGame: ->
 				# console.log "start game"
@@ -502,6 +489,39 @@ init = ->
 			# 	_public.note = false
 
 
-				
-			
+_shareLoaded = false
+setShareWeb = (title,desc,link)->
+	shareData = 
+		name: 'kiehls'
+		title: title
+		subTitle: desc
+		text: ''
+		picUrl: 'http://m.giccoo.com/kiehls/img/ico.jpg'
+		link: link
+	shareContent =
+		title: title
+		desc: desc
+		link: link
+		imgUrl: "http://m.giccoo.com/kiehls/img/ico.jpg"
+		success: ->
+			# alert "success"
+		cancel: ->
+			# alert "cancel"
+	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
+		sys = "NeteaseMusic"
+		CloudMusic.setShareData shareData
+	else if not _shareLoaded
+		loadWechatConfig()
+		wx.ready ->
+			_shareLoaded = true
+			wx.onMenuShareTimeline shareContent
+			wx.onMenuShareAppMessage shareContent
+			wx.onMenuShareQQ shareContent
+			wx.onMenuShareWeibo shareContent
+	else
+		wx.onMenuShareTimeline shareContent
+		wx.onMenuShareAppMessage shareContent
+		wx.onMenuShareQQ shareContent
+		wx.onMenuShareWeibo shareContent
+
 

@@ -6155,6 +6155,50 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/kiehls/img/hint1.png": {
+		"ft": 32768,
+		"iS": 11267,
+		"oA": 0,
+		"oAP": "/kiehls/img/hint1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/hint2.png": {
+		"ft": 32768,
+		"iS": 18614,
+		"oA": 0,
+		"oAP": "/kiehls/img/hint2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/hint3.png": {
+		"ft": 32768,
+		"iS": 15586,
+		"oA": 0,
+		"oAP": "/kiehls/img/hint3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/hint4.png": {
+		"ft": 32768,
+		"iS": 28102,
+		"oA": 0,
+		"oAP": "/kiehls/img/hint4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/kiehls/img/homepage-icon.png": {
 		"ft": 32768,
 		"iS": 205456,
@@ -6204,6 +6248,17 @@
 		"iS": 45281,
 		"oA": 0,
 		"oAP": "/kiehls/img/l1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/l1b.png": {
+		"ft": 32768,
+		"iS": 43380,
+		"oA": 0,
+		"oAP": "/kiehls/img/l1b.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6474,6 +6529,50 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/kiehls/img/sharenote.png": {
+		"ft": 32768,
+		"iS": 9439,
+		"oA": 0,
+		"oAP": "/kiehls/img/sharenote.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/startboy.png": {
+		"ft": 32768,
+		"iS": 65951,
+		"oA": 0,
+		"oAP": "/kiehls/img/startboy.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/startbtn.png": {
+		"ft": 32768,
+		"iS": 10595,
+		"oA": 0,
+		"oAP": "/kiehls/img/startbtn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/startgirl.png": {
+		"ft": 32768,
+		"iS": 22199,
+		"oA": 0,
+		"oAP": "/kiehls/img/startgirl.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/kiehls/img/wave1.png": {
 		"ft": 32768,
 		"iS": 17833,
@@ -6507,17 +6606,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/kiehls/img/wave4.png": {
-		"ft": 32768,
-		"iS": 25625,
-		"oA": 0,
-		"oAP": "/kiehls/img/wave4.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"/kiehls/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -6540,6 +6628,16 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/kiehls/js/ani-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/kiehls/js/build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/kiehls/js/build-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
@@ -6586,6 +6684,39 @@
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
+		},
+	"/kiehls/wave1.png": {
+		"ft": 32768,
+		"iS": 25625,
+		"oA": 0,
+		"oAP": "/kiehls/wave1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/wave2.png": {
+		"ft": 32768,
+		"iS": 18810,
+		"oA": 0,
+		"oAP": "/kiehls/wave2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/wave4.png": {
+		"ft": 32768,
+		"iS": 17833,
+		"oA": 0,
+		"oAP": "/kiehls/wave4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"/lamer": {
 		"ft": 65536,
