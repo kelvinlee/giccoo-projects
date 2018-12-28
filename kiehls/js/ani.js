@@ -130,7 +130,7 @@ function goCloud(){
 	}
 }
 
-
+var jumpBtn
 function setSea(){
 	for (var i = 0; i < 3; i++) {
 		var j=i+1
@@ -141,13 +141,16 @@ function setSea(){
 		TweenMax.to(_wave,3.5-1*i,{x:-_wave.width/2,repeat:100000,ease:Linear.easeNone})
 		TweenMax.to(_wave,2,{y:stageH/2-750,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:.5*i})
 	};
+	jumpBtn=new Sprite(getTe(_CDN+"img/btn_jump.png"));
+	gameSea.addChild(jumpBtn)
+	jumpBtn.y=stageH/2+300*stageH/1000
 }
 
 
-
+var nowRound=0
 function setWave(){
 	//setInterval(ifaddWave,1000)
-	addWave(6)
+	addWave(6,nowRound)
 }
 var level=0
 var levelA=[.1,.15,.25,.35,1]
@@ -158,29 +161,31 @@ function ifaddWave(){
 	//addWave(6)
 }
 var waveA=[]
-function addWave(_t){
-	var _wave=new PIXI.Container()
-	var _wavePic1=new Sprite(getTe(_CDN+"img/l1.png"));
-	var _wavePic1b=new Sprite(getTe(_CDN+"img/l1b.png"));
-	var _wavePic2=new Sprite(getTe(_CDN+"img/l2.png"));
-	gameStage.addChild(_wave)
-	_wave.addChild(_wavePic2,_wavePic1,_wavePic1b)
-	var nextT=6-Math.random()*3
-	_wave.x=640
-	_wave.y=stageH/2+180+308*(6-nextT)/6
+function addWave(_t,_nowRound){
+	if(_nowRound==nowRound){
 
-	_wave.pivot.y=308
+		var _wave=new PIXI.Container()
+		var _wavePic1=new Sprite(getTe(_CDN+"img/l1.png"));
+		var _wavePic1b=new Sprite(getTe(_CDN+"img/l1b.png"));
+		var _wavePic2=new Sprite(getTe(_CDN+"img/l2.png"));
+		gameStage.addChild(_wave)
+		_wave.addChild(_wavePic2,_wavePic1,_wavePic1b)
+		var nextT=6-Math.random()*2
+		_wave.x=640
+		_wave.y=stageH/2+180+308*(6-nextT)/6
 
-	TweenMax.to(_wave,6,{x:-_wave.width,ease:Linear.easeNone})
-	TweenMax.to(_wave,1,{y:"+=50",repeat:10000,yoyo:true,ease:Sine.easeInOut})
-	TweenMax.to(_wave.scale,1.5,{y:1.02,repeat:10000,yoyo:true,ease:Sine.easeInOut})
-	TweenMax.to(_wave.skew,1.5,{x:.3,repeat:10000,yoyo:true,ease:Sine.easeInOut})
-	setTimeout(function(){addWave(nextT)},nextT*1000)
-	waveA.push(_wave)
+		_wave.pivot.y=308
 
-	TweenMax.to(_wavePic1b,.5,{alpha:0,repeat:100000,yoyo:true,repeatDelay:.2})
+		TweenMax.to(_wave,6,{x:-_wave.width,ease:Linear.easeNone})
+		TweenMax.to(_wave,1,{y:"+=50",repeat:10000,yoyo:true,ease:Sine.easeInOut})
+		TweenMax.to(_wave.scale,1.5,{y:1.02,repeat:10000,yoyo:true,ease:Sine.easeInOut})
+		TweenMax.to(_wave.skew,1.5,{x:.3,repeat:10000,yoyo:true,ease:Sine.easeInOut})
+		setTimeout(function(){addWave(nextT,_nowRound)},nextT*1000)
+		waveA.push(_wave)
 
+		TweenMax.to(_wavePic1b,.5,{alpha:0,repeat:100000,yoyo:true,repeatDelay:.2})
 
+	}
 }
 
 var playerC=new PIXI.Container()
@@ -262,4 +267,40 @@ function setScore(){
 	scoreT.y=40
 }
 
+
+function gameRestart(){
+	nowRound++
+	playerC.visible=true
+	// if(sex==1){
+	// 	playerPic=new Sprite(getTe(_CDN+"img/player2.png"));
+	// }else{
+	// 	playerPic=new Sprite(getTe(_CDN+"img/player1.png"));
+	// }
+	//playerC.addChild(playerPic)
+	//playerC.pivot.set(70.5,80.5)
+	playerC.position.set(168,stageH/2-131)
+
+	firstWave=new PIXI.Container()
+	var _wavePic1=new Sprite(getTe(_CDN+"img/l1.png"));
+	var _wavePic2=new Sprite(getTe(_CDN+"img/l2.png"));
+	firstWave.addChild(_wavePic2,_wavePic1)
+	gameStage.addChild(firstWave)
+	firstWave.pivot.y=308
+	firstWave.position.set(0,stageH/2+180)
+	TweenMax.to(firstWave.scale,1.5,{y:1.02,repeat:10000,yoyo:true,ease:Sine.easeInOut})
+	TweenMax.to(firstWave.skew,1.5,{x:.3,repeat:10000,yoyo:true,ease:Sine.easeInOut})
+	nowWave=[firstWave]
+	TweenMax.to(nowWave[0],6,{y:stageH/2+180+308,ease:Linear.easeNone})
+	// playerPic.pivot.set(71,116)
+	// playerPic.position.set(71,116)
+	// TweenMax.to(playerPic,.6,{y:"+=20",repeat:1000000,yoyo:true,ease:Sine.easeInOut})
+	ticker.start()
+	for (var i = 0; i < waveA.length ; i++) {
+		gameStage.removeChild(waveA[i])
+		TweenMax.killTweensOf(waveA[i])
+	};
+	waveA=[firstWave]
+	jumpCount=0
+	addWave(6,nowRound)
+}
 

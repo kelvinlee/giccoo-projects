@@ -38,6 +38,7 @@ var imageList = [
 	_CDN+"img/player2.png",
 
 	_CDN+"img/item.png",
+	_CDN+"img/btn_jump.png",
 
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
@@ -77,14 +78,15 @@ function setTicker(){
 }
 var ifJump=0
 var playerV=0
-var _G=.5//9.8/60
+var _G=.45//9.8/60
+var timeScore=0
 
 function pageLoop(){
 	playerC.y-=playerV
 	playerV-=_G
 
 	for (var i = 0; i < waveA.length; i++) {
-		if(playerC.x>=waveA[i].x+80+20	&&	playerC.x<=waveA[i].x+364-20	&&	playerC.y<=waveA[i].y-308+20	&&	playerC.y>=waveA[i].y-308-40 && playerV<=0){
+		if(playerC.x>=waveA[i].x+80-40	&&	playerC.x<=waveA[i].x+364-20	&&	playerC.y<=waveA[i].y-308+20	&&	playerC.y>=waveA[i].y-308-40 && playerV<=0){
 			console.log("跳上了")
 			//scoreNum+=50
 			TweenMax.to(nowWave[0],1,{x:-nowWave[0].width,y:stageH/2+180+308,ease:Linear.easeNone})
@@ -115,10 +117,12 @@ function pageLoop(){
 	
 
 
-	scoreNum+=0.1
-	score=parseInt(scoreNum)
+	//scoreNum+=0.1
+	timeScore=(new Date().getTime()-date.getTime())/1000*5
+	score=Math.floor(scoreNum+timeScore)
 	scoreT.x=640-50-scoreT.width
 	scoreT.text="score : "+score
+
 
 	if(playerC.y>stageH/2+180-50){
 		playerC.visible=false
@@ -126,5 +130,7 @@ function pageLoop(){
 		// alert("输了")
 		ticker.stop()
 		main.endGame(score,new Date().getTime()-date.getTime())
+
+		//gameRestart()
 	}
 }
