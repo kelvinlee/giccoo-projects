@@ -107,7 +107,7 @@ window.onload = ->
 			next: ->
 				document.getElementById('load').className += " fadeOut animated"
 				main.mounted = true
-				main.init()
+				main.init() if main.init?
 				setTimeout ->
 					clearInterval _startCache
 					document.getElementById('load').style.display = "none"
@@ -123,18 +123,18 @@ window.onload = ->
 					@.number = msg.data.info[0].count
 				.catch (err)->
 					console.log "err:",err
-				axios.get "//music.163.com/api/activity/lorealysl/userinfo"
-				.then (msg)=>
-					d = msg.data
-					if d.code is 200
-						main.userInfoGet = true
-						main.userInfo = d.data
+				# axios.get "//music.163.com/api/activity/lorealysl/userinfo"
+				# .then (msg)=>
+				# 	d = msg.data
+				# 	if d.code is 200
+				# 		main.userInfoGet = true
+				# 		main.userInfo = d.data
 		mounted: ->
 			@.mounted = true
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 			@.get()
-			# @.next() # for test
+			@.next() # for test
 			# setTimeout =>
 			# 	@.next()
 			# ,200
@@ -146,7 +146,7 @@ window.onload = ->
 					@.progress = 100
 					clearInterval timein
 					_cache = setTimeout =>
-						@.next()
+						# @.next()
 					,3000
 					_startCache = setInterval =>
 						@.number += 1+Math.floor Math.random()*2

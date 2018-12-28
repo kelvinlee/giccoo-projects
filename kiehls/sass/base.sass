@@ -775,7 +775,36 @@ video,canvas,svg
 .page-2
 	+tran(all,1s)
 	.content
-		
+
+.page-3
+	+b($cdn+"img/hitpage-bg.jpg",no-repeat,center,center,cover)
+	.content
+		.logo
+			+posa
+			+tl
+		.texts
+			+abcentermiddle
+			+font-size(0.9rem)
+			+w(80%)
+			margin-top: -32%
+			color: #fff
+			.smaller &
+				margin-top: -29%
+			.biger &
+				margin-top: -38%
+			p
+				+m(0.5em 0)
+				span
+					font-size: 1.4em
+					+show-inline
+					+p(0 0.2em)
+					color: #ffde58
+		.btn
+			+posa
+			+bl(10%)
+			.smaller &
+				+bl(4%)
+			
 
 .slider-box
 	+w(65%)

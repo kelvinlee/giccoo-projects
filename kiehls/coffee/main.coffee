@@ -1,6 +1,7 @@
 # @codekit-prepend "coffee/css3Prefix"
 # @codekit-prepend "../../libs/coffee/loadWechatConfig"
 # @codekit-prepend "../../libs/coffee/IsPC"
+# @codekit-prepend "../../libs/coffee/get"
 # @codekit-prepend "../../libs/vue/vue-resetinput"
 # @codekit-prepend "../../libs/vue/vue-player"
 # @codekit-prepend "../../libs/vue/vue-slider"
@@ -94,7 +95,7 @@ window.onload = ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 
-			@.next() # for test
+			# @.next() # for test
 
 			timein = setInterval =>
 				@.progress += 3
@@ -103,7 +104,7 @@ window.onload = ->
 					@.progress = 100
 					clearInterval timein
 					_cache = setTimeout =>
-						# @.next()
+						@.next()
 					,1000
 			,1000/20
 	
@@ -138,7 +139,7 @@ init = ->
 			noteTime: null
 			noteShow: false
 			pageInfoShow: false
-			pageIndex: 2
+			pageIndex: 1
 			step: 1
 			singerIndex: 2
 			logo: true
@@ -225,6 +226,7 @@ init = ->
 			formBoxShow: false
 			carIndex: 1
 			yearName: "none"
+			list: []
 			score: 0
 			hit: 45
 		watch:
@@ -420,12 +422,14 @@ init = ->
 				# 6s 200,
 				@.score = score
 				data = 
+					nickname: @.nickname
+					sex: @.sex
 					score: score
 					time: time
 				axios.post "#{apiLink}active/kiehls/score/",data
 				.then (msg)=>
-					console.log "msg:",msg.data.info.id
-					setShareWeb("你的好友获得了#{score}分,要来挑战一下吗?","欢迎参加游戏","http://m.giccoo.com/kiehls/?id=#{msg.data.info.id}")
+					console.log "msg:",msg.data
+					setShareWeb("你的好友获得了#{score}分,要来挑战一下吗?","欢迎参加游戏","http://m.giccoo.com/kiehls/?id=#{msg.data.info.insertId}")
 				.catch (err)=>
 					console.log "err:",err
 					@.send "请求错误,请重试"
@@ -474,7 +478,22 @@ init = ->
 				@.logo = false
 				ugc.init()
 				@.goSubmit()
-				
+			getInfo: ->
+				console.log "get info"
+				axios.get "#{apiLink}active/kiehls/get/id/#{$_GET['id']}"
+				.then (msg)=>
+					console.log "msg:",msg.data.list
+					@.score = msg.data.list.score
+					@.pageIndex = 3
+				.catch (err)=>
+					console.log "err:",err
+			getList: ->
+				axios.get "#{apiLink}active/kiehls/list/"
+				.then (msg)=>
+					console.log "msg:",msg.data.list
+					@.list = msg.data.list
+				.catch (err)=>
+					console.log "err:",err
 		# watch:
 		mounted: ->
 
@@ -498,6 +517,10 @@ init = ->
 			# 	console.log "resize:",document.documentElement.clientHeight
 			# main.$root.$el.addEventListener "touchstart", (evt)->
 			# 	_public.note = false
+			@.getInfo() if $_GET["id"]?
+
+			@.getList()
+
 
 
 _shareLoaded = false

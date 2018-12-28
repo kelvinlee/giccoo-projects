@@ -66,6 +66,23 @@
         </div>
       </transition>
       <transition name="page-fade">
+        <div v-show="pageIndex == 3" class="page page-3">
+          <div class="content">
+            <div class="logo"><img src="./img/hitpage-logo.png"></div>
+            <div class="texts">
+              <div class="text">
+                <p class="fadeInUp animated delay-3">TA在科颜氏极限冲浪挑战赛中</p>
+                <p class="fadeInUp animated delay-5">共获得了<span>{{score}}</span>分</p>
+                <p class="fadeInUp animated delay-7">成功战胜了全国<span>全国{{hit}}%</span>的玩家！</p>
+                <p class="fadeInUp animated delay-9">在挑战极限的路上</p>
+                <p class="fadeInUp animated delay-11">科颜氏高保湿面霜和你一起超越自我</p>
+              </div>
+            </div>
+            <div @click="start" class="btn"><img src="./img/btn-hit.png"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
         <div v-show="pageIndex == 2" :class="{blur: rankingShow}" class="page page-2">
           <div class="content">
             <div id="ugc"></div>
@@ -107,8 +124,7 @@
             </div>
             <div class="ranking-title"><img src="./img/ranking-title-sub.png"></div>
             <ul class="ranking-list">
-              <li><span class="numb">No.1</span><span class="name">暄暄</span><span class="score">2000分</span></li>
-              <li><span class="numb">No.2</span><span class="name">库库</span><span class="score">1800分</span></li>
+              <li v-for="v,index in list"><span class="numb">No.{{index}}</span><span class="name">{{v.nickname}}</span><span class="score">{{v.score}}分</span></li>
             </ul>
             <div class="btns">
               <div @click="regame" class="btn btn-reload"><img src="./img/btn-regame.png"></div>

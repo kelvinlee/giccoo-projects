@@ -6067,6 +6067,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/kiehls/img/btn-hit.png": {
+		"ft": 32768,
+		"iS": 12197,
+		"oA": 0,
+		"oAP": "/kiehls/img/btn-hit.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/kiehls/img/btn-regame.png": {
 		"ft": 32768,
 		"iS": 9888,
@@ -6193,6 +6204,28 @@
 		"iS": 28102,
 		"oA": 0,
 		"oAP": "/kiehls/img/hint4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/hitpage-bg.jpg": {
+		"ft": 16384,
+		"iS": 64552,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/kiehls/img/hitpage-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/kiehls/img/hitpage-logo.png": {
+		"ft": 32768,
+		"iS": 10611,
+		"oA": 0,
+		"oAP": "/kiehls/img/hitpage-logo.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6621,6 +6654,26 @@
 		"oAP": "/kiehls/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"/kiehls/js/ani.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/kiehls/js/ani-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/kiehls/js/build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/kiehls/js/build-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
 		},
 	"/kiehls/js/dealer.js": {
 		"ft": 64,
@@ -7698,6 +7751,17 @@
 		"oA": 1,
 		"oAP": "/build/libs",
 		"oF": 0
+		},
+	"/libs/coffee/get.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/libs/js/get.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
 		},
 	"/libs/coffee/IsPC.coffee": {
 		"ft": 32,

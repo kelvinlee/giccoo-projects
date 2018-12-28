@@ -108,7 +108,21 @@ block content
             .btn.bounceIn.animated.delay-9(@click="start")
               img(src="#{url}/img/btn-start.png")
             .btn-info.bounceIn.animated.delay-11(@click="rankingShow = true") 查看排行榜
-
+    transition(name="page-fade")
+      .page.page-3(v-show="pageIndex == 3")
+        .content
+          .logo
+            img(src="#{url}/img/hitpage-logo.png")
+          .texts
+            .text
+              p.fadeInUp.animated.delay-3 TA在科颜氏极限冲浪挑战赛中
+              p.fadeInUp.animated.delay-5 共获得了<span>{{score}}</span>分
+              p.fadeInUp.animated.delay-7 成功战胜了全国<span>全国{{hit}}%</span>的玩家！
+              p.fadeInUp.animated.delay-9 在挑战极限的路上
+              p.fadeInUp.animated.delay-11 科颜氏高保湿面霜和你一起超越自我
+          .btn(@click="start")
+            img(src="#{url}/img/btn-hit.png")
+          //- .btn-info.bounceIn.animated.delay-11(@click="rankingShow = true") 查看排行榜
     transition(name="page-fade")
       .page.page-2(v-show="pageIndex == 2",:class="{blur: rankingShow}")
         .content
@@ -150,14 +164,10 @@ block content
           .ranking-title
             img(src="#{url}/img/ranking-title-sub.png")
           ul.ranking-list
-            li
-              span.numb No.1
-              span.name 暄暄
-              span.score 2000分
-            li
-              span.numb No.2
-              span.name 库库
-              span.score 1800分
+            li(v-for="v,index in list")
+              span.numb No.{{index}}
+              span.name {{v.nickname}}
+              span.score {{v.score}}分
           .btns
             .btn.btn-reload(@click="regame")
               img(src="#{url}/img/btn-regame.png")
