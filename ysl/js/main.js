@@ -125,7 +125,9 @@ closeUGC:function e(){return this.ugcShow=!1,shareDone()},faild:function e(t){re
 return window.location.href="https://music.163.com/#/song?id=".concat(t)},openMusic:function e(t){
 // goList()
 // _public.$children[0].pause()
-return CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/emoji/")},goSubmit:function e(){var t=this,i;return i={username:this.nickname,mobile:this.mobile},axios.post("".concat(apiLink,"active/autoSave/insert/database/draw/"),i).then(function(e){return 200===e.data.code?t.share():t.send(e.data.reason)}).catch(function(e){return console.log("err:",e),t.send("请求错误,请重试")})},goWeb:function e(){return window.location.href="http://www.baidu.com/"},goNote:function e(){return this.singerIndex=resultA[1]+1,2===this.singerIndex?this.singerIndex=3:3===this.singerIndex&&(this.singerIndex=2),this.pageNote=!0},init:function e(){return getStart()},closeNote:function e(){return this.pageNote=!1,goEnd()},startGame:function e(){
+return CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/emoji/")},goSubmit:function e(){var t=this,i;return i={username:this.nickname,mobile:this.mobile},axios.post("".concat(apiLink,"active/autoSave/insert/database/draw/"),i).then(function(e){return 200===e.data.code?t.share():t.send(e.data.reason)}).catch(function(e){return console.log("err:",e),t.send("请求错误,请重试")})},goWeb:function e(){return window.location.href="http://www.baidu.com/"},goNote:function e(){return this.singerIndex=resultA[1]+1,2===this.singerIndex?this.singerIndex=3:3===this.singerIndex&&(this.singerIndex=2),this.pageNote=!0},init:function e(){},
+// getStart()
+closeNote:function e(){return this.pageNote=!1,goEnd()},startGame:function e(){
 // console.log "start game"
 return _public.note=!1}},
 // watch:
@@ -133,7 +135,7 @@ mounted:function e(){var t,i,n;return TrueH=document.documentElement.clientHeigh
 this.wy=CloudMusic.isInApp(),n=CloudMusic.getClientVersion().split("."),// @.getUserInfo (callback)=>
 // console.log imageList,@.muiscType @.userInfo.styleTop
 // @.ugcType = @.muiscType @.userInfo.styleTop
-i=[],window.imageList=window.imageList.concat(i),ugc=new UGC({el:"ugc",w:640,h:640/TrueW*TrueH,callback:function e(){return console.log("callback")}}),console.log("h:",t)}})};// window.onresize = ->
+i=[],window.imageList=window.imageList.concat(i),ugc=new UGC({el:"ugc",w:640,h:640/TrueW*TrueH,callback:function e(){return getStart()}}),console.log("h:",t)}})};// window.onresize = ->
 // 	console.log "resize:",document.documentElement.clientHeight
 // main.$root.$el.addEventListener "touchstart", (evt)->
 // 	_public.note = false

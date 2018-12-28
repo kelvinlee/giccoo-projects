@@ -430,9 +430,13 @@ init = ->
 				.then (msg)=>
 					console.log "msg:",msg.data
 					setShareWeb("你的好友获得了#{score}分,要来挑战一下吗?","欢迎参加游戏","http://m.giccoo.com/kiehls/?id=#{msg.data.info.insertId}")
+					@.getList() if @.score > @.list[@.list.length-1].score
+					
 				.catch (err)=>
 					console.log "err:",err
 					@.send "请求错误,请重试"
+
+
 
 			startGame: ->
 				# console.log "start game"
