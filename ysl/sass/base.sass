@@ -291,6 +291,7 @@ video,canvas,svg
 	color: #000
 	.content
 		+w
+		+h
 		+text-center
 		// +abcentermiddle
 		+posa
@@ -299,17 +300,49 @@ video,canvas,svg
 		p
 			+m
 			margin-top: 56.5%
+		.cd
+			+posa
+			+bl
+			font-size: 0
+			
+			.pointer
+				+posa
+				+tl
+				+tran(all,.7s)
+				&.on
+					+transform(rotate(-12deg))
+					transform-origin: center right
+		.texts
+			+posr
+			.text
+				+posa
+				+tl
+				&.text-1
+					+posr
+		&.smaller
+			.texts
+				+w(95%)
+				+m
+			.box
+				margin-top: 8%
+				.peopleNumber
+					+font-size(0.9rem)
 		.box
 			margin-top: 16.5%
 			+posr
 			.peopleNumber
-				+posa
-				+tl(70%)
+				+posr
+				+tl
 				+w
+				+h(auto)
 				+text-center
-				+font-size(1.2rem)
+				+font-size(1.05rem)
 				letter-spacing: 0.1em
 				color: #cb0000
+				margin-top: 5%
+				p
+					+m
+					line-height: 1.8em
 	
 	
 

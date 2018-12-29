@@ -80,6 +80,13 @@ window.onload = ->
 			wx.onMenuShareQQ shareContent
 			wx.onMenuShareWeibo shareContent
 
+	TrueW = 640 if TrueW >= 640
+	TrueH = 1138 if TrueH >= 1138
+	smaller = TrueH*2 < 1200
+	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
+	TrueH = document.documentElement.clientHeight
+	TrueW = document.documentElement.clientWidth
+
 	_public = new Vue
 		el: "#public"
 		data:
@@ -99,6 +106,10 @@ window.onload = ->
 	loading = new Vue
 		el: "#loading"
 		data:
+			w: TrueW
+			h: TrueH
+			biger: TrueW/TrueH < 0.55
+			smaller: smaller
 			progress: 0
 			mounted: false
 			progressOn: 0
@@ -131,10 +142,9 @@ window.onload = ->
 				# 		main.userInfo = d.data
 		mounted: ->
 			@.mounted = true
-			TrueH = document.documentElement.clientHeight
-			TrueW = document.documentElement.clientWidth
+			
 			@.get()
-			@.next() # for test
+			# @.next() # for test
 			# setTimeout =>
 			# 	@.next()
 			# ,200
@@ -146,8 +156,8 @@ window.onload = ->
 					@.progress = 100
 					clearInterval timein
 					_cache = setTimeout =>
-						# @.next()
-					,3000
+						@.next()
+					,5000
 					_startCache = setInterval =>
 						@.number += 1+Math.floor Math.random()*2
 					, 150

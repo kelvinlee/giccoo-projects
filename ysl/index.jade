@@ -46,13 +46,25 @@ block content
         p 点击铃铛打开声音<br/>获得更好体验效果
   
   .load#load
-    .content#loading(v-show="mounted",style="display: none")
+    .content#loading(v-show="mounted",:class="{biger: biger, smaller:smaller}",style="display: none")
       //- transition(name="page-fade")
       p(v-show="progress < 100").centeralign Loading..{{progress}}%
       transition(name="page-fade")
-        .box.fadeIn.animated.duration-20.delay-4(v-show="progress >= 100")
-          img(src="#{url}/img/loading-texts.png")
-          .peopleNumber.centeralign {{number}} 人
+        .box.fadeIn.animated(v-show="progress >= 100")
+          //- img(src="#{url}/img/loading-texts.png")
+          .texts
+            - for(var i=1;i<=8;i++) {
+              .text(class="text-#{i} fadeInUp duration-7 animated delay-#{5+i}")
+                img(src="#{url}/img/loading-text-#{i}.png")
+            - };
+          .peopleNumber
+            p.fadeInUp.animated.animated.delay-19.duration-7 已有 {{number}} 位用户
+            p.fadeInUp.animated.animated.delay-20.duration-7 刻录完成
+
+      .cd
+        img(src="#{url}/img/loading-cd.png")
+        .pointer(:class="{on: progress >= 100}")
+          img(src="#{url}/img/loading-cd-pointer.png")
 
 
   

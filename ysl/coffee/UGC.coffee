@@ -19,6 +19,7 @@ class UGC
 	lineMoving: false
 	startTime: null
 	loadNumber: 0
+	y: 0
 	constructor: (arg)->
 		@.opts =
 			el: "main"
@@ -50,6 +51,13 @@ class UGC
 		.use(@.loaditem.bind(@))
 		.load(@.build.bind(@))
 		@.default.MH = @.opts.h * 0.65
+
+		@long = new PIXI.Application
+			width: @.opts.w
+			height: @.opts.h * 4 + 200
+			transparent: true
+			preserveDrawingBuffer: true
+			# forceCanvas: true
 	loaditem: ->
 		@.loadNumber++
 		loading.progressOn = parseInt @.loadNumber/(imageList.length)*100
@@ -67,46 +75,20 @@ class UGC
 		@.opts.callback()
 		# @.init()
 	
-	init: ->
-		@.qrcode = qrcode = new Spr _CDN+"img/qrcode-"+(if main.white then 'white' else 'black')+".png"
-		qrcode.scale.set(640/750,640/750)
-		qrcode.x = 68
-		qrcode.y = @.opts.h - qrcode.height - 68/2
-		qrcode.visible = false
+	takeUGC: ->
+		@.app.renderer.render @.app.stage
+		data = @.app.view.toDataURL()
 
-		postCard = new Container()
-		logo = Spr _CDN+"img/logo-black.png"
-		logo.y = 10
-		bg = Spr _CDN+"img/envelope.png"
-		bg.scale.set(640/750,640/750)
-		bg.x = (@.opts.w-bg.width)/2
-		mark = Spr _CDN+"img/post-card-mark.png"
-		mark.scale.set(640/750,640/750)
-		mark.x = (@.opts.w-mark.width)/2
-		mn = Spr _CDN+"img/m-"+main.answer1+".png"
-		mn.scale.set(640/750,640/750)
-		mn.x = (@.opts.w-mark.width)/2 - 10
+		page1 = new PIXI.Sprite.fromImage(data)
+		page1.y = @.y
+		page1.texture.baseTexture.on 'loaded', =>
+			@.sendUGC()
 
-		nickname = new Text "#{main.nickname}",{fontFamily : 'Arial', fontSize: 32, fontWeight: "bold", fill : 0x000000, letterSpacing: 2, lineHeight: 34}
-		nickname.x = 160
-		nickname.y = 42
-
-		text = ""
-		if main.message is ""
-			text = main.messageList[main.messageIndex-1]
-		else
-			text = main.message
-		text = text.replace(/<br\/>/g,"\n")
-		message = new Text "#{text}",{fontFamily : 'Arial', fontSize: 18, fill : 0x000000, fontStyle: "italic",fontWeight: "normal", letterSpacing: 0, lineHeight: 34}
-		message.x = 160
-		message.y = 42 + 34 + 34/2
-
-		postCard.y = logo.height + logo.y + 5
-		postCard.addChild bg, mark, nickname, message, mn
-		@.stage.addChild logo, postCard, qrcode
-		@.postCard = postCard
-
-		TweenMax.from(postCard,1.2,{alpha:0,y:"-=#{postCard.height+logo.height}",yoyo:true,delay: .7})
-		
-
+		@long.stage.addChild page1
+		@.y += @.opts.h
+	sendUGC: ->
+		if @.y > @.opts.h*4
+			qrcode = new Spr(_CDN+"img/qrcode.png")
+			@long.stage.addChild qrcode
+		@.long.renderer.render @.long.stage
 

@@ -11,13 +11,29 @@
   </head>
   <body>
     <div id="load" class="load">
-      <div id="loading" v-show="mounted" style="display: none" class="content">
+      <div id="loading" v-show="mounted" :class="{biger: biger, smaller:smaller}" style="display: none" class="content">
         <p v-show="progress &lt; 100" class="centeralign">Loading..{{progress}}%</p>
         <transition name="page-fade">
-          <div v-show="progress &gt;= 100" class="box fadeIn animated duration-20 delay-4"><img src="./img/loading-texts.png">
-            <div class="peopleNumber centeralign">{{number}} 人</div>
+          <div v-show="progress &gt;= 100" class="box fadeIn animated">
+            <div class="texts">
+              <div class="text text-1 fadeInUp duration-7 animated delay-6"><img src="./img/loading-text-1.png"></div>
+              <div class="text text-2 fadeInUp duration-7 animated delay-7"><img src="./img/loading-text-2.png"></div>
+              <div class="text text-3 fadeInUp duration-7 animated delay-8"><img src="./img/loading-text-3.png"></div>
+              <div class="text text-4 fadeInUp duration-7 animated delay-9"><img src="./img/loading-text-4.png"></div>
+              <div class="text text-5 fadeInUp duration-7 animated delay-10"><img src="./img/loading-text-5.png"></div>
+              <div class="text text-6 fadeInUp duration-7 animated delay-11"><img src="./img/loading-text-6.png"></div>
+              <div class="text text-7 fadeInUp duration-7 animated delay-12"><img src="./img/loading-text-7.png"></div>
+              <div class="text text-8 fadeInUp duration-7 animated delay-13"><img src="./img/loading-text-8.png"></div>
+            </div>
+            <div class="peopleNumber">
+              <p class="fadeInUp animated animated delay-19 duration-7">已有 {{number}} 位用户</p>
+              <p class="fadeInUp animated animated delay-20 duration-7">刻录完成</p>
+            </div>
           </div>
         </transition>
+        <div class="cd"><img src="./img/loading-cd.png">
+          <div :class="{on: progress &gt;= 100}" class="pointer"><img src="./img/loading-cd-pointer.png"></div>
+        </div>
       </div>
     </div>
     <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" style="display: none" @touchstart="startGame" class="main">
