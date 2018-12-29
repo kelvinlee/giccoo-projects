@@ -318,18 +318,18 @@ init = ->
 				@.share()
 
 			share: ->
-				goFinal2()
+				goFinal2() if goFinal2?
 				@.formBoxShow = false
 				@.registerShow = false
 				@.lotteryShow = false
 				console.log "run share"
 				# ugc.qrcode.visible = true
-				ugc.app.renderer.render ugc.app.stage
-				@.ugc = ugc.app.view.toDataURL()
+				ugc.long.renderer.render ugc.long.stage
+				@.ugc = ugc.long.view.toDataURL()
 				image = @.ugc
 
 				if @.wy
-					folder = "emoji"
+					folder = "ysl"
 					data = {
 						image: image
 						folder: folder
@@ -356,7 +356,7 @@ init = ->
 				@.loading = false
 				# ugc.back()
 				neteaseShareImage()
-				shareDone()
+				shareDone() if shareDone?
 				# 抽奖
 				# unless @.giveUp
 				# 	setTimeout =>
@@ -364,7 +364,7 @@ init = ->
 				# 	,5000
 			closeUGC: ->
 				@.ugcShow = false
-				shareDone()
+				shareDone() if shareDone?
 			faild: (err)->
 				@.pushed = false
 				@.loading = false
@@ -372,6 +372,12 @@ init = ->
 				# id = [38576323,167740,139381,474567580,355992,28815250,109968,110083,163639,28785688,5271858,28838557,169794,27591641,5271855]
 				# CloudMusic.song(id[resultNum])
 				window.location.href = "https://music.163.com/#/song?id=#{id}"
+			changeSond: (id)->
+				list = ["//image.giccoo.com/projects/lenovo/mp3/bgm.mp3","//image.giccoo.com/projects/starbucks/mp3/bgm.mp3","//image.giccoo.com/projects/draw-board/mp3/bgm.mp3"]
+				_public.$children[0].src = list[id]
+				setTimeout =>
+					_public.$children[0].play()
+				,20
 			openMusic: (id)->
 				# goList()
 				# _public.$children[0].pause()
@@ -380,7 +386,7 @@ init = ->
 				else
 					window.location.href = "https://music.163.com/#/playlist?id=#{id}"
 			openInApp: ->
-				CloudMusic.open("https://m.giccoo.com/emoji/")
+				CloudMusic.open("https://m.giccoo.com/ysl/")
 
 			goSubmit: ->
 				data = {

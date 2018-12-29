@@ -10695,6 +10695,39 @@
 		"oAP": "/build/ysl/css",
 		"oF": 0
 		},
+	"/ysl/img/icon-cd-pointer.png": {
+		"ft": 32768,
+		"iS": 1394,
+		"oA": 0,
+		"oAP": "/ysl/img/icon-cd-pointer.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/ysl/img/icon-close.png": {
+		"ft": 32768,
+		"iS": 4712,
+		"oA": 0,
+		"oAP": "/ysl/img/icon-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/ysl/img/icon-play.png": {
+		"ft": 32768,
+		"iS": 2165,
+		"oA": 0,
+		"oAP": "/ysl/img/icon-play.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/ysl/img/loading-bg.jpg": {
 		"ft": 16384,
 		"iS": 32740,

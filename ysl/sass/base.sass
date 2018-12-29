@@ -348,7 +348,7 @@ video,canvas,svg
 
 .public
 	+posa
-	+tl(0.8em,0.8em)
+	+tr(0.8em,0.8em)
 	+wh(2rem,2rem)
 	+font-size(1rem)
 	z-index: 2199
@@ -380,14 +380,6 @@ video,canvas,svg
 				+h
 				+show-inline
 				font-size: 0
-			// .arrow-1
-			// 	+animation(fadeArrow,1s,ease,infinite)
-			// .arrow-2
-			// 	+animation(fadeArrow,1s,ease,infinite)
-			// 	animation-delay: 1000ms*1/3
-			// .arrow-3
-			// 	+animation(fadeArrow,1s,ease,infinite)
-			// 	animation-delay: 1000ms*2/3
 
 	.player
 		+w
@@ -396,33 +388,26 @@ video,canvas,svg
 	.play
 		.bell
 			+show
-	.bell
-		+posa
-		+tl
-		+w
-		+h
-		+hide
-	.bell-1
-		+b($cdn+"img/bell-1.png",no-repeat,center,center,contain)
-		+animation(fadeOutUp,2s,ease,infinite)
-		animation-delay: .5s
-	.bell-2
-		+b($cdn+"img/bell-2.png",no-repeat,center,center,contain)
-		+animation(fadeOutUp,2s,ease,infinite)
-		animation-delay: 1s
-	.bell-3
-		+b($cdn+"img/bell-3.png",no-repeat,center,center,contain)
-		+animation(fadeOutUp,2s,ease,infinite)
-		animation-delay: 1.5s
 	.icon-play
 		+w
 		+h
-		transform-origin: top center
+		transform-origin: 50% 51.5%
 		&.play
-			+b($cdn+"img/bell-box.png",no-repeat,center,center,contain)
-			+animation(swingIcon,2s,linear,infinite)
+			+b($cdn+"img/icon-play.png",no-repeat,center,center,contain)
+			+animation(second,.8s,linear,infinite)
 		&.pause
-			+b($cdn+"img/bell-box.png",no-repeat,center,center,contain)
+			+b($cdn+"img/icon-play.png",no-repeat,center,center,contain)
+
+	.pointer
+		+posa
+		+tl
+		+tran(all,.7s)
+		+w(150%)
+		transform-origin: right center
+	.pause .pointer
+		+transform(rotate(20deg))
+	.play .pointer
+		+transform(rotate(0deg))
 
 .pages
 	+w
@@ -688,6 +673,8 @@ video,canvas,svg
 		.content
 			+animation(zoomBigInShow,0.6s,ease)
 			animation-delay: 0.5s
+			+w
+			+h
 
 	.close
 		+posa
@@ -699,11 +686,17 @@ video,canvas,svg
 		// margin-top: 10%
 		// margin-left: 10%
 		+posr
+		+w
+		+h
 		.close
 			+bl(auto,auto)
 			+tr(-2rem,-2rem)
 			+wh(2rem,2rem)
 			+transform(translate3d(0,0,0))
+		.scroll
+			+touch
+			+w
+			+h
 	.note
 		+posa
 		+bl(-2em)
