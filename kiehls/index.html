@@ -90,6 +90,31 @@
         </div>
       </transition>
       <transition name="page-fade">
+        <div v-show="lotteryShow" class="pop pop-lottery">
+          <div class="content">
+            <div class="bg"><img src="./img/pop-bg.png">
+              <div class="cover"><img src="./img/pop-bg-cover.png"></div>
+            </div>
+            <div v-show="lotteryInfo.id == null" class="box full">
+              <div class="title-faild"><img src="./img/lottery-faild.png"></div>
+              <div @click="regame" class="btn btn-regame"><img src="./img/btn-again.png"></div>
+              <div @click="gobuy" class="btn btn-buy"><img src="./img/btn-buy.png"></div>
+              <div class="more"><img src="./img/lottery-faild-more.png"></div>
+            </div>
+            <div v-show="lotteryInfo.id != null &amp;&amp; lotteryEndShow" class="box full">
+              <div class="title-faild"><img src="./img/lottery-title-success.png"></div>
+              <form-grounp v-bind:form="form" v-on:submit="submit"></form-grounp>
+              <div class="more"><img src="./img/lottery-note.png"></div>
+            </div>
+            <div v-show="lotteryInfo.id != null &amp;&amp; !lotteryEndShow" class="box full">
+              <div class="title-faild"><img src="./img/lottery-success.png"></div>
+              <div @click="gobuy" class="btn btn-buy"><img src="./img/btn-buy.png"></div>
+              <div class="more"><img src="./img/lottery-faild-more.png"></div>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
         <div v-show="registerShow" class="pop pop-register">
           <div class="content">
             <div class="bg"><img src="./img/pop-bg.png"></div>

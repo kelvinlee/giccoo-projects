@@ -4,7 +4,7 @@
 # @codekit-prepend "../../libs/coffee/get"
 # @codekit-prepend "../../libs/vue/vue-resetinput"
 # @codekit-prepend "../../libs/vue/vue-player"
-# @codekit-prepend "../../libs/vue/vue-slider"
+# @codekit-prepend "../../libs/vue/vue-register"
 # @codekit-prepend "../../libs/coffee/pixi-base"
 # @codekit-prepend "../../libs/coffee/String"
 # @codekit-prepend "./UGC"
@@ -166,11 +166,10 @@ init = ->
 			videoIndex: 0
 			videoIndexOld: 0
 			lr: true
-			# form:
-			# 	username: {id:"username", type: "input", label: "姓名", placeholder: "请填写姓名",value: ""}
-			# 	mobile: {id:"mobile", type: "number", label: "电话", placeholder: "请填写电话",value: ""}
-			# 	province: {id:"province", type: "select", label: "省份", link: "city", value: Object.keys(_citys)[0], options: _citys }
-			# 	city: {id:"city", type: "select", label: "城市", link: "dealer",value: Object.keys(_citys["请选择省份"])[0], options: _citys["请选择省份"] }
+			form:
+				username: {id:"username", type: "input", label: "姓名", placeholder: "请填写姓名",value: ""}
+				mobile: {id:"mobile", type: "number", label: "电话", placeholder: "请填写电话",value: ""}
+				address: {id:"address", type: "input", label: "联系地址", placeholder: "请联系地址",value: ""}
 			mask: 1
 			text: ""
 			nickname: ""
@@ -294,6 +293,8 @@ init = ->
 				# window.location.reload()
 				# @.gameEnd = false
 				@.rankingShow = false
+				@.lotteryShow = false
+				@.shareNotePage = false
 				gameRestart()
 			gobuy: ->
 				window.location.href = "http://www.baidu.com"
@@ -320,6 +321,11 @@ init = ->
 					CloudMusic.shareInApp()
 				else
 					@.shareNotePage = true
+				clearTimeout _cache
+				_cache = setTimeout =>
+					@.getLottery()
+					@.shareNotePage = false
+				,5000
 			share: ->
 				# goFinal2()
 				@.formBoxShow = false
@@ -384,18 +390,39 @@ init = ->
 					window.location.href = "https://music.163.com/#/playlist?id=#{id}"
 			openInApp: ->
 				CloudMusic.open("https://m.giccoo.com/kiehls/")
-
-			goSubmit: ->
-				data = {
-					username: @.nickname
-					message: @.message
-					year: @.yearName
-					yearImage: @.singerIndex
-					mobile: "18888888888"
-				}
-				axios.post "#{apiLink}active/autoSave/insert/database/kiehls/",data
+			submit: (data)->
+				console.log "data:",data
+				if data.username is "" or data.username.length > 8 or data.username.length < 2
+					return @.send "请输入2-8个字的姓名"
+				if data.mobile is ""
+					return @.send "请输入联系电话"
+				if data.address is ""
+					return @.send "请输入联系地址"
+				data.id = @.lotteryInfo.id
+				data.random = @.lotteryInfo.random
+				return @.send "未找到您的中奖 ID" if not data.id?
+				return @.send "未找到您的中奖 ID" if not data.random?
+				
+				axios.post "#{apiLink}active/kiehls/sendlottery/",data
 				.then (msg)=>
-					console.log "msg:",msg
+					if msg.data.code is 200
+						@.send "填写成功"
+						@.lotteryEndShow = false
+						@.regSubmited = true
+					else
+						@.send msg.data.reason
+				.catch (err)=>
+					@.send "服务器连接失败,请重试"
+			getLottery: ->
+				data = {
+					random: 1+Math.floor Math.random()*19293
+				}
+				axios.post "#{apiLink}active/kiehls/getlottery/",data
+				.then (msg)=>
+					if msg.data.recode is 200
+						@.lotteryInfo.id = msg.data.info.insertId
+						@.lotteryInfo.random = msg.data.info.random
+					@.lotteryShow = true
 				.catch (err)=>
 					console.log "err:",err
 					@.send "请求错误,请重试"

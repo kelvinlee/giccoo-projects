@@ -129,6 +129,38 @@ block content
           #ugc
 
     transition(name="page-fade")
+      .pop.pop-lottery(v-show="lotteryShow")
+        .content
+          .bg
+            img(src="#{url}/img/pop-bg.png")
+            .cover
+              img(src="#{url}/img/pop-bg-cover.png")
+          .box.full(v-show="lotteryInfo.id == null")
+            .title-faild
+              img(src="#{url}/img/lottery-faild.png")
+            .btn.btn-regame(@click="regame")
+              img(src="#{url}/img/btn-again.png")
+            .btn.btn-buy(@click="gobuy")
+              img(src="#{url}/img/btn-buy.png")
+            .more
+              img(src="#{url}/img/lottery-faild-more.png")
+          .box.full(v-show="lotteryInfo.id != null && lotteryEndShow")
+            .title-faild
+              img(src="#{url}/img/lottery-title-success.png")
+            form-grounp(v-bind:form="form",v-on:submit="submit")
+            .more
+              img(src="#{url}/img/lottery-note.png")
+          .box.full(v-show="lotteryInfo.id != null && !lotteryEndShow")
+            .title-faild
+              img(src="#{url}/img/lottery-success.png")
+            .btn.btn-buy(@click="gobuy")
+              img(src="#{url}/img/btn-buy.png")
+            .more
+              img(src="#{url}/img/lottery-faild-more.png")
+    
+          
+
+    transition(name="page-fade")
       .pop.pop-register(v-show="registerShow")
         .content
           .bg
@@ -175,9 +207,6 @@ block content
               img(src="#{url}/img/btn-share.png")
           .btn-close(@click="rankingShow = false")
             img(src="#{url}/img/icon-close.png")
-
-
-
 
     //- transition(name="page-fade")
     .pop.flashcamera(v-show="ugcShow")
