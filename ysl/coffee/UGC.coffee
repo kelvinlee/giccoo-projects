@@ -88,7 +88,7 @@ class UGC
 		@.y += @.opts.h
 	sendUGC: ->
 		if @.y > @.opts.h*4
-			qrcode = new Spr(_CDN+"img/qrcode.png")
+			qrcode = new Spr(_CDN+"img/qr.jpg")
 			@long.stage.addChild qrcode
 		@.long.renderer.render @.long.stage
 

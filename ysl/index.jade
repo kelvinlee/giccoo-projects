@@ -34,12 +34,6 @@ block content
     .qr
       img(src="#{url}/img/qrcode.png")
       .text 请使用手机扫描二维码参与活动
-  .public#public(@touchstart="startGame")
-    player(icon="true",loop="true",src="#{url}/mp3/bgm.mp3")
-      .pointer
-        img(src="#{url}/img/icon-cd-pointer.png")
-
-      
   
   .load#load
     .content#loading(v-show="mounted",:class="{biger: biger, smaller:smaller}",style="display: none")
@@ -62,9 +56,7 @@ block content
         .pointer(:class="{on: progress >= 100}")
           img(src="#{url}/img/loading-cd-pointer.png")
 
-
-  
-  .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",:style="{width: w+'px',height: h+'px'}",style="display: none",@touchstart="startGame")
+  .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller, bgm: bgmShow}",:style="{width: w+'px',height: h+'px'}",style="display: none",@touchstart="startGame")
     transition(name="page-fade")    
       .logo(v-show="logo")
         img(src="#{url}/img/logo.png")
@@ -98,7 +90,10 @@ block content
           .scroll
             img(:src="ugc")
           .note 长按保存图片
-
+  .public#public(@touchstart="startGame")
+    player(icon="true",loop="true",src="#{url}/mp3/bgm.mp3")
+      .pointer
+        img(src="#{url}/img/icon-cd-pointer.png")
 
 block js
   - url = "/";
