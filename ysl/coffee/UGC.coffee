@@ -71,28 +71,36 @@ class UGC
 		# @.init()
 	firstTime: (move)->
 		return false if @long?
+		console.log "move",move
+		@.longqrcode = new Spr(_CDN+"img/qr.jpg")
+		h = @.opts.h * 4 - 20 + @.longqrcode.height - Math.abs move
+		@.longBG = new Graphics()
+		@.longBG.beginFill(0xFFFFFF)
+		@.longBG.drawRect(0,0,@opts.w,h)
+
 		@long = new PIXI.Application
 			width: @.opts.w
-			height: @.opts.h * 3.9 + Math.abs move
+			height: h
 			transparent: true
 			preserveDrawingBuffer: true
 			# forceCanvas: true
 		@.longC = new Container()
-		@.long.stage.addChild @.longC
+		@.long.stage.addChild @.longBG,@.longC
 	takeUGC: (move = 0)->
 		@.app.renderer.render @.app.stage
 		data = @.app.view.toDataURL()
 
 		page1 = new PIXI.Sprite.fromImage(data)
 		page1.y = @.longC.height + move
+		console.log "move:",move
 		page1.texture.baseTexture.on 'loaded', =>
 			@.longC.addChild page1
+			console.log "page1:",page1
 			@.sendUGC()
 		@.y++
 	sendUGC: ->
 		if @.y >= 4
-			qrcode = new Spr(_CDN+"img/qr.jpg")
-			qrcode.y = @.longC.height
-			@long.stage.addChild qrcode
+			@.longqrcode.y = @.longC.height
+			@long.stage.addChild @.longqrcode
 		@.long.renderer.render @.long.stage
 
