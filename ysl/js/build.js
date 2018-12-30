@@ -129,6 +129,8 @@ var imageList = [
 	_CDN+"img/endt3.png",
 	_CDN+"img/endt4.png",
 
+	_CDN+"img/qr.jpg",
+
 	
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,

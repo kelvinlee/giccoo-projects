@@ -297,9 +297,9 @@ function setUGC(){
 		var _s=Math.random()*.1+.95
 		TweenMax.to(_ud.scale,.5,{x:_s,y:_s,delay:3+.03*i,ease:Sine.easeIn,onComplete:twdisc,onCompleteParams:[_ud]})
 		//TweenMax.to(_ud,1.5,{rotation:Math.PI/180*5*(Math.random()*2-1),repeat:100000,yoyo:true,delay:.05*i+Math.random()*.5,ease:Sine.easeInOut})
-		setTimeout(UGCdone,4000)
+		
 	};
-
+	setTimeout(UGCdone,4000)
 	ud0=new Sprite(getTe(_CDN+"img/ud0.png"));
 	udz=new Sprite(getTe(_CDN+"img/upicz.png"));
 
@@ -468,12 +468,12 @@ function goPage3(){
 
 function setPage4(){
 	console.log("关键词页截图4")
-	ugc.takeUGC()//y=-550-(stageH-1000)/2
+	ugc.takeUGC(-550-(stageH-1000)/2)//y=-550-(stageH-1000)/2
 	arrow2.visible=true
 	pStage.interactive=true
 	pStage.tap=goPage4
 }
 
 function goPage4(){
-	main.Share()
+	main.share()
 }
