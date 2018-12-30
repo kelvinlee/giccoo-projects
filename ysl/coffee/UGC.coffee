@@ -75,12 +75,12 @@ class UGC
 		@.opts.callback()
 		# @.init()
 	
-	takeUGC: ->
+	takeUGC: (move = 0)->
 		@.app.renderer.render @.app.stage
 		data = @.app.view.toDataURL()
 
 		page1 = new PIXI.Sprite.fromImage(data)
-		page1.y = @.y
+		page1.y = @.y + move
 		page1.texture.baseTexture.on 'loaded', =>
 			@.sendUGC()
 
