@@ -52,12 +52,7 @@ class UGC
 		.load(@.build.bind(@))
 		@.default.MH = @.opts.h * 0.65
 
-		@long = new PIXI.Application
-			width: @.opts.w
-			height: @.opts.h * 4 + 200
-			transparent: true
-			preserveDrawingBuffer: true
-			# forceCanvas: true
+		
 	loaditem: ->
 		@.loadNumber++
 		loading.progressOn = parseInt @.loadNumber/(imageList.length)*100
@@ -74,21 +69,30 @@ class UGC
 		buildUGC.bind(@).call()
 		@.opts.callback()
 		# @.init()
-	
+	firstTime: (move)->
+		return false if @long?
+		@long = new PIXI.Application
+			width: @.opts.w
+			height: @.opts.h * 3.9 + Math.abs move
+			transparent: true
+			preserveDrawingBuffer: true
+			# forceCanvas: true
+		@.longC = new Container()
+		@.long.stage.addChild @.longC
 	takeUGC: (move = 0)->
 		@.app.renderer.render @.app.stage
 		data = @.app.view.toDataURL()
 
 		page1 = new PIXI.Sprite.fromImage(data)
-		page1.y = @.y + move
+		page1.y = @.longC.height + move
 		page1.texture.baseTexture.on 'loaded', =>
+			@.longC.addChild page1
 			@.sendUGC()
-
-		@long.stage.addChild page1
-		@.y += @.opts.h
+		@.y++
 	sendUGC: ->
-		if @.y > @.opts.h*4
+		if @.y >= 4
 			qrcode = new Spr(_CDN+"img/qr.jpg")
+			qrcode.y = @.longC.height
 			@long.stage.addChild qrcode
 		@.long.renderer.render @.long.stage
 
