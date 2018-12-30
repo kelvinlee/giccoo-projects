@@ -252,6 +252,7 @@ init = ->
 				id: null
 				random: null
 			regSubmited: false
+			bgmShow: false
 			giveUp: false
 			gameEnd: false
 			noreg: false
@@ -374,6 +375,7 @@ init = ->
 				window.location.href = "https://music.163.com/#/song?id=#{id}"
 			changeSond: (id)->
 				list = ["//image.giccoo.com/projects/lenovo/mp3/bgm.mp3","//image.giccoo.com/projects/starbucks/mp3/bgm.mp3","//image.giccoo.com/projects/draw-board/mp3/bgm.mp3"]
+				@.bgmShow = true
 				_public.$children[0].src = list[id]
 				setTimeout =>
 					_public.$children[0].play()
