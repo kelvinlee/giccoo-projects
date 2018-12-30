@@ -8,11 +8,14 @@ var imageList = [
 	_CDN+"img/q1_31.png",
 	_CDN+"img/q1_32.png",
 
+	_CDN+"img/q1t.png",
+
 	_CDN+"img/q1t1.png",
 	_CDN+"img/q1t2.png",
 	_CDN+"img/q1t3.png",
 
 	_CDN+"img/arrow.png",
+	_CDN+"img/arrow2.png",
 	
 	_CDN+"img/q2_11.png",
 	_CDN+"img/q2_12.png",
@@ -51,8 +54,8 @@ var imageList = [
 	_CDN+"img/us5.png",
 	_CDN+"img/us6.png",
 	_CDN+"img/us7.png",
-	_CDN+"img/us8.png",
-	_CDN+"img/us9.png",
+	// _CDN+"img/us8.png",
+	// _CDN+"img/us9.png",
 
 	_CDN+"img/u00.png",
 	_CDN+"img/u01.png",
@@ -87,7 +90,7 @@ var imageList = [
 	_CDN+"img/ud14.png",
 	_CDN+"img/ud15.png",
 
-	_CDN+"img/udz.png",
+	_CDN+"img/upicz.png",
 	_CDN+"img/ud0.png",
 
 	_CDN+"img/page1disc.png",
@@ -120,6 +123,12 @@ var imageList = [
 
 	_CDN+"img/logo.png",
 	_CDN+"img/slogen.png",
+
+	_CDN+"img/endt1.png",
+	_CDN+"img/endt2.png",
+	_CDN+"img/endt3.png",
+	_CDN+"img/endt4.png",
+
 	
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,

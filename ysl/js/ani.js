@@ -53,10 +53,13 @@ function setQ123(){
 var q1C=new PIXI.Container()
 var q1BtnA=[]
 var q1TA=[]
+var q1t
 
 function setQ1(){
 	mainC.addChild(q1C)
 	var _qPicXYA=[[263,stageH/2-331,103],[464,stageH/2-10,119],[202,stageH/2+235,114]]
+	q1t=new Sprite(getTe(_CDN+"img/q1t.png"));
+	q1C.addChild(q1t)
 	for (var i = 0; i < 3; i++) {
 		var j=i+1
 		var _qPic=new Sprite(getTe(_CDN+"img/q1_"+j+"2.png"));
@@ -99,6 +102,7 @@ function selectQ1(_e){
 	};
 	arrow.visible=true
 	ifCanScorll=1
+	TweenMax.to(q1t,1,{alpha:0})
 }
 
 //==================================================================================================第二题
@@ -243,7 +247,7 @@ function setUGC(){
 	mainC.addChild(ugcC)
 
 	utitle=new Sprite(getTe(_CDN+"img/utitle.png"));
-	var j=Math.floor(Math.random()*9+1)
+	var j=Math.floor(Math.random()*7+1)
 	usong=new Sprite(getTe(_CDN+"img/us"+j+".png"));
 
 	TweenMax.from(utitle,1.5,{alpha:0,delay:0.5})
@@ -297,7 +301,7 @@ function setUGC(){
 	};
 
 	ud0=new Sprite(getTe(_CDN+"img/ud0.png"));
-	udz=new Sprite(getTe(_CDN+"img/udz.png"));
+	udz=new Sprite(getTe(_CDN+"img/upicz.png"));
 
 	udisc.addChild(ud0,udz)
 	ud0.y=stageH-321
@@ -313,7 +317,7 @@ function twdisc(_tar){
 
 function UGCdone(){
 	console.log("UGC截图1")
-	//ugc.takeUGC()
+	ugc.takeUGC()
 	pStage.interactive=true
 	pStage.tap=goKeywordPage
 }
@@ -367,7 +371,7 @@ function showP1hint(){
 	setPage2()
 
 	console.log("关键词页截图2")
-	//ugc.takeUGC()
+	ugc.takeUGC()
 	p1hint.visible=true
 	pStage.interactive=true
 	pStage.tap=goPage2
@@ -403,7 +407,7 @@ function setPage2(){
 	colorBG.height=stageH
 	//colorBG.y=stageH
 
-	khC.y=stageH-50-335
+	khC.y=stageH-50-335-10
 	colorBG.y=khC.y
 
 	logo=new Sprite(getTe(_CDN+"img/logo.png"));
@@ -420,10 +424,56 @@ function setPage2(){
 
 function goPage2(){
 	pStage.interactive=false
-	TweenMax.to(page1,1,{y:-stageH})
-	TweenMax.to(page2,1,{y:0})
+	TweenMax.to(page1,1,{y:-stageH,ease:Sine.easeIn})
+	TweenMax.to(page2,1,{y:0,ease:Sine.easeIn})
 
-	TweenMax.from(khC,4,{y:0})
-	TweenMax.from(colorBG,4,{y:0})
+	TweenMax.from(khC,3,{y:0,delay:.5})
+	TweenMax.from(colorBG,3,{y:0,delay:.5,onComplete:setPage3})
+
+	TweenMax.from(logo,1,{y:"+=200",delay:1})
+	TweenMax.from(slogen,1.1,{y:"+=200",delay:1})
 }
 
+var page3=new PIXI.Container()
+var arrow2
+var endtC=new PIXI.Container()
+function setPage3(){
+	pStage.interactive=true
+	pStage.tap=goPage3
+	console.log("关键词页截图3")
+	ugc.takeUGC()
+
+	arrow2=new Sprite(getTe(_CDN+"img/arrow2.png"));
+	arrow2.y=stageH-28-20
+	TweenMax.to(arrow2,1,{y:stageH-28-10,repeat:100000,yoyo:true})
+
+	var _endt=new Sprite(getTe(_CDN+"img/endt"+(userWord+1)+".png"));
+	endtC.y=stageH-550-(stageH-1000)/2
+
+	endtC.addChild(_endt)
+	page3.addChild(endtC)
+	mainC.addChild(page3,arrow2)
+
+	page3.y=stageH
+
+}
+
+function goPage3(){
+	pStage.interactive=false
+	arrow2.visible=false
+	TweenMax.to(page3,1,{y:0})
+	TweenMax.to(page2,1,{y:-stageH+450*stageH/1000,onComplete:setPage4})
+}
+
+
+function setPage4(){
+	console.log("关键词页截图4")
+	ugc.takeUGC()//y=-550-(stageH-1000)/2
+	arrow2.visible=true
+	pStage.interactive=true
+	pStage.tap=goPage4
+}
+
+function goPage4(){
+	main.Share()
+}
