@@ -162,7 +162,7 @@ var Type=1
 function getStart(){
 
 	initAll()
-	ugc.firstTime(-550+(stageH-1000)/2)
+	ugc.firstTime(-450*stageH/1000)
 }
 
 var mainC=new PIXI.Container()
