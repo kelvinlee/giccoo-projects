@@ -468,7 +468,7 @@ function goPage3(){
 
 function setPage4(){
 	console.log("关键词页截图4")
-	ugc.takeUGC(-550-(stageH-1000)/2)//y=-550-(stageH-1000)/2
+	ugc.takeUGC(-550+(stageH-1000)/2)//y=-550-(stageH-1000)/2
 	arrow2.visible=true
 	pStage.interactive=true
 	pStage.tap=goPage4
