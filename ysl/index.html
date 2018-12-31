@@ -16,14 +16,14 @@
         <transition name="page-fade">
           <div v-show="progress &gt;= 100" class="box fadeIn animated">
             <div class="texts">
-              <div class="text text-1 fadeInUp duration-7 animated delay-6"><img src="./img/loading-text-1.png"></div>
-              <div class="text text-2 fadeInUp duration-7 animated delay-7"><img src="./img/loading-text-2.png"></div>
-              <div class="text text-3 fadeInUp duration-7 animated delay-8"><img src="./img/loading-text-3.png"></div>
-              <div class="text text-4 fadeInUp duration-7 animated delay-9"><img src="./img/loading-text-4.png"></div>
-              <div class="text text-5 fadeInUp duration-7 animated delay-10"><img src="./img/loading-text-5.png"></div>
-              <div class="text text-6 fadeInUp duration-7 animated delay-11"><img src="./img/loading-text-6.png"></div>
-              <div class="text text-7 fadeInUp duration-7 animated delay-12"><img src="./img/loading-text-7.png"></div>
-              <div class="text text-8 fadeInUp duration-7 animated delay-13"><img src="./img/loading-text-8.png"></div>
+              <div class="text text-1 fadeInUp duration-7 animated delay-6"><img src="//image.giccoo.com/projects/ysl/img/loading-text-1.png"></div>
+              <div class="text text-2 fadeInUp duration-7 animated delay-7"><img src="//image.giccoo.com/projects/ysl/img/loading-text-2.png"></div>
+              <div class="text text-3 fadeInUp duration-7 animated delay-8"><img src="//image.giccoo.com/projects/ysl/img/loading-text-3.png"></div>
+              <div class="text text-4 fadeInUp duration-7 animated delay-9"><img src="//image.giccoo.com/projects/ysl/img/loading-text-4.png"></div>
+              <div class="text text-5 fadeInUp duration-7 animated delay-10"><img src="//image.giccoo.com/projects/ysl/img/loading-text-5.png"></div>
+              <div class="text text-6 fadeInUp duration-7 animated delay-11"><img src="//image.giccoo.com/projects/ysl/img/loading-text-6.png"></div>
+              <div class="text text-7 fadeInUp duration-7 animated delay-12"><img src="//image.giccoo.com/projects/ysl/img/loading-text-7.png"></div>
+              <div class="text text-8 fadeInUp duration-7 animated delay-13"><img src="//image.giccoo.com/projects/ysl/img/loading-text-8.png"></div>
             </div>
             <div class="peopleNumber">
               <p class="fadeInUp animated animated delay-19 duration-7">已有 {{number}} 位用户</p>
@@ -31,15 +31,15 @@
             </div>
           </div>
         </transition>
-        <div v-show="progress &gt;= 100" class="arrow fadeInDown infinite animated animated delay-22 duration-7"><img src="./img/arrow2.png"></div>
-        <div class="cd"><img src="./img/loading-cd.png">
-          <div :class="{on: progress &gt;= 100}" class="pointer"><img src="./img/loading-cd-pointer.png"></div>
+        <div v-show="progress &gt;= 100" class="arrow fadeInDown infinite animated animated delay-22 duration-7"><img src="//image.giccoo.com/projects/ysl/img/arrow2.png"></div>
+        <div class="cd"><img src="//image.giccoo.com/projects/ysl/img/loading-cd.png">
+          <div :class="{on: progress &gt;= 100}" class="pointer"><img src="//image.giccoo.com/projects/ysl/img/loading-cd-pointer.png"></div>
         </div>
       </div>
     </div>
     <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller, bgm: bgmShow}" :style="{width: w+'px',height: h+'px'}" style="display: none" @touchstart="startGame" class="main">
       <transition name="page-fade">   
-        <div v-show="logo" class="logo"><img src="./img/logo.png"></div>
+        <div v-show="logo" class="logo"><img src="//image.giccoo.com/projects/ysl/img/logo.png"></div>
       </transition>
       <transition name="page-down">
         <div v-show="noteShow" @click="noteShow = false" class="note-message">
@@ -69,7 +69,7 @@
       </transition>
       <transition name="page-fade">
         <div v-show="shop" class="pop pop-shop">
-          <div class="content"><img src="./img/pop-copy.png">
+          <div class="content"><img src="//image.giccoo.com/projects/ysl/img/pop-copy.png">
             <div @click="shop = false" class="close">
             </div>
             <div class="kouling">
@@ -79,13 +79,13 @@
       </transition>
       <transition name="page-fade">
         <div v-show="lotteryShow" class="pop pop-lottery">
-          <div @click="lotteryShow = false" class="content"><img src="./img/lottery-faild.png"></div>
+          <div @click="lotteryShow = false" class="content"><img src="//image.giccoo.com/projects/ysl/img/lottery-faild.png"></div>
         </div>
       </transition>
       <div v-show="ugcShow" class="pop flashcamera">
         <div class="content">
           <div class="small-size">
-            <div @click="closeUGC" class="close"><img src="./img/icon-close.png"></div>
+            <div @click="closeUGC" class="close"><img src="//image.giccoo.com/projects/ysl/img/icon-close.png"></div>
             <div class="scroll"><img :src="ugc"></div>
             <div class="note">长按保存图片</div>
           </div>
@@ -94,7 +94,7 @@
     </div>
     <div id="public" @touchstart="startGame" class="public">
       <multiplayer icon="true" loop="true" :src="list">
-        <div class="pointer"><img src="./img/icon-cd-pointer.png"></div>
+        <div class="pointer"><img src="//image.giccoo.com/projects/ysl/img/icon-cd-pointer.png"></div>
       </multiplayer>
     </div>
     <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>

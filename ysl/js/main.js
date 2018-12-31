@@ -55,7 +55,7 @@ console.log("share href:",t),CloudMusic.sharePic({picUrl:t,text:n,link:i})},wind
 loadWechatConfig(),wx.ready(function(){var e;return e={title:"刻录你的2018",desc:" ",link:"http://m.giccoo.com/ysl/?share=wx",imgUrl:"http://m.giccoo.com/ysl/img/ico.jpg",success:function e(){},
 // alert "success"
 cancel:function e(){}},// alert "cancel"
-wx.onMenuShareTimeline(e),wx.onMenuShareAppMessage(e),wx.onMenuShareQQ(e),wx.onMenuShareWeibo(e)})),640<=TrueW&&(TrueW=640),1138<=TrueH&&(TrueH=1138),n=2*TrueH<1200,t=Math.ceil(TrueW/640*94/TrueH*100),TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,_public=new Vue({el:"#public",data:{wy:"NeteaseMusic"===sys,wx:!1,note:!0,playing:!1,list:["./mp3/bgm-1.mp3","./mp3/bgm-2.mp3","./mp3/bgm-3.mp3"]},methods:{startGame:function e(){return this.note=!1}},mounted:function e(){return document.addEventListener("WeixinJSBridgeReady",function(){return _public.wx=!0})}}),// 	_public.note = false
+wx.onMenuShareTimeline(e),wx.onMenuShareAppMessage(e),wx.onMenuShareQQ(e),wx.onMenuShareWeibo(e)})),640<=TrueW&&(TrueW=640),1138<=TrueH&&(TrueH=1138),n=2*TrueH<1200,t=Math.ceil(TrueW/640*94/TrueH*100),TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,_public=new Vue({el:"#public",data:{wy:"NeteaseMusic"===sys,wx:!1,note:!0,playing:!1,list:["//image.giccoo.com/projects/ysl/mp3/bgm-1.mp3","//image.giccoo.com/projects/ysl/mp3/bgm-2.mp3","//image.giccoo.com/projects/ysl/mp3/bgm-3.mp3"]},methods:{startGame:function e(){return this.note=!1}},mounted:function e(){return document.addEventListener("WeixinJSBridgeReady",function(){return _public.wx=!0})}}),// 	_public.note = false
 // 	_public.$children[0].change()
 loading=new Vue({el:"#loading",data:{w:TrueW,h:TrueH,biger:TrueW/TrueH<.55,smaller:n,progress:0,mounted:!1,progressOn:0,number:32743,oldnumber:32743,moved:!1,end:!1,cant:!0,offset:{y:0,deltaY:0}},methods:{start:function e(t){var i;return i="mousedown"===t.type?t:t.touches[0],this.offset.y=i.pageY,this.moved=!0},move:function e(t){var i,n;return null!=t.stoppropagation&&t.stoppropagation(),!(!this.moved&&!this.cant)&&(i=(n="mousemove"===t.type?t:t.touches[0]).pageY-this.offset.y,// console.log @offset.deltaY
 30<Math.abs(i)?this.next():void 0)},end:function e(t){return this.moved=!1},next:function e(){return!this.end&&!this.cant&&(console.log("end?"),this.moved=!1,this.end=!0,document.getElementById("load").className+=" fadeOut animated",main.mounted=!0,null!=main.init&&main.init(),setTimeout(function(){if(clearInterval(_startCache),document.getElementById("load").style.display="none",_public.wx)return _public.note=!1;// setTimeout ->
@@ -63,7 +63,7 @@ loading=new Vue({el:"#loading",data:{w:TrueW,h:TrueH,biger:TrueW/TrueH<.55,small
 // ,3000
 },520),setTimeout(function(){return getStart()},400))},get:function e(){var t=this;return axios.get("http://api.giccoo.com/count/get/yslnumber").then(function(e){
 // console.log msg.data.info[0]
-return t.number=e.data.info[0].count-200,t.oldnumber=e.data.info[0].count}).catch(function(e){return console.log("err:",e)})}},
+return t.number=e.data.info[0].count-200,0<=t.number&&(t.number=0),t.oldnumber=e.data.info[0].count}).catch(function(e){return console.log("err:",e)})}},
 // axios.get "//music.163.com/api/activity/lorealysl/userinfo"
 // .then (msg)=>
 // 	d = msg.data
@@ -103,7 +103,7 @@ return this.shareImageLink=t.info,this.pushed=!1,this.loading=!1,// ugc.back()
 neteaseShareImage(),"undefined"!=typeof shareDone&&null!==shareDone&&shareDone(),setTimeout(function(){return i.getLottery()},5e3)},getLottery:function e(){return this.lotteryShow=!0},closeUGC:function e(){if(this.ugcShow=!1,"undefined"!=typeof shareDone&&null!==shareDone)return shareDone()},faild:function e(t){return this.pushed=!1,this.loading=!1},openSong:function e(t){
 // id = [38576323,167740,139381,474567580,355992,28815250,109968,110083,163639,28785688,5271858,28838557,169794,27591641,5271855]
 // CloudMusic.song(id[resultNum])
-return window.location.href="https://music.163.com/#/song?id=".concat(t)},changeSond:function e(t){var i;return i=["./mp3/bgm-1.mp3","./mp3/bgm-2.mp3","./mp3/bgm-3.mp3"],this.bgmShow=!0,_public.$children[0].play(t)},
+return window.location.href="https://music.163.com/#/song?id=".concat(t)},changeSond:function e(t){var i;return i=["//image.giccoo.com/projects/ysl/mp3/bgm-1.mp3","//image.giccoo.com/projects/ysl/mp3/bgm-2.mp3","//image.giccoo.com/projects/ysl/mp3/bgm-3.mp3"],this.bgmShow=!0,_public.$children[0].play(t)},
 // _public.$children[0].src = list[id]
 // setTimeout =>
 // 	_public.$children[0].play()
