@@ -248,6 +248,8 @@ function goNextPage(){
 		}else{
 			TweenMax.to(q1C,1,{y:-stageH/5,onComplete:function(){q1C.visible=false}})
 			TweenMax.to(q1C,1,{alpha:0})
+			TweenMax.set(q2C,{alpha:1,y:0})
+			TweenMax.from(q2C,1,{alpha:0,y:100})
 			if(userResult[nowPage]!=999){
 				arrow.visible=true
 				clickme.visible=true
@@ -274,6 +276,8 @@ function goNextPage(){
 		}else{
 			TweenMax.to(q2C,1,{y:-stageH/5,onComplete:function(){q2C.visible=false}})
 			TweenMax.to(q2C,1,{alpha:0})
+			TweenMax.set(q3C,{alpha:1,y:0})
+			TweenMax.from(q3C,1,{alpha:0,y:100})
 			if(userResult[nowPage]!=999){
 				arrow.visible=true
 				clickme.visible=true
