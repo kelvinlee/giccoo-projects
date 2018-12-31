@@ -236,6 +236,7 @@ function goNextPage(){
 	arrow.visible=false
 	if(nowPage==1){
 		//TweenMax.set(q2C,{visible:true})
+		clickme.visible=false
 		q2C.visible=true
 		if(ifPageSetA[nowPage]==0){
 			TweenMax.to(q1C,1,{y:-stageH/5,onComplete:function(){q1C.visible=false}})
@@ -255,6 +256,8 @@ function goNextPage(){
 				clickme.visible=true
 				hint123.visible=false
 				ifCanScorll=1
+				console.log("clickme.visible",clickme.visible)
+				mainC.addChild(clickme)
 			}else{
 				arrow.visible=false
 				clickme.visible=false
@@ -265,6 +268,7 @@ function goNextPage(){
 	}
 	if(nowPage==2){
 		//TweenMax.set(q3C,{visible:true})
+		clickme.visible=false
 		q3C.visible=true
 		if(ifPageSetA[nowPage]==0){
 			TweenMax.to(q2C,1,{y:-stageH/5,onComplete:function(){q2C.visible=false}})
@@ -283,6 +287,8 @@ function goNextPage(){
 				clickme.visible=true
 				hint123.visible=false
 				ifCanScorll=1
+				console.log("clickme.visible",clickme.y)
+				mainC.addChild(clickme)
 			}else{
 				arrow.visible=false
 				clickme.visible=false
@@ -293,11 +299,13 @@ function goNextPage(){
 	}
 	if(nowPage==3){
 		//TweenMax.set(,{visible:true})
+		clickme.visible=false
 		if(ifPageSetA[nowPage]==0){
 			TweenMax.to(q3C,1,{y:-stageH/5,onComplete:function(){q3C.visible=false}})
 			TweenMax.to(q3C,1,{alpha:0})
 		//q3C.visible=false
 			setUGC()
+
 		}else{
 			TweenMax.to(q3C,1,{y:-stageH/5,onComplete:function(){q3C.visible=false}})
 			TweenMax.to(q3C,1,{alpha:0})
@@ -315,7 +323,7 @@ function goNextPage(){
 			}
 		}
 	}
-	clickme.visible=false//---
+	//clickme.visible=false//---
 
 }
 var q123CA=[]
