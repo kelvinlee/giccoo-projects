@@ -37,15 +37,26 @@ function setBGT(){
 
 //==================================================================================================123题预设
 var arrow
+var hint123
+var clickme
 function setQ123(){
 	arrow=new Sprite(getTe(_CDN+"img/arrow.png"));
-	mainC.addChild(arrow)
-	arrow.y=stageH-28-50
-	TweenMax.to(arrow,1,{y:stageH-28-20,repeat:1000000,yoyo:true})
+	hint123=new Sprite(getTe(_CDN+"img/hint123.png"));
+	clickme=new Sprite(getTe(_CDN+"img/clickme.png"));
+	mainC.addChild(arrow,hint123,clickme)
+	hint123.y=stageH-21-50
+	arrow.y=stageH-28-20
+	clickme.y=stageH-70
+	TweenMax.to(arrow,1,{y:stageH-28-0,repeat:1000000,yoyo:true})
+	TweenMax.from(hint123,1,{alpha:0,y:"+=50"})
 	arrow.visible=false
 
-	pStage.interactive=true
-  pStage.touchstart=touchStart
+	// pStage.interactive=true
+ //  pStage.touchstart=touchStart
+
+  clickme.visible=false
+  clickme.interactive=true
+  clickme.tap=goNextPage
 }
 
 
@@ -94,15 +105,19 @@ function selectQ1(_e){
 		TweenMax.to(q1BtnA[i],1,{alpha:0.5})
 		if(_e.target==q1BtnA[i]){
 			console.log("第一题选",i)
+			main.changeSond(i)
 			userResult[0]=i
 			TweenMax.set(q1TA[i],{alpha:0,y:50})
 			TweenMax.to(q1TA[i],2,{alpha:1,y:0})
 			TweenMax.to(q1BtnA[i],1,{alpha:1})
 		}
 	};
+	clickme.visible=true
+	mainC.addChild(clickme)
 	arrow.visible=true
 	ifCanScorll=1
 	TweenMax.to(q1t,1,{alpha:0})
+	TweenMax.to(hint123,.5,{alpha:0})
 }
 
 //==================================================================================================第二题
@@ -166,6 +181,9 @@ function selectQ2(_e){
 	TweenMax.to(q2tb,1,{alpha:1,delay:1})
 	arrow.visible=true
 	ifCanScorll=1
+	TweenMax.to(hint123,.5,{alpha:0})
+	clickme.visible=true
+	mainC.addChild(clickme)
 }
 
 //==================================================================================================第三题
@@ -229,6 +247,9 @@ function selectQ3(_e){
 	TweenMax.to(q3tb,1,{alpha:1,delay:1})
 	arrow.visible=true
 	ifCanScorll=1
+	TweenMax.to(hint123,.5,{alpha:0})
+	clickme.visible=true
+	mainC.addChild(clickme)
 }
 
 //==================================================================================================UGC1
@@ -247,7 +268,7 @@ function setUGC(){
 	mainC.addChild(ugcC)
 
 	utitle=new Sprite(getTe(_CDN+"img/utitle.png"));
-	var j=Math.floor(Math.random()*7+1)
+	var j=userResult[1]*3+userResult[2]*3+1//Math.floor(Math.random()*7+1)//userResult[1]*3+userWord[2]*3
 	usong=new Sprite(getTe(_CDN+"img/us"+j+".png"));
 
 	TweenMax.from(utitle,1.5,{alpha:0,delay:0.5})
@@ -293,9 +314,12 @@ function setUGC(){
 		udisc.addChild(_ud)
 		_ud.pivot.set(320,321)
 		_ud.position.set(320,stageH)
-		_ud.scale.set(0,0)
+		_ud.scale.set(0.85,0.85)
+		if(i==5){
+			_ud.scale.set(0.75,0.75)
+		}
 		var _s=Math.random()*.1+.95
-		TweenMax.to(_ud.scale,.5,{x:_s,y:_s,delay:3+.03*i,ease:Sine.easeIn,onComplete:twdisc,onCompleteParams:[_ud]})
+		TweenMax.to(_ud.scale,.5,{x:_s,y:_s,delay:3+.0*i,ease:Sine.easeIn,onComplete:twdisc,onCompleteParams:[_ud]})
 		//TweenMax.to(_ud,1.5,{rotation:Math.PI/180*5*(Math.random()*2-1),repeat:100000,yoyo:true,delay:.05*i+Math.random()*.5,ease:Sine.easeInOut})
 		
 	};
@@ -303,9 +327,23 @@ function setUGC(){
 	ud0=new Sprite(getTe(_CDN+"img/ud0.png"));
 	udz=new Sprite(getTe(_CDN+"img/upicz.png"));
 
-	udisc.addChild(ud0,udz)
+	//udisc.addChild(ud0,udz)
 	ud0.y=stageH-321
-	udz.y=stageH-321
+	
+
+	udz.pivot.set(640,196)
+	udz.position.set(640,stageH-123)
+	udz.rotation=-Math.PI/180*15
+	TweenMax.to(udz,.5,{rotation:0,delay:3})
+
+	var _discAll=new Sprite(getTe(_CDN+"img/page1disc.png"));
+	_discAll.scale.y=-1
+	_discAll.y=stageH
+
+	udisc.addChild(ud0,_discAll,udz)
+	
+	TweenMax.to(_discAll,.5,{alpha:0,delay:3})
+	TweenMax.from(udisc,4,{y:"+=320"})
 }
 
 function twdisc(_tar){
@@ -329,14 +367,16 @@ var p1disc
 var p1tC=new PIXI.Container()
 var p1ren,p1hint
 var colorAC=new PIXI.Container()
+var _colorb
 
 function goKeywordPage(){
+
 	pStage.interactive=false
 	TweenMax.to(ugcC,1,{y:-stageH})
 	TweenMax.from(page1,1,{y:stageH})
 
 	console.log("关键词页")
-	userWord=Math.floor(Math.random()*4)
+	
 
 	mainC.addChild(page1)
 
@@ -362,7 +402,9 @@ function goKeywordPage(){
 
 	colorAC.y=stageH-132
 	var _colora=new Sprite(getTe(_CDN+"img/colora"+userWord+".png"));
-	colorAC.addChild(_colora)
+	_colorb=new Sprite(getTe(_CDN+"img/colora"+userWord+"b.png"));
+	_colorb.alpha=1
+	colorAC.addChild(_colora,_colorb)
 	page1.addChild(p1disc,p1tC,p1ren,p1hint,colorAC)
 
 }
@@ -371,7 +413,9 @@ function showP1hint(){
 	setPage2()
 
 	console.log("关键词页截图2")
+	//_colorb.alpha=0
 	ugc.takeUGC()
+	//_colorb.alpha=1
 	p1hint.visible=true
 	pStage.interactive=true
 	pStage.tap=goPage2
@@ -380,9 +424,11 @@ function showP1hint(){
 
 var page2=new PIXI.Container()
 var lineBG=new PIXI.Container()
-var colorBG
+var colorBG=new PIXI.Container()
 var khC=new PIXI.Container()
 var logo,slogen
+var _khbA=[]
+var _linebgbA=[]
 function setPage2(){
 	mainC.addChild(page2)
 	page2.y=stageH
@@ -390,21 +436,34 @@ function setPage2(){
 	
 	for (var i = 0; i < 4; i++) {
 		var _linebg=new Sprite(getTe(_CDN+"img/line"+(i+1)+".jpg"));
-		lineBG.addChild(_linebg)
+		var _linebgb=new Sprite(getTe(_CDN+"img/line"+(i+1)+"b.jpg"));
+		lineBG.addChild(_linebg,_linebgb)
 		if(i!=userWord){
 			_linebg.visible=false
+			_linebgb.visible=false
+		}else{
+			_linebgbA.push(_linebgb)
 		}
 		var _kh=new Sprite(getTe(_CDN+"img/kh"+(i+1)+".jpg"));
-		khC.addChild(_kh)
+		var _khb=new Sprite(getTe(_CDN+"img/kh"+(i+1)+"b.jpg"));
+		khC.addChild(_kh,_khb)
 		if(i!=userWord){
 			_kh.visible=false
+			_khb.visible=false
+		}else{
+			_khbA.push(_khb)
+			//_khbA=[_khb]
 		}
 	};
 
 	lineBG.height=stageH
 
-	colorBG=new Sprite(getTe(_CDN+"img/colorbg.jpg"));
-	colorBG.height=stageH
+	colorBGa=new Sprite(getTe(_CDN+"img/colorbg.jpg"));
+	colorBGa.height=stageH*3
+
+	colorBGb=new Sprite(getTe(_CDN+"img/colorbgb.jpg"));
+	colorBGb.height=stageH
+	colorBG.addChild(colorBGa,colorBGb)
 	//colorBG.y=stageH
 
 	khC.y=stageH-50-335-10
@@ -428,7 +487,7 @@ function goPage2(){
 	TweenMax.to(page2,1,{y:0,ease:Sine.easeIn})
 
 	TweenMax.from(khC,3,{y:0,delay:.5})
-	TweenMax.from(colorBG,3,{y:0,delay:.5,onComplete:setPage3})
+	TweenMax.from(colorBG,3,{y:0,delay:.5,onComplete:changeBlackBG})
 
 	TweenMax.from(logo,1,{y:"+=200",delay:1})
 	TweenMax.from(slogen,1.1,{y:"+=200",delay:1})
@@ -437,6 +496,12 @@ function goPage2(){
 var page3=new PIXI.Container()
 var arrow2
 var endtC=new PIXI.Container()
+function changeBlackBG(){
+	TweenMax.to(colorBGb,1,{alpha:0})
+	TweenMax.to(_khbA[0],1,{alpha:0})
+	TweenMax.to(_linebgbA[0],1,{alpha:0,onComplete:setPage3})
+}
+
 function setPage3(){
 	pStage.interactive=true
 	pStage.tap=goPage3
@@ -465,7 +530,8 @@ function goPage3(){
 	TweenMax.to(page2,1,{y:-stageH+450*stageH/1000,onComplete:setPage4})
 }
 
-
+var page4=new PIXI.Container()
+var endPic,endbtn1,endbtn2
 function setPage4(){
 	console.log("关键词页截图4")
 	//ugc.takeUGC(-550+(stageH-1000)/2)//y=-550-(stageH-1000)/2
@@ -473,8 +539,35 @@ function setPage4(){
 	arrow2.visible=true
 	pStage.interactive=true
 	pStage.tap=goPage4
+
+	mainC.addChild(page4)
+	endPic=new Sprite(getTe(_CDN+"img/endpic.png"));
+	endbtn1=new Sprite(getTe(_CDN+"img/endbtn1.png"));
+	endbtn2=new Sprite(getTe(_CDN+"img/endbtn2.png"));
+
+	page4.addChild(endPic,endbtn1,endbtn2)
+	endPic.y=stageH/2-310*stageH/1000
+	endbtn1.y=stageH/2+77*stageH/1000
+	endbtn2.y=stageH/2+223*stageH/1000
+
+	endbtn1.interactive=true
+	endbtn1.tap=savePic
+
+	endbtn2.interactive=true
+	endbtn2.tap=goURL
+	page4.y=stageH
 }
 
 function goPage4(){
+	TweenMax.to(page2,1,{y:-stageH})
+	TweenMax.to(page3,1,{y:-stageH})
+	TweenMax.to(page4,1,{y:0})
+	arrow.visible=false
+}
+
+function savePic(){
 	main.share()
+}
+function goURL(){
+	main.goWeb()
 }

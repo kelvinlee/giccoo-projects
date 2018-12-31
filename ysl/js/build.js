@@ -109,6 +109,11 @@ var imageList = [
 	_CDN+"img/colora2.png",
 	_CDN+"img/colora3.png",
 
+	_CDN+"img/colora0b.png",
+	_CDN+"img/colora1b.png",
+	_CDN+"img/colora2b.png",
+	_CDN+"img/colora3b.png",
+
 	_CDN+"img/line1.jpg",
 	_CDN+"img/line2.jpg",
 	_CDN+"img/line3.jpg",
@@ -119,7 +124,18 @@ var imageList = [
 	_CDN+"img/kh3.jpg",
 	_CDN+"img/kh4.jpg",
 
+	_CDN+"img/line1b.jpg",
+	_CDN+"img/line2b.jpg",
+	_CDN+"img/line3b.jpg",
+	_CDN+"img/line4b.jpg",
+
+	_CDN+"img/kh1b.jpg",
+	_CDN+"img/kh2b.jpg",
+	_CDN+"img/kh3b.jpg",
+	_CDN+"img/kh4b.jpg",
+
 	_CDN+"img/colorbg.jpg",
+	_CDN+"img/colorbgb.jpg",
 
 	_CDN+"img/logo.png",
 	_CDN+"img/slogen.png",
@@ -130,6 +146,13 @@ var imageList = [
 	_CDN+"img/endt4.png",
 
 	_CDN+"img/qr.jpg",
+	_CDN+"img/hint123.png",
+	_CDN+"img/clickme.png",
+
+	_CDN+"img/endpic.png",
+	_CDN+"img/endbtn1.png",
+	_CDN+"img/endbtn2.png",
+
 
 	
 ];
@@ -162,7 +185,10 @@ var Type=1
 function getStart(){
 
 	initAll()
-	ugc.firstTime(-450*stageH/1000)
+	userWord=Math.floor(Math.random()*4)
+	userWord=3
+	console.log("userWord",userWord)
+	ugc.firstTime(-450*stageH/1000,userWord)
 }
 
 var mainC=new PIXI.Container()
@@ -183,8 +209,8 @@ var pageUpDown=1
 var startY
 
 function touchStart(_e){
-  startY=_e.data.global.y
-  pStage.touchend=touchEnd
+  //startY=_e.data.global.y
+  //pStage.touchend=touchEnd
 }
 var ifCanScorll=0
 function touchEnd(_e){
@@ -203,6 +229,7 @@ function touchEnd(_e){
 }
 
 function goNextPage(){
+	nowPage++
 	ifCanScorll=0
 	arrow.visible=false
 	if(nowPage==1){
@@ -210,12 +237,14 @@ function goNextPage(){
 		TweenMax.to(q1C,1,{alpha:0})
 		//q1C.visible=false
 		setQ2()
+		TweenMax.to(hint123,.5,{alpha:1})
 	}
 	if(nowPage==2){
 		TweenMax.to(q2C,1,{y:-stageH/5,onComplete:function(){q2C.visible=false}})
 		TweenMax.to(q2C,1,{alpha:0})
 		//q2C.visible=false
 		setQ3()
+		TweenMax.to(hint123,.5,{alpha:1})
 	}
 	if(nowPage==3){
 		TweenMax.to(q3C,1,{y:-stageH/5,onComplete:function(){q3C.visible=false}})
@@ -223,6 +252,7 @@ function goNextPage(){
 		//q3C.visible=false
 		setUGC()
 	}
+	clickme.visible=false
 
 }
 
