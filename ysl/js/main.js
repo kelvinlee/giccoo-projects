@@ -63,7 +63,7 @@ loading=new Vue({el:"#loading",data:{w:TrueW,h:TrueH,biger:TrueW/TrueH<.55,small
 // ,3000
 },520),setTimeout(function(){return getStart()},400))},get:function e(){var t=this;return axios.get("http://api.giccoo.com/count/get/yslnumber").then(function(e){
 // console.log msg.data.info[0]
-return t.number=e.data.info[0].count,t.oldnumber=e.data.info[0].count}).catch(function(e){return console.log("err:",e)})}},
+return t.number=e.data.info[0].count-200,t.oldnumber=e.data.info[0].count}).catch(function(e){return console.log("err:",e)})}},
 // axios.get "//music.163.com/api/activity/lorealysl/userinfo"
 // .then (msg)=>
 // 	d = msg.data
@@ -76,7 +76,7 @@ mounted:function e(){var t=this,i;// @.next() # for test
 // ,200
 return this.mounted=!0,this.get(),i=setInterval(function(){if(t.progress+=3,t.progress>=t.progressOn&&(t.progress=t.progressOn),100<=t.progress)return t.progress=100,clearInterval(i),_cache=setTimeout(function(){
 // @.next()
-return t.cant=!1},2e3),_startCache=setInterval(function(){if(t.number+=1+Math.floor(2*Math.random()),t.number>t.oldnumber+1500)return clearInterval(_startCache)},350)},50)}}),_init()},_init=function e(){var t,i,n;return 640<=TrueW&&(
+return t.cant=!1},2e3),_startCache=setInterval(function(){if(t.number+=1+Math.floor(3*Math.random()),t.number>=t.oldnumber)return clearInterval(_startCache)},50)},50)}}),_init()},_init=function e(){var t,i,n;return 640<=TrueW&&(
 // console.log new Date().getTime() - startTime
 // document.body.style.height = TrueH+"px"
 // document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64

@@ -168,7 +168,7 @@ window.onload = ->
 				axios.get "http://api.giccoo.com/count/get/yslnumber"
 				.then (msg)=>
 					# console.log msg.data.info[0]
-					@.number = msg.data.info[0].count
+					@.number = msg.data.info[0].count - 200
 					@.oldnumber = msg.data.info[0].count
 				.catch (err)->
 					console.log "err:",err
@@ -199,10 +199,10 @@ window.onload = ->
 					,2000
 					
 					_startCache = setInterval =>
-						@.number += 1+Math.floor Math.random()*2
-						if @.number > (@.oldnumber+1500)
+						@.number += 1+Math.floor Math.random()*3
+						if @.number >= @.oldnumber
 							clearInterval _startCache
-					, 350
+					, 50
 			,1000/20
 	
 	init()
