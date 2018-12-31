@@ -58,7 +58,7 @@ window.onload = ->
 		shareData = 
 			name: 'YSL'
 			title: '刻录你的2018'
-			subTitle: ""
+			subTitle: " "
 			text: ''
 			picUrl: 'http://m.giccoo.com/ysl/img/ico.jpg'
 			link: 'http://m.giccoo.com/ysl/'
@@ -70,7 +70,7 @@ window.onload = ->
 		wx.ready ->
 			shareContent =
 				title: "刻录你的2018"
-				desc: ""
+				desc: " "
 				link: "http://m.giccoo.com/ysl/"
 				imgUrl: "http://m.giccoo.com/ysl/img/ico.jpg"
 				success: ->
