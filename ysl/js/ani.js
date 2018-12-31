@@ -268,7 +268,7 @@ function setUGC(){
 	mainC.addChild(ugcC)
 
 	utitle=new Sprite(getTe(_CDN+"img/utitle.png"));
-	var j=userResult[1]*3+userResult[2]*3+1//Math.floor(Math.random()*7+1)//userResult[1]*3+userWord[2]*3
+	var j=userResult[1]*3+userResult[2]+1//Math.floor(Math.random()*7+1)//userResult[1]*3+userWord[2]*3
 	usong=new Sprite(getTe(_CDN+"img/us"+j+".png"));
 
 	TweenMax.from(utitle,1.5,{alpha:0,delay:0.5})
