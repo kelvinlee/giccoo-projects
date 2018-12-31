@@ -116,8 +116,8 @@ window.onload = ->
 			progress: 0
 			mounted: false
 			progressOn: 0
-			number: 32743
-			oldnumber: 32743
+			number: 0
+			oldnumber: 0
 			moved: false
 			end: false
 			cant: true
