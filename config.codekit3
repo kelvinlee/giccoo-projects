@@ -9264,6 +9264,17 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/libs/vue/vue-multi-player.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/libs/js/vue-multi-player.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
 	"/libs/vue/vue-player.coffee": {
 		"ft": 32,
 		"ma": 0,

@@ -1,7 +1,7 @@
 # @codekit-prepend "coffee/css3Prefix"
 # @codekit-prepend "../../libs/coffee/loadWechatConfig"
 # @codekit-prepend "../../libs/coffee/IsPC"
-# @codekit-prepend "../../libs/vue/vue-player"
+# @codekit-prepend "../../libs/vue/vue-multi-player"
 # @codekit-prepend "../../libs/vue/vue-video"
 # @codekit-prepend "../../libs/coffee/pixi-base"
 # @codekit-prepend "../../libs/coffee/String"
@@ -96,6 +96,7 @@ window.onload = ->
 			wx: false
 			note: true
 			playing: false
+			list: ["./mp3/bgm-1.mp3","./mp3/bgm-2.mp3","./mp3/bgm-3.mp3"]
 		methods:
 			startGame: ->
 				@.note = false
@@ -116,8 +117,38 @@ window.onload = ->
 			mounted: false
 			progressOn: 0
 			number: 32743
+			oldnumber: 32743
+			moved: false
+			end: false
+			cant: true
+			offset:
+				y: 0
+				deltaY: 0
 		methods:
+			start: (evt)->
+				if evt.type is "mousedown"
+					touch = evt
+				else
+					touch = evt.touches[0]
+				@offset.y = touch.pageY
+				@moved = true
+			move: (evt)->
+				return false unless @moved or @.cant
+				if evt.type is "mousemove"
+					touch = evt
+				else
+					touch = evt.touches[0]
+				deltaY = touch.pageY - (@offset.y)
+				# console.log @offset.deltaY
+				if Math.abs(deltaY) > 30
+					@.next()
+			end: (evt)->
+				@moved = false
 			next: ->
+				return false if @.end or @.cant
+				console.log "end?"
+				@.moved = false
+				@.end = true
 				document.getElementById('load').className += " fadeOut animated"
 				main.mounted = true
 				main.init() if main.init?
@@ -137,6 +168,7 @@ window.onload = ->
 				.then (msg)=>
 					# console.log msg.data.info[0]
 					@.number = msg.data.info[0].count
+					@.oldnumber = msg.data.info[0].count
 				.catch (err)->
 					console.log "err:",err
 				# axios.get "//music.163.com/api/activity/lorealysl/userinfo"
@@ -161,10 +193,14 @@ window.onload = ->
 					@.progress = 100
 					clearInterval timein
 					_cache = setTimeout =>
-						@.next()
+						# @.next()
+						@.cant = false
 					,5000
+					
 					_startCache = setInterval =>
 						@.number += 1+Math.floor Math.random()*2
+						if @.number > (@.oldnumber+300)
+							clearInterval _startCache
 					, 150
 			,1000/20
 	
@@ -285,6 +321,7 @@ init = ->
 			formShow: false
 			formBoxShow: false
 			carIndex: 1
+			taobao: false
 		# watch:
 		methods:
 			send: (text)->
@@ -385,10 +422,11 @@ init = ->
 			changeSond: (id)->
 				list = ["./mp3/bgm-1.mp3","./mp3/bgm-2.mp3","./mp3/bgm-3.mp3"]
 				@.bgmShow = true
-				_public.$children[0].src = list[id]
-				setTimeout =>
-					_public.$children[0].play()
-				,20
+				_public.$children[0].play(id)
+				# _public.$children[0].src = list[id]
+				# setTimeout =>
+				# 	_public.$children[0].play()
+				# ,20
 			openMusic: (id)->
 				# goList()
 				# _public.$children[0].pause()
@@ -401,7 +439,8 @@ init = ->
 
 			goWeb: ->
 				if _public.wx
-					window.location.href = "https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"
+					# window.location.href = "https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"
+					@.taobao = true
 				else
 					window.location.href = "https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"
 			gobuy: ->
