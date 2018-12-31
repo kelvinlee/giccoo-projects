@@ -321,7 +321,7 @@ init = ->
 			formShow: false
 			formBoxShow: false
 			carIndex: 1
-			taobao: false
+			shop: false
 		# watch:
 		methods:
 			send: (text)->
@@ -448,7 +448,7 @@ init = ->
 			goWeb: ->
 				if _public.wx
 					# window.location.href = "https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"
-					@.taobao = true
+					@.shop = true
 				else
 					window.location.href = "https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"
 			gobuy: ->

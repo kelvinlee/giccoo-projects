@@ -84,10 +84,10 @@ block content
           #ugc
     
     transition(name="page-fade")
-      .pop.pop-taobao(v-show="taobao")
+      .pop.pop-shop(v-show="shop")
         .content
           img(src="#{url}/img/pop-copy.png")
-          .close(@click="taobao = false")
+          .close(@click="shop = false")
             //- img(src="#{url}/img/icon-close.png")
           .kouling
             //- p 复制下方淘口令,即刻抢先拥有
