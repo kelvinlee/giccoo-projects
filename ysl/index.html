@@ -77,6 +77,11 @@
           </div>
         </div>
       </transition>
+      <transition name="page-fade">
+        <div v-show="lotteryShow" class="pop pop-lottery">
+          <div @click="lotteryShow = false" class="content"><img src="./img/lottery-faild.png"></div>
+        </div>
+      </transition>
       <div v-show="ugcShow" class="pop flashcamera">
         <div class="content">
           <div class="small-size">

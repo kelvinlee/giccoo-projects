@@ -91,6 +91,11 @@ block content
           .kouling 
             h3 淘口令：￥YZtIbpSs6BR￥
 
+    transition(name="page-fade")
+      .pop.pop-lottery(v-show="lotteryShow")
+        .content(@click="lotteryShow = false")
+          img(src="#{url}/img/lottery-faild.png")
+
     //- transition(name="page-fade")
     .pop.flashcamera(v-show="ugcShow")
       .content
