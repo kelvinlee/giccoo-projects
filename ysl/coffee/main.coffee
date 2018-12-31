@@ -61,7 +61,7 @@ window.onload = ->
 			subTitle: " "
 			text: ''
 			picUrl: 'http://m.giccoo.com/ysl/img/ico.jpg'
-			link: 'http://m.giccoo.com/ysl/'
+			link: 'http://m.giccoo.com/ysl/?share=wy'
 		CloudMusic.setShareData shareData
 	else
 		# CloudMusic.open('http://m.giccoo.com/ysl/')
@@ -71,7 +71,7 @@ window.onload = ->
 			shareContent =
 				title: "刻录你的2018"
 				desc: " "
-				link: "http://m.giccoo.com/ysl/"
+				link: "http://m.giccoo.com/ysl/?share=wx"
 				imgUrl: "http://m.giccoo.com/ysl/img/ico.jpg"
 				success: ->
 					# alert "success"
@@ -446,11 +446,11 @@ init = ->
 				CloudMusic.open("https://m.giccoo.com/ysl/")
 
 			goWeb: ->
-				if _public.wx
-					# window.location.href = "https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"
-					@.shop = true
-				else
-					window.location.href = "https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"
+				# if _public.wx
+				# 	# window.location.href = "https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"
+				# 	@.shop = true
+				# else
+				window.location.href = "https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"
 			gobuy: ->
 				window.location.href = "http://www.baidu.com"
 			init: ->

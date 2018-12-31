@@ -49,10 +49,10 @@ apiLink="//g.giccoo.com/",// apiLink = "http://192.168.3.53:3000/"
 // /api/activity/lorealysl/userinfo
 main={},sys="",sended=[!(loading={}),!(_public={})],_runTime=_startCache=_cache=ugcCache=musicIconCache=musicLineCache=ugc=null,_testTime=_second=0,neteaseShareImage=function e(){var t,i,n;return n="刻录你的2018",t="https://image.giccoo.com/upload/".concat(main.folder,"/")+main.shareImageLink+"@!large",i="https://activity.music.163.com/lenovo/",// console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 // window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
-console.log("share href:",t),CloudMusic.sharePic({picUrl:t,text:n,link:i})},window.onload=function(){var e,t,i,n;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,-1<window.navigator.userAgent.indexOf("NeteaseMusic")?(sys="NeteaseMusic",i={name:"YSL",title:"刻录你的2018",subTitle:" ",text:"",picUrl:"http://m.giccoo.com/ysl/img/ico.jpg",link:"http://m.giccoo.com/ysl/"},CloudMusic.setShareData(i)):(
+console.log("share href:",t),CloudMusic.sharePic({picUrl:t,text:n,link:i})},window.onload=function(){var e,t,i,n;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,-1<window.navigator.userAgent.indexOf("NeteaseMusic")?(sys="NeteaseMusic",i={name:"YSL",title:"刻录你的2018",subTitle:" ",text:"",picUrl:"http://m.giccoo.com/ysl/img/ico.jpg",link:"http://m.giccoo.com/ysl/?share=wy"},CloudMusic.setShareData(i)):(
 // CloudMusic.open('http://m.giccoo.com/ysl/')
 // return false
-loadWechatConfig(),wx.ready(function(){var e;return e={title:"刻录你的2018",desc:" ",link:"http://m.giccoo.com/ysl/",imgUrl:"http://m.giccoo.com/ysl/img/ico.jpg",success:function e(){},
+loadWechatConfig(),wx.ready(function(){var e;return e={title:"刻录你的2018",desc:" ",link:"http://m.giccoo.com/ysl/?share=wx",imgUrl:"http://m.giccoo.com/ysl/img/ico.jpg",success:function e(){},
 // alert "success"
 cancel:function e(){}},// alert "cancel"
 wx.onMenuShareTimeline(e),wx.onMenuShareAppMessage(e),wx.onMenuShareQQ(e),wx.onMenuShareWeibo(e)})),640<=TrueW&&(TrueW=640),1138<=TrueH&&(TrueH=1138),n=2*TrueH<1200,t=Math.ceil(TrueW/640*94/TrueH*100),TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,_public=new Vue({el:"#public",data:{wy:"NeteaseMusic"===sys,wx:!1,note:!0,playing:!1,list:["./mp3/bgm-1.mp3","./mp3/bgm-2.mp3","./mp3/bgm-3.mp3"]},methods:{startGame:function e(){return this.note=!1}},mounted:function e(){return document.addEventListener("WeixinJSBridgeReady",function(){return _public.wx=!0})}}),// 	_public.note = false
@@ -111,7 +111,12 @@ return window.location.href="https://music.163.com/#/song?id=".concat(t)},change
 openMusic:function e(t){
 // goList()
 // _public.$children[0].pause()
-return CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/ysl/")},goWeb:function e(){return _public.wx?this.shop=!0:window.location.href="https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"},gobuy:function e(){return window.location.href="http://www.baidu.com"},init:function e(){},
+return CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/ysl/")},goWeb:function e(){
+// if _public.wx
+// 	# window.location.href = "https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"
+// 	@.shop = true
+// else
+return window.location.href="https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"},gobuy:function e(){return window.location.href="http://www.baidu.com"},init:function e(){},
 // getStart()
 startGame:function e(){
 // console.log "start game"
