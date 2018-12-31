@@ -11,7 +11,7 @@
   </head>
   <body>
     <div id="load" class="load">
-      <div id="loading" v-show="mounted" @touchstart="start" @touchmove.passive="move" :class="{biger: biger, smaller:smaller}" style="display: none" class="content">
+      <div id="loading" v-show="mounted" @touchstart="start" @touchmove.stop="move" :class="{biger: biger, smaller:smaller}" style="display: none" class="content">
         <p v-show="progress &lt; 100" class="centeralign">Loading..{{progress}}%</p>
         <transition name="page-fade">
           <div v-show="progress &gt;= 100" class="box fadeIn animated">

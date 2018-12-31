@@ -36,7 +36,7 @@ block content
       .text 请使用手机扫描二维码参与活动
   
   .load#load
-    .content#loading(v-show="mounted",@touchstart="start",@touchmove.passive="move",:class="{biger: biger, smaller:smaller}",style="display: none")
+    .content#loading(v-show="mounted",@touchstart="start",@touchmove.stop="move",:class="{biger: biger, smaller:smaller}",style="display: none")
       //- transition(name="page-fade")
       p(v-show="progress < 100").centeralign Loading..{{progress}}%
       transition(name="page-fade")
