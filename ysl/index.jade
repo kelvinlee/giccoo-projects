@@ -36,7 +36,7 @@ block content
       .text 请使用手机扫描二维码参与活动
   
   .load#load
-    .content#loading(v-show="mounted",:class="{biger: biger, smaller:smaller}",style="display: none")
+    .content#loading(v-show="mounted",@mousedown="start",@mousemove="move",@mouseup="end",@touchstart="start",@touchmove.passive="move",@touchend="end",:class="{biger: biger, smaller:smaller}",style="display: none")
       //- transition(name="page-fade")
       p(v-show="progress < 100").centeralign Loading..{{progress}}%
       transition(name="page-fade")
@@ -50,6 +50,8 @@ block content
           .peopleNumber
             p.fadeInUp.animated.animated.delay-19.duration-7 已有 {{number}} 位用户
             p.fadeInUp.animated.animated.delay-20.duration-7 刻录完成
+      .arrow.fadeInUp.animated.animated.delay-22.duration-7(v-show="progress >= 100")
+        img(src="#{url}/img/arrow2.png")
 
       .cd
         img(src="#{url}/img/loading-cd.png")
@@ -80,6 +82,14 @@ block content
       .page.page-1(v-show="pageIndex == 1")
         .content
           #ugc
+    
+    transition(name="page-fade")
+      .pop.pop-taobao(v-show="taobao")
+        .content
+          .close(@click="taobao = false")
+            img(src="#{url}/img/icon-close.png")
+          .kouling 
+            h3 淘口令：￥YZtIbpSs6BR￥
 
     //- transition(name="page-fade")
     .pop.flashcamera(v-show="ugcShow")
@@ -91,7 +101,7 @@ block content
             img(:src="ugc")
           .note 长按保存图片
   .public#public(@touchstart="startGame")
-    player(icon="true",loop="true",src="#{url}/mp3/bgm-1.mp3")
+    multiplayer(icon="true",loop="true",:src="list")
       .pointer
         img(src="#{url}/img/icon-cd-pointer.png")
 
