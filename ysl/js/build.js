@@ -294,7 +294,7 @@ function goNextPage(){
 			TweenMax.to(q3C,1,{y:-stageH/5,onComplete:function(){q3C.visible=false}})
 			TweenMax.to(q3C,1,{alpha:0})
 			ifPageSetA[nowPage]=1
-			aif(userResult[nowPage]!=999){
+			if(userResult[nowPage]!=999){
 				arrow.visible=true
 				clickme.visible=true
 				hint123.visible=false
