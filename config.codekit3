@@ -14411,8 +14411,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/arrow.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14422,8 +14422,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/arrow2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14433,8 +14433,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/clickme.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14444,8 +14444,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/colora0.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14455,8 +14455,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/colora0b.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14466,8 +14466,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/colora1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14477,8 +14477,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/colora1b.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14488,8 +14488,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/colora2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14499,8 +14499,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/colora2b.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14510,8 +14510,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/colora3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14521,8 +14521,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/colora3b.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14534,7 +14534,7 @@
 		"oAP": "/ysl/img/colorbg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/colorbgb.jpg": {
@@ -14545,7 +14545,7 @@
 		"oAP": "/ysl/img/colorbgb.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/endbtn1.png": {
@@ -14554,8 +14554,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/endbtn1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14565,8 +14565,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/endbtn2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14576,8 +14576,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/endpic.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14587,8 +14587,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/endt1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14598,8 +14598,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/endt2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14609,8 +14609,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/endt3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14620,8 +14620,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/endt4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14631,8 +14631,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/hint123.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14644,7 +14644,7 @@
 		"oAP": "/ysl/img/ico.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/icon-cd-pointer.png": {
@@ -14653,8 +14653,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/icon-cd-pointer.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14664,8 +14664,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/icon-close.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14675,8 +14675,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/icon-play.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14688,7 +14688,7 @@
 		"oAP": "/ysl/img/kh1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/kh1.png": {
@@ -14697,8 +14697,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/kh1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14710,7 +14710,7 @@
 		"oAP": "/ysl/img/kh1b.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/kh2.jpg": {
@@ -14721,7 +14721,7 @@
 		"oAP": "/ysl/img/kh2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/kh2.png": {
@@ -14730,8 +14730,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/kh2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14743,7 +14743,7 @@
 		"oAP": "/ysl/img/kh2b.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/kh3.jpg": {
@@ -14754,7 +14754,7 @@
 		"oAP": "/ysl/img/kh3.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/kh3.png": {
@@ -14763,8 +14763,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/kh3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14776,7 +14776,7 @@
 		"oAP": "/ysl/img/kh3b.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/kh4.jpg": {
@@ -14787,7 +14787,7 @@
 		"oAP": "/ysl/img/kh4.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/kh4.png": {
@@ -14796,8 +14796,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/kh4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14809,7 +14809,7 @@
 		"oAP": "/ysl/img/kh4b.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/line1.jpg": {
@@ -14820,7 +14820,7 @@
 		"oAP": "/ysl/img/line1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/line1b.jpg": {
@@ -14831,7 +14831,7 @@
 		"oAP": "/ysl/img/line1b.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/line2.jpg": {
@@ -14842,7 +14842,7 @@
 		"oAP": "/ysl/img/line2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/line2b.jpg": {
@@ -14853,7 +14853,7 @@
 		"oAP": "/ysl/img/line2b.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/line3.jpg": {
@@ -14864,7 +14864,7 @@
 		"oAP": "/ysl/img/line3.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/line3b.jpg": {
@@ -14875,7 +14875,7 @@
 		"oAP": "/ysl/img/line3b.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/line4.jpg": {
@@ -14886,7 +14886,7 @@
 		"oAP": "/ysl/img/line4.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/line4b.jpg": {
@@ -14897,7 +14897,7 @@
 		"oAP": "/ysl/img/line4b.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/loading-bg.jpg": {
@@ -14908,7 +14908,7 @@
 		"oAP": "/ysl/img/loading-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/loading-cd-pointer.png": {
@@ -14917,8 +14917,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/loading-cd-pointer.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14928,8 +14928,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/loading-cd.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14939,8 +14939,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/loading-text-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14950,8 +14950,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/loading-text-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14961,8 +14961,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/loading-text-3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14972,8 +14972,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/loading-text-4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14983,8 +14983,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/loading-text-5.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -14994,8 +14994,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/loading-text-6.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15005,8 +15005,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/loading-text-7.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15016,8 +15016,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/loading-text-8.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15027,8 +15027,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/loading-texts.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15038,8 +15038,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/logo.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15051,7 +15051,7 @@
 		"oAP": "/ysl/img/long.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/page1disc.png": {
@@ -15060,8 +15060,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/page1disc.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15071,8 +15071,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/page1hint.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15082,8 +15082,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/page1ren.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15093,8 +15093,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/page1t.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15104,8 +15104,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/page1t1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15115,8 +15115,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/page1t2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15126,8 +15126,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/page1t3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15137,8 +15137,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/page1t4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15148,8 +15148,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q1_11.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15159,8 +15159,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q1_12.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15170,8 +15170,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q1_21.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15181,8 +15181,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q1_22.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15192,8 +15192,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q1_31.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15203,8 +15203,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q1_32.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15214,8 +15214,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q1t.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15225,8 +15225,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q1t1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15236,8 +15236,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q1t2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15247,8 +15247,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q1t3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15258,8 +15258,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q2_11.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15269,8 +15269,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q2_12.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15280,8 +15280,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q2_21.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15291,8 +15291,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q2_22.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15302,8 +15302,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q2_31.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15313,8 +15313,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q2_32.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15324,8 +15324,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q2t1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15335,8 +15335,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q2t2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15346,8 +15346,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q2t3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15357,8 +15357,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q2ta.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15368,8 +15368,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q2tb.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15379,8 +15379,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q3_11.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15390,8 +15390,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q3_12.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15401,8 +15401,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q3_21.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15412,8 +15412,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q3_22.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15423,8 +15423,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q3_31.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15434,8 +15434,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q3_32.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15445,8 +15445,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q3t1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15456,8 +15456,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q3t2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15467,8 +15467,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q3t3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15478,8 +15478,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q3ta.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15489,8 +15489,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/q3tb.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15502,7 +15502,7 @@
 		"oAP": "/ysl/img/qr.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/ysl/img/slogen.png": {
@@ -15511,8 +15511,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/slogen.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15522,8 +15522,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/u00.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15533,8 +15533,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/u01.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15544,8 +15544,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/u02.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15555,8 +15555,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/u10.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15566,8 +15566,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/u11.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15577,8 +15577,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/u12.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15588,8 +15588,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/u20.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15599,8 +15599,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/u21.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15610,8 +15610,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/u22.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15621,8 +15621,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud0.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15632,8 +15632,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15643,8 +15643,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud10.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15654,8 +15654,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud11.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15665,8 +15665,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud12.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15676,8 +15676,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud13.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15687,8 +15687,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud14.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15698,8 +15698,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud15.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15709,8 +15709,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15720,8 +15720,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15731,8 +15731,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15742,8 +15742,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud5.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15753,8 +15753,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud6.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15764,8 +15764,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud7.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15775,8 +15775,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud8.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15786,8 +15786,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ud9.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15797,8 +15797,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/upicz.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15808,8 +15808,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/us1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15819,8 +15819,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/us2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15830,8 +15830,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/us3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15841,8 +15841,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/us4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15852,8 +15852,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/us5.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15863,8 +15863,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/us6.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15874,8 +15874,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/us7.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15885,8 +15885,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/us8.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15896,8 +15896,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/us9.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15907,8 +15907,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ut.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15918,8 +15918,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ut1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15929,8 +15929,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ut2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15940,8 +15940,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/ut3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -15951,8 +15951,8 @@
 		"oA": 0,
 		"oAP": "/ysl/img/utitle.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
