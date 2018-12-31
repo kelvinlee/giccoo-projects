@@ -64,6 +64,8 @@ window.onload = ->
 			link: 'http://m.giccoo.com/ysl/'
 		CloudMusic.setShareData shareData
 	else
+		CloudMusic.open('http://m.giccoo.com/ysl/')
+		return false
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
@@ -98,8 +100,8 @@ window.onload = ->
 			startGame: ->
 				@.note = false
 		mounted: ->
-			# document.addEventListener "WeixinJSBridgeReady", ->
-			# 	_public.wx = true
+			document.addEventListener "WeixinJSBridgeReady", ->
+				_public.wx = true
 			# 	_public.note = false
 			# 	_public.$children[0].change()
 
@@ -398,7 +400,10 @@ init = ->
 				CloudMusic.open("https://m.giccoo.com/ysl/")
 
 			goWeb: ->
-				window.location.href = "https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"
+				if _public.wx
+					window.location.href = "https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"
+				else
+					window.location.href = "https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"
 			gobuy: ->
 				window.location.href = "http://www.baidu.com"
 			init: ->
