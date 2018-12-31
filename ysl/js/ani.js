@@ -37,26 +37,29 @@ function setBGT(){
 
 //==================================================================================================123题预设
 var arrow
-var hint123
+var hint123,hint123b
 var clickme
 function setQ123(){
 	arrow=new Sprite(getTe(_CDN+"img/arrow.png"));
 	hint123=new Sprite(getTe(_CDN+"img/hint123.png"));
+	hint123b=new Sprite(getTe(_CDN+"img/hint123b.png"));
 	clickme=new Sprite(getTe(_CDN+"img/clickme.png"));
-	mainC.addChild(arrow,hint123,clickme)
+	mainC.addChild(arrow,hint123,hint123b,clickme)
 	hint123.y=stageH-21-50
+	hint123.alpha=0
+	hint123b.y=stageH-21-50
 	arrow.y=stageH-28-20
 	clickme.y=stageH-120
 	TweenMax.to(arrow,1,{y:stageH-28-0,repeat:1000000,yoyo:true})
-	TweenMax.from(hint123,1,{alpha:0,y:"+=50"})
+	TweenMax.from(hint123b,1,{alpha:0,y:"+=50"})
 	arrow.visible=false
 
-	// pStage.interactive=true
- //  pStage.touchstart=touchStart
+	pStage.interactive=true
+  pStage.touchstart=touchStart
 
   clickme.visible=false
-  clickme.interactive=true
-  clickme.tap=goNextPage
+  //clickme.interactive=true
+  //clickme.tap=goNextPage
 }
 
 
@@ -117,7 +120,7 @@ function selectQ1(_e){
 	arrow.visible=true
 	ifCanScorll=1
 	TweenMax.to(q1t,1,{alpha:0})
-	TweenMax.to(hint123,.5,{alpha:0})
+	TweenMax.to(hint123b,.5,{alpha:0})
 }
 
 //==================================================================================================第二题
@@ -173,8 +176,8 @@ function selectQ2(_e){
 		if(_e.target==q2BtnA[i]){
 			console.log("第二题选",i)
 			userResult[1]=i
-			TweenMax.set(q2TA[i],{alpha:0,x:50})
-			TweenMax.to(q2TA[i],2,{alpha:1,x:0})
+			TweenMax.set(q2TA[i],{alpha:0,x:30})
+			TweenMax.to(q2TA[i],2,{alpha:1,x:0,ease:Elastic.easeOut})
 			TweenMax.to(q2BtnA[i],1,{alpha:1})
 		}
 	};
@@ -239,8 +242,8 @@ function selectQ3(_e){
 		if(_e.target==q3BtnA[i]){
 			console.log("第三题选",i)
 			userResult[2]=i
-			TweenMax.set(q3TA[i],{alpha:0,x:50})
-			TweenMax.to(q3TA[i],2,{alpha:1,x:0})
+			TweenMax.set(q3TA[i],{alpha:0,x:30})
+			TweenMax.to(q3TA[i],2,{alpha:1,x:0,ease:Elastic.easeOut})
 			TweenMax.to(q3BtnA[i],1,{alpha:1})
 		}
 	};
@@ -272,7 +275,7 @@ function setUGC(){
 	usong=new Sprite(getTe(_CDN+"img/us"+j+".png"));
 
 	TweenMax.from(utitle,1.5,{alpha:0,delay:0.5})
-	TweenMax.from(usong,1.5,{alpha:0,delay:1})
+	TweenMax.from(usong,2.5,{y:"+=50",alpha:0,delay:1,ease:Elastic.easeOut})
 
 	var i
 	for (i = 0; i < 3; i++) {
@@ -319,7 +322,7 @@ function setUGC(){
 			_ud.scale.set(0.75,0.75)
 		}
 		var _s=Math.random()*.1+.95
-		TweenMax.to(_ud.scale,.5,{x:_s,y:_s,delay:3+.0*i,ease:Sine.easeIn,onComplete:twdisc,onCompleteParams:[_ud]})
+		TweenMax.to(_ud.scale,1.5,{x:_s,y:_s,delay:3+.005*i,ease:Elastic.easeOut,onComplete:twdisc,onCompleteParams:[_ud]})
 		//TweenMax.to(_ud,1.5,{rotation:Math.PI/180*5*(Math.random()*2-1),repeat:100000,yoyo:true,delay:.05*i+Math.random()*.5,ease:Sine.easeInOut})
 		
 	};
@@ -563,6 +566,7 @@ function goPage4(){
 	TweenMax.to(page3,1,{y:-stageH})
 	TweenMax.to(page4,1,{y:0})
 	arrow.visible=false
+	arrow2.visible=false
 }
 
 function savePic(){
