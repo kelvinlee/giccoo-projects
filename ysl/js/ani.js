@@ -105,7 +105,8 @@ function setQ1(){
 function selectQ1(_e){
 	for (var i = 0; i < 3; i++) {
 		TweenMax.to(q1TA[i],1,{alpha:0})
-		TweenMax.to(q1BtnA[i],1,{alpha:0.5})
+		TweenMax.to(q1BtnA[i],1,{alpha:0.4})
+		TweenMax.to(q1BtnA[i].scale,1,{x:1,y:1})
 		if(_e.target==q1BtnA[i]){
 			console.log("第一题选",i)
 			main.changeSond(i)
@@ -113,6 +114,7 @@ function selectQ1(_e){
 			TweenMax.set(q1TA[i],{alpha:0,y:50})
 			TweenMax.to(q1TA[i],2,{alpha:1,y:0})
 			TweenMax.to(q1BtnA[i],1,{alpha:1})
+			TweenMax.to(q1BtnA[i].scale,1,{x:1.1,y:1.1})
 		}
 	};
 	clickme.visible=true
@@ -172,13 +174,15 @@ function setQ2(){
 function selectQ2(_e){
 	for (var i = 0; i < 3; i++) {
 		TweenMax.to(q2TA[i],1,{alpha:0})
-		TweenMax.to(q2BtnA[i],1,{alpha:0.5})
+		TweenMax.to(q2BtnA[i],1,{alpha:0.4})
+		TweenMax.to(q2BtnA[i].scale,1,{x:1,y:1})
 		if(_e.target==q2BtnA[i]){
 			console.log("第二题选",i)
 			userResult[1]=i
 			TweenMax.set(q2TA[i],{alpha:0,x:30})
 			TweenMax.to(q2TA[i],2,{alpha:1,x:0,ease:Elastic.easeOut})
 			TweenMax.to(q2BtnA[i],1,{alpha:1})
+			TweenMax.to(q2BtnA[i].scale,1,{x:1.1,y:1.1})
 		}
 	};
 	TweenMax.to(q2tb,1,{alpha:1,delay:1})
@@ -238,13 +242,15 @@ function setQ3(){
 function selectQ3(_e){
 	for (var i = 0; i < 3; i++) {
 		TweenMax.to(q3TA[i],1,{alpha:0})
-		TweenMax.to(q3BtnA[i],1,{alpha:0.5})
+		TweenMax.to(q3BtnA[i],1,{alpha:0.4})
+		TweenMax.to(q3BtnA[i].scale,1,{x:1,y:1})
 		if(_e.target==q3BtnA[i]){
 			console.log("第三题选",i)
 			userResult[2]=i
 			TweenMax.set(q3TA[i],{alpha:0,x:30})
 			TweenMax.to(q3TA[i],2,{alpha:1,x:0,ease:Elastic.easeOut})
 			TweenMax.to(q3BtnA[i],1,{alpha:1})
+			TweenMax.to(q3BtnA[i].scale,1,{x:1.1,y:1.1})
 		}
 	};
 	TweenMax.to(q3tb,1,{alpha:1,delay:1})
@@ -489,8 +495,8 @@ function goPage2(){
 	TweenMax.to(page1,1,{y:-stageH,ease:Sine.easeIn})
 	TweenMax.to(page2,1,{y:0,ease:Sine.easeIn})
 
-	TweenMax.from(khC,3,{y:0,delay:.5})
-	TweenMax.from(colorBG,3,{y:0,delay:.5,onComplete:changeBlackBG})
+	TweenMax.from(khC,2,{y:0,delay:.5})
+	TweenMax.from(colorBG,2,{y:0,delay:.5,onComplete:changeBlackBG})
 
 	TweenMax.from(logo,1,{y:"+=200",delay:1})
 	TweenMax.from(slogen,1.1,{y:"+=200",delay:1})

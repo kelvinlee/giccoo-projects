@@ -215,45 +215,80 @@ function touchStart(_e){
 }
 var ifCanScorll=0
 function touchEnd(_e){
-  if(startY-_e.data.global.y>90&&nowPage<17&&ifCanScorll==1){
+  if(startY-_e.data.global.y>90&&ifCanScorll==1){
     nowPage++
     pageUpDown=1//下滑，下一页
     console.log("下一页")
    	goNextPage()
-  }else if(startY-_e.data.global.y<-90&&nowPage>0&&ifCanScorll==1){
-  	// nowPage--
-   //  pageUpDown=-1//下滑，下一页
-   //  goPage()
+  }else if(startY-_e.data.global.y<-90&&nowPage>0&&nowPage<3){
+  	nowPage--
+   	pageUpDown=-1//下滑，下一页
+   	console.log("上一页")
+   	goBackPage()
   }
 
 
 }
-
+var ifPageSetA=[0,0,0,0]
 function goNextPage(){
 	//nowPage++
 	ifCanScorll=0
 	arrow.visible=false
 	if(nowPage==1){
-		TweenMax.to(q1C,1,{y:-stageH/5,onComplete:function(){q1C.visible=false}})
-		TweenMax.to(q1C,1,{alpha:0})
-		//q1C.visible=false
-		setQ2()
-		TweenMax.to(hint123,.5,{alpha:1})
+		//TweenMax.set(q2C,{visible:true})
+		q2C.visible=true
+		if(ifPageSetA[nowPage]==0){
+			TweenMax.to(q1C,1,{y:-stageH/5,onComplete:function(){q1C.visible=false}})
+			TweenMax.to(q1C,1,{alpha:0})
+			//q1C.visible=false
+			setQ2()
+			TweenMax.to(hint123,.5,{alpha:1})
+			ifPageSetA[nowPage]=1
+		}else{
+			TweenMax.to(q1C,1,{y:-stageH/5,onComplete:function(){q1C.visible=false}})
+			TweenMax.to(q1C,1,{alpha:0})
+		}
 	}
 	if(nowPage==2){
-		TweenMax.to(q2C,1,{y:-stageH/5,onComplete:function(){q2C.visible=false}})
-		TweenMax.to(q2C,1,{alpha:0})
-		//q2C.visible=false
-		setQ3()
-		TweenMax.to(hint123,.5,{alpha:1})
+		//TweenMax.set(q3C,{visible:true})
+		q3C.visible=true
+		if(ifPageSetA[nowPage]==0){
+			TweenMax.to(q2C,1,{y:-stageH/5,onComplete:function(){q2C.visible=false}})
+			TweenMax.to(q2C,1,{alpha:0})
+			//q1C.visible=false
+			setQ3()
+			TweenMax.to(hint123,.5,{alpha:1})
+			ifPageSetA[nowPage]=1
+		}else{
+			TweenMax.to(q2C,1,{y:-stageH/5,onComplete:function(){q2C.visible=false}})
+			TweenMax.to(q2C,1,{alpha:0})
+		}
 	}
 	if(nowPage==3){
-		TweenMax.to(q3C,1,{y:-stageH/5,onComplete:function(){q3C.visible=false}})
-		TweenMax.to(q3C,1,{alpha:0})
+		//TweenMax.set(,{visible:true})
+		if(ifPageSetA[nowPage]==0){
+			TweenMax.to(q3C,1,{y:-stageH/5,onComplete:function(){q3C.visible=false}})
+			TweenMax.to(q3C,1,{alpha:0})
 		//q3C.visible=false
-		setUGC()
+			setUGC()
+		}else{
+			TweenMax.to(q3C,1,{y:-stageH/5,onComplete:function(){q3C.visible=false}})
+			TweenMax.to(q3C,1,{alpha:0})
+			ifPageSetA[nowPage]=1
+		}
 	}
 	clickme.visible=false
 
 }
-
+var q123CA=[]
+function goBackPage(){
+	q123CA=[q1C,q2C,q3C]
+	for (var i = 0; i < 3; i++) {
+		q123CA[i].visible=false
+		if(i==nowPage){
+			q123CA[i].visible=true
+			TweenMax.set(q123CA[i],{alpha:1,y:0})
+			TweenMax.from(q123CA[i],1,{alpha:0,y:-100})
+		}
+	}
+}
