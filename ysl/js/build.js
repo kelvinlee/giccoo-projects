@@ -244,9 +244,12 @@ function goNextPage(){
 			setQ2()
 			TweenMax.to(hint123,.5,{alpha:1})
 			ifPageSetA[nowPage]=1
+
 		}else{
 			TweenMax.to(q1C,1,{y:-stageH/5,onComplete:function(){q1C.visible=false}})
 			TweenMax.to(q1C,1,{alpha:0})
+			arrow.visible=true
+			clickme.visible=true
 		}
 	}
 	if(nowPage==2){
@@ -262,6 +265,8 @@ function goNextPage(){
 		}else{
 			TweenMax.to(q2C,1,{y:-stageH/5,onComplete:function(){q2C.visible=false}})
 			TweenMax.to(q2C,1,{alpha:0})
+			arrow.visible=true
+			clickme.visible=true
 		}
 	}
 	if(nowPage==3){
@@ -275,6 +280,8 @@ function goNextPage(){
 			TweenMax.to(q3C,1,{y:-stageH/5,onComplete:function(){q3C.visible=false}})
 			TweenMax.to(q3C,1,{alpha:0})
 			ifPageSetA[nowPage]=1
+			arrow.visible=true
+			clickme.visible=true
 		}
 	}
 	clickme.visible=false//---
@@ -289,6 +296,13 @@ function goBackPage(){
 			q123CA[i].visible=true
 			TweenMax.set(q123CA[i],{alpha:1,y:0})
 			TweenMax.from(q123CA[i],1,{alpha:0,y:-100})
+			if(userResult[nowPage]!=999){
+				arrow.visible=true
+				clickme.visible=true
+			}else{
+				arrow.visible=true
+				clickme.visible=true
+			}
 		}
 	}
 }

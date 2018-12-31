@@ -262,7 +262,7 @@ function selectQ3(_e){
 }
 
 //==================================================================================================UGC1
-var userResult=[0,0,0]
+var userResult=[999,999,999]
 var ugcC=new PIXI.Container()
 var utitle
 var usong//=new PIXI.Container()
