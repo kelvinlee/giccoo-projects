@@ -83,19 +83,19 @@ class UGC
 			height: h
 			transparent: true
 			preserveDrawingBuffer: true
-			# forceCanvas: true
+			forceCanvas: true
 		@.longC = new Container()
+		@.longC.y = 0
 		@.long.stage.addChild @.longBG,@.longC
 	takeUGC: (move = 0)->
 		@.app.renderer.render @.app.stage
 		data = @.app.view.toDataURL()
 
 		page1 = new PIXI.Sprite.fromImage(data)
-		page1.y = @.y * @.opts.h + move
-		console.log "move:",move
+		page1.y = @.longC.height + move
+		# console.log "move:",move,page1.y
 		page1.texture.baseTexture.on 'loaded', =>
 			@.longC.addChild page1
-			console.log "page1:",page1
 			@.sendUGC()
 		@.y++
 	sendUGC: ->
@@ -103,4 +103,5 @@ class UGC
 			@.longqrcode.y = @.longC.height
 			@long.stage.addChild @.longqrcode
 		@.long.renderer.render @.long.stage
+		# main.share()
 

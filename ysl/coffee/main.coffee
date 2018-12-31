@@ -203,7 +203,7 @@ init = ->
 			BGColor: "#ffffff"
 			XY: "pageY"
 			ugc: null
-			ugcsave: null
+			ugcsave: false
 			ugcold: null
 			pushed: false
 			shareImageLink: null
@@ -337,10 +337,15 @@ init = ->
 					@.folder = folder
 					return @.faild() unless image?
 					return false if @.pushed
+					if @.ugcsave
+						neteaseShareImage()
+						shareDone() if shareDone?
+						return true
 					axios.post imageurl,data
 					.then (msg)=>
 						if msg.data.recode is 200
 							main.success(msg.data)
+							@.ugcsave = true
 						else
 							main.faild(msg)
 					.catch (e)=>
