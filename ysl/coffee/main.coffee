@@ -64,8 +64,8 @@ window.onload = ->
 			link: 'http://m.giccoo.com/ysl/'
 		CloudMusic.setShareData shareData
 	else
-		CloudMusic.open('http://m.giccoo.com/ysl/')
-		return false
+		# CloudMusic.open('http://m.giccoo.com/ysl/')
+		# return false
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
