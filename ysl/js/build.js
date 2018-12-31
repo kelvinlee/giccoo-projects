@@ -252,10 +252,12 @@ function goNextPage(){
 				arrow.visible=true
 				clickme.visible=true
 				hint123.visible=false
+				ifCanScorll=1
 			}else{
 				arrow.visible=false
 				clickme.visible=false
 				hint123.visible=true
+				ifCanScorll=0
 			}
 		}
 	}
@@ -276,10 +278,12 @@ function goNextPage(){
 				arrow.visible=true
 				clickme.visible=true
 				hint123.visible=false
+				ifCanScorll=1
 			}else{
 				arrow.visible=false
 				clickme.visible=false
 				hint123.visible=true
+				ifCanScorll=0
 			}
 		}
 	}
@@ -298,10 +302,12 @@ function goNextPage(){
 				arrow.visible=true
 				clickme.visible=true
 				hint123.visible=false
+				ifCanScorll=1
 			}else{
 				arrow.visible=false
 				clickme.visible=false
 				hint123.visible=true
+				ifCanScorll=0
 			}
 		}
 	}
@@ -321,10 +327,12 @@ function goBackPage(){
 				arrow.visible=true
 				clickme.visible=true
 				hint123.visible=false
+				ifCanScorll=1
 			}else{
 				arrow.visible=false
 				clickme.visible=false
 				hint123.visible=true
+				ifCanScorll=0
 			}
 		}
 	}
