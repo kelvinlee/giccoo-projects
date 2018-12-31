@@ -14427,6 +14427,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/ysl/img/clickme.png": {
+		"ft": 32768,
+		"iS": 3080,
+		"oA": 0,
+		"oAP": "/ysl/img/clickme.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/ysl/img/colora0.png": {
 		"ft": 32768,
 		"iS": 92465,
@@ -14623,6 +14634,17 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"/ysl/img/ico.jpg": {
+		"ft": 16384,
+		"iS": 91200,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/ysl/img/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"/ysl/img/icon-cd-pointer.png": {
@@ -15949,6 +15971,26 @@
 		"oAP": "/ysl/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"/ysl/js/ani.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/ysl/js/ani-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/ysl/js/build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/ysl/js/build-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
 		},
 	"/ysl/js/dealer.js": {
 		"ft": 64,
