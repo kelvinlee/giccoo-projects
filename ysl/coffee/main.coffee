@@ -133,6 +133,7 @@ window.onload = ->
 				@offset.y = touch.pageY
 				@moved = true
 			move: (evt)->
+				evt.preventdefault() if evt.preventdefault?
 				return false unless @moved or @.cant
 				if evt.type is "mousemove"
 					touch = evt
