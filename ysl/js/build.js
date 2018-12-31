@@ -248,8 +248,15 @@ function goNextPage(){
 		}else{
 			TweenMax.to(q1C,1,{y:-stageH/5,onComplete:function(){q1C.visible=false}})
 			TweenMax.to(q1C,1,{alpha:0})
-			arrow.visible=true
-			clickme.visible=true
+			if(userResult[nowPage]!=999){
+				arrow.visible=true
+				clickme.visible=true
+				hint123.visible=false
+			}else{
+				arrow.visible=false
+				clickme.visible=false
+				hint123.visible=true
+			}
 		}
 	}
 	if(nowPage==2){
@@ -265,8 +272,15 @@ function goNextPage(){
 		}else{
 			TweenMax.to(q2C,1,{y:-stageH/5,onComplete:function(){q2C.visible=false}})
 			TweenMax.to(q2C,1,{alpha:0})
-			arrow.visible=true
-			clickme.visible=true
+			if(userResult[nowPage]!=999){
+				arrow.visible=true
+				clickme.visible=true
+				hint123.visible=false
+			}else{
+				arrow.visible=false
+				clickme.visible=false
+				hint123.visible=true
+			}
 		}
 	}
 	if(nowPage==3){
@@ -280,8 +294,15 @@ function goNextPage(){
 			TweenMax.to(q3C,1,{y:-stageH/5,onComplete:function(){q3C.visible=false}})
 			TweenMax.to(q3C,1,{alpha:0})
 			ifPageSetA[nowPage]=1
-			arrow.visible=true
-			clickme.visible=true
+			aif(userResult[nowPage]!=999){
+				arrow.visible=true
+				clickme.visible=true
+				hint123.visible=false
+			}else{
+				arrow.visible=false
+				clickme.visible=false
+				hint123.visible=true
+			}
 		}
 	}
 	clickme.visible=false//---
@@ -299,9 +320,11 @@ function goBackPage(){
 			if(userResult[nowPage]!=999){
 				arrow.visible=true
 				clickme.visible=true
+				hint123.visible=false
 			}else{
-				arrow.visible=true
-				clickme.visible=true
+				arrow.visible=false
+				clickme.visible=false
+				hint123.visible=true
 			}
 		}
 	}
