@@ -398,6 +398,9 @@ init = ->
 						main.faild(e)		
 				else
 					@.ugcShow = true
+					setTimeout =>
+						@.getLottery()
+					,5000
 					# ugc.back()
 				# ugc.qrcode.visible = false
 			success: (data)->
