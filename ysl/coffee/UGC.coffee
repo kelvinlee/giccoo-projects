@@ -69,7 +69,7 @@ class UGC
 		buildUGC.bind(@).call()
 		@.opts.callback()
 		# @.init()
-	firstTime: (move)->
+	firstTime: (move = 0,id = 0)->
 		return false if @long?
 		console.log "move",move
 		@.longqrcode = new Spr(_CDN+"img/qr.jpg")
@@ -86,7 +86,8 @@ class UGC
 			forceCanvas: true
 		@.longC = new Container()
 		@.longC.y = 0
-		@.long.stage.addChild @.longBG,@.longC
+		@.cover = new Spr _CDN+"img/colora#{id}.png"
+		@.long.stage.addChild @.longBG,@.longC,@.cover
 	takeUGC: (move = 0)->
 		@.app.renderer.render @.app.stage
 		data = @.app.view.toDataURL()
@@ -94,6 +95,7 @@ class UGC
 		page1 = new PIXI.Sprite.fromImage(data)
 		page1.y = @.longC.height + move
 		# console.log "move:",move,page1.y
+		@.cover.y = @.longC.height - @.cover.height if @.y is 2
 		page1.texture.baseTexture.on 'loaded', =>
 			@.longC.addChild page1
 			@.sendUGC()
