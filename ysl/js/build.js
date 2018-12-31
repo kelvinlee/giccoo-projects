@@ -277,7 +277,7 @@ function goNextPage(){
 			ifPageSetA[nowPage]=1
 		}
 	}
-	clickme.visible=false
+	clickme.visible=false//---
 
 }
 var q123CA=[]
