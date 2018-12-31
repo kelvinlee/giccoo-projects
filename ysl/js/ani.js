@@ -46,7 +46,7 @@ function setQ123(){
 	mainC.addChild(arrow,hint123,clickme)
 	hint123.y=stageH-21-50
 	arrow.y=stageH-28-20
-	clickme.y=stageH-70
+	clickme.y=stageH-120
 	TweenMax.to(arrow,1,{y:stageH-28-0,repeat:1000000,yoyo:true})
 	TweenMax.from(hint123,1,{alpha:0,y:"+=50"})
 	arrow.visible=false
