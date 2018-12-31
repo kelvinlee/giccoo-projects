@@ -11,7 +11,7 @@
   </head>
   <body>
     <div id="load" class="load">
-      <div id="loading" v-show="mounted" @mousedown="start" @mousemove="move" @mouseup="end" @touchstart="start" @touchmove.passive="move" @touchend="end" :class="{biger: biger, smaller:smaller}" style="display: none" class="content">
+      <div id="loading" v-show="mounted" @touchstart="start" @touchmove.passive="move" :class="{biger: biger, smaller:smaller}" style="display: none" class="content">
         <p v-show="progress &lt; 100" class="centeralign">Loading..{{progress}}%</p>
         <transition name="page-fade">
           <div v-show="progress &gt;= 100" class="box fadeIn animated">
@@ -69,9 +69,11 @@
       </transition>
       <transition name="page-fade">
         <div v-show="taobao" class="pop pop-taobao">
-          <div class="content">
-            <div @click="taobao = false" class="close"><img src="./img/icon-close.png"></div>
-            <div class="kouling"> 
+          <div class="content"><img src="./img/pop-copy.png">
+            <div @click="taobao = false" class="close">
+            </div>
+            <div class="kouling">
+              <p>复制下方淘口令,即刻抢先拥有</p>
               <h3>淘口令：￥YZtIbpSs6BR￥</h3>
             </div>
           </div>

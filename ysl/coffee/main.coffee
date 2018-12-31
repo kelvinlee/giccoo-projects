@@ -195,13 +195,13 @@ window.onload = ->
 					_cache = setTimeout =>
 						# @.next()
 						@.cant = false
-					,5000
+					,2000
 					
 					_startCache = setInterval =>
 						@.number += 1+Math.floor Math.random()*2
-						if @.number > (@.oldnumber+300)
+						if @.number > (@.oldnumber+1500)
 							clearInterval _startCache
-					, 150
+					, 350
 			,1000/20
 	
 	init()
