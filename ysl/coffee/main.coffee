@@ -382,6 +382,9 @@ init = ->
 					if @.ugcsave
 						neteaseShareImage()
 						shareDone() if shareDone?
+						setTimeout =>
+							@.getLottery()
+						,5000
 						return true
 					axios.post imageurl,data
 					.then (msg)=>
@@ -406,9 +409,11 @@ init = ->
 				shareDone() if shareDone?
 				# 抽奖
 				# unless @.giveUp
-				# 	setTimeout =>
-				# 		@.getLottery()
-				# 	,5000
+				setTimeout =>
+					@.getLottery()
+				,5000
+			getLottery: ->
+				@.lotteryShow = true
 			closeUGC: ->
 				@.ugcShow = false
 				shareDone() if shareDone?
