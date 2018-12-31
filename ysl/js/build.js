@@ -147,6 +147,7 @@ var imageList = [
 
 	_CDN+"img/qr.jpg",
 	_CDN+"img/hint123.png",
+	_CDN+"img/hint123b.png",
 	_CDN+"img/clickme.png",
 
 	_CDN+"img/endpic.png",
@@ -209,8 +210,8 @@ var pageUpDown=1
 var startY
 
 function touchStart(_e){
-  //startY=_e.data.global.y
-  //pStage.touchend=touchEnd
+  startY=_e.data.global.y
+  pStage.touchend=touchEnd
 }
 var ifCanScorll=0
 function touchEnd(_e){
@@ -229,7 +230,7 @@ function touchEnd(_e){
 }
 
 function goNextPage(){
-	nowPage++
+	//nowPage++
 	ifCanScorll=0
 	arrow.visible=false
 	if(nowPage==1){
