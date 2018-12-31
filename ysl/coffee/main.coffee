@@ -127,6 +127,9 @@ window.onload = ->
 					# 	_public.note = false if _public.wy
 					# ,3000
 				,520
+				setTimeout =>
+					getStart()
+				,400
 			get: ->
 				axios.get "http://api.giccoo.com/count/get/yslnumber"
 				.then (msg)=>
@@ -420,7 +423,7 @@ init = ->
 			imageList2 = [
 			]
 			window.imageList = window.imageList.concat(imageList2)
-			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => getStart() })
+			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => })
 			console.log "h:",h
 			# window.onresize = ->
 			# 	console.log "resize:",document.documentElement.clientHeight
