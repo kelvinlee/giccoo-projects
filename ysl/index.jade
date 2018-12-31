@@ -1,7 +1,7 @@
 extends ../libs/jade/layout-clean
 
 block title
-  | Lenovo
+  | 刻录你的2018
 
 block css
   meta(name="author",content="m.giccoo.com")
@@ -91,7 +91,7 @@ block content
             img(:src="ugc")
           .note 长按保存图片
   .public#public(@touchstart="startGame")
-    player(icon="true",loop="true",src="#{url}/mp3/bgm.mp3")
+    player(icon="true",loop="true",src="#{url}/mp3/bgm-1.mp3")
       .pointer
         img(src="#{url}/img/icon-cd-pointer.png")
 

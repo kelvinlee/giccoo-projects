@@ -46,7 +46,7 @@ class UGC
 		@.app.view.className = @.opts.class if @.opts.class? and @.opts.class isnt ""
 		@.stage = @.app.stage
 		document.getElementById(@.opts.el).appendChild @.app.view
-		console.log "imageList:",imageList.length
+		# console.log "imageList:",imageList.length
 		PIXI.loader.add(imageList)
 		.use(@.loaditem.bind(@))
 		.load(@.build.bind(@))
@@ -56,7 +56,7 @@ class UGC
 	loaditem: ->
 		@.loadNumber++
 		loading.progressOn = parseInt @.loadNumber/(imageList.length)*100
-		console.log "load:",@.loadNumber,loading.progressOn,@.loadNumber is imageList.length
+		# console.log "load:",@.loadNumber,loading.progressOn,@.loadNumber is imageList.length
 
 		if @.loadNumber is imageList.length
 			buildUGC.bind(@).call()
@@ -91,7 +91,7 @@ class UGC
 		data = @.app.view.toDataURL()
 
 		page1 = new PIXI.Sprite.fromImage(data)
-		page1.y = @.longC.height + move
+		page1.y = @.y * @.opts.h + move
 		console.log "move:",move
 		page1.texture.baseTexture.on 'loaded', =>
 			@.longC.addChild page1

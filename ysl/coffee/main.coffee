@@ -35,7 +35,7 @@ _testTime = 0
 
 
 neteaseShareImage = ->
-	title1 = "点播圣诞星声"
+	title1 = "刻录你的2018"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
 	redirectUrl = "https://activity.music.163.com/lenovo/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
@@ -56,21 +56,21 @@ window.onload = ->
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
 		shareData = 
-			name: 'lenovo'
-			title: 'lenovo'
-			subTitle: "lenovo"
+			name: 'YSL'
+			title: '刻录你的2018'
+			subTitle: ""
 			text: ''
-			picUrl: 'http://m.giccoo.com/lenovo/img/ico.jpg'
-			link: 'http://m.giccoo.com/lenovo/'
+			picUrl: 'http://m.giccoo.com/ysl/img/ico.jpg'
+			link: 'http://m.giccoo.com/ysl/'
 		CloudMusic.setShareData shareData
 	else
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "lenovo"
-				desc: "lenovo"
-				link: "http://m.giccoo.com/lenovo/"
-				imgUrl: "http://m.giccoo.com/lenovo/img/ico.jpg"
+				title: "刻录你的2018"
+				desc: ""
+				link: "http://m.giccoo.com/ysl/"
+				imgUrl: "http://m.giccoo.com/ysl/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
@@ -98,10 +98,10 @@ window.onload = ->
 			startGame: ->
 				@.note = false
 		mounted: ->
-			document.addEventListener "WeixinJSBridgeReady", ->
-				_public.wx = true
-				_public.note = false
-				_public.$children[0].change()
+			# document.addEventListener "WeixinJSBridgeReady", ->
+			# 	_public.wx = true
+			# 	_public.note = false
+			# 	_public.$children[0].change()
 
 	loading = new Vue
 		el: "#loading"
@@ -297,8 +297,7 @@ init = ->
 				,2000
 			regame: ->
 				window.location.reload()
-			gobuy: ->
-				window.location.href = "http://www.baidu.com"
+			
 			dateText: (date)->
 				console.log date.replace(/-/g,"/")
 				d = new Date date.replace(/-/g,"/")
@@ -374,7 +373,7 @@ init = ->
 				# CloudMusic.song(id[resultNum])
 				window.location.href = "https://music.163.com/#/song?id=#{id}"
 			changeSond: (id)->
-				list = ["//image.giccoo.com/projects/lenovo/mp3/bgm.mp3","//image.giccoo.com/projects/starbucks/mp3/bgm.mp3","//image.giccoo.com/projects/draw-board/mp3/bgm.mp3"]
+				list = ["./mp3/bgm-1.mp3","./mp3/bgm-2.mp3","./mp3/bgm-3.mp3"]
 				@.bgmShow = true
 				_public.$children[0].src = list[id]
 				setTimeout =>
@@ -390,35 +389,12 @@ init = ->
 			openInApp: ->
 				CloudMusic.open("https://m.giccoo.com/ysl/")
 
-			goSubmit: ->
-				data = {
-					username: @.nickname
-					mobile:   @.mobile
-				}
-				axios.post "#{apiLink}active/autoSave/insert/database/draw/",data
-				.then (msg)=>
-					if msg.data.code is 200
-						@.share()
-					else
-						@.send msg.data.reason
-				.catch (err)=>
-					console.log "err:",err
-					@.send "请求错误,请重试"
-
 			goWeb: ->
-				window.location.href = "http://www.baidu.com/"
-			goNote: ->
-				@.singerIndex = resultA[1] + 1
-				if @.singerIndex is 2
-					@.singerIndex = 3
-				else if @.singerIndex is 3
-					@.singerIndex = 2
-				@.pageNote = true
+				window.location.href = "https://market.m.taobao.com/app/tb-source-app/shopact/pages/index?wh_weex=true&pathInfo=shop/activity&userId=3626596873&shopId=471050084&pageId=188694514&alisite=true"
+			gobuy: ->
+				window.location.href = "http://www.baidu.com"
 			init: ->
 				# getStart()
-			closeNote: ->
-				@.pageNote = false
-				goEnd()
 			startGame: ->
 				# console.log "start game"
 				_public.note = false
