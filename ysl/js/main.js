@@ -63,7 +63,7 @@ loading=new Vue({el:"#loading",data:{w:TrueW,h:TrueH,biger:TrueW/TrueH<.55,small
 // ,3000
 },520),setTimeout(function(){return getStart()},400))},get:function e(){var t=this;return axios.get("http://api.giccoo.com/count/get/yslnumber").then(function(e){
 // console.log msg.data.info[0]
-return t.number=e.data.info[0].count-200,t.number<=0&&(t.number=0),t.oldnumber=e.data.info[0].count}).catch(function(e){return console.log("err:",e)})}},
+return t.number=e.data.info[0].count-140,t.number<=0&&(t.number=0),t.oldnumber=e.data.info[0].count}).catch(function(e){return console.log("err:",e)})}},
 // axios.get "//music.163.com/api/activity/lorealysl/userinfo"
 // .then (msg)=>
 // 	d = msg.data

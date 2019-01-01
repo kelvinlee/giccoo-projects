@@ -168,7 +168,7 @@ window.onload = ->
 				axios.get "http://api.giccoo.com/count/get/yslnumber"
 				.then (msg)=>
 					# console.log msg.data.info[0]
-					@.number = msg.data.info[0].count - 200
+					@.number = msg.data.info[0].count - 140
 					if @.number <= 0
 						@.number = 0
 					@.oldnumber = msg.data.info[0].count
