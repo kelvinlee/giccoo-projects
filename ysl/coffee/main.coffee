@@ -96,7 +96,7 @@ window.onload = ->
 			wx: false
 			note: true
 			playing: false
-			list: ["//image.giccoo.com/projects/ysl/mp3/bgm-1.mp3","//image.giccoo.com/projects/ysl/mp3/bgm-2.mp3","//image.giccoo.com/projects/ysl/mp3/bgm-3.mp3"]
+			list: ["//image.giccoo.com/projects/ysl/mp3/bgm-0.mp3","//image.giccoo.com/projects/ysl/mp3/bgm-2.mp3","//image.giccoo.com/projects/ysl/mp3/bgm-3.mp3"]
 		methods:
 			startGame: ->
 				@.note = false
@@ -431,7 +431,7 @@ init = ->
 				# CloudMusic.song(id[resultNum])
 				window.location.href = "https://music.163.com/#/song?id=#{id}"
 			changeSond: (id)->
-				list = ["//image.giccoo.com/projects/ysl/mp3/bgm-1.mp3","//image.giccoo.com/projects/ysl/mp3/bgm-2.mp3","//image.giccoo.com/projects/ysl/mp3/bgm-3.mp3"]
+				list = ["//image.giccoo.com/projects/ysl/mp3/bgm-0.mp3","//image.giccoo.com/projects/ysl/mp3/bgm-2.mp3","//image.giccoo.com/projects/ysl/mp3/bgm-3.mp3"]
 				@.bgmShow = true
 				_public.$children[0].play(id)
 				# _public.$children[0].src = list[id]
