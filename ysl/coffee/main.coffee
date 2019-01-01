@@ -370,7 +370,7 @@ init = ->
 				console.log "run share"
 				# ugc.qrcode.visible = true
 				ugc.long.renderer.render ugc.long.stage
-				@.ugc = ugc.long.view.toDataURL()
+				@.ugc = ugc.long.view.toDataURL("image/jpeg",0.6)
 				image = @.ugc
 
 				if @.wy

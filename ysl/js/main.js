@@ -92,7 +92,7 @@ methods:{send:function e(t){var i=this;return this.noteShow=!0,this.noteText=t,c
 return this.gameEnd=!0,ugc.app.renderer.render(ugc.app.stage),this.ugc=t},restart:function e(){return window.location.reload()},goshare:function e(){
 // goShare()
 return this.share()},share:function e(){var t=this,i,n,o;return"undefined"!=typeof goFinal2&&null!==goFinal2&&goFinal2(),this.formBoxShow=!1,this.registerShow=!1,this.lotteryShow=!1,console.log("run share"),// ugc.qrcode.visible = true
-ugc.long.renderer.render(ugc.long.stage),this.ugc=ugc.long.view.toDataURL(),o=this.ugc,this.wy?(i={image:o,folder:n="ysl"},this.folder=n,null==o?this.faild():!this.pushed&&(this.ugcsave?(neteaseShareImage(),"undefined"!=typeof shareDone&&null!==shareDone&&shareDone(),setTimeout(function(){return t.getLottery()},5e3),!0):axios.post(imageurl,i).then(function(e){return 200===e.data.recode?(main.success(e.data),t.ugcsave=!0):main.faild(e)}).catch(function(e){
+ugc.long.renderer.render(ugc.long.stage),this.ugc=ugc.long.view.toDataURL("image/jpeg",.6),o=this.ugc,this.wy?(i={image:o,folder:n="ysl"},this.folder=n,null==o?this.faild():!this.pushed&&(this.ugcsave?(neteaseShareImage(),"undefined"!=typeof shareDone&&null!==shareDone&&shareDone(),setTimeout(function(){return t.getLottery()},5e3),!0):axios.post(imageurl,i).then(function(e){return 200===e.data.recode?(main.success(e.data),t.ugcsave=!0):main.faild(e)}).catch(function(e){
 // alert e
 return main.faild(e)}))):(this.ugcShow=!0,setTimeout(function(){return t.getLottery()},5e3))},
 // ugc.back()
