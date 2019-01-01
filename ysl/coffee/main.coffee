@@ -169,7 +169,7 @@ window.onload = ->
 				.then (msg)=>
 					# console.log msg.data.info[0]
 					@.number = msg.data.info[0].count - 200
-					if @.number>=0
+					if @.number <= 0
 						@.number = 0
 					@.oldnumber = msg.data.info[0].count
 				.catch (err)->
