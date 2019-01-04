@@ -104,4 +104,4 @@ ffmpeg -re -i rtmp://play.liveu.top/live/maor2018 -acodec copy -c:v x264lib -s 6
 
  -->
 
-<!-- 1.4 12:17 59570 -->
+<!-- 1.4 12:19 59570 + 27092 -->
