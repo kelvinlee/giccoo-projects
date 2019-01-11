@@ -62,6 +62,7 @@
               <div @click="start" class="btn bounceIn animated delay-9"><img src="./img/btn-start.png"></div>
               <div @click="rankingShow = true" class="btn-info bounceIn animated delay-11">查看排行榜</div>
             </div>
+            <div class="ship fadeInLeft animated delay-13"><img src="./img/ship.png"></div>
           </div>
         </div>
       </transition>
@@ -122,7 +123,7 @@
               <div class="title"><img src="./img/pop-title.png"></div>
               <div class="form">
                 <div class="form-group">
-                  <input type="text" placeholder="点击输入姓名" v-model="nickname">
+                  <input type="text" v-reset-input placeholder="点击输入姓名" v-model="nickname">
                 </div>
               </div>
               <div class="title-sex"><img src="./img/pop-title-sex.png"></div>

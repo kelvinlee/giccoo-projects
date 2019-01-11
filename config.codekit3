@@ -6672,6 +6672,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/kiehls/img/ship.png": {
+		"ft": 32768,
+		"iS": 85583,
+		"oA": 0,
+		"oAP": "/kiehls/img/ship.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/kiehls/img/startboy.png": {
 		"ft": 32768,
 		"iS": 65951,
@@ -6816,39 +6827,6 @@
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
-		},
-	"/kiehls/wave1.png": {
-		"ft": 32768,
-		"iS": 25625,
-		"oA": 0,
-		"oAP": "/kiehls/wave1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/kiehls/wave2.png": {
-		"ft": 32768,
-		"iS": 18810,
-		"oA": 0,
-		"oAP": "/kiehls/wave2.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/kiehls/wave4.png": {
-		"ft": 32768,
-		"iS": 17833,
-		"oA": 0,
-		"oAP": "/kiehls/wave4.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
 		},
 	"/lamer": {
 		"ft": 65536,
@@ -7963,6 +7941,17 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/libs/vue/vue-multi-player.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/libs/js/vue-multi-player.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
 	"/libs/vue/vue-player.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -8889,6 +8878,24 @@
 		"oA": 1,
 		"oAP": "/build/quakerinfo",
 		"oF": 0
+		},
+	"/README.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 0,
+		"oAP": "/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
 		},
 	"/redbook": {
 		"ft": 65536,
@@ -10699,11 +10706,33 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/ysl/img/clickme.png": {
+		"ft": 32768,
+		"iS": 3218,
+		"oA": 0,
+		"oAP": "/ysl/img/clickme.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/ysl/img/colora0.png": {
 		"ft": 32768,
 		"iS": 92465,
 		"oA": 0,
 		"oAP": "/ysl/img/colora0.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/ysl/img/colora0b.png": {
+		"ft": 32768,
+		"iS": 9250,
+		"oA": 0,
+		"oAP": "/ysl/img/colora0b.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -10721,11 +10750,33 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/ysl/img/colora1b.png": {
+		"ft": 32768,
+		"iS": 9869,
+		"oA": 0,
+		"oAP": "/ysl/img/colora1b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/ysl/img/colora2.png": {
 		"ft": 32768,
 		"iS": 92624,
 		"oA": 0,
 		"oAP": "/ysl/img/colora2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/ysl/img/colora2b.png": {
+		"ft": 32768,
+		"iS": 9596,
+		"oA": 0,
+		"oAP": "/ysl/img/colora2b.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -10743,6 +10794,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/ysl/img/colora3b.png": {
+		"ft": 32768,
+		"iS": 9263,
+		"oA": 0,
+		"oAP": "/ysl/img/colora3b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/ysl/img/colorbg.jpg": {
 		"ft": 16384,
 		"iS": 5296,
@@ -10752,6 +10814,50 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"/ysl/img/colorbgb.jpg": {
+		"ft": 16384,
+		"iS": 703,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/ysl/img/colorbgb.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/ysl/img/endbtn1.png": {
+		"ft": 32768,
+		"iS": 7182,
+		"oA": 0,
+		"oAP": "/ysl/img/endbtn1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/ysl/img/endbtn2.png": {
+		"ft": 32768,
+		"iS": 7274,
+		"oA": 0,
+		"oAP": "/ysl/img/endbtn2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/ysl/img/endpic.png": {
+		"ft": 32768,
+		"iS": 40639,
+		"oA": 0,
+		"oAP": "/ysl/img/endpic.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"/ysl/img/endt1.png": {
@@ -10798,6 +10904,39 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/ysl/img/hint123.png": {
+		"ft": 32768,
+		"iS": 1317,
+		"oA": 0,
+		"oAP": "/ysl/img/hint123.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/ysl/img/hint123b.png": {
+		"ft": 32768,
+		"iS": 1537,
+		"oA": 0,
+		"oAP": "/ysl/img/hint123b.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/ysl/img/ico.jpg": {
+		"ft": 16384,
+		"iS": 85137,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/ysl/img/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/ysl/img/icon-cd-pointer.png": {
 		"ft": 32768,
 		"iS": 1394,
@@ -10842,15 +10981,15 @@
 		"opt": 0,
 		"q": 100
 		},
-	"/ysl/img/kh1.png": {
-		"ft": 32768,
-		"iS": 431345,
+	"/ysl/img/kh1b.jpg": {
+		"ft": 16384,
+		"iS": 8044,
+		"jF": 0,
 		"oA": 0,
-		"oAP": "/ysl/img/kh1.png",
+		"oAP": "/ysl/img/kh1b.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"oT": 1,
 		"q": 100
 		},
 	"/ysl/img/kh2.jpg": {
@@ -10864,15 +11003,15 @@
 		"opt": 0,
 		"q": 100
 		},
-	"/ysl/img/kh2.png": {
-		"ft": 32768,
-		"iS": 432203,
+	"/ysl/img/kh2b.jpg": {
+		"ft": 16384,
+		"iS": 8225,
+		"jF": 0,
 		"oA": 0,
-		"oAP": "/ysl/img/kh2.png",
+		"oAP": "/ysl/img/kh2b.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"oT": 1,
 		"q": 100
 		},
 	"/ysl/img/kh3.jpg": {
@@ -10886,15 +11025,15 @@
 		"opt": 0,
 		"q": 100
 		},
-	"/ysl/img/kh3.png": {
-		"ft": 32768,
-		"iS": 432218,
+	"/ysl/img/kh3b.jpg": {
+		"ft": 16384,
+		"iS": 8108,
+		"jF": 0,
 		"oA": 0,
-		"oAP": "/ysl/img/kh3.png",
+		"oAP": "/ysl/img/kh3b.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"oT": 1,
 		"q": 100
 		},
 	"/ysl/img/kh4.jpg": {
@@ -10908,15 +11047,15 @@
 		"opt": 0,
 		"q": 100
 		},
-	"/ysl/img/kh4.png": {
-		"ft": 32768,
-		"iS": 431648,
+	"/ysl/img/kh4b.jpg": {
+		"ft": 16384,
+		"iS": 8087,
+		"jF": 0,
 		"oA": 0,
-		"oAP": "/ysl/img/kh4.png",
+		"oAP": "/ysl/img/kh4b.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"oT": 1,
 		"q": 100
 		},
 	"/ysl/img/line1.jpg": {
@@ -10925,6 +11064,17 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/ysl/img/line1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/ysl/img/line1b.jpg": {
+		"ft": 16384,
+		"iS": 14941,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/ysl/img/line1b.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -10941,6 +11091,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/ysl/img/line2b.jpg": {
+		"ft": 16384,
+		"iS": 16705,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/ysl/img/line2b.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/ysl/img/line3.jpg": {
 		"ft": 16384,
 		"iS": 76317,
@@ -10952,12 +11113,34 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/ysl/img/line3b.jpg": {
+		"ft": 16384,
+		"iS": 15808,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/ysl/img/line3b.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/ysl/img/line4.jpg": {
 		"ft": 16384,
 		"iS": 75422,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/ysl/img/line4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/ysl/img/line4b.jpg": {
+		"ft": 16384,
+		"iS": 14260,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/ysl/img/line4b.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -11117,6 +11300,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/ysl/img/lottery-faild.png": {
+		"ft": 32768,
+		"iS": 12824,
+		"oA": 0,
+		"oAP": "/ysl/img/lottery-faild.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/ysl/img/page1disc.png": {
 		"ft": 32768,
 		"iS": 21231,
@@ -11199,6 +11393,17 @@
 		"iS": 12048,
 		"oA": 0,
 		"oAP": "/ysl/img/page1t4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/ysl/img/pop-copy.png": {
+		"ft": 32768,
+		"iS": 14803,
+		"oA": 0,
+		"oAP": "/ysl/img/pop-copy.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -11942,6 +12147,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/ysl/img/us8.png": {
+		"ft": 32768,
+		"iS": 5649,
+		"oA": 0,
+		"oAP": "/ysl/img/us8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/ysl/img/us9.png": {
+		"ft": 32768,
+		"iS": 3869,
+		"oA": 0,
+		"oAP": "/ysl/img/us9.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/ysl/img/ut.png": {
 		"ft": 32768,
 		"iS": 5477,
@@ -12062,6 +12289,27 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"/ysl/mp3/bgm-1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/ysl/mp3/bgm-1.mp3",
+		"oF": 0
+		},
+	"/ysl/mp3/bgm-2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/ysl/mp3/bgm-2.mp3",
+		"oF": 0
+		},
+	"/ysl/mp3/bgm-3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/ysl/mp3/bgm-3.mp3",
+		"oF": 0
 		},
 	"/ysl/sass/base.sass": {
 		"aP": 1,
