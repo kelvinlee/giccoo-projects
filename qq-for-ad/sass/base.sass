@@ -1,0 +1,745 @@
+@import sass/base
+// @import sass/row
+@import ../../libs/sass/loader-ball
+
+$debug : true
+$cdn : "./"
+@if not $debug
+	$cdn : "//image.giccoo.com/projects/kiehls/"
+
+@for $i from 1 through 30
+	.delay-#{$i}
+		animation-delay: $i*100ms
+	.duration-#{$i}
+		animation-duration: $i*100ms
+// animation, delay, duration
+$fontColor: #000000;
+$pageMainBGColor: #0c101a;
++keyframes(flashcamera)
+	0%
+		background-color: rgba(255,255,255,1)
+	80%
+		background-color: rgba(255,255,255,0.2)
+	100%
+		background-color: rgba(0,0,0,0.7)
++keyframes(zoomShake)
+	0%
+		+transform(scale(1,1))
+	10%
+		+transform(scale(1.5,1.5))
+	40%
+		+transform(scale(1,1))
+	60%
+		+transform(scale(1.06,1.06))
+	100%
+		+transform(scale(1,1))
++keyframes(zoomBigIn)
+	0%
+		+transform(scale(3,3))
+		opacity: 0
+	10%
+		+transform(scale(1,1))
+		opacity: 1
+	100%
+		+transform(scale(1,1))
+		opacity: 1
++keyframes(zoomBigInShow)
+	0%
+		+transform(scale(1,1))
+		opacity: 0
+	10%
+		+transform(scale(1,1))
+		opacity: 1
+	100%
+		+transform(scale(0.8,0.8))
+		opacity: 1
++keyframes(fadeArrow)
+	0%,100%
+		opacity: 1
+	50%
+		opacity: 0.5
++keyframes(fadeBG)
+	0%
+		opacity: 0
+	20%
+		opacity: 1
+	80%
+		opacity: 1
+	100%
+		opacity: 0
++keyframes(iconFlash)
+	0%,100%
+		opacity: 1
+		+transform(scale(1.2,1.2))
+	50%
+		opacity: 0.2
+		+transform(scale(1,1))
++keyframes(musicIcon)
+	0%
+		+transform(translate3d(0,40%,0))
+		opacity: 0
+	10%
+		opacity: 1
+	60%
+		opacity: 1
+	80%,100%
+		+transform(translate3d(0,0,0))
+		opacity: 0
++keyframes(swingIcon)
+	0%,100%
+		+transform(rotate(0deg))
+	25%
+		+transform(rotate(5deg))
+	75%
+		+transform(rotate(-5deg))
++keyframes(textShow)
+	0%
+		opacity: 0
+	10%
+		opacity: 1
+	90%
+		opacity: 1
+	100%
+		opacity: 0
++keyframes(fadeOutCircle)
+	0%
+		+transform(scale(0.8,0.8))
+		opacity: 0
+	20%
+		+transform(scale(1,1))
+		opacity: 0.7
+	100%
+		+transform(scale(2,2))
+		opacity: 0
++keyframes(swing)
+	0%
+		+transform(rotate(0))
+	50%
+		+transform(rotate(-6deg))
+	100%
+		+transform(rotate(0))
++keyframes(fadeInUpSmall)
+	0%
+		opacity: 0
+		transform: translate3d(0,20px,0)
+	100%
+		opacity: 1
+		transform: translate3d(0,0,0)
++keyframes(second)
+	0%
+		transform: scale(0.8,0.8) rotate(0)
+		opacity: 0
+	20%
+		opacity: 1
+	80%
+		opacity: 1
+	100%
+		transform: scale(1.2,1.2) rotate(360deg)
+		opacity: 0
++keyframes(beforeWheel)
+	0%
+		opacity: 1
+		transform: scale(0.9,0.9)
+	70%
+		opacity: 0.8
+		transform: scale(1,1)
+	100%
+		opacity: 1
+		transform: scale(0.9,0.9)
++keyframes(fadeInShow)
+	0%
+		opacity: 0
+	45%
+		opacity: 0
+	50%
+		opacity: 1
+	100%
+		opacity: 1
++keyframes(lightFeel)
+	0%
+		opacity: 1
+	40%
+		opacity: 0.6
+	70%
+		opacity: 1
+	90%
+		opacity: 0.8
+	100%
+		opacity: 1
++keyframes(moveLeft)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(-100%,0,0))
++keyframes(moveRight)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(135%,0,0))
++keyframes(showCloud)
+	0%
+		margin-left: -50%
+	100%
+		margin-left: 0
++keyframes(fadeColor)
+	0%, 100%
+		color: #1d92b6
+		+transform(scale(1,1))
+	50%
+		color: #b6211d
+		+transform(scale(1.05,1.05))
+html,body
+	+w
+	+h
+body
+	color: $fontColor
+	// +bc($pageMainBGColor)
+	max-width: 640px
+	+m
+	+posr
+	font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
+
+
+video,canvas,svg
+	+w
+	+h(auto)
+	object-fit: fill
+.hide
+	+hide
+.main,.load
+	+w
+	+h
+	+posr
+	max-width: 1280px
+	+m
+	font-size: 0
+	+overhide
+	+tran(all,4s,ease)
+	// +b($cdn+"img/bg.jpg",no-repeat,center,center,cover)
+
+.page-animation-enter-active
+	transition: all .4s linear
+.page-animation-leave-active
+	transition: all .4s linear
+	transform: translate3d(0,0,0)
+.page-animation-enter
+	transform: translate3d(0,-100%,0)
+	& ~ .page-animation-leave
+		transform: translate3d(0,100%,0)
+.page-animation-leave
+	transform: translate3d(0,100%,0)
+	& ~ .page-animation-enter
+		transform: translate3d(0,100%,0)
+.page-animation-enter-to
+	transform: translate3d(0,0,0)
+	& ~ .page-animation-leave-to
+		transform: translate3d(0,100%,0)
+.page-animation-leave-to
+	transform: translate3d(0,-100%,0)
+
+
+.page-fade-enter-active
+	transition: all .6s ease
+	opacity: 1
+.page-fade-leave-active
+	transition: all .3s linear
+	opacity: 1
+.page-fade-enter,.page-fade-leave-to
+	opacity: 0
+
+.page-zoom-enter-active
+	transition: all .6s ease
+	opacity: 1
+.page-zoom-leave-active
+	transition: all .3s linear
+	opacity: 1
+.page-zoom-enter,.page-zoom-leave-to
+	opacity: 0
+	+transform(scale(2,2))
+
+.page-up-enter-active
+	transition: all .6s ease
+	opacity: 1
+.page-up-leave-active
+	transition: all .3s linear
+	opacity: 1
+.page-up-enter,.page-up-leave-to
+	opacity: 0
+	+transform(translate3d(0,-140%,0))
+
+.page-down-enter-active
+	transition: all .3s ease
+	opacity: 1
+.page-down-leave-active
+	transition: all .5s linear
+	opacity: 1
+.page-down-enter,.page-down-leave-to
+	opacity: 0
+	+transform(translate3d(0,-100%,0))
+
+
+.page-fadeflower-enter-active
+	transition: all .6s ease
+	opacity: 1
+.page-fadeflower-leave-active
+	transition: all .6s ease-in
+	opacity: 1
+.page-fadeflower-enter,.page-fadeflower-leave-to
+	opacity: 0
+
+.public
+	+posa
+	+tr(0.8em,0.8em)
+	+wh(2rem,2rem)
+	+font-size(1rem)
+	z-index: 2199
+	font-family: "yrd-Medium"
+	// +hide
+	.note-text
+		+posa
+		+tr(27%,120%)
+		+w(140/50*100%)
+		+h(auto)
+		+show
+		font-size: 0
+	.play .note-text
+		+hide
+
+	.player
+		+w
+		+h
+		+posr
+	
+	.icon-play
+		+w
+		+h
+		transform-origin: top center
+		&.play
+			+b($cdn+"img/icon-play.png",no-repeat,center,center,contain)
+			// +animation(swingIcon,2s,linear,infinite)
+		&.pause
+			+b($cdn+"img/icon-stop.png",no-repeat,center,center,contain)
+
+.pages
+	+w
+	+h
+	+posr
+	+overhide
+	perspective: 500
+	-webkit-perspective: 500
+			transform-style: preserve-3d
+	-webkit-transform-style: preserve-3d
+	.page
+		+posa
+		+tl
+		+w
+		+h
+		// +bc(#e3dbd5)
+		+hide
+		background-attachment: fixed
+		z-index: 10
+		.bg
+			+posa
+			+tl
+			+w
+			+h
+			z-index: -1
+			img
+				+w
+				+h
+		
+.page
+	+posa
+	+tl
+	+w
+	+h
+	+overhide
+	background-size: 100% auto
+	.bg,.ugc
+		+posa
+		+tl(50%)
+		font-size: 0
+		+transform(translate3d(0,-50%,0))
+		.biger &
+			+transform(translate3d(0,-50%,0) scale(1.1,1.1))
+	.ugc
+		+w
+		+h
+	.content
+		+posa
+		+tl
+		+w
+		+h
+		box-sizing: border-box
+
+	.next
+		+posa
+		+bl
+		+w
+		+h(1px)
+		&:before
+			content: " "
+			+posa
+			+bl(10px,50%)
+			+w(30px)
+			+h(10px)
+			// +b($cdn+"img/arrow-up.png",no-repeat,top,center,contain)
+			+animation(fadeArrow,0.6s,ease,infinite)
+		&:after
+			content: " "
+			+posa
+			+bl(22px,50%)
+			+w(30px)
+			+h(10px)
+			// +b($cdn+"img/arrow-up.png",no-repeat,top,center,contain)
+			+animation(fadeArrow,0.6s,ease,infinite)
+			animation-delay: 300ms
+
+.form
+	+w(90%)
+	+m
+	color: #000
+	+font-size(0.8rem)
+	.form-group
+		display: flex
+		+box
+		+w(90%)
+		+m(5% auto)
+		border-radius: 0px
+		border: solid 1px #000
+		+overhide
+		label
+			flex: 3
+			+box
+			+m(0.4em 0.2em)
+			// padding-right: 5%
+			+posr
+			// border-right: solid 1px #555
+			line-height: 1.6em
+			justify-content: center
+			align-items: center
+			box-align: center
+			// +bc(#8db637)
+			+text-center
+			color: #000
+			border-right: solid 1px #000
+			img
+				+show-inline
+				vertical-align: middle
+		input,.form-group-items,.form-group-line,.select
+			flex: 7
+		input,.select
+			border: none
+			outline: none
+			+bc(#fff)
+			// color: #fff
+			+box
+			+p(0.2rem 0)
+			line-height: 1.4em
+			text-indent: 0.4rem
+		.select
+			+overhide
+			+posr
+			&:after
+				content: " "
+				+posa
+				+tr(50%,0.5rem)
+				+wh(0,0)
+				// +bc(#6687b3)
+				+transform(translate3d(0,-30%,0))
+				border-width: 0.5rem;
+				border-style: solid;
+				border-color: #f9bb00 transparent transparent transparent;
+			span
+				+box
+				+p(0.2rem 0)
+				line-height: 1.8em
+				text-indent: 0.4rem
+				overflow: hidden
+				text-overflow: ellipsis
+				white-space: nowrap
+				vertical-align: middle
+		select
+			+posa
+			+tl
+			+br
+			+wh(100%,100%)
+			+show-inline
+			opacity: 0
+	.custom-select
+		overflow: unset
+		.select
+			overflow: unset
+		.box-select
+			+posa
+			+tl(105%)
+			+bc(#fff)
+			.option
+				line-height: 2em
+				+font-size(0.7rem)
+				vertical-align: middle
+				span
+					line-height: 2em
+					+wh(1rem,1rem)
+					+show-inline
+					vertical-align: middle
+					border-radius: 50%
+
+	.btn-submit
+		+m(0.5rem auto)
+
+.ugcsave
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	opacity: 0
+	z-index: 99
+
+.ugc
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	opacity: 0
+	z-index: 99
+
+.main
+	.logo
+		+posa
+		+bl(1.5%)
+		+w
+		z-index: 2009
+		pointer-events: none
+
+.slider-box
+	+w(65%)
+	+m
+	+posr
+	padding-bottom: 2%
+	margin-top: 2.5%
+	.slider-content
+		+w
+		+h
+		overflow: hidden
+	.left
+		+posa
+		+tl(50%)
+		+w(10%)
+		z-index: 99
+	.right
+		+posa
+		+tr(50%)
+		+w(10%)
+		z-index: 99
+		+transform(scale(-1,1))
+	.slider
+		+posr
+		white-space: nowrap
+		font-size: 0
+		+tran(all,0s,linear)
+		.slide
+			+w
+			+posr
+			+show-inline
+			white-space: normal
+			img
+	.points
+		+w
+		+posr
+		// +posa
+		// +bl(-10%,0)
+		+text-center
+		+p(3% 0)
+		margin-top: -5%
+		span
+			+show-inline
+			+wh(0.8rem,0.8rem)
+			+b($cdn+"img/point-e.png",no-repeat,center,center,contain)
+			// border: solid 1px #fff
+			// border-radius: 50%
+			+overhide
+			+m(0 0.2rem)
+			+tran
+			&.on
+				// +bc(#fff)
+				+b($cdn+"img/point-f.png",no-repeat,center,center,contain)
+
+.pop
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	+bc(rgba(0,0,0,0.7))
+	z-index: 1109
+	&.flashcamera
+		z-index: 3109
+		+animation(flashcamera,1s,ease)
+		// animation-delay: 1s
+		.content
+			+animation(zoomBigInShow,0.6s,ease)
+			animation-delay: 0.5s
+
+	.close
+		+posa
+		+bl(5%,50%)
+		+iw(80,600,100%)
+		+transform(translate3d(-50%,0,0))
+	.small-size
+		// +w(80%)
+		// margin-top: 10%
+		// margin-left: 10%
+		+posr
+		.close
+			+bl(auto,auto)
+			+tr(-2rem,-2rem)
+			+wh(2rem,2rem)
+			+transform(translate3d(0,0,0))
+	.note
+		+posa
+		+bl(-2em)
+		+text-center
+		+font-size(0.8rem)
+		+w
+		color: #fff
+	// .title
+	// 	+w(100%)
+	// 	+m(10% auto)
+	// 	h2
+	// 		+font-size(1.6rem)
+	// 		line-height: 1.6em
+	// 		letter-spacing: 0.1em
+	// 		font-weight: bold
+	// 	p
+	// 		+font-size(0.9rem)
+	// 	h2,p
+	// 		color: #000
+	// 		+m
+	// 		+text-center
+	.register
+		+w(80%)
+		+box
+		// +posa
+		// +bl(0%,50%)
+		// +transform(translate3d(-50%,0,0))
+		+abcentermiddle()
+		+bc(#fff)
+		// border: 4px solid #757575
+		// border-radius: 5px
+		// border: solid 0.4rem #ffb04a
+		+p(5% 0)
+		// +b($cdn+"img/pop-bg.jpg",no-repeat,top,center,cover)
+		
+		.btn-submit
+			+w(40%)
+			+m(0 auto)
+			margin-top: 2%
+		.btn-item
+			+w(90%)
+			+m(0.4rem auto)
+		.footer
+			+posr
+
+	.lottery
+		+w(80%)
+		+box
+		// +posa
+		// +bl(0%,50%)
+		// +transform(translate3d(-50%,0,0))
+		+abcentermiddle()
+		+bc(#fff)
+		// border: solid 0.4rem #ffb04a
+		// border-radius: 5px
+		+p(15% 0)
+		// +b($cdn+"img/pop-bg-lottery.jpg",no-repeat,center,center,cover)
+		&.faild
+			.title,.btn
+				margin: 10% auto
+			.btn
+				+w(40%)
+		&.success
+			.title
+				margin: 5% auto
+			.code
+				+font-size(1.4rem)
+				color: #696969
+				+text-center
+				letter-spacing: 0.2em
+			.btn
+				margin: 2% auto
+
+.pop-ranking
+	&.end
+		+bc(transparent)
+		.content
+			.title
+				+show
+			.btns
+				+show
+			.btn-close
+				+hide
+	.content
+		+w(80%)
+		+abcentermiddle
+
+		.title
+			+font-size(1rem)
+			+text-center
+			+hide
+			color: #fff
+			p
+				+m(0.4em auto)
+				line-height: 1.6em
+			span
+				+font-size(1.2rem)
+				font-weight: bold
+		.ranking-title
+			margin-top: 7%
+		.ranking-list
+			+m
+			+p
+			li
+				+w(95%)
+				+m(0.4em auto)
+				+font-size(0.8rem)
+				color: #1d92b6
+				line-height: 1.8em
+				+b($cdn+"img/ranking-list-bg.png",no-repeat,center,center,cover)
+				+p(0.4em 0.6em)
+				+box
+				+text-center
+				&.on
+					color: #b6211d
+					+animation(fadeColor,1.5s,ease,infinite)
+				span
+					+w(35%)
+					+m
+					+show-inline
+					+text-left
+				.numb
+					+w(20%)
+				.score
+					+text-right
+		.btns
+			+w
+			+text-center
+			+hide
+			margin-top: 7%
+			.btn
+				+w(46%)
+				+show-inline
+			.btn-reload
+				margin-right: 3%
+			.btn-share
+				margin-left: 3%
+		.btn-close
+			+m
+			+w(15%)
+			margin-top: 20%
+
+.blur
+	+transform(scale(1.05,1.05))
+	filter: blur(16px)
