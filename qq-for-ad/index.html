@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
-    <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" style="display: none" class="main">
+    <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" style="display: none" class="main">
       <transition name="page-down">
         <div v-show="noteShow" @click="noteShow = false" class="note-message">
           <div class="note-text">{{noteText}}</div>
@@ -39,7 +39,77 @@
       </transition>
       <transition name="page-fade">
         <div v-show="pageIndex == 2" class="page page-2">
-          <div class="content"></div>
+          <div class="content">
+            <div class="banner"><img src="./img/banner.png"></div>
+            <div class="types-box">
+              <div @click="openMenu(1)" :class="{on: type == 1}" class="btn pointer">
+                <p>{{type1Name==""?"行业":type1Name}}</p>
+                <transition name="page-fade">
+                  <div v-show="type == 1" class="drop-menu">
+                    <div @click="selectType(1,'',0)" :class="{on: type1==0}" class="a pointer">全部</div>
+                    <div v-for="item in typeList" v-if="item.type == 1" @click="selectType(1,item.name,item.id)" :class="{on: item.id == type1}" class="a pointer">{{item.name}}</div>
+                  </div>
+                </transition>
+              </div>
+              <div @click="openMenu(2)" :class="{on: type == 2}" class="btn pointer">
+                <p>{{type2Name==""?"推广目标":type2Name}}</p>
+                <transition name="page-fade">
+                  <div v-show="type == 2" class="drop-menu">
+                    <div @click="selectType(2,'',0)" :class="{on: type2==0}" class="a pointer">全部</div>
+                    <div v-for="item in typeList" v-if="item.type == 2" @click="selectType(2,item.name,item.id)" :class="{on: item.id == type2}" class="a pointer">{{item.name}}</div>
+                  </div>
+                </transition>
+              </div>
+              <div @click="openMenu(3)" :class="{on: type == 3}" class="btn pointer">
+                <p>{{type3Name==""?"广告资源":type3Name}}</p>
+                <transition name="page-fade">
+                  <div v-show="type == 3" class="drop-menu">
+                    <div @click="selectType(3,'',0)" :class="{on: type3==0}" class="a pointer">全部</div>
+                    <div v-for="item in typeList" v-if="item.type == 3" @click="selectType(3,item.name,item.id)" :class="{on: item.id == type3}" class="a pointer">{{item.name}}</div>
+                  </div>
+                </transition>
+              </div>
+            </div>
+            <div class="items"><a v-for="item in list" v-show="(type1 == 0 || type1 == item.type1) &amp;&amp; (type2 == 0 || type2 == item.type2) &amp;&amp; (type3 == 0 || type3 == item.type3)" :href="'#/id/'+item.id" class="item pointer">
+                <div class="small-logo"><img :src="item.logo"></div>
+                <div class="title">
+                  <h1 v-html="item.title"></h1>
+                </div>
+                <div class="types">{{item.brand}}/{{typeToText(item.type2)}}</div></a></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="pageIndex == 3" class="page page-3">
+          <div class="content">
+            <div class="header"><img src="./img/header.png"><a href="#" class="btn-back"><img src="./img/btn-back.png"></a></div>
+            <transition name="page-fade">
+              <div v-show="articleInfo.title == null" class="loading-box">
+                <div class="ball-spin-fade-loader">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </transition>
+            <transition name="page-fade">
+              <div id="scrollbox" v-show="articleInfo.title != null" class="scroll-box">
+                <div class="logo"><img :src="articleInfo.logo"></div>
+                <div class="title">
+                  <h1>{{articleInfo.title}}</h1>
+                  <p>{{articleInfo.subtitle}}</p>
+                </div>
+                <article v-html="articleInfo.textarea" class="w-e-text"></article>
+                <div class="btns"><a href="#" class="btn">返回案例首页</a></div>
+                <div class="footer"><img src="./img/qrcode.png"></div>
+              </div>
+            </transition>
+          </div>
         </div>
       </transition>
     </div>
@@ -48,8 +118,6 @@
     <script src="//image.giccoo.com/projects/libs/js/min/pixi.min.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
-    <script src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js"></script>
-    <script src="//image.giccoo.com/projects/genki/js/ntes.id.js"></script>
     <script src="js/public_funciton.js"></script>
     <script src="js/build.js?v=1"></script>
     <script src="js/main.js?v=1"></script>

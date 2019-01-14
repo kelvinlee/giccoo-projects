@@ -8883,6 +8883,72 @@
 		"oAP": "/build/qq-for-ad/css",
 		"oF": 0
 		},
+	"/qq-for-ad/img/arrow.png": {
+		"ft": 32768,
+		"iS": 1097,
+		"oA": 0,
+		"oAP": "/qq-for-ad/img/arrow.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/qq-for-ad/img/banner.png": {
+		"ft": 32768,
+		"iS": 20995,
+		"oA": 0,
+		"oAP": "/qq-for-ad/img/banner.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/qq-for-ad/img/btn-back.png": {
+		"ft": 32768,
+		"iS": 2466,
+		"oA": 0,
+		"oAP": "/qq-for-ad/img/btn-back.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/qq-for-ad/img/header.png": {
+		"ft": 32768,
+		"iS": 23027,
+		"oA": 0,
+		"oAP": "/qq-for-ad/img/header.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/qq-for-ad/img/logo.png": {
+		"ft": 32768,
+		"iS": 3169,
+		"oA": 0,
+		"oAP": "/qq-for-ad/img/logo.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/qq-for-ad/img/qrcode.png": {
+		"ft": 32768,
+		"iS": 37933,
+		"oA": 0,
+		"oAP": "/qq-for-ad/img/qrcode.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/qq-for-ad/index.html": {
 		"cB": 0,
 		"ft": 8192,

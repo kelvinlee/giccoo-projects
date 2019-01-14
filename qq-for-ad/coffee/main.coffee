@@ -116,13 +116,13 @@ init = ->
 	# console.log new Date().getTime() - startTime
 	# document.body.style.height = TrueH+"px"
 	# document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
-	TrueW = 640 if TrueW >= 640
 	TrueH = 1138 if TrueH >= 1138
 	smaller = TrueH*2 < 1200
 	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
 	TrueH = document.documentElement.clientHeight
 	TrueW = document.documentElement.clientWidth
 	# console.log TrueW,TrueH
+	TrueW = 640 if TrueW >= 640
 
 	main = new Vue
 		el: "#main"
@@ -139,7 +139,7 @@ init = ->
 			noteTime: null
 			noteShow: false
 			pageInfoShow: false
-			pageIndex: 1
+			pageIndex: 2
 			step: 1
 			singerIndex: 2
 			logo: true
@@ -226,56 +226,40 @@ init = ->
 			carIndex: 1
 			yearName: "none"
 			list: []
+			typeList: []
 			insertId: 0
-			score: 0
-			hit: 1
-		watch:
-			nickname: (n,o)->
-				@.nickname = @.nickname.replace(/[\r\n]/g, "")
-				# console.log "n,o:",n,o
-				nickNameText = new Text "#{n} ",{fontFamily : 'Arial', fontSize: 32, fontWeight: "normal", fill : 0x6d4222, letterSpacing: 2, lineHeight: 40}
-				console.log "width:",nickNameText.width
-				if nickNameText.width > 296
-					# @.nickname = o
-					t = @.nickname.split("")
-					tx = ""
-					for i in [0...(t.length-1)]
-						tx += t[i]
-					@.nickname = tx
-					console.log tx
-					return false
-				
-
-			message: (n,o)->
-				@.message = @.message.replace(/[\r\n]/g, "")
-				if @.message.length > 100#gblen() > 64
-					t = @.message.split("")
-					tx = ""
-					for i in t
-						tx += i
-						break if tx.length >= 100#gblen() >= 64
-					@.message = tx
-					return false
+			type: 0
+			type1: 0
+			type2: 0
+			type3: 0
+			type1Name: ""
+			type2Name: ""
+			type3Name: ""
+			articleInfo: {}
+		# watch:
+		# 	type1Name: (n,o)->
+		# 		if n is ""
+		# 			@.type1Name = "行业"
 		methods:
-			openYear: (year)->
-				@.yearName = year
-				@.pageIndex = 3
-				@.logo = false
-				setTimeout =>
-					document.getElementById("manhua").scrollTop = 0
-				,20
-
+			openMenu: (id)->
+				if @.type is id
+					@.type = 0
+				else
+					@.type = id
+			selectType: (type,name,id)->
+				if @["type"+type] == id
+					@["type"+type] = 0
+					@["type"+type+"Name"] = ""
+				else
+					@["type"+type] = id
+					@["type"+type+"Name"] = name
+				console.log @.type1,@.type2,@.type3
 			prev: ->
 				@.$children[0].prev()
 			next: ->
 				@.$children[0].next()
 			number: (n)->
 				# @.carIndex = n
-			select: ->
-				console.log Math.abs @.$children[0].slideNumber
-				@.carIndex = Math.abs @.$children[0].slideNumber
-				@.step = 3
-
 			send: (text)->
 				@.noteShow = true
 				@.noteText = text
@@ -283,21 +267,6 @@ init = ->
 				@.noteTime = setTimeout =>
 					@.noteShow = false
 				,2000
-			over: ->
-				@.questionShow = false
-				ugc.init()
-				setTimeout =>
-					@.gameEnd = true
-				,2000
-			regame: ->
-				# window.location.reload()
-				# @.gameEnd = false
-				@.rankingShow = false
-				@.lotteryShow = false
-				@.shareNotePage = false
-				gameRestart()
-			gobuy: ->
-				window.location.href = "http://www.baidu.com"
 			dateText: (date)->
 				console.log date.replace(/-/g,"/")
 				d = new Date date.replace(/-/g,"/")
@@ -405,17 +374,62 @@ init = ->
 					@.list = msg.data.list
 				.catch (err)=>
 					console.log "err:",err
+			getTypeList: ->
+				axios.get "#{apiLink}active/qq/adTypeList/"
+				.then (msg)=>
+					console.log "msg:",msg.data.list
+					@.typeList = msg.data.list
+				.catch (err)=>
+					console.log "err:",err
+			typeToText: (id)->
+				for item in @.typeList
+					if item.id is parseInt id
+						return item.name
+				return ""
+			hashchange: ->
+				hashURL = window.location.href.split("#")[1]
+				console.log hashURL
+				@.articleInfo = {}
+				document.getElementById("scrollbox").scrollTop = 0
+				if hashURL is "/home"
+					@.pageIndex = 1
+				else if hashURL is "/list"
+					@.pageIndex = 2
+				else if hashURL? and hashURL isnt ""
+					reg = /^\/id\/(.*)/i
+					res = hashURL.match reg
+					console.log res
+					if res?
+						@.article res[1] 
+					else
+						@.pageIndex = 2
+				else
+					@.pageIndex = 2
+
+			article: (id)->
+				# console.log "id:",id
+				# console.log window.location.href
+				@.pageIndex = 3
+				axios.get "#{apiLink}active/qq/adGet/id/#{id}"
+				.then (msg)=>
+					@.articleInfo = msg.data.info
+				.catch (err)=>
+					console.log "err:",err
+
+
 		# watch:
 		mounted: ->
 
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
+			TrueW = 640 if TrueW > 640
+
 			if sys is "NeteaseMusic"
 				@.wy = true
 			h = TrueH*2*(2-TrueW*2/750+0.01)
 			# game = new Game({el: "game",h: h})
-			@.wy = CloudMusic.isInApp()
-			version = CloudMusic.getClientVersion().split(".")
+			# @.wy = CloudMusic.isInApp()
+			# version = CloudMusic.getClientVersion().split(".")
 			# @.getUserInfo (callback)=>
 				# console.log imageList,@.muiscType @.userInfo.styleTop
 			# @.ugcType = @.muiscType @.userInfo.styleTop
@@ -432,8 +446,10 @@ init = ->
 				@.pageIndex = 2
 			else
 				ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => console.log("callback") })
+			@.getTypeList()
 			@.getList()
-
+			window.addEventListener "hashchange", @.hashchange.bind @
+			@.hashchange()
 
 
 _shareLoaded = false
@@ -456,7 +472,7 @@ setShareWeb = (title,desc,link)->
 			# alert "cancel"
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
-		CloudMusic.setShareData shareData
+		# CloudMusic.setShareData shareData
 	else if not _shareLoaded
 		loadWechatConfig()
 		wx.ready ->

@@ -3,7 +3,7 @@
 @import ../../libs/sass/loader-ball
 
 $debug : true
-$cdn : "./"
+$cdn : "../"
 @if not $debug
 	$cdn : "//image.giccoo.com/projects/kiehls/"
 
@@ -198,8 +198,6 @@ body
 	+m
 	+posr
 	font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
-
-
 video,canvas,svg
 	+w
 	+h(auto)
@@ -506,14 +504,6 @@ video,canvas,svg
 	opacity: 0
 	z-index: 99
 
-.main
-	.logo
-		+posa
-		+bl(1.5%)
-		+w
-		z-index: 2009
-		pointer-events: none
-
 .slider-box
 	+w(65%)
 	+m
@@ -743,3 +733,267 @@ video,canvas,svg
 .blur
 	+transform(scale(1.05,1.05))
 	filter: blur(16px)
+
+.pointer
+	cursor: pointer
+	user-select: none
+
+.page-2
+	+bc(#fafafa)
+	.banner
+		font-size: 0
+		+posr
+		z-index: 5
+	.types-box
+		+posr
+		+flex
+		+bc(#fff)
+		box-shadow: 0px 3px 20px rgba(59,140,226,0.15)
+		z-index: 5
+		.btn
+			flex: 1
+			+font-size(0.8rem)
+			color: #666666
+			+text-center
+			+posr
+			+p(10px 0)
+			p
+				+m
+			&:after
+				content: " "
+				+tran
+				+posa
+				+tr(50%,10px)
+				+wh(8px,8px)
+				+b($cdn+"img/arrow.png",no-repeat,center,center,cover)
+				margin-top: -4px
+			&.on
+				p
+					color: #000
+					font-weight: bold
+				&:after
+					+transform(rotate(180deg))
+
+			.drop-menu
+				// +animation("fadeIn",.3s,ease)
+				// +hide
+				+posa
+				+tl(100%)
+				+w
+				+bc(#fff)
+				margin-top: 1px
+				box-shadow: 3px 3px 8px rgba(0,0,0,0.15)
+				max-height: 350px
+				+touch
+				&::-webkit-scrollbar
+					+hide
+				.a
+					+tran
+					+font-size(0.8rem)
+					+text-center
+					+p(10px 0)
+					color: #666
+					+m
+					+w(80%)
+					border-bottom: solid 1px #ececec
+					&:last-child
+						border: none
+					&.on
+						color: #000
+						font-weight: bold
+
+.page-3
+	+font-size(0.8rem)
+	+bc(#fff)
+	.loading-box
+		+posa
+		+tl
+		+w
+		+h
+		+bc(#fff)
+		.ball-spin-fade-loader
+			+posa
+			+tl(50%,50%)
+			>div
+				+bc(#008cec)
+	.header
+		font-size: 0
+		box-shadow: 0 3px 12px rgba(0,0,0,0.15)
+		+posa
+		+tl
+		z-index: 10
+		.btn-back
+			+posa
+			+tr(33%,3%)
+			+iw(140,640,100%)
+
+	.footer
+		font-size: 0
+	.scroll-box
+		+touch
+		+h
+		+w
+		+box
+		padding-top: 18%
+	.logo
+		font-size: 0
+	.title
+		color: #091b3a
+		+text-center
+		letter-spacing: 0.15em
+		h1
+			+font-size(0.8rem)
+			+m
+			color: #091b3a
+		p
+			+font-size(0.7rem)
+			+m
+			+w(50%)
+			margin-top: 0.5em
+			color: rgba(0,0,0,0.5)
+	.btns
+		+w
+		+text-center
+		+p(0 0)
+		padding-bottom: 40px
+	a.btn
+		+show-inline
+		+p(0.5em 2em)
+		+font-size(0.8rem)
+		text-decoration: none
+		color: #091b39
+		+m
+		border: solid 1px #000
+		border-radius: 5px
+	.w-e-text
+		+box
+		+p(0 20px)
+.items
+	+touch
+	+h
+	padding-top: 10px
+	padding-bottom: 35%
+	+box
+	.item
+		+bc(#fff)
+		+w(90%)
+		+m
+		+show
+		text-decoration: none
+		+font-size(0.8rem)
+		color: #000
+		box-shadow: 3px 3px 8px rgba(0,0,0,0.05)
+		border-top: solid 1px #d1d1d1
+		padding-top: 5px
+		padding-bottom: 20px
+		margin-top: 10px
+		+text-center
+		letter-spacing: 0.1em
+		+tran
+		+posr
+		&:hover
+			+transform("translate3d(0,-3px,0)")
+			box-shadow: 3px 3px 10px rgba(0,0,0,0.1), -3px 3px 10px rgba(0,0,0,0.1)
+			&:after
+				content: " "
+				+posa
+				+tl
+				+wh(100%,2px)
+				+bc(#008cec)
+				+animation(fadeIn,0.7s,ease)
+		.small-logo
+			// +wh(64px,64px)
+			font-size: 0
+			+m
+			+show-inline
+			img
+				// max-width: 50%
+		.title
+			margin-top: 5px
+			h1
+				+m
+				+font-size(0.8rem)
+				font-weight: normal
+				line-height: 1.6em
+		.types
+			+font-size(0.8rem)
+			line-height: 1.6em
+			color: rgba(0,0,0,0.5)
+
+		
+.w-e-text
+	+font-size(0.8rem)
+	color: #000
+	letter-spacing: 0.15em
+	h2
+		+text-center
+		+font-size(0.8rem)
+		color: #091b39
+		font-weight: normal
+		+posr
+		z-index: 3
+		+m(1.5em auto)
+		&:before
+			content: " "
+			+w
+			+h
+			+posa
+			+tl(50%)
+			border-top: solid 1px #848d9c
+			z-index: -1
+		&:after
+			content: " "
+			+w(25%)
+			+h
+			+bc(#fff)
+			+posa
+			+tl(0,50%-25%/2)
+			z-index: -1
+	h1 
+		color: #091b3a
+		+font-size(0.8rem)
+		+text-center
+		font-weight: normal
+		line-height: 1.6em
+		p
+			color: #091b3a
+	p
+		+m
+	>p
+		color: rgba(0,0,0,0.6)
+		// text-indent: 2.3em
+		text-align: justify
+		line-height: 1.6em
+		+box
+		+p(0 1em)
+		+m(1.6em auto)
+		img,iframe
+			// margin-left: -2.3em
+	iframe
+		+w
+		+h(210px)
+		+show-inline
+	img
+		+w
+		max-width: 100%
+	ol,ul
+		+w
+		+p(0 1em 0 2em)
+		+box
+		li
+			color: rgba(0,0,0,0.6)
+	ul
+		li
+			list-style: disc
+	a
+		color: #1c92ff
+		text-decoration: none
+	blockquote
+		display: block
+		border-left: 8px solid #d0e5f2
+		padding: 5px 10px
+		margin: 10px 0
+		line-height: 1.6em
+		font-size: 100%
+		background-color: #f1f1f1
+
