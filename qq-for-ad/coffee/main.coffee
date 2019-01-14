@@ -176,6 +176,8 @@ init = ->
 		# 		if n is ""
 		# 			@.type1Name = "行业"
 		methods:
+			buildHTML: (html)->
+				return html
 			openMenu: (id)->
 				if @.type is id
 					@.type = 0
@@ -308,7 +310,8 @@ init = ->
 					console.log "msg:",msg.data.list
 					list = []
 					for item in msg.data.list
-						item.type3 = item.type3.split(",")
+						item.type3 = item.type3.split(",") if item.type3? and item.type3.indexOf(",") > -1
+						item.title = item.title.replace(/\n/g, '<br/>')
 						list.push item
 					@.list = list
 					console.log @.list

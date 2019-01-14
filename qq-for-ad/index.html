@@ -70,7 +70,7 @@
                 </transition>
               </div>
             </div>
-            <div class="items"><a v-for="item in list" v-show="(type1 == 0 || type1 == item.type1) &amp;&amp; (type2 == 0 || type2 == item.type2) &amp;&amp; (type3 == 0 || item.type3.indexOf(type3+'') &gt; -1)" :href="'#/id/'+item.id" class="item pointer">
+            <div class="items"><a v-for="item in list" v-show="(type1 == 0 || type1 == item.type1) &amp;&amp; (type2 == 0 || type2 == item.type2) &amp;&amp; (type3 == 0 || (item.type3 != null &amp;&amp; item.type3.indexOf(type3+'') &gt; -1))" :href="'#/id/'+item.id" class="item pointer">
                 <div class="small-logo"><img :src="item.logo"></div>
                 <div class="title">
                   <h1 v-html="item.title"></h1>
@@ -101,7 +101,7 @@
               <div id="scrollbox" v-show="articleInfo.title != null" class="scroll-box">
                 <div class="logo"><img :src="articleInfo.logo"></div>
                 <div class="title">
-                  <h1>{{articleInfo.title}}</h1>
+                  <h1 v-html="articleInfo.title"></h1>
                   <p>{{articleInfo.subtitle}}</p>
                 </div>
                 <article v-html="articleInfo.textarea" class="w-e-text"></article>
