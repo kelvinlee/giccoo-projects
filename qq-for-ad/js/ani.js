@@ -16,8 +16,8 @@ function setPage1 () {
 	setT()
 
 
-	logo=new Sprite(getTe(_CDN+"img/logo.png"));
-	arrow=new Sprite(getTe(_CDN+"img/arrow.png"));
+	logo=new Sprite(getTe(_CDN+"img/logo1.png"));
+	arrow=new Sprite(getTe(_CDN+"img/arrow1.png"));
 	arrow.y=stageH-80
 	TweenMax.from(arrow,1,{y:"+=30",repeat:100000,yoyo:true,ease:Sine.easeInOut})
 	pStage.addChild(logo,arrow)

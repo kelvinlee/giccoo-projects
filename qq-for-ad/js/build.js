@@ -1,7 +1,7 @@
 var _CDN = "./";
 // var _CDN = "//image.giccoo.com/projects/emoji/";
 var imageList = [
-	_CDN+"img/logo.png",
+	_CDN+"img/logo1.png",
 	_CDN+"img/bgc.png",
 
 	_CDN+"img/bart1.png",
@@ -33,7 +33,7 @@ var imageList = [
 	_CDN+"img/t4.png",
 	_CDN+"img/t5.png",
 
-	_CDN+"img/arrow.png",
+	_CDN+"img/arrow1.png",
 
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
