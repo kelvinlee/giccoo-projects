@@ -117,7 +117,7 @@ block content
                   .a.pointer(@click="selectType(3,'',0)",:class="{on: type3==0}") 全部
                   .a.pointer(v-for="item in typeList",v-if="item.type == 3",@click="selectType(3,item.name,item.id)",:class="{on: item.id == type3}") {{item.name}}
           .items
-            a.item.pointer(v-for="item in list",v-show="(type1 == 0 || type1 == item.type1) && (type2 == 0 || type2 == item.type2) && (type3 == 0 || type3 == item.type3)",:href="'#/id/'+item.id")
+            a.item.pointer(v-for="item in list",v-show="(type1 == 0 || type1 == item.type1) && (type2 == 0 || type2 == item.type2) && (type3 == 0 || item.type3.indexOf(type3+'') > -1)",:href="'#/id/'+item.id")
               .small-logo
                 img(:src="item.logo")
               .title

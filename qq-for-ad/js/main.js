@@ -68,61 +68,7 @@ apiLink="//g.giccoo.com/",// apiLink = "http://192.168.3.53:3000/"
 // apiUrl = "http://localhost:8881/Levi"
 main={},sys="",sended=[!(loading={}),!(_public={})],_runTime=_startCache=_cache=ugcCache=musicIconCache=musicLineCache=ugc=null,_testTime=_second=0,neteaseShareImage=function e(){var t,i,n;return n="点播圣诞星声",t="https://image.giccoo.com/upload/".concat(main.folder,"/")+main.shareImageLink+"@!large",i="https://activity.music.163.com/kiehls/",// console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 // window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
-console.log("share href:",t),CloudMusic.sharePic({picUrl:t,text:n,link:i})},window.onload=function(){var e;// _public = new Vue
-// 	el: "#public"
-// 	data:
-// 		wy: if sys is "NeteaseMusic" then true else false
-// 		wx: false
-// 		note: true
-// 		playing: false
-// 	methods:
-// 		startGame: ->
-// 			@.note = false
-// 	mounted: ->
-// 		document.addEventListener "WeixinJSBridgeReady", ->
-// 			_public.wx = true
-// 			_public.note = false
-// 			_public.$children[0].change()
-// loading = new Vue
-// 	el: "#loading"
-// 	data:
-// 		progress: 0
-// 		mounted: false
-// 		progressOn: 0
-// 	methods:
-// 		next: ->
-// 			document.getElementById('load').className += " fadeOut animated"
-// 			main.mounted = true
-// 			# main.init()
-// 			setTimeout ->
-// 				document.getElementById('load').style.display = "none"
-// 				_public.note = false if _public.wx
-// 				# setTimeout ->
-// 				# 	_public.note = false if _public.wy
-// 				# ,3000
-// 			,520
-// 	mounted: ->
-// 		@.mounted = true
-// 		TrueH = document.documentElement.clientHeight
-// 		TrueW = document.documentElement.clientWidth
-// 		# @.next() # for test
-// 		timein = setInterval =>
-// 			@.progress += 3
-// 			@.progress = @.progressOn if @.progress >= @.progressOn
-// 			if @.progress >= 100
-// 				@.progress = 100
-// 				clearInterval timein
-// 				_cache = setTimeout =>
-// 					@.next()
-// 				,1000
-// 		,1000/20
-return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,setShareWeb("科颜氏","欢迎参加游戏","http://m.giccoo.com/kiehls/"),init()},_shareLoaded=!(init=function e(){var t,i,n;return 1138<=TrueH&&(
-// console.log new Date().getTime() - startTime
-// document.body.style.height = TrueH+"px"
-// document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
-TrueH=1138),n=2*TrueH<1200,i=Math.ceil(TrueW/640*94/TrueH*100),TrueH=document.documentElement.clientHeight,640<=(TrueW=document.documentElement.clientWidth)&&(
-// console.log TrueW,TrueH
-TrueW=640),main=new Vue({el:"#main",data:(t={w:TrueW,h:TrueH,biger:TrueW/TrueH<.55,smaller:n,afterH:n?1.15*TrueH-TrueW/750*1029:TrueH-TrueW/750*1029,wy:!1,mounted:!0,loading:!1,noteText:"",noteTime:null,noteShow:!1,pageInfoShow:!1,pageIndex:1,step:1,singerIndex:2,logo:!0,startgame:!1,folder:"",BGColor:"#ffffff",XY:"pageY",ugc:null,ugcsave:null,ugcold:null,pushed:!1,shareImageLink:null,cache:null,audioId:null,v:null,pageNote:!1,recordStarting:!1,authorization:!1,norecord:!0,uploaded:!1,imageUpdate:!1,allowPopShow:!1,count:0,videoIndex:0,videoIndexOld:0,lr:!0,form:{username:{id:"username",type:"input",label:"姓名",placeholder:"请填写姓名",value:""},mobile:{id:"mobile",type:"number",label:"电话",placeholder:"请填写电话",value:""},address:{id:"address",type:"input",label:"联系地址",placeholder:"请联系地址",value:""}},mask:1,text:"",nickname:"",mobile:"",sex:0,musicLink:"",logId:"",openBtnShow:!0,default:{x:0},videoPop:!1,canUpload:!0,handCover:!1,last_update:0,lastX:0,lastY:0,lastZ:0,speed:4e3,maxSpeed:0,swing:!1,rankingShow:!1,registerShow:!1,shareNotePage:!1,lotteryShow:!1,lotteryEndShow:!1,lotteryInfo:{id:null,random:null},regSubmited:!1,giveUp:!1,gameEnd:!1,noreg:!1,ugcShow:!1,regH:100,ugcType:1,questionShow:!1,questionIndex:0,answer1:1,answer2:0,answer3:{c1:!1,c2:!1,c3:!1,c4:!1}},_defineProperty(t,"nickname",""),_defineProperty(t,"message",""),_defineProperty(t,"messageIndex",1),_defineProperty(t,"messageInput",!1),_defineProperty(t,"musicName",""),_defineProperty(t,"white",!1),_defineProperty(t,"gameEnd",!1),_defineProperty(t,"formShow",!1),_defineProperty(t,"formBoxShow",!1),_defineProperty(t,"carIndex",1),_defineProperty(t,"yearName","none"),_defineProperty(t,"list",[]),_defineProperty(t,"typeList",[]),_defineProperty(t,"insertId",0),_defineProperty(t,"type",0),_defineProperty(t,"type1",0),_defineProperty(t,"type2",0),_defineProperty(t,"type3",0),_defineProperty(t,"type1Name",""),_defineProperty(t,"type2Name",""),_defineProperty(t,"type3Name",""),_defineProperty(t,"articleInfo",{}),t),
+console.log("share href:",t),CloudMusic.sharePic({picUrl:t,text:n,link:i})},window.onload=function(){var e;return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,setShareWeb("科颜氏","欢迎参加游戏","http://m.giccoo.com/kiehls/"),init()},_shareLoaded=!(init=function e(){var t,i,n;return 1138<=TrueH&&(TrueH=1138),n=2*TrueH<1200,i=Math.ceil(TrueW/640*94/TrueH*100),TrueH=document.documentElement.clientHeight,640<=(TrueW=document.documentElement.clientWidth)&&(TrueW=640),main=new Vue({el:"#main",data:(t={w:TrueW,h:TrueH,biger:TrueW/TrueH<.55,smaller:n,afterH:n?1.15*TrueH-TrueW/750*1029:TrueH-TrueW/750*1029,wy:!1,mounted:!0,loading:!1,noteText:"",noteTime:null,noteShow:!1,pageInfoShow:!1,pageIndex:1,step:1,singerIndex:2,logo:!0,startgame:!1,folder:"",BGColor:"#ffffff",XY:"pageY",ugc:null,ugcsave:null,ugcold:null,pushed:!1,shareImageLink:null,cache:null,audioId:null,v:null,pageNote:!1,recordStarting:!1,authorization:!1,norecord:!0,uploaded:!1,imageUpdate:!1,allowPopShow:!1,count:0,videoIndex:0,videoIndexOld:0,lr:!0,mask:1,text:"",nickname:"",mobile:"",sex:0,musicLink:"",logId:"",openBtnShow:!0,default:{x:0},videoPop:!1,canUpload:!0,handCover:!1,last_update:0,lastX:0,lastY:0,lastZ:0,speed:4e3,maxSpeed:0,swing:!1,rankingShow:!1,registerShow:!1,shareNotePage:!1,lotteryShow:!1,lotteryEndShow:!1,lotteryInfo:{id:null,random:null},regSubmited:!1,giveUp:!1,gameEnd:!1,noreg:!1,ugcShow:!1,regH:100,ugcType:1,questionShow:!1,questionIndex:0,answer1:1,answer2:0,answer3:{c1:!1,c2:!1,c3:!1,c4:!1}},_defineProperty(t,"nickname",""),_defineProperty(t,"message",""),_defineProperty(t,"messageIndex",1),_defineProperty(t,"messageInput",!1),_defineProperty(t,"musicName",""),_defineProperty(t,"white",!1),_defineProperty(t,"gameEnd",!1),_defineProperty(t,"formShow",!1),_defineProperty(t,"formBoxShow",!1),_defineProperty(t,"carIndex",1),_defineProperty(t,"yearName","none"),_defineProperty(t,"list",[]),_defineProperty(t,"typeList",[]),_defineProperty(t,"insertId",0),_defineProperty(t,"type",0),_defineProperty(t,"type1",0),_defineProperty(t,"type2",0),_defineProperty(t,"type3",0),_defineProperty(t,"type1Name",""),_defineProperty(t,"type2Name",""),_defineProperty(t,"type3Name",""),_defineProperty(t,"articleInfo",{}),t),
 // watch:
 // 	type1Name: (n,o)->
 // 		if n is ""
@@ -152,7 +98,7 @@ closeUGC:function e(){return this.ugcShow=!1,ugc.shareDone()},faild:function e(t
 return window.location.href="https://music.163.com/#/song?id=".concat(t)},openMusic:function e(t){
 // goList()
 // _public.$children[0].pause()
-return CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/kiehls/")},getInfo:function e(){return console.log("get info"),axios.get("".concat(apiLink,"active/qq/adGet/id/").concat($_GET.id)).then(function(e){}).catch(function(e){return console.log("err:",e)})},getList:function e(){var t=this;return axios.get("".concat(apiLink,"active/qq/adList/")).then(function(e){return console.log("msg:",e.data.list),t.list=e.data.list}).catch(function(e){return console.log("err:",e)})},getTypeList:function e(){var t=this;return axios.get("".concat(apiLink,"active/qq/adTypeList/")).then(function(e){return console.log("msg:",e.data.list),t.typeList=e.data.list}).catch(function(e){return console.log("err:",e)})},typeToText:function e(t){var i,n,r,o;for(r=0,n=(o=this.typeList).length;r<n;r++)if((i=o[r]).id===parseInt(t))return i.name;return""},hashchange:function e(){var t,i,n;return t=window.location.href.split("#")[1],console.log(t),this.articleInfo={},document.getElementById("scrollbox").scrollTop=0,"/home"===t?this.pageIndex=1:"/list"===t?this.pageIndex=2:null!=t&&""!==t?(i=/^\/id\/(.*)/i,n=t.match(i),console.log(n),null!=n?this.article(n[1]):this.pageIndex=2):this.pageIndex=1},article:function e(t){var i=this;
+return CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https://music.163.com/#/playlist?id=".concat(t)},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/kiehls/")},getInfo:function e(){return console.log("get info"),axios.get("".concat(apiLink,"active/qq/adGet/id/").concat($_GET.id)).then(function(e){}).catch(function(e){return console.log("err:",e)})},getList:function e(){var a=this;return axios.get("".concat(apiLink,"active/qq/adList/")).then(function(e){var t,i,n,r,o;for(console.log("msg:",e.data.list),n=[],r=0,i=(o=e.data.list).length;r<i;r++)(t=o[r]).type3=t.type3.split(","),n.push(t);return a.list=n,console.log(a.list)}).catch(function(e){return console.log("err:",e)})},getTypeList:function e(){var t=this;return axios.get("".concat(apiLink,"active/qq/adTypeList/")).then(function(e){return console.log("msg:",e.data.list),t.typeList=e.data.list}).catch(function(e){return console.log("err:",e)})},typeToText:function e(t){var i,n,r,o;for(r=0,n=(o=this.typeList).length;r<n;r++)if((i=o[r]).id===parseInt(t))return i.name;return""},hashchange:function e(){var t,i,n;return t=window.location.href.split("#")[1],console.log(t),this.articleInfo={},document.getElementById("scrollbox").scrollTop=0,"/home"===t?this.pageIndex=1:"/list"===t?this.pageIndex=2:null!=t&&""!==t?(i=/^\/id\/(.*)/i,n=t.match(i),console.log(n),null!=n?this.article(n[1]):this.pageIndex=2):this.pageIndex=1},article:function e(t){var i=this;
 // console.log "id:",id
 // console.log window.location.href
 return this.pageIndex=3,axios.get("".concat(apiLink,"active/qq/adGet/id/").concat(t)).then(function(e){return i.articleInfo=e.data.info}).catch(function(e){return console.log("err:",e)})}},
