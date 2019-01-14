@@ -355,6 +355,7 @@ init = ->
 				@.pageIndex = 3
 				axios.get "#{apiLink}active/qq/adGet/id/#{id}"
 				.then (msg)=>
+					msg.data.info.title = msg.data.info.title.replace(/\n/g, '<br/>')
 					@.articleInfo = msg.data.info
 				.catch (err)=>
 					console.log "err:",err
