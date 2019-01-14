@@ -419,7 +419,6 @@ init = ->
 
 		# watch:
 		mounted: ->
-
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 			TrueW = 640 if TrueW > 640
@@ -427,25 +426,12 @@ init = ->
 			if sys is "NeteaseMusic"
 				@.wy = true
 			h = TrueH*2*(2-TrueW*2/750+0.01)
-			# game = new Game({el: "game",h: h})
-			# @.wy = CloudMusic.isInApp()
-			# version = CloudMusic.getClientVersion().split(".")
-			# @.getUserInfo (callback)=>
-				# console.log imageList,@.muiscType @.userInfo.styleTop
-			# @.ugcType = @.muiscType @.userInfo.styleTop
+			
 			imageList2 = [
 			]
 			window.imageList = window.imageList.concat(imageList2)
-			# console.log "h:",h
-			# window.onresize = ->
-			# 	console.log "resize:",document.documentElement.clientHeight
-			# main.$root.$el.addEventListener "touchstart", (evt)->
-			# 	_public.note = false
-			if $_GET["id"]?
-				@.getInfo()
-				@.pageIndex = 2
-			else
-				ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => console.log("callback") })
+			
+			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => console.log("callback") })
 			@.getTypeList()
 			@.getList()
 			window.addEventListener "hashchange", @.hashchange.bind @

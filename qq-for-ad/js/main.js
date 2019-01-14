@@ -157,18 +157,7 @@ return CloudMusic.isInApp()?CloudMusic.playlist(t):window.location.href="https:/
 // console.log window.location.href
 return this.pageIndex=3,axios.get("".concat(apiLink,"active/qq/adGet/id/").concat(t)).then(function(e){return i.articleInfo=e.data.info}).catch(function(e){return console.log("err:",e)})}},
 // watch:
-mounted:function e(){var t,i;return TrueH=document.documentElement.clientHeight,640<(TrueW=document.documentElement.clientWidth)&&(TrueW=640),"NeteaseMusic"===sys&&(this.wy=!0),t=2*TrueH*(2-2*TrueW/750+.01),// game = new Game({el: "game",h: h})
-// @.wy = CloudMusic.isInApp()
-// version = CloudMusic.getClientVersion().split(".")
-// @.getUserInfo (callback)=>
-// console.log imageList,@.muiscType @.userInfo.styleTop
-// @.ugcType = @.muiscType @.userInfo.styleTop
-i=[],window.imageList=window.imageList.concat(i),// console.log "h:",h
-// window.onresize = ->
-// 	console.log "resize:",document.documentElement.clientHeight
-// main.$root.$el.addEventListener "touchstart", (evt)->
-// 	_public.note = false
-null!=$_GET.id?(this.getInfo(),this.pageIndex=2):ugc=new UGC({el:"ugc",w:640,h:640/TrueW*TrueH,callback:function e(){return console.log("callback")}}),this.getTypeList(),this.getList(),window.addEventListener("hashchange",this.hashchange.bind(this)),this.hashchange()}})}),setShareWeb=function e(t,i,n){var r,o;// alert "cancel"
+mounted:function e(){var t,i;return TrueH=document.documentElement.clientHeight,640<(TrueW=document.documentElement.clientWidth)&&(TrueW=640),"NeteaseMusic"===sys&&(this.wy=!0),t=2*TrueH*(2-2*TrueW/750+.01),i=[],window.imageList=window.imageList.concat(i),ugc=new UGC({el:"ugc",w:640,h:640/TrueW*TrueH,callback:function e(){return console.log("callback")}}),this.getTypeList(),this.getList(),window.addEventListener("hashchange",this.hashchange.bind(this)),this.hashchange()}})}),setShareWeb=function e(t,i,n){var r,o;// alert "cancel"
 return o={name:"kiehls",title:t,subTitle:i,text:"",picUrl:"http://m.giccoo.com/kiehls/img/ico.jpg",link:n},r={title:t,desc:i,link:n,imgUrl:"http://m.giccoo.com/kiehls/img/ico.jpg",success:function e(){},
 // alert "success"
 cancel:function e(){}},-1<window.navigator.userAgent.indexOf("NeteaseMusic")?sys="NeteaseMusic":_shareLoaded?(wx.onMenuShareTimeline(r),wx.onMenuShareAppMessage(r),wx.onMenuShareQQ(r),wx.onMenuShareWeibo(r)):(loadWechatConfig(),wx.ready(function(){return _shareLoaded=!0,wx.onMenuShareTimeline(r),wx.onMenuShareAppMessage(r),wx.onMenuShareQQ(r),wx.onMenuShareWeibo(r)}))};
