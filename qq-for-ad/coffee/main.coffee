@@ -51,77 +51,16 @@ neteaseShareImage = ->
 window.onload = ->
 	TrueH = document.documentElement.clientHeight
 	TrueW = document.documentElement.clientWidth
-
 	lastY = 0
-
 	setShareWeb("科颜氏","欢迎参加游戏","http://m.giccoo.com/kiehls/")
-
-	# _public = new Vue
-	# 	el: "#public"
-	# 	data:
-	# 		wy: if sys is "NeteaseMusic" then true else false
-	# 		wx: false
-	# 		note: true
-	# 		playing: false
-	# 	methods:
-	# 		startGame: ->
-	# 			@.note = false
-	# 	mounted: ->
-	# 		document.addEventListener "WeixinJSBridgeReady", ->
-	# 			_public.wx = true
-	# 			_public.note = false
-	# 			_public.$children[0].change()
-
-	# loading = new Vue
-	# 	el: "#loading"
-	# 	data:
-	# 		progress: 0
-	# 		mounted: false
-	# 		progressOn: 0
-	# 	methods:
-	# 		next: ->
-	# 			document.getElementById('load').className += " fadeOut animated"
-	# 			main.mounted = true
-	# 			# main.init()
-	# 			setTimeout ->
-	# 				document.getElementById('load').style.display = "none"
-	# 				_public.note = false if _public.wx
-	# 				# setTimeout ->
-	# 				# 	_public.note = false if _public.wy
-	# 				# ,3000
-	# 			,520
-	# 	mounted: ->
-	# 		@.mounted = true
-	# 		TrueH = document.documentElement.clientHeight
-	# 		TrueW = document.documentElement.clientWidth
-
-	# 		# @.next() # for test
-
-	# 		timein = setInterval =>
-	# 			@.progress += 3
-	# 			@.progress = @.progressOn if @.progress >= @.progressOn
-	# 			if @.progress >= 100
-	# 				@.progress = 100
-	# 				clearInterval timein
-	# 				_cache = setTimeout =>
-	# 					@.next()
-	# 				,1000
-	# 		,1000/20
-	
 	init()
 
-
 init = ->
-	
-	# console.log new Date().getTime() - startTime
-	# document.body.style.height = TrueH+"px"
-	# document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
 	TrueH = 1138 if TrueH >= 1138
 	smaller = TrueH*2 < 1200
 	navH = Math.ceil TrueW / 640 * 94 / TrueH * 100
 	TrueH = document.documentElement.clientHeight
 	TrueW = document.documentElement.clientWidth
-	# console.log TrueW,TrueH
 	TrueW = 640 if TrueW >= 640
 
 	main = new Vue
@@ -139,7 +78,7 @@ init = ->
 			noteTime: null
 			noteShow: false
 			pageInfoShow: false
-			pageIndex: 2
+			pageIndex: 1
 			step: 1
 			singerIndex: 2
 			logo: true
@@ -166,10 +105,6 @@ init = ->
 			videoIndex: 0
 			videoIndexOld: 0
 			lr: true
-			form:
-				username: {id:"username", type: "input", label: "姓名", placeholder: "请填写姓名",value: ""}
-				mobile: {id:"mobile", type: "number", label: "电话", placeholder: "请填写电话",value: ""}
-				address: {id:"address", type: "input", label: "联系地址", placeholder: "请联系地址",value: ""}
 			mask: 1
 			text: ""
 			nickname: ""
@@ -241,6 +176,8 @@ init = ->
 		# 		if n is ""
 		# 			@.type1Name = "行业"
 		methods:
+			buildHTML: (html)->
+				return html
 			openMenu: (id)->
 				if @.type is id
 					@.type = 0
@@ -371,7 +308,13 @@ init = ->
 				axios.get "#{apiLink}active/qq/adList/"
 				.then (msg)=>
 					console.log "msg:",msg.data.list
-					@.list = msg.data.list
+					list = []
+					for item in msg.data.list
+						item.type3 = item.type3.split(",") if item.type3? and item.type3.indexOf(",") > -1
+						item.title = item.title.replace(/\n/g, '<br/>')
+						list.push item
+					@.list = list
+					console.log @.list
 				.catch (err)=>
 					console.log "err:",err
 			getTypeList: ->
@@ -400,11 +343,11 @@ init = ->
 					res = hashURL.match reg
 					console.log res
 					if res?
-						@.article res[1] 
+						@.article res[1]
 					else
 						@.pageIndex = 2
 				else
-					@.pageIndex = 2
+					@.pageIndex = 1
 
 			article: (id)->
 				# console.log "id:",id
@@ -412,6 +355,7 @@ init = ->
 				@.pageIndex = 3
 				axios.get "#{apiLink}active/qq/adGet/id/#{id}"
 				.then (msg)=>
+					msg.data.info.title = msg.data.info.title.replace(/\n/g, '<br/>')
 					@.articleInfo = msg.data.info
 				.catch (err)=>
 					console.log "err:",err
@@ -419,7 +363,6 @@ init = ->
 
 		# watch:
 		mounted: ->
-
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 			TrueW = 640 if TrueW > 640
@@ -427,30 +370,16 @@ init = ->
 			if sys is "NeteaseMusic"
 				@.wy = true
 			h = TrueH*2*(2-TrueW*2/750+0.01)
-			# game = new Game({el: "game",h: h})
-			# @.wy = CloudMusic.isInApp()
-			# version = CloudMusic.getClientVersion().split(".")
-			# @.getUserInfo (callback)=>
-				# console.log imageList,@.muiscType @.userInfo.styleTop
-			# @.ugcType = @.muiscType @.userInfo.styleTop
+			
 			imageList2 = [
 			]
 			window.imageList = window.imageList.concat(imageList2)
-			# console.log "h:",h
-			# window.onresize = ->
-			# 	console.log "resize:",document.documentElement.clientHeight
-			# main.$root.$el.addEventListener "touchstart", (evt)->
-			# 	_public.note = false
-			if $_GET["id"]?
-				@.getInfo()
-				@.pageIndex = 2
-			else
-				ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => console.log("callback") })
+			
+			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => console.log("callback") })
 			@.getTypeList()
 			@.getList()
 			window.addEventListener "hashchange", @.hashchange.bind @
 			@.hashchange()
-
 
 _shareLoaded = false
 setShareWeb = (title,desc,link)->

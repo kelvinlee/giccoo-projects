@@ -70,7 +70,7 @@
                 </transition>
               </div>
             </div>
-            <div class="items"><a v-for="item in list" v-show="(type1 == 0 || type1 == item.type1) &amp;&amp; (type2 == 0 || type2 == item.type2) &amp;&amp; (type3 == 0 || type3 == item.type3)" :href="'#/id/'+item.id" class="item pointer">
+            <div class="items"><a v-for="item in list" v-show="(type1 == 0 || type1 == item.type1) &amp;&amp; (type2 == 0 || type2 == item.type2) &amp;&amp; (type3 == 0 || (item.type3 != null &amp;&amp; item.type3.indexOf(type3+'') &gt; -1))" :href="'#/id/'+item.id" class="item pointer">
                 <div class="small-logo"><img :src="item.logo"></div>
                 <div class="title">
                   <h1 v-html="item.title"></h1>
@@ -82,7 +82,7 @@
       <transition name="page-fade">
         <div v-show="pageIndex == 3" class="page page-3">
           <div class="content">
-            <div class="header"><img src="./img/header.png"><a href="#" class="btn-back"><img src="./img/btn-back.png"></a></div>
+            <div class="header"><img src="./img/header.png"><a href="#/list" class="btn-back"><img src="./img/btn-back.png"></a></div>
             <transition name="page-fade">
               <div v-show="articleInfo.title == null" class="loading-box">
                 <div class="ball-spin-fade-loader">
@@ -101,11 +101,11 @@
               <div id="scrollbox" v-show="articleInfo.title != null" class="scroll-box">
                 <div class="logo"><img :src="articleInfo.logo"></div>
                 <div class="title">
-                  <h1>{{articleInfo.title}}</h1>
+                  <h1 v-html="articleInfo.title"></h1>
                   <p>{{articleInfo.subtitle}}</p>
                 </div>
                 <article v-html="articleInfo.textarea" class="w-e-text"></article>
-                <div class="btns"><a href="#" class="btn">返回案例首页</a></div>
+                <div class="btns"><a href="#/list" class="btn">返回案例首页</a></div>
                 <div class="footer"><img src="./img/qrcode.png"></div>
               </div>
             </transition>
