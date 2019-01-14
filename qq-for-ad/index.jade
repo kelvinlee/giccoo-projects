@@ -67,7 +67,7 @@ block content
 
   //-     p.centeralign Loading {{progress}}%
   
-  .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",:style="{width: w+'px',height: h+'px'}",style="display: none")
+  .main#main(v-show="mounted",:class="{biger: biger, smaller:smaller}",style="display: none")
     //- transition(name="page-fade")    
       .logo(v-show="logo")
         img(src="#{url}/img/logo.png")
@@ -95,8 +95,67 @@ block content
     transition(name="page-fade")
       .page.page-2(v-show="pageIndex == 2")
         .content
-
+          .banner
+            img(src="#{url}/img/banner.png")
+          .types-box
+            .btn.pointer(@click="openMenu(1)",:class="{on: type == 1}")
+              p {{type1Name==""?"行业":type1Name}}
+              transition(name="page-fade")
+                .drop-menu(v-show="type == 1")
+                  .a.pointer(@click="selectType(1,'',0)",:class="{on: type1==0}") 全部
+                  .a.pointer(v-for="item in typeList",v-if="item.type == 1",@click="selectType(1,item.name,item.id)",:class="{on: item.id == type1}") {{item.name}}
+            .btn.pointer(@click="openMenu(2)",:class="{on: type == 2}")
+              p {{type2Name==""?"推广目标":type2Name}}
+              transition(name="page-fade")
+                .drop-menu(v-show="type == 2")
+                  .a.pointer(@click="selectType(2,'',0)",:class="{on: type2==0}") 全部
+                  .a.pointer(v-for="item in typeList",v-if="item.type == 2",@click="selectType(2,item.name,item.id)",:class="{on: item.id == type2}") {{item.name}}
+            .btn.pointer(@click="openMenu(3)",:class="{on: type == 3}")
+              p {{type3Name==""?"广告资源":type3Name}}
+              transition(name="page-fade")
+                .drop-menu(v-show="type == 3")
+                  .a.pointer(@click="selectType(3,'',0)",:class="{on: type3==0}") 全部
+                  .a.pointer(v-for="item in typeList",v-if="item.type == 3",@click="selectType(3,item.name,item.id)",:class="{on: item.id == type3}") {{item.name}}
+          .items
+            a.item.pointer(v-for="item in list",v-show="(type1 == 0 || type1 == item.type1) && (type2 == 0 || type2 == item.type2) && (type3 == 0 || type3 == item.type3)",:href="'#/id/'+item.id")
+              .small-logo
+                img(:src="item.logo")
+              .title
+                h1(v-html="item.title")
+              .types {{item.brand}}/{{typeToText(item.type2)}}
     
+    transition(name="page-fade")
+      .page.page-3(v-show="pageIndex == 3")
+        .content
+          .header
+            img(src="#{url}/img/header.png")
+            a.btn-back(href="#")
+              img(src="#{url}/img/btn-back.png")
+          transition(name="page-fade")
+            .loading-box(v-show="articleInfo.title == null")
+              .ball-spin-fade-loader
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+          transition(name="page-fade")
+            #scrollbox.scroll-box(v-show="articleInfo.title != null")
+              .logo
+                img(:src="articleInfo.logo")
+              .title
+                h1 {{articleInfo.title}}
+                p {{articleInfo.subtitle}}
+              article.w-e-text(v-html="articleInfo.textarea")
+              .btns
+                a.btn(href="#") 返回案例首页
+              .footer
+                img(src="#{url}/img/qrcode.png")
+
+
 
 
 block js
@@ -105,13 +164,8 @@ block js
   //- script(src="//image.giccoo.com/projects/libs/js/min/fastclick.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
-  //- script(src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js")
   script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
-  //- script(src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js")
-  script(src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js")
-  script(src="//image.giccoo.com/projects/genki/js/ntes.id.js")
-  //- script(src="/libs/js/min/bump-min.js")
   script(src="js/public_funciton.js")
   script(src="js/build.js?v=1")
   script(src="js/main.js?v=1")
