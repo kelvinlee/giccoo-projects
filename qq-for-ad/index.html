@@ -82,7 +82,7 @@
       <transition name="page-fade">
         <div v-show="pageIndex == 3" class="page page-3">
           <div class="content">
-            <div class="header"><img src="./img/header.png"><a href="#" class="btn-back"><img src="./img/btn-back.png"></a></div>
+            <div class="header"><img src="./img/header.png"><a href="#/list" class="btn-back"><img src="./img/btn-back.png"></a></div>
             <transition name="page-fade">
               <div v-show="articleInfo.title == null" class="loading-box">
                 <div class="ball-spin-fade-loader">
@@ -105,7 +105,7 @@
                   <p>{{articleInfo.subtitle}}</p>
                 </div>
                 <article v-html="articleInfo.textarea" class="w-e-text"></article>
-                <div class="btns"><a href="#" class="btn">返回案例首页</a></div>
+                <div class="btns"><a href="#/list" class="btn">返回案例首页</a></div>
                 <div class="footer"><img src="./img/qrcode.png"></div>
               </div>
             </transition>

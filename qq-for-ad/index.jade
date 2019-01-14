@@ -129,7 +129,7 @@ block content
         .content
           .header
             img(src="#{url}/img/header.png")
-            a.btn-back(href="#")
+            a.btn-back(href="#/list")
               img(src="#{url}/img/btn-back.png")
           transition(name="page-fade")
             .loading-box(v-show="articleInfo.title == null")
@@ -151,7 +151,7 @@ block content
                 p {{articleInfo.subtitle}}
               article.w-e-text(v-html="articleInfo.textarea")
               .btns
-                a.btn(href="#") 返回案例首页
+                a.btn(href="#/list") 返回案例首页
               .footer
                 img(src="#{url}/img/qrcode.png")
 

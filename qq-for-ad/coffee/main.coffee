@@ -139,7 +139,7 @@ init = ->
 			noteTime: null
 			noteShow: false
 			pageInfoShow: false
-			pageIndex: 2
+			pageIndex: 1
 			step: 1
 			singerIndex: 2
 			logo: true
@@ -400,11 +400,11 @@ init = ->
 					res = hashURL.match reg
 					console.log res
 					if res?
-						@.article res[1] 
+						@.article res[1]
 					else
 						@.pageIndex = 2
 				else
-					@.pageIndex = 2
+					@.pageIndex = 1
 
 			article: (id)->
 				# console.log "id:",id
