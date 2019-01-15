@@ -8855,17 +8855,6 @@
 		"oAP": "/build/qa",
 		"oF": 0
 		},
-	"/qq-for-ad/arrow1.png": {
-		"ft": 32768,
-		"iS": 1828,
-		"oA": 0,
-		"oAP": "/qq-for-ad/arrow1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"/qq-for-ad/coffee/main.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -9333,17 +9322,6 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
-		},
-	"/qq-for-ad/logo1.png": {
-		"ft": 32768,
-		"iS": 4338,
-		"oA": 0,
-		"oAP": "/qq-for-ad/logo1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
 		},
 	"/qq-for-ad/sass/base.sass": {
 		"aP": 1,
