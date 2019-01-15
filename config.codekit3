@@ -6287,6 +6287,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/kiehls/img/ico.jpg": {
+		"ft": 16384,
+		"iS": 29447,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/kiehls/img/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
 	"/kiehls/img/icon-close.png": {
 		"ft": 32768,
 		"iS": 4712,

@@ -38,7 +38,7 @@ _testTime = 0
 neteaseShareImage = ->
 	title1 = "点播圣诞星声"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://activity.music.163.com/kiehls/"
+	redirectUrl = "htts://m.giccoo.com/kiehls/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	# window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "share href:",picUrl
@@ -54,7 +54,7 @@ window.onload = ->
 
 	lastY = 0
 
-	setShareWeb("科颜氏","欢迎参加游戏","http://m.giccoo.com/kiehls/")
+	setShareWeb("科颜氏极限冲浪保湿挑战赛","快来挑战我把！","http://m.giccoo.com/kiehls/")
 
 	_public = new Vue
 		el: "#public"
@@ -471,7 +471,7 @@ init = ->
 				.then (msg)=>
 					console.log "msg:",msg.data
 					if msg.data.code is 200
-						setShareWeb("你的好友获得了#{score}分,要来挑战一下吗?","欢迎参加游戏","http://m.giccoo.com/kiehls/?id=#{msg.data.info.insertId}")
+						setShareWeb("我在科颜氏极限冲浪保湿挑战赛中获得了#{score}分","快来挑战我把！","http://m.giccoo.com/kiehls/?id=#{msg.data.info.insertId}")
 						@.getList() if @.score > @.list[@.list.length-1].score
 						@.insertId = msg.data.info.insertId
 					else

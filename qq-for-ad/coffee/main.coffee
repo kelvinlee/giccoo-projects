@@ -332,8 +332,10 @@ init = ->
 			hashchange: ->
 				hashURL = window.location.href.split("#")[1]
 				console.log hashURL
-				@.articleInfo = {}
-				document.getElementById("scrollbox").scrollTop = 0
+				_cache = setTimeout =>
+					@.articleInfo = {}
+					document.getElementById("scrollbox").scrollTop = 0
+				,300
 				if hashURL is "/home"
 					@.pageIndex = 1
 				else if hashURL is "/list"
@@ -343,6 +345,7 @@ init = ->
 					res = hashURL.match reg
 					console.log res
 					if res?
+						clearTimeout _cache
 						@.article res[1]
 					else
 						@.pageIndex = 2

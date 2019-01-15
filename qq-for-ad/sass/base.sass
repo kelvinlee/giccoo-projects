@@ -916,8 +916,9 @@ video,canvas,svg
 			h1
 				+m
 				+font-size(0.8rem)
-				font-weight: normal
+				font-weight: bold
 				line-height: 1.6em
+				letter-spacing: 0.1em
 				+w(80%)
 
 		.types
@@ -939,8 +940,11 @@ video,canvas,svg
 		font-weight: normal
 		+posr
 		z-index: 3
-		+m(1.5em auto)
+		+m(1.75em auto)
 		text-indent: 0.15em
+		margin-top: 1.75em*2
+		&:first-child
+			margin-top: 1.75em
 		&:before
 			content: " "
 			+w
