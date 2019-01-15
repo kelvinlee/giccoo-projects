@@ -36,17 +36,7 @@ _testTime = 0
 
 
 neteaseShareImage = ->
-	title1 = "点播圣诞星声"
-	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://activity.music.163.com/kiehls/"
-	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
-	# window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
-	console.log "share href:",picUrl
-	CloudMusic.sharePic({
-		picUrl: picUrl,
-		text: title1,
-		link: redirectUrl
-	})
+	
 
 window.onload = ->
 	TrueH = document.documentElement.clientHeight
@@ -391,32 +381,32 @@ setShareWeb = (title,desc,link)->
 		title: title
 		subTitle: desc
 		text: ''
-		picUrl: 'http://m.giccoo.com/kiehls/img/ico.jpg'
+		picUrl: './img/ico.jpg'
 		link: link
 	shareContent =
 		title: title
 		desc: desc
 		link: link
-		imgUrl: "http://m.giccoo.com/kiehls/img/ico.jpg"
+		imgUrl: "./img/ico.jpg"
 		success: ->
 			# alert "success"
 		cancel: ->
 			# alert "cancel"
-	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
-		sys = "NeteaseMusic"
-		# CloudMusic.setShareData shareData
-	else if not _shareLoaded
-		loadWechatConfig()
-		wx.ready ->
-			_shareLoaded = true
-			wx.onMenuShareTimeline shareContent
-			wx.onMenuShareAppMessage shareContent
-			wx.onMenuShareQQ shareContent
-			wx.onMenuShareWeibo shareContent
-	else
-		wx.onMenuShareTimeline shareContent
-		wx.onMenuShareAppMessage shareContent
-		wx.onMenuShareQQ shareContent
-		wx.onMenuShareWeibo shareContent
+	# if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
+	# 	sys = "NeteaseMusic"
+	# 	# CloudMusic.setShareData shareData
+	# else if not _shareLoaded
+	# 	loadWechatConfig()
+	# 	wx.ready ->
+	# 		_shareLoaded = true
+	# 		wx.onMenuShareTimeline shareContent
+	# 		wx.onMenuShareAppMessage shareContent
+	# 		wx.onMenuShareQQ shareContent
+	# 		wx.onMenuShareWeibo shareContent
+	# else
+	# 	wx.onMenuShareTimeline shareContent
+	# 	wx.onMenuShareAppMessage shareContent
+	# 	wx.onMenuShareQQ shareContent
+	# 	wx.onMenuShareWeibo shareContent
 
 
