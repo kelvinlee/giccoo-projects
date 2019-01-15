@@ -142,7 +142,7 @@ i=[],window.imageList=window.imageList.concat(i),ugc=new UGC({el:"ugc",w:640,h:6
 // 	_public.note = false
 this.getInfo(),this.getList()}})}),setShareWeb=function e(t,i,n){var r,o;return o={name:"kiehls",title:t,subTitle:i,text:"",picUrl:"http://m.giccoo.com/kiehls/img/ico.jpg",link:n},r={title:t,desc:i,link:n,imgUrl:"http://m.giccoo.com/kiehls/img/ico.jpg",success:function e(){
 // alert "success"
-return this.getLottery(),this.shareNotePage=!1},cancel:function e(){
+return main.getLottery(),main.shareNotePage=!1},cancel:function e(){
 // alert "cancel"
-return this.getLottery(),this.shareNotePage=!1}},-1<window.navigator.userAgent.indexOf("NeteaseMusic")?(sys="NeteaseMusic",CloudMusic.setShareData(o)):_shareLoaded?(wx.onMenuShareTimeline(r),wx.onMenuShareAppMessage(r),wx.onMenuShareQQ(r),wx.onMenuShareWeibo(r)):(loadWechatConfig(),wx.ready(function(){return _shareLoaded=!0,wx.onMenuShareTimeline(r),wx.onMenuShareAppMessage(r),wx.onMenuShareQQ(r),wx.onMenuShareWeibo(r)}))};
+return main.getLottery(),main.shareNotePage=!1}},-1<window.navigator.userAgent.indexOf("NeteaseMusic")?(sys="NeteaseMusic",CloudMusic.setShareData(o)):_shareLoaded?(wx.onMenuShareTimeline(r),wx.onMenuShareAppMessage(r),wx.onMenuShareQQ(r),wx.onMenuShareWeibo(r)):(loadWechatConfig(),wx.ready(function(){return _shareLoaded=!0,wx.onMenuShareTimeline(r),wx.onMenuShareAppMessage(r),wx.onMenuShareQQ(r),wx.onMenuShareWeibo(r)}))};
 //# sourceMappingURL=main.js.map

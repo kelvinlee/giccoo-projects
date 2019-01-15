@@ -588,12 +588,12 @@ setShareWeb = (title,desc,link)->
 		imgUrl: "http://m.giccoo.com/kiehls/img/ico.jpg"
 		success: ->
 			# alert "success"
-			@.getLottery()
-			@.shareNotePage = false
+			main.getLottery()
+			main.shareNotePage = false
 		cancel: ->
 			# alert "cancel"
-			@.getLottery()
-			@.shareNotePage = false
+			main.getLottery()
+			main.shareNotePage = false
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
 		CloudMusic.setShareData shareData
