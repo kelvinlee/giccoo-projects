@@ -11,9 +11,9 @@ function setPage1 () {
 
 	
 	setBG()
-	setTitle()
-	setDot()
-	setT()
+	// setTitle()
+	// setDot()
+	// setT()
 
 
 	logo=new Sprite(getTe(_CDN+"img/logo1.png"));
@@ -24,6 +24,13 @@ function setPage1 () {
 
 	pStage.interactive=true
 	pStage.tap=goNext
+}
+
+function goOther(){
+	setTitle()
+	setDot()
+	setT()
+	pStage.addChild(logo,arrow)
 }
 
 function goNext(){
@@ -50,6 +57,8 @@ function setBG(){
 	bgBar3=new Sprite(getTe(_CDN+"img/bard1.png"));
 	bgBar4=new Sprite(getTe(_CDN+"img/bard2.png"));
 	bgBar5=new Sprite(getTe(_CDN+"img/bard3.png"));
+
+	TweenMax.from(bg,1,{alpha:0,onComplete:goOther})
 
 	bgC.addChild(bg,bgBar1,bgBar2,bgBar3,bgBar4,bgBar5)
 
