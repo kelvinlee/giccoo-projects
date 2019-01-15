@@ -319,13 +319,14 @@ init = ->
 			shareWeb:->
 				if sys is "NeteaseMusic"
 					CloudMusic.shareInApp()
+					_cache = setTimeout =>
+						@.getLottery()
+						@.shareNotePage = false
+					,5000
 				else
 					@.shareNotePage = true
 				clearTimeout _cache
-				_cache = setTimeout =>
-					@.getLottery()
-					@.shareNotePage = false
-				,5000
+				
 			share: ->
 				# goFinal2()
 				@.formBoxShow = false
@@ -354,7 +355,7 @@ init = ->
 							main.faild(msg)
 					.catch (e)=>
 						# alert e
-						main.faild(e)		
+						main.faild(e)
 				else
 					@.ugcShow = true
 					# ugc.back()
@@ -469,15 +470,16 @@ init = ->
 				axios.post "#{apiLink}active/kiehls/score/",data
 				.then (msg)=>
 					console.log "msg:",msg.data
-					setShareWeb("你的好友获得了#{score}分,要来挑战一下吗?","欢迎参加游戏","http://m.giccoo.com/kiehls/?id=#{msg.data.info.insertId}")
-					@.getList() if @.score > @.list[@.list.length-1].score
-					@.insertId = msg.data.info.insertId
+					if msg.data.code is 200
+						setShareWeb("你的好友获得了#{score}分,要来挑战一下吗?","欢迎参加游戏","http://m.giccoo.com/kiehls/?id=#{msg.data.info.insertId}")
+						@.getList() if @.score > @.list[@.list.length-1].score
+						@.insertId = msg.data.info.insertId
+					else
+						@.send msg.data.reason
 					
 				.catch (err)=>
 					console.log "err:",err
-					@.send "请求错误,请重试"
-
-
+					@.send "请求错误,请重试: #{JSON.stringify(err)}"
 
 			startGame: ->
 				# console.log "start game"
@@ -586,8 +588,12 @@ setShareWeb = (title,desc,link)->
 		imgUrl: "http://m.giccoo.com/kiehls/img/ico.jpg"
 		success: ->
 			# alert "success"
+			@.getLottery()
+			@.shareNotePage = false
 		cancel: ->
 			# alert "cancel"
+			@.getLottery()
+			@.shareNotePage = false
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
 		CloudMusic.setShareData shareData
