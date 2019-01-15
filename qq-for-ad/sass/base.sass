@@ -847,6 +847,7 @@ video,canvas,svg
 			+font-size(0.8rem)
 			+m
 			color: #091b3a
+			letter-spacing: 0.1em
 		p
 			+font-size(0.7rem)
 			+m
@@ -893,16 +894,16 @@ video,canvas,svg
 		letter-spacing: 0.1em
 		+tran
 		+posr
-		&:hover
-			+transform("translate3d(0,-3px,0)")
-			box-shadow: 3px 3px 10px rgba(0,0,0,0.1), -3px 3px 10px rgba(0,0,0,0.1)
-			&:after
-				content: " "
-				+posa
-				+tl
-				+wh(100%,2px)
-				+bc(#008cec)
-				+animation(fadeIn,0.7s,ease)
+		// &:hover
+		// 	+transform("translate3d(0,-3px,0)")
+		// 	box-shadow: 3px 3px 10px rgba(0,0,0,0.1), -3px 3px 10px rgba(0,0,0,0.1)
+		// 	&:after
+		// 		content: " "
+		// 		+posa
+		// 		+tl
+		// 		+wh(100%,2px)
+		// 		+bc(#008cec)
+		// 		+animation(fadeIn,0.7s,ease)
 		.small-logo
 			// +wh(64px,64px)
 			font-size: 0
@@ -939,6 +940,7 @@ video,canvas,svg
 		+posr
 		z-index: 3
 		+m(1.5em auto)
+		text-indent: 0.15em
 		&:before
 			content: " "
 			+w
@@ -949,19 +951,20 @@ video,canvas,svg
 			z-index: -1
 		&:after
 			content: " "
-			+w(25%)
+			+w(30%)
 			+h
 			+bc(#fff)
 			+posa
-			+tl(0,50%-25%/2)
+			+tl(0,50%-30%/2)
 			z-index: -1
 	h1 
 		color: #091b3a
 		+font-size(0.8rem)
 		+text-center
-		font-weight: normal
+		font-weight: bold
 		line-height: 1.6em
 		+p(0 1em)
+		letter-spacing: 0.1em
 		p
 			color: #091b3a
 	p
