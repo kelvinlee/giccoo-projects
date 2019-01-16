@@ -307,7 +307,7 @@ init = ->
 			getList: ->
 				axios.get "#{apiLink}active/qq/adList/"
 				.then (msg)=>
-					console.log "msg:",msg.data.list
+					# console.log "msg:",msg.data.list
 					list = []
 					for item in msg.data.list
 						item.type3 = item.type3.split(",") if item.type3? and item.type3.indexOf(",") > -1
@@ -320,7 +320,7 @@ init = ->
 			getTypeList: ->
 				axios.get "#{apiLink}active/qq/adTypeList/"
 				.then (msg)=>
-					console.log "msg:",msg.data.list
+					# console.log "msg:",msg.data.list
 					@.typeList = msg.data.list
 				.catch (err)=>
 					console.log "err:",err

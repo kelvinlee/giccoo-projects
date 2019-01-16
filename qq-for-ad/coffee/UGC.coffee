@@ -45,7 +45,7 @@ class UGC
 		@.app.view.className = @.opts.class if @.opts.class? and @.opts.class isnt ""
 		@.stage = @.app.stage
 		document.getElementById(@.opts.el).appendChild @.app.view
-		console.log "imageList:",imageList.length
+		# console.log "imageList:",imageList.length
 		PIXI.loader.add(imageList)
 		.use(@.loaditem.bind(@))
 		.load(@.build.bind(@))
@@ -53,7 +53,7 @@ class UGC
 	loaditem: ->
 		@.loadNumber++
 		loading.progressOn = parseInt @.loadNumber/(imageList.length)*100
-		console.log "load:",@.loadNumber,loading.progressOn,@.loadNumber is imageList.length
+		# console.log "load:",@.loadNumber,loading.progressOn,@.loadNumber is imageList.length
 
 		if @.loadNumber is imageList.length
 			buildUGC.bind(@).call()
