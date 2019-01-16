@@ -54,7 +54,7 @@ window.onload = ->
 
 	lastY = 0
 
-	setShareWeb("科颜氏极限冲浪保湿挑战赛","快来挑战我把！","http://m.giccoo.com/kiehls/")
+	setShareWeb("科颜氏极限冲浪保湿挑战赛","快来挑战我吧！","http://m.giccoo.com/kiehls/")
 
 	_public = new Vue
 		el: "#public"
@@ -471,7 +471,7 @@ init = ->
 				.then (msg)=>
 					console.log "msg:",msg.data
 					if msg.data.code is 200
-						setShareWeb("我在科颜氏极限冲浪保湿挑战赛中获得了#{score}分","快来挑战我把！","http://m.giccoo.com/kiehls/?id=#{msg.data.info.insertId}")
+						setShareWeb("我在科颜氏极限冲浪保湿挑战赛中获得了#{score}分","快来挑战我吧！","http://m.giccoo.com/kiehls/?id=#{msg.data.info.insertId}")
 						@.getList() if @.score > @.list[@.list.length-1].score
 						@.insertId = msg.data.info.insertId
 					else
