@@ -38,44 +38,46 @@
         </div>
       </transition>
       <transition name="page-fade">
-        <div v-show="pageIndex == 2" class="page page-2">
+        <div v-show="mainPage" class="page page-2">
           <div class="content">
             <div class="banner"><img src="./img/banner.png"></div>
             <div class="types-box">
               <div @click="openMenu(1)" :class="{on: type == 1}" class="btn pointer">
-                <p>{{type1Name==""?"行业":type1Name}}</p>
+                <p>{{type1Name==""?"全部行业":type1Name}}</p>
                 <transition name="page-fade">
                   <div v-show="type == 1" class="drop-menu">
-                    <div @click="selectType(1,'',0)" :class="{on: type1==0}" class="a pointer">全部</div>
-                    <div v-for="item in typeList" v-if="item.type == 1" @click="selectType(1,item.name,item.id)" :class="{on: item.id == type1}" class="a pointer">{{item.name}}</div>
+                    <div @click="selectType(1,'',0)" v-show="type1 != 0" :class="{on: type1==0}" class="a pointer">全部行业</div>
+                    <div v-for="item in typeList" v-show="item.id != type1" v-if="item.type == 1" @click="selectType(1,item.name,item.id)" :class="{on: item.id == type1}" class="a pointer">{{item.name}}</div>
                   </div>
                 </transition>
               </div>
               <div @click="openMenu(2)" :class="{on: type == 2}" class="btn pointer">
-                <p>{{type2Name==""?"推广目标":type2Name}}</p>
+                <p>{{type2Name==""?"全部推广目标":type2Name}}</p>
                 <transition name="page-fade">
                   <div v-show="type == 2" class="drop-menu">
-                    <div @click="selectType(2,'',0)" :class="{on: type2==0}" class="a pointer">全部</div>
-                    <div v-for="item in typeList" v-if="item.type == 2" @click="selectType(2,item.name,item.id)" :class="{on: item.id == type2}" class="a pointer">{{item.name}}</div>
+                    <div @click="selectType(2,'',0)" v-show="type2 != 0" :class="{on: type2==0}" class="a pointer">全部推广目标</div>
+                    <div v-for="item in typeList" v-show="item.id != type2" v-if="item.type == 2" @click="selectType(2,item.name,item.id)" :class="{on: item.id == type2}" class="a pointer">{{item.name}}</div>
                   </div>
                 </transition>
               </div>
               <div @click="openMenu(3)" :class="{on: type == 3}" class="btn pointer">
-                <p>{{type3Name==""?"广告资源":type3Name}}</p>
+                <p>{{type3Name==""?"全部广告资源":type3Name}}</p>
                 <transition name="page-fade">
                   <div v-show="type == 3" class="drop-menu">
-                    <div @click="selectType(3,'',0)" :class="{on: type3==0}" class="a pointer">全部</div>
-                    <div v-for="item in typeList" v-if="item.type == 3" @click="selectType(3,item.name,item.id)" :class="{on: item.id == type3}" class="a pointer">{{item.name}}</div>
+                    <div @click="selectType(3,'',0)" v-show="type3 != 0" :class="{on: type3==0}" class="a pointer">全部广告资源</div>
+                    <div v-for="item in typeList" v-show="item.id != type3" v-if="item.type == 3" @click="selectType(3,item.name,item.id)" :class="{on: item.id == type3}" class="a pointer">{{item.name}}</div>
                   </div>
                 </transition>
               </div>
             </div>
-            <div @touchstart="type = 0" class="items"><a v-for="item in list" v-show="(type1 == 0 || type1 == item.type1) &amp;&amp; (type2 == 0 || type2 == item.type2) &amp;&amp; (type3 == 0 || (item.type3 != null &amp;&amp; item.type3.indexOf(type3+'') &gt; -1))" :href="'#/id/'+item.id" class="item pointer">
+            <div @touchstart="type = 0" class="items"><a v-for="item,index in list" v-show="checkShow(index,(type1 == 0 || type1 == item.type1) &amp;&amp; (type2 == 0 || type2 == item.type2) &amp;&amp; (type3 == 0 || (item.type3 != null &amp;&amp; item.type3.indexOf(type3+'') &gt; -1)))" :href="'#/id/'+item.id" class="item pointer">
                 <div class="small-logo"><img :src="item.logo"></div>
                 <div class="title">
                   <h1 v-html="item.title"></h1>
                 </div>
-                <div class="types">{{item.brand}}/{{typeToText(item.type2)}}</div></a></div>
+                <div class="types">{{item.brand}}/{{typeToText(item.type2)}}</div></a>
+              <div v-show="!(typeShows.indexOf(true) &gt; -1)" class="empty"> </div>
+            </div>
           </div>
         </div>
       </transition>
@@ -114,10 +116,10 @@
       </transition>
     </div>
     <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
-    <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
-    <script src="//image.giccoo.com/projects/libs/js/min/pixi.min.js"></script>
-    <script src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
-    <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/pixi.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/axios.min.js"></script>
     <script src="js/public_funciton.js"></script>
     <script src="js/build.js?v=1"></script>
     <script src="js/main.js?v=1"></script>

@@ -147,11 +147,13 @@ init = ->
 			white: false
 			gameEnd: false
 			formShow: false
+			mainPage: false
 			formBoxShow: false
 			carIndex: 1
 			yearName: "none"
 			list: []
 			typeList: []
+			typeShows: [true]
 			insertId: 0
 			type: 0
 			type1: 0
@@ -161,6 +163,7 @@ init = ->
 			type2Name: ""
 			type3Name: ""
 			articleInfo: {}
+
 		# watch:
 		# 	type1Name: (n,o)->
 		# 		if n is ""
@@ -181,6 +184,13 @@ init = ->
 					@["type"+type] = id
 					@["type"+type+"Name"] = name
 				console.log @.type1,@.type2,@.type3
+				console.log @.typeShows
+				# setTimeout =>
+
+				# ,200
+			checkShow: (index,bool)->
+				@.typeShows[index] = bool
+				return bool
 			prev: ->
 				@.$children[0].prev()
 			next: ->
@@ -331,6 +341,7 @@ init = ->
 					@.pageIndex = 1
 				else if hashURL is "/list"
 					@.pageIndex = 2
+					@.mainPage = true
 				else if hashURL? and hashURL isnt ""
 					reg = /^\/id\/(.*)/i
 					res = hashURL.match reg
@@ -340,9 +351,9 @@ init = ->
 						@.article res[1]
 					else
 						@.pageIndex = 2
+						@.mainPage = true
 				else
 					@.pageIndex = 1
-
 			article: (id)->
 				# console.log "id:",id
 				# console.log window.location.href
@@ -353,7 +364,7 @@ init = ->
 					@.articleInfo = msg.data.info
 				.catch (err)=>
 					console.log "err:",err
-
+			
 
 		# watch:
 		mounted: ->
@@ -369,7 +380,11 @@ init = ->
 			]
 			window.imageList = window.imageList.concat(imageList2)
 			
-			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => console.log("callback") })
+			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => 
+				setTimeout => 
+					@.mainPage = true 
+				,1200
+			})
 			@.getTypeList()
 			@.getList()
 			window.addEventListener "hashchange", @.hashchange.bind @
