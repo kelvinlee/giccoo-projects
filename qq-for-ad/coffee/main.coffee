@@ -326,6 +326,7 @@ init = ->
 					@.articleInfo = {}
 					document.getElementById("scrollbox").scrollTop = 0
 				,300
+				@.type = 0
 				if hashURL is "/home"
 					@.pageIndex = 1
 				else if hashURL is "/list"

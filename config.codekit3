@@ -8927,61 +8927,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/qq-for-ad/img/bard1.png": {
-		"ft": 32768,
-		"iS": 3566,
-		"oA": 0,
-		"oAP": "/qq-for-ad/img/bard1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/qq-for-ad/img/bard2.png": {
-		"ft": 32768,
-		"iS": 18843,
-		"oA": 0,
-		"oAP": "/qq-for-ad/img/bard2.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/qq-for-ad/img/bard3.png": {
-		"ft": 32768,
-		"iS": 16535,
-		"oA": 0,
-		"oAP": "/qq-for-ad/img/bard3.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/qq-for-ad/img/bart1.png": {
-		"ft": 32768,
-		"iS": 20328,
-		"oA": 0,
-		"oAP": "/qq-for-ad/img/bart1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/qq-for-ad/img/bart2.png": {
-		"ft": 32768,
-		"iS": 15426,
-		"oA": 0,
-		"oAP": "/qq-for-ad/img/bart2.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"/qq-for-ad/img/bgc.png": {
 		"ft": 32768,
 		"iS": 4234,
@@ -9031,17 +8976,6 @@
 		"iS": 4338,
 		"oA": 0,
 		"oAP": "/qq-for-ad/img/logo1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/qq-for-ad/img/p1bar.png": {
-		"ft": 32768,
-		"iS": 15268,
-		"oA": 0,
-		"oAP": "/qq-for-ad/img/p1bar.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -9283,16 +9217,6 @@
 		"oAP": "/qq-for-ad/index.html",
 		"oF": 0,
 		"oS": 0
-		},
-	"/qq-for-ad/js/ani.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "/qq-for-ad/js/ani-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
 		},
 	"/qq-for-ad/js/build.js": {
 		"ft": 64,
