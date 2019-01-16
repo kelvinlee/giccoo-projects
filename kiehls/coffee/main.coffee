@@ -229,33 +229,33 @@ init = ->
 			insertId: 0
 			score: 0
 			hit: 1
-		watch:
-			nickname: (n,o)->
-				@.nickname = @.nickname.replace(/[\r\n]/g, "")
-				# console.log "n,o:",n,o
-				nickNameText = new Text "#{n} ",{fontFamily : 'Arial', fontSize: 32, fontWeight: "normal", fill : 0x6d4222, letterSpacing: 2, lineHeight: 40}
-				console.log "width:",nickNameText.width
-				if nickNameText.width > 296
-					# @.nickname = o
-					t = @.nickname.split("")
-					tx = ""
-					for i in [0...(t.length-1)]
-						tx += t[i]
-					@.nickname = tx
-					console.log tx
-					return false
+		# watch:
+		# 	nickname: (n,o)->
+		# 		@.nickname = @.nickname.replace(/[\r\n]/g, "")
+		# 		# console.log "n,o:",n,o
+		# 		nickNameText = new Text "#{n} ",{fontFamily : 'Arial', fontSize: 32, fontWeight: "normal", fill : 0x6d4222, letterSpacing: 2, lineHeight: 40}
+		# 		console.log "width:",nickNameText.width
+		# 		if nickNameText.width > 296
+		# 			# @.nickname = o
+		# 			t = @.nickname.split("")
+		# 			tx = ""
+		# 			for i in [0...(t.length-1)]
+		# 				tx += t[i]
+		# 			@.nickname = tx
+		# 			console.log tx
+		# 			return false
 				
 
-			message: (n,o)->
-				@.message = @.message.replace(/[\r\n]/g, "")
-				if @.message.length > 100#gblen() > 64
-					t = @.message.split("")
-					tx = ""
-					for i in t
-						tx += i
-						break if tx.length >= 100#gblen() >= 64
-					@.message = tx
-					return false
+		# 	message: (n,o)->
+		# 		@.message = @.message.replace(/[\r\n]/g, "")
+		# 		if @.message.length > 100#gblen() > 64
+		# 			t = @.message.split("")
+		# 			tx = ""
+		# 			for i in t
+		# 				tx += i
+		# 				break if tx.length >= 100#gblen() >= 64
+		# 			@.message = tx
+		# 			return false
 		methods:
 			openYear: (year)->
 				@.yearName = year
