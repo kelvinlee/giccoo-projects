@@ -34,6 +34,7 @@ var imageList = [
 	_CDN+"img/t5.png",
 
 	_CDN+"img/arrow1.png",
+	_CDN+"img/page.png",
 
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
