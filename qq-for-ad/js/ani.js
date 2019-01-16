@@ -62,9 +62,9 @@ function goNext(){
 	// TweenMax.to(pStage,.5,{alpha:0,onComplete:gogogo})
 	// TweenMax.to(pStage.scale,.5,{x:2,y:2,onComplete:gogogo})
 	page.scale.x=page.scale.y=0
-	TweenMax.to(maskAll,1,{y:-stageH-640,onComplete:gogogo})
-	TweenMax.to(page,1,{y:-640})
-	TweenMax.to(page.scale,.1,{x:1,y:1})
+	TweenMax.to(maskAll,1,{y:-stageH-640,ease:Linear.easeNone,onComplete:gogogo})
+	TweenMax.to(page,1,{y:-640,ease:Linear.easeNone})
+	TweenMax.to(page.scale,640/(stageH+640),{x:1,y:1,ease:Linear.easeNone})
 }
 function gogogo(){
 	console.log("跳转")

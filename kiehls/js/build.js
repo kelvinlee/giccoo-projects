@@ -86,7 +86,7 @@ function pageLoop(){
 	playerV-=_G
 
 	for (var i = 0; i < waveA.length; i++) {
-		if(playerC.x>=waveA[i].x+80-50	&&	playerC.x<=waveA[i].x+364-40	&&	playerC.y<=waveA[i].y-308+20	&&	playerC.y>=waveA[i].y-308-40 && playerV<=0){
+		if(playerC.x>=waveA[i].x+80-50+10	&&	playerC.x<=waveA[i].x+364-40-10	&&	playerC.y<=waveA[i].y-308+20	&&	playerC.y>=waveA[i].y-308-40 && playerV<=0){
 			console.log("跳上了")
 			//scoreNum+=50
 			TweenMax.to(nowWave[0],1,{x:-nowWave[0].width,y:stageH/2+180+308,ease:Linear.easeNone})
@@ -104,6 +104,7 @@ function pageLoop(){
 
 	if(playerC.y>=nowWave[0].y-308){
 		playerC.y=nowWave[0].y-308
+		jumpCount=0
 	}
 
 	if(playerC.x-item.x<=80&&playerC.x-item.x>=-80&&playerC.y-item.y<=70&&playerC.y-item.y>=-70&&item.alpha==1){
@@ -124,7 +125,7 @@ function pageLoop(){
 	scoreT.text="score : "+score
 
 
-	if(playerC.y>stageH/2+180-50){
+	if(playerC.y>stageH/2+180-50-25){
 		playerC.visible=false
 		console.log("输了")
 		// alert("输了")

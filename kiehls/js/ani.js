@@ -1,6 +1,7 @@
 var hintPage=new PIXI.Container()
 var hintBG,blackLayer,startBtn
 var hintA=[]
+var gameing=false
 function setHintPage () {
 	pStage.addChild(hintPage)
 	if(sex==1){
@@ -39,7 +40,15 @@ function setHintPage () {
 
 var date=null//new Date()
 function gameStart(){
+	if(gameing){
+		return false
+	}
+	gameing=true
+	console.log("11112222")
 	startBtn.interactive=false
+	//startBtn.visible=false
+	//TweenMax.set(startBtn,{x:11110})
+
 	TweenMax.to(hintPage,.5,{alpha:0,onComplete:function(){
 		hintPage.visible=false
 	}})
