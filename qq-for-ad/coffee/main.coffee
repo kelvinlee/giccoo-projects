@@ -354,7 +354,7 @@ init = ->
 						@.mainPage = true
 				else
 					@.pageIndex = 1
-					goBack()
+					goBack() if goBack?
 			article: (id)->
 				# console.log "id:",id
 				# console.log window.location.href
