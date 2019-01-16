@@ -72,6 +72,9 @@ function goBack(){
 	}else{
 		maskAll.y=0
 		page.position.set(640,stageH)
+		TweenMax.killTweensOf(arrow)
+		arrow.y=640/document.documentElement.clientWidth*document.documentElement.clientHeight-80
+		TweenMax.from(arrow,1,{y:"+=30",repeat:100000,yoyo:true,ease:Sine.easeInOut})
 	}
 	
 }
