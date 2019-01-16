@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>QQ广告</title>
+    <meta name="author" content="m.giccoo.com">
+    <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
+    <link rel="stylesheet" href="css/base.css">
+  </head>
+  <body>
+    <div id="main" v-show="mounted" :class="{biger: biger, smaller:smaller}" style="display: none" class="main">
+      <transition name="page-down">
+        <div v-show="noteShow" @click="noteShow = false" class="note-message">
+          <div class="note-text">{{noteText}}</div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="loading" class="loading-page">
+          <div class="ball-spin-fade-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="pageIndex == 1" class="page page-1">
+          <div class="content">
+            <div id="ugc"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="mainPage" class="page page-2">
+          <div class="content">
+            <div class="banner"><img src="./img/banner.png"></div>
+            <div class="types-box">
+              <div @click="openMenu(1)" :class="{on: type == 1}" class="btn pointer">
+                <p>{{type1Name==""?"全部行业":type1Name}}</p>
+                <transition name="page-fade">
+                  <div v-show="type == 1" class="drop-menu">
+                    <div @click="selectType(1,'',0)" v-show="type1 != 0" :class="{on: type1==0}" class="a pointer">全部行业</div>
+                    <div v-for="item in typeList" v-show="item.id != type1" v-if="item.type == 1" @click="selectType(1,item.name,item.id)" :class="{on: item.id == type1}" class="a pointer">{{item.name}}</div>
+                  </div>
+                </transition>
+              </div>
+              <div @click="openMenu(2)" :class="{on: type == 2}" class="btn pointer">
+                <p>{{type2Name==""?"全部推广目标":type2Name}}</p>
+                <transition name="page-fade">
+                  <div v-show="type == 2" class="drop-menu">
+                    <div @click="selectType(2,'',0)" v-show="type2 != 0" :class="{on: type2==0}" class="a pointer">全部推广目标</div>
+                    <div v-for="item in typeList" v-show="item.id != type2" v-if="item.type == 2" @click="selectType(2,item.name,item.id)" :class="{on: item.id == type2}" class="a pointer">{{item.name}}</div>
+                  </div>
+                </transition>
+              </div>
+              <div @click="openMenu(3)" :class="{on: type == 3}" class="btn pointer">
+                <p>{{type3Name==""?"全部广告资源":type3Name}}</p>
+                <transition name="page-fade">
+                  <div v-show="type == 3" class="drop-menu">
+                    <div @click="selectType(3,'',0)" v-show="type3 != 0" :class="{on: type3==0}" class="a pointer">全部广告资源</div>
+                    <div v-for="item in typeList" v-show="item.id != type3" v-if="item.type == 3" @click="selectType(3,item.name,item.id)" :class="{on: item.id == type3}" class="a pointer">{{item.name}}</div>
+                  </div>
+                </transition>
+              </div>
+            </div>
+            <div @touchstart="type = 0" class="items"><a v-for="item,index in list" v-show="checkShow(index,(type1 == 0 || type1 == item.type1) &amp;&amp; (type2 == 0 || type2 == item.type2) &amp;&amp; (type3 == 0 || (item.type3 != null &amp;&amp; item.type3.indexOf(type3+'') &gt; -1)))" :href="'#/id/'+item.id" class="item pointer">
+                <div class="small-logo"><img :src="item.logo"></div>
+                <div class="title">
+                  <h1 v-html="item.title"></h1>
+                </div>
+                <div class="types">{{item.brand}}/{{typeToText(item.type2)}}</div></a>
+              <div v-show="!(typeShows.indexOf(true) &gt; -1)" class="empty"> </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="pageIndex == 3" class="page page-3">
+          <div class="content">
+            <div class="header"><img src="./img/header.png"><a href="#/list" class="btn-back"><img src="./img/btn-back.png"></a></div>
+            <transition name="page-fade">
+              <div v-show="articleInfo.title == null" class="loading-box">
+                <div class="ball-spin-fade-loader">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </transition>
+            <transition name="page-fade">
+              <div id="scrollbox" v-show="articleInfo.title != null" class="scroll-box">
+                <div class="logo"><img :src="articleInfo.logo"></div>
+                <div class="title">
+                  <h1 v-html="articleInfo.title"></h1>
+                  <p>{{articleInfo.subtitle}}</p>
+                </div>
+                <article v-html="articleInfo.textarea" class="w-e-text"></article>
+                <div class="btns"><a href="#/list" class="btn">返回案例首页</a></div>
+                <div class="footer"><img src="./img/qrcode.png"></div>
+              </div>
+            </transition>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/pixi.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/public_funciton.js"></script>
+    <script src="js/build.js?v=1"></script>
+    <script src="js/main.js?v=1"></script>
+    <script src="js/ani.js?v=1"></script>
+  </body>
+</html>
