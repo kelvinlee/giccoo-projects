@@ -65,3 +65,13 @@ function getStart(){
 	console.log("1122")
 	setPage1()
 }
+var ifFirst=1
+function goBack(){
+	if(ifFirst==1){
+		ifFirst=0
+	}else{
+		maskAll.y=0
+		page.position.set(640,stageH)
+	}
+	
+}
