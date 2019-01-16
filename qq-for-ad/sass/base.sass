@@ -737,9 +737,11 @@ video,canvas,svg
 .pointer
 	cursor: pointer
 	user-select: none
-
+.page-1
+	z-index: 109
 .page-2
 	+bc(#fafafa)
+	z-index: 107
 	.banner
 		font-size: 0
 		+posr
@@ -752,20 +754,26 @@ video,canvas,svg
 		z-index: 5
 		.btn
 			flex: 1
-			+font-size(0.8rem)
+			+font-size(0.75rem)
 			color: #666666
 			+text-center
 			+posr
-			+p(10px 0)
+			+p(3px 0)
+			+m(7px 0)
+			line-height: 20px
 			+box
-			// border-left: solid 1px #eee
+			border-left: solid 0.5px #eee
+			text-indent: -4px
+			&:first-child
+				border-left: none
 			p
 				+m
+				+tran
 			&:after
 				content: " "
 				+tran
 				+posa
-				+tr(50%,10px)
+				+tr(50%,8px)
 				+wh(8px,8px)
 				+b($cdn+"img/arrow.png",no-repeat,center,center,cover)
 				margin-top: -4px
@@ -783,9 +791,9 @@ video,canvas,svg
 				+tl(100%)
 				+w
 				+bc(#fff)
-				margin-top: 1px
+				margin-top: 8px
 				box-shadow: 3px 3px 8px rgba(0,0,0,0.15)
-				max-height: 350px
+				max-height: 41px*9.5
 				+touch
 				&::-webkit-scrollbar
 					+hide
@@ -807,6 +815,7 @@ video,canvas,svg
 .page-3
 	+font-size(0.8rem)
 	+bc(#fff)
+	z-index: 110
 	.loading-box
 		+posa
 		+tl
@@ -881,6 +890,21 @@ video,canvas,svg
 	padding-top: 10px
 	padding-bottom: 35%
 	+box
+	.empty
+		+font-size(0.75rem)
+		+text-center
+		+w(90%)
+		+h
+		+m
+		+show
+		&:after
+			content: "\62B1\6B49\FF0C\6682\672A\627E\5230\7B26\5408\60A8\641C\7D22\6761\4EF6\7684\6848\4F8B\FF0C\8BF7\91CD\65B0\7B5B\9009\5E7F\544A\6761\4EF6"
+			+show
+			+font-size(0.75rem)
+			+text-center
+			padding-top: 50px
+			color: #919191
+			line-height: 1.6em
 	.item
 		+bc(#fff)
 		+w(90%)
@@ -908,6 +932,8 @@ video,canvas,svg
 		// 		+wh(100%,2px)
 		// 		+bc(#008cec)
 		// 		+animation(fadeIn,0.7s,ease)
+		&.hide
+			+hide
 		.small-logo
 			// +wh(64px,64px)
 			font-size: 0
