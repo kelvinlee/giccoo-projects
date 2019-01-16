@@ -536,7 +536,7 @@ init = ->
 				.catch (err)=>
 					console.log "err:",err
 			getList: ->
-				axios.get "#{apiLink}active/kiehls/list/"
+				axios.get "#{apiLink}active/kiehls/list/size/5"
 				.then (msg)=>
 					console.log "msg:",msg.data.list
 					@.list = msg.data.list

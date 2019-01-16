@@ -1087,23 +1087,28 @@ video,canvas,svg
 				+m(0.4em auto)
 				+font-size(0.8rem)
 				color: #1d92b6
-				line-height: 1.8em
+				line-height: 1.2em
 				+b($cdn+"img/ranking-list-bg.png",no-repeat,center,center,cover)
-				+p(0.4em 0.6em)
+				+p(0.6em 0.6em)
 				+box
 				+text-center
 				&.on
 					color: #b6211d
 					+animation(fadeColor,1.5s,ease,infinite)
 				span
-					+w(35%)
+					+w(45%)
 					+m
 					+show-inline
 					+text-left
+					white-space: nowrap
+					overflow: hidden
+					text-overflow: ellipsis
+
 				.numb
 					+w(20%)
 				.score
 					+text-right
+					+w(30%)
 		.btns
 			+w
 			+text-center
@@ -1119,7 +1124,7 @@ video,canvas,svg
 		.btn-close
 			+m
 			+w(15%)
-			margin-top: 20%
+			margin-top: 10%
 
 
 
