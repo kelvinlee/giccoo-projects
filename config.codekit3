@@ -6243,6 +6243,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/kiehls/img/hint_jump.png": {
+		"ft": 32768,
+		"iS": 58773,
+		"oA": 0,
+		"oAP": "/kiehls/img/hint_jump.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/kiehls/img/hitpage-bg.jpg": {
 		"ft": 16384,
 		"iS": 64552,
