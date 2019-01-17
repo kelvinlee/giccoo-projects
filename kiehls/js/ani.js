@@ -234,9 +234,23 @@ function setPlayer(){
 function setJump(){
 	pStage.interactive=true
 	pStage.touchstart=goJump
+	jumpHint=new Sprite(getTe(_CDN+"img/hint_jump.png"));
+	pStage.addChild(jumpHint)
+	jumpHint.visible=false
+	jumpHint.y=stageH/2
 }
 var jumpCount=0
+var firstJump=1
+var jumpHint
 function goJump(){
+
+	if(firstJump==1){
+		jumpHint.visible=true
+		TweenMax.to(jumpHint,2,{alpha:0,delay:2,onComplete:function(){
+			jumpHint.visible=false
+		}})
+		firstJump=0
+	}
 	if(jumpCount<2){
 		playerV=16
 

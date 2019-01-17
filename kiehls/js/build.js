@@ -39,6 +39,7 @@ var imageList = [
 
 	_CDN+"img/item.png",
 	_CDN+"img/btn_jump.png",
+	_CDN+"img/hint_jump.png",
 
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
