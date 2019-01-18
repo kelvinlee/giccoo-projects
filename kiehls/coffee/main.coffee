@@ -297,7 +297,7 @@ init = ->
 				@.shareNotePage = false
 				gameRestart()
 			gobuy: ->
-				window.location.href = "http://www.baidu.com"
+				window.location.href = "https://www.kiehls.com.cn/product/S0850901U.html?utm_source=kiehls-h5&utm_medium=h5&utm_campaign=E_kiehls-product-KLS00027"
 			dateText: (date)->
 				console.log date.replace(/-/g,"/")
 				d = new Date date.replace(/-/g,"/")
@@ -429,7 +429,7 @@ init = ->
 					@.send "请求错误,请重试"
 
 			goWeb: ->
-				window.location.href = "http://www.baidu.com/"
+				window.location.href = "https://www.kiehls.com.cn/product/S0850901U.html?utm_source=kiehls-h5&utm_medium=h5&utm_campaign=E_kiehls-product-KLS00027"
 			goNote: ->
 				@.singerIndex = resultA[1] + 1
 				if @.singerIndex is 2
