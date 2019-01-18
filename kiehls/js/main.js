@@ -165,5 +165,5 @@ this.getInfo(),this.getList()}})}),setShareWeb=function e(t,i,n){var r,o;return 
 // alert "success"
 if(main.gameEnd)return main.getLottery(),main.shareNotePage=!1},cancel:function e(){
 // alert "cancel"
-if(main.gameEnd)return main.getLottery(),main.shareNotePage=!1}},-1<window.navigator.userAgent.indexOf("NeteaseMusic")?(sys="NeteaseMusic",CloudMusic.setShareData(o)):_shareLoaded?(wx.onMenuShareTimeline(r),wx.onMenuShareAppMessage(r),wx.onMenuShareQQ(r),wx.onMenuShareWeibo(r)):(loadWechatConfig(),wx.ready(function(){return _shareLoaded=!0,wx.onMenuShareTimeline(r),wx.onMenuShareAppMessage(r),wx.onMenuShareQQ(r),wx.onMenuShareWeibo(r)}))};
+if(main.gameEnd)return main.getLottery(),main.shareNotePage=!1}},-1<window.navigator.userAgent.indexOf("NeteaseMusic")?(sys="NeteaseMusic",CloudMusic.setShareData(o),setTimeout(function(){if(main.gameEnd)return main.getLottery(),main.shareNotePage=!1},5e3)):_shareLoaded?(wx.onMenuShareTimeline(r),wx.onMenuShareAppMessage(r),wx.onMenuShareQQ(r),wx.onMenuShareWeibo(r)):(loadWechatConfig(),wx.ready(function(){return _shareLoaded=!0,wx.onMenuShareTimeline(r),wx.onMenuShareAppMessage(r),wx.onMenuShareQQ(r),wx.onMenuShareWeibo(r)}))};
 //# sourceMappingURL=main.js.map
