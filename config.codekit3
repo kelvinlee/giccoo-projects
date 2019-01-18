@@ -6221,33 +6221,11 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/kiehls/img/hint3.png": {
-		"ft": 32768,
-		"iS": 15586,
-		"oA": 0,
-		"oAP": "/kiehls/img/hint3.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"/kiehls/img/hint4.png": {
 		"ft": 32768,
 		"iS": 28102,
 		"oA": 0,
 		"oAP": "/kiehls/img/hint4.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/kiehls/img/hint_jump.png": {
-		"ft": 32768,
-		"iS": 58773,
-		"oA": 0,
-		"oAP": "/kiehls/img/hint_jump.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6786,16 +6764,6 @@
 		"oAP": "/kiehls/index.html",
 		"oF": 0,
 		"oS": 0
-		},
-	"/kiehls/js/ani.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "/kiehls/js/ani-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
 		},
 	"/kiehls/js/build.js": {
 		"ft": 64,
