@@ -237,7 +237,7 @@ function setJump(){
 	jumpHint=new Sprite(getTe(_CDN+"img/hint_jump.png"));
 	pStage.addChild(jumpHint)
 	jumpHint.visible=false
-	jumpHint.y=stageH/2
+	jumpHint.y=stageH/2+200*stageH/1000
 }
 var jumpCount=0
 var firstJump=1
