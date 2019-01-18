@@ -570,7 +570,10 @@ init = ->
 
 			@.getList()
 
-
+	CloudMusic.onShare (isSuccess,shareType)->
+		if main.gameEnd
+			main.getLottery()
+			main.shareNotePage = false
 
 _shareLoaded = false
 setShareWeb = (title,desc,link)->
@@ -599,11 +602,6 @@ setShareWeb = (title,desc,link)->
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
 		CloudMusic.setShareData shareData
-		setTimeout =>
-			if main.gameEnd
-				main.getLottery()
-				main.shareNotePage = false
-		,5000
 	else if not _shareLoaded
 		loadWechatConfig()
 		wx.ready ->

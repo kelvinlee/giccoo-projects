@@ -161,9 +161,9 @@ i=[],window.imageList=window.imageList.concat(i),ugc=new UGC({el:"ugc",w:640,h:6
 // 	console.log "resize:",document.documentElement.clientHeight
 // main.$root.$el.addEventListener "touchstart", (evt)->
 // 	_public.note = false
-this.getInfo(),this.getList()}})}),setShareWeb=function e(t,i,n){var r,o;return o={name:"kiehls",title:t,subTitle:i,text:"",picUrl:"http://m.giccoo.com/kiehls/img/ico.jpg",link:n},r={title:t,desc:i,link:n,imgUrl:"http://m.giccoo.com/kiehls/img/ico.jpg",success:function e(){
+this.getInfo(),this.getList()}}),CloudMusic.onShare(function(e,t){if(main.gameEnd)return main.getLottery(),main.shareNotePage=!1})}),setShareWeb=function e(t,i,n){var r,o;return o={name:"kiehls",title:t,subTitle:i,text:"",picUrl:"http://m.giccoo.com/kiehls/img/ico.jpg",link:n},r={title:t,desc:i,link:n,imgUrl:"http://m.giccoo.com/kiehls/img/ico.jpg",success:function e(){
 // alert "success"
 if(main.gameEnd)return main.getLottery(),main.shareNotePage=!1},cancel:function e(){
 // alert "cancel"
-if(main.gameEnd)return main.getLottery(),main.shareNotePage=!1}},-1<window.navigator.userAgent.indexOf("NeteaseMusic")?(sys="NeteaseMusic",CloudMusic.setShareData(o),setTimeout(function(){if(main.gameEnd)return main.getLottery(),main.shareNotePage=!1},5e3)):_shareLoaded?(wx.onMenuShareTimeline(r),wx.onMenuShareAppMessage(r),wx.onMenuShareQQ(r),wx.onMenuShareWeibo(r)):(loadWechatConfig(),wx.ready(function(){return _shareLoaded=!0,wx.onMenuShareTimeline(r),wx.onMenuShareAppMessage(r),wx.onMenuShareQQ(r),wx.onMenuShareWeibo(r)}))};
+if(main.gameEnd)return main.getLottery(),main.shareNotePage=!1}},-1<window.navigator.userAgent.indexOf("NeteaseMusic")?(sys="NeteaseMusic",CloudMusic.setShareData(o)):_shareLoaded?(wx.onMenuShareTimeline(r),wx.onMenuShareAppMessage(r),wx.onMenuShareQQ(r),wx.onMenuShareWeibo(r)):(loadWechatConfig(),wx.ready(function(){return _shareLoaded=!0,wx.onMenuShareTimeline(r),wx.onMenuShareAppMessage(r),wx.onMenuShareQQ(r),wx.onMenuShareWeibo(r)}))};
 //# sourceMappingURL=main.js.map
