@@ -102,13 +102,16 @@ window.onload = ->
       startRecord: ->
         console.log "startRecord"
         wx.startRecord()
-        
+
       stopRecord: ->
         console.log "stopRecord"
         wx.stopRecord
           success: (res)=>
             @.localId = res.localId
 
+      playRecord: ->
+        console.log "playRecord"
+        wx.playVoice {localId: @.localId}
     mounted: ->
       wx.onVoiceRecordEnd
         success: (res)=>

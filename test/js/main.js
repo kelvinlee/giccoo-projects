@@ -827,6 +827,12 @@ window.onload = function () {
             return _this2.localId = res.localId;
           }
         });
+      },
+      playRecord: function playRecord() {
+        console.log("playRecord");
+        return wx.playVoice({
+          localId: this.localId
+        });
       }
     },
     mounted: function mounted() {
