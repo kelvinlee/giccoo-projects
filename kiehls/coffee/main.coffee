@@ -474,13 +474,21 @@ init = ->
 						setShareWeb("我在K星的极限冲浪保湿挑战赛中超过了全国#{@.hit}%的选手，等你来战！","快来，K星举办的首届网上冲浪大赛就差你一个了","http://m.giccoo.com/kiehls/?id=#{msg.data.info.insertId}")
 						@.getList() if @.score > @.list[@.list.length-1].score
 						@.insertId = msg.data.info.insertId
+						setTimeout =>
+							@.scrollToId()
+						,200
 					else
 						@.send msg.data.reason
 					
 				.catch (err)=>
 					console.log "err:",err
 					@.send "请求错误,请重试: #{JSON.stringify(err)}"
-
+			scrollToId: ->
+				ul = document.getElementsByClassName("ranking-list")
+				for li in ul[0].children
+					console.log li,li.offsetTop
+					if li.className is "on"
+						ul[0].scrollTop = li.offsetTop - ul[0].offsetTop
 			startGame: ->
 				# console.log "start game"
 				# _public.note = false
@@ -536,7 +544,7 @@ init = ->
 				.catch (err)=>
 					console.log "err:",err
 			getList: ->
-				axios.get "#{apiLink}active/kiehls/list/size/5"
+				axios.get "#{apiLink}active/kiehls/list/size/20"
 				.then (msg)=>
 					console.log "msg:",msg.data.list
 					@.list = msg.data.list
