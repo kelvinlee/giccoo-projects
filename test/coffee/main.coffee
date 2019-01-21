@@ -108,6 +108,8 @@ window.onload = ->
         wx.stopRecord({
           success: (res)->
             main.localId = res.localId
+          fail: (res)->
+            console.log(JSON.stringify(res))
         })
 
       playRecord: ->

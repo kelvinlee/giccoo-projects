@@ -823,6 +823,9 @@ window.onload = function () {
         return wx.stopRecord({
           success: function success(res) {
             return main.localId = res.localId;
+          },
+          fail: function fail(res) {
+            return console.log(JSON.stringify(res));
           }
         });
       },
