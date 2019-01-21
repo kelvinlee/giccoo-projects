@@ -818,7 +818,8 @@ window.onload = function () {
         console.log("startRecord");
         return wx.startRecord({
           success: function success() {
-            return console.log("recording");
+            console.log("recording");
+            return main.$children[0].video.play();
           },
           fail: function fail() {
             return console.log("not recording");
@@ -829,7 +830,8 @@ window.onload = function () {
         console.log("stopRecord");
         return wx.stopRecord({
           success: function success(res) {
-            return main.localId = res.localId;
+            main.localId = res.localId;
+            return main.$children[0].video.pause();
           },
           fail: function fail(res) {
             return console.log(JSON.stringify(res));
@@ -846,7 +848,8 @@ window.onload = function () {
     mounted: function mounted() {
       return wx.onVoiceRecordEnd({
         complete: function complete(res) {
-          return main.localId = res.localId;
+          main.localId = res.localId;
+          return main.$children[0].video.pause();
         }
       });
     }

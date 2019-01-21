@@ -102,9 +102,10 @@ window.onload = ->
       startRecord: ->
         console.log "startRecord"
         wx.startRecord({
-          success: ->
+          success: =>
             console.log "recording"
-          fail: ->
+            main.$children[0].video.play()
+          fail: =>
             console.log "not recording"
         })
 
@@ -113,6 +114,7 @@ window.onload = ->
         wx.stopRecord({
           success: (res)->
             main.localId = res.localId
+            main.$children[0].video.pause()
           fail: (res)->
             console.log(JSON.stringify(res))
         })
@@ -124,6 +126,7 @@ window.onload = ->
       wx.onVoiceRecordEnd({
         complete: (res)->
           main.localId = res.localId
+          main.$children[0].video.pause()
       })
 
 
