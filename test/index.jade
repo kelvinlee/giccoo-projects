@@ -14,40 +14,29 @@ block css
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
+  script(src="//image.giccoo.com/projects/libs/js/min/vconsole.min.js")
+  script.
+    var vConsole = new VConsole();
+    console.log('VConsole open');
 
 block content
-  //- url = "http://image.giccoo.com/projects/adidas-originals-eqt";
-  - url = ".";
-  iframe(src='http://shangzhibo.tv/watch/568113?player', style='width: 100%; height: 360px; overflow:hidden;', scrolling='no', allowfullscreen='')
-  //- #main
-  //- video#video(controls)
+  #main.main
+    mp4(src="//image.giccoo.com/projects/test/video-build-3.mp4",playsinline="true")
+
+    .btn(@click="startRecord") 录音
+    .btn(@click="stopRecord") 停止
+
 
 block js
   - url = "/";
-  //- script(src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js")
-  //- script(src="http://image.giccoo.com/projects/libs/js/min/fastclick.min.js")
-  //- script(src="http://image.giccoo.com/projects/libs/js/min/vue.min.js")
-  script(src="https://cdn.jsdelivr.net/npm/hls.js@latest")
-  //- script(src="http://image.giccoo.com/projects/libs/js/min/tweenjs.min.js")
-  //- script(src="js/main.js")
-  //- script.
-    var video = document.getElementById('video');
-    if(Hls.isSupported()) {
-        var hls = new Hls();
-        hls.loadSource('http://live.giccoo.com/active/soupdaren.m3u8');
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED,function() {
-          video.play();
-      });
-     }
-     // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
-     // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
-     // This is using the built-in support of the plain video element, without using hls.js.
-     // Note: it would be more normal to wait on the 'canplay' event below however on Safari (where you are most likely to find built-in HLS support) the video.src URL must be on the user-driven
-     // white-list before a 'canplay' event will be emitted; the last video event that can be reliably listened-for when the URL is not on the white-list is 'loadedmetadata'.
-     else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = 'http://live.giccoo.com/active/soupdaren.m3u8';
-        video.addEventListener('loadedmetadata',function() {
-          video.play();
-        });
-      }
+  script(src="//res.wx.qq.com/open/js/jweixin-1.3.2.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")
+  //- script(src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js")
+  script(src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js")
+  script(src="//image.giccoo.com/projects/genki/js/ntes.id.js")
+  script(src="js/main.js?v=1")
+  
