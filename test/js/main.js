@@ -810,16 +810,28 @@ window.onload = function () {
     data: {
       progress: 0,
       mounted: false,
-      progressOn: 0
+      progressOn: 0,
+      localId: ""
     },
     methods: {
       startRecord: function startRecord() {
-        return wx.startRecord();
+        var _this2 = this;
+
+        console.log("startRecord");
+        wx.startRecord();
+        return wx.onVoiceRecordEnd({
+          success: function success(res) {
+            return _this2.localId = res.localId;
+          }
+        });
       },
       stopRecord: function stopRecord() {
+        var _this3 = this;
+
+        console.log("stopRecord");
         return wx.stopRecord({
           success: function success(res) {
-            return console.log(res.localId);
+            return _this3.localId = res.localId;
           }
         });
       }

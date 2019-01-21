@@ -97,13 +97,19 @@ window.onload = ->
       progress: 0
       mounted: false
       progressOn: 0
+      localId: ""
     methods:
       startRecord: ->
+        console.log "startRecord"
         wx.startRecord()
+        wx.onVoiceRecordEnd 
+          success: (res)=>
+            @.localId = res.localId
       stopRecord: ->
+        console.log "stopRecord"
         wx.stopRecord
           success: (res)=>
-            console.log res.localId
+            @.localId = res.localId
 
     mounted: ->
 
