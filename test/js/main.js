@@ -819,12 +819,10 @@ window.onload = function () {
         return wx.startRecord();
       },
       stopRecord: function stopRecord() {
-        var _this2 = this;
-
         console.log("stopRecord");
         return wx.stopRecord({
           success: function success(res) {
-            return _this2.localId = res.localId;
+            return main.localId = res.localId;
           }
         });
       },
@@ -836,11 +834,9 @@ window.onload = function () {
       }
     },
     mounted: function mounted() {
-      var _this3 = this;
-
       return wx.onVoiceRecordEnd({
-        success: function success(res) {
-          return _this3.localId = res.localId;
+        complete: function complete(res) {
+          return main.localId = res.localId;
         }
       });
     }
