@@ -25,6 +25,7 @@ block content
 
     .btn(@click="startRecord") 录音
     .btn(@click="stopRecord") 停止
+    .btn(v-show="localId != ''",@click="playRecord") 播放
 
 
 block js

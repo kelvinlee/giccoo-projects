@@ -815,28 +815,29 @@ window.onload = function () {
     },
     methods: {
       startRecord: function startRecord() {
-        var _this2 = this;
-
         console.log("startRecord");
-        wx.startRecord();
-        return wx.onVoiceRecordEnd({
-          success: function success(res) {
-            return _this2.localId = res.localId;
-          }
-        });
+        return wx.startRecord();
       },
       stopRecord: function stopRecord() {
-        var _this3 = this;
+        var _this2 = this;
 
         console.log("stopRecord");
         return wx.stopRecord({
           success: function success(res) {
-            return _this3.localId = res.localId;
+            return _this2.localId = res.localId;
           }
         });
       }
     },
-    mounted: function mounted() {}
+    mounted: function mounted() {
+      var _this3 = this;
+
+      return wx.onVoiceRecordEnd({
+        success: function success(res) {
+          return _this3.localId = res.localId;
+        }
+      });
+    }
   });
 };
 
