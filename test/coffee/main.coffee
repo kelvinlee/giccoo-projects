@@ -156,6 +156,10 @@ setShareWeb = (title,desc,link)->
       wx.onMenuShareAppMessage shareContent
       wx.onMenuShareQQ shareContent
       wx.onMenuShareWeibo shareContent
+      wx.checkJsApi
+        jsApiList: ["startRecord","stopRecord","onVoiceRecordEnd","playVoice"]
+        success: (res)->
+          console.log "debug:",res
   else
     wx.onMenuShareTimeline shareContent
     wx.onMenuShareAppMessage shareContent

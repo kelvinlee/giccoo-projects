@@ -886,7 +886,13 @@ setShareWeb = function setShareWeb(title, desc, link) {
       wx.onMenuShareTimeline(shareContent);
       wx.onMenuShareAppMessage(shareContent);
       wx.onMenuShareQQ(shareContent);
-      return wx.onMenuShareWeibo(shareContent);
+      wx.onMenuShareWeibo(shareContent);
+      return wx.checkJsApi({
+        jsApiList: ["startRecord", "stopRecord", "onVoiceRecordEnd", "playVoice"],
+        success: function success(res) {
+          return console.log("debug:", res);
+        }
+      });
     });
   } else {
     wx.onMenuShareTimeline(shareContent);
