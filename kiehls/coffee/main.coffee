@@ -54,7 +54,7 @@ window.onload = ->
 
 	lastY = 0
 
-	setShareWeb("K首届冬日在线冲浪大赛开始了，让我们一起来浪~~","在线秒学冲浪，下一个刷榜的也许就是你","http://m.giccoo.com/kiehls/")
+	setShareWeb("K星首届冬日在线冲浪大赛开始了，让我们一起来浪~~","在线秒学冲浪，下一个刷榜的也许就是你","http://m.giccoo.com/kiehls/")
 
 	_public = new Vue
 		el: "#public"
