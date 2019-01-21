@@ -816,7 +816,14 @@ window.onload = function () {
     methods: {
       startRecord: function startRecord() {
         console.log("startRecord");
-        return wx.startRecord();
+        return wx.startRecord({
+          success: function success() {
+            return console.log("recording");
+          },
+          fail: function fail() {
+            return console.log("not recording");
+          }
+        });
       },
       stopRecord: function stopRecord() {
         console.log("stopRecord");

@@ -101,7 +101,12 @@ window.onload = ->
     methods:
       startRecord: ->
         console.log "startRecord"
-        wx.startRecord()
+        wx.startRecord({
+          success: ->
+            console.log "recording"
+          fail: ->
+            console.log "not recording"
+        })
 
       stopRecord: ->
         console.log "stopRecord"
