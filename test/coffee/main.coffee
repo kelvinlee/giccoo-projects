@@ -1,9 +1,12 @@
 # @codekit-prepend "../../libs/pixi/voice"
+# @codekit-prepend "../../libs/coffee/loadWechatConfig"
 # @codekit-prepend "../../libs/pixi/motionpath"
 # @codekit-prepend "../../libs/coffee/pixi-base"
+# @codekit-prepend "../../libs/vue/vue-video"
 _CDN = "./"
 
 test = {}
+main = null
 
 class animationLine
   default:
@@ -87,4 +90,90 @@ class animationLine
     
 
 window.onload = ->
-  test = new motionPath({el: "main"})
+  setShareWeb("Test","Test","http://m.giccoo.com/test/")
+  main = new Vue
+    el: "#main"
+    data:
+      progress: 0
+      mounted: false
+      progressOn: 0
+      localId: ""
+    methods:
+      startRecord: ->
+        console.log "startRecord"
+        wx.startRecord({
+          success: =>
+            console.log "recording"
+            main.$children[0].video.play()
+          fail: =>
+            console.log "not recording"
+        })
+
+      stopRecord: ->
+        console.log "stopRecord"
+        wx.stopRecord({
+          success: (res)->
+            main.localId = res.localId
+            main.$children[0].video.pause()
+          fail: (res)->
+            console.log(JSON.stringify(res))
+        })
+
+      playRecord: ->
+        console.log "playRecord"
+        wx.playVoice {localId: @.localId}
+    mounted: ->
+      wx.onVoiceRecordEnd({
+        complete: (res)->
+          main.localId = res.localId
+          main.$children[0].video.pause()
+      })
+
+
+
+_shareLoaded = false
+setShareWeb = (title,desc,link)->
+  shareData = 
+    name: 'kiehls'
+    title: title
+    subTitle: desc
+    text: ''
+    picUrl: 'http://m.giccoo.com/kiehls/img/ico.jpg'
+    link: link
+  shareContent =
+    title: title
+    desc: desc
+    link: link
+    imgUrl: "http://m.giccoo.com/kiehls/img/ico.jpg"
+    success: ->
+      # alert "success"
+      if main.gameEnd
+        main.getLottery()
+        main.shareNotePage = false
+    cancel: ->
+      # alert "cancel"
+      if main.gameEnd
+        main.getLottery()
+        main.shareNotePage = false
+  if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
+    sys = "NeteaseMusic"
+    CloudMusic.setShareData shareData
+  else if not _shareLoaded
+    loadWechatConfig()
+    wx.ready ->
+      _shareLoaded = true
+      wx.onMenuShareTimeline shareContent
+      wx.onMenuShareAppMessage shareContent
+      wx.onMenuShareQQ shareContent
+      wx.onMenuShareWeibo shareContent
+      wx.checkJsApi
+        jsApiList: ["startRecord","stopRecord","onVoiceRecordEnd","playVoice"]
+        success: (res)->
+          console.log "debug:",res
+  else
+    wx.onMenuShareTimeline shareContent
+    wx.onMenuShareAppMessage shareContent
+    wx.onMenuShareQQ shareContent
+    wx.onMenuShareWeibo shareContent
+
+

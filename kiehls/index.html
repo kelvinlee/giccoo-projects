@@ -8,15 +8,23 @@
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="http://image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/base.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66865226-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-66865226-1');
+      
+    </script>
   </head>
   <body>
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
-        <div class="bottle"><img src="./img/loading-frame.png">
-          <div class="bg"><img src="./img/loading-bg.png"></div>
+        <div class="bottle"><img src="//image.giccoo.com/projects/kiehls/img/loading-frame.png">
+          <div class="bg"><img src="//image.giccoo.com/projects/kiehls/img/loading-bg.png"></div>
           <div :style="{transform: 'translate3d(0,-'+(progress/3*1.6)+'%,0)'}" class="wave">
-            <div class="img"><img src="./img/loading-wave.png"></div>
-            <div class="img"><img src="./img/loading-wave.png"></div>
+            <div class="img"><img src="//image.giccoo.com/projects/kiehls/img/loading-wave.png"></div>
+            <div class="img"><img src="//image.giccoo.com/projects/kiehls/img/loading-wave.png"></div>
           </div>
         </div>
         <p class="centeralign">Loading {{progress}}%</p>
@@ -47,29 +55,29 @@
           <div class="content">
             <div class="clouds">
               <div class="cloud cloud-1">
-                <div class="cl"><img src="./img/cloud1.png"></div>
+                <div class="cl"><img src="//image.giccoo.com/projects/kiehls/img/cloud1.png"></div>
               </div>
               <div class="cloud cloud-2">
-                <div class="cl"><img src="./img/cloud2.png"></div>
+                <div class="cl"><img src="//image.giccoo.com/projects/kiehls/img/cloud2.png"></div>
               </div>
               <div class="cloud cloud-3">
-                <div class="cl"><img src="./img/cloud3.png"></div>
+                <div class="cl"><img src="//image.giccoo.com/projects/kiehls/img/cloud3.png"></div>
               </div>
             </div>
             <div class="homepage-icon">
-              <div class="icon bounceIn animated delay-7"><img src="./img/homepage-icon.png"></div>
-              <div class="tree fadeIn animated delay-5"><img src="./img/homepage-tree.png"></div>
-              <div @click="start" class="btn bounceIn animated delay-9"><img src="./img/btn-start.png"></div>
+              <div class="icon bounceIn animated delay-7"><img src="//image.giccoo.com/projects/kiehls/img/homepage-icon.png"></div>
+              <div class="tree fadeIn animated delay-5"><img src="//image.giccoo.com/projects/kiehls/img/homepage-tree.png"></div>
+              <div @click="start" class="btn bounceIn animated delay-9"><img src="//image.giccoo.com/projects/kiehls/img/btn-start.png"></div>
               <div @click="rankingShow = true" class="btn-info bounceIn animated delay-11">查看排行榜</div>
             </div>
-            <div class="ship fadeInLeft animated delay-13"><img src="./img/ship.png"></div>
+            <div class="ship fadeInLeft animated delay-13"><img src="//image.giccoo.com/projects/kiehls/img/ship.png"></div>
           </div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="pageIndex == 3" class="page page-3">
           <div class="content">
-            <div class="logo"><img src="./img/hitpage-logo.png"></div>
+            <div class="logo"><img src="//image.giccoo.com/projects/kiehls/img/hitpage-logo.png"></div>
             <div class="texts">
               <div class="text">
                 <p class="fadeInUp animated delay-3">TA在科颜氏极限冲浪挑战赛中</p>
@@ -79,7 +87,7 @@
                 <p class="fadeInUp animated delay-11">科颜氏高保湿面霜和你一起超越自我</p>
               </div>
             </div>
-            <div @click="start" class="btn"><img src="./img/btn-hit.png"></div>
+            <div @click="start" class="btn"><img src="//image.giccoo.com/projects/kiehls/img/btn-hit.png"></div>
           </div>
         </div>
       </transition>
@@ -93,24 +101,24 @@
       <transition name="page-fade">
         <div v-show="lotteryShow" class="pop pop-lottery">
           <div class="content">
-            <div class="bg"><img src="./img/pop-bg.png">
-              <div class="cover"><img src="./img/pop-bg-cover.png"></div>
+            <div class="bg"><img src="//image.giccoo.com/projects/kiehls/img/pop-bg.png">
+              <div class="cover"><img src="//image.giccoo.com/projects/kiehls/img/pop-bg-cover.png"></div>
             </div>
             <div v-show="lotteryInfo.id == null" class="box full">
-              <div class="title-faild"><img src="./img/lottery-faild.png"></div>
-              <div @click="regame" class="btn btn-regame"><img src="./img/btn-again.png"></div>
-              <div @click="gobuy" class="btn btn-buy"><img src="./img/btn-buy.png"></div>
-              <div class="more"><img src="./img/lottery-faild-more.png"></div>
+              <div class="title-faild"><img src="//image.giccoo.com/projects/kiehls/img/lottery-faild.png"></div>
+              <div @click="regame" class="btn btn-regame"><img src="//image.giccoo.com/projects/kiehls/img/btn-again.png"></div>
+              <div @click="gobuy" class="btn btn-buy"><img src="//image.giccoo.com/projects/kiehls/img/btn-buy.png"></div>
+              <div class="more"><img src="//image.giccoo.com/projects/kiehls/img/lottery-faild-more.png"></div>
             </div>
             <div v-show="lotteryInfo.id != null &amp;&amp; lotteryEndShow" class="box full">
-              <div class="title-faild"><img src="./img/lottery-title-success.png"></div>
+              <div class="title-faild"><img src="//image.giccoo.com/projects/kiehls/img/lottery-title-success.png"></div>
               <form-grounp v-bind:form="form" v-on:submit="submit"></form-grounp>
-              <div class="more"><img src="./img/lottery-note.png"></div>
+              <div class="more"><img src="//image.giccoo.com/projects/kiehls/img/lottery-note.png"></div>
             </div>
             <div v-show="lotteryInfo.id != null &amp;&amp; !lotteryEndShow" class="box full">
-              <div class="title-faild"><img src="./img/lottery-success.png"></div>
-              <div @click="gobuy" class="btn btn-buy"><img src="./img/btn-buy.png"></div>
-              <div class="more"><img src="./img/lottery-faild-more.png"></div>
+              <div class="title-faild"><img src="//image.giccoo.com/projects/kiehls/img/lottery-success.png"></div>
+              <div @click="gobuy" class="btn btn-buy"><img src="//image.giccoo.com/projects/kiehls/img/btn-buy.png"></div>
+              <div class="more"><img src="//image.giccoo.com/projects/kiehls/img/lottery-faild-more.png"></div>
             </div>
           </div>
         </div>
@@ -118,52 +126,52 @@
       <transition name="page-fade">
         <div v-show="registerShow" class="pop pop-register">
           <div class="content">
-            <div class="bg"><img src="./img/pop-bg.png"></div>
+            <div class="bg"><img src="//image.giccoo.com/projects/kiehls/img/pop-bg.png"></div>
             <div class="box">
-              <div class="title"><img src="./img/pop-title.png"></div>
+              <div class="title"><img src="//image.giccoo.com/projects/kiehls/img/pop-title.png"></div>
               <div class="form">
                 <div class="form-group">
                   <input type="text" v-reset-input placeholder="点击输入姓名" v-model="nickname">
                 </div>
               </div>
-              <div class="title-sex"><img src="./img/pop-title-sex.png"></div>
+              <div class="title-sex"><img src="//image.giccoo.com/projects/kiehls/img/pop-title-sex.png"></div>
               <div class="sexs">
-                <div :class="{on: (sex == 1)}" @click="sex = 1" class="item male"><img src="./img/pop-male.png"></div>
-                <div :class="{on: (sex == 2)}" @click="sex = 2" class="item female"><img src="./img/pop-female.png"></div>
+                <div :class="{on: (sex == 1)}" @click="sex = 1" class="item male"><img src="//image.giccoo.com/projects/kiehls/img/pop-male.png"></div>
+                <div :class="{on: (sex == 2)}" @click="sex = 2" class="item female"><img src="//image.giccoo.com/projects/kiehls/img/pop-female.png"></div>
               </div>
-              <div @click="startGame" class="btn"><img src="./img/btn-select.png"></div>
+              <div @click="startGame" class="btn"><img src="//image.giccoo.com/projects/kiehls/img/btn-select.png"></div>
             </div>
           </div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="shareNotePage" @click="shareNotePage = false" class="pop pop-note">
-          <div class="content"><img src="./img/sharenote.png"></div>
+          <div class="content"><img src="//image.giccoo.com/projects/kiehls/img/sharenote.png"></div>
         </div>
       </transition>
       <transition name="page-fade">
         <div v-show="rankingShow" :class="{end: gameEnd}" class="pop pop-ranking">
           <div class="content">
-            <div class="title"><img src="./img/ranking-title.png">
+            <div class="title"><img src="//image.giccoo.com/projects/kiehls/img/ranking-title.png">
               <p>共获得了<span>{{score}}</span>分</p>
               <p>成功战胜了<span>全国{{hit}}%</span>的玩家！</p>
             </div>
-            <div class="ranking-title"><img src="./img/ranking-title-sub.png"></div>
+            <div class="ranking-title"><img src="//image.giccoo.com/projects/kiehls/img/ranking-title-sub.png"></div>
             <ul class="ranking-list">
               <li v-for="v,index in list" :class="{on: v.id == insertId}"><span class="numb">No.{{index+1}}</span><span class="name">{{v.nickname}}</span><span class="score">{{v.score}}分</span></li>
             </ul>
             <div class="btns">
-              <div @click="regame" class="btn btn-reload"><img src="./img/btn-regame.png"></div>
-              <div @click="shareWeb" class="btn btn-share"><img src="./img/btn-share.png"></div>
+              <div @click="regame" class="btn btn-reload"><img src="//image.giccoo.com/projects/kiehls/img/btn-regame.png"></div>
+              <div @click="shareWeb" class="btn btn-share"><img src="//image.giccoo.com/projects/kiehls/img/btn-share.png"></div>
             </div>
-            <div @click="rankingShow = false" class="btn-close"><img src="./img/icon-close.png"></div>
+            <div @click="rankingShow = false" class="btn-close"><img src="//image.giccoo.com/projects/kiehls/img/icon-close.png"></div>
           </div>
         </div>
       </transition>
       <div v-show="ugcShow" class="pop flashcamera">
         <div class="content">
           <div class="small-size">
-            <div @click="closeUGC" class="close"><img src="./img/icon-close.png"></div><img :src="ugc">
+            <div @click="closeUGC" class="close"><img src="//image.giccoo.com/projects/kiehls/img/icon-close.png"></div><img :src="ugc">
             <div class="note">长按保存图片</div>
           </div>
         </div>

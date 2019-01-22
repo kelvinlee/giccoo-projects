@@ -14,8 +14,16 @@ $cdn : "../"
 .page-animation-enter, .page-animation-leave-to
 	opacity: 0
 
-body
+html,body
 	+bc(rgba(0,0,0,0.25))
+	+w
+	+h
 video,canvas,svg
   +w
   +h(auto)
+
+.btn
+	+bc(#fff)
+	+p(20px 30px)
+	+show-inline
+	+m(5px)

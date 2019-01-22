@@ -54,7 +54,7 @@ window.onload = ->
 
 	lastY = 0
 
-	setShareWeb("K首届冬日在线冲浪大赛开始了，让我们一起来浪~~","在线秒学冲浪，下一个刷榜的也许就是你","http://m.giccoo.com/kiehls/")
+	setShareWeb("K星首届冬日在线冲浪大赛开始了，让我们一起来浪~~","在线秒学冲浪，下一个刷榜的也许就是你","http://m.giccoo.com/kiehls/")
 
 	_public = new Vue
 		el: "#public"
@@ -297,7 +297,7 @@ init = ->
 				@.shareNotePage = false
 				gameRestart()
 			gobuy: ->
-				window.location.href = "http://www.baidu.com"
+				window.location.href = "https://www.kiehls.com.cn/product/S0850901U.html?utm_source=kiehls-h5&utm_medium=h5&utm_campaign=E_kiehls-product-KLS00027"
 			dateText: (date)->
 				console.log date.replace(/-/g,"/")
 				d = new Date date.replace(/-/g,"/")
@@ -429,7 +429,7 @@ init = ->
 					@.send "请求错误,请重试"
 
 			goWeb: ->
-				window.location.href = "http://www.baidu.com/"
+				window.location.href = "https://www.kiehls.com.cn/product/S0850901U.html?utm_source=kiehls-h5&utm_medium=h5&utm_campaign=E_kiehls-product-KLS00027"
 			goNote: ->
 				@.singerIndex = resultA[1] + 1
 				if @.singerIndex is 2
@@ -474,13 +474,21 @@ init = ->
 						setShareWeb("我在K星的极限冲浪保湿挑战赛中超过了全国#{@.hit}%的选手，等你来战！","快来，K星举办的首届网上冲浪大赛就差你一个了","http://m.giccoo.com/kiehls/?id=#{msg.data.info.insertId}")
 						@.getList() if @.score > @.list[@.list.length-1].score
 						@.insertId = msg.data.info.insertId
+						setTimeout =>
+							@.scrollToId()
+						,200
 					else
 						@.send msg.data.reason
 					
 				.catch (err)=>
 					console.log "err:",err
 					@.send "请求错误,请重试: #{JSON.stringify(err)}"
-
+			scrollToId: ->
+				ul = document.getElementsByClassName("ranking-list")
+				for li in ul[0].children
+					console.log li,li.offsetTop
+					if li.className is "on"
+						ul[0].scrollTop = li.offsetTop - ul[0].offsetTop
 			startGame: ->
 				# console.log "start game"
 				# _public.note = false
@@ -536,7 +544,7 @@ init = ->
 				.catch (err)=>
 					console.log "err:",err
 			getList: ->
-				axios.get "#{apiLink}active/kiehls/list/size/5"
+				axios.get "#{apiLink}active/kiehls/list/size/20"
 				.then (msg)=>
 					console.log "msg:",msg.data.list
 					@.list = msg.data.list

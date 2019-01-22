@@ -2,7 +2,7 @@
 // @import sass/row
 @import ../../libs/sass/loader-ball
 
-$debug : true
+$debug : false
 $cdn : "../"
 @if not $debug
 	$cdn : "//image.giccoo.com/projects/kiehls/"
@@ -1079,9 +1079,13 @@ video,canvas,svg
 				font-weight: bold
 		.ranking-title
 			margin-top: 7%
+			margin-bottom: 2%
 		.ranking-list
+			+font-size(0.8rem)
 			+m
 			+p
+			+h(3.1em*5.5)
+			+touch
 			li
 				+w(95%)
 				+m(0.4em auto)
