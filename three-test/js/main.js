@@ -18,15 +18,41 @@ function initAll () {
 	render()
 
 	getStart()
+	clickFunc()
 }
-
+//============================每帧渲染
 function render(){
 	requestAnimationFrame(render)
 	renderer.render(scene,camera)
 }
+//============================互动 点击
+var raycaster=new THREE.Raycaster()
+var mouse=new THREE.Vector2()
+function clickFunc(){
+	document.addEventListener("touchstart",onDocumentTouchStart,false)
+}
+function onDocumentTouchStart(_e){
+	//_e.preventDefault()
 
-//============================
+	mouse.x=(_e.touches[0].clientX/window.innerWidth)*2-1
+	mouse.y=-(_e.touches[0].clientY/window.innerHeight)*2+1//donElement
 
+	raycaster.setFromCamera(mouse,camera)
+
+	var intersects = raycaster.intersectObjects( scene.children )
+
+	if(intersects.length>0){
+		//console.log(intersects[0])
+		//console.log(intersects[0].object)
+		if(intersects[0].object==egg){
+			TweenMax.set(egg.rotation,{x:Math.PI/180*Math.random()*360,y:Math.PI/180*Math.random()*360,z:Math.PI/180*Math.random()*360})
+			TweenMax.set(egg.position,{y:20})
+			TweenMax.to(egg.rotation,2,{x:Math.PI/2,y:0,z:0,ease:Elastic.easeOut})
+			TweenMax.to(egg.position,2,{x:0,y:0,z:0,ease:Bounce.easeOut})
+		}
+	}
+
+}
 
 // var geometry= new THREE.CubeGeometry(5000,50,5000)
 // var material=new THREE.MeshLambertMaterial({color:0xffffff})
@@ -126,12 +152,14 @@ function ModLoaded(){
 	egg.scale.y=.05
 	egg.scale.z=.05
 	egg.castShadow=true
-	TweenMax.to(egg.rotation,2,{z:Math.PI*2,repeat:10000,ease:Linear.easeNone})
-	TweenMax.to(camera.position,2,{y:100,repeat:10000,ease:Linear.easeNone,onUpdate:function(){
-		camera.lookAt(egg.position)
-	}})
+	//======摄像机移动
+	// TweenMax.to(camera.position,2,{y:100,repeat:10000,ease:Linear.easeNone,yoyo:true,onUpdate:function(){
+	// 	camera.lookAt(scene.position)
+	// }})
+	
 	
 }
+
 
 // var mesh
 // function loadMod(){
