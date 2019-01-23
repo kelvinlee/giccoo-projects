@@ -9,7 +9,7 @@ var renderer = new THREE.WebGLRenderer({antialias:true,alpha:false})//抗锯齿
 
 initAll()
 function initAll () {
-	renderer.setClearColor(0xdddddd)//设置背景颜色
+	renderer.setClearColor(0x000000)//设置背景颜色
 	renderer.setSize(window.innerWidth,window.innerHeight)//设置宽高
 	renderer.shadowMapEnabled=true
 	renderer.shandowMapSoft=true
@@ -31,8 +31,14 @@ function render(){
 var controls,guiControls,datGUI
 
 function setTest(){
+	//====OrbitControls
 	controls=new THREE.OrbitControls(camera,renderer.domElement)	
+	// //====stats.js 性能测试
+	// var stats = new Stats()
+	// stats.showPanel(1)// 0: fps, 1: ms, 2: mb, 3+: custom
+	// document.body.appendChild(stats.dom)
 
+	//====datGUI
 	guiControls	=	new function(){//存放有所有需要改变的属性的对象
 		this.rotationX	=	90
 		this.ifTrue = true
@@ -139,7 +145,7 @@ function getStart(){
 
 	//====平行光
 	var dLight=new THREE.DirectionalLight(0xffffff,.8)
-	dLight.position.set(0,50,0)
+	dLight.position.set(-100,50,-100)
 	//dLight.target=scene
 	dLight.castShadow=true
 	dLight.shadow.mapSize.width = 4096;  // default
@@ -150,9 +156,12 @@ function getStart(){
 	dLight.shadow.camera.right = 100; 
 	dLight.shadow.camera.bottom = -100;    // default
 	dLight.shadow.camera.top = 100; 
-	dLight.shadowCameraVisible=true
-	//dLight.radius=0
+	//dLight.shadowCameraVisible=true
+	dLight.radius=1
 	//dLight.shadowDarkness=1
+	TweenMax.to(dLight.position,2,{x:100,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:1})
+	TweenMax.to(dLight.position,2,{z:100,repeat:100000,yoyo:true,ease:Sine.easeInOut})
+	//TweenMax.to(dLight.position,8,{y:200,repeat:100000,yoyo:true,ease:Sine.easeInOut})
 	scene.add(dLight)
 
 
@@ -175,7 +184,7 @@ function getStart(){
 
 	loader.load(
 	// resource URL
-	'mod/pig.glb',
+	'mod/pig2.glb',
 		// called when the resource is loaded
 		function ( gltf ) {
 			console.log(gltf.scene)
@@ -214,7 +223,7 @@ function getStart(){
 
 }
 
-
+var newMap
 function ModLoaded(){
 	// pig.scale.x=.5
 	// pig.scale.y=.5
@@ -229,16 +238,21 @@ function ModLoaded(){
 	// TweenMax.to(camera.position,2,{y:100,repeat:10000,ease:Linear.easeNone,yoyo:true,onUpdate:function(){
 	// 	camera.lookAt(scene.position)
 	// }})
+	
+	var texture = new THREE.TextureLoader().load( 'img/pig.jpg' );
+
 
 	var pigmap=pig.material.map
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
-	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0})
-	var pigMat=new THREE.MeshBasicMaterial({map:pigmap,envMap:environment,reflectivity:0})
+	var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
+	//var pigMat=new THREE.MeshBasicMaterial({map:texture,envMap:environment,reflectivity:0,emissive:0xffffff,emissiveIntensity:2})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap})
 	pig.material=pigMat
 	//TweenMax.set(pig.scale,{x:.105,y:.105,z:.095})
-	TweenMax.to(pig.scale,.25,{x:.12,y:.12,z:.08,repeat:1000000,yoyo:true,ease:Sine.easeInOut})
+	//TweenMax.to(pig.scale,1.25,{x:.12,y:.12,z:.08,repeat:1000000,yoyo:true,ease:Sine.easeInOut})
+	
+
 }
 
 
