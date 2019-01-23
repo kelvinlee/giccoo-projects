@@ -15,6 +15,7 @@ function initAll () {
 	renderer.shandowMapSoft=true
 
 	document.body.appendChild(renderer.domElement)
+	setTest()
 	render()
 
 	getStart()
@@ -24,7 +25,37 @@ function initAll () {
 function render(){
 	requestAnimationFrame(render)
 	renderer.render(scene,camera)
+	//controls.update();
 }
+//============================OrbitControls/datGUI 测试设置
+var controls,guiControls,datGUI
+
+function setTest(){
+	controls=new THREE.OrbitControls(camera,renderer.domElement)
+	controls.addEventListener('change',render)
+	
+
+	guiControls	=	new function(){//存放有所有需要改变的属性的对象
+		this.rotationX	=	90
+		this.ifTrue = true
+		this.func=function(){console.log("一个函数")}
+		this.target	=	egg
+	}
+
+	datGUI=new dat.GUI()//创建dat.GUI，传递并设置属性
+	// datGUI.add(guiControls,"rotationX",0.1)//输入框
+	// datGUI.add(guiControls,"rotationX",0,Math.PI*2).step(Math.PI/180)//滑杆，步长
+	// datGUI.add(guiControls,"rotationX").min(0).max(19)//大小
+	// datGUI.add(guiControls,"rotationX",{aaa:0,bbb:90,ccc:180})//选项
+	// datGUI.add(guiControls,"ifTrue",true)
+	// datGUI.add(guiControls,"func")
+	//http://www.hangge.com/blog/cache/detail_1785.html 其他使用方法
+
+	datGUI.add(guiControls,"rotationX",0,360).step(1).onChange(function(value){
+		egg.rotation.x=value*Math.PI/180
+	})
+}
+
 //============================互动 点击
 var raycaster=new THREE.Raycaster()
 var mouse=new THREE.Vector2()
