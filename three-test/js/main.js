@@ -77,7 +77,7 @@ function onDocumentTouchStart(_e){
 			TweenMax.set(pig.rotation,{x:Math.PI/180*Math.random()*360,y:Math.PI/180*Math.random()*360,z:Math.PI/180*Math.random()*360})
 			TweenMax.set(pig.position,{y:20})
 			TweenMax.to(pig.rotation,2,{x:Math.PI/2,y:0,z:0,ease:Elastic.easeOut})
-			TweenMax.to(pig.position,2,{x:0,y:0,z:0,ease:Bounce.easeOut})
+			TweenMax.to(pig.position,2,{x:0,y:20,z:0,ease:Bounce.easeOut})
 		}
 	}
 
@@ -122,16 +122,32 @@ function getStart(){
 	//scene.add(cube)
 
 	//====聚光灯
-	var spotLight=new THREE.SpotLight(0xffffff,1,1000,Math.PI/180*30,0,0)
-	//颜色，强度，范围，光散角度，光锥衰减（光斑边缘模糊1，不模糊0） https://threejs.org/docs/index.html#api/zh/lights/SpotLight
-	spotLight.position.set(-10,40,20)
-	spotLight.target=cube//默认0,0,0,指定其他物体必须add到scene上
-	spotLight.castShadow=true
-	//spotLight.shadow.mapSize.width=2048
-	//spotLight.shadow.mapSize.height=2048
-	var spotLightHelper=new THREE.SpotLightHelper(spotLight)
-	scene.add(spotLightHelper)
+	// var spotLight=new THREE.SpotLight(0xffffff,1,1000,Math.PI/180*30,0,0)
+	// //颜色，强度，范围，光散角度，光锥衰减（光斑边缘模糊1，不模糊0） https://threejs.org/docs/index.html#api/zh/lights/SpotLight
+	// spotLight.position.set(-10,40,20)
+	// spotLight.target=cube//默认0,0,0,指定其他物体必须add到scene上
+	// spotLight.castShadow=true
+	// //spotLight.shadow.mapSize.width=2048
+	// //spotLight.shadow.mapSize.height=2048
+	// var spotLightHelper=new THREE.SpotLightHelper(spotLight)
+	//scene.add(spotLight)
+	// scene.add(spotLightHelper)
 
+	//====环境光
+	// var ambientLight=new THREE.AmbientLight(0xffffff,1)
+	// scene.add(ambientLight)
+
+	//====平行光
+	var dLight=new THREE.DirectionalLight(0xffffff,1)
+	dLight.position.set(10,50,0)
+	//dLight.target=scene
+	dLight.castShadow=true
+	dLight.shadow.mapSize.width = 2048;  // default
+	dLight.shadow.mapSize.height = 2048; // default
+	dLight.shadow.camera.near = 0.5;    // default
+	dLight.shadow.camera.far = 10500;     // default
+	dLight.shadowCameraVisible=true
+	scene.add(dLight)
 
 
 	//====平面
@@ -139,11 +155,11 @@ function getStart(){
 	var planeMaterial=new THREE.MeshLambertMaterial({color:0xffffff})
 	var plane=new THREE.Mesh(planeGeo,planeMaterial)
 	plane.rotation.x=-Math.PI/2
-	plane.position.y=-2.5
+	plane.position.y=0
 	plane.receiveShadow=true
-	//scene.add(plane)
+	scene.add(plane)
 
-	scene.add(spotLight)//cube,plane
+	//cube,plane
 	camera.position.set(40,40,40)
 	camera.lookAt(scene.position)
 
