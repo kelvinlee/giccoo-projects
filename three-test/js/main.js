@@ -20,6 +20,7 @@ function initAll () {
 
 	getStart()
 	clickFunc()
+	set_envMap()
 }
 //============================每帧渲染
 function render(){
@@ -36,7 +37,7 @@ function setTest(){
 		this.rotationX	=	90
 		this.ifTrue = true
 		this.func=function(){console.log("一个函数")}
-		this.target	=	egg
+		this.target	=	pig
 	}
 
 	datGUI=new dat.GUI()//创建dat.GUI，传递并设置属性
@@ -49,7 +50,7 @@ function setTest(){
 	//http://www.hangge.com/blog/cache/detail_1785.html 其他使用方法
 
 	datGUI.add(guiControls,"rotationX",0,360).step(1).onChange(function(value){
-		egg.rotation.x=value*Math.PI/180
+		pig.rotation.x=value*Math.PI/180
 	})
 }
 
@@ -72,23 +73,35 @@ function onDocumentTouchStart(_e){
 	if(intersects.length>0){
 		//console.log(intersects[0])
 		//console.log(intersects[0].object)
-		if(intersects[0].object==egg){
-			TweenMax.set(egg.rotation,{x:Math.PI/180*Math.random()*360,y:Math.PI/180*Math.random()*360,z:Math.PI/180*Math.random()*360})
-			TweenMax.set(egg.position,{y:20})
-			TweenMax.to(egg.rotation,2,{x:Math.PI/2,y:0,z:0,ease:Elastic.easeOut})
-			TweenMax.to(egg.position,2,{x:0,y:0,z:0,ease:Bounce.easeOut})
+		if(intersects[0].object==pig){
+			TweenMax.set(pig.rotation,{x:Math.PI/180*Math.random()*360,y:Math.PI/180*Math.random()*360,z:Math.PI/180*Math.random()*360})
+			TweenMax.set(pig.position,{y:20})
+			TweenMax.to(pig.rotation,2,{x:Math.PI/2,y:0,z:0,ease:Elastic.easeOut})
+			TweenMax.to(pig.position,2,{x:0,y:0,z:0,ease:Bounce.easeOut})
 		}
 	}
 
 }
+//============================环境贴图
 
-// var geometry= new THREE.CubeGeometry(5000,50,5000)
-// var material=new THREE.MeshLambertMaterial({color:0xffffff})
-// var cube=new THREE.Mesh(geometry,material)
+var environment
+function set_envMap(){
+	environment = new THREE.CubeTextureLoader()
+	.setPath( 'img/' )
+	.load( [
+		'px.jpg',
+		'nx.jpg',
+		'py.jpg',
+		'ny.jpg',
+		'pz.jpg',
+		'nz.jpg'
+	] );
+}
 
-//var loader=new THREE.OBJLoader()
 
-var egg
+//============================模型
+
+var pig,bag,pigG
 
 function getStart(){
 	
@@ -109,7 +122,7 @@ function getStart(){
 	//scene.add(cube)
 
 	//====聚光灯
-	var spotLight=new THREE.SpotLight(0xffffff,1,1000,Math.PI/180*30,1,0)
+	var spotLight=new THREE.SpotLight(0xffffff,1,1000,Math.PI/180*30,0,0)
 	//颜色，强度，范围，光散角度，光锥衰减（光斑边缘模糊1，不模糊0） https://threejs.org/docs/index.html#api/zh/lights/SpotLight
 	spotLight.position.set(-10,40,20)
 	spotLight.target=cube//默认0,0,0,指定其他物体必须add到scene上
@@ -120,6 +133,7 @@ function getStart(){
 	scene.add(spotLightHelper)
 
 
+
 	//====平面
 	var planeGeo=new THREE.PlaneGeometry(60,60,60)
 	var planeMaterial=new THREE.MeshLambertMaterial({color:0xffffff})
@@ -127,47 +141,51 @@ function getStart(){
 	plane.rotation.x=-Math.PI/2
 	plane.position.y=-2.5
 	plane.receiveShadow=true
-	scene.add(plane)
+	//scene.add(plane)
 
 	scene.add(spotLight)//cube,plane
 	camera.position.set(40,40,40)
 	camera.lookAt(scene.position)
 
 
+	//====模型
 	var loader = new THREE.GLTFLoader();
 
 	loader.load(
 	// resource URL
-	'mod/egg.glb',
-	// called when the resource is loaded
-	function ( gltf ) {
-		console.log(gltf.scene)
-		egg=gltf.scene.children[2]
-		scene.add( gltf.scene.children[2] );
+	'mod/pig.glb',
+		// called when the resource is loaded
+		function ( gltf ) {
+			console.log(gltf.scene)
+			pig=gltf.scene.children[0]
+			scene.add(pig)
+			pig.position.y=10
 
-		ModLoaded()
-		//egg.material=new THREE.MeshLambertMaterial({color:0xffff00})
+			//scene.add( gltf.scene );
 
-		// gltf.animations; // Array<THREE.AnimationClip>
-		// gltf.scene; // THREE.Scene
-		// gltf.scenes; // Array<THREE.Scene>
-		// gltf.cameras; // Array<THREE.Camera>
-		// gltf.asset; // Object
+			ModLoaded()
+			//pig.material=new THREE.MeshLambertMaterial({color:0xffff00})
 
-	},
-	// called while loading is progressing
-	function ( xhr ) {
+			// gltf.animations; // Array<THREE.AnimationClip>
+			// gltf.scene; // THREE.Scene
+			// gltf.scenes; // Array<THREE.Scene>
+			// gltf.cameras; // Array<THREE.Camera>
+			// gltf.asset; // Object
 
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+		},
+		// called while loading is progressing
+		function ( xhr ) {
 
-	},
-	// called when loading has errors
-	function ( error ) {
+			console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
 
-		console.log( 'An error happened' );
+		},
+		// called when loading has errors
+		function ( error ) {
 
-	}
-);
+			console.log( 'An error happened' );
+
+		}
+	);
 
 
 
@@ -176,30 +194,29 @@ function getStart(){
 
 
 function ModLoaded(){
-	egg.scale.x=.05
-	egg.scale.y=.05
-	egg.scale.z=.05
-	egg.castShadow=true
+	// pig.scale.x=.5
+	// pig.scale.y=.5
+	// pig.scale.z=.5
+	// pig.castShadow=true
+
+	pig.scale.x=.1
+	pig.scale.y=.1
+	pig.scale.z=.1
+	pig.castShadow=true
 	//======摄像机移动
 	// TweenMax.to(camera.position,2,{y:100,repeat:10000,ease:Linear.easeNone,yoyo:true,onUpdate:function(){
 	// 	camera.lookAt(scene.position)
 	// }})
-	
-	
+
+	var pigmap=pig.material.map
+	//console.log(pig.material.map)
+	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
+	var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0})
+	pig.material=pigMat
 }
 
 
-// var mesh
-// function loadMod(){
-// 	loader.load('mod/test.obj', function(obj) {
-//     mesh = obj; //储存到全局变量中
-//     scene.add(mesh);
-    	
-//     	mesh.position.y=-100
-//     	mesh.castShadow=true
-//     	//mesh.receiveShadow=true
-// 	});
-// }
+
 
 
 
