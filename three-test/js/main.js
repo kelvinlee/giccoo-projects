@@ -25,15 +25,12 @@ function initAll () {
 function render(){
 	requestAnimationFrame(render)
 	renderer.render(scene,camera)
-	//controls.update();
 }
 //============================OrbitControls/datGUI 测试设置
 var controls,guiControls,datGUI
 
 function setTest(){
-	controls=new THREE.OrbitControls(camera,renderer.domElement)
-	controls.addEventListener('change',render)
-	
+	controls=new THREE.OrbitControls(camera,renderer.domElement)	
 
 	guiControls	=	new function(){//存放有所有需要改变的属性的对象
 		this.rotationX	=	90
