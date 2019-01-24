@@ -4,7 +4,8 @@ var scene=new THREE.Scene();
 var camera= new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
 //视角，宽高比，近剪切面，远剪切面
 var renderer = new THREE.WebGLRenderer({antialias:true,alpha:false})//抗锯齿
-
+var modNum=0
+var modLoadedNum=0
 
 
 initAll()
@@ -180,48 +181,58 @@ function getStart(){
 
 
 	//====模型
-	var loader = new THREE.GLTFLoader();
-
-	loader.load(
-	// resource URL
-	'mod/pig2.glb',
-		// called when the resource is loaded
-		function ( gltf ) {
-			console.log(gltf.scene)
-			pig=gltf.scene.children[0]
-			scene.add(pig)
-			pig.position.y=10
-
-			//scene.add( gltf.scene );
-
-			ModLoaded()
-			//pig.material=new THREE.MeshLambertMaterial({color:0xffff00})
-
-			// gltf.animations; // Array<THREE.AnimationClip>
-			// gltf.scene; // THREE.Scene
-			// gltf.scenes; // Array<THREE.Scene>
-			// gltf.cameras; // Array<THREE.Camera>
-			// gltf.asset; // Object
-
-		},
-		// called while loading is progressing
-		function ( xhr ) {
-
-			console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-
-		},
-		// called when loading has errors
-		function ( error ) {
-
-			console.log( 'An error happened' );
-
-		}
-	);
+	loadingMods('mod/pig2.glb',pig,loadingCheck)
+	
 
 
 
 
 }
+
+
+function loadingMods(_url,_target,_func){
+	modNum++
+	var loader = new THREE.GLTFLoader();
+
+	loader.load(
+	// resource URL
+	_url,
+		// called when the resource is loaded
+		function ( gltf ) {
+			modLoadedNum++
+			console.log(gltf.scene)
+			_target=gltf.scene.children[0]
+			scene.add(_target)
+			_func()
+			//pig.material=new THREE.MeshLambertMaterial({color:0xffff00})
+			// gltf.animations; // Array<THREE.AnimationClip>
+			// gltf.scene; // THREE.Scene
+			// gltf.scenes; // Array<THREE.Scene>
+			// gltf.cameras; // Array<THREE.Camera>
+			// gltf.asset; // Object
+		},
+		// called while loading is progressing
+		function ( xhr ) {
+			console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+		},
+		// called when loading has errors
+		function ( error ) {
+			console.log( 'An error happened', error );
+		}
+	);
+}
+
+
+function loadingCheck(){
+	if(modNum==modLoadedNum){
+		console.log("模型加载完成",modLoadedNum,"/",modNum)
+		ModLoaded()
+		
+	}else{
+		console.log("模型加载中",modLoadedNum,"/",modNum)
+	}
+}
+
 
 var newMap
 function ModLoaded(){
@@ -229,7 +240,8 @@ function ModLoaded(){
 	// pig.scale.y=.5
 	// pig.scale.z=.5
 	// pig.castShadow=true
-
+	//pig.position.y=10
+	console.log(pig)
 	pig.scale.x=.1
 	pig.scale.y=.1
 	pig.scale.z=.1
