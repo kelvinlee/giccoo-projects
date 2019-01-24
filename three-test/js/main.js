@@ -4,8 +4,9 @@ var scene=new THREE.Scene();
 var camera= new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
 //视角，宽高比，近剪切面，远剪切面
 var renderer = new THREE.WebGLRenderer({antialias:true,alpha:false})//抗锯齿
-var modNum=0
-var modLoadedNum=0
+var modNum=0 // 总数
+var modLoadedNum=0 // 已加载输
+var objs = {} // 模型
 
 
 initAll()
@@ -181,7 +182,7 @@ function getStart(){
 
 
 	//====模型
-	loadingMods('mod/pig2.glb',pig,loadingCheck)
+	loadingMods('mod/pig2.glb',"pig",loadingCheck)
 	
 
 
@@ -201,8 +202,8 @@ function loadingMods(_url,_target,_func){
 		function ( gltf ) {
 			modLoadedNum++
 			console.log(gltf.scene)
-			_target=gltf.scene.children[0]
-			scene.add(_target)
+			objs[_target]=gltf.scene.children[0]
+			scene.add(objs[_target])
 			_func()
 			//pig.material=new THREE.MeshLambertMaterial({color:0xffff00})
 			// gltf.animations; // Array<THREE.AnimationClip>
@@ -240,12 +241,11 @@ function ModLoaded(){
 	// pig.scale.y=.5
 	// pig.scale.z=.5
 	// pig.castShadow=true
-	//pig.position.y=10
-	console.log(pig)
-	pig.scale.x=.1
-	pig.scale.y=.1
-	pig.scale.z=.1
-	pig.castShadow=true
+	objs.pig.position.y=10
+	objs.pig.scale.x=.1
+	objs.pig.scale.y=.1
+	objs.pig.scale.z=.1
+	objs.pig.castShadow=true
 	//======摄像机移动
 	// TweenMax.to(camera.position,2,{y:100,repeat:10000,ease:Linear.easeNone,yoyo:true,onUpdate:function(){
 	// 	camera.lookAt(scene.position)
@@ -254,13 +254,13 @@ function ModLoaded(){
 	var texture = new THREE.TextureLoader().load( 'img/pig.jpg' );
 
 
-	var pigmap=pig.material.map
+	var pigmap=objs.pig.material.map
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
 	var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
 	//var pigMat=new THREE.MeshBasicMaterial({map:texture,envMap:environment,reflectivity:0,emissive:0xffffff,emissiveIntensity:2})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap})
-	pig.material=pigMat
+	objs.material=pigMat
 	//TweenMax.set(pig.scale,{x:.105,y:.105,z:.095})
 	//TweenMax.to(pig.scale,1.25,{x:.12,y:.12,z:.08,repeat:1000000,yoyo:true,ease:Sine.easeInOut})
 	

@@ -6221,11 +6221,33 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/kiehls/img/hint3.png": {
+		"ft": 32768,
+		"iS": 4792,
+		"oA": 0,
+		"oAP": "/kiehls/img/hint3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/kiehls/img/hint4.png": {
 		"ft": 32768,
 		"iS": 28102,
 		"oA": 0,
 		"oAP": "/kiehls/img/hint4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/kiehls/img/hint_jump.png": {
+		"ft": 32768,
+		"iS": 3915,
+		"oA": 0,
+		"oAP": "/kiehls/img/hint_jump.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -6764,6 +6786,16 @@
 		"oAP": "/kiehls/index.html",
 		"oF": 0,
 		"oS": 0
+		},
+	"/kiehls/js/ani.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/kiehls/js/ani-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
 		},
 	"/kiehls/js/build.js": {
 		"ft": 64,
@@ -11326,6 +11358,78 @@
 		"oAP": "/test/tags/transition.tag",
 		"oF": 0
 		},
+	"/three-test/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/three-test/css",
+		"oF": 0
+		},
+	"/three-test/img/nx.jpg": {
+		"ft": 16384,
+		"iS": 55087,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/three-test/img/nx.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/three-test/img/ny.jpg": {
+		"ft": 16384,
+		"iS": 26281,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/three-test/img/ny.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/three-test/img/nz.jpg": {
+		"ft": 16384,
+		"iS": 55926,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/three-test/img/nz.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/three-test/img/px.jpg": {
+		"ft": 16384,
+		"iS": 43656,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/three-test/img/px.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/three-test/img/py.jpg": {
+		"ft": 16384,
+		"iS": 6204,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/three-test/img/py.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/three-test/img/pz.jpg": {
+		"ft": 16384,
+		"iS": 75549,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/three-test/img/pz.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/three-test/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -11333,12 +11437,15 @@
 		"oAP": "/three-test/index.html",
 		"oF": 0
 		},
-	"/three-test/js/illum/test00000.gi2": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/three-test/js/illum/test00000.gi2",
-		"oF": 0
+	"/three-test/js/GLTFLoader.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/three-test/js/GLTFLoader-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
 		},
 	"/three-test/js/jquery-2.2.1.min.js": {
 		"ft": 64,
@@ -11370,26 +11477,15 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"/three-test/js/test.c4d": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/three-test/js/test.c4d",
-		"oF": 0
-		},
-	"/three-test/js/test.mtl": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/three-test/js/test.mtl",
-		"oF": 0
-		},
-	"/three-test/js/test.obj": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/three-test/js/test.obj",
-		"oF": 0
+	"/three-test/js/OrbitControls.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/three-test/js/OrbitControls-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
 		},
 	"/three-test/js/three.min.js": {
 		"ft": 64,
@@ -11411,18 +11507,18 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"/three-test/mod/test.mtl": {
+	"/three-test/mod/egg.glb": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/three-test/mod/test.mtl",
+		"oAP": "/three-test/mod/egg.glb",
 		"oF": 0
 		},
-	"/three-test/mod/test.obj": {
+	"/three-test/mod/pig.glb": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/three-test/mod/test.obj",
+		"oAP": "/three-test/mod/pig.glb",
 		"oF": 0
 		},
 	"/ThreeMusketeers": {
