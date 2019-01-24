@@ -364,3 +364,10 @@ html, body {
 img {
   max-width: 100%; }
 
+.fps {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  z-index: 100;
+  background-color: #fff
+}

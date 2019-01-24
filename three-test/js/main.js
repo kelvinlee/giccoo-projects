@@ -7,6 +7,7 @@ var renderer = new THREE.WebGLRenderer({antialias:true,alpha:false})//抗锯齿
 var modNum=0 // 总数
 var modLoadedNum=0 // 已加载输
 var objs = {} // 模型
+var stats = null
 
 
 initAll()
@@ -26,8 +27,11 @@ function initAll () {
 }
 //============================每帧渲染
 function render(){
+	stats.begin()
 	requestAnimationFrame(render)
 	renderer.render(scene,camera)
+	stats.end()
+
 }
 //============================OrbitControls/datGUI 测试设置
 var controls,guiControls,datGUI
@@ -36,9 +40,11 @@ function setTest(){
 	//====OrbitControls
 	controls=new THREE.OrbitControls(camera,renderer.domElement)	
 	// //====stats.js 性能测试
-	// var stats = new Stats()
-	// stats.showPanel(1)// 0: fps, 1: ms, 2: mb, 3+: custom
-	// document.body.appendChild(stats.dom)
+	stats = new Stats()
+	stats.showPanel(2)// 0: fps, 1: ms, 2: mb, 3+: custom
+	// console.log(stats)
+	document.body.appendChild(stats.domElement)
+	stats.domElement.className = "fps"
 
 	//====datGUI
 	guiControls	=	new function(){//存放有所有需要改变的属性的对象
@@ -194,14 +200,13 @@ function getStart(){
 function loadingMods(_url,_target,_func){
 	modNum++
 	var loader = new THREE.GLTFLoader();
-
 	loader.load(
 	// resource URL
 	_url,
 		// called when the resource is loaded
 		function ( gltf ) {
 			modLoadedNum++
-			console.log(gltf.scene)
+			console.log(gltf.scene.children[0])
 			objs[_target]=gltf.scene.children[0]
 			scene.add(objs[_target])
 			_func()
@@ -220,7 +225,7 @@ function loadingMods(_url,_target,_func){
 		function ( error ) {
 			console.log( 'An error happened', error );
 		}
-	);
+	)
 }
 
 
