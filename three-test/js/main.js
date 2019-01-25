@@ -284,8 +284,8 @@ function getStart(){
 	dLight.position.set(0,50,0)
 	//dLight.target=scene
 	dLight.castShadow=true
-	dLight.shadow.mapSize.width = 1024;  // default
-	dLight.shadow.mapSize.height = 1024; // default
+	dLight.shadow.mapSize.width = 64;  // default
+	dLight.shadow.mapSize.height = 64; // default
 	dLight.shadow.camera.near = 0.5;    // default
 	dLight.shadow.camera.far = 1000;     // default
 	dLight.shadow.camera.left = -100;    // default
