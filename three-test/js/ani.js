@@ -1,5 +1,9 @@
 
 var pigScale=0.1
+var footLinearDamping=0.2
+var handLinearDamping=0.2
+var footAngularDamping=0.2
+var handAngularDamping=0.2
 //====================================左脚
 var leftFoot
 function setLeftFoot(){
@@ -26,7 +30,9 @@ function setLeftFootPhy(){
 	leftFootBody=new CANNON.Body({
 		mass:5,
 		position:new CANNON.Vec3(20*pigScale,0,0),
-		shape:leftFootShap
+		shape:leftFootShap,
+		linearDamping:footLinearDamping,
+		angularDamping:footAngularDamping
 	})
 	world.add(leftFootBody)
 	meshes.push(objs.foot)
@@ -35,7 +41,9 @@ function setLeftFootPhy(){
 	//=====左膝盖
 	leftFootJointBody=new CANNON.Body({
 		mass:1,
-		position:new CANNON.Vec3(20*pigScale,50*pigScale,10*pigScale)
+		position:new CANNON.Vec3(20*pigScale,50*pigScale,10*pigScale),
+		linearDamping:footLinearDamping,
+		angularDamping:footAngularDamping
 	})
 	world.add(leftFootJointBody)
 	meshes.push(leftFootJoint)
@@ -103,8 +111,11 @@ function setRightFootPhy(){
 	rightFootBody=new CANNON.Body({
 		mass:5,
 		position:new CANNON.Vec3(-20*pigScale,0,0),
-		shape:rightFootShap
+		shape:rightFootShap,
+		linearDamping:footLinearDamping,
+		angularDamping:footAngularDamping
 	})
+	console.log(rightFootBody.linearDamping)
 	world.add(rightFootBody)
 	meshes.push(rightFoot)
 	bodies.push(rightFootBody)
@@ -112,7 +123,9 @@ function setRightFootPhy(){
 	//=====右膝盖
 	rightFootJointBody=new CANNON.Body({
 		mass:1,
-		position:new CANNON.Vec3(-20*pigScale,50*pigScale,30*pigScale)
+		position:new CANNON.Vec3(-20*pigScale,50*pigScale,30*pigScale),
+		linearDamping:footLinearDamping,
+		angularDamping:footAngularDamping
 	})
 	world.add(rightFootJointBody)
 	meshes.push(rightFootJoint)
@@ -179,7 +192,9 @@ function setRightHandPhy(){
 	rightHandBody=new CANNON.Body({
 		mass:5,
 		position:new CANNON.Vec3(-20*pigScale,0,0),
-		shape:rightHandShap
+		shape:rightHandShap,
+		linearDamping:handLinearDamping,
+		angularDamping:handAngularDamping
 	})
 	world.add(rightHandBody)
 	meshes.push(rightHand)
@@ -188,7 +203,9 @@ function setRightHandPhy(){
 	//=====右肘
 	rightHandJointBody=new CANNON.Body({
 		mass:1,
-		position:new CANNON.Vec3(-20*pigScale,50*pigScale,30*pigScale)
+		position:new CANNON.Vec3(-20*pigScale,50*pigScale,30*pigScale),
+		linearDamping:handLinearDamping,
+		angularDamping:handAngularDamping
 	})
 	world.add(rightHandJointBody)
 	meshes.push(rightHandJoint)
@@ -255,7 +272,9 @@ function setLeftHandPhy(){
 	leftHandBody=new CANNON.Body({
 		mass:5,
 		position:new CANNON.Vec3(20*pigScale,0,0),
-		shape:leftHandShap
+		shape:leftHandShap,
+		linearDamping:handLinearDamping,
+		angularDamping:handAngularDamping
 	})
 	leftHand.castShadow=true
 	world.add(leftHandBody)
@@ -265,7 +284,9 @@ function setLeftHandPhy(){
 	//=====左肘
 	leftHandJointBody=new CANNON.Body({
 		mass:1,
-		position:new CANNON.Vec3(20*pigScale,50*pigScale,30*pigScale)
+		position:new CANNON.Vec3(20*pigScale,50*pigScale,30*pigScale),
+		linearDamping:handLinearDamping,
+		angularDamping:handAngularDamping
 	})
 	world.add(leftHandJointBody)
 	meshes.push(leftHandJoint)

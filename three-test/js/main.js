@@ -122,8 +122,11 @@ function setTest(){
 
 var raycaster=new THREE.Raycaster()
 var mouse=new THREE.Vector2()
+var intersects=[]
+var mouseConstraint = void 0;
 function clickFunc(){
 	document.addEventListener("touchstart",onDocumentTouchStart,false)
+	document.addEventListener("touchmove",onDocumentTouchMove,false)
 }
 function onDocumentTouchStart(_e){
 	//_e.preventDefault()
@@ -132,22 +135,45 @@ function onDocumentTouchStart(_e){
 	mouse.y=-(_e.touches[0].clientY/window.innerHeight)*2+1//donElement
 
 	raycaster.setFromCamera(mouse,camera)
-
-	var intersects = raycaster.intersectObjects( scene.children )
+	intersects = []
+	//intersects = raycaster.intersectObjects( scene.children )
+	raycaster.intersectObjects( meshes ,false,intersects)
 
 	if(intersects.length>0){
 		//console.log(intersects[0])
 		//console.log(intersects[0].object)
-		if(intersects[0].object==objs.pig){
-			// TweenMax.set(objs.pig.rotation,{x:Math.PI/180*Math.random()*360,y:Math.PI/180*Math.random()*360,z:Math.PI/180*Math.random()*360})
-			// TweenMax.set(objs.pig.position,{y:20})
-			// TweenMax.to(objs.pig.rotation,2,{x:Math.PI/2,y:0,z:0,ease:Elastic.easeOut})
-			// TweenMax.to(objs.pig.position,2,{x:0,y:20,z:0,ease:Bounce.easeOut})
+		// if(intersects[0].object==objs.pig){
+		// 	// TweenMax.set(objs.pig.rotation,{x:Math.PI/180*Math.random()*360,y:Math.PI/180*Math.random()*360,z:Math.PI/180*Math.random()*360})
+		// 	// TweenMax.set(objs.pig.position,{y:20})
+		// 	// TweenMax.to(objs.pig.rotation,2,{x:Math.PI/2,y:0,z:0,ease:Elastic.easeOut})
+		// 	// TweenMax.to(objs.pig.position,2,{x:0,y:20,z:0,ease:Bounce.easeOut})
 
 
-		}
+		// }
+		console.log(intersects[0].object.userData.body)
+		var body=intersects[0].object.userData.body
+		if(!body) return;
+		controls.enabled=false;
+		var pos = body.position;
+		pickingPlane.position.copy(pos)
+		pickingPlane.quaternion.copy(camera.quaternion)
+		addMouseConstraint(pox.x,pos.y,pos.z,body)
+		return;
 	}
+}
 
+function onDocumentTouchMove(_e){
+
+}
+
+function addMouseConstraint(x,y,z,body){
+	var constrainedBody = body;
+  var v1 = new CANNON.Vec3(x, y, z).vsub(constrainedBody.position);
+  var antiRot = constrainedBody.quaternion.inverse();
+  var pivot = antiRot.vmult(v1);
+  jointBody.position.set(x, y, z);
+  mouseConstraint = new CANNON.PointToPointConstraint(constrainedBody, pivot, this.jointBody, new CANNON.Vec3(0, 0, 0), 100);
+  world.addConstraint(mouseConstraint);
 }
 
 
@@ -208,6 +234,8 @@ function getStart(){
 	// var axes = new THREE.AxesHelper(10);//轴辅助
 	// scene.add(axes)
 
+
+
 	//====立方体
 	var cubeGeo=new THREE.BoxGeometry(1,1,1)
 	var cubeMaterial=new THREE.MeshBasicMaterial({color:0xffff00})
@@ -265,12 +293,25 @@ function getStart(){
 	//TweenMax.set(pig.scale,{x:.105,y:.105,z:.095})
 	//TweenMax.to(pig.scale,1.25,{x:.12,y:.12,z:.08,repeat:1000000,yoyo:true,ease:Sine.easeInOut})
 
+	addPickingPlane()
+
 	setPhy()
 	setLeftFoot()
 	setRightFoot()
 	setRightHand()
 	setLeftHand()
 	animate()
+
+}
+var pickingPlane
+function addPickingPlane(){
+	var planeGeo = new THREE.PlaneGeometry(40, 20);
+	pickingPlane = new THREE.Mesh(planeGeo, new THREE.MeshBasicMaterial({
+    color: 0xff0000,
+    transparent: true,
+    opacity: 0
+  }));
+  scene.add(this.pickingPlane);
 }
 
 
@@ -282,6 +323,14 @@ function setPhy(){
 	//====设置世界
 	world.gravity.set(0, -40, 0)
 	world.broadphase = new CANNON.NaiveBroadphase()//NaiveBroadphase
+	
+	//====定义鼠标跟随点
+	var shape = new CANNON.Sphere(0.1);
+  jointBody = new CANNON.Body({
+                mass: 0
+            });
+            jointBody.addShape(shape);
+  world.add(jointBody)
 
 	//====总固定点
 	rootPointBody=new CANNON.Body({
@@ -302,7 +351,7 @@ function setPhy(){
 	world.add(pigBody)
 	meshes.push(objs.pig)
 	bodies.push(pigBody)
-
+	objs.pig.userData.body=pigBody
 
 	//=====链接猪和起始点(pigBody+rootPointBody)
 	// var v1=new CANNON.Vec3(0,130,0).vsub(pigBody.position)
