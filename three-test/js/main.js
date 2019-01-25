@@ -66,7 +66,6 @@ function render() {
 	] );
 	leftLegGeo.copy( new THREE.TubeBufferGeometry( leftFootCurve, 20, 1.3, 8, false ))
 
-	console.log(startP)
 
 	
   renderer.render(scene, camera);
