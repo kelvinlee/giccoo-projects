@@ -284,14 +284,14 @@ function getStart(){
 	dLight.position.set(0,50,0)
 	//dLight.target=scene
 	dLight.castShadow=true
-	dLight.shadow.mapSize.width = 1024;  // default
-	dLight.shadow.mapSize.height = 1024; // default
+	dLight.shadow.mapSize.width = 2048;  // default
+	dLight.shadow.mapSize.height = 2048; // default
 	dLight.shadow.camera.near = 0.5;    // default
 	dLight.shadow.camera.far = 1000;     // default
-	dLight.shadow.camera.left = -50;    // default
-	dLight.shadow.camera.right = 50; 
-	dLight.shadow.camera.bottom = -50;    // default
-	dLight.shadow.camera.top = 50; 
+	dLight.shadow.camera.left = -100;    // default
+	dLight.shadow.camera.right = 100; 
+	dLight.shadow.camera.bottom = -100;    // default
+	dLight.shadow.camera.top = 100; 
 
 	// TweenMax.to(dLight.position,2,{x:100,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:1})//光源旋转
 	// TweenMax.to(dLight.position,2,{z:100,repeat:100000,yoyo:true,ease:Sine.easeInOut})
@@ -319,8 +319,8 @@ function getStart(){
 	var pigmap=objs.pig.material.map
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
-	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
-	var pigMat=new THREE.MeshBasicMaterial({map:pigmap,envMap:environment,reflectivity:0})
+	var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
+	//var pigMat=new THREE.MeshBasicMaterial({map:pigmap,envMap:environment,reflectivity:0})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap})
 	objs.pig.material=pigMat
 	//TweenMax.set(pig.scale,{x:.105,y:.105,z:.095})
