@@ -55,19 +55,7 @@ function updatePhysics(){
 }
 
 function render() {
-
-	//startP=new CANNON.Vec3(2,-11.46146,0).vadd(pigBody.position)
-	var antiRot=pigBody.quaternion//.inverse()
-	startP=antiRot.vmult(new CANNON.Vec3(2,-9,0)).vadd(pigBody.position)
-	//startP=pigBody.position
-	
-	var leftFootCurve = new THREE.CatmullRomCurve3( [
-		vec3toVector3(startP),vec3toVector3(leftFootJointBody.position),vec3toVector3(leftFootBody.position)
-	] );
-	leftLegGeo.copy( new THREE.TubeBufferGeometry( leftFootCurve, 20, 1.3, 8, false ))
-
-
-	
+	updateArmLegs()
   renderer.render(scene, camera);
 }
 
@@ -279,6 +267,9 @@ function getStart(){
 
 	setPhy()
 	setLeftFoot()
+	setRightFoot()
+	setRightHand()
+	setLeftHand()
 	animate()
 }
 
@@ -318,7 +309,7 @@ function setPhy(){
 	// var antiRot=pigBody.quaternion.inverse()
 	// var pivot=antiRot.vmult(v1)
 	//body_rootConstraint = new CANNON.PointToPointConstraint(pigBody, pivot, rootPointBody, new CANNON.Vec3(0,0,0),10);
-	body_rootConstraint = new CANNON.PointToPointConstraint(pigBody, new CANNON.Vec3(0,130,0), rootPointBody, new CANNON.Vec3(0,0,0),10);
+	body_rootConstraint = new CANNON.PointToPointConstraint(pigBody, new CANNON.Vec3(0,130,0), rootPointBody, new CANNON.Vec3(0,0,0),100);
 	world.addConstraint(body_rootConstraint);
 
 
