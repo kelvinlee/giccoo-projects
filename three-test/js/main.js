@@ -163,7 +163,40 @@ function onDocumentTouchStart(_e){
 }
 
 function onDocumentTouchMove(_e){
-
+	mouse.x = event.clientX / window.innerWidth * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+  if (mouseConstraint) {
+                var deltaX = event.clientX - this.lastX;
+                var deltaY = event.clientY - this.lastY;
+                var dirX = deltaX < 0 ? -1 : 1;
+                var dirY = deltaY < 0 ? -1 : 1;
+                if (Math.abs(deltaX) >= MIN_DISTANCE_PER_SHAKE && dirX !== 0 && this.lastDirX !== dirX) {
+                    this.lastDirX = dirX;
+                    this.entropy += ENTROPY_PER_SHAKE;
+                }
+                if (Math.abs(deltaY) >= MIN_DISTANCE_PER_SHAKE && dirY !== 0 && this.lastDirY !== dirY) {
+                    this.lastDirY = dirY;
+                    this.entropy += ENTROPY_PER_SHAKE;
+                }
+                this.lastX = event.clientX;
+                this.lastY = event.clientY;
+                if (this.entropy > HIDE_HINT_ENTROPY) {
+                    this.hideHint();
+                }
+                if (this.entropy > MAX_ENTROPY[this.level]) {
+                    this.addGift();
+                    this.entropy = 0;
+                }
+                this.raycaster.setFromCamera(this.mouse, this.camera);
+                this.intersects.length = 0;
+                this.raycaster.intersectObject(this.pickingPlane, false, this.intersects);
+                if (this.intersects.length) {
+                    var pos = this.intersects[0].point;
+                    this.dust.emitter && (this.dust.emitter.position.value = pos);
+                    this.moveJointToPoint(pos.x, pos.y, pos.z);
+                }
+                return false;
+            }
 }
 
 function addMouseConstraint(x,y,z,body){
@@ -250,7 +283,7 @@ function getStart(){
 	var dLight=new THREE.DirectionalLight(0xffffff,.3)
 	dLight.position.set(0,50,0)
 	//dLight.target=scene
-	dLight.castShadow=true
+	//dLight.castShadow=true
 	dLight.shadow.mapSize.width = 4096;  // default
 	dLight.shadow.mapSize.height = 4096; // default
 	dLight.shadow.camera.near = 0.5;    // default
