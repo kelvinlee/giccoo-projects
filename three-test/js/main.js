@@ -17,7 +17,7 @@ var pigShape,pigBody
 
 initAll()
 function initAll () {
-	renderer.setClearColor(0xffffff)//设置背景颜色
+	renderer.setClearColor(0x9bcff8)//设置背景颜色
 	renderer.setSize(window.innerWidth,window.innerHeight)//设置宽高
 	renderer.shadowMapEnabled=true
 	renderer.shandowMapSoft=true
@@ -200,13 +200,13 @@ function ModLoaded(){//加载模型完成
 //===========================开始
 
 function getStart(){
-	//====网格
-	var grid=new THREE.GridHelper(50,10,0xffff00,0x888888)//网格辅助(格子尺寸，格子细分数，中线颜色，网格线颜色)
-	scene.add(grid)
+	// //====网格
+	// var grid=new THREE.GridHelper(50,10,0xffff00,0x888888)//网格辅助(格子尺寸，格子细分数，中线颜色，网格线颜色)
+	// scene.add(grid)
 
-	//====坐标轴
-	var axes = new THREE.AxesHelper(10);//轴辅助
-	scene.add(axes)
+	// //====坐标轴
+	// var axes = new THREE.AxesHelper(10);//轴辅助
+	// scene.add(axes)
 
 	//====立方体
 	var cubeGeo=new THREE.BoxGeometry(1,1,1)
@@ -215,11 +215,11 @@ function getStart(){
 	scene.add(rootPoint)
 
 	// ====环境光
-	var ambientLight=new THREE.AmbientLight(0xffffff,.5)
+	var ambientLight=new THREE.AmbientLight(0xffffff,.7)
 	scene.add(ambientLight)
 
 	//====平行光
-	var dLight=new THREE.DirectionalLight(0xffffff,.5)
+	var dLight=new THREE.DirectionalLight(0xffffff,.3)
 	dLight.position.set(0,50,0)
 	//dLight.target=scene
 	dLight.castShadow=true
@@ -239,7 +239,7 @@ function getStart(){
 
 	//====平面
 	var planeGeo=new THREE.PlaneGeometry(600,600,60)
-	var planeMaterial=new THREE.MeshLambertMaterial({color:0xffffff})
+	var planeMaterial=new THREE.MeshLambertMaterial({color:0x9bcff8})
 	var plane=new THREE.Mesh(planeGeo,planeMaterial)
 	plane.rotation.x=-Math.PI/2
 	plane.position.y=-10
