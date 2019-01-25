@@ -51,20 +51,20 @@ function updatePhysics(){
     meshes[i].position.copy(bodies[i].position);//========meshes[]里放THREE模型，bodies[]里放物理CANNON的 body模型
     meshes[i].quaternion.copy(bodies[i].quaternion);
   }
-  cannonDebugRenderer.update()
+  //cannonDebugRenderer.update()
 }
 
 function render() {
 
 	//startP=new CANNON.Vec3(2,-11.46146,0).vadd(pigBody.position)
-	var antiRot=pigBody.quaternion.inverse()
-	startP=antiRot.vmult(new CANNON.Vec3(2,-12,0).vsub(pigBody.position))
+	var antiRot=pigBody.quaternion//.inverse()
+	startP=antiRot.vmult(new CANNON.Vec3(2,-9,0)).vadd(pigBody.position)
 	//startP=pigBody.position
 	
 	var leftFootCurve = new THREE.CatmullRomCurve3( [
 		vec3toVector3(startP),vec3toVector3(leftFootJointBody.position),vec3toVector3(leftFootBody.position)
 	] );
-	leftLegGeo.copy( new THREE.TubeBufferGeometry( leftFootCurve, 20, 0.3, 8, false ))
+	leftLegGeo.copy( new THREE.TubeBufferGeometry( leftFootCurve, 20, 1.3, 8, false ))
 
 	console.log(startP)
 

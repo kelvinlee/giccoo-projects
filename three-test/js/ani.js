@@ -15,7 +15,7 @@ function setLeftFoot(){
 	var leftFootJointGeo=new THREE.BoxGeometry(1,1,1)
 	var leftFootJointMaterial=new THREE.MeshBasicMaterial({color:0xffff00})
 	leftFootJoint=new THREE.Mesh(leftFootJointGeo,leftFootJointMaterial)
-	scene.add(leftFootJoint)
+	//scene.add(leftFootJoint)
 
 
 
@@ -39,7 +39,7 @@ function setLeftFootPhy(){
 
 	leftFootJointBody=new CANNON.Body({
 		mass:1,
-		position:new CANNON.Vec3(2,5,0)
+		position:new CANNON.Vec3(2,5,1)
 	})
 	world.add(leftFootJointBody)
 	meshes.push(leftFootJoint)
@@ -71,7 +71,7 @@ function setLeftFootPhy(){
 
 	leftLegGeo = new THREE.TubeBufferGeometry( leftFootCurve, 20, 0.3, 8, false );
 	leftLegGeo.attributes.position.needsUpdate = true
-	leftLegMat = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
+	leftLegMat = new THREE.MeshBasicMaterial( { color: 0xDE8E8E } );
 	leftLeg = new THREE.Mesh( leftLegGeo, leftLegMat );
 	scene.add( leftLeg );
 	
