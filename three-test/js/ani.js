@@ -7,14 +7,15 @@ var handAngularDamping=0.2
 //====================================左脚
 var leftFoot
 function setLeftFoot(){
-	leftFoot=objs.foot
-	objs.foot.scale.set(pigScale,pigScale,pigScale)
-	objs.foot.position.set(0,0,0)
-	objs.foot.castShadow=true
+	leftFoot=objs.foot.clone()
+	scene.add(leftFoot)
+	leftFoot.scale.set(pigScale,pigScale,pigScale)
+	leftFoot.position.set(0,0,0)
+	leftFoot.castShadow=true
 	var footmap=objs.foot.material.map
 	var footMat=new THREE.MeshBasicMaterial({map:footmap,envMap:environment,reflectivity:0})
 
-	objs.foot.material=footMat
+	leftFoot.material=footMat
 
 
 	var leftFootJointGeo=new THREE.BoxGeometry(1,1,1)
@@ -35,8 +36,9 @@ function setLeftFootPhy(){
 		angularDamping:footAngularDamping
 	})
 	world.add(leftFootBody)
-	meshes.push(objs.foot)
+	meshes.push(leftFoot)
 	bodies.push(leftFootBody)
+	leftFoot.userData.body=leftFootBody
 
 	//=====左膝盖
 	leftFootJointBody=new CANNON.Body({
@@ -119,6 +121,7 @@ function setRightFootPhy(){
 	world.add(rightFootBody)
 	meshes.push(rightFoot)
 	bodies.push(rightFootBody)
+	rightFoot.userData.body=rightFootBody
 
 	//=====右膝盖
 	rightFootJointBody=new CANNON.Body({
@@ -199,6 +202,7 @@ function setRightHandPhy(){
 	world.add(rightHandBody)
 	meshes.push(rightHand)
 	bodies.push(rightHandBody)
+	rightHand.userData.body=rightHandBody
 
 	//=====右肘
 	rightHandJointBody=new CANNON.Body({
@@ -280,6 +284,7 @@ function setLeftHandPhy(){
 	world.add(leftHandBody)
 	meshes.push(leftHand)
 	bodies.push(leftHandBody)
+	leftHand.userData.body=leftHandBody
 
 	//=====左肘
 	leftHandJointBody=new CANNON.Body({

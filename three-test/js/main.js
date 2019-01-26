@@ -28,7 +28,7 @@ function initAll () {
 	document.body.appendChild(renderer.domElement)
 	
 
-	loadingMods('mod/pig2.glb',"pig")//模型加载
+	loadingMods('mod/pig2.glb',"pig","addScene")//模型加载
 	loadingMods('mod/foot.glb',"foot")//模型加载
 
 	//render()
@@ -130,6 +130,7 @@ var mouseConstraint = void 0;
 function clickFunc(){
 	document.addEventListener("touchstart",onDocumentTouchStart,false)
 	document.addEventListener("touchmove",onDocumentTouchMove,false)
+	document.addEventListener("touchend",onDocumentTouchEnd,false)
 }
 function onDocumentTouchStart(_e){
 	//_e.preventDefault()
@@ -160,46 +161,71 @@ function onDocumentTouchStart(_e){
 		var pos = body.position;
 		pickingPlane.position.copy(pos)
 		pickingPlane.quaternion.copy(camera.quaternion)
-		addMouseConstraint(pox.x,pos.y,pos.z,body)
+		addMouseConstraint(pos.x,pos.y,pos.z,body)
 		return;
 	}
 }
+var lastX,lastY
 
 function onDocumentTouchMove(_e){
-	mouse.x = event.clientX / window.innerWidth * 2 - 1;
-  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+	mouse.x=(_e.touches[0].clientX/window.innerWidth)*2-1
+	mouse.y=-(_e.touches[0].clientY/window.innerHeight)*2+1//donElement
+  console.log(mouse.x)
   if (mouseConstraint) {
-                var deltaX = event.clientX - this.lastX;
-                var deltaY = event.clientY - this.lastY;
-                var dirX = deltaX < 0 ? -1 : 1;
-                var dirY = deltaY < 0 ? -1 : 1;
-                if (Math.abs(deltaX) >= MIN_DISTANCE_PER_SHAKE && dirX !== 0 && this.lastDirX !== dirX) {
-                    this.lastDirX = dirX;
-                    this.entropy += ENTROPY_PER_SHAKE;
-                }
-                if (Math.abs(deltaY) >= MIN_DISTANCE_PER_SHAKE && dirY !== 0 && this.lastDirY !== dirY) {
-                    this.lastDirY = dirY;
-                    this.entropy += ENTROPY_PER_SHAKE;
-                }
-                this.lastX = event.clientX;
-                this.lastY = event.clientY;
-                if (this.entropy > HIDE_HINT_ENTROPY) {
-                    this.hideHint();
-                }
-                if (this.entropy > MAX_ENTROPY[this.level]) {
-                    this.addGift();
-                    this.entropy = 0;
-                }
-                this.raycaster.setFromCamera(this.mouse, this.camera);
-                this.intersects.length = 0;
-                this.raycaster.intersectObject(this.pickingPlane, false, this.intersects);
-                if (this.intersects.length) {
-                    var pos = this.intersects[0].point;
-                    this.dust.emitter && (this.dust.emitter.position.value = pos);
-                    this.moveJointToPoint(pos.x, pos.y, pos.z);
+                //var deltaX = event.clientX - lastX;
+                //var deltaY = event.clientY - lastY;
+                //var dirX = deltaX < 0 ? -1 : 1;
+                //var dirY = deltaY < 0 ? -1 : 1;
+                // if (Math.abs(deltaX) >= MIN_DISTANCE_PER_SHAKE && dirX !== 0 && this.lastDirX !== dirX) {
+                //     this.lastDirX = dirX;
+                //     this.entropy += ENTROPY_PER_SHAKE;
+                // }
+                // if (Math.abs(deltaY) >= MIN_DISTANCE_PER_SHAKE && dirY !== 0 && this.lastDirY !== dirY) {
+                //     this.lastDirY = dirY;
+                //     this.entropy += ENTROPY_PER_SHAKE;
+                // }
+                //lastX = event.clientX;
+                //lastY = event.clientY;
+                // if (this.entropy > HIDE_HINT_ENTROPY) {
+                //     this.hideHint();
+                // }
+                // if (this.entropy > MAX_ENTROPY[this.level]) {
+                //     this.addGift();
+                //     this.entropy = 0;
+                // }
+                raycaster.setFromCamera(mouse, camera);
+                intersects.length = 0;
+                raycaster.intersectObject(pickingPlane, false, intersects);
+                //console.log(pickingPlane)
+
+                if (intersects.length) {
+                    var pos = intersects[0].point;
+
+                    //this.dust.emitter && (this.dust.emitter.position.value = pos);
+                    moveJointToPoint(pos.x, pos.y, pos.z);
                 }
                 return false;
             }
+}
+
+function onDocumentTouchEnd(_e){
+	controls.enabled = true;
+	removeJointConstraint();
+}
+function removeJointConstraint() {
+  world.removeConstraint(mouseConstraint);
+  mouseConstraint = false;
+  
+
+  leftFootBody.linearDamping=rightFootBody.linearDamping=leftFootJointBody.linearDamping=rightFootJointBody.linearDamping=footLinearDamping
+	leftHandBody.linearDamping=rightHandBody.linearDamping=leftHandJointBody.linearDamping=rightHandJointBody.linearDamping=handLinearDamping
+	leftFootBody.angularDamping=rightFootBody.angularDamping=leftFootJointBody.angularDamping=rightFootJointBody.angularDamping=footAngularDamping
+	leftHandBody.angularDamping=rightHandBody.angularDamping=leftHandJointBody.angularDamping=rightHandJointBody.angularDamping=handAngularDamping
+}
+function moveJointToPoint(x, y, z) {
+  y = Math.max( - 3.8, y);
+  jointBody.position.set(x, y, z);
+  mouseConstraint && mouseConstraint.update();
 }
 
 function addMouseConstraint(x,y,z,body){
@@ -210,13 +236,25 @@ function addMouseConstraint(x,y,z,body){
   jointBody.position.set(x, y, z);
   mouseConstraint = new CANNON.PointToPointConstraint(constrainedBody, pivot, this.jointBody, new CANNON.Vec3(0, 0, 0), 100);
   world.addConstraint(mouseConstraint);
+
+	leftFootBody.linearDamping=leftFootBody.angularDamping=0
+  rightFootBody.linearDamping=rightFootBody.angularDamping=0
+  leftHandBody.linearDamping=leftHandBody.angularDamping=0
+  rightHandBody.linearDamping=rightHandBody.angularDamping=0
+
+  leftFootJointBody.linearDamping=leftFootJointBody.angularDamping=0
+  rightFootJointBody.linearDamping=rightFootJointBody.angularDamping=0
+  leftHandJointBody.linearDamping=leftHandJointBody.angularDamping=0
+  rightHandJointBody.linearDamping=rightHandJointBody.angularDamping=0
+
+	
 }
 
 
 
 //============================模型加载函数 loadingMods('mod/pig2.glb',"pig")
 
-function loadingMods(_url,_target){
+function loadingMods(_url,_target,_ifAddScene){
 	modNum++
 	var loader = new THREE.GLTFLoader();
 
@@ -225,7 +263,10 @@ function loadingMods(_url,_target){
 			modLoadedNum++
 			console.log(gltf.scene)
 			objs[_target]=gltf.scene.children[0]
-			scene.add(objs[_target])
+			if(_ifAddScene){
+				scene.add(objs[_target])
+			}
+			
 			loadingCheck()
 			//pig.material=new THREE.MeshLambertMaterial({color:0xffff00})
 			// gltf.animations; // Array<THREE.AnimationClip>
@@ -341,7 +382,7 @@ function getStart(){
 }
 var pickingPlane
 function addPickingPlane(){
-	var planeGeo = new THREE.PlaneGeometry(40, 20);
+	var planeGeo = new THREE.PlaneGeometry(4000, 2000);
 	pickingPlane = new THREE.Mesh(planeGeo, new THREE.MeshBasicMaterial({
     color: 0xff0000,
     transparent: true,
