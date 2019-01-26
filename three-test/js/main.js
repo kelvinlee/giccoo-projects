@@ -170,7 +170,6 @@ var lastX,lastY
 function onDocumentTouchMove(_e){
 	mouse.x=(_e.touches[0].clientX/window.innerWidth)*2-1
 	mouse.y=-(_e.touches[0].clientY/window.innerHeight)*2+1//donElement
-  console.log(mouse.x)
   if (mouseConstraint) {
                 //var deltaX = event.clientX - lastX;
                 //var deltaY = event.clientY - lastY;
@@ -419,10 +418,11 @@ function setPhy(){
 	bodies.push(rootPointBody)
 
 	//====猪
+	var pigShape=new CANNON.Sphere(8)
 	pigBody=new CANNON.Body({
 		mass:5,
 		position:new CANNON.Vec3(0,20,0),
-		//shape:pigShape
+		shape:pigShape
 	})
 	setMeshPhy(objs.pig,pigBody,0.1)//=====加物理外形
 	world.add(pigBody)
