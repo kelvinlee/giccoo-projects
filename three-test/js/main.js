@@ -19,8 +19,11 @@ initAll()
 function initAll () {
 	renderer.setClearColor(0x9bcff8)//设置背景颜色
 	renderer.setSize(window.innerWidth,window.innerHeight)//设置宽高
+	renderer.shadowMap.type=THREE.BasicShadowMap//.BasicShadowMap
+
 	renderer.shadowMapEnabled=true
-	renderer.shandowMapSoft=true
+	//renderer.shadowMapSoft=true
+	
 
 	document.body.appendChild(renderer.domElement)
 	
