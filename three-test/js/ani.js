@@ -59,7 +59,7 @@ function setLeftFootPhy(){
 		axisB: CANNON.Vec3.UNIT_Y,
     angle: Math.PI / 100,
     twistAngle: 0,
-		maxForce:100
+		maxForce:1e100
 	});
 
 	world.addConstraint(leftFootJoint_bodyConstraint);
@@ -73,7 +73,7 @@ function setLeftFootPhy(){
 		axisB: CANNON.Vec3.UNIT_Y,
     angle: Math.PI / 100,
     twistAngle: 0,
-		maxForce:100
+		maxForce:1e100
 	});
 	world.addConstraint(foot_leftFootJointConstraint);
 
@@ -142,7 +142,7 @@ function setRightFootPhy(){
 		axisB: CANNON.Vec3.UNIT_Y,
     angle: Math.PI / 100,
     twistAngle: 0,
-		maxForce:100
+		maxForce:1e100
 	});
 	world.addConstraint(rightFootJoint_bodyConstraint);
 
@@ -154,7 +154,7 @@ function setRightFootPhy(){
 		axisB: CANNON.Vec3.UNIT_Y,
     angle: Math.PI / 100,
     twistAngle: 0,
-		maxForce:100
+		maxForce:1e100
 	});
 	world.addConstraint(foot_rightFootJointConstraint);
 
@@ -223,7 +223,7 @@ function setRightHandPhy(){
 		axisB: CANNON.Vec3.UNIT_Y,
     angle: Math.PI / 100,
     twistAngle: 0,
-		maxForce:100
+		maxForce:1e100
 	});
 	world.addConstraint(rightHandJoint_bodyConstraint);
 
@@ -235,7 +235,7 @@ function setRightHandPhy(){
 		axisB: CANNON.Vec3.UNIT_Y,
     angle: Math.PI / 100,
     twistAngle: 0,
-		maxForce:100
+		maxForce:1e100
 	});
 	world.addConstraint(hand_rightHandJointConstraint);
 
@@ -305,7 +305,7 @@ function setLeftHandPhy(){
 		axisB: CANNON.Vec3.UNIT_Y,
     angle: Math.PI / 100,
     twistAngle: 0,
-		maxForce:100
+		maxForce:1e100
 	});
 	world.addConstraint(leftHandJoint_bodyConstraint);
 
@@ -317,7 +317,7 @@ function setLeftHandPhy(){
 		axisB: CANNON.Vec3.UNIT_Y,
     angle: Math.PI / 100,
     twistAngle: 0,
-		maxForce:100
+		maxForce:1e100
 	});
 	world.addConstraint(hand_leftHandJointConstraint);
 
@@ -325,7 +325,7 @@ function setLeftHandPhy(){
 	leftHandCurve= new THREE.CatmullRomCurve3([new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0)])
 	leftArmGeo = new THREE.TubeBufferGeometry( leftHandCurve, 20, 3*pigScale, 8, false );
 	leftArmGeo.attributes.position.needsUpdate = true
-	leftArmMat = new THREE.MeshBasicMaterial( { color: 0xe2989b } );
+	leftArmMat = new THREE.MeshBasicMaterial( { color: 0xe2989b } );//
 	leftArm = new THREE.Mesh( leftArmGeo, leftArmMat );
 	//leftArm.castShadow=true
 	scene.add( leftArm );

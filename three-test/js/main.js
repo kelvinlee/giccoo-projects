@@ -154,6 +154,8 @@ function onDocumentTouchStart(_e){
 
 
 		// }
+		//world.removeConstraint(body_rootConstraint);
+		//world.gravity.set(0,0,0)
 		console.log(intersects[0].object.userData.body)
 		var body=intersects[0].object.userData.body
 		if(!body) return;
@@ -222,7 +224,7 @@ function removeJointConstraint() {
 	leftHandBody.angularDamping=rightHandBody.angularDamping=leftHandJointBody.angularDamping=rightHandJointBody.angularDamping=handAngularDamping
 }
 function moveJointToPoint(x, y, z) {
-  y = Math.max( - 3.8, y);
+  y = Math.max( - 20, y);
   jointBody.position.set(x, y, z);
   mouseConstraint && mouseConstraint.update();
 }
@@ -233,8 +235,11 @@ function addMouseConstraint(x,y,z,body){
   var antiRot = constrainedBody.quaternion.inverse();
   var pivot = antiRot.vmult(v1);
   jointBody.position.set(x, y, z);
-  mouseConstraint = new CANNON.PointToPointConstraint(constrainedBody, pivot, this.jointBody, new CANNON.Vec3(0, 0, 0), 100);
+  mouseConstraint = new CANNON.PointToPointConstraint(constrainedBody, pivot, this.jointBody, new CANNON.Vec3(0, 0, 0), 500);
   world.addConstraint(mouseConstraint);
+  
+
+
 
 	leftFootBody.linearDamping=leftFootBody.angularDamping=0
   rightFootBody.linearDamping=rightFootBody.angularDamping=0
@@ -362,8 +367,8 @@ function getStart(){
 	var pigmap=objs.pig.material.map
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
-	var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
-	//var pigMat=new THREE.MeshBasicMaterial({map:pigmap,envMap:environment,reflectivity:0})
+	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
+	var pigMat=new THREE.MeshBasicMaterial({map:pigmap,envMap:environment,reflectivity:0})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap})
 	objs.pig.material=pigMat
 	//TweenMax.set(pig.scale,{x:.105,y:.105,z:.095})
@@ -393,11 +398,11 @@ function addPickingPlane(){
 
 
 //============================物理引擎
-
+var spring
 function setPhy(){
 	
 	//====设置世界
-	world.gravity.set(0, -40, 0)
+	world.gravity.set(0, -10, 0)
 	world.broadphase = new CANNON.NaiveBroadphase()//NaiveBroadphase
 	
 	//====定义鼠标跟随点
@@ -434,9 +439,28 @@ function setPhy(){
 	// var v1=new CANNON.Vec3(0,130,0).vsub(pigBody.position)
 	// var antiRot=pigBody.quaternion.inverse()
 	// var pivot=antiRot.vmult(v1)
+
 	//body_rootConstraint = new CANNON.PointToPointConstraint(pigBody, pivot, rootPointBody, new CANNON.Vec3(0,0,0),10);
-	body_rootConstraint = new CANNON.PointToPointConstraint(pigBody, new CANNON.Vec3(0,130,0), rootPointBody, new CANNON.Vec3(0,0,0),100);
+	body_rootConstraint = new CANNON.PointToPointConstraint(pigBody, new CANNON.Vec3(0,130,0), rootPointBody, new CANNON.Vec3(0,0,0),1e100);
 	world.addConstraint(body_rootConstraint);
+
+	//console.log(pigBody,rootPointBody)
+	
+	// spring = new CANNON.Spring(pigBody,rootPointBody,{
+	// 	localAnchorA: new CANNON.Vec3(0, 50, 0),
+ //    localAnchorB: new CANNON.Vec3(0, 0, 0),
+ //    restLength: 1,
+ //    stiffness: 110,
+ //    damping: 0.1
+	// })
+
+	// world.addEventListener("postStep",
+ //            function(event) {
+ //                if (isRunningSpring) {
+ //                    spring.applyForce();
+ //                }
+ //            });
+	
 
 
 
