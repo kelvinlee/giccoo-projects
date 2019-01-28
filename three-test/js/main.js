@@ -17,7 +17,7 @@ var pigShape,pigBody
 
 initAll()
 function initAll () {
-	renderer.setClearColor(0x9bcff8)//设置背景颜色
+	renderer.setClearColor(0xfff5d0)//设置背景颜色
 	renderer.setSize(window.innerWidth,window.innerHeight)//设置宽高
 	renderer.shadowMap.type=THREE.BasicShadowMap//.BasicShadowMap
 
@@ -212,6 +212,7 @@ function onDocumentTouchMove(_e){
 function onDocumentTouchEnd(_e){
 	controls.enabled = true;
 	removeJointConstraint();
+	//world.addConstraint(body_rootConstraint);
 }
 function removeJointConstraint() {
   world.removeConstraint(mouseConstraint);
@@ -235,7 +236,10 @@ function addMouseConstraint(x,y,z,body){
   var antiRot = constrainedBody.quaternion.inverse();
   var pivot = antiRot.vmult(v1);
   jointBody.position.set(x, y, z);
-  mouseConstraint = new CANNON.PointToPointConstraint(constrainedBody, pivot, this.jointBody, new CANNON.Vec3(0, 0, 0), 500);
+  mouseConstraint = new CANNON.PointToPointConstraint(constrainedBody, pivot, jointBody, new CANNON.Vec3(0, 0, 0), 800);
+
+
+  //mouseConstraint = new CANNON.PointToPointConstraint(constrainedBody, new CANNON.Vec3(0, 0, 0), jointBody, new CANNON.Vec3(0, 0, 0), 800);
   world.addConstraint(mouseConstraint);
   
 
@@ -315,7 +319,7 @@ function getStart(){
 	// var axes = new THREE.AxesHelper(10);//轴辅助
 	// scene.add(axes)
 
-
+	scene.fog = new THREE.Fog(0xfff5d0, 80, 180);
 
 	//====立方体
 	var cubeGeo=new THREE.BoxGeometry(1,1,1)
@@ -348,7 +352,7 @@ function getStart(){
 
 	//====平面
 	var planeGeo=new THREE.PlaneGeometry(600,600,60)
-	var planeMaterial=new THREE.MeshLambertMaterial({color:0x9bcff8})
+	var planeMaterial=new THREE.MeshLambertMaterial({color:0xfff5d0})
 	var plane=new THREE.Mesh(planeGeo,planeMaterial)
 	plane.rotation.x=-Math.PI/2
 	plane.position.y=-10
@@ -356,7 +360,7 @@ function getStart(){
 	scene.add(plane)
 
 	//====摄像机
-	camera.position.set(40,40,40)
+	camera.position.set(0,20,80)
 	camera.lookAt(scene.position)
 
 	//====猪位置
@@ -398,7 +402,7 @@ function addPickingPlane(){
 
 
 //============================物理引擎
-var spring
+var spring,isRunningSpring=1
 function setPhy(){
 	
 	//====设置世界
@@ -410,13 +414,15 @@ function setPhy(){
   jointBody = new CANNON.Body({
                 mass: 0
             });
-            jointBody.addShape(shape);
+  jointBody.addShape(shape);
+  this.jointBody.collisionFilterGroup = 0;
+  this.jointBody.collisionFilterMask = 0;
   world.add(jointBody)
 
 	//====总固定点
 	rootPointBody=new CANNON.Body({
 		mass:0,
-		position:new CANNON.Vec3(0,150,0)
+		position:new CANNON.Vec3(0,20,0)
 	})
 	world.add(rootPointBody)
 	meshes.push(rootPoint)
@@ -426,7 +432,7 @@ function setPhy(){
 	var pigShape=new CANNON.Sphere(8)
 	pigBody=new CANNON.Body({
 		mass:5,
-		position:new CANNON.Vec3(0,20,0),
+		position:new CANNON.Vec3(0,1020,0),
 		shape:pigShape
 	})
 	setMeshPhy(objs.pig,pigBody,0.1)//=====加物理外形
@@ -436,30 +442,29 @@ function setPhy(){
 	objs.pig.userData.body=pigBody
 
 	//=====链接猪和起始点(pigBody+rootPointBody)
-	// var v1=new CANNON.Vec3(0,130,0).vsub(pigBody.position)
-	// var antiRot=pigBody.quaternion.inverse()
-	// var pivot=antiRot.vmult(v1)
 
-	//body_rootConstraint = new CANNON.PointToPointConstraint(pigBody, pivot, rootPointBody, new CANNON.Vec3(0,0,0),10);
-	body_rootConstraint = new CANNON.PointToPointConstraint(pigBody, new CANNON.Vec3(0,130,0), rootPointBody, new CANNON.Vec3(0,0,0),1e100);
-	world.addConstraint(body_rootConstraint);
+	
+	// body_rootConstraint = new CANNON.PointToPointConstraint(pigBody, new CANNON.Vec3(0,130,0), rootPointBody, new CANNON.Vec3(0,0,0),100000);
+	// world.addConstraint(body_rootConstraint);
 
 	//console.log(pigBody,rootPointBody)
 	
-	// spring = new CANNON.Spring(pigBody,rootPointBody,{
-	// 	localAnchorA: new CANNON.Vec3(0, 50, 0),
- //    localAnchorB: new CANNON.Vec3(0, 0, 0),
- //    restLength: 1,
- //    stiffness: 110,
- //    damping: 0.1
-	// })
+	spring = new CANNON.Spring(pigBody,rootPointBody,{
+		localAnchorA: new CANNON.Vec3(0, 2, 0),
+    localAnchorB: new CANNON.Vec3(0, 0, 0),
+    restLength: 1,
+    stiffness: 110,
+    damping: 0.1
+	})
 
-	// world.addEventListener("postStep",
- //            function(event) {
- //                if (isRunningSpring) {
- //                    spring.applyForce();
- //                }
- //            });
+	spring.applyForce();
+
+	world.addEventListener("postStep",
+            function(event) {
+                if (isRunningSpring) {
+                    spring.applyForce();
+                }
+            });
 	
 
 

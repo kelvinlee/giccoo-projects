@@ -1,4 +1,4 @@
-import { Color } from '../math/Color.js';
+// import { Color } from '../math/Color.js';
 
 /**
  * @author mrdoob / http://mrdoob.com/
@@ -35,4 +35,3 @@ Fog.prototype.toJSON = function ( /* meta */ ) {
 
 };
 
-export { Fog };
