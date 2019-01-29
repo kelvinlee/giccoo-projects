@@ -49,7 +49,7 @@ function animate() {
 }
 
 function updatePhysics(){
-  world.step(1/60);
+  world.step(3/60);
   for(var i=0; i !== meshes.length; i++){
     meshes[i].position.copy(bodies[i].position);//========meshes[]里放THREE模型，bodies[]里放物理CANNON的 body模型
     meshes[i].quaternion.copy(bodies[i].quaternion);
@@ -105,18 +105,18 @@ function setTest(){
 		this.target	=	rootPointBody
 	}
 
-	datGUI=new dat.GUI()//创建dat.GUI，传递并设置属性
-	// datGUI.add(guiControls,"rotationX",0.1)//输入框
-	// datGUI.add(guiControls,"rotationX",0,Math.PI*2).step(Math.PI/180)//滑杆，步长
-	// datGUI.add(guiControls,"rotationX").min(0).max(19)//大小
-	// datGUI.add(guiControls,"rotationX",{aaa:0,bbb:90,ccc:180})//选项
-	// datGUI.add(guiControls,"ifTrue",true)
-	// datGUI.add(guiControls,"func")
-	//http://www.hangge.com/blog/cache/detail_1785.html 其他使用方法
+	// datGUI=new dat.GUI()//创建dat.GUI，传递并设置属性
+	// // datGUI.add(guiControls,"rotationX",0.1)//输入框
+	// // datGUI.add(guiControls,"rotationX",0,Math.PI*2).step(Math.PI/180)//滑杆，步长
+	// // datGUI.add(guiControls,"rotationX").min(0).max(19)//大小
+	// // datGUI.add(guiControls,"rotationX",{aaa:0,bbb:90,ccc:180})//选项
+	// // datGUI.add(guiControls,"ifTrue",true)
+	// // datGUI.add(guiControls,"func")
+	// //http://www.hangge.com/blog/cache/detail_1785.html 其他使用方法
 
-	datGUI.add(guiControls,"X",-100,100).step(1).onChange(function(value){		rootPointBody.position.x=value	})
-	datGUI.add(guiControls,"Y",		0,200).step(1).onChange(function(value){		rootPointBody.position.y=value	})
-	datGUI.add(guiControls,"Z",-100,100).step(1).onChange(function(value){		rootPointBody.position.z=value	})
+	// datGUI.add(guiControls,"X",-100,100).step(1).onChange(function(value){		rootPointBody.position.x=value	})
+	// datGUI.add(guiControls,"Y",		0,200).step(1).onChange(function(value){		rootPointBody.position.y=value	})
+	// datGUI.add(guiControls,"Z",-100,100).step(1).onChange(function(value){		rootPointBody.position.z=value	})
 }
 
 
@@ -373,7 +373,7 @@ function getStart(){
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
 	var pigMat=new THREE.MeshBasicMaterial({map:pigmap,envMap:environment,reflectivity:0})
-	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap})
+	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap,emissive:0xffffff,envMap:environment,emissiveIntensity:0.5,roughness:0.4,metalness:.5})
 	objs.pig.material=pigMat
 	//TweenMax.set(pig.scale,{x:.105,y:.105,z:.095})
 	//TweenMax.to(pig.scale,1.25,{x:.12,y:.12,z:.08,repeat:1000000,yoyo:true,ease:Sine.easeInOut})
@@ -385,6 +385,7 @@ function getStart(){
 	setRightFoot()
 	setRightHand()
 	setLeftHand()
+	setHeadLine()
 	animate()
 
 }
@@ -432,7 +433,7 @@ function setPhy(){
 	var pigShape=new CANNON.Sphere(8)
 	pigBody=new CANNON.Body({
 		mass:5,
-		position:new CANNON.Vec3(0,1020,0),
+		position:new CANNON.Vec3(0,20,0),
 		shape:pigShape
 	})
 	setMeshPhy(objs.pig,pigBody,0.1)//=====加物理外形

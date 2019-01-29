@@ -332,12 +332,29 @@ function setLeftHandPhy(){
 	
 }
 
-
+//====================================头顶线
+var hanger,headLine,headLineGeo,headLineMat,line= new Float32Array();
+var lines=[]
+function setHeadLine(){
+	//hanger=new THREE.Vector3(0,100,0)
+	
+	//headLineGeo.verticesNeedUpdate=true
+	//headLineGeo.vertices.push(hanger)
+	//headLineGeo.vertices.push(objs.pig.position)//=[hanger,objs.pig.position]
+	//line = new Float32Array();
+	//line=[0,100,0,objs.pig.position.x,objs.pig.position.y,objs.pig.position.z]
+	//makeLine( line, 0xff0000 );
+	//lines.push()
+}
 
 
 //==========手脚连线渲染
 
 function updateArmLegs(){
+
+	//pigBody.quaternion.vmult(pigBody.position.vsub(new CANNON.Vec3(0,100,0)))
+	pigBody.quaternion.inverse()	
+
 	//=====左脚
 	var leftLegStart=pigBody.quaternion.vmult(new CANNON.Vec3(20*pigScale,-90*pigScale,30*pigScale)).vadd(pigBody.position)
 	leftFootCurve = new THREE.CatmullRomCurve3( [		vec3toVector3(leftLegStart),vec3toVector3(leftFootJointBody.position),vec3toVector3(leftFootBody.position)	] );
@@ -357,6 +374,38 @@ function updateArmLegs(){
 	var leftArmStart=pigBody.quaternion.vmult(new CANNON.Vec3(30*pigScale,-30*pigScale,30*pigScale)).vadd(pigBody.position)
 	leftHandCurve = new THREE.CatmullRomCurve3( [		vec3toVector3(leftArmStart),vec3toVector3(leftHandJointBody.position),vec3toVector3(leftHandBody.position)	] );
 	leftArmGeo.copy( new THREE.TubeBufferGeometry( leftHandCurve, 20, 15*pigScale, 8, false ))
-}
 
+	//=====头顶线
+	var pigTop=new THREE.Vector3(0,10,1)
+	pigTop.applyQuaternion(objs.pig.quaternion)
+	pigTop=pigTop.addVectors(pigTop,objs.pig.position)
+	scene.remove(lines[0])
+	lines=[]
+	line=[0,100,0,pigTop.x,pigTop.y,pigTop.z]
+	makeLine( line, 0xff0000 );
+	//makeLine( line, 0xff0000 );
+
+
+
+}
+var lineMesh
+function makeLine( geo, c ) {
+
+	var g = new MeshLine();
+	g.setGeometry( geo );
+
+	var material = new MeshLineMaterial( {
+		useMap: false,
+		color: c,
+		opacity: 1,
+		sizeAttenuation: !false,
+		lineWidth: .5,
+		near: camera.near,
+		far: camera.far
+	});
+	lineMesh = new THREE.Mesh( g.geometry, material );
+	scene.add( lineMesh );
+	lines.push(lineMesh)
+
+}
 
