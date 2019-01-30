@@ -167,26 +167,27 @@ function onDocumentTouchStart(_e){
 		return;
 	}
 }
-var lastX,lastY
+var lastX,lastY,lastDirX,lastDirY
+var MIN_DISTANCE_PER_SHAKE=10
 
 function onDocumentTouchMove(_e){
 	mouse.x=(_e.touches[0].clientX/window.innerWidth)*2-1
 	mouse.y=-(_e.touches[0].clientY/window.innerHeight)*2+1//donElement
   if (mouseConstraint) {
-                //var deltaX = event.clientX - lastX;
-                //var deltaY = event.clientY - lastY;
-                //var dirX = deltaX < 0 ? -1 : 1;
-                //var dirY = deltaY < 0 ? -1 : 1;
-                // if (Math.abs(deltaX) >= MIN_DISTANCE_PER_SHAKE && dirX !== 0 && this.lastDirX !== dirX) {
+                var deltaX = _e.touches[0].clientX - lastX;
+                var deltaY = _e.touches[0].clientY - lastY;
+                var dirX = deltaX < 0 ? -1 : 1;
+                var dirY = deltaY < 0 ? -1 : 1;
+                // if (Math.abs(deltaX) >= MIN_DISTANCE_PER_SHAKE && dirX !== 0 && lastDirX !== dirX) {
                 //     this.lastDirX = dirX;
                 //     this.entropy += ENTROPY_PER_SHAKE;
                 // }
-                // if (Math.abs(deltaY) >= MIN_DISTANCE_PER_SHAKE && dirY !== 0 && this.lastDirY !== dirY) {
+                // if (Math.abs(deltaY) >= MIN_DISTANCE_PER_SHAKE && dirY !== 0 && lastDirY !== dirY) {
                 //     this.lastDirY = dirY;
                 //     this.entropy += ENTROPY_PER_SHAKE;
                 // }
-                //lastX = event.clientX;
-                //lastY = event.clientY;
+                // lastX = _e.clientX;
+                // lastY = _e.clientY;
                 // if (this.entropy > HIDE_HINT_ENTROPY) {
                 //     this.hideHint();
                 // }
