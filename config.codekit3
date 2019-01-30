@@ -3406,6 +3406,16 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"/three-test/js/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/three-test/js/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/three-test/js/mark.js": {
 		"ft": 64,
 		"ma": 0,
