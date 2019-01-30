@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>BMW</title>
+    <meta name="author" content="m.giccoo.com">
+    <link rel="stylesheet" href="css/base.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66865226-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-66865226-1');
+    </script>
+  </head>
+  <body>
+    <div id="main" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" class="main">
+      <transition name="page-down">
+        <div v-show="noteShow" @click="noteShow = false" :class="{error: noteType}" style="display: none" class="note-message">
+          <div class="note-text">{{noteText}}</div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="loading" style="display: none" class="loading-page">
+          <div class="ball-spin-fade-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-zoom">
+        <div v-show="pageIndex == 1" class="page page-1">
+          <div class="content">
+            <div class="banner"><img src="./img/banner.jpg">
+              <div class="video-box">
+                <mp4 src="http://image.giccoo.com/projects/test/video-build-3.mp4" poster="./img/poster.jpg" controls="true" playsinline="true"></mp4>
+                <div class="video-title"><img src="./img/video-title.png"></div>
+              </div>
+            </div>
+            <div class="music"><img src="./img/music.png">
+              <player fill="#fff" src="//image.giccoo.com/projects/emoji/mp3/bgm.mp3"></player>
+            </div>
+            <div class="register">
+              <div class="title"><img src="./img/title.png"></div>
+              <form-grounp v-bind:form="form" v-on:submit="submit" class="form">
+                <div class="form-group type-checkbox">
+                  <div class="checkbox">
+                    <input id="allow" type="checkbox" name="allow" v-model="allow">
+                  </div>
+                  <label for="allow" class="text">我已阅读并接受个人信息保护<a href="#">
+                      <div class="icon icon-file"></div>法律声明</a></label>
+                </div>
+              </form-grounp>
+            </div><a href="#" class="banner-bottom"><img src="./img/banner-bottom.jpg"></a>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
+    <script src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js"></script>
+    <script src="//image.giccoo.com/projects/genki/js/ntes.id.js"></script>
+    <script src="js/main.js?v=1"></script>
+    
+    
+    
+    
+    
+    
+    
+  </body>
+</html>

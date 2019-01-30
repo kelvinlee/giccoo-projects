@@ -1,10 +1,12 @@
+# @codekit-prepend "../../libs/vue/vue-resetinput"
+
 Vue.component "form-grounp",
   template:'
     <div class="form">
       <div v-for="item,index in form" class="form-group" :class="\'type-\'+type[item.type]+(item.class?\' \'+item.class:\'\')">
         <label :for="item.id" v-if="item.label">{{item.label}}</label>
-        <input :id="item.id" :placeholder="item.placeholder" v-if="type[item.type] == \'input\'" v-model="item.value" type="text">
-        <input :id="item.id" :placeholder="item.placeholder" v-if="type[item.type] == \'number\'" v-model="item.value" type="number">
+        <input v-reset-input :id="item.id" :placeholder="item.placeholder" v-if="type[item.type] == \'input\'" v-model="item.value" type="text">
+        <input v-reset-input :id="item.id" :placeholder="item.placeholder" v-if="type[item.type] == \'number\'" v-model="item.value" type="number">
         <div v-if="type[item.type] == \'select\'" class="select">
           <span>{{getOptionsName(item)}}</span>
           <select :id="item.id" v-model="item.value" v-if="!item.array">
@@ -15,6 +17,7 @@ Vue.component "form-grounp",
           </select>
         </div>
       </div>
+      <slot></slot>
       <div @click="submit" class="btn-submit"><img src="./img/btn-submit.png" /></div>
     </div>
     '
