@@ -30,7 +30,8 @@ function initAll () {
 
 	loadingMods('mod/pig2.glb',["pig"],"addScene")//模型加载
 	loadingMods('mod/foot.glb',["foot"])//模型加载
-	loadingMods('mod/gifts.glb',["gift1","gift2","gift3","gift4"],"addScene")
+	//loadingMods('mod/gifts.glb',["gift1","gift2","gift3","gift4"],"addScene")
+	loadingMods('mod/gift4.glb',["gift1","gift2","gift3","gift4"],"addScene")
 
 	//render()
 	//animate()//===动画
@@ -288,6 +289,7 @@ function loadingMods(_url,_target,_ifAddScene){
 		function ( gltf ) {		// called when the resource is loaded
 			modLoadedNum++
 			console.log(gltf.scene)
+
 			// objs[_target]=gltf.scene.children[0]
 			// if(_ifAddScene){
 			// 	scene.add(objs[_target])
@@ -298,6 +300,7 @@ function loadingMods(_url,_target,_ifAddScene){
 				if(_ifAddScene){
 					scene.add(objs[_target[i]])
 				}
+				console.log(_target[i])
 			};
 
 			
