@@ -74,12 +74,12 @@ block content
           .banner
             img(src="#{url}/img/banner.jpg")
             .video-box
-              mp4(src="//image.giccoo.com/projects/test/tvca.mp4",poster="#{url}/img/poster.jpg",controls="true",playsinline="true")
+              mp4(@play="playVideo",src="//image.giccoo.com/projects/test/tvca1.mp4",poster="#{url}/img/poster.jpg",controls="true",playsinline="true")
               .video-title
                 img(src="#{url}/img/video-title.png")
           .music
             img(src="#{url}/img/music.png")
-            player(fill="#fff",src="//image.giccoo.com/projects/emoji/mp3/bgm.mp3")
+            player(@play="playMusic",fill="#fff",src="//image.giccoo.com/projects/emoji/mp3/bgm.mp3")
           .register
             //- .bg
               img(src="#{url}/img/form-bg.jpg")

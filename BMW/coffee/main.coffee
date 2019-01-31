@@ -272,6 +272,12 @@ init = ->
 					if line.gblen() > 32
 						return @.message = o
 		methods:
+			playMusic: ->
+				console.log "playing music"
+				@.$children[0].video.pause()
+			playVideo: ->
+				console.log "playing video"
+				@.$children[1].audio.pause()
 			submit: (data)->
 				console.log "data:",data
 				if data.sex is 0 or data.sex is "0"
