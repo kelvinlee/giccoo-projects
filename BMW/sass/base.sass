@@ -703,3 +703,15 @@ video,canvas,svg
 			+show
 		&.pause
 			+animation(fadeIn,1s)
+
+
+.player
+	z-index: 10
+	& + .gif
+		+hide
+		+posa
+		+tl
+		z-index: 1
+	&.play + .gif
+		+show
+
