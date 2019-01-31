@@ -41,12 +41,12 @@
           <div class="content">
             <div class="banner"><img src="./img/banner.jpg">
               <div class="video-box">
-                <mp4 src="http://www.bmw.com.cn/content/dam/bmw/marketCN/campaign/2018/1series-sedan/common/video/tvca.webm" poster="./img/poster.jpg" controls="true" playsinline="true"></mp4>
+                <mp4 @play="playVideo" src="//image.giccoo.com/projects/test/tvca1.mp4" poster="./img/poster.jpg" controls="true" playsinline="true"></mp4>
                 <div class="video-title"><img src="./img/video-title.png"></div>
               </div>
             </div>
             <div class="music"><img src="./img/music.png">
-              <player fill="#fff" src="//image.giccoo.com/projects/emoji/mp3/bgm.mp3"></player>
+              <player @play="playMusic" fill="#fff" src="//image.giccoo.com/projects/emoji/mp3/bgm.mp3"></player>
             </div>
             <div class="register">
               <div class="title"><img src="./img/title.png"></div>
