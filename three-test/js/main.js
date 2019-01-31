@@ -28,10 +28,11 @@ function initAll () {
 	document.body.appendChild(renderer.domElement)
 	
 
-	loadingMods('mod/pig2.glb',["pig"],"addScene")//模型加载
+	loadingMods('mod/pig3.glb',["pig"],"addScene")//模型加载
 	loadingMods('mod/foot.glb',["foot"])//模型加载
-	//loadingMods('mod/gifts.glb',["gift1","gift2","gift3","gift4"],"addScene")
-	loadingMods('mod/gift4.glb',["gift1","gift2","gift3","gift4"],"addScene")
+	loadingMods('mod/gift12.glb',["gift1","gift2"])
+	loadingMods('mod/gift3.glb',["gift3"])
+	loadingMods('mod/gift4.glb',["gift4"])
 
 	//render()
 	//animate()//===动画
@@ -56,7 +57,7 @@ function updatePhysics(){
     meshes[i].position.copy(bodies[i].position);//========meshes[]里放THREE模型，bodies[]里放物理CANNON的 body模型
     meshes[i].quaternion.copy(bodies[i].quaternion);
   }
-  //cannonDebugRenderer.update()
+  cannonDebugRenderer.update()
 }
 
 function render() {
@@ -384,7 +385,7 @@ function getStart(){
 	var planeMaterial=new THREE.MeshLambertMaterial({color:0xfff5d0})
 	var plane=new THREE.Mesh(planeGeo,planeMaterial)
 	plane.rotation.x=-Math.PI/2
-	plane.position.y=-10
+	plane.position.y=-30
 	plane.receiveShadow=true
 	scene.add(plane)
 
@@ -415,6 +416,7 @@ function getStart(){
 	setRightHand()
 	setLeftHand()
 	setHeadLine()
+	setGifts()
 	animate()
 
 }
@@ -505,7 +507,7 @@ function setPhy(){
 		shape:groundShape
 	})
 	groundBody.quaternion.setFromAxisAngle(new CANNON.Vec3(1,0,0),-Math.PI/2)
-	groundBody.position.set(0,-10,0)
+	groundBody.position.set(0,-30,0)
 	world.add(groundBody)
 	
 }
