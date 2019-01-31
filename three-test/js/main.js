@@ -28,8 +28,9 @@ function initAll () {
 	document.body.appendChild(renderer.domElement)
 	
 
-	loadingMods('mod/pig2.glb',"pig","addScene")//模型加载
-	loadingMods('mod/foot.glb',"foot")//模型加载
+	loadingMods('mod/pig2.glb',["pig"],"addScene")//模型加载
+	loadingMods('mod/foot.glb',["foot"])//模型加载
+	loadingMods('mod/gifts.glb',["gift1","gift2","gift3","gift4"],"addScene")
 
 	//render()
 	//animate()//===动画
@@ -156,6 +157,11 @@ function onDocumentTouchStart(_e){
 		// }
 		//world.removeConstraint(body_rootConstraint);
 		//world.gravity.set(0,0,0)
+
+		lastX=_e.touches[0].clientX
+		lastY=_e.touches[0].clientY
+
+
 		console.log(intersects[0].object.userData.body)
 		var body=intersects[0].object.userData.body
 		if(!body) return;
@@ -167,34 +173,45 @@ function onDocumentTouchStart(_e){
 		return;
 	}
 }
-var lastX,lastY,lastDirX,lastDirY
-var MIN_DISTANCE_PER_SHAKE=10
+var lastX,lastY,lastDirX,lastDirY,entropy=0
+var MIN_DISTANCE_PER_SHAKE=50
+var ENTROPY_PER_SHAKE=1
+var MAX_ENTROPY=[1,2,4,6,10,16,20]
+var level=0
 
 function onDocumentTouchMove(_e){
 	mouse.x=(_e.touches[0].clientX/window.innerWidth)*2-1
 	mouse.y=-(_e.touches[0].clientY/window.innerHeight)*2+1//donElement
   if (mouseConstraint) {
+
                 var deltaX = _e.touches[0].clientX - lastX;
                 var deltaY = _e.touches[0].clientY - lastY;
                 var dirX = deltaX < 0 ? -1 : 1;
                 var dirY = deltaY < 0 ? -1 : 1;
-                // if (Math.abs(deltaX) >= MIN_DISTANCE_PER_SHAKE && dirX !== 0 && lastDirX !== dirX) {
-                //     this.lastDirX = dirX;
-                //     this.entropy += ENTROPY_PER_SHAKE;
-                // }
-                // if (Math.abs(deltaY) >= MIN_DISTANCE_PER_SHAKE && dirY !== 0 && lastDirY !== dirY) {
-                //     this.lastDirY = dirY;
-                //     this.entropy += ENTROPY_PER_SHAKE;
-                // }
-                // lastX = _e.clientX;
-                // lastY = _e.clientY;
+
+               	
+                if (Math.abs(deltaX) >= MIN_DISTANCE_PER_SHAKE && dirX !== 0 && lastDirX !== dirX) {
+                    lastDirX = dirX;
+                    entropy += ENTROPY_PER_SHAKE;
+                    console.log(entropy)
+                    
+                }
+                if (Math.abs(deltaY) >= MIN_DISTANCE_PER_SHAKE && dirY !== 0 && lastDirY !== dirY) {
+                    lastDirY = dirY;
+                    entropy += ENTROPY_PER_SHAKE;
+                }
+                lastX = _e.touches[0].clientX;
+                lastY = _e.touches[0].clientY;
                 // if (this.entropy > HIDE_HINT_ENTROPY) {
                 //     this.hideHint();
                 // }
-                // if (this.entropy > MAX_ENTROPY[this.level]) {
-                //     this.addGift();
-                //     this.entropy = 0;
-                // }
+                if(level==7){
+                	aniDone()
+                }else if (entropy > MAX_ENTROPY[level]) {
+                    addGift();
+                    entropy = 0;
+                    level++
+                }
                 raycaster.setFromCamera(mouse, camera);
                 intersects.length = 0;
                 raycaster.intersectObject(pickingPlane, false, intersects);
@@ -271,10 +288,18 @@ function loadingMods(_url,_target,_ifAddScene){
 		function ( gltf ) {		// called when the resource is loaded
 			modLoadedNum++
 			console.log(gltf.scene)
-			objs[_target]=gltf.scene.children[0]
-			if(_ifAddScene){
-				scene.add(objs[_target])
-			}
+			// objs[_target]=gltf.scene.children[0]
+			// if(_ifAddScene){
+			// 	scene.add(objs[_target])
+			// }
+
+			for (var i = 0; i < gltf.scene.children.length; i++) {
+				objs[_target[i]]=gltf.scene.children[i]
+				if(_ifAddScene){
+					scene.add(objs[_target[i]])
+				}
+			};
+
 			
 			loadingCheck()
 			//pig.material=new THREE.MeshLambertMaterial({color:0xffff00})
