@@ -4,7 +4,7 @@ $(document).ready(function load (){
   if (window.navigator.userAgent.indexOf("NeteaseMusic") > -1) {
     sys = "NeteaseMusic";
     
-    TweenLite.set($("#btnshare"),{display:"block"})
+    //TweenLite.set($("#btnshare"),{display:"block"})
 
   } else {
   //iniListenSound()
