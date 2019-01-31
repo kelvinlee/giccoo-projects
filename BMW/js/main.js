@@ -90,7 +90,7 @@ console.log("share href:",t),CloudMusic.sharePic({picUrl:t,text:n,link:i})},wind
 // 					@.next()
 // 				,1000
 // 		,1000/20
-return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,-1<window.navigator.userAgent.indexOf("NeteaseMusic")?(sys="NeteaseMusic",t={name:"BMW",title:"画山成岳，致敬心中的江湖",subTitle:"手绘千峰万壑，探悠悠江湖情怀解锁聆听金庸武侠名曲",text:"",picUrl:"http://m.giccoo.com/BMW/img/ico.jpg",link:"http://m.giccoo.com/BMW/"},CloudMusic.setShareData(t)):(loadWechatConfig(),wx.ready(function(){var e;return e={title:"画山成岳，致敬心中的江湖",desc:"手绘千峰万壑，探悠悠江湖情怀解锁聆听金庸武侠名曲",link:"http://m.giccoo.com/BMW/",imgUrl:"http://m.giccoo.com/draw-board/img/ico.jpg",success:function e(){},
+return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,-1<window.navigator.userAgent.indexOf("NeteaseMusic")?(sys="NeteaseMusic",t={name:"BMW",title:"分享标题",subTitle:"分享文案",text:"",picUrl:"http://m.giccoo.com/BMW/img/ico.jpg",link:"http://m.giccoo.com/BMW/"},CloudMusic.setShareData(t)):(loadWechatConfig(),wx.ready(function(){var e;return e={title:"分享标题",desc:"分享文案",link:"http://m.giccoo.com/BMW/",imgUrl:"http://m.giccoo.com/BWM/img/ico.jpg",success:function e(){},
 // alert "success"
 cancel:function e(){}},// alert "cancel"
 wx.onMenuShareTimeline(e),wx.onMenuShareAppMessage(e),wx.onMenuShareQQ(e),wx.onMenuShareWeibo(e)})),init()},init=function e(){var t,n,a;return 640<=TrueW&&(
