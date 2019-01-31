@@ -55,7 +55,7 @@ window.onload = ->
 		sys = "NeteaseMusic"
 		shareData = 
 			name: 'BMW'
-			title: '画山成岳，致敬心中的江湖'
+			title: 'BMW share content'
 			subTitle: "手绘千峰万壑，探悠悠江湖情怀解锁聆听金庸武侠名曲"
 			text: ''
 			picUrl: 'http://m.giccoo.com/BMW/img/ico.jpg'
@@ -65,10 +65,10 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "画山成岳，致敬心中的江湖"
+				title: "BMW share content"
 				desc: "手绘千峰万壑，探悠悠江湖情怀解锁聆听金庸武侠名曲"
 				link: "http://m.giccoo.com/BMW/"
-				imgUrl: "http://m.giccoo.com/draw-board/img/ico.jpg"
+				imgUrl: "http://m.giccoo.com/BMW/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
