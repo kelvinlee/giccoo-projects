@@ -56,7 +56,7 @@ window.onload = ->
 		shareData = 
 			name: 'BMW'
 			title: 'BMW share content'
-			subTitle: "手绘千峰万壑，探悠悠江湖情怀解锁聆听金庸武侠名曲"
+			subTitle: "BMW share description content"
 			text: ''
 			picUrl: 'http://m.giccoo.com/BMW/img/ico.jpg'
 			link: 'http://m.giccoo.com/BMW/'
@@ -66,7 +66,7 @@ window.onload = ->
 		wx.ready ->
 			shareContent =
 				title: "BMW share content"
-				desc: "手绘千峰万壑，探悠悠江湖情怀解锁聆听金庸武侠名曲"
+				desc: "BMW share description content"
 				link: "http://m.giccoo.com/BMW/"
 				imgUrl: "http://m.giccoo.com/BMW/img/ico.jpg"
 				success: ->
