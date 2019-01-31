@@ -11,7 +11,7 @@ axios.defaults.withCredentials = true
 TrueW = 640
 TrueH = 1138
 imageurl = "//api.giccoo.com/api/upload/image64/"
-apiUrl = "//api.giccoo.com/BMW"
+apiUrl = "//api.giccoo.com/wje"
 # apiLink = "//localhost:3000/"
 apiLink = "//g.giccoo.com/"
 # apiLink = "http://192.168.3.53:3000/"
@@ -35,7 +35,7 @@ _testTime = 0
 neteaseShareImage = ->
 	title1 = "画山成岳"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://activity.music.163.com/BMW/"
+	redirectUrl = "https://activity.music.163.com/BMW214/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	# window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "share href:",picUrl
@@ -55,20 +55,20 @@ window.onload = ->
 		sys = "NeteaseMusic"
 		shareData = 
 			name: 'BMW'
-			title: '型者本色X音乐先声'
-			subTitle: "BMW1系X王嘉尔《Bimmer Ride》"
+			title: '2月14日'
+			subTitle: "王嘉尔约你一起..."
 			text: ''
-			picUrl: 'http://m.giccoo.com/BMW/img/ico.jpg'
-			link: 'http://m.giccoo.com/BMW/'
+			picUrl: 'http://m.giccoo.com/wje/img/ico.jpg'
+			link: 'http://m.giccoo.com/wje/'
 		CloudMusic.setShareData shareData
 	else
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "型者本色X音乐先声"
-				desc: "BMW1系X王嘉尔《Bimmer Ride》"
-				link: "http://m.giccoo.com/BMW/"
-				imgUrl: "http://m.giccoo.com/BMW/img/ico.jpg"
+				title: "2月14日"
+				desc: "王嘉尔约你一起..."
+				link: "http://m.giccoo.com/wje/"
+				imgUrl: "http://m.giccoo.com/wje/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
@@ -78,55 +78,12 @@ window.onload = ->
 			wx.onMenuShareQQ shareContent
 			wx.onMenuShareWeibo shareContent
 
-	# _public = new Vue
-	# 	el: "#public"
-	# 	data:
-	# 		note: true
-	# 		playing: false
-	# 	mounted: ->
-	# 		document.addEventListener "WeixinJSBridgeReady", ->
-	# 			_public.$children[0].change()
-
-	# loading = new Vue
-	# 	el: "#loading"
-	# 	data:
-	# 		progress: 0
-	# 		mounted: false
-	# 		progressOn: 0
-	# 	methods:
-	# 		next: ->
-	# 			document.getElementById('load').className += " fadeOut animated"
-	# 			_public.note = false
-	# 			main.mounted = true
-	# 			setTimeout ->
-	# 				document.getElementById('load').style.display = "none"
-	# 			,520
-	# 	mounted: ->
-	# 		@.mounted = true
-	# 		TrueH = document.documentElement.clientHeight
-	# 		TrueW = document.documentElement.clientWidth
-
-	# 		# @.next() # for test
-
-	# 		timein = setInterval =>
-	# 			@.progress += 3
-	# 			@.progress = @.progressOn if @.progress >= @.progressOn
-	# 			if @.progress >= 100
-	# 				@.progress = 100
-	# 				clearInterval timein
-	# 				_cache = setTimeout =>
-	# 					@.next()
-	# 				,1000
-	# 		,1000/20
+	
 	
 	init()
 
 
 init = ->
-	
-	# console.log new Date().getTime() - startTime
-	# document.body.style.height = TrueH+"px"
-	# document.documentElement.className += " iphone4" if TrueW/TrueH >= 0.64
 	TrueW = 640 if TrueW >= 640
 	TrueH = 1138 if TrueH >= 1138
 	smaller = TrueH*2 < 1200

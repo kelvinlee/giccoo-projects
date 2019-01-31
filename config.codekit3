@@ -424,6 +424,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/BMW214/img/ico.jpg": {
+		"ft": 16384,
+		"iS": 17540,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/BMW214/img/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/BMW214/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -3651,11 +3662,25 @@
 		"oAP": "/three-test/mod/foot.glb",
 		"oF": 0
 		},
-	"/three-test/mod/gifts.glb": {
+	"/three-test/mod/gift12.glb": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/three-test/mod/gifts.glb",
+		"oAP": "/three-test/mod/gift12.glb",
+		"oF": 0
+		},
+	"/three-test/mod/gift3.glb": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/three-test/mod/gift3.glb",
+		"oF": 0
+		},
+	"/three-test/mod/gift4.glb": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/three-test/mod/gift4.glb",
 		"oF": 0
 		},
 	"/three-test/mod/pig.glb": {
@@ -3670,6 +3695,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/three-test/mod/pig2.glb",
+		"oF": 0
+		},
+	"/three-test/mod/pig3.glb": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/three-test/mod/pig3.glb",
 		"oF": 0
 		},
 	"/ThreeMusketeers": {
