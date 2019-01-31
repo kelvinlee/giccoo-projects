@@ -239,6 +239,25 @@
 		"opt": 1,
 		"q": 100
 		},
+	"/BMW/img/ico.jpg": {
+		"ft": 16384,
+		"iS": 11843,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/BMW/img/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/BMW/img/music.gif": {
+		"ft": 4194304,
+		"iS": 26457,
+		"oA": 0,
+		"oAP": "/BMW/img/music.gif",
+		"oF": 0,
+		"opt": 0
+		},
 	"/BMW/img/music.png": {
 		"ft": 32768,
 		"iS": 179801,
@@ -318,6 +337,128 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/BMW/css/base.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"/BMW214/coffee/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/BMW214/js/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/BMW214/coffee/UGC.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/BMW214/js/UGC.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/BMW214/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/BMW214/css",
+		"oF": 0
+		},
+	"/BMW214/img/bg.jpg": {
+		"ft": 16384,
+		"iS": 127167,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/BMW214/img/bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/BMW214/img/btn-submit.png": {
+		"ft": 32768,
+		"iS": 2406,
+		"oA": 0,
+		"oAP": "/BMW214/img/btn-submit.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/BMW214/img/btn.png": {
+		"ft": 32768,
+		"iS": 3756,
+		"oA": 0,
+		"oAP": "/BMW214/img/btn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/BMW214/img/close.png": {
+		"ft": 32768,
+		"iS": 1386,
+		"oA": 0,
+		"oAP": "/BMW214/img/close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/BMW214/img/form-title.png": {
+		"ft": 32768,
+		"iS": 6020,
+		"oA": 0,
+		"oAP": "/BMW214/img/form-title.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/BMW214/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/BMW214/index.html",
+		"oF": 0
+		},
+	"/BMW214/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "/BMW214/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"/BMW214/js/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/BMW214/js/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/BMW214/sass/base.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/BMW214/css/base.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -3376,6 +3517,16 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"/three-test/js/gift.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/three-test/js/gift-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/three-test/js/GLTFLoader.js": {
 		"ft": 64,
 		"ma": 0,
@@ -3498,6 +3649,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/three-test/mod/foot.glb",
+		"oF": 0
+		},
+	"/three-test/mod/gifts.glb": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/three-test/mod/gifts.glb",
 		"oF": 0
 		},
 	"/three-test/mod/pig.glb": {
@@ -3757,11 +3915,239 @@
 		"oAP": "/build/weilan",
 		"oF": 0
 		},
+	"/wje/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/wje/css",
+		"oF": 0
+		},
+	"/wje/img/ico.jpg": {
+		"ft": 16384,
+		"iS": 17540,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wje/img/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wje/img/main.jpg": {
+		"ft": 16384,
+		"iS": 133245,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/wje/img/main.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/wje/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/wje/index.html",
+		"oF": 0
+		},
+	"/wje/js/ani.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/wje/js/ani-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/wje/js/easeljs.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/wje/js/easeljs.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/wje/js/jquery-2.2.1.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/wje/js/jquery-2.2.1.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/wje/js/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/wje/js/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/wje/js/pixi.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/wje/js/pixi.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/wje/js/TweenMax.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/wje/js/TweenMax.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/xinsuteng": {
 		"ft": 65536,
 		"oA": 1,
 		"oAP": "/build/xinsuteng",
 		"oF": 0
+		},
+	"/YearOfThePig/coffee/main.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/YearOfThePig/js/main.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/YearOfThePig/coffee/UGC.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/YearOfThePig/js/UGC.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
+	"/YearOfThePig/css": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/YearOfThePig/css",
+		"oF": 0
+		},
+	"/YearOfThePig/img/btn-start.png": {
+		"ft": 32768,
+		"iS": 9776,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/btn-start.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/YearOfThePig/img/hand.png": {
+		"ft": 32768,
+		"iS": 2379,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/hand.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/YearOfThePig/img/homepage-bg.jpg": {
+		"ft": 16384,
+		"iS": 29794,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/homepage-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/YearOfThePig/img/homepage-logo.png": {
+		"ft": 32768,
+		"iS": 55994,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/homepage-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/YearOfThePig/img/lucky-bag.png": {
+		"ft": 32768,
+		"iS": 31071,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/lucky-bag.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/YearOfThePig/img/shadow.png": {
+		"ft": 32768,
+		"iS": 1320,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/shadow.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/YearOfThePig/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/YearOfThePig/index.html",
+		"oF": 0
+		},
+	"/YearOfThePig/index.jade": {
+		"cB": 0,
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "/YearOfThePig/index.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"/YearOfThePig/js/main.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/YearOfThePig/js/main-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/YearOfThePig/sass/base.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/YearOfThePig/css/base.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
 		},
 	"/years": {
 		"ft": 65536,

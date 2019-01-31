@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>BMW</title>
+    <meta name="author" content="m.giccoo.com">
+    <link rel="stylesheet" href="css/base.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66865226-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-66865226-1');
+    </script>
+  </head>
+  <body>
+    <div id="main" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" class="main">
+      <transition name="page-down">
+        <div v-show="noteShow" @click="noteShow = false" :class="{error: noteType}" style="display: none" class="note-message">
+          <div class="note-text">{{noteText}}</div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="loading" style="display: none" class="loading-page">
+          <div class="ball-spin-fade-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-zoom">
+        <div v-show="pageIndex == 1" class="page page-1">
+          <div class="content">
+            <div @click="formShow = true" class="btn"><img src="./img/btn.png"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-zoom">
+        <div v-show="formShow" style="display: none" class="pop">
+          <div class="content">
+            <div @click="formShow = false" class="close"><img src="./img/close.png"></div>
+            <div class="title"><img src="./img/form-title.png"></div>
+            <form-grounp v-bind:form="form" v-on:submit="submit" class="form">
+              <p class="note">( 留下您的信息，届时将第一时间通知您 )</p>
+            </form-grounp>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
+    <script src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js"></script>
+    <script src="//image.giccoo.com/projects/genki/js/ntes.id.js"></script>
+    <script src="js/main.js?v=1"></script>
+    
+    
+    
+    
+    
+    
+    
+  </body>
+</html>
