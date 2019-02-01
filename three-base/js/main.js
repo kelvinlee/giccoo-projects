@@ -29,15 +29,12 @@ function initAll () {
 	
 
 	loadingMods('mod/pig3.glb',["pig"],"addScene")//模型加载
-	loadingMods('mod/foot.glb',["foot"])//模型加载
-	loadingMods('mod/gift1.glb',["gift1"])
-	loadingMods('mod/gift2.glb',["gift2"])
-	loadingMods('mod/gift3.glb',["gift3"])
-	loadingMods('mod/gift4.glb',["gift4"])
+	// loadingMods('mod/foot.glb',["foot"])//模型加载
+	// loadingMods('mod/gift12.glb',["gift1","gift2"])
+	// loadingMods('mod/gift3.glb',["gift3"])
+	// loadingMods('mod/gift4.glb',["gift4"])
 
-	//render()
-	//animate()//===动画
-	clickFunc()
+	//clickFunc()
 	set_envMap()
 }
 //============================每帧渲染：更新物理+画面
@@ -53,12 +50,12 @@ function animate() {
 }
 
 function updatePhysics(){
-  world.step(3/60);
+  world.step(1/60);
   for(var i=0; i !== meshes.length; i++){
     meshes[i].position.copy(bodies[i].position);//========meshes[]里放THREE模型，bodies[]里放物理CANNON的 body模型
     meshes[i].quaternion.copy(bodies[i].quaternion);
   }
-  //cannonDebugRenderer.update()//======物理线框Gird
+  cannonDebugRenderer.update()
 }
 
 function render() {
@@ -412,12 +409,12 @@ function getStart(){
 	addPickingPlane()
 
 	setPhy()
-	setLeftFoot()
-	setRightFoot()
-	setRightHand()
-	setLeftHand()
-	setHeadLine()
-	setGifts()
+	// setLeftFoot()
+	// setRightFoot()
+	// setRightHand()
+	// setLeftHand()
+	// setHeadLine()
+	// setGifts()
 	animate()
 
 }
@@ -474,14 +471,12 @@ function setPhy(){
 	bodies.push(pigBody)
 	objs.pig.userData.body=pigBody
 
+	//====
+	addSphere(0,0,0)
+	addBox(5,5,5)
+	
+
 	//=====链接猪和起始点(pigBody+rootPointBody)
-
-	
-	// body_rootConstraint = new CANNON.PointToPointConstraint(pigBody, new CANNON.Vec3(0,130,0), rootPointBody, new CANNON.Vec3(0,0,0),100000);
-	// world.addConstraint(body_rootConstraint);
-
-	//console.log(pigBody,rootPointBody)
-	
 	spring = new CANNON.Spring(pigBody,rootPointBody,{
 		localAnchorA: new CANNON.Vec3(0, 2, 0),
     localAnchorB: new CANNON.Vec3(0, 0, 0),
@@ -493,11 +488,11 @@ function setPhy(){
 	spring.applyForce();
 
 	world.addEventListener("postStep",
-            function(event) {
-                if (isRunningSpring) {
-                    spring.applyForce();
-                }
-            });
+    function(event) {
+        if (isRunningSpring) {
+            spring.applyForce();
+        }
+    });
 	
 
 
