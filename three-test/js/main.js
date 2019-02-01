@@ -2,7 +2,7 @@
 //============================初始化
 
 var scene=new THREE.Scene();
-var camera= new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,100000);
+var camera= new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,200);
 //视角，宽高比，近剪切面，远剪切面
 var renderer = new THREE.WebGLRenderer({antialias:true,alpha:false})//抗锯齿
 var modNum=0 // 总数
@@ -39,6 +39,7 @@ function initAll () {
 	//animate()//===动画
 	clickFunc()
 	set_envMap()
+
 }
 //============================每帧渲染：更新物理+画面
 
@@ -419,6 +420,7 @@ function getStart(){
 	setHeadLine()
 	setGifts()
 	animate()
+	initSound()
 
 }
 var pickingPlane

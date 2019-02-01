@@ -1,6 +1,7 @@
 var gifts=[]
 var giftsNum=[1,3,5,7,9,16,20,50]//[1,2,3,4,5,6,7]
 var gift1,gift2,gift3,gift4
+
 function setGifts(){
 	//=====硬币
 	gift1=objs.gift1.clone()
@@ -53,17 +54,22 @@ function addGift(){
 				setTimeout(addAGift,30*i)
 				removeJointConstraint();
 				document.removeEventListener("touchstart",onDocumentTouchStart,false)
-				TweenMax.to(rootPointBody.position,3,{y:100})
+				TweenMax.to(rootPointBody.position,2.5,{y:120})
 		};
 	}else{
 		for (var i = 0; i < giftsNum[level]; i++) {
 				setTimeout(addAGift,60*i)
+
 		};
 	}
 	//removeJointConstraint();
 }
 
 function addAGift(){
+		if(sound.isPlaying){
+			sound.stop();
+		}
+		sound.play();
 		var giftType=nowGiftType
 		
 		nowGiftType++
