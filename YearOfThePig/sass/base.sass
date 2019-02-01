@@ -623,6 +623,8 @@ video,canvas,svg
 
 		.home-logo
 			margin-top: 30%
+			.smaller &
+				margin-top: 15%
 		.text
 			margin-top: 10%
 			+font-size(1rem)
@@ -684,3 +686,7 @@ video,canvas,svg
 	&.play + .gif
 		+show
 
+.fps
+	+posa
+	+tl(5%,5%)
+	z-index: 101

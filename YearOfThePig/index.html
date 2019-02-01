@@ -54,7 +54,7 @@
       <transition name="page-zoom">
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
-            <div class="home-handbag left">
+            <div @click="goNext" class="home-handbag left">
               <div class="home-hand"><img src="./img/hand.png"></div>
               <div class="home-bag"><img src="./img/lucky-bag.png"></div>
             </div>
@@ -62,8 +62,13 @@
             <div class="text fadeInUp animated delay-4">
               <p>福袋被偷走了，<br/>你的福贴还在里面呢!</p>
             </div>
-            <div class="btn fadeInUp animated delay-8"><img src="./img/btn-start.png"></div>
+            <div @click="goNext" class="btn fadeInUp animated delay-8"><img src="./img/btn-start.png"></div>
           </div>
+        </div>
+      </transition>
+      <transition name="page-zoom">
+        <div v-show="pageIndex == 2" class="page page-2">
+          <div id="sence" class="content"></div>
         </div>
       </transition>
     </div>
@@ -73,13 +78,15 @@
     <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
     <script src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js"></script>
     <script src="//image.giccoo.com/projects/genki/js/ntes.id.js"></script>
+    <script src="js/three.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.5/dat.gui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
+    <script src="js/THREE.MeshLine.js"></script>
+    <script src="js/GLTFLoader.js"></script>
+    <script src="js/OBJLoader.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/CannonDebugRenderer.js"></script>
     <script src="js/main.js?v=1"></script>
-    
-    
-    
-    
-    
-    
-    
   </body>
 </html>

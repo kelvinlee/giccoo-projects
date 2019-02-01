@@ -73,7 +73,7 @@ block content
     transition(name="page-zoom")
       .page.page-1(v-show="pageIndex == 1")
         .content
-          .home-handbag.left
+          .home-handbag.left(@click="goNext")
             .home-hand
               img(src="#{url}/img/hand.png")
             .home-bag
@@ -82,9 +82,11 @@ block content
             img(src="#{url}/img/homepage-logo.png")
           .text.fadeInUp.animated.delay-4
             p 福袋被偷走了，<br/>你的福贴还在里面呢!
-          .btn.fadeInUp.animated.delay-8
+          .btn.fadeInUp.animated.delay-8(@click="goNext")
             img(src="#{url}/img/btn-start.png")
-          
+    transition(name="page-zoom")
+      .page.page-2(v-show="pageIndex == 2")
+        .content#sence
 
 block js
   - url = "/";
@@ -98,12 +100,16 @@ block js
   //- script(src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js")
   script(src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js")
   script(src="//image.giccoo.com/projects/genki/js/ntes.id.js")
-  //- script(src="/libs/js/min/bump-min.js")
-  //- script(src="js/ajap.min.js")
-  //- script(src="js/public_funciton.js")
-  //- script(src="js/build.js?v=1")
+  script(src='js/three.min.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.5/dat.gui.min.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js')
+  script(src='js/THREE.MeshLine.js')
+  script(src='js/GLTFLoader.js')
+  script(src='js/OBJLoader.js')
+  script(src='js/OrbitControls.js')
+  script(src='js/CannonDebugRenderer.js')
   script(src="js/main.js?v=1")
-  //- script(src="js/ani.js?v=1")
 
 
 

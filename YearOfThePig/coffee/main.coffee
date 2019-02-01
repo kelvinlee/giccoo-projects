@@ -91,12 +91,14 @@ window.onload = ->
 		data:
 			progress: 0
 			mounted: false
-			progressOn: 100
+			progressOn: 10
 			isrun: false
 		computed:
 			progressText: ->
 				return NumberToChinese @.progress
 		methods:
+			updateMax: (i)->
+				@.progressOn = Math.floor(i/6)*100
 			runHand: ->
 				return false if @.isrun
 				maxH = document.documentElement.clientHeight
@@ -107,32 +109,32 @@ window.onload = ->
 				shadow = document.getElementsByClassName("bag-shadow")[0]
 
 				downTime = 1.2
-				upTime = 0.6
+				upTime = 0.5
 				TweenMax.to handRight,downTime,{"y": maxH/2-maxH*0.1}
 				TweenMax.to handLeft,downTime,{"y": maxH/2-maxH*0.1}
 
 				TweenMax.to handRight,downTime,{"rotation": 10}
 				TweenMax.to handLeft,downTime,{"rotation": -10}
 
-				TweenMax.to handRight,upTime,{"y": -maxH*0.1,delay: downTime*1.2}
-				TweenMax.to handLeft,upTime,{"y": -maxH*0.1,delay: downTime*1.2}
-				TweenMax.to shadow,upTime*2/3,{"scale": 0,delay: downTime*1.2}
+				TweenMax.to handRight,upTime,{"y": -maxH*0.1,delay: downTime*1.5}
+				TweenMax.to handLeft,upTime,{"y": -maxH*0.1,delay: downTime*1.5}
+				TweenMax.to shadow,upTime*2/3,{"scale": 0,delay: downTime*1.5}
 				TweenMax.to bag,upTime,{
 					"y": -(maxH/2),
-					delay: downTime*1.2, 
+					delay: downTime*1.5, 
 					onComplete: =>
-						console.log "aa"
 						@.next()
 				}
-
 			next: ->
 				document.getElementById('load').className += " fadeOut animated"
 				_public.note = false
 				main.mounted = true
-				main.runHand()
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
 					main.pageIndex = 1
+					setTimeout ->
+						main.runHand()
+					,520
 				,520
 		mounted: ->
 			@.mounted = true
@@ -254,41 +256,6 @@ init = ->
 			formBoxShow: false
 			carIndex: 1
 			allow: true
-		watch:
-			carIndex: (n,o)->
-				@.carIndex = 1 if @.carIndex >= 3
-			answer1: (n,o)->
-				console.log "answer1 changed:",n
-				q1(n) if q1?
-				@.white = if n is 3 then false else true
-			answer2: (n,o)->
-				console.log "answer2 changed:",n
-				q2(n) if q2?
-			"answer3.c1": (n,o)->
-				@.answer3Change n,o
-			"answer3.c2": (n,o)->
-				@.answer3Change n,o
-			"answer3.c3": (n,o)->
-				@.answer3Change n,o
-			"answer3.c4": (n,o)->
-				@.answer3Change n,o
-			nickname: (n,o)->
-				@.nickname = @.nickname.replace(/[\r\n]/g, "")
-				if @.nickname.length > 10
-					t = @.nickname.split("")
-					tx = ""
-					for i in t
-						tx += i
-						break if tx.length >= 10
-					@.nickname = tx
-					return false #alert "字数限制10个中文字符20个英文字符" 
-			message: (n,o)->
-				t = n.split('\n')
-				if t.length > 4
-					@.message = @.message.replace(/^\s+|\s+$/g,'')
-				for line in t
-					if line.gblen() > 32
-						return @.message = o
 		methods:
 			runHand: ->
 				return false unless @.allow 
@@ -319,8 +286,6 @@ init = ->
 								,200+1000*Math.random()
 						}
 				}
-
-
 			send: (text,type = true)->
 				@.noteShow = true
 				@.noteText = text
@@ -329,28 +294,6 @@ init = ->
 				@.noteTime = setTimeout =>
 					@.noteShow = false
 				,2000
-			answer3Change: (n,o)->
-				console.log "answer3 changed."
-				q3([@.answer3.c1,@.answer3.c2,@.answer3.c3,@.answer3.c4]) if q3?
-			messageShow: ->
-				@.messageInput = true
-				document.getElementById("message").focus()
-				document.getElementById("message").select()
-			messageFoucs: ->
-				if @.message is ""
-					@.messageInput = true
-				console.log "focus"
-			messageBlur: ->
-				if @.message is ""
-					@.messageInput = false
-			messageSelectLeft: ->
-				@.messageIndex--
-				if @.messageIndex <= 1
-					return @.messageIndex = 1
-			messageSelectRight: ->
-				@.messageIndex++
-				if @.messageIndex >= @.messageList.length
-					return @.messageIndex = @.messageList.length
 			over: ->
 				@.questionShow = false
 				ugc.init()
@@ -443,80 +386,22 @@ init = ->
 				id = [169794,166317,112678,144143,64497,163639,28853351,153476,5271858,186980,170749,5276250,27591641,32922491,144380,5250828,28785688,186272,210866,555984413]
 				# CloudMusic.song(id[resultNum])
 				window.location.href = "https://music.163.com/#/song?id=#{id[resultNum]}"
-			openMusic: (id)->
-				# goList()
-				# _public.$children[0].pause()
-				if CloudMusic.isInApp()
-					CloudMusic.playlist(id)
-				else
-					window.location.href = "https://music.163.com/#/playlist?id=#{id}"
+			
 			openInApp: ->
 				CloudMusic.open("https://m.giccoo.com/draw-board/")
 			goNext: ->
-				@.videoStop()
+				setTest()
+				ModLoaded()
 				@.pageIndex = 2
-				clearInterval _startCache
-
-			goShow: ->
-				return @.send "请输入您的昵称" if @.nickname is ""
-				@.pageIndex = 2
-				@.formShow = true
-				goFinal1()
-			goNickname: ->
-				clearInterval _startCache
-				@.pageIndex = 3
-				# @.carIndex = Math.floor(Math.random()*2+1)
-			goSubmit: ->
-				data = {
-					username: @.nickname
-					mobile: @.mobile
-				}
-				axios.post "#{apiLink}active/autoSave/insert/database/draw/",data
-				.then (msg)=>
-					if msg.data.code is 200
-						@.send "恭喜您预约成功"
-						@.formBoxShow = false
-						setTimeout =>
-							@.share()
-						,2000
-					else
-						@.send msg.data.reason
-				.catch (err)=>
-					console.log "err:",err
-					@.send "请求错误,请重试"
-
-			goWeb: ->
-				window.location.href = "https://tharu.svw-volkswagen.com/"
-			focusEvt: (evt)->
-				# document.getElementById("mobile").scrollIntoViewIfNeeded()
-				console.log "height:",document.body.scrollHeight,evt
-				# _startCache = setInterval =>
-				# 	document.body.scrollTop = document.body.scrollHeight
-				# ,100
-			blurEvt: (evt)->
-				clearInterval _startCache
-			videoplay: (data)->
-				console.log "videoPlay",data
-				@.bgmPlay = _public.$children[0].playing
-				_public.$children[0].pause() if data.playing
-			videoStop: ->
-				@.$children[0].stop()
-			videoPause: ->
-				_public.$children[0].play() if @.bgmPlay
 		mounted: ->
-			# _startCache = setInterval =>
-			# 	@.carIndex++
-			# ,2500
-			@.carIndex = Math.floor(Math.random()*2+1)
-			console.log @.carIndex
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 			if sys is "NeteaseMusic"
 				@.wy = true
 			h = TrueH*2*(2-TrueW*2/750+0.01)
-			# game = new Game({el: "game",h: h})
 			@.wy = CloudMusic.isInApp()
 			version = CloudMusic.getClientVersion().split(".")
+			document.getElementById("sence").appendChild initAll()
 
 chnNumChar = ["零","一","二","三","四","五","六","七","八","九"]
 chnUnitSection = ["","万","亿","万亿","亿亿"]
@@ -563,3 +448,10 @@ NumberToChinese = (num) ->
 
 tryThis = (msg)->
 	console.log "msg:",msg
+
+
+# @codekit-append "../js/phy.js"
+# @codekit-append "../js/Fog.js"
+# @codekit-append "../js/gift.js"
+# @codekit-append "../js/ani.js"
+# @codekit-append "../js/pig.js"
