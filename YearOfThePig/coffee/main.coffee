@@ -426,6 +426,7 @@ init = ->
 				document.getElementById("subtitles").innerHTML = "<div data-splitting>#{msgs[@.msgIndex]}</div>"
 				Splitting()
 				@.msgIndex = (@.msgIndex+1)%msgs.length
+				SOUND.runRandomHit()
 			gameOver: ->
 				console.log "Start"
 				@.gameEnd = true
