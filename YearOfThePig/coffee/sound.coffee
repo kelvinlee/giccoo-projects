@@ -20,13 +20,11 @@ SOUND.gift = new Howl
 SOUND.giftEnd = new Howl
 	src: ["#{_CDN}/mp3/han.mp3"]
 	volume: 0.3
-SOUND.bgm = new Howl
-	src: ["#{_CDN}/mp3/bgm-ending.mp3"]
 
 
 SOUND.end = ->
 	SOUND.giftEnd.play()
-	setTimeout ->
-		SOUND.bgm.play()
-	,500
+	# setTimeout ->
+	# 	SOUND.bgm.play()
+	# ,500
 
