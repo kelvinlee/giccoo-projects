@@ -66,10 +66,10 @@ function addGift(){
 }
 
 function addAGift(){
-		if(sound.isPlaying){
-			sound.stop();
-		}
-		sound.play();
+		// if(sound.isPlaying){
+		// 	sound.stop();
+		// }
+		// sound.play();
 		var giftType=nowGiftType
 		
 		nowGiftType++
