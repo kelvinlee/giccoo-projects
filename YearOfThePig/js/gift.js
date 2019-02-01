@@ -55,11 +55,11 @@ function addGift(){
 				removeJointConstraint();
 				document.removeEventListener("touchstart",onDocumentTouchStart,false)
 				TweenMax.to(rootPointBody.position,2.5,{y:120})
+				SOUND.end()
 		};
 	}else{
 		for (var i = 0; i < giftsNum[level]; i++) {
 				setTimeout(addAGift,60*i)
-
 		};
 	}
 	//removeJointConstraint();
@@ -114,6 +114,8 @@ function addAGift(){
 
 		world.add(_giftBody)
 		bodies.push(_giftBody)
+
+		if (level!=7) {SOUND.gift.play()}
 }
 
 function aniDone(){

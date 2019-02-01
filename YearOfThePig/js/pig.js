@@ -23,11 +23,7 @@ function initAll () {
 	renderer.setPixelRatio(2)
 	renderer.shadowMapEnabled=true
 	//renderer.shadowMapSoft=true
-	
-
 	// document.body.appendChild()
-	
-
 	loadingMods('mod/pig3.glb',["pig"],"addScene")//模型加载
 	loadingMods('mod/foot.glb',["foot"])//模型加载
 	loadingMods('mod/gift1.glb',["gift1"])
@@ -136,7 +132,7 @@ var intersects=[]
 var mouseConstraint = void 0;
 function clickFunc(){
 	renderer.domElement.addEventListener("touchstart",onDocumentTouchStart,false)
-	renderer.domElement.addEventListener("touchmove",onDocumentTouchMove,false)
+	renderer.domElement.addEventListener("touchmove",onDocumentTouchMove,{passive: false})
 	renderer.domElement.addEventListener("touchend",onDocumentTouchEnd,false)
 }
 var lastX,lastY,lastDirX,lastDirY,entropy=0
@@ -181,6 +177,7 @@ function onDocumentTouchStart(_e){
 		pickingPlane.position.copy(pos)
 		pickingPlane.quaternion.copy(camera.quaternion)
 		addMouseConstraint(pos.x,pos.y,pos.z,body)
+		SOUND.runRandomHit()
 		return;
 	}
 }
@@ -232,7 +229,6 @@ function onDocumentTouchMove(_e){
                 return false;
             }
 }
-
 function onDocumentTouchEnd(_e){
 	controls.enabled = true;
 	removeJointConstraint();

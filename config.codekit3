@@ -4403,6 +4403,17 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"/YearOfThePig/coffee/sound.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/YearOfThePig/js/sound.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
 	"/YearOfThePig/coffee/UGC.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -4720,6 +4731,62 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/YearOfThePig/mod/pig3.glb",
+		"oF": 0
+		},
+	"/YearOfThePig/mp3/bgm-ending.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/YearOfThePig/mp3/bgm-ending.mp3",
+		"oF": 0
+		},
+	"/YearOfThePig/mp3/ending.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/YearOfThePig/mp3/ending.mp3",
+		"oF": 0
+		},
+	"/YearOfThePig/mp3/gift.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/YearOfThePig/mp3/gift.mp3",
+		"oF": 0
+		},
+	"/YearOfThePig/mp3/han.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/YearOfThePig/mp3/han.mp3",
+		"oF": 0
+		},
+	"/YearOfThePig/mp3/pig-1.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/YearOfThePig/mp3/pig-1.mp3",
+		"oF": 0
+		},
+	"/YearOfThePig/mp3/pig-2.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/YearOfThePig/mp3/pig-2.mp3",
+		"oF": 0
+		},
+	"/YearOfThePig/mp3/pig-3.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/YearOfThePig/mp3/pig-3.mp3",
+		"oF": 0
+		},
+	"/YearOfThePig/mp3/pig-4.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/YearOfThePig/mp3/pig-4.mp3",
 		"oF": 0
 		},
 	"/YearOfThePig/sass/base.sass": {

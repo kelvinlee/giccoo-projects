@@ -4,6 +4,7 @@
 # @codekit-prepend "../../libs/vue/vue-register"
 # @codekit-prepend "../../libs/vue/vue-player"
 # @codekit-prepend "../../libs/coffee/String"
+# @codekit-prepend "sound"
 
 axios.defaults.withCredentials = true
 
