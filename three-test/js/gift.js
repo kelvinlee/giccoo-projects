@@ -57,14 +57,14 @@ function addGift(){
 
 
 
-		var _giftShape=new CANNON.Box(new CANNON.Vec3(2,2,1))
-		//var _giftShape=new CANNON.Sphere(3)
-		var _giftBody=new CANNON.Body({mass:1,position:new CANNON.Vec3(0,0,0)})
+		//var _giftShape=new CANNON.Box(new CANNON.Vec3(2,2,1))
+		var _giftShape=new CANNON.Sphere(3)
+		var _giftBody=new CANNON.Body({mass:1,position:new CANNON.Vec3(0,0,0)})//type:CANNON.Body.KINEMATIC
 		_giftBody.addShape(_giftShape)
 		
 
 		_giftBody.position.set(pigBody.position.x,pigBody.position.y-20,pigBody.position.z)
-		console.log("_giftBody.position",_giftBody.position)
+		console.log("_giftBody.Type",_giftBody.type)
 		
 		world.add(_giftBody)
 		bodies.push(_giftBody)
