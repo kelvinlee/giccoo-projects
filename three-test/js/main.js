@@ -177,9 +177,9 @@ function onDocumentTouchStart(_e){
 	}
 }
 var lastX,lastY,lastDirX,lastDirY,entropy=0
-var MIN_DISTANCE_PER_SHAKE=50
+var MIN_DISTANCE_PER_SHAKE=20
 var ENTROPY_PER_SHAKE=1
-var MAX_ENTROPY=[1,2,4,6,10,16,20]
+var MAX_ENTROPY=[1,2,3,4,6,8,16,16]
 var level=0
 
 function onDocumentTouchMove(_e){
@@ -208,7 +208,7 @@ function onDocumentTouchMove(_e){
                 // if (this.entropy > HIDE_HINT_ENTROPY) {
                 //     this.hideHint();
                 // }
-                if(level==7){
+                if(level==8){
                 	aniDone()
                 }else if (entropy > MAX_ENTROPY[level]) {
                     addGift();

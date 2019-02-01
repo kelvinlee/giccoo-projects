@@ -1,5 +1,5 @@
 var gifts=[]
-var giftsNum=[1,3,5,7,9,16,17]//[1,2,3,4,5,6,7]
+var giftsNum=[1,3,5,7,9,16,20,50]//[1,2,3,4,5,6,7]
 var gift1,gift2,gift3,gift4
 function setGifts(){
 	//=====硬币
@@ -44,41 +44,55 @@ function setGifts(){
 }
 
 var nowGiftType=parseInt(Math.random()*4)
-
+var giftScale=1.5
 function addGift(){
 	console.log("加个礼物")
-	for (var i = 0; i < giftsNum[level]; i++) {
-		//var gN=[objs.gift1.clone(),objs.gift2.clone(),objs.gift3.clone(),objs.gift4.clone()]
-		//var _agift=gN[parseInt(Math.random()*4)]
-		var giftType=nowGiftType//parseInt(Math.random()*4)
+	
+	if(level==7){
+		for (var i = 0; i < giftsNum[level]; i++) {
+				setTimeout(addAGift,30*i)
+				removeJointConstraint();
+				document.removeEventListener("touchstart",onDocumentTouchStart,false)
+				TweenMax.to(rootPointBody.position,3,{y:100})
+		};
+	}else{
+		for (var i = 0; i < giftsNum[level]; i++) {
+				setTimeout(addAGift,60*i)
+		};
+	}
+	//removeJointConstraint();
+}
+
+function addAGift(){
+		var giftType=nowGiftType
 		
 		nowGiftType++
 		if (nowGiftType==4) {nowGiftType=0};
 
 		var giftA=[gift1,gift2,gift3,gift4]
 		var _agift=giftA[giftType].clone()//Math.random()*4
-		_agift.scale.set(.15,.15,.15)
+		_agift.scale.set(.1*giftScale,.1*giftScale,.1*giftScale)
 		_agift.castShadow=true
 		_agift.receiveShadow=true
 		scene.add(_agift)
 		meshes.push(_agift)
-		TweenMax.from(_agift.scale,2,{x:0.01,y:0.01,z:0.01,ease:Elastic.easeOut,delay:i*.1})
+		TweenMax.from(_agift.scale,2,{x:0.01,y:0.01,z:0.01,ease:Elastic.easeOut})
 
 
 
 
 		switch(giftType){
 			case 0:
-				var	_giftShape=new CANNON.Cylinder(3,3,.5,12)//硬币
+				var	_giftShape=new CANNON.Cylinder(3*giftScale,3*giftScale,.5*giftScale,12)//硬币
 			break;
 			case 1:
-				var	_giftShape=new CANNON.Sphere(2.5)//元宝
+				var	_giftShape=new CANNON.Sphere(2.5*giftScale)//元宝
 			break;
 			case 2:
-				var	_giftShape=new CANNON.Box(new CANNON.Vec3(4.5,1.3,1.5))//金条
+				var	_giftShape=new CANNON.Box(new CANNON.Vec3(4.5*giftScale,1.3*giftScale,1.5*giftScale))//金条
 			break;
 			case 3:
-				var	_giftShape=new CANNON.Box(new CANNON.Vec3(3,4.5,.5))//金条
+				var	_giftShape=new CANNON.Box(new CANNON.Vec3(3*giftScale,4.5*giftScale,.5*giftScale))//红包
 			break;
 		}
 
@@ -87,22 +101,13 @@ function addGift(){
 		_giftBody.addShape(_giftShape)
 		
 
-		//_giftBody.position.set(pigBody.position.x-level/2*5+i*5,pigBody.position.y-20,pigBody.position.z)
+		_giftBody.position.set(pigBody.position.x,pigBody.position.y-20,pigBody.position.z)
 
-		_giftBody.position.set(pigBody.position.x-Math.sqrt(level)/2*5+Math.sqrt(i)*5,pigBody.position.y-20,pigBody.position.z-Math.sqrt(level)/2*5+Math.sqrt(i)*5)
-		//_giftBody.position.set(pigBody.position.x,pigBody.position.y-20,pigBody.position.z)
 		_giftBody.angularVelocity=new CANNON.Vec3(Math.random()*4-2,Math.random()*4-2,Math.random()*4-2)//随机旋转
 		_giftBody.velocity=new CANNON.Vec3(Math.random()*4-2,Math.random()*4-2,Math.random()*4-2)//随机旋转
 
 		world.add(_giftBody)
 		bodies.push(_giftBody)
-
-		
-		//console.log(pigBody.position)
-
-	};
-
-	console.log("bodies",bodies,"meshes",meshes)
 }
 
 function aniDone(){
