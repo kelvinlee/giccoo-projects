@@ -394,6 +394,8 @@ init = ->
 				setTest()
 				ModLoaded()
 				@.pageIndex = 2
+			gameOver: ->
+				console.log "Start"
 		mounted: ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
