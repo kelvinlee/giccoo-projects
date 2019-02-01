@@ -233,6 +233,7 @@ init = ->
 			speed: 4000
 			maxSpeed: 0
 			swing: false
+			messageShow: false
 			registerShow: false
 			lotteryShow: false
 			lotteryEndShow: false
@@ -252,11 +253,11 @@ init = ->
 			messageInput: false
 			musicName: ""
 			white: false
-			gameEnd: false
 			formShow: true
 			formBoxShow: false
-			carIndex: 1
+			msgIndex: 1
 			allow: true
+			shaked: false
 		methods:
 			runHand: ->
 				return false unless @.allow 
@@ -298,21 +299,15 @@ init = ->
 			over: ->
 				@.questionShow = false
 				ugc.init()
-				setTimeout =>
-					@.gameEnd = true
-				,2000
 			regame: ->
 				window.location.reload()
 			dateText: (date)->
 				console.log date.replace(/-/g,"/")
 				d = new Date date.replace(/-/g,"/")
 				return d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日"
-			
 			goUGC: ->
 				@.lotteryShow = true
-
 			sharePost: (base64)->
-				@.gameEnd = true
 				ugc.app.renderer.render ugc.app.stage
 				# @.ugc = ugc.app.view.toDataURL()
 				@.ugc = base64
@@ -321,7 +316,6 @@ init = ->
 			goshare: ->
 				# goShare()
 				@.share()
-
 			share: ->
 				goFinal2()
 				@.formBoxShow = false
@@ -387,15 +381,55 @@ init = ->
 				id = [169794,166317,112678,144143,64497,163639,28853351,153476,5271858,186980,170749,5276250,27591641,32922491,144380,5250828,28785688,186272,210866,555984413]
 				# CloudMusic.song(id[resultNum])
 				window.location.href = "https://music.163.com/#/song?id=#{id[resultNum]}"
-			
 			openInApp: ->
 				CloudMusic.open("https://m.giccoo.com/draw-board/")
 			goNext: ->
 				setTest()
 				ModLoaded()
 				@.pageIndex = 2
+				setTimeout =>
+					@.runShakeHand()
+				,1000
+			runShakeHand: ->
+				return false if @.shaked
+				hand = document.getElementById "shakeHand"
+				dt = 0.3
+				repeatTime = 14
+				hand.className = "hand hold"
+				TweenMax.to hand,dt,{x: 10, rotation: 13, transformOrigin: "center bottom",}
+				TweenMax.to hand,dt*2,{x: -10, rotation: -13, transformOrigin: "center bottom", delay: dt}
+				TweenMax.to hand,dt*2,{x: 10, rotation: 13, transformOrigin: "center bottom", delay: dt*3}
+				TweenMax.to hand,dt/2,{x: -10, rotation: -13, yoyo: true,repeat: repeatTime, transformOrigin: "center bottom", delay: dt*5}
+				TweenMax.to hand,dt/2,{
+					x: 0
+					rotation: 0
+					transformOrigin: "center bottom"
+					delay: dt*5+dt/2*repeatTime
+					onComplete: =>
+						hand.className = "hand"
+						setTimeout =>
+							@.runShakeHand()
+						,1000
+				}
+			runGift: ->
+				@.messageShow = true
+				msgs = [
+					"有对象吗?",
+					"结婚了吗?",
+					"朋友们都结婚了吧?",
+					"年终奖多少啊?",
+					"买房了吗?",
+					"你看你又胖啦!",
+					"这么大岁数了要努力呀!"
+				]
+				# @.message = msgs[Math.floor(Math.random() * msgs.length)]
+				document.getElementById("subtitles").innerHTML = "<div data-splitting>#{msgs[@.msgIndex]}</div>"
+				Splitting()
+				@.msgIndex = (@.msgIndex+1)%msgs.length
 			gameOver: ->
 				console.log "Start"
+				@.gameEnd = true
+
 		mounted: ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth

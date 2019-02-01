@@ -68,7 +68,24 @@
       </transition>
       <transition name="page-zoom">
         <div v-show="pageIndex == 2" class="page page-2">
-          <div id="sence" class="content"></div>
+          <div id="sence" class="content">
+            <transition name="page-fade">
+              <div v-show="!gameEnd &amp;&amp; !shaked" class="shake-hand">
+                <div class="shake">
+                  <div class="line"><img src="./img/shake-line.png"></div>
+                  <div id="shakeHand" class="hand">
+                    <div class="open"><img src="./img/shake-hand-1.png"></div>
+                    <div class="hold"><img src="./img/shake-hand-2.png"></div>
+                  </div>
+                </div>
+                <div class="text">抓住并摇晃</div>
+              </div>
+            </transition>
+            <transition name="page-fade">
+              <div id="subtitles" v-show="!gameEnd &amp;&amp; shaked" class="message"></div>
+            </transition>
+            <div v-show="gameEnd" class="overMark fadeIn animated"></div>
+          </div>
         </div>
       </transition>
     </div>
@@ -79,6 +96,7 @@
     <script src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js"></script>
     <script src="//image.giccoo.com/projects/genki/js/ntes.id.js"></script>
     <script src="js/three.min.js"></script>
+    <script src="//unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.5/dat.gui.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>

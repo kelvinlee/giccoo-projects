@@ -52,15 +52,17 @@ function addGift(){
 	if(level==7){
 		for (var i = 0; i < giftsNum[level]; i++) {
 				setTimeout(addAGift,30*i)
-				removeJointConstraint();
-				document.removeEventListener("touchstart",onDocumentTouchStart,false)
-				TweenMax.to(rootPointBody.position,2.5,{y:120})
-				SOUND.end()
 		};
+		removeJointConstraint();
+		document.removeEventListener("touchstart",onDocumentTouchStart,false)
+		TweenMax.to(rootPointBody.position,2.5,{y:120})
+		SOUND.end()
+		main.gameOver()
 	}else{
 		for (var i = 0; i < giftsNum[level]; i++) {
 				setTimeout(addAGift,60*i)
 		};
+		main.runGift()
 	}
 	//removeJointConstraint();
 }
@@ -116,6 +118,8 @@ function addAGift(){
 		bodies.push(_giftBody)
 
 		SOUND.gift.play()
+		main.shaked = true
+
 }
 
 function aniDone(){

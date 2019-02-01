@@ -147,7 +147,10 @@ $pageMainBGColor: #0c101a;
 		+transform(translate3d(0,0,0))
 	50%
 		+transform(translate3d(3%,0,0))
-
++keyframes(slide-in)
+	from
+		transform: translateX(-1em) rotate(180deg) scale(0.5)
+		opacity: 0
 html,body
 	+w
 	+h
@@ -635,7 +638,57 @@ video,canvas,svg
 			+posa
 			+bl(5%)
 			+w
-		
+
+.page-2
+	.content
+		.message
+			+posa
+			+bl(5%,0%)
+			+w(100%)
+			+font-size(1rem)
+			+text-center
+			line-height: 2em
+			letter-spacing: 0.2em
+			text-indent: 0.4em
+			color: #f66064
+			text-shadow: 1px 1px 2px rgba(0,0,0,0.3)
+			.char
+				animation: slide-in 1s cubic-bezier(.5, 0, .5, 1) both
+				animation-delay: calc(60ms * var(--char-index))
+				+show-inline
+				text-indent: 0
+		.shake-hand
+			+posa
+			+bl(5%,25%)
+			+w(50%)
+			z-index: 10
+			.text
+				+font-size(0.8rem)
+				+text-center
+				margin-top: 24px
+				color: #f66064
+				letter-spacing: 0.2em
+			.shake
+				+w(60px)
+				+show
+				+m
+				+posr
+			.hand
+				+posa
+				+tl(-100%,20%)
+				+iw(70,120,100%)
+				.open
+					+show
+				.hold
+					+hide
+				&.hold
+					.open
+						+hide
+					.hold
+						+show
+
+
+
 
 .videos
 	+posa

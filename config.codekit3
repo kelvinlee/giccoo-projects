@@ -4497,6 +4497,39 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/YearOfThePig/img/shake-hand-1.png": {
+		"ft": 32768,
+		"iS": 3489,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/shake-hand-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/YearOfThePig/img/shake-hand-2.png": {
+		"ft": 32768,
+		"iS": 3090,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/shake-hand-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/YearOfThePig/img/shake-line.png": {
+		"ft": 32768,
+		"iS": 1584,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/shake-line.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/YearOfThePig/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -4752,6 +4785,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/YearOfThePig/mp3/gift.mp3",
+		"oF": 0
+		},
+	"/YearOfThePig/mp3/han.mp3": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/YearOfThePig/mp3/han.mp3",
 		"oF": 0
 		},
 	"/YearOfThePig/mp3/pig-1.mp3": {

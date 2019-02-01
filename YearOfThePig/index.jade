@@ -87,6 +87,20 @@ block content
     transition(name="page-zoom")
       .page.page-2(v-show="pageIndex == 2")
         .content#sence
+          transition(name="page-fade")
+            .shake-hand(v-show="!gameEnd && !shaked")
+              .shake
+                .line
+                  img(src="#{url}/img/shake-line.png")
+                .hand#shakeHand
+                  .open
+                    img(src="#{url}/img/shake-hand-1.png")
+                  .hold
+                    img(src="#{url}/img/shake-hand-2.png")
+              .text 抓住并摇晃
+          transition(name="page-fade")
+            .message#subtitles(v-show="!gameEnd && shaked")
+          .overMark.fadeIn.animated(v-show="gameEnd")
 
 block js
   - url = "/";
@@ -101,6 +115,7 @@ block js
   script(src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js")
   script(src="//image.giccoo.com/projects/genki/js/ntes.id.js")
   script(src='js/three.min.js')
+  script(src='//unpkg.com/splitting@1.0.6/dist/splitting.min.js')
   script(src='//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.5/dat.gui.min.js')
   script(src='//cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js')
   script(src='//cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js')
