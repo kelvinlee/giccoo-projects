@@ -1,5 +1,5 @@
 var gifts=[]
-var giftsNum=[1,2,3,4,5,6,7]
+var giftsNum=[1,3,5,7,9,16,17]//[1,2,3,4,5,6,7]
 var gift1,gift2,gift3,gift4
 function setGifts(){
 	//=====硬币
@@ -44,6 +44,7 @@ function setGifts(){
 }
 
 var nowGiftType=parseInt(Math.random()*4)
+
 function addGift(){
 	console.log("加个礼物")
 	for (var i = 0; i < giftsNum[level]; i++) {
@@ -56,7 +57,7 @@ function addGift(){
 
 		var giftA=[gift1,gift2,gift3,gift4]
 		var _agift=giftA[giftType].clone()//Math.random()*4
-		_agift.scale.set(.1,.1,.1)
+		_agift.scale.set(.15,.15,.15)
 		_agift.castShadow=true
 		_agift.receiveShadow=true
 		scene.add(_agift)
@@ -86,7 +87,10 @@ function addGift(){
 		_giftBody.addShape(_giftShape)
 		
 
-		_giftBody.position.set(pigBody.position.x-level/2*5+i*5,pigBody.position.y-20,pigBody.position.z)
+		//_giftBody.position.set(pigBody.position.x-level/2*5+i*5,pigBody.position.y-20,pigBody.position.z)
+
+		_giftBody.position.set(pigBody.position.x-Math.sqrt(level)/2*5+Math.sqrt(i)*5,pigBody.position.y-20,pigBody.position.z-Math.sqrt(level)/2*5+Math.sqrt(i)*5)
+		//_giftBody.position.set(pigBody.position.x,pigBody.position.y-20,pigBody.position.z)
 		_giftBody.angularVelocity=new CANNON.Vec3(Math.random()*4-2,Math.random()*4-2,Math.random()*4-2)//随机旋转
 		_giftBody.velocity=new CANNON.Vec3(Math.random()*4-2,Math.random()*4-2,Math.random()*4-2)//随机旋转
 
