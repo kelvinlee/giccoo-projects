@@ -139,8 +139,13 @@ function clickFunc(){
 	renderer.domElement.addEventListener("touchmove",onDocumentTouchMove,false)
 	renderer.domElement.addEventListener("touchend",onDocumentTouchEnd,false)
 }
+var lastX,lastY,lastDirX,lastDirY,entropy=0
+var MIN_DISTANCE_PER_SHAKE=20
+var ENTROPY_PER_SHAKE=1
+var MAX_ENTROPY=[1,2,3,4,6,8,16,16]
+var level=0
 function onDocumentTouchStart(_e){
-	//_e.preventDefault()
+	_e.preventDefault()
 
 	mouse.x=(_e.touches[0].clientX/window.innerWidth)*2-1
 	mouse.y=-(_e.touches[0].clientY/window.innerHeight)*2+1//donElement
@@ -179,13 +184,8 @@ function onDocumentTouchStart(_e){
 		return;
 	}
 }
-var lastX,lastY,lastDirX,lastDirY,entropy=0
-var MIN_DISTANCE_PER_SHAKE=20
-var ENTROPY_PER_SHAKE=1
-var MAX_ENTROPY=[1,2,3,4,6,8,16,16]
-var level=0
-
 function onDocumentTouchMove(_e){
+	_e.preventDefault()
 	mouse.x=(_e.touches[0].clientX/window.innerWidth)*2-1
 	mouse.y=-(_e.touches[0].clientY/window.innerHeight)*2+1//donElement
   if (mouseConstraint) {

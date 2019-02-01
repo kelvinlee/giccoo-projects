@@ -143,9 +143,7 @@ document.body.appendChild(stats.domElement),stats.domElement.className="fps",//=
 guiControls=new function(){
 //存放有所有需要改变的属性的对象
 this.X=0,this.Y=150,this.Z=0,this.ifTrue=!0,this.func=function(){console.log("一个函数")},this.target=rootPointBody}}//============================互动 点击
-function clickFunc(){renderer.domElement.addEventListener("touchstart",onDocumentTouchStart,!1),renderer.domElement.addEventListener("touchmove",onDocumentTouchMove,!1),renderer.domElement.addEventListener("touchend",onDocumentTouchEnd,!1)}function onDocumentTouchStart(e){if(
-//_e.preventDefault()
-mouse.x=e.touches[0].clientX/window.innerWidth*2-1,mouse.y=-e.touches[0].clientY/window.innerHeight*2+1,//donElement
+function clickFunc(){renderer.domElement.addEventListener("touchstart",onDocumentTouchStart,!1),renderer.domElement.addEventListener("touchmove",onDocumentTouchMove,!1),renderer.domElement.addEventListener("touchend",onDocumentTouchEnd,!1)}function onDocumentTouchStart(e){if(e.preventDefault(),mouse.x=e.touches[0].clientX/window.innerWidth*2-1,mouse.y=-e.touches[0].clientY/window.innerHeight*2+1,//donElement
 raycaster.setFromCamera(mouse,camera),intersects=[],//intersects = raycaster.intersectObjects( scene.children )
 raycaster.intersectObjects(meshes,!1,intersects),0<intersects.length){
 //console.log(intersects[0])
@@ -159,7 +157,7 @@ raycaster.intersectObjects(meshes,!1,intersects),0<intersects.length){
 //world.removeConstraint(body_rootConstraint);
 //world.gravity.set(0,0,0)
 lastX=e.touches[0].clientX,lastY=e.touches[0].clientY,console.log(intersects[0].object.userData.body);var t=intersects[0].object.userData.body;if(!t)return;controls.enabled=!1;var n=t.position;return pickingPlane.position.copy(n),pickingPlane.quaternion.copy(camera.quaternion),void addMouseConstraint(n.x,n.y,n.z,t)}}function onDocumentTouchMove(e){//donElement
-if(mouse.x=e.touches[0].clientX/window.innerWidth*2-1,mouse.y=-e.touches[0].clientY/window.innerHeight*2+1,mouseConstraint){var t=e.touches[0].clientX-lastX,n=e.touches[0].clientY-lastY,o=t<0?-1:1,i=n<0?-1:1;//console.log(pickingPlane)
+if(e.preventDefault(),mouse.x=e.touches[0].clientX/window.innerWidth*2-1,mouse.y=-e.touches[0].clientY/window.innerHeight*2+1,mouseConstraint){var t=e.touches[0].clientX-lastX,n=e.touches[0].clientY-lastY,o=t<0?-1:1,i=n<0?-1:1;//console.log(pickingPlane)
 if(Math.abs(t)>=MIN_DISTANCE_PER_SHAKE&&0!==o&&lastDirX!==o&&(lastDirX=o,entropy+=ENTROPY_PER_SHAKE),Math.abs(n)>=MIN_DISTANCE_PER_SHAKE&&0!==i&&lastDirY!==i&&(lastDirY=i,entropy+=ENTROPY_PER_SHAKE),lastX=e.touches[0].clientX,lastY=e.touches[0].clientY,// if (this.entropy > HIDE_HINT_ENTROPY) {
 //     this.hideHint();
 // }
