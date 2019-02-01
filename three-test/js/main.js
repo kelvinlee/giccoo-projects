@@ -196,7 +196,7 @@ function onDocumentTouchMove(_e){
                 if (Math.abs(deltaX) >= MIN_DISTANCE_PER_SHAKE && dirX !== 0 && lastDirX !== dirX) {
                     lastDirX = dirX;
                     entropy += ENTROPY_PER_SHAKE;
-                    console.log(entropy)
+                    //console.log(entropy)
                     
                 }
                 if (Math.abs(deltaY) >= MIN_DISTANCE_PER_SHAKE && dirY !== 0 && lastDirY !== dirY) {
