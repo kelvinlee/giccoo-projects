@@ -79,7 +79,7 @@ function addAGift(){
 		var _agift=giftA[giftType].clone()//Math.random()*4
 		_agift.scale.set(.1*giftScale,.1*giftScale,.1*giftScale)
 		_agift.castShadow=true
-		_agift.receiveShadow=true
+		//_agift.receiveShadow=true
 		scene.add(_agift)
 		meshes.push(_agift)
 		TweenMax.from(_agift.scale,2,{x:0.01,y:0.01,z:0.01,ease:Elastic.easeOut})
