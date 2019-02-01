@@ -13,7 +13,7 @@ function setLeftFoot(){
 	leftFoot.position.set(0,0,0)
 	leftFoot.castShadow=true
 	var footmap=objs.foot.material.map
-	var footMat=new THREE.MeshBasicMaterial({map:footmap,envMap:environment,reflectivity:0})
+	var footMat=new THREE.MeshBasicMaterial({map:footmap})
 
 	leftFoot.material=footMat
 
@@ -95,7 +95,7 @@ function setRightFoot(){
 	rightFoot.position.set(0,0,0)
 	rightFoot.castShadow=true
 	var footmap=rightFoot.material.map
-	var footMat=new THREE.MeshBasicMaterial({map:footmap,envMap:environment,reflectivity:0})
+	var footMat=new THREE.MeshBasicMaterial({map:footmap})
 
 	rightFoot.material=footMat
 
@@ -177,7 +177,7 @@ function setRightHand(){
 	rightHand.position.set(0,0,0)
 	rightHand.castShadow=true
 	var handmap=rightHand.material.map
-	var handMat=new THREE.MeshBasicMaterial({map:handmap,envMap:environment,reflectivity:0})
+	var handMat=new THREE.MeshBasicMaterial({map:handmap})
 
 	rightHand.material=handMat
 
@@ -258,7 +258,7 @@ function setLeftHand(){
 	leftHand.position.set(0,0,0)
 	leftHand.castShandow=true
 	var handmap=leftHand.material.map
-	var handMat=new THREE.MeshBasicMaterial({map:handmap,envMap:environment,reflectivity:0})
+	var handMat=new THREE.MeshBasicMaterial({map:handmap})
 
 	leftHand.material=handMat
 

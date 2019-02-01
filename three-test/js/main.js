@@ -38,7 +38,7 @@ function initAll () {
 	//render()
 	//animate()//===动画
 	clickFunc()
-	set_envMap()
+	//set_envMap()
 
 }
 //============================每帧渲染：更新物理+画面
@@ -71,19 +71,19 @@ function render() {
 
 //============================环境贴图
 
-var environment
-function set_envMap(){
-	environment = new THREE.CubeTextureLoader()
-	.setPath( 'img/' )
-	.load( [
-		'px.jpg',
-		'nx.jpg',
-		'py.jpg',
-		'ny.jpg',
-		'pz.jpg',
-		'nz.jpg'
-	] );
-}
+// var environment
+// function set_envMap(){
+// 	environment = new THREE.CubeTextureLoader()
+// 	.setPath( 'img/' )
+// 	.load( [
+// 		'px.jpg',
+// 		'nx.jpg',
+// 		'py.jpg',
+// 		'ny.jpg',
+// 		'pz.jpg',
+// 		'nz.jpg'
+// 	] );
+// }
 
 
 
@@ -365,7 +365,7 @@ function getStart(){
 
 	//====平行光
 	var dLight=new THREE.DirectionalLight(0xffffff,.3)
-	dLight.position.set(0,50,0)
+	dLight.position.set(0,30,0)
 	//dLight.target=scene
 	dLight.castShadow=true
 	dLight.shadow.mapSize.width = 2048;  // default
@@ -404,7 +404,7 @@ function getStart(){
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
-	var pigMat=new THREE.MeshBasicMaterial({map:pigmap,envMap:environment,reflectivity:0})
+	var pigMat=new THREE.MeshBasicMaterial({map:pigmap,reflectivity:0})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap,emissive:0xffffff,envMap:environment,emissiveIntensity:0.5,roughness:0.4,metalness:.5})
 	objs.pig.material=pigMat
 	//TweenMax.set(pig.scale,{x:.105,y:.105,z:.095})

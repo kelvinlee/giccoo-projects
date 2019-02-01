@@ -8,8 +8,8 @@ function setGifts(){
 	var gift1map=objs.gift1.material.map
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
-	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
-	var gift1Mat=new THREE.MeshToonMaterial({color:0xf2c64d,envMap:environment,reflectivity:0,emissive:0xf2c64d,emissiveIntensity:.1})
+	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
+	var gift1Mat=new THREE.MeshToonMaterial({color:0xf2c64d,emissive:0xf2c64d,emissiveIntensity:.1})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap,emissive:0xffffff,envMap:environment,emissiveIntensity:0.5,roughness:0.4,metalness:.5})
 	gift1.material=gift1Mat
 
@@ -18,8 +18,8 @@ function setGifts(){
 	var gift2map=objs.gift2.material.map
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
-	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
-	var gift2Mat=new THREE.MeshToonMaterial({color:0xf2c64d,envMap:environment,reflectivity:0,emissive:0xf2c64d,emissiveIntensity:.1})
+	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
+	var gift2Mat=new THREE.MeshToonMaterial({color:0xf2c64d,emissive:0xf2c64d,emissiveIntensity:.1})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap,emissive:0xffffff,envMap:environment,emissiveIntensity:0.5,roughness:0.4,metalness:.5})
 	gift2.material=gift2Mat
 
@@ -28,8 +28,8 @@ function setGifts(){
 	var gift3map=objs.gift3.material.map
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
-	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
-	var gift3Mat=new THREE.MeshToonMaterial({color:0xf2c64d,envMap:environment,reflectivity:0,emissive:0xf2c64d,emissiveIntensity:.1})
+	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
+	var gift3Mat=new THREE.MeshToonMaterial({color:0xf2c64d,emissive:0xf2c64d,emissiveIntensity:.1})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap,emissive:0xffffff,envMap:environment,emissiveIntensity:0.5,roughness:0.4,metalness:.5})
 	gift3.material=gift3Mat
 
@@ -38,8 +38,8 @@ function setGifts(){
 	var gift4map=objs.gift4.material.map
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
-	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
-	var gift4Mat=new THREE.MeshBasicMaterial({map:gift4map,envMap:environment,reflectivity:0})
+	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
+	var gift4Mat=new THREE.MeshBasicMaterial({map:gift4map,reflectivity:0})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap,emissive:0xffffff,envMap:environment,emissiveIntensity:0.5,roughness:0.4,metalness:.5})
 	gift4.material=gift4Mat
 }
