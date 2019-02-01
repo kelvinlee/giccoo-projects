@@ -115,7 +115,7 @@ function addAGift(){
 		world.add(_giftBody)
 		bodies.push(_giftBody)
 
-		if (level!=7) {SOUND.gift.play()}
+		SOUND.gift.play()
 }
 
 function aniDone(){

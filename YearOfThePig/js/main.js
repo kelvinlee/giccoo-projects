@@ -47,7 +47,7 @@ break;case 3:var o=new CANNON.Box(new CANNON.Vec3(3*giftScale,4.5*giftScale,.5*g
 break}var i=new CANNON.Body({mass:10,position:new CANNON.Vec3(0,0,0)});//type:CANNON.Body.KINEMATIC
 i.addShape(o),i.position.set(pigBody.position.x,pigBody.position.y-20,pigBody.position.z),i.angularVelocity=new CANNON.Vec3(4*Math.random()-2,4*Math.random()-2,4*Math.random()-2),//随机旋转
 i.velocity=new CANNON.Vec3(4*Math.random()-2,4*Math.random()-2,4*Math.random()-2),//随机旋转
-world.add(i),bodies.push(i),7!=level&&SOUND.gift.play()}function aniDone(){console.log("完成")}function setLeftFoot(){leftFoot=objs.foot.clone(),scene.add(leftFoot),leftFoot.scale.set(pigScale,pigScale,pigScale),leftFoot.position.set(0,0,0),leftFoot.castShadow=!0;var e=objs.foot.material.map,t=new THREE.MeshBasicMaterial({map:e});leftFoot.material=t;var n=new THREE.BoxGeometry(1,1,1),o=new THREE.MeshBasicMaterial({color:16776960});leftFootJoint=new THREE.Mesh(n,o),//scene.add(leftFootJoint)
+world.add(i),bodies.push(i),SOUND.gift.play()}function aniDone(){console.log("完成")}function setLeftFoot(){leftFoot=objs.foot.clone(),scene.add(leftFoot),leftFoot.scale.set(pigScale,pigScale,pigScale),leftFoot.position.set(0,0,0),leftFoot.castShadow=!0;var e=objs.foot.material.map,t=new THREE.MeshBasicMaterial({map:e});leftFoot.material=t;var n=new THREE.BoxGeometry(1,1,1),o=new THREE.MeshBasicMaterial({color:16776960});leftFootJoint=new THREE.Mesh(n,o),//scene.add(leftFootJoint)
 setLeftFootPhy()}//leftFootCurve
 function setLeftFootPhy(){
 //=====左脚
