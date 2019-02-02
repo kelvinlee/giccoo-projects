@@ -51,7 +51,7 @@ function setGifts(){
 }
 
 var nowGiftType=parseInt(Math.random()*4)
-var giftScale=1.5
+var giftScale=1
 function addGift(){
 	console.log("加个礼物")
 	

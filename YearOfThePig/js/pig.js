@@ -2,7 +2,8 @@
 //============================初始化
 
 var scene=new THREE.Scene();
-var camera= new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,200);
+//var camera= new THREE.PerspectiveCamera(90,window.innerWidth/window.innerHeight,0.1,200);//OrthographicCamera
+var camera= new THREE.OrthographicCamera(window.innerWidth/window.innerHeight*80/-2,window.innerWidth/window.innerHeight*80/2,40,-40,0.1,200);
 //视角，宽高比，近剪切面，远剪切面
 var renderer = new THREE.WebGLRenderer({antialias:true,alpha:false})//抗锯齿
 var modNum=0 // 总数
@@ -27,7 +28,7 @@ function initAll () {
 		renderer.shadowMapEnabled=true
 		//renderer.shadowMapSoft=true
 		// document.body.appendChild()
-		loadingMods('mod/pig3.glb',["pig"])//模型加载
+		loadingMods('mod/pig4.glb',["pig"],"addScene")//模型加载
 		loadingMods('mod/foot.glb',["foot"])//模型加载
 		loadingMods('mod/gift1.glb',["gift1"])
 		loadingMods('mod/gift2.glb',["gift2"])
@@ -186,6 +187,7 @@ function onDocumentTouchStart(_e){
 			pickingPlane.position.copy(pos)
 			pickingPlane.quaternion.copy(camera.quaternion)
 			addMouseConstraint(pos.x,pos.y,pos.z,body)
+			eyeBlink()
 			SOUND.runRandomHit()
 			return;
 		}
@@ -354,7 +356,8 @@ function ModLoaded(){//加载模型完成
 
 
 //===========================开始
-var pigGroup=new THREE.Group()
+var eyeGroup=new THREE.Group()
+var eye1,eye2,eye3,eye4
 function getStart(){
 	// //====网格
 	// var grid=new THREE.GridHelper(50,10,0xffff00,0x888888)//网格辅助(格子尺寸，格子细分数，中线颜色，网格线颜色)
@@ -400,22 +403,43 @@ function getStart(){
 	var planeMaterial=new THREE.MeshLambertMaterial({color:0xfff5d0})
 	var plane=new THREE.Mesh(planeGeo,planeMaterial)
 	plane.rotation.x=-Math.PI/2
-	plane.position.y=-30
+	plane.position.y=-20
 	plane.receiveShadow=true
 	scene.add(plane)
 
 	//====摄像机
-	camera.position.set(0,20,80)
-	camera.lookAt(scene.position)
-
+	camera.position.set(0,10,60)
+	//camera.lookAt(scene.position)
+	camera.lookAt(new THREE.Vector3(0,5,0))
 	//====猪位置
-	pigGroup.add(objs.pig)
-	scene.add(pigGroup)
+	
+	
 	objs.pig.position.y=10
 	objs.pig.scale.set(.1,.1,.1)
 	objs.pig.castShadow=true
 
-	pigGroup.scale.set(1,1,1)
+	//====猪眼
+	scene.add(eyeGroup)
+	var eyeGeo=new THREE.SphereGeometry(1.2,12,12)
+	var eyeGeo2=new THREE.SphereGeometry(.5,12,12)
+	eye1=new THREE.Mesh(eyeGeo,new THREE.MeshBasicMaterial({color:0xffffff}))
+	eye2=new THREE.Mesh(eyeGeo,new THREE.MeshBasicMaterial({color:0xffffff}))
+
+	eye3=new THREE.Mesh(eyeGeo2,new THREE.MeshBasicMaterial({color:0x000000}))
+	eye4=new THREE.Mesh(eyeGeo2,new THREE.MeshBasicMaterial({color:0x000000}))
+
+	eyeGroup.add(eye1,eye2,eye3,eye4)
+	eye1.scale.y=.7
+	eye2.scale.y=.7
+	eye1.position.set(-3,1.6,6)
+	eye2.position.set(3,1.6,6)
+
+	eye3.scale.y=.7
+	eye4.scale.y=.7
+	eye3.scale.z=.3
+	eye4.scale.z=.3
+	eye3.position.set(-3,1.8,7.1)
+	eye4.position.set(3,1.8,7.1)
 	
 
 	var pigmap=objs.pig.material.map
@@ -440,6 +464,22 @@ function getStart(){
 	animate()
 
 }
+//======猪眨眼
+function eyeBlink(){
+	console.log("眨眼")
+	// eye1.material.color.set(0x000000)
+	// eye2.material.color.set(0x000000)
+	// setTimeout(function(){
+	// 	eye1.material.color.set(0xffffff)
+	// 	eye2.material.color.set(0xffffff)
+	// },80)
+	TweenMax.set(eye1.scale,{y:0})
+	TweenMax.set(eye2.scale,{y:0})
+	TweenMax.to(eye1.scale,.2,{y:.7})
+	TweenMax.to(eye2.scale,.2,{y:.7})
+}
+
+
 var pickingPlane
 function addPickingPlane(){
 	var planeGeo = new THREE.PlaneGeometry(4000, 2000);
@@ -492,6 +532,7 @@ function setPhy(){
 	meshes.push(objs.pig)
 	bodies.push(pigBody)
 	objs.pig.userData.body=pigBody
+	//console.log("======",pigGroup.userData.body)
 
 	//=====链接猪和起始点(pigBody+rootPointBody)
 
@@ -527,7 +568,7 @@ function setPhy(){
 		shape:groundShape
 	})
 	groundBody.quaternion.setFromAxisAngle(new CANNON.Vec3(1,0,0),-Math.PI/2)
-	groundBody.position.set(0,-30,0)
+	groundBody.position.set(0,-20,0)
 	world.add(groundBody)
 	
 }
