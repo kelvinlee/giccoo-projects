@@ -441,7 +441,7 @@ init = ->
 			h = TrueH*2*(2-TrueW*2/750+0.01)
 			@.wy = CloudMusic.isInApp()
 			version = CloudMusic.getClientVersion().split(".")
-			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => })
+			ugc = new UGC({el: "ugc", w: 750, h: 750/TrueW*TrueH,callback: => })
 			document.getElementById("sence").appendChild initAll()
 
 chnNumChar = ["零","一","二","三","四","五","六","七","八","九"]
