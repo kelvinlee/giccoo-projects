@@ -122,7 +122,9 @@ loadingMods("mod/foot.glb",["foot"]),//模型加载
 loadingMods("mod/gift1.glb",["gift1"]),loadingMods("mod/gift2.glb",["gift2"]),loadingMods("mod/gift3.glb",["gift3"]),loadingMods("mod/gift4.glb",["gift4"]),//render()
 //animate()//===动画
 clickFunc(),renderer.domElement}//============================每帧渲染：更新物理+画面
-function animate(){stats.begin(),requestAnimationFrame(animate),updatePhysics(),render(),stats.end()}function updatePhysics(){world.step(.05);for(var e=0;e!==meshes.length;e++)meshes[e].position.copy(bodies[e].position),//========meshes[]里放THREE模型，bodies[]里放物理CANNON的 body模型
+function animate(){
+//stats.begin()
+requestAnimationFrame(animate),updatePhysics(),render()}function updatePhysics(){world.step(.05);for(var e=0;e!==meshes.length;e++)meshes[e].position.copy(bodies[e].position),//========meshes[]里放THREE模型，bodies[]里放物理CANNON的 body模型
 meshes[e].quaternion.copy(bodies[e].quaternion);//cannonDebugRenderer.update()//======物理线框Gird
 }function render(){updateArmLegs(),renderer.render(scene,camera)}//============================环境贴图
 // var environment
@@ -141,10 +143,13 @@ meshes[e].quaternion.copy(bodies[e].quaternion);//cannonDebugRenderer.update()//
 //============================OrbitControls/datGUI 测试设置
 function setTest(){
 //====OrbitControls
-(controls=new THREE.OrbitControls(camera,renderer.domElement)).enabled=!1,(// //====stats.js 性能测试
-stats=new Stats).showPanel(1),// 0: fps, 1: ms, 2: mb, 3+: custom
-// console.log(stats);
-document.body.appendChild(stats.domElement),stats.domElement.className="fps",//====datGUI
+(controls=new THREE.OrbitControls(camera,renderer.domElement)).enabled=!1,// //====stats.js 性能测试
+// stats = new Stats()
+// stats.showPanel(1)// 0: fps, 1: ms, 2: mb, 3+: custom
+// // console.log(stats);
+// document.body.appendChild(stats.domElement)
+// stats.domElement.className = "fps"
+//====datGUI
 guiControls=new function(){
 //存放有所有需要改变的属性的对象
 this.X=0,this.Y=150,this.Z=0,this.ifTrue=!0,this.func=function(){console.log("一个函数")},this.target=rootPointBody}}//============================互动 点击
