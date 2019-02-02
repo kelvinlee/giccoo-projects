@@ -100,11 +100,28 @@ block content
               .text 抓住并摇晃
           transition(name="page-fade")
             .message#subtitles(v-show="!gameEnd && shaked")
-          //- .overMark.fadeIn.animated(v-show="gameEnd")
+          .overMark.fadeIn.animated(v-show="gameEndBtns")
+            .btn.btn-shot(@click="share")
+              img(src="#{url}/img/btn-shot.png")
+            .btn.btn-share(@click="openNote")
+              img(src="#{url}/img/btn-share.png")
           transition(name="page-fade")
             //-(v-show="gameEnd")
-            #ugc
-
+            #ugc(v-show="gameEnd")
+    transition(name="page-fade")
+      .pop.pop-note(v-show="registerShow",@click="registerShow = false",style="display: none")
+        .content
+          .hand
+            img(src="#{url}/img/pig-hand-note.png")
+          .text#note-text “对，点这里！”<br/>“咦，咱们俩的手好像啊~”
+    .pop.flashcamera(v-show="ugcShow",style="display: none")
+      .content
+        .small-size
+          .close(@click="closeUGC")
+            img(src="#{url}/img/icon-close.png")
+          .scroll
+            img(:src="ugc")
+          .note 长按保存图片
 block js
   - url = "/";
   script(src="//res.wx.qq.com/open/js/jweixin-1.3.2.js")

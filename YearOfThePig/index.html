@@ -84,12 +84,33 @@
             <transition name="page-fade">
               <div id="subtitles" v-show="!gameEnd &amp;&amp; shaked" class="message"></div>
             </transition>
+            <div v-show="gameEndBtns" class="overMark fadeIn animated">
+              <div @click="share" class="btn btn-shot"><img src="./img/btn-shot.png"></div>
+              <div @click="openNote" class="btn btn-share"><img src="./img/btn-share.png"></div>
+            </div>
             <transition name="page-fade">
-              <div id="ugc"></div>
+              <div id="ugc" v-show="gameEnd"></div>
             </transition>
           </div>
         </div>
       </transition>
+      <transition name="page-fade">
+        <div v-show="registerShow" @click="registerShow = false" style="display: none" class="pop pop-note">
+          <div class="content">
+            <div class="hand"><img src="./img/pig-hand-note.png"></div>
+            <div id="note-text" class="text">“对，点这里！”<br/>“咦，咱们俩的手好像啊~”</div>
+          </div>
+        </div>
+      </transition>
+      <div v-show="ugcShow" style="display: none" class="pop flashcamera">
+        <div class="content">
+          <div class="small-size">
+            <div @click="closeUGC" class="close"><img src="./img/icon-close.png"></div>
+            <div class="scroll"><img :src="ugc"></div>
+            <div class="note">长按保存图片</div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>

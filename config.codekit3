@@ -4442,6 +4442,28 @@
 		"oAP": "/build/YearOfThePig/css",
 		"oF": 0
 		},
+	"/YearOfThePig/img/btn-share.png": {
+		"ft": 32768,
+		"iS": 9954,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/btn-share.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/YearOfThePig/img/btn-shot.png": {
+		"ft": 32768,
+		"iS": 9594,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/btn-shot.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/YearOfThePig/img/btn-start.png": {
 		"ft": 32768,
 		"iS": 9776,
@@ -4486,6 +4508,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/YearOfThePig/img/icon-close.png": {
+		"ft": 32768,
+		"iS": 1386,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/icon-close.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/YearOfThePig/img/last-bg.png": {
 		"ft": 32768,
 		"iS": 0,
@@ -4513,6 +4546,17 @@
 		"iS": 8363,
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/pig-hand-last.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/YearOfThePig/img/pig-hand-note.png": {
+		"ft": 32768,
+		"iS": 14199,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/pig-hand-note.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

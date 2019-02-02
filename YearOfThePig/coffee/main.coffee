@@ -257,6 +257,7 @@ init = ->
 			white: false
 			formShow: true
 			formBoxShow: false
+			gameEndBtns: false
 			msgIndex: 1
 			allow: true
 			shaked: false
@@ -319,7 +320,7 @@ init = ->
 				# goShare()
 				@.share()
 			share: ->
-				goFinal2()
+				goFinal2() if goFinal2?
 				@.formBoxShow = false
 				@.registerShow = false
 				@.lotteryShow = false
@@ -327,13 +328,10 @@ init = ->
 				# ugc.qrcode.visible = true
 				ugc.app.renderer.render ugc.app.stage
 				@.ugc = ugc.app.view.toDataURL()
-				ugc.buildUGC(ugc.app.view.toDataURL())
-			callShare: (img)->
-				@.ugc = img if img?
-				image = @.ugc
+				# ugc.buildUGC(ugc.app.view.toDataURL())
 
 				if @.wy
-					folder = "drawboard"
+					folder = "pig"
 					data = {
 						image: image
 						folder: folder
@@ -367,7 +365,7 @@ init = ->
 				@.loading = false
 				# ugc.back()
 				neteaseShareImage()
-				shareDone()
+				shareDone() if shareDone?
 				# 抽奖
 				# unless @.giveUp
 				# 	setTimeout =>
@@ -375,7 +373,7 @@ init = ->
 				# 	,5000
 			closeUGC: ->
 				@.ugcShow = false
-				shareDone()
+				shareDone() if shareDone?
 			faild: (err)->
 				@.pushed = false
 				@.loading = false
@@ -432,6 +430,16 @@ init = ->
 			gameOver: ->
 				console.log "Start"
 				@.gameEnd = true
+				setTimeout =>
+					@.gameEndBtns = true
+				,2000
+			openNote: ->
+				# clearTimeout _cache
+				@.registerShow = true
+				# _cache = setTimeout =>
+				document.getElementById("note-text").innerHTML = "<div data-splitting>“对，点这里！”</div><div data-splitting>“咦，咱们俩的手好像啊~”</div>"
+				Splitting()
+				# ,400
 
 		mounted: ->
 			TrueH = document.documentElement.clientHeight

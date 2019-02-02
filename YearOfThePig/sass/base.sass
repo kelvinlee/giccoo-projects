@@ -22,6 +22,16 @@ $pageMainBGColor: #0c101a;
 		background-color: rgba(255,255,255,0.2)
 	100%
 		background-color: rgba(0,0,0,0.7)
++keyframes(zoomBigInShow)
+	0%
+		+transform(scale(1,1))
+		opacity: 0
+	10%
+		+transform(scale(1,1))
+		opacity: 1
+	100%
+		+transform(scale(0.8,0.8))
+		opacity: 1
 +keyframes(zoomBigIn)
 	0%
 		+transform(scale(1,1))
@@ -151,6 +161,11 @@ $pageMainBGColor: #0c101a;
 	from
 		transform: translateX(-1em) rotate(180deg) scale(0.5)
 		opacity: 0
++keyframes(showhand)
+	0%
+		+transform(translate3d(-100%,100%,0))
+	100%
+		+transform(translate3d(0,0,0))
 html,body
 	+w
 	+h
@@ -652,11 +667,7 @@ video,canvas,svg
 			text-indent: 0.4em
 			color: #f66064
 			text-shadow: 1px 1px 2px rgba(0,0,0,0.3)
-			.char
-				animation: slide-in 1s cubic-bezier(.5, 0, .5, 1) both
-				animation-delay: calc(60ms * var(--char-index))
-				+show-inline
-				text-indent: 0
+			
 		.shake-hand
 			+posa
 			+bl(5%,25%)
@@ -686,6 +697,16 @@ video,canvas,svg
 						+hide
 					.hold
 						+show
+
+		.overMark
+			+posa
+			+bl(5%)
+			+w
+			z-index: 99
+			.btn
+				+show-inline
+				+w(50%)
+				+box
 
 
 
@@ -749,3 +770,72 @@ video,canvas,svg
 	+posa
 	+tl
 	z-index: 10
+
+.pop
+	+posa
+	+tl
+	+br
+	+w
+	+h
+	+bc(rgba(0,0,0,0.7))
+	z-index: 109
+	&.flashcamera
+		z-index: 3109
+		+animation(flashcamera,1s,ease)
+		// animation-delay: 1s
+		.content
+			+animation(zoomBigInShow,0.6s,ease)
+			animation-delay: 0.5s
+			+w
+			+h
+		.close
+			+posa
+			+bl(5%,50%)
+			+iw(80,600,100%)
+			+transform(translate3d(-50%,0,0))
+		.small-size
+			// +w(80%)
+			// margin-top: 10%
+			// margin-left: 10%
+			+posr
+			+w
+			+h
+			.close
+				+bl(auto,auto)
+				+tr(-2rem,-2rem)
+				+wh(2rem,2rem)
+				+transform(translate3d(0,0,0))
+			.scroll
+				+touch
+				+w
+				+h
+			.note
+				+posa
+				+bl(-2em)
+				+text-center
+				+font-size(0.8rem)
+				+w
+				color: #fff
+
+.pop-note
+	.hand
+		+posa
+		+tl(3%)
+		+transform(translate3d(0,0,0))
+		+animation(showhand,1s,ease)
+	.text
+		+posa
+		+tr(30%,5%)
+		+w(60%)
+		+font-size(1rem)
+		+text-right
+		line-height: 2em
+		color: #fff
+
+
+.splitting
+	.char
+		animation: slide-in 1s cubic-bezier(.5, 0, .5, 1) both
+		animation-delay: calc(60ms * var(--char-index))
+		+show-inline
+		text-indent: 0
