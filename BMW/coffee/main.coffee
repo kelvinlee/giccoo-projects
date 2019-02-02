@@ -236,48 +236,14 @@ init = ->
 			formBoxShow: false
 			carIndex: 1
 			allow: false
-		watch:
-			carIndex: (n,o)->
-				@.carIndex = 1 if @.carIndex >= 3
-			answer1: (n,o)->
-				console.log "answer1 changed:",n
-				q1(n) if q1?
-				@.white = if n is 3 then false else true
-			answer2: (n,o)->
-				console.log "answer2 changed:",n
-				q2(n) if q2?
-			"answer3.c1": (n,o)->
-				@.answer3Change n,o
-			"answer3.c2": (n,o)->
-				@.answer3Change n,o
-			"answer3.c3": (n,o)->
-				@.answer3Change n,o
-			"answer3.c4": (n,o)->
-				@.answer3Change n,o
-			nickname: (n,o)->
-				@.nickname = @.nickname.replace(/[\r\n]/g, "")
-				if @.nickname.length > 10
-					t = @.nickname.split("")
-					tx = ""
-					for i in t
-						tx += i
-						break if tx.length >= 10
-					@.nickname = tx
-					return false #alert "字数限制10个中文字符20个英文字符" 
-			message: (n,o)->
-				t = n.split('\n')
-				if t.length > 4
-					@.message = @.message.replace(/^\s+|\s+$/g,'')
-				for line in t
-					if line.gblen() > 32
-						return @.message = o
+			videoTime: false
 		methods:
 			playMusic: ->
 				console.log "playing music"
-				@.$children[0].video.pause()
+				@.$children[@.$children.length-1].video? && @.$children[@.$children.length-1].video.pause()
 			playVideo: ->
 				console.log "playing video"
-				@.$children[1].audio.pause()
+				@.$children[0].audio? && @.$children[0].audio.pause()
 			submit: (data)->
 				console.log "data:",data
 				if data.sex is 0 or data.sex is "0"
@@ -483,7 +449,8 @@ init = ->
 				@.$children[0].stop()
 			videoPause: ->
 				_public.$children[0].play() if @.bgmPlay
-					
+			showNote: ->
+				alert "今晚7:30 火力全开"
 
 		# watch:
 		mounted: ->
@@ -499,6 +466,8 @@ init = ->
 			h = TrueH*2*(2-TrueW*2/750+0.01)
 			# game = new Game({el: "game",h: h})
 			@.wy = CloudMusic.isInApp()
+			@.videoTime = new Date() >= new Date("2019-2-14 19:30")
+			# @.videoTime = true
 			version = CloudMusic.getClientVersion().split(".")
 			
 

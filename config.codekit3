@@ -4766,6 +4766,13 @@
 		"oAP": "/YearOfThePig/mod/pig3.glb",
 		"oF": 0
 		},
+	"/YearOfThePig/mod/pig4.glb": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/YearOfThePig/mod/pig4.glb",
+		"oF": 0
+		},
 	"/YearOfThePig/mp3/bgm-ending.mp3": {
 		"cB": 0,
 		"ft": 8192,

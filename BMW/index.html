@@ -41,7 +41,8 @@
           <div class="content">
             <div class="banner"><img src="./img/banner.jpg">
               <div class="video-box">
-                <mp4 @play="playVideo" src="//image.giccoo.com/projects/test/tvca1.mp4" poster="./img/poster.jpg" controls="true" playsinline="true"></mp4>
+                <mp4 v-if="videoTime" @play="playVideo" src="//image.giccoo.com/projects/test/tvca1.mp4" poster="./img/poster.jpg" controls="true" playsinline="true"></mp4>
+                <div v-if="!videoTime" @click="showNote" class="video"><img src="./img/poster.jpg"></div>
                 <div class="video-title"><img src="./img/video-title.png"></div>
               </div>
             </div>
@@ -56,11 +57,11 @@
                   <div class="checkbox">
                     <input id="allow" type="checkbox" name="allow" v-model="allow">
                   </div>
-                  <label for="allow" class="text">我已阅读并接受个人信息保护<a href="http://www.bmw.com.cn/zh/footer/imprint-overview/personal_data.html">
+                  <label for="allow" class="text">我已阅读并接受个人信息保护<a href="http://www.bmw.com.cn/zh/footer/imprint-overview/legal-disclaimer.html">
                       <div class="icon icon-file"></div>法律声明</a></label>
                 </div>
               </form-grounp>
-            </div><a href="http://www.bmw.com.cn/zh/index.html" class="banner-bottom"><img src="./img/banner-bottom.jpg"></a>
+            </div><a href="http://www.bmw.com.cn/content/dam/bmw/marketCN/campaign/2019/1series-sedan/MSP.html" class="banner-bottom"><img src="./img/banner-bottom.jpg"></a>
           </div>
         </div>
       </transition>

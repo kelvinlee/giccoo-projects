@@ -74,7 +74,9 @@ block content
           .banner
             img(src="#{url}/img/banner.jpg")
             .video-box
-              mp4(@play="playVideo",src="//image.giccoo.com/projects/test/tvca1.mp4",poster="#{url}/img/poster.jpg",controls="true",playsinline="true")
+              mp4(v-if="videoTime",@play="playVideo",src="//image.giccoo.com/projects/test/tvca1.mp4",poster="#{url}/img/poster.jpg",controls="true",playsinline="true")
+              .video(v-if="!videoTime",@click="showNote")
+                img(src="#{url}/img/poster.jpg")
               .video-title
                 img(src="#{url}/img/video-title.png")
           .music
@@ -95,7 +97,7 @@ block content
                   a(href="http://www.bmw.com.cn/zh/footer/imprint-overview/legal-disclaimer.html")
                     .icon.icon-file
                     | 法律声明
-          a.banner-bottom(href="http://www.bmw.com.cn/zh/index.html")
+          a.banner-bottom(href="http://www.bmw.com.cn/content/dam/bmw/marketCN/campaign/2019/1series-sedan/MSP.html")
             img(src="#{url}/img/banner-bottom.jpg")
           
 
