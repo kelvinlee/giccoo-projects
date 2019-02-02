@@ -60,8 +60,10 @@ function addGift(){
 				setTimeout(addAGift,30*i)
 		};
 		removeJointConstraint();
-		document.removeEventListener("touchstart",onDocumentTouchStart,false)
-		TweenMax.to(rootPointBody.position,2.5,{y:120})
+		renderer.domElement.removeEventListener("touchstart",onDocumentTouchStart,false)
+		renderer.domElement.removeEventListener("touchmove",onDocumentTouchMove,{passive: false})
+		renderer.domElement.removeEventListener("touchend",onDocumentTouchEnd,false)
+		TweenMax.to(rootPointBody.position,2.5,{y:120,onComplete:moveCamera})
 		SOUND.end()
 		main.gameOver()
 	}else{
@@ -71,6 +73,23 @@ function addGift(){
 		main.runGift()
 	}
 	//removeJointConstraint();
+}
+
+function moveCamera(){
+	TweenMax.to(camera.position, 3, {
+      y: 25,
+      ease: Power2.easeInOut,
+      onUpdate: function onUpdate(v) {
+          camera.updateProjectionMatrix();
+      }
+  });
+  TweenMax.to(camera, 3, {
+      zoom: 0.8,
+      ease: Power2.easeInOut,
+      onUpdate: function onUpdate(v) {
+          camera.updateProjectionMatrix();
+      }
+  });
 }
 
 function addAGift(){
