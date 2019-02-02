@@ -4,6 +4,8 @@
 # @codekit-prepend "../../libs/vue/vue-register"
 # @codekit-prepend "../../libs/vue/vue-player"
 # @codekit-prepend "../../libs/coffee/String"
+# @codekit-prepend "../../libs/coffee/pixi-base"
+# @codekit-prepend "UGC"
 # @codekit-prepend "sound"
 
 axios.defaults.withCredentials = true
@@ -439,6 +441,7 @@ init = ->
 			h = TrueH*2*(2-TrueW*2/750+0.01)
 			@.wy = CloudMusic.isInApp()
 			version = CloudMusic.getClientVersion().split(".")
+			ugc = new UGC({el: "ugc", w: 640, h: 640/TrueW*TrueH,callback: => })
 			document.getElementById("sence").appendChild initAll()
 
 chnNumChar = ["零","一","二","三","四","五","六","七","八","九"]
@@ -493,3 +496,4 @@ tryThis = (msg)->
 # @codekit-append "../js/gift.js"
 # @codekit-append "../js/ani.js"
 # @codekit-append "../js/pig.js"
+# @codekit-append "../js/build.js"

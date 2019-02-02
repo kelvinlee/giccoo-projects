@@ -67,34 +67,4 @@ class UGC
 		@.opts.callback()
 		# @.init()
 	
-	buildUGC: (data)->
-		if @.opts.h <= 900
-			console.log "??"
-			page3.addChild logo, logo_down
-			@.app.renderer.render @.app.stage
-			return main.callShare(@.app.view.toDataURL())
-		if @.U?
-			@.U.renderer.render @.U.stage
-			main.callShare @.U.view.toDataURL()
-			return false
-		@.U = new PIXI.Application
-			width: 640
-			height: 900
-			transparent: true
-			preserveDrawingBuffer: true
-			forceCanvas: true
-		# document.getElementById("testUGC").appendChild @.U.view
-		# console.log @.U
-		# page3.visible = true
-		old = new PIXI.Sprite.fromImage(data)
-		logo_down.y = 900 - logo_down.height - 30
-		@.U.stage.addChild old, logo, logo_down
-		old.texture.baseTexture.on 'loaded', =>
-			console.log "loaded"
-			old.y = (-(old.height - 900)/2)/5*3  if old.height > 900
-			@.U.renderer.render @.U.stage
-			main.callShare @.U.view.toDataURL()
-
-		
-
-
+	

@@ -4429,7 +4429,7 @@
 		"ft": 32,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/YearOfThePig/js/UGC.js",
 		"oF": 0,
 		"oS": 1,
@@ -4486,11 +4486,44 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/YearOfThePig/img/last-bg.png": {
+		"ft": 32768,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/last-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/YearOfThePig/img/lucky-bag.png": {
 		"ft": 32768,
 		"iS": 31071,
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/lucky-bag.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/YearOfThePig/img/pig-hand-last.png": {
+		"ft": 32768,
+		"iS": 8363,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/pig-hand-last.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/YearOfThePig/img/pig.png": {
+		"ft": 32768,
+		"iS": 58480,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/pig.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -4563,6 +4596,16 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/YearOfThePig/js/ani-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/YearOfThePig/js/build.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/YearOfThePig/js/build-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0

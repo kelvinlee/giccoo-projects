@@ -100,14 +100,17 @@ block content
               .text 抓住并摇晃
           transition(name="page-fade")
             .message#subtitles(v-show="!gameEnd && shaked")
-          .overMark.fadeIn.animated(v-show="gameEnd")
+          //- .overMark.fadeIn.animated(v-show="gameEnd")
+          transition(name="page-fade")
+            //-(v-show="gameEnd")
+            #ugc
 
 block js
   - url = "/";
   script(src="//res.wx.qq.com/open/js/jweixin-1.3.2.js")
   //- script(src="//image.giccoo.com/projects/libs/js/min/jquery.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/vue.min.js")
-  //- script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
+  script(src="//image.giccoo.com/projects/libs/js/min/pixi.min.js")
   //- script(src="//image.giccoo.com/projects/libs/js/min/pixi-sound.js")
   script(src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js")
   script(src="//image.giccoo.com/projects/libs/js/min/axios.min.js")

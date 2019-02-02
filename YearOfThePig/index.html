@@ -84,13 +84,16 @@
             <transition name="page-fade">
               <div id="subtitles" v-show="!gameEnd &amp;&amp; shaked" class="message"></div>
             </transition>
-            <div v-show="gameEnd" class="overMark fadeIn animated"></div>
+            <transition name="page-fade">
+              <div id="ugc"></div>
+            </transition>
           </div>
         </div>
       </transition>
     </div>
     <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/pixi.min.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
     <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
     <script src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js"></script>
