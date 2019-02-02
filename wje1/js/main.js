@@ -42,6 +42,12 @@ $(document).ready(function load (){
 
 });
 
+$("#video1").click(function(){
+  console.log("111")
+  document.getElementById("video1").play()
+  alert("ririri")
+})
+
 var loadWechatConfig = function() {
   var hm, s, url;
   url = encodeURIComponent(window.location.href.split("#")[0]);

@@ -9,9 +9,11 @@ function setGifts(){
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
-	var gift1Mat=new THREE.MeshToonMaterial({color:0xf2c64d,emissive:0xf2c64d,emissiveIntensity:.1})
+	var gift1Mat=new THREE.MeshToonMaterial({color:0xeeb041,emissive:0xeeb041,emissiveIntensity:.2})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap,emissive:0xffffff,envMap:environment,emissiveIntensity:0.5,roughness:0.4,metalness:.5})
 	gift1.material=gift1Mat
+	TweenMax.to(gift1.material,.5,{emissiveIntensity:0.05,repeat:1000000,yoyo:true})
+
 
 	//=====金条
 	gift2=objs.gift2.clone()
@@ -19,9 +21,11 @@ function setGifts(){
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
-	var gift2Mat=new THREE.MeshToonMaterial({color:0xf2c64d,emissive:0xf2c64d,emissiveIntensity:.1})
+	var gift2Mat=new THREE.MeshToonMaterial({color:0xf2c64d,emissive:0xf2c64d,emissiveIntensity:.2})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap,emissive:0xffffff,envMap:environment,emissiveIntensity:0.5,roughness:0.4,metalness:.5})
 	gift2.material=gift2Mat
+	TweenMax.to(gift2.material,.5,{emissiveIntensity:0.05,repeat:1000000,yoyo:true})
+
 
 	//=====元宝
 	gift3=objs.gift3.clone()
@@ -29,9 +33,11 @@ function setGifts(){
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
-	var gift3Mat=new THREE.MeshToonMaterial({color:0xf2c64d,emissive:0xf2c64d,emissiveIntensity:.1})
+	var gift3Mat=new THREE.MeshToonMaterial({color:0xf2c64d,emissive:0xf2c64d,emissiveIntensity:.2})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap,emissive:0xffffff,envMap:environment,emissiveIntensity:0.5,roughness:0.4,metalness:.5})
 	gift3.material=gift3Mat
+	TweenMax.to(gift3.material,.5,{emissiveIntensity:0.05,repeat:1000000,yoyo:true})
+
 
 	//=====红包
 	gift4=objs.gift4.clone()
@@ -81,6 +87,7 @@ function addAGift(){
 		var _agift=giftA[giftType].clone()//Math.random()*4
 		_agift.scale.set(.1*giftScale,.1*giftScale,.1*giftScale)
 		_agift.castShadow=true
+
 		//_agift.receiveShadow=true
 		scene.add(_agift)
 		meshes.push(_agift)
@@ -107,12 +114,14 @@ function addAGift(){
 		
 		var _giftBody=new CANNON.Body({mass:10,position:new CANNON.Vec3(0,0,0)})//type:CANNON.Body.KINEMATIC
 		_giftBody.addShape(_giftShape)
-		
+
+		_agift.userData.body=_giftBody
+		_agift.userData.isGift=true
 
 		_giftBody.position.set(pigBody.position.x,pigBody.position.y-20,pigBody.position.z)
 
 		_giftBody.angularVelocity=new CANNON.Vec3(Math.random()*4-2,Math.random()*4-2,Math.random()*4-2)//随机旋转
-		_giftBody.velocity=new CANNON.Vec3(Math.random()*4-2,Math.random()*4-2,Math.random()*4-2)//随机旋转
+		_giftBody.velocity=new CANNON.Vec3(Math.random()*4-2,Math.random()*4-2,Math.random()*4-2)//随机速度
 
 		world.add(_giftBody)
 		bodies.push(_giftBody)

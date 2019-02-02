@@ -14,29 +14,33 @@ var world = new CANNON.World()
 var rootPoint,rootPointBody//总固定点
 var pigShape,pigBody
 
-
+var ifFirsTime=true
 
 function initAll () {
-	renderer.setClearColor(0xfff5d0)//设置背景颜色
-	renderer.setSize(window.innerWidth,window.innerHeight)//设置宽高
-	renderer.shadowMap.type=THREE.PCFSoftShadowMap//.BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
-	renderer.setPixelRatio(2)
-	renderer.shadowMapEnabled=true
-	//renderer.shadowMapSoft=true
-	// document.body.appendChild()
-	loadingMods('mod/pig3.glb',["pig"],"addScene")//模型加载
-	loadingMods('mod/foot.glb',["foot"])//模型加载
-	loadingMods('mod/gift1.glb',["gift1"])
-	loadingMods('mod/gift2.glb',["gift2"])
-	loadingMods('mod/gift3.glb',["gift3"])
-	loadingMods('mod/gift4.glb',["gift4"])
+	if(ifFirsTime==true){
+		ifFirsTime=false
+		console.log("啦啦啦啦啦")
+		renderer.setClearColor(0xfff5d0)//设置背景颜色
+		renderer.setSize(window.innerWidth,window.innerHeight)//设置宽高
+		renderer.shadowMap.type=THREE.PCFSoftShadowMap//.BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
+		renderer.setPixelRatio(2)
+		renderer.shadowMapEnabled=true
+		//renderer.shadowMapSoft=true
+		// document.body.appendChild()
+		loadingMods('mod/pig3.glb',["pig"],"addScene")//模型加载
+		loadingMods('mod/foot.glb',["foot"])//模型加载
+		loadingMods('mod/gift1.glb',["gift1"])
+		loadingMods('mod/gift2.glb',["gift2"])
+		loadingMods('mod/gift3.glb',["gift3"])
+		loadingMods('mod/gift4.glb',["gift4"])
+		//render()
+		//animate()//===动画
+		clickFunc()
+		//set_envMap()
 
-	//render()
-	//animate()//===动画
-	clickFunc()
-	//set_envMap()
-
-	return renderer.domElement
+		return renderer.domElement
+	}
+	
 
 }
 //============================每帧渲染：更新物理+画面
@@ -169,16 +173,23 @@ function onDocumentTouchStart(_e){
 		lastY=_e.touches[0].clientY
 
 
-		console.log(intersects[0].object.userData.body)
+		console.log("intersects[0].object.userData.body",intersects[0].object.userData.body)
 		var body=intersects[0].object.userData.body
 		if(!body) return;
-		controls.enabled=false;
-		var pos = body.position;
-		pickingPlane.position.copy(pos)
-		pickingPlane.quaternion.copy(camera.quaternion)
-		addMouseConstraint(pos.x,pos.y,pos.z,body)
-		SOUND.runRandomHit()
-		return;
+		if(intersects[0].object.userData.isGift){
+			body.angularVelocity=new CANNON.Vec3(Math.random()*4-2,Math.random()*4-2,Math.random()*4-2)//随机旋转
+			body.velocity=new CANNON.Vec3(Math.random()*20-10,Math.random()*20,-Math.random()*30)//随机速度
+
+		}else{
+			controls.enabled=false;
+			var pos = body.position;
+			pickingPlane.position.copy(pos)
+			pickingPlane.quaternion.copy(camera.quaternion)
+			addMouseConstraint(pos.x,pos.y,pos.z,body)
+			SOUND.runRandomHit()
+			return;
+		}
+		
 	}
 }
 function onDocumentTouchMove(_e){
@@ -331,8 +342,13 @@ function loadingCheck(){
 		console.log("模型加载中",modLoadedNum,"/",modNum)
 	}
 }
+var ifFirsTime2=true
 function ModLoaded(){//加载模型完成
-	getStart()
+	if(ifFirsTime2==true){
+		ifFirsTime2=false
+		getStart()
+	}
+	
 }
 
 
