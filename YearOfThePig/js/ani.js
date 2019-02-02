@@ -376,13 +376,13 @@ function updateArmLegs(){
 	leftArmGeo.copy( new THREE.TubeBufferGeometry( leftHandCurve, 20, 15*pigScale, 8, false ))
 
 	//=====头顶线
-	// var pigTop=new THREE.Vector3(0,10,1)
-	// pigTop.applyQuaternion(objs.pig.quaternion)
-	// pigTop=pigTop.addVectors(pigTop,objs.pig.position)
-	// scene.remove(lines[0])
-	// lines=[]
-	// line=[0,100,0,pigTop.x,pigTop.y,pigTop.z]
-	// makeLine( line, 0xff0000 );
+	var pigTop=new THREE.Vector3(0,9,0.4)
+	pigTop.applyQuaternion(objs.pig.quaternion)
+	pigTop=pigTop.addVectors(pigTop,objs.pig.position)
+	scene.remove(lines[0])
+	lines=[]
+	line=[0,100,0,pigTop.x,pigTop.y,pigTop.z]
+	makeLine( line, 0xff0000 );
 
 	//=====眼镜跟随
 	eyeGroup.position.copy(objs.pig.position)
@@ -400,7 +400,7 @@ function makeLine( geo, c ) {
 		color: c,
 		opacity: 1,
 		sizeAttenuation: !false,
-		lineWidth: .5,
+		lineWidth: .01,
 		near: camera.near,
 		far: camera.far
 	});
