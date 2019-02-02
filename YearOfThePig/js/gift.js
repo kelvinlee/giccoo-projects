@@ -72,7 +72,7 @@ function addGift(){
 		};
 		main.runGift()
 	}
-	//removeJointConstraint();
+	removeJointConstraint();
 }
 
 function moveCamera(){
