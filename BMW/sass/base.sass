@@ -635,6 +635,13 @@ video,canvas,svg
 					border: solid 1px #000
 					margin-bottom: 1rem
 					box-shadow: 3px 3px 12px rgba(0,0,0,0.2),-3px -3px 12px rgba(0,0,0,0.2)
+					&.icon-play
+						&:after
+							content: " "
+							+abcentermiddle
+							+w(25%)
+							+h(25%)
+							+b($cdn+"img/icon-play.png",no-repeat,center,center,contain)
 		.music
 			+posr
 			margin-top: -7%

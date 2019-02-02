@@ -250,6 +250,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/BMW/img/icon-play.png": {
+		"ft": 32768,
+		"iS": 1889,
+		"oA": 0,
+		"oAP": "/BMW/img/icon-play.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/BMW/img/music.gif": {
 		"ft": 4194304,
 		"iS": 26457,

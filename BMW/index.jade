@@ -75,7 +75,7 @@ block content
             img(src="#{url}/img/banner.jpg")
             .video-box
               mp4(v-if="videoTime",@play="playVideo",src="//image.giccoo.com/projects/test/tvca1.mp4",poster="#{url}/img/poster.jpg",controls="true",playsinline="true")
-              .video(v-if="!videoTime",@click="showNote")
+              .video.icon-play(v-if="!videoTime",@click="showNote")
                 img(src="#{url}/img/poster.jpg")
               .video-title
                 img(src="#{url}/img/video-title.png")
