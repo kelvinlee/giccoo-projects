@@ -81,7 +81,7 @@ function setLeftFootPhy(){
 	leftFootCurve= new THREE.CatmullRomCurve3([new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0)])
 	leftLegGeo = new THREE.TubeBufferGeometry( leftFootCurve, 20, 3*pigScale, 8, false );
 	leftLegGeo.attributes.position.needsUpdate = true
-	leftLegMat = new THREE.MeshBasicMaterial( { color: 0xf3c6ca } );
+	leftLegMat = new THREE.MeshBasicMaterial( { color: 0xf0b6bb } );
 	leftLeg = new THREE.Mesh( leftLegGeo, leftLegMat );
 	scene.add( leftLeg );
 	
@@ -162,7 +162,7 @@ function setRightFootPhy(){
 	rightFootCurve= new THREE.CatmullRomCurve3([new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0)])
 	rightLegGeo = new THREE.TubeBufferGeometry( rightFootCurve, 20, 3*pigScale, 8, false );
 	rightLegGeo.attributes.position.needsUpdate = true
-	rightLegMat = new THREE.MeshBasicMaterial( { color: 0xf3c6ca } );
+	rightLegMat = new THREE.MeshBasicMaterial( { color: 0xf0b6bb } );
 	rightLeg = new THREE.Mesh( rightLegGeo, rightLegMat );
 	scene.add( rightLeg );
 	
@@ -243,7 +243,7 @@ function setRightHandPhy(){
 	rightHandCurve= new THREE.CatmullRomCurve3([new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0)])
 	rightArmGeo = new THREE.TubeBufferGeometry( rightHandCurve, 20, 3*pigScale, 8, false );
 	rightArmGeo.attributes.position.needsUpdate = true
-	rightArmMat = new THREE.MeshBasicMaterial( { color: 0xf3c6ca } );
+	rightArmMat = new THREE.MeshBasicMaterial( { color: 0xf0b6bb } );
 	rightArm = new THREE.Mesh( rightArmGeo, rightArmMat );
 	scene.add( rightArm );
 	
@@ -325,7 +325,7 @@ function setLeftHandPhy(){
 	leftHandCurve= new THREE.CatmullRomCurve3([new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0)])
 	leftArmGeo = new THREE.TubeBufferGeometry( leftHandCurve, 20, 3*pigScale, 8, false );
 	leftArmGeo.attributes.position.needsUpdate = true
-	leftArmMat = new THREE.MeshBasicMaterial( { color: 0xf3c6ca } );//
+	leftArmMat = new THREE.MeshBasicMaterial( { color: 0xf0b6bb } );//
 	leftArm = new THREE.Mesh( leftArmGeo, leftArmMat );
 	//leftArm.castShadow=true
 	scene.add( leftArm );
