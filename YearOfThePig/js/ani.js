@@ -81,7 +81,7 @@ function setLeftFootPhy(){
 	leftFootCurve= new THREE.CatmullRomCurve3([new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0)])
 	leftLegGeo = new THREE.TubeBufferGeometry( leftFootCurve, 20, 3*pigScale, 8, false );
 	leftLegGeo.attributes.position.needsUpdate = true
-	leftLegMat = new THREE.MeshBasicMaterial( { color: 0xe2989b } );
+	leftLegMat = new THREE.MeshBasicMaterial( { color: 0xf3c6ca } );
 	leftLeg = new THREE.Mesh( leftLegGeo, leftLegMat );
 	scene.add( leftLeg );
 	
@@ -162,7 +162,7 @@ function setRightFootPhy(){
 	rightFootCurve= new THREE.CatmullRomCurve3([new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0)])
 	rightLegGeo = new THREE.TubeBufferGeometry( rightFootCurve, 20, 3*pigScale, 8, false );
 	rightLegGeo.attributes.position.needsUpdate = true
-	rightLegMat = new THREE.MeshBasicMaterial( { color: 0xe2989b } );
+	rightLegMat = new THREE.MeshBasicMaterial( { color: 0xf3c6ca } );
 	rightLeg = new THREE.Mesh( rightLegGeo, rightLegMat );
 	scene.add( rightLeg );
 	
@@ -243,7 +243,7 @@ function setRightHandPhy(){
 	rightHandCurve= new THREE.CatmullRomCurve3([new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0)])
 	rightArmGeo = new THREE.TubeBufferGeometry( rightHandCurve, 20, 3*pigScale, 8, false );
 	rightArmGeo.attributes.position.needsUpdate = true
-	rightArmMat = new THREE.MeshBasicMaterial( { color: 0xe2989b } );
+	rightArmMat = new THREE.MeshBasicMaterial( { color: 0xf3c6ca } );
 	rightArm = new THREE.Mesh( rightArmGeo, rightArmMat );
 	scene.add( rightArm );
 	
@@ -325,7 +325,7 @@ function setLeftHandPhy(){
 	leftHandCurve= new THREE.CatmullRomCurve3([new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,0)])
 	leftArmGeo = new THREE.TubeBufferGeometry( leftHandCurve, 20, 3*pigScale, 8, false );
 	leftArmGeo.attributes.position.needsUpdate = true
-	leftArmMat = new THREE.MeshBasicMaterial( { color: 0xe2989b } );//
+	leftArmMat = new THREE.MeshBasicMaterial( { color: 0xf3c6ca } );//
 	leftArm = new THREE.Mesh( leftArmGeo, leftArmMat );
 	//leftArm.castShadow=true
 	scene.add( leftArm );
@@ -376,13 +376,13 @@ function updateArmLegs(){
 	leftArmGeo.copy( new THREE.TubeBufferGeometry( leftHandCurve, 20, 15*pigScale, 8, false ))
 
 	//=====头顶线
-	// var pigTop=new THREE.Vector3(0,10,1)
-	// pigTop.applyQuaternion(objs.pig.quaternion)
-	// pigTop=pigTop.addVectors(pigTop,objs.pig.position)
-	// scene.remove(lines[0])
-	// lines=[]
-	// line=[0,100,0,pigTop.x,pigTop.y,pigTop.z]
-	// makeLine( line, 0xff0000 );
+	var pigTop=new THREE.Vector3(0,10,1)
+	pigTop.applyQuaternion(objs.pig.quaternion)
+	pigTop=pigTop.addVectors(pigTop,objs.pig.position)
+	scene.remove(lines[0])
+	lines=[]
+	line=[0,100,0,pigTop.x,pigTop.y,pigTop.z]
+	makeLine( line, 0xff0000 );
 
 
 

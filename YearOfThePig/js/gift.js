@@ -9,10 +9,10 @@ function setGifts(){
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
-	var gift1Mat=new THREE.MeshToonMaterial({color:0xeeb041,emissive:0xeeb041,emissiveIntensity:.2})
+	var gift1Mat=new THREE.MeshToonMaterial({color:0xeeb041,emissive:0xeeb041,emissiveIntensity:.1})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap,emissive:0xffffff,envMap:environment,emissiveIntensity:0.5,roughness:0.4,metalness:.5})
 	gift1.material=gift1Mat
-	TweenMax.to(gift1.material,.5,{emissiveIntensity:0.05,repeat:1000000,yoyo:true})
+	//TweenMax.to(gift1.material,.5,{emissiveIntensity:0.05,repeat:1000000,yoyo:true})
 
 
 	//=====金条
@@ -21,10 +21,10 @@ function setGifts(){
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
-	var gift2Mat=new THREE.MeshToonMaterial({color:0xf2c64d,emissive:0xf2c64d,emissiveIntensity:.2})
+	var gift2Mat=new THREE.MeshToonMaterial({color:0xf2c64d,emissive:0xf2c64d,emissiveIntensity:.1})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap,emissive:0xffffff,envMap:environment,emissiveIntensity:0.5,roughness:0.4,metalness:.5})
 	gift2.material=gift2Mat
-	TweenMax.to(gift2.material,.5,{emissiveIntensity:0.05,repeat:1000000,yoyo:true})
+	//TweenMax.to(gift2.material,.5,{emissiveIntensity:0.05,repeat:1000000,yoyo:true})
 
 
 	//=====元宝
@@ -33,10 +33,10 @@ function setGifts(){
 	//console.log(pig.material.map)
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,envMap:environment,reflectivity:0.2})
 	//var pigMat=new THREE.MeshToonMaterial({map:pigmap,shininess:10,specular:0xff3388})//normalMap:pigmap,normalMapType:THREE.ObjectSpaceNormalMap
-	var gift3Mat=new THREE.MeshToonMaterial({color:0xf2c64d,emissive:0xf2c64d,emissiveIntensity:.2})
+	var gift3Mat=new THREE.MeshToonMaterial({color:0xf2c64d,emissive:0xf2c64d,emissiveIntensity:.1})
 	//var pigMat=new THREE.MeshStandardMaterial({map:pigmap,emissive:0xffffff,envMap:environment,emissiveIntensity:0.5,roughness:0.4,metalness:.5})
 	gift3.material=gift3Mat
-	TweenMax.to(gift3.material,.5,{emissiveIntensity:0.05,repeat:1000000,yoyo:true})
+	//TweenMax.to(gift3.material,.5,{emissiveIntensity:0.05,repeat:1000000,yoyo:true})
 
 
 	//=====红包

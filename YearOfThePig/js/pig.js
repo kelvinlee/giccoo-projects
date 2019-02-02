@@ -27,7 +27,7 @@ function initAll () {
 		renderer.shadowMapEnabled=true
 		//renderer.shadowMapSoft=true
 		// document.body.appendChild()
-		loadingMods('mod/pig3.glb',["pig"],"addScene")//模型加载
+		loadingMods('mod/pig3.glb',["pig"])//模型加载
 		loadingMods('mod/foot.glb',["foot"])//模型加载
 		loadingMods('mod/gift1.glb',["gift1"])
 		loadingMods('mod/gift2.glb',["gift2"])
@@ -354,7 +354,7 @@ function ModLoaded(){//加载模型完成
 
 
 //===========================开始
-
+var pigGroup=new THREE.Group()
 function getStart(){
 	// //====网格
 	// var grid=new THREE.GridHelper(50,10,0xffff00,0x888888)//网格辅助(格子尺寸，格子细分数，中线颜色，网格线颜色)
@@ -409,9 +409,14 @@ function getStart(){
 	camera.lookAt(scene.position)
 
 	//====猪位置
+	pigGroup.add(objs.pig)
+	scene.add(pigGroup)
 	objs.pig.position.y=10
 	objs.pig.scale.set(.1,.1,.1)
 	objs.pig.castShadow=true
+
+	pigGroup.scale.set(1,1,1)
+	
 
 	var pigmap=objs.pig.material.map
 	//console.log(pig.material.map)
