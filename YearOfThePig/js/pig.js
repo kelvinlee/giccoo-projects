@@ -96,6 +96,7 @@ var controls,guiControls,datGUI
 function setTest(){
 	//====OrbitControls
 	controls=new THREE.OrbitControls(camera,renderer.domElement)	
+	controls.enabled=false;
 	// //====stats.js 性能测试
 	stats = new Stats()
 	stats.showPanel(1)// 0: fps, 1: ms, 2: mb, 3+: custom
@@ -179,7 +180,7 @@ function onDocumentTouchStart(_e){
 		if(!body) return;
 		if(intersects[0].object.userData.isGift){
 			body.angularVelocity=new CANNON.Vec3(Math.random()*4-2,Math.random()*4-2,Math.random()*4-2)//随机旋转
-			body.velocity=new CANNON.Vec3(Math.random()*20-10,Math.random()*20,-Math.random()*30)//随机速度
+			body.velocity=new CANNON.Vec3(Math.random()*20-10,Math.random()*30,-Math.random()*45)//随机速度
 
 		}else{
 			controls.enabled=false;
@@ -243,7 +244,7 @@ function onDocumentTouchMove(_e){
             }
 }
 function onDocumentTouchEnd(_e){
-	controls.enabled = true;
+	controls.enabled = false;
 	removeJointConstraint();
 	//world.addConstraint(body_rootConstraint);
 }
@@ -373,7 +374,7 @@ function getStart(){
 	var cubeGeo=new THREE.BoxGeometry(1,1,1)
 	var cubeMaterial=new THREE.MeshBasicMaterial({color:0xffff00})
 	rootPoint=new THREE.Mesh(cubeGeo,cubeMaterial)
-	scene.add(rootPoint)
+	//scene.add(rootPoint)
 
 	// ====环境光
 	var ambientLight=new THREE.AmbientLight(0xffffff,.7)

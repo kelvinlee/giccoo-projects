@@ -382,7 +382,7 @@ function updateArmLegs(){
 	scene.remove(lines[0])
 	lines=[]
 	line=[0,100,0,pigTop.x,pigTop.y,pigTop.z]
-	makeLine( line, 0xff0000 );
+	makeLine( line, 0xfac750 );
 
 	//=====眼镜跟随
 	eyeGroup.position.copy(objs.pig.position)
@@ -400,7 +400,7 @@ function makeLine( geo, c ) {
 		color: c,
 		opacity: 1,
 		sizeAttenuation: !false,
-		lineWidth: .01,
+		lineWidth: .005,
 		near: camera.near,
 		far: camera.far
 	});
