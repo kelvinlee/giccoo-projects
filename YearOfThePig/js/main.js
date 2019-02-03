@@ -334,9 +334,10 @@ return this.mounted=!0,TrueH=document.documentElement.clientHeight,TrueW=documen
 mask:1,text:"",nickname:"",mobile:"",musicLink:"",logId:"",openBtnShow:!0,default:{x:0},videoPop:!1,canUpload:!0,handCover:!1,last_update:0,lastX:0,lastY:0,lastZ:0,speed:4e3,maxSpeed:0,swing:!1,messageShow:!1,registerShow:!1,lotteryShow:!1,lotteryEndShow:!1,lotteryInfo:{id:null,random:null},regSubmited:!1,giveUp:!1,gameEnd:!1,noreg:!1,ugcShow:!1,regH:100,ugcType:1},_defineProperty(t,"nickname",""),_defineProperty(t,"message",""),_defineProperty(t,"messageIndex",1),_defineProperty(t,"messageInput",!1),_defineProperty(t,"musicName",""),_defineProperty(t,"white",!1),_defineProperty(t,"formShow",!0),_defineProperty(t,"formBoxShow",!1),_defineProperty(t,"gameEndBtns",!1),_defineProperty(t,"msgIndex",1),_defineProperty(t,"allow",!0),_defineProperty(t,"shaked",!1),_defineProperty(t,"bgImg",null),t),methods:{runHand:function e(){var t=this,n,i,o,a;return!!this.allow&&(n=document.getElementsByClassName("home-handbag")[0],i=.5<Math.random(),n.className="home-handbag ".concat(i?"right":"left"),a=2+Math.floor(8*Math.random()),o=1,TweenMax.set(n,{y:Math.random()*TrueH*.3}),TweenMax.to(n,1,{x:i?-TrueW/3:TrueW/3}),TweenMax.to(n,.2,{yoyo:!0,rotation:5,repeat:a,transformOrigin:i?"right bottom":"left bottom",delay:1,onComplete:function e(){return TweenMax.to(n,.5,{rotation:0}),TweenMax.to(n,.5,{x:0,onComplete:function e(){return setTimeout(function(){return t.runHand()},200+1e3*Math.random())}})}}))},send:function e(t,n){var i=this,o=!(1<arguments.length&&void 0!==n)||n;return this.noteShow=!0,this.noteText=t,this.noteType=o,clearTimeout(this.noteTime),this.noteTime=setTimeout(function(){return i.noteShow=!1},2e3)},over:function e(){return this.questionShow=!1,ugc.init()},regame:function e(){return window.location.reload()},dateText:function e(t){var n;return console.log(t.replace(/-/g,"/")),(n=new Date(t.replace(/-/g,"/"))).getFullYear()+"年"+(n.getMonth()+1)+"月"+n.getDate()+"日"},goUGC:function e(){return this.lotteryShow=!0},sharePost:function e(t){// @.ugc = ugc.app.view.toDataURL()
 return ugc.app.renderer.render(ugc.app.stage),this.ugc=t},restart:function e(){return window.location.reload()},goshare:function e(){
 // goShare()
-return this.share()},share:function e(){var t;// @.ugc = bgImg
-return"undefined"!=typeof goFinal2&&null!==goFinal2&&goFinal2(),null!=showQR&&showQR(),this.formBoxShow=!1,this.registerShow=!1,this.lotteryShow=!1,console.log("run share"),t=renderer.domElement.toDataURL(),this.bgImg=new Sprite.fromImage(t),// ugc.qrcode.visible = true
-ugc.app.stage.addChildAt(this.bgImg,0),this.callshare()},callshare:function e(){var t,n;// ugc.buildUGC(ugc.app.view.toDataURL())
+return this.share()},share:function e(){var t=this,n;return"undefined"!=typeof goFinal2&&null!==goFinal2&&goFinal2(),null!=showQR&&showQR(),this.formBoxShow=!1,this.registerShow=!1,this.lotteryShow=!1,console.log("run share"),null!=this.bgImg?this.callshare():(n=renderer.domElement.toDataURL(),this.bgImg=new Sprite.fromImage(n),// ugc.qrcode.visible = true
+ugc.app.stage.addChildAt(this.bgImg,0),this.bgImg.texture.baseTexture.on("loaded",function(){
+// @.ugc = bgImg
+return t.bgImg.scale.set(750/t.bgImg.width),t.callshare()}))},callshare:function e(){var t,n;// ugc.buildUGC(ugc.app.view.toDataURL())
 return ugc.app.renderer.render(ugc.app.stage),this.ugc=ugc.app.view.toDataURL(),this.wy?(n="pig",t={image:image,folder:n},this.folder=n,"undefined"==typeof image||null===image?this.faild():!this.pushed&&(null!=this.shareImageLink?(this.pushed=!1,this.loading=!1,// ugc.back()
 neteaseShareImage(),null!=shareDone&&shareDone(),!0):axios.post(imageurl,t).then(function(e){return 200===e.data.code?main.success(e.data):main.faild(e)}).catch(function(e){
 // alert e
@@ -345,12 +346,15 @@ return main.faild(e)}))):this.ugcShow=!0},
 // ugc.qrcode.visible = false
 success:function e(t){if(this.shareImageLink=t.info,this.pushed=!1,this.loading=!1,// ugc.back()
 neteaseShareImage(),null!=shareDone)return shareDone()},
+// ugc.app.stage.removeChild @.bgImg
 // 抽奖
 // unless @.giveUp
 // 	setTimeout =>
 // 		@.getLottery()
 // 	,5000
-closeUGC:function e(){if(this.ugcShow=!1,null!=shareDone)return shareDone()},faild:function e(t){return this.pushed=!1,this.loading=!1},openSong:function e(){var t;// CloudMusic.song(id[resultNum])
+closeUGC:function e(){if(this.ugcShow=!1,null!=shareDone)return shareDone()},
+// ugc.app.stage.removeChild @.bgImg
+faild:function e(t){return this.pushed=!1,this.loading=!1},openSong:function e(){var t;// CloudMusic.song(id[resultNum])
 return t=[169794,166317,112678,144143,64497,163639,28853351,153476,5271858,186980,170749,5276250,27591641,32922491,144380,5250828,28785688,186272,210866,555984413],window.location.href="https://music.163.com/#/song?id=".concat(t[resultNum])},openInApp:function e(){return CloudMusic.open("https://m.giccoo.com/draw-board/")},goNext:function e(){var t=this;return setTest(),ModLoaded(),this.pageIndex=2,setTimeout(function(){return t.runShakeHand()},1e3)},runShakeHand:function e(){var t=this,n,i,o;return!this.shaked&&(n=.3,o=14,(i=document.getElementById("shakeHand")).className="hand hold",TweenMax.to(i,.3,{x:10,rotation:13,transformOrigin:"center bottom"}),TweenMax.to(i,.6,{x:-10,rotation:-13,transformOrigin:"center bottom",delay:.3}),TweenMax.to(i,.6,{x:10,rotation:13,transformOrigin:"center bottom",delay:.3*3}),TweenMax.to(i,.15,{x:-10,rotation:-13,yoyo:!0,repeat:14,transformOrigin:"center bottom",delay:1.5}),TweenMax.to(i,.15,{x:0,rotation:0,transformOrigin:"center bottom",delay:3.6,onComplete:function e(){return i.className="hand",setTimeout(function(){return t.runShakeHand()},1e3)}}))},runGift:function e(){var t;return this.messageShow=!0,t=["有对象吗?","结婚了吗?","朋友们都结婚了吧?","年终奖多少啊?","买房了吗?","你看你又胖啦!","这么大岁数了要努力呀!"],// @.message = msgs[Math.floor(Math.random() * msgs.length)]
 document.getElementById("subtitles").innerHTML="<div data-splitting>".concat(t[this.msgIndex],"</div>"),Splitting(),this.msgIndex=(this.msgIndex+1)%t.length,SOUND.runRandomHit()},gameOver:function e(){return console.log("Start"),this.gameEnd=!0},openNote:function e(){
 // clearTimeout _cache

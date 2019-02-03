@@ -327,12 +327,18 @@ init = ->
 				@.registerShow = false
 				@.lotteryShow = false
 				console.log "run share"
-				bgImg = renderer.domElement.toDataURL()
-				@.bgImg = new Sprite.fromImage(bgImg)
-				# ugc.qrcode.visible = true
-				ugc.app.stage.addChildAt @.bgImg,0
-				# @.ugc = bgImg
-				@.callshare()
+				if @.bgImg?
+					@.callshare()
+				else
+					bgImg = renderer.domElement.toDataURL()
+					@.bgImg = new Sprite.fromImage(bgImg)
+
+					# ugc.qrcode.visible = true
+					ugc.app.stage.addChildAt @.bgImg,0
+					@.bgImg.texture.baseTexture.on 'loaded', =>
+					# @.ugc = bgImg
+						@.bgImg.scale.set(750/@.bgImg.width)
+						@.callshare()
 			callshare: ->
 				ugc.app.renderer.render ugc.app.stage
 				@.ugc = ugc.app.view.toDataURL()
@@ -353,6 +359,7 @@ init = ->
 						# ugc.back()
 						neteaseShareImage()
 						shareDone() if shareDone?
+						# ugc.app.stage.removeChild @.bgImg
 						return true
 					axios.post imageurl,data
 					.then (msg)=>
@@ -374,6 +381,7 @@ init = ->
 				# ugc.back()
 				neteaseShareImage()
 				shareDone() if shareDone?
+				# ugc.app.stage.removeChild @.bgImg
 				# 抽奖
 				# unless @.giveUp
 				# 	setTimeout =>
@@ -382,6 +390,7 @@ init = ->
 			closeUGC: ->
 				@.ugcShow = false
 				shareDone() if shareDone?
+				# ugc.app.stage.removeChild @.bgImg
 			faild: (err)->
 				@.pushed = false
 				@.loading = false
