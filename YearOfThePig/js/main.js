@@ -112,9 +112,9 @@ var n=pigBody.quaternion.vmult(new CANNON.Vec3(-30*pigScale,-30*pigScale,30*pigS
 var i=pigBody.quaternion.vmult(new CANNON.Vec3(30*pigScale,-30*pigScale,30*pigScale)).vadd(pigBody.position);leftHandCurve=new THREE.CatmullRomCurve3([vec3toVector3(i),vec3toVector3(leftHandJointBody.position),vec3toVector3(leftHandBody.position)]),leftArmGeo.copy(new THREE.TubeBufferGeometry(leftHandCurve,20,15*pigScale,8,!1));//=====头顶线
 var o=new THREE.Vector3(0,9,.4);o.applyQuaternion(objs.pig.quaternion),o=o.addVectors(o,objs.pig.position),scene.remove(lines[0]),lines=[],makeLine(line=[0,100,0,o.x,o.y,o.z],16435024),//=====眼镜跟随
 eyeGroup.position.copy(objs.pig.position),eyeGroup.quaternion.copy(objs.pig.quaternion)}function makeLine(e,t){var n=new MeshLine;n.setGeometry(e);var i=new MeshLineMaterial({useMap:!1,color:t,opacity:1,sizeAttenuation:!0,lineWidth:.005,near:camera.near,far:camera.far});lineMesh=new THREE.Mesh(n.geometry,i),scene.add(lineMesh),lines.push(lineMesh)}function initAll(){if(1==ifFirsTime)//set_envMap()
-return ifFirsTime=!1,console.log("啦啦啦啦啦"),renderer.setClearColor(16774608),//设置背景颜色
+return ifFirsTime=!1,console.log("啦啦啦啦啦1111"),renderer.setClearColor(16774608),//设置背景颜色
 renderer.setSize(window.innerWidth,window.innerHeight),//设置宽高
-renderer.shadowMap.type=THREE.PCFSoftShadowMap,//.BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
+renderer.shadowMap.type=THREE.BasicShadowMap,//.BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
 renderer.setPixelRatio(2),renderer.shadowMapEnabled=!0,//renderer.shadowMapSoft=true
 // document.body.appendChild()
 loadingMods("mod/pig4.glb",["pig"],"addScene"),//模型加载
