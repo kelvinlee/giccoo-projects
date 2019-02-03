@@ -57,8 +57,8 @@ window.onload = ->
 		sys = "NeteaseMusic"
 		shareData = 
 			name: 'YearOfThePig'
-			title: 'Title'
-			subTitle: "Description"
+			title: '新年福袋被偷走了，你的福贴还在里面呢! 快点抢回来吧~'
+			subTitle: "可恶的小猪你别跑,把我的福袋还回来!!!"
 			text: ''
 			picUrl: 'http://m.giccoo.com/YearOfThePig/img/ico.jpg'
 			link: 'http://m.giccoo.com/YearOfThePig/'
@@ -67,8 +67,8 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "Title"
-				desc: "Description"
+				title: "新年福袋被偷走了，你的福贴还在里面呢! 快点抢回来吧~"
+				desc: "可恶的小猪你别跑,把我的福袋还回来!!!"
 				link: "http://m.giccoo.com/YearOfThePig/"
 				imgUrl: "http://m.giccoo.com/YearOfThePig/img/ico.jpg"
 				success: ->
