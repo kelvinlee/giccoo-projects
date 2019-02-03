@@ -76,7 +76,8 @@ function addGift(){
 }
 
 function moveCamera(){
-	pixiStart()
+	
+	setTimeout(pixiStart,1000)
 	TweenMax.to(camera.position, 3, {
       y: 25,
       ease: Power2.easeInOut,
@@ -89,8 +90,14 @@ function moveCamera(){
       ease: Power2.easeInOut,
       onUpdate: function onUpdate(v) {
           camera.updateProjectionMatrix();
-      }
+      },
+      onComplete:endThree
+
   });
+}
+
+function endThree(){
+	ifThreePlay=false
 }
 
 function addAGift(){

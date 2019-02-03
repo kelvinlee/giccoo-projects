@@ -18,6 +18,7 @@ var imageList = [
 
 	_CDN+"img/ink1.png",
 	_CDN+"img/ink2.png",
+	_CDN+"img/qr.png",
 
 ]
 var pStage,stageH
@@ -33,10 +34,12 @@ function pixiStart(){
 	setBG()
 	setPig()
 	setScorll()
+	setQR()
 
-	setTimeout(openScorll,1000)
-	setTimeout(showTitle,1000)
-	TweenMax.from(pigC,1.5,{y:0,ease:Elastic.easeOut,delay:0})
+	setTimeout(openScorll,2000)
+	setTimeout(showTitle,10)
+	TweenMax.from(pigC,1.6,{y:stageH/5,ease:Bounce.easeOut,delay:1.5})
+	TweenMax.from(pigC,.5,{alpha:0,delay:1.5})
 	
 }
 
@@ -45,11 +48,13 @@ var bgTC=new PIXI.Container()
 var inkC=new PIXI.Container()
 var bgTMask
 
-var ink1,ink2,ink3,ink4,ink5,ink6
+var ink1,ink2,ink3,ink4,ink5,ink6,endbg
 function setBG(){
 	pStage.addChild(bgC)
-	bgC.addChild(new Spr(_CDN+"img/endbg.png"),bgTC)
+	endbg=new Spr(_CDN+"img/endbg.png")
+	bgC.addChild(endbg,bgTC)
 	bgTMask=new Spr(_CDN+"img/endtitle.png")
+	TweenMax.from(endbg,2,{alpha:0})
 
 
 	bgTC.addChild(inkC,bgTMask)
@@ -172,6 +177,22 @@ function openScorll(){
 	TweenMax.to(scorllR,1.2,{x:215,ease:Back.easeOut})
 }
 
+
+//=====完成
+var QR
+function setQR(){
+	QR=new Spr(_CDN+"img/qr.png") 
+	pStage.addChild(QR)
+	QR.y=stageH-199
+	//QR.visible=false
+}
+function showQR(){
+	QR.visible=true
+}
+
+function shareDone(){
+	QR.visible=false
+}
 
 
 

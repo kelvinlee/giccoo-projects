@@ -49,11 +49,15 @@ function initAll () {
 
 var cannonDebugRenderer=new THREE.CannonDebugRenderer(scene,world)//===物理引擎辅助
 var meshes=[],bodies=[]
+var ifThreePlay=true
 function animate() {
 	//stats.begin()
-  requestAnimationFrame( animate );
-  updatePhysics();
-  render();
+	if(ifThreePlay){
+		requestAnimationFrame( animate );
+  	updatePhysics();
+  	render();
+	}
+  
   //stats.end()
 }
 
