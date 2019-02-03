@@ -19,7 +19,7 @@ SOUND.gift = new Howl
 
 SOUND.giftEnd = new Howl
 	src: ["#{_CDN}/mp3/han.mp3"]
-	volume: 0.3
+	volume: 0.5
 
 
 SOUND.end = ->

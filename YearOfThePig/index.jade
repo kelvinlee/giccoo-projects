@@ -100,7 +100,7 @@ block content
               .text 抓住并摇晃
           transition(name="page-fade")
             .message#subtitles(v-show="!gameEnd && shaked")
-          .overMark.fadeIn.animated(v-show="gameEndBtns")
+          .overMark.fadeIn.animated(v-show="gameEndBtns",style="display: none")
             .btn.btn-shot(@click="share")
               img(src="#{url}/img/btn-shot.png")
             .btn.btn-share(@click="openNote")

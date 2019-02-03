@@ -261,6 +261,7 @@ init = ->
 			msgIndex: 1
 			allow: true
 			shaked: false
+			bgImg: null
 		methods:
 			runHand: ->
 				return false unless @.allow 
@@ -321,11 +322,18 @@ init = ->
 				@.share()
 			share: ->
 				goFinal2() if goFinal2?
+				showQR() if showQR?
 				@.formBoxShow = false
 				@.registerShow = false
 				@.lotteryShow = false
 				console.log "run share"
+				bgImg = renderer.domElement.toDataURL()
+				@.bgImg = new Sprite.fromImage(bgImg)
 				# ugc.qrcode.visible = true
+				ugc.app.stage.addChildAt @.bgImg,0
+				# @.ugc = bgImg
+				@.callshare()
+			callshare: ->
 				ugc.app.renderer.render ugc.app.stage
 				@.ugc = ugc.app.view.toDataURL()
 				# ugc.buildUGC(ugc.app.view.toDataURL())
@@ -430,9 +438,6 @@ init = ->
 			gameOver: ->
 				console.log "Start"
 				@.gameEnd = true
-				setTimeout =>
-					@.gameEndBtns = true
-				,2000
 			openNote: ->
 				# clearTimeout _cache
 				@.registerShow = true

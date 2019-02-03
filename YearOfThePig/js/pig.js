@@ -5,7 +5,7 @@ var scene=new THREE.Scene();
 //var camera= new THREE.PerspectiveCamera(90,window.innerWidth/window.innerHeight,0.1,200);//OrthographicCamera
 var camera= new THREE.OrthographicCamera(window.innerWidth/window.innerHeight*80/-2,window.innerWidth/window.innerHeight*80/2,40,-40,0.1,200);
 //视角，宽高比，近剪切面，远剪切面
-var renderer = new THREE.WebGLRenderer({antialias:true,alpha:false})//抗锯齿
+var renderer = new THREE.WebGLRenderer({antialias:true,alpha:false,preserveDrawingBuffer:true})//抗锯齿
 var modNum=0 // 总数
 var modLoadedNum=0 // 已加载输
 var objs = {} // 模型

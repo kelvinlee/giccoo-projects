@@ -84,7 +84,7 @@
             <transition name="page-fade">
               <div id="subtitles" v-show="!gameEnd &amp;&amp; shaked" class="message"></div>
             </transition>
-            <div v-show="gameEndBtns" class="overMark fadeIn animated">
+            <div v-show="gameEndBtns" style="display: none" class="overMark fadeIn animated">
               <div @click="share" class="btn btn-shot"><img src="./img/btn-shot.png"></div>
               <div @click="openNote" class="btn btn-share"><img src="./img/btn-share.png"></div>
             </div>
