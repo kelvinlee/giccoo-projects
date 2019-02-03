@@ -4651,6 +4651,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/YearOfThePig/img/logo.png": {
+		"ft": 32768,
+		"iS": 3101,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/YearOfThePig/img/lucky-bag.png": {
 		"ft": 32768,
 		"iS": 31071,
