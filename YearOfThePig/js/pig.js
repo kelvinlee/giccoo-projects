@@ -23,7 +23,7 @@ function initAll () {
 		console.log("啦啦啦啦啦")
 		renderer.setClearColor(0xfff5d0)//设置背景颜色
 		renderer.setSize(window.innerWidth,window.innerHeight)//设置宽高
-		renderer.shadowMap.type=THREE.PCFSoftShadowMap//.BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
+		renderer.shadowMap.type=THREE.BasicShadowMap// .BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
 		renderer.setPixelRatio(2)
 		renderer.shadowMapEnabled=true
 		//renderer.shadowMapSoft=true
