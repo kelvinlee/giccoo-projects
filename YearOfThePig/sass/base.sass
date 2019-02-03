@@ -196,6 +196,7 @@ video,canvas,svg
 	+overhide
 	+tran(all,4s,ease)
 	+bc(#fff5d0)
+
 #game
 	+h
 	canvas
@@ -839,3 +840,20 @@ video,canvas,svg
 		animation-delay: calc(60ms * var(--char-index))
 		+show-inline
 		text-indent: 0
+
+.main
+	.play
+		+posa
+		+tr(0.5rem,0.5rem)
+		+iw(80,750,100%)
+		font-size: 0
+		z-index: 99
+		&.on
+			.icon-play
+				+show
+			.icon-stop
+				+hide
+		.icon-play
+			+hide
+		.icon-stop
+			+show

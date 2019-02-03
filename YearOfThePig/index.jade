@@ -54,6 +54,12 @@ block content
         p.centeralign {{progressText}}
   
   .main#main(:class="{biger: biger, smaller:smaller}",:style="{width: w+'px',height: h+'px'}")
+    transition(name="page-fade")
+      .play(:class="{on: canPlay}",@click="canPlay = !canPlay")
+        .icon-play
+          img(src="#{url}/img/icon-play.png")
+        .icon-stop
+          img(src="#{url}/img/icon-stop.png")
     transition(name="page-down")
       .note-message(v-show="noteShow",@click="noteShow = false",:class="{error: noteType}",style="display: none")
         .note-text {{noteText}}

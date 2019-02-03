@@ -179,6 +179,7 @@ init = ->
 			mounted: true
 			loading: false
 			playing: false
+			canPlay: true
 			noteText: ""
 			noteTime: null
 			noteShow: false

@@ -4563,6 +4563,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/YearOfThePig/img/icon-play.png": {
+		"ft": 32768,
+		"iS": 3370,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/icon-play.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/YearOfThePig/img/icon-stop.png": {
+		"ft": 32768,
+		"iS": 2948,
+		"oA": 0,
+		"oAP": "/YearOfThePig/img/icon-stop.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/YearOfThePig/img/ink1.jpg": {
 		"ft": 16384,
 		"iS": 26096,
