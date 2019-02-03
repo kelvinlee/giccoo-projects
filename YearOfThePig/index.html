@@ -33,7 +33,7 @@
     </div>
     <div id="main" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" class="main">
       <transition name="page-fade">
-        <div :class="{on: canPlay}" @click="canPlay = !canPlay" class="play">
+        <div :class="{on: canPlay}" @click="mute" class="play">
           <div class="icon-play"><img src="./img/icon-play.png"></div>
           <div class="icon-stop"><img src="./img/icon-stop.png"></div>
         </div>

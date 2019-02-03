@@ -456,6 +456,16 @@ init = ->
 				Splitting()
 				# ,400
 
+			mute: ->
+				@.canPlay = !@.canPlay
+				unless @.canPlay
+					SOUND.giftEnd.pause()
+					SOUND.g.pause()
+					SOUND.hit1.pause()
+					SOUND.hit2.pause()
+					SOUND.hit3.pause()
+					SOUND.hit4.pause()
+
 		mounted: ->
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
