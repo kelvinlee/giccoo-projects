@@ -175,6 +175,7 @@ function openScorll(){
 	TweenMax.to(scorllMask.scale,1.2,{x:1,ease:Back.easeOut})
 	TweenMax.to(scorllL,1.2,{x:-215,ease:Back.easeOut})
 	TweenMax.to(scorllR,1.2,{x:215,ease:Back.easeOut})
+	main.gameEndBtns = true
 }
 
 
