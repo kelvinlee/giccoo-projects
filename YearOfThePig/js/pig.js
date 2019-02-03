@@ -41,6 +41,7 @@ function initAll () {
 
 		return renderer.domElement
 	}
+
 	
 
 }
@@ -148,6 +149,7 @@ var MAX_ENTROPY=[1,2,3,4,6,8,16,16]
 var level=0
 function onDocumentTouchStart(_e){
 	_e.preventDefault()
+	
 
 	mouse.x=(_e.touches[0].clientX/window.innerWidth)*2-1
 	mouse.y=-(_e.touches[0].clientY/window.innerHeight)*2+1//donElement

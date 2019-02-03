@@ -76,6 +76,7 @@ function addGift(){
 }
 
 function moveCamera(){
+	pixiStart()
 	TweenMax.to(camera.position, 3, {
       y: 25,
       ease: Power2.easeInOut,
