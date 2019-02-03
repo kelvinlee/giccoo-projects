@@ -184,7 +184,7 @@ function setQR(){
 	QR=new Spr(_CDN+"img/qr.png") 
 	pStage.addChild(QR)
 	QR.y=stageH-199
-	//QR.visible=false
+	QR.visible=false
 }
 function showQR(){
 	QR.visible=true
