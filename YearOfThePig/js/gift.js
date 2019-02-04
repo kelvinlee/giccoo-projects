@@ -61,13 +61,12 @@ function addGift(){
 		for (var i = 0; i < giftsNum[level]; i++) {
 				setTimeout(addAGift,30*i)
 		};
-		removeJointConstraint();
+		//removeJointConstraint();
 		renderer.domElement.removeEventListener("touchstart",onDocumentTouchStart,false)
 		renderer.domElement.removeEventListener("touchmove",onDocumentTouchMove,{passive: false})
 		renderer.domElement.removeEventListener("touchend",onDocumentTouchEnd,false)
 		TweenMax.to(rootPointBody.position,2.2,{y:130,onComplete:moveCamera})
 		ifCanTouch=false
-		//TweenMax.to(objs.pig.position,2.5,{y:-120})
 
 		SOUND.end()
 		main.gameOver()
