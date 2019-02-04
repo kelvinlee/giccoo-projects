@@ -8,8 +8,6 @@
 # @codekit-prepend "UGC"
 # @codekit-prepend "sound"
 
-axios.defaults.withCredentials = true
-
 TrueW = 640
 TrueH = 1138
 imageurl = "//api.giccoo.com/api/upload/image64/"
@@ -46,6 +44,22 @@ neteaseShareImage = ->
 		text: title1,
 		link: redirectUrl
 	})
+
+loadList = [
+	# "//cdnjs.cloudflare.com/ajax/libs/pixi.js/4.8.5/pixi.min.js"
+	"//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"
+	"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"
+	"//cdnjs.cloudflare.com/ajax/libs/three.js/101/three.min.js"
+	"//unpkg.com/splitting@1.0.6/dist/splitting.min.js"
+	"//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.5/dat.gui.min.js"
+	"//cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"
+	"//cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"
+	"//cdnjs.cloudflare.com/ajax/libs/howler/2.0.15/howler.core.min.js"
+	"//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js"
+	"//image.giccoo.com/projects/genki/js/ntes.id.js"
+	"//image.giccoo.com/projects/YearOfThePig/js/THREE.MeshLine.js"
+	"js/libs.js?v=1"
+]
 
 window.onload = ->
 	TrueH = document.documentElement.clientHeight
@@ -94,14 +108,32 @@ window.onload = ->
 		data:
 			progress: 0
 			mounted: false
-			progressOn: 10
+			progressOn: 0
+			objs: 0
+			imgs: 0
+			jss: 0
 			isrun: false
 		computed:
 			progressText: ->
 				return NumberToChinese @.progress
+		# watch:
+		# 	progressOn: (n)->
+		# 		console.log "n",n
+		# 		if n >= 70
+		# 			@.runHand()
+
 		methods:
-			updateMax: (i)->
-				@.progressOn = Math.floor(i/6)*100
+			updateMax: (i,n)->
+				# console.log "objs:",i
+				@.objs = Math.floor(i/6)*100
+				@.progressOn = Math.floor (@.objs+@.imgs+@jss)/3
+			updateImgs: (i,n)->
+				# console.log "imgs:",i
+				@.imgs = i
+				@.progressOn = Math.floor (@.objs+@.imgs+@jss)/3
+			updateJSs: (i)->
+				@.jss = i
+				@.progressOn = Math.floor (@.objs+@.imgs+@jss)/3
 			runHand: ->
 				return false if @.isrun
 				maxH = document.documentElement.clientHeight
@@ -154,9 +186,20 @@ window.onload = ->
 				if @.progress >= 100
 					@.progress = 100
 					clearInterval timein
-			,1000/20
+			,1000/30
 	
-	init()
+	queue = new createjs.LoadQueue()
+	queue.setMaxConnections(100)
+	queue.on "complete", ->
+		axios.defaults.withCredentials = true
+		init()
+		buildSound()
+	queue.on "progress", (e)->
+		percentage = Math.round(e.progress * 100)
+		loading.updateJSs percentage
+		console.log "percentage:",percentage
+	queue.loadManifest loadList
+
 
 init = ->
 	TrueW = 640 if TrueW >= 640

@@ -4403,6 +4403,17 @@
 		"oAP": "/build/xinsuteng",
 		"oF": 0
 		},
+	"/YearOfThePig/coffee/libs.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/YearOfThePig/js/libs.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
 	"/YearOfThePig/coffee/main.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -4448,8 +4459,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/btn-share.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4459,8 +4470,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/btn-shot.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4470,8 +4481,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/btn-start.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4481,8 +4492,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/endbg.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4492,8 +4503,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/endeyebow.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4503,8 +4514,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/endpig.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4514,8 +4525,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/endtitle.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4525,8 +4536,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/hand.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4538,7 +4549,7 @@
 		"oAP": "/YearOfThePig/img/homepage-bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/YearOfThePig/img/homepage-logo.png": {
@@ -4547,8 +4558,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/homepage-logo.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4560,7 +4571,7 @@
 		"oAP": "/YearOfThePig/img/ico.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/YearOfThePig/img/icon-close.png": {
@@ -4569,8 +4580,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/icon-close.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4580,8 +4591,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/icon-play.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4591,8 +4602,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/icon-stop.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4604,7 +4615,7 @@
 		"oAP": "/YearOfThePig/img/ink1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/YearOfThePig/img/ink1.png": {
@@ -4613,8 +4624,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/ink1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4626,7 +4637,7 @@
 		"oAP": "/YearOfThePig/img/ink2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/YearOfThePig/img/ink2.png": {
@@ -4635,8 +4646,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/ink2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4646,8 +4657,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/last-bg.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4657,8 +4668,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/logo.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4668,8 +4679,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/lucky-bag.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4679,8 +4690,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/pig-hand-last.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4690,8 +4701,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/pig-hand-note.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4701,8 +4712,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/pig.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4723,8 +4734,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/scorll.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4734,8 +4745,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/scorll_l.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4745,8 +4756,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/scorllt1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4756,8 +4767,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/scorllt2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4767,8 +4778,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/scorllt3.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4778,8 +4789,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/scorllt4.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4789,8 +4800,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/scorllt5.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4800,8 +4811,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/scorllt6.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4811,8 +4822,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/scorllt7.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4822,8 +4833,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/scorllt8.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4833,8 +4844,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/shadow.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4844,8 +4855,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/shake-hand-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4855,8 +4866,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/shake-hand-2.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4866,8 +4877,8 @@
 		"oA": 0,
 		"oAP": "/YearOfThePig/img/shake-line.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -4966,6 +4977,13 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"/YearOfThePig/js/main.js.map": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/YearOfThePig/js/main.js.map",
+		"oF": 0
 		},
 	"/YearOfThePig/js/mark.js": {
 		"ft": 64,
@@ -5316,7 +5334,7 @@
 	"babelCustomPresetsList": "",
 	"babelInsertModuleIDs": 0,
 	"babelModuleID": "",
-	"babelNoComments": 0,
+	"babelNoComments": 1,
 	"babelPlugins": {
 		"arrow-functions": {
 			"active": 0
@@ -5532,7 +5550,7 @@
 			"active": 0
 			}
 		},
-	"babelRetainLines": 0,
+	"babelRetainLines": 1,
 	"bowerAbbreviatedPath": "bower_components",
 	"bowerAutoCreateInfoFile": 1,
 	"bowerInstallDevDependencies": 0,

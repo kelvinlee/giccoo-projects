@@ -7,7 +7,7 @@
     <title>猪年大吉 - 猪福袋</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/css/animate.min.css">
-    <link rel="stylesheet" href="/libs/font/xqzpt.css">
+    <link rel="stylesheet" href="//image.giccoo.com/projects/libs/font/xqzpt.css">
     <link rel="stylesheet" href="css/base.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66865226-1"></script>
     <script>
@@ -18,13 +18,14 @@
     </script>
   </head>
   <body>
+    <!-- - url = ".";-->
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
         <div class="load-animated">
-          <div class="lucky-bag"><img src="./img/lucky-bag.png"></div>
-          <div class="hand hand-left"><img src="./img/hand.png"></div>
-          <div class="hand hand-right"><img src="./img/hand.png"></div>
-          <div class="bag-shadow"><img src="./img/shadow.png"></div>
+          <div class="lucky-bag"><img src="//image.giccoo.com/projects/YearOfThePig/img/lucky-bag.png"></div>
+          <div class="hand hand-left"><img src="//image.giccoo.com/projects/YearOfThePig/img/hand.png"></div>
+          <div class="hand hand-right"><img src="//image.giccoo.com/projects/YearOfThePig/img/hand.png"></div>
+          <div class="bag-shadow"><img src="//image.giccoo.com/projects/YearOfThePig/img/shadow.png"></div>
         </div>
         <div class="load-text">
           <p class="centeralign">{{progressText}}</p>
@@ -34,8 +35,8 @@
     <div id="main" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" class="main">
       <transition name="page-fade">
         <div :class="{on: canPlay}" @click="mute" class="play">
-          <div class="icon-play"><img src="./img/icon-play.png"></div>
-          <div class="icon-stop"><img src="./img/icon-stop.png"></div>
+          <div class="icon-play"><img src="//image.giccoo.com/projects/YearOfThePig/img/icon-play.png"></div>
+          <div class="icon-stop"><img src="//image.giccoo.com/projects/YearOfThePig/img/icon-stop.png"></div>
         </div>
       </transition>
       <transition name="page-down">
@@ -61,14 +62,14 @@
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
             <div @click="goNext" class="home-handbag left">
-              <div class="home-hand"><img src="./img/hand.png"></div>
-              <div class="home-bag"><img src="./img/lucky-bag.png"></div>
+              <div class="home-hand"><img src="//image.giccoo.com/projects/YearOfThePig/img/hand.png"></div>
+              <div class="home-bag"><img src="//image.giccoo.com/projects/YearOfThePig/img/lucky-bag.png"></div>
             </div>
-            <div class="home-logo fadeInUp animated delay-2"><img src="./img/homepage-logo.png"></div>
+            <div class="home-logo fadeInUp animated delay-2"><img src="//image.giccoo.com/projects/YearOfThePig/img/homepage-logo.png"></div>
             <div class="text fadeInUp animated delay-4">
               <p>福袋被偷走了，<br/>你的福贴还在里面呢!</p>
             </div>
-            <div @click="goNext" class="btn fadeInUp animated delay-8"><img src="./img/btn-start.png"></div>
+            <div @click="goNext" class="btn fadeInUp animated delay-8"><img src="//image.giccoo.com/projects/YearOfThePig/img/btn-start.png"></div>
           </div>
         </div>
       </transition>
@@ -78,10 +79,10 @@
             <transition name="page-fade">
               <div v-show="!gameEnd &amp;&amp; !shaked" class="shake-hand">
                 <div class="shake">
-                  <div class="line"><img src="./img/shake-line.png"></div>
+                  <div class="line"><img src="//image.giccoo.com/projects/YearOfThePig/img/shake-line.png"></div>
                   <div id="shakeHand" class="hand">
-                    <div class="open"><img src="./img/shake-hand-1.png"></div>
-                    <div class="hold"><img src="./img/shake-hand-2.png"></div>
+                    <div class="open"><img src="//image.giccoo.com/projects/YearOfThePig/img/shake-hand-1.png"></div>
+                    <div class="hold"><img src="//image.giccoo.com/projects/YearOfThePig/img/shake-hand-2.png"></div>
                   </div>
                 </div>
                 <div class="text">抓住并摇晃</div>
@@ -91,8 +92,8 @@
               <div id="subtitles" v-show="!gameEnd &amp;&amp; shaked" class="message"></div>
             </transition>
             <div v-show="gameEndBtns" style="display: none" class="overMark fadeIn animated">
-              <div @click="share" class="btn btn-shot"><img src="./img/btn-shot.png"></div>
-              <div @click="openNote" class="btn btn-share"><img src="./img/btn-share.png"></div><a href="http://m.giccoo.com/" class="logo"><img src="./img/logo.png"></a>
+              <div @click="share" class="btn btn-shot"><img src="//image.giccoo.com/projects/YearOfThePig/img/btn-shot.png"></div>
+              <div @click="openNote" class="btn btn-share"><img src="//image.giccoo.com/projects/YearOfThePig/img/btn-share.png"></div><a href="http://m.giccoo.com/" class="logo"><img src="//image.giccoo.com/projects/YearOfThePig/img/logo.png"></a>
             </div>
             <transition name="page-fade">
               <div id="ugc" v-show="gameEnd"></div>
@@ -103,7 +104,7 @@
       <transition name="page-fade">
         <div v-show="registerShow" @click="registerShow = false" style="display: none" class="pop pop-note">
           <div class="content">
-            <div class="hand"><img src="./img/pig-hand-note.png"></div>
+            <div class="hand"><img src="//image.giccoo.com/projects/YearOfThePig/img/pig-hand-note.png"></div>
             <div id="note-text" class="text">“对，点这里！”<br/>“咦，咱们俩的手好像啊~”</div>
           </div>
         </div>
@@ -111,7 +112,7 @@
       <div v-show="ugcShow" style="display: none" class="pop flashcamera">
         <div class="content">
           <div class="small-size">
-            <div @click="closeUGC" class="close"><img src="./img/icon-close.png"></div>
+            <div @click="closeUGC" class="close"><img src="//image.giccoo.com/projects/YearOfThePig/img/icon-close.png"></div>
             <div class="scroll"><img :src="ugc"></div>
             <div class="note">长按保存图片</div>
           </div>
@@ -119,23 +120,9 @@
       </div>
     </div>
     <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
-    <script src="//image.giccoo.com/projects/libs/js/min/vue.min.js"></script>
-    <script src="//image.giccoo.com/projects/libs/js/min/pixi.min.js"></script>
-    <script src="//image.giccoo.com/projects/libs/js/min/TweenMax.min.js"></script>
-    <script src="//image.giccoo.com/projects/libs/js/min/axios.min.js"></script>
-    <script src="//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js"></script>
-    <script src="//image.giccoo.com/projects/genki/js/ntes.id.js"></script>
-    <script src="js/three.min.js"></script>
-    <script src="//unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.5/dat.gui.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.15/howler.core.min.js"></script>
-    <script src="js/THREE.MeshLine.js"></script>
-    <script src="js/GLTFLoader.js"></script>
-    <script src="js/OBJLoader.js"></script>
-    <script src="js/OrbitControls.js"></script>
-    <script src="js/CannonDebugRenderer.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/PreloadJS/1.0.1/preloadjs.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pixi.js/4.8.5/pixi.min.js"></script>
     <script src="js/main.js?v=1"></script>
   </body>
 </html>

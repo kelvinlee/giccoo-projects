@@ -52,7 +52,7 @@ class UGC
 		@.default.MH = @.opts.h * 0.65
 	loaditem: ->
 		@.loadNumber++
-		loading.progressOn = parseInt @.loadNumber/(imageList.length)*100
+		loading.updateImgs parseInt(@.loadNumber/(imageList.length)*100),2
 		# console.log "load:",@.loadNumber,loading.progressOn,@.loadNumber is imageList.length
 
 		if @.loadNumber is imageList.length

@@ -1,4 +1,4 @@
-var _CDN = "./";
+var _CDN = "//image.giccoo.com/projects/YearOfThePig/";
 // var _CDN = "//image.giccoo.com/projects/YearOfThePig/";
 var imageList = [
 	_CDN+"img/endbg.png",

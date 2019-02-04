@@ -1,26 +1,40 @@
 
 //============================初始化
 
-var scene=new THREE.Scene();
+var scene=null
 //var camera= new THREE.PerspectiveCamera(90,window.innerWidth/window.innerHeight,0.1,200);//OrthographicCamera
-var camera= new THREE.OrthographicCamera(window.innerWidth/window.innerHeight*80/-2,window.innerWidth/window.innerHeight*80/2,40,-40,0.1,200);
+var camera= null
 //视角，宽高比，近剪切面，远剪切面
-var renderer = new THREE.WebGLRenderer({antialias:true,alpha:false,preserveDrawingBuffer:true})//抗锯齿
+var renderer = null
+var world = null
+var cannonDebugRenderer=null
+var raycaster=null
+var mouse=null
+var eyeGroup=null
 var modNum=0 // 总数
 var modLoadedNum=0 // 已加载输
 var objs = {} // 模型
 var stats = null
-var world = new CANNON.World()
+
 
 var rootPoint,rootPointBody//总固定点
 var pigShape,pigBody
 
 var ifFirsTime=true
 
+
 function initAll () {
 	if(ifFirsTime==true){
 		ifFirsTime=false
 		console.log("啦啦啦啦啦1111")
+		scene=new THREE.Scene();
+		camera= new THREE.OrthographicCamera(window.innerWidth/window.innerHeight*80/-2,window.innerWidth/window.innerHeight*80/2,40,-40,0.1,200);
+		renderer = new THREE.WebGLRenderer({antialias:true,alpha:false,preserveDrawingBuffer:true})//抗锯齿
+		world = new CANNON.World()
+		cannonDebugRenderer=new THREE.CannonDebugRenderer(scene,world)//===物理引擎辅助
+		raycaster=new THREE.Raycaster()
+		mouse=new THREE.Vector2()
+		eyeGroup=new THREE.Group()
 		renderer.setClearColor(0xfff5d0)//设置背景颜色
 		renderer.setSize(window.innerWidth,window.innerHeight)//设置宽高
 		renderer.shadowMap.type=THREE.BasicShadowMap//.BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
@@ -28,12 +42,12 @@ function initAll () {
 		renderer.shadowMapEnabled=true
 		//renderer.shadowMapSoft=true
 		// document.body.appendChild()
-		loadingMods('mod/pig4.glb',["pig"],"addScene")//模型加载
-		loadingMods('mod/foot.glb',["foot"])//模型加载
-		loadingMods('mod/gift1.glb',["gift1"])
-		loadingMods('mod/gift2.glb',["gift2"])
-		loadingMods('mod/gift3.glb',["gift3"])
-		loadingMods('mod/gift4.glb',["gift4"])
+		loadingMods('http://image.giccoo.com/projects/YearOfThePig/mod/pig4.glb',["pig"],"addScene")//模型加载
+		loadingMods('http://image.giccoo.com/projects/YearOfThePig/mod/foot.glb',["foot"])//模型加载
+		loadingMods('http://image.giccoo.com/projects/YearOfThePig/mod/gift1.glb',["gift1"])
+		loadingMods('http://image.giccoo.com/projects/YearOfThePig/mod/gift2.glb',["gift2"])
+		loadingMods('http://image.giccoo.com/projects/YearOfThePig/mod/gift3.glb',["gift3"])
+		loadingMods('http://image.giccoo.com/projects/YearOfThePig/mod/gift4.glb',["gift4"])
 		//render()
 		//animate()//===动画
 		clickFunc()
@@ -47,7 +61,7 @@ function initAll () {
 }
 //============================每帧渲染：更新物理+画面
 
-var cannonDebugRenderer=new THREE.CannonDebugRenderer(scene,world)//===物理引擎辅助
+
 var meshes=[],bodies=[]
 var ifThreePlay=true
 function animate() {
@@ -137,8 +151,7 @@ function setTest(){
 
 //============================互动 点击
 
-var raycaster=new THREE.Raycaster()
-var mouse=new THREE.Vector2()
+
 var intersects=[]
 var mouseConstraint = void 0;
 function clickFunc(){
@@ -308,7 +321,7 @@ function addMouseConstraint(x,y,z,body){
 function loadingMods(_url,_target,_ifAddScene){
 	modNum++
 	var loader = new THREE.GLTFLoader();
-
+	console.log("loader:",loader)
 	loader.load(_url,
 		function ( gltf ) {		// called when the resource is loaded
 			modLoadedNum++
@@ -366,7 +379,7 @@ function ModLoaded(){//加载模型完成
 
 
 //===========================开始
-var eyeGroup=new THREE.Group()
+
 var eye1,eye2,eye3,eye4
 function getStart(){
 	// //====网格
