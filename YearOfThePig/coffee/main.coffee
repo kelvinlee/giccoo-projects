@@ -50,7 +50,7 @@ loadList = [
 	"//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"
 	"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"
 	"//cdnjs.cloudflare.com/ajax/libs/three.js/101/three.min.js"
-	"//unpkg.com/splitting@1.0.6/dist/splitting.min.js"
+	"//image.giccoo.com/projects/libs/js/splitting.min.js"
 	"//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.5/dat.gui.min.js"
 	"//cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"
 	"//cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"
