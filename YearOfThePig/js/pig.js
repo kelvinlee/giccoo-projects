@@ -152,6 +152,7 @@ var ENTROPY_PER_SHAKE=1
 var MAX_ENTROPY=[1,2,3,4,6,8,16,16]
 var level=0
 function onDocumentTouchStart(_e){
+	if(!ifCanTouch) return;
 	_e.preventDefault()
 	
 
@@ -202,6 +203,7 @@ function onDocumentTouchStart(_e){
 	}
 }
 function onDocumentTouchMove(_e){
+	if(!ifCanTouch) return;
 	_e.preventDefault()
 	mouse.x=(_e.touches[0].clientX/window.innerWidth)*2-1
 	mouse.y=-(_e.touches[0].clientY/window.innerHeight)*2+1//donElement
@@ -250,6 +252,7 @@ function onDocumentTouchMove(_e){
             }
 }
 function onDocumentTouchEnd(_e){
+	if(!ifCanTouch) return;
 	controls.enabled = false;
 	removeJointConstraint();
 	//world.addConstraint(body_rootConstraint);
