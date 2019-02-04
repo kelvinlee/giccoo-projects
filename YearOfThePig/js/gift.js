@@ -4,6 +4,7 @@ var gift1,gift2,gift3,gift4
 
 function setGifts(){
 	//=====硬币
+
 	gift1=objs.gift1.clone()
 	var gift1map=objs.gift1.material.map
 	//console.log(pig.material.map)
@@ -76,7 +77,7 @@ function addGift(){
 }
 
 function moveCamera(){
-	
+	scene.remove(objs.pig)
 	setTimeout(pixiStart,1000)
 	TweenMax.to(camera.position, 3, {
       y: 25,
