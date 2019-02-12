@@ -58,8 +58,8 @@ window.onload = ->
 			title: '型者本色X音乐先声'
 			subTitle: "BMW1系X王嘉尔《Bimmer Ride》"
 			text: ''
-			picUrl: 'http://m.giccoo.com/BMW/img/ico.jpg'
-			link: 'http://m.giccoo.com/BMW/'
+			picUrl: 'http://m.giccoo.com/bmw&wje/img/ico.jpg'
+			link: 'http://m.giccoo.com/bmw&wje/'
 		CloudMusic.setShareData shareData
 	else
 		loadWechatConfig()
@@ -67,8 +67,8 @@ window.onload = ->
 			shareContent =
 				title: "型者本色X音乐先声"
 				desc: "BMW1系X王嘉尔《Bimmer Ride》"
-				link: "http://m.giccoo.com/BMW/"
-				imgUrl: "http://m.giccoo.com/BMW/img/ico.jpg"
+				link: "http://m.giccoo.com/bmw&wje/"
+				imgUrl: "http://m.giccoo.com/bmw&wje/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
