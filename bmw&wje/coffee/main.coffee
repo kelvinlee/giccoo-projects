@@ -240,10 +240,13 @@ init = ->
 		methods:
 			playMusic: ->
 				console.log "playing music"
-				@.$children[@.$children.length-1].video? && @.$children[@.$children.length-1].video.pause()
+				for item in @.$children
+					item.video? && item.video.pause()
 			playVideo: ->
 				console.log "playing video"
-				@.$children[0].audio? && @.$children[0].audio.pause()
+				# @.$children[0].audio? && @.$children[0].audio.pause()
+				for item in @.$children
+					item.audio? && item.audio.pause()
 			submit: (data)->
 				console.log "data:",data
 				if data.sex is 0 or data.sex is "0"
@@ -446,7 +449,9 @@ init = ->
 				@.bgmPlay = _public.$children[0].playing
 				_public.$children[0].pause() if data.playing
 			videoStop: ->
-				@.$children[0].stop()
+				@.$children[0].stop() if @.$children[0].video?
+				@.$children[1].stop() if @.$children[1].video?
+				@.$children[2].stop() if @.$children[2].video?
 			videoPause: ->
 				_public.$children[0].play() if @.bgmPlay
 			showNote: ->

@@ -81,7 +81,17 @@ block content
                 img(src="#{url}/img/video-title.png")
           .music
             img(src="#{url}/img/music.png")
-            player(@play="playMusic",fill="#fff",src="//image.giccoo.com/projects/emoji/mp3/bgm.mp3")
+            player(v-if="videoTime",@play="playMusic",fill="#fff",src="//image.giccoo.com/projects/emoji/mp3/bgm.mp3")
+
+            .player.pause(v-if="!videoTime",@click="showNote")
+              .icon-play.pause
+                svg(height='100%', version='1.1', viewBox='0 0 36 36', width='100%')
+                  use.ytp-svg-shadow(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='#ytp-id-39')
+                  path.ytp-svg-fill(fill='#fff', d='M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z')
+                svg(height='100%', version='1.1', viewBox='0 0 36 36', width='100%', style='display: none;')
+                  use.ytp-svg-shadow(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='#ytp-id-40')
+                  path.ytp-svg-fill(fill='#fff', d='M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z')
+
             .gif
               img(src="#{url}/img/music.gif")
           .register
