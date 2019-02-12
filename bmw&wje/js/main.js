@@ -96,7 +96,7 @@ console.log("share href:",i),CloudMusic.sharePic({picUrl:i,text:n,link:t})},wind
 // 					@.next()
 // 				,1000
 // 		,1000/20
-return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,-1<window.navigator.userAgent.indexOf("NeteaseMusic")?(sys="NeteaseMusic",i={name:"BMW",title:"型者本色X音乐先声",subTitle:"BMW1系X王嘉尔《Bimmer Ride》",text:"",picUrl:"http://m.giccoo.com/bmw&wje/img/ico.jpg",link:"http://m.giccoo.com/bmw&wje/"},CloudMusic.setShareData(i)):(loadWechatConfig(),wx.ready(function(){var e;return e={title:"型者本色X音乐先声",desc:"BMW1系X王嘉尔《Bimmer Ride》",link:"http://m.giccoo.com/bmw&wje/",imgUrl:"http://m.giccoo.com/bmw&wje/img/ico.jpg",success:function e(){},
+return TrueH=document.documentElement.clientHeight,TrueW=document.documentElement.clientWidth,e=0,-1<window.navigator.userAgent.indexOf("NeteaseMusic")?(sys="NeteaseMusic",i={name:"BMW",title:"型者本色X音乐先声",subTitle:"BMW1系X王嘉尔《Bimmer Ride》",text:"",picUrl:"http://m.giccoo.com/bmw&wje/img/ico.jpg",link:"http://m.giccoo.com/BMW/"},CloudMusic.setShareData(i)):(loadWechatConfig(),wx.ready(function(){var e;return e={title:"型者本色X音乐先声",desc:"BMW1系X王嘉尔《Bimmer Ride》",link:"http://m.giccoo.com/BMW/",imgUrl:"http://m.giccoo.com/BMW/img/ico.jpg",success:function e(){},
 // alert "success"
 cancel:function e(){}},// alert "cancel"
 wx.onMenuShareTimeline(e),wx.onMenuShareAppMessage(e),wx.onMenuShareQQ(e),wx.onMenuShareWeibo(e)})),init()},init=function e(){var i,t,n;return 640<=TrueW&&(
