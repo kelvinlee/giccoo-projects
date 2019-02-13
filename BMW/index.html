@@ -41,13 +41,13 @@
           <div class="content">
             <div class="banner"><img src="./img/banner.jpg">
               <div class="video-box">
-                <mp4 v-if="videoTime" @play="playVideo" src="//image.giccoo.com/projects/test/tvca1.mp4" poster="./img/poster.jpg" controls="true" playsinline="true"></mp4>
+                <mp4 v-if="videoTime" @play="playVideo" src="//image.giccoo.com/projects/test/bmw.mp4" poster="./img/poster.jpg" controls="true" playsinline="true"></mp4>
                 <div v-if="!videoTime" @click="showNote" class="video icon-play"><img src="./img/poster.jpg"></div>
                 <div class="video-title"><img src="./img/video-title.png"></div>
               </div>
             </div>
             <div class="music"><img src="./img/music.png">
-              <player v-if="videoTime" @play="playMusic" fill="#fff" src="//image.giccoo.com/projects/emoji/mp3/bgm.mp3"></player>
+              <player v-if="videoTime" @play="playMusic" fill="#fff" src="//image.giccoo.com/projects/BMW/mp3/bgm.mp3"></player>
               <div v-if="!videoTime" @click="showNote" class="player pause">
                 <div class="icon-play pause">
                   <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">

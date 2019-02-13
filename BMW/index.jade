@@ -74,14 +74,14 @@ block content
           .banner
             img(src="#{url}/img/banner.jpg")
             .video-box
-              mp4(v-if="videoTime",@play="playVideo",src="//image.giccoo.com/projects/test/tvca1.mp4",poster="#{url}/img/poster.jpg",controls="true",playsinline="true")
+              mp4(v-if="videoTime",@play="playVideo",src="//image.giccoo.com/projects/test/bmw.mp4",poster="#{url}/img/poster.jpg",controls="true",playsinline="true")
               .video.icon-play(v-if="!videoTime",@click="showNote")
                 img(src="#{url}/img/poster.jpg")
               .video-title
                 img(src="#{url}/img/video-title.png")
           .music
             img(src="#{url}/img/music.png")
-            player(v-if="videoTime",@play="playMusic",fill="#fff",src="//image.giccoo.com/projects/emoji/mp3/bgm.mp3")
+            player(v-if="videoTime",@play="playMusic",fill="#fff",src="//image.giccoo.com/projects/BMW/mp3/bgm.mp3")
 
             .player.pause(v-if="!videoTime",@click="showNote")
               .icon-play.pause
