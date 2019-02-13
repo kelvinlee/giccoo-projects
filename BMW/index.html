@@ -47,7 +47,19 @@
               </div>
             </div>
             <div class="music"><img src="./img/music.png">
-              <player @play="playMusic" fill="#fff" src="//image.giccoo.com/projects/emoji/mp3/bgm.mp3"></player>
+              <player v-if="videoTime" @play="playMusic" fill="#fff" src="//image.giccoo.com/projects/emoji/mp3/bgm.mp3"></player>
+              <div v-if="!videoTime" @click="showNote" class="player pause">
+                <div class="icon-play pause">
+                  <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-39" class="ytp-svg-shadow"></use>
+                    <path fill="#fff" d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z" class="ytp-svg-fill"></path>
+                  </svg>
+                  <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%" style="display: none;">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ytp-id-40" class="ytp-svg-shadow"></use>
+                    <path fill="#fff" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z" class="ytp-svg-fill"></path>
+                  </svg>
+                </div>
+              </div>
               <div class="gif"><img src="./img/music.gif"></div>
             </div>
             <div class="register">
