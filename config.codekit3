@@ -2147,6 +2147,28 @@
 		"oAP": "/build/numerology",
 		"oF": 0
 		},
+	"/omega/img/bg.jpg": {
+		"ft": 16384,
+		"iS": 74846,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/omega/img/bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/omega/img/confirm.png": {
+		"ft": 32768,
+		"iS": 11919,
+		"oA": 0,
+		"oAP": "/omega/img/confirm.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/omega/index.html": {
 		"cB": 0,
 		"ft": 8192,
