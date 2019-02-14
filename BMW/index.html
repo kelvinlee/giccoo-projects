@@ -39,14 +39,14 @@
       <transition name="page-zoom">
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
-            <div class="banner"><img src="./img/banner.jpg">
+            <div class="banner"><img src="//image.giccoo.com/projects/BMW/img/banner.jpg">
               <div class="video-box">
-                <mp4 v-if="videoTime" @play="playVideo" src="//image.giccoo.com/projects/test/bmw.mp4" poster="./img/poster.jpg" controls="true" playsinline="true"></mp4>
-                <div v-if="!videoTime" @click="showNote" class="video icon-play"><img src="./img/poster.jpg"></div>
-                <div class="video-title"><img src="./img/video-title.png"></div>
+                <mp4 v-if="videoTime" @play="playVideo" src="//image.giccoo.com/projects/test/bmw.mp4" poster="//image.giccoo.com/projects/BMW/img/poster.jpg" controls="true" playsinline="true"></mp4>
+                <div v-if="!videoTime" @click="showNote" class="video icon-play"><img src="//image.giccoo.com/projects/BMW/img/poster.jpg"></div>
+                <div class="video-title"><img src="//image.giccoo.com/projects/BMW/img/video-title.png"></div>
               </div>
             </div>
-            <div class="music"><img src="./img/music.png">
+            <div class="music"><img src="//image.giccoo.com/projects/BMW/img/music.png">
               <player v-if="videoTime" @play="playMusic" fill="#fff" src="//image.giccoo.com/projects/BMW/mp3/bgm.mp3"></player>
               <div v-if="!videoTime" @click="showNote" class="player pause">
                 <div class="icon-play pause">
@@ -60,10 +60,10 @@
                   </svg>
                 </div>
               </div>
-              <div class="gif"><img src="./img/music.gif"></div>
+              <div class="gif"><img src="//image.giccoo.com/projects/BMW/img/music.gif"></div>
             </div>
             <div class="register">
-              <div class="title"><img src="./img/title.png"></div>
+              <div class="title"><img src="//image.giccoo.com/projects/BMW/img/title.png"></div>
               <form-grounp v-bind:form="form" v-on:submit="submit" class="form">
                 <div class="form-group type-checkbox">
                   <div class="checkbox">
@@ -73,7 +73,7 @@
                       <div class="icon icon-file"></div>法律声明</a></label>
                 </div>
               </form-grounp>
-            </div><a href="http://www.bmw.com.cn/content/dam/bmw/marketCN/campaign/2019/1series-sedan/MSP.html" class="banner-bottom"><img src="./img/banner-bottom.jpg"></a>
+            </div><a href="http://www.bmw.com.cn/content/dam/bmw/marketCN/campaign/2019/1series-sedan/MSP.html" class="banner-bottom"><img src="//image.giccoo.com/projects/BMW/img/banner-bottom.jpg"></a>
           </div>
         </div>
       </transition>
