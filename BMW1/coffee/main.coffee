@@ -471,7 +471,7 @@ init = ->
 			h = TrueH*2*(2-TrueW*2/750+0.01)
 			# game = new Game({el: "game",h: h})
 			@.wy = CloudMusic.isInApp()
-			@.videoTime = new Date() >= new Date("2019-2-13 19:30")
+			@.videoTime = new Date() >= new Date("2019/2/13 19:30")
 			# @.videoTime = true
 			version = CloudMusic.getClientVersion().split(".")
 			
