@@ -167,201 +167,6 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"/bmw&wje/coffee/main.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/bmw&wje/js/main.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"/bmw&wje/coffee/UGC.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/bmw&wje/js/UGC.js",
-		"oF": 0,
-		"oS": 1,
-		"sC": 0,
-		"tS": 1
-		},
-	"/bmw&wje/css": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "/build/bmw&wje/css",
-		"oF": 0
-		},
-	"/bmw&wje/img/banner-bottom.jpg": {
-		"ft": 16384,
-		"iS": 40113,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/bmw&wje/img/banner-bottom.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/bmw&wje/img/banner.jpg": {
-		"ft": 16384,
-		"iS": 119440,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/bmw&wje/img/banner.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/bmw&wje/img/btn-submit.png": {
-		"ft": 32768,
-		"iS": 629,
-		"oA": 0,
-		"oAP": "/bmw&wje/img/btn-submit.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/bmw&wje/img/form-bg.jpg": {
-		"ft": 16384,
-		"iS": 8857,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/bmw&wje/img/form-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/bmw&wje/img/ico.jpg": {
-		"ft": 16384,
-		"iS": 11843,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/bmw&wje/img/ico.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/bmw&wje/img/icon-play.png": {
-		"ft": 32768,
-		"iS": 1889,
-		"oA": 0,
-		"oAP": "/bmw&wje/img/icon-play.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/bmw&wje/img/music.gif": {
-		"ft": 4194304,
-		"iS": 26457,
-		"oA": 0,
-		"oAP": "/bmw&wje/img/music.gif",
-		"oF": 0,
-		"opt": 0
-		},
-	"/bmw&wje/img/music.png": {
-		"ft": 32768,
-		"iS": 42786,
-		"oA": 0,
-		"oAP": "/bmw&wje/img/music.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/bmw&wje/img/poster.jpg": {
-		"ft": 16384,
-		"iS": 42392,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/bmw&wje/img/poster.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/bmw&wje/img/title.png": {
-		"ft": 32768,
-		"iS": 6498,
-		"oA": 0,
-		"oAP": "/bmw&wje/img/title.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/bmw&wje/img/video-title.png": {
-		"ft": 32768,
-		"iS": 4776,
-		"oA": 0,
-		"oAP": "/bmw&wje/img/video-title.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/bmw&wje/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/bmw&wje/index.html",
-		"oF": 0
-		},
-	"/bmw&wje/index.jade": {
-		"cB": 0,
-		"cOD": 1,
-		"ft": 512,
-		"oA": 0,
-		"oAP": "/bmw&wje/index.html",
-		"oF": 0,
-		"oS": 0
-		},
-	"/bmw&wje/js/main-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "/bmw&wje/js/main-min-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
-	"/bmw&wje/js/main.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "/bmw&wje/js/main-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
-	"/bmw&wje/sass/base.sass": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 2,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/bmw&wje/css/base.css",
-		"oF": 0,
-		"oS": 3,
-		"uL": 1
-		},
 	"/BMW/coffee/main.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -695,6 +500,13 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "/favicon.ico",
+		"oF": 0
+		},
+	"/for-wje/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/for-wje/index.html",
 		"oF": 0
 		},
 	"/friso": {
@@ -2167,6 +1979,17 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"/omega/img/ico.jpg": {
+		"ft": 16384,
+		"iS": 17299,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/omega/img/ico.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"/omega/index.html": {
