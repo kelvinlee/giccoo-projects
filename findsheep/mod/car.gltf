@@ -1,0 +1,195 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 2100,
+            "max" : [
+                1423
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 1424,
+            "max" : [
+                157.91470336914062,
+                332.527099609375,
+                -38.58354187011719
+            ],
+            "min" : [
+                -157.9315948486328,
+                -252.55679321289062,
+                -253.4091033935547
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 1424,
+            "max" : [
+                0.999981164932251,
+                0.9999999403953552,
+                1.0
+            ],
+            "min" : [
+                -0.9999810457229614,
+                -0.9999138116836548,
+                -0.9999987483024597
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 1424,
+            "max" : [
+                0.998046875,
+                0.998046875
+            ],
+            "min" : [
+                0.001953125,
+                0.012806475162506104
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 4200,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 17088,
+            "byteOffset" : 4200,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 17088,
+            "byteOffset" : 21288,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 11392,
+            "byteOffset" : 38376,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 49768,
+            "uri" : "car.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "car_Base_Color",
+            "uri" : "car_Base_Color.png"
+        },
+        {
+            "name" : "car_Mixed_AO",
+            "uri" : "car_Mixed_AO.png"
+        },
+        {
+            "name" : "car_Emissive",
+            "uri" : "car_Emissive.png"
+        }
+    ],
+    "materials" : [
+        {
+            "alphaMode" : "BLEND",
+            "emissiveTexture" : {
+                "index" : 2
+            },
+            "name" : "Material.002",
+            "occlusionTexture" : {
+                "index" : 1
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "car.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TEXCOORD_0" : 3
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "car.000",
+            "rotation" : [
+                0.7071068286895752,
+                0.0,
+                -0.0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.00346902827732265,
+                0.00346902827732265,
+                0.00346902827732265
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        }
+    ]
+}

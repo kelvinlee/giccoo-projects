@@ -1,0 +1,219 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 1440,
+            "max" : [
+                487
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 488,
+            "max" : [
+                139.16709899902344,
+                270.1401062011719,
+                -0.4304110109806061
+            ],
+            "min" : [
+                -139.16709899902344,
+                -214.0904998779297,
+                -74.66105651855469
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 488,
+            "max" : [
+                1.0,
+                0.9659108519554138,
+                0.9659108519554138
+            ],
+            "min" : [
+                -1.0,
+                -0.9659108519554138,
+                -0.9659108519554138
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 488,
+            "max" : [
+                0.998443603515625,
+                1.0,
+                0.9341728091239929,
+                1.0
+            ],
+            "min" : [
+                -0.9984468221664429,
+                -1.0,
+                -0.9341905117034912,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 488,
+            "max" : [
+                0.9949164986610413,
+                0.998046875
+            ],
+            "min" : [
+                0.001953125,
+                0.001953125
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 2880,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5856,
+            "byteOffset" : 2880,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5856,
+            "byteOffset" : 8736,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7808,
+            "byteOffset" : 14592,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3904,
+            "byteOffset" : 22400,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 26304,
+            "uri" : "car_wheel.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "wheel_Base_Color",
+            "uri" : "wheel_Base_Color.png"
+        },
+        {
+            "name" : "wheel_Mixed_AO",
+            "uri" : "wheel_Mixed_AO.png"
+        },
+        {
+            "name" : "wheel_Normal",
+            "uri" : "wheel_Normal.png"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "Material.003",
+            "normalTexture" : {
+                "index" : 2
+            },
+            "occlusionTexture" : {
+                "index" : 1
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "wheels",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "wheels",
+            "rotation" : [
+                0.7071068286895752,
+                0.0,
+                -0.0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.0034925921354442835,
+                0.0034925921354442835,
+                0.0034925921354442835
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        }
+    ]
+}
