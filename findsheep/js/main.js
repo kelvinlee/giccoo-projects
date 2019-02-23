@@ -51,10 +51,10 @@ function initAll () {
 var cannonDebugRenderer=new THREE.CannonDebugRenderer(scene,world)//===物理引擎辅助
 var meshes=[],bodies=[]
 function animate() {
-	//stats.begin()
+	stats.begin()
   requestAnimationFrame( animate );
   render();
-  //stats.end()
+  stats.end()
 }
 
 
@@ -244,17 +244,17 @@ function getStart(){
 	scene.add(rootPoint)
 
 	// ====环境光
-	var ambientLight=new THREE.AmbientLight(0xffffff,0)
+	var ambientLight=new THREE.AmbientLight(0xffffff,.7)
 	scene.add(ambientLight)
 
 	//====半球光
 	var hemlight = new THREE.HemisphereLight( 0xffffff, 0x38a4e8,1 );//0x38a4e8
 	hemlight.position.set( 0, 10, 0 );
-	scene.add( hemlight );
+	//scene.add( hemlight );
 
 	//====平行光
-	var dLight=new THREE.DirectionalLight(0xffffff,0)
-	dLight.position.set(0,30,0)
+	var dLight=new THREE.DirectionalLight(0xffffff,.5)
+	dLight.position.set(-30,30,-100)
 	//dLight.target=scene
 	dLight.castShadow=true
 	dLight.shadow.mapSize.width = 2048;  // default
@@ -266,9 +266,13 @@ function getStart(){
 	dLight.shadow.camera.bottom = -100;    // default
 	dLight.shadow.camera.top = 100; 
 
-	TweenMax.to(dLight.position,2,{x:100,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:1})//光源旋转
-	TweenMax.to(dLight.position,2,{z:100,repeat:100000,yoyo:true,ease:Sine.easeInOut})
-	//scene.add(dLight)
+	//TweenMax.to(dLight.position,2,{x:100,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:1})//光源旋转
+	// TweenMax.to(dLight.position,2,{z:100,repeat:100000,yoyo:true,ease:Sine.easeInOut})
+
+	TweenMax.to(dLight.position,4,{z:100,repeat:100000,yoyo:false,ease:Sine.easeInOut})
+	TweenMax.to(dLight,2,{intensity:0.3,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})
+	TweenMax.to(ambientLight,2,{intensity:1.2,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})
+	scene.add(dLight)
 
 
 	//====平面
@@ -276,7 +280,7 @@ function getStart(){
 	var planeMaterial=new THREE.MeshLambertMaterial({color:0xfff5d0})
 	var plane=new THREE.Mesh(planeGeo,planeMaterial)
 	plane.rotation.x=-Math.PI/2
-	plane.position.y=-30
+	plane.position.y=0
 	plane.receiveShadow=true
 	scene.add(plane)
 
@@ -305,8 +309,12 @@ function getStart(){
 	console.log(objs.car.material.flatShading)
 
 	objs.car_wheel.scale.set(.1,.1,.1)
+	objs.car_wheel.castShadow=true
+
 	TweenMax.to(objs.car.position,.2,{y:.8,repeat:10000,yoyo:true})
 	TweenMax.to(objs.car.scale,.2,{z:.095,repeat:10000,yoyo:true,delay:.3})
+
+	//TweenMax.to(objs.car.material.map.offset,2,{x:1,repeat:10000})
 
 
 	//var carmap=objs.car.material.map
