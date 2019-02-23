@@ -16,7 +16,7 @@ var carShape,carBody
 
 
 initAll()
-var composer
+
 function initAll () {
 	renderer.setClearColor(0xfff5d0)//设置背景颜色
 	renderer.setSize(window.innerWidth,window.innerHeight)//设置宽高
@@ -47,18 +47,22 @@ function initAll () {
 	//set_envMap()
 
 	// postprocessing
-				composer = new THREE.EffectComposer( renderer );
-				composer.addPass( new THREE.RenderPass( scene, camera ) );
-				var effect = new THREE.ShaderPass( THREE.DotScreenShader );
-				effect.uniforms[ 'scale' ].value = 4;
-				composer.addPass( effect );
-				var effect = new THREE.ShaderPass( THREE.RGBShiftShader );
-				effect.uniforms[ 'amount' ].value = 0.0015;
-				effect.renderToScreen = true;
-				composer.addPass( effect );
+				//composer = new THREE.EffectComposer( renderer );
+				//composer.addPass( new THREE.RenderPass( scene, camera ) );
+				// var effect = new THREE.ShaderPass( THREE.DotScreenShader );
+				// effect.uniforms[ 'scale' ].value = 4;
+				// composer.addPass( effect );
+				// var effect = new THREE.ShaderPass( THREE.RGBShiftShader );
+				// effect.uniforms[ 'amount' ].value = 0.0015;
+				// effect.renderToScreen = true;
+				// composer.addPass( effect );
+
+
+				
 				//
 
 }
+
 //============================每帧渲染：更新物理+画面
 
 var cannonDebugRenderer=new THREE.CannonDebugRenderer(scene,world)//===物理引擎辅助
@@ -66,8 +70,9 @@ var meshes=[],bodies=[]
 function animate() {
 	stats.begin()
   requestAnimationFrame( animate );
-  //render();
-  composer.render();
+  render();
+  //shaderUpdate()
+  //composer.render();
   stats.end()
 }
 
