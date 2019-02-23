@@ -297,9 +297,10 @@ function getStart(){
 	//objs.car.addAttribute( 'uv2', new THREE.BufferAttribute( uvs, 2 ) );
 	//console.log(objs.car)
 
-	var car_alpha=new THREE.TextureLoader().load("tex/car_Opacity.png",)
-	objs.car.material.alphaMap=car_alpha
-	objs.car.material.side=THREE.DoubleSide
+	//====透明
+	// var car_alpha=new THREE.TextureLoader().load("tex/car_Opacity.png",)
+	// objs.car.material.alphaMap=car_alpha
+	// objs.car.material.side=THREE.DoubleSide
 
 
 	objs.car.material.emissive=new THREE.Color( 0xffffff );//发光
