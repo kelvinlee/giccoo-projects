@@ -123,25 +123,11 @@
         {
             "name" : "wheel_Base_Color",
             "uri" : "wheel_Base_Color.png"
-        },
-        {
-            "name" : "wheel_Mixed_AO",
-            "uri" : "wheel_Mixed_AO.png"
-        },
-        {
-            "name" : "wheel_Normal",
-            "uri" : "wheel_Normal.png"
         }
     ],
     "materials" : [
         {
             "name" : "Material.003",
-            "normalTexture" : {
-                "index" : 2
-            },
-            "occlusionTexture" : {
-                "index" : 1
-            },
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0.800000011920929,
@@ -206,14 +192,6 @@
         {
             "sampler" : 0,
             "source" : 0
-        },
-        {
-            "sampler" : 0,
-            "source" : 1
-        },
-        {
-            "sampler" : 0,
-            "source" : 2
         }
     ]
 }

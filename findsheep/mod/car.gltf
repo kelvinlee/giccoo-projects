@@ -3,9 +3,9 @@
         {
             "bufferView" : 0,
             "componentType" : 5123,
-            "count" : 2100,
+            "count" : 1548,
             "max" : [
-                1423
+                861
             ],
             "min" : [
                 0
@@ -15,7 +15,7 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 1424,
+            "count" : 862,
             "max" : [
                 157.91470336914062,
                 332.527099609375,
@@ -31,23 +31,23 @@
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 1424,
+            "count" : 862,
             "max" : [
-                0.999981164932251,
-                0.9999999403953552,
+                0.9991455078125,
+                0.999603271484375,
                 1.0
             ],
             "min" : [
-                -0.9999810457229614,
-                -0.9999138116836548,
-                -0.9999987483024597
+                -0.9991455078125,
+                -0.999603271484375,
+                -0.999969482421875
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 3,
             "componentType" : 5126,
-            "count" : 1424,
+            "count" : 862,
             "max" : [
                 0.998046875,
                 0.998046875
@@ -66,32 +66,32 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 4200,
+            "byteLength" : 3096,
             "byteOffset" : 0,
             "target" : 34963
         },
         {
             "buffer" : 0,
-            "byteLength" : 17088,
-            "byteOffset" : 4200,
+            "byteLength" : 10344,
+            "byteOffset" : 3096,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 17088,
-            "byteOffset" : 21288,
+            "byteLength" : 10344,
+            "byteOffset" : 13440,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 11392,
-            "byteOffset" : 38376,
+            "byteLength" : 6896,
+            "byteOffset" : 23784,
             "target" : 34962
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 49768,
+            "byteLength" : 30680,
             "uri" : "car.bin"
         }
     ],
@@ -101,24 +101,16 @@
             "uri" : "car_Base_Color.png"
         },
         {
-            "name" : "car_Mixed_AO",
-            "uri" : "car_Mixed_AO.png"
-        },
-        {
             "name" : "car_Emissive",
             "uri" : "car_Emissive.png"
         }
     ],
     "materials" : [
         {
-            "alphaMode" : "BLEND",
             "emissiveTexture" : {
-                "index" : 2
-            },
-            "name" : "Material.002",
-            "occlusionTexture" : {
                 "index" : 1
             },
+            "name" : "Material.004",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0.800000011920929,
@@ -135,7 +127,7 @@
     ],
     "meshes" : [
         {
-            "name" : "car.001",
+            "name" : "car.002",
             "primitives" : [
                 {
                     "attributes" : {
@@ -152,7 +144,7 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "car.000",
+            "name" : "car.032",
             "rotation" : [
                 0.7071068286895752,
                 0.0,
@@ -160,9 +152,9 @@
                 0.7071067094802856
             ],
             "scale" : [
-                0.00346902827732265,
-                0.00346902827732265,
-                0.00346902827732265
+                0.003511993680149317,
+                0.003511993680149317,
+                0.003511993680149317
             ]
         }
     ],
@@ -186,10 +178,6 @@
         {
             "sampler" : 0,
             "source" : 1
-        },
-        {
-            "sampler" : 0,
-            "source" : 2
         }
     ]
 }

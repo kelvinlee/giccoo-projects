@@ -244,7 +244,7 @@ function getStart(){
 	scene.add(rootPoint)
 
 	// ====环境光
-	var ambientLight=new THREE.AmbientLight(0xffffff,.7)
+	var ambientLight=new THREE.AmbientLight(0xffffff,.1)
 	scene.add(ambientLight)
 
 	//====半球光
@@ -253,7 +253,7 @@ function getStart(){
 	//scene.add( hemlight );
 
 	//====平行光
-	var dLight=new THREE.DirectionalLight(0xffffff,.5)
+	var dLight=new THREE.DirectionalLight(0xffffff,.1)
 	dLight.position.set(-30,30,-100)
 	//dLight.target=scene
 	dLight.castShadow=true
@@ -304,7 +304,7 @@ function getStart(){
 
 
 	objs.car.material.emissive=new THREE.Color( 0xffffff );//发光
-	TweenMax.to(objs.car.material,1,{emissiveIntensity:0,repeat:100000})
+	//TweenMax.to(objs.car.material,1,{emissiveIntensity:0,repeat:100000})
 	//objs.car.material.flatShading=true
 
 	console.log(objs.car.material.flatShading)
