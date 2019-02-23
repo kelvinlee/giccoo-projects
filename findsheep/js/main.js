@@ -257,8 +257,8 @@ function getStart(){
 	dLight.position.set(-30,30,-100)
 	//dLight.target=scene
 	dLight.castShadow=true
-	dLight.shadow.mapSize.width = 2048;  // default
-	dLight.shadow.mapSize.height = 2048; // default
+	dLight.shadow.mapSize.width = 1024;  // default
+	dLight.shadow.mapSize.height = 1024; // default
 	dLight.shadow.camera.near = 0.5;    // default
 	dLight.shadow.camera.far = 1000;     // default
 	dLight.shadow.camera.left = -100;    // default
@@ -269,9 +269,9 @@ function getStart(){
 	//TweenMax.to(dLight.position,2,{x:100,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:1})//光源旋转
 	// TweenMax.to(dLight.position,2,{z:100,repeat:100000,yoyo:true,ease:Sine.easeInOut})
 
-	TweenMax.to(dLight.position,4,{z:100,repeat:100000,yoyo:false,ease:Sine.easeInOut})
-	TweenMax.to(dLight,2,{intensity:0.3,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})
-	TweenMax.to(ambientLight,2,{intensity:1.2,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})
+	// TweenMax.to(dLight.position,4,{z:100,repeat:100000,yoyo:false,ease:Sine.easeInOut})
+	// TweenMax.to(dLight,2,{intensity:0.3,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})
+	// TweenMax.to(ambientLight,2,{intensity:1.2,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})
 	scene.add(dLight)
 
 
