@@ -18,7 +18,7 @@ var carShape,carBody
 initAll()
 
 function initAll () {
-	renderer.setClearColor(0x12b9c0)//设置背景颜色
+	renderer.setClearColor(0x67bbde)//设置背景颜色
 	renderer.setSize(window.innerWidth,window.innerHeight)//设置宽高
 	renderer.shadowMap.type=THREE.BasicShadowMap//.BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
 	renderer.setPixelRatio(2)
@@ -36,7 +36,7 @@ function initAll () {
 	loadingMods('mod/car.gltf',["car"])//模型加载
 	loadingMods('mod/car_wheel.gltf',["car_wheel"])//模型加载
 	loadingMods('mod/island.gltf',["island"],"addScene")
-	loadingMods('mod/water.gltf',["water"],"addScene")
+	loadingMods('mod/waterfall.gltf',["waterfall"])
 	// loadingMods('mod/foot.glb',["foot"])//模型加载
 	// loadingMods('mod/gift1.glb',["gift1"])
 	// loadingMods('mod/gift2.glb',["gift2"])
@@ -251,10 +251,10 @@ function ModLoaded(){//加载模型完成
 //===========================开始
 
 		var params = {
-			color: '#12b9c0',//'#12b9c0'
-			scale: .5,
-			flowX: 1,
-			flowY: -3
+			color: '#67bbde',//'#12b9c0'
+			scale: .8,
+			flowX: -1,
+			flowY: -.5
 		};
 		var carC=new THREE.Group()
 
@@ -276,17 +276,17 @@ function getStart(){
 	rootPoint=new THREE.Mesh(cubeGeo,cubeMaterial)
 	scene.add(rootPoint)
 
-	// ====环境光
+	//====环境光
 	var ambientLight=new THREE.AmbientLight(0xffffff,.1)
 	scene.add(ambientLight)
 
 	//====半球光
-	var hemlight = new THREE.HemisphereLight( 0xffffff, 0x38a4e8,1 );//0x38a4e8
+	var hemlight = new THREE.HemisphereLight( 0xffffff, 0x0088ff,1 );//0x38a4e8
 	hemlight.position.set( 0, 10, 0 );
-	//scene.add( hemlight );
+	scene.add( hemlight );
 
 	//====平行光
-	var dLight=new THREE.DirectionalLight(0xffffff,1.1)
+	var dLight=new THREE.DirectionalLight(0xffa70d,1)
 	dLight.position.set(-30,30,-100)
 	//dLight.target=scene
 	dLight.castShadow=true
@@ -299,8 +299,8 @@ function getStart(){
 	dLight.shadow.camera.bottom = -100;    // default
 	dLight.shadow.camera.top = 100; 
 
-	TweenMax.to(dLight.position,2,{x:100,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:1})//光源旋转
-	TweenMax.to(dLight.position,2,{z:100,repeat:100000,yoyo:true,ease:Sine.easeInOut})
+	TweenMax.to(dLight.position,8,{x:100,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:4})//光源旋转
+	TweenMax.to(dLight.position,8,{z:100,repeat:100000,yoyo:true,ease:Sine.easeInOut})
 
 	// TweenMax.to(dLight.position,4,{z:100,repeat:100000,yoyo:false,ease:Sine.easeInOut})
 	// TweenMax.to(dLight,2,{intensity:0.3,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})
@@ -363,10 +363,9 @@ function getStart(){
 	objs.island.receiveShadow=true
 
 	//====水
-	objs.water.position.y=1
-	objs.water.scale.set(1.1,1.1,1.1)
-	objs.water.castShadow=true
-	var water_alpha=new THREE.TextureLoader().load("tex/water_Opacity.png",)
+	objs.waterfall.position.y=1
+	objs.waterfall.scale.set(1.1,1.1,1.1)
+	//var water_alpha=new THREE.TextureLoader().load("tex/water_Opacity.png",)
 
 	//objs.water.material.alphaMap=water_alpha
 	//objs.water.material.side=THREE.DoubleSide
@@ -374,32 +373,26 @@ function getStart(){
 	// objs.water.material.opacity=0.5
 	// TweenMax.to(objs.water.material.map.offset,5,{y:-1,repeat:10000,ease:Linear.easeNone})
 	// TweenMax.to(objs.water.material.map.offset,2,{x:.1,repeat:10000,yoyo:true,ease:Sine.easeInOut})
-	console.log("99999",objs.water)
-	scene.remove(objs.water)
+	console.log("99999",objs.waterfall)
+	//scene.remove(objs.water)
 
-	// water
-			var waterGeometry = objs.water.geometry
-			water = new THREE.Water( waterGeometry, {
+	// 瀑布
+			var waterfallGeometry = objs.waterfall.geometry
+			waterfall = new THREE.Water( waterfallGeometry, {
 				color: params.color,
 				scale: params.scale,
 				flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
-				textureWidth: 2048,
-				textureHeight: 2048,
+				textureWidth: 1024,
+				textureHeight: 1024,
 				reflectivity:0.02,
-				//flowMap:new THREE.TextureLoader().load( 'mod/water_Base_Color.png' )
+				//flowMap:new THREE.TextureLoader().load( 'mod/waterfall_Base_Color.png' )
 			} );
-			//water.position.y = 1;
-			water.scale.set(1.1,1.1,1.1)
-			//water.rotation.x = Math.PI *  -0.5;
-			//scene.add( water );
-			//water.material.opacity=.5
-			console.log(water)
+			//waterfall.position.y = 1;
+			waterfall.scale.set(1.1,1.1,1.1)
+			//waterfall.rotation.x = Math.PI *  -0.5;
+			scene.add( waterfall );
+	// 		//waterfall.material.opacity=.5
 
-	// water.castShadow=true
-	// water.receiveShadow=true
-
-	water.material.transparent=true
-	water.material.opacity=0.5
 
 	// water
 			var water2Geometry = new THREE.PlaneBufferGeometry( 2000, 2000 );
@@ -414,8 +407,8 @@ function getStart(){
 			water2.rotation.x = Math.PI * - 0.5;
 			scene.add( water2 );
 
-	water.castShadow=true
-	water.receiveShadow=true
+	// water.castShadow=true
+	// water.receiveShadow=true
 
 	//var uvs = objs.car.geometry.attributes.uv.array;
 	//objs.car.addAttribute( 'uv2', new THREE.BufferAttribute( uvs, 2 ) );
