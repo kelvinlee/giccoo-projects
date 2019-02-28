@@ -1,0 +1,198 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 489,
+            "max" : [
+                378
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 379,
+            "max" : [
+                13.294520378112793,
+                39.47929000854492,
+                168.6300048828125
+            ],
+            "min" : [
+                -207.6114959716797,
+                -101.10479736328125,
+                -110.56490325927734
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 379,
+            "max" : [
+                0.95569908618927,
+                1.0,
+                0.9996416568756104
+            ],
+            "min" : [
+                -0.9998853802680969,
+                -1.0,
+                -0.9997674226760864
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 379,
+            "max" : [
+                0.9270235300064087,
+                0.9998779296875,
+                0.998246431350708,
+                1.0
+            ],
+            "min" : [
+                -0.9616608619689941,
+                -0.9998650550842285,
+                -0.9994395971298218,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 379,
+            "max" : [
+                0.8028327822685242,
+                0.998046875
+            ],
+            "min" : [
+                0.001953125,
+                0.001953125
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 978,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4548,
+            "byteOffset" : 980,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4548,
+            "byteOffset" : 5528,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6064,
+            "byteOffset" : 10076,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3032,
+            "byteOffset" : 16140,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 19172,
+            "uri" : "water.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "water_Base_Color",
+            "uri" : "water_Base_Color.png"
+        }
+    ],
+    "materials" : [
+        {
+            "alphaMode" : "MASK",
+            "name" : "Material.001",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    1.0
+                ],
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "\u6c34:1",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "\u6c34:1",
+            "rotation" : [
+                0.7071068286895752,
+                0.0,
+                0.0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.00503951171413064,
+                0.00503951171413064,
+                0.00503951171413064
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}

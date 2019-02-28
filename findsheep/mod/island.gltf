@@ -1,0 +1,154 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 2814,
+            "max" : [
+                656
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 657,
+            "max" : [
+                165.98699951171875,
+                179.13670349121094,
+                172.49729919433594
+            ],
+            "min" : [
+                -209.489501953125,
+                -208.8551025390625,
+                -189.66920471191406
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 657,
+            "max" : [
+                0.9258705377578735,
+                0.9866328835487366,
+                0.9971312880516052
+            ],
+            "min" : [
+                -0.9912717342376709,
+                -0.9702139496803284,
+                -0.99993896484375
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 657,
+            "max" : [
+                0.806957483291626,
+                0.998046875
+            ],
+            "min" : [
+                0.001953125,
+                0.001953125
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 5628,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7884,
+            "byteOffset" : 5628,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7884,
+            "byteOffset" : 13512,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5256,
+            "byteOffset" : 21396,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 26652,
+            "uri" : "island.bin"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "\u6750\u8d28:2",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "\u8def\u57fa",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TEXCOORD_0" : 3
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "\u8def\u57fa",
+            "rotation" : [
+                0.7071068286895752,
+                0.0,
+                -0.0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.005066283978521824,
+                0.005066283978521824,
+                0.005066283978521824
+            ]
+        }
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ]
+}

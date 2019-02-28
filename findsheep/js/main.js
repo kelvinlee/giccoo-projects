@@ -18,7 +18,7 @@ var carShape,carBody
 initAll()
 
 function initAll () {
-	renderer.setClearColor(0xfff5d0)//设置背景颜色
+	renderer.setClearColor(0x12b9c0)//设置背景颜色
 	renderer.setSize(window.innerWidth,window.innerHeight)//设置宽高
 	renderer.shadowMap.type=THREE.BasicShadowMap//.BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
 	renderer.setPixelRatio(2)
@@ -33,8 +33,10 @@ function initAll () {
 	
 
 	//loadingMods('mod/car.glb',["car"],"addScene")//模型加载
-	loadingMods('mod/car.gltf',["car"],"addScene")//模型加载
-	loadingMods('mod/car_wheel.gltf',["car_wheel"],"addScene")//模型加载
+	loadingMods('mod/car.gltf',["car"])//模型加载
+	loadingMods('mod/car_wheel.gltf',["car_wheel"])//模型加载
+	loadingMods('mod/island.gltf',["island"],"addScene")
+	loadingMods('mod/water.gltf',["water"],"addScene")
 	// loadingMods('mod/foot.glb',["foot"])//模型加载
 	// loadingMods('mod/gift1.glb',["gift1"])
 	// loadingMods('mod/gift2.glb',["gift2"])
@@ -44,6 +46,8 @@ function initAll () {
 	//render()
 	//animate()//===动画
 	clickFunc()
+	
+	//animateDof()
 	//set_envMap()
 
 	// postprocessing
@@ -71,6 +75,7 @@ function animate() {
 	stats.begin()
   requestAnimationFrame( animate );
   render();
+  //renderDof()
   //shaderUpdate()
   //composer.render();
   stats.end()
@@ -245,6 +250,14 @@ function ModLoaded(){//加载模型完成
 
 //===========================开始
 
+		var params = {
+			color: '#12b9c0',//'#12b9c0'
+			scale: .5,
+			flowX: 1,
+			flowY: -3
+		};
+		var carC=new THREE.Group()
+
 function getStart(){
 	console.log("getStart!")
 	// //====网格
@@ -273,7 +286,7 @@ function getStart(){
 	//scene.add( hemlight );
 
 	//====平行光
-	var dLight=new THREE.DirectionalLight(0xffffff,.1)
+	var dLight=new THREE.DirectionalLight(0xffffff,1.1)
 	dLight.position.set(-30,30,-100)
 	//dLight.target=scene
 	dLight.castShadow=true
@@ -286,8 +299,8 @@ function getStart(){
 	dLight.shadow.camera.bottom = -100;    // default
 	dLight.shadow.camera.top = 100; 
 
-	//TweenMax.to(dLight.position,2,{x:100,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:1})//光源旋转
-	// TweenMax.to(dLight.position,2,{z:100,repeat:100000,yoyo:true,ease:Sine.easeInOut})
+	TweenMax.to(dLight.position,2,{x:100,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:1})//光源旋转
+	TweenMax.to(dLight.position,2,{z:100,repeat:100000,yoyo:true,ease:Sine.easeInOut})
 
 	// TweenMax.to(dLight.position,4,{z:100,repeat:100000,yoyo:false,ease:Sine.easeInOut})
 	// TweenMax.to(dLight,2,{intensity:0.3,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})
@@ -296,27 +309,30 @@ function getStart(){
 
 
 	//====平面
-	var planeGeo=new THREE.PlaneGeometry(600,600,60)
-	var planeMaterial=new THREE.MeshLambertMaterial({color:0xfff5d0})
-	var plane=new THREE.Mesh(planeGeo,planeMaterial)
-	plane.rotation.x=-Math.PI/2
-	plane.position.y=0
-	plane.receiveShadow=true
-	scene.add(plane)
+	// var planeGeo=new THREE.PlaneGeometry(600,600,60)
+	// var planeMaterial=new THREE.MeshLambertMaterial({color:0xfff5d0})
+	// var plane=new THREE.Mesh(planeGeo,planeMaterial)
+	// plane.rotation.x=-Math.PI/2
+	// plane.position.y=0
+	// plane.receiveShadow=true
+	// scene.add(plane)
 
 	//====摄像机
 	camera.position.set(0,20,80)
 	camera.lookAt(scene.position)
 
-	//====猪位置
-	objs.car.position.y=0
+	//====车位置
+	objs.car.position.set(0,0,0)
 	objs.car.scale.set(.1,.1,.1)
 	objs.car.castShadow=true
+	objs.car.receiveShadow=true
 
-	//var uvs = objs.car.geometry.attributes.uv.array;
-	//objs.car.addAttribute( 'uv2', new THREE.BufferAttribute( uvs, 2 ) );
-	//console.log(objs.car)
+	objs.car_wheel.scale.set(.1,.1,.1)
+	objs.car_wheel.castShadow=true
 
+	carC.add(objs.car,objs.car_wheel)
+	scene.add(carC)
+	carC.position.set(-150,-20,100)
 	//====透明
 	// var car_alpha=new THREE.TextureLoader().load("tex/car_Opacity.png",)
 	// objs.car.material.alphaMap=car_alpha
@@ -327,8 +343,6 @@ function getStart(){
 	//TweenMax.to(objs.car.material,1,{emissiveIntensity:0,repeat:100000})
 	//objs.car.material.flatShading=true
 
-	console.log(objs.car.material.flatShading)
-
 	objs.car_wheel.scale.set(.1,.1,.1)
 	objs.car_wheel.castShadow=true
 
@@ -336,6 +350,78 @@ function getStart(){
 	TweenMax.to(objs.car.scale,.2,{z:.095,repeat:10000,yoyo:true,delay:.3})
 
 	//TweenMax.to(objs.car.material.map.offset,2,{x:1,repeat:10000})
+
+	//====岛
+	objs.island.position.y=0
+	objs.island.scale.set(1.1,1.1,1.1)
+	objs.island.castShadow=true
+
+	//objs.island.material=new THREE.MeshToonMaterial()
+	objs.island.material.flatShading=true
+	objs.island.material.clipShadows=true
+	objs.island.castShadow=true
+	objs.island.receiveShadow=true
+
+	//====水
+	objs.water.position.y=1
+	objs.water.scale.set(1.1,1.1,1.1)
+	objs.water.castShadow=true
+	var water_alpha=new THREE.TextureLoader().load("tex/water_Opacity.png",)
+
+	//objs.water.material.alphaMap=water_alpha
+	//objs.water.material.side=THREE.DoubleSide
+	// objs.water.material.transparent=true
+	// objs.water.material.opacity=0.5
+	// TweenMax.to(objs.water.material.map.offset,5,{y:-1,repeat:10000,ease:Linear.easeNone})
+	// TweenMax.to(objs.water.material.map.offset,2,{x:.1,repeat:10000,yoyo:true,ease:Sine.easeInOut})
+	console.log("99999",objs.water)
+	scene.remove(objs.water)
+
+	// water
+			var waterGeometry = objs.water.geometry
+			water = new THREE.Water( waterGeometry, {
+				color: params.color,
+				scale: params.scale,
+				flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
+				textureWidth: 2048,
+				textureHeight: 2048,
+				reflectivity:0.02,
+				//flowMap:new THREE.TextureLoader().load( 'mod/water_Base_Color.png' )
+			} );
+			//water.position.y = 1;
+			water.scale.set(1.1,1.1,1.1)
+			//water.rotation.x = Math.PI *  -0.5;
+			//scene.add( water );
+			//water.material.opacity=.5
+			console.log(water)
+
+	// water.castShadow=true
+	// water.receiveShadow=true
+
+	water.material.transparent=true
+	water.material.opacity=0.5
+
+	// water
+			var water2Geometry = new THREE.PlaneBufferGeometry( 2000, 2000 );
+			water2 = new THREE.Water( water2Geometry, {
+				color: params.color,
+				scale: params.scale,
+				flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
+				textureWidth: 1024,
+				textureHeight: 1024
+			} );
+			water2.position.y = 1;
+			water2.rotation.x = Math.PI * - 0.5;
+			scene.add( water2 );
+
+	water.castShadow=true
+	water.receiveShadow=true
+
+	//var uvs = objs.car.geometry.attributes.uv.array;
+	//objs.car.addAttribute( 'uv2', new THREE.BufferAttribute( uvs, 2 ) );
+	//console.log(objs.car)
+
+
 
 
 	//var carmap=objs.car.material.map
