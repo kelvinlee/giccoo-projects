@@ -284,9 +284,10 @@ function getStart(){
 
 
 
-	TweenMax.to(dLight.position,4,{x:500,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})//光源旋转
-	TweenMax.to(dLight.position,4,{z:500,repeat:100000,yoyo:true,ease:Sine.easeInOut})
-	TweenMax.to(dLight.position,8,{y:500,repeat:100000,yoyo:true,ease:Sine.easeInOut})
+	TweenMax.to(dLight.position,8,{x:500,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:4})//光源旋转
+	TweenMax.to(dLight.position,8,{z:500,repeat:100000,yoyo:true,ease:Sine.easeInOut})
+	TweenMax.to(dLight.position,16,{y:500,repeat:100000,yoyo:true,ease:Sine.easeInOut})
+
 
 	var dlhelper=new THREE.CameraHelper(dLight.shadow.camera)
 
@@ -325,7 +326,9 @@ function getStart(){
 
 	carC.add(objs.car,objs.car_wheel)
 	scene.add(carC)
-	carC.position.set(-150,-20,100)
+	carC.position.set(-60,5,130)
+	carC.scale.set(.5,.5,.5)
+	carC.rotation.y=Math.PI*-.5
 	//====透明
 	// var car_alpha=new THREE.TextureLoader().load("tex/car_Opacity.png",)
 	// objs.car.material.alphaMap=car_alpha

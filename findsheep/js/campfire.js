@@ -11,6 +11,8 @@ function setFire(){
 	fire.add(objs.fire)
 	fire.position.set(-60,4,160)
 
+	fire.scale.set(.5,.5,.5)
+
 	for (var i = 0; i <40; i++) {
 		addAfire()
 	};
