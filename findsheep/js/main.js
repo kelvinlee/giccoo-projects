@@ -365,8 +365,8 @@ function getStart(){
 				color: params.color,
 				scale: params.scale,
 				flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
-				textureWidth: 1024,
-				textureHeight: 1024,
+				textureWidth: 128,
+				textureHeight: 128,
 				reflectivity:0.02,
 				//flowMap:new THREE.TextureLoader().load( 'mod/waterfall_Base_Color.png' )
 			} );
@@ -378,24 +378,24 @@ function getStart(){
 
 
 	// water
-			var water2Geometry = new THREE.PlaneBufferGeometry( 2000, 2000 );
+			var water2Geometry = new THREE.PlaneBufferGeometry( 1500, 1500 );
 			water2 = new THREE.Water( water2Geometry, {
 				color: params.color,
 				scale: params.scale,
 				flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
-				textureWidth: 1024,
-				textureHeight: 1024
+				textureWidth: 512,
+				textureHeight: 512
 			} );
 			water2.position.y = 1;
 			water2.rotation.x = Math.PI * - 0.5;
 
-			var water3Geometry = new THREE.PlaneBufferGeometry( 2000, 2000 );
+			var water3Geometry = new THREE.PlaneBufferGeometry( 1500, 1500 );
 			water3 = new THREE.Water( water3Geometry, {
 				color: params.color,
 				scale: params.scale,
 				flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
-				textureWidth: 1024,
-				textureHeight: 1024
+				textureWidth: 256,
+				textureHeight: 256
 			} );
 			water3.position.y = .5;
 			water3.rotation.x = Math.PI *  0.5;

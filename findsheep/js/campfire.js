@@ -1,8 +1,8 @@
 var fire=new THREE.Group()
 function setFire(){
 	objs.fire.scale.set(.1,.1,.1)
-	objs.fire.children[0].castShadow=true
-	objs.fire.children[0].receiveShadow=true
+	// objs.fire.children[0].castShadow=true
+	// objs.fire.children[0].receiveShadow=true
 	objs.fire.children[1].castShadow=true
 	objs.fire.children[1].receiveShadow=true
 	objs.fire.children[2].castShadow=true
