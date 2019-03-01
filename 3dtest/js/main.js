@@ -33,13 +33,13 @@ function initAll () {
 	
 
 	//loadingMods('mod/car.glb',["car"],"addScene")//模型加载
-	loadingMods('mod/car.gltf',["car"])//模型加载
-	loadingMods('mod/car_wheel.gltf',["car_wheel"])//模型加载
-	loadingMods('mod/island.gltf',["island"],"addScene")
-	loadingMods('mod/waterfall.gltf',["waterfall"])
-	loadingMods('mod/fire.gltf',["fire"],"addScene")
+	// loadingMods('mod/car.gltf',["car"])//模型加载
+	// loadingMods('mod/car_wheel.gltf',["car_wheel"])//模型加载
+	// loadingMods('mod/island.gltf',["island"],"addScene")
+	// loadingMods('mod/waterfall.gltf',["waterfall"])
+	// loadingMods('mod/fire.gltf',["fire"],"addScene")
 
-	loadingMods('mod/island.gltf',["island"],"addScene")
+	loadingMods('mod/test.gltf',["island"],"addScene")
 	// loadingMods('mod/foot.glb',["foot"])//模型加载
 	// loadingMods('mod/gift1.glb',["gift1"])
 	// loadingMods('mod/gift2.glb',["gift2"])
@@ -263,13 +263,13 @@ function ModLoaded(){//加载模型完成
 
 function getStart(){
 	console.log("getStart!")
-	// //====网格
-	// var grid=new THREE.GridHelper(50,10,0xffff00,0x888888)//网格辅助(格子尺寸，格子细分数，中线颜色，网格线颜色)
-	// scene.add(grid)
+	//====网格
+	var grid=new THREE.GridHelper(50,10,0xffff00,0x888888)//网格辅助(格子尺寸，格子细分数，中线颜色，网格线颜色)
+	scene.add(grid)
 
-	// //====坐标轴
-	// var axes = new THREE.AxesHelper(10);//轴辅助
-	// scene.add(axes)
+	//====坐标轴
+	var axes = new THREE.AxesHelper(10);//轴辅助
+	scene.add(axes)
 
 	//scene.fog = new THREE.Fog(0xfff5d0, 80, 180);
 
@@ -324,104 +324,105 @@ function getStart(){
 	camera.position.set(0,20,80)
 	camera.lookAt(scene.position)
 
-	//====篝火
-	objs.fire.position.set(-60,4,160)
-	objs.fire.scale.set(.1,.1,.1)
-	objs.fire.castShadow=true
-	objs.fire.receiveShadow=true
+	// //====篝火
+	// objs.fire.position.set(-60,4,160)
+	// objs.fire.scale.set(.1,.1,.1)
+	// objs.fire.castShadow=true
+	// objs.fire.receiveShadow=true
 
-	//====车位置
-	objs.car.position.set(0,0,0)
-	objs.car.scale.set(.1,.1,.1)
-	objs.car.castShadow=true
-	objs.car.receiveShadow=true
+	// //====车位置
+	// objs.car.position.set(0,0,0)
+	// objs.car.scale.set(.1,.1,.1)
+	// objs.car.castShadow=true
+	// objs.car.receiveShadow=true
 
-	objs.car_wheel.scale.set(.1,.1,.1)
-	objs.car_wheel.castShadow=true
+	// objs.car_wheel.scale.set(.1,.1,.1)
+	// objs.car_wheel.castShadow=true
 
-	carC.add(objs.car,objs.car_wheel)
-	scene.add(carC)
-	carC.position.set(-150,-20,100)
-	//====透明
-	// var car_alpha=new THREE.TextureLoader().load("tex/car_Opacity.png",)
-	// objs.car.material.alphaMap=car_alpha
-	// objs.car.material.side=THREE.DoubleSide
+	// carC.add(objs.car,objs.car_wheel)
+	// scene.add(carC)
+	// carC.position.set(-150,-20,100)
+	// //====透明
+	// // var car_alpha=new THREE.TextureLoader().load("tex/car_Opacity.png",)
+	// // objs.car.material.alphaMap=car_alpha
+	// // objs.car.material.side=THREE.DoubleSide
 
 
-	objs.car.material.emissive=new THREE.Color( 0xffffff );//发光
-	//TweenMax.to(objs.car.material,1,{emissiveIntensity:0,repeat:100000})
-	//objs.car.material.flatShading=true
+	// objs.car.material.emissive=new THREE.Color( 0xffffff );//发光
+	// //TweenMax.to(objs.car.material,1,{emissiveIntensity:0,repeat:100000})
+	// //objs.car.material.flatShading=true
 
-	objs.car_wheel.scale.set(.1,.1,.1)
-	objs.car_wheel.castShadow=true
+	// objs.car_wheel.scale.set(.1,.1,.1)
+	// objs.car_wheel.castShadow=true
 
-	TweenMax.to(objs.car.position,.2,{y:.8,repeat:10000,yoyo:true})
-	TweenMax.to(objs.car.scale,.2,{z:.095,repeat:10000,yoyo:true,delay:.3})
+	// TweenMax.to(objs.car.position,.2,{y:.8,repeat:10000,yoyo:true})
+	// TweenMax.to(objs.car.scale,.2,{z:.095,repeat:10000,yoyo:true,delay:.3})
 
-	//TweenMax.to(objs.car.material.map.offset,2,{x:1,repeat:10000})
+	// //TweenMax.to(objs.car.material.map.offset,2,{x:1,repeat:10000})
 
-	//====岛
+	// //====岛
 	objs.island.position.y=0
-	objs.island.scale.set(1.1,1.1,1.1)
-	objs.island.castShadow=true
-
-	//objs.island.material=new THREE.MeshToonMaterial()
-	objs.island.material.flatShading=true
-	objs.island.material.clipShadows=true
+	objs.island.scale.set(1,1,1)
 	objs.island.castShadow=true
 	objs.island.receiveShadow=true
 
-	//====水
-	objs.waterfall.position.y=1
-	objs.waterfall.scale.set(1.1,1.1,1.1)
-	//var water_alpha=new THREE.TextureLoader().load("tex/water_Opacity.png",)
+	// //objs.island.material=new THREE.MeshToonMaterial()
+	// objs.island.material.flatShading=true
+	// objs.island.material.clipShadows=true
+	// objs.island.castShadow=true
+	// objs.island.receiveShadow=true
 
-	//objs.water.material.alphaMap=water_alpha
-	//objs.water.material.side=THREE.DoubleSide
-	// objs.water.material.transparent=true
-	// objs.water.material.opacity=0.5
-	// TweenMax.to(objs.water.material.map.offset,5,{y:-1,repeat:10000,ease:Linear.easeNone})
-	// TweenMax.to(objs.water.material.map.offset,2,{x:.1,repeat:10000,yoyo:true,ease:Sine.easeInOut})
-	console.log("99999",objs.waterfall)
-	//scene.remove(objs.water)
+	// //====水
+	// objs.waterfall.position.y=1
+	// objs.waterfall.scale.set(1.1,1.1,1.1)
+	// //var water_alpha=new THREE.TextureLoader().load("tex/water_Opacity.png",)
 
-	// 瀑布
-			var waterfallGeometry = objs.waterfall.geometry
-			waterfall = new THREE.Water( waterfallGeometry, {
-				color: params.color,
-				scale: params.scale,
-				flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
-				textureWidth: 1024,
-				textureHeight: 1024,
-				reflectivity:0.02,
-				//flowMap:new THREE.TextureLoader().load( 'mod/waterfall_Base_Color.png' )
-			} );
-			//waterfall.position.y = 1;
-			waterfall.scale.set(1.1,1.1,1.1)
-			//waterfall.rotation.x = Math.PI *  -0.5;
-			scene.add( waterfall );
-	// 		//waterfall.material.opacity=.5
+	// //objs.water.material.alphaMap=water_alpha
+	// //objs.water.material.side=THREE.DoubleSide
+	// // objs.water.material.transparent=true
+	// // objs.water.material.opacity=0.5
+	// // TweenMax.to(objs.water.material.map.offset,5,{y:-1,repeat:10000,ease:Linear.easeNone})
+	// // TweenMax.to(objs.water.material.map.offset,2,{x:.1,repeat:10000,yoyo:true,ease:Sine.easeInOut})
+	// console.log("99999",objs.waterfall)
+	// //scene.remove(objs.water)
+
+	// // 瀑布
+	// 		var waterfallGeometry = objs.waterfall.geometry
+	// 		waterfall = new THREE.Water( waterfallGeometry, {
+	// 			color: params.color,
+	// 			scale: params.scale,
+	// 			flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
+	// 			textureWidth: 1024,
+	// 			textureHeight: 1024,
+	// 			reflectivity:0.02,
+	// 			//flowMap:new THREE.TextureLoader().load( 'mod/waterfall_Base_Color.png' )
+	// 		} );
+	// 		//waterfall.position.y = 1;
+	// 		waterfall.scale.set(1.1,1.1,1.1)
+	// 		//waterfall.rotation.x = Math.PI *  -0.5;
+	// 		scene.add( waterfall );
+	// // 		//waterfall.material.opacity=.5
 
 
-	// water
-			var water2Geometry = new THREE.PlaneBufferGeometry( 2000, 2000 );
-			water2 = new THREE.Water( water2Geometry, {
-				color: params.color,
-				scale: params.scale,
-				flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
-				textureWidth: 1024,
-				textureHeight: 1024
-			} );
-			water2.position.y = 1;
-			water2.rotation.x = Math.PI * - 0.5;
-			scene.add( water2 );
+	// // water
+	// 		var water2Geometry = new THREE.PlaneBufferGeometry( 2000, 2000 );
+	// 		water2 = new THREE.Water( water2Geometry, {
+	// 			color: params.color,
+	// 			scale: params.scale,
+	// 			flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
+	// 			textureWidth: 1024,
+	// 			textureHeight: 1024
+	// 		} );
+	// 		water2.position.y = 1;
+	// 		water2.rotation.x = Math.PI * - 0.5;
+	// 		scene.add( water2 );
 
-	// water.castShadow=true
-	// water.receiveShadow=true
+	// // water.castShadow=true
+	// // water.receiveShadow=true
 
-	//var uvs = objs.car.geometry.attributes.uv.array;
-	//objs.car.addAttribute( 'uv2', new THREE.BufferAttribute( uvs, 2 ) );
-	//console.log(objs.car)
+	// //var uvs = objs.car.geometry.attributes.uv.array;
+	// //objs.car.addAttribute( 'uv2', new THREE.BufferAttribute( uvs, 2 ) );
+	// //console.log(objs.car)
 
 	
 
