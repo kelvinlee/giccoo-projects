@@ -20,7 +20,7 @@ initAll()
 function initAll () {
 	renderer.setClearColor(0x67bbde)//设置背景颜色
 	renderer.setSize(window.innerWidth,window.innerHeight)//设置宽高
-	renderer.shadowMap.type=THREE.PCFSoftShadowMap//.BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
+	renderer.shadowMap.type=THREE.BasicShadowMap//.BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
 	renderer.setPixelRatio(2)
 	renderer.shadowMapEnabled=true
 	renderer.gammaOutput = true;
