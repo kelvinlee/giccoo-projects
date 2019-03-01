@@ -20,7 +20,7 @@ initAll()
 function initAll () {
 	renderer.setClearColor(0x67bbde)//设置背景颜色
 	renderer.setSize(window.innerWidth,window.innerHeight)//设置宽高
-	renderer.shadowMap.type=THREE.PCFShadowMap//.BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
+	renderer.shadowMap.type=THREE.PCFSoftShadowMap//.BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
 	renderer.setPixelRatio(2)
 	renderer.shadowMapEnabled=true
 	renderer.gammaOutput = true;
@@ -35,9 +35,9 @@ function initAll () {
 	//loadingMods('mod/car.glb',["car"],"addScene")//模型加载
 	loadingMods('mod/car.gltf',["car"])//模型加载
 	loadingMods('mod/car_wheel.gltf',["car_wheel"])//模型加载
-	loadingMods('mod/island.gltf',["island"],"addScene")
+
 	loadingMods('mod/waterfall.gltf',["waterfall"])
-	loadingMods('mod/fire.gltf',["fire"],"addScene")
+	loadingMods('mod/fire.gltf',["fire"])
 
 	loadingMods('mod/island.gltf',["island"],"addScene")
 	// loadingMods('mod/foot.glb',["foot"])//模型加载
@@ -54,19 +54,16 @@ function initAll () {
 	//set_envMap()
 
 	// postprocessing
-				//composer = new THREE.EffectComposer( renderer );
-				//composer.addPass( new THREE.RenderPass( scene, camera ) );
-				// var effect = new THREE.ShaderPass( THREE.DotScreenShader );
-				// effect.uniforms[ 'scale' ].value = 4;
-				// composer.addPass( effect );
-				// var effect = new THREE.ShaderPass( THREE.RGBShiftShader );
-				// effect.uniforms[ 'amount' ].value = 0.0015;
-				// effect.renderToScreen = true;
-				// composer.addPass( effect );
+	//composer = new THREE.EffectComposer( renderer );
+	//composer.addPass( new THREE.RenderPass( scene, camera ) );
+	// var effect = new THREE.ShaderPass( THREE.DotScreenShader );
+	// effect.uniforms[ 'scale' ].value = 4;
+	// composer.addPass( effect );
+	// var effect = new THREE.ShaderPass( THREE.RGBShiftShader );
+	// effect.uniforms[ 'amount' ].value = 0.0015;
+	// effect.renderToScreen = true;
+	// composer.addPass( effect );
 
-
-				
-				//
 
 }
 
@@ -84,13 +81,10 @@ function animate() {
   stats.end()
 }
 
-
-
 function render() {
   renderer.render(scene, camera);
-
+  //renderPartical()//粒子渲染 初始化函数在getStart()内
 }
-
 
 
 //============================环境贴图
@@ -188,11 +182,6 @@ function onDocumentTouchEnd(_e){
 }
 
 
-
-
-
-
-
 //============================模型加载函数 loadingMods('mod/car2.glb',"car")
 
 function loadingMods(_url,_target,_ifAddScene){
@@ -204,11 +193,6 @@ function loadingMods(_url,_target,_ifAddScene){
 			modLoadedNum++
 			console.log(gltf.scene)
 
-			// objs[_target]=gltf.scene.children[0]
-			// if(_ifAddScene){
-			// 	scene.add(objs[_target])
-			// }
-
 			for (var i = 0; i < gltf.scene.children.length; i++) {
 				objs[_target[i]]=gltf.scene.children[i]
 				if(_ifAddScene){
@@ -219,12 +203,6 @@ function loadingMods(_url,_target,_ifAddScene){
 
 			
 			loadingCheck()
-			//car.material=new THREE.MeshLambertMaterial({color:0xffff00})
-			// gltf.animations; // Array<THREE.AnimationClip>
-			// gltf.scene; // THREE.Scene
-			// gltf.scenes; // Array<THREE.Scene>
-			// gltf.cameras; // Array<THREE.Camera>
-			// gltf.asset; // Object
 		},
 		// called while loading is progressing
 		function ( xhr ) {
@@ -263,6 +241,8 @@ function ModLoaded(){//加载模型完成
 
 function getStart(){
 	console.log("getStart!")
+	// //====粒子
+	//setPartical()
 	// //====网格
 	// var grid=new THREE.GridHelper(50,10,0xffff00,0x888888)//网格辅助(格子尺寸，格子细分数，中线颜色，网格线颜色)
 	// scene.add(grid)
@@ -280,8 +260,8 @@ function getStart(){
 	scene.add(rootPoint)
 
 	//====环境光
-	var ambientLight=new THREE.AmbientLight(0xffffff,.1)
-	scene.add(ambientLight)
+	//var ambientLight=new THREE.AmbientLight(0xffffff,.1)
+	//scene.add(ambientLight)
 
 	//====半球光
 	var hemlight = new THREE.HemisphereLight( 0xffffff, 0x0088ff,1 );//0x38a4e8
@@ -290,33 +270,38 @@ function getStart(){
 
 	//====平行光
 	var dLight=new THREE.DirectionalLight(0xffa70d,1)
-	dLight.position.set(-30,30,-100)
+	dLight.position.set(-500,0,-500)
 	//dLight.target=scene
 	dLight.castShadow=true
-	dLight.shadow.mapSize.width = 1024;  // default
-	dLight.shadow.mapSize.height = 1024; // default
+	dLight.shadow.mapSize.width = 2048;  // default
+	dLight.shadow.mapSize.height = 2048; // default
 	dLight.shadow.camera.near = 0.5;    // default
 	dLight.shadow.camera.far = 1000;     // default
-	dLight.shadow.camera.left = -100;    // default
-	dLight.shadow.camera.right = 100; 
-	dLight.shadow.camera.bottom = -100;    // default
-	dLight.shadow.camera.top = 100; 
+	dLight.shadow.camera.left = -300;    // default
+	dLight.shadow.camera.right = 300; 
+	dLight.shadow.camera.bottom = -300;    // default
+	dLight.shadow.camera.top = 300; 
 
-	TweenMax.to(dLight.position,8,{x:100,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:4})//光源旋转
-	TweenMax.to(dLight.position,8,{z:100,repeat:100000,yoyo:true,ease:Sine.easeInOut})
+
+
+	TweenMax.to(dLight.position,4,{x:500,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})//光源旋转
+	TweenMax.to(dLight.position,4,{z:500,repeat:100000,yoyo:true,ease:Sine.easeInOut})
+	TweenMax.to(dLight.position,8,{y:500,repeat:100000,yoyo:true,ease:Sine.easeInOut})
+
+	var dlhelper=new THREE.CameraHelper(dLight.shadow.camera)
 
 	// TweenMax.to(dLight.position,4,{z:100,repeat:100000,yoyo:false,ease:Sine.easeInOut})
 	// TweenMax.to(dLight,2,{intensity:0.3,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})
 	// TweenMax.to(ambientLight,2,{intensity:1.2,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})
-	scene.add(dLight)
+	scene.add(dLight,dlhelper)
 
 
-	//====平面
+	// //====平面
 	// var planeGeo=new THREE.PlaneGeometry(600,600,60)
 	// var planeMaterial=new THREE.MeshLambertMaterial({color:0xfff5d0})
 	// var plane=new THREE.Mesh(planeGeo,planeMaterial)
 	// plane.rotation.x=-Math.PI/2
-	// plane.position.y=0
+	// plane.position.y=-20
 	// plane.receiveShadow=true
 	// scene.add(plane)
 
@@ -325,10 +310,9 @@ function getStart(){
 	camera.lookAt(scene.position)
 
 	//====篝火
-	objs.fire.position.set(-60,4,160)
-	objs.fire.scale.set(.1,.1,.1)
-	objs.fire.castShadow=true
-	objs.fire.receiveShadow=true
+	setFire()
+
+	
 
 	//====车位置
 	objs.car.position.set(0,0,0)
@@ -363,27 +347,17 @@ function getStart(){
 	//====岛
 	objs.island.position.y=0
 	objs.island.scale.set(1.1,1.1,1.1)
-	objs.island.castShadow=true
 
 	//objs.island.material=new THREE.MeshToonMaterial()
 	objs.island.material.flatShading=true
 	objs.island.material.clipShadows=true
 	objs.island.castShadow=true
 	objs.island.receiveShadow=true
+	//scene.remove(objs.island)
 
 	//====水
 	objs.waterfall.position.y=1
 	objs.waterfall.scale.set(1.1,1.1,1.1)
-	//var water_alpha=new THREE.TextureLoader().load("tex/water_Opacity.png",)
-
-	//objs.water.material.alphaMap=water_alpha
-	//objs.water.material.side=THREE.DoubleSide
-	// objs.water.material.transparent=true
-	// objs.water.material.opacity=0.5
-	// TweenMax.to(objs.water.material.map.offset,5,{y:-1,repeat:10000,ease:Linear.easeNone})
-	// TweenMax.to(objs.water.material.map.offset,2,{x:.1,repeat:10000,yoyo:true,ease:Sine.easeInOut})
-	console.log("99999",objs.waterfall)
-	//scene.remove(objs.water)
 
 	// 瀑布
 			var waterfallGeometry = objs.waterfall.geometry
@@ -414,10 +388,21 @@ function getStart(){
 			} );
 			water2.position.y = 1;
 			water2.rotation.x = Math.PI * - 0.5;
-			scene.add( water2 );
 
-	// water.castShadow=true
-	// water.receiveShadow=true
+			var water3Geometry = new THREE.PlaneBufferGeometry( 2000, 2000 );
+			water3 = new THREE.Water( water3Geometry, {
+				color: params.color,
+				scale: params.scale,
+				flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
+				textureWidth: 1024,
+				textureHeight: 1024
+			} );
+			water3.position.y = .5;
+			water3.rotation.x = Math.PI *  0.5;
+			scene.add( water2,water3 );
+
+
+
 
 	//var uvs = objs.car.geometry.attributes.uv.array;
 	//objs.car.addAttribute( 'uv2', new THREE.BufferAttribute( uvs, 2 ) );
