@@ -11,7 +11,7 @@ function setFire(){
 	fire.add(objs.fire)
 	fire.position.set(-60,4,160)
 
-	for (var i = 0; i <80; i++) {
+	for (var i = 0; i <40; i++) {
 		addAfire()
 	};
 
@@ -23,7 +23,7 @@ function addAfire(){
 	var fireMat=new THREE.SpriteMaterial({color:0xff3c00})
 	var aFire=new THREE.Sprite(fireMat)
 
-	aFire.scale.set(2,2,1)
+	aFire.scale.set(3,3,1)
 	aFire.material.transparent=true
 	fire.add(aFire)
 	//aFire.material.opacity=1

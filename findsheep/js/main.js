@@ -388,18 +388,19 @@ function getStart(){
 			} );
 			water2.position.y = 1;
 			water2.rotation.x = Math.PI * - 0.5;
+			scene.add( water2 );
 
-			var water3Geometry = new THREE.PlaneBufferGeometry( 1500, 1500 );
-			water3 = new THREE.Water( water3Geometry, {
-				color: params.color,
-				scale: params.scale,
-				flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
-				textureWidth: 256,
-				textureHeight: 256
-			} );
-			water3.position.y = .5;
-			water3.rotation.x = Math.PI *  0.5;
-			scene.add( water2,water3 );
+			// var water3Geometry = new THREE.PlaneBufferGeometry( 1500, 1500 );
+			// water3 = new THREE.Water( water3Geometry, {
+			// 	color: params.color,
+			// 	scale: params.scale,
+			// 	flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
+			// 	textureWidth: 256,
+			// 	textureHeight: 256
+			// } );
+			// water3.position.y = .5;
+			// water3.rotation.x = Math.PI *  0.5;
+			// scene.add( water3 );
 
 
 
