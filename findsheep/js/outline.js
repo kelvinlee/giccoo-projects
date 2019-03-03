@@ -1,8 +1,8 @@
 var composer, effectFXAA, outlinePass;
 var params1 = {
-				edgeStrength: 3.0,
+				edgeStrength: 10.0,
 				edgeGlow: 0.0,
-				edgeThickness: 1.0,
+				edgeThickness: 2.0,
 				pulsePeriod: 0,
 				rotate: false,
 				usePatternTexture: false
