@@ -23,6 +23,7 @@ function initAll () {
 	renderer.shadowMap.type=THREE.BasicShadowMap//.BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
 	renderer.setPixelRatio(2)
 	renderer.shadowMapEnabled=true
+	renderer.gammaInput = true
 	renderer.gammaOutput = true;
 	//renderer.toneMapping=THREE.NoToneMapping
 	console.log("==========toneMapping",renderer.toneMapping)
@@ -82,7 +83,8 @@ function animate() {
 }
 
 function render() {
-  renderer.render(scene, camera);
+  //renderer.render(scene, camera);
+  composer.render();
   //renderPartical()//粒子渲染 初始化函数在getStart()内
 }
 
@@ -232,7 +234,7 @@ function ModLoaded(){//加载模型完成
 //===========================开始
 
 		var params = {
-			color: '#67bbde',//'#12b9c0'
+			color: '#67bbde',//'#12b9c0'#67bbde
 			scale: .8,
 			flowX: -1,
 			flowY: -.5
@@ -254,47 +256,47 @@ function getStart(){
 	//scene.fog = new THREE.Fog(0xfff5d0, 80, 180);
 
 	//====立方体
-	var cubeGeo=new THREE.BoxGeometry(1,1,1)
-	var cubeMaterial=new THREE.MeshBasicMaterial({color:0xffff00})
-	rootPoint=new THREE.Mesh(cubeGeo,cubeMaterial)
-	scene.add(rootPoint)
+	// var cubeGeo=new THREE.BoxGeometry(1,1,1)
+	// var cubeMaterial=new THREE.MeshBasicMaterial({color:0xffff00})
+	// rootPoint=new THREE.Mesh(cubeGeo,cubeMaterial)
+	// scene.add(rootPoint)
 
 	//====环境光
 	//var ambientLight=new THREE.AmbientLight(0xffffff,.1)
 	//scene.add(ambientLight)
 
-	//====半球光
-	var hemlight = new THREE.HemisphereLight( 0xffffff, 0x0088ff,1 );//0x38a4e8
-	hemlight.position.set( 0, 10, 0 );
-	scene.add( hemlight );
+	// //====半球光
+	// var hemlight = new THREE.HemisphereLight( 0xffffff, 0x0088ff,1 );//0x38a4e8
+	// hemlight.position.set( 0, 10, 0 );
+	// scene.add( hemlight );
 
-	//====平行光
-	var dLight=new THREE.DirectionalLight(0xffa70d,1)
-	dLight.position.set(-500,0,-500)
-	//dLight.target=scene
-	dLight.castShadow=true
-	dLight.shadow.mapSize.width = 2048;  // default
-	dLight.shadow.mapSize.height = 2048; // default
-	dLight.shadow.camera.near = 0.5;    // default
-	dLight.shadow.camera.far = 1000;     // default
-	dLight.shadow.camera.left = -300;    // default
-	dLight.shadow.camera.right = 300; 
-	dLight.shadow.camera.bottom = -300;    // default
-	dLight.shadow.camera.top = 300; 
-
-
-
-	TweenMax.to(dLight.position,8,{x:500,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:4})//光源旋转
-	TweenMax.to(dLight.position,8,{z:500,repeat:100000,yoyo:true,ease:Sine.easeInOut})
-	TweenMax.to(dLight.position,16,{y:500,repeat:100000,yoyo:true,ease:Sine.easeInOut})
+	// //====平行光
+	// var dLight=new THREE.DirectionalLight(0xffa70d,1)
+	// dLight.position.set(-500,0,-500)
+	// //dLight.target=scene
+	// dLight.castShadow=true
+	// dLight.shadow.mapSize.width = 2048;  // default
+	// dLight.shadow.mapSize.height = 2048; // default
+	// dLight.shadow.camera.near = 0.5;    // default
+	// dLight.shadow.camera.far = 1000;     // default
+	// dLight.shadow.camera.left = -300;    // default
+	// dLight.shadow.camera.right = 300; 
+	// dLight.shadow.camera.bottom = -300;    // default
+	// dLight.shadow.camera.top = 300; 
 
 
-	var dlhelper=new THREE.CameraHelper(dLight.shadow.camera)
 
-	// TweenMax.to(dLight.position,4,{z:100,repeat:100000,yoyo:false,ease:Sine.easeInOut})
-	// TweenMax.to(dLight,2,{intensity:0.3,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})
-	// TweenMax.to(ambientLight,2,{intensity:1.2,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})
-	scene.add(dLight,dlhelper)
+	// TweenMax.to(dLight.position,8,{x:500,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:4})//光源旋转
+	// TweenMax.to(dLight.position,8,{z:500,repeat:100000,yoyo:true,ease:Sine.easeInOut})
+	// TweenMax.to(dLight.position,16,{y:500,repeat:100000,yoyo:true,ease:Sine.easeInOut})
+
+
+	// var dlhelper=new THREE.CameraHelper(dLight.shadow.camera)
+
+	// // TweenMax.to(dLight.position,4,{z:100,repeat:100000,yoyo:false,ease:Sine.easeInOut})
+	// // TweenMax.to(dLight,2,{intensity:0.3,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})
+	// // TweenMax.to(ambientLight,2,{intensity:1.2,repeat:100000,yoyo:true,ease:Sine.easeInOut,delay:2})
+	// scene.add(dLight,dlhelper)
 
 
 	// //====平面
@@ -306,13 +308,23 @@ function getStart(){
 	// plane.receiveShadow=true
 	// scene.add(plane)
 
+	// //====影平面
+	// var planeGeo=new THREE.PlaneGeometry(2000,2000)
+	// var planeMaterial=new THREE.ShadowMaterial({opacity:0.3})
+	// var plane=new THREE.Mesh(planeGeo,planeMaterial)
+	// plane.rotation.x=-Math.PI/2
+	// plane.position.y=0
+	// plane.receiveShadow=true
+	// scene.add(plane)
+
 	//====摄像机
 	camera.position.set(0,20,80)
 	camera.lookAt(scene.position)
 
-	//====篝火
+	//====篝火(campfire.js)
 	setFire()
-
+	//====日光(sun.js)
+	setSun()
 	
 
 	//====车位置
@@ -356,6 +368,8 @@ function getStart(){
 	objs.island.material.clipShadows=true
 	objs.island.castShadow=true
 	objs.island.receiveShadow=true
+	//====岛边缘线
+	setOutline()
 	//scene.remove(objs.island)
 
 	//====水

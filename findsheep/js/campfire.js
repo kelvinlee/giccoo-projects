@@ -13,11 +13,14 @@ function setFire(){
 
 	fire.scale.set(.5,.5,.5)
 
-	for (var i = 0; i <40; i++) {
+	for (var i = 0; i <30; i++) {
 		addAfire()
 	};
 
-	
+	var firelight=new THREE.PointLight(0xff6600,4,80,3)
+	firelight.position.y=10
+	//firelight.castShadow=true
+	fire.add(firelight)
 
 }
 
@@ -25,7 +28,7 @@ function addAfire(){
 	var fireMat=new THREE.SpriteMaterial({color:0xff3c00})
 	var aFire=new THREE.Sprite(fireMat)
 
-	aFire.scale.set(3,3,1)
+	aFire.scale.set(3.5,3.5,1)
 	aFire.material.transparent=true
 	fire.add(aFire)
 	//aFire.material.opacity=1
@@ -39,7 +42,7 @@ function addAfire(){
 
 	var _color=new THREE.Color(0xff0000)
 	var _endColor=new THREE.Color(0xffff88)
-	TweenMax.to(_color,lifetime,{r:_endColor.r,g:_endColor.g,b:_endColor.b,repeat:10000,delay:delayT+.1,onUpdate:function(){
+	TweenMax.to(_color,lifetime,{r:_endColor.r,g:_endColor.g,b:_endColor.b,repeat:10000,delay:delayT+.05,onUpdate:function(){
 		aFire.material.color=_color
 		//console.log(_color.color)
 	}})
