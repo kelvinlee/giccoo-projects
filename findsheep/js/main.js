@@ -40,7 +40,7 @@ function initAll () {
 	loadingMods('mod/waterfall.gltf',["waterfall"])
 	loadingMods('mod/fire.gltf',["fire"])
 
-	loadingMods('mod/island.gltf',["island"],"addScene")
+	loadingMods('mod/island.gltf',["island"])
 	// loadingMods('mod/foot.glb',["foot"])//模型加载
 	// loadingMods('mod/gift1.glb',["gift1"])
 	// loadingMods('mod/gift2.glb',["gift2"])
@@ -83,8 +83,8 @@ function animate() {
 }
 
 function render() {
-  //renderer.render(scene, camera);
-  composer.render();
+  renderer.render(scene, camera);
+  //composer.render();//轮廓线
   //renderPartical()//粒子渲染 初始化函数在getStart()内
 }
 
@@ -362,15 +362,26 @@ function getStart(){
 	//====岛
 	objs.island.position.y=0
 	objs.island.scale.set(1.1,1.1,1.1)
+	scene.add(objs.island)
+	// objs.island.children[1].scale.set(1.1,1.1,1.1)
+	// objs.island.children[2].scale.set(1.1,1.1,1.1)
+	// objs.island.children[3].scale.set(1.1,1.1,1.1)
+	// objs.island.children[4].scale.set(1.1,1.1,1.1)
+	for (var i = 0; i < objs.island.children.length; i++) {
+		objs.island.children[i].castShadow=true
+		objs.island.children[i].receiveShadow=true
+	};
+	objs.island.children[0].receiveShadow=false
+	objs.island.children[0].material.side=THREE.DoubleSide
 
-	//objs.island.material=new THREE.MeshToonMaterial()
-	objs.island.material.flatShading=true
-	objs.island.material.clipShadows=true
-	objs.island.castShadow=true
-	objs.island.receiveShadow=true
+
+	console.log(objs.island)
+	// objs.island.material.flatShading=true
+	// objs.island.material.clipShadows=true
+	// objs.island.castShadow=true
+	// objs.island.receiveShadow=true
 	//====岛边缘线
-	setOutline()
-	//scene.remove(objs.island)
+	//setOutline()
 
 	//====水
 	objs.waterfall.position.y=1
