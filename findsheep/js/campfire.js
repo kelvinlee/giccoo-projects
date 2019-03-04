@@ -17,7 +17,7 @@ function setFire(){
 		addAfire()
 	};
 
-	var firelight=new THREE.PointLight(0xff0000,4,80,3)
+	var firelight=new THREE.PointLight(0xff2200,4,80,3)
 	firelight.position.y=10
 	//firelight.castShadow=true
 	fire.add(firelight)
