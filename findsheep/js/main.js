@@ -2,7 +2,7 @@
 //============================初始化
 
 var scene=new THREE.Scene();
-var camera= new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,2000);
+var camera= new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,20000);
 //视角，宽高比，近剪切面，远剪切面
 var renderer = new THREE.WebGLRenderer({antialias:true,alpha:false})//抗锯齿
 var modNum=0 // 总数
@@ -41,6 +41,7 @@ function initAll () {
 	loadingMods('mod/fire.gltf',["fire"])
 
 	loadingMods('mod/island.gltf',["island"])
+	loadingMods('mod/trees1.gltf',["trees1"],"addScene")
 	// loadingMods('mod/foot.glb',["foot"])//模型加载
 	// loadingMods('mod/gift1.glb',["gift1"])
 	// loadingMods('mod/gift2.glb',["gift2"])
@@ -84,6 +85,7 @@ function animate() {
 
 function render() {
   renderer.render(scene, camera);
+  //updateCloud()//云 逐帧
   //composer.render();//轮廓线
   //renderPartical()//粒子渲染 初始化函数在getStart()内
 }
@@ -364,6 +366,19 @@ function getStart(){
 
 
 	console.log(objs.island)
+
+	//====树
+
+	objs.trees1.position.y=0
+	objs.trees1.scale.set(1.1,1.1,1.1)
+	scene.add(objs.trees1)
+	for (var i = 0; i < objs.trees1.children.length; i++) {
+		objs.trees1.children[i].castShadow=true
+		//objs.trees1.children[i].receiveShadow=true
+		objs.trees1.children[i].material.side=THREE.DoubleSide
+	};
+
+
 	// objs.island.material.flatShading=true
 	// objs.island.material.clipShadows=true
 	// objs.island.castShadow=true
