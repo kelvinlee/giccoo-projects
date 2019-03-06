@@ -17,7 +17,7 @@ function setCar () {
 
 	objs.car.material.emissive=new THREE.Color( 0xffffff );//发光
 	//TweenMax.to(objs.car.material,1,{emissiveIntensity:0,repeat:100000})
-	//objs.car.material.flatShading=true
+	objs.car.material.flatShading=true
 
 	objs.car_wheel.scale.set(.1,.1,.1)
 	objs.car_wheel.castShadow=true
@@ -25,8 +25,24 @@ function setCar () {
 	TweenMax.to(objs.car.position,.2,{y:.8,repeat:10000,yoyo:true})
 	TweenMax.to(objs.car.scale,.2,{z:.095,repeat:10000,yoyo:true,delay:.3})
 
+	setCarLight()
 	moveCar()
 }
+function setCarLight(){
+	var carlight=new THREE.SpotLight(0xffff88);
+	carlight.angle=Math.PI/180*30
+	//carlight.penumbra=.5
+	//carlight.castShadow=true
+	carlight.distance=60
+	carlight.intensity=2
+	carlight.position.set(0,10,15)
+	var carTar=new THREE.Object3D()
+	carTar.position.set(0,7.5,25)
+	carlight.target=carTar
+	carC.add(carTar,carlight)
+}
+
+
 
 var carPath=[
 	[42,114,14],
