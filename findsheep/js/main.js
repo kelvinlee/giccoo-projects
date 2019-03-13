@@ -16,7 +16,7 @@ var carShape,carBody
 
 
 //initAll()
-$(document).ready(function load (){
+window.onload=function load (){
   //iniListenSound()
 
 	loadWechatConfig();
@@ -43,7 +43,7 @@ $(document).ready(function load (){
 
 
 
-});
+}
 
 var loadWechatConfig = function() {
   var hm, s, url;
