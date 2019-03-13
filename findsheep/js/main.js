@@ -15,8 +15,35 @@ var rootPoint,rootPointBody//总固定点
 var carShape,carBody
 
 
-initAll()
+//initAll()
+$(document).ready(function load (){
+  //iniListenSound()
 
+	loadWechatConfig();
+  initAll()
+  iniListenSound()
+
+  	wx.ready(function() {
+    var shareContent;
+    shareContent = {
+      title: "岛 - 薄荷犀牛",
+      desc: "",
+      link: "https://m.giccoo.com/findsheep/",
+      imgUrl: "",
+      success: function() {},
+      cancel: function() {}
+    };
+    wx.onMenuShareTimeline(shareContent);
+    wx.onMenuShareAppMessage(shareContent);
+    wx.onMenuShareQQ(shareContent);
+    return wx.onMenuShareWeibo(shareContent);
+  });
+  
+
+
+
+
+});
 
 var loadWechatConfig = function() {
   var hm, s, url;
