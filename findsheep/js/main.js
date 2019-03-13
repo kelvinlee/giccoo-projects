@@ -138,13 +138,13 @@ function initAll () {
 var cannonDebugRenderer=new THREE.CannonDebugRenderer(scene,world)//===物理引擎辅助
 
 function animate() {
-	stats.begin()
+	//stats.begin()
   requestAnimationFrame( animate );
   render();
   //renderDof()
   //shaderUpdate()
   //composer.render();
-  stats.end()
+  //stats.end()
 }
 
 function render() {
@@ -184,11 +184,11 @@ function setTest(){
 	//====OrbitControls
 	controls=new THREE.OrbitControls(camera,renderer.domElement)	
 	// //====stats.js 性能测试
-	stats = new Stats()
-	stats.showPanel(1)// 0: fps, 1: ms, 2: mb, 3+: custom
+	//stats = new Stats()
+	//stats.showPanel(1)// 0: fps, 1: ms, 2: mb, 3+: custom
 	// console.log(stats);
-	document.body.appendChild(stats.domElement)
-	stats.domElement.className = "fps"
+	//document.body.appendChild(stats.domElement)
+	//stats.domElement.className = "fps"
 
 	//====datGUI
 	guiControls	=	new function(){//存放有所有需要改变的属性的对象
