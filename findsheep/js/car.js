@@ -39,6 +39,9 @@ function setCarLight(){
 	var carTar=new THREE.Object3D()
 	carTar.position.set(0,7.5,25)
 	carlight.target=carTar
+	// camera.position.set(0,50,-30)
+	// camera.rotation.y=Math.PI
+	// camera.rotation.x=Math.PI/6
 	carC.add(carTar,carlight)
 }
 

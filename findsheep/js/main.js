@@ -17,7 +17,44 @@ var carShape,carBody
 
 initAll()
 
+
+var loadWechatConfig = function() {
+  var hm, s, url;
+  url = encodeURIComponent(window.location.href.split("#")[0]);
+  hm = document.createElement('script');
+  hm.src = "//api.giccoo.com/api/config?url=" + url;
+  s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(hm, s);
+};
+
+var ifbgm=0
+var bgm=document.getElementById("bgm")
+//微信端背景音乐播放...
+function iniListenSound(){
+         document.addEventListener("WeixinJSBridgeReady", function(){
+             bgm.play();
+             // ifbgm=1
+             // TweenLite.set($("#musicOff"),{opacity:0})
+             // mode=1
+        }, false);
+}
+// $("#musicOff").click(function(){
+//   if(ifbgm==0){
+//     bgm.play();
+//     TweenLite.set($("#musicOff"),{opacity:0})
+//     typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", "musicBtn", "playMusic", "-"]);
+//   }else{
+//     bgm.pause();
+//     TweenLite.set($("#musicOff"),{opacity:1})
+//     typeof _hmt !== "undefined" && _hmt !== null && _hmt.push(['_trackEvent', "zbird", "musicBtn", "stopMusic", "-"]);
+//   }
+//   ifbgm++
+//   if(ifbgm==2){ifbgm=0}
+
+// })
 function initAll () {
+	//iniListenSound()
+
 	renderer.setClearColor(0x67bbde)//设置背景颜色
 	renderer.setSize(window.innerWidth,window.innerHeight)//设置宽高
 	renderer.shadowMap.type=THREE.BasicShadowMap//.BasicShadowMap.PCFShadowMap.PCFSoftShadowMap
@@ -56,13 +93,13 @@ function initAll () {
 	//set_envMap()
 
 	// postprocessing
-	//composer = new THREE.EffectComposer( renderer );
-	//composer.addPass( new THREE.RenderPass( scene, camera ) );
+	// composer = new THREE.EffectComposer( renderer );
+	// composer.addPass( new THREE.RenderPass( scene, camera ) );
 	// var effect = new THREE.ShaderPass( THREE.DotScreenShader );
 	// effect.uniforms[ 'scale' ].value = 4;
 	// composer.addPass( effect );
 	// var effect = new THREE.ShaderPass( THREE.RGBShiftShader );
-	// effect.uniforms[ 'amount' ].value = 0.0015;
+	// effect.uniforms[ 'amount' ].value = 0.0000015;
 	// effect.renderToScreen = true;
 	// composer.addPass( effect );
 
@@ -84,6 +121,10 @@ function animate() {
 }
 
 function render() {
+	//camera.position.set(carC.position.x,carC.position.y+110,carC.position.z)
+	//camera.position.y+=30
+	//camera.position.z-=30
+	//camera.lookAt(carC)
   renderer.render(scene, camera);
   //updateCloud()//云 逐帧
   //composer.render();//轮廓线
@@ -322,7 +363,7 @@ function getStart(){
 	// scene.add(plane)
 
 	//====摄像机
-	camera.position.set(0,20,80)
+	camera.position.set(400,100,400)
 	camera.lookAt(scene.position)
 
 	//====篝火(campfire.js)
