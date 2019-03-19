@@ -4,16 +4,16 @@ function setCloud () {
 	// body...
 	scene.add(cloudC)
 
-	addACloud(150*_far,250,144*_far,100*_far,100*_far)
-	addACloud(0*_far,210,-180*_far,60*_far,60*_far)
-	addACloud(-150*_far,230,144*_far,80*_far,80*_far)
+	addACloud(150*_far,250,144*_far,100*_far,-100*_far,'img/cloud/cloud000.png')
+	addACloud(0*_far,210,-180*_far,60*_far,60*_far,'img/cloud/cloud001.png')
+	addACloud(-150*_far,230,144*_far,80*_far,80*_far,'img/cloud/cloud002.png')
 
 
 	//addACloud(-0,200,-0,50,50)
 }
 
-function addACloud(_x,_y,_z,_width,_height){
-	var cloudMap=new THREE.TextureLoader().load('img/cloud/cloud000.png')
+function addACloud(_x,_y,_z,_width,_height,_url){
+	var cloudMap=new THREE.TextureLoader().load(_url)
 	var cloudMat=new THREE.SpriteMaterial({map:cloudMap,color:0x999999})
 	var aCloud=new THREE.Sprite(cloudMat)
 
@@ -32,7 +32,7 @@ function addACloud(_x,_y,_z,_width,_height){
 		aCloud.material.color=_color
 	}})
 
-	aCloud.scale.set(_width,_height,1)
+	aCloud.scale.set(_width*1.3,_height*1.3,1)
 	aCloud.position.set(_x-50,_y,_z)
 
 	TweenMax.to(aCloud.position,3,{y:"-=40",repeat:10000,yoyo:true,ease:Sine.easeInOut,delay:Math.random()*3})

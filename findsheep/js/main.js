@@ -27,9 +27,9 @@ window.onload=function load (){
     var shareContent;
     shareContent = {
       title: "岛 - 薄荷犀牛",
-      desc: "",
+      desc: "岛屿夏云起，汀洲芳草深。",
       link: "https://m.giccoo.com/findsheep/",
-      imgUrl: "",
+      imgUrl: "img/ico.jpg",
       success: function() {},
       cancel: function() {}
     };

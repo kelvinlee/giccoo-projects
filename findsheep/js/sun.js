@@ -2,7 +2,7 @@ var aDay=8
 function setSun () {
 	// body...
 	//====半球光
-	var hemlight = new THREE.HemisphereLight( 0xffffff, 0x0088ff,0.3 );//0x38a4e8
+	var hemlight = new THREE.HemisphereLight( 0xffffff, 0x0088ff,0.1 );//0x38a4e8
 	hemlight.position.set( 0, 10, 0 );
 	scene.add( hemlight );
 
@@ -56,7 +56,7 @@ function setSun () {
 
 
 	//====平行光
-	var dLight=new THREE.DirectionalLight(0xff0000,1.2)//0xffa70d
+	var dLight=new THREE.DirectionalLight(0xff0000,0.1)//0xffa70d
 	dLight.position.set(500,-500,-200)
 	//dLight.target=scene
 	dLight.castShadow=true
@@ -97,7 +97,7 @@ function setSun () {
 	TweenMax.to(dLight.position,aDay*2,{z:200,repeat:100000,yoyo:true,ease:Sine.easeInOut})
 	TweenMax.to(dLight.position,aDay/2,{y:500,repeat:100000,yoyo:true,ease:Power1.easeInOut})
 
-	//TweenMax.to(dLight,aDay/2,{intensity:1.5,repeat:100000,yoyo:true,ease:Sine.easeInOut})
+	TweenMax.to(dLight,aDay/2,{intensity:1.2,repeat:100000,yoyo:true,ease:Sine.easeInOut})
 	TweenMax.to(hemlight,aDay/2,{intensity:.5,repeat:100000,yoyo:true,ease:Sine.easeInOut})
 
 	
