@@ -1,0 +1,1 @@
+!function(t){"use strict";t=t&&t.hasOwnProperty("default")?t.default:t}(sound_js);

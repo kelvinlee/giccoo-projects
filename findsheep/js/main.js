@@ -1,4 +1,3 @@
-
 //============================初始化
 
 var scene=new THREE.Scene();
@@ -460,7 +459,7 @@ function getStart(){
 
 	// 瀑布
 			var waterfallGeometry = objs.waterfall.geometry
-			waterfall = new THREE.Water( waterfallGeometry, {
+			var waterfall = new THREE.Water( waterfallGeometry, {
 				color: params.color,
 				scale: params.scale,
 				flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
@@ -478,7 +477,7 @@ function getStart(){
 
 	// water
 			var water2Geometry = new THREE.PlaneBufferGeometry( 1500, 1500 );
-			water2 = new THREE.Water( water2Geometry, {
+			var water2 = new THREE.Water( water2Geometry, {
 				color: params.color,
 				scale: params.scale,
 				flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
