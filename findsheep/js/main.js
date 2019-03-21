@@ -1,7 +1,7 @@
 //============================初始化
 
 var scene=new THREE.Scene();
-var camera= new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,20000);
+var camera= new THREE.PerspectiveCamera(80,window.innerWidth/window.innerHeight,0.1,20000);
 //视角，宽高比，近剪切面，远剪切面
 var renderer = new THREE.WebGLRenderer({antialias:true,alpha:false})//抗锯齿
 var modNum=0 // 总数
@@ -138,6 +138,7 @@ var cannonDebugRenderer=new THREE.CannonDebugRenderer(scene,world)//===物理引
 
 function animate() {
 	//stats.begin()
+	//camera.lookAt(carC.position)
   requestAnimationFrame( animate );
   render();
   //renderDof()
@@ -311,7 +312,7 @@ function ModLoaded(){//加载模型完成
 			flowY: -.5
 		};
 
-
+var camMove
 function getStart(){
 	console.log("getStart!")
 	// //====粒子
@@ -389,8 +390,18 @@ function getStart(){
 	// scene.add(plane)
 
 	//====摄像机
-	camera.position.set(400,100,400)
+	camera.position.set(-200,150,900)
 	camera.lookAt(scene.position)
+	
+	camMove={_r:1200,_rot:Math.PI/180*360,_h:900}
+	TweenMax.to(camMove,10,{_r:560,_rot:Math.PI/180*20,_h:20,onUpdate:function(){
+
+		camera.position.set(Math.sin(camMove._rot)*camMove._r,camMove._h,Math.cos(camMove._rot)*camMove._r)
+		camera.lookAt(scene.position)
+		//console.log(camMove._r)
+	},onComplete:function(){
+		//TweenMax.to(camera.position,.1,{x:"+=5",y:"+=20",repeat:100000,yoyo:true})
+	}})
 
 	//====篝火(campfire.js)
 	setFire()

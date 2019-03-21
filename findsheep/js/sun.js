@@ -1,4 +1,4 @@
-var aDay=8
+var aDay=35//
 function setSun () {
 	// body...
 	//====半球光
