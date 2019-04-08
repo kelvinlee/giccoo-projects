@@ -1,5 +1,5 @@
 Container = PIXI.Container
-ParticleContainer = PIXI.ParticleContainer
+ParticleContainer = PIXI.particles.ParticleContainer
 autoDetectRenderer = PIXI.autoDetectRenderer
 loader = PIXI.loader
 resources = PIXI.loader.resources

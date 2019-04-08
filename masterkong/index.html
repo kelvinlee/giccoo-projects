@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>康师傅</title>
+    <meta name="author" content="m.giccoo.com">
+    <link rel="stylesheet" href="//image.giccoo.com/projects/libs/css/animate.min.css">
+    <link rel="stylesheet" href="css/base.css">
+  </head>
+  <body>
+    <!-- - url = "//image.giccoo.com/projects/YearOfThePig";-->
+    <div id="load" class="load">
+      <div id="loading" v-show="mounted" style="display: none" class="content">
+        <div class="load-text">
+          <p class="centeralign">{{progress}}</p>
+        </div>
+      </div>
+    </div>
+    <div id="main" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" class="main">
+      <transition name="page-fade">
+        <div :class="{on: canPlay}" @click="mute" class="play">
+          <div class="icon-play"><img src="./img/icon-play.png"></div>
+          <div class="icon-stop"><img src="./img/icon-stop.png"></div>
+        </div>
+      </transition>
+      <transition name="page-down">
+        <div v-show="noteShow" @click="noteShow = false" :class="{error: noteType}" style="display: none" class="note-message">
+          <div class="note-text">{{noteText}}</div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="loading" style="display: none" class="loading-page">
+          <div class="ball-spin-fade-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-zoom">
+        <div v-show="pageIndex == 1" class="page page-1">
+          <div class="content">
+            <div id="ugc"></div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="registerShow" @click="registerShow = false" style="display: none" class="pop pop-note">
+          <div class="content"></div>
+        </div>
+      </transition>
+      <div v-show="ugcShow" style="display: none" class="pop flashcamera">
+        <div class="content">
+          <div class="small-size">
+            <div @click="closeUGC" class="close"><img src="./img/icon-close.png"></div>
+            <div class="scroll"><img :src="ugc"></div>
+            <div class="note">长按保存图片</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/PreloadJS/1.0.1/preloadjs.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pixi.js/4.8.7/pixi.min.js"></script>
+    <script src="js/main.js?v=1"></script>
+  </body>
+</html>
