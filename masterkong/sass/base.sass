@@ -165,6 +165,12 @@ $pageMainBGColor: #0c101a;
 		+transform(translate3d(-100%,100%,0))
 	100%
 		+transform(translate3d(0,0,0))
++keyframes(water)
+	0%
+		+transform(translate3d(0,0,0))
+	100%
+		+transform(translate3d(-50%,0,0))
+
 html,body
 	+w
 	+h
@@ -174,8 +180,10 @@ body
 	max-width: 640px
 	+m
 	+posr
-	font-family: "xqzpt", "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
+	font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", sans-serif
 	+overhide
+.font
+	font-family: "yrdzst-Bold" 
 
 video,canvas,svg
 	+w
@@ -192,7 +200,7 @@ video,canvas,svg
 	font-size: 0
 	+overhide
 	+tran(all,4s,ease)
-	+bc(#fff5d0)
+	+b($cdn+"img/bg.jpg",no-repeat,top,center,cover)
 
 #game
 	+h
@@ -308,39 +316,24 @@ video,canvas,svg
 		+abcentermiddle
 		+w
 		+h(2em)
-		+font-size(1.2rem)
-		letter-spacing: 0.2em
-		color: #f85b45
-	.load-animated
-		+h(50%)
-		+w
+		+font-size(.9rem)
+		margin-top: 15%
+		// letter-spacing: 0.2em
+		color: #008a43
+	.bottle
+		+bc(#dbf2db)
 		+posa
-		+tl
-		.lucky-bag
-			+iw(174,750,100%)
+		+tl(50%,50%-4.75)
+		+iw(71,750,100%)
+		+transform(translate3d(0,-60%,0))
+		+overhide
+		font-size: 0
+		.water
 			+posa
-			+bl(5%,50%)
-			+transform(translate3d(-50%,0,0))
-		.hand
-			+posa
-			+iw(66,750,100%)
-			transform-origin: top center
-			&:after
-				content: " "
-				+w
-				+h(50%)
-				+posa
-				+bl(100%)
-				+bc(#ffcbcc)
-			&.hand-left
-				+bl(100%,25%)
-			&.hand-right
-				+br(100%,25%)
-		.bag-shadow
-			+iw(119,750,100%)
-			+posa
-			+bl(2%,50%)
-			+transform(translate3d(-50%,0,0))
+			+bl(-70%,0)
+			+iw(255,71,100%)
+			z-index: -1
+			+animation(water,1s,ease,infinite)
 
 
 .public
@@ -821,19 +814,11 @@ video,canvas,svg
 				color: #fff
 
 .pop-note
-	.hand
-		+posa
-		+tl(3%)
-		+transform(translate3d(0,0,0))
-		+animation(showhand,1s,ease)
+	+bc(transparent)
 	.text
-		+posa
-		+tr(30%,5%)
-		+w(60%)
-		+font-size(1rem)
-		+text-right
-		line-height: 2em
-		color: #fff
+		color: #9e6c01
+		+font-size(0.8rem)
+	
 
 
 .splitting

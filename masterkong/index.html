@@ -7,24 +7,22 @@
     <title>康师傅</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/css/animate.min.css">
+    <link rel="stylesheet" href="css/yrdzst-Bold.css">
     <link rel="stylesheet" href="css/base.css">
   </head>
   <body>
     <!-- - url = "//image.giccoo.com/projects/YearOfThePig";-->
     <div id="load" class="load">
       <div id="loading" v-show="mounted" style="display: none" class="content">
+        <div class="bottle"><img src="./img/bottle-empty.png">
+          <div :style="{bottom: (110-progress)*(-70)/100+'%'}" class="water"><img src="./img/bottle-water.png"></div>
+        </div>
         <div class="load-text">
-          <p class="centeralign">{{progress}}</p>
+          <p class="centeralign font">Loading...{{progress}}%</p>
         </div>
       </div>
     </div>
     <div id="main" :class="{biger: biger, smaller:smaller}" :style="{width: w+'px',height: h+'px'}" class="main">
-      <transition name="page-fade">
-        <div :class="{on: canPlay}" @click="mute" class="play">
-          <div class="icon-play"><img src="./img/icon-play.png"></div>
-          <div class="icon-stop"><img src="./img/icon-stop.png"></div>
-        </div>
-      </transition>
       <transition name="page-down">
         <div v-show="noteShow" @click="noteShow = false" :class="{error: noteType}" style="display: none" class="note-message">
           <div class="note-text">{{noteText}}</div>
@@ -44,7 +42,7 @@
           </div>
         </div>
       </transition>
-      <transition name="page-zoom">
+      <transition name="page-fade">
         <div v-show="pageIndex == 1" class="page page-1">
           <div class="content">
             <div id="ugc"></div>
@@ -52,8 +50,25 @@
         </div>
       </transition>
       <transition name="page-fade">
-        <div v-show="registerShow" @click="registerShow = false" style="display: none" class="pop pop-note">
+        <div v-show="pageIndex == 2" class="page page-2">
           <div class="content"></div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="registerShow" style="display: none" class="pop pop-note">
+          <div class="content">
+            <div class="textbox">
+              <div class="left"><img src="./img/"></div>
+              <div class="right"></div>
+              <div class="text">
+                <p>咖啡加奶糖的声音，有恋爱的味道，你是咖啡，我就是奶糖！</p>
+                <p class="music-name">《只对你有感觉》</p>
+              </div>
+              <div class="name"><span>FROM:</span>
+                <input type="text" v-modal="nickname">
+              </div>
+            </div>
+          </div>
         </div>
       </transition>
       <div v-show="ugcShow" style="display: none" class="pop flashcamera">

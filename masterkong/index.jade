@@ -7,7 +7,7 @@ block css
   meta(name="author",content="m.giccoo.com")
   //- meta(http-equiv="Content-Security-Policy",content="upgrade-insecure-requests")
   link(rel="stylesheet",href="//image.giccoo.com/projects/libs/css/animate.min.css")
-  //- link(rel="stylesheet",href="//image.giccoo.com/projects/libs/font/xqzpt.css")
+  link(rel="stylesheet",href="css/yrdzst-Bold.css")
   //- link(rel="stylesheet",href="/libs/font/YRDZST-Heavy.css")
   //- link(rel="stylesheet",href="css/yrd-Medium.css")
   link(rel="stylesheet",href="css/base.css")
@@ -41,11 +41,15 @@ block content
 
   .load#load
     .content#loading(v-show="mounted",style="display: none")
+      .bottle
+        img(src="#{url}/img/bottle-empty.png")
+        .water(:style="{bottom: (110-progress)*(-70)/100+'%'}")
+          img(src="#{url}/img/bottle-water.png")
       .load-text
-        p.centeralign {{progress}}
+        p.centeralign.font Loading...{{progress}}%
   
   .main#main(:class="{biger: biger, smaller:smaller}",:style="{width: w+'px',height: h+'px'}")
-    transition(name="page-fade")
+    //- transition(name="page-fade")
       .play(:class="{on: canPlay}",@click="mute")
         .icon-play
           img(src="#{url}/img/icon-play.png")
@@ -67,14 +71,30 @@ block content
           div
           div
 
-    transition(name="page-zoom")
+    transition(name="page-fade")
       .page.page-1(v-show="pageIndex == 1")
         .content
           #ugc
+
+    transition(name="page-fade")
+      .page.page-2(v-show="pageIndex == 2")
+        .content
+          
     
     transition(name="page-fade")
-      .pop.pop-note(v-show="registerShow",@click="registerShow = false",style="display: none")
+      .pop.pop-note(v-show="registerShow",style="display: none")
         .content
+          .textbox
+            .left
+              img(src="#{url}/img/")
+            .right
+            .text
+              p 咖啡加奶糖的声音，有恋爱的味道，你是咖啡，我就是奶糖！
+              p.music-name《只对你有感觉》
+            .name
+              span FROM:
+              input(type="text",v-modal="nickname")
+
           
     .pop.flashcamera(v-show="ugcShow",style="display: none")
       .content

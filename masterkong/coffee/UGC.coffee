@@ -65,8 +65,8 @@ class UGC
 			# @.stage.addChild Spr(_CDN+"img/texture.jpg")
 	build: ->
 		console.log "builded"
-		buildUGC.bind(@).call()
-		@.opts.callback()
+		# buildUGC.bind(@).call()
+		@.opts.callback().bind(@)
 		# @.init()
 	
 	

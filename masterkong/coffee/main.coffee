@@ -133,6 +133,8 @@ window.onload = ->
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
 					main.pageIndex = 1
+					# main.registerShow = true
+					buildUGC.bind(ugc).call()
 				,520
 		mounted: ->
 			@.mounted = true
@@ -146,9 +148,11 @@ window.onload = ->
 				@.progress = @.progressOn if @.progress >= @.progressOn
 				if @.progress >= 100
 					@.progress = 100
-					@.next()
+					setTimeout => 
+						@.next() 
+					, 1000
 					clearInterval timein
-			,1000/30
+			,1000/20
 	
 	queue = new createjs.LoadQueue()
 	queue.setMaxConnections(100)
