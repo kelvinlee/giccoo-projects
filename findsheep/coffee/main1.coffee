@@ -11,4 +11,7 @@
 # @codekit-prepend "../js/outline.js"
 # @codekit-prepend "../js/car.js"
 # @codekit-prepend "../js/cloud.js"
+# @codekit-prepend "../js/ani.js"
+# @codekit-prepend "../js/bird.js"
+
 # @codekit-prepend "../js/main.js"

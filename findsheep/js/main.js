@@ -7,6 +7,7 @@ var renderer = new THREE.WebGLRenderer({antialias:true,alpha:false})//抗锯齿
 var modNum=0 // 总数
 var modLoadedNum=0 // 已加载输
 var objs = {} // 模型
+var anis={} //动画
 var stats = null
 var world = new CANNON.World()
 
@@ -105,6 +106,7 @@ function initAll () {
 
 	loadingMods('mod/island.gltf',["island"])
 	loadingMods('mod/trees1.gltf',["trees1"],"addScene")
+	//loadingMods('mod/bird.gltf',["bird"],"","ani")
 	// loadingMods('mod/foot.glb',["foot"])//模型加载
 	// loadingMods('mod/gift1.glb',["gift1"])
 	// loadingMods('mod/gift2.glb',["gift2"])
@@ -147,6 +149,7 @@ function animate() {
   //stats.end()
 }
 
+var prevTime=Date.now()
 function render() {
 	//camera.position.set(carC.position.x,carC.position.y+110,carC.position.z)
 	//camera.position.y+=30
@@ -156,6 +159,8 @@ function render() {
   //updateCloud()//云 逐帧
   //composer.render();//轮廓线
   //renderPartical()//粒子渲染 初始化函数在getStart()内
+
+  updateBird()
 }
 
 
@@ -257,22 +262,26 @@ function onDocumentTouchEnd(_e){
 
 
 //============================模型加载函数 loadingMods('mod/car2.glb',"car")
+var anis
 
-function loadingMods(_url,_target,_ifAddScene){
+function loadingMods(_url,_target,_ifAddScene,_ifAni){
 	modNum++
 	var loader = new THREE.GLTFLoader();
 
-	loader.load(_url,
-		function ( gltf ) {		// called when the resource is loaded
+	loader.load(_url,function ( gltf ) {		// called when the resource is loaded
 			modLoadedNum++
 			console.log(gltf.scene)
 
 			for (var i = 0; i < gltf.scene.children.length; i++) {
 				objs[_target[i]]=gltf.scene.children[i]
-				if(_ifAddScene){
+				if(_ifAddScene=="addScene"){
 					scene.add(objs[_target[i]])
 				}
 				console.log(_target[i])
+				if(_ifAni){
+					console.log(gltf.animations)
+					anis[_target[i]]=gltf.animations
+				}
 			};
 
 			
@@ -414,6 +423,9 @@ function getStart(){
 
 	//====云
 	setCloud()
+
+	//====鸟
+	setBird()
 
 	//====透明
 	// var car_alpha=new THREE.TextureLoader().load("tex/car_Opacity.png",)
