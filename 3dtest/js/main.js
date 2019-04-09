@@ -85,9 +85,14 @@ function animate() {
 }
 
 
-
+var prevTime = Date.now();
 function render() {
   renderer.render(scene, camera);
+  if ( mixer ) {
+					var time = Date.now();
+					mixer.update( ( time - prevTime ) * 0.001 );
+					prevTime = time;
+				}
 
 }
 
@@ -194,7 +199,8 @@ function onDocumentTouchEnd(_e){
 
 
 //============================模型加载函数 loadingMods('mod/car2.glb',"car")
-
+var mixer
+var gltfAni
 function loadingMods(_url,_target,_ifAddScene){
 	modNum++
 	var loader = new THREE.GLTFLoader();
@@ -214,7 +220,14 @@ function loadingMods(_url,_target,_ifAddScene){
 				if(_ifAddScene){
 					scene.add(objs[_target[i]])
 				}
-				console.log(_target[i])
+				
+				
+				gltfAni=gltf.animations[ 0 ]
+				console.log("mixer",gltfAni)
+				//mixer = new THREE.AnimationMixer( gltf.scene.children[0] );
+				//mixer.clipAction( gltf.animations[ 0 ] ).setDuration( 1 ).play();
+
+				console.log("=====",_target[i])
 			};
 
 			
@@ -274,10 +287,10 @@ function getStart(){
 	//scene.fog = new THREE.Fog(0xfff5d0, 80, 180);
 
 	//====立方体
-	var cubeGeo=new THREE.BoxGeometry(1,1,1)
+	var cubeGeo=new THREE.BoxGeometry(.1,.1,.1)
 	var cubeMaterial=new THREE.MeshBasicMaterial({color:0xffff00})
 	rootPoint=new THREE.Mesh(cubeGeo,cubeMaterial)
-	scene.add(rootPoint)
+	//scene.add(rootPoint)
 
 	//====环境光
 	var ambientLight=new THREE.AmbientLight(0xffffff,.1)
@@ -365,6 +378,20 @@ function getStart(){
 	objs.island.scale.set(1,1,1)
 	objs.island.castShadow=true
 	objs.island.receiveShadow=true
+
+	console.log(objs.island.children[1].material.skinning)
+	console.log("-----",objs.island.children[0].children[0])
+	//TweenMax.to(objs.island.children[0].children[0].rotation,2,{x:5,repeat:100000,yoyo:true})
+
+	mixer = new THREE.AnimationMixer( objs.island );
+	mixer.clipAction( gltfAni ).clampWhenFinished=true
+	mixer.clipAction( gltfAni ).setDuration( 1 ).play();
+	console.log("-===---===-",mixer.clipAction( gltfAni ))
+
+	//var mixer=new THREE.AnimationMixer(objs.island.children[1])
+	//mixer.clipAction(objs.island.animations[0]).setDuration( 1 ).play();
+
+
 
 	// //objs.island.material=new THREE.MeshToonMaterial()
 	// objs.island.material.flatShading=true
