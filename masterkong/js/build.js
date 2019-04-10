@@ -185,7 +185,7 @@ function goPage3(){
 	TweenMax.to(bagA[userChoose],1,{y:stageH+210,alpha:0})
 	TweenMax.to(p2t,1,{alpha:0})
 	TweenMax.to(page2Pic,1,{alpha:0,onComplete:function(){
-		page2.visible=false
+		page1.visible=false
 		main.selectMessage()//=====改这里
 	}})
 	console.log("调用文字输入")
