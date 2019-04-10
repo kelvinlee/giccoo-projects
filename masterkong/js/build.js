@@ -28,6 +28,17 @@ var imageList = [
 	_CDN+"img/t9.png",
 	_CDN+"img/p2btn.png",
 
+	_CDN+"img/arrow.png",
+	_CDN+"img/from.png",
+
+	
+	_CDN+"img/btn-code.png",
+	_CDN+"img/btn-share.png",
+
+
+
+
+
 ];
 var _NORMAL=PIXI.BLEND_MODES.NORMAL,
     _ADD=PIXI.BLEND_MODES.ADD,
@@ -194,16 +205,63 @@ function goPage3(){
 
 //================================================================================跳转第四页 UGC
 
+
 function showPage4(_userT){
 	console.log(_userT)
+	setT(_userT)
+	setBtn()
+	pStage.addChild(page2Pic)
+	page2Pic.scale.set(.5,.5)
+	page2Pic.position.set(512,stageH/2+170)
+	page2Pic.alpha=1
+	console.log(page2Pic)
+
+
+}
+
+//====== 文字
+var t1,t2,t3
+var t1s=new PIXI.TextStyle({	fill:0x9e6c01,	align:"left",		fontSize:33,	lineHeight:54,	letterSpacing:5, fontWeight:"bold"})
+var t2s=new PIXI.TextStyle({	fill:0x9e6c01,	align:"right",	fontSize:25})
+var t3s=new PIXI.TextStyle({	fill:0x9e6c01,	align:"right",	fontSize:38})
+var userTC=new PIXI.Container()
+var from
+function setT(_userT){
+
+	pStage.addChild(userTC)
+	t1=new PIXI.Text(_userT.text,t1s)
+	t2=new PIXI.Text("—————《"+_userT.musicname+"》",t2s)
+	t3=new PIXI.Text(_userT.nickname,t3s)
+	if(_userT.musicname==""){
+		t2.text=""
+	}
+	
+	
+	t1.position.set(122,stageH/2-333)
+	t2.position.set(686-t2.width+10,stageH/2-88)
+	t3.position.set(686-t3.width,stageH/2-38)
+
+	from=new Sprite(getTe(_CDN+"img/from.png"))
+	from.position.set(-t3.width,stageH/2-38+12)
+
+	userTC.addChild(t1,t2,t3,from)
+	TweenMax.from(userTC,1,{alpha:0})
+
+}
+//===== btn
+var endBtn1
+var endBtn2
+function setBtn(){
+
 }
 
 
 
 
-
-
-
+//=====二维码链接
+function getQR(_url){
+	console.log(_url)
+}
 
 
 
