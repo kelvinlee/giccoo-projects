@@ -186,7 +186,7 @@ function goPage3(){
 	TweenMax.to(p2t,1,{alpha:0})
 	TweenMax.to(page2Pic,1,{alpha:0,onComplete:function(){
 		page2.visible=false
-		showPage4()//=====改这里
+		main.selectMessage()//=====改这里
 	}})
 	console.log("调用文字输入")
 
@@ -194,8 +194,8 @@ function goPage3(){
 
 //================================================================================跳转第四页 UGC
 
-function showPage4(){
-
+function showPage4(_userT){
+	console.log(_userT)
 }
 
 
