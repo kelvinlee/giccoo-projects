@@ -2156,6 +2156,17 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"/findsheep/js/bird.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/findsheep/js/bird-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/findsheep/js/campfire.js": {
 		"bF": 0,
 		"ft": 64,
@@ -2332,6 +2343,17 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"/findsheep/js/objects/Fire.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/findsheep/js/objects/Fire-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/findsheep/js/objects/Lensflare.js": {
 		"bF": 0,
 		"ft": 64,
@@ -2339,6 +2361,17 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/findsheep/js/objects/Lensflare-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/findsheep/js/objects/LightningStorm.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/findsheep/js/objects/LightningStorm-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
@@ -3300,6 +3333,22 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"/findsheep/mod/bird.bin": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/findsheep/mod/bird.bin",
+		"oF": 0
+		},
+	"/findsheep/mod/bird.gltf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/findsheep/mod/bird.gltf",
+		"oF": 0
+		},
 	"/findsheep/mod/car.bin": {
 		"cB": 0,
 		"ft": 8192,
@@ -4237,6 +4286,17 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"/libs/vue/vue-slider.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/libs/js/vue-slider.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
 	"/libs/vue/vue-video.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -4338,12 +4398,56 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/masterkong/img/bag.png": {
+		"ft": 32768,
+		"iS": 19327,
+		"oA": 0,
+		"oAP": "/masterkong/img/bag.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/masterkong/img/bg.jpg": {
 		"ft": 16384,
 		"iS": 119522,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/masterkong/img/bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/masterkong/img/bg_down.jpg": {
+		"ft": 16384,
+		"iS": 51058,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/masterkong/img/bg_down.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/masterkong/img/bg_mid.jpg": {
+		"ft": 16384,
+		"iS": 7646,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/masterkong/img/bg_mid.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/masterkong/img/bg_top.jpg": {
+		"ft": 16384,
+		"iS": 26904,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/masterkong/img/bg_top.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -4371,11 +4475,33 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/masterkong/img/btn-code.png": {
+		"ft": 32768,
+		"iS": 14595,
+		"oA": 0,
+		"oAP": "/masterkong/img/btn-code.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/masterkong/img/btn-gb.png": {
 		"ft": 32768,
 		"iS": 12813,
 		"oA": 0,
 		"oAP": "/masterkong/img/btn-gb.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/btn-share.png": {
+		"ft": 32768,
+		"iS": 14363,
+		"oA": 0,
+		"oAP": "/masterkong/img/btn-share.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -4437,6 +4563,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/masterkong/img/note-1.png": {
+		"ft": 32768,
+		"iS": 5181,
+		"oA": 0,
+		"oAP": "/masterkong/img/note-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/masterkong/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -4462,17 +4599,6 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/masterkong/js/build-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
-	"/masterkong/js/main.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "/masterkong/js/main-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0

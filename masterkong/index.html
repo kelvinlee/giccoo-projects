@@ -54,19 +54,31 @@
           <div class="content"></div>
         </div>
       </transition>
-      <transition name="page-fade">
+      <transition name="page-zoom">
         <div v-show="registerShow" style="display: none" class="pop pop-note">
           <div class="content">
             <div class="textbox">
-              <div class="left"><img src="./img/"></div>
-              <div class="right"></div>
-              <div class="text">
-                <p>咖啡加奶糖的声音，有恋爱的味道，你是咖啡，我就是奶糖！</p>
-                <p class="music-name">《只对你有感觉》</p>
+              <div v-show="edit" class="edit">
+                <textarea v-model="text" @focus="focusArea" @blur="blurArea"></textarea>
+                <div @click="edit = false" class="close"><img src="./img/icon-close.png"></div>
               </div>
-              <div class="name"><span>FROM:</span>
-                <input type="text" v-modal="nickname">
+              <div v-show="!edit" @click="editMessage" @touchstart="hideNote" class="messages">
+                <transition name="page-fade">
+                  <div v-show="messageNote" class="note"><img src="./img/note-1.png"></div>
+                </transition>
+                <div @click="moveLeft" class="left"><img src="./img/arrow.png"></div>
+                <div @click="moveRight" class="right"><img src="./img/arrow.png"></div>
+                <slider class="texts">
+                  <div v-for="item in messagelist" class="text">
+                    <p v-html="toBr(item.text)"></p>
+                    <p class="music-name"> <span>————</span>《{{item.name}}》</p>
+                  </div>
+                </slider>
               </div>
+              <div class="name"><span class="font">FROM:</span>
+                <input type="text" v-model="nickname" placeholder="填写你的名字">
+              </div>
+              <div @click="goNext" class="btn-gb"><img src="./img/btn-gb.png"></div>
             </div>
           </div>
         </div>

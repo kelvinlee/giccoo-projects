@@ -81,19 +81,46 @@ block content
         .content
           
     
-    transition(name="page-fade")
+    transition(name="page-zoom")
       .pop.pop-note(v-show="registerShow",style="display: none")
         .content
           .textbox
-            .left
-              img(src="#{url}/img/")
-            .right
-            .text
-              p 咖啡加奶糖的声音，有恋爱的味道，你是咖啡，我就是奶糖！
-              p.music-name《只对你有感觉》
+            .edit(v-show="edit")
+              textarea(v-model="text",@focus="focusArea",@blur="blurArea")
+              .close(@click="edit = false")
+                img(src="#{url}/img/icon-close.png")
+            .messages(v-show="!edit",@click="editMessage",@touchstart="hideNote")
+              transition(name="page-fade")
+                .note(v-show="messageNote")
+                  img(src="#{url}/img/note-1.png")
+              .left(@click="moveLeft")
+                img(src="#{url}/img/arrow.png")
+              .right(@click="moveRight")
+                img(src="#{url}/img/arrow.png")
+              slider.texts
+                .text(v-for="item in messagelist")
+                  p(v-html="toBr(item.text)")
+                  p.music-name 
+                    span ————
+                    |《{{item.name}}》
+                
+              //- .texts
+                .text-move
+                  .text
+                    p 咖啡加奶糖的声音，<br/>有恋爱的味道，<br/>你是咖啡，<br/>我就是奶糖！
+                    p.music-name 
+                      span ————
+                      |《只对你有感觉》
+                  .text
+                    p 咖啡加奶糖的声音，<br/>有恋爱的味道，<br/>你是咖啡，<br/>我就是奶糖！
+                    p.music-name 
+                      span ————
+                      |《只对你有感觉》
             .name
-              span FROM:
-              input(type="text",v-modal="nickname")
+              span.font FROM:
+              input(type="text",v-model="nickname",placeholder="填写你的名字")
+            .btn-gb(@click="goNext")
+              img(src="#{url}/img/btn-gb.png")
 
           
     .pop.flashcamera(v-show="ugcShow",style="display: none")

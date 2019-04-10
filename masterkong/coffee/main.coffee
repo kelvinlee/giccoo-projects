@@ -3,10 +3,18 @@
 # @codekit-prepend "../../libs/coffee/IsPC"
 # @codekit-prepend "../../libs/coffee/NumberToChinese"
 # @codekit-prepend "../../libs/vue/vue-register"
-# @codekit-prepend "../../libs/vue/vue-player"
+# @codekit-prepend "../../libs/vue/vue-slider"
 # @codekit-prepend "../../libs/coffee/String"
 # @codekit-prepend "../../libs/coffee/pixi-base"
 # @codekit-append "UGC"
+Array::shuffle = (n) ->
+  len = @length
+  num = if n then Math.min(n, len) else len
+  arr = @slice(0)
+  arr.sort (a, b) ->
+    Math.random() - 0.5
+  arr.slice 0, num - 1
+
 
 TrueW = 640
 TrueH = 1138
@@ -31,7 +39,13 @@ _startCache = null
 _runTime = null
 _second = 0
 _testTime = 0
-
+messagelist = [
+	{text:"咖啡加奶糖的声音，\n有恋爱的味道，\n你是咖啡，\n我就是奶糖！",name: "只对你有感觉1"}
+	{text:"咖啡加奶糖的声音，\n有恋爱的味道，\n你是咖啡，\n我就是奶糖！",name: "只对你有感觉2"}
+	{text:"咖啡加奶糖的声音，\n有恋爱的味道，\n你是咖啡，\n我就是奶糖！",name: "只对你有感觉3"}
+	{text:"咖啡加奶糖的声音，\n有恋爱的味道，\n你是咖啡，\n我就是奶糖！",name: "只对你有感觉4"}
+]
+messagelist.shuffle()
 
 neteaseShareImage = ->
 	title1 = "画山成岳"
@@ -133,7 +147,7 @@ window.onload = ->
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
 					main.pageIndex = 1
-					# main.registerShow = true
+					main.registerShow = false
 					buildUGC.bind(ugc).call()
 				,520
 		mounted: ->
@@ -227,7 +241,7 @@ init = ->
 				mobile: {id:"mobile", type: "number", placeholder: "请填写电话号码",value: ""}
 			# 	city: {id:"city", type: "select", label: "城市", link: "dealer",value: Object.keys(_citys["请选择省份"])[0], options: _citys["请选择省份"] }
 			mask: 1
-			text: ""
+			text: "请输入内容"
 			nickname: ""
 			mobile: ""
 			musicLink: ""
@@ -272,7 +286,27 @@ init = ->
 			allow: true
 			shaked: false
 			bgImg: null
+			times: 0
+			edit: false
+			messageNote: true
+			cacheArea: "请输入内容"
+			messagelist: messagelist
+			sendData : {}
+		watch:
+			text: (n,o)->
+				t = @.toBr(@.text).split("<br/>")
+				if t.length > 4
+					return @.text = o
+				for item in t
+					if item.length >= 14
+						@.text = o
+						break
+
 		methods:
+			selectMessage: ->
+				@.registerShow = true
+			toBr: (text)->
+				return text.replace(/[\r\n]/g,"<br/>")
 			send: (text,type = true)->
 				@.noteShow = true
 				@.noteText = text
@@ -281,6 +315,47 @@ init = ->
 				@.noteTime = setTimeout =>
 					@.noteShow = false
 				,2000
+			focusArea: (evt)->
+				@text = "" if @.text is @cacheArea
+			blurArea: (evt)->
+				@text = @cacheArea if @text is ""
+			goNext: ->
+				return @.send("请填写你的名字") if @.nickname is ""
+				return @.send("请输入内容") if @.edit and (@.text is "" or @.text is @cacheArea)
+				@.registerShow = false
+				data = {
+					nickname: @.nickname
+					text: ""
+					musicname: ""
+				}
+				if @.edit
+					data.musicname = ""
+					data.text = @.text
+				else
+					i = Math.abs @.$children[0].slideNumber
+					data.musicname = @.messagelist[i].name
+					data.text = @.messagelist[i].text
+				console.log data
+				@.sendData = data
+				showPage4(data) if showPage4?
+
+			moveLeft: ->
+				slider = @.$children[0]
+				slider.prev()
+			moveRight: ->
+				slider = @.$children[0]
+				slider.next()
+			editMessage: ->
+				# console.log "click"
+				@.times++
+				if @.times >= 2
+					console.log "double click"
+					@.edit = true
+				setTimeout =>
+					@.times = 0
+				,300
+			hideNote: ->
+				@.messageNote=false
 			over: ->
 				@.questionShow = false
 				ugc.init()
@@ -381,13 +456,7 @@ init = ->
 				window.location.href = "https://music.163.com/#/song?id=#{id[resultNum]}"
 			openInApp: ->
 				CloudMusic.open("https://m.giccoo.com/draw-board/")
-			goNext: ->
-				setTest()
-				ModLoaded()
-				@.pageIndex = 2
-				setTimeout =>
-					@.runShakeHand()
-				,1000
+			
 			runShakeHand: ->
 				return false if @.shaked
 				hand = document.getElementById "shakeHand"

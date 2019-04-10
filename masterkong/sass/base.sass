@@ -815,10 +815,93 @@ video,canvas,svg
 
 .pop-note
 	+bc(transparent)
+	.textbox
+		+abcentermiddle
+		+w(90%)
+		$size: 8%
+		margin-top: 10%
+		.left
+			+posa
+			+tl(50%)
+			+w($size)
+			+transform(translate3d(0,-50%,0))
+			margin-top: -0.7rem
+		.right
+			+posa
+			+tr(50%)
+			+w($size)
+			+transform(translate3d(0,-50%,0) scale(-1,1))
+			margin-top: -0.7rem
+		.texts
+			margin-left: 12%
+			+w(76%)
+			white-space: nowrap
+			+overhide
+			.text-move
+				+w
+	.messages,.edit
+		+posr
+	.messages
+		.note
+			+posa
+			+tr
+			+iw(161,750*0.9,100%)
+			z-index: 1
+	.edit
+		.close
+			$size: 2rem
+			+posa
+			+tr(-$size/2,-$size/2)
+			+w($size)
+			border-radius: 50%
+			border: solid 1px #9e6c01
+			+bc(#fff)
+		textarea
+			+w
+			+m
+			+font-size(1rem)
+			+h(4rem+4rem)
+			+p(1rem 0.5em)
+			outline: none
+			+bc(transparent)
+			+box
+			border: solid 1px #9e6c01
+			color: #9e6c01
+	.name
+		margin-left: 12%
+		margin-top: 0.4em
+		+w(76%)
+		color: #9e6c01
+		+font-size(0.7rem)
+		+text-right
+		span
+			margin-right: 0.2em
+		input
+			border: none
+			border-bottom: solid 1px #9e6c01
+			color: #9e6c01
+			+bc(transparent)
+			+text-center
+			+w(8rem)
+			outline: none
 	.text
 		color: #9e6c01
-		+font-size(0.8rem)
-	
+		+font-size(0.9rem)
+		font-weight: bold
+		+show-inline
+		+w
+		p
+			+m
+			line-height: 1.6em
+		.music-name
+			margin-top: 0.6em
+			+font-size(0.7em)
+			+text-right
+			span
+				letter-spacing: -0.25em
+				font-weight: normal;
+	.btn-gb
+		margin-top: 20%
 
 
 .splitting
@@ -844,3 +927,15 @@ video,canvas,svg
 			+hide
 		.icon-stop
 			+show
+
+.note-message
+	+posf
+	+tl
+	+w
+	+h(2em)
+	line-height: 2em
+	+font-size(0.7rem)
+	+text-center
+	+bc(rgba(0,0,0,0.7))
+	color: #ff9595
+	z-index: 10009
