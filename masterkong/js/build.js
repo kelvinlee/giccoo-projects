@@ -427,10 +427,10 @@ function showUGC1(_url){
 	console.log(_url)
 	buildQR(_url,QRDone)
 }
-// //=====输完密码
-// function showUGC3(_url){
-// 	console.log(_url)
-// }
+//=====输完密码
+function showUGC3(){
+	console.log("showUGC3")
+}
 
 
 //============二维码
