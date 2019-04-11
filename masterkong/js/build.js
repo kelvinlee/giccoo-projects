@@ -31,6 +31,9 @@ var imageList = [
 	_CDN+"img/arrow.png",
 	_CDN+"img/from.png",
 	_CDN+"img/page3hint.png",
+	_CDN+"img/qrbg.png",
+	_CDN+"img/qrhint.png",
+	_CDN+"img/wannasay.png",
 	
 	_CDN+"img/btn-code.png",
 	_CDN+"img/btn-share.png",
@@ -80,7 +83,7 @@ function getStart(){
 
 	if(main.questionPage==true){
 		if(main.questionHas==true){
-			console.log("输入问题页")
+			console.log("输入问题页",main.getData)
 			main.questionPageShow=true
 		}else{
 			console.log("显示ugc",main.getData)
@@ -99,6 +102,7 @@ function getStart(){
 var bgC=new PIXI.Container()
 var bg123=new PIXI.Container()
 var bg123A=[]
+var bg123dA=[]
 var bg1C=new PIXI.Container()
 var bg2C=new PIXI.Container()
 var bg3C=new PIXI.Container()
@@ -133,6 +137,7 @@ function setBG(){
 			_bgC.addChild(_bg,_bgd)
 		}
 		bg123.addChild(_bgC)
+		bg123dA.push(_bgd)
 		bg123A.push(_bgC)
 		_bgd.position.y=Math.max(stageH-725,550)
 	};
@@ -276,7 +281,7 @@ function showPage4(_userT){
 
 //====== 文字
 var t1,t2,t3
-var t1s=new PIXI.TextStyle({	fill:0x9e6c01,	align:"left",		fontSize:33,	lineHeight:54,	letterSpacing:5, fontWeight:"bold"})
+var t1s=new PIXI.TextStyle({	fill:0x9e6c01,	align:"left",		fontSize:33,	lineHeight:54,	letterSpacing:2, fontWeight:"bold",wordWrap:true,wordWrapWidth:500,breakWords:true})
 var t2s=new PIXI.TextStyle({	fill:0x9e6c01,	align:"right",	fontSize:25})
 var t3s=new PIXI.TextStyle({	fill:0x9e6c01,	align:"right",	fontSize:38})
 var userTC=new PIXI.Container()
@@ -342,7 +347,7 @@ function setBGChange(){
 	bgbtnR.tap=changeBG
 	bghint=new Sprite(getTe(_CDN+"img/page3hint.png"))
 	pStage.addChild(bghint)
-	bghint.position.y=stageH/2-352
+	bghint.position.y=stageH/2-352-50
 	bghint.position.x=30
 	TweenMax.from(bghint,1.5,{alpha:0,y:"-=50",x:"+=60",ease:Back.easeOut})
 }
@@ -380,10 +385,33 @@ function goCode(){
 	endBtn1.visible=false
 	endBtn2.visible=false
 	console.log("去加密")
+	userTC.visible=false
+	page2Pic.visible=false
+
 	main.openQuestion()
+
+	for (var i = 0; i < 3; i++) {
+		TweenMax.to(bg123dA[i].scale,1,{x:.7,y:.7})
+		TweenMax.to(bg123dA[i].position,1,{y:stageH-bg123dA[i].height*.7})
+		
+		//bg123dA[i].position.set(0,stageH-bg123dA[i].height)
+	};
 }
-function showUGC2(){
+var wannasay
+function showUGC2(_url){
+	console.log("加密后",_url)
+	buildQR2(_url,QRDone2)
+	page2Pic.visible=true
+	page2Pic.scale.set(1,1)
+	page2Pic.position.set(375,stageH/2-263)
+
+	wannasay=new Sprite(getTe(_CDN+"img/wannasay.png"))
+	pStage.addChild(t3,wannasay)
+	t3.position.set((750-186-t3.width)/2,stageH/2-25)
+	wannasay.position.set((750-186-t3.width)/2+t3.width+5,stageH/2-19+3)
+
 	
+
 }
 //=====直接分享
 function goShare1(){
@@ -397,4 +425,77 @@ function goShare1(){
 }
 function showUGC1(_url){
 	console.log(_url)
+	buildQR(_url,QRDone)
+}
+// //=====输完密码
+// function showUGC3(_url){
+// 	console.log(_url)
+// }
+
+
+//============二维码
+
+var myQR
+function buildQR(_url,_callback){
+	myQR= new QRCode("myDiv",{text:_url,width:134,height:134,colorDark:"#000000",correctLevel :1})
+	myQR._el.lastChild.onload=_callback
+	console.log("lastChild:",myQR._el.lastChild)
+}
+
+var qrSprite,qrbg
+var base64pic
+function QRDone(){
+	qrSprite=new PIXI.Sprite.fromImage(myQR._el.lastChild.src)
+	qrSprite.texture.baseTexture.on('loaded',function(){
+		qrbg=new Sprite(getTe(_CDN+"img/qrbg.png"))
+		pStage.addChild(qrbg,qrSprite)
+		qrSprite.visible = true
+		qrSprite.x = 440+8
+		qrSprite.y = stageH/2+335+8
+
+		qrbg.y = stageH/2+335
+		//pStage.renderer.render(pStage)//====
+		console.log("QRDone!!!")
+		main.share()
+		//renderer.stage.addChild(qrSprite)
+		//renderer.renderer.render(renderer.stage)
+		//main.sharePost(renderer.view.toDataURL())
+		//var u = new Sprite.fromImage(renderer.view.toDataURL())
+  	//pStage.addChild(u)
+		//main.openForm()
+	})
+	
+	
+}
+
+function buildQR2(_url,_callback){
+	myQR= new QRCode("myDiv",{text:_url,width:156,height:156,colorDark:"#a77b1b",correctLevel :1})
+	myQR._el.lastChild.onload=_callback
+	console.log("lastChild:",myQR._el.lastChild)
+}
+var qrhint
+function QRDone2(){
+	qrSprite=new PIXI.Sprite.fromImage(myQR._el.lastChild.src)
+	qrSprite.texture.baseTexture.on('loaded',function(){
+		qrhint=new Sprite(getTe(_CDN+"img/qrhint.png"))
+		pStage.addChild(qrhint,qrSprite)
+		qrSprite.visible = true
+		qrSprite.x = 750/2-156/2
+		qrSprite.y = stageH/2+63
+
+		qrhint.y = stageH/2+243
+
+		qrSprite.blendMode=_MULTIPLY
+		//pStage.renderer.render(pStage)//====
+		console.log("QRDone!!!")
+		main.share()
+		//renderer.stage.addChild(qrSprite)
+		//renderer.renderer.render(renderer.stage)
+		//main.sharePost(renderer.view.toDataURL())
+		//var u = new Sprite.fromImage(renderer.view.toDataURL())
+  	//pStage.addChild(u)
+		//main.openForm()
+	})
+	
+	
 }
