@@ -120,9 +120,9 @@
               </div>
               <div class="note">输入答案：</div>
               <div class="group">
-                <input type="text" v-model="question" placeholder="例如：2000年2月14日">
+                <input type="text" v-model="answer" placeholder="例如：2000年2月14日">
               </div>
-              <div @click="submit" class="btn-submit"><img src="./img/btn-answer.png"></div>
+              <div @click="checkAnswer" class="btn-submit"><img src="./img/btn-answer.png"></div>
             </div>
           </div>
         </div>
@@ -138,6 +138,7 @@
       </div>
     </div>
     <script src="//res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="//image.giccoo.com/projects/libs/js/min/qrcode.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/PreloadJS/1.0.1/preloadjs.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/pixi.js/4.8.7/pixi.min.js"></script>

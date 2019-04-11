@@ -297,6 +297,7 @@ init = ->
 			questionlist: ["我们第一次牵手是那一天？","我的生日是哪一天？"]
 			hasquestion: false
 			question: ""
+			answer: ""
 			sendData : {}
 			bagIndex: 1
 			backgoundIndex: 1
@@ -409,6 +410,19 @@ init = ->
 				.catch (e)=>
 					console.log "miss info:",e
 					@.getStart()
+			checkAnswer: ->
+				console.log "answer:",@answer
+				return @.send "请输入答案" if @answer is ""
+
+				axios.post apiLink+"active/masterkong/check/db/masterkong",{id: $_GET["id"],answer: @.answer}
+				.then (msg)=>
+					if msg.data.code is 200
+						@.questionPageShow = false
+						showUGC3() if showUGC3?
+					else
+						@.send "答案不正确,请再想想"
+				.catch (e)=>
+					@.send "答案不正确,请再想想"
 
 			getStart: ->
 				console.log "start"
