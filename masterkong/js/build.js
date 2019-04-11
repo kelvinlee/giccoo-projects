@@ -102,6 +102,11 @@ function getStart(){
 			bg123A[2].alpha=1
 			bg123A[main.getData.background-1].visible=true
 
+			for (var i = 0; i < 3; i++) {
+				bg123dA[i].scale.set(.7,.7)
+				bg123dA[i].position.set(0,stageH-bg123dA[i].height)
+			};
+
 			main.questionPageShow=true
 		}else{
 			console.log("显示ugc",main.getData)
@@ -468,6 +473,11 @@ function showUGC3(){
 	// page2Pic.position.set(375,stageH/2-263)
 	// page2Pic.pivot.set(375,180.5)
 	setStartBtn()
+	for (var i = 0; i < 3; i++) {
+		TweenMax.to(bg123dA[i].scale,1,{x:1,y:1})
+		TweenMax.to(bg123dA[i],1,{y:stageH-bg123dA[i].height/.7})
+	};
+
 
 }
 
