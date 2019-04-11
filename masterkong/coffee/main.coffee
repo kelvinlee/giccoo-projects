@@ -394,9 +394,9 @@ init = ->
 						console.log msg.data.info.insertId
 						if @.hasquestion
 							@.lotteryShow = false
-							showUGC2("http://m.gicco.com/masterkong/?id=#{msg.data.info.insertId}") if showUGC2?
+							showUGC2("http://m.giccoo.com/masterkong/?id=#{msg.data.info.insertId}") if showUGC2?
 						else
-							showUGC1("http://m.gicco.com/masterkong/?id=#{msg.data.info.insertId}") if showUGC1?
+							showUGC1("http://m.giccoo.com/masterkong/?id=#{msg.data.info.insertId}") if showUGC1?
 					else
 						console.log "err:",msg
 				.catch (e)=>
