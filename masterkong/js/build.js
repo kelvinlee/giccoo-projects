@@ -64,11 +64,10 @@ var buildUGC = function () {
 	// var ani = new AnimatedSprite();
 	stageH=this.opts.h
 	pStage=this.stage
-	if(ifFirst==1){
-		ifFirst=0
-	}else{
-		getStart()
-	}
+
+
+
+	getStart()
 	
 	
 }
@@ -76,9 +75,19 @@ var buildUGC = function () {
 
 function getStart(){
 
+
 	setBG()
-	setPage1()
-	setFlower()
+
+	if(main.questionPage==true){
+
+		console.log("显示ugc")
+		main.questionPageShow==true
+
+	}else{
+		setPage1()
+		setFlower()
+	}
+	
 	
 }
 
