@@ -322,7 +322,7 @@ init = ->
 				# 	if item.length >= 14
 				# 		@.text = o
 				# 		break
-				if @.text.gblen() > 58*3
+				if @.text.gblen() > 56*2 # or @.text.length > 100
 					@.text = o 
 				else
 					@.text = @.text.replace(/[\r\n]/g,"")
