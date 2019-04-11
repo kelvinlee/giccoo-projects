@@ -34,6 +34,10 @@ var imageList = [
 	_CDN+"img/qrbg.png",
 	_CDN+"img/qrhint.png",
 	_CDN+"img/wannasay.png",
+	_CDN+"img/endqr.png",
+
+	_CDN+"img/startbtn1.png",
+	_CDN+"img/startbtn2.png",
 	
 	_CDN+"img/btn-code.png",
 	_CDN+"img/btn-share.png",
@@ -84,9 +88,14 @@ function getStart(){
 	if(main.questionPage==true){
 		if(main.questionHas==true){
 			console.log("输入问题页",main.getData)
+			page2Pic=	new Sprite(getTe(_CDN+"img/pic"+(main.getData.bag)+".png"))
+			pStage.addChild(page2Pic)
+			page2Pic.position.set(375,stageH/2-263)
+			page2Pic.pivot.set(375,180.5)
 			main.questionPageShow=true
 		}else{
 			console.log("显示ugc",main.getData)
+			showUGC3()
 		}
 		
 
@@ -281,7 +290,7 @@ function showPage4(_userT){
 
 //====== 文字
 var t1,t2,t3
-var t1s=new PIXI.TextStyle({	fill:0x9e6c01,	align:"left",		fontSize:33,	lineHeight:54,	letterSpacing:2, fontWeight:"bold",wordWrap:true,wordWrapWidth:500,breakWords:true})
+var t1s=new PIXI.TextStyle({	fill:0x9e6c01,	align:"left",		fontSize:33,	lineHeight:54,	letterSpacing:1, fontWeight:"bold",wordWrap:true,wordWrapWidth:500,breakWords:true})
 var t2s=new PIXI.TextStyle({	fill:0x9e6c01,	align:"right",	fontSize:25})
 var t3s=new PIXI.TextStyle({	fill:0x9e6c01,	align:"right",	fontSize:38})
 var userTC=new PIXI.Container()
@@ -428,8 +437,57 @@ function showUGC1(_url){
 	buildQR(_url,QRDone)
 }
 //=====输完密码
+
+var endQR,startbtn1,startbtn2
 function showUGC3(){
-	console.log("showUGC3")
+	console.log("showUGC3",main.getData)
+	setT(main.getData)
+	bg123.visible=true
+	bg123A[0].visible=false
+	bg123A[1].visible=false
+	bg123A[2].visible=false
+	bg123A[0].alpha=1
+	bg123A[1].alpha=1
+	bg123A[2].alpha=1
+	bg123A[main.getData.background-1].visible=true
+
+	page2Pic=	new Sprite(getTe(_CDN+"img/pic"+(main.getData.bag)+".png"))
+	//p2t=	new Sprite(getTe(_CDN+"img/t"+(userChoose+1)+".png"))
+	//p2btn= new Sprite(getTe(_CDN+"img/p2btn.png"))
+	pStage.addChild(page2Pic)
+	page2Pic.pivot.set(375,180.5)
+	page2Pic.scale.set(.5,.5)
+	page2Pic.position.set(512,stageH/2+170-30)
+
+	endQR= new Sprite(getTe(_CDN+"img/endqr.png"))
+	pStage.addChild(endQR)
+	endQR.y=stageH-165
+	// page2Pic.position.set(375,stageH/2-263)
+	// page2Pic.pivot.set(375,180.5)
+	setStartBtn()
+
+}
+
+function setStartBtn(){
+	startbtn1= new Sprite(getTe(_CDN+"img/startbtn1.png"))
+	startbtn2= new Sprite(getTe(_CDN+"img/startbtn2.png"))
+	pStage.addChild(startbtn1,startbtn2)
+	startbtn1.y=stageH/2+233
+	startbtn2.y=stageH/2+233+85
+	startbtn1.interactive=true
+	startbtn2.interactive=true
+	startbtn1.tap=goMusic
+	startbtn2.tap=goSelf
+}
+
+function goMusic(){
+	window.location.href="http://m.giccoo.com/masterkong/" 
+}
+
+function goSelf(){
+	console.log("reload")
+	window.location.href="http://m.giccoo.com/masterkong/" 
+
 }
 
 
