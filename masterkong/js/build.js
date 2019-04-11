@@ -190,6 +190,7 @@ function setPage1(){
 var userChoose=0
 function chooseBag(_e){
 	userChoose=_e.target.id
+	main.bagIndex = userChoose+1
 	for (var i = 0; i < 9; i++) {
 		bagA[i].interactive=false
 	};
@@ -358,9 +359,11 @@ function changeBG(_e){
 		TweenMax.to(bg123A[i],1,{alpha:0})
 		if(i==bgNum){
 			TweenMax.to(bg123A[i],1,{alpha:1})
+			main.backgoundIndex = i+1
 		}
 		
 	};
+
 }
 
 
