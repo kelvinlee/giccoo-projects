@@ -79,9 +79,13 @@ function getStart(){
 	setBG()
 
 	if(main.questionPage==true){
-
-		console.log("显示ugc")
-		main.questionPageShow==true
+		if(main.questionHas==true){
+			console.log("输入问题页")
+			main.questionPageShow==true
+		}else{
+			console.log("显示ugc",main.getData)
+		}
+		
 
 	}else{
 		setPage1()
@@ -279,7 +283,7 @@ var from
 function setT(_userT){
 
 	pStage.addChild(userTC)
-	t1=new PIXI.Text(_userT.text,t1s)
+	t1=new PIXI.Text(_userT.message,t1s)
 	t2=new PIXI.Text("—————《"+_userT.musicname+"》",t2s)
 	t3=new PIXI.Text(_userT.nickname,t3s)
 	if(_userT.musicname==""){
