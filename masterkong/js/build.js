@@ -379,7 +379,9 @@ function goCode(){
 	console.log("去加密")
 	main.openQuestion()
 }
-
+function showUGC2(){
+	
+}
 //=====直接分享
 function goShare1(){
 	bghint.visible=false
@@ -389,4 +391,7 @@ function goShare1(){
 	endBtn2.visible=false
 	console.log("生成ugc")
 	main.submit()
+}
+function showUGC1(_url){
+	console.log(_url)
 }
