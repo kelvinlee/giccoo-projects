@@ -81,7 +81,7 @@ function getStart(){
 	if(main.questionPage==true){
 		if(main.questionHas==true){
 			console.log("输入问题页")
-			main.questionPageShow==true
+			main.questionPageShow=true
 		}else{
 			console.log("显示ugc",main.getData)
 		}
