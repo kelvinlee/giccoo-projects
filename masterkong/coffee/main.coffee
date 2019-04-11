@@ -315,13 +315,18 @@ init = ->
 				@.nickname = o if @.nickname.gblen() > 8*2
 
 			text: (n,o)->
-				t = @.toBr(@.text).split("<br/>")
-				if t.length > 4
-					return @.text = o
-				for item in t
-					if item.length >= 14
-						@.text = o
-						break
+				# t = @.toBr(@.text).split("<br/>")
+				# if t.length > 4
+				# 	return @.text = o
+				# for item in t
+				# 	if item.length >= 14
+				# 		@.text = o
+				# 		break
+				if @.text.gblen() > 58*3
+					@.text = o 
+				else
+					@.text = @.text.replace(/[\r\n]/g,"")
+
 		methods:
 			selectMessage: ->
 				@.registerShow = true
@@ -456,31 +461,21 @@ init = ->
 				# goShare()
 				@.share()
 			share: ->
-				goFinal2() if goFinal2?
-				showQR() if showQR?
+				# goFinal() if goFinal?
+				# showQR() if showQR?
 				@.formBoxShow = false
 				@.registerShow = false
 				@.lotteryShow = false
 				console.log "run share"
-				if @.bgImg?
-					@.callshare()
-				else
-					bgImg = renderer.domElement.toDataURL()
-					@.bgImg = new Sprite.fromImage(bgImg)
-
-					# ugc.qrcode.visible = true
-					ugc.app.stage.addChildAt @.bgImg,0
-					@.bgImg.texture.baseTexture.on 'loaded', =>
-					# @.ugc = bgImg
-						@.bgImg.scale.set(750/@.bgImg.width)
-						@.callshare()
+				@.callshare()
+				
 			callshare: ->
 				ugc.app.renderer.render ugc.app.stage
 				@.ugc = ugc.app.view.toDataURL()
 				# ugc.buildUGC(ugc.app.view.toDataURL())
 
 				if @.wy
-					folder = "pig"
+					folder = "masterkong"
 					data = {
 						image: image
 						folder: folder

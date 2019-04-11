@@ -93,9 +93,9 @@ block content
               transition(name="page-fade")
                 .note(v-show="messageNote")
                   img(src="#{url}/img/note-1.png")
-              .left(@click="moveLeft")
+              .left(@click="moveLeft(0)")
                 img(src="#{url}/img/arrow.png")
-              .right(@click="moveRight")
+              .right(@click="moveRight(0)")
                 img(src="#{url}/img/arrow.png")
               slider.texts
                 .text(v-for="item in messagelist")

@@ -67,8 +67,8 @@
                 <transition name="page-fade">
                   <div v-show="messageNote" class="note"><img src="./img/note-1.png"></div>
                 </transition>
-                <div @click="moveLeft" class="left"><img src="./img/arrow.png"></div>
-                <div @click="moveRight" class="right"><img src="./img/arrow.png"></div>
+                <div @click="moveLeft(0)" class="left"><img src="./img/arrow.png"></div>
+                <div @click="moveRight(0)" class="right"><img src="./img/arrow.png"></div>
                 <slider class="texts">
                   <div v-for="item in messagelist" class="text">
                     <p v-html="toBr(item.text)" class="messagecontent"></p>
