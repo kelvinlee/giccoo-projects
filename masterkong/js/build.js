@@ -92,10 +92,20 @@ function getStart(){
 			pStage.addChild(page2Pic)
 			page2Pic.position.set(375,stageH/2-263)
 			page2Pic.pivot.set(375,180.5)
+			bg123.visible=true
+			bg123.visible=true
+			bg123A[0].visible=false
+			bg123A[1].visible=false
+			bg123A[2].visible=false
+			bg123A[0].alpha=1
+			bg123A[1].alpha=1
+			bg123A[2].alpha=1
+			bg123A[main.getData.background-1].visible=true
+
 			main.questionPageShow=true
 		}else{
 			console.log("显示ugc",main.getData)
-			showUGC3()
+			showUGC4()
 		}
 		
 
@@ -442,6 +452,28 @@ var endQR,startbtn1,startbtn2
 function showUGC3(){
 	console.log("showUGC3",main.getData)
 	setT(main.getData)
+	
+
+	//page2Pic=	new Sprite(getTe(_CDN+"img/pic"+(main.getData.bag)+".png"))
+	//p2t=	new Sprite(getTe(_CDN+"img/t"+(userChoose+1)+".png"))
+	//p2btn= new Sprite(getTe(_CDN+"img/p2btn.png"))
+	//pStage.addChild(page2Pic)
+	page2Pic.pivot.set(375,180.5)
+	page2Pic.scale.set(.5,.5)
+	page2Pic.position.set(512,stageH/2+170-30)
+
+	endQR= new Sprite(getTe(_CDN+"img/endqr.png"))
+	pStage.addChild(endQR)
+	endQR.y=stageH-165
+	// page2Pic.position.set(375,stageH/2-263)
+	// page2Pic.pivot.set(375,180.5)
+	setStartBtn()
+
+}
+
+function showUGC4(){
+	console.log("showUGC3",main.getData)
+	setT(main.getData)
 	bg123.visible=true
 	bg123A[0].visible=false
 	bg123A[1].visible=false
@@ -481,12 +513,12 @@ function setStartBtn(){
 }
 
 function goMusic(){
-	window.location.href="http://m.giccoo.com/masterkong/" 
+	window.location.replace("http://m.giccoo.com/masterkong/")
 }
 
 function goSelf(){
 	console.log("reload")
-	window.location.href="http://m.giccoo.com/masterkong/" 
+	window.location.replace("http://m.giccoo.com/masterkong/")
 
 }
 
