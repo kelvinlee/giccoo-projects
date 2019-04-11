@@ -8,6 +8,12 @@
 # @codekit-prepend "../../libs/coffee/String"
 # @codekit-prepend "../../libs/coffee/pixi-base"
 # @codekit-append "UGC"
+
+# note: 防多次提交
+# 分享图
+
+
+
 Array::shuffle = (n) ->
   len = @length
   num = if n then Math.min(n, len) else len
@@ -22,8 +28,8 @@ TrueH = 1138
 _CDN = "./"
 imageurl = "//api.giccoo.com/api/upload/image64/"
 apiUrl = "//api.giccoo.com/masterkong"
-apiLink = "//localhost:3000/"
-# apiLink = "//g.giccoo.com/"
+# apiLink = "//localhost:3000/"
+apiLink = "//g.giccoo.com/"
 # apiLink = "http://192.168.3.53:3000/"
 # apiUrl = "http://localhost:8881/Levi"
 main = {}
