@@ -880,9 +880,10 @@ video,canvas,svg
 			border: none
 			border-bottom: solid 1px #9e6c01
 			color: #9e6c01
+			+font-size(0.7rem)
 			+bc(transparent)
 			+text-center
-			+w(8rem)
+			+w(8em)
 			outline: none
 	.text
 		color: #9e6c01
@@ -902,6 +903,74 @@ video,canvas,svg
 				font-weight: normal;
 	.btn-gb
 		margin-top: 20%
+
+.pop-question
+	+bc(transparent)
+	.question
+		color: #9e6c01
+		+text-center
+		$size: 8%
+		+abcentermiddle
+		+w(100%)
+		.box
+			+posr
+		.left
+			+posa
+			+tl(50%,5%)
+			+w($size)
+			+transform(translate3d(0,-50%,0))
+			// margin-top: -0.7rem
+		.right
+			+posa
+			+tr(50%,5%)
+			+w($size)
+			+transform(translate3d(0,-50%,0) scale(-1,1))
+			// margin-top: -0.7rem
+		.texts
+			margin-left: 15%
+			+w(70%)
+			white-space: nowrap
+			+overhide
+			.text
+				+w
+				color: #9e6c01
+				+font-size(0.9rem)
+				font-weight: bold
+				+show-inline
+				p
+					+m(0.5em auto)
+			.text-move
+				+w
+		.note
+			+font-size(0.8rem)
+		.group
+			+w(70%)
+			+m(0.4em auto)
+			+font-size(0.8rem)
+			input
+				+font-size(0.6rem)
+				border: dashed 1px #9e6c01
+				+box
+				+p(0.8em 0.4em)
+				+w
+				+text-center
+				outline: none
+		.btn-submit
+			margin-top: 10%
+
+.pop-answer
+	.question
+		+posa
+		+tl(50%,0)
+		+w
+		+transform(translate3d(0,0,0))
+		.btn-submit
+			margin-top: 8%
+	.content
+		+posa
+		+tl
+		+w
+		+h
 
 
 .splitting

@@ -1,7 +1,7 @@
 extends ../libs/jade/layout-clean
 
 block title
-  | 康师傅
+  | 定制你的花样音乐告白
 
 block css
   meta(name="author",content="m.giccoo.com")
@@ -79,8 +79,7 @@ block content
     transition(name="page-fade")
       .page.page-2(v-show="pageIndex == 2")
         .content
-          
-    
+
     transition(name="page-zoom")
       .pop.pop-note(v-show="registerShow",style="display: none")
         .content
@@ -122,6 +121,39 @@ block content
             .btn-gb(@click="goNext")
               img(src="#{url}/img/btn-gb.png")
 
+    transition(name="page-fade")
+      .pop.pop-question(v-show="lotteryShow",style="display: none")
+        .content
+          .question
+            .note 密码提示：
+            .box
+              .left(@click="moveLeft(1)")
+                  img(src="#{url}/img/arrow.png")
+              .right(@click="moveRight(1)")
+                img(src="#{url}/img/arrow.png")
+              slider.texts
+                .text(v-for="item in questionlist")
+                  p {{item}}
+            .note 输入答案：
+            .group
+              input(type="text",v-model="question",placeholder="例如：2000年2月14日")
+            .btn-submit(@click="submit")
+              img(src="#{url}/img/btn-submit.png")
+
+     transition(name="page-fade")
+      .pop.pop-question.pop-answer(v-show="questionPageShow",style="display: none")
+        .content
+          .question
+            .note 密码提示：
+            .box
+              .texts
+                .text
+                  p {{getData.question}}
+            .note 输入答案：
+            .group
+              input(type="text",v-model="question",placeholder="例如：2000年2月14日")
+            .btn-submit(@click="submit")
+              img(src="#{url}/img/btn-answer.png")
           
     .pop.flashcamera(v-show="ugcShow",style="display: none")
       .content

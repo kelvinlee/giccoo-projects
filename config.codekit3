@@ -4140,6 +4140,17 @@
 		"oAP": "/build/libs",
 		"oF": 0
 		},
+	"/libs/coffee/get.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/libs/js/get.js",
+		"oF": 0,
+		"oS": 1,
+		"sC": 0,
+		"tS": 1
+		},
 	"/libs/coffee/IsPC.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -4420,6 +4431,61 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/masterkong/img/bg1d.png": {
+		"ft": 32768,
+		"iS": 595059,
+		"oA": 0,
+		"oAP": "/masterkong/img/bg1d.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/bg2.jpg": {
+		"ft": 16384,
+		"iS": 158411,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/masterkong/img/bg2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/masterkong/img/bg2d.png": {
+		"ft": 32768,
+		"iS": 316445,
+		"oA": 0,
+		"oAP": "/masterkong/img/bg2d.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/bg3.jpg": {
+		"ft": 16384,
+		"iS": 89426,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/masterkong/img/bg3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/masterkong/img/bg3d.png": {
+		"ft": 32768,
+		"iS": 271777,
+		"oA": 0,
+		"oAP": "/masterkong/img/bg3d.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/masterkong/img/bg_down.jpg": {
 		"ft": 16384,
 		"iS": 51058,
@@ -4475,6 +4541,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/masterkong/img/btn-answer.png": {
+		"ft": 32768,
+		"iS": 13583,
+		"oA": 0,
+		"oAP": "/masterkong/img/btn-answer.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/masterkong/img/btn-code.png": {
 		"ft": 32768,
 		"iS": 14595,
@@ -4502,6 +4579,39 @@
 		"iS": 14363,
 		"oA": 0,
 		"oAP": "/masterkong/img/btn-share.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/btn-submit.png": {
+		"ft": 32768,
+		"iS": 13462,
+		"oA": 0,
+		"oAP": "/masterkong/img/btn-submit.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/flower.png": {
+		"ft": 32768,
+		"iS": 370753,
+		"oA": 0,
+		"oAP": "/masterkong/img/flower.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/from.png": {
+		"ft": 32768,
+		"iS": 2289,
+		"oA": 0,
+		"oAP": "/masterkong/img/from.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -4574,6 +4684,237 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/masterkong/img/p1t.png": {
+		"ft": 32768,
+		"iS": 8032,
+		"oA": 0,
+		"oAP": "/masterkong/img/p1t.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/p2btn.png": {
+		"ft": 32768,
+		"iS": 14382,
+		"oA": 0,
+		"oAP": "/masterkong/img/p2btn.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/page3hint.png": {
+		"ft": 32768,
+		"iS": 6035,
+		"oA": 0,
+		"oAP": "/masterkong/img/page3hint.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/pic1.png": {
+		"ft": 32768,
+		"iS": 123580,
+		"oA": 0,
+		"oAP": "/masterkong/img/pic1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/pic2.png": {
+		"ft": 32768,
+		"iS": 79561,
+		"oA": 0,
+		"oAP": "/masterkong/img/pic2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/pic3.png": {
+		"ft": 32768,
+		"iS": 150314,
+		"oA": 0,
+		"oAP": "/masterkong/img/pic3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/pic4.png": {
+		"ft": 32768,
+		"iS": 82079,
+		"oA": 0,
+		"oAP": "/masterkong/img/pic4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/pic5.png": {
+		"ft": 32768,
+		"iS": 133437,
+		"oA": 0,
+		"oAP": "/masterkong/img/pic5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/pic6.png": {
+		"ft": 32768,
+		"iS": 68080,
+		"oA": 0,
+		"oAP": "/masterkong/img/pic6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/pic7.png": {
+		"ft": 32768,
+		"iS": 34784,
+		"oA": 0,
+		"oAP": "/masterkong/img/pic7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/pic8.png": {
+		"ft": 32768,
+		"iS": 82055,
+		"oA": 0,
+		"oAP": "/masterkong/img/pic8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/pic9.png": {
+		"ft": 32768,
+		"iS": 85438,
+		"oA": 0,
+		"oAP": "/masterkong/img/pic9.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/t1.png": {
+		"ft": 32768,
+		"iS": 13150,
+		"oA": 0,
+		"oAP": "/masterkong/img/t1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/t2.png": {
+		"ft": 32768,
+		"iS": 17056,
+		"oA": 0,
+		"oAP": "/masterkong/img/t2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/t3.png": {
+		"ft": 32768,
+		"iS": 14564,
+		"oA": 0,
+		"oAP": "/masterkong/img/t3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/t4.png": {
+		"ft": 32768,
+		"iS": 15127,
+		"oA": 0,
+		"oAP": "/masterkong/img/t4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/t5.png": {
+		"ft": 32768,
+		"iS": 13693,
+		"oA": 0,
+		"oAP": "/masterkong/img/t5.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/t6.png": {
+		"ft": 32768,
+		"iS": 11679,
+		"oA": 0,
+		"oAP": "/masterkong/img/t6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/t7.png": {
+		"ft": 32768,
+		"iS": 9264,
+		"oA": 0,
+		"oAP": "/masterkong/img/t7.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/t8.png": {
+		"ft": 32768,
+		"iS": 15157,
+		"oA": 0,
+		"oAP": "/masterkong/img/t8.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/t9.png": {
+		"ft": 32768,
+		"iS": 11598,
+		"oA": 0,
+		"oAP": "/masterkong/img/t9.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/masterkong/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -4599,6 +4940,28 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/masterkong/js/build-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/masterkong/js/main-ck-source-map-reference.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/masterkong/js/main-ck-source-map-reference-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/masterkong/js/main.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/masterkong/js/main-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0

@@ -4,6 +4,7 @@
 # @codekit-prepend "../../libs/coffee/NumberToChinese"
 # @codekit-prepend "../../libs/vue/vue-register"
 # @codekit-prepend "../../libs/vue/vue-slider"
+# @codekit-prepend "../../libs/coffee/get"
 # @codekit-prepend "../../libs/coffee/String"
 # @codekit-prepend "../../libs/coffee/pixi-base"
 # @codekit-append "UGC"
@@ -20,9 +21,9 @@ TrueW = 640
 TrueH = 1138
 _CDN = "./"
 imageurl = "//api.giccoo.com/api/upload/image64/"
-apiUrl = "//api.giccoo.com/maskterkong"
-# apiLink = "//localhost:3000/"
-apiLink = "//g.giccoo.com/"
+apiUrl = "//api.giccoo.com/masterkong"
+apiLink = "//localhost:3000/"
+# apiLink = "//g.giccoo.com/"
 # apiLink = "http://192.168.3.53:3000/"
 # apiUrl = "http://localhost:8881/Levi"
 main = {}
@@ -50,7 +51,7 @@ messagelist.shuffle()
 neteaseShareImage = ->
 	title1 = "画山成岳"
 	picUrl = "https://image.giccoo.com/upload/#{main.folder}/"+main.shareImageLink+"@!large"
-	redirectUrl = "https://activity.music.163.com/maskterkong/"
+	redirectUrl = "https://activity.music.163.com/masterkong/"
 	# console.log picUrl,"orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	# window.location.href = "orpheus://sharepic?picUrl="+encodeURIComponent(picUrl)+"&shareUrl="+encodeURIComponent(redirectUrl)+"&wbDesc="+encodeURIComponent(title1)+"&qqDesc="+encodeURIComponent(title1)
 	console.log "share href:",picUrl
@@ -72,7 +73,7 @@ loadList = [
 	# "//cdnjs.cloudflare.com/ajax/libs/howler/2.0.15/howler.core.min.js"
 	"//image.giccoo.com/projects/genki/js/music-jssdk-1.0.5.js"
 	"//image.giccoo.com/projects/genki/js/ntes.id.js"
-	# "//image.giccoo.com/projects/maskterkong/js/THREE.MeshLine.js"
+	# "//image.giccoo.com/projects/masterkong/js/THREE.MeshLine.js"
 	# "js/libs.js?v=1"
 ]
 
@@ -85,12 +86,12 @@ window.onload = ->
 	if window.navigator.userAgent.indexOf("NeteaseMusic") > -1
 		sys = "NeteaseMusic"
 		shareData = 
-			name: 'maskterkong'
+			name: 'masterkong'
 			title: '康师傅'
 			subTitle: "康师傅"
 			text: ''
-			picUrl: 'http://m.giccoo.com/maskterkong/img/ico.jpg'
-			link: 'http://m.giccoo.com/maskterkong/'
+			picUrl: 'http://m.giccoo.com/masterkong/img/ico.jpg'
+			link: 'http://m.giccoo.com/masterkong/'
 		CloudMusic.setShareData shareData
 	else
 		loadWechatConfig()
@@ -98,8 +99,8 @@ window.onload = ->
 			shareContent =
 				title: "康师傅"
 				desc: "康师傅"
-				link: "http://m.giccoo.com/maskterkong/"
-				imgUrl: "http://m.giccoo.com/maskterkong/img/ico.jpg"
+				link: "http://m.giccoo.com/masterkong/"
+				imgUrl: "http://m.giccoo.com/masterkong/img/ico.jpg"
 				success: ->
 					# alert "success"
 				cancel: ->
@@ -147,7 +148,7 @@ window.onload = ->
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
 					main.pageIndex = 1
-					main.registerShow = false
+					# main.registerShow = false
 					buildUGC.bind(ugc).call()
 				,520
 		mounted: ->
@@ -259,6 +260,9 @@ init = ->
 			speed: 4000
 			maxSpeed: 0
 			swing: false
+			questionPage: false
+			questionPageShow: false
+			questionHas: false
 			messageShow: false
 			registerShow: false
 			lotteryShow: false
@@ -273,7 +277,6 @@ init = ->
 			ugcShow: false
 			regH: 100
 			ugcType: 1
-			nickname: ""
 			message: ""
 			messageIndex: 1
 			messageInput: false
@@ -291,8 +294,19 @@ init = ->
 			messageNote: true
 			cacheArea: "请输入内容"
 			messagelist: messagelist
+			questionlist: ["我们第一次牵手是那一天？","我的生日是哪一天？"]
+			hasquestion: false
+			question: ""
 			sendData : {}
+			bagIndex: 1
+			backgoundIndex: 1
+			getData: {}
 		watch:
+			question: (n,o)->
+				@.question = o if @.question.gblen() > 12*2
+			nickname: (n,o)->
+				@.nickname = o if @.nickname.gblen() > 8*2
+
 			text: (n,o)->
 				t = @.toBr(@.text).split("<br/>")
 				if t.length > 4
@@ -301,7 +315,6 @@ init = ->
 					if item.length >= 14
 						@.text = o
 						break
-
 		methods:
 			selectMessage: ->
 				@.registerShow = true
@@ -325,28 +338,27 @@ init = ->
 				@.registerShow = false
 				data = {
 					nickname: @.nickname
-					text: ""
+					message: ""
 					musicname: ""
 				}
 				if @.edit
 					data.musicname = ""
-					data.text = @.text
+					data.message = @.text
 				else
 					i = Math.abs @.$children[0].slideNumber
 					data.musicname = @.messagelist[i].name
-					data.text = @.messagelist[i].text
+					data.message = @.messagelist[i].text
 				console.log data
 				@.sendData = data
 				showPage4(data) if showPage4?
 
-			moveLeft: ->
-				slider = @.$children[0]
+			moveLeft: (i = 0)->
+				slider = @.$children[i]
 				slider.prev()
-			moveRight: ->
-				slider = @.$children[0]
+			moveRight: (i = 0)->
+				slider = @.$children[i]
 				slider.next()
 			editMessage: ->
-				# console.log "click"
 				@.times++
 				if @.times >= 2
 					console.log "double click"
@@ -354,6 +366,53 @@ init = ->
 				setTimeout =>
 					@.times = 0
 				,300
+			openQuestion: ->
+				@.hasquestion = true
+				@.lotteryShow = true
+			submit: ->
+				if @.hasquestion
+					i = Math.abs @.$children[1].slideNumber
+					question = @.questionlist[i]
+					@.sendData.question = question
+					@.sendData.answer = @.question
+					return @.send "请输入答案" if @.question is ""
+				@.sendData.bag = @.bagIndex
+				@.sendData.background = @.backgoundIndex
+				# ajax , back an id
+				# http://m.gicco.com/masterkong/?id=1
+				# showUGC1("http://m.gicco.com/masterkong/?id=1") if showUGC1?
+				axios.post apiLink+"active/autoSave/new/db/masterkong",@.sendData
+				.then (msg)=>
+					if msg.data.code is 200
+						console.log msg.data.info.insertId
+						if @.hasquestion
+							@.lotteryShow = false
+							showUGC2("http://m.gicco.com/masterkong/?id=#{msg.data.info.insertId}") if showUGC2?
+						else
+							showUGC1("http://m.gicco.com/masterkong/?id=#{msg.data.info.insertId}") if showUGC1?
+					else
+						console.log "err:",msg
+				.catch (e)=>
+					# alert e
+					main.faild(e)	
+			getInfo: (id)->
+				axios.post apiLink+"active/masterkong/get/db/masterkong",{id: id}
+				.then (msg)=>
+					# console.log msg.data.info
+					if msg.data.code is 200 and msg.data.info?
+						console.log "msg:",msg.data.info
+						@.questionPage = true
+						@.questionHas = true if msg.data.info.question? and msg.data.info.question isnt ""
+						@.getData = msg.data.info
+					else
+						@.getStart()
+				.catch (e)=>
+					console.log "miss info:",e
+					@.getStart()
+
+			getStart: ->
+				console.log "start"
+
 			hideNote: ->
 				@.messageNote=false
 			over: ->
@@ -524,7 +583,10 @@ init = ->
 			@.wy = CloudMusic.isInApp()
 			version = CloudMusic.getClientVersion().split(".")
 			ugc = new UGC({el: "ugc", w: 750, h: 750/TrueW*TrueH,callback: => })
-
+			if $_GET["id"]?
+				@.getInfo($_GET["id"])
+			else
+				@.getStart()
 
 tryThis = (msg)->
 	console.log "msg:",msg

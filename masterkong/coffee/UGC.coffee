@@ -58,7 +58,7 @@ class UGC
 		# console.log "load:",@.loadNumber,loading.progressOn,@.loadNumber is imageList.length
 
 		if @.loadNumber is imageList.length
-			buildUGC.bind(@).call()
+			# buildUGC.bind(@).call()
 			@.opts.callback()
 			# @.init()
 			# console.log "aa"

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>康师傅</title>
+    <title>定制你的花样音乐告白</title>
     <meta name="author" content="m.giccoo.com">
     <link rel="stylesheet" href="//image.giccoo.com/projects/libs/css/animate.min.css">
     <link rel="stylesheet" href="css/yrdzst-Bold.css">
@@ -79,6 +79,50 @@
                 <input type="text" v-model="nickname" placeholder="填写你的名字">
               </div>
               <div @click="goNext" class="btn-gb"><img src="./img/btn-gb.png"></div>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="lotteryShow" style="display: none" class="pop pop-question">
+          <div class="content">
+            <div class="question">
+              <div class="note">密码提示：</div>
+              <div class="box">
+                <div @click="moveLeft(1)" class="left"><img src="./img/arrow.png"></div>
+                <div @click="moveRight(1)" class="right"><img src="./img/arrow.png"></div>
+                <slider class="texts">
+                  <div v-for="item in questionlist" class="text">
+                    <p>{{item}}</p>
+                  </div>
+                </slider>
+              </div>
+              <div class="note">输入答案：</div>
+              <div class="group">
+                <input type="text" v-model="question" placeholder="例如：2000年2月14日">
+              </div>
+              <div @click="submit" class="btn-submit"><img src="./img/btn-submit.png"></div>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <transition name="page-fade">
+        <div v-show="questionPageShow" style="display: none" class="pop pop-question pop-answer">
+          <div class="content">
+            <div class="question">
+              <div class="note">密码提示：</div>
+              <div class="box">
+                <div class="texts">
+                  <div class="text">
+                    <p>{{getData.question}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="note">输入答案：</div>
+              <div class="group">
+                <input type="text" v-model="question" placeholder="例如：2000年2月14日">
+              </div>
+              <div @click="submit" class="btn-submit"><img src="./img/btn-answer.png"></div>
             </div>
           </div>
         </div>
