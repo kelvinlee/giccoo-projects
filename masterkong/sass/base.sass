@@ -176,7 +176,7 @@ html,body
 	+h
 body
 	color: $fontColor
-	+bc(#fff5d0)
+	// +bc(#fff5d0)
 	max-width: 640px
 	+m
 	+posr
@@ -839,6 +839,9 @@ video,canvas,svg
 			+overhide
 			.text-move
 				+w
+			.messagecontent
+				min-height: 1.6em*4
+				white-space: normal
 	.messages,.edit
 		+posr
 	.messages
@@ -939,6 +942,7 @@ video,canvas,svg
 				+show-inline
 				p
 					+m(0.5em auto)
+
 			.text-move
 				+w
 		.note

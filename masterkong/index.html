@@ -71,7 +71,7 @@
                 <div @click="moveRight" class="right"><img src="./img/arrow.png"></div>
                 <slider class="texts">
                   <div v-for="item in messagelist" class="text">
-                    <p v-html="toBr(item.text)"></p>
+                    <p v-html="toBr(item.text)" class="messagecontent"></p>
                     <p class="music-name"> <span>————</span>《{{item.name}}》</p>
                   </div>
                 </slider>

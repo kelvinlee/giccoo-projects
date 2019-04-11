@@ -39,7 +39,7 @@ block content
       .note-text(v-show="note")
         p 建议打开手机声音<br/>获得更好体验效果
   #myDiv
-    
+
   .load#load
     .content#loading(v-show="mounted",style="display: none")
       .bottle
@@ -99,7 +99,7 @@ block content
                 img(src="#{url}/img/arrow.png")
               slider.texts
                 .text(v-for="item in messagelist")
-                  p(v-html="toBr(item.text)")
+                  p.messagecontent(v-html="toBr(item.text)")
                   p.music-name 
                     span ————
                     |《{{item.name}}》
