@@ -30,10 +30,17 @@ var imageList = [
 
 	_CDN+"img/arrow.png",
 	_CDN+"img/from.png",
-
+	_CDN+"img/page3hint.png",
 	
 	_CDN+"img/btn-code.png",
 	_CDN+"img/btn-share.png",
+
+	_CDN+"img/bg1d.png",
+	_CDN+"img/bg2d.png",
+	_CDN+"img/bg3d.png",
+	_CDN+"img/bg1.jpg",
+	_CDN+"img/bg2.jpg",
+	_CDN+"img/bg3.jpg",
 
 
 
@@ -77,16 +84,49 @@ function getStart(){
 
 //================================================================================设置背景
 var bgC=new PIXI.Container()
+var bg123=new PIXI.Container()
+var bg123A=[]
+var bg1C=new PIXI.Container()
+var bg2C=new PIXI.Container()
+var bg3C=new PIXI.Container()
 function setBG(){
 	var bg_top=new Sprite(getTe(_CDN+"img/bg_top.jpg"))
 	var bg_down=new Sprite(getTe(_CDN+"img/bg_down.jpg"))
 	var bg_mid=new Sprite(getTe(_CDN+"img/bg_mid.jpg"))
 	var logo=new Sprite(getTe(_CDN+"img/logo.png"))
 	pStage.addChild(bgC)
-	bgC.addChild(bg_mid,bg_top,bg_down,logo)
+	bgC.addChild(bg_mid,bg_top,bg_down)
 	bg_down.y=stageH-510
 	bg_mid.y=429
 	bg_mid.height=stageH-430-510+2
+
+	bgC.addChild(bg123)
+
+
+
+	bg123.addChild(bg3C,bg2C,bg1C)
+	for (var i = 0; i < 3; i++) {
+		var _bg=new Sprite(getTe(_CDN+"img/bg"+(i+1)+".jpg"))
+		var _bgd=new Sprite(getTe(_CDN+"img/bg"+(i+1)+"d.png"))
+		var _bgC=new PIXI.Container()
+		if(i==0){
+			var bg1d=new Sprite(getTe(_CDN+"img/bg_down.jpg"))
+			bg1d.y=stageH-510
+
+			var bg1flower=new Sprite(getTe(_CDN+"img/flower.png"))
+			bg1flower.y=stageH-352
+			_bgC.addChild(_bg,bg1d,_bgd,bg1flower)
+		}else{
+			_bgC.addChild(_bg,_bgd)
+		}
+		bg123.addChild(_bgC)
+		bg123A.push(_bgC)
+		_bgd.position.y=Math.max(stageH-725,550)
+	};
+	bg123A[1].alpha=0
+	bg123A[2].alpha=0
+	bg123.visible=false
+	bgC.addChild(logo)
 }
 
 //================================================================================设置底部花
@@ -210,6 +250,7 @@ function showPage4(_userT){
 	console.log(_userT)
 	setT(_userT)
 	setBtn()
+	setBGChange()
 	pStage.addChild(page2Pic)
 	page2Pic.scale.set(.5,.5)
 	page2Pic.position.set(512,stageH/2+170)
@@ -251,11 +292,63 @@ function setT(_userT){
 //===== btn
 var endBtn1
 var endBtn2
+var endBtnC=new PIXI.Container()
 function setBtn(){
+	pStage.addChild(endBtnC)
+	endBtn1=new Sprite(getTe(_CDN+"img/btn-code.png"))
+	endBtn2=new Sprite(getTe(_CDN+"img/btn-share.png"))
 
+	endBtnC.addChild(endBtn1,endBtn2)
+	endBtn1.position.y=stageH/2+325
+	endBtn2.position.y=stageH/2+424
+
+	endBtn1.interactive=true
+	endBtn2.interactive=true
+	endBtn1.tap=goCode
+	endBtn2.tap=goShare1
 }
 
+//===== 背景变换
+var bgbtnL,bgbtnR
+var bgNum=0
+var bghint
+function setBGChange(){
+	bg123.visible=true
+	flower.visible=false
+	bgbtnL=new Sprite(getTe(_CDN+"img/arrow.png"))
+	bgbtnR=new Sprite(getTe(_CDN+"img/arrow.png"))
+	pStage.addChild(bgbtnL,bgbtnR)
+	bgbtnL.position.set(40,stageH/2-283)
+	bgbtnR.position.set(750-40,stageH/2-283)
+	bgbtnR.scale.x=-1
 
+	bgbtnL.interactive=true
+	bgbtnR.interactive=true
+	bgbtnL.tap=changeBG
+	bgbtnR.tap=changeBG
+	bghint=new Sprite(getTe(_CDN+"img/page3hint.png"))
+	pStage.addChild(bghint)
+	bghint.position.y=stageH/2-352
+	bghint.position.x=30
+	TweenMax.from(bghint,1.5,{alpha:0,y:"-=50",x:"+=60",ease:Back.easeOut})
+}
+function changeBG(_e){
+	bghint.visible=false
+	if(_e.target==bgbtnL){
+		bgNum--
+		if(bgNum==-1){bgNum=2}
+	}else{
+		bgNum++
+		if(bgNum==3){bgNum=0}
+	}
+	for (var i = 0; i < 3; i++) {
+		TweenMax.to(bg123A[i],1,{alpha:0})
+		if(i==bgNum){
+			TweenMax.to(bg123A[i],1,{alpha:1})
+		}
+		
+	};
+}
 
 
 //=====二维码链接
@@ -263,5 +356,24 @@ function getQR(_url){
 	console.log(_url)
 }
 
+//=====加密
+function goCode(){
+	bghint.visible=false
+	bgbtnL.visible=false
+	bgbtnR.visible=false
+	endBtn1.visible=false
+	endBtn2.visible=false
+	console.log("去加密")
+	main.openQuestion()
+}
 
-
+//=====直接分享
+function goShare1(){
+	bghint.visible=false
+	bgbtnL.visible=false
+	bgbtnR.visible=false
+	endBtn1.visible=false
+	endBtn2.visible=false
+	console.log("生成ugc")
+	main.submit()
+}
