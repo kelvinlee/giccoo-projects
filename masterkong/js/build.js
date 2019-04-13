@@ -200,11 +200,16 @@ function setPage1(){
 		_bag.id=i
 		bagA.push(_bag)
 		TweenMax.from(_bag,.5,{alpha:0,y:"-=750",delay:.7-i*.07,ease:Sine.easeIn})
-		TweenMax.from(_bag.scale,1.5,{x:.8*.3,y:1.5*.3,delay:.7-i*.07+.5,ease:Elastic.easeOut})
+		// TweenMax.from(_bag.scale,1.5,{x:.8*.3,y:1.5*.3,delay:.7-i*.07+.5,ease:Elastic.easeOut})
 
-		TweenMax.to(_bag.scale,.5,{x:1.1*.3,y:.9*.3,delay:.7-i*.07+.5+1,repeat:10000,yoyo:true,ease:Sine.easeInOut})
-		TweenMax.set(_bag.skew,{x:-0.1})
-		TweenMax.to(_bag.skew,1,{x:0.1,delay:.7-i*.07+.5+1,repeat:10000,yoyo:true,ease:Sine.easeInOut})
+		// TweenMax.to(_bag.scale,.5,{x:1.1*.3,y:.9*.3,delay:.7-i*.07+.5+1,repeat:10000,yoyo:true,ease:Sine.easeInOut})
+		// TweenMax.set(_bag.skew,{x:-0.1})
+		// TweenMax.to(_bag.skew,1,{x:0.1,delay:.7-i*.07+.5+1,repeat:10000,yoyo:true,ease:Sine.easeInOut})
+		TweenMax.from(_bag.scale,1.5,{x:.95*.3,y:1.05*.3,delay:.7-i*.07+.5,ease:Elastic.easeOut})
+
+		TweenMax.to(_bag.scale,.5,{x:1.05*.3,y:.95*.3,delay:.7-i*.07+.5+1,repeat:10000,yoyo:true,ease:Sine.easeInOut})
+		TweenMax.set(_bag.skew,{x:-0.02})
+		TweenMax.to(_bag.skew,1,{x:0.02,delay:.7-i*.07+.5+1,repeat:10000,yoyo:true,ease:Sine.easeInOut})
 	};
 
 	//====文案
@@ -217,9 +222,11 @@ function setPage1(){
 }
 
 var userChoose=0
+var userChoose2=0
 function chooseBag(_e){
 	userChoose=_e.target.id
-	main.bagIndex = userChoose+1
+	userChoose2=parseInt(Math.random()*9)
+	main.bagIndex = userChoose2+1
 	for (var i = 0; i < 9; i++) {
 		bagA[i].interactive=false
 	};
@@ -239,18 +246,29 @@ function goPage2(){
 		TweenMax.to(bagA[i].scale,.5,{x:0,y:0})
 	};
 	TweenMax.to(bagA[userChoose].skew,.5,{x:0})
+	// TweenMax.to(bagA[userChoose].scale,.5,{x:.8,y:.8,ease:Sine.easeIn})
+
+	// TweenMax.to(bagA[userChoose],.5,{x:750/2,y:stageH/2+401/2,onComplete:function(){
+	// 	TweenMax.to(bagA[userChoose].scale,.5,{x:1,y:1,onComplete:function(){//,ease:SteppedEase.config(6)//,ease:RoughEase.ease
+	// 		TweenMax.to(bagA[userChoose].scale,.25,{x:.5,y:1.4})
+	// 		TweenMax.to(bagA[userChoose],.25,{y:stageH,ease:Sine.easeIn})
+	// 		TweenMax.to(bagA[userChoose].scale,1.5,{x:1,y:1,ease:Elastic.easeOut,delay:.25})
+	// 	}})
+	// }})
+
 	TweenMax.to(bagA[userChoose].scale,.5,{x:.8,y:.8,ease:Sine.easeIn})
 
 	TweenMax.to(bagA[userChoose],.5,{x:750/2,y:stageH/2+401/2,onComplete:function(){
 		TweenMax.to(bagA[userChoose].scale,.5,{x:1,y:1,onComplete:function(){//,ease:SteppedEase.config(6)//,ease:RoughEase.ease
-			TweenMax.to(bagA[userChoose].scale,.25,{x:.5,y:1.4})
+			TweenMax.to(bagA[userChoose].scale,.25,{x:.85,y:1.1})
 			TweenMax.to(bagA[userChoose],.25,{y:stageH,ease:Sine.easeIn})
 			TweenMax.to(bagA[userChoose].scale,1.5,{x:1,y:1,ease:Elastic.easeOut,delay:.25})
 		}})
 	}})
 
-	page2Pic=	new Sprite(getTe(_CDN+"img/pic"+(userChoose+1)+".png"))
-	p2t=	new Sprite(getTe(_CDN+"img/t"+(userChoose+1)+".png"))
+
+	page2Pic=	new Sprite(getTe(_CDN+"img/pic"+(userChoose2+1)+".png"))
+	p2t=	new Sprite(getTe(_CDN+"img/t"+(userChoose2+1)+".png"))
 	p2btn= new Sprite(getTe(_CDN+"img/p2btn.png"))
 	page1.addChild(page2Pic,p2t,bagA[userChoose],p2btn)
 
@@ -376,7 +394,7 @@ function setBGChange(){
 	TweenMax.from(bghint,1.5,{alpha:0,y:"-=50",x:"+=60",ease:Back.easeOut})
 }
 function changeBG(_e){
-	bghint.visible=false
+	//bghint.visible=false
 	if(_e.target==bgbtnL){
 		bgNum--
 		if(bgNum==-1){bgNum=2}
@@ -523,7 +541,7 @@ function setStartBtn(){
 }
 
 function goMusic(){
-	window.location.replace("http://m.giccoo.com/masterkong/")
+	window.location.replace(main.musicURL)
 }
 
 function goSelf(){
@@ -585,7 +603,7 @@ function QRDone2(){
 
 		qrhint.y = stageH/2+243
 
-		qrSprite.blendMode=_MULTIPLY
+		//qrSprite.blendMode=_MULTIPLY
 		//pStage.renderer.render(pStage)//====
 		console.log("QRDone!!!")
 		main.share()
