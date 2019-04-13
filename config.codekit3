@@ -4695,17 +4695,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/masterkong/img/note-1.png": {
-		"ft": 32768,
-		"iS": 5181,
-		"oA": 0,
-		"oAP": "/masterkong/img/note-1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"/masterkong/img/p1t.png": {
 		"ft": 32768,
 		"iS": 8032,
@@ -5017,17 +5006,6 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/masterkong/js/build-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
-	"/masterkong/js/main.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "/masterkong/js/main-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0

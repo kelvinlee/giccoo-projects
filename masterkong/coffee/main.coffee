@@ -535,8 +535,9 @@ init = ->
 					@.getStart()
 			checkAnswer: ->
 				console.log "answer:",@answer
+				return false if @.sendAnswer
 				return @.send "请输入答案" if @answer is ""
-
+				@.sendAnswer = true
 				axios.post apiLink+"active/masterkong/check/db/masterkong",{id: $_GET["id"],answer: @.answer}
 				.then (msg)=>
 					if msg.data.code is 200
@@ -544,7 +545,9 @@ init = ->
 						showUGC3() if showUGC3?
 					else
 						@.send "答案不正确,请再想想"
+						@.sendAnswer = false
 				.catch (e)=>
+					@.sendAnswer = false
 					@.send "答案不正确,请再想想"
 
 			getStart: ->
