@@ -851,19 +851,25 @@ video,canvas,svg
 			+iw(161,750*0.9,100%)
 			z-index: 1
 	.edit
+		.texts
+			// +w
+			+m
+			+box
+			+posr
 		.close
-			$size: 2rem
+			$size: 1.5rem
 			+posa
-			+tr(-$size/2,-$size/2)
+			+tr(-$size/2,12%)
 			+w($size)
 			border-radius: 50%
 			border: solid 1px #9e6c01
 			+bc(#fff)
+			margin-right: -$size/2
 		textarea
 			+w
 			+m
 			+font-size(1rem)
-			+h(4rem+4rem)
+			+h(2rem+4rem)
 			+p(1rem 0.5em)
 			outline: none
 			+bc(transparent)

@@ -86,18 +86,24 @@ block content
         .content
           .textbox
             .edit(v-show="edit")
-              textarea(v-model="text",@focus="focusArea",@blur="blurArea")
+              .texts
+                .text
+                  textarea(v-model="text",v-reset-input,@focus="focusArea",@blur="blurArea")
+                  p.music-name 
+                    span ————
+                    |《{{messagelist[messageIndex].name}}》
               .close(@click="edit = false")
                 img(src="#{url}/img/icon-close.png")
             .messages(v-show="!edit",@click="editMessage",@touchstart="hideNote")
               transition(name="page-fade")
-                .note(v-show="messageNote")
+                //-(v-show="messageNote")
+                .note
                   img(src="#{url}/img/note-1.png")
               .left(@click="moveLeft(0)")
                 img(src="#{url}/img/arrow.png")
               .right(@click="moveRight(0)")
                 img(src="#{url}/img/arrow.png")
-              slider.texts
+              slider.texts(@number="numberChange")
                 .text(v-for="item in messagelist")
                   p.messagecontent(v-html="toBr(item.text)")
                   p.music-name 
@@ -118,7 +124,7 @@ block content
                       |《只对你有感觉》
             .name
               span.font FROM:
-              input(type="text",v-model="nickname",placeholder="填写你的名字")
+              input(type="text",v-reset-input,v-model="nickname",placeholder="填写你的名字")
             .btn-gb(@click="goNext")
               img(src="#{url}/img/btn-gb.png")
 
@@ -132,12 +138,12 @@ block content
                   img(src="#{url}/img/arrow.png")
               .right(@click="moveRight(1)")
                 img(src="#{url}/img/arrow.png")
-              slider.texts
+              slider.texts(@number="numberChange2")
                 .text(v-for="item in questionlist")
-                  p {{item}}
+                  p {{item.q}}
             .note 输入答案：
             .group
-              input(type="text",v-model="question",placeholder="例如：2000年2月14日")
+              input(type="text",v-reset-input,v-model="question",:placeholder="'例如:'+questionlist[questionIndex].p")
             .btn-submit(@click="submit")
               img(src="#{url}/img/btn-submit.png")
 
@@ -152,7 +158,7 @@ block content
                   p {{getData.question}}
             .note 输入答案：
             .group
-              input(type="text",v-model="answer",placeholder="例如：2000年2月14日")
+              input(type="text",v-reset-input,v-model="answer",placeholder="例如：2000年2月14日")
             .btn-submit(@click="checkAnswer")
               img(src="#{url}/img/btn-answer.png")
           

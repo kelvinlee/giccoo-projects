@@ -4431,6 +4431,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/masterkong/img/bg1.jpg": {
+		"ft": 16384,
+		"iS": 48560,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/masterkong/img/bg1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/masterkong/img/bg1d.png": {
 		"ft": 32768,
 		"iS": 595059,
@@ -4590,6 +4601,17 @@
 		"iS": 13462,
 		"oA": 0,
 		"oAP": "/masterkong/img/btn-submit.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/endqr.png": {
+		"ft": 32768,
+		"iS": 17678,
+		"oA": 0,
+		"oAP": "/masterkong/img/endqr.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -4816,6 +4838,50 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/masterkong/img/qrbg.png": {
+		"ft": 32768,
+		"iS": 9005,
+		"oA": 0,
+		"oAP": "/masterkong/img/qrbg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/qrhint.png": {
+		"ft": 32768,
+		"iS": 7400,
+		"oA": 0,
+		"oAP": "/masterkong/img/qrhint.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/startbtn1.png": {
+		"ft": 32768,
+		"iS": 18274,
+		"oA": 0,
+		"oAP": "/masterkong/img/startbtn1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/startbtn2.png": {
+		"ft": 32768,
+		"iS": 19018,
+		"oA": 0,
+		"oAP": "/masterkong/img/startbtn2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/masterkong/img/t1.png": {
 		"ft": 32768,
 		"iS": 13150,
@@ -4915,6 +4981,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/masterkong/img/wannasay.png": {
+		"ft": 32768,
+		"iS": 3322,
+		"oA": 0,
+		"oAP": "/masterkong/img/wannasay.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/masterkong/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -4940,17 +5017,6 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/masterkong/js/build-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
-	"/masterkong/js/main-ck-source-map-reference.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "/masterkong/js/main-ck-source-map-reference-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0

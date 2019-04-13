@@ -70,6 +70,8 @@ Vue.component "slider",
       @duration = 0
       @moved = true
       @offset.w = @.slider.clientWidth
+      # console.log "offset:",@offset.w
+      console.log @.$el.style.width = @offset.w+"px"
       @offset.x = touch.pageX
       @offset.y = touch.pageY
       if @repeat and @x is 0

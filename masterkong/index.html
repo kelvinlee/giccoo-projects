@@ -60,16 +60,21 @@
           <div class="content">
             <div class="textbox">
               <div v-show="edit" class="edit">
-                <textarea v-model="text" @focus="focusArea" @blur="blurArea"></textarea>
+                <div class="texts">
+                  <div class="text">
+                    <textarea v-model="text" v-reset-input @focus="focusArea" @blur="blurArea"></textarea>
+                    <p class="music-name"> <span>————</span>《{{messagelist[messageIndex].name}}》</p>
+                  </div>
+                </div>
                 <div @click="edit = false" class="close"><img src="./img/icon-close.png"></div>
               </div>
               <div v-show="!edit" @click="editMessage" @touchstart="hideNote" class="messages">
                 <transition name="page-fade">
-                  <div v-show="messageNote" class="note"><img src="./img/note-1.png"></div>
+                  <div class="note"><img src="./img/note-1.png"></div>
                 </transition>
                 <div @click="moveLeft(0)" class="left"><img src="./img/arrow.png"></div>
                 <div @click="moveRight(0)" class="right"><img src="./img/arrow.png"></div>
-                <slider class="texts">
+                <slider @number="numberChange" class="texts">
                   <div v-for="item in messagelist" class="text">
                     <p v-html="toBr(item.text)" class="messagecontent"></p>
                     <p class="music-name"> <span>————</span>《{{item.name}}》</p>
@@ -77,7 +82,7 @@
                 </slider>
               </div>
               <div class="name"><span class="font">FROM:</span>
-                <input type="text" v-model="nickname" placeholder="填写你的名字">
+                <input type="text" v-reset-input v-model="nickname" placeholder="填写你的名字">
               </div>
               <div @click="goNext" class="btn-gb"><img src="./img/btn-gb.png"></div>
             </div>
@@ -92,15 +97,15 @@
               <div class="box">
                 <div @click="moveLeft(1)" class="left"><img src="./img/arrow.png"></div>
                 <div @click="moveRight(1)" class="right"><img src="./img/arrow.png"></div>
-                <slider class="texts">
+                <slider @number="numberChange2" class="texts">
                   <div v-for="item in questionlist" class="text">
-                    <p>{{item}}</p>
+                    <p>{{item.q}}</p>
                   </div>
                 </slider>
               </div>
               <div class="note">输入答案：</div>
               <div class="group">
-                <input type="text" v-model="question" placeholder="例如：2000年2月14日">
+                <input type="text" v-reset-input v-model="question" :placeholder="'例如:'+questionlist[questionIndex].p">
               </div>
               <div @click="submit" class="btn-submit"><img src="./img/btn-submit.png"></div>
             </div>
@@ -121,7 +126,7 @@
               </div>
               <div class="note">输入答案：</div>
               <div class="group">
-                <input type="text" v-model="answer" placeholder="例如：2000年2月14日">
+                <input type="text" v-reset-input v-model="answer" placeholder="例如：2000年2月14日">
               </div>
               <div @click="checkAnswer" class="btn-submit"><img src="./img/btn-answer.png"></div>
             </div>
