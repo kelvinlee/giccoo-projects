@@ -408,6 +408,8 @@ init = ->
 			bagIndex: 1
 			backgoundIndex: 1
 			getData: {}
+			sendAnswer: false
+
 		watch:
 			question: (n,o)->
 				@.question = o if @.question.gblen() > 12*2
@@ -487,6 +489,7 @@ init = ->
 				@.hasquestion = true
 				@.lotteryShow = true
 			submit: ->
+				return false if @.sendAnswer
 				if @.hasquestion
 					i = Math.abs @.$children[1].slideNumber
 					question = @.questionlist[i]
@@ -499,8 +502,10 @@ init = ->
 				# ajax , back an id
 				# http://m.gicco.com/masterkong/?id=1
 				# showUGC1("http://m.gicco.com/masterkong/?id=1") if showUGC1?
+				@.sendAnswer = true
 				axios.post apiLink+"active/autoSave/new/db/masterkong",@.sendData
 				.then (msg)=>
+					@.sendAnswer = false
 					if msg.data.code is 200
 						console.log msg.data.info.insertId
 						if @.hasquestion
@@ -512,6 +517,7 @@ init = ->
 						console.log "err:",msg
 				.catch (e)=>
 					# alert e
+					@.sendAnswer = false
 					main.faild(e)	
 			getInfo: (id)->
 				axios.post apiLink+"active/masterkong/get/db/masterkong",{id: id}
