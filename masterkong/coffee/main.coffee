@@ -180,8 +180,8 @@ window.onload = ->
 		sys = "NeteaseMusic"
 		shareData = 
 			name: 'masterkong'
-			title: '康师傅'
-			subTitle: "康师傅"
+			title: '定制你的花样音乐告白'
+			subTitle: "定制你的花样音乐告白"
 			text: ''
 			picUrl: 'http://m.giccoo.com/masterkong/img/ico.jpg'
 			link: 'http://m.giccoo.com/masterkong/'
@@ -190,8 +190,8 @@ window.onload = ->
 		loadWechatConfig()
 		wx.ready ->
 			shareContent =
-				title: "康师傅"
-				desc: "康师傅"
+				title: "定制你的花样音乐告白"
+				desc: "定制你的花样音乐告白"
 				link: "http://m.giccoo.com/masterkong/"
 				imgUrl: "http://m.giccoo.com/masterkong/img/ico.jpg"
 				success: ->
