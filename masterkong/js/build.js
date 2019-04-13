@@ -541,7 +541,8 @@ function setStartBtn(){
 }
 
 function goMusic(){
-	window.location.replace(main.musicURL)
+	//console.log(main.getData)
+	window.location.replace(main.getData.link)
 }
 
 function goSelf(){
