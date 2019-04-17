@@ -609,6 +609,7 @@ init = ->
 					axios.post imageurl,data
 					.then (msg)=>
 						if msg.data.code is 200
+							console.log "post success",msg.data
 							main.success(msg.data)
 						else
 							main.faild(msg)
@@ -637,6 +638,7 @@ init = ->
 				shareDone() if shareDone?
 				# ugc.app.stage.removeChild @.bgImg
 			faild: (err)->
+				console.log "faild upload",err
 				@.pushed = false
 				@.loading = false
 			openSong: ->
