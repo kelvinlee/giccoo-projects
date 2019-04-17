@@ -588,7 +588,7 @@ init = ->
 				ugc.app.renderer.render ugc.app.stage
 				@.ugc = ugc.app.view.toDataURL()
 				# ugc.buildUGC(ugc.app.view.toDataURL())
-
+				image = @.ugc
 				if @.wy
 					folder = "masterkong"
 					data = {
