@@ -609,7 +609,7 @@ init = ->
 						return true
 					axios.post imageurl,data
 					.then (msg)=>
-						if msg.data.code is 200
+						if msg.data.recode is 200
 							console.log "post success",msg.data
 							main.success(msg.data)
 						else
