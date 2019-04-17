@@ -287,6 +287,7 @@ init = ->
 	main = new Vue
 		el: "#main"
 		data:
+			version: "1.0.1"
 			w: TrueW
 			h: TrueH
 			biger: TrueW/TrueH < 0.55
@@ -707,6 +708,7 @@ init = ->
 					SOUND.hit4.pause()
 
 		mounted: ->
+			console.log "version:",@.version
 			TrueH = document.documentElement.clientHeight
 			TrueW = document.documentElement.clientWidth
 			if sys is "NeteaseMusic"
