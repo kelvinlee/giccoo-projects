@@ -115,8 +115,8 @@ function getStart(){
 		
 
 	}else{
-		setPage1()
-		setFlower()
+		// setPage1()
+		// setFlower()
 	}
 	
 	
