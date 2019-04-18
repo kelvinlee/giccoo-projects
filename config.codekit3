@@ -4552,6 +4552,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/masterkong/img/btn-agree.png": {
+		"ft": 32768,
+		"iS": 13696,
+		"oA": 0,
+		"oAP": "/masterkong/img/btn-agree.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/masterkong/img/btn-answer.png": {
 		"ft": 32768,
 		"iS": 13583,
@@ -4689,6 +4700,17 @@
 		"iS": 78706,
 		"oA": 0,
 		"oAP": "/masterkong/img/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/masterkong/img/note-1.png": {
+		"ft": 32768,
+		"iS": 3864,
+		"oA": 0,
+		"oAP": "/masterkong/img/note-1.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

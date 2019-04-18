@@ -597,6 +597,7 @@ video,canvas,svg
 	opacity: 0
 	z-index: 99
 
+
 .page-1
 	// +b($cdn+"img/homepage-bg.jpg",no-repeat,center,center,cover)
 	.content
@@ -984,6 +985,33 @@ video,canvas,svg
 		+w
 		+h
 
+.pop-info
+	+bc(transparent)
+	.info-box
+		border: solid #7ac175 2px
+		box-shadow: 3px 3px 6px rgba(0,0,0,0.6)
+		+w(90%)
+		+abcentermiddle
+		color: #005d31
+		+bc(#fff)
+		+box
+		+p(1em)
+		+font-size(0.7rem)
+		.article
+			+box
+			+h(22em)
+			+touch
+			+m(1em auto)
+			line-height: 1.6
+		h1
+			+font-size(0.85rem)
+			+text-center
+
+		.btn
+			+w(60%)
+			+m
+
+
 
 .splitting
 	.char
@@ -1008,6 +1036,8 @@ video,canvas,svg
 			+hide
 		.icon-stop
 			+show
+
+
 
 .note-message
 	+posf

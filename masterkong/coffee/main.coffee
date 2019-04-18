@@ -241,7 +241,7 @@ window.onload = ->
 				setTimeout ->
 					document.getElementById('load').style.display = "none"
 					main.pageIndex = 1
-					# main.registerShow = false
+					main.agree = false unless main.id
 					buildUGC.bind(ugc).call()
 				,520
 		mounted: ->
@@ -336,6 +336,7 @@ init = ->
 				mobile: {id:"mobile", type: "number", placeholder: "请填写电话号码",value: ""}
 			# 	city: {id:"city", type: "select", label: "城市", link: "dealer",value: Object.keys(_citys["请选择省份"])[0], options: _citys["请选择省份"] }
 			mask: 1
+			agree: true
 			text: "请输入内容"
 			nickname: ""
 			mobile: ""
@@ -410,6 +411,7 @@ init = ->
 			backgoundIndex: 1
 			getData: {}
 			sendAnswer: false
+			id: 0
 
 		watch:
 			question: (n,o)->
@@ -471,6 +473,11 @@ init = ->
 				console.log data
 				@.sendData = data
 				showPage4(data) if showPage4?
+			goPage1: ->
+				# @.pageIndex = 1
+				@.agree = true
+				setPage1() if setPage1?
+				setFlower() if setFlower?
 
 			moveLeft: (i = 0)->
 				slider = @.$children[i]
@@ -521,6 +528,8 @@ init = ->
 					@.sendAnswer = false
 					main.faild(e)	
 			getInfo: (id)->
+				@.id = id
+				@.agree = true
 				axios.post apiLink+"active/masterkong/get/db/masterkong",{id: id}
 				.then (msg)=>
 					# console.log msg.data.info
@@ -529,6 +538,7 @@ init = ->
 						@.questionPage = true
 						@.questionHas = true if msg.data.info.question? and msg.data.info.question isnt ""
 						@.getData = msg.data.info
+						@.pageIndex = 1
 					else
 						@.getStart()
 				.catch (e)=>
