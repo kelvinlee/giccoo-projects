@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" name="viewport">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2f3131">
+    <title>CGV</title>
+    <meta name="description" itemprop="description" content="CGV" />
+    <meta name="keywords" content="CGV" />
+    <link rel="icon" href="img/ico.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/pages.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script>
+
+        $(function () {
+            var hdHeight = $(".header").height()
+            $(window).load(function () {
+                $('.contact').height($(window).height() - hdHeight);
+            });
+        })
+
+    </script>
+
+    <script src="js/swiper-3.4.2.jquery.min.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+          <script src="js/html5shiv.min.js"></script>
+          <script src="js/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+
+    <div class="container-fluid wrapper">
+
+        <div class="header clearfix">
+            <div class="logo"><a href="" title="CGV CATPITL"><img src="img/logo.png" alt="cgv"></a></div>
+            <div class="nav">
+                <a href="">EN</a>
+                <a href="javascript:;" class="menu-btn"><span>MENU</span><span>CLOSE</span></a>
+            </div>
+        </div>
+        <div class="menu scrollBox">
+            <ul class="menu-li fadeInUp animated">
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="team.html">投资团队</a></li>
+                <li>
+                    <a href="javascript:;">投资案例</a>
+                    <div class="subli">
+                        <dl>
+                            <dd class="animated bounceInLeft"><a href="portfolio.html">消费及新零售</a></dd>
+                            <dd class="animated bounceInLeft"><a href="portfolio.html">企业服务及云</a></dd>
+                            <dd class="animated bounceInLeft"><a href="portfolio.html">前沿科技</a></dd>
+                            <dd class="animated bounceInLeft"><a href="portfolio.html">社交及互联网服务</a></dd>
+                        </dl>
+                    </div>
+                </li>
+                <li><a href="news.html">纪源观点</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="contact">
+                <div class="container trapbox">
+                    <div class="row contact-wrap">
+                        <div class="nopadding tab-wrap col-xl-5 offset-xl-7 col-lg-6 offset-lg-6 col-md-7 offset-md-5 col-sm-10 offset-sm-1 col-10 offset-1 animated fadeInUp delay-500ms">
+                            <div class="tabs">
+                                <a href="javascript:;" class="active">上海</a>
+                                <a href="javascript:;">北京</a>
+                                <a href="javascript:;">硅谷</a>
+                                <a href="javascript:;">旧金山</a>
+                                <a href="javascript:;">新加坡</a>
+                            </div>
+                            <div class="contact-tab swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-map="img/map-sh.jpg" data-mmap="img/map-sh-m.jpg">
+                                        <div class="pic"><img src="img/city1.jpg" alt="上海"></div>
+                                        <h3>上海办公室</h3>
+                                        <p class="address">上海浦东新区世纪大道八号<br>
+                                            国金中心二期3501室，200120
+                                        </p>
+                                        <p class="tel">TEL: +86 21 6161 1720</p>
+                                        <p class="fax">FAX: +86 21 5403 5580</p>
+                                    </div>
+                                    <div class="swiper-slide" data-map="img/map-bj.jpg" data-mmap="img/map-bj-m.jpg">
+                                        <div class="pic"><img src="img/city2.jpg" alt="北京"></div>
+                                        <h3>北京办公室</h3>
+                                        <p class="address">北京市朝阳区新源南路8号<br>
+                                            启皓北京西塔1208室，100027
+                                        </p>
+                                        <p class="tel">TEL: +86 10 5989 7988</p>
+                                        <p class="fax">FAX: +86 10 5989 7988</p>
+                                    </div>
+                                    <div class="swiper-slide" data-map="img/map-gg.jpg" data-mmap="img/map-gg-m.jpg">
+                                        <div class="pic"><img src="img/city3.jpg" alt="硅谷"></div>
+                                        <h3>硅谷办公室</h3>
+                                        <p class="address">3000 SAND HILL ROAD BUILDING 4, <br>SUITE 230 MENLO PARK, CA
+                                                94025 UNITED STATES
+                                        </p>
+                                        <p class="tel">TEL: +1 650 475 2150</p>
+                                        <p class="fax">FAX: +1 650 475 2151</p>
+                                    </div>
+                                    <div class="swiper-slide" data-map="img/map-sf.jpg" data-mmap="img/map-sf-m.jpg">
+                                        <div class="pic"><img src="img/city4.jpg" alt="旧金山"></div>
+                                        <h3>旧金山办公室</h3>
+                                        <p class="address">70 SOUTH PARK STREET SAN <br>
+                                                FRANCISCO, CA 94107 UNITED STATES
+                                        </p>
+                                        <p class="tel">TEL: +1 650 475 2150</p>
+                                        <p class="fax">FAX: +1 650 475 2151</p>
+                                    </div>
+                                    <div class="swiper-slide" data-map="img/map-sgp.jpg" data-mmap="img/map-sgp-m.jpg">
+                                        <div class="pic"><img src="img/city5.jpg" alt="新加坡"></div>
+                                        <h3>新加坡办公室</h3>
+                                        <p class="address">12 MARINA BOULEVARD<br>
+                                            MARINA BAY FINANCIAL CENTRE TOWER 3
+                                        </p>
+                                        <p class="tel">SINGAPORE 018982</p>
+                                        <p class="fax">TEL: +65 6805 2400</p>
+                                    </div>
+                                </div>
+                                <div class="share-wrap">
+                                    <div class="share-list">
+                                        <a href="javascript:;" class="wx-btn">
+                                            <i class="fab fa-weixin"></i>
+                                        </a>
+                                        <a
+                                            href="javascript:window.open('http://twitter.com/home?status='+encodeURIComponent(document.location.href)+' '+encodeURIComponent(document.title),'_blank','toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=600, height=450,top=100,left=350');void(0)">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        <a
+                                            href="javascript:window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(document.location.href)+'&title='+encodeURIComponent(document.title)+'&source='+encodeURIComponent(document.location.href),'_blank','toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=600, height=450,top=100,left=350');void(0)">
+                                                <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="fab fa-medium-m"></i>
+                                        </a>
+                                    </div>
+                                    <p>© 2018 COPYRIGHT GGV CAPITAL</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-panel center-pop wx-panel">
+        <img src="img/qr.png" class="wx-qr">
+        <div class="panelClose i-close"><img src="img/close3.png" alt="关闭"></div>
+    </div>
+
+    <script src="js/scrollBar.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+
+        $(function () {
+            $(".wx-btn").click(function () {
+                $(".wx-panel").popPanel()
+            })
+
+            var map;
+            if ($("body").hasClass("mobile")) {
+                map = $(".contact-tab .swiper-slide").eq(0).data("mmap")
+            } else {
+                map = $(".contact-tab .swiper-slide").eq(0).data("map")
+            }
+
+            $(".contact").css("backgroundImage", "url(" + map + ")")
+            var tabsSwiper = new Swiper('.contact-tab', {
+                speed: 500,
+                onInit: function () {
+                    $(".contact").css({
+                        "transitionProperty": "background",
+                        "transitionDuration": ".5s",
+                        "transitionTimingFunction": "linear"
+                    })
+                },
+                onSlideChangeStart: function (swiper) {
+                    var idx = swiper.activeIndex
+                    if ($("body").hasClass("mobile")) {
+                        map = $(swiper.slides[idx]).data("mmap")
+                    } else {
+                        map = $(swiper.slides[idx]).data("map")
+                    }
+                    $(".contact").css("backgroundImage", "url(" + map + ")")
+                    $(".tabs .active").removeClass('active')
+                    $(".tabs a").eq(swiper.activeIndex).addClass('active')
+                }
+            })
+            $(".tabs a").on('touchstart click', function (e) {
+                e.preventDefault()
+                $(".tabs .active").removeClass('active')
+                $(this).addClass('active')
+                tabsSwiper.slideTo($(this).index())
+            })
+
+            $(document).click(function (e) {
+                e.stopPropagation()
+                $(".search").removeClass('active')
+            })
+            $(".search").click(function (e) {
+                e.stopPropagation()
+                $(this).addClass("active")
+            })
+        })
+    </script>
+</body>
+
+</html>
