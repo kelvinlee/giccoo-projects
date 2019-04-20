@@ -450,6 +450,7 @@ animation-name: fadeInUp;
 }
 .circleProgress_wrapper i {
     font-size: 18px;
+    margin-left: 2px;
 }
 
 .circlewrap {
@@ -688,11 +689,13 @@ body.menuOn{overflow: hidden;}
     .banner .bannernav{left: 10%;bottom: 0;margin-bottom: 2.9vh;right: 10%;}
     .banner .more-btn{width: 28%;height:24px;line-height: 24px;font-size: 12px}
     .banner .bannernav a{margin-right: 49%;-ms-flex-order: 2; order: 2}
-    .banner .bannernav div{width: 24px;height: 24px}
+    .banner .bannernav div{width: 24px;height: 24px;line-height: 20px;}
+    .banner .bannernav div i {font-size: 12px;}
+    .circleProgress_wrapper i {font-size: 12px;}
     .banner .prev{-ms-flex-order: 1; order: 1}
     .banner .next{-ms-flex-order: 3; order: 3}
     .banner .pagein{left: 10%;height: 24px;top: 0;margin-top: 29vh;}
-    .banner .pagein .link{width: 30px;height: 30px;margin-right: 10px;}
+    .banner .pagein .link{width: 30px;height: 30px;margin-right: 10px; line-height: 28px;}
     .banner .swiper-pagination{height: 24px;font-size: 12px}
     .banner .swiper-pagination .swiper-pagination-current{font-size: 24px}
 
