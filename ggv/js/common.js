@@ -97,8 +97,6 @@ $(document).ready(function (e) {
 	// 	$('.content').height($(window).height()-hdHeight);
 	// });
 
-	var aleft = $('.menu-li li>a').offset().left
-	$(".subli").css("paddingLeft",aleft)
 
 	var isTouch = ("ontouchstart" in window) ? true : false;
 	if(!isTouch){
@@ -117,6 +115,8 @@ $(document).ready(function (e) {
 	$(".menu-li").find("li").click(function(){
 		$(this).siblings("li").removeClass("on")
 		if(!open){
+			// var aleft = $('a',this).offset().left
+			// $(".mobile .subli").css("paddingLeft",aleft)
 			$(this).addClass("on")
 			open = true
 		}else{

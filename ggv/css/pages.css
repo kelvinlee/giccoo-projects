@@ -7,31 +7,31 @@
 .about{background: url(../img/aboutbg.png) no-repeat center top;background-size:cover;}
 .about-wrap{max-width: 1400px;margin: 0 auto}
 .about-img{text-align: center;background: #030305}
-.about-wrap .intro{padding: 0 5%;padding-top: 10%;}
+.about-wrap .intro{padding: 0 5%;padding-top: 4%;}
 .about-wrap .intro .intro-1{text-align: center;margin-bottom: 15%;margin-right: -5%;}
 .about-wrap .intro .intro-1>div{position: relative; float: left; width: 28.33%;height: 0;padding-bottom: 28.33%; border-radius: 50%;border: 1px solid #3e6174;margin-right: 5%;transition: all .5s linear; animation: overBox 6s linear infinite;}
 .about-wrap .intro .intro-1 .n1 { animation-delay: 2s; }
 .about-wrap .intro .intro-1 .n2 { animation-delay: 4s; }
-.about-wrap .intro .intro-1 h3{font-size: 40px;font-weight: lighter; font-style: italic; animation: overBold 6s linear infinite;}
+.about-wrap .intro .intro-1 h3{font-size: 40px;font-weight: lighter; animation: overBold 6s linear infinite;}
 .about-wrap .intro .intro-1>div>div{position: absolute;left: 50%;top: 50%; transform: translate(-50%,-50%);width: 100%}
 /*.about-wrap .intro .intro-1>div:hover{background: #436e86}*/
-.about-wrap .text h3{font-size: 56px;margin-bottom: 20px;padding-bottom: 20px;border-bottom: 1px solid #3e6174}
-.about-wrap .text p{line-height: 2;margin-bottom: 4%;}
-.about-wrap .text {margin-top: 44px;}
+.about-wrap .text h3{font-size: 45px;margin-bottom: 20px;padding-bottom: 20px;border-bottom: 1px solid #3e6174;}
+.about-wrap .text p{line-height: 2;margin-bottom: 3.5%;}
+.about-wrap .text {margin-top: 3.2vh;font-size: 12px;}
 
 .partner{margin: 0 -15px; background: url(../img/partnerbg.png) no-repeat center top;background-size:cover;padding: 4% 8%;}
-.partner .photo{padding: 0 5px;margin-bottom: 20px;cursor: pointer;}
-.partner h3{font-size: 46px;color: #f8ba32;margin: 0 -10px;line-height: 1;margin-bottom: 14px;}
+.partner .photo{padding: 0 .6%;margin-bottom: 20px;cursor: pointer;}
+.partner h3{font-size: 32px;color: #f8ba32;margin: 0 -10px;line-height: 1;margin-bottom: 1.5%;margin-top: 1.5%;}
 .partner .photo .pic{position: relative;}
 .partner .photo .pic img{width: 100%;transition: all .1s linear}
 .partner .photo .pic:after{position: absolute;content: "";left: 0;bottom: -5px;width:0;height: 5px;background: #f8ba32;transition: all .3s linear }
 .partner .photo:hover .pic:after{width: 100%}
-.partner .photo .name{font-size: 20px;margin-top: 15px;}
-.partner .photo p{color: #7f7f7f;font-size: 20px}
+.partner .photo .name{font-size: 16px;margin-top: 15px;}
+.partner .photo p{color: #7f7f7f;font-size: 14px;}
 .partner .photo img.hover{opacity: 0;;position: absolute; left: 0;top: 0;z-index: 2;}
 .partner .photo:hover img.hover{opacity: 1;}
-
-.partner-panel{background: #232323 url(../img/panel-bg.png) no-repeat center center;background-size: cover; top: 54vh;overflow: initial}
+.partner .newpart {margin-top: 40px;}
+.partner-panel{background: #232323 url(../img/panel-bg.png) no-repeat center center;background-size: cover; top: 54vh;overflow: initial;transition: all .3s linear}
 .partner-panel .photo{padding: 0;}
 .partner-panel .intro{padding: 10%;}
 .partner-panel .intro .scrollBox{line-height: 1.8;padding-right: 9% !important;}
@@ -45,22 +45,24 @@
 .partner-panel .intro .scrollBox{width: 100%;}
 
 
-.title-wrap{height: 60px;}
+.title-wrap{height: 60px;position: relative;}
 .title-wrap .title.fixed{position: fixed;top: 70px;width: 100%;left: 0;background-color: #2f3131;z-index: 2;padding:0 70px}
 .portfolio{background: url(../img/portfoliobg.png) no-repeat center top;background-size:cover;padding:70px }
-.portfolio .title{justify-content:space-between;align-items: center; border-bottom: 1px solid #32cdcc;height: 60px;padding-bottom: 10px}
-.portfolio .select-wrap{height: 54px;line-height: 54px;font-size: 26px}
+.portfolio .title{justify-content:space-between;align-items: center;border-bottom: 1px solid #32cdcc;height: 60px;padding-bottom: 10px;}
+.portfolio .select-wrap{height: 54px;line-height: 54px;font-size: 26px;text-indent: 1vw;}
 .portfolio .select-wrap .select{color: #32cdcc;}
-.portfolio .search{height: 54px;position: relative;width: 24%;border-radius: 27px;overflow: hidden;}
-.portfolio .search input{position: absolute; right: 0;top: 0; height: 54px;background: none;border: 0;outline: none;border-radius: 27px;background: #232323;width: 0;text-indent: 10px;transition: width .3s linear}
+.portfolio .search{height: 54px;position: absolute;width: 24%;border-radius: 27px;overflow: hidden;top: 0;right: 0;}
+.portfolio .search input{color: #f9f1e6;position: absolute; right: 0;top: 0; height: 54px;background: none;border: 0;outline: none;border-radius: 27px;background: #232323;width: 0;text-indent: 10px;transition: width .3s linear}
 .portfolio .search.active input{width: 100%}
-.portfolio .search-btn{position: absolute;right: 0;top: 0; width: 54px;height: 54px;border-radius: 50%;background:#232323 url(../img/search.png) no-repeat 50% 50%;background-size: 50% 50%;cursor: pointer;z-index: 2;}
+.portfolio .search-btn{position: absolute;right: 0;top: 0; width: 54px;height: 54px; text-align: center; line-height: 54px; border-radius: 50%;background:#232323 ;background-size: 50% 50%;cursor: pointer;z-index: 2;}
+.portfolio .search-btn i{ font-size: 20px; opacity: 0.5; transition: all 0.7s ease}
+.portfolio .search-btn:hover i{opacity: 1;}
 
 .portfolio-li li {font-size: 20px;border-bottom: 1px solid #7f7f7f;line-height: 80px;height: 80px;overflow: hidden;cursor: pointer;padding-left: 20px;transition: all .5s linear}
 .portfolio-li .row div{padding: 0 5px}
 .portfolio-li li:hover{color: #32cdcc;border-color: #32cdcc;background: #232323}
 
-.news{background: url(../img/newbg.png) no-repeat center top;background-size:100%;padding:70px 0}
+.news{background: url(../img/newbg.png) no-repeat center top;background-size:100%;padding:0px 0}
 .new-menu{position: relative; text-align: center;margin: 0 auto;font-size: 20px;margin-bottom: 35px;}
 .new-menu .new-nav{width: 60%;margin: 0 auto;position: relative;}
 .new-nav div{cursor: pointer;height: 100%;}
@@ -69,14 +71,16 @@
 .new-menu .new-nav div:hover b:after,
 .new-menu .new-nav div.on b:after{ animation: bounceIn 0.7s ease; display: block; }
 
-.new-menu .search{position: absolute;height: 54px;border-radius: 27px;overflow: hidden;transform: translateX(100%);right: 0;}
-.new-menu .search i{opacity: 0.5; transition: all 0.7s ease}
+.new-menu .search{position: absolute;height: 54px;border-radius: 27px;overflow: hidden;transform: translateX(100%);right: 0;z-index: 3;}
+.new-menu .search i{font-size: 20px; opacity: 0.5; transition: all 0.7s ease}
 .new-menu .search:hover i{opacity: 1;}
 .new-menu .search-btn{position: absolute;left: 0;top: 0; text-align: center; width: 100%;height: 100%;border-radius: 50%;background:#232323; cursor: pointer; z-index: 2;}
 
-.search-bar{position: relative;overflow: hidden;height: 0;transition: all .3s linear;line-height: 40px;margin-bottom: 10px;width: 60%;margin: 0 auto;}
-.search-bar input{position: absolute;left:15px;height: 100%;background: #232323;border:none;text-indent: 10px;outline: none;}
-.search-bar.active{height: 40px;}
+.search-bar{position: relative;overflow: hidden;height: 50px;transition: all .3s linear;line-height: 50px;margin-bottom: 10px;width: 0;margin: 0 auto;top: 47px;z-index: 2;border-radius: 25px;}
+.search-bar input{position: absolute;left:15px;height: 100%;color: #fff; background: #232323;border:none;text-indent: 10px;outline: none;}
+.search-bar.active{
+    width: 70%;
+}
 
 .search-bar .icon-close{position: absolute;width: 40px;height: 40px;right: 0;top:0}
 .search-bar .icon-close::before,
@@ -84,6 +88,7 @@
 
 .news-li{margin: 0 auto}
 .news-li li{margin-bottom: 20px;}
+.news-li li a:hover{opacity: .8;transition: all .3s linear}
 .news-li .pic{padding: 0;width: 100%; height: 100%; overflow: hidden; background-position: center center; background-size: cover;}
 .news-li .row{height: 100%;}
 .news-li .pic img{width: 100%}
@@ -91,39 +96,40 @@
 
 .news-li .info{width: 100%;background: #242424;padding: 3vh 6%;}
 .news-li .info .tags{margin-bottom: 10px;}
-.news-li .info h3{ margin: 0.5em auto;font-size: 32px;color: #8ebc33; height: 90px;overflow: hidden;line-height: 1.5;}
+.news-li .info h3{ margin: 0.5em auto;font-size: 24px;color: #8ebc33; height: 3em;overflow: hidden;line-height: 1.5;}
 .news-li .info span{color: #7f7f7f}
 .news-li .info .tags span,
-.news-intro .tags span{display: inline-block;height: 32px;line-height:32px;border-radius: 16px;padding: 0 20px;background: #1b1b1b;color: #7f7f7f;font-size: 20px;}
+.news-intro .tags span{display: inline-block;height: 32px;line-height:32px;border-radius: 16px;padding: 0 20px;background: #1b1b1b;color: #7f7f7f;font-size: 16px;}
 
 .news-intro .tags span{padding: 0 24px}
 
-.news-li .info p{color: #7f7f7f;margin: 1em auto;height: 40px;overflow: hidden;}
-.news-li .info div:last-child{margin-top: 1em;}
-.news .more-btn{width: 20%;height: 48px;line-height: 48px;color: #fff;text-align: center;border: 1px solid #636363;border-radius: 24px;margin: 20px auto;cursor: pointer;transition: all .3s linear}
+.news-li .info p{color: #7f7f7f;margin: 1em auto;height: 40px;overflow: hidden;font-size: 16px;line-height: 1.8;}
+
+.news-li .info div:last-child{margin-top: 1em; font-size: 14px;}
+.news .more-btn{width: 20%;height: 48px;line-height: 48px;color: #7f7f7f;text-align: center;border: 1px solid #636363;border-radius: 24px;margin: 20px auto;cursor: pointer;transition: all .3s linear}
 .news .more-btn:hover{background: #ccc;color: #030305;border-color: #ccc}
 
-.newscontent{padding-top: 40px}
-.newscontent p{color: #fff;margin: 10px 0}
+.newscontent{padding-top: 4vh}
+.newscontent p{color: #fff;margin: 10px 0;}
 .news-intro{padding:26px 0;background: #242424 }
-.news-intro h3{margin: 10px 0 15px 0;font-size: 48px;width: 50%;color: #8ebc33;height: 128px;overflow: hidden;line-height: 1.4;}
+.news-intro h3{margin: 10px 0 15px 0;font-size: 24px;width: 50%;color: #8ebc33;height: 2.8em;overflow: hidden;line-height: 1.4;}
 .news-intro p{ color: #7f7f7f;}
-.newtxt{font-size: 18px;line-height: 1.8}
+.newtxt{font-size: 16px;line-height: 1.8;}
 .share-list{width: 100%;margin: 0 auto;text-align: center}
-.share-list a{margin: 0 10px;display: inline-block;width: 40px;height: 40px}
-.share-list a i {font-size: 30px;}
+.share-list a{margin: 0 10px;display: inline-block;width: 30px;height: 30px}
+.share-list a i {font-size: 24px;}
 .share{text-align: center;color: #8ebc33;border: 1px solid #8ebc33;width: 20%;height: 56px;line-height: 56px;border-radius: 28px;margin: 5% auto;transition: all .3s linear}
 .share:hover{background: #ccc;color: #030305;border:1px solid #ccc}
 
 .hangye-panel{background: none;width: 400px;font-size: 46px;text-align: center; }
-.hangye-panel li{line-height: 1;margin-bottom: 40px;padding-bottom: 10px;border-bottom: 1px solid transparent;cursor: pointer;color: #7f7f7f;}
-.hangye-panel li span{-webkit-transition: all .5s linear; transition: all .5s linear}
+.hangye-panel li{line-height: 1;margin-bottom: 10px;padding-bottom: 10px;border-bottom: 1px solid transparent;cursor: pointer;color: #7f7f7f;}
+.hangye-panel li span{ font-size: 32px; -webkit-transition: all .5s linear; transition: all .5s linear}
 .hangye-panel li:hover span{color: #32cdcc;border-bottom: 1px solid #32cdcc}
 .hangye-panel .panelClose{width: 100%;text-align: center;cursor: pointer;}
 
-.intro-panel{width: 54%;overflow: initial;padding:3% 6%;color: #2f3131;font-size: 20px;border-bottom: 4px solid #32cdcc}
-.intro-panel .brandlogo{text-align: center;margin-bottom: 38px;}
-.intro-panel .know-more{display: block;margin: 20px auto;width: 234px;height: 56px; line-height: 56px;color: #32cdcc; border: 1px solid #32cdcc; border-radius: 28px;text-align: center;-webkit-transition: all .3s linear; transition: all .3s linear}
+.intro-panel{width: 36%;overflow: initial;padding: 5vh;color: #2f3131;font-size: 14px;border-bottom: 4px solid #32cdcc;}
+.intro-panel .brandlogo{ width: 40%; height: 80px; margin: 0 auto; text-align: center;margin-bottom: 38px; background-position: center center; background-repeat: no-repeat; background-size: contain; }
+.intro-panel .know-more{display: block;margin: 44px auto;margin-bottom: 0;width: 234px;height: 56px;line-height: 56px;color: #32cdcc;border: 1px solid #32cdcc;border-radius: 28px;text-align: center;-webkit-transition: all .3s linear;transition: all .3s linear;}
 .intro-panel .know-more:hover{background: #32cdcc;color: #fff}
 .intro-panel .i-close{position: absolute;bottom: -60px;left: 50%;margin-left: -20px;cursor: pointer;}
 
@@ -140,15 +146,19 @@
 
 .mobile .contact{background-image: url(../img/map-sh-m.jpg)}
 
-.tabs{padding:20px 60px;overflow: hidden;}
-.tabs a{color: #7f7f7f;float: left;width: 20%;text-align: center;line-height: 5vh;font-size: 18px;border-bottom: 1px solid #d5d6d6;}
-.tabs a.active{font-weight: bold;border-bottom-color: #ff5349;border-width: 2px;color: #1b1b1b}
+.tabs{padding: 5% 10%;overflow: hidden;}
+.tabs a{color: #7f7f7f;float: left;width: 20%;text-align: center;line-height: 5vh;font-size: 15px;border-bottom: 2px solid #d5d6d6;}
+.tabs a.active{font-weight: bold;border-bottom-color: #ff5349;border-width: 2px;color: #1b1b1b;width: 18%;margin-left: 1%;margin-right: 1%;}
 
 .contact-tab{text-align: center}
-.contact-tab .swiper-slide{padding: 0 10%;}
-.contact-tab h3{font-size: 30px;margin: 2vh 0;color: #1b1b1b}
-.contact-tab p{font-size: 18px}
-.contact-tab p.address{margin-bottom: 2vh;}
+.contact-tab .swiper-slide{padding: 1% 8%;}
+.contact-tab .swiper-slide .pic{
+	width: 55%;
+	margin:  0 auto;
+}
+.contact-tab h3{font-size: 24px;margin: 2.5vh 0;color: #1b1b1b;}
+.contact-tab p{font-size: 14px;}
+.contact-tab p.address{margin-bottom: 2.5vh;}
 .share-wrap{background: #ff5349;color: #fff;text-align: center;padding: 20px;margin-top: 20px;}
 .share-wrap p{padding: 10px 0 }
 .share-wrap li{cursor: pointer;padding: 10px 0}
@@ -241,8 +251,8 @@
 	.partner-panel{width:970px;height: 460px}
 	.partner-panel .photo{padding: 0;height: 460px;overflow: hidden;}
 	.partner-panel .intro{padding: 40px;height:100%;overflow: hidden;}
-	.partner-panel .intro h3{font-size: 46px;}
-	.partner-panel .intro .title{border-bottom: 1px solid #ebb132;color: #7f7f7f;font-size: 24px;padding: 10px 0;margin-bottom: 10px;}
+	.partner-panel .intro h3{font-size: 26px;}
+	.partner-panel .intro .title{border-bottom: 1px solid #ebb132;color: #7f7f7f;font-size: 16px;padding: 10px 0;margin-bottom: 10px;}
 	.partner-panel .scrollBox{height:265px;}
 
 	.partner-panel .i-close{top:20px;right: 20px; }
@@ -259,11 +269,11 @@
 	.partner-panel{width:1170px;height: 500px}
 	.partner-panel .photo{padding: 0;height: 500px;overflow: hidden;}
 	.partner-panel .intro{padding: 80px;height:100%;overflow: hidden;}
-	.partner-panel .intro h3{font-size: 50px;}
-	.partner-panel .intro .title{border-bottom: 1px solid #ebb132;color: #7f7f7f;font-size: 26px;padding: 10px 0;margin-bottom: 10px;}
+	.partner-panel .intro h3{font-size: 32px;}
+	.partner-panel .intro .title{border-bottom: 1px solid #ebb132;color: #7f7f7f;font-size: 18px;padding: 10px 0;margin-bottom: 10px;}
 	.partner-panel .scrollBox{height:225px;}
 
-	.partner-panel .i-close{top:20px;right: 20px; }
+	.partner-panel .i-close{top:20px;right: 20px;width: 40px;height: 40px }
 
 	.new-menu .search{width: 45px;height: 45px; line-height: 45px;}
 	.new-nav div{height: 45px;line-height: 45px;}
@@ -290,13 +300,14 @@
 	.new-nav div{height: 50px;line-height: 20px;font-size: 16px}
 	.new-nav div span{display: block}
 
-	.new-menu .search-bar{margin-bottom: 10px;}
+	.new-menu .search-bar{margin-bottom: 0px;}
 	.tab-wrap{ }
-	.tabs a{font-size:18px}
-	.contact-tab h3{font-size: 26px}
-	.contact-tab p{font-size: 18px}
+	.tabs a{font-size:16px}
+	.contact-tab h3{font-size: 20px}
+	.contact-tab p{font-size: 14px}
 
 	.portfolio .select-wrap .select{margin-left: 40px;}
+	.hangye-panel li span{ font-size: 26px; }
 }
 
 
@@ -311,7 +322,8 @@
 	.new-menu div b span{display: block}
 	.new-menu{background:#232323;margin-bottom: 12px;}
 	.new-menu .row{width: 82%;text-align: left;margin: 0 0 0 1%;}
-	.new-menu .search-bar{width: 100%;margin: 0 auto;}
+	.new-menu .search-bar{margin: 0 auto;width: 0; margin-top: -40px;}
+	.new-menu .search-bar.active{width: 93%;}
 	.search-bar input{background: #2f3131;left: 0;text-indent: 0px;}
 
 	.partner{padding: 2% 4%}
@@ -321,24 +333,25 @@
 	.partner-panel{width:400px;height: 80%}
 	.partner-panel .photo{padding: 0;height: 356px;overflow: hidden;}
 	.partner-panel .intro{padding: 12px;height: calc(100% - 356px);overflow: hidden;}
-	.partner-panel .intro h3{font-size: 26px;}
-	.partner-panel .intro .title{border-bottom: 1px solid #ebb132;color: #7f7f7f;font-size: 13px;padding: 10px 0;margin-bottom: 10px;}
+	.partner-panel .intro h3{font-size: 18px;}
+	.partner-panel .intro .title{border-bottom: 1px solid #ebb132;color: #7f7f7f;font-size: 14px;padding: 10px 0;margin-bottom: 10px;}
 	.partner-panel .scrollBox{height: calc(100% - 80px);}
 
 	.partner-panel .i-close{top:-30px;width:20px;height: 20px }
 
 	.hangye-panel{width: 300px;font-size: 30px; }
+	.hangye-panel li span{ font-size: 1.6rem; }
 	.portfolio{padding: 20px}
-	.portfolio .select-wrap{font-size: 16px;width: 50%;height: 35px;line-height: 35px}
+	.portfolio .select-wrap{font-size: 16px;width: 100%;height: 35px;line-height: 35px}
 	.portfolio-li li{font-size: 14px;padding: 0;height: 50px;line-height: 50px}
-	.portfolio .search{width: 50%}
+
 
 	.intro-panel {padding: 20px;width: 80%;font-size: 14px}
-	.intro-panel .know-more{width: 160px;height: 40px;line-height: 40px;margin: 10px auto}
-	.intro-panel .brandlogo{margin-bottom: 10px;}
+	.intro-panel .know-more{width: 160px;height: 40px;line-height: 40px;margin: 5vh auto;}
+	.intro-panel .brandlogo{width: 60%; height: 54px;margin: 0 auto;margin-bottom: 22px;}
 
 	.news{padding: 0}
-	.new-menu .search{width: 40px;height: 40px;margin-top: 9px;line-height: 40px;}
+	.new-menu .search{width: 40px;height: 40px;margin-top: .5vh;line-height: 40px;}
 	.new-menu .search-btn{background-color: #2f3131;}
 	.news-li .info{font-size: 12px;padding: 2% 4%}
 	.news-li .info p{display: none}
@@ -354,9 +367,9 @@
 	.tabs{padding: 10px;}
 	.trapbox {position: absolute; bottom: 0px; top: auto; transform: translate3d(0,0,0);  }
 	.tabs a{font-size: 14px}
-	.share-list a i {font-size: 18px;}
+	.share-list a i {font-size: 20px;}
 	.share-list a {line-height: 35px;}
-	.contact-tab h3{font-size: 18px}
+	.contact-tab h3{font-size: 1.2rem}
 	.contact-tab p{font-size: 12px;padding-bottom: 0}
 	.contact-tab .pic img{width: 50%}
 	.share-wrap{padding: 10px}
@@ -372,9 +385,9 @@
 	.share-list a{width: 20px;height: 25px;}
 	.portfolio .title{padding-bottom: 0}
 	.portfolio .search input{height: 35px}
-	.portfolio .search.active input{width: 90%}
-	.portfolio .search{height: 35px}
-	.portfolio .search-btn{width: 35px;height: 35px}
+	.portfolio .search.active input{width: 100%}
+	.portfolio .search{width: 0;height: 35px;top: 1.5vh;transition: width .3s linear;}
+	.portfolio .search-btn{width: 35px;height: 35px; top: 1.5vh;}
 	.hangye-panel li{margin-bottom:4vh ;font-size: 30px}
 
 	.portfolio-li .row div:nth-child(n){padding-left: 0}
@@ -382,7 +395,7 @@
 
 	.portfolio .select-wrap .select{margin-left: 10px;}
 
-	.center-pop.pop-out{padding:1vh 6vw;top:52vh}
+	.center-pop.pop-out{padding:1vh 6vw;top: 53vh;}
 	.voice-panel h3{font-size: 22px}
 	.voice-panel .v-li.for-m li{align-items: center;margin-bottom: 2vh;}
 	.voice-panel .v-li.for-m li div{width: 40%}
@@ -402,12 +415,12 @@
 	.partner-panel{width:80%;height: 74%}
 	.partner-panel .photo{height: 230px;}
 	.partner-panel .intro{height: calc(100% - 230px);}
-	.new-menu .search-bar{width: 100%}
+	.new-menu .search-bar.active{width: 93%;}
 	.new-menu .search-btn{background-color: #2f3131;}
 	.new-menu .new-nav{width: 82%;height: 54px;}
 	.new-menu div b{height: 60px;font-size: 12px;}
 	.new-nav div{padding: 0 8px;}
-	.new-menu .search{margin-top:7px}
-	.portfolio .search.active input{width: 80%}
+	.new-menu .search{margin-top: .5vh;}
+	.portfolio .search.active input{width: 100%}
 
 }

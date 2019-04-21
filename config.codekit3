@@ -3789,7 +3789,7 @@
 		},
 	"/ggv/img/about.jpg": {
 		"ft": 16384,
-		"iS": 583354,
+		"iS": 399577,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/ggv/img/about.jpg",
@@ -3822,7 +3822,7 @@
 		},
 	"/ggv/img/banner0.jpg": {
 		"ft": 16384,
-		"iS": 162445,
+		"iS": 773245,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/ggv/img/banner0.jpg",
@@ -3973,6 +3973,16 @@
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
+		},
+	"/ggv/img/beijing-01.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/ggv/img/beijing-01.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"/ggv/img/brandlogo.png": {
 		"ft": 32768,
@@ -4317,7 +4327,7 @@
 		},
 	"/ggv/img/map-bj.jpg": {
 		"ft": 16384,
-		"iS": 172546,
+		"iS": 276767,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/ggv/img/map-bj.jpg",
@@ -4339,7 +4349,7 @@
 		},
 	"/ggv/img/map-gg.jpg": {
 		"ft": 16384,
-		"iS": 155035,
+		"iS": 255574,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/ggv/img/map-gg.jpg",
@@ -4361,7 +4371,7 @@
 		},
 	"/ggv/img/map-sf.jpg": {
 		"ft": 16384,
-		"iS": 138001,
+		"iS": 224361,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/ggv/img/map-sf.jpg",
@@ -4394,7 +4404,7 @@
 		},
 	"/ggv/img/map-sgp.jpg": {
 		"ft": 16384,
-		"iS": 125642,
+		"iS": 199042,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/ggv/img/map-sgp.jpg",
@@ -4416,7 +4426,7 @@
 		},
 	"/ggv/img/map-sh.jpg": {
 		"ft": 16384,
-		"iS": 254309,
+		"iS": 423182,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/ggv/img/map-sh.jpg",
@@ -4641,6 +4651,46 @@
 		"opt": 0,
 		"oT": 1,
 		"q": 100
+		},
+	"/ggv/img/sf-1-01.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/ggv/img/sf-1-01.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/ggv/img/shanghai-01.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/ggv/img/shanghai-01.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/ggv/img/silicon-valley-1-01.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/ggv/img/silicon-valley-1-01.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/ggv/img/singapore-01.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/ggv/img/singapore-01.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"/ggv/img/twitter.png": {
 		"ft": 32768,
