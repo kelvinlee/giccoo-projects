@@ -372,7 +372,7 @@ width:40px !important; margin: 0 auto;
 	.search-bar input{background: #2f3131;left: 0;text-indent: 0px;border-radius: 25px;}
 
 	.partner{padding: 2% 4%}
-	.partner h3{font-size: 18px}
+	.partner h3{font-size: 20px; margin-bottom: 0.6em}
 	.partner .photo .name{font-size: 14px}
 	.partner .photo p{font-size: 12px}
 	.partner-panel{width:400px;height: 80%}
