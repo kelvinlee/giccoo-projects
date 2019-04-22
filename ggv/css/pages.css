@@ -392,7 +392,7 @@ width:40px !important; margin: 0 auto;
 
 
 	.intro-panel {padding: 20px;width: 80%;font-size: 14px}
-	.intro-panel .know-more{width: 160px;height: 40px;line-height: 40px;margin: 5vh auto;}
+	.intro-panel .know-more{width: 160px;height: 40px;line-height: 40px;margin: 5vh auto; margin-bottom: 0;}
 	.intro-panel .brandlogo{width: 60%; height: 54px;margin: 0 auto;margin-bottom: 22px;}
 
 	.news{padding: 0}
@@ -449,7 +449,7 @@ width:40px !important; margin: 0 auto;
 
 	.portfolio .select-wrap .select{margin-left: 10px;}
 
-	.center-pop.pop-out{padding:1vh 6vw;top: 53vh;}
+	.center-pop.pop-out{padding:5vh 6vw;top: 53vh;}
 	.voice-panel{}
 	.voice-panel h3{font-size: 22px; margin-top: 2vh;}
 	.voice-panel .v-li h4 {margin-top: 2vh; text-align: center;}

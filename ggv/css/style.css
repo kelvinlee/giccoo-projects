@@ -20,7 +20,7 @@ body {
   background-color: #2f3131;
   letter-spacing: 0.09vw
 }
-p {font-size: 14px;}
+p {font-size: 14px; line-height: 1.6}
 
 .bold {font-weight: bold !important;}
 .flex{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}
