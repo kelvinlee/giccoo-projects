@@ -417,7 +417,7 @@ width:40px !important; margin: 0 auto;
 	}
 	.share-list a i {font-size: 18px;}
 	.share-list a {line-height: 25px;}
-	.contact-tab .copyright {margin-top: 0.5em; padding: 0;}
+	.contact-tab .copyright {margin-top: 0; padding: 0;}
 	.contact-tab h3{font-size: 1.2rem}
 	.contact-tab p{font-size: 12px;padding-bottom: 0}
 	.contact-tab .pic img{width: auto; height: 100%;}
@@ -461,7 +461,7 @@ width:40px !important; margin: 0 auto;
 	.contact-tab .swiper-slide .pic {width: 100%; height: 116px;}
 	.contact-tab p.address {margin-bottom: 2vh;}
 	.contact-tab h3 {margin: 2vh 0;}
-	/*.share-wrap {margin-top: 0}*/
+	.share-wrap {margin-top: 10px}
 }
 
 /* Custom, iPhone Retina 320 */ 
