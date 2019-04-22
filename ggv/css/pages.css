@@ -115,7 +115,7 @@
 .news-intro h3{margin: 10px 0 15px 0;font-size: 24px;width: 50%;color: #8ebc33;height: 2.8em;overflow: hidden;line-height: 1.4;}
 .news-intro p{ color: #7f7f7f;}
 .newtxt{font-size: 16px;line-height: 1.8;}
-.share-list{width: 100%;margin: 0 auto;text-align: center;}
+.share-list{width: 100%;margin: 40px auto;text-align: center;}
 .share-list a{margin: 0 10px;display: inline-block;width: 30px;height: 30px}
 .share-list a i {font-size: 24px;}
 .share{text-align: center;color: #8ebc33;border: 1px solid #8ebc33;width: 20%;height: 56px;line-height: 56px;border-radius: 28px;margin: 5% auto;transition: all .3s linear}
@@ -414,6 +414,8 @@ width:40px !important; margin: 0 auto;
 	.tabs a{font-size: 14px}
 	.share-list{
 		padding-bottom: 0vh;
+		margin: 20px auto;
+		margin-bottom: 0px;
 	}
 	.share-list a i {font-size: 18px;}
 	.share-list a {line-height: 25px;}
