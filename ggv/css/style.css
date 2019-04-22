@@ -827,8 +827,8 @@ body.menuOn{overflow: hidden;}
 
     .menu-li{text-align: center;font-size: 33px;margin-top: 15%;}
     .menu-li li{line-height: 1;margin-bottom: 11%}
-    .menu-li li.on {margin-bottom: 0;}
-    .menu-li li.on .subli{display: block}
+    /*.menu-li li.on {margin-bottom: 0;}*/
+    .menu-li li.on .subli{display: block; padding-bottom: 0;}
     .menu-li li>a{font-size: 1.6rem; display: inline-block;}
     .menu-li li.on>a{color: #32cdcc;border-bottom: 1px solid #32cdcc}
     .subli{display: none;font-size: 1rem;padding:5vh 0}
