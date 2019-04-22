@@ -13,42 +13,28 @@
     <meta name="description" itemprop="description" content="CGV" />
     <meta name="keywords" content="CGV" />
     <link rel="icon" href="img/ico.png">
-
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/all.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
     <link href="css/style.css" rel="stylesheet">
-    <!--swiper for banner-->
-    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
-
     <script src="js/jquery-1.10.1.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
 
-
+    <!--首页-->
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
     <script src="js/swiper-3.4.2.jquery.min.js"></script>
-    <script>
 
-        $(function () {
-            var hdHeight = $(".header").height()
-
-            $('.content').height($(window).height() - hdHeight);
-            
-            $(window).resize(function(){
-                var hdHeight = $(".header").height()
-
-                $('.content').height($(window).height() - hdHeight);
-            })
-        })
-
-    </script>
 </head>
 
 <body>
 
     <div class="container-fluid wrapper">
-
+        
+        <!--公共头-->
         <div class="header clearfix">
             <div class="logo"><a href="index.html" title="CGV CATPITL"><img src="img/logo.png" alt="cgv"></a></div>
             <div class="nav">
@@ -75,18 +61,20 @@
                 <li><a href="contact.html">联系我们</a></li>
             </ul>
         </div>
+        <!--公共头 end-->
 
         <div class="content">
+            <!--内容区-->
             <div class="banner swiper-container" style="height:100%">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" link="000.com">
                         <div class="pic" style="background-image:url(img/banner0.jpg)"></div>
                         <div class="info">
 
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -94,14 +82,14 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
 
                             <div class="animated fadeInLeftSmall">
-                                <h3>Passion Ambition Commitment</h3>
                                 <h3>FUEL THE DREAM</h3>
+                                <h3>PASSION AMBITION COMMITMENT</h3>
                                 <h4>让梦想触手可及</h4>
                                 <p>如欲了解部门被投企业，请点击下方按钮。</p>
                             </div>
@@ -110,10 +98,10 @@
                     <div class="swiper-slide" link="111.com">
                         <div class="pic" style="background-image:url(img/banner.jpg)"></div>
                         <div class="info">
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -121,7 +109,7 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">2</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
@@ -136,10 +124,10 @@
                     <div class="swiper-slide" link="111.com">
                         <div class="pic" style="background-image:url(img/banner2.jpg)"></div>
                         <div class="info">
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -147,7 +135,7 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">3</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
@@ -163,10 +151,10 @@
                     <div class="swiper-slide" link="222.com">
                         <div class="pic" style="background-image:url(img/banner3.jpg)"></div>
                         <div class="info">
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -174,7 +162,7 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">4</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
@@ -191,10 +179,10 @@
                     <div class="swiper-slide" link="333.com">
                         <div class="pic" style="background-image:url(img/banner4.jpg)"> </div>
                         <div class="info">
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -202,7 +190,7 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">5</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
@@ -218,10 +206,10 @@
                     <div class="swiper-slide" link="444.com">
                         <div class="pic" style="background-image:url(img/banner5.jpg)"></div>
                         <div class="info">
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -229,7 +217,7 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">6</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
@@ -245,10 +233,10 @@
                     <div class="swiper-slide" link="555.com">
                         <div class="pic" style="background-image:url(img/banner6.jpg)"></div>
                         <div class="info">
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -256,7 +244,7 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">7</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
@@ -272,10 +260,10 @@
                     <div class="swiper-slide" link="666.com">
                         <div class="pic" style="background-image:url(img/banner7.jpg)"></div>
                         <div class="info">
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -283,7 +271,7 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">8</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
@@ -299,10 +287,10 @@
                     <div class="swiper-slide" link="7.com">
                         <div class="pic" style="background-image:url(img/banner8.jpg)"></div>
                         <div class="info">
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -310,7 +298,7 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">9</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
@@ -326,10 +314,10 @@
                     <div class="swiper-slide" link="8.com">
                         <div class="pic" style="background-image:url(img/banner9.jpg)"></div>
                         <div class="info">
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -337,7 +325,7 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">10</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
@@ -353,10 +341,10 @@
                     <div class="swiper-slide" link="9.com">
                         <div class="pic" style="background-image:url(img/banner10.jpg)"></div>
                         <div class="info">
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -364,7 +352,7 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">11</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
@@ -380,10 +368,10 @@
                     <div class="swiper-slide" link="10.com">
                         <div class="pic" style="background-image:url(img/banner11.jpg)"></div>
                         <div class="info">
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -391,7 +379,7 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">12</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
@@ -408,10 +396,10 @@
                     <div class="swiper-slide" link="11.com">
                         <div class="pic" style="background-image:url(img/banner12.jpg)"></div>
                         <div class="info">
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -419,7 +407,7 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">13</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
@@ -435,10 +423,10 @@
                     <div class="swiper-slide" link="12.com">
                         <div class="pic" style="background-image:url(img/banner13.jpg)"></div>
                         <div class="info">
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -446,7 +434,7 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">14</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
@@ -462,10 +450,10 @@
                     <div class="swiper-slide" link="13.com">
                         <div class="pic" style="background-image:url(img/banner14.jpg)"></div>
                         <div class="info">
-                            <div class="pagein flex fadeInRightSmall animated">
-                                <div class="link circleProgress_wrapper" href="javascript:;" title="查看详情">
+                            <div class="pagein flex">
+                                <div class="link circleProgress_wrapper fadeInRightSmall animated" href="javascript:;" title="查看详情">
                                     <!-- <img src="img/link.png" alt="查看详情"> -->
-                                    <i class="fas fa-history"></i>
+                                    <!-- <i class="fas fa-history"></i> -->
                                     <div class="circlewrap wrap-right">
                                         <div class="circleProgress rightcircle rightAnimate"></div>
                                     </div>
@@ -473,7 +461,7 @@
                                         <div class="circleProgress leftcircle leftAnimate"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination">
+                                <div class="swiper-pagination fadeInRightSmall animated">
                                     <span class="swiper-pagination-current">15</span> / <span class="swiper-pagination-total">15</span>
                                 </div>
                             </div>
@@ -491,7 +479,7 @@
                 </div>
 
                 <div class="bannernav flex">
-                    <a href="" target="_blank" class="more-btn">MORE</a>
+                    <a href="" target="_blank" class="more-btn">了解更多</a>
                     <div class="prev" title="上一页">
                         <!-- <img src="img/left-btn.png" alt="上一页"><img src="img/left-btn-dis.png"
                             alt="上一页"> -->
@@ -503,15 +491,28 @@
                 </div>
 
             </div>
+            <!--内容区 end-->
         </div>
     </div>
 
-
+    <!--公共js-->
     <script src="js/scrollBar.js"></script>
     <script src="js/common.js"></script>
+    <!--公共js end-->
+
     <script>
 
         $(function () {
+
+            var hdHeight = $(".header").height()
+
+            $('.banner').height($(window).height() - hdHeight);
+            
+            $(window).resize(function(){
+                var hdHeight = $(".header").height()
+
+                $('.banner').height($(window).height() - hdHeight);
+            })
 
             var actlink = $(".swiper-slide").eq(0).attr("link")
             $(".link").attr("href", actlink)
@@ -522,7 +523,7 @@
                 //paginationType: 'fraction',
                 // 如果需要分页器
                 //pagination: '.banner .swiper-pagination',
-                //autoplay: 5000,
+                autoplay: 5000,
                 loop: true,
                 speed: 800,
                 // 如果需要前进后退按钮

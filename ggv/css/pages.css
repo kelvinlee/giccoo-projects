@@ -51,11 +51,11 @@
 .portfolio .title{justify-content:space-between;align-items: center;border-bottom: 1px solid #32cdcc;height: 60px;padding-bottom: 10px;}
 .portfolio .select-wrap{height: 54px;line-height: 54px;font-size: 26px;text-indent: 1vw;}
 .portfolio .select-wrap .select{color: #32cdcc;}
-.portfolio .search{height: 54px;position: absolute;width: 24%;border-radius: 27px;overflow: hidden;top: 0;right: 0;}
+.portfolio .search{height: 54px;position: absolute;width: 24%;border-radius: 27px;overflow: hidden;top: -1.5vh;right: 0;}
 .portfolio .search input{color: #f9f1e6;position: absolute; right: 0;top: 0; height: 54px;background: none;border: 0;outline: none;border-radius: 27px;background: #232323;width: 0;text-indent: 10px;transition: width .3s linear}
 .portfolio .search.active input{width: 100%}
-.portfolio .search-btn{position: absolute;right: 0;top: 0; width: 54px;height: 54px; text-align: center; line-height: 54px; border-radius: 50%;background:#232323 ;background-size: 50% 50%;cursor: pointer;z-index: 2;}
-.portfolio .search-btn i{ font-size: 20px; opacity: 0.5; transition: all 0.7s ease}
+.portfolio .search-btn{position: absolute;right: 0;top: -1.5vh; width: 54px;height: 54px; text-align: center; line-height: 54px; border-radius: 50%;background:#232323 ;background-size: 50% 50%;cursor: pointer;z-index: 2;}
+.portfolio .search-btn i{ font-size: 20px; opacity: 0.5; transition: all 0.7s ease;line-height: 54px}
 .portfolio .search-btn:hover i{opacity: 1;}
 
 .portfolio-li li {font-size: 20px;border-bottom: 1px solid #7f7f7f;line-height: 80px;height: 80px;overflow: hidden;cursor: pointer;padding-left: 20px;transition: all .5s linear}
@@ -77,7 +77,7 @@
 .new-menu .search-btn{position: absolute;left: 0;top: 0; text-align: center; width: 100%;height: 100%;border-radius: 50%;background:#232323; cursor: pointer; z-index: 2;}
 
 .search-bar{position: relative;overflow: hidden;height: 50px;transition: all .3s linear;line-height: 50px;margin-bottom: 10px;width: 0;margin: 0 auto;top: 47px;z-index: 2;border-radius: 25px;}
-.search-bar input{position: absolute;left:15px;height: 100%;color: #fff; background: #232323;border:none;text-indent: 10px;outline: none;}
+.search-bar input{position: absolute;left:15px;height: 100%;color: #fff; background: #232323;border:none;text-indent: 10px;outline: none;border-radius: 25px;}
 .search-bar.active{
     width: 70%;
 }
@@ -103,7 +103,7 @@
 
 .news-intro .tags span{padding: 0 24px}
 
-.news-li .info p{color: #7f7f7f;margin: 1em auto;height: 40px;overflow: hidden;font-size: 16px;line-height: 1.8;}
+.news-li .info p{color: #7f7f7f;margin: 1em auto;height: 10vh;overflow: hidden;font-size: 16px;line-height: 1.8;}
 
 .news-li .info div:last-child{margin-top: 1em; font-size: 14px;}
 .news .more-btn{width: 20%;height: 48px;line-height: 48px;color: #7f7f7f;text-align: center;border: 1px solid #636363;border-radius: 24px;margin: 20px auto;cursor: pointer;transition: all .3s linear}
@@ -115,11 +115,22 @@
 .news-intro h3{margin: 10px 0 15px 0;font-size: 24px;width: 50%;color: #8ebc33;height: 2.8em;overflow: hidden;line-height: 1.4;}
 .news-intro p{ color: #7f7f7f;}
 .newtxt{font-size: 16px;line-height: 1.8;}
-.share-list{width: 100%;margin: 0 auto;text-align: center}
+.share-list{width: 100%;margin: 0 auto;text-align: center;padding-bottom: 5vh;}
 .share-list a{margin: 0 10px;display: inline-block;width: 30px;height: 30px}
 .share-list a i {font-size: 24px;}
 .share{text-align: center;color: #8ebc33;border: 1px solid #8ebc33;width: 20%;height: 56px;line-height: 56px;border-radius: 28px;margin: 5% auto;transition: all .3s linear}
 .share:hover{background: #ccc;color: #030305;border:1px solid #ccc}
+
+.album{
+	background: #242424;
+}
+.card{
+	border: none;background: #2d2f2f
+}
+.album .card-text{height: 63px;overflow: hidden; color: #8ebc33;margin-bottom: 1vh;}
+.album .card-body .tags{overflow: hidden;margin-bottom: 1vh;}
+.album .card-body .tags span{float: left;color: #7e7e7e;background: #1a1a1a;text-align: center;padding: 0 20px;height: 32px;line-height: 32px;border-radius: 16px}
+.album .card-body .card-inf{color: #7f7f7f}
 
 .hangye-panel{background: none;width: 400px;font-size: 46px;text-align: center; }
 .hangye-panel li{line-height: 1;margin-bottom: 10px;padding-bottom: 10px;border-bottom: 1px solid transparent;cursor: pointer;color: #7f7f7f;}
@@ -127,28 +138,62 @@
 .hangye-panel li:hover span{color: #32cdcc;border-bottom: 1px solid #32cdcc}
 .hangye-panel .panelClose{width: 100%;text-align: center;cursor: pointer;}
 
-.intro-panel{width: 36%;overflow: initial;padding: 5vh;color: #2f3131;font-size: 14px;border-bottom: 4px solid #32cdcc;}
+.intro-panel{width: 36%;overflow: initial;padding: 5vh 4vw;color: #2f3131;font-size: 14px;border-bottom: 4px solid #32cdcc;}
 .intro-panel .brandlogo{ width: 40%; height: 80px; margin: 0 auto; text-align: center;margin-bottom: 38px; background-position: center center; background-repeat: no-repeat; background-size: contain; }
 .intro-panel .know-more{display: block;margin: 44px auto;margin-bottom: 0;width: 234px;height: 56px;line-height: 56px;color: #32cdcc;border: 1px solid #32cdcc;border-radius: 28px;text-align: center;-webkit-transition: all .3s linear;transition: all .3s linear;}
 .intro-panel .know-more:hover{background: #32cdcc;color: #fff}
-.intro-panel .i-close{position: absolute;bottom: -60px;left: 50%;margin-left: -20px;cursor: pointer;}
-
-.voice-panel{border-bottom: 4px solid #8ebc33;}
+.intro-panel .i-close{width:40px;position: absolute;bottom: -60px;left: 50%;margin-left: -20px;cursor: pointer;}
+.menuicon{
+width:40px !important; margin: 0 auto;
+}
+.voice-panel{border-bottom: 4px solid #8ebc33; width: 55.7vw;}
 .voice-panel .i-close{right:20px;top:20px;left: auto;bottom: auto;}
-.voice-panel h3{color: #8ebc33;padding: 7.6% 0 4% 0;text-align: center;font-size: 36px}
-.voice-panel .v-li{text-align: center}
-.voice-panel .v-li h4{font-size: 18px; height: 44px;margin-bottom: 1em; color: #7f7f7f}
-.voice-panel p{text-align: center;border-bottom: 2px solid #8ebc33;padding-bottom: 20px;margin-bottom: 8%;color: #7f7f7f}
+.voice-panel h3{color: #8ebc33;padding: 0 0 1% 0;text-align: center;font-size: 30px;}
+.voice-panel .v-li{}
+.voice-panel .v-li h4{font-size: 24px; height: 4.5vh; color: #8ebc33}
+.voice-panel p{
+	border-bottom: 2px solid #8ebc33;
+	padding-bottom: 20px;
+	margin-bottom: 3.5vh;
+	color: #7f7f7f;
+	font-size: 14px;
+	line-height: 1.8;
+}
+.voice-panel p.cont-copy{
+	border-bottom: none;
+	padding-bottom: 0;
+	padding-right: 2vw;
+}
+.voice-panel p.cont-copy a{
+	color:#7f7f7f;
+}
+.for-pc::-webkit-scrollbar {
+	width: 5px;
+}
 
+.for-pc::-webkit-scrollbar-thumb {
+	height: .1rem;
+	background: #5a5a5a;
+}
 
+.for-pc::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 .03rem rgba(0, 0, 0, 0);
+	border-radius: .1rem;
+	background: rgba(242, 242, 242, 1);
+}
+.img-responsive{
+	display: block;
+	margin: 0 auto;
+	transform: translateY(38%);
+}
 .contact{position: relative;background: url(../img/map-sh.jpg) no-repeat center top;background-size:cover;}
 .tab-wrap{ background-color: #fff;color: #7f7f7f;}
 
 .mobile .contact{background-image: url(../img/map-sh-m.jpg)}
 
-.tabs{padding: 5% 10%;overflow: hidden;}
+.tabs{padding: 5% 8.5%;overflow: hidden;}
 .tabs a{color: #7f7f7f;float: left;width: 20%;text-align: center;line-height: 5vh;font-size: 15px;border-bottom: 2px solid #d5d6d6;}
-.tabs a.active{font-weight: bold;border-bottom-color: #ff5349;border-width: 2px;color: #1b1b1b;width: 18%;margin-left: 1%;margin-right: 1%;}
+.tabs a.active{font-weight: bold;border-bottom-color: #ff5349;border-width: 2px;color: #1b1b1b;width: 18%;margin-left: .8%;margin-right: .8%;}
 
 .contact-tab{text-align: center}
 .contact-tab .swiper-slide{padding: 1% 8%;}
@@ -324,7 +369,7 @@
 	.new-menu .row{width: 82%;text-align: left;margin: 0 0 0 1%;}
 	.new-menu .search-bar{margin: 0 auto;width: 0; margin-top: -40px;}
 	.new-menu .search-bar.active{width: 93%;}
-	.search-bar input{background: #2f3131;left: 0;text-indent: 0px;}
+	.search-bar input{background: #2f3131;left: 0;text-indent: 0px;border-radius: 25px;}
 
 	.partner{padding: 2% 4%}
 	.partner h3{font-size: 18px}
@@ -367,6 +412,9 @@
 	.tabs{padding: 10px;}
 	.trapbox {position: absolute; bottom: 0px; top: auto; transform: translate3d(0,0,0);  }
 	.tabs a{font-size: 14px}
+	.share-list{
+		padding-bottom: 1vh;
+	}
 	.share-list a i {font-size: 20px;}
 	.share-list a {line-height: 35px;}
 	.contact-tab h3{font-size: 1.2rem}
@@ -387,7 +435,12 @@
 	.portfolio .search input{height: 35px}
 	.portfolio .search.active input{width: 100%}
 	.portfolio .search{width: 0;height: 35px;top: 1.5vh;transition: width .3s linear;}
-	.portfolio .search-btn{width: 35px;height: 35px; top: 1.5vh;}
+	.portfolio .search-btn{width: 35px;height: 35px; top: 1.5vh;line-height: 35px;}
+	.portfolio .search-btn i{
+		font-size: 15px;
+    line-height: 35px;
+	}
+
 	.hangye-panel li{margin-bottom:4vh ;font-size: 30px}
 
 	.portfolio-li .row div:nth-child(n){padding-left: 0}
@@ -396,10 +449,11 @@
 	.portfolio .select-wrap .select{margin-left: 10px;}
 
 	.center-pop.pop-out{padding:1vh 6vw;top: 53vh;}
+	.voice-panel{}
 	.voice-panel h3{font-size: 22px}
-	.voice-panel .v-li.for-m li{align-items: center;margin-bottom: 2vh;}
-	.voice-panel .v-li.for-m li div{width: 40%}
-	.voice-panel .v-li.for-m li h4{height: auto;margin: 0;width: 60%;text-align: left;padding-left: 2vw}
+	.voice-panel .for-m .v-li li{align-items: center;margin-bottom: 2vh;}
+	.voice-panel .for-m .v-li li div{width: 40%}
+	.voice-panel .for-m .v-li li h4{height: auto;margin: 0;width: 60%;text-align: left;padding-left: 2vw}
 	.voice-panel .i-close{top:auto;left:50%;bottom:-50px;right:auto;width:30px;height:30px}
 }
 

@@ -91,12 +91,6 @@
 })(jQuery);
 
 $(document).ready(function (e) {
-	//var hdHeight=$(".header").height()
-	
-	// $(window).load(function () {
-	// 	$('.content').height($(window).height()-hdHeight);
-	// });
-
 
 	var isTouch = ("ontouchstart" in window) ? true : false;
 	if(!isTouch){
@@ -115,8 +109,6 @@ $(document).ready(function (e) {
 	$(".menu-li").find("li").click(function(){
 		$(this).siblings("li").removeClass("on")
 		if(!open){
-			// var aleft = $('a',this).offset().left
-			// $(".mobile .subli").css("paddingLeft",aleft)
 			$(this).addClass("on")
 			open = true
 		}else{
@@ -125,21 +117,5 @@ $(document).ready(function (e) {
 		}
 	   
 	})
-    
-    /*浮动菜单*/
-    $(window).scroll(function (e) {
-        s = $(document).scrollTop();
-        /*回到顶部*/
-        if ($(window).scrollTop() >= 300) {
-            $('.actGotop').fadeIn(300);
-        } else {
-            $('.actGotop').fadeOut(300);
-        }
-    })
-    $('.actGotop').click(function () {
-        $('html,body').animate({
-            scrollTop: 0
-        }, 500);
-    });
 	
 })

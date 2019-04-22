@@ -22,10 +22,8 @@
     <!-- Custom styles for this page -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/pages.css" rel="stylesheet">
-    <!--swiper for banner-->
 
     <script src="js/jquery-1.10.1.min.js"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
           <script src="js/html5shiv.min.js"></script>
           <script src="js/respond.min.js"></script>
@@ -35,7 +33,7 @@
 <body>
 
     <div class="container-fluid wrapper">
-
+        <!--公共头-->
         <div class="header clearfix">
             <div class="logo"><a href="index.html" title="CGV CATPITL"><img src="img/logo.png" alt="cgv"></a></div>
             <div class="nav">
@@ -54,7 +52,8 @@
                             <dd class="animated fadeIn"><a href="portfolio.html">消费及新零售</a></dd>
                             <dd class="animated fadeIn"><a href="portfolio.html">企业服务及云</a></dd>
                             <dd class="animated fadeIn"><a href="portfolio.html">前沿科技</a></dd>
-                            <dd class="animated fadeIn"><a href="portfolio.html">社交及互联网服务</a></dd><dd class="animated fadeIn"><a href="portfolio.html">其他</a></dd>
+                            <dd class="animated fadeIn"><a href="portfolio.html">社交及互联网服务</a></dd>
+                            <dd class="animated fadeIn"><a href="portfolio.html">其他</a></dd>
                         </dl>
                     </div>
                 </li>
@@ -62,6 +61,7 @@
                 <li><a href="contact.html">联系我们</a></li>
             </ul>
         </div>
+        <!--公共头 end-->
 
         <div class="content">
             <div class="news-intro">
@@ -108,24 +108,60 @@
                 </div>
 
             </div>
+
+            <div class="album py-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" alt="" src="img/qq.jpg" data-holder-rendered="true">
+                                <div class="card-body">
+                                    <div class="tags"><span>GGV X FAMILY</span></div>
+                                    <p class="card-text">今天很高兴今天很高兴</p>
+                                    <p class="card-inf"><span>2018-07-18</span> <span>原创:今天很高兴</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" alt="" src="img/qq.jpg" data-holder-rendered="true">
+                                <div class="card-body">
+                                    <div class="tags"><span>GGV X FAMILY</span></div>
+                                    <p class="card-text">今天很高兴今天很高兴今天很高兴今天很高兴今天很高兴今天很高今天很高兴兴今天很高兴今天很高兴</p>
+                                    <p class="card-inf"><span>2018-07-18</span> <span>原创:今天很高兴</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" alt="" src="img/qq.jpg" data-holder-rendered="true">
+                                <div class="card-body">
+                                    <div class="tags"><span>GGV X FAMILY</span></div>
+                                    <p class="card-text">今天很高兴今天很高兴今天很高兴今天很高兴今天很高兴今天很高兴今天很高兴</p>
+                                    <p class="card-inf"><span>2018-07-18</span> <span>原创:今天很高兴</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
     <div class="pop-panel center-pop wx-panel">
-        <img src="img/qr.png" class="wx-qr">
-        <div class="panelClose i-close"><img src="img/close3.png" alt="关闭"></div>
+        <img src="img/qr.jpg" class="wx-qr">
+        <div class="panelClose i-close"><img src="img/close3.svg" alt="关闭" style="width:40px"></div>
     </div>
 
     <script src="js/scrollBar.js"></script>
     <script src="js/common.js"></script>
+
     <script>
 
         $(function () {
             $(".wx-btn").click(function () {
                 $(".wx-panel").popPanel()
-            })
-            $(".search").click(function (e) {
-                e.stopPropagation()
-                $(this).find("input").width("100%")
             })
         })
     </script>

@@ -18,30 +18,16 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/all.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/pages.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
-
     <script src="js/jquery-1.10.1.min.js"></script>
-    <script>
 
-        $(function () {
-            var hdHeight = $(".header").height()
-            $(window).load(function () {
-                $('.contact').height($(window).height() - hdHeight);
-            });
-        })
-
-    </script>
-
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
     <script src="js/swiper-3.4.2.jquery.min.js"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-          <script src="js/html5shiv.min.js"></script>
-          <script src="js/respond.min.js"></script>
-        <![endif]-->
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
@@ -79,7 +65,7 @@
             <div class="contact">
                 <div class="container trapbox">
                     <div class="row contact-wrap">
-                        <div class="nopadding tab-wrap col-xl-4 offset-xl-8 col-lg-5 offset-lg-7 col-md-6 offset-md-6 col-sm-10 offset-sm-1 col-10 offset-1 animated fadeInUp delay-500ms">
+                        <div class="nopadding tab-wrap col-xl-4 offset-xl-8 col-lg-5 offset-lg-7 col-md-6 offset-md-6 col-sm-10 offset-sm-1 col-10 offset-1 animated fadeInRight delay-500ms">
                             <div class="tabs">
                                 <a href="javascript:;" class="active">上海</a>
                                 <a href="javascript:;">北京</a>
@@ -161,8 +147,8 @@
     </div>
 
     <div class="pop-panel center-pop wx-panel">
-        <img src="img/qr.png" class="wx-qr">
-        <div class="panelClose i-close"><img src="img/close3.png" alt="关闭"></div>
+        <img src="img/qr.jpg" class="wx-qr">
+        <div class="panelClose i-close"><img src="img/close3.svg" alt="关闭" style="width:40px;"></div>
     </div>
 
     <script src="js/scrollBar.js"></script>
@@ -170,6 +156,9 @@
     <script>
 
         $(function () {
+            var hdHeight = $(".header").height()
+            $('.contact').height($(window).height() - hdHeight);
+
             $(".wx-btn").click(function () {
                 $(".wx-panel").popPanel()
             })
@@ -210,14 +199,6 @@
                 tabsSwiper.slideTo($(this).index())
             })
 
-            $(document).click(function (e) {
-                e.stopPropagation()
-                $(".search").removeClass('active')
-            })
-            $(".search").click(function (e) {
-                e.stopPropagation()
-                $(this).addClass("active")
-            })
         })
     </script>
 </body>

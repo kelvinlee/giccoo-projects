@@ -736,7 +736,7 @@ body.menuOn{overflow: hidden;}
 .banner .more-btn{display: block; width: 200px;height: 56px;line-height: 56px;text-align: center;border-radius: 28px;border: 1px solid #f9f1e6;transition: all .3s linear}
 .banner .more-btn:hover{color: #2f3131;background-color: #fff;border-color: #fff; opacity: 1;}
 .banner .pagein{height: 56px;align-items: center;margin-bottom: 7vh;}
-.banner .pagein .link{margin-right: 20px;position: relative; display: inline-block;}
+.banner .pagein .link{margin-right: 20px;position: relative;}
 .banner .pagein .link:hover{color: #fff}
 .banner .pagein .link img{vertical-align: middle}
 .banner .swiper-pagination{position: relative; width: auto;font-size: 21px;z-index: 2;bottom: 0; display: inline-block; vertical-align: middle;}
@@ -801,7 +801,9 @@ body.menuOn{overflow: hidden;}
 
 	.header .logo{width:46%;}
     .header{padding: 0 4%}
-    
+    .banner .pic{
+        background-size: 75% center;
+    }
     .banner .info{left: 10%;width: auto;right: 10%;margin-bottom: 10vh;}
     .banner .info h3{font-size: 24px;}
     .banner .info h4{font-size: 16px;line-height: 1.4;margin-bottom: 2vh;padding-bottom: 2vh;}
