@@ -413,13 +413,14 @@ width:40px !important; margin: 0 auto;
 	.trapbox {position: absolute; bottom: 0px; top: auto; transform: translate3d(0,0,0);  }
 	.tabs a{font-size: 14px}
 	.share-list{
-		padding-bottom: 1vh;
+		padding-bottom: 0vh;
 	}
-	.share-list a i {font-size: 20px;}
-	.share-list a {line-height: 35px;}
+	.share-list a i {font-size: 18px;}
+	.share-list a {line-height: 25px;}
+	.contact-tab .copyright {margin-top: 0.5em; padding: 0;}
 	.contact-tab h3{font-size: 1.2rem}
 	.contact-tab p{font-size: 12px;padding-bottom: 0}
-	.contact-tab .pic img{width: 50%}
+	.contact-tab .pic img{width: auto; height: 100%;}
 	.share-wrap{padding: 10px}
 	.share-wrap li{padding: 0}
 	.about-wrap .text {margin-top: 12px;}
@@ -457,10 +458,10 @@ width:40px !important; margin: 0 auto;
 	.voice-panel .for-m .v-li li div{width: 40%}
 	.voice-panel .for-m .v-li li h4{height: auto;margin: 0;width: 60%;text-align: left;padding-left: 2vw}
 	.voice-panel .i-close{top:auto;left:50%;bottom:-50px;right:auto;width:30px;height:30px}
-	.contact-tab .swiper-slide .pic {width: 100%;}
+	.contact-tab .swiper-slide .pic {width: 100%; height: 116px;}
 	.contact-tab p.address {margin-bottom: 2vh;}
 	.contact-tab h3 {margin: 2vh 0;}
-	/*.share-wrap {margin-top: 0}*/
+	.share-wrap {margin-top: 0}
 }
 
 /* Custom, iPhone Retina 320 */ 
