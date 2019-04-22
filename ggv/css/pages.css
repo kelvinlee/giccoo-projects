@@ -430,7 +430,7 @@ width:40px !important; margin: 0 auto;
 	.news-intro{padding: 20px 0}
 	.news-intro h3{font-size: 20px;width: 100%;height: auto;line-height: 1.6}
 	.newtxt{font-size: 14px;}
-	.share{width: 200px}
+	.share{width: 50%; height: 40px; line-height: 40px;}
 	.share-list a{width: 20px;height: 25px;}
 	.portfolio .title{padding-bottom: 0}
 	.portfolio .search input{height: 35px}
@@ -449,7 +449,7 @@ width:40px !important; margin: 0 auto;
 
 	.portfolio .select-wrap .select{margin-left: 10px;}
 
-	.center-pop.pop-out{padding:5vh 6vw;top: 53vh;}
+	.center-pop.pop-out{padding:5vh 6vw;top: 43vh;}
 	.voice-panel{}
 	.voice-panel h3{font-size: 22px; margin-top: 2vh;}
 	.voice-panel .v-li h4 {margin-top: 2vh; text-align: center;}
