@@ -695,6 +695,8 @@ body.menuOn{overflow: hidden;}
 /*header*/
 .header{height: 70px;padding: 0 70px;position: fixed;top: 0px;left: 0px;right: 0px;z-index: 1000001;width: 100%;background: #2f3131}
 .header .logo{float: left;width: 256px;height: 70px; max-width: 190px; line-height: 70px;overflow: hidden;}
+.header .logo a {color: #fff;}
+.header .logo a:hover {color: #999;}
 .header .nav{float: right;font-size: 14px;line-height: 70px;color: #f9f1e6;text-align: right}
 .header .nav a{position: relative; margin-left: 40px;display: inline-block;line-height: 70px;height: 70px;}
 .header .nav a:hover{color: #f9f1e6}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -183,8 +183,13 @@
             })
             $(".search-btn").on("click",function(e){
                 e.stopPropagation()
-                $(".search").addClass("active");
-                $(".portfolio .search").css("width","100%")
+                if ($(".search").is(".active")) {
+                    $(".search").removeClass("active");
+                    $(".portfolio .search").css("width","0%")
+                }else{
+                    $(".search").addClass("active");
+                    $(".portfolio .search").css("width","100%")
+                }
             })
 
             $(".portfolio .search input").on("click",function(e){
