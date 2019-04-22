@@ -718,6 +718,7 @@ body.menuOn{overflow: hidden;}
 .banner .info .animated{display: none; -webkit-animation-duration: 2s; animation-duration: 2s}
 .banner .swiper-slide-active .info .animated{display: block}
 .banner .info h3{font-size: 32px;font-weight: normal;line-height: 1;margin-bottom: 10px;letter-spacing: 0.2042vw;}
+.banner .info .s-content-banner>h3 {font-size: 34px; font-weight: bold;}
 .banner .info h4{position: relative;font-size: 32px;padding-bottom: 20px;margin-bottom: 14px;line-height: 1;letter-spacing: 0.2042vw;}
 .banner .info h4::after{position: absolute;left: 0;bottom: 0; content: "";width: 18%;height: 2px;background: #f9f1e6}
 .banner .info p{line-height: 2;width: 480px;font-size: 14px;letter-spacing: 0.09vw;margin-bottom: 7vh;}
