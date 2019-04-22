@@ -67,7 +67,7 @@
             <!--内容区-->
             <div class="banner swiper-container" style="height:100%">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" link="000.com">
+                    <div class="swiper-slide" link="banner-next">
                         <div class="pic" style="background-image:url(img/banner0.jpg)"></div>
                         <div class="info">
 
@@ -518,6 +518,16 @@
             $(".link").attr("href", actlink)
             $(".more-btn").attr("href", actlink)
 
+            $(".more-btn").on("click",function(evt){
+                if ($(this).attr("href") == "banner-next") {
+                    evt.preventDefault();
+                    $(".banner .next").click()
+                }
+                if ($(this).attr("href") == "banner-prev") {
+                    evt.preventDefault();
+                    $(".banner .prev").click()
+                }
+            });
 
             var bannerSwiper = new Swiper('.banner', {
                 //paginationType: 'fraction',

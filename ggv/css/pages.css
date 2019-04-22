@@ -450,11 +450,14 @@ width:40px !important; margin: 0 auto;
 
 	.center-pop.pop-out{padding:1vh 6vw;top: 53vh;}
 	.voice-panel{}
-	.voice-panel h3{font-size: 22px}
+	.voice-panel h3{font-size: 22px; margin-top: 2vh;}
+	.voice-panel .v-li h4 {margin-top: 2vh; text-align: center;}
+	.voice-panel .img-responsive {transform: none}
 	.voice-panel .for-m .v-li li{align-items: center;margin-bottom: 2vh;}
 	.voice-panel .for-m .v-li li div{width: 40%}
 	.voice-panel .for-m .v-li li h4{height: auto;margin: 0;width: 60%;text-align: left;padding-left: 2vw}
 	.voice-panel .i-close{top:auto;left:50%;bottom:-50px;right:auto;width:30px;height:30px}
+	.contact-tab .swiper-slide .pic {width: 70%;}
 }
 
 /* Custom, iPhone Retina 320 */ 
