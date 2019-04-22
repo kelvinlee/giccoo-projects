@@ -803,7 +803,7 @@ body.menuOn{overflow: hidden;}
 	.header .logo{width:46%;}
     .header{padding: 0 4%}
     .banner .pic{
-        background-position: 75% center;
+        background-position: center center;
     }
     .banner .info{left: 10%;width: auto;right: 10%;margin-bottom: 10vh;}
     .banner .info h3{font-size: 24px;}

@@ -4020,13 +4020,13 @@
 		},
 	"/ggv/img/banner4-m.jpg": {
 		"ft": 16384,
-		"iS": 784686,
+		"iS": 747020,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/ggv/img/banner4-m.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 1,
+		"opt": 0,
 		"q": 100
 		},
 	"/ggv/img/banner4.jpg": {
